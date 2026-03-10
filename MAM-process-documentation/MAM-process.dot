@@ -1,0 +1,72 @@
+digraph "MAM process" {
+    rankdir=TB
+    node [shape=box]
+
+    // Sources
+    AHT_site        [label="AHT (AlHaTorah) site"]
+    MAM_Go          [label="MAM-Go (Google Sheet)"]
+    MAM_Ws          [label="MAM-Ws (Wikisource)"]
+
+    // Downloads
+    AHT_downloads   [label="AHT downloads"]
+    Go_downloads    [label="Go downloads"]
+    Ws_downloads    [label="Ws downloads"]
+
+    // Parsed
+    parsed_plain    [label="parsed-plain"]
+    parsed_plus     [label="parsed-plus"]
+    {rank=same parsed_plain parsed_plus}
+    parsed_plain -> parsed_plus [style=invis]
+
+    // Diffs (dashed = pure sinks, broken from feedback loops)
+    AHT_MAM_diff    [label="AHT-MAM diff" style=dashed]
+    Ws_Go_diff      [label="Ws-Go diff" style=dashed]
+
+    // Output formats
+    XML             [label="XML"]
+    JPS             [label="JPS"]
+    with_doc        [label="\"with doc\""]
+
+
+    // XML sub-formats
+    Sefaria         [label="Sefaria"]
+
+    OSIS            [label="OSIS"]
+
+    // Source -> Download
+    AHT_site -> AHT_downloads
+    MAM_Go -> Go_downloads
+    MAM_Ws -> Ws_downloads
+
+    // Download -> Parsed
+    Go_downloads -> parsed_plain
+    Go_downloads -> parsed_plus
+
+    // Parsed -> Diffs
+    parsed_plain -> AHT_MAM_diff
+    parsed_plain -> Ws_Go_diff
+    AHT_downloads -> AHT_MAM_diff
+    Ws_downloads -> Ws_Go_diff
+
+    // Broken feedback loops (dashed source nodes)
+    AHT_MAM_diff_source [label="AHT-MAM diff" style=dashed]
+    Ws_Go_diff_source   [label="Ws-Go diff" style=dashed]
+
+    AHT_MAM_diff_source -> AHT_site [label="manual edit"]
+    Ws_Go_diff_source -> MAM_Go    [label="auto-edit"]
+
+    // parsed-plus -> Output formats
+    parsed_plus -> XML
+    parsed_plus -> JPS
+    parsed_plus -> with_doc
+
+
+    // XML -> Sub-formats
+    XML -> Sefaria
+
+    XML -> OSIS
+
+    // Caption
+    caption [label="Dashed boxes are duplicated to show\nfeedback loops without upward arrows." shape=plaintext fontsize=10]
+    {rank=sink caption}
+}

@@ -1,0 +1,4689 @@
+{
+  "header": {
+    "mapping_fields": {
+      "ref": "Verse reference (e.g. 'Genesis 1:18')",
+      "varika_word": "The word as it appears in MAM, with shewa+varika",
+      "xataf_word": "The word with the explicit hataf vowel",
+      "match_kind": "How the extraction matched: 'sigla=word', 'bare-word', or with '+joined' suffix",
+      "sigla": "Manuscript sigla before the = sign (e.g. 'א', 'ל,ל1', 'א(ס),ל,ק3'). Individual sigla may have ? (uncertain) or ! (surprising) suffixes (e.g. 'ל,ק3?' means ק3 is uncertain).",
+      "neither-lc-nor-ac-mentioned": "Present (true) only when sigla mentions neither LC (ל) nor AC (א).",
+      "varika-count": "Present only when the word has more than one varika (implicit default: 1). E.g. Judges 7:7 has 2.",
+      "non-inferrable": "Present (true) only when the xataf vowel cannot be inferred from the varika word by standard rules."
+    },
+    "failure_fields": {
+      "ref": "Verse reference",
+      "varika_word": "The word as it appears in MAM, with shewa+varika",
+      "reason": "Short classification of why extraction failed",
+      "arg1_strings": "Raw string fragments from the nusach note's second argument"
+    }
+  },
+  "counts": {
+    "siglum א!": 1,
+    "siglum א(צילום)?": 1,
+    "siglum ו?": 1,
+    "siglum ק3?": 1,
+    "varika-count > 1": 1,
+    "non-inferrable": 0,
+    "neither-lc-nor-ac-mentioned": 2
+  },
+  "failures": [],
+  "mappings": [
+    {
+      "ref": "Genesis 1:18",
+      "varika_word": "וּֽלְﬞהַבְדִּ֔יל",
+      "xataf_word": "וּֽלֲהַבְדִּ֔יל",
+      "match_kind": "sigla=word",
+      "sigla": "א(ס),ל"
+    },
+    {
+      "ref": "Genesis 2:12",
+      "varika_word": "וּֽזְﬞהַ֛ב",
+      "xataf_word": "וּֽזֲהַ֛ב",
+      "match_kind": "sigla=word",
+      "sigla": "א(ס),ל,ל1,ק3,ה,ש2"
+    },
+    {
+      "ref": "Genesis 2:23",
+      "varika_word": "לֻֽקְﬞחָה־זֹּֽאת",
+      "xataf_word": "לֻֽקֳחָה־זֹּֽאת",
+      "match_kind": "sigla=word",
+      "sigla": "ל,ה,ש2"
+    },
+    {
+      "ref": "Genesis 3:17",
+      "varika_word": "תֹּֽאכְﬞלֶ֔נָּה",
+      "xataf_word": "תֹּֽאכֲלֶ֔נָּה",
+      "match_kind": "sigla=word",
+      "sigla": "א(ס),ל,ל1,ק3,ה,ש2"
+    },
+    {
+      "ref": "Genesis 10:3",
+      "varika_word": "אַשְׁכְּﬞנַ֥ז",
+      "xataf_word": "אַשְׁכֲּנַ֥ז",
+      "match_kind": "sigla=word",
+      "sigla": "ל"
+    },
+    {
+      "ref": "Genesis 12:3",
+      "varika_word": "וַאֲבָֽרְﬞכָה֙",
+      "xataf_word": "וַאֲבָֽרֲכָה֙",
+      "match_kind": "sigla=word",
+      "sigla": "ל,ק3?"
+    },
+    {
+      "ref": "Genesis 18:21",
+      "varika_word": "אֵֽרְﬞדָה־נָּ֣א",
+      "xataf_word": "אֵֽרֲדָה־נָּ֣א",
+      "match_kind": "sigla=word",
+      "sigla": "א(ס),ל,ק3"
+    },
+    {
+      "ref": "Genesis 22:18",
+      "varika_word": "וְהִתְבָּרְﬞכ֣וּ",
+      "xataf_word": "וְהִתְבָּרֲכ֣וּ",
+      "match_kind": "sigla=word",
+      "sigla": "ל,ל1"
+    },
+    {
+      "ref": "Genesis 24:60",
+      "varika_word": "וַיְבָרְﬞכ֤וּ",
+      "xataf_word": "וַיְבָרֲכ֤וּ",
+      "match_kind": "sigla=word",
+      "sigla": "ל,ל1"
+    },
+    {
+      "ref": "Genesis 25:22",
+      "varika_word": "וַיִּתְרֹֽצְﬞצ֤וּ",
+      "xataf_word": "וַיִּתְרֹֽצֲצ֤וּ",
+      "match_kind": "sigla=word",
+      "sigla": "ל,ל1"
+    },
+    {
+      "ref": "Genesis 26:4",
+      "varika_word": "וְהִתְבָּרְﬞכ֣וּ",
+      "xataf_word": "וְהִתְבָּרֲכ֣וּ",
+      "match_kind": "sigla=word",
+      "sigla": "ל,ק3"
+    },
+    {
+      "ref": "Genesis 26:12",
+      "varika_word": "וַֽיְבָרְﬞכֵ֖הוּ",
+      "xataf_word": "וַֽיְבָרֲכֵ֖הוּ",
+      "match_kind": "sigla=word",
+      "sigla": "ל,ה,ש2"
+    },
+    {
+      "ref": "Genesis 27:19",
+      "varika_word": "תְּבָרְﬞכַ֥נִּי",
+      "xataf_word": "תְּבָרֲכַ֥נִּי",
+      "match_kind": "sigla=word",
+      "sigla": "ל,ש"
+    },
+    {
+      "ref": "Genesis 27:27",
+      "varika_word": "וַֽיְבָרְﬞכֵ֑הוּ",
+      "xataf_word": "וַֽיְבָרֲכֵ֑הוּ",
+      "match_kind": "sigla=word",
+      "sigla": "ל,ל1"
+    },
+    {
+      "ref": "Genesis 27:27",
+      "varika_word": "בֵּרְﬞכ֖וֹ",
+      "xataf_word": "בֵּרֲכ֖וֹ",
+      "match_kind": "sigla=word",
+      "sigla": "ל,ל1,ש1,ק3"
+    },
+    {
+      "ref": "Genesis 27:29",
+      "varika_word": "וּֽמְבָרְﬞכֶ֖יךָ",
+      "xataf_word": "וּֽמְבָרֲכֶ֖יךָ",
+      "match_kind": "sigla=word",
+      "sigla": "ל,ל1"
+    },
+    {
+      "ref": "Genesis 27:31",
+      "varika_word": "תְּבָרְﬞכַ֥נִּי",
+      "xataf_word": "תְּבָרֲכַ֥נִּי",
+      "match_kind": "sigla=word",
+      "sigla": "ל,ל1"
+    },
+    {
+      "ref": "Genesis 27:33",
+      "varika_word": "וָאֲבָרְﬞכֵ֑הוּ",
+      "xataf_word": "וָאֲבָרֲכֵ֑הוּ",
+      "match_kind": "sigla=word",
+      "sigla": "ל,ל1"
+    },
+    {
+      "ref": "Genesis 27:34",
+      "varika_word": "בָּרְﬞכֵ֥נִי",
+      "xataf_word": "בָּרֲכֵ֥נִי",
+      "match_kind": "sigla=word",
+      "sigla": "ל,ל1"
+    },
+    {
+      "ref": "Genesis 27:38",
+      "varika_word": "הַֽבְﬞרָכָ֨ה",
+      "xataf_word": "הַֽבֲרָכָ֨ה",
+      "match_kind": "sigla=word",
+      "sigla": "א(ס)"
+    },
+    {
+      "ref": "Genesis 27:38",
+      "varika_word": "בָּרְﬞכֵ֥נִי",
+      "xataf_word": "בָּרֲכֵ֥נִי",
+      "match_kind": "sigla=word",
+      "sigla": "ל,ל1"
+    },
+    {
+      "ref": "Genesis 27:41",
+      "varika_word": "בֵּרְﬞכ֖וֹ",
+      "xataf_word": "בֵּרֲכ֖וֹ",
+      "match_kind": "sigla=word",
+      "sigla": "ל,ל1,ש1,ק3"
+    },
+    {
+      "ref": "Genesis 28:6",
+      "varika_word": "בְּבָרְﬞכ֣וֹ",
+      "xataf_word": "בְּבָרֲכ֣וֹ",
+      "match_kind": "sigla=word",
+      "sigla": "א(ס),ל,ל1,ק3"
+    },
+    {
+      "ref": "Genesis 28:14",
+      "varika_word": "וְנִבְרְﬞכ֥וּ",
+      "xataf_word": "וְנִבְרֲכ֥וּ",
+      "match_kind": "sigla=word",
+      "sigla": "ל"
+    },
+    {
+      "ref": "Genesis 29:3",
+      "varika_word": "וְגָלְﬞל֤וּ",
+      "xataf_word": "וְגָלֲל֤וּ",
+      "match_kind": "sigla=word",
+      "sigla": "א(ס),ל,ק3"
+    },
+    {
+      "ref": "Genesis 29:8",
+      "varika_word": "וְגָֽלְﬞלוּ֙",
+      "xataf_word": "וְגָֽלֲלוּ֙",
+      "match_kind": "sigla=word",
+      "sigla": "ל,ק3"
+    },
+    {
+      "ref": "Genesis 30:27",
+      "varika_word": "וַיְבָרְﬞכֵ֥נִי",
+      "xataf_word": "וַיְבָרֲכֵ֥נִי",
+      "match_kind": "sigla=word",
+      "sigla": "ל"
+    },
+    {
+      "ref": "Genesis 30:38",
+      "varika_word": "בָּרְﬞהָטִ֖ים",
+      "xataf_word": "בָּרֳהָטִ֖ים",
+      "match_kind": "sigla=word",
+      "sigla": "ל"
+    },
+    {
+      "ref": "Genesis 30:38",
+      "varika_word": "בְּשִֽׁקְﬞת֣וֹת",
+      "xataf_word": "בְּשִֽׁקֲת֣וֹת",
+      "match_kind": "sigla=word",
+      "sigla": "א(ס),ל,ל1,ש1"
+    },
+    {
+      "ref": "Genesis 30:41",
+      "varika_word": "בָּרְﬞהָטִ֑ים",
+      "xataf_word": "בָּרֳהָטִ֑ים",
+      "match_kind": "sigla=word",
+      "sigla": "ל"
+    },
+    {
+      "ref": "Genesis 38:12",
+      "varika_word": "עַל־גֹּֽזְﬞזֵ֤י",
+      "xataf_word": "עַל־גֹּֽזֲזֵ֤י",
+      "match_kind": "sigla=word",
+      "sigla": "ל,ל1"
+    },
+    {
+      "ref": "Genesis 48:9",
+      "varika_word": "וַאֲבָרְﬞכֵֽם",
+      "xataf_word": "וַאֲבָרֲכֵֽם",
+      "match_kind": "sigla=word",
+      "sigla": "ל,ל1,ב"
+    },
+    {
+      "ref": "Genesis 48:20",
+      "varika_word": "וַיְבָ֨רְﬞכֵ֜ם",
+      "xataf_word": "וַיְבָ֨רֲכֵ֜ם",
+      "match_kind": "sigla=word",
+      "sigla": "ל,ל1,ב"
+    },
+    {
+      "ref": "Genesis 49:23",
+      "varika_word": "וַֽיְמָרְﬞרֻ֖הוּ",
+      "xataf_word": "וַֽיְמָרֲרֻ֖הוּ",
+      "match_kind": "sigla=word",
+      "sigla": "ל,ב"
+    },
+    {
+      "ref": "Exodus 3:18",
+      "varika_word": "נֵֽלְﬞכָה־נָּ֞א",
+      "xataf_word": "נֵֽלֲכָה־נָּ֞א",
+      "match_kind": "sigla=word",
+      "sigla": "ל,ל1,ב,ק3,ו"
+    },
+    {
+      "ref": "Exodus 4:18",
+      "varika_word": "אֵ֣לְﬞכָה",
+      "xataf_word": "אֵ֣לֲכָה",
+      "match_kind": "sigla=word",
+      "sigla": "ל,ל1,ב,ש1,ק3,ו"
+    },
+    {
+      "ref": "Exodus 5:3",
+      "varika_word": "נֵ֣לְﬞכָה",
+      "xataf_word": "נֵ֣לֲכָה",
+      "match_kind": "sigla=word",
+      "sigla": "ל,ל1,ב,ש1,ק3,ו"
+    },
+    {
+      "ref": "Exodus 7:27",
+      "varika_word": "בַּֽצְﬞפַרְדְּעִֽים",
+      "xataf_word": "בַּֽצֲפַרְדְּעִֽים",
+      "match_kind": "sigla=word",
+      "sigla": "א(ס),ב"
+    },
+    {
+      "ref": "Exodus 7:29",
+      "varika_word": "הַֽצְﬞפַרְדְּעִֽים",
+      "xataf_word": "הַֽצֲפַרְדְּעִֽים",
+      "match_kind": "sigla=word",
+      "sigla": "א(ס),ב"
+    },
+    {
+      "ref": "Exodus 8:1",
+      "varika_word": "אֶת־הַֽצְﬞפַרְדְּעִ֖ים",
+      "xataf_word": "אֶת־הַֽצֲפַרְדְּעִ֖ים",
+      "match_kind": "sigla=word",
+      "sigla": "א(ס),ב"
+    },
+    {
+      "ref": "Exodus 8:3",
+      "varika_word": "אֶת־הַֽצְﬞפַרְדְּעִ֖ים",
+      "xataf_word": "אֶת־הַֽצֲפַרְדְּעִ֖ים",
+      "match_kind": "sigla=word",
+      "sigla": "א(ס)"
+    },
+    {
+      "ref": "Exodus 8:4",
+      "varika_word": "הַֽצְﬞפַרְדְּעִ֔ים",
+      "xataf_word": "הַֽצֲפַרְדְּעִ֔ים",
+      "match_kind": "sigla=word",
+      "sigla": "א(ס),ב"
+    },
+    {
+      "ref": "Exodus 8:5",
+      "varika_word": "הַֽצְﬞפַרְדְּעִ֔ים",
+      "xataf_word": "הַֽצֲפַרְדְּעִ֔ים",
+      "match_kind": "sigla=word",
+      "sigla": "א(ס),ל,ב"
+    },
+    {
+      "ref": "Exodus 8:7",
+      "varika_word": "הַֽצְﬞפַרְדְּעִ֗ים",
+      "xataf_word": "הַֽצֲפַרְדְּעִ֗ים",
+      "match_kind": "sigla=word",
+      "sigla": "א(ס),ב"
+    },
+    {
+      "ref": "Exodus 8:8",
+      "varika_word": "הַֽצְﬞפַרְדְּעִ֖ים",
+      "xataf_word": "הַֽצֲפַרְדְּעִ֖ים",
+      "match_kind": "sigla=word",
+      "sigla": "א(ס),ב"
+    },
+    {
+      "ref": "Exodus 8:9",
+      "varika_word": "הַֽצְﬞפַרְדְּעִ֔ים",
+      "xataf_word": "הַֽצֲפַרְדְּעִ֔ים",
+      "match_kind": "sigla=word",
+      "sigla": "א(ס),ב"
+    },
+    {
+      "ref": "Exodus 8:11",
+      "varika_word": "הָֽרְﬞוָחָ֔ה",
+      "xataf_word": "הָֽרֲוָחָ֔ה",
+      "match_kind": "sigla=word",
+      "sigla": "א(ס),ב"
+    },
+    {
+      "ref": "Exodus 15:10",
+      "varika_word": "צָֽלְﬞלוּ֙",
+      "xataf_word": "צָֽלֲלוּ֙",
+      "match_kind": "sigla=word",
+      "sigla": "ל,ל1,ב,ק3"
+    },
+    {
+      "ref": "Exodus 23:29",
+      "varika_word": "אֲגָרְﬞשֶׁ֛נּוּ",
+      "xataf_word": "אֲגָרֲשֶׁ֛נּוּ",
+      "match_kind": "sigla=word",
+      "sigla": "א(ס),ב,ש1,ק3,ו"
+    },
+    {
+      "ref": "Exodus 23:30",
+      "varika_word": "אֲגָרְﬞשֶׁ֖נּוּ",
+      "xataf_word": "אֲגָרֲשֶׁ֖נּוּ",
+      "match_kind": "sigla=word",
+      "sigla": "א(ס),ב,ש1,ק3,ו"
+    },
+    {
+      "ref": "Levit 6:11",
+      "varika_word": "יֹֽאכְﬞלֶ֔נָּה",
+      "xataf_word": "יֹֽאכֲלֶ֔נָּה",
+      "match_kind": "sigla=word",
+      "sigla": "ל,ב"
+    },
+    {
+      "ref": "Levit 6:19",
+      "varika_word": "יֹאכְﬞלֶ֑נָּה",
+      "xataf_word": "יֹאכֲלֶ֑נָּה",
+      "match_kind": "sigla=word",
+      "sigla": "ל,ב"
+    },
+    {
+      "ref": "Levit 9:23",
+      "varika_word": "וַֽיְבָרְﬞכ֖וּ",
+      "xataf_word": "וַֽיְבָרֲכ֖וּ",
+      "match_kind": "sigla=word",
+      "sigla": "ל,ל1,ב"
+    },
+    {
+      "ref": "Levit 10:10",
+      "varika_word": "וּֽלְﬞהַבְדִּ֔יל",
+      "xataf_word": "וּֽלֲהַבְדִּ֔יל",
+      "match_kind": "sigla=word",
+      "sigla": "ל,ל1"
+    },
+    {
+      "ref": "Numbers 3:27",
+      "varika_word": "הַקְּﬞהָתִֽי",
+      "xataf_word": "הַקֳּהָתִֽי",
+      "match_kind": "sigla=word",
+      "sigla": "א(ס),ק3"
+    },
+    {
+      "ref": "Numbers 4:7",
+      "varika_word": "אֶת־הַקְּﬞעָרֹ֤ת",
+      "xataf_word": "אֶת־הַקֳּעָרֹ֤ת",
+      "match_kind": "sigla=word",
+      "sigla": "א(ס)"
+    },
+    {
+      "ref": "Numbers 5:18",
+      "varika_word": "הַמְאָֽרְﬞרִֽים",
+      "xataf_word": "הַמְאָֽרֲרִֽים",
+      "match_kind": "sigla=word",
+      "sigla": "ל,ב"
+    },
+    {
+      "ref": "Numbers 5:19",
+      "varika_word": "הַֽמְאָרְﬞרִ֖ים",
+      "xataf_word": "הַֽמְאָרֲרִ֖ים",
+      "match_kind": "sigla=word",
+      "sigla": "ל,ב"
+    },
+    {
+      "ref": "Numbers 5:24",
+      "varika_word": "הַמְאָֽרְﬞרִ֑ים",
+      "xataf_word": "הַמְאָֽרֲרִ֑ים",
+      "match_kind": "sigla=word",
+      "sigla": "ל,ב,ק3"
+    },
+    {
+      "ref": "Numbers 5:24",
+      "varika_word": "הַֽמְאָרְﬞרִ֖ים",
+      "xataf_word": "הַֽמְאָרֲרִ֖ים",
+      "match_kind": "sigla=word",
+      "sigla": "ל,ב"
+    },
+    {
+      "ref": "Numbers 5:27",
+      "varika_word": "הַמְאָֽרְﬞרִים֙",
+      "xataf_word": "הַמְאָֽרֲרִים֙",
+      "match_kind": "sigla=word",
+      "sigla": "ל"
+    },
+    {
+      "ref": "Numbers 5:28",
+      "varika_word": "וְנִזְרְﬞעָ֥ה",
+      "xataf_word": "וְנִזְרֳעָ֥ה",
+      "match_kind": "sigla=word",
+      "sigla": "ב,ו",
+      "neither-lc-nor-ac-mentioned": true
+    },
+    {
+      "ref": "Numbers 6:23",
+      "varika_word": "תְבָרְﬞכ֖וּ",
+      "xataf_word": "תְבָרֲכ֖וּ",
+      "match_kind": "sigla=word",
+      "sigla": "ל,ל1"
+    },
+    {
+      "ref": "Numbers 6:27",
+      "varika_word": "אֲבָרְﬞכֵֽם",
+      "xataf_word": "אֲבָרֲכֵֽם",
+      "match_kind": "sigla=word",
+      "sigla": "ל,ל1,ב"
+    },
+    {
+      "ref": "Numbers 16:32",
+      "varika_word": "כׇּל־הָרְﬞכֽוּשׁ",
+      "xataf_word": "כׇּל־הָרֲכֽוּשׁ",
+      "match_kind": "sigla=word",
+      "sigla": "ל,ב"
+    },
+    {
+      "ref": "Numbers 18:10",
+      "varika_word": "תֹּאכְﬞלֶ֑נּוּ",
+      "xataf_word": "תֹּאכֲלֶ֑נּוּ",
+      "match_kind": "sigla=word",
+      "sigla": "ל,ב,ק3"
+    },
+    {
+      "ref": "Numbers 18:13",
+      "varika_word": "יֹאכְﬞלֶֽנּוּ",
+      "xataf_word": "יֹאכֲלֶֽנּוּ",
+      "match_kind": "sigla=word",
+      "sigla": "ל,ב,ק3"
+    },
+    {
+      "ref": "Numbers 23:18",
+      "varika_word": "וּֽשְׁﬞמָ֔ע",
+      "xataf_word": "וּֽשֲׁמָ֔ע",
+      "match_kind": "sigla=word",
+      "sigla": "ל,ל1,ב,ק3,ו?"
+    },
+    {
+      "ref": "Numbers 23:25",
+      "varika_word": "תְבָרְﬞכֶֽנּוּ",
+      "xataf_word": "תְבָרֲכֶֽנּוּ",
+      "match_kind": "sigla=word",
+      "sigla": "ל,ל1,ב"
+    },
+    {
+      "ref": "Numbers 24:9",
+      "varika_word": "מְבָרְﬞכֶ֣יךָ",
+      "xataf_word": "מְבָרֲכֶ֣יךָ",
+      "match_kind": "sigla=word",
+      "sigla": "ל,ב"
+    },
+    {
+      "ref": "Numbers 25:18",
+      "varika_word": "צֹרְﬞרִ֥ים",
+      "xataf_word": "צֹרֲרִ֥ים",
+      "match_kind": "sigla=word",
+      "sigla": "א(ס),ב"
+    },
+    {
+      "ref": "Numbers 32:35",
+      "varika_word": "וְיׇגְבְּﬞהָֽה",
+      "xataf_word": "וְיָגְבֳּהָֽה",
+      "match_kind": "sigla=word",
+      "sigla": "ל"
+    },
+    {
+      "ref": "Numbers 33:55",
+      "varika_word": "וְצָרְﬞר֣וּ",
+      "xataf_word": "וְצָרֲר֣וּ",
+      "match_kind": "sigla=word",
+      "sigla": "ל,ב,ל3"
+    },
+    {
+      "ref": "Deuter 5:23",
+      "varika_word": "וּֽשְׁﬞמָ֔ע",
+      "xataf_word": "וּֽשֲׁמָ֔ע",
+      "match_kind": "sigla=word",
+      "sigla": "א(צילום)?,ל,ל1,ק3"
+    },
+    {
+      "ref": "Deuter 8:2",
+      "varika_word": "הוֹלִֽיכְﬞךָ֜",
+      "xataf_word": "הֹלִֽיכֲךָ֜",
+      "match_kind": "sigla=word",
+      "sigla": "ל"
+    },
+    {
+      "ref": "Deuter 8:15",
+      "varika_word": "הַמּוֹלִ֨יכְﬞךָ֜",
+      "xataf_word": "הַמּוֹלִ֨יכֲךָ֜",
+      "match_kind": "sigla=word",
+      "sigla": "ל,ק3,ל9"
+    },
+    {
+      "ref": "Deuter 15:20",
+      "varika_word": "תֹאכְﬞלֶ֙נּוּ֙",
+      "xataf_word": "תֹאכֲלֶ֙נּוּ֙",
+      "match_kind": "sigla=word",
+      "sigla": "ל,ק3"
+    },
+    {
+      "ref": "Deuter 24:13",
+      "varika_word": "וּבֵֽרְﬞכֶ֑ךָּ",
+      "xataf_word": "וּבֵֽרֲכֶ֑ךָּ",
+      "match_kind": "sigla=word",
+      "sigla": "ל,ל1,ש1,ל9"
+    },
+    {
+      "ref": "Deuter 28:39",
+      "varika_word": "תֹאכְﬞלֶ֖נּוּ",
+      "xataf_word": "תֹאכֲלֶ֖נּוּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Deuter 29:7",
+      "varika_word": "הַֽמְﬞנַשִּֽׁי",
+      "xataf_word": "הַֽמֲנַשִּֽׁי",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Deuter 32:18",
+      "varika_word": "מְחֹלְﬞלֶֽךָ",
+      "xataf_word": "מְחֹלֲלֶֽךָ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Deuter 32:36",
+      "varika_word": "כִּֽי־אָ֣זְﬞלַת",
+      "xataf_word": "כִּֽי־אָ֣זֲלַת",
+      "match_kind": "sigla=word",
+      "sigla": "א,ל3"
+    },
+    {
+      "ref": "Joshua 1:12",
+      "varika_word": "הַֽמְﬞנַשֶּׁ֑ה",
+      "xataf_word": "הַֽמֲנַשֶּׁ֑ה",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Joshua 4:12",
+      "varika_word": "הַֽמְﬞנַשֶּׁה֙",
+      "xataf_word": "הַֽמֲנַשֶּׁה֙",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Joshua 6:9",
+      "varika_word": "וְהַֽמְﬞאַסֵּ֗ף",
+      "xataf_word": "וְהַֽמֲאַסֵּ֗ף",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Joshua 6:13",
+      "varika_word": "וְהַֽמְﬞאַסֵּ֗ף",
+      "xataf_word": "וְהַֽמֲאַסֵּ֗ף",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Joshua 6:15",
+      "varika_word": "סָבְﬞב֥וּ",
+      "xataf_word": "סָבֲב֥וּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Joshua 6:22",
+      "varika_word": "הַֽמְﬞרַגְּלִ֤ים",
+      "xataf_word": "הַֽמֲרַגְּלִ֤ים",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Joshua 6:23",
+      "varika_word": "הַֽמְﬞרַגְּלִ֗ים",
+      "xataf_word": "הַֽמֲרַגְּלִ֗ים",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Joshua 8:27",
+      "varika_word": "בָּֽזְﬞז֥וּ",
+      "xataf_word": "בָּֽזֲז֥וּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Joshua 11:2",
+      "varika_word": "כִּֽנְﬞר֖וֹת",
+      "xataf_word": "כִּֽנֲר֖וֹת",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Joshua 11:14",
+      "varika_word": "בָּזְﬞז֥וּ",
+      "xataf_word": "בָּזֲז֥וּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Joshua 12:6",
+      "varika_word": "הַֽמְﬞנַשֶּֽׁה",
+      "xataf_word": "הַֽמֲנַשֶּֽׁה",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Joshua 13:7",
+      "varika_word": "הַֽמְﬞנַשֶּֽׁה",
+      "xataf_word": "הַֽמֲנַשֶּֽׁה",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Joshua 14:13",
+      "varika_word": "וַֽיְבָרְﬞכֵ֖הוּ",
+      "xataf_word": "וַֽיְבָרֲכֵ֖הוּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Joshua 17:14",
+      "varika_word": "בֵּרְﬞכַ֥נִי",
+      "xataf_word": "בֵּרֲכַ֥נִי",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Joshua 18:7",
+      "varika_word": "הַֽמְﬞנַשֶּׁ֜ה",
+      "xataf_word": "הַֽמֲנַשֶּׁ֜ה",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Joshua 21:4",
+      "varika_word": "הַקְּﬞהָתִ֑י",
+      "xataf_word": "הַקֳּהָתִ֑י",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Joshua 21:5",
+      "varika_word": "קְﬞהָ֜ת",
+      "xataf_word": "קֳהָ֜ת",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Joshua 21:10",
+      "varika_word": "הַקְּﬞהָתִ֖י",
+      "xataf_word": "הַקֳּהָתִ֖י",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Joshua 21:20",
+      "varika_word": "בְּנֵֽי־קְﬞהָת֙",
+      "xataf_word": "בְּנֵֽי־קֳהָת֙",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Joshua 21:20",
+      "varika_word": "קְﬞהָ֑ת",
+      "xataf_word": "קֳהָ֑ת",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Joshua 21:26",
+      "varika_word": "בְּנֵי־קְﬞהָ֖ת",
+      "xataf_word": "בְּנֵי־קֳהָ֖ת",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Joshua 21:34",
+      "varika_word": "אֶֽת־יׇקְנְﬞעָ֖ם",
+      "xataf_word": "אֶֽת־יָקְנֳעָ֖ם",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Joshua 22:6",
+      "varika_word": "וַֽיְבָרְﬞכֵ֖ם",
+      "xataf_word": "וַֽיְבָרֲכֵ֖ם",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Joshua 22:7",
+      "varika_word": "וַֽיְבָרְﬞכֵֽם",
+      "xataf_word": "וַֽיְבָרֲכֵֽם",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Joshua 22:21",
+      "varika_word": "הַֽמְﬞנַשֶּׁ֑ה",
+      "xataf_word": "הַֽמֲנַשֶּׁ֑ה",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Joshua 22:33",
+      "varika_word": "וַיְבָרְﬞכ֥וּ",
+      "xataf_word": "וַיְבָרֲכ֥וּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Judges 3:26",
+      "varika_word": "הִֽתְמַהְמְﬞהָ֑ם",
+      "xataf_word": "הִֽתְמַהְמֳהָ֑ם",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Judges 5:2",
+      "varika_word": "בָּֽרְﬞכ֖וּ",
+      "xataf_word": "בָּֽרֲכ֖וּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Judges 5:9",
+      "varika_word": "לְחוֹקְﬞקֵ֣י",
+      "xataf_word": "לְחוֹקֲקֵ֣י",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Judges 5:9",
+      "varika_word": "בָּרְﬞכ֖וּ",
+      "xataf_word": "בָּרֲכ֖וּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Judges 5:11",
+      "varika_word": "מְחַֽצְﬞצִ֗ים",
+      "xataf_word": "מְחַֽצֲצִ֗ים",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Judges 5:12",
+      "varika_word": "וּֽשְׁﬞבֵ֥ה",
+      "xataf_word": "וּֽשֲׁבֵ֥ה",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Judges 5:14",
+      "varika_word": "מְחֹ֣קְﬞקִ֔ים",
+      "xataf_word": "מְחֹ֣קֲקִ֔ים",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Judges 7:6",
+      "varika_word": "הַֽמְלַקְﬞקִ֤ים",
+      "xataf_word": "הַֽמְלַקֲקִ֤ים",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Judges 7:7",
+      "varika_word": "הַֽמְﬞלַֽקְﬞקִים֙",
+      "xataf_word": "הַֽמֲלַֽקֲקִים֙",
+      "match_kind": "sigla=word",
+      "sigla": "א",
+      "varika-count": 2
+    },
+    {
+      "ref": "Judges 8:2",
+      "varika_word": "עֹלְﬞל֥וֹת",
+      "xataf_word": "עֹלֲל֥וֹת",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Judges 9:13",
+      "varika_word": "הַֽמְﬞשַׂמֵּ֥חַ",
+      "xataf_word": "הַֽמֲשַׂמֵּ֥חַ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Judges 9:37",
+      "varika_word": "מְעוֹנְﬞנִֽים",
+      "xataf_word": "מְעוֹנֲנִֽים",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Judges 9:54",
+      "varika_word": "וּמ֣וֹתְﬞתֵ֔נִי",
+      "xataf_word": "וּמ֣וֹתֲתֵ֔נִי",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Judges 9:57",
+      "varika_word": "קִֽלְﬞלַ֖ת",
+      "xataf_word": "קִֽלֲלַ֖ת",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Judges 10:8",
+      "varika_word": "וַיְרֹֽצְﬞצוּ֙",
+      "xataf_word": "וַיְרֹֽצֲצוּ֙",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Judges 13:24",
+      "varika_word": "וַֽיְבָרְﬞכֵ֖הוּ",
+      "xataf_word": "וַֽיְבָרֲכֵ֖הוּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Judges 16:16",
+      "varika_word": "וַתְּאַֽלְﬞצֵ֑הוּ",
+      "xataf_word": "וַתְּאַֽלֲצֵ֑הוּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Judges 16:24",
+      "varika_word": "וַֽיְהַלְﬞל֖וּ",
+      "xataf_word": "וַֽיְהַלֲל֖וּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Judges 20:31",
+      "varika_word": "בַּֽמְﬞסִלּוֹת֙",
+      "xataf_word": "בַּֽמֲסִלּוֹת֙",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Judges 20:32",
+      "varika_word": "אֶל־הַֽמְﬞסִלּֽוֹת",
+      "xataf_word": "אֶל־הַֽמֲסִלּֽוֹת",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Judges 20:45",
+      "varika_word": "וַיְעֹלְﬞלֻ֙הוּ֙",
+      "xataf_word": "וַיְעֹלֲלֻ֙הוּ֙",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Judges 20:45",
+      "varika_word": "בַּֽמְﬞסִלּ֔וֹת",
+      "xataf_word": "בַּֽמֲסִלּ֔וֹת",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Judges 21:23",
+      "varika_word": "מִן־הַמְּחֹלְﬞל֖וֹת",
+      "xataf_word": "מִן־הַמְּחֹלֲל֖וֹת",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "1Samuel 2:25",
+      "varika_word": "וּפִֽלְﬞל֣וֹ",
+      "xataf_word": "וּפִֽלֲל֣וֹ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "1Samuel 3:13",
+      "varika_word": "כִּֽי־מְקַלְﬞלִ֤ים",
+      "xataf_word": "כִּֽי־מְקַלֲלִ֤ים",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "1Samuel 4:17",
+      "varika_word": "הַֽמְﬞבַשֵּׂ֜ר",
+      "xataf_word": "הַֽמֲבַשֵּׂ֜ר",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "1Samuel 7:3",
+      "varika_word": "מִתּוֹכְﬞכֶ֖ם",
+      "xataf_word": "מִתּוֹכֲכֶ֖ם",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "1Samuel 9:6",
+      "varika_word": "נֵ֣לְﬞכָה",
+      "xataf_word": "נֵ֣לֲכָה",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "1Samuel 13:10",
+      "varika_word": "לְבָרְﬞכֽוֹ",
+      "xataf_word": "לְבָרֲכֽוֹ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "1Samuel 17:51",
+      "varika_word": "וַיְמֹ֣תְﬞתֵ֔הוּ",
+      "xataf_word": "וַיְמֹ֣תֲתֵ֔הוּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "1Samuel 17:52",
+      "varika_word": "חַֽלְﬞלֵ֤י",
+      "xataf_word": "חַֽלֲלֵ֤י",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "1Samuel 18:23",
+      "varika_word": "הַֽנְﬞקַלָּ֤ה",
+      "xataf_word": "הַֽנֲקַלָּ֤ה",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "1Samuel 24:10",
+      "varika_word": "לַהֲרָגְﬞךָ֖",
+      "xataf_word": "לַהֲרָגֲךָ֖",
+      "match_kind": "sigla=word",
+      "sigla": "א,ל"
+    },
+    {
+      "ref": "1Samuel 25:7",
+      "varika_word": "גֹזְﬞזִ֖ים",
+      "xataf_word": "גֹזֲזִ֖ים",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "1Samuel 25:11",
+      "varika_word": "לְגֹֽזְﬞזָ֑י",
+      "xataf_word": "לְגֹֽזֲזָ֑י",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "1Samuel 25:26",
+      "varika_word": "וְהַֽמְﬞבַקְשִׁ֥ים",
+      "xataf_word": "וְהַֽמֲבַקְשִׁ֥ים",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "1Samuel 26:11",
+      "varika_word": "וְנֵלְﬞכָה־לָּֽנוּ",
+      "xataf_word": "וְנֵלֲכָה־לָּֽנוּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "1Samuel 30:16",
+      "varika_word": "וְחֹ֣גְﬞגִ֔ים",
+      "xataf_word": "וְחֹ֣גֲגִ֔ים",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "2Samuel 1:9",
+      "varika_word": "וּמֹ֣תְﬞתֵ֔נִי",
+      "xataf_word": "וּמֹ֣תֲתֵ֔נִי",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "2Samuel 8:10",
+      "varika_word": "וּֽלְבָרְﬞכ֗וֹ",
+      "xataf_word": "וּֽלְבָרֲכ֗וֹ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "2Samuel 10:3",
+      "varika_word": "הַֽמְﬞכַבֵּ֨ד",
+      "xataf_word": "הַֽמֲכַבֵּ֨ד",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "2Samuel 13:23",
+      "varika_word": "גֹֽזְﬞזִים֙",
+      "xataf_word": "גֹֽזֲזִים֙",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "2Samuel 13:25",
+      "varika_word": "וַֽיְבָרְﬞכֵֽהוּ",
+      "xataf_word": "וַֽיְבָרֲכֵֽהוּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "2Samuel 14:10",
+      "varika_word": "הַֽמְﬞדַבֵּ֤ר",
+      "xataf_word": "הַֽמֲדַבֵּ֤ר",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "2Samuel 15:7",
+      "varika_word": "אֵ֣לְﬞכָה",
+      "xataf_word": "אֵ֣לֲכָה",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "2Samuel 16:7",
+      "varika_word": "בְּקַֽלְﬞל֑וֹ",
+      "xataf_word": "בְּקַֽלֲל֑וֹ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "2Samuel 19:6",
+      "varika_word": "הַֽמְﬞמַלְּטִ֤ים",
+      "xataf_word": "הַֽמֲמַלְּטִ֤ים",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "2Samuel 19:40",
+      "varika_word": "וַיְבָ֣רְﬞכֵ֔הוּ",
+      "xataf_word": "וַיְבָ֣רֲכֵ֔הוּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "2Samuel 20:12",
+      "varika_word": "הַֽמְﬞסִלָּ֑ה",
+      "xataf_word": "הַֽמֲסִלָּ֑ה",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "2Samuel 20:12",
+      "varika_word": "מִן־הַֽמְﬞסִלָּ֤ה",
+      "xataf_word": "מִן־הַֽמֲסִלָּ֤ה",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "2Samuel 20:13",
+      "varika_word": "מִן־הַֽמְﬞסִלָּ֑ה",
+      "xataf_word": "מִן־הַֽמֲסִלָּ֑ה",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "2Samuel 20:15",
+      "varika_word": "סֹֽלְﬞלָה֙",
+      "xataf_word": "סֹֽלֲלָה֙",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "2Samuel 21:3",
+      "varika_word": "וּבָרְﬞכ֖וּ",
+      "xataf_word": "וּבָרֲכ֖וּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "2Samuel 22:12",
+      "varika_word": "חַֽשְׁﬞרַת־מַ֖יִם",
+      "xataf_word": "חַֽשֲׁרַת־מַ֖יִם",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "1Kings 4:12",
+      "varika_word": "לְיׇקְמְﬞעָֽם",
+      "xataf_word": "לְיָקְמֳעָֽם",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "1Kings 6:37",
+      "varika_word": "הָרְﬞבִיעִ֔ית",
+      "xataf_word": "הָרֲבִיעִ֔ית",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "1Kings 7:24",
+      "varika_word": "סֹבְﬞבִ֣ים",
+      "xataf_word": "סֹבֲבִ֣ים",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "1Kings 8:35",
+      "varika_word": "וְהִֽתְפַּלְﬞל֞וּ",
+      "xataf_word": "וְהִֽתְפַּלֲל֞וּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "1Kings 8:44",
+      "varika_word": "וְהִתְפַּלְﬞל֣וּ",
+      "xataf_word": "וְהִתְפַּלֲל֣וּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "1Kings 8:48",
+      "varika_word": "וְהִתְפַּלְﬞל֣וּ",
+      "xataf_word": "וְהִתְפַּלֲל֣וּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "1Kings 8:66",
+      "varika_word": "וַֽיְבָרְﬞכ֖וּ",
+      "xataf_word": "וַֽיְבָרֲכ֖וּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "1Kings 13:7",
+      "varika_word": "וּֽסְﬞעָ֑דָה",
+      "xataf_word": "וּֽסֳעָ֑דָה",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "1Kings 14:21",
+      "varika_word": "וּֽשְׁﬞבַ֨ע",
+      "xataf_word": "וּֽשֲׁבַ֨ע",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "1Kings 17:11",
+      "varika_word": "לִֽקְﬞחִי־נָ֥א",
+      "xataf_word": "לִֽקְִחִי־נָ֥א",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "1Kings 18:28",
+      "varika_word": "וַיִּתְגֹּֽדְﬞדוּ֙",
+      "xataf_word": "וַיִּתְגֹּֽדֲדוּ֙",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "1Kings 21:19",
+      "varika_word": "לָקְﬞק֤וּ",
+      "xataf_word": "לָקֲק֤וּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "1Kings 21:20",
+      "varika_word": "הַֽמְﬞצָאתַ֖נִי",
+      "xataf_word": "הַֽמֲצָאתַ֖נִי",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "2Kings 2:1",
+      "varika_word": "בַּֽסְﬞעָרָ֖ה",
+      "xataf_word": "בַּֽסֳעָרָ֖ה",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "2Kings 2:11",
+      "varika_word": "בַּֽסְﬞעָרָ֖ה",
+      "xataf_word": "בַּֽסֳעָרָ֖ה",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "2Kings 2:24",
+      "varika_word": "וַֽיְקַלְﬞלֵ֖ם",
+      "xataf_word": "וַֽיְקַלֲלֵ֖ם",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "2Kings 3:15",
+      "varika_word": "הַֽמְﬞנַגֵּ֔ן",
+      "xataf_word": "הַֽמֲנַגֵּ֔ן",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "2Kings 4:29",
+      "varika_word": "תְבָרְﬞכֶ֔נּוּ",
+      "xataf_word": "תְבָרֲכֶ֔נּוּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "2Kings 6:2",
+      "varika_word": "נֵלְﬞכָה־נָּ֣א",
+      "xataf_word": "נֵלֲכָה־נָּ֣א",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "2Kings 6:28",
+      "varika_word": "וְנֹאכְﬞלֶ֣נּוּ",
+      "xataf_word": "וְנֹאכֲלֶ֣נּוּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "2Kings 6:29",
+      "varika_word": "וְנֹ֣אכְﬞלֶ֔נּוּ",
+      "xataf_word": "וְנֹ֣אכֲלֶ֔נּוּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "2Kings 6:32",
+      "varika_word": "בֶּן־הַֽמְﬞרַצֵּ֤חַ",
+      "xataf_word": "בֶּן־הַֽמֲרַצֵּ֤חַ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "2Kings 7:8",
+      "varika_word": "הַֽמְﬞצֹרָעִ֨ים",
+      "xataf_word": "הַֽמֲצֹרָעִ֨ים",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "2Kings 8:12",
+      "varika_word": "וְעֹלְﬞלֵיהֶ֣ם",
+      "xataf_word": "וְעֹלֲלֵיהֶ֣ם",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "2Kings 9:17",
+      "varika_word": "וּֽשְׁﬞלַ֥ח",
+      "xataf_word": "וּֽשֲׁלַ֥ח",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "2Kings 10:15",
+      "varika_word": "וַֽיְבָרְﬞכֵ֗הוּ",
+      "xataf_word": "וַֽיְבָרֲכֵ֗הוּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "2Kings 10:33",
+      "varika_word": "וְהַֽמְﬞנַשִּׁ֑י",
+      "xataf_word": "וְהַֽמֲנַשִּׁ֑י",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "2Kings 12:12",
+      "varika_word": "הַֽמְﬞתֻכָּ֔ן",
+      "xataf_word": "הַֽמֲתֻכָּ֔ן",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "2Kings 19:16",
+      "varika_word": "וּֽשְׁﬞמָ֔ע",
+      "xataf_word": "וּֽשֲׁמָ֔ע",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Isaiah 1:23",
+      "varika_word": "סוֹרְﬞרִ֗ים",
+      "xataf_word": "סוֹרֲרִ֗ים",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Isaiah 1:30",
+      "varika_word": "וּֽכְﬞגַנָּ֔ה",
+      "xataf_word": "וּֽכֲגַנָּ֔ה",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Isaiah 2:6",
+      "varika_word": "וְעֹנְﬞנִ֖ים",
+      "xataf_word": "וְעֹנֲנִ֖ים",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Isaiah 10:1",
+      "varika_word": "הַחֹֽקְﬞקִ֖ים",
+      "xataf_word": "הַחֹֽקֲקִ֖ים",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Isaiah 10:31",
+      "varika_word": "נָֽדְﬞדָ֖ה",
+      "xataf_word": "נָֽדֲדָ֖ה",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Isaiah 11:13",
+      "varika_word": "וְצֹרְﬞרֵ֥י",
+      "xataf_word": "וְצֹרֲרֵ֥י",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Isaiah 17:14",
+      "varika_word": "לְבֹזְﬞזֵֽינוּ",
+      "xataf_word": "לְבֹזֲזֵֽינוּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Isaiah 19:6",
+      "varika_word": "דָּלְﬞל֥וּ",
+      "xataf_word": "דָּלֲל֥וּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Isaiah 19:25",
+      "varika_word": "בֵּרְﬞכ֛וֹ",
+      "xataf_word": "בֵּרֲכ֛וֹ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Isaiah 21:6",
+      "varika_word": "הַֽמְﬞצַפֶּ֔ה",
+      "xataf_word": "הַֽמֲצַפֶּ֔ה",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Isaiah 22:3",
+      "varika_word": "נָֽדְﬞדוּ־יַ֖חַד",
+      "xataf_word": "נָֽדֲדוּ־יַ֖חַד",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Isaiah 22:16",
+      "varika_word": "חֹקְﬞקִ֥י",
+      "xataf_word": "חֹקֲקִ֥י",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Isaiah 23:13",
+      "varika_word": "עֽוֹרְﬞרוּ֙",
+      "xataf_word": "עֽוֹרֲרוּ֙",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Isaiah 24:19",
+      "varika_word": "הִֽתְפּוֹרְﬞרָה֙",
+      "xataf_word": "הִֽתְפּוֹרֲרָה֙",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Isaiah 24:19",
+      "varika_word": "הִֽתְמוֹטְﬞטָ֖ה",
+      "xataf_word": "הִֽתְמוֹטֲטָ֖ה",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Isaiah 24:20",
+      "varika_word": "וְהִֽתְנוֹדְﬞדָ֖ה",
+      "xataf_word": "וְהִֽתְנוֹדֲדָ֖ה",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Isaiah 26:20",
+      "varika_word": "וּֽסְﬞגֹ֥ר",
+      "xataf_word": "וּֽסֲגֹ֥ר",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Isaiah 27:8",
+      "varika_word": "בְּסַאסְּﬞאָ֖ה",
+      "xataf_word": "בְּסַאסֳּאָ֖ה",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Isaiah 30:1",
+      "varika_word": "סֽוֹרְﬞרִים֙",
+      "xataf_word": "סֽוֹרֲרִים֙",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Isaiah 31:8",
+      "varika_word": "תֹּאכְﬞלֶ֑נּוּ",
+      "xataf_word": "תֹּאכֲלֶ֑נּוּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Isaiah 33:3",
+      "varika_word": "נָדְﬞד֖וּ",
+      "xataf_word": "נָדֲד֖וּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Isaiah 33:22",
+      "varika_word": "מְחֹקְﬞקֵ֑נוּ",
+      "xataf_word": "מְחֹקֲקֵ֑נוּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Isaiah 33:23",
+      "varika_word": "בָּ֥זְﬞזוּ",
+      "xataf_word": "בָּ֥זֲזוּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Isaiah 34:16",
+      "varika_word": "וּֽקְﬞרָ֔אוּ",
+      "xataf_word": "וּֽקֲרָ֔אוּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Isaiah 37:17",
+      "varika_word": "וּֽשְׁﬞמָ֔ע",
+      "xataf_word": "וּֽשֲׁמָ֔ע",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Isaiah 37:33",
+      "varika_word": "סֹלְﬞלָֽה",
+      "xataf_word": "סֹלֲלָֽה",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Isaiah 38:18",
+      "varika_word": "יְהַלְﬞלֶ֑ךָּ",
+      "xataf_word": "יְהַלֲלֶ֑ךָּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Isaiah 40:4",
+      "varika_word": "וְהָרְﬞכָסִ֖ים",
+      "xataf_word": "וְהָרֲכָסִ֖ים",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Isaiah 40:20",
+      "varika_word": "הַֽמְﬞסֻכָּ֣ן",
+      "xataf_word": "הַֽמֲסֻכָּ֣ן",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Isaiah 42:24",
+      "varika_word": "לְבֹזְﬞזִ֖ים",
+      "xataf_word": "לְבֹזֲזִ֖ים",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Isaiah 45:14",
+      "varika_word": "וּֽסְﬞחַר־כּוּשׁ֮",
+      "xataf_word": "וּֽסֲחַר־כּוּשׁ֮",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Isaiah 45:18",
+      "varika_word": "כֽוֹנְﬞנָ֔הּ",
+      "xataf_word": "כֽוֹנֲנָ֔הּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Isaiah 45:20",
+      "varika_word": "וּמִֽתְפַּלְﬞלִ֔ים",
+      "xataf_word": "וּמִֽתְפַּלֲלִ֔ים",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Isaiah 47:10",
+      "varika_word": "שׁוֹבְﬞבָ֑תֶךְ",
+      "xataf_word": "שׁוֹבֲבָ֑תֶךְ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Isaiah 48:14",
+      "varika_word": "וּֽשְׁﬞמָ֔עוּ",
+      "xataf_word": "וּֽשֲׁמָ֔עוּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Isaiah 48:17",
+      "varika_word": "מַדְרִֽיכְﬞךָ֖",
+      "xataf_word": "מַדְרִֽיכֲךָ֖",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Isaiah 51:2",
+      "varika_word": "וַאֲבָרְﬞכֵ֖הוּ",
+      "xataf_word": "וַאֲבָרֲכֵ֖הוּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Isaiah 51:17",
+      "varika_word": "הִתְעוֹרְﬞרִ֣י",
+      "xataf_word": "הִתְעוֹרֲרִ֣י",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Isaiah 51:17",
+      "varika_word": "הִֽתְעוֹרְﬞרִ֗י",
+      "xataf_word": "הִֽתְעוֹרֲרִ֗י",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Isaiah 51:20",
+      "varika_word": "הַֽמְﬞלֵאִ֥ים",
+      "xataf_word": "הַֽמֲלֵאִ֥ים",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Isaiah 52:6",
+      "varika_word": "הַֽמְﬞדַבֵּ֖ר",
+      "xataf_word": "הַֽמֲדַבֵּ֖ר",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Isaiah 53:7",
+      "varika_word": "גֹזְﬞזֶ֖יהָ",
+      "xataf_word": "גֹזֲזֶ֖יהָ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Isaiah 57:3",
+      "varika_word": "עֹנְﬞנָ֑ה",
+      "xataf_word": "עֹנֲנָ֑ה",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Isaiah 57:20",
+      "varika_word": "וְהָרְﬞשָׁעִ֖ים",
+      "xataf_word": "וְהָרֲשָׁעִ֖ים",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Isaiah 58:9",
+      "varika_word": "מִתּֽוֹכְﬞךָ֙",
+      "xataf_word": "מִתּֽוֹכֲךָ֙",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Isaiah 59:10",
+      "varika_word": "נְגַשְׁﬞשָׁ֤ה",
+      "xataf_word": "נְגַשֲׁשָׁ֤ה",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Isaiah 59:19",
+      "varika_word": "נֹ֥סְﬞסָה",
+      "xataf_word": "נֹ֥סֲסָה",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Isaiah 62:9",
+      "varika_word": "וְהִֽלְﬞל֖וּ",
+      "xataf_word": "וְהִֽלֲל֖וּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Isaiah 62:10",
+      "varika_word": "הַֽמְﬞסִלָּה֙",
+      "xataf_word": "הַֽמֲסִלָּה֙",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Isaiah 63:18",
+      "varika_word": "בּוֹסְﬞס֖וּ",
+      "xataf_word": "בּוֹסֲס֖וּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Isaiah 64:10",
+      "varika_word": "הִֽלְﬞל֙וּךָ֙",
+      "xataf_word": "הִֽלֲל֙וּךָ֙",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Isaiah 65:11",
+      "varika_word": "וְהַֽמְﬞמַלְאִ֖ים",
+      "xataf_word": "וְהַֽמֲמַלְאִ֖ים",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Isaiah 66:16",
+      "varika_word": "חַֽלְﬞלֵ֥י",
+      "xataf_word": "חַֽלֲלֵ֥י",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Jeremiah 3:25",
+      "varika_word": "וּֽתְﬞכַסֵּ֘נוּ֮",
+      "xataf_word": "וּֽתֲכַסֵּנוּ֮",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Jeremiah 4:7",
+      "varika_word": "מִֽסֻּבְּﬞכ֔וֹ",
+      "xataf_word": "מִֽסֻּבֲּכ֔וֹ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Jeremiah 5:1",
+      "varika_word": "שׁוֹטְﬞט֞וּ",
+      "xataf_word": "שׁוֹטֲט֞וּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Jeremiah 5:5",
+      "varika_word": "אֵֽלְﬞכָה־לִּ֤י",
+      "xataf_word": "אֵֽלֲכָה־לִּ֤י",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Jeremiah 6:6",
+      "varika_word": "סֹֽלְﬞלָ֑ה",
+      "xataf_word": "סֹֽלֲלָ֑ה",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Jeremiah 6:9",
+      "varika_word": "יְעוֹלְﬞל֥וּ",
+      "xataf_word": "יְעוֹלֲל֥וּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Jeremiah 6:28",
+      "varika_word": "סוֹרְﬞרִ֔ים",
+      "xataf_word": "סוֹרֲרִ֔ים",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Jeremiah 7:11",
+      "varika_word": "הַֽמְﬞעָרַ֣ת",
+      "xataf_word": "הַֽמֳעָרַ֣ת",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Jeremiah 8:5",
+      "varika_word": "שׁוֹבְﬞבָ֜ה",
+      "xataf_word": "שׁוֹבֲבָ֜ה",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Jeremiah 8:23",
+      "varika_word": "חַֽלְﬞלֵ֥י",
+      "xataf_word": "חַֽלֲלֵ֥י",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Jeremiah 9:9",
+      "varika_word": "נָדְﬞד֖וּ",
+      "xataf_word": "נָדֲד֖וּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Jeremiah 9:16",
+      "varika_word": "לַמְקוֹנְﬞנ֖וֹת",
+      "xataf_word": "לַמְקוֹנֲנ֖וֹת",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Jeremiah 11:15",
+      "varika_word": "הַֽמְﬞזִמָּ֙תָה֙",
+      "xataf_word": "הַֽמֲזִמָּ֙תָה֙",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Jeremiah 11:21",
+      "varika_word": "הַֽמְﬞבַקְשִׁ֥ים",
+      "xataf_word": "הַֽמֲבַקְשִׁ֥ים",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Jeremiah 12:10",
+      "varika_word": "בֹּסְﬞס֖וּ",
+      "xataf_word": "בֹּסֲס֖וּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Jeremiah 12:12",
+      "varika_word": "שֹֽׁדְﬞדִ֔ים",
+      "xataf_word": "שֹֽׁדֲדִ֔ים",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Jeremiah 20:17",
+      "varika_word": "לֹא־מוֹתְﬞתַ֖נִי",
+      "xataf_word": "לֹא־מוֹתֲתַ֖נִי",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Jeremiah 22:15",
+      "varika_word": "הֲתִֽמְﬞלֹ֔ךְ",
+      "xataf_word": "הֲתִֽמֲלֹ֔ךְ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Jeremiah 22:20",
+      "varika_word": "וּֽצְﬞעָ֔קִי",
+      "xataf_word": "וּֽצֳעָ֔קִי",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Jeremiah 22:28",
+      "varika_word": "הֽוּטְﬞלוּ֙",
+      "xataf_word": "הֽוּטֲלוּ֙",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Jeremiah 25:33",
+      "varika_word": "חַֽלְﬞלֵ֤י",
+      "xataf_word": "חַֽלֲלֵ֤י",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Jeremiah 25:36",
+      "varika_word": "וִֽילְﬞלַ֖ת",
+      "xataf_word": "וִֽילֲלַ֖ת",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Jeremiah 31:32",
+      "varika_word": "אֶכְתְּﬞבֶ֑נָּה",
+      "xataf_word": "אֶכְתֲּבֶ֑נָּה",
+      "match_kind": "sigla=word",
+      "sigla": "ל"
+    },
+    {
+      "ref": "Jeremiah 32:9",
+      "varika_word": "וָֽאֶשְׁקְﬞלָה־לּוֹ֙",
+      "xataf_word": "וָֽאֶשְׁקֲלָה־לּוֹ֙",
+      "match_kind": "sigla=word",
+      "sigla": "ל,ק"
+    },
+    {
+      "ref": "Jeremiah 33:10",
+      "varika_word": "הַֽנְﬞשַׁמּ֗וֹת",
+      "xataf_word": "הַֽנֲשַׁמּ֗וֹת",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Jeremiah 40:15",
+      "varika_word": "אֵ֤לְﬞכָה",
+      "xataf_word": "אֵ֤לֲכָה",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Jeremiah 41:5",
+      "varika_word": "וּמִתְגֹּֽדְﬞדִ֑ים",
+      "xataf_word": "וּמִתְגֹּֽדֲדִ֑ים",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Jeremiah 44:9",
+      "varika_word": "הַֽשְׁﬞכַחְתֶּם֩",
+      "xataf_word": "הַֽשֲׁכַחְתֶּם֩",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Jeremiah 46:9",
+      "varika_word": "וְהִתְהֹלְﬞל֣וּ",
+      "xataf_word": "וְהִתְהֹלֲל֣וּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Jeremiah 48:20",
+      "varika_word": "הֵילִ֣ילוּוּֽזְﬞעָ֑קוּ",
+      "xataf_word": "וּֽזֳעָ֑קיּ",
+      "match_kind": "sigla=word",
+      "sigla": "א-כתיב"
+    },
+    {
+      "ref": "Jeremiah 49:4",
+      "varika_word": "מַה־תִּתְהַֽלְﬞלִי֙",
+      "xataf_word": "מַה־תִּתְהַֽלֲלִי֙",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Jeremiah 50:6",
+      "varika_word": "שׁוֹבְﬞב֑וּם",
+      "xataf_word": "שׁוֹבֲב֑יּם",
+      "match_kind": "sigla=word",
+      "sigla": "א-כתיב"
+    },
+    {
+      "ref": "Jeremiah 50:10",
+      "varika_word": "כׇּל־שֹׁלְﬞלֶ֥יהָ",
+      "xataf_word": "כָּל־שֹׁלֲלֶ֥יהָ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Jeremiah 51:2",
+      "varika_word": "וִיבֹקְﬞק֖וּ",
+      "xataf_word": "וִיבֹקֲק֖וּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Jeremiah 51:7",
+      "varika_word": "יִתְהֹלְﬞל֥וּ",
+      "xataf_word": "יִתְהֹלֲל֥וּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Jeremiah 51:49",
+      "varika_word": "חַֽלְﬞלֵ֥י",
+      "xataf_word": "חַֽלֲלֵ֥י",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Jeremiah 51:53",
+      "varika_word": "שֹׁדְﬞדִ֛ים",
+      "xataf_word": "שֹׁדֲדִ֛ים",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Ezekiel 1:7",
+      "varika_word": "וְנֹ֣צְﬞצִ֔ים",
+      "xataf_word": "וְנֹ֣צֲצִ֔ים",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Ezekiel 3:18",
+      "varika_word": "הָרְﬞשָׁעָ֖ה",
+      "xataf_word": "הָרֲשָׁעָ֖ה",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Ezekiel 3:19",
+      "varika_word": "הָרְﬞשָׁעָ֑ה",
+      "xataf_word": "הָרֲשָׁעָ֑ה",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Ezekiel 4:2",
+      "varika_word": "סֹלְﬞלָ֑ה",
+      "xataf_word": "סֹלֲלָ֑ה",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Ezekiel 4:9",
+      "varika_word": "תֹּאכְﬞלֶֽנּוּ",
+      "xataf_word": "תֹּאכֲלֶֽנּוּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Ezekiel 4:10",
+      "varika_word": "תֹּאכְﬞלֶ֔נּוּ",
+      "xataf_word": "תֹּאכֲלֶ֔נּוּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Ezekiel 4:10",
+      "varika_word": "תֹּאכְﬞלֶֽנּוּ",
+      "xataf_word": "תֹּאכֲלֶֽנּוּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Ezekiel 4:12",
+      "varika_word": "תֹּאכְﬞלֶ֑נָּה",
+      "xataf_word": "תֹּאכֲלֶ֑נָּה",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Ezekiel 4:12",
+      "varika_word": "בְּגֶֽלְﬞלֵי֙",
+      "xataf_word": "בְּגֶֽלֲלֵי֙",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Ezekiel 4:15",
+      "varika_word": "גֶּלְﬞלֵ֣י",
+      "xataf_word": "גֶּלֲלֵ֣י",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Ezekiel 6:7",
+      "varika_word": "בְּתוֹכְﬞכֶ֑ם",
+      "xataf_word": "בְּתוֹכֲכֶ֑ם",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Ezekiel 7:15",
+      "varika_word": "יֹאכְﬞלֶֽנּוּ",
+      "xataf_word": "יֹאכֲלֶֽנּוּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Ezekiel 9:8",
+      "varika_word": "וְנֵֽאשְׁﬞאַ֖ר",
+      "xataf_word": "וְנֵֽאשֲׁאַ֖ר",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Ezekiel 13:20",
+      "varika_word": "מְצֹדְﬞד֨וֹת",
+      "xataf_word": "מְצֹדֲד֨וֹת",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Ezekiel 13:20",
+      "varika_word": "מְצֹדְﬞד֥וֹת",
+      "xataf_word": "מְצֹדֲד֥וֹת",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Ezekiel 16:51",
+      "varika_word": "וַתְּצַדְּﬞקִי֙",
+      "xataf_word": "וַתְּצַדֲּקִי֙",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Ezekiel 17:17",
+      "varika_word": "סֹלְﬞלָ֖ה",
+      "xataf_word": "סֹלֲלָ֖ה",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Ezekiel 21:27",
+      "varika_word": "סֹלְﬞלָ֖ה",
+      "xataf_word": "סֹלֲלָ֖ה",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Ezekiel 26:8",
+      "varika_word": "סֹֽלְﬞלָ֔ה",
+      "xataf_word": "סֹֽלֲלָ֔ה",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Ezekiel 26:12",
+      "varika_word": "וְשָׁלְﬞל֣וּ",
+      "xataf_word": "וְשָׁלֲל֣וּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Ezekiel 26:12",
+      "varika_word": "וּבָֽזְﬞזוּ֙",
+      "xataf_word": "וּבָֽזֲזוּ֙",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Ezekiel 26:16",
+      "varika_word": "וְשָׁמְﬞמ֖וּ",
+      "xataf_word": "וְשָׁמֲמ֖וּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Ezekiel 26:21",
+      "varika_word": "וּֽתְﬞבֻקְשִׁ֗י",
+      "xataf_word": "וּֽתֲבֻקְשִׁ֗י",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Ezekiel 27:4",
+      "varika_word": "כָּלְﬞל֖וּ",
+      "xataf_word": "כָּלֲל֖וּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Ezekiel 27:27",
+      "varika_word": "וּבְכׇל־קְﬞהָלֵךְ֙",
+      "xataf_word": "וּבְכׇל־קֳהָלֵךְ֙",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Ezekiel 27:32",
+      "varika_word": "וְקוֹנְﬞנ֖וּ",
+      "xataf_word": "וְקוֹנֲנ֖וּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Ezekiel 27:34",
+      "varika_word": "וְכׇל־קְﬞהָלֵ֖ךְ",
+      "xataf_word": "וְכׇל־קֳהָלֵ֖ךְ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Ezekiel 27:35",
+      "varika_word": "שָׁמְﬞמ֖וּ",
+      "xataf_word": "שָׁמֲמ֖וּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Ezekiel 28:9",
+      "varika_word": "מְחַלְﬞלֶֽיךָ",
+      "xataf_word": "מְחַלֲלֶֽיךָ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Ezekiel 28:16",
+      "varika_word": "תוֹכְﬞךָ֛",
+      "xataf_word": "תוֹכֲךָ֛",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Ezekiel 28:18",
+      "varika_word": "מִתּֽוֹכְﬞךָ֙",
+      "xataf_word": "מִתּֽוֹכֲךָ֙",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Ezekiel 28:19",
+      "varika_word": "שָׁמְﬞמ֖וּ",
+      "xataf_word": "שָׁמֲמ֖וּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Ezekiel 31:4",
+      "varika_word": "רֹמְﬞמָ֑תְהוּ",
+      "xataf_word": "רֹמֲמָ֑תְהוּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Ezekiel 31:6",
+      "varika_word": "קִֽנְﬞנוּ֙",
+      "xataf_word": "קִֽנֲנוּ֙",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Ezekiel 32:10",
+      "varika_word": "בְּעוֹפְﬞפִ֥י",
+      "xataf_word": "בְּעוֹפֲפִ֥י",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Ezekiel 32:12",
+      "varika_word": "וְשָֽׁדְﬞדוּ֙",
+      "xataf_word": "וְשָֽׁדֲדוּ֙",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Ezekiel 32:16",
+      "varika_word": "וְק֣וֹנְﬞנ֔וּהָ",
+      "xataf_word": "וְק֣וֹנֲנ֔וּהָ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Ezekiel 32:22",
+      "varika_word": "וְכׇל־קְﬞהָלָ֔הּ",
+      "xataf_word": "וְכָל־קֳהָלָ֔הּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Ezekiel 33:28",
+      "varika_word": "וְשָׁ֥מְﬞמ֛וּ",
+      "xataf_word": "וְשָׁ֥מֲמ֛וּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Ezekiel 35:6",
+      "varika_word": "יִרְדְּﬞפֶ֑ךָ",
+      "xataf_word": "יִרְדֲּפֶ֑ךָ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Ezekiel 35:6",
+      "varika_word": "יִרְדְּﬞפֶֽךָ",
+      "xataf_word": "יִרְדֲּפֶֽךָ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Ezekiel 35:7",
+      "varika_word": "לְשִֽׁמְﬞמָ֖ה",
+      "xataf_word": "לְשִֽׁמֲמָ֖ה",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Ezekiel 35:9",
+      "varika_word": "שִֽׁמְﬞמ֤וֹת",
+      "xataf_word": "שִֽׁמֲמ֤וֹת",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Ezekiel 35:11",
+      "varika_word": "אֶשְׁפְּﬞטֶֽךָ",
+      "xataf_word": "אֶשְׁפֲּטֶֽךָ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Ezekiel 36:4",
+      "varika_word": "הַשֹּֽׁמְﬞמוֹת֙",
+      "xataf_word": "הַשֹּֽׁמֲמוֹת֙",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Ezekiel 36:35",
+      "varika_word": "וְהַֽנְﬞשַׁמּ֥וֹת",
+      "xataf_word": "וְהַֽנֲשַׁמּ֥וֹת",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Ezekiel 39:10",
+      "varika_word": "וְשָׁלְﬞל֣וּ",
+      "xataf_word": "וְשָׁלֲל֣וּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Ezekiel 39:10",
+      "varika_word": "אֶת־שֹׁלְﬞלֵיהֶ֗ם",
+      "xataf_word": "אֶת־שֹׁלֲלֵיהֶ֗ם",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Ezekiel 39:10",
+      "varika_word": "וּבָֽזְﬞזוּ֙",
+      "xataf_word": "וּבָֽזֲזוּ֙",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Ezekiel 39:10",
+      "varika_word": "אֶת־בֹּ֣זְﬞזֵיהֶ֔ם",
+      "xataf_word": "אֶת־בֹּ֣זֲזֵיהֶ֔ם",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Ezekiel 39:27",
+      "varika_word": "בְּשׁוֹבְﬞבִ֤י",
+      "xataf_word": "בְּשׁוֹבֲבִ֤י",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Ezekiel 40:43",
+      "varika_word": "וְהַֽשְׁﬞפַתַּ֗יִם",
+      "xataf_word": "וְהַֽשֲׁפַתַּ֗יִם",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Ezekiel 43:10",
+      "varika_word": "וּמָדְﬞד֖וּ",
+      "xataf_word": "וּמָדֲד֖וּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Ezekiel 47:22",
+      "varika_word": "בְּתוֹכְﬞכֶ֔ם",
+      "xataf_word": "בְּתוֹכֲכֶ֔ם",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Ezekiel 48:11",
+      "varika_word": "הַֽמְﬞקֻדָּשׁ֙",
+      "xataf_word": "הַֽמֲקֻדָּשׁ֙",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Hosea 7:5",
+      "varika_word": "אֶת־לֹצְﬞצִֽים",
+      "xataf_word": "אֶת־לֹצֲצִֽים",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Hosea 7:13",
+      "varika_word": "כִּֽי־נָדְﬞד֣וּ",
+      "xataf_word": "כִּֽי־נָדֲד֣וּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Hosea 9:15",
+      "varika_word": "סֹרְﬞרִֽים",
+      "xataf_word": "סֹרֲרִֽים",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Hosea 9:17",
+      "varika_word": "נֹדְﬞדִ֖ים",
+      "xataf_word": "נֹדֲדִ֖ים",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Joel 3:3",
+      "varika_word": "וְתִֽימְﬞר֖וֹת",
+      "xataf_word": "וְתִֽימֲר֖וֹת",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Amos 2:13",
+      "varika_word": "הַֽמְﬞלֵאָ֥ה",
+      "xataf_word": "הַֽמֲלֵאָ֥ה",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Amos 4:1",
+      "varika_word": "הָרֹצְﬞצ֖וֹת",
+      "xataf_word": "הָרֹצֲצ֖וֹת",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Amos 5:12",
+      "varika_word": "צֹרְﬞרֵ֤י",
+      "xataf_word": "צֹרֲרֵ֤י",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Amos 6:3",
+      "varika_word": "הַֽמְﬞנַדִּ֖ים",
+      "xataf_word": "הַֽמֲנַדִּ֖ים",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Amos 8:8",
+      "varika_word": "וְנִשְׁקְﬞעָ֖ה",
+      "xataf_word": "וְנִשְׁקֳהָ֖",
+      "match_kind": "sigla=word",
+      "sigla": "א-כתיב"
+    },
+    {
+      "ref": "Micah 3:9",
+      "varika_word": "הַֽמְﬞתַעֲבִ֣ים",
+      "xataf_word": "הַֽמֲתַעֲבִ֣ים",
+      "match_kind": "sigla=word",
+      "sigla": "ל"
+    },
+    {
+      "ref": "Micah 5:11",
+      "varika_word": "וּֽמְעוֹנְﬞנִ֖ים",
+      "xataf_word": "וּֽמְעוֹנֲנִ֖ים",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Micah 6:7",
+      "varika_word": "בְּרִֽבְﬞב֖וֹת",
+      "xataf_word": "בְּרִֽבֲב֖וֹת",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Micah 7:1",
+      "varika_word": "אַ֣לְﬞלַי",
+      "xataf_word": "אַ֣לֲלַי",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Micah 7:1",
+      "varika_word": "כְּעֹלְﬞלֹ֖ת",
+      "xataf_word": "כְּעֹלֲלֹ֖ת",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Nahum 2:3",
+      "varika_word": "בֹּֽקְﬞקִ֔ים",
+      "xataf_word": "בֹּֽקֲקִ֔ים",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Nahum 2:5",
+      "varika_word": "יִתְהוֹלְﬞל֣וּ",
+      "xataf_word": "יִתְהוֹלֲל֣וּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Nahum 2:8",
+      "varika_word": "מְתֹפְﬞפֹ֖ת",
+      "xataf_word": "מְתֹפֲפֹ֖ת",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Habakkuk 3:6",
+      "varika_word": "וַיִּתְפֹּֽצְﬞצוּ֙",
+      "xataf_word": "וַיִּתְפֹּֽצֲצוּ֙",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Habakkuk 3:16",
+      "varika_word": "צָלְﬞל֣וּ",
+      "xataf_word": "צָלֲל֣וּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Tsefaniah 1:9",
+      "varika_word": "הַֽמְﬞמַלְאִ֛ים",
+      "xataf_word": "הַֽמֲמַלְאִ֛ים",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Tsefaniah 2:1",
+      "varika_word": "הִֽתְקוֹשְׁﬞשׁ֖וּ",
+      "xataf_word": "הִֽתְקוֹשֲׁשׁ֖וּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Tsefaniah 2:12",
+      "varika_word": "חַֽלְﬞלֵ֥י",
+      "xataf_word": "חַֽלֲלֵ֥י",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Zechariah 4:12",
+      "varika_word": "שִׁבְּﬞלֵ֣י",
+      "xataf_word": "שִׁבֲּלֵ֣י",
+      "match_kind": "sigla=word",
+      "sigla": "ל"
+    },
+    {
+      "ref": "Zechariah 11:3",
+      "varika_word": "יִֽלְﬞלַ֣ת",
+      "xataf_word": "יִֽלֲלַ֣ת",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 5:6",
+      "varika_word": "ה֭וֹלְﬞלִים",
+      "xataf_word": "ה֭וֹלֲלִים",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 5:9",
+      "varika_word": "שׁוֹרְﬞרָ֑י",
+      "xataf_word": "שׁוֹרֲרָ֑י",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 6:8",
+      "varika_word": "עָשְׁﬞשָׁ֣ה",
+      "xataf_word": "עָשֲׁשָׁ֣ה",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 6:8",
+      "varika_word": "בְּכׇל־צוֹרְﬞרָֽי",
+      "xataf_word": "בְּכׇל־צוֹרֲרָֽי",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 7:5",
+      "varika_word": "צֽוֹרְﬞרִ֣י",
+      "xataf_word": "צֽוֹרֲרִ֣י",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 7:7",
+      "varika_word": "צוֹרְﬞרָ֑י",
+      "xataf_word": "צוֹרֲרָ֑י",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 7:8",
+      "varika_word": "תְּסֽוֹבְﬞבֶ֑ךָּ",
+      "xataf_word": "תְּסֽוֹבֲבֶ֑ךָּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 8:3",
+      "varika_word": "עוֹלְﬞלִ֨ים",
+      "xataf_word": "עוֹלֲלִ֨ים",
+      "match_kind": "sigla=word+joined",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 8:3",
+      "varika_word": "צוֹרְﬞרֶ֑יךָ",
+      "xataf_word": "צוֹרֲרֶ֑יךָ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 9:14",
+      "varika_word": "חָֽנְﬞנֵ֬נִי",
+      "xataf_word": "חָֽנֲנֵ֬נִי",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 9:14",
+      "varika_word": "מְ֝רוֹמְﬞמִ֗י",
+      "xataf_word": "מְ֝רוֹמֲמִ֗י",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 10:5",
+      "varika_word": "כׇּל־צ֝וֹרְﬞרָ֗יו",
+      "xataf_word": "כׇּל־צ֝וֹרֲרָ֗יו",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 11:2",
+      "varika_word": "כּוֹנְﬞנ֣וּ",
+      "xataf_word": "כּוֹנֲנ֣וּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 12:7",
+      "varika_word": "אִ֥מְﬞר֣וֹת",
+      "xataf_word": "אִ֥מֲר֣וֹת",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 17:14",
+      "varika_word": "מִֽמְﬞתִ֬ים",
+      "xataf_word": "מִֽמֲתִ֬ים",
+      "match_kind": "sigla=word",
+      "sigla": "ושיטת-א"
+    },
+    {
+      "ref": "Psalms 18:7",
+      "varika_word": "אֶ֥קְﬞרָ֣א",
+      "xataf_word": "אֶ֥קֲרָ֣א",
+      "match_kind": "sigla=word",
+      "sigla": "ל,ל-א,גסטר1,שיטת-א"
+    },
+    {
+      "ref": "Psalms 26:6",
+      "varika_word": "וַאֲסֹבְﬞבָ֖ה",
+      "xataf_word": "וַאֲסֹבֲבָ֖ה",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 27:5",
+      "varika_word": "יְרוֹמְﬞמֵֽנִי",
+      "xataf_word": "יְרוֹמֲמֵֽנִּי",
+      "match_kind": "sigla=word",
+      "sigla": "א!"
+    },
+    {
+      "ref": "Psalms 27:11",
+      "varika_word": "שֽׁוֹרְﬞרָֽי",
+      "xataf_word": "שֽׁוֹרֲרָֽי",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 31:10",
+      "varika_word": "עָשְׁﬞשָׁ֖ה",
+      "xataf_word": "עָשֲׁשָׁ֖ה",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 31:12",
+      "varika_word": "מִכׇּל־צֹרְﬞרַ֨י",
+      "xataf_word": "מִכׇּל־צֹרֲרַ֨י",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 31:12",
+      "varika_word": "וְלִ֥שְׁﬞכֵנַ֨י",
+      "xataf_word": "וְלִ֥שֲׁכֵנַ֨י",
+      "match_kind": "sigla=word+joined",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 31:12",
+      "varika_word": "נָדְﬞד֥וּ",
+      "xataf_word": "נָדֲד֥וּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 32:7",
+      "varika_word": "תְּס֖וֹבְﬞבֵ֣נִי",
+      "xataf_word": "תְּס֖וֹבֲבֵ֣נִי",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 32:10",
+      "varika_word": "יְסוֹבְﬞבֶֽנּוּ",
+      "xataf_word": "יְסוֹבֲבֶֽנּוּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 34:1",
+      "varika_word": "וַ֝יְגָרְﬞשֵׁ֗הוּ",
+      "xataf_word": "וַ֝יְגָרֲשֵׁ֗הוּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 34:2",
+      "varika_word": "אֲבָרְﬞכָ֣ה",
+      "xataf_word": "אֲבָרֲכָ֣ה",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 34:4",
+      "varika_word": "וּנְרוֹמְﬞמָ֖ה",
+      "xataf_word": "וּנְרוֹמֲמָ֖ה",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 35:18",
+      "varika_word": "אֲהַלְﬞלֶֽךָּ",
+      "xataf_word": "אֲהַלֲלֶֽךָּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 39:13",
+      "varika_word": "שִׁ֥מְﬞעָֽה",
+      "xataf_word": "שִׁ֥מֳעָֽה",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 40:13",
+      "varika_word": "אָפְﬞפֽוּ־עָלַ֨י",
+      "xataf_word": "אָפֲפֽוּ־עָלַ֨י",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 42:11",
+      "varika_word": "צוֹרְﬞרָ֑י",
+      "xataf_word": "צוֹרֲרָ֑י",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 53:2",
+      "varika_word": "הִֽ֝שְׁﬞחִ֗יתוּ",
+      "xataf_word": "הִֽ֝שְִׁחִ֗יתוּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 53:2",
+      "varika_word": "וְהִֽתְﬞעִ֥יבוּ",
+      "xataf_word": "וְהִֽתְִעִ֥יבוּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 55:11",
+      "varika_word": "יְסוֹבְﬞבֻ֥הָ",
+      "xataf_word": "יְסוֹבֲבֻ֥הָ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 55:22",
+      "varika_word": "וּֽקְﬞרָב־לִ֫בּ֥וֹ",
+      "xataf_word": "וּֽקֲרָב־לִ֫בּ֥וֹ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 56:3",
+      "varika_word": "שׁ֭וֹרְﬞרַי",
+      "xataf_word": "שׁ֭וֹרֲרַי",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 59:7",
+      "varika_word": "וִיס֥וֹבְﬞבוּ",
+      "xataf_word": "וִיס֥וֹבֲבוּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 59:15",
+      "varika_word": "וִיס֥וֹבְﬞבוּ",
+      "xataf_word": "וִיס֥וֹבֲבוּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 60:9",
+      "varika_word": "מְחֹֽקְﬞקִֽי",
+      "xataf_word": "מְחֹֽקֲקִֽי",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 62:4",
+      "varika_word": "תְּה֥וֹתְﬞת֣וּ",
+      "xataf_word": "תְּה֥וֹתֲת֣וּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 62:5",
+      "varika_word": "יְקַֽלְﬞלוּ־סֶֽלָה",
+      "xataf_word": "יְקַֽלֲלוּ־סֶֽלָה",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 64:9",
+      "varika_word": "יִ֝תְנֹדְﬞד֗וּ",
+      "xataf_word": "יִ֝תְנֹדֲד֗וּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 64:11",
+      "varika_word": "וְ֝יִתְהַלְﬞל֗וּ",
+      "xataf_word": "וְ֝יִתְהַלֲל֗וּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 65:5",
+      "varika_word": "תִּ֥בְﬞחַ֣ר",
+      "xataf_word": "תִּ֥בֲחַ֣ר",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 65:10",
+      "varika_word": "וַתְּשֹׁ֪קְﬞקֶ֡הָ",
+      "xataf_word": "וַתְּשֹׁ֪קֲקֶ֡הָ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 65:11",
+      "varika_word": "תְּ֝מֹגְﬞגֶ֗נָּה",
+      "xataf_word": "תְּ֝מֹגֲגֶ֗נָּה",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 66:7",
+      "varika_word": "הַסּוֹרְﬞרִ֓ים",
+      "xataf_word": "הַסּוֹרֲרִ֓ים",
+      "match_kind": "sigla=word+joined",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 66:8",
+      "varika_word": "בָּרְﬞכ֖וּ",
+      "xataf_word": "בָּרֲכ֖וּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 66:12",
+      "varika_word": "לָרְﬞוָיָֽה",
+      "xataf_word": "לָרֲוָיָֽה",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 67:2",
+      "varika_word": "וִיבָרְﬞכֵ֑נוּ",
+      "xataf_word": "וִיבָרֲכֵ֑נוּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 67:7",
+      "varika_word": "יְ֝בָרְﬞכֵ֗נוּ",
+      "xataf_word": "יְ֝בָרֲכֵ֗נוּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 67:8",
+      "varika_word": "יְבָרְﬞכֵ֥נוּ",
+      "xataf_word": "יְבָרֲכֵ֥נוּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 68:7",
+      "varika_word": "ס֝וֹרְﬞרִ֗ים",
+      "xataf_word": "ס֝וֹרֲרִ֗ים",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 68:19",
+      "varika_word": "ס֝וֹרְﬞרִ֗ים",
+      "xataf_word": "ס֝וֹרֲרִ֗ים",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 68:24",
+      "varika_word": "תִּ֥מְﬞחַ֥ץ",
+      "xataf_word": "תִּ֥מֲחַ֥ץ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 68:27",
+      "varika_word": "בָּרְﬞכ֣וּ",
+      "xataf_word": "בָּרֲכ֣וּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 69:20",
+      "varika_word": "כׇּל־צוֹרְﬞרָֽי",
+      "xataf_word": "כׇּל־צוֹרֲרָֽי",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 69:31",
+      "varika_word": "אֲהַלְﬞלָ֣ה",
+      "xataf_word": "אֲהַלֲלָ֣ה",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 69:35",
+      "varika_word": "יְֽ֭הַלְﬞלוּהוּ",
+      "xataf_word": "יְֽ֭הַלֲלוּהוּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 72:15",
+      "varika_word": "יְבָרְﬞכֶֽנְהוּ",
+      "xataf_word": "יְבָרֲכֶֽנְהוּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 73:3",
+      "varika_word": "בַּהוֹלְﬞלִ֑ים",
+      "xataf_word": "בַּהוֹלֲלִ֑ים",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 73:28",
+      "varika_word": "קִ֥רְﬞבַ֥ת",
+      "xataf_word": "קִ֥רֲבַ֥ת",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 74:4",
+      "varika_word": "צֹ֭רְﬞרֶיךָ",
+      "xataf_word": "צֹ֭רֲרֶיךָ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 74:5",
+      "varika_word": "בִּסְﬞבׇךְ־עֵ֝֗ץ",
+      "xataf_word": "בִּסֲבָךְ־עֵ֝ץ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 74:23",
+      "varika_word": "צֹרְﬞרֶ֑יךָ",
+      "xataf_word": "צֹרֲרֶ֑יךָ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 75:5",
+      "varika_word": "לַ֭הוֹלְﬞלִים",
+      "xataf_word": "לַ֭הוֹלֲלִים",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 76:6",
+      "varika_word": "אֶשְׁתּֽוֹלְﬞל֨וּ",
+      "xataf_word": "אֶשְׁתּֽוֹלֲל֨וּ",
+      "match_kind": "sigla=word+joined",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 76:12",
+      "varika_word": "נִ֥דְﬞר֣וּ",
+      "xataf_word": "נִ֥דֲר֣וּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 80:3",
+      "varika_word": "עוֹרְﬞרָ֥ה",
+      "xataf_word": "עוֹרֲרָ֥ה",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 80:11",
+      "varika_word": "אַֽרְﬞזֵי־אֵֽל",
+      "xataf_word": "אַֽרֲזֵי־אֵֽל",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 83:13",
+      "varika_word": "נִ֣ירְﬞשָׁה",
+      "xataf_word": "נִ֣ירֲשָׁה",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 84:5",
+      "varika_word": "יְֽהַלְﬞל֥וּךָ",
+      "xataf_word": "יְֽהַלֲל֥וּךָ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 87:5",
+      "varika_word": "וּ֥לְﬞצִיּ֨וֹן",
+      "xataf_word": "וּ֥לֲצִיּ֨וֹן",
+      "match_kind": "sigla=word+joined",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 87:7",
+      "varika_word": "כְּחֹלְﬞלִ֑ים",
+      "xataf_word": "כְּחֹלֲלִ֑ים",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 90:17",
+      "varika_word": "כּוֹנְﬞנָ֥ה",
+      "xataf_word": "כּוֹנֲנָ֥ה",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 90:17",
+      "varika_word": "כּוֹנְﬞנֵֽהוּ",
+      "xataf_word": "כּוֹנֲנֵֽהוּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 94:10",
+      "varika_word": "הַֽמְﬞלַמֵּ֖ד",
+      "xataf_word": "הַֽמֲלַמֵּ֖ד",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 96:2",
+      "varika_word": "בָּרְﬞכ֣וּ",
+      "xataf_word": "בָּרֲכ֣וּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 97:7",
+      "varika_word": "הַמִּֽתְהַלְﬞלִ֥ים",
+      "xataf_word": "הַמִּֽתְהַלֲלִ֥ים",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 99:5",
+      "varika_word": "רוֹמְﬞמ֡וּ",
+      "xataf_word": "רוֹמֲמ֡וּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 99:9",
+      "varika_word": "רוֹמְﬞמ֡וּ",
+      "xataf_word": "רוֹמֲמ֡וּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 100:4",
+      "varika_word": "בָּרְﬞכ֥וּ",
+      "xataf_word": "בָּרֲכ֥וּ",
+      "match_kind": "sigla=word",
+      "sigla": "א,ל"
+    },
+    {
+      "ref": "Psalms 103:1",
+      "varika_word": "בָּרְﬞכִ֣י",
+      "xataf_word": "בָּרֲכִ֣י",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 103:2",
+      "varika_word": "בָּרְﬞכִ֣י",
+      "xataf_word": "בָּרֲכִ֣י",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 103:20",
+      "varika_word": "בָּרְﬞכ֥וּ",
+      "xataf_word": "בָּרֲכ֥וּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 103:21",
+      "varika_word": "בָּרְﬞכ֣וּ",
+      "xataf_word": "בָּרֲכ֣וּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 103:22",
+      "varika_word": "בָּרְﬞכ֤וּ",
+      "xataf_word": "בָּרֲכ֤וּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 103:22",
+      "varika_word": "בָּרְﬞכִ֥י",
+      "xataf_word": "בָּרֲכִ֥י",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 104:1",
+      "varika_word": "בָּרְﬞכִ֥י",
+      "xataf_word": "בָּרֲכִ֥י",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 104:3",
+      "varika_word": "הַ֥מְﬞקָרֶ֥ה",
+      "xataf_word": "הַ֥מֲקָרֶ֥ה",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 104:3",
+      "varika_word": "הַֽ֝מְﬞהַלֵּ֗ךְ",
+      "xataf_word": "הַֽ֝מֲהַלֵּ֗ךְ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 104:10",
+      "varika_word": "הַֽמְﬞשַׁלֵּ֣חַ",
+      "xataf_word": "הַֽמֲשַׁלֵּ֣חַ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 104:18",
+      "varika_word": "לַֽשְׁﬞפַנִּֽים",
+      "xataf_word": "לַֽשֲׁפַנִּֽים",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 104:35",
+      "varika_word": "בָּרְﬞכִ֣י",
+      "xataf_word": "בָּרֲכִ֣י",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 104:35",
+      "varika_word": "הַֽלְﬞלוּ־יָֽהּ",
+      "xataf_word": "הַֽלֲלוּ־יָֽהּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 105:3",
+      "varika_word": "הִֽ֭תְהַלְﬞלוּ",
+      "xataf_word": "הִֽ֭תְהַלֲלוּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 105:45",
+      "varika_word": "הַֽלְﬞלוּ־יָֽהּ",
+      "xataf_word": "הַֽלֲלוּ־יָֽהּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 106:1",
+      "varika_word": "הַ֥לְﬞלוּיָ֨הּ",
+      "xataf_word": "הַ֥לֲלוּ יָ֨הּ",
+      "match_kind": "sigla=word+joined",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 107:36",
+      "varika_word": "וַ֝יְכוֹנְﬞנ֗וּ",
+      "xataf_word": "וַ֝יְכוֹנֲנ֗וּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 107:38",
+      "varika_word": "וַיְבָרְﬞכֵ֣ם",
+      "xataf_word": "וַיְבָרֲכֵ֣ם",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 107:43",
+      "varika_word": "וְ֝יִתְבּוֹנְﬞנ֗וּ",
+      "xataf_word": "וְ֝יִתְבּוֹנֲנ֗וּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 108:9",
+      "varika_word": "מְחֹקְﬞקִֽי",
+      "xataf_word": "מְחֹקֲקִֽי",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 109:28",
+      "varika_word": "יְקַֽלְﬞלוּ־הֵמָּה֮",
+      "xataf_word": "יְקַֽלֲלוּ־הֵמָּה֮",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 109:30",
+      "varika_word": "אֲהַלְﬞלֶֽנּוּ",
+      "xataf_word": "אֲהַלֲלֶֽנּוּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 111:1",
+      "varika_word": "הַ֥לְﬞלוּיָ֨הּ",
+      "xataf_word": "הַ֥לֲלוּ יָ֨הּ",
+      "match_kind": "sigla=word+joined",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 112:1",
+      "varika_word": "הַ֥לְﬞלוּיָ֨הּ",
+      "xataf_word": "הַ֥לֲלוּ יָ֨הּ",
+      "match_kind": "sigla=word+joined",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 113:1",
+      "varika_word": "הַ֥לְﬞלוּיָ֨הּ",
+      "xataf_word": "הַ֥לֲלוּ יָ֨הּ",
+      "match_kind": "sigla=word+joined",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 113:1",
+      "varika_word": "הַ֭לְﬞלוּ",
+      "xataf_word": "הַ֭לֲלוּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 113:1",
+      "varika_word": "הַֽ֝לְﬞל֗וּ",
+      "xataf_word": "הַֽ֝לֲל֗וּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 113:9",
+      "varika_word": "הַֽלְﬞלוּ־יָֽהּ",
+      "xataf_word": "הַֽלֲלוּ־יָֽהּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 115:18",
+      "varika_word": "הַֽלְﬞלוּ־יָֽהּ",
+      "xataf_word": "הַֽלֲלוּ־יָֽהּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 118:28",
+      "varika_word": "אֲרוֹמְﬞמֶֽךָּ",
+      "xataf_word": "אֲרוֹמֲמֶֽךָּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 119:115",
+      "varika_word": "וְ֝אֶצְּﬞרָ֗ה",
+      "xataf_word": "וְ֝אֶצֲּרָ֗ה",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 119:175",
+      "varika_word": "וּֽתְהַלְﬞלֶ֑ךָּ",
+      "xataf_word": "וּֽתְהַלֲלֶ֑ךָּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 134:1",
+      "varika_word": "בָּרְﬞכ֣וּ",
+      "xataf_word": "בָּרֲכ֣וּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 134:2",
+      "varika_word": "וּ֝בָרְﬞכ֗וּ",
+      "xataf_word": "וּ֝בָרֲכ֗וּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 135:1",
+      "varika_word": "הַ֥לְﬞלוּיָ֨הּ",
+      "xataf_word": "הַ֥לֲלוּ יָ֨הּ",
+      "match_kind": "sigla=word+joined",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 135:1",
+      "varika_word": "הַֽ֭לְﬞלוּ",
+      "xataf_word": "הַֽ֭לֲלוּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 135:1",
+      "varika_word": "הַֽ֝לְﬞל֗וּ",
+      "xataf_word": "הַֽ֝לֲל֗וּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 135:3",
+      "varika_word": "הַֽלְﬞלוּ־יָ֭הּ",
+      "xataf_word": "הַֽלֲלוּ־יָ֭הּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 135:19",
+      "varika_word": "בָּרְﬞכ֣וּ",
+      "xataf_word": "בָּרֲכ֣וּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 135:19",
+      "varika_word": "בָּרְﬞכ֥וּ",
+      "xataf_word": "בָּרֲכ֥וּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 135:20",
+      "varika_word": "בָּרְﬞכ֣וּ",
+      "xataf_word": "בָּרֲכ֣וּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 135:20",
+      "varika_word": "בָּרְﬞכ֥וּ",
+      "xataf_word": "בָּרֲכ֥וּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 135:21",
+      "varika_word": "הַֽלְﬞלוּ־יָֽהּ",
+      "xataf_word": "הַֽלֲלוּ־יָֽהּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 139:21",
+      "varika_word": "וּ֝בִתְקוֹמְﬞמֶ֗יךָ",
+      "xataf_word": "וּ֝בִתְקוֹמֲמֶ֗יךָ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 140:4",
+      "varika_word": "שָׁ֥נְﬞנ֣וּ",
+      "xataf_word": "שָׁ֥נֲנ֣וּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 143:12",
+      "varika_word": "כׇּל־צֹרְﬞרֵ֣י",
+      "xataf_word": "כׇּל־צֹרֲרֵ֣י",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 144:1",
+      "varika_word": "הַֽמְﬞלַמֵּ֣ד",
+      "xataf_word": "הַֽמֲלַמֵּ֣ד",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 145:1",
+      "varika_word": "וַאֲבָרְﬞכָ֥ה",
+      "xataf_word": "וַאֲבָרֲכָ֥ה",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 145:2",
+      "varika_word": "אֲבָרְﬞכֶ֑ךָּ",
+      "xataf_word": "אֲבָרֲכֶ֑ךָּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 145:2",
+      "varika_word": "וַאֲהַלְﬞלָ֥ה",
+      "xataf_word": "וַאֲהַלֲלָ֥ה",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 145:10",
+      "varika_word": "יְבָרְﬞכֽוּכָה",
+      "xataf_word": "יְבָרֲכֽוּכָה",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 146:1",
+      "varika_word": "הַֽלְﬞלוּ־יָ֡הּ",
+      "xataf_word": "הַֽלֲלוּ־יָ֡הּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 146:1",
+      "varika_word": "הַֽלְﬞלִ֥י",
+      "xataf_word": "הַֽלֲלִ֥י",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 146:2",
+      "varika_word": "אֲהַלְﬞלָ֣ה",
+      "xataf_word": "אֲהַלֲלָ֣ה",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 146:10",
+      "varika_word": "הַֽלְﬞלוּ־יָֽהּ",
+      "xataf_word": "הַֽלֲלוּ־יָֽהּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 147:1",
+      "varika_word": "הַ֥לְﬞלוּיָ֨הּ",
+      "xataf_word": "הַ֥לֲלוּ יָ֨הּ",
+      "match_kind": "sigla=word+joined",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 147:8",
+      "varika_word": "הַֽמְﬞכַסֶּ֬ה",
+      "xataf_word": "הַֽמֲכַסֶּ֬ה",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 147:12",
+      "varika_word": "הַֽלְﬞלִ֖י",
+      "xataf_word": "הַֽלֲלִ֖י",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 147:20",
+      "varika_word": "הַֽלְﬞלוּ־יָֽהּ",
+      "xataf_word": "הַֽלֲלוּ־יָֽהּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 148:1",
+      "varika_word": "הַ֥לְﬞלוּיָ֨הּ",
+      "xataf_word": "הַ֥לֲלוּ יָ֨הּ",
+      "match_kind": "sigla=word+joined",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 148:1",
+      "varika_word": "הַֽלְﬞל֣וּ",
+      "xataf_word": "הַֽלֲל֣וּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 148:1",
+      "varika_word": "הַֽ֝לְﬞל֗וּהוּ",
+      "xataf_word": "הַֽ֝לֲל֗וּהוּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 148:2",
+      "varika_word": "הַֽלְﬞל֥וּהוּ",
+      "xataf_word": "הַֽלֲל֥וּהוּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 148:3",
+      "varika_word": "הַֽ֭לְﬞלוּהוּ",
+      "xataf_word": "הַֽ֭לֲלוּהוּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 148:3",
+      "varika_word": "הַֽ֝לְﬞל֗וּהוּ",
+      "xataf_word": "הַֽ֝לֲל֗וּהוּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 148:4",
+      "varika_word": "הַֽ֭לְﬞלוּהוּ",
+      "xataf_word": "הַֽ֭לֲלוּהוּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 148:5",
+      "varika_word": "יְֽ֭הַלְﬞלוּ",
+      "xataf_word": "יְֽ֭הַלֲלוּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 148:7",
+      "varika_word": "הַֽלְﬞל֣וּ",
+      "xataf_word": "הַֽלֲל֣וּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 148:13",
+      "varika_word": "יְהַלְﬞל֤וּ",
+      "xataf_word": "יְהַלֲל֤וּ",
+      "match_kind": "sigla=word+joined",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 148:14",
+      "varika_word": "הַֽלְﬞלוּ־יָֽהּ",
+      "xataf_word": "הַֽלֲלוּ־יָֽהּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 149:1",
+      "varika_word": "הַ֥לְﬞלוּיָ֨הּ",
+      "xataf_word": "הַ֥לֲלוּ יָ֨הּ",
+      "match_kind": "sigla=word+joined",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 149:3",
+      "varika_word": "יְהַלְﬞל֣וּ",
+      "xataf_word": "יְהַלֲל֣וּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 149:6",
+      "varika_word": "רוֹמְﬞמ֣וֹת",
+      "xataf_word": "רוֹמֲמ֣וֹת",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 149:9",
+      "varika_word": "הַֽלְﬞלוּ־יָֽהּ",
+      "xataf_word": "הַֽלֲלוּ־יָֽהּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 150:1",
+      "varika_word": "הַ֥לְﬞלוּיָ֨הּ",
+      "xataf_word": "הַ֥לֲלוּ יָ֨הּ",
+      "match_kind": "sigla=word+joined",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 150:1",
+      "varika_word": "הַֽלְﬞלוּ־אֵ֥ל",
+      "xataf_word": "הַֽלֲלוּ־אֵ֥ל",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 150:1",
+      "varika_word": "הַֽ֝לְﬞל֗וּהוּ",
+      "xataf_word": "הַֽ֝לֲל֗וּהוּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 150:2",
+      "varika_word": "הַלְﬞל֥וּהוּ",
+      "xataf_word": "הַלֲל֥וּהוּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 150:2",
+      "varika_word": "הַ֝לְﬞל֗וּהוּ",
+      "xataf_word": "הַ֝לֲל֗וּהוּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 150:3",
+      "varika_word": "הַ֭לְﬞלוּהוּ",
+      "xataf_word": "הַ֭לֲלוּהוּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 150:3",
+      "varika_word": "הַ֝לְﬞל֗וּהוּ",
+      "xataf_word": "הַ֝לֲל֗וּהוּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 150:4",
+      "varika_word": "הַ֭לְﬞלוּהוּ",
+      "xataf_word": "הַ֭לֲלוּהוּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 150:4",
+      "varika_word": "הַֽ֝לְﬞל֗וּהוּ",
+      "xataf_word": "הַֽ֝לֲל֗וּהוּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 150:5",
+      "varika_word": "הַלְﬞל֥וּהוּ",
+      "xataf_word": "הַלֲל֥וּהוּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 150:5",
+      "varika_word": "הַֽ֝לְﬞל֗וּהוּ",
+      "xataf_word": "הַֽ֝לֲל֗וּהוּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 150:6",
+      "varika_word": "הַֽלְﬞלוּ־יָֽהּ",
+      "xataf_word": "הַֽלֲלוּ־יָֽהּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Proverbs 8:15",
+      "varika_word": "יְחֹ֣קְﬞקוּ",
+      "xataf_word": "יְחֹ֣קֲקוּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Proverbs 23:20",
+      "varika_word": "בְּזֹלְﬞלֵ֖י",
+      "xataf_word": "בְּזֹלֲלֵ֖י",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Proverbs 24:19",
+      "varika_word": "בָּֽרְﬞשָׁעִֽים",
+      "xataf_word": "בָּֽרֲשָׁעִֽים",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Proverbs 26:2",
+      "varika_word": "קִֽלְﬞלַ֥ת",
+      "xataf_word": "קִֽלֲלַ֥ת",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Proverbs 28:4",
+      "varika_word": "יְהַלְﬞל֣וּ",
+      "xataf_word": "יְהַלֲל֣וּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Proverbs 28:7",
+      "varika_word": "ז֝וֹלְﬞלִ֗ים",
+      "xataf_word": "ז֝וֹלֲלִ֗ים",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Proverbs 28:22",
+      "varika_word": "נִ֥בְﬞהָֽל",
+      "xataf_word": "נִ֥בֳהָֽל",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Proverbs 30:17",
+      "varika_word": "תִּ֥לְﬞעַ֣ג",
+      "xataf_word": "תִּ֥לֲעַ֣ג",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Proverbs 31:4",
+      "varika_word": "לַֽמְﬞלָכִ֣ים",
+      "xataf_word": "לַֽמֲלָכִ֣ים",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Proverbs 31:16",
+      "varika_word": "זָמְﬞמָ֣ה",
+      "xataf_word": "זָמֲמָ֣ה",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Proverbs 31:28",
+      "varika_word": "וַֽיְהַלְﬞלָֽהּ",
+      "xataf_word": "וַֽיְהַלֲלָֽהּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Proverbs 31:31",
+      "varika_word": "וִיהַלְﬞל֖וּהָ",
+      "xataf_word": "וִיהַלֲל֖וּהָ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Job 1:5",
+      "varika_word": "וּבֵרְﬞכ֥וּ",
+      "xataf_word": "וּבֵרֲכ֥וּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Job 1:11",
+      "varika_word": "יְבָרְﬞכֶֽךָּ",
+      "xataf_word": "יְבָרֲכֶֽךָּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Job 2:5",
+      "varika_word": "יְבָרְﬞכֶֽךָּ",
+      "xataf_word": "יְבָרֲכֶֽךָּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Job 3:8",
+      "varika_word": "אֹֽרְﬞרֵי־י֑וֹם",
+      "xataf_word": "אֹֽרֲרֵי־י֑וֹם",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Job 3:15",
+      "varika_word": "הַֽמְﬞמַלְאִ֖ים",
+      "xataf_word": "הַֽמֲמַלְאִ֖ים",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Job 3:16",
+      "varika_word": "כְּ֝עֹלְﬞלִ֗ים",
+      "xataf_word": "כְּ֝עֹלֲלִ֗ים",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Job 3:21",
+      "varika_word": "הַֽמְﬞחַכִּ֣ים",
+      "xataf_word": "הַֽמֲחַכִּ֣ים",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Job 5:14",
+      "varika_word": "יְֽמַשְׁﬞשׁ֥וּ",
+      "xataf_word": "יְֽמַשֲׁשׁ֥וּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Job 10:11",
+      "varika_word": "תְּשֹׂכְﬞכֵֽנִי",
+      "xataf_word": "תְּשֹׂכֲכֵֽנִי",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Job 12:6",
+      "varika_word": "לְשֹׁ֥דְﬞדִ֗ים",
+      "xataf_word": "לְשֹׁ֥דֲדִ֗ים",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Job 12:25",
+      "varika_word": "יְמַֽשְׁﬞשׁוּ־חֹ֥שֶׁךְ",
+      "xataf_word": "יְמַֽשֲׁשׁוּ־חֹ֥שֶׁךְ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Job 17:9",
+      "varika_word": "וּֽטְﬞהׇר־יָ֝דַ֗יִם",
+      "xataf_word": "וּֽטֳהָר־יָ֝דַ֗יִם",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Job 20:7",
+      "varika_word": "כְּֽ֭גֶלְﬞלוֹ",
+      "xataf_word": "כְּֽ֭גֶלֲלוֹ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Job 26:13",
+      "varika_word": "חֹלְﬞלָ֥ה",
+      "xataf_word": "חֹלֲלָ֥ה",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Job 27:7",
+      "varika_word": "וּמִתְקוֹמְﬞמִ֥י",
+      "xataf_word": "וּמִתְקוֹמֲמִ֥י",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Job 29:25",
+      "varika_word": "אֶ֥בְﬞחַ֣ר",
+      "xataf_word": "אֶ֥בֲחַ֣ר",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Job 30:22",
+      "varika_word": "וּ֝תְמֹגְﬞגֵ֗נִי",
+      "xataf_word": "וּ֝תְמֹגֲגֵ֗נִי",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Job 31:20",
+      "varika_word": "בֵרְﬞכ֣וּנִי",
+      "xataf_word": "בֵרֲכ֣וּנִי",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Job 31:37",
+      "varika_word": "אֲקָֽרְﬞבֶֽנּוּ",
+      "xataf_word": "אֲקָֽרֲבֶֽנּוּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Job 33:22",
+      "varika_word": "לַֽמְﬞמִתִֽים",
+      "xataf_word": "לַֽמֲמִתִֽים",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Job 33:25",
+      "varika_word": "רֻֽטְﬞפַ֣שׁ",
+      "xataf_word": "רֻֽטֲפַ֣שׁ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Job 34:10",
+      "varika_word": "אַ֥נְﬞשֵׁ֥י",
+      "xataf_word": "אַ֥נֲשֵׁ֥י",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Job 36:24",
+      "varika_word": "שֹׁרְﬞר֣וּ",
+      "xataf_word": "שֹׁרֲר֣וּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Job 38:31",
+      "varika_word": "הַֽ֭תְﬞקַשֵּׁר",
+      "xataf_word": "הַֽ֭תֲקַשֵּׁר",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Job 38:35",
+      "varika_word": "הַֽתְﬞשַׁלַּ֣ח",
+      "xataf_word": "הַֽתֲשַׁלַּ֣ח",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Job 40:22",
+      "varika_word": "צִֽלְﬞל֑וֹ",
+      "xataf_word": "צִֽלֲל֑וֹ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Job 40:31",
+      "varika_word": "הַֽתְﬞמַלֵּ֣א",
+      "xataf_word": "הַֽתֲמַלֵּ֣א",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Job 42:10",
+      "varika_word": "בְּהִֽתְפַּֽלְﬞל֖וֹ",
+      "xataf_word": "בְּהִֽתְפַּֽלֲל֖וֹ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Song of Songs 2:7",
+      "varika_word": "תְּע֥וֹרְﬞר֛וּ",
+      "xataf_word": "תְּע֥וֹרֲר֛וּ או תְּעֽוֹרֲר֛וּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Song of Songs 3:2",
+      "varika_word": "וַאֲסוֹבְﬞבָ֣ה",
+      "xataf_word": "וַאֲסוֹבֲבָ֣ה",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Song of Songs 3:3",
+      "varika_word": "הַסֹּבְﬞבִ֖ים",
+      "xataf_word": "הַסֹּבֲבִ֖ים",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Song of Songs 3:5",
+      "varika_word": "תְּע֥וֹרְﬞר֛וּ",
+      "xataf_word": "תְּע֥וֹרֲר֛וּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Song of Songs 3:6",
+      "varika_word": "כְּתִֽימְﬞר֖וֹת",
+      "xataf_word": "כְּתִֽימֲר֖וֹת",
+      "match_kind": "sigla=word",
+      "sigla": "א,ל"
+    },
+    {
+      "ref": "Song of Songs 8:2",
+      "varika_word": "אֶנְהָֽגְﬞךָ֗",
+      "xataf_word": "אֶנְהָֽגֲךָ֗",
+      "match_kind": "sigla=word",
+      "sigla": "ל"
+    },
+    {
+      "ref": "Ruth 2:2",
+      "varika_word": "אֵלְﬞכָה־נָּ֤א",
+      "xataf_word": "אֵלֲכָה־נָּ֤א",
+      "match_kind": "sigla=word",
+      "sigla": "א,ל"
+    },
+    {
+      "ref": "Lamentations 2:20",
+      "varika_word": "עֹלְﬞלֵ֣י",
+      "xataf_word": "עֹלֲלֵ֣י",
+      "match_kind": "sigla=word",
+      "sigla": "ל"
+    },
+    {
+      "ref": "Ecclesiastes 2:13",
+      "varika_word": "כִּֽיתְﬞר֥וֹן",
+      "xataf_word": "כִּֽיתֲר֥וֹן",
+      "match_kind": "sigla=word",
+      "sigla": "ש1,ק13,ש2",
+      "neither-lc-nor-ac-mentioned": true
+    },
+    {
+      "ref": "Ecclesiastes 6:2",
+      "varika_word": "יֹֽאכְﬞלֶ֑נּוּ",
+      "xataf_word": "יֹֽאכֲלֶ֑נּוּ",
+      "match_kind": "sigla=word",
+      "sigla": "ל"
+    },
+    {
+      "ref": "Ecclesiastes 9:7",
+      "varika_word": "וּֽשְׁﬞתֵ֥ה",
+      "xataf_word": "וּֽשֲׁתֵ֥ה",
+      "match_kind": "sigla=word",
+      "sigla": "ל"
+    },
+    {
+      "ref": "Daniel 1:4",
+      "varika_word": "וּֽלְﬞלַמְּדָ֥ם",
+      "xataf_word": "וּֽלֲלַמְּדָ֥ם",
+      "match_kind": "sigla=word",
+      "sigla": "ל"
+    },
+    {
+      "ref": "Daniel 2:19",
+      "varika_word": "גְﬞלִ֑י",
+      "xataf_word": "גֲלִ֑י",
+      "match_kind": "sigla=word",
+      "sigla": "ל,ש1,ק-מ,ב1,ש2"
+    },
+    {
+      "ref": "Daniel 2:35",
+      "varika_word": "לָא־הִשְׁתְּﬞכַ֣ח",
+      "xataf_word": "לָא־הִשְׁתֲּכַ֣ח",
+      "match_kind": "sigla=word",
+      "sigla": "ל"
+    },
+    {
+      "ref": "Daniel 4:9",
+      "varika_word": "צִפְּﬞרֵ֣י",
+      "xataf_word": "צִפֲּרֵ֣י",
+      "match_kind": "sigla=word",
+      "sigla": "ל"
+    },
+    {
+      "ref": "Daniel 4:18",
+      "varika_word": "צִפְּﬞרֵ֥י",
+      "xataf_word": "צִפֲּרֵ֥י",
+      "match_kind": "sigla=word",
+      "sigla": "ל"
+    },
+    {
+      "ref": "Daniel 6:23",
+      "varika_word": "וּֽסְﬞגַ֛ר",
+      "xataf_word": "וּֽסֲגַ֛ר",
+      "match_kind": "sigla=word",
+      "sigla": "ל"
+    },
+    {
+      "ref": "Daniel 7:19",
+      "varika_word": "מַדְּﬞקָ֔ה",
+      "xataf_word": "מַדֲּקָ֔ה",
+      "match_kind": "sigla=word",
+      "sigla": "ל"
+    },
+    {
+      "ref": "Daniel 9:18",
+      "varika_word": "וּֽשְׁﬞמָע֒",
+      "xataf_word": "וּֽשֲׁמָע֒",
+      "match_kind": "sigla=word",
+      "sigla": "ל"
+    },
+    {
+      "ref": "Daniel 9:19",
+      "varika_word": "הַֽקְﬞשִׁ֥יבָה",
+      "xataf_word": "הַֽקֲשִׁ֥יבָה",
+      "match_kind": "sigla=word",
+      "sigla": "ל"
+    },
+    {
+      "ref": "Daniel 11:15",
+      "varika_word": "סֽוֹלְﬞלָ֔ה",
+      "xataf_word": "סֽוֹלֲלָ֔ה",
+      "match_kind": "sigla=word",
+      "sigla": "ל"
+    },
+    {
+      "ref": "Daniel 12:10",
+      "varika_word": "יִ֠תְבָּֽרְﬞר֠וּ",
+      "xataf_word": "יִ֠תְבָּֽרֲרוּ",
+      "match_kind": "sigla=word",
+      "sigla": "ל"
+    },
+    {
+      "ref": "Ezra 8:26",
+      "varika_word": "וָאֶשְׁקְﬞלָ֨ה",
+      "xataf_word": "וָאֶשְׁקֲלָ֨ה",
+      "match_kind": "sigla=word",
+      "sigla": "ל"
+    },
+    {
+      "ref": "Nehemiah 2:6",
+      "varika_word": "מַֽהֲלָכְﬞךָ֖",
+      "xataf_word": "מַֽהֲלָכֲךָ֖",
+      "match_kind": "sigla=word",
+      "sigla": "ל"
+    },
+    {
+      "ref": "Nehemiah 3:13",
+      "varika_word": "הָשְׁﬞפֽוֹת",
+      "xataf_word": "הָשֲׁפֽוֹת",
+      "match_kind": "sigla=word",
+      "sigla": "ל"
+    },
+    {
+      "ref": "Nehemiah 7:67",
+      "varika_word": "מְשֹֽׁרְﬞרִים֙",
+      "xataf_word": "מְשֹֽׁרֲרִים֙",
+      "match_kind": "sigla=word",
+      "sigla": "ל"
+    },
+    {
+      "ref": "Nehemiah 7:67",
+      "varika_word": "וּמְשֹׁ֣רְﬞר֔וֹת",
+      "xataf_word": "וּמְשֹׁ֣רֲר֔וֹת",
+      "match_kind": "sigla=word",
+      "sigla": "ל"
+    },
+    {
+      "ref": "Nehemiah 9:5",
+      "varika_word": "בָּרְﬞכוּ֙",
+      "xataf_word": "בָּרֲכוּ֙",
+      "match_kind": "sigla=word",
+      "sigla": "ל"
+    },
+    {
+      "ref": "Nehemiah 11:2",
+      "varika_word": "וַֽיְבָרְﬞכ֖וּ",
+      "xataf_word": "וַֽיְבָרֲכ֖וּ",
+      "match_kind": "sigla=word",
+      "sigla": "ל"
+    },
+    {
+      "ref": "Nehemiah 12:29",
+      "varika_word": "הַמְשֹׁ֣רְﬞרִ֔ים",
+      "xataf_word": "הַמְשֹׁ֣רֲרִ֔ים",
+      "match_kind": "sigla=word",
+      "sigla": "ל"
+    },
+    {
+      "ref": "Nehemiah 12:36",
+      "varika_word": "מִֽלְﬞלַ֡י",
+      "xataf_word": "מִֽלֲלַ֡י",
+      "match_kind": "sigla=word",
+      "sigla": "ל"
+    },
+    {
+      "ref": "Nehemiah 12:36",
+      "varika_word": "גִּֽלְﬞלַ֡י",
+      "xataf_word": "גִּֽלֲלַ֡י",
+      "match_kind": "sigla=word",
+      "sigla": "ל"
+    },
+    {
+      "ref": "Nehemiah 13:19",
+      "varika_word": "צָֽלְﬞלוּ֩",
+      "xataf_word": "צָֽלֲלוּ֩",
+      "match_kind": "sigla=word",
+      "sigla": "ל"
+    },
+    {
+      "ref": "1Chronicles 2:44",
+      "varika_word": "יׇרְקְﬞעָ֑ם",
+      "xataf_word": "יָרְקֳעָ֑ם",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "1Chronicles 4:10",
+      "varika_word": "תְּבָרְﬞכֵ֜נִי",
+      "xataf_word": "תְּבָרֲכֵ֜נִי",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "1Chronicles 5:16",
+      "varika_word": "וּבְכׇֽל־מִגְרְﬞשֵׁ֥י",
+      "xataf_word": "וּבְכׇֽל־מִגְרֲשֵׁ֥י",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "1Chronicles 5:27",
+      "varika_word": "קְﬞהָ֖ת",
+      "xataf_word": "קֳהָ֖ת",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "1Chronicles 5:28",
+      "varika_word": "קְﬞהָ֑ת",
+      "xataf_word": "קֳהָ֑ת",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "1Chronicles 6:1",
+      "varika_word": "קְﬞהָ֖ת",
+      "xataf_word": "קֳהָ֖ת",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "1Chronicles 6:3",
+      "varika_word": "קְﬞהָ֑ת",
+      "xataf_word": "קֳהָ֑ת",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "1Chronicles 6:7",
+      "varika_word": "קְﬞהָ֑ת",
+      "xataf_word": "קֳהָ֑ת",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "1Chronicles 6:18",
+      "varika_word": "הַקְּﬞהָתִ֔י",
+      "xataf_word": "הַקֳּהָתִ֔י",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "1Chronicles 6:23",
+      "varika_word": "בֶּן־קְﬞהָ֔ת",
+      "xataf_word": "בֶּן־קֳהָ֔ת",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "1Chronicles 6:39",
+      "varika_word": "הַקְּﬞהָתִ֔י",
+      "xataf_word": "הַקֳּהָתִ֔י",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "1Chronicles 6:46",
+      "varika_word": "קְﬞהָ֜ת",
+      "xataf_word": "קֳהָ֜ת",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "1Chronicles 6:51",
+      "varika_word": "קְﬞהָ֑ת",
+      "xataf_word": "קֳהָ֑ת",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "1Chronicles 6:53",
+      "varika_word": "וְאֶֽת־יׇקְמְﬞעָם֙",
+      "xataf_word": "וְאֶֽת־יָקְמֳעָם֙",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "1Chronicles 6:55",
+      "varika_word": "לִבְנֵֽי־קְﬞהָ֖ת",
+      "xataf_word": "לִבְנֵֽי־קֳהָ֖ת",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "1Chronicles 9:32",
+      "varika_word": "הַקְּﬞהָתִ֛י",
+      "xataf_word": "הַקֳּהָתִ֛י",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "1Chronicles 15:18",
+      "varika_word": "וֶאֱלִ֨יפְﬞלֵ֜הוּ",
+      "xataf_word": "וֶאֱלִ֨יפֲלֵ֜הוּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "1Chronicles 15:19",
+      "varika_word": "וְהַמְשֹׁ֣רְﬞרִ֔ים",
+      "xataf_word": "וְהַמְשֹׁ֣רֲרִ֔ים",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "1Chronicles 15:21",
+      "varika_word": "וֶאֱלִֽיפְﬞלֵ֗הוּ",
+      "xataf_word": "וֶאֱלִֽיפֲלֵ֗הוּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "1Chronicles 15:27",
+      "varika_word": "וְהַמְשֹׁ֣רְﬞרִ֔ים",
+      "xataf_word": "וְהַמְשֹׁ֣רֲרִ֔ים",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "1Chronicles 15:27",
+      "varika_word": "הַמְשֹׁרְﬞרִ֑ים",
+      "xataf_word": "הַמְשֹׁרֲרִ֑ים",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "1Chronicles 16:5",
+      "varika_word": "בַּֽמְﬞצִלְתַּ֥יִם",
+      "xataf_word": "בַּֽמֲצִלְתַּ֥יִם",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "1Chronicles 16:10",
+      "varika_word": "הִֽתְהַלְﬞלוּ֙",
+      "xataf_word": "הִֽתְהַלֲלוּ֙",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "1Chronicles 18:10",
+      "varika_word": "וּֽלְבָרְﬞכ֗וֹ",
+      "xataf_word": "וּֽלְבָרֲכ֗וֹ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "1Chronicles 19:3",
+      "varika_word": "הַֽמְﬞכַבֵּ֨ד",
+      "xataf_word": "הַֽמֲכַבֵּ֨ד",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "1Chronicles 23:6",
+      "varika_word": "קְﬞהָ֥ת",
+      "xataf_word": "קֳהָ֥ת",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "1Chronicles 23:12",
+      "varika_word": "קְﬞהָ֗ת",
+      "xataf_word": "קֳהָ֗ת",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "1Chronicles 26:5",
+      "varika_word": "בֵרְﬞכ֖וֹ",
+      "xataf_word": "בֵרֲכ֖וֹ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "1Chronicles 26:16",
+      "varika_word": "בַּֽמְﬞסִלָּ֖ה",
+      "xataf_word": "בַּֽמֲסִלָּ֖ה",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "1Chronicles 26:18",
+      "varika_word": "לַֽמְﬞסִלָּ֔ה",
+      "xataf_word": "לַֽמֲסִלָּ֔ה",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "1Chronicles 26:32",
+      "varika_word": "הַֽמְﬞנַשִּׁ֔י",
+      "xataf_word": "הַֽמֲנַשִּׁ֔י",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "1Chronicles 27:21",
+      "varika_word": "הַֽמְﬞנַשֶּׁה֙",
+      "xataf_word": "הַֽמֲנַשֶּׁה֙",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "1Chronicles 27:31",
+      "varika_word": "הָרְﬞכ֔וּשׁ",
+      "xataf_word": "הָרֲכ֔וּשׁ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "1Chronicles 28:18",
+      "varika_word": "וְסֹכְﬞכִ֖ים",
+      "xataf_word": "וְסֹכֲכִ֖ים",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "1Chronicles 29:2",
+      "varika_word": "וּֽכְﬞכׇל־כֹּחִ֞י",
+      "xataf_word": "וּֽכֲכָל־כֹּחִ֞י",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "1Chronicles 29:20",
+      "varika_word": "וַיְבָרְﬞכ֣וּ",
+      "xataf_word": "וַיְבָרֲכ֣וּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "2Chronicles 5:12",
+      "varika_word": "הַמְשֹׁרְﬞרִ֣ים",
+      "xataf_word": "הַמְשֹׁרֲרִ֣ים",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "2Chronicles 5:13",
+      "varika_word": "וְלַמְשֹׁרְﬞרִ֜ים",
+      "xataf_word": "וְלַמְשֹׁרֲרִ֜ים",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "2Chronicles 6:21",
+      "varika_word": "יִֽתְפַּלְﬞל֖וּ",
+      "xataf_word": "יִֽתְפַּלֲל֖וּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "2Chronicles 6:24",
+      "varika_word": "וְהִתְפַּֽלְﬞל֧וּ",
+      "xataf_word": "וְהִתְפַּֽלֲל֧וּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "2Chronicles 6:38",
+      "varika_word": "וְהִֽתְפַּֽלְﬞל֗וּ",
+      "xataf_word": "וְהִֽתְפַּֽלֲל֗וּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "2Chronicles 7:14",
+      "varika_word": "וְיִֽתְפַּֽלְﬞלוּ֙",
+      "xataf_word": "וְיִֽתְפַּֽלֲלוּ֙",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "2Chronicles 12:13",
+      "varika_word": "וּֽשְׁﬞבַ֨ע",
+      "xataf_word": "וּֽשֲׁבַ֨ע",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "2Chronicles 16:9",
+      "varika_word": "מְשֹׁטְﬞט֤וֹת",
+      "xataf_word": "מְשֹׁטֲט֤וֹת",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "2Chronicles 20:19",
+      "varika_word": "הַקְּﬞהָתִ֖ים",
+      "xataf_word": "הַקֳּהָתִ֖ים",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "2Chronicles 20:21",
+      "varika_word": "מְשֹֽׁרְﬞרִים֙",
+      "xataf_word": "מְשֹֽׁרֲרִים֙",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "2Chronicles 20:21",
+      "varika_word": "וּֽמְהַלְﬞלִ֖ים",
+      "xataf_word": "וּֽמְהַלֲלִ֖ים",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "2Chronicles 20:25",
+      "varika_word": "בֹּזְﬞזִ֥ים",
+      "xataf_word": "בֹּזֲזִ֥ים",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "2Chronicles 20:26",
+      "varika_word": "בֵּרְﬞכ֣וּ",
+      "xataf_word": "בֵּרֲכ֣וּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "2Chronicles 21:17",
+      "varika_word": "כׇּל־הָרְﬞכוּשׁ֙",
+      "xataf_word": "כׇּל־הָרֲכוּשׁ֙",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "2Chronicles 23:12",
+      "varika_word": "וְהַֽמְהַלְﬞלִ֖ים",
+      "xataf_word": "וְהַֽמְהַלֲלִ֖ים",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "2Chronicles 23:13",
+      "varika_word": "וְהַמְשֽׁוֹרְﬞרִים֙",
+      "xataf_word": "וְהַמְשֽׁוֹרֲרִים֙",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "2Chronicles 24:14",
+      "varika_word": "וּֽכְﬞכַלּוֹתָ֡ם",
+      "xataf_word": "וּֽכֲכַלּוֹתָ֡ם",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "2Chronicles 29:12",
+      "varika_word": "הַקְּﬞהָתִי֒",
+      "xataf_word": "הַקֳּהָתִי֒",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "2Chronicles 29:30",
+      "varika_word": "וַֽיְהַלְﬞלוּ֙",
+      "xataf_word": "וַֽיְהַלֲלוּ֙",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "2Chronicles 30:27",
+      "varika_word": "וַיְבָרְﬞכ֣וּ",
+      "xataf_word": "וַיְבָרֲכ֣וּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "2Chronicles 31:8",
+      "varika_word": "וַֽיְבָרְﬞכוּ֙",
+      "xataf_word": "וַֽיְבָרֲכוּ֙",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "2Chronicles 32:31",
+      "varika_word": "הַֽמְﬞשַׁלְּחִ֤ים",
+      "xataf_word": "הַֽמֲשַׁלְּחִ֤ים",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "2Chronicles 33:18",
+      "varika_word": "הַֽמְﬞדַבְּרִ֣ים",
+      "xataf_word": "הַֽמֲדַבְּרִ֣ים",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "2Chronicles 35:7",
+      "varika_word": "מֵרְﬞכ֥וּשׁ",
+      "xataf_word": "מֵרֲכ֥וּשׁ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "2Chronicles 35:15",
+      "varika_word": "וְהַמְשֹׁרְﬞרִ֨ים",
+      "xataf_word": "וְהַמְשֹׁרֲרִ֨ים",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 17:14",
+      "varika_word": "מִ֥מְﬞתִֽים־יָדְךָ֨",
+      "xataf_word": "מִ֥מֲתִֽים־יָדְךָ֨",
+      "match_kind": "manual"
+    }
+  ]
+}

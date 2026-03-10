@@ -1,0 +1,218 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Current File",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },
+        {
+            "name": "download MAM fr Wikisource",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "py/main_download_fr_wikisource.py",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "download MAM fr Google",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "py/main_download_fr_google.py",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "diff MAM-MAM Ws with Go",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "py/main_diff_wsgo.py",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "main 0 mega",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "py/main_0_mega.py",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Wikisource bot proto",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "py/main_ws_bot_proto.py",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Wikisource bot",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "py/main_ws_bot.py",
+            "args": ["-dir:dir-for-pywikibot"] ,
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Parse Wikisource",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "py/main_parse_ws.py",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Parse Google",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "py/main_parse_go.py",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "MT MAM foi",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "py/main_foi_features_of_interest.py",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "ST MAM foi",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "py/main_foi_features_of_interest.py",
+            "args": ["--single-threaded"] ,
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "ST MAM args-foi-unicode",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "py/main_foi_features_of_interest.py",
+            "args": ["--foi", "args-foi-unicode", "--single-threaded"] ,
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "diff CTR vs MAM",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "py/main_diff_ctr_vs_mam.py",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "diff MAM-MAM 20211207 20230406",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "py/main_diff_gogo.py",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "match change log entries to Go-Go diffs",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "py/main_match_go_changes_to_gogo_diffs.py",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Decalogues and Reuben",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "py/main_decnreub.py",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "word list",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "py/main_wordlist.py",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "multimark",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "py/main_multimark.py",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "template survey",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "py/main_tmpl_survey.py",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "misc authored english documents",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "py/main_gen_misc_authored_english_documents.py",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "MAM with doc",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "py/main_mam_with_doc.py",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "MAM with doc: Proverbs",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "py/main_mam_with_doc.py",
+            "args": ["--book39tbn", "Proverbs"] ,
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "MAM XML: all",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "py/main_mam_xml.py",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "MAM XML: Isaiah",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "py/main_mam_xml.py",
+            "args": ["--book39tbn", "Isaiah"] ,
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "MAM OSIS: all",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "py/main_osis.py",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "MAM for AJF: all",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "py/main_mam4ajf.py",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "MAM for Sef: all",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "py/main_mam4sef.py",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "explicit xataf",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "py/main_explicit_xataf.py",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "MAM for Sef: Psalms",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "py/main_mam4sef.py",
+            "args": ["--book39tbn", "Psalms"] ,
+            "console": "integratedTerminal"
+        }
+    ]
+}

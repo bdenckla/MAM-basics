@@ -1,0 +1,452 @@
+[
+  {
+    "ref": "Genesis 4:23",
+    "target_word": "הַאְזֵ֖נָּה",
+    "category": "misc",
+    "translation": "Q3 has hataf patah. Other MSS and MAM agree: shewa, no ga'aya. Prints add ga'aya."
+  },
+  {
+    "ref": "Genesis 14:17",
+    "target_word": "אַחֲרֵ֣י",
+    "category": "lc-differs",
+    "translation": "LC missing hataf dots in het (patah instead of hataf patah). Typist corrected silently."
+  },
+  {
+    "ref": "Genesis 27:26",
+    "target_word": "וּשְׁקָה־לִּ֖י",
+    "category": "uncertain-hataf",
+    "translation": "Question whether AC(S) has hataf patah in shin. Answer: no, shewa only, no meteg in vav."
+  },
+  {
+    "ref": "Genesis 30:41",
+    "target_word": "לְיַחְמֵ֖נָּה",
+    "category": "uncertain-hataf",
+    "translation": "Question whether AC(S) has meteg, hataf patah, and segol. Answer: no meteg, shewa only in het, tsere in mem."
+  },
+  {
+    "ref": "Genesis 32:16",
+    "target_word": "וַעְיָרִ֖ם",
+    "category": "vowel-discussion",
+    "translation": "Typist noted unusual form. Possibly hataf patah as in Venice MG (corrected in MS). Noted in BHS."
+  },
+  {
+    "ref": "Genesis 41:46",
+    "target_word": "וַֽיַּעֲבֹ֖ר",
+    "category": "lc-differs",
+    "translation": "LC has shewa instead of hataf in ayin."
+  },
+  {
+    "ref": "Exodus 2:17",
+    "target_word": "וַיְגָרְשׁ֑וּם",
+    "category": "vowel-discussion",
+    "translation": "AC(S) and LC confirm: no hataf in resh."
+  },
+  {
+    "ref": "Exodus 7:10",
+    "target_word": "וַיַּ֣עֲשׂוּ כֵ֔ן",
+    "category": "lc-differs",
+    "translation": "LC missing hataf dots in ayin. Prints have maqaf-joined word with ga'aya."
+  },
+  {
+    "ref": "Exodus 8:3",
+    "target_word": "הַֽחַרְטֻמִּ֖ים",
+    "category": "lc-differs",
+    "translation": "LC surprisingly has hataf dots in het and right ga'aya (MAM has plain patah)."
+  },
+  {
+    "ref": "Exodus 9:11",
+    "target_word": "בַּֽחַרְטֻמִּ֖ם",
+    "category": "lc-differs",
+    "translation": "LC surprisingly has right ga'aya and hataf dots in het (MAM has plain patah)."
+  },
+  {
+    "ref": "Exodus 14:11",
+    "target_word": "הֲֽמִבְּלִ֤י",
+    "category": "lc-differs",
+    "translation": "AC(S) etc: hataf patah with ga'aya. LC missing hataf dots in interrogative he. Prints: hataf patah, no ga'aya."
+  },
+  {
+    "ref": "Exodus 20:4",
+    "target_word": "לֹֽא־תִשְׁתַּחֲוֶ֥֣ה",
+    "category": "lc-differs",
+    "translation": "LC has shewa in het instead of hataf patah."
+  },
+  {
+    "ref": "Exodus 24:11",
+    "target_word": "וַיֶּֽחֱזוּ֙",
+    "category": "vowel-discussion",
+    "translation": "Discussion of ga'aya placement before segol + hataf segol. Various MS readings differ on ga'aya position."
+  },
+  {
+    "ref": "Exodus 29:22",
+    "target_word": "וְאֶת־הַחֵ֙לֶב֙",
+    "category": "lc-differs",
+    "translation": "LC has hataf patah in he (MAM has patah). Typist did not note this."
+  },
+  {
+    "ref": "Exodus 30:8",
+    "target_word": "הָעַרְבַּ֖יִם",
+    "category": "lc-differs",
+    "translation": "LC has hataf patah in ayin (MAM has patah)."
+  },
+  {
+    "ref": "Exodus 33:11",
+    "target_word": "וּמְשָׁ֨רְת֜וֹ",
+    "category": "uncertain-hataf",
+    "translation": "Question: hataf patah in shin? Answer: no, shewa only. No hataf."
+  },
+  {
+    "ref": "Exodus 35:32",
+    "target_word": "מַֽחֲשָׁבֹ֑ת",
+    "category": "lc-differs",
+    "translation": "LC missing hataf dots in het."
+  },
+  {
+    "ref": "Exodus 37:25",
+    "target_word": "רׇחְבּ֜וֹ",
+    "category": "hataf-qamats-for-qamats-qatan",
+    "translation": "LC has hataf qamats marking qamats qatan. Hataf dots clearly visible in color photo. Breuer concurs. Dotan and typist read plain qamats."
+  },
+  {
+    "ref": "Levit 25:46",
+    "target_word": "וְהִתְנַחַלְתֶּ֨ם",
+    "category": "lc-differs",
+    "translation": "LC has hataf patah in het (MAM has plain patah)."
+  },
+  {
+    "ref": "Levit 26:34",
+    "target_word": "הׇשַּׁמָּ֔הֿ",
+    "category": "hataf-qamats-for-qamats-qatan",
+    "translation": "LC has hataf qamats, no dagesh in shin. Venice MG also lacks dagesh. MAM follows MS et al."
+  },
+  {
+    "ref": "Numbers 3:30",
+    "target_word": "אֱלִיצָפָ֖ן",
+    "category": "lc-differs",
+    "translation": "LC missing hataf dots in alef (MAM has hataf segol)."
+  },
+  {
+    "ref": "Numbers 7:85",
+    "target_word": "הָֽאַחַת֙",
+    "category": "uncertain-hataf",
+    "translation": "Dotan uncertain about LC reading in alef — possibly hataf, with an erasure mark."
+  },
+  {
+    "ref": "Numbers 9:3",
+    "target_word": "הָֽעַרְבַּ֛יִם",
+    "category": "lc-differs",
+    "translation": "LC has hataf patah in ayin (MAM has plain patah)."
+  },
+  {
+    "ref": "Numbers 10:9",
+    "target_word": "וְנִזְכַּרְתֶּ֗ם",
+    "category": "lc-differs",
+    "translation": "LC has hataf patah in vav (MAM has shewa)."
+  },
+  {
+    "ref": "Numbers 16:21",
+    "target_word": "וַאֲכַלֶּ֥ה",
+    "category": "lc-differs",
+    "translation": "LC missing hataf dots in alef (MAM has hataf patah)."
+  },
+  {
+    "ref": "Numbers 21:1",
+    "target_word": "הָאֲתָרִ֑ים",
+    "category": "uncertain-hataf",
+    "translation": "LC may have hataf qamats instead of hataf patah in alef. Hard to discern in photo; possibly a stain."
+  },
+  {
+    "ref": "Numbers 35:20",
+    "target_word": "יֶהְדֳּפֶ֑נּוּ",
+    "category": "lc-differs",
+    "translation": "LC and L3 missing hataf qamats dots in dalet."
+  },
+  {
+    "ref": "Deuter 3:22",
+    "target_word": "תִּֽירָא֑וּם",
+    "category": "hataf-hiriq",
+    "translation": "LC may have hataf hiriq per typist. Dotan and Breuer printed hiriq+ga'aya without comment. Mark may be ga'aya."
+  },
+  {
+    "ref": "Deuter 9:3",
+    "target_word": "וְהַֽאֲבַדְתָּם֙",
+    "category": "lc-differs",
+    "translation": "LC missing hataf dots in alef (MAM has hataf patah)."
+  },
+  {
+    "ref": "Deuter 22:16",
+    "target_word": "הַֽנַּעֲרָ֖2=ל1,ק3-קרי=הַֽנַּעֲרָ֖ה",
+    "category": "lc-differs",
+    "translation": "LC ketiv missing hataf dots in ayin."
+  },
+  {
+    "ref": "Deuter 25:18",
+    "target_word": "אַֽחֲרֶ֔יךָ",
+    "category": "lc-differs",
+    "translation": "LC missing hataf dots in het."
+  },
+  {
+    "ref": "Deuter 32:6",
+    "target_word": "הַהַהגה/ג לְיְהֹוָה֙בספרי תימן הַֽלְיהֹוָה֙הַֽלְיהֹוָה֙ה.....גה/ג בתיבה אחתאאא*",
+    "category": "vowel-discussion",
+    "translation": "Complex multi-source discussion of הַלְיהֹוָה. LC has hataf patah in he as separate word. L1 has hataf patah in yod. Various readings."
+  },
+  {
+    "ref": "Deuter 32:10",
+    "target_word": "יְסֹבְבֶ֙נְהוּ֙ יְב֣וֹנְנֵ֔הוּ",
+    "category": "ac-differs",
+    "translation": "AC has hataf patah in both doubled letters (bet, nun). MAM and other MSS have no hataf, no ga'aya."
+  },
+  {
+    "ref": "2Samuel 11:11",
+    "target_word": "וַאדֹנִ֨י",
+    "category": "ac-differs",
+    "translation": "AC surprisingly has hataf patah in alef."
+  },
+  {
+    "ref": "2Samuel 23:13",
+    "target_word": "עֲדֻלָּ֑ם",
+    "category": "ac-differs",
+    "translation": "AC surprisingly missing hataf dots in ayin. MAM, LC, and prints have hataf patah."
+  },
+  {
+    "ref": "2Samuel 24:2",
+    "target_word": "אֲשֶׁר־אִתּ֗וֹ",
+    "category": "ac-differs",
+    "translation": "AC surprisingly missing hataf dots in alef."
+  },
+  {
+    "ref": "1Kings 19:20",
+    "target_word": "אֶשְּׁקָה־נָּא֙",
+    "category": "vowel-discussion",
+    "translation": "AC and LC have shewa. Some prints/Koren: hataf qamats. Q: hataf patah. MS debated all three options. MG: left shin dot."
+  },
+  {
+    "ref": "Jeremiah 2:12",
+    "target_word": "חׇרְב֥וּ",
+    "category": "hataf-qamats-for-qamats-qatan",
+    "translation": "AC has hataf qamats marking qamats qatan. See Radak and Minchat Shai."
+  },
+  {
+    "ref": "Jeremiah 29:27",
+    "target_word": "הָֽעַנְּתֹתִ֑י",
+    "category": "lc-differs",
+    "translation": "LC surprisingly has hataf patah in ayin (MAM has plain patah)."
+  },
+  {
+    "ref": "Jeremiah 48:32",
+    "target_word": "מִבְּכִ֨י",
+    "category": "uncertain-hataf",
+    "translation": "Per Breuer, AC has hataf in non-guttural letter (bet). But may be a stain, or hataf patah with patah line erased."
+  },
+  {
+    "ref": "Jeremiah 49:28",
+    "target_word": "וְשׇׁדְד֖וּ",
+    "category": "hataf-qamats-for-qamats-qatan",
+    "translation": "AC has hataf qamats marking qamats qatan. Also in first-edition MG and MGH."
+  },
+  {
+    "ref": "Ezekiel 15:4",
+    "target_word": "לְאׇכְלָ֑ה",
+    "category": "hataf-qamats-for-qamats-qatan",
+    "translation": "Per Breuer, AC has hataf qamats for qamats qatan. Qamats visible; possible faded hataf dots."
+  },
+  {
+    "ref": "Ezekiel 32:20",
+    "target_word": "מׇשְׁכ֥וּ",
+    "category": "hataf-qamats-for-qamats-qatan",
+    "translation": "AC has hataf qamats marking qamats qatan. Also in MGH."
+  },
+  {
+    "ref": "Ezekiel 35:15",
+    "target_word": "וְכׇל־אֱד֣וֹם",
+    "category": "ac-differs",
+    "translation": "AC surprisingly has segol instead of hataf segol in alef. MGH concurs."
+  },
+  {
+    "ref": "Jonah 1:3",
+    "target_word": "אֳנִיָּ֣ה",
+    "category": "lc-differs",
+    "translation": "LC missing hataf qamats dots in alef (has plain qamats instead)."
+  },
+  {
+    "ref": "Micah 2:12",
+    "target_word": "ד=הַדׇּֽבְר֔וֹס=הַדָּֽבְר֔וֹ",
+    "category": "vowel-discussion",
+    "translation": "Discussion of whether qamats is qatan. Radak says it should reduce. Ga'aya present. Opinions differ (Weinberg, Davidson vs. Koren, Simanim)."
+  },
+  {
+    "ref": "Zechariah 1:4",
+    "target_word": "ומעליליכםוּמַֽעַלְלֵיכֶ֖ם",
+    "category": "lc-differs",
+    "translation": "LC ketiv surprisingly has hataf patah dots in ayin."
+  },
+  {
+    "ref": "Zechariah 1:10",
+    "target_word": "בֵּין־הַהֲדַסִּ֖ים",
+    "category": "lc-differs",
+    "translation": "LC missing hataf patah dots in second he."
+  },
+  {
+    "ref": "Psalms 14:1",
+    "target_word": "הִֽשְׁחִ֗יתוּ",
+    "category": "hataf-hiriq",
+    "translation": "AC has hataf hiriq in shin."
+  },
+  {
+    "ref": "Psalms 14:1",
+    "target_word": "הִֽתְעִ֥יבוּ",
+    "category": "hataf-hiriq",
+    "translation": "AC has hataf hiriq in tav."
+  },
+  {
+    "ref": "Psalms 80:11",
+    "target_word": "כׇּסּ֣וּ",
+    "category": "vowel-discussion",
+    "translation": "Discussion of qamats qatan. MS cites hataf for the dagesh. Da'at Miqra: qamats qatan replacing qubuts in pu'al."
+  },
+  {
+    "ref": "Psalms 81:8",
+    "target_word": "אֶבְחׇנְךָ֨",
+    "category": "vowel-discussion",
+    "translation": "Discussion of whether qamats is gadol or qatan. Sephardi grammarians cite tradition of qamats qatan (hataf). MS concurs despite guttural ayin."
+  },
+  {
+    "ref": "Psalms 144:15",
+    "target_word": "שֱׁיְהֹוָ֥ה",
+    "category": "lc-differs",
+    "translation": "LC has segol in shin + hataf patah in yod (MAM: hataf segol in shin + shewa in yod). Q-M: segol + ga'aya."
+  },
+  {
+    "ref": "Proverbs 30:17",
+    "target_word": "לִֽיקְּהַ֫ת־אֵ֥ם",
+    "category": "lc-differs",
+    "translation": "LC has hataf in qof."
+  },
+  {
+    "ref": "Job 34:33",
+    "target_word": "הֲֽמֵעִמְּךָ֬",
+    "category": "lc-differs",
+    "translation": "AC etc: hataf patah + ga'aya. LC has plain patah in he. Breuer notes LC uses patah for hataf in ga'aya contexts."
+  },
+  {
+    "ref": "Song of Songs 1:6",
+    "target_word": "שֶׁשְּׁזָפַ֖תְנִי",
+    "category": "lc-differs",
+    "translation": "LC surprisingly has hataf segol in shin (MAM has shewa)."
+  },
+  {
+    "ref": "Song of Songs 2:9",
+    "target_word": "מִן־הַֽחַלֹּנ֔וֹת",
+    "category": "lc-differs",
+    "translation": "LC has hataf patah in het (MAM has plain patah)."
+  },
+  {
+    "ref": "Song of Songs 8:4",
+    "target_word": "תְּעֹ֥רְר֛וּ",
+    "category": "vowel-discussion",
+    "translation": "System-A reading has hataf patah. LC has ga'aya. Discussion of marka vs. ga'aya across three parallel passages."
+  },
+  {
+    "ref": "Ruth 3:4",
+    "target_word": "תַּעֲשִֽׂין",
+    "category": "lc-differs",
+    "translation": "AC has hataf patah (as MAM). LC missing hataf dots in ayin."
+  },
+  {
+    "ref": "Lamentations 3:6",
+    "target_word": "בְּמַחֲשַׁכִּ֥ים",
+    "category": "uncertain-hataf",
+    "translation": "LC may lack hataf patah in het (shewa instead). But patah line likely exists; collides with lamed in line below."
+  },
+  {
+    "ref": "Ecclesiastes 5:17",
+    "target_word": "לֶֽאֱכוֹל־וְ֠לִשְׁתּ֠וֹת",
+    "category": "lc-differs",
+    "translation": "LC missing hataf dots in alef (MAM has hataf segol)."
+  },
+  {
+    "ref": "Esther 1:6",
+    "target_word": "רִֽצְפַ֥ת",
+    "category": "vowel-discussion",
+    "translation": "LC has phonetic ga'aya + rafe on pe (mobile shewa). Petersburg MS has hataf in tsade. MS notes some MSS have hataf in tsade."
+  },
+  {
+    "ref": "Esther 2:5",
+    "target_word": "מׇרְדֳּכַ֗י",
+    "category": "hataf-qamats-for-qamats-qatan",
+    "translation": "LC etc: hataf qamats in dalet. Prints: shewa. Applies throughout Esther."
+  },
+  {
+    "ref": "Esther 2:14",
+    "target_word": "שַֽׁעַשְׁגַ֛ז",
+    "category": "lc-differs",
+    "translation": "LC has hataf patah dots in ayin (MAM has plain patah)."
+  },
+  {
+    "ref": "Esther 9:2",
+    "target_word": "אֲחַשְׁוֵר֔וֹשׁ",
+    "category": "uncertain-hataf",
+    "translation": "LC may have hataf qamats in alef (MAM has hataf patah). But dot is different color — may be a stain."
+  },
+  {
+    "ref": "Daniel 2:10",
+    "target_word": "אֱנָשׁ֙",
+    "category": "lc-differs",
+    "translation": "Q-M etc: hataf segol (as MAM). LC has hataf patah in alef instead."
+  },
+  {
+    "ref": "Daniel 2:30",
+    "target_word": "גֱּלִ֣י",
+    "category": "vowel-discussion",
+    "translation": "Hataf segol in gimel marks morphological segol vowel. Cf. verse 19."
+  },
+  {
+    "ref": "Daniel 9:19",
+    "target_word": "לְמַֽעַנְךָ֣",
+    "category": "lc-differs",
+    "translation": "LC has hataf patah in ayin (MAM has plain patah)."
+  },
+  {
+    "ref": "Daniel 12:2",
+    "target_word": "מִיְּשֵׁנֵ֥י",
+    "category": "uncertain-hataf",
+    "translation": "LC may have hataf patah in yod. Breuer marked with doubt — smudged, odd line under yod."
+  },
+  {
+    "ref": "Ezra 5:12",
+    "target_word": "אֲבָהָתַ֙נָא֙",
+    "category": "lc-differs",
+    "translation": "LC has hataf qamats dots in he."
+  },
+  {
+    "ref": "Ezra 8:25",
+    "target_word": "ואשקולהוָאֶשְׁקֳלָ֣ה",
+    "category": "vowel-discussion",
+    "translation": "LC has hataf qamats in qof to mark the morphological holam vowel preserved in spelling. Cf. next verse."
+  },
+  {
+    "ref": "Ezra 10:14",
+    "target_word": "יַֽעַמְדוּ־נָ֣א",
+    "category": "lc-differs",
+    "translation": "LC has hataf dots in ayin (MAM has plain patah)."
+  },
+  {
+    "ref": "Nehemiah 6:19",
+    "target_word": "לְיָֽרְאֵֽנִי",
+    "category": "uncertain-hataf",
+    "translation": "LC may have hataf patah in resh. Breuer: yes. Dotan: uncertain. Examination shows no clear hataf line."
+  },
+  {
+    "ref": "1Chronicles 22:10",
+    "target_word": "וַהֲכִ֨ינוֹתִ֜י",
+    "category": "ac-differs",
+    "translation": "AC surprisingly has shewa in vav + patah in he (MAM: hataf patah in he). Possibly hataf dots belong to he with vav unpointed."
+  },
+  {
+    "ref": "2Chronicles 6:42",
+    "target_word": "זׇכְרָ֕ה",
+    "category": "hataf-qamats-for-qamats-qatan",
+    "translation": "AC and S1 have hataf qamats marking qamats qatan. LC has plain qamats (as prints)."
+  }
+]

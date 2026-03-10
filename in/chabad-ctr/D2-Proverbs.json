@@ -1,0 +1,11 @@
+{
+    "source": "CTR",
+    "CTR": "Complete Tanach with Rashi, from chabad.org",
+    "CTR-provenance": "(speculative) a Judaica Press/Davka CD-ROM",
+    "Chabad-chapter-URLs": {
+        "8": "https://www.chabad.org/library/bible_cdo/aid/16379/"
+    },
+    "verses": {
+        "8:34": "אַ֥שְֽׁרֵי אָדָם֘ שֹׁמֵ֪עַ֫ לִ֥י לִשְׁקֹ֣ד עַל־דַּ֖לְתֹתַי י֤וֹם י֑וֹם לִ֜שְׁמֹ֗ר מְזוּזֹ֥ת פְּתָחָֽי:"
+    }
+}

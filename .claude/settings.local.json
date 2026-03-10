@@ -1,0 +1,31 @@
+{
+  "permissions": {
+    "allow": [
+      "Edit",
+      "Write",
+      "Bash(gh *--repo */* --comment */**/*)",
+      "Bash(gh issue close * --repo * --comment *)",
+      "Bash(gh issue close * --repo *)",
+      "Bash(gh issue comment * --repo * --body-file *)",
+      "Bash(PYTHONUTF8=1 .venv/Scripts/python.exe *)",
+      "Bash(PYTHONUTF8=1 .venv/Scripts/python.exe */**/*)",
+      "Bash(.venv/Scripts/python.exe *)",
+      "Bash(.venv/Scripts/python.exe */**/*)",
+      "Bash(cd * && git *)",
+      "Bash(cd */**/* && git *)",
+      "Bash(cd * && git */**/*)",
+      "Bash(cd */**/* && git */**/*)",
+      "Bash(git *)",
+      "Bash(git */**/*)",
+      "Bash(git diff *)",
+      "Bash(git diff * *)",
+      "Bash(git diff * */**/*)",
+      "Bash(start * *)",
+      "Bash(ls *)",
+      "Bash(test *)",
+      "Bash(grep *)",
+      "Bash(wc *)",
+      "Bash(ls .novc/*)"
+    ]
+  }
+}

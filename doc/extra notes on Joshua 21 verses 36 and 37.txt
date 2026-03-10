@@ -1,0 +1,18 @@
+In defense of the inclusion of Joshua 21:36 and 37 in editions not
+strictly based on manuscripts that lack them, i.e. in editions not
+strictly based on LC or AC:
+
+1. Though LC & AC lack these verse, there are significant witnesses for these verses.
+
+2. When we look at the text including these verses, a scribal error omitting them
+seems quite plausible due to the fact that both verses 35 and 37 end with
+the phrase
+וְאֶת־מִגְרָשֶׁ֑הָ עָרִ֖ים אַרְבַּֽע׃.
+
+3. These verses are related to text found in 1 Chronicles 6:63 and 64.
+In particular, words 1–10 of the 12 words of the insertion
+(וּמִמַּטֵּ֣ה ... וְאֶת־מִגְרָשֶׁ֑הָ)
+nearly match words 6–8 and 10–16 of the 16
+words of 1C 6:63 and 64.
+(Here “words” means chanted words, i.e. a maqaf
+compound counts as a single word.)

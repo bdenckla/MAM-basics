@@ -1,0 +1,39 @@
+There are two separate cantillation systems in the Hebrew Bible.
+One is used for Psalms,
+Proverbs and (most of) Job,
+(the "poetic" books,
+hence the "poetic system"),
+and the other is used everywhere else.
+The two systems have structural similarities and share some graphemes,
+but not all.
+In modern printing the accents have roughly the same shape;
+old manuscripts actually had them written slightly differently.
+In the prose system there is an accent called ZARQA,
+which is postposed (on or to the left of the last letter),
+and in the poetic system there is one called TSINOR (and also zarqa and vice-versa;
+each of these has many names) which has the same shape and placement and even an analogous function in the structure of the cantillations.
+There is another accent,
+only in the poetic system,
+called the TSINNORIT (a diminutive of tsinor),
+which occurs directly above its letter,
+and is (almost?) never on the last letter of its word.
+(More modern printing tends to put the zarqa right on top of its letter too,
+but that's just a printing preference).
+If you look closely at some old manuscripts,
+you can tell that tsinnorit has a slightly different shape than zarqa/tsinor.
+
+As encoded in Unicode,
+there are ZARQA (U+0598) and ZINOR (U+05AE) [sic].
+By the usual meanings of those names,
+those should properly be synonyms,
+the same accent,
+but they're not.
+While the word"zinor" would be mnemonic of "tsinnorit,"
+it's the wrong way around in the character names:
+ZINOR has the combining class of above-postposed,
+and ZARQA is encoded to go directly above the letter.
+So,
+to encode a zarqa or a tsinor,
+you need to use ZINOR,
+and to encode a tsinnorit,
+you need to use ZARQA.

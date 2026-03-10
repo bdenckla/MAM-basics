@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ketiv-qere styling (CSS) demo</title>
+<style>
+
+body { font-size: 14pt; }
+*[lang="hbo"] {
+    font-family: "Taamey D WOFF2";
+    font-size: 140%;
+    font-feature-settings: 'ss01'; /* ss01 = ḥataf qamats qatan */
+}
+@font-face {
+    font-family: "Taamey D WOFF2";
+    src: url("woff2/Taamey_D.woff2");
+}
+span.mam-dqq-unstressed { font-feature-settings: 'ss01', 'ss02'; }
+/* ss01 = ḥataf qamats qatan */
+/* ss02 = qamats qatan with small meteg */
+span.mam-letter-small { font-size: 85%; }
+span.mam-letter-large { font-size: 125%; }
+span.mam-letter-hung { vertical-align: super; }
+span.mam-lp-legarmeih { font-weight: bold; }
+span.mam-lp-paseq { font-size: 85%; }
+span.mam-implicit-maqaf { color: gray; }
+/* */
+p.parens span.mam-kq-kvq::before,
+p.parens span.mam-kq-kvq-maq::before,
+p.parens span.mam-kq-k::before,
+p.parens span.mam-kq-k-maq::before { content: '('; }
+p.parens span.mam-kq-q::before { content: '['; }
+/* */
+p.parens span.mam-kq-kvq::after,
+p.parens span.mam-kq-k::after { content: ')'; }
+p.parens span.mam-kq-q::after { content: ']'; }
+/* */
+p.parens span.mam-kq-kvq-maq::after,
+p.parens span.mam-kq-k-maq::after { content: ')־'; }
+/* */
+p.red-excl-maq span.mam-kq-kvq-maq::after,
+p.red-excl-maq span.mam-kq-k-maq::after { content: '־'; color: initial; }
+/* */
+p.red-pink-maq span.mam-kq-kvq-maq::after,
+p.red-pink-maq span.mam-kq-k-maq::after { content: '־'; color: pink; }
+/* */
+p.red-incl-maq span.mam-kq-kvq-maq::after,
+p.red-incl-maq span.mam-kq-k-maq::after { content: '־'; }
+/* */
+rt,
+p.red-excl-maq span.mam-kq-kvq,
+p.red-excl-maq span.mam-kq-kvq-maq,
+p.red-excl-maq span.mam-kq-k,
+p.red-excl-maq span.mam-kq-k-maq,
+p.red-pink-maq span.mam-kq-kvq,
+p.red-pink-maq span.mam-kq-kvq-maq,
+p.red-pink-maq span.mam-kq-k,
+p.red-pink-maq span.mam-kq-k-maq,
+p.red-incl-maq span.mam-kq-kvq,
+p.red-incl-maq span.mam-kq-kvq-maq,
+p.red-incl-maq span.mam-kq-k,
+p.red-incl-maq span.mam-kq-k-maq { color: red; }
+ruby,
+p.red-excl-maq span.mam-kq-q,
+p.red-pink-maq span.mam-kq-q,
+p.red-incl-maq span.mam-kq-q { color: green; }
+/* */
+</style>
+</head>
+<body>
+<!-- 2Kgs.5.18 -->
+<!-- 2Sam.13.33 -->
+<!-- 1Chr.9.4 -->
+<!-- Isa.26.20 -->
+<p class="parens" lang="hbo" dir="rtl">
+    יִסְלַח־<span class="mam-kq-kvq-maq">נא</span>יְהֹוָ֥ה
+    &emsp;
+    כִּֽי־<span class="mam-kq-kvq-maq">אם</span>אַמְנ֥וֹן
+    &emsp;
+    בֶן־<span class="mam-kq"><span class="mam-kq-k-maq">בנימן</span><span class="mam-kq-q">בָּנִ֔י מִן־</span></span>בְּנֵי־פֶ֖רֶץ
+    &emsp;
+    עַד־<span class="mam-kq"><span class="mam-kq-k-maq">יעבור</span><span class="mam-kq-q">יַעֲבׇר־</span></span>זָֽעַם׃
+</p>
+<p class="red-excl-maq" lang="hbo" dir="rtl">
+    יִסְלַח־<span class="mam-kq-kvq-maq">נא</span>יְהֹוָ֥ה
+    &emsp;
+    כִּֽי־<span class="mam-kq-kvq-maq">אם</span>אַמְנ֥וֹן
+    &emsp;
+    בֶן־<span class="mam-kq"><span class="mam-kq-k-maq">בנימן</span><span class="mam-kq-q">בָּנִ֔י מִן־</span></span>בְּנֵי־פֶ֖רֶץ
+    &emsp;
+    עַד־<span class="mam-kq"><span class="mam-kq-k-maq">יעבור</span><span class="mam-kq-q">יַעֲבׇר־</span></span>זָֽעַם׃
+</p>
+<p class="red-pink-maq" lang="hbo" dir="rtl">
+    יִסְלַח־<span class="mam-kq-kvq-maq">נא</span>יְהֹוָ֥ה
+    &emsp;
+    כִּֽי־<span class="mam-kq-kvq-maq">אם</span>אַמְנ֥וֹן
+    &emsp;
+    בֶן־<span class="mam-kq"><span class="mam-kq-k-maq">בנימן</span><span class="mam-kq-q">בָּנִ֔י מִן־</span></span>בְּנֵי־פֶ֖רֶץ
+    &emsp;
+    עַד־<span class="mam-kq"><span class="mam-kq-k-maq">יעבור</span><span class="mam-kq-q">יַעֲבׇר־</span></span>זָֽעַם׃
+</p>
+<p class="red-incl-maq" lang="hbo" dir="rtl">
+    יִסְלַח־<span class="mam-kq-kvq-maq">נא</span>יְהֹוָ֥ה
+    &emsp;
+    כִּֽי־<span class="mam-kq-kvq-maq">אם</span>אַמְנ֥וֹן
+    &emsp;
+    בֶן־<span class="mam-kq"><span class="mam-kq-k-maq">בנימן</span><span class="mam-kq-q">בָּנִ֔י מִן־</span></span>בְּנֵי־פֶ֖רֶץ
+    &emsp;
+    עַד־<span class="mam-kq"><span class="mam-kq-k-maq">יעבור</span><span class="mam-kq-q">יַעֲבׇר־</span></span>זָֽעַם׃
+</p>
+<p class="red-incl-maq" lang="hbo" dir="rtl">
+    בֶן־<ruby>בָּנִ֔י מִן־<rt>בנימן</rt></ruby>בְּנֵי־פֶ֖רֶץ
+    &emsp;
+    עַד־<ruby>יַעֲבׇר־<rt>יעבור</rt></ruby>זָֽעַם׃
+</p>
+</body>
+</html>

@@ -1,0 +1,13 @@
+AHT-issues
+CCAR-Psalms
+codex-index
+github-misc
+hbofonts
+MAM-for-Acc
+MAM-for-JPS
+MAM-for-Sefaria
+MAM-OSIS
+MAM-parsed
+MAM-with-doc
+MAM-simple
+trope

@@ -1,0 +1,28 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../MAM-for-Sefaria"
+		},
+		{
+			"path": "../MAM-with-doc"
+		},
+		{
+			"path": "../MAM-simple"
+		},
+		{
+			"path": "../MAM-OSIS"
+		},
+		{
+			"path": "../mamgo-auto-edits"
+		},
+		{
+			"path": "../MAM-parsed"
+		}
+	],
+	"settings": {
+		"powershell.cwd": "trope"
+	}
+}

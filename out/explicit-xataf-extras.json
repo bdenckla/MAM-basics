@@ -1,0 +1,548 @@
+{
+  "header": {
+    "description": "Non-varika nusach notes that mention hataf. These are nusach notes whose target word does NOT contain varika (U+FB1E) but whose commentary text mentions hataf in some way.",
+    "categories": {
+      "lc-differs": "LC (Leningrad Codex) differs from MAM regarding hataf: either LC is missing hataf dots that MAM has, or LC surprisingly has hataf where MAM does not.",
+      "ac-differs": "AC (Aleppo Codex) differs from MAM regarding hataf: either AC has hataf where MAM has plain shewa or a different vowel, or AC is missing hataf that MAM has.",
+      "hataf-qamats-for-qamats-qatan": "A manuscript uses hataf qamats to explicitly mark a qamats qatan vowel, making the short pronunciation visible in the pointing.",
+      "uncertain-hataf": "The note raises uncertainty about whether a mark in a manuscript is actually hataf or something else (a stain, smudge, or ambiguous mark).",
+      "hataf-hiriq": "The note mentions hataf hiriq, a non-standard vowel combination with no dedicated Unicode character, represented as shewa+hiriq.",
+      "vowel-discussion": "General discussion of hataf in a grammatical, masoretic, or comparative context, without a simple manuscript-vs-MAM variant.",
+      "misc": "Cases that do not fit neatly into the other categories."
+    },
+    "entry_fields": {
+      "ref": "Verse reference",
+      "target_word": "The target word (arg[0] of the nusach template), flattened to plain text",
+      "nusach_comment": "The full commentary text (arg[1] of the nusach template)",
+      "category": "One of the categories defined above",
+      "translation": "Tentative English translation/summary of the note's hataf-related content"
+    }
+  },
+  "entries": [
+    {
+      "ref": "Genesis 4:23",
+      "target_word": "הַאְזֵ֖נָּה",
+      "nusach_comment": "=א(ס),ל,ל1,ו (אין געיה) <א(ס)=מלעיל? כן אבל בלי מתג וה\" בשוא לבד> וכמו כן בתיגאן ובכתבי־יד ספרדים (בתנ\"ך ליסבון לאחר תיקון)ק3=הַאֲזֵ֖נָּה (בחטף פתח)דפוסים=הַֽאְזֵ֖נָּה (בגעיה)",
+      "category": "misc",
+      "translation": "Q3 has hataf patah. Other MSS and MAM agree: shewa, no ga'aya. Prints add ga'aya."
+    },
+    {
+      "ref": "Genesis 14:17",
+      "target_word": "אַחֲרֵ֣י",
+      "nusach_comment": "ש,ש1,ק3,ו וכמו כן בתיגאן ובכתבי־יד ספרדים ובדפוסיםל!=אַחַרֵ֣י (חסרות נקודות החטף בחי\"ת) והמקליד תיקן בלי להעיר",
+      "category": "lc-differs",
+      "translation": "LC missing hataf dots in het (patah instead of hataf patah). Typist corrected silently."
+    },
+    {
+      "ref": "Genesis 27:26",
+      "target_word": "וּשְׁקָה־לִּ֖י",
+      "nusach_comment": "=א(צילום ויקס),א(ס),ל,ל1,ש,ק3,ו <א(ס)=\"וּשֲקָה\" בחטף פתח? אינו כן אלא בשוא לבד ואין מתג בואו>",
+      "category": "uncertain-hataf",
+      "translation": "Question whether AC(S) has hataf patah in shin. Answer: no, shewa only, no meteg in vav."
+    },
+    {
+      "ref": "Genesis 30:41",
+      "target_word": "לְיַחְמֵ֖נָּה",
+      "nusach_comment": "=א(ס),ל,ל1,ש,ש1,ק3,ו <\"לְיַחְמֶנָּה\" מתג וחטף פתח וסגול? אינו כן אלא בלי מתג והחית בשוא לבד והמם בצרי וכמנחת שי>",
+      "category": "uncertain-hataf",
+      "translation": "Question whether AC(S) has meteg, hataf patah, and segol. Answer: no meteg, shewa only in het, tsere in mem."
+    },
+    {
+      "ref": "Genesis 32:16",
+      "target_word": "וַעְיָרִ֖ם",
+      "nusach_comment": "=ל,ל1,ש,ק3,ו,ה,ש2 וכמו כן בתיגאןהמקליד העיר כאן על צורה חריגה, אבל הערתו אינה ברורה. ייתכן שכוונתו לניקוד וַעֲיָרִ֖ם (בחטף פתח) כמו שהוא במ\"ג דפוס ונציה (ותוקן במ\"ש) וצויין ב-BHS.",
+      "category": "vowel-discussion",
+      "translation": "Typist noted unusual form. Possibly hataf patah as in Venice MG (corrected in MS). Noted in BHS."
+    },
+    {
+      "ref": "Genesis 41:46",
+      "target_word": "וַֽיַּעֲבֹ֖ר",
+      "nusach_comment": "=ב,ש,ש1,ק3,ול!=וַֽיַּעְבֹ֖ר (שווא במקום חטף באות עי\"ן)הערות ברויאר ודותן",
+      "category": "lc-differs",
+      "translation": "LC has shewa instead of hataf in ayin."
+    },
+    {
+      "ref": "Exodus 2:17",
+      "target_word": "וַיְגָרְשׁ֑וּם",
+      "nusach_comment": "=א(ס),ל (אין חטף באות רי\"ש)",
+      "category": "vowel-discussion",
+      "translation": "AC(S) and LC confirm: no hataf in resh."
+    },
+    {
+      "ref": "Exodus 7:10",
+      "target_word": "וַיַּ֣עֲשׂוּ כֵ֔ן",
+      "nusach_comment": "=ל1,ב,ש,ש1,ו ובדפוסיםל!=<וַיַּ֣עַשׂוּ כֵ֔ן> (חסרות נקודות החטף בעי\"ן)דפוסים=וַיַּֽעֲשׂוּ־כֵ֔ן (תיבה מוקפת בגעיה)הערות ברויאר ודותן והמקליד",
+      "category": "lc-differs",
+      "translation": "LC missing hataf dots in ayin. Prints have maqaf-joined word with ga'aya."
+    },
+    {
+      "ref": "Exodus 8:3",
+      "target_word": "הַֽחַרְטֻמִּ֖ים",
+      "nusach_comment": "=ל1,ב,ש,ש1,ק3,ו ובדפוסיםל!=הַֽחֲרְטֻמִּ֖ים (בנקודות של חטף באות חי\"ת [!] ובגעיה ימנית)הערות ברויאר ודותן",
+      "category": "lc-differs",
+      "translation": "LC surprisingly has hataf dots in het and right ga'aya (MAM has plain patah)."
+    },
+    {
+      "ref": "Exodus 9:11",
+      "target_word": "בַּֽחַרְטֻמִּ֖ם",
+      "nusach_comment": "=ל1,ב,ש,ש1,ק3,ו ובדפוסיםל!=בַּֽחֲרְטֻמִּ֖ם (בגעיה ימנית ובנקודות של חטף באות חי\"ת)הערות ברויאר ודותן",
+      "category": "lc-differs",
+      "translation": "LC surprisingly has right ga'aya and hataf dots in het (MAM has plain patah)."
+    },
+    {
+      "ref": "Exodus 14:11",
+      "target_word": "הֲֽמִבְּלִ֤י",
+      "nusach_comment": "=א(ס),ב,ש1,ק3,ו (בחטף פתח וגעיה)ש=הֲמִבְּלִ֤י (אין געיה)ל!=הַֽמִבְּלִ֤י (חסרות נקודות החטף בה\"א הַתֵּמַהּ)דפוסים=הֲמִבְּלִ֤י (חטף פתח ואין געיה)הערת ברויאר",
+      "category": "lc-differs",
+      "translation": "AC(S) etc: hataf patah with ga'aya. LC missing hataf dots in interrogative he. Prints: hataf patah, no ga'aya."
+    },
+    {
+      "ref": "Exodus 20:4",
+      "target_word": "לֹֽא־תִשְׁתַּחֲוֶ֥֣ה",
+      "nusach_comment": "=ל1,ב,ש,ש1,ק3,ו ובדפוסיםל!=לֹֽא־תִשְׁתַּחְוֶ֥֣ה (אות חי\"ת שווּאה במקום חטף פתח)הערות דותן וברויאר והמקליד",
+      "category": "lc-differs",
+      "translation": "LC has shewa in het instead of hataf patah."
+    },
+    {
+      "ref": "Exodus 24:11",
+      "target_word": "וַיֶּֽחֱזוּ֙",
+      "nusach_comment": "=ב,ק3,ו,ותיקן-448,פטרבורג-EVR-II-B-8,פטרבורג-EVR-II-B-80 ובן־אשר בספר החילופים (געיה קלה באות יו\"ד); בדרך כלל אין געיה כבדה סדירה לפני סגול חטף סגול, ובייחוד לא כשהאות וי\"ו קודמת להם.ל,ש,ש1,ל3,בן־נפתלי=וַֽיֶּחֱזוּ֙ (געיה באות וי\"ו) וכך אצל ברויאר ומג\"ה, וכמו כן בחלק מהדפוסים (כגון לטריס).חלק מהדפוסים וקורן=וַֽיֶּֽחֱזוּ֙ (שתי געיות)",
+      "category": "vowel-discussion",
+      "translation": "Discussion of ga'aya placement before segol + hataf segol. Various MS readings differ on ga'aya position."
+    },
+    {
+      "ref": "Exodus 29:22",
+      "target_word": "וְאֶת־הַחֵ֙לֶב֙",
+      "nusach_comment": "=ל1,ב,ש,ש1,ק3,ו ובדפוסיםל!=וְאֶת־הֲחֵ֙לֶב֙ (חטף פתח באות ה\"א) והמקליד לא העיר.הערות ברויאר ודותן",
+      "category": "lc-differs",
+      "translation": "LC has hataf patah in he (MAM has patah). Typist did not note this."
+    },
+    {
+      "ref": "Exodus 30:8",
+      "target_word": "הָעַרְבַּ֖יִם",
+      "nusach_comment": "=ב,ש,ש1,ק3,ו ובדפוסיםל!=הָעֲרְבַּ֖יִם (חטף פתח באות עי\"ן)הערות ברויאר ודותן",
+      "category": "lc-differs",
+      "translation": "LC has hataf patah in ayin (MAM has patah)."
+    },
+    {
+      "ref": "Exodus 33:11",
+      "target_word": "וּמְשָׁ֨רְת֜וֹ",
+      "nusach_comment": "=א(ק),ל,ל1,ב,ש,ש1,ק3,ו <חתף פתח? לא כן אלא שוא לבד> (אין חטף)",
+      "category": "uncertain-hataf",
+      "translation": "Question: hataf patah in shin? Answer: no, shewa only. No hataf."
+    },
+    {
+      "ref": "Exodus 35:32",
+      "target_word": "מַֽחֲשָׁבֹ֑ת",
+      "nusach_comment": "=ל1,ב,ש,ש1,ק3,ו ובדפוסיםל!=מַֽחַשָׁבֹ֑ת (חסרות נקודות החטף באות חי\"ת)הערות ברויאר ודותן",
+      "category": "lc-differs",
+      "translation": "LC missing hataf dots in het."
+    },
+    {
+      "ref": "Exodus 37:25",
+      "target_word": "רׇחְבּ֜וֹ",
+      "nusach_comment": "=ל1,ב,ש,ש1,ק3,ול=רֳחְבּ֜וֹ (חטף קמץ לסימון תנועת קמץ חטוף); שתי הנקודות של החטף נראות היטב בצילום בצבע, ובהתאם לדעתו של ברויאר. אמנם לפי דותן והמקליד ל=רָחְבּ֜וֹ.",
+      "category": "hataf-qamats-for-qamats-qatan",
+      "translation": "LC has hataf qamats marking qamats qatan. Hataf dots clearly visible in color photo. Breuer concurs. Dotan and typist read plain qamats."
+    },
+    {
+      "ref": "Levit 25:46",
+      "target_word": "וְהִתְנַחַלְתֶּ֨ם",
+      "nusach_comment": "=ל1,ב,ש,ש1,ק3,ו וכמו כן בדפוסים וקורןל!=וְהִתְנַחֲלְתֶּ֨ם (חטף פתח באות חי\"ת)הערות דותן, ברויאר והמקלידקורן, דותן, ברויאר, סימנים, מכון ממרא",
+      "category": "lc-differs",
+      "translation": "LC has hataf patah in het (MAM has plain patah)."
+    },
+    {
+      "ref": "Levit 26:34",
+      "target_word": "הׇשַּׁמָּ֔הֿ",
+      "nusach_comment": "=ל1,ב,ש,ש1,ק3,ו ומ\"ש (ונוסח הכתר בדה\"ב לו,כא), וכך אצל ברויאר ומג\"ה, וכמו כן בדפוסים וקורן בעקבות מ\"ש.ל=הֳשַׁמָּ֔ה (בחטף קמץ ואין דגש באות שי\"ן)מ\"ג דפוס ונציה=הׇשַׁמָּ֔ה (אין דגש באות שי\"ן)הערת ברויארקורן, ברויאר, סימנים, מכון ממרא",
+      "category": "hataf-qamats-for-qamats-qatan",
+      "translation": "LC has hataf qamats, no dagesh in shin. Venice MG also lacks dagesh. MAM follows MS et al."
+    },
+    {
+      "ref": "Numbers 3:30",
+      "target_word": "אֱלִיצָפָ֖ן",
+      "nusach_comment": "=ל1,ב,ש,ש1,ק3,ו וכמו כן בדפוסים וקורןל!=אֶלִיצָפָ֖ן (נקודות החטף חסרות באות אל\"ף)הערות דותן והמקליד",
+      "category": "lc-differs",
+      "translation": "LC missing hataf dots in alef (MAM has hataf segol)."
+    },
+    {
+      "ref": "Numbers 7:85",
+      "target_word": "הָֽאַחַת֙",
+      "nusach_comment": "=ל,ל1,ב,ש,ש1,ק3,ו וכמו כן בדפוסים וקורןדותן הסתפק בקריאה כאן בכתי\"ל, כנראה לגבי ניקודו של האות אל\"ף שמא היא בחטף, ואכן יש שם סימן של מחיקה.",
+      "category": "uncertain-hataf",
+      "translation": "Dotan uncertain about LC reading in alef — possibly hataf, with an erasure mark."
+    },
+    {
+      "ref": "Numbers 9:3",
+      "target_word": "הָֽעַרְבַּ֛יִם",
+      "nusach_comment": "=ל1,ב,ש,ש1,ק3,ו וכמו כן בדפוסים וקורןל!=הָֽעֲרְבַּ֛יִם (חטף פתח באות עי\"ן)הערות דותן והמקליד וברויאר",
+      "category": "lc-differs",
+      "translation": "LC has hataf patah in ayin (MAM has plain patah)."
+    },
+    {
+      "ref": "Numbers 10:9",
+      "target_word": "וְנִזְכַּרְתֶּ֗ם",
+      "nusach_comment": "=ל1,ש,ש1,ק3,ו וכמו כן בדפוסים וקורןל!=וֲנִזְכַּרְתֶּ֗ם (חטף פתח באות וי\"ו)הערות ברויאר ודותן והמקליד",
+      "category": "lc-differs",
+      "translation": "LC has hataf patah in vav (MAM has shewa)."
+    },
+    {
+      "ref": "Numbers 16:21",
+      "target_word": "וַאֲכַלֶּ֥ה",
+      "nusach_comment": "=ב,ש,ש1,ק3,ו ובדפוסיםל!=וַאַכַלֶּ֥ה (חסרות נקודות החטף באות אל\"ף)הערות ברויאר ודותן והמקליד",
+      "category": "lc-differs",
+      "translation": "LC missing hataf dots in alef (MAM has hataf patah)."
+    },
+    {
+      "ref": "Numbers 21:1",
+      "target_word": "הָאֲתָרִ֑ים",
+      "nusach_comment": "=ל?,ל1,ב,ש,ש1,ק3,ו וכך הכריעו ברויאר ומג\"ה והמקליד, וכמו כן בדפוסים וקורן.ל?=הָאֳתָרִ֑ים (קמץ חטוף באות אל\"ף?); לפי ברויאר ברשימתו הראשונה יש ספק נקודה לקמץ חטוף במקום חטף פתח; בצילום קשה להבחין אך ייתכן שמדובר על כתם.",
+      "category": "uncertain-hataf",
+      "translation": "LC may have hataf qamats instead of hataf patah in alef. Hard to discern in photo; possibly a stain."
+    },
+    {
+      "ref": "Numbers 35:20",
+      "target_word": "יֶהְדֳּפֶ֑נּוּ",
+      "nusach_comment": "=ב,ש,ש1,ק3,ו,ל9 ומ\"של!,ל3=יֶהְדָּפֶ֑נּוּ (חסרות נקודות החטף קמץ באות דל\"ת)",
+      "category": "lc-differs",
+      "translation": "LC and L3 missing hataf qamats dots in dalet."
+    },
+    {
+      "ref": "Deuter 3:22",
+      "target_word": "תִּֽירָא֑וּם",
+      "nusach_comment": "=ל?,ש,ק3,ו וכמו כן בדפוסים וקורןל?!=תְִּירָא֑וּם בחטף-חיריק (!) ע\"פ המקליד ומעיון בצילום כתי\"ל. אבל דותן וברויאר הדפיסו בחיריק וגעיה בלי להעיר, וייתכן שהסימן המטושטש באמת געיה.ל1,ש1,ל3=תִּֽירָא֑וּם (אין געיה)",
+      "category": "hataf-hiriq",
+      "translation": "LC may have hataf hiriq per typist. Dotan and Breuer printed hiriq+ga'aya without comment. Mark may be ga'aya."
+    },
+    {
+      "ref": "Deuter 9:3",
+      "target_word": "וְהַֽאֲבַדְתָּם֙",
+      "nusach_comment": "=ל1,ש,ש1,ק3,ו,ל3,ל9 (חטף פתח באות אל\"ף) וכמו כן בדפוסים וקורןל!=וְהַֽאַבַדְתָּם֙ (חסרות נקודות החטף באות אל\"ף)הערות דותן וברויאר ודותן",
+      "category": "lc-differs",
+      "translation": "LC missing hataf dots in alef (MAM has hataf patah)."
+    },
+    {
+      "ref": "Deuter 22:16",
+      "target_word": "הַֽנַּעֲרָ֖",
+      "nusach_comment": "=ל1,ש,ש1,ק3,ו,ל3,ל9 וכמו כן בדפוסים וקורןל-כתיב!=הַֽנַּעַרָ֖ (חסרות נקודות החטף בעי\"ן)הערות ברויאר ודותן והמקליד",
+      "category": "lc-differs",
+      "translation": "LC ketiv missing hataf dots in ayin."
+    },
+    {
+      "ref": "Deuter 25:18",
+      "target_word": "אַֽחֲרֶ֔יךָ",
+      "nusach_comment": "=ל1,ש וכמו כן בדפוסים וקורןל!=אַֽחַרֶ֔יךָ (חסרות נקודות החטף באות חי\"ת)הערות דותן והמקליד",
+      "category": "lc-differs",
+      "translation": "LC missing hataf dots in het."
+    },
+    {
+      "ref": "Deuter 32:6",
+      "target_word": "הַ לְיְהֹוָה֙",
+      "nusach_comment": "=א,ש,ק3,[ל' רבת'],ל9 ומ\"ש (פתח באות ה\"א גדולה, תיבה בפני עצמה, שווא באות למ\"ד ובאות יו\"ד)ל=הֲ־לַיְהוָה֙ (חטף פתח באות ה\"א, תיבות מוקפות, פתח באות למ\"ד ושווא באות יו\"ד)ל1= לְיֲהוָה֙ (פתח באות ה\"א גדולה, תיבה בפני עצמה, שווא באות למ\"ד וחטף פתח באות יו\"ד)ש1=הַ־ליְהוָה֙ (אין אות גדולה, תיבות מוקפות, אין ניקוד של שווא באות למ\"ד, שווא באות יו\"ד)תיגאן=<> (פתח וגעיה באות ה\"א גדולה, תיבה אחת, שווא באות למ\"ד, אין ניקוד של שווא באות יו\"ד), וראו פנקובר, נוסח התורה, עמ' 69, 71.מ\"ג דפוס ונציה=הַליְהֹוָה (אין אות גדולה, תיבה אחת, אין ניקוד של שווא באות למ\"ד, שווא באות יו\"ד)",
+      "category": "vowel-discussion",
+      "translation": "Complex multi-source discussion of הַלְיהֹוָה. LC has hataf patah in he as separate word. L1 has hataf patah in yod. Various readings."
+    },
+    {
+      "ref": "Deuter 32:10",
+      "target_word": "יְסֹבְבֶ֙נְהוּ֙ יְב֣וֹנְנֵ֔הוּ",
+      "nusach_comment": "=ל1?,ש,ש1,ק3,ל3?,ל9 וכמו כן בדפוסים וקורן (אין געיה ואין חטפים)א=יְסֹבֲבֶ֙נְהוּ֙ יְב֣וֹנֲנֵ֔הוּ (חטף וחטף)ל=יְסֹֽבְבֶ֙נְהוּ֙ יְב֣וֹנְנֵ֔הוּ (געיה באות סמ\"ך ואין חטפים)",
+      "category": "ac-differs",
+      "translation": "AC has hataf patah in both doubled letters (bet, nun). MAM and other MSS have no hataf, no ga'aya."
+    },
+    {
+      "ref": "2Samuel 11:11",
+      "target_word": "וַאדֹנִ֨י",
+      "nusach_comment": "=ל,ק ומסורת-א ובדפוסיםא!=וַאֲדֹנִ֨י (חטף פתח באל\"ף)",
+      "category": "ac-differs",
+      "translation": "AC surprisingly has hataf patah in alef."
+    },
+    {
+      "ref": "2Samuel 23:13",
+      "target_word": "עֲדֻלָּ֑ם",
+      "nusach_comment": "=ל,ק ובדפוסים (חטף פתח בעי\"ן), וכך אצל ברויאר ומג\"הא!=עַדֻלָּ֑ם (חסרות נקודות החטף בעי\"ן)",
+      "category": "ac-differs",
+      "translation": "AC surprisingly missing hataf dots in ayin. MAM, LC, and prints have hataf patah."
+    },
+    {
+      "ref": "2Samuel 24:2",
+      "target_word": "אֲשֶׁר־אִתּ֗וֹ",
+      "nusach_comment": "=ל,ק ובדפוסיםא!=אַשֶׁר־אִתּ֗וֹ (חסרות נקודות החטף באל\"ף)",
+      "category": "ac-differs",
+      "translation": "AC surprisingly missing hataf dots in alef."
+    },
+    {
+      "ref": "1Kings 19:20",
+      "target_word": "אֶשְּׁקָה־נָּא֙",
+      "nusach_comment": "=א,ל (בשווא)חלק מהדפוסים וקורן=אֶשֳּׂקָה־נָּא֙ (בחטף קמץ), ק=אֶשֲּׂקָה־נָּא֙ (בחטף פתח) ויש דפוסים גם כך, כולם בעקבות מ\"ש שהתלבט בין שלושת האפשרויותמ\"ג=אֶשְׂקָה־נָּא֙ (בנקודת שי\"ן שמאלית!)",
+      "category": "vowel-discussion",
+      "translation": "AC and LC have shewa. Some prints/Koren: hataf qamats. Q: hataf patah. MS debated all three options. MG: left shin dot."
+    },
+    {
+      "ref": "Jeremiah 2:12",
+      "target_word": "חׇרְב֥וּ",
+      "nusach_comment": "=ל,ק ובדפוסיםא=חֳרְב֥וּ (חטף קמץ לסימון תנועת קמץ חטוף) וראו עוד ברד\"ק ומנחת שי",
+      "category": "hataf-qamats-for-qamats-qatan",
+      "translation": "AC has hataf qamats marking qamats qatan. See Radak and Minchat Shai."
+    },
+    {
+      "ref": "Jeremiah 29:27",
+      "target_word": "הָֽעַנְּתֹתִ֑י",
+      "nusach_comment": "=ק ובדפוסיםל=הָֽעֲנְּתֹתִ֑י (בחטף פתח!)הערות ברויאר ודותן",
+      "category": "lc-differs",
+      "translation": "LC surprisingly has hataf patah in ayin (MAM has plain patah)."
+    },
+    {
+      "ref": "Jeremiah 48:32",
+      "target_word": "מִבְּכִ֨י",
+      "nusach_comment": "לפי ברויאר א=מִבֲּכִ֨י (חטף באות לא גרונית); אמנם מעיון בכתר נראה יותר שמדובר על כתם, או שהיה חטף פתח והקו של הפתח נמחק כדי להשאיר שווא בלבד.",
+      "category": "uncertain-hataf",
+      "translation": "Per Breuer, AC has hataf in non-guttural letter (bet). But may be a stain, or hataf patah with patah line erased."
+    },
+    {
+      "ref": "Jeremiah 49:28",
+      "target_word": "וְשׇׁדְד֖וּ",
+      "nusach_comment": "=ל,ק ובדפוסים ובקורן (וכך הכריע ברויאר).א=וְשֳׁדְד֖וּ (חטף קמץ לסימון תנועת קמץ חטוף), וכן הוא במקראות גדולות דפוס ראשון ובמג\"ה.",
+      "category": "hataf-qamats-for-qamats-qatan",
+      "translation": "AC has hataf qamats marking qamats qatan. Also in first-edition MG and MGH."
+    },
+    {
+      "ref": "Ezekiel 15:4",
+      "target_word": "לְאׇכְלָ֑ה",
+      "nusach_comment": "=א?,ל,ק ובדפוסים, וכך אצל ברויאר ומג\"ה.לפי ברויאר א=לְאֳכְלָ֑ה (חטף קמץ לסימון תנועת קמץ חטוף); בהגדלה נראה באופן ברור קמץ ולימינו ראש הלמ\"ד שמתחתיו. אך יש גם סימנים מטושטשים, וייתכן שהם שתי נקודות חטף (שאולי נמחקו).",
+      "category": "hataf-qamats-for-qamats-qatan",
+      "translation": "Per Breuer, AC has hataf qamats for qamats qatan. Qamats visible; possible faded hataf dots."
+    },
+    {
+      "ref": "Ezekiel 32:20",
+      "target_word": "מׇשְׁכ֥וּ",
+      "nusach_comment": "=ל (וכן בדפוסים הרגילים ובקורן)א=מֳשְׁכ֥וּ (חטף קמץ לסימון תנועת קמץ חטוף) וכן במג\"ה",
+      "category": "hataf-qamats-for-qamats-qatan",
+      "translation": "AC has hataf qamats marking qamats qatan. Also in MGH."
+    },
+    {
+      "ref": "Ezekiel 35:15",
+      "target_word": "וְכׇל־אֱד֣וֹם",
+      "nusach_comment": "=ל,ק ובדפוסיםא!=וְכׇל־אֶד֣וֹם (סגול במקום חטף סגול), וכן הכריעו במג\"ה",
+      "category": "ac-differs",
+      "translation": "AC surprisingly has segol instead of hataf segol in alef. MGH concurs."
+    },
+    {
+      "ref": "Jonah 1:3",
+      "target_word": "אֳנִיָּ֣ה",
+      "nusach_comment": "=ק,ש1 ובדפוסיםל=<אָנִיָּ֣ה> (חסרות הנקודות של חטף קמץ באל\"ף)הערות ברויאר ודותן והמקליד",
+      "category": "lc-differs",
+      "translation": "LC missing hataf qamats dots in alef (has plain qamats instead)."
+    },
+    {
+      "ref": "Micah 2:12",
+      "target_word": "הַדׇּֽבְר֔וֹ",
+      "nusach_comment": "=ל,ק (געיה באות דל\"ת); ש1=הַדָּבְר֔וֹ (אין געיה). ראו רד\"ק בספר השרשים <והדלי״ת מעמדת בגעיא; ומשפטה להחטף כמו \"וְרָעוּ כְבָשִׂים כְּדָבְרָם\" (ישעיהו ה,יז)> ודבריו הובאו במ\"ש. אמנם ראו בפירוש דעת מקרא מאת משה זיידל (הערה 30ב): \"אולם כבר הזכרנו (לעיל פסוק י) שתיתכן געיה גם בקמץ שהוא מעיקרו קטן\"; ואם כן נראה שהלשון המקבילה \"כְּדָבְרָם\" (ישעיהו ה,יז) מכריעה. גם לפי ויינברג (3.1.1) הקמץ קטן וכמו כן במילון של דוידזון, אך לא בתנ\"ך קורן החדש ובסימנים.",
+      "category": "vowel-discussion",
+      "translation": "Discussion of whether qamats is qatan. Radak says it should reduce. Ga'aya present. Opinions differ (Weinberg, Davidson vs. Koren, Simanim)."
+    },
+    {
+      "ref": "Zechariah 1:4",
+      "target_word": "וּמַֽעַלְלֵיכֶ֖ם",
+      "nusach_comment": "ל-כתיב!=וּמַֽעֲלְילֵיכֶ֖ם (נקודות של חטף פתח בעי\"ן)הערות ברויאר ודותן והמקליד (ששינה את ניקודו של הקרי בגירסה 4.16).",
+      "category": "lc-differs",
+      "translation": "LC ketiv surprisingly has hataf patah dots in ayin."
+    },
+    {
+      "ref": "Zechariah 1:10",
+      "target_word": "בֵּין־הַהֲדַסִּ֖ים",
+      "nusach_comment": "=ק,ש1 ובדפוסיםל=בֵּין־הַהַדַסִּ֖ים (חסרות נקודות החטף פתח בה\"א השנייה)הערות ברויאר ודותן והמקליד (ששינה את הניקוד בגירסה 4.16).",
+      "category": "lc-differs",
+      "translation": "LC missing hataf patah dots in second he."
+    },
+    {
+      "ref": "Psalms 14:1",
+      "target_word": "הִֽשְׁחִ֗יתוּ",
+      "nusach_comment": "א=הִֽשְִׁחִ֗יתוּ (חטף חיריק)לגבי פיסוק הטעמים (רביע בתוך תחום שלטונו של רביע, שניהם בשמאלו של אתנחתא), ראו בהערת הנוסח על הפסוק המקביל (תהלים נג,ב).",
+      "category": "hataf-hiriq",
+      "translation": "AC has hataf hiriq in shin."
+    },
+    {
+      "ref": "Psalms 14:1",
+      "target_word": "הִֽתְעִ֥יבוּ",
+      "nusach_comment": "א=הִֽתְִעִ֥יבוּ (חטף חיריק)",
+      "category": "hataf-hiriq",
+      "translation": "AC has hataf hiriq in tav."
+    },
+    {
+      "ref": "Psalms 80:11",
+      "target_word": "כׇּסּ֣וּ",
+      "nusach_comment": "לגבי הקמץ הקטן ראו מ\"ש <בקמץ חטף מפני דגשות הסמ״ך> ובהערה לדעת מקרא כאן: <'כסו' בבניין פועל של שורש 'כסי' עבר לנסתרים והכ\"ף מנוקדת קמץ קטן תמורת קיבוץ, וכן: כלו תפילו דוד בן ישי (לעיל עב כ).> והשוו גם משלי כד,לא.",
+      "category": "vowel-discussion",
+      "translation": "Discussion of qamats qatan. MS cites hataf for the dagesh. Da'at Miqra: qamats qatan replacing qubuts in pu'al."
+    },
+    {
+      "ref": "Psalms 81:8",
+      "target_word": "אֶבְחׇנְךָ֨",
+      "nusach_comment": "מדובר על אחד מפעלי אֶפְעַל שהרי ע' הפועל אות גרונית, ואם כן הקמץ אמור להיות קמץ רחב (ראו ויינברג, 3.2.3.2 בפסקת \"NOTE\" שבה יש רשימה של פעלים מהסוג הזה, והתיבה הזאת אמורה להיות ביניהם, אמנם היא כתובה בטעות בפסקה הבאה בתוך פעלי אֶפְעֹל). אך המדקדקים הספרדים (ראו רד\"ק, מאירי) מציינים מסורת שהקמץ חטוף, וגם במ\"ש הביא מסורת זו למרות הסתייגות ע\"פ כללי הדקדוק (\"קבלנו קריאתו בקמץ חטף אשר לא כדת בהיות העין גרונית\"). גם המילון של דוידזון מציין כאן קמץ קטן; והשוו תהלים יח,ב.",
+      "category": "vowel-discussion",
+      "translation": "Discussion of whether qamats is gadol or qatan. Sephardi grammarians cite tradition of qamats qatan (hataf). MS concurs despite guttural ayin."
+    },
+    {
+      "ref": "Psalms 144:15",
+      "target_word": "שֱׁיְהֹוָ֥ה",
+      "nusach_comment": "=א,ש1 (חטף סגול באות שי\"ן ושווא באות יו\"ד) וכן אצל ברויאר ומג\"ה ומכון ממראל!=שֶׁיֲהֹוָ֥ה (סגול באות שי\"ן וחטף פתח באות יו\"ד)ק-מ=שֶֽׁיְהֹוָ֥ה (סגול באות שי\"ן ושווא געיה ימנית באות יו\"ד) וכן בסימניםדפוסים=שֶׁיְהֹוָ֥ה (סגול באות שי\"ן ושווא באות יו\"ד)",
+      "category": "lc-differs",
+      "translation": "LC has segol in shin + hataf patah in yod (MAM: hataf segol in shin + shewa in yod). Q-M: segol + ga'aya."
+    },
+    {
+      "ref": "Proverbs 30:17",
+      "target_word": "לִֽיקְּהַ֫ת־אֵ֥ם",
+      "nusach_comment": "=א (במקף); לגבי ניקוד האות למ\"ד בחיריק ולא בשווא, ראו ייבין, כתר, ה.1 (עמ' 60) וייבין, מסורה, 392.ל=לִֽיקֲּהַ֫ת־אֵ֥ם (חטף)דפוסים=לִֽיקְּהַ֫ת אֵ֥ם (אין מקף)",
+      "category": "lc-differs",
+      "translation": "LC has hataf in qof."
+    },
+    {
+      "ref": "Job 34:33",
+      "target_word": "הֲֽמֵעִמְּךָ֬",
+      "nusach_comment": "=א,ל-א,ש2 (חטף פתח וגעיה באות ה\"א), וכמו כן בקורן ובדפוסים.ל,ש1,ק13=הֲֽמֵעִמְּךָ֬ (פתח באות ה\"א), וברויאר העיר (דעת מקרא עמ' 36 הערה 20) שכתי\"ל \"מנקד פתח במקום חטף פתח בתיבה הראויה לגעיה\" (השוו איוב ט,לה; כז,ט).",
+      "category": "lc-differs",
+      "translation": "AC etc: hataf patah + ga'aya. LC has plain patah in he. Breuer notes LC uses patah for hataf in ga'aya contexts."
+    },
+    {
+      "ref": "Song of Songs 1:6",
+      "target_word": "שֶׁשְּׁזָפַ֖תְנִי",
+      "nusach_comment": "=א ובדפוסיםל!=שֶׁשֱּׁזָפַ֖תְנִי (חטף סגול בשי\"ן)",
+      "category": "lc-differs",
+      "translation": "LC surprisingly has hataf segol in shin (MAM has shewa)."
+    },
+    {
+      "ref": "Song of Songs 2:9",
+      "target_word": "מִן־הַֽחַלֹּנ֔וֹת",
+      "nusach_comment": "=אל!=מִן־הַֽחֲלֹּנ֔וֹת (חטף פתח בחי\"ת)קורן, ברויאר, דותן, מכון ממרא, סימניםהערות ברויאר ודותן",
+      "category": "lc-differs",
+      "translation": "LC has hataf patah in het (MAM has plain patah)."
+    },
+    {
+      "ref": "Song of Songs 8:4",
+      "target_word": "תְּעֹ֥רְר֛וּ",
+      "nusach_comment": "=ק13,ל-א (מרכא בתיבת תביר); וכמו כן לפי שיטת-א וכללי המסורה. ראו בהערת הנוסח לעיל (ב,ז) למידע מלא לגבי מרכא בתיבת תביר בשלושת המקומות המקבילים.שיטת-א=תְּעֹ֥רֲר֛וּ (בחטף פתח)ל=תְּעֹֽרְר֛וּ (בגעיה); יש בקו נטייה קלה שקצת דומה למרכא, וכן ציין אותו ברויאר כמרכא (בניגוד לשני המקומות המקבילים), אמנם לנו נראה יותר שהוא געיה (ובמיוחד לאור שני המקומות המקבילים בכתי\"ל (ב,ז; ג,ה), ודרכו של כתי\"ל בדרך כלל.",
+      "category": "vowel-discussion",
+      "translation": "System-A reading has hataf patah. LC has ga'aya. Discussion of marka vs. ga'aya across three parallel passages."
+    },
+    {
+      "ref": "Ruth 3:4",
+      "target_word": "תַּעֲשִֽׂין",
+      "nusach_comment": "=א (בחטף פתח) ובדפוסיםל=תַּעַשִֽׂין (חסרות נקודות החטף בעי\"ן)הערת המקליד",
+      "category": "lc-differs",
+      "translation": "AC has hataf patah (as MAM). LC missing hataf dots in ayin."
+    },
+    {
+      "ref": "Lamentations 3:6",
+      "target_word": "בְּמַחֲשַׁכִּ֥ים",
+      "nusach_comment": "=ל?,ש1,ק-מ ובדפוסיםל?!=בְּמַחְשַׁכִּ֥ים (חי\"ת שווּאה במקום חטף פתח?). כך לפי הערת ברויאר, אבל מעיון בכתב־היד נראה שקו הפתח קיים אך התנגש בו ראשו של הלמ\"ד בשורה מתחת (וכן דעתם של דותן והמקליד)",
+      "category": "uncertain-hataf",
+      "translation": "LC may lack hataf patah in het (shewa instead). But patah line likely exists; collides with lamed in line below."
+    },
+    {
+      "ref": "Ecclesiastes 5:17",
+      "target_word": "לֶֽאֱכוֹל־וְ֠לִשְׁתּ֠וֹת",
+      "nusach_comment": "=ש1,ק-מ ובדפוסיםל!=לֶֽאֶכוֹל־וְ֠לִשְׁתּ֠וֹת (חסרות נקודות החטף באות אל\"ף)הערות ברויאר ודותןקורן, דותן, ברויאר, מכון ממרא, סימנים",
+      "category": "lc-differs",
+      "translation": "LC missing hataf dots in alef (MAM has hataf segol)."
+    },
+    {
+      "ref": "Esther 1:6",
+      "target_word": "רִֽצְפַ֥ת",
+      "nusach_comment": "=ל,ק13,פטרבורג-EVR-II-B-92 (געיה פונטית וסימן רפה על האות פ\"א); כלומר: השווא נע והפ\"א רפה.פטרבורג-EVR-II-B-55=רִֽצֲפַ֥ת (חטף); וראו עוד מ\"ש שבמקצת ספרים הצד\"י בחטף.",
+      "category": "vowel-discussion",
+      "translation": "LC has phonetic ga'aya + rafe on pe (mobile shewa). Petersburg MS has hataf in tsade. MS notes some MSS have hataf in tsade."
+    },
+    {
+      "ref": "Esther 2:5",
+      "target_word": "מׇרְדֳּכַ֗י",
+      "nusach_comment": "=ל,ש1,ק-מ (האות דל\"ת בחטף קמץ)דפוסים=מׇרְדְּכַ֗י (האות דל\"ת בשווא) כאן ובכל המגילה.",
+      "category": "hataf-qamats-for-qamats-qatan",
+      "translation": "LC etc: hataf qamats in dalet. Prints: shewa. Applies throughout Esther."
+    },
+    {
+      "ref": "Esther 2:14",
+      "target_word": "שַֽׁעַשְׁגַ֛ז",
+      "nusach_comment": "=ש1,ק-מ ובדפוסיםל!=שַֽׁעֲשְׁגַ֛ז (בנקודות של חטף פתח בעי\"ן)הערות ברויאר ודותן",
+      "category": "lc-differs",
+      "translation": "LC has hataf patah dots in ayin (MAM has plain patah)."
+    },
+    {
+      "ref": "Esther 9:2",
+      "target_word": "אֲחַשְׁוֵר֔וֹשׁ",
+      "nusach_comment": "=ש1,ק-מ ובדפוסיםל?!=אֳחַשְׁוֵר֔וֹשׁ (חטף קמץ באות אל\"ף?), וכך בהקלדה; אך נקודת הקמץ בצבע אחר וייתכן שמדובר בכתם.הערת דותן",
+      "category": "uncertain-hataf",
+      "translation": "LC may have hataf qamats in alef (MAM has hataf patah). But dot is different color — may be a stain."
+    },
+    {
+      "ref": "Daniel 2:10",
+      "target_word": "אֱנָשׁ֙",
+      "nusach_comment": "=ק-מ,ב1 ובדפוסים (אל\"ף בחטף סגול)ל=אֲנָשׁ֙ (אל\"ף בחטף פתח)דפוסים=אֱנַשׁ֙הערת ברויאר",
+      "category": "lc-differs",
+      "translation": "Q-M etc: hataf segol (as MAM). LC has hataf patah in alef instead."
+    },
+    {
+      "ref": "Daniel 2:30",
+      "target_word": "גֱּלִ֣י",
+      "nusach_comment": "=ל,ב1,ש2; חטף סגול באות גימ\"ל כדי להורות על תנועת סגול מורפולוגית. והשוו בלעיל בפסוק י\"ט.",
+      "category": "vowel-discussion",
+      "translation": "Hataf segol in gimel marks morphological segol vowel. Cf. verse 19."
+    },
+    {
+      "ref": "Daniel 9:19",
+      "target_word": "לְמַֽעַנְךָ֣",
+      "nusach_comment": "=ש1,ק-מ,ב1,ב2,ש2 ובדפוסיםל!=לְמַֽעֲנְךָ֣ (חטף פתח בעי\"ן)הערות ברויאר ודותן",
+      "category": "lc-differs",
+      "translation": "LC has hataf patah in ayin (MAM has plain patah)."
+    },
+    {
+      "ref": "Daniel 12:2",
+      "target_word": "מִיְּשֵׁנֵ֥י",
+      "nusach_comment": "=ל?,ק-מ,ב1,ב2,ש2 ובדפוסים, וכן דעתם של דותן והמקליד לגבי כתי\"ל.ל?=מִיֲּשֵׁנֵ֥י (בחטף פתח?); יש קו מטושטש ומוזר מתחת ליו\"ד בצד שמאל, ולכן סימן ברויאר את החטף בספק.",
+      "category": "uncertain-hataf",
+      "translation": "LC may have hataf patah in yod. Breuer marked with doubt — smudged, odd line under yod."
+    },
+    {
+      "ref": "Ezra 5:12",
+      "target_word": "אֲבָהָתַ֙נָא֙",
+      "nusach_comment": "=ש1,ק-מ,ב1 ובדפוסיםל=אֲבָהֳתַ֙נָא֙ (נקודות של חטף קמץ באות ה\"א)הערות ברויאר ודותן",
+      "category": "lc-differs",
+      "translation": "LC has hataf qamats dots in he."
+    },
+    {
+      "ref": "Ezra 8:25",
+      "target_word": "וָאֶשְׁקֳלָ֣ה",
+      "nusach_comment": "ל=יתיר ו'חטף קמץ באות קו\"ף כדי להורות על תנועת החולם המורפולוגית הנשמרת בכתיב. והשוו בפסוק הבא.",
+      "category": "vowel-discussion",
+      "translation": "LC has hataf qamats in qof to mark the morphological holam vowel preserved in spelling. Cf. next verse."
+    },
+    {
+      "ref": "Ezra 10:14",
+      "target_word": "יַֽעַמְדוּ־נָ֣א",
+      "nusach_comment": "=ש1,ק-מ,ב1 ובדפוסיםל!=יַֽעֲמְדוּ־נָ֣א (עי\"ן בשתי נקודות של חטף)הערות ברויאר ודותן",
+      "category": "lc-differs",
+      "translation": "LC has hataf dots in ayin (MAM has plain patah)."
+    },
+    {
+      "ref": "Nehemiah 6:19",
+      "target_word": "לְיָֽרְאֵֽנִי",
+      "nusach_comment": "=ל?,ש1,ק-מ,ב1 ובדפסוים (רי\"ש שווּאה)ל?=לְיָֽרֲאֵֽנִי (חטף פתח באות רי\"ש?) לפי ברויאר (בוודאי) ולפי דותן (בספק). ונראה שהצדק עם דותן, כי מעיון בכתי\"ל בהגדלה לא נראה שיש קו מובהק לחטף-פתח.הערות ברויאר ודותן",
+      "category": "uncertain-hataf",
+      "translation": "LC may have hataf patah in resh. Breuer: yes. Dotan: uncertain. Examination shows no clear hataf line."
+    },
+    {
+      "ref": "1Chronicles 22:10",
+      "target_word": "וַהֲכִ֨ינוֹתִ֜י",
+      "nusach_comment": "=ל,ש1,ק13 (חטף פתח באות ה\"א) וכך הכריעו ברויאר ומג\"ה, וכמו כן בדפוסים וקורן.א!=וְהַכִ֨ינוֹתִ֜י (שווא באות וי\"ו ופתח באות ה\"א), ואולי ייתכן שהנקודות בוי\"ו נחשבות לחטף בה\"א וחסר כל ניקוד בוי\"ו.",
+      "category": "ac-differs",
+      "translation": "AC surprisingly has shewa in vav + patah in he (MAM: hataf patah in he). Possibly hataf dots belong to he with vav unpointed."
+    },
+    {
+      "ref": "2Chronicles 6:42",
+      "target_word": "זׇכְרָ֕ה",
+      "nusach_comment": "א,ש1=זֳכְרָ֕ה (חטף קמץ לסימון תנועת קמץ חטוף) וכן במג\"ה.ל=זָכְרָ֕ה בקמץ וכך בדפוסים; ובאופן דומה אצל ברויאר ובסימנים (בקמץ קטן).",
+      "category": "hataf-qamats-for-qamats-qatan",
+      "translation": "AC and S1 have hataf qamats marking qamats qatan. LC has plain qamats (as prints)."
+    }
+  ]
+}

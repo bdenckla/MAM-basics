@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <style type="text/css">
+        body {
+            font-size: 14pt;
+        }
+        *[lang="hbo"] {
+            font-family: "Taamey D";
+            font-size: 140%;
+        }
+        span.mam-implicit-maqaf { color: var(--color-mam-implicit-maqaf) }
+        span.mam-letter-small { font-size: 85%; }
+        span.mam-letter-large { font-size: 125%; }
+        span.mam-letter-hung { vertical-align: super; }
+        /* rt: ruby text */
+        rt.ketiv { font-size: smaller }
+        rt.qamats-qatan-sephardic { font-size: inherit }
+    </style>
+    <title>MAM styling experiments</title>
+</head>
+<body lang="hbo" dir="rtl">
+    <p>ק֥וּמִי א֖וֹרִי כִּ֣י בָ֣א אוֹרֵ֑ךְ וּכְב֥וֹד יְהֹוָ֖ה עָלַ֥יִךְ זָרָֽח׃</p>
+    <p><i>ק֥וּמִי א֖וֹרִי כִּ֣י בָ֣א אוֹרֵ֑ךְ וּכְב֥וֹד יְהֹוָ֖ה עָלַ֥יִךְ זָרָֽח׃</i></p>
+    <p><b>ק֥וּמִי א֖וֹרִי כִּ֣י בָ֣א אוֹרֵ֑ךְ וּכְב֥וֹד יְהֹוָ֖ה עָלַ֥יִךְ זָרָֽח׃</b></p>
+    <p><u>ק֥וּמִי א֖וֹרִי כִּ֣י בָ֣א אוֹרֵ֑ךְ וּכְב֥וֹד יְהֹוָ֖ה עָלַ֥יִךְ זָרָֽח׃</u></p>
+    <p>עַל־הָאָֽרֶץ׃<span class="mam-note-marker">*‏</span><span class="mam-note">בספרי תימן הָאָֽרֶ<span class="mam-letter-large">ץ</span>׃ בצד"י גדולה</span></p>
+    <p>אֶל־מִצְוֺ֣ת&thinsp;<span class="mam-legarmeih">׀</span> יְהֹוָ֣ה</p>
+    <p>יְהֹוָ֣ה&thinsp;<span class="mam-paseq">׀</span>&thinsp;לְ֠ךָ֠</p>
+    <p><span class="mam-letter-large">בְּ</span>רֵאשִׁ֖ית</p>
+    <p>בְּ<span class="mam-letter-small">הִ</span>בָּֽרְאָ֑ם</p>
+    <p>רְשָׁ<span class="mam-letter-hung">עִ֣</span>ים</p>
+    <p>אֶת־יְע֥וּשׁ <span class="mam-kq-qk-k">יעיש</span></p>
+    <p><ruby>הַיְצֵ֣א<rp>(</rp><rt>הוצא</rt><rp>)</rp></ruby></p>
+    <!-- Chrome copy & paste drops both parens; Firefox drops the right paren. -->
+    <p>אֶת־<ruby>יְע֥וּשׁ<rt class="ketiv">יעיש</rt></ruby></p>
+    <p>עַד־<ruby>יַעֲבׇר<rt class="ketiv">יעבור</rt></ruby>־זָֽעַם</p>
+    <p>בֶן־<ruby>בָּנִ֔י מִן<rt class="ketiv">בנימן</rt></ruby>־בְּנֵי־פֶ֖רֶץ</p>
+    <p>וַיֵּ֥שְׁתְּ מִן־הַיַּ֖יִן וַיִּשְׁכָּ֑ר וַיִּתְגַּ֖ל בְּת֥וֹךְ <ruby>אׇהֳלֹֽה<rt class="qamats-qatan-sephardic">אָהֳלֹֽה</rt></ruby>׃</p>
+</body>
+</html>

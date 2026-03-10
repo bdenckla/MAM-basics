@@ -1,0 +1,424 @@
+{
+  "code_point_names": [
+    [
+      1425,
+      "(atn)",
+      "HEBREW ACCENT ETNAHTA"
+    ],
+    [
+      1426,
+      "(seg_a)",
+      "HEBREW ACCENT SEGOL"
+    ],
+    [
+      1427,
+      "(sha)",
+      "HEBREW ACCENT SHALSHELET"
+    ],
+    [
+      1428,
+      "(zaq_q)",
+      "HEBREW ACCENT ZAQEF QATAN"
+    ],
+    [
+      1429,
+      "(zaq_g)",
+      "HEBREW ACCENT ZAQEF GADOL"
+    ],
+    [
+      1430,
+      "(tip)",
+      "HEBREW ACCENT TIPEHA"
+    ],
+    [
+      1431,
+      "(rev)",
+      "HEBREW ACCENT REVIA"
+    ],
+    [
+      1433,
+      "(pash)",
+      "HEBREW ACCENT PASHTA"
+    ],
+    [
+      1434,
+      "(yet)",
+      "HEBREW ACCENT YETIV"
+    ],
+    [
+      1435,
+      "(tev)",
+      "HEBREW ACCENT TEVIR"
+    ],
+    [
+      1436,
+      "(ger)",
+      "HEBREW ACCENT GERESH"
+    ],
+    [
+      1438,
+      "(ger_2)",
+      "HEBREW ACCENT GERSHAYIM"
+    ],
+    [
+      1439,
+      "(qar)",
+      "HEBREW ACCENT QARNEY PARA"
+    ],
+    [
+      1440,
+      "(tel_g)",
+      "HEBREW ACCENT TELISHA GEDOLA"
+    ],
+    [
+      1441,
+      "(paz)",
+      "HEBREW ACCENT PAZER"
+    ],
+    [
+      1443,
+      "(mun)",
+      "HEBREW ACCENT MUNAH"
+    ],
+    [
+      1444,
+      "(mah)",
+      "HEBREW ACCENT MAHAPAKH"
+    ],
+    [
+      1445,
+      "(mer)",
+      "HEBREW ACCENT MERKHA"
+    ],
+    [
+      1446,
+      "(mer_2)",
+      "HEBREW ACCENT MERKHA KEFULA"
+    ],
+    [
+      1447,
+      "(dar)",
+      "HEBREW ACCENT DARGA"
+    ],
+    [
+      1448,
+      "(qom)",
+      "HEBREW ACCENT QADMA"
+    ],
+    [
+      1449,
+      "(tel_q)",
+      "HEBREW ACCENT TELISHA QETANA"
+    ],
+    [
+      1450,
+      "(yby)",
+      "HEBREW ACCENT YERAH BEN YOMO"
+    ],
+    [
+      1454,
+      "~",
+      "HEBREW ACCENT ZINOR"
+    ],
+    [
+      1456,
+      ":",
+      "HEBREW POINT SHEVA"
+    ],
+    [
+      1460,
+      "i",
+      "HEBREW POINT HIRIQ"
+    ],
+    [
+      1461,
+      "‥",
+      "HEBREW POINT TSERE"
+    ],
+    [
+      1462,
+      "∵",
+      "HEBREW POINT SEGOL"
+    ],
+    [
+      1463,
+      "_",
+      "HEBREW POINT PATAH"
+    ],
+    [
+      1464,
+      "a",
+      "HEBREW POINT QAMATS"
+    ],
+    [
+      1465,
+      "o",
+      "HEBREW POINT HOLAM"
+    ],
+    [
+      1467,
+      "u",
+      "HEBREW POINT QUBUTS"
+    ],
+    [
+      1468,
+      "·",
+      "HEBREW POINT DAGESH OR MAPIQ"
+    ],
+    [
+      1469,
+      "(mos)",
+      "HEBREW POINT METEG"
+    ],
+    [
+      1470,
+      "-",
+      "HEBREW PUNCTUATION MAQAF"
+    ],
+    [
+      1472,
+      "|",
+      "HEBREW PUNCTUATION PASEQ"
+    ],
+    [
+      1473,
+      "·sh",
+      "HEBREW POINT SHIN DOT"
+    ],
+    [
+      1475,
+      "(sopa)",
+      "HEBREW PUNCTUATION SOF PASUQ"
+    ],
+    [
+      1488,
+      "α",
+      "HEBREW LETTER ALEF"
+    ],
+    [
+      1489,
+      "v",
+      "HEBREW LETTER BET"
+    ],
+    [
+      1490,
+      "g",
+      "HEBREW LETTER GIMEL"
+    ],
+    [
+      1491,
+      "d",
+      "HEBREW LETTER DALET"
+    ],
+    [
+      1492,
+      "h",
+      "HEBREW LETTER HE"
+    ],
+    [
+      1493,
+      "w",
+      "HEBREW LETTER VAV"
+    ],
+    [
+      1494,
+      "z",
+      "HEBREW LETTER ZAYIN"
+    ],
+    [
+      1495,
+      "x",
+      "HEBREW LETTER HET"
+    ],
+    [
+      1496,
+      "θ",
+      "HEBREW LETTER TET"
+    ],
+    [
+      1497,
+      "y",
+      "HEBREW LETTER YOD"
+    ],
+    [
+      1498,
+      "k.",
+      "HEBREW LETTER FINAL KAF"
+    ],
+    [
+      1499,
+      "k",
+      "HEBREW LETTER KAF"
+    ],
+    [
+      1500,
+      "l",
+      "HEBREW LETTER LAMED"
+    ],
+    [
+      1501,
+      "m.",
+      "HEBREW LETTER FINAL MEM"
+    ],
+    [
+      1502,
+      "m",
+      "HEBREW LETTER MEM"
+    ],
+    [
+      1503,
+      "n.",
+      "HEBREW LETTER FINAL NUN"
+    ],
+    [
+      1504,
+      "n",
+      "HEBREW LETTER NUN"
+    ],
+    [
+      1505,
+      "σ",
+      "HEBREW LETTER SAMEKH"
+    ],
+    [
+      1506,
+      "ʕ",
+      "HEBREW LETTER AYIN"
+    ],
+    [
+      1507,
+      "f.",
+      "HEBREW LETTER FINAL PE"
+    ],
+    [
+      1508,
+      "f",
+      "HEBREW LETTER PE"
+    ],
+    [
+      1511,
+      "q",
+      "HEBREW LETTER QOF"
+    ],
+    [
+      1512,
+      "r",
+      "HEBREW LETTER RESH"
+    ],
+    [
+      1513,
+      "$",
+      "HEBREW LETTER SHIN"
+    ],
+    [
+      1514,
+      "τ",
+      "HEBREW LETTER TAV"
+    ]
+  ],
+  "lines": [
+    [
+      "q,_,d,:,m,a,(qom),α"
+    ],
+    [
+      "m,u,n,_,·,(mun),x"
+    ],
+    [
+      "z,_,r,:,q,a,α,~"
+    ],
+    [
+      "m,u,n,_,·,(mun),x"
+    ],
+    [
+      "σ,∵,g,·,w,o,l,(seg_a)"
+    ],
+    [
+      "m,u,n,_,·,(mun),x,|"
+    ],
+    [
+      "m,u,n,_,·,(mun),x"
+    ],
+    [
+      "r,:,v,i,y,ʕ,i,(rev),y"
+    ],
+    [
+      "m,_,h,:,f,_,·,(mah),k.,:"
+    ],
+    [
+      "f,_,·,$,:,·sh,θ,a,α,(pash)"
+    ],
+    [
+      "m,n,x"
+    ],
+    [
+      "z,a,q,‥,(mun),f.,-,q,a,θ,a,(zaq_q),n."
+    ],
+    [
+      "z,a,q,‥,(mos),f.,-,g,a,·,d,(zaq_g),w,o,l"
+    ],
+    [
+      "m,‥,r,:,k,a,(mer),α"
+    ],
+    [
+      "θ,i,f,:,·,x,a,(tip),α"
+    ],
+    [
+      "m,u,n,_,·,(mun),x"
+    ],
+    [
+      "α,∵,τ,:,n,_,x,:,τ,a,·,(atn),α"
+    ],
+    [
+      "f,a,·,z,‥,(paz),r"
+    ],
+    [
+      "τ,:,·,l,i,y,$,a,·sh,α,-,q,:,θ,_,n,a,·,h,(tel_q)"
+    ],
+    [
+      "τ,:,·,(tel_g),l,i,y,$,a,·sh,α,-,g,:,d,w,o,l,a,h"
+    ],
+    [
+      "q,_,d,:,m,a,(qom),α"
+    ],
+    [
+      "w,:,α,_,z,:,l,a,(ger),α"
+    ],
+    [
+      "α,_,z,:,l,a,α,-,g,‥,·,(ger),r,‥,$,·sh"
+    ],
+    [
+      "g,‥,·,r,:,$,_,·sh,(ger_2),y,i,m."
+    ],
+    [
+      "d,_,·,r,:,g,a,·,(dar),α"
+    ],
+    [
+      "τ,:,·,v,i,(tev),y,r"
+    ],
+    [
+      "y,:,(yet),τ,i,y,v"
+    ],
+    [
+      "f,:,·,σ,i,y,q,|"
+    ],
+    [
+      "σ,(mos),w,o,f.,-,f,a,·,σ,(mos),w,·,q,(sopa)"
+    ],
+    [
+      ""
+    ],
+    [
+      "$,_,·sh,l,:,$,∵,·sh,(sha),l,∵,τ"
+    ],
+    [
+      "q,_,r,:,n,‥,y",
+      "f,a,r,a,(qar),h,(sopa)"
+    ],
+    [
+      "m,‥,r,:,k,a,(mer_2),α,-,k,:,·,f,w,·,l,a,h"
+    ],
+    [
+      "y,∵,(mos),r,_,x,-,v,∵,·,n.,-,y,w,o,m,(yby),w,o"
+    ]
+  ]
+}

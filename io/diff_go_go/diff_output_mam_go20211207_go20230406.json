@@ -1,0 +1,6905 @@
+[
+  {
+    "sena": "Torah",
+    "bcv": "G5:21",
+    "field": "verse-body",
+    "ga": "וַֽיְחִ֣י",
+    "gc": "וַיְחִ֣י",
+    "refine": "remove meteg/silluq from vav",
+    "refine_cat": "remove"
+  },
+  {
+    "sena": "Torah",
+    "bcv": "G14:2",
+    "field": "verse-body",
+    "ga": "[('ייי', 'צְבֹיִ֔ים', ('קו\"כ-אם:1',))]",
+    "gc": "[('ייי', 'צביים', ('כו\"ק:1',)), ('ייי', 'צְבוֹיִ֔ם', ('כו\"ק:2',))]",
+    "refine": "trivial kq converted to kq with k צביים and new q differing from old q by (\"(((('xolam', 'bet', (1, 1)), ('yod', 'yod', (1, 2)), ('xiriq', 'yod', (1, 2)), ('zaqef-qatan', 'yod', (1, 2)), ('yod', 'yod', (2, 2))), (('vav', 'vav', (1, 1)), ('xolam', 'vav', (1, 1)), ('yod', 'yod', (1, 1)), ('xiriq', 'yod', (1, 1)), ('zaqef-qatan', 'yod', (1, 1)))),)\", 'deep diff')",
+    "refine_cat": "trivial kq to kq"
+  },
+  {
+    "sena": "Torah",
+    "bcv": "G14:8",
+    "field": "verse-body",
+    "ga": "[('ייי', 'צְבֹיִ֔ים', ('קו\"כ-אם:1',))]",
+    "gc": "[('ייי', 'צביים', ('כו\"ק:1',)), ('ייי', 'צְבוֹיִ֔ם', ('כו\"ק:2',))]",
+    "refine": "trivial kq converted to kq with k צביים and new q differing from old q by (\"(((('xolam', 'bet', (1, 1)), ('yod', 'yod', (1, 2)), ('xiriq', 'yod', (1, 2)), ('zaqef-qatan', 'yod', (1, 2)), ('yod', 'yod', (2, 2))), (('vav', 'vav', (1, 1)), ('xolam', 'vav', (1, 1)), ('yod', 'yod', (1, 1)), ('xiriq', 'yod', (1, 1)), ('zaqef-qatan', 'yod', (1, 1)))),)\", 'deep diff')",
+    "refine_cat": "trivial kq to kq"
+  },
+  {
+    "sena": "Torah",
+    "bcv": "G32:17",
+    "field": "verse-body",
+    "ga": "וַ֤יֹּאמֶר",
+    "gc": "וַיֹּ֤אמֶר",
+    "refine": "move mahapakh forward from vav to yod",
+    "refine_cat": "move"
+  },
+  {
+    "sena": "Torah",
+    "bcv": "G38:17",
+    "field": "verse-body",
+    "ga": "שָׁלְחֶֽךָ׃",
+    "gc": "שׇׁלְחֶֽךָ׃",
+    "refine": "on shin, replace qamats with qamats-qatan",
+    "refine_cat": "replace"
+  },
+  {
+    "sena": "Torah",
+    "bcv": "E12:28",
+    "field": "verse-body",
+    "ga": "וַיַּֽעֲשׂ֖וּ",
+    "gc": "וַֽיַּעֲשׂ֖וּ",
+    "refine": "move meteg/silluq back from yod to the first vav",
+    "refine_cat": "move"
+  },
+  {
+    "sena": "Torah",
+    "bcv": "E20:4",
+    "field": "verse-body",
+    "ga": "פֹּ֠קֵד",
+    "gc": "פֹּ֠קֵ֠ד",
+    "refine": "add telisha-gedola to qof",
+    "refine_cat": "add non-varika"
+  },
+  {
+    "sena": "Torah",
+    "bcv": "E23:24",
+    "field": "verse-body",
+    "ga": "תָֽעׇבְדֵ֔ם",
+    "gc": "[('ייי', 'ד=תׇֽעׇבְדֵ֔ם', ('מ:קמץ:1',)), ('ייי', 'ס=תָֽעׇבְדֵ֔ם', ('מ:קמץ:2',))]",
+    "refine": "Added qamats variation where only the s-variant variant was present before. To change the d-variant into the s-variant, on tav, replace qamats-qatan with qamats.",
+    "refine_cat": "qamats variation added"
+  },
+  {
+    "sena": "Torah",
+    "bcv": "N3:6",
+    "field": "verse-body",
+    "ga": "וְהַֽעֲמַדְתָּ֣",
+    "gc": "וְהַעֲמַדְתָּ֣",
+    "refine": "remove meteg/silluq from he",
+    "refine_cat": "remove"
+  },
+  {
+    "sena": "Torah",
+    "bcv": "D5:8",
+    "field": "verse-body",
+    "ga": "פֹּ֠קֵד",
+    "gc": "פֹּ֠קֵ֠ד",
+    "refine": "add telisha-gedola to qof",
+    "refine_cat": "add non-varika"
+  },
+  {
+    "sena": "Torah",
+    "bcv": "D5:13",
+    "field": "verse-body",
+    "ga": "וַ֠אֲמָתֶךָ",
+    "gc": "וַ֠אֲמָתֶ֠ךָ",
+    "refine": "add telisha-gedola to tav",
+    "refine_cat": "add non-varika"
+  },
+  {
+    "sena": "Torah",
+    "bcv": "D28:56",
+    "field": "verse-body",
+    "ga": "לֹא",
+    "gc": "לֹֽא",
+    "refine": "add meteg/silluq to lamed",
+    "refine_cat": "add non-varika"
+  },
+  {
+    "sena": "Torah",
+    "bcv": "D28:62",
+    "field": "verse-body",
+    "ga": "כִּי",
+    "gc": "כִּֽי",
+    "refine": "add meteg/silluq to kaf",
+    "refine_cat": "add non-varika"
+  },
+  {
+    "sena": "Torah",
+    "bcv": "D29:17",
+    "field": "verse-body",
+    "ga": "אוֹ",
+    "gc": "אֽוֹ",
+    "refine": "add meteg/silluq to alef",
+    "refine_cat": "add non-varika"
+  },
+  {
+    "sena": "Torah",
+    "bcv": "D29:22",
+    "field": "verse-body",
+    "ga": "[(' ', 'אדמה', 'וצביים'), 'וּצְבֹיִ֔ים', (' ', 'וצביים', 'אשר')]",
+    "gc": "[' ', ('ייי', 'וצביים', ('כו\"ק:1',)), ('ייי', 'וּצְבוֹיִ֔ם', ('כו\"ק:2',)), ' ']",
+    "refine": null,
+    "refine_cat": null
+  },
+  {
+    "sena": "Torah",
+    "bcv": "D31:19",
+    "field": "verse-body",
+    "ga": "בְּנֵי",
+    "gc": "בְּנֵֽי",
+    "refine": "add meteg/silluq to nun",
+    "refine_cat": "add non-varika"
+  },
+  {
+    "sena": "Torah",
+    "bcv": "D31:19",
+    "field": "verse-body",
+    "ga": "תִּהְיֶה",
+    "gc": "תִּֽהְיֶה",
+    "refine": "add meteg/silluq to tav",
+    "refine_cat": "add non-varika"
+  },
+  {
+    "sena": "Torah",
+    "bcv": "D32:21",
+    "field": "verse-body",
+    "ga": "וַאֲנִי֙",
+    "gc": "וַֽאֲנִי֙",
+    "refine": "add meteg/silluq to vav",
+    "refine_cat": "add non-varika"
+  },
+  {
+    "sena": "Torah",
+    "bcv": "D32:30",
+    "field": "verse-body",
+    "ga": "כִּי",
+    "gc": "כִּֽי",
+    "refine": "add meteg/silluq to kaf",
+    "refine_cat": "add non-varika"
+  },
+  {
+    "sena": "Torah",
+    "bcv": "D33:10",
+    "field": "verse-body",
+    "ga": "לְיַעֲקֹ֔ב",
+    "gc": "לְיַֽעֲקֹ֔ב",
+    "refine": "add meteg/silluq to yod",
+    "refine_cat": "add non-varika"
+  },
+  {
+    "sena": "Torah",
+    "bcv": "D33:29",
+    "field": "verse-body",
+    "ga": "בַּיהֹוָ֔ה",
+    "gc": "בַּֽיהֹוָ֔ה",
+    "refine": "add meteg/silluq to bet",
+    "refine_cat": "add non-varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "Js1:12",
+    "field": "verse-body",
+    "ga": "הַֽמְנַשֶּׁ֑ה",
+    "gc": "הַֽמְﬞנַשֶּׁ֑ה",
+    "refine": "add varika to mem",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "Js4:12",
+    "field": "verse-body",
+    "ga": "הַֽמְנַשֶּׁה֙",
+    "gc": "הַֽמְﬞנַשֶּׁה֙",
+    "refine": "add varika to mem",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "Js6:9",
+    "field": "verse-body",
+    "ga": "וְהַֽמְאַסֵּ֗ף",
+    "gc": "וְהַֽמְﬞאַסֵּ֗ף",
+    "refine": "add varika to mem",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "Js6:13",
+    "field": "verse-body",
+    "ga": "וְהַֽמְאַסֵּ֗ף",
+    "gc": "וְהַֽמְﬞאַסֵּ֗ף",
+    "refine": "add varika to mem",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "Js6:15",
+    "field": "verse-body",
+    "ga": "סָבְב֥וּ",
+    "gc": "סָבְﬞב֥וּ",
+    "refine": "add varika to the first bet",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "Js6:22",
+    "field": "verse-body",
+    "ga": "הַֽמְרַגְּלִ֤ים",
+    "gc": "הַֽמְﬞרַגְּלִ֤ים",
+    "refine": "add varika to mem",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "Js6:23",
+    "field": "verse-body",
+    "ga": "הַֽמְרַגְּלִ֗ים",
+    "gc": "הַֽמְﬞרַגְּלִ֗ים",
+    "refine": "add varika to mem",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "Js8:2",
+    "field": "verse-body",
+    "ga": "לִֽירִיחוֹ֙",
+    "gc": "לִּֽירִיחוֹ֙",
+    "refine": "add dagesh/mapiq/shuruq-dot to lamed",
+    "refine_cat": "add non-varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "Js8:27",
+    "field": "verse-body",
+    "ga": "בָּֽזְז֥וּ",
+    "gc": "בָּֽזְﬞז֥וּ",
+    "refine": "add varika to the first zayin",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "Js9:7",
+    "field": "verse-body",
+    "ga": "[('ייי', 'אֶֽכְרָת', ('כו\"ק:2',))]",
+    "gc": "[('ייי', 'אֶֽכְרׇת', ('כו\"ק:2',))]",
+    "refine": "on resh, replace qamats with qamats-qatan",
+    "refine_cat": "replace"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "Js11:2",
+    "field": "verse-body",
+    "ga": "כִּֽנְר֖וֹת",
+    "gc": "כִּֽנְﬞר֖וֹת",
+    "refine": "add varika to nun",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "Js11:14",
+    "field": "verse-body",
+    "ga": "בָּזְז֥וּ",
+    "gc": "בָּזְﬞז֥וּ",
+    "refine": "add varika to the first zayin",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "Js12:6",
+    "field": "verse-body",
+    "ga": "הַֽמְנַשֶּֽׁה׃",
+    "gc": "הַֽמְﬞנַשֶּֽׁה׃",
+    "refine": "add varika to mem",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "Js13:7",
+    "field": "verse-body",
+    "ga": "הַֽמְנַשֶּֽׁה׃",
+    "gc": "הַֽמְﬞנַשֶּֽׁה׃",
+    "refine": "add varika to mem",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "Js14:13",
+    "field": "verse-body",
+    "ga": "וַֽיְבָרְכֵ֖הוּ",
+    "gc": "וַֽיְבָרְﬞכֵ֖הוּ",
+    "refine": "add varika to resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "Js17:2",
+    "field": "verse-body",
+    "ga": "בֶּן",
+    "gc": "בֶן",
+    "refine": "remove dagesh/mapiq/shuruq-dot from bet",
+    "refine_cat": "remove"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "Js17:14",
+    "field": "verse-body",
+    "ga": "בֵּרְכַ֥נִי",
+    "gc": "בֵּרְﬞכַ֥נִי",
+    "refine": "add varika to resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "Js18:7",
+    "field": "verse-body",
+    "ga": "הַֽמְנַשֶּׁ֜ה",
+    "gc": "הַֽמְﬞנַשֶּׁ֜ה",
+    "refine": "add varika to mem",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "Js21:4",
+    "field": "verse-body",
+    "ga": "הַקְּהָתִ֑י",
+    "gc": "הַקְּﬞהָתִ֑י",
+    "refine": "add varika to qof",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "Js21:5",
+    "field": "verse-body",
+    "ga": "קְהָ֜ת",
+    "gc": "קְﬞהָ֜ת",
+    "refine": "add varika to qof",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "Js21:10",
+    "field": "verse-body",
+    "ga": "הַקְּהָתִ֖י",
+    "gc": "הַקְּﬞהָתִ֖י",
+    "refine": "add varika to qof",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "Js21:20",
+    "field": "verse-body",
+    "ga": "קְהָת֙",
+    "gc": "קְﬞהָת֙",
+    "refine": "add varika to qof",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "Js21:20",
+    "field": "verse-body",
+    "ga": "קְהָ֑ת",
+    "gc": "קְﬞהָ֑ת",
+    "refine": "add varika to qof",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "Js21:26",
+    "field": "verse-body",
+    "ga": "קְהָ֖ת",
+    "gc": "קְﬞהָ֖ת",
+    "refine": "add varika to qof",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "Js21:34",
+    "field": "verse-body",
+    "ga": "יׇקְנְעָ֖ם",
+    "gc": "יׇקְנְﬞעָ֖ם",
+    "refine": "add varika to nun",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "Js22:6",
+    "field": "verse-body",
+    "ga": "וַֽיְבָרְכֵ֖ם",
+    "gc": "וַֽיְבָרְﬞכֵ֖ם",
+    "refine": "add varika to resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "Js22:7",
+    "field": "verse-body",
+    "ga": "וַֽיְבָרְכֵֽם׃",
+    "gc": "וַֽיְבָרְﬞכֵֽם׃",
+    "refine": "add varika to resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "Js22:21",
+    "field": "verse-body",
+    "ga": "הַֽמְנַשֶּׁ֑ה",
+    "gc": "הַֽמְﬞנַשֶּׁ֑ה",
+    "refine": "add varika to mem",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "Js22:33",
+    "field": "verse-body",
+    "ga": "וַיְבָרְכ֥וּ",
+    "gc": "וַיְבָרְﬞכ֥וּ",
+    "refine": "add varika to resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "Ju3:26",
+    "field": "verse-body",
+    "ga": "הִֽתְמַהְמְהָ֑ם",
+    "gc": "הִֽתְמַהְמְﬞהָ֑ם",
+    "refine": "add varika to the second mem",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "Ju5:2",
+    "field": "verse-body",
+    "ga": "בָּֽרְכ֖וּ",
+    "gc": "בָּֽרְﬞכ֖וּ",
+    "refine": "add varika to resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "Ju5:9",
+    "field": "verse-body",
+    "ga": "לְחוֹקְקֵ֣י",
+    "gc": "לְחוֹקְﬞקֵ֣י",
+    "refine": "add varika to the first qof",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "Ju5:9",
+    "field": "verse-body",
+    "ga": "בָּרְכ֖וּ",
+    "gc": "בָּרְﬞכ֖וּ",
+    "refine": "add varika to resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "Ju5:11",
+    "field": "verse-body",
+    "ga": "מְחַֽצְצִ֗ים",
+    "gc": "מְחַֽצְﬞצִ֗ים",
+    "refine": "add varika to the first tsadi",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "Ju5:12",
+    "field": "verse-body",
+    "ga": "וּֽשְׁבֵ֥ה",
+    "gc": "וּֽשְׁﬞבֵ֥ה",
+    "refine": "add varika to shin",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "Ju5:14",
+    "field": "verse-body",
+    "ga": "מְחֹ֣קְקִ֔ים",
+    "gc": "מְחֹ֣קְﬞקִ֔ים",
+    "refine": "add varika to the first qof",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "Ju7:6",
+    "field": "verse-body",
+    "ga": "הַֽמְלַקְקִ֤ים",
+    "gc": "הַֽמְלַקְﬞקִ֤ים",
+    "refine": "add varika to the first qof",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "Ju7:7",
+    "field": "verse-body",
+    "ga": "הַֽמְלַקְקִים֙",
+    "gc": "הַֽמְלַקְﬞקִים֙",
+    "refine": "add varika to the first qof",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "Ju8:2",
+    "field": "verse-body",
+    "ga": "עֹלְל֥וֹת",
+    "gc": "עֹלְﬞל֥וֹת",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "Ju8:10",
+    "field": "verse-body",
+    "ga": "[(' ', 'שלף', 'חרב')]",
+    "gc": "[('־', 'שלף', 'חרב')]",
+    "refine": "separator changed from space to maqaf, changing שלף חרב to שלף־חרב",
+    "refine_cat": "separator changed"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "Ju9:13",
+    "field": "verse-body",
+    "ga": "הַֽמְשַׂמֵּ֥חַ",
+    "gc": "הַֽמְﬞשַׂמֵּ֥חַ",
+    "refine": "add varika to the first mem",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "Ju9:37",
+    "field": "verse-body",
+    "ga": "מְעוֹנְנִֽים׃",
+    "gc": "מְעוֹנְﬞנִֽים׃",
+    "refine": "add varika to the first nun",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "Ju9:54",
+    "field": "verse-body",
+    "ga": "וּמ֣וֹתְתֵ֔נִי",
+    "gc": "וּמ֣וֹתְﬞתֵ֔נִי",
+    "refine": "add varika to the first tav",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "Ju9:57",
+    "field": "verse-body",
+    "ga": "קִֽלְלַ֖ת",
+    "gc": "קִֽלְﬞלַ֖ת",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "Ju10:8",
+    "field": "verse-body",
+    "ga": "וַיְרֹֽצְצוּ֙",
+    "gc": "וַיְרֹֽצְﬞצוּ֙",
+    "refine": "add varika to the first tsadi",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "Ju12:6",
+    "field": "verse-body",
+    "ga": "אֱמָר",
+    "gc": "אֱמׇר",
+    "refine": "on mem, replace qamats with qamats-qatan",
+    "refine_cat": "replace"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "Ju13:24",
+    "field": "verse-body",
+    "ga": "וַֽיְבָרְכֵ֖הוּ",
+    "gc": "וַֽיְבָרְﬞכֵ֖הוּ",
+    "refine": "add varika to resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "Ju16:16",
+    "field": "verse-body",
+    "ga": "וַתְּאַֽלְצֵ֑הוּ",
+    "gc": "וַתְּאַֽלְﬞצֵ֑הוּ",
+    "refine": "add varika to lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "Ju16:18",
+    "field": "verse-body",
+    "ga": "דְּלִילָ֗ה",
+    "gc": "דְלִילָ֗ה",
+    "refine": "remove dagesh/mapiq/shuruq-dot from dalet",
+    "refine_cat": "remove"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "Ju16:24",
+    "field": "verse-body",
+    "ga": "וַֽיְהַלְל֖וּ",
+    "gc": "וַֽיְהַלְﬞל֖וּ",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "Ju20:2",
+    "field": "verse-body",
+    "ga": "[(' ', 'שלף', 'חרב')]",
+    "gc": "[('־', 'שלף', 'חרב')]",
+    "refine": "separator changed from space to maqaf, changing שלף חרב to שלף־חרב",
+    "refine_cat": "separator changed"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "Ju20:31",
+    "field": "verse-body",
+    "ga": "בַּֽמְסִלּוֹת֙",
+    "gc": "בַּֽמְﬞסִלּוֹת֙",
+    "refine": "add varika to mem",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "Ju20:32",
+    "field": "verse-body",
+    "ga": "הַֽמְסִלּֽוֹת׃",
+    "gc": "הַֽמְﬞסִלּֽוֹת׃",
+    "refine": "add varika to mem",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "Ju20:35",
+    "field": "verse-body",
+    "ga": "[(' ', 'שלף', 'חרב')]",
+    "gc": "[('־', 'שלף', 'חרב')]",
+    "refine": "separator changed from space to maqaf, changing שלף חרב to שלף־חרב",
+    "refine_cat": "separator changed"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "Ju20:45",
+    "field": "verse-body",
+    "ga": "וַיְעֹלְלֻ֙הוּ֙",
+    "gc": "וַיְעֹלְﬞלֻ֙הוּ֙",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "Ju20:45",
+    "field": "verse-body",
+    "ga": "בַּֽמְסִלּ֔וֹת",
+    "gc": "בַּֽמְﬞסִלּ֔וֹת",
+    "refine": "add varika to mem",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "Ju21:3",
+    "field": "verse-body",
+    "ga": "זֹ֖את",
+    "gc": "זֹּ֖את",
+    "refine": "add dagesh/mapiq/shuruq-dot to zayin",
+    "refine_cat": "add non-varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "Ju21:23",
+    "field": "verse-body",
+    "ga": "הַמְּחֹלְל֖וֹת",
+    "gc": "הַמְּחֹלְﬞל֖וֹת",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "1S2:16",
+    "field": "verse-body",
+    "ga": "[('ייי', 'לו', ('כו\"ק:1',)), ('ייי', 'לֹא֙', ('כו\"ק:2',))]",
+    "gc": "[('ייי', 'לו', ('קו\"כ:1',)), ('ייי', 'לֹא֙', ('קו\"כ:2',))]",
+    "refine": null,
+    "refine_cat": null
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "1S2:25",
+    "field": "verse-body",
+    "ga": "וּפִֽלְל֣וֹ",
+    "gc": "וּפִֽלְﬞל֣וֹ",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "1S3:13",
+    "field": "verse-body",
+    "ga": "בַּֽעֲוֺ֣ן",
+    "gc": "בַּעֲוֺ֣ן",
+    "refine": "remove meteg/silluq from bet",
+    "refine_cat": "remove"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "1S3:13",
+    "field": "verse-body",
+    "ga": "מְקַלְלִ֤ים",
+    "gc": "מְקַלְﬞלִ֤ים",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "1S4:17",
+    "field": "verse-body",
+    "ga": "הַֽמְבַשֵּׂ֜ר",
+    "gc": "הַֽמְﬞבַשֵּׂ֜ר",
+    "refine": "add varika to mem",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "1S4:19",
+    "field": "verse-body",
+    "ga": "הַשְּׁמוּעָ֔ה",
+    "gc": "הַשְּׁמוּעָ֗ה",
+    "refine": "on ayin, replace zaqef-qatan with revia",
+    "refine_cat": "replace"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "1S7:3",
+    "field": "verse-body",
+    "ga": "מִתּוֹכְכֶ֖ם",
+    "gc": "מִתּוֹכְﬞכֶ֖ם",
+    "refine": "add varika to the first kaf",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "1S9:6",
+    "field": "verse-body",
+    "ga": "נֵ֣לְכָה",
+    "gc": "נֵ֣לְﬞכָה",
+    "refine": "add varika to lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "1S13:10",
+    "field": "verse-body",
+    "ga": "לְבָרְכֽוֹ׃",
+    "gc": "לְבָרְﬞכֽוֹ׃",
+    "refine": "add varika to resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "1S15:1",
+    "field": "verse-body",
+    "ga": "לִמְשָׁחֳךָ֣",
+    "gc": "[('ייי', 'ד=לִמְשׇׁחֳךָ֣', ('מ:קמץ:1',)), ('ייי', 'ס=לִמְשָׁחֳךָ֣', ('מ:קמץ:2',))]",
+    "refine": "Added qamats variation where only the s-variant variant was present before. To change the d-variant into the s-variant, on shin, replace qamats-qatan with qamats.",
+    "refine_cat": "qamats variation added"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "1S16:22",
+    "field": "verse-body",
+    "ga": "יַעֲמָד",
+    "gc": "יַעֲמׇד",
+    "refine": "on mem, replace qamats with qamats-qatan",
+    "refine_cat": "replace"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "1S17:51",
+    "field": "verse-body",
+    "ga": "וַיְמֹ֣תְתֵ֔הוּ",
+    "gc": "וַיְמֹ֣תְﬞתֵ֔הוּ",
+    "refine": "add varika to the first tav",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "1S17:52",
+    "field": "verse-body",
+    "ga": "חַֽלְלֵ֤י",
+    "gc": "חַֽלְﬞלֵ֤י",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "1S18:19",
+    "field": "verse-body",
+    "ga": "בְּעֵ֥ת",
+    "gc": "בְּעֵ֛ת",
+    "refine": "on ayin, replace merkha/yored with tevir",
+    "refine_cat": "replace"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "1S18:23",
+    "field": "verse-body",
+    "ga": "הַֽנְקַלָּ֤ה",
+    "gc": "הַֽנְﬞקַלָּ֤ה",
+    "refine": "add varika to nun",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "1S24:10",
+    "field": "verse-body",
+    "ga": "לַהֲרׇגְךָ֖",
+    "gc": "לַהֲרׇגְﬞךָ֖",
+    "refine": "add varika to gimel",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "1S25:7",
+    "field": "verse-body",
+    "ga": "גֹזְזִ֖ים",
+    "gc": "גֹזְﬞזִ֖ים",
+    "refine": "add varika to the first zayin",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "1S25:11",
+    "field": "verse-body",
+    "ga": "לְגֹזְזָ֑י",
+    "gc": "לְגֹזְﬞזָ֑י",
+    "refine": "add varika to the first zayin",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "1S25:26",
+    "field": "verse-body",
+    "ga": "וְהַֽמְבַקְשִׁ֥ים",
+    "gc": "וְהַֽמְﬞבַקְשִׁ֥ים",
+    "refine": "add varika to mem",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "1S26:11",
+    "field": "verse-body",
+    "ga": "וְנֵלְכָה",
+    "gc": "וְנֵלְﬞכָה",
+    "refine": "add varika to lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "1S30:15",
+    "field": "verse-body",
+    "ga": "הִשָּׁבְעָה֩",
+    "gc": "הִשָּׁ֩בְעָה֩",
+    "refine": "add telisha-qetana to shin",
+    "refine_cat": "add non-varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "1S30:16",
+    "field": "verse-body",
+    "ga": "וְחֹ֣גְגִ֔ים",
+    "gc": "וְחֹ֣גְﬞגִ֔ים",
+    "refine": "add varika to the first gimel",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "2S1:9",
+    "field": "verse-body",
+    "ga": "וּמֹ֣תְתֵ֔נִי",
+    "gc": "וּמֹ֣תְﬞתֵ֔נִי",
+    "refine": "add varika to the first tav",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "2S3:12",
+    "field": "verse-body",
+    "ga": "כָּרְתָ֤ה",
+    "gc": "כׇּרְתָ֤ה",
+    "refine": "on kaf, replace qamats with qamats-qatan",
+    "refine_cat": "replace"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "2S7:9",
+    "field": "verse-body",
+    "ga": "[(' ', 'ועשתי', 'לך')]",
+    "gc": "[('־', 'ועשתי', 'לך')]",
+    "refine": "separator changed from space to maqaf, changing ועשתי לך to ועשתי־לך",
+    "refine_cat": "separator changed"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "2S8:10",
+    "field": "verse-body",
+    "ga": "וּֽלְבָרְכ֗וֹ",
+    "gc": "וּֽלְבָרְﬞכ֗וֹ",
+    "refine": "add varika to resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "2S10:3",
+    "field": "verse-body",
+    "ga": "הַֽמְכַבֵּ֨ד",
+    "gc": "הַֽמְﬞכַבֵּ֨ד",
+    "refine": "add varika to mem",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "2S13:23",
+    "field": "verse-body",
+    "ga": "גֹֽזְזִים֙",
+    "gc": "גֹֽזְﬞזִים֙",
+    "refine": "add varika to the first zayin",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "2S13:25",
+    "field": "verse-body",
+    "ga": "וַֽיְבָרְכֵֽהוּ׃",
+    "gc": "וַֽיְבָרְﬞכֵֽהוּ׃",
+    "refine": "add varika to resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "2S14:10",
+    "field": "verse-body",
+    "ga": "הַֽמְדַבֵּ֤ר",
+    "gc": "הַֽמְﬞדַבֵּ֤ר",
+    "refine": "add varika to mem",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "2S15:7",
+    "field": "verse-body",
+    "ga": "אֵ֣לְכָה",
+    "gc": "אֵ֣לְﬞכָה",
+    "refine": "add varika to lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "2S15:26",
+    "field": "verse-body",
+    "ga": "כַּאֲשֶׁ֥ר",
+    "gc": "כַּאֲשֶׁ֖ר",
+    "refine": "on shin, replace merkha/yored with tipexa/tarxa",
+    "refine_cat": "replace"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "2S15:26",
+    "field": "verse-body",
+    "ga": "ט֖וֹב",
+    "gc": "ט֥וֹב",
+    "refine": "on tet, replace tipexa/tarxa with merkha/yored",
+    "refine_cat": "replace"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "2S16:7",
+    "field": "verse-body",
+    "ga": "בְּקַֽלְל֑וֹ",
+    "gc": "בְּקַֽלְﬞל֑וֹ",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "2S19:6",
+    "field": "verse-body",
+    "ga": "הַֽמְמַלְּטִ֤ים",
+    "gc": "הַֽמְﬞמַלְּטִ֤ים",
+    "refine": "add varika to the first mem",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "2S19:33",
+    "field": "verse-body",
+    "ga": "בְשִׁיבָת֣וֹ",
+    "gc": "בְּשִׁיבָת֣וֹ",
+    "refine": "add dagesh/mapiq/shuruq-dot to the first bet",
+    "refine_cat": "add non-varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "2S19:40",
+    "field": "verse-body",
+    "ga": "וַיְבָ֣רְכֵ֔הוּ",
+    "gc": "וַיְבָ֣רְﬞכֵ֔הוּ",
+    "refine": "add varika to resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "2S19:41",
+    "field": "verse-body",
+    "ga": "[('ייי', 'הֶעֱבִ֣רוּ', ('כו\"ק:2',))]",
+    "gc": "[('ייי', 'הֶעֱבִ֣ירוּ', ('כו\"ק:2',))]",
+    "refine": "((None, (('yod', 'yod', (1, 1)),)),)",
+    "refine_cat": "deep diff"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "2S20:12",
+    "field": "verse-body",
+    "ga": "הַֽמְסִלָּ֑ה",
+    "gc": "הַֽמְﬞסִלָּ֑ה",
+    "refine": "add varika to mem",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "2S20:12",
+    "field": "verse-body",
+    "ga": "הַֽמְסִלָּ֤ה",
+    "gc": "הַֽמְﬞסִלָּ֤ה",
+    "refine": "add varika to mem",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "2S20:13",
+    "field": "verse-body",
+    "ga": "הַֽמְסִלָּ֑ה",
+    "gc": "הַֽמְﬞסִלָּ֑ה",
+    "refine": "add varika to mem",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "2S20:15",
+    "field": "verse-body",
+    "ga": "סֹֽלְלָה֙",
+    "gc": "סֹֽלְﬞלָה֙",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "2S21:1",
+    "field": "verse-body",
+    "ga": "['עַל', ('־', 'על', 'אשר')]",
+    "gc": "['עַ֥ל', (' ', 'על', 'אשר')]",
+    "refine": null,
+    "refine_cat": null
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "2S21:3",
+    "field": "verse-body",
+    "ga": "וּבָרְכ֖וּ",
+    "gc": "וּבָרְﬞכ֖וּ",
+    "refine": "add varika to resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "2S22:12",
+    "field": "verse-body",
+    "ga": "חַֽשְׁרַת",
+    "gc": "חַֽשְׁﬞרַת",
+    "refine": "add varika to shin",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "2S24:7",
+    "field": "verse-body",
+    "ga": "וַיֵּצְא֛וּ",
+    "gc": "וַיֵּ֥צְא֛וּ",
+    "refine": "add merkha/yored to yod",
+    "refine_cat": "add non-varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "2S24:13",
+    "field": "verse-body",
+    "ga": "[(' ', 'שבע', 'שנים')]",
+    "gc": "[('־', 'שבע', 'שנים')]",
+    "refine": "separator changed from space to maqaf, changing שבע שנים to שבע־שנים",
+    "refine_cat": "separator changed"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "1K4:12",
+    "field": "verse-body",
+    "ga": "לְיׇקְמְעָֽם׃",
+    "gc": "לְיׇקְמְﬞעָֽם׃",
+    "refine": "add varika to mem",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "1K6:37",
+    "field": "verse-body",
+    "ga": "הָרְבִיעִ֔ית",
+    "gc": "הָרְﬞבִיעִ֔ית",
+    "refine": "add varika to resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "1K7:24",
+    "field": "verse-body",
+    "ga": "סֹבְבִ֣ים",
+    "gc": "סֹבְﬞבִ֣ים",
+    "refine": "add varika to the first bet",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "1K8:35",
+    "field": "verse-body",
+    "ga": "וְהִֽתְפַּלְל֞וּ",
+    "gc": "וְהִֽתְפַּלְﬞל֞וּ",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "1K8:36",
+    "field": "verse-body",
+    "ga": "עַל",
+    "gc": "עַֽל",
+    "refine": "add meteg/silluq to ayin",
+    "refine_cat": "add non-varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "1K8:44",
+    "field": "verse-body",
+    "ga": "וְהִתְפַּלְל֣וּ",
+    "gc": "וְהִתְפַּלְﬞל֣וּ",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "1K8:48",
+    "field": "verse-body",
+    "ga": "וְהִתְפַּלְל֣וּ",
+    "gc": "וְהִתְפַּלְﬞל֣וּ",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "1K8:66",
+    "field": "verse-body",
+    "ga": "וַֽיְבָרְכ֖וּ",
+    "gc": "וַֽיְבָרְﬞכ֖וּ",
+    "refine": "add varika to resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "1K10:3",
+    "field": "verse-body",
+    "ga": "דָּבָר֙",
+    "gc": "דָבָר֙",
+    "refine": "remove dagesh/mapiq/shuruq-dot from dalet",
+    "refine_cat": "remove"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "1K13:7",
+    "field": "verse-body",
+    "ga": "וּֽסְעָ֑דָה",
+    "gc": "וּֽסְﬞעָ֑דָה",
+    "refine": "add varika to samekh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "1K14:21",
+    "field": "verse-body",
+    "ga": "וּֽשְׁבַ֨ע",
+    "gc": "וּֽשְׁﬞבַ֨ע",
+    "refine": "add varika to shin",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "1K17:11",
+    "field": "verse-body",
+    "ga": "לִֽקְחִי",
+    "gc": "לִֽקְﬞחִי",
+    "refine": "add varika to qof",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "1K18:28",
+    "field": "verse-body",
+    "ga": "וַיִּתְגֹּֽדְדוּ֙",
+    "gc": "וַיִּתְגֹּֽדְﬞדוּ֙",
+    "refine": "add varika to the first dalet",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "1K20:25",
+    "field": "verse-body",
+    "ga": "וְס֣וּס",
+    "gc": "וְס֥וּס",
+    "refine": "on the first samekh, replace munax with merkha/yored",
+    "refine_cat": "replace"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "1K21:19",
+    "field": "verse-body",
+    "ga": "לָקְק֤וּ",
+    "gc": "לָקְﬞק֤וּ",
+    "refine": "add varika to the first qof",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "1K21:20",
+    "field": "verse-body",
+    "ga": "הַֽמְצָאתַ֖נִי",
+    "gc": "הַֽמְﬞצָאתַ֖נִי",
+    "refine": "add varika to mem",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "2K1:2",
+    "field": "verse-body",
+    "ga": "מַלְאָכִ֔ים",
+    "gc": "מַלְאָכִ֗ים",
+    "refine": "on kaf, replace zaqef-qatan with revia",
+    "refine_cat": "replace"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "2K2:1",
+    "field": "verse-body",
+    "ga": "בַּֽסְעָרָ֖ה",
+    "gc": "בַּֽסְﬞעָרָ֖ה",
+    "refine": "add varika to samekh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "2K2:11",
+    "field": "verse-body",
+    "ga": "בַּֽסְעָרָ֖ה",
+    "gc": "בַּֽסְﬞעָרָ֖ה",
+    "refine": "add varika to samekh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "2K2:24",
+    "field": "verse-body",
+    "ga": "וַֽיְקַלְלֵ֖ם",
+    "gc": "וַֽיְקַלְﬞלֵ֖ם",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "2K3:15",
+    "field": "verse-body",
+    "ga": "הַֽמְנַגֵּ֔ן",
+    "gc": "הַֽמְﬞנַגֵּ֔ן",
+    "refine": "add varika to mem",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "2K4:29",
+    "field": "verse-body",
+    "ga": "תְבָרְכֶ֔נּוּ",
+    "gc": "תְבָרְﬞכֶ֔נּוּ",
+    "refine": "add varika to resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "2K6:2",
+    "field": "verse-body",
+    "ga": "נֵלְכָה",
+    "gc": "נֵלְﬞכָה",
+    "refine": "add varika to lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "2K6:8",
+    "field": "verse-body",
+    "ga": "לֵאמֹ֗ר",
+    "gc": "לֵאמֹ֔ר",
+    "refine": "on mem, replace revia with zaqef-qatan",
+    "refine_cat": "replace"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "2K6:28",
+    "field": "verse-body",
+    "ga": "וְנֹאכְלֶ֣נּוּ",
+    "gc": "וְנֹאכְﬞלֶ֣נּוּ",
+    "refine": "add varika to kaf",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "2K6:29",
+    "field": "verse-body",
+    "ga": "וְנֹ֣אכְלֶ֔נּוּ",
+    "gc": "וְנֹ֣אכְﬞלֶ֔נּוּ",
+    "refine": "add varika to kaf",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "2K6:32",
+    "field": "verse-body",
+    "ga": "הַֽמְרַצֵּ֤חַ",
+    "gc": "הַֽמְﬞרַצֵּ֤חַ",
+    "refine": "add varika to mem",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "2K7:8",
+    "field": "verse-body",
+    "ga": "הַֽמְצֹרָעִ֨ים",
+    "gc": "הַֽמְﬞצֹרָעִ֨ים",
+    "refine": "add varika to mem",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "2K8:12",
+    "field": "verse-body",
+    "ga": "וְעֹלְלֵיהֶ֣ם",
+    "gc": "וְעֹלְﬞלֵיהֶ֣ם",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "2K9:17",
+    "field": "verse-body",
+    "ga": "וּֽשְׁלַ֥ח",
+    "gc": "וּֽשְׁﬞלַ֥ח",
+    "refine": "add varika to shin",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "2K9:20",
+    "field": "verse-body",
+    "ga": "וַיַגֵּ֤ד",
+    "gc": "וַיַּגֵּ֤ד",
+    "refine": "add dagesh/mapiq/shuruq-dot to yod",
+    "refine_cat": "add non-varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "2K10:15",
+    "field": "verse-body",
+    "ga": "וַֽיְבָרְכֵ֗הוּ",
+    "gc": "וַֽיְבָרְﬞכֵ֗הוּ",
+    "refine": "add varika to resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "2K10:33",
+    "field": "verse-body",
+    "ga": "וְהַֽמְנַשִּׁ֑י",
+    "gc": "וְהַֽמְﬞנַשִּׁ֑י",
+    "refine": "add varika to mem",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "2K12:12",
+    "field": "verse-body",
+    "ga": "הַֽמְתֻכָּ֔ן",
+    "gc": "הַֽמְﬞתֻכָּ֔ן",
+    "refine": "add varika to mem",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "2K12:12",
+    "field": "verse-body",
+    "ga": "[('ייי', 'ד=לְחׇרָשֵׁ֤י', ('מ:קמץ:1',)), ('ייי', 'ס=לְחָרָשֵׁ֤י', ('מ:קמץ:2',))]",
+    "gc": "לְחָרָשֵׁ֤י",
+    "refine": null,
+    "refine_cat": null
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "2K12:22",
+    "field": "verse-body",
+    "ga": "וַיִּקְבְּר֥וּ",
+    "gc": "וַֽיִּקְבְּר֥וּ",
+    "refine": "add meteg/silluq to the first vav",
+    "refine_cat": "add non-varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "2K13:17",
+    "field": "verse-body",
+    "ga": "וַיֹּ֤אמֶר",
+    "gc": "וַיֹּ֨אמֶר",
+    "refine": "on yod, replace mahapakh with qadma/metigah/azla",
+    "refine_cat": "replace"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "2K17:4",
+    "field": "verse-body",
+    "ga": "וַֽיַּעַצְרֵ֙הוּ֙",
+    "gc": "וַֽיַּעְצְרֵ֙הוּ֙",
+    "refine": "on ayin, replace patax with sheva",
+    "refine_cat": "replace"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "2K19:6",
+    "field": "verse-body",
+    "ga": "שָׁמַ֗עְתָּ",
+    "gc": "שָׁמַ֔עְתָּ",
+    "refine": "on mem, replace revia with zaqef-qatan",
+    "refine_cat": "replace"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "2K19:16",
+    "field": "verse-body",
+    "ga": "וּֽשְׁמָ֔ע",
+    "gc": "וּֽשְׁﬞמָ֔ע",
+    "refine": "add varika to shin",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "2K23:12",
+    "field": "verse-body",
+    "ga": "מְנַשֶּׁ֔ה",
+    "gc": "מְנַשֶּׁ֗ה",
+    "refine": "on shin, replace zaqef-qatan with revia",
+    "refine_cat": "replace"
+  },
+  {
+    "sena": "NevRish",
+    "bcv": "2K25:7",
+    "field": "verse-body",
+    "ga": "בַֽנְחֻשְׁתַּ֔יִם",
+    "gc": "בַּֽנְחֻשְׁתַּ֔יִם",
+    "refine": "add dagesh/mapiq/shuruq-dot to bet",
+    "refine_cat": "add non-varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "I1:23",
+    "field": "verse-body",
+    "ga": "סוֹרְרִ֗ים",
+    "gc": "סוֹרְﬞרִ֗ים",
+    "refine": "add varika to the first resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "I1:30",
+    "field": "verse-body",
+    "ga": "וּֽכְגַנָּ֔ה",
+    "gc": "וּֽכְﬞגַנָּ֔ה",
+    "refine": "add varika to kaf",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "I2:6",
+    "field": "verse-body",
+    "ga": "וְעֹנְנִ֖ים",
+    "gc": "וְעֹנְﬞנִ֖ים",
+    "refine": "add varika to the first nun",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "I10:1",
+    "field": "verse-body",
+    "ga": "הַחֹֽקְקִ֖ים",
+    "gc": "הַחֹֽקְﬞקִ֖ים",
+    "refine": "add varika to the first qof",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "I10:31",
+    "field": "verse-body",
+    "ga": "נָֽדְדָ֖ה",
+    "gc": "נָֽדְﬞדָ֖ה",
+    "refine": "add varika to the first dalet",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "I11:13",
+    "field": "verse-body",
+    "ga": "וְצֹרְרֵ֥י",
+    "gc": "וְצֹרְﬞרֵ֥י",
+    "refine": "add varika to the first resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "I17:14",
+    "field": "verse-body",
+    "ga": "לְבֹזְזֵֽינוּ׃",
+    "gc": "לְבֹזְﬞזֵֽינוּ׃",
+    "refine": "add varika to the first zayin",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "I19:6",
+    "field": "verse-body",
+    "ga": "דָּלְל֥וּ",
+    "gc": "דָּלְﬞל֥וּ",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "I19:25",
+    "field": "verse-body",
+    "ga": "בֵּרְכ֛וֹ",
+    "gc": "בֵּרְﬞכ֛וֹ",
+    "refine": "add varika to resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "I21:6",
+    "field": "verse-body",
+    "ga": "הַֽמְצַפֶּ֔ה",
+    "gc": "הַֽמְﬞצַפֶּ֔ה",
+    "refine": "add varika to mem",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "I22:3",
+    "field": "verse-body",
+    "ga": "נָֽדְדוּ",
+    "gc": "נָֽדְﬞדוּ",
+    "refine": "add varika to the first dalet",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "I22:16",
+    "field": "verse-body",
+    "ga": "חֹקְקִ֥י",
+    "gc": "חֹקְﬞקִ֥י",
+    "refine": "add varika to the first qof",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "I23:13",
+    "field": "verse-body",
+    "ga": "עֽוֹרְרוּ֙",
+    "gc": "עֽוֹרְﬞרוּ֙",
+    "refine": "add varika to the first resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "I23:17",
+    "field": "verse-body",
+    "ga": "וְזָנְתָ֛ה",
+    "gc": "וְזָ֥נְתָ֛ה",
+    "refine": "add merkha/yored to zayin",
+    "refine_cat": "add non-varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "I24:19",
+    "field": "verse-body",
+    "ga": "הִֽתְפּוֹרְרָה֙",
+    "gc": "הִֽתְפּוֹרְﬞרָה֙",
+    "refine": "add varika to the first resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "I24:19",
+    "field": "verse-body",
+    "ga": "הִֽתְמוֹטְטָ֖ה",
+    "gc": "הִֽתְמוֹטְﬞטָ֖ה",
+    "refine": "add varika to the first tet",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "I24:20",
+    "field": "verse-body",
+    "ga": "וְהִֽתְנוֹדְדָ֖ה",
+    "gc": "וְהִֽתְנוֹדְﬞדָ֖ה",
+    "refine": "add varika to the first dalet",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "I25:10",
+    "field": "verse-body",
+    "ga": "וְנָ֤דוֹשׁ",
+    "gc": "וְנָד֤וֹשׁ",
+    "refine": "move mahapakh forward from nun to dalet",
+    "refine_cat": "move"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "I26:20",
+    "field": "verse-body",
+    "ga": "וּֽסְגֹ֥ר",
+    "gc": "וּֽסְﬞגֹ֥ר",
+    "refine": "add varika to samekh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "I27:8",
+    "field": "verse-body",
+    "ga": "בְּסַאסְּאָ֖ה",
+    "gc": "בְּסַאסְּﬞאָ֖ה",
+    "refine": "add varika to the second samekh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "I30:1",
+    "field": "verse-body",
+    "ga": "סֽוֹרְרִים֙",
+    "gc": "סֽוֹרְﬞרִים֙",
+    "refine": "add varika to the first resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "I30:32",
+    "field": "verse-body",
+    "ga": "כֹּ֤ל",
+    "gc": "כֹּ֚ל",
+    "refine": "on kaf, replace mahapakh with yetiv",
+    "refine_cat": "replace"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "I31:8",
+    "field": "verse-body",
+    "ga": "תֹּאכְלֶ֑נּוּ",
+    "gc": "תֹּאכְﬞלֶ֑נּוּ",
+    "refine": "add varika to kaf",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "I33:3",
+    "field": "verse-body",
+    "ga": "נָדְד֖וּ",
+    "gc": "נָדְﬞד֖וּ",
+    "refine": "add varika to the first dalet",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "I33:22",
+    "field": "verse-body",
+    "ga": "מְחֹקְקֵ֑נוּ",
+    "gc": "מְחֹקְﬞקֵ֑נוּ",
+    "refine": "add varika to the first qof",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "I33:23",
+    "field": "verse-body",
+    "ga": "בָּ֥זְזוּ",
+    "gc": "בָּ֥זְﬞזוּ",
+    "refine": "add varika to the first zayin",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "I34:11",
+    "field": "verse-body",
+    "ga": "תֹ֖הוּ",
+    "gc": "תֹֿ֖הוּ",
+    "refine": "add rafeh to tav",
+    "refine_cat": "add non-varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "I34:16",
+    "field": "verse-body",
+    "ga": "וּֽקְרָ֔אוּ",
+    "gc": "וּֽקְﬞרָ֔אוּ",
+    "refine": "add varika to qof",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "I37:17",
+    "field": "verse-body",
+    "ga": "וּֽשְׁמָ֔ע",
+    "gc": "וּֽשְׁﬞמָ֔ע",
+    "refine": "add varika to shin",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "I37:33",
+    "field": "verse-body",
+    "ga": "סֹלְלָֽה׃",
+    "gc": "סֹלְﬞלָֽה׃",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "I38:18",
+    "field": "verse-body",
+    "ga": "יְהַלְלֶ֑ךָּ",
+    "gc": "יְהַלְﬞלֶ֑ךָּ",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "I40:4",
+    "field": "verse-body",
+    "ga": "וְהָרְכָסִ֖ים",
+    "gc": "וְהָרְﬞכָסִ֖ים",
+    "refine": "add varika to resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "I40:7",
+    "field": "verse-body",
+    "ga": "[(' ', 'נבל', 'ציץ')]",
+    "gc": "[('־', 'נבל', 'ציץ')]",
+    "refine": "separator changed from space to maqaf, changing נבל ציץ to נבל־ציץ",
+    "refine_cat": "separator changed"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "I40:12",
+    "field": "verse-body",
+    "ga": "בְּשׇׁעֳל֜וֹ",
+    "gc": "[('ייי', 'ד=בְּשׇׁעֳל֜וֹ', ('מ:קמץ:1',)), ('ייי', 'ס=בְּשָׁעֳל֜וֹ', ('מ:קמץ:2',))]",
+    "refine": "Added qamats variation where only the d-variant variant was present before. To change the d-variant into the s-variant, on shin, replace qamats-qatan with qamats.",
+    "refine_cat": "qamats variation added"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "I40:20",
+    "field": "verse-body",
+    "ga": "הַֽמְסֻכָּ֣ן",
+    "gc": "הַֽמְﬞסֻכָּ֣ן",
+    "refine": "add varika to mem",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "I41:25",
+    "field": "verse-body",
+    "ga": "יִרְמָס",
+    "gc": "יִרְמׇס",
+    "refine": "on mem, replace qamats with qamats-qatan",
+    "refine_cat": "replace"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "I42:24",
+    "field": "verse-body",
+    "ga": "לְבֹזְזִ֖ים",
+    "gc": "לְבֹזְﬞזִ֖ים",
+    "refine": "add varika to the first zayin",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "I43:19",
+    "field": "verse-body",
+    "ga": "תֵדָע֑וּהָ",
+    "gc": "תֵּדָע֑וּהָ",
+    "refine": "add dagesh/mapiq/shuruq-dot to tav",
+    "refine_cat": "add non-varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "I45:14",
+    "field": "verse-body",
+    "ga": "וּֽסְחַר",
+    "gc": "וּֽסְﬞחַר",
+    "refine": "add varika to samekh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "I45:18",
+    "field": "verse-body",
+    "ga": "יְ֠הֹוָה",
+    "gc": "יְ֠הֹוָ֠ה",
+    "refine": "add telisha-gedola to vav",
+    "refine_cat": "add non-varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "I45:18",
+    "field": "verse-body",
+    "ga": "כֽוֹנְנָ֔הּ",
+    "gc": "כֽוֹנְﬞנָ֔הּ",
+    "refine": "add varika to the first nun",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "I45:20",
+    "field": "verse-body",
+    "ga": "וּמִֽתְפַּלְלִ֔ים",
+    "gc": "וּמִֽתְפַּלְﬞלִ֔ים",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "I47:10",
+    "field": "verse-body",
+    "ga": "שׁוֹבְבָ֑תֶךְ",
+    "gc": "שׁוֹבְﬞבָ֑תֶךְ",
+    "refine": "add varika to the first bet",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "I48:14",
+    "field": "verse-body",
+    "ga": "וּֽשְׁמָ֔עוּ",
+    "gc": "וּֽשְׁﬞמָ֔עוּ",
+    "refine": "add varika to shin",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "I48:17",
+    "field": "verse-body",
+    "ga": "מַדְרִֽיכְךָ֖",
+    "gc": "מַדְרִֽיכְﬞךָ֖",
+    "refine": "add varika to kaf",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "I51:2",
+    "field": "verse-body",
+    "ga": "וַאֲבָרְכֵ֖הוּ",
+    "gc": "וַאֲבָרְﬞכֵ֖הוּ",
+    "refine": "add varika to resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "I51:15",
+    "field": "verse-body",
+    "ga": "וְאָנֹכִי֙",
+    "gc": "וְאָֽנֹכִי֙",
+    "refine": "add meteg/silluq to alef",
+    "refine_cat": "add non-varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "I51:17",
+    "field": "verse-body",
+    "ga": "הִתְעוֹרְרִ֣י",
+    "gc": "הִתְעוֹרְﬞרִ֣י",
+    "refine": "add varika to the first resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "I51:17",
+    "field": "verse-body",
+    "ga": "הִֽתְעוֹרְרִ֗י",
+    "gc": "הִֽתְעוֹרְﬞרִ֗י",
+    "refine": "add varika to the first resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "I51:20",
+    "field": "verse-body",
+    "ga": "הַֽמְלֵאִ֥ים",
+    "gc": "הַֽמְﬞלֵאִ֥ים",
+    "refine": "add varika to mem",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "I52:6",
+    "field": "verse-body",
+    "ga": "הַֽמְדַבֵּ֖ר",
+    "gc": "הַֽמְﬞדַבֵּ֖ר",
+    "refine": "add varika to mem",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "I53:7",
+    "field": "verse-body",
+    "ga": "גֹזְזֶ֖יהָ",
+    "gc": "גֹזְﬞזֶ֖יהָ",
+    "refine": "add varika to the first zayin",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "I54:1",
+    "field": "verse-body",
+    "ga": "וְצַהֲלִי֙",
+    "gc": "וְצַֽהֲלִי֙",
+    "refine": "add meteg/silluq to tsadi",
+    "refine_cat": "add non-varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "I57:3",
+    "field": "verse-body",
+    "ga": "עֹנְנָ֑ה",
+    "gc": "עֹנְﬞנָ֑ה",
+    "refine": "add varika to the first nun",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "I57:20",
+    "field": "verse-body",
+    "ga": "וְהָרְשָׁעִ֖ים",
+    "gc": "וְהָרְﬞשָׁעִ֖ים",
+    "refine": "add varika to resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "I58:9",
+    "field": "verse-body",
+    "ga": "מִתּֽוֹכְךָ֙",
+    "gc": "מִתּֽוֹכְﬞךָ֙",
+    "refine": "add varika to kaf",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "I59:10",
+    "field": "verse-body",
+    "ga": "נְגַשְׁשָׁ֤ה",
+    "gc": "נְגַשְׁﬞשָׁ֤ה",
+    "refine": "add varika to the first shin",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "I59:16",
+    "field": "verse-body",
+    "ga": "[(' ', 'ותושע', 'לו')]",
+    "gc": "[('־', 'ותושע', 'לו')]",
+    "refine": "separator changed from space to maqaf, changing ותושע לו to ותושע־לו",
+    "refine_cat": "separator changed"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "I59:19",
+    "field": "verse-body",
+    "ga": "נֹ֥סְסָה",
+    "gc": "נֹ֥סְﬞסָה",
+    "refine": "add varika to the first samekh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "I62:9",
+    "field": "verse-body",
+    "ga": "וְהִֽלְל֖וּ",
+    "gc": "וְהִֽלְﬞל֖וּ",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "I62:10",
+    "field": "verse-body",
+    "ga": "הַֽמְסִלָּה֙",
+    "gc": "הַֽמְﬞסִלָּה֙",
+    "refine": "add varika to mem",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "I63:5",
+    "field": "verse-body",
+    "ga": "[(' ', 'ותושע', 'לי')]",
+    "gc": "[('־', 'ותושע', 'לי')]",
+    "refine": "separator changed from space to maqaf, changing ותושע לי to ותושע־לי",
+    "refine_cat": "separator changed"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "I63:18",
+    "field": "verse-body",
+    "ga": "בּוֹסְס֖וּ",
+    "gc": "בּוֹסְﬞס֖וּ",
+    "refine": "add varika to the first samekh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "I64:10",
+    "field": "verse-body",
+    "ga": "הִֽלְל֙וּךָ֙",
+    "gc": "הִֽלְﬞל֙וּךָ֙",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "I65:11",
+    "field": "verse-body",
+    "ga": "וְהַֽמְמַלְאִ֖ים",
+    "gc": "וְהַֽמְﬞמַלְאִ֖ים",
+    "refine": "add varika to the first mem",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "I66:8",
+    "field": "verse-body",
+    "ga": "[(' ', 'יולד', 'גוי')]",
+    "gc": "[('־', 'יולד', 'גוי')]",
+    "refine": "separator changed from space to maqaf, changing יולד גוי to יולד־גוי",
+    "refine_cat": "separator changed"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "I66:12",
+    "field": "verse-body",
+    "ga": "תְּשׇׁעֳשָֽׁעוּ׃",
+    "gc": "[('ייי', 'ד=תְּשׇׁעֳשָֽׁעוּ', ('מ:קמץ:1',)), ('ייי', 'ס=תְּשָׁעֳשָֽׁעוּ', ('מ:קמץ:2',)), '׃']",
+    "refine": null,
+    "refine_cat": null
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "I66:16",
+    "field": "verse-body",
+    "ga": "חַֽלְלֵ֥י",
+    "gc": "חַֽלְﬞלֵ֥י",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Je3:25",
+    "field": "verse-body",
+    "ga": "וּֽתְכַסֵּ֘נוּ֮",
+    "gc": "וּֽתְﬞכַסֵּ֘נוּ֮",
+    "refine": "add varika to tav",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Je4:7",
+    "field": "verse-body",
+    "ga": "מִֽסֻּבְּכ֔וֹ",
+    "gc": "מִֽסֻּבְּﬞכ֔וֹ",
+    "refine": "add varika to bet",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Je4:19",
+    "field": "verse-body",
+    "ga": "[('ייי', 'אחולה', ('כו\"ק:1',)), ('ייי', 'אֹחִ֜ילָה', ('כו\"ק:2',))]",
+    "gc": "[('ייי', 'אחולה', ('קו\"כ:1',)), ('ייי', 'אוֹחִ֜ילָה', ('קו\"כ:2',))]",
+    "refine": null,
+    "refine_cat": null
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Je5:1",
+    "field": "verse-body",
+    "ga": "שׁוֹטְט֞וּ",
+    "gc": "שׁוֹטְﬞט֞וּ",
+    "refine": "add varika to the first tet",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Je5:5",
+    "field": "verse-body",
+    "ga": "אֵֽלְכָה",
+    "gc": "אֵֽלְﬞכָה",
+    "refine": "add varika to lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Je6:6",
+    "field": "verse-body",
+    "ga": "סֹֽלְלָ֑ה",
+    "gc": "סֹֽלְﬞלָ֑ה",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Je6:9",
+    "field": "verse-body",
+    "ga": "יְעוֹלְל֥וּ",
+    "gc": "יְעוֹלְﬞל֥וּ",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Je6:28",
+    "field": "verse-body",
+    "ga": "סוֹרְרִ֔ים",
+    "gc": "סוֹרְﬞרִ֔ים",
+    "refine": "add varika to the first resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Je7:11",
+    "field": "verse-body",
+    "ga": "הַֽמְעָרַ֣ת",
+    "gc": "הַֽמְﬞעָרַ֣ת",
+    "refine": "add varika to mem",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Je8:5",
+    "field": "verse-body",
+    "ga": "שׁוֹבְבָ֜ה",
+    "gc": "שׁוֹבְﬞבָ֜ה",
+    "refine": "add varika to the first bet",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Je8:23",
+    "field": "verse-body",
+    "ga": "חַֽלְלֵ֥י",
+    "gc": "חַֽלְﬞלֵ֥י",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Je9:9",
+    "field": "verse-body",
+    "ga": "נָדְד֖וּ",
+    "gc": "נָדְﬞד֖וּ",
+    "refine": "add varika to the first dalet",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Je9:10",
+    "field": "verse-body",
+    "ga": "מִבְּלִ֖י",
+    "gc": "מִבְּלִ֥י",
+    "refine": "on lamed, replace tipexa/tarxa with merkha/yored",
+    "refine_cat": "replace"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Je9:11",
+    "field": "verse-body",
+    "ga": "מִבְּלִ֖י",
+    "gc": "מִבְּלִ֥י",
+    "refine": "on lamed, replace tipexa/tarxa with merkha/yored",
+    "refine_cat": "replace"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Je9:16",
+    "field": "verse-body",
+    "ga": "לַמְקוֹנְנ֖וֹת",
+    "gc": "לַמְקוֹנְﬞנ֖וֹת",
+    "refine": "add varika to the first nun",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Je11:15",
+    "field": "verse-body",
+    "ga": "הַֽמְזִמָּ֙תָה֙",
+    "gc": "הַֽמְﬞזִמָּ֙תָה֙",
+    "refine": "add varika to the first mem",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Je11:21",
+    "field": "verse-body",
+    "ga": "הַֽמְבַקְשִׁ֥ים",
+    "gc": "הַֽמְﬞבַקְשִׁ֥ים",
+    "refine": "add varika to mem",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Je12:10",
+    "field": "verse-body",
+    "ga": "בֹּסְס֖וּ",
+    "gc": "בֹּסְﬞס֖וּ",
+    "refine": "add varika to the first samekh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Je12:12",
+    "field": "verse-body",
+    "ga": "שֹֽׁדְדִ֔ים",
+    "gc": "שֹֽׁדְﬞדִ֔ים",
+    "refine": "add varika to the first dalet",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Je13:13",
+    "field": "verse-body",
+    "ga": "[('ייי', 'ַ', ('מ:ירושלם:1',))]",
+    "gc": "[('ייי', 'ָ', ('מ:ירושלם:1',))]",
+    "refine": null,
+    "refine_cat": null
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Je18:16",
+    "field": "verse-body",
+    "ga": "[('ייי', 'שְׁרִיקֹ֣ת', ('כו\"ק:2',))]",
+    "gc": "[('ייי', 'שְׁרִיק֣וֹת', ('כו\"ק:2',))]",
+    "refine": "(((('xolam', 'qof', (1, 1)),), None), (None, (('vav', 'vav', (1, 1)), ('xolam', 'vav', (1, 1)))))",
+    "refine_cat": "deep diff"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Je20:17",
+    "field": "verse-body",
+    "ga": "מוֹתְתַ֖נִי",
+    "gc": "מוֹתְﬞתַ֖נִי",
+    "refine": "add varika to the first tav",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Je22:15",
+    "field": "verse-body",
+    "ga": "הֲתִֽמְלֹ֔ךְ",
+    "gc": "הֲתִֽמְﬞלֹ֔ךְ",
+    "refine": "add varika to mem",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Je22:20",
+    "field": "verse-body",
+    "ga": "וּֽצְעָ֔קִי",
+    "gc": "וּֽצְﬞעָ֔קִי",
+    "refine": "add varika to tsadi",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Je22:28",
+    "field": "verse-body",
+    "ga": "הֽוּטְלוּ֙",
+    "gc": "הֽוּטְﬞלוּ֙",
+    "refine": "add varika to tet",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Je25:33",
+    "field": "verse-body",
+    "ga": "חַֽלְלֵ֤י",
+    "gc": "חַֽלְﬞלֵ֤י",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Je25:36",
+    "field": "verse-body",
+    "ga": "וִֽילְלַ֖ת",
+    "gc": "וִֽילְﬞלַ֖ת",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Je31:32",
+    "field": "verse-body",
+    "ga": "אֶכְתְּבֶ֑נָּה",
+    "gc": "אֶכְתְּﬞבֶ֑נָּה",
+    "refine": "add varika to tav",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Je32:9",
+    "field": "verse-body",
+    "ga": "וָֽאֶשְׁקְלָה",
+    "gc": "וָֽאֶשְׁקְﬞלָה",
+    "refine": "add varika to qof",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Je33:10",
+    "field": "verse-body",
+    "ga": "הַֽנְשַׁמּ֗וֹת",
+    "gc": "הַֽנְﬞשַׁמּ֗וֹת",
+    "refine": "add varika to nun",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Je34:3",
+    "field": "verse-body",
+    "ga": "לֹ֚א",
+    "gc": "לֹ֤א",
+    "refine": "on lamed, replace yetiv with mahapakh",
+    "refine_cat": "replace"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Je36:29",
+    "field": "verse-body",
+    "ga": "תֹאמַ֔ר",
+    "gc": "תֹּאמַ֔ר",
+    "refine": "add dagesh/mapiq/shuruq-dot to tav",
+    "refine_cat": "add non-varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Je40:15",
+    "field": "verse-body",
+    "ga": "אֵ֤לְכָה",
+    "gc": "אֵ֤לְﬞכָה",
+    "refine": "add varika to lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Je41:5",
+    "field": "verse-body",
+    "ga": "וּמִתְגֹּֽדְדִ֑ים",
+    "gc": "וּמִתְגֹּֽדְﬞדִ֑ים",
+    "refine": "add varika to the first dalet",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Je44:9",
+    "field": "verse-body",
+    "ga": "הַֽשְׁכַחְתֶּם֩",
+    "gc": "הַֽשְׁﬞכַחְתֶּם֩",
+    "refine": "add varika to shin",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Je46:9",
+    "field": "verse-body",
+    "ga": "וְהִתְהֹלְל֣וּ",
+    "gc": "וְהִתְהֹלְﬞל֣וּ",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Je48:6",
+    "field": "verse-body",
+    "ga": "וְתִֽהְיֶ֕ינָה",
+    "gc": "וְתִֽהְיֶ֔ינָה",
+    "refine": "on the first yod, replace zaqef-gadol with zaqef-qatan",
+    "refine_cat": "replace"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Je48:7",
+    "field": "verse-body",
+    "ga": "[('ייי', 'יַחְדָּֽו', ('כו\"ק:2',))]",
+    "gc": "[('ייי', 'יַחְדָּֽיו', ('כו\"ק:2',))]",
+    "refine": "(((('yod', 'yod', (1, 1)), ('patax', 'yod', (1, 1))), (('yod', 'yod', (1, 2)), ('patax', 'yod', (1, 2)))), (None, (('yod', 'yod', (2, 2)),)))",
+    "refine_cat": "deep diff"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Je48:20",
+    "field": "verse-body",
+    "ga": "[('ייי', 'וּֽזְעָ֑קוּ', ('מ:כו\"ק של שתי מילים בהערה אחת:2',))]",
+    "gc": "[('ייי', 'וּֽזְﬞעָ֑קוּ', ('מ:כו\"ק של שתי מילים בהערה אחת:2',))]",
+    "refine": "add varika to zayin",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Je48:28",
+    "field": "verse-body",
+    "ga": "בַּסֶּ֔לַע",
+    "gc": "בַסֶּ֔לַע",
+    "refine": "remove dagesh/mapiq/shuruq-dot from bet",
+    "refine_cat": "remove"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Je49:4",
+    "field": "verse-body",
+    "ga": "תִּתְהַֽלְלִי֙",
+    "gc": "תִּתְהַֽלְﬞלִי֙",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Je50:6",
+    "field": "verse-body",
+    "ga": "[('ייי', 'שׁוֹבְב֑וּם', ('כו\"ק:2',))]",
+    "gc": "[('ייי', 'שׁוֹבְﬞב֑וּם', ('כו\"ק:2',))]",
+    "refine": "add varika to the first bet",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Je50:10",
+    "field": "verse-body",
+    "ga": "שֹׁלְלֶ֥יהָ",
+    "gc": "שֹׁלְﬞלֶ֥יהָ",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Je51:2",
+    "field": "verse-body",
+    "ga": "וִיבֹקְק֖וּ",
+    "gc": "וִיבֹקְﬞק֖וּ",
+    "refine": "add varika to the first qof",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Je51:7",
+    "field": "verse-body",
+    "ga": "יִתְהֹלְל֥וּ",
+    "gc": "יִתְהֹלְﬞל֥וּ",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Je51:49",
+    "field": "verse-body",
+    "ga": "חַֽלְלֵ֥י",
+    "gc": "חַֽלְﬞלֵ֥י",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Je51:53",
+    "field": "verse-body",
+    "ga": "שֹׁדְדִ֛ים",
+    "gc": "שֹׁדְﬞדִ֛ים",
+    "refine": "add varika to the first dalet",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Ee1:7",
+    "field": "verse-body",
+    "ga": "וְנֹ֣צְצִ֔ים",
+    "gc": "וְנֹ֣צְﬞצִ֔ים",
+    "refine": "add varika to the first tsadi",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Ee3:18",
+    "field": "verse-body",
+    "ga": "הָרְשָׁעָ֖ה",
+    "gc": "הָרְﬞשָׁעָ֖ה",
+    "refine": "add varika to resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Ee3:19",
+    "field": "verse-body",
+    "ga": "הָרְשָׁעָ֑ה",
+    "gc": "הָרְﬞשָׁעָ֑ה",
+    "refine": "add varika to resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Ee4:2",
+    "field": "verse-body",
+    "ga": "סֹלְלָ֑ה",
+    "gc": "סֹלְﬞלָ֑ה",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Ee4:9",
+    "field": "verse-body",
+    "ga": "תֹּאכְלֶֽנּוּ׃",
+    "gc": "תֹּאכְﬞלֶֽנּוּ׃",
+    "refine": "add varika to kaf",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Ee4:10",
+    "field": "verse-body",
+    "ga": "תֹּאכְלֶ֔נּוּ",
+    "gc": "תֹּאכְﬞלֶ֔נּוּ",
+    "refine": "add varika to kaf",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Ee4:10",
+    "field": "verse-body",
+    "ga": "תֹּאכְלֶֽנּוּ׃",
+    "gc": "תֹּאכְﬞלֶֽנּוּ׃",
+    "refine": "add varika to kaf",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Ee4:12",
+    "field": "verse-body",
+    "ga": "תֹּאכְלֶ֑נָּה",
+    "gc": "תֹּאכְﬞלֶ֑נָּה",
+    "refine": "add varika to kaf",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Ee4:12",
+    "field": "verse-body",
+    "ga": "בְּגֶֽלְלֵי֙",
+    "gc": "בְּגֶֽלְﬞלֵי֙",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Ee4:15",
+    "field": "verse-body",
+    "ga": "גֶּֽלְלֵ֣י",
+    "gc": "גֶּֽלְﬞלֵ֣י",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Ee6:7",
+    "field": "verse-body",
+    "ga": "בְּתוֹכְכֶ֑ם",
+    "gc": "בְּתוֹכְﬞכֶ֑ם",
+    "refine": "add varika to the first kaf",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Ee7:15",
+    "field": "verse-body",
+    "ga": "יֹאכְלֶֽנּוּ׃",
+    "gc": "יֹאכְﬞלֶֽנּוּ׃",
+    "refine": "add varika to kaf",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Ee9:8",
+    "field": "verse-body",
+    "ga": "וְנֵֽאשְׁאַ֖ר",
+    "gc": "וְנֵֽאשְׁﬞאַ֖ר",
+    "refine": "add varika to shin",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Ee11:1",
+    "field": "verse-body",
+    "ga": "שָׂרֵ֖י",
+    "gc": "שָׂרֵ֥י",
+    "refine": "on resh, replace tipexa/tarxa with merkha/yored",
+    "refine_cat": "replace"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Ee11:9",
+    "field": "verse-body",
+    "ga": "וְעָשִׂ֛יתִי",
+    "gc": "וְעָשִׂ֥יתִי",
+    "refine": "on shin, replace tevir with merkha/yored",
+    "refine_cat": "replace"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Ee13:20",
+    "field": "verse-body",
+    "ga": "מְצֹדְד֨וֹת",
+    "gc": "מְצֹדְﬞד֨וֹת",
+    "refine": "add varika to the first dalet",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Ee13:20",
+    "field": "verse-body",
+    "ga": "מְצֹדְד֥וֹת",
+    "gc": "מְצֹדְﬞד֥וֹת",
+    "refine": "add varika to the first dalet",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Ee16:12",
+    "field": "verse-body",
+    "ga": "[(' ', 'ואתן', 'נזם')]",
+    "gc": "[('־', 'ואתן', 'נזם')]",
+    "refine": "separator changed from space to maqaf, changing ואתן נזם to ואתן־נזם",
+    "refine_cat": "separator changed"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Ee16:51",
+    "field": "verse-body",
+    "ga": "וַתְּצַדְּקִי֙",
+    "gc": "וַתְּצַדְּﬞקִי֙",
+    "refine": "add varika to dalet",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Ee17:17",
+    "field": "verse-body",
+    "ga": "סֹלְלָ֖ה",
+    "gc": "סֹלְﬞלָ֖ה",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Ee18:2",
+    "field": "verse-body",
+    "ga": "תִקְהֶֽינָה׃",
+    "gc": "תִּקְהֶֽינָה׃",
+    "refine": "add dagesh/mapiq/shuruq-dot to tav",
+    "refine_cat": "add non-varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Ee18:21",
+    "field": "verse-body",
+    "ga": "חֻקוֹתַ֔י",
+    "gc": "חֻקּוֹתַ֔י",
+    "refine": "add dagesh/mapiq/shuruq-dot to qof",
+    "refine_cat": "add non-varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Ee21:27",
+    "field": "verse-body",
+    "ga": "סֹלְלָ֖ה",
+    "gc": "סֹלְﬞלָ֖ה",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Ee23:36",
+    "field": "verse-body",
+    "ga": "תוֹעֲבוֹתֵיהֶֽן׃",
+    "gc": "תּוֹעֲבוֹתֵיהֶֽן׃",
+    "refine": "add dagesh/mapiq/shuruq-dot to the first tav",
+    "refine_cat": "add non-varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Ee23:42",
+    "field": "verse-body",
+    "ga": "בָהּ֒",
+    "gc": "בָֿהּ֒",
+    "refine": "add rafeh to bet",
+    "refine_cat": "add non-varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Ee26:8",
+    "field": "verse-body",
+    "ga": "סֹֽלְלָ֔ה",
+    "gc": "סֹֽלְﬞלָ֔ה",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Ee26:12",
+    "field": "verse-body",
+    "ga": "וְשָׁלְל֣וּ",
+    "gc": "וְשָׁלְﬞל֣וּ",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Ee26:12",
+    "field": "verse-body",
+    "ga": "וּבָֽזְזוּ֙",
+    "gc": "וּבָֽזְﬞזוּ֙",
+    "refine": "add varika to the first zayin",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Ee26:16",
+    "field": "verse-body",
+    "ga": "וְשָׁמְמ֖וּ",
+    "gc": "וְשָׁמְﬞמ֖וּ",
+    "refine": "add varika to the first mem",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Ee26:21",
+    "field": "verse-body",
+    "ga": "וּֽתְבֻקְשִׁ֗י",
+    "gc": "וּֽתְﬞבֻקְשִׁ֗י",
+    "refine": "add varika to tav",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Ee27:4",
+    "field": "verse-body",
+    "ga": "כָּלְל֖וּ",
+    "gc": "כָּלְﬞל֖וּ",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Ee27:27",
+    "field": "verse-body",
+    "ga": "קְהָלֵךְ֙",
+    "gc": "קְﬞהָלֵךְ֙",
+    "refine": "add varika to qof",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Ee27:32",
+    "field": "verse-body",
+    "ga": "וְקוֹנְנ֖וּ",
+    "gc": "וְקוֹנְﬞנ֖וּ",
+    "refine": "add varika to the first nun",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Ee27:34",
+    "field": "verse-body",
+    "ga": "קְהָלֵ֖ךְ",
+    "gc": "קְﬞהָלֵ֖ךְ",
+    "refine": "add varika to qof",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Ee27:35",
+    "field": "verse-body",
+    "ga": "שָׁמְמ֖וּ",
+    "gc": "שָׁמְﬞמ֖וּ",
+    "refine": "add varika to the first mem",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Ee27:36",
+    "field": "verse-body",
+    "ga": "בָּ֣עַמִּ֔ים",
+    "gc": "בָּֽעַמִּ֔ים",
+    "refine": "on bet, replace munax with meteg/silluq",
+    "refine_cat": "replace"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Ee28:9",
+    "field": "verse-body",
+    "ga": "מְחַלְלֶֽיךָ׃",
+    "gc": "מְחַלְﬞלֶֽיךָ׃",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Ee28:16",
+    "field": "verse-body",
+    "ga": "תוֹכְךָ֛",
+    "gc": "תוֹכְﬞךָ֛",
+    "refine": "add varika to kaf",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Ee28:18",
+    "field": "verse-body",
+    "ga": "מִתּֽוֹכְךָ֙",
+    "gc": "מִתּֽוֹכְﬞךָ֙",
+    "refine": "add varika to kaf",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Ee28:19",
+    "field": "verse-body",
+    "ga": "שָׁמְמ֖וּ",
+    "gc": "שָׁמְﬞמ֖וּ",
+    "refine": "add varika to the first mem",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Ee29:11",
+    "field": "verse-body",
+    "ga": "תַֽעֲבָר",
+    "gc": "תַֽעֲבׇר",
+    "refine": "on bet, replace qamats with qamats-qatan",
+    "refine_cat": "replace"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Ee31:4",
+    "field": "verse-body",
+    "ga": "רֹמְמָ֑תְהוּ",
+    "gc": "רֹמְﬞמָ֑תְהוּ",
+    "refine": "add varika to the first mem",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Ee31:6",
+    "field": "verse-body",
+    "ga": "קִֽנְנוּ֙",
+    "gc": "קִֽנְﬞנוּ֙",
+    "refine": "add varika to the first nun",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Ee32:10",
+    "field": "verse-body",
+    "ga": "בְּעוֹפְפִ֥י",
+    "gc": "בְּעוֹפְﬞפִ֥י",
+    "refine": "add varika to the first pe",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Ee32:12",
+    "field": "verse-body",
+    "ga": "וְשָֽׁדְדוּ֙",
+    "gc": "וְשָֽׁדְﬞדוּ֙",
+    "refine": "add varika to the first dalet",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Ee32:16",
+    "field": "verse-body",
+    "ga": "וְק֣וֹנְנ֔וּהָ",
+    "gc": "וְק֣וֹנְﬞנ֔וּהָ",
+    "refine": "add varika to the first nun",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Ee32:22",
+    "field": "verse-body",
+    "ga": "קְהָלָ֔הּ",
+    "gc": "קְﬞהָלָ֔הּ",
+    "refine": "add varika to qof",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Ee32:30",
+    "field": "verse-body",
+    "ga": "מִגְּבֽוּרָתָם֙",
+    "gc": "מִגְֿבֽוּרָתָם֙",
+    "refine": "on gimel, replace dagesh/mapiq/shuruq-dot with rafeh",
+    "refine_cat": "replace"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Ee33:8",
+    "field": "verse-body",
+    "ga": "בַעֲוֺנ֣וֹ",
+    "gc": "בַּעֲוֺנ֣וֹ",
+    "refine": "add dagesh/mapiq/shuruq-dot to bet",
+    "refine_cat": "add non-varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Ee33:28",
+    "field": "verse-body",
+    "ga": "וְשָׁ֥מְמ֛וּ",
+    "gc": "וְשָׁ֥מְﬞמ֛וּ",
+    "refine": "add varika to the first mem",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Ee35:6",
+    "field": "verse-body",
+    "ga": "יִרְדְּפֶ֑ךָ",
+    "gc": "יִרְדְּﬞפֶ֑ךָ",
+    "refine": "add varika to dalet",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Ee35:6",
+    "field": "verse-body",
+    "ga": "יִרְדְּפֶֽךָ׃",
+    "gc": "יִרְדְּﬞפֶֽךָ׃",
+    "refine": "add varika to dalet",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Ee35:7",
+    "field": "verse-body",
+    "ga": "לְשִֽׁמְמָ֖ה",
+    "gc": "לְשִֽׁמְﬞמָ֖ה",
+    "refine": "add varika to the first mem",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Ee35:9",
+    "field": "verse-body",
+    "ga": "שִֽׁמְמ֤וֹת",
+    "gc": "שִֽׁמְﬞמ֤וֹת",
+    "refine": "add varika to the first mem",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Ee35:11",
+    "field": "verse-body",
+    "ga": "אֶשְׁפְּטֶֽךָ׃",
+    "gc": "אֶשְׁפְּﬞטֶֽךָ׃",
+    "refine": "add varika to pe",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Ee35:12",
+    "field": "verse-body",
+    "ga": "[('ייי', 'שממה', ('כו\"ק:1',)), ('ייי', 'שָׁמֵ֑מוּ', ('כו\"ק:2',))]",
+    "gc": "[('ייי', 'שממה', ('קו\"כ:1',)), ('ייי', 'שָׁמֵ֑מוּ', ('קו\"כ:2',))]",
+    "refine": null,
+    "refine_cat": null
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Ee36:4",
+    "field": "verse-body",
+    "ga": "הַשֹּֽׁמְמוֹת֙",
+    "gc": "הַשֹּֽׁמְﬞמוֹת֙",
+    "refine": "add varika to the first mem",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Ee36:35",
+    "field": "verse-body",
+    "ga": "וְהַֽנְשַׁמּ֥וֹת",
+    "gc": "וְהַֽנְﬞשַׁמּ֥וֹת",
+    "refine": "add varika to nun",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Ee39:10",
+    "field": "verse-body",
+    "ga": "וְשָׁלְל֣וּ",
+    "gc": "וְשָׁלְﬞל֣וּ",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Ee39:10",
+    "field": "verse-body",
+    "ga": "שֹׁלְלֵיהֶ֗ם",
+    "gc": "שֹׁלְﬞלֵיהֶ֗ם",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Ee39:10",
+    "field": "verse-body",
+    "ga": "וּבָֽזְזוּ֙",
+    "gc": "וּבָֽזְﬞזוּ֙",
+    "refine": "add varika to the first zayin",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Ee39:10",
+    "field": "verse-body",
+    "ga": "בֹּ֣זְזֵיהֶ֔ם",
+    "gc": "בֹּ֣זְﬞזֵיהֶ֔ם",
+    "refine": "add varika to the first zayin",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Ee39:27",
+    "field": "verse-body",
+    "ga": "בְּשׁוֹבְבִ֤י",
+    "gc": "בְּשׁוֹבְﬞבִ֤י",
+    "refine": "add varika to the second bet",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Ee40:43",
+    "field": "verse-body",
+    "ga": "וְהַֽשְׁפַתַּ֗יִם",
+    "gc": "וְהַֽשְׁﬞפַתַּ֗יִם",
+    "refine": "add varika to shin",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Ee43:10",
+    "field": "verse-body",
+    "ga": "וּמָדְד֖וּ",
+    "gc": "וּמָדְﬞד֖וּ",
+    "refine": "add varika to the first dalet",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Ee44:24",
+    "field": "verse-body",
+    "ga": "[('ייי', 'יִשְׁפְּטֻ֑הוּ', ('כו\"ק:2',))]",
+    "gc": "[('ייי', 'יִשְׁפְּט֑וּהוּ', ('כו\"ק:2',))]",
+    "refine": "(((('qubuts', 'tet', (1, 1)),), None), (None, (('vav', 'vav', (1, 2)), ('dagesh/mapiq/shuruq-dot', 'vav', (1, 2)))), ((('vav', 'vav', (1, 1)), ('dagesh/mapiq/shuruq-dot', 'vav', (1, 1))), (('vav', 'vav', (2, 2)), ('dagesh/mapiq/shuruq-dot', 'vav', (2, 2)))))",
+    "refine_cat": "deep diff"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Ee47:1",
+    "field": "verse-body",
+    "ga": "וַיְשִׁ֘בֵנִי֮",
+    "gc": "וַיְשִׁבֵ֘נִי֮",
+    "refine": "move zarqa-stress-helper/tsinnorit forward from shin to bet",
+    "refine_cat": "move"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Ee47:22",
+    "field": "verse-body",
+    "ga": "בְּתוֹכְכֶ֔ם",
+    "gc": "בְּתוֹכְﬞכֶ֔ם",
+    "refine": "add varika to the first kaf",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Ee48:11",
+    "field": "verse-body",
+    "ga": "הַֽמְקֻדָּשׁ֙",
+    "gc": "הַֽמְﬞקֻדָּשׁ֙",
+    "refine": "add varika to mem",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Ho7:5",
+    "field": "verse-body",
+    "ga": "לֹצְצִֽים׃",
+    "gc": "לֹצְﬞצִֽים׃",
+    "refine": "add varika to the first tsadi",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Ho7:13",
+    "field": "verse-body",
+    "ga": "נָדְד֣וּ",
+    "gc": "נָדְﬞד֣וּ",
+    "refine": "add varika to the first dalet",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Ho9:15",
+    "field": "verse-body",
+    "ga": "סֹרְרִֽים׃",
+    "gc": "סֹרְﬞרִֽים׃",
+    "refine": "add varika to the first resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Ho9:17",
+    "field": "verse-body",
+    "ga": "נֹדְדִ֖ים",
+    "gc": "נֹדְﬞדִ֖ים",
+    "refine": "add varika to the first dalet",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Ho13:14",
+    "field": "verse-body",
+    "ga": "קָֽטׇבְךָ֙",
+    "gc": "[('ייי', 'ד=קׇֽטׇבְךָ֙', ('מ:קמץ:1',)), ('ייי', 'ס=קָֽטׇבְךָ֙', ('מ:קמץ:2',))]",
+    "refine": "Added qamats variation where only the s-variant variant was present before. To change the d-variant into the s-variant, on qof, replace qamats-qatan with qamats.",
+    "refine_cat": "qamats variation added"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Jl3:3",
+    "field": "verse-body",
+    "ga": "וְתִֽימְר֖וֹת",
+    "gc": "וְתִֽימְﬞר֖וֹת",
+    "refine": "add varika to mem",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "A2:13",
+    "field": "verse-body",
+    "ga": "הַֽמְלֵאָ֥ה",
+    "gc": "הַֽמְﬞלֵאָ֥ה",
+    "refine": "add varika to mem",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "A4:1",
+    "field": "verse-body",
+    "ga": "הָרֹצְצ֖וֹת",
+    "gc": "הָרֹצְﬞצ֖וֹת",
+    "refine": "add varika to the first tsadi",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "A5:12",
+    "field": "verse-body",
+    "ga": "צֹרְרֵ֤י",
+    "gc": "צֹרְﬞרֵ֤י",
+    "refine": "add varika to the first resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "A6:3",
+    "field": "verse-body",
+    "ga": "הַֽמְנַדִּ֖ים",
+    "gc": "הַֽמְﬞנַדִּ֖ים",
+    "refine": "add varika to mem",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "A8:8",
+    "field": "verse-body",
+    "ga": "[('ייי', 'וְנִשְׁקְעָ֖ה', ('כו\"ק:2',))]",
+    "gc": "[('ייי', 'וְנִשְׁקְﬞעָ֖ה', ('כו\"ק:2',))]",
+    "refine": "add varika to qof",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Mi2:12",
+    "field": "verse-body",
+    "ga": "הַדָּֽבְר֔וֹ",
+    "gc": "[('ייי', 'ד=הַדׇּֽבְר֔וֹ', ('מ:קמץ:1',)), ('ייי', 'ס=הַדָּֽבְר֔וֹ', ('מ:קמץ:2',))]",
+    "refine": "Added qamats variation where only the s-variant variant was present before. To change the d-variant into the s-variant, on dalet, replace qamats-qatan with qamats.",
+    "refine_cat": "qamats variation added"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Mi3:9",
+    "field": "verse-body",
+    "ga": "הַֽמְתַעֲבִ֣ים",
+    "gc": "הַֽמְﬞתַעֲבִ֣ים",
+    "refine": "add varika to mem",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Mi4:8",
+    "field": "verse-body",
+    "ga": "[('־', 'לבת', 'ירושל')]",
+    "gc": "[(' ', 'לבת', 'ירושל')]",
+    "refine": "separator changed from maqaf to space, changing לבת־ירושל to לבת ירושל",
+    "refine_cat": "separator changed"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Mi5:11",
+    "field": "verse-body",
+    "ga": "וּֽמְעוֹנְנִ֖ים",
+    "gc": "וּֽמְעוֹנְﬞנִ֖ים",
+    "refine": "add varika to the first nun",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Mi6:7",
+    "field": "verse-body",
+    "ga": "בְּרִֽבְב֖וֹת",
+    "gc": "בְּרִֽבְﬞב֖וֹת",
+    "refine": "add varika to the second bet",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Mi7:1",
+    "field": "verse-body",
+    "ga": "אַ֣לְלַי",
+    "gc": "אַ֣לְﬞלַי",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Mi7:1",
+    "field": "verse-body",
+    "ga": "כְּעֹלְלֹ֖ת",
+    "gc": "כְּעֹלְﬞלֹ֖ת",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Na2:3",
+    "field": "verse-body",
+    "ga": "בֹּֽקְקִ֔ים",
+    "gc": "בֹּֽקְﬞקִ֔ים",
+    "refine": "add varika to the first qof",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Na2:5",
+    "field": "verse-body",
+    "ga": "יִתְהוֹלְל֣וּ",
+    "gc": "יִתְהוֹלְﬞל֣וּ",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Na2:8",
+    "field": "verse-body",
+    "ga": "מְתֹפְפֹ֖ת",
+    "gc": "מְתֹפְﬞפֹ֖ת",
+    "refine": "add varika to the first pe",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Hb2:8",
+    "field": "verse-body",
+    "ga": "יְשָׁלּ֖וּךָ",
+    "gc": "יְשׇׁלּ֖וּךָ",
+    "refine": "on shin, replace qamats with qamats-qatan",
+    "refine_cat": "replace"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Hb3:6",
+    "field": "verse-body",
+    "ga": "וַיִּתְפֹּֽצְצוּ֙",
+    "gc": "וַיִּתְפֹּֽצְﬞצוּ֙",
+    "refine": "add varika to the first tsadi",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Hb3:16",
+    "field": "verse-body",
+    "ga": "צָלְל֣וּ",
+    "gc": "צָלְﬞל֣וּ",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Ts1:9",
+    "field": "verse-body",
+    "ga": "הַֽמְמַלְאִ֛ים",
+    "gc": "הַֽמְﬞמַלְאִ֛ים",
+    "refine": "add varika to the first mem",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Ts2:1",
+    "field": "verse-body",
+    "ga": "הִֽתְקוֹשְׁשׁ֖וּ",
+    "gc": "הִֽתְקוֹשְׁﬞשׁ֖וּ",
+    "refine": "add varika to the first shin",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Ts2:12",
+    "field": "verse-body",
+    "ga": "חַֽלְלֵ֥י",
+    "gc": "חַֽלְﬞלֵ֥י",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Zc4:12",
+    "field": "verse-body",
+    "ga": "שִׁבְּלֵ֣י",
+    "gc": "שִׁבְּﬞלֵ֣י",
+    "refine": "add varika to bet",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "NevAx",
+    "bcv": "Zc11:3",
+    "field": "verse-body",
+    "ga": "יִֽלְלַ֣ת",
+    "gc": "יִֽלְﬞלַ֣ת",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps4:7",
+    "field": "verse-body",
+    "ga": "[('מ:מקף אפור', 'נו', 'טוב')]",
+    "gc": "[(' ', 'נו', 'טוב')]",
+    "refine": "separator changed from gray maqaf to space, changing נו־־טוב to נו טוב where double maqaf represents gray maqaf",
+    "refine_cat": "separator changed"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps5:6",
+    "field": "verse-body",
+    "ga": "ה֭וֹלְלִים",
+    "gc": "ה֭וֹלְﬞלִים",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps5:8",
+    "field": "verse-body",
+    "ga": "הֵיכַל",
+    "gc": "הֵֽיכַל",
+    "refine": "add meteg/silluq to he",
+    "refine_cat": "add non-varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps5:9",
+    "field": "verse-body",
+    "ga": "שׁוֹרְרָ֑י",
+    "gc": "שׁוֹרְﬞרָ֑י",
+    "refine": "add varika to the first resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps6:8",
+    "field": "verse-body",
+    "ga": "עָשְׁשָׁ֣ה",
+    "gc": "עָשְׁﬞשָׁ֣ה",
+    "refine": "add varika to the first shin",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps6:8",
+    "field": "verse-body",
+    "ga": "צוֹרְרָֽי׃",
+    "gc": "צוֹרְﬞרָֽי׃",
+    "refine": "add varika to the first resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps7:5",
+    "field": "verse-body",
+    "ga": "צֽוֹרְרִ֣י",
+    "gc": "צֽוֹרְﬞרִ֣י",
+    "refine": "add varika to the first resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps7:6",
+    "field": "verse-body",
+    "ga": "[(' ', 'ירדף', 'אויב')]",
+    "gc": "[('־', 'ירדף', 'אויב')]",
+    "refine": "separator changed from space to maqaf, changing ירדף אויב to ירדף־אויב",
+    "refine_cat": "separator changed"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps7:7",
+    "field": "verse-body",
+    "ga": "צוֹרְרָ֑י",
+    "gc": "צוֹרְﬞרָ֑י",
+    "refine": "add varika to the first resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps7:8",
+    "field": "verse-body",
+    "ga": "תְּסֽוֹבְבֶ֑ךָּ",
+    "gc": "תְּסֽוֹבְﬞבֶ֑ךָּ",
+    "refine": "add varika to the first bet",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps8:3",
+    "field": "verse-body",
+    "ga": "עוֹלְלִ֨ים",
+    "gc": "עוֹלְﬞלִ֨ים",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps8:3",
+    "field": "verse-body",
+    "ga": "[('מ:מקף אפור', 'דת', 'עז')]",
+    "gc": "[(' ', 'דת', 'עז')]",
+    "refine": "separator changed from gray maqaf to space, changing דת־־עז to דת עז where double maqaf represents gray maqaf",
+    "refine_cat": "separator changed"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps8:3",
+    "field": "verse-body",
+    "ga": "צוֹרְרֶ֑יךָ",
+    "gc": "צוֹרְﬞרֶ֑יךָ",
+    "refine": "add varika to the first resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps9:14",
+    "field": "verse-body",
+    "ga": "חָֽנְנֵ֬נִי",
+    "gc": "חָֽנְﬞנֵ֬נִי",
+    "refine": "add varika to the first nun",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps9:14",
+    "field": "verse-body",
+    "ga": "מְ֝רוֹמְמִ֗י",
+    "gc": "מְ֝רוֹמְﬞמִ֗י",
+    "refine": "add varika to the second mem",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps10:5",
+    "field": "verse-body",
+    "ga": "צ֝וֹרְרָ֗יו",
+    "gc": "צ֝וֹרְﬞרָ֗יו",
+    "refine": "add varika to the first resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps10:7",
+    "field": "verse-body",
+    "ga": "[(' ', 'אלה', 'פיהו')]",
+    "gc": "[('מ:לגרמיה', 'אלה', 'פיהו')]",
+    "refine": "separator changed from space to legarmeih, changing אלה פיהו to אלה׀ פיהו",
+    "refine_cat": "separator changed"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps11:2",
+    "field": "verse-body",
+    "ga": "כּוֹנְנ֣וּ",
+    "gc": "כּוֹנְﬞנ֣וּ",
+    "refine": "add varika to the first nun",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps12:6",
+    "field": "verse-body",
+    "ga": "[(' ', 'יפיח', 'לו')]",
+    "gc": "[('־', 'יפיח', 'לו')]",
+    "refine": "separator changed from space to maqaf, changing יפיח לו to יפיח־לו",
+    "refine_cat": "separator changed"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps12:7",
+    "field": "verse-body",
+    "ga": "אִ֥מְר֣וֹת",
+    "gc": "אִ֥מְﬞר֣וֹת",
+    "refine": "add varika to mem",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps14:4",
+    "field": "verse-body",
+    "ga": "[('מ:מקף אפור', 'עלי', 'און')]",
+    "gc": "[(' ', 'עלי', 'און')]",
+    "refine": "separator changed from gray maqaf to space, changing עלי־־און to עלי און where double maqaf represents gray maqaf",
+    "refine_cat": "separator changed"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps17:14",
+    "field": "verse-body",
+    "ga": "['מִ֥מְתִֽים', (' ', 'ממתים', 'ידך')]",
+    "gc": "['מִ֥מְﬞתִֽים', ('־', 'ממתים', 'ידך')]",
+    "refine": null,
+    "refine_cat": null
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps18:7",
+    "field": "verse-body",
+    "ga": "אֶ֥קְרָ֣א",
+    "gc": "אֶ֥קְﬞרָ֣א",
+    "refine": "add varika to qof",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps18:44",
+    "field": "verse-body",
+    "ga": "[('מ:מקף אפור', 'יבי', 'עם')]",
+    "gc": "[(' ', 'יבי', 'עם')]",
+    "refine": "separator changed from gray maqaf to space, changing יבי־־עם to יבי עם where double maqaf represents gray maqaf",
+    "refine_cat": "separator changed"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps19:15",
+    "field": "verse-body",
+    "ga": "[(' ', 'יהיו', 'לרצון')]",
+    "gc": "[('־', 'יהיו', 'לרצון')]",
+    "refine": "separator changed from space to maqaf, changing יהיו לרצון to יהיו־לרצון",
+    "refine_cat": "separator changed"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps23:4",
+    "field": "verse-body",
+    "ga": "[('ר2', 'רע', 'כי')]",
+    "gc": "[('ר1', 'רע', 'כי')]",
+    "refine": "separator changed from resh-2 to resh-1, changing רע{2}כי to רע{1}כי",
+    "refine_cat": "separator changed"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps23:4",
+    "field": "verse-body",
+    "ga": "[('ר3', 'עמדי', 'שבטך')]",
+    "gc": "[('ר2', 'עמדי', 'שבטך')]",
+    "refine": "separator changed from resh-3 to resh-2, changing עמדי{3}שבטך to עמדי{2}שבטך",
+    "refine_cat": "separator changed"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps23:4",
+    "field": "verse-body",
+    "ga": "[('ר1', 'ומשענתך', 'המה')]",
+    "gc": "[('ר2', 'ומשענתך', 'המה')]",
+    "refine": "separator changed from resh-1 to resh-2, changing ומשענתך{1}המה to ומשענתך{2}המה",
+    "refine_cat": "separator changed"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps24:1",
+    "field": "verse-body",
+    "ga": "[('ר2', 'ומלואה', 'תבל')]",
+    "gc": "[('ר1', 'ומלואה', 'תבל')]",
+    "refine": "separator changed from resh-2 to resh-1, changing ומלואה{2}תבל to ומלואה{1}תבל",
+    "refine_cat": "separator changed"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps26:6",
+    "field": "verse-body",
+    "ga": "וַאֲסֹבְבָ֖ה",
+    "gc": "וַאֲסֹבְﬞבָ֖ה",
+    "refine": "add varika to the first bet",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps27:5",
+    "field": "verse-body",
+    "ga": "יְרוֹמְמֵֽנִי׃",
+    "gc": "יְרוֹמְﬞמֵֽנִי׃",
+    "refine": "add varika to the first mem",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps27:11",
+    "field": "verse-body",
+    "ga": "שֽׁוֹרְרָֽי׃",
+    "gc": "שֽׁוֹרְﬞרָֽי׃",
+    "refine": "add varika to the first resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps28:3",
+    "field": "verse-body",
+    "ga": "[('מ:מקף אפור', 'עלי', 'און')]",
+    "gc": "[(' ', 'עלי', 'און')]",
+    "refine": "separator changed from gray maqaf to space, changing עלי־־און to עלי און where double maqaf represents gray maqaf",
+    "refine_cat": "separator changed"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps31:10",
+    "field": "verse-body",
+    "ga": "עָשְׁשָׁ֖ה",
+    "gc": "עָשְׁﬞשָׁ֖ה",
+    "refine": "add varika to the first shin",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps31:12",
+    "field": "verse-body",
+    "ga": "נָדְד֥וּ",
+    "gc": "נָדְﬞד֥וּ",
+    "refine": "add varika to the first dalet",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps32:7",
+    "field": "verse-body",
+    "ga": "תְּס֖וֹבְבֵ֣נִי",
+    "gc": "תְּס֖וֹבְﬞבֵ֣נִי",
+    "refine": "add varika to the first bet",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps32:10",
+    "field": "verse-body",
+    "ga": "יְסוֹבְבֶֽנּוּ׃",
+    "gc": "יְסוֹבְﬞבֶֽנּוּ׃",
+    "refine": "add varika to the first bet",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps34:1",
+    "field": "verse-body",
+    "ga": "וַ֝יְגָרְשֵׁ֗הוּ",
+    "gc": "וַ֝יְגָרְﬞשֵׁ֗הוּ",
+    "refine": "add varika to resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps34:2",
+    "field": "verse-body",
+    "ga": "אֲבָרְכָ֣ה",
+    "gc": "אֲבָרְﬞכָ֣ה",
+    "refine": "add varika to resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps34:4",
+    "field": "verse-body",
+    "ga": "וּנְרוֹמְמָ֖ה",
+    "gc": "וּנְרוֹמְﬞמָ֖ה",
+    "refine": "add varika to the first mem",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps35:17",
+    "field": "verse-body",
+    "ga": "תִּ֫רְאֶ֥ה",
+    "gc": "תִ֫רְאֶ֥ה",
+    "refine": "remove dagesh/mapiq/shuruq-dot from tav",
+    "refine_cat": "remove"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps35:18",
+    "field": "verse-body",
+    "ga": "אֲהַלְלֶֽךָּ׃",
+    "gc": "אֲהַלְﬞלֶֽךָּ׃",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps37:7",
+    "field": "verse-body",
+    "ga": "[('מ:מקף אפור', 'ולל', 'לו')]",
+    "gc": "[(' ', 'ולל', 'לו')]",
+    "refine": "separator changed from gray maqaf to space, changing ולל־־לו to ולל לו where double maqaf represents gray maqaf",
+    "refine_cat": "separator changed"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps39:13",
+    "field": "verse-body",
+    "ga": "שִׁ֥מְעָֽה",
+    "gc": "שִׁ֥מְﬞעָֽה",
+    "refine": "add varika to mem",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps40:6",
+    "field": "verse-body",
+    "ga": "[('ר2', 'ואדברה', 'עצמו')]",
+    "gc": "[('ר1', 'ואדברה', 'עצמו')]",
+    "refine": "separator changed from resh-2 to resh-1, changing ואדברה{2}עצמו to ואדברה{1}עצמו",
+    "refine_cat": "separator changed"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps40:13",
+    "field": "verse-body",
+    "ga": "אָפְפֽוּ",
+    "gc": "אָפְﬞפֽוּ",
+    "refine": "add varika to the first pe",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps42:11",
+    "field": "verse-body",
+    "ga": "צוֹרְרָ֑י",
+    "gc": "צוֹרְﬞרָ֑י",
+    "refine": "add varika to the first resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps44:4",
+    "field": "verse-body",
+    "ga": "[('מ:מקף אפור', 'יעה', 'למו')]",
+    "gc": "[(' ', 'יעה', 'למו')]",
+    "refine": "separator changed from gray maqaf to space, changing יעה־־למו to יעה למו where double maqaf represents gray maqaf",
+    "refine_cat": "separator changed"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps44:19",
+    "field": "verse-body",
+    "ga": "אֲשֻׁרֵ֗ינוּ",
+    "gc": "אֲ֝שֻׁרֵ֗ינוּ",
+    "refine": "add geresh-muqdam to alef",
+    "refine_cat": "add non-varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps44:24",
+    "field": "verse-body",
+    "ga": "[('מ:לגרמיה', 'תישן', 'אדני')]",
+    "gc": "[('מ:פסק', 'תישן', 'אדני')]",
+    "refine": "separator changed from legarmeih to paseq, changing תישן׀ אדני to תישן׀׀אדני where double Unicode PASEQ represents true paseq (as opposed to legarmeih)",
+    "refine_cat": "separator changed"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps51:16",
+    "field": "verse-body",
+    "ga": "תְּשׁוּעָתִ֑י",
+    "gc": "תְשׁוּעָתִ֑י",
+    "refine": "remove dagesh/mapiq/shuruq-dot from the first tav",
+    "refine_cat": "remove"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps53:2",
+    "field": "verse-body",
+    "ga": "הִֽ֝שְׁחִ֗יתוּ",
+    "gc": "הִֽ֝שְׁﬞחִ֗יתוּ",
+    "refine": "add varika to shin",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps53:2",
+    "field": "verse-body",
+    "ga": "וְהִֽתְעִ֥יבוּ",
+    "gc": "וְהִֽתְﬞעִ֥יבוּ",
+    "refine": "add varika to tav",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps53:5",
+    "field": "verse-body",
+    "ga": "[('מ:מקף אפור', 'פעלי', 'און')]",
+    "gc": "[(' ', 'פעלי', 'און')]",
+    "refine": "separator changed from gray maqaf to space, changing פעלי־־און to פעלי און where double maqaf represents gray maqaf",
+    "refine_cat": "separator changed"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps53:6",
+    "field": "verse-body",
+    "ga": "['יָה֫', ('מ:מקף אפור', 'יה', 'פחד')]",
+    "gc": "['יָ֫ה', (' ', 'יה', 'פחד')]",
+    "refine": null,
+    "refine_cat": null
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps55:11",
+    "field": "verse-body",
+    "ga": "יְסוֹבְבֻ֥הָ",
+    "gc": "יְסוֹבְﬞבֻ֥הָ",
+    "refine": "add varika to the first bet",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps55:22",
+    "field": "verse-body",
+    "ga": "וּֽקְרָב",
+    "gc": "וּֽקְﬞרָב",
+    "refine": "add varika to qof",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps55:24",
+    "field": "verse-body",
+    "ga": "[('מ:לגרמיה', 'תורדם', 'לבאר')]",
+    "gc": "[('מ:פסק', 'תורדם', 'לבאר')]",
+    "refine": "separator changed from legarmeih to paseq, changing תורדם׀ לבאר to תורדם׀׀לבאר where double Unicode PASEQ represents true paseq (as opposed to legarmeih)",
+    "refine_cat": "separator changed"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps56:3",
+    "field": "verse-body",
+    "ga": "שׁ֭וֹרְרַי",
+    "gc": "שׁ֭וֹרְﬞרַי",
+    "refine": "add varika to the first resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps56:9",
+    "field": "verse-body",
+    "ga": "[('מ:מקף אפור', 'רתה', 'אתה')]",
+    "gc": "[(' ', 'רתה', 'אתה')]",
+    "refine": "separator changed from gray maqaf to space, changing רתה־־אתה to רתה אתה where double maqaf represents gray maqaf",
+    "refine_cat": "separator changed"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps57:9",
+    "field": "verse-body",
+    "ga": "ע֭וּרָ֥ה",
+    "gc": "ע֭וּרָֽה",
+    "refine": "on resh, replace merkha/yored with meteg/silluq",
+    "refine_cat": "replace"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps58:7",
+    "field": "verse-body",
+    "ga": "שִׁנֵּ֥ימוֹ",
+    "gc": "שִׁנֵּ֥ימֽוֹ",
+    "refine": "add meteg/silluq to mem",
+    "refine_cat": "add non-varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps59:7",
+    "field": "verse-body",
+    "ga": "וִיס֥וֹבְבוּ",
+    "gc": "וִיס֥וֹבְﬞבוּ",
+    "refine": "add varika to the first bet",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps59:15",
+    "field": "verse-body",
+    "ga": "וִיס֥וֹבְבוּ",
+    "gc": "וִיס֥וֹבְﬞבוּ",
+    "refine": "add varika to the first bet",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps60:2",
+    "field": "verse-body",
+    "ga": "[('ר2', 'מלח', 'שנים')]",
+    "gc": "[('ר1', 'מלח', 'שנים')]",
+    "refine": "separator changed from resh-2 to resh-1, changing מלח{2}שנים to מלח{1}שנים",
+    "refine_cat": "separator changed"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps60:9",
+    "field": "verse-body",
+    "ga": "מְחֹֽקְקִֽי׃",
+    "gc": "מְחֹֽקְﬞקִֽי׃",
+    "refine": "add varika to the first qof",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps61:9",
+    "field": "verse-body",
+    "ga": "נְדָרַ֗י",
+    "gc": "נְ֝דָרַ֗י",
+    "refine": "add geresh-muqdam to nun",
+    "refine_cat": "add non-varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps62:4",
+    "field": "verse-body",
+    "ga": "תְּה֥וֹתְת֣וּ",
+    "gc": "תְּה֥וֹתְﬞת֣וּ",
+    "refine": "add varika to the second tav",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps62:5",
+    "field": "verse-body",
+    "ga": "יְקַֽלְלוּ",
+    "gc": "יְקַֽלְﬞלוּ",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps64:9",
+    "field": "verse-body",
+    "ga": "יִ֝תְנֹדְד֗וּ",
+    "gc": "יִ֝תְנֹדְﬞד֗וּ",
+    "refine": "add varika to the first dalet",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps64:11",
+    "field": "verse-body",
+    "ga": "וְ֝יִתְהַלְל֗וּ",
+    "gc": "וְ֝יִתְהַלְﬞל֗וּ",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps65:5",
+    "field": "verse-body",
+    "ga": "תִּ֥בְחַ֣ר",
+    "gc": "תִּ֥בְﬞחַ֣ר",
+    "refine": "add varika to bet",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps65:10",
+    "field": "verse-body",
+    "ga": "קְקֶ֡הָ",
+    "gc": "קְﬞקֶ֡הָ",
+    "refine": "add varika to the first qof",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps65:11",
+    "field": "verse-body",
+    "ga": "תְּ֝מֹגְגֶ֗נָּה",
+    "gc": "תְּ֝מֹגְﬞגֶ֗נָּה",
+    "refine": "add varika to the first gimel",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps66:7",
+    "field": "verse-body",
+    "ga": "הַסּוֹרְרִ֓ים",
+    "gc": "הַסּוֹרְﬞרִ֓ים",
+    "refine": "add varika to the first resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps66:8",
+    "field": "verse-body",
+    "ga": "בָּרְכ֖וּ",
+    "gc": "בָּרְﬞכ֖וּ",
+    "refine": "add varika to resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps66:12",
+    "field": "verse-body",
+    "ga": "לָרְוָיָֽה׃",
+    "gc": "לָרְﬞוָיָֽה׃",
+    "refine": "add varika to resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps67:2",
+    "field": "verse-body",
+    "ga": "וִיבָרְכֵ֑נוּ",
+    "gc": "וִיבָרְﬞכֵ֑נוּ",
+    "refine": "add varika to resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps67:7",
+    "field": "verse-body",
+    "ga": "יְ֝בָרְכֵ֗נוּ",
+    "gc": "יְ֝בָרְﬞכֵ֗נוּ",
+    "refine": "add varika to resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps67:8",
+    "field": "verse-body",
+    "ga": "יְבָרְכֵ֥נוּ",
+    "gc": "יְבָרְﬞכֵ֥נוּ",
+    "refine": "add varika to resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps68:7",
+    "field": "verse-body",
+    "ga": "ס֝וֹרְרִ֗ים",
+    "gc": "ס֝וֹרְﬞרִ֗ים",
+    "refine": "add varika to the first resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps68:18",
+    "field": "verse-body",
+    "ga": "בָ֝֗ם",
+    "gc": "בָֿ֝֗ם",
+    "refine": "add rafeh to bet",
+    "refine_cat": "add non-varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps68:19",
+    "field": "verse-body",
+    "ga": "ס֝וֹרְרִ֗ים",
+    "gc": "ס֝וֹרְﬞרִ֗ים",
+    "refine": "add varika to the first resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps68:24",
+    "field": "verse-body",
+    "ga": "תִּ֥מְחַ֥ץ",
+    "gc": "תִּ֥מְﬞחַ֥ץ",
+    "refine": "add varika to mem",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps68:27",
+    "field": "verse-body",
+    "ga": "בָּרְכ֣וּ",
+    "gc": "בָּרְﬞכ֣וּ",
+    "refine": "add varika to resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps69:20",
+    "field": "verse-body",
+    "ga": "צוֹרְרָֽי׃",
+    "gc": "צוֹרְﬞרָֽי׃",
+    "refine": "add varika to the first resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps69:29",
+    "field": "verse-body",
+    "ga": "יִ֭מָּח֥וּ",
+    "gc": "יִ֭מָּחֽוּ",
+    "refine": "on xet, replace merkha/yored with meteg/silluq",
+    "refine_cat": "replace"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps69:31",
+    "field": "verse-body",
+    "ga": "אֲהַלְלָ֣ה",
+    "gc": "אֲהַלְﬞלָ֣ה",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps69:35",
+    "field": "verse-body",
+    "ga": "יְֽ֭הַלְלוּהוּ",
+    "gc": "יְֽ֭הַלְﬞלוּהוּ",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps72:15",
+    "field": "verse-body",
+    "ga": "יְבָרְכֶֽנְהוּ׃",
+    "gc": "יְבָרְﬞכֶֽנְהוּ׃",
+    "refine": "add varika to resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps72:17",
+    "field": "verse-body",
+    "ga": "[(' ', 'שמו', 'לעולם')]",
+    "gc": "[('מ:לגרמיה', 'שמו', 'לעולם')]",
+    "refine": "separator changed from space to legarmeih, changing שמו לעולם to שמו׀ לעולם",
+    "refine_cat": "separator changed"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps73:3",
+    "field": "verse-body",
+    "ga": "בַּהוֹלְלִ֑ים",
+    "gc": "בַּהוֹלְﬞלִ֑ים",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps73:28",
+    "field": "verse-body",
+    "ga": "קִ֥רְבַ֥ת",
+    "gc": "קִ֥רְﬞבַ֥ת",
+    "refine": "add varika to resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps74:4",
+    "field": "verse-body",
+    "ga": "צֹ֭רְרֶיךָ",
+    "gc": "צֹ֭רְﬞרֶיךָ",
+    "refine": "add varika to the first resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps74:5",
+    "field": "verse-body",
+    "ga": "בִּסְבׇךְ",
+    "gc": "בִּסְﬞבׇךְ",
+    "refine": "add varika to samekh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps74:23",
+    "field": "verse-body",
+    "ga": "צֹרְרֶ֑יךָ",
+    "gc": "צֹרְﬞרֶ֑יךָ",
+    "refine": "add varika to the first resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps75:5",
+    "field": "verse-body",
+    "ga": "לַ֭הוֹלְלִים",
+    "gc": "לַ֭הוֹלְﬞלִים",
+    "refine": "add varika to the second lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps76:6",
+    "field": "verse-body",
+    "ga": "אֶשְׁתּֽוֹלְל֨וּ",
+    "gc": "אֶשְׁתּֽוֹלְﬞל֨וּ",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps76:12",
+    "field": "verse-body",
+    "ga": "נִ֥דְר֣וּ",
+    "gc": "נִ֥דְﬞר֣וּ",
+    "refine": "add varika to dalet",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps78:32",
+    "field": "verse-body",
+    "ga": "זֹ֭את",
+    "gc": "זֹ֥את",
+    "refine": "on zayin, replace dexi with merkha/yored",
+    "refine_cat": "replace"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps78:71",
+    "field": "verse-body",
+    "ga": "הֱ֫בִיא֥וֹ",
+    "gc": "הֱבִ֫יא֥וֹ",
+    "refine": "move ole forward from he to bet",
+    "refine_cat": "move"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps80:3",
+    "field": "verse-body",
+    "ga": "עוֹרְרָ֥ה",
+    "gc": "עוֹרְﬞרָ֥ה",
+    "refine": "add varika to the first resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps80:11",
+    "field": "verse-body",
+    "ga": "אַֽרְזֵי",
+    "gc": "אַֽרְﬞזֵי",
+    "refine": "add varika to resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps81:6",
+    "field": "verse-body",
+    "ga": "עֵ֤דוּת",
+    "gc": "עֵד֤וּת",
+    "refine": "move mahapakh forward from ayin to dalet",
+    "refine_cat": "move"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps83:11",
+    "field": "verse-body",
+    "ga": "דֹּ֝֗מֶן",
+    "gc": "דֹ֝֗מֶן",
+    "refine": "remove dagesh/mapiq/shuruq-dot from dalet",
+    "refine_cat": "remove"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps83:13",
+    "field": "verse-body",
+    "ga": "נִ֣ירְשָׁה",
+    "gc": "נִ֣ירְﬞשָׁה",
+    "refine": "add varika to resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps84:5",
+    "field": "verse-body",
+    "ga": "יְֽהַלְל֥וּךָ",
+    "gc": "יְֽהַלְﬞל֥וּךָ",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps86:2",
+    "field": "verse-body",
+    "ga": "שָׁ֥מְרָ֣ה",
+    "gc": "[('ייי', 'ד=שׇׁ֥מְרָ֣ה', ('מ:קמץ:1',)), ('ייי', 'ס=שָׁ֥מְרָ֣ה', ('מ:קמץ:2',))]",
+    "refine": "Added qamats variation where only the s-variant variant was present before. To change the d-variant into the s-variant, on shin, replace qamats-qatan with qamats.",
+    "refine_cat": "qamats variation added"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps86:7",
+    "field": "verse-body",
+    "ga": "צָ֭רָתִ֥י",
+    "gc": "צָ֭רָתִֽי",
+    "refine": "on tav, replace merkha/yored with meteg/silluq",
+    "refine_cat": "replace"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps86:9",
+    "field": "verse-body",
+    "ga": "וְיִשְׁתַּֽחֲו֣וּ",
+    "gc": "וְיִשְׁתַּחֲו֣וּ",
+    "refine": "remove meteg/silluq from tav",
+    "refine_cat": "remove"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps87:5",
+    "field": "verse-body",
+    "ga": "וּ֥לְצִיּ֨וֹן",
+    "gc": "וּ֥לְﬞצִיּ֨וֹן",
+    "refine": "add varika to lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps87:7",
+    "field": "verse-body",
+    "ga": "כְּחֹלְלִ֑ים",
+    "gc": "כְּחֹלְﬞלִ֑ים",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps88:4",
+    "field": "verse-body",
+    "ga": "וְחַיַּ֗י",
+    "gc": "וְ֝חַיַּ֗י",
+    "refine": "add geresh-muqdam to vav",
+    "refine_cat": "add non-varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps89:20",
+    "field": "verse-body",
+    "ga": "[(' ', 'דברת', 'בחזון'), 'בְחָ֡זוֹן']",
+    "gc": "[('־', 'דברת', 'בחזון'), 'בְחָז֡וֹן']",
+    "refine": null,
+    "refine_cat": null
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps89:53",
+    "field": "verse-body",
+    "ga": "לְ֝עוֹלָ֗ם",
+    "gc": "לְעוֹלָ֗ם",
+    "refine": "remove geresh-muqdam from the first lamed",
+    "refine_cat": "remove"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps90:17",
+    "field": "verse-body",
+    "ga": "כּוֹנְנָ֥ה",
+    "gc": "כּוֹנְﬞנָ֥ה",
+    "refine": "add varika to the first nun",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps90:17",
+    "field": "verse-body",
+    "ga": "כּוֹנְנֵֽהוּ׃",
+    "gc": "כּוֹנְﬞנֵֽהוּ׃",
+    "refine": "add varika to the first nun",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps92:10",
+    "field": "verse-body",
+    "ga": "[('מ:פסק', 'איביך', 'יהוה')]",
+    "gc": "[(' ', 'איביך', 'יהוה')]",
+    "refine": "separator changed from paseq to space, changing איביך׀׀יהוה to איביך יהוה where double Unicode PASEQ represents true paseq (as opposed to legarmeih)",
+    "refine_cat": "separator changed"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps94:10",
+    "field": "verse-body",
+    "ga": "הַֽמְלַמֵּ֖ד",
+    "gc": "הַֽמְﬞלַמֵּ֖ד",
+    "refine": "add varika to the first mem",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps96:2",
+    "field": "verse-body",
+    "ga": "בָּרְכ֣וּ",
+    "gc": "בָּרְﬞכ֣וּ",
+    "refine": "add varika to resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps97:7",
+    "field": "verse-body",
+    "ga": "הַמִּֽתְהַלְלִ֥ים",
+    "gc": "הַמִּֽתְהַלְﬞלִ֥ים",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps99:5",
+    "field": "verse-body",
+    "ga": "רוֹמְמ֡וּ",
+    "gc": "רוֹמְﬞמ֡וּ",
+    "refine": "add varika to the first mem",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps99:9",
+    "field": "verse-body",
+    "ga": "רוֹמְמ֡וּ",
+    "gc": "רוֹמְﬞמ֡וּ",
+    "refine": "add varika to the first mem",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps100:4",
+    "field": "verse-body",
+    "ga": "בָּרְכ֥וּ",
+    "gc": "בָּרְﬞכ֥וּ",
+    "refine": "add varika to resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps103:1",
+    "field": "verse-body",
+    "ga": "בָּרְכִ֣י",
+    "gc": "בָּרְﬞכִ֣י",
+    "refine": "add varika to resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps103:2",
+    "field": "verse-body",
+    "ga": "בָּרְכִ֣י",
+    "gc": "בָּרְﬞכִ֣י",
+    "refine": "add varika to resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps103:20",
+    "field": "verse-body",
+    "ga": "בָּרְכ֥וּ",
+    "gc": "בָּרְﬞכ֥וּ",
+    "refine": "add varika to resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps103:21",
+    "field": "verse-body",
+    "ga": "בָּרְכ֣וּ",
+    "gc": "בָּרְﬞכ֣וּ",
+    "refine": "add varika to resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps103:22",
+    "field": "verse-body",
+    "ga": "בָּרְכ֤וּ",
+    "gc": "בָּרְﬞכ֤וּ",
+    "refine": "add varika to resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps103:22",
+    "field": "verse-body",
+    "ga": "בָּרְכִ֥י",
+    "gc": "בָּרְﬞכִ֥י",
+    "refine": "add varika to resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps104:1",
+    "field": "verse-body",
+    "ga": "בָּרְכִ֥י",
+    "gc": "בָּרְﬞכִ֥י",
+    "refine": "add varika to resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps104:3",
+    "field": "verse-body",
+    "ga": "הַ֥מְקָרֶ֥ה",
+    "gc": "הַ֥מְﬞקָרֶ֥ה",
+    "refine": "add varika to mem",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps104:3",
+    "field": "verse-body",
+    "ga": "הַֽ֝מְהַלֵּ֗ךְ",
+    "gc": "הַֽ֝מְﬞהַלֵּ֗ךְ",
+    "refine": "add varika to mem",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps104:10",
+    "field": "verse-body",
+    "ga": "הַֽמְשַׁלֵּ֣חַ",
+    "gc": "הַֽמְﬞשַׁלֵּ֣חַ",
+    "refine": "add varika to mem",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps104:18",
+    "field": "verse-body",
+    "ga": "לַֽשְׁפַנִּֽים׃",
+    "gc": "לַֽשְׁﬞפַנִּֽים׃",
+    "refine": "add varika to shin",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps104:35",
+    "field": "verse-body",
+    "ga": "בָּרְכִ֣י",
+    "gc": "בָּרְﬞכִ֣י",
+    "refine": "add varika to resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps104:35",
+    "field": "verse-body",
+    "ga": "הַֽלְלוּ",
+    "gc": "הַֽלְﬞלוּ",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps105:3",
+    "field": "verse-body",
+    "ga": "הִֽ֭תְהַלְלוּ",
+    "gc": "הִֽ֭תְהַלְﬞלוּ",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps105:45",
+    "field": "verse-body",
+    "ga": "הַֽלְלוּ",
+    "gc": "הַֽלְﬞלוּ",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps106:1",
+    "field": "verse-body",
+    "ga": "הַ֥לְלוּ",
+    "gc": "הַ֥לְﬞלוּ",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps107:18",
+    "field": "verse-body",
+    "ga": "[(' ', 'שערי', 'מות')]",
+    "gc": "[('־', 'שערי', 'מות')]",
+    "refine": "separator changed from space to maqaf, changing שערי מות to שערי־מות",
+    "refine_cat": "separator changed"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps107:36",
+    "field": "verse-body",
+    "ga": "וַ֝יְכוֹנְנ֗וּ",
+    "gc": "וַ֝יְכוֹנְﬞנ֗וּ",
+    "refine": "add varika to the first nun",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps107:38",
+    "field": "verse-body",
+    "ga": "וַיְבָרְכֵ֣ם",
+    "gc": "וַיְבָרְﬞכֵ֣ם",
+    "refine": "add varika to resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps107:43",
+    "field": "verse-body",
+    "ga": "וְ֝יִתְבּוֹנְנ֗וּ",
+    "gc": "וְ֝יִתְבּוֹנְﬞנ֗וּ",
+    "refine": "add varika to the first nun",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps108:3",
+    "field": "verse-body",
+    "ga": "ע֭וּרָ֥ה",
+    "gc": "ע֭וּרָֽה",
+    "refine": "on resh, replace merkha/yored with meteg/silluq",
+    "refine_cat": "replace"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps108:9",
+    "field": "verse-body",
+    "ga": "מְחֹקְקִֽי׃",
+    "gc": "מְחֹקְﬞקִֽי׃",
+    "refine": "add varika to the first qof",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps109:28",
+    "field": "verse-body",
+    "ga": "יְקַֽלְלוּ",
+    "gc": "יְקַֽלְﬞלוּ",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps109:30",
+    "field": "verse-body",
+    "ga": "אֲהַלְלֶֽנּוּ׃",
+    "gc": "אֲהַלְﬞלֶֽנּוּ׃",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps111:1",
+    "field": "verse-body",
+    "ga": "הַ֥לְלוּ",
+    "gc": "הַ֥לְﬞלוּ",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps112:1",
+    "field": "verse-body",
+    "ga": "הַ֥לְלוּ",
+    "gc": "הַ֥לְﬞלוּ",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps113:1",
+    "field": "verse-body",
+    "ga": "הַ֥לְלוּ",
+    "gc": "הַ֥לְﬞלוּ",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps113:1",
+    "field": "verse-body",
+    "ga": "הַ֭לְלוּ",
+    "gc": "הַ֭לְﬞלוּ",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps113:1",
+    "field": "verse-body",
+    "ga": "הַֽ֝לְל֗וּ",
+    "gc": "הַֽ֝לְﬞל֗וּ",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps113:9",
+    "field": "verse-body",
+    "ga": "הַֽלְלוּ",
+    "gc": "הַֽלְﬞלוּ",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps115:18",
+    "field": "verse-body",
+    "ga": "[('מ:לגרמיה', 'ואנחנו', 'נברך')]",
+    "gc": "['מ:לגרמיה', ('ייי', 'רווח=לא', ('ר0:1',))]",
+    "refine": null,
+    "refine_cat": null
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps115:18",
+    "field": "verse-body",
+    "ga": "הַֽלְלוּ",
+    "gc": "הַֽלְﬞלוּ",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps118:27",
+    "field": "verse-body",
+    "ga": "[('מ:מקף אפור', 'אר', 'לנו')]",
+    "gc": "[(' ', 'אר', 'לנו')]",
+    "refine": "separator changed from gray maqaf to space, changing אר־־לנו to אר לנו where double maqaf represents gray maqaf",
+    "refine_cat": "separator changed"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps118:28",
+    "field": "verse-body",
+    "ga": "אֲרוֹמְמֶֽךָּ׃",
+    "gc": "אֲרוֹמְﬞמֶֽךָּ׃",
+    "refine": "add varika to the first mem",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps119:115",
+    "field": "verse-body",
+    "ga": "וְ֝אֶצְּרָ֗ה",
+    "gc": "וְ֝אֶצְּﬞרָ֗ה",
+    "refine": "add varika to tsadi",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps119:170",
+    "field": "verse-body",
+    "ga": "תְּחִנָּתִ֣י",
+    "gc": "תְחִנָּתִ֣י",
+    "refine": "remove dagesh/mapiq/shuruq-dot from the first tav",
+    "refine_cat": "remove"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps119:175",
+    "field": "verse-body",
+    "ga": "וּֽתְהַלְלֶ֑ךָּ",
+    "gc": "וּֽתְהַלְﬞלֶ֑ךָּ",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps125:3",
+    "field": "verse-body",
+    "ga": "[(' ', 'למען', 'לא')]",
+    "gc": "[('ר2', 'למען', 'לא')]",
+    "refine": "separator changed from space to resh-2, changing למען לא to למען{2}לא",
+    "refine_cat": "separator changed"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps125:3",
+    "field": "verse-body",
+    "ga": "[('ר2', 'בעולתה', 'ידיהם')]",
+    "gc": "[(' ', 'בעולתה', 'ידיהם')]",
+    "refine": "separator changed from resh-2 to space, changing בעולתה{2}ידיהם to בעולתה ידיהם",
+    "refine_cat": "separator changed"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps134:1",
+    "field": "verse-body",
+    "ga": "בָּרְכ֣וּ",
+    "gc": "בָּרְﬞכ֣וּ",
+    "refine": "add varika to resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps134:2",
+    "field": "verse-body",
+    "ga": "וּ֝בָרְכ֗וּ",
+    "gc": "וּ֝בָרְﬞכ֗וּ",
+    "refine": "add varika to resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps135:1",
+    "field": "verse-body",
+    "ga": "הַ֥לְלוּ",
+    "gc": "הַ֥לְﬞלוּ",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps135:1",
+    "field": "verse-body",
+    "ga": "הַֽ֭לְלוּ",
+    "gc": "הַֽ֭לְﬞלוּ",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps135:1",
+    "field": "verse-body",
+    "ga": "הַֽ֝לְל֗וּ",
+    "gc": "הַֽ֝לְﬞל֗וּ",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps135:3",
+    "field": "verse-body",
+    "ga": "הַֽלְלוּ",
+    "gc": "הַֽלְﬞלוּ",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps135:19",
+    "field": "verse-body",
+    "ga": "בָּרְכ֣וּ",
+    "gc": "בָּרְﬞכ֣וּ",
+    "refine": "add varika to resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps135:19",
+    "field": "verse-body",
+    "ga": "בָּרְכ֥וּ",
+    "gc": "בָּרְﬞכ֥וּ",
+    "refine": "add varika to resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps135:20",
+    "field": "verse-body",
+    "ga": "בָּרְכ֣וּ",
+    "gc": "בָּרְﬞכ֣וּ",
+    "refine": "add varika to resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps135:20",
+    "field": "verse-body",
+    "ga": "בָּרְכ֥וּ",
+    "gc": "בָּרְﬞכ֥וּ",
+    "refine": "add varika to resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps135:21",
+    "field": "verse-body",
+    "ga": "הַֽלְלוּ",
+    "gc": "הַֽלְﬞלוּ",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps137:9",
+    "field": "verse-body",
+    "ga": "עֹ֝לָלַ֗יִךְ",
+    "gc": "עֹלָלַ֗יִךְ",
+    "refine": "remove geresh-muqdam from ayin",
+    "refine_cat": "remove"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps138:3",
+    "field": "verse-body",
+    "ga": "קָ֭רָ֥אתִי",
+    "gc": "קָ֭רָֽאתִי",
+    "refine": "on resh, replace merkha/yored with meteg/silluq",
+    "refine_cat": "replace"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps139:7",
+    "field": "verse-body",
+    "ga": "אָ֭נָ֥ה",
+    "gc": "אָ֭נָֽה",
+    "refine": "on nun, replace merkha/yored with meteg/silluq",
+    "refine_cat": "replace"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps139:21",
+    "field": "verse-body",
+    "ga": "וּ֝בִתְקוֹמְמֶ֗יךָ",
+    "gc": "וּ֝בִתְקוֹמְﬞמֶ֗יךָ",
+    "refine": "add varika to the first mem",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps140:4",
+    "field": "verse-body",
+    "ga": "שָׁ֥נְנ֣וּ",
+    "gc": "שָׁ֥נְﬞנ֣וּ",
+    "refine": "add varika to the first nun",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps140:6",
+    "field": "verse-body",
+    "ga": "[(' ', 'טמנו', 'גאים')]",
+    "gc": "[('־', 'טמנו', 'גאים')]",
+    "refine": "separator changed from space to maqaf, changing טמנו גאים to טמנו־גאים",
+    "refine_cat": "separator changed"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps141:4",
+    "field": "verse-body",
+    "ga": "[('ר0', 'לבי', 'לדב')]",
+    "gc": "[(' ', 'לבי', 'לדב')]",
+    "refine": "separator changed from resh-0 to space, changing לבי{0}לדב to לבי לדב",
+    "refine_cat": "separator changed"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps142:7",
+    "field": "verse-body",
+    "ga": "[('מ:מקף אפור', 'ותי', 'מאד')]",
+    "gc": "[(' ', 'ותי', 'מאד')]",
+    "refine": "separator changed from gray maqaf to space, changing ותי־־מאד to ותי מאד where double maqaf represents gray maqaf",
+    "refine_cat": "separator changed"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps143:9",
+    "field": "verse-body",
+    "ga": "[('מ:לגרמיה', 'מאיבי', 'יהוה')]",
+    "gc": "[('מ:פסק', 'מאיבי', 'יהוה')]",
+    "refine": "separator changed from legarmeih to paseq, changing מאיבי׀ יהוה to מאיבי׀׀יהוה where double Unicode PASEQ represents true paseq (as opposed to legarmeih)",
+    "refine_cat": "separator changed"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps143:12",
+    "field": "verse-body",
+    "ga": "צֹרְרֵ֣י",
+    "gc": "צֹרְﬞרֵ֣י",
+    "refine": "add varika to the first resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps144:1",
+    "field": "verse-body",
+    "ga": "הַֽמְלַמֵּ֣ד",
+    "gc": "הַֽמְﬞלַמֵּ֣ד",
+    "refine": "add varika to the first mem",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps144:7",
+    "field": "verse-body",
+    "ga": "מִמָּ֫ר֥וֹם",
+    "gc": "מִ֫מָּר֥וֹם",
+    "refine": "move ole back from the second mem to the first mem",
+    "refine_cat": "move"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps145:1",
+    "field": "verse-body",
+    "ga": "וַאֲבָרְכָ֥ה",
+    "gc": "וַאֲבָרְﬞכָ֥ה",
+    "refine": "add varika to resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps145:2",
+    "field": "verse-body",
+    "ga": "אֲבָֽרְכֶ֑ךָּ",
+    "gc": "אֲבָֽרְﬞכֶ֑ךָּ",
+    "refine": "add varika to resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps145:2",
+    "field": "verse-body",
+    "ga": "וַאֲהַֽלְלָ֥ה",
+    "gc": "וַאֲהַֽלְﬞלָ֥ה",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps145:10",
+    "field": "verse-body",
+    "ga": "יְבָרְכֽוּכָה׃",
+    "gc": "יְבָרְﬞכֽוּכָה׃",
+    "refine": "add varika to resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps146:1",
+    "field": "verse-body",
+    "ga": "הַֽלְלִ֥י",
+    "gc": "הַֽלְﬞלִ֥י",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps146:2",
+    "field": "verse-body",
+    "ga": "אֲהַלְלָ֣ה",
+    "gc": "אֲהַלְﬞלָ֣ה",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps146:10",
+    "field": "verse-body",
+    "ga": "הַֽלְלוּ",
+    "gc": "הַֽלְﬞלוּ",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps147:1",
+    "field": "verse-body",
+    "ga": "הַ֥לְלוּ",
+    "gc": "הַ֥לְﬞלוּ",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps147:8",
+    "field": "verse-body",
+    "ga": "הַֽמְכַסֶּ֬ה",
+    "gc": "הַֽמְﬞכַסֶּ֬ה",
+    "refine": "add varika to mem",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps147:8",
+    "field": "verse-body",
+    "ga": "[('ר0', 'הרים', 'חציר')]",
+    "gc": "[(' ', 'הרים', 'חציר')]",
+    "refine": "separator changed from resh-0 to space, changing הרים{0}חציר to הרים חציר",
+    "refine_cat": "separator changed"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps147:12",
+    "field": "verse-body",
+    "ga": "הַֽלְלִ֖י",
+    "gc": "הַֽלְﬞלִ֖י",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps147:20",
+    "field": "verse-body",
+    "ga": "הַֽלְלוּ",
+    "gc": "הַֽלְﬞלוּ",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps148:1",
+    "field": "verse-body",
+    "ga": "הַ֥לְלוּ",
+    "gc": "הַ֥לְﬞלוּ",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps148:1",
+    "field": "verse-body",
+    "ga": "הַֽלְל֣וּ",
+    "gc": "הַֽלְﬞל֣וּ",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps148:1",
+    "field": "verse-body",
+    "ga": "הַֽ֝לְל֗וּהוּ",
+    "gc": "הַֽ֝לְﬞל֗וּהוּ",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps148:2",
+    "field": "verse-body",
+    "ga": "הַֽלְל֥וּהוּ",
+    "gc": "הַֽלְﬞל֥וּהוּ",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps148:3",
+    "field": "verse-body",
+    "ga": "הַֽ֭לְלוּהוּ",
+    "gc": "הַֽ֭לְﬞלוּהוּ",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps148:3",
+    "field": "verse-body",
+    "ga": "הַֽ֝לְל֗וּהוּ",
+    "gc": "הַֽ֝לְﬞל֗וּהוּ",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps148:4",
+    "field": "verse-body",
+    "ga": "הַֽ֭לְלוּהוּ",
+    "gc": "הַֽ֭לְﬞלוּהוּ",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps148:5",
+    "field": "verse-body",
+    "ga": "יְֽ֭הַלְלוּ",
+    "gc": "יְֽ֭הַלְﬞלוּ",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps148:7",
+    "field": "verse-body",
+    "ga": "הַֽלְל֣וּ",
+    "gc": "הַֽלְﬞל֣וּ",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps148:13",
+    "field": "verse-body",
+    "ga": "יְהַלְל֤וּ",
+    "gc": "יְהַלְﬞל֤וּ",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps148:14",
+    "field": "verse-body",
+    "ga": "הַֽלְלוּ",
+    "gc": "הַֽלְﬞלוּ",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps149:1",
+    "field": "verse-body",
+    "ga": "הַ֥לְלוּ",
+    "gc": "הַ֥לְﬞלוּ",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps149:3",
+    "field": "verse-body",
+    "ga": "יְהַלְל֣וּ",
+    "gc": "יְהַלְﬞל֣וּ",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps149:6",
+    "field": "verse-body",
+    "ga": "רוֹמְמ֣וֹת",
+    "gc": "רוֹמְﬞמ֣וֹת",
+    "refine": "add varika to the first mem",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps149:9",
+    "field": "verse-body",
+    "ga": "הַֽלְלוּ",
+    "gc": "הַֽלְﬞלוּ",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps150:1",
+    "field": "verse-body",
+    "ga": "הַ֥לְלוּ",
+    "gc": "הַ֥לְﬞלוּ",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps150:1",
+    "field": "verse-body",
+    "ga": "הַֽלְלוּ",
+    "gc": "הַֽלְﬞלוּ",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps150:1",
+    "field": "verse-body",
+    "ga": "הַֽ֝לְל֗וּהוּ",
+    "gc": "הַֽ֝לְﬞל֗וּהוּ",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps150:2",
+    "field": "verse-body",
+    "ga": "הַלְל֥וּהוּ",
+    "gc": "הַלְﬞל֥וּהוּ",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps150:2",
+    "field": "verse-body",
+    "ga": "הַ֝לְל֗וּהוּ",
+    "gc": "הַ֝לְﬞל֗וּהוּ",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps150:3",
+    "field": "verse-body",
+    "ga": "הַ֭לְלוּהוּ",
+    "gc": "הַ֭לְﬞלוּהוּ",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps150:3",
+    "field": "verse-body",
+    "ga": "הַ֝לְל֗וּהוּ",
+    "gc": "הַ֝לְﬞל֗וּהוּ",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps150:4",
+    "field": "verse-body",
+    "ga": "הַ֭לְלוּהוּ",
+    "gc": "הַ֭לְﬞלוּהוּ",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps150:4",
+    "field": "verse-body",
+    "ga": "הַֽ֝לְל֗וּהוּ",
+    "gc": "הַֽ֝לְﬞל֗וּהוּ",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps150:5",
+    "field": "verse-body",
+    "ga": "הַלְל֥וּהוּ",
+    "gc": "הַלְﬞל֥וּהוּ",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps150:5",
+    "field": "verse-body",
+    "ga": "הַֽ֝לְל֗וּהוּ",
+    "gc": "הַֽ֝לְﬞל֗וּהוּ",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Ps150:6",
+    "field": "verse-body",
+    "ga": "הַֽלְלוּ",
+    "gc": "הַֽלְﬞלוּ",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Pr5:19",
+    "field": "verse-body",
+    "ga": "וְֽיַעֲלַ֫ת",
+    "gc": "וְֽיַ֫עֲלַת",
+    "refine": "move ole back from lamed to yod",
+    "refine_cat": "move"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Pr6:35",
+    "field": "verse-body",
+    "ga": "שֹֽׁחַד׃",
+    "gc": "שֹּֽׁחַד׃",
+    "refine": "add dagesh/mapiq/shuruq-dot to shin",
+    "refine_cat": "add non-varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Pr8:15",
+    "field": "verse-body",
+    "ga": "יְחֹ֣קְקוּ",
+    "gc": "יְחֹ֣קְﬞקוּ",
+    "refine": "add varika to the first qof",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Pr8:34",
+    "field": "verse-body",
+    "ga": "[('מ:מקף אפור', 'ע', 'לי')]",
+    "gc": "[(' ', 'ע', 'לי')]",
+    "refine": "separator changed from gray maqaf to space, changing ע־־לי to ע לי where double maqaf represents gray maqaf",
+    "refine_cat": "separator changed"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Pr19:19",
+    "field": "verse-body",
+    "ga": "[('ייי', 'גְּֽדָל', ('כו\"ק:2',))]",
+    "gc": "[('ייי', 'גְּֽדׇל', ('כו\"ק:2',))]",
+    "refine": "on dalet, replace qamats with qamats-qatan",
+    "refine_cat": "replace"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Pr22:20",
+    "field": "verse-body",
+    "ga": "[('ייי', 'שָׁלִשִׁ֑ים', ('כו\"ק:2',))]",
+    "gc": "[('ייי', 'שָׁלִישִׁ֑ים', ('כו\"ק:2',))]",
+    "refine": "((None, (('yod', 'yod', (1, 2)),)), ((('yod', 'yod', (1, 1)),), (('yod', 'yod', (2, 2)),)))",
+    "refine_cat": "deep diff"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Pr23:20",
+    "field": "verse-body",
+    "ga": "בְּזֹלְלֵ֖י",
+    "gc": "בְּזֹלְﬞלֵ֖י",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Pr23:31",
+    "field": "verse-body",
+    "ga": "יַיִן֮",
+    "gc": "יַּיִן֮",
+    "refine": "add dagesh/mapiq/shuruq-dot to the first yod",
+    "refine_cat": "add non-varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Pr23:35",
+    "field": "verse-body",
+    "ga": "[('ר3', 'ידעתי', 'מתי')]",
+    "gc": "[('ר2', 'ידעתי', 'מתי')]",
+    "refine": "separator changed from resh-3 to resh-2, changing ידעתי{3}מתי to ידעתי{2}מתי",
+    "refine_cat": "separator changed"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Pr23:35",
+    "field": "verse-body",
+    "ga": "[('ר1', 'אקיץ', 'אוסיף')]",
+    "gc": "[('ר2', 'אקיץ', 'אוסיף')]",
+    "refine": "separator changed from resh-1 to resh-2, changing אקיץ{1}אוסיף to אקיץ{2}אוסיף",
+    "refine_cat": "separator changed"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Pr24:12",
+    "field": "verse-body",
+    "ga": "[('מ:מקף אפור', 'ענו', 'זה')]",
+    "gc": "[(' ', 'ענו', 'זה')]",
+    "refine": "separator changed from gray maqaf to space, changing ענו־־זה to ענו זה where double maqaf represents gray maqaf",
+    "refine_cat": "separator changed"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Pr24:12",
+    "field": "verse-body",
+    "ga": "[('ר2', 'יבין', 'ונצר')]",
+    "gc": "[('ר1', 'יבין', 'ונצר')]",
+    "refine": "separator changed from resh-2 to resh-1, changing יבין{2}ונצר to יבין{1}ונצר",
+    "refine_cat": "separator changed"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Pr24:12",
+    "field": "verse-body",
+    "ga": "[('ר1', 'ידע', 'והשיב')]",
+    "gc": "[('ר2', 'ידע', 'והשיב')]",
+    "refine": "separator changed from resh-1 to resh-2, changing ידע{1}והשיב to ידע{2}והשיב",
+    "refine_cat": "separator changed"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Pr24:19",
+    "field": "verse-body",
+    "ga": "בָּֽרְשָׁעִֽים׃",
+    "gc": "בָּֽרְﬞשָׁעִֽים׃",
+    "refine": "add varika to resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Pr26:2",
+    "field": "verse-body",
+    "ga": "קִֽלְלַ֥ת",
+    "gc": "קִֽלְﬞלַ֥ת",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Pr28:4",
+    "field": "verse-body",
+    "ga": "יְהַלְל֣וּ",
+    "gc": "יְהַלְﬞל֣וּ",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Pr28:7",
+    "field": "verse-body",
+    "ga": "ז֝וֹלְלִ֗ים",
+    "gc": "ז֝וֹלְﬞלִ֗ים",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Pr28:22",
+    "field": "verse-body",
+    "ga": "נִ֥בְהָֽל",
+    "gc": "נִ֥בְﬞהָֽל",
+    "refine": "add varika to bet",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Pr30:14",
+    "field": "verse-body",
+    "ga": "[('ר3', 'מתלעתיו', 'לאכל')]",
+    "gc": "[('ר2', 'מתלעתיו', 'לאכל')]",
+    "refine": "separator changed from resh-3 to resh-2, changing מתלעתיו{3}לאכל to מתלעתיו{2}לאכל",
+    "refine_cat": "separator changed"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Pr30:14",
+    "field": "verse-body",
+    "ga": "[('ר1', 'מארץ', 'ואביונים')]",
+    "gc": "[('ר2', 'מארץ', 'ואביונים')]",
+    "refine": "separator changed from resh-1 to resh-2, changing מארץ{1}ואביונים to מארץ{2}ואביונים",
+    "refine_cat": "separator changed"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Pr30:15",
+    "field": "verse-body",
+    "ga": "מ:פסק",
+    "gc": "מ:לגרמיה",
+    "refine": null,
+    "refine_cat": null
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Pr30:16",
+    "field": "verse-body",
+    "ga": "[('מ:מקף אפור', 'צר', 'רחם')]",
+    "gc": "[(' ', 'צר', 'רחם')]",
+    "refine": "separator changed from gray maqaf to space, changing צר־־רחם to צר רחם where double maqaf represents gray maqaf",
+    "refine_cat": "separator changed"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Pr30:17",
+    "field": "verse-body",
+    "ga": "תִּ֥לְעַ֣ג",
+    "gc": "תִּ֥לְﬞעַ֣ג",
+    "refine": "add varika to lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Pr31:4",
+    "field": "verse-body",
+    "ga": "לַֽמְלָכִ֣ים",
+    "gc": "לַֽמְﬞלָכִ֣ים",
+    "refine": "add varika to mem",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Pr31:6",
+    "field": "verse-body",
+    "ga": "שֵׁכָ֣ר",
+    "gc": "שֵׁכָ֥ר",
+    "refine": "on kaf, replace munax with merkha/yored",
+    "refine_cat": "replace"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Pr31:16",
+    "field": "verse-body",
+    "ga": "זָֽמְמָ֣ה",
+    "gc": "זָֽמְﬞמָ֣ה",
+    "refine": "add varika to the first mem",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Pr31:27",
+    "field": "verse-body",
+    "ga": "[('ייי', 'הילכת', ('כו\"ק:1',))]",
+    "gc": "[('ייי', 'הילכות', ('כו\"ק:1',))]",
+    "refine": null,
+    "refine_cat": null
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Pr31:28",
+    "field": "verse-body",
+    "ga": "וַֽיְהַלְלָֽהּ׃",
+    "gc": "וַֽיְהַלְﬞלָֽהּ׃",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Pr31:31",
+    "field": "verse-body",
+    "ga": "וִיהַלְל֖וּהָ",
+    "gc": "וִיהַלְﬞל֖וּהָ",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Jb1:5",
+    "field": "verse-body",
+    "ga": "וּבֵרְכ֥וּ",
+    "gc": "וּבֵרְﬞכ֥וּ",
+    "refine": "add varika to resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Jb1:11",
+    "field": "verse-body",
+    "ga": "יְבָרְכֶֽךָּ׃",
+    "gc": "יְבָרְﬞכֶֽךָּ׃",
+    "refine": "add varika to resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Jb2:5",
+    "field": "verse-body",
+    "ga": "יְבָרְכֶֽךָּ׃",
+    "gc": "יְבָרְﬞכֶֽךָּ׃",
+    "refine": "add varika to resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Jb3:6",
+    "field": "verse-body",
+    "ga": "[('מ:מקף אפור', 'הו', 'אפל')]",
+    "gc": "[(' ', 'הו', 'אפל')]",
+    "refine": "separator changed from gray maqaf to space, changing הו־־אפל to הו אפל where double maqaf represents gray maqaf",
+    "refine_cat": "separator changed"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Jb3:8",
+    "field": "verse-body",
+    "ga": "אֹֽרְרֵי",
+    "gc": "אֹֽרְﬞרֵי",
+    "refine": "add varika to the first resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Jb3:15",
+    "field": "verse-body",
+    "ga": "הַֽמְמַלְאִ֖ים",
+    "gc": "הַֽמְﬞמַלְאִ֖ים",
+    "refine": "add varika to the first mem",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Jb3:16",
+    "field": "verse-body",
+    "ga": "כְּ֝עֹלְלִ֗ים",
+    "gc": "כְּ֝עֹלְﬞלִ֗ים",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Jb3:21",
+    "field": "verse-body",
+    "ga": "הַֽמְחַכִּ֣ים",
+    "gc": "הַֽמְﬞחַכִּ֣ים",
+    "refine": "add varika to mem",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Jb5:14",
+    "field": "verse-body",
+    "ga": "יְֽמַשְׁשׁ֥וּ",
+    "gc": "יְֽמַשְׁﬞשׁ֥וּ",
+    "refine": "add varika to the first shin",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Jb6:29",
+    "field": "verse-body",
+    "ga": "[('ייי', 'וְשֻׁ֥בוּ', ('כו\"ק:2',))]",
+    "gc": "[('ייי', 'וְשׁ֥וּבוּ', ('כו\"ק:2',))]",
+    "refine": "(((('vav', 'vav', (1, 2)), ('sheva', 'vav', (1, 2))), (('vav', 'vav', (1, 3)), ('sheva', 'vav', (1, 3)))), ((('qubuts', 'shin', (1, 1)),), None), (None, (('vav', 'vav', (2, 3)), ('dagesh/mapiq/shuruq-dot', 'vav', (2, 3)))), ((('vav', 'vav', (2, 2)), ('dagesh/mapiq/shuruq-dot', 'vav', (2, 2))), (('vav', 'vav', (3, 3)), ('dagesh/mapiq/shuruq-dot', 'vav', (3, 3)))))",
+    "refine_cat": "deep diff"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Jb9:10",
+    "field": "verse-body",
+    "ga": "וְנִפְלָא֗וֹת",
+    "gc": "וְ֝נִפְלָא֗וֹת",
+    "refine": "add geresh-muqdam to the first vav",
+    "refine_cat": "add non-varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Jb10:11",
+    "field": "verse-body",
+    "ga": "תְּשֹׂכְכֵֽנִי׃",
+    "gc": "תְּשֹׂכְﬞכֵֽנִי׃",
+    "refine": "add varika to the first kaf",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Jb12:6",
+    "field": "verse-body",
+    "ga": "לְשֹׁ֥דְדִ֗ים",
+    "gc": "לְשֹׁ֥דְﬞדִ֗ים",
+    "refine": "add varika to the first dalet",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Jb12:25",
+    "field": "verse-body",
+    "ga": "יְמַֽשְׁשׁוּ",
+    "gc": "יְמַֽשְׁﬞשׁוּ",
+    "refine": "add varika to the first shin",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Jb17:9",
+    "field": "verse-body",
+    "ga": "וּֽטְהׇר",
+    "gc": "וּֽטְﬞהׇר",
+    "refine": "add varika to tet",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Jb19:16",
+    "field": "verse-body",
+    "ga": "בְּ֝מוֹ",
+    "gc": "בְּמוֹ",
+    "refine": "remove geresh-muqdam from bet",
+    "refine_cat": "remove"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Jb19:16",
+    "field": "verse-body",
+    "ga": "פִ֗י",
+    "gc": "פִ֝֗י",
+    "refine": "add geresh-muqdam to pe",
+    "refine_cat": "add non-varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Jb20:7",
+    "field": "verse-body",
+    "ga": "כְּֽ֭גֶלְלוֹ",
+    "gc": "כְּֽ֭גֶלְﬞלוֹ",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Jb20:8",
+    "field": "verse-body",
+    "ga": "[(' ', 'ולא', 'ימצאהו'), 'יִמְצָאֻ֑הוּ', ('ר1', 'ימצאהו', 'וידד')]",
+    "gc": "[(' ', 'ולא', 'ימצאוהו'), 'יִמְצָא֑וּהוּ', ('ר1', 'ימצאוהו', 'וידד')]",
+    "refine": null,
+    "refine_cat": null
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Jb23:5",
+    "field": "verse-body",
+    "ga": "[(' ', 'יאמר', 'לי')]",
+    "gc": "[('־', 'יאמר', 'לי')]",
+    "refine": "separator changed from space to maqaf, changing יאמר לי to יאמר־לי",
+    "refine_cat": "separator changed"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Jb26:13",
+    "field": "verse-body",
+    "ga": "חֹלְלָ֥ה",
+    "gc": "חֹלְﬞלָ֥ה",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Jb27:7",
+    "field": "verse-body",
+    "ga": "וּמִתְקוֹמְמִ֥י",
+    "gc": "וּמִתְקוֹמְﬞמִ֥י",
+    "refine": "add varika to the second mem",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Jb28:5",
+    "field": "verse-body",
+    "ga": "[('ר2', 'לחם', 'ותחתיה')]",
+    "gc": "[('ר1', 'לחם', 'ותחתיה')]",
+    "refine": "separator changed from resh-2 to resh-1, changing לחם{2}ותחתיה to לחם{1}ותחתיה",
+    "refine_cat": "separator changed"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Jb29:16",
+    "field": "verse-body",
+    "ga": "אָ֭נֹכִ֥י",
+    "gc": "אָ֭נֹכִֽי",
+    "refine": "on kaf, replace merkha/yored with meteg/silluq",
+    "refine_cat": "replace"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Jb29:25",
+    "field": "verse-body",
+    "ga": "אֶ֥בְחַ֣ר",
+    "gc": "אֶ֥בְﬞחַ֣ר",
+    "refine": "add varika to bet",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Jb30:22",
+    "field": "verse-body",
+    "ga": "וּ֝תְמֹגְגֵ֗נִי",
+    "gc": "וּ֝תְמֹגְﬞגֵ֗נִי",
+    "refine": "add varika to the first gimel",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Jb31:20",
+    "field": "verse-body",
+    "ga": "בֵרְכ֣וּנִי",
+    "gc": "בֵרְﬞכ֣וּנִי",
+    "refine": "add varika to resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Jb31:37",
+    "field": "verse-body",
+    "ga": "אֲקָֽרְבֶֽנּוּ׃",
+    "gc": "אֲקָֽרְﬞבֶֽנּוּ׃",
+    "refine": "add varika to resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Jb32:2",
+    "field": "verse-body",
+    "ga": "[('מ:מקף אפור', 'חת', 'רם')]",
+    "gc": "[(' ', 'חת', 'רם')]",
+    "refine": "separator changed from gray maqaf to space, changing חת־־רם to חת רם where double maqaf represents gray maqaf",
+    "refine_cat": "separator changed"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Jb33:22",
+    "field": "verse-body",
+    "ga": "לַֽמְמִתִֽים׃",
+    "gc": "לַֽמְﬞמִתִֽים׃",
+    "refine": "add varika to the first mem",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Jb33:25",
+    "field": "verse-body",
+    "ga": "רֻֽטְפַ֣שׁ",
+    "gc": "רֻֽטְﬞפַ֣שׁ",
+    "refine": "add varika to tet",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Jb34:10",
+    "field": "verse-body",
+    "ga": "אַ֥נְשֵׁ֥י",
+    "gc": "אַ֥נְﬞשֵׁ֥י",
+    "refine": "add varika to nun",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Jb36:24",
+    "field": "verse-body",
+    "ga": "שֹׁרְר֣וּ",
+    "gc": "שֹׁרְﬞר֣וּ",
+    "refine": "add varika to the first resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Jb38:31",
+    "field": "verse-body",
+    "ga": "הַֽ֭תְקַשֵּׁר",
+    "gc": "הַֽ֭תְﬞקַשֵּׁר",
+    "refine": "add varika to tav",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Jb38:35",
+    "field": "verse-body",
+    "ga": "הַֽתְשַׁלַּ֣ח",
+    "gc": "הַֽתְﬞשַׁלַּ֣ח",
+    "refine": "add varika to tav",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Jb39:2",
+    "field": "verse-body",
+    "ga": "וְ֝יָדַ֗עְתָּ",
+    "gc": "וְ֝יָדַעְתָּ֗",
+    "refine": "move revia forward from dalet to tav",
+    "refine_cat": "move"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Jb40:22",
+    "field": "verse-body",
+    "ga": "צִֽלְל֑וֹ",
+    "gc": "צִֽלְﬞל֑וֹ",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Jb40:31",
+    "field": "verse-body",
+    "ga": "הַֽתְמַלֵּ֣א",
+    "gc": "הַֽתְﬞמַלֵּ֣א",
+    "refine": "add varika to tav",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Jb42:10",
+    "field": "verse-body",
+    "ga": "בְּהִֽתְפַּֽלְל֖וֹ",
+    "gc": "בְּהִֽתְפַּֽלְﬞל֖וֹ",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "SifEm",
+    "bcv": "Jb42:10",
+    "field": "verse-body",
+    "ga": "וַ֧יֹּסֶף",
+    "gc": "וַיֹּ֧סֶף",
+    "refine": "move darga forward from vav to yod",
+    "refine_cat": "move"
+  },
+  {
+    "sena": "XamMeg",
+    "bcv": "S2:7",
+    "field": "verse-body",
+    "ga": "תְּע֥וֹרְר֛וּ",
+    "gc": "תְּע֥וֹרְﬞר֛וּ",
+    "refine": "add varika to the first resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "XamMeg",
+    "bcv": "S3:2",
+    "field": "verse-body",
+    "ga": "וַאֲסוֹבְבָ֣ה",
+    "gc": "וַאֲסוֹבְﬞבָ֣ה",
+    "refine": "add varika to the first bet",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "XamMeg",
+    "bcv": "S3:3",
+    "field": "verse-body",
+    "ga": "הַסֹּבְבִ֖ים",
+    "gc": "הַסֹּבְﬞבִ֖ים",
+    "refine": "add varika to the first bet",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "XamMeg",
+    "bcv": "S3:5",
+    "field": "verse-body",
+    "ga": "תְּע֥וֹרְר֛וּ",
+    "gc": "תְּע֥וֹרְﬞר֛וּ",
+    "refine": "add varika to the first resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "XamMeg",
+    "bcv": "S3:6",
+    "field": "verse-body",
+    "ga": "כְּתִֽימְר֖וֹת",
+    "gc": "כְּתִֽימְﬞר֖וֹת",
+    "refine": "add varika to mem",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "XamMeg",
+    "bcv": "S7:4",
+    "field": "verse-body",
+    "ga": "תׇּאֳמֵ֥י",
+    "gc": "[('ייי', 'ד=תׇּאֳמֵ֥י', ('מ:קמץ:1',)), ('ייי', 'ס=תָּאֳמֵ֥י', ('מ:קמץ:2',))]",
+    "refine": "Added qamats variation where only the d-variant variant was present before. To change the d-variant into the s-variant, on tav, replace qamats-qatan with qamats.",
+    "refine_cat": "qamats variation added"
+  },
+  {
+    "sena": "XamMeg",
+    "bcv": "S8:2",
+    "field": "verse-body",
+    "ga": "אֶנְהָֽגְךָ֗",
+    "gc": "אֶנְהָֽגְﬞךָ֗",
+    "refine": "add varika to gimel",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "XamMeg",
+    "bcv": "R2:2",
+    "field": "verse-body",
+    "ga": "אֵֽלְכָה",
+    "gc": "אֵֽלְﬞכָה",
+    "refine": "add varika to lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "XamMeg",
+    "bcv": "R2:12",
+    "field": "verse-body",
+    "ga": "פׇּעֳלֵ֑ךְ",
+    "gc": "[('ייי', 'ד=פׇּעֳלֵ֑ךְ', ('מ:קמץ:1',)), ('ייי', 'ס=פָּעֳלֵ֑ךְ', ('מ:קמץ:2',))]",
+    "refine": "Added qamats variation where only the d-variant variant was present before. To change the d-variant into the s-variant, on pe, replace qamats-qatan with qamats.",
+    "refine_cat": "qamats variation added"
+  },
+  {
+    "sena": "XamMeg",
+    "bcv": "La1:12",
+    "field": "verse-body",
+    "ga": "וּרְא֗וּ",
+    "gc": "וּרְא֔וּ",
+    "refine": "on alef, replace revia with zaqef-qatan",
+    "refine_cat": "replace"
+  },
+  {
+    "sena": "XamMeg",
+    "bcv": "La2:20",
+    "field": "verse-body",
+    "ga": "עֹלְלֵ֣י",
+    "gc": "עֹלְﬞלֵ֣י",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "XamMeg",
+    "bcv": "Ec6:2",
+    "field": "verse-body",
+    "ga": "יֹֽאכְלֶ֑נּוּ",
+    "gc": "יֹֽאכְﬞלֶ֑נּוּ",
+    "refine": "add varika to kaf",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "XamMeg",
+    "bcv": "Ec9:7",
+    "field": "verse-body",
+    "ga": "וּֽשְׁתֵ֥ה",
+    "gc": "וּֽשְׁﬞתֵ֥ה",
+    "refine": "add varika to shin",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "XamMeg",
+    "bcv": "Es1:5",
+    "field": "verse-body",
+    "ga": "לְמִגָּ֧דוֹל",
+    "gc": "לְמִגָּד֧וֹל",
+    "refine": "move darga forward from gimel to dalet",
+    "refine_cat": "move"
+  },
+  {
+    "sena": "KetAx",
+    "bcv": "Da2:20",
+    "field": "verse-body",
+    "ga": "[('־', 'ועד', 'עלמא')]",
+    "gc": "[(' ', 'ועד', 'עלמא')]",
+    "refine": "separator changed from maqaf to space, changing ועד־עלמא to ועד עלמא",
+    "refine_cat": "separator changed"
+  },
+  {
+    "sena": "KetAx",
+    "bcv": "Da2:31",
+    "field": "verse-body",
+    "ga": "דִּכֵּ֥ן",
+    "gc": "דִכֵּ֥ן",
+    "refine": "remove dagesh/mapiq/shuruq-dot from dalet",
+    "refine_cat": "remove"
+  },
+  {
+    "sena": "KetAx",
+    "bcv": "Da4:27",
+    "field": "verse-body",
+    "ga": "בִּתְקַ֥ף",
+    "gc": "בִּתְקָ֥ף",
+    "refine": "on qof, replace patax with qamats",
+    "refine_cat": "replace"
+  },
+  {
+    "sena": "KetAx",
+    "bcv": "Da5:20",
+    "field": "verse-body",
+    "ga": "הֶעְדִּ֥יוּ",
+    "gc": "הֶעְדִּ֥יו",
+    "refine": "remove dagesh/mapiq/shuruq-dot from vav",
+    "refine_cat": "remove"
+  },
+  {
+    "sena": "KetAx",
+    "bcv": "Da6:28",
+    "field": "verse-body",
+    "ga": "וּמַצִּ֗ל",
+    "gc": "וּמַצִּ֔ל",
+    "refine": "on tsadi, replace revia with zaqef-qatan",
+    "refine_cat": "replace"
+  },
+  {
+    "sena": "KetAx",
+    "bcv": "Da9:12",
+    "field": "verse-body",
+    "ga": "[('ייי', 'מ:לגרמיה', ('קו\"כ:2',))]",
+    "gc": "[('ייי', 'רווח=לא', ('קו\"כ:2', 'מ:לגרמיה:1')), ' ']",
+    "refine": null,
+    "refine_cat": null
+  },
+  {
+    "sena": "KetAx",
+    "bcv": "Er9:4",
+    "field": "verse-body",
+    "ga": "כֹּ֤ל",
+    "gc": "כֹּ֚ל",
+    "refine": "on kaf, replace mahapakh with yetiv",
+    "refine_cat": "replace"
+  },
+  {
+    "sena": "KetAx",
+    "bcv": "Ne12:30",
+    "field": "verse-body",
+    "ga": "וְאֶֽת",
+    "gc": "וְאֶת",
+    "refine": "remove meteg/silluq from alef",
+    "refine_cat": "remove"
+  },
+  {
+    "sena": "KetAx",
+    "bcv": "Ne12:47",
+    "field": "verse-body",
+    "ga": "וְהַלְוִיִּ֔ם",
+    "gc": "וְהַ֨לְוִיִּ֔ם",
+    "refine": "add qadma/metigah/azla to he",
+    "refine_cat": "add non-varika"
+  },
+  {
+    "sena": "KetAx",
+    "bcv": "1C2:44",
+    "field": "verse-body",
+    "ga": "יׇרְקְעָ֑ם",
+    "gc": "יׇרְקְﬞעָ֑ם",
+    "refine": "add varika to qof",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "KetAx",
+    "bcv": "1C4:10",
+    "field": "verse-body",
+    "ga": "תְּבָרְכֵ֜נִי",
+    "gc": "תְּבָרְﬞכֵ֜נִי",
+    "refine": "add varika to resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "KetAx",
+    "bcv": "1C5:16",
+    "field": "verse-body",
+    "ga": "מִגְרְשֵׁ֥י",
+    "gc": "מִגְרְﬞשֵׁ֥י",
+    "refine": "add varika to resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "KetAx",
+    "bcv": "1C5:27",
+    "field": "verse-body",
+    "ga": "קְהָ֖ת",
+    "gc": "קְﬞהָ֖ת",
+    "refine": "add varika to qof",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "KetAx",
+    "bcv": "1C5:28",
+    "field": "verse-body",
+    "ga": "קְהָ֑ת",
+    "gc": "קְﬞהָ֑ת",
+    "refine": "add varika to qof",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "KetAx",
+    "bcv": "1C6:1",
+    "field": "verse-body",
+    "ga": "קְהָ֖ת",
+    "gc": "קְﬞהָ֖ת",
+    "refine": "add varika to qof",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "KetAx",
+    "bcv": "1C6:3",
+    "field": "verse-body",
+    "ga": "קְהָ֑ת",
+    "gc": "קְﬞהָ֑ת",
+    "refine": "add varika to qof",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "KetAx",
+    "bcv": "1C6:7",
+    "field": "verse-body",
+    "ga": "קְהָ֑ת",
+    "gc": "קְﬞהָ֑ת",
+    "refine": "add varika to qof",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "KetAx",
+    "bcv": "1C6:18",
+    "field": "verse-body",
+    "ga": "הַקְּהָתִ֔י",
+    "gc": "הַקְּﬞהָתִ֔י",
+    "refine": "add varika to qof",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "KetAx",
+    "bcv": "1C6:23",
+    "field": "verse-body",
+    "ga": "קְהָ֔ת",
+    "gc": "קְﬞהָ֔ת",
+    "refine": "add varika to qof",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "KetAx",
+    "bcv": "1C6:39",
+    "field": "verse-body",
+    "ga": "לְמִשְׁפַּחַ֣ת",
+    "gc": "לְמִשְׁפַּ֣חַת",
+    "refine": "move munax back from xet to pe",
+    "refine_cat": "move"
+  },
+  {
+    "sena": "KetAx",
+    "bcv": "1C6:39",
+    "field": "verse-body",
+    "ga": "הַקְּהָתִ֔י",
+    "gc": "הַקְּﬞהָתִ֔י",
+    "refine": "add varika to qof",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "KetAx",
+    "bcv": "1C6:46",
+    "field": "verse-body",
+    "ga": "קְהָ֜ת",
+    "gc": "קְﬞהָ֜ת",
+    "refine": "add varika to qof",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "KetAx",
+    "bcv": "1C6:51",
+    "field": "verse-body",
+    "ga": "קְהָ֑ת",
+    "gc": "קְﬞהָ֑ת",
+    "refine": "add varika to qof",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "KetAx",
+    "bcv": "1C6:53",
+    "field": "verse-body",
+    "ga": "יׇקְמְעָם֙",
+    "gc": "יׇקְמְﬞעָם֙",
+    "refine": "add varika to mem",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "KetAx",
+    "bcv": "1C6:55",
+    "field": "verse-body",
+    "ga": "קְהָ֖ת",
+    "gc": "קְﬞהָ֖ת",
+    "refine": "add varika to qof",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "KetAx",
+    "bcv": "1C9:32",
+    "field": "verse-body",
+    "ga": "הַקְּהָתִ֛י",
+    "gc": "הַקְּﬞהָתִ֛י",
+    "refine": "add varika to qof",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "KetAx",
+    "bcv": "1C15:18",
+    "field": "verse-body",
+    "ga": "וֶאֱלִ֨יפְלֵ֜הוּ",
+    "gc": "וֶאֱלִ֨יפְﬞלֵ֜הוּ",
+    "refine": "add varika to pe",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "KetAx",
+    "bcv": "1C15:19",
+    "field": "verse-body",
+    "ga": "וְהַמְשֹׁ֣רְרִ֔ים",
+    "gc": "וְהַמְשֹׁ֣רְﬞרִ֔ים",
+    "refine": "add varika to the first resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "KetAx",
+    "bcv": "1C15:21",
+    "field": "verse-body",
+    "ga": "וֶאֱלִֽיפְלֵ֗הוּ",
+    "gc": "וֶאֱלִֽיפְﬞלֵ֗הוּ",
+    "refine": "add varika to pe",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "KetAx",
+    "bcv": "1C15:27",
+    "field": "verse-body",
+    "ga": "וְהַמְשֹׁ֣רְרִ֔ים",
+    "gc": "וְהַמְשֹׁ֣רְﬞרִ֔ים",
+    "refine": "add varika to the first resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "KetAx",
+    "bcv": "1C15:27",
+    "field": "verse-body",
+    "ga": "הַמְשֹׁרְרִ֑ים",
+    "gc": "הַמְשֹׁרְﬞרִ֑ים",
+    "refine": "add varika to the first resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "KetAx",
+    "bcv": "1C16:5",
+    "field": "verse-body",
+    "ga": "בַּֽמְצִלְתַּ֥יִם",
+    "gc": "בַּֽמְﬞצִלְתַּ֥יִם",
+    "refine": "add varika to mem",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "KetAx",
+    "bcv": "1C16:10",
+    "field": "verse-body",
+    "ga": "הִֽתְהַלְלוּ֙",
+    "gc": "הִֽתְהַלְﬞלוּ֙",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "KetAx",
+    "bcv": "1C18:10",
+    "field": "verse-body",
+    "ga": "וּֽלְבָרְכ֗וֹ",
+    "gc": "וּֽלְבָרְﬞכ֗וֹ",
+    "refine": "add varika to resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "KetAx",
+    "bcv": "1C19:3",
+    "field": "verse-body",
+    "ga": "הַֽמְכַבֵּ֨ד",
+    "gc": "הַֽמְﬞכַבֵּ֨ד",
+    "refine": "add varika to mem",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "KetAx",
+    "bcv": "1C21:5",
+    "field": "verse-body",
+    "ga": "[(' ', 'שלף', 'חרב')]",
+    "gc": "[('־', 'שלף', 'חרב')]",
+    "refine": "separator changed from space to maqaf, changing שלף חרב to שלף־חרב",
+    "refine_cat": "separator changed"
+  },
+  {
+    "sena": "KetAx",
+    "bcv": "1C22:4",
+    "field": "verse-body",
+    "ga": "[(' ', 'כי', 'הביאו')]",
+    "gc": "[('־', 'כי', 'הביאו')]",
+    "refine": "separator changed from space to maqaf, changing כי הביאו to כי־הביאו",
+    "refine_cat": "separator changed"
+  },
+  {
+    "sena": "KetAx",
+    "bcv": "1C23:6",
+    "field": "verse-body",
+    "ga": "קְהָ֥ת",
+    "gc": "קְﬞהָ֥ת",
+    "refine": "add varika to qof",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "KetAx",
+    "bcv": "1C23:12",
+    "field": "verse-body",
+    "ga": "קְהָ֗ת",
+    "gc": "קְﬞהָ֗ת",
+    "refine": "add varika to qof",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "KetAx",
+    "bcv": "1C26:5",
+    "field": "verse-body",
+    "ga": "בֵרְכ֖וֹ",
+    "gc": "בֵרְﬞכ֖וֹ",
+    "refine": "add varika to resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "KetAx",
+    "bcv": "1C26:16",
+    "field": "verse-body",
+    "ga": "בַּֽמְסִלָּ֖ה",
+    "gc": "בַּֽמְﬞסִלָּ֖ה",
+    "refine": "add varika to mem",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "KetAx",
+    "bcv": "1C26:18",
+    "field": "verse-body",
+    "ga": "לַֽמְסִלָּ֔ה",
+    "gc": "לַֽמְﬞסִלָּ֔ה",
+    "refine": "add varika to mem",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "KetAx",
+    "bcv": "1C26:32",
+    "field": "verse-body",
+    "ga": "הַֽמְנַשִּׁ֔י",
+    "gc": "הַֽמְﬞנַשִּׁ֔י",
+    "refine": "add varika to mem",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "KetAx",
+    "bcv": "1C27:21",
+    "field": "verse-body",
+    "ga": "הַֽמְנַשֶּׁה֙",
+    "gc": "הַֽמְﬞנַשֶּׁה֙",
+    "refine": "add varika to mem",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "KetAx",
+    "bcv": "1C27:31",
+    "field": "verse-body",
+    "ga": "הָרְכ֔וּשׁ",
+    "gc": "הָרְﬞכ֔וּשׁ",
+    "refine": "add varika to resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "KetAx",
+    "bcv": "1C28:18",
+    "field": "verse-body",
+    "ga": "וְסֹכְכִ֖ים",
+    "gc": "וְסֹכְﬞכִ֖ים",
+    "refine": "add varika to the first kaf",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "KetAx",
+    "bcv": "1C29:2",
+    "field": "verse-body",
+    "ga": "וּֽכְכׇל",
+    "gc": "וּֽכְﬞכׇל",
+    "refine": "add varika to the first kaf",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "KetAx",
+    "bcv": "1C29:16",
+    "field": "verse-body",
+    "ga": "הֶֽהָמ֤וֹן",
+    "gc": "הֶהָמ֤וֹן",
+    "refine": "remove meteg/silluq from the first he",
+    "refine_cat": "remove"
+  },
+  {
+    "sena": "KetAx",
+    "bcv": "1C29:20",
+    "field": "verse-body",
+    "ga": "וַיְבָרְכ֣וּ",
+    "gc": "וַיְבָרְﬞכ֣וּ",
+    "refine": "add varika to resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "KetAx",
+    "bcv": "2C5:12",
+    "field": "verse-body",
+    "ga": "הַמְשֹׁרְרִ֣ים",
+    "gc": "הַמְשֹׁרְﬞרִ֣ים",
+    "refine": "add varika to the first resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "KetAx",
+    "bcv": "2C5:13",
+    "field": "verse-body",
+    "ga": "וְלַמְשֹׁרְרִ֜ים",
+    "gc": "וְלַמְשֹׁרְﬞרִ֜ים",
+    "refine": "add varika to the first resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "KetAx",
+    "bcv": "2C6:21",
+    "field": "verse-body",
+    "ga": "יִֽתְפַּלְל֖וּ",
+    "gc": "יִֽתְפַּלְﬞל֖וּ",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "KetAx",
+    "bcv": "2C6:24",
+    "field": "verse-body",
+    "ga": "וְהִתְפַּֽלְל֧וּ",
+    "gc": "וְהִתְפַּֽלְﬞל֧וּ",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "KetAx",
+    "bcv": "2C6:38",
+    "field": "verse-body",
+    "ga": "וְהִֽתְפַּֽלְל֗וּ",
+    "gc": "וְהִֽתְפַּֽלְﬞל֗וּ",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "KetAx",
+    "bcv": "2C6:42",
+    "field": "verse-body",
+    "ga": "זֳכְרָ֕ה",
+    "gc": "זׇכְרָ֕ה",
+    "refine": "on zayin, replace xataf-qamats with qamats-qatan",
+    "refine_cat": "replace"
+  },
+  {
+    "sena": "KetAx",
+    "bcv": "2C7:14",
+    "field": "verse-body",
+    "ga": "וְיִֽתְפַּֽלְלוּ֙",
+    "gc": "וְיִֽתְפַּֽלְﬞלוּ֙",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "KetAx",
+    "bcv": "2C8:11",
+    "field": "verse-body",
+    "ga": "[(' ', 'באה', 'אליהם')]",
+    "gc": "[('־', 'באה', 'אליהם')]",
+    "refine": "separator changed from space to maqaf, changing באה אליהם to באה־אליהם",
+    "refine_cat": "separator changed"
+  },
+  {
+    "sena": "KetAx",
+    "bcv": "2C12:13",
+    "field": "verse-body",
+    "ga": "וּֽשְׁבַ֨ע",
+    "gc": "וּֽשְׁﬞבַ֨ע",
+    "refine": "add varika to shin",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "KetAx",
+    "bcv": "2C14:6",
+    "field": "verse-body",
+    "ga": "[(' ', 'וינח', 'לנו')]",
+    "gc": "[('־', 'וינח', 'לנו')]",
+    "refine": "separator changed from space to maqaf, changing וינח לנו to וינח־לנו",
+    "refine_cat": "separator changed"
+  },
+  {
+    "sena": "KetAx",
+    "bcv": "2C16:9",
+    "field": "verse-body",
+    "ga": "מְשֹׁטְט֤וֹת",
+    "gc": "מְשֹׁטְﬞט֤וֹת",
+    "refine": "add varika to the first tet",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "KetAx",
+    "bcv": "2C20:19",
+    "field": "verse-body",
+    "ga": "הַקְּהָתִ֖ים",
+    "gc": "הַקְּﬞהָתִ֖ים",
+    "refine": "add varika to qof",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "KetAx",
+    "bcv": "2C20:21",
+    "field": "verse-body",
+    "ga": "מְשֹֽׁרְרִים֙",
+    "gc": "מְשֹֽׁרְﬞרִים֙",
+    "refine": "add varika to the first resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "KetAx",
+    "bcv": "2C20:21",
+    "field": "verse-body",
+    "ga": "וּֽמְהַלְלִ֖ים",
+    "gc": "וּֽמְהַלְﬞלִ֖ים",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "KetAx",
+    "bcv": "2C20:25",
+    "field": "verse-body",
+    "ga": "בֹּזְזִ֥ים",
+    "gc": "בֹּזְﬞזִ֥ים",
+    "refine": "add varika to the first zayin",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "KetAx",
+    "bcv": "2C20:26",
+    "field": "verse-body",
+    "ga": "בֵּרְכ֣וּ",
+    "gc": "בֵּרְﬞכ֣וּ",
+    "refine": "add varika to resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "KetAx",
+    "bcv": "2C21:17",
+    "field": "verse-body",
+    "ga": "הָרְכוּשׁ֙",
+    "gc": "הָרְﬞכוּשׁ֙",
+    "refine": "add varika to resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "KetAx",
+    "bcv": "2C23:12",
+    "field": "verse-body",
+    "ga": "וְהַֽמְהַלְלִ֖ים",
+    "gc": "וְהַֽמְהַלְﬞלִ֖ים",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "KetAx",
+    "bcv": "2C23:13",
+    "field": "verse-body",
+    "ga": "וְהַמְשֽׁוֹרְרִים֙",
+    "gc": "וְהַמְשֽׁוֹרְﬞרִים֙",
+    "refine": "add varika to the first resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "KetAx",
+    "bcv": "2C24:14",
+    "field": "verse-body",
+    "ga": "וּֽכְכַלּוֹתָ֡ם",
+    "gc": "וּֽכְﬞכַלּוֹתָ֡ם",
+    "refine": "add varika to the first kaf",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "KetAx",
+    "bcv": "2C27:7",
+    "field": "verse-body",
+    "ga": "וְיֶתֶר֙",
+    "gc": "וְיֶ֙תֶר֙",
+    "refine": "add pashta to yod",
+    "refine_cat": "add non-varika"
+  },
+  {
+    "sena": "KetAx",
+    "bcv": "2C29:12",
+    "field": "verse-body",
+    "ga": "הַקְּהָתִי֒",
+    "gc": "הַקְּﬞהָתִי֒",
+    "refine": "add varika to qof",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "KetAx",
+    "bcv": "2C29:30",
+    "field": "verse-body",
+    "ga": "וַֽיְהַלְלוּ֙",
+    "gc": "וַֽיְהַלְﬞלוּ֙",
+    "refine": "add varika to the first lamed",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "KetAx",
+    "bcv": "2C30:27",
+    "field": "verse-body",
+    "ga": "וַיְבָרְכ֣וּ",
+    "gc": "וַיְבָרְﬞכ֣וּ",
+    "refine": "add varika to resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "KetAx",
+    "bcv": "2C31:8",
+    "field": "verse-body",
+    "ga": "וַֽיְבָרְכוּ֙",
+    "gc": "וַֽיְבָרְﬞכוּ֙",
+    "refine": "add varika to resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "KetAx",
+    "bcv": "2C32:31",
+    "field": "verse-body",
+    "ga": "הַֽמְשַׁלְּחִ֤ים",
+    "gc": "הַֽמְﬞשַׁלְּחִ֤ים",
+    "refine": "add varika to mem",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "KetAx",
+    "bcv": "2C33:18",
+    "field": "verse-body",
+    "ga": "הַֽמְדַבְּרִ֣ים",
+    "gc": "הַֽמְﬞדַבְּרִ֣ים",
+    "refine": "add varika to mem",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "KetAx",
+    "bcv": "2C35:7",
+    "field": "verse-body",
+    "ga": "מֵרְכ֥וּשׁ",
+    "gc": "מֵרְﬞכ֥וּשׁ",
+    "refine": "add varika to resh",
+    "refine_cat": "add varika"
+  },
+  {
+    "sena": "KetAx",
+    "bcv": "2C35:15",
+    "field": "verse-body",
+    "ga": "וְהַמְשֹׁרְרִ֨ים",
+    "gc": "וְהַמְשֹׁרְﬞרִ֨ים",
+    "refine": "add varika to the first resh",
+    "refine_cat": "add varika"
+  }
+]
