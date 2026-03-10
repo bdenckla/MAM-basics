@@ -1,0 +1,1446 @@
+{
+  "mpasuq": "same as plain",
+  "naked_sam2_pe2_pe3": [],
+  "column_counts": [
+    {
+      "wtel_type": "tmpl",
+      "wtel_subtype": "כו\"ק",
+      "count_C": 0,
+      "count_D": 0,
+      "count_E": 882
+    },
+    {
+      "wtel_type": "tmpl",
+      "wtel_subtype": "כתיב ולא קרי",
+      "count_C": 0,
+      "count_D": 0,
+      "count_E": 8
+    },
+    {
+      "wtel_type": "tmpl",
+      "wtel_subtype": "מ:אות תלויה",
+      "count_C": 0,
+      "count_D": 0,
+      "count_E": 4
+    },
+    {
+      "wtel_type": "tmpl",
+      "wtel_subtype": "מ:אות-ג",
+      "count_C": 0,
+      "count_D": 0,
+      "count_E": 68
+    },
+    {
+      "wtel_type": "tmpl",
+      "wtel_subtype": "מ:אות-מיוחדת-במילה",
+      "count_C": 0,
+      "count_D": 0,
+      "count_E": 101
+    },
+    {
+      "wtel_type": "tmpl",
+      "wtel_subtype": "מ:אות-ק",
+      "count_C": 0,
+      "count_D": 0,
+      "count_E": 31
+    },
+    {
+      "wtel_type": "tmpl",
+      "wtel_subtype": "מ:אין פרשה בתחילת פרק",
+      "count_C": 0,
+      "count_D": 139,
+      "count_E": 0
+    },
+    {
+      "wtel_type": "tmpl",
+      "wtel_subtype": "מ:אין פרשה בתחילת פרק בספרי אמ\"ת",
+      "count_C": 0,
+      "count_D": 33,
+      "count_E": 0
+    },
+    {
+      "wtel_type": "tmpl",
+      "wtel_subtype": "מ:אין רווח של פרשה בתחילת פרשת השבוע",
+      "count_C": 0,
+      "count_D": 1,
+      "count_E": 0
+    },
+    {
+      "wtel_type": "tmpl",
+      "wtel_subtype": "מ:דחי",
+      "count_C": 0,
+      "count_D": 0,
+      "count_E": 2312
+    },
+    {
+      "wtel_type": "tmpl",
+      "wtel_subtype": "מ:הערה",
+      "count_C": 0,
+      "count_D": 4,
+      "count_E": 27
+    },
+    {
+      "wtel_type": "tmpl",
+      "wtel_subtype": "מ:הערה-2",
+      "count_C": 0,
+      "count_D": 4,
+      "count_E": 27
+    },
+    {
+      "wtel_type": "tmpl",
+      "wtel_subtype": "מ:כו\"ק בין שני מקפים",
+      "count_C": 0,
+      "count_D": 0,
+      "count_E": 1
+    },
+    {
+      "wtel_type": "tmpl",
+      "wtel_subtype": "מ:כו\"ק כתיב מילה חדה וקרי תרתין מילין",
+      "count_C": 0,
+      "count_D": 0,
+      "count_E": 13
+    },
+    {
+      "wtel_type": "tmpl",
+      "wtel_subtype": "מ:כו\"ק כתיב מילה חדה וקרי תרתין מילין בין שני מקפים",
+      "count_C": 0,
+      "count_D": 0,
+      "count_E": 1
+    },
+    {
+      "wtel_type": "tmpl",
+      "wtel_subtype": "מ:כו\"ק כתיב תרתין מילין וקרי מילה חדה",
+      "count_C": 0,
+      "count_D": 0,
+      "count_E": 8
+    },
+    {
+      "wtel_type": "tmpl",
+      "wtel_subtype": "מ:כו\"ק קרי שונה מהכתיב בשתי מילים",
+      "count_C": 0,
+      "count_D": 0,
+      "count_E": 2
+    },
+    {
+      "wtel_type": "tmpl",
+      "wtel_subtype": "מ:כו\"ק של שלוש מילים בהערה אחת",
+      "count_C": 0,
+      "count_D": 0,
+      "count_E": 1
+    },
+    {
+      "wtel_type": "tmpl",
+      "wtel_subtype": "מ:כו\"ק של שתי מילים בהערה אחת",
+      "count_C": 0,
+      "count_D": 0,
+      "count_E": 8
+    },
+    {
+      "wtel_type": "tmpl",
+      "wtel_subtype": "מ:כפול",
+      "count_C": 0,
+      "count_D": 0,
+      "count_E": 34
+    },
+    {
+      "wtel_type": "tmpl",
+      "wtel_subtype": "מ:לגרמיה-2",
+      "count_C": 0,
+      "count_D": 0,
+      "count_E": 1831
+    },
+    {
+      "wtel_type": "tmpl",
+      "wtel_subtype": "מ:מקף אפור",
+      "count_C": 0,
+      "count_D": 0,
+      "count_E": 116
+    },
+    {
+      "wtel_type": "tmpl",
+      "wtel_subtype": "מ:נו\"ן הפוכה",
+      "count_C": 0,
+      "count_D": 0,
+      "count_E": 9
+    },
+    {
+      "wtel_type": "tmpl",
+      "wtel_subtype": "מ:ספר חדש",
+      "count_C": 0,
+      "count_D": 24,
+      "count_E": 0
+    },
+    {
+      "wtel_type": "tmpl",
+      "wtel_subtype": "מ:עלייה",
+      "count_C": 532,
+      "count_D": 0,
+      "count_E": 0
+    },
+    {
+      "wtel_type": "tmpl",
+      "wtel_subtype": "מ:פסוק",
+      "count_C": 895,
+      "count_D": 0,
+      "count_E": 0
+    },
+    {
+      "wtel_type": "tmpl",
+      "wtel_subtype": "מ:פסק",
+      "count_C": 0,
+      "count_D": 0,
+      "count_E": 516
+    },
+    {
+      "wtel_type": "tmpl",
+      "wtel_subtype": "מ:צינור",
+      "count_C": 0,
+      "count_D": 0,
+      "count_E": 56
+    },
+    {
+      "wtel_type": "tmpl",
+      "wtel_subtype": "מ:קו\"כ כתיב מילה חדה וקרי תרתין מילין",
+      "count_C": 0,
+      "count_D": 0,
+      "count_E": 1
+    },
+    {
+      "wtel_type": "tmpl",
+      "wtel_subtype": "מ:קו\"כ קרי שונה מהכתיב בשתי מילים",
+      "count_C": 0,
+      "count_D": 0,
+      "count_E": 2
+    },
+    {
+      "wtel_type": "tmpl",
+      "wtel_subtype": "מ:קישור בהערה",
+      "count_C": 0,
+      "count_D": 1,
+      "count_E": 21
+    },
+    {
+      "wtel_type": "tmpl",
+      "wtel_subtype": "מ:קישור פנימי בהערה",
+      "count_C": 0,
+      "count_D": 0,
+      "count_E": 3
+    },
+    {
+      "wtel_type": "tmpl",
+      "wtel_subtype": "מ:קמץ",
+      "count_C": 0,
+      "count_D": 0,
+      "count_E": 374
+    },
+    {
+      "wtel_type": "tmpl",
+      "wtel_subtype": "מ:רווח בתרי עשר בפסוק הראשון",
+      "count_C": 0,
+      "count_D": 12,
+      "count_E": 0
+    },
+    {
+      "wtel_type": "tmpl",
+      "wtel_subtype": "מ:רווח לספר בתהלים בפסוק הראשון",
+      "count_C": 0,
+      "count_D": 5,
+      "count_E": 0
+    },
+    {
+      "wtel_type": "tmpl",
+      "wtel_subtype": "מ:ששש",
+      "count_C": 0,
+      "count_D": 100,
+      "count_E": 228
+    },
+    {
+      "wtel_type": "tmpl",
+      "wtel_subtype": "מודגש",
+      "count_C": 0,
+      "count_D": 0,
+      "count_E": 19
+    },
+    {
+      "wtel_type": "tmpl",
+      "wtel_subtype": "נוסח",
+      "count_C": 35,
+      "count_D": 273,
+      "count_E": 3564
+    },
+    {
+      "wtel_type": "tmpl",
+      "wtel_subtype": "סס",
+      "count_C": 0,
+      "count_D": 1513,
+      "count_E": 53
+    },
+    {
+      "wtel_type": "tmpl",
+      "wtel_subtype": "ססס",
+      "count_C": 0,
+      "count_D": 324,
+      "count_E": 106
+    },
+    {
+      "wtel_type": "tmpl",
+      "wtel_subtype": "פפ",
+      "count_C": 0,
+      "count_D": 1543,
+      "count_E": 11
+    },
+    {
+      "wtel_type": "tmpl",
+      "wtel_subtype": "פפפ",
+      "count_C": 0,
+      "count_D": 3,
+      "count_E": 15
+    },
+    {
+      "wtel_type": "tmpl",
+      "wtel_subtype": "קו\"כ",
+      "count_C": 0,
+      "count_D": 0,
+      "count_E": 126
+    },
+    {
+      "wtel_type": "tmpl",
+      "wtel_subtype": "קו\"כ-אם",
+      "count_C": 0,
+      "count_D": 0,
+      "count_E": 130
+    },
+    {
+      "wtel_type": "tmpl",
+      "wtel_subtype": "קרי ולא כתיב",
+      "count_C": 0,
+      "count_D": 0,
+      "count_E": 9
+    },
+    {
+      "wtel_type": "tmpl",
+      "wtel_subtype": "ר0",
+      "count_C": 0,
+      "count_D": 0,
+      "count_E": 536
+    },
+    {
+      "wtel_type": "tmpl",
+      "wtel_subtype": "ר1",
+      "count_C": 0,
+      "count_D": 2,
+      "count_E": 4618
+    },
+    {
+      "wtel_type": "tmpl",
+      "wtel_subtype": "ר2",
+      "count_C": 0,
+      "count_D": 0,
+      "count_E": 568
+    },
+    {
+      "wtel_type": "tmpl",
+      "wtel_subtype": "ר3",
+      "count_C": 0,
+      "count_D": 0,
+      "count_E": 170
+    },
+    {
+      "wtel_type": "tmpl",
+      "wtel_subtype": "ר4",
+      "count_C": 0,
+      "count_D": 4270,
+      "count_E": 0
+    },
+    {
+      "wtel_type": "tmpl",
+      "wtel_subtype": "ש",
+      "count_C": 1,
+      "count_D": 14,
+      "count_E": 3260
+    }
+  ],
+  "stack_counts": [
+    {
+      "wtel_subtype": "כו\"ק",
+      "stack": "E",
+      "count": 882,
+      "count_non_nusach": 742,
+      "count_nusach": 140
+    },
+    {
+      "wtel_subtype": "כתיב ולא קרי",
+      "stack": "E",
+      "count": 8,
+      "count_non_nusach": 6,
+      "count_nusach": 2
+    },
+    {
+      "wtel_subtype": "מ:אות תלויה",
+      "stack": "E/מ:אות-מיוחדת-במילה",
+      "count": 4,
+      "count_non_nusach": 4,
+      "count_nusach": 0
+    },
+    {
+      "wtel_subtype": "מ:אות-ג",
+      "stack": "E/מ:אות-מיוחדת-במילה",
+      "count": 52,
+      "count_non_nusach": 0,
+      "count_nusach": 52
+    },
+    {
+      "wtel_subtype": "מ:אות-ג",
+      "stack": "E/מ:דחי/מ:אות-מיוחדת-במילה",
+      "count": 4,
+      "count_non_nusach": 0,
+      "count_nusach": 4
+    },
+    {
+      "wtel_subtype": "מ:אות-ג",
+      "stack": "E/מ:הערה-2/מ:אות-מיוחדת-במילה",
+      "count": 7,
+      "count_non_nusach": 4,
+      "count_nusach": 3
+    },
+    {
+      "wtel_subtype": "מ:אות-ג",
+      "stack": "E/מ:הערה/מ:אות-מיוחדת-במילה",
+      "count": 5,
+      "count_non_nusach": 5,
+      "count_nusach": 0
+    },
+    {
+      "wtel_subtype": "מ:אות-מיוחדת-במילה",
+      "stack": "E",
+      "count": 79,
+      "count_non_nusach": 4,
+      "count_nusach": 75
+    },
+    {
+      "wtel_subtype": "מ:אות-מיוחדת-במילה",
+      "stack": "E/כו\"ק",
+      "count": 1,
+      "count_non_nusach": 0,
+      "count_nusach": 1
+    },
+    {
+      "wtel_subtype": "מ:אות-מיוחדת-במילה",
+      "stack": "E/מ:דחי",
+      "count": 6,
+      "count_non_nusach": 0,
+      "count_nusach": 6
+    },
+    {
+      "wtel_subtype": "מ:אות-מיוחדת-במילה",
+      "stack": "E/מ:הערה",
+      "count": 6,
+      "count_non_nusach": 6,
+      "count_nusach": 0
+    },
+    {
+      "wtel_subtype": "מ:אות-מיוחדת-במילה",
+      "stack": "E/מ:הערה-2",
+      "count": 9,
+      "count_non_nusach": 4,
+      "count_nusach": 5
+    },
+    {
+      "wtel_subtype": "מ:אות-ק",
+      "stack": "E/כו\"ק/מ:אות-מיוחדת-במילה",
+      "count": 1,
+      "count_non_nusach": 0,
+      "count_nusach": 1
+    },
+    {
+      "wtel_subtype": "מ:אות-ק",
+      "stack": "E/מ:אות-מיוחדת-במילה",
+      "count": 25,
+      "count_non_nusach": 0,
+      "count_nusach": 25
+    },
+    {
+      "wtel_subtype": "מ:אות-ק",
+      "stack": "E/מ:דחי/מ:אות-מיוחדת-במילה",
+      "count": 2,
+      "count_non_nusach": 0,
+      "count_nusach": 2
+    },
+    {
+      "wtel_subtype": "מ:אות-ק",
+      "stack": "E/מ:הערה-2/מ:אות-מיוחדת-במילה",
+      "count": 2,
+      "count_non_nusach": 0,
+      "count_nusach": 2
+    },
+    {
+      "wtel_subtype": "מ:אות-ק",
+      "stack": "E/מ:הערה/מ:אות-מיוחדת-במילה",
+      "count": 1,
+      "count_non_nusach": 1,
+      "count_nusach": 0
+    },
+    {
+      "wtel_subtype": "מ:אין פרשה בתחילת פרק",
+      "stack": "D",
+      "count": 139,
+      "count_non_nusach": 138,
+      "count_nusach": 1
+    },
+    {
+      "wtel_subtype": "מ:אין פרשה בתחילת פרק בספרי אמ\"ת",
+      "stack": "D",
+      "count": 33,
+      "count_non_nusach": 32,
+      "count_nusach": 1
+    },
+    {
+      "wtel_subtype": "מ:אין רווח של פרשה בתחילת פרשת השבוע",
+      "stack": "D",
+      "count": 1,
+      "count_non_nusach": 1,
+      "count_nusach": 0
+    },
+    {
+      "wtel_subtype": "מ:דחי",
+      "stack": "E",
+      "count": 2287,
+      "count_non_nusach": 2250,
+      "count_nusach": 37
+    },
+    {
+      "wtel_subtype": "מ:דחי",
+      "stack": "E/כו\"ק",
+      "count": 7,
+      "count_non_nusach": 6,
+      "count_nusach": 1
+    },
+    {
+      "wtel_subtype": "מ:דחי",
+      "stack": "E/מ:קמץ",
+      "count": 14,
+      "count_non_nusach": 14,
+      "count_nusach": 0
+    },
+    {
+      "wtel_subtype": "מ:דחי",
+      "stack": "E/קו\"כ-אם",
+      "count": 4,
+      "count_non_nusach": 4,
+      "count_nusach": 0
+    },
+    {
+      "wtel_subtype": "מ:הערה",
+      "stack": "D",
+      "count": 4,
+      "count_non_nusach": 4,
+      "count_nusach": 0
+    },
+    {
+      "wtel_subtype": "מ:הערה",
+      "stack": "E",
+      "count": 27,
+      "count_non_nusach": 27,
+      "count_nusach": 0
+    },
+    {
+      "wtel_subtype": "מ:הערה-2",
+      "stack": "D",
+      "count": 4,
+      "count_non_nusach": 0,
+      "count_nusach": 4
+    },
+    {
+      "wtel_subtype": "מ:הערה-2",
+      "stack": "E",
+      "count": 27,
+      "count_non_nusach": 4,
+      "count_nusach": 23
+    },
+    {
+      "wtel_subtype": "מ:כו\"ק בין שני מקפים",
+      "stack": "E",
+      "count": 1,
+      "count_non_nusach": 0,
+      "count_nusach": 1
+    },
+    {
+      "wtel_subtype": "מ:כו\"ק כתיב מילה חדה וקרי תרתין מילין",
+      "stack": "E",
+      "count": 13,
+      "count_non_nusach": 12,
+      "count_nusach": 1
+    },
+    {
+      "wtel_subtype": "מ:כו\"ק כתיב מילה חדה וקרי תרתין מילין בין שני מקפים",
+      "stack": "E",
+      "count": 1,
+      "count_non_nusach": 0,
+      "count_nusach": 1
+    },
+    {
+      "wtel_subtype": "מ:כו\"ק כתיב תרתין מילין וקרי מילה חדה",
+      "stack": "E",
+      "count": 8,
+      "count_non_nusach": 5,
+      "count_nusach": 3
+    },
+    {
+      "wtel_subtype": "מ:כו\"ק קרי שונה מהכתיב בשתי מילים",
+      "stack": "E",
+      "count": 2,
+      "count_non_nusach": 0,
+      "count_nusach": 2
+    },
+    {
+      "wtel_subtype": "מ:כו\"ק של שלוש מילים בהערה אחת",
+      "stack": "E",
+      "count": 1,
+      "count_non_nusach": 0,
+      "count_nusach": 1
+    },
+    {
+      "wtel_subtype": "מ:כו\"ק של שתי מילים בהערה אחת",
+      "stack": "E",
+      "count": 8,
+      "count_non_nusach": 3,
+      "count_nusach": 5
+    },
+    {
+      "wtel_subtype": "מ:כפול",
+      "stack": "E",
+      "count": 34,
+      "count_non_nusach": 34,
+      "count_nusach": 0
+    },
+    {
+      "wtel_subtype": "מ:לגרמיה-2",
+      "stack": "E",
+      "count": 1800,
+      "count_non_nusach": 1723,
+      "count_nusach": 77
+    },
+    {
+      "wtel_subtype": "מ:לגרמיה-2",
+      "stack": "E/כו\"ק",
+      "count": 9,
+      "count_non_nusach": 9,
+      "count_nusach": 0
+    },
+    {
+      "wtel_subtype": "מ:לגרמיה-2",
+      "stack": "E/מ:אות-מיוחדת-במילה",
+      "count": 3,
+      "count_non_nusach": 0,
+      "count_nusach": 3
+    },
+    {
+      "wtel_subtype": "מ:לגרמיה-2",
+      "stack": "E/מ:אות-מיוחדת-במילה/מ:אות-ג",
+      "count": 1,
+      "count_non_nusach": 0,
+      "count_nusach": 1
+    },
+    {
+      "wtel_subtype": "מ:לגרמיה-2",
+      "stack": "E/מ:כו\"ק כתיב מילה חדה וקרי תרתין מילין",
+      "count": 1,
+      "count_non_nusach": 1,
+      "count_nusach": 0
+    },
+    {
+      "wtel_subtype": "מ:לגרמיה-2",
+      "stack": "E/מ:כפול",
+      "count": 14,
+      "count_non_nusach": 14,
+      "count_nusach": 0
+    },
+    {
+      "wtel_subtype": "מ:לגרמיה-2",
+      "stack": "E/קו\"כ",
+      "count": 1,
+      "count_non_nusach": 1,
+      "count_nusach": 0
+    },
+    {
+      "wtel_subtype": "מ:לגרמיה-2",
+      "stack": "E/קו\"כ-אם",
+      "count": 2,
+      "count_non_nusach": 2,
+      "count_nusach": 0
+    },
+    {
+      "wtel_subtype": "מ:מקף אפור",
+      "stack": "E",
+      "count": 114,
+      "count_non_nusach": 94,
+      "count_nusach": 20
+    },
+    {
+      "wtel_subtype": "מ:מקף אפור",
+      "stack": "E/מ:קמץ",
+      "count": 2,
+      "count_non_nusach": 0,
+      "count_nusach": 2
+    },
+    {
+      "wtel_subtype": "מ:נו\"ן הפוכה",
+      "stack": "E",
+      "count": 9,
+      "count_non_nusach": 7,
+      "count_nusach": 2
+    },
+    {
+      "wtel_subtype": "מ:ספר חדש",
+      "stack": "D",
+      "count": 24,
+      "count_non_nusach": 24,
+      "count_nusach": 0
+    },
+    {
+      "wtel_subtype": "מ:עלייה",
+      "stack": "C/מ:פסוק",
+      "count": 532,
+      "count_non_nusach": 521,
+      "count_nusach": 11
+    },
+    {
+      "wtel_subtype": "מ:פסוק",
+      "stack": "C",
+      "count": 895,
+      "count_non_nusach": 860,
+      "count_nusach": 35
+    },
+    {
+      "wtel_subtype": "מ:פסק",
+      "stack": "E",
+      "count": 503,
+      "count_non_nusach": 484,
+      "count_nusach": 19
+    },
+    {
+      "wtel_subtype": "מ:פסק",
+      "stack": "E/מ:כו\"ק כתיב מילה חדה וקרי תרתין מילין",
+      "count": 3,
+      "count_non_nusach": 2,
+      "count_nusach": 1
+    },
+    {
+      "wtel_subtype": "מ:פסק",
+      "stack": "E/מ:כו\"ק של שתי מילים בהערה אחת",
+      "count": 1,
+      "count_non_nusach": 0,
+      "count_nusach": 1
+    },
+    {
+      "wtel_subtype": "מ:פסק",
+      "stack": "E/מ:כפול",
+      "count": 7,
+      "count_non_nusach": 7,
+      "count_nusach": 0
+    },
+    {
+      "wtel_subtype": "מ:פסק",
+      "stack": "E/מ:כפול/נוסח",
+      "count": 1,
+      "count_non_nusach": 1,
+      "count_nusach": 0
+    },
+    {
+      "wtel_subtype": "מ:פסק",
+      "stack": "E/מ:קו\"כ כתיב מילה חדה וקרי תרתין מילין",
+      "count": 1,
+      "count_non_nusach": 0,
+      "count_nusach": 1
+    },
+    {
+      "wtel_subtype": "מ:צינור",
+      "stack": "E",
+      "count": 56,
+      "count_non_nusach": 54,
+      "count_nusach": 2
+    },
+    {
+      "wtel_subtype": "מ:קו\"כ כתיב מילה חדה וקרי תרתין מילין",
+      "stack": "E",
+      "count": 1,
+      "count_non_nusach": 0,
+      "count_nusach": 1
+    },
+    {
+      "wtel_subtype": "מ:קו\"כ קרי שונה מהכתיב בשתי מילים",
+      "stack": "E",
+      "count": 2,
+      "count_non_nusach": 0,
+      "count_nusach": 2
+    },
+    {
+      "wtel_subtype": "מ:קישור בהערה",
+      "stack": "D",
+      "count": 1,
+      "count_non_nusach": 0,
+      "count_nusach": 1
+    },
+    {
+      "wtel_subtype": "מ:קישור בהערה",
+      "stack": "E",
+      "count": 21,
+      "count_non_nusach": 0,
+      "count_nusach": 21
+    },
+    {
+      "wtel_subtype": "מ:קישור פנימי בהערה",
+      "stack": "E",
+      "count": 3,
+      "count_non_nusach": 0,
+      "count_nusach": 3
+    },
+    {
+      "wtel_subtype": "מ:קמץ",
+      "stack": "E",
+      "count": 357,
+      "count_non_nusach": 330,
+      "count_nusach": 27
+    },
+    {
+      "wtel_subtype": "מ:קמץ",
+      "stack": "E/כו\"ק",
+      "count": 10,
+      "count_non_nusach": 7,
+      "count_nusach": 3
+    },
+    {
+      "wtel_subtype": "מ:קמץ",
+      "stack": "E/מ:כפול",
+      "count": 4,
+      "count_non_nusach": 4,
+      "count_nusach": 0
+    },
+    {
+      "wtel_subtype": "מ:קמץ",
+      "stack": "E/מ:כפול/נוסח",
+      "count": 2,
+      "count_non_nusach": 2,
+      "count_nusach": 0
+    },
+    {
+      "wtel_subtype": "מ:קמץ",
+      "stack": "E/קו\"כ-אם",
+      "count": 1,
+      "count_non_nusach": 1,
+      "count_nusach": 0
+    },
+    {
+      "wtel_subtype": "מ:רווח בתרי עשר בפסוק הראשון",
+      "stack": "D",
+      "count": 12,
+      "count_non_nusach": 12,
+      "count_nusach": 0
+    },
+    {
+      "wtel_subtype": "מ:רווח לספר בתהלים בפסוק הראשון",
+      "stack": "D",
+      "count": 5,
+      "count_non_nusach": 5,
+      "count_nusach": 0
+    },
+    {
+      "wtel_subtype": "מ:ששש",
+      "stack": "D",
+      "count": 100,
+      "count_non_nusach": 100,
+      "count_nusach": 0
+    },
+    {
+      "wtel_subtype": "מ:ששש",
+      "stack": "E",
+      "count": 228,
+      "count_non_nusach": 228,
+      "count_nusach": 0
+    },
+    {
+      "wtel_subtype": "מודגש",
+      "stack": "E",
+      "count": 19,
+      "count_non_nusach": 0,
+      "count_nusach": 19
+    },
+    {
+      "wtel_subtype": "נוסח",
+      "stack": "C",
+      "count": 35,
+      "count_non_nusach": 35,
+      "count_nusach": 0
+    },
+    {
+      "wtel_subtype": "נוסח",
+      "stack": "D",
+      "count": 273,
+      "count_non_nusach": 273,
+      "count_nusach": 0
+    },
+    {
+      "wtel_subtype": "נוסח",
+      "stack": "E",
+      "count": 3522,
+      "count_non_nusach": 3522,
+      "count_nusach": 0
+    },
+    {
+      "wtel_subtype": "נוסח",
+      "stack": "E/מ:כפול",
+      "count": 42,
+      "count_non_nusach": 42,
+      "count_nusach": 0
+    },
+    {
+      "wtel_subtype": "סס",
+      "stack": "D",
+      "count": 1513,
+      "count_non_nusach": 1444,
+      "count_nusach": 69
+    },
+    {
+      "wtel_subtype": "סס",
+      "stack": "E",
+      "count": 35,
+      "count_non_nusach": 31,
+      "count_nusach": 4
+    },
+    {
+      "wtel_subtype": "סס",
+      "stack": "E/מ:כפול",
+      "count": 18,
+      "count_non_nusach": 18,
+      "count_nusach": 0
+    },
+    {
+      "wtel_subtype": "ססס",
+      "stack": "D",
+      "count": 324,
+      "count_non_nusach": 310,
+      "count_nusach": 14
+    },
+    {
+      "wtel_subtype": "ססס",
+      "stack": "E",
+      "count": 106,
+      "count_non_nusach": 103,
+      "count_nusach": 3
+    },
+    {
+      "wtel_subtype": "פפ",
+      "stack": "D",
+      "count": 1540,
+      "count_non_nusach": 1446,
+      "count_nusach": 94
+    },
+    {
+      "wtel_subtype": "פפ",
+      "stack": "D/מ:הערה-2",
+      "count": 3,
+      "count_non_nusach": 0,
+      "count_nusach": 3
+    },
+    {
+      "wtel_subtype": "פפ",
+      "stack": "E",
+      "count": 8,
+      "count_non_nusach": 4,
+      "count_nusach": 4
+    },
+    {
+      "wtel_subtype": "פפ",
+      "stack": "E/מ:כפול",
+      "count": 2,
+      "count_non_nusach": 2,
+      "count_nusach": 0
+    },
+    {
+      "wtel_subtype": "פפ",
+      "stack": "E/מ:כפול/נוסח",
+      "count": 1,
+      "count_non_nusach": 1,
+      "count_nusach": 0
+    },
+    {
+      "wtel_subtype": "פפפ",
+      "stack": "D",
+      "count": 3,
+      "count_non_nusach": 2,
+      "count_nusach": 1
+    },
+    {
+      "wtel_subtype": "פפפ",
+      "stack": "E",
+      "count": 15,
+      "count_non_nusach": 9,
+      "count_nusach": 6
+    },
+    {
+      "wtel_subtype": "קו\"כ",
+      "stack": "E",
+      "count": 126,
+      "count_non_nusach": 108,
+      "count_nusach": 18
+    },
+    {
+      "wtel_subtype": "קו\"כ-אם",
+      "stack": "E",
+      "count": 130,
+      "count_non_nusach": 125,
+      "count_nusach": 5
+    },
+    {
+      "wtel_subtype": "קרי ולא כתיב",
+      "stack": "E",
+      "count": 9,
+      "count_non_nusach": 3,
+      "count_nusach": 6
+    },
+    {
+      "wtel_subtype": "ר0",
+      "stack": "E",
+      "count": 536,
+      "count_non_nusach": 534,
+      "count_nusach": 2
+    },
+    {
+      "wtel_subtype": "ר1",
+      "stack": "D",
+      "count": 2,
+      "count_non_nusach": 0,
+      "count_nusach": 2
+    },
+    {
+      "wtel_subtype": "ר1",
+      "stack": "E",
+      "count": 4618,
+      "count_non_nusach": 4582,
+      "count_nusach": 36
+    },
+    {
+      "wtel_subtype": "ר2",
+      "stack": "E",
+      "count": 568,
+      "count_non_nusach": 568,
+      "count_nusach": 0
+    },
+    {
+      "wtel_subtype": "ר3",
+      "stack": "E",
+      "count": 170,
+      "count_non_nusach": 123,
+      "count_nusach": 47
+    },
+    {
+      "wtel_subtype": "ר4",
+      "stack": "D",
+      "count": 4270,
+      "count_non_nusach": 4232,
+      "count_nusach": 38
+    },
+    {
+      "wtel_subtype": "ש",
+      "stack": "C",
+      "count": 1,
+      "count_non_nusach": 0,
+      "count_nusach": 1
+    },
+    {
+      "wtel_subtype": "ש",
+      "stack": "D",
+      "count": 14,
+      "count_non_nusach": 0,
+      "count_nusach": 14
+    },
+    {
+      "wtel_subtype": "ש",
+      "stack": "E",
+      "count": 3202,
+      "count_non_nusach": 0,
+      "count_nusach": 3202
+    },
+    {
+      "wtel_subtype": "ש",
+      "stack": "E/מ:כפול/נוסח",
+      "count": 58,
+      "count_non_nusach": 58,
+      "count_nusach": 0
+    }
+  ],
+  "arg_counts": [
+    {
+      "wtel_subtype": "כו\"ק",
+      "arg_count": 2,
+      "count": 882,
+      "variations": 1
+    },
+    {
+      "wtel_subtype": "כתיב ולא קרי",
+      "arg_count": 2,
+      "count": 6,
+      "variations": 2
+    },
+    {
+      "wtel_subtype": "כתיב ולא קרי",
+      "arg_count": 3,
+      "count": 2,
+      "variations": 2
+    },
+    {
+      "wtel_subtype": "מ:אות תלויה",
+      "arg_count": 1,
+      "count": 4,
+      "variations": 1
+    },
+    {
+      "wtel_subtype": "מ:אות-ג",
+      "arg_count": 1,
+      "count": 68,
+      "variations": 1
+    },
+    {
+      "wtel_subtype": "מ:אות-מיוחדת-במילה",
+      "arg_count": 5,
+      "count": 101,
+      "variations": 1
+    },
+    {
+      "wtel_subtype": "מ:אות-ק",
+      "arg_count": 1,
+      "count": 31,
+      "variations": 1
+    },
+    {
+      "wtel_subtype": "מ:אין פרשה בתחילת פרק",
+      "arg_count": 0,
+      "count": 139,
+      "variations": 1
+    },
+    {
+      "wtel_subtype": "מ:אין פרשה בתחילת פרק בספרי אמ\"ת",
+      "arg_count": 0,
+      "count": 33,
+      "variations": 1
+    },
+    {
+      "wtel_subtype": "מ:אין רווח של פרשה בתחילת פרשת השבוע",
+      "arg_count": 0,
+      "count": 1,
+      "variations": 1
+    },
+    {
+      "wtel_subtype": "מ:דחי",
+      "arg_count": 2,
+      "count": 2312,
+      "variations": 1
+    },
+    {
+      "wtel_subtype": "מ:הערה",
+      "arg_count": 2,
+      "count": 31,
+      "variations": 1
+    },
+    {
+      "wtel_subtype": "מ:הערה-2",
+      "arg_count": 3,
+      "count": 31,
+      "variations": 1
+    },
+    {
+      "wtel_subtype": "מ:כו\"ק בין שני מקפים",
+      "arg_count": 2,
+      "count": 1,
+      "variations": 1
+    },
+    {
+      "wtel_subtype": "מ:כו\"ק כתיב מילה חדה וקרי תרתין מילין",
+      "arg_count": 2,
+      "count": 13,
+      "variations": 1
+    },
+    {
+      "wtel_subtype": "מ:כו\"ק כתיב מילה חדה וקרי תרתין מילין בין שני מקפים",
+      "arg_count": 2,
+      "count": 1,
+      "variations": 1
+    },
+    {
+      "wtel_subtype": "מ:כו\"ק כתיב תרתין מילין וקרי מילה חדה",
+      "arg_count": 2,
+      "count": 8,
+      "variations": 1
+    },
+    {
+      "wtel_subtype": "מ:כו\"ק קרי שונה מהכתיב בשתי מילים",
+      "arg_count": 2,
+      "count": 2,
+      "variations": 1
+    },
+    {
+      "wtel_subtype": "מ:כו\"ק של שלוש מילים בהערה אחת",
+      "arg_count": 2,
+      "count": 1,
+      "variations": 1
+    },
+    {
+      "wtel_subtype": "מ:כו\"ק של שתי מילים בהערה אחת",
+      "arg_count": 2,
+      "count": 8,
+      "variations": 1
+    },
+    {
+      "wtel_subtype": "מ:כפול",
+      "arg_count": 3,
+      "count": 34,
+      "variations": 1
+    },
+    {
+      "wtel_subtype": "מ:לגרמיה-2",
+      "arg_count": 0,
+      "count": 1831,
+      "variations": 1
+    },
+    {
+      "wtel_subtype": "מ:מקף אפור",
+      "arg_count": 0,
+      "count": 116,
+      "variations": 1
+    },
+    {
+      "wtel_subtype": "מ:נו\"ן הפוכה",
+      "arg_count": 1,
+      "count": 9,
+      "variations": 1
+    },
+    {
+      "wtel_subtype": "מ:ספר חדש",
+      "arg_count": 1,
+      "count": 24,
+      "variations": 1
+    },
+    {
+      "wtel_subtype": "מ:עלייה",
+      "arg_count": 3,
+      "count": 364,
+      "variations": 5
+    },
+    {
+      "wtel_subtype": "מ:עלייה",
+      "arg_count": 4,
+      "count": 92,
+      "variations": 5
+    },
+    {
+      "wtel_subtype": "מ:עלייה",
+      "arg_count": 5,
+      "count": 53,
+      "variations": 5
+    },
+    {
+      "wtel_subtype": "מ:עלייה",
+      "arg_count": 6,
+      "count": 15,
+      "variations": 5
+    },
+    {
+      "wtel_subtype": "מ:עלייה",
+      "arg_count": 7,
+      "count": 8,
+      "variations": 5
+    },
+    {
+      "wtel_subtype": "מ:פסוק",
+      "arg_count": 3,
+      "count": 6,
+      "variations": 3
+    },
+    {
+      "wtel_subtype": "מ:פסוק",
+      "arg_count": 4,
+      "count": 778,
+      "variations": 3
+    },
+    {
+      "wtel_subtype": "מ:פסוק",
+      "arg_count": 5,
+      "count": 111,
+      "variations": 3
+    },
+    {
+      "wtel_subtype": "מ:פסק",
+      "arg_count": 0,
+      "count": 516,
+      "variations": 1
+    },
+    {
+      "wtel_subtype": "מ:צינור",
+      "arg_count": 2,
+      "count": 56,
+      "variations": 1
+    },
+    {
+      "wtel_subtype": "מ:קו\"כ כתיב מילה חדה וקרי תרתין מילין",
+      "arg_count": 2,
+      "count": 1,
+      "variations": 1
+    },
+    {
+      "wtel_subtype": "מ:קו\"כ קרי שונה מהכתיב בשתי מילים",
+      "arg_count": 2,
+      "count": 2,
+      "variations": 1
+    },
+    {
+      "wtel_subtype": "מ:קישור בהערה",
+      "arg_count": 2,
+      "count": 22,
+      "variations": 1
+    },
+    {
+      "wtel_subtype": "מ:קישור פנימי בהערה",
+      "arg_count": 2,
+      "count": 3,
+      "variations": 1
+    },
+    {
+      "wtel_subtype": "מ:קמץ",
+      "arg_count": 2,
+      "count": 374,
+      "variations": 1
+    },
+    {
+      "wtel_subtype": "מ:רווח בתרי עשר בפסוק הראשון",
+      "arg_count": 1,
+      "count": 12,
+      "variations": 1
+    },
+    {
+      "wtel_subtype": "מ:רווח לספר בתהלים בפסוק הראשון",
+      "arg_count": 1,
+      "count": 5,
+      "variations": 1
+    },
+    {
+      "wtel_subtype": "מ:ששש",
+      "arg_count": 0,
+      "count": 328,
+      "variations": 1
+    },
+    {
+      "wtel_subtype": "מודגש",
+      "arg_count": 1,
+      "count": 19,
+      "variations": 1
+    },
+    {
+      "wtel_subtype": "נוסח",
+      "arg_count": 2,
+      "count": 3872,
+      "variations": 1
+    },
+    {
+      "wtel_subtype": "סס",
+      "arg_count": 0,
+      "count": 1525,
+      "variations": 2
+    },
+    {
+      "wtel_subtype": "סס",
+      "arg_count": 1,
+      "count": 41,
+      "variations": 2
+    },
+    {
+      "wtel_subtype": "ססס",
+      "arg_count": 0,
+      "count": 404,
+      "variations": 2
+    },
+    {
+      "wtel_subtype": "ססס",
+      "arg_count": 1,
+      "count": 26,
+      "variations": 2
+    },
+    {
+      "wtel_subtype": "פפ",
+      "arg_count": 0,
+      "count": 1545,
+      "variations": 2
+    },
+    {
+      "wtel_subtype": "פפ",
+      "arg_count": 1,
+      "count": 9,
+      "variations": 2
+    },
+    {
+      "wtel_subtype": "פפפ",
+      "arg_count": 0,
+      "count": 3,
+      "variations": 2
+    },
+    {
+      "wtel_subtype": "פפפ",
+      "arg_count": 1,
+      "count": 15,
+      "variations": 2
+    },
+    {
+      "wtel_subtype": "קו\"כ",
+      "arg_count": 2,
+      "count": 126,
+      "variations": 1
+    },
+    {
+      "wtel_subtype": "קו\"כ-אם",
+      "arg_count": 2,
+      "count": 130,
+      "variations": 1
+    },
+    {
+      "wtel_subtype": "קרי ולא כתיב",
+      "arg_count": 2,
+      "count": 9,
+      "variations": 1
+    },
+    {
+      "wtel_subtype": "ר0",
+      "arg_count": 0,
+      "count": 536,
+      "variations": 1
+    },
+    {
+      "wtel_subtype": "ר1",
+      "arg_count": 0,
+      "count": 4620,
+      "variations": 1
+    },
+    {
+      "wtel_subtype": "ר2",
+      "arg_count": 0,
+      "count": 568,
+      "variations": 1
+    },
+    {
+      "wtel_subtype": "ר3",
+      "arg_count": 0,
+      "count": 170,
+      "variations": 1
+    },
+    {
+      "wtel_subtype": "ר4",
+      "arg_count": 0,
+      "count": 4270,
+      "variations": 1
+    },
+    {
+      "wtel_subtype": "ש",
+      "arg_count": 0,
+      "count": 3275,
+      "variations": 1
+    }
+  ]
+}

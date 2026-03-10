@@ -2,7 +2,6 @@
 
 import json
 import collections
-from itertools import starmap
 
 from pytmpl_survey import column_d_0_process_all_mpasuq_calls as cdp
 from pytmpl_survey import column_d_0_store_the_mpasuq_call as cds
@@ -151,13 +150,33 @@ def _keyfn(dic):
 
 def _flatten_stack_counts(accum):
     dic = accum["stack_counts"]
-    records = list(starmap(_flatten_stack_counts_item, dic.items()))
-    return _sort_dics_by_values(records)
+    grouped = {}
+    for key, count in dic.items():
+        wtel_subtype, stack_str = key
+        base_stack, is_nusach = _strip_nusach(stack_str)
+        group_key = (wtel_subtype, base_stack)
+        if group_key not in grouped:
+            grouped[group_key] = {
+                "wtel_subtype": wtel_subtype,
+                "stack": base_stack,
+                "count": 0,
+                "count_non_nusach": 0,
+                "count_nusach": 0,
+            }
+        rec = grouped[group_key]
+        if is_nusach:
+            rec["count_nusach"] = count
+        else:
+            rec["count_non_nusach"] = count
+        rec["count"] = rec["count_non_nusach"] + rec["count_nusach"]
+    return _sort_dics_by_values(list(grouped.values()))
 
 
-def _flatten_stack_counts_item(key, count):
-    rec = {"wtel_subtype": key[0], "stack": key[1], "count": count}
-    return rec
+def _strip_nusach(stack_str):
+    parts = stack_str.split("/")
+    if len(parts) >= 2 and parts[1] == "נוסח":
+        return "/".join(parts[:1] + parts[2:]), True
+    return stack_str, False
 
 
 def _flatten_arg_counts(accum):
@@ -237,7 +256,7 @@ def survey():
     }
     for bk24id in tbn.ALL_BK24_IDS:
         _do_a_book24(bk24id, accum)
-    return {
+    result = {
         "mpasuq": cdp.process_all_mpasuq_calls(accum["mpasuq"]),
         "naked_sam2_pe2_pe3": accum["naked_sam2_pe2_pe3"],
         "empty_col_c": accum["empty_col_c"],
@@ -245,3 +264,4 @@ def survey():
         "stack_counts": _flatten_stack_counts(accum),
         "arg_counts": _flatten_arg_counts(accum),
     }
+    return result, accum["stack_counts"]

@@ -193,6 +193,10 @@ When asked to open an HTML file in the browser, prefer opening it directly via t
 
 The owner of this repository is **bdenckla**. When making GitHub MCP queries (e.g. listing issues, creating PRs), use `bdenckla` as the owner. If in doubt, confirm by running `git remote -v` and extracting the owner from the remote URL.
 
+## Graphviz
+
+Graphviz is installed but not on the PATH. Look for it at `%ProgramFiles%\Graphviz\bin\` (e.g. `dot.exe`). The `survey_dot.py` module handles this fallback automatically.
+
 ## Local Sibling Repositories
 
 Most of the owner's GitHub repos are cloned locally as siblings of this repo — i.e. at `../repo-name` (relative to this repo's root). When you need to read or search files in another repo (e.g. `MAM-parsed`, `MAM-simple`, `MAM-OSIS`), use relative paths like `../MAM-parsed/...` rather than hard-coding an absolute path. This keeps instructions portable across machines.
