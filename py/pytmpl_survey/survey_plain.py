@@ -124,8 +124,21 @@ def _record_pseudo_verse(accum, bscv, minirow):
 
 def _flatten_col_counts(accum):
     dic = accum["column_counts"]
-    records = list(starmap(_flatten_col_counts_item, dic.items()))
-    return _sort_dics_by_values(records)
+    grouped = {}
+    for key, count in dic.items():
+        wtel_type, wtel_subtype, pseudoverse_category, column_letter = key
+        group_key = (wtel_type, wtel_subtype, pseudoverse_category)
+        if group_key not in grouped:
+            grouped[group_key] = {
+                "wtel_type": wtel_type,
+                "wtel_subtype": wtel_subtype,
+                "pseudoverse_category": pseudoverse_category,
+                "count_C": 0,
+                "count_D": 0,
+                "count_E": 0,
+            }
+        grouped[group_key][f"count_{column_letter}"] = count
+    return _sort_dics_by_values(list(grouped.values()))
 
 
 def _sort_dics_by_values(dics):
@@ -140,17 +153,6 @@ def _flatten_stack_counts(accum):
     dic = accum["stack_counts"]
     records = list(starmap(_flatten_stack_counts_item, dic.items()))
     return _sort_dics_by_values(records)
-
-
-def _flatten_col_counts_item(key, count):
-    rec = {
-        "wtel_type": key[0],
-        "wtel_subtype": key[1],
-        "pseudoverse_category": key[2],
-        "column_letter": key[3],
-        "count": count,
-    }
-    return rec
 
 
 def _flatten_stack_counts_item(key, count):

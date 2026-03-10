@@ -106,8 +106,20 @@ def _record_pseudo_verse(accum, bscv, minirow):
 
 def _flatten_col_counts(accum):
     dic = accum["column_counts"]
-    records = list(starmap(_flatten_col_counts_item, dic.items()))
-    return _sort_dics_by_values(records)
+    grouped = {}
+    for key, count in dic.items():
+        wtel_type, wtel_subtype, column_letter = key
+        group_key = (wtel_type, wtel_subtype)
+        if group_key not in grouped:
+            grouped[group_key] = {
+                "wtel_type": wtel_type,
+                "wtel_subtype": wtel_subtype,
+                "count_C": 0,
+                "count_D": 0,
+                "count_E": 0,
+            }
+        grouped[group_key][f"count_{column_letter}"] = count
+    return _sort_dics_by_values(list(grouped.values()))
 
 
 def _sort_dics_by_values(dics):
@@ -116,16 +128,6 @@ def _sort_dics_by_values(dics):
 
 def _keyfn(dic):
     return tuple(dic.values())
-
-
-def _flatten_col_counts_item(key, count):
-    rec = {
-        "wtel_type": key[0],
-        "wtel_subtype": key[1],
-        "column_letter": key[2],
-        "count": count,
-    }
-    return rec
 
 
 def _flatten_stack_counts(accum):
@@ -170,14 +172,7 @@ def _do_a_book39(book39, accum):
             minirow = _MINIROW(*psv_contents)
             bscv = bk24na, sub_bkna, chnu, psv_psn
             _record_pseudo_verse(accum, bscv, minirow)
-            _record_empty_col_c(accum["empty_col_c"], bscv, minirow.CP)
             cds_plus.store_the_mpasuq_call(accum["mpasuq"], bscv, minirow.CP)
-
-
-def _record_empty_col_c(accum_ecc, bscv, minirow_cp):
-    bscv_dic = _make_bscv_dic(bscv)
-    if not minirow_cp:
-        accum_ecc.append(bscv_dic)
 
 
 def _make_bscv_dic(bscv_tuple):
@@ -196,23 +191,28 @@ def _do_a_book24(bk24id, accum):
         _do_a_book39(book39, accum)
 
 
-def survey():
+def survey(plain_mpasuq):
     """Survey the use of templates in MAM plus. Return the result dict."""
     accum = {
         "mpasuq": [],
         "naked_sam2_pe2_pe3": [],
-        "empty_col_c": [],
         "column_counts": collections.defaultdict(int),
         "stack_counts": collections.defaultdict(int),
         "arg_counts": collections.defaultdict(int),
     }
     for bk24id in tbn.ALL_BK24_IDS:
         _do_a_book24(bk24id, accum)
+    plus_mpasuq = cdp.process_all_mpasuq_calls(accum["mpasuq"])
     return {
-        "mpasuq": cdp.process_all_mpasuq_calls(accum["mpasuq"]),
+        "mpasuq": _mpasuq_dedup(plus_mpasuq, plain_mpasuq),
         "naked_sam2_pe2_pe3": accum["naked_sam2_pe2_pe3"],
-        "empty_col_c": accum["empty_col_c"],
         "column_counts": _flatten_col_counts(accum),
         "stack_counts": _flatten_stack_counts(accum),
         "arg_counts": _flatten_arg_counts(accum),
     }
+
+
+def _mpasuq_dedup(plus_mpasuq, plain_mpasuq):
+    if plus_mpasuq == plain_mpasuq:
+        return "same as plain"
+    return plus_mpasuq
