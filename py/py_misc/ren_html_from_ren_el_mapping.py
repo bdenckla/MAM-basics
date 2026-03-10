@@ -1,4 +1,4 @@
-""" Exports HT_TAC_FOR_RT_FOR_MAM_WITH_DOC & related """
+"""Exports HT_TAC_FOR_RT_FOR_MAM_WITH_DOC & related"""
 
 from typing import Union
 
@@ -90,6 +90,5 @@ HT_TAC_FOR_RT_FOR_KETIV_QERE_FOI = {
     **_dic_of_c_to_tc("span", _HT_SPANS_FOR_KETIV_QERE_FOI),
 }
 HT_TAC_FOR_RT_FOR_RARE_TMPLS_FOI = {
-    # **_HT_TAC_FOR_RT_FOR_SPECIAL_SPACES,
     **_dic_of_c_to_tc("span", _HT_SPANS_FOR_RARE_TMPLS_FOI),
 }
