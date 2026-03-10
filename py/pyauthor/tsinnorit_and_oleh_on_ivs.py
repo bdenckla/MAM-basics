@@ -1,4 +1,4 @@
-""" Exports main """
+"""Exports main"""
 
 from pycmn.my_utils import sl_map
 from py_misc import my_html
@@ -64,7 +64,7 @@ _CONT_PARA_02 = [
     " Do they ever appear on an $IVS?",
 ]
 _CONT_PARA_03A = [
-    "The answer, is yes, but rarely.",
+    "The answer is yes, but rarely.",
     " In the Hebrew Bible dataset called $MAM",
     " (Miqra According to the Masorah),",
     " there are 21 cases where either $tsinnorit or $oleh",

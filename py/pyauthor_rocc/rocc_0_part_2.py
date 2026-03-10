@@ -15,7 +15,6 @@ from pyauthor_rocc import rocc_221_njaf as njaf
 from pyauthor_rocc import rocc_223_fhyv as fhyv
 from pyauthor_rocc import rocc_227_qrb_qrvb as qrb_qrvb
 
-
 _Y_WORD_WHERE = "word where $CTR differs from both $MAM and $JP:"
 _X303_CPARA = [
     ["First let’s look at the words in which $CTR differs"],
@@ -48,7 +47,7 @@ _X306_CONT_BLOCKQUOTE = """The text of the Tanach is based on
 the 1895 Warsaw edition of the Mikraot
 Gedolot which has been carefully compared with other versions such as the
 Jerusalem Koren Tanach. In some instances (involving mainly Ken
-[sic; Kere intented?]
+[sic; Kere intended?]
 and Ketiv
 and Chaser and Malay) the text has been modified to conform to the Koren
 edition. However, the responsibility for such decisions is solely that of
@@ -141,7 +140,11 @@ _X316B_CPARA = [
     [" This error may stem from mistranscribing the floating $azla in $JP."],
     [" It makes more sense to assign the floating $azla to $lamed than to $vav."],
     [" The only analogy I find in all of Tanakh"],
-    [" is $munax on $vav in Exodus 36:38 ", author.hbo_es("וְאֶת־וָ֣וֵיהֶ֔ם"), "$thinsp."],
+    [
+        " is $munax on $vav in Exodus 36:38 ",
+        author.hbo_es("וְאֶת־וָ֣וֵיהֶ֔ם"),
+        "$thinsp.",
+    ],
     [" The analogy is distant because $munax is not the primary accent"],
     [" on that word."],
 ]

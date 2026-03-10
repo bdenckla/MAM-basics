@@ -1,4 +1,4 @@
-""" Exports main """
+"""Exports main"""
 
 from py_misc import my_html
 from pycmn import my_utils
@@ -130,8 +130,14 @@ _Y_081_KCT = {
 _X_081_TABLE = _my_join(_X_060_CTABLE, _Y_081_KCT)
 _X_090_CPARA = "Here is $CTR (shown with $MAM for comparison):"
 _Y_091_CTR = {
-    "Pr 8:34": ("אַ֥שְֽׁרֵי אָדָם֘", ru.eq("$MAM (modulo $MAM’s special $maqaf$thinsp)")),
-    "Ps 1:1": ("אַֽשְֽׁרֵ֥י הָאִ֗ישׁ", "$gaya on $shin awkward: bad injection from $KCT?"),
+    "Pr 8:34": (
+        "אַ֥שְֽׁרֵי אָדָם֘",
+        ru.eq("$MAM (modulo $MAM’s special $maqaf$thinsp)"),
+    ),
+    "Ps 1:1": (
+        "אַֽשְֽׁרֵ֥י הָאִ֗ישׁ",
+        "$gaya on $shin awkward: bad injection from $KCT?",
+    ),
     "Ps 32:2": ("אַֽשְֽׁרֵ֥י אָדָ֗ם", "same as above"),
     "Ps 40:5": ("אַֽשְֽׁרֵ֥י הַגֶּ֗בֶר", "same as above"),
     "Ps 98:9": ("לִֽפְ֥נֵי־יְהֹוָ֗ה", "error: $merkha on $shewa"),
@@ -150,7 +156,7 @@ _X_100_CPARA = [
     [
         " The rather strange uses and abuses of Unicode in $CTR are covered in the parent"
     ],
-    [" ", rocc_0.anchor()],
+    [" ", rocc_0.anchor(), ".)"],
 ]
 _CD_LRL = ("ltr", "rtl", "ltr")
 _CD_RRL = ("rtl", "rtl", "ltr")

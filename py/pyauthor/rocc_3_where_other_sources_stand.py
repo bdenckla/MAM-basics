@@ -1,4 +1,4 @@
-""" Exports main """
+"""Exports main"""
 
 from py_misc import my_html
 from pyauthor_util import author
@@ -52,7 +52,7 @@ X_02_LIST_ITEMS = [
 _X_03_CPARA = [
     ["This document covers ", my_html.emphasis("less")],
     [" than its parent document in the following way:"],
-    [" it sometimes ignores $CTR or $JP where their contents is either:"],
+    [" it sometimes ignores $CTR or $JP where their contents are either:"],
 ]
 _X_04_LIST_ITEMS = [
     ["Clearly in error."],

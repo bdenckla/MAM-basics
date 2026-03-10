@@ -1,4 +1,4 @@
-""" Exports main """
+"""Exports main"""
 
 from py_misc import my_html
 from pyauthor_util import author
@@ -32,7 +32,7 @@ _CONT_PARA_04A1 = [
     " $merkha or $mahapakh.",
     " $Oleh is always paired with $yored.",
     " ($Yored looks the same as $merkha,",
-    " although their roles quite different.)",
+    " although their roles are quite different.)",
     " These partner accents ($merkha, $mahapakh, and $yored)",
     " behave like normal accents, which among other things means",
     " they never appear on an initial vocal $shewa.",

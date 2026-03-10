@@ -4,10 +4,9 @@ from pyauthor import tsinnorit_and_oleh_on_ivs as ivs
 from pyauthor import tsinnorit_in_psalm_32v5 as tip_32v5
 from pyauthor_rocc import rocc_util as ru
 
-
 _CPARA = [
     "Now let’s look at ועוני in Psalm 32:5 (ignoring $CTR).",
-    "This is the word that originally sparked my interest in Psalm 32 in $CTR.",
+    " This is the word that originally sparked my interest in Psalm 32 in $CTR.",
     [" ", author.paren(["See my ", tip_32v5.anchor()])],
 ]
 _IMG_220_PATH = "img/rocc Judaica Press Psalm 32v5 ועוני.png"

@@ -1,4 +1,4 @@
-""" Exports body """
+"""Exports body"""
 
 from py_misc.my_html import (
     unordered_list,
@@ -85,14 +85,14 @@ def _section_kq(heading):
     part2_subhead = heading_level_3(("Ketiv velo qere",))
     part2_para1 = para(
         (
-            "This is where the ketiv word has no qere counterpart. These "
+            "This is where the ketiv word has no qere counterpart. There "
             "are only 8 cases of ketiv velo qere. Below are two examples. "
             "The first is from Ezekiel 48:16.",
         )
     )
     part2_para2 = para(
         (
-            "The second is from 2 Samuel 13:33. It is one of the two "
+            "The second is from 2Sam 13:33. It is one of the two "
             "special cases of ketiv velo qere where a maqaf is appended, "
             "since the ketiv velo qere appears in the middle of a maqaf "
             "compound.",
@@ -337,7 +337,7 @@ def _section_slh(heading):
         (
             "Special letters are indirectly present in MapM via notes. "
             "(Thus, we could have considered this feature present "
-            "rather than absent, but, we opted to categorize it as absent.) "
+            "rather than absent, but we opted to categorize it as absent.) "
             "We call these notes on special letters “slh notes”."
             "",
         )
@@ -398,7 +398,7 @@ def _section_slh(heading):
 def _sik_slh_word_note_list():
     licont11 = "Part 1 of 3 is the word itself. In this example, it is “וגיש”."
     licont12 = (
-        "Part 2 of 3 is word with special letters shown "
+        "Part 2 of 3 is the word with special letters shown "
         "and regular letters replaced by periods. "
         "Maqaf marks are also shown. "
         "In this "
@@ -466,8 +466,8 @@ def _section_impmaq(heading):
     the_img_br1 = _img_br("png/impmaq-absent.png")
     the_para2 = para(
         (
-            "Note that the maqaf in MAM-WS is gray. This notes that this "
-            "maqaf is supplied by MAM, although no such maqaf present "
+            "Note that the maqaf in MAM-WS is gray. This indicates that this "
+            "maqaf is supplied by MAM, although no such maqaf is present "
             "in the manuscript MAM is based on (the Aleppo Codex).",
         )
     )
