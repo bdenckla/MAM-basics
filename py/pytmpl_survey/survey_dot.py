@@ -208,33 +208,9 @@ def _focused_edges(all_edges, target):
     }
 
 
-def _edges_from_chains_involving(stack_counts, target):
-    """Extract all edges from stack_counts entries where target appears in the chain.
-
-    Other _DISCARDED members are treated as leaf nodes (edges to them are
-    kept but not followed further).
-    """
-    stop_at = _DISCARDED - {target}
-    edges = {}
-    for (wtel_subtype, stack_str), count in stack_counts.items():
-        parts = stack_str.split("/")
-        chain = parts + [wtel_subtype]
-        if target not in chain:
-            continue
-        # Extract all consecutive edges in the chain, but stop at other discarded
-        for i in range(len(chain) - 1):
-            caller = chain[i]
-            callee = chain[i + 1]
-            edge = (caller, callee)
-            edges[edge] = edges.get(edge, 0) + count
-            if callee in stop_at:
-                break
-    return edges
-
-
 _FOCUSED_TARGETS = [
-    ("מ:כפול", "kaful", True),
-    ("נוסח", "nusach", False),
+    ("מ:כפול", "kaful", False),
+    ("נוסח", "nusach", True),
 ]
 
 
@@ -257,20 +233,25 @@ def _identity_groups(edges):
     return {node: [node] for node in all_nodes - _COLUMN_LETTERS}
 
 
-def write_focused_dot_files(stack_counts, stem, deeply_discard=False):
-    """Write per-target focused .dot/.svg call graphs."""
+def write_focused_dot_files(stack_counts, stem, deeply_discard=False, svg_stem=None):
+    """Write per-target focused .dot/.svg call graphs.
+
+    If svg_stem is given, SVG files are written relative to that stem
+    instead of the dot stem.
+    """
     if deeply_discard:
         stack_counts = _filter_deeply_discarded(stack_counts)
-    for target, slug, follow_all in _FOCUSED_TARGETS:
-        if follow_all:
-            edges = _edges_from_chains_involving(stack_counts, target)
-            groups = _identity_groups(edges)
-        else:
-            edges = _edges_from_stack_counts(stack_counts, discarded=set())
-            edges = _focused_edges(edges, target)
+    if svg_stem is None:
+        svg_stem = stem
+    for target, slug, collapse in _FOCUSED_TARGETS:
+        edges = _edges_from_stack_counts(stack_counts, discarded=set())
+        edges = _focused_edges(edges, target)
+        if collapse:
             edges, groups = _collapse_equivalent_nodes(edges)
+        else:
+            groups = _identity_groups(edges)
         dot_path = f"{stem}-{slug}-call-graph.dot"
-        svg_path = f"{stem}-{slug}-call-graph.svg"
+        svg_path = f"{svg_stem}-{slug}-call-graph.svg"
         with open(dot_path, "w", encoding="utf-8") as fp:
             _write_dot(edges, groups, fp, note=None)
         render_svg(dot_path, svg_path)
