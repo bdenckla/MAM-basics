@@ -5,22 +5,34 @@ import shutil
 import subprocess
 
 _COLUMN_LETTERS = {"C", "D", "E"}
+_DEEPLY_DISCARDED = {"מ:הערה"}
+_DISCARDED = {"מ:כפול", "נוסח", "ש"}
 _DOT_FALLBACK = os.path.join(
     os.environ.get("ProgramFiles", r"C:\Program Files"), "Graphviz", "bin", "dot.exe"
 )
 
 
-def _edges_from_stack_counts(stack_counts):
+def _filter_deeply_discarded(stack_counts):
+    """Remove entries where any deeply-discarded template appears in the chain."""
+    return {
+        key: count
+        for key, count in stack_counts.items()
+        if key[0] not in _DEEPLY_DISCARDED
+        and not any(p in _DEEPLY_DISCARDED for p in key[1].split("/"))
+    }
+
+
+def _edges_from_stack_counts(stack_counts, discarded=None):
     """Extract (caller, callee) -> count from raw stack_counts defaultdict."""
+    if discarded is None:
+        discarded = _DISCARDED
     edges = {}
     for key, count in stack_counts.items():
         wtel_subtype, stack_str = key
-        parts = stack_str.split("/")
-        if len(parts) >= 2 and parts[1] == "נוסח":
-            parts = parts[:1] + parts[2:]
+        parts = [p for p in stack_str.split("/") if p not in discarded]
         caller = parts[-1]
         callee = wtel_subtype
-        if callee == "נוסח":
+        if callee in discarded:
             continue
         edge = (caller, callee)
         edges[edge] = edges.get(edge, 0) + count
@@ -116,12 +128,16 @@ def _node_attrs(label, tooltip):
     return " [" + ", ".join(parts) + "]"
 
 
-def _write_dot(edges, groups, fp):
+_DEFAULT_NOTE = object()
+
+
+def _write_dot(edges, groups, fp, note=_DEFAULT_NOTE):
     # Build abbreviation map for all non-column nodes
     all_names = set()
     for caller, callee in edges:
         all_names.add(caller)
         all_names.add(callee)
+    col_nodes = _COLUMN_LETTERS & all_names
     all_names -= _COLUMN_LETTERS
     abbrevs = _build_abbreviations(all_names)
 
@@ -131,11 +147,12 @@ def _write_dot(edges, groups, fp):
     fp.write('    edge [fontname="Helvetica", fontsize=9];\n')
     fp.write("\n")
     # Column nodes styled distinctly
-    fp.write("    // Column nodes\n")
-    fp.write("    node [shape=box, style=bold];\n")
-    for col in sorted(_COLUMN_LETTERS):
-        fp.write(f"    {_dot_quoted(col)};\n")
-    fp.write("\n")
+    if col_nodes:
+        fp.write("    // Column nodes\n")
+        fp.write("    node [shape=box, style=bold];\n")
+        for col in sorted(col_nodes):
+            fp.write(f"    {_dot_quoted(col)};\n")
+        fp.write("\n")
     # Template nodes (with labels/tooltips as needed)
     fp.write("    // Template nodes\n")
     fp.write('    node [shape=box, style=""];\n')
@@ -148,9 +165,14 @@ def _write_dot(edges, groups, fp):
             fp.write(f"    {_dot_quoted(rep)}{_node_attrs(abbrevs[rep], rep)};\n")
     fp.write("\n")
     # Note
-    fp.write("    // Note\n")
-    fp.write('    graph [label="נוסח has been contracted", labelloc=b, fontsize=10];\n')
-    fp.write("\n")
+    if note is _DEFAULT_NOTE:
+        note_text = ", ".join(sorted(_DISCARDED)) + " have been discarded"
+    else:
+        note_text = note
+    if note_text:
+        fp.write("    // Note\n")
+        fp.write(f'    graph [label="{note_text}", labelloc=b, fontsize=10];\n')
+        fp.write("\n")
     # Edges sorted for stable output
     fp.write("    // Edges\n")
     for (caller, callee), count in sorted(edges.items()):
@@ -161,12 +183,97 @@ def _write_dot(edges, groups, fp):
     fp.write("}\n")
 
 
-def write_dot_file(stack_counts, out_path):
+def _focused_edges(all_edges, target):
+    """Keep only edges on call chains involving target, plus one level past it."""
+    predecessors = {}
+    successors = {}
+    for caller, callee in all_edges:
+        predecessors.setdefault(callee, set()).add(caller)
+        predecessors.setdefault(caller, set())
+        successors.setdefault(caller, set()).add(callee)
+        successors.setdefault(callee, set())
+    # Find all nodes that can reach target (reverse BFS)
+    before = {target}
+    frontier = [target]
+    while frontier:
+        node = frontier.pop()
+        for pred in predecessors.get(node, ()):
+            if pred not in before:
+                before.add(pred)
+                frontier.append(pred)
+    return {
+        edge: count
+        for edge, count in all_edges.items()
+        if (edge[0] in before and edge[1] in before) or edge[0] == target
+    }
+
+
+def _edges_from_chains_involving(stack_counts, target):
+    """Extract all edges from stack_counts entries where target appears in the chain.
+
+    Other _DISCARDED members are treated as leaf nodes (edges to them are
+    kept but not followed further).
+    """
+    stop_at = _DISCARDED - {target}
+    edges = {}
+    for (wtel_subtype, stack_str), count in stack_counts.items():
+        parts = stack_str.split("/")
+        chain = parts + [wtel_subtype]
+        if target not in chain:
+            continue
+        # Extract all consecutive edges in the chain, but stop at other discarded
+        for i in range(len(chain) - 1):
+            caller = chain[i]
+            callee = chain[i + 1]
+            edge = (caller, callee)
+            edges[edge] = edges.get(edge, 0) + count
+            if callee in stop_at:
+                break
+    return edges
+
+
+_FOCUSED_TARGETS = [
+    ("מ:כפול", "kaful", True),
+    ("נוסח", "nusach", False),
+]
+
+
+def write_dot_file(stack_counts, out_path, deeply_discard=False):
     """Write a .dot call graph from raw stack_counts accumulator."""
+    if deeply_discard:
+        stack_counts = _filter_deeply_discarded(stack_counts)
     edges = _edges_from_stack_counts(stack_counts)
     edges, groups = _collapse_equivalent_nodes(edges)
     with open(out_path, "w", encoding="utf-8") as fp:
         _write_dot(edges, groups, fp)
+
+
+def _identity_groups(edges):
+    """Return trivial groups (each node maps to itself) — no collapsing."""
+    all_nodes = set()
+    for caller, callee in edges:
+        all_nodes.add(caller)
+        all_nodes.add(callee)
+    return {node: [node] for node in all_nodes - _COLUMN_LETTERS}
+
+
+def write_focused_dot_files(stack_counts, stem, deeply_discard=False):
+    """Write per-target focused .dot/.svg call graphs."""
+    if deeply_discard:
+        stack_counts = _filter_deeply_discarded(stack_counts)
+    for target, slug, follow_all in _FOCUSED_TARGETS:
+        if follow_all:
+            edges = _edges_from_chains_involving(stack_counts, target)
+            groups = _identity_groups(edges)
+        else:
+            edges = _edges_from_stack_counts(stack_counts, discarded=set())
+            edges = _focused_edges(edges, target)
+            edges, groups = _collapse_equivalent_nodes(edges)
+        dot_path = f"{stem}-{slug}-call-graph.dot"
+        svg_path = f"{stem}-{slug}-call-graph.svg"
+        with open(dot_path, "w", encoding="utf-8") as fp:
+            _write_dot(edges, groups, fp, note=None)
+        render_svg(dot_path, svg_path)
 
 
 def _find_dot():

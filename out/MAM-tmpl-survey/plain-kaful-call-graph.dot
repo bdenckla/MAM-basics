@@ -1,0 +1,26 @@
+digraph template_call_graph {
+    rankdir=LR;
+    node [fontname="SBL Hebrew,Helvetica", fontsize=12];
+    edge [fontname="Helvetica", fontsize=9];
+
+    // Column nodes
+    node [shape=box, style=bold];
+    "E";
+
+    // Template nodes
+    node [shape=box, style=""];
+    "מ:טעם ומתג באות אחת" [label="מ:טעם … אחת", tooltip="מ:טעם ומתג באות אחת"];
+    "שני טעמים באות אחת קמץ-תחתון-פתח-עליון" [label="שני … קמץ-תחתון-פתח-עליון", tooltip="שני טעמים באות אחת קמץ-תחתון-פתח-עליון"];
+
+    // Edges
+    "E" -> "מ:כפול" [label="201"];
+    "מ:כפול" -> "מ:טעם ומתג באות אחת" [label="1"];
+    "מ:כפול" -> "מ:לגרמיה-2" [label="14"];
+    "מ:כפול" -> "מ:פסק" [label="7"];
+    "מ:כפול" -> "מ:קמץ" [label="4"];
+    "מ:כפול" -> "נוסח" [label="119"];
+    "מ:כפול" -> "סס" [label="18"];
+    "מ:כפול" -> "פפ" [label="2"];
+    "מ:כפול" -> "שני טעמים באות אחת קמץ-תחתון-פתח-עליון" [label="2"];
+    "שני טעמים באות אחת קמץ-תחתון-פתח-עליון" -> "מ:טעם" [label="1"];
+}

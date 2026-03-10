@@ -1,0 +1,21 @@
+digraph template_call_graph {
+    rankdir=LR;
+    node [fontname="SBL Hebrew,Helvetica", fontsize=12];
+    edge [fontname="Helvetica", fontsize=9];
+
+    // Column nodes
+    node [shape=box, style=bold];
+    "E";
+
+    // Template nodes
+    node [shape=box, style=""];
+
+    // Edges
+    "E" -> "מ:כפול" [label="183"];
+    "מ:כפול" -> "מ:לגרמיה-2" [label="14"];
+    "מ:כפול" -> "מ:פסק" [label="7"];
+    "מ:כפול" -> "מ:קמץ" [label="4"];
+    "מ:כפול" -> "נוסח" [label="104"];
+    "מ:כפול" -> "סס" [label="18"];
+    "מ:כפול" -> "פפ" [label="2"];
+}
