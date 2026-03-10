@@ -224,7 +224,7 @@ def _do_a_book24(bk24id, accum):
         _do_a_book39(book39, accum)
 
 
-def main():
+def almost_main():
     """Survey the use of templates in MAM."""
     accum = {
         "mpasuq": [],
@@ -246,6 +246,11 @@ def main():
     }
     out_path = "out/MAM-tmpl-survey.json"
     file_io.json_dump_to_file_path(rflat, out_path)
+
+
+def main():
+    """Survey the use of templates in MAM."""
+    almost_main()
 
 
 if __name__ == "__main__":

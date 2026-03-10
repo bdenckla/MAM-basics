@@ -6,13 +6,14 @@ from pycmn import bib_locales as tbn
 from pycmn import file_io
 
 
-def main(argparse=True):
+def almost_main(bkids=None):
     """
     Read in the 39 per-book JSON files from the Wikisource download and output
     them to two increasingly-parsed formats.
     """
+    if bkids is None:
+        bkids = tbn.ALL_BK39_IDS
     begin_end = "per-book output (for 39 books)"
-    bkids = my_utils_fm.get_bk39_tuple_from_argparse() if argparse else tbn.ALL_BK39_IDS
     my_utils_fm.show_progress_g(__file__, "BEGIN", begin_end)
     for bkid in bkids:
         wsf1_book, wsf2_book = wsin.get_bk_in_both_fmts(_IN_PATH, bkid)
@@ -29,6 +30,15 @@ def _write_outfile(out_path, bkid, book):
 
 
 _IN_PATH = "in/mam-ws"
+
+
+def main():
+    """
+    Read in the 39 per-book JSON files from the Wikisource download and output
+    them to two increasingly-parsed formats.
+    """
+    bkids = my_utils_fm.get_bk39_tuple_from_argparse()
+    almost_main(bkids)
 
 
 if __name__ == "__main__":

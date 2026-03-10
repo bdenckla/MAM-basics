@@ -7,7 +7,7 @@ _PY_DIR = os.path.dirname(os.path.abspath(__file__))
 _REPO_DIR = os.path.dirname(_PY_DIR)
 
 
-def main():
+def almost_main():
     """
     Copy files to the MAM-simple repo.
     """
@@ -56,6 +56,13 @@ PYFILE_RELPATHS = (
     "pysefaria/sef_cmn.py",
     "pysefaria/write_utils_sef_or_ajf.py",
 )
+
+
+def main():
+    """
+    Copy files to the MAM-simple repo.
+    """
+    almost_main()
 
 
 if __name__ == "__main__":

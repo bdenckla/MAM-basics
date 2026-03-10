@@ -17,7 +17,7 @@ from pyauthor import rocc_4_mid_word_ga3ya_with_shewa
 from pyauthor import gray_maqaf
 
 
-def main():
+def almost_main():
     # XXX TODO: rm *.html (to avoid stale files when output names change)
     docs_dir = "../MAM-with-doc/docs"
     top_dir_misc = f"{docs_dir}/misc"
@@ -43,6 +43,10 @@ def main():
     rocc_3_where_other_sources_stand.gen_html_file(tdm_ch)
     rocc_4_mid_word_ga3ya_with_shewa.gen_html_file(tdm_ch)
     gray_maqaf.gen_html_file(tdm_ch_wide)
+
+
+def main():
+    almost_main()
 
 
 if __name__ == "__main__":

@@ -106,7 +106,7 @@ def _dump_helper(all_diffs, key_for_xxx):
     file_io.json_dump_to_file_path(xxx_diffs, out_path_xxx)
 
 
-def main():
+def almost_main():
     """Compute differences between MAM Wikisource & MAM Google Sheet"""
     auto_edits.self_test()
     all_diffs = red.diffs_struct_mk()
@@ -126,6 +126,11 @@ _OUT_PATHS = {
     "diffs_list": "out/diff_mamws_mamgo.json",
     "srrps_list": "../mamgo-auto-edits/diff_mamws_mamgo-auto-edits.json",
 }
+
+
+def main():
+    """Compute differences between MAM Wikisource & MAM Google Sheet"""
+    almost_main()
 
 
 if __name__ == "__main__":

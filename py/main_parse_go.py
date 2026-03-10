@@ -70,7 +70,7 @@ def _do_light_books_in_bk24(outfolder, bk24id, light_books):
     return {"plus": out_path_plus, "plain": out_path_plain}
 
 
-def main():
+def almost_main():
     """
     For each of the 6 CSVs (one per section), this program parses the
     Wikitext inside the CSV and outputs that to a JSON file.
@@ -82,6 +82,14 @@ def main():
         for out_paths_for_bk24 in out_paths_for_section:
             all_plus_paths.append(out_paths_for_bk24["plus"])
     return all_plus_paths
+
+
+def main():
+    """
+    For each of the 6 CSVs (one per section), this program parses the
+    Wikitext inside the CSV and outputs that to a JSON file.
+    """
+    return almost_main()
 
 
 if __name__ == "__main__":

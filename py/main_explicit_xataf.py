@@ -127,7 +127,7 @@ def _compute_counts(mappings):
     return counts
 
 
-def main():
+def almost_main():
     sys.stdout.reconfigure(encoding="utf-8")
     books_mpp = plus.read_parsed_plus_bk39s()
     all_mappings = []
@@ -173,6 +173,10 @@ def main():
     counts_str = json.dumps(counts, ensure_ascii=False, indent=2)
     print(f"  Counts: {counts_str}")
     extras.write_extras(all_extras)
+
+
+def main():
+    almost_main()
 
 
 if __name__ == "__main__":

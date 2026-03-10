@@ -4,7 +4,6 @@ sequence. Useful for a full rebuild from scratch.
 """
 
 import argparse
-import sys
 
 import main_diff_gogo
 import main_diff_wsgo
@@ -73,8 +72,7 @@ def main():
         help="Skip steps before STEP and resume from there. Choices: "
         + ", ".join(_STEP_NAMES),
     )
-    args, remaining = parser.parse_known_args()
-    sys.argv = [sys.argv[0]] + remaining
+    args = parser.parse_args()
     resuming = args.resume_from is not None
     for mod, _comment in _STEPS:
         if resuming:
@@ -83,7 +81,7 @@ def main():
             else:
                 print(f"Skipping {mod.__name__}")
                 continue
-        mod.main()
+        mod.almost_main()
     #
     # Download of ws (Wikisource) can be accomplished by running:
     #    main_download_mam_fr_wikisource.py

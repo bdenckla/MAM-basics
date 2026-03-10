@@ -5,7 +5,7 @@ from pysefaria import mam4sef_or_ajf
 from pysefaria import mam4ajf_handlers
 
 
-def main():
+def almost_main():
     """Create the AJF MAM from the XML MAM."""
     variant = {
         "variant-vtrad": tbn.VT_BHS,
@@ -15,6 +15,11 @@ def main():
         "variant-include-abcants": True,
     }
     mam4sef_or_ajf.main_helper(variant)
+
+
+def main():
+    """Create the AJF MAM from the XML MAM."""
+    almost_main()
 
 
 if __name__ == "__main__":

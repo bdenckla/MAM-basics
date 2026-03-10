@@ -112,7 +112,7 @@ def _do_one_section_of_tanakh(secid, mam_infos):
     return sec_diffs, mce_dics_ac
 
 
-def main():
+def almost_main():
     """
     Computes differences between two versions of the MAM CSVs.
     (The MAM CSVs are exported from the MAM Google Sheet.)
@@ -140,6 +140,13 @@ def main():
         red.diffs_struct_extend(all_diffs, sec_diffs)
         _write_mce_dics_ac(secid, mce_dics_ac, mam_infos)
     _write_diffs(all_diffs["diffs_list"], mam_infos)
+
+
+def main():
+    """
+    Computes differences between two versions of the MAM CSVs.
+    """
+    almost_main()
 
 
 if __name__ == "__main__":

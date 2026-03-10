@@ -44,7 +44,7 @@ def main():
     if not args.skip_download:
         for secid in tbn.ALL_SECIDS:
             _download_section(secid)
-    all_plus_paths = main_parse_go.main()
+    all_plus_paths = main_parse_go.almost_main()
     errors = check_mpp(all_plus_paths)
     if errors:
         print(f"check_mpp found {len(errors)} error(s):")

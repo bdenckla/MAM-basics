@@ -6,6 +6,7 @@ import lxml.etree as lxml_etree
 
 from py_misc import my_utils_for_mainish as my_utils_fm
 from py_misc import my_html
+from pycmn import bib_locales as tbn
 from py_misc import two_col_css_styles as tcstyles
 from py_misc import osis_book_abbrevs
 from pycmn import my_utils
@@ -117,14 +118,21 @@ def _write_index_dot_html():
     my_html.write_html_to_file(body_contents, write_ctx)
 
 
-def main():
+def almost_main(bkids=None):
     """Create MAM-OSIS from MAM-XML."""
+    if bkids is None:
+        bkids = tbn.ALL_BK39_IDS
     _write_index_dot_html()
-    bkids = my_utils_fm.get_bk39_tuple_from_argparse()
     bkgs = osis_book_abbrevs.bk24_bkgs(bkids)
     proots = tuple(map(_do_one_book_group, bkgs))
     header = _read_header()
     _write_osis(header, proots)
+
+
+def main():
+    """Create MAM-OSIS from MAM-XML."""
+    bkids = my_utils_fm.get_bk39_tuple_from_argparse()
+    almost_main(bkids)
 
 
 _NS_URL_FOR_XSI = "http://www.w3.org/2001/XMLSchema-instance"

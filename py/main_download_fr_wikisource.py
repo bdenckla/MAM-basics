@@ -54,7 +54,7 @@ def main():
     book_plans = wsplan.get_book_plans(args.book39, args.section6)
     for book_plan in book_plans:
         _download_book(book_plan, _OUT_PATH)
-    main_parse_ws.main(argparse=False)
+    main_parse_ws.almost_main()
 
 
 _OUT_PATH = "in/mam-ws"

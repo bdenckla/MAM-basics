@@ -40,11 +40,11 @@ from pycmn import read_books_from_mam_parsed_plus as plus
 from pycmn import bib_locales as tbn
 
 
-def _do_wikitext_features_of_interest(clargs, books_mpp, all_fois):
-    fois_funs = _fois_funs_for_wt(clargs.foi)
+def _do_wikitext_features_of_interest(foi, single_threaded, books_mpp, all_fois):
+    fois_funs = _fois_funs_for_wt(foi)
     the_arg_triple = [(fois_funs, books_mpp[bkid], bkid) for bkid in tbn.ALL_BK39_IDS]
     out_for_all_bks = {}
-    if clargs.single_threaded:
+    if single_threaded:
         for bkid, out_for_this_bk in map(find_wt_fois_for_1_bk, the_arg_triple):
             out_for_all_bks[bkid] = out_for_this_bk
     else:
@@ -63,9 +63,9 @@ def _fois_funs_for_wt(clargs_foi):
     return _WIKITEXT_FOIS_FNS
 
 
-def _make_intermediates(clargs, books_mpp):  # clargs: command-line args
+def _make_intermediates(foi, single_threaded, books_mpp):
     all_fois = fct.make_empty_all_fois()
-    _do_wikitext_features_of_interest(clargs, books_mpp, all_fois)
+    _do_wikitext_features_of_interest(foi, single_threaded, books_mpp, all_fois)
     return all_fois
 
 
@@ -92,6 +92,13 @@ _WIKITEXT_CLARGS = list(_WIKITEXT_FOIS_FUN_FOR_CLARG.keys())
 _WIKITEXT_FOIS_FNS = list(_WIKITEXT_FOIS_FUN_FOR_CLARG.values())
 
 
+def almost_main(foi=None, single_threaded=False):
+    """Collect features of interest from MAM."""
+    books_mpp = plus.read_parsed_plus_bk39s()
+    all_fois = _make_intermediates(foi, single_threaded, books_mpp)
+    foi_finals.write(foi, all_fois)
+
+
 def main():
     """Collect features of interest from MAM."""
     parser = argparse.ArgumentParser()
@@ -99,9 +106,7 @@ def main():
     parser.add_argument("--foi", choices=foi_choices)
     parser.add_argument("--single-threaded", action="store_true")
     clargs = parser.parse_args()
-    books_mpp = plus.read_parsed_plus_bk39s()
-    all_fois = _make_intermediates(clargs, books_mpp)
-    foi_finals.write(clargs.foi, all_fois)
+    almost_main(foi=clargs.foi, single_threaded=clargs.single_threaded)
 
 
 if __name__ == "__main__":

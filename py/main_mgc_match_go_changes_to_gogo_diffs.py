@@ -32,7 +32,7 @@ def _dump_out_rows(out_rows):
     file_io.json_dump_to_file_path(out_rows, out_path)
 
 
-def main():
+def almost_main():
     """
     Tries to match (join) the rows of the "changes" tab of Google Sheet
     with the rows of Go-Go diffs.
@@ -48,6 +48,14 @@ def main():
     #
     out_rows = mgc_join.join(multi_dic_of_diffs, multi_dic_of_cles)
     _dump_out_rows(out_rows)
+
+
+def main():
+    """
+    Tries to match (join) the rows of the "changes" tab of Google Sheet
+    with the rows of Go-Go diffs.
+    """
+    almost_main()
 
 
 if __name__ == "__main__":

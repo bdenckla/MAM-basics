@@ -89,13 +89,14 @@ def _show_progress(variant, bkg_name):
     my_utils_fm.show_progress_g(__file__, *rest)
 
 
-def main():
+def almost_main(bkids=None):
     """
     Make a simple but incomplete extract of MAM in XML and JSON formats.
     The XML format is not OSIS, but is informed by OSIS.
     The JSON format mirrors the XML structure.
     """
-    bkids = my_utils_fm.get_bk39_tuple_from_argparse()
+    if bkids is None:
+        bkids = tbn.ALL_BK39_IDS
     books_mpp = plus.read_parsed_plus_bk39s(bkids)
     bkgs = osis_book_abbrevs.bk24_bkgs(bkids)
     survey_for_all_bkgs = rts.make()
@@ -105,6 +106,16 @@ def main():
             survey_for_one_bkg = _do_one_book_group(bkg, books_mpp, variant)
             survey_for_all_bkgs = rts.add(survey_for_all_bkgs, survey_for_one_bkg)
     xml_render.handle_survey_results(bkids, survey_for_all_bkgs)
+
+
+def main():
+    """
+    Make a simple but incomplete extract of MAM in XML and JSON formats.
+    The XML format is not OSIS, but is informed by OSIS.
+    The JSON format mirrors the XML structure.
+    """
+    bkids = my_utils_fm.get_bk39_tuple_from_argparse()
+    almost_main(bkids)
 
 
 if __name__ == "__main__":

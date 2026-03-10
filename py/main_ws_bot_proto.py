@@ -14,7 +14,7 @@ from pycmn.my_utils import dv_map
 from pycmn.my_utils import dkv_map
 
 
-def main():
+def almost_main():
     """
     Prototypes the bot by using local file I/O rather than server I/O.
     """
@@ -52,6 +52,13 @@ def _splitlines(book_pair):
 def _fmt_2(book_pair):
     out_cif2, _big_str = book_pair
     return out_cif2
+
+
+def main():
+    """
+    Prototypes the bot by using local file I/O rather than server I/O.
+    """
+    almost_main()
 
 
 if __name__ == "__main__":

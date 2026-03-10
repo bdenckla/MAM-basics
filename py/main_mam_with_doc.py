@@ -44,10 +44,11 @@ def _get_out_paths(bkid):
     return path_for_main, path_for_bido
 
 
-def main():
+def almost_main(bkids=None):
     """Create a version of MAM intended for deployment to
     MAM-with-doc public GitHub repo"""
-    bkids = my_utils_fm.get_bk39_tuple_from_argparse()
+    if bkids is None:
+        bkids = tbn.ALL_BK39_IDS
     books_mpp = plus.read_parsed_plus_bk39s(bkids)
     edition = "MAM with doc"
     css_href = "two_col_style.css"
@@ -60,6 +61,13 @@ def main():
         survey_for_one_bk = mwdwb.write_book(ecb, books_mpp, _get_out_paths(bkid))
         survey_for_all_bks = rts.add(survey_for_all_bks, survey_for_one_bk)
     _handle_survey_results(bkids, survey_for_all_bks)
+
+
+def main():
+    """Create a version of MAM intended for deployment to
+    MAM-with-doc public GitHub repo"""
+    bkids = my_utils_fm.get_bk39_tuple_from_argparse()
+    almost_main(bkids)
 
 
 if __name__ == "__main__":
