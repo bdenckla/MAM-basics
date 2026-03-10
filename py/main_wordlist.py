@@ -1,4 +1,4 @@
-"""Generate a JSON list of the qere (alternate reading) words in MAM."""
+"""Generate a JSON list of the qere (read-aloud) words in MAM."""
 
 from pycmn import file_io
 from pycmn import read_books_from_mam_parsed_plus as plus

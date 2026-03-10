@@ -1,4 +1,4 @@
-"""Create the AJF (Academic JSON Format) MAM variant from the XML MAM."""
+"""Create the AJF MAM variant (similar to the Sefaria variant) from the XML MAM."""
 
 from pycmn import bib_locales as tbn
 from pysefaria import mam4sef_or_ajf

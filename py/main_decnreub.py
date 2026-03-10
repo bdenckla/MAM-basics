@@ -1,9 +1,8 @@
 """
-Write dual-cantillation (Declension of Reuben) data to JSON.
+Write dual-cantillation (Decalogues and Reuben) data to JSON.
 
 Reads MAM-parsed-plus and records, for each verse that has it, the
-dual-cantillation information — i.e. the alternate cantillation tradition
-represented by the Reuben passage (Genesis 35:22 / 1 Chronicles 5:1).
+dual-cantillation information.
 """
 
 from pydecnreub.decnreub import do_one_book

@@ -1,5 +1,5 @@
 """
-Compare CTR (Codex Theodori Reinach / a Wikisource manuscript transcription)
+Compare CTR (Complete Tanach with Rashi)
 verse data against MAM verse data and report differences.
 """
 
