@@ -203,7 +203,7 @@ Most of the owner's GitHub repos are cloned locally as siblings of this repo —
 
 ## Navigating MAM-parsed plus (MPP) JSON
 
-See [mpp-navigation.md](mpp-navigation.md) for a quick-reference guide to the MPP JSON structure (file naming, verse lookup by chapter:verse, template format). Full upstream docs live at `../MAM-parsed/doc/reading-mam-parsed-plus.md`.
+See [mpp-navigation.md](mpp-navigation.md) for a quick-reference guide to the MPP JSON structure (file naming, verse lookup by chapter:verse, template format). Full upstream docs live at `../MAM-parsed/doc-under-readme/reading-mam-parsed-plus.md`.
 
 ## Terminology: "Varika"
 

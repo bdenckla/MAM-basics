@@ -10,7 +10,7 @@ from pycmn import file_io
 
 _OUT_DIR = "out/MAM-tmpl-survey"
 _XLSX_DIR = f"{_OUT_DIR}/.novc"
-_SVG_DIR = "../MAM-parsed/doc"
+_SVG_DIR = "../MAM-parsed/docs"
 
 
 def _write_outputs(result, raw_stack_counts, stem, deeply_discard=False, svg_stem=None):

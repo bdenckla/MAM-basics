@@ -1,6 +1,6 @@
 # Navigating MAM-parsed plus (MPP) JSON
 
-Full documentation lives at `../MAM-parsed/doc/reading-mam-parsed-plus.md`.
+Full documentation lives at `../MAM-parsed/doc-under-readme/reading-mam-parsed-plus.md`.
 
 ## File naming
 
