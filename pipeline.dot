@@ -1,57 +1,108 @@
 digraph mam_pipeline {
     rankdir=LR;
-    node [fontname="Helvetica", fontsize=11];
+    node [fontname="Helvetica", fontsize=10];
     edge [fontname="Helvetica", fontsize=9];
 
     // ── Data stores ──
     node [shape=cylinder];
-    ds_go    [label="../MAM-parsed/plus/"];
-    ds_ws    [label="in/mam-ws\n(Wikisource HTML)"];
-    ds_fodoc [label="../MAM-with-doc/docs/foi/"];
+    ds_go_csv    [label="in/mam-go/\n(Google CSV)"];
+    ds_parsed_plus  [label="../MAM-parsed/plus/"];
+    ds_parsed_plain [label="../MAM-parsed/plain/"];
+    ds_ws        [label="in/mam-ws/\n(Wikisource JSON)"];
+    ds_simple    [label="../MAM-simple/out/"];
+    ds_with_doc  [label="../MAM-with-doc/docs/"];
+    ds_sefaria   [label="../MAM-for-Sefaria/out/"];
+    ds_osis      [label="../MAM-OSIS/"];
+    ds_out       [label="out/\n(local outputs)"];
+    ds_mamgo_auto [label="../mamgo-auto-edits/"];
 
     // ── External prerequisites (not part of _STEPS) ──
     node [shape=box, style=dashed, color=gray, fontcolor=gray];
     download_go  [label="main_download_fr_google"];
     download_ws  [label="main_download_fr_wikisource"];
+    download_sef [label="main_download_fr_sefaria"];
 
     // ── Pipeline steps ──
     node [shape=box, style="", color="", fontcolor=""];
-
-    // steps with no ordering constraints
-    mam_with_doc [label="main_mam_with_doc"];
-    decnreub     [label="main_decnreub"];
-    multimark    [label="main_multimark"];
-    wordlist     [label="main_wordlist"];
-    explicit_xataf [label="main_explicit_xataf"];
-    diff_gogo    [label="main_diff_gogo"];
-    gen_docs     [label="main_gen_misc_authored_english_documents"];
-    mam_xml_copy [label="main_mam_xml_copy_py_files"];
-    mgc          [label="main_mgc_match_go_changes_to_gogo_diffs"];
-
-    // steps with ordering constraints
     parse_go     [label="main_parse_go"];
     foi          [label="main_foi_features_of_interest"];
+    mam_with_doc [label="main_mam_with_doc"];
     tmpl_survey  [label="main_tmpl_survey"];
     mam_simple   [label="main_mam_simple"];
     mam4sef      [label="main_mam4sef"];
     mam4ajf      [label="main_mam4ajf"];
     osis         [label="main_osis"];
+    decnreub     [label="main_decnreub"];
+    multimark    [label="main_multimark"];
+    wordlist     [label="main_wordlist"];
+    explicit_xataf [label="main_explicit_xataf"];
     diff_wsgo    [label="main_diff_wsgo"];
+    diff_gogo    [label="main_diff_gogo"];
+    diff_ctr     [label="main_diff_ctr_vs_mam"];
     parse_ws     [label="main_parse_ws"];
     ws_bot_proto [label="main_ws_bot_proto"];
+    ws_bot       [label="main_ws_bot\n(live edits)"];
+    gen_docs     [label="main_gen_misc_authored_english_documents"];
+    mam_xml_copy [label="main_mam_xml_copy_py_files"];
+    mgc          [label="main_mgc_match_go_changes_to_gogo_diffs"];
+    osis_split   [label="main_osis_split_mapm"];
 
-    // ── Edges: data-store flows (confirmed by reading code) ──
-    download_go  -> parse_go    [color=gray];
-    parse_go     -> ds_go;
-    ds_go        -> foi;
-    foi          -> ds_fodoc;
-    ds_go        -> tmpl_survey;
-    ds_go        -> mam_simple;
-    mam_simple   -> mam4sef;
-    mam_simple   -> mam4ajf;
-    mam_simple   -> osis;
+    // ── Edges ──
+
+    // Google pipeline
+    download_go  -> ds_go_csv   [color=gray];
+    ds_go_csv    -> parse_go;
+    parse_go     -> ds_parsed_plus;
+    parse_go     -> ds_parsed_plain;
+
+    // MAM-parsed consumers
+    ds_parsed_plus  -> foi;
+    ds_parsed_plus  -> mam_with_doc;
+    ds_parsed_plus  -> mam_simple;
+    ds_parsed_plus  -> decnreub;
+    ds_parsed_plus  -> multimark;
+    ds_parsed_plus  -> wordlist;
+    ds_parsed_plus  -> explicit_xataf;
+    ds_parsed_plus  -> diff_ctr;
+    ds_parsed_plain -> tmpl_survey;
+    ds_parsed_plain -> diff_wsgo;
+
+    // MAM-with-doc outputs
+    foi          -> ds_with_doc;
+    mam_with_doc -> ds_with_doc;
+    gen_docs     -> ds_with_doc;
+
+    // MAM-simple pipeline
+    mam_simple   -> ds_simple;
+    ds_simple    -> mam4sef;
+    ds_simple    -> mam4ajf;
+    ds_simple    -> osis;
+    mam4sef      -> ds_sefaria;
+    mam4ajf      -> ds_sefaria;
+    osis         -> ds_osis;
+    osis_split   -> ds_osis;
+
+    // Local out/ outputs
+    tmpl_survey  -> ds_out;
+    decnreub     -> ds_out;
+    multimark    -> ds_out;
+    wordlist     -> ds_out;
+    explicit_xataf -> ds_out;
+    diff_wsgo    -> ds_out;
+    diff_wsgo    -> ds_mamgo_auto;
+    diff_gogo    -> ds_out;
+    diff_ctr     -> ds_out;
+    parse_ws     -> ds_out;
+    ws_bot_proto -> ds_out;
+    mgc          -> ds_out;
+
+    // Wikisource pipeline
     download_ws  -> ds_ws       [color=gray];
     ds_ws        -> diff_wsgo;
     ds_ws        -> parse_ws;
     ds_ws        -> ws_bot_proto;
+    ws_bot       -> ds_ws       [style=dashed, label="writes live\nthen re-downloads"];
+
+    // Sefaria download (standalone)
+    download_sef -> ds_out      [color=gray];
 }

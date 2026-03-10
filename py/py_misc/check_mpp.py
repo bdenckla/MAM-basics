@@ -2,7 +2,7 @@
 
 import json
 
-from py.pycmn import ws_tmpl2
+from pycmn import ws_tmpl2
 from pycmn import my_utils
 from pycmn import uni_denorm as ud
 
