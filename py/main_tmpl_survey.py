@@ -8,18 +8,20 @@ from pytmpl_survey import survey_plus
 from pytmpl_survey import survey_xlsx
 from pycmn import file_io
 
+_OUT_DIR = "out/MAM-tmpl-survey"
+_XLSX_DIR = f"{_OUT_DIR}/.novc"
+
 
 def _write_outputs(result, raw_stack_counts, stem):
     os.makedirs(os.path.dirname(stem), exist_ok=True)
     file_io.json_dump_to_file_path(result, f"{stem}.json")
-    survey_xlsx.write_xlsx(result, f"{stem}.xlsx")
+    xlsx_stem = f"{_XLSX_DIR}/{os.path.basename(stem)}"
+    os.makedirs(_XLSX_DIR, exist_ok=True)
+    survey_xlsx.write_xlsx(result, f"{xlsx_stem}.xlsx")
     dot_path = f"{stem}-call-graph.dot"
     svg_path = f"{stem}-call-graph.svg"
     survey_dot.write_dot_file(raw_stack_counts, dot_path)
     survey_dot.render_svg(dot_path, svg_path)
-
-
-_OUT_DIR = "out/MAM-tmpl-survey"
 
 
 def almost_main():
