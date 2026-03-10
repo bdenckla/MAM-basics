@@ -1,11 +1,14 @@
 """
-Exports main
-Example:
+Identify and catalog features of interest (FOI) in the MAM corpus.
 
-[program] --foi args-foi-kq-2
-[program] --single-threaded
-[program] --foi args-foi-kq-2 --single-threaded
+Scans MAM-parsed-plus for linguistic and textual patterns (e.g. ketiv-qere
+pairs, unusual cantillation) and writes the findings to JSON. Supports
+parallel and single-threaded execution modes.
 
+Usage:
+    [program] --foi args-foi-kq-2
+    [program] --single-threaded
+    [program] --foi args-foi-kq-2 --single-threaded
 """
 
 import argparse

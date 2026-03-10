@@ -1,3 +1,10 @@
+"""
+Prototype the Wikisource bot using local file I/O instead of live server I/O.
+
+Exercises the same edit logic as main_ws_bot.py but reads and writes local
+files rather than making live Wikisource API calls.
+"""
+
 from pycmn import bib_locales as tbn
 from pycmn import file_io
 from pyws import ws_get_bk_in_both_fmts as wsin

@@ -1,8 +1,9 @@
 """
-    Base Usage:
-    ./py/venv/Scripts/python.exe ./py/main_download_mam_fr_sefaria.py
-    Per-book Usage
-    {{Base Usage}} --book "I Kings"
+Download MAM data from Sefaria and write it to JSON files.
+
+Usage:
+    .venv/Scripts/python.exe py/main_download_fr_sefaria.py
+    .venv/Scripts/python.exe py/main_download_fr_sefaria.py --book "I Kings"
 """
 
 import requests

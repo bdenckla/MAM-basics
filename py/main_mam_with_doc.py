@@ -1,4 +1,7 @@
-""" Exports main """
+"""
+Generate the MAM-with-doc HTML output — two-column pages showing the MAM
+text alongside its Wikisource documentation notes, one HTML file per book.
+"""
 
 from py_misc import ren_html_from_ren_el_mapping as hfrm
 from py_misc import my_utils_for_mainish as my_utils_fm

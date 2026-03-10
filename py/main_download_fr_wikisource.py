@@ -1,14 +1,10 @@
 """
-    Base Usage:
-    ./.venv/Scripts/python.exe ./main_download_fr_wikisource.py
+Download MAM data from Hebrew Wikisource and write it to JSON files.
 
-    Per-book Usage:
-    {{Base Usage}} --book39 1Samuel
-    {{Base Usage}} --book      1Samuel (argparse provides shortening for free)
-
-    Per-section Usage:
-    {{Base Usage}} --section6 SifEm
-    {{Base Usage}} --sec      SifEm (argparse provides shortening for free)
+Usage (run from repo root):
+    .venv/Scripts/python.exe py/main_download_fr_wikisource.py
+    .venv/Scripts/python.exe py/main_download_fr_wikisource.py --book39 1Samuel
+    .venv/Scripts/python.exe py/main_download_fr_wikisource.py --section6 SifEm
 """
 
 import argparse

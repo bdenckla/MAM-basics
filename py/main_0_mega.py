@@ -1,4 +1,7 @@
-""" Exports main """
+"""
+Meta-orchestrator that runs all (or a selected subset of) processing jobs in
+sequence. Useful for a full rebuild from scratch.
+"""
 
 import argparse
 import sys

@@ -1,4 +1,4 @@
-""" Exports main """
+"""Rename JPEG scan files based on their containing directory structure."""
 
 from pathlib import Path
 from pycmn import bib_locales as tbn

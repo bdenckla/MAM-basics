@@ -1,4 +1,7 @@
-""" Exports main """
+"""
+Compare CTR (Codex Theodori Reinach / a Wikisource manuscript transcription)
+verse data against MAM verse data and report differences.
+"""
 
 import json
 from itertools import zip_longest

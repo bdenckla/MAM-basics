@@ -1,3 +1,5 @@
+"""Edit Hebrew Wikisource pages using a pywikibot-based automation bot."""
+
 import pywikibot
 
 from py_misc import my_utils_for_mainish as my_utils_fm

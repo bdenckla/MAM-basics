@@ -1,6 +1,8 @@
 """
-    Base Usage:
-    ./py/venv/Scripts/python.exe ./py/main_download_mam_fr_google.py
+Download MAM data from Google Sheets and write it to CSV files.
+
+Usage:
+    .venv/Scripts/python.exe py/main_download_fr_google.py
 """
 
 import argparse

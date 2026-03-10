@@ -1,4 +1,4 @@
-""" Exports main """
+"""Split the MAPM OSIS XML file (from the MAM-OSIS sibling repo) into separate per-book files."""
 
 import xml.etree.ElementTree as ET
 from pycmn import file_io

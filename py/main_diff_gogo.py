@@ -1,4 +1,9 @@
-""" Exports main """
+"""
+Diff two Go (Google Sheets) snapshots of MAM and write the results to JSON.
+
+Compares the 2021-12-07 and 2023-04-06 snapshots, producing a set of
+per-verse difference records that describe what changed between the two.
+"""
 
 from py_misc import read_books_from_mam_parsed_plain as plain
 from py_misc import my_utils_for_mainish as my_utils_fm

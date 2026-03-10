@@ -1,4 +1,7 @@
-""" Exports main """
+"""
+Generate miscellaneous authored HTML documents (notes, reviews, analyses)
+that are written by the repo owner and rendered from Python source data.
+"""
 
 from py_misc import two_col_css_styles as tcstyles
 from pyauthor import notes_on_aliyot

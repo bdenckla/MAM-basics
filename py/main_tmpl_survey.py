@@ -1,4 +1,4 @@
-""" Exports main """
+"""Survey Wikisource template usage patterns across the MAM corpus and write analytics to JSON."""
 
 import json
 import collections

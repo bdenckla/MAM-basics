@@ -1,4 +1,4 @@
-""" Exports main """
+"""Copy Python support files from this repo to the MAM-simple sibling repo."""
 
 import shutil
 import os

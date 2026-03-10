@@ -1,4 +1,4 @@
-""" Exports main """
+"""Convert MAM data to OSIS (Open Scripture Information Standard) XML format."""
 
 import xml.etree.ElementTree as ET
 import copy

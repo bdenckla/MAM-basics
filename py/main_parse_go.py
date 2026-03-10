@@ -1,6 +1,8 @@
 """
-Exports main and do_one_section.
-This "main" is actually used as an export, by main_download_mam_fr_google.py.
+Parse downloaded Google Sheets MAM data into increasingly structured formats.
+
+Also exports do_one_section, which is called directly by
+main_download_fr_google.py as part of the download pipeline.
 """
 
 import collections

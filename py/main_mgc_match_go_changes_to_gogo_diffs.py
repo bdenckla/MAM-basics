@@ -1,4 +1,7 @@
-""" Exports main """
+"""
+Match human-authored Google Sheets change-log entries to programmatically
+detected Go-Go diffs, producing a joined report for review.
+"""
 
 from pycmn import file_io
 from pymgc import mgc_input
