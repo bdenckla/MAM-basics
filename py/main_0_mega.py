@@ -23,25 +23,17 @@ import main_parse_ws
 import main_ws_bot_proto
 import main_wordlist
 import main_mam_with_doc
-import main_mam_xml
+import main_mam_simple
 import main_mam4sef
 import main_mam4ajf
 import main_osis
 import main_mam_xml_copy_py_files
 import main_mgc_match_go_changes_to_gogo_diffs
 
-#
-#
-#
-#
-#
-#
-
-
 _STEPS = [
     (
         main_parse_go,
-        "mam_parsed must come before mam_xml, mam_tmpl_survey, & many others",
+        "mam_parsed must come before mam_simple, mam_tmpl_survey, & many others",
     ),
     (main_foi_features_of_interest, None),
     # We run "features of interest" early since it
@@ -50,11 +42,11 @@ _STEPS = [
     # asserts that provide little information.
     (main_mam_with_doc, None),
     (main_tmpl_survey, "must come after mam_parsed"),
-    (main_mam_xml, "must come after mam_parsed"),
-    # mam_xml must come before mam4sef, mam4ajf, & mam_osis
-    (main_mam4sef, "must come after mam_xml"),
-    (main_mam4ajf, "must come after mam_xml"),
-    (main_osis, "must come after mam_xml"),
+    (main_mam_simple, "must come after mam_parsed"),
+    # mam_simple must come before mam4sef, mam4ajf, & mam_osis
+    (main_mam4sef, "must come after mam_simple"),
+    (main_mam4ajf, "must come after mam_simple"),
+    (main_osis, "must come after mam_simple"),
     (main_decnreub, None),
     (main_multimark, None),
     (main_wordlist, None),
@@ -96,7 +88,7 @@ def main():
     # Download of ws (Wikisource) can be accomplished by running:
     #    main_download_mam_fr_wikisource.py
     # It must be run in a venv like this:
-    #    ./py/venv/Scripts/python.exe ./py/main_download_mam_fr_wikisource.py
+    #    .venv/Scripts/python.exe py/main_download_mam_fr_wikisource.py
 
 
 if __name__ == "__main__":

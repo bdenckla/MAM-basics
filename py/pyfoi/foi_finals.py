@@ -1,4 +1,4 @@
-""" Exports write """
+"""Exports write"""
 
 from pycmn import bib_locales as tbn
 from pycmn import file_io
@@ -51,7 +51,7 @@ def _rm_html(contents):
 def _rm_html_single(html_el):
     if isinstance(html_el, str):
         return html_el
-    return _rm_html(html_el.get("contents", ""))
+    return _rm_html(html_el.get("contents", ()))
 
 
 def _licont_for_outspec(outspec):
@@ -157,8 +157,6 @@ def _append_table_row(io_html_tables, foi_path, row_dic):
 
 def _make_table_row(row_dic):
     td_attrs = {"lang": "hbo", "dir": "rtl"}
-    # if ropts.get("bordered"):
-    #     td_attrs["class"] = "bordered"
     hc_td = my_html.table_datum(row_dic["html_contents"], td_attrs)
     other_tds = tuple(_my_td(v) for k, v in row_dic.items() if k != "html_contents")
     return my_html.table_row((hc_td, *other_tds))

@@ -1,4 +1,4 @@
-""" Exports add_plus_stuff """
+"""Exports add_plus_stuff"""
 
 from pycmn import hebrew_verse_numerals as hvn
 from pycmn import ws_tmpl2 as wtp
@@ -17,15 +17,11 @@ def add_plus_stuff(section):
     """
     out_section = dict(section)
     out_section["book39s"] = []
-    # Above, to allow mutation, we create a singleton list.
-    # Its first and only element is, initially, None.
     # Can we get rid of this "for" loop?
     # Search for ^[^#]*\bfor\b.*[:]$
     for bk39 in section["book39s"]:
         out_section["book39s"].append(_aps_to_bk39(bk39))
-    out_section["header"] = _add_he_to_int(
-        section["header"], out_section["book39s"]
-    )
+    out_section["header"] = _add_he_to_int(section["header"], out_section["book39s"])
     return out_section
 
 
@@ -43,7 +39,10 @@ def _add_he_to_int(header, book39s):
             he_keys.add(he_chnu)
             for he_vrnu in ch_contents:
                 he_keys.add(he_vrnu)
-    he_to_int = {he: hvn.STR_TO_INT_DIC[he] for he in sorted(he_keys, key=hvn.STR_TO_INT_DIC.get)}
+    he_to_int = {
+        he: hvn.STR_TO_INT_DIC[he]
+        for he in sorted(he_keys, key=hvn.STR_TO_INT_DIC.__getitem__)
+    }
     out_header = dict(header)
     out_header["he_to_int"] = he_to_int
     return out_header

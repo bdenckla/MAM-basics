@@ -2,7 +2,7 @@ __pycache__/
 .novc/
 *.tmp
 *.tmp.*
-py/venv/
+.venv/
 dir-for-pywikibot/apicache/
 dir-for-pywikibot/logs/
 dir-for-pywikibot/throttle.ctrl

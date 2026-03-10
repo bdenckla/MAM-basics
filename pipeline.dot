@@ -1,0 +1,57 @@
+digraph mam_pipeline {
+    rankdir=LR;
+    node [fontname="Helvetica", fontsize=11];
+    edge [fontname="Helvetica", fontsize=9];
+
+    // ── Data stores ──
+    node [shape=cylinder];
+    ds_go    [label="../MAM-parsed/plus/"];
+    ds_ws    [label="in/mam-ws\n(Wikisource HTML)"];
+    ds_fodoc [label="../MAM-with-doc/docs/foi/"];
+
+    // ── External prerequisites (not part of _STEPS) ──
+    node [shape=box, style=dashed, color=gray, fontcolor=gray];
+    download_go  [label="main_download_fr_google"];
+    download_ws  [label="main_download_fr_wikisource"];
+
+    // ── Pipeline steps ──
+    node [shape=box, style="", color="", fontcolor=""];
+
+    // steps with no ordering constraints
+    mam_with_doc [label="main_mam_with_doc"];
+    decnreub     [label="main_decnreub"];
+    multimark    [label="main_multimark"];
+    wordlist     [label="main_wordlist"];
+    explicit_xataf [label="main_explicit_xataf"];
+    diff_gogo    [label="main_diff_gogo"];
+    gen_docs     [label="main_gen_misc_authored_english_documents"];
+    mam_xml_copy [label="main_mam_xml_copy_py_files"];
+    mgc          [label="main_mgc_match_go_changes_to_gogo_diffs"];
+
+    // steps with ordering constraints
+    parse_go     [label="main_parse_go"];
+    foi          [label="main_foi_features_of_interest"];
+    tmpl_survey  [label="main_tmpl_survey"];
+    mam_simple   [label="main_mam_simple"];
+    mam4sef      [label="main_mam4sef"];
+    mam4ajf      [label="main_mam4ajf"];
+    osis         [label="main_osis"];
+    diff_wsgo    [label="main_diff_wsgo"];
+    parse_ws     [label="main_parse_ws"];
+    ws_bot_proto [label="main_ws_bot_proto"];
+
+    // ── Edges: data-store flows (confirmed by reading code) ──
+    download_go  -> parse_go    [color=gray];
+    parse_go     -> ds_go;
+    ds_go        -> foi;
+    foi          -> ds_fodoc;
+    ds_go        -> tmpl_survey;
+    ds_go        -> mam_simple;
+    mam_simple   -> mam4sef;
+    mam_simple   -> mam4ajf;
+    mam_simple   -> osis;
+    download_ws  -> ds_ws       [color=gray];
+    ds_ws        -> diff_wsgo;
+    ds_ws        -> parse_ws;
+    ds_ws        -> ws_bot_proto;
+}
