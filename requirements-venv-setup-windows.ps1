@@ -16,7 +16,7 @@
 #
 # Run this script with 'py' as the current directory, e.g.
 #
-#    PS C:\Users\BenDe\GitRepos\trope\py> .\requirements-venv-setup-windows.ps1
+#    PS C:\Users\BenDe\GitRepos\MAM-basics\py> .\requirements-venv-setup-windows.ps1
 
 python -m venv venv
 if (-not $?)

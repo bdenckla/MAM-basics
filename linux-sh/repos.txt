@@ -10,4 +10,4 @@ MAM-OSIS
 MAM-parsed
 MAM-with-doc
 MAM-simple
-trope
+MAM-basics

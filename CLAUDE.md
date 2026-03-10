@@ -27,13 +27,13 @@ This rule applies everywhere: terminal commands, code blocks in chat, examples i
 
 ## Running Python Main Scripts — Always From the Repo Root
 
-All `py/main_*.py` scripts use paths like `../MAM-parsed` that are relative to the **repo root** (`~/GitRepos/trope`), not to the `py/` subdirectory. Always `cd` to the repo root before running a script:
+All `py/main_*.py` scripts use paths like `../MAM-parsed` that are relative to the **repo root** (`~/GitRepos/MAM-basics`), not to the `py/` subdirectory. Always `cd` to the repo root before running a script:
 
 ```bash
-cd ~/GitRepos/trope && PYTHONUTF8=1 .venv/Scripts/python.exe py/main_mam_simple.py
+cd ~/GitRepos/MAM-basics && PYTHONUTF8=1 .venv/Scripts/python.exe py/main_mam_simple.py
 ```
 
-**Why the explicit `cd`:** The Bash tool's working directory persists between commands. If a prior command did `cd py && ...`, all subsequent commands run from `py/`, making `../MAM-parsed` resolve to `trope/MAM-parsed` (wrong) instead of the sibling repo at `GitRepos/MAM-parsed` (correct). The explicit `cd ~/GitRepos/trope` at the start of each run command resets this reliably.
+**Why the explicit `cd`:** The Bash tool's working directory persists between commands. If a prior command did `cd py && ...`, all subsequent commands run from `py/`, making `../MAM-parsed` resolve to `MAM-basics/MAM-parsed` (wrong) instead of the sibling repo at `GitRepos/MAM-parsed` (correct). The explicit `cd ~/GitRepos/MAM-basics` at the start of each run command resets this reliably.
 
 ## No `python -c` — Use `.novc/` Scripts Instead
 
@@ -120,8 +120,8 @@ The working directory is already the project root. Do not `cd` into it or pass i
 
 | Unnecessary | Just do this |
 |---|---|
-| `cd ~/GitRepos/trope && git log` | `git log` |
-| `git -C ~/GitRepos/trope log` | `git log` |
+| `cd ~/GitRepos/MAM-basics && git log` | `git log` |
+| `git -C ~/GitRepos/MAM-basics log` | `git log` |
 
 If you genuinely need to run `git` in a **different** directory (e.g. a sibling repo), prefer `git -C <path>` over `cd <path> && git`. Use `cd && git` only as a last resort — compound commands are harder to match with permission globs.
 

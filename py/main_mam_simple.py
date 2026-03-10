@@ -2,8 +2,8 @@
 Exports main
 
 Usage (run from repo root):
-    cd ~/GitRepos/trope && PYTHONUTF8=1 .venv/Scripts/python.exe py/main_mam_simple.py
-    cd ~/GitRepos/trope && PYTHONUTF8=1 .venv/Scripts/python.exe py/main_mam_simple.py --book39 Ruth
+    cd ~/GitRepos/MAM-basics && PYTHONUTF8=1 .venv/Scripts/python.exe py/main_mam_simple.py
+    cd ~/GitRepos/MAM-basics && PYTHONUTF8=1 .venv/Scripts/python.exe py/main_mam_simple.py --book39 Ruth
 """
 
 from py_misc import my_utils_for_mainish as my_utils_fm

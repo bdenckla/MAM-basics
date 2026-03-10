@@ -22,7 +22,7 @@ MS Word, etc.), but the process just changed, so here goes.
 6. **Run the "Apply imported auto-edits" script.**
 
 7. **Run `py/main_download_fr_google.py`.** Auto-edits will be reflected in
-   changes to CSV files in the `trope` repo and JSON files in the
+   changes to CSV files in the `MAM-basics` repo and JSON files in the
    `MAM-parsed` repo.
 
 8. **Run `py/main_diff_wsgo.py`** again to verify that the diffs go empty.

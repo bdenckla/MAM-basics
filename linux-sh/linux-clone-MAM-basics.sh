@@ -5,5 +5,5 @@
 #    setting up a "GitRepos" hierarchy with only this file downloaded
 #    setting up a "GitRepos" hierarchy with this file's one line copied into your copy & paste buffer
 
-git clone git@github.com:bdenckla/trope.git
+git clone git@github.com:bdenckla/MAM-basics.git
 

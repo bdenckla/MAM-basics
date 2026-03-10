@@ -23,6 +23,6 @@
 		}
 	],
 	"settings": {
-		"powershell.cwd": "trope"
+		"powershell.cwd": "MAM-basics"
 	}
 }
