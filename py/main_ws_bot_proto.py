@@ -5,6 +5,8 @@ Exercises the same edit logic as main_ws_bot.py but reads and writes local
 files rather than making live Wikisource API calls.
 """
 
+from functools import partial
+
 from pycmn import bib_locales as tbn
 from pycmn import file_io
 from pyws import ws_get_bk_in_both_fmts as wsin
@@ -21,7 +23,7 @@ def almost_main():
     for bk39id in tbn.ALL_BK39_IDS:
         show_progress_g(__file__, "book", bk39id)
         wsf2_book = wsin.get_bk_in_fmt_2(_IN_PATH, bk39id)
-        out_book = dkv_map(wbe.edit_cif2, wsf2_book)
+        out_book = dkv_map(partial(wbe.edit_cif2, bk39id), wsf2_book)
         osdf = tbn.ordered_short_dash_full_39(bk39id)
         _write_book_lines(osdf, out_book)
         _write_book_fmt_2(osdf, out_book)

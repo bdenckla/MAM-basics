@@ -24,13 +24,13 @@ def main():
         _run_bot_on_book(botctx, book_plan)
 
 
-def _run_bot_on_chapter(botctx, out_book_contents, chapter_plan):
+def _run_bot_on_chapter(botctx, bk39id, out_book_contents, chapter_plan):
     he_chnu, title = chapter_plan
     site = botctx["botctx-site"]
     summary = botctx["botctx-summary"]
     page = pywikibot.Page(site, title)
     orig_text = page.text
-    page.text = wbe.edit_page_text(he_chnu, page.text)
+    page.text = wbe.edit_page_text(bk39id, he_chnu, page.text)
     if page.text != orig_text:
         page.save(summary)
     out_book_contents[he_chnu] = page.text.splitlines()
@@ -46,10 +46,11 @@ def _write_book(book_contents, he_bn_sbn):
 
 
 def _run_bot_on_book(botctx, book_plan):
+    he_bn_sbn, _he_chnus = book_plan
+    bk39id = mbkn_a_sbkn.MAM_HBNP_TO_BK39ID[he_bn_sbn]
     book_contents = {}
     for chapter_plan in wsplan.get_chapter_plans(book_plan):
-        _run_bot_on_chapter(botctx, book_contents, chapter_plan)
-    he_bn_sbn, _he_chnus = book_plan
+        _run_bot_on_chapter(botctx, bk39id, book_contents, chapter_plan)
     _write_book(book_contents, he_bn_sbn)
 
 

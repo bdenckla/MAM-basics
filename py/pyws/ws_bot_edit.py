@@ -1,153 +1,115 @@
-from functools import partial
-import re
-from pycmn import ws_tmpl1 as wtp1
-from pycmn import hebrew_accents as ha
-from pycmn import ws_tmpl1 as wtp1
+"""Bot edit: remove specific meteg marks from Joshua.
+
+Removes 48 meteg (U+05BD) marks from specific words in Joshua on
+Wikisource, aligning Wikisource with mgketer where MAM-parsed-plus
+previously added a meteg that mgketer does not have.
+
+Each edit is a (chapter_key, old_string) pair.  The old_string appears
+exactly once in its chapter; the replacement is old_string with the
+first meteg removed.  Some old_strings include trailing context (a
+maqaf or following word) to ensure uniqueness.
+
+See ws_bot_edit_history.md for a record of previous bots that occupied
+this file.  The immediately preceding bot is preserved as
+ws_bot_edit_old_yby_confine.py.
+"""
+
 from pyws import ws_get_bk_in_both_fmts as wsin
 from pyws import ws_fmt_2_back_to_wikitext as btw
-from pycmn.my_utils import sum_of_map
-from pycmn.my_utils import sl_map
-from pycmn.shrink import shrink
-from pycmn.my_utils import dv_dispatch
-from pycmn.my_utils import dv_map
-from pycmn.my_utils import first_and_only_and_str
+
+_METEG = "\u05bd"
+
+# fmt: off
+_EDITS_JOSHUA = [
+    ("א", "אֱלֹֽהֵיכֶ֔ם"),                    # 1:11
+    ("ג", "וַיֵּֽלְכ֖וּ"),                      # 3:6
+    ("ג", "נֹֽשְׂאֵ֥י"),                        # 3:8
+    ("ג", "לַֽעֲבֹ֖ר"),                         # 3:14
+    ("ג", "וַיַּֽעַמְד֡וּ"),                    # 3:16
+    ("ג", "מֵֽאָדָ֤ם"),                         # 3:16 qere in template
+    ("ד", "הָֽאֲבָנִ֥ים"),                      # 4:6
+    ("ד", "בְּנֵֽי־יִשְׂרָאֵל֮"),              # 4:8
+    ("ד", "הָֽאָר֗וֹן"),                        # 4:10
+    ("ד", "כַּֽאֲשֶׁר־"),                       # 4:11
+    ("ו", "וְתָֽקְע֖וּ"),                      # 6:8
+    ("ז", "וַיִּֽחַר־"),                        # 7:1
+    ("ז", "הָֽאֲנָשִׁ֔ים"),                    # 7:2
+    ("ז", "אָֽנֹכִ֤י"),                         # 7:20
+    ("ח", "אַֽחֲרֵ֣י"),                         # 8:16
+    ("ח", "הָֽרוֹדֵֽף׃"),                       # 8:20 two metegs; remove first
+    ("ח", "כַּֽאֲשֶׁ֣ר"),                       # 8:31
+    ("ט", "וַיַּֽעֲשׂ֤וּ"),                    # 9:4
+    ("י", "יְרֽוּשָׁל"),                        # 10:5 string before {{מ:ירושלם}} template
+    ("יב", "מֶֽלֶךְ־"),                         # 12:5
+    ("יב", "יְרֽוּשָׁל"),                       # 12:10 string before {{מ:ירושלם}} template
+    ("יג", "הָֽעַזָּתִ֤י"),                     # 13:3
+    ("יג", "וַֽחֲצִ֖י"),                        # 13:7
+    ("יג", "מֶֽלֶךְ־"),                         # 13:30
+    ("טו", "הֶֽעָרִ֗ים"),                       # 15:21
+    ("טו", "וַֽעֲדֻלָּ֔ם"),                     # 15:35
+    ("טו", "וַֽעֲדִיתַ֔יִם"),                   # 15:36
+    ("טז", "בְנֵֽי־יוֹסֵ֖ף"),                  # 16:4
+    ("יז", "הֽוֹרִישֽׁוֹ׃"),                    # 17:13 two metegs; remove first
+    ("יח", "לִגְבֽוּלֹתֶ֛יהָ"),                 # 18:20
+    ("יח", "הֶֽעָרִ֗ים"),                       # 18:21
+    ("יט", "בְנֵֽי־שִׁמְע֖וֹן בְּת"),          # 19:8
+    ("יט", "נַֽחֲלַ֥ת"),                        # 19:16
+    ("יט", "הֶֽעָרִ֖ים"),                       # 19:39
+    ("כ", "וְאָֽסְפ֨וּ"),                       # 20:4
+    ("כא", "הַנּֽוֹתָרִ֗ים"),                   # 21:5
+    ("כא", "אַֽהֲרֹ֣ן"),                        # 21:13
+    ("כא", "בְנֵֽי־אַהֲרֹ֖ן"),                 # 21:19
+    ("כא", "הַנּֽוֹתָרִ֖ים"),                   # 21:20
+    ("כא", "גֵֽרְשׁוֹן֮"),                      # 21:27
+    ("כב", "כַּֽאֲשֶׁ֖ר"),                      # 22:4
+    ("כב", "עֶֽבֶד־"),                          # 22:5
+    ("כב", "וְלַֽחֲצִ֣י"),                      # 22:7
+    ("כב", "יֹֽאמְר֨וּ"),                       # 22:24
+    ("כג", "אֱלֹֽהֵיכֶֽם׃"),                    # 23:11 two metegs; remove first
+    ("כד", "וַיֶּֽאֱסֹ֧ף"),                     # 24:1
+    ("כד", "וָֽאוֹלֵ֥ךְ"),                      # 24:3
+    ("כד", "וָֽאֶתֵּ֨ן"),                       # 24:4
+]
+# fmt: on
 
 
-def edit_page_text(he_chnu: str, page_text: str):
-    cif2 = wsin.get_chap_in_fmt_2(page_text.splitlines())
-    _out_cif2, big_str = edit_cif2(he_chnu, cif2)
-    return big_str
+def _build_edits_by_book_and_chapter(all_edits):
+    """Group (old, new) pairs by (bk39id, chapter_key)."""
+    result = {}
+    for bk39id, edit_list in all_edits.items():
+        by_chap = {}
+        for chap_key, old in edit_list:
+            new = old.replace(_METEG, "", 1)
+            by_chap.setdefault(chap_key, []).append((old, new))
+        result[bk39id] = by_chap
+    return result
 
 
-def edit_cif2(he_chnu, cif2):
-    out_cif2 = _edit_wsf2_chap(_CANDLERS, cif2)
-    return out_cif2, btw.big_str(he_chnu, out_cif2)
-
-
-def _edit_wsf2_chap(candlers, wsf2_chap):
-    return dv_dispatch(candlers, wsf2_chap)
-
-
-def _pass_thru(val):
-    return val
-
-
-def _pass_thru_as_singleton(val):
-    return [val]
-
-
-def _edit_a_chap_body(vandlers, chap_body):
-    return dv_map((_edit_a_plb_verse, vandlers), chap_body)
-
-
-def _edit_a_plb_verse(vandlers, plb_verse):
-    return dv_dispatch(vandlers, plb_verse)
-
-
-def _edit_wtseq(wandlers, wtseq):
-    standard = shrink(sum_of_map((_edit_wtel, wandlers), wtseq))
-    return _edit_wtseq_2(standard)
-
-
-_ORIG_TMPL_NAME = "ירח בן יומו"
-_NEW_TMPL_NAME = "ירח בן יומו-2"
-
-
-def _edit_wtseq_2(wtseq):
-    ot_idx = None  # ot: orig tmpl
-    for idx, wtel in enumerate(wtseq):
-        if wtp1.is_template_with_name(wtel, _ORIG_TMPL_NAME):
-            ot_idx = idx
-    if ot_idx is None:
-        return wtseq
-    assert 0 < ot_idx < len(wtseq) - 1
-    pre = wtseq[:ot_idx]
-    post = wtseq[ot_idx + 1 :]
-    newseq_q = _confine(pre, post)
-    if newseq_q is None:
-        return wtseq
-    return newseq_q
-
-
-def _confine(pre, post):
-    spre = _split_pre(pre)
-    spost = _split_post(post)
-    assert spre is not None and spost is not None
-    pre0, pre1 = spre
-    post0, post1 = spost
-    foo_args = shrink([pre1, ha.YBY, post0])
-    foo_arg = first_and_only_and_str(foo_args)
-    assert "=" not in foo_arg
-    foo = wtp1.mktmpl([[_NEW_TMPL_NAME], [foo_arg]])
-    return [*pre0, foo, *post1]
-
-
-def _split_pre(pre):
-    if isinstance(pre[-1], str):
-        if match := re.fullmatch("(.* )?(.*)", pre[-1]):
-            if mg1 := match.group(1):
-                pre0 = [*pre[:-1], mg1]
-            else:
-                pre0 = pre[:-1]
-            pre1 = match.group(2)
-            return pre0, pre1
-    return None
-
-
-def _split_post(post):
-    if isinstance(post[0], str):
-        if match := re.fullmatch("(.*?)( .*)?", post[0]):
-            post0 = match.group(1)
-            if mg2 := match.group(2):
-                post1 = [mg2, *post[1:]]
-            else:
-                post1 = post[1:]
-            return post0, post1
-    return None
-
-
-def _edit_wtel(wandlers, wtel):
-    if isinstance(wtel, str):
-        return wandlers["string"](wtel)
-    if wtp1.is_abtag(wtel):
-        return [wtel]
-    return _edit_tmpl_call(wandlers, wtel)
-
-
-def _edit_tmpl_call(wandlers, tmpl):
-    if wandler := wandlers.get(wtp1.template_name(tmpl)):
-        return wandler(tmpl)
-    return _recurse_on_args(_get_wandlers, tmpl)
-
-
-def _recurse_on_args(get_wandlers_fn, tmpl):
-    tmpl_els_in = wtp1.template_elements(tmpl)
-    assert isinstance(tmpl_els_in, list)
-    wandlers = get_wandlers_fn()
-    tmpl_args_out = sl_map((_edit_wtseq, wandlers), tmpl_els_in[1:])
-    tmpl_els_out = [tmpl_els_in[0], *tmpl_args_out]
-    return [wtp1.mktmpl(tmpl_els_out)]
-
-
-def _get_wandlers():
-    return _WANDLERS
-
-
-_WANDLERS = {
-    "string": _pass_thru_as_singleton,
+_ALL_EDITS = {
+    "Joshua": _EDITS_JOSHUA,
 }
-_VANDLERS = {
-    "prefix": _pass_thru,
-    #
-    "location": _pass_thru,
-    #
-    # "verse-body": _pass_thru,
-    "verse-body": partial(_edit_wtseq, _WANDLERS),
-}
-_CANDLERS = {
-    "ws-chap-noinclude-header": _pass_thru,
-    "ws-chap-body": partial(_edit_a_chap_body, _VANDLERS),
-    "ws-chap-good-ending": _pass_thru,
-    "ws-chap-noinclude-footer": _pass_thru,
-    "ws-chap-category": _pass_thru,
-}
+_EDITS_BY_BK_CH = _build_edits_by_book_and_chapter(_ALL_EDITS)
+
+
+def _get_chapter_edits(bk39id, he_chnu):
+    return _EDITS_BY_BK_CH.get(bk39id, {}).get(he_chnu, [])
+
+
+def edit_page_text(bk39id, he_chnu, page_text):
+    """Apply meteg-removal edits to a chapter's raw page text."""
+    for old, new in _get_chapter_edits(bk39id, he_chnu):
+        count = page_text.count(old)
+        assert count == 1, (
+            f"Expected 1 occurrence of {old!r} in {bk39id} chapter {he_chnu},"
+            f" found {count}"
+        )
+        page_text = page_text.replace(old, new)
+    return page_text
+
+
+def edit_cif2(bk39id, he_chnu, cif2):
+    """Apply meteg-removal edits via the format-2 roundtrip."""
+    big = btw.big_str(he_chnu, cif2)
+    edited = edit_page_text(bk39id, he_chnu, big)
+    edited_cif2 = wsin.get_chap_in_fmt_2(edited.splitlines())
+    return edited_cif2, edited
