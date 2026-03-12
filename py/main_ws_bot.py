@@ -1,4 +1,13 @@
-"""Edit Hebrew Wikisource pages using a pywikibot-based automation bot."""
+"""
+Edit Hebrew Wikisource pages using a pywikibot-based automation bot.
+
+Usage (run from repo root):
+    .venv/Scripts/python.exe py/main_ws_bot.py -dir:path/to/.pywikibot
+    .venv/Scripts/python.exe py/main_ws_bot.py -dir:... --book39 Joshua
+    .venv/Scripts/python.exe py/main_ws_bot.py -dir:... --section6 SifEm
+"""
+
+import argparse
 
 import pywikibot
 
@@ -12,14 +21,18 @@ from pyws import ws_bot_edit as wbe
 
 def main():
     """Use a bot to process chapters of Hebrew Wikisource"""
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--book39")  # e.g. Joshua, 1Samuel (not I Samuel)
+    parser.add_argument("--section6")  # e.g. SifEm
+    args, _pywikibot_args = parser.parse_known_args()
     site = pywikibot.Site("he", "wikisource", "BDencklaBot")
-    summary = "Remove געיה to more closely match Aleppo."
+    summary = ""  # commit this empty to force filling in when run
     assert summary
     botctx = {
         "botctx-site": site,
         "botctx-summary": summary,
     }
-    book_plans = wsplan.get_book_plans()
+    book_plans = wsplan.get_book_plans(args.book39, args.section6)
     for book_plan in book_plans:
         _run_bot_on_book(botctx, book_plan)
 
