@@ -13,7 +13,7 @@ from pyws import ws_bot_edit as wbe
 def main():
     """Use a bot to process chapters of Hebrew Wikisource"""
     site = pywikibot.Site("he", "wikisource", "BDencklaBot")
-    summary = ""  # commit this empty to force filling in when run
+    summary = "Remove געיה to more closely match Aleppo."
     assert summary
     botctx = {
         "botctx-site": site,

@@ -4,8 +4,3 @@ __pycache__/
 *.tmp
 *.tmp.*
 .venv/
-dir-for-pywikibot/apicache/
-dir-for-pywikibot/logs/
-dir-for-pywikibot/throttle.ctrl
-dir-for-pywikibot/password.py
-dir-for-pywikibot/pywikibot-BDencklaBot.lwp

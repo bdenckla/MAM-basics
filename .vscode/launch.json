@@ -52,7 +52,7 @@
             "type": "debugpy",
             "request": "launch",
             "program": "py/main_ws_bot.py",
-            "args": ["-dir:dir-for-pywikibot"] ,
+            "args": ["-dir:${env:USERPROFILE}/.pywikibot"] ,
             "console": "integratedTerminal"
         },
         {
