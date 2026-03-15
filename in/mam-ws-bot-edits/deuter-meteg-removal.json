@@ -1,0 +1,43 @@
+{
+  "summary": "Remove 7 spurious meteg marks from late Deuteronomy, per mgketer#80",
+  "edit-kind": "meteg-removal",
+  "edits": {
+    "Deuter": [
+      {
+        "ch": "כח",
+        "old": "מַֽעֲלָלֶ֖יךָ|",
+        "comment": "28:20 pipe disambiguates from nusach note"
+      },
+      {
+        "ch": "כח",
+        "old": "תִּֽהְיֶ֥ה",
+        "comment": "28:44"
+      },
+      {
+        "ch": "כט",
+        "old": "לֹֽא־יְדָע֔וּם",
+        "comment": "29:25"
+      },
+      {
+        "ch": "ל",
+        "old": "אֶת־הַֽחַיִּ֖ים",
+        "comment": "30:15"
+      },
+      {
+        "ch": "לא",
+        "old": "הָֽאֲנָשִׁ֤ים",
+        "comment": "31:12"
+      },
+      {
+        "ch": "לב",
+        "old": "וַֽיהֹוָ֖ה",
+        "comment": "32:30"
+      },
+      {
+        "ch": "לב",
+        "old": "כַּֽאֲשֶׁר־מֵ֞ת",
+        "comment": "32:50"
+      }
+    ]
+  }
+}

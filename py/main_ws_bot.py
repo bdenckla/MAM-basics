@@ -2,9 +2,9 @@
 Edit Hebrew Wikisource pages using a pywikibot-based automation bot.
 
 Usage (run from repo root):
-    .venv/Scripts/python.exe py/main_ws_bot.py -dir:path/to/.pywikibot
-    .venv/Scripts/python.exe py/main_ws_bot.py -dir:... --book39 Joshua
-    .venv/Scripts/python.exe py/main_ws_bot.py -dir:... --section6 SifEm
+    .venv/Scripts/python.exe py/main_ws_bot.py --edits path.json -dir:path/to/.pywikibot
+    .venv/Scripts/python.exe py/main_ws_bot.py --edits path.json -dir:... --book39 Deuter
+    .venv/Scripts/python.exe py/main_ws_bot.py --edits path.json -dir:... --section6 SifEm
 """
 
 import argparse
@@ -22,15 +22,18 @@ from pyws import ws_bot_edit as wbe
 def main():
     """Use a bot to process chapters of Hebrew Wikisource"""
     parser = argparse.ArgumentParser()
-    parser.add_argument("--book39")  # e.g. Joshua, 1Samuel (not I Samuel)
+    parser.add_argument("--edits", required=True)  # path to JSON edit spec
+    parser.add_argument("--book39")  # e.g. Deuter, Joshua (not I Samuel)
     parser.add_argument("--section6")  # e.g. SifEm
     args, _pywikibot_args = parser.parse_known_args()
-    site = pywikibot.Site("he", "wikisource", "BDencklaBot")
-    summary = ""  # commit this empty to force filling in when run
+    edits_ctx = wbe.load_edits(args.edits)
+    summary = edits_ctx["summary"]
     assert summary
+    site = pywikibot.Site("he", "wikisource", "BDencklaBot")
     botctx = {
         "botctx-site": site,
         "botctx-summary": summary,
+        "botctx-edits-ctx": edits_ctx,
     }
     book_plans = wsplan.get_book_plans(args.book39, args.section6)
     for book_plan in book_plans:
@@ -41,9 +44,10 @@ def _run_bot_on_chapter(botctx, bk39id, out_book_contents, chapter_plan):
     he_chnu, title = chapter_plan
     site = botctx["botctx-site"]
     summary = botctx["botctx-summary"]
+    edits_ctx = botctx["botctx-edits-ctx"]
     page = pywikibot.Page(site, title)
     orig_text = page.text
-    page.text = wbe.edit_page_text(bk39id, he_chnu, page.text)
+    page.text = wbe.edit_page_text(edits_ctx, bk39id, he_chnu, page.text)
     if page.text != orig_text:
         page.save(summary)
     out_book_contents[he_chnu] = page.text.splitlines()

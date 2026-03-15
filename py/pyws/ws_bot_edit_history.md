@@ -69,13 +69,28 @@ infrastructure has changed enough to make them misleading examples:
   / sibling of the YBY bot.
 - **Edit level:** Verse-body wikitext sequence (`_edit_wtseq_2`).
 
-### YBY (yerah-ben-yomo template confinement) — current as of 2026-03-12
+### YBY (yerah-ben-yomo template confinement)
 - **Commit:** `a17ddd6d` (old repo), `d86e577` (this repo's initial import)
 - **Purpose:** Confined `{{ירח בן יומו}}` into `{{ירח בן יומו-2}}`.
   The template is replaced by a new version whose single argument contains
   the preceding and following text that "belongs" to the accent.
 - **Edit level:** Verse-body wikitext sequence (`_edit_wtseq_2`).
 - **Preserved as:** `ws_bot_edit_old_yby_confine.py`
+
+### Joshua meteg removal (48 edits)
+- **Purpose:** Removed 48 meteg (U+05BD) marks from specific words in
+  Joshua, aligning Wikisource with mgketer where MAM-parsed-plus previously
+  added a meteg that mgketer does not have.
+- **Edit level:** Raw page text string replacement.
+- **Preserved as:** `ws_bot_edit_old_joshua_meteg.py`
+
+### JSON-driven meteg removal — current as of 2026-03-15
+- **Purpose:** Generalized the bot to read edit specifications from a JSON
+  file rather than hard-coding them. The JSON file provides the edit summary,
+  edit kind (e.g. "meteg-removal"), and per-book/chapter edit entries.
+  First use: remove 7 meteg marks from Deuteronomy (mgketer#80).
+- **Edit level:** Raw page text string replacement (same as Joshua era).
+- **JSON files:** `in/mam-ws-bot-edits/`
 
 ## How to look up the original code
 

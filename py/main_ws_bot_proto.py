@@ -3,8 +3,12 @@ Prototype the Wikisource bot using local file I/O instead of live server I/O.
 
 Exercises the same edit logic as main_ws_bot.py but reads and writes local
 files rather than making live Wikisource API calls.
+
+Usage (run from repo root):
+    .venv/Scripts/python.exe py/main_ws_bot_proto.py --edits path.json
 """
 
+import argparse
 from functools import partial
 
 from pycmn import bib_locales as tbn
@@ -16,14 +20,18 @@ from pycmn.my_utils import dv_map
 from pycmn.my_utils import dkv_map
 
 
-def almost_main():
+def almost_main(edits_json_path=None):
     """
     Prototypes the bot by using local file I/O rather than server I/O.
     """
+    if edits_json_path is not None:
+        edits_ctx = wbe.load_edits(edits_json_path)
+    else:
+        edits_ctx = wbe.no_edits()
     for bk39id in tbn.ALL_BK39_IDS:
         show_progress_g(__file__, "book", bk39id)
         wsf2_book = wsin.get_bk_in_fmt_2(_IN_PATH, bk39id)
-        out_book = dkv_map(partial(wbe.edit_cif2, bk39id), wsf2_book)
+        out_book = dkv_map(partial(wbe.edit_cif2, edits_ctx, bk39id), wsf2_book)
         osdf = tbn.ordered_short_dash_full_39(bk39id)
         _write_book_lines(osdf, out_book)
         _write_book_fmt_2(osdf, out_book)
@@ -60,7 +68,10 @@ def main():
     """
     Prototypes the bot by using local file I/O rather than server I/O.
     """
-    almost_main()
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--edits")  # path to JSON edit spec (optional)
+    args = parser.parse_args()
+    almost_main(args.edits)
 
 
 if __name__ == "__main__":
