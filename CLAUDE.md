@@ -209,6 +209,8 @@ See [mpp-navigation.md](mpp-navigation.md) for a quick-reference guide to the MP
 
 When the user says **varika**, they mean **U+FB1E HEBREW POINT JUDEO-SPANISH VARIKA** (in the Alphabetic Presentation Forms block), **not** U+05BF HEBREW POINT RAFE (in the main Hebrew block). These are distinct characters — do not confuse them.
 
+**Important for code:** Despite the terminology above, the MAM-parsed plus/ data **actually uses U+05BF** (HEBREW POINT RAFE) for the rafeh/varika mark on consonants (e.g. the quiescent alef in ראובני words). Do not assume the data contains U+FB1E — always check the actual code points. The Python constant `hpo.RAFE` (U+05BF) is what appears in the data; `hpo.VARIKA` (U+FB1E) is used in other contexts (e.g. the mark-order normalization layer).
+
 ## Hebrew Unicode Mark Order — No NFC Normalization
 
 This project uses a deliberate combining-mark order for Hebrew text that differs from Unicode's canonical (NFC) ordering. The standard order places these four marks first within each base-letter cluster (in this order), followed by all other marks in their original relative order:
