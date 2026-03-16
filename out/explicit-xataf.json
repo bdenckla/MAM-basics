@@ -654,8 +654,8 @@
     },
     {
       "ref": "Joshua 8:27",
-      "varika_word": "בָּֽזְﬞז֥וּ",
-      "xataf_word": "בָּֽזֲז֥וּ",
+      "varika_word": "בָּזְﬞז֥וּ",
+      "xataf_word": "בָּזֲז֥וּ",
       "match_kind": "sigla=word",
       "sigla": "א"
     },
@@ -2587,8 +2587,8 @@
     },
     {
       "ref": "Psalms 7:5",
-      "varika_word": "צֽוֹרְﬞרִ֣י",
-      "xataf_word": "צֽוֹרֲרִ֣י",
+      "varika_word": "צוֹרְﬞרִ֣י",
+      "xataf_word": "צוֹרֲרִ֣י",
       "match_kind": "sigla=word",
       "sigla": "א"
     },
@@ -2762,8 +2762,8 @@
     },
     {
       "ref": "Psalms 39:13",
-      "varika_word": "שִׁ֥מְﬞעָֽה",
-      "xataf_word": "שִׁ֥מֳעָֽה",
+      "varika_word": "שִׁ֥מְﬞעָֽהתְפִלָּתִ֨י",
+      "xataf_word": "שִׁ֥מֳעָֽה תְפִלָּתִ֨י׀",
       "match_kind": "sigla=word",
       "sigla": "א"
     },
@@ -3009,6 +3009,13 @@
       "ref": "Psalms 74:5",
       "varika_word": "בִּסְﬞבׇךְ־עֵ֝֗ץ",
       "xataf_word": "בִּסֲבָךְ־עֵ֝ץ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 74:21",
+      "varika_word": "יְֽהַלְﬞל֥וּ",
+      "xataf_word": "יְֽהַלֲל֥וּ",
       "match_kind": "sigla=word",
       "sigla": "א"
     },

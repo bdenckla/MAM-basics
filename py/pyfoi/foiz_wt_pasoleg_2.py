@@ -61,6 +61,7 @@ _FEATURE_PATH = {
     ("legarmeih",): ("lp-legarmeih",),
     ("legarmeih", "legarmeih"): ("lp-legarmeih×2",),
     ("legarmeih", "paseq"): ("lp-legarmeih", "paseq-after"),
+    ("paseq", "legarmeih"): ("lp-paseq", "legarmeih-after"),
 }
 _PASOLEG = {hpu.PASOLEG: "legarmeih", sd.DOUB_VERT_LINE: "paseq"}
 

@@ -147,7 +147,7 @@
       "wtel_subtype": "מ:לגרמיה-2",
       "count_C": 0,
       "count_D": 0,
-      "count_E": 1831
+      "count_E": 1828
     },
     {
       "wtel_type": "tmpl",
@@ -189,7 +189,7 @@
       "wtel_subtype": "מ:פסק",
       "count_C": 0,
       "count_D": 0,
-      "count_E": 516
+      "count_E": 519
     },
     {
       "wtel_type": "tmpl",
@@ -217,7 +217,7 @@
       "wtel_subtype": "מ:קישור בהערה",
       "count_C": 0,
       "count_D": 1,
-      "count_E": 21
+      "count_E": 25
     },
     {
       "wtel_type": "tmpl",
@@ -266,7 +266,7 @@
       "wtel_subtype": "נוסח",
       "count_C": 35,
       "count_D": 273,
-      "count_E": 3564
+      "count_E": 3569
     },
     {
       "wtel_type": "tmpl",
@@ -286,7 +286,7 @@
       "wtel_type": "tmpl",
       "wtel_subtype": "פפ",
       "count_C": 0,
-      "count_D": 1543,
+      "count_D": 1544,
       "count_E": 11
     },
     {
@@ -349,7 +349,7 @@
       "wtel_type": "tmpl",
       "wtel_subtype": "ר4",
       "count_C": 0,
-      "count_D": 4270,
+      "count_D": 4269,
       "count_E": 0
     },
     {
@@ -357,7 +357,7 @@
       "wtel_subtype": "ש",
       "count_C": 1,
       "count_D": 14,
-      "count_E": 3260
+      "count_E": 3261
     }
   ],
   "stack_counts": [
@@ -616,9 +616,9 @@
     {
       "wtel_subtype": "מ:לגרמיה-2",
       "stack": "E",
-      "count": 1800,
-      "count_non_nusach": 1723,
-      "count_nusach": 77
+      "count": 1797,
+      "count_non_nusach": 1719,
+      "count_nusach": 78
     },
     {
       "wtel_subtype": "מ:לגרמיה-2",
@@ -673,8 +673,8 @@
       "wtel_subtype": "מ:מקף אפור",
       "stack": "E",
       "count": 114,
-      "count_non_nusach": 94,
-      "count_nusach": 20
+      "count_non_nusach": 93,
+      "count_nusach": 21
     },
     {
       "wtel_subtype": "מ:מקף אפור",
@@ -714,9 +714,9 @@
     {
       "wtel_subtype": "מ:פסק",
       "stack": "E",
-      "count": 503,
+      "count": 506,
       "count_non_nusach": 484,
-      "count_nusach": 19
+      "count_nusach": 22
     },
     {
       "wtel_subtype": "מ:פסק",
@@ -784,9 +784,9 @@
     {
       "wtel_subtype": "מ:קישור בהערה",
       "stack": "E",
-      "count": 21,
+      "count": 25,
       "count_non_nusach": 0,
-      "count_nusach": 21
+      "count_nusach": 25
     },
     {
       "wtel_subtype": "מ:קישור פנימי בהערה",
@@ -882,8 +882,8 @@
     {
       "wtel_subtype": "נוסח",
       "stack": "E",
-      "count": 3522,
-      "count_non_nusach": 3522,
+      "count": 3527,
+      "count_non_nusach": 3527,
       "count_nusach": 0
     },
     {
@@ -931,8 +931,8 @@
     {
       "wtel_subtype": "פפ",
       "stack": "D",
-      "count": 1540,
-      "count_non_nusach": 1446,
+      "count": 1541,
+      "count_non_nusach": 1447,
       "count_nusach": 94
     },
     {
@@ -1036,8 +1036,8 @@
     {
       "wtel_subtype": "ר4",
       "stack": "D",
-      "count": 4270,
-      "count_non_nusach": 4232,
+      "count": 4269,
+      "count_non_nusach": 4231,
       "count_nusach": 38
     },
     {
@@ -1057,9 +1057,9 @@
     {
       "wtel_subtype": "ש",
       "stack": "E",
-      "count": 3202,
+      "count": 3203,
       "count_non_nusach": 0,
-      "count_nusach": 3202
+      "count_nusach": 3203
     },
     {
       "wtel_subtype": "ש",
@@ -1199,7 +1199,7 @@
     {
       "wtel_subtype": "מ:לגרמיה-2",
       "arg_count": 0,
-      "count": 1831,
+      "count": 1828,
       "variations": 1
     },
     {
@@ -1271,7 +1271,7 @@
     {
       "wtel_subtype": "מ:פסק",
       "arg_count": 0,
-      "count": 516,
+      "count": 519,
       "variations": 1
     },
     {
@@ -1295,7 +1295,7 @@
     {
       "wtel_subtype": "מ:קישור בהערה",
       "arg_count": 2,
-      "count": 22,
+      "count": 26,
       "variations": 1
     },
     {
@@ -1337,7 +1337,7 @@
     {
       "wtel_subtype": "נוסח",
       "arg_count": 2,
-      "count": 3872,
+      "count": 3877,
       "variations": 1
     },
     {
@@ -1367,7 +1367,7 @@
     {
       "wtel_subtype": "פפ",
       "arg_count": 0,
-      "count": 1545,
+      "count": 1546,
       "variations": 2
     },
     {
@@ -1433,13 +1433,13 @@
     {
       "wtel_subtype": "ר4",
       "arg_count": 0,
-      "count": 4270,
+      "count": 4269,
       "variations": 1
     },
     {
       "wtel_subtype": "ש",
       "arg_count": 0,
-      "count": 3275,
+      "count": 3276,
       "variations": 1
     }
   ]
