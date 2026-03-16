@@ -6,6 +6,7 @@ Exports:
     flatten_ep      — flatten EP column to body text string
 """
 
+import difflib
 import json
 import subprocess
 
@@ -112,6 +113,92 @@ def _flatten_template(tmpl):
     if "1" in params:
         return _flatten_element(params["1"])
     return ""
+
+
+# ── Position-tracking flattener (for נוסח overlap detection) ──
+
+
+def _flatten_ep_with_nusach(ep):
+    """Flatten EP column and track נוסח templates that have param 2.
+
+    Returns (text, nusach_notes) where nusach_notes is a list of
+    {"start": int, "end": int, "param2": value} dicts.
+    """
+    parts = []
+    notes = []
+    for el in ep:
+        _flatten_tracking(el, parts, notes)
+    return "".join(parts), notes
+
+
+def _flatten_tracking(obj, parts, notes):
+    """Flatten element while tracking נוסח template positions."""
+    if isinstance(obj, str):
+        parts.append(obj)
+    elif isinstance(obj, dict):
+        _flatten_template_tracking(obj, parts, notes)
+    elif isinstance(obj, list):
+        for item in obj:
+            _flatten_tracking(item, parts, notes)
+
+
+def _flatten_template_tracking(tmpl, parts, notes):
+    """Flatten template while tracking נוסח positions."""
+    name = tmpl["tmpl_name"]
+    params = _get_params(tmpl)
+    if name == "נוסח":
+        start = sum(len(p) for p in parts)
+        if "1" in params:
+            _flatten_tracking(params["1"], parts, notes)
+        end = sum(len(p) for p in parts)
+        if "2" in params:
+            notes.append({"start": start, "end": end, "param2": params["2"]})
+        return
+    if name in ('קו"כ', 'כו"ק'):
+        if "1" in params:
+            _flatten_tracking(params["1"], parts, notes)
+        if "2" in params:
+            _flatten_tracking(params["2"], parts, notes)
+        return
+    if name == "מ:קמץ":
+        if "ד" in params:
+            _flatten_tracking(params["ד"], parts, notes)
+        return
+    if name in ("מ:לגרמיה-2", "מ:לגרמיה"):
+        parts.append("\u05c0")
+        return
+    if name == "מ:פסק":
+        parts.append("\u05c0")
+        return
+    if "1" in params:
+        _flatten_tracking(params["1"], parts, notes)
+
+
+def _changed_new_positions(old_text, new_text):
+    """Return set of character positions in new_text that are changed/added."""
+    sm = difflib.SequenceMatcher(None, old_text, new_text, autojunk=False)
+    changed = set()
+    for op, _i1, _i2, j1, j2 in sm.get_opcodes():
+        if op in ("replace", "insert"):
+            changed.update(range(j1, j2))
+    return changed
+
+
+def _find_relevant_nusach(old_text, new_text, notes, text_changed):
+    """Filter nusach notes to those relevant to the change."""
+    if not notes:
+        return []
+    if not text_changed:
+        # For structural changes, include all nusach notes
+        return [n["param2"] for n in notes]
+    # For text changes, find changed character positions in new_text
+    changed = _changed_new_positions(old_text, new_text)
+    result = []
+    for note in notes:
+        note_positions = range(note["start"], note["end"])
+        if any(pos in note_positions for pos in changed):
+            result.append(note["param2"])
+    return result
 
 
 # ── Book-level diffing ───────────────────────────────────────
@@ -229,13 +316,14 @@ def _diff_ep(old_ep, new_ep, book_name, chapter, verse):
     tmpl_args vs tmpl_params.
     """
     old_text = flatten_ep(old_ep)
-    new_text = flatten_ep(new_ep)
+    new_text, new_nusach = _flatten_ep_with_nusach(new_ep)
     text_changed = old_text != new_text
     if not text_changed:
         old_names = set(_collect_template_names(old_ep))
         new_names = set(_collect_template_names(new_ep))
         if old_names == new_names:
             return None  # No meaningful change
+    nusach_notes = _find_relevant_nusach(old_text, new_text, new_nusach, text_changed)
     return {
         "book": book_name,
         "chapter": chapter,
@@ -245,6 +333,7 @@ def _diff_ep(old_ep, new_ep, book_name, chapter, verse):
         "old_ep": old_ep,
         "new_ep": new_ep,
         "text_changed": text_changed,
+        "nusach_notes": nusach_notes,
     }
 
 

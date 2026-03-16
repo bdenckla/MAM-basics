@@ -9,6 +9,7 @@ import difflib
 from collections import Counter
 from pycmn import file_io
 from pydiff_mpp.mpp_extract import _collect_template_names
+from pydiff_mpp.mpp_nusach import nusach_body_to_html
 
 CATEGORY_INFO = {
     "meteg-removal": ("Meteg removal", "#1565c0"),
@@ -124,6 +125,31 @@ table.summary tr.total-row { font-weight: 600; cursor: default; }
 .change-desc { font-size: .85rem; color: #555; margin-top: .15rem; }
 .book-header { margin-top: 1.2rem; margin-bottom: .3rem; }
 .book-header.hidden { display: none; }
+.nusach-note {
+  border-left: 3px solid #f9a825;
+  background: #fffde7;
+  padding: .3rem .6rem;
+  margin-top: .3rem;
+  border-radius: 4px;
+}
+.nusach-label {
+  font-weight: 600;
+  color: #f57f17;
+  font-size: .8rem;
+}
+.nusach-body {
+  direction: rtl;
+  unicode-bidi: embed;
+  margin-top: .1rem;
+  font-size: .85rem;
+}
+.pointed-heb {
+  font-family: "SBL Hebrew", "Ezra SIL", "David", "Times New Roman", serif;
+  font-size: 20pt;
+}
+.letter-large { font-size: 130%; }
+.letter-small { font-size: 75%; }
+.letter-hung { vertical-align: super; font-size: 85%; }
 @media (max-width: 700px) {
   .change-display { flex-direction: column; align-items: flex-start; }
 }""")
@@ -278,6 +304,14 @@ def _render_card(diff):
             desc_parts.append("removed: " + ", ".join(removed))
         detail = "; ".join(desc_parts) if desc_parts else "template restructured"
         lines.append(f'<div class="change-desc">Template change ({_esc(detail)})</div>')
+    for note in diff.get("nusach_notes", []):
+        body_html = nusach_body_to_html(note)
+        lines.append(
+            '<div class="nusach-note">'
+            '<span class="nusach-label">\u05e0\u05d5\u05e1\u05d7</span>'
+            f'<div class="nusach-body">{body_html}</div>'
+            "</div>"
+        )
     lines.append("</div>")
     return "\n".join(lines)
 
