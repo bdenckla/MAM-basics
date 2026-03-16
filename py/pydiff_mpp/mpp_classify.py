@@ -99,17 +99,24 @@ def _classify_text_change(diff):
     # Pure meteg addition
     if non_space_added == {"meteg"} and not non_space_removed:
         return "meteg-addition"
-    # Pure rafe/varika addition (data uses U+05BF rafe; project calls it varika)
-    rafe_types = {"varika", "rafe"}
-    if non_space_added <= rafe_types and non_space_added and not non_space_removed:
-        if _has_reuveni(new_text):
-            return "varika-reuveni"
-        return "varika-other"
-    # Rafe/varika addition with meteg change
-    if non_space_added & rafe_types and non_space_removed <= {"meteg"}:
-        if _has_reuveni(new_text):
-            return "varika-reuveni"
-        return "varika-other"
+    # Varika (U+FB1E) addition — implicit hataf vowels
+    if (
+        "varika" in non_space_added
+        and non_space_added <= {"varika"}
+        and not non_space_removed
+    ):
+        return "varika"
+    if "varika" in non_space_added and non_space_removed <= {"meteg"}:
+        return "varika"
+    # Rafe (U+05BF) addition — quiescent consonants (ראובני words)
+    if (
+        "rafe" in non_space_added
+        and non_space_added <= {"rafe"}
+        and not non_space_removed
+    ):
+        return "rafe-reuveni"
+    if "rafe" in non_space_added and non_space_removed <= {"meteg"}:
+        return "rafe-reuveni"
     # Accent replaced with different accent
     if non_space_added == {"accent"} and non_space_removed == {"accent"}:
         return "accent-change"

@@ -16,8 +16,8 @@ from pydiff_mpp.mpp_nusach import nusach_body_to_html
 CATEGORY_INFO = {
     "meteg-removal": ("Meteg removal", "#1565c0"),
     "meteg-addition": ("Meteg addition", "#1e88e5"),
-    "varika-reuveni": ("Rafe (ראובני)", "#2e7d32"),
-    "varika-other": ("Rafe (other)", "#00695c"),
+    "rafe-reuveni": ("Rafe (ראובני)", "#2e7d32"),
+    "varika": ("Varika", "#00695c"),
     "accent-change": ("Accent change", "#ef6c00"),
     "accent-addition": ("Accent addition", "#e65100"),
     "accent-removal": ("Accent removal", "#f57c00"),
