@@ -113,27 +113,25 @@ def _esc(text):
 
 
 def _narrow_to_changed_words(old_text, new_text):
-    """Return (old_span, new_span) showing only the changed words.
+    """Return a list of (old_span, new_span) pairs, one per contiguous change.
 
-    Splits on spaces, finds the first and last differing word-groups,
-    and returns just those words with no surrounding context.
+    Splits on spaces and uses SequenceMatcher to find each contiguous
+    group of changed words, returning them as separate pairs rather than
+    one large span covering all changes.
     """
     old_words = old_text.split(" ")
     new_words = new_text.split(" ")
     sm = difflib.SequenceMatcher(None, old_words, new_words, autojunk=False)
-    first_old = first_new = None
-    last_old = last_new = None
+    pairs = []
     for op, i1, i2, j1, j2 in sm.get_opcodes():
         if op == "equal":
             continue
-        if first_old is None:
-            first_old, first_new = i1, j1
-        last_old, last_new = i2, j2
-    if first_old is None:
-        return old_text, new_text
-    old_span = " ".join(old_words[first_old:last_old])
-    new_span = " ".join(new_words[first_new:last_new])
-    return old_span, new_span
+        old_span = " ".join(old_words[i1:i2])
+        new_span = " ".join(new_words[j1:j2])
+        pairs.append((old_span, new_span))
+    if not pairs:
+        return [(old_text, new_text)]
+    return pairs
 
 
 def _css():
@@ -329,6 +327,36 @@ def _ref_str(diff):
     return f"{bk} {diff['chapter']}:{diff['verse']}"
 
 
+def _expand_diffs(diffs):
+    """Expand multi-change verse diffs into one diff per contiguous change group."""
+    expanded = []
+    for diff in diffs:
+        if not diff["text_changed"]:
+            expanded.append(diff)
+            continue
+        old_display = _normalize_paseq_spacing(
+            _display_text(diff["old_text"], diff["old_ep"])
+        )
+        new_display = _normalize_paseq_spacing(
+            _display_text(diff["new_text"], diff["new_ep"])
+        )
+        pairs = _narrow_to_changed_words(old_display, new_display)
+        nusach_notes = diff.get("nusach_notes", [])
+        for idx, (old_narrow, new_narrow) in enumerate(pairs):
+            sub = {
+                "book": diff["book"],
+                "chapter": diff["chapter"],
+                "verse": diff["verse"],
+                "category": diff["category"],
+                "text_changed": True,
+                "narrowed_old": old_narrow,
+                "narrowed_new": new_narrow,
+                "nusach_notes": nusach_notes if idx == len(pairs) - 1 else [],
+            }
+            expanded.append(sub)
+    return expanded
+
+
 def _render_summary_table(counts, total):
     rows = []
     rows.append('<table class="summary">')
@@ -368,13 +396,8 @@ def _render_card(diff):
         f'<span class="cat-badge cat-{cat}">{_esc(label)}</span></div>'
     )
     if diff["text_changed"]:
-        old_display = _normalize_paseq_spacing(
-            _display_text(diff["old_text"], diff["old_ep"])
-        )
-        new_display = _normalize_paseq_spacing(
-            _display_text(diff["new_text"], diff["new_ep"])
-        )
-        old_narrow, new_narrow = _narrow_to_changed_words(old_display, new_display)
+        old_narrow = diff["narrowed_old"]
+        new_narrow = diff["narrowed_new"]
         old_html, new_html = char_diff_spans(old_narrow, new_narrow)
         old_html = _postprocess_paseq_html(old_html)
         new_html = _postprocess_paseq_html(new_html)
@@ -425,6 +448,7 @@ def _render_cards(diffs):
 
 def write_report(diffs, old_rev, new_rev, out_path):
     """Write the full HTML report to out_path."""
+    diffs = _expand_diffs(diffs)
     counts = Counter(d["category"] for d in diffs)
     total = len(diffs)
     html_parts = [
