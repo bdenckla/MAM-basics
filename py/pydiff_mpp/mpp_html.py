@@ -8,6 +8,7 @@ Exports:
 import difflib
 from collections import Counter
 from pycmn import file_io
+from pydiff_mpp.grapheme_diff import char_diff_spans
 from pydiff_mpp.mpp_extract import _collect_template_names
 from pydiff_mpp.mpp_nusach import nusach_body_to_html
 
@@ -121,6 +122,8 @@ table.summary tr.total-row { font-weight: 600; cursor: default; }
 .old-side, .new-side { padding: .15rem .5rem; border-radius: 4px; }
 .old-side { background: var(--hi-old); }
 .new-side { background: var(--hi-new); }
+.old-side mark.diff-hi { background: #f9a0a0; border-radius: 2px; }
+.new-side mark.diff-hi { background: #a0d8a0; border-radius: 2px; }
 .arrow { font-size: 1.1rem; color: #888; }
 .change-desc { font-size: .85rem; color: #555; margin-top: .15rem; }
 .book-header { margin-top: 1.2rem; margin-bottom: .3rem; }
@@ -285,11 +288,12 @@ def _render_card(diff):
         old_narrow, new_narrow = _narrow_to_changed_words(
             diff["old_text"], diff["new_text"]
         )
+        old_html, new_html = char_diff_spans(old_narrow, new_narrow)
         lines.append(
             '<div class="change-display">'
-            f'<span class="heb old-side">{_esc(old_narrow)}</span>'
+            f'<span class="heb old-side">{old_html}</span>'
             '<span class="arrow">&rarr;</span>'
-            f'<span class="heb new-side">{_esc(new_narrow)}</span>'
+            f'<span class="heb new-side">{new_html}</span>'
             "</div>"
         )
     else:
