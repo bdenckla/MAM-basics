@@ -257,14 +257,23 @@ def _js():
     });
     bookHeaders.forEach(function(hdr) {
       var next = hdr.nextElementSibling;
-      var anyVisible = false;
+      var visCount = 0;
       while (next && !next.classList.contains('book-header')) {
         if (next.classList.contains('diff-card') && !next.classList.contains('hidden')) {
-          anyVisible = true; break;
+          visCount++;
         }
         next = next.nextElementSibling;
       }
-      hdr.classList.toggle('hidden', !anyVisible);
+      hdr.classList.toggle('hidden', visCount === 0);
+      var span = hdr.querySelector('.book-count');
+      if (span) {
+        var total = parseInt(hdr.getAttribute('data-total'), 10);
+        if (activeFilters.size === 0) {
+          span.textContent = total + (total === 1 ? ' diff' : ' diffs');
+        } else {
+          span.textContent = visCount + ' of ' + total;
+        }
+      }
     });
   }
   function toggleFilter(cat) {
@@ -433,14 +442,19 @@ def _render_card(diff):
 
 
 def _render_cards(diffs):
+    book_counts = Counter(d["book"] for d in diffs)
     parts = []
     current_book = None
     for diff in diffs:
         if diff["book"] != current_book:
             current_book = diff["book"]
+            n = book_counts[current_book]
+            suffix = "diff" if n == 1 else "diffs"
             parts.append(
-                f'<h2 class="book-header" data-books="{_esc(current_book)}">'
-                f"{_esc(current_book)}</h2>"
+                f'<h2 class="book-header" data-books="{_esc(current_book)}"'
+                f' data-total="{n}">'
+                f"{_esc(current_book)} "
+                f'(<span class="book-count">{n} {suffix}</span>)</h2>'
             )
         parts.append(_render_card(diff))
     return "\n".join(parts)
