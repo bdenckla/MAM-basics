@@ -6,12 +6,18 @@ Usage:
     .venv/Scripts/python.exe py/main_diff_mpp.py --old <rev> --new <rev>
 
 The revisions are git refs in the ../MAM-parsed repo (commits, tags, branches).
-Output goes to out/diff_mpp/<old>_<new>.html by default.
+Output goes to ../MAM-with-doc/docs/change-log/ by default.  If the hash range
+matches an entry in releases.json, the release name is used as the filename;
+otherwise the sanitised hash range is used.
 """
 
 import argparse
+import json
 import os
 from pydiff_mpp import mpp_extract, mpp_classify, mpp_html
+
+CHANGE_LOG_DIR = "../MAM-with-doc/docs/change-log"
+RELEASES_JSON = f"{CHANGE_LOG_DIR}/releases.json"
 
 
 def _sanitize_rev(rev):
@@ -22,6 +28,28 @@ def _sanitize_rev(rev):
         .replace("..", "_")
         .replace("^", "-")[:20]
     )
+
+
+def _lookup_release_name(old_rev, new_rev):
+    """Return the release name if this hash range is in releases.json, else None."""
+    if not os.path.isfile(RELEASES_JSON):
+        return None
+    with open(RELEASES_JSON, "r", encoding="utf-8") as f:
+        releases = json.load(f)
+    for entry in releases:
+        if entry["old"] == old_rev and entry["new"] == new_rev:
+            return entry["name"]
+    return None
+
+
+def _default_output_path(old_rev, new_rev):
+    """Build the default output path inside the change-log directory."""
+    name = _lookup_release_name(old_rev, new_rev)
+    if name is not None:
+        slug = name
+    else:
+        slug = f"{_sanitize_rev(old_rev)}_{_sanitize_rev(new_rev)}"
+    return f"{CHANGE_LOG_DIR}/{slug}.html"
 
 
 def main():
@@ -37,15 +65,12 @@ def main():
     parser.add_argument(
         "--output",
         default=None,
-        help="Output HTML path (default: out/diff_mpp/<old>_<new>.html)",
+        help="Output HTML path (default: auto from releases.json or hash range)",
     )
     args = parser.parse_args()
 
     if args.output is None:
-        out_dir = "out/diff_mpp"
-        os.makedirs(out_dir, exist_ok=True)
-        slug = f"{_sanitize_rev(args.old)}_{_sanitize_rev(args.new)}"
-        args.output = f"{out_dir}/{slug}.html"
+        args.output = _default_output_path(args.old, args.new)
 
     print(f"Comparing {args.old} -> {args.new} ...")
     diffs = mpp_extract.diff_all_books(args.old, args.new)
@@ -53,6 +78,7 @@ def main():
 
     mpp_classify.classify_diffs(diffs)
 
+    os.makedirs(os.path.dirname(args.output), exist_ok=True)
     mpp_html.write_report(diffs, args.old, args.new, args.output)
     print(f"  Report written to {args.output}")
 

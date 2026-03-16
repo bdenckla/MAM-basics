@@ -6,10 +6,11 @@ Exports:
 """
 
 import difflib
+import re
 from collections import Counter
 from pycmn import file_io
 from pydiff_mpp.grapheme_diff import char_diff_spans
-from pydiff_mpp.mpp_extract import _collect_template_names
+from pydiff_mpp.mpp_extract import _collect_template_names, _get_params
 from pydiff_mpp.mpp_nusach import nusach_body_to_html
 
 CATEGORY_INFO = {
@@ -25,6 +26,80 @@ CATEGORY_INFO = {
     "template-change": ("Template change", "#795548"),
     "misc": ("Miscellaneous", "#37474f"),
 }
+
+# ── Paseq display (ruby annotations for legarmeih / narpas) ──
+
+_LEG_SENTINEL = "\ufdd0"
+_NAR_SENTINEL = "\ufdd1"
+_LEG_RUBY = '<ruby class="paseq-ruby">\u05c0<rt>\u05dc</rt></ruby>'
+_NAR_RUBY = '<ruby class="paseq-ruby">\u05c0<rt>\u05e4</rt></ruby>'
+
+
+def _collect_paseq_types(obj, types):
+    """Recursively collect paseq template types, mirroring flatten_ep."""
+    if isinstance(obj, str):
+        return
+    if isinstance(obj, dict):
+        name = obj["tmpl_name"]
+        if name in ("מ:לגרמיה-2", "מ:לגרמיה"):
+            types.append("legarmeih")
+            return
+        if name == "מ:פסק":
+            types.append("narpas")
+            return
+        params = _get_params(obj)
+        if name == "נוסח":
+            if "1" in params:
+                _collect_paseq_types(params["1"], types)
+            return
+        if name in ('קו"כ', 'כו"ק'):
+            if "1" in params:
+                _collect_paseq_types(params["1"], types)
+            if "2" in params:
+                _collect_paseq_types(params["2"], types)
+            return
+        if name == "מ:קמץ":
+            if "ד" in params:
+                _collect_paseq_types(params["ד"], types)
+            return
+        if "1" in params:
+            _collect_paseq_types(params["1"], types)
+        return
+    if isinstance(obj, list):
+        for item in obj:
+            _collect_paseq_types(item, types)
+
+
+def _display_text(text, ep):
+    """Replace U+05C0 in flattened text with legarmeih/narpas sentinels."""
+    types = []
+    for el in ep:
+        _collect_paseq_types(el, types)
+    result = []
+    ti = 0
+    for ch in text:
+        if ch == "\u05c0":
+            result.append(_LEG_SENTINEL if types[ti] == "legarmeih" else _NAR_SENTINEL)
+            ti += 1
+        else:
+            result.append(ch)
+    return "".join(result)
+
+
+def _normalize_paseq_spacing(text):
+    """Normalize spacing around paseq sentinels for display.
+
+    Legarmeih: tight against preceding word, regular space after.
+    Narpas:    non-breaking space before, regular space after.
+    """
+    text = re.sub(r" ?" + _LEG_SENTINEL + r" ?", _LEG_SENTINEL + " ", text)
+    text = re.sub(r" ?" + _NAR_SENTINEL + r" ?", "\u00a0" + _NAR_SENTINEL + " ", text)
+    return text
+
+
+def _postprocess_paseq_html(html_str):
+    """Replace paseq sentinels with ruby HTML."""
+    return html_str.replace(_LEG_SENTINEL, _LEG_RUBY).replace(_NAR_SENTINEL, _NAR_RUBY)
 
 
 def _esc(text):
@@ -156,6 +231,14 @@ table.summary tr.total-row { font-weight: 600; cursor: default; }
 @media (max-width: 700px) {
   .change-display { flex-direction: column; align-items: flex-start; }
 }""")
+    lines.append("""ruby.paseq-ruby {
+  ruby-position: over;
+}
+ruby.paseq-ruby rt {
+  font-size: 60%;
+  font-weight: normal;
+  color: #888;
+}""")
     for cat in CATEGORY_INFO:
         lines.append(f".cat-{cat} {{ background: var(--cat-{cat}); }}")
     return "\n".join(lines)
@@ -285,10 +368,16 @@ def _render_card(diff):
         f'<span class="cat-badge cat-{cat}">{_esc(label)}</span></div>'
     )
     if diff["text_changed"]:
-        old_narrow, new_narrow = _narrow_to_changed_words(
-            diff["old_text"], diff["new_text"]
+        old_display = _normalize_paseq_spacing(
+            _display_text(diff["old_text"], diff["old_ep"])
         )
+        new_display = _normalize_paseq_spacing(
+            _display_text(diff["new_text"], diff["new_ep"])
+        )
+        old_narrow, new_narrow = _narrow_to_changed_words(old_display, new_display)
         old_html, new_html = char_diff_spans(old_narrow, new_narrow)
+        old_html = _postprocess_paseq_html(old_html)
+        new_html = _postprocess_paseq_html(new_html)
         lines.append(
             '<div class="change-display">'
             f'<span class="heb old-side">{old_html}</span>'
