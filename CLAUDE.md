@@ -187,7 +187,11 @@ Never use a font size smaller than **20pt** for pointed (vocalized/cantillated) 
 
 ## Opening HTML in a Browser
 
-When asked to open an HTML file in the browser, prefer opening it directly via the filesystem (`Start-Process path\to\file.html`) rather than spinning up an HTTP server. The generated reports use only relative links and work correctly from `file://` URLs.
+When asked to open an HTML file in the browser, prefer opening it directly via the filesystem rather than spinning up an HTTP server. The generated reports use only relative links and work correctly from `file://` URLs. Since the shell is Git Bash (not PowerShell), call through PowerShell explicitly:
+
+```bash
+powershell.exe -Command "Start-Process 'path/to/file.html'"
+```
 
 ## GitHub Repository Owner
 

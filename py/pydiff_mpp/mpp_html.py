@@ -5,14 +5,16 @@ Exports:
     write_report  — write the HTML report file
 """
 
+import difflib
 from collections import Counter
 from pycmn import file_io
+from pydiff_mpp.mpp_extract import _collect_template_names
 
 CATEGORY_INFO = {
     "meteg-removal": ("Meteg removal", "#1565c0"),
     "meteg-addition": ("Meteg addition", "#1e88e5"),
-    "varika-reuveni": ("Varika (ראובני)", "#2e7d32"),
-    "varika-other": ("Varika (other)", "#00695c"),
+    "varika-reuveni": ("Rafe (ראובני)", "#2e7d32"),
+    "varika-other": ("Rafe (other)", "#00695c"),
     "accent-change": ("Accent change", "#ef6c00"),
     "accent-addition": ("Accent addition", "#e65100"),
     "accent-removal": ("Accent removal", "#f57c00"),
@@ -31,6 +33,30 @@ def _esc(text):
         .replace(">", "&gt;")
         .replace('"', "&quot;")
     )
+
+
+def _narrow_to_changed_words(old_text, new_text):
+    """Return (old_span, new_span) showing only the changed words.
+
+    Splits on spaces, finds the first and last differing word-groups,
+    and returns just those words with no surrounding context.
+    """
+    old_words = old_text.split(" ")
+    new_words = new_text.split(" ")
+    sm = difflib.SequenceMatcher(None, old_words, new_words, autojunk=False)
+    first_old = first_new = None
+    last_old = last_new = None
+    for op, i1, i2, j1, j2 in sm.get_opcodes():
+        if op == "equal":
+            continue
+        if first_old is None:
+            first_old, first_new = i1, j1
+        last_old, last_new = i2, j2
+    if first_old is None:
+        return old_text, new_text
+    old_span = " ".join(old_words[first_old:last_old])
+    new_span = " ".join(new_words[first_new:last_new])
+    return old_span, new_span
 
 
 def _css():
@@ -230,19 +256,28 @@ def _render_card(diff):
         f'<span class="cat-badge cat-{cat}">{_esc(label)}</span></div>'
     )
     if diff["text_changed"]:
-        old_t = _esc(diff["old_text"])
-        new_t = _esc(diff["new_text"])
+        old_narrow, new_narrow = _narrow_to_changed_words(
+            diff["old_text"], diff["new_text"]
+        )
         lines.append(
             '<div class="change-display">'
-            f'<span class="heb old-side">{old_t}</span>'
+            f'<span class="heb old-side">{_esc(old_narrow)}</span>'
             '<span class="arrow">&rarr;</span>'
-            f'<span class="heb new-side">{new_t}</span>'
+            f'<span class="heb new-side">{_esc(new_narrow)}</span>'
             "</div>"
         )
     else:
-        lines.append(
-            f'<div class="change-desc">Structural/template change (body text unchanged)</div>'
-        )
+        old_names = set(_collect_template_names(diff["old_ep"]))
+        new_names = set(_collect_template_names(diff["new_ep"]))
+        added = sorted(new_names - old_names)
+        removed = sorted(old_names - new_names)
+        desc_parts = []
+        if added:
+            desc_parts.append("added: " + ", ".join(added))
+        if removed:
+            desc_parts.append("removed: " + ", ".join(removed))
+        detail = "; ".join(desc_parts) if desc_parts else "template restructured"
+        lines.append(f'<div class="change-desc">Template change ({_esc(detail)})</div>')
     lines.append("</div>")
     return "\n".join(lines)
 

@@ -195,10 +195,22 @@ def _diff_one_file(old_json, new_json, filename):
 
 
 def _collect_template_names(obj):
-    """Recursively collect all template names from a data structure."""
+    """Recursively collect template names relevant to body text.
+
+    Skips נוסח templates entirely: their name is excluded (since
+    adding/removing a נוסח wrapper doesn't change body text) and
+    param 2 (manuscript annotations) is not recursed into, so templates
+    nested there (e.g. ש) are also excluded.
+    """
     names = []
     if isinstance(obj, dict):
         if "tmpl_name" in obj:
+            if obj["tmpl_name"] == "נוסח":
+                # Only recurse into param 1 (body text), skip param 2 (annotations)
+                params = _get_params(obj)
+                if "1" in params:
+                    names.extend(_collect_template_names(params["1"]))
+                return names
             names.append(obj["tmpl_name"])
         for v in obj.values():
             names.extend(_collect_template_names(v))
