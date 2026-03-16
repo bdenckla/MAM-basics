@@ -91,9 +91,16 @@ def _get_params(tmpl):
     return params
 
 
+def _is_parashah_template(name):
+    """Check if template name is a רN parashah marker (e.g. ר0, ר4)."""
+    return len(name) >= 2 and name[0] == "ר" and name[1:].isdigit()
+
+
 def _flatten_template(tmpl):
     name = tmpl["tmpl_name"]
     params = _get_params(tmpl)
+    if _is_parashah_template(name):
+        return " "
     if name == "נוסח":
         return _flatten_element(params["1"]) if "1" in params else ""
     if name in ('קו"כ', 'כו"ק'):
@@ -146,6 +153,9 @@ def _flatten_template_tracking(tmpl, parts, notes):
     """Flatten template while tracking נוסח positions."""
     name = tmpl["tmpl_name"]
     params = _get_params(tmpl)
+    if _is_parashah_template(name):
+        parts.append(" ")
+        return
     if name == "נוסח":
         start = sum(len(p) for p in parts)
         if "1" in params:
