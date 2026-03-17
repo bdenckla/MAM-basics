@@ -20,6 +20,7 @@ CATEGORY_INFO = {
     "accent-removal": ("Accent removal", "#f57c00"),
     "vowel-change": ("Vowel change", "#6a1b9a"),
     "legarmeih-paseq": ("Legarmeh / paseq", "#ad1457"),
+    "maqaf-afor": ("Gray maqaf", "#78909c"),
     "template-change": ("Template change", "#795548"),
     "misc": ("Miscellaneous", "#37474f"),
 }

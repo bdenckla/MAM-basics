@@ -331,9 +331,21 @@ def _describe_paseq_change(old_text, new_text):
     return None
 
 
+def _describe_maqaf_afor(old_text, new_text):
+    old_spaces = old_text.count(" ")
+    new_spaces = new_text.count(" ")
+    if old_spaces > new_spaces:
+        return "add gray maqaf"
+    if new_spaces > old_spaces:
+        return "remove gray maqaf"
+    return None
+
+
 def describe_change(old_text, new_text, category, book, chapter, verse):
     """Return an English description of the change, or None."""
     poetic = _is_poetic(book, chapter, verse)
+    if category == "maqaf-afor":
+        return _describe_maqaf_afor(old_text, new_text)
     if category == "legarmeih-paseq":
         return _describe_paseq_change(old_text, new_text)
     if category in _ACCENT_CATS:

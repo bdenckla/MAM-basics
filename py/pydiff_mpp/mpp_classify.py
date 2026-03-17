@@ -6,6 +6,7 @@ Exports:
 """
 
 import difflib
+from collections import Counter
 from pycmn import hebrew_points as hpo
 from pydiff_mpp.mpp_extract import _collect_template_names
 
@@ -86,6 +87,14 @@ def _has_reuveni(text):
     return "ראובני" in consonants
 
 
+def _maqaf_afor_changed(diff):
+    """True if the מ:מקף אפור template count differs between old and new EP."""
+    _MA = "מ:מקף אפור"
+    old_c = Counter(n for n in _collect_template_names(diff["old_ep"]) if n == _MA)
+    new_c = Counter(n for n in _collect_template_names(diff["new_ep"]) if n == _MA)
+    return old_c[_MA] != new_c[_MA]
+
+
 def _classify_text_change(diff):
     """Classify a diff where the body text actually changed."""
     old_text = diff["old_text"]
@@ -129,6 +138,9 @@ def _classify_text_change(diff):
     # Any change involving paseq (legarmeh / paseq additions, removals, spacing)
     if "paseq" in non_space_added or "paseq" in non_space_removed:
         return "legarmeih-paseq"
+    # Gray maqaf: space or maqaf change with מ:מקף אפור template added/removed
+    if non_space_added | non_space_removed <= {"maqaf"} and _maqaf_afor_changed(diff):
+        return "maqaf-afor"
     if not non_space_added and not non_space_removed:
         return "legarmeih-paseq"
     # Vowel change
