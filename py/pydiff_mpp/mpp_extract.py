@@ -89,7 +89,8 @@ def _get_param(tmpl, key):
       - tmpl_params dict  (current: {"1": ..., "ד": ...})
       - tmpl_args_dic dict (transitional, same shape)
       - tmpl_args list (oldest: positional for integer keys,
-        "key=value" strings for named keys like "ד=...")
+        "key=value" strings for named keys like "ד=...",
+        or ["key=", value] lists when value is complex)
 
     Returns the value, or _MISSING if the key is absent.
     """
@@ -105,11 +106,13 @@ def _get_param(tmpl, key):
             if 0 <= idx < len(args):
                 return args[idx]
         else:
-            # Named keys → scan for "key=value" string
+            # Named keys → scan for "key=value" string or ["key=", value] list
             prefix = key + "="
             for arg in args:
                 if isinstance(arg, str) and arg.startswith(prefix):
                     return arg[len(prefix) :]
+                if isinstance(arg, list) and arg and arg[0] == prefix:
+                    return arg[1]
     return _MISSING
 
 
