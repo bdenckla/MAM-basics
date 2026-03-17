@@ -72,6 +72,11 @@ def _collect_paseq_types(obj, types):
             if pd is not _MISSING:
                 _collect_paseq_types(pd, types)
             return
+        if name == "מ:כפול":
+            pk = _get_param(obj, "כפול")
+            if pk is not _MISSING:
+                _collect_paseq_types(pk, types)
+            return
         p1 = _get_param(obj, "1")
         if p1 is not _MISSING:
             _collect_paseq_types(p1, types)
@@ -128,6 +133,11 @@ def _gray_maqaf_walk_template(tmpl, pos, positions):
         return
     if name in ("מ:לגרמיה-2", "מ:לגרמיה", "מ:פסק"):
         pos[0] += 1
+        return
+    if name == "מ:כפול":
+        pk = _get_param(tmpl, "כפול")
+        if pk is not _MISSING:
+            _gray_maqaf_walk(pk, pos, positions)
         return
     p1 = _get_param(tmpl, "1")
     if p1 is not _MISSING:
@@ -196,6 +206,11 @@ def _kq_position_walk_template(tmpl, pos, positions):
         return
     if name in ("מ:לגרמיה-2", "מ:לגרמיה", "מ:פסק"):
         pos[0] += 1
+        return
+    if name == "מ:כפול":
+        pk = _get_param(tmpl, "כפול")
+        if pk is not _MISSING:
+            _kq_position_walk(pk, pos, positions)
         return
     p1 = _get_param(tmpl, "1")
     if p1 is not _MISSING:

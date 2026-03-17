@@ -156,6 +156,9 @@ def _flatten_template(tmpl):
         return "\u05c0"  # paseq character
     if name == "מ:פסק":
         return "\u05c0"  # paseq character
+    if name == "מ:כפול":
+        pk = _get_param(tmpl, "כפול")
+        return _flatten_element(pk) if pk is not _MISSING else ""
     # Generic: try param "1" if present
     p1 = _get_param(tmpl, "1")
     if p1 is not _MISSING:
@@ -224,6 +227,11 @@ def _flatten_template_tracking(tmpl, parts, notes):
         return
     if name == "מ:פסק":
         parts.append("\u05c0")
+        return
+    if name == "מ:כפול":
+        pk = _get_param(tmpl, "כפול")
+        if pk is not _MISSING:
+            _flatten_tracking(pk, parts, notes)
         return
     p1 = _get_param(tmpl, "1")
     if p1 is not _MISSING:
