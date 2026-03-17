@@ -21,6 +21,7 @@ from pydiff_mpp.mpp_display import (
     postprocess_kq_html,
 )
 from pydiff_mpp.mpp_book_urls import mam_with_doc_url, wikisource_url, ref_str
+from pydiff_mpp.mpp_subtitle import render_subtitle_table
 
 
 def _esc(text):
@@ -264,13 +265,7 @@ def write_report(diffs, old_rev, new_rev, out_path, old_date="", new_date=""):
     diffs = _expand_diffs(diffs)
     counts = Counter(d["category"] for d in diffs)
     total = len(diffs)
-    hash_range = f"{_esc(old_rev)} &rarr; {_esc(new_rev)}"
-    if old_date and new_date:
-        date_range = f" ({_esc(old_date)} &rarr; {_esc(new_date)})"
-    elif new_date:
-        date_range = f" ({_esc(new_date)})"
-    else:
-        date_range = ""
+    subtitle_table = render_subtitle_table(old_rev, new_rev, old_date, new_date, total)
     html_parts = [
         "<!DOCTYPE html>",
         '<html lang="en">',
@@ -281,8 +276,7 @@ def write_report(diffs, old_rev, new_rev, out_path, old_date="", new_date=""):
         "</head>",
         "<body>",
         "<h1>MAM Body Text Changes</h1>",
-        f'<p class="subtitle">{hash_range}{date_range}'
-        f" &mdash; {total} change{'s' if total != 1 else ''} found</p>",
+        subtitle_table,
         '<h2 id="summary">Summary by category</h2>',
         _render_summary_table(counts, total),
         '<h2 id="diffs">Changes (reading order)</h2>',

@@ -9,14 +9,14 @@ Exports:
 def write_index(release_info, change_log_dir):
     """Write index.html listing all releases (newest first).
 
-    Each entry in release_info is a dict with "name" and "count" keys.
+    Each entry in release_info is a dict with "name", "count", and "old_date" keys.
     """
     lines = [
         "<!DOCTYPE html>",
         '<html lang="en">',
         "<head>",
         '<meta charset="utf-8">',
-        "<title>MAM Change Log</title>",
+        "<title>MAM Change Logs</title>",
         "<style>",
         "body {",
         '  font: 15px/1.6 "Segoe UI", system-ui, sans-serif;',
@@ -30,15 +30,17 @@ def write_index(release_info, change_log_dir):
         "</style>",
         "</head>",
         "<body>",
-        "<h1>MAM Change Log</h1>",
+        "<h1>MAM Change Logs</h1>",
         "<ul>",
     ]
     for info in reversed(release_info):
         name = info["name"]
+        old_date = info["old_date"]
         count = info["count"]
         suffix = "change" if count == 1 else "changes"
         lines.append(
-            f'  <li><a href="{name}.html">{name}</a>'
+            f"  <li>Release spanning {old_date} to"
+            f' <a href="{name}.html">{name}</a>'
             f" &mdash; {count} body text {suffix}</li>"
         )
     lines.extend(["</ul>", "</body>", "</html>"])

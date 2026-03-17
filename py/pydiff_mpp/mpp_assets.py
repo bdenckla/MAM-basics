@@ -44,6 +44,13 @@ body {
 h1 { font-size: 1.5rem; margin-bottom: .3rem; margin-top: 1rem; }
 h2 { font-size: 1.2rem; margin-top: 1.5rem; margin-bottom: .5rem; }
 .subtitle { color: #666; font-size: .9rem; margin-bottom: 1.5rem; }
+table.subtitle {
+  border-collapse: collapse; margin-bottom: .5rem; max-width: 420px;
+}
+table.subtitle th, table.subtitle td {
+  text-align: left; padding: .2rem .75rem; border-bottom: 1px solid var(--border);
+}
+table.subtitle th { background: #f0f0f0; font-weight: 600; }
 table.summary {
   border-collapse: collapse; margin-bottom: 1.5rem; width: 100%; max-width: 500px;
 }

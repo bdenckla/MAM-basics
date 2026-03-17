@@ -80,7 +80,7 @@ def _generate_report(old_rev, new_rev, output):
     os.makedirs(os.path.dirname(output), exist_ok=True)
     total = mpp_html.write_report(diffs, old_rev, new_rev, output, old_date, new_date)
     print(f"  Report written to {output}")
-    return total
+    return total, old_date
 
 
 def _run_all():
@@ -90,8 +90,10 @@ def _run_all():
     release_info = []
     for entry in data["releases"]:
         output = f"{CHANGE_LOG_DIR}/{entry['name']}.html"
-        count = _generate_report(entry["old"], entry["new"], output)
-        release_info.append({"name": entry["name"], "count": count})
+        count, old_date = _generate_report(entry["old"], entry["new"], output)
+        release_info.append(
+            {"name": entry["name"], "count": count, "old_date": old_date}
+        )
     mpp_index.write_index(release_info, CHANGE_LOG_DIR)
 
 
