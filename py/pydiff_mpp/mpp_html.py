@@ -114,11 +114,14 @@ def _esc(text):
 
 
 def _narrow_to_changed_words(old_text, new_text):
-    """Return a list of (old_span, new_span) pairs, one per contiguous change.
+    """Return list of (old_span, new_span, new_j1, new_j2) tuples.
 
-    Splits on spaces and uses SequenceMatcher to find each contiguous
-    group of changed words, returning them as separate pairs rather than
-    one large span covering all changes.
+    Each tuple contains the old and new text spans, plus the word index
+    range [j1, j2) in new_words for position tracking.
+
+    When a 'replace' opcode has equal word counts on both sides, each
+    word pair is split into its own entry so that independently changed
+    words each get their own diff card.
     """
     old_words = old_text.split(" ")
     new_words = new_text.split(" ")
@@ -127,11 +130,18 @@ def _narrow_to_changed_words(old_text, new_text):
     for op, i1, i2, j1, j2 in sm.get_opcodes():
         if op == "equal":
             continue
-        old_span = " ".join(old_words[i1:i2])
-        new_span = " ".join(new_words[j1:j2])
-        pairs.append((old_span, new_span))
+        if op == "replace" and (i2 - i1) == (j2 - j1):
+            for k in range(i2 - i1):
+                ow = old_words[i1 + k]
+                nw = new_words[j1 + k]
+                if ow != nw:
+                    pairs.append((ow, nw, j1 + k, j1 + k + 1))
+        else:
+            old_span = " ".join(old_words[i1:i2])
+            new_span = " ".join(new_words[j1:j2])
+            pairs.append((old_span, new_span, j1, j2))
     if not pairs:
-        return [(old_text, new_text)]
+        return [(old_text, new_text, 0, len(new_words))]
     return pairs
 
 
@@ -337,12 +347,56 @@ def _ref_str(diff):
     return f"{bk} {diff['chapter']}:{diff['verse']}"
 
 
+def _word_char_ranges(text):
+    """Return list of (start, end) char positions for each space-separated word."""
+    ranges = []
+    pos = 0
+    for word in text.split(" "):
+        ranges.append((pos, pos + len(word)))
+        pos += len(word) + 1
+    return ranges
+
+
+def _distribute_nusach(old_text, new_text, nusach_notes, expected_count):
+    """Distribute nusach notes across sub-diffs by word-position overlap.
+
+    Narrows on the raw (pre-display-transform) text to get word index
+    ranges, converts those to character positions, and assigns each
+    nusach note to the sub-diff whose character range overlaps the
+    note's [start, end) span.
+    """
+    empty = [[] for _ in range(expected_count)]
+    if not nusach_notes:
+        return empty
+    raw_pairs = _narrow_to_changed_words(old_text, new_text)
+    if len(raw_pairs) != expected_count:
+        # Display and raw narrowing diverged (e.g. paseq spacing);
+        # fall back to attaching all notes to the last sub-diff.
+        result = [[] for _ in range(expected_count)]
+        result[-1] = [n["param2"] for n in nusach_notes]
+        return result
+    word_ranges = _word_char_ranges(new_text)
+    result = []
+    for _, _, j1, j2 in raw_pairs:
+        char_start = word_ranges[j1][0]
+        char_end = word_ranges[j2 - 1][1]
+        matching = [
+            n["param2"]
+            for n in nusach_notes
+            if n["end"] > char_start and n["start"] < char_end
+        ]
+        result.append(matching)
+    return result
+
+
 def _expand_diffs(diffs):
     """Expand multi-change verse diffs into one diff per contiguous change group."""
     expanded = []
     for diff in diffs:
         if not diff["text_changed"]:
-            expanded.append(diff)
+            out = dict(diff)
+            out["nusach_notes"] = [n["param2"] for n in diff.get("nusach_notes", [])]
+            expanded.append(out)
             continue
         old_display = _normalize_paseq_spacing(
             _display_text(diff["old_text"], diff["old_ep"])
@@ -352,7 +406,10 @@ def _expand_diffs(diffs):
         )
         pairs = _narrow_to_changed_words(old_display, new_display)
         nusach_notes = diff.get("nusach_notes", [])
-        for idx, (old_narrow, new_narrow) in enumerate(pairs):
+        notes_per_pair = _distribute_nusach(
+            diff["old_text"], diff["new_text"], nusach_notes, len(pairs)
+        )
+        for idx, (old_narrow, new_narrow, _, _) in enumerate(pairs):
             sub = {
                 "book": diff["book"],
                 "chapter": diff["chapter"],
@@ -361,7 +418,7 @@ def _expand_diffs(diffs):
                 "text_changed": True,
                 "narrowed_old": old_narrow,
                 "narrowed_new": new_narrow,
-                "nusach_notes": nusach_notes if idx == len(pairs) - 1 else [],
+                "nusach_notes": notes_per_pair[idx],
             }
             expanded.append(sub)
     return expanded

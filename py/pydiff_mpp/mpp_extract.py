@@ -195,19 +195,24 @@ def _changed_new_positions(old_text, new_text):
 
 
 def _find_relevant_nusach(old_text, new_text, notes, text_changed):
-    """Filter nusach notes to those relevant to the change."""
+    """Filter nusach notes to those relevant to the change.
+
+    Returns list of note dicts with start, end, and param2 fields
+    so that downstream code can distribute notes across sub-diffs
+    by position overlap.
+    """
     if not notes:
         return []
     if not text_changed:
         # For structural changes, include all nusach notes
-        return [n["param2"] for n in notes]
+        return list(notes)
     # For text changes, find changed character positions in new_text
     changed = _changed_new_positions(old_text, new_text)
     result = []
     for note in notes:
         note_positions = range(note["start"], note["end"])
         if any(pos in note_positions for pos in changed):
-            result.append(note["param2"])
+            result.append(note)
     return result
 
 
