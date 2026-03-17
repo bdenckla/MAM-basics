@@ -163,6 +163,12 @@ def _classify_structural_change(diff):
     _LEGAR = {"מ:לגרמיה", "מ:לגרמיה-2"}
     if _LEGAR & (old_names ^ new_names):
         return "legarmeih-paseq"
+    removed = old_names - new_names
+    added = new_names - old_names
+    if not added and removed == {"מ:דחי"}:
+        return "dehi-removal"
+    if not added and removed == {"מ:צינור"}:
+        return "tsinnor-removal"
     return "template-change"
 
 

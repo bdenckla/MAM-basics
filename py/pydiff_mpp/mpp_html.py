@@ -108,11 +108,40 @@ def _distribute_nusach(old_text, new_text, nusach_notes, expected_count):
     return result
 
 
+_TEMPLATE_REMOVAL_CATS = {
+    "מ:דחי": "dehi-removal",
+    "מ:צינור": "tsinnor-removal",
+}
+
+
+def _split_structural_diff(diff):
+    """Split a structural diff that removes multiple categorizable templates."""
+    old_names = set(_collect_template_names(diff["old_ep"]))
+    new_names = set(_collect_template_names(diff["new_ep"]))
+    removed = old_names - new_names
+    added = new_names - old_names
+    splittable = removed & _TEMPLATE_REMOVAL_CATS.keys()
+    if added or len(splittable) < 2:
+        return None
+    notes = [n["param2"] for n in diff.get("nusach_notes", [])]
+    subs = []
+    for i, tname in enumerate(sorted(splittable)):
+        sub = dict(diff)
+        sub["category"] = _TEMPLATE_REMOVAL_CATS[tname]
+        sub["nusach_notes"] = notes if i == 0 else []
+        subs.append(sub)
+    return subs
+
+
 def _expand_diffs(diffs):
     """Expand multi-change verse diffs into one diff per contiguous change group."""
     expanded = []
     for diff in diffs:
         if not diff["text_changed"]:
+            split = _split_structural_diff(diff)
+            if split:
+                expanded.extend(split)
+                continue
             out = dict(diff)
             out["nusach_notes"] = [n["param2"] for n in diff.get("nusach_notes", [])]
             expanded.append(out)
@@ -186,17 +215,24 @@ def _render_card(diff):
             old_narrow, new_narrow, cat, diff["book"], diff["chapter"], diff["verse"]
         )
     else:
-        old_names = set(_collect_template_names(diff["old_ep"]))
-        new_names = set(_collect_template_names(diff["new_ep"]))
-        added = sorted(new_names - old_names)
-        removed = sorted(old_names - new_names)
-        desc_parts = []
-        if added:
-            desc_parts.append("added: " + ", ".join(added))
-        if removed:
-            desc_parts.append("removed: " + ", ".join(removed))
-        detail = "; ".join(desc_parts) if desc_parts else "template restructured"
-        eng_desc = f"Template change ({detail})"
+        # For dedicated template-removal categories, use the category's
+        # specific template name rather than computing from old_ep/new_ep
+        # (which may reflect the full verse change when a diff was split).
+        _CAT_TEMPLATE = {v: k for k, v in _TEMPLATE_REMOVAL_CATS.items()}
+        if cat in _CAT_TEMPLATE:
+            eng_desc = f"Template change (removed: {_CAT_TEMPLATE[cat]})"
+        else:
+            old_names = set(_collect_template_names(diff["old_ep"]))
+            new_names = set(_collect_template_names(diff["new_ep"]))
+            added = sorted(new_names - old_names)
+            removed = sorted(old_names - new_names)
+            desc_parts = []
+            if added:
+                desc_parts.append("added: " + ", ".join(added))
+            if removed:
+                desc_parts.append("removed: " + ", ".join(removed))
+            detail = "; ".join(desc_parts) if desc_parts else "template restructured"
+            eng_desc = f"Template change ({detail})"
     desc_html = ""
     if eng_desc:
         esc_desc = add_name_tooltips(_esc(eng_desc))
