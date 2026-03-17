@@ -106,13 +106,23 @@ def _get_param(tmpl, key):
             if 0 <= idx < len(args):
                 return args[idx]
         else:
-            # Named keys → scan for "key=value" string or ["key=", value] list
+            # Named keys → scan for "key=value" string or list starting
+            # with "key=..." (possibly fused with the start of the value)
             prefix = key + "="
             for arg in args:
                 if isinstance(arg, str) and arg.startswith(prefix):
                     return arg[len(prefix) :]
-                if isinstance(arg, list) and arg and arg[0] == prefix:
-                    return arg[1]
+                if (
+                    isinstance(arg, list)
+                    and arg
+                    and isinstance(arg[0], str)
+                    and arg[0].startswith(prefix)
+                ):
+                    head = arg[0][len(prefix) :]
+                    tail = arg[1:]
+                    if not head and len(tail) == 1:
+                        return tail[0]
+                    return ([head] if head else []) + tail
     return _MISSING
 
 

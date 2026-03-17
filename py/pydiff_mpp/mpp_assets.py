@@ -92,8 +92,9 @@ table.summary tr.total-row { font-weight: 600; cursor: default; }
   color: #fff; white-space: nowrap;
 }
 .heb {
-  font-family: "SBL Hebrew", "Ezra SIL", "David", "Times New Roman", serif;
+  font-family: "Taamey D WOFF2", "SBL Hebrew", "Ezra SIL", "David", "Times New Roman", serif;
   font-size: 20pt; direction: rtl; unicode-bidi: embed;
+  font-feature-settings: 'ss01';
 }
 .change-display {
   display: flex; align-items: center; gap: .5rem; margin-top: .2rem; flex-wrap: wrap;
