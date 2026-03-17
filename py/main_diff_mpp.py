@@ -19,7 +19,7 @@ import argparse
 import json
 import os
 import subprocess
-from pydiff_mpp import mpp_extract, mpp_classify, mpp_html, mpp_index
+from pydiff_mpp import mpp_extract, mpp_classify, mpp_html, mpp_json, mpp_index
 
 MAM_PARSED_DIR = "../MAM-parsed"
 CHANGE_LOG_DIR = "../MAM-with-doc/docs/change-log"
@@ -78,6 +78,9 @@ def _generate_report(old_rev, new_rev, output):
     old_date = _commit_date(old_rev)
     new_date = _commit_date(new_rev)
     os.makedirs(os.path.dirname(output), exist_ok=True)
+    json_path = output.removesuffix(".html") + ".json"
+    mpp_json.write_json(diffs, old_rev, new_rev, json_path)
+    print(f"  JSON written to {json_path}")
     total = mpp_html.write_report(diffs, old_rev, new_rev, output, old_date, new_date)
     print(f"  Report written to {output}")
     return total, old_date
