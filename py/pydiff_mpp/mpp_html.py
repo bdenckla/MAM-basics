@@ -13,7 +13,11 @@ from urllib.parse import quote
 from pycmn import file_io
 from pycmn import hebrew_verse_numerals as hvn
 from pydiff_mpp.grapheme_diff import char_diff_spans
-from pydiff_mpp.mpp_extract import _collect_template_names, _get_params
+from pydiff_mpp.mpp_extract import (
+    _collect_template_names,
+    _get_params,
+    _is_parashah_template,
+)
 from pydiff_mpp.describe_diff import describe_change
 from pydiff_mpp.mpp_nusach import nusach_body_to_html
 
@@ -104,6 +108,13 @@ _NAR_SENTINEL = "\ufdd1"
 _LEG_RUBY = '<ruby class="paseq-ruby">\u05c0<rt>\u05dc</rt></ruby>'
 _NAR_RUBY = '<ruby class="paseq-ruby">\u05c0<rt>\u05e4</rt></ruby>'
 
+# ── K/Q display (ruby annotations for ketiv/qere) ──
+
+_KQ_K_START = "\ue010"
+_KQ_K_END = "\ue011"
+_KQ_Q_START = "\ue012"
+_KQ_Q_END = "\ue013"
+
 
 def _collect_paseq_types(obj, types):
     """Recursively collect paseq template types, mirroring flatten_ep."""
@@ -140,19 +151,103 @@ def _collect_paseq_types(obj, types):
             _collect_paseq_types(item, types)
 
 
-def _display_text(text, ep):
-    """Replace U+05C0 in flattened text with legarmeih/narpas sentinels."""
-    types = []
+def _collect_kq_positions(ep):
+    """Walk EP structure and return k/q boundary positions in flattened text."""
+    positions = []
+    pos = [0]
     for el in ep:
-        _collect_paseq_types(el, types)
+        _kq_position_walk(el, pos, positions)
+    return positions
+
+
+def _kq_position_walk(obj, pos, positions):
+    if isinstance(obj, str):
+        pos[0] += len(obj)
+    elif isinstance(obj, dict):
+        _kq_position_walk_template(obj, pos, positions)
+    elif isinstance(obj, list):
+        for item in obj:
+            _kq_position_walk(item, pos, positions)
+
+
+def _kq_position_walk_template(tmpl, pos, positions):
+    name = tmpl["tmpl_name"]
+    params = _get_params(tmpl)
+    if _is_parashah_template(name):
+        pos[0] += 1
+        return
+    if name == "נוסח":
+        if "1" in params:
+            _kq_position_walk(params["1"], pos, positions)
+        return
+    if name in ('קו"כ', 'כו"ק'):
+        p1_start = pos[0]
+        if "1" in params:
+            _kq_position_walk(params["1"], pos, positions)
+        p1_end = pos[0]
+        p2_start = pos[0]
+        if "2" in params:
+            _kq_position_walk(params["2"], pos, positions)
+        p2_end = pos[0]
+        if name == 'כו"ק':
+            k_start, k_end = p1_start, p1_end
+            q_start, q_end = p2_start, p2_end
+        else:
+            q_start, q_end = p1_start, p1_end
+            k_start, k_end = p2_start, p2_end
+        positions.append(
+            {
+                "k_start": k_start,
+                "k_end": k_end,
+                "q_start": q_start,
+                "q_end": q_end,
+            }
+        )
+        return
+    if name == "מ:קמץ":
+        if "ד" in params:
+            _kq_position_walk(params["ד"], pos, positions)
+        return
+    if name in ("מ:לגרמיה-2", "מ:לגרמיה", "מ:פסק"):
+        pos[0] += 1
+        return
+    if "1" in params:
+        _kq_position_walk(params["1"], pos, positions)
+
+
+def _display_text(text, ep):
+    """Replace U+05C0 with paseq sentinels and wrap k/q parts with sentinels."""
+    paseq_types = []
+    for el in ep:
+        _collect_paseq_types(el, paseq_types)
+    kq_positions = _collect_kq_positions(ep)
+    # Build insertion maps: position -> sentinels to insert
+    kq_before = {}  # insert before char at this position
+    kq_after = {}  # insert after last char before this position
+    for kq in kq_positions:
+        kq_before.setdefault(kq["k_start"], []).append(_KQ_K_START)
+        kq_after.setdefault(kq["k_end"], []).append(_KQ_K_END)
+        kq_before.setdefault(kq["q_start"], []).append(_KQ_Q_START)
+        kq_after.setdefault(kq["q_end"], []).append(_KQ_Q_END)
     result = []
-    ti = 0
-    for ch in text:
+    paseq_idx = 0
+    for i, ch in enumerate(text):
+        if i in kq_after:
+            result.extend(kq_after[i])
+        if i in kq_before:
+            result.extend(kq_before[i])
         if ch == "\u05c0":
-            result.append(_LEG_SENTINEL if types[ti] == "legarmeih" else _NAR_SENTINEL)
-            ti += 1
+            result.append(
+                _LEG_SENTINEL
+                if paseq_types[paseq_idx] == "legarmeih"
+                else _NAR_SENTINEL
+            )
+            paseq_idx += 1
         else:
             result.append(ch)
+    end = len(text)
+    if end in kq_after:
+        result.extend(kq_after[end])
     return "".join(result)
 
 
@@ -170,6 +265,48 @@ def _normalize_paseq_spacing(text):
 def _postprocess_paseq_html(html_str):
     """Replace paseq sentinels with ruby HTML."""
     return html_str.replace(_LEG_SENTINEL, _LEG_RUBY).replace(_NAR_SENTINEL, _NAR_RUBY)
+
+
+def _kq_ruby_html(k_content, q_content):
+    """Build ruby HTML with qere as base text and ketiv as annotation."""
+    return (
+        '<ruby class="kq-pair">'
+        f'<span class="kq-q">{q_content}</span>'
+        "<rp>(</rp>"
+        f'<rt><span class="kq-k">{k_content}</span></rt>'
+        "<rp>)</rp>"
+        "</ruby>"
+    )
+
+
+def _postprocess_kq_html(html_str):
+    """Replace k/q sentinel pairs with ruby HTML."""
+    # Ketiv-first pattern (כו"ק)
+    html_str = re.sub(
+        re.escape(_KQ_K_START)
+        + r"(.*?)"
+        + re.escape(_KQ_K_END)
+        + re.escape(_KQ_Q_START)
+        + r"(.*?)"
+        + re.escape(_KQ_Q_END),
+        lambda m: _kq_ruby_html(m.group(1), m.group(2)),
+        html_str,
+    )
+    # Qere-first pattern (קו"כ)
+    html_str = re.sub(
+        re.escape(_KQ_Q_START)
+        + r"(.*?)"
+        + re.escape(_KQ_Q_END)
+        + re.escape(_KQ_K_START)
+        + r"(.*?)"
+        + re.escape(_KQ_K_END),
+        lambda m: _kq_ruby_html(m.group(2), m.group(1)),
+        html_str,
+    )
+    # Strip any remaining stray sentinels
+    for s in (_KQ_K_START, _KQ_K_END, _KQ_Q_START, _KQ_Q_END):
+        html_str = html_str.replace(s, "")
+    return html_str
 
 
 def _esc(text):
@@ -321,7 +458,13 @@ ruby.paseq-ruby rt {
   font-size: 60%;
   font-weight: normal;
   color: #888;
-}""")
+}
+ruby.kq-pair rt {
+  font-size: 20pt;
+  font-family: "SBL Hebrew", "Ezra SIL", "David", "Times New Roman", serif;
+}
+.kq-k { color: #6a1b9a; }
+.kq-q { color: #1565c0; }""")
     for cat in CATEGORY_INFO:
         lines.append(f".cat-{cat} {{ background: var(--cat-{cat}); }}")
     return "\n".join(lines)
@@ -547,6 +690,8 @@ def _render_card(diff):
         old_html, new_html = char_diff_spans(old_narrow, new_narrow)
         old_html = _postprocess_paseq_html(old_html)
         new_html = _postprocess_paseq_html(new_html)
+        old_html = _postprocess_kq_html(old_html)
+        new_html = _postprocess_kq_html(new_html)
         lines.append(
             '<div class="change-display">'
             f'<span class="heb old-side">{old_html}</span>'
