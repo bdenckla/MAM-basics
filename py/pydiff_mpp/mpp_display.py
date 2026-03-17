@@ -46,6 +46,8 @@ def _collect_paseq_types(obj, types):
         return
     if isinstance(obj, dict):
         name = obj["tmpl_name"]
+        if _is_parashah_template(name):
+            return
         if name in ("מ:לגרמיה-2", "מ:לגרמיה"):
             types.append("legarmeih")
             return

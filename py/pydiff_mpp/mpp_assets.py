@@ -9,6 +9,7 @@ Exports:
 """
 
 import os
+import shutil
 
 CATEGORY_INFO = {
     "meteg-removal": ("Meteg removal", "#1565c0"),
@@ -125,8 +126,9 @@ table.summary tr.total-row { font-weight: 600; cursor: default; }
   font-size: .85rem;
 }
 .pointed-heb {
-  font-family: "SBL Hebrew", "Ezra SIL", "David", "Times New Roman", serif;
+  font-family: "Taamey D WOFF2", "SBL Hebrew", "Ezra SIL", "David", "Times New Roman", serif;
   font-size: 20pt;
+  font-feature-settings: 'ss01';
 }
 .letter-large { font-size: 130%; }
 .letter-small { font-size: 75%; }
@@ -144,13 +146,18 @@ ruby.paseq-ruby rt {
 }
 ruby.kq-pair rt {
   font-size: 20pt;
-  font-family: "SBL Hebrew", "Ezra SIL", "David", "Times New Roman", serif;
+  font-family: "Taamey D WOFF2", "SBL Hebrew", "Ezra SIL", "David", "Times New Roman", serif;
+  font-feature-settings: 'ss01';
 }
 .kq-k { color: #6a1b9a; }
 .kq-q { color: #1565c0; }
 .gray-maqaf { color: gray; }""")
     for cat in CATEGORY_INFO:
         lines.append(f".cat-{cat} {{ background: var(--cat-{cat}); }}")
+    lines.append("""@font-face {
+    font-family: "Taamey D WOFF2";
+    src: url("woff2/Taamey_D.woff2");
+}""")
     return "\n".join(lines)
 
 
@@ -240,8 +247,23 @@ def js():
 })();"""
 
 
+def _copy_woff2(out_dir):
+    """Copy Taamey_D.woff2 into out_dir/woff2/ from a sibling docs folder."""
+    woff2_dir = os.path.join(out_dir, "woff2")
+    dst = os.path.join(woff2_dir, "Taamey_D.woff2")
+    # Source: sibling "misc" folder's copy (same docs tree)
+    src = os.path.join(out_dir, "..", "misc", "woff2", "Taamey_D.woff2")
+    src = os.path.normpath(src)
+    if not os.path.isfile(src):
+        return  # font not available in this tree
+    if os.path.isfile(dst) and os.path.getsize(dst) == os.path.getsize(src):
+        return  # already up to date
+    os.makedirs(woff2_dir, exist_ok=True)
+    shutil.copy2(src, dst)
+
+
 def write_shared_assets(out_dir):
-    """Write style.css and filter.js into out_dir if they differ or are missing."""
+    """Write style.css, filter.js, and woff2 font into out_dir."""
     css_path = os.path.join(out_dir, "style.css")
     js_path = os.path.join(out_dir, "filter.js")
     css_content = css()
@@ -254,3 +276,4 @@ def write_shared_assets(out_dir):
         if existing != content:
             with open(path, "w", encoding="utf-8") as f:
                 f.write(content)
+    _copy_woff2(out_dir)

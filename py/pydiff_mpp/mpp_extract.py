@@ -119,8 +119,17 @@ def _get_param(tmpl, key):
 _MISSING = object()
 
 
+_PARASHAH_NAMES = {"סס", "ססס", "פפ", "פפפ"}
+
+
 def _is_parashah_template(name):
-    """Check if template name is a רN parashah marker (e.g. ר0, ר4)."""
+    """Check if template is a parashah marker (רN, סס, ססס, פפ, פפפ).
+
+    These templates contribute a space to body text; their param "1"
+    (e.g. "פסקא באמצע פסוק") is a structural annotation, not verse content.
+    """
+    if name in _PARASHAH_NAMES:
+        return True
     return len(name) >= 2 and name[0] == "ר" and name[1:].isdigit()
 
 
