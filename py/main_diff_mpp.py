@@ -85,9 +85,8 @@ def main():
     if args.output is None:
         args.output = _default_output_path(args.old, args.new)
 
-    git_old = f"{args.old}^"
     print(f"Comparing {args.old} -> {args.new} ...")
-    diffs = mpp_extract.diff_all_books(git_old, args.new)
+    diffs = mpp_extract.diff_all_books(args.old, args.new)
     print(f"  {len(diffs)} raw changes found")
 
     mpp_classify.classify_diffs(diffs)

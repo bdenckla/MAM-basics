@@ -269,7 +269,7 @@ def _diff_one_file(old_json, new_json, filename):
     """Compare two revisions of a single plus/ JSON file."""
     diffs = []
     book39_names = _book39_names_for_file(filename)
-    he_to_int = old_json["header"]["he_to_int"]
+    he_to_int = new_json["header"]["he_to_int"]
     old_book39s = old_json["book39s"]
     new_book39s = new_json["book39s"]
     for b39_idx, (old_b39, new_b39) in enumerate(zip(old_book39s, new_book39s)):
