@@ -6,307 +6,20 @@ Exports:
 """
 
 import difflib
-import os
-import re
 from collections import Counter
-from urllib.parse import quote
-from pycmn import file_io
-from pycmn import hebrew_verse_numerals as hvn
+
 from pydiff_mpp.grapheme_diff import char_diff_spans
-from pydiff_mpp.mpp_extract import (
-    _collect_template_names,
-    _get_params,
-    _is_parashah_template,
-)
+from pydiff_mpp.mpp_extract import _collect_template_names
 from pydiff_mpp.describe_diff import describe_change
 from pydiff_mpp.mpp_nusach import nusach_body_to_html
-
-# Keyed by the display names used in diff dicts (from mpp_extract._FILE_STEM_TO_BOOK39S).
-# Each value is (OSDF key for MAM-with-doc URLs, Hebrew name for Wikisource URLs).
-_BOOK_URL_INFO = {
-    "Genesis": ("A1-Genesis", "\u05d1\u05e8\u05d0\u05e9\u05d9\u05ea"),
-    "Exodus": ("A2-Exodus", "\u05e9\u05de\u05d5\u05ea"),
-    "Leviticus": ("A3-Levit", "\u05d5\u05d9\u05e7\u05e8\u05d0"),
-    "Numbers": ("A4-Numbers", "\u05d1\u05de\u05d3\u05d1\u05e8"),
-    "Deuteronomy": ("A5-Deuter", "\u05d3\u05d1\u05e8\u05d9\u05dd"),
-    "Joshua": ("B1-Joshua", "\u05d9\u05d4\u05d5\u05e9\u05e2"),
-    "Judges": ("B2-Judges", "\u05e9\u05d5\u05e4\u05d8\u05d9\u05dd"),
-    "1 Samuel": ("BA-1Samuel", "\u05e9\u05de\u05d5\u05d0\u05dc \u05d0"),
-    "2 Samuel": ("BB-2Samuel", "\u05e9\u05de\u05d5\u05d0\u05dc \u05d1"),
-    "1 Kings": ("BC-1Kings", "\u05de\u05dc\u05db\u05d9\u05dd \u05d0"),
-    "2 Kings": ("BD-2Kings", "\u05de\u05dc\u05db\u05d9\u05dd \u05d1"),
-    "Isaiah": ("C1-Isaiah", "\u05d9\u05e9\u05e2\u05d9\u05d4\u05d5"),
-    "Jeremiah": ("C2-Jeremiah", "\u05d9\u05e8\u05de\u05d9\u05d4\u05d5"),
-    "Ezekiel": ("C3-Ezekiel", "\u05d9\u05d7\u05d6\u05e7\u05d0\u05dc"),
-    "Hosea": ("CA-Hosea", "\u05d4\u05d5\u05e9\u05e2"),
-    "Joel": ("CB-Joel", "\u05d9\u05d5\u05d0\u05dc"),
-    "Amos": ("CC-Amos", "\u05e2\u05de\u05d5\u05e1"),
-    "Obadiah": ("CD-Obadiah", "\u05e2\u05d5\u05d1\u05d3\u05d9\u05d4"),
-    "Jonah": ("CE-Jonah", "\u05d9\u05d5\u05e0\u05d4"),
-    "Micah": ("CF-Micah", "\u05de\u05d9\u05db\u05d4"),
-    "Nahum": ("CG-Nahum", "\u05e0\u05d7\u05d5\u05dd"),
-    "Habakkuk": ("CH-Habakkuk", "\u05d7\u05d1\u05e7\u05d5\u05e7"),
-    "Zephaniah": ("CI-Tsefaniah", "\u05e6\u05e4\u05e0\u05d9\u05d4"),
-    "Haggai": ("CJ-Haggai", "\u05d7\u05d2\u05d9"),
-    "Zechariah": ("CK-Zechariah", "\u05d6\u05db\u05e8\u05d9\u05d4"),
-    "Malachi": ("CL-Malachi", "\u05de\u05dc\u05d0\u05db\u05d9"),
-    "Psalms": ("D1-Psalms", "\u05ea\u05d4\u05dc\u05d9\u05dd"),
-    "Proverbs": ("D2-Proverbs", "\u05de\u05e9\u05dc\u05d9"),
-    "Job": ("D3-Job", "\u05d0\u05d9\u05d5\u05d1"),
-    "Song of Songs": (
-        "E1-Song of Songs",
-        "\u05e9\u05d9\u05e8 \u05d4\u05e9\u05d9\u05e8\u05d9\u05dd",
-    ),
-    "Ruth": ("E2-Ruth", "\u05e8\u05d5\u05ea"),
-    "Lamentations": ("E3-Lamentations", "\u05d0\u05d9\u05db\u05d4"),
-    "Ecclesiastes": ("E4-Ecclesiastes", "\u05e7\u05d4\u05dc\u05ea"),
-    "Esther": ("E5-Esther", "\u05d0\u05e1\u05ea\u05e8"),
-    "Daniel": ("F1-Daniel", "\u05d3\u05e0\u05d9\u05d0\u05dc"),
-    "Ezra": ("FA-Ezra", "\u05e2\u05d6\u05e8\u05d0"),
-    "Nehemiah": ("FB-Nehemiah", "\u05e0\u05d7\u05de\u05d9\u05d4"),
-    "1 Chronicles": (
-        "FC-1Chronicles",
-        "\u05d3\u05d1\u05e8\u05d9 \u05d4\u05d9\u05de\u05d9\u05dd \u05d0",
-    ),
-    "2 Chronicles": (
-        "FD-2Chronicles",
-        "\u05d3\u05d1\u05e8\u05d9 \u05d4\u05d9\u05de\u05d9\u05dd \u05d1",
-    ),
-}
-
-
-def _mam_with_doc_url(book, chapter, verse):
-    osdf = _BOOK_URL_INFO[book][0]
-    return f"https://bdenckla.github.io/MAM-with-doc/{osdf}.html#c{chapter}v{verse}"
-
-
-def _wikisource_url(book, chapter):
-    he_chnu = hvn.INT_TO_STR_DIC[chapter]
-    name_he = _BOOK_URL_INFO[book][1]
-    page_title = quote(f"{name_he}_{he_chnu}/\u05d8\u05e2\u05de\u05d9\u05dd")
-    return f"https://he.wikisource.org/wiki/{page_title}"
-
-
-CATEGORY_INFO = {
-    "meteg-removal": ("Meteg removal", "#1565c0"),
-    "meteg-addition": ("Meteg addition", "#1e88e5"),
-    "rafe-reuveni": ("Rafe (ראובני)", "#2e7d32"),
-    "varika": ("Varika", "#00695c"),
-    "accent-change": ("Accent change", "#ef6c00"),
-    "accent-addition": ("Accent addition", "#e65100"),
-    "accent-removal": ("Accent removal", "#f57c00"),
-    "vowel-change": ("Vowel change", "#6a1b9a"),
-    "legarmeih-paseq": ("Legarmeih \u2192 paseq", "#ad1457"),
-    "template-change": ("Template change", "#795548"),
-    "misc": ("Miscellaneous", "#37474f"),
-}
-
-# ── Paseq display (ruby annotations for legarmeih / narpas) ──
-
-_LEG_SENTINEL = "\ufdd0"
-_NAR_SENTINEL = "\ufdd1"
-_LEG_RUBY = '<ruby class="paseq-ruby">\u05c0<rt>\u05dc</rt></ruby>'
-_NAR_RUBY = '<ruby class="paseq-ruby">\u05c0<rt>\u05e4</rt></ruby>'
-
-# ── K/Q display (ruby annotations for ketiv/qere) ──
-
-_KQ_K_START = "\ue010"
-_KQ_K_END = "\ue011"
-_KQ_Q_START = "\ue012"
-_KQ_Q_END = "\ue013"
-
-
-def _collect_paseq_types(obj, types):
-    """Recursively collect paseq template types, mirroring flatten_ep."""
-    if isinstance(obj, str):
-        return
-    if isinstance(obj, dict):
-        name = obj["tmpl_name"]
-        if name in ("מ:לגרמיה-2", "מ:לגרמיה"):
-            types.append("legarmeih")
-            return
-        if name == "מ:פסק":
-            types.append("narpas")
-            return
-        params = _get_params(obj)
-        if name == "נוסח":
-            if "1" in params:
-                _collect_paseq_types(params["1"], types)
-            return
-        if name in ('קו"כ', 'כו"ק'):
-            if "1" in params:
-                _collect_paseq_types(params["1"], types)
-            if "2" in params:
-                _collect_paseq_types(params["2"], types)
-            return
-        if name == "מ:קמץ":
-            if "ד" in params:
-                _collect_paseq_types(params["ד"], types)
-            return
-        if "1" in params:
-            _collect_paseq_types(params["1"], types)
-        return
-    if isinstance(obj, list):
-        for item in obj:
-            _collect_paseq_types(item, types)
-
-
-def _collect_kq_positions(ep):
-    """Walk EP structure and return k/q boundary positions in flattened text."""
-    positions = []
-    pos = [0]
-    for el in ep:
-        _kq_position_walk(el, pos, positions)
-    return positions
-
-
-def _kq_position_walk(obj, pos, positions):
-    if isinstance(obj, str):
-        pos[0] += len(obj)
-    elif isinstance(obj, dict):
-        _kq_position_walk_template(obj, pos, positions)
-    elif isinstance(obj, list):
-        for item in obj:
-            _kq_position_walk(item, pos, positions)
-
-
-def _kq_position_walk_template(tmpl, pos, positions):
-    name = tmpl["tmpl_name"]
-    params = _get_params(tmpl)
-    if _is_parashah_template(name):
-        pos[0] += 1
-        return
-    if name == "נוסח":
-        if "1" in params:
-            _kq_position_walk(params["1"], pos, positions)
-        return
-    if name in ('קו"כ', 'כו"ק'):
-        p1_start = pos[0]
-        if "1" in params:
-            _kq_position_walk(params["1"], pos, positions)
-        p1_end = pos[0]
-        p2_start = pos[0]
-        if "2" in params:
-            _kq_position_walk(params["2"], pos, positions)
-        p2_end = pos[0]
-        if name == 'כו"ק':
-            k_start, k_end = p1_start, p1_end
-            q_start, q_end = p2_start, p2_end
-        else:
-            q_start, q_end = p1_start, p1_end
-            k_start, k_end = p2_start, p2_end
-        positions.append(
-            {
-                "k_start": k_start,
-                "k_end": k_end,
-                "q_start": q_start,
-                "q_end": q_end,
-            }
-        )
-        return
-    if name == "מ:קמץ":
-        if "ד" in params:
-            _kq_position_walk(params["ד"], pos, positions)
-        return
-    if name in ("מ:לגרמיה-2", "מ:לגרמיה", "מ:פסק"):
-        pos[0] += 1
-        return
-    if "1" in params:
-        _kq_position_walk(params["1"], pos, positions)
-
-
-def _display_text(text, ep):
-    """Replace U+05C0 with paseq sentinels and wrap k/q parts with sentinels."""
-    paseq_types = []
-    for el in ep:
-        _collect_paseq_types(el, paseq_types)
-    kq_positions = _collect_kq_positions(ep)
-    # Build insertion maps: position -> sentinels to insert
-    kq_before = {}  # insert before char at this position
-    kq_after = {}  # insert after last char before this position
-    for kq in kq_positions:
-        kq_before.setdefault(kq["k_start"], []).append(_KQ_K_START)
-        kq_after.setdefault(kq["k_end"], []).append(_KQ_K_END)
-        kq_before.setdefault(kq["q_start"], []).append(_KQ_Q_START)
-        kq_after.setdefault(kq["q_end"], []).append(_KQ_Q_END)
-    result = []
-    paseq_idx = 0
-    for i, ch in enumerate(text):
-        if i in kq_after:
-            result.extend(kq_after[i])
-        if i in kq_before:
-            result.extend(kq_before[i])
-        if ch == "\u05c0":
-            result.append(
-                _LEG_SENTINEL
-                if paseq_types[paseq_idx] == "legarmeih"
-                else _NAR_SENTINEL
-            )
-            paseq_idx += 1
-        else:
-            result.append(ch)
-    end = len(text)
-    if end in kq_after:
-        result.extend(kq_after[end])
-    return "".join(result)
-
-
-def _normalize_paseq_spacing(text):
-    """Normalize spacing around paseq sentinels for display.
-
-    Legarmeih: tight against preceding word, regular space after.
-    Narpas:    non-breaking space before, regular space after.
-    """
-    text = re.sub(r" ?" + _LEG_SENTINEL + r" ?", _LEG_SENTINEL + " ", text)
-    text = re.sub(r" ?" + _NAR_SENTINEL + r" ?", "\u00a0" + _NAR_SENTINEL + " ", text)
-    return text
-
-
-def _postprocess_paseq_html(html_str):
-    """Replace paseq sentinels with ruby HTML."""
-    return html_str.replace(_LEG_SENTINEL, _LEG_RUBY).replace(_NAR_SENTINEL, _NAR_RUBY)
-
-
-def _kq_ruby_html(k_content, q_content):
-    """Build ruby HTML with qere as base text and ketiv as annotation."""
-    return (
-        '<ruby class="kq-pair">'
-        f'<span class="kq-q">{q_content}</span>'
-        "<rp>(</rp>"
-        f'<rt><span class="kq-k">{k_content}</span></rt>'
-        "<rp>)</rp>"
-        "</ruby>"
-    )
-
-
-def _postprocess_kq_html(html_str):
-    """Replace k/q sentinel pairs with ruby HTML."""
-    # Ketiv-first pattern (כו"ק)
-    html_str = re.sub(
-        re.escape(_KQ_K_START)
-        + r"(.*?)"
-        + re.escape(_KQ_K_END)
-        + re.escape(_KQ_Q_START)
-        + r"(.*?)"
-        + re.escape(_KQ_Q_END),
-        lambda m: _kq_ruby_html(m.group(1), m.group(2)),
-        html_str,
-    )
-    # Qere-first pattern (קו"כ)
-    html_str = re.sub(
-        re.escape(_KQ_Q_START)
-        + r"(.*?)"
-        + re.escape(_KQ_Q_END)
-        + re.escape(_KQ_K_START)
-        + r"(.*?)"
-        + re.escape(_KQ_K_END),
-        lambda m: _kq_ruby_html(m.group(2), m.group(1)),
-        html_str,
-    )
-    # Strip any remaining stray sentinels
-    for s in (_KQ_K_START, _KQ_K_END, _KQ_Q_START, _KQ_Q_END):
-        html_str = html_str.replace(s, "")
-    return html_str
+from pydiff_mpp.mpp_assets import CATEGORY_INFO, write_shared_assets
+from pydiff_mpp.mpp_display import (
+    display_text,
+    normalize_paseq_spacing,
+    postprocess_paseq_html,
+    postprocess_kq_html,
+)
+from pydiff_mpp.mpp_book_urls import mam_with_doc_url, wikisource_url, ref_str
 
 
 def _esc(text):
@@ -349,219 +62,6 @@ def _narrow_to_changed_words(old_text, new_text):
     if not pairs:
         return [(old_text, new_text, 0, len(new_words))]
     return pairs
-
-
-def _css():
-    lines = []
-    lines.append(":root {")
-    lines.append("  --bg: #fafafa; --card-bg: #fff; --border: #ddd;")
-    lines.append("  --accent: #4a90d9; --hi-old: #fdd; --hi-new: #dfd;")
-    for cat, (_, color) in CATEGORY_INFO.items():
-        lines.append(f"  --cat-{cat}: {color};")
-    lines.append("}")
-    lines.append("""* { box-sizing: border-box; margin: 0; padding: 0; }
-body {
-  font: 15px/1.6 "Segoe UI", system-ui, sans-serif;
-  background: var(--bg); color: #333;
-  padding: 0 2rem 1.5rem; max-width: 1100px; margin: 0 auto;
-}
-h1 { font-size: 1.5rem; margin-bottom: .3rem; margin-top: 1rem; }
-h2 { font-size: 1.2rem; margin-top: 1.5rem; margin-bottom: .5rem; }
-.subtitle { color: #666; font-size: .9rem; margin-bottom: 1.5rem; }
-table.summary {
-  border-collapse: collapse; margin-bottom: 1.5rem; width: 100%; max-width: 500px;
-}
-table.summary th, table.summary td {
-  text-align: left; padding: .35rem .75rem; border-bottom: 1px solid var(--border);
-}
-table.summary th { background: #f0f0f0; font-weight: 600; }
-table.summary .cat-swatch {
-  display: inline-block; width: 12px; height: 12px;
-  border-radius: 2px; margin-right: 6px; vertical-align: middle;
-}
-table.summary tr[data-cat] { cursor: pointer; }
-table.summary tr[data-cat]:hover { background: #f5f5f5; }
-table.summary tr.active { background: var(--accent); color: #fff; }
-table.summary tr.total-row { font-weight: 600; cursor: default; }
-.filter-bar { display: flex; flex-wrap: wrap; gap: .4rem; margin-bottom: 1rem; }
-.filter-btn {
-  font-size: .8rem; padding: .25rem .6rem;
-  border: 1px solid var(--border); border-radius: 4px;
-  background: #fff; cursor: pointer; transition: background .15s;
-}
-.filter-btn:hover { background: #eee; }
-.filter-btn.active { background: var(--accent); color: #fff; border-color: var(--accent); }
-.diff-card {
-  background: var(--card-bg); border: 1px solid var(--border);
-  border-radius: 6px; padding: .5rem .8rem; margin-bottom: .4rem;
-}
-.diff-card.hidden { display: none; }
-.verse-ref { display: flex; align-items: baseline; gap: .4rem; flex-wrap: wrap; }
-.ref-text { font-weight: 600; font-size: .9rem; }
-.ref-link {
-  font-size: .75rem; font-weight: normal;
-  color: var(--accent); text-decoration: none; margin-left: .3rem;
-}
-.ref-link:hover { text-decoration: underline; }
-.cat-badge {
-  font-size: .7rem; padding: .1rem .45rem; border-radius: 3px;
-  color: #fff; white-space: nowrap;
-}
-.heb {
-  font-family: "SBL Hebrew", "Ezra SIL", "David", "Times New Roman", serif;
-  font-size: 20pt; direction: rtl; unicode-bidi: embed;
-}
-.change-display {
-  display: flex; align-items: center; gap: .5rem; margin-top: .2rem; flex-wrap: wrap;
-}
-.old-side, .new-side { padding: .15rem .5rem; border-radius: 4px; }
-.old-side { background: var(--hi-old); }
-.new-side { background: var(--hi-new); }
-.old-side mark.diff-hi { background: #f9a0a0; border-radius: 2px; }
-.new-side mark.diff-hi { background: #a0d8a0; border-radius: 2px; }
-.arrow { font-size: 1.1rem; color: #888; }
-.change-desc { font-size: .85rem; color: #555; margin-top: .15rem; }
-.book-header { margin-top: 1.2rem; margin-bottom: .3rem; }
-.book-header.hidden { display: none; }
-.nusach-note {
-  border-left: 3px solid #f9a825;
-  background: #fffde7;
-  padding: .3rem .6rem;
-  margin-top: .3rem;
-  border-radius: 4px;
-}
-.nusach-label {
-  font-weight: 600;
-  color: #f57f17;
-  font-size: .8rem;
-}
-.nusach-body {
-  direction: rtl;
-  unicode-bidi: embed;
-  margin-top: .1rem;
-  font-size: .85rem;
-}
-.pointed-heb {
-  font-family: "SBL Hebrew", "Ezra SIL", "David", "Times New Roman", serif;
-  font-size: 20pt;
-}
-.letter-large { font-size: 130%; }
-.letter-small { font-size: 75%; }
-.letter-hung { vertical-align: super; font-size: 85%; }
-@media (max-width: 700px) {
-  .change-display { flex-direction: column; align-items: flex-start; }
-}""")
-    lines.append("""ruby.paseq-ruby {
-  ruby-position: over;
-}
-ruby.paseq-ruby rt {
-  font-size: 60%;
-  font-weight: normal;
-  color: #888;
-}
-ruby.kq-pair rt {
-  font-size: 20pt;
-  font-family: "SBL Hebrew", "Ezra SIL", "David", "Times New Roman", serif;
-}
-.kq-k { color: #6a1b9a; }
-.kq-q { color: #1565c0; }""")
-    for cat in CATEGORY_INFO:
-        lines.append(f".cat-{cat} {{ background: var(--cat-{cat}); }}")
-    return "\n".join(lines)
-
-
-def _js():
-    return """(function() {
-  var activeFilters = new Set();
-  var cards = document.querySelectorAll('.diff-card');
-  var buttons = document.querySelectorAll('.filter-btn');
-  var summaryRows = document.querySelectorAll('table.summary tr[data-cat]');
-  var bookHeaders = document.querySelectorAll('.book-header');
-  function update() {
-    cards.forEach(function(card) {
-      var cat = card.getAttribute('data-categories');
-      card.classList.toggle('hidden',
-        activeFilters.size > 0 && !activeFilters.has(cat));
-    });
-    bookHeaders.forEach(function(hdr) {
-      var next = hdr.nextElementSibling;
-      var visCount = 0;
-      while (next && !next.classList.contains('book-header')) {
-        if (next.classList.contains('diff-card') && !next.classList.contains('hidden')) {
-          visCount++;
-        }
-        next = next.nextElementSibling;
-      }
-      hdr.classList.toggle('hidden', visCount === 0);
-      var span = hdr.querySelector('.book-count');
-      if (span) {
-        var total = parseInt(hdr.getAttribute('data-total'), 10);
-        if (activeFilters.size === 0) {
-          span.textContent = total + (total === 1 ? ' diff' : ' diffs');
-        } else {
-          span.textContent = visCount + ' of ' + total;
-        }
-      }
-    });
-  }
-  function toggleFilter(cat) {
-    if (activeFilters.has(cat)) activeFilters.delete(cat);
-    else activeFilters.add(cat);
-    buttons.forEach(function(b) {
-      b.classList.toggle('active', activeFilters.has(b.getAttribute('data-cat')));
-    });
-    summaryRows.forEach(function(r) {
-      r.classList.toggle('active', activeFilters.has(r.getAttribute('data-cat')));
-    });
-    update();
-  }
-  buttons.forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      var cat = btn.getAttribute('data-cat');
-      if (cat) toggleFilter(cat);
-    });
-  });
-  summaryRows.forEach(function(row) {
-    row.addEventListener('click', function() {
-      var cat = row.getAttribute('data-cat');
-      if (cat) toggleFilter(cat);
-    });
-  });
-  var showAll = document.getElementById('show-all-btn');
-  if (showAll) {
-    showAll.addEventListener('click', function() {
-      activeFilters.clear();
-      buttons.forEach(function(b) { b.classList.remove('active'); });
-      summaryRows.forEach(function(r) { r.classList.remove('active'); });
-      update();
-    });
-  }
-})();"""
-
-
-def _ref_str(diff):
-    """Format a verse reference like 'Gen 1:1'."""
-    book = diff["book"]
-    # Shorten common long names
-    short = {
-        "Deuteronomy": "Deut",
-        "Leviticus": "Lev",
-        "1 Samuel": "1Sam",
-        "2 Samuel": "2Sam",
-        "1 Kings": "1Kgs",
-        "2 Kings": "2Kgs",
-        "1 Chronicles": "1Chr",
-        "2 Chronicles": "2Chr",
-        "Song of Songs": "Song",
-        "Lamentations": "Lam",
-        "Ecclesiastes": "Eccl",
-        "Zephaniah": "Zeph",
-        "Zechariah": "Zech",
-        "Habakkuk": "Hab",
-        "Nehemiah": "Neh",
-    }
-    bk = short.get(book, book)
-    return f"{bk} {diff['chapter']}:{diff['verse']}"
 
 
 def _word_char_ranges(text):
@@ -615,11 +115,11 @@ def _expand_diffs(diffs):
             out["nusach_notes"] = [n["param2"] for n in diff.get("nusach_notes", [])]
             expanded.append(out)
             continue
-        old_display = _normalize_paseq_spacing(
-            _display_text(diff["old_text"], diff["old_ep"])
+        old_display = normalize_paseq_spacing(
+            display_text(diff["old_text"], diff["old_ep"])
         )
-        new_display = _normalize_paseq_spacing(
-            _display_text(diff["new_text"], diff["new_ep"])
+        new_display = normalize_paseq_spacing(
+            display_text(diff["new_text"], diff["new_ep"])
         )
         pairs = _narrow_to_changed_words(old_display, new_display)
         nusach_notes = diff.get("nusach_notes", [])
@@ -673,9 +173,9 @@ def _render_filter_buttons(counts):
 def _render_card(diff):
     cat = diff["category"]
     label, _ = CATEGORY_INFO.get(cat, (cat, "#888"))
-    ref = _ref_str(diff)
-    mwd_url = _mam_with_doc_url(diff["book"], diff["chapter"], diff["verse"])
-    ws_url = _wikisource_url(diff["book"], diff["chapter"])
+    ref = ref_str(diff)
+    mwd_url = mam_with_doc_url(diff["book"], diff["chapter"], diff["verse"])
+    ws_url = wikisource_url(diff["book"], diff["chapter"])
     lines = [f'<div class="diff-card" data-categories="{_esc(cat)}">']
     lines.append(
         f'<div class="verse-ref"><span class="ref-text">{_esc(ref)}'
@@ -688,10 +188,10 @@ def _render_card(diff):
         old_narrow = diff["narrowed_old"]
         new_narrow = diff["narrowed_new"]
         old_html, new_html = char_diff_spans(old_narrow, new_narrow)
-        old_html = _postprocess_paseq_html(old_html)
-        new_html = _postprocess_paseq_html(new_html)
-        old_html = _postprocess_kq_html(old_html)
-        new_html = _postprocess_kq_html(new_html)
+        old_html = postprocess_paseq_html(old_html)
+        new_html = postprocess_paseq_html(new_html)
+        old_html = postprocess_kq_html(old_html)
+        new_html = postprocess_kq_html(new_html)
         lines.append(
             '<div class="change-display">'
             f'<span class="heb old-side">{old_html}</span>'
@@ -747,26 +247,12 @@ def _render_cards(diffs):
     return "\n".join(parts)
 
 
-def _write_shared_assets(out_dir):
-    """Write style.css and filter.js into out_dir if they differ or are missing."""
-    css_path = os.path.join(out_dir, "style.css")
-    js_path = os.path.join(out_dir, "filter.js")
-    css_content = _css()
-    js_content = _js()
-    for path, content in ((css_path, css_content), (js_path, js_content)):
-        existing = None
-        if os.path.isfile(path):
-            with open(path, "r", encoding="utf-8") as f:
-                existing = f.read()
-        if existing != content:
-            with open(path, "w", encoding="utf-8") as f:
-                f.write(content)
-
-
 def write_report(diffs, old_rev, new_rev, out_path):
     """Write the full HTML report to out_path."""
+    import os
+
     out_dir = os.path.dirname(out_path)
-    _write_shared_assets(out_dir)
+    write_shared_assets(out_dir)
     diffs = _expand_diffs(diffs)
     counts = Counter(d["category"] for d in diffs)
     total = len(diffs)
