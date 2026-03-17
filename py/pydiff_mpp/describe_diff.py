@@ -91,6 +91,7 @@ _MARK_NAMES = {
     "\N{HEBREW POINT SEGOL}": "segol",
     "\N{HEBREW POINT PATAH}": "patah",
     "\N{HEBREW POINT QAMATS}": "qamats",
+    "\N{HEBREW POINT QAMATS QATAN}": "qamats-qatan",
     "\N{HEBREW POINT HOLAM}": "holam",
     "\N{HEBREW POINT HOLAM HASER FOR VAV}": "holam-haser-for-vav",
     "\N{HEBREW POINT QUBUTS}": "qubuts",
@@ -119,7 +120,7 @@ def _is_mark(ch):
     return (
         (0x05B0 <= cp <= 0x05BD)
         or cp == 0x05BF
-        or cp in (0x05C1, 0x05C2)
+        or cp in (0x05C1, 0x05C2, 0x05C7)
         or cp == 0xFB1E
     )
 
