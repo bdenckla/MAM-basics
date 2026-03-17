@@ -16,6 +16,7 @@ from pydiff_mpp.mpp_assets import CATEGORY_INFO, write_shared_assets
 from pydiff_mpp.mpp_display import (
     display_text,
     normalize_paseq_spacing,
+    postprocess_gray_maqaf_html,
     postprocess_paseq_html,
     postprocess_kq_html,
 )
@@ -210,6 +211,8 @@ def _render_card(diff):
     )
     if diff["text_changed"]:
         old_html, new_html = char_diff_spans(old_narrow, new_narrow)
+        old_html = postprocess_gray_maqaf_html(old_html)
+        new_html = postprocess_gray_maqaf_html(new_html)
         old_html = postprocess_paseq_html(old_html)
         new_html = postprocess_paseq_html(new_html)
         old_html = postprocess_kq_html(old_html)

@@ -140,7 +140,8 @@ ruby.kq-pair rt {
   font-family: "SBL Hebrew", "Ezra SIL", "David", "Times New Roman", serif;
 }
 .kq-k { color: #6a1b9a; }
-.kq-q { color: #1565c0; }""")
+.kq-q { color: #1565c0; }
+.gray-maqaf { color: gray; }""")
     for cat in CATEGORY_INFO:
         lines.append(f".cat-{cat} {{ background: var(--cat-{cat}); }}")
     return "\n".join(lines)
