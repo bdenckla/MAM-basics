@@ -6,6 +6,7 @@ Exports:
 """
 
 import difflib
+import os
 import re
 from collections import Counter
 from urllib.parse import quote
@@ -601,8 +602,26 @@ def _render_cards(diffs):
     return "\n".join(parts)
 
 
+def _write_shared_assets(out_dir):
+    """Write style.css and filter.js into out_dir if they differ or are missing."""
+    css_path = os.path.join(out_dir, "style.css")
+    js_path = os.path.join(out_dir, "filter.js")
+    css_content = _css()
+    js_content = _js()
+    for path, content in ((css_path, css_content), (js_path, js_content)):
+        existing = None
+        if os.path.isfile(path):
+            with open(path, "r", encoding="utf-8") as f:
+                existing = f.read()
+        if existing != content:
+            with open(path, "w", encoding="utf-8") as f:
+                f.write(content)
+
+
 def write_report(diffs, old_rev, new_rev, out_path):
     """Write the full HTML report to out_path."""
+    out_dir = os.path.dirname(out_path)
+    _write_shared_assets(out_dir)
     diffs = _expand_diffs(diffs)
     counts = Counter(d["category"] for d in diffs)
     total = len(diffs)
@@ -612,9 +631,7 @@ def write_report(diffs, old_rev, new_rev, out_path):
         "<head>",
         '<meta charset="utf-8">',
         f"<title>MPP Diff: {_esc(old_rev)} \u2192 {_esc(new_rev)}</title>",
-        "<style>",
-        _css(),
-        "</style>",
+        '<link rel="stylesheet" href="style.css">',
         "</head>",
         "<body>",
         "<h1>MAM Body Text Changes</h1>",
@@ -625,9 +642,7 @@ def write_report(diffs, old_rev, new_rev, out_path):
         '<h2 id="diffs">Changes (reading order)</h2>',
         _render_filter_buttons(counts),
         _render_cards(diffs),
-        "<script>",
-        _js(),
-        "</script>",
+        '<script src="filter.js"></script>',
         "</body>",
         "</html>",
     ]
