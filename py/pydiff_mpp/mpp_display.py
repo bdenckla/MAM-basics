@@ -15,7 +15,8 @@ Exports:
 import re
 
 from pydiff_mpp.mpp_extract import (
-    _get_params,
+    _MISSING,
+    _get_param,
     _is_parashah_template,
 )
 
@@ -51,23 +52,27 @@ def _collect_paseq_types(obj, types):
         if name == "מ:פסק":
             types.append("narpas")
             return
-        params = _get_params(obj)
         if name == "נוסח":
-            if "1" in params:
-                _collect_paseq_types(params["1"], types)
+            p1 = _get_param(obj, "1")
+            if p1 is not _MISSING:
+                _collect_paseq_types(p1, types)
             return
         if name in ('קו"כ', 'כו"ק'):
-            if "1" in params:
-                _collect_paseq_types(params["1"], types)
-            if "2" in params:
-                _collect_paseq_types(params["2"], types)
+            p1 = _get_param(obj, "1")
+            if p1 is not _MISSING:
+                _collect_paseq_types(p1, types)
+            p2 = _get_param(obj, "2")
+            if p2 is not _MISSING:
+                _collect_paseq_types(p2, types)
             return
         if name == "מ:קמץ":
-            if "ד" in params:
-                _collect_paseq_types(params["ד"], types)
+            pd = _get_param(obj, "ד")
+            if pd is not _MISSING:
+                _collect_paseq_types(pd, types)
             return
-        if "1" in params:
-            _collect_paseq_types(params["1"], types)
+        p1 = _get_param(obj, "1")
+        if p1 is not _MISSING:
+            _collect_paseq_types(p1, types)
         return
     if isinstance(obj, list):
         for item in obj:
@@ -95,7 +100,6 @@ def _gray_maqaf_walk(obj, pos, positions):
 
 def _gray_maqaf_walk_template(tmpl, pos, positions):
     name = tmpl["tmpl_name"]
-    params = _get_params(tmpl)
     if name == "מ:מקף אפור":
         positions.add(pos[0])
         return
@@ -103,24 +107,29 @@ def _gray_maqaf_walk_template(tmpl, pos, positions):
         pos[0] += 1
         return
     if name == "נוסח":
-        if "1" in params:
-            _gray_maqaf_walk(params["1"], pos, positions)
+        p1 = _get_param(tmpl, "1")
+        if p1 is not _MISSING:
+            _gray_maqaf_walk(p1, pos, positions)
         return
     if name in ('קו"כ', 'כו"ק'):
-        if "1" in params:
-            _gray_maqaf_walk(params["1"], pos, positions)
-        if "2" in params:
-            _gray_maqaf_walk(params["2"], pos, positions)
+        p1 = _get_param(tmpl, "1")
+        if p1 is not _MISSING:
+            _gray_maqaf_walk(p1, pos, positions)
+        p2 = _get_param(tmpl, "2")
+        if p2 is not _MISSING:
+            _gray_maqaf_walk(p2, pos, positions)
         return
     if name == "מ:קמץ":
-        if "ד" in params:
-            _gray_maqaf_walk(params["ד"], pos, positions)
+        pd = _get_param(tmpl, "ד")
+        if pd is not _MISSING:
+            _gray_maqaf_walk(pd, pos, positions)
         return
     if name in ("מ:לגרמיה-2", "מ:לגרמיה", "מ:פסק"):
         pos[0] += 1
         return
-    if "1" in params:
-        _gray_maqaf_walk(params["1"], pos, positions)
+    p1 = _get_param(tmpl, "1")
+    if p1 is not _MISSING:
+        _gray_maqaf_walk(p1, pos, positions)
 
 
 def _collect_kq_positions(ep):
@@ -144,22 +153,24 @@ def _kq_position_walk(obj, pos, positions):
 
 def _kq_position_walk_template(tmpl, pos, positions):
     name = tmpl["tmpl_name"]
-    params = _get_params(tmpl)
     if _is_parashah_template(name):
         pos[0] += 1
         return
     if name == "נוסח":
-        if "1" in params:
-            _kq_position_walk(params["1"], pos, positions)
+        p1 = _get_param(tmpl, "1")
+        if p1 is not _MISSING:
+            _kq_position_walk(p1, pos, positions)
         return
     if name in ('קו"כ', 'כו"ק'):
+        p1 = _get_param(tmpl, "1")
         p1_start = pos[0]
-        if "1" in params:
-            _kq_position_walk(params["1"], pos, positions)
+        if p1 is not _MISSING:
+            _kq_position_walk(p1, pos, positions)
         p1_end = pos[0]
+        p2 = _get_param(tmpl, "2")
         p2_start = pos[0]
-        if "2" in params:
-            _kq_position_walk(params["2"], pos, positions)
+        if p2 is not _MISSING:
+            _kq_position_walk(p2, pos, positions)
         p2_end = pos[0]
         if name == 'כו"ק':
             k_start, k_end = p1_start, p1_end
@@ -177,14 +188,16 @@ def _kq_position_walk_template(tmpl, pos, positions):
         )
         return
     if name == "מ:קמץ":
-        if "ד" in params:
-            _kq_position_walk(params["ד"], pos, positions)
+        pd = _get_param(tmpl, "ד")
+        if pd is not _MISSING:
+            _kq_position_walk(pd, pos, positions)
         return
     if name in ("מ:לגרמיה-2", "מ:לגרמיה", "מ:פסק"):
         pos[0] += 1
         return
-    if "1" in params:
-        _kq_position_walk(params["1"], pos, positions)
+    p1 = _get_param(tmpl, "1")
+    if p1 is not _MISSING:
+        _kq_position_walk(p1, pos, positions)
 
 
 def display_text(text, ep):
