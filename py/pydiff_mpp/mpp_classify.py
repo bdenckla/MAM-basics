@@ -117,15 +117,15 @@ def _classify_text_change(diff):
         return "varika"
     if "varika" in non_space_added and non_space_removed <= {"meteg"}:
         return "varika"
-    # Rafe (U+05BF) addition — quiescent consonants (ראובני words)
+    # Rafe (U+05BF) addition — quiescent consonants
     if (
         "rafe" in non_space_added
         and non_space_added <= {"rafe"}
         and not non_space_removed
     ):
-        return "rafe-reuveni"
+        return "rafe"
     if "rafe" in non_space_added and non_space_removed <= {"meteg"}:
-        return "rafe-reuveni"
+        return "rafe"
     # Accent replaced with different accent
     if non_space_added == {"accent"} and non_space_removed == {"accent"}:
         return "accent-change"

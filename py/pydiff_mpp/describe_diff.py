@@ -310,7 +310,7 @@ _MARK_CATS = {
     "meteg-removal",
     "meteg-addition",
     "vowel-change",
-    "rafe-reuveni",
+    "rafe",
     "varika",
 }
 
