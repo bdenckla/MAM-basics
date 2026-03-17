@@ -126,7 +126,9 @@ def _classify_text_change(diff):
     # Accent removed (no accent added)
     if "accent" in non_space_removed and "accent" not in non_space_added:
         return "accent-removal"
-    # Space-only change (often from legarmeih → paseq restructuring)
+    # Any change involving paseq (legarmeh / paseq additions, removals, spacing)
+    if "paseq" in non_space_added or "paseq" in non_space_removed:
+        return "legarmeih-paseq"
     if not non_space_added and not non_space_removed:
         return "legarmeih-paseq"
     # Vowel change
@@ -146,9 +148,8 @@ def _classify_structural_change(diff):
     # Check for legarmeih → paseq pattern by looking at template names
     old_names = set(_collect_template_names(diff["old_ep"]))
     new_names = set(_collect_template_names(diff["new_ep"]))
-    if "מ:לגרמיה-2" in old_names and "מ:לגרמיה-2" not in new_names:
-        return "legarmeih-paseq"
-    if "מ:לגרמיה" in old_names and "מ:לגרמיה" not in new_names:
+    _LEGAR = {"מ:לגרמיה", "מ:לגרמיה-2"}
+    if _LEGAR & (old_names ^ new_names):
         return "legarmeih-paseq"
     return "template-change"
 

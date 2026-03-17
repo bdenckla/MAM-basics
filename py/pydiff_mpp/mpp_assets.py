@@ -19,7 +19,7 @@ CATEGORY_INFO = {
     "accent-addition": ("Accent addition", "#e65100"),
     "accent-removal": ("Accent removal", "#f57c00"),
     "vowel-change": ("Vowel change", "#6a1b9a"),
-    "legarmeih-paseq": ("Legarmeih → paseq", "#ad1457"),
+    "legarmeih-paseq": ("Legarmeh / paseq", "#ad1457"),
     "template-change": ("Template change", "#795548"),
     "misc": ("Miscellaneous", "#37474f"),
 }

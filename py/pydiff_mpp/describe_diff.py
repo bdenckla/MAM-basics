@@ -314,9 +314,28 @@ _MARK_CATS = {
 }
 
 
+_PASEQ = "\u05c0"
+_LEG_SENTINEL = "\ufdd0"
+_NAR_SENTINEL = "\ufdd1"
+
+
+def _has_paseq(text):
+    return _PASEQ in text or _LEG_SENTINEL in text or _NAR_SENTINEL in text
+
+
+def _describe_paseq_change(old_text, new_text):
+    if not _has_paseq(old_text) and _has_paseq(new_text):
+        return "add legarmeh"
+    if _has_paseq(old_text) and not _has_paseq(new_text):
+        return "remove legarmeh"
+    return None
+
+
 def describe_change(old_text, new_text, category, book, chapter, verse):
     """Return an English description of the change, or None."""
     poetic = _is_poetic(book, chapter, verse)
+    if category == "legarmeih-paseq":
+        return _describe_paseq_change(old_text, new_text)
     if category in _ACCENT_CATS:
         return _describe_diff(old_text, new_text, _is_accent, _accent_name, poetic)
     if category in _MARK_CATS:
