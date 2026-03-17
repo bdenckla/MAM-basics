@@ -11,6 +11,7 @@ from collections import Counter
 from pycmn import file_io
 from pydiff_mpp.grapheme_diff import char_diff_spans
 from pydiff_mpp.mpp_extract import _collect_template_names, _get_params
+from pydiff_mpp.describe_diff import describe_change
 from pydiff_mpp.mpp_nusach import nusach_body_to_html
 
 CATEGORY_INFO = {
@@ -417,6 +418,11 @@ def _render_card(diff):
             f'<span class="heb new-side">{new_html}</span>'
             "</div>"
         )
+        eng_desc = describe_change(
+            old_narrow, new_narrow, cat, diff["book"], diff["chapter"], diff["verse"]
+        )
+        if eng_desc:
+            lines.append(f'<div class="change-desc">{_esc(eng_desc)}</div>')
     else:
         old_names = set(_collect_template_names(diff["old_ep"]))
         new_names = set(_collect_template_names(diff["new_ep"]))
