@@ -165,7 +165,7 @@ def _render_filter_buttons(counts):
         label, _ = CATEGORY_INFO.get(cat, (cat, "#888"))
         parts.append(
             f'<button class="filter-btn" data-cat="{_esc(cat)}">'
-            f"{_esc(label)} ({count})</button>"
+            f"{_esc(label)}</button>"
         )
     parts.append("</div>")
     return "\n".join(parts)
@@ -203,7 +203,7 @@ def _render_card(diff):
     lines = [f'<div class="diff-card" data-categories="{_esc(cat)}">']
     lines.append(
         f'<div class="verse-ref"><span class="ref-text">{_esc(ref)}'
-        f' <a class="ref-link" href="{_esc(mwd_url)}" target="_blank" rel="noopener">MAM</a>'
+        f' <a class="ref-link" href="{_esc(mwd_url)}" target="_blank" rel="noopener">MwD</a>'
         f' <a class="ref-link" href="{_esc(ws_url)}" target="_blank" rel="noopener">WS</a>'
         f"</span>"
         f'<span class="cat-badge cat-{cat}">{_esc(label)}</span>'
@@ -264,19 +264,24 @@ def write_report(diffs, old_rev, new_rev, out_path, old_date="", new_date=""):
     diffs = _expand_diffs(diffs)
     counts = Counter(d["category"] for d in diffs)
     total = len(diffs)
-    old_label = f"{_esc(old_rev)} ({_esc(old_date)})" if old_date else _esc(old_rev)
-    new_label = f"{_esc(new_rev)} ({_esc(new_date)})" if new_date else _esc(new_rev)
+    hash_range = f"{_esc(old_rev)} &rarr; {_esc(new_rev)}"
+    if old_date and new_date:
+        date_range = f" ({_esc(old_date)} &rarr; {_esc(new_date)})"
+    elif new_date:
+        date_range = f" ({_esc(new_date)})"
+    else:
+        date_range = ""
     html_parts = [
         "<!DOCTYPE html>",
         '<html lang="en">',
         "<head>",
         '<meta charset="utf-8">',
-        f"<title>MPP Diff: {_esc(old_rev)} \u2192 {_esc(new_rev)}</title>",
+        f"<title>{_esc(new_date)} (MPP diff)</title>",
         '<link rel="stylesheet" href="style.css">',
         "</head>",
         "<body>",
         "<h1>MAM Body Text Changes</h1>",
-        f'<p class="subtitle">{old_label} &rarr; {new_label}'
+        f'<p class="subtitle">{hash_range}{date_range}'
         f" &mdash; {total} change{'s' if total != 1 else ''} found</p>",
         '<h2 id="summary">Summary by category</h2>',
         _render_summary_table(counts, total),
