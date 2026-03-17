@@ -4,18 +4,22 @@ diff report with category filtering.
 
 Usage:
     .venv/Scripts/python.exe py/main_diff_mpp.py --old <rev> --new <rev>
+    .venv/Scripts/python.exe py/main_diff_mpp.py --all
 
 The revisions are git refs in the ../MAM-parsed repo (commits, tags, branches).
 Output goes to ../MAM-with-doc/docs/change-log/ by default.  If the hash range
 matches an entry in releases.json, the release name is used as the filename;
 otherwise the sanitised hash range is used.
+
+The --all flag generates reports for every named release in releases.json
+and regenerates index.html.
 """
 
 import argparse
 import json
 import os
 import subprocess
-from pydiff_mpp import mpp_extract, mpp_classify, mpp_html
+from pydiff_mpp import mpp_extract, mpp_classify, mpp_html, mpp_index
 
 MAM_PARSED_DIR = "../MAM-parsed"
 CHANGE_LOG_DIR = "../MAM-with-doc/docs/change-log"
@@ -65,16 +69,43 @@ def _default_output_path(old_rev, new_rev):
     return f"{CHANGE_LOG_DIR}/{slug}.html"
 
 
+def _generate_report(old_rev, new_rev, output):
+    """Generate one diff report. Returns the expanded diff count."""
+    print(f"Comparing {old_rev} -> {new_rev} ...")
+    diffs = mpp_extract.diff_all_books(old_rev, new_rev)
+    print(f"  {len(diffs)} raw changes found")
+    mpp_classify.classify_diffs(diffs)
+    old_date = _commit_date(old_rev)
+    new_date = _commit_date(new_rev)
+    os.makedirs(os.path.dirname(output), exist_ok=True)
+    total = mpp_html.write_report(diffs, old_rev, new_rev, output, old_date, new_date)
+    print(f"  Report written to {output}")
+    return total
+
+
+def _run_all():
+    """Generate reports for all named releases and write index.html."""
+    with open(RELEASES_JSON, "r", encoding="utf-8") as f:
+        data = json.load(f)
+    release_info = []
+    for entry in data["releases"]:
+        output = f"{CHANGE_LOG_DIR}/{entry['name']}.html"
+        count = _generate_report(entry["old"], entry["new"], output)
+        release_info.append({"name": entry["name"], "count": count})
+    mpp_index.write_index(release_info, CHANGE_LOG_DIR)
+
+
 def main():
     parser = argparse.ArgumentParser(
         description="Compare two revisions of MAM-parsed plus/ and generate an HTML report."
     )
     parser.add_argument(
-        "--old", required=True, help="Old git revision (in ../MAM-parsed repo)"
+        "--all",
+        action="store_true",
+        help="Generate all named releases from releases.json and regenerate index.html",
     )
-    parser.add_argument(
-        "--new", required=True, help="New git revision (in ../MAM-parsed repo)"
-    )
+    parser.add_argument("--old", help="Old git revision (in ../MAM-parsed repo)")
+    parser.add_argument("--new", help="New git revision (in ../MAM-parsed repo)")
     parser.add_argument(
         "--output",
         default=None,
@@ -82,21 +113,15 @@ def main():
     )
     args = parser.parse_args()
 
-    if args.output is None:
-        args.output = _default_output_path(args.old, args.new)
-
-    print(f"Comparing {args.old} -> {args.new} ...")
-    diffs = mpp_extract.diff_all_books(args.old, args.new)
-    print(f"  {len(diffs)} raw changes found")
-
-    mpp_classify.classify_diffs(diffs)
-
-    old_date = _commit_date(args.old)
-    new_date = _commit_date(args.new)
-
-    os.makedirs(os.path.dirname(args.output), exist_ok=True)
-    mpp_html.write_report(diffs, args.old, args.new, args.output, old_date, new_date)
-    print(f"  Report written to {args.output}")
+    if args.all:
+        if args.old or args.new or args.output:
+            parser.error("--all cannot be combined with --old, --new, or --output")
+        _run_all()
+    else:
+        if not args.old or not args.new:
+            parser.error("--old and --new are required unless --all is given")
+        output = args.output or _default_output_path(args.old, args.new)
+        _generate_report(args.old, args.new, output)
 
 
 if __name__ == "__main__":
