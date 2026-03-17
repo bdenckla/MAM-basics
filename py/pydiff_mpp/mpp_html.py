@@ -176,17 +176,38 @@ def _render_card(diff):
     ref = ref_str(diff)
     mwd_url = mam_with_doc_url(diff["book"], diff["chapter"], diff["verse"])
     ws_url = wikisource_url(diff["book"], diff["chapter"])
+    # Compute description first so it can go on the top line
+    if diff["text_changed"]:
+        old_narrow = diff["narrowed_old"]
+        new_narrow = diff["narrowed_new"]
+        eng_desc = describe_change(
+            old_narrow, new_narrow, cat, diff["book"], diff["chapter"], diff["verse"]
+        )
+    else:
+        old_names = set(_collect_template_names(diff["old_ep"]))
+        new_names = set(_collect_template_names(diff["new_ep"]))
+        added = sorted(new_names - old_names)
+        removed = sorted(old_names - new_names)
+        desc_parts = []
+        if added:
+            desc_parts.append("added: " + ", ".join(added))
+        if removed:
+            desc_parts.append("removed: " + ", ".join(removed))
+        detail = "; ".join(desc_parts) if desc_parts else "template restructured"
+        eng_desc = f"Template change ({detail})"
+    desc_html = ""
+    if eng_desc:
+        desc_html = f' <span class="change-desc">&mdash; {_esc(eng_desc)}</span>'
     lines = [f'<div class="diff-card" data-categories="{_esc(cat)}">']
     lines.append(
         f'<div class="verse-ref"><span class="ref-text">{_esc(ref)}'
         f' <a class="ref-link" href="{_esc(mwd_url)}" target="_blank" rel="noopener">MAM</a>'
         f' <a class="ref-link" href="{_esc(ws_url)}" target="_blank" rel="noopener">WS</a>'
         f"</span>"
-        f'<span class="cat-badge cat-{cat}">{_esc(label)}</span></div>'
+        f'<span class="cat-badge cat-{cat}">{_esc(label)}</span>'
+        f"{desc_html}</div>"
     )
     if diff["text_changed"]:
-        old_narrow = diff["narrowed_old"]
-        new_narrow = diff["narrowed_new"]
         old_html, new_html = char_diff_spans(old_narrow, new_narrow)
         old_html = postprocess_paseq_html(old_html)
         new_html = postprocess_paseq_html(new_html)
@@ -199,23 +220,6 @@ def _render_card(diff):
             f'<span class="heb new-side">{new_html}</span>'
             "</div>"
         )
-        eng_desc = describe_change(
-            old_narrow, new_narrow, cat, diff["book"], diff["chapter"], diff["verse"]
-        )
-        if eng_desc:
-            lines.append(f'<div class="change-desc">{_esc(eng_desc)}</div>')
-    else:
-        old_names = set(_collect_template_names(diff["old_ep"]))
-        new_names = set(_collect_template_names(diff["new_ep"]))
-        added = sorted(new_names - old_names)
-        removed = sorted(old_names - new_names)
-        desc_parts = []
-        if added:
-            desc_parts.append("added: " + ", ".join(added))
-        if removed:
-            desc_parts.append("removed: " + ", ".join(removed))
-        detail = "; ".join(desc_parts) if desc_parts else "template restructured"
-        lines.append(f'<div class="change-desc">Template change ({_esc(detail)})</div>')
     for note in diff.get("nusach_notes", []):
         body_html = nusach_body_to_html(note)
         lines.append(
@@ -247,7 +251,7 @@ def _render_cards(diffs):
     return "\n".join(parts)
 
 
-def write_report(diffs, old_rev, new_rev, out_path):
+def write_report(diffs, old_rev, new_rev, out_path, old_date="", new_date=""):
     """Write the full HTML report to out_path."""
     import os
 
@@ -256,6 +260,8 @@ def write_report(diffs, old_rev, new_rev, out_path):
     diffs = _expand_diffs(diffs)
     counts = Counter(d["category"] for d in diffs)
     total = len(diffs)
+    old_label = f"{_esc(old_rev)} ({_esc(old_date)})" if old_date else _esc(old_rev)
+    new_label = f"{_esc(new_rev)} ({_esc(new_date)})" if new_date else _esc(new_rev)
     html_parts = [
         "<!DOCTYPE html>",
         '<html lang="en">',
@@ -266,7 +272,7 @@ def write_report(diffs, old_rev, new_rev, out_path):
         "</head>",
         "<body>",
         "<h1>MAM Body Text Changes</h1>",
-        f'<p class="subtitle">{_esc(old_rev)} &rarr; {_esc(new_rev)}'
+        f'<p class="subtitle">{old_label} &rarr; {new_label}'
         f" &mdash; {total} change{'s' if total != 1 else ''} found</p>",
         '<h2 id="summary">Summary by category</h2>',
         _render_summary_table(counts, total),

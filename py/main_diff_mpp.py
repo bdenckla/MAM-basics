@@ -14,10 +14,23 @@ otherwise the sanitised hash range is used.
 import argparse
 import json
 import os
+import subprocess
 from pydiff_mpp import mpp_extract, mpp_classify, mpp_html
 
+MAM_PARSED_DIR = "../MAM-parsed"
 CHANGE_LOG_DIR = "../MAM-with-doc/docs/change-log"
 RELEASES_JSON = f"{CHANGE_LOG_DIR}/releases.json"
+
+
+def _commit_date(rev):
+    """Return the commit date (YYYY-MM-DD) for a revision in MAM-parsed."""
+    result = subprocess.run(
+        ["git", "-C", MAM_PARSED_DIR, "log", "-1", "--format=%cs", rev],
+        capture_output=True,
+        text=True,
+        encoding="utf-8",
+    )
+    return result.stdout.strip()
 
 
 def _sanitize_rev(rev):
@@ -79,8 +92,11 @@ def main():
 
     mpp_classify.classify_diffs(diffs)
 
+    old_date = _commit_date(args.old)
+    new_date = _commit_date(args.new)
+
     os.makedirs(os.path.dirname(args.output), exist_ok=True)
-    mpp_html.write_report(diffs, args.old, args.new, args.output)
+    mpp_html.write_report(diffs, args.old, args.new, args.output, old_date, new_date)
     print(f"  Report written to {args.output}")
 
 

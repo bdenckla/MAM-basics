@@ -13,7 +13,7 @@ import os
 CATEGORY_INFO = {
     "meteg-removal": ("Meteg removal", "#1565c0"),
     "meteg-addition": ("Meteg addition", "#1e88e5"),
-    "rafe-reuveni": ("Rafe (ראובני)", "#2e7d32"),
+    "rafe-reuveni": ("Rafe", "#2e7d32"),
     "varika": ("Varika", "#00695c"),
     "accent-change": ("Accent change", "#ef6c00"),
     "accent-addition": ("Accent addition", "#e65100"),
@@ -95,7 +95,7 @@ table.summary tr.total-row { font-weight: 600; cursor: default; }
 .old-side mark.diff-hi { background: #f9a0a0; border-radius: 2px; }
 .new-side mark.diff-hi { background: #a0d8a0; border-radius: 2px; }
 .arrow { font-size: 1.1rem; color: #888; }
-.change-desc { font-size: .85rem; color: #555; margin-top: .15rem; }
+.change-desc { font-size: .85rem; color: #555; }
 .book-header { margin-top: 1.2rem; margin-bottom: .3rem; }
 .book-header.hidden { display: none; }
 .nusach-note {
@@ -153,7 +153,23 @@ def js():
   var buttons = document.querySelectorAll('.filter-btn');
   var summaryRows = document.querySelectorAll('table.summary tr[data-cat]');
   var bookHeaders = document.querySelectorAll('.book-header');
+  var catLabels = {};
+  summaryRows.forEach(function(r) {
+    var cat = r.getAttribute('data-cat');
+    var td = r.querySelectorAll('td')[1];
+    if (cat && td) catLabels[cat] = td.textContent;
+  });
+  function filterSuffix() {
+    if (activeFilters.size === 0) return '';
+    if (activeFilters.size === 1) {
+      var cat = activeFilters.values().next().value;
+      var label = catLabels[cat] || cat;
+      return ' diffs are of type \u201c' + label + '\u201d';
+    }
+    return ' diffs are of the selected categories';
+  }
   function update() {
+    var suffix = filterSuffix();
     cards.forEach(function(card) {
       var cat = card.getAttribute('data-categories');
       card.classList.toggle('hidden',
@@ -175,7 +191,7 @@ def js():
         if (activeFilters.size === 0) {
           span.textContent = total + (total === 1 ? ' diff' : ' diffs');
         } else {
-          span.textContent = visCount + ' of ' + total;
+          span.textContent = visCount + ' of ' + total + suffix;
         }
       }
     });
