@@ -53,7 +53,7 @@ _ACCENT_NAMES = {
     "\N{HEBREW ACCENT ZAQEF GADOL}": "zaqef-gadol",
     "\N{HEBREW ACCENT TIPEHA}": "tipeha",
     "\N{HEBREW ACCENT REVIA}": "revia",
-    "\N{HEBREW ACCENT ZARQA}": "zarqa",
+    "\N{HEBREW ACCENT ZARQA}": "zarqa-sh",
     "\N{HEBREW ACCENT PASHTA}": "pashta",
     "\N{HEBREW ACCENT YETIV}": "yetiv",
     "\N{HEBREW ACCENT TEVIR}": "tevir",
@@ -75,7 +75,7 @@ _ACCENT_NAMES = {
     "\N{HEBREW ACCENT OLE}": "ole",
     "\N{HEBREW ACCENT ILUY}": "iluy",
     "\N{HEBREW ACCENT DEHI}": "dehi",
-    "\N{HEBREW ACCENT ZINOR}": "zinor",
+    "\N{HEBREW ACCENT ZINOR}": "zarqa",
     "\N{HEBREW MARK MASORA CIRCLE}": "masora-circle",
 }
 
@@ -130,6 +130,14 @@ def _letter_name(ch):
 
 _POETIC_ACCENT_NAMES = {
     "\N{HEBREW ACCENT TIPEHA}": "tarha",
+    "\N{HEBREW ACCENT ZARQA}": "tsinnorit",
+    "\N{HEBREW ACCENT ZINOR}": "tsinnor",
+}
+
+# Names that should get an HTML tooltip (<abbr title="...">) in rendered output.
+# Keys are the display name (as returned by _accent_name); values are the tooltip.
+_NAME_TOOLTIPS = {
+    "zarqa-sh": "zarqa stress helper",
 }
 
 
@@ -320,3 +328,15 @@ def describe_change(old_text, new_text, category, book, chapter, verse):
             return desc
         return _describe_diff(old_text, new_text, _is_mark, _mark_name, poetic)
     return None
+
+
+def add_name_tooltips(html_escaped_desc):
+    """Wrap names that have tooltips with <abbr> tags.
+
+    Must be called AFTER HTML-escaping the description, since the name
+    strings contain no HTML special characters.
+    """
+    result = html_escaped_desc
+    for name, tip in _NAME_TOOLTIPS.items():
+        result = result.replace(name, f'<abbr title="{tip}">{name}</abbr>')
+    return result

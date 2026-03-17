@@ -10,7 +10,7 @@ from collections import Counter
 
 from pydiff_mpp.grapheme_diff import char_diff_spans
 from pydiff_mpp.mpp_extract import _collect_template_names
-from pydiff_mpp.describe_diff import describe_change
+from pydiff_mpp.describe_diff import describe_change, add_name_tooltips
 from pydiff_mpp.mpp_nusach import nusach_body_to_html
 from pydiff_mpp.mpp_assets import CATEGORY_INFO, write_shared_assets
 from pydiff_mpp.mpp_display import (
@@ -197,7 +197,8 @@ def _render_card(diff):
         eng_desc = f"Template change ({detail})"
     desc_html = ""
     if eng_desc:
-        desc_html = f' <span class="change-desc">&mdash; {_esc(eng_desc)}</span>'
+        esc_desc = add_name_tooltips(_esc(eng_desc))
+        desc_html = f' <span class="change-desc">&mdash; {esc_desc}</span>'
     lines = [f'<div class="diff-card" data-categories="{_esc(cat)}">']
     lines.append(
         f'<div class="verse-ref"><span class="ref-text">{_esc(ref)}'
