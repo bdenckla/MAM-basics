@@ -227,6 +227,7 @@ def span_color(text, color):
 
 
 def _he_en_table_wci_row_pair(ti_he_en_triple):
+    _VT = "vertical-align: top"
     title, hebrew, english = ti_he_en_triple
     return [
         _std_row_of_data(
@@ -234,7 +235,7 @@ def _he_en_table_wci_row_pair(ti_he_en_triple):
             [para_cc(title)],
         ),
         _std_row_of_data(
-            [{"dir": "rtl"}, {"dir": "ltr"}],
+            [{"dir": "rtl", "style": _VT}, {"dir": "ltr", "style": _VT}],
             [hebrew, english],
         ),
     ]
