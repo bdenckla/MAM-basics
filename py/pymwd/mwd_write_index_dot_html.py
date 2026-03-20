@@ -7,7 +7,7 @@ from py_misc import ws_urls
 
 def write_index_dot_html(edition, css_hrefs, out_path):
     foi_anchor = my_html.anchor_h("Features of interest", "foi/index.html")
-    aliyot_anchor = my_html.anchor_h("Notes on aliyot", "aliyot/notes_on_aliyot.html")
+    aliyot_anchor = my_html.anchor_h("Notes on aliyot", "misc/notes_on_aliyot.html")
     changelog_anchor = my_html.anchor_h("Change log", "change-log/index.html")
     body_contents = (
         *_cc_by_sa_license(),

@@ -23,7 +23,6 @@ def almost_main():
     docs_dir = "../MAM-with-doc/docs"
     top_dir_misc = f"{docs_dir}/misc"
     top_dir_old = f"{docs_dir}/tsinnorit_oleh"
-    top_dir_aliyot = f"{docs_dir}/aliyot"
     #
     css_href = "style.css"
     css_href_wide = "style_wide.css"
@@ -32,8 +31,8 @@ def almost_main():
     #
     tdm_ch = top_dir_misc, css_href
     tdm_ch_wide = top_dir_misc, css_href_wide
+    tdm_ch_aliyot = top_dir_misc, "aliyot-styles.css"
     #
-    tdm_ch_aliyot = top_dir_aliyot, "aliyot-styles.css"
     notes_on_aliyot.gen_html_file(tdm_ch_aliyot)
     tsinnorit_and_oleh_on_ivs.gen_html_file(tdm_ch, top_dir_old)
     tsinnorit_and_oleh_facts.gen_html_file(tdm_ch)
