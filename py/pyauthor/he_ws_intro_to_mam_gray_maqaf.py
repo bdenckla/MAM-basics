@@ -372,16 +372,14 @@ _Y_081_E = [
 ####################################
 _WS_BASE = "https://he.wikisource.org/wiki/" "ויקיטקסט:מבוא_למקרא_על_פי_המסורה/פרק_ב"
 _WS_URL = f"{_WS_BASE}#טעם_משני_בתיבה_הראויה_להיות_מוקפת"
-_WS_URL_A = f"{_WS_BASE}#א._תיבה_הראויה_להיות_מוקפת:_הסבר_התופעה"
 _WS_LINK = my_html.anchor_h("Hebrew Wikisource", _WS_URL)
-_WS_LINK_A = my_html.anchor_h("Hebrew Wikisource", _WS_URL_A)
 ####################################
 _X_01_I = ("Section title and introduction",)
 _X_01_H = sl_map(author.para_modhe, [_Y_010_H, _Y_011_H, _Y_012_H, _Y_013_H])
 _X_01_E = sl_map(author.para, [_Y_010_E, _Y_011_E, _Y_012_E, _Y_013_E])
 _X_01_TRIPLE = _X_01_I, _X_01_H, _X_01_E
 #
-_X_02_I = ["Subsection א title and introduction (", _WS_LINK_A, ")"]
+_X_02_I = "Subsection א title and introduction"
 _X_02_H = sl_map(author.para_modhe, [_Y_020_H, _Y_021_H])
 _X_02_E = sl_map(author.para, [_Y_020_E, _Y_021_E])
 _X_02_TRIPLE = _X_02_I, _X_02_H, _X_02_E
