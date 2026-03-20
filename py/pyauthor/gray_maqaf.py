@@ -14,6 +14,7 @@ from py_misc import my_html
 from pycmn import my_utils
 from pycmn import hebrew_punctuation as hpu
 from pyauthor_util import author
+from pyauthor import gray_maqaf_footnotes as gmfn
 
 
 def anchor():
@@ -24,8 +25,14 @@ def gen_html_file(tdm_ch):
     author.help_gen_html_file(__file__, tdm_ch, _FNAME, _TITLE, _CBODY)
 
 
-def _footnote_marker(num: int):
-    return f"[{num}]"
+# Footnotes are numbered as B+N (N=0,1,...,6). B is the number of the
+# first footnote in this document within the larger Kadish introduction.
+# Current value: B = 136.
+_FN_BASE = 136
+
+
+def _footnote_marker(n: int):
+    return f"[B+{n}]"
 
 
 def _ait(contents):
@@ -83,28 +90,37 @@ _K_KAT_H = "כתר ארם צובה: ניקודו וטעמיו"
 _Y_021_H = [
     ["הרב מרדכי ברויאר דן באריכות באחד מהממצאים של ישראל ייבין"],
     [" בספרו המונומנטלי ", author.book_title(_K_KAT_H), "."],
-    ["[136] ייבין הצליח, על־ידי תיאור מדוקדק של הנתונים בכתר ארם צובה,"],
+    [
+        _footnote_marker(0),
+        " ייבין הצליח, על־ידי תיאור מדוקדק של הנתונים בכתר ארם צובה,",
+    ],
     [" להבחין היטב בין שני סימנים קרובים: קו של געיה וקו של מרכא."],
     [" וכך עלה בידו גם לקבוע את נוכחותה המלאה של המרכא בין הטעמים המשרתים האחרים."],
-    ["[137] בנוסף, ברויאר טען שעל־פי ממצאיו של ייבין ניתן לגלות"],
-    [" גילוי נוסף על עצם טיבו של טעם המרכא בספרי אמ״ת:[138]"],
+    [
+        _footnote_marker(1),
+        " בנוסף, ברויאר טען שעל־פי ממצאיו של ייבין ניתן לגלות",
+    ],
+    [
+        " גילוי נוסף על עצם טיבו של טעם המרכא בספרי אמ״ת:",
+        _footnote_marker(2),
+    ],
 ]
 _Y_KAT_E = "The Aleppo Codex of the Bible: a study of its vocalization and accentuation"
 _Y_021_E = [
     ["Rabbi Mordechai Breuer discusses in detail"],
     [" one of the findings of Israel Yeivin."],
     [" (", _ait("Yeivin presented this finding"), " in his monumental work,"],
-    [" ", author.book_title(_Y_KAT_E), ".", _footnote_marker(136), ")"],
+    [" ", author.book_title(_Y_KAT_E), ".", _footnote_marker(0), ")"],
     [" Yeivin was able,"],
     [" through a meticulous description of the data in the Aleppo Codex,"],
     [" to clearly distinguish between two similar marks:"],
     [" a $gaya line and a $merkha line."],
     [" Thus, Yeivin was also able to establish"],
     [" the full presence of the $merkha among the other conjunctive"],
-    [" accents.", _footnote_marker(137)],
+    [" accents.", _footnote_marker(1)],
     [" In addition, Breuer argued that based on Yeivin’s findings,"],
     [" another discovery can be made about"],
-    [" the nature of $merkha in the poetic books:", _footnote_marker(138)],
+    [" the nature of $merkha in the poetic books:", _footnote_marker(2)],
 ]
 _Y_03_H = [
     ["...יש להבדיל, לדוגמה,"],
@@ -187,7 +203,10 @@ _Y_05_H = [
     [" ואם תיבה מוקפת ראויה גם למשרת, מיד היא חדלה להיות מוקפת;"],
     [" כגון: וַיַּ֣עֲשׂוּ כֵ֔ן – במקום: וַיַּ֣עֲשׂוּ־כֵ֔ן."],
     [" כנגד זה מרכא מצויה גם בתיבה מוקפת:"],
-    [" וּ֥תְהִי־ע֨וֹד׀ (איוב ו, י), מַ֥עֲדֶה־בֶּ֨גֶד׀ (משלי כה, כ).[139]"],
+    [
+        " וּ֥תְהִי־ע֨וֹד׀ (איוב ו, י), מַ֥עֲדֶה־בֶּ֨גֶד׀ (משלי כה, כ).",
+        _footnote_marker(3),
+    ],
 ]
 _Y_050_E = [
     ["(1) Generally, a conjunctive accent and a $maqaf are mutually exclusive;"],
@@ -209,7 +228,7 @@ _Y_054_E = [
 ]
 _Y_055_E = [author.hbo("וּ֥תְהִי־ע֨וֹד׀"), " ", "(איוב ו, י)"]
 _Y_056_E = [author.hbo("מַ֥עֲדֶה־בֶּ֨גֶד׀"), " ", "(משלי כה, כ)"]
-_Y_057_E = _footnote_marker(139)
+_Y_057_E = _footnote_marker(3)
 _Y_05_E = [
     author.para(_Y_050_E),
     author.para_hbo_es(_Y_051_E),
@@ -232,7 +251,8 @@ _Y_06_H = [
     ' משום כך תיבות "את",',
     ' "כל",',
     " מנוקדות כגון תיבות מוקפות;",
-    " אֶ֥ת גְּא֨וֹן (תה' מז, ה),[140]",
+    " אֶ֥ת גְּא֨וֹן (תה' מז, ה),",
+    _footnote_marker(4),
     " כׇּ֥ל עַצְמוֹתַ֨י׀ (שם לה, י).",
 ]
 _Y_060_E = [
@@ -252,7 +272,11 @@ _Y_065_E = [
     " Therefore, the words את and כל are vowel-pointed like joined words;",
     " for example:",
 ]
-_Y_066_E = [author.hbo("אֶ֥ת גְּא֨וֹן"), " (תה' מז, ה),", "[140]"]
+_Y_066_E = [
+    author.hbo("אֶ֥ת גְּא֨וֹן"),
+    " (תה' מז, ה),",
+    _footnote_marker(4),
+]
 _Y_067_E = [author.hbo("כׇּ֥ל עַצְמוֹתַ֨י׀"), " (שם לה, י)."]
 _Y_06_E = [
     author.para(_Y_060_E),
@@ -279,7 +303,7 @@ _Y_07_H = [
             " ומנוקדות בהתאם לכך.",
         ]
     ),
-    "[141]",
+    _footnote_marker(5),
 ]
 _Y_07_E = [
     ["This vowel-pointing of the words את and כל"],
@@ -298,7 +322,7 @@ _Y_07_E = [
             " and are pointed accordingly.",
         ]
     ),
-    "[141]",
+    _footnote_marker(5),
 ]
 _Y_080_H = [
     "ברויאר חזר לדון בנושא של טעמים משניים בהרחבה ובאופן מסודר בספרו טעמי המקרא.",
@@ -311,7 +335,7 @@ _Y_080_H = [
     " והן ראויות להיות מוקפות לתיבה שלאחריהן בנסיבות רבות ושונות,",
     " כאילו היו תיבה אחת.",
     " לעתים תיבות מהסוג הזה מוקפות בפועל בכתבי־היד (ט.22-28, עמ' 226-237).",
-    "[142]",
+    _footnote_marker(6),
 ]
 _Y_080_E = [
     "Breuer returned to discuss the topic of secondary accents",
@@ -325,7 +349,7 @@ _Y_080_E = [
     " and which should be joined to the next word under many and various circumstances,",
     " as if they were a single word.",
     " Sometimes, words of this type are indeed joined in the manuscripts (pp. 226-237).",
-    "[142]",
+    _footnote_marker(6),
 ]
 _Y_081_H = [
     'התופעה די דומה לשתי תיבות של "עולה" ו"יורד":',
@@ -404,6 +428,20 @@ _PROVENANCE = author.para(
         ". The English translation is original to this project.",
     ]
 )
+
+
+def _ftnt_triple(n, ftnt_h, ftnt_e):
+    marker = _footnote_marker(n)
+    return (
+        f"Footnote B+{n}",
+        author.para_modhe([marker, " ", *ftnt_h]),
+        author.para([marker, " ", *ftnt_e]),
+    )
+
+
+_FTNT_TRIPLES = [
+    _ftnt_triple(n, h, e) for n, (h, e) in enumerate(zip(gmfn.FTNTS_H, gmfn.FTNTS_E))
+]
 _CBODY = [
     author.heading_level_1(_H1_CONTENTS),
     author.he_en_table_wct(
@@ -419,6 +457,8 @@ _CBODY = [
         ]
     ),
     _PROVENANCE,
+    author.heading_level_2(f"Footnotes (B={_FN_BASE})"),
+    author.he_en_table_wct(_FTNT_TRIPLES),
 ]
 
 # file:///C:/Users/BenDe/GitRepos/MAM-with-doc/docs/misc/gray_maqaf.html
