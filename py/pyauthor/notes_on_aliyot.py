@@ -68,9 +68,7 @@ _H1 = "Notes on $aliyot"
 _AUTHOR = "Author: Ben Denckla"
 _REVISION = [
     "Revision: 4 Oct 2021 / ",
-    _taamey(
-        "\u05db\u05f4\u05d7 \u05d1\u05bc\u05b0\u05ea\u05b4\u05e9\u05c1\u05b0\u05e8\u05b5\u05d9 \u05ea\u05e9\u05e4\u05f4\u05d1"
-    ),
+    _taamey("כ״ח ב\u05bc\u05b0ת\u05b4ש\u05c1\u05b0ר\u05b5י תשפ״ב"),
 ]
 
 # ── Introduction ──
@@ -166,13 +164,13 @@ _INTRO_UL4 = [
 
 _DUAL_P1 = "The dual $parashiyot are as follows:"
 _DUAL_OL1 = [
-    f"\u05d5\u05d9\u05e7\u05d4\u05dc{_NDASH}\u05e4\u05e7\u05d5\u05d3\u05d9",
-    f"\u05ea\u05d6\u05e8\u05d9\u05e2{_NDASH}\u05de\u05e6\u05b9\u05e8\u05e2",
-    f"\u05d0\u05d7\u05e8\u05d9 \u05de\u05d5\u05ea{_NDASH}\u05e7\u05d3\u05b9\u05e9\u05d9\u05dd",
-    f"\u05d1\u05d4\u05e8{_NDASH}\u05d1\u05d7\u05bb\u05e7\u05b9\u05ea\u05d9",
-    f"\u05d7\u05bb\u05e7\u05ea{_NDASH}\u05d1\u05dc\u05e7",
-    f"\u05de\u05d8\u05d5\u05ea{_NDASH}\u05de\u05e1\u05e2\u05d9",
-    f"\u05e0\u05b4\u05e6\u05d1\u05d9\u05dd{_NDASH}\u05d5\u05d9\u05dc\u05da",
+    f"ויקהל{_NDASH}פקודי",
+    f"תזריע{_NDASH}מצ\u05b9רע",
+    f"אחרי מות{_NDASH}קד\u05b9שים",
+    f"בהר{_NDASH}בח\u05bbק\u05b9תי",
+    f"ח\u05bbקת{_NDASH}בלק",
+    f"מטות{_NDASH}מסעי",
+    f"נ\u05b4צבים{_NDASH}וילך",
 ]
 _DUAL_P2 = [
     "We can think of the dual $parashiyot as forming an alternate hierarchy.",
@@ -191,13 +189,13 @@ _DUAL_P3 = [
     " to identify the $parashiyot.",
     ' We identify a $parashah by its number within its "parent" book.',
     " Thus ",
-    _rtl("\u05d1\u05e8\u05d0\u05e9\u05d9\u05ea-2"),
+    _rtl("בראשית-2"),
     " is ",
-    _rtl("\u05e0\u05b9\u05d7"),
+    _rtl("נ\u05b9ח"),
     ", ",
-    _rtl("\u05d1\u05e8\u05d0\u05e9\u05d9\u05ea-3"),
+    _rtl("בראשית-3"),
     " is ",
-    _rtl("\u05dc\u05da\u05be\u05dc\u05da"),
+    _rtl("לך־לך"),
     ", etc.",
 ]
 
@@ -212,14 +210,10 @@ def _dual_cell(pair):
 
 _DUAL_TABLE1 = my_html.table(
     [
-        _tr([_td("\u05d1\u05e8\u05d0\u05e9\u05d9\u05ea")] + _num_cells(range(1, 13))),
+        _tr([_td("בראשית")] + _num_cells(range(1, 13))),
+        _tr([_td("שמות")] + _num_cells(range(1, 10)) + [_dual_cell((10, 11)), _td("")]),
         _tr(
-            [_td("\u05e9\u05de\u05d5\u05ea")]
-            + _num_cells(range(1, 10))
-            + [_dual_cell((10, 11)), _td("")]
-        ),
-        _tr(
-            [_td("\u05d5\u05d9\u05e7\u05e8\u05d0")]
+            [_td("ויקרא")]
             + _num_cells(range(1, 4))
             + [
                 _dual_cell((4, 5)),
@@ -231,7 +225,7 @@ _DUAL_TABLE1 = my_html.table(
             ]
         ),
         _tr(
-            [_td("\u05d1\u05de\u05d3\u05d1\u05e8")]
+            [_td("במדבר")]
             + _num_cells(range(1, 6))
             + [
                 _dual_cell((6, 7)),
@@ -242,7 +236,7 @@ _DUAL_TABLE1 = my_html.table(
             ]
         ),
         _tr(
-            [_td("\u05d3\u05d1\u05e8\u05d9\u05dd")]
+            [_td("דברים")]
             + _num_cells(range(1, 8))
             + [_dual_cell((8, 9)), _td("10"), _td("11"), _td("")]
         ),
@@ -292,37 +286,37 @@ _PART_TABLE = my_html.table(
     [
         _PART_HDR,
         _part_row(
-            "\u05d5\u05d9\u05e7\u05d4\u05dc-\u05e4\u05e7\u05d5\u05d3\u05d9",
+            "ויקהל-פקודי",
             "231-2123",
             [2, 3, 1, 2, 1, 2, 3],
         ),
         _part_row(
-            "\u05ea\u05d6\u05e8\u05d9\u05e2-\u05de\u05e6\u05b9\u05e8\u05e2",
+            "תזריע-מצ\u05b9רע",
             "321-3122",
             [3, 2, 1, 3, 1, 2, 2],
         ),
         _part_row(
-            "\u05d0\u05d7\u05e8\u05d9 \u05de\u05d5\u05ea-\u05e7\u05d3\u05b9\u05e9\u05d9\u05dd",
+            "אחרי מות-קד\u05b9שים",
             "222-2222",
             [2, 2, 2, 2, 2, 2, 2],
         ),
         _part_row(
-            "\u05d1\u05d4\u05e8-\u05d1\u05d7\u05bb\u05e7\u05b9\u05ea\u05d9",
+            "בהר-בח\u05bbק\u05b9תי",
             "221-4113",
             [2, 2, 1, 4, 1, 1, 3],
         ),
         _part_row(
-            "\u05d7\u05bb\u05e7\u05ea-\u05d1\u05dc\u05e7",
+            "ח\u05bbקת-בלק",
             "222-2222",
             [2, 2, 2, 2, 2, 2, 2],
         ),
         _part_row(
-            "\u05de\u05d8\u05d5\u05ea-\u05de\u05e1\u05e2\u05d9",
+            "מטות-מסעי",
             "231-3122",
             [2, 3, 1, 3, 1, 2, 2],
         ),
         _part_row(
-            "\u05e0\u05b4\u05e6\u05d1\u05d9\u05dd-\u05d5\u05d9\u05dc\u05da",
+            "נ\u05b4צבים-וילך",
             "312-3212",
             [3, 1, 2, 3, 2, 1, 2],
         ),
@@ -362,10 +356,10 @@ _PART_NOTES_UL = [
     [
         "Only in 2 of the 7 dual $parashiyot is the partitioning uniform",
         " (compactly represented by 222-2222).",
-        " Those 2 are \u05d0\u05d7\u05e8\u05d9 \u05de\u05d5\u05ea-\u05e7\u05d3\u05b9\u05e9\u05d9\u05dd",
-        " and \u05d7\u05bb\u05e7\u05ea-\u05d1\u05dc\u05e7.",
+        " Those 2 are אחרי מות-קד\u05b9שים",
+        " and ח\u05bbקת-בלק.",
         " Contrast these with the 5 dual $parashiyot with non-uniform partitioning,",
-        " e.g. \u05d1\u05d4\u05e8-\u05d1\u05d7\u05bb\u05e7\u05b9\u05ea\u05d9",
+        " e.g. בהר-בח\u05bbק\u05b9תי",
         " (compactly represented by 221-4113).",
     ],
     [
@@ -378,9 +372,9 @@ _PART_NOTES_UL = [
     [
         f"The 4th $aliyah starts with $aliyah 7{_PRIME}",
         " in 6 of the 7 dual $parashiyot.",
-        " The exception is \u05d1\u05d4\u05e8-\u05d1\u05d7\u05bb\u05e7\u05b9\u05ea\u05d9.",
+        " The exception is בהר-בח\u05bbק\u05b9תי.",
         f" Its 4th $aliyah starts with 6{_PRIME}.",
-        " The 4th $aliyah of \u05d1\u05d4\u05e8-\u05d1\u05d7\u05bb\u05e7\u05b9\u05ea\u05d9",
+        " The 4th $aliyah of בהר-בח\u05bbק\u05b9תי",
         " is also exceptional because it is the largest:",
         " it is the only $aliyah consisting of 4 $aliyot from its halves.",
     ],
@@ -393,14 +387,14 @@ _NN_UL1 = [
     [
         "One type of non-numbered $aliyah is the $maftir $aliyah.",
         " Every $parashah, be it single or dual, has a $maftir",
-        " except \u05d5\u05d6\u05d0\u05ea \u05d4\u05d1\u05e8\u05db\u05d4,",
+        " except וזאת הברכה,",
         " the last $parashah of the Torah.",
         " (As usual things are not quite that simple;",
-        " \u05d5\u05d6\u05d0\u05ea \u05d4\u05d1\u05e8\u05db\u05d4",
+        " וזאת הברכה",
         " has a $maftir selection associated with it,",
         " but the selection comes from a different $parashah of the Torah.",
         " Thus it might be more accurate to say that",
-        " \u05d5\u05d6\u05d0\u05ea \u05d4\u05d1\u05e8\u05db\u05d4",
+        " וזאת הברכה",
         " does not have a $maftir ",
         _strong("from within its boundaries"),
         ".)",
@@ -411,9 +405,9 @@ _NN_UL1 = [
         " identified as follows:",
         author.unordered_list(
             [
-                "[\u05db\u05d4\u05df]",
-                "[\u05dc\u05d5\u05d9]",
-                "[\u05d9\u05e9\u05e8\u05d0\u05dc]",
+                "[כהן]",
+                "[לוי]",
+                "[ישראל]",
             ]
         ),
     ],
@@ -430,7 +424,7 @@ _NN_P3 = [
     " and it uses the $maftir of its 2nd $parashah.",
 ]
 _NN_P4 = [
-    "The [\u05d9\u05e9\u05e8\u05d0\u05dc] teaser is the only type of $aliyah",
+    "The [ישראל] teaser is the only type of $aliyah",
     " whose end ever needs to be labelled.",
     " Below are the reasons for this.",
 ]
@@ -456,68 +450,68 @@ _NN_TABLE1 = my_html.table(
         _tr([_td("$maftir"), _td("when the $parashah ends")]),
         _tr(
             [
-                _td("[\u05db\u05d4\u05df] or [\u05dc\u05d5\u05d9] teaser"),
+                _td("[כהן] or [לוי] teaser"),
                 _td("just before the start of the next teaser"),
             ]
         ),
     ]
 )
 _NN_P5 = [
-    "In 43 of 54 cases, the [\u05d9\u05e9\u05e8\u05d0\u05dc] teaser ends",
+    "In 43 of 54 cases, the [ישראל] teaser ends",
     " when the 1st s-$aliyah ends",
     " (s-$aliyah = $aliyah of a single $parashah).",
     " In other words, in most cases, the 3 teasers",
     " partition the 1st s-$aliyah.",
     " In these common cases,",
-    " $MAM does not label the end of the [\u05d9\u05e9\u05e8\u05d0\u05dc] teaser.",
+    " $MAM does not label the end of the [ישראל] teaser.",
     " Below, we describe the 11 cases that do not follow this pattern.",
     " I.e. below, we describe the 11 cases",
     " in which $MAM does explicitly label",
-    " the end of the [\u05d9\u05e9\u05e8\u05d0\u05dc] teaser.",
+    " the end of the [ישראל] teaser.",
 ]
 _NN_UL2 = [
     [
-        "3 of the 11 cases: The [\u05d9\u05e9\u05e8\u05d0\u05dc] teaser ends ",
+        "3 of the 11 cases: The [ישראל] teaser ends ",
         _strong("before"),
         " the 1st s-$aliyah ends. These cases are ",
-        _rtl("\u05d1\u05e8\u05d0\u05e9\u05d9\u05ea"),
+        _rtl("בראשית"),
         ", ",
-        _rtl("\u05db\u05d9 \u05ea\u05e9\u05d0"),
+        _rtl("כי תשא"),
         ", and ",
-        _rtl("\u05e0\u05e9\u05b9\u05d0"),
+        _rtl("נש\u05b9א"),
         ".",
     ],
     [
-        "8 of the 11 cases: The [\u05d9\u05e9\u05e8\u05d0\u05dc] teaser ends ",
+        "8 of the 11 cases: The [ישראל] teaser ends ",
         _strong("after"),
         " the 1st s-$aliyah ends.",
         author.unordered_list(
             [
                 [
-                    "3 of these 8 cases: The [\u05d9\u05e9\u05e8\u05d0\u05dc] teaser ends",
+                    "3 of these 8 cases: The [ישראל] teaser ends",
                     " somewhere in the middle of the 2nd or 3rd s-$aliyah.",
                     " These cases are ",
-                    _rtl("\u05d1\u05d7\u05bb\u05e7\u05b9\u05ea\u05d9"),
+                    _rtl("בח\u05bbק\u05b9תי"),
                     ", ",
-                    _rtl("\u05d3\u05d1\u05e8\u05d9\u05dd"),
+                    _rtl("דברים"),
                     ", and ",
-                    _rtl("\u05d5\u05d0\u05ea\u05d7\u05e0\u05df"),
+                    _rtl("ואתחנן"),
                     ". By coincidence, these happen to be the first 3 of the 8 cases,",
                     " in normal reading order.",
                 ],
                 [
-                    "5 of these 8 cases: The [\u05d9\u05e9\u05e8\u05d0\u05dc] teaser ends",
+                    "5 of these 8 cases: The [ישראל] teaser ends",
                     " when the 2nd, 3rd, or 4th s-$aliyah ends.",
                     " These cases are ",
-                    _rtl("\u05db\u05d9\u05be\u05ea\u05d1\u05d5\u05d0"),
+                    _rtl("כי־תבוא"),
                     ", ",
-                    _rtl("\u05e0\u05b4\u05e6\u05d1\u05d9\u05dd"),
+                    _rtl("נ\u05b4צבים"),
                     ", ",
-                    _rtl("\u05d5\u05d9\u05dc\u05da"),
+                    _rtl("וילך"),
                     ", ",
-                    _rtl("\u05d4\u05d0\u05d6\u05d9\u05e0\u05d5"),
+                    _rtl("האזינו"),
                     ", and ",
-                    _rtl("\u05d5\u05d6\u05d0\u05ea \u05d4\u05d1\u05e8\u05db\u05d4"),
+                    _rtl("וזאת הברכה"),
                     ".",
                 ],
             ]
@@ -527,15 +521,15 @@ _NN_UL2 = [
 _NN_P6 = "The table below presents:"
 _NN_UL3 = [
     [
-        "a summary row for the 3 cases in which the [\u05d9\u05e9\u05e8\u05d0\u05dc]",
+        "a summary row for the 3 cases in which the [ישראל]",
         " teaser ends before the 1st s-$aliyah ends.",
     ],
     [
-        "a summary row for the 43 cases in which the [\u05d9\u05e9\u05e8\u05d0\u05dc]",
+        "a summary row for the 43 cases in which the [ישראל]",
         " teaser ends when the 1st s-$aliyah ends.",
     ],
     [
-        "a row for each of the 8 cases in which the [\u05d9\u05e9\u05e8\u05d0\u05dc]",
+        "a row for each of the 8 cases in which the [ישראל]",
         " teaser ends after the 1st s-$aliyah ends.",
     ],
 ]
@@ -548,20 +542,20 @@ _NN_P7 = [
     " For example 1.2 & 1.3 mean",
     ' "somewhere in the middle of $aliyah 1',
     ' and somewhere later in the middle of $aliyah 1."',
-    " So, the 3rd row, the row for \u05d3\u05d1\u05e8\u05d9\u05dd, can be read as:",
+    " So, the 3rd row, the row for דברים, can be read as:",
 ]
 _NN_UL4 = [
-    "The [\u05dc\u05d5\u05d9] teaser starts at 1.2: somewhere in the middle of $aliyah 1.",
-    "The [\u05d9\u05e9\u05e8\u05d0\u05dc] teaser starts at 1.3: somewhere later in the middle of $aliyah 1.",
-    "The [\u05d9\u05e9\u05e8\u05d0\u05dc] teaser ends at 2.1: somewhere in the middle of $aliyah 2.",
+    "The [לוי] teaser starts at 1.2: somewhere in the middle of $aliyah 1.",
+    "The [ישראל] teaser starts at 1.3: somewhere later in the middle of $aliyah 1.",
+    "The [ישראל] teaser ends at 2.1: somewhere in the middle of $aliyah 2.",
 ]
 _NN_P8 = [
-    "Column labels are repeated at the end of the [\u05d9\u05e9\u05e8\u05d0\u05dc]",
+    "Column labels are repeated at the end of the [ישראל]",
     " teaser, for clarity.",
 ]
 
-_LEVI = "[\u05dc\u05d5\u05d9]"
-_YL = "[\u05d9\u05f4\u05dc]"
+_LEVI = "[לוי]"
+_YL = "[י״ל]"
 
 
 def _teaser_row(name, cells):
@@ -585,23 +579,23 @@ _TEASER_TABLE = my_html.table(
             [_td(""), _bor(_LEVI), _bor(_YL), _td("2")],
         ),
         _teaser_row(
-            "\u05d3\u05d1\u05e8\u05d9\u05dd",
+            "דברים",
             [_td(""), _bor(_LEVI), _bor(_YL, colspan="2"), _td("2.1")],
         ),
         _teaser_row(
-            "\u05d5\u05d0\u05ea\u05d7\u05e0\u05df",
+            "ואתחנן",
             [_td(""), _td(""), _bor(_LEVI), _bor(_YL, colspan="1"), _td("2.1")],
         ),
         _teaser_row(
-            "\u05db\u05d9\u05be\u05ea\u05d1\u05d5\u05d0",
+            "כי־תבוא",
             [_td(""), _td(""), _bor(_LEVI), _bor(_YL, colspan="2"), _td("3")],
         ),
         _teaser_row(
-            "\u05d4\u05d0\u05d6\u05d9\u05e0\u05d5",
+            "האזינו",
             [_td(""), _td(""), _bor(_LEVI), _bor(_YL, colspan="2"), _td("3")],
         ),
         _teaser_row(
-            "\u05d1\u05d7\u05bb\u05e7\u05b9\u05ea\u05d9",
+            "בח\u05bbק\u05b9תי",
             [
                 _td(""),
                 _td(""),
@@ -612,7 +606,7 @@ _TEASER_TABLE = my_html.table(
             ],
         ),
         _teaser_row(
-            "\u05e0\u05b4\u05e6\u05d1\u05d9\u05dd",
+            "נ\u05b4צבים",
             [
                 _td(""),
                 _td(""),
@@ -623,7 +617,7 @@ _TEASER_TABLE = my_html.table(
             ],
         ),
         _teaser_row(
-            "\u05d5\u05d6\u05d0\u05ea \u05d4\u05d1\u05e8\u05db\u05d4",
+            "וזאת הברכה",
             [
                 _td(""),
                 _td(""),
@@ -634,7 +628,7 @@ _TEASER_TABLE = my_html.table(
             ],
         ),
         _teaser_row(
-            "\u05d5\u05d9\u05dc\u05da",
+            "וילך",
             [
                 _td(""),
                 _td(""),
@@ -648,24 +642,24 @@ _TEASER_TABLE = my_html.table(
 )
 
 _NN_P9 = [
-    "Actually $MAM labels not so much the end of [\u05d9\u05e9\u05e8\u05d0\u05dc]",
-    " as the 1st verse after [\u05d9\u05e9\u05e8\u05d0\u05dc].",
+    "Actually $MAM labels not so much the end of [ישראל]",
+    " as the 1st verse after [ישראל].",
     " For this, it uses the label",
-    " [\u05e2\u05f4\u05db \u05d9\u05e9\u05e8\u05d0\u05dc],",
+    " [ע״כ ישראל],",
     ' meaning "$yisrael until here."',
 ]
 _NN_P10 = [
-    "In $MAM, the 1st $aliyah is not labelled \u05e8\u05d0\u05e9\u05d5\u05df,",
-    " nor is it labelled [\u05db\u05d4\u05df].",
+    "In $MAM, the 1st $aliyah is not labelled ראשון,",
+    " nor is it labelled [כהן].",
     " Rather, it is labelled with the name of the single $parashah.",
     " Below is a table showing the 1st few $aliyah labels",
-    " $MAM uses for the $parashah \u05e0\u05b9\u05d7.",
+    " $MAM uses for the $parashah נ\u05b9ח.",
     " The table also shows an expanded form of these labels,",
     " where everything is laid out explicitly, albeit with gray used for",
     " the parts that $MAM leaves implicit.",
 ]
 
-_NOAH = "\u05e0\u05b9\u05d7"
+_NOAH = "נ\u05b9ח"
 _LABEL_TABLE = my_html.table(
     [
         _tr([_bor("compact form"), _bor("expanded form", colspan="3")]),
@@ -673,39 +667,39 @@ _LABEL_TABLE = my_html.table(
             [
                 _td(_NOAH),
                 _td(_NOAH),
-                _imp("\u05e8\u05d0\u05e9\u05d5\u05df"),
-                _imp("[\u05db\u05d4\u05df]"),
+                _imp("ראשון"),
+                _imp("[כהן]"),
             ]
         ),
         _tr(
             [
-                _td("[\u05dc\u05d5\u05d9]"),
+                _td("[לוי]"),
                 _imp(_NOAH),
                 _td(""),
-                _td("[\u05dc\u05d5\u05d9]"),
+                _td("[לוי]"),
             ]
         ),
         _tr(
             [
-                _td("[\u05d9\u05e9\u05e8\u05d0\u05dc]"),
+                _td("[ישראל]"),
                 _imp(_NOAH),
                 _td(""),
-                _td("[\u05d9\u05e9\u05e8\u05d0\u05dc]"),
+                _td("[ישראל]"),
             ]
         ),
         _tr(
             [
-                _td("\u05e9\u05e0\u05d9"),
+                _td("שני"),
                 _imp(_NOAH),
-                _td("\u05e9\u05e0\u05d9"),
-                _imp("[\u05e2\u05f4\u05db \u05d9\u05e9\u05e8\u05d0\u05dc]"),
+                _td("שני"),
+                _imp("[ע״כ ישראל]"),
             ]
         ),
         _tr(
             [
-                _td("\u05e9\u05dc\u05d9\u05e9\u05d9"),
+                _td("שלישי"),
                 _imp(_NOAH),
-                _td("\u05e9\u05dc\u05d9\u05e9\u05d9"),
+                _td("שלישי"),
                 _td(""),
             ]
         ),
@@ -713,8 +707,8 @@ _LABEL_TABLE = my_html.table(
 )
 
 _NN_P11 = [
-    "In the $parashiyot \u05e2\u05e7\u05d1",
-    " and \u05e0\u05b4\u05e6\u05d1\u05d9\u05dd,",
+    "In the $parashiyot עקב",
+    " and נ\u05b4צבים,",
     " the $maftir $aliyah is the same as the 7th $aliyah.",
     " Every other $parashah with a $maftir,",
     " be it single or dual,",
