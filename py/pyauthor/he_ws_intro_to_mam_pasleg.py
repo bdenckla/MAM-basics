@@ -1227,7 +1227,7 @@ _X_12_E = author.para(_Y_F01_E)
 _X_12_TRIPLE = _X_12_I, _X_12_H, _X_12_E
 #
 _TITLE = "Paseq and legarmeh"
-_H1_CONTENTS = "$paseq and $legarmeh"
+_H1_CONTENTS = "$Paseq and $legarmeh"
 _FNAME = "he_ws_intro_to_mam_pasleg.html"
 _ANCHOR = my_html.anchor_h("document", f"./{_FNAME}")
 _WS_URL = (
