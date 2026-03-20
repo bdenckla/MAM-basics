@@ -11,7 +11,6 @@ The English translation is original to this project.
 
 from pycmn.my_utils import sl_map
 from py_misc import my_html
-from pycmn import str_defs as sd
 from pyauthor_util import author
 
 
@@ -64,7 +63,7 @@ _Y_A01_E = [
 ]
 
 _Y_A02_H = [
-    'אבל אם הקו בא לאחר הטעם "מונח" בכ"א הספרים,',
+    'אבל אם הקו בא לאחר הטעם "מונח" בכ״א הספרים,',
     ' אז במקומות רבים הוא הופך אותו ל"מֻנָּח לְגַרְמֵיהּ",',
     " כלומר: מונח שהוא טעם מפסיק",
     " (למרות שֶׁמֻּנָּח הוא בדרך כלל טעם מחבר).",
@@ -184,7 +183,7 @@ _Y_B01_H = [
         "ב. את נוסח הקווים של לגרמיה ופסק"
         " (כלומר מתי יש ומתי אין קו מאונך)"
         " קבענו במהדורתנו לפי כתר ארם צובה,"
-        ' ובמקומות שהכתר לא קיים קבענו אותו לפי כתי"ל.'
+        " ובמקומות שהכתר לא קיים קבענו אותו לפי כתי״ל."
     ),
     " הנוסח זהה בדרך כלל בשני כתבי־היד.",
 ]
@@ -261,34 +260,30 @@ _Y_C10_E = [
     ],
     [
         " ",
-        sd.LDQM,
-        "$legarmeh serves mainly as a minor disjunctive",
-        " in the domain of $revia,",
-        " and usually between it and the $revia",
-        " there is a conjunctive $munax,",
-    ],
-    [
-        " e.g.: ",
-        author.hbo("וְהִנֵּ֣ה ׀ שֶׁ֣בַע שִׁבֳּלִ֗ים"),
-        " (Gen. 41:5),",
-    ],
-    [
-        " ",
-        author.hbo("מִכֹּ֣ל ׀ הַבְּהֵמָ֣ה הַטְּהוֹרָ֗ה"),
-        " (Gen. 7:2).",
-    ],
-    [
-        " Sometimes two conjunctive accents of the $revia separate them,",
-        " e.g.: ",
-        author.hbo("אֶ֣מֶשׁ ׀ אָמַ֧ר אֵלַ֣י לֵאמֹ֗ר"),
-        " (Gen. 31:29)...",
-    ],
-    [
-        " $legarmeh can be consecutive,",
-        " e.g.: ",
-        author.hbo("וַיִּ֜מַח אֶֽת־כׇּל־הַיְק֣וּם ׀ אֲשֶׁ֣ר ׀ עַל־פְּנֵ֣י הָֽאֲדָמָ֗ה"),
-        " (Gen. 7:23).",
-        sd.RDQM,
+        author.dquote(
+            [
+                "$legarmeh serves mainly as a minor disjunctive",
+                " in the domain of $revia,",
+                " and usually between it and the $revia",
+                " there is a conjunctive $munax,",
+                " e.g.: ",
+                author.hbo("וְהִנֵּ֣ה ׀ שֶׁ֣בַע שִׁבֳּלִ֗ים"),
+                " (Gen. 41:5),",
+                " ",
+                author.hbo("מִכֹּ֣ל ׀ הַבְּהֵמָ֣ה הַטְּהוֹרָ֗ה"),
+                " (Gen. 7:2).",
+                " Sometimes two conjunctive accents of the $revia separate them,",
+                " e.g.: ",
+                author.hbo("אֶ֣מֶשׁ ׀ אָמַ֧ר אֵלַ֣י לֵאמֹ֗ר"),
+                " (Gen. 31:29)...",
+                " $legarmeh can be consecutive,",
+                " e.g.: ",
+                author.hbo(
+                    "וַיִּ֜מַח אֶֽת־כׇּל־הַיְק֣וּם ׀ אֲשֶׁ֣ר ׀ עַל־פְּנֵ֣י הָֽאֲדָמָ֗ה"
+                ),
+                " (Gen. 7:23).",
+            ]
+        ),
     ],
 ]
 
@@ -304,7 +299,7 @@ _Y_C20_H = [
     " העדות המפורשת של המסורה קובעת:",
     ' "ולעולם לא תמצא פסק לפני רביע כי אם במקום אחד,',
     ' והוא כֹּה־אָמַ֞ר הָאֵ֣ל ׀ יְהֹוָ֗ה בּוֹרֵ֤א [הַ]שָּׁמַ֙יִם֙"',
-    " (משפטי הטעמים ז' ע\"ב).",
+    " (משפטי הטעמים ז' ע״ב).",
     " הַפָּסֵק בַּפָּסוּק בישעיהו מודגש במסורה במקומות נוספים,",
     " ובפסוקים האחרים שיש בהם מונח וקו מאונך הסמוכים לרביע",
     ' יש ציונים של "לגרמיה".',
@@ -328,11 +323,13 @@ _Y_C20_E = [
     [" The explicit testimony of the Masorah states:"],
     [
         " ",
-        sd.LDQM,
-        "You will never find $paseq before $revia except in one place,",
-        " which is: ",
-        author.hbo("כֹּה־אָמַ֞ר הָאֵ֣ל ׀ יְהֹוָ֗ה בּוֹרֵ֤א [הַ]שָּׁמַ֙יִם֙"),
-        sd.LDQM,
+        author.dquote(
+            [
+                "You will never find $paseq before $revia except in one place,",
+                " which is: ",
+                author.hbo("כֹּה־אָמַ֞ר הָאֵ֣ל ׀ יְהֹוָ֗ה בּוֹרֵ֤א [הַ]שָּׁמַ֙יִם֙"),
+            ]
+        ),
     ],
     [" (Mishpetei HaTe'amim 7b)."],
     [
@@ -370,7 +367,7 @@ _Y_C31_H = [
     " אבל בשאר כל המקומות קו מאונך לפני פזר הוא פסק;",
     " קביעה זאת של המסורה מוזכרת פעמיים בספר משפטי הטעמים.",
     " הפזר מוזכר שם כטעם מפסיק שלגרמיה יכול לבוא לפניו",
-    ' (ל"ד ע"א): "',
+    ' (ל״ד ע״א): "',
     author.emphasis("הלגרמיה"),
     " יתכן להיות אחריו ",
     author.emphasis("רביע"),
@@ -382,7 +379,7 @@ _Y_C31_H = [
     " ועוד לפני כן כבר נזכר הפזר",
     " כטעם שלגרמיה יכול לבוא אחריו,",
     " וצויינו שם אותן שתי דוגמאות",
-    ' (ל"ג ע"א): "',
+    ' (ל״ג ע״א): "',
     author.emphasis("הפזר"),
     " יתכן להיות אחריו ",
     author.emphasis("התלישא"),
@@ -407,48 +404,44 @@ _Y_C31_E = [
     [
         " Pazer is mentioned there as a disjunctive accent",
         " that $legarmeh can precede (34a): ",
-        sd.LDQM,
-        author.emphasis("$legarmeh"),
-        " can follow ",
-        author.emphasis("$revia"),
-        "... and ",
-        author.emphasis("pazer"),
-        ",",
-    ],
-    [
-        " e.g.: ",
-        author.hbo("לְמִכְנַ֣שׁ ׀ לַֽאֲחַשְׁדַּרְפְּנַיָּ֡א"),
-        " (Dan. 3:2);",
-    ],
-    [
-        " ",
-        author.hbo("וְשֵׁרֵ֥בְיָ֣ה ׀ יָמִ֡ין"),
-        " (Neh. 8:7).",
-        sd.RDQM,
+        author.dquote(
+            [
+                author.emphasis("$legarmeh"),
+                " can follow ",
+                author.emphasis("$revia"),
+                "... and ",
+                author.emphasis("pazer"),
+                ",",
+                " e.g.: ",
+                author.hbo("לְמִכְנַ֣שׁ ׀ לַֽאֲחַשְׁדַּרְפְּנַיָּ֡א"),
+                " (Dan. 3:2);",
+                " ",
+                author.hbo("וְשֵׁרֵ֥בְיָ֣ה ׀ יָמִ֡ין"),
+                " (Neh. 8:7).",
+            ]
+        ),
     ],
     [
         " And earlier, pazer is mentioned as an accent",
         " that $legarmeh can follow,",
         " with the same two examples (33a): ",
-        sd.LDQM,
-        author.emphasis("pazer"),
-        " can follow ",
-        author.emphasis("telisha"),
-        "...",
-        " and ",
-        author.emphasis("$legarmeh"),
-        " can follow it:",
-    ],
-    [
-        " ",
-        author.hbo("שְׁלַ֡ח לְמִכְנַ֣שׁ ׀ לַֽאֲחַשְׁדַּרְפְּנַיָּ֡א"),
-        " (Dan. 3:2);",
-    ],
-    [
-        " ",
-        author.hbo("וְיֵשׁ֡וּעַ וּבָנִ֡י וְשֵׁרֵ֥בְיָ֣ה ׀ יָמִ֡ין"),
-        " (Neh. 8:7).",
-        sd.RDQM,
+        author.dquote(
+            [
+                author.emphasis("pazer"),
+                " can follow ",
+                author.emphasis("telisha"),
+                "...",
+                " and ",
+                author.emphasis("$legarmeh"),
+                " can follow it:",
+                " ",
+                author.hbo("שְׁלַ֡ח לְמִכְנַ֣שׁ ׀ לַֽאֲחַשְׁדַּרְפְּנַיָּ֡א"),
+                " (Dan. 3:2);",
+                " ",
+                author.hbo("וְיֵשׁ֡וּעַ וּבָנִ֡י וְשֵׁרֵ֥בְיָ֣ה ׀ יָמִ֡ין"),
+                " (Neh. 8:7).",
+            ]
+        ),
     ],
 ]
 
@@ -464,7 +457,7 @@ _Y_C32_H = [
     author.emphasis("וטרס"),
     " (=גרש) לא יהיה (אחר לגרמיה)",
     " אלא אזיל ואתי (=קדמא ואזלא),",
-    ' והוא בי"א מקומות במקרא, והם..."',
+    ' והוא בי״א מקומות במקרא, והם..."',
     " (משפטי הטעמים ל\”ד ע\”א-ע\”ב).",
     " הפריטים ברשימה של המסורה:",
     " בראשית כח,ט; שמ\”א יד,ג; שמ\”א יד,מז; שמ\”ב יג,לב;",
@@ -475,19 +468,20 @@ _Y_C32_E = [
     [
         author.emphasis("$munax $legarmeh in the domain of $geresh"),
         " (11 places): ",
-        sd.LDQM,
-        author.emphasis("$legarmeh"),
-        " can follow ",
-        author.emphasis("$revia"),
-        "...",
+        author.dquote(
+            [
+                author.emphasis("$legarmeh"),
+                " can follow ",
+                author.emphasis("$revia"),
+                "...",
+                " and ",
+                author.emphasis("$geresh"),
+                " shall not occur (after $legarmeh)",
+                " except as qadma and $azla,",
+                " and it occurs in 11 places in the Bible...",
+            ]
+        ),
     ],
-    [
-        " and ",
-        author.emphasis("$geresh"),
-        " shall not occur (after $legarmeh)",
-        " except as qadma and $azla,",
-    ],
-    [" and it occurs in 11 places in the Bible...", sd.RDQM],
     [" (Mishpetei HaTe'amim 34a–b)."],
     [
         " The items in the Masorah's list:",
@@ -518,17 +512,17 @@ _Y_C33_E = [
     [
         author.emphasis("$munax $legarmeh in the domain of $pashta"),
         " (3 places): ",
-        sd.LDQM,
-        author.emphasis("$legarmeh"),
-        " can follow ",
-        author.emphasis("$revia"),
-        "...",
-    ],
-    [
-        " and ",
-        author.emphasis("$pashta"),
-        " can follow $legarmeh in 3 places...",
-        sd.RDQM,
+        author.dquote(
+            [
+                author.emphasis("$legarmeh"),
+                " can follow ",
+                author.emphasis("$revia"),
+                "...",
+                " and ",
+                author.emphasis("$pashta"),
+                " can follow $legarmeh in 3 places...",
+            ]
+        ),
     ],
     [" (Mishpetei HaTe'amim 34b)."],
     [
@@ -559,22 +553,20 @@ _Y_C34_E = [
     ],
     [
         " ",
-        sd.LDQM,
-        "and ",
-        author.emphasis("tevir"),
-        " can follow it in one place,",
-    ],
-    [
-        " which is: ",
-        author.hbo(
-            "וַיִּשְׁלַ֥ח מֶֽלֶךְ־אַשּׁ֣וּר ׀ אֶת־רַבְשָׁקֵ֨ה מִלָּכִ֧ישׁ יְרוּשָׁלַ֛͏ְמָה"
+        author.dquote(
+            [
+                "and ",
+                author.emphasis("tevir"),
+                " can follow it in one place,",
+                " which is: ",
+                author.hbo(
+                    "וַיִּשְׁלַ֥ח מֶֽלֶךְ־אַשּׁ֣וּר ׀ אֶת־רַבְשָׁקֵ֨ה מִלָּכִ֧ישׁ יְרוּשָׁלַ֛͏ְמָה"
+                ),
+                " (Isa. 36:2),",
+                " and it shall have no other neighboring accent",
+                " besides what has been mentioned.",
+            ]
         ),
-        " (Isa. 36:2),",
-    ],
-    [
-        " and it shall have no other neighboring accent",
-        " besides what has been mentioned.",
-        sd.RDQM,
     ],
 ]
 
@@ -618,8 +610,8 @@ _Y_C41_H = [
     ' "ואף ממשרתיו של מונח לגרמיה מוכרע הדבר.',
     " בידוע שמשרתו מירכא,",
     ' אך לפני מונח ופסק שאינם לגרמיה לא יימצא מירכא לעולם."',
-    ' אך הקו תחת האות רי"ש בתיבה "וְשֵׁרֵ֥בְיָ֣ה ׀"',
-    ' נוטה במקצת לצד שמאל בכתי"ל ובכתי"ש1, כדין מרכא,',
+    ' אך הקו תחת האות רי״ש בתיבה "וְשֵׁרֵ֥בְיָ֣ה ׀"',
+    " נוטה במקצת לצד שמאל בכתי״ל ובכתי״ש1, כדין מרכא,",
     " וכך הכריע דותן בעצמו במהדורות של המקרא שהוציא לאור.",
 ]
 _Y_C42_H = [
@@ -630,7 +622,7 @@ _Y_C42_H = [
     ' ג,כז "וּ֠מִֽתְכַּנְּשִׁ֠ין אֲחַשְׁדַּרְפְּנַיָּ֞א"),',
     " הלגרמיה רומז לפזר שהיה ראוי לבוא במקום המונח.",
     " בנוסף, יש לזכור שבשני הפסוקים יש ציון מפורש",
-    ' של "לגרמיה" בכתי"ל,',
+    ' של "לגרמיה" בכתי״ל,',
     " ושניהם נעדרים מרשימת הפסק שבו.",
 ]
 _Y_C40_E = [
@@ -664,19 +656,19 @@ _Y_C40_E = [
     [
         " Breuer already wondered:",
         " ",
-        sd.LDQM,
-        "The $legarmeh of ",
-        author.hbo("וְשֵׁרֵ֥בְיָ֣ה ׀ יָמִ֡ין"),
-        " resembles the $paseq of ",
-        author.hbo("שַׁבְּתַ֣י ׀ הֽוֹדִיָּ֡ה"),
-        " in the same verse...",
-    ],
-    [
-        " We do not know",
-        " why the two names adjacent to pazer differ;",
-        " one is accented with $legarmeh",
-        " and the other with $munax before $paseq.",
-        sd.RDQM,
+        author.dquote(
+            [
+                "The $legarmeh of ",
+                author.hbo("וְשֵׁרֵ֥בְיָ֣ה ׀ יָמִ֡ין"),
+                " resembles the $paseq of ",
+                author.hbo("שַׁבְּתַ֣י ׀ הֽוֹדִיָּ֡ה"),
+                " in the same verse...",
+                " We do not know",
+                " why the two names adjacent to pazer differ;",
+                " one is accented with $legarmeh",
+                " and the other with $munax before $paseq.",
+            ]
+        ),
     ],
 ]
 _Y_C41_E = [
@@ -704,13 +696,15 @@ _Y_C41_E = [
     [
         " reasoned as follows:",
         " ",
-        sd.LDQM,
-        "The matter is also decided from the conjunctive accents",
-        " of $munax $legarmeh.",
-        " It is known that its conjunctive is $merkha,",
-        " but before a $munax and $paseq that are not $legarmeh,",
-        " $merkha will never be found.",
-        sd.RDQM,
+        author.dquote(
+            [
+                "The matter is also decided from the conjunctive accents",
+                " of $munax $legarmeh.",
+                " It is known that its conjunctive is $merkha,",
+                " but before a $munax and $paseq that are not $legarmeh,",
+                " $merkha will never be found.",
+            ]
+        ),
     ],
     [
         " However, the line under the letter $resh",
@@ -762,7 +756,7 @@ _Y_C50_H = [
     " שהרי שניהם באים להורות על הפסקה כלשהי",
     " ויש סימן אחד לשניהם (הקו המאונך).",
     " היידנהיים כבר הציע שלגרמיה נחשב סוג של פסק בעיני חכמי המסורה",
-    ' (משפטי הטעמים ל"א ע"ב):',
+    " (משפטי הטעמים ל״א ע״ב):",
     ' "בעבור שהלגרמיה הוא המפסיק בין המונח והטעם שאחריו,',
     ' לכן לא נמנע החכם להכניסו בביאור הפסק."',
     " דותן דחה את דעתו, אך בכל זאת הציע דבר דומה.",
@@ -788,12 +782,14 @@ _Y_C50_E = [
     ],
     [
         " ",
-        sd.LDQM,
-        "Since $legarmeh is what separates the $munax",
-        " from the accent that follows it,",
-        " the sage did not refrain from including it",
-        " in the explanation of $paseq.",
-        sd.RDQM,
+        author.dquote(
+            [
+                "Since $legarmeh is what separates the $munax",
+                " from the accent that follows it,",
+                " the sage did not refrain from including it",
+                " in the explanation of $paseq.",
+            ]
+        ),
     ],
     [
         " Dotan rejected this view, yet proposed something similar.",
@@ -808,10 +804,12 @@ _Y_C50_E = [
     ],
     [
         " namely ",
-        sd.LDQM,
-        "to separate the accents so that they are distinct",
-        " from one another and not attached,",
-        sd.RDQM,
+        author.dquote(
+            [
+                "to separate the accents so that they are distinct",
+                " from one another and not attached,",
+            ]
+        ),
         " he wrote:",
     ],
 ]
@@ -916,7 +914,7 @@ _Y_C61_H = [
     " שהרי מונח משמש כמשרתם הרגיל של רביע ופזר.",
     " אולם המסורה תפסה את כל המונחים האלה כלגרמיה,",
     " ולפיכך לא מנתה אותם ברשימת הפסקים.",
-    ' וכן מסרו הקדמונים (משפה"ט ז, ע"ב):',
+    " וכן מסרו הקדמונים (משפה״ט ז, ע״ב):",
     " ולעולם לא תמצא פסק לפני רביע,",
     " כי אם במקום אחד במקרא",
     " והוא כֹּה־אָמַ֞ר הָאֵ֣ל ׀ ה֗' בּוֹרֵ֤א הַשָּׁמַ֙יִם֙ (יש' מב, ה).",
@@ -947,15 +945,15 @@ _Y_C61_E = [
     [
         " As the ancients transmitted (Mishpetei HaTe'amim 7b):",
         " ",
-        sd.LDQM,
-        "You will never find $paseq before $revia,",
-        " except in one place in the Bible,",
-    ],
-    [
-        " which is: ",
-        author.hbo("כֹּה־אָמַ֞ר הָאֵ֣ל ׀ ה֗' בּוֹרֵ֤א הַשָּׁמַ֙יִם֙"),
-        " (Isa. 42:5).",
-        sd.RDQM,
+        author.dquote(
+            [
+                "You will never find $paseq before $revia,",
+                " except in one place in the Bible,",
+                " which is: ",
+                author.hbo("כֹּה־אָמַ֞ר הָאֵ֣ל ׀ ה֗' בּוֹרֵ֤א הַשָּׁמַ֙יִם֙"),
+                " (Isa. 42:5).",
+            ]
+        ),
     ],
     [
         " Hence, the entire phenomenon discussed above rests solely",
@@ -1097,12 +1095,12 @@ _Y_D20_E = [
 # ═══════════════════════════════════════════════════════════════════
 
 _Y_E01_H = [
-    author.emphasis('ה. פסק ולגרמיה בספרי אמ"ת:'),
-    ' בספרי אמ"ת יש שני טעמים של לגרמיה:',
+    author.emphasis("ה. פסק ולגרמיה בספרי אמ״ת:"),
+    " בספרי אמ״ת יש שני טעמים של לגרמיה:",
     ' "אָזְלָא לְגַרְמֵיהּ" ו"מַהְפָּךְ לְגַרְמֵיהּ".',
     " הקו המאונך הבא אחרי הטעמים אזלא ומהפך כדי לציין לגרמיה,",
     " הוא לעתים תחליפו של משרת שיש לאחריו פסק,",
-    ' ויש בו דמיון ללגרמיה בכ"א הספרים הבא בסמיכות לרביע.',
+    " ויש בו דמיון ללגרמיה בכ״א הספרים הבא בסמיכות לרביע.",
 ]
 _Y_E01_E = [
     [
@@ -1128,7 +1126,7 @@ _Y_E01_E = [
 ]
 
 _Y_E02_H = [
-    'ההבחנה בין "פסק" ו"לגרמיה" בספרי אמ"ת',
+    'ההבחנה בין "פסק" ו"לגרמיה" בספרי אמ״ת',
     " נבדקה מול רשימת הלגרמיה של גינצבורג",
     " ובעיקר מול רשימת הפסק שלו,",
     " המבוססת לא רק על הערות בכתבי־יד",
@@ -1177,16 +1175,16 @@ _Y_E02_E = [
 
 _Y_F01_H = [
     author.emphasis("ו. הקו המאונך אחרי שלשלת:"),
-    ' גם את הקו המאונך של הטעם המפסיק "שלשלת" (בכ"א הספרים)',
-    ' ומקבילו "שלשלת גדולה" (בספרי אמ"ת)',
+    ' גם את הקו המאונך של הטעם המפסיק "שלשלת" (בכ״א הספרים)',
+    ' ומקבילו "שלשלת גדולה" (בספרי אמ״ת)',
     " עיצבנו בעיצוב של לגרמיה.",
     " על הקו הזה כתב ברויאר:",
     ' "אחרי תיבת שלשלת יש תמיד קו דמוי פָּסֵק,',
     " כגון: וַיֹּאמַ֓ר ׀ (בר' כד, יב).",
     " קו זה בא להבדיל בין שלשלת גדולה המפסיק",
     " לבין שלשלת קטנה המשרת.",
-    ' שני הטעמים האלה מצויים באמ"ת, והם שוים בצורתם;',
-    ' משום כך היה צורך להבדיל ביניהם באמ"ת.',
+    " שני הטעמים האלה מצויים באמ״ת, והם שוים בצורתם;",
+    " משום כך היה צורך להבדיל ביניהם באמ״ת.",
     ' משם הועבר הקו גם אל כ"א ספרים,',
     ' אף על פי ששלשלת מצויה בהם רק כטעם מפסיק."',
 ]
@@ -1207,28 +1205,24 @@ _Y_F01_E = [
     [" About this line, Breuer wrote:"],
     [
         " ",
-        sd.LDQM,
-        "After a shalshelet word there is always a $paseq-like line,",
-        " e.g.: ",
-        author.hbo("וַיֹּאמַ֓ר ׀"),
-        " (Gen. 24:12).",
-    ],
-    [
-        " This line serves to distinguish",
-        " between the disjunctive shalshelet gedolah",
-        " and the conjunctive shalshelet qetanah.",
-    ],
-    [
-        " Both of these accents are found in the poetic books,",
-        " and they are identical in form;",
-        " therefore it was necessary to distinguish between them",
-        " in the poetic books.",
-    ],
-    [
-        " From there, the line was transferred also to the 21 books,",
-        " even though shalshelet is found in them",
-        " only as a disjunctive accent.",
-        sd.RDQM,
+        author.dquote(
+            [
+                "After a shalshelet word there is always a $paseq-like line,",
+                " e.g.: ",
+                author.hbo("וַיֹּאמַ֓ר ׀"),
+                " (Gen. 24:12).",
+                " This line serves to distinguish",
+                " between the disjunctive shalshelet gedolah",
+                " and the conjunctive shalshelet qetanah.",
+                " Both of these accents are found in the poetic books,",
+                " and they are identical in form;",
+                " therefore it was necessary to distinguish between them",
+                " in the poetic books.",
+                " From there, the line was transferred also to the 21 books,",
+                " even though shalshelet is found in them",
+                " only as a disjunctive accent.",
+            ]
+        ),
     ],
 ]
 
