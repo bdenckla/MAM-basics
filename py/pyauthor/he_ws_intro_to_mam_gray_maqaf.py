@@ -4,7 +4,7 @@ Generates a bilingual (Hebrew/English) HTML document about gray maqaf.
 The Hebrew text is adapted (with minor editorial changes) from Avi Kadish's
 introduction to the Miqra al pi ha-Masora edition, Chapter 2, section
 "תיבה הראויה להיות מוקפת (מקף אפור)". The source is on Hebrew Wikisource:
-https://he.wikisource.org/wiki/ויקיטקסט:מבוא_למקרא_על_פי_המסורה/פרק_ב#תיבה_הראויה_להיות_מוקפת_(מקף_אפור)
+https://he.wikisource.org/wiki/ויקיטקסט:מבוא_למקרא_על_פי_המסורה/פרק_ב#טעם_משני_בתיבה_הראויה_להיות_מוקפת
 
 The English translation is original to this project.
 """
@@ -417,7 +417,7 @@ _ANCHOR = my_html.anchor_h("document", f"./{_FNAME}")
 _WS_URL = (
     "https://he.wikisource.org/wiki/"
     "ויקיטקסט:מבוא_למקרא_על_פי_המסורה/פרק_ב"
-    "#תיבה_הראויה_להיות_מוקפת_(מקף_אפור)"
+    "#טעם_משני_בתיבה_הראויה_להיות_מוקפת"
 )
 _WS_LINK = my_html.anchor_h("Hebrew Wikisource", _WS_URL)
 _PROVENANCE = author.para(
