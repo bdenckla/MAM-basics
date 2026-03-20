@@ -6,7 +6,6 @@ from pycmn import ws_tmpl2 as wtp
 from pycmn.my_utils import sum_of_map
 from pycmn.shrink import shrink
 from pycmn import template_names as tmpln
-    
 
 _SPLITS_TUP = " ", hpu.MAQ, hpu.PASOLEG
 _SPLITS_STR = "".join(_SPLITS_TUP)

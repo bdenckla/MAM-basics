@@ -1,4 +1,4 @@
-""" Exports get_srrps, self_test """
+"""Exports get_srrps, self_test"""
 
 import re
 import difflib

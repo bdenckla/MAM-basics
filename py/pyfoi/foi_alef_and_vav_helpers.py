@@ -1,4 +1,4 @@
-""" Exports find_fois_in_str """
+"""Exports find_fois_in_str"""
 
 import re
 from pycmn import hebrew_letters as hl

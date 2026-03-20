@@ -1,4 +1,4 @@
-""" Exports TreeNode """
+"""Exports TreeNode"""
 
 from dataclasses import dataclass
 

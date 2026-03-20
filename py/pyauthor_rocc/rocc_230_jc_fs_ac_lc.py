@@ -1,6 +1,5 @@
 from pyauthor_rocc import rocc_util as ru
 
-
 X01_CPARA_JC_AND_FS_INTRO = [
     ["Two other editions deserve some mention and comparison:"],
     [" the Jerusalem Crown ($JC)"],

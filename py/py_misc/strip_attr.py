@@ -1,4 +1,4 @@
-""" Exports strip """
+"""Exports strip"""
 
 
 def strip(word):

@@ -1,4 +1,4 @@
-""" Exports add_heb_bcv """
+"""Exports add_heb_bcv"""
 
 import re
 from pycmn import hebrew_verse_numerals as hvn

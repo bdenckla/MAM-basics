@@ -1,4 +1,4 @@
-""" Exports get1 & get2 """
+"""Exports get1 & get2"""
 
 from py_misc import uni_heb_char_classes as uhc
 from pydiff_mm import diff_mm_uni_name

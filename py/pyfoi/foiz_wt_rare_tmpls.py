@@ -37,7 +37,9 @@ def _record_scrdff_in_col_c(foilers, stack, tmpl):
 
 def _record_scrdff_in_col_x(column, foilers, stack, tmpl):
     # column is a string, expected to be either 'E' or 'C'
-    assert wtp.template_len(tmpl) == 4  # length 2 means one argument beyond the template name
+    assert (
+        wtp.template_len(tmpl) == 4
+    )  # length 2 means one argument beyond the template name
     args = [
         wtp.template_param_val(tmpl, "1"),
         wtp.template_param_val(tmpl, "2"),
@@ -73,7 +75,9 @@ _FP_RT_CES = "rare-tmpls", "col-e-sampe"
 
 def _record_sampe_in_col_e(_foilers, stack, tmpl):
     tmpl_name = wtp.template_name(tmpl)  # e.g. סס, פפ, ...
-    assert wtp.template_len(tmpl) <= 2  # length 1 means no arguments beyond the template name
+    assert (
+        wtp.template_len(tmpl) <= 2
+    )  # length 1 means no arguments beyond the template name
     if wtp.template_len(tmpl) == 2:
         mid_verse_sampe = wtp.template_param_val(tmpl, "1")
     else:

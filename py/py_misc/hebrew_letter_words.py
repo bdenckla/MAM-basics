@@ -1,4 +1,4 @@
-""" Exports letters_and_maqafs """
+"""Exports letters_and_maqafs"""
 
 import re
 

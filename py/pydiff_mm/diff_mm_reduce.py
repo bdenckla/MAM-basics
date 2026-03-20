@@ -1,8 +1,8 @@
-""" Exports
-        get_book_diffs_ws_go
-        get_book_diffs_goalt_gocur
-        diffs_struct_mk
-        diffs_struct_extend
+"""Exports
+get_book_diffs_ws_go
+get_book_diffs_goalt_gocur
+diffs_struct_mk
+diffs_struct_extend
 """
 
 from pycmn import hebrew_verse_numerals as hvn

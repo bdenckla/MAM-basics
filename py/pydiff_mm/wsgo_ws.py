@@ -1,4 +1,4 @@
-""" Exports massage_ws_book """
+"""Exports massage_ws_book"""
 
 from pycmn import ws_tmpl1 as wtp1
 from pycmn import hebrew_accents as ha

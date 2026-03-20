@@ -1,4 +1,4 @@
-""" Exports name """
+"""Exports name"""
 
 import unicodedata
 from pycmn import hebrew_letters as hl

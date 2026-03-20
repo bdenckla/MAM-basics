@@ -1,4 +1,4 @@
-""" Exports render_to_xml, handle_survey_results """
+"""Exports render_to_xml, handle_survey_results"""
 
 from py_misc import ren_html_for_renel as hfr
 from py_misc import ren_tag_survey as rts

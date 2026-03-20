@@ -1,4 +1,4 @@
-""" Exports get_diffs_and_cles """
+"""Exports get_diffs_and_cles"""
 
 import csv
 import json

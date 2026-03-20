@@ -2,7 +2,6 @@ from pyauthor_rocc.rocc_util import MAM_SPECIAL_MAQAF
 from pyauthor_rocc import rocc_util as ru
 from pyauthor import rocc_4_mid_word_ga3ya_with_shewa as mwgws
 
-
 _CPARA = "Now let’s look at אשרי in Psalm 32:2 (ignoring $CTR):"
 
 TD_CTR = (ru.gray_abg_adm("אַֽשְֽׁרֵ֥י" + " "), "$merkha on $resh, space")

@@ -1,4 +1,4 @@
-""" Exports refine """
+"""Exports refine"""
 
 from pycmn import hebrew_punctuation as hpu
 from pydiff_mm import diff_mm_separators as seps

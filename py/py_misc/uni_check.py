@@ -1,4 +1,4 @@
-""" Exports check """
+"""Exports check"""
 
 import itertools
 

@@ -1,4 +1,4 @@
-""" Exports big_str """
+"""Exports big_str"""
 
 import re
 from functools import partial

@@ -1,4 +1,4 @@
-""" Exports prep_children """
+"""Exports prep_children"""
 
 from pyws import ws_in2_tree_node as etn
 from pycmn import ws_tmpl1 as wtp1

@@ -1,4 +1,4 @@
-""" Exports root """
+"""Exports root"""
 
 import xml.etree.ElementTree as ET
 from pycmn import bib_locales as tbn

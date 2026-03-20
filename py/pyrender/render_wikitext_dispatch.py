@@ -1,4 +1,4 @@
-""" Exports make_handler_table """
+"""Exports make_handler_table"""
 
 
 def make_handler_table(wek_to_hsc: dict, eclp: str):

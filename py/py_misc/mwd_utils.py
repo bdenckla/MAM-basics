@@ -1,4 +1,4 @@
-""" Exports helpers for "MAM with doc" """
+"""Exports helpers for "MAM with doc" """
 
 from dataclasses import dataclass
 import enum

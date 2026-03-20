@@ -1,4 +1,4 @@
-""" Exports reorg """
+"""Exports reorg"""
 
 from dataclasses import dataclass
 from pyws import ws_in2_tree_node as etn

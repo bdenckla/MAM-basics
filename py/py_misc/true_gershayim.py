@@ -1,4 +1,4 @@
-""" Exports in_str, in_seq """
+"""Exports in_str, in_seq"""
 
 from py_misc import hebrew_letter_names as hln
 from pycmn import hebrew_punctuation as hpu

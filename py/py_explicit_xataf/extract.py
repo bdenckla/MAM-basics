@@ -6,7 +6,6 @@ from pycmn import hebrew_points as hpo
 from pycmn import template_names as tmpln
 from pycmn import ws_tmpl2 as wtp
 
-
 HATAF_VOWELS = (hpo.XSEGOL, hpo.XPATAX, hpo.XQAMATS)
 HATAF_XIRIQ = hpo.SHEVA + hpo.XIRIQ  # sheva+hiriq sequence (no single Unicode char)
 

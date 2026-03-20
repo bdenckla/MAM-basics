@@ -1,4 +1,4 @@
-""" Exports make_comparable """
+"""Exports make_comparable"""
 
 import re
 from pycmn import hebrew_punctuation as hpu

@@ -47,8 +47,8 @@ _Y_A01_E = [
         author.emphasis("א. $Paseq and $legarmeh:"),
         " A vertical line at the end of a word",
         " [can have one of two meanings.",
-        " In one meaning, it] serves to slightly separate",
-        " [the recitation of the words it visually separates].",
+        " In one meaning, it] calls for a slight separation",
+        " [in the recitation of the words it visually separates].",
     ],
     [
         " If the first word has a conjunctive accent,",
@@ -92,8 +92,7 @@ _Y_A02_E = [
     [
         " Unlike $paseq,",
         " in $munax $legarmeh the vertical line does not indicate",
-        " a slight pause ",
-        author.emphasis("despite"),
+        " a slight pause despite",
         " the conjunctive accent.",
     ],
     [
@@ -102,7 +101,7 @@ _Y_A02_E = [
         ".",
     ],
     [
-        " $munax $legarmeh is a distinct part",
+        " $Munax $legarmeh is a distinct part",
         " of the musical accentuation system:",
         " it has its own melody and its own conjunctive accents.",
     ],
@@ -133,7 +132,7 @@ _Y_A03_H = [
 _Y_A03_E = [
     [
         "It follows that wherever there is a vertical line after a word,",
-        " the reader must know while reading",
+        " the reader must determine [...]",
         " whether it is $paseq or $legarmeh.",
     ],
     [
@@ -167,10 +166,7 @@ _Y_A03_E = [
         " for all the books of the Bible",
         " (within Masorah compendiums),",
         " and in some manuscripts they even noted",
-        " ",
-        author.dquote("$legarmeh_leg"),
-        " and ",
-        author.dquote("$paseq"),
+        [" ", author.dquote("לג[רמיה]"), " and ", author.dquote("פס[ק]")],
         " in the margins of the text",
         " (the annotations are integrated within the Masorah Parva notes).",
     ],

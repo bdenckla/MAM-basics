@@ -1,4 +1,4 @@
-""" Exports phase_2 """
+"""Exports phase_2"""
 
 import collections
 import functools

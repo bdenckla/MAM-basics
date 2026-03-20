@@ -1,4 +1,4 @@
-""" Exports handle """
+"""Exports handle"""
 
 from pyrender import render_wikitext_helpers as wt_help
 from pyrender import render_element as renel

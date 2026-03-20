@@ -1,4 +1,4 @@
-""" Exports massage_go_book """
+"""Exports massage_go_book"""
 
 import unicodedata
 

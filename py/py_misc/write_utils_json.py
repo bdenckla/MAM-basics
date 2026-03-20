@@ -1,4 +1,4 @@
-""" Exports write_root_in_json_fmt """
+"""Exports write_root_in_json_fmt"""
 
 from pycmn import file_io
 

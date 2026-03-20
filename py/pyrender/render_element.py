@@ -1,4 +1,4 @@
-""" Exports various ren_el constructors & getters """
+"""Exports various ren_el constructors & getters"""
 
 
 def mk_ren_el_t(tag: str):

@@ -1,4 +1,4 @@
-""" Exports evaluate """
+"""Exports evaluate"""
 
 from pycmn import shrink
 from pycmn import ws_tmpl2 as wtp

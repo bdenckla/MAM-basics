@@ -1,4 +1,4 @@
-""" Exports to_dic """
+"""Exports to_dic"""
 
 import re
 

@@ -1,4 +1,4 @@
-""" Exports mark """
+"""Exports mark"""
 
 from py_misc import slh_description
 from pycmn import ws_tmpl2 as wtp

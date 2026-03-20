@@ -1,4 +1,4 @@
-""" Exports various funs related to survey """
+"""Exports various funs related to survey"""
 
 
 def make():

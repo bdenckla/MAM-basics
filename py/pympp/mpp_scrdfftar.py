@@ -1,4 +1,4 @@
-""" Exports add """
+"""Exports add"""
 
 from pycmn import ws_tmpl2 as wtp
 from pycmn import template_names as tmpln

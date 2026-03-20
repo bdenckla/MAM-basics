@@ -2,7 +2,6 @@ from pycmn import uni_heb as uh
 from pycmn import hebrew_accents as ha
 from pycmn import hebrew_points as hpo
 
-
 ATN = uh.shunna(ha.ATN)
 SEG_A = uh.shunna(ha.SEG_A)
 SHA = uh.shunna(ha.SHA)

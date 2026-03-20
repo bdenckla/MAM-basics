@@ -1,4 +1,4 @@
-""" Exports HANDLERS, child_handlers """
+"""Exports HANDLERS, child_handlers"""
 
 from py_misc import slh_description
 from pycmn import str_defs as sd

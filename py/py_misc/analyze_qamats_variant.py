@@ -1,4 +1,4 @@
-""" Exports analyze_dalsam """
+"""Exports analyze_dalsam"""
 
 import re
 

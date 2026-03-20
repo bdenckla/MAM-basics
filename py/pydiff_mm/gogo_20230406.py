@@ -1,4 +1,4 @@
-""" Exports massage """
+"""Exports massage"""
 
 from pycmn import ws_tmpl1 as wtp1
 from pycmn import shrink

@@ -14,7 +14,6 @@ from pyfoi import sec_yyy_qualifier as smq
 from pyfoi import sec_yyy_shewa as smsh
 from pyfoi import regexp_helpers as rh
 
-
 # XXX TODO: related prose phenomenon such as the following:
 #
 #     azla-geresh

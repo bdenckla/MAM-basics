@@ -1,4 +1,4 @@
-""" Exports etel_ons, nsqual """
+"""Exports etel_ons, nsqual"""
 
 import xml.etree.ElementTree as ET
 

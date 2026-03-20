@@ -1,4 +1,4 @@
-""" Exports massage """
+"""Exports massage"""
 
 from pycmn import hebrew_letters as hl
 from pycmn import hebrew_points as hpo

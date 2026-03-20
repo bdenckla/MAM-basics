@@ -1,4 +1,4 @@
-""" Exports SEPARATORS """
+"""Exports SEPARATORS"""
 
 from pycmn import hebrew_punctuation as hpu
 

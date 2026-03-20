@@ -2,7 +2,6 @@ from py_misc import my_html
 from pyauthor_rocc import rocc_0_review_of_ctr_header as rocc_0
 from pyauthor_util import author
 
-
 # author.pasoleg_qm("וָ֨לַיְלָה׀"),
 # author.pasoleg_qm("וָלַ֨יְלָה׀"),
 

@@ -1,5 +1,3 @@
-
-
 CPARA_VENICE_MG = [
     ["One might naturally ask"],
     [" where the Venice Miqraot Gedolot"],

@@ -4,7 +4,6 @@ from pyauthor_rocc import rocc_util as ru
 from pyauthor_util import author
 from pyauthor_rocc import rocc_121_schematic as c121
 
-
 _X107_CONT_PARA = [
     ["The $anc_Chabad_website has an edition of the Hebrew Bible"],
     [" called $anc_Chabad_CTR ($CTR)."],
@@ -31,7 +30,9 @@ the ways in which $CTR’s Psalm 32 uses Unicode in
 ways that differ from other web editions.
 Then I will discuss the more substantive
 ways in which $CTR’s Psalm 32
-differs from various other editions of Psalm 32, both on the web and on paper.""".replace("\n", " ")
+differs from various other editions of Psalm 32, both on the web and on paper.""".replace(
+    "\n", " "
+)
 _X112_CONT_PARA = """In its Psalm 32 (and perhaps in its entire Tanakh),
 $CTR is restricted to the code points in Unicode 2.0.
 There are three code points that were introduced later
@@ -103,7 +104,9 @@ _X119_CONT_PARA = [
 _X120_CPARA = """Now let’s move on from encoding (Unicode) differences to more substantive ones.
 I will compare $CTR primarily to the edition called Miqra al pi ha-Masorah ($MAM).
 Here’s an overview of where $CTR and $MAM differ in Psalm 32,
-showing what $MAM has in those places:""".replace("\n", " ")
+showing what $MAM has in those places:""".replace(
+    "\n", " "
+)
 
 BODY_ELEMENTS_1 = [
     author.para(_X107_CONT_PARA),

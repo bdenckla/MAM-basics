@@ -1,4 +1,4 @@
-""" Exports convert """
+"""Exports convert"""
 
 from pycmn import ws_tmpl2 as wtp
 from py_misc import unbury_doc_parts as unbury

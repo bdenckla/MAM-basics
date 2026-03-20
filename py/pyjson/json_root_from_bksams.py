@@ -1,4 +1,4 @@
-""" Exports root """
+"""Exports root"""
 
 from pycmn import bib_locales as tbn
 from py_misc import my_html

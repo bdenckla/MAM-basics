@@ -1,4 +1,4 @@
-""" Exports ht_kq, handle_kq_ketiv_velo_qere """
+"""Exports ht_kq, handle_kq_ketiv_velo_qere"""
 
 from pycmn import hebrew_punctuation as hpu
 from pyrender import render_element as renel

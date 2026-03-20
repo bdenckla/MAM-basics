@@ -1,6 +1,5 @@
 from pyauthor_rocc import rocc_util as ru
 
-
 _CPARA = "Now let’s look at במתג ורסן in Psalm 32:9:"
 _TABLE_DATA = {
     "$CTR, $JP": ("בְּמֶ֣תֶג וָ֭רֶסֶן", "$munax, $dexi"),

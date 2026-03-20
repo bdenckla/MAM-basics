@@ -1,6 +1,5 @@
 from pyauthor_rocc import rocc_util as ru
 
-
 _CPARA = "Now let’s look at לא in Psalm 32:2 (ignoring $CTR):"
 TD_CTR = (ru.gray_abg_yxjb("לֹֽא "), "$gaya with space (!)")
 TD_MAM_KCT_WMG = (ru.gray_abg_yxjb("לֹ֤א "), "$mahapakh with space")

@@ -1,4 +1,4 @@
-""" Exports parse """
+"""Exports parse"""
 
 from pyws import ws_tmpl_parser as wttmpl_parser
 from pyws import ws_abtag_parser as abtag_parser

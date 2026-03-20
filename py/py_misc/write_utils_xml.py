@@ -1,4 +1,4 @@
-""" Exports write_root_in_xml_fmt """
+"""Exports write_root_in_xml_fmt"""
 
 import xml.etree.ElementTree as ET
 from pycmn import file_io
