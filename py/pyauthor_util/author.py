@@ -435,6 +435,7 @@ _ROMANIZED = {
     "$qere": "qere",
     "$revia": "revia",
     "$revmug": "revia mugrash",
+    "$telisha": "telisha",
     "$tsinnor": "tsinnor",
     "$vav": "vav",
     "$yby": "yeraḥ ben yomo",
@@ -505,6 +506,7 @@ _DOLLAR_SUB_DISPATCH = {
     **_rom_with_cap("$yetiv", "yetiv"),
     **_rom_with_cap("$mahapakh", "mahapakh"),
     **_rom_with_cap("$munax", "munaḥ"),
+    **_rom_with_cap("$pazer", "pazer"),
     **_rom_with_cap("$paseq", "paseq"),
     #
     **_ANCHORS,
