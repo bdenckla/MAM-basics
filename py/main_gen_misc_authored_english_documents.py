@@ -14,7 +14,8 @@ from pyauthor import rocc_1_on_the_provenance_of_ctr
 from pyauthor import rocc_2_pre_vowel_accents_in_ctr
 from pyauthor import rocc_3_where_other_sources_stand
 from pyauthor import rocc_4_mid_word_ga3ya_with_shewa
-from pyauthor import gray_maqaf
+from pyauthor import he_ws_intro_to_mam_gray_maqaf as gray_maqaf
+from pyauthor import he_ws_intro_to_mam_pasleg as pasleg
 from pyauthor import the_next_700_bibles
 
 
@@ -44,6 +45,7 @@ def almost_main():
     rocc_3_where_other_sources_stand.gen_html_file(tdm_ch)
     rocc_4_mid_word_ga3ya_with_shewa.gen_html_file(tdm_ch)
     gray_maqaf.gen_html_file(tdm_ch_wide)
+    pasleg.gen_html_file(tdm_ch_wide)
     the_next_700_bibles.gen_html_file(tdm_ch)
 
 

@@ -14,7 +14,7 @@ from py_misc import my_html
 from pycmn import my_utils
 from pycmn import hebrew_punctuation as hpu
 from pyauthor_util import author
-from pyauthor import gray_maqaf_footnotes as gmfn
+from pyauthor import he_ws_intro_to_mam_gray_maqaf_footnotes as gmfn
 
 
 def anchor():
@@ -412,7 +412,7 @@ _X_08_TRIPLE = _X_08_I, _X_08_H, _X_08_E
 #
 _TITLE = "Gray maqaf"
 _H1_CONTENTS = "Gray $maqaf"
-_FNAME = "gray_maqaf.html"
+_FNAME = "he_ws_intro_to_mam_gray_maqaf.html"
 _ANCHOR = my_html.anchor_h("document", f"./{_FNAME}")
 _WS_URL = (
     "https://he.wikisource.org/wiki/"
@@ -461,4 +461,4 @@ _CBODY = [
     author.he_en_table_wct(_FTNT_TRIPLES),
 ]
 
-# file:///C:/Users/BenDe/GitRepos/MAM-with-doc/docs/misc/gray_maqaf.html
+# file:///C:/Users/BenDe/GitRepos/MAM-with-doc/docs/misc/he_ws_intro_to_mam_gray_maqaf.html
