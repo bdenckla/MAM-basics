@@ -1,4 +1,13 @@
-""" Exports main """
+"""
+Generates a bilingual (Hebrew/English) HTML document about gray maqaf.
+
+The Hebrew text is adapted (with minor editorial changes) from Avi Kadish's
+introduction to the Miqra al pi ha-Masora edition, Chapter 2, section
+"תיבה הראויה להיות מוקפת (מקף אפור)". The source is on Hebrew Wikisource:
+https://he.wikisource.org/wiki/ויקיטקסט:מבוא_למקרא_על_פי_המסורה/פרק_ב#תיבה_הראויה_להיות_מוקפת_(מקף_אפור)
+
+The English translation is original to this project.
+"""
 
 from pycmn.my_utils import sl_map
 from py_misc import my_html
@@ -12,8 +21,7 @@ def anchor():
 
 
 def gen_html_file(tdm_ch):
-    author.assert_stem_eq(__file__, _FNAME)
-    author.help_gen_html_file(tdm_ch, _FNAME, _TITLE, _CBODY)
+    author.help_gen_html_file(__file__, tdm_ch, _FNAME, _TITLE, _CBODY)
 
 
 def _footnote_marker(num: int):
@@ -39,21 +47,21 @@ _Y_010_H = "תיבה הראויה להיות מוקפת (מקף אפור)"
 _Y_010_E = "A word that should have a $maqaf (gray $maqaf$thinsp)"
 _Y_011_H = [
     "בתיבות רבות בספרי אמ״ת חסר טעם מובהק.",
-    " יש בהן סימן כלשהו של טעם, אך מדובר על סימן שאינו מציין את ההברה המוטעמת.",
+    " יש בהן סימן כלשהו של טעם, אך מדובר על סימן שלא בא לציין את ההברה המוטעמת.",
     " לעתים הוא אף נכתב בהברה שאינה יכולה מוטעמת לפי כל הכללים של המסורה והדקדוק.",
     " כל התיבות הללו ראויות להיות מוקפות, ולעתים הן אף מנוקדות כאילו היה בהן מקף.",
-    " לפעמים אנחנו מוצאים שנכתב מקף אחרי תיבות אחדות מהסוג הזה בכתבי־היד.",
+    " ולפעמים אנחנו מוצאים שנכתב מקף אחרי תיבות אחדות מהסוג הזה בכתבי־היד.",
     " אבל ברוב המכריע של המקומות אין מקף, למרות שהתיבה ראויה להיות מוקפת.",
 ]
 _Y_011_E = [
     ["Many words in the poetic books lack a primary accent."],
     [" They have an accent,"],
-    [" but it is not written on the stressed syllable."],
+    [" but it is not meant to indicate the stressed syllable."],
     [" Sometimes it is even written on a syllable that cannot be stressed"],
     [" according to all the rules of the Masorah and grammar."],
     [" All of these words should have a $maqaf,"],
     [" and sometimes they are even vowel-pointed as if they had a $maqaf."],
-    [" Sometimes we find that"],
+    [" And sometimes we find that"],
     [" a $maqaf is written after some of these words in the manuscripts."],
     [" But in the vast majority of cases, there is no $maqaf,"],
     [" even though the word should have a $maqaf."],
@@ -75,28 +83,28 @@ _K_KAT_H = "כתר ארם צובה: ניקודו וטעמיו"
 _Y_021_H = [
     ["הרב מרדכי ברויאר דן באריכות באחד מהממצאים של ישראל ייבין"],
     [" בספרו המונומנטלי ", author.book_title(_K_KAT_H), "."],
-    ["[132] ייבין הצליח, על־ידי תיאור מדוקדק של הנתונים בכתר ארם צובה,"],
+    ["[136] ייבין הצליח, על־ידי תיאור מדוקדק של הנתונים בכתר ארם צובה,"],
     [" להבחין היטב בין שני סימנים קרובים: קו של געיה וקו של מרכא."],
     [" וכך עלה בידו גם לקבוע את נוכחותה המלאה של המרכא בין הטעמים המשרתים האחרים."],
-    ["[133] בנוסף, ברויאר טען שעל־פי ממצאיו של ייבין ניתן לגלות"],
-    [" עוד גילוי נוסף על עצם טיבה של טעם המרכא בספרי אמ״ת:[134]"],
+    ["[137] בנוסף, ברויאר טען שעל־פי ממצאיו של ייבין ניתן לגלות"],
+    [" גילוי נוסף על עצם טיבו של טעם המרכא בספרי אמ״ת:[138]"],
 ]
 _Y_KAT_E = "The Aleppo Codex of the Bible: a study of its vocalization and accentuation"
 _Y_021_E = [
     ["Rabbi Mordechai Breuer discusses in detail"],
     [" one of the findings of Israel Yeivin."],
     [" (", _ait("Yeivin presented this finding"), " in his monumental work,"],
-    [" ", author.book_title(_Y_KAT_E), ".", _footnote_marker(132), ")"],
+    [" ", author.book_title(_Y_KAT_E), ".", _footnote_marker(136), ")"],
     [" Yeivin was able,"],
     [" through a meticulous description of the data in the Aleppo Codex,"],
     [" to clearly distinguish between two similar marks:"],
     [" a $gaya line and a $merkha line."],
     [" Thus, Yeivin was also able to establish"],
     [" the full presence of the $merkha among the other conjunctive"],
-    [" accents.", _footnote_marker(133)],
+    [" accents.", _footnote_marker(137)],
     [" In addition, Breuer argued that based on Yeivin’s findings,"],
     [" another discovery can be made about"],
-    [" the nature of $merkha in the poetic books:", _footnote_marker(134)],
+    [" the nature of $merkha in the poetic books:", _footnote_marker(138)],
 ]
 _Y_03_H = [
     ["...יש להבדיל, לדוגמה,"],
@@ -106,7 +114,9 @@ _Y_03_H = [
     [" אך לא הרי אלו כהרי זה:"],
     [" מהפך ועילוי מצויים רק בהברה האחרונה הראויה לגעיה קלה;"],
     [" והם שכיחים מאוד גם כמשרתים עיקריים בתיבתם;"],
-    [" והשוה: וְלָ֤רָשָׁ֨ע׀ – נָשְׂא֤וּ נְהָר֨וֹת׀; וַהֲדָ֬רְךָ֨׀ – תְּחַדֵּ֬שׁ עֵדֶ֨יךָ׀."],
+    [
+        " והשוה: וְלָ֤רָשָׁ֨ע׀ – נָשְׂא֤וּ נְהָר֨וֹת׀; וַהֲדָ֬רְךָ֨׀ – תְּחַדֵּ֬שׁ עֵדֶ֨יךָ׀."
+    ],
     [" כנגד זה מרכא מצויה גם בהברה שאינה ראויה לשום געיה:"],
     [" תַּ֥הְפֻּכ֨וֹת׀; ולעולם אין היא מצויה כטעם עיקרי בתיבתה."],
 ]
@@ -177,7 +187,7 @@ _Y_05_H = [
     [" ואם תיבה מוקפת ראויה גם למשרת, מיד היא חדלה להיות מוקפת;"],
     [" כגון: וַיַּ֣עֲשׂוּ כֵ֔ן – במקום: וַיַּ֣עֲשׂוּ־כֵ֔ן."],
     [" כנגד זה מרכא מצויה גם בתיבה מוקפת:"],
-    [" וּ֥תְהִי־ע֨וֹד׀ (איוב ו, י), מַ֥עֲדֶה־בֶּ֨גֶד׀ (משלי כה, כ).[135]"],
+    [" וּ֥תְהִי־ע֨וֹד׀ (איוב ו, י), מַ֥עֲדֶה־בֶּ֨גֶד׀ (משלי כה, כ).[139]"],
 ]
 _Y_050_E = [
     ["(1) Generally, a conjunctive accent and a $maqaf are mutually exclusive;"],
@@ -199,7 +209,7 @@ _Y_054_E = [
 ]
 _Y_055_E = [author.hbo("וּ֥תְהִי־ע֨וֹד׀"), " ", "(איוב ו, י)"]
 _Y_056_E = [author.hbo("מַ֥עֲדֶה־בֶּ֨גֶד׀"), " ", "(משלי כה, כ)"]
-_Y_057_E = _footnote_marker(135)
+_Y_057_E = _footnote_marker(139)
 _Y_05_E = [
     author.para(_Y_050_E),
     author.para_hbo_es(_Y_051_E),
@@ -210,16 +220,19 @@ _Y_05_E = [
     author.para_dr_cc(_Y_056_E),
     author.para(_Y_057_E),
 ]
+_Y_06_H_EMPH = [
+    "אולם ביטול זה של המקף אינו אלא למראית עין:",
+    ' התיבה "נמלטה מן ההקפה" – ועדיין דינה כדין תיבה מוקפת.',
+]
 _Y_06_H = [
     "ב) לפעמים גם מרכא מבטלת את המקף שלאחריה;",
     " כך תמיד בתיבה זעירה: פֶּ֥ן אֶשְׂבַּ֨ע׀ (מש' ל, ט), אִ֥ם חֲרוּצִ֨ים׀ (איוב יד, ה);",
-    " וכך תמיד בתיבת הַ֥לְלוּ יָ֨הּ׀.",
-    " אולם ביטול זה של המקף אינו אלא למראית עין:",
-    ' התיבה "נמלטה מן ההקפה" – ועדיין דינה כדין תיבה מוקפת.',
+    " וכך תמיד בתיבת הַ֥לְלוּ יָ֨הּ׀. ",
+    author.emphasis(_Y_06_H_EMPH),
     ' משום כך תיבות "את",',
     ' "כל",',
     " מנוקדות כגון תיבות מוקפות;",
-    " אֶ֥ת גְּא֨וֹן (תה' מז, ה), [136]",
+    " אֶ֥ת גְּא֨וֹן (תה' מז, ה),[140]",
     " כׇּ֥ל עַצְמוֹתַ֨י׀ (שם לה, י).",
 ]
 _Y_060_E = [
@@ -230,13 +243,16 @@ _Y_061_E = [author.hbo("פֶּ֥ן אֶשְׂבַּ֨ע׀"), " (מש' ל, ט)"]
 _Y_062_E = [author.hbo("אִ֥ם חֲרוּצִ֨ים׀"), " (איוב יד, ה)"]
 _Y_063_E = "and this always occurs in the word"
 _Y_064_E = author.hbo("הַ֥לְלוּ יָ֨הּ׀")
-_Y_065_E = [
-    "However, this cancellation of the $maqaf is only apparent:"
+_Y_065_E_EMPH = [
+    "However, this cancellation of the $maqaf is only apparent:",
     " the word “escaped the joining” – and still has the status of a joined word.",
+]
+_Y_065_E = [
+    author.emphasis(_Y_065_E_EMPH),
     " Therefore, the words את and כל are vowel-pointed like joined words;",
     " for example:",
 ]
-_Y_066_E = [author.hbo("אֶ֥ת גְּא֨וֹן"), " (תה' מז, ה)," "[136]"]
+_Y_066_E = [author.hbo("אֶ֥ת גְּא֨וֹן"), " (תה' מז, ה),", "[140]"]
 _Y_067_E = [author.hbo("כׇּ֥ל עַצְמוֹתַ֨י׀"), " (שם לה, י)."]
 _Y_06_E = [
     author.para(_Y_060_E),
@@ -256,10 +272,14 @@ _Y_07_H = [
     " המרכא שבתיבות אלה היא מרכא משנית –",
     " שאינה יכולה לשמש כטעם עיקרי בתיבתה.",
     " הרי היא דומה לשאר מרכות מסוג זה,",
-    " שכולן מצויות רק כטעמים משניים.",
-    " משום כך עדיין תיבות אלה נחשבות כמוקפות –",
-    " ומנוקדות בהתאם לכך.",
-    "[137]",
+    " שכולן מצויות רק כטעמים משניים. ",
+    author.emphasis(
+        [
+            "משום כך עדיין תיבות אלה נחשבות כמוקפות –",
+            " ומנוקדות בהתאם לכך.",
+        ]
+    ),
+    "[141]",
 ]
 _Y_07_E = [
     ["This vowel-pointing of the words את and כל"],
@@ -271,10 +291,14 @@ _Y_07_E = [
     [" the $merkha in these words is a secondary $merkha –"],
     [" which cannot serve as a primary accent in its word."],
     [" Thus, it is similar to the other cases of $merkha of this type,"],
-    [" all of which are found only as secondary accents."],
-    [" Therefore, these words are still considered joined –"],
-    [" and are pointed accordingly."],
-    ["[137]"],
+    [" all of which are found only as secondary accents. "],
+    author.emphasis(
+        [
+            "Therefore, these words are still considered joined –",
+            " and are pointed accordingly.",
+        ]
+    ),
+    "[141]",
 ]
 _Y_080_H = [
     "ברויאר חזר לדון בנושא של טעמים משניים בהרחבה ובאופן מסודר בספרו טעמי המקרא.",
@@ -286,8 +310,8 @@ _Y_080_H = [
     " הוא בחן באריכות את התיבות שיש בהן טעם משני,",
     " והן ראויות להיות מוקפות לתיבה שלאחריהן בנסיבות רבות ושונות,",
     " כאילו היו תיבה אחת.",
-    " לעתים תיבות מהסוג הזה מוקפת בפועל בכתבי־היד (ט.22-28, עמ' 226-237).",
-    "[138]",
+    " לעתים תיבות מהסוג הזה מוקפות בפועל בכתבי־היד (ט.22-28, עמ' 226-237).",
+    "[142]",
 ]
 _Y_080_E = [
     "Breuer returned to discuss the topic of secondary accents",
@@ -301,7 +325,7 @@ _Y_080_E = [
     " and which should be joined to the next word under many and various circumstances,",
     " as if they were a single word.",
     " Sometimes, words of this type are indeed joined in the manuscripts (pp. 226-237).",
-    "[138]",
+    "[142]",
 ]
 _Y_081_H = [
     'התופעה די דומה לשתי תיבות של "עולה" ו"יורד":',
@@ -366,6 +390,20 @@ _TITLE = "Gray maqaf"
 _H1_CONTENTS = "Gray $maqaf"
 _FNAME = "gray_maqaf.html"
 _ANCHOR = my_html.anchor_h("document", f"./{_FNAME}")
+_WS_URL = (
+    "https://he.wikisource.org/wiki/"
+    "ויקיטקסט:מבוא_למקרא_על_פי_המסורה/פרק_ב"
+    "#תיבה_הראויה_להיות_מוקפת_(מקף_אפור)"
+)
+_WS_LINK = my_html.anchor_h("Hebrew Wikisource", _WS_URL)
+_PROVENANCE = author.para(
+    [
+        "The Hebrew text above is from Avi Kadish's introduction to the",
+        " Miqra al pi ha-Masora edition (Chapter 2) on ",
+        _WS_LINK,
+        ". The English translation is original to this project.",
+    ]
+)
 _CBODY = [
     author.heading_level_1(_H1_CONTENTS),
     author.he_en_table_wct(
@@ -380,7 +418,7 @@ _CBODY = [
             _X_08_TRIPLE,
         ]
     ),
+    _PROVENANCE,
 ]
 
 # file:///C:/Users/BenDe/GitRepos/MAM-with-doc/docs/misc/gray_maqaf.html
-# https://he.wikisource.org/wiki/%D7%95%D7%99%D7%A7%D7%99%D7%98%D7%A7%D7%A1%D7%98:%D7%9E%D7%91%D7%95%D7%90_%D7%9C%D7%9E%D7%A7%D7%A8%D7%90_%D7%A2%D7%9C_%D7%A4%D7%99_%D7%94%D7%9E%D7%A1%D7%95%D7%A8%D7%94/%D7%A4%D7%A8%D7%A7_%D7%91#%D7%AA%D7%99%D7%91%D7%94_%D7%94%D7%A8%D7%90%D7%95%D7%99%D7%94_%D7%9C%D7%94%D7%99%D7%95%D7%AA_%D7%9E%D7%95%D7%A7%D7%A4%D7%AA_(%D7%9E%D7%A7%D7%A3_%D7%90%D7%A4%D7%95%D7%A8)

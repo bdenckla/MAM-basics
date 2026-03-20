@@ -1,4 +1,4 @@
-""" Exports main """
+"""Exports main"""
 
 from py_misc import my_html
 from pyauthor_util import author
@@ -14,8 +14,7 @@ def gen_html_file(tdm_ch):
         author.para(_CONT_PARA_01),
         author.para(_CONT_PARA_03),
     ]
-    author.assert_stem_eq(__file__, _FNAME)
-    author.help_gen_html_file(tdm_ch, _FNAME, _TITLE, cbody)
+    author.help_gen_html_file(__file__, tdm_ch, _FNAME, _TITLE, cbody)
 
 
 _TITLE = "On the Provenance of Chabad’s CTR"
@@ -28,10 +27,14 @@ called $anc_Chabad_CTR ($CTR).
 The Complete Jewish Bible with Rashi Commentary.)
 Perhaps Chabad’s $CTR is derived from a $CD_ROM version of $CTR
 that was a collaboration between Judaica Press and the software company Davka.
-(See, e.g., the $anc_record_ctr_cdrom_nli for this $CD_ROM at the $NLI.)""".replace("\n", " ")
+(See, e.g., the $anc_record_ctr_cdrom_nli for this $CD_ROM at the $NLI.)""".replace(
+    "\n", " "
+)
 _CONT_PARA_03 = """Further, perhaps this $CD_ROM version of $CTR
 has some relationship to the Hebrew Bible
-found on another Davka $CD_ROM known as the Soncino Classics Collection.""".replace("\n", " ")
+found on another Davka $CD_ROM known as the Soncino Classics Collection.""".replace(
+    "\n", " "
+)
 
 ###############################################################################
 # From https://en.wikipedia.org/wiki/Soncino_Press#Second_edition:

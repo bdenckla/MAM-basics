@@ -9,10 +9,15 @@ from pycmn.my_utils import dv_map
 from pyauthor_util import dollar_sub_g
 
 
-def help_gen_html_file(tdm_ch, fname, title, cbody):
+def help_gen_html_file(py_file, tdm_ch, fname, title, cbody):
+    assert_stem_eq(py_file, fname)
     top_dir, css_href = tdm_ch
     out_path = f"{top_dir}/{fname}"
-    write_ctx = my_html.WriteCtx(title, out_path, css_hrefs=(css_href,))
+    py_basename = os.path.basename(py_file)
+    comment = f"Generated from {py_basename} — do not edit by hand"
+    write_ctx = my_html.WriteCtx(
+        title, out_path, css_hrefs=(css_href,), html_comment=comment
+    )
     my_html.write_html_to_file(cbody, write_ctx)
 
 

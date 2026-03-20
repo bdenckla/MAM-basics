@@ -29,8 +29,7 @@ def anchor():
 
 
 def gen_html_file(tdm_ch):
-    author.assert_stem_eq(__file__, _FNAME)
-    author.help_gen_html_file(tdm_ch, _FNAME, _TITLE, _CBODY)
+    author.help_gen_html_file(__file__, tdm_ch, _FNAME, _TITLE, _CBODY)
 
 
 _TITLE = "CTR Psalm 32: Where Other Sources Stand"

@@ -1,4 +1,4 @@
-""" Exports main """
+"""Exports main"""
 
 from py_misc import my_html
 from pyauthor_util import author
@@ -12,8 +12,7 @@ def anchor():
 
 
 def gen_html_file(tdm_ch):
-    author.assert_stem_eq(__file__, _FNAME)
-    author.help_gen_html_file(tdm_ch, _FNAME, _TITLE, _CBODY)
+    author.help_gen_html_file(__file__, tdm_ch, _FNAME, _TITLE, _CBODY)
 
 
 def _comma(the_list: list):
@@ -200,7 +199,9 @@ using a nonstandard mechanism rather than using the code points
 dedicated to making these distinctions.
 On a letter with a code point for a vowel mark (including $HOLAM), $CTR
 distinguishes the following prepositives from their impositive “lookalikes”
-by the logical order of an accent code point relative to that vowel:""".replace("\n", " ")
+by the logical order of an accent code point relative to that vowel:""".replace(
+    "\n", " "
+)
 _CODES_BOTH_TIPEHA = "$TIPEHA", "$dexi (!)", "$tarxa$hs_sl_hs$tipeha"
 _CODES_BOTH_GERESH = "$GERESH", "$germuq (!)", "$geresh"
 _CODES_BOTH_YETIV = "$YETIV", "$yetiv", "$mahapakh (!)"

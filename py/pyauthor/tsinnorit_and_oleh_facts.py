@@ -18,8 +18,7 @@ def gen_html_file(tdm_ch):
         author.para(_CONT_PARA_04F),
         author.para(_CONT_PARA_04G),
     ]
-    author.assert_stem_eq(__file__, _FNAME)
-    author.help_gen_html_file(tdm_ch, _FNAME, _TITLE, cbody)
+    author.help_gen_html_file(__file__, tdm_ch, _FNAME, _TITLE, cbody)
 
 
 _TITLE = "About Tsinnorit & Oleh"

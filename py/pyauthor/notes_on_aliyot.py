@@ -1,4 +1,4 @@
-""" Exports main """
+"""Exports main"""
 
 import string
 
@@ -47,9 +47,15 @@ _SYMDEFS = {
 
 
 def _write_callback(aliyot_sym_html_in_fp, out_fp):
+    comment_written = False
     for line in aliyot_sym_html_in_fp:
         after_tmpl_sub = string.Template(line).substitute(_SYMDEFS)
         out_fp.write(after_tmpl_sub)
+        if not comment_written and "<!doctype" in line.lower():
+            out_fp.write(
+                "<!-- Generated from notes_on_aliyot.py — do not edit by hand -->\n"
+            )
+            comment_written = True
 
 
 def gen_html_file(top_dir):

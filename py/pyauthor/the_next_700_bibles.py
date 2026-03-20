@@ -15,8 +15,7 @@ def gen_html_file(tdm_ch):
         author.heading_level_2("Endnotes"),
         author.para(_ENDNOTE_1),
     ]
-    author.assert_stem_eq(__file__, _FNAME)
-    author.help_gen_html_file(tdm_ch, _FNAME, _TITLE, cbody)
+    author.help_gen_html_file(__file__, tdm_ch, _FNAME, _TITLE, cbody)
 
 
 def _endnote_callout(num):

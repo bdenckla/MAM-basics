@@ -1,4 +1,4 @@
-""" Exports various HTML utilities """
+"""Exports various HTML utilities"""
 
 import xml.etree.ElementTree as ET
 import re
@@ -22,6 +22,7 @@ class WriteCtx:
     head_style: Union[str, None] = None
     css_hrefs: tuple = ()
     add_wbr: bool = False
+    html_comment: Union[str, None] = None
 
 
 def write_html_to_file(body_contents, wc: WriteCtx):
@@ -34,7 +35,9 @@ def write_html_to_file(body_contents, wc: WriteCtx):
     """
     other = {"head_style": wc.head_style}
     html_el = html_el2(wc.title, body_contents, wc.css_hrefs, other=other)
-    file_io.with_tmp_openw(wc.path, {}, _write_callback, wc.add_wbr, html_el)
+    file_io.with_tmp_openw(
+        wc.path, {}, _write_callback, wc.add_wbr, wc.html_comment, html_el
+    )
 
 
 def el_to_str_for_sef(html_el):
@@ -346,8 +349,10 @@ def _is_str_or_htel(obj):
     return isinstance(obj, str) or is_htel(obj)
 
 
-def _write_callback(add_wbr, html_el, out_fp):
+def _write_callback(add_wbr, html_comment, html_el, out_fp):
     out_fp.write("<!doctype html>\n")
+    if html_comment:
+        out_fp.write(f"<!-- {html_comment} -->\n")
     hgl_opts = {
         "hgl-add-wbr": add_wbr,
         "hgl-max-line-len": 100,

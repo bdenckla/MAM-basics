@@ -1,4 +1,4 @@
-""" Exports main """
+"""Exports main"""
 
 from py_misc import my_html
 from pyauthor_util import author
@@ -28,5 +28,4 @@ def gen_html_file(tdm_ch):
         my_html.heading_level_2("Conclusion"),
         author.para(_X_CPARA_CONCLUSION),
     ]
-    author.assert_stem_eq(__file__, hdr.FNAME)
-    author.help_gen_html_file(tdm_ch, hdr.FNAME, hdr.TITLE, cbody)
+    author.help_gen_html_file(__file__, tdm_ch, hdr.FNAME, hdr.TITLE, cbody)
