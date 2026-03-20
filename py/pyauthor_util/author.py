@@ -91,6 +91,11 @@ def heading_level_2(contents, attr=None):
     return my_html.heading_level_2(dollar_sub(contents), attr)
 
 
+def heading_level_3(contents, attr=None):
+    """Create a level 3 heading with dollar_sub applied to the contents"""
+    return my_html.heading_level_3(dollar_sub(contents), attr)
+
+
 def hbo(contents, attr=None):
     return my_html.bdi(contents, _awl(attr, "hbo"))
 
@@ -398,6 +403,14 @@ _ABBR_SC = {
     "$LSSLG": "LSSLG",
 }
 _ROMANIZED = {
+    "$aliyah": "aliyah",
+    "$aliyot": "aliyot",
+    "$parashah": "parashah",
+    "$parashiyot": "parashiyot",
+    "$kohen": "kohen",
+    "$levi": "levi",
+    "$yisrael": "yisrael",
+    "$maftir": "maftir",
     "$alef": "alef",
     "$tsere": "tsere",
     # "$gaya_with_half_ring_for_ayin": "gaʿya",
@@ -472,6 +485,7 @@ _DOLLAR_SUB_DISPATCH = {
     "$almost_equal_to": "\N{ALMOST EQUAL TO}",  # ≈
     #
     "$gaya": "געיה",
+    "$parashah_sl_aliyah": _romanized("parashah/aliyah"),
     #
     **_rom_with_cap("$ayin", "ayin"),
     **_rom_with_cap("$oleh", "oleh"),

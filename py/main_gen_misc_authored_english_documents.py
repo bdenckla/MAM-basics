@@ -33,7 +33,8 @@ def almost_main():
     tdm_ch = top_dir_misc, css_href
     tdm_ch_wide = top_dir_misc, css_href_wide
     #
-    notes_on_aliyot.gen_html_file(top_dir_aliyot)
+    tdm_ch_aliyot = top_dir_aliyot, "aliyot-styles.css"
+    notes_on_aliyot.gen_html_file(tdm_ch_aliyot)
     tsinnorit_and_oleh_on_ivs.gen_html_file(tdm_ch, top_dir_old)
     tsinnorit_and_oleh_facts.gen_html_file(tdm_ch)
     tsinnorit_in_psalm_32v5.gen_html_file(tdm_ch)
