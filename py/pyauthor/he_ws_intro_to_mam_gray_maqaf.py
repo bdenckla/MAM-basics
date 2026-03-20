@@ -3,7 +3,7 @@ Generates a bilingual (Hebrew/English) HTML document about gray maqaf.
 
 The Hebrew text is adapted (with minor editorial changes) from Avi Kadish's
 introduction to the Miqra al pi ha-Masora edition, Chapter 2, section
-"תיבה הראויה להיות מוקפת (מקף אפור)". The source is on Hebrew Wikisource:
+"טעם משני בתיבה הראויה להיות מוקפת". The source is on Hebrew Wikisource:
 https://he.wikisource.org/wiki/ויקיטקסט:מבוא_למקרא_על_פי_המסורה/פרק_ב#טעם_משני_בתיבה_הראויה_להיות_מוקפת
 
 The English translation is original to this project.
@@ -50,8 +50,8 @@ def _hbo_gray(string: str):
     return author.hbo(_gray_maqaf(string))
 
 
-_Y_010_H = "תיבה הראויה להיות מוקפת (מקף אפור)"
-_Y_010_E = "A word that should have a $maqaf (gray $maqaf$thinsp)"
+_Y_010_H = "טעם משני בתיבה הראויה להיות מוקפת"
+_Y_010_E = "A secondary accent in a word that should have a $maqaf"
 _Y_011_H = [
     "בתיבות רבות בספרי אמ״ת חסר טעם מובהק.",
     " יש בהן סימן כלשהו של טעם, אך מדובר על סימן שלא בא לציין את ההברה המוטעמת.",
