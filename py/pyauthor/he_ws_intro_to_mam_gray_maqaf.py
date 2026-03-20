@@ -422,7 +422,7 @@ _WS_URL = (
 _WS_LINK = my_html.anchor_h("Hebrew Wikisource", _WS_URL)
 _PROVENANCE = author.para(
     [
-        "The Hebrew text above is from Avi Kadish's introduction to the",
+        "The Hebrew text below is from Avi Kadish's introduction to the",
         " Miqra al pi ha-Masora edition (Chapter 2) on ",
         _WS_LINK,
         ". The English translation is original to this project.",
@@ -444,6 +444,7 @@ _FTNT_TRIPLES = [
 ]
 _CBODY = [
     author.heading_level_1(_H1_CONTENTS),
+    _PROVENANCE,
     author.he_en_table_wct(
         [
             _X_01_TRIPLE,
@@ -456,7 +457,6 @@ _CBODY = [
             _X_08_TRIPLE,
         ]
     ),
-    _PROVENANCE,
     author.heading_level_2(f"Footnotes (B={_FN_BASE})"),
     author.he_en_table_wct(_FTNT_TRIPLES),
 ]

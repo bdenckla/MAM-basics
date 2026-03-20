@@ -1230,8 +1230,23 @@ _TITLE = "Paseq and legarmeh"
 _H1_CONTENTS = "$paseq and $legarmeh"
 _FNAME = "he_ws_intro_to_mam_pasleg.html"
 _ANCHOR = my_html.anchor_h("document", f"./{_FNAME}")
+_WS_URL = (
+    "https://he.wikisource.org/wiki/"
+    "ויקיטקסט:מבוא_למקרא_על_פי_המסורה/פרק_ב"
+    "#פסק_ולגרמיה"
+)
+_WS_LINK = my_html.anchor_h("Hebrew Wikisource", _WS_URL)
+_PROVENANCE = author.para(
+    [
+        "The Hebrew text below is from Avi Kadish's introduction to the",
+        " Miqra al pi ha-Masora edition (Chapter 2) on ",
+        _WS_LINK,
+        ". The English translation is original to this project.",
+    ]
+)
 _CBODY = [
     author.heading_level_1(_H1_CONTENTS),
+    _PROVENANCE,
     author.he_en_table_wct(
         [
             _X_01_TRIPLE,
