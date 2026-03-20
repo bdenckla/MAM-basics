@@ -24,7 +24,7 @@ def gen_html_file(tdm_ch):
 
 # Section heading
 _Y_SEC_H = "פסק ולגרמיה"
-_Y_SEC_E = "$paseq and $legarmeh"
+_Y_SEC_E = "$Paseq and $legarmeh"
 
 # ═══════════════════════════════════════════════════════════════════
 # Sub-section א: Definition of paseq and legarmeh
@@ -44,9 +44,11 @@ _Y_A01_H = [
 ]
 _Y_A01_E = [
     [
-        author.emphasis("א. $paseq and $legarmeh:"),
-        " A vertical line at the end of a word serves",
-        " to slightly separate it from the following word.",
+        author.emphasis("א. $Paseq and $legarmeh:"),
+        " A vertical line at the end of a word",
+        " [can have one of two meanings.",
+        " In one meaning, it] serves to slightly separate",
+        " [the recitation of the words it visually separates].",
     ],
     [
         " If the first word has a conjunctive accent,",
@@ -1104,7 +1106,7 @@ _Y_E01_H = [
 ]
 _Y_E01_E = [
     [
-        author.emphasis("ה. $paseq and $legarmeh in the poetic books:"),
+        author.emphasis("ה. $Paseq and $legarmeh in the poetic books:"),
         " In the poetic books there are two $legarmeh accents:",
     ],
     [
