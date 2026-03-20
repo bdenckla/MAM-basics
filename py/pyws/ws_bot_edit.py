@@ -20,14 +20,13 @@ ws_bot_edit_old_joshua_meteg.py.
 
 import json
 
+from pycmn import hebrew_points as hpo
 from pyws import ws_get_bk_in_both_fmts as wsin
 from pyws import ws_fmt_2_back_to_wikitext as btw
 
-_METEG = "\u05bd"
-
 
 def _meteg_removal(old):
-    return old.replace(_METEG, "", 1)
+    return old.replace(hpo.MTGOSLQ, "", 1)
 
 
 _EDIT_KIND_FNS = {

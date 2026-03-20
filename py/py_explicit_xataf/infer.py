@@ -12,7 +12,7 @@ from pycmn import hebrew_points as hpo
 
 GUTTURALS = frozenset({hle.ALEF, hle.HE, hle.XET, hle.AYIN})
 
-_HEBREW_LETTER_RANGE = range(ord("\u05d0"), ord("\u05ea") + 1)
+_HEBREW_LETTER_RANGE = range(ord("א"), ord("ת") + 1)
 
 _VOWELS = frozenset(
     {

@@ -14,6 +14,7 @@ Exports:
 
 import re
 
+from pycmn import hebrew_punctuation as hpu
 from pydiff_mpp.mpp_extract import (
     _MISSING,
     _get_param,
@@ -24,13 +25,13 @@ from pydiff_mpp.mpp_extract import (
 
 _LEG_SENTINEL = "\ufdd0"
 _NAR_SENTINEL = "\ufdd1"
-_LEG_RUBY = '<ruby class="paseq-ruby">\u05c0<rt>\u05dc</rt></ruby>'
-_NAR_RUBY = '<ruby class="paseq-ruby">\u05c0<rt>\u05e4</rt></ruby>'
+_LEG_RUBY = f'<ruby class="paseq-ruby">{hpu.PASOLEG}<rt>ל</rt></ruby>'
+_NAR_RUBY = f'<ruby class="paseq-ruby">{hpu.PASOLEG}<rt>פ</rt></ruby>'
 
 # ── Gray maqaf display ──
 
 _GRAY_MAQ_SENTINEL = "\ufdd2"
-_GRAY_MAQ_HTML = '<span class="gray-maqaf">\u05be</span>'
+_GRAY_MAQ_HTML = f'<span class="gray-maqaf">{hpu.MAQ}</span>'
 
 # ── K/Q display (ruby annotations for ketiv/qere) ──
 
@@ -242,7 +243,7 @@ def display_text(text, ep):
             result.extend(kq_before[i])
         if i in gray_maqaf_positions:
             result.append(_GRAY_MAQ_SENTINEL)
-        if ch == "\u05c0":
+        if ch == hpu.PASOLEG:
             result.append(
                 _LEG_SENTINEL
                 if paseq_types[paseq_idx] == "legarmeih"
@@ -264,7 +265,9 @@ def normalize_paseq_spacing(text):
     Narpas:    non-breaking space before, regular space after.
     """
     text = re.sub(r" ?" + _LEG_SENTINEL + r" ?", _LEG_SENTINEL + " ", text)
-    text = re.sub(r" ?" + _NAR_SENTINEL + r" ?", "\u00a0" + _NAR_SENTINEL + " ", text)
+    text = re.sub(
+        r" ?" + _NAR_SENTINEL + r" ?", "\N{NO-BREAK SPACE}" + _NAR_SENTINEL + " ", text
+    )
     return text
 
 

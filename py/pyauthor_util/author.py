@@ -21,6 +21,11 @@ def help_gen_html_file(py_file, tdm_ch, fname, title, cbody):
     my_html.write_html_to_file(cbody, write_ctx)
 
 
+def dquote(text):
+    """Wrap text in curly double quotes."""
+    return sd.LDQM + text + sd.RDQM
+
+
 def paren(inner):
     return ["(", inner, ")"]
 

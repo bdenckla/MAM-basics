@@ -14,10 +14,9 @@ this file.  The immediately preceding bot is preserved as
 ws_bot_edit_old_yby_confine.py.
 """
 
+from pycmn import hebrew_points as hpo
 from pyws import ws_get_bk_in_both_fmts as wsin
 from pyws import ws_fmt_2_back_to_wikitext as btw
-
-_METEG = "\u05bd"
 
 # fmt: off
 _EDITS_JOSHUA = [
@@ -79,7 +78,7 @@ def _build_edits_by_book_and_chapter(all_edits):
     for bk39id, edit_list in all_edits.items():
         by_chap = {}
         for chap_key, old in edit_list:
-            new = old.replace(_METEG, "", 1)
+            new = old.replace(hpo.MTGOSLQ, "", 1)
             by_chap.setdefault(chap_key, []).append((old, new))
         result[bk39id] = by_chap
     return result

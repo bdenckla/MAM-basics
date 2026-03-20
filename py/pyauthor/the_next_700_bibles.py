@@ -29,6 +29,11 @@ def _endnote_body(num, contents):
     return ["[", marker, "] ", contents]
 
 
+def _nbsp(text):
+    """Return text with regular spaces replaced by non-breaking spaces."""
+    return text.replace(" ", "\N{NO-BREAK SPACE}")
+
+
 _TITLE = "The Next 700 Bibles"
 _H1_CONTENTS = "The Next 700 Bibles"
 _FNAME = "the_next_700_bibles.html"
@@ -39,8 +44,8 @@ _ANC_LANDIN = my_html.anchor_h("(PDF)", _URL_LANDIN_PDF)
 
 _INTRO_PARA = [
     "This document's title is inspired by the title"
-    " (and some of the spirit) of an influential 1966 paper by"
-    " P.\u00a0J.\u00a0Landin.",
+    " (and some of the spirit) of an influential 1966 paper by "
+    + _nbsp("P. J. Landin."),
     " ",
     _endnote_callout(1),
 ]
@@ -48,9 +53,18 @@ _INTRO_PARA = [
 _ENDNOTE_1 = _endnote_body(
     1,
     [
-        "P.\u00a0J.\u00a0Landin, \u201cThe Next 700 Programming Languages,\u201d" " ",
+        _nbsp("P. J. Landin,")
+        + " "
+        + author.dquote("The Next 700 Programming Languages,")
+        + " ",
         author.emphasis("Communications of the ACM"),
-        ", vol.\u00a09, no.\u00a03, March 1966, pp.\u00a0157\u2013166. ",
+        ", "
+        + _nbsp("vol. 9")
+        + ", "
+        + _nbsp("no. 3")
+        + ", March 1966, "
+        + _nbsp("pp. 157–166")
+        + ". ",
         _ANC_LANDIN,
     ],
 )

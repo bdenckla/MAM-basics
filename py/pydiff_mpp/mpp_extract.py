@@ -163,9 +163,9 @@ def _flatten_template(tmpl):
         pd = _get_param(tmpl, "ד")
         return _flatten_element(pd) if pd is not _MISSING else ""
     if name in ("מ:לגרמיה-2", "מ:לגרמיה"):
-        return "\u05c0"  # paseq character
+        return "׀"  # paseq/legarmeih character
     if name == "מ:פסק":
-        return "\u05c0"  # paseq character
+        return "׀"  # paseq/legarmeih character
     if name == "מ:כפול":
         pk = _get_param(tmpl, "כפול")
         return _flatten_element(pk) if pk is not _MISSING else ""
@@ -233,10 +233,10 @@ def _flatten_template_tracking(tmpl, parts, notes):
             _flatten_tracking(pd, parts, notes)
         return
     if name in ("מ:לגרמיה-2", "מ:לגרמיה"):
-        parts.append("\u05c0")
+        parts.append("׀")
         return
     if name == "מ:פסק":
-        parts.append("\u05c0")
+        parts.append("׀")
         return
     if name == "מ:כפול":
         pk = _get_param(tmpl, "כפול")
@@ -337,7 +337,7 @@ def _canonical_stem(filename):
       - Mid-era: "FA-Ezra-Neḥemiah.json" → "FA-Ezra-Nexemiah"  (ḥ→x)
       - Oldest:  "Genesis.json" → "A1-Genesis"  (no prefix)
     """
-    stem = filename.removesuffix(".json").replace("\u1e25", "x")
+    stem = filename.removesuffix(".json").replace("ḥ", "x")
     if stem in _CANONICAL_STEM_TO_BOOK39S:
         return stem
     return _BARE_NAME_TO_CANONICAL[stem]

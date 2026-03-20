@@ -265,7 +265,7 @@ def _render_card(diff):
         body_html = nusach_body_to_html(note)
         lines.append(
             '<div class="nusach-note">'
-            '<span class="nusach-label">\u05e0\u05d5\u05e1\u05d7</span>'
+            '<span class="nusach-label">נוסח</span>'
             f'<div class="nusach-body">{body_html}</div>'
             "</div>"
         )

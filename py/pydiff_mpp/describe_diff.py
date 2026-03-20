@@ -11,6 +11,8 @@ import unicodedata
 from collections import Counter
 from difflib import SequenceMatcher
 
+from pycmn import hebrew_punctuation as hpu
+
 # ── Hebrew letter names ──────────────────────────────────────────────
 
 _LETTER_NAMES = {
@@ -233,13 +235,13 @@ def _describe_diff(old_text, new_text, pred, name_fn, poetic=False):
                 # Same letter, different mark → replaced
                 descriptions.append(
                     f"on {_letter_name(o_let)}, "
-                    f"{_name(o_mark)} in old \u2192 "
+                    f"{_name(o_mark)} in old → "
                     f"{_name(n_mark)} in new"
                 )
             else:
                 descriptions.append(
                     f"{_name(o_mark)} on {_letter_name(o_let)}"
-                    f" (old) \u2192 {_name(n_mark)} on "
+                    f" (old) → {_name(n_mark)} on "
                     f"{_letter_name(n_let)} (new)"
                 )
         elif tag == "delete":
@@ -315,13 +317,12 @@ _MARK_CATS = {
 }
 
 
-_PASEQ = "\u05c0"
 _LEG_SENTINEL = "\ufdd0"
 _NAR_SENTINEL = "\ufdd1"
 
 
 def _has_paseq(text):
-    return _PASEQ in text or _LEG_SENTINEL in text or _NAR_SENTINEL in text
+    return hpu.PASOLEG in text or _LEG_SENTINEL in text or _NAR_SENTINEL in text
 
 
 def _describe_paseq_change(old_text, new_text):

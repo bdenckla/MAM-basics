@@ -105,7 +105,9 @@ _NDASH = "\N{EN DASH}"
 _ZWJ = "\N{ZERO WIDTH JOINER}"
 ```
 
-`\N{...}` is self-documenting — a reader sees the character's identity without looking up a hex code. Use `\uXXXX` only as a last resort (e.g. when there is no Unicode name, or inside a regex character class range). It is rare to find a case where `\uXXXX` is the right choice.
+`\N{...}` is self-documenting — a reader sees the character's identity without looking up a hex code. Use `\uXXXX` only as a last resort (e.g. when there is no Unicode name, or inside a regex character class range).
+
+**Exception — curly quotes:** LLM code-editing tools (Claude, Copilot) have persistent difficulty preserving literal curly quotes (`\u201c`, `\u201d`, `\u2018`, `\u2019`) in source files — they silently convert them to straight ASCII quotes. For curly quotes, `\uXXXX` escapes are not only acceptable but **preferable** to literal characters. Even better (when applicable) is to use a utility function like `dquotes()` in `author.py` that wraps a string in curly double quotes, avoiding the escaping question entirely.
 
 **When a string does use escapes**, add a comment showing the string in literal UTF-8 so a reader can see what it says.
 

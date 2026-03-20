@@ -89,11 +89,11 @@ def _collapse_equivalent_nodes(edges):
 
 
 def _abbreviate_name(name):
-    """Abbreviate 'first middle ... last' to 'first \u2026 last' for 3+ word names."""
+    """Abbreviate 'first middle ... last' to 'first … last' for 3+ word names."""
     words = name.split()
     if len(words) <= 2:
         return name
-    return f"{words[0]} \u2026 {words[-1]}"
+    return f"{words[0]} … {words[-1]}"
 
 
 def _build_abbreviations(names):
@@ -158,7 +158,7 @@ def _write_dot(edges, groups, fp, note=_DEFAULT_NOTE):
     fp.write('    node [shape=box, style=""];\n')
     for rep, members in sorted(groups.items()):
         if len(members) > 1:
-            label = f"{abbrevs[rep]}, \u2026"
+            label = f"{abbrevs[rep]}, …"
             tooltip = _group_tooltip(members)
             fp.write(f"    {_dot_quoted(rep)}{_node_attrs(label, tooltip)};\n")
         elif abbrevs[rep] != rep:
