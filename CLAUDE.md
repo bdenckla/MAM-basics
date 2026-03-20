@@ -92,6 +92,23 @@ with open(path, "r") as f: ...
 with open(path) as f: ...
 ```
 
+## Literal UTF-8 in Python Source — No Unnecessary `\uXXXX` Escapes
+
+Write Hebrew letters, punctuation (maqaf, gershayim, sof pasuq, nun hafukha), em dashes, en dashes, and other **displayable** characters as literal UTF-8 in Python source code. Do **not** use `\uXXXX` escape sequences for them.
+
+Pointed Hebrew (e.g. `בְּתִשְׁרֵי`) should also appear as literal UTF-8 — combining marks are perfectly readable when attached to their base letters.
+
+**Characters that SHOULD remain as `\uXXXX` escapes:** zero-width characters (ZWJ, ZWNJ, CGJ), invisible whitespace (NBSP, thin space, hair space), and other characters that are invisible or visually indistinguishable from ASCII in an editor.
+
+**When a string must use escapes** (e.g. because it contains isolated combining marks or invisible characters), add a comment showing the string in literal UTF-8 so a reader can see what it says:
+
+```python
+# בְּרֵאשִׁית
+_BEREISHIT = "b\u05b0r\u05b5a\u05e9\u05c1\u05b4yt"  # hypothetical example
+```
+
+The sibling repo `book-of-job` has `check_escape_sequences.py` and `fix_escape_sequences.py` that enforce this policy.
+
 ## No Unsolicited Git Operations
 
 Never run `git commit` or `git push` without explicit permission from the user. It is fine to stage files or check status, but committing and especially pushing must be requested or approved first.

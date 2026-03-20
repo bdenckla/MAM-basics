@@ -68,7 +68,7 @@ _H1 = "Notes on $aliyot"
 _AUTHOR = "Author: Ben Denckla"
 _REVISION = [
     "Revision: 4 Oct 2021 / ",
-    _taamey("כ״ח ב\u05bc\u05b0ת\u05b4ש\u05c1\u05b0ר\u05b5י תשפ״ב"),
+    _taamey("כ״ח בְּתִשְׁרֵי תשפ״ב"),
 ]
 
 # ── Introduction ──
@@ -165,12 +165,12 @@ _INTRO_UL4 = [
 _DUAL_P1 = "The dual $parashiyot are as follows:"
 _DUAL_OL1 = [
     f"ויקהל{_NDASH}פקודי",
-    f"תזריע{_NDASH}מצ\u05b9רע",
-    f"אחרי מות{_NDASH}קד\u05b9שים",
-    f"בהר{_NDASH}בח\u05bbק\u05b9תי",
-    f"ח\u05bbקת{_NDASH}בלק",
+    f"תזריע{_NDASH}מצֹרע",
+    f"אחרי מות{_NDASH}קדֹשים",
+    f"בהר{_NDASH}בחֻקֹתי",
+    f"חֻקת{_NDASH}בלק",
     f"מטות{_NDASH}מסעי",
-    f"נ\u05b4צבים{_NDASH}וילך",
+    f"נִצבים{_NDASH}וילך",
 ]
 _DUAL_P2 = [
     "We can think of the dual $parashiyot as forming an alternate hierarchy.",
@@ -191,7 +191,7 @@ _DUAL_P3 = [
     " Thus ",
     _rtl("בראשית-2"),
     " is ",
-    _rtl("נ\u05b9ח"),
+    _rtl("נֹח"),
     ", ",
     _rtl("בראשית-3"),
     " is ",
@@ -291,22 +291,22 @@ _PART_TABLE = my_html.table(
             [2, 3, 1, 2, 1, 2, 3],
         ),
         _part_row(
-            "תזריע-מצ\u05b9רע",
+            "תזריע-מצֹרע",
             "321-3122",
             [3, 2, 1, 3, 1, 2, 2],
         ),
         _part_row(
-            "אחרי מות-קד\u05b9שים",
+            "אחרי מות-קדֹשים",
             "222-2222",
             [2, 2, 2, 2, 2, 2, 2],
         ),
         _part_row(
-            "בהר-בח\u05bbק\u05b9תי",
+            "בהר-בחֻקֹתי",
             "221-4113",
             [2, 2, 1, 4, 1, 1, 3],
         ),
         _part_row(
-            "ח\u05bbקת-בלק",
+            "חֻקת-בלק",
             "222-2222",
             [2, 2, 2, 2, 2, 2, 2],
         ),
@@ -316,7 +316,7 @@ _PART_TABLE = my_html.table(
             [2, 3, 1, 3, 1, 2, 2],
         ),
         _part_row(
-            "נ\u05b4צבים-וילך",
+            "נִצבים-וילך",
             "312-3212",
             [3, 1, 2, 3, 2, 1, 2],
         ),
@@ -356,10 +356,10 @@ _PART_NOTES_UL = [
     [
         "Only in 2 of the 7 dual $parashiyot is the partitioning uniform",
         " (compactly represented by 222-2222).",
-        " Those 2 are אחרי מות-קד\u05b9שים",
-        " and ח\u05bbקת-בלק.",
+        " Those 2 are אחרי מות-קדֹשים",
+        " and חֻקת-בלק.",
         " Contrast these with the 5 dual $parashiyot with non-uniform partitioning,",
-        " e.g. בהר-בח\u05bbק\u05b9תי",
+        " e.g. בהר-בחֻקֹתי",
         " (compactly represented by 221-4113).",
     ],
     [
@@ -372,9 +372,9 @@ _PART_NOTES_UL = [
     [
         f"The 4th $aliyah starts with $aliyah 7{_PRIME}",
         " in 6 of the 7 dual $parashiyot.",
-        " The exception is בהר-בח\u05bbק\u05b9תי.",
+        " The exception is בהר-בחֻקֹתי.",
         f" Its 4th $aliyah starts with 6{_PRIME}.",
-        " The 4th $aliyah of בהר-בח\u05bbק\u05b9תי",
+        " The 4th $aliyah of בהר-בחֻקֹתי",
         " is also exceptional because it is the largest:",
         " it is the only $aliyah consisting of 4 $aliyot from its halves.",
     ],
@@ -478,7 +478,7 @@ _NN_UL2 = [
         ", ",
         _rtl("כי תשא"),
         ", and ",
-        _rtl("נש\u05b9א"),
+        _rtl("נשֹא"),
         ".",
     ],
     [
@@ -491,7 +491,7 @@ _NN_UL2 = [
                     "3 of these 8 cases: The [ישראל] teaser ends",
                     " somewhere in the middle of the 2nd or 3rd s-$aliyah.",
                     " These cases are ",
-                    _rtl("בח\u05bbק\u05b9תי"),
+                    _rtl("בחֻקֹתי"),
                     ", ",
                     _rtl("דברים"),
                     ", and ",
@@ -505,7 +505,7 @@ _NN_UL2 = [
                     " These cases are ",
                     _rtl("כי־תבוא"),
                     ", ",
-                    _rtl("נ\u05b4צבים"),
+                    _rtl("נִצבים"),
                     ", ",
                     _rtl("וילך"),
                     ", ",
@@ -595,7 +595,7 @@ _TEASER_TABLE = my_html.table(
             [_td(""), _td(""), _bor(_LEVI), _bor(_YL, colspan="2"), _td("3")],
         ),
         _teaser_row(
-            "בח\u05bbק\u05b9תי",
+            "בחֻקֹתי",
             [
                 _td(""),
                 _td(""),
@@ -606,7 +606,7 @@ _TEASER_TABLE = my_html.table(
             ],
         ),
         _teaser_row(
-            "נ\u05b4צבים",
+            "נִצבים",
             [
                 _td(""),
                 _td(""),
@@ -653,13 +653,13 @@ _NN_P10 = [
     " nor is it labelled [כהן].",
     " Rather, it is labelled with the name of the single $parashah.",
     " Below is a table showing the 1st few $aliyah labels",
-    " $MAM uses for the $parashah נ\u05b9ח.",
+    " $MAM uses for the $parashah נֹח.",
     " The table also shows an expanded form of these labels,",
     " where everything is laid out explicitly, albeit with gray used for",
     " the parts that $MAM leaves implicit.",
 ]
 
-_NOAH = "נ\u05b9ח"
+_NOAH = "נֹח"
 _LABEL_TABLE = my_html.table(
     [
         _tr([_bor("compact form"), _bor("expanded form", colspan="3")]),
@@ -708,7 +708,7 @@ _LABEL_TABLE = my_html.table(
 
 _NN_P11 = [
     "In the $parashiyot עקב",
-    " and נ\u05b4צבים,",
+    " and נִצבים,",
     " the $maftir $aliyah is the same as the 7th $aliyah.",
     " Every other $parashah with a $maftir,",
     " be it single or dual,",
