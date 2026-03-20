@@ -168,7 +168,10 @@ def para_table(cpara_before, table_data, cparas_after=None):
 
 def he_en_table_wct(ti_he_en_triples):
     """Hebrew-English table with centered titles."""
-    args_to_table = sum_of_map(_he_en_table_wci_row_pair, ti_he_en_triples)
+    cg = my_html.colgroup(
+        [my_html.col({"width": "40%"}), my_html.col({"width": "60%"})]
+    )
+    args_to_table = [cg, *sum_of_map(_he_en_table_wci_row_pair, ti_he_en_triples)]
     return table_c(args_to_table)
 
 
@@ -231,7 +234,7 @@ def _he_en_table_wci_row_pair(ti_he_en_triple):
     title, hebrew, english = ti_he_en_triple
     return [
         _std_row_of_data(
-            [{"colspan": "2"}],
+            [{"colspan": "2", "style": "padding-right: 20%"}],
             [para_cc(title)],
         ),
         _std_row_of_data(
