@@ -53,7 +53,7 @@ _Y_A01_E = [
         " then the line indicates to the reader",
         " that there should be a slight pause between the two words",
     ],
-    [" “, author.emphasis(”despite”), “ the conjunctive accent joining them."],
+    [" ", author.emphasis("despite"), " the conjunctive accent joining them."],
     [
         " In these places, the vertical line is called “$paseq.”",
         " A $paseq line is not part of the musical accentuation system",
@@ -987,7 +987,7 @@ _Y_D10_E = [
     [
         " It indicates that here there is not",
         " a regular $munax (conjunctive accent)",
-        " but rather a $munax that is a disjunctive accent (”$legarmeh”).",
+        " but rather a $munax that is a disjunctive accent (“$legarmeh”).",
     ],
 ]
 
