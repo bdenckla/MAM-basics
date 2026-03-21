@@ -13,6 +13,9 @@ body {
     margin-right: auto;
     font-size: 14pt;
 }
+body.wide {
+    max-width: 80em;
+}
 *[lang="hbo"] {
     font-family: "Taamey D WOFF2";
     font-size: 140%;

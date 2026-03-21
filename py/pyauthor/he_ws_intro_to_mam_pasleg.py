@@ -17,8 +17,8 @@ def anchor():
     return author.std_anchor(_ANCHOR, _H1_CONTENTS)
 
 
-def gen_html_file(tdm_ch):
-    author.help_gen_html_file(__file__, tdm_ch, _FNAME, _TITLE, _CBODY)
+def gen_html_file(tdm_ch, body_class=None):
+    author.help_gen_html_file(__file__, tdm_ch, _FNAME, _TITLE, _CBODY, body_class)
 
 
 # Section heading
@@ -134,10 +134,14 @@ _Y_A03_E = [
     " and indicate explicitly that it is $legarmeh,",
     " and all the more so in other cases that are not self-evident.",
     " For this reason, early and later Masorah scholars wrote",
-    [" rules and lists of $legarmeh",],
+    [
+        " rules and lists of $legarmeh",
+    ],
     " of its various types",
     " (within Masorah treatises and Masorah notes),",
-    [" complete lists of $paseq",],
+    [
+        " complete lists of $paseq",
+    ],
     " for all the books of the Bible",
     " (within Masorah compendiums),",
     " and in some manuscripts they even noted",
@@ -189,8 +193,12 @@ _Y_C01_E = [
         ]
     ),
     " Below are the main rules derived from Masorah literature",
-    [" for distinguishing between $legarmeh",],
-    [" and $paseq:",],
+    [
+        " for distinguishing between $legarmeh",
+    ],
+    [
+        " and $paseq:",
+    ],
 ]
 
 # Rule 1
@@ -294,9 +302,9 @@ _Y_C20_E = [
     " The $paseq in this verse in Isaiah",
     " is emphasized in the Masorah in several places,",
     " and in the other verses that have $munax and a vertical line",
-    " adjacent to $revia there are [marginal] annotations",
-    [" of ", author.dquote("לג[רמיה]")],
-    # XXX The Hebrew text has "לגרמיה" but I'm guessing that these are 
+    " adjacent to $revia there are [often] [marginal] annotations",
+    [" of ", author.dquote("לג[רמיה].")],
+    # XXX The Hebrew text has "לגרמיה" but I'm guessing that these are
     # abbreviated annotations of the type "לג[רמיה]", not "לגרמיה".
 ]
 
@@ -310,8 +318,7 @@ _Y_C30_H = [
 ]
 _Y_C30_E = [
     author.emphasis(
-        "Rarely, $munleg comes before"
-        " other disjunctive accents (besides $revia)."
+        "Rarely, $munleg comes before" " other disjunctive accents (besides $revia)."
     ),
     " All such cases are specified in the Masorah literature:",
 ]
@@ -653,7 +660,9 @@ _Y_C42_E = [
     " the $legarmeh hints at a $pazer",
     " that should have come instead of the $munax.",
     " Additionally, in both verses there is",
-    [" an explicit $legarmeh",],
+    [
+        " an explicit $legarmeh",
+    ],
     " annotation in the Leningrad Codex,",
     " and both are absent from the $paseq list therein.",
 ]
@@ -968,8 +977,12 @@ _Y_E02_H = [
 ]
 _Y_E02_E = [
     "The distinction between",
-    [" $paseq",],
-    [" and $legarmeh",],
+    [
+        " $paseq",
+    ],
+    [
+        " and $legarmeh",
+    ],
     " in the poetic books was checked against",
     " Ginsburg's $legarmeh list",
     " and especially against his $paseq list,",
