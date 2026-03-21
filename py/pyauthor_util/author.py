@@ -467,7 +467,6 @@ _ROMANIZED = {
     "$pasoleg": "paseq/legarmeh",
     "$maqaf": "maqaf",
     "$azla": "azla",
-    "$legarmeh": "legarmeh",
     "$legarmeh_leg": "leg.",
     "$yod": "yod",
     "$shin": "shin",
@@ -512,7 +511,9 @@ _DOLLAR_SUB_DISPATCH = {
     **_rom_with_cap("$yetiv", "yetiv"),
     **_rom_with_cap("$mahapakh", "mahapakh"),
     **_rom_with_cap("$munax", "munaḥ"),
+    **_rom_with_cap("$munleg", "munaḥ legarmeh"),
     **_rom_with_cap("$pazer", "pazer"),
+    **_rom_with_cap("$legarmeh", "legarmeh"),
     **_rom_with_cap("$paseq", "paseq"),
     #
     **_ANCHORS,

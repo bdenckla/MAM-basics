@@ -75,11 +75,12 @@ _Y_A02_H = [
 ]
 _Y_A02_E = [
     "But if the line comes after a $munax in the 21 books,",
-    ' then in many places it transforms it into "$munax $legarmeh,"',
+    " then in many places it transforms it",
+    [" into ", author.dquote("$munleg,")],
     " meaning: a $munax that is a disjunctive accent",
     " (even though $munax is usually a conjunctive accent).",
     " Unlike $paseq,",
-    " in $munax $legarmeh the vertical line does not indicate",
+    " in $munleg the vertical line does not indicate",
     " a slight pause despite",
     " the conjunctive accent.",
     [
@@ -120,23 +121,23 @@ _Y_A03_E = [
     " whether it is $paseq or $legarmeh.",
     " Especially when the vertical line comes after",
     " a word accented with $munax,",
-    " it is not always obvious whether it is $munax $legarmeh",
+    " it is not always obvious whether it is $munleg",
     " or a regular $munax (= conjunctive accent) followed by $paseq.",
-    " Indeed, in the vast majority of cases it is $munax $legarmeh,",
+    " Indeed, in the vast majority of cases it is $munleg,",
     " because when the $munax and the line come before",
     " another $munax and then a $revia follows",
     " — as is the case in most verses with a $munax and a line —",
     " then the first $munax with the line",
-    " is always $munax $legarmeh.",
+    " is always $munleg.",
     " But even in such common and clear cases,",
     " it is desirable to assist the reader",
     " and indicate explicitly that it is $legarmeh,",
     " and all the more so in other cases that are not self-evident.",
     " For this reason, early and later Masorah scholars wrote",
-    [" rules and lists of ", author.dquote("$legarmeh")],
+    [" rules and lists of $legarmeh",],
     " of its various types",
     " (within Masorah treatises and Masorah notes),",
-    [" complete lists of ", author.dquote("$paseq")],
+    [" complete lists of $paseq",],
     " for all the books of the Bible",
     " (within Masorah compendiums),",
     " and in some manuscripts they even noted",
@@ -183,17 +184,13 @@ _Y_C01_H = [
 _Y_C01_E = [
     author.emphasis(
         [
-            "ג. The distinction between ",
-            author.dquote("$legarmeh"),
-            " and ",
-            author.dquote("$paseq"),
-            " in the 21 books was established" " according to Masorah literature.",
+            "ג. The distinction between $legarmeh and $paseq",
+            " in the 21 books was established according to Masorah literature.",
         ]
     ),
     " Below are the main rules derived from Masorah literature",
-    [" for distinguishing between ", author.dquote("$legarmeh")],
-    [" and ", author.dquote("$paseq")],
-    ":",
+    [" for distinguishing between $legarmeh",],
+    [" and $paseq:",],
 ]
 
 # Rule 1
@@ -214,7 +211,7 @@ _Y_C10_H = [
 _Y_C10_E = [
     author.emphasis(
         [
-            author.dquote("$Munax $legarmeh"),
+            "$Munax $legarmeh",
             " usually comes before $munax and $revia.",
         ]
     ),
@@ -223,7 +220,7 @@ _Y_C10_E = [
         " ",
         author.dquote(
             [
-                "$legarmeh serves mainly as a minor disjunctive",
+                "$Legarmeh serves mainly as a minor disjunctive",
                 " in the domain of $revia,",
                 " and usually between it and the $revia",
                 " there is a conjunctive $munax,",
@@ -273,7 +270,7 @@ _Y_C20_H = [
 _Y_C20_E = [
     author.emphasis(
         "$Munax and a vertical line adjacent to $revia"
-        " are always $munax $legarmeh,"
+        " are always $munleg,"
         " and even a $paseq that would be expected"
         " immediately before $revia is replaced by $legarmeh;"
         " except in one place only in the entire Bible."
@@ -297,7 +294,10 @@ _Y_C20_E = [
     " The $paseq in this verse in Isaiah",
     " is emphasized in the Masorah in several places,",
     " and in the other verses that have $munax and a vertical line",
-    [" adjacent to $revia there are annotations of ", author.dquote("$legarmeh.")],
+    " adjacent to $revia there are [marginal] annotations",
+    [" of ", author.dquote("לג[רמיה]")],
+    # XXX The Hebrew text has "לגרמיה" but I'm guessing that these are 
+    # abbreviated annotations of the type "לג[רמיה]", not "לגרמיה".
 ]
 
 # Rule 3: introduction
@@ -310,7 +310,7 @@ _Y_C30_H = [
 ]
 _Y_C30_E = [
     author.emphasis(
-        "Rarely, $munax $legarmeh comes before"
+        "Rarely, $munleg comes before"
         " other disjunctive accents (besides $revia)."
     ),
     " All such cases are specified in the Masorah literature:",
@@ -584,7 +584,7 @@ _Y_C40_E = [
     " and in all other places it is $paseq.",
     " Even in the verse in Nehemiah that has $legarmeh before $pazer,",
     " later in the same verse there is $paseq in exactly the same circumstances",
-    " (i.e. $munax $legarmeh adjacent to $pazer in a simple two-word unit,",
+    " (i.e. $munleg adjacent to $pazer in a simple two-word unit,",
     " separating two items in a list of names):",
     [" ", author.hbo("וְיֵשׁ֡וּעַ וּבָנִ֡י וְשֵׁרֵ֥בְיָ֣ה ׀ יָמִ֡ין עַקּ֡וּב")],
     [" ", author.emphasis(author.hbo("שַׁבְּתַ֣י ׀ הֽוֹדִיָּ֡ה"))],
@@ -610,7 +610,7 @@ _Y_C40_E = [
 _Y_C41_E = [
     "Despite this puzzlement,",
     [" there is a clear sign that in ", author.hbo("וְשֵׁרֵ֥בְיָ֣ה ׀ יָמִ֡ין")],
-    " it is $munax $legarmeh:",
+    " it is $munleg:",
     [" the $merkha accent on the word ", author.hbo("וְשֵׁרֵ֥בְיָ֣ה ׀")],
     ";",
     " $merkha is specifically the conjunctive of $legarmeh",
@@ -626,7 +626,7 @@ _Y_C41_E = [
         author.dquote(
             [
                 "The matter is also decided from the conjunctive accents",
-                " of $munax $legarmeh.",
+                " of $munleg.",
                 " It is known that its conjunctive is $merkha,",
                 " but before a $munax and $paseq that are not $legarmeh,",
                 " $merkha will never be found.",
@@ -653,7 +653,7 @@ _Y_C42_E = [
     " the $legarmeh hints at a $pazer",
     " that should have come instead of the $munax.",
     " Additionally, in both verses there is",
-    [" an explicit ", author.dquote("$legarmeh")],
+    [" an explicit $legarmeh",],
     " annotation in the Leningrad Codex,",
     " and both are absent from the $paseq list therein.",
 ]
@@ -725,7 +725,7 @@ _Y_C51_H = [
 _Y_C51_E = [
     "Indeed, this is the function of $paseq:",
     " whether it comes after $munax in the domain of $revia,",
-    " transforming it into a disjunctive accent — $munax $legarmeh,",
+    " transforming it into a disjunctive accent — $munleg,",
     " or whether it comes after $munax in the domain of $pazer,",
     " causing a pause with the force of a disjunctive accent;",
     " and from the $munax in the domain of $pazer",
@@ -757,7 +757,7 @@ _Y_C52_E = [
     " which could not have grown on the ground",
     " of the accepted conceptual system",
     " (which is also the only one known to us),",
-    " in which $munax $legarmeh and $paseq",
+    " in which $munleg and $paseq",
     " are matters far removed from each other",
     " — $paseq does not belong at all to the accentuation system —",
     " and they have nothing to do with each other",
@@ -766,11 +766,11 @@ _Y_C52_E = [
     " is certainly not an accentual sign, a musical sign,",
     " but merely a punctuation mark.",
     " The very fact that both were grouped together here,",
-    " and that $munax $legarmeh",
+    " and that $munleg",
     " was included in the category of $paseq,",
     " leaves room for the conjecture",
     " that originally there was no essential difference between the two,",
-    " and that $munax $legarmeh was not always considered",
+    " and that $munleg was not always considered",
     " an independent accent in the accentuation system.",
     " Traces of that early period in the development",
     " of the accentuation system are still discernible\u2026",
@@ -864,16 +864,12 @@ _Y_D01_H = [
 _Y_D01_E = [
     author.emphasis(
         [
-            "ד. The method of marking ",
-            author.dquote("$paseq"),
-            " and ",
-            author.dquote("$legarmeh"),
-            " in our edition:",
+            "ד. The method of marking $paseq",
+            " and $legarmeh in our edition:",
         ]
     ),
     " Unicode has only one character",
-    [" for both ", author.dquote("$paseq")],
-    [" and ", author.dquote("$legarmeh,")],
+    " for both $paseq and $legarmeh,",
     " despite their different meanings.",
     " However, because the accepted convention",
     " (in all printed editions)",
@@ -903,9 +899,8 @@ _Y_D10_E = [
     " and is not related to the following word.",
     " It indicates that here there is not",
     " a regular $munax (conjunctive accent)",
-    " but rather a $munax that is a disjunctive accent (",
-    author.dquote("$legarmeh"),
-    ").",
+    " but rather a $munax that is a disjunctive accent",
+    " ($munleg).",
 ]
 
 _Y_D20_H = [
@@ -949,8 +944,7 @@ _Y_E01_H = [
 _Y_E01_E = [
     author.emphasis("ה. $Paseq and $legarmeh in the poetic books:"),
     " In the poetic books there are two $legarmeh accents:",
-    [" ", author.dquote("$azla $legarmeh")],
-    [" and ", author.dquote("$mahapakh $legarmeh.")],
+    " $azla $legarmeh and $mahapakh $legarmeh.",
     " The vertical line that comes after $azla and $mahapakh",
     " to indicate $legarmeh",
     " is sometimes a substitute",
@@ -974,8 +968,8 @@ _Y_E02_H = [
 ]
 _Y_E02_E = [
     "The distinction between",
-    [" ", author.dquote("$paseq")],
-    [" and ", author.dquote("$legarmeh")],
+    [" $paseq",],
+    [" and $legarmeh",],
     " in the poetic books was checked against",
     " Ginsburg's $legarmeh list",
     " and especially against his $paseq list,",
@@ -1021,27 +1015,22 @@ _Y_F01_E = [
     " (in the poetic books)",
     " in the $legarmeh style.",
     " About this line, Breuer wrote:",
-    [
-        " ",
-        author.dquote(
-            [
-                "After a $shalshelet word there is always a $paseq-like line,",
-                " e.g.: ",
-                author.hbo("וַיֹּאמַ֓ר ׀"),
-                " (Gen. 24:12).",
-                " This line serves to distinguish",
-                " between the disjunctive $shalshelet_gedolah",
-                " and the conjunctive $shalshelet_qetanah.",
-                " Both of these accents are found in the poetic books,",
-                " and they are identical in form;",
-                " therefore it was necessary to distinguish between them",
-                " in the poetic books.",
-                " From there, the line was transferred also to the 21 books,",
-                " even though $shalshelet is found in them",
-                " only as a disjunctive accent.",
-            ]
-        ),
-    ],
+]
+_Y_F02_E = [
+    "After a $shalshelet word there is always a $paseq-like line,",
+    " e.g.: ",
+    author.hbo("וַיֹּאמַ֓ר ׀"),
+    " (Gen. 24:12).",
+    " This line serves to distinguish",
+    " between the disjunctive $shalshelet_gedolah",
+    " and the conjunctive $shalshelet_qetanah.",
+    " Both of these accents are found in the poetic books,",
+    " and they are identical in form;",
+    " therefore it was necessary to distinguish between them",
+    " in the poetic books.",
+    " From there, the line was transferred also to the 21 books,",
+    " even though $shalshelet is found in them",
+    " only as a disjunctive accent.",
 ]
 
 ####################################
@@ -1117,7 +1106,7 @@ _TRIPLES = [
     (None, _ph(_Y_E02_H), _pe(_Y_E02_E)),
     # Sub-section ו: Shalshelet
     ("Sub-section ו: vertical line after $shalshelet",
-     _ph(_Y_F01_H), _pe(_Y_F01_E)),
+     _ph(_Y_F01_H), [_pe(_Y_F01_E), _bqpe(_Y_F02_E)]),
 ]
 # fmt: on
 
