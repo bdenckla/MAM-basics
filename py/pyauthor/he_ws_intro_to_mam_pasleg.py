@@ -134,14 +134,10 @@ _Y_A03_E = [
     " and indicate explicitly that it is $legarmeh,",
     " and all the more so in other cases that are not self-evident.",
     " For this reason, early and later Masorah scholars wrote",
-    [
-        " rules and lists of $legarmeh",
-    ],
+    " rules and lists of $legarmeh",
     " of its various types",
     " (within Masorah treatises and Masorah notes),",
-    [
-        " complete lists of $paseq",
-    ],
+    " complete lists of $paseq",
     " for all the books of the Bible",
     " (within Masorah compendiums),",
     " and in some manuscripts they even noted",
@@ -193,12 +189,8 @@ _Y_C01_E = [
         ]
     ),
     " Below are the main rules derived from Masorah literature",
-    [
-        " for distinguishing between $legarmeh",
-    ],
-    [
-        " and $paseq:",
-    ],
+    " for distinguishing between $legarmeh",
+    " and $paseq:",
 ]
 
 # Rule 1
@@ -660,9 +652,7 @@ _Y_C42_E = [
     " the $legarmeh hints at a $pazer",
     " that should have come instead of the $munax.",
     " Additionally, in both verses there is",
-    [
-        " an explicit $legarmeh",
-    ],
+    " an explicit $legarmeh",
     " annotation in the Leningrad Codex,",
     " and both are absent from the $paseq list therein.",
 ]
@@ -900,7 +890,7 @@ _Y_D10_H = [
     ' אלא מונח שהוא טעם מפסיק ("לגרמיה").',
 ]
 _Y_D10_E = [
-    author.emphasis("$legarmeh template:"),
+    author.emphasis("$Legarmeh template:"),
     " This template creates a bold $legarmeh line",
     " after a short special space (thin space),",
     " followed by a regular space.",
@@ -924,7 +914,7 @@ _Y_D20_H = [
     " והוא בא בדרך כלל בין שתי תיבות דומות או מסיבות אחרות.",
 ]
 _Y_D20_E = [
-    author.emphasis("$paseq template:"),
+    author.emphasis("$Paseq template:"),
     " This template creates a smaller $paseq line in gray",
     " between two short special spaces (thin spaces)",
     " before and after it.",
@@ -977,12 +967,8 @@ _Y_E02_H = [
 ]
 _Y_E02_E = [
     "The distinction between",
-    [
-        " $paseq",
-    ],
-    [
-        " and $legarmeh",
-    ],
+    " $paseq",
+    " and $legarmeh",
     " in the poetic books was checked against",
     " Ginsburg's $legarmeh list",
     " and especially against his $paseq list,",
