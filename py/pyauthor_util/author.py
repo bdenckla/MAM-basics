@@ -513,6 +513,7 @@ _DOLLAR_SUB_DISPATCH = {
     **_rom_with_cap("$xolam_xaser", "ḥolam ḥaser"),
     **_rom_with_cap("$yored", "yored"),
     **_rom_with_cap("$yetiv", "yetiv"),
+    **_rom_with_cap("$darga", "darga"),
     **_rom_with_cap("$mahapakh", "mahapakh"),
     **_rom_with_cap("$munax", "munaḥ"),
     **_rom_with_cap("$munleg", "munaḥ legarmeh"),

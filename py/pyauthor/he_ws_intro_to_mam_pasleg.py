@@ -170,14 +170,17 @@ _Y_B01_H = [
     " הנוסח זהה בדרך כלל בשני כתבי־היד.",
 ]
 _Y_B01_E = [
-    author.emphasis(
-        "ב. The text of the $legarmeh and $paseq lines"
-        " (i.e. when there is and when there is no vertical line)"
-        " was established in our edition according to the Aleppo Codex,"
-        " and where the Aleppo Codex is not extant,"
-        " we established it according to the Leningrad Codex."
-    ),
-    " The text is generally identical in both manuscripts.",
+    author.emphasis([
+        ["ב. ",_ait("Regardless of the distinction between them, the presence or absence in")],
+        " the text of the $legarmeh/$paseq lines",
+        " (i.e. when there is and when there is no vertical line)",
+        " was established in our edition according to the Aleppo Codex,",
+        " and where the Aleppo Codex is not extant,",
+        " we established it according to the Leningrad Codex.",
+    ]),
+    [" ",_ait("With respect to these lines,")],
+    " the text is generally identical in both manuscripts.",
+    [" ",_ait("I.e., it would have made little difference if we had used Leningrad throughout.")],
 ]
 
 # ═══════════════════════════════════════════════════════════════════
@@ -227,32 +230,29 @@ _Y_C10_E = [
     ),
     " As Yeivin summarized:",
 ]
+_SEP_DARGA = "here they are separated not only by the usual $munax but also by a $darga before it"
 _Y_C11_E = [
-    "$Legarmeh serves mainly as a minor disjunctive",
-    " in the domain of $revia,",
-    " and usually between it and the $revia",
-    " there is a conjunctive $munax,",
-    " e.g.:",
+    "$Legarmeh serves mainly as a minor disjunctive in the domain of $revia,",
+    " and usually between it and the $revia there is a conjunctive $munax, e.g.:",
     my_html.line_break(),
     author.hbo("וְהִנֵּ֣ה ׀ שֶׁ֣בַע שִׁבֳּלִ֗ים"),
-    " (Gen. 41:5),",
+    my_html.line_break(),
+    "(Gen. 41:5),",
     my_html.line_break(),
     author.hbo("מִכֹּ֣ל ׀ הַבְּהֵמָ֣ה הַטְּהוֹרָ֗ה"),
-    " (Gen. 7:2).",
     my_html.line_break(),
-    "Sometimes two conjunctive accents of the $revia separate them,",
-    " e.g.:",
+    "(Gen. 7:2).",
+    " Sometimes two conjunctive accents of the $revia separate them,",
+    [" e.g. ",_ait(_SEP_DARGA),":"],
     my_html.line_break(),
     author.hbo("אֶ֣מֶשׁ ׀ אָמַ֧ר אֵלַ֣י לֵאמֹ֗ר"),
-    " (Gen. 31:29)...",
     my_html.line_break(),
-    "$legarmeh can be consecutive,",
-    " e.g.:",
+    "(Gen. 31:29) ...",
+    " $Legarmeh can be consecutive, e.g.:",
     my_html.line_break(),
-    author.hbo(
-        "וַיִּ֜מַח אֶֽת־כׇּל־הַיְק֣וּם ׀ אֲשֶׁ֣ר ׀ עַל־פְּנֵ֣י הָֽאֲדָמָ֗ה"
-    ),
-    " (Gen. 7:23).",
+    author.hbo("וַיִּ֜מַח אֶֽת־כׇּל־הַיְק֣וּם ׀ אֲשֶׁ֣ר ׀ עַל־פְּנֵ֣י הָֽאֲדָמָ֗ה"),
+    my_html.line_break(),
+    "(Gen. 7:23).",
 ]
 
 # Rule 2
