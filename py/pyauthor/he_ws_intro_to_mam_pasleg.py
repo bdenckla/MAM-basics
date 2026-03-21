@@ -46,12 +46,15 @@ _Y_A01_H = [
     ' במקומות האלה הקו האנכי נקרא "פָּסֵק".',
     " קו של פָּסֵק אינו חלק מהמערכת המוזיקלית של הטעמים אלא תוספת לה.",
 ]
+_INSERT = [
+    "can have one of two meanings.",
+    " Each meaning calls for its own type of slight audible separation",
+    " between the words that the line visually separates",
+]
 _Y_A01_E = [
     author.emphasis("א. $Paseq and $legarmeh:"),
     " A vertical line at the end of a word",
-    " ", _ait("can have one of two meanings."),
-    " ", _ait("In one meaning, it"), " calls for a slight separation",
-    " ", _ait("in the recitation of the words it visually separates"), ".",
+    [" ", _ait(_INSERT), "."],
     " If the first word has a conjunctive accent,",
     " then the line indicates to the reader",
     " that there should be a slight pause between the two words",
@@ -80,8 +83,8 @@ _Y_A02_H = [
 ]
 _Y_A02_E = [
     "But if the line comes after a $munax in the 21 books,",
-    " then in many places it transforms it",
-    [" into ", author.dquote("$munleg,")],
+    " then in most places it transforms that $munax",
+    [" into a ", author.dquote("$munleg,")],
     " meaning: a $munax that is a disjunctive accent",
     " (even though $munax is usually a conjunctive accent).",
     " Unlike $paseq,",
@@ -122,7 +125,7 @@ _Y_A03_H = [
 ]
 _Y_A03_E = [
     "It follows that wherever there is a vertical line after a word,",
-    " the reader must determine ", _ait("..."),
+    [" the reader must determine ", _ait("...")],
     " whether it is $paseq or $legarmeh.",
     " Especially when the vertical line comes after",
     " a word accented with $munax,",
@@ -138,7 +141,9 @@ _Y_A03_E = [
     " it is desirable to assist the reader",
     " and indicate explicitly that it is $legarmeh,",
     " and all the more so in other cases that are not self-evident.",
-    " For this reason, early and later Masorah scholars wrote",
+]
+_Y_A03b_E = [
+    "For this reason, early and later Masorah scholars wrote",
     " rules and lists of $legarmeh",
     " of its various types",
     " (within Masorah treatises and Masorah notes),",
@@ -211,7 +216,7 @@ _Y_C10_H = [
     " כגון: אֶ֣מֶשׁ ׀ אָמַ֧ר אֵלַ֣י לֵאמֹ֗ר (בר' לא, כט)...",
     " הלגרמיה עשוי להתרדף,",
     " כגון: וַיִּ֜מַח אֶֽת־כׇּל־הַיְק֣וּם ׀ אֲשֶׁ֣ר ׀ עַל־פְּנֵ֣י הָֽאֲדָמָ֗ה",
-    " (בר' ז, כג).\"",
+    ' (בר\' ז, כג)."',
 ]
 _Y_C10_E = [
     author.emphasis(
@@ -221,38 +226,33 @@ _Y_C10_E = [
         ]
     ),
     " As Yeivin summarized:",
-    [
-        " ",
-        author.dquote(
-            [
-                "$Legarmeh serves mainly as a minor disjunctive",
-                " in the domain of $revia,",
-                " and usually between it and the $revia",
-                " there is a conjunctive $munax,",
-                " e.g.:",
-                my_html.line_break(),
-                author.hbo("וְהִנֵּ֣ה ׀ שֶׁ֣בַע שִׁבֳּלִ֗ים"),
-                " (Gen. 41:5),",
-                my_html.line_break(),
-                author.hbo("מִכֹּ֣ל ׀ הַבְּהֵמָ֣ה הַטְּהוֹרָ֗ה"),
-                " (Gen. 7:2).",
-                my_html.line_break(),
-                "Sometimes two conjunctive accents of the $revia separate them,",
-                " e.g.:",
-                my_html.line_break(),
-                author.hbo("אֶ֣מֶשׁ ׀ אָמַ֧ר אֵלַ֣י לֵאמֹ֗ר"),
-                " (Gen. 31:29)...",
-                my_html.line_break(),
-                "$legarmeh can be consecutive,",
-                " e.g.:",
-                my_html.line_break(),
-                author.hbo(
-                    "וַיִּ֜מַח אֶֽת־כׇּל־הַיְק֣וּם ׀ אֲשֶׁ֣ר ׀ עַל־פְּנֵ֣י הָֽאֲדָמָ֗ה"
-                ),
-                " (Gen. 7:23).",
-            ]
-        ),
-    ],
+]
+_Y_C11_E = [
+    "$Legarmeh serves mainly as a minor disjunctive",
+    " in the domain of $revia,",
+    " and usually between it and the $revia",
+    " there is a conjunctive $munax,",
+    " e.g.:",
+    my_html.line_break(),
+    author.hbo("וְהִנֵּ֣ה ׀ שֶׁ֣בַע שִׁבֳּלִ֗ים"),
+    " (Gen. 41:5),",
+    my_html.line_break(),
+    author.hbo("מִכֹּ֣ל ׀ הַבְּהֵמָ֣ה הַטְּהוֹרָ֗ה"),
+    " (Gen. 7:2).",
+    my_html.line_break(),
+    "Sometimes two conjunctive accents of the $revia separate them,",
+    " e.g.:",
+    my_html.line_break(),
+    author.hbo("אֶ֣מֶשׁ ׀ אָמַ֧ר אֵלַ֣י לֵאמֹ֗ר"),
+    " (Gen. 31:29)...",
+    my_html.line_break(),
+    "$legarmeh can be consecutive,",
+    " e.g.:",
+    my_html.line_break(),
+    author.hbo(
+        "וַיִּ֜מַח אֶֽת־כׇּל־הַיְק֣וּם ׀ אֲשֶׁ֣ר ׀ עַל־פְּנֵ֣י הָֽאֲדָמָ֗ה"
+    ),
+    " (Gen. 7:23).",
 ]
 
 # Rule 2
@@ -299,7 +299,9 @@ _Y_C20_E = [
     " The $paseq in this verse in Isaiah",
     " is emphasized in the Masorah in several places,",
     " and in the other verses that have $munax and a vertical line",
-    " adjacent to $revia there are ", _ait("often"), " ", _ait("marginal"), " annotations",
+    " adjacent to $revia there are",
+    [" ", _ait("often"), " ", _ait("marginal")],
+    " annotations",
     [" of ", author.dquote("לג[רמיה].")],
     # XXX The Hebrew text has "לגרמיה" but I'm guessing that these are
     # abbreviated annotations of the type "לג[רמיה]", not "לגרמיה".
@@ -625,22 +627,19 @@ _Y_C41_E = [
     " and wrote of the Masorah's testimony for these two places",
     [" ", author.dquote("it is certainly an error,")],
     " reasoned as follows:",
-    [
-        " ",
-        author.dquote(
-            [
-                "The matter is also decided from the conjunctive accents",
-                " of $munleg.",
-                " It is known that its conjunctive is $merkha,",
-                " but before a $munax and $paseq that are not $legarmeh,",
-                " $merkha will never be found.",
-            ]
-        ),
-    ],
-    " However, the line under the letter $resh",
+]
+_Y_C41b_E = [
+    "The matter is also decided from the conjunctive accents",
+    " of $munleg.",
+    " It is known that its conjunctive is $merkha,",
+    " but before a $munax and $paseq that are not $legarmeh,",
+    " $merkha will never be found.",
+]
+_Y_C41c_E = [
+    "However, the line under the letter $resh",
     [" in the word ", author.hbo("וְשֵׁרֵ֥בְיָ֣ה ׀")],
     " leans slightly to the left",
-    " in the Leningrad Codex and the Sassoon 1053 ms.,",
+    " in the Leningrad Codex and the Sassoon 1053 manuscript,",
     " as befits $merkha,",
     " and this is how Dotan himself decided",
     " in the editions of the Bible he published.",
@@ -928,7 +927,7 @@ _Y_D20_E = [
     " to remind the reader to distinguish between them,",
     " and it is not meant to interrupt",
     " the flow of the accents in reading.",
-    " $paseq itself is not an accent,",
+    " $Paseq itself is not an accent,",
     " and it usually comes between two similar words",
     " or for other reasons.",
 ]
@@ -1068,7 +1067,7 @@ _TRIPLES = [
     ("Sub-section א continued: definition of $legarmeh",
      _ph(_Y_A02_H), _pe(_Y_A02_E)),
     ("Sub-section א continued: reader's need to distinguish",
-     _ph(_Y_A03_H), _pe(_Y_A03_E)),
+     _ph(_Y_A03_H), [_pe(_Y_A03_E), _pe(_Y_A03b_E)]),
     # Sub-section ב: Textual basis
     ("Sub-section ב: textual basis",
      _ph(_Y_B01_H), _pe(_Y_B01_E)),
@@ -1076,7 +1075,7 @@ _TRIPLES = [
     ("Sub-section ג: introduction",
      _ph(_Y_C01_H), _pe(_Y_C01_E)),
     ("Sub-section ג: rule 1",
-     _ph(_Y_C10_H), _pe(_Y_C10_E)),
+     _ph(_Y_C10_H), [_pe(_Y_C10_E), _bqpe(_Y_C11_E)]),
     ("Sub-section ג: rule 2",
      _ph(_Y_C20_H), _pe(_Y_C20_E)),
     # Rule 3 with sub-rules
@@ -1089,7 +1088,7 @@ _TRIPLES = [
     # Discussion of legarmeh adjacent to pazer
     ("Sub-section ג: discussion of $legarmeh adjacent to $pazer",
      _ph(_Y_C40_H), _pe(_Y_C40_E)),
-    (None, _ph(_Y_C41_H), _pe(_Y_C41_E)),
+    (None, _ph(_Y_C41_H), [_pe(_Y_C41_E), _bqpe(_Y_C41b_E), _pe(_Y_C41c_E)]),
     (None, _ph(_Y_C42_H), _pe(_Y_C42_E)),
     # Historical perspective and scholarly discussion
     ("Sub-section ג: historical perspective and scholarly discussion",
