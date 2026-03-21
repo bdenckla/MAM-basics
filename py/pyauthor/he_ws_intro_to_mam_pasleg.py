@@ -91,11 +91,12 @@ _Y_A02_E = [
     " in $munleg the vertical line does not indicate",
     " a slight pause despite",
     " the conjunctive accent.",
+    " Rather, it indicates that",
     [
-        " Rather, it indicates that ",
+        " ",
         author.emphasis("the accent itself is disjunctive"),
+        ".",
     ],
-    ".",
     " $Munax $legarmeh is a distinct part",
     " of the musical accentuation system:",
     " it has its own melody and its own conjunctive accents.",
@@ -169,30 +170,25 @@ _Y_B01_H = [
     ),
     " הנוסח זהה בדרך כלל בשני כתבי־היד.",
 ]
+_Y_B01_E_EMPH = [
+    [
+        "ב. ",
+        _ait("Regardless of the distinction between them, the presence or absence in"),
+    ],
+    " the text of the $legarmeh/$paseq lines",
+    " (i.e. when there is and when there is no vertical line)",
+    " was established in our edition according to the Aleppo Codex,",
+    " and where the Aleppo Codex is not extant,",
+    " we established it according to the Leningrad Codex.",
+]
+_LITTLE_DIFF = (
+    "I.e., it would have made little difference if we had used Leningrad throughout."
+)
 _Y_B01_E = [
-    author.emphasis(
-        [
-            [
-                "ב. ",
-                _ait(
-                    "Regardless of the distinction between them, the presence or absence in"
-                ),
-            ],
-            " the text of the $legarmeh/$paseq lines",
-            " (i.e. when there is and when there is no vertical line)",
-            " was established in our edition according to the Aleppo Codex,",
-            " and where the Aleppo Codex is not extant,",
-            " we established it according to the Leningrad Codex.",
-        ]
-    ),
+    author.emphasis(_Y_B01_E_EMPH),
     [" ", _ait("With respect to these lines,")],
     " the text is generally identical in both manuscripts.",
-    [
-        " ",
-        _ait(
-            "I.e., it would have made little difference if we had used Leningrad throughout."
-        ),
-    ],
+    [" ", _ait(_LITTLE_DIFF)],
 ]
 
 # ═══════════════════════════════════════════════════════════════════
