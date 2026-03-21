@@ -9,7 +9,6 @@ https://he.wikisource.org/wiki/ויקיטקסט:מבוא_למקרא_על_פי_ה
 The English translation is original to this project.
 """
 
-from pycmn.my_utils import sl_map
 from py_misc import my_html
 from pyauthor_util import author
 
@@ -1049,80 +1048,79 @@ _Y_F01_E = [
 # Triple assembly
 ####################################
 
-_X_01_I = ("Section heading and sub-section א: definition of $paseq",)
-_X_01_H = [author.para_modhe(_Y_SEC_H), author.para_modhe(_Y_A01_H)]
-_X_01_E = [author.para(_Y_SEC_E), author.para(_Y_A01_E)]
-_X_01_TRIPLE = _X_01_I, _X_01_H, _X_01_E
-#
-_X_02_I = "Sub-section א continued: definition of $legarmeh"
-_X_02_H = author.para_modhe(_Y_A02_H)
-_X_02_E = author.para(_Y_A02_E)
-_X_02_TRIPLE = _X_02_I, _X_02_H, _X_02_E
-#
-_X_03_I = "Sub-section א continued: reader's need to distinguish"
-_X_03_H = author.para_modhe(_Y_A03_H)
-_X_03_E = author.para(_Y_A03_E)
-_X_03_TRIPLE = _X_03_I, _X_03_H, _X_03_E
-#
-_X_04_I = "Sub-section ב: textual basis"
-_X_04_H = author.para_modhe(_Y_B01_H)
-_X_04_E = author.para(_Y_B01_E)
-_X_04_TRIPLE = _X_04_I, _X_04_H, _X_04_E
-#
-_X_05_I = "Sub-section ג: introduction and rule 1"
-_X_05_H = sl_map(author.para_modhe, [_Y_C01_H, _Y_C10_H])
-_X_05_E = sl_map(author.para, [_Y_C01_E, _Y_C10_E])
-_X_05_TRIPLE = _X_05_I, _X_05_H, _X_05_E
-#
-_X_06_I = "Sub-section ג: rule 2"
-_X_06_H = author.para_modhe(_Y_C20_H)
-_X_06_E = author.para(_Y_C20_E)
-_X_06_TRIPLE = _X_06_I, _X_06_H, _X_06_E
-#
-_X_07_I = "Sub-section ג: rule 3 with sub-rules 3.1–3.4"
-_X_07_H = sl_map(author.para_modhe, [_Y_C30_H, _Y_C31_H, _Y_C32_H, _Y_C33_H, _Y_C34_H])
-_X_07_E = sl_map(author.para, [_Y_C30_E, _Y_C31_E, _Y_C32_E, _Y_C33_E, _Y_C34_E])
-_X_07_TRIPLE = _X_07_I, _X_07_H, _X_07_E
-#
-_X_08_I = "Sub-section ג: discussion of $legarmeh adjacent to $pazer"
-_X_08_H = sl_map(author.para_modhe, [_Y_C40_H, _Y_C41_H, _Y_C42_H])
-_X_08_E = sl_map(author.para, [_Y_C40_E, _Y_C41_E, _Y_C42_E])
-_X_08_TRIPLE = _X_08_I, _X_08_H, _X_08_E
-#
-_X_09_I = "Sub-section ג: historical perspective and scholarly discussion"
-_X_09_H = [
-    author.para_modhe(_Y_C50_H),
-    my_html.blockquote(author.para_modhe(_Y_C51_H)),
-    my_html.blockquote(author.para_modhe(_Y_C52_H)),
-    author.para_modhe(_Y_C60_H),
-    my_html.blockquote(author.para_modhe(_Y_C61_H)),
-    author.para_modhe(_Y_C70_H),
+
+def _ph(h):
+    return author.para_modhe(h)
+
+
+def _pe(e):
+    return author.para(e)
+
+
+def _bqph(h):
+    return my_html.blockquote(author.para_modhe(h))
+
+
+def _bqpe(e):
+    return my_html.blockquote(author.para(e))
+
+
+# fmt: off
+_TRIPLES = [
+    # Section heading
+    ("Section heading", _ph(_Y_SEC_H), _pe(_Y_SEC_E)),
+    # Sub-section א: Definition of paseq and legarmeh
+    ("Sub-section א: definition of $paseq and $legarmeh",
+     _ph(_Y_A01_H), _pe(_Y_A01_E)),
+    ("Sub-section א continued: definition of $legarmeh",
+     _ph(_Y_A02_H), _pe(_Y_A02_E)),
+    ("Sub-section א continued: reader's need to distinguish",
+     _ph(_Y_A03_H), _pe(_Y_A03_E)),
+    # Sub-section ב: Textual basis
+    ("Sub-section ב: textual basis",
+     _ph(_Y_B01_H), _pe(_Y_B01_E)),
+    # Sub-section ג: Distinction between legarmeh and paseq
+    ("Sub-section ג: introduction",
+     _ph(_Y_C01_H), _pe(_Y_C01_E)),
+    ("Sub-section ג: rule 1",
+     _ph(_Y_C10_H), _pe(_Y_C10_E)),
+    ("Sub-section ג: rule 2",
+     _ph(_Y_C20_H), _pe(_Y_C20_E)),
+    # Rule 3 with sub-rules
+    ("Sub-section ג: rule 3",
+     _ph(_Y_C30_H), _pe(_Y_C30_E)),
+    (None, _ph(_Y_C31_H), _pe(_Y_C31_E)),
+    (None, _ph(_Y_C32_H), _pe(_Y_C32_E)),
+    (None, _ph(_Y_C33_H), _pe(_Y_C33_E)),
+    (None, _ph(_Y_C34_H), _pe(_Y_C34_E)),
+    # Discussion of legarmeh adjacent to pazer
+    ("Sub-section ג: discussion of $legarmeh adjacent to $pazer",
+     _ph(_Y_C40_H), _pe(_Y_C40_E)),
+    (None, _ph(_Y_C41_H), _pe(_Y_C41_E)),
+    (None, _ph(_Y_C42_H), _pe(_Y_C42_E)),
+    # Historical perspective and scholarly discussion
+    ("Sub-section ג: historical perspective and scholarly discussion",
+     _ph(_Y_C50_H), _pe(_Y_C50_E)),
+    (None, _bqph(_Y_C51_H), _bqpe(_Y_C51_E)),
+    (None, _bqph(_Y_C52_H), _bqpe(_Y_C52_E)),
+    (None, _ph(_Y_C60_H), _pe(_Y_C60_E)),
+    (None, _bqph(_Y_C61_H), _bqpe(_Y_C61_E)),
+    (None, _ph(_Y_C70_H), _pe(_Y_C70_E)),
+    # Sub-section ד: Typographic marking
+    ("Sub-section ד: typographic marking",
+     _ph(_Y_D01_H), _pe(_Y_D01_E)),
+    (None, _ph(_Y_D10_H), _pe(_Y_D10_E)),
+    (None, _ph(_Y_D20_H), _pe(_Y_D20_E)),
+    # Sub-section ה: Emet books
+    ("Sub-section ה: $paseq and $legarmeh in Emet books",
+     _ph(_Y_E01_H), _pe(_Y_E01_E)),
+    (None, _ph(_Y_E02_H), _pe(_Y_E02_E)),
+    # Sub-section ו: Shalshelet
+    ("Sub-section ו: vertical line after $shalshelet",
+     _ph(_Y_F01_H), _pe(_Y_F01_E)),
 ]
-_X_09_E = [
-    author.para(_Y_C50_E),
-    my_html.blockquote(author.para(_Y_C51_E)),
-    my_html.blockquote(author.para(_Y_C52_E)),
-    author.para(_Y_C60_E),
-    my_html.blockquote(author.para(_Y_C61_E)),
-    author.para(_Y_C70_E),
-]
-_X_09_TRIPLE = _X_09_I, _X_09_H, _X_09_E
-#
-_X_10_I = "Sub-section ד: typographic marking"
-_X_10_H = sl_map(author.para_modhe, [_Y_D01_H, _Y_D10_H, _Y_D20_H])
-_X_10_E = sl_map(author.para, [_Y_D01_E, _Y_D10_E, _Y_D20_E])
-_X_10_TRIPLE = _X_10_I, _X_10_H, _X_10_E
-#
-_X_11_I = "Sub-section ה: $paseq and $legarmeh in Emet books"
-_X_11_H = sl_map(author.para_modhe, [_Y_E01_H, _Y_E02_H])
-_X_11_E = sl_map(author.para, [_Y_E01_E, _Y_E02_E])
-_X_11_TRIPLE = _X_11_I, _X_11_H, _X_11_E
-#
-_X_12_I = "Sub-section ו: vertical line after $shalshelet"
-_X_12_H = author.para_modhe(_Y_F01_H)
-_X_12_E = author.para(_Y_F01_E)
-_X_12_TRIPLE = _X_12_I, _X_12_H, _X_12_E
-#
+# fmt: on
+
 _TITLE = "Paseq and legarmeh"
 _H1_CONTENTS = "$Paseq and $legarmeh"
 _FNAME = "he_ws_intro_to_mam_pasleg.html"
@@ -1144,22 +1142,7 @@ _PROVENANCE = author.para(
 _CBODY = [
     author.heading_level_1(_H1_CONTENTS),
     _PROVENANCE,
-    author.he_en_table_wct(
-        [
-            _X_01_TRIPLE,
-            _X_02_TRIPLE,
-            _X_03_TRIPLE,
-            _X_04_TRIPLE,
-            _X_05_TRIPLE,
-            _X_06_TRIPLE,
-            _X_07_TRIPLE,
-            _X_08_TRIPLE,
-            _X_09_TRIPLE,
-            _X_10_TRIPLE,
-            _X_11_TRIPLE,
-            _X_12_TRIPLE,
-        ]
-    ),
+    author.he_en_table_wct(_TRIPLES),
 ]
 
 # file:///C:/Users/BenDe/GitRepos/MAM-with-doc/docs/misc/he_ws_intro_to_mam_pasleg.html

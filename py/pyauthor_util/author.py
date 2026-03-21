@@ -232,16 +232,17 @@ def span_color(text, color):
 def _he_en_table_wci_row_pair(ti_he_en_triple):
     _VT = "vertical-align: top"
     title, hebrew, english = ti_he_en_triple
-    return [
-        _std_row_of_data(
-            [{"colspan": "2", "style": "padding-right: 20%"}],
-            [para_cc(title)],
-        ),
-        _std_row_of_data(
-            [{"dir": "rtl", "style": _VT}, {"dir": "ltr", "style": _VT}],
-            [hebrew, english],
-        ),
-    ]
+    content_row = _std_row_of_data(
+        [{"dir": "rtl", "style": _VT}, {"dir": "ltr", "style": _VT}],
+        [hebrew, english],
+    )
+    if title is None:
+        return [content_row]
+    title_row = _std_row_of_data(
+        [{"colspan": "2", "style": "padding-right: 20%"}],
+        [para_cc(title)],
+    )
+    return [title_row, content_row]
 
 
 def _de_dict(table_data):
