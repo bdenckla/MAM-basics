@@ -170,17 +170,29 @@ _Y_B01_H = [
     " הנוסח זהה בדרך כלל בשני כתבי־היד.",
 ]
 _Y_B01_E = [
-    author.emphasis([
-        ["ב. ",_ait("Regardless of the distinction between them, the presence or absence in")],
-        " the text of the $legarmeh/$paseq lines",
-        " (i.e. when there is and when there is no vertical line)",
-        " was established in our edition according to the Aleppo Codex,",
-        " and where the Aleppo Codex is not extant,",
-        " we established it according to the Leningrad Codex.",
-    ]),
-    [" ",_ait("With respect to these lines,")],
+    author.emphasis(
+        [
+            [
+                "ב. ",
+                _ait(
+                    "Regardless of the distinction between them, the presence or absence in"
+                ),
+            ],
+            " the text of the $legarmeh/$paseq lines",
+            " (i.e. when there is and when there is no vertical line)",
+            " was established in our edition according to the Aleppo Codex,",
+            " and where the Aleppo Codex is not extant,",
+            " we established it according to the Leningrad Codex.",
+        ]
+    ),
+    [" ", _ait("With respect to these lines,")],
     " the text is generally identical in both manuscripts.",
-    [" ",_ait("I.e., it would have made little difference if we had used Leningrad throughout.")],
+    [
+        " ",
+        _ait(
+            "I.e., it would have made little difference if we had used Leningrad throughout."
+        ),
+    ],
 ]
 
 # ═══════════════════════════════════════════════════════════════════
@@ -219,15 +231,10 @@ _Y_C10_H = [
     " כגון: אֶ֣מֶשׁ ׀ אָמַ֧ר אֵלַ֣י לֵאמֹ֗ר (בר' לא, כט)...",
     " הלגרמיה עשוי להתרדף,",
     " כגון: וַיִּ֜מַח אֶֽת־כׇּל־הַיְק֣וּם ׀ אֲשֶׁ֣ר ׀ עַל־פְּנֵ֣י הָֽאֲדָמָ֗ה",
-    ' (בר\' ז, כג)."',
+    " (בר' ז, כג).\"",
 ]
 _Y_C10_E = [
-    author.emphasis(
-        [
-            "$Munax $legarmeh",
-            " usually comes before $munax and $revia.",
-        ]
-    ),
+    author.emphasis("$Munax $legarmeh usually comes before $munax and $revia."),
     " As Yeivin summarized:",
 ]
 _SEP_DARGA = "here they are separated not only by the usual $munax but also by a $darga before it"
@@ -243,7 +250,7 @@ _Y_C11_E = [
     my_html.line_break(),
     "(Gen. 7:2).",
     " Sometimes two conjunctive accents of the $revia separate them,",
-    [" e.g. ",_ait(_SEP_DARGA),":"],
+    [" e.g. ", _ait(_SEP_DARGA), ":"],
     my_html.line_break(),
     author.hbo("אֶ֣מֶשׁ ׀ אָמַ֧ר אֵלַ֣י לֵאמֹ֗ר"),
     my_html.line_break(),
@@ -272,6 +279,11 @@ _Y_C20_H = [
     " ובפסוקים האחרים שיש בהם מונח וקו מאונך הסמוכים לרביע",
     ' יש ציונים של "לגרמיה".',
 ]
+_YOU_WILL_NEVER_FIND = [
+    "You will never find $paseq before $revia except in one place,",
+    " which is: ",
+    author.hbo("כֹּה־אָמַ֞ר הָאֵ֣ל ׀ יְהֹוָ֗ה בּוֹרֵ֤א [הַ]שָּׁמַ֙יִם֙"),
+]
 _Y_C20_E = [
     author.emphasis(
         "$Munax and a vertical line adjacent to $revia"
@@ -281,20 +293,9 @@ _Y_C20_E = [
         " except in one place only in the entire Bible."
     ),
     " The sole exception is Isaiah 42:5",
-    " (",
-    author.hbo("הָאֵ֣ל ׀ יְהֹוָ֗ה"),
-    ").",
+    [" (", author.hbo("הָאֵ֣ל ׀ יְהֹוָ֗ה"), ")."],
     " The explicit testimony of the Masorah states:",
-    [
-        " ",
-        author.dquote(
-            [
-                "You will never find $paseq before $revia except in one place,",
-                " which is: ",
-                author.hbo("כֹּה־אָמַ֞ר הָאֵ֣ל ׀ יְהֹוָ֗ה בּוֹרֵ֤א [הַ]שָּׁמַ֙יִם֙"),
-            ]
-        ),
-    ],
+    [" ", author.dquote(_YOU_WILL_NEVER_FIND)],
     " (Mishpetei HaTe'amim 7b).",
     " The $paseq in this verse in Isaiah",
     " is emphasized in the Masorah in several places,",
@@ -311,13 +312,13 @@ _Y_C20_E = [
 
 _Y_C30_H = [
     author.emphasis(
-        "לעתים רחוקות בא מונח לגרמיה" " לפני טעמים מפסיקים אחרים (חוץ מרביע)."
+        "לעתים רחוקות בא מונח לגרמיה לפני טעמים מפסיקים אחרים (חוץ מרביע)."
     ),
     " כל המקומות האלה מפורשים בספרות המסורה:",
 ]
 _Y_C30_E = [
     author.emphasis(
-        "Rarely, $munleg comes before" " other disjunctive accents (besides $revia)."
+        "Rarely, $munleg comes before other disjunctive accents (besides $revia)."
     ),
     " All such cases are specified in the Masorah literature:",
 ]
@@ -352,56 +353,36 @@ _Y_C31_H = [
     " שְׁלַ֡ח לְמִכְנַ֣שׁ ׀ לַֽאֲחַשְׁדַּרְפְּנַיָּ֡א (דניאל ג,ב);",
     ' וְיֵשׁ֡וּעַ וּבָנִ֡י וְשֵׁרֵ֥בְיָ֣ה ׀ יָמִ֡ין (נחמיה ח,ז)."',
 ]
+_LEG_CAN_FOLLOW = [
+    [author.emphasis("$legarmeh"), " can follow ", author.emphasis("$revia")],
+    ["... and ", author.emphasis("$pazer"), ","],
+    [" e.g.: ", author.hbo("לְמִכְנַ֣שׁ ׀ לַֽאֲחַשְׁדַּרְפְּנַיָּ֡א")],
+    " (Dan. 3:2);",
+    [" ", author.hbo("וְשֵׁרֵ֥בְיָ֣ה ׀ יָמִ֡ין")],
+    " (Neh. 8:7).",
+]
+_PAZ_CAN_FOLLOW = [
+    [author.emphasis("$pazer"), " can follow ", author.emphasis("$telisha")],
+    ["...", " and ", author.emphasis("$legarmeh"), " can follow it:"],
+    [" ", author.hbo("שְׁלַ֡ח לְמִכְנַ֣שׁ ׀ לַֽאֲחַשְׁדַּרְפְּנַיָּ֡א")],
+    " (Dan. 3:2);",
+    # XXX same ref (Dan. 3:2) is given above; seems unlikely
+    [" ", author.hbo("וְיֵשׁ֡וּעַ וּבָנִ֡י וְשֵׁרֵ֥בְיָ֣ה ׀ יָמִ֡ין")],
+    " (Neh. 8:7).",
+    # XXX same ref (Neh. 8:7) is given above; seems unlikely
+]
+
 _Y_C31_E = [
-    author.emphasis(
-        "$Munax $legarmeh adjacent to $pazer" " (in a simple two-word unit)."
-    ),
+    author.emphasis("$Munax $legarmeh adjacent to $pazer (in a simple two-word unit)."),
     " This occurs in only two places noted in the Masorah,",
     " but in all other places a vertical line before $pazer is $paseq;",
     " this ruling of the Masorah is mentioned twice",
     " in Mishpetei HaTe'amim.",
     " $Pazer is mentioned there as a disjunctive accent",
-    [
-        " that $legarmeh can precede (34a): ",
-        author.dquote(
-            [
-                author.emphasis("$legarmeh"),
-                " can follow ",
-                author.emphasis("$revia"),
-                "... and ",
-                author.emphasis("$pazer"),
-                ",",
-                " e.g.: ",
-                author.hbo("לְמִכְנַ֣שׁ ׀ לַֽאֲחַשְׁדַּרְפְּנַיָּ֡א"),
-                " (Dan. 3:2);",
-                " ",
-                author.hbo("וְשֵׁרֵ֥בְיָ֣ה ׀ יָמִ֡ין"),
-                " (Neh. 8:7).",
-            ]
-        ),
-    ],
+    [" that $legarmeh can precede (34a): ", author.dquote(_LEG_CAN_FOLLOW)],
     " And earlier, $pazer is mentioned as an accent",
     " that $legarmeh can follow,",
-    [
-        " with the same two examples (33a): ",
-        author.dquote(
-            [
-                author.emphasis("$pazer"),
-                " can follow ",
-                author.emphasis("$telisha"),
-                "...",
-                " and ",
-                author.emphasis("$legarmeh"),
-                " can follow it:",
-                " ",
-                author.hbo("שְׁלַ֡ח לְמִכְנַ֣שׁ ׀ לַֽאֲחַשְׁדַּרְפְּנַיָּ֡א"),
-                " (Dan. 3:2);",
-                " ",
-                author.hbo("וְיֵשׁ֡וּעַ וּבָנִ֡י וְשֵׁרֵ֥בְיָ֣ה ׀ יָמִ֡ין"),
-                " (Neh. 8:7).",
-            ]
-        ),
-    ],
+    [" with the same two examples (33a): ", author.dquote(_PAZ_CAN_FOLLOW)],
 ]
 
 # Rule 3.2
@@ -423,24 +404,19 @@ _Y_C32_H = [
     " מל\”ב יח,יז; ירמיהו ד,יט; ירמיהו לח,יא; ירמיהו מ,יא;",
     " יחזקאל ט,ב; חגי ב,יב; דה\”ב כו,טו.",
 ]
+_LEG_CAN_FOLLOW_2 = [
+    author.emphasis("$legarmeh"),
+    " can follow ",
+    author.emphasis("$revia"),
+    "... and ",
+    author.emphasis("$geresh"),
+    " shall not occur (after $legarmeh)",
+    " except as $qadma and $azla,",
+    " and it occurs in 11 places in the Bible...",
+]
 _Y_C32_E = [
     author.emphasis("$Munax $legarmeh in the domain of $geresh"),
-    [
-        " (11 places): ",
-        author.dquote(
-            [
-                author.emphasis("$legarmeh"),
-                " can follow ",
-                author.emphasis("$revia"),
-                "...",
-                " and ",
-                author.emphasis("$geresh"),
-                " shall not occur (after $legarmeh)",
-                " except as $qadma and $azla,",
-                " and it occurs in 11 places in the Bible...",
-            ]
-        ),
-    ],
+    [" (11 places): ", author.dquote(_LEG_CAN_FOLLOW_2)],
     " (Mishpetei HaTe'amim 34a–b).",
     " The items in the Masorah's list:",
     " Gen. 28:9; 1 Sam. 14:3; 1 Sam. 14:47; 2 Sam. 13:32;",
@@ -463,22 +439,17 @@ _Y_C33_H = [
     " הפריטים ברשימה של המסורה:",
     " ויקרא י,ו; ויקרא כא,י; רות א,ב.",
 ]
+_LEG_CAN_FOLLOW_3 = [
+    author.emphasis("$legarmeh"),
+    " can follow ",
+    author.emphasis("$revia"),
+    "... and ",
+    author.emphasis("$pashta"),
+    " can follow $legarmeh in 3 places...",
+]
 _Y_C33_E = [
     author.emphasis("$Munax $legarmeh in the domain of $pashta"),
-    [
-        " (3 places): ",
-        author.dquote(
-            [
-                author.emphasis("$legarmeh"),
-                " can follow ",
-                author.emphasis("$revia"),
-                "...",
-                " and ",
-                author.emphasis("$pashta"),
-                " can follow $legarmeh in 3 places...",
-            ]
-        ),
-    ],
+    [" (3 places): ", author.dquote(_LEG_CAN_FOLLOW_3)],
     " (Mishpetei HaTe'amim 34b).",
     " The items in the Masorah's list:",
     " Lev. 10:6; Lev. 21:10; Ruth 1:2.",
@@ -498,27 +469,22 @@ _Y_C34_H = [
     " (ישעיהו לו,ב),",
     ' ולא יהיה לו שכן אחד מן הטעמים חוץ ממה שנזכר."',
 ]
+_AND_TEVIR = [
+    "and ",
+    author.emphasis("$tevir"),
+    " can follow it in one place, which is: ",
+    author.hbo(
+        "וַיִּשְׁלַ֥ח מֶֽלֶךְ־אַשּׁ֣וּר ׀ אֶת־רַבְשָׁקֵ֨ה מִלָּכִ֧ישׁ יְרוּשָׁלַ֛͏ְמָה"
+    ),
+    " (Isa. 36:2),",
+    " and it shall have no other neighboring accent",
+    " besides what has been mentioned.",
+]
 _Y_C34_E = [
-    author.emphasis("$Munax $legarmeh before $tevir"),
-    ", which is a substitute for $geresh",
+    [author.emphasis("$Munax $legarmeh before $tevir"), ","],
+    " which is a substitute for $geresh",
     " (Mishpetei HaTe'amim 34b):",
-    [
-        " ",
-        author.dquote(
-            [
-                "and ",
-                author.emphasis("$tevir"),
-                " can follow it in one place,",
-                " which is: ",
-                author.hbo(
-                    "וַיִּשְׁלַ֥ח מֶֽלֶךְ־אַשּׁ֣וּר ׀ אֶת־רַבְשָׁקֵ֨ה מִלָּכִ֧ישׁ יְרוּשָׁלַ֛͏ְמָה"
-                ),
-                " (Isa. 36:2),",
-                " and it shall have no other neighboring accent",
-                " besides what has been mentioned.",
-            ]
-        ),
-    ],
+    [" ", author.dquote(_AND_TEVIR)],
 ]
 
 # Discussion of 3.1 vs 3.2-4
@@ -581,11 +547,8 @@ _Y_C40_E = [
     " is fundamentally different from",
     " the three types that follow it (3.2–4),",
     [" because in those cases ", author.emphasis("all")],
-    " instances are $legarmeh,",
-    [
-        " whereas for $legarmeh adjacent to $pazer ",
-        author.emphasis("only these two places"),
-    ],
+    " instances are $legarmeh, whereas for $legarmeh adjacent to $pazer",
+    [" ", author.emphasis("only these two places")],
     " are $legarmeh",
     " and in all other places it is $paseq.",
     " Even in the verse in Nehemiah that has $legarmeh before $pazer,",
