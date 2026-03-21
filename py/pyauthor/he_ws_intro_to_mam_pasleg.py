@@ -13,6 +13,11 @@ from py_misc import my_html
 from pyauthor_util import author
 
 
+def _ait(contents):
+    """Added In Translation, i.e. not in original, i.e. square-bracketed (and gray)"""
+    return author.span_gray(["[", contents, "]"])
+
+
 def anchor():
     return author.std_anchor(_ANCHOR, _H1_CONTENTS)
 
@@ -44,9 +49,9 @@ _Y_A01_H = [
 _Y_A01_E = [
     author.emphasis("א. $Paseq and $legarmeh:"),
     " A vertical line at the end of a word",
-    " [can have one of two meanings.",
-    " In one meaning, it] calls for a slight separation",
-    " [in the recitation of the words it visually separates].",
+    " ", _ait("can have one of two meanings."),
+    " ", _ait("In one meaning, it"), " calls for a slight separation",
+    " ", _ait("in the recitation of the words it visually separates"), ".",
     " If the first word has a conjunctive accent,",
     " then the line indicates to the reader",
     " that there should be a slight pause between the two words",
@@ -117,7 +122,7 @@ _Y_A03_H = [
 ]
 _Y_A03_E = [
     "It follows that wherever there is a vertical line after a word,",
-    " the reader must determine [...]",
+    " the reader must determine ", _ait("..."),
     " whether it is $paseq or $legarmeh.",
     " Especially when the vertical line comes after",
     " a word accented with $munax,",
@@ -294,7 +299,7 @@ _Y_C20_E = [
     " The $paseq in this verse in Isaiah",
     " is emphasized in the Masorah in several places,",
     " and in the other verses that have $munax and a vertical line",
-    " adjacent to $revia there are [often] [marginal] annotations",
+    " adjacent to $revia there are ", _ait("often"), " ", _ait("marginal"), " annotations",
     [" of ", author.dquote("לג[רמיה].")],
     # XXX The Hebrew text has "לגרמיה" but I'm guessing that these are
     # abbreviated annotations of the type "לג[רמיה]", not "לגרמיה".
