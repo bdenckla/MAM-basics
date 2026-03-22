@@ -13,6 +13,11 @@ from py_misc import my_html
 from pyauthor_util import author
 
 
+def _lb_hbo(text):
+    """Line break, Hebrew text, line break."""
+    return [my_html.line_break(), author.hbo(text), my_html.line_break()]
+
+
 def _ait(contents):
     """Added In Translation, i.e. not in original, i.e. square-bracketed (and gray)"""
     return author.span_gray(["[", contents, "]"])
@@ -238,24 +243,16 @@ _SEP_DARGA = "here they are separated not only by the usual $munax but also by a
 _Y_C11_E = [
     "$Legarmeh serves mainly as a minor disjunctive in the domain of $revia,",
     " and usually between it and the $revia there is a conjunctive $munax, e.g.:",
-    my_html.line_break(),
-    author.hbo("וְהִנֵּ֣ה ׀ שֶׁ֣בַע שִׁבֳּלִ֗ים"),
-    my_html.line_break(),
+    _lb_hbo("וְהִנֵּ֣ה ׀ שֶׁ֣בַע שִׁבֳּלִ֗ים"),
     "(Gen. 41:5),",
-    my_html.line_break(),
-    author.hbo("מִכֹּ֣ל ׀ הַבְּהֵמָ֣ה הַטְּהוֹרָ֗ה"),
-    my_html.line_break(),
+    _lb_hbo("מִכֹּ֣ל ׀ הַבְּהֵמָ֣ה הַטְּהוֹרָ֗ה"),
     "(Gen. 7:2).",
     " Sometimes two conjunctive accents of the $revia separate them,",
     [" e.g. ", _ait(_SEP_DARGA), ":"],
-    my_html.line_break(),
-    author.hbo("אֶ֣מֶשׁ ׀ אָמַ֧ר אֵלַ֣י לֵאמֹ֗ר"),
-    my_html.line_break(),
+    _lb_hbo("אֶ֣מֶשׁ ׀ אָמַ֧ר אֵלַ֣י לֵאמֹ֗ר"),
     "(Gen. 31:29) ...",
     " $Legarmeh can be consecutive, e.g.:",
-    my_html.line_break(),
-    author.hbo("וַיִּ֜מַח אֶֽת־כׇּל־הַיְק֣וּם ׀ אֲשֶׁ֣ר ׀ עַל־פְּנֵ֣י הָֽאֲדָמָ֗ה"),
-    my_html.line_break(),
+    _lb_hbo("וַיִּ֜מַח אֶֽת־כׇּל־הַיְק֣וּם ׀ אֲשֶׁ֣ר ׀ עַל־פְּנֵ֣י הָֽאֲדָמָ֗ה"),
     "(Gen. 7:23).",
 ]
 
@@ -291,9 +288,7 @@ _Y_C20_E = [
         " except in one place only in the entire Bible."
     ),
     " The sole exception is ",
-    my_html.line_break(),
-    author.hbo("הָאֵ֣ל ׀ יְהֹוָ֗ה"),
-    my_html.line_break(),
+    _lb_hbo("הָאֵ֣ל ׀ יְהֹוָ֗ה"),
     " in Isaiah 42:5.",
     " The explicit testimony of the Masorah states:",
 ]
@@ -362,28 +357,20 @@ _LEG_CAN_FOLLOW = [
     [author.emphasis("$legarmeh"), " can follow ", author.emphasis("$revia")],
     ["... and ", author.emphasis("$pazer"), ","],
     " e.g.:",
-    my_html.line_break(),
-    author.hbo("לְמִכְנַ֣שׁ ׀ לַֽאֲחַשְׁדַּרְפְּנַיָּ֡א"),
-    my_html.line_break(),
+    _lb_hbo("לְמִכְנַ֣שׁ ׀ לַֽאֲחַשְׁדַּרְפְּנַיָּ֡א"),
     _ait("(Dan. 3:2, see $legarmeh annotation in the Leningrad Codex)"),
     ";",
-    my_html.line_break(),
-    author.hbo("וְשֵׁרֵ֥בְיָ֣ה ׀ יָמִ֡ין"),
-    my_html.line_break(),
+    _lb_hbo("וְשֵׁרֵ֥בְיָ֣ה ׀ יָמִ֡ין"),
     _ait("(Neh. 8:7, see $legarmeh annotation in the Leningrad Codex)"),
     ".",
 ]
 _PAZ_CAN_FOLLOW = [
     [author.emphasis("$pazer"), " can follow ", author.emphasis("$telisha")],
     ["...", " and ", author.emphasis("$legarmeh"), " can follow it:"],
-    my_html.line_break(),
-    author.hbo("שְׁלַ֡ח לְמִכְנַ֣שׁ ׀ לַֽאֲחַשְׁדַּרְפְּנַיָּ֡א"),
-    my_html.line_break(),
+    _lb_hbo("שְׁלַ֡ח לְמִכְנַ֣שׁ ׀ לַֽאֲחַשְׁדַּרְפְּנַיָּ֡א"),
     "(Dan. 3:2);",
     # XXX same ref (Dan. 3:2) is given above; seems unlikely
-    my_html.line_break(),
-    author.hbo("וְיֵשׁ֡וּעַ וּבָנִ֡י וְשֵׁרֵ֥בְיָ֣ה ׀ יָמִ֡ין"),
-    my_html.line_break(),
+    _lb_hbo("וְיֵשׁ֡וּעַ וּבָנִ֡י וְשֵׁרֵ֥בְיָ֣ה ׀ יָמִ֡ין"),
     "(Neh. 8:7).",
     # XXX same ref (Neh. 8:7) is given above; seems unlikely
 ]
@@ -493,11 +480,9 @@ _AND_TEVIR = [
     "and ",
     author.emphasis("$tevir"),
     " can follow it in one place, which is:",
-    my_html.line_break(),
-    author.hbo(
+    _lb_hbo(
         "וַיִּשְׁלַ֥ח מֶֽלֶךְ־אַשּׁ֣וּר ׀ אֶת־רַבְשָׁקֵ֨ה מִלָּכִ֧ישׁ יְרוּשָׁלַ֛͏ְמָה"
     ),
-    my_html.line_break(),
     "(Isa. 36:2),",
     " and it shall have no other neighboring accent",
     " besides what has been mentioned.",
@@ -589,13 +574,9 @@ _Y_C40_E = [
         author.dquote(
             [
                 "The $legarmeh of",
-                my_html.line_break(),
-                author.hbo("וְשֵׁרֵ֥בְיָ֣ה ׀ יָמִ֡ין"),
-                my_html.line_break(),
+                _lb_hbo("וְשֵׁרֵ֥בְיָ֣ה ׀ יָמִ֡ין"),
                 "resembles the $paseq of",
-                my_html.line_break(),
-                author.hbo("שַׁבְּתַ֣י ׀ הֽוֹדִיָּ֡ה"),
-                my_html.line_break(),
+                _lb_hbo("שַׁבְּתַ֣י ׀ הֽוֹדִיָּ֡ה"),
                 "in the same verse...",
                 " We do not know",
                 " why the two names adjacent to $pazer differ;",
@@ -608,9 +589,7 @@ _Y_C40_E = [
 _Y_C41_E = [
     "Despite this puzzlement,",
     " there is a clear sign that in",
-    my_html.line_break(),
-    author.hbo("וְשֵׁרֵ֥בְיָ֣ה ׀ יָמִ֡ין"),
-    my_html.line_break(),
+    _lb_hbo("וְשֵׁרֵ֥בְיָ֣ה ׀ יָמִ֡ין"),
     "it is $munleg:",
     " the $merkha accent on the word",
     my_html.line_break(),
@@ -635,9 +614,7 @@ _Y_C41b_E = [
 _Y_C41c_E = [
     "However, the line under the letter $resh",
     " in the word",
-    my_html.line_break(),
-    author.hbo("וְשֵׁרֵ֥בְיָ֣ה ׀"),
-    my_html.line_break(),
+    _lb_hbo("וְשֵׁרֵ֥בְיָ֣ה ׀"),
     " leans slightly to the left",
     " in the Leningrad Codex and the Sassoon 1053 manuscript,",
     " as befits $merkha,",
@@ -650,13 +627,9 @@ _Y_C42_E = [
     " Breuer showed that based on the parallel verses",
     " with a disjunctive accent",
     " (Dan. 3:3",
-    my_html.line_break(),
-    author.hbo("מִֽתְכַּנְּשִׁ֡ין אֲחַשְׁדַּרְפְּנַיָּ֡א"),
-    my_html.line_break(),
+    _lb_hbo("מִֽתְכַּנְּשִׁ֡ין אֲחַשְׁדַּרְפְּנַיָּ֡א"),
     "; 3:27",
-    my_html.line_break(),
-    author.hbo("וּ֠מִֽתְכַּנְּשִׁ֠ין אֲחַשְׁדַּרְפְּנַיָּ֞א"),
-    my_html.line_break(),
+    _lb_hbo("וּ֠מִֽתְכַּנְּשִׁ֠ין אֲחַשְׁדַּרְפְּנַיָּ֞א"),
     "),",
     " the $legarmeh hints at a $pazer",
     " that should have come instead of the $munax.",
@@ -830,9 +803,7 @@ _Y_C61_E = [
                 "You will never find $paseq before $revia,",
                 " except in one place in the Bible,",
                 " which is:",
-                my_html.line_break(),
-                author.hbo("כֹּה־אָמַ֞ר הָאֵ֣ל ׀ ה֗' בּוֹרֵ֤א הַשָּׁמַ֙יִם֙"),
-                my_html.line_break(),
+                _lb_hbo("כֹּה־אָמַ֞ר הָאֵ֣ל ׀ ה֗' בּוֹרֵ֤א הַשָּׁמַ֙יִם֙"),
                 "(Isa. 42:5).",
             ]
         ),
@@ -994,9 +965,7 @@ _Y_E02_E = [
     " in the Aleppo Codex",
     " that is not listed in the $paseq list,",
     " most of them after the word",
-    my_html.line_break(),
-    author.hbo("לַמְנַצֵּ֬חַ ׀"),
-    my_html.line_break(),
+    _lb_hbo("לַמְנַצֵּ֬חַ ׀"),
     "in psalm headings.",
 ]
 
@@ -1032,9 +1001,7 @@ _Y_F01_E = [
 _Y_F02_E = [
     "After a $shalshelet word there is always a $paseq-like line,",
     " e.g.:",
-    my_html.line_break(),
-    author.hbo("וַיֹּאמַ֓ר ׀"),
-    my_html.line_break(),
+    _lb_hbo("וַיֹּאמַ֓ר ׀"),
     "(Gen. 24:12).",
     " This line serves to distinguish",
     " between the disjunctive $shalshelet_gedolah",
