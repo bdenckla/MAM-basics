@@ -24,7 +24,7 @@ def anchor():
 
 
 def gen_html_file(tdm_ch, body_class=None):
-    author.help_gen_html_file(__file__, tdm_ch, _FNAME, _TITLE, _CBODY, body_class)
+    return author.help_gen_html_file(__file__, tdm_ch, _FNAME, _TITLE, _CBODY, body_class)
 
 
 # Footnotes are numbered as B+N (N=0,1,...,6). B is the number of the

@@ -35,7 +35,7 @@ def gen_html_file(tdm_ch):
         # para_for_img("BHS/Psalm 96v4 גדול -- BHS.jpg", "width10em"),
         author.para(_CONT_PARA_16),
     ]
-    author.help_gen_html_file(__file__, tdm_ch, _FNAME, _TITLE, cbody)
+    return author.help_gen_html_file(__file__, tdm_ch, _FNAME, _TITLE, cbody)
 
 
 _TITLE = "Tsinnorit and the Ḥolam Ḥaser dot in BHS"

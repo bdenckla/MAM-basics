@@ -28,4 +28,4 @@ def gen_html_file(tdm_ch):
         my_html.heading_level_2("Conclusion"),
         author.para(_X_CPARA_CONCLUSION),
     ]
-    author.help_gen_html_file(__file__, tdm_ch, hdr.FNAME, hdr.TITLE, cbody)
+    return author.help_gen_html_file(__file__, tdm_ch, hdr.FNAME, hdr.TITLE, cbody)

@@ -23,6 +23,7 @@ def help_gen_html_file(py_file, tdm_ch, fname, title, cbody, body_class=None):
         html_comment=comment,
     )
     my_html.write_html_to_file(cbody, write_ctx)
+    return fname, title
 
 
 def dquote(contents):

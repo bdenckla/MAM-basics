@@ -12,8 +12,9 @@ def anchor():
 
 
 def gen_html_file(tdm_ch, top_dir_old):
-    author.help_gen_html_file(__file__, tdm_ch, _FNAME, _TITLE, _CBODY)
+    result = author.help_gen_html_file(__file__, tdm_ch, _FNAME, _TITLE, _CBODY)
     _gen_redirect_for_old_url(top_dir_old)
+    return result
 
 
 def _gen_redirect_for_old_url(top_dir_old):

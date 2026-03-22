@@ -21,7 +21,7 @@ def gen_html_file(tdm_ch):
         author.para(_CONT_PARA_07),
         author.para(_CONT_PARA_08),
     ]
-    author.help_gen_html_file(__file__, tdm_ch, _FNAME, _TITLE, cbody)
+    return author.help_gen_html_file(__file__, tdm_ch, _FNAME, _TITLE, cbody)
 
 
 _TITLE = "Tsinnorit in Psalm 32:5 ועוני"

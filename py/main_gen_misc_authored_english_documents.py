@@ -3,6 +3,7 @@ Generate miscellaneous authored HTML documents (notes, reviews, analyses)
 that are written by the repo owner and rendered from Python source data.
 """
 
+from py_misc import my_html
 from py_misc import two_col_css_styles as tcstyles
 from pyauthor import notes_on_aliyot
 from pyauthor import tsinnorit_and_oleh_on_ivs
@@ -19,6 +20,20 @@ from pyauthor import he_ws_intro_to_mam_pasleg as pasleg
 from pyauthor import the_next_700_bibles
 
 
+def _gen_index_html(top_dir_misc, index_entries):
+    items = [my_html.anchor_h(title, fname) for fname, title in index_entries]
+    cbody = [
+        my_html.heading_level_1("Miscellaneous Documents"),
+        my_html.unordered_list(items),
+    ]
+    write_ctx = my_html.WriteCtx(
+        "Miscellaneous Documents",
+        f"{top_dir_misc}/index.html",
+        html_comment="Generated — do not edit by hand",
+    )
+    my_html.write_html_to_file(cbody, write_ctx)
+
+
 def almost_main():
     # XXX TODO: rm *.html (to avoid stale files when output names change)
     docs_dir = "../MAM-with-doc/docs"
@@ -31,19 +46,23 @@ def almost_main():
     tdm_ch = top_dir_misc, css_href
     tdm_ch_aliyot = top_dir_misc, "aliyot-styles.css"
     #
-    notes_on_aliyot.gen_html_file(tdm_ch_aliyot)
-    tsinnorit_and_oleh_on_ivs.gen_html_file(tdm_ch, top_dir_old)
-    tsinnorit_and_oleh_facts.gen_html_file(tdm_ch)
-    tsinnorit_in_psalm_32v5.gen_html_file(tdm_ch)
-    tsinnorit_and_the_xxd_in_bhs.gen_html_file(tdm_ch)
-    rocc_0_review_of_ctr.gen_html_file(tdm_ch)
-    rocc_1_on_the_provenance_of_ctr.gen_html_file(tdm_ch)
-    rocc_2_pre_vowel_accents_in_ctr.gen_html_file(tdm_ch)
-    rocc_3_where_other_sources_stand.gen_html_file(tdm_ch)
-    rocc_4_mid_word_ga3ya_with_shewa.gen_html_file(tdm_ch)
-    gray_maqaf.gen_html_file(tdm_ch, body_class="wide")
-    pasleg.gen_html_file(tdm_ch, body_class="wide")
-    the_next_700_bibles.gen_html_file(tdm_ch)
+    # notes_on_aliyot is linked from the top level, not from misc/index.html
+    notes_on_aliyot.gen_html_file(tdm_ch_aliyot)  # return intentionally ignored
+    index_entries = [
+        tsinnorit_and_oleh_on_ivs.gen_html_file(tdm_ch, top_dir_old),
+        tsinnorit_and_oleh_facts.gen_html_file(tdm_ch),
+        tsinnorit_in_psalm_32v5.gen_html_file(tdm_ch),
+        tsinnorit_and_the_xxd_in_bhs.gen_html_file(tdm_ch),
+        rocc_0_review_of_ctr.gen_html_file(tdm_ch),
+        rocc_1_on_the_provenance_of_ctr.gen_html_file(tdm_ch),
+        rocc_2_pre_vowel_accents_in_ctr.gen_html_file(tdm_ch),
+        rocc_3_where_other_sources_stand.gen_html_file(tdm_ch),
+        rocc_4_mid_word_ga3ya_with_shewa.gen_html_file(tdm_ch),
+        gray_maqaf.gen_html_file(tdm_ch, body_class="wide"),
+        pasleg.gen_html_file(tdm_ch, body_class="wide"),
+        the_next_700_bibles.gen_html_file(tdm_ch),
+    ]
+    _gen_index_html(top_dir_misc, index_entries)
 
 
 def main():

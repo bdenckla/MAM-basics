@@ -13,7 +13,7 @@ def anchor():
 
 
 def gen_html_file(tdm_ch):
-    author.help_gen_html_file(__file__, tdm_ch, _FNAME, _TITLE, _CBODY)
+    return author.help_gen_html_file(__file__, tdm_ch, _FNAME, _TITLE, _CBODY)
 
 
 def _my_join(mam, other):
