@@ -6,11 +6,23 @@ introduction to the Miqra al pi ha-Masora edition, Chapter 2, section
 "פסק ולגרמיה". The source is on Hebrew Wikisource:
 https://he.wikisource.org/wiki/ויקיטקסט:מבוא_למקרא_על_פי_המסורה/פרק_ב#פסק_ולגרמיה
 
+A copy of the Wikisource markup is kept in he_ws_intro_to_mam_pasleg.wikisource.txt.
+
 The English translation is original to this project.
 """
 
 from py_misc import my_html
 from pyauthor_util import author
+from pyauthor import he_ws_intro_to_mam_pasleg_footnotes as plfn
+
+# Footnotes are numbered as B+N (N=0,1,...,26). B is the number of the
+# first footnote in this document within the larger Kadish introduction.
+# Current value: B = 42.
+_FN_BASE = 42
+
+
+def _footnote_marker(n: int):
+    return f"[B+{n}]"
 
 
 def _lb_hbo(text):
@@ -42,6 +54,7 @@ _Y_SEC_E = "$Paseq and $legarmeh"
 _Y_A01_H = [
     author.emphasis("א. פסק ולגרמיה:"),
     " קו מאונך בסוף תיבה בא כדי להפריד אותה קצת מהתיבה שלאחריה.",
+    _footnote_marker(0),
     " אם בתיבה הראשונה יש טעם מחבר,",
     " אז הקו בא כדי להורות לקורא",
     " שיש להפסיק במעט בין שתי התיבות",
@@ -50,6 +63,7 @@ _Y_A01_H = [
     " הטעם המחבר ביניהן.",
     ' במקומות האלה הקו האנכי נקרא "פָּסֵק".',
     " קו של פָּסֵק אינו חלק מהמערכת המוזיקלית של הטעמים אלא תוספת לה.",
+    _footnote_marker(1),
 ]
 _INSERT = [
     "can have one of two meanings.",
@@ -60,6 +74,7 @@ _Y_A01_E = [
     author.emphasis("א. $Paseq and $legarmeh:"),
     " A vertical line at the end of a word",
     [" ", _ait(_INSERT), "."],
+    _footnote_marker(0),
     " If the first word has a conjunctive accent,",
     " then the line indicates to the reader",
     " that there should be a slight pause between the two words",
@@ -68,6 +83,7 @@ _Y_A01_E = [
     [" In these places, the vertical line is called ", author.dquote("$paseq.")],
     " A $paseq line is not part of the musical accentuation system",
     " but rather an addition to it.",
+    _footnote_marker(1),
 ]
 
 _Y_A02_H = [
@@ -85,6 +101,7 @@ _Y_A02_H = [
     ".",
     " מונח לגרמיה הוא חלק מובהק מהמערכת המוזיקלית של הטעמים:",
     " יש לו נגינה וטעמים משרתים משלו.",
+    _footnote_marker(2),
 ]
 _Y_A02_E = [
     "But if the line comes after a $munax in the 21 books,",
@@ -105,6 +122,7 @@ _Y_A02_E = [
     " $Munax $legarmeh is a distinct part",
     " of the musical accentuation system:",
     " it has its own melody and its own conjunctive accents.",
+    _footnote_marker(2),
 ]
 
 _Y_A03_H = [
@@ -128,6 +146,7 @@ _Y_A03_H = [
     ' ובחלק מכתבי־היד אף ציינו "לג[רמיה]" ו"פס[ק]"',
     " בשוליים של הטקסט",
     " (הציונים משולבים בתוך ההערות של המסורה הקטנה).",
+    _footnote_marker(3),
 ]
 _Y_A03_E = [
     "It follows that wherever there is a vertical line after a word,",
@@ -160,6 +179,7 @@ _Y_A03b_E = [
     [" ", author.dquote("לג[רמיה]"), " and ", author.dquote("פס[ק]")],
     " in the margins of the text",
     " (the annotations are integrated within the Masorah Parva notes).",
+    _footnote_marker(3),
 ]
 
 # ═══════════════════════════════════════════════════════════════════
@@ -174,6 +194,7 @@ _Y_B01_H = [
         " ובמקומות שהכתר לא קיים קבענו אותו לפי כתי״ל."
     ),
     " הנוסח זהה בדרך כלל בשני כתבי־היד.",
+    _footnote_marker(4),
 ]
 _Y_B01_E_EMPH = [
     [
@@ -193,6 +214,7 @@ _Y_B01_E = [
     author.emphasis(_Y_B01_E_EMPH),
     [" ", _ait("With respect to these lines,")],
     " the text is generally identical in both manuscripts.",
+    _footnote_marker(4),
     [" ", _ait(_LITTLE_DIFF)],
 ]
 
@@ -204,6 +226,7 @@ _Y_C01_H = [
     author.emphasis(
         'ג. את ההבחנה בין "לגרמיה" ל"פסק" בכ״א הספרים קבענו לפי ספרות המסורה.'
     ),
+    _footnote_marker(5),
     " להלן הכללים העיקריים העולים מתוך ספרות המסורה,",
     ' כדי להבחין בין "לגרמיה" ל"פסק":',
 ]
@@ -214,6 +237,7 @@ _Y_C01_E = [
             " in the 21 books was established according to Masorah literature.",
         ]
     ),
+    _footnote_marker(5),
     " Below are the main rules derived from Masorah literature",
     " for distinguishing between $legarmeh",
     " and $paseq:",
@@ -234,6 +258,7 @@ _Y_C10_H = [
     " הלגרמיה עשוי להתרדף,",
     " כגון: וַיִּ֜מַח אֶֽת־כׇּל־הַיְק֣וּם ׀ אֲשֶׁ֣ר ׀ עַל־פְּנֵ֣י הָֽאֲדָמָ֗ה",
     [" (בר' ז, כג).", '"'],
+    _footnote_marker(6),
 ]
 _Y_C10_E = [
     author.emphasis("$Munax $legarmeh usually comes before $munax and $revia."),
@@ -254,6 +279,7 @@ _Y_C11_E = [
     " $Legarmeh can be consecutive, e.g.:",
     _lb_hbo("וַיִּ֜מַח אֶֽת־כׇּל־הַיְק֣וּם ׀ אֲשֶׁ֣ר ׀ עַל־פְּנֵ֣י הָֽאֲדָמָ֗ה"),
     "(Gen. 7:23).",
+    _footnote_marker(6),
 ]
 
 # Rule 2
@@ -270,8 +296,10 @@ _Y_C20_H = [
     ' והוא כֹּה־אָמַ֞ר הָאֵ֣ל ׀ יְהֹוָ֗ה בּוֹרֵ֤א [הַ]שָּׁמַ֙יִם֙"',
     " (משפטי הטעמים ז' ע״ב).",
     " הַפָּסֵק בַּפָּסוּק בישעיהו מודגש במסורה במקומות נוספים,",
+    _footnote_marker(7),
     " ובפסוקים האחרים שיש בהם מונח וקו מאונך הסמוכים לרביע",
     ' יש ציונים של "לגרמיה".',
+    _footnote_marker(8),
 ]
 _YOU_WILL_NEVER_FIND = [
     "You will never find $paseq before $revia except in one place,",
@@ -299,11 +327,13 @@ _Y_C20c_E = [
     "(Mishpetei HaTe'amim 7b).",
     " The $paseq in this verse in Isaiah",
     " is emphasized in the Masorah in several places,",
+    _footnote_marker(7),
     " and in the other verses that have $munax and a vertical line",
     " adjacent to $revia there are",
     [" ", _ait("often"), " ", _ait("marginal")],
     " annotations",
     [" of ", author.dquote("לג[רמיה].")],
+    _footnote_marker(8),
     # XXX The Hebrew text has "לגרמיה" but I'm guessing that these are
     # abbreviated annotations of the type "לג[רמיה]", not "לגרמיה".
 ]
@@ -408,6 +438,7 @@ _Y_C32_H = [
     " בראשית כח,ט; שמ״א יד,ג; שמ״א יד,מז; שמ״ב יג,לב;",
     " מל״ב יח,יז; ירמיהו ד,יט; ירמיהו לח,יא; ירמיהו מ,יא;",
     " יחזקאל ט,ב; חגי ב,יב; דה״ב כו,טו.",
+    _footnote_marker(9),
 ]
 _LEG_CAN_FOLLOW_2 = [
     author.emphasis("$legarmeh"),
@@ -427,6 +458,7 @@ _Y_C32_E = [
     " Gen. 28:9; 1 Sam. 14:3; 1 Sam. 14:47; 2 Sam. 13:32;",
     " 2 Kgs. 18:17; Jer. 4:19; Jer. 38:11; Jer. 40:11;",
     " Ezek. 9:2; Hag. 2:12; 2 Chr. 26:15.",
+    _footnote_marker(9),
 ]
 
 # Rule 3.3
@@ -443,6 +475,7 @@ _Y_C33_H = [
     author.emphasis("מונח לגרמיה בתחום שלטונו של פשטא"),
     [" (3 מקומות): ", author.dquote(_Y_C33_H_QUOTE)],
     " (משפטי הטעמים ל״ד ע״ב).",
+    _footnote_marker(10),
     " הפריטים ברשימה של המסורה:",
     " ויקרא י,ו; ויקרא כא,י; רות א,ב.",
 ]
@@ -458,6 +491,7 @@ _Y_C33_E = [
     author.emphasis("$Munax $legarmeh in the domain of $pashta"),
     [" (3 places): ", author.dquote(_LEG_CAN_FOLLOW_3)],
     " (Mishpetei HaTe'amim 34b).",
+    _footnote_marker(10),
     " The items in the Masorah's list:",
     " Lev. 10:6; Lev. 21:10; Ruth 1:2.",
 ]
@@ -520,6 +554,7 @@ _Y_C40_H = [
     " אין אנחנו יודעים,",
     " על שום מה נשתנו שני השמות הסמוכים לפזר;",
     ' שהאחד מוטעם בלגרמיה וחברו במונח לפני פסק."',
+    _footnote_marker(11),
 ]
 _Y_C41_H = [
     'למרות התמיהה יש סימן מובהק שב"וְשֵׁרֵ֥בְיָ֣ה ׀ יָמִ֡ין"',
@@ -530,13 +565,16 @@ _Y_C41_H = [
     " שדחה לחלוטין את האפשרות",
     " שלגרמיה יבוא בתחום פזר באף מקום,",
     ' ועל עדות המסורה לשני המקומות כתב "ודאי שיבוש הוא",',
+    _footnote_marker(12),
     " נימק את עמדתו כך:",
     ' "ואף ממשרתיו של מונח לגרמיה מוכרע הדבר.',
     " בידוע שמשרתו מירכא,",
     ' אך לפני מונח ופסק שאינם לגרמיה לא יימצא מירכא לעולם."',
+    _footnote_marker(13),
     ' אך הקו תחת האות רי״ש בתיבה "וְשֵׁרֵ֥בְיָ֣ה ׀"',
     " נוטה במקצת לצד שמאל בכתי״ל ובכתי״ש1, כדין מרכא,",
     " וכך הכריע דותן בעצמו במהדורות של המקרא שהוציא לאור.",
+    _footnote_marker(14),
 ]
 _Y_C42_H = [
     "לגבי הפסוק בדניאל שבו יש לגרמיה לפני פזר,",
@@ -545,6 +583,7 @@ _Y_C42_H = [
     ' (דניאל ג,ג "מִֽתְכַּנְּשִׁ֡ין אֲחַשְׁדַּרְפְּנַיָּ֡א";',
     ' ג,כז "וּ֠מִֽתְכַּנְּשִׁ֠ין אֲחַשְׁדַּרְפְּנַיָּ֞א"),',
     " הלגרמיה רומז לפזר שהיה ראוי לבוא במקום המונח.",
+    _footnote_marker(15),
     " בנוסף, יש לזכור שבשני הפסוקים יש ציון מפורש",
     ' של "לגרמיה" בכתי״ל,',
     " ושניהם נעדרים מרשימת הפסק שבו.",
@@ -565,6 +604,18 @@ _Y_C40_E = [
     my_html.line_break(),
     author.hbo("וְיֵשׁ֡וּעַ וּבָנִ֡י וְשֵׁרֵ֥בְיָ֣ה ׀ יָמִ֡ין עַקּ֡וּב"),
     " ",
+    # XXX Taamey D (like I imagine many Hebrew fonts) doesn't natively support bold,
+    # and therefore doesn't look good in synthesized bold.
+    # Express this emphasis using color. What color, though?
+    # It is hard to find one color that will work in both light and dark modes.
+    # We could try read, but that might have connotations of something being wrong.
+    # To avoid needing to pick one color,
+    # perhaps there's a way to change the color
+    # based on whether we're in light or dark mode? That might be ideal.
+    #
+    # I don't think it solves any of these problems,
+    # but there's also highlighting to consider as an option, instead of coloring the text.
+    #
     author.emphasis(author.hbo("שַׁבְּתַ֣י ׀ הֽוֹדִיָּ֡ה")),
     my_html.line_break(),
     "(the last vertical line is specifically $paseq).",
@@ -572,6 +623,8 @@ _Y_C40_E = [
     [
         " ",
         author.dquote(
+            # XXX define this list argument above, as is done in many dquote cases, simplifying the reference here to something like
+            # [" ", author.dquote(_FOO)]
             [
                 "The $legarmeh of",
                 _lb_hbo("וְשֵׁרֵ֥בְיָ֣ה ׀ יָמִ֡ין"),
@@ -585,6 +638,7 @@ _Y_C40_E = [
             ]
         ),
     ],
+    _footnote_marker(11),
 ]
 _Y_C41_E = [
     "Despite this puzzlement,",
@@ -602,6 +656,7 @@ _Y_C41_E = [
     " that $legarmeh could occur in the domain of $pazer at all,",
     " and wrote of the Masorah's testimony for these two places",
     [" ", author.dquote("it is certainly an error,")],
+    _footnote_marker(12),
     " reasoned as follows:",
 ]
 _Y_C41b_E = [
@@ -610,6 +665,7 @@ _Y_C41b_E = [
     " It is known that its conjunctive is $merkha,",
     " but before a $munax and $paseq that are not $legarmeh,",
     " $merkha will never be found.",
+    _footnote_marker(13),
 ]
 _Y_C41c_E = [
     "However, the line under the letter $resh",
@@ -620,6 +676,7 @@ _Y_C41c_E = [
     " as befits $merkha,",
     " and this is how Dotan himself decided",
     " in the editions of the Bible he published.",
+    _footnote_marker(14),
 ]
 _Y_C42_E = [
     "Regarding the verse in Daniel",
@@ -633,6 +690,7 @@ _Y_C42_E = [
     "),",
     " the $legarmeh hints at a $pazer",
     " that should have come instead of the $munax.",
+    _footnote_marker(15),
     " Additionally, in both verses there is",
     " an explicit $legarmeh",
     " annotation in the Leningrad Codex,",
@@ -760,10 +818,12 @@ _Y_C52_E = [
 _Y_C60_H = [
     "ברויאר הדגיש את הדמיון הרב בין פסק",
     " לבין לגרמיה הבא ביחידה פשוטה בת שתי תיבות:",
+    _footnote_marker(16),
 ]
 _Y_C60_E = [
     "Breuer emphasized the great similarity between $paseq",
     " and $legarmeh occurring in a simple two-word unit:",
+    _footnote_marker(16),
 ]
 
 _Y_C61_H = [
@@ -780,7 +840,9 @@ _Y_C61_H = [
     " כי אם במקום אחד במקרא",
     " והוא כֹּה־אָמַ֞ר הָאֵ֣ל ׀ ה֗' בּוֹרֵ֤א הַשָּׁמַ֙יִם֙ (יש' מב, ה).",
     " ומכאן, שכל התופעה שנידונה לעיל,",
+    _footnote_marker(17),
     " נשענת רק על עדות המסורה, ולא על נוסח הטעמים שבמקרא גופו.",
+    _footnote_marker(18),
 ]
 _Y_C61_E = [
     "In most places where $legarmeh is adjacent to $revia, $pazer, or $qadma,",
@@ -808,9 +870,12 @@ _Y_C61_E = [
             ]
         ),
     ],
-    " Hence, the entire phenomenon discussed above rests solely",
+    " Hence, the entire phenomenon discussed above",
+    _footnote_marker(17),
+    " rests solely",
     " on the testimony of the Masorah,",
     " not on the accent text of the Bible itself.",
+    _footnote_marker(18),
 ]
 
 _Y_C70_H = [
@@ -865,6 +930,7 @@ _Y_D10_H = [
     author.emphasis("תבנית לגרמיה:"),
     ' תבנית זו יוצרת קו מודגש של "לגרמיה"',
     " לאחר רווח מיוחד קצר,",
+    _footnote_marker(19),
     " ולאחר הקו רווח רגיל.",
     " קו הלגרמיה מהווה חלק מטעם מפסיק של תיבה,",
     " ואינו קשור לתיבה הבאה.",
@@ -875,6 +941,7 @@ _Y_D10_E = [
     author.emphasis("$Legarmeh template:"),
     " This template creates a bold $legarmeh line",
     " after a short special space (thin space),",
+    _footnote_marker(19),
     " followed by a regular space.",
     " The $legarmeh line is part of a disjunctive accent of a word",
     " and is not related to the following word.",
@@ -918,34 +985,42 @@ _Y_E01_H = [
     author.emphasis("ה. פסק ולגרמיה בספרי אמ״ת:"),
     " בספרי אמ״ת יש שני טעמים של לגרמיה:",
     ' "אָזְלָא לְגַרְמֵיהּ" ו"מַהְפָּךְ לְגַרְמֵיהּ".',
+    _footnote_marker(20),
     " הקו המאונך הבא אחרי הטעמים אזלא ומהפך כדי לציין לגרמיה,",
     " הוא לעתים תחליפו של משרת שיש לאחריו פסק,",
     " ויש בו דמיון ללגרמיה בכ״א הספרים הבא בסמיכות לרביע.",
+    _footnote_marker(21),
 ]
 _Y_E01_E = [
     author.emphasis("ה. $Paseq and $legarmeh in the poetic books:"),
     " In the poetic books there are two $legarmeh accents:",
     " $azla $legarmeh and $mahapakh $legarmeh.",
+    _footnote_marker(20),
     " The vertical line that comes after $azla and $mahapakh",
     " to indicate $legarmeh",
     " is sometimes a substitute",
     " for a conjunctive accent followed by $paseq,",
     " and it resembles $legarmeh in the 21 books",
     " occurring adjacent to $revia.",
+    _footnote_marker(21),
 ]
 
 _Y_E02_H = [
     'ההבחנה בין "פסק" ו"לגרמיה" בספרי אמ״ת',
     " נבדקה מול רשימת הלגרמיה של גינצבורג",
+    _footnote_marker(22),
     " ובעיקר מול רשימת הפסק שלו,",
     " המבוססת לא רק על הערות בכתבי־יד",
     " אלא גם על רשימות מסורה מובהקות.",
+    _footnote_marker(23),
     " אך יש מספר פריטים של מהפך לגרמיה ואזלא לגרמיה",
     " הנמצאים ברשימת הפסק שלו, ואותם סימנו כלגרמיה;",
     " רובם נמצאים גם כן ברשימת הלגרמיה.",
+    _footnote_marker(24),
     " ובמקומות אחרים יש קו מאונך של פסק בכתר ארם צובה",
     " שאינו מובא ברשימת הפסק,",
     ' רובם אחרי התיבה "לַמְנַצֵּ֬חַ ׀" בכותרות של מזמורים.',
+    _footnote_marker(25),
 ]
 _Y_E02_E = [
     "The distinction between",
@@ -953,20 +1028,24 @@ _Y_E02_E = [
     " and $legarmeh",
     " in the poetic books was checked against",
     " Ginsburg's $legarmeh list",
+    _footnote_marker(22),
     " and especially against his $paseq list,",
     " which is based not only on annotations in manuscripts",
     " but also on authoritative Masorah lists.",
+    _footnote_marker(23),
     " However, there are several",
     " $mahapakh $legarmeh and $azla $legarmeh items",
     " found in his $paseq list,",
     " which we marked as $legarmeh;",
     " most of them are also found in the $legarmeh list.",
+    _footnote_marker(24),
     " In other places there is a $paseq vertical line",
     " in the Aleppo Codex",
     " that is not listed in the $paseq list,",
     " most of them after the word",
     _lb_hbo("לַמְנַצֵּ֬חַ ׀"),
     "in psalm headings.",
+    _footnote_marker(25),
 ]
 
 # ═══════════════════════════════════════════════════════════════════
@@ -987,6 +1066,7 @@ _Y_F01_H = [
     " משום כך היה צורך להבדיל ביניהם באמ״ת.",
     " משם הועבר הקו גם אל כ״א ספרים,",
     ' אף על פי ששלשלת מצויה בהם רק כטעם מפסיק."',
+    _footnote_marker(26),
 ]
 _Y_F01_E = [
     author.emphasis("ו. The vertical line after $shalshelet:"),
@@ -1013,6 +1093,7 @@ _Y_F02_E = [
     " From there, the line was transferred also to the 21 books,",
     " even though $shalshelet is found in them",
     " only as a disjunctive accent.",
+    _footnote_marker(26),
 ]
 
 ####################################
@@ -1110,10 +1191,26 @@ _PROVENANCE = author.para(
         ". The English translation is original to this project.",
     ]
 )
+
+
+def _ftnt_triple(n, ftnt_h, ftnt_e):
+    marker = _footnote_marker(n)
+    return (
+        f"Footnote B+{n}",
+        author.para_modhe([marker, " ", *ftnt_h]),
+        author.para([marker, " ", *ftnt_e]),
+    )
+
+
+_FTNT_TRIPLES = [
+    _ftnt_triple(n, h, e) for n, (h, e) in enumerate(zip(plfn.FTNTS_H, plfn.FTNTS_E))
+]
 _CBODY = [
     author.heading_level_1(_H1_CONTENTS),
     _PROVENANCE,
     author.he_en_table_wct(_TRIPLES),
+    author.heading_level_2(f"Footnotes (B={_FN_BASE})"),
+    author.he_en_table_wct(_FTNT_TRIPLES),
 ]
 
 # file:///C:/Users/BenDe/GitRepos/MAM-with-doc/docs/misc/he_ws_intro_to_mam_pasleg.html
