@@ -4,7 +4,14 @@ Footnotes are indexed 0–26, corresponding to B+0 through B+26 in pasleg.py
 (where _FN_BASE is defined).
 """
 
+from py_misc import my_html
 from pyauthor_util import author
+
+
+def _bv(book, verses):
+    """Book + verses: li content with book name and nested verse ul."""
+    return [book, author.unordered_list(verses)]
+
 
 FTNT_0_H = [
     "על צורתו של הקו ראו ייבין, המסורה למקרא, פרק תשיעי 305 (עמ' 178):",
@@ -26,7 +33,13 @@ FTNT_0_E = [
     " but sometimes at the middle or at the lower part.",
     ' In printed editions its length is the height of a letter."',
     " Regarding $paseq see ibid. 311 (p. 180):",
-    ' "$Paseq, pesiq, is a vertical line that comes after the word,',
+    [
+        ' "$Paseq, ',
+        author.span_gray(["[aka]"]),
+        " ",
+        my_html.span_c("pesiq", "romanized"),
+        ", is a vertical line that comes after the word,",
+    ],
     ' in the space between it and the following word."',
 ]
 FTNT_1_H = [
@@ -139,7 +152,17 @@ FTNT_3_E = [
     ' 308 (p. 179): "There are manuscripts,',
     " especially those with expanded vocalization,",
     " that annotate in the margin every vertical line",
-    " as either $paseq or $legarmeh.",
+    [
+        " as either $paseq (",
+        author.hbo("פס֗"),
+        ", ",
+        author.hbo("פ֗"),
+        ") or $legarmeh (",
+        author.hbo("לגר֗"),
+        ", ",
+        author.hbo("לג֗"),
+        ").",
+    ],
     " Even in manuscripts that do not annotate systematically,",
     " there are annotations in places prone to error.",
     " Thus, for example, in the Masorah Parva of L",
@@ -274,7 +297,7 @@ FTNT_8_H = [
     " דניאל יא,ו (כתבי־יד שונים);",
     ' דה"ב יח,ג (כתבי־יד שונים).',
 ]
-FTNT_8_E = [
+_FTNT_8_E_INTRO = [
     "See Wickes's list of $legarmeh adjacent to $revia,",
     ' which is "a fairly authoritative list"',
     " according to Yeivin, Introduction to the Tiberian Masorah,",
@@ -286,31 +309,42 @@ FTNT_8_E = [
     " also includes $legarmeh adjacent to $revia.",
     " Below is a list of $legarmeh adjacent to $revia,",
     " based mainly on Wickes's list:",
-    " Genesis 3:15; 17:14; 23:6; 29:9b; 45:5;",
-    " Exodus 30:13;",
-    " Numbers 7:13b, 19b, etc.; 10:29; 10:35b; 20:21;",
-    " Deuteronomy 1:33b; 5:4; 5:21b",
-    " (Wickes erroneously wrote 22b);",
-    " 32:39;",
-    " Joshua 5:14; 9:12; 15:18",
-    " (Wickes omitted this verse in light of the parallel verse",
-    " in Judges 1:14, but the line is found in the Aleppo Codex);",
-    " Judges 11:40; 16:2; 18:7b; 20:28;",
-    " Samuel: 1 Sam. 11:9; 11:12b; 16:5; 16:7b; 20:25; 26:16b;",
-    " 2 Sam. 12:23; 15:20; 15:30;",
-    " Kings: 1 Kgs. 6:29; 7:23b; 19:4b;",
-    " 2 Kgs. 2:12; 5:22; 25:16;",
-    " Isaiah 9:16; 19:16b; 21:8b; 22:2; 22:11; 49:21b;",
-    " Jeremiah 50:34; 52:20;",
-    " Ezekiel 24:17; 35:12;",
-    " Zechariah 1:8; 6:15; 10:12b;",
-    " Song of Songs 4:14; 8:14;",
-    " Ruth 1:13; 3:3; 3:13;",
-    " Ecclesiastes 9:3;",
-    " Daniel 4:15b;",
-    " Nehemiah 2:12;",
-    " Chronicles: 1 Chr. 3:1b; 18:10; 2 Chr. 4:2b; 21:19.",
-    " In two places in Wickes's list",
+]
+# fmt: off
+_FTNT_8_E_LIST = [
+    _bv("Genesis", ["3:15", "17:14", "23:6", "29:9b", "45:5"]),
+    _bv("Exodus", ["30:13"]),
+    _bv("Numbers", ["7:13b, 19b, etc.", "10:29", "10:35b", "20:21"]),
+    _bv("Deuteronomy", [
+        "1:33b", "5:4",
+        "5:21b (Wickes erroneously wrote 22b)",
+        "32:39",
+    ]),
+    _bv("Joshua", [
+        "5:14", "9:12",
+        ["15:18 (Wickes omitted this verse in light of the parallel verse",
+         " in Judges 1:14, but the line is found in the Aleppo Codex)"],
+    ]),
+    _bv("Judges", ["11:40", "16:2", "18:7b", "20:28"]),
+    _bv("1 Samuel", ["11:9", "11:12b", "16:5", "16:7b", "20:25", "26:16b"]),
+    _bv("2 Samuel", ["12:23", "15:20", "15:30"]),
+    _bv("1 Kings", ["6:29", "7:23b", "19:4b"]),
+    _bv("2 Kings", ["2:12", "5:22", "25:16"]),
+    _bv("Isaiah", ["9:16", "19:16b", "21:8b", "22:2", "22:11", "49:21b"]),
+    _bv("Jeremiah", ["50:34", "52:20"]),
+    _bv("Ezekiel", ["24:17", "35:12"]),
+    _bv("Zechariah", ["1:8", "6:15", "10:12b"]),
+    _bv("Song of Songs", ["4:14", "8:14"]),
+    _bv("Ruth", ["1:13", "3:3", "3:13"]),
+    _bv("Ecclesiastes", ["9:3"]),
+    _bv("Daniel", ["4:15b"]),
+    _bv("Nehemiah", ["2:12"]),
+    _bv("1 Chronicles", ["3:1b", "18:10"]),
+    _bv("2 Chronicles", ["4:2b", "21:19"]),
+]
+# fmt: on
+_FTNT_8_E_NOTES = [
+    "In two places in Wickes's list",
     " there is no $legarmeh line in the manuscripts",
     " (Aleppo and Leningrad),",
     " but $legarmeh appears in some printed editions:",
@@ -321,6 +355,11 @@ FTNT_8_E = [
     " Isaiah 7:25 (Baer);",
     " Daniel 11:6 (various manuscripts);",
     " 2 Chr. 18:3 (various manuscripts).",
+]
+FTNT_8_E = [
+    ("p", _FTNT_8_E_INTRO),
+    ("ul", _FTNT_8_E_LIST),
+    ("p", _FTNT_8_E_NOTES),
 ]
 FTNT_9_H = [
     "ראו ויקס, עמ' 118, המבוסס על הערות מסורה.",
@@ -460,18 +499,28 @@ FTNT_24_H = [
     " סח,לו; עב,יט; פד,ד; קי,ד; קיז,ב; קיח,כז;",
     " איוב ז,כ.",
 ]
-FTNT_24_E = [
+_FTNT_24_E_INTRO = [
     "$Mahapakh $legarmeh and $azla $legarmeh",
     " are found in the $paseq list at the following places:",
-    " Psalms 9:17; 18:50",
-    " (probably the reference was not to",
-    " עַל־כֵּ֤ן ׀ אוֹדְךָ֖",
-    " but to בַגּוֹיִ֥ם ׀ יְהֹוָ֑ה);",
-    " 37:7; 50:1;",
-    " 55:20 (שְׁמַ֤ע ׀ אֵ֨ל ׀ וְֽיַעֲנֵם֮",
-    " \N{EN DASH} the second is found in the $legarmeh list);",
-    " 68:36; 72:19; 84:4; 110:4; 117:2; 118:27;",
-    " Job 7:20.",
+]
+# fmt: off
+_FTNT_24_E_LIST = [
+    _bv("Psalms", [
+        "9:17",
+        ["18:50 (probably the reference was not to ",
+         author.hbo("עַל־כֵּ֤ן ׀ אוֹדְךָ֖"),
+         " but to ", author.hbo("בַגּוֹיִ֥ם ׀ יְהֹוָ֑ה"), ")"],
+        "37:7", "50:1",
+        ["55:20 (", author.hbo("שְׁמַ֤ע ׀ אֵ֨ל ׀ וְֽיַעֲנֵם֮"),
+         " \N{EN DASH} the second is found in the $legarmeh list)"],
+        "68:36", "72:19", "84:4", "110:4", "117:2", "118:27",
+    ]),
+    _bv("Job", ["7:20"]),
+]
+# fmt: on
+FTNT_24_E = [
+    ("p", _FTNT_24_E_INTRO),
+    ("ul", _FTNT_24_E_LIST),
 ]
 FTNT_25_H = [
     'על הקו המאונך של תיבת "לַמְנַצֵּ֬חַ ׀"',

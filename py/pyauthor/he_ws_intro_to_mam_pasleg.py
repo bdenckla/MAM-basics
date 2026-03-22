@@ -1202,7 +1202,7 @@ _PROVENANCE = author.para(
 
 
 def _ftnt_render_parts(marker, parts, para_fn, bq_fn):
-    """Render a multi-element footnote (list of ("p"|"bq", content) tuples)."""
+    """Render a multi-element footnote (list of ("p"|"bq"|"ul", content) tuples)."""
     elements = []
     for i, (typ, content) in enumerate(parts):
         c = [marker, " ", *content] if i == 0 else content
@@ -1210,6 +1210,8 @@ def _ftnt_render_parts(marker, parts, para_fn, bq_fn):
             elements.append(para_fn(c))
         elif typ == "bq":
             elements.append(bq_fn(c))
+        elif typ == "ul":
+            elements.append(author.unordered_list(content))
     return elements
 
 
