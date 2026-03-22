@@ -1201,15 +1201,32 @@ _PROVENANCE = author.para(
 )
 
 
+def _ftnt_render_parts(marker, parts, para_fn, bq_fn):
+    """Render a multi-element footnote (list of ("p"|"bq", content) tuples)."""
+    elements = []
+    for i, (typ, content) in enumerate(parts):
+        c = [marker, " ", *content] if i == 0 else content
+        if typ == "p":
+            elements.append(para_fn(c))
+        elif typ == "bq":
+            elements.append(bq_fn(c))
+    return elements
+
+
+def _ftnt_render_side(marker, ftnt, para_fn, bq_fn):
+    """Render one side of a footnote, simple (flat list) or multi-element (tuples)."""
+    if isinstance(ftnt[0], tuple):
+        return _ftnt_render_parts(marker, ftnt, para_fn, bq_fn)
+    return para_fn([marker, " ", *ftnt])
+
+
 def _ftnt_triple(n, ftnt_h, ftnt_e):
     text = f"[B+{n}]"
     marker_h = my_html.anchor(text, {"id": f"fn-{n}", "href": f"#fnref-{n}"})
     marker_e = my_html.anchor_h(text, f"#fnref-{n}")
-    return (
-        f"Footnote B+{n}",
-        author.para_modhe([marker_h, " ", *ftnt_h]),
-        author.para([marker_e, " ", *ftnt_e]),
-    )
+    h = _ftnt_render_side(marker_h, ftnt_h, _ph, _bqph)
+    e = _ftnt_render_side(marker_e, ftnt_e, _pe, _bqpe)
+    return (f"Footnote B+{n}", h, e)
 
 
 _FTNT_TRIPLES = [

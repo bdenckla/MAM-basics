@@ -4,6 +4,8 @@ Footnotes are indexed 0–26, corresponding to B+0 through B+26 in pasleg.py
 (where _FN_BASE is defined).
 """
 
+from pyauthor_util import author
+
 FTNT_0_H = [
     "על צורתו של הקו ראו ייבין, המסורה למקרא, פרק תשיעי 305 (עמ' 178):",
     ' "הקו שאחר התיבה המוטעמת לגרמיה הוא קו מאונך.',
@@ -55,37 +57,53 @@ FTNT_1_H = [
     " (משפטי הטעמים ח' ע\"א).",
 ]
 FTNT_1_E = [
-    'See Yeivin, ibid., that $paseq "is marked after a word',
-    " accented with a conjunctive accent,",
-    " and indicates that there should be some kind of pause in its reading,",
-    " but not to the extent of turning the conjunctive accent",
-    " into a disjunctive accent.",
-    " $Paseq was apparently instituted after the accentuation system",
-    " \N{EN DASH} both conjunctive and disjunctive \N{EN DASH}",
-    " and came to supplement it where the system was insufficient.",
-    " Its relatively late institution may explain",
-    ' the lack of systematicity in its marking."',
-    " See also Breuer, Ta'amei HaMiqra 6.1 (p. 128):",
-    ' "The Masorah recognizes only one sign',
-    " that indicates a pause alone",
-    " \N{EN DASH} without any musical significance",
-    " \N{EN DASH} and that is $paseq.",
-    " The form of $paseq is a vertical line",
-    " separating two words.",
-    " The very placement of $paseq testifies to its nature",
-    " as a pause sign, not a melodic sign;",
-    " for it is not marked beneath or above the word",
-    " \N{EN DASH} as are all the biblical accents \N{EN DASH}",
-    " but rather after the word.",
-    " Hence, $paseq indicates a pause in the reading",
-    " that comes after the word;",
-    " whereas the disjunctive and conjunctive accents indicate",
-    ' the melody accompanying the word itself."',
-    " Breuer noted there regarding the lack of melody:",
-    ' for this reason they said of $paseq that "it is not counted',
-    " among the accents (= disjunctives)",
-    ' nor among the conjunctives"',
-    " (Mishpetei HaTe'amim 8a).",
+    ("p", ["See Yeivin, ibid., on $paseq:"]),
+    (
+        "bq",
+        [
+            [author.span_gray(["[$Paseq]"]), " is marked after a word"],
+            " accented with a conjunctive accent,",
+            " and indicates that there should be some kind of pause in its reading,",
+            " but not to the extent of turning the conjunctive accent",
+            " into a disjunctive accent.",
+            " $Paseq was apparently instituted after the accentuation system",
+            " \N{EN DASH} both conjunctive and disjunctive \N{EN DASH}",
+            " and came to supplement it where the system was insufficient.",
+            " Its relatively late institution may explain",
+            " the lack of systematicity in its marking.",
+        ],
+    ),
+    ("p", ["See also Breuer, Ta'amei HaMiqra 6.1 (p. 128):"]),
+    (
+        "bq",
+        [
+            "The Masorah recognizes only one sign",
+            " that indicates a pause alone",
+            " \N{EN DASH} without any musical significance",
+            " \N{EN DASH} and that is $paseq.",
+            " The form of $paseq is a vertical line",
+            " separating two words.",
+            " The very placement of $paseq testifies to its nature",
+            " as a pause sign, not a melodic sign;",
+            " for it is not marked beneath or above the word",
+            " \N{EN DASH} as are all the biblical accents \N{EN DASH}",
+            " but rather after the word.",
+            " Hence, $paseq indicates a pause in the reading",
+            " that comes after the word;",
+            " whereas the disjunctive and conjunctive accents indicate",
+            " the melody accompanying the word itself.",
+        ],
+    ),
+    (
+        "p",
+        [
+            "Breuer noted there regarding the lack of melody:",
+            ' for this reason they said of $paseq that "it is not counted',
+            " among the accents (= disjunctives)",
+            ' nor among the conjunctives"',
+            " (Mishpetei HaTe'amim 8a).",
+        ],
+    ),
 ]
 FTNT_2_H = [
     "משרתו של מונח לגרמיה הוא בדרך כלל מרכא,",
@@ -125,10 +143,10 @@ FTNT_3_E = [
     " Even in manuscripts that do not annotate systematically,",
     " there are annotations in places prone to error.",
     " Thus, for example, in the Masorah Parva of L",
-    " they annotate \u201clgr\u201d",
+    [" they annotate ", author.dquote([author.hbo("ל֗ג֗ר֗")])],
     " in the two places where this accent comes before $pazer",
     " (see above),",
-    " and in Isa. 42:5, they annotate $paseq.",
+    [" and in Isa. 42:5, they annotate ", author.dquote([author.hbo("פ֗ס֗ק֗")]), "."],
 ]
 FTNT_4_H = [
     "לעתים רחוקות הנוסח שונה,",
@@ -147,7 +165,7 @@ FTNT_4_H = [
 ]
 FTNT_4_E = [
     "Rarely the text differs,",
-    " and then we decided according to the Aleppo Codex.",
+    " but when it does we decided according to the Aleppo Codex.",
     " For example: in Joshua 15:18 there is a $munleg vertical line",
     " in the Aleppo Codex and in the Venice Rabbinic Bible (1525\N{EN DASH}1526),",
     " but it is absent in the parallel verse in Judges 1:14.",
