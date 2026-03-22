@@ -33,8 +33,16 @@ def gen_html_file(tdm_ch, body_class=None):
 _FN_BASE = 136
 
 
-def _footnote_marker(n: int):
-    return f"[B+{n}]"
+def _footnote_marker(n: int, side="h"):
+    """Footnote marker for body text, linking to the footnote entry.
+
+    side="h": Hebrew side — carries the anchor id (for the back-link target).
+    side="e": English side — link only (no id, to avoid duplicate ids).
+    """
+    text = f"[B+{n}]"
+    if side == "h":
+        return my_html.anchor(text, {"id": f"fnref-{n}", "href": f"#fn-{n}"})
+    return my_html.anchor_h(text, f"#fn-{n}")
 
 
 def _ait(contents):
@@ -112,17 +120,17 @@ _Y_021_E = [
     ["Rabbi Mordechai Breuer discusses in detail"],
     [" one of the findings of Israel Yeivin."],
     [" (", _ait("Yeivin presented this finding"), " in his monumental work,"],
-    [" ", author.book_title(_Y_KAT_E), ".", _footnote_marker(0), ")"],
+    [" ", author.book_title(_Y_KAT_E), ".", _footnote_marker(0, "e"), ")"],
     [" Yeivin was able,"],
     [" through a meticulous description of the data in the Aleppo Codex,"],
     [" to clearly distinguish between two similar marks:"],
     [" a $gaya line and a $merkha line."],
     [" Thus, Yeivin was also able to establish"],
     [" the full presence of the $merkha among the other conjunctive"],
-    [" accents.", _footnote_marker(1)],
+    [" accents.", _footnote_marker(1, "e")],
     [" In addition, Breuer argued that based on Yeivin’s findings,"],
     [" another discovery can be made about"],
-    [" the nature of $merkha in the poetic books:", _footnote_marker(2)],
+    [" the nature of $merkha in the poetic books:", _footnote_marker(2, "e")],
 ]
 _Y_03_H = [
     ["...יש להבדיל, לדוגמה,"],
@@ -230,7 +238,7 @@ _Y_054_E = [
 ]
 _Y_055_E = [author.hbo("וּ֥תְהִי־ע֨וֹד׀"), " ", "(איוב ו, י)"]
 _Y_056_E = [author.hbo("מַ֥עֲדֶה־בֶּ֨גֶד׀"), " ", "(משלי כה, כ)"]
-_Y_057_E = _footnote_marker(3)
+_Y_057_E = _footnote_marker(3, "e")
 _Y_05_E = [
     author.para(_Y_050_E),
     author.para_hbo_es(_Y_051_E),
@@ -277,7 +285,7 @@ _Y_065_E = [
 _Y_066_E = [
     author.hbo("אֶ֥ת גְּא֨וֹן"),
     " (תה' מז, ה),",
-    _footnote_marker(4),
+    _footnote_marker(4, "e"),
 ]
 _Y_067_E = [author.hbo("כׇּ֥ל עַצְמוֹתַ֨י׀"), " (שם לה, י)."]
 _Y_06_E = [
@@ -324,7 +332,7 @@ _Y_07_E = [
             " and are pointed accordingly.",
         ]
     ),
-    _footnote_marker(5),
+    _footnote_marker(5, "e"),
 ]
 _Y_080_H = [
     "ברויאר חזר לדון בנושא של טעמים משניים בהרחבה ובאופן מסודר בספרו טעמי המקרא.",
@@ -351,7 +359,7 @@ _Y_080_E = [
     " and which should be joined to the next word under many and various circumstances,",
     " as if they were a single word.",
     " Sometimes, words of this type are indeed joined in the manuscripts (pp. 226-237).",
-    _footnote_marker(6),
+    _footnote_marker(6, "e"),
 ]
 _Y_081_H = [
     'התופעה די דומה לשתי תיבות של "עולה" ו"יורד":',
@@ -431,11 +439,13 @@ _PROVENANCE = author.para(
 
 
 def _ftnt_triple(n, ftnt_h, ftnt_e):
-    marker = _footnote_marker(n)
+    text = f"[B+{n}]"
+    marker_h = my_html.anchor(text, {"id": f"fn-{n}", "href": f"#fnref-{n}"})
+    marker_e = my_html.anchor_h(text, f"#fnref-{n}")
     return (
         f"Footnote B+{n}",
-        author.para_modhe([marker, " ", *ftnt_h]),
-        author.para([marker, " ", *ftnt_e]),
+        author.para_modhe([marker_h, " ", *ftnt_h]),
+        author.para([marker_e, " ", *ftnt_e]),
     )
 
 

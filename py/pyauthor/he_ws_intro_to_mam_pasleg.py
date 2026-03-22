@@ -21,8 +21,16 @@ from pyauthor import he_ws_intro_to_mam_pasleg_footnotes as plfn
 _FN_BASE = 42
 
 
-def _footnote_marker(n: int):
-    return f"[B+{n}]"
+def _footnote_marker(n: int, side="h"):
+    """Footnote marker for body text, linking to the footnote entry.
+
+    side="h": Hebrew side — carries the anchor id (for the back-link target).
+    side="e": English side — link only (no id, to avoid duplicate ids).
+    """
+    text = f"[B+{n}]"
+    if side == "h":
+        return my_html.anchor(text, {"id": f"fnref-{n}", "href": f"#fn-{n}"})
+    return my_html.anchor_h(text, f"#fn-{n}")
 
 
 def _lb_hbo(text):
@@ -74,7 +82,7 @@ _Y_A01_E = [
     author.emphasis("א. $Paseq and $legarmeh:"),
     " A vertical line at the end of a word",
     [" ", _ait(_INSERT), "."],
-    _footnote_marker(0),
+    _footnote_marker(0, "e"),
     " If the first word has a conjunctive accent,",
     " then the line indicates to the reader",
     " that there should be a slight pause between the two words",
@@ -83,7 +91,7 @@ _Y_A01_E = [
     [" In these places, the vertical line is called ", author.dquote("$paseq.")],
     " A $paseq line is not part of the musical accentuation system",
     " but rather an addition to it.",
-    _footnote_marker(1),
+    _footnote_marker(1, "e"),
 ]
 
 _Y_A02_H = [
@@ -122,7 +130,7 @@ _Y_A02_E = [
     " $Munax $legarmeh is a distinct part",
     " of the musical accentuation system:",
     " it has its own melody and its own conjunctive accents.",
-    _footnote_marker(2),
+    _footnote_marker(2, "e"),
 ]
 
 _Y_A03_H = [
@@ -179,7 +187,7 @@ _Y_A03b_E = [
     [" ", author.dquote("לג[רמיה]"), " and ", author.dquote("פס[ק]")],
     " in the margins of the text",
     " (the annotations are integrated within the Masorah Parva notes).",
-    _footnote_marker(3),
+    _footnote_marker(3, "e"),
 ]
 
 # ═══════════════════════════════════════════════════════════════════
@@ -214,7 +222,7 @@ _Y_B01_E = [
     author.emphasis(_Y_B01_E_EMPH),
     [" ", _ait("With respect to these lines,")],
     " the text is generally identical in both manuscripts.",
-    _footnote_marker(4),
+    _footnote_marker(4, "e"),
     [" ", _ait(_LITTLE_DIFF)],
 ]
 
@@ -237,7 +245,7 @@ _Y_C01_E = [
             " in the 21 books was established according to Masorah literature.",
         ]
     ),
-    _footnote_marker(5),
+    _footnote_marker(5, "e"),
     " Below are the main rules derived from Masorah literature",
     " for distinguishing between $legarmeh",
     " and $paseq:",
@@ -279,7 +287,7 @@ _Y_C11_E = [
     " $Legarmeh can be consecutive, e.g.:",
     _lb_hbo("וַיִּ֜מַח אֶֽת־כׇּל־הַיְק֣וּם ׀ אֲשֶׁ֣ר ׀ עַל־פְּנֵ֣י הָֽאֲדָמָ֗ה"),
     "(Gen. 7:23).",
-    _footnote_marker(6),
+    _footnote_marker(6, "e"),
 ]
 
 # Rule 2
@@ -327,13 +335,13 @@ _Y_C20c_E = [
     "(Mishpetei HaTe'amim 7b).",
     " The $paseq in this verse in Isaiah",
     " is emphasized in the Masorah in several places,",
-    _footnote_marker(7),
+    _footnote_marker(7, "e"),
     " and in the other verses that have $munax and a vertical line",
     " adjacent to $revia there are",
     [" ", _ait("often"), " ", _ait("marginal")],
     " annotations",
     [" of ", author.dquote("לג[רמיה].")],
-    _footnote_marker(8),
+    _footnote_marker(8, "e"),
     # XXX The Hebrew text has "לגרמיה" but I'm guessing that these are
     # abbreviated annotations of the type "לג[רמיה]", not "לגרמיה".
 ]
@@ -458,7 +466,7 @@ _Y_C32_E = [
     " Gen. 28:9; 1 Sam. 14:3; 1 Sam. 14:47; 2 Sam. 13:32;",
     " 2 Kgs. 18:17; Jer. 4:19; Jer. 38:11; Jer. 40:11;",
     " Ezek. 9:2; Hag. 2:12; 2 Chr. 26:15.",
-    _footnote_marker(9),
+    _footnote_marker(9, "e"),
 ]
 
 # Rule 3.3
@@ -491,7 +499,7 @@ _Y_C33_E = [
     author.emphasis("$Munax $legarmeh in the domain of $pashta"),
     [" (3 places): ", author.dquote(_LEG_CAN_FOLLOW_3)],
     " (Mishpetei HaTe'amim 34b).",
-    _footnote_marker(10),
+    _footnote_marker(10, "e"),
     " The items in the Masorah's list:",
     " Lev. 10:6; Lev. 21:10; Ruth 1:2.",
 ]
@@ -638,7 +646,7 @@ _Y_C40_E = [
             ]
         ),
     ],
-    _footnote_marker(11),
+    _footnote_marker(11, "e"),
 ]
 _Y_C41_E = [
     "Despite this puzzlement,",
@@ -656,7 +664,7 @@ _Y_C41_E = [
     " that $legarmeh could occur in the domain of $pazer at all,",
     " and wrote of the Masorah's testimony for these two places",
     [" ", author.dquote("it is certainly an error,")],
-    _footnote_marker(12),
+    _footnote_marker(12, "e"),
     " reasoned as follows:",
 ]
 _Y_C41b_E = [
@@ -665,7 +673,7 @@ _Y_C41b_E = [
     " It is known that its conjunctive is $merkha,",
     " but before a $munax and $paseq that are not $legarmeh,",
     " $merkha will never be found.",
-    _footnote_marker(13),
+    _footnote_marker(13, "e"),
 ]
 _Y_C41c_E = [
     "However, the line under the letter $resh",
@@ -676,7 +684,7 @@ _Y_C41c_E = [
     " as befits $merkha,",
     " and this is how Dotan himself decided",
     " in the editions of the Bible he published.",
-    _footnote_marker(14),
+    _footnote_marker(14, "e"),
 ]
 _Y_C42_E = [
     "Regarding the verse in Daniel",
@@ -690,7 +698,7 @@ _Y_C42_E = [
     "),",
     " the $legarmeh hints at a $pazer",
     " that should have come instead of the $munax.",
-    _footnote_marker(15),
+    _footnote_marker(15, "e"),
     " Additionally, in both verses there is",
     " an explicit $legarmeh",
     " annotation in the Leningrad Codex,",
@@ -823,7 +831,7 @@ _Y_C60_H = [
 _Y_C60_E = [
     "Breuer emphasized the great similarity between $paseq",
     " and $legarmeh occurring in a simple two-word unit:",
-    _footnote_marker(16),
+    _footnote_marker(16, "e"),
 ]
 
 _Y_C61_H = [
@@ -871,11 +879,11 @@ _Y_C61_E = [
         ),
     ],
     " Hence, the entire phenomenon discussed above",
-    _footnote_marker(17),
+    _footnote_marker(17, "e"),
     " rests solely",
     " on the testimony of the Masorah,",
     " not on the accent text of the Bible itself.",
-    _footnote_marker(18),
+    _footnote_marker(18, "e"),
 ]
 
 _Y_C70_H = [
@@ -941,7 +949,7 @@ _Y_D10_E = [
     author.emphasis("$Legarmeh template:"),
     " This template creates a bold $legarmeh line",
     " after a short special space (thin space),",
-    _footnote_marker(19),
+    _footnote_marker(19, "e"),
     " followed by a regular space.",
     " The $legarmeh line is part of a disjunctive accent of a word",
     " and is not related to the following word.",
@@ -995,14 +1003,14 @@ _Y_E01_E = [
     author.emphasis("ה. $Paseq and $legarmeh in the poetic books:"),
     " In the poetic books there are two $legarmeh accents:",
     " $azla $legarmeh and $mahapakh $legarmeh.",
-    _footnote_marker(20),
+    _footnote_marker(20, "e"),
     " The vertical line that comes after $azla and $mahapakh",
     " to indicate $legarmeh",
     " is sometimes a substitute",
     " for a conjunctive accent followed by $paseq,",
     " and it resembles $legarmeh in the 21 books",
     " occurring adjacent to $revia.",
-    _footnote_marker(21),
+    _footnote_marker(21, "e"),
 ]
 
 _Y_E02_H = [
@@ -1028,24 +1036,24 @@ _Y_E02_E = [
     " and $legarmeh",
     " in the poetic books was checked against",
     " Ginsburg's $legarmeh list",
-    _footnote_marker(22),
+    _footnote_marker(22, "e"),
     " and especially against his $paseq list,",
     " which is based not only on annotations in manuscripts",
     " but also on authoritative Masorah lists.",
-    _footnote_marker(23),
+    _footnote_marker(23, "e"),
     " However, there are several",
     " $mahapakh $legarmeh and $azla $legarmeh items",
     " found in his $paseq list,",
     " which we marked as $legarmeh;",
     " most of them are also found in the $legarmeh list.",
-    _footnote_marker(24),
+    _footnote_marker(24, "e"),
     " In other places there is a $paseq vertical line",
     " in the Aleppo Codex",
     " that is not listed in the $paseq list,",
     " most of them after the word",
     _lb_hbo("לַמְנַצֵּ֬חַ ׀"),
     "in psalm headings.",
-    _footnote_marker(25),
+    _footnote_marker(25, "e"),
 ]
 
 # ═══════════════════════════════════════════════════════════════════
@@ -1093,7 +1101,7 @@ _Y_F02_E = [
     " From there, the line was transferred also to the 21 books,",
     " even though $shalshelet is found in them",
     " only as a disjunctive accent.",
-    _footnote_marker(26),
+    _footnote_marker(26, "e"),
 ]
 
 ####################################
@@ -1194,11 +1202,13 @@ _PROVENANCE = author.para(
 
 
 def _ftnt_triple(n, ftnt_h, ftnt_e):
-    marker = _footnote_marker(n)
+    text = f"[B+{n}]"
+    marker_h = my_html.anchor(text, {"id": f"fn-{n}", "href": f"#fnref-{n}"})
+    marker_e = my_html.anchor_h(text, f"#fnref-{n}")
     return (
         f"Footnote B+{n}",
-        author.para_modhe([marker, " ", *ftnt_h]),
-        author.para([marker, " ", *ftnt_e]),
+        author.para_modhe([marker_h, " ", *ftnt_h]),
+        author.para([marker_e, " ", *ftnt_e]),
     )
 
 
