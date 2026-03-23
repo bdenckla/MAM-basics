@@ -314,12 +314,6 @@ _Y_C20_H = [
     ' יש ציונים של "לגרמיה".',
     _footnote_marker(8),
 ]
-_YOU_WILL_NEVER_FIND = [
-    "You will never find $paseq before $revia except in one place,",
-    " which is:",
-    my_html.line_break(),
-    author.hbo("כֹּה־אָמַ֞ר הָאֵ֣ל ׀ יְהֹוָ֗ה בּוֹרֵ֤א [הַ]שָּׁמַ֙יִם֙"),
-]
 _Y_C20_E = [
     "ג.2 ",
     author.emphasis(
@@ -333,6 +327,12 @@ _Y_C20_E = [
     _lb_hbo("הָאֵ֣ל ׀ יְהֹוָ֗ה"),
     " in Isaiah 42:5.",
     " The explicit testimony of the Masorah states:",
+]
+_YOU_WILL_NEVER_FIND = [
+    "You will never find $paseq before $revia except in one place,",
+    " which is:",
+    my_html.line_break(),
+    author.hbo("כֹּה־אָמַ֞ר הָאֵ֣ל ׀ יְהֹוָ֗ה בּוֹרֵ֤א [הַ]שָּׁמַ֙יִם֙"),
 ]
 _Y_C20b_E = [
     *_YOU_WILL_NEVER_FIND,
@@ -400,6 +400,15 @@ _Y_C31_H = [
     " שְׁלַ֡ח לְמִכְנַ֣שׁ ׀ לַֽאֲחַשְׁדַּרְפְּנַיָּ֡א (דניאל ג,ב);",
     ' וְיֵשׁ֡וּעַ וּבָנִ֡י וְשֵׁרֵ֥בְיָ֣ה ׀ יָמִ֡ין (נחמיה ח,ז)."',
 ]
+_Y_C31_E_INTRO = [
+    "ג.3.1 ",
+    author.emphasis("$Munax $legarmeh adjacent to $pazer (in a simple two-word unit)."),
+    " This occurs in only two places noted in the Masorah,",
+    " but in all other places a vertical line before $pazer is $paseq;",
+    " this ruling of the Masorah is mentioned twice",
+    " in Mishpetei HaTe'amim.",
+    " $Pazer is mentioned there as a disjunctive accent",
+]
 _LEG_CAN_FOLLOW = [
     [author.emphasis("$legarmeh"), " can follow ", author.emphasis("$revia")],
     ["... and ", author.emphasis("$pazer"), ","],
@@ -421,15 +430,8 @@ _PAZ_CAN_FOLLOW = [
     "(Neh. 8:7).",
     # XXX same ref (Neh. 8:7) is given above; seems unlikely
 ]
-
 _Y_C31_E = [
-    "ג.3.1 ",
-    author.emphasis("$Munax $legarmeh adjacent to $pazer (in a simple two-word unit)."),
-    " This occurs in only two places noted in the Masorah,",
-    " but in all other places a vertical line before $pazer is $paseq;",
-    " this ruling of the Masorah is mentioned twice",
-    " in Mishpetei HaTe'amim.",
-    " $Pazer is mentioned there as a disjunctive accent",
+    *_Y_C31_E_INTRO,
     [" that $legarmeh can precede (34a): ", author.dquote(_LEG_CAN_FOLLOW)],
     " And earlier, $pazer is mentioned as an accent",
     " that $legarmeh can follow,",
@@ -438,6 +440,10 @@ _Y_C31_E = [
 
 # Rule 3.2
 
+_Y_C32_H_INTRO = [
+    "ג.3.2 ",
+    author.emphasis("מונח לגרמיה בתחום שלטונו של גרש"),
+]
 _Y_C32_H_QUOTE = [
     author.emphasis("הלגרמיה"),
     " יתכן להיות אחריו ",
@@ -449,8 +455,7 @@ _Y_C32_H_QUOTE = [
     " והוא בי״א מקומות במקרא, והם...",
 ]
 _Y_C32_H = [
-    "ג.3.2 ",
-    author.emphasis("מונח לגרמיה בתחום שלטונו של גרש"),
+    *_Y_C32_H_INTRO,
     [" (11 מקומות): ", author.dquote(_Y_C32_H_QUOTE)],
     " (משפטי הטעמים ל״ד ע״א-ע״ב).",
     " הפריטים ברשימה של המסורה:",
@@ -458,6 +463,10 @@ _Y_C32_H = [
     " מל״ב יח,יז; ירמיהו ד,יט; ירמיהו לח,יא; ירמיהו מ,יא;",
     " יחזקאל ט,ב; חגי ב,יב; דה״ב כו,טו.",
     _footnote_marker(9),
+]
+_Y_C32_E_INTRO = [
+    "ג.3.2 ",
+    author.emphasis("$Munax $legarmeh in the domain of $geresh"),
 ]
 _LEG_CAN_FOLLOW_2 = [
     author.emphasis("$legarmeh"),
@@ -470,8 +479,7 @@ _LEG_CAN_FOLLOW_2 = [
     " and it occurs in 11 places in the Bible...",
 ]
 _Y_C32_E = [
-    "ג.3.2 ",
-    author.emphasis("$Munax $legarmeh in the domain of $geresh"),
+    *_Y_C32_E_INTRO,
     [" (11 places): ", author.dquote(_LEG_CAN_FOLLOW_2)],
     " (Mishpetei HaTe'amim 34a–b).",
     " The items in the Masorah's list:",
@@ -483,6 +491,10 @@ _Y_C32_E = [
 
 # Rule 3.3
 
+_Y_C33_H_INTRO = [
+    "ג.3.3 ",
+    author.emphasis("מונח לגרמיה בתחום שלטונו של פשטא"),
+]
 _Y_C33_H_QUOTE = [
     author.emphasis("הלגרמיה"),
     " יתכן להיות אחריו ",
@@ -492,13 +504,16 @@ _Y_C33_H_QUOTE = [
     " בג' מקומות, והם...",
 ]
 _Y_C33_H = [
-    "ג.3.3 ",
-    author.emphasis("מונח לגרמיה בתחום שלטונו של פשטא"),
+    *_Y_C33_H_INTRO,
     [" (3 מקומות): ", author.dquote(_Y_C33_H_QUOTE)],
     " (משפטי הטעמים ל״ד ע״ב).",
     _footnote_marker(10),
     " הפריטים ברשימה של המסורה:",
     " ויקרא י,ו; ויקרא כא,י; רות א,ב.",
+]
+_Y_C33_E_INTRO = [
+    "ג.3.3 ",
+    author.emphasis("$Munax $legarmeh in the domain of $pashta"),
 ]
 _LEG_CAN_FOLLOW_3 = [
     author.emphasis("$legarmeh"),
@@ -509,8 +524,7 @@ _LEG_CAN_FOLLOW_3 = [
     " can follow $legarmeh in 3 places...",
 ]
 _Y_C33_E = [
-    "ג.3.3 ",
-    author.emphasis("$Munax $legarmeh in the domain of $pashta"),
+    *_Y_C33_E_INTRO,
     [" (3 places): ", author.dquote(_LEG_CAN_FOLLOW_3)],
     " (Mishpetei HaTe'amim 34b).",
     _footnote_marker(10, "e"),
@@ -533,6 +547,12 @@ _Y_C34_H = [
     " (ישעיהו לו,ב),",
     ' ולא יהיה לו שכן אחד מן הטעמים חוץ ממה שנזכר."',
 ]
+_Y_C34_E_INTRO = [
+    "ג.3.4 ",
+    [author.emphasis("$Munax $legarmeh before $tevir"), ","],
+    " which is a substitute for $geresh",
+    " (Mishpetei HaTe'amim 34b):",
+]
 _AND_TEVIR = [
     "and ",
     author.emphasis("$tevir"),
@@ -545,10 +565,7 @@ _AND_TEVIR = [
     " besides what has been mentioned.",
 ]
 _Y_C34_E = [
-    "ג.3.4 ",
-    [author.emphasis("$Munax $legarmeh before $tevir"), ","],
-    " which is a substitute for $geresh",
-    " (Mishpetei HaTe'amim 34b):",
+    *_Y_C34_E_INTRO,
     [" ", author.dquote(_AND_TEVIR)],
 ]
 
