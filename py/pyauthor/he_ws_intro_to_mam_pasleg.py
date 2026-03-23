@@ -48,7 +48,9 @@ def anchor():
 
 
 def gen_html_file(tdm_ch, body_class=None):
-    return author.help_gen_html_file(__file__, tdm_ch, _FNAME, _TITLE, _CBODY, body_class)
+    return author.help_gen_html_file(
+        __file__, tdm_ch, _FNAME, _TITLE, _CBODY, body_class
+    )
 
 
 # Section heading
@@ -254,6 +256,7 @@ _Y_C01_E = [
 # Rule 1
 
 _Y_C10_H = [
+    "ג.1 ",
     author.emphasis('"מונח לגרמיה" בא בדרך כלל לפני מונח ורביע.'),
     " כך סיכם ייבין:",
     [" ", '"'],
@@ -269,6 +272,7 @@ _Y_C10_H = [
     _footnote_marker(6),
 ]
 _Y_C10_E = [
+    "ג.1 ",
     author.emphasis("$Munax $legarmeh usually comes before $munax and $revia."),
     " As Yeivin summarized:",
 ]
@@ -293,6 +297,7 @@ _Y_C11_E = [
 # Rule 2
 
 _Y_C20_H = [
+    "ג.2 ",
     author.emphasis(
         "מונח וקו מאונך הסמוכים לרביע הם תמיד מונח לגרמיה,"
         " ואף פָּסֵק הראוי לבוא מיד לפני רביע מתחלף בלגרמיה;"
@@ -316,6 +321,7 @@ _YOU_WILL_NEVER_FIND = [
     author.hbo("כֹּה־אָמַ֞ר הָאֵ֣ל ׀ יְהֹוָ֗ה בּוֹרֵ֤א [הַ]שָּׁמַ֙יִם֙"),
 ]
 _Y_C20_E = [
+    "ג.2 ",
     author.emphasis(
         "$Munax and a vertical line adjacent to $revia"
         " are always $munleg,"
@@ -349,12 +355,14 @@ _Y_C20c_E = [
 # Rule 3: introduction
 
 _Y_C30_H = [
+    "ג.3 ",
     author.emphasis(
         "לעתים רחוקות בא מונח לגרמיה לפני טעמים מפסיקים אחרים (חוץ מרביע)."
     ),
     " כל המקומות האלה מפורשים בספרות המסורה:",
 ]
 _Y_C30_E = [
+    "ג.3 ",
     author.emphasis(
         "Rarely, $munleg comes before other disjunctive accents (besides $revia)."
     ),
@@ -364,6 +372,7 @@ _Y_C30_E = [
 # Rule 3.1
 
 _Y_C31_H = [
+    "ג.3.1 ",
     author.emphasis("מונח לגרמיה הסמוך לפזר (בתוך יחידה פשוטה בת שתי מילים)."),
     " מדובר על שני מקומות בלבד המצוינים במסורה,",
     " אבל בשאר כל המקומות קו מאונך לפני פזר הוא פסק;",
@@ -414,6 +423,7 @@ _PAZ_CAN_FOLLOW = [
 ]
 
 _Y_C31_E = [
+    "ג.3.1 ",
     author.emphasis("$Munax $legarmeh adjacent to $pazer (in a simple two-word unit)."),
     " This occurs in only two places noted in the Masorah,",
     " but in all other places a vertical line before $pazer is $paseq;",
@@ -439,6 +449,7 @@ _Y_C32_H_QUOTE = [
     " והוא בי״א מקומות במקרא, והם...",
 ]
 _Y_C32_H = [
+    "ג.3.2 ",
     author.emphasis("מונח לגרמיה בתחום שלטונו של גרש"),
     [" (11 מקומות): ", author.dquote(_Y_C32_H_QUOTE)],
     " (משפטי הטעמים ל״ד ע״א-ע״ב).",
@@ -459,6 +470,7 @@ _LEG_CAN_FOLLOW_2 = [
     " and it occurs in 11 places in the Bible...",
 ]
 _Y_C32_E = [
+    "ג.3.2 ",
     author.emphasis("$Munax $legarmeh in the domain of $geresh"),
     [" (11 places): ", author.dquote(_LEG_CAN_FOLLOW_2)],
     " (Mishpetei HaTe'amim 34a–b).",
@@ -480,6 +492,7 @@ _Y_C33_H_QUOTE = [
     " בג' מקומות, והם...",
 ]
 _Y_C33_H = [
+    "ג.3.3 ",
     author.emphasis("מונח לגרמיה בתחום שלטונו של פשטא"),
     [" (3 מקומות): ", author.dquote(_Y_C33_H_QUOTE)],
     " (משפטי הטעמים ל״ד ע״ב).",
@@ -496,6 +509,7 @@ _LEG_CAN_FOLLOW_3 = [
     " can follow $legarmeh in 3 places...",
 ]
 _Y_C33_E = [
+    "ג.3.3 ",
     author.emphasis("$Munax $legarmeh in the domain of $pashta"),
     [" (3 places): ", author.dquote(_LEG_CAN_FOLLOW_3)],
     " (Mishpetei HaTe'amim 34b).",
@@ -507,6 +521,7 @@ _Y_C33_E = [
 # Rule 3.4
 
 _Y_C34_H = [
+    "ג.3.4 ",
     author.emphasis("מונח לגרמיה לפני תביר"),
     ", שהוא תחליפו של גרש",
     " (משפטי הטעמים ל״ד ע״ב):",
@@ -530,6 +545,7 @@ _AND_TEVIR = [
     " besides what has been mentioned.",
 ]
 _Y_C34_E = [
+    "ג.3.4 ",
     [author.emphasis("$Munax $legarmeh before $tevir"), ","],
     " which is a substitute for $geresh",
     " (Mishpetei HaTe'amim 34b):",
