@@ -220,7 +220,9 @@ def _html_for_section(head, trs):
     return head + [my_html.table(trs, {"class": "border-collapse"})]
 
 
-def _section_head_parts_1b_and_2(outfile_stem, len_trs, rem_thresholds, tup2):
+def _section_head_parts_1b_and_2(
+    outfile_stem, len_trs, rem_thresholds, tup2, tuple_foi_path
+):
     if len_trs > rem_thresholds[2]:
         part2 = None
         outfilename_for_json = _outfilename_for_json(outfile_stem)
@@ -231,7 +233,10 @@ def _section_head_parts_1b_and_2(outfile_stem, len_trs, rem_thresholds, tup2):
         ]
     else:
         part2 = f"the remaining {tup2[0]} of {tup2[1]} are shown."
-        part1b = [f" Further below, {part2}"]
+        sfp = _slash_str_from_path_parts(tuple_foi_path[1:])
+        rest_id = _intro_id(sfp, "-rest")
+        further_below = my_html.anchor_h("Further below", f"#{rest_id}")
+        part1b = [" ", further_below, f", {part2}"]
     return part1b, part2
 
 
@@ -293,7 +298,7 @@ def _section_heads(outfile_stem, tuple_foi_path, len_trs):
         tup1 = count1, len_trs
         tup2 = len_trs - count1, len_trs
         part1b, part2 = _section_head_parts_1b_and_2(
-            outfile_stem, len_trs, rem_thresholds, tup2
+            outfile_stem, len_trs, rem_thresholds, tup2, tuple_foi_path
         )
         the_1st = f"the first {tup1[0]} of {tup1[1]} are shown."
         part1 = [the_1st, *part1b]
