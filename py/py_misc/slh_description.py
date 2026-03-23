@@ -2,6 +2,7 @@ from py_misc import hebrew_letter_names as hln
 from py_misc import hebrew_letter_words as hlw
 from pycmn import ws_tmpl2 as wtp
 from pycmn import hebrew_punctuation as hpu
+from pycmn import str_defs as sd
 from pycmn import my_utils
 
 
@@ -50,13 +51,20 @@ def _slh_parts_for_wtel(wtel):
     return wtel, desc1, "", []
 
 
+_PASOLEG_DESC0 = {
+    "מ:לגרמיה-2": hpu.PASOLEG,
+    "מ:לגרמיה": hpu.PASOLEG,
+    "מ:פסק": sd.DOUB_VERT_LINE,
+}
+
+
 def _slh_parts_for_tmpl(tmpl):
     # Below, מ:פסק is needed only for משלי ל,טו (Proverbs 30:15) in old
     # versions of MAM. At some point that paseq was converted to a legarmeih.
     # Similarly, מ:לגרמיה ("classic" legarmeih) is only needed for old versions of MAM.
     tmpl_name = wtp.template_name(tmpl)
-    if tmpl_name in ("מ:לגרמיה-2", "מ:לגרמיה", "מ:פסק"):
-        return "", "", "", []
+    if tmpl_name in _PASOLEG_DESC0:
+        return _PASOLEG_DESC0[tmpl_name], ".", "", []
     tmpl_el1 = wtp.template_element(tmpl, 1)
     if len(tmpl_el1) > 1:
         assert len(tmpl_el1) == 2

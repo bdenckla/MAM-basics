@@ -128,9 +128,38 @@ def _my_partition(string):
 def _make_tmpl_for_slh_word(wtseq):
     desc_parts = slh_description.get_parts(wtseq)
     desc0, desc1, desc2, desc3 = desc_parts
+    _assert_desc0_matches_targ(wtseq, desc0)
     desc3_es = slh_description.desc3_encoded_as_a_str(desc3)
     desc_args = [[desc0], [desc1], [desc2], [desc3_es]]
     return wtp.mktmpl([[tmpln.SLH_WORD], wtseq, *desc_args])
+
+
+_SLH_LETTER_TMPLS = frozenset(("מ:אות-ג", "מ:אות-ק", "מ:אות תלויה"))
+
+
+def _assert_desc0_matches_targ(wtseq, desc0):
+    """Assert that desc0 (param 2) equals the flattened text of wtseq (param 1).
+
+    Verifies that the SLH_WORD synthesis didn't lose any content when
+    building the plain-word description from the detailed target.
+    """
+    stripped = _flatten_targ(wtseq)
+    assert stripped == desc0, f"desc0 mismatch: {stripped!r} != {desc0!r}"
+
+
+def _flatten_targ(wtseq):
+    """Flatten the SLH_WORD target to plain text."""
+    parts = []
+    for wtel in wtseq:
+        if isinstance(wtel, str):
+            parts.append(wtel)
+        elif wtp.template_name(wtel) in _SLH_LETTER_TMPLS:
+            parts.append(wtp.template_element(wtel, 1)[0])
+        elif wtp.template_name(wtel) in slh_description._PASOLEG_DESC0:
+            parts.append(slh_description._PASOLEG_DESC0[wtp.template_name(wtel)])
+        else:
+            parts.append(f"<{wtp.template_name(wtel)}>")
+    return "".join(parts)
 
 
 def _is_slh(wtel):
