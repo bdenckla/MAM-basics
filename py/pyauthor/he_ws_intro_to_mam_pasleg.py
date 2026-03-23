@@ -412,6 +412,12 @@ _Y_C31_E_INTRO = [
 _LEG_CAN_FOLLOW = [
     [author.emphasis("$legarmeh"), " can follow ", author.emphasis("$revia")],
     ["... and ", author.emphasis("$pazer"), ","],
+    # I don't understand the "can follow" above.
+    # I would expect it to say quite the opposite, that $legarmeh can
+    # precede $revia ... and $pazer.
+    # The Hebrew is הלגרמיה יתכן להיות אחריו רביע... ופזר.
+    # I'm not sure what יתכן means but להיות אחריו sure looks like "to be after,"
+    # agreeing with the English "can follow", as puzzling as that is.
     " e.g.:",
     _lb_hbo("לְמִכְנַ֣שׁ ׀ לַֽאֲחַשְׁדַּרְפְּנַיָּ֡א"),
     _ait("(Dan. 3:2, see $legarmeh annotation in the Leningrad Codex)"),
@@ -425,10 +431,8 @@ _PAZ_CAN_FOLLOW = [
     ["...", " and ", author.emphasis("$legarmeh"), " can follow it:"],
     _lb_hbo("שְׁלַ֡ח לְמִכְנַ֣שׁ ׀ לַֽאֲחַשְׁדַּרְפְּנַיָּ֡א"),
     "(Dan. 3:2);",
-    # XXX same ref (Dan. 3:2) is given above; seems unlikely
     _lb_hbo("וְיֵשׁ֡וּעַ וּבָנִ֡י וְשֵׁרֵ֥בְיָ֣ה ׀ יָמִ֡ין"),
     "(Neh. 8:7).",
-    # XXX same ref (Neh. 8:7) is given above; seems unlikely
 ]
 _Y_C31_E = [
     *_Y_C31_E_INTRO,
@@ -966,6 +970,14 @@ _Y_D01_E = [
     " by using one of two different templates",
     " at the end of each relevant word:",
 ]
+# I don't understand the above. First of all,
+# is the "space at the end of a word" referring to the space before the vertical line,
+# or the space after it? I think it's the former, but it's not clear to me.
+# Second, regardless of which of the above is meant, how does that
+# create an opportunity to visually distinguish between $paseq and $legarmeh?
+# Is the thought that because there is always space,
+# we can modulate the amount of space to make the distinction?
+# If so, that should be made more explicit.
 
 _Y_D10_H = [
     author.emphasis("תבנית לגרמיה:"),
@@ -1182,7 +1194,11 @@ _TRIPLES = [
     # Rule 3 with sub-rules
     ("Sub-section ג: rule 3",
      _ph(_Y_C30_H), _pe(_Y_C30_E)),
-    (None, _ph(_Y_C31_H), _pe(_Y_C31_E)),
+    (None, _ph(_Y_C31_H), [
+        _pe(_Y_C31_E),
+        author.para_for_img("he_ws_intro_to_mam/LC Dan 3v2 legarmeh.png"),
+        author.para_for_img("he_ws_intro_to_mam/LC Nexemiah 8v7.png"),
+    ]),
     (None, _ph(_Y_C32_H), _pe(_Y_C32_E)),
     (None, _ph(_Y_C33_H), _pe(_Y_C33_E)),
     (None, _ph(_Y_C34_H), _pe(_Y_C34_E)),
@@ -1245,6 +1261,8 @@ def _ftnt_render_parts(marker, parts, para_fn, bq_fn):
             elements.append(bq_fn(c))
         elif typ == "ul":
             elements.append(author.unordered_list(content))
+        elif typ == "img":
+            elements.append(author.para_for_img(content))
     return elements
 
 

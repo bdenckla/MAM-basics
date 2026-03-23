@@ -239,7 +239,7 @@ FTNT_7_H = [
     ' רשימת הַפָּסֵק בכתי"ל לישעיהו משובשת היא,',
     " וברשימות אחרות הפסוק מופיע.",
 ]
-FTNT_7_E = [
+FTNT_7_E_MAIN = [
     "In the Leningrad Codex there is an explicit $paseq annotation;",
     ' and in the Aleppo Codex there is a Masorah note "\u200fב\u200f"',
     " comparing it to the clear $paseq",
@@ -250,6 +250,11 @@ FTNT_7_E = [
     " see Wickes's $paseq list p. 128 note 20;",
     " the $paseq list in the Leningrad Codex for Isaiah is corrupt,",
     " and in other lists the verse does appear.",
+]
+
+FTNT_7_E = [
+    ("p", FTNT_7_E_MAIN),
+    ("img", "he_ws_intro_to_mam/LC Isa 42v5 paseq.png"),
 ]
 FTNT_8_H = [
     "ראו את רשימת ויקס של לגרמיה הסמוך לרביע,",
