@@ -24,7 +24,9 @@ def anchor():
 
 
 def gen_html_file(tdm_ch, body_class=None):
-    return author.help_gen_html_file(__file__, tdm_ch, _FNAME, _TITLE, _CBODY, body_class)
+    return author.help_gen_html_file(
+        __file__, tdm_ch, _FNAME, _TITLE, _CBODY, body_class
+    )
 
 
 # Footnotes are numbered as B+N (N=0,1,...,6). B is the number of the
@@ -372,7 +374,8 @@ _Y_081_H = [
 ]
 _Y_081_E = [
     "The phenomenon is quite similar to the two words עולה and יורד:",
-    " we have already discussed this above,",
+    " ",
+    _ait("Kadish has already discussed this earlier in Chapter 2,"),
     " and we have seen that the word עולה is sometimes vowel-pointed as if it were joined,",
     " and sometimes it is indeed joined in the manuscripts.",
     " In the other cases, however, the manuscripts omit the $maqaf as a matter of course.",
