@@ -293,6 +293,33 @@ _Y_C11_E = [
     "(Gen. 7:23).",
     _footnote_marker(6, "e"),
 ]
+_FOI_PL = "https://bdenckla.github.io/MAM-with-doc/foi/foi-pasoleg-1.html"
+_FOI_PL_2INT_DA = (
+    _FOI_PL + "#intro-%E2%85%83-leg...(rev)"
+    "%C2%ABspace%C2%BB"
+    "with%C2%ABspace%C2%BB2%C2%ABspace%C2%BB"
+    "(da,%E2%85%83)%C2%ABspace%C2%BBintervening"
+)
+_FOI_PL_2INT_LEG = (
+    _FOI_PL + "#intro-%E2%85%83-leg...(rev)"
+    "%C2%ABspace%C2%BB"
+    "with%C2%ABspace%C2%BB2%C2%ABspace%C2%BB"
+    "(%E2%85%83-leg,%E2%85%83)%C2%ABspace%C2%BBintervening"
+)
+_Y_C12_E = [
+    _ait(
+        [
+            "For a complete listing of the two rarer patterns described above,"
+            " see the ",
+            author.dquote("features of interest"),
+            " lists involving ",
+            author.anc_h("$darga", _FOI_PL_2INT_DA),
+            " and ",
+            author.anc_h("consecutive $legarmeh", _FOI_PL_2INT_LEG),
+            ".",
+        ]
+    ),
+]
 
 # Rule 2
 
@@ -1188,7 +1215,7 @@ _TRIPLES = [
     ("Sub-section ג: introduction",
      _ph(_Y_C01_H), _pe(_Y_C01_E)),
     ("Sub-section ג: rule 1",
-     _ph(_Y_C10_H), [_pe(_Y_C10_E), _bqpe(_Y_C11_E)]),
+     _ph(_Y_C10_H), [_pe(_Y_C10_E), _bqpe(_Y_C11_E), _pe(_Y_C12_E)]),
     ("Sub-section ג: rule 2",
      _ph(_Y_C20_H), [_pe(_Y_C20_E), _bqpe(_Y_C20b_E), _pe(_Y_C20c_E)]),
     # Rule 3 with sub-rules
