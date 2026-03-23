@@ -110,7 +110,10 @@ HANDLERS = {
     "מ:צינור": _hnd_recurse_on_params,
     "מ:קמץ": _hnd_recurse_on_params,
     "מ:כפול": _hnd_recurse_on_params,
-    tmpln.SLH_WORD: _hnd_recurse_on_arg_1,
+    tmpln.SLH_WORD: hnd_recurse_on_arg_0,
+    "מ:אות-ג": hnd_recurse_on_arg_0,
+    "מ:אות-ק": hnd_recurse_on_arg_0,
+    "מ:אות תלויה": hnd_recurse_on_arg_0,
     #
     **tmpln.map_all_std_kq_to_a_constant(_hnd_recurse_on_arg_1),
     #
