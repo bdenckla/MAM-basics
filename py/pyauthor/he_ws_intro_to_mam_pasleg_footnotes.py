@@ -8,6 +8,11 @@ from py_misc import my_html
 from pyauthor_util import author
 
 
+def _ait(contents):
+    """Added In Translation, i.e. not in original, i.e. square-bracketed (and gray)"""
+    return author.span_gray(["[", contents, "]"])
+
+
 def _bv(book, verses):
     """Book + verses: li content with book name and nested verse ul."""
     return [book, author.unordered_list(verses)]
@@ -361,10 +366,28 @@ _FTNT_8_E_NOTES = [
     " Daniel 11:6 (various manuscripts);",
     " 2 Chr. 18:3 (various manuscripts).",
 ]
+_FOI_PL = "https://bdenckla.github.io/MAM-with-doc/foi/foi-pasoleg-1.html"
+_FOI_PL_0INT = (
+    _FOI_PL + "#intro-%E2%85%83-leg...(rev)"
+    "%C2%ABspace%C2%BBwith%C2%ABspace%C2%BB0%C2%ABspace%C2%BBintervening"
+)
+_FTNT_8_E_FOI = _ait(
+    [
+        "For a listing of this pattern in the $MAM data, see the ",
+        author.dquote("features of interest"),
+        " list for ",
+        author.anc_h(
+            "$legarmeh adjacent to $revia",
+            _FOI_PL_0INT,
+        ),
+        ".",
+    ]
+)
 FTNT_8_E = [
     ("p", _FTNT_8_E_INTRO),
     ("ul", _FTNT_8_E_LIST),
     ("p", _FTNT_8_E_NOTES),
+    ("p", _FTNT_8_E_FOI),
 ]
 FTNT_9_H = [
     "ראו ויקס, עמ' 118, המבוסס על הערות מסורה.",
