@@ -6,8 +6,8 @@ from pycmn import hebrew_points as hpo
 from pycmn import template_names as tmpln
 from pycmn import ws_tmpl2 as wtp
 
-HATAF_VOWELS = (hpo.XSEGOL, hpo.XPATAX, hpo.XQAMATS)
-HATAF_XIRIQ = hpo.SHEVA + hpo.XIRIQ  # sheva+hiriq sequence (no single Unicode char)
+XATAF_VOWELS = (hpo.XSEGOL, hpo.XPATAX, hpo.XQAMATS)
+XATAF_XIRIQ = hpo.SHEVA + hpo.XIRIQ  # sheva+xiriq sequence (no single Unicode char)
 
 _HEB_WORD_CHARS = (
     rf"[{hpo.RECC_HEBR}\u05be \u05f4]"  # Hebrew + maqaf + space + gershayim
@@ -62,9 +62,9 @@ def join_arg1_strings(arg1):
     return "".join(parts)
 
 
-def _has_hataf(word):
-    """Return whether the word contains any hataf vowel (including hataf hiriq)."""
-    return any(hv in word for hv in HATAF_VOWELS) or HATAF_XIRIQ in word
+def _has_xataf(word):
+    """Return whether the word contains any ḥataf vowel (including ḥataf ḥiriq)."""
+    return any(hv in word for hv in XATAF_VOWELS) or XATAF_XIRIQ in word
 
 
 _MATCH_KINDS = {
@@ -93,7 +93,7 @@ def extract_xataf_word(arg1):
             for match in regex.finditer(s):
                 word_group = 2 if regex is _SIGLA_WORD_RE else 1
                 word = match.group(word_group).strip()
-                if _has_hataf(word):
+                if _has_xataf(word):
                     detail = _sigla_detail(match) if regex is _SIGLA_WORD_RE else None
                     return word, _MATCH_KINDS[regex], detail
     # Try the joined string (handles angle brackets split across elements)
@@ -102,7 +102,7 @@ def extract_xataf_word(arg1):
         for match in regex.finditer(joined):
             word_group = 2 if regex is _SIGLA_WORD_RE else 1
             word = match.group(word_group).strip()
-            if _has_hataf(word):
+            if _has_xataf(word):
                 detail = _sigla_detail(match) if regex is _SIGLA_WORD_RE else None
                 return word, _MATCH_KINDS[regex] + "+joined", detail
     return None, None, None
@@ -112,7 +112,7 @@ def classify_failure(arg1):
     """Return a short reason why extraction failed."""
     joined = join_arg1_strings(arg1)
     if "חטף" not in joined:
-        return "no hataf in alternative reading"
+        return "no ḥataf in alternative reading"
     return "non-standard format (inline reference or other)"
 
 

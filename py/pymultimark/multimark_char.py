@@ -98,7 +98,7 @@ def mmcat(char):  # mmcat: multimark category
 # In La??, a = patax or qamats
 # In LaO?, O = over-accent (as it does generally)
 # In LaU?, U = under-accent (as it does generally)
-# In La?i, i = hiriq
+# In La?i, i = xiriq
 # In La?e, e = sheva
 MMCAT_QUPO = "QUPO"  # qamats, uacc, patax, oacc
 MMCAT_VUV_LAI = "LaUi"  # core of cmn yerushala[y]im form

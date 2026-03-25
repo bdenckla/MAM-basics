@@ -90,7 +90,7 @@ def is_fragile(string):
 # between two undermarks. Those undermarks are:
 #
 #    1. "A", meaning qamats or patax
-#    2. "I" or "E", meaning hiriq or sheva
+#    2. "I" or "E", meaning xiriq or sheva
 #
 # We prefer LAOI & LAOE for two reasons:
 #

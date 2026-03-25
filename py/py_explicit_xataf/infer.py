@@ -2,9 +2,9 @@
 
 Rules (derived from Yeivin §387–390 and confirmed against all 664 entries):
 
-1. Before guttural (א/ה/ח/ע) + qamats → hataf-qamats
-2. Before guttural (א/ה/ח/ע) + hiriq → hiriq (pseudo hataf-hiriq)
-3. Otherwise → hataf-patach
+1. Before guttural (א/ה/ח/ע) + qamats → ḥataf-qamats
+2. Before guttural (א/ה/ח/ע) + ḥiriq → ḥiriq (pseudo ḥataf-ḥiriq)
+3. Otherwise → ḥataf-pataḥ
 """
 
 from pycmn import hebrew_letters as hle
@@ -83,8 +83,8 @@ def _varika_positions(varika_word):
 def infer_replacement(varika_word):
     """Infer what should replace shewa+varika in the given word.
 
-    Returns the replacement string: a hataf vowel, or hiriq (for pseudo
-    hataf-hiriq).  Returns None if the word has no varika.
+    Returns the replacement string: a ḥataf vowel, or ḥiriq (for pseudo
+    ḥataf-ḥiriq).  Returns None if the word has no varika.
 
     For words with a single varika only. For multiple varikas, use
     _varika_positions and _infer_replacement_at directly.
@@ -113,7 +113,7 @@ def _marks_on_letter(word, letter_occ):
 
 
 def is_inferrable(varika_word, xataf_word):
-    """Return True if every inferred hataf vowel appears on the relevant
+    """Return True if every inferred ḥataf vowel appears on the relevant
     consonant in the xataf word.
 
     Checks all varikas in the word — e.g. Judges 7:7 הַֽמְﬞלַֽקְﬞקִים֙
@@ -121,7 +121,7 @@ def is_inferrable(varika_word, xataf_word):
 
     The xataf word doesn't have to be the entire varika word with the
     shewa+varika replaced — it just has to contain each consonant that
-    carried shewa+varika with the inferred hataf vowel among its marks.
+    carried shewa+varika with the inferred ḥataf vowel among its marks.
     """
     positions = _varika_positions(varika_word)
     if not positions:

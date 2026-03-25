@@ -1,4 +1,4 @@
-"""Handling of "extras" — non-varika nusach notes that mention hataf."""
+"""Handling of "extras" — non-varika nusach notes that mention ḥataf."""
 
 import json
 
@@ -38,39 +38,39 @@ def write_extras(all_extras):
     result = {
         "header": {
             "description": (
-                "Non-varika nusach notes that mention hataf. "
+                "Non-varika nusach notes that mention ḥataf. "
                 "These are nusach notes whose target word does NOT contain "
                 "varika (U+FB1E) but whose commentary text mentions "
-                "hataf in some way."
+                "ḥataf in some way."
             ),
             "categories": {
                 "lc-differs": (
-                    "LC (Leningrad Codex) differs from MAM regarding hataf: "
-                    "either LC is missing hataf dots that MAM has, or LC "
-                    "surprisingly has hataf where MAM does not."
+                    "LC (Leningrad Codex) differs from MAM regarding ḥataf: "
+                    "either LC is missing ḥataf dots that MAM has, or LC "
+                    "surprisingly has ḥataf where MAM does not."
                 ),
                 "ac-differs": (
-                    "AC (Aleppo Codex) differs from MAM regarding hataf: "
-                    "either AC has hataf where MAM has plain shewa or a "
-                    "different vowel, or AC is missing hataf that MAM has."
+                    "AC (Aleppo Codex) differs from MAM regarding ḥataf: "
+                    "either AC has ḥataf where MAM has plain shewa or a "
+                    "different vowel, or AC is missing ḥataf that MAM has."
                 ),
-                "hataf-qamats-for-qamats-qatan": (
-                    "A manuscript uses hataf qamats to explicitly mark a "
+                "xataf-qamats-for-qamats-qatan": (
+                    "A manuscript uses ḥataf qamats to explicitly mark a "
                     "qamats qatan vowel, making the short pronunciation "
                     "visible in the pointing."
                 ),
-                "uncertain-hataf": (
+                "uncertain-xataf": (
                     "The note raises uncertainty about whether a mark in a "
-                    "manuscript is actually hataf or something else (a stain, "
+                    "manuscript is actually ḥataf or something else (a stain, "
                     "smudge, or ambiguous mark)."
                 ),
-                "hataf-hiriq": (
-                    "The note mentions hataf hiriq, a non-standard vowel "
+                "xataf-xiriq": (
+                    "The note mentions ḥataf ḥiriq, a non-standard vowel "
                     "combination with no dedicated Unicode character, "
-                    "represented as shewa+hiriq."
+                    "represented as shewa+ḥiriq."
                 ),
                 "vowel-discussion": (
-                    "General discussion of hataf in a grammatical, masoretic, "
+                    "General discussion of ḥataf in a grammatical, masoretic, "
                     "or comparative context, without a simple "
                     "manuscript-vs-MAM variant."
                 ),
@@ -88,7 +88,7 @@ def write_extras(all_extras):
                 "category": "One of the categories defined above",
                 "translation": (
                     "Tentative English translation/summary of the note's "
-                    "hataf-related content"
+                    "ḥataf-related content"
                 ),
             },
         },

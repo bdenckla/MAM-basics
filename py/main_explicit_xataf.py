@@ -2,7 +2,7 @@
 
 For (nearly) every word with varika (U+FB1E), creates a verse-tagged mapping
 of that word to its "explicit xataf" version — the word as it appears in
-manuscripts that write the hataf vowel explicitly instead of shewa+varika.
+manuscripts that write the ḥataf vowel explicitly instead of shewa+varika.
 """
 
 import json
@@ -92,7 +92,7 @@ def _apply_manual_overrides(all_mappings, all_failures):
 
 
 def _flag_non_inferrable(entries):
-    """Flag entries where the inferred hataf vowel doesn't match the actual one."""
+    """Flag entries where the inferred ḥataf vowel doesn't match the actual one."""
     n = 0
     for entry in entries:
         if not infer.is_inferrable(entry["varika_word"], entry["xataf_word"]):
@@ -148,7 +148,7 @@ def almost_main():
             "mapping_fields": {
                 "ref": "Verse reference (e.g. 'Genesis 1:18')",
                 "varika_word": "The word as it appears in MAM, with shewa+varika",
-                "xataf_word": "The word with the explicit hataf vowel",
+                "xataf_word": "The word with the explicit ḥataf vowel",
                 "match_kind": "How the extraction matched: 'sigla=word', 'bare-word', or with '+joined' suffix",
                 "sigla": "Manuscript sigla before the = sign (e.g. 'א', 'ל,ל1', 'א(ס),ל,ק3'). Individual sigla may have ? (uncertain) or ! (surprising) suffixes (e.g. 'ל,ק3?' means ק3 is uncertain).",
                 "neither-lc-nor-ac-mentioned": "Present (true) only when sigla mentions neither LC (ל) nor AC (א).",
