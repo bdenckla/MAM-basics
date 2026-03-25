@@ -100,20 +100,6 @@
             "console": "integratedTerminal"
         },
         {
-            "name": "diff MAM-MAM 20211207 20230406",
-            "type": "debugpy",
-            "request": "launch",
-            "program": "py/main_diff_gogo.py",
-            "console": "integratedTerminal"
-        },
-        {
-            "name": "match change log entries to Go-Go diffs",
-            "type": "debugpy",
-            "request": "launch",
-            "program": "py/main_match_go_changes_to_gogo_diffs.py",
-            "console": "integratedTerminal"
-        },
-        {
             "name": "Decalogues and Reuben",
             "type": "debugpy",
             "request": "launch",

@@ -37,14 +37,12 @@ digraph mam_pipeline {
     wordlist     [label="main_wordlist"];
     explicit_xataf [label="main_explicit_xataf"];
     diff_wsgo    [label="main_diff_wsgo"];
-    diff_gogo    [label="main_diff_gogo"];
     diff_ctr     [label="main_diff_ctr_vs_mam"];
     parse_ws     [label="main_parse_ws"];
     ws_bot_proto [label="main_ws_bot_proto"];
     ws_bot       [label="main_ws_bot\n(live edits)"];
     gen_docs     [label="main_gen_misc_authored_english_documents"];
     mam_xml_copy [label="main_mam_xml_copy_py_files"];
-    mgc          [label="main_mgc_match_go_changes_to_gogo_diffs"];
     osis_split   [label="main_osis_split_mapm"];
 
     // ── Edges ──
@@ -90,11 +88,9 @@ digraph mam_pipeline {
     explicit_xataf -> ds_out;
     diff_wsgo    -> ds_out;
     diff_wsgo    -> ds_mamgo_auto;
-    diff_gogo    -> ds_out;
     diff_ctr     -> ds_out;
     parse_ws     -> ds_out;
     ws_bot_proto -> ds_out;
-    mgc          -> ds_out;
 
     // Wikisource pipeline
     download_ws  -> ds_ws       [color=gray];

@@ -5,7 +5,6 @@ sequence. Useful for a full rebuild from scratch.
 
 import argparse
 
-import main_diff_gogo
 import main_diff_wsgo
 import main_explicit_xataf
 
@@ -27,7 +26,6 @@ import main_mam4sef
 import main_mam4ajf
 import main_osis
 import main_mam_xml_copy_py_files
-import main_mgc_match_go_changes_to_gogo_diffs
 
 _STEPS = [
     (
@@ -53,10 +51,8 @@ _STEPS = [
     (main_diff_wsgo, "relies on download of ws"),
     (main_parse_ws, "relies on download of ws"),
     (main_ws_bot_proto, "relies on download of ws"),
-    (main_diff_gogo, None),
     (main_gen_misc_authored_english_documents, None),
     (main_mam_xml_copy_py_files, None),
-    (main_mgc_match_go_changes_to_gogo_diffs, None),
 ]
 
 _STEP_NAMES = [mod.__name__ for mod, _comment in _STEPS]

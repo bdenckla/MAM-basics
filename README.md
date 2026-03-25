@@ -28,10 +28,8 @@ Python tools for working with [MAM (Miqra according to the Masora)](https://he.w
 
 ### Diffing and comparison
 
-- `main_diff_gogo.py` — diffs two Google Sheets versions of MAM
 - `main_diff_wsgo.py` — diffs Wikisource vs. Google Sheets versions
 - `main_diff_ctr_vs_mam.py` — compares CTR data against MAM verse data
-- `main_mgc_match_go_changes_to_gogo_diffs.py` — matches human-authored change-log entries to programmatically detected Go-Go diffs
 
 ### Analysis and surveys
 
@@ -79,7 +77,6 @@ py/              Python source
   pyrender/      General rendering
   pysefaria/     Sefaria-specific logic
   pyws/          Wikisource-specific logic
-  pymgc/         MAM Go-Go comparison support
   pympp/         MAM parsed-plus helpers
   ...
 in/              Input data files
