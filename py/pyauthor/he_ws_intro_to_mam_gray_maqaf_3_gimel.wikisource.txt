@@ -1,0 +1,89 @@
+====ג. תיבה הראויה להיות מוקפת: טעמים משניים בתיבות זעירות====
+
+'''לגבי הסוג השלישי (טעמים משניים בתיבות זעירות):''' נדרש הסבר כדי להמחיש את הקביעה שהתיבות "ראויות להיות מוקפות" (ולעתים אף מנוקדות בתנועה קטנה כאילו היו מוקפות), למרות שההקפה נשמטה מהן. הטבלה הבאה מסקפת הסבר:{{הערה|מבוסס על ברויאר, ט.27 עמ' 230 עם שינויים קלים וקצת תוספת.}}
+{{מ:טעמי המקרא|14}}
+{| width=100% border=1 cellpadding=2 align=center
+|- 
+|align=center colspan=60|'''מרכא או מהפך המשמשים כטעמים משניים: השמטת המקף'''
+|-
+|align=center colspan=15 width=25%|'''הסוג'''
+|align=center colspan=15 width=25%|'''הפסוק'''
+|align=center colspan=15 width=25%|'''המקף שנשמט'''
+|align=center colspan=15 width=25%|'''כדוגמת:'''
+|-
+|align=center colspan=15 width=25%|מהפך משרת צינור
+|align=center colspan=15 width=25%|מִ֤י ה֣וּא זֶה֮ ([[תהלים כד/טעמים#כד י|כד,י]])
+|align=center colspan=15 width=25%|= מִ֤י־ה֣וּא זֶה֮
+|align=center colspan=15 width=25%|בָּ֤ר֣וּךְ אֲדֹנָי֮ ([[תהלים סח/טעמים#סח כ|סח,כ]])
+|-
+|align=center colspan=15 width=25%|מרכא משרת צינור
+|align=center colspan=15 width=25%|מִ֥י יִתֵּ֣ן מִצִּיּוֹן֮ ([[תהלים יד/טעמים#יד ז|יד,ז]]; [[תהלים נג/טעמים#נג ז|נג,ז]])
+|align=center colspan=15 width=25%|= מִ֥י־יִתֵּ֣ן מִצִּיּוֹן֮
+|align=center colspan=15 width=25%|אִ֥מְﬞר֣וֹת יְהֹוָה֮ ([[תהלים יב/טעמים#יב ז|יב,ז]])
+|-
+|align=center colspan=15 width=25%|"
+|align=center colspan=15 width=25%|אֶ֥ת אֲרַ֣ם נַהֲרַיִם֮ ([[תהלים ס/טעמים#ס ב|ס,ב]])
+|align=center colspan=15 width=25%|= אֶ֥ת־אֲרַ֣ם נַהֲרַיִם֮
+|align=center colspan=15 width=25%|"
+|-
+|align=center colspan=15 width=25%|"
+|align=center colspan=15 width=25%|אִ֥ם תִּטֶּ֣ה אַשֻּׁרִי֮ ([[איוב לא/טעמים#לא ז|איוב לא,ז]])
+|align=center colspan=15 width=25%|= אִ֥ם־תִּטֶּ֣ה אַשֻּׁרִי֮
+|align=center colspan=15 width=25%|"
+|-
+|align=center colspan=15 width=25%|מרכא משרת רביע קטן
+|align=center colspan=15 width=25%|[כִּ֤י] אִ֥ם בְּתוֹרַ֥ת יְהֹוָ֗ה ([[תהלים א/טעמים#א ב|א,ב]])
+|align=center colspan=15 width=25%|= [כִּ֤י] אִ֥ם־בְּתוֹרַ֥ת יְהֹוָ֗ה
+|align=center colspan=15 width=25%|תִּ֥מְﬞחַ֥ץ רַגְלְךָ֗ ([[תהלים סח/טעמים#סח כד|סח,כד]])
+|-
+|align=center colspan=15 width=25%|מרכא משרת [אזלא] לגרמיה
+|align=center colspan=15 width=25%|כׇּ‍֥ל עַצְמוֹתַ֨י{{מ:לגרמיה}} ([[תהלים לה/טעמים#לה י|לה,י]])
+|align=center colspan=15 width=25%|= כׇּ‍֥ל־עַצְמוֹתַ֨י{{מ:לגרמיה}}
+|align=center colspan=15 width=25%|וְלִ֥שְׁכֵנַ֨י{{מ:לגרמיה}} ([[תהלים לא/טעמים#לא יב|לא,יב]])
+|-
+|align=center colspan=15 width=25%|"
+|align=center colspan=15 width=25%|כׇּ‍֥ל אֲחֵי־רָ֨שׁ{{מ:לגרמיה}} ([[משלי יט/טעמים#יט ז|יט,ז]])
+|align=center colspan=15 width=25%|= כׇּ‍֥ל־אֲחֵי־רָ֨שׁ{{מ:לגרמיה}}
+|align=center colspan=15 width=25%|"
+|-
+|align=center colspan=15 width=25%|"
+|align=center colspan=15 width=25%|עַ֥ל נַהֲר֨וֹת{{מ:לגרמיה}} ([[תהלים קלז/טעמים#קלז א|קלז,א]])
+|align=center colspan=15 width=25%|= עַ֥ל־נַהֲר֨וֹת{{מ:לגרמיה}}
+|align=center colspan=15 width=25%|"
+|-
+|align=center colspan=15 width=25%|"
+|align=center colspan=15 width=25%|אִ֥ם חֲרוּצִ֨ים{{מ:לגרמיה}} ([[איוב יד/טעמים#יד ה|איוב יד,ה]])
+|align=center colspan=15 width=25%|= אִ֥ם־חֲרוּצִ֨ים{{מ:לגרמיה}}
+|align=center colspan=15 width=25%|"
+|-
+|align=center colspan=15 width=25%|"
+|align=center colspan=15 width=25%|אִ֥ם תִּכְתּֽוֹשׁ־אֶת־הָאֱוִ֨יל{{מ:לגרמיה}} ([[משלי כז/טעמים#כז כב|משלי כז,כב]])
+|align=center colspan=15 width=25%|= אִ֥ם־תִּכְתּֽוֹשׁ־אֶת־הָאֱוִ֨יל{{מ:לגרמיה}}
+|align=center colspan=15 width=25%|"
+|-
+|align=center colspan=15 width=25%|"
+|align=center colspan=15 width=25%|פֶּ֥ן אֶשְׂבַּ֨ע{{מ:לגרמיה}} ([[משלי ל/טעמים#ל ט|משלי ל,ט]])
+|align=center colspan=15 width=25%|= פֶּ֥ן־אֶשְׂבַּ֨ע{{מ:לגרמיה}}
+|align=center colspan=15 width=25%|"
+|-
+|align=center colspan=15 width=25%|"
+|align=center colspan=15 width=25%|הַ֥לֲלוּ יָ֨הּ{{מ:לגרמיה}} ([[תהלים קו/טעמים#קו א|תהלים קו,א]] ועוד){{הערה|שם=הללויה במקף}}
+|align=center colspan=15 width=25%|= הַ֥לֲלוּ־יָ֨הּ{{מ:לגרמיה|רווח=לא}}{{הערה|שם=הללויה במקף}}
+|align=center colspan=15 width=25%|"
+|-
+|align=center colspan=15 width=25%|מרכא בתיבת אחד ממשרתי סילוק
+|align=center colspan=15 width=25%|אֶ֥ת גְּא֨וֹן יַעֲקֹ֖ב אֲשֶׁר־אָהֵ֣ב סֶֽלָה׃ ([[תהלים מז/טעמים#מז ה|מז,ה]])
+|align=center colspan=15 width=25%|= אֶ֥ת־גְּא֨וֹן יַעֲקֹ֖ב אֲשֶׁר־אָהֵ֣ב סֶֽלָה׃
+|align=center colspan=15 width=25%|אֶ֥חֱסֶ֨ה בְסֵ֖תֶר כְּנָפֶ֣יךָ סֶּֽלָה׃ ([[תהלים סא/טעמים#סא ה|סא,ה]])
+|-
+|align=center colspan=15 width=25%|מרכא בתיבת אחד ממשרתי אתנחתא
+|align=center colspan=15 width=25%|עֲדֵ֥ה נָ֣א גָא֣וֹן וָגֹ֑בַהּ ([[איוב מ/טעמים#מ י|משלי מ,י]])
+|align=center colspan=15 width=25%|= עֲדֵ֥ה־נָ֣א גָא֣וֹן וָגֹ֑בַהּ
+|align=center colspan=15 width=25%|מְקִ֥ימִ֣י מֵעָפָ֣ר דָּ֑ל ([[תהלים קיג/טעמים#קיג ז|תהלים קיג,ז]]){{הערה|ראו ברויאר, טעמי המקרא, יא.56 (עמ' 293).}}
+|-
+|align=center colspan=15 width=25%|"
+|align=center colspan=15 width=25%|[כִּ֤י] אֶ֥ת אֲשֶׁ֣ר יֶאֱהַ֣ב יְהֹוָ֣ה יוֹכִ֑יחַ ([[משלי ג/טעמים#ג יב|משלי ג,יב]])
+|align=center colspan=15 width=25%|= [כִּ֤י] אֶ֥ת־אֲשֶׁ֣ר יֶאֱהַ֣ב יְהֹוָ֣ה יוֹכִ֑יחַ
+|align=center colspan=15 width=25%|"
+|}
+{{מ:טעמי המקרא-סוף}}
