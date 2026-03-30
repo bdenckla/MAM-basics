@@ -6,7 +6,7 @@ introduction to the Miqra al pi ha-Masora edition, Chapter 2, section
 "טעם משני בתיבה הראויה להיות מוקפת". The source is on Hebrew Wikisource:
 https://he.wikisource.org/wiki/ויקיטקסט:מבוא_למקרא_על_פי_המסורה/פרק_ב#טעם_משני_בתיבה_הראויה_להיות_מוקפת
 
-A copy of the Wikisource markup is kept in he_ws_intro_to_mam_gray_maqaf.wikisource.txt.
+A copy of the Wikisource markup is kept in he_ws_intro_to_mam_gray_maqaf.mediawiki.
 
 The English translation is original to this project.
 """
