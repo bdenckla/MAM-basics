@@ -13370,7 +13370,7 @@
       "pseudoverse_category": "1 (normal verse)",
       "count_C": 0,
       "count_D": 0,
-      "count_E": 133
+      "count_E": 138
     },
     {
       "wtel_type": "tmpl",
@@ -14500,8 +14500,8 @@
     {
       "wtel_subtype": "קו\"כ-אם",
       "stack": "E",
-      "count": 133,
-      "count_non_nusach": 128,
+      "count": 138,
+      "count_non_nusach": 133,
       "count_nusach": 5
     },
     {
@@ -15329,7 +15329,7 @@
     {
       "wtel_subtype": "קו\"כ-אם",
       "arg_count": 2,
-      "count": 133,
+      "count": 138,
       "variations": 1
     },
     {
