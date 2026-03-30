@@ -217,7 +217,7 @@
       "wtel_subtype": "מ:קישור בהערה",
       "count_C": 0,
       "count_D": 1,
-      "count_E": 25
+      "count_E": 27
     },
     {
       "wtel_type": "tmpl",
@@ -308,7 +308,7 @@
       "wtel_subtype": "קו\"כ-אם",
       "count_C": 0,
       "count_D": 0,
-      "count_E": 130
+      "count_E": 133
     },
     {
       "wtel_type": "tmpl",
@@ -357,7 +357,7 @@
       "wtel_subtype": "ש",
       "count_C": 1,
       "count_D": 14,
-      "count_E": 3261
+      "count_E": 3268
     }
   ],
   "stack_counts": [
@@ -365,8 +365,8 @@
       "wtel_subtype": "כו\"ק",
       "stack": "E",
       "count": 882,
-      "count_non_nusach": 742,
-      "count_nusach": 140
+      "count_non_nusach": 741,
+      "count_nusach": 141
     },
     {
       "wtel_subtype": "כתיב ולא קרי",
@@ -784,9 +784,9 @@
     {
       "wtel_subtype": "מ:קישור בהערה",
       "stack": "E",
-      "count": 25,
+      "count": 27,
       "count_non_nusach": 0,
-      "count_nusach": 25
+      "count_nusach": 27
     },
     {
       "wtel_subtype": "מ:קישור פנימי בהערה",
@@ -987,8 +987,8 @@
     {
       "wtel_subtype": "קו\"כ-אם",
       "stack": "E",
-      "count": 130,
-      "count_non_nusach": 125,
+      "count": 133,
+      "count_non_nusach": 128,
       "count_nusach": 5
     },
     {
@@ -1057,9 +1057,9 @@
     {
       "wtel_subtype": "ש",
       "stack": "E",
-      "count": 3203,
+      "count": 3210,
       "count_non_nusach": 0,
-      "count_nusach": 3203
+      "count_nusach": 3210
     },
     {
       "wtel_subtype": "ש",
@@ -1295,7 +1295,7 @@
     {
       "wtel_subtype": "מ:קישור בהערה",
       "arg_count": 2,
-      "count": 26,
+      "count": 28,
       "variations": 1
     },
     {
@@ -1397,7 +1397,7 @@
     {
       "wtel_subtype": "קו\"כ-אם",
       "arg_count": 2,
-      "count": 130,
+      "count": 133,
       "variations": 1
     },
     {
@@ -1439,7 +1439,7 @@
     {
       "wtel_subtype": "ש",
       "arg_count": 0,
-      "count": 3276,
+      "count": 3283,
       "variations": 1
     }
   ]
