@@ -13,6 +13,7 @@ from pydiff_mpp.mpp_extract import _collect_template_names
 from pydiff_mpp.describe_diff import describe_change, add_name_tooltips
 from pydiff_mpp.mpp_nusach import nusach_body_to_html
 from pydiff_mpp.mpp_assets import CATEGORY_INFO, write_shared_assets
+from pydiff_mpp.mpp_template_change_desc import kq_if_template_addition_parts
 from pydiff_mpp.mpp_display import (
     display_text,
     normalize_paseq_spacing,
@@ -207,6 +208,7 @@ def _render_card(diff):
     ref = ref_str(diff)
     mwd_url = mam_with_doc_url(diff["book"], diff["chapter"], diff["verse"])
     ws_url = wikisource_url(diff["book"], diff["chapter"])
+    desc_html = ""
     # Compute description first so it can go on the top line
     if diff["text_changed"]:
         old_narrow = diff["narrowed_old"]
@@ -226,14 +228,29 @@ def _render_card(diff):
             new_names = set(_collect_template_names(diff["new_ep"]))
             added = sorted(new_names - old_names)
             removed = sorted(old_names - new_names)
-            desc_parts = []
-            if added:
-                desc_parts.append("added: " + ", ".join(added))
-            if removed:
-                desc_parts.append("removed: " + ", ".join(removed))
-            detail = "; ".join(desc_parts) if desc_parts else "template restructured"
-            eng_desc = f"Template change ({detail})"
-    desc_html = ""
+            if added == ['קו"כ-אם'] and not removed:
+                parts = kq_if_template_addition_parts(diff)
+                desc_html = (
+                    ' <span class="change-desc">&mdash; Template change '
+                    f"(added: {_esc(parts['template_name'])}; "
+                    "arg1: "
+                    f'<span class="pointed-heb" dir="rtl">{_esc(parts["arg1_text"])}</span>; '
+                    "arg2: "
+                    f'<span class="pointed-heb" dir="rtl">{_esc(parts["arg2_text"])}</span>; '
+                    "previously only the raw text of what is now arg1 was there)"
+                    "</span>"
+                )
+                eng_desc = None
+            else:
+                desc_parts = []
+                if added:
+                    desc_parts.append("added: " + ", ".join(added))
+                if removed:
+                    desc_parts.append("removed: " + ", ".join(removed))
+                detail = (
+                    "; ".join(desc_parts) if desc_parts else "template restructured"
+                )
+                eng_desc = f"Template change ({detail})"
     if eng_desc:
         esc_desc = add_name_tooltips(_esc(eng_desc))
         desc_html = f' <span class="change-desc">&mdash; {esc_desc}</span>'
