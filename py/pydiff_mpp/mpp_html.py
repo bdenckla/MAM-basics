@@ -329,6 +329,7 @@ def write_report(diffs, old_rev, new_rev, out_path, old_date="", new_date=""):
         "</head>",
         "<body>",
         "<h1>MAM Body Text Changes</h1>",
+        '<p class="subtitle"><a href="index.html">Up to MAM Change Logs</a></p>',
         subtitle_table,
         '<h2 id="summary">Summary by category</h2>',
         _render_summary_table(counts, total),
