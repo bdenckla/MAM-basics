@@ -131,6 +131,21 @@ def _letter_name(ch):
     return _LETTER_NAMES.get(ch, unicodedata.name(ch, f"U+{ord(ch):04X}"))
 
 
+def _ordinal(n):
+    if 10 <= (n % 100) <= 20:
+        suffix = "th"
+    else:
+        suffix = {1: "st", 2: "nd", 3: "rd"}.get(n % 10, "th")
+    return f"{n}{suffix}"
+
+
+def _letter_ref(ch, occurrence, letter_counts, force_ordinal=False):
+    name = _letter_name(ch)
+    if force_ordinal and letter_counts.get(ch, 0) > 1:
+        return f"{_ordinal(occurrence)} {name}"
+    return name
+
+
 _POETIC_ACCENT_NAMES = {
     "\N{HEBREW ACCENT TIPEHA}": "tarha",
     "\N{HEBREW ACCENT ZARQA}": "tsinnorit",
@@ -160,14 +175,18 @@ def _mark_name(ch):
 
 
 def _qualify(text, pred):
-    """Return [(char, letter)] for each char in text matching pred."""
+    """Return [(char, letter, letter-occurrence)] for matching chars."""
     result = []
     letter = None
+    letter_occurrence = 0
+    seen_letters = Counter()
     for ch in text:
         if _is_letter(ch):
             letter = ch
+            seen_letters[ch] += 1
+            letter_occurrence = seen_letters[ch]
         elif pred(ch) and letter is not None:
-            result.append((ch, letter))
+            result.append((ch, letter, letter_occurrence))
     return result
 
 
@@ -185,6 +204,8 @@ def _describe_diff(old_text, new_text, pred, name_fn, poetic=False):
         _name = lambda ch: _accent_name(ch, poetic=True)
     else:
         _name = name_fn
+    old_letter_counts = Counter(ch for ch in old_text if _is_letter(ch))
+    new_letter_counts = Counter(ch for ch in new_text if _is_letter(ch))
     old_qualified = _qualify(old_text, pred)
     new_qualified = _qualify(new_text, pred)
 
@@ -200,9 +221,9 @@ def _describe_diff(old_text, new_text, pred, name_fn, poetic=False):
         while old_qualified[end] == new_qualified[end]:
             end -= 1
         region = old_qualified[start : end + 1]
-        letters = {l for _, l in region}
+        letters = {l for _, l, _ in region}
         if len(letters) == 1:
-            names = [_name(a) for a, _ in region]
+            names = [_name(a) for a, _, _ in region]
             order_word = "opposite" if len(names) == 2 else "different"
             return (
                 f"{','.join(names)} in old" f" appears in the {order_word} order in new"
@@ -223,15 +244,19 @@ def _describe_diff(old_text, new_text, pred, name_fn, poetic=False):
         new_chunk = new_qualified[j1:j2]
 
         if tag == "replace" and len(old_chunk) == 1 and len(new_chunk) == 1:
-            o_mark, o_let = old_chunk[0]
-            n_mark, n_let = new_chunk[0]
+            o_mark, o_let, o_occ = old_chunk[0]
+            n_mark, n_let, n_occ = new_chunk[0]
             if o_mark == n_mark:
                 # Same mark, different letter → moved
-                descriptions.append(
-                    f"{_name(o_mark)} on {_letter_name(o_let)}"
-                    f" in old, on {_letter_name(n_let)} in new"
+                force_ordinal = o_let == n_let and (
+                    old_letter_counts.get(o_let, 0) > 1
+                    or new_letter_counts.get(n_let, 0) > 1
                 )
-            elif o_let == n_let:
+                descriptions.append(
+                    f"{_name(o_mark)} on {_letter_ref(o_let, o_occ, old_letter_counts, force_ordinal=force_ordinal)}"
+                    f" in old, on {_letter_ref(n_let, n_occ, new_letter_counts, force_ordinal=force_ordinal)} in new"
+                )
+            elif o_let == n_let and o_occ == n_occ:
                 # Same letter, different mark → replaced
                 descriptions.append(
                     f"on {_letter_name(o_let)}, "
@@ -245,37 +270,41 @@ def _describe_diff(old_text, new_text, pred, name_fn, poetic=False):
                     f"{_letter_name(n_let)} (new)"
                 )
         elif tag == "delete":
-            for mark, let in old_chunk:
-                deletes.append((mark, let))
+            for mark, let, occ in old_chunk:
+                deletes.append((mark, let, occ))
         elif tag == "insert":
-            for mark, let in new_chunk:
-                inserts.append((mark, let))
+            for mark, let, occ in new_chunk:
+                inserts.append((mark, let, occ))
         else:
             # Complex replace — fall back to generic description
             old_parts = ", ".join(
-                f"{_name(m)} on {_letter_name(l)}" for m, l in old_chunk
+                f"{_name(m)} on {_letter_name(l)}" for m, l, occ in old_chunk
             )
             new_parts = ", ".join(
-                f"{_name(m)} on {_letter_name(l)}" for m, l in new_chunk
+                f"{_name(m)} on {_letter_name(l)}" for m, l, occ in new_chunk
             )
             descriptions.append(f"old has {old_parts}; new has {new_parts}")
 
     # Pair delete/insert of same mark as moves
     used_inserts = set()
-    for d_mark, d_let in deletes:
+    for d_mark, d_let, d_occ in deletes:
         paired = False
-        for idx, (i_mark, i_let) in enumerate(inserts):
+        for idx, (i_mark, i_let, i_occ) in enumerate(inserts):
             if idx not in used_inserts and i_mark == d_mark:
+                force_ordinal = d_let == i_let and (
+                    old_letter_counts.get(d_let, 0) > 1
+                    or new_letter_counts.get(i_let, 0) > 1
+                )
                 descriptions.append(
-                    f"{_name(d_mark)} on {_letter_name(d_let)}"
-                    f" in old, on {_letter_name(i_let)} in new"
+                    f"{_name(d_mark)} on {_letter_ref(d_let, d_occ, old_letter_counts, force_ordinal=force_ordinal)}"
+                    f" in old, on {_letter_ref(i_let, i_occ, new_letter_counts, force_ordinal=force_ordinal)} in new"
                 )
                 used_inserts.add(idx)
                 paired = True
                 break
         if not paired:
             descriptions.append(f"{_name(d_mark)} on {_letter_name(d_let)} removed")
-    for idx, (i_mark, i_let) in enumerate(inserts):
+    for idx, (i_mark, i_let, i_occ) in enumerate(inserts):
         if idx not in used_inserts:
             descriptions.append(f"{_name(i_mark)} on {_letter_name(i_let)} added")
 
