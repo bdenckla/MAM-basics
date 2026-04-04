@@ -1,4 +1,5 @@
 digraph mam_pipeline {
+    // Speculation: this file may have been produced with Claude Code assistance.
     rankdir=LR;
     node [fontname="Helvetica", fontsize=10];
     edge [fontname="Helvetica", fontsize=9];
