@@ -13,12 +13,12 @@ matches an entry in releases.json, the release name is used as the filename;
 otherwise the sanitised hash range is used.
 
 The --all flag generates reports for every named release in releases.json
-and regenerates index.html, including unnamed-latest when unreleased diffs exist.
+and regenerates index.html, including unpinned-latest when unreleased diffs exist.
 
 When run with no arguments, the script compares the latest named release
 (the release boundary closest to HEAD) against HEAD. If commits exist beyond
 that release and produce diffs, it writes
-../MAM-with-doc/docs/change-log/unnamed-latest.html.
+../MAM-with-doc/docs/change-log/unpinned-latest.html.
 """
 
 import argparse
@@ -30,7 +30,7 @@ from pydiff_mpp import mpp_extract, mpp_classify, mpp_html, mpp_json, mpp_index
 MAM_PARSED_DIR = "../MAM-parsed"
 CHANGE_LOG_DIR = "../MAM-with-doc/docs/change-log"
 RELEASES_JSON = f"{CHANGE_LOG_DIR}/releases.json"
-UNNAMED_LATEST_HTML = f"{CHANGE_LOG_DIR}/unnamed-latest.html"
+UNPINNED_LATEST_HTML = f"{CHANGE_LOG_DIR}/unpinned-latest.html"
 
 
 def _commit_date(rev):
@@ -123,7 +123,7 @@ def _generate_report(old_rev, new_rev, output, *, write_when_empty=True):
 
 
 def _run_all():
-    """Generate reports for named releases plus unnamed-latest, then write index."""
+    """Generate reports for named releases plus unpinned-latest, then write index."""
     with open(RELEASES_JSON, "r", encoding="utf-8") as f:
         data = json.load(f)
     release_info = []
@@ -133,38 +133,38 @@ def _run_all():
         release_info.append(
             {"name": entry["name"], "count": count, "old_date": old_date}
         )
-    unnamed_info = _run_unnamed_latest()
-    if unnamed_info is not None:
-        release_info.append(unnamed_info)
+    unpinned_info = _run_unpinned_latest()
+    if unpinned_info is not None:
+        release_info.append(unpinned_info)
     mpp_index.write_index(release_info, CHANGE_LOG_DIR)
 
 
-def _run_unnamed_latest():
-    """Generate unnamed-latest report and return its index entry, else None."""
+def _run_unpinned_latest():
+    """Generate unpinned-latest report and return its index entry, else None."""
     latest_release = _latest_release_entry()
     old_rev = latest_release["new"]
     commit_count = _count_newer_commits(old_rev)
     if commit_count == 0:
         print(
             f"No commits after latest named release ({old_rev}); "
-            "skipping unnamed-latest report"
+            "skipping unpinned-latest report"
         )
         return None
     count, old_date = _generate_report(
         old_rev,
         "HEAD",
-        UNNAMED_LATEST_HTML,
+        UNPINNED_LATEST_HTML,
         write_when_empty=False,
     )
     if count == 0:
-        print("No diffs in unreleased commit range; skipped unnamed-latest report")
+        print("No diffs in unreleased commit range; skipped unpinned-latest report")
         return None
-    return {"name": "unnamed-latest", "count": count, "old_date": old_date}
+    return {"name": "unpinned-latest", "count": count, "old_date": old_date}
 
 
 def almost_main():
     """Generate an unreleased-diffs report (if there are any)."""
-    _run_unnamed_latest()
+    _run_unpinned_latest()
 
 
 def main():
@@ -198,7 +198,7 @@ def main():
         else:
             if args.output:
                 parser.error("--output requires --old and --new")
-            _run_unnamed_latest()
+            _run_unpinned_latest()
 
 
 if __name__ == "__main__":
