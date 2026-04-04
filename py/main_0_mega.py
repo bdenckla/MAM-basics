@@ -6,6 +6,7 @@ sequence. Useful for a full rebuild from scratch.
 import argparse
 
 import main_diff_wsgo
+import main_diff_mpp
 import main_explicit_xataf
 
 # main_download_mam_fr_google.py
@@ -38,6 +39,7 @@ _STEPS = [
     # On later "main" functions, such malformed Unicode will cause
     # asserts that provide little information.
     (main_mam_with_doc, None),
+    (main_diff_mpp, "writes unnamed unreleased diff report if there are changes"),
     (main_tmpl_survey, "must come after mam_parsed"),
     (main_mam_simple, "must come after mam_parsed"),
     # mam_simple must come before mam4sef, mam4ajf, & mam_osis
