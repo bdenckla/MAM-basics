@@ -9,13 +9,11 @@ import difflib
 from collections import Counter
 
 from pydiff_mpp.grapheme_diff import char_diff_spans
-from pydiff_mpp.mpp_structure import (
-    _template_name_counter,
-    _template_name_multiset_delta,
-)
+from pydiff_mpp.mpp_structure import _template_name_multiset_delta
 from pydiff_mpp.describe_diff import describe_change, add_name_tooltips
 from pydiff_mpp.mpp_nusach import nusach_body_to_html
 from pydiff_mpp.mpp_assets import CATEGORY_INFO, write_shared_assets
+from pydiff_mpp.mpp_expand import split_structural_diff
 from pydiff_mpp.mpp_template_change_desc import kq_if_template_addition_parts
 from pydiff_mpp.mpp_display import (
     display_text,
@@ -112,12 +110,6 @@ def _distribute_nusach(old_text, new_text, nusach_notes, expected_count):
     return result
 
 
-_TEMPLATE_REMOVAL_CATS = {
-    "מ:דחי": "dehi-removal",
-    "מ:צינור": "tsinnor-removal",
-}
-
-
 def _format_template_name_changes(names):
     """Format template-name deltas, collapsing duplicates as xN counts."""
     counts = Counter(names)
@@ -131,20 +123,8 @@ def _format_template_name_changes(names):
     return ", ".join(parts)
 
 
-def _split_structural_diff(diff):
-    """Split a structural diff that removes multiple categorizable templates."""
-    added, removed = _template_name_multiset_delta(diff["old_ep"], diff["new_ep"])
-    splittable = set(removed) & _TEMPLATE_REMOVAL_CATS.keys()
-    if added or len(splittable) < 2:
-        return None
-    notes = [n["param2"] for n in diff.get("nusach_notes", [])]
-    subs = []
-    for i, tname in enumerate(sorted(splittable)):
-        sub = dict(diff)
-        sub["category"] = _TEMPLATE_REMOVAL_CATS[tname]
-        sub["nusach_notes"] = notes if i == 0 else []
-        subs.append(sub)
-    return subs
+def _note_bodies(notes):
+    return [note if isinstance(note, str) else note["param2"] for note in notes]
 
 
 def _expand_diffs(diffs):
@@ -152,12 +132,15 @@ def _expand_diffs(diffs):
     expanded = []
     for diff in diffs:
         if not diff["text_changed"]:
-            split = _split_structural_diff(diff)
+            split = split_structural_diff(diff)
             if split:
-                expanded.extend(split)
+                for sub in split:
+                    out = dict(sub)
+                    out["nusach_notes"] = _note_bodies(sub.get("nusach_notes", []))
+                    expanded.append(out)
                 continue
             out = dict(diff)
-            out["nusach_notes"] = [n["param2"] for n in diff.get("nusach_notes", [])]
+            out["nusach_notes"] = _note_bodies(diff.get("nusach_notes", []))
             expanded.append(out)
             continue
         old_display = normalize_paseq_spacing(
@@ -230,19 +213,28 @@ def _render_card(diff):
             old_narrow, new_narrow, cat, diff["book"], diff["chapter"], diff["verse"]
         )
     else:
+        added = diff.get("templates_added")
+        removed = diff.get("templates_removed")
+        if added is None or removed is None:
+            calc_added, calc_removed = _template_name_multiset_delta(
+                diff["old_ep"], diff["new_ep"]
+            )
+            if added is None:
+                added = calc_added
+            if removed is None:
+                removed = calc_removed
+
         # For dedicated template-removal categories, use the category's
         # specific template name rather than computing from old_ep/new_ep
         # (which may reflect the full verse change when a diff was split).
-        _CAT_TEMPLATE = {v: k for k, v in _TEMPLATE_REMOVAL_CATS.items()}
+        _CAT_TEMPLATE = {"dehi-removal": "מ:דחי", "tsinnor-removal": "מ:צינור"}
         if cat in _CAT_TEMPLATE:
             eng_desc = f"Template change (removed: {_CAT_TEMPLATE[cat]})"
         else:
-            added, removed = _template_name_multiset_delta(
-                diff["old_ep"], diff["new_ep"]
-            )
-            old_counts = _template_name_counter(diff["old_ep"])
-            if added == ['קו"כ-אם'] and not removed and old_counts['קו"כ-אם'] == 0:
+            parts = diff.get("kq_if_template_addition")
+            if parts is None and added == ['קו"כ-אם'] and not removed:
                 parts = kq_if_template_addition_parts(diff)
+            if parts is not None:
                 desc_html = (
                     ' <span class="change-desc">&mdash; Template change '
                     f"(added: {_esc(parts['template_name'])}; "

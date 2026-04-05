@@ -1,7 +1,7 @@
 import unittest
 
 from pycmn import bib_locales as tbn
-from pydiff_mpp import mpp_classify, mpp_extract, mpp_json, mpp_structure
+from pydiff_mpp import mpp_classify, mpp_expand, mpp_extract, mpp_json, mpp_structure
 from pydiff_mpp.mpp_book_urls import mam_with_doc_url, ref_str, wikisource_url
 
 
@@ -173,6 +173,52 @@ def _expanded_note_scope_new_ep():
     ]
 
 
+def _neighbor_note_old_ep():
+    return [
+        {
+            "tmpl_name": "נוסח",
+            "tmpl_params": {
+                "1": "אֵילָו֙",
+                "2": "הערה קיימת על התיבה הראשונה",
+            },
+        },
+        " ",
+        {
+            "tmpl_name": "נוסח",
+            "tmpl_params": {
+                "1": "וְאֵ֣ילַמָּ֔ו",
+                "2": "הערה על התיבה השנייה",
+            },
+        },
+    ]
+
+
+def _neighbor_note_new_ep():
+    return [
+        {
+            "tmpl_name": "נוסח",
+            "tmpl_params": {
+                "1": "אֵילָו֙",
+                "2": "הערה קיימת על התיבה הראשונה",
+            },
+        },
+        " ",
+        {
+            "tmpl_name": "נוסח",
+            "tmpl_params": {
+                "1": {
+                    "tmpl_name": 'קו"כ-אם',
+                    "tmpl_params": {
+                        "1": "וְאֵ֣ילַמָּ֔ו",
+                        "2": "ל-קרי=וְאֵ֣ילַמָּ֔יו",
+                    },
+                },
+                "2": "הערה על התיבה השנייה",
+            },
+        },
+    ]
+
+
 class TemplateMultiplicityDiffTests(unittest.TestCase):
     def test_multiset_delta_preserves_duplicate_template_additions(self):
         added, removed = mpp_structure._template_name_multiset_delta(
@@ -201,6 +247,39 @@ class TemplateMultiplicityDiffTests(unittest.TestCase):
         serialized = mpp_json._serialize_diff(diff)
         self.assertEqual(serialized["templates_added"], ['קו"כ-אם'])
         self.assertNotIn("templates_removed", serialized)
+
+    def test_split_structural_kq_if_addition_scopes_neighboring_note(self):
+        diff = mpp_extract._diff_ep(
+            _neighbor_note_old_ep(), _neighbor_note_new_ep(), tbn.BK_EZEKIEL, 40, 24
+        )
+
+        self.assertIsNotNone(diff)
+        self.assertFalse(diff["text_changed"])
+        mpp_classify.classify_diffs([diff])
+
+        split = mpp_expand.split_structural_diff(diff)
+        self.assertIsNotNone(split)
+        self.assertEqual(len(split), 1)
+        self.assertEqual(split[0]["templates_added"], ['קו"כ-אם'])
+        self.assertEqual(
+            [note["param2"] for note in split[0]["nusach_notes"]],
+            ["הערה על התיבה השנייה"],
+        )
+
+    def test_json_serialization_uses_scoped_note_for_split_kq_if_addition(self):
+        diff = mpp_extract._diff_ep(
+            _neighbor_note_old_ep(), _neighbor_note_new_ep(), tbn.BK_EZEKIEL, 40, 24
+        )
+
+        mpp_classify.classify_diffs([diff])
+        split = mpp_expand.split_structural_diff(diff)
+        serialized = mpp_json._serialize_diff(split[0])
+
+        self.assertEqual(serialized["templates_added"], ['קו"כ-אם'])
+        self.assertEqual(
+            serialized["nusach_notes"][0]["param2"],
+            "הערה על התיבה השנייה",
+        )
 
     def test_diff_ep_detects_same_count_template_reorder(self):
         diff = mpp_extract._diff_ep(

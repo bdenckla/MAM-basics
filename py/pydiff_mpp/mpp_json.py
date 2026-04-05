@@ -9,6 +9,7 @@ import difflib
 import json
 import os
 
+from pydiff_mpp.mpp_expand import split_structural_diff
 from pydiff_mpp.mpp_structure import _template_name_multiset_delta
 
 
@@ -50,7 +51,16 @@ def _serialize_diff(d):
     if d["text_changed"]:
         out["changes"] = _narrow_to_changed_words(d["old_text"], d["new_text"])
     else:
-        added, removed = _template_name_multiset_delta(d["old_ep"], d["new_ep"])
+        added = d.get("templates_added")
+        removed = d.get("templates_removed")
+        if added is None or removed is None:
+            calc_added, calc_removed = _template_name_multiset_delta(
+                d["old_ep"], d["new_ep"]
+            )
+            if added is None:
+                added = calc_added
+            if removed is None:
+                removed = calc_removed
         if added:
             out["templates_added"] = added
         if removed:
@@ -66,12 +76,25 @@ def write_json(diffs, old_rev, new_rev, out_path):
     """Write the abstract diff data to a JSON file.
 
     For text-changed diffs, includes narrowed word-level change pairs
-    rather than full verse text.  For structural diffs, includes the
+    rather than full verse text. For structural diffs, includes the
     template names added/removed, preserving multiplicity; same-count
-    structural diffs get template_structure_changed=true. Excludes the
-    bulky old_ep / new_ep raw MPP structures.
+    structural diffs get template_structure_changed=true. Structural
+    diffs that render as separate cards are serialized as separate JSON
+    entries as well. Excludes the bulky old_ep / new_ep raw MPP
+    structures.
     """
-    serialized = [_serialize_diff(d) for d in diffs]
+    expanded = []
+    for diff in diffs:
+        if diff["text_changed"]:
+            expanded.append(diff)
+            continue
+        split = split_structural_diff(diff)
+        if split:
+            expanded.extend(split)
+            continue
+        expanded.append(diff)
+
+    serialized = [_serialize_diff(d) for d in expanded]
     data = {
         "old_rev": old_rev,
         "new_rev": new_rev,
