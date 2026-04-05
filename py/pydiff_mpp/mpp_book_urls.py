@@ -11,7 +11,7 @@ from urllib.parse import quote
 
 from pycmn import hebrew_verse_numerals as hvn
 
-# Keyed by the display names used in diff dicts (from mpp_extract._CANONICAL_STEM_TO_BOOK39S).
+# Keyed by the display names used in diff dicts (from mpp_file_matching.py).
 # Each value is (OSDF key for MAM-with-doc URLs, Hebrew name for Wikisource URLs).
 _BOOK_URL_INFO = {
     "Genesis": ("A1-Genesis", "בראשית"),

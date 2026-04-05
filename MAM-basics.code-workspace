@@ -27,7 +27,8 @@
 		"chat.tools.terminal.autoApprove": {
 			"../MAM-basics/.venv/Scripts/python.exe": true,
 			".venv/Scripts/python.exe": true,
-			"C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe": true
+			"C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe": true,
+			"..\\.venv\\Scripts\\python.exe": true
 		}
 	}
 }

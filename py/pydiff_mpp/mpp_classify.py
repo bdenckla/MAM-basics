@@ -8,7 +8,7 @@ Exports:
 import difflib
 from collections import Counter
 from pycmn import hebrew_points as hpo
-from pydiff_mpp.mpp_extract import (
+from pydiff_mpp.mpp_structure import (
     _collect_template_names,
     _template_name_multiset_delta,
 )

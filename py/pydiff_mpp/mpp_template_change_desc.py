@@ -1,6 +1,7 @@
 """Helpers for structural template-change descriptions in MPP diff cards."""
 
-from pydiff_mpp.mpp_extract import _MISSING, _flatten_element, _get_param
+from pydiff_mpp.mpp_flatten import _flatten_element
+from pydiff_mpp.mpp_param_access import _MISSING, _get_param
 
 
 def _iter_named_templates(obj, template_name):

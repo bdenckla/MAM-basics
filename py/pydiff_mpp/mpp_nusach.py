@@ -10,7 +10,7 @@ Exports:
 
 import re
 
-from pydiff_mpp.mpp_extract import _get_param, _MISSING
+from pydiff_mpp.mpp_param_access import _MISSING, _get_param
 
 # ── Pointed-Hebrew detection ──────────────────────────────────────
 

@@ -15,11 +15,8 @@ Exports:
 import re
 
 from pycmn import hebrew_punctuation as hpu
-from pydiff_mpp.mpp_extract import (
-    _MISSING,
-    _get_param,
-    _is_parashah_template,
-)
+from pydiff_mpp.mpp_flatten import _is_parashah_template
+from pydiff_mpp.mpp_param_access import _MISSING, _get_param
 
 # ── Paseq display (ruby annotations for legarmeih / narpas) ──
 

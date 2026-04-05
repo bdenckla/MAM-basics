@@ -9,8 +9,7 @@ import difflib
 from collections import Counter
 
 from pydiff_mpp.grapheme_diff import char_diff_spans
-from pydiff_mpp.mpp_extract import (
-    _collect_template_names,
+from pydiff_mpp.mpp_structure import (
     _template_name_counter,
     _template_name_multiset_delta,
 )
