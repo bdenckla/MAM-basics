@@ -1,6 +1,8 @@
 import unittest
 
+from pycmn import bib_locales as tbn
 from pydiff_mpp import mpp_classify, mpp_extract, mpp_json, mpp_structure
+from pydiff_mpp.mpp_book_urls import mam_with_doc_url, ref_str, wikisource_url
 
 
 def _ezek_40_26_old_ep():
@@ -182,7 +184,7 @@ class TemplateMultiplicityDiffTests(unittest.TestCase):
 
     def test_diff_ep_detects_duplicate_template_addition(self):
         diff = mpp_extract._diff_ep(
-            _ezek_40_26_old_ep(), _ezek_40_26_new_ep(), "Ezekiel", 40, 26
+            _ezek_40_26_old_ep(), _ezek_40_26_new_ep(), tbn.BK_EZEKIEL, 40, 26
         )
 
         self.assertIsNotNone(diff)
@@ -192,7 +194,7 @@ class TemplateMultiplicityDiffTests(unittest.TestCase):
 
     def test_json_serialization_reports_duplicate_template_addition(self):
         diff = mpp_extract._diff_ep(
-            _ezek_40_26_old_ep(), _ezek_40_26_new_ep(), "Ezekiel", 40, 26
+            _ezek_40_26_old_ep(), _ezek_40_26_new_ep(), tbn.BK_EZEKIEL, 40, 26
         )
 
         mpp_classify.classify_diffs([diff])
@@ -204,7 +206,7 @@ class TemplateMultiplicityDiffTests(unittest.TestCase):
         diff = mpp_extract._diff_ep(
             _same_count_reorder_old_ep(),
             _same_count_reorder_new_ep(),
-            "Genesis",
+            tbn.BK_GENESIS,
             1,
             1,
         )
@@ -218,7 +220,7 @@ class TemplateMultiplicityDiffTests(unittest.TestCase):
         diff = mpp_extract._diff_ep(
             _same_count_reorder_old_ep(),
             _same_count_reorder_new_ep(),
-            "Genesis",
+            tbn.BK_GENESIS,
             1,
             1,
         )
@@ -233,7 +235,7 @@ class TemplateMultiplicityDiffTests(unittest.TestCase):
         diff = mpp_extract._diff_ep(
             _nested_relocation_old_ep(),
             _nested_relocation_new_ep(),
-            "Genesis",
+            tbn.BK_GENESIS,
             1,
             2,
         )
@@ -245,7 +247,7 @@ class TemplateMultiplicityDiffTests(unittest.TestCase):
         diff = mpp_extract._diff_ep(
             _format_equivalent_old_ep(),
             _format_equivalent_new_ep(),
-            "Genesis",
+            tbn.BK_GENESIS,
             1,
             3,
         )
@@ -256,7 +258,7 @@ class TemplateMultiplicityDiffTests(unittest.TestCase):
         diff = mpp_extract._diff_ep(
             _new_note_only_old_ep(),
             _new_note_only_new_ep(),
-            "Genesis",
+            tbn.BK_GENESIS,
             1,
             4,
         )
@@ -267,12 +269,35 @@ class TemplateMultiplicityDiffTests(unittest.TestCase):
         diff = mpp_extract._diff_ep(
             _expanded_note_scope_old_ep(),
             _expanded_note_scope_new_ep(),
-            "Genesis",
+            tbn.BK_GENESIS,
             1,
             5,
         )
 
         self.assertIsNone(diff)
+
+
+class CanonicalBookIdTests(unittest.TestCase):
+    def test_mam_with_doc_url_accepts_canonical_book_id(self):
+        url = mam_with_doc_url(tbn.BK_FST_SAM, 3, 4)
+
+        self.assertEqual(
+            url,
+            "https://bdenckla.github.io/MAM-with-doc/BA-1Samuel.html#c3v4",
+        )
+
+    def test_wikisource_url_accepts_canonical_book_id(self):
+        url = wikisource_url(tbn.BK_LEVIT, 2)
+
+        self.assertEqual(
+            url,
+            "https://he.wikisource.org/wiki/%D7%95%D7%99%D7%A7%D7%A8%D7%90_%D7%91/%D7%98%D7%A2%D7%9E%D7%99%D7%9D",
+        )
+
+    def test_ref_str_uses_canonical_book_id(self):
+        diff = {"book": tbn.BK_FST_SAM, "chapter": 3, "verse": 4}
+
+        self.assertEqual(ref_str(diff), "1Samuel 3:4")
 
 
 if __name__ == "__main__":

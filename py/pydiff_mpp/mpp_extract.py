@@ -9,7 +9,7 @@ import json
 import subprocess
 
 from pydiff_mpp.mpp_file_matching import (
-    _book39_names_for_stem,
+    _book39_ids_for_stem,
     _get_he_to_int,
     _matched_plus_file_pairs,
 )
@@ -76,12 +76,12 @@ def _list_plus_files(rev):
 def _diff_one_file(old_json, new_json, canonical_stem):
     """Compare two revisions of a single plus/ JSON file."""
     diffs = []
-    book39_names = _book39_names_for_stem(canonical_stem)
+    book39_ids = _book39_ids_for_stem(canonical_stem)
     he_to_int = _get_he_to_int(new_json)
     old_book39s = old_json["book39s"]
     new_book39s = new_json["book39s"]
     for b39_idx, (old_b39, new_b39) in enumerate(zip(old_book39s, new_book39s)):
-        book_name = book39_names[b39_idx]
+        book39id = book39_ids[b39_idx]
         old_chapters = old_b39["chapters"]
         new_chapters = new_b39["chapters"]
         for he_ch in old_chapters:
@@ -98,13 +98,13 @@ def _diff_one_file(old_json, new_json, canonical_stem):
                 new_verse = new_verses[he_vr]
                 old_ep = old_verse[2]
                 new_ep = new_verse[2]
-                diff = _diff_ep(old_ep, new_ep, book_name, int_ch, int_vr)
+                diff = _diff_ep(old_ep, new_ep, book39id, int_ch, int_vr)
                 if diff is not None:
                     diffs.append(diff)
     return diffs
 
 
-def _diff_ep(old_ep, new_ep, book_name, chapter, verse):
+def _diff_ep(old_ep, new_ep, book39id, chapter, verse):
     """Compare two EP columns. Returns a diff dict or None.
 
     Compares flattened body text first (catches real text changes),
@@ -123,7 +123,7 @@ def _diff_ep(old_ep, new_ep, book_name, chapter, verse):
                 return None  # No meaningful change
     nusach_notes = _find_relevant_nusach(old_text, new_text, new_nusach, text_changed)
     return {
-        "book": book_name,
+        "book": book39id,
         "chapter": chapter,
         "verse": verse,
         "old_text": old_text,
