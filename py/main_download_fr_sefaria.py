@@ -3,7 +3,7 @@ Download MAM data from Sefaria and write it to JSON files.
 
 Usage:
     .venv/Scripts/python.exe py/main_download_fr_sefaria.py
-    .venv/Scripts/python.exe py/main_download_fr_sefaria.py --book "I Kings"
+    .venv/Scripts/python.exe py/main_download_fr_sefaria.py --book39 1Kings
 """
 
 import requests
