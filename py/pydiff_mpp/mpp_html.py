@@ -9,7 +9,11 @@ import difflib
 from collections import Counter
 
 from pydiff_mpp.grapheme_diff import char_diff_spans
-from pydiff_mpp.mpp_extract import _collect_template_names
+from pydiff_mpp.mpp_extract import (
+    _collect_template_names,
+    _template_name_counter,
+    _template_name_multiset_delta,
+)
 from pydiff_mpp.describe_diff import describe_change, add_name_tooltips
 from pydiff_mpp.mpp_nusach import nusach_body_to_html
 from pydiff_mpp.mpp_assets import CATEGORY_INFO, write_shared_assets
@@ -115,13 +119,23 @@ _TEMPLATE_REMOVAL_CATS = {
 }
 
 
+def _format_template_name_changes(names):
+    """Format template-name deltas, collapsing duplicates as xN counts."""
+    counts = Counter(names)
+    parts = []
+    for name in sorted(counts):
+        count = counts[name]
+        if count == 1:
+            parts.append(name)
+        else:
+            parts.append(f"{name} x{count}")
+    return ", ".join(parts)
+
+
 def _split_structural_diff(diff):
     """Split a structural diff that removes multiple categorizable templates."""
-    old_names = set(_collect_template_names(diff["old_ep"]))
-    new_names = set(_collect_template_names(diff["new_ep"]))
-    removed = old_names - new_names
-    added = new_names - old_names
-    splittable = removed & _TEMPLATE_REMOVAL_CATS.keys()
+    added, removed = _template_name_multiset_delta(diff["old_ep"], diff["new_ep"])
+    splittable = set(removed) & _TEMPLATE_REMOVAL_CATS.keys()
     if added or len(splittable) < 2:
         return None
     notes = [n["param2"] for n in diff.get("nusach_notes", [])]
@@ -224,11 +238,11 @@ def _render_card(diff):
         if cat in _CAT_TEMPLATE:
             eng_desc = f"Template change (removed: {_CAT_TEMPLATE[cat]})"
         else:
-            old_names = set(_collect_template_names(diff["old_ep"]))
-            new_names = set(_collect_template_names(diff["new_ep"]))
-            added = sorted(new_names - old_names)
-            removed = sorted(old_names - new_names)
-            if added == ['קו"כ-אם'] and not removed:
+            added, removed = _template_name_multiset_delta(
+                diff["old_ep"], diff["new_ep"]
+            )
+            old_counts = _template_name_counter(diff["old_ep"])
+            if added == ['קו"כ-אם'] and not removed and old_counts['קו"כ-אם'] == 0:
                 parts = kq_if_template_addition_parts(diff)
                 desc_html = (
                     ' <span class="change-desc">&mdash; Template change '
@@ -244,9 +258,11 @@ def _render_card(diff):
             else:
                 desc_parts = []
                 if added:
-                    desc_parts.append("added: " + ", ".join(added))
+                    desc_parts.append("added: " + _format_template_name_changes(added))
                 if removed:
-                    desc_parts.append("removed: " + ", ".join(removed))
+                    desc_parts.append(
+                        "removed: " + _format_template_name_changes(removed)
+                    )
                 detail = (
                     "; ".join(desc_parts) if desc_parts else "template restructured"
                 )

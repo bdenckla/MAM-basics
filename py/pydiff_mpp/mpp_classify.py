@@ -8,7 +8,10 @@ Exports:
 import difflib
 from collections import Counter
 from pycmn import hebrew_points as hpo
-from pydiff_mpp.mpp_extract import _collect_template_names
+from pydiff_mpp.mpp_extract import (
+    _collect_template_names,
+    _template_name_multiset_delta,
+)
 
 # ── Character classification ─────────────────────────────────
 
@@ -158,16 +161,15 @@ def _classify_text_change(diff):
 def _classify_structural_change(diff):
     """Classify a diff where structure changed but body text didn't."""
     # Check for legarmeih → paseq pattern by looking at template names
+    added, removed = _template_name_multiset_delta(diff["old_ep"], diff["new_ep"])
     old_names = set(_collect_template_names(diff["old_ep"]))
     new_names = set(_collect_template_names(diff["new_ep"]))
     _LEGAR = {"מ:לגרמיה", "מ:לגרמיה-2"}
     if _LEGAR & (old_names ^ new_names):
         return "legarmeih-paseq"
-    removed = old_names - new_names
-    added = new_names - old_names
-    if not added and removed == {"מ:דחי"}:
+    if not added and removed == ["מ:דחי"]:
         return "dehi-removal"
-    if not added and removed == {"מ:צינור"}:
+    if not added and removed == ["מ:צינור"]:
         return "tsinnor-removal"
     return "template-change"
 

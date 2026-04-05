@@ -9,6 +9,7 @@ Exports:
 import difflib
 import json
 import subprocess
+from collections import Counter
 
 from pycmn import hebrew_verse_numerals as hvn
 
@@ -399,6 +400,9 @@ def _collect_template_names(obj):
     adding/removing a נוסח wrapper doesn't change body text) and
     param 2 (manuscript annotations) is not recursed into, so templates
     nested there (e.g. ש) are also excluded.
+
+    The returned list preserves multiplicity. Callers that care about
+    duplicate template instances should compare Counters, not sets.
     """
     names = []
     if isinstance(obj, dict):
@@ -418,11 +422,25 @@ def _collect_template_names(obj):
     return names
 
 
+def _template_name_counter(obj):
+    """Return a Counter of relevant template names in an EP structure."""
+    return Counter(_collect_template_names(obj))
+
+
+def _template_name_multiset_delta(old_ep, new_ep):
+    """Return net added/removed template names, preserving multiplicity."""
+    old_counts = _template_name_counter(old_ep)
+    new_counts = _template_name_counter(new_ep)
+    added = sorted((new_counts - old_counts).elements())
+    removed = sorted((old_counts - new_counts).elements())
+    return added, removed
+
+
 def _diff_ep(old_ep, new_ep, book_name, chapter, verse):
     """Compare two EP columns. Returns a diff dict or None.
 
     Compares flattened body text first (catches real text changes),
-    then template name lists (catches structural changes like
+    then template name multiplicity (catches structural changes like
     legarmeih -> paseq). Ignores format differences like
     tmpl_args vs tmpl_params.
     """
@@ -430,9 +448,9 @@ def _diff_ep(old_ep, new_ep, book_name, chapter, verse):
     new_text, new_nusach = _flatten_ep_with_nusach(new_ep)
     text_changed = old_text != new_text
     if not text_changed:
-        old_names = set(_collect_template_names(old_ep))
-        new_names = set(_collect_template_names(new_ep))
-        if old_names == new_names:
+        old_counts = _template_name_counter(old_ep)
+        new_counts = _template_name_counter(new_ep)
+        if old_counts == new_counts:
             return None  # No meaningful change
     nusach_notes = _find_relevant_nusach(old_text, new_text, new_nusach, text_changed)
     return {

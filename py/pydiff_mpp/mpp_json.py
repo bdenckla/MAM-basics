@@ -9,7 +9,7 @@ import difflib
 import json
 import os
 
-from pydiff_mpp.mpp_extract import _collect_template_names
+from pydiff_mpp.mpp_extract import _template_name_multiset_delta
 
 
 def _narrow_to_changed_words(old_text, new_text):
@@ -50,10 +50,7 @@ def _serialize_diff(d):
     if d["text_changed"]:
         out["changes"] = _narrow_to_changed_words(d["old_text"], d["new_text"])
     else:
-        old_names = sorted(set(_collect_template_names(d["old_ep"])))
-        new_names = sorted(set(_collect_template_names(d["new_ep"])))
-        added = sorted(set(new_names) - set(old_names))
-        removed = sorted(set(old_names) - set(new_names))
+        added, removed = _template_name_multiset_delta(d["old_ep"], d["new_ep"])
         if added:
             out["templates_added"] = added
         if removed:
@@ -68,8 +65,8 @@ def write_json(diffs, old_rev, new_rev, out_path):
 
     For text-changed diffs, includes narrowed word-level change pairs
     rather than full verse text.  For structural diffs, includes the
-    template names added/removed.  Excludes the bulky old_ep / new_ep
-    raw MPP structures.
+    template names added/removed, preserving multiplicity. Excludes the
+    bulky old_ep / new_ep raw MPP structures.
     """
     serialized = [_serialize_diff(d) for d in diffs]
     data = {
