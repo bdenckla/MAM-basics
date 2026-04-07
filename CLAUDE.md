@@ -79,7 +79,13 @@ This project processes Hebrew text. On Windows, Python defaults to the system AN
 2. **`json.dump()` / `json.dumps()`** — always pass `ensure_ascii=False` so Hebrew characters are written directly rather than escaped to `\uXXXX`.
 3. **`subprocess` output** — when capturing output from subprocesses, pass `encoding="utf-8"` (or use `text=True` with `encoding="utf-8"`).
 4. **Never rely on the system default encoding.** Do not assume `PYTHONIOENCODING` or `PYTHONUTF8` is set. Be explicit in code.
-5. **`PYTHONUTF8=1` is only for `.novc/` scripts.** When running a git-tracked script, do **not** set `PYTHONUTF8=1` — if the script crashes with a codec error, that is a bug in the script and should be fixed, not masked. Only use `PYTHONUTF8=1` when running throwaway scripts you generate into `.novc/`, where adding explicit `encoding="utf-8"` to every `open()` call is not worth the effort. (Note: the shell is **Git Bash**, not PowerShell — use `VAR=value cmd` syntax, not `$env:VAR="value"; cmd`.)
+5. **stdout/stderr** — prefer writing non-ASCII output to a file (rule 1) rather than printing to stdout/stderr. When a script genuinely must print non-ASCII, reconfigure the streams at the top of `main()`:
+   ```python
+   import sys
+   sys.stdout.reconfigure(encoding="utf-8")
+   sys.stderr.reconfigure(encoding="utf-8")
+   ```
+6. **`PYTHONUTF8=1` is only for `.novc/` throwaway scripts** where changing the code is not an option. When running a git-tracked script, do **not** set `PYTHONUTF8=1` — if it crashes with a codec error, fix the script. (Note: the shell is **Git Bash**, not PowerShell — use `VAR=value cmd` syntax, not `$env:VAR="value"; cmd`.)
 
 ```python
 # CORRECT
