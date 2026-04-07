@@ -1,0 +1,94 @@
+{
+	"folders": [
+		{
+			"path": "../al-hatorah"
+		},
+		{
+			"path": "../ArtScroll"
+		},
+		{
+			"path": "../book-of-job"
+		},
+		{
+			"path": "../CCAR-Psalms"
+		},
+		{
+			"path": "../codex-index-aleppo"
+		},
+		{
+			"path": "../codex-index-cam1753"
+		},
+		{
+			"path": "../codex-index-leningrad"
+		},
+		{
+			"path": "../diffable-pointed-hebrew"
+		},
+		{
+			"path": "../hbofonts"
+		},
+		{
+			"path": "../holman-ketiv-qere"
+		},
+		{
+			"path": "."
+		},
+		{
+			"path": "../MAM-for-Acc"
+		},
+		{
+			"path": "../MAM-for-CCAR"
+		},
+		{
+			"path": "../MAM-for-JPS"
+		},
+		{
+			"path": "../MAM-for-Sefaria"
+		},
+		{
+			"path": "../MAM-OSIS"
+		},
+		{
+			"path": "../MAM-parsed"
+		},
+		{
+			"path": "../MAM-simple"
+		},
+		{
+			"path": "../MAM-with-doc"
+		},
+		{
+			"path": "../mamgo-auto-edits"
+		},
+		{
+			"path": "../mgketer"
+		},
+		{
+			"path": "../phonetic-hbo"
+		},
+		{
+			"path": "../TMC"
+		},
+		{
+			"path": "../UXLC-utils"
+		},
+		{
+			"path": "../wlc-utils"
+		},
+		{
+			"path": "../wlc-utils-io"
+		},
+		{
+			"path": "../yeivin-itm"
+		}
+	],
+	"settings": {
+		"powershell.cwd": "MAM-basics",
+		"chat.tools.terminal.autoApprove": {
+			"../MAM-basics/.venv/Scripts/python.exe": true,
+			".venv/Scripts/python.exe": true,
+			"C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe": true,
+			"..\\.venv\\Scripts\\python.exe": true
+		}
+	}
+}
