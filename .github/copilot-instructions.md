@@ -87,10 +87,6 @@ git commit -F .novc\commit_msg_<slug>.txt
 
 Use a unique slug per commit (e.g. `commit_msg_add_2eq_check.txt`) — a stale generic filename silently produces the wrong message.
 
-## Don't Redundantly Re-assert the Repo Directory
-
-The terminal's working directory is already the project root. Run `git` directly without `cd` or `git -C <this-repo>`. For a sibling repo, use `git -C <path>`.
-
 ## Don't Close Issues Prematurely
 
 Never close a GitHub issue until work is both committed **and** pushed. Closing before pushing leaves the issue marked resolved while the fix is only local.
