@@ -26,13 +26,23 @@ All `py/main_*.py` scripts use paths like `../MAM-parsed` that are relative to t
 
 Do not `cd` into `py/` before running — `../MAM-parsed` would then resolve to the wrong location.
 
-## No `python -c` — Use `.novc/` Scripts Instead
+## Temporary Python Scripts
 
-**Never use `python -c`** for any reason. Shell escaping of multi-line strings and Hebrew Unicode text is unreliable. Write a `.py` file in `.novc/` (gitignored) and run it:
+Put reusable Python scripts that should be tracked under `py/`.
+
+When a throwaway Python script is needed and it imports from modules under `py/`, create it as `py/novc_<slug>.py` and run it from the repo root:
 
 ```
-.venv\Scripts\python.exe .novc\my_script.py
+.venv\Scripts\python.exe py\novc_<slug>.py
 ```
+
+Files matching `novc_*.py` should be gitignored via `py/.gitignore`. The `novc_` prefix keeps these files visually separate from tracked `main_*` scripts.
+
+For PowerShell throwaway scripts and non-Python artifacts (commit messages, issue bodies, JSON diagnostics, screenshots, and similar scratch files), keep using `.novc/`.
+
+## No `python -c` — Use `py/novc_<slug>.py` Instead
+
+**Never use `python -c`** for any reason. Shell escaping of multi-line strings and Hebrew Unicode text is unreliable. Write a throwaway script as `py/novc_<slug>.py` and run it from the repo root.
 
 ## Multi-Line Content — Write to `.novc/` Files
 
@@ -55,7 +65,7 @@ This project processes Hebrew text. On Windows, Python defaults to the system AN
    sys.stdout.reconfigure(encoding="utf-8")
    sys.stderr.reconfigure(encoding="utf-8")
    ```
-6. `$env:PYTHONUTF8="1"` is only for `.novc/` throwaway scripts where changing the code is not an option. (`PYTHONIOENCODING` is deprecated in favor of `PYTHONUTF8`.)
+6. `$env:PYTHONUTF8="1"` is only for throwaway scripts where changing the code is not an option. For Python, prefer `py/novc_<slug>.py`; for PowerShell and non-Python scratch artifacts, use `.novc/`. (`PYTHONIOENCODING` is deprecated in favor of `PYTHONUTF8`.)
 
 ## Literal UTF-8 in Python Source — No Unnecessary `\uXXXX` Escapes
 
