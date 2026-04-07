@@ -71,17 +71,19 @@ These two modes are not mutually exclusive. A central decoder can coexist with p
 
 The main sources currently identified are:
 
-1. MAM-for-Acc Accordance header:
+1. Wikisource appendices:
+   https://he.wikisource.org/wiki/ויקיטקסט:מבוא_למקרא_על_פי_המסורה/נספחים
+2. Additional external reference mentioned from issue 5 comments:
+   the JC3 sigil list in the holman-ketiv-qere material
+3. MAM-for-Acc Accordance header:
    `../MAM-for-Acc/in/01.Aleppo Codex Apparatus.header.html`
-2. MAM-for-Acc translation/support code:
+4. MAM-for-Acc translation/support code:
    `../MAM-for-Acc/acc_endoc_find_translation_errors.py`
    `../MAM-for-Acc/acc_markup_cited_sources.py`
-3. Wikisource appendices:
-   https://he.wikisource.org/wiki/ויקיטקסט:מבוא_למקרא_על_פי_המסורה/נספחים
-4. Local legacy reference:
+5. Local legacy reference:
    `.claude/commands/sigil-lookup.md`
-5. Additional external reference mentioned from issue 5 comments:
-   the JC3 sigil list in the holman-ketiv-qere material
+
+When Wikisource and Accordance differ in evidentiary strength, this document should weigh Wikisource much more heavily. Accordance remains useful, especially for legacy mappings and internal nomenclature, but it should generally be treated as secondary support rather than the lead authority.
 
 ## Provenance And Confidence
 
@@ -100,11 +102,15 @@ The categories below are intentionally conservative.
 |---|---|---|---|---|
 | א | Aleppo Codex | Confirmed | Accordance header, Wikisource | Also appears as כתי״א in prose contexts. |
 | א(ק) | Aleppo Codex according to Yehoshua Kimhi's testimony | Confirmed | JC3 sigil list, mgketer issue 117 comments | This is not Aleppo corroborated by Cairo. The AI gloss that read it that way was incorrect. |
+| א(ס) | Aleppo Codex according to Jacob Sapir's notes in Me'orot Nathan | Confirmed | Wikisource, Accordance header | Both sources tie this specifically to Jacob Sapir and Me'orot Nathan. |
 | ב | Ms Or 4445 in the British Library (Torah) | Confirmed | Accordance header, Wikisource | Also appears as כתי״ב in prose contexts. |
 | ב1 | British Library Or. 2375 | Confirmed | JC3 sigil list, MAM-with-doc corpus evidence | Frequently cited in Ketuvim contexts; often described in prose as a Yemenite manuscript. |
 | ק | Cairo Codex of the Prophets | Confirmed | Accordance header, Wikisource | Also appears as כתי״ק in prose contexts. |
+| ק3 | Cairo 18 manuscript (Torah) | Confirmed | Wikisource | Listed there explicitly as כתי״ק3. |
 | ל | Leningrad Codex | Confirmed | Accordance header, Wikisource | Also appears as כתי״ל in prose contexts. |
 | ל1 | Ms Leningrad Firkovich B17 | Confirmed | Accordance header, Wikisource | |
+| ל3 | Ms St. Petersburg EVR-II-B-10 | Confirmed | Wikisource | In the Wikisource appendix, the paired eastern Torah manuscripts `[ל3 ו-ל9]` are then listed as `EVR-II-B-10` and `EVR-II-B-59`; under the stronger Wikisource weighting, that is sufficient here. |
+| ל9 | Ms St. Petersburg EVR-II-B-59 | Confirmed | Wikisource | Wikisource explicitly glosses this as כת״י ל9. |
 | ל34 | Ms EBP. II B 34 in Saint Petersburg | Confirmed | Accordance header, Wikisource | |
 | פטרבורג-EVR-II-B-34 | St. Petersburg Ms EVR-II-B-34 | Confirmed | mgketer test case, MAM-with-doc corpus evidence | Writings manuscript cited in Daniel and related Ketuvim notes. |
 | פטרבורג-EVR-II-B-92 | St. Petersburg Ms EVR-II-B-92 | Confirmed | mgketer test case, MAM-with-doc corpus evidence | Writings manuscript cited in Daniel and related Ketuvim notes. |
@@ -175,6 +181,12 @@ The doc-note preserved in mgketer issue 117 comment 4193477476 is useful here be
 - `ק-מ` is currently treated in this project the same way as `כתי״ק-מ`, even though an older local gloss differed.
 - In the note's textual discussion, BHS is wrong about the Leningrad qere note, while Dotan and BHQ preserve the manuscript situation more accurately. That is a content issue rather than a sigil issue, but it is useful provenance for this test case.
 
+### First High-Priority Backlog Group
+
+The first follow-up pass on the high-priority backlog resolves `א(ס)`, `ק3`, `ל3`, and `ל9`, which are now promoted into the confirmed table above.
+
+The key change in judgment is that Wikisource now carries much more weight than Accordance in this document. On that basis, the Wikisource appendix is sufficient to confirm `ל3 = EVR-II-B-10` and `ל9 = EVR-II-B-59`, even though the local Accordance material happens to expose `L34 = Ms EBP. II B 34` as the cleaner local mapping line.
+
 ### Accordance Y / Hebrew ת / Cambridge Add. 1753
 
 The Accordance header uses `Y` for the manuscript it describes as Cambridge Add. 1753 and explains the Latin letter as standing for Yemenite.
@@ -206,14 +218,10 @@ The inventory is easier to do comprehensively than full translation, and it prov
 
 The raw survey was already done in practical terms: `out/sigil-inventory.json` exists and captures the corpus inventory. What was not yet done was the next curation step of turning that raw inventory into a focused backlog of sigils and closely related forms that still need decoder treatment.
 
-Based on the current inventory pass and a first round of filtering, the main unresolved targets now look like these:
+Based on the current inventory pass, plus the first follow-up decoding pass, the main unresolved targets now look like these:
 
 | Form | Priority | Why it belongs in the target set | Current state |
 |---|---|---|---|
-| ק3 | High | Very frequent authority sigil in expressions near `=` across Torah and beyond. | Undecoded in this document. |
-| ל3 | High | Frequent manuscript sigil in authority lists, often contrasted with ל, ל1, ש1. | Undecoded in this document. |
-| ל9 | High | Frequent manuscript sigil in authority lists, often paired with ל3. | Undecoded in this document. |
-| א(ס) | High | Frequent prose and expression sigil in Aleppo-related notes. | Undecoded in this document. |
 | ב2 | High | Recurrent manuscript sigil in Daniel and related Ketuvim notes alongside ב1 and ק-מ. | Undecoded in this document. |
 | ל-מ | High | Frequent sigil in authority lists; clearly not just free prose. | Still needs a stable decoder entry here. |
 | פטרבורג-EVR-II-B-8 | Medium | Recurrent St. Petersburg manuscript witness in expressions and prose. | Seen repeatedly; not yet documented here. |
