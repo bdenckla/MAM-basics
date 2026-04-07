@@ -146,7 +146,7 @@ The categories below are intentionally conservative.
 
 ## Important Uncertainties And Conflicts
 
-### ק-מ versus כתי״ק-מ
+### ק-מ and כתי״ק-מ
 
 This is a key test case.
 
@@ -157,9 +157,10 @@ This is a key test case.
 Current working conclusion:
 
 - `כתי״ק-מ` should be treated as the manuscript Cambridge Add. 1753.
-- bare `ק-מ` remains unresolved here and must not be flattened to a single meaning without checking context.
+- `ק-מ` should currently be treated the same way in this workstream.
+- The older `Qere-Masora` gloss remains worth preserving as provenance for the disagreement, but it is not the current project decision.
 
-This is exactly the kind of conflict this document must preserve rather than erase.
+This remains a useful example of why provenance matters: the earlier contrary gloss should be recorded, but current translation work should treat these two forms alike unless new evidence forces them apart.
 
 ### Accordance Y / Hebrew ת / Cambridge Add. 1753
 
