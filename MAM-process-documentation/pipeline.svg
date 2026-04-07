@@ -451,12 +451,6 @@
 <path fill="none" stroke="black" d="M887.59,-215.52C898.48,-212.72 909.54,-209.83 920,-207 928.37,-204.74 937.15,-202.3 945.82,-199.84"/>
 <polygon fill="black" stroke="black" points="946.61,-203.25 955.27,-197.15 944.69,-196.52 946.61,-203.25"/>
 </g>
-<!-- mam_xml_copy -->
-<g id="node32" class="node">
-<title>mam_xml_copy</title>
-<polygon fill="none" stroke="black" points="150.25,-597 0,-597 0,-561 150.25,-561 150.25,-597"/>
-<text xml:space="preserve" text-anchor="middle" x="75.12" y="-575.5" font-family="Helvetica,sans-Serif" font-size="10.00">main_mam_simple_copy_py_files</text>
-</g>
 <!-- osis_split -->
 <g id="node33" class="node">
 <title>osis_split</title>

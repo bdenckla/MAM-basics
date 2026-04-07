@@ -6,7 +6,7 @@ Python tools for working with [MAM (Miqra according to the Masora)](https://he.w
 
 ### Core export pipeline
 
-`main_mam_simple.py` reads from the [MAM-parsed](https://github.com/bdenckla/MAM-parsed) sibling repo and produces XML and JSON exports of MAM.
+`main_mam_simple.py` reads from the [MAM-parsed](https://github.com/bdenckla/MAM-parsed) sibling repo, produces XML and JSON exports of MAM, and refreshes the Python support files copied to the MAM-simple sibling repo.
 
 ### Format variants
 
@@ -49,7 +49,6 @@ Python tools for working with [MAM (Miqra according to the Masora)](https://he.w
 
 - `main_gen_misc_authored_english_documents.py` — generates miscellaneous HTML documentation
 - `main_rename_jpeg_scans.py` — renames JPEG scan files by directory structure
-- `main_mam_simple_copy_py_files.py` — copies Python support files to a sibling repo
 - `main_0_mega.py` — meta-orchestrator that runs multiple jobs in sequence
 
 ## Setup

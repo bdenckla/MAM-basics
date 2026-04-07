@@ -7,6 +7,7 @@ Usage (run from repo root):
 """
 
 from py_misc import my_utils_for_mainish as my_utils_fm
+from py_misc import mam_simple_copy_py_files
 from pycmn import read_books_from_mam_parsed_plus as plus
 from py_misc import write_utils_xml
 from py_misc import write_utils_json
@@ -106,6 +107,7 @@ def almost_main(bkids=None):
             survey_for_one_bkg = _do_one_book_group(bkg, books_mpp, variant)
             survey_for_all_bkgs = rts.add(survey_for_all_bkgs, survey_for_one_bkg)
     xml_render.handle_survey_results(bkids, survey_for_all_bkgs)
+    mam_simple_copy_py_files.copy_support_files()
 
 
 def main():
