@@ -187,6 +187,17 @@ The first follow-up pass on the high-priority backlog resolves `א(ס)`, `ק3`, 
 
 The key change in judgment is that Wikisource now carries much more weight than Accordance in this document. On that basis, the Wikisource appendix is sufficient to confirm `ל3 = EVR-II-B-10` and `ל9 = EVR-II-B-59`, even though the local Accordance material happens to expose `L34 = Ms EBP. II B 34` as the cleaner local mapping line.
 
+### ב2
+
+`ב2` is no longer best treated as wholly undecoded, but it is still not ready for the confirmed table.
+
+- In Daniel, MAM-parsed explicitly groups `ק-מ,ב1,ב2` together as `כתבי־היד התימנים`.
+- Across the Daniel corpus, `ב2` repeatedly appears beside `ק-מ` and `ב1` as a parallel Ketuvim witness.
+- That is strong enough for a provisional classification: `ב2` is a Yemenite Ketuvim manuscript, distinct from `ב1`.
+- What is still missing is the decisive catalog-level identification such as a shelfmark or a primary-source sigil glossary entry.
+
+There is also nearby prose in the Ketuvim corpus about additional books written by Benaiah the scribe and his son Joseph, but I do not yet have a secure enough link to assert that this prose specifically identifies `ב2`.
+
 ### Accordance Y / Hebrew ת / Cambridge Add. 1753
 
 The Accordance header uses `Y` for the manuscript it describes as Cambridge Add. 1753 and explains the Latin letter as standing for Yemenite.
@@ -222,7 +233,7 @@ Based on the current inventory pass, plus the first follow-up decoding pass, the
 
 | Form | Priority | Why it belongs in the target set | Current state |
 |---|---|---|---|
-| ב2 | High | Recurrent manuscript sigil in Daniel and related Ketuvim notes alongside ב1 and ק-מ. | Undecoded in this document. |
+| ב2 | High | Recurrent manuscript sigil in Daniel and related Ketuvim notes alongside ב1 and ק-מ. | Provisionally classified as a Yemenite Ketuvim manuscript; exact manuscript identifier still unknown. |
 | ל-מ | High | Frequent sigil in authority lists; clearly not just free prose. | Still needs a stable decoder entry here. |
 | פטרבורג-EVR-II-B-8 | Medium | Recurrent St. Petersburg manuscript witness in expressions and prose. | Seen repeatedly; not yet documented here. |
 | פטרבורג-EVR-II-B-80 | Medium | Recurrent St. Petersburg witness in the corpus. | Seen in examples; not yet documented here. |
