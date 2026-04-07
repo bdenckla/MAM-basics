@@ -99,13 +99,18 @@ The categories below are intentionally conservative.
 | Sigil | Meaning | Status | Main source | Notes |
 |---|---|---|---|---|
 | א | Aleppo Codex | Confirmed | Accordance header, Wikisource | Also appears as כתי״א in prose contexts. |
+| א(ק) | Aleppo Codex according to Yehoshua Kimhi's testimony | Confirmed | JC3 sigil list, mgketer issue 117 comments | This is not Aleppo corroborated by Cairo. The AI gloss that read it that way was incorrect. |
 | ב | Ms Or 4445 in the British Library (Torah) | Confirmed | Accordance header, Wikisource | Also appears as כתי״ב in prose contexts. |
+| ב1 | British Library Or. 2375 | Confirmed | JC3 sigil list, MAM-with-doc corpus evidence | Frequently cited in Ketuvim contexts; often described in prose as a Yemenite manuscript. |
 | ק | Cairo Codex of the Prophets | Confirmed | Accordance header, Wikisource | Also appears as כתי״ק in prose contexts. |
 | ל | Leningrad Codex | Confirmed | Accordance header, Wikisource | Also appears as כתי״ל in prose contexts. |
 | ל1 | Ms Leningrad Firkovich B17 | Confirmed | Accordance header, Wikisource | |
 | ל34 | Ms EBP. II B 34 in Saint Petersburg | Confirmed | Accordance header, Wikisource | |
+| פטרבורג-EVR-II-B-34 | St. Petersburg Ms EVR-II-B-34 | Confirmed | mgketer test case, MAM-with-doc corpus evidence | Writings manuscript cited in Daniel and related Ketuvim notes. |
+| פטרבורג-EVR-II-B-92 | St. Petersburg Ms EVR-II-B-92 | Confirmed | mgketer test case, MAM-with-doc corpus evidence | Writings manuscript cited in Daniel and related Ketuvim notes. |
 | ש | Ms Sassoon 507 | Confirmed | Accordance header, Wikisource | Also appears as כתי״ש in prose contexts. |
 | ש1 | Ms Sassoon 1053 | Confirmed | Accordance header, Wikisource | |
+| ש2 | Ms Sassoon 82 ("Keter Shem Tov") | Confirmed | JC3 sigil list, MAM-with-doc corpus evidence | Often a Sephardic witness in prose explanations. |
 | ת | Ms Cambridge Add. 1753, cited as Y in Accordance | Confirmed | Accordance header | The Hebrew sigil is confirmed in the Accordance header, but see the note below about preferred display form. |
 | ל-א | Ms Petersburg EVR-II-B-55 / B 247 | Confirmed | Wikisource | Newer than the Accordance list. |
 | ק13 | Ms Cambridge T-S 13 | Confirmed | Wikisource | |
@@ -162,6 +167,14 @@ Current working conclusion:
 
 This remains a useful example of why provenance matters: the earlier contrary gloss should be recorded, but current translation work should treat these two forms alike unless new evidence forces them apart.
 
+### Recent Doc-Note Test Case Clarifications
+
+The doc-note preserved in mgketer issue 117 comment 4193477476 is useful here because later comments clarified two points that matter directly for decoder work.
+
+- `א(ק)` means Aleppo according to Yehoshua Kimhi's testimony, not Aleppo corroborated by Cairo.
+- `ק-מ` is currently treated in this project the same way as `כתי״ק-מ`, even though an older local gloss differed.
+- In the note's textual discussion, BHS is wrong about the Leningrad qere note, while Dotan and BHQ preserve the manuscript situation more accurately. That is a content issue rather than a sigil issue, but it is useful provenance for this test case.
+
 ### Accordance Y / Hebrew ת / Cambridge Add. 1753
 
 The Accordance header uses `Y` for the manuscript it describes as Cambridge Add. 1753 and explains the Latin letter as standing for Yemenite.
@@ -188,6 +201,34 @@ That inventory should distinguish at least:
 - sigil-like abbreviations found in prose contexts such as `כתי"ק-מ`
 
 The inventory is easier to do comprehensively than full translation, and it provides the candidate set that translation work then has to resolve.
+
+## Current Inventory-Derived Target Set
+
+The raw survey was already done in practical terms: `out/sigil-inventory.json` exists and captures the corpus inventory. What was not yet done was the next curation step of turning that raw inventory into a focused backlog of sigils and closely related forms that still need decoder treatment.
+
+Based on the current inventory pass and a first round of filtering, the main unresolved targets now look like these:
+
+| Form | Priority | Why it belongs in the target set | Current state |
+|---|---|---|---|
+| ק3 | High | Very frequent authority sigil in expressions near `=` across Torah and beyond. | Undecoded in this document. |
+| ל3 | High | Frequent manuscript sigil in authority lists, often contrasted with ל, ל1, ש1. | Undecoded in this document. |
+| ל9 | High | Frequent manuscript sigil in authority lists, often paired with ל3. | Undecoded in this document. |
+| א(ס) | High | Frequent prose and expression sigil in Aleppo-related notes. | Undecoded in this document. |
+| ב2 | High | Recurrent manuscript sigil in Daniel and related Ketuvim notes alongside ב1 and ק-מ. | Undecoded in this document. |
+| ל-מ | High | Frequent sigil in authority lists; clearly not just free prose. | Still needs a stable decoder entry here. |
+| פטרבורג-EVR-II-B-8 | Medium | Recurrent St. Petersburg manuscript witness in expressions and prose. | Seen repeatedly; not yet documented here. |
+| פטרבורג-EVR-II-B-80 | Medium | Recurrent St. Petersburg witness in the corpus. | Seen in examples; not yet documented here. |
+| פטרבורג-EVR-II-C-1 | Medium | Recurrent St. Petersburg witness in the corpus. | Seen in examples; not yet documented here. |
+| ותיקן-448 | Medium | Recurrent Vatican witness in authority lists. | Seen repeatedly; not yet documented here. |
+
+The same pass also showed that some high-frequency raw candidates are not really new sigils to decode, but rather prose aliases or prefixed forms that should be normalized against existing entries. Important examples include:
+
+- `כתי"ל` and prefixed forms such as `בכתי"ל`
+- prefixed bibliography forms such as `ומג"ה` and `ומ"ש`
+- prefixed masora forms such as `ומסורת-ל` and `ומסורות-א`
+- uncertainty-marked variants such as `ק-מ?`
+
+So the answer to "is the target set already done?" is: the raw survey was already done, but the curated target set was not. The table above is the current first-pass backlog.
 
 ## Related Translation-Policy Questions
 
