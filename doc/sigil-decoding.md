@@ -5,6 +5,26 @@ This document is the shared reference point for decoding sigils, abbreviations, 
 
 It is intended to be a single source in the practical sense that translation work should point here first. It is not intended to present false certainty. When sources disagree, this document should preserve the disagreement and its provenance.
 
+## Role Of This Document
+
+This file is the live working specification for the sigil-decoding workstream.
+
+Maintain here:
+
+- the source hierarchy for decoder work
+- per-sigil and per-abbreviation entries
+- confidence levels, conflicts, and provenance notes
+- the current backlog of unresolved forms
+- workflow notes that directly govern decoder maintenance
+
+Issue 6 remains useful, but in a different role. It should track why this workstream exists, what broader translation questions it connects to, and what larger milestones or open decisions still need attention.
+
+Redundancy is acceptable when it is deliberate:
+
+- issue 6 may repeat the names of important source families and major current conclusions
+- this file should hold the detailed and actively maintained version
+- if issue 6 and this file ever drift, treat this file as the current decoder authority and then repair the issue summary
+
 ## Scope
 
 This document covers:
@@ -73,8 +93,9 @@ The main sources currently identified are:
 
 1. Wikisource appendices:
    https://he.wikisource.org/wiki/ויקיטקסט:מבוא_למקרא_על_פי_המסורה/נספחים
-2. Additional external reference mentioned from issue 5 comments:
-   the JC3 sigil list in the holman-ketiv-qere material
+2. JC3 sigil list in the holman-ketiv-qere material:
+   `../holman-ketiv-qere/docs/JC3 The Biblical Text in the JC Edition #19-ז - English.html`
+   `../holman-ketiv-qere/docs/JC3 The Biblical Text in the JC Edition #19-ז.html`
 3. MAM-for-Acc Accordance header:
    `../MAM-for-Acc/in/01.Aleppo Codex Apparatus.header.html`
 4. MAM-for-Acc translation/support code:
@@ -108,6 +129,7 @@ The categories below are intentionally conservative.
 | ק | Cairo Codex of the Prophets | Confirmed | Accordance header, Wikisource | Also appears as כתי״ק in prose contexts. |
 | ק3 | Cairo 18 manuscript (Torah) | Confirmed | Wikisource | Listed there explicitly as כתי״ק3. |
 | ל | Leningrad Codex | Confirmed | Accordance header, Wikisource | Also appears as כתי״ל in prose contexts. |
+| ל-מ | Masorah Gedolah to the Torah by Samuel ben Jacob, in the Lehmann manuscript | Confirmed | JC3 sigil list | JC3 writes this as `ל` with superscript `מ`; in the MAM corpus it commonly appears as `ל-מ`. |
 | ל1 | Ms Leningrad Firkovich B17 | Confirmed | Accordance header, Wikisource | |
 | ל3 | Ms St. Petersburg EVR-II-B-10 | Confirmed | Wikisource | In the Wikisource appendix, the paired eastern Torah manuscripts `[ל3 ו-ל9]` are then listed as `EVR-II-B-10` and `EVR-II-B-59`; under the stronger Wikisource weighting, that is sufficient here. |
 | ל9 | Ms St. Petersburg EVR-II-B-59 | Confirmed | Wikisource | Wikisource explicitly glosses this as כת״י ל9. |
@@ -198,6 +220,16 @@ The key change in judgment is that Wikisource now carries much more weight than 
 
 There is also nearby prose in the Ketuvim corpus about additional books written by Benaiah the scribe and his son Joseph, but I do not yet have a secure enough link to assert that this prose specifically identifies `ב2`.
 
+### ל-מ
+
+`ל-מ` no longer belongs in the unresolved bucket at all.
+
+- The local JC3 abbreviation key gives an explicit entry for `למ`: `Masorah Gedolah to the Torah by Samuel ben Jacob, in the Lehmann ms., ed. M. Breuer, New York 1992; facsimile edition, Jerusalem 2002`.
+- That fits the MAM corpus well, especially notes that say Samuel ben Jacob wrote one reading in `ל-מ` and a different one in `ל`.
+- It also explains why MAM prose sometimes cites `כתי"ל-מ` and sometimes uses `ל-מ(צילום)`: the corpus notation appears to flatten JC3's superscript form into a hyphenated inline sigil, and sometimes discusses the photographic access to that source.
+
+Current working conclusion: `ל-מ` in this workstream should be treated as the Lehmann-manuscript Masorah Gedolah source from JC3, not merely as an ad hoc photographic label for Leningrad.
+
 ### Accordance Y / Hebrew ת / Cambridge Add. 1753
 
 The Accordance header uses `Y` for the manuscript it describes as Cambridge Add. 1753 and explains the Latin letter as standing for Yemenite.
@@ -234,7 +266,6 @@ Based on the current inventory pass, plus the first follow-up decoding pass, the
 | Form | Priority | Why it belongs in the target set | Current state |
 |---|---|---|---|
 | ב2 | High | Recurrent manuscript sigil in Daniel and related Ketuvim notes alongside ב1 and ק-מ. | Provisionally classified as a Yemenite Ketuvim manuscript; exact manuscript identifier still unknown. |
-| ל-מ | High | Frequent sigil in authority lists; clearly not just free prose. | Still needs a stable decoder entry here. |
 | פטרבורג-EVR-II-B-8 | Medium | Recurrent St. Petersburg manuscript witness in expressions and prose. | Seen repeatedly; not yet documented here. |
 | פטרבורג-EVR-II-B-80 | Medium | Recurrent St. Petersburg witness in the corpus. | Seen in examples; not yet documented here. |
 | פטרבורג-EVR-II-C-1 | Medium | Recurrent St. Petersburg witness in the corpus. | Seen in examples; not yet documented here. |
@@ -268,4 +299,6 @@ Current inclination recorded for experimentation:
 - Update this file when a new sigil or abbreviation is discovered in the corpus.
 - When adding an item, record the source that supports it.
 - If two sources conflict, add both and mark the item as conflicting.
+- Update issue 6 when the workstream scope, milestone picture, or major source landscape changes.
+- Do not mirror every per-sigil change into issue 6; reserve issue updates for summary-level changes that matter outside this file.
 - Avoid silently changing a status from provisional to confirmed without adding the supporting source.
