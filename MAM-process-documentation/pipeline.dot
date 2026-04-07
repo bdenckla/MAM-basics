@@ -43,7 +43,7 @@ digraph mam_pipeline {
     ws_bot_proto [label="main_ws_bot_proto"];
     ws_bot       [label="main_ws_bot\n(live edits)"];
     gen_docs     [label="main_gen_misc_authored_english_documents"];
-    mam_xml_copy [label="main_mam_xml_copy_py_files"];
+    mam_xml_copy [label="main_mam_simple_copy_py_files"];
     osis_split   [label="main_osis_split_mapm"];
 
     // ── Edges ──

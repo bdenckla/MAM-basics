@@ -26,7 +26,7 @@ import main_mam_simple
 import main_mam4sef
 import main_mam4ajf
 import main_osis
-import main_mam_xml_copy_py_files
+import main_mam_simple_copy_py_files
 
 _STEPS = [
     (
@@ -54,7 +54,7 @@ _STEPS = [
     (main_parse_ws, "relies on download of ws"),
     (main_ws_bot_proto, "relies on download of ws"),
     (main_gen_misc_authored_english_documents, None),
-    (main_mam_xml_copy_py_files, None),
+    (main_mam_simple_copy_py_files, None),
 ]
 
 _STEP_NAMES = [mod.__name__ for mod, _comment in _STEPS]
