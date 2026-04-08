@@ -7,7 +7,6 @@ from py_misc import mwd_utils as mwdu
 from py_misc import my_html
 from py_misc import two_col_css_styles as tcstyles
 
-from pyfoi import foiz_wt_pasoleg_1 as foi_pasoleg_1
 from pyfoi import pasoleg_1_labels
 from pyfoi import foi_struct as fct
 from pyfoi import tsinnorit_explanations as tsinnorit_e
@@ -28,12 +27,10 @@ def write(args_foi, all_fois):
     It turns the all_fois structure into the final output files.
     """
     auto_outspecs = _auto_outspecs(all_fois)
-    jacobson_outspec = "jacobson-pasoleg-1", foi_pasoleg_1.jacobson_features()
-    all_outspecs = [*auto_outspecs, jacobson_outspec]
     tcstyles.make_css_file_for_mwd(f"{_OUT_DIR_PATH}/{_CSS_HREF}")
     if not args_foi:
-        _write_index_dot_html(all_outspecs)
-    for outspec in all_outspecs:
+        _write_index_dot_html(auto_outspecs)
+    for outspec in auto_outspecs:
         _write_finals3(args_foi, all_fois, outspec)
 
 
@@ -308,7 +305,6 @@ def _label_explanation_para(tuple_foi_path, explanation):
 _EXPLANATIONS = {
     "avva-alef-vav": avva_e.EXPLANATIONS_ALEF_VAV,
     "avva-vav-alef": avva_e.EXPLANATIONS_VAV_ALEF,
-    "jacobson-pasoleg-1": pasoleg_1_labels.explanation_for_path,
     "oleh-yored": ole_yored_e.EXPLANATIONS,
     "pasoleg-1": pasoleg_1_labels.explanation_for_path,
     "sec-merk": sec_merk_e.EXPLANATIONS,

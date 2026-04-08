@@ -195,17 +195,6 @@ def _run_el_is_final(run_el):
     return f_nf == "run_el-final"
 
 
-def jacobson_features():
-    shorts = (
-        pasoleg_1_labels.revia_label(("da", "⅃")),
-        pasoleg_1_labels.munpas_pazer_label(("⅃", "⅃")),
-        pasoleg_1_labels.munpas_pazer_label(("⅃", "⅃-pas")),
-        "⅃-pas-⅃",
-    )
-    longs = tuple(("pasoleg-1", short) for short in shorts)
-    return longs
-
-
 _HANDLERS = {
     **wt_qere.HANDLERS,
     "מ:קמץ": wt_qere.hnd_recurse_on_param_dalet,
