@@ -12,6 +12,7 @@ from pyfoi import foi_struct as fct
 from pyfoi import tsinnorit_explanations as tsinnorit_e
 from pyfoi import ole_yored_explanations as ole_yored_e
 from pyfoi import sec_yyy_explanations as sec_merk_e
+from pyfoi import avva_explanations as avva_e
 
 # XXX TODO show a "table of contents"
 # XXX TODO show friendlier descriptions of the FOIs
@@ -272,19 +273,36 @@ def _intro_contents(sfp, part_n, the_id):
 
 
 def _head1b(tuple_foi_path):
-    explanation_dic = _EXPLANATIONS.get(tuple_foi_path[0])
-    if explanation_dic is None:
-        return []
-    explanation = explanation_dic.get(tuple_foi_path[1:])
+    explanation = _explanation_for_foi_path(tuple_foi_path)
     if explanation is None:
         # print(f"Warning: no explanation for {tuple_foi_path}")
         return []
+    if isinstance(explanation, str):
+        return [_label_explanation_para(tuple_foi_path, explanation)]
+    label = explanation.get("label")
+    paras = []
+    if label is not None:
+        paras.append(_label_explanation_para(tuple_foi_path, label))
+    paras.extend(my_html.para(paragraph) for paragraph in explanation.get("paras", ()))
+    return paras
+
+
+def _explanation_for_foi_path(tuple_foi_path):
+    explanation_dic = _EXPLANATIONS.get(tuple_foi_path[0])
+    if explanation_dic is None:
+        return None
+    return explanation_dic.get(tuple_foi_path[1:])
+
+
+def _label_explanation_para(tuple_foi_path, explanation):
     sfp = _slash_str_from_path_parts(tuple_foi_path[1:])
     full_exp = f"(The label «{sfp}» means {explanation}.)"
-    return [my_html.para(full_exp)]
+    return my_html.para(full_exp)
 
 
 _EXPLANATIONS = {
+    "avva-alef-vav": avva_e.EXPLANATIONS_ALEF_VAV,
+    "avva-vav-alef": avva_e.EXPLANATIONS_VAV_ALEF,
     "tsinnorit": tsinnorit_e.EXPLANATIONS,
     "oleh-yored": ole_yored_e.EXPLANATIONS,
     "sec-merk": sec_merk_e.EXPLANATIONS,
