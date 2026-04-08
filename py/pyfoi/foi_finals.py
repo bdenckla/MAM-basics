@@ -8,6 +8,7 @@ from py_misc import my_html
 from py_misc import two_col_css_styles as tcstyles
 
 from pyfoi import foiz_wt_pasoleg_1 as foi_pasoleg_1
+from pyfoi import pasoleg_1_labels
 from pyfoi import foi_struct as fct
 from pyfoi import tsinnorit_explanations as tsinnorit_e
 from pyfoi import ole_yored_explanations as ole_yored_e
@@ -278,6 +279,7 @@ def _head1b(tuple_foi_path):
         explanation = _auto_explanation_for_foi_path(tuple_foi_path)
     if isinstance(explanation, str):
         return [_label_explanation_para(tuple_foi_path, explanation)]
+    assert isinstance(explanation, dict), explanation
     label = explanation.get("label")
     paras = []
     if label is not None:
@@ -287,10 +289,12 @@ def _head1b(tuple_foi_path):
 
 
 def _explanation_for_foi_path(tuple_foi_path):
-    explanation_dic = _EXPLANATIONS.get(tuple_foi_path[0])
-    if explanation_dic is None:
+    explanation_source = _EXPLANATIONS.get(tuple_foi_path[0])
+    if explanation_source is None:
         return None
-    return explanation_dic.get(tuple_foi_path[1:])
+    if callable(explanation_source):
+        return explanation_source(tuple_foi_path[1:])
+    return explanation_source.get(tuple_foi_path[1:])
 
 
 def _auto_explanation_for_foi_path(tuple_foi_path):
@@ -303,13 +307,16 @@ def _auto_explanation_for_foi_path(tuple_foi_path):
                 "without any finer-grained sublabel"
             )
         }
-    out = {
-        "label": f"that this section groups {family_name} cases under this fine-grained label"
-    }
+    label = (
+        f"that this section groups {family_name} cases under this fine-grained label"
+    )
     if len(path_parts) > 1:
         quoted_parts = ", ".join(map(_quoted, path_parts))
-        out["paras"] = (f"The slash-separated path parts here are {quoted_parts}.",)
-    return out
+        return {
+            "label": label,
+            "paras": (f"The slash-separated path parts here are {quoted_parts}.",),
+        }
+    return {"label": label}
 
 
 def _family_display_name(outfile_stem):
@@ -331,9 +338,11 @@ def _label_explanation_para(tuple_foi_path, explanation):
 _EXPLANATIONS = {
     "avva-alef-vav": avva_e.EXPLANATIONS_ALEF_VAV,
     "avva-vav-alef": avva_e.EXPLANATIONS_VAV_ALEF,
-    "tsinnorit": tsinnorit_e.EXPLANATIONS,
+    "jacobson-pasoleg-1": pasoleg_1_labels.explanation_for_path,
     "oleh-yored": ole_yored_e.EXPLANATIONS,
+    "pasoleg-1": pasoleg_1_labels.explanation_for_path,
     "sec-merk": sec_merk_e.EXPLANATIONS,
+    "tsinnorit": tsinnorit_e.EXPLANATIONS,
 }
 
 

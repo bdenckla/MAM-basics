@@ -5,6 +5,7 @@ from pycmn import uni_heb_2 as u2
 from pycmn import hebrew_accents as ha
 from pycmn import hebrew_punctuation as hpu
 from py_misc import wt_qere
+from pyfoi import pasoleg_1_labels
 from pycmn.my_utils import sl_map
 from pycmn.my_utils import sum_of_map
 
@@ -63,48 +64,38 @@ def _simplify(irps):  # irp: idx/run_el pair; irps: many irp
     return irps[0][0], list(pair[1] for pair in irps)
 
 
-def _revia(mid):
-    return _feat("⅃-leg", u2.REV, mid)
-
-
-def _non_revia(stop, mid):
-    return _feat("⅃-leg", f"non-revia ({stop})", mid)
-
-
-def _munpas_pazer(mid):
-    return _feat("⅃-pas", u2.PAZ, mid)
-
-
-def _feat(start, stop, mid):
-    return f"{start}...{stop} with {mid} intervening"
-
-
 _RUN_TO_FEATURE = {
     ("sh-leg",): "shalshelet",
     #
-    ("⅃-leg", u2.REV): _revia("0"),
-    ("⅃-leg", u2.MUN, u2.REV): _revia("1 ⅃"),
-    ("⅃-leg", "⅃-leg", u2.MUN, u2.REV): _revia("2 (⅃-leg,⅃)"),
-    ("⅃-leg", u2.DAR, u2.MUN, u2.REV): _revia("2 (da,⅃)"),
+    ("⅃-leg", u2.REV): pasoleg_1_labels.revia_label(),
+    ("⅃-leg", u2.MUN, u2.REV): pasoleg_1_labels.revia_label(("⅃",)),
+    ("⅃-leg", "⅃-leg", u2.MUN, u2.REV): pasoleg_1_labels.revia_label(("⅃-leg", "⅃")),
+    ("⅃-leg", u2.DAR, u2.MUN, u2.REV): pasoleg_1_labels.revia_label(("da", "⅃")),
     #
-    ("⅃-leg", u2.MAH, u2.PASH): _non_revia("p", "1 " + u2.MAH),
-    ("⅃-leg", u2.MAH, u2.PASH, u2.PASH): _non_revia("p", "1 " + u2.MAH),
+    ("⅃-leg", u2.MAH, u2.PASH): pasoleg_1_labels.non_revia_label("p", ("mah",)),
+    ("⅃-leg", u2.MAH, u2.PASH, u2.PASH): pasoleg_1_labels.non_revia_label(
+        "p", ("mah",)
+    ),
     #
-    ("⅃-leg", u2.QOM, u2.DAR, u2.TEV): _non_revia(u2.TEV, "2 (qa,da)"),
+    ("⅃-leg", u2.QOM, u2.DAR, u2.TEV): pasoleg_1_labels.non_revia_label(
+        "tev", ("qa", "da")
+    ),
     #
-    ("⅃-leg", u2.QOM, u2.GER): _non_revia("ge", "1 qa"),
+    ("⅃-leg", u2.QOM, u2.GER): pasoleg_1_labels.non_revia_label("ge", ("qa",)),
     #
-    ("⅃-leg", u2.PAZ): _non_revia(u2.PAZ, "0"),
-    (u2.MER, "⅃-leg", u2.PAZ): _non_revia(u2.PAZ, "0"),
+    ("⅃-leg", u2.PAZ): pasoleg_1_labels.non_revia_label("paz"),
+    (u2.MER, "⅃-leg", u2.PAZ): pasoleg_1_labels.non_revia_label("paz"),
     #
     ("⅃-pas", u2.REV): "⅃-pas," + u2.REV,
     #
-    ("⅃-pas", u2.MUN, u2.MUN, u2.PAZ): _munpas_pazer("2 (⅃,⅃)"),
-    ("⅃-pas", u2.MUN, "⅃-pas", u2.PAZ): _munpas_pazer("2 (⅃,⅃-pas)"),
+    ("⅃-pas", u2.MUN, u2.MUN, u2.PAZ): pasoleg_1_labels.munpas_pazer_label(("⅃", "⅃")),
+    ("⅃-pas", u2.MUN, "⅃-pas", u2.PAZ): pasoleg_1_labels.munpas_pazer_label(
+        ("⅃", "⅃-pas")
+    ),
     ("⅃-pas", "⅃-pas", u2.MUN, u2.YBY): "⅃-pas-⅃",
     ("⅃-pas", u2.MUN, u2.TEL_Q): "⅃-pas-⅃",
     #
-    ("⅃-pas", u2.PAZ): _munpas_pazer("0"),
+    ("⅃-pas", u2.PAZ): pasoleg_1_labels.munpas_pazer_label(),
     ("⅃-pas", u2.ATN): None,
     ("⅃-pas", u2.SEG_A): None,
     ("⅃-pas", u2.Z_OR_TSOR): None,
@@ -118,7 +109,9 @@ _RUN_TO_FEATURE = {
     ("⅃-pas", u2.TEL_G, u2.TEL_G): None,
     ("⅃-pas", u2.SEG_A, u2.SEG_A): None,
     ("⅃-pas", u2.TEL_Q, u2.TEL_Q): None,
-    ("⅃-pas", "⅃-pas", u2.PAZ): _munpas_pazer("⅃-pas"),
+    ("⅃-pas", "⅃-pas", u2.PAZ): pasoleg_1_labels.munpas_pazer_label(
+        ("⅃-pas",), style="bare"
+    ),
     ("⅃-pas", "⅃-pas", u2.YBY): None,
     ("⅃-pas", "⅃-pas", u2.TEL_G, u2.TEL_G): None,
 }
@@ -204,9 +197,9 @@ def _run_el_is_final(run_el):
 
 def jacobson_features():
     shorts = (
-        _revia("2 (da,⅃)"),
-        _munpas_pazer("2 (⅃,⅃)"),
-        _munpas_pazer("2 (⅃,⅃-pas)"),
+        pasoleg_1_labels.revia_label(("da", "⅃")),
+        pasoleg_1_labels.munpas_pazer_label(("⅃", "⅃")),
+        pasoleg_1_labels.munpas_pazer_label(("⅃", "⅃-pas")),
         "⅃-pas-⅃",
     )
     longs = tuple(("pasoleg-1", short) for short in shorts)

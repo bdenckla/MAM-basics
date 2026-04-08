@@ -2,7 +2,7 @@
 EXPLANATIONS_ALEF_VAV = {
     (
         "a-misc",
-    ): "that the word contains alef-vav-holam and does not fall under any of b-ot, c-m.lot, c-smol, or c-xatot",
+    ): "that the word contains alef-vav-ḥolam and does not fall under any of b-ot, c-m.lot, c-smol, or c-xatot",
     (
         "d-alef-no-rafe-shuruq",
     ): "that the word contains a quiescent alef followed immediately by shuruq, with no rafeh on the alef",
@@ -15,7 +15,7 @@ EXPLANATIONS_ALEF_VAV = {
 EXPLANATIONS_VAV_ALEF = {
     (
         "a-misc",
-    ): "that the word contains vav-holam-alef and does not fall under a-misc/2 or b-not-final",
+    ): "that the word contains vav-ḥolam-alef and does not fall under a-misc/2 or b-not-final",
     ("c-shuruq-alef",): {
         "label": "that the word contains shuruq followed immediately by a quiescent alef",
         "paras": (
