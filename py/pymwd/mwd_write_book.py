@@ -131,6 +131,6 @@ def write_book(ecb, books_mpp, out_paths):
 
 _RENOPTS_MAM_WITH_DOC = {
     "ro_no_slh_word": True,
-    "ro_trivial_qere_to_doc": True,
+    "ro_trivial_ketiv_qere_to_doc": True,
     "ro_scrdfftar_to_doc": True,
 }

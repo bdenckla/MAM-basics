@@ -41,11 +41,11 @@ infrastructure has changed enough to make them misleading examples:
 - **Purpose:** Preparatory work for upgrading legarmeh representation.
   Never reached a complete bot edit in this era.
 
-### Trivial qere
+### Trivial ketiv/qere
 - **Commit:** `82f55adc`
 - **Purpose:** Added explicit `2=` prefix to the second argument of
-  `{{קו"כ-אם}}` (ketiv-uqre-im) templates, disambiguating positional
-  from named parameters.
+  `{{קו"כ-אם}}` (trivial ketiv/qere) templates, disambiguating
+  positional from named parameters.
 - **Edit level:** Verse-body templates via the wandler dispatch table.
 
 ### x-velo-y (ketiv-velo-qere / qere-velo-ketiv)

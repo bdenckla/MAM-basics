@@ -36,7 +36,7 @@ def render_wtseq(hctx: Hctx, wtseq):
     newseq = wtseq
     if get_renopt(hctx, "ro_scrdfftar_to_doc"):
         newseq = scrdfftar_to_doc.convert(newseq)
-    if get_renopt(hctx, "ro_trivial_qere_to_doc"):
+    if get_renopt(hctx, "ro_trivial_ketiv_qere_to_doc"):
         newseq = trivial_qere_to_doc.convert(hctx.bcvt, newseq, hctx.io_renlog)
     handled_elements = my_utils.st_map((_handle_wikitext_element, hctx), newseq)
     het = map(_tuplify, handled_elements)
