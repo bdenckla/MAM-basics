@@ -134,6 +134,7 @@ The categories below are intentionally conservative.
 | ל3 | Ms St. Petersburg EVR-II-B-10 | Confirmed | Wikisource | In the Wikisource appendix, the paired eastern Torah manuscripts `[ל3 ו-ל9]` are then listed as `EVR-II-B-10` and `EVR-II-B-59`; under the stronger Wikisource weighting, that is sufficient here. |
 | ל9 | Ms St. Petersburg EVR-II-B-59 | Confirmed | Wikisource | Wikisource explicitly glosses this as כת״י ל9. |
 | ל34 | Ms EBP. II B 34 in Saint Petersburg | Confirmed | Accordance header, Wikisource | |
+| פטרבורג-EVR-II-B-8 | St. Petersburg Ms EVR-II-B-8 | Confirmed | MAM-with-doc corpus evidence | The shelfmark is already explicit in the corpus form; sometimes written without the first hyphen as `פטרבורגEVR-II-B-8`. |
 | פטרבורג-EVR-II-B-34 | St. Petersburg Ms EVR-II-B-34 | Confirmed | mgketer test case, MAM-with-doc corpus evidence | Writings manuscript cited in Daniel and related Ketuvim notes. |
 | פטרבורג-EVR-II-B-92 | St. Petersburg Ms EVR-II-B-92 | Confirmed | mgketer test case, MAM-with-doc corpus evidence | Writings manuscript cited in Daniel and related Ketuvim notes. |
 | ש | Ms Sassoon 507 | Confirmed | Accordance header, Wikisource | Also appears as כתי״ש in prose contexts. |
@@ -267,7 +268,6 @@ Based on the current inventory pass, plus the first follow-up decoding pass, the
 | Form | Priority | Why it belongs in the target set | Current state |
 |---|---|---|---|
 | ב2 | High | Recurrent manuscript sigil in Daniel and related Ketuvim notes alongside ב1 and ק-מ. | Provisionally classified as a Yemenite Ketuvim manuscript; exact manuscript identifier still unknown, and not yet shown to be identical with `ת451`. |
-| פטרבורג-EVR-II-B-8 | Medium | Recurrent St. Petersburg manuscript witness in expressions and prose. | Seen repeatedly; not yet documented here. |
 | פטרבורג-EVR-II-B-80 | Medium | Recurrent St. Petersburg witness in the corpus. | Seen in examples; not yet documented here. |
 | פטרבורג-EVR-II-C-1 | Medium | Recurrent St. Petersburg witness in the corpus. | Seen in examples; not yet documented here. |
 | ותיקן-448 | Medium | Recurrent Vatican witness in authority lists. | Seen repeatedly; not yet documented here. |
