@@ -137,6 +137,7 @@ The categories below are intentionally conservative.
 | ל34 | Ms EBP. II B 34 in Saint Petersburg | Confirmed | Accordance header, Wikisource | |
 | פטרבורג-EVR-II-B-8 | St. Petersburg Ms EVR-II-B-8 | Confirmed | MAM-with-doc corpus evidence | The shelfmark is already explicit in the corpus form; sometimes written without the first hyphen as `פטרבורגEVR-II-B-8`. |
 | פטרבורג-EVR-II-B-80 | St. Petersburg Ms EVR-II-B-80 | Confirmed | MAM-with-doc corpus evidence | The shelfmark is already explicit in the corpus form; sometimes written without the first hyphen as `פטרבורגEVR-II-B-80`, often with folio references such as `(8ב)` and `(16א)`. |
+| פטרבורג-EVR-II-C-1 | St. Petersburg Ms EVR-II-C-1 | Confirmed | MAM-with-doc corpus evidence | The shelfmark is already explicit in the corpus form; sometimes written without the first hyphen as `פטרבורגEVR-II-C-1`, often with folio references such as `(73א)`, `(76ב)`, and `(95א)`. |
 | פטרבורג-EVR-II-B-34 | St. Petersburg Ms EVR-II-B-34 | Confirmed | mgketer test case, MAM-with-doc corpus evidence | Writings manuscript cited in Daniel and related Ketuvim notes. |
 | פטרבורג-EVR-II-B-92 | St. Petersburg Ms EVR-II-B-92 | Confirmed | mgketer test case, MAM-with-doc corpus evidence | Writings manuscript cited in Daniel and related Ketuvim notes. |
 | ש | Ms Sassoon 507 | Confirmed | Accordance header, Wikisource | Also appears as כתי״ש in prose contexts. |
@@ -270,7 +271,6 @@ Based on the current inventory pass, plus the first follow-up decoding pass, the
 | Form | Priority | Why it belongs in the target set | Current state |
 |---|---|---|---|
 | ב2 | High | Recurrent manuscript sigil in Daniel and related Ketuvim notes alongside ב1 and ק-מ. | Provisionally classified as a Yemenite Ketuvim manuscript; exact manuscript identifier still unknown, and not yet shown to be identical with `ת451`. |
-| פטרבורג-EVR-II-C-1 | Medium | Recurrent St. Petersburg witness in the corpus. | Seen in examples; not yet documented here. |
 
 The same pass also showed that some high-frequency raw candidates are not really new sigils to decode, but rather prose aliases or prefixed forms that should be normalized against existing entries. Important examples include:
 
