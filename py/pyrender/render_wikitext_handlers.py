@@ -231,14 +231,16 @@ def _map_doc_target_to_doc_lemma(doc_target_wtseq):
     return None
 
 
-def _handle_kq_trivial_qere(hctx, tmpl):
+def _handle_kq_trivial(hctx, tmpl):
     """
-    Handle a ketiv/qere that is trivial: contains only a qere and a note.
+    Handle a trivial ketiv/qere: it contains only a pointed ketiv and a
+    structured note, e.g. ל-קרי=שִׁיל֔וֹ, describing the trivially different
+    pointed qere.
     """
     assert wtp.template_len(tmpl) == 3
-    qere = wt_help.render_tmpl_el(hctx, tmpl, 1)
-    # note = wt_help.render_tmpl_el(hctx, tmpl, 2)  # e.g. ל-קרי=חֲטָאָֽיו.
-    return renel.mk_ren_el_tc("mam-kq-trivial", qere)
+    pointed_ketiv = wt_help.render_tmpl_el(hctx, tmpl, 1)
+    # structured_note = wt_help.render_tmpl_el(hctx, tmpl, 2)
+    return renel.mk_ren_el_tc("mam-kq-trivial", pointed_ketiv)
 
 
 def _doc_parts_subhandler(hctx: wt_help.Hctx, doc_parts_wtseqs):
@@ -454,7 +456,7 @@ _MASK_ECL = "ecl"
 _MASK_ELP = "elp"
 _HANDLER_SPECS_FOR_KETIV_QERE = {
     **tmpln.map_all_std_kq_to_a_constant({_MASK_EL: kq.handle_kq}),
-    'קו"כ-אם': {_MASK_EL: _handle_kq_trivial_qere},
+    'קו"כ-אם': {_MASK_EL: _handle_kq_trivial},
     "קרי ולא כתיב": {_MASK_EL: kq.handle_kq_qere_velo_ketiv},
     "כתיב ולא קרי": {_MASK_EL: kq.handle_kq_ketiv_velo_qere},
 }
