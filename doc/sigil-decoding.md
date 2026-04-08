@@ -216,9 +216,10 @@ The key change in judgment is that Wikisource now carries much more weight than 
 - In Daniel, MAM-parsed explicitly groups `ק-מ,ב1,ב2` together as `כתבי־היד התימנים`.
 - Across the Daniel corpus, `ב2` repeatedly appears beside `ק-מ` and `ב1` as a parallel Ketuvim witness.
 - That is strong enough for a provisional classification: `ב2` is a Yemenite Ketuvim manuscript, distinct from `ב1`.
+- The source-layer material also contains explicit references to `ת451` in Daniel and other Ketuvim notes, which is an important caution: current evidence does not justify collapsing `ב2` into `ת451`.
 - What is still missing is the decisive catalog-level identification such as a shelfmark or a primary-source sigil glossary entry.
 
-There is also nearby prose in the Ketuvim corpus about additional books written by Benaiah the scribe and his son Joseph, but I do not yet have a secure enough link to assert that this prose specifically identifies `ב2`.
+There is also nearby prose in the Ketuvim corpus about additional books written by Benaiah the scribe and his son Joseph, but I do not yet have a secure enough link to assert that this prose specifically identifies `ב2`; at this point it is safer to treat those prose mentions as contextual evidence about the Yemenite witness cluster, not as a firm decoding of `ב2` itself.
 
 ### ל-מ
 
@@ -265,7 +266,7 @@ Based on the current inventory pass, plus the first follow-up decoding pass, the
 
 | Form | Priority | Why it belongs in the target set | Current state |
 |---|---|---|---|
-| ב2 | High | Recurrent manuscript sigil in Daniel and related Ketuvim notes alongside ב1 and ק-מ. | Provisionally classified as a Yemenite Ketuvim manuscript; exact manuscript identifier still unknown. |
+| ב2 | High | Recurrent manuscript sigil in Daniel and related Ketuvim notes alongside ב1 and ק-מ. | Provisionally classified as a Yemenite Ketuvim manuscript; exact manuscript identifier still unknown, and not yet shown to be identical with `ת451`. |
 | פטרבורג-EVR-II-B-8 | Medium | Recurrent St. Petersburg manuscript witness in expressions and prose. | Seen repeatedly; not yet documented here. |
 | פטרבורג-EVR-II-B-80 | Medium | Recurrent St. Petersburg witness in the corpus. | Seen in examples; not yet documented here. |
 | פטרבורג-EVR-II-C-1 | Medium | Recurrent St. Petersburg witness in the corpus. | Seen in examples; not yet documented here. |
