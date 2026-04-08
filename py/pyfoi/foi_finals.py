@@ -13,6 +13,7 @@ from pyfoi import tsinnorit_explanations as tsinnorit_e
 from pyfoi import ole_yored_explanations as ole_yored_e
 from pyfoi import sec_yyy_explanations as sec_merk_e
 from pyfoi import avva_explanations as avva_e
+from pyfoi import kq_complex_explanations as kq_complex_e
 
 # XXX TODO show a "table of contents"
 # XXX TODO show friendlier descriptions of the FOIs
@@ -305,6 +306,7 @@ def _label_explanation_para(tuple_foi_path, explanation):
 _EXPLANATIONS = {
     "avva-alef-vav": avva_e.EXPLANATIONS_ALEF_VAV,
     "avva-vav-alef": avva_e.EXPLANATIONS_VAV_ALEF,
+    "kq-complex": kq_complex_e.explanation_for_path,
     "oleh-yored": ole_yored_e.EXPLANATIONS,
     "pasoleg-1": pasoleg_1_labels.explanation_for_path,
     "sec-merk": sec_merk_e.EXPLANATIONS,

@@ -37,7 +37,7 @@ _FOI_PATH = {
     "kq-q-velo-k": "x-velo-y-q-velo-k",
     "kq-k-velo-q": "x-velo-y-k-velo-q",
     "k1q1-kq": "k1q1",
-    "k1q1-qk": "k1q1←",
+    "k1q1-qk": "k1q1-qk",
     "k1q1-mcom": "k1q1-mcom",
     "k1q2-sr-kqq": "k1q2sr",
     "k1q2-sr-qqk": "k1q2sr",

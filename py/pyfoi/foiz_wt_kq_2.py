@@ -146,11 +146,7 @@ _FEATURES = {
     #
     (hpu.SOPA,): None,
     #
-    ("paseq", "k1q1-kq"): (_KQ0, "k1q1-after-paseq"),
     ("paseq", "k1q1-qk"): (_KQ0, "k1q1-qk-after-paseq"),
-    ("paseq", "paseq", "k1q1-kq"): (_KQ0, "k1q1-after-paseq"),
-    # Above, we ignore the ×2 paseq, lumping it in a
-    # single category, k1q1-after-paseq.
     ("k1q1-kq", " ", "k1q1-kq"): (_KQ0, "k1q1×2"),
     ("k1q1-kq", " ", "k1q1-kq", hpu.SOPA): (_KQ0, "k1q1×2"),
     ("k1q1-kq", " ", "k1q1-kq", " ", "k1q1-kq"): (_KQ0, "k1q1×3"),
