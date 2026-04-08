@@ -218,9 +218,13 @@ The key change in judgment is that Wikisource now carries much more weight than 
 `ב2` is no longer best treated as wholly undecoded, but it is still not ready for the confirmed table.
 
 - In Daniel, MAM-parsed explicitly groups `ק-מ,ב1,ב2` together as `כתבי־היד התימנים`.
-- Across the Daniel corpus, `ב2` repeatedly appears beside `ק-מ` and `ב1` as a parallel Ketuvim witness.
+- Daniel 8:2 is especially useful because the prose note itself says `וכמו כן בכתבי־היד התימנים (ק-מ,ב1,ב2)`.
+- The current inventory output tracks 27 real authority-expression occurrences of `ב2`, and they are Daniel occurrences.
+- Across those Daniel occurrences, `ב2` repeatedly appears beside `ק-מ` and `ב1` as a parallel witness.
+- The Daniel notes also preserve manuscript-specific uncertainty markers such as `ב2?` and `ב2?[נכתבה בו א' ונמחקה!]`, which strongly suggests that `ב2` is being treated there as a discrete witness rather than as a vague group label.
 - That is strong enough for a provisional classification: `ב2` is a Yemenite Ketuvim manuscript, distinct from `ב1`.
-- The source-layer material also contains explicit references to `ת451` in Daniel and other Ketuvim notes, which is an important caution: current evidence does not justify collapsing `ב2` into `ת451`.
+- Daniel itself also has separate authority expressions such as `ק-מ,ת451` and `ב1,ק-מ,ת451`, while other Ketuvim notes name `ת451` explicitly in Benaiah/Joseph ben Benaiah contexts rather than using the sigil `ב2`.
+- So the current local evidence not only fails to prove that `ב2 = ת451`; it presently leans against that collapse.
 - What is still missing is the decisive catalog-level identification such as a shelfmark or a primary-source sigil glossary entry.
 
 There is also nearby prose in the Ketuvim corpus about additional books written by Benaiah the scribe and his son Joseph, but I do not yet have a secure enough link to assert that this prose specifically identifies `ב2`; at this point it is safer to treat those prose mentions as contextual evidence about the Yemenite witness cluster, not as a firm decoding of `ב2` itself.
@@ -270,7 +274,7 @@ Based on the current inventory pass, plus the first follow-up decoding pass, the
 
 | Form | Priority | Why it belongs in the target set | Current state |
 |---|---|---|---|
-| ב2 | High | Recurrent manuscript sigil in Daniel and related Ketuvim notes alongside ב1 and ק-מ. | Provisionally classified as a Yemenite Ketuvim manuscript; exact manuscript identifier still unknown, and not yet shown to be identical with `ת451`. |
+| ב2 | High | Recurrent manuscript sigil with 27 current inventory-tracked authority-expression occurrences in Daniel, alongside ב1 and ק-מ, including explicit `כתבי־היד התימנים (ק-מ,ב1,ב2)` prose. | Provisionally classified as a Yemenite Ketuvim manuscript; exact manuscript identifier still unknown, and current local evidence leans against identifying it with `ת451`. |
 
 The same pass also showed that some high-frequency raw candidates are not really new sigils to decode, but rather prose aliases or prefixed forms that should be normalized against existing entries. Important examples include:
 
