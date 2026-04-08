@@ -68,7 +68,7 @@ def _unordered_list_of_links_to_html(outspecs):
 
 def _write_index_dot_html(outspecs):
     outspecs = sorted(outspecs)
-    body_contents = _unordered_list_of_links_to_html(outspecs)
+    body_contents = _foi_body_wrapper(_unordered_list_of_links_to_html(outspecs))
     write_ctx = my_html.WriteCtx(
         "MAM features of interest",
         f"{_OUT_DIR_PATH}/index.html",
@@ -198,12 +198,17 @@ def _write_html(args_foi, outfile_stem, html_tables):
     if not body1:
         assert args_foi
         return
-    body_contents = body1 + body2
+    body_contents = _foi_body_wrapper(body1 + body2)
     title = f"{outfile_stem} (MAM features of interest)"
     write_ctx = my_html.WriteCtx(
         title, _out_path_for_html(outfile_stem), css_hrefs=(_CSS_HREF,)
     )
     my_html.write_html_to_file(body_contents, write_ctx)
+
+
+def _foi_body_wrapper(contents):
+    style = "max-width: 40rem; margin-left: auto; margin-right: auto"
+    return [my_html.div(contents, {"style": style})]
 
 
 def _get_html_body1_and_2(outfile_stem, html_tables):
