@@ -12,6 +12,8 @@ def find_fois_wt(mroge):
 
 
 def _find_fois_in_string(stack, string):
+    if stack and stack[-1] == "doc-part-n":
+        return []
     words = string.split(" ")
     fois = reduce(_add_fois_in_str, words, [])
     qual_fois = sl_map((_qualify, stack), fois)
@@ -24,10 +26,18 @@ def _add_fois_in_str(accum, word):
 
 
 def _qualify(stack, unqual_foi):
-    stack_summary = fwh.stack_summary(_STACK_SUMMARIES, stack)
+    stack_summary = _stack_summary(stack)
     qualifier = {"stack_str": stack_summary}
     qual_target = fct.make_qtarget(unqual_foi[1], qualifier)
     return unqual_foi[0], qual_target
+
+
+def _stack_summary(stack):
+    if stack in _STACK_SUMMARIES:
+        return fwh.stack_summary(_STACK_SUMMARIES, stack)
+    if stack and stack[-1] in _NOTE_STACK_PARTS:
+        return stack[-1]
+    return None
 
 
 _FOILERS = {
@@ -37,6 +47,7 @@ _FOILERS = {
     tmpln.SCRDFF_TAR: fwh.label_args_of_scrdfftar,
     tmpln.SCRDFF_NO_TAR: fwh.ignore,
 }
+_NOTE_STACK_PARTS = {"doc-part-n", "scrdfftar-note", tmpln.SLH_WORD}
 _STACK_SUMMARIES = {
     tuple(): None,
     ("doc-target",): None,

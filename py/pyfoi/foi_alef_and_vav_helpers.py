@@ -4,11 +4,14 @@ import re
 from pycmn import hebrew_letters as hl
 from pycmn import hebrew_points as hpo
 from pycmn import hebrew_accents as ha
+from pyfoi import foi_shuruq_helpers as fsh
 from pyfoi import regexp_helpers as rh
 
 
 def find_fois_in_str(string):
     """Find "dual mater lectionis" combos in a string."""
+    if alef_shuruq_fois := fsh.find_shuruq_fois_in_str(string):
+        return alef_shuruq_fois
     for pattrec in _PATTRECS:
         if matches := re.findall(_pr_patt(pattrec), string):
             # At this point, yes, we've matched a pattern,
