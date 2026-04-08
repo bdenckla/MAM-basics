@@ -276,7 +276,7 @@ def _intro_contents(sfp, part_n, the_id):
 def _head1b(tuple_foi_path):
     explanation = _explanation_for_foi_path(tuple_foi_path)
     if explanation is None:
-        explanation = _auto_explanation_for_foi_path(tuple_foi_path)
+        return []
     if isinstance(explanation, str):
         return [_label_explanation_para(tuple_foi_path, explanation)]
     assert isinstance(explanation, dict), explanation
@@ -297,36 +297,6 @@ def _explanation_for_foi_path(tuple_foi_path):
     return explanation_source.get(tuple_foi_path[1:])
 
 
-def _auto_explanation_for_foi_path(tuple_foi_path):
-    family_name = _family_display_name(tuple_foi_path[0])
-    path_parts = tuple_foi_path[1:]
-    if not path_parts:
-        return {
-            "label": (
-                f"this section covers the {family_name} feature of interest "
-                "without any finer-grained sublabel"
-            )
-        }
-    label = (
-        f"that this section groups {family_name} cases under this fine-grained label"
-    )
-    if len(path_parts) > 1:
-        quoted_parts = ", ".join(map(_quoted, path_parts))
-        return {
-            "label": label,
-            "paras": (f"The slash-separated path parts here are {quoted_parts}.",),
-        }
-    return {"label": label}
-
-
-def _family_display_name(outfile_stem):
-    return _FAMILY_DISPLAY_NAMES.get(outfile_stem, outfile_stem.replace("-", " "))
-
-
-def _quoted(text):
-    return f"«{text}»"
-
-
 def _label_explanation_para(tuple_foi_path, explanation):
     sfp = _slash_str_from_path_parts(tuple_foi_path[1:])
     if not sfp:
@@ -343,34 +313,6 @@ _EXPLANATIONS = {
     "pasoleg-1": pasoleg_1_labels.explanation_for_path,
     "sec-merk": sec_merk_e.EXPLANATIONS,
     "tsinnorit": tsinnorit_e.EXPLANATIONS,
-}
-
-
-_FAMILY_DISPLAY_NAMES = {
-    "avva-alef-vav": "alef-vav",
-    "avva-vav-alef": "vav-alef",
-    "jacobson-pasoleg-1": "Jacobson pasoleg 1",
-    "kq-complex": "complex ketiv-qere",
-    "kq-simple": "simple ketiv-qere",
-    "mtgmtg": "meteg plus meteg",
-    "oleh-yored": "oleh veyored",
-    "pasoleg-1": "pasoleg 1",
-    "pasoleg-2": "pasoleg 2",
-    "poetic-stress-helpers": "poetic stress helpers",
-    "poetic-verlen": "poetic verse length",
-    "qamats-variants": "qamats variants",
-    "quick-brown-fox": "quick brown fox",
-    "rare-tmpls": "rare templates",
-    "revia-mugrash": "revia mugrash",
-    "sec-merk": "secondary merkha",
-    "sec-merk-shewa": "secondary merkha with shewa",
-    "sec-misc": "secondary-mark miscellaneous",
-    "sec-misc-shewa": "secondary-mark miscellaneous with shewa",
-    "sec-star-breuer-cos": "secondary-mark Breuer contrasts",
-    "slh-word": 'של"ח-word',
-    "tsinnorit": "tsinnorit",
-    "unicode": "Unicode",
-    "xataf-qamats": "xataf qamats",
 }
 
 
