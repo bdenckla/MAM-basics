@@ -39,7 +39,7 @@ def _generic_explanation(cantsys, fp_lvl_3, acc_str):
 def _wrap(cantsys, ending_clause, inner):
     return (
         f"that the cantillation system is {cantsys}, that {ending_clause}, "
-        f"and that the profile is, in detail, {inner}. {_A_SBR}"
+        f"and that the profile is, in detail, {inner}"
     )
 
 
@@ -116,15 +116,6 @@ def _shewa_followup_clause(extra_part):
     )
 
 
-_A_SBR_RAW = """
-The “profile” is the accent/maqaf/meteg profile.
-Comma means one or more letters (but no maqaf marks) intervene;
-dash means exactly one maqaf intervenes.
-Tilde means exactly one gray maqaf intervenes;
-plus means the accents on either side share a letter.
-Repeated operator strings are read left to right.
-Breuer references (if any) are listed alongside examples"""
-_A_SBR = _A_SBR_RAW.replace("\n", " ").strip()
 _NOTHING = "where “nothing” means an atom with no marks of note"
 _PROFILE_OPERATOR_SPLIT = re.compile(r"([,~+\-]+)")
 _COUNT_WORDS = {2: "two", 3: "three", 4: "four"}
@@ -164,7 +155,8 @@ _SHEWA_FOLLOWUP_CLAUSES = {
 
 OVERALL_EXPLANATION = (
     "These pages group examples by compact accent/maqaf/meteg profiles. The labels are not separate manuscript readings; they are profile summaries of how accents, maqaf, and meteg are arranged in the cited examples.",
-    "In these sec-profile pages, gray maqaf and implicit maqaf are equivalent terms. In the detailed profile labels, comma means one or more letters intervene without maqaf, dash means one maqaf, tilde means one gray maqaf, and plus means the accents on either side share a letter.",
+    "In these sec-profile pages, gray maqaf and implicit maqaf are equivalent terms. In the detailed profile labels, comma means one or more letters intervene without maqaf, dash means one maqaf, tilde means one gray maqaf, plus means the accents on either side share a letter, and repeated operator strings are read left to right.",
+    "Breuer references, when present, are listed alongside the examples rather than encoded in the profile itself.",
 )
 
 _EXPLANATION_OVERRIDES = {
