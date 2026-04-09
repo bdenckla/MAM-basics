@@ -7,6 +7,12 @@ def explanation_for_path(path_parts):
     return _EXPLANATIONS_BY_LABEL.get(path_parts[-1])
 
 
+OVERALL_EXPLANATION = (
+    "This page groups less common ketiv/qere layouts, i.e. places where the written tradition (ketiv) and the read-aloud tradition (qere) differ.",
+    "These labels describe unusual presentation patterns such as reverse-order qere-then-ketiv displays near punctuation, or multiple ketiv/qere cases appearing back-to-back in the same span.",
+)
+
+
 _EXPLANATIONS_BY_LABEL = {
     "k1q1-qk-after-paseq": (
         "a single ketiv/qere presented in reverse "

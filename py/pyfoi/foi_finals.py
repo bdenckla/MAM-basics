@@ -346,12 +346,19 @@ _EXPLANATIONS = {
 
 
 _OVERALL_EXPLANATIONS = {
+    "avva-alef-vav": avva_e.OVERALL_EXPLANATION_ALEF_VAV,
+    "avva-vav-alef": avva_e.OVERALL_EXPLANATION_VAV_ALEF,
+    "kq-simple": kq_simple_e.OVERALL_EXPLANATION,
+    "kq-complex": kq_complex_e.OVERALL_EXPLANATION,
     "mtgmtg": mtgmtg_e.OVERALL_EXPLANATION,
+    "oleh-yored": ole_yored_e.OVERALL_EXPLANATION,
+    "pasoleg-1": pasoleg_1_labels.OVERALL_EXPLANATION,
     "quick-brown-fox": quick_brown_e.OVERALL_EXPLANATION,
     "qamats-variants": qamats_var_e.OVERALL_EXPLANATION,
     "rare-tmpls": rare_tmpls_e.OVERALL_EXPLANATION,
     "sec-merk": sec_merk_e.OVERALL_EXPLANATION,
     "sec-misc": sec_merk_e.OVERALL_EXPLANATION,
+    "tsinnorit": tsinnorit_e.OVERALL_EXPLANATION,
 }
 
 

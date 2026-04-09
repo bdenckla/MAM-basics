@@ -7,6 +7,12 @@ def explanation_for_path(path_parts):
     return _EXPLANATIONS_BY_LABEL.get(path_parts[-1])
 
 
+OVERALL_EXPLANATION = (
+    "This page groups straightforward ketiv/qere cases, i.e. places where the written tradition (ketiv) and the read-aloud tradition (qere) differ.",
+    "In the labels, k counts ketiv words and q counts qere words. So k1q2 means one ketiv word read aloud as two qere words; additional suffixes mark special cases such as reverse order, maqaf-linked compounds, or ketiv velo qere and qere velo ketiv.",
+)
+
+
 _EXPLANATIONS_BY_LABEL = {
     "k1q1": (
         "a standard ketiv/qere case: one written form and one read-aloud form, "
