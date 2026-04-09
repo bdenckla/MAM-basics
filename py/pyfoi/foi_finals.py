@@ -360,6 +360,7 @@ _OVERALL_EXPLANATIONS = {
     "sec-misc": sec_merk_e.OVERALL_EXPLANATION,
     "sec-merk-shewa": sec_merk_e.OVERALL_EXPLANATION_SHEWA,
     "sec-misc-shewa": sec_merk_e.OVERALL_EXPLANATION_SHEWA,
+    "sec-star-breuer-cos": sec_merk_e.OVERALL_EXPLANATION_REF,
     "tsinnorit": tsinnorit_e.OVERALL_EXPLANATION,
 }
 

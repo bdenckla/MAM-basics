@@ -203,6 +203,12 @@ OVERALL_EXPLANATION_SHEWA = (
     "Any extra suffix such as double shewa or bgdkft-dagesh describes the following consonant, not the marked one.",
 )
 
+OVERALL_EXPLANATION_REF = (
+    "This page regroups sec-merk and sec-misc examples by the Breuer/CoS references cited for them.",
+    "Each section label such as 09.23 or 09.23.fn21 is a Breuer/CoS reference key rather than an accent-profile label. The rows below are the MAM examples whose qualifier data cites that reference.",
+    "The Breuer and CoS columns preserve the more specific citation strings and notes for each example.",
+)
+
 _EXPLANATION_OVERRIDES = {
     ("poetic", "(atn)", "(mer),(atn)"): _wrap(
         "poetic", "the profile ends in atn", _detail_for_profile("(mer),(atn)")
