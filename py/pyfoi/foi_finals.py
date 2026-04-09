@@ -318,7 +318,10 @@ def _label_explanation_para(tuple_foi_path, explanation):
     sfp = _slash_str_from_path_parts(tuple_foi_path[1:])
     if not sfp:
         return my_html.para(explanation[0].upper() + explanation[1:] + ".")
-    full_exp = f"(The label «{sfp}» means {explanation}.)"
+    if "«" in sfp or "»" in sfp:
+        full_exp = f"(The label {sfp} means {explanation}.)"
+    else:
+        full_exp = f"(The label «{sfp}» means {explanation}.)"
     return my_html.para(full_exp)
 
 
@@ -333,7 +336,11 @@ _EXPLANATIONS = {
     "quick-brown-fox": quick_brown_e.explanation_for_path,
     "qamats-variants": qamats_var_e.explanation_for_path,
     "rare-tmpls": rare_tmpls_e.explanation_for_path,
+    "sec-misc": sec_merk_e.explanation_for_path,
     "sec-merk": sec_merk_e.explanation_for_path,
+    "sec-misc-shewa": sec_merk_e.explanation_for_shewa_path,
+    "sec-merk-shewa": sec_merk_e.explanation_for_shewa_path,
+    "sec-star-breuer-cos": sec_merk_e.explanation_for_ref_path,
     "tsinnorit": tsinnorit_e.EXPLANATIONS,
 }
 

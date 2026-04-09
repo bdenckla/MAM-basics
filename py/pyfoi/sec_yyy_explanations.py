@@ -7,6 +7,26 @@ def explanation_for_path(path_parts):
     )
 
 
+def explanation_for_shewa_path(path_parts):
+    if len(path_parts) not in {2, 3}:
+        return None
+    cantsys, shewa_pattern, *rest = path_parts
+    out = (
+        f"that the cantillation system is {cantsys} and that the relevant "
+        f"shewa pattern is shown as {shewa_pattern}"
+    )
+    if rest:
+        out += f", and that {_shewa_followup_clause(rest[0])}"
+    return out
+
+
+def explanation_for_ref_path(path_parts):
+    if len(path_parts) != 1:
+        return None
+    ref = path_parts[0]
+    return f"that the examples below all cite Breuer/CoS reference {ref}"
+
+
 def _generic_explanation(cantsys, fp_lvl_3, acc_str):
     ending_clause = _ending_clause(fp_lvl_3)
     detail = _detail_for_profile(acc_str)
@@ -34,6 +54,12 @@ def _detail_for_profile(acc_str):
     return acc_str
 
 
+def _shewa_followup_clause(extra_part):
+    return _SHEWA_FOLLOWUP_CLAUSES.get(
+        extra_part, f"the following context is tagged as {extra_part}"
+    )
+
+
 _A_SBR_RAW = """
 The “profile” is the accent/maqaf/meteg profile.
 Comma means one or more letters (but no maqaf marks) intervene;
@@ -50,6 +76,11 @@ _ENDING_CLAUSES = {
     "psg-closed-by-guttural": "the profile falls in the psg-closed-by-guttural category",
     "psg-misc": "the profile falls in the miscellaneous psg category",
     "psg-open": "the profile falls in the psg-open category",
+}
+
+_SHEWA_FOLLOWUP_CLAUSES = {
+    "bgdkft-dagesh": "the following consonant is a bgdkft letter with dagesh",
+    "double shewa": "the following consonant also carries shewa",
 }
 
 _EXPLANATION_OVERRIDES = {
