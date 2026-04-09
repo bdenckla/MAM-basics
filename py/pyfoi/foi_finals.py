@@ -15,6 +15,7 @@ from pyfoi import sec_yyy_explanations as sec_merk_e
 from pyfoi import avva_explanations as avva_e
 from pyfoi import kq_simple_explanations as kq_simple_e
 from pyfoi import kq_complex_explanations as kq_complex_e
+from pyfoi import mtgmtg_explanations as mtgmtg_e
 
 # XXX TODO show a "table of contents"
 # XXX TODO show friendlier descriptions of the FOIs
@@ -198,7 +199,7 @@ def _write_html(args_foi, outfile_stem, html_tables):
     if not body1:
         assert args_foi
         return
-    body_contents = _foi_body_wrapper(body1 + body2)
+    body_contents = _foi_body_wrapper(_overall_head(outfile_stem) + body1 + body2)
     title = f"{outfile_stem} (MAM features of interest)"
     write_ctx = my_html.WriteCtx(
         title, _out_path_for_html(outfile_stem), css_hrefs=(_CSS_HREF,)
@@ -209,6 +210,15 @@ def _write_html(args_foi, outfile_stem, html_tables):
 def _foi_body_wrapper(contents):
     style = "max-width: 40rem; margin-left: auto; margin-right: auto"
     return [my_html.div(contents, {"style": style})]
+
+
+def _overall_head(outfile_stem):
+    explanation = _OVERALL_EXPLANATIONS.get(outfile_stem)
+    if explanation is None:
+        return []
+    if isinstance(explanation, str):
+        return [my_html.para(explanation)]
+    return [my_html.para(paragraph) for paragraph in explanation]
 
 
 def _get_html_body1_and_2(outfile_stem, html_tables):
@@ -314,10 +324,16 @@ _EXPLANATIONS = {
     "avva-vav-alef": avva_e.EXPLANATIONS_VAV_ALEF,
     "kq-simple": kq_simple_e.explanation_for_path,
     "kq-complex": kq_complex_e.explanation_for_path,
+    "mtgmtg": mtgmtg_e.explanation_for_path,
     "oleh-yored": ole_yored_e.EXPLANATIONS,
     "pasoleg-1": pasoleg_1_labels.explanation_for_path,
     "sec-merk": sec_merk_e.EXPLANATIONS,
     "tsinnorit": tsinnorit_e.EXPLANATIONS,
+}
+
+
+_OVERALL_EXPLANATIONS = {
+    "mtgmtg": mtgmtg_e.OVERALL_EXPLANATION,
 }
 
 
