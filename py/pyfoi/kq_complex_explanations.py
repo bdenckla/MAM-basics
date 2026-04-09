@@ -8,8 +8,8 @@ def explanation_for_path(path_parts):
 
 
 OVERALL_EXPLANATION = (
-    "This page groups less common ketiv/qere layouts, i.e. places where the written tradition (ketiv) and the read-aloud tradition (qere) differ.",
-    "These labels describe unusual presentation patterns such as reverse-order qere-then-ketiv displays near punctuation, or multiple ketiv/qere cases appearing back-to-back in the same span.",
+    "This page groups ketiv/qere cases whose matching criteria are complex, meaning that the matcher must inspect surrounding context rather than just a single local template occurrence.",
+    "In practice, these are patterns that require some lookahead and/or look-behind, such as reverse-order qere-then-ketiv displays identified from nearby punctuation, or runs where multiple ketiv/qere cases appear back-to-back in the same span.",
 )
 
 

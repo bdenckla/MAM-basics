@@ -8,7 +8,7 @@ def explanation_for_path(path_parts):
 
 
 OVERALL_EXPLANATION = (
-    "This page groups straightforward ketiv/qere cases, i.e. places where the written tradition (ketiv) and the read-aloud tradition (qere) differ.",
+    "This page groups ketiv/qere cases whose matching criteria are simple, i.e. local: the matcher can recognize them from the ketiv/qere template itself, or from that template plus its immediate local wrapper context, without needing broader lookahead or look-behind.",
     "In the labels, k counts ketiv words and q counts qere words. So k1q2 means one ketiv word read aloud as two qere words; additional suffixes mark special cases such as reverse order, maqaf-linked compounds, or ketiv velo qere and qere velo ketiv.",
 )
 
