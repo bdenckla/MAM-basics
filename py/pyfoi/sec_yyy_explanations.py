@@ -60,10 +60,10 @@ def _detail_for_profile(acc_str):
     rendered = []
     first_token = tokens[0] if tokens else ""
     rendered.append(_clean_profile_token(first_token) if first_token else "nothing")
-    for operator_group, token in zip(operators, tokens[1:]):
-        rendered.append(_operator_group_phrase(operator_group))
+    for index, (operator_group, token) in enumerate(zip(operators, tokens[1:])):
+        rendered.append(_operator_group_phrase(operator_group, is_first=index == 0))
         rendered.append(_clean_profile_token(token))
-    out = " ".join(rendered)
+    out = "".join(rendered)
     if acc_str.startswith("-"):
         out += f"; {_NOTHING}"
     return out
@@ -73,27 +73,25 @@ def _clean_profile_token(token):
     return token.replace("(", "").replace(")", "")
 
 
-def _operator_group_phrase(operator_group):
+def _operator_group_phrase(operator_group, is_first):
     if operator_group == "+":
-        return "sharing a letter with"
+        return (
+            " sharing a letter with " if is_first else ", then sharing a letter with "
+        )
+    prefix = " followed, across " if is_first else ", then across "
+    return f"{prefix}{_operator_group_span(operator_group)}, by "
+
+
+def _operator_group_span(operator_group):
     if len(operator_group) == 1:
-        return f"followed, across {_single_operator_span(operator_group)}, by"
+        return _single_operator_span(operator_group)
     if len(set(operator_group)) == 1 and operator_group[0] in _COUNTABLE_OPERATORS:
-        repeated_span = _countable_operator_span(operator_group[0], len(operator_group))
-        return f"followed, across {repeated_span}, by"
-    return f"followed, across {_sequential_operator_chain(operator_group)}, by"
+        return _countable_operator_span(operator_group[0], len(operator_group))
+    return _sequential_operator_chain(operator_group)
 
 
 def _single_operator_span(operator):
     return _SINGLE_OPERATOR_SPANS.get(operator, operator)
-
-
-def _joined_spans(spans):
-    if len(spans) == 1:
-        return spans[0]
-    if len(spans) == 2:
-        return f"{spans[0]} and {spans[1]}"
-    return ", ".join(spans[:-1]) + f", and {spans[-1]}"
 
 
 def _sequential_operator_chain(operator_group):
@@ -122,7 +120,7 @@ _A_SBR_RAW = """
 The “profile” is the accent/maqaf/meteg profile.
 Comma means one or more letters (but no maqaf marks) intervene;
 dash means exactly one maqaf intervenes.
-Tilde means exactly one gray maqaf (implicit maqaf) intervenes;
+Tilde means exactly one gray maqaf intervenes;
 plus means the accents on either side share a letter.
 Repeated operator strings are read left to right.
 Breuer references (if any) are listed alongside examples"""
@@ -134,14 +132,14 @@ _COUNT_WORDS = {2: "two", 3: "three", 4: "four"}
 _SINGLE_OPERATOR_SPANS = {
     ",": "one or more letters without maqaf",
     "-": "one maqaf",
-    "~": "one gray maqaf (implicit maqaf)",
+    "~": "one gray maqaf",
     "+": "the same letter",
 }
 
 _SEQUENTIAL_OPERATOR_SPANS = {
     ",": "one or more letters without maqaf",
     "-": "a maqaf",
-    "~": "a gray maqaf (implicit maqaf)",
+    "~": "a gray maqaf",
     "+": "the same letter",
 }
 
@@ -163,6 +161,11 @@ _SHEWA_FOLLOWUP_CLAUSES = {
     "bgdkft-dagesh": "the following consonant is a bgdkft letter with dagesh",
     "double shewa": "the following consonant also carries shewa",
 }
+
+OVERALL_EXPLANATION = (
+    "These pages group examples by compact accent/maqaf/meteg profiles. The labels are not separate manuscript readings; they are profile summaries of how accents, maqaf, and meteg are arranged in the cited examples.",
+    "In these sec-profile pages, gray maqaf and implicit maqaf are equivalent terms. In the detailed profile labels, comma means one or more letters intervene without maqaf, dash means one maqaf, tilde means one gray maqaf, and plus means the accents on either side share a letter.",
+)
 
 _EXPLANATION_OVERRIDES = {
     ("poetic", "(atn)", "(mer),(atn)"): _wrap(

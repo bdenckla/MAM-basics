@@ -350,6 +350,8 @@ _OVERALL_EXPLANATIONS = {
     "quick-brown-fox": quick_brown_e.OVERALL_EXPLANATION,
     "qamats-variants": qamats_var_e.OVERALL_EXPLANATION,
     "rare-tmpls": rare_tmpls_e.OVERALL_EXPLANATION,
+    "sec-merk": sec_merk_e.OVERALL_EXPLANATION,
+    "sec-misc": sec_merk_e.OVERALL_EXPLANATION,
 }
 
 
