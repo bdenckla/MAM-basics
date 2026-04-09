@@ -150,7 +150,7 @@ _FEATURES = {
     ("k1q1-kq", " ", "k1q1-kq"): (_KQ0, "k1q1×2"),
     ("k1q1-kq", " ", "k1q1-kq", hpu.SOPA): (_KQ0, "k1q1×2"),
     ("k1q1-kq", " ", "k1q1-kq", " ", "k1q1-kq"): (_KQ0, "k1q1×3"),
-    ("k1q1-qk", hpu.SOPA): (_KQ0, "k1q1←sp"),
+    ("k1q1-qk", hpu.SOPA): (_KQ0, "k1q1-qk-sp"),
     #
     ("k1q1-kq", hpu.SOPA): None,
     ("k1q1-kq",): None,

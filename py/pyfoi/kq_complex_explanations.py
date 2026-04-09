@@ -24,7 +24,7 @@ _EXPLANATIONS_BY_LABEL = {
         "and the qere consist of a two-word phrase)"
     ),
     "k1q1×3": "three ketiv/qere cases in a row",
-    "k1q1←sp": (
+    "k1q1-qk-sp": (
         "a single ketiv/qere presented in reverse "
         "(i.e. qere-then-ketiv) order before sof pasuq"
     ),
