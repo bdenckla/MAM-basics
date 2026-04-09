@@ -333,7 +333,7 @@ _EXPLANATIONS = {
     "quick-brown-fox": quick_brown_e.explanation_for_path,
     "qamats-variants": qamats_var_e.explanation_for_path,
     "rare-tmpls": rare_tmpls_e.explanation_for_path,
-    "sec-merk": sec_merk_e.EXPLANATIONS,
+    "sec-merk": sec_merk_e.explanation_for_path,
     "tsinnorit": tsinnorit_e.EXPLANATIONS,
 }
 
