@@ -17,6 +17,7 @@ from pyfoi import kq_simple_explanations as kq_simple_e
 from pyfoi import kq_complex_explanations as kq_complex_e
 from pyfoi import mtgmtg_explanations as mtgmtg_e
 from pyfoi import qamats_var_explanations as qamats_var_e
+from pyfoi import quick_brown_explanations as quick_brown_e
 
 # XXX TODO show a "table of contents"
 # XXX TODO show friendlier descriptions of the FOIs
@@ -328,6 +329,7 @@ _EXPLANATIONS = {
     "mtgmtg": mtgmtg_e.explanation_for_path,
     "oleh-yored": ole_yored_e.EXPLANATIONS,
     "pasoleg-1": pasoleg_1_labels.explanation_for_path,
+    "quick-brown-fox": quick_brown_e.explanation_for_path,
     "qamats-variants": qamats_var_e.explanation_for_path,
     "sec-merk": sec_merk_e.EXPLANATIONS,
     "tsinnorit": tsinnorit_e.EXPLANATIONS,
@@ -336,6 +338,7 @@ _EXPLANATIONS = {
 
 _OVERALL_EXPLANATIONS = {
     "mtgmtg": mtgmtg_e.OVERALL_EXPLANATION,
+    "quick-brown-fox": quick_brown_e.OVERALL_EXPLANATION,
     "qamats-variants": qamats_var_e.OVERALL_EXPLANATION,
 }
 
