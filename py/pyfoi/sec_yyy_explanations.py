@@ -81,8 +81,7 @@ def _operator_group_phrase(operator_group):
     if len(set(operator_group)) == 1 and operator_group[0] in _COUNTABLE_OPERATORS:
         repeated_span = _countable_operator_span(operator_group[0], len(operator_group))
         return f"followed, across {repeated_span}, by"
-    spans = [_single_operator_span(operator) for operator in operator_group]
-    return f"followed, across {_joined_spans(spans)}, by"
+    return f"followed, across {_sequential_operator_chain(operator_group)}, by"
 
 
 def _single_operator_span(operator):
@@ -95,6 +94,15 @@ def _joined_spans(spans):
     if len(spans) == 2:
         return f"{spans[0]} and {spans[1]}"
     return ", ".join(spans[:-1]) + f", and {spans[-1]}"
+
+
+def _sequential_operator_chain(operator_group):
+    spans = [_sequential_operator_span(operator) for operator in operator_group]
+    return " followed by ".join(spans)
+
+
+def _sequential_operator_span(operator):
+    return _SEQUENTIAL_OPERATOR_SPANS.get(operator, _single_operator_span(operator))
 
 
 def _countable_operator_span(operator, count):
@@ -127,6 +135,13 @@ _SINGLE_OPERATOR_SPANS = {
     ",": "one or more letters without maqaf",
     "-": "one maqaf",
     "~": "one gray maqaf (implicit maqaf)",
+    "+": "the same letter",
+}
+
+_SEQUENTIAL_OPERATOR_SPANS = {
+    ",": "one or more letters without maqaf",
+    "-": "a maqaf",
+    "~": "a gray maqaf (implicit maqaf)",
     "+": "the same letter",
 }
 
