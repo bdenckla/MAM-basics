@@ -19,6 +19,7 @@ from pyfoi import mtgmtg_explanations as mtgmtg_e
 from pyfoi import qamats_var_explanations as qamats_var_e
 from pyfoi import quick_brown_explanations as quick_brown_e
 from pyfoi import rare_tmpls_explanations as rare_tmpls_e
+from pyfoi import slh_word_explanations as slh_word_e
 
 # XXX TODO show a "table of contents"
 # XXX TODO show friendlier descriptions of the FOIs
@@ -341,6 +342,7 @@ _EXPLANATIONS = {
     "sec-misc-shewa": sec_merk_e.explanation_for_shewa_path,
     "sec-merk-shewa": sec_merk_e.explanation_for_shewa_path,
     "sec-star-breuer-cos": sec_merk_e.explanation_for_ref_path,
+    "slh-word": slh_word_e.explanation_for_path,
     "tsinnorit": tsinnorit_e.EXPLANATIONS,
 }
 
@@ -361,6 +363,7 @@ _OVERALL_EXPLANATIONS = {
     "sec-merk-shewa": sec_merk_e.OVERALL_EXPLANATION_SHEWA,
     "sec-misc-shewa": sec_merk_e.OVERALL_EXPLANATION_SHEWA,
     "sec-star-breuer-cos": sec_merk_e.OVERALL_EXPLANATION_REF,
+    "slh-word": slh_word_e.OVERALL_EXPLANATION,
     "tsinnorit": tsinnorit_e.OVERALL_EXPLANATION,
 }
 
