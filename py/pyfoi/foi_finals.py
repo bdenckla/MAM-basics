@@ -358,6 +358,8 @@ _OVERALL_EXPLANATIONS = {
     "rare-tmpls": rare_tmpls_e.OVERALL_EXPLANATION,
     "sec-merk": sec_merk_e.OVERALL_EXPLANATION,
     "sec-misc": sec_merk_e.OVERALL_EXPLANATION,
+    "sec-merk-shewa": sec_merk_e.OVERALL_EXPLANATION_SHEWA,
+    "sec-misc-shewa": sec_merk_e.OVERALL_EXPLANATION_SHEWA,
     "tsinnorit": tsinnorit_e.OVERALL_EXPLANATION,
 }
 

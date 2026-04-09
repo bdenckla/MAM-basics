@@ -15,8 +15,8 @@ def explanation_for_shewa_path(path_parts):
         return None
     cantsys, shewa_pattern, *rest = path_parts
     out = (
-        f"that the cantillation system is {cantsys} and that the relevant "
-        f"shewa pattern is shown as {shewa_pattern}"
+        f"that the cantillation system is {cantsys} and that "
+        f"{_shewa_pattern_clause(shewa_pattern)}"
     )
     if rest:
         out += f", and that {_shewa_followup_clause(rest[0])}"
@@ -116,6 +116,35 @@ def _shewa_followup_clause(extra_part):
     )
 
 
+def _shewa_pattern_clause(shewa_pattern):
+    inner = _strip_guillemets(shewa_pattern)
+    if inner == "gutt-:":
+        return "the marked consonant is a guttural carrying simple shewa"
+    parts = tuple(filter(None, inner.split(",")))
+    rendered = tuple(_describe_shewa_part(part) for part in parts)
+    if not rendered:
+        return f"the shewa shorthand is {shewa_pattern}"
+    if len(rendered) == 1:
+        return f"the marked consonant carries {rendered[0]}"
+    if len(rendered) == 2:
+        return (
+            f"the marked consonant carries {rendered[0]} together with "
+            f"{rendered[1]}"
+        )
+    joined = ", ".join(rendered[:-1]) + f", and {rendered[-1]}"
+    return f"the marked consonant carries {joined}"
+
+
+def _strip_guillemets(text):
+    if text.startswith("«") and text.endswith("»"):
+        return text[1:-1]
+    return text
+
+
+def _describe_shewa_part(part):
+    return _SHEWA_PATTERN_PARTS.get(part, part)
+
+
 _NOTHING = "where “nothing” means an atom with no marks of note"
 _PROFILE_OPERATOR_SPLIT = re.compile(r"([,~+\-]+)")
 _COUNT_WORDS = {2: "two", 3: "three", 4: "four"}
@@ -153,10 +182,25 @@ _SHEWA_FOLLOWUP_CLAUSES = {
     "double shewa": "the following consonant also carries shewa",
 }
 
+_SHEWA_PATTERN_PARTS = {
+    ":": "simple shewa",
+    ":∵": "ḥataf segol",
+    ":_": "ḥataf pataḥ",
+    ":a": "ḥataf qamats",
+    "(mos)": "meteg",
+    "varika": "varika",
+}
+
 OVERALL_EXPLANATION = (
     "These pages group examples by compact accent/maqaf/meteg profiles. The labels are not separate manuscript readings; they are profile summaries of how accents, maqaf, and meteg are arranged in the cited examples.",
     "In these sec-profile pages, gray maqaf and implicit maqaf are equivalent terms. In the detailed profile labels, comma means one or more letters intervene without maqaf, dash means one maqaf, tilde means one gray maqaf, plus means the accents on either side share a letter, and repeated operator strings are read left to right.",
     "Breuer references, when present, are listed alongside the examples rather than encoded in the profile itself.",
+)
+
+OVERALL_EXPLANATION_SHEWA = (
+    "These pages group sec-merk and sec-misc examples by the vocalization of the consonant that carries the relevant shewa or ḥataf sign.",
+    "In the shorthand labels, : means simple shewa, :∵ means ḥataf segol, :_ means ḥataf pataḥ, :a means ḥataf qamats, (mos) means meteg on that same consonant, varika means varika on that same consonant, and gutt-: means a guttural with simple shewa. Commas join marks that occur on the same consonant.",
+    "Any extra suffix such as double shewa or bgdkft-dagesh describes the following consonant, not the marked one.",
 )
 
 _EXPLANATION_OVERRIDES = {
