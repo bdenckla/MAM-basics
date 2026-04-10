@@ -18,7 +18,7 @@ from pyfoi import foi_finals
 from pyfoi import foi_struct as fct
 from pyfoi.foi_find_wt_fois_for_1_bk import find_wt_fois_for_1_bk
 
-from pyfoi import foiz_wt_alef_vav as foi_alef_vav
+from pyfoi import foiz_wt_dual_ml_alef as foi_dual_ml_alef
 from pyfoi import foiz_wt_kq_1 as foi_kq_1
 from pyfoi import foiz_wt_kq_2 as foi_kq_2
 from pyfoi import foiz_wt_oleh_yored as foi_oleh_yored
@@ -70,7 +70,7 @@ def _make_intermediates(foi, single_threaded, books_mpp):
 
 
 _WIKITEXT_FOIS_FUN_FOR_CLARG = {
-    "args-foi-alef-vav": foi_alef_vav.find_fois_wt,
+    "args-foi-dual-ml-alef": foi_dual_ml_alef.find_fois_wt,
     "args-foi-kq-1": foi_kq_1.find_fois_wt,
     "args-foi-kq-2": foi_kq_2.find_fois_wt,
     "args-foi-oleh-yored": foi_oleh_yored.find_fois_wt,

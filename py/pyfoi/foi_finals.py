@@ -12,7 +12,7 @@ from pyfoi import foi_struct as fct
 from pyfoi import tsinnorit_explanations as tsinnorit_e
 from pyfoi import ole_yored_explanations as ole_yored_e
 from pyfoi import sec_yyy_explanations as sec_merk_e
-from pyfoi import avva_explanations as avva_e
+from pyfoi import dml_an_explanations as dml_e
 from pyfoi import kq_simple_explanations as kq_simple_e
 from pyfoi import kq_complex_explanations as kq_complex_e
 from pyfoi import mtgmtg_explanations as mtgmtg_e
@@ -328,8 +328,8 @@ def _label_explanation_para(tuple_foi_path, explanation):
 
 
 _EXPLANATIONS = {
-    "alef-dual-ml-alef-first": avva_e.EXPLANATIONS_ALEF_VAV,
-    "alef-dual-ml-alef-second": avva_e.EXPLANATIONS_VAV_ALEF,
+    "alef-dual-ml-alef-first": dml_e.EXPLANATIONS_DML_A1,
+    "alef-dual-ml-alef-second": dml_e.EXPLANATIONS_DML_A2,
     "kq-simple": kq_simple_e.explanation_for_path,
     "kq-complex": kq_complex_e.explanation_for_path,
     "mtgmtg": mtgmtg_e.explanation_for_path,
@@ -350,8 +350,8 @@ _EXPLANATIONS = {
 
 
 _OVERALL_EXPLANATIONS = {
-    "alef-dual-ml-alef-first": avva_e.OVERALL_EXPLANATION_ALEF_VAV,
-    "alef-dual-ml-alef-second": avva_e.OVERALL_EXPLANATION_VAV_ALEF,
+    "alef-dual-ml-alef-first": dml_e.OVERALL_EXPLANATION_DML_A1,
+    "alef-dual-ml-alef-second": dml_e.OVERALL_EXPLANATION_DML_A2,
     "kq-simple": kq_simple_e.OVERALL_EXPLANATION,
     "kq-complex": kq_complex_e.OVERALL_EXPLANATION,
     "mtgmtg": mtgmtg_e.OVERALL_EXPLANATION,
