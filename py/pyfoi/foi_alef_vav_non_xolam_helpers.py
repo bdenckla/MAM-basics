@@ -78,10 +78,30 @@ def _alef_shuruq_fois_in_str(string):
 
 
 def _alef_yod_fois_in_str(string):
-    match_count = _count_matches(string, _is_xiriq_alef_yod_at)
-    if not match_count:
-        return []
-    return [_foi_rec_for_count(("avva-alef-vav", "e-alef-yod"), string, match_count)]
+    clusters = _clusters(string)
+    no_rafeh_count = 0
+    rafeh_count = 0
+    for index in range(len(clusters)):
+        if _is_xiriq_alef_yod_at(clusters, index):
+            if _alef_cluster_has_rafeh(clusters[index]):
+                rafeh_count += 1
+            else:
+                no_rafeh_count += 1
+    out = []
+    if no_rafeh_count:
+        out.append(
+            _foi_rec_for_count(
+                ("avva-alef-vav", "e-alef-yod"),
+                string,
+                no_rafeh_count,
+                {"rafeh": "no rafeh"},
+            )
+        )
+    if rafeh_count:
+        out.append(
+            _foi_rec_for_count(("avva-alef-vav", "e-alef-yod"), string, rafeh_count)
+        )
+    return out
 
 
 def _foi_rec_for_count(foi_path, string, match_count, qualifier=None):

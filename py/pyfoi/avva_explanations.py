@@ -29,12 +29,15 @@ EXPLANATIONS_ALEF_VAV = {
         "label": "that the word contains a quiescent alef followed immediately by shuruq",
         "paras": ("Rows labeled no rafeh are the cases where the alef lacks rafeh.",),
     },
-    ("e-alef-yod",): " ".join(
-        (
-            "that the word contains ḥiriq followed immediately by a bare alef and a",
-            "bare yod",
-        )
-    ),
+    ("e-alef-yod",): {
+        "label": " ".join(
+            (
+                "that the word contains ḥiriq followed immediately by a bare alef and a",
+                "bare yod",
+            )
+        ),
+        "paras": ("Rows labeled no rafeh are the cases where the alef lacks rafeh.",),
+    },
 }
 
 
