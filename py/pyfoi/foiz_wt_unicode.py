@@ -3,6 +3,7 @@ from pycmn import uni_denorm as ud
 from pycmn import hebrew_points as hpo
 from pycmn import hebrew_accents as ha
 from pycmn import hebrew_punctuation as hpu
+from pycmn import hebrew_letters as hl
 from pycmn import uni_heb as uh
 from pycmn import template_names as tmpln
 from pyfoi import foi_wikitext_helpers as fwh
@@ -77,6 +78,30 @@ def _special_in_str(string, special):
     return special if special in string else None
 
 
+def _letters_with_rafeh(string):
+    letters = []
+    last_letter = None
+    for char in string:
+        if "א" <= char <= "ת":
+            last_letter = char
+            continue
+        if char == hpo.RAFE:
+            assert last_letter is not None, string
+            letters.append(last_letter)
+    return tuple(letters)
+
+
+def _rafeh_fp(word_chars):
+    letters = _letters_with_rafeh(word_chars)
+    assert letters, word_chars
+    letter_set = set(letters)
+    if letter_set == {hl.ALEF}:
+        return "unicode", "rare", "rafeh", "alef"
+    if letter_set == {hl.HE}:
+        return "unicode", "rare", "rafeh", "he"
+    return "unicode", "rare", "rafeh", "misc"
+
+
 _QQ_NL_PATTERN = hpo.QAMATS_Q + rh.NLETT  # qq, non-letter
 _X_ON_NG_PATTERN = rh.NGUTT + rh.ZM_NL + rh.XATEF
 _X_ON_NG_TYPE = {
@@ -116,7 +141,10 @@ def _find_fois_in_str(string):
     sps_in_wc = (_special_in_str(string, s) for s in _SPECIALS)
     sps_in_wc_f = tuple(filter(None, sps_in_wc))
     if sp_summary := _SP_SUMMARY[sps_in_wc_f]:
-        sp_fp = "unicode", *sp_summary
+        if sp_summary == ("rare", "rafeh"):
+            sp_fp = _rafeh_fp(string)
+        else:
+            sp_fp = "unicode", *sp_summary
         _my_append(features, sp_fp, string)
     varika_count = string.count(hpo.VARIKA)
     if varika_count == 1:
