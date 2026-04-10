@@ -53,7 +53,7 @@ def _vav_alef_pattern(prefix="", suffix=""):
 
 
 def _alef_vav_pattrec(end_of_path, prefix="", suffix=""):
-    top_path_part_av = "avva-alef-vav"
+    top_path_part_av = "alef-dual-ml-alef-first"
     return (
         _alef_vav_pattern(prefix=prefix, suffix=suffix),
         (top_path_part_av, end_of_path),
@@ -61,7 +61,7 @@ def _alef_vav_pattrec(end_of_path, prefix="", suffix=""):
 
 
 def _vav_alef_pattrec(end_of_path, prefix="", suffix=""):
-    top_path_part_va = "avva-vav-alef"
+    top_path_part_va = "alef-dual-ml-alef-second"
     return (
         _vav_alef_pattern(prefix=prefix, suffix=suffix),
         (top_path_part_va, end_of_path) if end_of_path is not None else None,

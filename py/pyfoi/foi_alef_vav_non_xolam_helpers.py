@@ -20,7 +20,9 @@ def find_non_xolam_fois_in_str(string):
     if shuruq_alef_count:
         out.append(
             _foi_rec_for_count(
-                ("avva-vav-alef", "c-shuruq-alef"), string, shuruq_alef_count
+                ("alef-dual-ml-alef-second", "c-shuruq-alef"),
+                string,
+                shuruq_alef_count,
             )
         )
     return out
@@ -60,7 +62,7 @@ def _alef_shuruq_fois_in_str(string):
     if no_rafe_count:
         out.append(
             _foi_rec_for_count(
-                ("avva-alef-vav", "d-alef-rafeh-shuruq"),
+                ("alef-dual-ml-alef-first", "d-alef-rafeh-shuruq"),
                 string,
                 no_rafe_count,
                 {"rafeh": "no rafeh"},
@@ -69,7 +71,7 @@ def _alef_shuruq_fois_in_str(string):
     if rafeh_count:
         out.append(
             _foi_rec_for_count(
-                ("avva-alef-vav", "d-alef-rafeh-shuruq"),
+                ("alef-dual-ml-alef-first", "d-alef-rafeh-shuruq"),
                 string,
                 rafeh_count,
             )
@@ -91,7 +93,7 @@ def _alef_yod_fois_in_str(string):
     if no_rafeh_count:
         out.append(
             _foi_rec_for_count(
-                ("avva-alef-vav", "e-alef-yod"),
+                ("alef-dual-ml-alef-first", "e-alef-yod"),
                 string,
                 no_rafeh_count,
                 {"rafeh": "no rafeh"},
@@ -99,7 +101,11 @@ def _alef_yod_fois_in_str(string):
         )
     if rafeh_count:
         out.append(
-            _foi_rec_for_count(("avva-alef-vav", "e-alef-yod"), string, rafeh_count)
+            _foi_rec_for_count(
+                ("alef-dual-ml-alef-first", "e-alef-yod"),
+                string,
+                rafeh_count,
+            )
         )
     return out
 

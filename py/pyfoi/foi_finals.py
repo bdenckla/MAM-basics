@@ -328,8 +328,8 @@ def _label_explanation_para(tuple_foi_path, explanation):
 
 
 _EXPLANATIONS = {
-    "avva-alef-vav": avva_e.EXPLANATIONS_ALEF_VAV,
-    "avva-vav-alef": avva_e.EXPLANATIONS_VAV_ALEF,
+    "alef-dual-ml-alef-first": avva_e.EXPLANATIONS_ALEF_VAV,
+    "alef-dual-ml-alef-second": avva_e.EXPLANATIONS_VAV_ALEF,
     "kq-simple": kq_simple_e.explanation_for_path,
     "kq-complex": kq_complex_e.explanation_for_path,
     "mtgmtg": mtgmtg_e.explanation_for_path,
@@ -350,8 +350,8 @@ _EXPLANATIONS = {
 
 
 _OVERALL_EXPLANATIONS = {
-    "avva-alef-vav": avva_e.OVERALL_EXPLANATION_ALEF_VAV,
-    "avva-vav-alef": avva_e.OVERALL_EXPLANATION_VAV_ALEF,
+    "alef-dual-ml-alef-first": avva_e.OVERALL_EXPLANATION_ALEF_VAV,
+    "alef-dual-ml-alef-second": avva_e.OVERALL_EXPLANATION_VAV_ALEF,
     "kq-simple": kq_simple_e.OVERALL_EXPLANATION,
     "kq-complex": kq_complex_e.OVERALL_EXPLANATION,
     "mtgmtg": mtgmtg_e.OVERALL_EXPLANATION,
