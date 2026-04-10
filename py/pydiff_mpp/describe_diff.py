@@ -81,7 +81,7 @@ _ACCENT_NAMES = {
     "\N{HEBREW MARK MASORA CIRCLE}": "masora-circle",
 }
 
-# ── Hebrew mark names (vowels, dagesh, meteg, rafe, shin/sin dots) ──
+# ── Hebrew mark names (vowels, dagesh, meteg, rafeh, shin/sin dots) ──
 
 _MARK_NAMES = {
     "\N{HEBREW POINT SHEVA}": "shewa",
@@ -99,7 +99,7 @@ _MARK_NAMES = {
     "\N{HEBREW POINT QUBUTS}": "qubuts",
     "\N{HEBREW POINT DAGESH OR MAPIQ}": "dagesh",
     "\N{HEBREW POINT METEG}": "meteg",
-    "\N{HEBREW POINT RAFE}": "rafe",
+    "\N{HEBREW POINT RAFE}": "rafeh",
     "\N{HEBREW POINT SHIN DOT}": "shin-dot",
     "\N{HEBREW POINT SIN DOT}": "sin-dot",
     "\N{HEBREW POINT JUDEO-SPANISH VARIKA}": "varika",
@@ -341,7 +341,7 @@ _MARK_CATS = {
     "meteg-removal",
     "meteg-addition",
     "vowel-change",
-    "rafe",
+    "rafeh",
     "varika",
 }
 

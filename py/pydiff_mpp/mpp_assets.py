@@ -14,7 +14,7 @@ import shutil
 CATEGORY_INFO = {
     "meteg-removal": ("Meteg removal", "#1565c0"),
     "meteg-addition": ("Meteg addition", "#1e88e5"),
-    "rafe": ("Rafe", "#2e7d32"),
+    "rafeh": ("Rafeh", "#2e7d32"),
     "varika": ("Varika", "#00695c"),
     "accent-change": ("Accent change", "#ef6c00"),
     "accent-addition": ("Accent addition", "#e65100"),

@@ -30,7 +30,7 @@ def _char_type(c):
     if cp in (ord(hpo.SHIND), ord(hpo.SIND)):  # shin/sin dot
         return "shin-sin-dot"
     if cp == ord(hpo.RAFE):  # U+05BF rafe
-        return "rafe"
+        return "rafeh"
     vowel_cps = {
         ord(hpo.SHEVA),
         ord(hpo.XSEGOL),
@@ -122,13 +122,13 @@ def _classify_text_change(diff):
         return "varika"
     # Rafe (U+05BF) addition — quiescent consonants
     if (
-        "rafe" in non_space_added
-        and non_space_added <= {"rafe"}
+        "rafeh" in non_space_added
+        and non_space_added <= {"rafeh"}
         and not non_space_removed
     ):
-        return "rafe"
-    if "rafe" in non_space_added and non_space_removed <= {"meteg"}:
-        return "rafe"
+        return "rafeh"
+    if "rafeh" in non_space_added and non_space_removed <= {"meteg"}:
+        return "rafeh"
     # Accent replaced with different accent
     if non_space_added == {"accent"} and non_space_removed == {"accent"}:
         return "accent-change"

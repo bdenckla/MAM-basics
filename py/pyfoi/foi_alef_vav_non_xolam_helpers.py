@@ -52,7 +52,7 @@ def _alef_shuruq_fois_in_str(string):
     rafeh_count = 0
     for index in range(len(clusters)):
         if _is_alef_shuruq_at(clusters, index):
-            if _alef_cluster_has_rafe(clusters[index]):
+            if _alef_cluster_has_rafeh(clusters[index]):
                 rafeh_count += 1
             else:
                 no_rafe_count += 1
@@ -60,7 +60,7 @@ def _alef_shuruq_fois_in_str(string):
     if no_rafe_count:
         out.append(
             _foi_rec_for_count(
-                ("avva-alef-vav", "d-alef-no-rafe-shuruq"),
+                ("avva-alef-vav", "d-alef-no-rafeh-shuruq"),
                 string,
                 no_rafe_count,
             )
@@ -148,7 +148,7 @@ def _is_quiescent_alef_cluster(cluster):
     )
 
 
-def _alef_cluster_has_rafe(cluster):
+def _alef_cluster_has_rafeh(cluster):
     return hpo.RAFE in cluster
 
 

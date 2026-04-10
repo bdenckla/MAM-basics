@@ -1,3 +1,4 @@
 pywikibot
 requests
 lxml
+pytest

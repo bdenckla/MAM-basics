@@ -25,18 +25,10 @@ EXPLANATIONS_ALEF_VAV = {
             "c-m.lot, c-smol, or c-xatot",
         )
     ),
-    ("d-alef-no-rafe-shuruq",): " ".join(
-        (
-            "that the word contains a quiescent alef followed immediately by shuruq,",
-            "with no rafeh on the alef",
-        )
-    ),
-    ("d-alef-rafeh-shuruq",): " ".join(
-        (
-            "that the word contains a quiescent alef followed immediately by shuruq,",
-            "with rafeh on the alef",
-        )
-    ),
+    ("d-alef-rafeh-shuruq",): {
+        "label": "that the word contains a quiescent alef followed immediately by shuruq",
+        "paras": ("Rows labeled no rafeh are the cases where the alef lacks rafeh.",),
+    },
     ("e-alef-yod",): " ".join(
         (
             "that the word contains ḥiriq followed immediately by a bare alef and a",
