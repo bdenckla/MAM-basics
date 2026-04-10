@@ -96,15 +96,15 @@ _RARE_EXPLANATIONS = {
 
 
 _XATEF_ON_NON_GUTT_EXPLANATIONS = {
-    "patax": "that the word contains one hataf patah on a non-guttural letter",
-    "patax×2": "that the word contains two hataf patah marks on non-guttural letters",
-    "qamats": "that the word contains hataf qamats on a non-guttural letter",
-    "segol": "that the word contains hataf segol on a non-guttural letter",
+    "patax": "that the word contains one ḥataf pataḥ on a non-guttural letter",
+    "patax×2": "that the word contains two ḥataf pataḥ marks on non-guttural letters",
+    "qamats": "that the word contains ḥataf qamats on a non-guttural letter",
+    "segol": "that the word contains ḥataf segol on a non-guttural letter",
 }
 
 
 OVERALL_EXPLANATION = (
-    "This page collects assorted Unicode-oriented categories in the MAM corpus. Some highlight unusual but intentional characters or character combinations, such as varika, rafeh, or the extraordinary upper and lower dots. Others collect patterns that are most naturally described in Unicode terms, such as qamats qatan followed immediately by another non-letter mark or hataf vowels on non-guttural letters. One category, NON_STANDARD_MARK_ORDER, is an internal check for this project's standard combining-mark order.",
-    "The qq labels mean qamats qatan followed immediately by another non-letter mark. The parenthesized code names that following mark: dex = dehi, ger_m = geresh muqdam, mer = merkha, mos = meteg or silluq, mun = munah, ole = oleh, qom = qadma or metigah, and tel_g = telisha gedolah. The xatef-on-non-gutt labels mean that a hataf vowel appears on a non-guttural consonant; patax×2 means the same word has two such hataf patah cases.",
+    "This page collects assorted Unicode-oriented categories in the MAM corpus. Some highlight unusual but intentional characters or character combinations, such as varika, rafeh, or the extraordinary upper and lower dots. Others collect patterns that are most naturally described in Unicode terms, such as qamats qatan followed immediately by another non-letter mark or ḥataf vowels on non-guttural letters. One category, NON_STANDARD_MARK_ORDER, is an internal check for this project's standard combining-mark order.",
+    "The qq labels mean qamats qatan followed immediately by another non-letter mark. The parenthesized code names that following mark: dex = dehi, ger_m = geresh muqdam, mer = merkha, mos = meteg or silluq, mun = munah, ole = oleh, qom = qadma or metigah, and tel_g = telisha gedolah. The xatef-on-non-gutt labels mean that a ḥataf vowel appears on a non-guttural consonant; patax×2 means the same word has two such ḥataf patah cases.",
     "The suffixes doc-part-n and scrdfftar-note are context qualifiers rather than new Unicode phenomena. They indicate that the example occurs inside a documentation note or inside a scroll-difference note, respectively.",
 )
