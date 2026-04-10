@@ -26,19 +26,16 @@ def _add_fois_in_str(accum, word):
 
 
 def _qualify(stack, unqual_foi):
-    foi_path, rafeh_label = _merge_rafeh_label(unqual_foi[0])
+    if len(unqual_foi) == 3:
+        foi_path, unqual_target, found_qualifier = unqual_foi
+    else:
+        foi_path, unqual_target = unqual_foi
+        found_qualifier = {}
     stack_summary = _stack_summary(stack)
     qualifier = {"stack_str": stack_summary}
-    if rafeh_label is not None:
-        qualifier["rafeh"] = rafeh_label
-    qual_target = fct.make_qtarget(unqual_foi[1], qualifier)
+    qualifier.update(found_qualifier)
+    qual_target = fct.make_qtarget(unqual_target, qualifier)
     return foi_path, qual_target
-
-
-def _merge_rafeh_label(foi_path):
-    if foi_path[:2] == ("avva-alef-vav", "d-alef-no-rafeh-shuruq"):
-        return (foi_path[0], "d-alef-rafeh-shuruq", *foi_path[2:]), "no rafeh"
-    return foi_path, None
 
 
 def _stack_summary(stack):

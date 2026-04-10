@@ -60,9 +60,10 @@ def _alef_shuruq_fois_in_str(string):
     if no_rafe_count:
         out.append(
             _foi_rec_for_count(
-                ("avva-alef-vav", "d-alef-no-rafeh-shuruq"),
+                ("avva-alef-vav", "d-alef-rafeh-shuruq"),
                 string,
                 no_rafe_count,
+                {"rafeh": "no rafeh"},
             )
         )
     if rafeh_count:
@@ -83,10 +84,12 @@ def _alef_yod_fois_in_str(string):
     return [_foi_rec_for_count(("avva-alef-vav", "e-alef-yod"), string, match_count)]
 
 
-def _foi_rec_for_count(foi_path, string, match_count):
+def _foi_rec_for_count(foi_path, string, match_count, qualifier=None):
     if match_count > 1:
         foi_path += (str(match_count),)
-    return foi_path, string
+    if qualifier is None:
+        return foi_path, string
+    return foi_path, string, qualifier
 
 
 def _clusters(string):
