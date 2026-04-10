@@ -47,13 +47,15 @@ def _many_lett_explanation(path_parts):
     missing_vowps = _decode_vowp_list(path_parts[2:])
     if path_parts[2:]:
         return (
-            f"that the verse contains {lett_count} distinct Hebrew letters, i.e. all 27 letters "
-            f"when final-form letters are counted separately, and that it also contains {vowp_count} "
+            f"that the verse contains {lett_count} distinct Hebrew letters, i.e. all "
+            f"27 letters when final-form letters are counted separately, and that it "
+            f"also contains {vowp_count} "
             f"distinct vowel points, missing only {missing_vowps}"
         )
     return (
-        f"that the verse contains {lett_count} distinct Hebrew letters, i.e. all 27 letters "
-        f"when final-form letters are counted separately, and that it also contains {vowp_count} "
+        f"that the verse contains {lett_count} distinct Hebrew letters, i.e. all 27 "
+        f"letters when final-form letters are counted separately, and that it also "
+        f"contains {vowp_count} "
         "distinct vowel points"
     )
 
@@ -96,6 +98,26 @@ _VOWP_NAMES = {
 
 
 OVERALL_EXPLANATION = (
-    "This FOI collects unusually pangram-like verses: places where a single verse contains an unusually large variety of Hebrew letters, final-form letters, vowel points, or stress-helper patterns. The page name alludes to the English pangram 'the quick brown fox jumps over the lazy dog'.",
-    "The abbreviations in the labels are compact inventory summaries. lett means Hebrew letters, counting final-form letters separately; flett means final-form letters only; vowp means vowel points; and stress-helpers counts distinct stress-helper patterns. In many-vowp labels, the segment after the vowel-point count names the missing vowel point or points, so many-vowp/12-vowp/:a/17-lett means 12 distinct vowel points, with only ḥataf qamats missing, and 17 distinct letters. Some shorthand decodings are :a = ḥataf qamats, xxfv = ḥolam ḥaser for vav, and u = qubuts.",
+    " ".join(
+        (
+            "This FOI collects unusually pangram-like verses: places where a single",
+            "verse contains an unusually large variety of Hebrew letters,",
+            "final-form letters, vowel points, or stress-helper patterns. The page",
+            "name alludes to the English pangram 'the quick brown fox jumps over",
+            "the lazy dog'.",
+        )
+    ),
+    " ".join(
+        (
+            "The abbreviations in the labels are compact inventory summaries. lett",
+            "means Hebrew letters, counting final-form letters separately; flett",
+            "means final-form letters only; vowp means vowel points; and",
+            "stress-helpers counts distinct stress-helper patterns. In many-vowp",
+            "labels, the segment after the vowel-point count names the missing",
+            "vowel point or points, so many-vowp/12-vowp/:a/17-lett means 12",
+            "distinct vowel points, with only ḥataf qamats missing, and 17",
+            "distinct letters. Some shorthand decodings are :a = ḥataf qamats,",
+            "xxfv = ḥolam ḥaser for vav, and u = qubuts.",
+        )
+    ),
 )

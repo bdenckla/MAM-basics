@@ -18,7 +18,10 @@ def _slh_letter_count_explanation(path_parts):
     assert len(path_parts) == 1, path_parts
     count = int(path_parts[0])
     noun = "special letter" if count == 1 else "special letters"
-    return f"that the word contains {count} {noun}, where special means small, large, or hung"
+    return (
+        f"that the word contains {count} {noun}, where special means small, large, "
+        "or hung"
+    )
 
 
 def _stack_explanation(path_parts):
@@ -59,10 +62,20 @@ def _code_string_description(code_str):
 
 
 _STACK_EXPLANATIONS = {
-    "None": "that the slh-word template occurs directly in the running text, with no relevant local wrapper context",
-    "doc-part-n": "that the slh-word template occurs inside a documentation line rather than directly in the running text",
-    "kq-ketiv": "that the slh-word template occurs on the ketiv side of a ketiv/qere case",
-    "scrdfftar-note": "that the slh-word template occurs inside a scroll-difference note",
+    "None": (
+        "that the slh-word template occurs directly in the running text, with no "
+        "relevant local wrapper context"
+    ),
+    "doc-part-n": (
+        "that the slh-word template occurs inside a documentation line rather than "
+        "directly in the running text"
+    ),
+    "kq-ketiv": (
+        "that the slh-word template occurs on the ketiv side of a ketiv/qere case"
+    ),
+    "scrdfftar-note": (
+        "that the slh-word template occurs inside a scroll-difference note"
+    ),
 }
 
 
@@ -74,7 +87,29 @@ _CODE_DESCRIPTIONS = {
 
 
 OVERALL_EXPLANATION = (
-    "This page collects words containing at least one special letter, where special means small, large, or hung.",
-    "The same words are grouped in three different ways. slh-letter-count/n groups by how many special letters a word contains. stack/x groups by the local wrapper context in which the slh-word template occurs, such as running text, documentation lines, scroll-difference notes, or the ketiv side of a ketiv/qere. non-note/n/codes restricts to cases not inside notes and then groups by both the number of special letters and the code string describing their types.",
-    "In those code strings, ק means a small letter, ג means a large letter, and ת means a hung letter. The letters appear in the same order as the special letters within the word, so קג means first a small letter and then a large one.",
+    " ".join(
+        (
+            "This page collects words containing at least one special letter, where",
+            "special means small, large, or hung.",
+        )
+    ),
+    " ".join(
+        (
+            "The same words are grouped in three different ways. slh-letter-count/n",
+            "groups by how many special letters a word contains. stack/x groups by",
+            "the local wrapper context in which the slh-word template occurs, such",
+            "as running text, documentation lines, scroll-difference notes, or the",
+            "ketiv side of a ketiv/qere. non-note/n/codes restricts to cases not",
+            "inside notes and then groups by both the number of special letters and",
+            "the code string describing their types.",
+        )
+    ),
+    " ".join(
+        (
+            "In those code strings, ק means a small letter, ג means a large letter,",
+            "and ת means a hung letter. The letters appear in the same order as the",
+            "special letters within the word, so קג means first a small letter and",
+            "then a large one.",
+        )
+    ),
 )

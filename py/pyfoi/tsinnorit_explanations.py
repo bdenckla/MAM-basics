@@ -7,7 +7,9 @@ EXPLANATIONS = {
     ("(mer)",): f"{_TSIT_POST} merkha",
     ("-(mah)",): f"{_TSIT_POST} maqaf and mahapakh",
     ("-(mer)",): f"{_TSIT_POST} maqaf and merkha",
-    ("-(mer),(mos)-(mos)",): f"{_TSIT_POST} maqaf, merkha, mtgoslq, maqaf, and mtgoslq",
+    ("-(mer),(mos)-(mos)",): (
+        f"{_TSIT_POST} maqaf, merkha, mtgoslq, maqaf, and mtgoslq"
+    ),
     #
     ("pre", "-"): f"{_TSIT_PRE} maqaf",
     ("pre", "(mos)"): f"{_TSIT_PRE} mtgoslq",
@@ -17,6 +19,16 @@ EXPLANATIONS = {
 
 
 OVERALL_EXPLANATION = (
-    "This page groups cases involving tsinnorit by the nearby AMMP, i.e. the accent/maqaf/meteg profile associated with the relevant context.",
-    "Labels without a pre prefix describe the AMMP after tsinnorit; labels with pre describe the AMMP before tsinnorit.",
+    " ".join(
+        (
+            "This page groups cases involving tsinnorit by the nearby AMMP, i.e.",
+            "the accent/maqaf/meteg profile associated with the relevant context.",
+        )
+    ),
+    " ".join(
+        (
+            "Labels without a pre prefix describe the AMMP after tsinnorit; labels",
+            "with pre describe the AMMP before tsinnorit.",
+        )
+    ),
 )

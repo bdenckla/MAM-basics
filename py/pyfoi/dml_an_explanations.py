@@ -2,16 +2,19 @@
 OVERALL_EXPLANATION_DML_A1 = (
     " ".join(
         (
-            "This page groups words having one of the dual-mater patterns alef-vav or alef-yod.",
+            "This page groups words having one of the dual-mater patterns",
+            "alef-vav or alef-yod.",
             "Most groups collect cases where alef-vav corresponds to a ḥolam vowel,",
-            "while other groups collect cases where alef-vav corresponds to a shuruq vowel or",
+            "while other groups collect cases where alef-vav corresponds to a",
+            "shuruq vowel or",
             "alef-yod corresponds to a ḥiriq vowel.",
         )
     ),
     " ".join(
         (
             "The short labels are bucket names within this FOI search, not separate",
-            "grammatical categories. In particular, a-misc is the residual bucket after",
+            "grammatical categories. In particular, a-misc is the residual",
+            "bucket after",
             "the more specific named patterns are excluded.",
         )
     ),
@@ -21,18 +24,22 @@ OVERALL_EXPLANATION_DML_A1 = (
 EXPLANATIONS_DML_A1 = {
     ("a-misc",): " ".join(
         (
-            "that the word contains alef-vav-ḥolam and does not fall under any of b-ot,",
+            "that the word contains alef-vav-ḥolam and does not fall under",
+            "any of b-ot,",
             "c-m.lot, c-smol, or c-xatot",
         )
     ),
     ("d-alef-rafeh-shuruq",): {
-        "label": "that the word contains a quiescent alef followed immediately by shuruq",
+        "label": (
+            "that the word contains a quiescent alef followed immediately by " "shuruq"
+        ),
         "paras": ("Rows labeled no rafeh are the cases where the alef lacks rafeh.",),
     },
     ("e-alef-yod",): {
         "label": " ".join(
             (
-                "that the word contains ḥiriq followed immediately by a bare alef and a",
+                "that the word contains ḥiriq followed immediately by a bare",
+                "alef and a",
                 "bare yod",
             )
         ),
@@ -44,15 +51,18 @@ EXPLANATIONS_DML_A1 = {
 OVERALL_EXPLANATION_DML_A2 = (
     " ".join(
         (
-            "This page groups words containing a vav-ḥolam-alef sequence, with the labels",
-            "dividing the examples into a few recurring subpatterns and a miscellaneous",
+            "This page groups words containing a vav-ḥolam-alef sequence, with",
+            "the labels",
+            "dividing the examples into a few recurring subpatterns and a",
+            "miscellaneous",
             "remainder.",
         )
     ),
     " ".join(
         (
             "The short labels are bucket names within this FOI search, not separate",
-            "grammatical categories. In particular, a-misc is the residual bucket after",
+            "grammatical categories. In particular, a-misc is the residual",
+            "bucket after",
             "the more specific named patterns are excluded.",
         )
     ),
@@ -62,17 +72,21 @@ OVERALL_EXPLANATION_DML_A2 = (
 EXPLANATIONS_DML_A2 = {
     ("a-misc",): " ".join(
         (
-            "that the word contains vav-ḥolam-alef and does not fall under a-misc/2 or",
+            "that the word contains vav-ḥolam-alef and does not fall under",
+            "a-misc/2 or",
             "b-not-final",
         )
     ),
     ("c-shuruq-alef",): {
-        "label": "that the word contains shuruq followed immediately by a quiescent alef",
+        "label": (
+            "that the word contains shuruq followed immediately by a quiescent " "alef"
+        ),
         "paras": (
             " ".join(
                 (
                     "The explicit lexical exclusions are atoms whose consonant letters",
-                    "reduce to הוא, including prefixed forms, and atoms whose consonant",
+                    "reduce to הוא, including prefixed forms, and atoms whose",
+                    "consonant",
                     "letters end in יהוא.",
                 )
             ),

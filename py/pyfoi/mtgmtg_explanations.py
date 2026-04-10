@@ -16,7 +16,10 @@ def explanation_for_path(path_parts):
 def _mtg_count_description(mtg_count_str, sopa_flag):
     if sopa_flag == "sopa-y":
         if mtg_count_str == "1":
-            return "1 Unicode METEG mark in addition to the verse-final one serving as silluq"
+            return (
+                "1 Unicode METEG mark in addition to the verse-final one serving as "
+                "silluq"
+            )
         return (
             "2 Unicode METEG marks in addition to the verse-final one serving as silluq"
         )
@@ -31,6 +34,21 @@ def _flag_description(feature_name, yn_flag):
 
 
 OVERALL_EXPLANATION = (
-    "This FOI arose from a concern about verse-final words with two Unicode METEG marks. The concern, which turns out to be unfounded, was that a word might contain a meteg in the narrow sense (געיה) after the mark that serves as silluq.",
-    "To investigate that concern, the output collects words containing at least two Unicode METEG marks and groups them by whether sof pasuq and maqaf are present. In the labels below, sopa-y and sopa-n mean that sof pasuq is present or absent, respectively, and maq-y and maq-n mean that maqaf is present or absent, respectively.",
+    " ".join(
+        (
+            "This FOI arose from a concern about verse-final words with two Unicode",
+            "METEG marks. The concern, which turns out to be unfounded, was that a",
+            "word might contain a meteg in the narrow sense (געיה) after the mark",
+            "that serves as silluq.",
+        )
+    ),
+    " ".join(
+        (
+            "To investigate that concern, the output collects words containing at",
+            "least two Unicode METEG marks and groups them by whether sof pasuq and",
+            "maqaf are present. In the labels below, sopa-y and sopa-n mean that sof",
+            "pasuq is present or absent, respectively, and maq-y and maq-n mean that",
+            "maqaf is present or absent, respectively.",
+        )
+    ),
 )

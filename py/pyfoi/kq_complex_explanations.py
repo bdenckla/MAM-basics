@@ -8,8 +8,21 @@ def explanation_for_path(path_parts):
 
 
 OVERALL_EXPLANATION = (
-    "This page groups ketiv/qere cases whose matching criteria are complex, meaning that the matcher must inspect surrounding context rather than just a single local template occurrence.",
-    "In practice, these are patterns that require some lookahead and/or look-behind, such as reverse-order qere-then-ketiv displays identified from nearby punctuation, or runs where multiple ketiv/qere cases appear back-to-back in the same span.",
+    " ".join(
+        (
+            "This page groups ketiv/qere cases whose matching criteria are complex,",
+            "meaning that the matcher must inspect surrounding context rather than",
+            "just a single local template occurrence.",
+        )
+    ),
+    " ".join(
+        (
+            "In practice, these are patterns that require some lookahead and/or",
+            "look-behind, such as reverse-order qere-then-ketiv displays identified",
+            "from nearby punctuation, or runs where multiple ketiv/qere cases appear",
+            "back-to-back in the same span.",
+        )
+    ),
 )
 
 

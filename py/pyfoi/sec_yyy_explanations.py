@@ -171,8 +171,12 @@ _COUNTABLE_OPERATORS = {
 _ENDING_CLAUSES = {
     "a-misc": "the profile falls in the miscellaneous ending category",
     "psg-before-paseq": "the profile falls in the psg-before-paseq category",
-    "psg-closed-after-tsere": "the profile falls in the psg-closed-after-tsere category",
-    "psg-closed-by-guttural": "the profile falls in the psg-closed-by-guttural category",
+    "psg-closed-after-tsere": (
+        "the profile falls in the psg-closed-after-tsere category"
+    ),
+    "psg-closed-by-guttural": (
+        "the profile falls in the psg-closed-by-guttural category"
+    ),
     "psg-misc": "the profile falls in the miscellaneous psg category",
     "psg-open": "the profile falls in the psg-open category",
 }
@@ -192,21 +196,75 @@ _SHEWA_PATTERN_PARTS = {
 }
 
 OVERALL_EXPLANATION = (
-    "These pages group examples by compact accent/maqaf/meteg profiles. The labels are not separate manuscript readings; they are profile summaries of how accents, maqaf, and meteg are arranged in the cited examples.",
-    "In these sec-profile pages, gray maqaf and implicit maqaf are equivalent terms. In the detailed profile labels, comma means one or more letters intervene without maqaf, dash means one maqaf, tilde means one gray maqaf, plus means the accents on either side share a letter, and repeated operator strings are read left to right.",
-    "Breuer references, when present, are listed alongside the examples rather than encoded in the profile itself.",
+    " ".join(
+        (
+            "These pages group examples by compact accent/maqaf/meteg profiles.",
+            "The labels are not separate manuscript readings; they are profile",
+            "summaries of how accents, maqaf, and meteg are arranged in the cited",
+            "examples.",
+        )
+    ),
+    " ".join(
+        (
+            "In these sec-profile pages, gray maqaf and implicit maqaf are",
+            "equivalent terms. In the detailed profile labels, comma means one or",
+            "more letters intervene without maqaf, dash means one maqaf, tilde",
+            "means one gray maqaf, plus means the accents on either side share a",
+            "letter, and repeated operator strings are read left to right.",
+        )
+    ),
+    " ".join(
+        (
+            "Breuer references, when present, are listed alongside the examples",
+            "rather than encoded in the profile itself.",
+        )
+    ),
 )
 
 OVERALL_EXPLANATION_SHEWA = (
-    "These pages group sec-merk and sec-misc examples by the vocalization of the consonant that carries the relevant shewa or ḥataf sign.",
-    "In the shorthand labels, : means simple shewa, :∵ means ḥataf segol, :_ means ḥataf pataḥ, :a means ḥataf qamats, (mos) means meteg on that same consonant, varika means varika on that same consonant, and gutt-: means a guttural with simple shewa. Commas join marks that occur on the same consonant.",
-    "Any extra suffix such as double shewa or bgdkft-dagesh describes the following consonant, not the marked one.",
+    " ".join(
+        (
+            "These pages group sec-merk and sec-misc examples by the vocalization",
+            "of the consonant that carries the relevant shewa or ḥataf sign.",
+        )
+    ),
+    " ".join(
+        (
+            "In the shorthand labels, : means simple shewa, :∵ means ḥataf segol,",
+            ":_ means ḥataf pataḥ, :a means ḥataf qamats, (mos) means meteg on",
+            "that same consonant, varika means varika on that same consonant, and",
+            "gutt-: means a guttural with simple shewa. Commas join marks that",
+            "occur on the same consonant.",
+        )
+    ),
+    " ".join(
+        (
+            "Any extra suffix such as double shewa or bgdkft-dagesh describes the",
+            "following consonant, not the marked one.",
+        )
+    ),
 )
 
 OVERALL_EXPLANATION_REF = (
-    "This page regroups sec-merk and sec-misc examples by the Breuer/CoS references cited for them.",
-    "Each section label such as 09.23 or 09.23.fn21 is a Breuer/CoS reference key rather than an accent-profile label. The rows below are the MAM examples whose qualifier data cites that reference.",
-    "The Breuer and CoS columns preserve the more specific citation strings and notes for each example.",
+    " ".join(
+        (
+            "This page regroups sec-merk and sec-misc examples by the Breuer/CoS",
+            "references cited for them.",
+        )
+    ),
+    " ".join(
+        (
+            "Each section label such as 09.23 or 09.23.fn21 is a Breuer/CoS",
+            "reference key rather than an accent-profile label. The rows below are",
+            "the MAM examples whose qualifier data cites that reference.",
+        )
+    ),
+    " ".join(
+        (
+            "The Breuer and CoS columns preserve the more specific citation strings",
+            "and notes for each example.",
+        )
+    ),
 )
 
 _EXPLANATION_OVERRIDES = {

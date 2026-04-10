@@ -7,6 +7,17 @@ EXPLANATIONS = {
 
 
 OVERALL_EXPLANATION = (
-    "This page groups examples of oleh veyored, the paired poetic accent pattern formed by oleh followed by yored.",
-    "The labels summarize how the pair is distributed: on the same letter, across letters of one atom, across atoms of one chanted word, or across separate chanted words.",
+    " ".join(
+        (
+            "This page groups examples of oleh veyored, the paired poetic accent",
+            "pattern formed by oleh followed by yored.",
+        )
+    ),
+    " ".join(
+        (
+            "The labels summarize how the pair is distributed: on the same letter,",
+            "across letters of one atom, across atoms of one chanted word, or across",
+            "separate chanted words.",
+        )
+    ),
 )

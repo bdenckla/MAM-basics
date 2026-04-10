@@ -12,7 +12,9 @@ _EXPLANATIONS_BY_LABEL = {
         "that the verse uses a samekh (setumah) or pe (petuhah) divider in column E, "
         "rather than in the more usual column C"
     ),
-    "implicit-maqaf": "that the verse uses an implicit maqaf, also known as a gray maqaf",
+    "implicit-maqaf": (
+        "that the verse uses an implicit maqaf, also known as a gray maqaf"
+    ),
     "na-good-ending": "that the verse uses the rare “good ending” template",
     "na-note": "that the verse uses the rare “scroll difference note” template",
     "wp-invnun": "that the verse uses the rare template marking an inverted nun",
@@ -20,6 +22,21 @@ _EXPLANATIONS_BY_LABEL = {
 
 
 OVERALL_EXPLANATION = (
-    "This FOI is a grab bag of rare templates. The categories here do not catalog a textual pattern, as many FOIs do; rather, the only real unifying theme is that these templates are rare enough to merit separate inspection.",
-    "Some labels are fairly transparent, such as col-e-sampe and implicit-maqaf. Others, such as na-note, na-good-ending, and wp-invnun, have somewhat weird prefixes; in those cases the explanations below describe the template's role without trying to decode the abbreviation itself.",
+    " ".join(
+        (
+            "This FOI is a grab bag of rare templates. The categories here do not",
+            "catalog a textual pattern, as many FOIs do; rather, the only real",
+            "unifying theme is that these templates are rare enough to merit",
+            "separate inspection.",
+        )
+    ),
+    " ".join(
+        (
+            "Some labels are fairly transparent, such as col-e-sampe and",
+            "implicit-maqaf. Others, such as na-note, na-good-ending, and",
+            "wp-invnun, have somewhat weird prefixes; in those cases the",
+            "explanations below describe the template's role without trying to",
+            "decode the abbreviation itself.",
+        )
+    ),
 )

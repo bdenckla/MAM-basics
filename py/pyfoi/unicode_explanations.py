@@ -13,9 +13,12 @@ _QQ_ACCENT_NAMES = {
 
 _NOTE_QUALIFIER_EXPLANATIONS = {
     "doc-part-n": (
-        "The examples in this subsection occur inside a documentation note rather than directly in the running text."
+        "The examples in this subsection occur inside a documentation note rather "
+        "than directly in the running text."
     ),
-    "scrdfftar-note": "The examples in this subsection occur inside a scroll-difference note.",
+    "scrdfftar-note": (
+        "The examples in this subsection occur inside a scroll-difference note."
+    ),
 }
 
 
@@ -36,7 +39,10 @@ def explanation_for_path(path_parts):
 
 def _base_explanation_for_path(path_parts):
     if path_parts == ("NON_STANDARD_MARK_ORDER",):
-        return "that the word's Hebrew combining marks are not in this project's standard internal mark order"
+        return (
+            "that the word's Hebrew combining marks are not in this project's "
+            "standard internal mark order"
+        )
     family, *rest = path_parts
     if family == "qq":
         return _qq_explanation(rest)
@@ -77,10 +83,12 @@ def _xatef_on_non_gutt_explanation(path_parts):
 
 _RARE_EXPLANATIONS = {
     ("geresh-telisha-gedolah",): (
-        "that the word contains the rare Unicode sequence geresh plus telisha gedolah"
+        "that the word contains the rare Unicode sequence geresh plus telisha "
+        "gedolah"
     ),
     ("gershayim-telisha-gedolah",): (
-        "that the word contains the rare Unicode sequence gershayim plus telisha gedolah"
+        "that the word contains the rare Unicode sequence gershayim plus telisha "
+        "gedolah"
     ),
     ("rafeh", "alef"): ("that the word contains Unicode RAFE on Hebrew letter alef"),
     ("rafeh", "he"): "that the word contains Unicode RAFE on Hebrew letter he",
@@ -92,7 +100,8 @@ _RARE_EXPLANATIONS = {
     ),
     ("udot",): "that the word contains the extraordinary Unicode upper dot",
     ("udot-with-ldot",): (
-        "that the word contains both the extraordinary Unicode upper dot and the extraordinary Unicode lower dot"
+        "that the word contains both the extraordinary Unicode upper dot and the "
+        "extraordinary Unicode lower dot"
     ),
 }
 
@@ -106,7 +115,36 @@ _XATEF_ON_NON_GUTT_EXPLANATIONS = {
 
 
 OVERALL_EXPLANATION = (
-    "This page collects assorted Unicode-oriented categories in the MAM corpus. Some highlight unusual but intentional characters or character combinations, such as varika, rafeh, or the extraordinary upper and lower dots. Others collect patterns that are most naturally described in Unicode terms, such as qamats qatan followed immediately by another non-letter mark or ḥataf vowels on non-guttural letters. One category, NON_STANDARD_MARK_ORDER, is an internal check for this project's standard combining-mark order.",
-    "The qq labels mean qamats qatan followed immediately by another non-letter mark. The parenthesized code names that following mark: dex = dehi, ger_m = geresh muqdam, mer = merkha, mos = meteg or silluq, mun = munah, ole = oleh, qom = qadma or metigah, and tel_g = telisha gedolah. The xatef-on-non-gutt labels mean that a ḥataf vowel appears on a non-guttural consonant; patax×2 means the same word has two such ḥataf patah cases. The rafeh sublabels separate cases on alef, on he, and on other letters.",
-    "The suffixes doc-part-n and scrdfftar-note are context qualifiers rather than new Unicode phenomena. They indicate that the example occurs inside a documentation note or inside a scroll-difference note, respectively.",
+    " ".join(
+        (
+            "This page collects assorted Unicode-oriented categories in the MAM",
+            "corpus. Some highlight unusual but intentional characters or character",
+            "combinations, such as varika, rafeh, or the extraordinary upper and",
+            "lower dots. Others collect patterns that are most naturally described",
+            "in Unicode terms, such as qamats qatan followed immediately by another",
+            "non-letter mark or ḥataf vowels on non-guttural letters. One",
+            "category, NON_STANDARD_MARK_ORDER, is an internal check for this",
+            "project's standard combining-mark order.",
+        )
+    ),
+    " ".join(
+        (
+            "The qq labels mean qamats qatan followed immediately by another",
+            "non-letter mark. The parenthesized code names that following mark:",
+            "dex = dehi, ger_m = geresh muqdam, mer = merkha, mos = meteg or",
+            "silluq, mun = munah, ole = oleh, qom = qadma or metigah, and tel_g =",
+            "telisha gedolah. The xatef-on-non-gutt labels mean that a ḥataf vowel",
+            "appears on a non-guttural consonant; patax×2 means the same word has",
+            "two such ḥataf patah cases. The rafeh sublabels separate cases on",
+            "alef, on he, and on other letters.",
+        )
+    ),
+    " ".join(
+        (
+            "The suffixes doc-part-n and scrdfftar-note are context qualifiers",
+            "rather than new Unicode phenomena. They indicate that the example",
+            "occurs inside a documentation note or inside a scroll-difference note,",
+            "respectively.",
+        )
+    ),
 )

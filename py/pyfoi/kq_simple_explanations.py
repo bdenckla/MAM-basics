@@ -8,8 +8,23 @@ def explanation_for_path(path_parts):
 
 
 OVERALL_EXPLANATION = (
-    "This page groups ketiv/qere cases whose matching criteria are simple, i.e. local: the matcher can recognize them from the ketiv/qere template itself, or from that template plus its immediate local wrapper context, without needing broader lookahead or look-behind.",
-    "In the labels, k counts ketiv words and q counts qere words. So k1q2 means one ketiv word read aloud as two qere words; additional suffixes mark special cases such as reverse order, maqaf-linked compounds, or ketiv velo qere and qere velo ketiv.",
+    " ".join(
+        (
+            "This page groups ketiv/qere cases whose matching criteria are",
+            "simple, i.e.",
+            "local: the matcher can recognize them from the ketiv/qere template",
+            "itself, or from that template plus its immediate local wrapper context,",
+            "without needing broader lookahead or look-behind.",
+        )
+    ),
+    " ".join(
+        (
+            "In the labels, k counts ketiv words and q counts qere words. So k1q2",
+            "means one ketiv word read aloud as two qere words; additional suffixes",
+            "mark special cases such as reverse order, maqaf-linked compounds, or",
+            "ketiv velo qere and qere velo ketiv.",
+        )
+    ),
 )
 
 
@@ -47,7 +62,9 @@ _EXPLANATIONS_BY_LABEL = {
         "that three ketiv words and three qere words are covered by a single "
         "ketiv/qere note"
     ),
-    "x-velo-y-k-velo-q": "that the word is written but not read aloud (ketiv velo qere)",
+    "x-velo-y-k-velo-q": (
+        "that the word is written but not read aloud (ketiv velo qere)"
+    ),
     "x-velo-y-q-velo-k": (
         "that the word is read aloud but it is not part of the formal written "
         "tradition (the ketiv tradition), so, for example, such a word would "
