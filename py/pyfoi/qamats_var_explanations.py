@@ -7,9 +7,11 @@ def explanation_for_path(path_parts):
         return None
     label = path_parts[-1]
     if label == "all":
-        return (
-            "all qamats-variation cases, regardless of accent pattern or qamats "
-            "qatan count"
+        return " ".join(
+            (
+                "all qamats-variation cases, regardless of accent pattern or",
+                "qamats qatan count",
+            )
         )
     return _explanation_for_label(label)
 
@@ -28,25 +30,33 @@ def _explanation_for_label(label):
 def _accent_description(accent_count, accent_abbrev):
     if accent_count == 0:
         assert accent_abbrev is None
-        return (
-            "no accent intervenes between the disputed qamats qatan and the "
-            "following letter"
+        return " ".join(
+            (
+                "no accent intervenes between the disputed qamats qatan and the",
+                "following letter",
+            )
         )
     if accent_count == 1:
         accent_name = _accent_name(accent_abbrev)
-        return (
-            "1 accent intervenes between the disputed qamats qatan and the "
-            f"following letter, namely {accent_name}"
+        return " ".join(
+            (
+                "1 accent intervenes between the disputed qamats qatan and the",
+                f"following letter, namely {accent_name}",
+            )
         )
     if accent_abbrev is None:
-        return (
-            f"{accent_count} accents intervene between the disputed qamats qatan "
-            "and the following letter"
+        return " ".join(
+            (
+                f"{accent_count} accents intervene between the disputed qamats qatan",
+                "and the following letter",
+            )
         )
     accent_name = _accent_name(accent_abbrev)
-    return (
-        f"{accent_count} accents intervene between the disputed qamats qatan and "
-        f"the following letter, including {accent_name}"
+    return " ".join(
+        (
+            f"{accent_count} accents intervene between the disputed qamats qatan and",
+            f"the following letter, including {accent_name}",
+        )
     )
 
 
@@ -57,9 +67,11 @@ def _accent_name(accent_abbrev):
 
 def _qq_count_description(qq_count):
     plural = "mark" if qq_count == 1 else "marks"
-    return (
-        f"the disputed atom has a qamats qatan count of {qq_count}, i.e. {qq_count} "
-        f"qamats qatan {plural}"
+    return " ".join(
+        (
+            f"the disputed atom has a qamats qatan count of {qq_count}, i.e. {qq_count}",
+            f"qamats qatan {plural}",
+        )
     )
 
 

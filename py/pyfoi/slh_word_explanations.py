@@ -18,9 +18,11 @@ def _slh_letter_count_explanation(path_parts):
     assert len(path_parts) == 1, path_parts
     count = int(path_parts[0])
     noun = "special letter" if count == 1 else "special letters"
-    return (
-        f"that the word contains {count} {noun}, where special means small, large, "
-        "or hung"
+    return " ".join(
+        (
+            f"that the word contains {count} {noun}, where special means small, large,",
+            "or hung",
+        )
     )
 
 
@@ -33,9 +35,11 @@ def _stack_explanation(path_parts):
 
 
 def _generic_stack_explanation(stack_summary):
-    return (
-        "that the slh-word template occurs in the local wrapper context "
-        f"{stack_summary}"
+    return " ".join(
+        (
+            "that the slh-word template occurs in the local wrapper context",
+            f"{stack_summary}",
+        )
     )
 
 
@@ -46,9 +50,11 @@ def _non_note_explanation(path_parts):
     assert len(code_str) == count, path_parts
     noun = "special letter" if count == 1 else "special letters"
     code_description = _code_string_description(code_str)
-    return (
-        f"that the word is not itself inside a note, contains {count} {noun}, "
-        f"and has special-letter code string {code_str}, i.e. {code_description}"
+    return " ".join(
+        (
+            f"that the word is not itself inside a note, contains {count} {noun},",
+            f"and has special-letter code string {code_str}, i.e. {code_description}",
+        )
     )
 
 
@@ -62,13 +68,17 @@ def _code_string_description(code_str):
 
 
 _STACK_EXPLANATIONS = {
-    "None": (
-        "that the slh-word template occurs directly in the running text, with no "
-        "relevant local wrapper context"
+    "None": " ".join(
+        (
+            "that the slh-word template occurs directly in the running text, with no",
+            "relevant local wrapper context",
+        )
     ),
-    "doc-part-n": (
-        "that the slh-word template occurs inside a documentation line rather than "
-        "directly in the running text"
+    "doc-part-n": " ".join(
+        (
+            "that the slh-word template occurs inside a documentation line rather than",
+            "directly in the running text",
+        )
     ),
     "kq-ketiv": (
         "that the slh-word template occurs on the ketiv side of a ketiv/qere case"

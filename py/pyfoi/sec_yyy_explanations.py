@@ -14,9 +14,11 @@ def explanation_for_shewa_path(path_parts):
     if len(path_parts) not in {2, 3}:
         return None
     cantsys, shewa_pattern, *rest = path_parts
-    out = (
-        f"that the cantillation system is {cantsys} and that "
-        f"{_shewa_pattern_clause(shewa_pattern)}"
+    out = " ".join(
+        (
+            f"that the cantillation system is {cantsys} and that",
+            f"{_shewa_pattern_clause(shewa_pattern)}",
+        )
     )
     if rest:
         out += f", and that {_shewa_followup_clause(rest[0])}"
@@ -37,9 +39,11 @@ def _generic_explanation(cantsys, fp_lvl_3, acc_str):
 
 
 def _wrap(cantsys, ending_clause, inner):
-    return (
-        f"that the cantillation system is {cantsys}, that {ending_clause}, "
-        f"and that the profile is, in detail, {inner}"
+    return " ".join(
+        (
+            f"that the cantillation system is {cantsys}, that {ending_clause},",
+            f"and that the profile is, in detail, {inner}",
+        )
     )
 
 
@@ -90,7 +94,7 @@ def _operator_group_span(operator_group):
     return _sequential_operator_chain(operator_group)
 
 
-def _single_operator_span(operator):
+def _single_operator_span(operator) -> str:
     return _SINGLE_OPERATOR_SPANS.get(operator, operator)
 
 
@@ -99,7 +103,7 @@ def _sequential_operator_chain(operator_group):
     return " followed by ".join(spans)
 
 
-def _sequential_operator_span(operator):
+def _sequential_operator_span(operator) -> str:
     return _SEQUENTIAL_OPERATOR_SPANS.get(operator, _single_operator_span(operator))
 
 
@@ -127,9 +131,11 @@ def _shewa_pattern_clause(shewa_pattern):
     if len(rendered) == 1:
         return f"the marked consonant carries {rendered[0]}"
     if len(rendered) == 2:
-        return (
-            f"the marked consonant carries {rendered[0]} together with "
-            f"{rendered[1]}"
+        return " ".join(
+            (
+                f"the marked consonant carries {rendered[0]} together with",
+                f"{rendered[1]}",
+            )
         )
     joined = ", ".join(rendered[:-1]) + f", and {rendered[-1]}"
     return f"the marked consonant carries {joined}"
@@ -141,7 +147,7 @@ def _strip_guillemets(text):
     return text
 
 
-def _describe_shewa_part(part):
+def _describe_shewa_part(part) -> str:
     return _SHEWA_PATTERN_PARTS.get(part, part)
 
 

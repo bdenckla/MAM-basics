@@ -12,9 +12,11 @@ _QQ_ACCENT_NAMES = {
 }
 
 _NOTE_QUALIFIER_EXPLANATIONS = {
-    "doc-part-n": (
-        "The examples in this subsection occur inside a documentation note rather "
-        "than directly in the running text."
+    "doc-part-n": " ".join(
+        (
+            "The examples in this subsection occur inside a documentation note rather",
+            "than directly in the running text.",
+        )
     ),
     "scrdfftar-note": (
         "The examples in this subsection occur inside a scroll-difference note."
@@ -39,9 +41,11 @@ def explanation_for_path(path_parts):
 
 def _base_explanation_for_path(path_parts):
     if path_parts == ("NON_STANDARD_MARK_ORDER",):
-        return (
-            "that the word's Hebrew combining marks are not in this project's "
-            "standard internal mark order"
+        return " ".join(
+            (
+                "that the word's Hebrew combining marks are not in this project's",
+                "standard internal mark order",
+            )
         )
     family, *rest = path_parts
     if family == "qq":
@@ -59,9 +63,11 @@ def _qq_explanation(path_parts):
     assert len(path_parts) == 1, path_parts
     accent_code = path_parts[0]
     accent_name = _QQ_ACCENT_NAMES[accent_code]
-    return (
-        "that the word contains Unicode QAMATS QATAN immediately followed by "
-        f"{accent_name}"
+    return " ".join(
+        (
+            "that the word contains Unicode QAMATS QATAN immediately followed by",
+            f"{accent_name}",
+        )
     )
 
 
@@ -82,13 +88,17 @@ def _xatef_on_non_gutt_explanation(path_parts):
 
 
 _RARE_EXPLANATIONS = {
-    ("geresh-telisha-gedolah",): (
-        "that the word contains the rare Unicode sequence geresh plus telisha "
-        "gedolah"
+    ("geresh-telisha-gedolah",): " ".join(
+        (
+            "that the word contains the rare Unicode sequence geresh plus telisha",
+            "gedolah",
+        )
     ),
-    ("gershayim-telisha-gedolah",): (
-        "that the word contains the rare Unicode sequence gershayim plus telisha "
-        "gedolah"
+    ("gershayim-telisha-gedolah",): " ".join(
+        (
+            "that the word contains the rare Unicode sequence gershayim plus telisha",
+            "gedolah",
+        )
     ),
     ("rafeh", "alef"): ("that the word contains Unicode RAFE on Hebrew letter alef"),
     ("rafeh", "he"): "that the word contains Unicode RAFE on Hebrew letter he",
@@ -99,9 +109,11 @@ _RARE_EXPLANATIONS = {
         "that the word contains Unicode RAFE together with Unicode DAGESH OR MAPIQ"
     ),
     ("udot",): "that the word contains the extraordinary Unicode upper dot",
-    ("udot-with-ldot",): (
-        "that the word contains both the extraordinary Unicode upper dot and the "
-        "extraordinary Unicode lower dot"
+    ("udot-with-ldot",): " ".join(
+        (
+            "that the word contains both the extraordinary Unicode upper dot and the",
+            "extraordinary Unicode lower dot",
+        )
     ),
 }
 

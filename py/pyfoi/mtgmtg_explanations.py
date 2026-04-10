@@ -16,12 +16,17 @@ def explanation_for_path(path_parts):
 def _mtg_count_description(mtg_count_str, sopa_flag):
     if sopa_flag == "sopa-y":
         if mtg_count_str == "1":
-            return (
-                "1 Unicode METEG mark in addition to the verse-final one serving as "
-                "silluq"
+            return " ".join(
+                (
+                    "1 Unicode METEG mark in addition to the verse-final one serving as",
+                    "silluq",
+                )
             )
-        return (
-            "2 Unicode METEG marks in addition to the verse-final one serving as silluq"
+        return " ".join(
+            (
+                "2 Unicode METEG marks in addition to the verse-final one serving as",
+                "silluq",
+            )
         )
     if mtg_count_str == "1":
         return "1 Unicode METEG mark"

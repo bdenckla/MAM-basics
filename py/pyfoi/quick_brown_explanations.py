@@ -17,9 +17,11 @@ def explanation_for_path(path_parts):
 def _many_flett_explanation(path_parts):
     assert len(path_parts) == 1, path_parts
     flett_count = _count_from_segment(path_parts[0], "flett")
-    return (
-        f"that the verse contains {flett_count} distinct final-form letters, "
-        "i.e. all 5 Hebrew final forms"
+    return " ".join(
+        (
+            f"that the verse contains {flett_count} distinct final-form letters,",
+            "i.e. all 5 Hebrew final forms",
+        )
     )
 
 
@@ -34,9 +36,11 @@ def _many_vowp_explanation(path_parts):
     vowp_count = _count_from_segment(path_parts[0], "vowp")
     lett_count = _count_from_segment(path_parts[-1], "lett")
     missing_vowps = _decode_vowp_list(path_parts[1:-1])
-    return (
-        f"that the verse contains {vowp_count} distinct vowel points, missing only "
-        f"{missing_vowps}, and that it contains {lett_count} distinct Hebrew letters"
+    return " ".join(
+        (
+            f"that the verse contains {vowp_count} distinct vowel points, missing only",
+            f"{missing_vowps}, and that it contains {lett_count} distinct Hebrew letters",
+        )
     )
 
 
@@ -46,17 +50,21 @@ def _many_lett_explanation(path_parts):
     vowp_count = _count_from_segment(path_parts[1], "vowp")
     missing_vowps = _decode_vowp_list(path_parts[2:])
     if path_parts[2:]:
-        return (
-            f"that the verse contains {lett_count} distinct Hebrew letters, i.e. all "
-            f"27 letters when final-form letters are counted separately, and that it "
-            f"also contains {vowp_count} "
-            f"distinct vowel points, missing only {missing_vowps}"
+        return " ".join(
+            (
+                f"that the verse contains {lett_count} distinct Hebrew letters, i.e. all",
+                f"27 letters when final-form letters are counted separately, and that it",
+                f"also contains {vowp_count}",
+                f"distinct vowel points, missing only {missing_vowps}",
+            )
         )
-    return (
-        f"that the verse contains {lett_count} distinct Hebrew letters, i.e. all 27 "
-        f"letters when final-form letters are counted separately, and that it also "
-        f"contains {vowp_count} "
-        "distinct vowel points"
+    return " ".join(
+        (
+            f"that the verse contains {lett_count} distinct Hebrew letters, i.e. all 27",
+            f"letters when final-form letters are counted separately, and that it also",
+            f"contains {vowp_count}",
+            "distinct vowel points",
+        )
     )
 
 

@@ -27,18 +27,24 @@ OVERALL_EXPLANATION = (
 
 
 _EXPLANATIONS_BY_LABEL = {
-    "k1q1-qk-after-paseq": (
-        "a single ketiv/qere presented in reverse "
-        "(i.e. qere-then-ketiv) order after paseq"
+    "k1q1-qk-after-paseq": " ".join(
+        (
+            "a single ketiv/qere presented in reverse",
+            "(i.e. qere-then-ketiv) order after paseq",
+        )
     ),
-    "k1q1×2": (
-        "two ketiv/qere cases in a row "
-        "(as opposed to a single ketiv/qere case where both the ketiv "
-        "and the qere consist of a two-word phrase)"
+    "k1q1×2": " ".join(
+        (
+            "two ketiv/qere cases in a row",
+            "(as opposed to a single ketiv/qere case where both the ketiv",
+            "and the qere consist of a two-word phrase)",
+        )
     ),
     "k1q1×3": "three ketiv/qere cases in a row",
-    "k1q1-qk-sp": (
-        "a single ketiv/qere presented in reverse "
-        "(i.e. qere-then-ketiv) order before sof pasuq"
+    "k1q1-qk-sp": " ".join(
+        (
+            "a single ketiv/qere presented in reverse",
+            "(i.e. qere-then-ketiv) order before sof pasuq",
+        )
     ),
 }

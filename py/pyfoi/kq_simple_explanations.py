@@ -29,49 +29,69 @@ OVERALL_EXPLANATION = (
 
 
 _EXPLANATIONS_BY_LABEL = {
-    "k1q1": (
-        "a standard ketiv/qere case: one written form and one read-aloud form, "
-        "shown in the usual ketiv-then-qere order"
+    "k1q1": " ".join(
+        (
+            "a standard ketiv/qere case: one written form and one read-aloud form,",
+            "shown in the usual ketiv-then-qere order",
+        )
     ),
-    "k1q1-qk": (
-        "a standard one-word ketiv/qere case, but displayed in reverse order, "
-        "qere first and ketiv second"
+    "k1q1-qk": " ".join(
+        (
+            "a standard one-word ketiv/qere case, but displayed in reverse order,",
+            "qere first and ketiv second",
+        )
     ),
-    "k1q1-mcom": (
-        "a standard one-word ketiv/qere case occurring mid-compound, between "
-        "maqaf-linked neighbors, so the separator is a maqaf rather than a space"
+    "k1q1-mcom": " ".join(
+        (
+            "a standard one-word ketiv/qere case occurring mid-compound, between",
+            "maqaf-linked neighbors, so the separator is a maqaf rather than a space",
+        )
     ),
-    "k1q2sr": (
-        "that one ketiv word is read aloud as two qere words, with the qere strongly "
-        "related to the ketiv"
+    "k1q2sr": " ".join(
+        (
+            "that one ketiv word is read aloud as two qere words, with the qere",
+            "strongly related to the ketiv",
+        )
     ),
-    "k1q2wr": (
-        "that one ketiv word is read aloud as two qere words, with the qere weakly "
-        "related to the ketiv"
+    "k1q2wr": " ".join(
+        (
+            "that one ketiv word is read aloud as two qere words, with the qere",
+            "weakly related to the ketiv",
+        )
     ),
-    "k1q2ur": (
-        "that one ketiv word is read aloud as two qere words, with the qere unrelated "
-        "to the ketiv"
+    "k1q2ur": " ".join(
+        (
+            "that one ketiv word is read aloud as two qere words, with the qere",
+            "unrelated to the ketiv",
+        )
     ),
     "k2q1": "that two ketiv words are read aloud as one qere word",
-    "k2q2": (
-        "that two ketiv words and two qere words are covered by a single "
-        "ketiv/qere note"
+    "k2q2": " ".join(
+        (
+            "that two ketiv words and two qere words are covered by a single",
+            "ketiv/qere note",
+        )
     ),
-    "k3q3": (
-        "that three ketiv words and three qere words are covered by a single "
-        "ketiv/qere note"
+    "k3q3": " ".join(
+        (
+            "that three ketiv words and three qere words are covered by a single",
+            "ketiv/qere note",
+        )
     ),
     "x-velo-y-k-velo-q": (
         "that the word is written but not read aloud (ketiv velo qere)"
     ),
-    "x-velo-y-q-velo-k": (
-        "that the word is read aloud but it is not part of the formal written "
-        "tradition (the ketiv tradition), so, for example, such a word would "
-        "not appear in unpointed scrolls"
+    "x-velo-y-q-velo-k": " ".join(
+        (
+            "that the word is read aloud but it is not part of the formal written",
+            "tradition (the ketiv tradition), so, for example, such a word would",
+            "not appear in unpointed scrolls",
+        )
     ),
-    "z-trivial": (
-        "a trivial ketiv/qere case, where the difference is minor enough that "
-        "some editions may choose to show only the pointed ketiv form"
+    "z-trivial": " ".join(
+        (
+            "a trivial ketiv/qere case, where the difference is minor enough that",
+            "some editions may choose to show only the pointed ketiv form",
+        )
     ),
 }

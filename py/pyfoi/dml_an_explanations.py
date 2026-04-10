@@ -30,8 +30,11 @@ EXPLANATIONS_DML_A1 = {
         )
     ),
     ("d-alef-rafeh-shuruq",): {
-        "label": (
-            "that the word contains a quiescent alef followed immediately by " "shuruq"
+        "label": " ".join(
+            (
+                "that the word contains a quiescent alef followed immediately by",
+                "shuruq",
+            )
         ),
         "paras": ("Rows labeled no rafeh are the cases where the alef lacks rafeh.",),
     },
@@ -78,8 +81,11 @@ EXPLANATIONS_DML_A2 = {
         )
     ),
     ("c-shuruq-alef",): {
-        "label": (
-            "that the word contains shuruq followed immediately by a quiescent " "alef"
+        "label": " ".join(
+            (
+                "that the word contains shuruq followed immediately by a quiescent",
+                "alef",
+            )
         ),
         "paras": (
             " ".join(

@@ -8,13 +8,13 @@ def explanation_for_path(path_parts):
 
 
 _EXPLANATIONS_BY_LABEL = {
-    "col-e-sampe": (
-        "that the verse uses a samekh (setumah) or pe (petuhah) divider in column E, "
-        "rather than in the more usual column C"
+    "col-e-sampe": " ".join(
+        (
+            "that the verse uses a samekh (setumah) or pe (petuhah) divider in column E,",
+            "rather than in the more usual column C",
+        )
     ),
-    "implicit-maqaf": (
-        "that the verse uses an implicit maqaf, also known as a gray maqaf"
-    ),
+    "implicit-maqaf": "that the verse uses an implicit maqaf, also known as a gray maqaf",
     "na-good-ending": "that the verse uses the rare “good ending” template",
     "na-note": "that the verse uses the rare “scroll difference note” template",
     "wp-invnun": "that the verse uses the rare template marking an inverted nun",
