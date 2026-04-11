@@ -106,10 +106,9 @@ def _assert_is_valid_osis_according_to_xsd(xml_path: str):
 
 def _write_index_dot_html():
     body_contents = osis_index_html.body()
-    # Below, the “docs” folder name is for GitHub pages purposes. I.e. this is
-    # the directory I have set up GitHub pages to serve from.
+    # Write into the repository's GitHub Pages publish directory.
     title = "MAM OSIS: features present and features absent"
-    out_dir_path = "../MAM-OSIS/docs"
+    out_dir_path = "../MAM-OSIS/gh-pages"
     css_href = "two_col_style.css"
     tcstyles.make_css_file_for_mwd(f"{out_dir_path}/{css_href}")
     write_ctx = my_html.WriteCtx(

@@ -36,9 +36,9 @@ def _gen_index_html(top_dir_misc, index_entries):
 
 def almost_main():
     # XXX TODO: rm *.html (to avoid stale files when output names change)
-    docs_dir = "../MAM-with-doc/docs"
-    top_dir_misc = f"{docs_dir}/misc"
-    top_dir_old = f"{docs_dir}/tsinnorit_oleh"
+    pages_dir = "../MAM-with-doc/gh-pages"
+    top_dir_misc = f"{pages_dir}/misc"
+    top_dir_old = f"{pages_dir}/tsinnorit_oleh"
     #
     css_href = "style.css"
     tcstyles.make_css_file_for_authored(f"{top_dir_misc}/{css_href}")

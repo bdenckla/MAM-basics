@@ -8,7 +8,7 @@ Usage:
     .venv/Scripts/python.exe py/main_diff_mpp.py --all
 
 The revisions are git refs in the ../MAM-parsed repo (commits, tags, branches).
-Output goes to ../MAM-with-doc/docs/change-log/ by default.  If the hash range
+Output goes to ../MAM-with-doc/gh-pages/change-log/ by default.  If the hash range
 matches an entry in releases.json, the release name is used as the filename;
 otherwise the sanitised hash range is used.
 
@@ -18,7 +18,7 @@ and regenerates index.html, including unpinned-latest when unreleased diffs exis
 When run with no arguments, the script compares the latest named release
 (the release boundary closest to HEAD) against HEAD. If commits exist beyond
 that release and produce diffs, it writes
-../MAM-with-doc/docs/change-log/unpinned-latest.html.
+../MAM-with-doc/gh-pages/change-log/unpinned-latest.html.
 """
 
 import argparse
@@ -28,7 +28,7 @@ import subprocess
 from pydiff_mpp import mpp_extract, mpp_classify, mpp_html, mpp_json, mpp_index
 
 MAM_PARSED_DIR = "../MAM-parsed"
-CHANGE_LOG_DIR = "../MAM-with-doc/docs/change-log"
+CHANGE_LOG_DIR = "../MAM-with-doc/gh-pages/change-log"
 RELEASES_JSON = f"{CHANGE_LOG_DIR}/releases.json"
 UNPINNED_LATEST_HTML = f"{CHANGE_LOG_DIR}/unpinned-latest.html"
 

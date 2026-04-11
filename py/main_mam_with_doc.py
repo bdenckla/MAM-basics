@@ -15,12 +15,8 @@ from py_misc import two_col_css_styles as tcstyles
 
 
 def _out_path(filename):
-    # Below, the “docs” folder name is for GitHub pages purposes. I.e. GitHub
-    # considers all of “MAM with doc” to be “docs” since that what GitHub
-    # pages is often used for (documentation for software whose sources are
-    # versioned in the same repo). In other words, the “doc” in “docs” below
-    # is different from the “doc” in “MAM with doc”.
-    return f"../MAM-with-doc/docs/{filename}"
+    # Write into the repository's GitHub Pages publish directory.
+    return f"../MAM-with-doc/gh-pages/{filename}"
 
 
 def _handle_survey_results(bkids, survey):

@@ -42,7 +42,7 @@ def write(args_foi, all_fois):
         _write_finals3(args_foi, all_fois, outspec)
 
 
-_OUT_DIR_PATH = "../MAM-with-doc/docs/foi"
+_OUT_DIR_PATH = "../MAM-with-doc/gh-pages/foi"
 _CSS_HREF = "two_col_style.css"
 
 
