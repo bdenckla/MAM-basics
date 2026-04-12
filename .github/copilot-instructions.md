@@ -18,7 +18,7 @@ This rule applies everywhere — terminal, chat examples, documentation. No exce
 
 ## Running Python Main Scripts — Always From the Repo Root
 
-All `py/main_*.py` scripts use paths like `../MAM-parsed` that are relative to the **repo root**. Always run from the repo root:
+For execution, all `py/main_*.py` scripts use paths like `../MAM-parsed` that are relative to the **repo root**. Always run from the repo root:
 
 ```
 .venv\Scripts\python.exe py\main_mam_simple.py
@@ -66,6 +66,16 @@ This project processes Hebrew text. On Windows, Python defaults to the system AN
    sys.stderr.reconfigure(encoding="utf-8")
    ```
 6. `$env:PYTHONUTF8="1"` is only for throwaway scripts where changing the code is not an option. For Python, prefer `py/novc_<slug>.py`; for PowerShell and non-Python scratch artifacts, use `.novc/`. (`PYTHONIOENCODING` is deprecated in favor of `PYTHONUTF8`.)
+
+## Path Style
+
+In git-tracked files, prefer repo-relative paths for files in this repository.
+
+For references to sibling repositories, prefer sibling-relative paths such as `../repo-name/`.
+
+Avoid hard-coded machine-specific absolute paths in tracked content unless the path is intentionally machine-specific.
+
+Transient commands, scratch scripts, and `.novc/` helpers are not subject to this path-style rule unless a section explicitly says otherwise.
 
 ## Literal UTF-8 in Python Source — No Unnecessary `\uXXXX` Escapes
 
@@ -163,7 +173,7 @@ Graphviz is installed but not on the PATH. Look for it at `%ProgramFiles%\Graphv
 
 ## Local Sibling Repositories
 
-Most repos are cloned as siblings at `../repo-name`. Use relative paths when referencing other repos (e.g. `../MAM-parsed/...`) — do not hard-code absolute paths.
+Most repos are cloned as siblings at `../repo-name`. In git-tracked files, use relative sibling paths when referencing other repos (e.g. `../MAM-parsed/...`) rather than hard-coded absolute paths.
 
 ## Navigating MAM-parsed plus (MPP) JSON
 
