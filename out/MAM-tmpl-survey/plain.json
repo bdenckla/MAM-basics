@@ -13258,7 +13258,7 @@
       "pseudoverse_category": "1 (normal verse)",
       "count_C": 273,
       "count_D": 35,
-      "count_E": 3574
+      "count_E": 3575
     },
     {
       "wtel_type": "tmpl",
@@ -13370,7 +13370,7 @@
       "pseudoverse_category": "1 (normal verse)",
       "count_C": 0,
       "count_D": 0,
-      "count_E": 138
+      "count_E": 139
     },
     {
       "wtel_type": "tmpl",
@@ -13442,7 +13442,7 @@
       "pseudoverse_category": "1 (normal verse)",
       "count_C": 14,
       "count_D": 1,
-      "count_E": 3268
+      "count_E": 3270
     },
     {
       "wtel_type": "tmpl",
@@ -14374,8 +14374,8 @@
     {
       "wtel_subtype": "נוסח",
       "stack": "E",
-      "count": 3532,
-      "count_non_nusach": 3532,
+      "count": 3533,
+      "count_non_nusach": 3533,
       "count_nusach": 0
     },
     {
@@ -14500,9 +14500,9 @@
     {
       "wtel_subtype": "קו\"כ-אם",
       "stack": "E",
-      "count": 138,
+      "count": 139,
       "count_non_nusach": 129,
-      "count_nusach": 9
+      "count_nusach": 10
     },
     {
       "wtel_subtype": "קק",
@@ -14591,9 +14591,9 @@
     {
       "wtel_subtype": "ש",
       "stack": "E",
-      "count": 3210,
+      "count": 3212,
       "count_non_nusach": 0,
-      "count_nusach": 3210
+      "count_nusach": 3212
     },
     {
       "wtel_subtype": "ש",
@@ -15245,7 +15245,7 @@
     {
       "wtel_subtype": "נוסח",
       "arg_count": 2,
-      "count": 3886,
+      "count": 3887,
       "variations": 1
     },
     {
@@ -15329,7 +15329,7 @@
     {
       "wtel_subtype": "קו\"כ-אם",
       "arg_count": 2,
-      "count": 138,
+      "count": 139,
       "variations": 1
     },
     {
@@ -15383,7 +15383,7 @@
     {
       "wtel_subtype": "ש",
       "arg_count": 0,
-      "count": 3283,
+      "count": 3285,
       "variations": 1
     },
     {
