@@ -11,7 +11,7 @@ digraph template_call_graph {
 
     // Template nodes
     node [shape=box, style=""];
-    "כו\"ק" [label="כו\"ק, …", tooltip="כו\"ק
+    "direct children of נוסח" [tooltip="כו\"ק
 כתיב ולא קרי
 מ:אות-מיוחדת-במילה
 מ:אין פרשה בתחילת פרק
@@ -54,7 +54,7 @@ digraph template_call_graph {
     "C" -> "נוסח" [label="35"];
     "D" -> "נוסח" [label="273"];
     "E" -> "מ:כפול" [label="34"];
-    "E" -> "נוסח" [label="3533"];
+    "E" -> "נוסח" [label="3534"];
     "מ:כפול" -> "נוסח" [label="42"];
-    "נוסח" -> "כו\"ק" [label="4181"];
+    "נוסח" -> "direct children of נוסח" [label="4184"];
 }

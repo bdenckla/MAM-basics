@@ -13258,7 +13258,7 @@
       "pseudoverse_category": "1 (normal verse)",
       "count_C": 273,
       "count_D": 35,
-      "count_E": 3575
+      "count_E": 3576
     },
     {
       "wtel_type": "tmpl",
@@ -13370,7 +13370,7 @@
       "pseudoverse_category": "1 (normal verse)",
       "count_C": 0,
       "count_D": 0,
-      "count_E": 139
+      "count_E": 144
     },
     {
       "wtel_type": "tmpl",
@@ -13442,7 +13442,7 @@
       "pseudoverse_category": "1 (normal verse)",
       "count_C": 14,
       "count_D": 1,
-      "count_E": 3270
+      "count_E": 3273
     },
     {
       "wtel_type": "tmpl",
@@ -14066,9 +14066,9 @@
     {
       "wtel_subtype": "מ:לגרמיה-2",
       "stack": "E",
-      "count": 1800,
+      "count": 1801,
       "count_non_nusach": 1719,
-      "count_nusach": 81
+      "count_nusach": 82
     },
     {
       "wtel_subtype": "מ:לגרמיה-2",
@@ -14076,13 +14076,6 @@
       "count": 9,
       "count_non_nusach": 9,
       "count_nusach": 0
-    },
-    {
-      "wtel_subtype": "מ:לגרמיה-2",
-      "stack": "E/מ:אות-ג",
-      "count": 1,
-      "count_non_nusach": 0,
-      "count_nusach": 1
     },
     {
       "wtel_subtype": "מ:לגרמיה-2",
@@ -14374,8 +14367,8 @@
     {
       "wtel_subtype": "נוסח",
       "stack": "E",
-      "count": 3533,
-      "count_non_nusach": 3533,
+      "count": 3534,
+      "count_non_nusach": 3534,
       "count_nusach": 0
     },
     {
@@ -14500,8 +14493,8 @@
     {
       "wtel_subtype": "קו\"כ-אם",
       "stack": "E",
-      "count": 139,
-      "count_non_nusach": 129,
+      "count": 144,
+      "count_non_nusach": 134,
       "count_nusach": 10
     },
     {
@@ -14591,9 +14584,9 @@
     {
       "wtel_subtype": "ש",
       "stack": "E",
-      "count": 3212,
+      "count": 3215,
       "count_non_nusach": 0,
-      "count_nusach": 3212
+      "count_nusach": 3215
     },
     {
       "wtel_subtype": "ש",
@@ -15245,7 +15238,7 @@
     {
       "wtel_subtype": "נוסח",
       "arg_count": 2,
-      "count": 3887,
+      "count": 3888,
       "variations": 1
     },
     {
@@ -15329,7 +15322,7 @@
     {
       "wtel_subtype": "קו\"כ-אם",
       "arg_count": 2,
-      "count": 139,
+      "count": 144,
       "variations": 1
     },
     {
@@ -15383,7 +15376,7 @@
     {
       "wtel_subtype": "ש",
       "arg_count": 0,
-      "count": 3285,
+      "count": 3288,
       "variations": 1
     },
     {

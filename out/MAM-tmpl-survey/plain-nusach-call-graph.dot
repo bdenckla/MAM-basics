@@ -11,7 +11,7 @@ digraph template_call_graph {
 
     // Template nodes
     node [shape=box, style=""];
-    "גלגל-2" [label="גלגל-2, …", tooltip="גלגל-2
+    "direct children of נוסח" [tooltip="גלגל-2
 כו\"ק
 כתיב ולא קרי
 מ:אות מנוקדת
@@ -62,7 +62,7 @@ digraph template_call_graph {
     "C" -> "נוסח" [label="277"];
     "D" -> "נוסח" [label="35"];
     "E" -> "מ:כפול" [label="34"];
-    "E" -> "נוסח" [label="3533"];
+    "E" -> "נוסח" [label="3534"];
     "מ:כפול" -> "נוסח" [label="42"];
-    "נוסח" -> "גלגל-2" [label="4205"];
+    "נוסח" -> "direct children of נוסח" [label="4209"];
 }
