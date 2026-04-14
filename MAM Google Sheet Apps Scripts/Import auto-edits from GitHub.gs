@@ -4,95 +4,101 @@ const MAMGO_AUTO_EDITS_REPO = 'bdenckla/mamgo-auto-edits'
 const MAMGO_AUTO_EDITS_JSON_PATH = 'diff_mamws_mamgo-auto-edits.json'
 
 function makeNoCacheUrl(baseUrl) {
-  const separator = baseUrl.includes('?') ? '&' : '?'
+  if (typeof baseUrl !== 'string' || baseUrl.length === 0) {
+    throw new Error(
+      'Run importAutoEdits, not makeNoCacheUrl. makeNoCacheUrl expects a non-empty URL string.'
+    )
+  }
+
+  const separator = baseUrl.indexOf('?') >= 0 ? '&' : '?'
   return `${baseUrl}${separator}cachebust=${Date.now()}`
 }
 
-function getMainHeadShaFromBranchApi() {
-  const branchApiUrl = makeNoCacheUrl(
-    `https://api.github.com/repos/${MAMGO_AUTO_EDITS_REPO}/branches/main`)
-
-  const branchResponse = UrlFetchApp.fetch(branchApiUrl, {
-    headers: {
-      Accept: 'application/vnd.github+json',
-      'Cache-Control': 'no-cache',
-      Pragma: 'no-cache',
-    },
-    muteHttpExceptions: true,
-  })
-
-  if (branchResponse.getResponseCode() !== 200) {
-    throw new Error(
-      'GitHub branch API response: ' +
-        branchResponse.getResponseCode() +
-        ' ' +
-        branchResponse.getContentText()
-    )
-  }
-
-  const branchPayload = JSON.parse(branchResponse.getContentText())
-  if (!branchPayload.commit || !branchPayload.commit.sha) {
-    throw new Error('GitHub branch API response did not include commit.sha')
-  }
-
-  return branchPayload.commit.sha
-}
-
-function getMainHeadShaFromAtomFeed() {
-  const atomUrl = makeNoCacheUrl(
-    `https://github.com/${MAMGO_AUTO_EDITS_REPO}/commits/main.atom`)
-
-  const atomResponse = UrlFetchApp.fetch(atomUrl, {
-    headers: {
-      'Cache-Control': 'no-cache',
-      Pragma: 'no-cache',
-    },
-    muteHttpExceptions: true,
-  })
-
-  if (atomResponse.getResponseCode() !== 200) {
-    throw new Error(
-      'GitHub commit Atom feed response: ' +
-        atomResponse.getResponseCode() +
-        ' ' +
-        atomResponse.getContentText()
-    )
-  }
-
-  const atomText = atomResponse.getContentText()
-  const commitMatch = atomText.match(/Grit::Commit\/([0-9a-f]{40})/)
-  if (!commitMatch) {
-    throw new Error('GitHub commit Atom feed did not include a commit SHA')
-  }
-
-  return commitMatch[1]
-}
-
-function getMainHeadSha() {
-  try {
-    const headSha = getMainHeadShaFromBranchApi()
-    console.log(`Resolved main HEAD SHA from branch API: ${headSha}`)
-    return headSha
-  } catch (branchError) {
-    console.log(
-      'Branch API HEAD lookup failed; falling back to public Atom feed. ' +
-        branchError.message
-    )
-  }
-
-  try {
-    const headSha = getMainHeadShaFromAtomFeed()
-    console.log(`Resolved main HEAD SHA from Atom feed: ${headSha}`)
-    return headSha
-  } catch (atomError) {
-    throw new Error(
-      'Could not resolve main HEAD SHA from either source. Atom fallback error: ' +
-        atomError.message
-    )
-  }
-}
-
 function importAutoEdits() {
+  function getMainHeadShaFromBranchApi() {
+    const branchApiUrl = makeNoCacheUrl(
+      `https://api.github.com/repos/${MAMGO_AUTO_EDITS_REPO}/branches/main`)
+
+    const branchResponse = UrlFetchApp.fetch(branchApiUrl, {
+      headers: {
+        Accept: 'application/vnd.github+json',
+        'Cache-Control': 'no-cache',
+        Pragma: 'no-cache',
+      },
+      muteHttpExceptions: true,
+    })
+
+    if (branchResponse.getResponseCode() !== 200) {
+      throw new Error(
+        'GitHub branch API response: ' +
+          branchResponse.getResponseCode() +
+          ' ' +
+          branchResponse.getContentText()
+      )
+    }
+
+    const branchPayload = JSON.parse(branchResponse.getContentText())
+    if (!branchPayload.commit || !branchPayload.commit.sha) {
+      throw new Error('GitHub branch API response did not include commit.sha')
+    }
+
+    return branchPayload.commit.sha
+  }
+
+  function getMainHeadShaFromAtomFeed() {
+    const atomUrl = makeNoCacheUrl(
+      `https://github.com/${MAMGO_AUTO_EDITS_REPO}/commits/main.atom`)
+
+    const atomResponse = UrlFetchApp.fetch(atomUrl, {
+      headers: {
+        'Cache-Control': 'no-cache',
+        Pragma: 'no-cache',
+      },
+      muteHttpExceptions: true,
+    })
+
+    if (atomResponse.getResponseCode() !== 200) {
+      throw new Error(
+        'GitHub commit Atom feed response: ' +
+          atomResponse.getResponseCode() +
+          ' ' +
+          atomResponse.getContentText()
+      )
+    }
+
+    const atomText = atomResponse.getContentText()
+    const commitMatch = atomText.match(/Grit::Commit\/([0-9a-f]{40})/)
+    if (!commitMatch) {
+      throw new Error('GitHub commit Atom feed did not include a commit SHA')
+    }
+
+    return commitMatch[1]
+  }
+
+  function getMainHeadSha() {
+    try {
+      const headSha = getMainHeadShaFromBranchApi()
+      console.log(`Resolved main HEAD SHA from branch API: ${headSha}`)
+      return headSha
+    } catch (branchError) {
+      console.log(
+        'Branch API HEAD lookup failed; falling back to public Atom feed. ' +
+          branchError.message
+      )
+    }
+
+    try {
+      const headSha = getMainHeadShaFromAtomFeed()
+      console.log(`Resolved main HEAD SHA from Atom feed: ${headSha}`)
+      return headSha
+    } catch (atomError) {
+      throw new Error(
+        'Could not resolve main HEAD SHA from either source. Atom fallback error: ' +
+          atomError.message
+      )
+    }
+  }
+
   // This is intentionally a 2-step fetch:
   // 1) Get main HEAD SHA from the GitHub API.
   // 2) Fetch the JSON from raw.githubusercontent.com using that SHA in the path.
