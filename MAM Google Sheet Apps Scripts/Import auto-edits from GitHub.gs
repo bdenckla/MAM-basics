@@ -3,17 +3,6 @@
 const MAMGO_AUTO_EDITS_REPO = 'bdenckla/mamgo-auto-edits'
 const MAMGO_AUTO_EDITS_JSON_PATH = 'diff_mamws_mamgo-auto-edits.json'
 
-function makeNoCacheUrl(baseUrl) {
-  if (typeof baseUrl !== 'string' || baseUrl.length === 0) {
-    throw new Error(
-      'Run importAutoEdits, not makeNoCacheUrl. makeNoCacheUrl expects a non-empty URL string.'
-    )
-  }
-
-  const separator = baseUrl.indexOf('?') >= 0 ? '&' : '?'
-  return `${baseUrl}${separator}cachebust=${Date.now()}`
-}
-
 function importAutoEdits() {
   function getMainHeadShaFromBranchApi() {
     const branchApiUrl = makeNoCacheUrl(
@@ -158,4 +147,15 @@ function importAutoEdits() {
   range.setValues(rows)
 
   console.log(`Appended ${rows.length} edits starting at row ${startRow}.`)
+}
+
+function makeNoCacheUrl(baseUrl) {
+  if (typeof baseUrl !== 'string' || baseUrl.length === 0) {
+    throw new Error(
+      'Run importAutoEdits, not makeNoCacheUrl. makeNoCacheUrl expects a non-empty URL string.'
+    )
+  }
+
+  const separator = baseUrl.indexOf('?') >= 0 ? '&' : '?'
+  return `${baseUrl}${separator}cachebust=${Date.now()}`
 }
