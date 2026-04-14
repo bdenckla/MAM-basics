@@ -33,15 +33,28 @@ def main():
     """Download all 6 MAM sections from its Google Sheet, then parse and check."""
     parser = argparse.ArgumentParser(description=main.__doc__)
     parser.add_argument(
+        "--section",
+        choices=tbn.ALL_SECIDS,
+        help="Download only the named section instead of all sections",
+    )
+    parser.add_argument(
         "--skip-download",
         action="store_true",
         help="Skip downloading; just parse and check existing CSVs",
     )
+    parser.add_argument(
+        "--download-only",
+        action="store_true",
+        help="Download requested CSVs and exit without parsing or checking",
+    )
     args = parser.parse_args()
     if not args.skip_download:
+        secids = (args.section,) if args.section else tbn.ALL_SECIDS
         with polite_download.PoliteDownloader(_GOOGLE_DOWNLOAD_CONFIG) as downloader:
-            for secid in tbn.ALL_SECIDS:
+            for secid in secids:
                 _download_section(secid, downloader)
+    if args.download_only:
+        return
     all_plus_paths = main_parse_go.almost_main()
     errors = check_mpp(all_plus_paths)
     if errors:
