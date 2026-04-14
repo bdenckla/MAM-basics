@@ -9,23 +9,19 @@ Usage (run from repo root):
 
 import argparse
 
-import requests
-
 import main_parse_ws
 from py_misc import my_utils_for_mainish as my_utils_fm
 from py_misc import get_wikisource_plan as wsplan
 from pycmn import mam_bknas_and_std_bknas as mbkn_a_sbkn
 from pycmn import file_io
+from pycmn import polite_download
 
 
-def _download_chapter(out_book_contents, chapter_plan):
+def _download_chapter(out_book_contents, chapter_plan, downloader):
     he_chnu, title = chapter_plan
     params = {"title": title, "action": "raw"}
-    user_page = "https://he.wikisource.org/wiki/%D7%9E%D7%A9%D7%AA%D7%9E%D7%A9:Bdenckla"
-    headers = {"User-Agent": f"Denckla-Dowload-MAM-Bot/1.1 ({user_page})"}
-    index_php = "https://he.wikisource.org/w/index.php"
-    get_result = requests.get(index_php, params=params, headers=headers)
-    out_book_contents[he_chnu] = get_result.text.splitlines()
+    text = downloader.get_text(_WIKISOURCE_INDEX_PHP, params=params)
+    out_book_contents[he_chnu] = text.splitlines()
 
 
 def _write_book(book_contents, out_path, he_bn_sbn):
@@ -36,11 +32,11 @@ def _write_book(book_contents, out_path, he_bn_sbn):
     file_io.json_dump_to_file_path(book_contents, out_path)
 
 
-def _download_book(book_plan, out_path):
+def _download_book(book_plan, out_path, downloader):
     # he_bn_sbn: Hebrew book name and sub-book name (a pair) (aka mam_he_book_name_pair)
     book_contents = {}
     for chapter_plan in wsplan.get_chapter_plans(book_plan):
-        _download_chapter(book_contents, chapter_plan)
+        _download_chapter(book_contents, chapter_plan, downloader)
     he_bn_sbn, _he_chnus = book_plan
     _write_book(book_contents, out_path, he_bn_sbn)
 
@@ -52,12 +48,25 @@ def main():
     parser.add_argument("--section6")  # e.g. SifEm
     args = parser.parse_args()
     book_plans = wsplan.get_book_plans(args.book39, args.section6)
-    for book_plan in book_plans:
-        _download_book(book_plan, _OUT_PATH)
+    with polite_download.PoliteDownloader(_WIKISOURCE_DOWNLOAD_CONFIG) as downloader:
+        for book_plan in book_plans:
+            _download_book(book_plan, _OUT_PATH, downloader)
     main_parse_ws.almost_main()
 
 
 _OUT_PATH = "in/mam-ws"
+_WIKISOURCE_USER_PAGE = (
+    "https://he.wikisource.org/wiki/%D7%9E%D7%A9%D7%AA%D7%9E%D7%A9:Bdenckla"
+)
+_WIKISOURCE_INDEX_PHP = "https://he.wikisource.org/w/index.php"
+_WIKISOURCE_DOWNLOAD_CONFIG = polite_download.PoliteDownloadConfig(
+    user_agent=f"Denckla-Dowload-MAM-Bot/1.1 ({_WIKISOURCE_USER_PAGE})",
+    default_timeout_s=30.0,
+    throttle=polite_download.ThrottleConfig(min_delay_s=1.5, mean_delay_s=3.0),
+    retry=polite_download.RetryConfig(max_attempts=4),
+    cache=polite_download.CacheConfig(dir_path=".novc/http-cache/wikisource"),
+    obey_robots_txt=False,
+)
 
 
 if __name__ == "__main__":

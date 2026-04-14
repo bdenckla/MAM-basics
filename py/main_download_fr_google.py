@@ -7,9 +7,8 @@ Usage:
 
 import argparse
 
-import requests
-
 from pycmn import file_io
+from pycmn import polite_download
 from py_misc.check_mpp import check_mpp
 from py_misc import my_utils_for_mainish as my_utils_fm
 from py_misc import mam_csv_in
@@ -17,12 +16,10 @@ import main_parse_go
 from pycmn import bib_locales as tbn
 
 
-def _download_section(secid):
+def _download_section(secid, downloader):
     gurl_part_with_gid = f"pub?output=csv&gid={_GURL_GIDS[secid]}"
     rurl = "/".join((_GURL_BASE, _GURL_ID, gurl_part_with_gid))
-    result_of_get = requests.get(rurl, timeout=10)
-    result_of_get.encoding = "utf-8"
-    text = result_of_get.text
+    text = downloader.get_text(rurl, timeout=10, encoding="utf-8")
     out_path = mam_csv_in.csv_path(secid)
     my_utils_fm.show_progress_g(__file__, out_path)
     file_io.with_tmp_openw(out_path, {"newline": ""}, _write_callback, text)
@@ -42,8 +39,9 @@ def main():
     )
     args = parser.parse_args()
     if not args.skip_download:
-        for secid in tbn.ALL_SECIDS:
-            _download_section(secid)
+        with polite_download.PoliteDownloader(_GOOGLE_DOWNLOAD_CONFIG) as downloader:
+            for secid in tbn.ALL_SECIDS:
+                _download_section(secid, downloader)
     all_plus_paths = main_parse_go.almost_main()
     errors = check_mpp(all_plus_paths)
     if errors:
@@ -68,6 +66,15 @@ _GURL_GIDS = {  # IDs for the six individual tabs (sheets) of interest
     tbn.SEC_NEV_RISH: 779581656,
     tbn.SEC_TORAH: 957434826,
 }
+_GOOGLE_DOWNLOAD_CONFIG = polite_download.PoliteDownloadConfig(
+    user_agent=f"Denckla-Dowload-MAM-Bot/1.1 ({_GURL_BASE})",
+    default_timeout_s=15.0,
+    referer="https://docs.google.com/spreadsheets/",
+    throttle=polite_download.ThrottleConfig(min_delay_s=1.5, mean_delay_s=3.0),
+    retry=polite_download.RetryConfig(max_attempts=4),
+    cache=polite_download.CacheConfig(dir_path=".novc/http-cache/google"),
+    obey_robots_txt=True,
+)
 
 
 if __name__ == "__main__":
