@@ -1,17 +1,29 @@
 'use strict'
 
-function getMainHeadSha() {
-  const branchApiUrl =
-    'https://api.github.com/repos/bdenckla/mamgo-auto-edits/branches/main'
+const MAMGO_AUTO_EDITS_REPO = 'bdenckla/mamgo-auto-edits'
+const MAMGO_AUTO_EDITS_JSON_PATH = 'diff_mamws_mamgo-auto-edits.json'
+
+function makeNoCacheUrl(baseUrl) {
+  const separator = baseUrl.includes('?') ? '&' : '?'
+  return `${baseUrl}${separator}cachebust=${Date.now()}`
+}
+
+function getMainHeadShaFromBranchApi() {
+  const branchApiUrl = makeNoCacheUrl(
+    `https://api.github.com/repos/${MAMGO_AUTO_EDITS_REPO}/branches/main`)
 
   const branchResponse = UrlFetchApp.fetch(branchApiUrl, {
-    headers: { Accept: 'application/vnd.github+json' },
+    headers: {
+      Accept: 'application/vnd.github+json',
+      'Cache-Control': 'no-cache',
+      Pragma: 'no-cache',
+    },
     muteHttpExceptions: true,
   })
 
   if (branchResponse.getResponseCode() !== 200) {
     throw new Error(
-      'Could not resolve main HEAD SHA. GitHub API response: ' +
+      'GitHub branch API response: ' +
         branchResponse.getResponseCode() +
         ' ' +
         branchResponse.getContentText()
@@ -26,6 +38,60 @@ function getMainHeadSha() {
   return branchPayload.commit.sha
 }
 
+function getMainHeadShaFromAtomFeed() {
+  const atomUrl = makeNoCacheUrl(
+    `https://github.com/${MAMGO_AUTO_EDITS_REPO}/commits/main.atom`)
+
+  const atomResponse = UrlFetchApp.fetch(atomUrl, {
+    headers: {
+      'Cache-Control': 'no-cache',
+      Pragma: 'no-cache',
+    },
+    muteHttpExceptions: true,
+  })
+
+  if (atomResponse.getResponseCode() !== 200) {
+    throw new Error(
+      'GitHub commit Atom feed response: ' +
+        atomResponse.getResponseCode() +
+        ' ' +
+        atomResponse.getContentText()
+    )
+  }
+
+  const atomText = atomResponse.getContentText()
+  const commitMatch = atomText.match(/Grit::Commit\/([0-9a-f]{40})/)
+  if (!commitMatch) {
+    throw new Error('GitHub commit Atom feed did not include a commit SHA')
+  }
+
+  return commitMatch[1]
+}
+
+function getMainHeadSha() {
+  try {
+    const headSha = getMainHeadShaFromBranchApi()
+    console.log(`Resolved main HEAD SHA from branch API: ${headSha}`)
+    return headSha
+  } catch (branchError) {
+    console.log(
+      'Branch API HEAD lookup failed; falling back to public Atom feed. ' +
+        branchError.message
+    )
+  }
+
+  try {
+    const headSha = getMainHeadShaFromAtomFeed()
+    console.log(`Resolved main HEAD SHA from Atom feed: ${headSha}`)
+    return headSha
+  } catch (atomError) {
+    throw new Error(
+      'Could not resolve main HEAD SHA from either source. Atom fallback error: ' +
+        atomError.message
+    )
+  }
+}
+
 function importAutoEdits() {
   // This is intentionally a 2-step fetch:
   // 1) Get main HEAD SHA from the GitHub API.
@@ -37,12 +103,13 @@ function importAutoEdits() {
   // URL points to immutable content for one commit, so once we resolve HEAD,
   // we fetch exactly that version without waiting for branch-cache expiry.
   const headSha = getMainHeadSha()
-  const url =
-    'https://raw.githubusercontent.com/bdenckla/mamgo-auto-edits/' +
-    headSha +
-    '/diff_mamws_mamgo-auto-edits.json'
+  const url = makeNoCacheUrl(
+    `https://raw.githubusercontent.com/${MAMGO_AUTO_EDITS_REPO}/${headSha}/${MAMGO_AUTO_EDITS_JSON_PATH}`)
+
+  console.log(`Importing auto-edits from commit ${headSha}`)
 
   const response = UrlFetchApp.fetch(url, { muteHttpExceptions: true })
+  console.log(`Raw JSON fetch response code: ${response.getResponseCode()}`)
   if (response.getResponseCode() !== 200) {
     throw new Error(
       'Could not fetch auto-edits JSON at SHA ' +
@@ -54,7 +121,11 @@ function importAutoEdits() {
     )
   }
 
-  const edits = JSON.parse(response.getContentText())
+  const responseText = response.getContentText()
+  console.log(`Raw JSON fetch content length: ${responseText.length}`)
+
+  const edits = JSON.parse(responseText)
+  console.log(`Parsed auto-edits count: ${edits.length}`)
 
   if (edits.length === 0) {
     console.log('No edits to import.')
@@ -62,6 +133,7 @@ function importAutoEdits() {
   }
 
   const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('AutoEdits')
+  console.log(`AutoEdits sheet found: ${Boolean(sheet)}`)
 
   const rows = edits.map((e) => [
     e.sena,
@@ -74,6 +146,7 @@ function importAutoEdits() {
 
   const startRow = sheet.getLastRow() + 1
   const numCols = rows[0].length
+  console.log(`Preparing to append ${rows.length} rows at row ${startRow}`)
   const range = sheet.getRange(startRow, 1, rows.length, numCols)
   range.setNumberFormat('@')
   range.setValues(rows)
