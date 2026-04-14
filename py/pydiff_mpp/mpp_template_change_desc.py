@@ -2,7 +2,14 @@
 
 from collections import Counter
 
-from pydiff_mpp.mpp_flatten import _flatten_element, _is_parashah_template
+from pydiff_mpp.mpp_flatten import (
+    _flatten_element,
+    _is_ketiv_velo_qere_template,
+    _is_parashah_template,
+    _is_qere_velo_ketiv_template,
+    _is_std_kq_template,
+    _is_trivial_kq_template,
+)
 from pydiff_mpp.mpp_param_access import _MISSING, _get_param
 
 
@@ -68,11 +75,17 @@ def _collect_named_template_from_template(tmpl, template_name, parts, instances)
         if p1 is not _MISSING:
             _collect_named_template_tracking(p1, template_name, parts, instances)
         return
-    if name in ('קו"כ', 'כו"ק'):
-        for param_name in ("1", "2"):
-            param = _get_param(tmpl, param_name)
-            if param is not _MISSING:
-                _collect_named_template_tracking(param, template_name, parts, instances)
+    if _is_std_kq_template(name) or _is_qere_velo_ketiv_template(name):
+        param = _get_param(tmpl, "2")
+        if param is not _MISSING:
+            _collect_named_template_tracking(param, template_name, parts, instances)
+        return
+    if _is_trivial_kq_template(name):
+        param = _get_param(tmpl, "1")
+        if param is not _MISSING:
+            _collect_named_template_tracking(param, template_name, parts, instances)
+        return
+    if _is_ketiv_velo_qere_template(name):
         return
     if name == "מ:קמץ":
         pd = _get_param(tmpl, "ד")

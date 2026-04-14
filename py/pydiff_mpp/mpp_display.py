@@ -15,7 +15,13 @@ Exports:
 import re
 
 from pycmn import hebrew_punctuation as hpu
-from pydiff_mpp.mpp_flatten import _is_parashah_template
+from pydiff_mpp.mpp_flatten import (
+    _is_ketiv_velo_qere_template,
+    _is_parashah_template,
+    _is_qere_velo_ketiv_template,
+    _is_std_kq_template,
+    _is_trivial_kq_template,
+)
 from pydiff_mpp.mpp_param_access import _MISSING, _get_param
 
 # ── Paseq display (ruby annotations for legarmeih / narpas) ──
@@ -57,13 +63,17 @@ def _collect_paseq_types(obj, types):
             if p1 is not _MISSING:
                 _collect_paseq_types(p1, types)
             return
-        if name in ('קו"כ', 'כו"ק'):
-            p1 = _get_param(obj, "1")
-            if p1 is not _MISSING:
-                _collect_paseq_types(p1, types)
+        if _is_std_kq_template(name) or _is_qere_velo_ketiv_template(name):
             p2 = _get_param(obj, "2")
             if p2 is not _MISSING:
                 _collect_paseq_types(p2, types)
+            return
+        if _is_trivial_kq_template(name):
+            p1 = _get_param(obj, "1")
+            if p1 is not _MISSING:
+                _collect_paseq_types(p1, types)
+            return
+        if _is_ketiv_velo_qere_template(name):
             return
         if name == "מ:קמץ":
             pd = _get_param(obj, "ד")
@@ -116,13 +126,17 @@ def _gray_maqaf_walk_template(tmpl, pos, positions):
         if p1 is not _MISSING:
             _gray_maqaf_walk(p1, pos, positions)
         return
-    if name in ('קו"כ', 'כו"ק'):
-        p1 = _get_param(tmpl, "1")
-        if p1 is not _MISSING:
-            _gray_maqaf_walk(p1, pos, positions)
+    if _is_std_kq_template(name) or _is_qere_velo_ketiv_template(name):
         p2 = _get_param(tmpl, "2")
         if p2 is not _MISSING:
             _gray_maqaf_walk(p2, pos, positions)
+        return
+    if _is_trivial_kq_template(name):
+        p1 = _get_param(tmpl, "1")
+        if p1 is not _MISSING:
+            _gray_maqaf_walk(p1, pos, positions)
+        return
+    if _is_ketiv_velo_qere_template(name):
         return
     if name == "מ:קמץ":
         pd = _get_param(tmpl, "ד")
@@ -171,31 +185,17 @@ def _kq_position_walk_template(tmpl, pos, positions):
         if p1 is not _MISSING:
             _kq_position_walk(p1, pos, positions)
         return
-    if name in ('קו"כ', 'כו"ק'):
-        p1 = _get_param(tmpl, "1")
-        p1_start = pos[0]
-        if p1 is not _MISSING:
-            _kq_position_walk(p1, pos, positions)
-        p1_end = pos[0]
+    if _is_std_kq_template(name) or _is_qere_velo_ketiv_template(name):
         p2 = _get_param(tmpl, "2")
-        p2_start = pos[0]
         if p2 is not _MISSING:
             _kq_position_walk(p2, pos, positions)
-        p2_end = pos[0]
-        if name == 'כו"ק':
-            k_start, k_end = p1_start, p1_end
-            q_start, q_end = p2_start, p2_end
-        else:
-            q_start, q_end = p1_start, p1_end
-            k_start, k_end = p2_start, p2_end
-        positions.append(
-            {
-                "k_start": k_start,
-                "k_end": k_end,
-                "q_start": q_start,
-                "q_end": q_end,
-            }
-        )
+        return
+    if _is_trivial_kq_template(name):
+        p1 = _get_param(tmpl, "1")
+        if p1 is not _MISSING:
+            _kq_position_walk(p1, pos, positions)
+        return
+    if _is_ketiv_velo_qere_template(name):
         return
     if name == "מ:קמץ":
         pd = _get_param(tmpl, "ד")

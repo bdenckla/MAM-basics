@@ -3,6 +3,7 @@ import unittest
 from pycmn import bib_locales as tbn
 from pydiff_mpp import mpp_classify, mpp_expand, mpp_extract, mpp_json, mpp_structure
 from pydiff_mpp.mpp_book_urls import mam_with_doc_url, ref_str, wikisource_url
+from pydiff_mpp.mpp_flatten import flatten_ep
 
 
 def _ezek_40_26_old_ep():
@@ -219,7 +220,60 @@ def _neighbor_note_new_ep():
     ]
 
 
+def _lam_4_3_old_ep():
+    return [
+        {
+            "tmpl_name": "נוסח",
+            "tmpl_params": {
+                "1": {
+                    "tmpl_name": 'מ:כו"ק כתיב תרתין מילין וקרי מילה חדה',
+                    "tmpl_params": {
+                        "1": "כי ענים",
+                        "2": "כַּיְעֵינִ֖ים",
+                    },
+                },
+                "2": "הערה ישנה",
+            },
+        }
+    ]
+
+
+def _lam_4_3_new_ep():
+    return [
+        {
+            "tmpl_name": "נוסח",
+            "tmpl_params": {
+                "1": {
+                    "tmpl_name": 'מ:כו"ק כתיב תרתין מילין וקרי מילה חדה',
+                    "tmpl_params": {
+                        "1": "כי ענים",
+                        "2": "כַּיְעֵנִ֖ים",
+                    },
+                },
+                "2": "הערה חדשה",
+            },
+        }
+    ]
+
+
 class TemplateMultiplicityDiffTests(unittest.TestCase):
+    def test_flatten_ep_uses_visible_qere_for_standard_kq(self):
+        self.assertEqual(flatten_ep(_lam_4_3_old_ep()), "כַּיְעֵינִ֖ים")
+
+    def test_json_serialization_does_not_concatenate_standard_kq_args(self):
+        diff = mpp_extract._diff_ep(
+            _lam_4_3_old_ep(), _lam_4_3_new_ep(), tbn.BK_LAMENT, 4, 3
+        )
+
+        self.assertIsNotNone(diff)
+        self.assertTrue(diff["text_changed"])
+        mpp_classify.classify_diffs([diff])
+        serialized = mpp_json._serialize_diff(diff)
+        self.assertEqual(
+            serialized["changes"],
+            [{"old": "כַּיְעֵינִ֖ים", "new": "כַּיְעֵנִ֖ים"}],
+        )
+
     def test_multiset_delta_preserves_duplicate_template_additions(self):
         added, removed = mpp_structure._template_name_multiset_delta(
             _ezek_40_26_old_ep(), _ezek_40_26_new_ep()

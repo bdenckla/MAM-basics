@@ -22,6 +22,26 @@ def _is_parashah_template(name):
     return len(name) >= 2 and name[0] == "ר" and name[1:].isdigit()
 
 
+def _is_std_kq_template(name):
+    """Check if template is a standard ketiv/qere body-text variant."""
+    if name in ('קו"כ', 'כו"ק'):
+        return True
+    return name.startswith('מ:קו"כ') or name.startswith('מ:כו"ק')
+
+
+def _is_trivial_kq_template(name):
+    """Check if template is a trivial ketiv/qere whose body text is param 1."""
+    return name == 'קו"כ-אם'
+
+
+def _is_qere_velo_ketiv_template(name):
+    return name == "קרי ולא כתיב"
+
+
+def _is_ketiv_velo_qere_template(name):
+    return name == "כתיב ולא קרי"
+
+
 def flatten_ep(ep):
     """Flatten an EP column array to a body text string.
 
@@ -49,15 +69,14 @@ def _flatten_template(tmpl):
     if name == "נוסח":
         p1 = _get_param(tmpl, "1")
         return _flatten_element(p1) if p1 is not _MISSING else ""
-    if name in ('קו"כ', 'כו"ק'):
-        parts = []
-        p1 = _get_param(tmpl, "1")
-        if p1 is not _MISSING:
-            parts.append(_flatten_element(p1))
+    if _is_std_kq_template(name) or _is_qere_velo_ketiv_template(name):
         p2 = _get_param(tmpl, "2")
-        if p2 is not _MISSING:
-            parts.append(_flatten_element(p2))
-        return "".join(parts)
+        return _flatten_element(p2) if p2 is not _MISSING else ""
+    if _is_trivial_kq_template(name):
+        p1 = _get_param(tmpl, "1")
+        return _flatten_element(p1) if p1 is not _MISSING else ""
+    if _is_ketiv_velo_qere_template(name):
+        return ""
     if name == "מ:קמץ":
         pd = _get_param(tmpl, "ד")
         return _flatten_element(pd) if pd is not _MISSING else ""
@@ -108,13 +127,17 @@ def _flatten_template_tracking(tmpl, parts, notes):
         if p2 is not _MISSING:
             notes.append({"start": start, "end": end, "param2": p2})
         return
-    if name in ('קו"כ', 'כו"ק'):
-        p1 = _get_param(tmpl, "1")
-        if p1 is not _MISSING:
-            _flatten_tracking(p1, parts, notes)
+    if _is_std_kq_template(name) or _is_qere_velo_ketiv_template(name):
         p2 = _get_param(tmpl, "2")
         if p2 is not _MISSING:
             _flatten_tracking(p2, parts, notes)
+        return
+    if _is_trivial_kq_template(name):
+        p1 = _get_param(tmpl, "1")
+        if p1 is not _MISSING:
+            _flatten_tracking(p1, parts, notes)
+        return
+    if _is_ketiv_velo_qere_template(name):
         return
     if name == "מ:קמץ":
         pd = _get_param(tmpl, "ד")
