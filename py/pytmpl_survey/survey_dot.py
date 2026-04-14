@@ -120,18 +120,41 @@ def _dot_quoted(name):
     return f'"{escaped}"'
 
 
-def _node_attrs(label, tooltip):
+def _node_attrs(label=None, tooltip=None):
     """Return a dot attribute string for label and optional tooltip."""
-    parts = [f"label={_dot_quoted(label)}"]
+    parts = []
+    if label is not None:
+        parts.append(f"label={_dot_quoted(label)}")
     if tooltip:
         parts.append(f"tooltip={_dot_quoted(tooltip)}")
     return " [" + ", ".join(parts) + "]"
 
 
+def _focused_group_label(rep, members, target, abbrevs):
+    """Return a label for a node in a focused graph."""
+    if len(members) > 1 and rep != target:
+        return f"direct children of {target}"
+    return abbrevs[rep]
+
+
+def _make_unique_node_id(preferred, used_ids):
+    """Return a node id that is unique within the current dot file."""
+    if preferred not in used_ids:
+        used_ids.add(preferred)
+        return preferred
+    index = 2
+    while True:
+        candidate = f"{preferred} ({index})"
+        if candidate not in used_ids:
+            used_ids.add(candidate)
+            return candidate
+        index += 1
+
+
 _DEFAULT_NOTE = object()
 
 
-def _write_dot(edges, groups, fp, note=_DEFAULT_NOTE):
+def _write_dot(edges, groups, fp, note=_DEFAULT_NOTE, focus_target=None):
     # Build abbreviation map for all non-column nodes
     all_names = set()
     for caller, callee in edges:
@@ -156,13 +179,32 @@ def _write_dot(edges, groups, fp, note=_DEFAULT_NOTE):
     # Template nodes (with labels/tooltips as needed)
     fp.write("    // Template nodes\n")
     fp.write('    node [shape=box, style=""];\n')
+    node_ids = {}
+    used_ids = set(col_nodes)
     for rep, members in sorted(groups.items()):
+        label = None
+        tooltip = None
+        node_id = rep
         if len(members) > 1:
-            label = f"{abbrevs[rep]}, …"
             tooltip = _group_tooltip(members)
-            fp.write(f"    {_dot_quoted(rep)}{_node_attrs(label, tooltip)};\n")
+            if focus_target is None:
+                label = f"{abbrevs[rep]}, …"
+                node_id = _make_unique_node_id(label, used_ids)
+            else:
+                label = _focused_group_label(rep, members, focus_target, abbrevs)
+                if rep != focus_target:
+                    node_id = _make_unique_node_id(label, used_ids)
         elif abbrevs[rep] != rep:
-            fp.write(f"    {_dot_quoted(rep)}{_node_attrs(abbrevs[rep], rep)};\n")
+            label = abbrevs[rep]
+            tooltip = rep
+        else:
+            used_ids.add(node_id)
+        node_ids[rep] = node_id
+        if label is not None:
+            emitted_label = None if label == node_id else label
+            fp.write(
+                f"    {_dot_quoted(node_id)}{_node_attrs(emitted_label, tooltip)};\n"
+            )
     fp.write("\n")
     # Note
     if note is _DEFAULT_NOTE:
@@ -176,8 +218,10 @@ def _write_dot(edges, groups, fp, note=_DEFAULT_NOTE):
     # Edges sorted for stable output
     fp.write("    // Edges\n")
     for (caller, callee), count in sorted(edges.items()):
+        caller_id = node_ids.get(caller, caller)
+        callee_id = node_ids.get(callee, callee)
         fp.write(
-            f"    {_dot_quoted(caller)} -> {_dot_quoted(callee)}"
+            f"    {_dot_quoted(caller_id)} -> {_dot_quoted(callee_id)}"
             f' [label="{count}"];\n'
         )
     fp.write("}\n")
@@ -253,7 +297,7 @@ def write_focused_dot_files(stack_counts, stem, deeply_discard=False, svg_stem=N
         dot_path = f"{stem}-{slug}-call-graph.dot"
         svg_path = f"{svg_stem}-{slug}-call-graph.svg"
         with open(dot_path, "w", encoding="utf-8") as fp:
-            _write_dot(edges, groups, fp, note=None)
+            _write_dot(edges, groups, fp, note=None, focus_target=target)
         render_svg(dot_path, svg_path)
 
 
