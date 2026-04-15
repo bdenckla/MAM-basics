@@ -62,7 +62,7 @@ digraph template_call_graph {
     "C" -> "נוסח" [label="277"];
     "D" -> "נוסח" [label="35"];
     "E" -> "מ:כפול" [label="34"];
-    "E" -> "נוסח" [label="3534"];
+    "E" -> "נוסח" [label="3537"];
     "מ:כפול" -> "נוסח" [label="42"];
-    "נוסח" -> "direct children of נוסח" [label="4209"];
+    "נוסח" -> "direct children of נוסח" [label="4212"];
 }
