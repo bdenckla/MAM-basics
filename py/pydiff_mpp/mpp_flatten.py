@@ -2,8 +2,10 @@
 
 Exports:
     flatten_ep           — flatten EP body text
+    flatten_ep_for_diff  — flatten EP body text for diff tokenization
     _flatten_element     — flatten a nested EP element
     _flatten_ep_with_nusach — flatten while tracking נוסח note spans
+    _flatten_ep_with_nusach_for_diff — diff flatten while tracking נוסח note spans
     _find_relevant_nusach — filter note spans to those relevant to a diff
     _is_parashah_template — identify parashah-marker templates
 """
@@ -52,6 +54,19 @@ def flatten_ep(ep):
     return "".join(_flatten_element(el) for el in ep)
 
 
+def flatten_ep_for_diff(ep):
+    """Flatten an EP column to diff-friendly body text.
+
+    Unlike flatten_ep(), this keeps qere-only body text in its own token slot
+    and normalizes old single-arg קרי ולא כתיב templates by synthesizing the
+    visible qere from arg 1 with square brackets stripped.
+    """
+    buf = _new_diff_buffer()
+    for el in ep:
+        _flatten_diff_element(el, buf)
+    return "".join(buf["parts"])
+
+
 def _flatten_element(el):
     if isinstance(el, str):
         return el
@@ -60,6 +75,109 @@ def _flatten_element(el):
     if isinstance(el, list):
         return "".join(_flatten_element(x) for x in el)
     return ""
+
+
+def _new_diff_buffer():
+    return {"parts": [], "length": 0, "pending_break": False}
+
+
+def _append_diff_text(buf, text):
+    if not text:
+        return
+    if buf["pending_break"] and not text.startswith(" "):
+        buf["parts"].append(" ")
+        buf["length"] += 1
+    while buf["parts"] and buf["parts"][-1].endswith(" ") and text.startswith(" "):
+        text = text[1:]
+        if not text:
+            buf["pending_break"] = False
+            return
+    buf["parts"].append(text)
+    buf["length"] += len(text)
+    buf["pending_break"] = False
+
+
+def _append_diff_word(buf, word):
+    if not word:
+        return
+    if buf["parts"] and not buf["parts"][-1].endswith(" "):
+        buf["parts"].append(" ")
+        buf["length"] += 1
+    buf["parts"].append(word)
+    buf["length"] += len(word)
+    buf["pending_break"] = True
+
+
+def _strip_square_brackets(text):
+    return text.replace("[", "").replace("]", "")
+
+
+def _qere_velo_ketiv_body_for_diff(tmpl):
+    p2 = _get_param(tmpl, "2")
+    if p2 is not _MISSING:
+        return _flatten_element(p2)
+    p1 = _get_param(tmpl, "1")
+    if p1 is _MISSING:
+        return ""
+    return _strip_square_brackets(_flatten_element(p1))
+
+
+def _flatten_diff_element(el, buf):
+    if isinstance(el, str):
+        _append_diff_text(buf, el)
+        return
+    if isinstance(el, dict):
+        _flatten_diff_template(el, buf)
+        return
+    if isinstance(el, list):
+        for item in el:
+            _flatten_diff_element(item, buf)
+
+
+def _flatten_diff_template(tmpl, buf):
+    name = tmpl["tmpl_name"]
+    if _is_parashah_template(name):
+        _append_diff_text(buf, " ")
+        return
+    if name == "נוסח":
+        p1 = _get_param(tmpl, "1")
+        if p1 is not _MISSING:
+            _flatten_diff_element(p1, buf)
+        return
+    if _is_std_kq_template(name):
+        p2 = _get_param(tmpl, "2")
+        if p2 is not _MISSING:
+            _flatten_diff_element(p2, buf)
+        return
+    if _is_qere_velo_ketiv_template(name):
+        _append_diff_word(buf, _qere_velo_ketiv_body_for_diff(tmpl))
+        return
+    if _is_trivial_kq_template(name):
+        p1 = _get_param(tmpl, "1")
+        if p1 is not _MISSING:
+            _flatten_diff_element(p1, buf)
+        return
+    if _is_ketiv_velo_qere_template(name):
+        return
+    if name == "מ:קמץ":
+        pd = _get_param(tmpl, "ד")
+        if pd is not _MISSING:
+            _flatten_diff_element(pd, buf)
+        return
+    if name in ("מ:לגרמיה-2", "מ:לגרמיה"):
+        _append_diff_text(buf, "׀")
+        return
+    if name == "מ:פסק":
+        _append_diff_text(buf, "׀")
+        return
+    if name == "מ:כפול":
+        pk = _get_param(tmpl, "כפול")
+        if pk is not _MISSING:
+            _flatten_diff_element(pk, buf)
+        return
+    p1 = _get_param(tmpl, "1")
+    if p1 is not _MISSING:
+        _flatten_diff_element(p1, buf)
 
 
 def _flatten_template(tmpl):
@@ -102,6 +220,15 @@ def _flatten_ep_with_nusach(ep):
     return "".join(parts), notes
 
 
+def _flatten_ep_with_nusach_for_diff(ep):
+    """Flatten EP column for diffing and track נוסח templates that have param 2."""
+    buf = _new_diff_buffer()
+    notes = []
+    for el in ep:
+        _flatten_tracking_for_diff(el, buf, notes)
+    return "".join(buf["parts"]), notes
+
+
 def _flatten_tracking(obj, parts, notes):
     if isinstance(obj, str):
         parts.append(obj)
@@ -110,6 +237,16 @@ def _flatten_tracking(obj, parts, notes):
     elif isinstance(obj, list):
         for item in obj:
             _flatten_tracking(item, parts, notes)
+
+
+def _flatten_tracking_for_diff(obj, buf, notes):
+    if isinstance(obj, str):
+        _append_diff_text(buf, obj)
+    elif isinstance(obj, dict):
+        _flatten_template_tracking_for_diff(obj, buf, notes)
+    elif isinstance(obj, list):
+        for item in obj:
+            _flatten_tracking_for_diff(item, buf, notes)
 
 
 def _flatten_template_tracking(tmpl, parts, notes):
@@ -158,6 +295,57 @@ def _flatten_template_tracking(tmpl, parts, notes):
     p1 = _get_param(tmpl, "1")
     if p1 is not _MISSING:
         _flatten_tracking(p1, parts, notes)
+
+
+def _flatten_template_tracking_for_diff(tmpl, buf, notes):
+    name = tmpl["tmpl_name"]
+    if _is_parashah_template(name):
+        _append_diff_text(buf, " ")
+        return
+    if name == "נוסח":
+        start = buf["length"]
+        p1 = _get_param(tmpl, "1")
+        if p1 is not _MISSING:
+            _flatten_tracking_for_diff(p1, buf, notes)
+        end = buf["length"]
+        p2 = _get_param(tmpl, "2")
+        if p2 is not _MISSING:
+            notes.append({"start": start, "end": end, "param2": p2})
+        return
+    if _is_std_kq_template(name):
+        p2 = _get_param(tmpl, "2")
+        if p2 is not _MISSING:
+            _flatten_tracking_for_diff(p2, buf, notes)
+        return
+    if _is_qere_velo_ketiv_template(name):
+        _append_diff_word(buf, _qere_velo_ketiv_body_for_diff(tmpl))
+        return
+    if _is_trivial_kq_template(name):
+        p1 = _get_param(tmpl, "1")
+        if p1 is not _MISSING:
+            _flatten_tracking_for_diff(p1, buf, notes)
+        return
+    if _is_ketiv_velo_qere_template(name):
+        return
+    if name == "מ:קמץ":
+        pd = _get_param(tmpl, "ד")
+        if pd is not _MISSING:
+            _flatten_tracking_for_diff(pd, buf, notes)
+        return
+    if name in ("מ:לגרמיה-2", "מ:לגרמיה"):
+        _append_diff_text(buf, "׀")
+        return
+    if name == "מ:פסק":
+        _append_diff_text(buf, "׀")
+        return
+    if name == "מ:כפול":
+        pk = _get_param(tmpl, "כפול")
+        if pk is not _MISSING:
+            _flatten_tracking_for_diff(pk, buf, notes)
+        return
+    p1 = _get_param(tmpl, "1")
+    if p1 is not _MISSING:
+        _flatten_tracking_for_diff(p1, buf, notes)
 
 
 def _changed_new_positions(old_text, new_text):

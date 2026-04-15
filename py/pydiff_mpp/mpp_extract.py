@@ -15,8 +15,8 @@ from pydiff_mpp.mpp_file_matching import (
 )
 from pydiff_mpp.mpp_flatten import (
     _find_relevant_nusach,
-    _flatten_ep_with_nusach,
-    flatten_ep,
+    _flatten_ep_with_nusach_for_diff,
+    flatten_ep_for_diff,
 )
 from pydiff_mpp.mpp_structure import (
     _structural_signature,
@@ -112,8 +112,8 @@ def _diff_ep(old_ep, new_ep, book39id, chapter, verse):
     structural changes like legarmeih -> paseq or reordered templates).
     Ignores format differences like tmpl_args vs tmpl_params.
     """
-    old_text = flatten_ep(old_ep)
-    new_text, new_nusach = _flatten_ep_with_nusach(new_ep)
+    old_text = flatten_ep_for_diff(old_ep)
+    new_text, new_nusach = _flatten_ep_with_nusach_for_diff(new_ep)
     text_changed = old_text != new_text
     if not text_changed:
         old_counts = _template_name_counter(old_ep)

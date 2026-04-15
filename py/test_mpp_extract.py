@@ -256,6 +256,86 @@ def _lam_4_3_new_ep():
     ]
 
 
+def _qvq_oldstyle_same_old_ep():
+    return [
+        "כַּאֲשֶׁ֥ר ",
+        {
+            "tmpl_name": "נוסח",
+            "tmpl_params": {
+                "1": [
+                    "יִשְׁאַל־",
+                    {
+                        "tmpl_name": "קרי ולא כתיב",
+                        "tmpl_args": ["[אִ֖ישׁ]"],
+                    },
+                ],
+                "2": "הערת נוסח",
+            },
+        },
+        " בִּדְבַ֣ר הָאֱלֹהִ֑ים",
+    ]
+
+
+def _qvq_oldstyle_same_new_ep():
+    return [
+        "כַּאֲשֶׁ֥ר ",
+        {
+            "tmpl_name": "נוסח",
+            "tmpl_params": {
+                "1": [
+                    "יִשְׁאַל־",
+                    {
+                        "tmpl_name": "קרי ולא כתיב",
+                        "tmpl_args": ["[אִ֖ישׁ]", "אִ֖ישׁ"],
+                    },
+                ],
+                "2": "הערת נוסח",
+            },
+        },
+        " בִּדְבַ֣ר הָאֱלֹהִ֑ים",
+    ]
+
+
+def _qvq_oldstyle_changed_old_ep():
+    return [
+        "כַּאֲשֶׁ֥ר ",
+        {
+            "tmpl_name": "נוסח",
+            "tmpl_params": {
+                "1": [
+                    "יִשְׁאַל־",
+                    {
+                        "tmpl_name": "קרי ולא כתיב",
+                        "tmpl_args": ["[אִ֖ישׁ]"],
+                    },
+                ],
+                "2": "הערת נוסח",
+            },
+        },
+        " בִּדְבַ֣ר הָאֱלֹהִ֑ים",
+    ]
+
+
+def _qvq_oldstyle_changed_new_ep():
+    return [
+        "כַּאֲשֶׁ֥ר ",
+        {
+            "tmpl_name": "נוסח",
+            "tmpl_params": {
+                "1": [
+                    "יִשְׁאַל־",
+                    {
+                        "tmpl_name": "קרי ולא כתיב",
+                        "tmpl_args": ["[אֵ֖ישׁ]", "אֵ֖ישׁ"],
+                    },
+                ],
+                "2": "הערת נוסח",
+            },
+        },
+        " בִּדְבַ֣ר הָאֱלֹהִ֑ים",
+    ]
+
+
 class TemplateMultiplicityDiffTests(unittest.TestCase):
     def test_flatten_ep_uses_visible_qere_for_standard_kq(self):
         self.assertEqual(flatten_ep(_lam_4_3_old_ep()), "כַּיְעֵינִ֖ים")
@@ -273,6 +353,32 @@ class TemplateMultiplicityDiffTests(unittest.TestCase):
             serialized["changes"],
             [{"old": "כַּיְעֵינִ֖ים", "new": "כַּיְעֵנִ֖ים"}],
         )
+
+    def test_diff_ep_normalizes_oldstyle_qere_velo_ketiv(self):
+        diff = mpp_extract._diff_ep(
+            _qvq_oldstyle_same_old_ep(),
+            _qvq_oldstyle_same_new_ep(),
+            tbn.BK_SND_SAM,
+            16,
+            23,
+        )
+
+        self.assertIsNone(diff)
+
+    def test_json_serialization_scopes_qere_velo_ketiv_without_neighbor_word(self):
+        diff = mpp_extract._diff_ep(
+            _qvq_oldstyle_changed_old_ep(),
+            _qvq_oldstyle_changed_new_ep(),
+            tbn.BK_SND_SAM,
+            16,
+            23,
+        )
+
+        self.assertIsNotNone(diff)
+        self.assertTrue(diff["text_changed"])
+        mpp_classify.classify_diffs([diff])
+        serialized = mpp_json._serialize_diff(diff)
+        self.assertEqual(serialized["changes"], [{"old": "אִ֖ישׁ", "new": "אֵ֖ישׁ"}])
 
     def test_multiset_delta_preserves_duplicate_template_additions(self):
         added, removed = mpp_structure._template_name_multiset_delta(
