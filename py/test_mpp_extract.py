@@ -516,6 +516,67 @@ class TemplateMultiplicityDiffTests(unittest.TestCase):
         self.assertIsNone(diff)
 
 
+def _std_kq_addition_old_ep():
+    # Tsefaniah 2:9 pattern: bare qere text, no כו"ק wrapper
+    return ["גּוֹיִ֖"]
+
+
+def _std_kq_addition_new_ep():
+    # A כו"ק template is added and the qere text also changes (alef added)
+    return [
+        {
+            "tmpl_name": 'כו"ק',
+            "tmpl_params": {
+                "1": "גוי",
+                "2": "גּוֹיִ֖י",
+            },
+        }
+    ]
+
+
+class StdKqAdditionInTextChangedDiffTests(unittest.TestCase):
+    def test_diff_ep_detects_text_changed(self):
+        diff = mpp_extract._diff_ep(
+            _std_kq_addition_old_ep(),
+            _std_kq_addition_new_ep(),
+            tbn.BK_TSEF,
+            2,
+            9,
+        )
+
+        self.assertIsNotNone(diff)
+        self.assertTrue(diff["text_changed"])
+
+    def test_json_serialization_includes_both_changes_and_templates_added(self):
+        diff = mpp_extract._diff_ep(
+            _std_kq_addition_old_ep(),
+            _std_kq_addition_new_ep(),
+            tbn.BK_TSEF,
+            2,
+            9,
+        )
+
+        mpp_classify.classify_diffs([diff])
+        serialized = mpp_json._serialize_diff(diff)
+        self.assertIn("changes", serialized)
+        self.assertEqual(serialized["templates_added"], ['כו"ק'])
+        self.assertNotIn("templates_removed", serialized)
+
+    def test_json_serialization_does_not_emit_templates_added_for_pure_text_change(
+        self,
+    ):
+        # Existing כו"ק template where only param 2 changes: text changed, no structural
+        # addition — templates_added should not appear (כו"ק count is unchanged).
+        diff = mpp_extract._diff_ep(
+            _lam_4_3_old_ep(), _lam_4_3_new_ep(), tbn.BK_LAMENT, 4, 3
+        )
+
+        mpp_classify.classify_diffs([diff])
+        serialized = mpp_json._serialize_diff(diff)
+        self.assertNotIn("templates_added", serialized)
+        self.assertNotIn("templates_removed", serialized)
+
+
 class CanonicalBookIdTests(unittest.TestCase):
     def test_mam_with_doc_url_accepts_canonical_book_id(self):
         url = mam_with_doc_url(tbn.BK_FST_SAM, 3, 4)

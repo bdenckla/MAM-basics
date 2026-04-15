@@ -154,6 +154,9 @@ def _expand_diffs(diffs):
         notes_per_pair = _distribute_nusach(
             diff["old_text"], diff["new_text"], nusach_notes, len(pairs)
         )
+        tmpl_added, tmpl_removed = _template_name_multiset_delta(
+            diff["old_ep"], diff["new_ep"]
+        )
         for idx, (old_narrow, new_narrow, _, _) in enumerate(pairs):
             sub = {
                 "book": diff["book"],
@@ -167,6 +170,10 @@ def _expand_diffs(diffs):
                 "new_ep": diff["new_ep"],
                 "nusach_notes": notes_per_pair[idx],
             }
+            if tmpl_added:
+                sub["templates_added"] = tmpl_added
+            if tmpl_removed:
+                sub["templates_removed"] = tmpl_removed
             expanded.append(sub)
     return expanded
 
@@ -221,6 +228,19 @@ def _render_card(diff):
             diff.get("old_ep"),
             diff.get("new_ep"),
         )
+        tmpl_added = diff.get("templates_added", [])
+        tmpl_removed = diff.get("templates_removed", [])
+        if tmpl_added or tmpl_removed:
+            tmpl_parts = []
+            if tmpl_added:
+                tmpl_parts.append("added: " + _format_template_name_changes(tmpl_added))
+            if tmpl_removed:
+                tmpl_parts.append(
+                    "removed: " + _format_template_name_changes(tmpl_removed)
+                )
+            eng_desc = (
+                (eng_desc or "") + "; Template change (" + "; ".join(tmpl_parts) + ")"
+            )
     else:
         added = diff.get("templates_added")
         removed = diff.get("templates_removed")

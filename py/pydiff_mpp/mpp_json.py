@@ -50,6 +50,11 @@ def _serialize_diff(d):
     }
     if d["text_changed"]:
         out["changes"] = _narrow_to_changed_words(d["old_text"], d["new_text"])
+        added, removed = _template_name_multiset_delta(d["old_ep"], d["new_ep"])
+        if added:
+            out["templates_added"] = added
+        if removed:
+            out["templates_removed"] = removed
     else:
         added = d.get("templates_added")
         removed = d.get("templates_removed")
