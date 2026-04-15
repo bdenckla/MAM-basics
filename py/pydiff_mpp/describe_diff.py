@@ -450,22 +450,13 @@ def describe_change(
     old_text, new_text, category, book, chapter, verse, old_ep=None, new_ep=None
 ):
     """Return an English description of the change, or None."""
-    poetic = _is_poetic(book, chapter, verse)
-    if category == "maqaf-afor":
-        return _describe_maqaf_afor(old_text, new_text)
-    if category == "legarmeih-paseq":
-        return _describe_paseq_change(old_text, new_text, old_ep, new_ep)
-    if category in _ACCENT_CATS:
-        return _describe_diff(old_text, new_text, _is_accent, _accent_name, poetic)
-    if category in _MARK_CATS:
-        return _describe_diff(old_text, new_text, _is_mark, _mark_name, poetic)
-    # For misc, try accents first, then marks
-    if category == "misc":
-        desc = _describe_diff(old_text, new_text, _is_accent, _accent_name, poetic)
-        if desc:
-            return desc
-        return _describe_diff(old_text, new_text, _is_mark, _mark_name, poetic)
-    return None
+    from pydiff_mpp.change_ops_extract import extract_change_ops
+    from pydiff_mpp.change_ops_render import render_english
+
+    ops = extract_change_ops(
+        old_text, new_text, category, book, chapter, verse, old_ep, new_ep
+    )
+    return render_english(ops, book, chapter, verse, old_text, new_text)
 
 
 def add_name_tooltips(html_escaped_desc):

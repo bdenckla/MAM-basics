@@ -120,6 +120,9 @@ def _generate_report(old_rev, new_rev, output, *, write_when_empty=True):
         print("  No diffs found; not writing report")
         return 0, _commit_date(old_rev)
     mpp_classify.classify_diffs(diffs)
+    from pydiff_mpp import mpp_verify
+
+    mpp_verify.verify_all(diffs)
     old_date = _commit_date(old_rev)
     new_date = _commit_date(new_rev)
     os.makedirs(os.path.dirname(output), exist_ok=True)
