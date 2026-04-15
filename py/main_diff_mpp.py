@@ -31,6 +31,7 @@ MAM_PARSED_DIR = "../MAM-parsed"
 CHANGE_LOG_DIR = "../MAM-with-doc/gh-pages/change-log"
 RELEASES_JSON = f"{CHANGE_LOG_DIR}/releases.json"
 UNPINNED_LATEST_HTML = f"{CHANGE_LOG_DIR}/unpinned-latest.html"
+UNPINNED_LATEST_JSON = UNPINNED_LATEST_HTML.removesuffix(".html") + ".json"
 
 
 def _commit_date(rev):
@@ -102,6 +103,14 @@ def _default_output_path(old_rev, new_rev):
     return f"{CHANGE_LOG_DIR}/{slug}.html"
 
 
+def _remove_unpinned_latest_artifacts():
+    """Delete stale unpinned-latest artifacts when no unreleased report exists."""
+    for path in (UNPINNED_LATEST_HTML, UNPINNED_LATEST_JSON):
+        if os.path.isfile(path):
+            os.remove(path)
+            print(f"Removed stale {path}")
+
+
 def _generate_report(old_rev, new_rev, output, *, write_when_empty=True):
     """Generate one diff report. Returns the expanded diff count."""
     print(f"Comparing {old_rev} -> {new_rev} ...")
@@ -145,6 +154,7 @@ def _run_unpinned_latest():
     old_rev = latest_release["new"]
     commit_count = _count_newer_commits(old_rev)
     if commit_count == 0:
+        _remove_unpinned_latest_artifacts()
         print(
             f"No commits after latest named release ({old_rev}); "
             "skipping unpinned-latest report"
@@ -157,6 +167,7 @@ def _run_unpinned_latest():
         write_when_empty=False,
     )
     if count == 0:
+        _remove_unpinned_latest_artifacts()
         print("No diffs in unreleased commit range; skipped unpinned-latest report")
         return None
     return {"name": "unpinned-latest", "count": count, "old_date": old_date}
