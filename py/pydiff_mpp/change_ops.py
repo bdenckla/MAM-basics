@@ -13,6 +13,7 @@ roundtrip verifier (change_ops_apply → mpp_verify).
 """
 
 from dataclasses import dataclass
+from typing import Optional
 
 # ── Text-level ops ───────────────────────────────────────────
 
@@ -102,6 +103,10 @@ class PaseqAdded:
     """A paseq or legarmeh was added."""
 
     paseq_type: str  # "legarmeh" or "paseq" or "paseq / legarmeh"
+    on_word: Optional[str] = None
+    word_occurrence: Optional[int] = None
+    old_fragment: Optional[str] = None
+    new_fragment: Optional[str] = None
 
 
 @dataclass(frozen=True)
@@ -109,6 +114,10 @@ class PaseqRemoved:
     """A paseq or legarmeh was removed."""
 
     paseq_type: str
+    on_word: Optional[str] = None
+    word_occurrence: Optional[int] = None
+    old_fragment: Optional[str] = None
+    new_fragment: Optional[str] = None
 
 
 @dataclass(frozen=True)

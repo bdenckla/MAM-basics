@@ -13,7 +13,8 @@ Exports:
 from collections import Counter
 from difflib import SequenceMatcher
 
-from pycmn.hebrew_punctuation import NU_GMAQ
+from pycmn.hebrew_punctuation import NU_GMAQ, PASOLEG
+from pycmn.str_defs import DOUB_VERT_LINE
 from pydiff_mpp.change_ops import (
     ComplexReplace,
     GenericReplace,
@@ -189,6 +190,9 @@ def _extract_mark_ops(old_text, new_text, pred):
 
 def _extract_paseq_ops(old_text, new_text, old_ep=None, new_ep=None):
     """Extract PaseqAdded/PaseqRemoved ops."""
+    anchor = _find_paseq_word_anchor(old_text, new_text)
+    fragment = _find_paseq_fragment(old_text, new_text) if anchor is None else None
+
     if old_ep is not None and new_ep is not None:
         old_types = []
         new_types = []
@@ -203,14 +207,101 @@ def _extract_paseq_ops(old_text, new_text, old_ep=None, new_ep=None):
         added = [pt for pt, d in deltas.items() if d > 0]
         removed = [pt for pt, d in deltas.items() if d < 0]
         if len(added) == 1 and not removed:
-            return [PaseqAdded(paseq_type=added[0])]
+            return [
+                PaseqAdded(
+                    paseq_type=added[0],
+                    on_word=anchor[0] if anchor else None,
+                    word_occurrence=anchor[1] if anchor else None,
+                    old_fragment=fragment[0] if fragment else None,
+                    new_fragment=fragment[1] if fragment else None,
+                )
+            ]
         if len(removed) == 1 and not added:
-            return [PaseqRemoved(paseq_type=removed[0])]
+            return [
+                PaseqRemoved(
+                    paseq_type=removed[0],
+                    on_word=anchor[0] if anchor else None,
+                    word_occurrence=anchor[1] if anchor else None,
+                    old_fragment=fragment[0] if fragment else None,
+                    new_fragment=fragment[1] if fragment else None,
+                )
+            ]
     if not _has_paseq(old_text) and _has_paseq(new_text):
-        return [PaseqAdded(paseq_type="paseq / legarmeh")]
+        return [
+            PaseqAdded(
+                paseq_type="paseq / legarmeh",
+                on_word=anchor[0] if anchor else None,
+                word_occurrence=anchor[1] if anchor else None,
+                old_fragment=fragment[0] if fragment else None,
+                new_fragment=fragment[1] if fragment else None,
+            )
+        ]
     if _has_paseq(old_text) and not _has_paseq(new_text):
-        return [PaseqRemoved(paseq_type="paseq / legarmeh")]
+        return [
+            PaseqRemoved(
+                paseq_type="paseq / legarmeh",
+                on_word=anchor[0] if anchor else None,
+                word_occurrence=anchor[1] if anchor else None,
+                old_fragment=fragment[0] if fragment else None,
+                new_fragment=fragment[1] if fragment else None,
+            )
+        ]
     return []
+
+
+def _find_paseq_word_anchor(old_text, new_text):
+    old_words = old_text.split(" ")
+    new_words = new_text.split(" ")
+    if len(old_words) != len(new_words):
+        return None
+
+    def _strip_paseq(word):
+        return word.replace(PASOLEG, "").replace(DOUB_VERT_LINE, "")
+
+    old_bases = [_strip_paseq(word) for word in old_words]
+
+    for index, (old_word, new_word) in enumerate(zip(old_words, new_words)):
+        if old_word == new_word:
+            continue
+        old_base = _strip_paseq(old_word)
+        new_base = _strip_paseq(new_word)
+        if old_base != new_base:
+            continue
+        occurrence = sum(1 for word in old_bases[: index + 1] if word == old_base)
+        return old_base, occurrence
+
+    return None
+
+
+def _find_paseq_fragment(old_text, new_text):
+    old_words = old_text.split(" ")
+    new_words = new_text.split(" ")
+
+    prefix = 0
+    while (
+        prefix < len(old_words)
+        and prefix < len(new_words)
+        and old_words[prefix] == new_words[prefix]
+    ):
+        prefix += 1
+
+    old_suffix_start = len(old_words)
+    new_suffix_start = len(new_words)
+    while (
+        old_suffix_start > prefix
+        and new_suffix_start > prefix
+        and old_words[old_suffix_start - 1] == new_words[new_suffix_start - 1]
+    ):
+        old_suffix_start -= 1
+        new_suffix_start -= 1
+
+    if prefix == old_suffix_start and prefix == new_suffix_start:
+        return None
+
+    return (
+        " ".join(old_words[prefix:old_suffix_start]),
+        " ".join(new_words[prefix:new_suffix_start]),
+    )
 
 
 # ── Gray maqaf extraction ───────────────────────────────────

@@ -144,6 +144,42 @@ def _apply_generic_replace(clusters, op):
             break
 
 
+def _apply_paseq_word_op(clusters, op, *, add):
+    if op.on_word is None or op.word_occurrence is None:
+        return False
+
+    target_char = DOUB_VERT_LINE if op.paseq_type == "paseq" else PASOLEG
+    words = "".join(clusters).split(" ")
+    occurrence = 0
+    for index, word in enumerate(words):
+        base_word = word.replace(PASOLEG, "").replace(DOUB_VERT_LINE, "")
+        if base_word != op.on_word:
+            continue
+        occurrence += 1
+        if occurrence != op.word_occurrence:
+            continue
+        if add:
+            words[index] = word + target_char
+        else:
+            words[index] = base_word
+        clusters[:] = grapheme_clusters(" ".join(words))
+        return True
+
+    return False
+
+
+def _apply_paseq_fragment_op(clusters, op):
+    if op.old_fragment is None or op.new_fragment is None:
+        return False
+
+    text = "".join(clusters)
+    replaced = text.replace(op.old_fragment, op.new_fragment, 1)
+    if replaced == text:
+        return False
+    clusters[:] = grapheme_clusters(replaced)
+    return True
+
+
 def apply_text_ops(old_text, ops):
     """Apply text-level ChangeOps to *old_text* and return the result.
 
@@ -202,12 +238,20 @@ def apply_text_ops(old_text, ops):
             # Insert the appropriate paseq-like character.
             # Legarmeh flattens to PASOLEG (U+05C0); paseq flattens to
             # DOUB_VERT_LINE.
+            if _apply_paseq_word_op(clusters, op, add=True):
+                continue
+            if _apply_paseq_fragment_op(clusters, op):
+                continue
             if op.paseq_type == "paseq":
                 clusters.append(DOUB_VERT_LINE)
             else:
                 clusters.append(PASOLEG)
         elif isinstance(op, PaseqRemoved):
             # Remove the first paseq-like character
+            if _apply_paseq_word_op(clusters, op, add=False):
+                continue
+            if _apply_paseq_fragment_op(clusters, op):
+                continue
             for i, c in enumerate(clusters):
                 if c in (PASOLEG, DOUB_VERT_LINE, "\ufdd0", "\ufdd1"):
                     del clusters[i]
