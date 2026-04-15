@@ -163,6 +163,8 @@ def _expand_diffs(diffs):
                 "text_changed": True,
                 "narrowed_old": old_narrow,
                 "narrowed_new": new_narrow,
+                "old_ep": diff["old_ep"],
+                "new_ep": diff["new_ep"],
                 "nusach_notes": notes_per_pair[idx],
             }
             expanded.append(sub)
@@ -210,7 +212,14 @@ def _render_card(diff):
         old_narrow = diff["narrowed_old"]
         new_narrow = diff["narrowed_new"]
         eng_desc = describe_change(
-            old_narrow, new_narrow, cat, diff["book"], diff["chapter"], diff["verse"]
+            old_narrow,
+            new_narrow,
+            cat,
+            diff["book"],
+            diff["chapter"],
+            diff["verse"],
+            diff.get("old_ep"),
+            diff.get("new_ep"),
         )
     else:
         added = diff.get("templates_added")
