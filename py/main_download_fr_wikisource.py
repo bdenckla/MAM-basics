@@ -5,9 +5,9 @@ Usage (run from repo root):
     .venv/Scripts/python.exe py/main_download_fr_wikisource.py
     .venv/Scripts/python.exe py/main_download_fr_wikisource.py --book39 1Samuel
     .venv/Scripts/python.exe py/main_download_fr_wikisource.py --section6 SifEm
+    .venv/Scripts/python.exe py/main_download_fr_wikisource.py --book39 Joshua --chapter 11
+    .venv/Scripts/python.exe py/main_download_fr_wikisource.py --book-chapters-json path.json
 """
-
-import argparse
 
 import main_parse_ws
 from py_misc import my_utils_for_mainish as my_utils_fm
@@ -15,6 +15,7 @@ from py_misc import get_wikisource_plan as wsplan
 from pycmn import mam_bknas_and_std_bknas as mbkn_a_sbkn
 from pycmn import file_io
 from pycmn import polite_download
+from pyws import ws_download_selector as wsds
 
 
 def _download_chapter_batch(chapter_plans, downloader):
@@ -108,17 +109,14 @@ def _download_book(book_plan, out_path, downloader):
     _write_book(book_contents, out_path, he_bn_sbn)
 
 
-def main():
+def main(argv=None):
     """Download MAM chapters from Hebrew Wikisource"""
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--book39")  # e.g. 1Samuel not I Samuel
-    parser.add_argument("--section6")  # e.g. SifEm
-    args = parser.parse_args()
-    book_plans = wsplan.get_book_plans(args.book39, args.section6)
+    args = wsds.parse_args(argv)
+    book_plans = wsds.selected_book_plans(args)
     with polite_download.PoliteDownloader(_WIKISOURCE_DOWNLOAD_CONFIG) as downloader:
         for book_plan in book_plans:
             _download_book(book_plan, _OUT_PATH, downloader)
-    main_parse_ws.almost_main()
+    main_parse_ws.almost_main(wsds.affected_bkids(book_plans))
 
 
 _OUT_PATH = "in/mam-ws"
