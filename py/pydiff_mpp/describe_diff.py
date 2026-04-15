@@ -12,6 +12,7 @@ from collections import Counter
 from difflib import SequenceMatcher
 
 from pycmn import hebrew_punctuation as hpu
+from pycmn.str_defs import DOUB_VERT_LINE
 from pydiff_mpp.mpp_flatten import (
     _is_ketiv_velo_qere_template,
     _is_parashah_template,
@@ -359,7 +360,12 @@ _NAR_SENTINEL = "\ufdd1"
 
 
 def _has_paseq(text):
-    return hpu.PASOLEG in text or _LEG_SENTINEL in text or _NAR_SENTINEL in text
+    return (
+        hpu.PASOLEG in text
+        or DOUB_VERT_LINE in text
+        or _LEG_SENTINEL in text
+        or _NAR_SENTINEL in text
+    )
 
 
 def _collect_paseq_types(obj, types):

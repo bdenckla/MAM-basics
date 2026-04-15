@@ -12,6 +12,8 @@ Exports:
 
 from collections import Counter
 
+from pycmn.hebrew_punctuation import NU_GMAQ, PASOLEG
+from pycmn.str_defs import DOUB_VERT_LINE
 from pydiff_mpp.change_ops import (
     ComplexReplace,
     GenericReplace,
@@ -185,25 +187,29 @@ def apply_text_ops(old_text, ops):
             # which happens automatically since we don't alter anything.
             pass
         elif isinstance(op, GrayMaqafAdded):
-            # Replace the first space with a maqaf
+            # A space becomes a gray maqaf (tilde) in flattened text
             for i, c in enumerate(clusters):
                 if c == " ":
-                    clusters[i] = "\u05be"
+                    clusters[i] = NU_GMAQ
                     break
         elif isinstance(op, GrayMaqafRemoved):
-            # Replace the first maqaf with a space
+            # A gray maqaf (tilde) is deleted — the words concatenate
             for i, c in enumerate(clusters):
-                if c == "\u05be":
-                    clusters[i] = " "
+                if c == NU_GMAQ:
+                    del clusters[i]
                     break
         elif isinstance(op, PaseqAdded):
-            # The paseq character needs to be inserted — but position
-            # depends on context.  For verification, we append it.
-            clusters.append("\u05c0")
+            # Insert the appropriate paseq-like character.
+            # Legarmeh flattens to PASOLEG (U+05C0); paseq flattens to
+            # DOUB_VERT_LINE.
+            if op.paseq_type == "paseq":
+                clusters.append(DOUB_VERT_LINE)
+            else:
+                clusters.append(PASOLEG)
         elif isinstance(op, PaseqRemoved):
-            # Remove the first paseq
+            # Remove the first paseq-like character
             for i, c in enumerate(clusters):
-                if c == "\u05c0" or c == "\ufdd0" or c == "\ufdd1":
+                if c in (PASOLEG, DOUB_VERT_LINE, "\ufdd0", "\ufdd1"):
                     del clusters[i]
                     break
         elif isinstance(op, GenericTextReplace):

@@ -8,6 +8,8 @@ Exports:
 import difflib
 from collections import Counter
 from pycmn import hebrew_points as hpo
+from pycmn.hebrew_punctuation import NU_GMAQ
+from pycmn.str_defs import DOUB_VERT_LINE
 from pydiff_mpp.mpp_structure import (
     _collect_template_names,
     _template_name_multiset_delta,
@@ -60,6 +62,10 @@ def _char_type(c):
         return "zwnj"
     if c == " ":
         return "space"
+    if c == NU_GMAQ:
+        return "gray-maqaf"
+    if c == DOUB_VERT_LINE:
+        return "paseq"
     return "other"
 
 
@@ -141,8 +147,8 @@ def _classify_text_change(diff):
     # Any change involving paseq (legarmeh / paseq additions, removals, spacing)
     if "paseq" in non_space_added or "paseq" in non_space_removed:
         return "legarmeih-paseq"
-    # Gray maqaf: space or maqaf change with מ:מקף אפור template added/removed
-    if non_space_added | non_space_removed <= {"maqaf"} and _maqaf_afor_changed(diff):
+    # Gray maqaf: tilde added/removed (מ:מקף אפור template)
+    if "gray-maqaf" in non_space_added or "gray-maqaf" in non_space_removed:
         return "maqaf-afor"
     if not non_space_added and not non_space_removed:
         return "legarmeih-paseq"

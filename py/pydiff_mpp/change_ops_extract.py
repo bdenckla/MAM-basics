@@ -13,6 +13,7 @@ Exports:
 from collections import Counter
 from difflib import SequenceMatcher
 
+from pycmn.hebrew_punctuation import NU_GMAQ
 from pydiff_mpp.change_ops import (
     ComplexReplace,
     GenericReplace,
@@ -30,6 +31,7 @@ from pydiff_mpp.change_ops import (
     TemplateRemoved,
     TemplateRestructured,
 )
+from pydiff_mpp.change_ops_apply import apply_text_ops
 from pydiff_mpp.describe_diff import (
     _ACCENT_CATS,
     _LEG_SENTINEL,
@@ -216,12 +218,13 @@ def _extract_paseq_ops(old_text, new_text, old_ep=None, new_ep=None):
 
 def _extract_maqaf_ops(old_text, new_text):
     """Extract GrayMaqafAdded/GrayMaqafRemoved ops."""
-    old_spaces = old_text.count(" ")
-    new_spaces = new_text.count(" ")
-    if old_spaces > new_spaces:
-        return [GrayMaqafAdded()]
-    if new_spaces > old_spaces:
-        return [GrayMaqafRemoved()]
+    old_count = old_text.count(NU_GMAQ)
+    new_count = new_text.count(NU_GMAQ)
+    diff = new_count - old_count
+    if diff > 0:
+        return [GrayMaqafAdded() for _ in range(diff)]
+    if diff < 0:
+        return [GrayMaqafRemoved() for _ in range(-diff)]
     return []
 
 
@@ -256,7 +259,27 @@ def extract_change_ops(
     poetic = _is_poetic(book, chapter, verse)
 
     if category == "maqaf-afor":
-        return _extract_maqaf_ops(old_text, new_text)
+        ops = _extract_maqaf_ops(old_text, new_text)
+        # Check if gray maqaf ops fully explain the change
+        intermediate = apply_text_ops(old_text, ops)
+        if intermediate == new_text:
+            return ops
+        # Try mark extraction for secondary changes (meteg, rafe, etc.)
+        mark_ops = _extract_mark_ops(intermediate, new_text, _is_mark)
+        if mark_ops:
+            combined = ops + mark_ops
+            if apply_text_ops(old_text, combined) == new_text:
+                return combined
+        # Try accent extraction for secondary accent changes
+        accent_ops = _extract_mark_ops(intermediate, new_text, _is_accent)
+        if accent_ops:
+            combined = ops + accent_ops
+            if apply_text_ops(old_text, combined) == new_text:
+                return combined
+        # Fall back: catch-all replacement for the residual
+        return ops + [
+            GenericTextReplace(old_fragment=intermediate, new_fragment=new_text)
+        ]
 
     if category == "legarmeih-paseq":
         return _extract_paseq_ops(old_text, new_text, old_ep, new_ep)

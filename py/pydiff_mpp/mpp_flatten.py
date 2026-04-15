@@ -12,6 +12,8 @@ Exports:
 
 import difflib
 
+from pycmn.hebrew_punctuation import NU_GMAQ
+from pycmn.str_defs import DOUB_VERT_LINE
 from pydiff_mpp.mpp_param_access import _MISSING, _get_param
 
 _PARASHAH_NAMES = {"סס", "ססס", "פפ", "פפפ"}
@@ -134,6 +136,19 @@ def _flatten_diff_element(el, buf):
             _flatten_diff_element(item, buf)
 
 
+def _append_diff_special_punctuation(name, buf):
+    if name in ("מ:לגרמיה-2", "מ:לגרמיה"):
+        _append_diff_text(buf, "׀")
+        return True
+    if name == "מ:פסק":
+        _append_diff_text(buf, DOUB_VERT_LINE)
+        return True
+    if name == "מ:מקף אפור":
+        _append_diff_text(buf, NU_GMAQ)
+        return True
+    return False
+
+
 def _flatten_diff_template(tmpl, buf):
     name = tmpl["tmpl_name"]
     if _is_parashah_template(name):
@@ -164,11 +179,7 @@ def _flatten_diff_template(tmpl, buf):
         if pd is not _MISSING:
             _flatten_diff_element(pd, buf)
         return
-    if name in ("מ:לגרמיה-2", "מ:לגרמיה"):
-        _append_diff_text(buf, "׀")
-        return
-    if name == "מ:פסק":
-        _append_diff_text(buf, "׀")
+    if _append_diff_special_punctuation(name, buf):
         return
     if name == "מ:כפול":
         pk = _get_param(tmpl, "כפול")
@@ -201,7 +212,9 @@ def _flatten_template(tmpl):
     if name in ("מ:לגרמיה-2", "מ:לגרמיה"):
         return "׀"
     if name == "מ:פסק":
-        return "׀"
+        return DOUB_VERT_LINE
+    if name == "מ:מקף אפור":
+        return NU_GMAQ
     if name == "מ:כפול":
         pk = _get_param(tmpl, "כפול")
         return _flatten_element(pk) if pk is not _MISSING else ""
@@ -332,11 +345,7 @@ def _flatten_template_tracking_for_diff(tmpl, buf, notes):
         if pd is not _MISSING:
             _flatten_tracking_for_diff(pd, buf, notes)
         return
-    if name in ("מ:לגרמיה-2", "מ:לגרמיה"):
-        _append_diff_text(buf, "׀")
-        return
-    if name == "מ:פסק":
-        _append_diff_text(buf, "׀")
+    if _append_diff_special_punctuation(name, buf):
         return
     if name == "מ:כפול":
         pk = _get_param(tmpl, "כפול")
