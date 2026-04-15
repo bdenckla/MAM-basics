@@ -123,6 +123,20 @@ Before a series of experiments that might need to be thrown away, ask the user t
 - **Main scripts** have a `main_` prefix (e.g. `py/main_mam4sef.py`, `py/main_parse_go.py`). These are the entry points run directly.
 - **Library modules** live in `py/py*/` directories (e.g. `py/pycmn/`, `py/pyxml/`, `py/pyrender/`). These are imported by main scripts.
 
+## Module Size Limit
+
+If any Python file (main script or library module) grows beyond **300 lines**, spin off self-contained functions or classes into a new module under the appropriate `py/py*/` directory. Keep each file focused and under the limit whenever practical.
+
+## New Features as Modules
+
+When adding a new self-contained feature, implement it as a new module under the appropriate `py/py*/` directory rather than appending the code to an existing file. The existing file should contain only a thin import and call; the feature's logic lives entirely in the new module. Do this even if the feature is small enough to fit within the size limit of the host file — module boundaries reflect conceptual separation, not just line counts.
+
+**Exception:** Add directly to an existing file only when the new code depends on private helpers in that file **and** extracting those helpers into a shared module is prohibitively difficult. Even then, consider whether the helpers can be promoted to a shared module first.
+
+## Extraction Structure Preference
+
+When extracting helpers during a refactor, prefer one self-contained helper module per extracted concern rather than grouping multiple unrelated helpers into a generic shared utility module.
+
 ## Fail Fast — No Silent Error Smoothing
 
 Do **not** write defensive code that swallows errors or returns `None` on unexpected conditions. Only catch exceptions when there is a concrete recovery strategy. These are batch pipelines; a crash with a clear traceback is the correct response.
