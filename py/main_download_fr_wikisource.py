@@ -10,6 +10,8 @@ Usage (run from repo root):
 """
 
 import main_parse_ws
+import json
+import os
 from py_misc import my_utils_for_mainish as my_utils_fm
 from py_misc import get_wikisource_plan as wsplan
 from pycmn import mam_bknas_and_std_bknas as mbkn_a_sbkn
@@ -95,17 +97,63 @@ def _chapter_plan_batches(book_plan):
 def _write_book(book_contents, out_path, he_bn_sbn):
     # he_bn_sbn: Hebrew book name and sub-book name (a pair) (aka mam_he_book_name_pair)
     bk39id = mbkn_a_sbkn.MAM_HBNP_TO_BK39ID[he_bn_sbn]
-    out_path = mbkn_a_sbkn.wikisource_book_path_fr_bk39id(out_path, bk39id)
-    my_utils_fm.show_progress_g(__file__, out_path)
-    file_io.json_dump_to_file_path(book_contents, out_path)
+    book_path = mbkn_a_sbkn.wikisource_book_path_fr_bk39id(out_path, bk39id)
+    my_utils_fm.show_progress_g(__file__, book_path)
+    file_io.json_dump_to_file_path(book_contents, book_path)
+
+
+def _full_book_plan(he_bn_sbn):
+    bk39id = mbkn_a_sbkn.MAM_HBNP_TO_BK39ID[he_bn_sbn]
+    full_book_plans = list(wsplan.get_book_plans(bk39id, None))
+    assert len(full_book_plans) == 1, (bk39id, len(full_book_plans))
+    return full_book_plans[0]
+
+
+def _is_partial_book_plan(book_plan):
+    he_bn_sbn, requested_he_chnus = book_plan
+    _full_he_bn_sbn, full_he_chnus = _full_book_plan(he_bn_sbn)
+    return len(requested_he_chnus) != len(full_he_chnus)
+
+
+def _read_existing_book(book_path):
+    with open(book_path, "r", encoding="utf-8") as json_in_fp:
+        existing_book = json.load(json_in_fp)
+    assert isinstance(existing_book, dict), book_path
+    return existing_book
+
+
+def _merge_book_contents(book_plan, downloaded_book_contents, out_path):
+    he_bn_sbn, _requested_he_chnus = book_plan
+    _full_he_bn_sbn, full_he_chnus = _full_book_plan(he_bn_sbn)
+    bk39id = mbkn_a_sbkn.MAM_HBNP_TO_BK39ID[he_bn_sbn]
+    book_path = mbkn_a_sbkn.wikisource_book_path_fr_bk39id(out_path, bk39id)
+    assert os.path.exists(book_path), (
+        "partial download requires existing full book file",
+        book_path,
+    )
+    merged_book = _read_existing_book(book_path)
+    assert set(full_he_chnus).issubset(merged_book), (
+        "existing book file is incomplete",
+        book_path,
+    )
+    merged_book.update(downloaded_book_contents)
+    return {he_chnu: merged_book[he_chnu] for he_chnu in full_he_chnus}
 
 
 def _download_book(book_plan, out_path, downloader):
     # he_bn_sbn: Hebrew book name and sub-book name (a pair) (aka mam_he_book_name_pair)
-    book_contents = {}
+    downloaded_book_contents = {}
     for chapter_plans in _chapter_plan_batches(book_plan):
-        book_contents.update(_download_chapter_batch(chapter_plans, downloader))
+        downloaded_book_contents.update(
+            _download_chapter_batch(chapter_plans, downloader)
+        )
     he_bn_sbn, _he_chnus = book_plan
+    if _is_partial_book_plan(book_plan):
+        book_contents = _merge_book_contents(
+            book_plan, downloaded_book_contents, out_path
+        )
+    else:
+        book_contents = downloaded_book_contents
     _write_book(book_contents, out_path, he_bn_sbn)
 
 

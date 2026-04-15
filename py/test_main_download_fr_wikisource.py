@@ -179,6 +179,45 @@ class WikisourceDownloadTests(unittest.TestCase):
             book_plans,
         )
 
+    def test_download_book_merges_partial_chapters_into_existing_book_file(self):
+        book_plan = (("ספר יהושע", None), ["יא"])
+        out_path = tempfile.mkdtemp()
+        book_path = os.path.join(out_path, "B1-Joshua.json")
+        with open(book_path, "w", encoding="utf-8") as out_fp:
+            json.dump(
+                {"א": ["old aleph"], "יא": ["old yod aleph"]},
+                out_fp,
+                ensure_ascii=False,
+            )
+
+        with mock.patch.object(
+            dlws, "_full_book_plan", return_value=(("ספר יהושע", None), ["א", "יא"])
+        ), mock.patch.object(
+            dlws, "_chapter_plan_batches", return_value=[[("יא", "יהושע_יא/טעמים")]]
+        ), mock.patch.object(
+            dlws, "_download_chapter_batch", return_value={"יא": ["new yod aleph"]}
+        ):
+            dlws._download_book(book_plan, out_path, downloader=mock.Mock())
+
+        with open(book_path, "r", encoding="utf-8") as json_in_fp:
+            merged_book = json.load(json_in_fp)
+
+        self.assertEqual({"א": ["old aleph"], "יא": ["new yod aleph"]}, merged_book)
+
+    def test_download_book_raises_for_partial_book_without_existing_file(self):
+        book_plan = (("ספר יהושע", None), ["יא"])
+        out_path = tempfile.mkdtemp()
+
+        with mock.patch.object(
+            dlws, "_full_book_plan", return_value=(("ספר יהושע", None), ["א", "יא"])
+        ), mock.patch.object(
+            dlws, "_chapter_plan_batches", return_value=[[("יא", "יהושע_יא/טעמים")]]
+        ), mock.patch.object(
+            dlws, "_download_chapter_batch", return_value={"יא": ["new yod aleph"]}
+        ):
+            with self.assertRaises(AssertionError):
+                dlws._download_book(book_plan, out_path, downloader=mock.Mock())
+
     def test_selected_book_plans_rejects_invalid_json_schema(self):
         with tempfile.TemporaryDirectory() as temp_dir:
             json_path = os.path.join(temp_dir, "pairs.json")
