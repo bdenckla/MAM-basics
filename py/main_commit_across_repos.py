@@ -5,6 +5,7 @@ Usage:
     .venv/Scripts/python.exe py/main_commit_across_repos.py --message "Short summary"
     .venv/Scripts/python.exe py/main_commit_across_repos.py --message-file .novc/commit_msg_shared.txt
     .venv/Scripts/python.exe py/main_commit_across_repos.py --message "Short summary" --dry-run
+    .venv/Scripts/python.exe py/main_commit_across_repos.py --message "Short summary" --and-push
 """
 
 import argparse
@@ -37,6 +38,11 @@ def _parse_args():
         "--dry-run",
         action="store_true",
         help="Show which repos would be committed and with which message, without committing",
+    )
+    parser.add_argument(
+        "--and-push",
+        action="store_true",
+        help="Push each repo after a successful commit",
     )
     return parser.parse_args()
 
@@ -121,7 +127,20 @@ def _commit_repo(repo_dir, message_file):
     print(f"Committed {repo_dir.name}")
 
 
-def _show_dry_run(repo_dir, commit_message, staged_summary):
+def _push_repo(repo_dir):
+    result = subprocess.run(
+        ["git", "-C", str(repo_dir), "push"],
+        capture_output=True,
+        text=True,
+        encoding="utf-8",
+        check=False,
+    )
+    if result.returncode != 0:
+        raise RuntimeError(result.stderr.strip() or result.stdout.strip())
+    print(f"Pushed {repo_dir.name}")
+
+
+def _show_dry_run(repo_dir, commit_message, staged_summary, *, and_push):
     print(f"Would commit {repo_dir.name}")
     print(
         "Summary: "
@@ -129,6 +148,8 @@ def _show_dry_run(repo_dir, commit_message, staged_summary):
         f"{staged_summary['insertions']} insertions, "
         f"{staged_summary['deletions']} deletions"
     )
+    if and_push:
+        print("Would push after commit")
     print("Commit message:")
     print(commit_message)
     print("---")
@@ -145,7 +166,9 @@ def main():
             if not _has_staged_changes(repo_dir):
                 continue
             staged_summary = _get_staged_summary(repo_dir)
-            _show_dry_run(repo_dir, commit_message, staged_summary)
+            _show_dry_run(
+                repo_dir, commit_message, staged_summary, and_push=args.and_push
+            )
             matching_repo_count += 1
     else:
         with tempfile.NamedTemporaryFile(
@@ -158,6 +181,8 @@ def main():
                 if not _has_staged_changes(repo_dir):
                     continue
                 _commit_repo(repo_dir, tmp_path)
+                if args.and_push:
+                    _push_repo(repo_dir)
                 matching_repo_count += 1
         finally:
             os.unlink(tmp_path)
@@ -165,6 +190,8 @@ def main():
         print("No staged changes found in any workspace repo.")
     elif args.dry_run:
         print(f"Dry run found staged changes in {matching_repo_count} repos.")
+    elif args.and_push:
+        print(f"Committed and pushed staged changes in {matching_repo_count} repos.")
     else:
         print(f"Committed staged changes in {matching_repo_count} repos.")
 
