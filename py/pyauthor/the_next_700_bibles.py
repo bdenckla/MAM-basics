@@ -2,6 +2,7 @@
 
 from py_misc import my_html
 from pyauthor_util import author
+from pycmn.str_defs import NBSP
 
 
 def anchor():
@@ -31,7 +32,7 @@ def _endnote_body(num, contents):
 
 def _nbsp(text):
     """Return text with regular spaces replaced by non-breaking spaces."""
-    return text.replace(" ", "\N{NO-BREAK SPACE}")
+    return text.replace(" ", NBSP)
 
 
 _TITLE = "The Next 700 Bibles"

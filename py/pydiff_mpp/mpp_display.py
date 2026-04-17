@@ -15,6 +15,7 @@ Exports:
 import re
 
 from pycmn import hebrew_punctuation as hpu
+from pycmn.str_defs import NBSP
 from pydiff_mpp.mpp_flatten import (
     _is_ketiv_velo_qere_template,
     _is_parashah_template,
@@ -263,7 +264,7 @@ def normalize_paseq_spacing(text):
     """
     text = re.sub(r" ?" + _LEG_SENTINEL + r" ?", _LEG_SENTINEL + " ", text)
     text = re.sub(
-        r" ?" + _NAR_SENTINEL + r" ?", "\N{NO-BREAK SPACE}" + _NAR_SENTINEL + " ", text
+        r" ?" + _NAR_SENTINEL + r" ?", NBSP + _NAR_SENTINEL + " ", text
     )
     return text
 

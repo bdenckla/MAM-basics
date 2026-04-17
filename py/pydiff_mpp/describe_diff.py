@@ -11,6 +11,8 @@ import unicodedata
 from collections import Counter
 from difflib import SequenceMatcher
 
+from pycmn import hebrew_accents as ha
+from pycmn import hebrew_points as hpo
 from pycmn import hebrew_punctuation as hpu
 from pycmn.str_defs import DOUB_VERT_LINE
 from pydiff_mpp.mpp_flatten import (
@@ -57,61 +59,61 @@ _LETTER_NAMES = {
 # ── Hebrew accent names (U+0591–U+05AF) ─────────────────────────────
 
 _ACCENT_NAMES = {
-    "\N{HEBREW ACCENT ETNAHTA}": "etnahta",
-    "\N{HEBREW ACCENT SEGOL}": "segol-accent",
-    "\N{HEBREW ACCENT SHALSHELET}": "shalshelet",
-    "\N{HEBREW ACCENT ZAQEF QATAN}": "zaqef-qatan",
-    "\N{HEBREW ACCENT ZAQEF GADOL}": "zaqef-gadol",
-    "\N{HEBREW ACCENT TIPEHA}": "tipeha",
-    "\N{HEBREW ACCENT REVIA}": "revia",
-    "\N{HEBREW ACCENT ZARQA}": "zarqa-sh",
-    "\N{HEBREW ACCENT PASHTA}": "pashta",
-    "\N{HEBREW ACCENT YETIV}": "yetiv",
-    "\N{HEBREW ACCENT TEVIR}": "tevir",
-    "\N{HEBREW ACCENT GERESH}": "geresh",
-    "\N{HEBREW ACCENT GERESH MUQDAM}": "geresh-muqdam",
-    "\N{HEBREW ACCENT GERSHAYIM}": "gershayim",
-    "\N{HEBREW ACCENT QARNEY PARA}": "qarney-para",
-    "\N{HEBREW ACCENT TELISHA GEDOLA}": "telisha-gedola",
-    "\N{HEBREW ACCENT PAZER}": "pazer",
-    "\N{HEBREW ACCENT ATNAH HAFUKH}": "atnah-hafukh",
-    "\N{HEBREW ACCENT MUNAH}": "munah",
-    "\N{HEBREW ACCENT MAHAPAKH}": "mahapakh",
-    "\N{HEBREW ACCENT MERKHA}": "merkha",
-    "\N{HEBREW ACCENT MERKHA KEFULA}": "merkha-kefula",
-    "\N{HEBREW ACCENT DARGA}": "darga",
-    "\N{HEBREW ACCENT QADMA}": "qadma",
-    "\N{HEBREW ACCENT TELISHA QETANA}": "telisha-qetana",
-    "\N{HEBREW ACCENT YERAH BEN YOMO}": "yerakh-ben-yomo",
-    "\N{HEBREW ACCENT OLE}": "ole",
-    "\N{HEBREW ACCENT ILUY}": "iluy",
-    "\N{HEBREW ACCENT DEHI}": "dehi",
-    "\N{HEBREW ACCENT ZINOR}": "zarqa",
-    "\N{HEBREW MARK MASORA CIRCLE}": "masora-circle",
+    ha.ATN: "etnahta",
+    ha.SEG_A: "segol-accent",
+    ha.SHA: "shalshelet",
+    ha.ZAQ_Q: "zaqef-qatan",
+    ha.ZAQ_G: "zaqef-gadol",
+    ha.TIP: "tipeha",
+    ha.REV: "revia",
+    ha.ZSH_OR_TSIT: "zarqa-sh",
+    ha.PASH: "pashta",
+    ha.YET: "yetiv",
+    ha.TEV: "tevir",
+    ha.GER: "geresh",
+    ha.GER_M: "geresh-muqdam",
+    ha.GER_2: "gershayim",
+    ha.QAR: "qarney-para",
+    ha.TEL_G: "telisha-gedola",
+    ha.PAZ: "pazer",
+    ha.ATN_H: "atnah-hafukh",
+    ha.MUN: "munah",
+    ha.MAH: "mahapakh",
+    ha.MER: "merkha",
+    ha.MER_2: "merkha-kefula",
+    ha.DAR: "darga",
+    ha.QOM: "qadma",
+    ha.TEL_Q: "telisha-qetana",
+    ha.YBY: "yerakh-ben-yomo",
+    ha.OLE: "ole",
+    ha.ILU: "iluy",
+    ha.DEX: "dehi",
+    ha.Z_OR_TSOR: "zarqa",
+    hpu.MCIRC: "masora-circle",
 }
 
 # ── Hebrew mark names (vowels, dagesh, meteg, rafeh, shin/sin dots) ──
 
 _MARK_NAMES = {
-    "\N{HEBREW POINT SHEVA}": "shewa",
-    "\N{HEBREW POINT HATAF SEGOL}": "ḥataf-segol",
-    "\N{HEBREW POINT HATAF PATAH}": "ḥataf-pataḥ",
-    "\N{HEBREW POINT HATAF QAMATS}": "ḥataf-qamats",
-    "\N{HEBREW POINT HIRIQ}": "ḥiriq",
-    "\N{HEBREW POINT TSERE}": "tsere",
-    "\N{HEBREW POINT SEGOL}": "segol",
-    "\N{HEBREW POINT PATAH}": "pataḥ",
-    "\N{HEBREW POINT QAMATS}": "qamats",
-    "\N{HEBREW POINT QAMATS QATAN}": "qamats-qatan",
-    "\N{HEBREW POINT HOLAM}": "ḥolam",
-    "\N{HEBREW POINT HOLAM HASER FOR VAV}": "ḥolam-ḥaser-for-vav",
-    "\N{HEBREW POINT QUBUTS}": "qubuts",
-    "\N{HEBREW POINT DAGESH OR MAPIQ}": "dagesh",
-    "\N{HEBREW POINT METEG}": "meteg",
-    "\N{HEBREW POINT RAFE}": "rafeh",
-    "\N{HEBREW POINT SHIN DOT}": "shin-dot",
-    "\N{HEBREW POINT SIN DOT}": "sin-dot",
-    "\N{HEBREW POINT JUDEO-SPANISH VARIKA}": "varika",
+    hpo.SHEVA: "shewa",
+    hpo.XSEGOL: "ḥataf-segol",
+    hpo.XPATAX: "ḥataf-pataḥ",
+    hpo.XQAMATS: "ḥataf-qamats",
+    hpo.XIRIQ: "ḥiriq",
+    hpo.TSERE: "tsere",
+    hpo.SEGOL_V: "segol",
+    hpo.PATAX: "pataḥ",
+    hpo.QAMATS: "qamats",
+    hpo.QAMATS_Q: "qamats-qatan",
+    hpo.XOLAM: "ḥolam",
+    hpo.XOLAM_XFV: "ḥolam-ḥaser-for-vav",
+    hpo.QUBUTS: "qubuts",
+    hpo.DAGOMOSD: "dagesh",
+    hpo.MTGOSLQ: "meteg",
+    hpo.RAFE: "rafeh",
+    hpo.SHIND: "shin-dot",
+    hpo.SIND: "sin-dot",
+    hpo.VARIKA: "varika",
 }
 
 
@@ -156,9 +158,9 @@ def _letter_ref(ch, occurrence, letter_counts, force_ordinal=False):
 
 
 _POETIC_ACCENT_NAMES = {
-    "\N{HEBREW ACCENT TIPEHA}": "tarha",
-    "\N{HEBREW ACCENT ZARQA}": "tsinnorit",
-    "\N{HEBREW ACCENT ZINOR}": "tsinnor",
+    ha.TIP: "tarha",
+    ha.ZSH_OR_TSIT: "tsinnorit",
+    ha.Z_OR_TSOR: "tsinnor",
 }
 
 # Names that should get an HTML tooltip (<abbr title="...">) in rendered output.
