@@ -10,189 +10,10 @@ import subprocess
 import sys
 from pathlib import Path
 
+from py_vendoring.registry import SOURCE_PKG_DIRS, iter_compare_copies
+
 _MAM = Path(__file__).resolve().parents[2]
 _REPOS = _MAM.parent
-
-# Source package → relative path within MAM-basics/py/
-SOURCE_PKG = {
-    "pycmn": "py/pycmn",
-    "py_misc": "py/py_misc",
-    "pysefaria": "py/pysefaria",
-    "pydiff_mpp": "py/pydiff_mpp",
-}
-
-# Each entry: (filename, source_pkg, dest_repo, dest_path_relative, notes)
-# dest_path_relative is relative to the dest repo root.
-# MAM-simple entries are marked generated; pydiff_mpp entries are deferred.
-# fmt: off
-COPIES = [
-    # ── MAM-simple (generated: blown away and rebuilt by copy script) ──────
-    ("bib_locales.py",                    "pycmn",     "MAM-simple", "py-example/pycmn/bib_locales.py",                   "generated"),
-    ("cantsys.py",                        "pycmn",     "MAM-simple", "py-example/pycmn/cantsys.py",                        "generated"),
-    ("file_io.py",                        "pycmn",     "MAM-simple", "py-example/pycmn/file_io.py",                        "generated"),
-    ("hebrew_accents.py",                 "pycmn",     "MAM-simple", "py-example/pycmn/hebrew_accents.py",                 "generated"),
-    ("hebrew_letters.py",                 "pycmn",     "MAM-simple", "py-example/pycmn/hebrew_letters.py",                 "generated"),
-    ("hebrew_points.py",                  "pycmn",     "MAM-simple", "py-example/pycmn/hebrew_points.py",                  "generated"),
-    ("hebrew_punctuation.py",             "pycmn",     "MAM-simple", "py-example/pycmn/hebrew_punctuation.py",             "generated"),
-    ("my_utils.py",                       "pycmn",     "MAM-simple", "py-example/pycmn/my_utils.py",                       "generated"),
-    ("shrink.py",                         "pycmn",     "MAM-simple", "py-example/pycmn/shrink.py",                         "generated"),
-    ("str_defs.py",                       "pycmn",     "MAM-simple", "py-example/pycmn/str_defs.py",                       "generated"),
-    ("uni_heb.py",                        "pycmn",     "MAM-simple", "py-example/pycmn/uni_heb.py",                        "generated"),
-    ("my_html.py",                        "py_misc",   "MAM-simple", "py-example/py_misc/my_html.py",                      "generated"),
-    ("my_html_get_lines.py",              "py_misc",   "MAM-simple", "py-example/py_misc/my_html_get_lines.py",            "generated"),
-    ("my_utils_for_mainish.py",           "py_misc",   "MAM-simple", "py-example/py_misc/my_utils_for_mainish.py",         "generated"),
-    ("osis_book_abbrevs.py",              "py_misc",   "MAM-simple", "py-example/py_misc/osis_book_abbrevs.py",            "generated"),
-    ("two_col_css_styles.py",             "py_misc",   "MAM-simple", "py-example/py_misc/two_col_css_styles.py",           "generated"),
-    ("verse_and_friends.py",              "py_misc",   "MAM-simple", "py-example/py_misc/verse_and_friends.py",            "generated"),
-    ("write_utils.py",                    "py_misc",   "MAM-simple", "py-example/py_misc/write_utils.py",                  "generated"),
-    ("ws_urls.py",                        "py_misc",   "MAM-simple", "py-example/py_misc/ws_urls.py",                      "generated"),
-    ("mam4sef_handlers.py",               "pysefaria", "MAM-simple", "py-example/pysefaria/mam4sef_handlers.py",           "generated"),
-    ("mam4sef_or_ajf.py",                 "pysefaria", "MAM-simple", "py-example/pysefaria/mam4sef_or_ajf.py",             "generated"),
-    ("sef_cmn.py",                        "pysefaria", "MAM-simple", "py-example/pysefaria/sef_cmn.py",                    "generated"),
-    ("sef_header.py",                     "pysefaria", "MAM-simple", "py-example/pysefaria/sef_header.py",                 "generated"),
-    ("write_utils_sef_or_ajf.py",         "pysefaria", "MAM-simple", "py-example/pysefaria/write_utils_sef_or_ajf.py",     "generated"),
-    # ── pydiff_mpp → holman-ketiv-qere (DEFERRED per audit doc) ───────────
-    ("describe_diff.py",                  "pydiff_mpp","holman-ketiv-qere","py/pydiff_mpp/describe_diff.py",               "deferred"),
-    ("grapheme_diff.py",                  "pydiff_mpp","holman-ketiv-qere","py/pydiff_mpp/grapheme_diff.py",               "deferred"),
-    # ── mgketer grapheme_diff (pydiff_mpp lineage; treat as deferred) ─────
-    ("grapheme_diff.py",                  "pydiff_mpp","mgketer",          "py/python_modules/grapheme_diff.py",            "deferred"),
-    # ── al-hatorah/pycmn ──────────────────────────────────────────────────
-    ("bib_locales.py",                    "pycmn",     "al-hatorah",        "pycmn/bib_locales.py",                         ""),
-    ("cantsys.py",                        "pycmn",     "al-hatorah",        "pycmn/cantsys.py",                             ""),
-    ("file_io.py",                        "pycmn",     "al-hatorah",        "pycmn/file_io.py",                             ""),
-    ("hebrew_accents.py",                 "pycmn",     "al-hatorah",        "pycmn/hebrew_accents.py",                      ""),
-    ("hebrew_letters.py",                 "pycmn",     "al-hatorah",        "pycmn/hebrew_letters.py",                      ""),
-    ("hebrew_points.py",                  "pycmn",     "al-hatorah",        "pycmn/hebrew_points.py",                       ""),
-    ("hebrew_punctuation.py",             "pycmn",     "al-hatorah",        "pycmn/hebrew_punctuation.py",                  ""),
-    ("hebrew_verse_numerals.py",          "pycmn",     "al-hatorah",        "pycmn/hebrew_verse_numerals.py",               ""),
-    ("mam_bknas.py",                      "pycmn",     "al-hatorah",        "pycmn/mam_bknas.py",                           ""),
-    ("mam_bknas_and_std_bknas.py",        "pycmn",     "al-hatorah",        "pycmn/mam_bknas_and_std_bknas.py",             ""),
-    ("minirow.py",                        "pycmn",     "al-hatorah",        "pycmn/minirow.py",                             ""),
-    ("my_diffs.py",                       "pycmn",     "al-hatorah",        "pycmn/my_diffs.py",                            ""),
-    ("my_utils.py",                       "pycmn",     "al-hatorah",        "pycmn/my_utils.py",                            ""),
-    ("read_books_from_mam_parsed_plus.py","pycmn",     "al-hatorah",        "pycmn/read_books_from_mam_parsed_plus.py",     ""),
-    ("shrink.py",                         "pycmn",     "al-hatorah",        "pycmn/shrink.py",                              ""),
-    ("str_defs.py",                       "pycmn",     "al-hatorah",        "pycmn/str_defs.py",                            ""),
-    ("template_names.py",                 "pycmn",     "al-hatorah",        "pycmn/template_names.py",                      ""),
-    ("uni_denorm.py",                     "pycmn",     "al-hatorah",        "pycmn/uni_denorm.py",                          ""),
-    ("uni_heb.py",                        "pycmn",     "al-hatorah",        "pycmn/uni_heb.py",                             ""),
-    ("uni_norm_fragile.py",               "pycmn",     "al-hatorah",        "pycmn/uni_norm_fragile.py",                    ""),
-    ("ws_tmpl1.py",                       "pycmn",     "al-hatorah",        "pycmn/ws_tmpl1.py",                            ""),
-    ("ws_tmpl2.py",                       "pycmn",     "al-hatorah",        "pycmn/ws_tmpl2.py",                            ""),
-    ("ws_tmpl_named_params.py",           "pycmn",     "al-hatorah",        "pycmn/ws_tmpl_named_params.py",                ""),
-    # ── al-hatorah/py ─────────────────────────────────────────────────────
-    ("my_html.py",                        "py_misc",   "al-hatorah",        "py/my_html.py",                                "not in pycmn dir"),
-    ("my_html_get_lines.py",              "py_misc",   "al-hatorah",        "py/my_html_get_lines.py",                      "not in pycmn dir"),
-    # ── book-of-job/pycmn ─────────────────────────────────────────────────
-    ("bib_locales.py",                    "pycmn",     "book-of-job",       "pycmn/bib_locales.py",                         ""),
-    ("cantsys.py",                        "pycmn",     "book-of-job",       "pycmn/cantsys.py",                             ""),
-    ("file_io.py",                        "pycmn",     "book-of-job",       "pycmn/file_io.py",                             ""),
-    ("hebrew_accents.py",                 "pycmn",     "book-of-job",       "pycmn/hebrew_accents.py",                      ""),
-    ("hebrew_letters.py",                 "pycmn",     "book-of-job",       "pycmn/hebrew_letters.py",                      ""),
-    ("hebrew_points.py",                  "pycmn",     "book-of-job",       "pycmn/hebrew_points.py",                       ""),
-    ("hebrew_punctuation.py",             "pycmn",     "book-of-job",       "pycmn/hebrew_punctuation.py",                  ""),
-    ("mam_bknas.py",                      "pycmn",     "book-of-job",       "pycmn/mam_bknas.py",                           ""),
-    ("my_diffs.py",                       "pycmn",     "book-of-job",       "pycmn/my_diffs.py",                            ""),
-    ("my_utils.py",                       "pycmn",     "book-of-job",       "pycmn/my_utils.py",                            ""),
-    ("shrink.py",                         "pycmn",     "book-of-job",       "pycmn/shrink.py",                              ""),
-    ("str_defs.py",                       "pycmn",     "book-of-job",       "pycmn/str_defs.py",                            ""),
-    ("uni_denorm.py",                     "pycmn",     "book-of-job",       "pycmn/uni_denorm.py",                          ""),
-    ("uni_heb.py",                        "pycmn",     "book-of-job",       "pycmn/uni_heb.py",                             ""),
-    # ── book-of-job/py ────────────────────────────────────────────────────
-    ("my_html.py",                        "py_misc",   "book-of-job",       "py/my_html.py",                                "not in pycmn dir"),
-    ("my_html_get_lines.py",              "py_misc",   "book-of-job",       "py/my_html_get_lines.py",                      "not in pycmn dir"),
-    ("two_col_css_styles.py",             "py_misc",   "book-of-job",       "py/two_col_css_styles.py",                     "not in pycmn dir"),
-    # ── codex-index-aleppo/py/pycmn ───────────────────────────────────────
-    ("hebrew_points.py",                  "pycmn",     "codex-index-aleppo","py/pycmn/hebrew_points.py",                    ""),
-    ("str_defs.py",                       "pycmn",     "codex-index-aleppo","py/pycmn/str_defs.py",                         ""),
-    ("uni_denorm.py",                     "pycmn",     "codex-index-aleppo","py/pycmn/uni_denorm.py",                       ""),
-    # ── codex-index-aleppo/aleppo-wiki/py ─────────────────────────────────
-    ("hebrew_letters.py",                 "pycmn",     "codex-index-aleppo","aleppo-wiki/py/hebrew_letters.py",             "not in pycmn dir"),
-    ("hebrew_punctuation.py",             "pycmn",     "codex-index-aleppo","aleppo-wiki/py/hebrew_punctuation.py",         "not in pycmn dir"),
-    ("hebrew_verse_numerals.py",          "pycmn",     "codex-index-aleppo","aleppo-wiki/py/hebrew_verse_numerals.py",      "not in pycmn dir"),
-    ("my_utils.py",                       "pycmn",     "codex-index-aleppo","aleppo-wiki/py/my_utils.py",                   "not in pycmn dir"),
-    # ── codex-index-cam1753/pycmn ─────────────────────────────────────────
-    ("hebrew_points.py",                  "pycmn",     "codex-index-cam1753","pycmn/hebrew_points.py",                      ""),
-    ("str_defs.py",                       "pycmn",     "codex-index-cam1753","pycmn/str_defs.py",                           ""),
-    ("uni_denorm.py",                     "pycmn",     "codex-index-cam1753","pycmn/uni_denorm.py",                         ""),
-    # ── codex-index-leningrad/lenin-wiki/py ───────────────────────────────
-    ("hebrew_letters.py",                 "pycmn",     "codex-index-leningrad","lenin-wiki/py/hebrew_letters.py",           "not in pycmn dir"),
-    ("hebrew_punctuation.py",             "pycmn",     "codex-index-leningrad","lenin-wiki/py/hebrew_punctuation.py",       "not in pycmn dir"),
-    ("hebrew_verse_numerals.py",          "pycmn",     "codex-index-leningrad","lenin-wiki/py/hebrew_verse_numerals.py",    "not in pycmn dir"),
-    ("my_utils.py",                       "pycmn",     "codex-index-leningrad","lenin-wiki/py/my_utils.py",                 "not in pycmn dir"),
-    # ── diffable-pointed-hebrew/pycmn ─────────────────────────────────────
-    ("cantsys.py",                        "pycmn",     "diffable-pointed-hebrew","pycmn/cantsys.py",                        ""),
-    ("file_io.py",                        "pycmn",     "diffable-pointed-hebrew","pycmn/file_io.py",                        ""),
-    ("hebrew_accents.py",                 "pycmn",     "diffable-pointed-hebrew","pycmn/hebrew_accents.py",                 ""),
-    ("hebrew_letters.py",                 "pycmn",     "diffable-pointed-hebrew","pycmn/hebrew_letters.py",                 ""),
-    ("hebrew_points.py",                  "pycmn",     "diffable-pointed-hebrew","pycmn/hebrew_points.py",                  ""),
-    ("hebrew_punctuation.py",             "pycmn",     "diffable-pointed-hebrew","pycmn/hebrew_punctuation.py",             ""),
-    ("str_defs.py",                       "pycmn",     "diffable-pointed-hebrew","pycmn/str_defs.py",                       ""),
-    ("uni_heb.py",                        "pycmn",     "diffable-pointed-hebrew","pycmn/uni_heb.py",                        ""),
-    # ── holman-ketiv-qere/py/pycmn ────────────────────────────────────────
-    ("bib_locales.py",                    "pycmn",     "holman-ketiv-qere", "py/pycmn/bib_locales.py",                      ""),
-    ("hebrew_points.py",                  "pycmn",     "holman-ketiv-qere", "py/pycmn/hebrew_points.py",                    ""),
-    ("hebrew_punctuation.py",             "pycmn",     "holman-ketiv-qere", "py/pycmn/hebrew_punctuation.py",               ""),
-    ("str_defs.py",                       "pycmn",     "holman-ketiv-qere", "py/pycmn/str_defs.py",                         ""),
-    # ── MAM-for-Acc ───────────────────────────────────────────────────────
-    ("my_utils.py",                       "pycmn",     "MAM-for-Acc",       "my_utils.py",                                  "not in pycmn dir"),
-    ("uni_denorm.py",                     "pycmn",     "MAM-for-Acc",       "uni_denorm.py",                                "not in pycmn dir"),
-    ("uni_heb.py",                        "pycmn",     "MAM-for-Acc",       "uni_heb.py",                                   "not in pycmn dir"),
-    ("uni_norm_fragile.py",               "pycmn",     "MAM-for-Acc",       "uni_norm_fragile.py",                          "not in pycmn dir"),
-    # ── MAM-for-CCAR/py ───────────────────────────────────────────────────
-    ("minirow.py",                        "pycmn",     "MAM-for-CCAR",      "py/minirow.py",                                "not in pycmn dir"),
-    ("my_html.py",                        "py_misc",   "MAM-for-CCAR",      "py/my_html.py",                                "not in pycmn dir"),
-    ("my_utils.py",                       "pycmn",     "MAM-for-CCAR",      "py/my_utils.py",                               "not in pycmn dir"),
-    ("read_books_from_mam_parsed_plus.py","pycmn",     "MAM-for-CCAR",      "py/read_books_from_mam_parsed_plus.py",        "not in pycmn dir"),
-    # ── MAM-for-JPS/py ────────────────────────────────────────────────────
-    ("my_html.py",                        "py_misc",   "MAM-for-JPS",       "py/my_html.py",                                "not in pycmn dir"),
-    ("my_utils.py",                       "pycmn",     "MAM-for-JPS",       "py/my_utils.py",                               "not in pycmn dir"),
-    # ── mgketer/py/pycmn ──────────────────────────────────────────────────
-    ("bib_locales.py",                    "pycmn",     "mgketer",           "py/pycmn/bib_locales.py",                      ""),
-    ("hebrew_accents.py",                 "pycmn",     "mgketer",           "py/pycmn/hebrew_accents.py",                   ""),
-    ("hebrew_letters.py",                 "pycmn",     "mgketer",           "py/pycmn/hebrew_letters.py",                   ""),
-    ("hebrew_points.py",                  "pycmn",     "mgketer",           "py/pycmn/hebrew_points.py",                    ""),
-    ("hebrew_punctuation.py",             "pycmn",     "mgketer",           "py/pycmn/hebrew_punctuation.py",               ""),
-    ("mam_bknas.py",                      "pycmn",     "mgketer",           "py/pycmn/mam_bknas.py",                        ""),
-    ("mam_bknas_and_std_bknas.py",        "pycmn",     "mgketer",           "py/pycmn/mam_bknas_and_std_bknas.py",          ""),
-    ("polite_download.py",                "pycmn",     "mgketer",           "py/pycmn/polite_download.py",                  ""),
-    ("str_defs.py",                       "pycmn",     "mgketer",           "py/pycmn/str_defs.py",                         ""),
-    # ── mgketer/py/python_modules ─────────────────────────────────────────
-    ("my_diffs.py",                       "pycmn",     "mgketer",           "py/python_modules/my_diffs.py",                "wrong dest dir (not pycmn)"),
-    ("uni_denorm.py",                     "pycmn",     "mgketer",           "py/python_modules/uni_denorm.py",              "wrong dest dir (not pycmn)"),
-    # ── TMC/py ────────────────────────────────────────────────────────────
-    ("my_utils.py",                       "pycmn",     "TMC",               "py/my_utils.py",                               "not in pycmn dir"),
-    # ── UXLC-utils/py/pycmn ───────────────────────────────────────────────
-    ("cantsys.py",                        "pycmn",     "UXLC-utils",        "py/pycmn/cantsys.py",                          ""),
-    ("hebrew_accents.py",                 "pycmn",     "UXLC-utils",        "py/pycmn/hebrew_accents.py",                   ""),
-    ("hebrew_letters.py",                 "pycmn",     "UXLC-utils",        "py/pycmn/hebrew_letters.py",                   ""),
-    ("hebrew_points.py",                  "pycmn",     "UXLC-utils",        "py/pycmn/hebrew_points.py",                    ""),
-    ("hebrew_punctuation.py",             "pycmn",     "UXLC-utils",        "py/pycmn/hebrew_punctuation.py",               ""),
-    ("my_diffs.py",                       "pycmn",     "UXLC-utils",        "py/pycmn/my_diffs.py",                         ""),
-    ("my_utils.py",                       "pycmn",     "UXLC-utils",        "py/pycmn/my_utils.py",                         ""),
-    ("polite_download.py",                "pycmn",     "UXLC-utils",        "py/pycmn/polite_download.py",                  ""),
-    ("str_defs.py",                       "pycmn",     "UXLC-utils",        "py/pycmn/str_defs.py",                         ""),
-    ("uni_heb.py",                        "pycmn",     "UXLC-utils",        "py/pycmn/uni_heb.py",                          ""),
-    ("uni_norm_fragile.py",               "pycmn",     "UXLC-utils",        "py/pycmn/uni_norm_fragile.py",                 ""),
-    # ── UXLC-utils/py/py_misc ─────────────────────────────────────────────
-    ("my_html.py",                        "py_misc",   "UXLC-utils",        "py/py_misc/my_html.py",                        ""),
-    # ── wlc-utils/py/pycmn ────────────────────────────────────────────────
-    ("bib_locales.py",                    "pycmn",     "wlc-utils",         "py/pycmn/bib_locales.py",                      ""),
-    ("cantsys.py",                        "pycmn",     "wlc-utils",         "py/pycmn/cantsys.py",                          ""),
-    ("file_io.py",                        "pycmn",     "wlc-utils",         "py/pycmn/file_io.py",                          ""),
-    ("hebrew_accents.py",                 "pycmn",     "wlc-utils",         "py/pycmn/hebrew_accents.py",                   ""),
-    ("hebrew_letters.py",                 "pycmn",     "wlc-utils",         "py/pycmn/hebrew_letters.py",                   ""),
-    ("hebrew_points.py",                  "pycmn",     "wlc-utils",         "py/pycmn/hebrew_points.py",                    ""),
-    ("hebrew_punctuation.py",             "pycmn",     "wlc-utils",         "py/pycmn/hebrew_punctuation.py",               ""),
-    ("my_diffs.py",                       "pycmn",     "wlc-utils",         "py/pycmn/my_diffs.py",                         ""),
-    ("my_utils.py",                       "pycmn",     "wlc-utils",         "py/pycmn/my_utils.py",                         ""),
-    ("str_defs.py",                       "pycmn",     "wlc-utils",         "py/pycmn/str_defs.py",                         ""),
-    ("uni_heb.py",                        "pycmn",     "wlc-utils",         "py/pycmn/uni_heb.py",                          ""),
-    ("uni_norm_fragile.py",               "pycmn",     "wlc-utils",         "py/pycmn/uni_norm_fragile.py",                 ""),
-    # ── wlc-utils/py/py_html ──────────────────────────────────────────────
-    ("my_html.py",                        "py_misc",   "wlc-utils",         "py/py_html/my_html.py",                        "dest dir is py_html not py_misc"),
-]
-# fmt: on
 
 
 def _sha256(path: Path) -> str:
@@ -223,14 +44,18 @@ def main() -> None:
     sys.stdout.reconfigure(encoding="utf-8")
 
     rows = []
-    for filename, src_pkg, dest_repo, dest_rel, notes in COPIES:
-        src_path = _MAM / SOURCE_PKG[src_pkg] / filename
+    for filename, src_pkg, dest_repo, dest_rel, notes in iter_compare_copies():
+        src_path = _MAM / SOURCE_PKG_DIRS[src_pkg] / filename
         dest_path = _REPOS / dest_repo / dest_rel
 
         src_hash = _sha256(src_path) if src_path.exists() else "MISSING-SRC"
         dest_hash = _sha256(dest_path) if dest_path.exists() else "MISSING-DEST"
 
-        identity_str = "identical" if src_hash == dest_hash else ("DIFFERS" if dest_hash != "MISSING-DEST" else "MISSING-DEST")
+        identity_str = (
+            "identical"
+            if src_hash == dest_hash
+            else ("DIFFERS" if dest_hash != "MISSING-DEST" else "MISSING-DEST")
+        )
         last_synced = _git_log_date(_REPOS / dest_repo, dest_rel)
 
         rows.append(
@@ -247,9 +72,13 @@ def main() -> None:
 
     out = _MAM / "out" / "vendoring_compare_out.txt"
     with out.open("w", encoding="utf-8") as f:
-        f.write(f"{'FILE':<42} {'DEST_REPO':<26} {'DEST_PATH':<55} {'IDENTITY':<14} {'LAST_SYNCED':<12} HINT_NOTES\n")
+        f.write(
+            f"{'FILE':<42} {'DEST_REPO':<26} {'DEST_PATH':<55} {'IDENTITY':<14} {'LAST_SYNCED':<12} HINT_NOTES\n"
+        )
         f.write("-" * 180 + "\n")
         for r in rows:
-            f.write(f"{r['file']:<42} {r['dest_repo']:<26} {r['dest_path']:<55} {r['identity']:<14} {r['last_synced']:<12} {r['hint_notes']}\n")
+            f.write(
+                f"{r['file']:<42} {r['dest_repo']:<26} {r['dest_path']:<55} {r['identity']:<14} {r['last_synced']:<12} {r['hint_notes']}\n"
+            )
 
     print(f"Wrote {len(rows)} rows to {out}")

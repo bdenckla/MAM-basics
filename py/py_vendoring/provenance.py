@@ -7,25 +7,10 @@ Results written to out/vendoring_provenance_out.txt.
 import sys
 from pathlib import Path
 
+from py_vendoring.registry import provenance_dest_repos
+
 _REPOS = Path(__file__).resolve().parents[3]
 _MAM = _REPOS / "MAM-basics"
-
-DEST_REPOS = [
-    "al-hatorah",
-    "book-of-job",
-    "codex-index-aleppo",
-    "codex-index-cam1753",
-    "codex-index-leningrad",
-    "diffable-pointed-hebrew",
-    "holman-ketiv-qere",
-    "MAM-for-Acc",
-    "MAM-for-CCAR",
-    "MAM-for-JPS",
-    "mgketer",
-    "TMC",
-    "UXLC-utils",
-    "wlc-utils",
-]
 
 PROVENANCE_NAMES = [
     "VENDORING.md",
@@ -53,7 +38,7 @@ def main() -> None:
     sys.stdout.reconfigure(encoding="utf-8")
     out = _MAM / "out" / "vendoring_provenance_out.txt"
     with out.open("w", encoding="utf-8") as f:
-        for repo in DEST_REPOS:
+        for repo in provenance_dest_repos():
             repo_path = _REPOS / repo
             f.write(f"\n=== {repo} ===\n")
 
@@ -83,7 +68,11 @@ def main() -> None:
             for pycmn_rel in ["pycmn", "py/pycmn"]:
                 pycmn_path = repo_path / pycmn_rel
                 if pycmn_path.exists():
-                    files = sorted(p.name for p in pycmn_path.iterdir() if p.suffix == ".py" and p.name != "__init__.py")
+                    files = sorted(
+                        p.name
+                        for p in pycmn_path.iterdir()
+                        if p.suffix == ".py" and p.name != "__init__.py"
+                    )
                     f.write(f"  pycmn dir ({pycmn_rel}): {files}\n")
 
     print(f"Wrote to {out}")
