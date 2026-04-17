@@ -2,9 +2,10 @@
 """Dispatch vendoring audit subcommands.
 
 Usage (from repo root):
-    .venv\\Scripts\\python.exe py\\main_vendoring.py --gen-inventory
+    .venv\\Scripts\\python.exe py\\main_vendoring.py --all
     .venv\\Scripts\\python.exe py\\main_vendoring.py --compare
     .venv\\Scripts\\python.exe py\\main_vendoring.py --provenance
+    .venv\\Scripts\\python.exe py\\main_vendoring.py --gen-inventory
 """
 
 import argparse
@@ -15,6 +16,11 @@ from py_vendoring import compare, gen_inventory, provenance
 def main() -> None:
     parser = argparse.ArgumentParser(description="Vendoring audit tools.")
     group = parser.add_mutually_exclusive_group(required=True)
+    group.add_argument(
+        "--all",
+        action="store_true",
+        help="Run compare, provenance, and inventory generation in dependency order",
+    )
     group.add_argument(
         "--gen-inventory",
         action="store_true",
@@ -32,7 +38,11 @@ def main() -> None:
     )
     args = parser.parse_args()
 
-    if args.gen_inventory:
+    if args.all:
+        compare.main()
+        provenance.main()
+        gen_inventory.main(refresh_live_inputs=False)
+    elif args.gen_inventory:
         gen_inventory.main()
     elif args.compare:
         compare.main()

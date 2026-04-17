@@ -30,8 +30,8 @@
 
 === holman-ketiv-qere ===
   provenance docs: none
-  copy scripts: none found
-  pycmn dir (py/pycmn): ['bib_locales.py', 'hebrew_points.py', 'hebrew_punctuation.py', 'str_defs.py']
+  COPY SCRIPTS: ['holman-ketiv-qere\\py\\main_update_vendored_files.py']
+  pycmn dir (py/pycmn): ['bib_locales.py', 'cantsys.py', 'hebrew_accents.py', 'hebrew_letters.py', 'hebrew_points.py', 'hebrew_punctuation.py', 'hebrew_verse_numerals.py', 'mam_bknas.py', 'mam_bknas_and_std_bknas.py', 'str_defs.py']
 
 === MAM-for-Acc ===
   provenance docs: none
