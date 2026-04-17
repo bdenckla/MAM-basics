@@ -4,9 +4,9 @@
 import re
 from pathlib import Path
 
-from py_vendoring.registry import (
+from py_vendoring.discover import (
     IDENTITY_VALUES,
-    IGNORED_REPOS,
+    ignored_repos,
     iter_inventory_seed_rows,
 )
 
@@ -144,11 +144,12 @@ def main(refresh_live_inputs: bool = True) -> None:
         _refresh_live_inputs()
 
     merged_rows = _merged_rows()
+    ignored_repo_names = ignored_repos()
     groups: dict[tuple, list] = {}
     ignored_file_count = 0
     for d in merged_rows:
         dest_repo = d["dest_repo"]
-        if dest_repo in IGNORED_REPOS:
+        if dest_repo in ignored_repo_names:
             ignored_file_count += 1
             continue
         src_path = _make_source_path(d["src_pkg"])
@@ -210,7 +211,7 @@ def main(refresh_live_inputs: bool = True) -> None:
         lines.append(
             f"| {files_str} | {src_pkg_display} | {dest_repo} | {dest_path_display} | {mechanism} | {last_synced_display} | {provenance_doc} | {category} | {notes} |"
         )
-    ignored_repos_sorted = ", ".join(sorted(IGNORED_REPOS))
+    ignored_repos_sorted = ", ".join(sorted(ignored_repo_names))
     file_count = sum(len(v) for v in groups.values())
     lines += [
         "",

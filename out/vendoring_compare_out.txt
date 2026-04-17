@@ -24,22 +24,25 @@ mam4sef_or_ajf.py                          MAM-simple                 py-example
 sef_cmn.py                                 MAM-simple                 py-example/pysefaria/sef_cmn.py                         identical      2026-04-07   generated
 sef_header.py                              MAM-simple                 py-example/pysefaria/sef_header.py                      identical      2026-03-29   generated
 write_utils_sef_or_ajf.py                  MAM-simple                 py-example/pysefaria/write_utils_sef_or_ajf.py          identical      2026-03-08   generated
-describe_diff.py                           holman-ketiv-qere          py/pydiff_mpp/describe_diff.py                          identical      2026-04-17   deferred
-grapheme_diff.py                           holman-ketiv-qere          py/pydiff_mpp/grapheme_diff.py                          identical      2026-04-11   deferred
-grapheme_diff.py                           mgketer                    py/python_modules/grapheme_diff.py                      DIFFERS        2026-03-08   deferred
 bib_locales.py                             holman-ketiv-qere          py/pycmn/bib_locales.py                                 identical      2026-04-04   
+cantsys.py                                 holman-ketiv-qere          py/pycmn/cantsys.py                                     identical      2026-04-17   
+hebrew_accents.py                          holman-ketiv-qere          py/pycmn/hebrew_accents.py                              identical      2026-04-17   
+hebrew_letters.py                          holman-ketiv-qere          py/pycmn/hebrew_letters.py                              identical      2026-04-17   
 hebrew_points.py                           holman-ketiv-qere          py/pycmn/hebrew_points.py                               identical      2026-04-17   
 hebrew_punctuation.py                      holman-ketiv-qere          py/pycmn/hebrew_punctuation.py                          identical      2026-04-11   
+hebrew_verse_numerals.py                   holman-ketiv-qere          py/pycmn/hebrew_verse_numerals.py                       identical      2026-04-17   
+mam_bknas.py                               holman-ketiv-qere          py/pycmn/mam_bknas.py                                   identical      2026-04-17   
+mam_bknas_and_std_bknas.py                 holman-ketiv-qere          py/pycmn/mam_bknas_and_std_bknas.py                     identical      2026-04-17   
 str_defs.py                                holman-ketiv-qere          py/pycmn/str_defs.py                                    identical      2026-04-17   
-my_html.py                                 al-hatorah                 py/my_html.py                                           DIFFERS        2025-07-03   placed in py/ not py_misc/
-my_html.py                                 book-of-job                py/my_html.py                                           DIFFERS        2026-02-11   placed in py/ not py_misc/
-my_html.py                                 MAM-for-CCAR               py/my_html.py                                           DIFFERS        2024-12-19   placed in py/ not py_misc/
-my_html.py                                 MAM-for-JPS                py/my_html.py                                           DIFFERS        2024-03-24   placed in py/ not py_misc/
-my_html.py                                 UXLC-utils                 py/py_misc/my_html.py                                   DIFFERS        2026-04-11   
-my_html.py                                 wlc-utils                  py/py_html/my_html.py                                   DIFFERS        2026-04-11   placed in py_html/ not py_misc/
-my_html_get_lines.py                       al-hatorah                 py/my_html_get_lines.py                                 DIFFERS        2025-06-09   placed in py/ not py_misc/
-my_html_get_lines.py                       book-of-job                py/my_html_get_lines.py                                 DIFFERS        2026-02-18   placed in py/ not py_misc/
-two_col_css_styles.py                      book-of-job                py/two_col_css_styles.py                                DIFFERS        2026-01-09   placed in py/ not py_misc/
+change_ops.py                              holman-ketiv-qere          py/pydiff_mpp/change_ops.py                             identical      2026-04-17   
+change_ops_apply.py                        holman-ketiv-qere          py/pydiff_mpp/change_ops_apply.py                       identical      2026-04-17   
+change_ops_extract.py                      holman-ketiv-qere          py/pydiff_mpp/change_ops_extract.py                     identical      2026-04-17   
+change_ops_render.py                       holman-ketiv-qere          py/pydiff_mpp/change_ops_render.py                      identical      2026-04-17   
+describe_diff.py                           holman-ketiv-qere          py/pydiff_mpp/describe_diff.py                          identical      2026-04-17   deferred
+grapheme_diff.py                           holman-ketiv-qere          py/pydiff_mpp/grapheme_diff.py                          identical      2026-04-11   deferred
+mpp_flatten.py                             holman-ketiv-qere          py/pydiff_mpp/mpp_flatten.py                            identical      2026-04-17   
+mpp_param_access.py                        holman-ketiv-qere          py/pydiff_mpp/mpp_param_access.py                       identical      2026-04-17   
+mpp_structure.py                           holman-ketiv-qere          py/pydiff_mpp/mpp_structure.py                          identical      2026-04-17   
 bib_locales.py                             al-hatorah                 pycmn/bib_locales.py                                    DIFFERS        2026-02-06   
 cantsys.py                                 al-hatorah                 pycmn/cantsys.py                                        identical      2025-04-02   
 file_io.py                                 al-hatorah                 pycmn/file_io.py                                        identical      2026-02-06   
@@ -63,6 +66,8 @@ uni_norm_fragile.py                        al-hatorah                 pycmn/uni_
 ws_tmpl1.py                                al-hatorah                 pycmn/ws_tmpl1.py                                       identical      2025-07-03   
 ws_tmpl2.py                                al-hatorah                 pycmn/ws_tmpl2.py                                       DIFFERS        2025-11-18   
 ws_tmpl_named_params.py                    al-hatorah                 pycmn/ws_tmpl_named_params.py                           DIFFERS        2025-04-02   
+my_html.py                                 al-hatorah                 py/my_html.py                                           DIFFERS        2025-07-03   placed in py/ not py_misc/
+my_html_get_lines.py                       al-hatorah                 py/my_html_get_lines.py                                 DIFFERS        2025-06-09   placed in py/ not py_misc/
 bib_locales.py                             book-of-job                pycmn/bib_locales.py                                    DIFFERS        2026-02-06   
 cantsys.py                                 book-of-job                pycmn/cantsys.py                                        identical      2026-01-09   
 file_io.py                                 book-of-job                pycmn/file_io.py                                        identical      2026-02-06   
@@ -77,6 +82,9 @@ shrink.py                                  book-of-job                pycmn/shri
 str_defs.py                                book-of-job                pycmn/str_defs.py                                       DIFFERS        2026-02-06   
 uni_denorm.py                              book-of-job                pycmn/uni_denorm.py                                     identical      2026-02-06   
 uni_heb.py                                 book-of-job                pycmn/uni_heb.py                                        identical      2026-02-06   
+my_html.py                                 book-of-job                py/my_html.py                                           DIFFERS        2026-02-11   placed in py/ not py_misc/
+my_html_get_lines.py                       book-of-job                py/my_html_get_lines.py                                 DIFFERS        2026-02-18   placed in py/ not py_misc/
+two_col_css_styles.py                      book-of-job                py/two_col_css_styles.py                                DIFFERS        2026-01-09   placed in py/ not py_misc/
 hebrew_points.py                           codex-index-aleppo         py/pycmn/hebrew_points.py                               identical      2026-03-15   
 str_defs.py                                codex-index-aleppo         py/pycmn/str_defs.py                                    DIFFERS        2026-03-15   
 uni_denorm.py                              codex-index-aleppo         py/pycmn/uni_denorm.py                                  identical      2026-03-15   
@@ -99,14 +107,6 @@ hebrew_points.py                           diffable-pointed-hebrew    pycmn/hebr
 hebrew_punctuation.py                      diffable-pointed-hebrew    pycmn/hebrew_punctuation.py                             DIFFERS        2025-06-03   
 str_defs.py                                diffable-pointed-hebrew    pycmn/str_defs.py                                       DIFFERS        2025-06-03   
 uni_heb.py                                 diffable-pointed-hebrew    pycmn/uni_heb.py                                        DIFFERS        2025-06-03   
-my_utils.py                                MAM-for-Acc                my_utils.py                                             DIFFERS        2022-06-09   placed at repo root, not in pycmn/
-uni_denorm.py                              MAM-for-Acc                uni_denorm.py                                           DIFFERS        2022-06-09   placed at repo root, not in pycmn/
-uni_heb.py                                 MAM-for-Acc                uni_heb.py                                              DIFFERS        2023-01-18   placed at repo root, not in pycmn/
-uni_norm_fragile.py                        MAM-for-Acc                uni_norm_fragile.py                                     DIFFERS        2022-06-09   placed at repo root, not in pycmn/
-minirow.py                                 MAM-for-CCAR               py/minirow.py                                           identical      2024-12-19   placed in py/ not pycmn/
-my_utils.py                                MAM-for-CCAR               py/my_utils.py                                          DIFFERS        2026-01-18   placed in py/ not pycmn/
-read_books_from_mam_parsed_plus.py         MAM-for-CCAR               py/read_books_from_mam_parsed_plus.py                   DIFFERS        2024-12-19   placed in py/ not pycmn/
-my_utils.py                                MAM-for-JPS                py/my_utils.py                                          DIFFERS        2024-03-24   placed in py/ not pycmn/
 bib_locales.py                             mgketer                    py/pycmn/bib_locales.py                                 DIFFERS        2026-03-25   
 hebrew_accents.py                          mgketer                    py/pycmn/hebrew_accents.py                              DIFFERS        2026-03-20   
 hebrew_letters.py                          mgketer                    py/pycmn/hebrew_letters.py                              DIFFERS        2026-03-20   
@@ -116,9 +116,9 @@ mam_bknas.py                               mgketer                    py/pycmn/m
 mam_bknas_and_std_bknas.py                 mgketer                    py/pycmn/mam_bknas_and_std_bknas.py                     DIFFERS        2026-03-25   
 polite_download.py                         mgketer                    py/pycmn/polite_download.py                             identical      2026-04-14   
 str_defs.py                                mgketer                    py/pycmn/str_defs.py                                    DIFFERS        2026-03-20   
+grapheme_diff.py                           mgketer                    py/python_modules/grapheme_diff.py                      DIFFERS        2026-03-08   deferred
 my_diffs.py                                mgketer                    py/python_modules/my_diffs.py                           DIFFERS        2026-03-08   placed in python_modules/ not pycmn/
 uni_denorm.py                              mgketer                    py/python_modules/uni_denorm.py                         DIFFERS        2026-03-20   placed in python_modules/ not pycmn/
-my_utils.py                                TMC                        py/my_utils.py                                          DIFFERS        2024-10-21   placed in py/ not pycmn/
 cantsys.py                                 UXLC-utils                 py/pycmn/cantsys.py                                     identical      2026-04-11   
 hebrew_accents.py                          UXLC-utils                 py/pycmn/hebrew_accents.py                              identical      2026-04-11   
 hebrew_letters.py                          UXLC-utils                 py/pycmn/hebrew_letters.py                              identical      2026-04-11   
@@ -130,6 +130,7 @@ polite_download.py                         UXLC-utils                 py/pycmn/p
 str_defs.py                                UXLC-utils                 py/pycmn/str_defs.py                                    DIFFERS        2026-04-11   
 uni_heb.py                                 UXLC-utils                 py/pycmn/uni_heb.py                                     DIFFERS        2026-04-11   
 uni_norm_fragile.py                        UXLC-utils                 py/pycmn/uni_norm_fragile.py                            DIFFERS        2026-04-11   
+my_html.py                                 UXLC-utils                 py/py_misc/my_html.py                                   DIFFERS        2026-04-11   
 bib_locales.py                             wlc-utils                  py/pycmn/bib_locales.py                                 DIFFERS        2026-04-11   
 cantsys.py                                 wlc-utils                  py/pycmn/cantsys.py                                     identical      2026-04-11   
 file_io.py                                 wlc-utils                  py/pycmn/file_io.py                                     DIFFERS        2026-04-11   
@@ -142,3 +143,4 @@ my_utils.py                                wlc-utils                  py/pycmn/m
 str_defs.py                                wlc-utils                  py/pycmn/str_defs.py                                    DIFFERS        2026-04-11   
 uni_heb.py                                 wlc-utils                  py/pycmn/uni_heb.py                                     DIFFERS        2026-04-11   
 uni_norm_fragile.py                        wlc-utils                  py/pycmn/uni_norm_fragile.py                            DIFFERS        2026-04-11   
+my_html.py                                 wlc-utils                  py/py_html/my_html.py                                   DIFFERS        2026-04-11   placed in py_html/ not py_misc/

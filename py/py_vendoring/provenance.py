@@ -7,7 +7,7 @@ Results written to out/vendoring_provenance_out.txt.
 import sys
 from pathlib import Path
 
-from py_vendoring.registry import provenance_dest_repos
+from py_vendoring.discover import provenance_dest_repos
 
 _REPOS = Path(__file__).resolve().parents[3]
 _MAM = _REPOS / "MAM-basics"

@@ -11,6 +11,7 @@ Usage (from repo root):
 import argparse
 
 from py_vendoring import compare, gen_inventory, provenance
+from py_vendoring.discover import write_baseline_diff
 
 
 def main() -> None:
@@ -36,6 +37,11 @@ def main() -> None:
         action="store_true",
         help="Scan dest repos for provenance docs -> out/vendoring_provenance_out.txt",
     )
+    group.add_argument(
+        "--diff-baseline",
+        action="store_true",
+        help="Compare discovered relationships against legacy registry -> out/vendoring_discovery_baseline_diff.txt",
+    )
     args = parser.parse_args()
 
     if args.all:
@@ -48,6 +54,8 @@ def main() -> None:
         compare.main()
     elif args.provenance:
         provenance.main()
+    elif args.diff_baseline:
+        write_baseline_diff()
 
 
 main()

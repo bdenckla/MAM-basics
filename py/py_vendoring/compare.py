@@ -10,7 +10,7 @@ import subprocess
 import sys
 from pathlib import Path
 
-from py_vendoring.registry import SOURCE_PKG_DIRS, iter_compare_copies
+from py_vendoring.discover import iter_compare_copies, source_pkg_dirs
 
 _MAM = Path(__file__).resolve().parents[2]
 _REPOS = _MAM.parent
@@ -42,10 +42,11 @@ def _git_log_date(repo_path: Path, rel_file: str) -> str:
 
 def main() -> None:
     sys.stdout.reconfigure(encoding="utf-8")
+    source_pkg_dir_map = source_pkg_dirs()
 
     rows = []
     for filename, src_pkg, dest_repo, dest_rel, notes in iter_compare_copies():
-        src_path = _MAM / SOURCE_PKG_DIRS[src_pkg] / filename
+        src_path = _MAM / source_pkg_dir_map[src_pkg] / filename
         dest_path = _REPOS / dest_repo / dest_rel
 
         src_hash = _sha256(src_path) if src_path.exists() else "MISSING-SRC"

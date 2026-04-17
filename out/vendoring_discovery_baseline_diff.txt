@@ -1,0 +1,33 @@
+Discovered vendoring relationships vs legacy registry baseline
+
+intentional_policy_exclusions: 11
+minirow.py | pycmn | MAM-for-CCAR | py/minirow.py
+my_html.py | py_misc | MAM-for-CCAR | py/my_html.py
+my_html.py | py_misc | MAM-for-JPS | py/my_html.py
+my_utils.py | pycmn | MAM-for-Acc | my_utils.py
+my_utils.py | pycmn | MAM-for-CCAR | py/my_utils.py
+my_utils.py | pycmn | MAM-for-JPS | py/my_utils.py
+my_utils.py | pycmn | TMC | py/my_utils.py
+read_books_from_mam_parsed_plus.py | pycmn | MAM-for-CCAR | py/read_books_from_mam_parsed_plus.py
+uni_denorm.py | pycmn | MAM-for-Acc | uni_denorm.py
+uni_heb.py | pycmn | MAM-for-Acc | uni_heb.py
+uni_norm_fragile.py | pycmn | MAM-for-Acc | uni_norm_fragile.py
+
+missing_from_discovery: 0
+
+extra_in_discovery: 13
+cantsys.py | pycmn | holman-ketiv-qere | py/pycmn/cantsys.py
+change_ops.py | pydiff_mpp | holman-ketiv-qere | py/pydiff_mpp/change_ops.py
+change_ops_apply.py | pydiff_mpp | holman-ketiv-qere | py/pydiff_mpp/change_ops_apply.py
+change_ops_extract.py | pydiff_mpp | holman-ketiv-qere | py/pydiff_mpp/change_ops_extract.py
+change_ops_render.py | pydiff_mpp | holman-ketiv-qere | py/pydiff_mpp/change_ops_render.py
+hebrew_accents.py | pycmn | holman-ketiv-qere | py/pycmn/hebrew_accents.py
+hebrew_letters.py | pycmn | holman-ketiv-qere | py/pycmn/hebrew_letters.py
+hebrew_verse_numerals.py | pycmn | holman-ketiv-qere | py/pycmn/hebrew_verse_numerals.py
+mam_bknas.py | pycmn | holman-ketiv-qere | py/pycmn/mam_bknas.py
+mam_bknas_and_std_bknas.py | pycmn | holman-ketiv-qere | py/pycmn/mam_bknas_and_std_bknas.py
+mpp_flatten.py | pydiff_mpp | holman-ketiv-qere | py/pydiff_mpp/mpp_flatten.py
+mpp_param_access.py | pydiff_mpp | holman-ketiv-qere | py/pydiff_mpp/mpp_param_access.py
+mpp_structure.py | pydiff_mpp | holman-ketiv-qere | py/pydiff_mpp/mpp_structure.py
+
+metadata_mismatches: 0
