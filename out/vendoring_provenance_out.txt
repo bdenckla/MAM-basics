@@ -1,0 +1,65 @@
+
+=== al-hatorah ===
+  provenance docs: none
+  copy scripts: none found
+  pycmn dir (pycmn): ['bib_locales.py', 'cantsys.py', 'file_io.py', 'hebrew_accents.py', 'hebrew_letters.py', 'hebrew_points.py', 'hebrew_punctuation.py', 'hebrew_verse_numerals.py', 'mam_bknas.py', 'mam_bknas_and_std_bknas.py', 'minirow.py', 'my_diffs.py', 'my_utils.py', 'read_books_from_mam_parsed_plus.py', 'shrink.py', 'str_defs.py', 'template_names.py', 'uni_denorm.py', 'uni_heb.py', 'uni_norm_fragile.py', 'ws_tmpl1.py', 'ws_tmpl2.py', 'ws_tmpl_named_params.py']
+
+=== book-of-job ===
+  provenance docs: none
+  copy scripts: none found
+  pycmn dir (pycmn): ['bib_locales.py', 'cantsys.py', 'file_io.py', 'hebrew_accents.py', 'hebrew_letters.py', 'hebrew_points.py', 'hebrew_punctuation.py', 'mam_bknas.py', 'my_diffs.py', 'my_utils.py', 'shrink.py', 'str_defs.py', 'uni_denorm.py', 'uni_heb.py']
+
+=== codex-index-aleppo ===
+  provenance docs: none
+  copy scripts: none found
+  pycmn dir (py/pycmn): ['hebrew_points.py', 'str_defs.py', 'uni_denorm.py']
+
+=== codex-index-cam1753 ===
+  provenance docs: none
+  copy scripts: none found
+  pycmn dir (pycmn): ['hebrew_points.py', 'str_defs.py', 'uni_denorm.py']
+
+=== codex-index-leningrad ===
+  provenance docs: none
+  copy scripts: none found
+
+=== diffable-pointed-hebrew ===
+  provenance docs: none
+  copy scripts: none found
+  pycmn dir (pycmn): ['cantsys.py', 'file_io.py', 'hebrew_accents.py', 'hebrew_letters.py', 'hebrew_points.py', 'hebrew_punctuation.py', 'str_defs.py', 'uni_heb.py']
+
+=== holman-ketiv-qere ===
+  provenance docs: none
+  copy scripts: none found
+  pycmn dir (py/pycmn): ['bib_locales.py', 'hebrew_points.py', 'hebrew_punctuation.py', 'str_defs.py']
+
+=== MAM-for-Acc ===
+  provenance docs: none
+  copy scripts: none found
+
+=== MAM-for-CCAR ===
+  provenance docs: none
+  copy scripts: none found
+
+=== MAM-for-JPS ===
+  provenance docs: none
+  copy scripts: none found
+
+=== mgketer ===
+  provenance docs: none
+  copy scripts: none found
+  pycmn dir (py/pycmn): ['bib_locales.py', 'hebrew_accents.py', 'hebrew_letters.py', 'hebrew_points.py', 'hebrew_punctuation.py', 'mam_bknas.py', 'mam_bknas_and_std_bknas.py', 'polite_download.py', 'str_defs.py']
+
+=== TMC ===
+  provenance docs: none
+  copy scripts: none found
+
+=== UXLC-utils ===
+  provenance docs: none
+  copy scripts: none found
+  pycmn dir (py/pycmn): ['cantsys.py', 'hebrew_accents.py', 'hebrew_letters.py', 'hebrew_points.py', 'hebrew_punctuation.py', 'my_diffs.py', 'my_utils.py', 'polite_download.py', 'str_defs.py', 'uni_heb.py', 'uni_norm_fragile.py']
+
+=== wlc-utils ===
+  provenance docs: none
+  copy scripts: none found
+  pycmn dir (py/pycmn): ['bib_locales.py', 'cantsys.py', 'file_io.py', 'hebrew_accents.py', 'hebrew_letters.py', 'hebrew_points.py', 'hebrew_punctuation.py', 'my_diffs.py', 'my_utils.py', 'str_defs.py', 'uni_heb.py', 'uni_norm_fragile.py']
