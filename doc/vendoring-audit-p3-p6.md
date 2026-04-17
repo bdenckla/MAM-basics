@@ -7,6 +7,8 @@ GitHub issue bdenckla/MAM-basics#60 ("Get vendoring under control").
 **Prerequisite:** Phases 1 and 2 are complete. The inventory table in
 `MAM-basics/doc/vendoring-inventory.md` exists and every row has a
 `category` value. Read that file before proceeding.
+The accepted Phase 1-2 output may use grouped rows and `src_pkg` rather
+than the stricter one-row-per-copy, separate-source-columns format.
 
 Work with `all-repos.code-workspace` open so all sibling repos are
 available together. All repos are at `C:\Users\BenDe\GitRepos\`.

@@ -7,6 +7,25 @@ GitHub issue bdenckla/MAM-basics#60 ("Get vendoring under control").
 Work with `all-repos.code-workspace` open so all sibling repos are
 available together.
 
+## Status
+
+Phases 1 and 2 are complete for purposes of this audit.
+
+The delivered inventory is `doc/vendoring-inventory.md`. Its final
+shape differs slightly from the original plan in ways that were judged
+acceptable:
+
+- Similar copies are grouped into shared rows rather than strictly one
+  row per copy.
+- The table uses `src_pkg` rather than separate `source_repo` and
+  `source_path` columns.
+- A small set of repos is intentionally omitted from the generated
+  output and listed there as ignored destinations.
+
+Treat this document as the original phase plan plus an accepted
+completion note. For subsequent work, use the actual inventory file as
+authoritative input.
+
 ---
 
 ## Background
@@ -124,7 +143,12 @@ use "Search: Find in Files" with each filename (or a combined regex).
 For terminal: run from `C:\Users\BenDe\GitRepos` using PowerShell
 `Get-ChildItem -Recurse -Filter <filename>`.
 
-### What the inventory should capture (one row per copy found)
+### What the inventory should capture
+
+Original plan: one row per copy found.
+
+Accepted implementation: grouped rows are allowed when multiple files
+share the same destination area and audit status.
 
 | Column | Description |
 |---|---|
@@ -142,6 +166,10 @@ Record the inventory findings in `MAM-basics/doc/vendoring-inventory.md`.
 (That file does not yet exist — create it with just the inventory table
 and a brief header. Do not add prose beyond what's needed to understand
 the table.)
+
+Actual result: the generated inventory uses `file(s)` plus `src_pkg`
+instead of `file` plus separate `source_repo` and `source_path`
+columns. That simplification is accepted for this audit pass.
 
 ### Also inventory: diverged once-similar files
 
@@ -173,10 +201,17 @@ Add a `category` column to the inventory table.
 ## Deliverable for Phase 1-2
 
 A populated `MAM-basics/doc/vendoring-inventory.md` with:
-- The inventory table (all rows, all columns including `category`)
+- The inventory table, including `category`
 - A short note at the top pointing to issue #60
 - The naming convention stated: all modules intended for vendoring
   should be `pycmn/` or `pycmn_*` at both source and destination
+
+Accepted delivered form:
+- Grouped rows are acceptable.
+- `src_pkg` is acceptable in place of separate `source_repo` and
+  `source_path` columns.
+- The ignored destinations called out in the generated inventory are
+  acceptable for this phase handoff.
 
 Hand off to the phases 3-6 session once the table is complete.
 See `doc/vendoring-audit-p3-p6.md` for what comes next.
