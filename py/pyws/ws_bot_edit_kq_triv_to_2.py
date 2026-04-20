@@ -5,8 +5,22 @@ Old format: {{קו"כ-אם|pointed-ketiv|2=<source-indicator>=pointed-qere}}
 New format: {{מ:קו"כ-אם-2|pointed-ketiv|unpointed-ketiv|pointed-qere|מקורות=<source-indicator>}}
 
 Edge cases (logged as warnings, old template left in place):
-  - Param 1 contains an inner template (e.g. {{מ:קמץ|...}})
+  - Param 1 is an unsupported inner template
   - Param 2 has an atypical value (qere sub-string contains space or '(')
+
+Special case (param 1 is a מ:דחי call):
+  - Param 1 is {{מ:דחי|pketiv-1d|pketiv-2d}}; the whole מ:דחי call
+    becomes param 1 of the new template, and the unpointed ketiv is
+    derived from the first arg of מ:דחי (pketiv-1d, the single-deḥi form).
+
+Special case (param 1 is a מ:קמץ call):
+  - Param 1 is {{מ:קמץ|ד=pketiv|ס=pketiv-alt}}; the whole מ:קמץ call
+    becomes param 1 of the new template, and the unpointed ketiv is
+    derived from the ד= arg of מ:קמץ.
+
+Special case (param 1 ends with מ:לגרמיה-2):
+  - Param 1 is {{...|pketiv{{ל}}|2=source=pqere{{ל}}}}; the ל is passed through
+    to both ketiv and qere slots of the new template.
 
 Special case (omit מקורות= entirely):
   - Param 2 starts with 'קרי=' (policy-based, no manuscript source)
@@ -19,6 +33,7 @@ See ws_bot_edit_history.md and MAM-basics#55.
 
 from functools import partial
 
+from pycmn import hebrew_accents as hac
 from pycmn import ws_tmpl1 as wtp1
 from pycmn.my_utils import dv_dispatch
 from pycmn.my_utils import dv_map
@@ -29,14 +44,87 @@ from py_misc import hebrew_letter_words as hlw
 from pyws import ws_fmt_2_back_to_wikitext as btw
 from pyws import ws_get_bk_in_both_fmts as wsin
 
-_OLD_TMPL_NAME = 'קו"כ-אם'
-_NEW_TMPL_NAME = 'מ:קו"כ-אם-2'
-
 # Module-level context set per chapter during edit_page_text.
 _ctx = {"bk39id": None, "he_chnu": None}
 _warnings = []
 
+_OLD_TMPL_NAME = 'קו"כ-אם'
+_NEW_TMPL_NAME = 'מ:קו"כ-אם-2'
+
 _ATYPICAL = object()  # sentinel for _parse_param2
+_COMPLEX = object()  # sentinel for _parse_param1
+_LEGARMEH = "מ:לגרמיה-2"
+_ALLOWED_TAIL_TMPLS = (_LEGARMEH, "מ:קמץ")
+
+
+def _parse_param1(el):
+    """Parse param 1 element. Returns (ketiv_wt_el, pointed_ketiv_str, dexi_arg2) or _COMPLEX.
+
+    ketiv_wt_el is the list to use directly as a template element in new_els.
+    pointed_ketiv_str is the plain string from which the unpointed ketiv
+    is derived (always pketiv-1d, the single-deḥi form).
+    dexi_arg2 is None for the plain-string case, or the second arg string
+    of the מ:דחי call (used to synthesize the qere מ:דחי call).
+
+    Handled cases:
+      - el is a plain-string singleton: [s] -> ([s], s, None)
+      - el is a singleton מ:דחי call with two plain-string args:
+        [{'stmpl': 'מ:דחי|a|b'}] -> ([dexi_tmpl], a, b)
+      - el is a singleton מ:קמץ call with named args ד= and ס=:
+        [{'stmpl': 'מ:קמץ|ד=a|ס=b'}] -> ([qamats_tmpl], a, None)
+      - el is a plain string followed by מ:לגרמיה-2:
+        [s, legar_tmpl] -> ([s, legar_tmpl], s, None)
+    """
+    if len(el) == 1 and isinstance(el[0], str):
+        s = el[0]
+        return el, s, None
+    if (
+        len(el) == 2
+        and isinstance(el[0], str)
+        and wtp1.is_template_with_name(el[1], _LEGARMEH)
+    ):
+        return el, el[0], None
+    if (
+        len(el) == 1
+        and wtp1.is_template_with_name(el[0], "מ:קמץ")
+        and wtp1.template_len(el[0]) == 3
+    ):
+        qamats_tmpl = el[0]
+        dalet_el = wtp1.named_template_element(qamats_tmpl, 1, "ד")
+        if len(dalet_el) == 1 and isinstance(dalet_el[0], str):
+            return el, dalet_el[0], None
+    if (
+        len(el) == 1
+        and wtp1.is_template_with_name(el[0], "מ:דחי")
+        and wtp1.template_len(el[0]) == 3
+    ):
+        dexi_tmpl = el[0]
+        dexi_arg1_el = wtp1.template_element(dexi_tmpl, 1)
+        dexi_arg2_el = wtp1.template_element(dexi_tmpl, 2)
+        if (
+            len(dexi_arg1_el) == 1
+            and isinstance(dexi_arg1_el[0], str)
+            and len(dexi_arg2_el) == 1
+            and isinstance(dexi_arg2_el[0], str)
+        ):
+            a1, a2 = dexi_arg1_el[0], dexi_arg2_el[0]
+            _assert_dexi_counts(a1, a2)
+            return el, a1, a2
+    return _COMPLEX
+
+
+def _assert_dexi_counts(arg1, arg2):
+    """Assert arg1 has exactly 1 deḥi mark and arg2 has exactly 2."""
+    n1 = arg1.count(hac.DEX)
+    n2 = arg2.count(hac.DEX)
+    assert n1 == 1, f"expected 1 deḥi in arg1, got {n1}: {arg1!r}"
+    assert n2 == 2, f"expected 2 deḥi in arg2, got {n2}: {arg2!r}"
+
+
+def _insert_yod(s):
+    """Insert yod before the final vav of s."""
+    assert s[-1] == "ו", f"expected final vav, got {s[-1]!r} in {s!r}"
+    return s[:-1] + "י" + s[-1]
 
 
 def _parse_param2(s):
@@ -78,33 +166,50 @@ def _transform_kq_triv(tmpl):
     """Transform one קו"כ-אם template to מ:קו"כ-אם-2."""
     assert wtp1.template_len(tmpl) == 3
 
-    # Param 1: pointed ketiv — must be a plain string
+    # Param 1: pointed ketiv — plain string or מ:דחי call
     param1_el = wtp1.template_element(tmpl, 1)
-    if len(param1_el) != 1 or not isinstance(param1_el[0], str):
+    param1_result = _parse_param1(param1_el)
+    if param1_result is _COMPLEX:
         _warn("complex-param-1", tmpl)
         return [tmpl]
-    pointed_ketiv = param1_el[0]
+    ketiv_wt_el, pointed_ketiv_str, dexi_arg2 = param1_result
 
-    # Param 2: named param "2=<source-indicator>=<qere>"
+    # Param 2: named param "2=<source-indicator>=<qere>[{{מ:לגרמיה-2}}]"
     param2_el = wtp1.named_template_element(tmpl, 2, "2")
-    if len(param2_el) != 1 or not isinstance(param2_el[0], str):
+    if not (param2_el and isinstance(param2_el[0], str)):
         _warn("complex-param-2", tmpl)
         return [tmpl]
-    param2_str = param2_el[0]
+    param2_head = param2_el[0]
+    param2_tail = list(param2_el[1:])
+    if not all(
+        wtp1.is_template_with_name_in(x, _ALLOWED_TAIL_TMPLS) for x in param2_tail
+    ):
+        _warn("complex-param-2", tmpl)
+        return [tmpl]
 
-    parse_result = _parse_param2(param2_str)
+    parse_result = _parse_param2(param2_head)
     if parse_result is _ATYPICAL:
         _warn("atypical-param-2", tmpl)
         return [tmpl]
     source, pointed_qere = parse_result
 
-    unpointed_ketiv = hlw.letters_and_maqafs(pointed_ketiv)
+    unpointed_ketiv = hlw.letters_and_maqafs(pointed_ketiv_str)
+
+    if dexi_arg2 is None:
+        qere_wt_el = [pointed_qere, *param2_tail]
+    else:
+        qere_arg1 = _insert_yod(pointed_ketiv_str)
+        assert (
+            qere_arg1 == pointed_qere
+        ), f"expected qere {pointed_qere!r} == {qere_arg1!r}"
+        qere_arg2 = _insert_yod(dexi_arg2)
+        qere_wt_el = [wtp1.mktmpl([["מ:דחי"], [qere_arg1], [qere_arg2]])]
 
     new_els = [
         [_NEW_TMPL_NAME],
-        [pointed_ketiv],
+        ketiv_wt_el,
         [unpointed_ketiv],
-        [pointed_qere],
+        qere_wt_el,
     ]
     if source is not None:
         new_els.append([f"מקורות={source}"])

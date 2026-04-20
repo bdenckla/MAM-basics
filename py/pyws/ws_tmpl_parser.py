@@ -48,9 +48,9 @@ def _bars_to_none_one_el(element):
         args = tuple(element.split("|"))
         isp = my_utils.intersperse(None, args)
         if isp[-1] == "":
-            return isp[:-1]
-        if isp[0] == "":
-            return isp[1:]
+            isp = isp[:-1]
+        if isp and isp[0] == "":
+            isp = isp[1:]
         return isp
     assert isinstance(element, tuple)
     return ({"bars-to-none": _bars_to_none(element)},)
