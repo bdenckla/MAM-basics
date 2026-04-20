@@ -35,11 +35,13 @@ def almost_main(edits_json_path=None):
         osdf = tbn.ordered_short_dash_full_39(bk39id)
         _write_book_lines(osdf, out_book)
         _write_book_fmt_2(osdf, out_book)
+    wbe.write_warnings(edits_ctx, _OUT_PATH_WARNINGS)
 
 
 _IN_PATH = "in/mam-ws"
 _OUT_PATH_LINES = "out/mam-ws-bot-proto"
 _OUT_PATH_FMT_2 = "out/mam-ws-bot-proto-fmt-2"
+_OUT_PATH_WARNINGS = "out/mam-ws-bot-proto-warnings.json"
 
 
 def _write_book_lines(osdf, dic_from_hcn_to_book_pair):

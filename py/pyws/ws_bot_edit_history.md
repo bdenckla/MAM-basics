@@ -84,13 +84,22 @@ infrastructure has changed enough to make them misleading examples:
 - **Edit level:** Raw page text string replacement.
 - **Preserved as:** `ws_bot_edit_old_joshua_meteg.py`
 
-### JSON-driven meteg removal — current as of 2026-03-15
+### JSON-driven meteg removal
 - **Purpose:** Generalized the bot to read edit specifications from a JSON
   file rather than hard-coding them. The JSON file provides the edit summary,
   edit kind (e.g. "meteg-removal"), and per-book/chapter edit entries.
   First use: remove 7 meteg marks from Deuteronomy (mgketer#80).
 - **Edit level:** Raw page text string replacement (same as Joshua era).
 - **JSON files:** `in/mam-ws-bot-edits/`
+- **Preserved as:** `ws_bot_edit_old_deuter_meteg.py`
+
+### Trivial k/q template upgrade — current
+- **Purpose:** Replace all `{{קו"כ-אם}}` calls (old 2-param style) with
+  `{{מ:קו"כ-אם-2}}` calls (new 5-param style), per MAM-basics#55.
+  New params: pointed ketiv, unpointed ketiv, pointed qere, optional
+  `מקורות=` (source), optional `סוג=` (type, deferred to follow-up).
+- **Edit level:** Full cif2 AST traversal via candlers/vandlers/wandlers.
+- **JSON files:** `in/mam-ws-bot-edits/kq-trivial-to-2.json`
 
 ## How to look up the original code
 
