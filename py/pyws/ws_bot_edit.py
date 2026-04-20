@@ -27,6 +27,7 @@ ws_bot_edit_old_deuter_meteg.py.
 import json
 
 from pycmn import file_io
+from pycmn import hebrew_verse_numerals as hvn
 from pycmn import hebrew_points as hpo
 from pyws import ws_get_bk_in_both_fmts as wsin
 from pyws import ws_fmt_2_back_to_wikitext as btw
@@ -75,15 +76,20 @@ def load_edits(json_path):
             "edits-by-bk-ch": {},
             "global-page-transform": gt["fn"],
             "get-warnings": gt["get_warnings"],
+            "modified-chapters": [],
         }
     edit_kind_fn = _EDIT_KIND_FNS[edit_kind]
     edits_by_bk_ch = _build_edits_by_book_and_chapter(edit_kind_fn, spec["edits"])
-    return {"summary": summary, "edits-by-bk-ch": edits_by_bk_ch}
+    return {
+        "summary": summary,
+        "edits-by-bk-ch": edits_by_bk_ch,
+        "modified-chapters": [],
+    }
 
 
 def no_edits():
     """Return an empty edits context (no-op pass-through)."""
-    return {"summary": "", "edits-by-bk-ch": {}}
+    return {"summary": "", "edits-by-bk-ch": {}, "modified-chapters": []}
 
 
 def _get_chapter_edits(edits_ctx, bk39id, he_chnu):
@@ -113,9 +119,26 @@ def write_warnings(edits_ctx, path):
     file_io.json_dump_to_file_path(warnings, path)
 
 
+def write_modified_chapters(edits_ctx, path):
+    """Write the list of modified book/chapter pairs to a JSON file.
+
+    The output format matches the --book-chapters-json input of
+    main_download_fr_wikisource.py: a list of {"book39": ..., "chapter": ...}
+    objects with integer chapter numbers.
+    """
+    modified = edits_ctx["modified-chapters"]
+    entries = [
+        {"book39": bk39id, "chapter": hvn.STR_TO_INT_DIC[he_chnu]}
+        for bk39id, he_chnu in modified
+    ]
+    file_io.json_dump_to_file_path(entries, path)
+
+
 def edit_cif2(edits_ctx, bk39id, he_chnu, cif2):
     """Apply edits via the format-2 roundtrip."""
     big = btw.big_str(he_chnu, cif2)
     edited = edit_page_text(edits_ctx, bk39id, he_chnu, big)
+    if edited != big:
+        edits_ctx["modified-chapters"].append((bk39id, he_chnu))
     edited_cif2 = wsin.get_chap_in_fmt_2(edited.splitlines())
     return edited_cif2, edited

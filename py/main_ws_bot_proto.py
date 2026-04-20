@@ -36,12 +36,14 @@ def almost_main(edits_json_path=None):
         _write_book_lines(osdf, out_book)
         _write_book_fmt_2(osdf, out_book)
     wbe.write_warnings(edits_ctx, _OUT_PATH_WARNINGS)
+    wbe.write_modified_chapters(edits_ctx, _OUT_PATH_MODIFIED_CHAPTERS)
 
 
 _IN_PATH = "in/mam-ws"
 _OUT_PATH_LINES = "out/mam-ws-bot-proto"
 _OUT_PATH_FMT_2 = "out/mam-ws-bot-proto-fmt-2"
 _OUT_PATH_WARNINGS = "out/mam-ws-bot-proto-warnings.json"
+_OUT_PATH_MODIFIED_CHAPTERS = "out/mam-ws-bot-proto-modified-chapters.json"
 
 
 def _write_book_lines(osdf, dic_from_hcn_to_book_pair):
