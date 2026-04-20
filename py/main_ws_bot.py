@@ -38,6 +38,8 @@ def main():
     book_plans = wsplan.get_book_plans(args.book39, args.section6)
     for book_plan in book_plans:
         _run_bot_on_book(botctx, book_plan)
+    wbe.write_warnings(edits_ctx, _OUT_PATH_WARNINGS)
+    wbe.write_modified_chapters(edits_ctx, _OUT_PATH_MODIFIED_CHAPTERS)
 
 
 def _run_bot_on_chapter(botctx, bk39id, out_book_contents, chapter_plan):
@@ -49,6 +51,7 @@ def _run_bot_on_chapter(botctx, bk39id, out_book_contents, chapter_plan):
     orig_text = page.text
     page.text = wbe.edit_page_text(edits_ctx, bk39id, he_chnu, page.text)
     if page.text != orig_text:
+        edits_ctx["modified-chapters"].append((bk39id, he_chnu))
         page.save(summary)
     out_book_contents[he_chnu] = page.text.splitlines()
 
@@ -69,6 +72,11 @@ def _run_bot_on_book(botctx, book_plan):
     for chapter_plan in wsplan.get_chapter_plans(book_plan):
         _run_bot_on_chapter(botctx, bk39id, book_contents, chapter_plan)
     _write_book(book_contents, he_bn_sbn)
+
+
+_OUT_PATH_MISC = "out/mam-ws-bot-misc"
+_OUT_PATH_WARNINGS = f"{_OUT_PATH_MISC}/warnings.json"
+_OUT_PATH_MODIFIED_CHAPTERS = f"{_OUT_PATH_MISC}/modified-chapters.json"
 
 
 if __name__ == "__main__":
