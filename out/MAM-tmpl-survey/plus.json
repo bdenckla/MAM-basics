@@ -266,7 +266,7 @@
       "wtel_subtype": "נוסח",
       "count_C": 35,
       "count_D": 273,
-      "count_E": 3580
+      "count_E": 3581
     },
     {
       "wtel_type": "tmpl",
@@ -875,8 +875,8 @@
     {
       "wtel_subtype": "נוסח",
       "stack": "E",
-      "count": 3538,
-      "count_non_nusach": 3538,
+      "count": 3539,
+      "count_non_nusach": 3539,
       "count_nusach": 0
     },
     {
@@ -981,8 +981,8 @@
       "wtel_subtype": "קו\"כ-אם",
       "stack": "E",
       "count": 148,
-      "count_non_nusach": 136,
-      "count_nusach": 12
+      "count_non_nusach": 135,
+      "count_nusach": 13
     },
     {
       "wtel_subtype": "קרי ולא כתיב",
@@ -1330,7 +1330,7 @@
     {
       "wtel_subtype": "נוסח",
       "arg_count": 2,
-      "count": 3888,
+      "count": 3889,
       "variations": 1
     },
     {

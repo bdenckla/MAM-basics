@@ -13258,7 +13258,7 @@
       "pseudoverse_category": "1 (normal verse)",
       "count_C": 273,
       "count_D": 35,
-      "count_E": 3580
+      "count_E": 3581
     },
     {
       "wtel_type": "tmpl",
@@ -14367,8 +14367,8 @@
     {
       "wtel_subtype": "נוסח",
       "stack": "E",
-      "count": 3538,
-      "count_non_nusach": 3538,
+      "count": 3539,
+      "count_non_nusach": 3539,
       "count_nusach": 0
     },
     {
@@ -14494,8 +14494,8 @@
       "wtel_subtype": "קו\"כ-אם",
       "stack": "E",
       "count": 148,
-      "count_non_nusach": 136,
-      "count_nusach": 12
+      "count_non_nusach": 135,
+      "count_nusach": 13
     },
     {
       "wtel_subtype": "קק",
@@ -15238,7 +15238,7 @@
     {
       "wtel_subtype": "נוסח",
       "arg_count": 2,
-      "count": 3892,
+      "count": 3893,
       "variations": 1
     },
     {
