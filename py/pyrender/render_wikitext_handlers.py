@@ -492,7 +492,7 @@ _HANDLER_SPECS_FOR_MISC = {
     "מ:מקף אפור": {_MASK_EL: _handle_gray_maqaf},
     "מ:דחי": {_MASK_EL: _handle_stress_of_dexi_word},
     "מ:צינור": {_MASK_EL: _handle_stress_of_tsinnor_word},
-    "מ:קמץ": {_MASK_EL: qamats_variation.handle},
+    "מ:קמץ": {_MASK_ELP: qamats_variation.handle},
     "מ:אות-ק": {_MASK_ELP: _handle_small_letter},
     "מ:אות-ג": {_MASK_ELP: _handle_large_letter},
     "מ:אות תלויה": {_MASK_EL: _handle_hung_letter},

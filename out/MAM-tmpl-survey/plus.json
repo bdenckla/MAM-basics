@@ -231,7 +231,7 @@
       "wtel_subtype": "מ:קמץ",
       "count_C": 0,
       "count_D": 0,
-      "count_E": 374
+      "count_E": 375
     },
     {
       "wtel_type": "tmpl",
@@ -266,7 +266,7 @@
       "wtel_subtype": "נוסח",
       "count_C": 35,
       "count_D": 273,
-      "count_E": 3581
+      "count_E": 3583
     },
     {
       "wtel_type": "tmpl",
@@ -819,9 +819,9 @@
     {
       "wtel_subtype": "מ:קמץ",
       "stack": "E/קו\"כ-אם",
-      "count": 1,
-      "count_non_nusach": 1,
-      "count_nusach": 0
+      "count": 2,
+      "count_non_nusach": 0,
+      "count_nusach": 2
     },
     {
       "wtel_subtype": "מ:רווח בתרי עשר בפסוק הראשון",
@@ -875,8 +875,8 @@
     {
       "wtel_subtype": "נוסח",
       "stack": "E",
-      "count": 3539,
-      "count_non_nusach": 3539,
+      "count": 3541,
+      "count_non_nusach": 3541,
       "count_nusach": 0
     },
     {
@@ -981,8 +981,8 @@
       "wtel_subtype": "קו\"כ-אם",
       "stack": "E",
       "count": 148,
-      "count_non_nusach": 135,
-      "count_nusach": 13
+      "count_non_nusach": 133,
+      "count_nusach": 15
     },
     {
       "wtel_subtype": "קרי ולא כתיב",
@@ -1300,7 +1300,7 @@
     {
       "wtel_subtype": "מ:קמץ",
       "arg_count": 2,
-      "count": 374,
+      "count": 375,
       "variations": 1
     },
     {
@@ -1330,7 +1330,7 @@
     {
       "wtel_subtype": "נוסח",
       "arg_count": 2,
-      "count": 3889,
+      "count": 3891,
       "variations": 1
     },
     {
