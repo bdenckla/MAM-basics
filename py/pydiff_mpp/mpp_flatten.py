@@ -15,9 +15,11 @@ import difflib
 
 from pycmn.hebrew_punctuation import NU_GMAQ
 from pycmn.str_defs import DOUB_VERT_LINE
+from pycmn.template_names import _STD_KQ_TMPL_NAMES
 from pydiff_mpp.mpp_param_access import _MISSING, _get_param
 
 _PARASHAH_NAMES = {"סס", "ססס", "פפ", "פפפ"}
+_STD_KQ_TEMPLATE_NAMES = frozenset(_STD_KQ_TMPL_NAMES)
 
 
 def _is_parashah_template(name):
@@ -29,11 +31,7 @@ def _is_parashah_template(name):
 
 def _is_std_kq_template(name):
     """Check if template is a standard ketiv/qere body-text variant."""
-    if name in ('קו"כ', 'כו"ק'):
-        return True
-    if name in ('קו"כ-אם', 'מ:קו"כ-אם-2'):
-        return False
-    return name.startswith('מ:קו"כ') or name.startswith('מ:כו"ק')
+    return name in _STD_KQ_TEMPLATE_NAMES
 
 
 def _is_trivial_kq_template(name):
