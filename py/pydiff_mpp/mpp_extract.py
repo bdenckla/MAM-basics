@@ -17,6 +17,7 @@ from pydiff_mpp.mpp_flatten import (
     _find_relevant_nusach,
     _flatten_ep_with_nusach_for_diff,
     flatten_ep_for_diff,
+    flatten_ep_words_only_for_diff,
 )
 from pydiff_mpp.mpp_structure import (
     _structural_signature,
@@ -115,6 +116,12 @@ def _diff_ep(old_ep, new_ep, book39id, chapter, verse):
     old_text = flatten_ep_for_diff(old_ep)
     new_text, new_nusach = _flatten_ep_with_nusach_for_diff(new_ep)
     text_changed = old_text != new_text
+    if text_changed:
+        old_words_only = flatten_ep_words_only_for_diff(old_ep)
+        new_words_only = flatten_ep_words_only_for_diff(new_ep)
+        if old_words_only == new_words_only:
+            if _template_name_counter(old_ep) == _template_name_counter(new_ep):
+                text_changed = False
     if not text_changed:
         old_counts = _template_name_counter(old_ep)
         new_counts = _template_name_counter(new_ep)

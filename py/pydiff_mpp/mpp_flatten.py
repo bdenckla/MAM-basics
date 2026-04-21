@@ -1,13 +1,14 @@
 """Flatten MPP EP structures to body text and track נוסח overlaps.
 
 Exports:
-    flatten_ep           — flatten EP body text
-    flatten_ep_for_diff  — flatten EP body text for diff tokenization
-    _flatten_element     — flatten a nested EP element
-    _flatten_ep_with_nusach — flatten while tracking נוסח note spans
+    flatten_ep                      — flatten EP body text
+    flatten_ep_for_diff             — flatten EP body text for diff tokenization
+    flatten_ep_words_only_for_diff  — same but omits positional-punctuation templates
+    _flatten_element                — flatten a nested EP element
+    _flatten_ep_with_nusach         — flatten while tracking נוסח note spans
     _flatten_ep_with_nusach_for_diff — diff flatten while tracking נוסח note spans
-    _find_relevant_nusach — filter note spans to those relevant to a diff
-    _is_parashah_template — identify parashah-marker templates
+    _find_relevant_nusach           — filter note spans to those relevant to a diff
+    _is_parashah_template           — identify parashah-marker templates
 """
 
 import difflib
@@ -79,6 +80,22 @@ def _flatten_element(el):
     if isinstance(el, list):
         return "".join(_flatten_element(x) for x in el)
     return ""
+
+
+def flatten_ep_words_only_for_diff(ep):
+    """Flatten EP to diff-friendly body text, omitting positional-punctuation templates.
+
+    Identical to flatten_ep_for_diff() except that templates whose sole
+    contribution is a punctuation character at a specific position in the verse
+    (מ:לגרמיה, מ:לגרמיה-2, מ:פסק, מ:מקף אפור) contribute nothing to the
+    output.  This lets two EPs that share the same words but differ only in
+    the placement of those punctuation markers compare as equal, enabling
+    same-count reorder detection in mpp_extract._diff_ep.
+    """
+    buf = _new_diff_buffer()
+    for el in ep:
+        _flatten_diff_element_words_only(el, buf)
+    return "".join(buf["parts"])
 
 
 def _new_diff_buffer():
@@ -191,6 +208,62 @@ def _flatten_diff_template(tmpl, buf):
     p1 = _get_param(tmpl, "1")
     if p1 is not _MISSING:
         _flatten_diff_element(p1, buf)
+
+
+def _flatten_diff_element_words_only(el, buf):
+    if isinstance(el, str):
+        _append_diff_text(buf, el)
+        return
+    if isinstance(el, dict):
+        _flatten_diff_template_words_only(el, buf)
+        return
+    if isinstance(el, list):
+        for item in el:
+            _flatten_diff_element_words_only(item, buf)
+
+
+def _flatten_diff_template_words_only(tmpl, buf):
+    """Like _flatten_diff_template but positional-punctuation templates are no-ops."""
+    name = tmpl["tmpl_name"]
+    if _is_parashah_template(name):
+        _append_diff_text(buf, " ")
+        return
+    if name == "נוסח":
+        p1 = _get_param(tmpl, "1")
+        if p1 is not _MISSING:
+            _flatten_diff_element_words_only(p1, buf)
+        return
+    if _is_std_kq_template(name):
+        p2 = _get_param(tmpl, "2")
+        if p2 is not _MISSING:
+            _flatten_diff_element_words_only(p2, buf)
+        return
+    if _is_qere_velo_ketiv_template(name):
+        _append_diff_word(buf, _qere_velo_ketiv_body_for_diff(tmpl))
+        return
+    if _is_trivial_kq_template(name):
+        p1 = _get_param(tmpl, "1")
+        if p1 is not _MISSING:
+            _flatten_diff_element_words_only(p1, buf)
+        return
+    if _is_ketiv_velo_qere_template(name):
+        return
+    if name == "מ:קמץ":
+        pd = _get_param(tmpl, "ד")
+        if pd is not _MISSING:
+            _flatten_diff_element_words_only(pd, buf)
+        return
+    # Positional-punctuation templates: deliberately omitted (no contribution)
+    if name in ("מ:לגרמיה-2", "מ:לגרמיה", "מ:פסק", "מ:מקף אפור"):
+        return
+    if name == "מ:כפול":
+        pk = _get_param(tmpl, "כפול")
+        if pk is not _MISSING:
+            _flatten_diff_element_words_only(pk, buf)
+        return
+    p1 = _get_param(tmpl, "1")
+    if p1 is not _MISSING:
+        _flatten_diff_element_words_only(p1, buf)
 
 
 def _flatten_template(tmpl):

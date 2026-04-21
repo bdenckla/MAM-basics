@@ -133,7 +133,7 @@ def _expand_diffs(diffs):
     for diff in diffs:
         if not diff["text_changed"]:
             split = split_structural_diff(diff)
-            if split:
+            if split is not None:
                 for sub in split:
                     out = dict(sub)
                     out["nusach_notes"] = _note_bodies(sub.get("nusach_notes", []))

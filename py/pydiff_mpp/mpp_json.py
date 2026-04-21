@@ -94,7 +94,7 @@ def write_json(diffs, old_rev, new_rev, out_path):
             expanded.append(diff)
             continue
         split = split_structural_diff(diff)
-        if split:
+        if split is not None:
             expanded.extend(split)
             continue
         expanded.append(diff)
