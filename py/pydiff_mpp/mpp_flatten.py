@@ -30,12 +30,14 @@ def _is_std_kq_template(name):
     """Check if template is a standard ketiv/qere body-text variant."""
     if name in ('קו"כ', 'כו"ק'):
         return True
+    if name in ('קו"כ-אם', 'מ:קו"כ-אם-2'):
+        return False
     return name.startswith('מ:קו"כ') or name.startswith('מ:כו"ק')
 
 
 def _is_trivial_kq_template(name):
     """Check if template is a trivial ketiv/qere whose body text is param 1."""
-    return name == 'קו"כ-אם'
+    return name in ('קו"כ-אם', 'מ:קו"כ-אם-2')
 
 
 def _is_qere_velo_ketiv_template(name):

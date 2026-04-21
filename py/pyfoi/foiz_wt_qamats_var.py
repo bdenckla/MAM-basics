@@ -28,7 +28,7 @@ def _record_xataf_qamats(stack, string):
     words = re.findall(_PATT_XQ_WORD, string)
     if not words:
         return []
-    if stack == ("doc-part-n",) or stack == ("kq-triv-doc",):
+    if stack == ("doc-part-n",) or stack == ("kq-triv-pqere",):
         return []
     stack_summary = fwh.stack_summary(_STACK_SUMMARIES, stack)
     return sl_map((_make_xq_foi, stack_summary), words)
@@ -113,20 +113,20 @@ _FOILERS = {
     #
     "מ:כפול": fwh.label_args_of_dualcant,
     "נוסח": fwh.label_args_of_doc,
-    'קו"כ-אם': fwh.label_args_of_kq_triv,
+    'מ:קו"כ-אם-2': fwh.label_args_of_kq_triv,
     tmpln.SCRDFF_TAR: fwh.label_args_of_scrdfftar,
     tmpln.SCRDFF_NO_TAR: fwh.ignore,
 }
 _STACK_SUMMARIES = {
     tuple(): None,
     ('כו"ק', "מ:דחי"): -1,
-    ("kq-triv-target",): None,
+    ("kq-triv-pketiv",): None,
     ("doc-target",): None,
-    ("doc-target", "kq-triv-target"): None,
-    ("doc-target", "kq-triv-doc"): -1,
+    ("doc-target", "kq-triv-pketiv"): None,
+    ("doc-target", "kq-triv-pqere"): -1,
     ("doc-target", 'כו"ק'): None,
     ("doc-target", 'קו"כ'): None,
-    ('קו"כ-אם',): None,
+    ('מ:קו"כ-אם-2',): None,
     ('כו"ק',): None,
     ('קו"כ',): None,
     (fwh.DUALCANT_ARG_COMBINED, "doc-target"): -2,

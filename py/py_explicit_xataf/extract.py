@@ -122,7 +122,7 @@ _SLH_TMPL_NAMES = (tmpln.SLH_WORD, "מ:אות-ג", "מ:אות-ק", "מ:אות ת
 _RETURN_ARG1_TMPL_NAMES = _SLH_TMPL_NAMES + (
     tmpln.SCRDFF_TAR,
     'מ:נו"ן הפוכה',
-    'קו"כ-אם',
+    'מ:קו"כ-אם-2',
 )
 # Templates where arg 2 is the primary word
 _RETURN_ARG2_TMPL_NAMES = ("קרי ולא כתיב", "כתיב ולא קרי")

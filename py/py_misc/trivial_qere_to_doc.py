@@ -35,12 +35,11 @@ def _convert(bcvt, io_renlog, wtel):
 def _make_doc_tmpl(tkq_idx, existing_doc_targ, existing_doc_parts):
     trivial_ketiv_qere = existing_doc_targ[tkq_idx]
     tkq_targ = wtp.template_param_val(trivial_ketiv_qere, "1")
-    tkq_note = wtp.template_param_val(trivial_ketiv_qere, "2")
     new_doc_targ = (
         existing_doc_targ[0:tkq_idx] + tkq_targ + existing_doc_targ[tkq_idx + 1 :]
     )
     new_doc_tmpl_els = [["נוסח"], new_doc_targ]
-    prov = _add_provenance(existing_doc_targ, tkq_targ, tkq_note)
+    prov = _add_provenance(trivial_ketiv_qere)
     new_doc_tmpl_els.append(prov)
     if existing_doc_parts:
         unburied = unbury.unbury_parts(existing_doc_parts)
@@ -85,21 +84,26 @@ def _find_index_of_trivial_ketiv_qere_within_doc_targ(doc_wtel):
 
 
 def _is_trivial_ketiv_qere_tmpl(wtel):
-    return wtp.is_template_with_name(wtel, 'קו"כ-אם')
+    return wtp.is_template_with_name(wtel, 'מ:קו"כ-אם-2')
 
 
-def _add_provenance(existing_doc_targ, tkq_targ, tkq_note):
-    wtseq = []
-    wtseq.append("(קו״כ-אם")
-    if len(existing_doc_targ) > 1:
-        wtseq.append(" ")
-        wtseq.extend(tkq_targ)
-    wtseq.append(")")
-    # at this point, wtseq is either ['(קו״כ-אם)'] or ['(קו״כ-אם מָרִ֥אי)']
-    wtseq.append(" ")
-    wtseq.extend(tkq_note)
-    wtseq = shrink.shrink(wtseq)
-    return wtseq
+def _add_provenance(trivial_ketiv_qere_2):
+    """Build a provenance wtseq for a trivial ketiv/qere template."""
+    pointed_qere_seq = wtp.template_param_val(trivial_ketiv_qere_2, "3")
+    mqorot_raw = (trivial_ketiv_qere_2.get("tmpl_params") or {}).get("מקורות")
+    paren = _mqorot_paren(mqorot_raw)
+    wtseq = ["קרי="] + list(pointed_qere_seq) + [f" {paren}"]
+    return shrink.shrink(wtseq)
+
+
+def _mqorot_paren(mqorot_raw):
+    if mqorot_raw is None:
+        return "(מקורות=אין)"
+    assert isinstance(mqorot_raw, str), type(mqorot_raw)
+    sources = mqorot_raw.split(",")
+    if len(sources) == 1:
+        return f"(מקור={sources[0]})"
+    return f"(מקורות={mqorot_raw})"
 
 
 def _prep_log(io_renlog):

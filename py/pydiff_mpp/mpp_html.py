@@ -261,7 +261,12 @@ def _render_card(diff):
             eng_desc = f"Template change (removed: {_CAT_TEMPLATE[cat]})"
         else:
             parts = diff.get("kq_if_template_addition")
-            if parts is None and added == ['קו"כ-אם'] and not removed:
+            if (
+                parts is None
+                and len(added) == 1
+                and added[0] in {'קו"כ-אם', 'מ:קו"כ-אם-2'}
+                and not removed
+            ):
                 parts = kq_if_template_addition_parts(diff)
             if parts is not None:
                 desc_html = (

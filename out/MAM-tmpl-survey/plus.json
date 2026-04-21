@@ -70,7 +70,7 @@
       "wtel_subtype": "מ:דחי",
       "count_C": 0,
       "count_D": 0,
-      "count_E": 2312
+      "count_E": 2316
     },
     {
       "wtel_type": "tmpl",
@@ -214,6 +214,13 @@
     },
     {
       "wtel_type": "tmpl",
+      "wtel_subtype": "מ:קו\"כ-אם-2",
+      "count_C": 0,
+      "count_D": 0,
+      "count_E": 148
+    },
+    {
+      "wtel_type": "tmpl",
       "wtel_subtype": "מ:קישור בהערה",
       "count_C": 0,
       "count_D": 1,
@@ -302,13 +309,6 @@
       "count_C": 0,
       "count_D": 0,
       "count_E": 126
-    },
-    {
-      "wtel_type": "tmpl",
-      "wtel_subtype": "קו\"כ-אם",
-      "count_C": 0,
-      "count_D": 0,
-      "count_E": 148
     },
     {
       "wtel_type": "tmpl",
@@ -517,16 +517,16 @@
     },
     {
       "wtel_subtype": "מ:דחי",
-      "stack": "E/מ:קמץ",
-      "count": 14,
-      "count_non_nusach": 14,
+      "stack": "E/מ:קו\"כ-אם-2",
+      "count": 8,
+      "count_non_nusach": 8,
       "count_nusach": 0
     },
     {
       "wtel_subtype": "מ:דחי",
-      "stack": "E/קו\"כ-אם",
-      "count": 4,
-      "count_non_nusach": 4,
+      "stack": "E/מ:קמץ",
+      "count": 14,
+      "count_non_nusach": 14,
       "count_nusach": 0
     },
     {
@@ -650,16 +650,16 @@
     },
     {
       "wtel_subtype": "מ:לגרמיה-2",
-      "stack": "E/קו\"כ",
-      "count": 1,
-      "count_non_nusach": 1,
+      "stack": "E/מ:קו\"כ-אם-2",
+      "count": 2,
+      "count_non_nusach": 2,
       "count_nusach": 0
     },
     {
       "wtel_subtype": "מ:לגרמיה-2",
-      "stack": "E/קו\"כ-אם",
-      "count": 2,
-      "count_non_nusach": 2,
+      "stack": "E/קו\"כ",
+      "count": 1,
+      "count_non_nusach": 1,
       "count_nusach": 0
     },
     {
@@ -768,6 +768,13 @@
       "count_nusach": 2
     },
     {
+      "wtel_subtype": "מ:קו\"כ-אם-2",
+      "stack": "E",
+      "count": 148,
+      "count_non_nusach": 133,
+      "count_nusach": 15
+    },
+    {
       "wtel_subtype": "מ:קישור בהערה",
       "stack": "D",
       "count": 1,
@@ -818,7 +825,7 @@
     },
     {
       "wtel_subtype": "מ:קמץ",
-      "stack": "E/קו\"כ-אם",
+      "stack": "E/מ:קו\"כ-אם-2",
       "count": 2,
       "count_non_nusach": 0,
       "count_nusach": 2
@@ -978,13 +985,6 @@
       "count_nusach": 18
     },
     {
-      "wtel_subtype": "קו\"כ-אם",
-      "stack": "E",
-      "count": 148,
-      "count_non_nusach": 133,
-      "count_nusach": 15
-    },
-    {
       "wtel_subtype": "קרי ולא כתיב",
       "stack": "E",
       "count": 9,
@@ -1126,7 +1126,7 @@
     {
       "wtel_subtype": "מ:דחי",
       "arg_count": 2,
-      "count": 2312,
+      "count": 2316,
       "variations": 1
     },
     {
@@ -1286,6 +1286,18 @@
       "variations": 1
     },
     {
+      "wtel_subtype": "מ:קו\"כ-אם-2",
+      "arg_count": 3,
+      "count": 2,
+      "variations": 2
+    },
+    {
+      "wtel_subtype": "מ:קו\"כ-אם-2",
+      "arg_count": 4,
+      "count": 146,
+      "variations": 2
+    },
+    {
       "wtel_subtype": "מ:קישור בהערה",
       "arg_count": 2,
       "count": 28,
@@ -1385,12 +1397,6 @@
       "wtel_subtype": "קו\"כ",
       "arg_count": 2,
       "count": 126,
-      "variations": 1
-    },
-    {
-      "wtel_subtype": "קו\"כ-אם",
-      "arg_count": 2,
-      "count": 148,
       "variations": 1
     },
     {

@@ -8,11 +8,13 @@ _TEMPLATE_REMOVAL_CATS = {
     "מ:צינור": "tsinnor-removal",
 }
 
+_KQ_TRIVIAL_NAMES = frozenset(['קו"כ-אם', 'מ:קו"כ-אם-2'])
+
 
 def _split_kq_if_additions(diff):
-    """Split pure קו"כ-אם additions into one sub-diff per added instance."""
+    """Split pure trivial-kq additions into one sub-diff per added instance."""
     added, removed = _template_name_multiset_delta(diff["old_ep"], diff["new_ep"])
-    if removed or not added or any(name != 'קו"כ-אם' for name in added):
+    if removed or not added or any(name not in _KQ_TRIVIAL_NAMES for name in added):
         return None
 
     additions = kq_if_template_addition_parts_list(diff)
@@ -23,7 +25,7 @@ def _split_kq_if_additions(diff):
     subs = []
     for addition in additions:
         sub = dict(diff)
-        sub["templates_added"] = ['קו"כ-אם']
+        sub["templates_added"] = [addition["template_name"]]
         sub["templates_removed"] = []
         sub["kq_if_template_addition"] = {
             "template_name": addition["template_name"],
@@ -39,8 +41,22 @@ def _split_kq_if_additions(diff):
     return subs
 
 
+def _is_kq_trivial_rename(diff):
+    """Return True if diff is a pure bot-edit rename: קו"כ-אם → מ:קו"כ-אם-2."""
+    added, removed = _template_name_multiset_delta(diff["old_ep"], diff["new_ep"])
+    if not added or not removed:
+        return False
+    if not all(n == 'קו"כ-אם' for n in removed):
+        return False
+    if not all(n == 'מ:קו"כ-אם-2' for n in added):
+        return False
+    return len(added) == len(removed)
+
+
 def split_structural_diff(diff):
     """Split structural diffs that should render as separate cards."""
+    if _is_kq_trivial_rename(diff):
+        return []
     kq_if_split = _split_kq_if_additions(diff)
     if kq_if_split is not None:
         return kq_if_split

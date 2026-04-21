@@ -577,6 +577,129 @@ class StdKqAdditionInTextChangedDiffTests(unittest.TestCase):
         self.assertNotIn("templates_removed", serialized)
 
 
+# ---------------------------------------------------------------------------
+# Fixtures and tests for מ:קו"כ-אם-2 (new trivial-kq format)
+# ---------------------------------------------------------------------------
+
+
+def _kq_triv2_old_ep():
+    """EP where a plain word will gain a מ:קו"כ-אם-2 template (new format)."""
+    return [
+        "עֹֽלוֹתָ֔ו ",
+        "וְאֵלַמָּ֖ו לִפְנֵיהֶ֑ם׃",
+    ]
+
+
+def _kq_triv2_new_ep():
+    """EP where the first word is now wrapped in a מ:קו"כ-אם-2 template."""
+    return [
+        {
+            "tmpl_name": 'מ:קו"כ-אם-2',
+            "tmpl_params": {
+                "1": "עֹֽלוֹתָ֔ו",
+                "2": "עלותו",
+                "3": "עֹֽלוֹתָ֔יו",
+                "מקורות": "א",
+            },
+        },
+        " ",
+        "וְאֵלַמָּ֖ו לִפְנֵיהֶ֑ם׃",
+    ]
+
+
+def _kq_triv_rename_old_ep():
+    """EP using the old קו"כ-אם template (pre-bot-edit)."""
+    return [
+        "אַ ",
+        {
+            "tmpl_name": 'קו"כ-אם',
+            "tmpl_params": {
+                "1": "עֹֽלוֹתָ֔ו",
+                "2": "א-קרי=עֹֽלוֹתָ֔יו",
+            },
+        },
+        " ב׃",
+    ]
+
+
+def _kq_triv_rename_new_ep():
+    """Same content but renamed to מ:קו"כ-אם-2 (post-bot-edit)."""
+    return [
+        "אַ ",
+        {
+            "tmpl_name": 'מ:קו"כ-אם-2',
+            "tmpl_params": {
+                "1": "עֹֽלוֹתָ֔ו",
+                "2": "עלותו",
+                "3": "עֹֽלוֹתָ֔יו",
+                "מקורות": "א",
+            },
+        },
+        " ב׃",
+    ]
+
+
+class KqTrivial2Tests(unittest.TestCase):
+    def test_multiset_delta_detects_kq_triv2_addition(self):
+        added, removed = mpp_structure._template_name_multiset_delta(
+            _kq_triv2_old_ep(), _kq_triv2_new_ep()
+        )
+
+        self.assertEqual(added, ['מ:קו"כ-אם-2'])
+        self.assertEqual(removed, [])
+
+    def test_diff_ep_detects_kq_triv2_addition(self):
+        diff = mpp_extract._diff_ep(
+            _kq_triv2_old_ep(), _kq_triv2_new_ep(), tbn.BK_EZEKIEL, 40, 26
+        )
+
+        self.assertIsNotNone(diff)
+        self.assertFalse(diff["text_changed"])
+        mpp_classify.classify_diffs([diff])
+        self.assertEqual(diff["category"], "template-change")
+
+    def test_json_serialization_reports_kq_triv2_addition(self):
+        diff = mpp_extract._diff_ep(
+            _kq_triv2_old_ep(), _kq_triv2_new_ep(), tbn.BK_EZEKIEL, 40, 26
+        )
+
+        mpp_classify.classify_diffs([diff])
+        serialized = mpp_json._serialize_diff(diff)
+        self.assertEqual(serialized["templates_added"], ['מ:קו"כ-אם-2'])
+        self.assertNotIn("templates_removed", serialized)
+
+    def test_split_kq_triv2_addition(self):
+        diff = mpp_extract._diff_ep(
+            _kq_triv2_old_ep(), _kq_triv2_new_ep(), tbn.BK_EZEKIEL, 40, 26
+        )
+
+        mpp_classify.classify_diffs([diff])
+        split = mpp_expand.split_structural_diff(diff)
+
+        self.assertIsNotNone(split)
+        self.assertEqual(len(split), 1)
+        self.assertEqual(split[0]["templates_added"], ['מ:קו"כ-אם-2'])
+
+    def test_kq_triv_rename_is_suppressed(self):
+        """A pure bot-edit rename (קו"כ-אם → מ:קו"כ-אם-2) surfaces as no diff cards."""
+        diff = mpp_extract._diff_ep(
+            _kq_triv_rename_old_ep(), _kq_triv_rename_new_ep(), tbn.BK_EZEKIEL, 40, 1
+        )
+
+        self.assertIsNotNone(diff)
+        mpp_classify.classify_diffs([diff])
+        split = mpp_expand.split_structural_diff(diff)
+
+        self.assertEqual(split, [])
+
+    def test_flatten_ep_is_identical_for_old_and_new_format(self):
+        """flatten_ep returns the same body text for קו"כ-אם and מ:קו"כ-אם-2."""
+        old_text = flatten_ep(_kq_triv_rename_old_ep())
+        new_text = flatten_ep(_kq_triv_rename_new_ep())
+
+        self.assertEqual(old_text, new_text)
+
+
 class CanonicalBookIdTests(unittest.TestCase):
     def test_mam_with_doc_url_accepts_canonical_book_id(self):
         url = mam_with_doc_url(tbn.BK_FST_SAM, 3, 4)

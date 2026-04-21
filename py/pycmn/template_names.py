@@ -33,7 +33,7 @@ LATIN_SHORTS = {
     K2Q1: "k2q1",  # 9
     K2Q2: "k2q2",  # 10
     K3Q3: "k3q3",  # 11
-    'קו"כ-אם': "kq-trivial",
+    'מ:קו"כ-אם-2': "kq-trivial",
     "קרי ולא כתיב": "kq-q-velo-k",
     "כתיב ולא קרי": "kq-k-velo-q",
 }

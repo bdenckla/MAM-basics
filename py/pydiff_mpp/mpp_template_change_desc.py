@@ -25,6 +25,13 @@ def _iter_named_templates(obj, template_name):
             yield from _iter_named_templates(item, template_name)
 
 
+def _arg2_param_key(template_name):
+    """Return the param key to use as arg2_text for a trivial-kq template."""
+    if template_name == 'מ:קו"כ-אם-2':
+        return "3"
+    return "2"
+
+
 def _collect_named_template_instances(ep, template_name):
     """Collect named template instances with flattened text spans."""
     parts = []
@@ -57,7 +64,7 @@ def _collect_named_template_from_template(tmpl, template_name, parts, instances)
         if p1 is not _MISSING:
             _collect_named_template_tracking(p1, template_name, parts, instances)
         end = sum(len(part) for part in parts)
-        p2 = _get_param(tmpl, "2")
+        p2 = _get_param(tmpl, _arg2_param_key(name))
         p1_text = "<missing>" if p1 is _MISSING else _flatten_element(p1)
         p2_text = "<missing>" if p2 is _MISSING else _flatten_element(p2)
         instances.append(
@@ -108,37 +115,50 @@ def _collect_named_template_from_template(tmpl, template_name, parts, instances)
         _collect_named_template_tracking(p1, template_name, parts, instances)
 
 
-def kq_if_template_addition_parts_list(diff):
-    """Return added קו"כ-אם instances in new-EP order with text spans."""
-    old_instances = _collect_named_template_instances(diff["old_ep"], 'קו"כ-אם')
-    new_instances = _collect_named_template_instances(diff["new_ep"], 'קו"כ-אם')
+_KQ_TRIVIAL_NAMES = ('קו"כ-אם', 'מ:קו"כ-אם-2')
 
-    remaining_old = Counter(
-        (instance["arg1_text"], instance["arg2_text"]) for instance in old_instances
+
+def kq_if_template_addition_parts_list(diff):
+    """Return added trivial-kq instances in new-EP order with text spans."""
+    old_instances = [
+        inst
+        for name in _KQ_TRIVIAL_NAMES
+        for inst in _collect_named_template_instances(diff["old_ep"], name)
+    ]
+    new_instances = sorted(
+        (
+            inst
+            for name in _KQ_TRIVIAL_NAMES
+            for inst in _collect_named_template_instances(diff["new_ep"], name)
+        ),
+        key=lambda x: x["start"],
     )
+    # Match by arg1_text only: a קו"כ-אם and a מ:קו"כ-אם-2 with the same
+    # pointed ketiv represent the same template instance (bot-edit rename).
+    remaining_old = Counter(instance["arg1_text"] for instance in old_instances)
     added_instances = []
     for instance in new_instances:
-        key = (instance["arg1_text"], instance["arg2_text"])
+        key = instance["arg1_text"]
         if remaining_old[key]:
             remaining_old[key] -= 1
             continue
         assert instance["arg1_text"] in diff["old_text"], (
             "Expected old flattened text to already contain the raw text of "
-            'the new קו"כ-אם param "1"'
+            'the new trivial-kq param "1"'
         )
         added_instances.append(instance)
     return added_instances
 
 
 def kq_if_template_addition_parts(diff):
-    """Return extracted parts for a pure קו"כ-אם addition.
+    """Return extracted parts for a pure trivial-kq addition.
 
     Returns a dict with template_name, arg1_text, and arg2_text.
     Assertions enforce the invariants expected for this change type.
     """
     additions = kq_if_template_addition_parts_list(diff)
     assert len(additions) == 1, (
-        'Expected exactly one added קו"כ-אם in new_ep, ' f"found {len(additions)}"
+        "Expected exactly one added trivial-kq in new_ep, " f"found {len(additions)}"
     )
 
     return {

@@ -52,7 +52,7 @@ _FOI_PATH = {
 }
 _FOILERS_FOR_KETIV_QERE = {
     **tmpln.map_all_std_kq_to_a_constant(_record_kq_as_foi),
-    'קו"כ-אם': _record_kq_as_foi,
+    'מ:קו"כ-אם-2': _record_kq_as_foi,
     "קרי ולא כתיב": _record_kq_as_foi,
     "כתיב ולא קרי": _record_kq_as_foi,
 }
@@ -67,7 +67,7 @@ _FOILERS = {
 _STACK_SUMMARIES = {
     tuple(): None,
     ("doc-target",): None,
-    ("doc-target", 'קו"כ-אם'): None,
+    ("doc-target", 'מ:קו"כ-אם-2'): None,
     ("doc-target", 'כו"ק'): None,
     ('כו"ק',): None,
     ("מ:דחי",): None,

@@ -152,6 +152,8 @@ def _get_kq_triv(side):
     if isinstance(side, list) and len(side) == 1:
         if qere := _triple_yod(side[0], 'קו"כ-אם:1'):
             return qere
+        if qere := _triple_yod(side[0], 'מ:קו"כ-אם-2:1'):
+            return qere
     return None
 
 
