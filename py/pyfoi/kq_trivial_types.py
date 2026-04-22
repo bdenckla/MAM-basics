@@ -12,6 +12,9 @@ from pycmn import ws_tmpl2 as wtp
 MISC = "misc"
 XOLAM_HE = "xolam-he"
 QYV = "QyV"
+HI_SPELLED_HU = "hi-spelled-hu"
+N3RH_SPELLED_N3R = "n3rh-spelled-n3r"
+EXTRA_ALEF = "extra-alef"
 
 # Use x where plain h would be misleading for the guttural / ḥ slot.
 
@@ -27,6 +30,12 @@ def classify_tmpl(tmpl):
         return XOLAM_HE
     if _is_qyv(ketiv_letters, qere_letters, ketiv_pointed, qere_text):
         return QYV
+    if _is_hi_spelled_hu(ketiv_letters, qere_letters, ketiv_pointed, qere_text):
+        return HI_SPELLED_HU
+    if _is_n3rh_spelled_n3r(ketiv_letters, qere_letters, ketiv_pointed, qere_text):
+        return N3RH_SPELLED_N3R
+    if _is_extra_alef(ketiv_letters, qere_letters, ketiv_pointed, qere_text):
+        return EXTRA_ALEF
     return None
 
 
@@ -66,6 +75,45 @@ def _is_qyv(ketiv_letters, qere_letters, ketiv_pointed, qere_text):
     )
 
 
+def _is_hi_spelled_hu(ketiv_letters, qere_letters, ketiv_pointed, qere_text):
+    if not ketiv_letters.endswith(hl.HE + hl.VAV + hl.ALEF):
+        return False
+    if qere_letters != ketiv_letters[:-2] + hl.YOD + hl.ALEF:
+        return False
+    ketiv_core = _strip_accents_and_punctuation(ketiv_pointed)
+    qere_core = _strip_accents_and_punctuation(qere_text)
+    substituted, nmatches = _HI_SPELLED_HU_PATTERN.subn(
+        _HI_SPELLED_HU_REPL_STR, ketiv_core, count=1
+    )
+    return nmatches == 1 and substituted == qere_core
+
+
+def _is_n3rh_spelled_n3r(ketiv_letters, qere_letters, ketiv_pointed, qere_text):
+    if not ketiv_letters.endswith(hl.NUN + hl.AYIN + hl.RESH):
+        return False
+    if qere_letters != ketiv_letters + hl.HE:
+        return False
+    ketiv_core = _strip_accents_and_punctuation(ketiv_pointed)
+    qere_core = _strip_accents_and_punctuation(qere_text)
+    return ketiv_core + hl.HE == qere_core
+
+
+def _is_extra_alef(ketiv_letters, qere_letters, ketiv_pointed, qere_text):
+    if ketiv_letters.count(hl.ALEF) != qere_letters.count(hl.ALEF) + 1:
+        return False
+    ketiv_without_alef, nmatches = _EXTRA_ALEF_LETTERS_PATTERN.subn(
+        "", ketiv_letters, count=1
+    )
+    if nmatches != 1 or ketiv_without_alef != qere_letters:
+        return False
+    ketiv_core = _strip_accents_and_punctuation(ketiv_pointed)
+    qere_core = _strip_accents_and_punctuation(qere_text)
+    ketiv_core_without_alef, nmatches = _EXTRA_ALEF_POINTED_PATTERN.subn(
+        "", ketiv_core, count=1
+    )
+    return nmatches == 1 and ketiv_core_without_alef == qere_core
+
+
 def _flatten_text(wtel):
     if isinstance(wtel, str):
         return wtel
@@ -95,6 +143,14 @@ _STRIP_PATT = re.compile(
     + hpu.MCIRC
     + "]"
 )
+
+
+_HI_SPELLED_HU_PATTERN = re.compile(
+    "(" + hl.HE + hpo.XIRIQ + ".?)" + hl.VAV + "(" + hl.ALEF + ")"
+)
+_HI_SPELLED_HU_REPL_STR = r"\1" + hl.YOD + r"\2"
+_EXTRA_ALEF_LETTERS_PATTERN = re.compile(hl.ALEF)
+_EXTRA_ALEF_POINTED_PATTERN = re.compile(hl.ALEF + "(?:" + hpo.RAFE + ")?")
 
 
 def _strip_accents_and_punctuation(text):

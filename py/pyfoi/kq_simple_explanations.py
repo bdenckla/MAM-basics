@@ -102,8 +102,11 @@ _EXPLANATIONS_BY_LABEL = {
         (
             "a trivial ketiv/qere case, where the difference is minor enough that",
             "some editions may choose to show only the pointed ketiv form; subtype",
-            "labels such as xolam-he, QyV, and misc appear as the last part of the",
-            "FOI path, and the extra row cell shows the pointed qere",
+            "labels such as xolam-he, QyV, hi-spelled-hu, n3rh-spelled-n3r,",
+            "extra-alef, and",
+            "misc appear as the",
+            "last part of the FOI path, and the extra row cell shows the pointed",
+            "qere",
         )
     ),
 }
@@ -112,5 +115,8 @@ _EXPLANATIONS_BY_LABEL = {
 _TRIVIAL_SUBTYPE_EXPLANATIONS = {
     "xolam-he": "that the ketiv ends in xolam-he and the qere shifts that ending to vav-xolam",
     "QyV": "that the ketiv ends in qamats-vav and the qere inserts yod before that final vav",
+    "hi-spelled-hu": "that the ketiv spells the feminine pronoun with final he-vav-alef while the qere reads it with final he-yod-alef",
+    "n3rh-spelled-n3r": "that the ketiv writes forms ending in נער while the qere reads the corresponding נערה form with final he",
+    "extra-alef": "that the ketiv has one extra alef relative to the qere",
     "misc": "that the trivial ketiv/qere case does not fall under one of the currently recognized subtype buckets",
 }

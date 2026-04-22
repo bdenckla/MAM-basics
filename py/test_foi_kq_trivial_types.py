@@ -35,6 +35,26 @@ class TrivialKqSubtypeClassifierTests(unittest.TestCase):
 
         self.assertEqual(ktt.classify_tmpl(tmpl), ktt.QYV)
 
+    def test_classify_hi_spelled_hu(self):
+        tmpl = _trivial_tmpl("הַהִ֖וא", "ההוא", "הַהִ֖יא")
+
+        self.assertEqual(ktt.classify_tmpl(tmpl), ktt.HI_SPELLED_HU)
+
+    def test_classify_n3rh_spelled_n3r(self):
+        tmpl = _trivial_tmpl("הַֽנַּעֲרָ֖", "הנער", "הַֽנַּעֲרָ֖ה")
+
+        self.assertEqual(ktt.classify_tmpl(tmpl), ktt.N3RH_SPELLED_N3R)
+
+    def test_classify_extra_alef_with_rafeh(self):
+        tmpl = _trivial_tmpl("וַיֹּר֨אֿוּ", "ויראו", "וַיֹּר֨וּ")
+
+        self.assertEqual(ktt.classify_tmpl(tmpl), ktt.EXTRA_ALEF)
+
+    def test_classify_extra_alef_plain(self):
+        tmpl = _trivial_tmpl("מָרִ֕אי", "מראי", "מָרִ֕י")
+
+        self.assertEqual(ktt.classify_tmpl(tmpl), ktt.EXTRA_ALEF)
+
     def test_leave_unmatched_blank(self):
         tmpl = _trivial_tmpl("סוּתֹֽה", "סותה", "סוּתִֽי")
 
@@ -73,6 +93,33 @@ class TrivialKqFoiQualificationTests(unittest.TestCase):
 
         self.assertEqual(foi_path, ("kq-simple", "z-trivial", ktt.QYV))
         self.assertEqual(fct.qtar_qual(foi_target), {"pqere": "עֹֽלוֹתָ֔יו"})
+
+    def test_record_kq_as_foi_uses_hi_spelled_hu_path_and_pqere(self):
+        tmpl = _trivial_tmpl("הַהִ֖וא", "ההוא", "הַהִ֖יא")
+
+        found = foiz_wt_kq_1._record_kq_as_foi(None, tuple(), tmpl)
+        foi_path, foi_target = found[0]
+
+        self.assertEqual(foi_path, ("kq-simple", "z-trivial", ktt.HI_SPELLED_HU))
+        self.assertEqual(fct.qtar_qual(foi_target), {"pqere": "הַהִ֖יא"})
+
+    def test_record_kq_as_foi_uses_n3rh_spelled_n3r_path_and_pqere(self):
+        tmpl = _trivial_tmpl("הַֽנַּעֲרָ֖", "הנער", "הַֽנַּעֲרָ֖ה")
+
+        found = foiz_wt_kq_1._record_kq_as_foi(None, tuple(), tmpl)
+        foi_path, foi_target = found[0]
+
+        self.assertEqual(foi_path, ("kq-simple", "z-trivial", ktt.N3RH_SPELLED_N3R))
+        self.assertEqual(fct.qtar_qual(foi_target), {"pqere": "הַֽנַּעֲרָ֖ה"})
+
+    def test_record_kq_as_foi_uses_extra_alef_path_and_pqere(self):
+        tmpl = _trivial_tmpl("נְבִיַּאיָּ֔א", "נביאיא", "נְבִיַּיָּ֔א")
+
+        found = foiz_wt_kq_1._record_kq_as_foi(None, tuple(), tmpl)
+        foi_path, foi_target = found[0]
+
+        self.assertEqual(foi_path, ("kq-simple", "z-trivial", ktt.EXTRA_ALEF))
+        self.assertEqual(fct.qtar_qual(foi_target), {"pqere": "נְבִיַּיָּ֔א"})
 
     def test_record_kq_as_foi_leaves_other_kq_templates_unchanged(self):
         tmpl = _std_kq_tmpl("עֹֽלוֹתָ֔ו", "עֹֽלוֹתָ֔יו")
