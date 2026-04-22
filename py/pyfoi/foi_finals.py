@@ -165,12 +165,15 @@ def _append_table_row(io_html_tables, foi_path, row_dic):
 def _make_table_row(row_dic):
     td_attrs = {"lang": "hbo", "dir": "rtl"}
     hc_td = my_html.table_datum(row_dic["html_contents"], td_attrs)
-    other_tds = tuple(_my_td(v) for k, v in row_dic.items() if k != "html_contents")
+    other_tds = tuple(_my_td(k, v) for k, v in row_dic.items() if k != "html_contents")
     return my_html.table_row((hc_td, *other_tds))
 
 
-def _my_td(htseq_or_str_or_none):
-    return my_html.table_datum(htseq_or_str_or_none)
+def _my_td(key, htseq_or_str_or_none):
+    td_attrs = None
+    if key == "pqere":
+        td_attrs = {"lang": "hbo", "dir": "rtl"}
+    return my_html.table_datum(htseq_or_str_or_none, td_attrs)
 
 
 def _write_json(args_foi, outfile_stem, rowdics):
