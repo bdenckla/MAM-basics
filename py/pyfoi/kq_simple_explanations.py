@@ -4,7 +4,17 @@
 def explanation_for_path(path_parts):
     if not path_parts:
         return None
+    if path_parts[0] == "z-trivial":
+        return _explanation_for_trivial_path(path_parts)
     return _EXPLANATIONS_BY_LABEL.get(path_parts[-1])
+
+
+def _explanation_for_trivial_path(path_parts):
+    if len(path_parts) == 1:
+        return _EXPLANATIONS_BY_LABEL.get("z-trivial")
+    if len(path_parts) == 2:
+        return _TRIVIAL_SUBTYPE_EXPLANATIONS.get(path_parts[1])
+    return None
 
 
 OVERALL_EXPLANATION = (
@@ -91,7 +101,16 @@ _EXPLANATIONS_BY_LABEL = {
     "z-trivial": " ".join(
         (
             "a trivial ketiv/qere case, where the difference is minor enough that",
-            "some editions may choose to show only the pointed ketiv form",
+            "some editions may choose to show only the pointed ketiv form; subtype",
+            "labels such as xolam-he, QyV, and misc appear as the last part of the",
+            "FOI path, and the extra row cell shows the pointed qere",
         )
     ),
+}
+
+
+_TRIVIAL_SUBTYPE_EXPLANATIONS = {
+    "xolam-he": "that the ketiv ends in xolam-he and the qere shifts that ending to vav-xolam",
+    "QyV": "that the ketiv ends in qamats-vav and the qere inserts yod before that final vav",
+    "misc": "that the trivial ketiv/qere case does not fall under one of the currently recognized subtype buckets",
 }

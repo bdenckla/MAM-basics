@@ -6,6 +6,7 @@ from pycmn import ws_tmpl2 as wtp
 from pyrender import render_wikitext_handlers as handlers
 from pyrender import render_wikitext_helpers as wt_help
 from pycmn import template_names as tmpln
+from pyfoi import kq_trivial_types
 
 
 def find_fois_wt(mroge):
@@ -18,11 +19,16 @@ def _record_kq_as_foi(_foilers, stack, tmpl):
     foi_path = "kq-simple", _FOI_PATH[tmpln.LATIN_SHORTS[tmpl_name]]
     stack_summary = fwh.stack_summary(_STACK_SUMMARIES, stack)
     foi_target_proper = _html_for_wtseq((tmpl,))
+    foi_qualifier = {}
+    if tmpl_name == 'מ:קו"כ-אם-2':
+        foi_path = *foi_path, kq_trivial_types.subtype_for_path(tmpl)
+        foi_qualifier["pqere"] = kq_trivial_types.pointed_qere_text(tmpl)
     if stack_summary:
-        foi_qualifier = {"stack_str": stack_summary}
-        foi_target = fct.make_qtarget(foi_target_proper, foi_qualifier)
-    else:
+        foi_qualifier["stack_str"] = stack_summary
+    if not foi_qualifier:
         foi_target = foi_target_proper
+    else:
+        foi_target = fct.make_qtarget(foi_target_proper, foi_qualifier)
     return [(foi_path, foi_target)]
 
 
