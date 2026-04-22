@@ -44,6 +44,12 @@ For PowerShell throwaway scripts and non-Python artifacts (commit messages, issu
 
 **Never use `python -c`** for any reason. Shell escaping of multi-line strings and Hebrew Unicode text is unreliable. Write a throwaway script as `py/novc_<slug>.py` and run it from the repo root.
 
+## No Multi-Line PowerShell Payloads — Use `.novc/<slug>.ps1` Instead
+
+For throwaway PowerShell logic, prefer a script file in `.novc/` over a massive command line with embedded multi-line payloads. This is the PowerShell analogue of avoiding `python -c`: once the payload is more than a short one-liner, write `.novc/<slug>.ps1` and run the script instead.
+
+Do not embed multi-line PowerShell code in `pwsh -Command`, here-strings passed on the command line, or other long inline invocations when a script file would do. Quoting, escaping, and Unicode handling get fragile quickly; a `.ps1` file is clearer and more reliable.
+
 ## Multi-Line Content — Write to `.novc/` Files
 
 When the payload is inherently multi-line (commit messages, GitHub issue/PR bodies, etc.), write it to a file in `.novc/` and reference the file. Do not pass multi-line content as a command argument — the Windows shell mangles it.
