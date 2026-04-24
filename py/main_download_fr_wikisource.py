@@ -17,7 +17,7 @@ from py_misc import get_wikisource_plan as wsplan
 from pycmn import mam_bknas_and_std_bknas as mbkn_a_sbkn
 from pycmn import file_io
 from pycmn import polite_download
-from pyws import ws_download_selector as wsds
+from ws import ws_download_selector as wsds
 
 
 def _download_chapter_batch(chapter_plans, downloader):

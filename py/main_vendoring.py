@@ -10,7 +10,7 @@ Usage (from repo root):
 
 import argparse
 
-from py_vendoring import compare, gen_inventory, provenance
+from vendoring import compare, gen_inventory, provenance
 
 
 def main() -> None:

@@ -6,8 +6,8 @@ legacy vendoring registry.
 
 As of 2026-04-17, that migration has been completed: the active
 vendoring workflow is driven by `in/vendoring_policy.json` plus
-discovery in `py/py_vendoring/discover.py`, and the old
-`py/py_vendoring/registry.py` table and `--diff-baseline` migration
+discovery in `py/vendoring/discover.py`, and the old
+`py/vendoring/registry.py` table and `--diff-baseline` migration
 hook have been removed.
 
 The remainder of this file captures the migration plan that led to the
@@ -41,10 +41,10 @@ requirements unless the user explicitly changes them:
 The current vendoring implementation is centered on these files:
 
 - `py/main_vendoring.py`
-- `py/py_vendoring/compare.py`
-- `py/py_vendoring/provenance.py`
-- `py/py_vendoring/gen_inventory.py`
-- `py/py_vendoring/registry.py`
+- `py/vendoring/compare.py`
+- `py/vendoring/provenance.py`
+- `py/vendoring/gen_inventory.py`
+- `py/vendoring/registry.py`
 
 The recent refactor consolidated duplicated file tables into
 `registry.py`, but that module still stores a large file-by-file list.
@@ -114,7 +114,7 @@ Keep a small list of exceptional cases in the JSON manifest. Examples:
 
 ## Proposed Module Layout
 
-Add new modules under `py/py_vendoring/`:
+Add new modules under `py/vendoring/`:
 
 - `repo_policy.py`
   Loads and validates the JSON manifest.
@@ -162,7 +162,7 @@ Use it as a temporary comparison oracle while building discovery.
 
 ### Step 2. Add JSON policy loading
 
-Create `in/vendoring_policy.json` and `py/py_vendoring/repo_policy.py`.
+Create `in/vendoring_policy.json` and `py/vendoring/repo_policy.py`.
 
 Requirements:
 
@@ -269,7 +269,7 @@ solving every downstream vendoring problem at once.
 Suggested opening moves for a fresh session:
 
 1. Read this file.
-2. Read `py/py_vendoring/registry.py` only as a temporary baseline.
+2. Read `py/vendoring/registry.py` only as a temporary baseline.
 3. Create `in/vendoring_policy.json` with a small number of repos first.
 4. Implement `repo_policy.py` and `discover.py`.
 5. Produce a derived relationship dump and compare it to the current

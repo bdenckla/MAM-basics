@@ -72,11 +72,11 @@ Run scripts from the repo root (not from `py/`):
 py/              Python source
   main_*.py      Entry-point scripts
   pycmn/         Common utilities
-  pyxml/         XML rendering
-  pyrender/      General rendering
+  mb_xml/        XML rendering
+  render_wt/     General rendering
   pysefaria/     Sefaria-specific logic
-  pyws/          Wikisource-specific logic
-  pympp/         MAM parsed-plus helpers
+  ws/            Wikisource-specific logic
+  mpplus/        MAM parsed-plus helpers
   ...
 in/              Input data files
 doc/             Documentation and notes

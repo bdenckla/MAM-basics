@@ -14,27 +14,27 @@ Usage:
 import argparse
 import multiprocessing
 
-from pyfoi import foi_finals
-from pyfoi import foi_struct as fct
-from pyfoi.foi_find_wt_fois_for_1_bk import find_wt_fois_for_1_bk
+from foi import foi_finals
+from foi import foi_struct as fct
+from foi.foi_find_wt_fois_for_1_bk import find_wt_fois_for_1_bk
 
-from pyfoi import foiz_wt_dual_ml_alef as foi_dual_ml_alef
-from pyfoi import foiz_wt_kq_1 as foi_kq_1
-from pyfoi import foiz_wt_kq_2 as foi_kq_2
-from pyfoi import foiz_wt_oleh_yored as foi_oleh_yored
-from pyfoi import foiz_wt_sec_merk_and_friends as foi_sec_merk
-from pyfoi import foiz_wt_tsinnorit as foi_tsinnorit
-from pyfoi import foiz_wt_pasoleg_1 as foi_pasoleg_1
-from pyfoi import foiz_wt_pasoleg_2 as foi_pasoleg_2
-from pyfoi import foiz_wt_poetic_len as foi_poetic_len
-from pyfoi import foiz_wt_poetic_sh as foi_poetic_sh
-from pyfoi import foiz_wt_qamats_var as foi_qamats_var
-from pyfoi import foiz_wt_quick_brown as foi_quick_brown
-from pyfoi import foiz_wt_rare_tmpls as foi_rare_tmpls
-from pyfoi import foiz_wt_rev_mug as foi_rev_mug
-from pyfoi import foiz_wt_slh_word as foi_slh_word
-from pyfoi import foiz_wt_mtgmtg as foi_mtgmtg
-from pyfoi import foiz_wt_unicode as foi_unicode
+from foi import foiz_wt_dual_ml_alef as foi_dual_ml_alef
+from foi import foiz_wt_kq_1 as foi_kq_1
+from foi import foiz_wt_kq_2 as foi_kq_2
+from foi import foiz_wt_oleh_yored as foi_oleh_yored
+from foi import foiz_wt_sec_merk_and_friends as foi_sec_merk
+from foi import foiz_wt_tsinnorit as foi_tsinnorit
+from foi import foiz_wt_pasoleg_1 as foi_pasoleg_1
+from foi import foiz_wt_pasoleg_2 as foi_pasoleg_2
+from foi import foiz_wt_poetic_len as foi_poetic_len
+from foi import foiz_wt_poetic_sh as foi_poetic_sh
+from foi import foiz_wt_qamats_var as foi_qamats_var
+from foi import foiz_wt_quick_brown as foi_quick_brown
+from foi import foiz_wt_rare_tmpls as foi_rare_tmpls
+from foi import foiz_wt_rev_mug as foi_rev_mug
+from foi import foiz_wt_slh_word as foi_slh_word
+from foi import foiz_wt_mtgmtg as foi_mtgmtg
+from foi import foiz_wt_unicode as foi_unicode
 
 from pycmn import read_books_from_mam_parsed_plus as plus
 from pycmn import bib_locales as tbn

@@ -5,8 +5,8 @@ Reads MAM-parsed-plus and records, for each verse that has it, the
 dual-cantillation information.
 """
 
-from pydecnreub.decnreub import do_one_book
-from pydecnreub.decnreub import flatrow_for_jsondump
+from decnreub.decnreub import do_one_book
+from decnreub.decnreub import flatrow_for_jsondump
 from pycmn import file_io
 from pycmn import read_books_from_mam_parsed_plus as plus
 from pycmn import bib_locales as tbn

@@ -3,7 +3,7 @@
 from dataclasses import dataclass
 from typing import Union
 
-from pyrender import render_element as renel
+from render_wt import render_element as renel
 from pycmn import str_defs as sd
 from py_misc import my_html
 from pycmn import shrink

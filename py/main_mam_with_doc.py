@@ -9,8 +9,8 @@ from py_misc import ren_tag_survey as rts
 from py_misc import mwd_utils as mwdu
 from pycmn import bib_locales as tbn
 from pycmn import read_books_from_mam_parsed_plus as plus
-from pymwd import mwd_write_index_dot_html as mwdwidh
-from pymwd import mwd_write_book as mwdwb
+from mwd import mwd_write_index_dot_html as mwdwidh
+from mwd import mwd_write_book as mwdwb
 from py_misc import two_col_css_styles as tcstyles
 
 

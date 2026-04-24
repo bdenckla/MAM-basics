@@ -2,8 +2,8 @@
 
 from pycmn import read_books_from_mam_parsed_plus as plus
 from pycmn import file_io
-from pymultimark import multimark_1 as mm1
-from pymultimark import multimark_2 as mm2
+from multimark import multimark_1 as mm1
+from multimark import multimark_2 as mm2
 
 FIOI_PATH_TO_MULTIMARKS_RAW_JSON = "io/mam-multimarks-raw.json"
 # FIOI: file I/O info: this is the output of one program and the input of one or more other programs

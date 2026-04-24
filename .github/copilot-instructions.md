@@ -127,11 +127,11 @@ Before a series of experiments that might need to be thrown away, ask the user t
 
 - All Python code lives under `py/`.
 - **Main scripts** have a `main_` prefix (e.g. `py/main_mam4sef.py`, `py/main_parse_go.py`). These are the entry points run directly.
-- **Library modules** live in `py/py*/` directories (e.g. `py/pycmn/`, `py/pyxml/`, `py/pyrender/`). These are imported by main scripts.
+- **Library modules** live in package directories under `py/` (e.g. `py/pycmn/`, `py/mb_xml/`, `py/render_wt/`). These are imported by main scripts.
 
 ## Module Size Limit
 
-If any Python file (main script or library module) grows beyond **300 lines**, spin off self-contained functions or classes into a new module under the appropriate `py/py*/` directory. Keep each file focused and under the limit whenever practical.
+If any Python file (main script or library module) grows beyond **300 lines**, spin off self-contained functions or classes into a new module under the appropriate package directory in `py/`. Keep each file focused and under the limit whenever practical.
 
 ## New Features as Modules
 

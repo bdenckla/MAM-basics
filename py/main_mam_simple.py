@@ -16,10 +16,10 @@ from py_misc import vtrad
 from py_misc import write_utils
 from py_misc import ren_tag_survey as rts
 from pycmn import bib_locales as tbn
-from pyxml import xml_render
-from pyxml import xml_root_from_bksams
-from pyxml import xml_distribute_sampe as xml_sampe
-from pyjson import json_root_from_bksams
+from mb_xml import xml_render
+from mb_xml import xml_root_from_bksams
+from mb_xml import xml_distribute_sampe as xml_sampe
+from mb_json import json_root_from_bksams
 
 
 def _do_not_convert(_bkids, books_mpp):

@@ -8,7 +8,7 @@ Exports 2 functions and 1 constant:
 
 from pycmn import shrink
 from py_misc import uni_heb_char_classes as uhc
-from pyrender import render_element as renel
+from render_wt import render_element as renel
 from pycmn import hebrew_punctuation as hpu
 from pycmn import template_names as tmpln
 from py_misc import hebrew_letter_words as hlw

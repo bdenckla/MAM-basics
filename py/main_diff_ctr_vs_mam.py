@@ -5,8 +5,8 @@ verse data against MAM verse data and report differences.
 
 import json
 from itertools import zip_longest
-from pydiff_ctr_vs_mam.massage_ctr_verse import massage_ctr_verse
-from pydiff_ctr_vs_mam.massage_mpp_verse import massage_mpp_verse
+from diff_ctr_vs_mam.massage_ctr_verse import massage_ctr_verse
+from diff_ctr_vs_mam.massage_mpp_verse import massage_mpp_verse
 from pycmn import my_diffs
 from pycmn import uni_heb as uh
 from pycmn import read_books_from_mam_parsed_plus as plus

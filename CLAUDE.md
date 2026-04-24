@@ -160,11 +160,11 @@ Never close (or suggest closing) a GitHub issue until its work has been both com
 
 - All Python code lives under the `py/` directory at the project root.
 - **Main scripts** are named with a `main_` prefix (e.g. `py/main_mam4sef.py`, `py/main_parse_go.py`). These are the entry points that are run directly.
-- **Library modules** live in `py/py*/` directories (e.g. `py/pycmn/`, `py/pyxml/`, `py/pyrender/`). These are imported by main scripts but are not run on their own.
+- **Library modules** live in package directories under `py/` (e.g. `py/pycmn/`, `py/mb_xml/`, `py/render_wt/`). These are imported by main scripts but are not run on their own.
 
 ## Module Size Limit
 
-If any Python file (main script or library module) grows beyond **300 lines**, spin off self-contained functions or classes into a new module under the appropriate `py/py*/` directory. Keep each file focused and under the limit whenever practical.
+If any Python file (main script or library module) grows beyond **300 lines**, spin off self-contained functions or classes into a new module under the appropriate package directory in `py/`. Keep each file focused and under the limit whenever practical.
 
 ## New Features as Modules
 

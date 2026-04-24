@@ -6,7 +6,7 @@ import unittest
 from unittest import mock
 
 import main_download_fr_wikisource as dlws
-from pyws import ws_download_selector as wsds
+from ws import ws_download_selector as wsds
 
 
 class _FakeDownloader:

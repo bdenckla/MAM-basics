@@ -13,8 +13,8 @@ from functools import partial
 
 from pycmn import bib_locales as tbn
 from pycmn import file_io
-from pyws import ws_get_bk_in_both_fmts as wsin
-from pyws import ws_bot_edit as wbe
+from ws import ws_get_bk_in_both_fmts as wsin
+from ws import ws_bot_edit as wbe
 from py_misc.my_utils_for_mainish import show_progress_g
 from pycmn.my_utils import dv_map
 from pycmn.my_utils import dkv_map

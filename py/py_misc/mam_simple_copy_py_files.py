@@ -18,7 +18,7 @@ def copy_support_files():
     os.makedirs(f"{mam_simple_pyex}/py_misc")
     os.makedirs(f"{mam_simple_pyex}/pycmn")
     os.makedirs(f"{mam_simple_pyex}/pysefaria")
-    os.makedirs(f"{mam_simple_pyex}/pyws")
+    os.makedirs(f"{mam_simple_pyex}/ws")
     for pyfile_relpath in PYFILE_RELPATHS:
         src = os.path.join(_PY_DIR, pyfile_relpath)
         dst = f"{mam_simple_pyex}/{pyfile_relpath}"

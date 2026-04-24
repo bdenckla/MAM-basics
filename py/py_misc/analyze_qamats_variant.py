@@ -3,7 +3,7 @@
 import re
 
 from pycmn import ws_tmpl2 as wtp
-from pyrender import render_element as renel
+from render_wt import render_element as renel
 from pycmn import hebrew_points as hpo
 from pycmn import hebrew_accents as ha
 from pycmn import hebrew_punctuation as hpu

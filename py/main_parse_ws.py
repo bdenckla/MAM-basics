@@ -1,7 +1,7 @@
 """Parse downloaded Wikisource MAM data into two increasingly-structured output formats."""
 
 from py_misc import my_utils_for_mainish as my_utils_fm
-from pyws import ws_get_bk_in_both_fmts as wsin
+from ws import ws_get_bk_in_both_fmts as wsin
 from pycmn import bib_locales as tbn
 from pycmn import file_io
 

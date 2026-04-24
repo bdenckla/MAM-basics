@@ -5,19 +5,19 @@ that are written by the repo owner and rendered from Python source data.
 
 from py_misc import my_html
 from py_misc import two_col_css_styles as tcstyles
-from pyauthor import notes_on_aliyot
-from pyauthor import tsinnorit_and_oleh_on_ivs
-from pyauthor import tsinnorit_and_oleh_facts
-from pyauthor import tsinnorit_in_psalm_32v5
-from pyauthor import tsinnorit_and_the_xxd_in_bhs
-from pyauthor import rocc_0_review_of_ctr
-from pyauthor import rocc_1_on_the_provenance_of_ctr
-from pyauthor import rocc_2_pre_vowel_accents_in_ctr
-from pyauthor import rocc_3_where_other_sources_stand
-from pyauthor import rocc_4_mid_word_ga3ya_with_shewa
-from pyauthor import he_ws_intro_to_mam_gray_maqaf_1 as gray_maqaf
-from pyauthor import he_ws_intro_to_mam_pasleg as pasleg
-from pyauthor import the_next_700_bibles
+from author import notes_on_aliyot
+from author import tsinnorit_and_oleh_on_ivs
+from author import tsinnorit_and_oleh_facts
+from author import tsinnorit_in_psalm_32v5
+from author import tsinnorit_and_the_xxd_in_bhs
+from author import rocc_0_review_of_ctr
+from author import rocc_1_on_the_provenance_of_ctr
+from author import rocc_2_pre_vowel_accents_in_ctr
+from author import rocc_3_where_other_sources_stand
+from author import rocc_4_mid_word_ga3ya_with_shewa
+from author import he_ws_intro_to_mam_gray_maqaf_1 as gray_maqaf
+from author import he_ws_intro_to_mam_pasleg as pasleg
+from author import the_next_700_bibles
 
 
 def _gen_index_html(top_dir_misc, index_entries):

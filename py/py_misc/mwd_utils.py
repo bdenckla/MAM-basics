@@ -5,7 +5,7 @@ import enum
 import re
 
 from pycmn import hebrew_verse_numerals as hvn
-from pyrender import render_element as renel
+from render_wt import render_element as renel
 from py_misc import verse_and_friends as vaf
 from pycmn import bib_locales as tbn
 from py_misc import ren_html_for_renel as hfr

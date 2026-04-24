@@ -10,11 +10,11 @@ from pycmn import file_io
 from pycmn import hebrew_verse_numerals as hvn
 from pycmn import mam_bknas_and_std_bknas as mbkn_a_sbkn
 from pycmn import uni_denorm as ud
-from pydiff_mm import diff_mm_reduce as red
-from pydiff_mm import diff_mm_wsgo_auto_edits as auto_edits
-from pydiff_mm import wsgo_go
-from pydiff_mm import wsgo_ws
-from pyws import ws_get_bk_in_both_fmts as wsin
+from diff_mm import diff_mm_reduce as red
+from diff_mm import diff_mm_wsgo_auto_edits as auto_edits
+from diff_mm import wsgo_go
+from diff_mm import wsgo_ws
+from ws import ws_get_bk_in_both_fmts as wsin
 
 
 def _make_dump_diff(diff):

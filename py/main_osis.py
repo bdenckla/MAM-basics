@@ -12,9 +12,9 @@ from py_misc import osis_book_abbrevs
 from pycmn import my_utils
 from pycmn import file_io
 from pycmn import shrink
-from pyosis import osis_namespace as osisn
-from pyosis import osis_handlers
-from pyosis import osis_index_html
+from osis import osis_namespace as osisn
+from osis import osis_handlers
+from osis import osis_index_html
 
 
 def _handle(handlers, etel):  # etel: ElementTree element

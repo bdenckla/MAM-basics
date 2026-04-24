@@ -10,7 +10,7 @@ import collections
 from pycmn import my_utils
 from pycmn import bib_locales as tbn
 from pycmn import mam_bknas
-from pyws import ws_tmpl_n_tag_parser as ttp
+from ws import ws_tmpl_n_tag_parser as ttp
 from pycmn.minirow import Minirow
 
 

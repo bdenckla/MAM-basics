@@ -13,10 +13,10 @@ from pycmn import read_books_from_mam_parsed_plus as plus
 from pycmn import ws_tmpl2 as wtp
 from pycmn import file_io
 
-from py_explicit_xataf import extract as ext
-from py_explicit_xataf import extras
-from py_explicit_xataf import infer
-from py_explicit_xataf.entries import make_entries
+from explicit_xataf import extract as ext
+from explicit_xataf import extras
+from explicit_xataf import infer
+from explicit_xataf.entries import make_entries
 
 
 def _bcvt_to_ref(bcvt):

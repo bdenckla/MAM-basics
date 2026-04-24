@@ -2,7 +2,7 @@
 import json
 import sys
 
-from pysigils import inventory
+from sigils import inventory
 
 
 def almost_main():

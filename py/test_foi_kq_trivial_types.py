@@ -3,9 +3,9 @@
 import unittest
 
 from pycmn import ws_tmpl2 as wtp
-from pyfoi import foi_struct as fct
-from pyfoi import foiz_wt_kq_1
-from pyfoi import kq_trivial_types as ktt
+from foi import foi_struct as fct
+from foi import foiz_wt_kq_1
+from foi import kq_trivial_types as ktt
 
 
 def _trivial_tmpl(pointed_ketiv, unpointed_ketiv, pointed_qere):

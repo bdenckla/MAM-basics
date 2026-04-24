@@ -3,9 +3,9 @@
 from pycmn import hebrew_verse_numerals as hvn
 from pycmn import ws_tmpl2 as wtp
 from pycmn import ws_tmpl1 as wtp1
-from pympp import mpp_scrdfftar
-from pympp import mpp_slh_words
-from pympp import mpp_boring_tmpls
+from mpplus import mpp_scrdfftar
+from mpplus import mpp_slh_words
+from mpplus import mpp_boring_tmpls
 from pycmn.minirow import Minirow
 
 

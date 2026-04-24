@@ -2,10 +2,10 @@
 
 import os
 
-from pytmpl_survey import survey_dot
-from pytmpl_survey import survey_plain
-from pytmpl_survey import survey_plus
-from pytmpl_survey import survey_xlsx
+from tmpl_survey import survey_dot
+from tmpl_survey import survey_plain
+from tmpl_survey import survey_plus
+from tmpl_survey import survey_xlsx
 from pycmn import file_io
 
 _OUT_DIR = "out/MAM-tmpl-survey"
