@@ -51,7 +51,7 @@ def _slh_parts_for_wtel(wtel):
     return wtel, desc1, "", []
 
 
-_PASOLEG_DESC0 = {
+PASOLEG_DESC0 = {
     "מ:לגרמיה-2": hpu.PASOLEG,
     "מ:לגרמיה": hpu.PASOLEG,
     "מ:פסק": sd.DOUB_VERT_LINE,
@@ -63,8 +63,8 @@ def _slh_parts_for_tmpl(tmpl):
     # versions of MAM. At some point that paseq was converted to a legarmeih.
     # Similarly, מ:לגרמיה ("classic" legarmeih) is only needed for old versions of MAM.
     tmpl_name = wtp.template_name(tmpl)
-    if tmpl_name in _PASOLEG_DESC0:
-        return _PASOLEG_DESC0[tmpl_name], ".", "", []
+    if tmpl_name in PASOLEG_DESC0:
+        return PASOLEG_DESC0[tmpl_name], ".", "", []
     tmpl_el1 = wtp.template_element(tmpl, 1)
     if len(tmpl_el1) > 1:
         assert len(tmpl_el1) == 2

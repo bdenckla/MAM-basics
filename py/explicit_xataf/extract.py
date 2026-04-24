@@ -152,7 +152,7 @@ def flatten_text(wtel):
     if isinstance(wtel, list):
         return "".join(flatten_text(x) for x in wtel)
     if isinstance(wtel, dict) and wtp.is_template(wtel):
-        if wtp.is_template_with_name_in(wtel, tmpln._STD_KQ_TMPL_NAMES):
+        if wtp.is_template_with_name_in(wtel, tmpln.STD_KQ_TMPL_NAMES):
             return flatten_text(wtp.template_element(wtel, 2))
         if wtp.is_template_with_name_in(wtel, _STRESS_VARIANT_TMPL_NAMES):
             return flatten_text(wtp.template_element(wtel, 1))
@@ -162,7 +162,7 @@ def flatten_text(wtel):
             return flatten_text(wtp.template_element(wtel, 2))
         if wtp.is_template_with_name(wtel, "מ:קמץ"):
             return flatten_text(wtp.template_param_val(wtel, "ד"))
-        if wtp.is_template_with_name_in(wtel, tmpln._WHITESPACE_TMPL_NAMES):
+        if wtp.is_template_with_name_in(wtel, tmpln.WHITESPACE_TMPL_NAMES):
             return ""
         if wtp.is_template_with_name_in(wtel, _ZERO_CONTENT_TMPL_NAMES):
             return ""

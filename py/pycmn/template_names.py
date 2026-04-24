@@ -51,14 +51,14 @@ LATIN_SHORTS = {
 
 
 def map_all_std_kq_to_a_constant(the_constant):
-    return {n: the_constant for n in _STD_KQ_TMPL_NAMES}
+    return {n: the_constant for n in STD_KQ_TMPL_NAMES}
 
 
 def map_all_whitespace_to_a_constant(the_constant):
-    return {n: the_constant for n in _WHITESPACE_TMPL_NAMES}
+    return {n: the_constant for n in WHITESPACE_TMPL_NAMES}
 
 
-_STD_KQ_TMPL_NAMES = (
+STD_KQ_TMPL_NAMES = (
     'כו"ק',
     'קו"כ',
     K1Q1_MCOM,
@@ -71,7 +71,7 @@ _STD_KQ_TMPL_NAMES = (
     K2Q2,
     K3Q3,
 )
-_WHITESPACE_TMPL_NAMES = {
+WHITESPACE_TMPL_NAMES = {
     "מ:ששש",
     "סס",
     "פפ",

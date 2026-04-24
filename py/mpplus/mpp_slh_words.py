@@ -155,8 +155,8 @@ def _flatten_targ(wtseq):
             parts.append(wtel)
         elif wtp.template_name(wtel) in _SLH_LETTER_TMPLS:
             parts.append(wtp.template_element(wtel, 1)[0])
-        elif wtp.template_name(wtel) in slh_description._PASOLEG_DESC0:
-            parts.append(slh_description._PASOLEG_DESC0[wtp.template_name(wtel)])
+        elif wtp.template_name(wtel) in slh_description.PASOLEG_DESC0:
+            parts.append(slh_description.PASOLEG_DESC0[wtp.template_name(wtel)])
         else:
             parts.append(f"<{wtp.template_name(wtel)}>")
     return "".join(parts)

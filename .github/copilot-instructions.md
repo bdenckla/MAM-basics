@@ -143,6 +143,17 @@ When adding a new self-contained feature, implement it as a new module under the
 
 When extracting helpers during a refactor, prefer one self-contained helper module per extracted concern rather than grouping multiple unrelated helpers into a generic shared utility module.
 
+## Cross-Module Private Symbol Access
+
+Do not access underscored symbols from other modules in production code. By convention, an underscore prefix means the symbol is private to its defining module.
+
+If another module needs that symbol, do not mechanically reach in to the private name. First decide whether this would cross an architectural boundary:
+
+- If the symbol is a stable shared concept that belongs in the module's public contract, make it public (remove underscore) and update callers.
+- If exposing it would leak an implementation detail or cross an undesirable boundary, keep it private and solve the need differently (for example: local duplication of a tiny constant, a focused public helper/accessor, or ownership refactor).
+
+Treat this as an architecture decision, not just a naming change.
+
 ## Fail Fast — No Silent Error Smoothing
 
 Do **not** write defensive code that swallows errors or returns `None` on unexpected conditions. Only catch exceptions when there is a concrete recovery strategy. These are batch pipelines; a crash with a clear traceback is the correct response.

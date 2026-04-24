@@ -15,11 +15,11 @@ import difflib
 
 from pycmn.hebrew_punctuation import NU_GMAQ
 from pycmn.str_defs import DOUB_VERT_LINE
-from pycmn.template_names import _STD_KQ_TMPL_NAMES
+from pycmn.template_names import STD_KQ_TMPL_NAMES
 from pydiff_mpp.mpp_param_access import _MISSING, _get_param
 
 _PARASHAH_NAMES = {"סס", "ססס", "פפ", "פפפ"}
-_STD_KQ_TEMPLATE_NAMES = frozenset(_STD_KQ_TMPL_NAMES)
+_STD_KQ_TEMPLATE_NAMES = frozenset(STD_KQ_TMPL_NAMES)
 
 
 def _is_parashah_template(name):

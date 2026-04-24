@@ -120,14 +120,14 @@ def _flatten_text(wtel):
     if isinstance(wtel, list):
         return "".join(_flatten_text(item) for item in wtel)
     assert wtp.is_template(wtel), wtel
-    if wtp.is_template_with_name_in(wtel, tmpln._STD_KQ_TMPL_NAMES):
+    if wtp.is_template_with_name_in(wtel, tmpln.STD_KQ_TMPL_NAMES):
         return _flatten_text(wtp.template_element(wtel, 2))
     if wtp.is_template_with_name(wtel, "מ:דחי"):
         return _flatten_text(wtp.template_element(wtel, 1))
     if wtp.is_template_with_name(wtel, "מ:קמץ"):
         return _flatten_text(wtp.template_param_val(wtel, "ד"))
     if wtp.is_template_with_name_in(
-        wtel, {"מ:לגרמיה-2", "מ:פסק", "מ:מקף אפור", *tmpln._WHITESPACE_TMPL_NAMES}
+        wtel, {"מ:לגרמיה-2", "מ:פסק", "מ:מקף אפור", *tmpln.WHITESPACE_TMPL_NAMES}
     ):
         return ""
     return _flatten_text(wtp.template_element(wtel, 1))
