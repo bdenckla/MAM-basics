@@ -347,7 +347,7 @@
 <!-- ws_bot&#45;&gt;src_ws_live -->
 <g id="edge29" class="edge">
 <title>ws_bot&#45;&gt;src_ws_live</title>
-<path fill="none" stroke="black" stroke-dasharray="5,2" d="M78.32,-45C92.18,-45 109.81,-45 126.87,-45"/>
+<path fill="none" stroke="black" d="M78.32,-45C92.18,-45 109.81,-45 126.87,-45"/>
 <polygon fill="black" stroke="black" points="126.43,-48.5 136.43,-45 126.43,-41.5 126.43,-48.5"/>
 </g>
 <!-- gen_docs -->
