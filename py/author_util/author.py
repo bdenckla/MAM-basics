@@ -2,6 +2,7 @@ import os
 
 import re
 from py_misc import my_html
+from pycmn import provenance
 from pycmn import str_defs as sd
 from pycmn.my_utils import sl_map
 from pycmn.my_utils import sum_of_map
@@ -13,8 +14,7 @@ def help_gen_html_file(py_file, tdm_ch, fname, title, cbody, body_class=None):
     assert_stem_eq(py_file, fname)
     top_dir, css_href = tdm_ch
     out_path = f"{top_dir}/{fname}"
-    py_basename = os.path.basename(py_file)
-    comment = f"Generated from {py_basename} — do not edit by hand"
+    comment = provenance.generated_html_comment(py_file)
     write_ctx = my_html.WriteCtx(
         title,
         out_path,

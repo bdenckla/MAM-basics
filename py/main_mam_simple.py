@@ -71,7 +71,9 @@ def _finish_one_book_group(bkg, bkg_rendered, variant):
     write_utils_xml.write_root_in_xml_fmt(xml_path, xml_root)
     json_root = json_root_from_bksams.root(bksams, vtrad_val, variant)
     json_path = write_utils.bkg_path(variant, bkg["bkg-name"], fmt_override="vff-json")
-    write_utils_json.write_root_in_json_fmt(json_path, json_root)
+    write_utils_json.write_root_in_json_fmt(
+        json_path, json_root, generator_file=__file__
+    )
     verses_for_write = {"rv-cant-all-three": bkg_rendered}
     write_utils.write_bkg_in_un_fmt(
         variant, bkg["bkg-name"], verses_for_write, "rv-cant-all-three"

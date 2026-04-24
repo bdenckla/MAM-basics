@@ -5,6 +5,7 @@ that are written by the repo owner and rendered from Python source data.
 
 from py_misc import my_html
 from py_misc import two_col_css_styles as tcstyles
+from pycmn import provenance
 from author import notes_on_aliyot
 from author import tsinnorit_and_oleh_on_ivs
 from author import tsinnorit_and_oleh_facts
@@ -29,7 +30,7 @@ def _gen_index_html(top_dir_misc, index_entries):
     write_ctx = my_html.WriteCtx(
         "Miscellaneous Documents",
         f"{top_dir_misc}/index.html",
-        html_comment="Generated — do not edit by hand",
+        html_comment=provenance.generated_html_comment(__file__),
     )
     my_html.write_html_to_file(cbody, write_ctx)
 

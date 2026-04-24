@@ -2,6 +2,7 @@ from dataclasses import dataclass
 
 from pycmn import bib_locales as tbn
 from pycmn import my_utils
+from pycmn import provenance
 
 from py_misc import my_html
 from py_misc import my_utils_for_mainish as my_utils_fm
@@ -27,10 +28,21 @@ def _pair_of_write_ctxs(ecb, out_paths):
     path_for_main, path_for_bido = out_paths
     title_for_main = f"{edition}: {bkid}"
     title_for_bido = f"{title_for_main}: big docs"
+    html_comment = provenance.generated_html_comment(__file__)
     tp_for_main = title_for_main, path_for_main
     tp_for_bido = title_for_bido, path_for_bido
-    wr_for_main = my_html.WriteCtx(*tp_for_main, css_hrefs=css_hrefs, add_wbr=True)
-    wr_for_bido = my_html.WriteCtx(*tp_for_bido, css_hrefs=css_hrefs, add_wbr=True)
+    wr_for_main = my_html.WriteCtx(
+        *tp_for_main,
+        css_hrefs=css_hrefs,
+        add_wbr=True,
+        html_comment=html_comment,
+    )
+    wr_for_bido = my_html.WriteCtx(
+        *tp_for_bido,
+        css_hrefs=css_hrefs,
+        add_wbr=True,
+        html_comment=html_comment,
+    )
     return wr_for_main, wr_for_bido
 
 

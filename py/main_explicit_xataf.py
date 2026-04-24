@@ -167,7 +167,7 @@ def almost_main():
         "mappings": all_mappings,
     }
     out_path = "out/explicit-xataf.json"
-    file_io.json_dump_to_file_path(result, out_path)
+    file_io.json_dump_to_file_path(result, out_path, generator_file=__file__)
     n_m, n_f = len(all_mappings), len(all_failures)
     print(f"Wrote {n_m} mappings and {n_f} failures to {out_path}")
     counts_str = json.dumps(counts, ensure_ascii=False, indent=2)

@@ -3,6 +3,6 @@
 from pycmn import file_io
 
 
-def write_root_in_json_fmt(out_path, root):
+def write_root_in_json_fmt(out_path, root, generator_file=None):
     """Write root JSON dict in JSON format"""
-    file_io.json_dump_to_file_path(root, out_path)
+    file_io.json_dump_to_file_path(root, out_path, generator_file=generator_file)

@@ -2,6 +2,7 @@
 
 from pycmn import bib_locales as tbn
 from pycmn import file_io
+from pycmn import provenance
 
 from py_misc import mwd_utils as mwdu
 from py_misc import my_html
@@ -36,6 +37,11 @@ def write(args_foi, all_fois):
     """
     auto_outspecs = _auto_outspecs(all_fois)
     tcstyles.make_css_file_for_mwd(f"{_OUT_DIR_PATH}/{_CSS_HREF}")
+    provenance.write_directory_provenance(
+        _OUT_DIR_PATH,
+        __file__,
+        "FOI JSON and HTML outputs",
+    )
     if not args_foi:
         _write_index_dot_html(auto_outspecs)
     for outspec in auto_outspecs:
@@ -79,6 +85,7 @@ def _write_index_dot_html(outspecs):
         "MAM features of interest",
         f"{_OUT_DIR_PATH}/index.html",
         css_hrefs=(_CSS_HREF,),
+        html_comment=provenance.generated_html_comment(__file__),
     )
     my_html.write_html_to_file(body_contents, write_ctx)
 
@@ -210,7 +217,10 @@ def _write_html(args_foi, outfile_stem, html_tables):
     body_contents = _foi_body_wrapper(_overall_head(outfile_stem) + body1 + body2)
     title = f"{outfile_stem} (MAM features of interest)"
     write_ctx = my_html.WriteCtx(
-        title, _out_path_for_html(outfile_stem), css_hrefs=(_CSS_HREF,)
+        title,
+        _out_path_for_html(outfile_stem),
+        css_hrefs=(_CSS_HREF,),
+        html_comment=provenance.generated_html_comment(__file__),
     )
     my_html.write_html_to_file(body_contents, write_ctx)
 

@@ -9,6 +9,7 @@ import difflib
 import json
 import os
 
+from pycmn import provenance
 from pydiff_mpp.mpp_expand import split_structural_diff
 from pydiff_mpp.mpp_structure import _template_name_multiset_delta
 
@@ -106,6 +107,7 @@ def write_json(diffs, old_rev, new_rev, out_path):
         "diff_count": len(serialized),
         "diffs": serialized,
     }
+    data = provenance.with_json_provenance(data, __file__)
     os.makedirs(os.path.dirname(out_path), exist_ok=True)
     with open(out_path, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)

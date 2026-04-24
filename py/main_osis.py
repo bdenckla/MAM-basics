@@ -11,6 +11,7 @@ from py_misc import two_col_css_styles as tcstyles
 from py_misc import osis_book_abbrevs
 from pycmn import my_utils
 from pycmn import file_io
+from pycmn import provenance
 from pycmn import shrink
 from osis import osis_namespace as osisn
 from osis import osis_handlers
@@ -112,7 +113,10 @@ def _write_index_dot_html():
     css_href = "two_col_style.css"
     tcstyles.make_css_file_for_mwd(f"{out_dir_path}/{css_href}")
     write_ctx = my_html.WriteCtx(
-        title, f"{out_dir_path}/index.html", css_hrefs=(css_href,)
+        title,
+        f"{out_dir_path}/index.html",
+        css_hrefs=(css_href,),
+        html_comment=provenance.generated_html_comment(__file__),
     )
     my_html.write_html_to_file(body_contents, write_ctx)
 
