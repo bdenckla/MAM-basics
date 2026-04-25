@@ -3,14 +3,14 @@
 from collections import Counter
 
 from pydiff_mpp.mpp_flatten import (
-    _flatten_element,
-    _is_ketiv_velo_qere_template,
-    _is_parashah_template,
-    _is_qere_velo_ketiv_template,
-    _is_std_kq_template,
-    _is_trivial_kq_template,
+    flatten_element,
+    is_ketiv_velo_qere_template,
+    is_parashah_template,
+    is_qere_velo_ketiv_template,
+    is_std_kq_template,
+    is_trivial_kq_template,
 )
-from pydiff_mpp.mpp_param_access import _MISSING, _get_param
+from pydiff_mpp.mpp_param_access import MISSING, get_param
 
 
 def _iter_named_templates(obj, template_name):
@@ -55,18 +55,18 @@ def _collect_named_template_tracking(obj, template_name, parts, instances):
 
 def _collect_named_template_from_template(tmpl, template_name, parts, instances):
     name = tmpl["tmpl_name"]
-    if _is_parashah_template(name):
+    if is_parashah_template(name):
         parts.append(" ")
         return
     if name == template_name:
         start = sum(len(part) for part in parts)
-        p1 = _get_param(tmpl, "1")
-        if p1 is not _MISSING:
+        p1 = get_param(tmpl, "1")
+        if p1 is not MISSING:
             _collect_named_template_tracking(p1, template_name, parts, instances)
         end = sum(len(part) for part in parts)
-        p2 = _get_param(tmpl, _arg2_param_key(name))
-        p1_text = "<missing>" if p1 is _MISSING else _flatten_element(p1)
-        p2_text = "<missing>" if p2 is _MISSING else _flatten_element(p2)
+        p2 = get_param(tmpl, _arg2_param_key(name))
+        p1_text = "<missing>" if p1 is MISSING else flatten_element(p1)
+        p2_text = "<missing>" if p2 is MISSING else flatten_element(p2)
         instances.append(
             {
                 "template_name": template_name,
@@ -78,25 +78,25 @@ def _collect_named_template_from_template(tmpl, template_name, parts, instances)
         )
         return
     if name == "נוסח":
-        p1 = _get_param(tmpl, "1")
-        if p1 is not _MISSING:
+        p1 = get_param(tmpl, "1")
+        if p1 is not MISSING:
             _collect_named_template_tracking(p1, template_name, parts, instances)
         return
-    if _is_std_kq_template(name) or _is_qere_velo_ketiv_template(name):
-        param = _get_param(tmpl, "2")
-        if param is not _MISSING:
+    if is_std_kq_template(name) or is_qere_velo_ketiv_template(name):
+        param = get_param(tmpl, "2")
+        if param is not MISSING:
             _collect_named_template_tracking(param, template_name, parts, instances)
         return
-    if _is_trivial_kq_template(name):
-        param = _get_param(tmpl, "1")
-        if param is not _MISSING:
+    if is_trivial_kq_template(name):
+        param = get_param(tmpl, "1")
+        if param is not MISSING:
             _collect_named_template_tracking(param, template_name, parts, instances)
         return
-    if _is_ketiv_velo_qere_template(name):
+    if is_ketiv_velo_qere_template(name):
         return
     if name == "מ:קמץ":
-        pd = _get_param(tmpl, "ד")
-        if pd is not _MISSING:
+        pd = get_param(tmpl, "ד")
+        if pd is not MISSING:
             _collect_named_template_tracking(pd, template_name, parts, instances)
         return
     if name in ("מ:לגרמיה-2", "מ:לגרמיה"):
@@ -106,12 +106,12 @@ def _collect_named_template_from_template(tmpl, template_name, parts, instances)
         parts.append("׀")
         return
     if name == "מ:כפול":
-        pk = _get_param(tmpl, "כפול")
-        if pk is not _MISSING:
+        pk = get_param(tmpl, "כפול")
+        if pk is not MISSING:
             _collect_named_template_tracking(pk, template_name, parts, instances)
         return
-    p1 = _get_param(tmpl, "1")
-    if p1 is not _MISSING:
+    p1 = get_param(tmpl, "1")
+    if p1 is not MISSING:
         _collect_named_template_tracking(p1, template_name, parts, instances)
 
 

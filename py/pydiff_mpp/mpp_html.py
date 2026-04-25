@@ -9,7 +9,7 @@ import difflib
 from collections import Counter
 
 from pydiff_mpp.grapheme_diff import char_diff_spans
-from pydiff_mpp.mpp_structure import _template_name_multiset_delta
+from pydiff_mpp.mpp_structure import template_name_multiset_delta
 from pydiff_mpp.describe_diff import describe_change, add_name_tooltips
 from pydiff_mpp.mpp_nusach import nusach_body_to_html
 from pydiff_mpp.mpp_assets import CATEGORY_INFO, write_shared_assets
@@ -154,7 +154,7 @@ def _expand_diffs(diffs):
         notes_per_pair = _distribute_nusach(
             diff["old_text"], diff["new_text"], nusach_notes, len(pairs)
         )
-        tmpl_added, tmpl_removed = _template_name_multiset_delta(
+        tmpl_added, tmpl_removed = template_name_multiset_delta(
             diff["old_ep"], diff["new_ep"]
         )
         for idx, (old_narrow, new_narrow, _, _) in enumerate(pairs):
@@ -245,7 +245,7 @@ def _render_card(diff):
         added = diff.get("templates_added")
         removed = diff.get("templates_removed")
         if added is None or removed is None:
-            calc_added, calc_removed = _template_name_multiset_delta(
+            calc_added, calc_removed = template_name_multiset_delta(
                 diff["old_ep"], diff["new_ep"]
             )
             if added is None:

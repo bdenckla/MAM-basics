@@ -16,17 +16,17 @@ from pycmn import hebrew_points as hpo
 from pycmn import hebrew_punctuation as hpu
 from pycmn.str_defs import DOUB_VERT_LINE
 from pydiff_mpp.mpp_flatten import (
-    _is_ketiv_velo_qere_template,
-    _is_parashah_template,
-    _is_qere_velo_ketiv_template,
-    _is_std_kq_template,
-    _is_trivial_kq_template,
+    is_ketiv_velo_qere_template,
+    is_parashah_template,
+    is_qere_velo_ketiv_template,
+    is_std_kq_template,
+    is_trivial_kq_template,
 )
-from pydiff_mpp.mpp_param_access import _MISSING, _get_param
+from pydiff_mpp.mpp_param_access import MISSING, get_param
 
 # ── Hebrew letter names ──────────────────────────────────────────────
 
-_LETTER_NAMES = {
+LETTER_NAMES = {
     "א": "alef",
     "ב": "bet",
     "ג": "gimel",
@@ -58,7 +58,7 @@ _LETTER_NAMES = {
 
 # ── Hebrew accent names (U+0591–U+05AF) ─────────────────────────────
 
-_ACCENT_NAMES = {
+ACCENT_NAMES = {
     ha.ATN: "etnahta",
     ha.SEG_A: "segol-accent",
     ha.SHA: "shalshelet",
@@ -94,7 +94,7 @@ _ACCENT_NAMES = {
 
 # ── Hebrew mark names (vowels, dagesh, meteg, rafeh, shin/sin dots) ──
 
-_MARK_NAMES = {
+POINT_NAMES = {
     hpo.SHEVA: "shewa",
     hpo.XSEGOL: "ḥataf-segol",
     hpo.XPATAX: "ḥataf-pataḥ",
@@ -120,15 +120,15 @@ _MARK_NAMES = {
 # ── Character predicates ─────────────────────────────────────────────
 
 
-def _is_letter(ch):
+def is_letter(ch):
     return 0x05D0 <= ord(ch) <= 0x05EA
 
 
-def _is_accent(ch):
+def is_accent(ch):
     return 0x0591 <= ord(ch) <= 0x05AF
 
 
-def _is_mark(ch):
+def is_mark(ch):
     cp = ord(ch)
     return (
         (0x05B0 <= cp <= 0x05BD)
@@ -138,11 +138,11 @@ def _is_mark(ch):
     )
 
 
-def _letter_name(ch):
-    return _LETTER_NAMES.get(ch, unicodedata.name(ch, f"U+{ord(ch):04X}"))
+def letter_name(ch):
+    return LETTER_NAMES.get(ch, unicodedata.name(ch, f"U+{ord(ch):04X}"))
 
 
-def _ordinal(n):
+def ordinal(n):
     if 10 <= (n % 100) <= 20:
         suffix = "th"
     else:
@@ -150,49 +150,49 @@ def _ordinal(n):
     return f"{n}{suffix}"
 
 
-def _letter_ref(ch, occurrence, letter_counts, force_ordinal=False):
-    name = _letter_name(ch)
+def letter_ref(ch, occurrence, letter_counts, force_ordinal=False):
+    name = letter_name(ch)
     if force_ordinal and letter_counts.get(ch, 0) > 1:
-        return f"{_ordinal(occurrence)} {name}"
+        return f"{ordinal(occurrence)} {name}"
     return name
 
 
-_POETIC_ACCENT_NAMES = {
+POETIC_ACCENTS = {
     ha.TIP: "tarha",
     ha.ZSH_OR_TSIT: "tsinnorit",
     ha.Z_OR_TSOR: "tsinnor",
 }
 
 # Names that should get an HTML tooltip (<abbr title="...">) in rendered output.
-# Keys are the display name (as returned by _accent_name); values are the tooltip.
+# Keys are the display name (as returned by accent_name); values are the tooltip.
 _NAME_TOOLTIPS = {
     "zarqa-sh": "zarqa stress helper",
 }
 
 
-def _accent_name(ch, poetic=False):
+def accent_name(ch, poetic=False):
     if poetic:
-        name = _POETIC_ACCENT_NAMES.get(ch)
+        name = POETIC_ACCENTS.get(ch)
         if name:
             return name
-    return _ACCENT_NAMES.get(ch, unicodedata.name(ch, f"U+{ord(ch):04X}"))
+    return ACCENT_NAMES.get(ch, unicodedata.name(ch, f"U+{ord(ch):04X}"))
 
 
-def _mark_name(ch):
-    return _MARK_NAMES.get(ch, unicodedata.name(ch, f"U+{ord(ch):04X}"))
+def mark_name(ch):
+    return POINT_NAMES.get(ch, unicodedata.name(ch, f"U+{ord(ch):04X}"))
 
 
 # ── Qualify marks/accents with their preceding letter ────────────────
 
 
-def _qualify(text, pred):
+def qualify(text, pred):
     """Return [(char, letter, letter-occurrence)] for matching chars."""
     result = []
     letter = None
     letter_occurrence = 0
     seen_letters = Counter()
     for ch in text:
-        if _is_letter(ch):
+        if is_letter(ch):
             letter = ch
             seen_letters[ch] += 1
             letter_occurrence = seen_letters[ch]
@@ -211,14 +211,14 @@ def _describe_diff(old_text, new_text, pred, name_fn, poetic=False):
     name_fn: function that returns the human name for the character
     poetic: if True, use poetic accent names (e.g. tarha for tipeha)
     """
-    if poetic and name_fn is _accent_name:
-        _name = lambda ch: _accent_name(ch, poetic=True)
+    if poetic and name_fn is accent_name:
+        _name = lambda ch: accent_name(ch, poetic=True)
     else:
         _name = name_fn
-    old_letter_counts = Counter(ch for ch in old_text if _is_letter(ch))
-    new_letter_counts = Counter(ch for ch in new_text if _is_letter(ch))
-    old_qualified = _qualify(old_text, pred)
-    new_qualified = _qualify(new_text, pred)
+    old_letter_counts = Counter(ch for ch in old_text if is_letter(ch))
+    new_letter_counts = Counter(ch for ch in new_text if is_letter(ch))
+    old_qualified = qualify(old_text, pred)
+    new_qualified = qualify(new_text, pred)
 
     # Pure reorder: same items in a different order on the same letter
     if (
@@ -264,21 +264,21 @@ def _describe_diff(old_text, new_text, pred, name_fn, poetic=False):
                     or new_letter_counts.get(n_let, 0) > 1
                 )
                 descriptions.append(
-                    f"{_name(o_mark)} on {_letter_ref(o_let, o_occ, old_letter_counts, force_ordinal=force_ordinal)}"
-                    f" in old, on {_letter_ref(n_let, n_occ, new_letter_counts, force_ordinal=force_ordinal)} in new"
+                    f"{_name(o_mark)} on {letter_ref(o_let, o_occ, old_letter_counts, force_ordinal=force_ordinal)}"
+                    f" in old, on {letter_ref(n_let, n_occ, new_letter_counts, force_ordinal=force_ordinal)} in new"
                 )
             elif o_let == n_let and o_occ == n_occ:
                 # Same letter, different mark → replaced
                 descriptions.append(
-                    f"on {_letter_name(o_let)}, "
+                    f"on {letter_name(o_let)}, "
                     f"{_name(o_mark)} in old → "
                     f"{_name(n_mark)} in new"
                 )
             else:
                 descriptions.append(
-                    f"{_name(o_mark)} on {_letter_name(o_let)}"
+                    f"{_name(o_mark)} on {letter_name(o_let)}"
                     f" (old) → {_name(n_mark)} on "
-                    f"{_letter_name(n_let)} (new)"
+                    f"{letter_name(n_let)} (new)"
                 )
         elif tag == "delete":
             for mark, let, occ in old_chunk:
@@ -289,10 +289,10 @@ def _describe_diff(old_text, new_text, pred, name_fn, poetic=False):
         else:
             # Complex replace — fall back to generic description
             old_parts = ", ".join(
-                f"{_name(m)} on {_letter_name(l)}" for m, l, occ in old_chunk
+                f"{_name(m)} on {letter_name(l)}" for m, l, occ in old_chunk
             )
             new_parts = ", ".join(
-                f"{_name(m)} on {_letter_name(l)}" for m, l, occ in new_chunk
+                f"{_name(m)} on {letter_name(l)}" for m, l, occ in new_chunk
             )
             descriptions.append(f"old has {old_parts}; new has {new_parts}")
 
@@ -307,17 +307,17 @@ def _describe_diff(old_text, new_text, pred, name_fn, poetic=False):
                     or new_letter_counts.get(i_let, 0) > 1
                 )
                 descriptions.append(
-                    f"{_name(d_mark)} on {_letter_ref(d_let, d_occ, old_letter_counts, force_ordinal=force_ordinal)}"
-                    f" in old, on {_letter_ref(i_let, i_occ, new_letter_counts, force_ordinal=force_ordinal)} in new"
+                    f"{_name(d_mark)} on {letter_ref(d_let, d_occ, old_letter_counts, force_ordinal=force_ordinal)}"
+                    f" in old, on {letter_ref(i_let, i_occ, new_letter_counts, force_ordinal=force_ordinal)} in new"
                 )
                 used_inserts.add(idx)
                 paired = True
                 break
         if not paired:
-            descriptions.append(f"{_name(d_mark)} on {_letter_name(d_let)} removed")
+            descriptions.append(f"{_name(d_mark)} on {letter_name(d_let)} removed")
     for idx, (i_mark, i_let, i_occ) in enumerate(inserts):
         if idx not in used_inserts:
-            descriptions.append(f"{_name(i_mark)} on {_letter_name(i_let)} added")
+            descriptions.append(f"{_name(i_mark)} on {letter_name(i_let)} added")
 
     return "; ".join(descriptions) if descriptions else None
 
@@ -337,7 +337,7 @@ def _is_prose_section_of_job(chapter, verse):
     return False
 
 
-def _is_poetic(book, chapter, verse):
+def is_poetic(book, chapter, verse):
     if book not in _POETIC_BOOKS:
         return False
     if book == "Job":
@@ -347,8 +347,8 @@ def _is_poetic(book, chapter, verse):
 
 # ── Public API ───────────────────────────────────────────────────────
 
-_ACCENT_CATS = {"accent-change", "accent-addition", "accent-removal"}
-_MARK_CATS = {
+ACCENT_CATS = {"accent-change", "accent-addition", "accent-removal"}
+MARK_CATS = {
     "meteg-removal",
     "meteg-addition",
     "vowel-change",
@@ -357,25 +357,25 @@ _MARK_CATS = {
 }
 
 
-_LEG_SENTINEL = "\ufdd0"
-_NAR_SENTINEL = "\ufdd1"
+LEG_SENTINEL = "\ufdd0"
+NAR_SENTINEL = "\ufdd1"
 
 
-def _has_paseq(text):
+def has_paseq(text):
     return (
         hpu.PASOLEG in text
         or DOUB_VERT_LINE in text
-        or _LEG_SENTINEL in text
-        or _NAR_SENTINEL in text
+        or LEG_SENTINEL in text
+        or NAR_SENTINEL in text
     )
 
 
-def _collect_paseq_types(obj, types):
+def collect_paseq_types(obj, types):
     if isinstance(obj, str):
         return
     if isinstance(obj, dict):
         name = obj["tmpl_name"]
-        if _is_parashah_template(name):
+        if is_parashah_template(name):
             return
         if name in ("מ:לגרמיה-2", "מ:לגרמיה"):
             types.append("legarmeh")
@@ -384,47 +384,47 @@ def _collect_paseq_types(obj, types):
             types.append("paseq")
             return
         if name == "נוסח":
-            p1 = _get_param(obj, "1")
-            if p1 is not _MISSING:
-                _collect_paseq_types(p1, types)
+            p1 = get_param(obj, "1")
+            if p1 is not MISSING:
+                collect_paseq_types(p1, types)
             return
-        if _is_std_kq_template(name) or _is_qere_velo_ketiv_template(name):
-            p2 = _get_param(obj, "2")
-            if p2 is not _MISSING:
-                _collect_paseq_types(p2, types)
+        if is_std_kq_template(name) or is_qere_velo_ketiv_template(name):
+            p2 = get_param(obj, "2")
+            if p2 is not MISSING:
+                collect_paseq_types(p2, types)
             return
-        if _is_trivial_kq_template(name):
-            p1 = _get_param(obj, "1")
-            if p1 is not _MISSING:
-                _collect_paseq_types(p1, types)
+        if is_trivial_kq_template(name):
+            p1 = get_param(obj, "1")
+            if p1 is not MISSING:
+                collect_paseq_types(p1, types)
             return
-        if _is_ketiv_velo_qere_template(name):
+        if is_ketiv_velo_qere_template(name):
             return
         if name == "מ:קמץ":
-            pd = _get_param(obj, "ד")
-            if pd is not _MISSING:
-                _collect_paseq_types(pd, types)
+            pd = get_param(obj, "ד")
+            if pd is not MISSING:
+                collect_paseq_types(pd, types)
             return
         if name == "מ:כפול":
-            pk = _get_param(obj, "כפול")
-            if pk is not _MISSING:
-                _collect_paseq_types(pk, types)
+            pk = get_param(obj, "כפול")
+            if pk is not MISSING:
+                collect_paseq_types(pk, types)
             return
-        p1 = _get_param(obj, "1")
-        if p1 is not _MISSING:
-            _collect_paseq_types(p1, types)
+        p1 = get_param(obj, "1")
+        if p1 is not MISSING:
+            collect_paseq_types(p1, types)
         return
     if isinstance(obj, list):
         for item in obj:
-            _collect_paseq_types(item, types)
+            collect_paseq_types(item, types)
 
 
 def _describe_paseq_change(old_text, new_text, old_ep=None, new_ep=None):
     if old_ep is not None and new_ep is not None:
         old_types = []
         new_types = []
-        _collect_paseq_types(old_ep, old_types)
-        _collect_paseq_types(new_ep, new_types)
+        collect_paseq_types(old_ep, old_types)
+        collect_paseq_types(new_ep, new_types)
         old_counts = Counter(old_types)
         new_counts = Counter(new_types)
         deltas = {
@@ -437,9 +437,9 @@ def _describe_paseq_change(old_text, new_text, old_ep=None, new_ep=None):
             return f"add {added[0]}"
         if len(removed) == 1 and not added:
             return f"remove {removed[0]}"
-    if not _has_paseq(old_text) and _has_paseq(new_text):
+    if not has_paseq(old_text) and has_paseq(new_text):
         return "add paseq / legarmeh"
-    if _has_paseq(old_text) and not _has_paseq(new_text):
+    if has_paseq(old_text) and not has_paseq(new_text):
         return "remove paseq / legarmeh"
     return None
 

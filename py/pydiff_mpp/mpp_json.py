@@ -11,7 +11,7 @@ import os
 
 from pycmn import provenance
 from pydiff_mpp.mpp_expand import split_structural_diff
-from pydiff_mpp.mpp_structure import _template_name_multiset_delta
+from pydiff_mpp.mpp_structure import template_name_multiset_delta
 
 
 def _narrow_to_changed_words(old_text, new_text):
@@ -51,7 +51,7 @@ def _serialize_diff(d):
     }
     if d["text_changed"]:
         out["changes"] = _narrow_to_changed_words(d["old_text"], d["new_text"])
-        added, removed = _template_name_multiset_delta(d["old_ep"], d["new_ep"])
+        added, removed = template_name_multiset_delta(d["old_ep"], d["new_ep"])
         if added:
             out["templates_added"] = added
         if removed:
@@ -60,7 +60,7 @@ def _serialize_diff(d):
         added = d.get("templates_added")
         removed = d.get("templates_removed")
         if added is None or removed is None:
-            calc_added, calc_removed = _template_name_multiset_delta(
+            calc_added, calc_removed = template_name_multiset_delta(
                 d["old_ep"], d["new_ep"]
             )
             if added is None:

@@ -31,13 +31,13 @@ from pydiff_mpp.change_ops import (
     is_text_op,
 )
 from pydiff_mpp.describe_diff import (
-    _accent_name,
-    _is_accent,
-    _is_poetic,
-    _letter_name,
-    _letter_ref,
-    _mark_name,
-    _ordinal,
+    accent_name,
+    is_accent,
+    is_poetic,
+    letter_name,
+    letter_ref,
+    mark_name,
+    ordinal,
 )
 
 # ── Helpers ──────────────────────────────────────────────────
@@ -45,9 +45,9 @@ from pydiff_mpp.describe_diff import (
 
 def _name_for(ch, poetic):
     """Return the display name for a mark/accent character."""
-    if _is_accent(ch):
-        return _accent_name(ch, poetic=poetic)
-    return _mark_name(ch)
+    if is_accent(ch):
+        return accent_name(ch, poetic=poetic)
+    return mark_name(ch)
 
 
 def _render_one(op, poetic, old_letter_counts=None, new_letter_counts=None):
@@ -64,42 +64,42 @@ def _render_one(op, poetic, old_letter_counts=None, new_letter_counts=None):
         )
         return (
             f"{_name_for(op.char, poetic)}"
-            f" on {_letter_ref(op.from_letter, op.from_occurrence, old_letter_counts, force_ordinal=force_ordinal)}"
+            f" on {letter_ref(op.from_letter, op.from_occurrence, old_letter_counts, force_ordinal=force_ordinal)}"
             f" in old,"
-            f" on {_letter_ref(op.to_letter, op.to_occurrence, new_letter_counts, force_ordinal=force_ordinal)}"
+            f" on {letter_ref(op.to_letter, op.to_occurrence, new_letter_counts, force_ordinal=force_ordinal)}"
             f" in new"
         )
 
     if isinstance(op, MarkReplaced):
         return (
-            f"on {_letter_name(op.on_letter)}, "
+            f"on {letter_name(op.on_letter)}, "
             f"{_name_for(op.old_char, poetic)} in old → "
             f"{_name_for(op.new_char, poetic)} in new"
         )
 
     if isinstance(op, GenericReplace):
         return (
-            f"{_name_for(op.old_char, poetic)} on {_letter_name(op.old_letter)}"
+            f"{_name_for(op.old_char, poetic)} on {letter_name(op.old_letter)}"
             f" (old) → {_name_for(op.new_char, poetic)} on "
-            f"{_letter_name(op.new_letter)} (new)"
+            f"{letter_name(op.new_letter)} (new)"
         )
 
     if isinstance(op, ComplexReplace):
         old_parts = ", ".join(
-            f"{_name_for(m, poetic)} on {_letter_name(l)}"
+            f"{_name_for(m, poetic)} on {letter_name(l)}"
             for m, l, _occ in op.old_qualified
         )
         new_parts = ", ".join(
-            f"{_name_for(m, poetic)} on {_letter_name(l)}"
+            f"{_name_for(m, poetic)} on {letter_name(l)}"
             for m, l, _occ in op.new_qualified
         )
         return f"old has {old_parts}; new has {new_parts}"
 
     if isinstance(op, MarkRemoved):
-        return f"{_name_for(op.char, poetic)} on {_letter_name(op.on_letter)} removed"
+        return f"{_name_for(op.char, poetic)} on {letter_name(op.on_letter)} removed"
 
     if isinstance(op, MarkAdded):
-        return f"{_name_for(op.char, poetic)} on {_letter_name(op.on_letter)} added"
+        return f"{_name_for(op.char, poetic)} on {letter_name(op.on_letter)} added"
 
     if isinstance(op, MarkReordered):
         names = [_name_for(ch, poetic) for ch in op.chars]
@@ -150,7 +150,7 @@ def render_english(ops, book, chapter, verse, old_text="", new_text=""):
     """
     from collections import Counter
 
-    poetic = _is_poetic(book, chapter, verse)
+    poetic = is_poetic(book, chapter, verse)
 
     old_letter_counts = Counter(ch for ch in old_text if 0x05D0 <= ord(ch) <= 0x05EA)
     new_letter_counts = Counter(ch for ch in new_text if 0x05D0 <= ord(ch) <= 0x05EA)

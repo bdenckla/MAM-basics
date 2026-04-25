@@ -14,15 +14,15 @@ import sys
 
 from pydiff_mpp.change_ops import is_structural_op, is_text_op
 from pydiff_mpp.change_ops_apply import (
-    _ANY_STRUCTURE,
+    ANY_STRUCTURE,
     apply_structural_ops,
     apply_text_ops,
 )
 from pydiff_mpp.change_ops_extract import extract_change_ops
 from pydiff_mpp.mpp_normalize import normalize_structure, normalize_text
 from pydiff_mpp.mpp_structure import (
-    _template_name_counter,
-    _template_name_multiset_delta,
+    template_name_counter,
+    template_name_multiset_delta,
 )
 
 
@@ -79,12 +79,12 @@ def verify_diff(diff):
     if old_sig != new_sig:
         if not structural_ops:
             # No structural ops from extract_change_ops.  But commit b5bb715
-            # added a separate path: mpp_json/_serialize_diff computes
-            # _template_name_multiset_delta for text-changed diffs and
+            # added a separate path: mpp_json._serialize_diff computes
+            # template_name_multiset_delta for text-changed diffs and
             # surfaces templates_added/templates_removed.  If that delta
             # fully accounts for the structural change, the description
             # is complete.
-            added, removed = _template_name_multiset_delta(old_ep, new_ep)
+            added, removed = template_name_multiset_delta(old_ep, new_ep)
             if not added and not removed:
                 # Structure changed but no template names added or removed —
                 # a pure restructuring that isn't surfaced anywhere.
@@ -97,10 +97,10 @@ def verify_diff(diff):
             # Delta is non-empty — mpp_json will surface it.  No further
             # roundtrip check needed.
         else:
-            old_counter = _template_name_counter(old_ep)
-            new_counter = _template_name_counter(new_ep)
+            old_counter = template_name_counter(old_ep)
+            new_counter = template_name_counter(new_ep)
             reconstructed = apply_structural_ops(old_counter, structural_ops)
-            if reconstructed is not _ANY_STRUCTURE and reconstructed != new_counter:
+            if reconstructed is not ANY_STRUCTURE and reconstructed != new_counter:
                 raise VerificationError(
                     f"Structural roundtrip failed for {_ref(diff)}: "
                     f"category={category}, "

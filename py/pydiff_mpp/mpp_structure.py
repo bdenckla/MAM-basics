@@ -1,46 +1,48 @@
 """Template-structure helpers for MPP diffing.
 
 Exports:
-    _collect_template_names      — gather relevant template names from an EP tree
-    _template_name_counter       — count template-name multiplicities
-    _template_name_multiset_delta — compute added/removed template-name multiplicities
+    collect_template_names      — gather relevant template names from an EP tree
+    template_name_counter       — count template-name multiplicities
+    template_name_multiset_delta — compute added/removed template-name multiplicities
+    structural_signature        — build a position-aware structural signature
+
+Private helpers:
     _semantic_param_items        — normalize historical parameter encodings
-    _structural_signature        — build a position-aware structural signature
 """
 
 from collections import Counter
 
-from pydiff_mpp.mpp_param_access import _MISSING, _get_param
+from pydiff_mpp.mpp_param_access import MISSING, get_param
 
 
-def _collect_template_names(obj):
+def collect_template_names(obj):
     """Recursively collect template names relevant to body text."""
     names = []
     if isinstance(obj, dict):
         if "tmpl_name" in obj:
             if obj["tmpl_name"] == "נוסח":
-                p1 = _get_param(obj, "1")
-                if p1 is not _MISSING:
-                    names.extend(_collect_template_names(p1))
+                p1 = get_param(obj, "1")
+                if p1 is not MISSING:
+                    names.extend(collect_template_names(p1))
                 return names
             names.append(obj["tmpl_name"])
         for value in obj.values():
-            names.extend(_collect_template_names(value))
+            names.extend(collect_template_names(value))
     elif isinstance(obj, list):
         for item in obj:
-            names.extend(_collect_template_names(item))
+            names.extend(collect_template_names(item))
     return names
 
 
-def _template_name_counter(obj):
+def template_name_counter(obj):
     """Return a Counter of relevant template names in an EP structure."""
-    return Counter(_collect_template_names(obj))
+    return Counter(collect_template_names(obj))
 
 
-def _template_name_multiset_delta(old_ep, new_ep):
+def template_name_multiset_delta(old_ep, new_ep):
     """Return net added/removed template names, preserving multiplicity."""
-    old_counts = _template_name_counter(old_ep)
-    new_counts = _template_name_counter(new_ep)
+    old_counts = template_name_counter(old_ep)
+    new_counts = template_name_counter(new_ep)
     added = sorted((new_counts - old_counts).elements())
     removed = sorted((old_counts - new_counts).elements())
     return added, removed
@@ -109,8 +111,8 @@ def _structure_occurrences(obj, path=()):
 
     name = obj["tmpl_name"]
     if name == "נוסח":
-        p1 = _get_param(obj, "1")
-        return [] if p1 is _MISSING else _structure_occurrences(p1, path)
+        p1 = get_param(obj, "1")
+        return [] if p1 is MISSING else _structure_occurrences(p1, path)
 
     occurrences = [(path, name)]
     child_path = path + (("tmpl", name),)
@@ -121,6 +123,6 @@ def _structure_occurrences(obj, path=()):
     return occurrences
 
 
-def _structural_signature(ep):
+def structural_signature(ep):
     """Return a normalized, position-aware structural signature for EP."""
     return tuple(_structure_occurrences(ep))

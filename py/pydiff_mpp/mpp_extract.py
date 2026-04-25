@@ -9,19 +9,19 @@ import json
 import subprocess
 
 from pydiff_mpp.mpp_file_matching import (
-    _book39_ids_for_stem,
-    _get_he_to_int,
-    _matched_plus_file_pairs,
+    book39_ids_for_stem,
+    get_he_to_int,
+    matched_plus_file_pairs,
 )
 from pydiff_mpp.mpp_flatten import (
-    _find_relevant_nusach,
-    _flatten_ep_with_nusach_for_diff,
+    find_relevant_nusach,
+    flatten_ep_with_nusach_for_diff,
     flatten_ep_for_diff,
     flatten_ep_words_only_for_diff,
 )
 from pydiff_mpp.mpp_structure import (
-    _structural_signature,
-    _template_name_counter,
+    structural_signature,
+    template_name_counter,
 )
 
 MAM_PARSED_DIR = "../MAM-parsed"
@@ -77,8 +77,8 @@ def _list_plus_files(rev):
 def _diff_one_file(old_json, new_json, canonical_stem):
     """Compare two revisions of a single plus/ JSON file."""
     diffs = []
-    book39_ids = _book39_ids_for_stem(canonical_stem)
-    he_to_int = _get_he_to_int(new_json)
+    book39_ids = book39_ids_for_stem(canonical_stem)
+    he_to_int = get_he_to_int(new_json)
     old_book39s = old_json["book39s"]
     new_book39s = new_json["book39s"]
     for b39_idx, (old_b39, new_b39) in enumerate(zip(old_book39s, new_book39s)):
@@ -114,21 +114,21 @@ def _diff_ep(old_ep, new_ep, book39id, chapter, verse):
     Ignores format differences like tmpl_args vs tmpl_params.
     """
     old_text = flatten_ep_for_diff(old_ep)
-    new_text, new_nusach = _flatten_ep_with_nusach_for_diff(new_ep)
+    new_text, new_nusach = flatten_ep_with_nusach_for_diff(new_ep)
     text_changed = old_text != new_text
     if text_changed:
         old_words_only = flatten_ep_words_only_for_diff(old_ep)
         new_words_only = flatten_ep_words_only_for_diff(new_ep)
         if old_words_only == new_words_only:
-            if _template_name_counter(old_ep) == _template_name_counter(new_ep):
+            if template_name_counter(old_ep) == template_name_counter(new_ep):
                 text_changed = False
     if not text_changed:
-        old_counts = _template_name_counter(old_ep)
-        new_counts = _template_name_counter(new_ep)
+        old_counts = template_name_counter(old_ep)
+        new_counts = template_name_counter(new_ep)
         if old_counts == new_counts:
-            if _structural_signature(old_ep) == _structural_signature(new_ep):
+            if structural_signature(old_ep) == structural_signature(new_ep):
                 return None  # No meaningful change
-    nusach_notes = _find_relevant_nusach(old_text, new_text, new_nusach, text_changed)
+    nusach_notes = find_relevant_nusach(old_text, new_text, new_nusach, text_changed)
     return {
         "book": book39id,
         "chapter": chapter,
@@ -153,7 +153,7 @@ def diff_all_books(old_rev, new_rev):
     old_files = _list_plus_files(old_rev)
     new_files = _list_plus_files(new_rev)
     all_diffs = []
-    for stem, old_filename, new_filename in _matched_plus_file_pairs(
+    for stem, old_filename, new_filename in matched_plus_file_pairs(
         old_files, new_files
     ):
         old_json = _git_show_json(old_rev, f"plus/{old_filename}")

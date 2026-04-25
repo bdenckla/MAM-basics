@@ -1,9 +1,9 @@
 """Canonical plus-file matching and book-id mapping for MPP diffs.
 
 Exports:
-    _book39_ids_for_stem    — map a canonical plus stem to one or more bk39 ids
-    _get_he_to_int          — return or synthesize the Hebrew numeral lookup table
-    _matched_plus_file_pairs — match old/new plus filenames across historical renames
+    book39_ids_for_stem    — map a canonical plus stem to one or more bk39 ids
+    get_he_to_int          — return or synthesize the Hebrew numeral lookup table
+    matched_plus_file_pairs — match old/new plus filenames across historical renames
 """
 
 from pycmn import bib_locales as tbn
@@ -27,7 +27,7 @@ def _canonical_stem(filename):
     return _BARE_NAME_TO_CANONICAL[stem]
 
 
-def _matched_plus_file_pairs(old_files, new_files):
+def matched_plus_file_pairs(old_files, new_files):
     """Match old/new plus filenames across historical renames.
 
     Returns tuples of (canonical_stem, old_filename, new_filename) sorted in
@@ -39,12 +39,12 @@ def _matched_plus_file_pairs(old_files, new_files):
     return [(stem, old_by_stem[stem], new_by_stem[stem]) for stem in common_stems]
 
 
-def _book39_ids_for_stem(canonical):
+def book39_ids_for_stem(canonical):
     """Return the canonical bk39 ids for a canonical plus stem."""
     return _CANONICAL_STEM_TO_BOOK39_IDS[canonical]
 
 
-def _get_he_to_int(book_json):
+def get_he_to_int(book_json):
     """Return the he_to_int mapping, building it on the fly if absent."""
     he_to_int = book_json["header"].get("he_to_int")
     if he_to_int is not None:

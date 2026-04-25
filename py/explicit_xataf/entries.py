@@ -1,7 +1,7 @@
 """Build entry dicts for explicit-xataf mappings."""
 
 from pycmn import hebrew_points as hpo
-from explicit_xataf.infer import _varika_positions
+from explicit_xataf.infer import varika_positions
 
 
 def make_entries(ref, varika_word, xataf_word, match_kind, sigla_detail):
@@ -32,7 +32,7 @@ def _make_one_entry(ref, varika_word, xataf_word, match_kind, sigla_detail):
         entry["sigla"] = sigla
         if "א" not in sigla and "ל" not in sigla:
             entry["neither-lc-nor-ac-mentioned"] = True
-    vc = len(_varika_positions(varika_word))
+    vc = len(varika_positions(varika_word))
     if vc > 1:
         entry["varika-count"] = vc
     return entry

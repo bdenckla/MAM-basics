@@ -17,13 +17,13 @@ import re
 from pycmn import hebrew_punctuation as hpu
 from pycmn.str_defs import NBSP
 from pydiff_mpp.mpp_flatten import (
-    _is_ketiv_velo_qere_template,
-    _is_parashah_template,
-    _is_qere_velo_ketiv_template,
-    _is_std_kq_template,
-    _is_trivial_kq_template,
+    is_ketiv_velo_qere_template,
+    is_parashah_template,
+    is_qere_velo_ketiv_template,
+    is_std_kq_template,
+    is_trivial_kq_template,
 )
-from pydiff_mpp.mpp_param_access import _MISSING, _get_param
+from pydiff_mpp.mpp_param_access import MISSING, get_param
 
 # ── Paseq display (ruby annotations for legarmeih / narpas) ──
 
@@ -51,7 +51,7 @@ def _collect_paseq_types(obj, types):
         return
     if isinstance(obj, dict):
         name = obj["tmpl_name"]
-        if _is_parashah_template(name):
+        if is_parashah_template(name):
             return
         if name in ("מ:לגרמיה-2", "מ:לגרמיה"):
             types.append("legarmeih")
@@ -60,34 +60,34 @@ def _collect_paseq_types(obj, types):
             types.append("narpas")
             return
         if name == "נוסח":
-            p1 = _get_param(obj, "1")
-            if p1 is not _MISSING:
+            p1 = get_param(obj, "1")
+            if p1 is not MISSING:
                 _collect_paseq_types(p1, types)
             return
-        if _is_std_kq_template(name) or _is_qere_velo_ketiv_template(name):
-            p2 = _get_param(obj, "2")
-            if p2 is not _MISSING:
+        if is_std_kq_template(name) or is_qere_velo_ketiv_template(name):
+            p2 = get_param(obj, "2")
+            if p2 is not MISSING:
                 _collect_paseq_types(p2, types)
             return
-        if _is_trivial_kq_template(name):
-            p1 = _get_param(obj, "1")
-            if p1 is not _MISSING:
+        if is_trivial_kq_template(name):
+            p1 = get_param(obj, "1")
+            if p1 is not MISSING:
                 _collect_paseq_types(p1, types)
             return
-        if _is_ketiv_velo_qere_template(name):
+        if is_ketiv_velo_qere_template(name):
             return
         if name == "מ:קמץ":
-            pd = _get_param(obj, "ד")
-            if pd is not _MISSING:
+            pd = get_param(obj, "ד")
+            if pd is not MISSING:
                 _collect_paseq_types(pd, types)
             return
         if name == "מ:כפול":
-            pk = _get_param(obj, "כפול")
-            if pk is not _MISSING:
+            pk = get_param(obj, "כפול")
+            if pk is not MISSING:
                 _collect_paseq_types(pk, types)
             return
-        p1 = _get_param(obj, "1")
-        if p1 is not _MISSING:
+        p1 = get_param(obj, "1")
+        if p1 is not MISSING:
             _collect_paseq_types(p1, types)
         return
     if isinstance(obj, list):
@@ -119,41 +119,41 @@ def _gray_maqaf_walk_template(tmpl, pos, positions):
     if name == "מ:מקף אפור":
         positions.add(pos[0])
         return
-    if _is_parashah_template(name):
+    if is_parashah_template(name):
         pos[0] += 1
         return
     if name == "נוסח":
-        p1 = _get_param(tmpl, "1")
-        if p1 is not _MISSING:
+        p1 = get_param(tmpl, "1")
+        if p1 is not MISSING:
             _gray_maqaf_walk(p1, pos, positions)
         return
-    if _is_std_kq_template(name) or _is_qere_velo_ketiv_template(name):
-        p2 = _get_param(tmpl, "2")
-        if p2 is not _MISSING:
+    if is_std_kq_template(name) or is_qere_velo_ketiv_template(name):
+        p2 = get_param(tmpl, "2")
+        if p2 is not MISSING:
             _gray_maqaf_walk(p2, pos, positions)
         return
-    if _is_trivial_kq_template(name):
-        p1 = _get_param(tmpl, "1")
-        if p1 is not _MISSING:
+    if is_trivial_kq_template(name):
+        p1 = get_param(tmpl, "1")
+        if p1 is not MISSING:
             _gray_maqaf_walk(p1, pos, positions)
         return
-    if _is_ketiv_velo_qere_template(name):
+    if is_ketiv_velo_qere_template(name):
         return
     if name == "מ:קמץ":
-        pd = _get_param(tmpl, "ד")
-        if pd is not _MISSING:
+        pd = get_param(tmpl, "ד")
+        if pd is not MISSING:
             _gray_maqaf_walk(pd, pos, positions)
         return
     if name in ("מ:לגרמיה-2", "מ:לגרמיה", "מ:פסק"):
         pos[0] += 1
         return
     if name == "מ:כפול":
-        pk = _get_param(tmpl, "כפול")
-        if pk is not _MISSING:
+        pk = get_param(tmpl, "כפול")
+        if pk is not MISSING:
             _gray_maqaf_walk(pk, pos, positions)
         return
-    p1 = _get_param(tmpl, "1")
-    if p1 is not _MISSING:
+    p1 = get_param(tmpl, "1")
+    if p1 is not MISSING:
         _gray_maqaf_walk(p1, pos, positions)
 
 
@@ -178,41 +178,41 @@ def _kq_position_walk(obj, pos, positions):
 
 def _kq_position_walk_template(tmpl, pos, positions):
     name = tmpl["tmpl_name"]
-    if _is_parashah_template(name):
+    if is_parashah_template(name):
         pos[0] += 1
         return
     if name == "נוסח":
-        p1 = _get_param(tmpl, "1")
-        if p1 is not _MISSING:
+        p1 = get_param(tmpl, "1")
+        if p1 is not MISSING:
             _kq_position_walk(p1, pos, positions)
         return
-    if _is_std_kq_template(name) or _is_qere_velo_ketiv_template(name):
-        p2 = _get_param(tmpl, "2")
-        if p2 is not _MISSING:
+    if is_std_kq_template(name) or is_qere_velo_ketiv_template(name):
+        p2 = get_param(tmpl, "2")
+        if p2 is not MISSING:
             _kq_position_walk(p2, pos, positions)
         return
-    if _is_trivial_kq_template(name):
-        p1 = _get_param(tmpl, "1")
-        if p1 is not _MISSING:
+    if is_trivial_kq_template(name):
+        p1 = get_param(tmpl, "1")
+        if p1 is not MISSING:
             _kq_position_walk(p1, pos, positions)
         return
-    if _is_ketiv_velo_qere_template(name):
+    if is_ketiv_velo_qere_template(name):
         return
     if name == "מ:קמץ":
-        pd = _get_param(tmpl, "ד")
-        if pd is not _MISSING:
+        pd = get_param(tmpl, "ד")
+        if pd is not MISSING:
             _kq_position_walk(pd, pos, positions)
         return
     if name in ("מ:לגרמיה-2", "מ:לגרמיה", "מ:פסק"):
         pos[0] += 1
         return
     if name == "מ:כפול":
-        pk = _get_param(tmpl, "כפול")
-        if pk is not _MISSING:
+        pk = get_param(tmpl, "כפול")
+        if pk is not MISSING:
             _kq_position_walk(pk, pos, positions)
         return
-    p1 = _get_param(tmpl, "1")
-    if p1 is not _MISSING:
+    p1 = get_param(tmpl, "1")
+    if p1 is not MISSING:
         _kq_position_walk(p1, pos, positions)
 
 
@@ -263,9 +263,7 @@ def normalize_paseq_spacing(text):
     Narpas:    non-breaking space before, regular space after.
     """
     text = re.sub(r" ?" + _LEG_SENTINEL + r" ?", _LEG_SENTINEL + " ", text)
-    text = re.sub(
-        r" ?" + _NAR_SENTINEL + r" ?", NBSP + _NAR_SENTINEL + " ", text
-    )
+    text = re.sub(r" ?" + _NAR_SENTINEL + r" ?", NBSP + _NAR_SENTINEL + " ", text)
     return text
 
 

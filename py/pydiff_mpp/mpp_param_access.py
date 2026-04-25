@@ -1,14 +1,14 @@
 """MPP template parameter access helpers.
 
 Exports:
-    _MISSING   — sentinel for absent parameters
-    _get_param — read a template parameter across historical formats
+    MISSING   — sentinel for absent parameters
+    get_param — read a template parameter across historical formats
 """
 
-_MISSING = object()
+MISSING = object()
 
 
-def _get_param(tmpl, key):
+def get_param(tmpl, key):
     """Look up a single template parameter by key.
 
     Handles all historical formats:
@@ -18,7 +18,7 @@ def _get_param(tmpl, key):
         "key=value" strings for named keys like "ד=...",
         or ["key=", value] lists when value is complex)
 
-    Returns the value, or _MISSING if the key is absent.
+    Returns the value, or MISSING if the key is absent.
     """
     for dict_key in ("tmpl_params", "tmpl_args_dic"):
         d = tmpl.get(dict_key)
@@ -46,4 +46,4 @@ def _get_param(tmpl, key):
                     if not head and len(tail) == 1:
                         return tail[0]
                     return ([head] if head else []) + tail
-    return _MISSING
+    return MISSING

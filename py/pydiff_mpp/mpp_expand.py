@@ -1,6 +1,6 @@
 """Expand structural MPP diffs into note-scoped sub-diffs when needed."""
 
-from pydiff_mpp.mpp_structure import _template_name_multiset_delta
+from pydiff_mpp.mpp_structure import template_name_multiset_delta
 from pydiff_mpp.mpp_template_change_desc import kq_if_template_addition_parts_list
 
 _TEMPLATE_REMOVAL_CATS = {
@@ -13,7 +13,7 @@ _KQ_TRIVIAL_NAMES = frozenset(['קו"כ-אם', 'מ:קו"כ-אם-2'])
 
 def _split_kq_if_additions(diff):
     """Split pure trivial-kq additions into one sub-diff per added instance."""
-    added, removed = _template_name_multiset_delta(diff["old_ep"], diff["new_ep"])
+    added, removed = template_name_multiset_delta(diff["old_ep"], diff["new_ep"])
     if removed or not added or any(name not in _KQ_TRIVIAL_NAMES for name in added):
         return None
 
@@ -43,7 +43,7 @@ def _split_kq_if_additions(diff):
 
 def _is_kq_trivial_rename(diff):
     """Return True if diff is a pure bot-edit rename: קו"כ-אם → מ:קו"כ-אם-2."""
-    added, removed = _template_name_multiset_delta(diff["old_ep"], diff["new_ep"])
+    added, removed = template_name_multiset_delta(diff["old_ep"], diff["new_ep"])
     if not added or not removed:
         return False
     if not all(n == 'קו"כ-אם' for n in removed):
@@ -61,7 +61,7 @@ def split_structural_diff(diff):
     if kq_if_split is not None:
         return kq_if_split
 
-    added, removed = _template_name_multiset_delta(diff["old_ep"], diff["new_ep"])
+    added, removed = template_name_multiset_delta(diff["old_ep"], diff["new_ep"])
     splittable = set(removed) & _TEMPLATE_REMOVAL_CATS.keys()
     if added or len(splittable) < 2:
         return None

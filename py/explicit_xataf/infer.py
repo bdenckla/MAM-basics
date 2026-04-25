@@ -5,6 +5,11 @@ Rules (derived from Yeivin §387–390 and confirmed against all 664 entries):
 1. Before guttural (א/ה/ח/ע) + qamats → ḥataf-qamats
 2. Before guttural (א/ה/ח/ע) + ḥiriq → ḥiriq (pseudo ḥataf-ḥiriq)
 3. Otherwise → ḥataf-pataḥ
+
+Exports:
+    varika_positions — positions of varika marks in a word
+    infer_replacement — inferred replacement for single-varika words
+    is_inferrable — check inferred-vowel consistency against xataf spelling
 """
 
 from pycmn import hebrew_letters as hle
@@ -65,7 +70,7 @@ def _infer_replacement_at(varika_word, varika_idx):
     return hpo.XPATAX
 
 
-def _varika_positions(varika_word):
+def varika_positions(varika_word):
     """Return list of (consonant, varika_index) for each varika in the word.
 
     Handles multiple varikas, e.g. Judges 7:7 הַֽמְﬞלַֽקְﬞקִים֙.
@@ -87,9 +92,9 @@ def infer_replacement(varika_word):
     ḥataf-ḥiriq).  Returns None if the word has no varika.
 
     For words with a single varika only. For multiple varikas, use
-    _varika_positions and _infer_replacement_at directly.
+    varika_positions and apply the same inference logic per position.
     """
-    positions = _varika_positions(varika_word)
+    positions = varika_positions(varika_word)
     if not positions:
         return None
     _cons, vi = positions[0]
@@ -123,7 +128,7 @@ def is_inferrable(varika_word, xataf_word):
     shewa+varika replaced — it just has to contain each consonant that
     carried shewa+varika with the inferred ḥataf vowel among its marks.
     """
-    positions = _varika_positions(varika_word)
+    positions = varika_positions(varika_word)
     if not positions:
         return True
     for cons, vi in positions:

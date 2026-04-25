@@ -11,8 +11,8 @@ from pycmn import hebrew_points as hpo
 from pycmn.hebrew_punctuation import NU_GMAQ
 from pycmn.str_defs import DOUB_VERT_LINE
 from pydiff_mpp.mpp_structure import (
-    _collect_template_names,
-    _template_name_multiset_delta,
+    collect_template_names,
+    template_name_multiset_delta,
 )
 
 # ── Character classification ─────────────────────────────────
@@ -99,8 +99,8 @@ def _has_reuveni(text):
 def _maqaf_afor_changed(diff):
     """True if the מ:מקף אפור template count differs between old and new EP."""
     _MA = "מ:מקף אפור"
-    old_c = Counter(n for n in _collect_template_names(diff["old_ep"]) if n == _MA)
-    new_c = Counter(n for n in _collect_template_names(diff["new_ep"]) if n == _MA)
+    old_c = Counter(n for n in collect_template_names(diff["old_ep"]) if n == _MA)
+    new_c = Counter(n for n in collect_template_names(diff["new_ep"]) if n == _MA)
     return old_c[_MA] != new_c[_MA]
 
 
@@ -167,9 +167,9 @@ def _classify_text_change(diff):
 def _classify_structural_change(diff):
     """Classify a diff where structure changed but body text didn't."""
     # Check for legarmeih → paseq pattern by looking at template names
-    added, removed = _template_name_multiset_delta(diff["old_ep"], diff["new_ep"])
-    old_names = set(_collect_template_names(diff["old_ep"]))
-    new_names = set(_collect_template_names(diff["new_ep"]))
+    added, removed = template_name_multiset_delta(diff["old_ep"], diff["new_ep"])
+    old_names = set(collect_template_names(diff["old_ep"]))
+    new_names = set(collect_template_names(diff["new_ep"]))
     _LEGAR = {"מ:לגרמיה", "מ:לגרמיה-2"}
     if _LEGAR & (old_names ^ new_names):
         return "legarmeih-paseq"

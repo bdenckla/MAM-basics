@@ -268,7 +268,7 @@ def apply_text_ops(old_text, ops):
 # ── Structural apply ─────────────────────────────────────────
 
 # Sentinel indicating that any structure is acceptable (TemplateRestructured)
-_ANY_STRUCTURE = object()
+ANY_STRUCTURE = object()
 
 
 def apply_structural_ops(old_ep_counter, ops):
@@ -276,7 +276,7 @@ def apply_structural_ops(old_ep_counter, ops):
 
     *old_ep_counter* is a Counter of template names from the old EP.
     Returns either a Counter (the expected new template-name counts) or
-    _ANY_STRUCTURE if a TemplateRestructured op was present.
+    ANY_STRUCTURE if a TemplateRestructured op was present.
     """
     result = Counter(old_ep_counter)
     for op in ops:
@@ -287,5 +287,5 @@ def apply_structural_ops(old_ep_counter, ops):
             if result[op.name] <= 0:
                 del result[op.name]
         elif isinstance(op, TemplateRestructured):
-            return _ANY_STRUCTURE
+            return ANY_STRUCTURE
     return result

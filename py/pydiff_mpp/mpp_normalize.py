@@ -14,12 +14,12 @@ Exports:
 import copy
 
 from pydiff_mpp.mpp_flatten import (
-    _is_qere_velo_ketiv_template,
-    _strip_square_brackets,
-    _flatten_element,
+    flatten_element,
+    is_qere_velo_ketiv_template,
+    strip_square_brackets,
 )
-from pydiff_mpp.mpp_param_access import _MISSING, _get_param
-from pydiff_mpp.mpp_structure import _structural_signature
+from pydiff_mpp.mpp_param_access import MISSING, get_param
+from pydiff_mpp.mpp_structure import structural_signature
 
 # ── Text normalization ───────────────────────────────────────
 
@@ -82,17 +82,17 @@ def _normalize_qvk(tmpl):
 
     Synthesize param "2" from param "1" by stripping square brackets.
     """
-    if not _is_qere_velo_ketiv_template(tmpl["tmpl_name"]):
+    if not is_qere_velo_ketiv_template(tmpl["tmpl_name"]):
         return
-    p2 = _get_param(tmpl, "2")
-    if p2 is not _MISSING:
+    p2 = get_param(tmpl, "2")
+    if p2 is not MISSING:
         return  # already two-arg
-    p1 = _get_param(tmpl, "1")
-    if p1 is _MISSING:
+    p1 = get_param(tmpl, "1")
+    if p1 is MISSING:
         return
     # Synthesize param 2
-    flat = _flatten_element(p1)
-    stripped = _strip_square_brackets(flat)
+    flat = flatten_element(p1)
+    stripped = strip_square_brackets(flat)
     if "tmpl_params" in tmpl:
         tmpl["tmpl_params"]["2"] = stripped
     elif "tmpl_args_dic" in tmpl:
@@ -151,4 +151,4 @@ def normalize_ep(ep):
 
 def normalize_structure(ep):
     """Return the structural signature of a normalized EP."""
-    return _structural_signature(normalize_ep(ep))
+    return structural_signature(normalize_ep(ep))

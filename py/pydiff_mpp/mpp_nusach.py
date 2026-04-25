@@ -10,7 +10,7 @@ Exports:
 
 import re
 
-from pydiff_mpp.mpp_param_access import _MISSING, _get_param
+from pydiff_mpp.mpp_param_access import MISSING, get_param
 
 # ── Pointed-Hebrew detection ──────────────────────────────────────
 
@@ -74,19 +74,19 @@ def _render_template(tmpl):
     name = tmpl.get("tmpl_name", "")
     if name == "ש":
         return "<br>"
-    p1 = _get_param(tmpl, "1")
+    p1 = get_param(tmpl, "1")
     if name == "מודגש":
-        inner = _to_raw_html(p1) if p1 is not _MISSING else ""
+        inner = _to_raw_html(p1) if p1 is not MISSING else ""
         return f"<strong>{inner}</strong>"
     if name == "מ:קישור פנימי בהערה":
-        return _to_raw_html(p1) if p1 is not _MISSING else ""
+        return _to_raw_html(p1) if p1 is not MISSING else ""
     if name == "מ:אות-מיוחדת-במילה":
-        return _to_raw_html(p1) if p1 is not _MISSING else ""
+        return _to_raw_html(p1) if p1 is not MISSING else ""
     if name in _SLH_CSS_CLASS:
-        inner = _to_raw_html(p1) if p1 is not _MISSING else ""
+        inner = _to_raw_html(p1) if p1 is not MISSING else ""
         return f'<span class="{_SLH_CSS_CLASS[name]}">{inner}</span>'
     # Unknown template: render param "1" or all params
-    if p1 is not _MISSING:
+    if p1 is not MISSING:
         return _to_raw_html(p1)
     return ""
 

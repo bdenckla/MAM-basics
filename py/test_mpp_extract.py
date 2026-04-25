@@ -381,7 +381,7 @@ class TemplateMultiplicityDiffTests(unittest.TestCase):
         self.assertEqual(serialized["changes"], [{"old": "אִ֖ישׁ", "new": "אֵ֖ישׁ"}])
 
     def test_multiset_delta_preserves_duplicate_template_additions(self):
-        added, removed = mpp_structure._template_name_multiset_delta(
+        added, removed = mpp_structure.template_name_multiset_delta(
             _ezek_40_26_old_ep(), _ezek_40_26_new_ep()
         )
 
@@ -641,7 +641,7 @@ def _kq_triv_rename_new_ep():
 
 class KqTrivial2Tests(unittest.TestCase):
     def test_multiset_delta_detects_kq_triv2_addition(self):
-        added, removed = mpp_structure._template_name_multiset_delta(
+        added, removed = mpp_structure.template_name_multiset_delta(
             _kq_triv2_old_ep(), _kq_triv2_new_ep()
         )
 

@@ -34,19 +34,19 @@ from pydiff_mpp.change_ops import (
 )
 from pydiff_mpp.change_ops_apply import apply_text_ops
 from pydiff_mpp.describe_diff import (
-    _ACCENT_CATS,
-    _LEG_SENTINEL,
-    _MARK_CATS,
-    _NAR_SENTINEL,
-    _collect_paseq_types,
-    _has_paseq,
-    _is_accent,
-    _is_letter,
-    _is_mark,
-    _is_poetic,
-    _qualify,
+    ACCENT_CATS,
+    LEG_SENTINEL,
+    MARK_CATS,
+    NAR_SENTINEL,
+    collect_paseq_types,
+    has_paseq,
+    is_accent,
+    is_letter,
+    is_mark,
+    is_poetic,
+    qualify,
 )
-from pydiff_mpp.mpp_structure import _template_name_multiset_delta
+from pydiff_mpp.mpp_structure import template_name_multiset_delta
 
 # ── Mark / accent extraction ────────────────────────────────
 
@@ -54,17 +54,17 @@ from pydiff_mpp.mpp_structure import _template_name_multiset_delta
 def _extract_mark_ops(old_text, new_text, pred):
     """Extract ChangeOps for mark/accent differences.
 
-    *pred* selects the character type (_is_accent or _is_mark).
+    *pred* selects the character type (is_accent or is_mark).
     Returns a list of ChangeOps, or None if there are no differences.
     """
-    old_letter_counts = Counter(ch for ch in old_text if _is_letter(ch))
-    new_letter_counts = Counter(ch for ch in new_text if _is_letter(ch))
+    old_letter_counts = Counter(ch for ch in old_text if is_letter(ch))
+    new_letter_counts = Counter(ch for ch in new_text if is_letter(ch))
     # When the letter inventory changed, occurrence numbers shift and the
     # mark-level diff produces bogus MarkMoved ops.  Fall back.
     if old_letter_counts != new_letter_counts:
         return None
-    old_qualified = _qualify(old_text, pred)
-    new_qualified = _qualify(new_text, pred)
+    old_qualified = qualify(old_text, pred)
+    new_qualified = qualify(new_text, pred)
 
     # Pure reorder: same items in a different order on the same letter
     if (
@@ -196,8 +196,8 @@ def _extract_paseq_ops(old_text, new_text, old_ep=None, new_ep=None):
     if old_ep is not None and new_ep is not None:
         old_types = []
         new_types = []
-        _collect_paseq_types(old_ep, old_types)
-        _collect_paseq_types(new_ep, new_types)
+        collect_paseq_types(old_ep, old_types)
+        collect_paseq_types(new_ep, new_types)
         old_counts = Counter(old_types)
         new_counts = Counter(new_types)
         deltas = {
@@ -226,7 +226,7 @@ def _extract_paseq_ops(old_text, new_text, old_ep=None, new_ep=None):
                     new_fragment=fragment[1] if fragment else None,
                 )
             ]
-    if not _has_paseq(old_text) and _has_paseq(new_text):
+    if not has_paseq(old_text) and has_paseq(new_text):
         return [
             PaseqAdded(
                 paseq_type="paseq / legarmeh",
@@ -236,7 +236,7 @@ def _extract_paseq_ops(old_text, new_text, old_ep=None, new_ep=None):
                 new_fragment=fragment[1] if fragment else None,
             )
         ]
-    if _has_paseq(old_text) and not _has_paseq(new_text):
+    if has_paseq(old_text) and not has_paseq(new_text):
         return [
             PaseqRemoved(
                 paseq_type="paseq / legarmeh",
@@ -324,7 +324,7 @@ def _extract_maqaf_ops(old_text, new_text):
 
 def _extract_structural_ops(old_ep, new_ep):
     """Extract TemplateAdded/Removed/Restructured ops."""
-    added, removed = _template_name_multiset_delta(old_ep, new_ep)
+    added, removed = template_name_multiset_delta(old_ep, new_ep)
     ops = []
     for name in added:
         ops.append(TemplateAdded(name=name))
@@ -347,7 +347,7 @@ def extract_change_ops(
     - rendered to English via change_ops_render.render_english()
     - mechanically applied via change_ops_apply.apply_text_ops()
     """
-    poetic = _is_poetic(book, chapter, verse)
+    poetic = is_poetic(book, chapter, verse)
 
     if category == "maqaf-afor":
         ops = _extract_maqaf_ops(old_text, new_text)
@@ -356,13 +356,13 @@ def extract_change_ops(
         if intermediate == new_text:
             return ops
         # Try mark extraction for secondary changes (meteg, rafe, etc.)
-        mark_ops = _extract_mark_ops(intermediate, new_text, _is_mark)
+        mark_ops = _extract_mark_ops(intermediate, new_text, is_mark)
         if mark_ops:
             combined = ops + mark_ops
             if apply_text_ops(old_text, combined) == new_text:
                 return combined
         # Try accent extraction for secondary accent changes
-        accent_ops = _extract_mark_ops(intermediate, new_text, _is_accent)
+        accent_ops = _extract_mark_ops(intermediate, new_text, is_accent)
         if accent_ops:
             combined = ops + accent_ops
             if apply_text_ops(old_text, combined) == new_text:
@@ -375,24 +375,24 @@ def extract_change_ops(
     if category == "legarmeih-paseq":
         return _extract_paseq_ops(old_text, new_text, old_ep, new_ep)
 
-    if category in _ACCENT_CATS:
-        ops = _extract_mark_ops(old_text, new_text, _is_accent)
+    if category in ACCENT_CATS:
+        ops = _extract_mark_ops(old_text, new_text, is_accent)
         if ops:
             return ops
         return [GenericTextReplace(old_fragment=old_text, new_fragment=new_text)]
 
-    if category in _MARK_CATS:
-        ops = _extract_mark_ops(old_text, new_text, _is_mark)
+    if category in MARK_CATS:
+        ops = _extract_mark_ops(old_text, new_text, is_mark)
         if ops:
             return ops
         return [GenericTextReplace(old_fragment=old_text, new_fragment=new_text)]
 
     if category == "misc":
         # Try accents first, then marks
-        ops = _extract_mark_ops(old_text, new_text, _is_accent)
+        ops = _extract_mark_ops(old_text, new_text, is_accent)
         if ops:
             return ops
-        ops = _extract_mark_ops(old_text, new_text, _is_mark)
+        ops = _extract_mark_ops(old_text, new_text, is_mark)
         if ops:
             return ops
         return [GenericTextReplace(old_fragment=old_text, new_fragment=new_text)]
