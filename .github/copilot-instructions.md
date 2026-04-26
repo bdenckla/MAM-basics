@@ -26,6 +26,37 @@ For execution, all `py/main_*.py` scripts use paths like `../MAM-parsed` that ar
 
 Do not `cd` into `py/` before running — `../MAM-parsed` would then resolve to the wrong location.
 
+## Wikisource Bot Runs — Explicit Pywikibot Config Dir Required
+
+When running `py/main_ws_bot.py`, always provide the pywikibot config
+directory explicitly, either by:
+
+- passing `-dir:<path-to-.pywikibot>` (preferred), or
+- setting `PYWIKIBOT_DIR`.
+
+Do not rely on pywikibot defaults. Default discovery can place runtime
+artifacts (for example `apicache/` and `throttle.ctrl`) in the current
+working directory and can trigger interactive auth prompts that stall
+automation.
+
+With an explicit `-dir:` or `PYWIKIBOT_DIR`, those runtime artifacts are
+written under that pywikibot base directory instead of whichever working
+directory happened to be active (unless you intentionally point `-dir` to
+the working directory).
+
+Required command shape (Windows):
+
+```
+.venv\Scripts\python.exe py\main_ws_bot.py --edits <path> -dir:$env:USERPROFILE/.pywikibot
+```
+
+Alternative:
+
+```
+$env:PYWIKIBOT_DIR = "$env:USERPROFILE/.pywikibot"
+.venv\Scripts\python.exe py\main_ws_bot.py --edits <path>
+```
+
 ## Temporary Python Scripts
 
 Put reusable Python scripts that should be tracked under `py/`.

@@ -3,15 +3,18 @@ Edit Hebrew Wikisource pages using a pywikibot-based automation bot.
 
 Usage (run from repo root):
     .venv/Scripts/python.exe py/main_ws_bot.py --edits path.json -dir:path/to/.pywikibot
+    $env:PYWIKIBOT_DIR="$env:USERPROFILE/.pywikibot"; .venv/Scripts/python.exe py/main_ws_bot.py --edits path.json
     .venv/Scripts/python.exe py/main_ws_bot.py --edits path.json -dir:... --book39 Deuter
     .venv/Scripts/python.exe py/main_ws_bot.py --edits path.json -dir:... --section6 SifEm
 """
 
 import argparse
+import os
 
 import pywikibot
 
 from py_misc import my_utils_for_mainish as my_utils_fm
+from py_misc import get_wikisource_plan as wsplan
 from pycmn import mam_bknas_and_std_bknas as mbkn_a_sbkn
 from pycmn import bib_locales as tbn
 from pycmn import file_io
@@ -24,8 +27,9 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--edits", required=True)  # path to JSON edit spec
     wsds.add_selector_opts(parser)
-    args, _pywikibot_args = parser.parse_known_args()
+    args, pywikibot_args = parser.parse_known_args()
     wsds.validate_selector_args(args, parser)
+    _assert_pywikibot_dir_configured(parser, pywikibot_args)
     edits_ctx = wbe.load_edits(args.edits)
     summary = edits_ctx["summary"]
     assert summary
@@ -72,6 +76,61 @@ def _run_bot_on_book(botctx, book_plan):
     for chapter_plan in wsplan.get_chapter_plans(book_plan):
         _run_bot_on_chapter(botctx, bk39id, book_contents, chapter_plan)
     _write_book(book_contents, he_bn_sbn)
+
+
+def _assert_pywikibot_dir_configured(parser, pywikibot_args):
+    pywikibot_dir = _resolve_pywikibot_dir(pywikibot_args)
+    if not pywikibot_dir:
+        parser.error(
+            "Missing pywikibot config directory. Pass -dir:<path-to-.pywikibot> "
+            "or set PYWIKIBOT_DIR. See py/ws/pywikibot-setup.md"
+        )
+    _assert_pywikibot_auth_files_present(parser, pywikibot_dir)
+
+
+def _has_dir_arg(pywikibot_args):
+    return _dir_from_pywikibot_args(pywikibot_args) is not None
+
+
+def _has_pywikibot_dir_env():
+    return bool(os.environ.get("PYWIKIBOT_DIR")) or bool(
+        os.environ.get("PYWIKIBOT_DIR_PWB")
+    )
+
+
+def _resolve_pywikibot_dir(pywikibot_args):
+    dir_arg = _dir_from_pywikibot_args(pywikibot_args)
+    if dir_arg:
+        return _normalize_path(dir_arg)
+    env_dir = os.environ.get("PYWIKIBOT_DIR")
+    if env_dir:
+        return _normalize_path(env_dir)
+    env_dir_pwb = os.environ.get("PYWIKIBOT_DIR_PWB")
+    if env_dir_pwb:
+        return _normalize_path(env_dir_pwb)
+    return None
+
+
+def _dir_from_pywikibot_args(pywikibot_args):
+    for idx, arg in enumerate(pywikibot_args):
+        if arg.startswith("-dir:"):
+            return arg.split(":", 1)[1]
+        if arg == "-dir" and idx + 1 < len(pywikibot_args):
+            return pywikibot_args[idx + 1]
+    return None
+
+
+def _normalize_path(path):
+    return os.path.abspath(os.path.expanduser(os.path.expandvars(path)))
+
+
+def _assert_pywikibot_auth_files_present(parser, pywikibot_dir):
+    user_config_path = os.path.join(pywikibot_dir, "user-config.py")
+    password_path = os.path.join(pywikibot_dir, "password.py")
+    if not os.path.isfile(user_config_path):
+        parser.error(f"Missing {user_config_path}. See py/ws/pywikibot-setup.md")
+    if not os.path.isfile(password_path):
+        parser.error(f"Missing {password_path}. See py/ws/pywikibot-setup.md")
 
 
 _OUT_PATH_MISC = "out/mam-ws-bot-misc"

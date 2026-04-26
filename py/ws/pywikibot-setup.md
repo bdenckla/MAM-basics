@@ -21,3 +21,31 @@ directory with credentials.  This repo tracks the config file as
    passes `-dir:${env:USERPROFILE}/.pywikibot` so pywikibot will find these
    files automatically.  For command-line use, pass the same `-dir`
    argument or set `PYWIKIBOT_DIR=~/.pywikibot`.
+
+## Always pass config location explicitly
+
+To avoid accidental cache/control files in the repo root and avoid
+interactive auth surprises, always provide one of these when running
+`main_ws_bot.py` from the command line:
+
+1. `-dir:$env:USERPROFILE/.pywikibot`
+2. `PYWIKIBOT_DIR` environment variable
+
+Examples (PowerShell):
+
+       .venv\Scripts\python.exe py\main_ws_bot.py --edits path.json -dir:$env:USERPROFILE/.pywikibot
+
+       $env:PYWIKIBOT_DIR = "$env:USERPROFILE/.pywikibot"
+       .venv\Scripts\python.exe py\main_ws_bot.py --edits path.json
+
+`main_ws_bot.py` now fails fast if neither mechanism is used.
+
+Runtime files such as `apicache/` and `throttle.ctrl` are written under
+the resolved pywikibot base directory. Supplying `-dir:` or
+`PYWIKIBOT_DIR` makes that location explicit and predictable.
+
+It also fails fast if either of these files is missing in the resolved
+pywikibot directory:
+
+- `user-config.py`
+- `password.py`

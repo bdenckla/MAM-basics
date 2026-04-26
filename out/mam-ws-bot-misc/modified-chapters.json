@@ -65,10 +65,6 @@
   },
   {
     "book39": "Joshua",
-    "chapter": 3
-  },
-  {
-    "book39": "Joshua",
     "chapter": 8
   },
   {
@@ -192,10 +188,6 @@
     "chapter": 32
   },
   {
-    "book39": "Jeremiah",
-    "chapter": 51
-  },
-  {
     "book39": "Ezekiel",
     "chapter": 3
   },
@@ -210,10 +202,6 @@
   {
     "book39": "Ezekiel",
     "chapter": 20
-  },
-  {
-    "book39": "Ezekiel",
-    "chapter": 27
   },
   {
     "book39": "Ezekiel",
@@ -269,15 +257,7 @@
   },
   {
     "book39": "Psalms",
-    "chapter": 18
-  },
-  {
-    "book39": "Psalms",
     "chapter": 58
-  },
-  {
-    "book39": "Psalms",
-    "chapter": 90
   },
   {
     "book39": "Psalms",
@@ -368,10 +348,6 @@
     "chapter": 5
   },
   {
-    "book39": "Ecclesiastes",
-    "chapter": 10
-  },
-  {
     "book39": "Daniel",
     "chapter": 1
   },
@@ -386,9 +362,5 @@
   {
     "book39": "Ezra",
     "chapter": 5
-  },
-  {
-    "book39": "Nehemiah",
-    "chapter": 1
   }
 ]
