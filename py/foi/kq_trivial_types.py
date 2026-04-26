@@ -7,6 +7,7 @@ from pycmn import hebrew_letters as hl
 from pycmn import hebrew_points as hpo
 from pycmn import hebrew_punctuation as hpu
 from pycmn import template_names as tmpln
+from pycmn import uni_denorm as udn
 from pycmn import ws_tmpl2 as wtp
 
 MISC = "misc"
@@ -154,4 +155,4 @@ _EXTRA_ALEF_POINTED_PATTERN = re.compile(hl.ALEF + "(?:" + hpo.RAFE + ")?")
 
 
 def _strip_accents_and_punctuation(text):
-    return _STRIP_PATT.sub("", text)
+    return _STRIP_PATT.sub("", udn.give_std_mark_order(text))

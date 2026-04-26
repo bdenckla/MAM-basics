@@ -35,6 +35,11 @@ class TrivialKqSubtypeClassifierTests(unittest.TestCase):
 
         self.assertEqual(ktt.classify_tmpl(tmpl), ktt.QYV)
 
+    def test_classify_qyv_with_shin_dot_variant(self):
+        tmpl = _trivial_tmpl("וַאֲנָשָׁ֨ו", "ואנשו", "וַאֲנָשָׁ֨יו")
+
+        self.assertEqual(ktt.classify_tmpl(tmpl), ktt.QYV)
+
     def test_classify_hi_spelled_hu(self):
         tmpl = _trivial_tmpl("הַהִ֖וא", "ההוא", "הַהִ֖יא")
 

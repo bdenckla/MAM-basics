@@ -8,7 +8,13 @@ from py_misc import get_wikisource_plan as wsplan
 from pycmn import hebrew_verse_numerals as hvn
 from pycmn import mam_bknas_and_std_bknas as mbkn_a_sbkn
 
-__all__ = ["parse_args", "selected_book_plans", "affected_bkids"]
+__all__ = [
+    "add_selector_opts",
+    "validate_selector_args",
+    "parse_args",
+    "selected_book_plans",
+    "affected_bkids",
+]
 
 
 def _positive_int(value):
@@ -18,32 +24,44 @@ def _positive_int(value):
     return int_value
 
 
-def _parser():
-    out_parser = argparse.ArgumentParser()
-    out_parser.add_argument("--book39")  # e.g. 1Samuel not I Samuel
-    out_parser.add_argument("--chapter", type=_positive_int)  # e.g. 11
-    out_parser.add_argument(
+def add_selector_opts(parser):
+    parser.add_argument("--book39")  # e.g. 1Samuel not I Samuel
+    parser.add_argument("--chapter", type=_positive_int)  # e.g. 11
+    parser.add_argument(
         "--book-chapters-json"
     )  # path to JSON list of book/chapter pairs
-    out_parser.add_argument("--section6")  # e.g. SifEm
+    parser.add_argument("--section6")  # e.g. SifEm
+
+
+def _parser():
+    out_parser = argparse.ArgumentParser()
+    add_selector_opts(out_parser)
     return out_parser
+
+
+def validate_selector_args(args, parser):
+    assert hasattr(args, "book_chapters_json"), args
+    assert hasattr(args, "book39"), args
+    assert hasattr(args, "chapter"), args
+    assert hasattr(args, "section6"), args
+    if args.book_chapters_json:
+        if args.book39 or args.chapter is not None or args.section6:
+            parser.error(
+                "--book-chapters-json is mutually exclusive with --book39,"
+                " --chapter, and --section6"
+            )
+        return
+    if args.chapter is not None:
+        if args.book39 is None:
+            parser.error("--chapter requires --book39")
+        if args.section6 is not None:
+            parser.error("--chapter cannot be combined with --section6")
 
 
 def parse_args(argv=None):
     out_parser = _parser()
     args = out_parser.parse_args(argv)
-    if args.book_chapters_json:
-        if args.book39 or args.chapter is not None or args.section6:
-            out_parser.error(
-                "--book-chapters-json is mutually exclusive with --book39,"
-                " --chapter, and --section6"
-            )
-        return args
-    if args.chapter is not None:
-        if args.book39 is None:
-            out_parser.error("--chapter requires --book39")
-        if args.section6 is not None:
-            out_parser.error("--chapter cannot be combined with --section6")
+    validate_selector_args(args, out_parser)
     return args
 
 

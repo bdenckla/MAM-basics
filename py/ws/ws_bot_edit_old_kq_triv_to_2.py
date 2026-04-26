@@ -19,13 +19,9 @@ For "kq-trivial-to-kq-trivial-2" (a global-transform kind):
   chapters, via a full cif2 AST traversal. No per-occurrence entries
   are needed; "edits" may be omitted or set to {}.
 
-For "kq-trivial-2-add-type-tags" (a global-transform kind):
-    Adds סוג=... to {{מ:קו"כ-אם-2}} for five named trivial k/q
-    subtypes, while leaving subtype misc untagged.
-
 See ws_bot_edit_history.md for a record of previous bots.
 The immediately preceding bot is preserved as
-ws_bot_edit_old_kq_triv_to_2.py.
+ws_bot_edit_old_deuter_meteg.py.
 """
 
 import json
@@ -36,7 +32,6 @@ from pycmn import hebrew_points as hpo
 from ws import ws_get_bk_in_both_fmts as wsin
 from ws import ws_fmt_2_back_to_wikitext as btw
 from ws import ws_bot_edit_kq_triv_to_2 as kq2
-from ws import ws_bot_edit_kq_triv_add_type as kq2_tag
 
 
 def _meteg_removal(old):
@@ -51,10 +46,6 @@ _GLOBAL_TRANSFORM_KINDS = {
     "kq-trivial-to-kq-trivial-2": {
         "fn": kq2.edit_page_text,
         "get_warnings": kq2.get_warnings,
-    },
-    "kq-trivial-2-add-type-tags": {
-        "fn": kq2_tag.edit_page_text,
-        "get_warnings": kq2_tag.get_warnings,
     },
 }
 

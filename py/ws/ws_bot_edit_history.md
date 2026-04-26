@@ -93,13 +93,22 @@ infrastructure has changed enough to make them misleading examples:
 - **JSON files:** `in/mam-ws-bot-edits/`
 - **Preserved as:** `ws_bot_edit_old_deuter_meteg.py`
 
-### Trivial k/q template upgrade — current
+### Trivial k/q template upgrade
 - **Purpose:** Replace all `{{קו"כ-אם}}` calls (old 2-param style) with
   `{{מ:קו"כ-אם-2}}` calls (new 5-param style), per MAM-basics#55.
   New params: pointed ketiv, unpointed ketiv, pointed qere, optional
   `מקורות=` (source), optional `סוג=` (type, deferred to follow-up).
 - **Edit level:** Full cif2 AST traversal via candlers/vandlers/wandlers.
 - **JSON files:** `in/mam-ws-bot-edits/kq-trivial-to-2.json`
+- **Preserved as:** `ws_bot_edit_old_kq_triv_to_2.py`
+
+### Trivial k/q subtype tagging — current
+- **Purpose:** Add `סוג=` labels to `{{מ:קו"כ-אם-2}}` for five named
+  trivial k/q subtypes (`QyV`, `extra-alef`, `hi-spelled-hu`,
+  `n3rh-spelled-n3r`, `xolam-he`) while leaving subtype `misc` untagged,
+  with fail-fast FOI concordance checks.
+- **Edit level:** Full cif2 AST traversal via candlers/vandlers/wandlers.
+- **JSON files:** `in/mam-ws-bot-edits/kq-trivial-2-add-type-tags.json`
 
 ## How to look up the original code
 

@@ -12,20 +12,20 @@ import argparse
 import pywikibot
 
 from py_misc import my_utils_for_mainish as my_utils_fm
-from py_misc import get_wikisource_plan as wsplan
 from pycmn import mam_bknas_and_std_bknas as mbkn_a_sbkn
 from pycmn import bib_locales as tbn
 from pycmn import file_io
 from ws import ws_bot_edit as wbe
+from ws import ws_download_selector as wsds
 
 
 def main():
     """Use a bot to process chapters of Hebrew Wikisource"""
     parser = argparse.ArgumentParser()
     parser.add_argument("--edits", required=True)  # path to JSON edit spec
-    parser.add_argument("--book39")  # e.g. Deuter, Joshua (not I Samuel)
-    parser.add_argument("--section6")  # e.g. SifEm
+    wsds.add_selector_opts(parser)
     args, _pywikibot_args = parser.parse_known_args()
+    wsds.validate_selector_args(args, parser)
     edits_ctx = wbe.load_edits(args.edits)
     summary = edits_ctx["summary"]
     assert summary
@@ -35,7 +35,7 @@ def main():
         "botctx-summary": summary,
         "botctx-edits-ctx": edits_ctx,
     }
-    book_plans = wsplan.get_book_plans(args.book39, args.section6)
+    book_plans = wsds.selected_book_plans(args)
     for book_plan in book_plans:
         _run_bot_on_book(botctx, book_plan)
     wbe.write_warnings(edits_ctx, _OUT_PATH_WARNINGS)

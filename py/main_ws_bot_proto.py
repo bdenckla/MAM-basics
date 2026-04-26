@@ -13,14 +13,17 @@ from functools import partial
 
 from pycmn import bib_locales as tbn
 from pycmn import file_io
+from pycmn import mam_bknas_and_std_bknas as mbkn_a_sbkn
 from ws import ws_get_bk_in_both_fmts as wsin
 from ws import ws_bot_edit as wbe
+from ws import ws_fmt_2_back_to_wikitext as btw
+from ws import ws_download_selector as wsds
 from py_misc.my_utils_for_mainish import show_progress_g
 from pycmn.my_utils import dv_map
 from pycmn.my_utils import dkv_map
 
 
-def almost_main(edits_json_path=None):
+def almost_main(edits_json_path=None, book_plans=None):
     """
     Prototypes the bot by using local file I/O rather than server I/O.
     """
@@ -28,15 +31,41 @@ def almost_main(edits_json_path=None):
         edits_ctx = wbe.load_edits(edits_json_path)
     else:
         edits_ctx = wbe.no_edits()
-    for bk39id in tbn.ALL_BK39_IDS:
+    if book_plans is None:
+        book_plans = list(wsds.selected_book_plans(_default_selector_args()))
+    for book_plan in book_plans:
+        he_bn_sbn, requested_he_chnus = book_plan
+        bk39id = mbkn_a_sbkn.MAM_HBNP_TO_BK39ID[he_bn_sbn]
         show_progress_g(__file__, "book", bk39id)
         wsf2_book = wsin.get_bk_in_fmt_2(_IN_PATH, bk39id)
-        out_book = dkv_map(partial(wbe.edit_cif2, edits_ctx, bk39id), wsf2_book)
+        out_book = dkv_map(
+            (
+                _edit_if_requested,
+                edits_ctx,
+                bk39id,
+                set(requested_he_chnus),
+            ),
+            wsf2_book,
+        )
         osdf = tbn.ordered_short_dash_full_39(bk39id)
         _write_book_lines(osdf, out_book)
         _write_book_fmt_2(osdf, out_book)
     wbe.write_warnings(edits_ctx, _OUT_PATH_WARNINGS)
     wbe.write_modified_chapters(edits_ctx, _OUT_PATH_MODIFIED_CHAPTERS)
+
+
+def _edit_if_requested(edits_ctx, bk39id, requested_he_chnus, he_chnu, cif2):
+    if he_chnu not in requested_he_chnus:
+        return cif2, btw.big_str(he_chnu, cif2)
+    return wbe.edit_cif2(edits_ctx, bk39id, he_chnu, cif2)
+
+
+def _default_selector_args():
+    parser = argparse.ArgumentParser(add_help=False)
+    wsds.add_selector_opts(parser)
+    args = parser.parse_args([])
+    wsds.validate_selector_args(args, parser)
+    return args
 
 
 _IN_PATH = "in/mam-ws"
@@ -75,8 +104,10 @@ def main():
     """
     parser = argparse.ArgumentParser()
     parser.add_argument("--edits")  # path to JSON edit spec (optional)
+    wsds.add_selector_opts(parser)
     args = parser.parse_args()
-    almost_main(args.edits)
+    wsds.validate_selector_args(args, parser)
+    almost_main(args.edits, wsds.selected_book_plans(args))
 
 
 if __name__ == "__main__":
