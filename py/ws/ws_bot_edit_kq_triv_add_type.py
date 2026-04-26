@@ -20,6 +20,7 @@ The caller is responsible for writing them to a file.
 from functools import partial
 
 from foi import kq_trivial_types as ktt
+from foi import kq_trivial_sug as kqs
 from pycmn import bib_locales as tbn
 from pycmn import hebrew_verse_numerals as hvn
 from pycmn import uni_denorm as udn
@@ -47,14 +48,6 @@ _warnings = []
 _subtypes_by_bcv_pqere = None
 
 _TMPL_NAME = 'מ:קו"כ-אם-2'
-
-_TYPE_TEXT = {
-    ktt.QYV: 'כתיב חסר יו"ד בסיומת של קמץ ואחריו וי"ו',
-    ktt.EXTRA_ALEF: 'אל"ף מיותרת',
-    ktt.HI_SPELLED_HU: "כתיב הוא קרי היא",
-    ktt.N3RH_SPELLED_N3R: "כתיב נער קרי נערה",
-    ktt.XOLAM_HE: 'כתיב ה"א בסיומת של חולם',
-}
 
 
 def get_warnings():
@@ -140,7 +133,7 @@ def _transform_kq_triv_add_type(tmpl):
         )
         return [tmpl]
 
-    sug_text = _TYPE_TEXT.get(classifier_subtype)
+    sug_text = kqs.sug_text_for_subtype(classifier_subtype)
     assert sug_text is not None, classifier_subtype
 
     old_els = wtp1.template_elements(tmpl)

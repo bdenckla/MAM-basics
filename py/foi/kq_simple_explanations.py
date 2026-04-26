@@ -103,10 +103,13 @@ _EXPLANATIONS_BY_LABEL = {
             "a trivial ketiv/qere case, where the difference is minor enough that",
             "some editions may choose to show only the pointed ketiv form; subtype",
             "labels such as xolam-he, QyV, hi-spelled-hu, n3rh-spelled-n3r,",
-            "extra-alef, and",
-            "misc appear as the",
+            "extra-alef, misc, and disagree appear as the",
             "last part of the FOI path, and the extra row cell shows the pointed",
-            "qere",
+            "qere. Named subtype buckets require agreement between the",
+            "programmatic classifier and the template סוג value (with missing סוג",
+            "treated as misc). Disagreement rows carry foi_cat, sug_cat, and",
+            "sug_status diagnostics; sug_status=unrecognized means the template",
+            "סוג value is unknown.",
         )
     ),
 }
@@ -119,4 +122,5 @@ _TRIVIAL_SUBTYPE_EXPLANATIONS = {
     "n3rh-spelled-n3r": "that the ketiv writes forms ending in נער while the qere reads the corresponding נערה form with final he",
     "extra-alef": "that the ketiv has one extra alef relative to the qere",
     "misc": "that the trivial ketiv/qere case does not fall under one of the currently recognized subtype buckets",
+    "disagree": "that classifier and template סוג categorization disagree (or סוג is unrecognized), so this row is routed to a diagnostic subtype instead of a named bucket",
 }

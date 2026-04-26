@@ -3,6 +3,7 @@
 
 import json
 
+from foi import kq_trivial_sug as kqs
 from pycmn import bib_locales as tbn
 from pycmn import file_io
 from pycmn import uni_denorm as udn
@@ -45,12 +46,13 @@ def subtype_by_bcv_pqere(
     foi_json_path=DEFAULT_FOI_KQ_SIMPLE_PATH,
     include_misc=True,
 ):
-    """Return {(bcv_short, pqere): subtype} for z-trivial rows."""
+    """Return {(bcv_short, pqere): classifier subtype} for z-trivial rows."""
     out = {}
     for row in _load_foi_rows(foi_json_path):
-        subtype = _z_trivial_subtype(row)
-        if subtype is None:
+        row_subtype = _z_trivial_subtype(row)
+        if row_subtype is None:
             continue
+        subtype = kqs.expected_classifier_subtype_for_foi_row(row_subtype, row)
         if subtype == _MISC_SUBTYPE and not include_misc:
             continue
         pqere = udn.give_std_mark_order(row["pqere"])

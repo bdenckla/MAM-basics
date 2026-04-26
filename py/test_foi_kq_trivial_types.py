@@ -5,19 +5,20 @@ import unittest
 from pycmn import ws_tmpl2 as wtp
 from foi import foi_struct as fct
 from foi import foiz_wt_kq_1
+from foi import kq_trivial_sug as kqs
 from foi import kq_trivial_types as ktt
 
 
-def _trivial_tmpl(pointed_ketiv, unpointed_ketiv, pointed_qere):
-    return wtp.mktmpl(
-        [
-            ['מ:קו"כ-אם-2'],
-            [pointed_ketiv],
-            [unpointed_ketiv],
-            [pointed_qere],
-        ],
-        ignore_equals=True,
-    )
+def _trivial_tmpl(pointed_ketiv, unpointed_ketiv, pointed_qere, sug=None):
+    elements = [
+        ['מ:קו"כ-אם-2'],
+        [pointed_ketiv],
+        [unpointed_ketiv],
+        [pointed_qere],
+    ]
+    if sug is not None:
+        elements.append([f"סוג={sug}"])
+    return wtp.mktmpl(elements)
 
 
 def _std_kq_tmpl(pointed_ketiv, pointed_qere):
@@ -73,7 +74,9 @@ class TrivialKqSubtypeClassifierTests(unittest.TestCase):
 
 class TrivialKqFoiQualificationTests(unittest.TestCase):
     def test_record_kq_as_foi_uses_xolam_he_path_and_pqere(self):
-        tmpl = _trivial_tmpl("סוּתֹֽה", "סותה", "סוּתֽוֹ")
+        tmpl = _trivial_tmpl(
+            "סוּתֹֽה", "סותה", "סוּתֽוֹ", sug=kqs.SUG_TEXT_BY_SUBTYPE[ktt.XOLAM_HE]
+        )
 
         found = foiz_wt_kq_1._record_kq_as_foi(None, tuple(), tmpl)
         foi_path, foi_target = found[0]
@@ -91,7 +94,9 @@ class TrivialKqFoiQualificationTests(unittest.TestCase):
         self.assertEqual(fct.qtar_qual(foi_target), {"pqere": "סוּתִֽי"})
 
     def test_record_kq_as_foi_uses_qyv_path_and_pqere(self):
-        tmpl = _trivial_tmpl("עֹֽלוֹתָ֔ו", "עלותו", "עֹֽלוֹתָ֔יו")
+        tmpl = _trivial_tmpl(
+            "עֹֽלוֹתָ֔ו", "עלותו", "עֹֽלוֹתָ֔יו", sug=kqs.SUG_TEXT_BY_SUBTYPE[ktt.QYV]
+        )
 
         found = foiz_wt_kq_1._record_kq_as_foi(None, tuple(), tmpl)
         foi_path, foi_target = found[0]
@@ -100,7 +105,12 @@ class TrivialKqFoiQualificationTests(unittest.TestCase):
         self.assertEqual(fct.qtar_qual(foi_target), {"pqere": "עֹֽלוֹתָ֔יו"})
 
     def test_record_kq_as_foi_uses_hi_spelled_hu_path_and_pqere(self):
-        tmpl = _trivial_tmpl("הַהִ֖וא", "ההוא", "הַהִ֖יא")
+        tmpl = _trivial_tmpl(
+            "הַהִ֖וא",
+            "ההוא",
+            "הַהִ֖יא",
+            sug=kqs.SUG_TEXT_BY_SUBTYPE[ktt.HI_SPELLED_HU],
+        )
 
         found = foiz_wt_kq_1._record_kq_as_foi(None, tuple(), tmpl)
         foi_path, foi_target = found[0]
@@ -109,7 +119,12 @@ class TrivialKqFoiQualificationTests(unittest.TestCase):
         self.assertEqual(fct.qtar_qual(foi_target), {"pqere": "הַהִ֖יא"})
 
     def test_record_kq_as_foi_uses_n3rh_spelled_n3r_path_and_pqere(self):
-        tmpl = _trivial_tmpl("הַֽנַּעֲרָ֖", "הנער", "הַֽנַּעֲרָ֖ה")
+        tmpl = _trivial_tmpl(
+            "הַֽנַּעֲרָ֖",
+            "הנער",
+            "הַֽנַּעֲרָ֖ה",
+            sug=kqs.SUG_TEXT_BY_SUBTYPE[ktt.N3RH_SPELLED_N3R],
+        )
 
         found = foiz_wt_kq_1._record_kq_as_foi(None, tuple(), tmpl)
         foi_path, foi_target = found[0]
@@ -118,7 +133,12 @@ class TrivialKqFoiQualificationTests(unittest.TestCase):
         self.assertEqual(fct.qtar_qual(foi_target), {"pqere": "הַֽנַּעֲרָ֖ה"})
 
     def test_record_kq_as_foi_uses_extra_alef_path_and_pqere(self):
-        tmpl = _trivial_tmpl("נְבִיַּאיָּ֔א", "נביאיא", "נְבִיַּיָּ֔א")
+        tmpl = _trivial_tmpl(
+            "נְבִיַּאיָּ֔א",
+            "נביאיא",
+            "נְבִיַּיָּ֔א",
+            sug=kqs.SUG_TEXT_BY_SUBTYPE[ktt.EXTRA_ALEF],
+        )
 
         found = foiz_wt_kq_1._record_kq_as_foi(None, tuple(), tmpl)
         foi_path, foi_target = found[0]
@@ -134,6 +154,82 @@ class TrivialKqFoiQualificationTests(unittest.TestCase):
 
         self.assertEqual(foi_path, ("kq-simple", "k1q1"))
         self.assertIsInstance(foi_target, tuple)
+
+    def test_record_kq_as_foi_routes_mismatch_to_disagree_with_diagnostics(self):
+        tmpl = _trivial_tmpl(
+            "עֹֽלוֹתָ֔ו",
+            "עלותו",
+            "עֹֽלוֹתָ֔יו",
+            sug=kqs.SUG_TEXT_BY_SUBTYPE[ktt.XOLAM_HE],
+        )
+
+        found = foiz_wt_kq_1._record_kq_as_foi(None, tuple(), tmpl)
+        foi_path, foi_target = found[0]
+
+        self.assertEqual(foi_path, ("kq-simple", "z-trivial", kqs.DISAGREE))
+        self.assertEqual(
+            fct.qtar_qual(foi_target),
+            {
+                "pqere": "עֹֽלוֹתָ֔יו",
+                "foi_cat": ktt.QYV,
+                "sug_cat": ktt.XOLAM_HE,
+                "sug_status": kqs.SUG_STATUS_MISMATCH,
+            },
+        )
+
+    def test_record_kq_as_foi_routes_unrecognized_sug_to_disagree(self):
+        tmpl = _trivial_tmpl("הַהִ֖וא", "ההוא", "הַהִ֖יא", sug="סוג לא מוכר")
+
+        found = foiz_wt_kq_1._record_kq_as_foi(None, tuple(), tmpl)
+        foi_path, foi_target = found[0]
+
+        self.assertEqual(foi_path, ("kq-simple", "z-trivial", kqs.DISAGREE))
+        self.assertEqual(fct.qtar_qual(foi_target)["foi_cat"], ktt.HI_SPELLED_HU)
+        self.assertEqual(
+            fct.qtar_qual(foi_target)["sug_status"], kqs.SUG_STATUS_UNRECOGNIZED
+        )
+        self.assertEqual(
+            fct.qtar_qual(foi_target)["sug_cat"],
+            kqs.UNRECOGNIZED_SUG_CAT_PREFIX + "סוג לא מוכר",
+        )
+
+
+class TrivialKqSugReconciliationTests(unittest.TestCase):
+    def test_reconcile_agreement_keeps_named_subtype(self):
+        tmpl = _trivial_tmpl(
+            "הַהִ֖וא",
+            "ההוא",
+            "הַהִ֖יא",
+            sug=kqs.SUG_TEXT_BY_SUBTYPE[ktt.HI_SPELLED_HU],
+        )
+
+        final_subtype, diagnostics = kqs.reconcile_subtype_for_foi(tmpl)
+
+        self.assertEqual(final_subtype, ktt.HI_SPELLED_HU)
+        self.assertEqual(diagnostics, {})
+
+    def test_reconcile_missing_sug_is_misc_and_can_mismatch(self):
+        tmpl = _trivial_tmpl("הַהִ֖וא", "ההוא", "הַהִ֖יא")
+
+        final_subtype, diagnostics = kqs.reconcile_subtype_for_foi(tmpl)
+
+        self.assertEqual(final_subtype, kqs.DISAGREE)
+        self.assertEqual(
+            diagnostics,
+            {
+                "foi_cat": ktt.HI_SPELLED_HU,
+                "sug_cat": ktt.MISC,
+                "sug_status": kqs.SUG_STATUS_MISMATCH,
+            },
+        )
+
+    def test_reconcile_missing_sug_can_match_misc(self):
+        tmpl = _trivial_tmpl("סוּתֹֽה", "סותה", "סוּתִֽי")
+
+        final_subtype, diagnostics = kqs.reconcile_subtype_for_foi(tmpl)
+
+        self.assertEqual(final_subtype, ktt.MISC)
+        self.assertEqual(diagnostics, {})
 
 
 if __name__ == "__main__":

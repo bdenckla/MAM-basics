@@ -3,6 +3,7 @@
 import unittest
 
 from foi import kq_trivial_types as ktt
+from foi import kq_trivial_sug as kqs
 from pycmn import bib_locales as tbn
 from pycmn import uni_denorm as udn
 from pycmn import ws_tmpl1 as wtp1
@@ -48,34 +49,30 @@ class WsBotKqTrivialAddTypeTests(unittest.TestCase):
             (
                 _trivial_tmpl("עֹֽלוֹתָ֔ו", "עלותו", "עֹֽלוֹתָ֔יו"),
                 ktt.QYV,
-                'כתיב חסר יו"ד בסיומת של קמץ ואחריו וי"ו',
             ),
             (
                 _trivial_tmpl("מָרִ֕אי", "מראי", "מָרִ֕י"),
                 ktt.EXTRA_ALEF,
-                'אל"ף מיותרת',
             ),
             (
                 _trivial_tmpl("הַהִ֖וא", "ההוא", "הַהִ֖יא"),
                 ktt.HI_SPELLED_HU,
-                "כתיב הוא קרי היא",
             ),
             (
                 _trivial_tmpl("הַֽנַּעֲרָ֖", "הנער", "הַֽנַּעֲרָ֖ה"),
                 ktt.N3RH_SPELLED_N3R,
-                "כתיב נער קרי נערה",
             ),
             (
                 _trivial_tmpl("סוּתֹֽה", "סותה", "סוּתֽוֹ"),
                 ktt.XOLAM_HE,
-                'כתיב ה"א בסיומת של חולם',
             ),
         ]
-        for idx, (tmpl, subtype, expected_sug) in enumerate(cases, start=1):
+        for idx, (tmpl, subtype) in enumerate(cases, start=1):
             with self.subTest(subtype=subtype):
                 _set_ctx("Joshua", 1, idx)
                 bcv_short = _bcv_short("Joshua", 1, idx)
                 mod._subtypes_by_bcv_pqere = {(bcv_short, _pqere(tmpl)): subtype}
+                expected_sug = kqs.SUG_TEXT_BY_SUBTYPE[subtype]
 
                 transformed = mod._transform_kq_triv_add_type(tmpl)[0]
                 transformed2 = wtp.use_tmpl2(transformed)

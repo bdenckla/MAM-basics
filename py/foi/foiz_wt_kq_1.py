@@ -7,6 +7,7 @@ from render_wt import render_wikitext_handlers as handlers
 from render_wt import render_wikitext_helpers as wt_help
 from pycmn import template_names as tmpln
 from foi import kq_trivial_types
+from foi import kq_trivial_sug
 
 
 def find_fois_wt(mroge):
@@ -21,8 +22,12 @@ def _record_kq_as_foi(_foilers, stack, tmpl):
     foi_target_proper = _html_for_wtseq((tmpl,))
     foi_qualifier = {}
     if tmpl_name == 'מ:קו"כ-אם-2':
-        foi_path = *foi_path, kq_trivial_types.subtype_for_path(tmpl)
+        reconciled_subtype, reconciled_qualifier = (
+            kq_trivial_sug.reconcile_subtype_for_foi(tmpl)
+        )
+        foi_path = *foi_path, reconciled_subtype
         foi_qualifier["pqere"] = kq_trivial_types.pointed_qere_text(tmpl)
+        foi_qualifier.update(reconciled_qualifier)
     if stack_summary:
         foi_qualifier["stack_str"] = stack_summary
     if not foi_qualifier:
