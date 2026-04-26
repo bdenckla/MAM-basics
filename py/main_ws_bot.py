@@ -133,8 +133,8 @@ def _assert_pywikibot_auth_files_present(parser, pywikibot_dir):
         parser.error(f"Missing {password_path}. See py/ws/pywikibot-setup.md")
 
 
-_OUT_PATH_BOOKS = "out/mam-ws-bot-real"
-_OUT_PATH_MISC = "out/mam-ws-bot-real-misc"
+_OUT_PATH_BOOKS = "out/mam-ws-bot/real"
+_OUT_PATH_MISC = "out/mam-ws-bot/real-misc"
 _OUT_PATH_WARNINGS = f"{_OUT_PATH_MISC}/warnings.json"
 _OUT_PATH_MODIFIED_CHAPTERS = f"{_OUT_PATH_MISC}/modified-chapters.json"
 

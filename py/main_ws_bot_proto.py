@@ -69,9 +69,9 @@ def _default_selector_args():
 
 
 _IN_PATH = "in/mam-ws"
-_OUT_PATH_LINES = "out/mam-ws-bot-proto"
-_OUT_PATH_FMT_2 = "out/mam-ws-bot-proto-fmt-2"
-_OUT_PATH_MISC = "out/mam-ws-bot-proto-misc"
+_OUT_PATH_LINES = "out/mam-ws-bot/proto"
+_OUT_PATH_FMT_2 = "out/mam-ws-bot/proto-fmt-2"
+_OUT_PATH_MISC = "out/mam-ws-bot/proto-misc"
 _OUT_PATH_WARNINGS = f"{_OUT_PATH_MISC}/warnings.json"
 _OUT_PATH_MODIFIED_CHAPTERS = f"{_OUT_PATH_MISC}/modified-chapters.json"
 
