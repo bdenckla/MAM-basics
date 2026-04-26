@@ -1288,14 +1288,20 @@
     {
       "wtel_subtype": "מ:קו\"כ-אם-2",
       "arg_count": 3,
-      "count": 2,
-      "variations": 2
+      "count": 1,
+      "variations": 3
     },
     {
       "wtel_subtype": "מ:קו\"כ-אם-2",
       "arg_count": 4,
-      "count": 146,
-      "variations": 2
+      "count": 8,
+      "variations": 3
+    },
+    {
+      "wtel_subtype": "מ:קו\"כ-אם-2",
+      "arg_count": 5,
+      "count": 139,
+      "variations": 3
     },
     {
       "wtel_subtype": "מ:קישור בהערה",
