@@ -45,12 +45,12 @@ def label_args_of_doc(foilers, stack, tmpl):
 
 def label_args_of_kq_triv(foilers, stack, tmpl):
     """Label the arguments of the מ:קו"כ-אם-2 template."""
-    # New format: |pketiv|uketiv|pqere|מקורות=(optional)
+    # New format: |pketiv|uketiv|pqere|מקורות=(optional)|סוג=(optional)
     # pketiv: pointed ketiv (param 1)
     # uketiv: unpointed ketiv (param 2)
     # pqere: pointed qere (param 3)
-    # מקורות: optional sources (param 4)
-    assert wtp.template_len(tmpl) in (4, 5)
+    # מקורות and סוג: optional named params
+    assert wtp.template_len(tmpl) in (4, 5, 6)
     pnpv_dic = {
         "kq-triv-pketiv": wtp.template_param_val(tmpl, "1"),
         "kq-triv-pqere": wtp.template_param_val(tmpl, "3"),

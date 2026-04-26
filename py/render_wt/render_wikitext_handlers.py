@@ -236,7 +236,8 @@ def _handle_kq_trivial(hctx, tmpl):
     Handle a trivial ketiv/qere (מ:קו"כ-אם-2): a pointed ketiv, unpointed
     ketiv, and pointed qere.
     """
-    assert wtp.template_len(tmpl) in (3, 4, 5)
+    # Optional named params (e.g. מקורות, סוג) may extend template length.
+    assert wtp.template_len(tmpl) in (3, 4, 5, 6)
     pointed_ketiv = wt_help.render_tmpl_el(hctx, tmpl, 1)
     # structured_note = wt_help.render_tmpl_el(hctx, tmpl, 2)
     return renel.mk_ren_el_tc("mam-kq-trivial", pointed_ketiv)
