@@ -54,7 +54,7 @@
       "default_provenance_doc": "no",
       "pkg_scan_roots": {
         "pycmn": [
-          "pycmn"
+          "py/pycmn"
         ]
       }
     },

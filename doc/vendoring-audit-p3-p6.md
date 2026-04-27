@@ -31,10 +31,10 @@ These are copied to sibling repos. The goal of issue #60 is:
 
 **Naming convention (to enforce or document violations of):**
 Modules intended for vendoring — at **both source and destination** —
-should be named `pycmn` (a directory) or carry a `pycmn_` prefix.
-This applies in MAM-basics itself, not just in destination repos.
-(Example violation: `py/pydiff_mpplus/` in MAM-basics should eventually
-become `py/pycmn_diff_mpplus/`, but that rename is deferred.)
+should follow the current direction of `mb_cmn` (a directory) or an
+`mb_` prefix. This applies in MAM-basics itself, not just in destination
+repos. (Example violation: `py/pydiff_mpplus/` in MAM-basics should
+eventually become `py/mb_diff_mpu/`, but that rename is deferred.)
 
 ---
 
@@ -58,9 +58,8 @@ already exist.
   `holman-ketiv-qere/py/pycmn/`), add `provenance.md` inside that
   directory.
 - If the destination is a larger directory that contains both vendored
-  and non-vendored files, put the provenance note in `__init__.py`
-  (as a module docstring) or in a `provenance.md` next to the relevant
-  files, scoped clearly.
+  and non-vendored files, put the provenance note in a `provenance.md`
+  next to the relevant files, scoped clearly.
 - For `MAM-simple/py-example/`: this entire directory is regenerated
   by `MAM-basics/py/py_misc/mam_simple_copy_py_files.py` (called via
   `main_mam_simple.py`). The provenance doc should say this clearly
@@ -105,23 +104,23 @@ test suite or entry script briefly).
 ## Phase 5: Document Naming Convention Violations; File Follow-up Issues
 
 1. In `MAM-basics/doc/vendoring-inventory.md`, add a section (after
-   the table) listing all modules that violate the `pycmn/pycmn_*`
+   the table) listing all modules that violate the `mb_cmn/mb_*`
    naming convention and therefore need a future rename. At minimum:
-   - MAM-basics `py/pydiff_mpplus/` → should become `py/pycmn_diff_mpplus/`
+   - MAM-basics `py/pydiff_mpplus/` → should become `py/mb_diff_mpu/`
    - holman-ketiv-qere `py/pydiff_mpplus/` → should become
-     `py/pycmn_diff_mpplus/` (destination side)
+     `py/mb_diff_mpu/` (destination side)
    - Any others found during Phase 1.
 
 2. File a GitHub issue in MAM-basics for the `pydiff_mpplus` rename. The
    issue should cover:
    - Rename source side: `MAM-basics/py/pydiff_mpplus/` →
-     `MAM-basics/py/pycmn_diff_mpplus/` (update all imports in MAM-basics)
+     `MAM-basics/py/mb_diff_mpu/` (update all imports in MAM-basics)
    - Rename destination side: `holman-ketiv-qere/py/pydiff_mpplus/` →
-     `holman-ketiv-qere/py/pycmn_diff_mpplus/` (update imports there)
+     `holman-ketiv-qere/py/mb_diff_mpu/` (update imports there)
    - Resolve the partial-file problem: the holman-ketiv-qere copy has
      only `describe_diff.py` + `grapheme_diff.py` of a much larger
      module. Options: (a) refactor MAM-basics to expose just the needed
-    subset cleanly as `pycmn_diff_mpplus`, or (b) accept/document the
+    subset cleanly as `mb_diff_mpu`, or (b) accept/document the
      partial copy explicitly.
 
 3. File follow-up issues for any other naming-convention violations or
@@ -160,7 +159,7 @@ behind MAM-basics). Compare each of the 8 files against current
 
 At completion:
 - Every `active`/`pinned`/`stale`/`generated` vendored destination has
-  a `provenance.md` (or equivalent docstring).
+  a `provenance.md`.
 - Every `diverged` pair has been renamed; imports updated.
 - Every `stale` copy is either refreshed or has an explicit pin note
   in its provenance doc.

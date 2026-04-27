@@ -42,9 +42,10 @@ utilities is `MAM-basics/py/pycmn/`.
 
 **Naming convention (to enforce or document violations of):**
 Modules that are intended to be vendored — at **both source and
-destination** — should be named `pycmn` (a directory) or carry a
-`pycmn_` prefix (e.g., `pycmn_diff_mpplus`). This applies in MAM-basics
-itself, not just in destination repos.
+destination** — should follow the current direction of `mb_cmn` (a
+directory) or an `mb_` prefix (e.g., `mb_diff_mpu`).
+Legacy names (`pycmn`, `pydiff_mpplus`, and similar) still exist in the
+codebase and inventory until the corresponding rename work is finished.
 
 ---
 
@@ -204,7 +205,8 @@ A populated `MAM-basics/doc/vendoring-inventory.md` with:
 - The inventory table, including `category`
 - A short note at the top pointing to issue #60
 - The naming convention stated: all modules intended for vendoring
-  should be `pycmn/` or `pycmn_*` at both source and destination
+  should follow `mb_cmn/` or `mb_*` at both source and destination,
+  with legacy names noted explicitly until renamed
 
 Accepted delivered form:
 - Grouped rows are acceptable.

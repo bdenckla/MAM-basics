@@ -2,12 +2,12 @@
 === holman-ketiv-qere ===
   provenance docs: none
   COPY SCRIPTS: ['holman-ketiv-qere\\py\\main_update_vendored_files.py']
-  pycmn dir (py/pycmn): ['bib_locales.py', 'cantsys.py', 'hebrew_accents.py', 'hebrew_letters.py', 'hebrew_points.py', 'hebrew_punctuation.py', 'hebrew_verse_numerals.py', 'mam_bknas.py', 'mam_bknas_and_std_bknas.py', 'str_defs.py']
+  pycmn dir (py/pycmn): ['bib_locales.py', 'cantsys.py', 'hebrew_accents.py', 'hebrew_letters.py', 'hebrew_points.py', 'hebrew_punctuation.py', 'hebrew_verse_numerals.py', 'mam_bknas.py', 'mam_bknas_and_std_bknas.py', 'str_defs.py', 'template_names.py', 'uni_denorm.py']
 
 === al-hatorah ===
   provenance docs: none
-  copy scripts: none found
-  pycmn dir (pycmn): ['bib_locales.py', 'cantsys.py', 'file_io.py', 'hebrew_accents.py', 'hebrew_letters.py', 'hebrew_points.py', 'hebrew_punctuation.py', 'hebrew_verse_numerals.py', 'mam_bknas.py', 'mam_bknas_and_std_bknas.py', 'minirow.py', 'my_diffs.py', 'my_utils.py', 'read_books_from_mam_parsed_plus.py', 'shrink.py', 'str_defs.py', 'template_names.py', 'uni_denorm.py', 'uni_heb.py', 'uni_norm_fragile.py', 'ws_tmpl1.py', 'ws_tmpl2.py', 'ws_tmpl_named_params.py']
+  COPY SCRIPTS: ['al-hatorah\\py\\main_update_vendored_files.py']
+  pycmn dir (py/pycmn): ['bib_locales.py', 'cantsys.py', 'file_io.py', 'hebrew_accents.py', 'hebrew_letters.py', 'hebrew_points.py', 'hebrew_punctuation.py', 'hebrew_verse_numerals.py', 'mam_bknas.py', 'mam_bknas_and_std_bknas.py', 'minirow.py', 'my_diffs.py', 'my_utils.py', 'provenance.py', 'read_books_from_mam_parsed_plus.py', 'shrink.py', 'str_defs.py', 'template_names.py', 'uni_denorm.py', 'uni_heb.py', 'uni_norm_fragile.py', 'ws_tmpl1.py', 'ws_tmpl2.py', 'ws_tmpl_named_params.py']
 
 === book-of-job ===
   provenance docs: none
@@ -26,7 +26,7 @@
 
 === codex-index-leningrad ===
   provenance docs: none
-  copy scripts: none found
+  COPY SCRIPTS: ['codex-index-leningrad\\main_update_vendored_files.py']
 
 === diffable-pointed-hebrew ===
   provenance docs: none
