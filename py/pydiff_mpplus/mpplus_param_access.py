@@ -1,4 +1,4 @@
-"""MPP template parameter access helpers.
+"""MAM-parsed-plus template parameter access helpers.
 
 Exports:
     MISSING   — sentinel for absent parameters

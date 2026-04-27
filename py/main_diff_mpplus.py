@@ -3,9 +3,9 @@ Compare two git revisions of MAM-parsed plus/ JSON and generate an HTML
 diff report with category filtering.
 
 Usage:
-    .venv/Scripts/python.exe py/main_diff_mpp.py
-    .venv/Scripts/python.exe py/main_diff_mpp.py --old <rev> --new <rev>
-    .venv/Scripts/python.exe py/main_diff_mpp.py --all
+    .venv/Scripts/python.exe py/main_diff_mpplus.py
+    .venv/Scripts/python.exe py/main_diff_mpplus.py --old <rev> --new <rev>
+    .venv/Scripts/python.exe py/main_diff_mpplus.py --all
 
 The revisions are git refs in the ../MAM-parsed repo (commits, tags, branches).
 Output goes to ../MAM-with-doc/gh-pages/change-log/ by default.  If the hash range
@@ -25,7 +25,13 @@ import argparse
 import json
 import os
 import subprocess
-from pydiff_mpp import mpp_extract, mpp_classify, mpp_html, mpp_json, mpp_index
+from pydiff_mpplus import (
+    mpplus_extract,
+    mpplus_classify,
+    mpplus_html,
+    mpplus_json,
+    mpplus_index,
+)
 
 MAM_PARSED_DIR = "../MAM-parsed"
 CHANGE_LOG_DIR = "../MAM-with-doc/gh-pages/change-log"
@@ -114,22 +120,24 @@ def _remove_unpinned_latest_artifacts():
 def _generate_report(old_rev, new_rev, output, *, write_when_empty=True):
     """Generate one diff report. Returns the expanded diff count."""
     print(f"Comparing {old_rev} -> {new_rev} ...")
-    diffs = mpp_extract.diff_all_books(old_rev, new_rev)
+    diffs = mpplus_extract.diff_all_books(old_rev, new_rev)
     print(f"  {len(diffs)} raw changes found")
     if not diffs and not write_when_empty:
         print("  No diffs found; not writing report")
         return 0, _commit_date(old_rev)
-    mpp_classify.classify_diffs(diffs)
-    from pydiff_mpp import mpp_verify
+    mpplus_classify.classify_diffs(diffs)
+    from pydiff_mpplus import mpplus_verify
 
-    mpp_verify.verify_all(diffs)
+    mpplus_verify.verify_all(diffs)
     old_date = _commit_date(old_rev)
     new_date = _commit_date(new_rev)
     os.makedirs(os.path.dirname(output), exist_ok=True)
     json_path = output.removesuffix(".html") + ".json"
-    mpp_json.write_json(diffs, old_rev, new_rev, json_path)
+    mpplus_json.write_json(diffs, old_rev, new_rev, json_path)
     print(f"  JSON written to {json_path}")
-    total = mpp_html.write_report(diffs, old_rev, new_rev, output, old_date, new_date)
+    total = mpplus_html.write_report(
+        diffs, old_rev, new_rev, output, old_date, new_date
+    )
     print(f"  Report written to {output}")
     return total, old_date
 
@@ -148,7 +156,7 @@ def _run_all():
     unpinned_info = _run_unpinned_latest()
     if unpinned_info is not None:
         release_info.append(unpinned_info)
-    mpp_index.write_index(release_info, CHANGE_LOG_DIR)
+    mpplus_index.write_index(release_info, CHANGE_LOG_DIR)
 
 
 def _run_unpinned_latest():

@@ -1,8 +1,8 @@
-"""Helpers for structural template-change descriptions in MPP diff cards."""
+"""Helpers for structural template-change descriptions in MAM-parsed-plus diff cards."""
 
 from collections import Counter
 
-from pydiff_mpp.mpp_flatten import (
+from pydiff_mpplus.mpplus_flatten import (
     flatten_element,
     is_ketiv_velo_qere_template,
     is_parashah_template,
@@ -10,7 +10,7 @@ from pydiff_mpp.mpp_flatten import (
     is_std_kq_template,
     is_trivial_kq_template,
 )
-from pydiff_mpp.mpp_param_access import MISSING, get_param
+from pydiff_mpplus.mpplus_param_access import MISSING, get_param
 
 
 def _iter_named_templates(obj, template_name):

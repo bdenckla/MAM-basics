@@ -12,7 +12,7 @@ Exports:
     render_english — produce an English description from a list of ChangeOps
 """
 
-from pydiff_mpp.change_ops import (
+from pydiff_mpplus.change_ops import (
     ComplexReplace,
     GenericReplace,
     GenericTextReplace,
@@ -30,7 +30,7 @@ from pydiff_mpp.change_ops import (
     TemplateRestructured,
     is_text_op,
 )
-from pydiff_mpp.describe_diff import (
+from pydiff_mpplus.describe_diff import (
     accent_name,
     is_accent,
     is_poetic,
@@ -125,7 +125,7 @@ def _render_one(op, poetic, old_letter_counts=None, new_letter_counts=None):
         return None
 
     if isinstance(op, TemplateAdded):
-        return None  # structural ops handled by mpp_html directly
+        return None  # structural ops handled by mpplus_html directly
 
     if isinstance(op, TemplateRemoved):
         return None

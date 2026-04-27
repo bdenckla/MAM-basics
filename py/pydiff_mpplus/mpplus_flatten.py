@@ -1,4 +1,4 @@
-"""Flatten MPP EP structures to body text and track נוסח overlaps.
+"""Flatten MAM-parsed-plus EP structures to body text and track נוסח overlaps.
 
 Exports:
     flatten_ep                      — flatten EP body text
@@ -20,7 +20,7 @@ import difflib
 from pycmn.hebrew_punctuation import NU_GMAQ
 from pycmn.str_defs import DOUB_VERT_LINE
 from pycmn.template_names import STD_KQ_TMPL_NAMES
-from pydiff_mpp.mpp_param_access import MISSING, get_param
+from pydiff_mpplus.mpplus_param_access import MISSING, get_param
 
 _PARASHAH_NAMES = {"סס", "ססס", "פפ", "פפפ"}
 _STD_KQ_TEMPLATE_NAMES = frozenset(STD_KQ_TMPL_NAMES)
@@ -92,7 +92,7 @@ def flatten_ep_words_only_for_diff(ep):
     (מ:לגרמיה, מ:לגרמיה-2, מ:פסק, מ:מקף אפור) contribute nothing to the
     output.  This lets two EPs that share the same words but differ only in
     the placement of those punctuation markers compare as equal, enabling
-    same-count reorder detection in mpp_extract._diff_ep.
+    same-count reorder detection in mpplus_extract._diff_ep.
     """
     buf = _new_diff_buffer()
     for el in ep:

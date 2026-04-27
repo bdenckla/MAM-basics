@@ -1,5 +1,5 @@
 """
-Serialize classified MPP diffs to JSON (pre-expansion form).
+Serialize classified MAM-parsed-plus diffs to JSON (pre-expansion form).
 
 Exports:
     write_json  — write the JSON diff file
@@ -10,8 +10,8 @@ import json
 import os
 
 from pycmn import provenance
-from pydiff_mpp.mpp_expand import split_structural_diff
-from pydiff_mpp.mpp_structure import template_name_multiset_delta
+from pydiff_mpplus.mpplus_expand import split_structural_diff
+from pydiff_mpplus.mpplus_structure import template_name_multiset_delta
 
 
 def _narrow_to_changed_words(old_text, new_text):
@@ -86,7 +86,7 @@ def write_json(diffs, old_rev, new_rev, out_path):
     template names added/removed, preserving multiplicity; same-count
     structural diffs get template_structure_changed=true. Structural
     diffs that render as separate cards are serialized as separate JSON
-    entries as well. Excludes the bulky old_ep / new_ep raw MPP
+    entries as well. Excludes the bulky old_ep / new_ep raw MAM-parsed-plus
     structures.
     """
     expanded = []

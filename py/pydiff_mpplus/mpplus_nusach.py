@@ -1,6 +1,6 @@
 """Render נוסח param 2 (manuscript annotations) as HTML.
 
-Ported from mgketer's mpp_nusach module, adapted for the MAM-basics
+Ported from mgketer's mpplus_nusach module, adapted for the MAM-basics
 diff pipeline.  Handles template markup inside note bodies and wraps
 pointed Hebrew (vocalized/cantillated text) in spans for CSS sizing.
 
@@ -10,7 +10,7 @@ Exports:
 
 import re
 
-from pydiff_mpp.mpp_param_access import MISSING, get_param
+from pydiff_mpplus.mpplus_param_access import MISSING, get_param
 
 # ── Pointed-Hebrew detection ──────────────────────────────────────
 

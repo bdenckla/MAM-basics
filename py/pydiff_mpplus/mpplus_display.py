@@ -1,7 +1,7 @@
 """
-Paseq and ketiv/qere display transformations for MPP diff reports.
+Paseq and ketiv/qere display transformations for MAM-parsed-plus diff reports.
 
-Converts raw MPP text into display-ready text with sentinel markers,
+Converts raw MAM-parsed-plus text into display-ready text with sentinel markers,
 then post-processes HTML to replace sentinels with ruby annotations.
 
 Exports:
@@ -16,14 +16,14 @@ import re
 
 from pycmn import hebrew_punctuation as hpu
 from pycmn.str_defs import NBSP
-from pydiff_mpp.mpp_flatten import (
+from pydiff_mpplus.mpplus_flatten import (
     is_ketiv_velo_qere_template,
     is_parashah_template,
     is_qere_velo_ketiv_template,
     is_std_kq_template,
     is_trivial_kq_template,
 )
-from pydiff_mpp.mpp_param_access import MISSING, get_param
+from pydiff_mpplus.mpplus_param_access import MISSING, get_param
 
 # ── Paseq display (ruby annotations for legarmeih / narpas) ──
 

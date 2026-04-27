@@ -1,5 +1,5 @@
 """
-Classify MPP EP column diffs by analyzing Unicode character differences.
+Classify MAM-parsed-plus EP column diffs by analyzing Unicode character differences.
 
 Exports:
     classify_diffs  — add a 'category' field to each diff dict
@@ -10,7 +10,7 @@ from collections import Counter
 from pycmn import hebrew_points as hpo
 from pycmn.hebrew_punctuation import NU_GMAQ
 from pycmn.str_defs import DOUB_VERT_LINE
-from pydiff_mpp.mpp_structure import (
+from pydiff_mpplus.mpplus_structure import (
     collect_template_names,
     template_name_multiset_delta,
 )

@@ -1,5 +1,5 @@
 """
-Render the subtitle table for MPP diff reports.
+Render the subtitle table for MAM-parsed-plus diff reports.
 
 Exports:
     render_subtitle_table — HTML table with commit hashes, Gregorian dates,

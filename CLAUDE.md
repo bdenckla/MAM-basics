@@ -246,9 +246,9 @@ Graphviz is installed but not on the PATH. Look for it at `%ProgramFiles%\Graphv
 
 Most of the owner's GitHub repos are cloned locally as siblings of this repo — i.e. at `../repo-name` (relative to this repo's root). When you need to read or search files in another repo (e.g. `MAM-parsed`, `MAM-simple`, `MAM-OSIS`), use relative paths like `../MAM-parsed/...` rather than hard-coding an absolute path. This keeps instructions portable across machines.
 
-## Navigating MAM-parsed plus (MPP) JSON
+## Navigating MAM-parsed-plus JSON
 
-See [mpp-navigation.md](mpp-navigation.md) for a quick-reference guide to the MPP JSON structure (file naming, verse lookup by chapter:verse, template format). Full upstream docs live at `../MAM-parsed/doc-under-readme/reading-mam-parsed-plus.md`.
+See [mpplus-navigation.md](mpplus-navigation.md) for a quick-reference guide to the MAM-parsed-plus JSON structure (file naming, verse lookup by chapter:verse, template format). Full upstream docs live at `../MAM-parsed/doc-under-readme/reading-mam-parsed-plus.md`.
 
 ## Terminology: "Varika"
 
@@ -271,7 +271,7 @@ The authoritative implementation is `py/pycmn/uni_denorm.py` (`give_std_mark_ord
 
 **Never apply Unicode normalization (NFC, NFD, etc.) to Hebrew text in this project.** NFC reorders combining marks into canonical order, which destroys the project's intentional mark order. If two strings that should be equal are not matching, the fix is to ensure both sides use the project's standard mark order — not to paper over the difference with `unicodedata.normalize`.
 
-When hand-authoring Hebrew strings in JSON input files, ensure they match the mark order used in MAM-parsed plus (MPP) data exactly. When in doubt, copy the string from MPP output or pass it through `give_std_mark_order`.
+When hand-authoring Hebrew strings in JSON input files, ensure they match the mark order used in MAM-parsed-plus data exactly. When in doubt, copy the string from MAM-parsed-plus output or pass it through `give_std_mark_order`.
 
 ## Do Not Mention Private Repos in Public Repos
 

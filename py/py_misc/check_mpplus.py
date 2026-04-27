@@ -1,4 +1,4 @@
-"""Checks on MPP (MAM-parsed plus) output."""
+"""Checks on MAM-parsed-plus output."""
 
 import json
 
@@ -7,7 +7,7 @@ from pycmn import my_utils
 from pycmn import uni_denorm as ud
 
 
-def check_mpp(plus_paths):
+def check_mpplus(plus_paths):
     """Validate all plus JSON files, accumulating errors.
 
     Returns a list of (path, error) tuples. Empty means all checks passed.

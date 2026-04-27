@@ -237,9 +237,9 @@ Graphviz is installed but not on the PATH. Look for it at `%ProgramFiles%\Graphv
 
 Most repos are cloned as siblings at `../repo-name`. In git-tracked files, use relative sibling paths when referencing other repos (e.g. `../MAM-parsed/...`) rather than hard-coded absolute paths.
 
-## Navigating MAM-parsed plus (MPP) JSON
+## Navigating MAM-parsed-plus JSON
 
-See [mpp-navigation.md](mpp-navigation.md) for a quick-reference guide to the MPP JSON structure. Full upstream docs: `../MAM-parsed/doc-under-readme/reading-mam-parsed-plus.md`.
+See [mpplus-navigation.md](mpplus-navigation.md) for a quick-reference guide to the MAM-parsed-plus JSON structure. Full upstream docs: `../MAM-parsed/doc-under-readme/reading-mam-parsed-plus.md`.
 
 ## Terminology: "Varika"
 

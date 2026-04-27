@@ -1,4 +1,4 @@
-"""Book URLs and verse-reference formatting for MPP diff reports.
+"""Book URLs and verse-reference formatting for MAM-parsed-plus diff reports.
 
 Exports:
     mam_with_doc_url — build a MAM-with-doc GitHub Pages URL

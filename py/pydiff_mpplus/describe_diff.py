@@ -1,7 +1,7 @@
 """Describe Hebrew text differences in English.
 
 Adapted from mgketer's describe_accent_diff.py and describe_text_diff.py
-for use in MPP diff reports.  Produces human-readable descriptions like:
+for use in MAM-parsed-plus diff reports.  Produces human-readable descriptions like:
 
     "revia on tav in old, on lamed in new"
     "meteg on mem removed"
@@ -15,14 +15,14 @@ from pycmn import hebrew_accents as ha
 from pycmn import hebrew_points as hpo
 from pycmn import hebrew_punctuation as hpu
 from pycmn.str_defs import DOUB_VERT_LINE
-from pydiff_mpp.mpp_flatten import (
+from pydiff_mpplus.mpplus_flatten import (
     is_ketiv_velo_qere_template,
     is_parashah_template,
     is_qere_velo_ketiv_template,
     is_std_kq_template,
     is_trivial_kq_template,
 )
-from pydiff_mpp.mpp_param_access import MISSING, get_param
+from pydiff_mpplus.mpplus_param_access import MISSING, get_param
 
 # ── Hebrew letter names ──────────────────────────────────────────────
 
@@ -458,8 +458,8 @@ def describe_change(
     old_text, new_text, category, book, chapter, verse, old_ep=None, new_ep=None
 ):
     """Return an English description of the change, or None."""
-    from pydiff_mpp.change_ops_extract import extract_change_ops
-    from pydiff_mpp.change_ops_render import render_english
+    from pydiff_mpplus.change_ops_extract import extract_change_ops
+    from pydiff_mpplus.change_ops_render import render_english
 
     ops = extract_change_ops(
         old_text, new_text, category, book, chapter, verse, old_ep, new_ep

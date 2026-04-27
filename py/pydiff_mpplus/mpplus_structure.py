@@ -1,4 +1,4 @@
-"""Template-structure helpers for MPP diffing.
+"""Template-structure helpers for MAM-parsed-plus diffing.
 
 Exports:
     collect_template_names      — gather relevant template names from an EP tree
@@ -12,7 +12,7 @@ Private helpers:
 
 from collections import Counter
 
-from pydiff_mpp.mpp_param_access import MISSING, get_param
+from pydiff_mpplus.mpplus_param_access import MISSING, get_param
 
 
 def collect_template_names(obj):

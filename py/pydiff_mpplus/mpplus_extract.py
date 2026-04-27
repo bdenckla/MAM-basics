@@ -1,5 +1,5 @@
 """
-Load MPP plus/ JSON from git revisions and extract EP column body text.
+Load MAM-parsed-plus JSON from git revisions and extract EP column body text.
 
 Exports:
     diff_all_books — compare all books between two revisions
@@ -8,18 +8,18 @@ Exports:
 import json
 import subprocess
 
-from pydiff_mpp.mpp_file_matching import (
+from pydiff_mpplus.mpplus_file_matching import (
     book39_ids_for_stem,
     get_he_to_int,
     matched_plus_file_pairs,
 )
-from pydiff_mpp.mpp_flatten import (
+from pydiff_mpplus.mpplus_flatten import (
     find_relevant_nusach,
     flatten_ep_with_nusach_for_diff,
     flatten_ep_for_diff,
     flatten_ep_words_only_for_diff,
 )
-from pydiff_mpp.mpp_structure import (
+from pydiff_mpplus.mpplus_structure import (
     structural_signature,
     template_name_counter,
 )

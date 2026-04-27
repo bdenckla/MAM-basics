@@ -1,5 +1,5 @@
 """
-CSS and JS asset generation for MPP diff reports.
+CSS and JS asset generation for MAM-parsed-plus diff reports.
 
 Exports:
     CATEGORY_INFO       — category key → (display label, color)

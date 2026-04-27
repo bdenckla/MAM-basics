@@ -9,7 +9,7 @@ import argparse
 
 from pycmn import file_io
 from pycmn import polite_download
-from py_misc.check_mpp import check_mpp
+from py_misc.check_mpplus import check_mpplus
 from py_misc import my_utils_for_mainish as my_utils_fm
 from py_misc import mam_csv_in
 import main_parse_go
@@ -56,9 +56,9 @@ def main():
     if args.download_only:
         return
     all_plus_paths = main_parse_go.almost_main()
-    errors = check_mpp(all_plus_paths)
+    errors = check_mpplus(all_plus_paths)
     if errors:
-        print(f"check_mpp found {len(errors)} error(s):")
+        print(f"check_mpplus found {len(errors)} error(s):")
         for plus_path, error in errors:
             print(f"  {error[0]} in {plus_path}: {error[1]!r}")
         raise SystemExit(1)

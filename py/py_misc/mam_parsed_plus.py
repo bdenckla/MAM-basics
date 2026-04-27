@@ -3,9 +3,9 @@
 from pycmn import hebrew_verse_numerals as hvn
 from pycmn import ws_tmpl2 as wtp
 from pycmn import ws_tmpl1 as wtp1
-from mpplus import mpp_scrdfftar
-from mpplus import mpp_slh_words
-from mpplus import mpp_boring_tmpls
+from mpplus import mpplus_scrdfftar
+from mpplus import mpplus_slh_words
+from mpplus import mpplus_boring_tmpls
 from pycmn.minirow import Minirow
 
 
@@ -115,14 +115,14 @@ def _aps_to_minirow_phase_2(minirow):
     returning an mre (minirow, extended [version]).
     See note on _aps_to_minirow below.
     """
-    new_cp = mpp_scrdfftar.add(minirow.CP)  # we also do this to EP
-    new_cp = mpp_boring_tmpls.evaluate(new_cp)  # we also do this to EP
+    new_cp = mpplus_scrdfftar.add(minirow.CP)  # we also do this to EP
+    new_cp = mpplus_boring_tmpls.evaluate(new_cp)  # we also do this to EP
     #
     new_dp = _drop_uninteresting_dp(minirow.DP)
     #
-    new_ep = mpp_scrdfftar.add(minirow.EP)  # we also do this to CP
-    new_ep = mpp_slh_words.mark(new_ep)
-    new_ep = mpp_boring_tmpls.evaluate(new_ep)  # we also do this to CP
+    new_ep = mpplus_scrdfftar.add(minirow.EP)  # we also do this to CP
+    new_ep = mpplus_slh_words.mark(new_ep)
+    new_ep = mpplus_boring_tmpls.evaluate(new_ep)  # we also do this to CP
     return new_cp, new_dp, new_ep
 
 

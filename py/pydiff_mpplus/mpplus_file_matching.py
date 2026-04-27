@@ -1,4 +1,4 @@
-"""Canonical plus-file matching and book-id mapping for MPP diffs.
+"""Canonical plus-file matching and book-id mapping for MAM-parsed-plus diffs.
 
 Exports:
     book39_ids_for_stem    — map a canonical plus stem to one or more bk39 ids

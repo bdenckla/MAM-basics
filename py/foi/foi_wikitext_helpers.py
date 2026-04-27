@@ -34,7 +34,7 @@ def find_fois_in_slh_word_arg_1(foilers, stack, tmpl):
 def label_args_of_doc(foilers, stack, tmpl):
     """Label the arguments of the doc template."""
     # Also checked in an earlier stage of the multi-program pipeline:
-    # check_mpp, called by main_download_fr_google.
+    # check_mpplus, called by main_download_fr_google.
     assert wtp.template_len(tmpl) == 3
     pnpv_dic = {
         "doc-target": wtp.template_param_val(tmpl, "1"),

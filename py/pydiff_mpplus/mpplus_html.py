@@ -8,22 +8,22 @@ Exports:
 import difflib
 from collections import Counter
 
-from pydiff_mpp.grapheme_diff import char_diff_spans
-from pydiff_mpp.mpp_structure import template_name_multiset_delta
-from pydiff_mpp.describe_diff import describe_change, add_name_tooltips
-from pydiff_mpp.mpp_nusach import nusach_body_to_html
-from pydiff_mpp.mpp_assets import CATEGORY_INFO, write_shared_assets
-from pydiff_mpp.mpp_expand import split_structural_diff
-from pydiff_mpp.mpp_template_change_desc import kq_if_template_addition_parts
-from pydiff_mpp.mpp_display import (
+from pydiff_mpplus.grapheme_diff import char_diff_spans
+from pydiff_mpplus.mpplus_structure import template_name_multiset_delta
+from pydiff_mpplus.describe_diff import describe_change, add_name_tooltips
+from pydiff_mpplus.mpplus_nusach import nusach_body_to_html
+from pydiff_mpplus.mpplus_assets import CATEGORY_INFO, write_shared_assets
+from pydiff_mpplus.mpplus_expand import split_structural_diff
+from pydiff_mpplus.mpplus_template_change_desc import kq_if_template_addition_parts
+from pydiff_mpplus.mpplus_display import (
     display_text,
     normalize_paseq_spacing,
     postprocess_gray_maqaf_html,
     postprocess_paseq_html,
     postprocess_kq_html,
 )
-from pydiff_mpp.mpp_book_urls import mam_with_doc_url, wikisource_url, ref_str
-from pydiff_mpp.mpp_subtitle import render_subtitle_table
+from pydiff_mpplus.mpplus_book_urls import mam_with_doc_url, wikisource_url, ref_str
+from pydiff_mpplus.mpplus_subtitle import render_subtitle_table
 
 
 def _esc(text):
@@ -365,7 +365,7 @@ def write_report(diffs, old_rev, new_rev, out_path, old_date="", new_date=""):
         '<html lang="en">',
         "<head>",
         '<meta charset="utf-8">',
-        f"<title>{_esc(new_date)} (MPP diff)</title>",
+        f"<title>{_esc(new_date)} (MAM-parsed-plus diff)</title>",
         '<link rel="stylesheet" href="style.css">',
         "</head>",
         "<body>",
