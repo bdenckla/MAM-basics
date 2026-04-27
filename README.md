@@ -51,6 +51,22 @@ Python tools for working with [MAM (Miqra according to the Masora)](https://he.w
 - `main_rename_jpeg_scans.py` — renames JPEG scan files by directory structure
 - `main_0_mega.py` — meta-orchestrator that runs multiple jobs in sequence
 
+### Cross-repo utility entrypoint
+
+Use `main_repo_util.py` for one-off cross-repo utility operations with one required exclusive action switch:
+
+```bash
+.venv/Scripts/python.exe py/main_repo_util.py --run-black --repos MAM-basics
+.venv/Scripts/python.exe py/main_repo_util.py --audit-line-terms --repos MAM-basics
+.venv/Scripts/python.exe py/main_repo_util.py --commit-across-repos --message-file .novc/commit_msg_shared.txt --dry-run
+```
+
+Supported exclusive actions:
+
+- `--run-black`
+- `--audit-line-terms`
+- `--commit-across-repos`
+
 ## Setup
 
 This project requires Python 3 with a virtual environment.
