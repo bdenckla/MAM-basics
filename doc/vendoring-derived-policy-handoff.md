@@ -75,7 +75,7 @@ Suggested top-level structure:
       "pycmn": "py/pycmn",
       "py_misc": "py/py_misc",
       "pysefaria": "py/pysefaria",
-      "pydiff_mpp": "py/pydiff_mpp"
+      "pydiff_mpplus": "py/pydiff_mpplus"
     }
   },
   "repos": {
@@ -182,7 +182,7 @@ known to the vendoring code:
 - `py/pycmn`
 - `py/py_misc`
 - `py/pysefaria`
-- `py/pydiff_mpp`
+- `py/pydiff_mpplus`
 
 ### Step 4. Add destination discovery
 

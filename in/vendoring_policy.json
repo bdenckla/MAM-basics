@@ -6,7 +6,7 @@
       "pycmn": "py/pycmn",
       "py_misc": "py/py_misc",
       "pysefaria": "py/pysefaria",
-      "pydiff_mpp": "py/pydiff_mpp"
+      "pydiff_mpplus": "py/pydiff_mpplus"
     }
   },
   "repos": {
@@ -40,8 +40,8 @@
         "pycmn": [
           "py/pycmn"
         ],
-        "pydiff_mpp": [
-          "py/pydiff_mpp"
+        "pydiff_mpplus": [
+          "py/pydiff_mpplus"
         ]
       }
     },
@@ -202,8 +202,8 @@
     {
       "comment": null,
       "dest_repo": "holman-ketiv-qere",
-      "dest_path": "py/pydiff_mpp/describe_diff.py",
-      "src_pkg": "pydiff_mpp",
+      "dest_path": "py/pydiff_mpplus/describe_diff.py",
+      "src_pkg": "pydiff_mpplus",
       "category": "deferred",
       "mechanism": null,
       "provenance_doc": null,
@@ -212,8 +212,8 @@
     {
       "comment": null,
       "dest_repo": "holman-ketiv-qere",
-      "dest_path": "py/pydiff_mpp/grapheme_diff.py",
-      "src_pkg": "pydiff_mpp",
+      "dest_path": "py/pydiff_mpplus/grapheme_diff.py",
+      "src_pkg": "pydiff_mpplus",
       "category": "deferred",
       "mechanism": null,
       "provenance_doc": null,
@@ -353,11 +353,11 @@
       "comment": null,
       "dest_repo": "mgketer",
       "dest_path": "py/python_modules/grapheme_diff.py",
-      "src_pkg": "pydiff_mpp",
+      "src_pkg": "pydiff_mpplus",
       "category": "deferred",
       "mechanism": null,
       "provenance_doc": null,
-      "notes": "placed in python_modules not pydiff_mpp"
+      "notes": "placed in python_modules not pydiff_mpplus"
     },
     {
       "comment": null,

@@ -30,11 +30,11 @@ Related issue: bdenckla/MAM-basics#60
 | cantsys.py | pycmn | diffable-pointed-hebrew | pycmn/cantsys.py | unknown | 2025-06-03 | no | stale | identical |
 | file_io.py, hebrew_accents.py, hebrew_letters.py, hebrew_points.py, hebrew_punctuation.py, str_defs.py, uni_heb.py | pycmn | diffable-pointed-hebrew | pycmn | unknown | 2025-06-03 | no | stale | DIFFERS |
 | bib_locales.py, cantsys.py, hebrew_accents.py, hebrew_letters.py, hebrew_points.py, hebrew_punctuation.py, hebrew_verse_numerals.py, mam_bknas.py, mam_bknas_and_std_bknas.py, str_defs.py | pycmn | holman-ketiv-qere | py/pycmn | copy_script | mixed | no | active | identical |
-| change_ops.py, change_ops_apply.py, change_ops_extract.py, change_ops_render.py, mpp_flatten.py, mpp_param_access.py, mpp_structure.py | pydiff_mpp | holman-ketiv-qere | py/pydiff_mpp | copy_script | 2026-04-17 | no | active | identical |
-| describe_diff.py, grapheme_diff.py | pydiff_mpp | holman-ketiv-qere | py/pydiff_mpp | unknown | mixed | no | deferred | identical; partial-file copy of larger module |
+| change_ops.py, change_ops_apply.py, change_ops_extract.py, change_ops_render.py, mpplus_flatten.py, mpplus_param_access.py, mpplus_structure.py | pydiff_mpplus | holman-ketiv-qere | py/pydiff_mpplus | copy_script | 2026-04-27 | no | active | identical |
+| describe_diff.py, grapheme_diff.py | pydiff_mpplus | holman-ketiv-qere | py/pydiff_mpplus | unknown | mixed | no | deferred | identical; partial-file copy of larger module |
 | bib_locales.py, hebrew_accents.py, hebrew_letters.py, hebrew_points.py, hebrew_punctuation.py, mam_bknas.py, mam_bknas_and_std_bknas.py, str_defs.py | pycmn | mgketer | py/pycmn | unknown | mixed | no | stale | DIFFERS |
 | polite_download.py | pycmn | mgketer | py/pycmn/polite_download.py | unknown | 2026-04-14 | no | stale | identical |
-| grapheme_diff.py | pydiff_mpp | mgketer | py/python_modules/grapheme_diff.py | unknown | 2026-03-08 | no | deferred | DIFFERS; placed in python_modules not pydiff_mpp |
+| grapheme_diff.py | pydiff_mpplus | mgketer | py/python_modules/grapheme_diff.py | unknown | 2026-03-08 | no | deferred | DIFFERS; placed in python_modules not pydiff_mpplus |
 | my_diffs.py, uni_denorm.py | pycmn | mgketer | py/python_modules | unknown | mixed | no | stale | DIFFERS; placed in python_modules/ not pycmn/ |
 | bib_locales.py, file_io.py, hebrew_accents.py, hebrew_points.py, hebrew_punctuation.py, my_diffs.py, my_utils.py, str_defs.py, uni_heb.py, uni_norm_fragile.py | pycmn | wlc-utils | py/pycmn | unknown | 2026-04-11 | no | stale | DIFFERS |
 | cantsys.py, hebrew_letters.py | pycmn | wlc-utils | py/pycmn | unknown | 2026-04-11 | no | stale | identical |

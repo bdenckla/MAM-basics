@@ -34,15 +34,15 @@ hebrew_verse_numerals.py                   holman-ketiv-qere          py/pycmn/h
 mam_bknas.py                               holman-ketiv-qere          py/pycmn/mam_bknas.py                                   identical      2026-04-17   
 mam_bknas_and_std_bknas.py                 holman-ketiv-qere          py/pycmn/mam_bknas_and_std_bknas.py                     identical      2026-04-17   
 str_defs.py                                holman-ketiv-qere          py/pycmn/str_defs.py                                    identical      2026-04-17   
-change_ops.py                              holman-ketiv-qere          py/pydiff_mpp/change_ops.py                             identical      2026-04-17   
-change_ops_apply.py                        holman-ketiv-qere          py/pydiff_mpp/change_ops_apply.py                       identical      2026-04-17   
-change_ops_extract.py                      holman-ketiv-qere          py/pydiff_mpp/change_ops_extract.py                     identical      2026-04-17   
-change_ops_render.py                       holman-ketiv-qere          py/pydiff_mpp/change_ops_render.py                      identical      2026-04-17   
-describe_diff.py                           holman-ketiv-qere          py/pydiff_mpp/describe_diff.py                          identical      2026-04-17   deferred
-grapheme_diff.py                           holman-ketiv-qere          py/pydiff_mpp/grapheme_diff.py                          identical      2026-04-11   deferred
-mpp_flatten.py                             holman-ketiv-qere          py/pydiff_mpp/mpp_flatten.py                            identical      2026-04-17   
-mpp_param_access.py                        holman-ketiv-qere          py/pydiff_mpp/mpp_param_access.py                       identical      2026-04-17   
-mpp_structure.py                           holman-ketiv-qere          py/pydiff_mpp/mpp_structure.py                          identical      2026-04-17   
+change_ops.py                              holman-ketiv-qere          py/pydiff_mpplus/change_ops.py                          identical      2026-04-27   
+change_ops_apply.py                        holman-ketiv-qere          py/pydiff_mpplus/change_ops_apply.py                    identical      2026-04-27   
+change_ops_extract.py                      holman-ketiv-qere          py/pydiff_mpplus/change_ops_extract.py                  identical      2026-04-27   
+change_ops_render.py                       holman-ketiv-qere          py/pydiff_mpplus/change_ops_render.py                   identical      2026-04-27   
+describe_diff.py                           holman-ketiv-qere          py/pydiff_mpplus/describe_diff.py                       identical      2026-04-27   deferred
+grapheme_diff.py                           holman-ketiv-qere          py/pydiff_mpplus/grapheme_diff.py                       identical      2026-04-27   deferred
+mpplus_flatten.py                          holman-ketiv-qere          py/pydiff_mpplus/mpplus_flatten.py                      identical      2026-04-27   
+mpplus_param_access.py                     holman-ketiv-qere          py/pydiff_mpplus/mpplus_param_access.py                 identical      2026-04-27   
+mpplus_structure.py                        holman-ketiv-qere          py/pydiff_mpplus/mpplus_structure.py                    identical      2026-04-27   
 bib_locales.py                             al-hatorah                 pycmn/bib_locales.py                                    DIFFERS        2026-02-06   
 cantsys.py                                 al-hatorah                 pycmn/cantsys.py                                        identical      2025-04-02   
 file_io.py                                 al-hatorah                 pycmn/file_io.py                                        identical      2026-02-06   
