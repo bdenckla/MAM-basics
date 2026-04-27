@@ -129,6 +129,9 @@
       "pkg_scan_roots": {
         "mb_cmn": [
           "py/mb_cmn"
+        ],
+        "mb_diff_mpu": [
+          "py/mb_diff_mpu"
         ]
       }
     },
@@ -348,16 +351,6 @@
       "mechanism": null,
       "provenance_doc": null,
       "notes": "placed in lenin-wiki/py/ not mb_cmn/"
-    },
-    {
-      "comment": null,
-      "dest_repo": "mgketer",
-      "dest_path": "py/python_modules/grapheme_diff.py",
-      "src_pkg": "mb_diff_mpu",
-      "category": "deferred",
-      "mechanism": null,
-      "provenance_doc": null,
-      "notes": "placed in python_modules not mb_diff_mpu"
     },
     {
       "comment": null,

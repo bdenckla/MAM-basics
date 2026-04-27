@@ -201,6 +201,7 @@
         ".",
         "py",
         "py/mb_cmn",
+        "py/mb_diff_mpu",
         "py/python_modules"
       ],
       "found_provenance_docs": [],
