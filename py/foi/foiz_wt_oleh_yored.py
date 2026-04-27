@@ -1,11 +1,11 @@
 import re
-from pycmn import bib_locales as tbn
-from pycmn import uni_heb as uh
-from pycmn import uni_heb_2 as u2
-from pycmn import hebrew_accents as ha
-from pycmn import hebrew_punctuation as hpu
-from pycmn.my_utils import sl_map
-from pycmn.my_utils import sum_of_map
+from mb_cmn import bib_locales as tbn
+from mb_cmn import uni_heb as uh
+from mb_cmn import uni_heb_2 as u2
+from mb_cmn import hebrew_accents as ha
+from mb_cmn import hebrew_punctuation as hpu
+from mb_cmn.my_utils import sl_map
+from mb_cmn.my_utils import sum_of_map
 from foi import regexp_helpers as rh
 from py_misc import wt_qere
 

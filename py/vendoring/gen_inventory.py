@@ -19,7 +19,7 @@ _PROVENANCE_OUT_JSON = _REPO_ROOT / "out" / "vendoring_provenance_out.json"
 
 
 def _make_source_path(src_pkg: str) -> str:
-    if src_pkg == "pycmn":
+    if src_pkg == "mb_cmn":
         return ""
     return src_pkg
 
@@ -299,7 +299,7 @@ def main(refresh_live_inputs: bool = True) -> None:
         row_count += 1
         files = [row["file"] for row in group_rows]
         files_str = ", ".join(sorted(files))
-        src_pkg_display = src_path if src_path else "pycmn"
+        src_pkg_display = src_path if src_path else "mb_cmn"
         path_displays = {
             (
                 row["dest_path"].rsplit("/", 1)[0]

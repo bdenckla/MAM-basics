@@ -2,7 +2,7 @@
 
 from collections import Counter
 
-from pydiff_mpplus.mpplus_flatten import (
+from mb_diff_mpu.mpplus_flatten import (
     flatten_element,
     is_ketiv_velo_qere_template,
     is_parashah_template,
@@ -10,7 +10,7 @@ from pydiff_mpplus.mpplus_flatten import (
     is_std_kq_template,
     is_trivial_kq_template,
 )
-from pydiff_mpplus.mpplus_param_access import MISSING, get_param
+from mb_diff_mpu.mpplus_param_access import MISSING, get_param
 
 
 def _iter_named_templates(obj, template_name):

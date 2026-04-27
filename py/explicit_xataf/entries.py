@@ -1,6 +1,6 @@
 """Build entry dicts for explicit-xataf mappings."""
 
-from pycmn import hebrew_points as hpo
+from mb_cmn import hebrew_points as hpo
 from explicit_xataf.infer import varika_positions
 
 

@@ -15,9 +15,9 @@ import pywikibot
 
 from py_misc import my_utils_for_mainish as my_utils_fm
 from py_misc import get_wikisource_plan as wsplan
-from pycmn import mam_bknas_and_std_bknas as mbkn_a_sbkn
-from pycmn import bib_locales as tbn
-from pycmn import file_io
+from mb_cmn import mam_bknas_and_std_bknas as mbkn_a_sbkn
+from mb_cmn import bib_locales as tbn
+from mb_cmn import file_io
 from ws import ws_bot_edit as wbe
 from ws import ws_download_selector as wsds
 

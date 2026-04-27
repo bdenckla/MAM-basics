@@ -18,7 +18,7 @@ available together. All repos are at `C:\Users\BenDe\GitRepos\`.
 ## Background (brief recap)
 
 MAM-basics is the canonical source for shared Python utilities
-(`py/pycmn/`, and some `py/py_misc/` and `py/pysefaria/` files).
+(`py/mb_cmn/`, and some `py/py_misc/` and `py/mb_sefaria/` files).
 These are copied to sibling repos. The goal of issue #60 is:
 
 1. Every vendored destination has a provenance doc.
@@ -33,7 +33,7 @@ These are copied to sibling repos. The goal of issue #60 is:
 Modules intended for vendoring — at **both source and destination** —
 should follow the current direction of `mb_cmn` (a directory) or an
 `mb_` prefix. This applies in MAM-basics itself, not just in destination
-repos. (Example violation: `py/pydiff_mpplus/` in MAM-basics should
+repos. (Example violation: `py/mb_diff_mpu/` in MAM-basics should
 eventually become `py/mb_diff_mpu/`, but that rename is deferred.)
 
 ---
@@ -55,7 +55,7 @@ already exist.
 ### Where to put it
 
 - If the destination is a directory of vendored files (e.g.,
-  `holman-ketiv-qere/py/pycmn/`), add `provenance.md` inside that
+  `holman-ketiv-qere/py/mb_cmn/`), add `provenance.md` inside that
   directory.
 - If the destination is a larger directory that contains both vendored
   and non-vendored files, put the provenance note in a `provenance.md`
@@ -69,10 +69,10 @@ already exist.
 
 | Destination | Expected category | Notes |
 |---|---|---|
-| `MAM-simple/py-example/pycmn/`, `py_misc/`, `pysefaria/` | `generated` | Whole dir is regenerated; provenance goes at `py-example/` level |
-| `holman-ketiv-qere/py/pycmn/` | TBD (likely `stale` or `active`) | Only `bib_locales.py` + `hebrew_punctuation.py` known |
-| `holman-ketiv-qere/py/pydiff_mpplus/` | `deferred` | Do not touch — separate follow-up issue |
-| `diffable-pointed-hebrew/pycmn/` | `stale` | 8 files, ~11 months behind |
+| `MAM-simple/py-example/mb_cmn/`, `py_misc/`, `mb_sefaria/` | `generated` | Whole dir is regenerated; provenance goes at `py-example/` level |
+| `holman-ketiv-qere/py/mb_cmn/` | TBD (likely `stale` or `active`) | Only `bib_locales.py` + `hebrew_punctuation.py` known |
+| `holman-ketiv-qere/py/mb_diff_mpu/` | `deferred` | Do not touch — separate follow-up issue |
+| `diffable-pointed-hebrew/mb_cmn/` | `stale` | 8 files, ~11 months behind |
 | Private repos | TBD | Per inventory table |
 
 ---
@@ -106,16 +106,16 @@ test suite or entry script briefly).
 1. In `MAM-basics/doc/vendoring-inventory.md`, add a section (after
    the table) listing all modules that violate the `mb_cmn/mb_*`
    naming convention and therefore need a future rename. At minimum:
-   - MAM-basics `py/pydiff_mpplus/` → should become `py/mb_diff_mpu/`
-   - holman-ketiv-qere `py/pydiff_mpplus/` → should become
+   - MAM-basics `py/mb_diff_mpu/` → should become `py/mb_diff_mpu/`
+   - holman-ketiv-qere `py/mb_diff_mpu/` → should become
      `py/mb_diff_mpu/` (destination side)
    - Any others found during Phase 1.
 
-2. File a GitHub issue in MAM-basics for the `pydiff_mpplus` rename. The
+2. File a GitHub issue in MAM-basics for the `mb_diff_mpu` rename. The
    issue should cover:
-   - Rename source side: `MAM-basics/py/pydiff_mpplus/` →
+   - Rename source side: `MAM-basics/py/mb_diff_mpu/` →
      `MAM-basics/py/mb_diff_mpu/` (update all imports in MAM-basics)
-   - Rename destination side: `holman-ketiv-qere/py/pydiff_mpplus/` →
+   - Rename destination side: `holman-ketiv-qere/py/mb_diff_mpu/` →
      `holman-ketiv-qere/py/mb_diff_mpu/` (update imports there)
    - Resolve the partial-file problem: the holman-ketiv-qere copy has
      only `describe_diff.py` + `grapheme_diff.py` of a much larger
@@ -149,9 +149,9 @@ version" or "pinned until the API stabilizes").
 - If it's unclear, use Option B with a note that refresh should be
   revisited.
 
-**Known stale case:** `diffable-pointed-hebrew/pycmn/` (~11 months
+**Known stale case:** `diffable-pointed-hebrew/mb_cmn/` (~11 months
 behind MAM-basics). Compare each of the 8 files against current
-`MAM-basics/py/pycmn/` counterparts before deciding.
+`MAM-basics/py/mb_cmn/` counterparts before deciding.
 
 ---
 
@@ -165,7 +165,7 @@ At completion:
   in its provenance doc.
 - `vendoring-inventory.md` has a naming-violations section listing
   deferred renames.
-- GitHub follow-up issues exist for `pydiff_mpplus` rename and any
+- GitHub follow-up issues exist for `mb_diff_mpu` rename and any
   other hard cases.
 - Cross-repo search for all filenames in the inventory returns no
   undocumented copies.

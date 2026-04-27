@@ -2,9 +2,9 @@
 
 import unicodedata
 
-from pycmn.my_utils import dv_map
-from pycmn.my_utils import dv_dispatch
-from pycmn import ws_tmpl1 as wtp1
+from mb_cmn.my_utils import dv_map
+from mb_cmn.my_utils import dv_dispatch
+from mb_cmn import ws_tmpl1 as wtp1
 
 
 def massage_go_book(go_book):

@@ -5,8 +5,8 @@ import argparse
 import json
 
 from py_misc import get_wikisource_plan as wsplan
-from pycmn import hebrew_verse_numerals as hvn
-from pycmn import mam_bknas_and_std_bknas as mbkn_a_sbkn
+from mb_cmn import hebrew_verse_numerals as hvn
+from mb_cmn import mam_bknas_and_std_bknas as mbkn_a_sbkn
 
 __all__ = [
     "add_selector_opts",

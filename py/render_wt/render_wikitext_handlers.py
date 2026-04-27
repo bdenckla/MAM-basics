@@ -8,22 +8,22 @@ from py_misc import get_cvm_rec_from_bcvt as gcrfb
 from py_misc import mam_doc_utils as doc_utils
 from py_misc import true_gershayim as true_g2
 from py_misc import unbury_doc_parts as unbury
-from pycmn import bib_locales as tbn
-from pycmn import hebrew_letters as hl
-from pycmn import hebrew_points as hpo
-from pycmn import hebrew_punctuation as hpu
-from pycmn import str_defs as sd
-from pycmn import template_names as tmpln
-from pycmn import ws_tmpl2 as wtp
+from mb_cmn import bib_locales as tbn
+from mb_cmn import hebrew_letters as hl
+from mb_cmn import hebrew_points as hpo
+from mb_cmn import hebrew_punctuation as hpu
+from mb_cmn import str_defs as sd
+from mb_cmn import template_names as tmpln
+from mb_cmn import ws_tmpl2 as wtp
 from render_wt import render_element as renel
 from render_wt import render_wikitext_dispatch as dispatch
 from render_wt import render_wikitext_handlers_for_qamats as qamats_variation
 from render_wt import render_wikitext_helpers as wt_help
 from render_wt import render_wikitext_kq as kq
 from render_wt import render_wikitext_spacing_concerns as spacing
-from pycmn.my_utils import dv_map
-from pycmn.my_utils import first_and_only_and_str
-from pycmn.my_utils import st_map
+from mb_cmn.my_utils import dv_map
+from mb_cmn.my_utils import first_and_only_and_str
+from mb_cmn.my_utils import st_map
 
 
 def default_hctx(bcvt=None, renopts=None, io_renlog=None):

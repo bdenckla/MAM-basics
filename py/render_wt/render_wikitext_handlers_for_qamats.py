@@ -3,10 +3,10 @@
 from render_wt import render_wikitext_helpers as wt_help
 from render_wt import render_element as renel
 from py_misc import analyze_qamats_variant as aqv
-from pycmn import hebrew_points as hpo
-from pycmn import hebrew_accents as ha
-from pycmn import ws_tmpl2 as wtp
-from pycmn import uni_heb as uh
+from mb_cmn import hebrew_points as hpo
+from mb_cmn import hebrew_accents as ha
+from mb_cmn import ws_tmpl2 as wtp
+from mb_cmn import uni_heb as uh
 
 
 def handle(hctx, tmpl):

@@ -12,15 +12,15 @@ Exports:
 
 import sys
 
-from pydiff_mpplus.change_ops import is_structural_op, is_text_op
-from pydiff_mpplus.change_ops_apply import (
+from mb_diff_mpu.change_ops import is_structural_op, is_text_op
+from mb_diff_mpu.change_ops_apply import (
     ANY_STRUCTURE,
     apply_structural_ops,
     apply_text_ops,
 )
-from pydiff_mpplus.change_ops_extract import extract_change_ops
-from pydiff_mpplus.mpplus_normalize import normalize_structure, normalize_text
-from pydiff_mpplus.mpplus_structure import (
+from mb_diff_mpu.change_ops_extract import extract_change_ops
+from mb_diff_mpu.mpplus_normalize import normalize_structure, normalize_text
+from mb_diff_mpu.mpplus_structure import (
     template_name_counter,
     template_name_multiset_delta,
 )

@@ -160,7 +160,7 @@ Never close (or suggest closing) a GitHub issue until its work has been both com
 
 - All Python code lives under the `py/` directory at the project root.
 - **Main scripts** are named with a `main_` prefix (e.g. `py/main_mam4sef.py`, `py/main_parse_go.py`). These are the entry points that are run directly.
-- **Library modules** live in package directories under `py/` (e.g. `py/pycmn/`, `py/mb_xml/`, `py/render_wt/`). These are imported by main scripts but are not run on their own.
+- **Library modules** live in package directories under `py/` (e.g. `py/mb_cmn/`, `py/mb_xml/`, `py/render_wt/`). These are imported by main scripts but are not run on their own.
 
 ## Module Size Limit
 
@@ -267,7 +267,7 @@ This project uses a deliberate combining-mark order for Hebrew text that differs
 
 In practice: **base letter → shin/sin dot → dagesh → rafeh → vowels / meteg / accents**.
 
-The authoritative implementation is `py/pycmn/uni_denorm.py` (`give_std_mark_order`).
+The authoritative implementation is `py/mb_cmn/uni_denorm.py` (`give_std_mark_order`).
 
 **Never apply Unicode normalization (NFC, NFD, etc.) to Hebrew text in this project.** NFC reorders combining marks into canonical order, which destroys the project's intentional mark order. If two strings that should be equal are not matching, the fix is to ensure both sides use the project's standard mark order — not to paper over the difference with `unicodedata.normalize`.
 

@@ -2,10 +2,10 @@ from foi import foi_struct as fct
 from foi import foi_wikitext_helpers as fwh
 from py_misc import ren_html_from_ren_el_mapping as hfrm
 from py_misc import ren_html_for_renel as hfr
-from pycmn import ws_tmpl2 as wtp
+from mb_cmn import ws_tmpl2 as wtp
 from render_wt import render_wikitext_handlers as handlers
 from render_wt import render_wikitext_helpers as wt_help
-from pycmn import template_names as tmpln
+from mb_cmn import template_names as tmpln
 from foi import kq_trivial_types
 from foi import kq_trivial_sug
 

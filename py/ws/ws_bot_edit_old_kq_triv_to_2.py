@@ -26,9 +26,9 @@ ws_bot_edit_old_deuter_meteg.py.
 
 import json
 
-from pycmn import file_io
-from pycmn import hebrew_verse_numerals as hvn
-from pycmn import hebrew_points as hpo
+from mb_cmn import file_io
+from mb_cmn import hebrew_verse_numerals as hvn
+from mb_cmn import hebrew_points as hpo
 from ws import ws_get_bk_in_both_fmts as wsin
 from ws import ws_fmt_2_back_to_wikitext as btw
 from ws import ws_bot_edit_kq_triv_to_2 as kq2

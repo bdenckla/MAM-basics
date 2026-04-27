@@ -1,9 +1,9 @@
 """Exports mark"""
 
 from py_misc import slh_description
-from pycmn import ws_tmpl2 as wtp
-from pycmn import template_names as tmpln
-from pycmn import shrink
+from mb_cmn import ws_tmpl2 as wtp
+from mb_cmn import template_names as tmpln
+from mb_cmn import shrink
 
 
 def mark(wtseq):

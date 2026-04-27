@@ -1,8 +1,8 @@
 """Exports add"""
 
-from pycmn import ws_tmpl2 as wtp
-from pycmn import template_names as tmpln
-from pycmn import hebrew_punctuation as hpu
+from mb_cmn import ws_tmpl2 as wtp
+from mb_cmn import template_names as tmpln
+from mb_cmn import hebrew_punctuation as hpu
 
 # scroll differences (mostly) (entirely?) fall into the following categories:
 #    letter differences e.g. yod vs. vav or yod vs. nothing

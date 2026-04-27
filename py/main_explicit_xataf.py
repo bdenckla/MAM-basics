@@ -8,10 +8,10 @@ manuscripts that write the ḥataf vowel explicitly instead of shewa+varika.
 import json
 import sys
 
-from pycmn import bib_locales as tbn
-from pycmn import read_books_from_mam_parsed_plus as plus
-from pycmn import ws_tmpl2 as wtp
-from pycmn import file_io
+from mb_cmn import bib_locales as tbn
+from mb_cmn import read_books_from_mam_parsed_plus as plus
+from mb_cmn import ws_tmpl2 as wtp
+from mb_cmn import file_io
 
 from explicit_xataf import extract as ext
 from explicit_xataf import extras

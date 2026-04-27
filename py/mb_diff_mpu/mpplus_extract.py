@@ -8,18 +8,18 @@ Exports:
 import json
 import subprocess
 
-from pydiff_mpplus.mpplus_file_matching import (
+from mb_diff_mpu.mpplus_file_matching import (
     book39_ids_for_stem,
     get_he_to_int,
     matched_plus_file_pairs,
 )
-from pydiff_mpplus.mpplus_flatten import (
+from mb_diff_mpu.mpplus_flatten import (
     find_relevant_nusach,
     flatten_ep_with_nusach_for_diff,
     flatten_ep_for_diff,
     flatten_ep_words_only_for_diff,
 )
-from pydiff_mpplus.mpplus_structure import (
+from mb_diff_mpu.mpplus_structure import (
     structural_signature,
     template_name_counter,
 )

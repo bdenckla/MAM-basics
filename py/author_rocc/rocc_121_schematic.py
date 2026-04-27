@@ -2,7 +2,7 @@ from author_util import author
 from py_misc import hebrew_letter_words as hlw
 from author_rocc import rocc_util as ru
 
-from pycmn.my_utils import sl_map
+from mb_cmn.my_utils import sl_map
 from py_misc import my_html
 
 

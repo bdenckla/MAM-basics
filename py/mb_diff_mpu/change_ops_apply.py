@@ -12,9 +12,9 @@ Exports:
 
 from collections import Counter
 
-from pycmn.hebrew_punctuation import NU_GMAQ, PASOLEG
-from pycmn.str_defs import DOUB_VERT_LINE
-from pydiff_mpplus.change_ops import (
+from mb_cmn.hebrew_punctuation import NU_GMAQ, PASOLEG
+from mb_cmn.str_defs import DOUB_VERT_LINE
+from mb_diff_mpu.change_ops import (
     ComplexReplace,
     GenericReplace,
     GenericTextReplace,
@@ -32,7 +32,7 @@ from pydiff_mpplus.change_ops import (
     TemplateRestructured,
     is_text_op,
 )
-from pydiff_mpplus.grapheme_diff import grapheme_clusters
+from mb_diff_mpu.grapheme_diff import grapheme_clusters
 
 # ── Grapheme cluster manipulation ────────────────────────────
 

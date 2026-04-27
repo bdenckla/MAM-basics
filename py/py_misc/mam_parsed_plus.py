@@ -1,12 +1,12 @@
 """Exports add_plus_stuff"""
 
-from pycmn import hebrew_verse_numerals as hvn
-from pycmn import ws_tmpl2 as wtp
-from pycmn import ws_tmpl1 as wtp1
+from mb_cmn import hebrew_verse_numerals as hvn
+from mb_cmn import ws_tmpl2 as wtp
+from mb_cmn import ws_tmpl1 as wtp1
 from mpplus import mpplus_scrdfftar
 from mpplus import mpplus_slh_words
 from mpplus import mpplus_boring_tmpls
-from pycmn.minirow import Minirow
+from mb_cmn.minirow import Minirow
 
 
 def add_plus_stuff(section):

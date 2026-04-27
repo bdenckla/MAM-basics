@@ -1,7 +1,7 @@
 import json
 from ws import ws_tmpl_n_tag_parser as ttp
-from pycmn import mam_bknas_and_std_bknas as mbkn_a_sbkn
-from pycmn.my_utils import dv_map
+from mb_cmn import mam_bknas_and_std_bknas as mbkn_a_sbkn
+from mb_cmn.my_utils import dv_map
 
 
 def get_bk_in_fmt_1(path, bkid):

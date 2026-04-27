@@ -7,11 +7,11 @@ import json
 from itertools import zip_longest
 from diff_ctr_vs_mam.massage_ctr_verse import massage_ctr_verse
 from diff_ctr_vs_mam.massage_mpu_verse import massage_mpu_verse
-from pycmn import my_diffs
-from pycmn import uni_heb as uh
-from pycmn import read_books_from_mam_parsed_plus as plus
-from pycmn import file_io
-from pycmn import bib_locales as tbn
+from mb_cmn import my_diffs
+from mb_cmn import uni_heb as uh
+from mb_cmn import read_books_from_mam_parsed_plus as plus
+from mb_cmn import file_io
+from mb_cmn import bib_locales as tbn
 
 
 def _make_dump(diff):

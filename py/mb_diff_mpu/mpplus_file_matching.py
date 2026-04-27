@@ -10,8 +10,8 @@ Policy:
     provenance.md; any other non-JSON filename in plus/ raises ValueError.
 """
 
-from pycmn import bib_locales as tbn
-from pycmn import hebrew_verse_numerals as hvn
+from mb_cmn import bib_locales as tbn
+from mb_cmn import hebrew_verse_numerals as hvn
 
 _CANONICAL_STEM_TO_BOOK39_IDS = {
     tbn.ordered_short_dash_full_24(bk24id): tbn.bk39ids_of_bk24(bk24id)

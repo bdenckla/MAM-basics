@@ -1,4 +1,4 @@
-from pycmn import bib_locales as tbn
+from mb_cmn import bib_locales as tbn
 from py_misc import vtrad_helpers as mr
 
 _FST_SAM_24_2_SEF = tbn.mk_bcvtsef(tbn.BK_FST_SAM, 24, 2)

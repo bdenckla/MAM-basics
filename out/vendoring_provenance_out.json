@@ -5,21 +5,21 @@
       "scanned_dirs": [
         ".",
         "py",
-        "py/pycmn",
-        "py/pydiff_mpplus"
+        "py/mb_cmn",
+        "py/mb_diff_mpu"
       ],
       "found_provenance_docs": [
-        "py/pycmn/PROVENANCE.md",
-        "py/pycmn/provenance.md",
-        "py/pydiff_mpplus/PROVENANCE.md",
-        "py/pydiff_mpplus/provenance.md"
+        "py/mb_cmn/PROVENANCE.md",
+        "py/mb_cmn/provenance.md",
+        "py/mb_diff_mpu/PROVENANCE.md",
+        "py/mb_diff_mpu/provenance.md"
       ],
       "copy_scripts": [
         "py/main_update_vendored_files.py"
       ],
-      "pycmn_dirs": [
+      "mb_cmn_dirs": [
         {
-          "path": "py/pycmn",
+          "path": "py/mb_cmn",
           "files": [
             "bib_locales.py",
             "cantsys.py",
@@ -42,18 +42,18 @@
       "scanned_dirs": [
         ".",
         "py",
-        "py/pycmn"
+        "py/mb_cmn"
       ],
       "found_provenance_docs": [
-        "py/pycmn/PROVENANCE.md",
-        "py/pycmn/provenance.md"
+        "py/mb_cmn/PROVENANCE.md",
+        "py/mb_cmn/provenance.md"
       ],
       "copy_scripts": [
         "py/main_update_vendored_files.py"
       ],
-      "pycmn_dirs": [
+      "mb_cmn_dirs": [
         {
-          "path": "py/pycmn",
+          "path": "py/mb_cmn",
           "files": [
             "bib_locales.py",
             "cantsys.py",
@@ -87,14 +87,14 @@
       "repo": "book-of-job",
       "scanned_dirs": [
         ".",
-        "py",
-        "pycmn"
+        "mb_cmn",
+        "py"
       ],
       "found_provenance_docs": [],
       "copy_scripts": [],
-      "pycmn_dirs": [
+      "mb_cmn_dirs": [
         {
-          "path": "pycmn",
+          "path": "mb_cmn",
           "files": [
             "bib_locales.py",
             "cantsys.py",
@@ -121,16 +121,16 @@
         "aleppo-wiki",
         "py",
         "aleppo-wiki/py",
-        "py/pycmn"
+        "py/mb_cmn"
       ],
       "found_provenance_docs": [
         "aleppo-wiki/PROVENANCE.md",
         "aleppo-wiki/provenance.md"
       ],
       "copy_scripts": [],
-      "pycmn_dirs": [
+      "mb_cmn_dirs": [
         {
-          "path": "py/pycmn",
+          "path": "py/mb_cmn",
           "files": [
             "hebrew_points.py",
             "str_defs.py",
@@ -143,13 +143,13 @@
       "repo": "codex-index-cam1753",
       "scanned_dirs": [
         ".",
-        "pycmn"
+        "mb_cmn"
       ],
       "found_provenance_docs": [],
       "copy_scripts": [],
-      "pycmn_dirs": [
+      "mb_cmn_dirs": [
         {
-          "path": "pycmn",
+          "path": "mb_cmn",
           "files": [
             "hebrew_points.py",
             "str_defs.py",
@@ -169,19 +169,19 @@
       "copy_scripts": [
         "main_update_vendored_files.py"
       ],
-      "pycmn_dirs": []
+      "mb_cmn_dirs": []
     },
     {
       "repo": "diffable-pointed-hebrew",
       "scanned_dirs": [
         ".",
-        "pycmn"
+        "mb_cmn"
       ],
       "found_provenance_docs": [],
       "copy_scripts": [],
-      "pycmn_dirs": [
+      "mb_cmn_dirs": [
         {
-          "path": "pycmn",
+          "path": "mb_cmn",
           "files": [
             "cantsys.py",
             "file_io.py",
@@ -200,14 +200,14 @@
       "scanned_dirs": [
         ".",
         "py",
-        "py/pycmn",
+        "py/mb_cmn",
         "py/python_modules"
       ],
       "found_provenance_docs": [],
       "copy_scripts": [],
-      "pycmn_dirs": [
+      "mb_cmn_dirs": [
         {
-          "path": "py/pycmn",
+          "path": "py/mb_cmn",
           "files": [
             "bib_locales.py",
             "hebrew_accents.py",
@@ -227,14 +227,14 @@
       "scanned_dirs": [
         ".",
         "py",
-        "py/py_misc",
-        "py/pycmn"
+        "py/mb_cmn",
+        "py/py_misc"
       ],
       "found_provenance_docs": [],
       "copy_scripts": [],
-      "pycmn_dirs": [
+      "mb_cmn_dirs": [
         {
-          "path": "py/pycmn",
+          "path": "py/mb_cmn",
           "files": [
             "cantsys.py",
             "hebrew_accents.py",
@@ -256,14 +256,14 @@
       "scanned_dirs": [
         ".",
         "py",
-        "py/py_html",
-        "py/pycmn"
+        "py/mb_cmn",
+        "py/py_html"
       ],
       "found_provenance_docs": [],
       "copy_scripts": [],
-      "pycmn_dirs": [
+      "mb_cmn_dirs": [
         {
-          "path": "py/pycmn",
+          "path": "py/mb_cmn",
           "files": [
             "bib_locales.py",
             "cantsys.py",

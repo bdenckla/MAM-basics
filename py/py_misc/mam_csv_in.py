@@ -7,11 +7,11 @@ Exports:
 import csv
 import collections
 
-from pycmn import my_utils
-from pycmn import bib_locales as tbn
-from pycmn import mam_bknas
+from mb_cmn import my_utils
+from mb_cmn import bib_locales as tbn
+from mb_cmn import mam_bknas
 from ws import ws_tmpl_n_tag_parser as ttp
-from pycmn.minirow import Minirow
+from mb_cmn.minirow import Minirow
 
 
 def read_section_from_csv_lightly(secid, mam_info=None):

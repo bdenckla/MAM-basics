@@ -1,9 +1,9 @@
 import re
-from pycmn import uni_heb as uh
-from pycmn import hebrew_punctuation as hpu
-from pycmn import hebrew_points as hpo
-from pycmn import hebrew_accents as ha
-from pycmn import str_defs as sd
+from mb_cmn import uni_heb as uh
+from mb_cmn import hebrew_punctuation as hpu
+from mb_cmn import hebrew_points as hpo
+from mb_cmn import hebrew_accents as ha
+from mb_cmn import str_defs as sd
 
 
 def massage_ctr_verse(ctr_verse_raw):

@@ -1,7 +1,7 @@
-from pycmn import bib_locales as tbn
-from pycmn import hebrew_accents as ha
+from mb_cmn import bib_locales as tbn
+from mb_cmn import hebrew_accents as ha
 from py_misc import wt_qere
-from pycmn.my_utils import sum_of_map
+from mb_cmn.my_utils import sum_of_map
 
 
 def find_fois_wt(mroge):

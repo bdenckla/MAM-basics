@@ -1,10 +1,10 @@
-from pycmn import my_utils
-from pycmn import bib_locales as tbn
-from pycmn import ws_tmpl2 as wtp
-from pycmn import template_names as tmpln
+from mb_cmn import my_utils
+from mb_cmn import bib_locales as tbn
+from mb_cmn import ws_tmpl2 as wtp
+from mb_cmn import template_names as tmpln
 from py_misc import vtrad_helpers as helpers
 from py_misc import vtrad_data
-from pycmn.minirow import MinirowExt
+from mb_cmn.minirow import MinirowExt
 
 
 def convert_to_bhs(bkids, books_mpu):

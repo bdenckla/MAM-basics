@@ -1,12 +1,12 @@
-from pycmn import str_defs as sd
-from pycmn import ws_tmpl2 as wtp
-from pycmn import template_names as tmpln
-from pycmn import hebrew_punctuation as hpu
-from pycmn.shrink import shrink
-from pycmn.my_utils import first_and_only_and_str
-from pycmn.my_utils import sum_of_map
-from pycmn.my_utils import sum_of_seqs
-from pycmn.my_utils import intersperse
+from mb_cmn import str_defs as sd
+from mb_cmn import ws_tmpl2 as wtp
+from mb_cmn import template_names as tmpln
+from mb_cmn import hebrew_punctuation as hpu
+from mb_cmn.shrink import shrink
+from mb_cmn.my_utils import first_and_only_and_str
+from mb_cmn.my_utils import sum_of_map
+from mb_cmn.my_utils import sum_of_seqs
+from mb_cmn.my_utils import intersperse
 from py_misc.split import my_re_split
 
 

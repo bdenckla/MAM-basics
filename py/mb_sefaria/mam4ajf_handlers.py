@@ -4,7 +4,7 @@
 # ofc1: output for all children, summed together
 # ofc2: output for all children, per child
 
-from pycmn import hebrew_punctuation as hpu
+from mb_cmn import hebrew_punctuation as hpu
 
 
 def _verse(etel, ofc1, _ofc2):

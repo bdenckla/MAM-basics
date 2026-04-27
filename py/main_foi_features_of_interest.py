@@ -36,8 +36,8 @@ from foi import foiz_wt_slh_word as foi_slh_word
 from foi import foiz_wt_mtgmtg as foi_mtgmtg
 from foi import foiz_wt_unicode as foi_unicode
 
-from pycmn import read_books_from_mam_parsed_plus as plus
-from pycmn import bib_locales as tbn
+from mb_cmn import read_books_from_mam_parsed_plus as plus
+from mb_cmn import bib_locales as tbn
 
 
 def _do_wikitext_features_of_interest(foi, single_threaded, books_mpu, all_fois):

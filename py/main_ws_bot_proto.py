@@ -11,16 +11,16 @@ Usage (run from repo root):
 import argparse
 from functools import partial
 
-from pycmn import bib_locales as tbn
-from pycmn import file_io
-from pycmn import mam_bknas_and_std_bknas as mbkn_a_sbkn
+from mb_cmn import bib_locales as tbn
+from mb_cmn import file_io
+from mb_cmn import mam_bknas_and_std_bknas as mbkn_a_sbkn
 from ws import ws_get_bk_in_both_fmts as wsin
 from ws import ws_bot_edit as wbe
 from ws import ws_fmt_2_back_to_wikitext as btw
 from ws import ws_download_selector as wsds
 from py_misc.my_utils_for_mainish import show_progress_g
-from pycmn.my_utils import dv_map
-from pycmn.my_utils import dkv_map
+from mb_cmn.my_utils import dv_map
+from mb_cmn.my_utils import dkv_map
 
 
 def almost_main(edits_json_path=None, book_plans=None):

@@ -13,13 +13,13 @@ Exports:
 
 import copy
 
-from pydiff_mpplus.mpplus_flatten import (
+from mb_diff_mpu.mpplus_flatten import (
     flatten_element,
     is_qere_velo_ketiv_template,
     strip_square_brackets,
 )
-from pydiff_mpplus.mpplus_param_access import MISSING, get_param
-from pydiff_mpplus.mpplus_structure import structural_signature
+from mb_diff_mpu.mpplus_param_access import MISSING, get_param
+from mb_diff_mpu.mpplus_structure import structural_signature
 
 # ── Text normalization ───────────────────────────────────────
 

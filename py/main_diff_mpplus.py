@@ -25,7 +25,7 @@ import argparse
 import json
 import os
 import subprocess
-from pydiff_mpplus import (
+from mb_diff_mpu import (
     mpplus_extract,
     mpplus_classify,
     mpplus_html,
@@ -126,7 +126,7 @@ def _generate_report(old_rev, new_rev, output, *, write_when_empty=True):
         print("  No diffs found; not writing report")
         return 0, _commit_date(old_rev)
     mpplus_classify.classify_diffs(diffs)
-    from pydiff_mpplus import mpplus_verify
+    from mb_diff_mpu import mpplus_verify
 
     mpplus_verify.verify_all(diffs)
     old_date = _commit_date(old_rev)

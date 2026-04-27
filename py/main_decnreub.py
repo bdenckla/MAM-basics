@@ -7,11 +7,11 @@ dual-cantillation information.
 
 from decnreub.decnreub import do_one_book
 from decnreub.decnreub import flatrow_for_jsondump
-from pycmn import file_io
-from pycmn import read_books_from_mam_parsed_plus as plus
-from pycmn import bib_locales as tbn
-from pycmn.my_utils import sl_map
-from pycmn.my_utils import sum_of_map
+from mb_cmn import file_io
+from mb_cmn import read_books_from_mam_parsed_plus as plus
+from mb_cmn import bib_locales as tbn
+from mb_cmn.my_utils import sl_map
+from mb_cmn.my_utils import sum_of_map
 
 # For Saga of Reuben we consider:
 #    * the פשוטה ("simple"?) accent scheme to be analogous to taxton

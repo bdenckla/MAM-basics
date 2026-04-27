@@ -1,6 +1,6 @@
 import re
-from pycmn.my_utils import sl_map
-from pycmn.my_utils import dv_map
+from mb_cmn.my_utils import sl_map
+from mb_cmn.my_utils import dv_map
 
 
 def simplify_singletons(tmpl2_args):

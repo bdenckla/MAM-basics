@@ -11,10 +11,10 @@ from dataclasses import dataclass
 
 from py_misc import scrdfftar_to_doc
 from py_misc import trivial_qere_to_doc
-from pycmn import ws_tmpl2 as wtp
-from pycmn import shrink
+from mb_cmn import ws_tmpl2 as wtp
+from mb_cmn import shrink
 from py_misc import uni_check
-from pycmn import my_utils
+from mb_cmn import my_utils
 
 
 @dataclass

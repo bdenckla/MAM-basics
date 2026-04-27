@@ -1,15 +1,15 @@
-from pycmn import template_names as tmpln
+from mb_cmn import template_names as tmpln
 from py_misc import ren_html_for_renel as hfr
-from pycmn import ws_tmpl2 as wtp
+from mb_cmn import ws_tmpl2 as wtp
 from render_wt import render_wikitext_handlers as handlers
 from render_wt import render_wikitext_helpers as wt_help
 from py_misc import ren_html_from_ren_el_mapping as hfrm
 from foi import foi_wikitext_helpers as fwh
 from foi import foi_struct as fct
-from pycmn.my_utils import intersperse
-from pycmn.my_utils import sum_of_tuples
-from pycmn.my_utils import first_and_only
-from pycmn.my_utils import first_and_only_and_str
+from mb_cmn.my_utils import intersperse
+from mb_cmn.my_utils import sum_of_tuples
+from mb_cmn.my_utils import first_and_only
+from mb_cmn.my_utils import first_and_only_and_str
 
 
 def find_fois_wt(mroge):

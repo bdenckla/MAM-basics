@@ -1,15 +1,15 @@
 import re
-from pycmn import uni_denorm as ud
-from pycmn import hebrew_points as hpo
-from pycmn import hebrew_accents as ha
-from pycmn import hebrew_punctuation as hpu
-from pycmn import hebrew_letters as hl
-from pycmn import uni_heb as uh
-from pycmn import template_names as tmpln
+from mb_cmn import uni_denorm as ud
+from mb_cmn import hebrew_points as hpo
+from mb_cmn import hebrew_accents as ha
+from mb_cmn import hebrew_punctuation as hpu
+from mb_cmn import hebrew_letters as hl
+from mb_cmn import uni_heb as uh
+from mb_cmn import template_names as tmpln
 from foi import foi_wikitext_helpers as fwh
 from foi import regexp_helpers as rh
-from pycmn.my_utils import sl_map
-from pycmn.my_utils import first_and_only
+from mb_cmn.my_utils import sl_map
+from mb_cmn.my_utils import first_and_only
 
 
 def find_fois_wt(mroge):

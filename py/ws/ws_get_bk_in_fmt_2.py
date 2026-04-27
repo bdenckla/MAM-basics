@@ -2,10 +2,10 @@ from dataclasses import dataclass
 from ws import ws_in2_serialize as serialize
 from ws import ws_in2_tree_node as etn
 from ws import ws_in2_chap_body as chap_body
-from pycmn import ws_tmpl1 as wtp1
-from pycmn import mam_bknas_and_std_bknas as mbkn_a_sbkn
-from pycmn import bib_locales as tbn
-from pycmn import hebrew_verse_numerals as hvn
+from mb_cmn import ws_tmpl1 as wtp1
+from mb_cmn import mam_bknas_and_std_bknas as mbkn_a_sbkn
+from mb_cmn import bib_locales as tbn
+from mb_cmn import hebrew_verse_numerals as hvn
 
 
 def get_chap_in_fmt_2(parsed_lines, bacq=None):

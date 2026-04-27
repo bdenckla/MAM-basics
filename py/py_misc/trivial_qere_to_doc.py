@@ -1,9 +1,9 @@
 """Exports convert"""
 
-from pycmn import ws_tmpl2 as wtp
+from mb_cmn import ws_tmpl2 as wtp
 from py_misc import unbury_doc_parts as unbury
-from pycmn import my_utils
-from pycmn import shrink
+from mb_cmn import my_utils
+from mb_cmn import shrink
 
 
 def convert(bcvt, wtseq, io_renlog=None):

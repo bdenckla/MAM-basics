@@ -1,10 +1,10 @@
-from pycmn import ws_tmpl2 as wtp
-from pycmn import str_defs as sd
-from pycmn import bib_locales as tbn
+from mb_cmn import ws_tmpl2 as wtp
+from mb_cmn import str_defs as sd
+from mb_cmn import bib_locales as tbn
 from py_misc import wt_qere
-from pycmn import hebrew_punctuation as hpu
-from pycmn.my_utils import sl_map
-from pycmn.my_utils import sum_of_map
+from mb_cmn import hebrew_punctuation as hpu
+from mb_cmn.my_utils import sl_map
+from mb_cmn.my_utils import sum_of_map
 
 
 def find_fois_wt(mroge):

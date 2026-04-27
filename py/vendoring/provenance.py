@@ -34,7 +34,7 @@ COPY_SCRIPT_PATTERNS = [
     "*copy*py*",
     "*vendor*py*",
     "*sync*py*",
-    "*update_pycmn*",
+    "*update_mb_cmn*",
 ]
 
 
@@ -93,25 +93,25 @@ def _scan_repo(repo: str) -> dict[str, object]:
     scanned_dirs = _candidate_scan_dirs_for_repo(repo)
     found_docs = _find_provenance_docs(repo, repo_path)
     copy_scripts = _find_copy_scripts(repo_path)
-    pycmn_dirs: list[dict[str, object]] = []
+    mb_cmn_dirs: list[dict[str, object]] = []
 
-    for pycmn_rel in ["pycmn", "py/pycmn"]:
-        pycmn_path = repo_path / pycmn_rel
-        if not pycmn_path.exists():
+    for mb_cmn_rel in ["mb_cmn", "py/mb_cmn"]:
+        mb_cmn_path = repo_path / mb_cmn_rel
+        if not mb_cmn_path.exists():
             continue
         files = sorted(
             p.name
-            for p in pycmn_path.iterdir()
+            for p in mb_cmn_path.iterdir()
             if p.suffix == ".py" and p.name != "__init__.py"
         )
-        pycmn_dirs.append({"path": pycmn_rel, "files": files})
+        mb_cmn_dirs.append({"path": mb_cmn_rel, "files": files})
 
     return {
         "repo": repo,
         "scanned_dirs": scanned_dirs,
         "found_provenance_docs": found_docs,
         "copy_scripts": copy_scripts,
-        "pycmn_dirs": pycmn_dirs,
+        "mb_cmn_dirs": mb_cmn_dirs,
     }
 
 
@@ -138,9 +138,9 @@ def main() -> None:
             else:
                 f.write("  copy scripts: none found\n")
 
-            # List pycmn directory if present at top level or common paths
-            for pycmn_dir in list(summary["pycmn_dirs"]):
-                f.write(f"  pycmn dir ({pycmn_dir['path']}): {pycmn_dir['files']}\n")
+            # List mb_cmn directory if present at top level or common paths
+            for mb_cmn_dir in list(summary["mb_cmn_dirs"]):
+                f.write(f"  mb_cmn dir ({mb_cmn_dir['path']}): {mb_cmn_dir['files']}\n")
 
     json_payload = {"repos": repo_summaries}
     with _OUT_JSON.open("w", encoding="utf-8") as f:

@@ -2,8 +2,8 @@
 
 import unicodedata
 
-from pycmn import hebrew_points as hpo
-from pycmn import hebrew_punctuation as hpu
+from mb_cmn import hebrew_points as hpo
+from mb_cmn import hebrew_punctuation as hpu
 
 __all__ = ["get_fragile_comps", "is_fragile"]
 

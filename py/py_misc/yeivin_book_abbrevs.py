@@ -1,4 +1,4 @@
-from pycmn import bib_locales as tbn
+from mb_cmn import bib_locales as tbn
 
 # As a regex: (Gen|Ex|Lev|Nu|Dt|Jos|Jud|1S|2S|1K|2K|Is|Jer|Ez|Hos|Joel|Amos|Ob|Jon|Mic|Nah|Hab|Zeph|Hag|Zech|Mal|Ps|Prov|Job|Song|Rut|Lam|Qoh|Est|Dan|Ezra|Neh|1C|2C)
 

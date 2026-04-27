@@ -3,10 +3,10 @@
   "global": {
     "comment": null,
     "source_pkg_dirs": {
-      "pycmn": "py/pycmn",
+      "mb_cmn": "py/mb_cmn",
       "py_misc": "py/py_misc",
-      "pysefaria": "py/pysefaria",
-      "pydiff_mpplus": "py/pydiff_mpplus"
+      "mb_sefaria": "py/mb_sefaria",
+      "mb_diff_mpu": "py/mb_diff_mpu"
     }
   },
   "repos": {
@@ -18,14 +18,14 @@
       "default_mechanism": "copy_script",
       "default_provenance_doc": "no",
       "pkg_scan_roots": {
-        "pycmn": [
-          "py-example/pycmn"
+        "mb_cmn": [
+          "py-example/mb_cmn"
         ],
         "py_misc": [
           "py-example/py_misc"
         ],
-        "pysefaria": [
-          "py-example/pysefaria"
+        "mb_sefaria": [
+          "py-example/mb_sefaria"
         ]
       }
     },
@@ -37,11 +37,11 @@
       "default_mechanism": "unknown",
       "default_provenance_doc": "no",
       "pkg_scan_roots": {
-        "pycmn": [
-          "py/pycmn"
+        "mb_cmn": [
+          "py/mb_cmn"
         ],
-        "pydiff_mpplus": [
-          "py/pydiff_mpplus"
+        "mb_diff_mpu": [
+          "py/mb_diff_mpu"
         ]
       }
     },
@@ -53,8 +53,8 @@
       "default_mechanism": "unknown",
       "default_provenance_doc": "no",
       "pkg_scan_roots": {
-        "pycmn": [
-          "py/pycmn"
+        "mb_cmn": [
+          "py/mb_cmn"
         ]
       }
     },
@@ -66,8 +66,8 @@
       "default_mechanism": "unknown",
       "default_provenance_doc": "no",
       "pkg_scan_roots": {
-        "pycmn": [
-          "pycmn"
+        "mb_cmn": [
+          "mb_cmn"
         ]
       }
     },
@@ -79,8 +79,8 @@
       "default_mechanism": "unknown",
       "default_provenance_doc": "no",
       "pkg_scan_roots": {
-        "pycmn": [
-          "py/pycmn"
+        "mb_cmn": [
+          "py/mb_cmn"
         ]
       }
     },
@@ -92,8 +92,8 @@
       "default_mechanism": "unknown",
       "default_provenance_doc": "no",
       "pkg_scan_roots": {
-        "pycmn": [
-          "pycmn"
+        "mb_cmn": [
+          "mb_cmn"
         ]
       }
     },
@@ -114,8 +114,8 @@
       "default_mechanism": "unknown",
       "default_provenance_doc": "no",
       "pkg_scan_roots": {
-        "pycmn": [
-          "pycmn"
+        "mb_cmn": [
+          "mb_cmn"
         ]
       }
     },
@@ -127,8 +127,8 @@
       "default_mechanism": "unknown",
       "default_provenance_doc": "no",
       "pkg_scan_roots": {
-        "pycmn": [
-          "py/pycmn"
+        "mb_cmn": [
+          "py/mb_cmn"
         ]
       }
     },
@@ -140,8 +140,8 @@
       "default_mechanism": "unknown",
       "default_provenance_doc": "no",
       "pkg_scan_roots": {
-        "pycmn": [
-          "py/pycmn"
+        "mb_cmn": [
+          "py/mb_cmn"
         ],
         "py_misc": [
           "py/py_misc"
@@ -156,8 +156,8 @@
       "default_mechanism": "unknown",
       "default_provenance_doc": "no",
       "pkg_scan_roots": {
-        "pycmn": [
-          "py/pycmn"
+        "mb_cmn": [
+          "py/mb_cmn"
         ]
       }
     },
@@ -202,8 +202,8 @@
     {
       "comment": null,
       "dest_repo": "holman-ketiv-qere",
-      "dest_path": "py/pydiff_mpplus/describe_diff.py",
-      "src_pkg": "pydiff_mpplus",
+      "dest_path": "py/mb_diff_mpu/describe_diff.py",
+      "src_pkg": "mb_diff_mpu",
       "category": "deferred",
       "mechanism": null,
       "provenance_doc": null,
@@ -212,8 +212,8 @@
     {
       "comment": null,
       "dest_repo": "holman-ketiv-qere",
-      "dest_path": "py/pydiff_mpplus/grapheme_diff.py",
-      "src_pkg": "pydiff_mpplus",
+      "dest_path": "py/mb_diff_mpu/grapheme_diff.py",
+      "src_pkg": "mb_diff_mpu",
       "category": "deferred",
       "mechanism": null,
       "provenance_doc": null,
@@ -273,111 +273,111 @@
       "comment": null,
       "dest_repo": "codex-index-aleppo",
       "dest_path": "aleppo-wiki/py/hebrew_letters.py",
-      "src_pkg": "pycmn",
+      "src_pkg": "mb_cmn",
       "category": null,
       "mechanism": null,
       "provenance_doc": null,
-      "notes": "placed in aleppo-wiki/py/ not pycmn/"
+      "notes": "placed in aleppo-wiki/py/ not mb_cmn/"
     },
     {
       "comment": null,
       "dest_repo": "codex-index-aleppo",
       "dest_path": "aleppo-wiki/py/hebrew_punctuation.py",
-      "src_pkg": "pycmn",
+      "src_pkg": "mb_cmn",
       "category": null,
       "mechanism": null,
       "provenance_doc": null,
-      "notes": "placed in aleppo-wiki/py/ not pycmn/"
+      "notes": "placed in aleppo-wiki/py/ not mb_cmn/"
     },
     {
       "comment": null,
       "dest_repo": "codex-index-aleppo",
       "dest_path": "aleppo-wiki/py/hebrew_verse_numerals.py",
-      "src_pkg": "pycmn",
+      "src_pkg": "mb_cmn",
       "category": null,
       "mechanism": null,
       "provenance_doc": null,
-      "notes": "placed in aleppo-wiki/py/ not pycmn/"
+      "notes": "placed in aleppo-wiki/py/ not mb_cmn/"
     },
     {
       "comment": null,
       "dest_repo": "codex-index-aleppo",
       "dest_path": "aleppo-wiki/py/my_utils.py",
-      "src_pkg": "pycmn",
+      "src_pkg": "mb_cmn",
       "category": null,
       "mechanism": null,
       "provenance_doc": null,
-      "notes": "placed in aleppo-wiki/py/ not pycmn/"
+      "notes": "placed in aleppo-wiki/py/ not mb_cmn/"
     },
     {
       "comment": null,
       "dest_repo": "codex-index-leningrad",
       "dest_path": "lenin-wiki/py/hebrew_letters.py",
-      "src_pkg": "pycmn",
+      "src_pkg": "mb_cmn",
       "category": null,
       "mechanism": null,
       "provenance_doc": null,
-      "notes": "placed in lenin-wiki/py/ not pycmn/"
+      "notes": "placed in lenin-wiki/py/ not mb_cmn/"
     },
     {
       "comment": null,
       "dest_repo": "codex-index-leningrad",
       "dest_path": "lenin-wiki/py/hebrew_punctuation.py",
-      "src_pkg": "pycmn",
+      "src_pkg": "mb_cmn",
       "category": null,
       "mechanism": null,
       "provenance_doc": null,
-      "notes": "placed in lenin-wiki/py/ not pycmn/"
+      "notes": "placed in lenin-wiki/py/ not mb_cmn/"
     },
     {
       "comment": null,
       "dest_repo": "codex-index-leningrad",
       "dest_path": "lenin-wiki/py/hebrew_verse_numerals.py",
-      "src_pkg": "pycmn",
+      "src_pkg": "mb_cmn",
       "category": null,
       "mechanism": null,
       "provenance_doc": null,
-      "notes": "placed in lenin-wiki/py/ not pycmn/"
+      "notes": "placed in lenin-wiki/py/ not mb_cmn/"
     },
     {
       "comment": null,
       "dest_repo": "codex-index-leningrad",
       "dest_path": "lenin-wiki/py/my_utils.py",
-      "src_pkg": "pycmn",
+      "src_pkg": "mb_cmn",
       "category": null,
       "mechanism": null,
       "provenance_doc": null,
-      "notes": "placed in lenin-wiki/py/ not pycmn/"
+      "notes": "placed in lenin-wiki/py/ not mb_cmn/"
     },
     {
       "comment": null,
       "dest_repo": "mgketer",
       "dest_path": "py/python_modules/grapheme_diff.py",
-      "src_pkg": "pydiff_mpplus",
+      "src_pkg": "mb_diff_mpu",
       "category": "deferred",
       "mechanism": null,
       "provenance_doc": null,
-      "notes": "placed in python_modules not pydiff_mpplus"
+      "notes": "placed in python_modules not mb_diff_mpu"
     },
     {
       "comment": null,
       "dest_repo": "mgketer",
       "dest_path": "py/python_modules/my_diffs.py",
-      "src_pkg": "pycmn",
+      "src_pkg": "mb_cmn",
       "category": null,
       "mechanism": null,
       "provenance_doc": null,
-      "notes": "placed in python_modules/ not pycmn/"
+      "notes": "placed in python_modules/ not mb_cmn/"
     },
     {
       "comment": null,
       "dest_repo": "mgketer",
       "dest_path": "py/python_modules/uni_denorm.py",
-      "src_pkg": "pycmn",
+      "src_pkg": "mb_cmn",
       "category": null,
       "mechanism": null,
       "provenance_doc": null,
-      "notes": "placed in python_modules/ not pycmn/"
+      "notes": "placed in python_modules/ not mb_cmn/"
     },
     {
       "comment": null,

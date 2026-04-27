@@ -2,8 +2,8 @@
 
 from dataclasses import dataclass
 from ws import ws_in2_tree_node as etn
-from pycmn import hebrew_verse_numerals as hvn
-from pycmn import my_utils
+from mb_cmn import hebrew_verse_numerals as hvn
+from mb_cmn import my_utils
 
 
 def reorg(chap_body: list):

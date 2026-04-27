@@ -1,5 +1,5 @@
-from pycmn import mam_bknas
-from pycmn import ws_tmpl2 as wtp2
+from mb_cmn import mam_bknas
+from mb_cmn import ws_tmpl2 as wtp2
 from tmpl_survey import column_d_alirec as ar
 
 

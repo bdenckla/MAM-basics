@@ -1,9 +1,9 @@
-from pycmn import mam_bknas
-from pycmn import ws_tmpl1 as wtp1
-from pycmn import ws_tmpl_named_params as wtnp
+from mb_cmn import mam_bknas
+from mb_cmn import ws_tmpl1 as wtp1
+from mb_cmn import ws_tmpl_named_params as wtnp
 from tmpl_survey import column_d_alirec as ar
-from pycmn.my_utils import first_and_only
-from pycmn.my_utils import first_and_only_and_str
+from mb_cmn.my_utils import first_and_only
+from mb_cmn.my_utils import first_and_only_and_str
 
 
 def store_the_mpasuq_call(io_weeklies, bscv, wtseq):

@@ -5,7 +5,7 @@ Exports 2 dicts:
 """
 
 from itertools import product
-from pycmn import hebrew_letters as hl
+from mb_cmn import hebrew_letters as hl
 
 _HLYOD = hl.YOD
 _HLKAF = hl.KAF

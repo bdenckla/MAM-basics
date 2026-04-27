@@ -4,9 +4,9 @@
 import json
 
 from foi import kq_trivial_sug as kqs
-from pycmn import bib_locales as tbn
-from pycmn import file_io
-from pycmn import uni_denorm as udn
+from mb_cmn import bib_locales as tbn
+from mb_cmn import file_io
+from mb_cmn import uni_denorm as udn
 
 DEFAULT_FOI_KQ_SIMPLE_PATH = "../MAM-with-doc/gh-pages/foi/foi-kq-simple.json"
 

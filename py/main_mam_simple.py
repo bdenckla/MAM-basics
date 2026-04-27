@@ -8,14 +8,14 @@ Usage (run from repo root):
 
 from py_misc import my_utils_for_mainish as my_utils_fm
 from py_misc import mam_simple_copy_py_files
-from pycmn import read_books_from_mam_parsed_plus as plus
+from mb_cmn import read_books_from_mam_parsed_plus as plus
 from py_misc import write_utils_xml
 from py_misc import write_utils_json
 from py_misc import osis_book_abbrevs
 from py_misc import vtrad
 from py_misc import write_utils
 from py_misc import ren_tag_survey as rts
-from pycmn import bib_locales as tbn
+from mb_cmn import bib_locales as tbn
 from mb_xml import xml_render
 from mb_xml import xml_root_from_bksams
 from mb_xml import xml_distribute_sampe as xml_sampe

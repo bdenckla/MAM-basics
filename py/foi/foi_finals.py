@@ -1,8 +1,8 @@
 """Exports write"""
 
-from pycmn import bib_locales as tbn
-from pycmn import file_io
-from pycmn import provenance
+from mb_cmn import bib_locales as tbn
+from mb_cmn import file_io
+from mb_cmn import provenance
 
 from py_misc import mwd_utils as mwdu
 from py_misc import my_html

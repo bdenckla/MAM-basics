@@ -1,4 +1,4 @@
-from pycmn import bib_locales as tbn
+from mb_cmn import bib_locales as tbn
 
 
 def mk_dic_for_shifted_spans(ss_recs):

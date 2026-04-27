@@ -1,7 +1,7 @@
 """Record information about letters that carry multiple diacritical marks."""
 
-from pycmn import read_books_from_mam_parsed_plus as plus
-from pycmn import file_io
+from mb_cmn import read_books_from_mam_parsed_plus as plus
+from mb_cmn import file_io
 from multimark import multimark_1 as mm1
 from multimark import multimark_2 as mm2
 

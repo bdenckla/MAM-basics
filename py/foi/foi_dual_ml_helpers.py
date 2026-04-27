@@ -2,9 +2,9 @@
 """Exports find_fois_in_str"""
 
 import re
-from pycmn import hebrew_letters as hl
-from pycmn import hebrew_points as hpo
-from pycmn import hebrew_accents as ha
+from mb_cmn import hebrew_letters as hl
+from mb_cmn import hebrew_points as hpo
+from mb_cmn import hebrew_accents as ha
 from foi import foi_dml_a1_non_xolam_helpers as avnx
 from foi import regexp_helpers as rh
 

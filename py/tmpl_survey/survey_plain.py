@@ -5,11 +5,11 @@ import collections
 
 from tmpl_survey import column_d_0_process_all_mpasuq_calls as cdp
 from tmpl_survey import column_d_0_store_the_mpasuq_call as cds
-from pycmn import bib_locales as tbn
-from pycmn import my_utils
+from mb_cmn import bib_locales as tbn
+from mb_cmn import my_utils
 from py_misc import my_utils_for_mainish as my_utils_fm
-from pycmn import ws_tmpl1 as wtp1
-from pycmn import template_names as tmpln
+from mb_cmn import ws_tmpl1 as wtp1
+from mb_cmn import template_names as tmpln
 
 _MINIROW = collections.namedtuple("_MINIROW", "CP, DP, EP")
 _PSV_PSN_CATEGORIES = {"0": "0 (pre-chapter)", str("תתת"): "2 (post-chapter)"}

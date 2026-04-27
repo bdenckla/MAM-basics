@@ -7,13 +7,13 @@ Usage:
 
 import argparse
 
-from pycmn import file_io
-from pycmn import polite_download
+from mb_cmn import file_io
+from mb_cmn import polite_download
 from py_misc.check_mpplus import check_mpplus
 from py_misc import my_utils_for_mainish as my_utils_fm
 from py_misc import mam_csv_in
 import main_parse_go
-from pycmn import bib_locales as tbn
+from mb_cmn import bib_locales as tbn
 
 
 def _download_section(secid, downloader):

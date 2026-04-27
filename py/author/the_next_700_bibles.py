@@ -2,7 +2,7 @@
 
 from py_misc import my_html
 from author_util import author
-from pycmn.str_defs import NBSP
+from mb_cmn.str_defs import NBSP
 
 
 def anchor():

@@ -5,7 +5,7 @@
 - Reuse already-defined book names and identifiers whenever possible.
 - Prefer canonical symbolic book ids from shared code, such as `1Samuel` and `Levit`, even in display contexts unless the user explicitly asks otherwise.
 - Do not invent a new parallel set of book names that is more verbose, more abbreviated, or only slightly different from existing names.
-- When a book-name mapping is genuinely needed, derive it from existing shared definitions in `pycmn` or another established module rather than hard-coding a fresh local mapping.
+- When a book-name mapping is genuinely needed, derive it from existing shared definitions in `mb_cmn` or another established module rather than hard-coding a fresh local mapping.
 
 ## Python Environment — MANDATORY venv-qualified commands
 
@@ -158,7 +158,7 @@ Before a series of experiments that might need to be thrown away, ask the user t
 
 - All Python code lives under `py/`.
 - **Main scripts** have a `main_` prefix (e.g. `py/main_mam4sef.py`, `py/main_parse_go.py`). These are the entry points run directly.
-- **Library modules** live in package directories under `py/` (e.g. `py/pycmn/`, `py/mb_xml/`, `py/render_wt/`). These are imported by main scripts.
+- **Library modules** live in package directories under `py/` (e.g. `py/mb_cmn/`, `py/mb_xml/`, `py/render_wt/`). These are imported by main scripts.
 
 ## Module Size Limit
 
@@ -258,7 +258,7 @@ This project uses a deliberate combining-mark order that differs from Unicode ca
 
 In practice: **base letter → shin/sin dot → dagesh → rafeh → vowels / meteg / accents**.
 
-The authoritative implementation is `py/pycmn/uni_denorm.py` (`give_std_mark_order`).
+The authoritative implementation is `py/mb_cmn/uni_denorm.py` (`give_std_mark_order`).
 
 **Never apply Unicode normalization (NFC, NFD, etc.) to Hebrew text.** NFC reorders combining marks, destroying the project's intentional mark order. If strings that should be equal aren't matching, ensure both use the project's standard mark order — do not paper over with `unicodedata.normalize`.
 

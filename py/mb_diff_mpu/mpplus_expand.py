@@ -1,7 +1,7 @@
 """Expand structural MAM-parsed-plus diffs into note-scoped sub-diffs when needed."""
 
-from pydiff_mpplus.mpplus_structure import template_name_multiset_delta
-from pydiff_mpplus.mpplus_template_change_desc import kq_if_template_addition_parts_list
+from mb_diff_mpu.mpplus_structure import template_name_multiset_delta
+from mb_diff_mpu.mpplus_template_change_desc import kq_if_template_addition_parts_list
 
 _TEMPLATE_REMOVAL_CATS = {
     "מ:דחי": "dehi-removal",

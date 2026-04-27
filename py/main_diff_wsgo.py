@@ -5,11 +5,11 @@ auto-edits output for applying the differences back to the Google Sheet.
 
 from py_misc import my_utils_for_mainish as my_utils_fm
 from py_misc import read_books_from_mam_parsed_plain as plain
-from pycmn import bib_locales as tbn
-from pycmn import file_io
-from pycmn import hebrew_verse_numerals as hvn
-from pycmn import mam_bknas_and_std_bknas as mbkn_a_sbkn
-from pycmn import uni_denorm as ud
+from mb_cmn import bib_locales as tbn
+from mb_cmn import file_io
+from mb_cmn import hebrew_verse_numerals as hvn
+from mb_cmn import mam_bknas_and_std_bknas as mbkn_a_sbkn
+from mb_cmn import uni_denorm as ud
 from diff_mm import diff_mm_reduce as red
 from diff_mm import diff_mm_wsgo_auto_edits as auto_edits
 from diff_mm import wsgo_go

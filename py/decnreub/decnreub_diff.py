@@ -1,7 +1,7 @@
-from pycmn import my_diffs
-from pycmn import str_defs as sd
-from pycmn import uni_heb as uh
-from pycmn.my_utils import sl_map
+from mb_cmn import my_diffs
+from mb_cmn import str_defs as sd
+from mb_cmn import uni_heb as uh
+from mb_cmn.my_utils import sl_map
 
 
 def add_diffs(dualcant_recs):

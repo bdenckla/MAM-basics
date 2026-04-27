@@ -1,4 +1,4 @@
-from pycmn import ws_tmpl2 as wtp
+from mb_cmn import ws_tmpl2 as wtp
 
 
 def unbury_parts(doc_parts_wtseqs):

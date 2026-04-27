@@ -21,7 +21,7 @@ ws_bot_edit_old_joshua_meteg.py.
 
 import json
 
-from pycmn import hebrew_points as hpo
+from mb_cmn import hebrew_points as hpo
 from ws import ws_get_bk_in_both_fmts as wsin
 from ws import ws_fmt_2_back_to_wikitext as btw
 

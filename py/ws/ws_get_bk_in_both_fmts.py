@@ -1,6 +1,6 @@
 from ws import ws_get_bk_in_fmt_1 as wsin1
 from ws import ws_get_bk_in_fmt_2 as wsin2
-from pycmn.my_utils import dkv_map
+from mb_cmn.my_utils import dkv_map
 
 
 def get_bk_in_both_fmts(path, bkid):

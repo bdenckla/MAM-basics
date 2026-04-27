@@ -1,8 +1,8 @@
 """Create the AJF MAM variant (similar to the Sefaria variant) from the XML MAM."""
 
-from pycmn import bib_locales as tbn
-from pysefaria import mam4sef_or_ajf
-from pysefaria import mam4ajf_handlers
+from mb_cmn import bib_locales as tbn
+from mb_sefaria import mam4sef_or_ajf
+from mb_sefaria import mam4ajf_handlers
 
 
 def almost_main():

@@ -1,8 +1,8 @@
 """Exports prep_children"""
 
 from ws import ws_in2_tree_node as etn
-from pycmn import ws_tmpl1 as wtp1
-from pycmn.my_utils import dv_map
+from mb_cmn import ws_tmpl1 as wtp1
+from mb_cmn.my_utils import dv_map
 
 
 def prep_children(node: etn.TreeNode):

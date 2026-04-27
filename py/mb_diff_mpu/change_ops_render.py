@@ -12,7 +12,7 @@ Exports:
     render_english — produce an English description from a list of ChangeOps
 """
 
-from pydiff_mpplus.change_ops import (
+from mb_diff_mpu.change_ops import (
     ComplexReplace,
     GenericReplace,
     GenericTextReplace,
@@ -30,7 +30,7 @@ from pydiff_mpplus.change_ops import (
     TemplateRestructured,
     is_text_op,
 )
-from pydiff_mpplus.describe_diff import (
+from mb_diff_mpu.describe_diff import (
     accent_name,
     is_accent,
     is_poetic,

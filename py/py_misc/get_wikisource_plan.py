@@ -1,10 +1,10 @@
-from pycmn import bib_locales as tbn
+from mb_cmn import bib_locales as tbn
 from py_misc import mam_csv_in
-from pycmn import mam_bknas_and_std_bknas as mbkn_a_sbkn
-from pycmn import mam_bknas
-from pycmn.my_utils import sum_of_map
-from pycmn.my_utils import sl_map
-from pycmn.my_utils import dv_map
+from mb_cmn import mam_bknas_and_std_bknas as mbkn_a_sbkn
+from mb_cmn import mam_bknas
+from mb_cmn.my_utils import sum_of_map
+from mb_cmn.my_utils import sl_map
+from mb_cmn.my_utils import dv_map
 
 
 def get_chapter_plans(book_plan):

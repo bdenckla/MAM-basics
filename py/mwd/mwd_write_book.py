@@ -1,8 +1,8 @@
 from dataclasses import dataclass
 
-from pycmn import bib_locales as tbn
-from pycmn import my_utils
-from pycmn import provenance
+from mb_cmn import bib_locales as tbn
+from mb_cmn import my_utils
+from mb_cmn import provenance
 
 from py_misc import my_html
 from py_misc import my_utils_for_mainish as my_utils_fm

@@ -1,9 +1,9 @@
 from py_misc import hebrew_letter_names as hln
 from py_misc import hebrew_letter_words as hlw
-from pycmn import ws_tmpl2 as wtp
-from pycmn import hebrew_punctuation as hpu
-from pycmn import str_defs as sd
-from pycmn import my_utils
+from mb_cmn import ws_tmpl2 as wtp
+from mb_cmn import hebrew_punctuation as hpu
+from mb_cmn import str_defs as sd
+from mb_cmn import my_utils
 
 
 def get_parts(wtseq):

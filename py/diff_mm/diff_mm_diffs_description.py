@@ -3,7 +3,7 @@
 from py_misc import uni_heb_char_classes as uhc
 from diff_mm import diff_mm_uni_name
 from diff_mm import diff_mm_simplify_simple_diffs as ssd
-from pycmn import my_diffs
+from mb_cmn import my_diffs
 from py_misc import hebrew_letter_words as hlw
 
 

@@ -1,4 +1,4 @@
-from pycmn import hebrew_punctuation as hpu
+from mb_cmn import hebrew_punctuation as hpu
 
 _DIC_OF_LETTERS_TO_LETTER_NAMES_Q2 = {
     #

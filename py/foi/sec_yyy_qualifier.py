@@ -1,5 +1,5 @@
-from pycmn import str_defs as sd
-from pycmn import hebrew_letters as hl
+from mb_cmn import str_defs as sd
+from mb_cmn import hebrew_letters as hl
 
 
 def sec_yyy_qualifier(word) -> dict:

@@ -14,16 +14,16 @@ Exports:
 
 import re
 
-from pycmn import hebrew_punctuation as hpu
-from pycmn.str_defs import NBSP
-from pydiff_mpplus.mpplus_flatten import (
+from mb_cmn import hebrew_punctuation as hpu
+from mb_cmn.str_defs import NBSP
+from mb_diff_mpu.mpplus_flatten import (
     is_ketiv_velo_qere_template,
     is_parashah_template,
     is_qere_velo_ketiv_template,
     is_std_kq_template,
     is_trivial_kq_template,
 )
-from pydiff_mpplus.mpplus_param_access import MISSING, get_param
+from mb_diff_mpu.mpplus_param_access import MISSING, get_param
 
 # ── Paseq display (ruby annotations for legarmeih / narpas) ──
 

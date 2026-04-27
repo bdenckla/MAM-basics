@@ -2,9 +2,9 @@
 
 import json
 
-from pycmn import ws_tmpl2
-from pycmn import my_utils
-from pycmn import uni_denorm as ud
+from mb_cmn import ws_tmpl2
+from mb_cmn import my_utils
+from mb_cmn import uni_denorm as ud
 
 
 def check_mpplus(plus_paths):

@@ -2,13 +2,13 @@ from foi import foi_struct as fct
 from foi import foi_wikitext_helpers as fwh
 from py_misc import ren_html_from_ren_el_mapping as hfrm
 from py_misc import ren_html_for_renel as hfr
-from pycmn import ws_tmpl2 as wtp
+from mb_cmn import ws_tmpl2 as wtp
 from render_wt import render_element as renel
 from render_wt import render_wikitext_handlers as handlers
 from render_wt import render_wikitext_helpers as wt_help
 from py_misc import slh_description
-from pycmn import template_names as tmpln
-from pycmn.my_utils import first_and_only
+from mb_cmn import template_names as tmpln
+from mb_cmn.my_utils import first_and_only
 
 
 def find_fois_wt(mroge):

@@ -1,5 +1,5 @@
-from pycmn import my_utils
-from pycmn import ws_tmpl1 as wtp1
+from mb_cmn import my_utils
+from mb_cmn import ws_tmpl1 as wtp1
 
 
 def unparse(obj):

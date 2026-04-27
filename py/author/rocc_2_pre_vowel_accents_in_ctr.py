@@ -3,7 +3,7 @@
 from py_misc import my_html
 from author_util import author
 from author import rocc_1_on_the_provenance_of_ctr as prov
-from pycmn.my_utils import intersperse
+from mb_cmn.my_utils import intersperse
 from author_util.author import hbo
 
 

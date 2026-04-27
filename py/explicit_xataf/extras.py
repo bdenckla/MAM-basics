@@ -2,7 +2,7 @@
 
 import json
 
-from pycmn import file_io
+from mb_cmn import file_io
 
 
 def _read_extras_annotations():

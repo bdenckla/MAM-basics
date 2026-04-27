@@ -2,13 +2,13 @@
 
 import re
 
-from pycmn import hebrew_accents as ha
-from pycmn import hebrew_letters as hl
-from pycmn import hebrew_points as hpo
-from pycmn import hebrew_punctuation as hpu
-from pycmn import template_names as tmpln
-from pycmn import uni_denorm as udn
-from pycmn import ws_tmpl2 as wtp
+from mb_cmn import hebrew_accents as ha
+from mb_cmn import hebrew_letters as hl
+from mb_cmn import hebrew_points as hpo
+from mb_cmn import hebrew_punctuation as hpu
+from mb_cmn import template_names as tmpln
+from mb_cmn import uni_denorm as udn
+from mb_cmn import ws_tmpl2 as wtp
 
 MISC = "misc"
 XOLAM_HE = "xolam-he"

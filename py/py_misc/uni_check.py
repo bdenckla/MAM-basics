@@ -2,9 +2,9 @@
 
 import itertools
 
-from pycmn import uni_denorm as ud
-from pycmn import uni_heb as uh
-from pycmn import uni_norm_fragile as unf
+from mb_cmn import uni_denorm as ud
+from mb_cmn import uni_heb as uh
+from mb_cmn import uni_norm_fragile as unf
 
 
 def check(obj):

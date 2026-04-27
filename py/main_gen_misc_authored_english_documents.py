@@ -5,7 +5,7 @@ that are written by the repo owner and rendered from Python source data.
 
 from py_misc import my_html
 from py_misc import two_col_css_styles as tcstyles
-from pycmn import provenance
+from mb_cmn import provenance
 from author import notes_on_aliyot
 from author import tsinnorit_and_oleh_on_ivs
 from author import tsinnorit_and_oleh_facts

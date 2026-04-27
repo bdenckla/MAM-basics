@@ -2,7 +2,7 @@
 """Shared סוג mapping and reconciliation for trivial ketiv/qere templates."""
 
 from foi import kq_trivial_types as ktt
-from pycmn import ws_tmpl2 as wtp
+from mb_cmn import ws_tmpl2 as wtp
 
 DISAGREE = "disagree"
 

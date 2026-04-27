@@ -4,10 +4,10 @@ import unittest
 
 from foi import kq_trivial_types as ktt
 from foi import kq_trivial_sug as kqs
-from pycmn import bib_locales as tbn
-from pycmn import uni_denorm as udn
-from pycmn import ws_tmpl1 as wtp1
-from pycmn import ws_tmpl2 as wtp
+from mb_cmn import bib_locales as tbn
+from mb_cmn import uni_denorm as udn
+from mb_cmn import ws_tmpl1 as wtp1
+from mb_cmn import ws_tmpl2 as wtp
 from ws import ws_bot_edit_kq_triv_add_type as mod
 
 

@@ -21,16 +21,16 @@ from functools import partial
 
 from foi import kq_trivial_types as ktt
 from foi import kq_trivial_sug as kqs
-from pycmn import bib_locales as tbn
-from pycmn import hebrew_verse_numerals as hvn
-from pycmn import uni_denorm as udn
-from pycmn import ws_tmpl1 as wtp1
-from pycmn import ws_tmpl2 as wtp
-from pycmn.my_utils import dv_dispatch
-from pycmn.my_utils import dkv_map
-from pycmn.my_utils import sl_map
-from pycmn.my_utils import sum_of_map
-from pycmn.shrink import shrink
+from mb_cmn import bib_locales as tbn
+from mb_cmn import hebrew_verse_numerals as hvn
+from mb_cmn import uni_denorm as udn
+from mb_cmn import ws_tmpl1 as wtp1
+from mb_cmn import ws_tmpl2 as wtp
+from mb_cmn.my_utils import dv_dispatch
+from mb_cmn.my_utils import dkv_map
+from mb_cmn.my_utils import sl_map
+from mb_cmn.my_utils import sum_of_map
+from mb_cmn.shrink import shrink
 from ws import ws_fmt_2_back_to_wikitext as btw
 from ws import ws_get_bk_in_both_fmts as wsin
 from ws import ws_unparse

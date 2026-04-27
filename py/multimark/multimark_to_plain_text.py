@@ -1,6 +1,6 @@
 from multimark import multimark_char as splhc
 from multimark import multimark_mappings as splhm
-from pycmn import hebrew_letters as hl
+from mb_cmn import hebrew_letters as hl
 
 
 def render_char(char, sep=""):

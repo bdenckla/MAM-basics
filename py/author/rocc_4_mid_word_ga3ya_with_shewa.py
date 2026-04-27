@@ -1,8 +1,8 @@
 """Exports main"""
 
 from py_misc import my_html
-from pycmn import my_utils
-from pycmn import hebrew_punctuation as hpu
+from mb_cmn import my_utils
+from mb_cmn import hebrew_punctuation as hpu
 from author_util import author
 from author_rocc import rocc_util as ru
 from author_rocc import rocc_0_review_of_ctr_header as rocc_0

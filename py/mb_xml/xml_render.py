@@ -2,7 +2,7 @@
 
 from py_misc import ren_html_for_renel as hfr
 from py_misc import ren_tag_survey as rts
-from pycmn import my_utils
+from mb_cmn import my_utils
 from render_wt import render_wikitext as rwt
 
 

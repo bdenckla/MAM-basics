@@ -1,11 +1,11 @@
 import json
-from pycmn import hebrew_verse_numerals as hvn
-from pycmn import bib_locales as tbn
-from pycmn import mam_bknas_and_std_bknas as mbkn_a_sbkn
-from pycmn.minirow import MinirowExt
-from pycmn.my_utils import sl_map
-from pycmn.my_utils import sum_of_dics
-from pycmn.my_utils import init_at_key
+from mb_cmn import hebrew_verse_numerals as hvn
+from mb_cmn import bib_locales as tbn
+from mb_cmn import mam_bknas_and_std_bknas as mbkn_a_sbkn
+from mb_cmn.minirow import MinirowExt
+from mb_cmn.my_utils import sl_map
+from mb_cmn.my_utils import sum_of_dics
+from mb_cmn.my_utils import init_at_key
 
 
 def read_parsed_plus_bk39s(bk39ids=None, mam_parsed_path="../MAM-parsed"):

@@ -1,8 +1,8 @@
 import itertools
-from pycmn import uni_heb as uh
-from pycmn import hebrew_accents as ha
-from pycmn import hebrew_points as hpo
-from pycmn.my_utils import dk_map
+from mb_cmn import uni_heb as uh
+from mb_cmn import hebrew_accents as ha
+from mb_cmn import hebrew_points as hpo
+from mb_cmn.my_utils import dk_map
 
 
 def make(ell, vow=None, acc=None, special=None):

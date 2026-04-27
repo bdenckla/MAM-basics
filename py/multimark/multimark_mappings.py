@@ -1,12 +1,12 @@
 import functools
 
-from pycmn import hebrew_letters as hl
-from pycmn import hebrew_points as hpo
-from pycmn import hebrew_punctuation as hpu
-from pycmn import str_defs as sd
-from pycmn import uni_heb as uh
+from mb_cmn import hebrew_letters as hl
+from mb_cmn import hebrew_points as hpo
+from mb_cmn import hebrew_punctuation as hpu
+from mb_cmn import str_defs as sd
+from mb_cmn import uni_heb as uh
 from py_misc import uni_heb_char_classes as uhc
-from pycmn.my_utils import sl_map
+from mb_cmn.my_utils import sl_map
 
 
 def map_uni_to_layerl(uni):

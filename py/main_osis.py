@@ -6,13 +6,13 @@ import lxml.etree as lxml_etree
 
 from py_misc import my_utils_for_mainish as my_utils_fm
 from py_misc import my_html
-from pycmn import bib_locales as tbn
+from mb_cmn import bib_locales as tbn
 from py_misc import two_col_css_styles as tcstyles
 from py_misc import osis_book_abbrevs
-from pycmn import my_utils
-from pycmn import file_io
-from pycmn import provenance
-from pycmn import shrink
+from mb_cmn import my_utils
+from mb_cmn import file_io
+from mb_cmn import provenance
+from mb_cmn import shrink
 from osis import osis_namespace as osisn
 from osis import osis_handlers
 from osis import osis_index_html

@@ -13,7 +13,7 @@ infrastructure has changed enough to make them misleading examples:
   functions they provided (dispatcher, pass-thru, recurse-on-args) were
   consolidated into `ws_bot_edit.py` itself during the YBY era.
 - **Package structure changed.** Old bots use `import py.ws_tmpl1`,
-  `import py.hebrew_accents`, etc. Current code uses `from pycmn import ...`
+  `import py.hebrew_accents`, etc. Current code uses `from mb_cmn import ...`
   and `from ws import ...`.
 - **Signature changed.** Some old bots have
   `edit_page_text(summary, he_chnu, page_text)` (summary as first arg).

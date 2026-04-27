@@ -3,8 +3,8 @@
 import re
 from functools import partial
 from ws import ws_unparse
-from pycmn.my_utils import dkv_map
-from pycmn.my_utils import dv_dispatch
+from mb_cmn.my_utils import dkv_map
+from mb_cmn.my_utils import dv_dispatch
 
 
 def big_str(he_chnu, wsf2_chap):

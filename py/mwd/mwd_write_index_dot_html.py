@@ -1,6 +1,6 @@
-from pycmn import bib_locales as tbn
-from pycmn import my_utils
-from pycmn import provenance
+from mb_cmn import bib_locales as tbn
+from mb_cmn import my_utils
+from mb_cmn import provenance
 from py_misc import mwd_utils as mwdu
 from py_misc import my_html
 from py_misc import ws_urls

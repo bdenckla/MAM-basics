@@ -1,4 +1,4 @@
-from pycmn import bib_locales as tbn
+from mb_cmn import bib_locales as tbn
 from py_misc import vtrad_data
 from py_misc import vtrad_helpers as helpers
 

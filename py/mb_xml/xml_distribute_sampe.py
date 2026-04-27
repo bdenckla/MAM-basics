@@ -9,8 +9,8 @@ chasam_body
 from py_misc import my_html
 from py_misc import get_cvm_rec_from_bcvt as gcrfb
 from py_misc import verse_and_friends as vaf
-from pycmn import bib_locales as tbn
-from pycmn import my_utils
+from mb_cmn import bib_locales as tbn
+from mb_cmn import my_utils
 
 
 def distribute_sampe(verses):

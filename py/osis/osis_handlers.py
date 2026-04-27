@@ -1,9 +1,9 @@
 """Exports HANDLERS, child_handlers"""
 
 from py_misc import slh_description
-from pycmn import str_defs as sd
-from pycmn import hebrew_punctuation as hpu
-from pycmn import shrink
+from mb_cmn import str_defs as sd
+from mb_cmn import hebrew_punctuation as hpu
+from mb_cmn import shrink
 from osis import osis_namespace as osisn
 
 

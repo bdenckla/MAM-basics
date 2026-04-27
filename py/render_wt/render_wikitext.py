@@ -7,7 +7,7 @@ Exports:
 from render_wt import render_wikitext_handlers as handlers
 from render_wt import render_wikitext_helpers as wt_help
 from py_misc import verse_and_friends as vaf
-from pycmn import my_utils
+from mb_cmn import my_utils
 
 # renopts: options as to what the verse bodies should contain.
 #     ro_cantillation:

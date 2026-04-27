@@ -1,11 +1,11 @@
 """Exports ht_kq, handle_kq_ketiv_velo_qere"""
 
-from pycmn import hebrew_punctuation as hpu
+from mb_cmn import hebrew_punctuation as hpu
 from render_wt import render_element as renel
 from render_wt import render_wikitext_helpers as wt_help
-from pycmn import ws_tmpl2 as wtp
-from pycmn import template_names as tmpln
-from pycmn.shrink import shrink
+from mb_cmn import ws_tmpl2 as wtp
+from mb_cmn import template_names as tmpln
+from mb_cmn.shrink import shrink
 
 
 def handle_kq(hctx, tmpl):

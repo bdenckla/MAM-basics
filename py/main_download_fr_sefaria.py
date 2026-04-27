@@ -7,9 +7,9 @@ Usage:
 """
 
 from py_misc import my_utils_for_mainish as my_utils_fm
-from pysefaria import sef_cmn
-from pycmn import file_io
-from pycmn import polite_download
+from mb_sefaria import sef_cmn
+from mb_cmn import file_io
+from mb_cmn import polite_download
 
 
 def _download_book(sebn, downloader):  # sebn: Sefaria English Book Name

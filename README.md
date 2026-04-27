@@ -71,10 +71,10 @@ Run scripts from the repo root (not from `py/`):
 ```
 py/              Python source
   main_*.py      Entry-point scripts
-  pycmn/         Common utilities
+  mb_cmn/         Common utilities
   mb_xml/        XML rendering
   render_wt/     General rendering
-  pysefaria/     Sefaria-specific logic
+  mb_sefaria/     Sefaria-specific logic
   ws/            Wikisource-specific logic
   mpplus/        MAM parsed-plus helpers
   ...

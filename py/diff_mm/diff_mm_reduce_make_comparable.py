@@ -1,12 +1,12 @@
 """Exports make_comparable"""
 
 import re
-from pycmn import hebrew_punctuation as hpu
-from pycmn import ws_tmpl1 as wtp1
+from mb_cmn import hebrew_punctuation as hpu
+from mb_cmn import ws_tmpl1 as wtp1
 from py_misc import hebrew_letter_words as hlw
 from diff_mm import diff_mm_separators as seps
-from pycmn.my_utils import sum_of_map
-from pycmn.my_utils import sl_map
+from mb_cmn.my_utils import sum_of_map
+from mb_cmn.my_utils import sl_map
 
 
 def make_comparable(obj):

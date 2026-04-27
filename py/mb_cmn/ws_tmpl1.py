@@ -1,7 +1,7 @@
 """Exports functions that help create and use templates"""
 
-from pycmn.my_utils import first_and_only
-from pycmn.my_utils import sl_map
+from mb_cmn.my_utils import first_and_only
+from mb_cmn.my_utils import sl_map
 
 
 def template_elements(tmpl):

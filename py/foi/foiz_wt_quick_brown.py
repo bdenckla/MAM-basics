@@ -2,9 +2,9 @@ import re
 from dataclasses import dataclass
 from py_misc import wt_qere
 from py_misc import uni_heb_char_classes as uhc
-from pycmn import uni_heb as uh
-from pycmn import hebrew_accents as ha
-from pycmn import hebrew_letters as hl
+from mb_cmn import uni_heb as uh
+from mb_cmn import hebrew_accents as ha
+from mb_cmn import hebrew_letters as hl
 
 
 @dataclass

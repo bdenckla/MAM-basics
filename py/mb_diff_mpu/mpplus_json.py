@@ -9,9 +9,9 @@ import difflib
 import json
 import os
 
-from pycmn import provenance
-from pydiff_mpplus.mpplus_expand import split_structural_diff
-from pydiff_mpplus.mpplus_structure import template_name_multiset_delta
+from mb_cmn import provenance
+from mb_diff_mpu.mpplus_expand import split_structural_diff
+from mb_diff_mpu.mpplus_structure import template_name_multiset_delta
 
 
 def _narrow_to_changed_words(old_text, new_text):

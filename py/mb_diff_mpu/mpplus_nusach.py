@@ -10,7 +10,7 @@ Exports:
 
 import re
 
-from pydiff_mpplus.mpplus_param_access import MISSING, get_param
+from mb_diff_mpu.mpplus_param_access import MISSING, get_param
 
 # ── Pointed-Hebrew detection ──────────────────────────────────────
 

@@ -4,11 +4,11 @@ import collections
 import functools
 import json
 
-from pycmn import str_defs as sd
+from mb_cmn import str_defs as sd
 from multimark import multimark_char as splhc
 from multimark import multimark_to_plain_text as splhtpt
-from pycmn import bib_locales as tbn
-from pycmn import file_io
+from mb_cmn import bib_locales as tbn
+from mb_cmn import file_io
 
 
 def phase_2(in_path):

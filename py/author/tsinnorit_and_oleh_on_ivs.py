@@ -1,6 +1,6 @@
 """Exports main"""
 
-from pycmn.my_utils import sl_map
+from mb_cmn.my_utils import sl_map
 from py_misc import my_html
 from author_util import author
 from author import tsinnorit_in_psalm_32v5 as tip_32v5

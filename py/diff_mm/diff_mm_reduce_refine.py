@@ -1,9 +1,9 @@
 """Exports refine"""
 
-from pycmn import hebrew_punctuation as hpu
+from mb_cmn import hebrew_punctuation as hpu
 from diff_mm import diff_mm_separators as seps
 from diff_mm import diff_mm_diffs_description as description
-from pycmn import template_names as tmpln
+from mb_cmn import template_names as tmpln
 
 
 def refine(vala, valb):

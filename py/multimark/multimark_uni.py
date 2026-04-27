@@ -4,10 +4,10 @@ from multimark import multimark_mappings as splhm
 from multimark import multimark_char as splhc
 from multimark import multimark_to_plain_text as splhtpt
 from py_misc import uni_heb_char_classes as uhc
-from pycmn import hebrew_points as hpo
-from pycmn import hebrew_punctuation as hpu
-from pycmn import str_defs as sd
-from pycmn import my_utils
+from mb_cmn import hebrew_points as hpo
+from mb_cmn import hebrew_punctuation as hpu
+from mb_cmn import str_defs as sd
+from mb_cmn import my_utils
 
 
 def convert_uw_to_splh(lis_word_as_str):

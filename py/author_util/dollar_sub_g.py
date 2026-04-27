@@ -1,7 +1,7 @@
 import re
 
 from py_misc import my_html
-from pycmn.my_utils import sl_map
+from mb_cmn.my_utils import sl_map
 
 
 def dollar_sub_g(dispatch, contents):

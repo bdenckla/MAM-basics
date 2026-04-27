@@ -17,10 +17,10 @@ Exports:
 
 import difflib
 
-from pycmn.hebrew_punctuation import NU_GMAQ
-from pycmn.str_defs import DOUB_VERT_LINE
-from pycmn.template_names import STD_KQ_TMPL_NAMES
-from pydiff_mpplus.mpplus_param_access import MISSING, get_param
+from mb_cmn.hebrew_punctuation import NU_GMAQ
+from mb_cmn.str_defs import DOUB_VERT_LINE
+from mb_cmn.template_names import STD_KQ_TMPL_NAMES
+from mb_diff_mpu.mpplus_param_access import MISSING, get_param
 
 _PARASHAH_NAMES = {"סס", "ססס", "פפ", "פפפ"}
 _STD_KQ_TEMPLATE_NAMES = frozenset(STD_KQ_TMPL_NAMES)

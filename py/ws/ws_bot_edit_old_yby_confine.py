@@ -1,16 +1,16 @@
 from functools import partial
 import re
-from pycmn import ws_tmpl1 as wtp1
-from pycmn import hebrew_accents as ha
-from pycmn import ws_tmpl1 as wtp1
+from mb_cmn import ws_tmpl1 as wtp1
+from mb_cmn import hebrew_accents as ha
+from mb_cmn import ws_tmpl1 as wtp1
 from ws import ws_get_bk_in_both_fmts as wsin
 from ws import ws_fmt_2_back_to_wikitext as btw
-from pycmn.my_utils import sum_of_map
-from pycmn.my_utils import sl_map
-from pycmn.shrink import shrink
-from pycmn.my_utils import dv_dispatch
-from pycmn.my_utils import dv_map
-from pycmn.my_utils import first_and_only_and_str
+from mb_cmn.my_utils import sum_of_map
+from mb_cmn.my_utils import sl_map
+from mb_cmn.shrink import shrink
+from mb_cmn.my_utils import dv_dispatch
+from mb_cmn.my_utils import dv_map
+from mb_cmn.my_utils import first_and_only_and_str
 
 
 def edit_page_text(he_chnu: str, page_text: str):

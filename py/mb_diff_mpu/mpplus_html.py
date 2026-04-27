@@ -8,22 +8,22 @@ Exports:
 import difflib
 from collections import Counter
 
-from pydiff_mpplus.grapheme_diff import char_diff_spans
-from pydiff_mpplus.mpplus_structure import template_name_multiset_delta
-from pydiff_mpplus.describe_diff import describe_change, add_name_tooltips
-from pydiff_mpplus.mpplus_nusach import nusach_body_to_html
-from pydiff_mpplus.mpplus_assets import CATEGORY_INFO, write_shared_assets
-from pydiff_mpplus.mpplus_expand import split_structural_diff
-from pydiff_mpplus.mpplus_template_change_desc import kq_if_template_addition_parts
-from pydiff_mpplus.mpplus_display import (
+from mb_diff_mpu.grapheme_diff import char_diff_spans
+from mb_diff_mpu.mpplus_structure import template_name_multiset_delta
+from mb_diff_mpu.describe_diff import describe_change, add_name_tooltips
+from mb_diff_mpu.mpplus_nusach import nusach_body_to_html
+from mb_diff_mpu.mpplus_assets import CATEGORY_INFO, write_shared_assets
+from mb_diff_mpu.mpplus_expand import split_structural_diff
+from mb_diff_mpu.mpplus_template_change_desc import kq_if_template_addition_parts
+from mb_diff_mpu.mpplus_display import (
     display_text,
     normalize_paseq_spacing,
     postprocess_gray_maqaf_html,
     postprocess_paseq_html,
     postprocess_kq_html,
 )
-from pydiff_mpplus.mpplus_book_urls import mam_with_doc_url, wikisource_url, ref_str
-from pydiff_mpplus.mpplus_subtitle import render_subtitle_table
+from mb_diff_mpu.mpplus_book_urls import mam_with_doc_url, wikisource_url, ref_str
+from mb_diff_mpu.mpplus_subtitle import render_subtitle_table
 
 
 def _esc(text):

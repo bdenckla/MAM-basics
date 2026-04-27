@@ -1,4 +1,4 @@
-from pycmn import ws_tmpl1 as wtp1
+from mb_cmn import ws_tmpl1 as wtp1
 
 
 def parse(strs_and_tmpls):

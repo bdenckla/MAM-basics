@@ -1,10 +1,10 @@
 """Exports convert"""
 
-from pycmn import ws_tmpl2 as wtp
-from pycmn import template_names as tmpln
+from mb_cmn import ws_tmpl2 as wtp
+from mb_cmn import template_names as tmpln
 from py_misc import unbury_doc_parts as unbury
 from py_misc import true_gershayim as true_g2
-from pycmn import my_utils
+from mb_cmn import my_utils
 
 
 def convert(wtseq):  # wtseq: Wikitext sequence (list or tuple)

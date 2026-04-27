@@ -12,8 +12,8 @@ Exports:
     is_inferrable — check inferred-vowel consistency against xataf spelling
 """
 
-from pycmn import hebrew_letters as hle
-from pycmn import hebrew_points as hpo
+from mb_cmn import hebrew_letters as hle
+from mb_cmn import hebrew_points as hpo
 
 GUTTURALS = frozenset({hle.ALEF, hle.HE, hle.XET, hle.AYIN})
 

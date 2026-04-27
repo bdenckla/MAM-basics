@@ -1,6 +1,6 @@
-from pycmn.my_utils import intersperse, sum_of_seqs, sum_of_map
-from pycmn import hebrew_punctuation as hpu
-from pycmn import ws_tmpl2 as wtp
+from mb_cmn.my_utils import intersperse, sum_of_seqs, sum_of_map
+from mb_cmn import hebrew_punctuation as hpu
+from mb_cmn import ws_tmpl2 as wtp
 
 
 def do_one_wtseq(wtseq):

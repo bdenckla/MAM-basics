@@ -2,9 +2,9 @@
 
 import re
 
-from pycmn import hebrew_points as hpo
-from pycmn import template_names as tmpln
-from pycmn import ws_tmpl2 as wtp
+from mb_cmn import hebrew_points as hpo
+from mb_cmn import template_names as tmpln
+from mb_cmn import ws_tmpl2 as wtp
 
 XATAF_VOWELS = (hpo.XSEGOL, hpo.XPATAX, hpo.XQAMATS)
 XATAF_XIRIQ = hpo.SHEVA + hpo.XIRIQ  # sheva+xiriq sequence (no single Unicode char)

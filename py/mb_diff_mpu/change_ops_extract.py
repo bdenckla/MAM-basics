@@ -13,9 +13,9 @@ Exports:
 from collections import Counter
 from difflib import SequenceMatcher
 
-from pycmn.hebrew_punctuation import NU_GMAQ, PASOLEG
-from pycmn.str_defs import DOUB_VERT_LINE
-from pydiff_mpplus.change_ops import (
+from mb_cmn.hebrew_punctuation import NU_GMAQ, PASOLEG
+from mb_cmn.str_defs import DOUB_VERT_LINE
+from mb_diff_mpu.change_ops import (
     ComplexReplace,
     GenericReplace,
     GenericTextReplace,
@@ -32,8 +32,8 @@ from pydiff_mpplus.change_ops import (
     TemplateRemoved,
     TemplateRestructured,
 )
-from pydiff_mpplus.change_ops_apply import apply_text_ops
-from pydiff_mpplus.describe_diff import (
+from mb_diff_mpu.change_ops_apply import apply_text_ops
+from mb_diff_mpu.describe_diff import (
     ACCENT_CATS,
     LEG_SENTINEL,
     MARK_CATS,
@@ -46,7 +46,7 @@ from pydiff_mpplus.describe_diff import (
     is_poetic,
     qualify,
 )
-from pydiff_mpplus.mpplus_structure import template_name_multiset_delta
+from mb_diff_mpu.mpplus_structure import template_name_multiset_delta
 
 # ── Mark / accent extraction ────────────────────────────────
 

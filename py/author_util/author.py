@@ -2,11 +2,11 @@ import os
 
 import re
 from py_misc import my_html
-from pycmn import provenance
-from pycmn import str_defs as sd
-from pycmn.my_utils import sl_map
-from pycmn.my_utils import sum_of_map
-from pycmn.my_utils import dv_map
+from mb_cmn import provenance
+from mb_cmn import str_defs as sd
+from mb_cmn.my_utils import sl_map
+from mb_cmn.my_utils import sum_of_map
+from mb_cmn.my_utils import dv_map
 from author_util import dollar_sub_g
 
 

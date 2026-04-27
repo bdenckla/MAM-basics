@@ -1,7 +1,7 @@
 """Exports write_root_in_xml_fmt"""
 
 import xml.etree.ElementTree as ET
-from pycmn import file_io
+from mb_cmn import file_io
 
 
 def write_root_in_xml_fmt(out_path, root):

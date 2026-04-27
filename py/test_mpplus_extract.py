@@ -1,15 +1,15 @@
 import unittest
 
-from pycmn import bib_locales as tbn
-from pydiff_mpplus import (
+from mb_cmn import bib_locales as tbn
+from mb_diff_mpu import (
     mpplus_classify,
     mpplus_expand,
     mpplus_extract,
     mpplus_json,
     mpplus_structure,
 )
-from pydiff_mpplus.mpplus_book_urls import mam_with_doc_url, ref_str, wikisource_url
-from pydiff_mpplus.mpplus_flatten import flatten_ep
+from mb_diff_mpu.mpplus_book_urls import mam_with_doc_url, ref_str, wikisource_url
+from mb_diff_mpu.mpplus_flatten import flatten_ep
 
 
 def _ezek_40_26_old_ep():

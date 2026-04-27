@@ -9,8 +9,8 @@ Note that MAM book names are pairs!
 I.e., MAM book names are tuples of length 2.
 """
 
-from pycmn import mam_bknas
-from pycmn import bib_locales as tbn
+from mb_cmn import mam_bknas
+from mb_cmn import bib_locales as tbn
 
 
 def he_bk39_name(bk39id):

@@ -1,6 +1,6 @@
 """Exports write_root_in_json_fmt"""
 
-from pycmn import file_io
+from mb_cmn import file_io
 
 
 def write_root_in_json_fmt(out_path, root, generator_file=None):

@@ -4,14 +4,14 @@ from dataclasses import dataclass
 import enum
 import re
 
-from pycmn import hebrew_verse_numerals as hvn
+from mb_cmn import hebrew_verse_numerals as hvn
 from render_wt import render_element as renel
 from py_misc import verse_and_friends as vaf
-from pycmn import bib_locales as tbn
+from mb_cmn import bib_locales as tbn
 from py_misc import ren_html_for_renel as hfr
 from py_misc import my_html
-from pycmn import shrink
-from pycmn import my_utils
+from mb_cmn import shrink
+from mb_cmn import my_utils
 
 
 @dataclass

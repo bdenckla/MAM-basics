@@ -1,6 +1,6 @@
-from pycmn import ws_tmpl2 as wtp
+from mb_cmn import ws_tmpl2 as wtp
 from foi import foi_wikitext_helpers as fwh
-from pycmn.my_utils import sum_of_seqs
+from mb_cmn.my_utils import sum_of_seqs
 
 
 def find_fois_wt(mroge):

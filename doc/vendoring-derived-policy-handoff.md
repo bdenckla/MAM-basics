@@ -72,10 +72,10 @@ Suggested top-level structure:
   "global": {
     "comment": null,
     "source_pkg_dirs": {
-      "pycmn": "py/pycmn",
+      "mb_cmn": "py/mb_cmn",
       "py_misc": "py/py_misc",
-      "pysefaria": "py/pysefaria",
-      "pydiff_mpplus": "py/pydiff_mpplus"
+      "mb_sefaria": "py/mb_sefaria",
+      "mb_diff_mpu": "py/mb_diff_mpu"
     }
   },
   "repos": {
@@ -179,10 +179,10 @@ package directories.
 This should likely begin from the current source package roots already
 known to the vendoring code:
 
-- `py/pycmn`
+- `py/mb_cmn`
 - `py/py_misc`
-- `py/pysefaria`
-- `py/pydiff_mpplus`
+- `py/mb_sefaria`
+- `py/mb_diff_mpu`
 
 ### Step 4. Add destination discovery
 

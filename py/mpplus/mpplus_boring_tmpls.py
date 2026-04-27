@@ -1,11 +1,11 @@
 """Exports evaluate"""
 
-from pycmn import shrink
-from pycmn import ws_tmpl2 as wtp
-from pycmn import template_names as tmpln
-from pycmn import hebrew_points as hpo
-from pycmn import hebrew_accents as ha
-from pycmn import str_defs as sd
+from mb_cmn import shrink
+from mb_cmn import ws_tmpl2 as wtp
+from mb_cmn import template_names as tmpln
+from mb_cmn import hebrew_points as hpo
+from mb_cmn import hebrew_accents as ha
+from mb_cmn import str_defs as sd
 
 
 def evaluate(wtel):

@@ -1,12 +1,12 @@
 from multimark import multimark_uni as splhu
 from multimark import multimark_char as splhc
-from pycmn import hebrew_punctuation as hpu
-from pycmn import bib_locales as tbn
-from pycmn import ws_tmpl2 as wtp
+from mb_cmn import hebrew_punctuation as hpu
+from mb_cmn import bib_locales as tbn
+from mb_cmn import ws_tmpl2 as wtp
 from py_misc import wt_qere
 from py_misc.my_utils_for_mainish import show_progress_g
-from pycmn.my_utils import sum_of_map
-from pycmn.my_utils import sum_of_seqs
+from mb_cmn.my_utils import sum_of_map
+from mb_cmn.my_utils import sum_of_seqs
 from py_misc.split import my_re_split
 
 

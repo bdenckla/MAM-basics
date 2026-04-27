@@ -1,13 +1,13 @@
 """Exports functions that help create and use templates"""
 
-from pycmn import ws_tmpl1 as wtp1
-from pycmn import ws_tmpl_named_params as wtnp
-from pycmn import template_names as tmpln
-from pycmn.my_utils import first_and_only
-from pycmn.my_utils import ss_map
-from pycmn.my_utils import sl_map
-from pycmn.my_utils import dv_map
-from pycmn.shrink import shrink
+from mb_cmn import ws_tmpl1 as wtp1
+from mb_cmn import ws_tmpl_named_params as wtnp
+from mb_cmn import template_names as tmpln
+from mb_cmn.my_utils import first_and_only
+from mb_cmn.my_utils import ss_map
+from mb_cmn.my_utils import sl_map
+from mb_cmn.my_utils import dv_map
+from mb_cmn.shrink import shrink
 
 
 def template_element(tmpl: dict, idx: int):

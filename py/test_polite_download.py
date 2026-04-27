@@ -4,7 +4,7 @@ import unittest
 
 import requests
 
-from pycmn import polite_download
+from mb_cmn import polite_download
 
 
 class _FakeResponse:

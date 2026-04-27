@@ -11,10 +11,10 @@ A copy of the Wikisource markup is kept in he_ws_intro_to_mam_gray_maqaf.mediawi
 The English translation is original to this project.
 """
 
-from pycmn.my_utils import sl_map
+from mb_cmn.my_utils import sl_map
 from py_misc import my_html
-from pycmn import my_utils
-from pycmn import hebrew_punctuation as hpu
+from mb_cmn import my_utils
+from mb_cmn import hebrew_punctuation as hpu
 from author_util import author
 from author import he_ws_intro_to_mam_gray_maqaf_1_footnotes as gmfn
 

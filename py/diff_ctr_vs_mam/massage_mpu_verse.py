@@ -1,11 +1,11 @@
 import re
-from pycmn import hebrew_accents as ha
-from pycmn import hebrew_points as hpo
-from pycmn import hebrew_punctuation as hpu
-from pycmn import ws_tmpl2 as wtp
-from pycmn.my_utils import sum_of_map
-from pycmn.shrink import shrink
-from pycmn import template_names as tmpln
+from mb_cmn import hebrew_accents as ha
+from mb_cmn import hebrew_points as hpo
+from mb_cmn import hebrew_punctuation as hpu
+from mb_cmn import ws_tmpl2 as wtp
+from mb_cmn.my_utils import sum_of_map
+from mb_cmn.shrink import shrink
+from mb_cmn import template_names as tmpln
 
 _SPLITS_TUP = " ", hpu.MAQ, hpu.PASOLEG
 _SPLITS_STR = "".join(_SPLITS_TUP)

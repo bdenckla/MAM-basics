@@ -7,10 +7,10 @@ Exports:
 
 import difflib
 from collections import Counter
-from pycmn import hebrew_points as hpo
-from pycmn.hebrew_punctuation import NU_GMAQ
-from pycmn.str_defs import DOUB_VERT_LINE
-from pydiff_mpplus.mpplus_structure import (
+from mb_cmn import hebrew_points as hpo
+from mb_cmn.hebrew_punctuation import NU_GMAQ
+from mb_cmn.str_defs import DOUB_VERT_LINE
+from mb_diff_mpu.mpplus_structure import (
     collect_template_names,
     template_name_multiset_delta,
 )

@@ -1,12 +1,12 @@
 from py_misc import wt_qere
 from py_misc import hebrew_letter_words as hlw
-from pycmn import hebrew_punctuation as hpu
-from pycmn import ws_tmpl2 as wtp
-from pycmn import template_names as tmpln
-from pycmn.my_utils import sum_of_map
-from pycmn.my_utils import sum_of_seqs
-from pycmn.my_utils import sl_map
-from pycmn.my_utils import first_and_only_and_str
+from mb_cmn import hebrew_punctuation as hpu
+from mb_cmn import ws_tmpl2 as wtp
+from mb_cmn import template_names as tmpln
+from mb_cmn.my_utils import sum_of_map
+from mb_cmn.my_utils import sum_of_seqs
+from mb_cmn.my_utils import sl_map
+from mb_cmn.my_utils import first_and_only_and_str
 from py_misc.split import my_re_split
 
 

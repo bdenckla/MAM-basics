@@ -16,8 +16,8 @@ def copy_support_files():
         shutil.rmtree(mam_simple_pyex)
     os.makedirs(mam_simple_pyex)
     os.makedirs(f"{mam_simple_pyex}/py_misc")
-    os.makedirs(f"{mam_simple_pyex}/pycmn")
-    os.makedirs(f"{mam_simple_pyex}/pysefaria")
+    os.makedirs(f"{mam_simple_pyex}/mb_cmn")
+    os.makedirs(f"{mam_simple_pyex}/mb_sefaria")
     os.makedirs(f"{mam_simple_pyex}/ws")
     for pyfile_relpath in PYFILE_RELPATHS:
         src = os.path.join(_PY_DIR, pyfile_relpath)
@@ -29,17 +29,17 @@ MAM_SIMPLE_PYEX = "../MAM-simple/py-example"
 PYFILE_RELPATHS = (
     "./main_mam4sef.py",
     #
-    "pycmn/cantsys.py",
-    "pycmn/hebrew_accents.py",
-    "pycmn/hebrew_letters.py",
-    "pycmn/hebrew_points.py",
-    "pycmn/hebrew_punctuation.py",
-    "pycmn/bib_locales.py",
-    "pycmn/file_io.py",
-    "pycmn/shrink.py",
-    "pycmn/str_defs.py",
-    "pycmn/uni_heb.py",
-    "pycmn/my_utils.py",
+    "mb_cmn/cantsys.py",
+    "mb_cmn/hebrew_accents.py",
+    "mb_cmn/hebrew_letters.py",
+    "mb_cmn/hebrew_points.py",
+    "mb_cmn/hebrew_punctuation.py",
+    "mb_cmn/bib_locales.py",
+    "mb_cmn/file_io.py",
+    "mb_cmn/shrink.py",
+    "mb_cmn/str_defs.py",
+    "mb_cmn/uni_heb.py",
+    "mb_cmn/my_utils.py",
     #
     "py_misc/my_html.py",
     "py_misc/my_html_get_lines.py",
@@ -50,9 +50,9 @@ PYFILE_RELPATHS = (
     "py_misc/write_utils.py",
     "py_misc/ws_urls.py",
     #
-    "pysefaria/sef_header.py",
-    "pysefaria/mam4sef_handlers.py",
-    "pysefaria/mam4sef_or_ajf.py",
-    "pysefaria/sef_cmn.py",
-    "pysefaria/write_utils_sef_or_ajf.py",
+    "mb_sefaria/sef_header.py",
+    "mb_sefaria/mam4sef_handlers.py",
+    "mb_sefaria/mam4sef_or_ajf.py",
+    "mb_sefaria/sef_cmn.py",
+    "mb_sefaria/write_utils_sef_or_ajf.py",
 )

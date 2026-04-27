@@ -2,12 +2,12 @@
 
 import re
 
-from pycmn import ws_tmpl2 as wtp
+from mb_cmn import ws_tmpl2 as wtp
 from render_wt import render_element as renel
-from pycmn import hebrew_points as hpo
-from pycmn import hebrew_accents as ha
-from pycmn import hebrew_punctuation as hpu
-from pycmn import my_utils
+from mb_cmn import hebrew_points as hpo
+from mb_cmn import hebrew_accents as ha
+from mb_cmn import hebrew_punctuation as hpu
+from mb_cmn import my_utils
 
 
 def analyze_dalsam(dalsam):

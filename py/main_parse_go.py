@@ -9,9 +9,9 @@ import collections
 
 from py_misc import mam_csv_in
 from py_misc import mam_parsed_plus
-from pycmn import bib_locales as tbn
-from pycmn import mam_bknas_and_std_bknas as mbkn_a_sbkn
-from pycmn import file_io
+from mb_cmn import bib_locales as tbn
+from mb_cmn import mam_bknas_and_std_bknas as mbkn_a_sbkn
+from mb_cmn import file_io
 from py_misc import my_utils_for_mainish as my_utils_fm
 
 

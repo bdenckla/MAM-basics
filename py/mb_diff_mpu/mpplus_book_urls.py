@@ -8,9 +8,9 @@ Exports:
 
 from urllib.parse import quote
 
-from pycmn import bib_locales as tbn
-from pycmn import hebrew_verse_numerals as hvn
-from pycmn.mam_bknas_and_std_bknas import he_bk39_name
+from mb_cmn import bib_locales as tbn
+from mb_cmn import hebrew_verse_numerals as hvn
+from mb_cmn.mam_bknas_and_std_bknas import he_bk39_name
 
 
 def mam_with_doc_url(book, chapter, verse):

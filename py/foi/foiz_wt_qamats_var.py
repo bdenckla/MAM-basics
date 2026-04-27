@@ -1,13 +1,13 @@
 import re
-from pycmn import template_names as tmpln
-from pycmn import ws_tmpl2 as wtp
-from pycmn import uni_heb as uh
-from pycmn import hebrew_points as hpo
+from mb_cmn import template_names as tmpln
+from mb_cmn import ws_tmpl2 as wtp
+from mb_cmn import uni_heb as uh
+from mb_cmn import hebrew_points as hpo
 from py_misc import analyze_qamats_variant as aqv
 from foi import foi_struct as fct
 from foi import foi_wikitext_helpers as fwh
 from foi import regexp_helpers as rh
-from pycmn.my_utils import sl_map
+from mb_cmn.my_utils import sl_map
 
 
 def find_fois_wt(mroge):

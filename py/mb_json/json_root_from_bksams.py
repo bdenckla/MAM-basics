@@ -1,6 +1,6 @@
 """Exports root"""
 
-from pycmn import bib_locales as tbn
+from mb_cmn import bib_locales as tbn
 from py_misc import my_html
 from py_misc import get_cvm_rec_from_bcvt as gcrfb
 from py_misc import vtrad_helpers

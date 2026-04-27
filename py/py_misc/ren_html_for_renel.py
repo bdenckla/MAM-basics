@@ -4,9 +4,9 @@ from dataclasses import dataclass
 from typing import Union
 
 from render_wt import render_element as renel
-from pycmn import str_defs as sd
+from mb_cmn import str_defs as sd
 from py_misc import my_html
-from pycmn import shrink
+from mb_cmn import shrink
 from py_misc import ren_tag_survey as rts
 
 
