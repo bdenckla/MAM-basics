@@ -72,6 +72,7 @@ Run scripts from the repo root (not from `py/`):
 py/              Python source
   main_*.py      Entry-point scripts
   mb_cmn/         Common utilities
+  mb_json/       JSON helpers
   mb_xml/        XML rendering
   render_wt/     General rendering
   mb_sefaria/     Sefaria-specific logic
@@ -82,3 +83,9 @@ in/              Input data files
 doc/             Documentation and notes
 linux-sh/        Shell scripts for Linux setup
 ```
+
+Naming note: `mb_` means "from MAM-basics." For currently vendored
+packages such as `mb_cmn` and `mb_diff_mpu`, the prefix also signals
+vendoring origin. For `mb_xml` and `mb_json`, which are not currently
+vendored, `mb_` is additionally useful to avoid collisions with common
+`xml` and `json` package names.
