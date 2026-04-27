@@ -25,16 +25,16 @@ _TOKEN_SPLIT_RE = re.compile(r"[\s,]+")
 
 
 def build_inventory(mam_parsed_path="../MAM-parsed"):
-    books_mpp = plus.read_parsed_plus_bk39s(mam_parsed_path=mam_parsed_path)
+    books_mpu = plus.read_parsed_plus_bk39s(mam_parsed_path=mam_parsed_path)
     expression_examples = {}
     token_examples = {}
     prose_examples = {}
     note_count = 0
     matched_note_count = 0
     for bkid in tbn.ALL_BK39_IDS:
-        if bkid not in books_mpp:
+        if bkid not in books_mpu:
             continue
-        verses = books_mpp[bkid]["verses_plus"]
+        verses = books_mpu[bkid]["verses_plus"]
         for bcvt, minirow in verses.items():
             ref = _bcvt_to_ref(bcvt)
             for column_name, column in (("CP", minirow.CP), ("EP", minirow.EP)):

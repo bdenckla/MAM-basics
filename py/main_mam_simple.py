@@ -22,8 +22,8 @@ from mb_xml import xml_distribute_sampe as xml_sampe
 from mb_json import json_root_from_bksams
 
 
-def _do_not_convert(_bkids, books_mpp):
-    return books_mpp
+def _do_not_convert(_bkids, books_mpu):
+    return books_mpu
 
 
 _VARIANT_COMMON = {
@@ -49,14 +49,14 @@ _VARIANT_VTMAM = {
 _VARIANTS = _VARIANT_VTBHS, _VARIANT_VTSEF, _VARIANT_VTMAM
 
 
-def _do_one_book_group(bkg, books_mpp, variant):
+def _do_one_book_group(bkg, books_mpu, variant):
     """Do one book group (do one bkg)"""
     convert_vtrad = variant["variant-convert-vtrad"]
-    books_mpp_tx = convert_vtrad(bkg["bkg-bkids"], books_mpp)
+    books_mpu_tx = convert_vtrad(bkg["bkg-bkids"], books_mpu)
     bkg_rendered = []
     survey_for_all_bks = rts.make()
     for bkid in bkg["bkg-bkids"]:
-        book_rendered, survey_for_one_bk = xml_render.render_to_xml(books_mpp_tx, bkid)
+        book_rendered, survey_for_one_bk = xml_render.render_to_xml(books_mpu_tx, bkid)
         bkg_rendered.extend(book_rendered)
         survey_for_all_bks = rts.add(survey_for_all_bks, survey_for_one_bk)
     _finish_one_book_group(bkg, bkg_rendered, variant)
@@ -100,13 +100,13 @@ def almost_main(bkids=None):
     """
     if bkids is None:
         bkids = tbn.ALL_BK39_IDS
-    books_mpp = plus.read_parsed_plus_bk39s(bkids)
+    books_mpu = plus.read_parsed_plus_bk39s(bkids)
     bkgs = osis_book_abbrevs.bk24_bkgs(bkids)
     survey_for_all_bkgs = rts.make()
     for variant in _VARIANTS:
         for bkg in bkgs:
             _show_progress(variant, bkg["bkg-name"])
-            survey_for_one_bkg = _do_one_book_group(bkg, books_mpp, variant)
+            survey_for_one_bkg = _do_one_book_group(bkg, books_mpu, variant)
             survey_for_all_bkgs = rts.add(survey_for_all_bkgs, survey_for_one_bkg)
     xml_render.handle_survey_results(bkids, survey_for_all_bkgs)
     mam_simple_copy_py_files.copy_support_files()

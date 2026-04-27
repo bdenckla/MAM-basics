@@ -46,9 +46,9 @@ def _pair_of_write_ctxs(ecb, out_paths):
     return wr_for_main, wr_for_bido
 
 
-def _para_for_chap_ancs(bkid, books_mpp):
+def _para_for_chap_ancs(bkid, books_mpu):
     """Render chapter anchors (for MAM with doc)"""
-    verses = books_mpp[bkid]["verses_plus"]
+    verses = books_mpu[bkid]["verses_plus"]
     bcvts = verses.keys()
     chnus_dic = {tbn.bcvt_get_chnu(bcvt): True for bcvt in bcvts}
     chnus = tuple(chnus_dic.keys())
@@ -56,7 +56,7 @@ def _para_for_chap_ancs(bkid, books_mpp):
     return my_html.para(my_utils.intersperse(" ", anchors))
 
 
-def _extended_write_ctx(ecb, books_mpp, out_paths):
+def _extended_write_ctx(ecb, books_mpu, out_paths):
     bkid = ecb[2]
     powc = _pair_of_write_ctxs(ecb, out_paths)
     return _ExtendedWriteCtx(
@@ -64,7 +64,7 @@ def _extended_write_ctx(ecb, books_mpp, out_paths):
         powc[0],
         powc[1],
         hfr.HfrCtx(hfrm.HT_TAC_FOR_RT_FOR_MAM_WITH_DOC),
-        _para_for_chap_ancs(bkid, books_mpp),
+        _para_for_chap_ancs(bkid, books_mpu),
     )
 
 
@@ -125,18 +125,18 @@ def _write_three_col_html(wrae: _ExtendedWriteCtx, ver_ndds):
     return html_for_book["survey"]
 
 
-def write_book(ecb, books_mpp, out_paths):
+def write_book(ecb, books_mpu, out_paths):
     bkid = ecb[2]
     my_utils_fm.show_progress_g(__file__, "book", bkid)
     io_renlog = {}
-    bcvt_to_veraf = rwt.render(bkid, books_mpp, _RENOPTS_MAM_WITH_DOC, io_renlog)
+    bcvt_to_veraf = rwt.render(bkid, books_mpu, _RENOPTS_MAM_WITH_DOC, io_renlog)
     bcvts = tuple(bcvt_to_veraf.keys())
     verafs = bcvt_to_veraf.values()
     nondoc = rwt.map_over_verafs(doc_utils.mark_doc_targets, verafs)
     doc = rwt.map_over_verafs(doc_utils.extract_docs, verafs)
     ver_ndd_part_triples = tuple(my_utils.szip(bcvts, nondoc, doc))
     ver_ndds = tuple(mwdu.VerseNdd(*triple) for triple in ver_ndd_part_triples)
-    ewc = _extended_write_ctx(ecb, books_mpp, out_paths)
+    ewc = _extended_write_ctx(ecb, books_mpu, out_paths)
     survey = _write_three_col_html(ewc, ver_ndds)
     return survey
 

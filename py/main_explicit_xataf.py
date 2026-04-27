@@ -25,12 +25,12 @@ def _bcvt_to_ref(bcvt):
     return f"{bk39id} {chnu}:{vrnu}"
 
 
-def _process_one_book(bkid, book_mpp):
+def _process_one_book(bkid, book_mpu):
     """Process one book, returning (mappings, failures, extras)."""
     mappings = []
     failures = []
     extra_list = []
-    verses = book_mpp["verses_plus"]
+    verses = book_mpu["verses_plus"]
     for bcvt, minirow in verses.items():
         ref = _bcvt_to_ref(bcvt)
         for column in (minirow.CP, minirow.EP):
@@ -129,14 +129,14 @@ def _compute_counts(mappings):
 
 def almost_main():
     sys.stdout.reconfigure(encoding="utf-8")
-    books_mpp = plus.read_parsed_plus_bk39s()
+    books_mpu = plus.read_parsed_plus_bk39s()
     all_mappings = []
     all_failures = []
     all_extras = []
     for bkid in tbn.ALL_BK39_IDS:
-        if bkid not in books_mpp:
+        if bkid not in books_mpu:
             continue
-        mappings, failures, extra_list = _process_one_book(bkid, books_mpp[bkid])
+        mappings, failures, extra_list = _process_one_book(bkid, books_mpu[bkid])
         all_mappings.extend(mappings)
         all_failures.extend(failures)
         all_extras.extend(extra_list)

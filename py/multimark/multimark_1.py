@@ -10,14 +10,14 @@ from pycmn.my_utils import sum_of_seqs
 from py_misc.split import my_re_split
 
 
-def get_raw_data_wt(books_mpp):
-    return sum_of_map(_do_one_book, books_mpp.items())
+def get_raw_data_wt(books_mpu):
+    return sum_of_map(_do_one_book, books_mpu.items())
 
 
-def _do_one_book(bk39id_and_book_mpp):
-    bk39id, book_mpp = bk39id_and_book_mpp
+def _do_one_book(bk39id_and_book_mpu):
+    bk39id, book_mpu = bk39id_and_book_mpu
     show_progress_g(__file__, bk39id)
-    return sum_of_map(_do_one_verse, book_mpp["verses_plus"].items())
+    return sum_of_map(_do_one_verse, book_mpu["verses_plus"].items())
 
 
 def _do_one_verse(bcvt_and_minirow):

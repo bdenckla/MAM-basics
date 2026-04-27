@@ -10,8 +10,8 @@ from pycmn.shrink import shrink
 from py_misc.split import my_re_split
 
 
-def do_one_book(book_mpp):
-    return sum_of_map(_do_one_verse, book_mpp["verses_plus"].items())
+def do_one_book(book_mpu):
+    return sum_of_map(_do_one_verse, book_mpu["verses_plus"].items())
 
 
 def flatrow_for_jsondump(row):

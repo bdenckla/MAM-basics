@@ -10,8 +10,8 @@ from pycmn.my_utils import first_and_only_and_str
 from py_misc.split import my_re_split
 
 
-def get_sorted_words_wt(books_mpp):
-    som = sum_of_map(_do_one_book, books_mpp.values())
+def get_sorted_words_wt(books_mpu):
+    som = sum_of_map(_do_one_book, books_mpu.values())
     return sorted(set(som), key=_keyfn)
 
 
@@ -26,8 +26,8 @@ def _keyfn(word):
     return out_triple  # E.g. (str('יקרא'), str('יִקְרָ֗א'), 'slh no')
 
 
-def _do_one_book(book_mpp):
-    return sum_of_map(_do_one_verse, book_mpp["verses_plus"].values())
+def _do_one_book(book_mpu):
+    return sum_of_map(_do_one_verse, book_mpu["verses_plus"].values())
 
 
 def _do_one_verse(minirow):

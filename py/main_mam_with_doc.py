@@ -45,7 +45,7 @@ def almost_main(bkids=None):
     MAM-with-doc public GitHub repo"""
     if bkids is None:
         bkids = tbn.ALL_BK39_IDS
-    books_mpp = plus.read_parsed_plus_bk39s(bkids)
+    books_mpu = plus.read_parsed_plus_bk39s(bkids)
     edition = "MAM with doc"
     css_href = "two_col_style.css"
     tcstyles.make_css_file_for_mwd(_out_path(css_href))
@@ -54,7 +54,7 @@ def almost_main(bkids=None):
     survey_for_all_bks = rts.make()
     for bkid in bkids:
         ecb = edition, (css_href,), bkid
-        survey_for_one_bk = mwdwb.write_book(ecb, books_mpp, _get_out_paths(bkid))
+        survey_for_one_bk = mwdwb.write_book(ecb, books_mpu, _get_out_paths(bkid))
         survey_for_all_bks = rts.add(survey_for_all_bks, survey_for_one_bk)
     _handle_survey_results(bkids, survey_for_all_bks)
 

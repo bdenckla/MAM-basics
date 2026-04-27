@@ -24,10 +24,10 @@ def _find_wikitext_fois(fois_funs, mroge):
 
 
 def find_wt_fois_for_1_bk(the_arg_triple):
-    fois_funs, book_mpp, bkid = the_arg_triple
+    fois_funs, book_mpu, bkid = the_arg_triple
     my_utils_fm.show_progress_g(__file__, "Wikitext", bkid)
-    verses = book_mpp["verses_plus"]
-    good_ending = book_mpp["good_ending_with_bcvt"]
+    verses = book_mpu["verses_plus"]
+    good_ending = book_mpu["good_ending_with_bcvt"]
     out = {}
     for bcvt, minirow in verses.items():
         fois_for_this_verse = _find_wikitext_fois(

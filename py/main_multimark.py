@@ -11,8 +11,8 @@ FIOI_PATH_TO_MULTIMARKS_RAW_JSON = "io/mam-multimarks-raw.json"
 
 def almost_main():
     """Record info about letters with multiple marks on them."""
-    books_mpp = plus.read_parsed_plus_bk39s()
-    raw_data_wt = mm1.get_raw_data_wt(books_mpp)
+    books_mpu = plus.read_parsed_plus_bk39s()
+    raw_data_wt = mm1.get_raw_data_wt(books_mpu)
     file_io.json_dump_to_file_path(raw_data_wt, FIOI_PATH_TO_MULTIMARKS_RAW_JSON)
     mm2.phase_2(FIOI_PATH_TO_MULTIMARKS_RAW_JSON)
 

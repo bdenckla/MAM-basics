@@ -26,9 +26,9 @@ def almost_main():
     #    * the Exodus decalogue
     #    * the Deuteronomy decalogue
     #    * the Saga of Reuben
-    books_mpp = plus.read_parsed_plus_bk39s(tbn.BK39IDS_OF_BOOKS_WITH_DUALCANT)
+    books_mpu = plus.read_parsed_plus_bk39s(tbn.BK39IDS_OF_BOOKS_WITH_DUALCANT)
     #
-    out_rows = sum_of_map(do_one_book, books_mpp.values())
+    out_rows = sum_of_map(do_one_book, books_mpu.values())
     flatrows = sl_map(flatrow_for_jsondump, out_rows)
     file_io.json_dump_to_file_path(flatrows, "out/mam-decnreub.json")
 

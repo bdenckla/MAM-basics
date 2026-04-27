@@ -6,10 +6,10 @@ from pycmn import my_utils
 from render_wt import render_wikitext as rwt
 
 
-def render_to_xml(books_mpp, bkid):
+def render_to_xml(books_mpu, bkid):
     """Render MAM XML"""
     # rv: rendered verses
-    bcvt_to_veraf = rwt.render(bkid, books_mpp, _RENOPTS_MAM_XML)
+    bcvt_to_veraf = rwt.render(bkid, books_mpu, _RENOPTS_MAM_XML)
     verafs = tuple(bcvt_to_veraf.values())
     survey = rts.make()
     hfr_ctx = hfr.HfrCtx(_HT_TAC_FOR_RT_FOR_MAM_XML, survey)

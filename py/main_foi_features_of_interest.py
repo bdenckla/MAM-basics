@@ -40,9 +40,9 @@ from pycmn import read_books_from_mam_parsed_plus as plus
 from pycmn import bib_locales as tbn
 
 
-def _do_wikitext_features_of_interest(foi, single_threaded, books_mpp, all_fois):
+def _do_wikitext_features_of_interest(foi, single_threaded, books_mpu, all_fois):
     fois_funs = _fois_funs_for_wt(foi)
-    the_arg_triple = [(fois_funs, books_mpp[bkid], bkid) for bkid in tbn.ALL_BK39_IDS]
+    the_arg_triple = [(fois_funs, books_mpu[bkid], bkid) for bkid in tbn.ALL_BK39_IDS]
     out_for_all_bks = {}
     if single_threaded:
         for bkid, out_for_this_bk in map(find_wt_fois_for_1_bk, the_arg_triple):
@@ -63,9 +63,9 @@ def _fois_funs_for_wt(clargs_foi):
     return _WIKITEXT_FOIS_FNS
 
 
-def _make_intermediates(foi, single_threaded, books_mpp):
+def _make_intermediates(foi, single_threaded, books_mpu):
     all_fois = fct.make_empty_all_fois()
-    _do_wikitext_features_of_interest(foi, single_threaded, books_mpp, all_fois)
+    _do_wikitext_features_of_interest(foi, single_threaded, books_mpu, all_fois)
     return all_fois
 
 
@@ -94,8 +94,8 @@ _WIKITEXT_FOIS_FNS = list(_WIKITEXT_FOIS_FUN_FOR_CLARG.values())
 
 def almost_main(foi=None, single_threaded=False):
     """Collect features of interest from MAM."""
-    books_mpp = plus.read_parsed_plus_bk39s()
-    all_fois = _make_intermediates(foi, single_threaded, books_mpp)
+    books_mpu = plus.read_parsed_plus_bk39s()
+    all_fois = _make_intermediates(foi, single_threaded, books_mpu)
     foi_finals.write(foi, all_fois)
 
 

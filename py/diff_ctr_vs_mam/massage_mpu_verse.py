@@ -12,8 +12,8 @@ _SPLITS_STR = "".join(_SPLITS_TUP)
 _SPLIT_PATT = f"([{_SPLITS_STR}]+)"
 
 
-def massage_mpp_verse(mpp_verse_raw):
-    wtseq = _massage_mpp_wtseq(mpp_verse_raw.EP)
+def massage_mpu_verse(mpu_verse_raw):
+    wtseq = _massage_mpu_wtseq(mpu_verse_raw.EP)
     assert isinstance(wtseq, list)
     assert len(wtseq) == 1
     assert isinstance(wtseq[0], str)
@@ -32,11 +32,11 @@ MISC_TRANS = str.maketrans(
 )
 
 
-def _massage_mpp_wtseq(mpp_wtseq):
-    return shrink(sum_of_map(_massage_mpp_ep_wtel, mpp_wtseq))
+def _massage_mpu_wtseq(mpu_wtseq):
+    return shrink(sum_of_map(_massage_mpu_ep_wtel, mpu_wtseq))
 
 
-def _massage_mpp_ep_wtel(wtel):
+def _massage_mpu_ep_wtel(wtel):
     if isinstance(wtel, str):
         return [wtel]
     assert wtp.is_template(wtel)
@@ -45,7 +45,7 @@ def _massage_mpp_ep_wtel(wtel):
 
 
 def _massage_arg_1(wtel):
-    return _massage_mpp_wtseq(wtp.template_element(wtel, 1))
+    return _massage_mpu_wtseq(wtp.template_element(wtel, 1))
 
 
 _HANDLERS = {

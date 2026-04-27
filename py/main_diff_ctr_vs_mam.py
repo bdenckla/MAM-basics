@@ -6,7 +6,7 @@ verse data against MAM verse data and report differences.
 import json
 from itertools import zip_longest
 from diff_ctr_vs_mam.massage_ctr_verse import massage_ctr_verse
-from diff_ctr_vs_mam.massage_mpp_verse import massage_mpp_verse
+from diff_ctr_vs_mam.massage_mpu_verse import massage_mpu_verse
 from pycmn import my_diffs
 from pycmn import uni_heb as uh
 from pycmn import read_books_from_mam_parsed_plus as plus
@@ -42,36 +42,36 @@ def _chnu_colon_vrnu(bcvt):
     return f"{int_chnu}:{int_vrnu}"
 
 
-def _get_book_diffs(ctr_book, mpp_book):
+def _get_book_diffs(ctr_book, mpu_book):
     diffs_struct = _diffs_struct_mk()
-    for bcvt, mpp_verse_body_raw in mpp_book["verses_plus"].items():
+    for bcvt, mpu_verse_body_raw in mpu_book["verses_plus"].items():
         ccv = _chnu_colon_vrnu(bcvt)
         if ccv not in ctr_book["verses"]:
             continue
         ctr_verse_body_raw = ctr_book["verses"][ccv]
         ctr_words = massage_ctr_verse(ctr_verse_body_raw)
-        mpp_words = massage_mpp_verse(mpp_verse_body_raw)
-        zl = list(zip_longest(ctr_words, mpp_words))
-        for i, (ctr_word, mpp_word) in enumerate(zl):
-            if ctr_word != mpp_word:
-                diff = _get_word_diff(bcvt, i, ctr_word, mpp_word)
+        mpu_words = massage_mpu_verse(mpu_verse_body_raw)
+        zl = list(zip_longest(ctr_words, mpu_words))
+        for i, (ctr_word, mpu_word) in enumerate(zl):
+            if ctr_word != mpu_word:
+                diff = _get_word_diff(bcvt, i, ctr_word, mpu_word)
                 diffs_struct["diffs_list"].append(diff)
     return diffs_struct
 
 
-def _get_word_diff(bcvt, i, ctr_word, mpp_word):
+def _get_word_diff(bcvt, i, ctr_word, mpu_word):
     return {
         "bcvi": _bcvj(bcvt, i),
         "ctr": ctr_word,
-        "mam": mpp_word,
-        "refined": _refine(ctr_word, mpp_word),
+        "mam": mpu_word,
+        "refined": _refine(ctr_word, mpu_word),
     }
 
 
-def _refine(ctr_word, mpp_word):
+def _refine(ctr_word, mpu_word):
     ctr_shunnas = uh.t_shunnas(ctr_word)
-    mpp_shunnas = uh.t_shunnas(mpp_word)
-    return my_diffs.get(ctr_shunnas, mpp_shunnas)
+    mpu_shunnas = uh.t_shunnas(mpu_word)
+    return my_diffs.get(ctr_shunnas, mpu_shunnas)
 
 
 def _bcvj(bcvt, i):
@@ -87,16 +87,16 @@ def _do_one_section_of_tanakh(secid):
     if secid != tbn.SEC_SIF_EM:
         return sec_diffs
     books_of_sec = tbn.bk39s_of_sec(secid)
-    books_mpp = plus.read_parsed_plus_bk39s(books_of_sec)
+    books_mpu = plus.read_parsed_plus_bk39s(books_of_sec)
     books_ctr = _read_ctr_bk39s(books_of_sec)
     for bkid in books_of_sec:
         if bkid not in _CTR_BOOKS:
             continue
         ctr_book_raw = books_ctr[bkid]
-        mpp_book_raw = books_mpp[bkid]
+        mpu_book_raw = books_mpu[bkid]
         ctr_book = _massage_ctr_book(ctr_book_raw)
-        mpp_book = mpp_book_raw
-        bk_diffs = _get_book_diffs(ctr_book, mpp_book)
+        mpu_book = mpu_book_raw
+        bk_diffs = _get_book_diffs(ctr_book, mpu_book)
         _diffs_struct_extend(sec_diffs, bk_diffs)
     return sec_diffs
 

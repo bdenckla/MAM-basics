@@ -26,10 +26,10 @@ from pycmn import my_utils
 #             For Decalogues: alef=taxton & bet=elyon
 
 
-def render(bkid, books_mpp, renopts=None, io_renlog=None):
+def render(bkid, books_mpu, renopts=None, io_renlog=None):
     """
     * bkid: book ID from my_locales
-    * books_mpp: maps a book ID to parsed Wikitext book contents
+    * books_mpu: maps a book ID to parsed Wikitext book contents
     * renopts: see above
     * io_renlog: ?
 
@@ -43,8 +43,8 @@ def render(bkid, books_mpp, renopts=None, io_renlog=None):
     * The other keys of a dict text element often include a 'contents' key,
     holding a tuple of text elements.
     """
-    verses = books_mpp[bkid]["verses_plus"]
-    bbr = bkid, books_mpp, renopts
+    verses = books_mpu[bkid]["verses_plus"]
+    bbr = bkid, books_mpu, renopts
     return {
         bcvt: _render_minirow(bbr, bcvt, minirow, io_renlog)
         for bcvt, minirow in verses.items()
@@ -66,16 +66,16 @@ def _map_over_veraf(fun, veraf: vaf.VerseAndFriends):
 def _render_minirow(bbr, bcvt, minirow, io_renlog=None):
     if minirow is None:  # possibly Joshua 21:36 & 21:37
         return vaf.VerseAndFriends(("\N{EM DASH}",), tuple(), tuple())
-    bkid, books_mpp, renopts = bbr
+    bkid, books_mpu, renopts = bbr
     hctx = handlers.default_hctx(bcvt, renopts, io_renlog)
     ep_renseq = wt_help.render_wtseq(hctx, minirow.EP)
     ncp_renseq = wt_help.render_wtseq(handlers.col_c_hctx(hctx), minirow.next_CP)
-    ge_renseq = wt_help.render_wtseq(hctx, _good_ending_wtseq(bkid, books_mpp, bcvt))
+    ge_renseq = wt_help.render_wtseq(hctx, _good_ending_wtseq(bkid, books_mpu, bcvt))
     return vaf.VerseAndFriends(ep_renseq, ncp_renseq, ge_renseq)
 
 
-def _good_ending_wtseq(bkid, books_mpp, bcvt):
-    good_ending = books_mpp[bkid]["good_ending_with_bcvt"]
+def _good_ending_wtseq(bkid, books_mpu, bcvt):
+    good_ending = books_mpu[bkid]["good_ending_with_bcvt"]
     if good_ending and bcvt == good_ending["last_bcvt"]:
         wtel = good_ending["wikitext_element"]
         return (wtel,)

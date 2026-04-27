@@ -7,9 +7,9 @@ from py_misc import vtrad_data
 from pycmn.minirow import MinirowExt
 
 
-def convert_to_bhs(bkids, books_mpp):
+def convert_to_bhs(bkids, books_mpu):
     """Run convert_from_mam targeting the BHS vtrad"""
-    return _convert_from_mam(bkids, books_mpp, tbn.VT_BHS)
+    return _convert_from_mam(bkids, books_mpu, tbn.VT_BHS)
 
 
 def convert_to_sef(bkids, books):
@@ -17,14 +17,14 @@ def convert_to_sef(bkids, books):
     return _convert_from_mam(bkids, books, tbn.VT_SEF)
 
 
-def _convert_from_mam(bk39ids, books_mpp, vtrad):
+def _convert_from_mam(bk39ids, books_mpu, vtrad):
     """
     1. Expand the set of book IDs to include "next" books.
     2. For each book in "books" whose ID is in that expanded set of book
        IDs, return the equivalent of that book in the given vtrad.
     """
     ebk39ids = tbn.add_part2_bk39ids(bk39ids)
-    return {b: _convert_book(books_mpp[b], vtrad) for b in ebk39ids}
+    return {b: _convert_book(books_mpu[b], vtrad) for b in ebk39ids}
 
 
 # bcvtmam: a 4-element tuple consisting of:
@@ -51,9 +51,9 @@ def _get_minirows(bcvtmam, mam_minirow, vtrad):
     return (mam_minirow,)
 
 
-def _convert_book(book_mpp, vtrad):
+def _convert_book(book_mpu, vtrad):
     xxx_verses = {}
-    for bcvtmam, mam_minirow in book_mpp["verses_plus"].items():
+    for bcvtmam, mam_minirow in book_mpu["verses_plus"].items():
         maprec = _get_maprec(bcvtmam, vtrad)
         xxx_minirows = _get_minirows(bcvtmam, mam_minirow, vtrad)
         for cvve, xxx_minirow in my_utils.szip(maprec, xxx_minirows):
@@ -61,11 +61,11 @@ def _convert_book(book_mpp, vtrad):
             bcvtxxx = tbn.mk_bcvt(tbn.bcvt_get_bk39id(bcvtmam), cvtxxx)
             assert bcvtxxx not in xxx_verses
             xxx_verses[bcvtxxx] = xxx_minirow
-    out_book_mpp = dict(book_mpp)
+    out_book_mpu = dict(book_mpu)
     gek = "good_ending_with_bcvt"
-    out_book_mpp[gek] = _convert_ge(book_mpp[gek], vtrad)
-    out_book_mpp["verses_plus"] = xxx_verses
-    return out_book_mpp
+    out_book_mpu[gek] = _convert_ge(book_mpu[gek], vtrad)
+    out_book_mpu["verses_plus"] = xxx_verses
+    return out_book_mpu
 
 
 def _convert_ge(good_ending, vtrad):
