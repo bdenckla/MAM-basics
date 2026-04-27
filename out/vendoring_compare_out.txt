@@ -26,16 +26,16 @@ sef_header.py                              MAM-simple                 py-example
 write_utils_sef_or_ajf.py                  MAM-simple                 py-example/mb_sefaria/write_utils_sef_or_ajf.py         identical      2026-04-27   generated
 bib_locales.py                             holman-ketiv-qere          py/mb_cmn/bib_locales.py                                identical      2026-04-27   
 cantsys.py                                 holman-ketiv-qere          py/mb_cmn/cantsys.py                                    identical      2026-04-27   
-hebrew_accents.py                          holman-ketiv-qere          py/mb_cmn/hebrew_accents.py                             DIFFERS        2026-04-27   
+hebrew_accents.py                          holman-ketiv-qere          py/mb_cmn/hebrew_accents.py                             identical      2026-04-27   
 hebrew_letters.py                          holman-ketiv-qere          py/mb_cmn/hebrew_letters.py                             identical      2026-04-27   
-hebrew_points.py                           holman-ketiv-qere          py/mb_cmn/hebrew_points.py                              DIFFERS        2026-04-27   
+hebrew_points.py                           holman-ketiv-qere          py/mb_cmn/hebrew_points.py                              identical      2026-04-27   
 hebrew_punctuation.py                      holman-ketiv-qere          py/mb_cmn/hebrew_punctuation.py                         identical      2026-04-27   
-hebrew_verse_numerals.py                   holman-ketiv-qere          py/mb_cmn/hebrew_verse_numerals.py                      DIFFERS        2026-04-27   
+hebrew_verse_numerals.py                   holman-ketiv-qere          py/mb_cmn/hebrew_verse_numerals.py                      identical      2026-04-27   
 mam_bknas.py                               holman-ketiv-qere          py/mb_cmn/mam_bknas.py                                  identical      2026-04-27   
-mam_bknas_and_std_bknas.py                 holman-ketiv-qere          py/mb_cmn/mam_bknas_and_std_bknas.py                    DIFFERS        2026-04-27   
+mam_bknas_and_std_bknas.py                 holman-ketiv-qere          py/mb_cmn/mam_bknas_and_std_bknas.py                    identical      2026-04-27   
 str_defs.py                                holman-ketiv-qere          py/mb_cmn/str_defs.py                                   identical      2026-04-27   
 template_names.py                          holman-ketiv-qere          py/mb_cmn/template_names.py                             identical      2026-04-27   
-uni_denorm.py                              holman-ketiv-qere          py/mb_cmn/uni_denorm.py                                 DIFFERS        2026-04-27   
+uni_denorm.py                              holman-ketiv-qere          py/mb_cmn/uni_denorm.py                                 identical      2026-04-27   
 change_ops.py                              holman-ketiv-qere          py/mb_diff_mpu/change_ops.py                            identical      2026-04-27   
 change_ops_apply.py                        holman-ketiv-qere          py/mb_diff_mpu/change_ops_apply.py                      identical      2026-04-27   
 change_ops_extract.py                      holman-ketiv-qere          py/mb_diff_mpu/change_ops_extract.py                    identical      2026-04-27   
@@ -91,7 +91,7 @@ two_col_css_styles.py                      book-of-job                py/two_col
 hebrew_points.py                           codex-index-aleppo         py/mb_cmn/hebrew_points.py                              identical      2026-04-27   
 str_defs.py                                codex-index-aleppo         py/mb_cmn/str_defs.py                                   DIFFERS        2026-04-27   
 uni_denorm.py                              codex-index-aleppo         py/mb_cmn/uni_denorm.py                                 identical      2026-04-27   
-hebrew_letters.py                          codex-index-aleppo         aleppo-wiki/py/hebrew_letters.py                        DIFFERS        2026-03-28   placed in aleppo-wiki/py/ not mb_cmn/
+hebrew_letters.py                          codex-index-aleppo         aleppo-wiki/py/hebrew_letters.py                        identical      2026-03-28   placed in aleppo-wiki/py/ not mb_cmn/
 hebrew_punctuation.py                      codex-index-aleppo         aleppo-wiki/py/hebrew_punctuation.py                    DIFFERS        2026-03-28   placed in aleppo-wiki/py/ not mb_cmn/
 hebrew_verse_numerals.py                   codex-index-aleppo         aleppo-wiki/py/hebrew_verse_numerals.py                 DIFFERS        2026-03-28   placed in aleppo-wiki/py/ not mb_cmn/
 my_utils.py                                codex-index-aleppo         aleppo-wiki/py/my_utils.py                              DIFFERS        2026-03-28   placed in aleppo-wiki/py/ not mb_cmn/
