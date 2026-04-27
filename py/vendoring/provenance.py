@@ -5,9 +5,9 @@ Results written to out/vendoring_provenance_out.txt.
 """
 
 import sys
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 
-from vendoring.discover import provenance_dest_repos
+from vendoring.discover import iter_inventory_seed_rows, provenance_dest_repos
 
 _REPOS = Path(__file__).resolve().parents[3]
 _MAM = _REPOS / "MAM-basics"
@@ -34,6 +34,40 @@ COPY_SCRIPT_PATTERNS = [
 ]
 
 
+def _candidate_scan_dirs_for_repo(repo: str) -> list[str]:
+    """Return repo-relative directories to scan for provenance docs.
+
+    Includes repo root (".") and parent directories of discovered vendored
+    destination files for the repo, walking up to repo root for each path.
+    """
+    dirs: set[str] = {"."}
+    for data in iter_inventory_seed_rows():
+        if data["dest_repo"] != repo:
+            continue
+        dest_path = PurePosixPath(data["dest_path"])
+        current = dest_path.parent if dest_path.suffix else dest_path
+        while True:
+            dirs.add(str(current))
+            if current == PurePosixPath("."):
+                break
+            current = current.parent
+
+    return sorted(dirs, key=lambda rel: (0 if rel == "." else 1, rel.count("/"), rel))
+
+
+def _find_provenance_docs(repo: str, repo_path: Path) -> list[str]:
+    found_docs: set[str] = set()
+    for rel_dir in _candidate_scan_dirs_for_repo(repo):
+        scan_dir = repo_path if rel_dir == "." else repo_path / rel_dir
+        if not scan_dir.exists():
+            continue
+        for name in PROVENANCE_NAMES:
+            path = scan_dir / name
+            if path.exists():
+                found_docs.add(str(path.relative_to(_REPOS)))
+    return sorted(found_docs)
+
+
 def main() -> None:
     sys.stdout.reconfigure(encoding="utf-8")
     out = _MAM / "out" / "vendoring_provenance_out.txt"
@@ -43,11 +77,7 @@ def main() -> None:
             f.write(f"\n=== {repo} ===\n")
 
             # Check for provenance docs
-            found_docs = []
-            for name in PROVENANCE_NAMES:
-                p = repo_path / name
-                if p.exists():
-                    found_docs.append(str(p.relative_to(_REPOS)))
+            found_docs = _find_provenance_docs(repo, repo_path)
             if found_docs:
                 f.write(f"  PROVENANCE DOCS: {found_docs}\n")
             else:

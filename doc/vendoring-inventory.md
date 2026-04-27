@@ -15,22 +15,22 @@ Related issue: bdenckla/MAM-basics#60
 | cantsys.py, hebrew_accents.py, hebrew_letters.py, hebrew_points.py, hebrew_punctuation.py | pycmn | UXLC-utils | py/pycmn | unknown | 2026-04-11 | no | stale | identical |
 | my_diffs.py, my_utils.py, polite_download.py, str_defs.py, uni_heb.py, uni_norm_fragile.py | pycmn | UXLC-utils | py/pycmn | unknown | mixed | no | stale | DIFFERS |
 | my_html.py | py_misc | UXLC-utils | py/py_misc/my_html.py | unknown | 2026-04-11 | no | diverged | DIFFERS |
-| bib_locales.py, cantsys.py, file_io.py, hebrew_accents.py, hebrew_letters.py, hebrew_points.py, hebrew_punctuation.py, hebrew_verse_numerals.py, mam_bknas.py, mam_bknas_and_std_bknas.py, minirow.py, my_diffs.py, my_utils.py, provenance.py, read_books_from_mam_parsed_plus.py, shrink.py, str_defs.py, template_names.py, uni_denorm.py, uni_heb.py, uni_norm_fragile.py, ws_tmpl1.py, ws_tmpl2.py, ws_tmpl_named_params.py | pycmn | al-hatorah | py/pycmn | unknown | mixed | no | stale | identical |
-| my_html.py, my_html_get_lines.py | py_misc | al-hatorah | py | unknown | 2026-04-22 | no | diverged | MISSING-DEST; placed in py/ not py_misc/ |
+| bib_locales.py, cantsys.py, file_io.py, hebrew_accents.py, hebrew_letters.py, hebrew_points.py, hebrew_punctuation.py, hebrew_verse_numerals.py, mam_bknas.py, mam_bknas_and_std_bknas.py, minirow.py, my_diffs.py, my_utils.py, provenance.py, read_books_from_mam_parsed_plus.py, shrink.py, str_defs.py, template_names.py, uni_denorm.py, uni_heb.py, uni_norm_fragile.py, ws_tmpl1.py, ws_tmpl2.py, ws_tmpl_named_params.py | pycmn | al-hatorah | py/pycmn | unknown | mixed | yes | stale | identical |
+| my_html.py, my_html_get_lines.py | py_misc | al-hatorah | py | unknown | 2026-04-22 | yes | diverged | MISSING-DEST; placed in py/ not py_misc/ |
 | bib_locales.py, file_io.py, hebrew_punctuation.py, my_utils.py, str_defs.py | pycmn | book-of-job | pycmn | unknown | mixed | no | stale | DIFFERS |
 | cantsys.py, hebrew_accents.py, hebrew_letters.py, hebrew_points.py, mam_bknas.py, my_diffs.py, shrink.py, uni_denorm.py, uni_heb.py | pycmn | book-of-job | pycmn | unknown | mixed | no | stale | identical |
 | my_html.py, my_html_get_lines.py, two_col_css_styles.py | py_misc | book-of-job | py | unknown | mixed | no | diverged | DIFFERS; placed in py/ not py_misc/ |
-| hebrew_points.py, uni_denorm.py | pycmn | codex-index-aleppo | py/pycmn | unknown | 2026-03-15 | no | stale | identical |
-| str_defs.py | pycmn | codex-index-aleppo | py/pycmn/str_defs.py | unknown | 2026-03-15 | no | stale | DIFFERS |
-| hebrew_letters.py, hebrew_punctuation.py, hebrew_verse_numerals.py, my_utils.py | pycmn | codex-index-aleppo | aleppo-wiki/py | unknown | 2026-03-28 | no | stale | DIFFERS; placed in aleppo-wiki/py/ not pycmn/ |
+| hebrew_points.py, uni_denorm.py | pycmn | codex-index-aleppo | py/pycmn | unknown | 2026-03-15 | yes | stale | identical |
+| str_defs.py | pycmn | codex-index-aleppo | py/pycmn/str_defs.py | unknown | 2026-03-15 | yes | stale | DIFFERS |
+| hebrew_letters.py, hebrew_punctuation.py, hebrew_verse_numerals.py, my_utils.py | pycmn | codex-index-aleppo | aleppo-wiki/py | unknown | 2026-03-28 | yes | stale | DIFFERS; placed in aleppo-wiki/py/ not pycmn/ |
 | hebrew_points.py, uni_denorm.py | pycmn | codex-index-cam1753 | pycmn | unknown | 2026-02-23 | no | stale | identical |
 | str_defs.py | pycmn | codex-index-cam1753 | pycmn/str_defs.py | unknown | 2026-02-23 | no | stale | DIFFERS |
 | hebrew_letters.py, hebrew_punctuation.py, hebrew_verse_numerals.py, my_utils.py | pycmn | codex-index-leningrad | lenin-wiki/py | unknown | mixed | no | stale | DIFFERS; placed in lenin-wiki/py/ not pycmn/ |
 | cantsys.py | pycmn | diffable-pointed-hebrew | pycmn/cantsys.py | unknown | 2025-06-03 | no | stale | identical |
 | file_io.py, hebrew_accents.py, hebrew_letters.py, hebrew_points.py, hebrew_punctuation.py, str_defs.py, uni_heb.py | pycmn | diffable-pointed-hebrew | pycmn | unknown | 2025-06-03 | no | stale | DIFFERS |
-| bib_locales.py, cantsys.py, hebrew_accents.py, hebrew_letters.py, hebrew_points.py, hebrew_punctuation.py, hebrew_verse_numerals.py, mam_bknas.py, mam_bknas_and_std_bknas.py, str_defs.py, template_names.py, uni_denorm.py | pycmn | holman-ketiv-qere | py/pycmn | copy_script | mixed | no | active | identical |
-| change_ops.py, change_ops_apply.py, change_ops_extract.py, change_ops_render.py, mpplus_flatten.py, mpplus_param_access.py, mpplus_structure.py | pydiff_mpplus | holman-ketiv-qere | py/pydiff_mpplus | copy_script | 2026-04-27 | no | active | identical |
-| describe_diff.py, grapheme_diff.py | pydiff_mpplus | holman-ketiv-qere | py/pydiff_mpplus | unknown | 2026-04-27 | no | deferred | identical; partial-file copy of larger module |
+| bib_locales.py, cantsys.py, hebrew_accents.py, hebrew_letters.py, hebrew_points.py, hebrew_punctuation.py, hebrew_verse_numerals.py, mam_bknas.py, mam_bknas_and_std_bknas.py, str_defs.py, template_names.py, uni_denorm.py | pycmn | holman-ketiv-qere | py/pycmn | copy_script | mixed | yes | active | identical |
+| change_ops.py, change_ops_apply.py, change_ops_extract.py, change_ops_render.py, mpplus_flatten.py, mpplus_param_access.py, mpplus_structure.py | pydiff_mpplus | holman-ketiv-qere | py/pydiff_mpplus | copy_script | 2026-04-27 | yes | active | identical |
+| describe_diff.py, grapheme_diff.py | pydiff_mpplus | holman-ketiv-qere | py/pydiff_mpplus | unknown | 2026-04-27 | yes | deferred | identical; partial-file copy of larger module |
 | bib_locales.py, hebrew_accents.py, hebrew_letters.py, hebrew_points.py, hebrew_punctuation.py, mam_bknas.py, mam_bknas_and_std_bknas.py, str_defs.py | pycmn | mgketer | py/pycmn | unknown | mixed | no | stale | DIFFERS |
 | polite_download.py | pycmn | mgketer | py/pycmn/polite_download.py | unknown | 2026-04-14 | no | stale | identical |
 | grapheme_diff.py | pydiff_mpplus | mgketer | py/python_modules/grapheme_diff.py | unknown | 2026-03-08 | no | deferred | DIFFERS; placed in python_modules not pydiff_mpplus |
