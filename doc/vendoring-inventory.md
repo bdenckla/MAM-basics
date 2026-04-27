@@ -30,8 +30,7 @@ Related issue: bdenckla/MAM-basics#60
 | file_io.py, hebrew_accents.py, hebrew_letters.py, hebrew_points.py, hebrew_punctuation.py, str_defs.py, uni_heb.py | mb_cmn | diffable-pointed-hebrew | mb_cmn | unknown | 2026-04-27 | no | stale | DIFFERS |
 | bib_locales.py, cantsys.py, hebrew_letters.py, hebrew_punctuation.py, mam_bknas.py, str_defs.py, template_names.py | mb_cmn | holman-ketiv-qere | py/mb_cmn | copy_script | 2026-04-27 | yes | active | identical |
 | hebrew_accents.py, hebrew_points.py, hebrew_verse_numerals.py, mam_bknas_and_std_bknas.py, uni_denorm.py | mb_cmn | holman-ketiv-qere | py/mb_cmn | copy_script | 2026-04-27 | yes | active | DIFFERS |
-| change_ops.py, grapheme_diff.py, mpplus_param_access.py | mb_diff_mpu | holman-ketiv-qere | py/mb_diff_mpu | copy_script | 2026-04-27 | yes | active | identical |
-| change_ops_apply.py, change_ops_extract.py, change_ops_render.py, describe_diff.py, mpplus_flatten.py, mpplus_structure.py | mb_diff_mpu | holman-ketiv-qere | py/mb_diff_mpu | copy_script | 2026-04-27 | yes | active | DIFFERS |
+| change_ops.py, change_ops_apply.py, change_ops_extract.py, change_ops_render.py, describe_diff.py, grapheme_diff.py, mpplus_flatten.py, mpplus_param_access.py, mpplus_structure.py | mb_diff_mpu | holman-ketiv-qere | py/mb_diff_mpu | copy_script | 2026-04-27 | yes | active | identical |
 | bib_locales.py, hebrew_accents.py, hebrew_letters.py, hebrew_points.py, hebrew_punctuation.py, mam_bknas.py, mam_bknas_and_std_bknas.py, str_defs.py | mb_cmn | mgketer | py/mb_cmn | unknown | 2026-04-27 | no | stale | DIFFERS |
 | polite_download.py | mb_cmn | mgketer | py/mb_cmn/polite_download.py | unknown | 2026-04-27 | no | stale | identical |
 | grapheme_diff.py | mb_diff_mpu | mgketer | py/mb_diff_mpu/grapheme_diff.py | unknown | 2026-04-27 | no | stale | identical |
@@ -40,4 +39,4 @@ Related issue: bdenckla/MAM-basics#60
 | cantsys.py, hebrew_letters.py | mb_cmn | wlc-utils | py/mb_cmn | unknown | 2026-04-27 | no | stale | identical |
 | my_html.py | py_misc | wlc-utils | py/py_html/my_html.py | unknown | 2026-04-27 | no | diverged | DIFFERS; placed in py_html/ not py_misc/ |
 
-*30 rows, 147 files. 0 files ignored (dest_repos: MAM-for-Acc, MAM-for-CCAR, MAM-for-JPS, TMC).*
+*29 rows, 147 files. 0 files ignored (dest_repos: MAM-for-Acc, MAM-for-CCAR, MAM-for-JPS, TMC).*
