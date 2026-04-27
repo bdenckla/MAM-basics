@@ -204,26 +204,6 @@
   "overrides": [
     {
       "comment": null,
-      "dest_repo": "holman-ketiv-qere",
-      "dest_path": "py/mb_diff_mpu/describe_diff.py",
-      "src_pkg": "mb_diff_mpu",
-      "category": "deferred",
-      "mechanism": null,
-      "provenance_doc": null,
-      "notes": "partial-file copy of larger module"
-    },
-    {
-      "comment": null,
-      "dest_repo": "holman-ketiv-qere",
-      "dest_path": "py/mb_diff_mpu/grapheme_diff.py",
-      "src_pkg": "mb_diff_mpu",
-      "category": "deferred",
-      "mechanism": null,
-      "provenance_doc": null,
-      "notes": "partial-file copy of larger module"
-    },
-    {
-      "comment": null,
       "dest_repo": "al-hatorah",
       "dest_path": "py/my_html.py",
       "src_pkg": "py_misc",

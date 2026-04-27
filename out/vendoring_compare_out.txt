@@ -40,8 +40,8 @@ change_ops.py                              holman-ketiv-qere          py/mb_diff
 change_ops_apply.py                        holman-ketiv-qere          py/mb_diff_mpu/change_ops_apply.py                      DIFFERS        2026-04-27   
 change_ops_extract.py                      holman-ketiv-qere          py/mb_diff_mpu/change_ops_extract.py                    DIFFERS        2026-04-27   
 change_ops_render.py                       holman-ketiv-qere          py/mb_diff_mpu/change_ops_render.py                     DIFFERS        2026-04-27   
-describe_diff.py                           holman-ketiv-qere          py/mb_diff_mpu/describe_diff.py                         DIFFERS        2026-04-27   deferred
-grapheme_diff.py                           holman-ketiv-qere          py/mb_diff_mpu/grapheme_diff.py                         identical      2026-04-27   deferred
+describe_diff.py                           holman-ketiv-qere          py/mb_diff_mpu/describe_diff.py                         DIFFERS        2026-04-27   
+grapheme_diff.py                           holman-ketiv-qere          py/mb_diff_mpu/grapheme_diff.py                         identical      2026-04-27   
 mpplus_flatten.py                          holman-ketiv-qere          py/mb_diff_mpu/mpplus_flatten.py                        DIFFERS        2026-04-27   
 mpplus_param_access.py                     holman-ketiv-qere          py/mb_diff_mpu/mpplus_param_access.py                   identical      2026-04-27   
 mpplus_structure.py                        holman-ketiv-qere          py/mb_diff_mpu/mpplus_structure.py                      DIFFERS        2026-04-27   
@@ -119,7 +119,7 @@ mam_bknas.py                               mgketer                    py/mb_cmn/
 mam_bknas_and_std_bknas.py                 mgketer                    py/mb_cmn/mam_bknas_and_std_bknas.py                    DIFFERS        2026-04-27   
 polite_download.py                         mgketer                    py/mb_cmn/polite_download.py                            identical      2026-04-27   
 str_defs.py                                mgketer                    py/mb_cmn/str_defs.py                                   DIFFERS        2026-04-27   
-grapheme_diff.py                           mgketer                    py/mb_diff_mpu/grapheme_diff.py                         identical      no-commits   
+grapheme_diff.py                           mgketer                    py/mb_diff_mpu/grapheme_diff.py                         identical      2026-04-27   
 my_diffs.py                                mgketer                    py/python_modules/my_diffs.py                           DIFFERS        2026-04-27   placed in python_modules/ not mb_cmn/
 uni_denorm.py                              mgketer                    py/python_modules/uni_denorm.py                         DIFFERS        2026-04-27   placed in python_modules/ not mb_cmn/
 cantsys.py                                 UXLC-utils                 py/mb_cmn/cantsys.py                                    identical      2026-04-27   
