@@ -1,6 +1,6 @@
 """Exports main"""
 
-from py_misc import my_html
+from mb_misc import mb_html
 from author_util import author
 from author_rocc import rocc_212_pj3 as c211
 from author_rocc import rocc_213_ajry as c213
@@ -35,7 +35,7 @@ def gen_html_file(tdm_ch):
 _TITLE = "CTR Psalm 32: Where Other Sources Stand"
 _H1_CONTENTS = "$CTR Psalm 32: Where Other Sources Stand"
 _FNAME = "rocc_3_where_other_sources_stand.html"
-_ANCHOR = my_html.anchor_h("document", f"./{_FNAME}")
+_ANCHOR = mb_html.anchor_h("document", f"./{_FNAME}")
 _X_01_CPARA = [
     ["This document covers more than its"],
     [" ", rocc_0.short_anchor("parent document")],
@@ -43,13 +43,13 @@ _X_01_CPARA = [
 ]
 X_02_LIST_ITEMS = [
     [
-        ["It shows ", my_html.emphasis("all"), " words where $CTR differs from $MAM,"],
+        ["It shows ", mb_html.emphasis("all"), " words where $CTR differs from $MAM,"],
         [" not just those that also differ from $JP."],
     ],
     ["It brings a number of other sources into the comparison."],
 ]
 _X_03_CPARA = [
-    ["This document covers ", my_html.emphasis("less")],
+    ["This document covers ", mb_html.emphasis("less")],
     [" than its parent document in the following way:"],
     [" it sometimes ignores $CTR or $JP where their contents are either:"],
 ]

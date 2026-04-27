@@ -5,8 +5,8 @@ from mb_cmn import file_io
 from mb_cmn import provenance
 
 from py_misc import mwd_utils as mwdu
-from py_misc import my_html
-from py_misc import two_col_css_styles as tcstyles
+from mb_misc import mb_html
+from mb_misc import two_col_css_styles as tcstyles
 
 from foi import pasoleg_1_labels
 from foi import foi_struct as fct
@@ -70,24 +70,24 @@ def _rm_html_single(html_el):
 def _licont_for_outspec(outspec):
     outfile_stem, _foi_paths = outspec
     outfilename_for_html = _outfilename_for_html(outfile_stem)
-    return my_html.anchor_h(outfile_stem, outfilename_for_html)
+    return mb_html.anchor_h(outfile_stem, outfilename_for_html)
 
 
 def _unordered_list_of_links_to_html(outspecs):
     liconts_for_outspecs = tuple(map(_licont_for_outspec, outspecs))
-    return my_html.unordered_list(liconts_for_outspecs)
+    return mb_html.unordered_list(liconts_for_outspecs)
 
 
 def _write_index_dot_html(outspecs):
     outspecs = sorted(outspecs)
     body_contents = _foi_body_wrapper(_unordered_list_of_links_to_html(outspecs))
-    write_ctx = my_html.WriteCtx(
+    write_ctx = mb_html.WriteCtx(
         "MAM features of interest",
         f"{_OUT_DIR_PATH}/index.html",
         css_hrefs=(_CSS_HREF,),
         html_comment=provenance.generated_html_comment(__file__),
     )
-    my_html.write_html_to_file(body_contents, write_ctx)
+    mb_html.write_html_to_file(body_contents, write_ctx)
 
 
 def _write_finals3(args_foi, all_fois, outspec):
@@ -121,7 +121,7 @@ def _auto_outspecs(all_fois):
 def _get_rows(foi_path, foi_struct):
     bcvt = fct.get_bcvt(foi_struct)
     bcv_short = tbn.short_bcv_of_bcvt(bcvt)
-    bcv_anchor = my_html.anchor_h(bcv_short, _href_for_bcvt(bcvt))
+    bcv_anchor = mb_html.anchor_h(bcv_short, _href_for_bcvt(bcvt))
     foi_target_type, foi_target = fct.get_target(foi_struct)
     qualifier = {}
     if foi_target_type == "foi-target-type-htseq":
@@ -171,16 +171,16 @@ def _append_table_row(io_html_tables, foi_path, row_dic):
 
 def _make_table_row(row_dic):
     td_attrs = {"lang": "hbo", "dir": "rtl"}
-    hc_td = my_html.table_datum(row_dic["html_contents"], td_attrs)
+    hc_td = mb_html.table_datum(row_dic["html_contents"], td_attrs)
     other_tds = tuple(_my_td(k, v) for k, v in row_dic.items() if k != "html_contents")
-    return my_html.table_row((hc_td, *other_tds))
+    return mb_html.table_row((hc_td, *other_tds))
 
 
 def _my_td(key, htseq_or_str_or_none):
     td_attrs = None
     if key == "pqere":
         td_attrs = {"lang": "hbo", "dir": "rtl"}
-    return my_html.table_datum(htseq_or_str_or_none, td_attrs)
+    return mb_html.table_datum(htseq_or_str_or_none, td_attrs)
 
 
 def _write_json(args_foi, outfile_stem, rowdics):
@@ -216,18 +216,18 @@ def _write_html(args_foi, outfile_stem, html_tables):
         return
     body_contents = _foi_body_wrapper(_overall_head(outfile_stem) + body1 + body2)
     title = f"{outfile_stem} (MAM features of interest)"
-    write_ctx = my_html.WriteCtx(
+    write_ctx = mb_html.WriteCtx(
         title,
         _out_path_for_html(outfile_stem),
         css_hrefs=(_CSS_HREF,),
         html_comment=provenance.generated_html_comment(__file__),
     )
-    my_html.write_html_to_file(body_contents, write_ctx)
+    mb_html.write_html_to_file(body_contents, write_ctx)
 
 
 def _foi_body_wrapper(contents):
     style = "max-width: 40rem; margin-left: auto; margin-right: auto"
-    return [my_html.div(contents, {"style": style})]
+    return [mb_html.div(contents, {"style": style})]
 
 
 def _overall_head(outfile_stem):
@@ -235,8 +235,8 @@ def _overall_head(outfile_stem):
     if explanation is None:
         return []
     if isinstance(explanation, str):
-        return [my_html.para(explanation)]
-    return [my_html.para(paragraph) for paragraph in explanation]
+        return [mb_html.para(explanation)]
+    return [mb_html.para(paragraph) for paragraph in explanation]
 
 
 def _get_html_body1_and_2(outfile_stem, html_tables):
@@ -251,7 +251,7 @@ def _get_html_body1_and_2(outfile_stem, html_tables):
 
 
 def _html_for_section(head, trs):
-    return head + [my_html.table(trs, {"class": "border-collapse"})]
+    return head + [mb_html.table(trs, {"class": "border-collapse"})]
 
 
 def _section_head_parts_1b_and_2(
@@ -262,14 +262,14 @@ def _section_head_parts_1b_and_2(
         outfilename_for_json = _outfilename_for_json(outfile_stem)
         part1b = [
             " No more are shown. See ",
-            my_html.anchor_h("JSON output", outfilename_for_json),
+            mb_html.anchor_h("JSON output", outfilename_for_json),
             " for full list.",
         ]
     else:
         part2 = f"the remaining {tup2[0]} of {tup2[1]} are shown."
         sfp = _slash_str_from_path_parts(tuple_foi_path[1:])
         rest_id = _intro_id(sfp, "-rest")
-        further_below = my_html.anchor_h("Further below", f"#{rest_id}")
+        further_below = mb_html.anchor_h("Further below", f"#{rest_id}")
         part1b = [" ", further_below, f", {part2}"]
     return part1b, part2
 
@@ -280,7 +280,7 @@ def _intro(tuple_foi_path, part_n, rest_idq=""):
     sfp = _slash_str_from_path_parts(tuple_foi_path[1:])
     the_id = _intro_id(sfp, rest_idq)
     contents = _intro_contents(sfp, part_n, the_id)
-    return my_html.para(contents, {"id": the_id})
+    return mb_html.para(contents, {"id": the_id})
 
 
 def _intro_id(sfp, rest_idq):
@@ -300,7 +300,7 @@ def _escape_space(id_str):
 
 
 def _intro_contents(sfp, part_n, the_id):
-    anc = my_html.anchor_h("#", f"#{the_id}")  # self-anchor
+    anc = mb_html.anchor_h("#", f"#{the_id}")  # self-anchor
     sfp_cs_q = f"{sfp}: " if sfp else ""  # cs: colon space; q: maybe
     return [anc, " ", f"{sfp_cs_q}Immediately below, ", *part_n]
 
@@ -316,7 +316,7 @@ def _head1b(tuple_foi_path):
     paras = []
     if label is not None:
         paras.append(_label_explanation_para(tuple_foi_path, label))
-    paras.extend(my_html.para(paragraph) for paragraph in explanation.get("paras", ()))
+    paras.extend(mb_html.para(paragraph) for paragraph in explanation.get("paras", ()))
     return paras
 
 
@@ -332,12 +332,12 @@ def _explanation_for_foi_path(tuple_foi_path):
 def _label_explanation_para(tuple_foi_path, explanation):
     sfp = _slash_str_from_path_parts(tuple_foi_path[1:])
     if not sfp:
-        return my_html.para(explanation[0].upper() + explanation[1:] + ".")
+        return mb_html.para(explanation[0].upper() + explanation[1:] + ".")
     if "«" in sfp or "»" in sfp:
         full_exp = f"(The label {sfp} means {explanation}.)"
     else:
         full_exp = f"(The label «{sfp}» means {explanation}.)"
-    return my_html.para(full_exp)
+    return mb_html.para(full_exp)
 
 
 _EXPLANATIONS = {

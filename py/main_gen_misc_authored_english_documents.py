@@ -3,8 +3,8 @@ Generate miscellaneous authored HTML documents (notes, reviews, analyses)
 that are written by the repo owner and rendered from Python source data.
 """
 
-from py_misc import my_html
-from py_misc import two_col_css_styles as tcstyles
+from mb_misc import mb_html
+from mb_misc import two_col_css_styles as tcstyles
 from mb_cmn import provenance
 from author import notes_on_aliyot
 from author import tsinnorit_and_oleh_on_ivs
@@ -22,17 +22,17 @@ from author import the_next_700_bibles
 
 
 def _gen_index_html(top_dir_misc, index_entries):
-    items = [my_html.anchor_h(title, fname) for fname, title in index_entries]
+    items = [mb_html.anchor_h(title, fname) for fname, title in index_entries]
     cbody = [
-        my_html.heading_level_1("Miscellaneous Documents"),
-        my_html.unordered_list(items),
+        mb_html.heading_level_1("Miscellaneous Documents"),
+        mb_html.unordered_list(items),
     ]
-    write_ctx = my_html.WriteCtx(
+    write_ctx = mb_html.WriteCtx(
         "Miscellaneous Documents",
         f"{top_dir_misc}/index.html",
         html_comment=provenance.generated_html_comment(__file__),
     )
-    my_html.write_html_to_file(cbody, write_ctx)
+    mb_html.write_html_to_file(cbody, write_ctx)
 
 
 def almost_main():

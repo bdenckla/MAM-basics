@@ -4,7 +4,7 @@ Footnotes are indexed 0–26, corresponding to B+0 through B+26 in pasleg.py
 (where _FN_BASE is defined).
 """
 
-from py_misc import my_html
+from mb_misc import mb_html
 from author_util import author
 
 
@@ -42,7 +42,7 @@ FTNT_0_E = [
         ' "$Paseq, ',
         author.span_gray(["[aka]"]),
         " ",
-        my_html.span_c("pesiq", "romanized"),
+        mb_html.span_c("pesiq", "romanized"),
         ", is a vertical line that comes after the word,",
     ],
     ' in the space between it and the following word."',

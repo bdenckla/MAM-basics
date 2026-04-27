@@ -2,10 +2,10 @@
 
 import xml.etree.ElementTree as ET
 from mb_cmn import bib_locales as tbn
-from py_misc import my_html
+from mb_misc import mb_html
 from py_misc import get_cvm_rec_from_bcvt as gcrfb
 from py_misc import vtrad_helpers
-from py_misc import osis_book_abbrevs as osisba
+from mb_misc import osis_book_abbrevs as osisba
 from py_misc import yeivin_book_abbrevs as yeivinba
 from mb_xml import xml_distribute_sampe as xml_sampe
 
@@ -64,8 +64,8 @@ def _sub_el_fun_versam_ver(chap_et_el, versam_ver, variant):
     id_attr = _id_attr(bcvt, variant)
     cvm_attr = _cvm_attr(bcvt, cvm_rec)
     attr = {**id_attr, **versam_attr, **cvm_attr}
-    verse_html_el = my_html.htel_mk("verse", attr, html_els)
-    my_html.add_htel_to_etxml(chap_et_el, verse_html_el)
+    verse_html_el = mb_html.htel_mk("verse", attr, html_els)
+    mb_html.add_htel_to_etxml(chap_et_el, verse_html_el)
 
 
 def _id_attr(bcvt, variant):
@@ -113,7 +113,7 @@ def _osis_id_from_cvm(bcvt, cvm):
 
 def _sub_el_fun_versam_sam(et_el, versam_sam, _variant):
     html_el_for_sampe_mid = xml_sampe.versam_body(versam_sam)
-    my_html.add_htel_to_etxml(et_el, html_el_for_sampe_mid)
+    mb_html.add_htel_to_etxml(et_el, html_el_for_sampe_mid)
 
 
 def _sub_el(parent, tag, osis_bkid, chnu=None, vrnu=None):

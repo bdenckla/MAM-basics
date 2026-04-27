@@ -10,16 +10,13 @@ Related issue: bdenckla/MAM-basics#60
 | file(s) | src_pkg | dest_repo | dest_path | mechanism | last_synced | provenance_doc | category | notes |
 |---|---|---|---|---|---|---|---|---|
 | bib_locales.py, cantsys.py, file_io.py, hebrew_accents.py, hebrew_letters.py, hebrew_points.py, hebrew_punctuation.py, my_utils.py, shrink.py, str_defs.py, uni_heb.py | mb_cmn | MAM-simple | py-example/mb_cmn | copy_script | 2026-04-27 | no | generated | identical |
-| my_html.py, my_html_get_lines.py, my_utils_for_mainish.py, osis_book_abbrevs.py, two_col_css_styles.py, verse_and_friends.py, write_utils.py, ws_urls.py | py_misc | MAM-simple | py-example/py_misc | copy_script | mixed | no | generated | identical |
+| mb_html.py, mb_html_get_lines.py, my_utils_for_mainish.py, osis_book_abbrevs.py, two_col_css_styles.py, verse_and_friends.py, write_utils.py, ws_urls.py | mb_misc | MAM-simple | py-example/mb_misc | copy_script | mixed | no | generated | identical |
 | mam4sef_handlers.py, mam4sef_or_ajf.py, sef_cmn.py, sef_header.py, write_utils_sef_or_ajf.py | mb_sefaria | MAM-simple | py-example/mb_sefaria | copy_script | 2026-04-27 | no | generated | identical |
 | cantsys.py, hebrew_accents.py, hebrew_letters.py, hebrew_points.py, hebrew_punctuation.py | mb_cmn | UXLC-utils | py/mb_cmn | unknown | 2026-04-27 | no | stale | identical |
 | my_diffs.py, my_utils.py, polite_download.py, str_defs.py, uni_heb.py, uni_norm_fragile.py | mb_cmn | UXLC-utils | py/mb_cmn | unknown | 2026-04-27 | no | stale | DIFFERS |
-| my_html.py | py_misc | UXLC-utils | py/py_misc/my_html.py | unknown | 2026-04-27 | no | diverged | DIFFERS |
 | bib_locales.py, cantsys.py, file_io.py, hebrew_accents.py, hebrew_letters.py, hebrew_points.py, hebrew_punctuation.py, hebrew_verse_numerals.py, mam_bknas.py, mam_bknas_and_std_bknas.py, minirow.py, my_diffs.py, my_utils.py, provenance.py, read_books_from_mam_parsed_plus.py, shrink.py, str_defs.py, template_names.py, uni_denorm.py, uni_heb.py, uni_norm_fragile.py, ws_tmpl1.py, ws_tmpl2.py, ws_tmpl_named_params.py | mb_cmn | al-hatorah | py/mb_cmn | unknown | 2026-04-27 | yes | stale | identical |
-| my_html.py, my_html_get_lines.py | py_misc | al-hatorah | py | unknown | 2026-04-22 | no | diverged | MISSING-DEST; placed in py/ not py_misc/ |
 | bib_locales.py, file_io.py, hebrew_punctuation.py, my_utils.py, str_defs.py | mb_cmn | book-of-job | mb_cmn | unknown | 2026-04-27 | no | stale | DIFFERS |
 | cantsys.py, hebrew_accents.py, hebrew_letters.py, hebrew_points.py, mam_bknas.py, my_diffs.py, shrink.py, uni_denorm.py, uni_heb.py | mb_cmn | book-of-job | mb_cmn | unknown | 2026-04-27 | no | stale | identical |
-| my_html.py, my_html_get_lines.py, two_col_css_styles.py | py_misc | book-of-job | py | unknown | mixed | no | diverged | DIFFERS; placed in py/ not py_misc/ |
 | hebrew_points.py, uni_denorm.py | mb_cmn | codex-index-aleppo | py/mb_cmn | unknown | 2026-04-27 | no | stale | identical |
 | str_defs.py | mb_cmn | codex-index-aleppo | py/mb_cmn/str_defs.py | unknown | 2026-04-27 | no | stale | DIFFERS |
 | hebrew_letters.py | mb_cmn | codex-index-aleppo | aleppo-wiki/py/hebrew_letters.py | unknown | 2026-03-28 | yes | stale | identical; placed in aleppo-wiki/py/ not mb_cmn/ |
@@ -37,6 +34,12 @@ Related issue: bdenckla/MAM-basics#60
 | my_diffs.py, uni_denorm.py | mb_cmn | mgketer | py/python_modules | unknown | 2026-04-27 | no | stale | DIFFERS; placed in python_modules/ not mb_cmn/ |
 | bib_locales.py, file_io.py, hebrew_accents.py, hebrew_points.py, hebrew_punctuation.py, my_diffs.py, my_utils.py, str_defs.py, uni_heb.py, uni_norm_fragile.py | mb_cmn | wlc-utils | py/mb_cmn | unknown | 2026-04-27 | no | stale | DIFFERS |
 | cantsys.py, hebrew_letters.py | mb_cmn | wlc-utils | py/mb_cmn | unknown | 2026-04-27 | no | stale | identical |
-| my_html.py | py_misc | wlc-utils | py/py_html/my_html.py | unknown | 2026-04-27 | no | diverged | DIFFERS; placed in py_html/ not py_misc/ |
 
-*29 rows, 147 files. 0 files ignored (dest_repos: MAM-for-Acc, MAM-for-CCAR, MAM-for-JPS, TMC).*
+## De-vendored Local Forks
+
+- al-hatorah: `py/misc/my_html.py` -> `py/misc/aht_html.py`; `py/misc/my_html_get_lines.py` -> `py/misc/aht_html_get_lines.py`
+- book-of-job: `py/my_html.py` -> `py/boj_html.py`; `py/my_html_get_lines.py` -> `py/boj_html_get_lines.py`; `py/two_col_css_styles.py` -> `py/boj_two_col_css_styles.py`
+- UXLC-utils: `py/py_misc/my_html.py` -> `py/py_misc/uxlc_utils_html.py`
+- wlc-utils: `py/py_html/my_html.py` -> `py/py_html/wlc_utils_html.py`
+
+*25 rows, 140 files. 0 files ignored (dest_repos: MAM-for-Acc, MAM-for-CCAR, MAM-for-JPS, TMC).*

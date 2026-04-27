@@ -4,11 +4,11 @@ import xml.etree.ElementTree as ET
 import copy
 import lxml.etree as lxml_etree
 
-from py_misc import my_utils_for_mainish as my_utils_fm
-from py_misc import my_html
+from mb_misc import my_utils_for_mainish as my_utils_fm
+from mb_misc import mb_html
 from mb_cmn import bib_locales as tbn
-from py_misc import two_col_css_styles as tcstyles
-from py_misc import osis_book_abbrevs
+from mb_misc import two_col_css_styles as tcstyles
+from mb_misc import osis_book_abbrevs
 from mb_cmn import my_utils
 from mb_cmn import file_io
 from mb_cmn import provenance
@@ -112,13 +112,13 @@ def _write_index_dot_html():
     out_dir_path = "../MAM-OSIS/gh-pages"
     css_href = "two_col_style.css"
     tcstyles.make_css_file_for_mwd(f"{out_dir_path}/{css_href}")
-    write_ctx = my_html.WriteCtx(
+    write_ctx = mb_html.WriteCtx(
         title,
         f"{out_dir_path}/index.html",
         css_hrefs=(css_href,),
         html_comment=provenance.generated_html_comment(__file__),
     )
-    my_html.write_html_to_file(body_contents, write_ctx)
+    mb_html.write_html_to_file(body_contents, write_ctx)
 
 
 def almost_main(bkids=None):

@@ -1,10 +1,10 @@
 """Exports root"""
 
 from mb_cmn import bib_locales as tbn
-from py_misc import my_html
+from mb_misc import mb_html
 from py_misc import get_cvm_rec_from_bcvt as gcrfb
 from py_misc import vtrad_helpers
-from py_misc import osis_book_abbrevs as osisba
+from mb_misc import osis_book_abbrevs as osisba
 from py_misc import yeivin_book_abbrevs as yeivinba
 from mb_xml import xml_distribute_sampe as xml_sampe
 
@@ -77,14 +77,14 @@ def _versam_ver_to_json(versam_ver, variant):
 
 
 def _versam_sam_to_json(html_el_for_sampe):
-    tag = my_html.htel_get_tag(html_el_for_sampe)
+    tag = mb_html.htel_get_tag(html_el_for_sampe)
     return {"type": tag}
 
 
 def _htel_to_json(htel):
     if isinstance(htel, str):
         return {"type": "text", "text": htel}
-    tag = my_html.htel_get_tag(htel)
+    tag = mb_html.htel_get_tag(htel)
     attr = htel.get("attr") or {}
     contents = htel.get("contents")
     result = {"type": tag, **attr}

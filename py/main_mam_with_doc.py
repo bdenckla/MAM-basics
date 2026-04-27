@@ -4,14 +4,14 @@ text alongside its Wikisource documentation notes, one HTML file per book.
 """
 
 from py_misc import ren_html_from_ren_el_mapping as hfrm
-from py_misc import my_utils_for_mainish as my_utils_fm
+from mb_misc import my_utils_for_mainish as my_utils_fm
 from py_misc import ren_tag_survey as rts
 from py_misc import mwd_utils as mwdu
 from mb_cmn import bib_locales as tbn
 from mb_cmn import read_books_from_mam_parsed_plus as plus
 from mwd import mwd_write_index_dot_html as mwdwidh
 from mwd import mwd_write_book as mwdwb
-from py_misc import two_col_css_styles as tcstyles
+from mb_misc import two_col_css_styles as tcstyles
 
 
 def _out_path(filename):

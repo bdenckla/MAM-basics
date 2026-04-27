@@ -5,7 +5,7 @@ from typing import Union
 
 from render_wt import render_element as renel
 from mb_cmn import str_defs as sd
-from py_misc import my_html
+from mb_misc import mb_html
 from mb_cmn import shrink
 from py_misc import ren_tag_survey as rts
 
@@ -54,4 +54,4 @@ _SPECIAL_SPACES = {
 def _html_fun(ht_tag, ht_att, ht_con):
     if special_space := _SPECIAL_SPACES.get(ht_tag):
         return special_space
-    return my_html.htel_mk(ht_tag, ht_att, ht_con)
+    return mb_html.htel_mk(ht_tag, ht_att, ht_con)

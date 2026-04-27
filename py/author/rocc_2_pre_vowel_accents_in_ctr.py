@@ -1,6 +1,6 @@
 """Exports main"""
 
-from py_misc import my_html
+from mb_misc import mb_html
 from author_util import author
 from author import rocc_1_on_the_provenance_of_ctr as prov
 from mb_cmn.my_utils import intersperse
@@ -110,7 +110,7 @@ def _codes_both_detail(foo, bar, baz):
 _TITLE = "Pre-vowel Accents in Chabad’s CTR"
 _H1_CONTENTS = "Pre-vowel Accents in Chabad’s $CTR"
 _FNAME = "rocc_2_pre_vowel_accents_in_ctr.html"
-_ANCHOR = my_html.anchor_h("document", f"./{_FNAME}")
+_ANCHOR = mb_html.anchor_h("document", f"./{_FNAME}")
 _TIPEHA_BEFORE_VOWEL_INTRO = _to_encode(
     "$segol and $dexi", "under", "$hehe", "Psalm 32:3", "הֶ֭חרשתי", "הֶ֭חֱרַשְׁתִּי"
 )
@@ -297,7 +297,7 @@ _CONT_PARA_10D_LI_2 = [
     [" a desired distinction in horizontal visual alignment"],
     [" (right-biased rather than centered) of the accent relative to its letter."],
     [" Or, if you like, you can think of $GERESH logically before $HOLAM"],
-    [" as meaning a $geresh visually ", my_html.emphasis("far"), " before $xolam,"],
+    [" as meaning a $geresh visually ", mb_html.emphasis("far"), " before $xolam,"],
     [" as opposed to $GERESH logically after $HOLAM,"],
     [" which means a $geresh still visually before $xolam,"],
     [" but not so far before it."],
@@ -316,7 +316,7 @@ _CONT_PARA_10D_LI_3 = [
 _CONT_05_UL = [_CONT_PARA_10D_LI_1, _CONT_PARA_10D_LI_2, _CONT_PARA_10D_LI_3]
 _CONT_PARA_06 = [
     ["One might naturally wonder how, on a letter"],
-    [" ", my_html.emphasis("without"), " a vowel, $CTR encodes"],
+    [" ", mb_html.emphasis("without"), " a vowel, $CTR encodes"],
     [" the six accents of these three “lookalike” pairs."],
     [" I.e. one might naturally wonder how these six accents are encoded"],
     [" when they are “bare,” i.e. not sharing their letter with a vowel mark."],

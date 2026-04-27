@@ -12,7 +12,7 @@ Usage (run from repo root):
 import main_parse_ws
 import json
 import os
-from py_misc import my_utils_for_mainish as my_utils_fm
+from mb_misc import my_utils_for_mainish as my_utils_fm
 from py_misc import get_wikisource_plan as wsplan
 from mb_cmn import mam_bknas_and_std_bknas as mbkn_a_sbkn
 from mb_cmn import file_io

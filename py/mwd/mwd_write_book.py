@@ -4,8 +4,8 @@ from mb_cmn import bib_locales as tbn
 from mb_cmn import my_utils
 from mb_cmn import provenance
 
-from py_misc import my_html
-from py_misc import my_utils_for_mainish as my_utils_fm
+from mb_misc import mb_html
+from mb_misc import my_utils_for_mainish as my_utils_fm
 from py_misc import ren_tag_survey as rts
 from py_misc import mwd_utils as mwdu
 from py_misc import ren_html_for_renel as hfr
@@ -17,8 +17,8 @@ from render_wt import render_wikitext as rwt
 @dataclass
 class _ExtendedWriteCtx:
     bkid: str
-    wc_for_main: my_html.WriteCtx
-    wc_for_bido: my_html.WriteCtx
+    wc_for_main: mb_html.WriteCtx
+    wc_for_bido: mb_html.WriteCtx
     hfr_ctx: hfr.HfrCtx
     para_for_chap_ancs: dict
 
@@ -31,13 +31,13 @@ def _pair_of_write_ctxs(ecb, out_paths):
     html_comment = provenance.generated_html_comment(__file__)
     tp_for_main = title_for_main, path_for_main
     tp_for_bido = title_for_bido, path_for_bido
-    wr_for_main = my_html.WriteCtx(
+    wr_for_main = mb_html.WriteCtx(
         *tp_for_main,
         css_hrefs=css_hrefs,
         add_wbr=True,
         html_comment=html_comment,
     )
-    wr_for_bido = my_html.WriteCtx(
+    wr_for_bido = mb_html.WriteCtx(
         *tp_for_bido,
         css_hrefs=css_hrefs,
         add_wbr=True,
@@ -53,7 +53,7 @@ def _para_for_chap_ancs(bkid, books_mpu):
     chnus_dic = {tbn.bcvt_get_chnu(bcvt): True for bcvt in bcvts}
     chnus = tuple(chnus_dic.keys())
     anchors = tuple(map(mwdu.mk_anchor_with_link_to_chapter, chnus))
-    return my_html.para(my_utils.intersperse(" ", anchors))
+    return mb_html.para(my_utils.intersperse(" ", anchors))
 
 
 def _extended_write_ctx(ecb, books_mpu, out_paths):
@@ -86,7 +86,7 @@ def _html_for_chapter(bkid, hfr_ctx: hfr.HfrCtx, ver_ndds: list[mwdu.VerseNdd]):
     chnu = tbn.bcvt_get_chnu(ver_ndds[0].bcvt)
     heading_level_2 = mwdu.mk_chapter_heading_level_2(chnu)
     para_for_mgketer = mwdu.mgketer_dot_org(bkid, chnu)
-    div_for_main = my_html.div(
+    div_for_main = mb_html.div(
         (
             heading_level_2,
             table_for_main,
@@ -118,10 +118,10 @@ def _write_three_col_html(wrae: _ExtendedWriteCtx, ver_ndds):
     """Write 3-column HTML main file and maybe a "big docs" file"""
     html_for_book = _html_for_book(wrae, ver_ndds)
     body_for_main = wrae.para_for_chap_ancs, *html_for_book["body_for_main"]
-    my_html.write_html_to_file(body_for_main, wrae.wc_for_main)
+    mb_html.write_html_to_file(body_for_main, wrae.wc_for_main)
     body_for_bido = html_for_book["body_for_bido"]
     if body_for_bido:
-        my_html.write_html_to_file(body_for_bido, wrae.wc_for_bido)
+        mb_html.write_html_to_file(body_for_bido, wrae.wc_for_bido)
     return html_for_book["survey"]
 
 

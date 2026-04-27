@@ -1,4 +1,4 @@
-from py_misc import my_html
+from mb_misc import mb_html
 from author_util import author
 from author import rocc_4_mid_word_ga3ya_with_shewa as mwgws
 from author import rocc_3_where_other_sources_stand as stand
@@ -208,9 +208,9 @@ _X381_TABLE_DATA_QRB_QRVB = {
     "$CTR": qrb_qrvb.TD_CTR,
     "$JP, $KCT": qrb_qrvb.TD_MAM_KCT_ETC,
 }
-_Y_VLYLH = my_html.bdi("ולילה")
-_Y_V3VNY = my_html.bdi("ועוני")
-_Y_NJAF = my_html.bdi("נשאת")
+_Y_VLYLH = mb_html.bdi("ולילה")
+_Y_V3VNY = mb_html.bdi("ועוני")
+_Y_NJAF = mb_html.bdi("נשאת")
 _X382_CPARA = [
     ["Here, as with ", _Y_VLYLH, ", ", _Y_V3VNY, ", and ", _Y_NJAF, ","],
     [" conformance with $KCT cannot explain why $CTR differs from $JP."],

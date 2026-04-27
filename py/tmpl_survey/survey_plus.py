@@ -6,7 +6,7 @@ import collections
 from tmpl_survey import column_d_0_process_all_mpasuq_calls as cdp
 from tmpl_survey import column_d_0_store_the_mpasuq_call_plus as cds_plus
 from mb_cmn import bib_locales as tbn
-from py_misc import my_utils_for_mainish as my_utils_fm
+from mb_misc import my_utils_for_mainish as my_utils_fm
 from mb_cmn import ws_tmpl2 as wtp2
 from mb_cmn import template_names as tmpln
 

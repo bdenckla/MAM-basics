@@ -1,6 +1,6 @@
 """Exports body"""
 
-from py_misc.my_html import (
+from mb_misc.mb_html import (
     unordered_list,
     para,
     img,

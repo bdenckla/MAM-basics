@@ -6,10 +6,10 @@ import re
 
 from mb_cmn import hebrew_verse_numerals as hvn
 from render_wt import render_element as renel
-from py_misc import verse_and_friends as vaf
+from mb_misc import verse_and_friends as vaf
 from mb_cmn import bib_locales as tbn
 from py_misc import ren_html_for_renel as hfr
-from py_misc import my_html
+from mb_misc import mb_html
 from mb_cmn import shrink
 from mb_cmn import my_utils
 
@@ -37,18 +37,18 @@ def mk_table(rows):
         "dir": "rtl",
     }
     cols = (
-        my_html.col({"span": "1", "style": "width: 8%;"}),
-        my_html.col({"span": "1", "style": "width: 46%;"}),
-        my_html.col({"span": "1", "style": "width: 46%;"}),
+        mb_html.col({"span": "1", "style": "width: 8%;"}),
+        mb_html.col({"span": "1", "style": "width: 46%;"}),
+        mb_html.col({"span": "1", "style": "width: 46%;"}),
     )
-    colgroup = my_html.colgroup(cols)
-    return my_html.table((colgroup, *rows), attr)
+    colgroup = mb_html.colgroup(cols)
+    return mb_html.table((colgroup, *rows), attr)
 
 
 def mk_chapter_heading_level_2(chnu):
     """Make a heading of level 2 containing the Hebrew chapter number."""
     he_ch_str = hvn.INT_TO_STR_DIC[chnu]
-    return my_html.heading_level_2("פרק " + he_ch_str, _h2_attr)
+    return mb_html.heading_level_2("פרק " + he_ch_str, _h2_attr)
 
 
 _h2_style_statements = (
@@ -69,8 +69,8 @@ def mgketer_dot_org(bk39id, chnu):
     bknu = tbn.get_bknu(bk39id)
     href = f"https://www.mgketer.org/mikra/{bknu}/{chnu}/1/mg/106"
     attr = {"href": href, "target": "_blank"}
-    anchor = my_html.anchor(f"mgketer.org {bknu} {chnu}", attr)
-    return my_html.para(anchor)
+    anchor = mb_html.anchor(f"mgketer.org {bknu} {chnu}", attr)
+    return mb_html.para(anchor)
 
 
 @dataclass
@@ -135,18 +135,18 @@ def _div_for_bido_page(
     """Make a div for cv & doc notes."""
     div_attr = {"style": "max-width: 40em", "lang": "hbo", "dir": "rtl"}
     cv_str = _hebrew_cv_str_verbose(bcvt)
-    div_contents_1 = [my_html.para(cv_str), my_html.para(html_for_nondoc.verse)]
+    div_contents_1 = [mb_html.para(cv_str), mb_html.para(html_for_nondoc.verse)]
     div_contents_2 = []
     if html_for_docs.verse:
-        div_contents_2.append(my_html.para(html_for_docs.verse))
+        div_contents_2.append(mb_html.para(html_for_docs.verse))
     if html_for_docs.vaf_next_cp:
-        div_contents_1.append(my_html.para(html_for_nondoc.vaf_next_cp))
-        div_contents_2.append(my_html.para(html_for_docs.vaf_next_cp))
+        div_contents_1.append(mb_html.para(html_for_nondoc.vaf_next_cp))
+        div_contents_2.append(mb_html.para(html_for_docs.vaf_next_cp))
     if html_for_docs.good_ending:
-        div_contents_1.append(my_html.para(html_for_nondoc.good_ending))
-        div_contents_2.append(my_html.para(html_for_docs.good_ending))
+        div_contents_1.append(mb_html.para(html_for_nondoc.good_ending))
+        div_contents_2.append(mb_html.para(html_for_docs.good_ending))
     div_contents = div_contents_1 + div_contents_2
-    return my_html.div(div_contents, div_attr)
+    return mb_html.div(div_contents, div_attr)
 
 
 def _row_for_verse(bcvt, html_for_verse, html_for_docs):
@@ -156,11 +156,11 @@ def _row_for_verse(bcvt, html_for_verse, html_for_docs):
         "class": "top-n-bot-bordered end-aligned",
     }
     docs_attr = {"class": "top-n-bot-bordered"} if html_for_docs else {}
-    return my_html.table_row(
+    return mb_html.table_row(
         (
-            my_html.table_datum(_hebrew_c_or_v_str(bcvt), cv_attr),
-            my_html.table_datum(html_for_verse),
-            my_html.table_datum(html_for_docs, docs_attr),
+            mb_html.table_datum(_hebrew_c_or_v_str(bcvt), cv_attr),
+            mb_html.table_datum(html_for_verse),
+            mb_html.table_datum(html_for_docs, docs_attr),
         )
     )
 
@@ -168,11 +168,11 @@ def _row_for_verse(bcvt, html_for_verse, html_for_docs):
 def _row_for_next_cp(html_for_next_cp, html_for_docs):
     attr_for_next_cp = {"class": "top-n-bot-bordered small"}
     docs_attr = {"class": "top-n-bot-bordered"} if html_for_docs else {}
-    return my_html.table_row(
+    return mb_html.table_row(
         (
-            my_html.table_datum(html_for_next_cp, attr_for_next_cp),
-            my_html.table_datum(tuple()),
-            my_html.table_datum(html_for_docs, docs_attr),
+            mb_html.table_datum(html_for_next_cp, attr_for_next_cp),
+            mb_html.table_datum(tuple()),
+            mb_html.table_datum(html_for_docs, docs_attr),
         )
     )
 
@@ -180,11 +180,11 @@ def _row_for_next_cp(html_for_next_cp, html_for_docs):
 def _row_for_good_ending(html_for_good_ending, html_for_docs):
     attr_for_cell_1 = {"class": "top-n-bot-bordered small"}
     docs_attr = {"class": "top-n-bot-bordered"} if html_for_docs else {}
-    return my_html.table_row(
+    return mb_html.table_row(
         (
-            my_html.table_datum("סיום בטוב", attr_for_cell_1),
-            my_html.table_datum(html_for_good_ending),
-            my_html.table_datum(html_for_docs, docs_attr),
+            mb_html.table_datum("סיום בטוב", attr_for_cell_1),
+            mb_html.table_datum(html_for_good_ending),
+            mb_html.table_datum(html_for_docs, docs_attr),
         )
     )
 
@@ -192,19 +192,19 @@ def _row_for_good_ending(html_for_good_ending, html_for_docs):
 def mk_anchor_with_link_to_book(bkid):
     """Return the anchor for a book."""
     filename = filename_for_bkid(bkid)
-    return my_html.anchor_h(bkid, filename)
+    return mb_html.anchor_h(bkid, filename)
 
 
 def mk_anchor_with_link_to_chapter(chnu):
     """Return the anchor for a chapter."""
     cv_id = _mk_chapnver_id(chnu, 1)
-    return my_html.anchor_h(str(chnu), "#" + cv_id)
+    return mb_html.anchor_h(str(chnu), "#" + cv_id)
 
 
 def _mk_anchor_with_link_to_bido(bkid, cvt, doc_index):
     filename = filename_for_bkid_for_bido(bkid)
     doc_id = _mk_doc_id(cvt, doc_index)
-    return my_html.anchor_h("...", filename + "#" + doc_id)
+    return mb_html.anchor_h("...", filename + "#" + doc_id)
 
 
 def filename_for_bkid(bkid):
@@ -233,7 +233,7 @@ def _html_for_docs2(doc_ctx: _DocCtx, doc_type, doc_renels):
     hfd = my_utils.st_map(
         (_html_for_single_doc_ren_el, doc_ctx, doc_type), enumerate(doc_renels)
     )
-    line_break_seq = (my_html.line_break(),)
+    line_break_seq = (mb_html.line_break(),)
     return _shrink_join(line_break_seq, hfd)
 
 
@@ -280,7 +280,7 @@ def _hebrew_cv_str_verbose_and_wa(bcvt):  # wa: Western Arabic
 def _html_for_single_doc_ren_el(doc_ctx: _DocCtx, doc_type, enum_pair):
     doc_index, doc = enum_pair
     lemma_ht = hfr.html_for_ren_el(doc_ctx.hfr_ctx, doc["doc_lemma"])
-    lemma = my_html.span_c(lemma_ht, "mam-doc-lemma")
+    lemma = mb_html.span_c(lemma_ht, "mam-doc-lemma")
     if doc_type == _DocType.A_T_BIDO:
         anchor_to_bido = _mk_anchor_with_link_to_bido(
             doc_ctx.bkid, doc_ctx.ver_ndd.bcvt, doc_index
@@ -297,13 +297,13 @@ def _bido_or_self_contained(doc_ctx: _DocCtx, doc_type, enum_pair, lemma):
         part0_attr["id"] = _mk_doc_id(doc_ctx.ver_ndd.bcvt, doc_index)
     else:
         assert doc_type == _DocType.SELF_CONTAINED
-    part0 = my_html.span(part0_ht, part0_attr)
+    part0 = mb_html.span(part0_ht, part0_attr)
     lemma_sp_part0 = lemma, " ", part0
     parts1c = my_utils.st_map(
         (hfr.html_for_ren_el, doc_ctx.hfr_ctx), doc["doc_parts"][1:]
     )
     if parts1c:
-        uo_list = my_html.unordered_list(parts1c, {"class": "mam-doc-parts"})
+        uo_list = mb_html.unordered_list(parts1c, {"class": "mam-doc-parts"})
         return *lemma_sp_part0, uo_list
     return lemma_sp_part0
 

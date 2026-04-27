@@ -6,9 +6,9 @@ versam_body
 chasam_body
 """
 
-from py_misc import my_html
+from mb_misc import mb_html
 from py_misc import get_cvm_rec_from_bcvt as gcrfb
-from py_misc import verse_and_friends as vaf
+from mb_misc import verse_and_friends as vaf
 from mb_cmn import bib_locales as tbn
 from mb_cmn import my_utils
 
@@ -121,7 +121,7 @@ def _strip_trailing_sampe(veraf: vaf.VerseAndFriends):
 
 
 def _sampe_attr_val(sampe):
-    htel_tag = my_html.htel_get_tag(sampe)
+    htel_tag = mb_html.htel_get_tag(sampe)
     return _SAMPE_MAP[htel_tag]
 
 
@@ -129,7 +129,7 @@ def _get_sampe_from_next_cp(vaf_next_cp):
     if not vaf_next_cp:
         return None
     fao = my_utils.first_and_only(vaf_next_cp)
-    htel_tag = my_html.htel_get_tag(fao)
+    htel_tag = mb_html.htel_get_tag(fao)
     return fao if htel_tag in _SAMPE_MAP else None
 
 

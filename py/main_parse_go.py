@@ -12,7 +12,7 @@ from py_misc import mam_parsed_plus
 from mb_cmn import bib_locales as tbn
 from mb_cmn import mam_bknas_and_std_bknas as mbkn_a_sbkn
 from mb_cmn import file_io
-from py_misc import my_utils_for_mainish as my_utils_fm
+from mb_misc import my_utils_for_mainish as my_utils_fm
 
 
 def _add_header(light_books):

@@ -12,7 +12,7 @@ The English translation is original to this project.
 """
 
 from mb_cmn.my_utils import sl_map
-from py_misc import my_html
+from mb_misc import mb_html
 from mb_cmn import my_utils
 from mb_cmn import hebrew_punctuation as hpu
 from author_util import author
@@ -43,8 +43,8 @@ def _footnote_marker(n: int, side="h"):
     """
     text = f"[B+{n}]"
     if side == "h":
-        return my_html.anchor(text, {"id": f"fnref-{n}", "href": f"#fn-{n}"})
-    return my_html.anchor_h(text, f"#fn-{n}")
+        return mb_html.anchor(text, {"id": f"fnref-{n}", "href": f"#fn-{n}"})
+    return mb_html.anchor_h(text, f"#fn-{n}")
 
 
 def _ait(contents):
@@ -385,7 +385,7 @@ _Y_081_E = [
 ####################################
 _WS_BASE = "https://he.wikisource.org/wiki/" "ויקיטקסט:מבוא_למקרא_על_פי_המסורה/פרק_ב"
 _WS_URL = f"{_WS_BASE}#טעם_משני_בתיבה_הראויה_להיות_מוקפת"
-_WS_LINK = my_html.anchor_h("Hebrew Wikisource", _WS_URL)
+_WS_LINK = mb_html.anchor_h("Hebrew Wikisource", _WS_URL)
 ####################################
 _X_01_I = ("Section title and introduction",)
 _X_01_H = sl_map(author.para_modhe, [_Y_010_H, _Y_011_H, _Y_012_H, _Y_013_H])
@@ -430,7 +430,7 @@ _X_08_TRIPLE = _X_08_I, _X_08_H, _X_08_E
 _TITLE = "Gray maqaf"
 _H1_CONTENTS = "Gray $maqaf"
 _FNAME = "he_ws_intro_to_mam_gray_maqaf_1.html"
-_ANCHOR = my_html.anchor_h("document", f"./{_FNAME}")
+_ANCHOR = mb_html.anchor_h("document", f"./{_FNAME}")
 _PROVENANCE = author.para(
     [
         "The Hebrew text below is from Avi Kadish's introduction to the",
@@ -443,8 +443,8 @@ _PROVENANCE = author.para(
 
 def _ftnt_triple(n, ftnt_h, ftnt_e):
     text = f"[B+{n}]"
-    marker_h = my_html.anchor(text, {"id": f"fn-{n}", "href": f"#fnref-{n}"})
-    marker_e = my_html.anchor_h(text, f"#fnref-{n}")
+    marker_h = mb_html.anchor(text, {"id": f"fn-{n}", "href": f"#fnref-{n}"})
+    marker_e = mb_html.anchor_h(text, f"#fnref-{n}")
     return (
         f"Footnote B+{n}",
         author.para_modhe([marker_h, " ", *ftnt_h]),

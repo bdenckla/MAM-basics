@@ -1,6 +1,6 @@
 """Exports main"""
 
-from py_misc import my_html
+from mb_misc import mb_html
 from author_util import author
 
 
@@ -41,7 +41,7 @@ def gen_html_file(tdm_ch):
 _TITLE = "Tsinnorit and the Ḥolam Ḥaser dot in BHS"
 _H1_CONTENTS = "$Tsinnorit and the $Xolam_xaser Dot in $BHS"
 _FNAME = "tsinnorit_and_the_xxd_in_bhs.html"
-_ANCHOR = my_html.anchor_h("document", f"./{_FNAME}")
+_ANCHOR = mb_html.anchor_h("document", f"./{_FNAME}")
 _CONT_PARA_06A = [
     ["A $tsinnorit"],
     [" and a $xolam_xaser dot"],

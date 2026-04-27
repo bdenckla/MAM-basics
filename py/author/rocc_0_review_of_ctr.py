@@ -1,6 +1,6 @@
 """Exports main"""
 
-from py_misc import my_html
+from mb_misc import mb_html
 from author_util import author
 from author_rocc import rocc_0_part_1
 from author_rocc import rocc_0_part_2
@@ -20,12 +20,12 @@ def gen_html_file(tdm_ch):
     cbody = [
         author.heading_level_1(hdr.H1_CONTENTS),
         *rocc_0_part_1.BODY_ELEMENTS_1,
-        my_html.heading_level_2("Use and abuse of Unicode"),
+        mb_html.heading_level_2("Use and abuse of Unicode"),
         *rocc_0_part_1.BODY_ELEMENTS_2,
-        my_html.heading_level_2("Substantive differences"),
+        mb_html.heading_level_2("Substantive differences"),
         *rocc_0_part_1.BODY_ELEMENTS_3,
         *rocc_0_part_2.BODY_ELEMENTS,
-        my_html.heading_level_2("Conclusion"),
+        mb_html.heading_level_2("Conclusion"),
         author.para(_X_CPARA_CONCLUSION),
     ]
     return author.help_gen_html_file(__file__, tdm_ch, hdr.FNAME, hdr.TITLE, cbody)

@@ -4,7 +4,7 @@
     "comment": null,
     "source_pkg_dirs": {
       "mb_cmn": "py/mb_cmn",
-      "py_misc": "py/py_misc",
+      "mb_misc": "py/mb_misc",
       "mb_sefaria": "py/mb_sefaria",
       "mb_diff_mpu": "py/mb_diff_mpu"
     }
@@ -21,8 +21,8 @@
         "mb_cmn": [
           "py-example/mb_cmn"
         ],
-        "py_misc": [
-          "py-example/py_misc"
+        "mb_misc": [
+          "py-example/mb_misc"
         ],
         "mb_sefaria": [
           "py-example/mb_sefaria"
@@ -145,9 +145,6 @@
       "pkg_scan_roots": {
         "mb_cmn": [
           "py/mb_cmn"
-        ],
-        "py_misc": [
-          "py/py_misc"
         ]
       }
     },
@@ -202,56 +199,6 @@
     }
   },
   "overrides": [
-    {
-      "comment": null,
-      "dest_repo": "al-hatorah",
-      "dest_path": "py/my_html.py",
-      "src_pkg": "py_misc",
-      "category": "diverged",
-      "mechanism": null,
-      "provenance_doc": null,
-      "notes": "placed in py/ not py_misc/"
-    },
-    {
-      "comment": null,
-      "dest_repo": "al-hatorah",
-      "dest_path": "py/my_html_get_lines.py",
-      "src_pkg": "py_misc",
-      "category": "diverged",
-      "mechanism": null,
-      "provenance_doc": null,
-      "notes": "placed in py/ not py_misc/"
-    },
-    {
-      "comment": null,
-      "dest_repo": "book-of-job",
-      "dest_path": "py/my_html.py",
-      "src_pkg": "py_misc",
-      "category": "diverged",
-      "mechanism": null,
-      "provenance_doc": null,
-      "notes": "placed in py/ not py_misc/"
-    },
-    {
-      "comment": null,
-      "dest_repo": "book-of-job",
-      "dest_path": "py/my_html_get_lines.py",
-      "src_pkg": "py_misc",
-      "category": "diverged",
-      "mechanism": null,
-      "provenance_doc": null,
-      "notes": "placed in py/ not py_misc/"
-    },
-    {
-      "comment": null,
-      "dest_repo": "book-of-job",
-      "dest_path": "py/two_col_css_styles.py",
-      "src_pkg": "py_misc",
-      "category": "diverged",
-      "mechanism": null,
-      "provenance_doc": null,
-      "notes": "placed in py/ not py_misc/"
-    },
     {
       "comment": null,
       "dest_repo": "codex-index-aleppo",
@@ -351,26 +298,6 @@
       "mechanism": null,
       "provenance_doc": null,
       "notes": "placed in python_modules/ not mb_cmn/"
-    },
-    {
-      "comment": null,
-      "dest_repo": "UXLC-utils",
-      "dest_path": "py/py_misc/my_html.py",
-      "src_pkg": "py_misc",
-      "category": "diverged",
-      "mechanism": null,
-      "provenance_doc": null,
-      "notes": null
-    },
-    {
-      "comment": null,
-      "dest_repo": "wlc-utils",
-      "dest_path": "py/py_html/my_html.py",
-      "src_pkg": "py_misc",
-      "category": "diverged",
-      "mechanism": null,
-      "provenance_doc": null,
-      "notes": "placed in py_html/ not py_misc/"
     }
   ]
 }

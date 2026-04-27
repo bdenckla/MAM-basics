@@ -3,7 +3,7 @@ from py_misc import hebrew_letter_words as hlw
 from author_rocc import rocc_util as ru
 
 from mb_cmn.my_utils import sl_map
-from py_misc import my_html
+from mb_misc import mb_html
 
 
 def _bg(s):
@@ -11,7 +11,7 @@ def _bg(s):
     words = s.split(" ")
     words_lm = sl_map(hlw.letters_and_maqafs, words)
     new_str = " ".join(words_lm)
-    return my_html.span(new_str, {"class": "gray"})
+    return mb_html.span(new_str, {"class": "gray"})
 
 
 def _fg(contents):

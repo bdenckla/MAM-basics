@@ -11,7 +11,7 @@ A copy of the Wikisource markup is kept in he_ws_intro_to_mam_pasleg.mediawiki.
 The English translation is original to this project.
 """
 
-from py_misc import my_html
+from mb_misc import mb_html
 from author_util import author
 from author import he_ws_intro_to_mam_pasleg_footnotes as plfn
 
@@ -29,13 +29,13 @@ def _footnote_marker(n: int, side="h"):
     """
     text = f"[B+{n}]"
     if side == "h":
-        return my_html.anchor(text, {"id": f"fnref-{n}", "href": f"#fn-{n}"})
-    return my_html.anchor_h(text, f"#fn-{n}")
+        return mb_html.anchor(text, {"id": f"fnref-{n}", "href": f"#fn-{n}"})
+    return mb_html.anchor_h(text, f"#fn-{n}")
 
 
 def _lb_hbo(text):
     """Line break, Hebrew text, line break."""
-    return [my_html.line_break(), author.hbo(text), my_html.line_break()]
+    return [mb_html.line_break(), author.hbo(text), mb_html.line_break()]
 
 
 def _ait(contents):
@@ -358,7 +358,7 @@ _Y_C20_E = [
 _YOU_WILL_NEVER_FIND = [
     "You will never find $paseq before $revia except in one place,",
     " which is:",
-    my_html.line_break(),
+    mb_html.line_break(),
     author.hbo("כֹּה־אָמַ֞ר הָאֵ֣ל ׀ יְהֹוָ֗ה בּוֹרֵ֤א [הַ]שָּׁמַ֙יִם֙"),
 ]
 _Y_C20b_E = [
@@ -673,7 +673,7 @@ _Y_C40_E = [
     " later in the same verse there is $paseq in exactly the same circumstances",
     " (i.e. $munleg adjacent to $pazer in a simple two-word unit,",
     " separating two items in a list of names):",
-    my_html.line_break(),
+    mb_html.line_break(),
     author.hbo("וְיֵשׁ֡וּעַ וּבָנִ֡י וְשֵׁרֵ֥בְיָ֣ה ׀ יָמִ֡ין עַקּ֡וּב"),
     " ",
     # XXX Taamey D (like I imagine many Hebrew fonts) doesn't natively support bold,
@@ -689,7 +689,7 @@ _Y_C40_E = [
     # but there's also highlighting to consider as an option, instead of coloring the text.
     #
     author.emphasis(author.hbo("שַׁבְּתַ֣י ׀ הֽוֹדִיָּ֡ה")),
-    my_html.line_break(),
+    mb_html.line_break(),
     "(the last vertical line is specifically $paseq).",
     " Breuer already wondered:",
     [
@@ -718,7 +718,7 @@ _Y_C41_E = [
     _lb_hbo("וְשֵׁרֵ֥בְיָ֣ה ׀ יָמִ֡ין"),
     "it is $munleg:",
     " the $merkha accent on the word",
-    my_html.line_break(),
+    mb_html.line_break(),
     author.hbo("וְשֵׁרֵ֥בְיָ֣ה ׀"),
     ";",
     " $merkha is specifically the conjunctive of $legarmeh",
@@ -1190,11 +1190,11 @@ def _pe(e):
 
 
 def _bqph(h):
-    return my_html.blockquote(author.para_modhe(h))
+    return mb_html.blockquote(author.para_modhe(h))
 
 
 def _bqpe(e):
-    return my_html.blockquote(author.para(e))
+    return mb_html.blockquote(author.para(e))
 
 
 # fmt: off
@@ -1260,13 +1260,13 @@ _TRIPLES = [
 _TITLE = "Paseq and legarmeh"
 _H1_CONTENTS = "$Paseq and $legarmeh"
 _FNAME = "he_ws_intro_to_mam_pasleg.html"
-_ANCHOR = my_html.anchor_h("document", f"./{_FNAME}")
+_ANCHOR = mb_html.anchor_h("document", f"./{_FNAME}")
 _WS_URL = (
     "https://he.wikisource.org/wiki/"
     "ויקיטקסט:מבוא_למקרא_על_פי_המסורה/פרק_ב"
     "#פסק_ולגרמיה"
 )
-_WS_LINK = my_html.anchor_h("Hebrew Wikisource", _WS_URL)
+_WS_LINK = mb_html.anchor_h("Hebrew Wikisource", _WS_URL)
 _PROVENANCE = author.para(
     [
         "The Hebrew text below is from Avi Kadish's introduction to the",
@@ -1302,8 +1302,8 @@ def _ftnt_render_side(marker, ftnt, para_fn, bq_fn):
 
 def _ftnt_triple(n, ftnt_h, ftnt_e):
     text = f"[B+{n}]"
-    marker_h = my_html.anchor(text, {"id": f"fn-{n}", "href": f"#fnref-{n}"})
-    marker_e = my_html.anchor_h(text, f"#fnref-{n}")
+    marker_h = mb_html.anchor(text, {"id": f"fn-{n}", "href": f"#fnref-{n}"})
+    marker_e = mb_html.anchor_h(text, f"#fnref-{n}")
     h = _ftnt_render_side(marker_h, ftnt_h, _ph, _bqph)
     e = _ftnt_render_side(marker_e, ftnt_e, _pe, _bqpe)
     return (f"Footnote B+{n}", h, e)

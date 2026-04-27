@@ -15,7 +15,7 @@ def copy_support_files():
     if os.path.exists(mam_simple_pyex):
         shutil.rmtree(mam_simple_pyex)
     os.makedirs(mam_simple_pyex)
-    os.makedirs(f"{mam_simple_pyex}/py_misc")
+    os.makedirs(f"{mam_simple_pyex}/mb_misc")
     os.makedirs(f"{mam_simple_pyex}/mb_cmn")
     os.makedirs(f"{mam_simple_pyex}/mb_sefaria")
     os.makedirs(f"{mam_simple_pyex}/ws")
@@ -41,14 +41,14 @@ PYFILE_RELPATHS = (
     "mb_cmn/uni_heb.py",
     "mb_cmn/my_utils.py",
     #
-    "py_misc/my_html.py",
-    "py_misc/my_html_get_lines.py",
-    "py_misc/my_utils_for_mainish.py",
-    "py_misc/osis_book_abbrevs.py",
-    "py_misc/two_col_css_styles.py",
-    "py_misc/verse_and_friends.py",
-    "py_misc/write_utils.py",
-    "py_misc/ws_urls.py",
+    "mb_misc/mb_html.py",
+    "mb_misc/mb_html_get_lines.py",
+    "mb_misc/my_utils_for_mainish.py",
+    "mb_misc/osis_book_abbrevs.py",
+    "mb_misc/two_col_css_styles.py",
+    "mb_misc/verse_and_friends.py",
+    "mb_misc/write_utils.py",
+    "mb_misc/ws_urls.py",
     #
     "mb_sefaria/sef_header.py",
     "mb_sefaria/mam4sef_handlers.py",

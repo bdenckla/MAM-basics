@@ -6,7 +6,7 @@ Usage:
     .venv/Scripts/python.exe py/main_download_fr_sefaria.py --book39 1Kings
 """
 
-from py_misc import my_utils_for_mainish as my_utils_fm
+from mb_misc import my_utils_for_mainish as my_utils_fm
 from mb_sefaria import sef_cmn
 from mb_cmn import file_io
 from mb_cmn import polite_download

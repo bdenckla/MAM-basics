@@ -1,7 +1,7 @@
 """Exports main"""
 
 from mb_cmn.my_utils import sl_map
-from py_misc import my_html
+from mb_misc import mb_html
 from author_util import author
 from author import tsinnorit_in_psalm_32v5 as tip_32v5
 from author import tsinnorit_and_oleh_facts as tao_facts
@@ -23,10 +23,10 @@ def _gen_redirect_for_old_url(top_dir_old):
     # so we want to keep that old URL working.
     out_path_redir = f"{top_dir_old}/{_FNAME}"
     title_redir = f"Redirect for {_TITLE}"
-    write_ctx_redir = my_html.WriteCtx(title_redir, out_path_redir)
-    anc = my_html.anchor_h("a different location", f"../misc/{_FNAME}")
-    cbody_redir = my_html.para(["This page has moved to ", anc, "."])
-    my_html.write_html_to_file(cbody_redir, write_ctx_redir)
+    write_ctx_redir = mb_html.WriteCtx(title_redir, out_path_redir)
+    anc = mb_html.anchor_h("a different location", f"../misc/{_FNAME}")
+    cbody_redir = mb_html.para(["This page has moved to ", anc, "."])
+    mb_html.write_html_to_file(cbody_redir, write_ctx_redir)
 
 
 def _make_row(cells):
@@ -37,7 +37,7 @@ def _make_row(cells):
     # div_nam_typ: Divine Name Type
     # boi: Bibrefs of Other Instances
     # (e.g., Psalm 81:11 is another instance of the same word as Psalm 80:20)
-    return my_html.table_row_of_data(
+    return mb_html.table_row_of_data(
         [str(ins_cnt), bibref, author.hbo(hbo_str), div_nam_typ, boi]
     )
 
@@ -45,7 +45,7 @@ def _make_row(cells):
 _TITLE = "Tsinnorit & Oleh on Initial Vocal Shewa"
 _H1_CONTENTS = "$Tsinnorit & $Oleh on Initial Vocal $Shewa"
 _FNAME = "tsinnorit_and_oleh_on_ivs.html"
-_ANCHOR = my_html.anchor_h("document", f"./{_FNAME}")
+_ANCHOR = mb_html.anchor_h("document", f"./{_FNAME}")
 _CONT_PARA_01 = [
     "The only primary accents that can appear on an initial vocal $shewa ($IVS)",
     " are prepositives.",

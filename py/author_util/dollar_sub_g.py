@@ -1,6 +1,6 @@
 import re
 
-from py_misc import my_html
+from mb_misc import mb_html
 from mb_cmn.my_utils import sl_map
 
 
@@ -8,7 +8,7 @@ def dollar_sub_g(dispatch, contents):
     """The parameter "dispatch" is a dict.
     It maps strings like "$tsinnorit" to functions that take no
     arguments and return an HTML element (usually a span)."""
-    flat_1 = my_html.flatten(contents)
+    flat_1 = mb_html.flatten(contents)
     assert flat_1 is not None
     _check_no_undollared(dispatch, flat_1)
     return sl_map((_dollar_sub_flat_el, dispatch), flat_1)

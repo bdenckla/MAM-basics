@@ -1,4 +1,4 @@
-from py_misc import my_utils_for_mainish as my_utils_fm
+from mb_misc import my_utils_for_mainish as my_utils_fm
 
 
 def _mk_mroge_mr(bcvt, minirow):

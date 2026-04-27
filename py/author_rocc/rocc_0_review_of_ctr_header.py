@@ -1,4 +1,4 @@
-from py_misc import my_html
+from mb_misc import mb_html
 from author_util import author
 
 
@@ -7,7 +7,7 @@ def anchor():
 
 
 def short_anchor(contents):
-    return my_html.anchor_h(contents, f"./{FNAME}")
+    return mb_html.anchor_h(contents, f"./{FNAME}")
 
 
 TITLE = "Review of Chabad’s CTR"

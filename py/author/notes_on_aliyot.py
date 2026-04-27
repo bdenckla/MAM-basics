@@ -1,6 +1,6 @@
 """Notes on Aliyot — generated HTML document about Torah aliyot in MAM."""
 
-from py_misc import my_html
+from mb_misc import mb_html
 from author_util import author
 
 _NDASH = "\N{EN DASH}"
@@ -14,23 +14,23 @@ def gen_html_file(tdm_ch):
 
 
 def _td(contents, attr=None):
-    return my_html.table_datum(author.dollar_sub(contents), attr)
+    return mb_html.table_datum(author.dollar_sub(contents), attr)
 
 
 def _th(contents, attr=None):
-    return my_html.table_header(author.dollar_sub(contents), attr)
+    return mb_html.table_header(author.dollar_sub(contents), attr)
 
 
 def _tr(cells):
-    return my_html.table_row(cells)
+    return mb_html.table_row(cells)
 
 
 def _strong(contents):
-    return my_html.htel_mk("strong", flex_contents=author.dollar_sub(contents))
+    return mb_html.htel_mk("strong", flex_contents=author.dollar_sub(contents))
 
 
 def _rtl(contents):
-    return my_html.span(contents, {"dir": "rtl"})
+    return mb_html.span(contents, {"dir": "rtl"})
 
 
 def _bor(contents, **extra):
@@ -54,7 +54,7 @@ def _imp(contents):
 
 
 def _taamey(contents):
-    return my_html.span(contents, {"class": "font-family-taamey-frank-clm-inline"})
+    return mb_html.span(contents, {"class": "font-family-taamey-frank-clm-inline"})
 
 
 ###############################################################################
@@ -119,7 +119,7 @@ _INTRO_UL2 = [
     ],
 ]
 _INTRO_P3 = "Schematically, we can compare these two systems as follows:"
-_INTRO_TABLE1 = my_html.table(
+_INTRO_TABLE1 = mb_html.table(
     [
         _tr([_hcb("book", colspan="2")]),
         _tr([_hc("chapter", rowspan="2"), _hc("$parashah")]),
@@ -208,7 +208,7 @@ def _dual_cell(pair):
     return _bor(f"{pair[0]}{_NDASH}{pair[1]}", colspan=str(pair[1] - pair[0] + 1))
 
 
-_DUAL_TABLE1 = my_html.table(
+_DUAL_TABLE1 = mb_html.table(
     [
         _tr([_td("בראשית")] + _num_cells(range(1, 13))),
         _tr([_td("שמות")] + _num_cells(range(1, 10)) + [_dual_cell((10, 11)), _td("")]),
@@ -282,7 +282,7 @@ _PART_HDR = _tr(
     + [_td(f"{i}{_PRIME}") for i in range(1, 8)]
     + [_td(f"{i}{_DPRIME}") for i in range(1, 8)]
 )
-_PART_TABLE = my_html.table(
+_PART_TABLE = mb_html.table(
     [
         _PART_HDR,
         _part_row(
@@ -428,7 +428,7 @@ _NN_P4 = [
     " whose end ever needs to be labelled.",
     " Below are the reasons for this.",
 ]
-_NN_TABLE1 = my_html.table(
+_NN_TABLE1 = mb_html.table(
     [
         _tr(
             [
@@ -567,7 +567,7 @@ _TEASER_HDR = _tr(
     [_td("")]
     + [_td(c) for c in ["1.1", "1.2", "1.3", "2", "2.1", "3", "3.1", "4", "5"]]
 )
-_TEASER_TABLE = my_html.table(
+_TEASER_TABLE = mb_html.table(
     [
         _TEASER_HDR,
         _teaser_row(
@@ -660,7 +660,7 @@ _NN_P10 = [
 ]
 
 _NOAH = "נֹח"
-_LABEL_TABLE = my_html.table(
+_LABEL_TABLE = mb_html.table(
     [
         _tr([_bor("compact form"), _bor("expanded form", colspan="3")]),
         _tr(

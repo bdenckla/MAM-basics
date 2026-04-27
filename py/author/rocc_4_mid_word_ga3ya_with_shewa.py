@@ -1,6 +1,6 @@
 """Exports main"""
 
-from py_misc import my_html
+from mb_misc import mb_html
 from mb_cmn import my_utils
 from mb_cmn import hebrew_punctuation as hpu
 from author_util import author
@@ -33,9 +33,9 @@ def _hbo_gray(string: str):
 _TITLE = "Mid-word געיה with Shewa"
 _H1_CONTENTS = "Mid-word געיה with $Shewa"
 _FNAME = "rocc_4_mid_word_ga3ya_with_shewa.html"
-_ANCHOR = my_html.anchor_h("document", f"./{_FNAME}")
+_ANCHOR = mb_html.anchor_h("document", f"./{_FNAME}")
 _Y_URL_YEIVIN = "https://bdenckla.github.io/phonetic-hbo/yeivin_itm-318_344.html#ns335"
-_Y_ANC_YEIVIN = my_html.anchor_h("section 335", _Y_URL_YEIVIN)
+_Y_ANC_YEIVIN = mb_html.anchor_h("section 335", _Y_URL_YEIVIN)
 _X_050_CPARA = [
     ["(This document is a sort of appendix to a parent ", rocc_0.anchor(), ")"],
 ]

@@ -1,4 +1,4 @@
-from py_misc import my_html
+from mb_misc import mb_html
 from author_util import author
 from author import tsinnorit_and_oleh_on_ivs as ivs
 from author import tsinnorit_in_psalm_32v5 as tip_32v5
@@ -10,13 +10,13 @@ _CPARA = [
     [" ", author.paren(["See my ", tip_32v5.anchor()])],
 ]
 _IMG_220_PATH = "img/rocc Judaica Press Psalm 32v5 ועוני.png"
-_IMG_220 = my_html.img({"src": _IMG_220_PATH, "class": "width5em"})
+_IMG_220 = mb_html.img({"src": _IMG_220_PATH, "class": "width5em"})
 TD_CTR = (author.hbo_es("וַֽעֲ֘וֺנִ֤י"), "$ayin (!) holds $tsinnorit")
 TD_MAM = (author.hbo_es("וַעֲוֺ֘נִ֤י"), "$vav #2 holds $tsinnorit")
 TD_SBB_KCT = (author.hbo_es("וַֽעֲוֺ֘נִ֤י"), ru.aeq("$MAM"))
 _TD_JP_COMMENT = [
     "$vav #1 (!) holds $tsinnorit",
-    my_html.line_break(),
+    mb_html.line_break(),
     "“above $tsere” on $nun (!)",
 ]
 TD_JP = (_IMG_220, _TD_JP_COMMENT)

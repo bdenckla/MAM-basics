@@ -1,10 +1,10 @@
 from author_rocc import rocc_util as ru
-from py_misc import my_html
+from mb_misc import mb_html
 
 _CPARA = "Now let’s look at תהיו in Psalm 32:9 (ignoring $JP):"
 
 
-_JP_COMMENT = ["$azla on $hehe (!)", my_html.line_break(), "$hehe has $xiriq (!)"]
+_JP_COMMENT = ["$azla on $hehe (!)", mb_html.line_break(), "$hehe has $xiriq (!)"]
 TD_CTR = (ru.gray_abg_al("תִּהְי֨וּ׀"), "$azla $legarmeh")
 TD_MAM = (ru.gray_abg_al("תִּהְי֤וּ׀"), "$mahapakh $legarmeh")
 TD_KCT_ETC = (ru.gray_abg_al("תִּֽהְי֤וּ׀"), ru.aeq("$MAM"))
