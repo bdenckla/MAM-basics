@@ -239,7 +239,7 @@ Most repos are cloned as siblings at `../repo-name`. In git-tracked files, use r
 
 ## Navigating MAM-parsed-plus JSON
 
-See [mpplus-navigation.md](mpplus-navigation.md) for a quick-reference guide to the MAM-parsed-plus JSON structure. Full upstream docs: `../MAM-parsed/doc-under-readme/reading-mam-parsed-plus.md`.
+See [mpplus-navigation.md](../doc/mpplus-navigation.md) for a quick-reference guide to the MAM-parsed-plus JSON structure. Full upstream docs: `../MAM-parsed/doc-under-readme/reading-mam-parsed-plus.md`.
 
 ## Terminology: "Varika"
 
