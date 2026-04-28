@@ -9,8 +9,8 @@ from pipeline_graph import pipeline_graph_spec as spec
 
 _DISPLAY_BY_ID = {node.node_id: node for node in spec.DISPLAY_NODES}
 _RAW_BY_ID = {node.raw_id: node for node in spec.RAW_NODES}
-_OUT_DOT_PATH = "MAM-process-documentation/pipeline.dot"
-_OUT_SVG_PATH = "MAM-process-documentation/pipeline.svg"
+_OUT_DOT_PATH = "doc/process-documentation/pipeline.dot"
+_OUT_SVG_PATH = "doc/process-documentation/pipeline.svg"
 
 
 def _validate_spec():
