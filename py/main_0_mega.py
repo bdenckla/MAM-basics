@@ -25,7 +25,7 @@ import main_mam_with_doc
 import main_mam_simple
 import main_mam4sef
 import main_mam4ajf
-import main_osis
+import main_mam_osis
 
 _STEPS = [
     (
@@ -44,7 +44,7 @@ _STEPS = [
     # mam_simple must come before mam4sef, mam4ajf, & mam_osis
     (main_mam4sef, "must come after mam_simple"),
     (main_mam4ajf, "must come after mam_simple"),
-    (main_osis, "must come after mam_simple"),
+    (main_mam_osis, "must come after mam_simple"),
     (main_decnreub, None),
     (main_multimark, None),
     (main_wordlist, None),

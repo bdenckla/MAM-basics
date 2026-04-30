@@ -13,7 +13,7 @@ Python tools for working with [MAM (Miqra according to the Masora)](https://he.w
 - `main_mam4sef.py` — Sefaria-compatible MAM variant
 - `main_mam4ajf.py` — AJF MAM variant (similar to the Sefaria variant)
 - `main_mam_with_doc.py` — HTML with two-column layout and documentation notes
-- `main_osis.py` / `main_osis_split_mapm.py` — OSIS (Open Scripture Information Standard) XML
+- `main_mam_osis.py` / `main_osis_split_mapm.py` — OSIS (Open Scripture Information Standard) XML
 
 ### Downloading
 

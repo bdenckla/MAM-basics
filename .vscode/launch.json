@@ -168,7 +168,7 @@
             "name": "MAM OSIS: all",
             "type": "debugpy",
             "request": "launch",
-            "program": "py/main_osis.py",
+            "program": "py/main_mam_osis.py",
             "console": "integratedTerminal"
         },
         {
