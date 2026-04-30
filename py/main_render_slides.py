@@ -14,7 +14,7 @@ from PIL import Image, ImageDraw, ImageFont
 
 W, H = 2560, 1440
 FONT_DIR = pathlib.Path("C:/Windows/Fonts")
-DEST_DIR = pathlib.Path("doc/what-is-mam-img")
+DEST_DIR = pathlib.Path("misc/what-is-mam/img")
 
 
 def _make_gradient(top_rgb, bot_rgb):
