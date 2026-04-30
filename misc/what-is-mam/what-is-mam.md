@@ -12,3 +12,5 @@ Script for a narrated slideshow video.
 | [![Hebrew Wikisource Tanakh](img/thumb-wikisource.png)](img/slide-wikisource.png) | It was used to create the  Tanakh on Hebrew Wikisource. |
 | [![Al-Hatorah Miqraot Gedolot](img/thumb-alhatorah.png)](img/slide-alhatorah.png) | And, it was used to create the Tanakh at the center of Al-Hatorah's Miqraot Gedolot. |
 | [![Phonetic Tanakh](img/thumb-phonetic.png)](img/slide-phonetic.png) | With MAM at the base, and Al-Hatorah's work layered on top, it was then possible create a Phonetic Tanakh. |
+| [![Closing card](img/thumb-closing-card.png)](img/slide-closing-card.png) | What will you create with MAM? What cool thing will others then layer on top of your creation? |
+| [![JSON snippet](img/thumb-json-snippet.png)](img/slide-json-snippet.png) | Stay tuned for future videos on this channel, where I'll help you get started creating with MAM. |

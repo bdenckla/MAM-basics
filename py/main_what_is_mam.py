@@ -11,6 +11,7 @@ Examples
     python py/main_what_is_mam.py make-thumbs
     python py/main_what_is_mam.py render-slides
     python py/main_what_is_mam.py render-slides title-card
+    python py/main_what_is_mam.py render-slides json-snippet
 """
 
 import argparse
@@ -18,6 +19,8 @@ import pathlib
 
 from bidi.algorithm import get_display
 from PIL import Image, ImageDraw, ImageFont
+
+from py_misc import json_snippet_slide
 
 # ---------------------------------------------------------------------------
 # Shared constants
@@ -115,9 +118,48 @@ def render_title_card():
     print(f"Saved {dest} {img.size}")
 
 
+def render_closing_card():
+    """Render slide-closing-card.png."""
+    font_size = 162  # 10% smaller than title card's 180
+    font_bold = ImageFont.truetype(str(FONT_DIR / "arialbd.ttf"), size=font_size)
+    font_bold_it = ImageFont.truetype(str(FONT_DIR / "arialbi.ttf"), size=font_size)
+    # Split so "you" can be rendered in bold italic
+    segments = [
+        ("What will ", font_bold, (255, 255, 255)),
+        ("you", font_bold_it, (255, 255, 255)),
+        (" create with MAM?", font_bold, (255, 255, 255)),
+    ]
+    img = _make_gradient((13, 94, 87), (8, 61, 56))
+    draw = ImageDraw.Draw(img)
+    bboxes = [draw.textbbox((0, 0), text, font=font) for text, font, _ in segments]
+    widths = [bb[2] - bb[0] for bb in bboxes]
+    total_width = sum(widths)
+    # Vertical center based on ink extents across all segments
+    top = min(bb[1] for bb in bboxes)
+    bot = max(bb[3] for bb in bboxes)
+    y = H // 2 - (top + bot) // 2
+    x = (W - total_width) // 2
+    for (text, font, color), bb, w in zip(segments, bboxes, widths):
+        draw.text((x - bb[0], y), text, font=font, fill=color)
+        x += w
+    dest = IMAGES_DIR / "slide-closing-card.png"
+    img.save(dest)
+    print(f"Saved {dest} {img.size}")
+
+
+def render_json_snippet():
+    """Render slide-json-snippet.png with syntax-colored JSON."""
+    json_snippet_slide.render_json_snippet(
+        IMAGES_DIR,
+        lambda: _make_gradient((13, 94, 87), (8, 61, 56)),
+    )
+
+
 # Registry of all slides: name -> render function
 ALL_SLIDES = {
     "title-card": render_title_card,
+    "closing-card": render_closing_card,
+    "json-snippet": render_json_snippet,
 }
 
 
