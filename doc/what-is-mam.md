@@ -11,3 +11,4 @@ Script for a narrated slideshow video.
 | [![Sefaria Tanakh](what-is-mam-img/thumb-sefaria.png)](what-is-mam-img/slide-sefaria.png) | It was used to create various web editions of the Tanakh, like Sefaria's default Tanakh. |
 | [![Hebrew Wikisource Tanakh](what-is-mam-img/thumb-wikisource.png)](what-is-mam-img/slide-wikisource.png) | It was used to create the  Tanakh on Hebrew Wikisource. |
 | [![Al-Hatorah Miqraot Gedolot](what-is-mam-img/thumb-alhatorah.png)](what-is-mam-img/slide-alhatorah.png) | And, it was used to create the Tanakh at the center of Al-Hatorah's Miqraot Gedolot. |
+| [![Phonetic Tanakh](what-is-mam-img/thumb-phonetic.png)](what-is-mam-img/slide-phonetic.png) | With MAM at the base, and Al-Hatorah's work layered on top, it was then possible create a Phonetic Tanakh. |
