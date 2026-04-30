@@ -5,17 +5,17 @@ from mb_cmn import str_defs as sd
 from mb_cmn import hebrew_punctuation as hpu
 from mb_cmn import shrink
 
-# etel: ElementTree element
+# jobj: JSON dict
 # ofc1: output for all children, summed together
 # ofc2: output for all children, per child
 
 
-def _verse(etel, ofc1, _ofc2):
-    return ofc1 + _maybe_sampe(etel)
+def _verse(jobj, ofc1, _ofc2):
+    return ofc1 + _maybe_sampe(jobj)
 
 
-def _text(etel, _ofc1, _ofc2):
-    return [etel.attrib["text"]]
+def _text(jobj, _ofc1, _ofc2):
+    return [jobj["text"]]
 
 
 def _samekh2_or_3(_etel, _ofc1, _ofc2):
@@ -33,7 +33,7 @@ def _samekh3_nin(_etel, _ofc1, _ofc2):
     return [sd.NBSP]
 
 
-def _invnun(etel, _ofc1, _ofc2):
+def _invnun(jobj, _ofc1, _ofc2):
     """
     Handle either of the following two types of invnun elements:
 
@@ -46,7 +46,7 @@ def _invnun(etel, _ofc1, _ofc2):
         at the start of verses 23-28 and 40.
     """
     maybe_nbsp_dic = {"including-trailing-space": [sd.NBSP], None: []}
-    maybe_nbsp = maybe_nbsp_dic[etel.attrib.get("class")]
+    maybe_nbsp = maybe_nbsp_dic[jobj.get("class")]
     span = mb_html.span_c((hpu.NUN_HAF,), "mam-spi-invnun")
     return [span, *maybe_nbsp]
 
@@ -84,10 +84,10 @@ def _kq_trivial(_etel, ofc1, _ofc2):
     return [mb_html.span_c(ofc1, "mam-kq-trivial")]
 
 
-def _ketiv_qere(etel, _ofc1, ofc2):
+def _ketiv_qere(jobj, _ofc1, ofc2):
     sep_dic = {"sep-maqaf": hpu.MAQ, None: " "}
-    separator = sep_dic[etel.attrib.get("class")]
-    k_or_q, q_or_k = ofc2.values()
+    separator = sep_dic[jobj.get("class")]
+    k_or_q, q_or_k = [v for _, v in ofc2]
     inside = [*k_or_q, separator, *q_or_k]
     return [mb_html.span_c(inside, "mam-kq")]
 
@@ -117,9 +117,9 @@ def _qere(_etel, ofc1, _ofc2):
     return _ketiv_or_qere_helper("mam-kq-q", "[]", ofc1)
 
 
-def _scrdfftar(etel, _ofc1, ofc2):
-    target, _note = ofc2.values()
-    # starpos = etel.attrib["sdt-starpos"]
+def _scrdfftar(_jobj, _ofc1, ofc2):
+    target, _note = [v for _, v in ofc2]
+    # starpos = jobj["sdt-starpos"]
     # assert starpos in ("before-word", "after-word")
     # maybe_note_0 = note if starpos == "before-word" else []
     # maybe_note_1 = note if starpos == "after-word" else []
@@ -161,8 +161,8 @@ def _ketiv_or_qere_helper(the_class, brackets, ofc1):
     return [mb_html.span(contents, {"class": the_class})]
 
 
-def _maybe_sampe(etel):
-    ews = etel.attrib.get("ends-with-sampe")
+def _maybe_sampe(jobj):
+    ews = jobj.get("ends-with-sampe")
     if ews is None:
         return []
     sampe_fn_dic = {

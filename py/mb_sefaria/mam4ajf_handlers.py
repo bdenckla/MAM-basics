@@ -1,18 +1,18 @@
 """Exports HANDLERS"""
 
-# etel: ElementTree element
+# jobj: JSON dict
 # ofc1: output for all children, summed together
 # ofc2: output for all children, per child
 
 from mb_cmn import hebrew_punctuation as hpu
 
 
-def _verse(etel, ofc1, _ofc2):
-    return ofc1 + _maybe_sampe(etel)
+def _verse(jobj, ofc1, _ofc2):
+    return ofc1 + _maybe_sampe(jobj)
 
 
-def _text(etel, _ofc1, _ofc2):
-    return [etel.attrib["text"]]
+def _text(jobj, _ofc1, _ofc2):
+    return [jobj["text"]]
 
 
 def _samekh2_or_3(_etel, _ofc1, _ofc2):
@@ -28,7 +28,7 @@ def _samekh3_nin(_etel, _ofc1, _ofc2):
     return [" "]
 
 
-def _invnun(etel, _ofc1, _ofc2):
+def _invnun(jobj, _ofc1, _ofc2):
     """
     Handle either of the following two types of invnun elements:
 
@@ -41,7 +41,7 @@ def _invnun(etel, _ofc1, _ofc2):
         at the start of verses 23-28 and 40.
     """
     maybe_sp_dic = {"including-trailing-space": " ", None: ""}
-    maybe_sp = maybe_sp_dic[etel.attrib.get("class")]
+    maybe_sp = maybe_sp_dic[jobj.get("class")]
     return [hpu.NUN_HAF + maybe_sp]
 
 
@@ -61,12 +61,12 @@ def _pass_thru(_etel, ofc1, _ofc2):
     return ofc1
 
 
-def _ketiv_qere(etel, _ofc1, ofc2):
+def _ketiv_qere(jobj, _ofc1, ofc2):
     assert len(ofc2) == 2
     sep_dic = {"sep-maqaf": hpu.MAQ, None: " "}
-    separator = sep_dic[etel.attrib.get("class")]
+    separator = sep_dic[jobj.get("class")]
     # for AJF, we always use ketiv-then-qere ordering
-    kq_dic = {key.tag: val for key, val in ofc2.items()}
+    kq_dic = {c["type"]: val for c, val in ofc2}
     return [*kq_dic["kq-k"], separator, *kq_dic["kq-q"]]
 
 
@@ -95,8 +95,8 @@ def _qere(_etel, ofc1, _ofc2):
     return _ketiv_or_qere_helper("[]", ofc1)
 
 
-def _scrdfftar(_etel, _ofc1, ofc2):
-    target, _note = ofc2.values()
+def _scrdfftar(_jobj, _ofc1, ofc2):
+    target, _note = [v for _, v in ofc2]
     return target
 
 
@@ -120,8 +120,8 @@ def _ketiv_or_qere_helper(brackets, ofc1):
     return [brackets[0], *ofc1, brackets[1]]
 
 
-def _maybe_sampe(etel):
-    ews = etel.attrib.get("ends-with-sampe")
+def _maybe_sampe(jobj):
+    ews = jobj.get("ends-with-sampe")
     if ews is None:
         return []
     sampe_fn_dic = {

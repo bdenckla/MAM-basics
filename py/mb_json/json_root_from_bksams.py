@@ -68,7 +68,7 @@ def _versam_ver_to_json(versam_ver, variant):
     html_els, versam_attr, _alt, cvm_rec = xml_sampe.versam_body(versam_ver)
     id_attr = _id_attr(bcvt, variant)
     cvm_attr = _cvm_attr(bcvt, cvm_rec)
-    result = {**id_attr, **versam_attr, **cvm_attr}
+    result = {"type": "verse", **id_attr, **versam_attr, **cvm_attr}
     if html_els and len(html_els) == 1 and isinstance(html_els[0], str):
         result["text"] = html_els[0]
     elif html_els:
