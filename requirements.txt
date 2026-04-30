@@ -1,3 +1,4 @@
+python-bidi
 pywikibot
 requests
 lxml

@@ -6,9 +6,8 @@ Script for a narrated slideshow video.
 
 | Image | Narration |
 |-------|-----------|
-| Title card: "Miqra According to the Masorah" / "מקרא על פי המסורה" | MAM stands for Miqra According to the Masorah. It is a Hebrew Bible dataset that has been used to create both paper books and web publications. |
-| [![Berlin Psalms Commentary cover](what-is-mam-img/thumb-berlin-psalms.png)](what-is-mam-img/slide-berlin-psalms.png) | It was used to create the Hebrew part of a recent JPS Psalms Commentary. |
-| [![Sefaria Tanakh](what-is-mam-img/thumb-sefaria.png)](what-is-mam-img/slide-sefaria.png) | It was used to create various editions the Tanakh on the web. It was used to create Sefaria's default Tanakh. |
-| [![Hebrew Wikisource Tanakh](what-is-mam-img/thumb-wikisource.png)](what-is-mam-img/slide-wikisource.png) | It was used to create Hebrew Wikisource's Tanakh. |
+| [![Title card](what-is-mam-img/thumb-title-card.png)](what-is-mam-img/slide-title-card.png) | MAM stands for Miqra According to the Masorah. It is a Hebrew Bible dataset that has been used to create both paper books and websites. |
+| [![Berlin Psalms Commentary cover](what-is-mam-img/thumb-berlin-psalms.png)](what-is-mam-img/slide-berlin-psalms.png) | It was used to create a recent JPS Psalms Commentary. |
+| [![Sefaria Tanakh](what-is-mam-img/thumb-sefaria.png)](what-is-mam-img/slide-sefaria.png) | It was used to create various web editions of the Tanakh, like Sefaria's default Tanakh. |
+| [![Hebrew Wikisource Tanakh](what-is-mam-img/thumb-wikisource.png)](what-is-mam-img/slide-wikisource.png) | It was used to create the  Tanakh on Hebrew Wikisource. |
 | [![Al-Hatorah Miqraot Gedolot](what-is-mam-img/thumb-alhatorah.png)](what-is-mam-img/slide-alhatorah.png) | And, it was used to create the Tanakh at the center of Al-Hatorah's Miqraot Gedolot. |
-
