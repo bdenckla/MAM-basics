@@ -410,6 +410,28 @@ def _last_shifted_bcvt_in_chapter(vtrad, start_bcvt, verses):
 
 def _join_labels_with_and(labels):
     assert len(labels) >= 2
+    compact_range = _compact_consecutive_label_range(labels)
+    if compact_range is not None:
+        return compact_range
     if len(labels) == 2:
         return labels[0] + " and " + labels[1]
     return ", ".join(labels[:-1]) + ", and " + labels[-1]
+
+
+def _compact_consecutive_label_range(labels):
+    if len(labels) < 3:
+        return None
+    chapter_strs = []
+    verse_nums = []
+    for label in labels:
+        chapter_str, sep, verse_str = label.partition(":")
+        if sep != ":" or not chapter_str.isdigit() or not verse_str.isdigit():
+            return None
+        chapter_strs.append(chapter_str)
+        verse_nums.append(int(verse_str))
+    if len(set(chapter_strs)) != 1:
+        return None
+    expected = list(range(verse_nums[0], verse_nums[0] + len(verse_nums)))
+    if verse_nums != expected:
+        return None
+    return f"{chapter_strs[0]}:{verse_nums[0]}–{verse_nums[-1]}"
