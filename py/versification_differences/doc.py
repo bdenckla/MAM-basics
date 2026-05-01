@@ -38,7 +38,7 @@ def render_intro_overview_summary_markdown():
             "",
             "Note that here in this document, we are not concerned with the notion of a *chanted verse*;",
             "that is, we are not concerned with where *sof pasuq* and/or *silluq* falls. Here, when we say",
-            '"verse", we mean only the span of text between verse-number labels. The fact that this span',
+            '"verse", we mean only the span of text between cv-labels. The fact that this span',
             "usually corresponds to a chanted verse is irrelevant here.",
             "",
             "The eight cases where differences occur are:",
@@ -98,7 +98,7 @@ def render_sef_generated_sections_markdown(books_mpu):
         + extract.extract_sef_present_vs_absent_sections()
     )
     prose_sections = tuple(sorted(prose_sections, key=lambda section: section.heading))
-    lines = ["## Sefaria Labeling", ""]
+    lines = ["## Sefaria Versification", ""]
     lines.extend(
         (
             "Sefaria has the same simple chapter-boundary shifts as BHS in 1 Samuel and",
@@ -197,7 +197,7 @@ def _render_summary_rows():
 def _render_bhs_sections_markdown(sections, include_bhs_heading):
     lines = []
     if include_bhs_heading:
-        lines.extend(("## BHS Labeling", ""))
+        lines.extend(("## BHS Versification", ""))
     for section in sections:
         lines.extend(_render_vtrad_section_lines(section))
     return "\n".join(lines).rstrip() + "\n"

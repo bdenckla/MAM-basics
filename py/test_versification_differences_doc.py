@@ -12,9 +12,9 @@ _CURRENT_DOC_PATH = (
     / "doc"
     / "versification-differences.md"
 )
-_NEXT_SECTION_MARKER = "\n## BHS Labeling\n"
+_NEXT_SECTION_MARKER = "\n## BHS Versification\n"
 _FIRST_BHS_SECTION_MARKER = (
-    '## BHS Labeling\n\n<a id="bhs-1sam-23-24-boundary"></a>\n\n'
+    '## BHS Versification\n\n<a id="bhs-1sam-23-24-boundary"></a>\n\n'
     "### 1. 1 Samuel — chapter 23/24 boundary\n"
 )
 _THIRD_BHS_SECTION_MARKER = (
@@ -40,7 +40,7 @@ _SEVENTH_BHS_SECTION_MARKER = (
 _EIGHTH_BHS_SECTION_MARKER = (
     '\n<a id="bhs-josh-21-present-vs-absent"></a>\n\n' "### 8. Joshua — chapter 21\n"
 )
-_SEFARIA_SECTION_MARKER = "\n## Sefaria Labeling\n"
+_SEFARIA_SECTION_MARKER = "\n## Sefaria Versification\n"
 _COMBINED_TABLE_MARKER = "\n## Combined Table: All Differences\n"
 _HOW_SECTION_MARKER = "\n## How MAM-simple Records These Differences\n"
 
