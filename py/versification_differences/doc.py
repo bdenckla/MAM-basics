@@ -94,10 +94,10 @@ def render_bhs_present_vs_absent_sections_markdown(books_mpu):
 def render_sef_generated_sections_markdown(books_mpu):
     prose_sections = (
         extract.extract_sef_simple_shift_sections()
+        + extract.extract_sef_early_one_vs_many_sections()
         + extract.extract_sef_present_vs_absent_sections()
     )
     prose_sections = tuple(sorted(prose_sections, key=lambda section: section.heading))
-    table_sections = extract.extract_sef_early_one_vs_many_sections(books_mpu)
     lines = ["## Sefaria Labeling", ""]
     lines.extend(
         (
@@ -109,11 +109,7 @@ def render_sef_generated_sections_markdown(books_mpu):
             "",
         )
     )
-    for section in prose_sections[:2]:
-        lines.extend(_render_prose_section_lines(section))
-    for section in table_sections:
-        lines.extend(_render_vtrad_section_lines(section))
-    for section in prose_sections[2:]:
+    for section in prose_sections:
         lines.extend(_render_prose_section_lines(section))
     return "\n".join(lines).rstrip() + "\n\n---\n"
 

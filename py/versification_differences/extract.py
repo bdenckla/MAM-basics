@@ -78,9 +78,12 @@ def extract_sef_simple_shift_sections():
     )
 
 
-def extract_sef_early_one_vs_many_sections(books_mpu):
+def extract_sef_early_one_vs_many_sections():
     return tuple(
-        _extract_sef_early_one_vs_many_section(case_rec, books_mpu)
+        ProseSectionRec(
+            heading=case_rec.sef_heading,
+            body_lines=_intro_lines_for_sef_early_one_vs_many_case(case_rec),
+        )
         for case_rec in case_data.sef_early_one_vs_many_cases()
     )
 
@@ -177,52 +180,6 @@ def _extract_bhs_present_vs_absent_section(case_rec, books_mpu):
 
 def _bhs_anchor_id(case_rec):
     return f"bhs-{case_rec.case_id}"
-
-
-def _extract_sef_early_one_vs_many_section(case_rec, books_mpu):
-    verses = books_mpu[case_rec.book_id]["verses_plus"]
-    anchor_bcvt = case_rec.mam_anchor_bcvt
-    contrast_anchor_bcvt = case_rec.sef_contrast_anchor_bcvt
-    rows = list(_split_anchor_rows(case_rec, verses[anchor_bcvt], tbn.VT_SEF))
-    rows.append(
-        _mk_row_for_vtrad(
-            tbn.VT_SEF,
-            tbn.mk_bcvtmam(
-                case_rec.book_id,
-                tbn.bcvt_get_chnu(anchor_bcvt),
-                tbn.bcvt_get_vrnu(anchor_bcvt) + 1,
-            ),
-            verses,
-        )
-    )
-    rows.append(SimpleShiftRowRec("", "…", "…"))
-    rows.append(_mk_row_for_vtrad(tbn.VT_SEF, contrast_anchor_bcvt, verses))
-    rows.append(
-        _mk_row_for_vtrad(
-            tbn.VT_SEF,
-            tbn.mk_bcvtmam(
-                case_rec.book_id,
-                tbn.bcvt_get_chnu(contrast_anchor_bcvt),
-                tbn.bcvt_get_vrnu(contrast_anchor_bcvt) + 1,
-            ),
-            verses,
-        )
-    )
-    rows.append(SimpleShiftRowRec("", "…", "…"))
-    rows.append(
-        _mk_row_for_vtrad(
-            tbn.VT_SEF,
-            _last_shifted_bcvt_in_chapter(tbn.VT_SEF, contrast_anchor_bcvt, verses),
-            verses,
-        )
-    )
-    return SimpleShiftSectionRec(
-        heading=case_rec.sef_heading,
-        table_separator=case_rec.bhs_table_separator,
-        intro_lines=_intro_lines_for_sef_early_one_vs_many_case(case_rec),
-        rows=tuple(rows),
-        other_vtrad_label="Sef",
-    )
 
 
 def _shifted_bcvt_seq(case_rec, verses):
@@ -392,13 +349,27 @@ def _intro_lines_for_sef_early_one_vs_many_case(case_rec):
         _cv_label(tbn.mk_bcvt(case_rec.book_id, cvve[0])) for cvve in maprec
     )
     contrast_label = _cv_label(case_rec.sef_contrast_anchor_bcvt)
+    early_bhs_anchor = _bhs_anchor_id(case_rec)
+    late_bhs_anchor = _late_decalogue_bhs_anchor_id(case_rec)
     return (
-        "The span of text labeled " + anchor_label + " in MAM",
-        "is labeled as " + _join_labels_with_and(sef_labels) + " in Sef.",
-        "Unlike BHS, Sef does not further split the span of text labeled "
+        f"As in [BHS](#{early_bhs_anchor}), the span of text labeled "
+        + anchor_label
+        + " in MAM",
+        "is labeled as "
+        + _join_labels_with_and(sef_labels)
+        + " in Sef. Unlike [BHS](#"
+        + late_bhs_anchor
+        + "), Sef does not go on to split the span of text labeled "
         + contrast_label
         + " in MAM.",
     )
+
+
+def _late_decalogue_bhs_anchor_id(case_rec):
+    if case_rec.book_id == tbn.BK_EXODUS:
+        return "bhs-exod-20-late-decalogue"
+    assert case_rec.book_id == tbn.BK_DEUTER
+    return "bhs-deut-5-late-decalogue"
 
 
 def _last_shifted_bcvt_in_chapter(vtrad, start_bcvt, verses):
