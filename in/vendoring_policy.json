@@ -6,6 +6,7 @@
       "mb_cmn": "py/mb_cmn",
       "mb_misc": "py/mb_misc",
       "mb_sefaria": "py/mb_sefaria",
+      "osis": "py/osis",
       "mb_diff_mpu": "py/mb_diff_mpu"
     }
   },
@@ -19,13 +20,16 @@
       "default_provenance_doc": "no",
       "pkg_scan_roots": {
         "mb_cmn": [
-          "py-example/mb_cmn"
+          "py-examples/mb_cmn"
         ],
         "mb_misc": [
-          "py-example/mb_misc"
+          "py-examples/mb_misc"
         ],
         "mb_sefaria": [
-          "py-example/mb_sefaria"
+          "py-examples/mb_sefaria"
+        ],
+        "osis": [
+          "py-examples/osis"
         ]
       }
     },

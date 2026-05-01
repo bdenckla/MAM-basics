@@ -60,7 +60,7 @@ already exist.
 - If the destination is a larger directory that contains both vendored
   and non-vendored files, put the provenance note in a `provenance.md`
   next to the relevant files, scoped clearly.
-- For `MAM-simple/py-example/`: this entire directory is regenerated
+- For `MAM-simple/py-examples/`: this entire directory is regenerated
   by `MAM-basics/py/py_misc/mam_simple_copy_py_files.py` (called via
   `main_mam_simple.py`). The provenance doc should say this clearly
   and warn that hand-edits will be overwritten.
@@ -69,7 +69,7 @@ already exist.
 
 | Destination | Expected category | Notes |
 |---|---|---|
-| `MAM-simple/py-example/mb_cmn/`, `py_misc/`, `mb_sefaria/` | `generated` | Whole dir is regenerated; provenance goes at `py-example/` level |
+| `MAM-simple/py-examples/mb_cmn/`, `mb_misc/`, `mb_sefaria/`, `osis/` | `generated` | Whole dir is regenerated; provenance goes at `py-examples/` level |
 | `holman-ketiv-qere/py/mb_cmn/` | TBD (likely `stale` or `active`) | Only `bib_locales.py` + `hebrew_punctuation.py` known |
 | `holman-ketiv-qere/py/mb_diff_mpu/` | `deferred` | Do not touch — separate follow-up issue |
 | `diffable-pointed-hebrew/mb_cmn/` | `stale` | 8 files, ~11 months behind |

@@ -18,6 +18,7 @@ def copy_support_files():
     os.makedirs(f"{mam_simple_pyex}/mb_misc")
     os.makedirs(f"{mam_simple_pyex}/mb_cmn")
     os.makedirs(f"{mam_simple_pyex}/mb_sefaria")
+    os.makedirs(f"{mam_simple_pyex}/osis")
     os.makedirs(f"{mam_simple_pyex}/ws")
     for pyfile_relpath in PYFILE_RELPATHS:
         src = os.path.join(_PY_DIR, pyfile_relpath)
@@ -25,9 +26,10 @@ def copy_support_files():
         shutil.copy(src, dst)
 
 
-MAM_SIMPLE_PYEX = "../MAM-simple/py-example"
+MAM_SIMPLE_PYEX = "../MAM-simple/py-examples"
 PYFILE_RELPATHS = (
     "./main_mam4sef.py",
+    "./main_mam_osis.py",
     #
     "mb_cmn/cantsys.py",
     "mb_cmn/hebrew_accents.py",
@@ -36,6 +38,7 @@ PYFILE_RELPATHS = (
     "mb_cmn/hebrew_punctuation.py",
     "mb_cmn/bib_locales.py",
     "mb_cmn/file_io.py",
+    "mb_cmn/provenance.py",
     "mb_cmn/shrink.py",
     "mb_cmn/str_defs.py",
     "mb_cmn/uni_heb.py",
@@ -55,4 +58,8 @@ PYFILE_RELPATHS = (
     "mb_sefaria/mam4sef_or_ajf.py",
     "mb_sefaria/sef_cmn.py",
     "mb_sefaria/write_utils_sef_or_ajf.py",
+    #
+    "osis/osis_namespace.py",
+    "osis/osis_handlers.py",
+    "osis/osis_index_html.py",
 )

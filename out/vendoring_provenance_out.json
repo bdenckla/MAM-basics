@@ -15,7 +15,8 @@
         "py/mb_diff_mpu/provenance.md"
       ],
       "copy_scripts": [
-        "py/main_update_vendored_files.py"
+        "py/main_update_vendored_files.py",
+        "py/mb_cmn/vendoring_sync.py"
       ],
       "mb_cmn_dirs": [
         {
@@ -32,7 +33,8 @@
             "mam_bknas_and_std_bknas.py",
             "str_defs.py",
             "template_names.py",
-            "uni_denorm.py"
+            "uni_denorm.py",
+            "vendoring_sync.py"
           ]
         }
       ]
@@ -49,7 +51,8 @@
         "py/mb_cmn/provenance.md"
       ],
       "copy_scripts": [
-        "py/main_update_vendored_files.py"
+        "py/main_update_vendored_files.py",
+        "py/mb_cmn/vendoring_sync.py"
       ],
       "mb_cmn_dirs": [
         {
@@ -76,6 +79,7 @@
             "uni_denorm.py",
             "uni_heb.py",
             "uni_norm_fragile.py",
+            "vendoring_sync.py",
             "ws_tmpl1.py",
             "ws_tmpl2.py",
             "ws_tmpl_named_params.py"
@@ -87,8 +91,7 @@
       "repo": "book-of-job",
       "scanned_dirs": [
         ".",
-        "mb_cmn",
-        "py"
+        "mb_cmn"
       ],
       "found_provenance_docs": [],
       "copy_scripts": [],
@@ -167,7 +170,8 @@
       ],
       "found_provenance_docs": [],
       "copy_scripts": [
-        "main_update_vendored_files.py"
+        "main_update_vendored_files.py",
+        "vendoring_sync.py"
       ],
       "mb_cmn_dirs": []
     },
@@ -228,8 +232,7 @@
       "scanned_dirs": [
         ".",
         "py",
-        "py/mb_cmn",
-        "py/py_misc"
+        "py/mb_cmn"
       ],
       "found_provenance_docs": [],
       "copy_scripts": [],
@@ -257,8 +260,7 @@
       "scanned_dirs": [
         ".",
         "py",
-        "py/mb_cmn",
-        "py/py_html"
+        "py/mb_cmn"
       ],
       "found_provenance_docs": [],
       "copy_scripts": [],

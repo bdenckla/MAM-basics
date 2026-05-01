@@ -1,13 +1,13 @@
 
 === holman-ketiv-qere ===
   PROVENANCE DOCS: ['py/mb_cmn/PROVENANCE.md', 'py/mb_cmn/provenance.md', 'py/mb_diff_mpu/PROVENANCE.md', 'py/mb_diff_mpu/provenance.md']
-  COPY SCRIPTS: ['py/main_update_vendored_files.py']
-  mb_cmn dir (py/mb_cmn): ['bib_locales.py', 'cantsys.py', 'hebrew_accents.py', 'hebrew_letters.py', 'hebrew_points.py', 'hebrew_punctuation.py', 'hebrew_verse_numerals.py', 'mam_bknas.py', 'mam_bknas_and_std_bknas.py', 'str_defs.py', 'template_names.py', 'uni_denorm.py']
+  COPY SCRIPTS: ['py/main_update_vendored_files.py', 'py/mb_cmn/vendoring_sync.py']
+  mb_cmn dir (py/mb_cmn): ['bib_locales.py', 'cantsys.py', 'hebrew_accents.py', 'hebrew_letters.py', 'hebrew_points.py', 'hebrew_punctuation.py', 'hebrew_verse_numerals.py', 'mam_bknas.py', 'mam_bknas_and_std_bknas.py', 'str_defs.py', 'template_names.py', 'uni_denorm.py', 'vendoring_sync.py']
 
 === al-hatorah ===
   PROVENANCE DOCS: ['py/mb_cmn/PROVENANCE.md', 'py/mb_cmn/provenance.md']
-  COPY SCRIPTS: ['py/main_update_vendored_files.py']
-  mb_cmn dir (py/mb_cmn): ['bib_locales.py', 'cantsys.py', 'file_io.py', 'hebrew_accents.py', 'hebrew_letters.py', 'hebrew_points.py', 'hebrew_punctuation.py', 'hebrew_verse_numerals.py', 'mam_bknas.py', 'mam_bknas_and_std_bknas.py', 'minirow.py', 'my_diffs.py', 'my_utils.py', 'provenance.py', 'read_books_from_mam_parsed_plus.py', 'shrink.py', 'str_defs.py', 'template_names.py', 'uni_denorm.py', 'uni_heb.py', 'uni_norm_fragile.py', 'ws_tmpl1.py', 'ws_tmpl2.py', 'ws_tmpl_named_params.py']
+  COPY SCRIPTS: ['py/main_update_vendored_files.py', 'py/mb_cmn/vendoring_sync.py']
+  mb_cmn dir (py/mb_cmn): ['bib_locales.py', 'cantsys.py', 'file_io.py', 'hebrew_accents.py', 'hebrew_letters.py', 'hebrew_points.py', 'hebrew_punctuation.py', 'hebrew_verse_numerals.py', 'mam_bknas.py', 'mam_bknas_and_std_bknas.py', 'minirow.py', 'my_diffs.py', 'my_utils.py', 'provenance.py', 'read_books_from_mam_parsed_plus.py', 'shrink.py', 'str_defs.py', 'template_names.py', 'uni_denorm.py', 'uni_heb.py', 'uni_norm_fragile.py', 'vendoring_sync.py', 'ws_tmpl1.py', 'ws_tmpl2.py', 'ws_tmpl_named_params.py']
 
 === book-of-job ===
   provenance docs: none
@@ -26,7 +26,7 @@
 
 === codex-index-leningrad ===
   provenance docs: none
-  COPY SCRIPTS: ['main_update_vendored_files.py']
+  COPY SCRIPTS: ['main_update_vendored_files.py', 'vendoring_sync.py']
 
 === diffable-pointed-hebrew ===
   provenance docs: none
