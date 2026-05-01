@@ -13,7 +13,6 @@ class CombinedTableRowRec:
     mam_label: str
     bhs_label: str
     sef_label: str
-    note: str = ""
 
 
 @dataclass(frozen=True)
@@ -27,10 +26,8 @@ def render_combined_table_markdown(books_mpu):
         "## Combined Table: All Differences",
         "",
         "This table treats the Hebrew range as the anchor and shows how each tradition",
-        'labels that same span. "↕" means the same Hebrew span has a shifted verse',
-        "number; `M+N` means the verse number is shifted by `+N` relative to the MAM",
-        'reference shown in the MAM column; "∅" marks a verse number inserted where MAM',
-        "has no corresponding Hebrew text.",
+        "labels that same span. `M+N` means the verse number is shifted by `+N`",
+        "relative to the MAM reference shown in the MAM column.",
         "",
         "<table>",
         "  <thead>",
@@ -39,7 +36,6 @@ def render_combined_table_markdown(books_mpu):
         "      <th>MAM verse</th>",
         "      <th>BHS verse</th>",
         "      <th>Sef verse</th>",
-        "      <th>Note</th>",
         "    </tr>",
         "  </thead>",
         "  <tbody>",
@@ -51,7 +47,7 @@ def render_combined_table_markdown(books_mpu):
             "  </tbody>",
             "</table>",
             "",
-            "**Key:** ⇕ same Hebrew span, renumbered · `M+N` verse number shifted by `+N` from the MAM reference in the MAM column · ∅ verse number inserted where MAM has no corresponding Hebrew text · — no separate label shown in this tradition",
+            "**Key:** `M+N` verse number shifted by `+N` from the MAM reference in the MAM column · — no corresponding Hebrew text in MAM",
             "",
             "---",
         )
@@ -85,16 +81,13 @@ def _simple_shift_group(case_rec, books_mpu):
     anchor_bcvt = case_rec.mam_anchor_bcvt
     shifted_bcvt_seq = _shifted_bcvt_seq(case_rec, verses, tbn.VT_BHS)
     return CombinedTableGroupRec(
-        heading=case_data.doc_book_label(case_rec.book_id),
+        heading=case_rec.section_title,
         rows=(
             CombinedTableRowRec(
                 hebrew_range=hebrew.range_label_for_minirow(verses[anchor_bcvt]),
                 mam_label=_cv_label(anchor_bcvt),
-                bhs_label=_mapped_label(tbn.VT_BHS, case_rec.book_id, anchor_bcvt)
-                + " ↕",
-                sef_label=_mapped_label(tbn.VT_SEF, case_rec.book_id, anchor_bcvt)
-                + " ↕",
-                note=case_rec.classification,
+                bhs_label=_mapped_label(tbn.VT_BHS, case_rec.book_id, anchor_bcvt),
+                sef_label=_mapped_label(tbn.VT_SEF, case_rec.book_id, anchor_bcvt),
             ),
             CombinedTableRowRec(
                 hebrew_range=hebrew.range_label_for_minirow_span(
@@ -210,7 +203,7 @@ def _numbers_group(case_rec, books_mpu):
             )
         )
     ]
-    return CombinedTableGroupRec(heading="Numbers", rows=tuple(rows))
+    return CombinedTableGroupRec(heading=case_rec.section_title, rows=tuple(rows))
 
 
 def _joshua_group(case_rec, books_mpu):
@@ -230,9 +223,8 @@ def _joshua_group(case_rec, books_mpu):
         CombinedTableRowRec(
             hebrew_range="—",
             mam_label="<em>(absent)</em>",
-            bhs_label=_cv_label(tbn.mk_bcvt(case_rec.book_id, cvve[0])) + " ∅",
-            sef_label=_cv_label(tbn.mk_bcvt(case_rec.book_id, cvve[0])) + " ∅",
-            note=case_rec.classification,
+            bhs_label=_cv_label(tbn.mk_bcvt(case_rec.book_id, cvve[0])),
+            sef_label=_cv_label(tbn.mk_bcvt(case_rec.book_id, cvve[0])),
         )
         for cvve in maprec[1:]
     )
@@ -246,13 +238,13 @@ def _joshua_group(case_rec, books_mpu):
             sef_label=_delta_label(tbn.VT_SEF, shifted_bcvt_seq[0]),
         )
     )
-    return CombinedTableGroupRec(heading="Joshua 21", rows=tuple(rows))
+    return CombinedTableGroupRec(heading=case_rec.section_title, rows=tuple(rows))
 
 
 def _render_group_lines(group):
     lines = [
         "    <tr>",
-        f'      <th colspan="5" style="text-align:left;">{group.heading}</th>',
+        f'      <th colspan="4" style="text-align:left;">{group.heading}</th>',
         "    </tr>",
     ]
     for row in group.rows:
@@ -276,7 +268,7 @@ def _render_group_lines(group):
                     f"      <td>{row.sef_label}</td>",
                 )
             )
-        lines.extend((f"      <td>{row.note}</td>", "    </tr>"))
+        lines.append("    </tr>")
     return lines
 
 
