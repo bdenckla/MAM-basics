@@ -203,7 +203,7 @@ def _numbers_group(case_rec, books_mpu):
             )
         )
     ]
-    return CombinedTableGroupRec(heading="Joshua — chapter 21", rows=tuple(rows))
+    return CombinedTableGroupRec(heading=case_rec.section_title, rows=tuple(rows))
 
 
 def _joshua_group(case_rec, books_mpu):
@@ -238,7 +238,7 @@ def _joshua_group(case_rec, books_mpu):
             sef_label=_delta_label(tbn.VT_SEF, shifted_bcvt_seq[0]),
         )
     )
-    return CombinedTableGroupRec(heading=case_rec.section_title, rows=tuple(rows))
+    return CombinedTableGroupRec(heading="Joshua — chapter 21", rows=tuple(rows))
 
 
 def _render_group_lines(group):
