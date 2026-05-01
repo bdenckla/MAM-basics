@@ -13,13 +13,34 @@ _CURRENT_DOC_PATH = (
     / "versification-differences.md"
 )
 _NEXT_SECTION_MARKER = "\n## BHS Labeling\n"
-_FIRST_BHS_SECTION_MARKER = "## BHS Labeling\n\n### 1 Samuel — chapter 23/24 boundary\n"
-_THIRD_BHS_SECTION_MARKER = "\n### 3. Exodus — early Decalogue (ch 20)\n"
-_FOURTH_BHS_SECTION_MARKER = "\n### 4. Exodus — late Decalogue (ch 20)\n"
-_FIFTH_BHS_SECTION_MARKER = "\n### 5. Numbers — chapter 25/26 boundary\n"
-_SIXTH_BHS_SECTION_MARKER = "\n### 6. Deuteronomy — early Decalogue (ch 5)\n"
-_SEVENTH_BHS_SECTION_MARKER = "\n### 7. Deuteronomy — late Decalogue (ch 5)\n"
-_EIGHTH_BHS_SECTION_MARKER = "\n### 8. Joshua 21 — present-vs-absent\n"
+_FIRST_BHS_SECTION_MARKER = (
+    '## BHS Labeling\n\n<a id="bhs-1sam-23-24-boundary"></a>\n\n'
+    "### 1 Samuel — chapter 23/24 boundary\n"
+)
+_THIRD_BHS_SECTION_MARKER = (
+    '\n<a id="bhs-exod-20-early-decalogue"></a>\n\n'
+    "### 3. Exodus — early Decalogue (ch 20)\n"
+)
+_FOURTH_BHS_SECTION_MARKER = (
+    '\n<a id="bhs-exod-20-late-decalogue"></a>\n\n'
+    "### 4. Exodus — late Decalogue (ch 20)\n"
+)
+_FIFTH_BHS_SECTION_MARKER = (
+    '\n<a id="bhs-num-25-26-boundary"></a>\n\n'
+    "### 5. Numbers — chapter 25/26 boundary\n"
+)
+_SIXTH_BHS_SECTION_MARKER = (
+    '\n<a id="bhs-deut-5-early-decalogue"></a>\n\n'
+    "### 6. Deuteronomy — early Decalogue (ch 5)\n"
+)
+_SEVENTH_BHS_SECTION_MARKER = (
+    '\n<a id="bhs-deut-5-late-decalogue"></a>\n\n'
+    "### 7. Deuteronomy — late Decalogue (ch 5)\n"
+)
+_EIGHTH_BHS_SECTION_MARKER = (
+    '\n<a id="bhs-josh-21-present-vs-absent"></a>\n\n'
+    "### 8. Joshua 21 — present-vs-absent\n"
+)
 _SEFARIA_SECTION_MARKER = "\n## Sefaria Labeling\n"
 _COMBINED_TABLE_MARKER = "\n## Combined Table: All Differences\n"
 _HOW_SECTION_MARKER = "\n## How MAM-simple Records These Differences\n"

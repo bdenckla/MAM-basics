@@ -208,7 +208,10 @@ def _render_bhs_sections_markdown(sections, include_bhs_heading):
 
 
 def _render_vtrad_section_lines(section):
-    lines = [section.heading, ""]
+    lines = []
+    if getattr(section, "anchor_id", None):
+        lines.extend((f'<a id="{section.anchor_id}"></a>', ""))
+    lines.extend((section.heading, ""))
     lines.extend(section.intro_lines)
     lines.append("")
     lines.extend(

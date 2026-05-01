@@ -22,6 +22,7 @@ class SimpleShiftSectionRec:
     rows: tuple[SimpleShiftRowRec, ...]
     other_vtrad_label: str = "BHS"
     note_lines: tuple[str, ...] = tuple()
+    anchor_id: str | None = None
 
 
 @dataclass(frozen=True)
@@ -70,7 +71,7 @@ def extract_sef_simple_shift_sections():
         ProseSectionRec(
             heading=case_rec.sef_heading,
             body_lines=(
-                "Same simple chapter-boundary shift as in BHS; see the BHS table above.",
+                f"As in [BHS](#{_bhs_anchor_id(case_rec)}), Sef has a simple chapter-boundary shift here.",
             ),
         )
         for case_rec in case_data.sef_simple_shift_cases()
@@ -89,7 +90,7 @@ def extract_sef_present_vs_absent_sections():
         ProseSectionRec(
             heading=case_rec.sef_heading,
             body_lines=(
-                "Same present-vs-absent case as in BHS; see the BHS table above.",
+                f"As in [BHS](#{_bhs_anchor_id(case_rec)}), Sef has a present-vs-absent case here.",
             ),
         )
         for case_rec in case_data.sef_present_vs_absent_cases()
@@ -113,6 +114,7 @@ def _extract_bhs_simple_shift_section(case_rec, books_mpu):
         table_separator=case_rec.bhs_table_separator,
         intro_lines=_intro_lines_for_case(case_rec),
         rows=tuple(rows),
+        anchor_id=_bhs_anchor_id(case_rec),
     )
 
 
@@ -137,6 +139,7 @@ def _extract_bhs_split_one_vs_many_section(case_rec, books_mpu):
         intro_lines=_intro_lines_for_split_one_vs_many_case(case_rec),
         rows=tuple(rows),
         note_lines=case_rec.note_lines,
+        anchor_id=_bhs_anchor_id(case_rec),
     )
 
 
@@ -149,6 +152,7 @@ def _extract_bhs_complex_boundary_section(case_rec, books_mpu):
         intro_lines=_intro_lines_for_complex_boundary_case(case_rec),
         rows=rows,
         note_lines=case_rec.note_lines,
+        anchor_id=_bhs_anchor_id(case_rec),
     )
 
 
@@ -167,7 +171,12 @@ def _extract_bhs_present_vs_absent_section(case_rec, books_mpu):
         table_separator=case_rec.bhs_table_separator,
         intro_lines=_intro_lines_for_present_vs_absent_case(),
         rows=tuple(rows),
+        anchor_id=_bhs_anchor_id(case_rec),
     )
+
+
+def _bhs_anchor_id(case_rec):
+    return f"bhs-{case_rec.case_id}"
 
 
 def _extract_sef_early_one_vs_many_section(case_rec, books_mpu):
