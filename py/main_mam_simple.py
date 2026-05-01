@@ -1,10 +1,14 @@
-"""
-Exports main
+"""Make a simple but incomplete extract of MAM in XML and JSON formats.
 
 Usage (run from repo root):
-    cd ~/GitRepos/MAM-basics && PYTHONUTF8=1 .venv/Scripts/python.exe py/main_mam_simple.py
-    cd ~/GitRepos/MAM-basics && PYTHONUTF8=1 .venv/Scripts/python.exe py/main_mam_simple.py --book39 Ruth
+    .venv/Scripts/python.exe py/main_mam_simple.py
+    .venv/Scripts/python.exe py/main_mam_simple.py --book39 Ruth
+    .venv/Scripts/python.exe py/main_mam_simple.py core-only --book39 Ruth
+    .venv/Scripts/python.exe py/main_mam_simple.py doc-only
 """
+
+import argparse
+import sys
 
 from mb_misc import my_utils_for_mainish as my_utils_fm
 from py_misc import mam_simple_copy_py_files
@@ -20,6 +24,7 @@ from mb_xml import xml_render
 from mb_xml import xml_root_from_bksams
 from mb_xml import xml_distribute_sampe as xml_sampe
 from mb_json import json_root_from_bksams
+from versification_differences import generate_doc
 
 
 def _do_not_convert(_bkids, books_mpu):
@@ -112,14 +117,71 @@ def almost_main(bkids=None):
     mam_simple_copy_py_files.copy_support_files()
 
 
+def _write_versification_doc():
+    did_write = generate_doc.write_output_if_changed()
+    if did_write:
+        print(f"updated: {generate_doc.output_path()}")
+    else:
+        print(f"already up to date: {generate_doc.output_path()}")
+
+
+def _build_parser():
+    parser = argparse.ArgumentParser(description=__doc__)
+    subparsers = parser.add_subparsers(dest="command")
+
+    _add_core_args(
+        subparsers.add_parser(
+            "all",
+            help="Run the core MAM-simple export and then regenerate the versification doc.",
+        )
+    )
+    _add_core_args(
+        subparsers.add_parser(
+            "core-only",
+            aliases=["core"],
+            help="Run only the core MAM-simple export.",
+        )
+    )
+    subparsers.add_parser(
+        "doc-only",
+        aliases=["doc"],
+        help="Regenerate only the versification differences doc.",
+    )
+    return parser
+
+
+def _add_core_args(parser):
+    mutex = parser.add_mutually_exclusive_group()
+    mutex.add_argument("--book39")
+    mutex.add_argument("--section6")
+    return parser
+
+
+def _parse_args(argv=None):
+    if argv is None:
+        argv = sys.argv[1:]
+    if not argv or argv[0] not in {"all", "core-only", "core", "doc-only", "doc"}:
+        argv = ["all", *argv]
+    return _build_parser().parse_args(argv)
+
+
+def _bkids_from_args(args):
+    if getattr(args, "book39", None):
+        return (args.book39,)
+    if getattr(args, "section6", None):
+        return tbn.bk39s_of_sec(args.section6)
+    return tbn.ALL_BK39_IDS
+
+
 def main():
-    """
-    Make a simple but incomplete extract of MAM in XML and JSON formats.
-    The XML format is not OSIS, but is informed by OSIS.
-    The JSON format mirrors the XML structure.
-    """
-    bkids = my_utils_fm.get_bk39_tuple_from_argparse()
+    args = _parse_args()
+    if args.command in {"doc-only", "doc"}:
+        _write_versification_doc()
+        return
+    bkids = _bkids_from_args(args)
     almost_main(bkids)
+    if args.command == "all":
+        _write_versification_doc()
 
 
 if __name__ == "__main__":
