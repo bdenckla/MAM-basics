@@ -38,8 +38,7 @@ _SEVENTH_BHS_SECTION_MARKER = (
     "### 7. Deuteronomy — late Decalogue (ch 5)\n"
 )
 _EIGHTH_BHS_SECTION_MARKER = (
-    '\n<a id="bhs-josh-21-present-vs-absent"></a>\n\n'
-    "### 8. Joshua 21 — present-vs-absent\n"
+    '\n<a id="bhs-josh-21-present-vs-absent"></a>\n\n' "### 8. Joshua — chapter 21\n"
 )
 _SEFARIA_SECTION_MARKER = "\n## Sefaria Labeling\n"
 _COMBINED_TABLE_MARKER = "\n## Combined Table: All Differences\n"
