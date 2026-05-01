@@ -62,14 +62,14 @@ def _combined_table_groups(books_mpu):
         _paired_decalogue_group(
             early_case=_case("exod-20-early-decalogue"),
             late_case=_case("exod-20-late-decalogue"),
-            heading="Exodus 20",
+            heading="Exodus — chapter 20",
             books_mpu=books_mpu,
         ),
         _numbers_group(_case("num-25-26-boundary"), books_mpu),
         _paired_decalogue_group(
             early_case=_case("deut-5-early-decalogue"),
             late_case=_case("deut-5-late-decalogue"),
-            heading="Deuteronomy 5",
+            heading="Deuteronomy — chapter 5",
             books_mpu=books_mpu,
         ),
         _joshua_group(_case("josh-21-present-vs-absent"), books_mpu),
@@ -203,7 +203,7 @@ def _numbers_group(case_rec, books_mpu):
             )
         )
     ]
-    return CombinedTableGroupRec(heading=case_rec.section_title, rows=tuple(rows))
+    return CombinedTableGroupRec(heading="Joshua — chapter 21", rows=tuple(rows))
 
 
 def _joshua_group(case_rec, books_mpu):

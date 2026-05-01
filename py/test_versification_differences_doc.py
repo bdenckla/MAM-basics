@@ -15,7 +15,7 @@ _CURRENT_DOC_PATH = (
 _NEXT_SECTION_MARKER = "\n## BHS Labeling\n"
 _FIRST_BHS_SECTION_MARKER = (
     '## BHS Labeling\n\n<a id="bhs-1sam-23-24-boundary"></a>\n\n'
-    "### 1 Samuel — chapter 23/24 boundary\n"
+    "### 1. 1 Samuel — chapter 23/24 boundary\n"
 )
 _THIRD_BHS_SECTION_MARKER = (
     '\n<a id="bhs-exod-20-early-decalogue"></a>\n\n'

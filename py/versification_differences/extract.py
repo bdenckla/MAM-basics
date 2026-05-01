@@ -104,7 +104,8 @@ def _extract_bhs_simple_shift_section(case_rec, books_mpu):
     verses = books_mpu[case_rec.book_id]["verses_plus"]
     anchor_bcvt = case_rec.mam_anchor_bcvt
     shifted_bcvt_seq = _shifted_bcvt_seq(case_rec, verses)
-    rows = [_mk_row(anchor_bcvt, verses)]
+    rows = [_mk_unchanged_row(_preceding_bcvt(verses, anchor_bcvt), verses)]
+    rows.append(_mk_row(anchor_bcvt, verses))
     rows.extend(
         _mk_row(shifted_bcvt, verses)
         for shifted_bcvt in shifted_bcvt_seq[: case_rec.leading_shifted_rows]
@@ -124,7 +125,8 @@ def _extract_bhs_simple_shift_section(case_rec, books_mpu):
 def _extract_bhs_split_one_vs_many_section(case_rec, books_mpu):
     verses = books_mpu[case_rec.book_id]["verses_plus"]
     anchor_bcvt = case_rec.mam_anchor_bcvt
-    rows = list(_split_anchor_rows(case_rec, verses[anchor_bcvt]))
+    rows = [_mk_unchanged_row(_preceding_bcvt(verses, anchor_bcvt), verses)]
+    rows.extend(_split_anchor_rows(case_rec, verses[anchor_bcvt]))
     shifted_chnu = tbn.bcvt_get_chnu(anchor_bcvt)
     first_shifted_bcvt = tbn.mk_bcvtmam(
         case_rec.book_id, shifted_chnu, tbn.bcvt_get_vrnu(anchor_bcvt) + 1
@@ -148,12 +150,15 @@ def _extract_bhs_split_one_vs_many_section(case_rec, books_mpu):
 
 def _extract_bhs_complex_boundary_section(case_rec, books_mpu):
     verses = books_mpu[case_rec.book_id]["verses_plus"]
-    rows = _split_anchor_rows(case_rec, verses[case_rec.mam_anchor_bcvt])
+    rows = [
+        _mk_unchanged_row(_preceding_bcvt(verses, case_rec.mam_anchor_bcvt), verses)
+    ]
+    rows.extend(_split_anchor_rows(case_rec, verses[case_rec.mam_anchor_bcvt]))
     return SimpleShiftSectionRec(
         heading=case_rec.bhs_heading,
         table_separator=case_rec.bhs_table_separator,
         intro_lines=_intro_lines_for_complex_boundary_case(case_rec),
-        rows=rows,
+        rows=tuple(rows),
         note_lines=case_rec.note_lines,
         anchor_id=_bhs_anchor_id(case_rec),
     )
@@ -213,8 +218,24 @@ def _shifted_bcvt_seq_same_chapter(case_rec, verses):
     return tuple(shifted_rows)
 
 
+def _preceding_bcvt(verses, mam_bcvt):
+    verse_keys = tuple(verses)
+    mam_idx = verse_keys.index(mam_bcvt)
+    assert mam_idx > 0
+    return verse_keys[mam_idx - 1]
+
+
 def _mk_row(mam_bcvt, verses):
     return _mk_row_for_vtrad(tbn.VT_BHS, mam_bcvt, verses)
+
+
+def _mk_unchanged_row(mam_bcvt, verses):
+    cv_label = _cv_label(mam_bcvt)
+    return SimpleShiftRowRec(
+        hebrew_range=hebrew.range_label_for_minirow(verses[mam_bcvt]),
+        mam_label=cv_label,
+        other_label=cv_label,
+    )
 
 
 def _mk_row_for_vtrad(vtrad, mam_bcvt, verses):
