@@ -8,12 +8,12 @@ from subcommands import ws_bot_real as mod
 
 
 class WsBotRealDiffLinksTests(unittest.TestCase):
-    def test_raise_if_identity_mismatches_noop_when_none(self):
-        mod._raise_if_identity_mismatches([])
+    def test_raise_if_no_save_mismatches_noop_when_none(self):
+        mod._raise_if_no_save_mismatches([])
 
-    def test_raise_if_identity_mismatches_lists_chapters(self):
+    def test_raise_if_no_save_mismatches_lists_chapters(self):
         with self.assertRaises(SystemExit) as ctx:
-            mod._raise_if_identity_mismatches(
+            mod._raise_if_no_save_mismatches(
                 [
                     {
                         "bkid": tbn.BK_GENESIS,
@@ -29,7 +29,7 @@ class WsBotRealDiffLinksTests(unittest.TestCase):
             )
 
         msg = str(ctx.exception)
-        self.assertIn("identity-run failed", msg)
+        self.assertIn("no-save run found", msg)
         self.assertIn("- Genesis chapter 7 (בראשית ז/טעמים)", msg)
         self.assertIn("- Psalms chapter 9 (תהלים ט/טעמים)", msg)
 

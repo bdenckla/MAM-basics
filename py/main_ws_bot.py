@@ -8,6 +8,7 @@ Examples:
     .venv/Scripts/python.exe py/main_ws_bot.py proto --edits path.json
     .venv/Scripts/python.exe py/main_ws_bot.py real --edits path.json -dir:$env:USERPROFILE/.pywikibot
     .venv/Scripts/python.exe py/main_ws_bot.py real --edits path.json -dir:$env:USERPROFILE/.pywikibot --no-post-download
+    .venv/Scripts/python.exe py/main_ws_bot.py real --edits path.json -dir:$env:USERPROFILE/.pywikibot --no-save
     .venv/Scripts/python.exe py/main_ws_bot.py real --edits path.json -dir:$env:USERPROFILE/.pywikibot --identity-run
 """
 
@@ -47,12 +48,21 @@ def _build_parser() -> argparse.ArgumentParser:
             "Skip the automatic post-run download of modified chapters " "to in/mam-ws"
         ),
     )
-    real_parser.add_argument(
-        "--identity-run",
+    save_mode_group = real_parser.add_mutually_exclusive_group()
+    save_mode_group.add_argument(
+        "--no-save",
         action="store_true",
         help=(
             "Process edits without saving pages; fail if any chapter would change "
-            "(useful for idempotence/process checks)"
+            "(useful for dry-run validation of a targeted bot)"
+        ),
+    )
+    save_mode_group.add_argument(
+        "--identity-run",
+        action="store_true",
+        help=(
+            "Run a true identity/null bot: no processing and no saves "
+            "(useful for exercising non-edit run plumbing)"
         ),
     )
     wsds.add_selector_opts(real_parser)
@@ -82,6 +92,7 @@ def _run_real(args: argparse.Namespace, pywikibot_args) -> None:
         wsds.selected_book_plans(args),
         pywikibot_args,
         post_download=not args.no_post_download,
+        no_save=args.no_save,
         identity_run=args.identity_run,
     )
 

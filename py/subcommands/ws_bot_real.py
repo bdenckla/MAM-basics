@@ -7,6 +7,7 @@ Usage (run from repo root):
     .venv/Scripts/python.exe py/main_ws_bot.py real --edits path.json -dir:... --book39 Deuter
     .venv/Scripts/python.exe py/main_ws_bot.py real --edits path.json -dir:... --section6 SifEm
     .venv/Scripts/python.exe py/main_ws_bot.py real --edits path.json -dir:... --no-post-download
+    .venv/Scripts/python.exe py/main_ws_bot.py real --edits path.json -dir:... --no-save
     .venv/Scripts/python.exe py/main_ws_bot.py real --edits path.json -dir:... --identity-run
 """
 
@@ -33,22 +34,34 @@ def run(
     book_plans,
     pywikibot_args,
     post_download=True,
+    no_save=False,
     identity_run=False,
 ):
     """Use a bot to process chapters of Hebrew Wikisource."""
+    assert not (no_save and identity_run), (no_save, identity_run)
     _assert_pywikibot_dir_configured(pywikibot_args)
     run_paths = _build_run_paths()
     my_utils_fm.show_progress_g(__file__, "run-artifacts", run_paths["run-root"])
-    if identity_run and post_download:
+    if (no_save or identity_run) and post_download:
+        my_utils_fm.show_progress_g(
+            __file__,
+            "no-save",
+            "post-download disabled during no-save/identity-run",
+        )
+    if identity_run:
+        edits_ctx = wbe.no_edits()
+        summary = ""
         my_utils_fm.show_progress_g(
             __file__,
             "identity-run",
-            "post-download disabled during identity-run",
+            "null bot: no processing and no saves",
         )
-    edits_ctx = wbe.load_edits(edits_path)
-    wbe.assert_book_plans_within_target_set(edits_ctx, book_plans)
-    summary = edits_ctx["summary"]
-    assert summary
+    else:
+        edits_ctx = wbe.load_edits(edits_path)
+        wbe.assert_book_plans_within_target_set(edits_ctx, book_plans)
+        summary = edits_ctx["summary"]
+    if not no_save and not identity_run:
+        assert summary
     site = pywikibot.Site("he", "wikisource", "BDencklaBot")
     botctx = {
         "botctx-site": site,
@@ -56,8 +69,9 @@ def run(
         "botctx-edits-ctx": edits_ctx,
         "botctx-modified-pages": [],
         "botctx-run-paths": run_paths,
+        "botctx-no-save": no_save,
         "botctx-identity-run": identity_run,
-        "botctx-identity-mismatches": [],
+        "botctx-no-save-mismatches": [],
     }
     for book_plan in book_plans:
         _run_bot_on_book(botctx, book_plan)
@@ -67,8 +81,8 @@ def run(
         botctx["botctx-modified-pages"],
         run_paths["modified-chapter-diffs-md"],
     )
-    _raise_if_identity_mismatches(botctx["botctx-identity-mismatches"])
-    if post_download and not identity_run:
+    _raise_if_no_save_mismatches(botctx["botctx-no-save-mismatches"])
+    if post_download and not no_save and not identity_run:
         _download_modified_chapters(run_paths["modified-chapters"])
 
 
@@ -78,16 +92,20 @@ def _run_bot_on_chapter(botctx, bkid, chapter_plan):
     edits_ctx = botctx["botctx-edits-ctx"]
     modified_pages = botctx["botctx-modified-pages"]
     run_paths = botctx["botctx-run-paths"]
+    no_save = botctx["botctx-no-save"]
     identity_run = botctx["botctx-identity-run"]
-    identity_mismatches = botctx["botctx-identity-mismatches"]
+    no_save_mismatches = botctx["botctx-no-save-mismatches"]
     site = botctx["botctx-site"]
     page = pywikibot.Page(site, title)
     orig_text = page.text
-    page.text = wbe.edit_page_text(edits_ctx, bkid, he_chnu, page.text)
+    if identity_run:
+        page.text = orig_text
+    else:
+        page.text = wbe.edit_page_text(edits_ctx, bkid, he_chnu, page.text)
     if page.text != orig_text:
         edits_ctx["modified-chapters"].append((bkid, he_chnu))
-        if identity_run:
-            identity_mismatches.append(
+        if no_save:
+            no_save_mismatches.append(
                 {
                     "bkid": bkid,
                     "he_chnu": he_chnu,
@@ -108,16 +126,15 @@ def _run_bot_on_chapter(botctx, bkid, chapter_plan):
     _write_chapter(run_paths["chapters-dir"], bkid, he_chnu, page.text.splitlines())
 
 
-def _raise_if_identity_mismatches(identity_mismatches):
-    if not identity_mismatches:
+def _raise_if_no_save_mismatches(no_save_mismatches):
+    if not no_save_mismatches:
         return
     mismatch_lines = [
         f"- {entry['bkid']} chapter {hvn.STR_TO_INT_DIC[entry['he_chnu']]} ({entry['title']})"
-        for entry in identity_mismatches
+        for entry in no_save_mismatches
     ]
     raise SystemExit(
-        "identity-run failed: the following chapters would change:\n"
-        + "\n".join(mismatch_lines)
+        "no-save run found chapters that would change:\n" + "\n".join(mismatch_lines)
     )
 
 
