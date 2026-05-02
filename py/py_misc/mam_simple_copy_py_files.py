@@ -54,7 +54,9 @@ PYFILE_RELPATHS = (
     "mb_misc/ws_urls.py",
     #
     "mb_sefaria/sef_header.py",
+    "mb_sefaria/mam4ajf_handlers.py",
     "mb_sefaria/mam4sef_handlers.py",
+    "mb_sefaria/mam4sef_runners.py",
     "mb_sefaria/mam4sef_or_ajf.py",
     "mb_sefaria/sef_cmn.py",
     "mb_sefaria/write_utils_sef_or_ajf.py",

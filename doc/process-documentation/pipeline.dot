@@ -21,23 +21,23 @@ digraph mam_pipeline {
 
     // ── External prerequisites (not part of _STEPS) ──
     node [shape=box, style=dashed, color=gray, fontcolor=gray];
-    download_go      [label="download_fr_google"];
-    download_sef     [label="download_fr_sefaria"];
-    download_ws      [label="download_fr_wikisource", style="", color="", fontcolor=""];
+    download_go      [label="download fr-google"];
+    download_sef     [label="download fr-sefaria"];
+    download_ws      [label="download fr-wikisource", style="", color="", fontcolor=""];
 
     // ── Pipeline steps ──
     node [shape=box, style="", color="", fontcolor=""];
-    parse_go         [label="parse_go"];
+    parse_go         [label="parse go"];
     foi              [label="foi_features_of_interest"];
     mam_with_doc     [label="mam_with_doc"];
     tmpl_survey      [label="tmpl_survey"];
     mam_simple       [label="mam_simple"];
-    misc_2           [label="misc-2", tooltip="mam4sef\nmam4ajf"];
+    misc_2           [label="misc-2"];
     osis             [label="osis"];
-    misc_1           [label="misc-1", tooltip="decnreub\nmultimark\nwordlist\nexplicit_xataf\ndiff_ctr_vs_mam"];
-    diff_wsgo        [label="diff_wsgo"];
-    misc_3           [label="misc-3", tooltip="parse_ws\nws_bot_proto"];
-    ws_bot           [label="ws_bot"];
+    misc_1           [label="misc-1", tooltip="decnreub\nmultimark\nwordlist\nexplicit_xataf\ndiff ctr-vs-mam"];
+    diff_wsgo        [label="diff wsgo"];
+    misc_3           [label="misc-3", tooltip="parse ws\nws_bot proto"];
+    ws_bot           [label="ws_bot real"];
     gen_docs         [label="...english_documents"];
     osis_split       [label="osis_split_mapm"];
 

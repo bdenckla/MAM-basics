@@ -179,10 +179,11 @@
             "console": "integratedTerminal"
         },
         {
-            "name": "MAM for AJF: all",
+            "name": "MAM for AJF: all (via MAM for Sef)",
             "type": "debugpy",
             "request": "launch",
-            "program": "py/main_mam4ajf.py",
+            "program": "py/main_mam4sef.py",
+            "args": ["--just-ajf"],
             "console": "integratedTerminal"
         },
         {
@@ -190,6 +191,14 @@
             "type": "debugpy",
             "request": "launch",
             "program": "py/main_mam4sef.py",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "MAM for Sef and AJF: all",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "py/main_mam4sef.py",
+            "args": ["--both-sef-and-ajf"],
             "console": "integratedTerminal"
         },
         {
