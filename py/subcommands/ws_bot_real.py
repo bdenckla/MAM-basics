@@ -9,6 +9,9 @@ Usage (run from repo root):
 """
 
 import os
+import json
+from urllib import parse
+from urllib import request
 
 import pywikibot
 
@@ -31,25 +34,85 @@ def run(edits_path, book_plans, pywikibot_args):
         "botctx-site": site,
         "botctx-summary": summary,
         "botctx-edits-ctx": edits_ctx,
+        "botctx-modified-pages": [],
     }
     for book_plan in book_plans:
         _run_bot_on_book(botctx, book_plan)
     wbe.write_warnings(edits_ctx, _OUT_PATH_WARNINGS)
     wbe.write_modified_chapters(edits_ctx, _OUT_PATH_MODIFIED_CHAPTERS)
+    _write_modified_chapter_diffs_md(
+        botctx["botctx-modified-pages"],
+        _OUT_PATH_MODIFIED_CHAPTER_DIFFS_MD,
+    )
 
 
 def _run_bot_on_chapter(botctx, bkid, out_book_contents, chapter_plan):
     he_chnu, title = chapter_plan
-    site = botctx["botctx-site"]
     summary = botctx["botctx-summary"]
     edits_ctx = botctx["botctx-edits-ctx"]
+    modified_pages = botctx["botctx-modified-pages"]
+    site = botctx["botctx-site"]
     page = pywikibot.Page(site, title)
     orig_text = page.text
     page.text = wbe.edit_page_text(edits_ctx, bkid, he_chnu, page.text)
     if page.text != orig_text:
         edits_ctx["modified-chapters"].append((bkid, he_chnu))
         page.save(summary)
+        newrevid, oldrevid = _latest_two_revids(title)
+        modified_pages.append(
+            {
+                "title": title,
+                "newrevid": newrevid,
+                "oldrevid": oldrevid,
+            }
+        )
     out_book_contents[he_chnu] = page.text.splitlines()
+
+
+def _latest_two_revids(title):
+    api_url = "https://he.wikisource.org/w/api.php?" + parse.urlencode(
+        {
+            "action": "query",
+            "format": "json",
+            "prop": "revisions",
+            "rvlimit": 2,
+            "rvprop": "ids",
+            "titles": title,
+        }
+    )
+    with request.urlopen(api_url) as response:
+        data = json.loads(response.read().decode("utf-8"))
+    page_obj = next(iter(data["query"]["pages"].values()))
+    revisions = page_obj["revisions"]
+    assert len(revisions) >= 2, (title, data)
+    return revisions[0]["revid"], revisions[1]["revid"]
+
+
+def _diff_url(title, newrevid, oldrevid):
+    title_enc = parse.quote(title, safe="")
+    return (
+        "https://he.wikisource.org/w/index.php?"
+        f"title={title_enc}&diff={newrevid}&oldid={oldrevid}"
+    )
+
+
+def _modified_chapter_diffs_markdown(modified_pages):
+    if not modified_pages:
+        return "_No modified chapters in this run._\n"
+    lines = [
+        f"- [{entry['title']}]({_diff_url(entry['title'], entry['newrevid'], entry['oldrevid'])})"
+        for entry in modified_pages
+    ]
+    return "\n".join(lines) + "\n"
+
+
+def _write_modified_chapter_diffs_md(modified_pages, out_path):
+    markdown = _modified_chapter_diffs_markdown(modified_pages)
+    file_io.with_tmp_openw(out_path, {}, _write_text, markdown)
+
+
+def _write_text(text, outfp):
+    outfp.write(text)
 
 
 def _write_book(book_contents, he_bn_sbn):
@@ -119,3 +182,4 @@ _OUT_PATH_BOOKS = "out/mam-ws-bot/real"
 _OUT_PATH_MISC = "out/mam-ws-bot/real-misc"
 _OUT_PATH_WARNINGS = f"{_OUT_PATH_MISC}/warnings.json"
 _OUT_PATH_MODIFIED_CHAPTERS = f"{_OUT_PATH_MISC}/modified-chapters.json"
+_OUT_PATH_MODIFIED_CHAPTER_DIFFS_MD = f"{_OUT_PATH_MISC}/modified-chapter-diffs.md"
