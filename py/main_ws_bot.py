@@ -21,6 +21,7 @@ def main() -> None:
     args, extra_args = parser.parse_known_args()
     if extra_args and not getattr(args, "allow_extra_args", False):
         parser.error(f"unrecognized arguments: {' '.join(extra_args)}")
+    wsds.validate_selector_args(args, args.selector_parser)
     args.func(args, extra_args)
 
 
@@ -38,7 +39,11 @@ def _build_parser() -> argparse.ArgumentParser:
     )
     real_parser.add_argument("--edits", required=True)
     wsds.add_selector_opts(real_parser)
-    real_parser.set_defaults(func=_run_real, allow_extra_args=True)
+    real_parser.set_defaults(
+        func=_run_real,
+        allow_extra_args=True,
+        selector_parser=real_parser,
+    )
 
     proto_parser = subparsers.add_parser(
         "proto",
@@ -46,17 +51,19 @@ def _build_parser() -> argparse.ArgumentParser:
     )
     proto_parser.add_argument("--edits")
     wsds.add_selector_opts(proto_parser)
-    proto_parser.set_defaults(func=_run_proto, allow_extra_args=False)
+    proto_parser.set_defaults(
+        func=_run_proto,
+        allow_extra_args=False,
+        selector_parser=proto_parser,
+    )
     return parser
 
 
 def _run_real(args: argparse.Namespace, pywikibot_args) -> None:
-    wsds.validate_selector_args(args, _build_parser())
     ws_bot_real.run(args.edits, wsds.selected_book_plans(args), pywikibot_args)
 
 
 def _run_proto(args: argparse.Namespace, _extra_args) -> None:
-    wsds.validate_selector_args(args, _build_parser())
     ws_bot_proto.almost_main(args.edits, wsds.selected_book_plans(args))
 
 
