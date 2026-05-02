@@ -47,6 +47,16 @@ PYTHONUTF8=1 .venv/Scripts/python.exe .novc/my_script.py
 
 **Why:** The Claude Code permissions glob uses `*` which does not match newline characters. Multi-line `-c` strings therefore fail to match the allow rule and trigger an approval prompt every time. Banning `-c` entirely avoids the problem — every invocation is a simple single-line command that matches the glob.
 
+## Wikisource Bot Runs — Explicit Pywikibot Config Dir Required
+
+When running `py/main_ws_bot.py real`, always provide the pywikibot config directory explicitly, either by passing `-dir:<path-to-.pywikibot>` or by setting `PYWIKIBOT_DIR`.
+
+Required command shape (Windows):
+
+```bash
+.venv\Scripts\python.exe py\main_ws_bot.py real --edits <path> -dir:$env:USERPROFILE/.pywikibot
+```
+
 ## No Multi-Line Shell Commands (General Principle)
 
 The `python -c` ban above is a specific instance of a general rule: **never write a Bash command that spans multiple lines.** Many "one-liners" are only conceptually one-liners — they use heredocs, multi-line strings, or subshell constructs that produce multi-line commands. Claude Code's permission globs use `*` which does not match newlines, so any multi-line command breaks glob matching and triggers an approval prompt. Keep every Bash invocation to a single line; when the payload is inherently multi-line (a Python snippet, a commit message, etc.), write it to a file and reference the file.
@@ -159,8 +169,9 @@ Never close (or suggest closing) a GitHub issue until its work has been both com
 ## File Organization
 
 - All Python code lives under the `py/` directory at the project root.
-- **Main scripts** are named with a `main_` prefix (e.g. `py/main_mam4sef.py`, `py/main_parse_go.py`). These are the entry points that are run directly.
+- **Main scripts** are named with a `main_` prefix (e.g. `py/main_mam4sef.py`, `py/main_parse.py`). These are the entry points that are run directly.
 - **Library modules** live in package directories under `py/` (e.g. `py/mb_cmn/`, `py/mb_xml/`, `py/render_wt/`). These are imported by main scripts but are not run on their own.
+- **No `__init__.py` files.** This project does not use `__init__.py` in its package directories. Do not create one.
 
 ## Module Size Limit
 

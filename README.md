@@ -17,19 +17,20 @@ Python tools for working with [MAM (Miqra according to the Masora)](https://he.w
 
 ### Downloading
 
-- `main_download_fr_google.py` — from Google Sheets
-- `main_download_fr_sefaria.py` — from Sefaria
-- `main_download_fr_wikisource.py` — from Hebrew Wikisource
+- `main_download.py fr-google` — from Google Sheets
+- `main_download.py fr-sefaria` — from Sefaria
+- `main_download.py fr-wikisource` — from Hebrew Wikisource
 
 ### Parsing
 
-- `main_parse_go.py` — parses downloaded Google Sheets data into structured form
-- `main_parse_ws.py` — parses downloaded Wikisource data into structured form
+- `main_parse.py go` — parses downloaded Google Sheets data into structured form
+- `main_parse.py ws` — parses downloaded Wikisource data into structured form
 
 ### Diffing and comparison
 
-- `main_diff_wsgo.py` — diffs Wikisource vs. Google Sheets versions
-- `main_diff_ctr_vs_mam.py` — compares CTR data against MAM verse data
+- `main_diff.py wsgo` — diffs Wikisource vs. Google Sheets versions
+- `main_diff.py ctr-vs-mam` — compares CTR data against MAM verse data
+- `main_diff.py mpp` — compares MAM-parsed plus revisions and writes release diff reports
 
 ### Analysis and surveys
 
@@ -42,8 +43,8 @@ Python tools for working with [MAM (Miqra according to the Masora)](https://he.w
 
 ### Wikisource bot
 
-- `main_ws_bot.py` — edits Hebrew Wikisource pages via pywikibot
-- `main_ws_bot_proto.py` — prototype version using local file I/O
+- `main_ws_bot.py real` — edits Hebrew Wikisource pages via pywikibot
+- `main_ws_bot.py proto` — prototype version using local file I/O
 
 ### Utilities
 

@@ -16,21 +16,24 @@
             "name": "download MAM fr Wikisource",
             "type": "debugpy",
             "request": "launch",
-            "program": "py/main_download_fr_wikisource.py",
+            "program": "py/main_download.py",
+            "args": ["fr-wikisource"],
             "console": "integratedTerminal"
         },
         {
             "name": "download MAM fr Google",
             "type": "debugpy",
             "request": "launch",
-            "program": "py/main_download_fr_google.py",
+            "program": "py/main_download.py",
+            "args": ["fr-google"],
             "console": "integratedTerminal"
         },
         {
             "name": "diff MAM-MAM Ws with Go",
             "type": "debugpy",
             "request": "launch",
-            "program": "py/main_diff_wsgo.py",
+            "program": "py/main_diff.py",
+            "args": ["wsgo"],
             "console": "integratedTerminal"
         },
         {
@@ -44,7 +47,8 @@
             "name": "Wikisource bot proto",
             "type": "debugpy",
             "request": "launch",
-            "program": "py/main_ws_bot_proto.py",
+            "program": "py/main_ws_bot.py",
+            "args": ["proto"],
             "console": "integratedTerminal"
         },
         {
@@ -52,21 +56,23 @@
             "type": "debugpy",
             "request": "launch",
             "program": "py/main_ws_bot.py",
-            "args": ["-dir:${env:USERPROFILE}/.pywikibot"] ,
+            "args": ["real", "-dir:${env:USERPROFILE}/.pywikibot"] ,
             "console": "integratedTerminal"
         },
         {
             "name": "Parse Wikisource",
             "type": "debugpy",
             "request": "launch",
-            "program": "py/main_parse_ws.py",
+            "program": "py/main_parse.py",
+            "args": ["ws"],
             "console": "integratedTerminal"
         },
         {
             "name": "Parse Google",
             "type": "debugpy",
             "request": "launch",
-            "program": "py/main_parse_go.py",
+            "program": "py/main_parse.py",
+            "args": ["go"],
             "console": "integratedTerminal"
         },
         {
@@ -96,7 +102,8 @@
             "name": "diff CTR vs MAM",
             "type": "debugpy",
             "request": "launch",
-            "program": "py/main_diff_ctr_vs_mam.py",
+            "program": "py/main_diff.py",
+            "args": ["ctr-vs-mam"],
             "console": "integratedTerminal"
         },
         {

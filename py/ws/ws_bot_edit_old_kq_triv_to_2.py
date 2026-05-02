@@ -123,7 +123,7 @@ def write_modified_chapters(edits_ctx, path):
     """Write the list of modified book/chapter pairs to a JSON file.
 
     The output format matches the --book-chapters-json input of
-    main_download_fr_wikisource.py: a list of {"book39": ..., "chapter": ...}
+    main_download.py fr-wikisource: a list of {"book39": ..., "chapter": ...}
     objects with integer chapter numbers.
     """
     modified = edits_ctx["modified-chapters"]

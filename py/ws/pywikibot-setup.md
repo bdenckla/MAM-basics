@@ -1,6 +1,6 @@
 # Pywikibot setup for the Wikisource bot
 
-The live bot (`main_ws_bot.py`) uses pywikibot, which needs a config
+The live bot (`main_ws_bot.py real`) uses pywikibot, which needs a config
 directory with credentials.  This repo tracks the config file as
 `pywikibot-user-config.py` but does **not** store the password.
 
@@ -26,19 +26,19 @@ directory with credentials.  This repo tracks the config file as
 
 To avoid accidental cache/control files in the repo root and avoid
 interactive auth surprises, always provide one of these when running
-`main_ws_bot.py` from the command line:
+`main_ws_bot.py real` from the command line:
 
 1. `-dir:$env:USERPROFILE/.pywikibot`
 2. `PYWIKIBOT_DIR` environment variable
 
 Examples (PowerShell):
 
-       .venv\Scripts\python.exe py\main_ws_bot.py --edits path.json -dir:$env:USERPROFILE/.pywikibot
+       .venv\Scripts\python.exe py\main_ws_bot.py real --edits path.json -dir:$env:USERPROFILE/.pywikibot
 
        $env:PYWIKIBOT_DIR = "$env:USERPROFILE/.pywikibot"
-       .venv\Scripts\python.exe py\main_ws_bot.py --edits path.json
+       .venv\Scripts\python.exe py\main_ws_bot.py real --edits path.json
 
-`main_ws_bot.py` now fails fast if neither mechanism is used.
+`main_ws_bot.py real` now fails fast if neither mechanism is used.
 
 Runtime files such as `apicache/` and `throttle.ctrl` are written under
 the resolved pywikibot base directory. Supplying `-dir:` or

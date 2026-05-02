@@ -4,9 +4,8 @@ sequence. Useful for a full rebuild from scratch.
 """
 
 import argparse
+from dataclasses import dataclass
 
-import main_diff_wsgo
-import main_diff_mpplus
 import main_explicit_xataf
 
 # main_download_mam_fr_google.py
@@ -16,46 +15,69 @@ import main_gen_misc_authored_english_documents
 import main_decnreub
 import main_foi_features_of_interest
 import main_multimark
-import main_parse_go
 import main_tmpl_survey
-import main_parse_ws
-import main_ws_bot_proto
 import main_wordlist
 import main_mam_with_doc
 import main_mam_simple
 import main_mam4sef
 import main_mam4ajf
 import main_mam_osis
+from subcommands import diff_mpp
+from subcommands import diff_wsgo
+from subcommands import parse_go
+from subcommands import parse_ws
+from subcommands import ws_bot_proto
+
+
+@dataclass(frozen=True)
+class StepRecord:
+    step_id: str
+    runner: object
+    note: str | None
+
 
 _STEPS = [
-    (
-        main_parse_go,
+    StepRecord(
+        "parse-go",
+        parse_go.almost_main,
         "mam_parsed must come before mam_simple, mam_tmpl_survey, & many others",
     ),
-    (main_foi_features_of_interest, None),
+    StepRecord(
+        "foi-features-of-interest", main_foi_features_of_interest.almost_main, None
+    ),
     # We run "features of interest" early since it
     # provides information about any malformed Unicode.
     # On later "main" functions, such malformed Unicode will cause
     # asserts that provide little information.
-    (main_mam_with_doc, None),
-    (main_diff_mpplus, "writes unnamed unreleased diff report if there are changes"),
-    (main_tmpl_survey, "must come after mam_parsed"),
-    (main_mam_simple, "must come after mam_parsed"),
+    StepRecord("mam-with-doc", main_mam_with_doc.almost_main, None),
+    StepRecord(
+        "diff-mpp",
+        diff_mpp.almost_main,
+        "writes unnamed unreleased diff report if there are changes",
+    ),
+    StepRecord(
+        "tmpl-survey", main_tmpl_survey.almost_main, "must come after mam_parsed"
+    ),
+    StepRecord("mam-simple", main_mam_simple.almost_main, "must come after mam_parsed"),
     # mam_simple must come before mam4sef, mam4ajf, & mam_osis
-    (main_mam4sef, "must come after mam_simple"),
-    (main_mam4ajf, "must come after mam_simple"),
-    (main_mam_osis, "must come after mam_simple"),
-    (main_decnreub, None),
-    (main_multimark, None),
-    (main_wordlist, None),
-    (main_explicit_xataf, None),
-    (main_diff_wsgo, "relies on download of ws"),
-    (main_parse_ws, "relies on download of ws"),
-    (main_ws_bot_proto, "relies on download of ws"),
-    (main_gen_misc_authored_english_documents, None),
+    StepRecord("mam4sef", main_mam4sef.almost_main, "must come after mam_simple"),
+    StepRecord("mam4ajf", main_mam4ajf.almost_main, "must come after mam_simple"),
+    StepRecord("mam-osis", main_mam_osis.almost_main, "must come after mam_simple"),
+    StepRecord("decnreub", main_decnreub.almost_main, None),
+    StepRecord("multimark", main_multimark.almost_main, None),
+    StepRecord("wordlist", main_wordlist.almost_main, None),
+    StepRecord("explicit-xataf", main_explicit_xataf.almost_main, None),
+    StepRecord("diff-wsgo", diff_wsgo.almost_main, "relies on download of ws"),
+    StepRecord("parse-ws", parse_ws.almost_main, "relies on download of ws"),
+    StepRecord("ws-bot-proto", ws_bot_proto.almost_main, "relies on download of ws"),
+    StepRecord(
+        "gen-misc-authored-english-documents",
+        main_gen_misc_authored_english_documents.almost_main,
+        None,
+    ),
 ]
 
-_STEP_NAMES = [mod.__name__ for mod, _comment in _STEPS]
+_STEP_NAMES = [step.step_id for step in _STEPS]
 
 
 def main():
@@ -70,19 +92,19 @@ def main():
     )
     args = parser.parse_args()
     resuming = args.resume_from is not None
-    for mod, _comment in _STEPS:
+    for step in _STEPS:
         if resuming:
-            if mod.__name__ == args.resume_from:
+            if step.step_id == args.resume_from:
                 resuming = False
             else:
-                print(f"Skipping {mod.__name__}")
+                print(f"Skipping {step.step_id}")
                 continue
-        mod.almost_main()
+        step.runner()
     #
     # Download of ws (Wikisource) can be accomplished by running:
-    #    main_download_mam_fr_wikisource.py
+    #    py/main_download.py fr-wikisource
     # It must be run in a venv like this:
-    #    .venv/Scripts/python.exe py/main_download_mam_fr_wikisource.py
+    #    .venv/Scripts/python.exe py/main_download.py fr-wikisource
 
 
 if __name__ == "__main__":

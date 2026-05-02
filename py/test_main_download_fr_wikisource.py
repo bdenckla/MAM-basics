@@ -5,7 +5,7 @@ import tempfile
 import unittest
 from unittest import mock
 
-import main_download_fr_wikisource as dlws
+from subcommands import download_wikisource as dlws
 from ws import ws_download_selector as wsds
 
 
@@ -246,13 +246,13 @@ class WikisourceDownloadTests(unittest.TestCase):
         ), mock.patch.object(
             dlws, "_download_book"
         ) as mock_download_book, mock.patch.object(
-            dlws.main_parse_ws, "almost_main"
+            dlws.parse_ws, "almost_main"
         ) as mock_almost_main, mock.patch.object(
             dlws.polite_download, "PoliteDownloader"
         ) as mock_downloader_cls:
             mock_downloader = mock_downloader_cls.return_value.__enter__.return_value
 
-            dlws.main([])
+            dlws.run_from_args(args)
 
         self.assertEqual(2, mock_download_book.call_count)
         self.assertEqual(

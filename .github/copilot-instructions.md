@@ -28,7 +28,7 @@ Do not `cd` into `py/` before running — `../MAM-parsed` would then resolve to 
 
 ## Wikisource Bot Runs — Explicit Pywikibot Config Dir Required
 
-When running `py/main_ws_bot.py`, always provide the pywikibot config
+When running `py/main_ws_bot.py real`, always provide the pywikibot config
 directory explicitly, either by:
 
 - passing `-dir:<path-to-.pywikibot>` (preferred), or
@@ -47,14 +47,14 @@ the working directory).
 Required command shape (Windows):
 
 ```
-.venv\Scripts\python.exe py\main_ws_bot.py --edits <path> -dir:$env:USERPROFILE/.pywikibot
+.venv\Scripts\python.exe py\main_ws_bot.py real --edits <path> -dir:$env:USERPROFILE/.pywikibot
 ```
 
 Alternative:
 
 ```
 $env:PYWIKIBOT_DIR = "$env:USERPROFILE/.pywikibot"
-.venv\Scripts\python.exe py\main_ws_bot.py --edits <path>
+.venv\Scripts\python.exe py\main_ws_bot.py real --edits <path>
 ```
 
 ## Temporary Python Scripts
@@ -157,8 +157,9 @@ Before a series of experiments that might need to be thrown away, ask the user t
 ## File Organization
 
 - All Python code lives under `py/`.
-- **Main scripts** have a `main_` prefix (e.g. `py/main_mam4sef.py`, `py/main_parse_go.py`). These are the entry points run directly.
+- **Main scripts** have a `main_` prefix (e.g. `py/main_mam4sef.py`, `py/main_parse.py`). These are the entry points run directly.
 - **Library modules** live in package directories under `py/` (e.g. `py/mb_cmn/`, `py/mb_xml/`, `py/render_wt/`). These are imported by main scripts.
+- **No `__init__.py` files.** This project does not use `__init__.py` in its package directories. Do not create one.
 
 ## Module Size Limit
 
@@ -173,6 +174,14 @@ When adding a new self-contained feature, implement it as a new module under the
 ## Extraction Structure Preference
 
 When extracting helpers during a refactor, prefer one self-contained helper module per extracted concern rather than grouping multiple unrelated helpers into a generic shared utility module.
+
+## Preserve Documentation During Refactors
+
+Do not drop module docstrings, usage examples, function docstrings, explanatory variable names, or meaningful inline comments during refactors, extractions, moves, renames, or file splits unless they are truly obsolete.
+
+Treat non-executable context as part of the implementation, not optional decoration. When reorganizing code, prefer starting from the original file text and trimming or moving it rather than re-synthesizing a fresh version that preserves behavior but loses explanation.
+
+If you use AST/CST-assisted edits or other automated transforms, verify afterward that comments and docstrings survived. Before deleting or replacing the original file, compare old and new specifically for information loss, not just behavioral equivalence.
 
 ## Cross-Module Private Symbol Access
 

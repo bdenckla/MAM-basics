@@ -4,7 +4,7 @@ from mb_cmn import hebrew_punctuation as hpu
 from mb_cmn import bib_locales as tbn
 from mb_cmn import ws_tmpl2 as wtp
 from py_misc import wt_qere
-from py_misc.my_utils_for_mainish import show_progress_g
+from mb_misc.my_utils_for_mainish import show_progress_g
 from mb_cmn.my_utils import sum_of_map
 from mb_cmn.my_utils import sum_of_seqs
 from py_misc.split import my_re_split
