@@ -42,7 +42,7 @@ Python tools for working with [MAM (Miqra according to the Masora)](https://he.w
 
 ### Wikisource bot
 
-- `main_ws_bot.py real` — edits Hebrew Wikisource pages via pywikibot
+- `main_ws_bot.py real` — edits Hebrew Wikisource pages via pywikibot; by default, then downloads modified chapters to `in/mam-ws` and reparses affected books (use `--no-post-download` to skip)
 - `main_ws_bot.py proto` — prototype version using local file I/O
 
 ### Utilities

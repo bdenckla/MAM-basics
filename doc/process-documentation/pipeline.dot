@@ -83,6 +83,8 @@ digraph mam_pipeline {
     ds_ws           -> diff_wsgo;
     ds_ws           -> misc_3;
     ws_bot          -> src_ws_live;
+    ws_bot          -> ds_ws;
+    ws_bot          -> ds_out [tooltip="via automatic post-download reparse"];
 
     // Sefaria download (standalone)
     download_sef    -> ds_out;

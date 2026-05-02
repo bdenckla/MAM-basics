@@ -26,3 +26,10 @@ MS Word, etc.), but the process just changed, so here goes.
    `MAM-parsed` repo.
 
 8. **Run `py/main_diff.py wsgo`** again to verify that the diffs go empty.
+
+## Note on `main_ws_bot.py real`
+
+`main_ws_bot.py real` now defaults to a post-run local refresh: after it
+edits live Wikisource pages, it downloads the modified chapters into
+`in/mam-ws` and reparses affected books. Use `--no-post-download` only if
+you intentionally want to skip that refresh.

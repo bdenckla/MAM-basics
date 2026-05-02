@@ -49,3 +49,14 @@ pywikibot directory:
 
 - `user-config.py`
 - `password.py`
+
+## Post-run download behavior
+
+By default, after `main_ws_bot.py real` completes its live edits, it
+automatically downloads the modified chapters into `in/mam-ws` and
+reparses affected books.
+
+Use `--no-post-download` only when you intentionally want to skip this
+automatic local refresh:
+
+       .venv\Scripts\python.exe py\main_ws_bot.py real --edits path.json -dir:$env:USERPROFILE/.pywikibot --no-post-download
