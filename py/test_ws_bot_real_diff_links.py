@@ -80,6 +80,16 @@ class WsBotRealDiffLinksTests(unittest.TestCase):
             "%D7%98%D7%A2%D7%9E%D7%99%D7%9D&diff=3009296&oldid=3007998",
         )
 
+    def test_diff_url_supports_single_edit_next_short_form(self):
+        url = mod._diff_url("יהושע כד/טעמים", "next", 3007998)
+
+        self.assertEqual(
+            url,
+            "https://he.wikisource.org/w/index.php?"
+            "title=%D7%99%D7%94%D7%95%D7%A9%D7%A2%20%D7%9B%D7%93%2F"
+            "%D7%98%D7%A2%D7%9E%D7%99%D7%9D&diff=next&oldid=3007998",
+        )
+
     def test_markdown_for_modified_pages(self):
         markdown = mod._modified_chapter_diffs_markdown(
             [

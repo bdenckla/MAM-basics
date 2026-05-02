@@ -12,10 +12,8 @@ Usage (run from repo root):
 
 import argparse
 import os
-import json
 from datetime import datetime
 from urllib import parse
-from urllib import request
 
 import pywikibot
 
@@ -97,12 +95,13 @@ def _run_bot_on_chapter(botctx, bkid, chapter_plan):
                 }
             )
         else:
+            oldrevid = page.latest_revision_id
+            assert oldrevid is not None, title
             page.save(summary)
-            newrevid, oldrevid = _latest_two_revids(title)
             modified_pages.append(
                 {
                     "title": title,
-                    "newrevid": newrevid,
+                    "newrevid": "next",
                     "oldrevid": oldrevid,
                 }
             )
@@ -139,25 +138,6 @@ def _build_run_paths():
 
 def _run_timestamp():
     return datetime.now().strftime("%Y%m%d-%H%M%S-%f")
-
-
-def _latest_two_revids(title):
-    api_url = "https://he.wikisource.org/w/api.php?" + parse.urlencode(
-        {
-            "action": "query",
-            "format": "json",
-            "prop": "revisions",
-            "rvlimit": 2,
-            "rvprop": "ids",
-            "titles": title,
-        }
-    )
-    with request.urlopen(api_url) as response:
-        data = json.loads(response.read().decode("utf-8"))
-    page_obj = next(iter(data["query"]["pages"].values()))
-    revisions = page_obj["revisions"]
-    assert len(revisions) >= 2, (title, data)
-    return revisions[0]["revid"], revisions[1]["revid"]
 
 
 def _diff_url(title, newrevid, oldrevid):
