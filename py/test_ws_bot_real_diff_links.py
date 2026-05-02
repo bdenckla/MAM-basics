@@ -2,10 +2,74 @@
 
 import unittest
 
+from mb_cmn import bib_locales as tbn
+from mb_cmn import hebrew_verse_numerals as hvn
 from subcommands import ws_bot_real as mod
 
 
 class WsBotRealDiffLinksTests(unittest.TestCase):
+    def test_raise_if_identity_mismatches_noop_when_none(self):
+        mod._raise_if_identity_mismatches([])
+
+    def test_raise_if_identity_mismatches_lists_chapters(self):
+        with self.assertRaises(SystemExit) as ctx:
+            mod._raise_if_identity_mismatches(
+                [
+                    {
+                        "bkid": tbn.BK_GENESIS,
+                        "he_chnu": hvn.INT_TO_STR_DIC[7],
+                        "title": "בראשית ז/טעמים",
+                    },
+                    {
+                        "bkid": tbn.BK_PSALMS,
+                        "he_chnu": hvn.INT_TO_STR_DIC[9],
+                        "title": "תהלים ט/טעמים",
+                    },
+                ]
+            )
+
+        msg = str(ctx.exception)
+        self.assertIn("identity-run failed", msg)
+        self.assertIn("- Genesis chapter 7 (בראשית ז/טעמים)", msg)
+        self.assertIn("- Psalms chapter 9 (תהלים ט/טעמים)", msg)
+
+    def test_build_run_paths_layout(self):
+        run_paths = mod._build_run_paths()
+        run_root = run_paths["run-root"].replace("\\", "/")
+
+        self.assertRegex(
+            run_root,
+            r"^\.novc/mam-ws-bot-real-runs/\d{8}-\d{6}-\d{6}$",
+        )
+        self.assertEqual(
+            run_paths["chapters-dir"].replace("\\", "/"),
+            f"{run_root}/chapters",
+        )
+        self.assertEqual(
+            run_paths["warnings"].replace("\\", "/"),
+            f"{run_root}/misc/warnings.json",
+        )
+        self.assertEqual(
+            run_paths["modified-chapters"].replace("\\", "/"),
+            f"{run_root}/misc/modified-chapters.json",
+        )
+        self.assertEqual(
+            run_paths["modified-chapter-diffs-md"].replace("\\", "/"),
+            f"{run_root}/misc/modified-chapter-diffs.md",
+        )
+
+    def test_chapter_out_filename_non_psalms_uses_2_digit_padding(self):
+        self.assertEqual(
+            mod._chapter_out_filename(tbn.BK_GENESIS, hvn.INT_TO_STR_DIC[7]),
+            "A1-Genesis-07.json",
+        )
+
+    def test_chapter_out_filename_psalms_uses_3_digit_padding(self):
+        self.assertEqual(
+            mod._chapter_out_filename(tbn.BK_PSALMS, hvn.INT_TO_STR_DIC[9]),
+            "D1-Psalms-009.json",
+        )
+
     def test_diff_url_matches_expected_shape(self):
         url = mod._diff_url("שמואל ב יא/טעמים", 3009296, 3007998)
 

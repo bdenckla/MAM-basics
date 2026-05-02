@@ -33,3 +33,7 @@ MS Word, etc.), but the process just changed, so here goes.
 edits live Wikisource pages, it downloads the modified chapters into
 `in/mam-ws` and reparses affected books. Use `--no-post-download` only if
 you intentionally want to skip that refresh.
+
+Run artifacts for `main_ws_bot.py real` are now isolated under
+`.novc/mam-ws-bot-real-runs/<timestamp>/`, with per-chapter JSON files in
+`chapters/` and warnings/diff metadata in `misc/`.

@@ -60,3 +60,25 @@ Use `--no-post-download` only when you intentionally want to skip this
 automatic local refresh:
 
        .venv\Scripts\python.exe py\main_ws_bot.py real --edits path.json -dir:$env:USERPROFILE/.pywikibot --no-post-download
+
+For process/idempotence checks, use `--identity-run`:
+
+       .venv\Scripts\python.exe py\main_ws_bot.py real --edits path.json -dir:$env:USERPROFILE/.pywikibot --identity-run
+
+`--identity-run` does **not** save live pages. It processes chapters and
+fails at the end if any chapter text would change.
+
+## Real-run artifact layout
+
+Each `main_ws_bot.py real` run now writes artifacts to a fresh timestamped
+directory under `.novc/mam-ws-bot-real-runs/`:
+
+- `.novc/mam-ws-bot-real-runs/<timestamp>/chapters/`
+- `.novc/mam-ws-bot-real-runs/<timestamp>/misc/warnings.json`
+- `.novc/mam-ws-bot-real-runs/<timestamp>/misc/modified-chapters.json`
+- `.novc/mam-ws-bot-real-runs/<timestamp>/misc/modified-chapter-diffs.md`
+
+The chapter files are per-chapter (not per-book) and use this naming rule:
+
+- Psalms: `D1-Psalms-009.json` (3-digit chapter padding)
+- All other books: `A1-Genesis-07.json` (2-digit chapter padding)

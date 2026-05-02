@@ -7,11 +7,13 @@ Usage (run from repo root):
     .venv/Scripts/python.exe py/main_ws_bot.py real --edits path.json -dir:... --book39 Deuter
     .venv/Scripts/python.exe py/main_ws_bot.py real --edits path.json -dir:... --section6 SifEm
     .venv/Scripts/python.exe py/main_ws_bot.py real --edits path.json -dir:... --no-post-download
+    .venv/Scripts/python.exe py/main_ws_bot.py real --edits path.json -dir:... --identity-run
 """
 
 import argparse
 import os
 import json
+from datetime import datetime
 from urllib import parse
 from urllib import request
 
@@ -19,6 +21,7 @@ import pywikibot
 
 from mb_cmn import bib_locales as tbn
 from mb_cmn import file_io
+from mb_cmn import hebrew_verse_numerals as hvn
 from mb_cmn import mam_bknas_and_std_bknas as mbkn_a_sbkn
 from mb_misc import my_utils_for_mainish as my_utils_fm
 from py_misc import get_wikisource_plan as wsplan
@@ -27,9 +30,23 @@ from ws import ws_bot_edit as wbe
 from ws import ws_download_selector as wsds
 
 
-def run(edits_path, book_plans, pywikibot_args, post_download=True):
+def run(
+    edits_path,
+    book_plans,
+    pywikibot_args,
+    post_download=True,
+    identity_run=False,
+):
     """Use a bot to process chapters of Hebrew Wikisource."""
     _assert_pywikibot_dir_configured(pywikibot_args)
+    run_paths = _build_run_paths()
+    my_utils_fm.show_progress_g(__file__, "run-artifacts", run_paths["run-root"])
+    if identity_run and post_download:
+        my_utils_fm.show_progress_g(
+            __file__,
+            "identity-run",
+            "post-download disabled during identity-run",
+        )
     edits_ctx = wbe.load_edits(edits_path)
     summary = edits_ctx["summary"]
     assert summary
@@ -39,40 +56,88 @@ def run(edits_path, book_plans, pywikibot_args, post_download=True):
         "botctx-summary": summary,
         "botctx-edits-ctx": edits_ctx,
         "botctx-modified-pages": [],
+        "botctx-run-paths": run_paths,
+        "botctx-identity-run": identity_run,
+        "botctx-identity-mismatches": [],
     }
     for book_plan in book_plans:
         _run_bot_on_book(botctx, book_plan)
-    wbe.write_warnings(edits_ctx, _OUT_PATH_WARNINGS)
-    wbe.write_modified_chapters(edits_ctx, _OUT_PATH_MODIFIED_CHAPTERS)
+    wbe.write_warnings(edits_ctx, run_paths["warnings"])
+    wbe.write_modified_chapters(edits_ctx, run_paths["modified-chapters"])
     _write_modified_chapter_diffs_md(
         botctx["botctx-modified-pages"],
-        _OUT_PATH_MODIFIED_CHAPTER_DIFFS_MD,
+        run_paths["modified-chapter-diffs-md"],
     )
-    if post_download:
-        _download_modified_chapters()
+    _raise_if_identity_mismatches(botctx["botctx-identity-mismatches"])
+    if post_download and not identity_run:
+        _download_modified_chapters(run_paths["modified-chapters"])
 
 
-def _run_bot_on_chapter(botctx, bkid, out_book_contents, chapter_plan):
+def _run_bot_on_chapter(botctx, bkid, chapter_plan):
     he_chnu, title = chapter_plan
     summary = botctx["botctx-summary"]
     edits_ctx = botctx["botctx-edits-ctx"]
     modified_pages = botctx["botctx-modified-pages"]
+    run_paths = botctx["botctx-run-paths"]
+    identity_run = botctx["botctx-identity-run"]
+    identity_mismatches = botctx["botctx-identity-mismatches"]
     site = botctx["botctx-site"]
     page = pywikibot.Page(site, title)
     orig_text = page.text
     page.text = wbe.edit_page_text(edits_ctx, bkid, he_chnu, page.text)
     if page.text != orig_text:
         edits_ctx["modified-chapters"].append((bkid, he_chnu))
-        page.save(summary)
-        newrevid, oldrevid = _latest_two_revids(title)
-        modified_pages.append(
-            {
-                "title": title,
-                "newrevid": newrevid,
-                "oldrevid": oldrevid,
-            }
-        )
-    out_book_contents[he_chnu] = page.text.splitlines()
+        if identity_run:
+            identity_mismatches.append(
+                {
+                    "bkid": bkid,
+                    "he_chnu": he_chnu,
+                    "title": title,
+                }
+            )
+        else:
+            page.save(summary)
+            newrevid, oldrevid = _latest_two_revids(title)
+            modified_pages.append(
+                {
+                    "title": title,
+                    "newrevid": newrevid,
+                    "oldrevid": oldrevid,
+                }
+            )
+    _write_chapter(run_paths["chapters-dir"], bkid, he_chnu, page.text.splitlines())
+
+
+def _raise_if_identity_mismatches(identity_mismatches):
+    if not identity_mismatches:
+        return
+    mismatch_lines = [
+        f"- {entry['bkid']} chapter {hvn.STR_TO_INT_DIC[entry['he_chnu']]} ({entry['title']})"
+        for entry in identity_mismatches
+    ]
+    raise SystemExit(
+        "identity-run failed: the following chapters would change:\n"
+        + "\n".join(mismatch_lines)
+    )
+
+
+def _build_run_paths():
+    run_root = os.path.join(_REAL_RUNS_ROOT, _run_timestamp())
+    chapters_dir = os.path.join(run_root, "chapters")
+    misc_dir = os.path.join(run_root, "misc")
+    return {
+        "run-root": run_root,
+        "chapters-dir": chapters_dir,
+        "warnings": os.path.join(misc_dir, "warnings.json"),
+        "modified-chapters": os.path.join(misc_dir, "modified-chapters.json"),
+        "modified-chapter-diffs-md": os.path.join(
+            misc_dir, "modified-chapter-diffs.md"
+        ),
+    }
+
+
+def _run_timestamp():
+    return datetime.now().strftime("%Y%m%d-%H%M%S-%f")
 
 
 def _latest_two_revids(title):
@@ -121,22 +186,29 @@ def _write_text(text, outfp):
     outfp.write(text)
 
 
-def _write_book(book_contents, he_bn_sbn):
-    # he_bn_sbn: Hebrew book name and sub-book name (a pair) (aka mam_he_book_name_pair)
-    bkid = mbkn_a_sbkn.MAM_HBNP_TO_BK39ID[he_bn_sbn]
+def _chapter_out_filename(bkid, he_chnu):
     osdf = tbn.ordered_short_dash_full_39(bkid)
-    out_path = f"{_OUT_PATH_BOOKS}/{osdf}.json"
+    chapter = hvn.STR_TO_INT_DIC[he_chnu]
+    return f"{osdf}-{chapter:0{_chapter_pad_width(bkid)}d}.json"
+
+
+def _chapter_pad_width(bkid):
+    if bkid == tbn.BK_PSALMS:
+        return 3
+    return 2
+
+
+def _write_chapter(chapters_dir, bkid, he_chnu, chapter_lines):
+    out_path = os.path.join(chapters_dir, _chapter_out_filename(bkid, he_chnu))
     my_utils_fm.show_progress_g(__file__, out_path)
-    file_io.json_dump_to_file_path(book_contents, out_path)
+    file_io.json_dump_to_file_path(chapter_lines, out_path)
 
 
 def _run_bot_on_book(botctx, book_plan):
     he_bn_sbn, _he_chnus = book_plan
     bkid = mbkn_a_sbkn.MAM_HBNP_TO_BK39ID[he_bn_sbn]
-    book_contents = {}
     for chapter_plan in wsplan.get_chapter_plans(book_plan):
-        _run_bot_on_chapter(botctx, bkid, book_contents, chapter_plan)
-    _write_book(book_contents, he_bn_sbn)
+        _run_bot_on_chapter(botctx, bkid, chapter_plan)
 
 
 def _assert_pywikibot_dir_configured(pywikibot_args):
@@ -184,11 +256,11 @@ def _assert_pywikibot_auth_files_present(pywikibot_dir):
         raise SystemExit(f"Missing {password_path}. See py/ws/pywikibot-setup.md")
 
 
-def _download_modified_chapters():
+def _download_modified_chapters(modified_chapters_path):
     selector_args = argparse.Namespace(
         book39=None,
         chapter=None,
-        book_chapters_json=_OUT_PATH_MODIFIED_CHAPTERS,
+        book_chapters_json=modified_chapters_path,
         section6=None,
     )
     modified_book_plans = wsds.selected_book_plans(selector_args)
@@ -198,13 +270,9 @@ def _download_modified_chapters():
     my_utils_fm.show_progress_g(
         __file__,
         "post-download",
-        _OUT_PATH_MODIFIED_CHAPTERS,
+        modified_chapters_path,
     )
     download_wikisource.run(modified_book_plans)
 
 
-_OUT_PATH_BOOKS = "out/mam-ws-bot/real"
-_OUT_PATH_MISC = "out/mam-ws-bot/real-misc"
-_OUT_PATH_WARNINGS = f"{_OUT_PATH_MISC}/warnings.json"
-_OUT_PATH_MODIFIED_CHAPTERS = f"{_OUT_PATH_MISC}/modified-chapters.json"
-_OUT_PATH_MODIFIED_CHAPTER_DIFFS_MD = f"{_OUT_PATH_MISC}/modified-chapter-diffs.md"
+_REAL_RUNS_ROOT = ".novc/mam-ws-bot-real-runs"

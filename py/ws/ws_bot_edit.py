@@ -7,21 +7,26 @@ The JSON file has:
                 (used only for per-occurrence kinds; omit or set to {}
                 for global-transform kinds)
 
-For "meteg-removal" (a per-occurrence kind):
+For "meteg-removal" (a chapter-targeted kind):
   Each edit object has:
     "ch"      : Hebrew chapter key
     "old"     : old string that must appear exactly once in the chapter
     "comment" : (optional) human-readable note
   The replacement removes the first meteg (U+05BD) from old_string.
 
-For "kq-trivial-to-kq-trivial-2" (a global-transform kind):
+For "kq-trivial-to-kq-trivial-2" (an untargeted kind):
   Replaces every {{קו"כ-אם}} call with {{מ:קו"כ-אם-2}} across all
   chapters, via a full cif2 AST traversal. No per-occurrence entries
   are needed; "edits" may be omitted or set to {}.
 
-For "kq-trivial-2-rename-extra-alef-sug" (a global-transform kind):
+For "kq-trivial-2-rename-extra-alef-sug" (an untargeted kind):
     Renames סוג=אל"ף מיותרת to סוג=אל"ף נחה באמצע תיבה ולא נקראת
     on {{מ:קו"כ-אם-2}} calls.
+
+Terminology:
+    - chapter-targeted: explicit edit objects keyed by chapter
+    - untargeted: no explicit per-chapter edit list; transform runs on each
+        selected chapter
 
 See ws_bot_edit_history.md for a record of previous bots.
 The immediately preceding bot is preserved as
@@ -43,11 +48,11 @@ def _meteg_removal(old):
     return old.replace(hpo.MTGOSLQ, "", 1)
 
 
-_EDIT_KIND_FNS = {
+_CHAPTER_TARGETED_EDIT_KIND_FNS = {
     "meteg-removal": _meteg_removal,
 }
 
-_GLOBAL_TRANSFORM_KINDS = {
+_UNTARGETED_EDIT_KINDS = {
     "kq-trivial-to-kq-trivial-2": {
         "fn": kq2.edit_page_text,
         "get_warnings": kq2.get_warnings,
@@ -78,8 +83,8 @@ def load_edits(json_path):
         spec = json.load(f)
     summary = spec["summary"]
     edit_kind = spec["edit-kind"]
-    if edit_kind in _GLOBAL_TRANSFORM_KINDS:
-        gt = _GLOBAL_TRANSFORM_KINDS[edit_kind]
+    if edit_kind in _UNTARGETED_EDIT_KINDS:
+        gt = _UNTARGETED_EDIT_KINDS[edit_kind]
         return {
             "summary": summary,
             "edits-by-bk-ch": {},
@@ -87,7 +92,7 @@ def load_edits(json_path):
             "get-warnings": gt["get_warnings"],
             "modified-chapters": [],
         }
-    edit_kind_fn = _EDIT_KIND_FNS[edit_kind]
+    edit_kind_fn = _CHAPTER_TARGETED_EDIT_KIND_FNS[edit_kind]
     edits_by_bk_ch = _build_edits_by_book_and_chapter(edit_kind_fn, spec["edits"])
     return {
         "summary": summary,
