@@ -32,6 +32,7 @@ def almost_main(edits_json_path=None, book_plans=None):
         edits_ctx = wbe.no_edits()
     if book_plans is None:
         book_plans = list(wsds.selected_book_plans(_default_selector_args()))
+    wbe.assert_book_plans_within_target_set(edits_ctx, book_plans)
     for book_plan in book_plans:
         he_bn_sbn, requested_he_chnus = book_plan
         bk39id = mbkn_a_sbkn.MAM_HBNP_TO_BK39ID[he_bn_sbn]

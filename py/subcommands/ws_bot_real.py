@@ -48,6 +48,7 @@ def run(
             "post-download disabled during identity-run",
         )
     edits_ctx = wbe.load_edits(edits_path)
+    wbe.assert_book_plans_within_target_set(edits_ctx, book_plans)
     summary = edits_ctx["summary"]
     assert summary
     site = pywikibot.Site("he", "wikisource", "BDencklaBot")

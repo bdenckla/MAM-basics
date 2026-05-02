@@ -3,6 +3,7 @@
 import unittest
 
 from ws import ws_bot_edit as mod
+from ws import ws_download_selector as wsds
 
 
 class WsBotEditIssue56RafehTests(unittest.TestCase):
@@ -23,6 +24,29 @@ class WsBotEditIssue56RafehTests(unittest.TestCase):
 
         with self.assertRaises(AssertionError):
             mod.edit_page_text(edits_ctx, "Psalms", "לד", "no target here")
+
+    def test_target_set_guard_allows_subset(self):
+        edits_ctx = mod.load_edits(
+            "in/mam-ws-bot-edits/issue-56-add-rafeh-to-yireu.json"
+        )
+        book_plans = wsds.selected_book_plans(
+            wsds.parse_args(["--book39", "Joshua", "--chapter", "24"])
+        )
+
+        mod.assert_book_plans_within_target_set(edits_ctx, book_plans)
+
+    def test_target_set_guard_rejects_outside_chapter(self):
+        edits_ctx = mod.load_edits(
+            "in/mam-ws-bot-edits/issue-56-add-rafeh-to-yireu.json"
+        )
+        book_plans = wsds.selected_book_plans(
+            wsds.parse_args(["--book39", "Genesis", "--chapter", "1"])
+        )
+
+        with self.assertRaises(SystemExit) as ctx:
+            mod.assert_book_plans_within_target_set(edits_ctx, book_plans)
+
+        self.assertIn("outside this edit spec target set", str(ctx.exception))
 
 
 if __name__ == "__main__":

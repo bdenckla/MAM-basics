@@ -45,6 +45,7 @@ import json
 from mb_cmn import file_io
 from mb_cmn import hebrew_verse_numerals as hvn
 from mb_cmn import hebrew_points as hpo
+from mb_cmn import mam_bknas_and_std_bknas as mbkn_a_sbkn
 from ws import ws_get_bk_in_both_fmts as wsin
 from ws import ws_fmt_2_back_to_wikitext as btw
 from ws import ws_bot_edit_kq_triv_rename_extra_alef_sug as kq2_rename
@@ -89,6 +90,14 @@ def _build_edits_by_book_and_chapter(edit_kind_fn, raw_edits):
     return result
 
 
+def _allowed_book_chapter_pairs(edits_by_bk_ch):
+    return {
+        (bk39id, he_chnu)
+        for bk39id, by_chap in edits_by_bk_ch.items()
+        for he_chnu in by_chap
+    }
+
+
 def load_edits(json_path):
     """Load edit specification from JSON. Returns an edits context dict."""
     with open(json_path, "r", encoding="utf-8") as f:
@@ -100,6 +109,8 @@ def load_edits(json_path):
         return {
             "summary": summary,
             "edits-by-bk-ch": {},
+            "is-chapter-targeted": False,
+            "allowed-book-chapter-pairs": set(),
             "global-page-transform": gt["fn"],
             "get-warnings": gt["get_warnings"],
             "modified-chapters": [],
@@ -109,13 +120,59 @@ def load_edits(json_path):
     return {
         "summary": summary,
         "edits-by-bk-ch": edits_by_bk_ch,
+        "is-chapter-targeted": True,
+        "allowed-book-chapter-pairs": _allowed_book_chapter_pairs(edits_by_bk_ch),
         "modified-chapters": [],
     }
 
 
 def no_edits():
     """Return an empty edits context (no-op pass-through)."""
-    return {"summary": "", "edits-by-bk-ch": {}, "modified-chapters": []}
+    return {
+        "summary": "",
+        "edits-by-bk-ch": {},
+        "is-chapter-targeted": False,
+        "allowed-book-chapter-pairs": set(),
+        "modified-chapters": [],
+    }
+
+
+def _selected_book_chapter_pairs(book_plans):
+    selected = set()
+    for he_bn_sbn, he_chnus in book_plans:
+        bk39id = mbkn_a_sbkn.MAM_HBNP_TO_BK39ID[he_bn_sbn]
+        for he_chnu in he_chnus:
+            selected.add((bk39id, he_chnu))
+    return selected
+
+
+def _pairs_with_int_chapters(pairs):
+    return sorted((bk39id, hvn.STR_TO_INT_DIC[he_chnu]) for bk39id, he_chnu in pairs)
+
+
+def _format_pairs_for_error(pairs, max_show=12):
+    pairs_i = _pairs_with_int_chapters(pairs)
+    preview = ", ".join(f"{bk39id} {chapter}" for bk39id, chapter in pairs_i[:max_show])
+    if len(pairs_i) > max_show:
+        preview += f", ... (+{len(pairs_i) - max_show} more)"
+    return f"{len(pairs_i)} chapter(s): {preview}"
+
+
+def assert_book_plans_within_target_set(edits_ctx, book_plans):
+    """Fail if a chapter-targeted edit is requested outside its target set."""
+    if not edits_ctx.get("is-chapter-targeted", False):
+        return
+    selected = _selected_book_chapter_pairs(book_plans)
+    allowed = edits_ctx["allowed-book-chapter-pairs"]
+    outside = selected - allowed
+    if not outside:
+        return
+    outside_txt = _format_pairs_for_error(outside)
+    allowed_txt = _format_pairs_for_error(allowed)
+    raise SystemExit(
+        "Selector includes chapters outside this edit spec target set: "
+        f"{outside_txt}. Allowed chapters are: {allowed_txt}"
+    )
 
 
 def _get_chapter_edits(edits_ctx, bk39id, he_chnu):
