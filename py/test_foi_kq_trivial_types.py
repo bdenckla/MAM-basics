@@ -195,6 +195,25 @@ class TrivialKqFoiQualificationTests(unittest.TestCase):
 
 
 class TrivialKqSugReconciliationTests(unittest.TestCase):
+    def test_extra_alef_canonical_sug_text_matches_issue_70(self):
+        self.assertEqual(
+            kqs.SUG_TEXT_BY_SUBTYPE[ktt.EXTRA_ALEF],
+            kqs.EXTRA_ALEF_SUG_NEW,
+        )
+
+    def test_reconcile_legacy_extra_alef_sug_text_still_matches(self):
+        tmpl = _trivial_tmpl(
+            "מָרִ֕אי",
+            "מראי",
+            "מָרִ֕י",
+            sug=kqs.EXTRA_ALEF_SUG_OLD,
+        )
+
+        final_subtype, diagnostics = kqs.reconcile_subtype_for_foi(tmpl)
+
+        self.assertEqual(final_subtype, ktt.EXTRA_ALEF)
+        self.assertEqual(diagnostics, {})
+
     def test_reconcile_agreement_keeps_named_subtype(self):
         tmpl = _trivial_tmpl(
             "הַהִ֖וא",

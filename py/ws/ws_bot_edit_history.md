@@ -102,13 +102,21 @@ infrastructure has changed enough to make them misleading examples:
 - **JSON files:** `in/mam-ws-bot-edits/kq-trivial-to-2.json`
 - **Preserved as:** `ws_bot_edit_old_kq_triv_to_2.py`
 
-### Trivial k/q subtype tagging — current
+### Trivial k/q subtype tagging
 - **Purpose:** Add `סוג=` labels to `{{מ:קו"כ-אם-2}}` for five named
   trivial k/q subtypes (`QyV`, `extra-alef`, `hi-spelled-hu`,
   `n3rh-spelled-n3r`, `xolam-he`) while leaving subtype `misc` untagged,
   with fail-fast FOI concordance checks.
 - **Edit level:** Full cif2 AST traversal via candlers/vandlers/wandlers.
 - **JSON files:** `in/mam-ws-bot-edits/kq-trivial-2-add-type-tags.json`
+- **Preserved as:** `ws_bot_edit_old_kq_triv_add_type.py`
+
+### Rename extra-alef סוג label — current
+- **Purpose:** Rename the trivial-k/q extra-alef סוג label from
+  `אל"ף מיותרת` to `אל"ף נחה באמצע תיבה ולא נקראת` per MAM-basics#70.
+- **Edit level:** Raw page text global replacement on
+  `{{מ:קו"כ-אם-2|...|סוג=...}}` values.
+- **JSON files:** `in/mam-ws-bot-edits/kq-trivial-2-rename-extra-alef-sug.json`
 
 ## How to look up the original code
 

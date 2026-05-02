@@ -12,17 +12,21 @@ SUG_STATUS_UNRECOGNIZED = "unrecognized"
 
 UNRECOGNIZED_SUG_CAT_PREFIX = "unrecognized:"
 
+EXTRA_ALEF_SUG_OLD = 'אל"ף מיותרת'
+EXTRA_ALEF_SUG_NEW = 'אל"ף נחה באמצע תיבה ולא נקראת'
+
 
 # Mapping reused by FOI reconciliation and ws bot add-type behavior.
 SUG_TEXT_BY_SUBTYPE = {
     ktt.QYV: 'כתיב חסר יו"ד בסיומת של קמץ ואחריו וי"ו',
-    ktt.EXTRA_ALEF: 'אל"ף מיותרת',
+    ktt.EXTRA_ALEF: EXTRA_ALEF_SUG_NEW,
     ktt.HI_SPELLED_HU: "כתיב הוא קרי היא",
     ktt.N3RH_SPELLED_N3R: "כתיב נער קרי נערה",
     ktt.XOLAM_HE: 'כתיב ה"א בסיומת של חולם',
 }
 
 SUBTYPE_BY_SUG_TEXT = {text: subtype for subtype, text in SUG_TEXT_BY_SUBTYPE.items()}
+SUBTYPE_BY_SUG_TEXT[EXTRA_ALEF_SUG_OLD] = ktt.EXTRA_ALEF
 
 
 def sug_text_for_subtype(subtype):
