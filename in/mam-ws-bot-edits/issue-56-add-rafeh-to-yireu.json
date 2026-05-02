@@ -1,0 +1,30 @@
+{
+  "summary": "Add rafeh to three remaining יראו alef-shuruq forms, per MAM-basics#56",
+  "edit-kind": "explicit-replacement",
+  "edits": {
+    "Joshua": [
+      {
+        "ch": "כד",
+        "old": "יְר֧אוּ",
+        "new": "יְר֧אֿוּ",
+        "comment": "Joshua 24:14"
+      }
+    ],
+    "1Samuel": [
+      {
+        "ch": "יב",
+        "old": "יְר֣אוּ",
+        "new": "יְר֣אֿוּ",
+        "comment": "1 Samuel 12:24"
+      }
+    ],
+    "Psalms": [
+      {
+        "ch": "לד",
+        "old": "יְר֣אוּ",
+        "new": "יְר֣אֿוּ",
+        "comment": "Psalms 34:10"
+      }
+    ]
+  }
+}

@@ -14,6 +14,13 @@ For "meteg-removal" (a chapter-targeted kind):
     "comment" : (optional) human-readable note
   The replacement removes the first meteg (U+05BD) from old_string.
 
+For "explicit-replacement" (a chapter-targeted kind):
+    Each edit object has:
+        "ch"      : Hebrew chapter key
+        "old"     : old string that must appear exactly once in the chapter
+        "new"     : replacement string
+        "comment" : (optional) human-readable note
+
 For "kq-trivial-to-kq-trivial-2" (an untargeted kind):
   Replaces every {{קו"כ-אם}} call with {{מ:קו"כ-אם-2}} across all
   chapters, via a full cif2 AST traversal. No per-occurrence entries
@@ -40,16 +47,22 @@ from mb_cmn import hebrew_verse_numerals as hvn
 from mb_cmn import hebrew_points as hpo
 from ws import ws_get_bk_in_both_fmts as wsin
 from ws import ws_fmt_2_back_to_wikitext as btw
-from ws import ws_bot_edit_kq_triv_to_2 as kq2
 from ws import ws_bot_edit_kq_triv_rename_extra_alef_sug as kq2_rename
+from ws import ws_bot_edit_kq_triv_to_2 as kq2
 
 
-def _meteg_removal(old):
-    return old.replace(hpo.MTGOSLQ, "", 1)
+def _meteg_removal(entry):
+    old = entry["old"]
+    return old, old.replace(hpo.MTGOSLQ, "", 1)
+
+
+def _explicit_replacement(entry):
+    return entry["old"], entry["new"]
 
 
 _CHAPTER_TARGETED_EDIT_KIND_FNS = {
     "meteg-removal": _meteg_removal,
+    "explicit-replacement": _explicit_replacement,
 }
 
 _UNTARGETED_EDIT_KINDS = {
@@ -70,8 +83,7 @@ def _build_edits_by_book_and_chapter(edit_kind_fn, raw_edits):
     for bk39id, edit_list in raw_edits.items():
         by_chap = {}
         for entry in edit_list:
-            old = entry["old"]
-            new = edit_kind_fn(old)
+            old, new = edit_kind_fn(entry)
             by_chap.setdefault(entry["ch"], []).append((old, new))
         result[bk39id] = by_chap
     return result

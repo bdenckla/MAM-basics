@@ -111,12 +111,19 @@ infrastructure has changed enough to make them misleading examples:
 - **JSON files:** `in/mam-ws-bot-edits/kq-trivial-2-add-type-tags.json`
 - **Preserved as:** `ws_bot_edit_old_kq_triv_add_type.py`
 
-### Rename extra-alef סוג label — current
+### Rename extra-alef סוג label
 - **Purpose:** Rename the trivial-k/q extra-alef סוג label from
   `אל"ף מיותרת` to `אל"ף נחה באמצע תיבה ולא נקראת` per MAM-basics#70.
 - **Edit level:** Raw page text global replacement on
   `{{מ:קו"כ-אם-2|...|סוג=...}}` values.
 - **JSON files:** `in/mam-ws-bot-edits/kq-trivial-2-rename-extra-alef-sug.json`
+
+### Add rafeh to three יראו forms — current
+- **Purpose:** Add rafeh (U+05BF) to the three remaining no-rafeh
+  occurrences among the four issue-56 יראו words, leaving 2Sam 11:24 as-is
+  because it already has rafeh.
+- **Edit level:** Chapter-targeted raw page text string replacement.
+- **JSON files:** `in/mam-ws-bot-edits/issue-56-add-rafeh-to-yireu.json`
 
 ## How to look up the original code
 
