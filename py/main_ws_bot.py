@@ -7,6 +7,7 @@ Subcommands:
 Examples:
     .venv/Scripts/python.exe py/main_ws_bot.py proto --edits path.json
     .venv/Scripts/python.exe py/main_ws_bot.py real --edits path.json -dir:$env:USERPROFILE/.pywikibot
+    .venv/Scripts/python.exe py/main_ws_bot.py real --edits path.json -dir:$env:USERPROFILE/.pywikibot --no-post-download
 """
 
 import argparse
@@ -38,6 +39,13 @@ def _build_parser() -> argparse.ArgumentParser:
         help="Edit Hebrew Wikisource pages via pywikibot.",
     )
     real_parser.add_argument("--edits", required=True)
+    real_parser.add_argument(
+        "--no-post-download",
+        action="store_true",
+        help=(
+            "Skip the automatic post-run download of modified chapters " "to in/mam-ws"
+        ),
+    )
     wsds.add_selector_opts(real_parser)
     real_parser.set_defaults(
         func=_run_real,
@@ -60,7 +68,12 @@ def _build_parser() -> argparse.ArgumentParser:
 
 
 def _run_real(args: argparse.Namespace, pywikibot_args) -> None:
-    ws_bot_real.run(args.edits, wsds.selected_book_plans(args), pywikibot_args)
+    ws_bot_real.run(
+        args.edits,
+        wsds.selected_book_plans(args),
+        pywikibot_args,
+        post_download=not args.no_post_download,
+    )
 
 
 def _run_proto(args: argparse.Namespace, _extra_args) -> None:

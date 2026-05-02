@@ -6,8 +6,10 @@ Usage (run from repo root):
     $env:PYWIKIBOT_DIR="$env:USERPROFILE/.pywikibot"; .venv/Scripts/python.exe py/main_ws_bot.py real --edits path.json
     .venv/Scripts/python.exe py/main_ws_bot.py real --edits path.json -dir:... --book39 Deuter
     .venv/Scripts/python.exe py/main_ws_bot.py real --edits path.json -dir:... --section6 SifEm
+    .venv/Scripts/python.exe py/main_ws_bot.py real --edits path.json -dir:... --no-post-download
 """
 
+import argparse
 import os
 import json
 from urllib import parse
@@ -20,10 +22,12 @@ from mb_cmn import file_io
 from mb_cmn import mam_bknas_and_std_bknas as mbkn_a_sbkn
 from mb_misc import my_utils_for_mainish as my_utils_fm
 from py_misc import get_wikisource_plan as wsplan
+from subcommands import download_wikisource
 from ws import ws_bot_edit as wbe
+from ws import ws_download_selector as wsds
 
 
-def run(edits_path, book_plans, pywikibot_args):
+def run(edits_path, book_plans, pywikibot_args, post_download=True):
     """Use a bot to process chapters of Hebrew Wikisource."""
     _assert_pywikibot_dir_configured(pywikibot_args)
     edits_ctx = wbe.load_edits(edits_path)
@@ -44,6 +48,8 @@ def run(edits_path, book_plans, pywikibot_args):
         botctx["botctx-modified-pages"],
         _OUT_PATH_MODIFIED_CHAPTER_DIFFS_MD,
     )
+    if post_download:
+        _download_modified_chapters()
 
 
 def _run_bot_on_chapter(botctx, bkid, out_book_contents, chapter_plan):
@@ -176,6 +182,25 @@ def _assert_pywikibot_auth_files_present(pywikibot_dir):
         raise SystemExit(f"Missing {user_config_path}. See py/ws/pywikibot-setup.md")
     if not os.path.isfile(password_path):
         raise SystemExit(f"Missing {password_path}. See py/ws/pywikibot-setup.md")
+
+
+def _download_modified_chapters():
+    selector_args = argparse.Namespace(
+        book39=None,
+        chapter=None,
+        book_chapters_json=_OUT_PATH_MODIFIED_CHAPTERS,
+        section6=None,
+    )
+    modified_book_plans = wsds.selected_book_plans(selector_args)
+    if not modified_book_plans:
+        my_utils_fm.show_progress_g(__file__, "post-download", "no modified chapters")
+        return
+    my_utils_fm.show_progress_g(
+        __file__,
+        "post-download",
+        _OUT_PATH_MODIFIED_CHAPTERS,
+    )
+    download_wikisource.run(modified_book_plans)
 
 
 _OUT_PATH_BOOKS = "out/mam-ws-bot/real"
