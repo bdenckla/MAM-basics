@@ -7,7 +7,7 @@ from mb_cmn import read_books_from_mam_parsed_plus as plus
 from versification_differences import doc as versification_differences_doc
 
 _CURRENT_DOC_PATH = (
-    Path(__file__).resolve().parents[2]
+    Path(__file__).resolve().parents[3]
     / "MAM-simple"
     / "doc"
     / "versification-differences.md"

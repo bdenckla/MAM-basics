@@ -26,6 +26,23 @@ For execution, all `py/main_*.py` scripts use paths like `../MAM-parsed` that ar
 
 Do not `cd` into `py/` before running — `../MAM-parsed` would then resolve to the wrong location.
 
+## Running Tests — Canonical Harness
+
+Use `py/main_test.py` as the canonical test entrypoint. Test modules now live under `py/tests/test_*.py`.
+
+Run all tests from the repo root:
+
+```
+.venv\Scripts\python.exe py\main_test.py
+```
+
+Run a selected subset with flags (or list available flags):
+
+```
+.venv\Scripts\python.exe py\main_test.py --list
+.venv\Scripts\python.exe py\main_test.py --ws-urls-encoding
+```
+
 ## Wikisource Bot Runs — Explicit Pywikibot Config Dir Required
 
 When running `py/main_ws_bot.py real`, always provide the pywikibot config

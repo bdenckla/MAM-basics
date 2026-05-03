@@ -35,6 +35,23 @@ cd ~/GitRepos/MAM-basics && PYTHONUTF8=1 .venv/Scripts/python.exe py/main_mam_si
 
 **Why the explicit `cd`:** The Bash tool's working directory persists between commands. If a prior command did `cd py && ...`, all subsequent commands run from `py/`, making `../MAM-parsed` resolve to `MAM-basics/MAM-parsed` (wrong) instead of the sibling repo at `GitRepos/MAM-parsed` (correct). The explicit `cd ~/GitRepos/MAM-basics` at the start of each run command resets this reliably.
 
+## Running Tests — Canonical Harness
+
+Use `py/main_test.py` as the canonical test entrypoint. Test modules now live under `py/tests/test_*.py`.
+
+Run all tests from the repo root:
+
+```bash
+cd ~/GitRepos/MAM-basics && .venv/Scripts/python.exe py/main_test.py
+```
+
+Run a selected subset with flags (or list available flags):
+
+```bash
+cd ~/GitRepos/MAM-basics && .venv/Scripts/python.exe py/main_test.py --list
+cd ~/GitRepos/MAM-basics && .venv/Scripts/python.exe py/main_test.py --ws-urls-encoding
+```
+
 ## No `python -c` — Use `.novc/` Scripts Instead
 
 **Never use `python -c`** for any reason, not even for short one-liners. Always write a temporary `.py` file in `./.novc/` (which is gitignored) and run it:

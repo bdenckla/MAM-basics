@@ -82,6 +82,19 @@ Run scripts from the repo root (not from `py/`):
 .venv/Scripts/python.exe py/main_mam_simple.py
 ```
 
+Run tests through the unified harness:
+
+```bash
+.venv/Scripts/python.exe py/main_test.py
+```
+
+Optional: list or run selected test groups:
+
+```bash
+.venv/Scripts/python.exe py/main_test.py --list
+.venv/Scripts/python.exe py/main_test.py --ws-urls-encoding
+```
+
 ## Repository layout
 
 ```
