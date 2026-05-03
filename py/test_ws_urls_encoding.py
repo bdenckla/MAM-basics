@@ -11,16 +11,16 @@ class WsUrlsEncodingTests(unittest.TestCase):
     def test_hebrew_root_url_shape(self):
         self.assertEqual(
             ws_urls.HEBREW,
-            "https://he.wikisource.org/wiki/%D7%9E%D7%A9%D7%AA%D7%9E%D7%A9:Dovi/"
-            "%D7%9E%D7%A7%D7%A8%D7%90_%D7%A2%D7%9C_%D7%A4%D7%99_%D7%94%D7%9E%D7%A1%D7%95%D7%A8%D7%94",
+            "https://he.wikisource.org/wiki/%D7%9E%D7%A7%D7%A8%D7%90_%D7%A2%D7%9C_%D7%A4%D7%99_"
+            "%D7%94%D7%9E%D7%A1%D7%95%D7%A8%D7%94",
         )
 
     def test_introduction_and_report_urls(self):
         self.assertEqual(
             sef_header._INTRODUCTION_URL,
-            "https://he.wikisource.org/wiki/%D7%9E%D7%A9%D7%AA%D7%9E%D7%A9:Dovi/"
-            "%D7%9E%D7%A7%D7%A8%D7%90_%D7%A2%D7%9C_%D7%A4%D7%99_%D7%94%D7%9E%D7%A1%D7%95%D7%A8%D7%94/"
-            "%D7%9E%D7%99%D7%93%D7%A2_%D7%A2%D7%9C_%D7%9E%D7%94%D7%93%D7%95%D7%A8%D7%94_%D7%96%D7%95",
+            "https://he.wikisource.org/wiki/%D7%95%D7%99%D7%A7%D7%99%D7%98%D7%A7%D7%A1%D7%98:"
+            "%D7%9E%D7%91%D7%95%D7%90_%D7%9C%D7%9E%D7%A7%D7%A8%D7%90_%D7%A2%D7%9C_%D7%A4%D7%99_"
+            "%D7%94%D7%9E%D7%A1%D7%95%D7%A8%D7%94",
         )
         self.assertEqual(
             sef_header._REPORT_URL,
