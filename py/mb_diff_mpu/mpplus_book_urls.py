@@ -7,9 +7,9 @@ Exports:
 """
 
 from mb_cmn import bib_locales as tbn
+from mb_cmn.he_wikisource_url import he_taamim_url
 from mb_cmn import hebrew_verse_numerals as hvn
 from mb_cmn.mam_bknas_and_std_bknas import he_bk39_name
-from mb_cmn.url_percent import pct_path_component
 
 
 def mam_with_doc_url(book, chapter, verse):
@@ -22,8 +22,7 @@ def wikisource_url(book, chapter):
     """Build a Hebrew Wikisource te'amim URL for a canonical bk39 id."""
     he_chnu = hvn.INT_TO_STR_DIC[chapter]
     name_he = he_bk39_name(book)
-    page_title = pct_path_component(f"{name_he}_{he_chnu}/טעמים", safe="/")
-    return f"https://he.wikisource.org/wiki/{page_title}"
+    return he_taamim_url(name_he, he_chnu)
 
 
 def ref_str(diff):

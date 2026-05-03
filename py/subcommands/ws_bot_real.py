@@ -20,8 +20,8 @@ import pywikibot
 from mb_cmn import bib_locales as tbn
 from mb_cmn import file_io
 from mb_cmn import hebrew_verse_numerals as hvn
+from mb_cmn.he_wikisource_url import he_diff_url
 from mb_cmn import mam_bknas_and_std_bknas as mbkn_a_sbkn
-from mb_cmn.url_percent import pct_path_component
 from mb_misc import my_utils_for_mainish as my_utils_fm
 from py_misc import get_wikisource_plan as wsplan
 from subcommands import download_wikisource
@@ -158,11 +158,7 @@ def _run_timestamp():
 
 
 def _diff_url(title, newrevid, oldrevid):
-    title_enc = pct_path_component(title)
-    return (
-        "https://he.wikisource.org/w/index.php?"
-        f"title={title_enc}&diff={newrevid}&oldid={oldrevid}"
-    )
+    return he_diff_url(title, newrevid, oldrevid)
 
 
 def _modified_chapter_diffs_markdown(modified_pages):
