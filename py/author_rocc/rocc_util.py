@@ -1,5 +1,6 @@
 from author_util import author
 from mb_misc import mb_html
+from mb_misc import ws_urls
 
 
 def aeq(edition):
@@ -91,7 +92,10 @@ _IA_URL_SBB = "https://archive.org/details/psalmshebrewtext0000unse/page/n109/mo
 _Y_30_SECTION_TITLE = "“תיבה הראויה להיות מוקפת (מקף אפור)”"
 _Y_30_CHAP_2_ANC = mb_html.anchor_h(
     "Chapter 2",
-    "https://he.wikisource.org/wiki/%D7%95%D7%99%D7%A7%D7%99%D7%98%D7%A7%D7%A1%D7%98:%D7%9E%D7%91%D7%95%D7%90_%D7%9C%D7%9E%D7%A7%D7%A8%D7%90_%D7%A2%D7%9C_%D7%A4%D7%99_%D7%94%D7%9E%D7%A1%D7%95%D7%A8%D7%94/%D7%A4%D7%A8%D7%A7_%D7%91#%D7%94%D7%A1%D7%91%D7%A8_%D7%A7%D7%A6%D7%A8_%D7%A2%D7%9C_%D7%A2%D7%99%D7%A6%D7%95%D7%91_%D7%94%D7%9E%D7%A7%D7%A8%D7%90_%D7%91%D7%9E%D7%94%D7%93%D7%95%D7%A8%D7%AA%D7%A0%D7%95",
+    ws_urls.he_url(
+        "ויקיטקסט:מבוא_למקרא_על_פי_המסורה/פרק_ב",
+        "הסבר_קצר_על_עיצוב_המקרא_במהדורתנו",
+    ),
 )
 MAM_SPECIAL_MAQAF = [
     ["This kind of $maqaf is special because it (like many features of $MAM)"],
