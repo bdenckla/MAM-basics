@@ -16,6 +16,7 @@ from mb_cmn import file_io
 from mb_cmn import mam_bknas_and_std_bknas as mbkn_a_sbkn
 from mb_cmn import polite_download
 from mb_misc import my_utils_for_mainish as my_utils_fm
+from mb_misc import ws_urls
 from py_misc import get_wikisource_plan as wsplan
 from subcommands import parse_ws
 from ws import ws_download_selector as wsds
@@ -171,9 +172,7 @@ def run_from_args(args):
 
 
 _OUT_PATH = "in/mam-ws"
-_WIKISOURCE_USER_PAGE = (
-    "https://he.wikisource.org/wiki/%D7%9E%D7%A9%D7%AA%D7%9E%D7%A9:Bdenckla"
-)
+_WIKISOURCE_USER_PAGE = ws_urls.he_url("משתמש:Bdenckla")
 _MAX_TITLES_PER_REQUEST = 20
 _WIKISOURCE_API_PHP = "https://he.wikisource.org/w/api.php"
 _WIKISOURCE_DOWNLOAD_CONFIG = polite_download.PoliteDownloadConfig(

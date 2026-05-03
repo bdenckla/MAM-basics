@@ -13,6 +13,7 @@ The English translation is original to this project.
 
 from mb_misc import mb_html
 from author_util import author
+from author import he_ws_intro_to_mam_pasleg_foi_url as plfoi
 from author import he_ws_intro_to_mam_pasleg_footnotes as plfn
 
 # Footnotes are numbered as B+N (N=0,1,...,26). B is the number of the
@@ -293,19 +294,8 @@ _Y_C11_E = [
     "(Gen. 7:23).",
     _footnote_marker(6, "e"),
 ]
-_FOI_PL = "https://bdenckla.github.io/MAM-with-doc/foi/foi-pasoleg-1.html"
-_FOI_PL_2INT_DA = (
-    _FOI_PL + "#intro-%E2%85%83-leg...(rev)"
-    "%C2%ABspace%C2%BB"
-    "with%C2%ABspace%C2%BB2%C2%ABspace%C2%BB"
-    "(da,%E2%85%83)%C2%ABspace%C2%BBintervening"
-)
-_FOI_PL_2INT_LEG = (
-    _FOI_PL + "#intro-%E2%85%83-leg...(rev)"
-    "%C2%ABspace%C2%BB"
-    "with%C2%ABspace%C2%BB2%C2%ABspace%C2%BB"
-    "(%E2%85%83-leg,%E2%85%83)%C2%ABspace%C2%BBintervening"
-)
+_FOI_PL_2INT_DA = plfoi.foi_pasoleg_intro_leg_rev_url(2, "(da,⅃)")
+_FOI_PL_2INT_LEG = plfoi.foi_pasoleg_intro_leg_rev_url(2, "(⅃-leg,⅃)")
 _Y_C12_E = [
     _ait(
         [

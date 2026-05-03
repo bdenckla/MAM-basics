@@ -6,6 +6,7 @@ Footnotes are indexed 0–26, corresponding to B+0 through B+26 in pasleg.py
 
 from mb_misc import mb_html
 from author_util import author
+from author import he_ws_intro_to_mam_pasleg_foi_url as plfoi
 
 
 def _ait(contents):
@@ -366,11 +367,7 @@ _FTNT_8_E_NOTES = [
     " Daniel 11:6 (various manuscripts);",
     " 2 Chr. 18:3 (various manuscripts).",
 ]
-_FOI_PL = "https://bdenckla.github.io/MAM-with-doc/foi/foi-pasoleg-1.html"
-_FOI_PL_0INT = (
-    _FOI_PL + "#intro-%E2%85%83-leg...(rev)"
-    "%C2%ABspace%C2%BBwith%C2%ABspace%C2%BB0%C2%ABspace%C2%BBintervening"
-)
+_FOI_PL_0INT = plfoi.foi_pasoleg_intro_leg_rev_url(0)
 _FTNT_8_E_FOI = _ait(
     [
         "For a listing of this pattern in the $MAM data, see the ",

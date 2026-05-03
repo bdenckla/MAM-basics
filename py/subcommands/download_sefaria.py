@@ -8,6 +8,7 @@ Usage:
 
 from mb_cmn import file_io
 from mb_cmn import polite_download
+from mb_cmn.url_percent import pct_path_component
 from mb_misc import my_utils_for_mainish as my_utils_fm
 from mb_sefaria import sef_cmn
 
@@ -16,8 +17,9 @@ def _download_book(sebn, downloader):
     # sebn: Sefaria English Book Name
     base = "https://www.sefaria.org/download/version"
     lang = "he"
-    version = "Miqra%20according%20to%20the%20Masorah"
-    csv_url = f"{base}/{sebn}%20-%20{lang}%20-%20{version}.csv"
+    version = "Miqra according to the Masorah"
+    csv_name = f"{sebn} - {lang} - {version}.csv"
+    csv_url = f"{base}/{pct_path_component(csv_name)}"
     out_path = f"in/mam-from-sefaria/{sebn}.csv"
     my_utils_fm.show_progress_g(__file__, out_path)
     text = downloader.get_text(csv_url)
