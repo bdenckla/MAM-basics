@@ -130,7 +130,7 @@ def render_psalm_5v9_mpplus_step_1():
 
 
 def render_psalm_5v9_mpplus_step_2():
-    """Render slide-psalm-5v9-mpplus-step-2.png: 2-col with מ:לגרמיה-2 highlighted."""
+    """Render slide-psalm-5v9-mpplus-step-2.png: 2-col with {"tmpl_name": "מ:לגרמיה-2"} highlighted."""
     json_snippet_browser.render_json_snippet_browser(
         IMAGES_DIR,
         DECK_NAME,
@@ -143,8 +143,27 @@ def render_psalm_5v9_mpplus_step_2():
         font_size_px=34,
         pointed_scale=1.5,
         companion_first=True,
-        highlight_text="מ:לגרמיה-2",
+        highlight_text='{"tmpl_name": "מ:לגרמיה-2"}',
         companion_highlight_html='&thinsp;<span style="font-weight: bold;">׀</span>',
+    )
+
+
+def render_psalm_5v9_mpplus_step_3():
+    """Render slide-psalm-5v9-mpplus-step-3.png: 2-col with {"tmpl_name": "ר0"} highlighted."""
+    json_snippet_browser.render_json_snippet_browser(
+        IMAGES_DIR,
+        DECK_NAME,
+        _PSALM_5V9_JSON,
+        "psalm-5v9-mpplus-step-3",
+        top_rgb=_TOP_RGB,
+        bot_rgb=_BOT_RGB,
+        companion_html_path=_PSALM_5V9_WS_FRAGMENT,
+        layout="row",
+        font_size_px=34,
+        pointed_scale=1.5,
+        companion_first=True,
+        highlight_text='{"tmpl_name": "ר0"}',
+        companion_highlight_html="&nbsp;",
     )
 
 
@@ -156,4 +175,5 @@ ALL_SLIDES = {
     "psalm-5v9-mpplus-step-0": render_psalm_5v9_mpplus_step_0,
     "psalm-5v9-mpplus-step-1": render_psalm_5v9_mpplus_step_1,
     "psalm-5v9-mpplus-step-2": render_psalm_5v9_mpplus_step_2,
+    "psalm-5v9-mpplus-step-3": render_psalm_5v9_mpplus_step_3,
 }

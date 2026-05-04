@@ -55,6 +55,28 @@ def _highlight_companion_html(html: str, highlight_text: str) -> str:
     return html.replace(highlight_text, f'<span class="hl">{highlight_text}</span>', 1)
 
 
+def _one_span(
+    value: str,
+    color: str,
+    font_size_px: int,
+    pointed_scale: float,
+    hl_bg: bool,
+    zoom: bool,
+) -> str:
+    """Return the HTML span(s) for a single pygments token value."""
+    escaped = value.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+    hl_style = " background-color:rgba(255,210,0,0.35);" if hl_bg else ""
+    if zoom:
+        size = round(font_size_px * pointed_scale * 2)
+        extra = f" font-size:{size}px; font-feature-settings:'ss03'"
+    elif pointed_scale != 1.0 and _has_pointing(value):
+        extra = f" font-size:{round(font_size_px * pointed_scale)}px; font-feature-settings:'ss03'"
+    else:
+        extra = ""
+    inner = f'<span style="color:{color};{hl_style}{extra}">{escaped}</span>'
+    return f"<bdi>{inner}</bdi>" if _has_hebrew(value) else inner
+
+
 def _build_html(
     json_text: str,
     top_rgb: tuple,
@@ -71,35 +93,60 @@ def _build_html(
     W, H = slide_render.W, slide_render.H
     font_uri = _TAAMEY_FONT.as_uri()
 
-    spans = []
+    # Tokenize the whole JSON once, then use character offsets to decide highlight.
+    # This avoids re-tokenizing fragments (which changes color assignments).
+    hl_start = json_text.index(highlight_text) if highlight_text else -1
+    hl_end = hl_start + len(highlight_text) if highlight_text else -1
+
+    code_spans = []
     zoom_spans = []
+    pos = 0
     for ttype, value in lex(json_text, JsonLexer()):
         color = _token_color(ttype)
-        escaped = value.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
-        is_hl = (
-            highlight_text is not None
-            and ttype in Token.Literal.String
-            and value.strip('"') == highlight_text
-        )
-        hl_style = (
-            " background-color:rgba(255,210,0,0.35); border-radius:3px;"
-            if is_hl
-            else ""
-        )
-        extra = (
-            f" font-size:{round(font_size_px * pointed_scale)}px; font-feature-settings:'ss03'"
-            if (pointed_scale != 1.0 and _has_pointing(value))
-            else ""
-        )
-        inner = f'<span style="color:{color};{hl_style}{extra}">{escaped}</span>'
-        spans.append(f"<bdi>{inner}</bdi>" if _has_hebrew(value) else inner)
-        if is_hl:
-            zoom_size = round(font_size_px * pointed_scale * 2)
-            zoom_inner = f"<span style=\"color:{color}; font-size:{zoom_size}px; font-feature-settings:'ss03'\">{escaped}</span>"
-            zoom_spans.append(
-                f"<bdi>{zoom_inner}</bdi>" if _has_hebrew(value) else zoom_inner
+        tok_end = pos + len(value)
+        # Does this token overlap the highlight range?
+        if highlight_text and pos < hl_end and tok_end > hl_start:
+            # Split the token into up-to-three parts: before-hl, inside-hl, after-hl.
+            pre = value[: max(0, hl_start - pos)]
+            mid = value[max(0, hl_start - pos) : min(len(value), hl_end - pos)]
+            post = value[min(len(value), hl_end - pos) :]
+            if pre:
+                code_spans.append(
+                    _one_span(
+                        pre, color, font_size_px, pointed_scale, hl_bg=False, zoom=False
+                    )
+                )
+            if mid:
+                code_spans.append(
+                    _one_span(
+                        mid, color, font_size_px, pointed_scale, hl_bg=True, zoom=False
+                    )
+                )
+                zoom_spans.append(
+                    _one_span(
+                        mid, color, font_size_px, pointed_scale, hl_bg=False, zoom=True
+                    )
+                )
+            if post:
+                code_spans.append(
+                    _one_span(
+                        post,
+                        color,
+                        font_size_px,
+                        pointed_scale,
+                        hl_bg=False,
+                        zoom=False,
+                    )
+                )
+        else:
+            code_spans.append(
+                _one_span(
+                    value, color, font_size_px, pointed_scale, hl_bg=False, zoom=False
+                )
             )
-    code_html = "".join(spans)
+        pos = tok_end
+
+    code_html = "".join(code_spans)
     zoom_html = "".join(zoom_spans)
 
     tr, tg, tb = top_rgb
