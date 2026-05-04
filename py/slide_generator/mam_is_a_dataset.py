@@ -3,14 +3,16 @@
 
 Slides
 ------
-title-card           "MAM is a dataset" / "(MAM is not an edition)"
-psalm-5v9-sources    Composite of five Psalm 5:9 source screenshots
+title-card              "MAM is a dataset" / "(MAM is not an edition)"
+psalm-5v9-sources       Composite of five Psalm 5:9 source screenshots
+psalm-15v1-qamats       Syntax-colored JSON of the מ:קמץ template in Psalm 15:1
 """
 
 import pathlib
 
 from PIL import ImageFont
 
+from py_misc import json_snippet_browser
 from slide_generator import composite_img_sources, slide_render
 
 DECK_NAME = "mam-is-a-dataset"
@@ -42,12 +44,30 @@ def render_title_card():
     print(f"Saved {dest} {img.size}")
 
 
+_PSALM_15V1_JSON = pathlib.Path(
+    "misc/mam-is-a-dataset/img-sources/Psalm 15v1 באהלך.json"
+)
+
+
 def render_psalm_5v9_sources():
     """Render slide-psalm-5v9-sources.png."""
     composite_img_sources.render_psalm_5v9_sources(IMAGES_DIR)
 
 
+def render_psalm_15v1_qamats():
+    """Render slide-psalm-15v1-qamats.png with syntax-colored JSON."""
+    json_snippet_browser.render_json_snippet_browser(
+        IMAGES_DIR,
+        DECK_NAME,
+        _PSALM_15V1_JSON,
+        "psalm-15v1-qamats",
+        top_rgb=_TOP_RGB,
+        bot_rgb=_BOT_RGB,
+    )
+
+
 ALL_SLIDES = {
     "title-card": render_title_card,
     "psalm-5v9-sources": render_psalm_5v9_sources,
+    "psalm-15v1-qamats": render_psalm_15v1_qamats,
 }

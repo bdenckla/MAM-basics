@@ -92,7 +92,7 @@ def render_closing_card():
 
 def render_json_snippet():
     """Render slide-json-snippet.png with syntax-colored JSON."""
-    json_snippet_slide.render_json_snippet(IMAGES_DIR, _gradient)
+    json_snippet_slide.render_json_snippet(IMAGES_DIR, _gradient, DECK_NAME)
 
 
 ALL_SLIDES = {

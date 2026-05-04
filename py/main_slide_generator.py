@@ -14,6 +14,7 @@ Examples
     python py/main_slide_generator.py render-slides --deck mam-is-a-dataset
     python py/main_slide_generator.py render-slides --deck mam-is-a-dataset title-card
     python py/main_slide_generator.py render-slides --deck mam-is-a-dataset psalm-5v9-sources
+    python py/main_slide_generator.py render-slides --deck mam-is-a-dataset psalm-15v1-qamats
     python py/main_slide_generator.py make-thumbs --deck what-is-mam
     python py/main_slide_generator.py make-thumbs --deck mam-is-a-dataset
 """

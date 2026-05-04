@@ -12,6 +12,7 @@ from pygments.token import Token
 
 _JSON_PATH = pathlib.Path("misc/what-is-mam/img-sources/json-snippet.json")
 _FONT_DIR = pathlib.Path("C:/Windows/Fonts")
+_USER_FONT_DIR = pathlib.Path.home() / "AppData/Local/Microsoft/Windows/Fonts"
 _FONT_SIZE = 44
 
 # VS Code Dark+ color scheme
@@ -61,17 +62,25 @@ def _build_lines(json_text):
     return lines
 
 
+_DEFAULT_HEB_FONT = _FONT_DIR / "arial.ttf"
+TAAMEY_FONT = _USER_FONT_DIR / "Taamey.ttf"
+
+
 def render_json_snippet(
     images_dir: pathlib.Path,
     img_factory: Callable[[], Image.Image],
+    deck_name: str,
+    json_path: pathlib.Path = _JSON_PATH,
+    slide_name: str = "json-snippet",
+    heb_font_path: pathlib.Path = _DEFAULT_HEB_FONT,
 ) -> None:
-    """Render slide-json-snippet.png with syntax-colored JSON."""
-    json_text = _JSON_PATH.read_text(encoding="utf-8")
+    """Render a syntax-colored JSON snippet slide."""
+    json_text = json_path.read_text(encoding="utf-8")
     lines = _build_lines(json_text)
 
-    # Consolas for pure-ASCII tokens; Arial for Hebrew-containing tokens
+    # Consolas for pure-ASCII tokens; heb_font_path for Hebrew-containing tokens
     font_ascii = ImageFont.truetype(str(_FONT_DIR / "consola.ttf"), size=_FONT_SIZE)
-    font_heb = ImageFont.truetype(str(_FONT_DIR / "arial.ttf"), size=_FONT_SIZE)
+    font_heb = ImageFont.truetype(str(heb_font_path), size=_FONT_SIZE)
 
     def _font_for(text):
         return font_heb if _has_hebrew(text) else font_ascii
@@ -116,6 +125,10 @@ def render_json_snippet(
                 x += bb[2] - bb[0]
         y += line_height
 
-    dest = images_dir / "slide-json-snippet.png"
+    dest = images_dir / f"slide-{slide_name}.png"
+    dest.parent.mkdir(parents=True, exist_ok=True)
     img.save(dest)
+    from slide_generator import slide_render
+
+    slide_render.write_provenance(dest, deck_name, slide_name)
     print(f"Saved {dest} {img.size}")

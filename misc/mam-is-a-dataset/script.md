@@ -6,3 +6,5 @@ Script for a narrated slideshow video.
 
 | Image | Narration |
 |-------|-----------|
+| ![title card](img/thumb-title-card.png) | This video is a follow-up to my video, "What is MAM?" I hope it will be one of many such follow-ups. One of the trickiest and most important things to understand about MAM is that it is not an edition of the Hebrew Bible. It is a dataset that can be used to create editions of the Hebrew Bible. |
+| ![Psalm 5:9 sources](img/thumb-psalm-5v9-sources.png) | For example, here's Psalm 5 verse 9 in five different editions created from the MAM dataset. Some of them format ketiv/qere differently. Some of them include MAM's documentation notes. Some do not. Those that do include the notes display them in different ways. |

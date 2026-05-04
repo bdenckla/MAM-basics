@@ -1,4 +1,5 @@
 black
+playwright
 Pillow
 python-bidi
 pywikibot
