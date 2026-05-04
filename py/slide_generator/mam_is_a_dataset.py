@@ -111,10 +111,29 @@ def render_psalm_5v9_mpplus_step_0():
     )
 
 
+def render_psalm_5v9_mpplus_step_1():
+    """Render slide-psalm-5v9-mpplus-step-1.png: 3-col with יְהֹוָ֤ה highlighted."""
+    json_snippet_browser.render_json_snippet_browser(
+        IMAGES_DIR,
+        DECK_NAME,
+        _PSALM_5V9_JSON,
+        "psalm-5v9-mpplus-step-1",
+        top_rgb=_TOP_RGB,
+        bot_rgb=_BOT_RGB,
+        companion_html_path=_PSALM_5V9_WS_FRAGMENT,
+        layout="row",
+        font_size_px=34,
+        pointed_scale=1.5,
+        companion_first=True,
+        highlight_text="יְהֹוָ֤ה",
+    )
+
+
 ALL_SLIDES = {
     "title-card": render_title_card,
     "psalm-5v9-sources": render_psalm_5v9_sources,
     "psalm-15v1-qamats": render_psalm_15v1_qamats,
     "psalm-5v9-mpplus": render_psalm_5v9_mpplus,
     "psalm-5v9-mpplus-step-0": render_psalm_5v9_mpplus_step_0,
+    "psalm-5v9-mpplus-step-1": render_psalm_5v9_mpplus_step_1,
 }

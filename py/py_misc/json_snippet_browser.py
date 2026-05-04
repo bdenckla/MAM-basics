@@ -50,6 +50,11 @@ def _has_hebrew(text: str) -> bool:
     return any("\u05d0" <= ch <= "\u05ea" or "\ufb1d" <= ch <= "\ufb4e" for ch in text)
 
 
+def _highlight_companion_html(html: str, highlight_text: str) -> str:
+    """Return html with the first occurrence of highlight_text wrapped in a .hl span."""
+    return html.replace(highlight_text, f'<span class="hl">{highlight_text}</span>', 1)
+
+
 def _build_html(
     json_text: str,
     top_rgb: tuple,
@@ -60,22 +65,41 @@ def _build_html(
     pointed_scale: float = 2.0,
     companion_first: bool = False,
     companion_html: str = None,
+    highlight_text: str = None,
 ) -> str:
     W, H = slide_render.W, slide_render.H
     font_uri = _TAAMEY_FONT.as_uri()
 
     spans = []
+    zoom_spans = []
     for ttype, value in lex(json_text, JsonLexer()):
         color = _token_color(ttype)
         escaped = value.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+        is_hl = (
+            highlight_text is not None
+            and ttype in Token.Literal.String
+            and value.strip('"') == highlight_text
+        )
+        hl_style = (
+            " background-color:rgba(255,210,0,0.35); border-radius:3px;"
+            if is_hl
+            else ""
+        )
         extra = (
             f" font-size:{round(font_size_px * pointed_scale)}px; font-feature-settings:'ss03'"
             if (pointed_scale != 1.0 and _has_pointing(value))
             else ""
         )
-        inner = f'<span style="color:{color};{extra}">{escaped}</span>'
+        inner = f'<span style="color:{color};{hl_style}{extra}">{escaped}</span>'
         spans.append(f"<bdi>{inner}</bdi>" if _has_hebrew(value) else inner)
+        if is_hl:
+            zoom_size = round(font_size_px * pointed_scale * 2)
+            zoom_inner = f"<span style=\"color:{color}; font-size:{zoom_size}px; font-feature-settings:'ss03'\">{escaped}</span>"
+            zoom_spans.append(
+                f"<bdi>{zoom_inner}</bdi>" if _has_hebrew(value) else zoom_inner
+            )
     code_html = "".join(spans)
+    zoom_html = "".join(zoom_spans)
 
     tr, tg, tb = top_rgb
     br, bg, bb = bot_rgb
@@ -107,18 +131,34 @@ def _build_html(
     text-align: right;
     color: white;
     width: 100%;
+  }
+  .hl {
+    background-color: rgba(255, 210, 0, 0.4);
+    border-radius: 3px;
   }"""
         if companion_html is not None:
-            companion_content = f'<div class="companion-html">{companion_html}</div>'
+            hl_companion = (
+                _highlight_companion_html(companion_html, highlight_text)
+                if highlight_text
+                else companion_html
+            )
+            companion_content = f'<div class="companion-html">{hl_companion}</div>'
         elif companion_image_uri:
             companion_content = f'<img class="companion" src="{companion_image_uri}">'
         else:
             companion_content = ""
-        body_html = (
-            f'<div class="col">{companion_content}</div><div class="col" style="justify-content:flex-start"><pre>{code_html}</pre></div>'
-            if companion_first
-            else f'<div class="col"><pre>{code_html}</pre></div><div class="col">{companion_content}</div>'
-        )
+        if highlight_text:
+            body_html = (
+                f'<div class="col" style="flex:2">{companion_content}</div>'
+                f'<div class="col"><pre>{zoom_html}</pre></div>'
+                f'<div class="col" style="flex:2;justify-content:flex-start"><pre>{code_html}</pre></div>'
+            )
+        else:
+            body_html = (
+                f'<div class="col">{companion_content}</div><div class="col" style="justify-content:flex-start"><pre>{code_html}</pre></div>'
+                if companion_first
+                else f'<div class="col"><pre>{code_html}</pre></div><div class="col">{companion_content}</div>'
+            )
     else:
         layout_css = """
   body {
@@ -185,6 +225,7 @@ def render_json_snippet_browser(
     pointed_scale: float = 2.0,
     companion_first: bool = False,
     companion_html_path: pathlib.Path = None,
+    highlight_text: str = None,
 ) -> None:
     """Render a syntax-colored JSON snippet slide via Playwright/Chromium screenshot."""
     from playwright.sync_api import sync_playwright
@@ -210,6 +251,7 @@ def render_json_snippet_browser(
         pointed_scale,
         companion_first,
         companion_html=companion_html,
+        highlight_text=highlight_text,
     )
 
     html_dest = json_path.parent.resolve() / f"slide-{slide_name}.html"
