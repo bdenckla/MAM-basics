@@ -66,6 +66,7 @@ def _build_html(
     companion_first: bool = False,
     companion_html: str = None,
     highlight_text: str = None,
+    companion_highlight_html: str = None,
 ) -> str:
     W, H = slide_render.W, slide_render.H
     font_uri = _TAAMEY_FONT.as_uri()
@@ -137,9 +138,14 @@ def _build_html(
     border-radius: 3px;
   }"""
         if companion_html is not None:
+            _hl_key = (
+                companion_highlight_html
+                if companion_highlight_html is not None
+                else highlight_text
+            )
             hl_companion = (
-                _highlight_companion_html(companion_html, highlight_text)
-                if highlight_text
+                _highlight_companion_html(companion_html, _hl_key)
+                if _hl_key
                 else companion_html
             )
             companion_content = f'<div class="companion-html">{hl_companion}</div>'
@@ -149,8 +155,10 @@ def _build_html(
             companion_content = ""
         if highlight_text:
             body_html = (
-                f'<div class="col" style="flex:2">{companion_content}</div>'
-                f'<div class="col"><pre>{zoom_html}</pre></div>'
+                f'<div class="col" style="flex:2;flex-direction:column;justify-content:space-between;align-items:flex-start">'
+                f"<pre>{zoom_html}</pre>"
+                f"{companion_content}"
+                f"</div>"
                 f'<div class="col" style="flex:2;justify-content:flex-start"><pre>{code_html}</pre></div>'
             )
         else:
@@ -226,6 +234,7 @@ def render_json_snippet_browser(
     companion_first: bool = False,
     companion_html_path: pathlib.Path = None,
     highlight_text: str = None,
+    companion_highlight_html: str = None,
 ) -> None:
     """Render a syntax-colored JSON snippet slide via Playwright/Chromium screenshot."""
     from playwright.sync_api import sync_playwright
@@ -252,6 +261,7 @@ def render_json_snippet_browser(
         companion_first,
         companion_html=companion_html,
         highlight_text=highlight_text,
+        companion_highlight_html=companion_highlight_html,
     )
 
     html_dest = json_path.parent.resolve() / f"slide-{slide_name}.html"
