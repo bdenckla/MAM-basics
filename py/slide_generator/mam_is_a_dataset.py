@@ -47,6 +47,9 @@ def render_title_card():
 _PSALM_15V1_JSON = pathlib.Path(
     "misc/mam-is-a-dataset/img-sources/Psalm 15v1 באהלך.json"
 )
+_PSALM_15V1_PHONETIC = pathlib.Path(
+    "misc/mam-is-a-dataset/img-sources/Psalm 15v1 באהלך phonetic.png"
+)
 
 
 def render_psalm_5v9_sources():
@@ -63,6 +66,7 @@ def render_psalm_15v1_qamats():
         "psalm-15v1-qamats",
         top_rgb=_TOP_RGB,
         bot_rgb=_BOT_RGB,
+        companion_image_path=_PSALM_15V1_PHONETIC,
     )
 
 

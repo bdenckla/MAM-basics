@@ -8,6 +8,7 @@ This approach lets the browser handle font shaping and Unicode combining marks
 correctly, avoiding the mark-collision artifacts of Pillow-based text rendering.
 """
 
+import base64
 import pathlib
 
 from pygments import lex
@@ -49,6 +50,7 @@ def _build_html(
     top_rgb: tuple,
     bot_rgb: tuple,
     font_size_px: int,
+    companion_image_uri: str = None,
 ) -> str:
     W, H = slide_render.W, slide_render.H
     font_uri = _TAAMEY_FONT.as_uri()
@@ -67,6 +69,11 @@ def _build_html(
 
     tr, tg, tb = top_rgb
     br, bg, bb = bot_rgb
+    companion_tag = (
+        f'<img class="companion" src="{companion_image_uri}">'
+        if companion_image_uri
+        else ""
+    )
 
     return f"""<!DOCTYPE html>
 <html>
@@ -88,8 +95,14 @@ def _build_html(
   }}
   body {{
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 60px;
+  }}
+  img.companion {{
+    max-width: 70%;
+    height: auto;
   }}
   pre {{
     font-family: 'Taamey', 'Consolas', monospace;
@@ -100,7 +113,7 @@ def _build_html(
   }}
 </style>
 </head>
-<body><pre>{code_html}</pre></body>
+<body><pre>{code_html}</pre>{companion_tag}</body>
 </html>"""
 
 
@@ -112,12 +125,19 @@ def render_json_snippet_browser(
     top_rgb: tuple = (13, 94, 87),
     bot_rgb: tuple = (8, 61, 56),
     font_size_px: int = _FONT_SIZE_PX,
+    companion_image_path: pathlib.Path = None,
 ) -> None:
     """Render a syntax-colored JSON snippet slide via Playwright/Chromium screenshot."""
     from playwright.sync_api import sync_playwright
 
+    companion_image_uri = None
+    if companion_image_path is not None:
+        img_bytes = pathlib.Path(companion_image_path).read_bytes()
+        b64 = base64.b64encode(img_bytes).decode("ascii")
+        companion_image_uri = f"data:image/png;base64,{b64}"
+
     json_text = json_path.read_text(encoding="utf-8")
-    html = _build_html(json_text, top_rgb, bot_rgb, font_size_px)
+    html = _build_html(json_text, top_rgb, bot_rgb, font_size_px, companion_image_uri)
 
     html_dest = json_path.parent.resolve() / f"slide-{slide_name}.html"
     html_dest.write_text(html, encoding="utf-8")
