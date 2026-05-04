@@ -154,10 +154,11 @@ def flatten_text(wtel):
         return "".join(flatten_text(x) for x in wtel)
     if isinstance(wtel, dict) and wtp.is_template(wtel):
         tmpl_name = wtp.template_name(wtel)
-        if wtp.is_template_with_name_in(
-            wtel, tmpln.STD_KQ_TMPL_NAMES
-        ) or kqst.is_unified_special_kq_template_name(tmpl_name):
+        if kqst.is_special_kq_template_name(tmpl_name):
+            assert kqst.is_unified_special_kq_template_name(tmpl_name), tmpl_name
             _validate_special_kq_if_needed(wtel)
+            return flatten_text(wtp.template_element(wtel, 2))
+        if wtp.is_template_with_name_in(wtel, tmpln.STD_KQ_TMPL_NAMES):
             return flatten_text(wtp.template_element(wtel, 2))
         if wtp.is_template_with_name_in(wtel, _STRESS_VARIANT_TMPL_NAMES):
             return flatten_text(wtp.template_element(wtel, 1))
