@@ -23,12 +23,8 @@ def _survey_tmpl_subtype(tmpl_name, tmpl):
     if not kqst.is_special_kq_template_name(tmpl_name):
         return tmpl_name
     assert kqst.is_unified_special_kq_template_name(tmpl_name), tmpl_name
-    assert "סוג" in wtp2.template_param_keys(tmpl), tmpl
-    sug_val = wtp2.template_param_val(tmpl, "סוג")
-    assert len(sug_val) == 1 and isinstance(sug_val[0], str), sug_val
-    sug_text = sug_val[0]
-    subtype = kqst.canonical_special_kq_type_from_name_and_sug(tmpl_name, sug_text)
-    return f"special-kq/{subtype}"
+    # For survey outputs, reflect the actual template node in the data.
+    return tmpl_name
 
 
 def _record_wtel(accum, wtel_rec):
@@ -84,15 +80,7 @@ def _my_plus_equals(accum_x, *key_parts):
 _EXPECTED_ARGC = {
     str('כו"ק'): 2,
     str("מ:אות מנוקדת"): 1,
-    "special-kq/k1q1-mcom": tuple((2, 3, 4, 5, 6)),
-    "special-kq/k1q2-sr-kqq": tuple((2, 3, 4, 5, 6)),
-    "special-kq/k1q2-sr-qqk": tuple((2, 3, 4, 5, 6)),
-    "special-kq/k1q2-sr-bcom": tuple((2, 3, 4, 5, 6)),
-    "special-kq/k1q2-wr-kqq": tuple((2, 3, 4, 5, 6)),
-    "special-kq/k1q2-ur-qqk": tuple((2, 3, 4, 5, 6)),
-    "special-kq/k2q1": tuple((2, 3, 4, 5, 6)),
-    "special-kq/k2q2": tuple((2, 3, 4, 5, 6)),
-    "special-kq/k3q3": tuple((2, 3, 4, 5, 6)),
+    kqst.UNIFIED_SPECIAL_KQ_TEMPLATE_NAME: tuple((2, 3, 4, 5, 6)),
 }
 
 

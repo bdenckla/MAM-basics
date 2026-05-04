@@ -12990,59 +12990,11 @@
     },
     {
       "wtel_type": "tmpl",
-      "wtel_subtype": "מ:כו\"ק בין שני מקפים",
+      "wtel_subtype": "מ:כו\"ק מיוחד",
       "pseudoverse_category": "1 (normal verse)",
       "count_C": 0,
       "count_D": 0,
-      "count_E": 1
-    },
-    {
-      "wtel_type": "tmpl",
-      "wtel_subtype": "מ:כו\"ק כתיב מילה חדה וקרי תרתין מילין",
-      "pseudoverse_category": "1 (normal verse)",
-      "count_C": 0,
-      "count_D": 0,
-      "count_E": 13
-    },
-    {
-      "wtel_type": "tmpl",
-      "wtel_subtype": "מ:כו\"ק כתיב מילה חדה וקרי תרתין מילין בין שני מקפים",
-      "pseudoverse_category": "1 (normal verse)",
-      "count_C": 0,
-      "count_D": 0,
-      "count_E": 1
-    },
-    {
-      "wtel_type": "tmpl",
-      "wtel_subtype": "מ:כו\"ק כתיב תרתין מילין וקרי מילה חדה",
-      "pseudoverse_category": "1 (normal verse)",
-      "count_C": 0,
-      "count_D": 0,
-      "count_E": 8
-    },
-    {
-      "wtel_type": "tmpl",
-      "wtel_subtype": "מ:כו\"ק קרי שונה מהכתיב בשתי מילים",
-      "pseudoverse_category": "1 (normal verse)",
-      "count_C": 0,
-      "count_D": 0,
-      "count_E": 2
-    },
-    {
-      "wtel_type": "tmpl",
-      "wtel_subtype": "מ:כו\"ק של שלוש מילים בהערה אחת",
-      "pseudoverse_category": "1 (normal verse)",
-      "count_C": 0,
-      "count_D": 0,
-      "count_E": 1
-    },
-    {
-      "wtel_type": "tmpl",
-      "wtel_subtype": "מ:כו\"ק של שתי מילים בהערה אחת",
-      "pseudoverse_category": "1 (normal verse)",
-      "count_C": 0,
-      "count_D": 0,
-      "count_E": 8
+      "count_E": 37
     },
     {
       "wtel_type": "tmpl",
@@ -13139,22 +13091,6 @@
       "count_C": 0,
       "count_D": 0,
       "count_E": 56
-    },
-    {
-      "wtel_type": "tmpl",
-      "wtel_subtype": "מ:קו\"כ כתיב מילה חדה וקרי תרתין מילין",
-      "pseudoverse_category": "1 (normal verse)",
-      "count_C": 0,
-      "count_D": 0,
-      "count_E": 1
-    },
-    {
-      "wtel_type": "tmpl",
-      "wtel_subtype": "מ:קו\"כ קרי שונה מהכתיב בשתי מילים",
-      "pseudoverse_category": "1 (normal verse)",
-      "count_C": 0,
-      "count_D": 0,
-      "count_E": 2
     },
     {
       "wtel_type": "tmpl",
@@ -14001,53 +13937,11 @@
       "count_nusach": 0
     },
     {
-      "wtel_subtype": "מ:כו\"ק בין שני מקפים",
+      "wtel_subtype": "מ:כו\"ק מיוחד",
       "stack": "E",
-      "count": 1,
-      "count_non_nusach": 0,
-      "count_nusach": 1
-    },
-    {
-      "wtel_subtype": "מ:כו\"ק כתיב מילה חדה וקרי תרתין מילין",
-      "stack": "E",
-      "count": 13,
-      "count_non_nusach": 12,
-      "count_nusach": 1
-    },
-    {
-      "wtel_subtype": "מ:כו\"ק כתיב מילה חדה וקרי תרתין מילין בין שני מקפים",
-      "stack": "E",
-      "count": 1,
-      "count_non_nusach": 0,
-      "count_nusach": 1
-    },
-    {
-      "wtel_subtype": "מ:כו\"ק כתיב תרתין מילין וקרי מילה חדה",
-      "stack": "E",
-      "count": 8,
-      "count_non_nusach": 5,
-      "count_nusach": 3
-    },
-    {
-      "wtel_subtype": "מ:כו\"ק קרי שונה מהכתיב בשתי מילים",
-      "stack": "E",
-      "count": 2,
-      "count_non_nusach": 0,
-      "count_nusach": 2
-    },
-    {
-      "wtel_subtype": "מ:כו\"ק של שלוש מילים בהערה אחת",
-      "stack": "E",
-      "count": 1,
-      "count_non_nusach": 0,
-      "count_nusach": 1
-    },
-    {
-      "wtel_subtype": "מ:כו\"ק של שתי מילים בהערה אחת",
-      "stack": "E",
-      "count": 8,
-      "count_non_nusach": 3,
-      "count_nusach": 5
+      "count": 37,
+      "count_non_nusach": 20,
+      "count_nusach": 17
     },
     {
       "wtel_subtype": "מ:כל קמץ קטן מרכא",
@@ -14079,7 +13973,7 @@
     },
     {
       "wtel_subtype": "מ:לגרמיה-2",
-      "stack": "E/מ:כו\"ק כתיב מילה חדה וקרי תרתין מילין",
+      "stack": "E/מ:כו\"ק מיוחד",
       "count": 1,
       "count_non_nusach": 1,
       "count_nusach": 0
@@ -14170,17 +14064,10 @@
     },
     {
       "wtel_subtype": "מ:פסק",
-      "stack": "E/מ:כו\"ק כתיב מילה חדה וקרי תרתין מילין",
-      "count": 3,
+      "stack": "E/מ:כו\"ק מיוחד",
+      "count": 5,
       "count_non_nusach": 2,
-      "count_nusach": 1
-    },
-    {
-      "wtel_subtype": "מ:פסק",
-      "stack": "E/מ:כו\"ק של שתי מילים בהערה אחת",
-      "count": 1,
-      "count_non_nusach": 0,
-      "count_nusach": 1
+      "count_nusach": 3
     },
     {
       "wtel_subtype": "מ:פסק",
@@ -14197,31 +14084,10 @@
       "count_nusach": 0
     },
     {
-      "wtel_subtype": "מ:פסק",
-      "stack": "E/מ:קו\"כ כתיב מילה חדה וקרי תרתין מילין",
-      "count": 1,
-      "count_non_nusach": 0,
-      "count_nusach": 1
-    },
-    {
       "wtel_subtype": "מ:צינור",
       "stack": "E",
       "count": 56,
       "count_non_nusach": 54,
-      "count_nusach": 2
-    },
-    {
-      "wtel_subtype": "מ:קו\"כ כתיב מילה חדה וקרי תרתין מילין",
-      "stack": "E",
-      "count": 1,
-      "count_non_nusach": 0,
-      "count_nusach": 1
-    },
-    {
-      "wtel_subtype": "מ:קו\"כ קרי שונה מהכתיב בשתי מילים",
-      "stack": "E",
-      "count": 2,
-      "count_non_nusach": 0,
       "count_nusach": 2
     },
     {
@@ -15014,45 +14880,9 @@
       "variations": 1
     },
     {
-      "wtel_subtype": "מ:כו\"ק בין שני מקפים",
-      "arg_count": 2,
-      "count": 1,
-      "variations": 1
-    },
-    {
-      "wtel_subtype": "מ:כו\"ק כתיב מילה חדה וקרי תרתין מילין",
-      "arg_count": 2,
-      "count": 13,
-      "variations": 1
-    },
-    {
-      "wtel_subtype": "מ:כו\"ק כתיב מילה חדה וקרי תרתין מילין בין שני מקפים",
-      "arg_count": 2,
-      "count": 1,
-      "variations": 1
-    },
-    {
-      "wtel_subtype": "מ:כו\"ק כתיב תרתין מילין וקרי מילה חדה",
-      "arg_count": 2,
-      "count": 8,
-      "variations": 1
-    },
-    {
-      "wtel_subtype": "מ:כו\"ק קרי שונה מהכתיב בשתי מילים",
-      "arg_count": 2,
-      "count": 2,
-      "variations": 1
-    },
-    {
-      "wtel_subtype": "מ:כו\"ק של שלוש מילים בהערה אחת",
-      "arg_count": 2,
-      "count": 1,
-      "variations": 1
-    },
-    {
-      "wtel_subtype": "מ:כו\"ק של שתי מילים בהערה אחת",
-      "arg_count": 2,
-      "count": 8,
+      "wtel_subtype": "מ:כו\"ק מיוחד",
+      "arg_count": 3,
+      "count": 37,
       "variations": 1
     },
     {
@@ -15155,18 +14985,6 @@
       "wtel_subtype": "מ:צינור",
       "arg_count": 2,
       "count": 56,
-      "variations": 1
-    },
-    {
-      "wtel_subtype": "מ:קו\"כ כתיב מילה חדה וקרי תרתין מילין",
-      "arg_count": 2,
-      "count": 1,
-      "variations": 1
-    },
-    {
-      "wtel_subtype": "מ:קו\"כ קרי שונה מהכתיב בשתי מילים",
-      "arg_count": 2,
-      "count": 2,
       "variations": 1
     },
     {
