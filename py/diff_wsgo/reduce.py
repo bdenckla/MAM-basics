@@ -9,9 +9,9 @@ from mb_cmn import hebrew_verse_numerals as hvn
 from mb_cmn import bib_locales as tbn
 from mb_cmn import my_diffs
 from mb_cmn import my_utils
-from diff_mm import diff_mm_wsgo_auto_edits as auto_edits
-from diff_mm import diff_mm_reduce_refine as refine
-from diff_mm import diff_mm_reduce_make_comparable as make_comparable
+from diff_wsgo import wsgo_auto_edits as auto_edits
+from diff_wsgo import reduce_refine as refine
+from diff_wsgo import reduce_make_comparable as make_comparable
 from ws import ws_unparse
 
 

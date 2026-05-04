@@ -5,7 +5,7 @@ from mb_cmn import hebrew_punctuation as hpu
 from mb_cmn import kq_special_templates as kqst
 from mb_cmn import ws_tmpl1 as wtp1
 from py_misc import hebrew_letter_words as hlw
-from diff_mm import diff_mm_separators as seps
+from diff_wsgo import separators as seps
 from mb_cmn.my_utils import sum_of_map
 from mb_cmn.my_utils import sl_map
 

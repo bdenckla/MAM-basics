@@ -6,10 +6,10 @@ Invoked via:
     .venv/Scripts/python.exe py/main_diff.py wsgo
 """
 
-from diff_mm import diff_mm_reduce as red
-from diff_mm import diff_mm_wsgo_auto_edits as auto_edits
-from diff_mm import wsgo_go
-from diff_mm import wsgo_ws
+from diff_wsgo import reduce as red
+from diff_wsgo import wsgo_auto_edits as auto_edits
+from diff_wsgo import wsgo_go
+from diff_wsgo import wsgo_ws
 from mb_cmn import bib_locales as tbn
 from mb_cmn import file_io
 from mb_cmn import hebrew_verse_numerals as hvn

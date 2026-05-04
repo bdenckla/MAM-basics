@@ -2,8 +2,8 @@
 
 from mb_cmn import hebrew_punctuation as hpu
 from mb_cmn import kq_special_templates as kqst
-from diff_mm import diff_mm_separators as seps
-from diff_mm import diff_mm_diffs_description as description
+from diff_wsgo import separators as seps
+from diff_wsgo import diffs_description as description
 
 
 def refine(vala, valb):
