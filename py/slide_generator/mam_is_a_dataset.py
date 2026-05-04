@@ -54,6 +54,9 @@ _PSALM_5V9_JSON = pathlib.Path(
     "misc/mam-is-a-dataset/img-sources/Psalm 5v9 mpplus.json"
 )
 _PSALM_5V9_WS1 = pathlib.Path("misc/mam-is-a-dataset/img-sources/Psalm 5v9 WS1.png")
+_PSALM_5V9_WS_FRAGMENT = pathlib.Path(
+    "misc/mam-is-a-dataset/img-sources/Psalm 5v9 Wikisource fragment.html"
+)
 
 
 def render_psalm_5v9_sources():
@@ -91,9 +94,27 @@ def render_psalm_5v9_mpplus():
     )
 
 
+def render_psalm_5v9_mpplus_step_0():
+    """Render slide-psalm-5v9-mpplus-step-0.png: JSON on left, Wikisource HTML fragment on right."""
+    json_snippet_browser.render_json_snippet_browser(
+        IMAGES_DIR,
+        DECK_NAME,
+        _PSALM_5V9_JSON,
+        "psalm-5v9-mpplus-step-0",
+        top_rgb=_TOP_RGB,
+        bot_rgb=_BOT_RGB,
+        companion_html_path=_PSALM_5V9_WS_FRAGMENT,
+        layout="row",
+        font_size_px=34,
+        pointed_scale=1.5,
+        companion_first=True,
+    )
+
+
 ALL_SLIDES = {
     "title-card": render_title_card,
     "psalm-5v9-sources": render_psalm_5v9_sources,
     "psalm-15v1-qamats": render_psalm_15v1_qamats,
     "psalm-5v9-mpplus": render_psalm_5v9_mpplus,
+    "psalm-5v9-mpplus-step-0": render_psalm_5v9_mpplus_step_0,
 }

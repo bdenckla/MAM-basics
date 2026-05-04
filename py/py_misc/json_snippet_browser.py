@@ -59,6 +59,7 @@ def _build_html(
     layout: str = "column",
     pointed_scale: float = 2.0,
     companion_first: bool = False,
+    companion_html: str = None,
 ) -> str:
     W, H = slide_render.W, slide_render.H
     font_uri = _TAAMEY_FONT.as_uri()
@@ -97,16 +98,26 @@ def _build_html(
   img.companion {
     width: 90%;
     height: auto;
+  }
+  .companion-html {
+    font-family: 'Taamey', serif;
+    direction: rtl;
+    font-size: 80px;
+    line-height: 2.0;
+    text-align: right;
+    color: white;
+    width: 100%;
   }"""
-        companion_img = (
-            f'<img class="companion" src="{companion_image_uri}">'
-            if companion_image_uri
-            else ""
-        )
+        if companion_html is not None:
+            companion_content = f'<div class="companion-html">{companion_html}</div>'
+        elif companion_image_uri:
+            companion_content = f'<img class="companion" src="{companion_image_uri}">'
+        else:
+            companion_content = ""
         body_html = (
-            f'<div class="col">{companion_img}</div><div class="col" style="justify-content:flex-start"><pre>{code_html}</pre></div>'
+            f'<div class="col">{companion_content}</div><div class="col" style="justify-content:flex-start"><pre>{code_html}</pre></div>'
             if companion_first
-            else f'<div class="col"><pre>{code_html}</pre></div><div class="col">{companion_img}</div>'
+            else f'<div class="col"><pre>{code_html}</pre></div><div class="col">{companion_content}</div>'
         )
     else:
         layout_css = """
@@ -173,6 +184,7 @@ def render_json_snippet_browser(
     layout: str = "column",
     pointed_scale: float = 2.0,
     companion_first: bool = False,
+    companion_html_path: pathlib.Path = None,
 ) -> None:
     """Render a syntax-colored JSON snippet slide via Playwright/Chromium screenshot."""
     from playwright.sync_api import sync_playwright
@@ -182,6 +194,10 @@ def render_json_snippet_browser(
         img_bytes = pathlib.Path(companion_image_path).read_bytes()
         b64 = base64.b64encode(img_bytes).decode("ascii")
         companion_image_uri = f"data:image/png;base64,{b64}"
+
+    companion_html = None
+    if companion_html_path is not None:
+        companion_html = pathlib.Path(companion_html_path).read_text(encoding="utf-8")
 
     json_text = json_path.read_text(encoding="utf-8")
     html = _build_html(
@@ -193,6 +209,7 @@ def render_json_snippet_browser(
         layout,
         pointed_scale,
         companion_first,
+        companion_html=companion_html,
     )
 
     html_dest = json_path.parent.resolve() / f"slide-{slide_name}.html"
