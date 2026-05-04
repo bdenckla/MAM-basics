@@ -221,6 +221,14 @@ Do **not** write defensive code that swallows errors or returns `None` on unexpe
 - `d.get(key)` — when the key is **genuinely optional** and `None` is meaningful
 - `d.get(key, default)` — when the key is optional and there is a natural default
 
+## Key Constants: Prefer Explicit String Literals Over Clever Synthesis
+
+For key identifiers that engineers must be able to search for reliably (template names, mapping keys, enum-like values, protocol tokens, and similar constants), prefer explicit string literals in canonical mapping tables.
+
+Do not synthesize such strings from prefixes/suffixes, slicing, concatenation, or other "clever" derivations (for example deriving one key by stripping or adding `"מ:"` to another) unless there is a compelling, documented reason.
+
+Rationale: explicit literals preserve searchability, make audits/refactors safer, and prevent hidden coupling between values that are intended to evolve independently.
+
 ## JSON Lists: Prepend, Don't Append
 
 When adding to a semantically unordered JSON array, **prepend** rather than append. Appending requires a two-line diff; prepending is a clean one-line diff.

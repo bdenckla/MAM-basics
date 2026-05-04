@@ -15,7 +15,7 @@ Exports:
 import re
 
 from mb_cmn import hebrew_punctuation as hpu
-from mb_cmn import kq_special_templates as kqst
+from mb_cmn import retired_kq_special_templates as rkqst
 from mb_cmn.str_defs import NBSP
 from mb_diff_mpu.mpplus_flatten import (
     is_ketiv_velo_qere_template,
@@ -60,11 +60,11 @@ def _single_string_param(raw_value, param_name):
 
 def _validate_special_kq_if_needed(tmpl):
     name = tmpl["tmpl_name"]
-    if not kqst.is_special_kq_template_name(name):
+    if not rkqst.is_special_kq_template_name(name):
         return
     sug_raw = get_param(tmpl, "סוג")
     sug_text = None if sug_raw is MISSING else _single_string_param(sug_raw, "סוג")
-    kqst.canonical_special_kq_type_from_name_and_sug(name, sug_text)
+    rkqst.canonical_special_kq_type_from_name_and_sug(name, sug_text)
 
 
 def _collect_paseq_types(obj, types):

@@ -12,7 +12,7 @@ Private helpers:
 
 from collections import Counter
 
-from mb_cmn import kq_special_templates as kqst
+from mb_cmn import retired_kq_special_templates as rkqst
 from mb_diff_mpu.mpplus_param_access import MISSING, get_param
 
 
@@ -105,17 +105,17 @@ def _single_string_param(raw_value, param_name):
 
 def _canonical_template_name_for_structure(tmpl):
     name = tmpl["tmpl_name"]
-    if not kqst.is_special_kq_template_name(name):
+    if not rkqst.is_special_kq_template_name(name):
         return name
     sug_raw = get_param(tmpl, "סוג")
     sug_text = None if sug_raw is MISSING else _single_string_param(sug_raw, "סוג")
-    return kqst.canonical_special_kq_old_name_from_name_and_sug(name, sug_text)
+    return rkqst.canonical_special_kq_old_name_from_name_and_sug(name, sug_text)
 
 
 def _normalized_param_items_for_structure(tmpl):
     items = _semantic_param_items(tmpl)
     name = tmpl["tmpl_name"]
-    if kqst.is_unified_special_kq_template_name(name):
+    if rkqst.is_unified_special_kq_template_name(name):
         return [(key, value) for key, value in items if key != "סוג"]
     return items
 

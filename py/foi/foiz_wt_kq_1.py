@@ -63,10 +63,6 @@ def _kq_type_for_tmpl(tmpl):
     return tmpln.LATIN_SHORTS[tmpl_name]
 
 
-def _reject_deprecated_special_kq(_foilers, _stack, tmpl):
-    assert False, wtp.template_name(tmpl)
-
-
 _FOI_PATH = {
     "kq-q-velo-k": "x-velo-y-q-velo-k",
     "kq-k-velo-q": "x-velo-y-k-velo-q",
@@ -88,10 +84,6 @@ _FOILERS_FOR_KETIV_QERE = {
     'כו"ק': _record_kq_as_foi,
     'קו"כ': _record_kq_as_foi,
     kqst.UNIFIED_SPECIAL_KQ_TEMPLATE_NAME: _record_kq_as_foi,
-    **{
-        name: _reject_deprecated_special_kq
-        for name in kqst.OLD_SPECIAL_KQ_TEMPLATE_NAMES
-    },
     'מ:קו"כ-אם-2': _record_kq_as_foi,
     "קרי ולא כתיב": _record_kq_as_foi,
     "כתיב ולא קרי": _record_kq_as_foi,

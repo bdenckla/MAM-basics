@@ -2,27 +2,28 @@
 
 import unittest
 
-from mb_cmn import template_names as tmpln
+from mb_cmn import retired_kq_special_templates as rkqst
+from mb_cmn import retired_template_names as rtmpln
 from mb_cmn import ws_tmpl1 as wtp1
 from ws import ws_bot_edit as wbe
 from ws import ws_bot_edit_kuk_special_callsite_migration as mod
 from ws import ws_unparse
 
 _OLD_NAMES = (
-    tmpln.K1Q1_MCOM,
-    tmpln.K1Q2_SR_BCOM,
-    tmpln.K3Q3,
-    tmpln.K1Q2_SR_QQK,
-    tmpln.K1Q2_WR_KQQ,
-    tmpln.K1Q2_UR_QQK,
-    tmpln.K2Q1,
-    tmpln.K2Q2,
-    tmpln.K1Q2_SR_KQQ,
+    rtmpln.K1Q1_MCOM,
+    rtmpln.K1Q2_SR_BCOM,
+    rtmpln.K3Q3,
+    rtmpln.K1Q2_SR_QQK,
+    rtmpln.K1Q2_WR_KQQ,
+    rtmpln.K1Q2_UR_QQK,
+    rtmpln.K2Q1,
+    rtmpln.K2Q2,
+    rtmpln.K1Q2_SR_KQQ,
 )
 
 
 def _sug(name):
-    return name[2:]
+    return rkqst.sug_text_for_old_special_kq_template_name(name)
 
 
 def _tmpl(name, *args):
@@ -70,7 +71,7 @@ class WsBotKukSpecialCallsiteMigrationTests(unittest.TestCase):
                 )
 
     def test_preserves_named_params_and_appends_sug(self):
-        old_name = tmpln.K1Q2_SR_KQQ
+        old_name = rtmpln.K1Q2_SR_KQQ
         tmpl = _tmpl(old_name, "כְּתִיב", "קרי", "מקורות=ל", "רווח=לא")
 
         out_tmpl = mod._transform_kuk_special_callsite(tmpl)[0]
@@ -84,7 +85,7 @@ class WsBotKukSpecialCallsiteMigrationTests(unittest.TestCase):
         )
 
     def test_preflight_blocks_rvach_yes(self):
-        old_name = tmpln.K1Q2_SR_KQQ
+        old_name = rtmpln.K1Q2_SR_KQQ
         _set_ctx("Joshua", "א")
         cif2 = _minimal_cif2(_tmpl(old_name, "כְּתִיב", "קרי", "רווח=כן"))
 
@@ -96,7 +97,7 @@ class WsBotKukSpecialCallsiteMigrationTests(unittest.TestCase):
         self.assertEqual(mod.get_warnings()[0]["reason"], "rvach-yes-manual-review")
 
     def test_existing_matching_sug_is_preserved_without_duplication(self):
-        old_name = tmpln.K2Q2
+        old_name = rtmpln.K2Q2
         tmpl = _tmpl(old_name, "כְּתִיב", "קרי", f"סוג={_sug(old_name)}")
 
         out_tmpl = mod._transform_kuk_special_callsite(tmpl)[0]

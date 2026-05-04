@@ -18,7 +18,7 @@ Exports:
 import difflib
 
 from mb_cmn.hebrew_punctuation import NU_GMAQ
-from mb_cmn import kq_special_templates as kqst
+from mb_cmn import retired_kq_special_templates as rkqst
 from mb_cmn.str_defs import DOUB_VERT_LINE
 from mb_cmn.template_names import STD_KQ_TMPL_NAMES
 from mb_diff_mpu.mpplus_param_access import MISSING, get_param
@@ -36,8 +36,10 @@ def is_parashah_template(name):
 
 def is_std_kq_template(name):
     """Check if template is a standard ketiv/qere body-text variant."""
-    return name in _STD_KQ_TEMPLATE_NAMES or kqst.is_unified_special_kq_template_name(
-        name
+    return (
+        name in _STD_KQ_TEMPLATE_NAMES
+        or rkqst.is_unified_special_kq_template_name(name)
+        or rkqst.is_old_special_kq_template_name(name)
     )
 
 
@@ -162,11 +164,11 @@ def _single_string_param(raw_value, param_name):
 
 def _validate_special_kq_if_needed(tmpl):
     name = tmpl["tmpl_name"]
-    if not kqst.is_special_kq_template_name(name):
+    if not rkqst.is_special_kq_template_name(name):
         return
     sug_raw = get_param(tmpl, "סוג")
     sug_text = None if sug_raw is MISSING else _single_string_param(sug_raw, "סוג")
-    kqst.canonical_special_kq_type_from_name_and_sug(name, sug_text)
+    rkqst.canonical_special_kq_type_from_name_and_sug(name, sug_text)
 
 
 def _flatten_diff_element(el, buf):

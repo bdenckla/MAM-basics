@@ -1,7 +1,8 @@
 import unittest
 
 from mb_cmn import bib_locales as tbn
-from mb_cmn import template_names as tmpln
+from mb_cmn import retired_kq_special_templates as rkqst
+from mb_cmn import retired_template_names as rtmpln
 from mb_diff_mpu import (
     mpplus_classify,
     mpplus_expand,
@@ -665,7 +666,7 @@ def _special_kq_new_ep(old_name):
             "tmpl_params": {
                 "1": "כתיב",
                 "2": "קְרִי",
-                "סוג": old_name.removeprefix("מ:"),
+                "סוג": rkqst.sug_text_for_old_special_kq_template_name(old_name),
             },
         }
     ]
@@ -734,7 +735,7 @@ class KqTrivial2Tests(unittest.TestCase):
 
 class SpecialKqUnifiedDiffEquivalenceTests(unittest.TestCase):
     def test_old_vs_unified_special_kq_with_same_content_is_no_op(self):
-        for old_name in (tmpln.K1Q2_SR_KQQ, tmpln.K2Q2, tmpln.K3Q3):
+        for old_name in (rtmpln.K1Q2_SR_KQQ, rtmpln.K2Q2, rtmpln.K3Q3):
             diff = mpplus_extract._diff_ep(
                 _special_kq_old_ep(old_name),
                 _special_kq_new_ep(old_name),

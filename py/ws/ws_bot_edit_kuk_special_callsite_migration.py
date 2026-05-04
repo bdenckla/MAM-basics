@@ -4,7 +4,7 @@
 Rewrite rule per call site:
   1. Keep positional parameters unchanged.
   2. Replace template name with מ:כו"ק מיוחד.
-  3. Add סוג=<old-template-name-without-leading-"מ:">.
+    3. Add סוג according to the explicit old-name-to-סוג mapping.
   4. Preserve remaining parameters.
 
 Safety rule:
@@ -15,7 +15,8 @@ Safety rule:
 from functools import partial
 
 from mb_cmn import hebrew_verse_numerals as hvn
-from mb_cmn import template_names as tmpln
+from mb_cmn import retired_kq_special_templates as rkqst
+from mb_cmn import retired_template_names as rtmpln
 from mb_cmn import ws_tmpl1 as wtp1
 from mb_cmn import ws_tmpl2 as wtp
 from mb_cmn.my_utils import dv_dispatch
@@ -39,15 +40,15 @@ _warnings = []
 _NEW_TMPL_NAME = 'מ:כו"ק מיוחד'
 
 _DEPRECATED_TMPL_NAMES = (
-    tmpln.K1Q1_MCOM,
-    tmpln.K1Q2_SR_BCOM,
-    tmpln.K3Q3,
-    tmpln.K1Q2_SR_QQK,
-    tmpln.K1Q2_WR_KQQ,
-    tmpln.K1Q2_UR_QQK,
-    tmpln.K2Q1,
-    tmpln.K2Q2,
-    tmpln.K1Q2_SR_KQQ,
+    rtmpln.K1Q1_MCOM,
+    rtmpln.K1Q2_SR_BCOM,
+    rtmpln.K3Q3,
+    rtmpln.K1Q2_SR_QQK,
+    rtmpln.K1Q2_WR_KQQ,
+    rtmpln.K1Q2_UR_QQK,
+    rtmpln.K2Q1,
+    rtmpln.K2Q2,
+    rtmpln.K1Q2_SR_KQQ,
 )
 
 
@@ -70,8 +71,7 @@ def _warn(reason, tmpl):
 
 
 def _sug_text_for_old_template_name(old_name):
-    assert old_name.startswith("מ:"), old_name
-    return old_name[2:]
+    return rkqst.sug_text_for_old_special_kq_template_name(old_name)
 
 
 def _is_rvach_yes(tmpl):

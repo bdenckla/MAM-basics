@@ -42,7 +42,6 @@ def _make_comparable_tmpl(tmpl, stack_ctx):
 
 def _stack_label(tmpl):
     tmpl_name = wtp1.template_name(tmpl)
-    assert not kqst.is_old_special_kq_template_name(tmpl_name), tmpl_name
     tmpl_el0 = wtp1.template_element(tmpl, 0)
     if len(tmpl_el0) == 1:
         assert isinstance(tmpl_el0[0], str)
