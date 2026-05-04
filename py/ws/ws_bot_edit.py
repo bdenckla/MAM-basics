@@ -30,6 +30,11 @@ For "kq-trivial-2-rename-extra-alef-sug" (an untargeted kind):
     Renames סוג=אל"ף מיותרת to סוג=אל"ף נחה באמצע תיבה ולא נקראת
     on {{מ:קו"כ-אם-2}} calls.
 
+For "kuk-special-callsite-migration" (an untargeted kind):
+    Migrates call sites of nine deprecated issue-67 כו"ק template names
+    to {{מ:כו"ק מיוחד|...|סוג=...}}, preserving existing params.
+    Hard-preflights for רווח=כן and fails fast for manual handling.
+
 Terminology:
     - chapter-targeted: explicit edit objects keyed by chapter
     - untargeted: no explicit per-chapter edit list; transform runs on each
@@ -50,6 +55,7 @@ from ws import ws_get_bk_in_both_fmts as wsin
 from ws import ws_fmt_2_back_to_wikitext as btw
 from ws import ws_bot_edit_kq_triv_rename_extra_alef_sug as kq2_rename
 from ws import ws_bot_edit_kq_triv_to_2 as kq2
+from ws import ws_bot_edit_kuk_special_callsite_migration as kuk67
 
 
 def _meteg_removal(entry):
@@ -74,6 +80,10 @@ _UNTARGETED_EDIT_KINDS = {
     "kq-trivial-2-rename-extra-alef-sug": {
         "fn": kq2_rename.edit_page_text,
         "get_warnings": kq2_rename.get_warnings,
+    },
+    "kuk-special-callsite-migration": {
+        "fn": kuk67.edit_page_text,
+        "get_warnings": kuk67.get_warnings,
     },
 }
 

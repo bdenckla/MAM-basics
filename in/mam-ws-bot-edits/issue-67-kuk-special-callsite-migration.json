@@ -1,0 +1,5 @@
+{
+  "summary": "Migrate 9 deprecated כו\"ק template call sites to {{מ:כו\"ק מיוחד|...|סוג=...}}, per MAM-basics#67",
+  "edit-kind": "kuk-special-callsite-migration",
+  "edits": {}
+}

@@ -60,6 +60,11 @@ TEST_MODULE_SPECS = (
         help_text="Run ws-bot issue56 rafeh edit tests.",
     ),
     TestModuleSpec(
+        flag="ws-bot-kuk-special-callsite-migration",
+        module_name="tests.test_ws_bot_kuk_special_callsite_migration",
+        help_text='Run ws-bot issue67 כו"ק special callsite migration tests.',
+    ),
+    TestModuleSpec(
         flag="ws-bot-kq-triv-add-type",
         module_name="tests.test_ws_bot_kq_triv_add_type",
         help_text="Run ws-bot trivial kq type-addition tests.",

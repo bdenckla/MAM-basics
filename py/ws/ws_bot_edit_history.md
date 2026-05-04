@@ -118,12 +118,21 @@ infrastructure has changed enough to make them misleading examples:
   `{{מ:קו"כ-אם-2|...|סוג=...}}` values.
 - **JSON files:** `in/mam-ws-bot-edits/kq-trivial-2-rename-extra-alef-sug.json`
 
-### Add rafeh to three יראו forms — current
+### Add rafeh to three יראו forms
 - **Purpose:** Add rafeh (U+05BF) to the three remaining no-rafeh
   occurrences among the four issue-56 יראו words, leaving 2Sam 11:24 as-is
   because it already has rafeh.
 - **Edit level:** Chapter-targeted raw page text string replacement.
 - **JSON files:** `in/mam-ws-bot-edits/issue-56-add-rafeh-to-yireu.json`
+
+### Issue 67: migrate deprecated כו"ק call sites to מ:כו"ק מיוחד — current
+- **Purpose:** Migrate call sites of nine deprecated issue-67 כו"ק template
+  names to `{{מ:כו"ק מיוחד|...|סוג=...}}`, where `סוג` is derived from the old
+  template name without the `מ:` prefix.
+- **Safety rule:** Hard preflight for `רווח=כן`; fail fast for manual handling.
+- **Edit level:** Full cif2 AST traversal via candlers/vandlers/wandlers.
+- **JSON files:**
+  `in/mam-ws-bot-edits/issue-67-kuk-special-callsite-migration.json`
 
 ## How to look up the original code
 
