@@ -38,10 +38,12 @@ PYFILE_RELPATHS = (
     "mb_cmn/hebrew_punctuation.py",
     "mb_cmn/bib_locales.py",
     "mb_cmn/file_io.py",
+    "mb_cmn/he_wikisource_url.py",
     "mb_cmn/provenance.py",
     "mb_cmn/shrink.py",
     "mb_cmn/str_defs.py",
     "mb_cmn/uni_heb.py",
+    "mb_cmn/url_percent.py",
     "mb_cmn/my_utils.py",
     #
     "mb_misc/mb_html.py",
