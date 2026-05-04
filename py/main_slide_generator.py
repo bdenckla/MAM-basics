@@ -20,7 +20,7 @@ Examples
 import argparse
 import pathlib
 
-from slide_generator import make_thumbs as _make_thumbs
+from slide_generator import make_thumbs
 from slide_generator import mam_is_a_dataset, what_is_mam
 
 ALL_DECKS = {
@@ -44,7 +44,7 @@ def cmd_render_slides(args: argparse.Namespace) -> None:
 def cmd_make_thumbs(args: argparse.Namespace) -> None:
     if args.images_dir is None:
         args.images_dir = ALL_DECKS[args.deck].IMAGES_DIR
-    _make_thumbs.cmd_make_thumbs(args)
+    make_thumbs.cmd_make_thumbs(args)
 
 
 def main() -> None:
@@ -76,14 +76,14 @@ def main() -> None:
     p_thumbs.add_argument(
         "--thumb-width",
         type=int,
-        default=_make_thumbs.THUMB_SIZE[0],
-        help=f"Thumbnail width in pixels (default: {_make_thumbs.THUMB_SIZE[0]})",
+        default=make_thumbs.THUMB_SIZE[0],
+        help=f"Thumbnail width in pixels (default: {make_thumbs.THUMB_SIZE[0]})",
     )
     p_thumbs.add_argument(
         "--thumb-height",
         type=int,
-        default=_make_thumbs.THUMB_SIZE[1],
-        help=f"Thumbnail height in pixels (default: {_make_thumbs.THUMB_SIZE[1]})",
+        default=make_thumbs.THUMB_SIZE[1],
+        help=f"Thumbnail height in pixels (default: {make_thumbs.THUMB_SIZE[1]})",
     )
     p_thumbs.set_defaults(func=cmd_make_thumbs)
 
