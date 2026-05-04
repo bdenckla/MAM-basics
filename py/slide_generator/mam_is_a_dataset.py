@@ -50,6 +50,10 @@ _PSALM_15V1_JSON = pathlib.Path(
 _PSALM_15V1_PHONETIC = pathlib.Path(
     "misc/mam-is-a-dataset/img-sources/Psalm 15v1 באהלך phonetic.png"
 )
+_PSALM_5V9_JSON = pathlib.Path(
+    "misc/mam-is-a-dataset/img-sources/Psalm 5v9 mpplus.json"
+)
+_PSALM_5V9_WS1 = pathlib.Path("misc/mam-is-a-dataset/img-sources/Psalm 5v9 WS1.png")
 
 
 def render_psalm_5v9_sources():
@@ -70,8 +74,26 @@ def render_psalm_15v1_qamats():
     )
 
 
+def render_psalm_5v9_mpplus():
+    """Render slide-psalm-5v9-mpplus.png: JSON on left, WS1 screenshot on right."""
+    json_snippet_browser.render_json_snippet_browser(
+        IMAGES_DIR,
+        DECK_NAME,
+        _PSALM_5V9_JSON,
+        "psalm-5v9-mpplus",
+        top_rgb=_TOP_RGB,
+        bot_rgb=_BOT_RGB,
+        companion_image_path=_PSALM_5V9_WS1,
+        layout="row",
+        font_size_px=34,
+        pointed_scale=1.5,
+        companion_first=True,
+    )
+
+
 ALL_SLIDES = {
     "title-card": render_title_card,
     "psalm-5v9-sources": render_psalm_5v9_sources,
     "psalm-15v1-qamats": render_psalm_15v1_qamats,
+    "psalm-5v9-mpplus": render_psalm_5v9_mpplus,
 }

@@ -45,12 +45,20 @@ def _has_pointing(text: str) -> bool:
     return any("\u0591" <= ch <= "\u05c7" for ch in text)
 
 
+def _has_hebrew(text: str) -> bool:
+    """Return True if text contains any Hebrew letter."""
+    return any("\u05d0" <= ch <= "\u05ea" or "\ufb1d" <= ch <= "\ufb4e" for ch in text)
+
+
 def _build_html(
     json_text: str,
     top_rgb: tuple,
     bot_rgb: tuple,
     font_size_px: int,
     companion_image_uri: str = None,
+    layout: str = "column",
+    pointed_scale: float = 2.0,
+    companion_first: bool = False,
 ) -> str:
     W, H = slide_render.W, slide_render.H
     font_uri = _TAAMEY_FONT.as_uri()
@@ -60,20 +68,65 @@ def _build_html(
         color = _token_color(ttype)
         escaped = value.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
         extra = (
-            f" font-size:{font_size_px * 2}px; font-feature-settings:'ss03'"
-            if _has_pointing(value)
+            f" font-size:{round(font_size_px * pointed_scale)}px; font-feature-settings:'ss03'"
+            if (pointed_scale != 1.0 and _has_pointing(value))
             else ""
         )
-        spans.append(f'<span style="color:{color};{extra}">{escaped}</span>')
+        inner = f'<span style="color:{color};{extra}">{escaped}</span>'
+        spans.append(f"<bdi>{inner}</bdi>" if _has_hebrew(value) else inner)
     code_html = "".join(spans)
 
     tr, tg, tb = top_rgb
     br, bg, bb = bot_rgb
-    companion_tag = (
-        f'<img class="companion" src="{companion_image_uri}">'
-        if companion_image_uri
-        else ""
-    )
+
+    if layout == "row":
+        layout_css = """
+  body {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+  }
+  .col {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px;
+    overflow: hidden;
+  }
+  img.companion {
+    width: 90%;
+    height: auto;
+  }"""
+        companion_img = (
+            f'<img class="companion" src="{companion_image_uri}">'
+            if companion_image_uri
+            else ""
+        )
+        body_html = (
+            f'<div class="col">{companion_img}</div><div class="col" style="justify-content:flex-start"><pre>{code_html}</pre></div>'
+            if companion_first
+            else f'<div class="col"><pre>{code_html}</pre></div><div class="col">{companion_img}</div>'
+        )
+    else:
+        layout_css = """
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+  }
+  img.companion {
+    max-width: 70%;
+    height: auto;
+  }"""
+        companion_tag = (
+            f'<img class="companion" src="{companion_image_uri}">'
+            if companion_image_uri
+            else ""
+        )
+        body_html = f"<pre>{code_html}</pre>{companion_tag}"
 
     return f"""<!DOCTYPE html>
 <html>
@@ -93,27 +146,18 @@ def _build_html(
       rgb({tr},{tg},{tb}),
       rgb({br},{bg},{bb}));
   }}
-  body {{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 60px;
-  }}
-  img.companion {{
-    max-width: 70%;
-    height: auto;
-  }}
+{layout_css}
   pre {{
     font-family: 'Taamey', 'Consolas', monospace;
     font-size: {font_size_px}px;
     line-height: 1.8;
-    unicode-bidi: plaintext;
+    direction: ltr;
+    unicode-bidi: normal;
     white-space: pre;
   }}
 </style>
 </head>
-<body><pre>{code_html}</pre>{companion_tag}</body>
+<body>{body_html}</body>
 </html>"""
 
 
@@ -126,6 +170,9 @@ def render_json_snippet_browser(
     bot_rgb: tuple = (8, 61, 56),
     font_size_px: int = _FONT_SIZE_PX,
     companion_image_path: pathlib.Path = None,
+    layout: str = "column",
+    pointed_scale: float = 2.0,
+    companion_first: bool = False,
 ) -> None:
     """Render a syntax-colored JSON snippet slide via Playwright/Chromium screenshot."""
     from playwright.sync_api import sync_playwright
@@ -137,7 +184,16 @@ def render_json_snippet_browser(
         companion_image_uri = f"data:image/png;base64,{b64}"
 
     json_text = json_path.read_text(encoding="utf-8")
-    html = _build_html(json_text, top_rgb, bot_rgb, font_size_px, companion_image_uri)
+    html = _build_html(
+        json_text,
+        top_rgb,
+        bot_rgb,
+        font_size_px,
+        companion_image_uri,
+        layout,
+        pointed_scale,
+        companion_first,
+    )
 
     html_dest = json_path.parent.resolve() / f"slide-{slide_name}.html"
     html_dest.write_text(html, encoding="utf-8")
