@@ -9,6 +9,8 @@ from mb_cmn import bib_locales as tbn
 from mb_cmn import my_utils
 from mb_misc import my_utils_for_mainish as my_utils_fm
 from mb_cmn import ws_tmpl1 as wtp1
+from mb_cmn import ws_tmpl2 as wtp2
+from mb_cmn import kq_special_templates as kqst
 from mb_cmn import template_names as tmpln
 
 _MINIROW = collections.namedtuple("_MINIROW", "CP, DP, EP")
@@ -22,10 +24,24 @@ def _psv_category(bscv):
 
 def _wtel_type_and_subtype(wtel):
     if wtp1.is_template(wtel):
-        return "tmpl", wtp1.template_name(wtel)
+        tmpl_name = wtp1.template_name(wtel)
+        return "tmpl", _survey_tmpl_subtype(tmpl_name, wtel)
     if wtp1.is_abtag(wtel):
         return "custom_tag", wtel["custom_tag"]
     assert False, wtel
+
+
+def _survey_tmpl_subtype(tmpl_name, tmpl1):
+    if not kqst.is_special_kq_template_name(tmpl_name):
+        return tmpl_name
+    tmpl2 = wtp2.use_tmpl2(tmpl1)
+    sug_text = None
+    if "סוג" in wtp2.template_param_keys(tmpl2):
+        sug_val = wtp2.template_param_val(tmpl2, "סוג")
+        assert len(sug_val) == 1 and isinstance(sug_val[0], str), sug_val
+        sug_text = sug_val[0]
+    subtype = kqst.canonical_special_kq_type_from_name_and_sug(tmpl_name, sug_text)
+    return f"special-kq/{subtype}"
 
 
 def _record_wtel(accum, wtel_rec):
@@ -89,6 +105,15 @@ def _my_plus_equals(accum_x, *key_parts):
 _EXPECTED_ARGC = {
     str('כו"ק'): 2,
     str("מ:אות מנוקדת"): 1,
+    "special-kq/k1q1-mcom": tuple((2, 3, 4, 5, 6)),
+    "special-kq/k1q2-sr-kqq": tuple((2, 3, 4, 5, 6)),
+    "special-kq/k1q2-sr-qqk": tuple((2, 3, 4, 5, 6)),
+    "special-kq/k1q2-sr-bcom": tuple((2, 3, 4, 5, 6)),
+    "special-kq/k1q2-wr-kqq": tuple((2, 3, 4, 5, 6)),
+    "special-kq/k1q2-ur-qqk": tuple((2, 3, 4, 5, 6)),
+    "special-kq/k2q1": tuple((2, 3, 4, 5, 6)),
+    "special-kq/k2q2": tuple((2, 3, 4, 5, 6)),
+    "special-kq/k3q3": tuple((2, 3, 4, 5, 6)),
     tmpln.K1Q2_SR_KQQ: tuple((2, 3)),
     tmpln.K2Q1: 2,
     tmpln.K2Q2: 2,

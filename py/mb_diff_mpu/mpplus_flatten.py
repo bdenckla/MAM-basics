@@ -18,6 +18,7 @@ Exports:
 import difflib
 
 from mb_cmn.hebrew_punctuation import NU_GMAQ
+from mb_cmn import kq_special_templates as kqst
 from mb_cmn.str_defs import DOUB_VERT_LINE
 from mb_cmn.template_names import STD_KQ_TMPL_NAMES
 from mb_diff_mpu.mpplus_param_access import MISSING, get_param
@@ -35,7 +36,9 @@ def is_parashah_template(name):
 
 def is_std_kq_template(name):
     """Check if template is a standard ketiv/qere body-text variant."""
-    return name in _STD_KQ_TEMPLATE_NAMES
+    return name in _STD_KQ_TEMPLATE_NAMES or kqst.is_unified_special_kq_template_name(
+        name
+    )
 
 
 def is_trivial_kq_template(name):
@@ -145,6 +148,27 @@ def _qere_velo_ketiv_body_for_diff(tmpl):
     return strip_square_brackets(flatten_element(p1))
 
 
+def _single_string_param(raw_value, param_name):
+    if isinstance(raw_value, str):
+        return raw_value
+    if isinstance(raw_value, list):
+        assert len(raw_value) == 1 and isinstance(raw_value[0], str), (
+            param_name,
+            raw_value,
+        )
+        return raw_value[0]
+    assert False, (param_name, raw_value)
+
+
+def _validate_special_kq_if_needed(tmpl):
+    name = tmpl["tmpl_name"]
+    if not kqst.is_special_kq_template_name(name):
+        return
+    sug_raw = get_param(tmpl, "סוג")
+    sug_text = None if sug_raw is MISSING else _single_string_param(sug_raw, "סוג")
+    kqst.canonical_special_kq_type_from_name_and_sug(name, sug_text)
+
+
 def _flatten_diff_element(el, buf):
     if isinstance(el, str):
         _append_diff_text(buf, el)
@@ -181,6 +205,7 @@ def _flatten_diff_template(tmpl, buf):
             _flatten_diff_element(p1, buf)
         return
     if is_std_kq_template(name):
+        _validate_special_kq_if_needed(tmpl)
         p2 = get_param(tmpl, "2")
         if p2 is not MISSING:
             _flatten_diff_element(p2, buf)
@@ -236,6 +261,7 @@ def _flatten_diff_template_words_only(tmpl, buf):
             _flatten_diff_element_words_only(p1, buf)
         return
     if is_std_kq_template(name):
+        _validate_special_kq_if_needed(tmpl)
         p2 = get_param(tmpl, "2")
         if p2 is not MISSING:
             _flatten_diff_element_words_only(p2, buf)
@@ -276,6 +302,7 @@ def _flatten_template(tmpl):
         p1 = get_param(tmpl, "1")
         return flatten_element(p1) if p1 is not MISSING else ""
     if is_std_kq_template(name) or is_qere_velo_ketiv_template(name):
+        _validate_special_kq_if_needed(tmpl)
         p2 = get_param(tmpl, "2")
         return flatten_element(p2) if p2 is not MISSING else ""
     if is_trivial_kq_template(name):
@@ -355,6 +382,7 @@ def _flatten_template_tracking(tmpl, parts, notes):
             notes.append({"start": start, "end": end, "param2": p2})
         return
     if is_std_kq_template(name) or is_qere_velo_ketiv_template(name):
+        _validate_special_kq_if_needed(tmpl)
         p2 = get_param(tmpl, "2")
         if p2 is not MISSING:
             _flatten_tracking(p2, parts, notes)
@@ -403,6 +431,7 @@ def _flatten_template_tracking_for_diff(tmpl, buf, notes):
             notes.append({"start": start, "end": end, "param2": p2})
         return
     if is_std_kq_template(name):
+        _validate_special_kq_if_needed(tmpl)
         p2 = get_param(tmpl, "2")
         if p2 is not MISSING:
             _flatten_tracking_for_diff(p2, buf, notes)

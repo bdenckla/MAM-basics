@@ -1,6 +1,7 @@
 """Exports refine"""
 
 from mb_cmn import hebrew_punctuation as hpu
+from mb_cmn import kq_special_templates as kqst
 from diff_mm import diff_mm_separators as seps
 from diff_mm import diff_mm_diffs_description as description
 from mb_cmn import template_names as tmpln
@@ -131,19 +132,15 @@ def _explanation(sep_a, sep_b):
 
 def _get_q_of_kq(side):
     if isinstance(side, list) and len(side) == 1:
-        if tyod := _triple_yod(side[0], 'כו"ק:2'):
-            return [tyod]
-        if tyod := _triple_yod(side[0], tmpln.K2Q2 + ":2"):
-            return [tyod]
-        if tyod := _triple_yod(side[0], tmpln.K3Q3 + ":2"):
+        if tyod := _triple_yod_in(side[0], _Q_OF_KQ_ARGSPECS):
             return [tyod]
     return None
 
 
 def _get_kq_of_kq(side):
     if isinstance(side, list) and len(side) == 2:
-        if ketiv := _triple_yod(side[0], 'כו"ק:1'):
-            if qere := _triple_yod(side[1], 'כו"ק:2'):
+        if ketiv := _triple_yod_in(side[0], _K_OF_KQ_ARGSPECS):
+            if qere := _triple_yod_in(side[1], _Q_OF_KQ_PAIR_ARGSPECS):
                 return ketiv, qere
     return None
 
@@ -188,6 +185,29 @@ def _triple_yod(siden, argspec):
     if siden[2] == (argspec,):
         return siden[1]
     return None
+
+
+def _triple_yod_in(siden, argspecs):
+    for argspec in argspecs:
+        if tyod := _triple_yod(siden, argspec):
+            return tyod
+    return None
+
+
+_Q_OF_KQ_ARGSPECS = (
+    'כו"ק:2',
+    tmpln.K2Q2 + ":2",
+    tmpln.K3Q3 + ":2",
+    kqst.UNIFIED_SPECIAL_KQ_TEMPLATE_NAME + ":2",
+)
+_K_OF_KQ_ARGSPECS = (
+    'כו"ק:1',
+    kqst.UNIFIED_SPECIAL_KQ_TEMPLATE_NAME + ":1",
+)
+_Q_OF_KQ_PAIR_ARGSPECS = (
+    'כו"ק:2',
+    kqst.UNIFIED_SPECIAL_KQ_TEMPLATE_NAME + ":2",
+)
 
 
 _DOUBLE_MAQAF_EXPLANATION = "double maqaf represents gray maqaf"

@@ -2,6 +2,7 @@
 
 from collections import Counter
 
+from mb_cmn import kq_special_templates as kqst
 from mb_diff_mpu.mpplus_flatten import (
     flatten_element,
     is_ketiv_velo_qere_template,
@@ -11,6 +12,27 @@ from mb_diff_mpu.mpplus_flatten import (
     is_trivial_kq_template,
 )
 from mb_diff_mpu.mpplus_param_access import MISSING, get_param
+
+
+def _single_string_param(raw_value, param_name):
+    if isinstance(raw_value, str):
+        return raw_value
+    if isinstance(raw_value, list):
+        assert len(raw_value) == 1 and isinstance(raw_value[0], str), (
+            param_name,
+            raw_value,
+        )
+        return raw_value[0]
+    assert False, (param_name, raw_value)
+
+
+def _validate_special_kq_if_needed(tmpl):
+    name = tmpl["tmpl_name"]
+    if not kqst.is_special_kq_template_name(name):
+        return
+    sug_raw = get_param(tmpl, "סוג")
+    sug_text = None if sug_raw is MISSING else _single_string_param(sug_raw, "סוג")
+    kqst.canonical_special_kq_type_from_name_and_sug(name, sug_text)
 
 
 def _iter_named_templates(obj, template_name):
@@ -83,6 +105,7 @@ def _collect_named_template_from_template(tmpl, template_name, parts, instances)
             _collect_named_template_tracking(p1, template_name, parts, instances)
         return
     if is_std_kq_template(name) or is_qere_velo_ketiv_template(name):
+        _validate_special_kq_if_needed(tmpl)
         param = get_param(tmpl, "2")
         if param is not MISSING:
             _collect_named_template_tracking(param, template_name, parts, instances)

@@ -1,6 +1,7 @@
 """Exports ht_kq, handle_kq_ketiv_velo_qere"""
 
 from mb_cmn import hebrew_punctuation as hpu
+from mb_cmn import kq_special_templates as kqst
 from render_wt import render_element as renel
 from render_wt import render_wikitext_helpers as wt_help
 from mb_cmn import ws_tmpl2 as wtp
@@ -9,7 +10,7 @@ from mb_cmn.shrink import shrink
 
 
 def handle_kq(hctx, tmpl):
-    kq_type = tmpln.LATIN_SHORTS[wtp.template_name(tmpl)]
+    kq_type = _kq_type_for_tmpl(tmpl)
     k_wtseq, q_wtseq = _ht_kq_unpack_args(tmpl)
     k_renseq_1 = wt_help.render_wtseq(hctx, k_wtseq)
     q_renseq_1 = wt_help.render_wtseq(hctx, q_wtseq)
@@ -85,10 +86,27 @@ _PUT_KETIV_1ST = {
 
 
 def _ht_kq_unpack_args(tmpl):
-    assert wtp.template_len(tmpl) == 3
+    keys = set(wtp.template_param_keys(tmpl))
+    assert {"1", "2"}.issubset(keys), keys
     ketiv = wtp.template_element(tmpl, 1)
     qere = wtp.template_element(tmpl, 2)
     return ketiv, qere
+
+
+def _sug_text_if_present(tmpl):
+    if "סוג" not in wtp.template_param_keys(tmpl):
+        return None
+    sug_val = wtp.template_param_val(tmpl, "סוג")
+    assert len(sug_val) == 1 and isinstance(sug_val[0], str), sug_val
+    return sug_val[0]
+
+
+def _kq_type_for_tmpl(tmpl):
+    tmpl_name = wtp.template_name(tmpl)
+    sug_text = _sug_text_if_present(tmpl)
+    if kq_type := kqst.maybe_special_kq_type_from_name_and_sug(tmpl_name, sug_text):
+        return kq_type
+    return tmpln.LATIN_SHORTS[tmpl_name]
 
 
 def _paren(seq):

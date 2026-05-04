@@ -30,6 +30,11 @@ TEST_MODULE_SPECS = (
         help_text="Run main_mam_simple CLI parser tests.",
     ),
     TestModuleSpec(
+        flag="mb-cmn-kq-special-templates",
+        module_name="tests.test_mb_cmn_kq_special_templates",
+        help_text="Run special-kq template normalization tests.",
+    ),
+    TestModuleSpec(
         flag="mb-cmn-url-percent",
         module_name="tests.test_mb_cmn_url_percent",
         help_text="Run URL percent-encoding helper tests.",

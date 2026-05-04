@@ -15,6 +15,7 @@ Exports:
 import re
 
 from mb_cmn import hebrew_punctuation as hpu
+from mb_cmn import kq_special_templates as kqst
 from mb_cmn.str_defs import NBSP
 from mb_diff_mpu.mpplus_flatten import (
     is_ketiv_velo_qere_template,
@@ -45,6 +46,27 @@ _KQ_Q_START = "\ue012"
 _KQ_Q_END = "\ue013"
 
 
+def _single_string_param(raw_value, param_name):
+    if isinstance(raw_value, str):
+        return raw_value
+    if isinstance(raw_value, list):
+        assert len(raw_value) == 1 and isinstance(raw_value[0], str), (
+            param_name,
+            raw_value,
+        )
+        return raw_value[0]
+    assert False, (param_name, raw_value)
+
+
+def _validate_special_kq_if_needed(tmpl):
+    name = tmpl["tmpl_name"]
+    if not kqst.is_special_kq_template_name(name):
+        return
+    sug_raw = get_param(tmpl, "סוג")
+    sug_text = None if sug_raw is MISSING else _single_string_param(sug_raw, "סוג")
+    kqst.canonical_special_kq_type_from_name_and_sug(name, sug_text)
+
+
 def _collect_paseq_types(obj, types):
     """Recursively collect paseq template types, mirroring flatten_ep."""
     if isinstance(obj, str):
@@ -65,6 +87,7 @@ def _collect_paseq_types(obj, types):
                 _collect_paseq_types(p1, types)
             return
         if is_std_kq_template(name) or is_qere_velo_ketiv_template(name):
+            _validate_special_kq_if_needed(obj)
             p2 = get_param(obj, "2")
             if p2 is not MISSING:
                 _collect_paseq_types(p2, types)
@@ -128,6 +151,7 @@ def _gray_maqaf_walk_template(tmpl, pos, positions):
             _gray_maqaf_walk(p1, pos, positions)
         return
     if is_std_kq_template(name) or is_qere_velo_ketiv_template(name):
+        _validate_special_kq_if_needed(tmpl)
         p2 = get_param(tmpl, "2")
         if p2 is not MISSING:
             _gray_maqaf_walk(p2, pos, positions)
@@ -187,6 +211,7 @@ def _kq_position_walk_template(tmpl, pos, positions):
             _kq_position_walk(p1, pos, positions)
         return
     if is_std_kq_template(name) or is_qere_velo_ketiv_template(name):
+        _validate_special_kq_if_needed(tmpl)
         p2 = get_param(tmpl, "2")
         if p2 is not MISSING:
             _kq_position_walk(p2, pos, positions)

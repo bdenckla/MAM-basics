@@ -12,6 +12,7 @@ Private helpers:
 
 from collections import Counter
 
+from mb_cmn import kq_special_templates as kqst
 from mb_diff_mpu.mpplus_param_access import MISSING, get_param
 
 
@@ -25,7 +26,7 @@ def collect_template_names(obj):
                 if p1 is not MISSING:
                     names.extend(collect_template_names(p1))
                 return names
-            names.append(obj["tmpl_name"])
+            names.append(_canonical_template_name_for_structure(obj))
         for value in obj.values():
             names.extend(collect_template_names(value))
     elif isinstance(obj, list):
@@ -90,6 +91,35 @@ def _semantic_param_items(tmpl):
     return items
 
 
+def _single_string_param(raw_value, param_name):
+    if isinstance(raw_value, str):
+        return raw_value
+    if isinstance(raw_value, list):
+        assert len(raw_value) == 1 and isinstance(raw_value[0], str), (
+            param_name,
+            raw_value,
+        )
+        return raw_value[0]
+    assert False, (param_name, raw_value)
+
+
+def _canonical_template_name_for_structure(tmpl):
+    name = tmpl["tmpl_name"]
+    if not kqst.is_special_kq_template_name(name):
+        return name
+    sug_raw = get_param(tmpl, "סוג")
+    sug_text = None if sug_raw is MISSING else _single_string_param(sug_raw, "סוג")
+    return kqst.canonical_special_kq_old_name_from_name_and_sug(name, sug_text)
+
+
+def _normalized_param_items_for_structure(tmpl):
+    items = _semantic_param_items(tmpl)
+    name = tmpl["tmpl_name"]
+    if kqst.is_unified_special_kq_template_name(name):
+        return [(key, value) for key, value in items if key != "סוג"]
+    return items
+
+
 def _structure_occurrences(obj, path=()):
     """Collect template occurrences with semantic ancestry and content order."""
     if isinstance(obj, str):
@@ -109,14 +139,14 @@ def _structure_occurrences(obj, path=()):
             )
         return occurrences
 
-    name = obj["tmpl_name"]
+    name = _canonical_template_name_for_structure(obj)
     if name == "נוסח":
         p1 = get_param(obj, "1")
         return [] if p1 is MISSING else _structure_occurrences(p1, path)
 
     occurrences = [(path, name)]
     child_path = path + (("tmpl", name),)
-    for key, value in _semantic_param_items(obj):
+    for key, value in _normalized_param_items_for_structure(obj):
         occurrences.extend(
             _structure_occurrences(value, child_path + (("param", key),))
         )

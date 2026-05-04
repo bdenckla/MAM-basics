@@ -5,6 +5,7 @@ from py_misc import ren_html_for_renel as hfr
 from mb_cmn import ws_tmpl2 as wtp
 from render_wt import render_wikitext_handlers as handlers
 from render_wt import render_wikitext_helpers as wt_help
+from mb_cmn import kq_special_templates as kqst
 from mb_cmn import template_names as tmpln
 from foi import kq_trivial_types
 from foi import kq_trivial_sug
@@ -17,7 +18,7 @@ def find_fois_wt(mroge):
 
 def _record_kq_as_foi(_foilers, stack, tmpl):
     tmpl_name = wtp.template_name(tmpl)
-    foi_path = "kq-simple", _FOI_PATH[tmpln.LATIN_SHORTS[tmpl_name]]
+    foi_path = "kq-simple", _FOI_PATH[_kq_type_for_tmpl(tmpl)]
     stack_summary = fwh.stack_summary(_STACK_SUMMARIES, stack)
     foi_target_proper = _html_for_wtseq((tmpl,))
     foi_qualifier = {}
@@ -44,6 +45,22 @@ def _html_for_wtseq(wtseq):
     return hfr.html_for_ren_el(hfr_ctx, renseq)
 
 
+def _sug_text_if_present(tmpl):
+    if "סוג" not in wtp.template_param_keys(tmpl):
+        return None
+    sug_val = wtp.template_param_val(tmpl, "סוג")
+    assert len(sug_val) == 1 and isinstance(sug_val[0], str), sug_val
+    return sug_val[0]
+
+
+def _kq_type_for_tmpl(tmpl):
+    tmpl_name = wtp.template_name(tmpl)
+    sug_text = _sug_text_if_present(tmpl)
+    if kq_type := kqst.maybe_special_kq_type_from_name_and_sug(tmpl_name, sug_text):
+        return kq_type
+    return tmpln.LATIN_SHORTS[tmpl_name]
+
+
 _FOI_PATH = {
     "kq-q-velo-k": "x-velo-y-q-velo-k",
     "kq-k-velo-q": "x-velo-y-k-velo-q",
@@ -63,6 +80,7 @@ _FOI_PATH = {
 }
 _FOILERS_FOR_KETIV_QERE = {
     **tmpln.map_all_std_kq_to_a_constant(_record_kq_as_foi),
+    kqst.UNIFIED_SPECIAL_KQ_TEMPLATE_NAME: _record_kq_as_foi,
     'מ:קו"כ-אם-2': _record_kq_as_foi,
     "קרי ולא כתיב": _record_kq_as_foi,
     "כתיב ולא קרי": _record_kq_as_foi,
@@ -80,7 +98,9 @@ _STACK_SUMMARIES = {
     ("doc-target",): None,
     ("doc-target", 'מ:קו"כ-אם-2'): None,
     ("doc-target", 'כו"ק'): None,
+    ("doc-target", kqst.UNIFIED_SPECIAL_KQ_TEMPLATE_NAME): None,
     ('כו"ק',): None,
+    (kqst.UNIFIED_SPECIAL_KQ_TEMPLATE_NAME,): None,
     ("מ:דחי",): None,
     (fwh.DUALCANT_ARG_COMBINED, "doc-target"): -2,
     (fwh.DUALCANT_ARG_ALEF,): -1,

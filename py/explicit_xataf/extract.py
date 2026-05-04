@@ -3,6 +3,7 @@
 import re
 
 from mb_cmn import hebrew_points as hpo
+from mb_cmn import kq_special_templates as kqst
 from mb_cmn import template_names as tmpln
 from mb_cmn import ws_tmpl2 as wtp
 
@@ -152,7 +153,11 @@ def flatten_text(wtel):
     if isinstance(wtel, list):
         return "".join(flatten_text(x) for x in wtel)
     if isinstance(wtel, dict) and wtp.is_template(wtel):
-        if wtp.is_template_with_name_in(wtel, tmpln.STD_KQ_TMPL_NAMES):
+        tmpl_name = wtp.template_name(wtel)
+        if wtp.is_template_with_name_in(
+            wtel, tmpln.STD_KQ_TMPL_NAMES
+        ) or kqst.is_unified_special_kq_template_name(tmpl_name):
+            _validate_special_kq_if_needed(wtel)
             return flatten_text(wtp.template_element(wtel, 2))
         if wtp.is_template_with_name_in(wtel, _STRESS_VARIANT_TMPL_NAMES):
             return flatten_text(wtp.template_element(wtel, 1))
@@ -168,6 +173,18 @@ def flatten_text(wtel):
             return ""
         assert False, f"Unexpected template in flatten_text: {wtel}"
     return ""
+
+
+def _validate_special_kq_if_needed(tmpl):
+    tmpl_name = wtp.template_name(tmpl)
+    if not kqst.is_special_kq_template_name(tmpl_name):
+        return
+    sug_text = None
+    if "סוג" in wtp.template_param_keys(tmpl):
+        sug_val = wtp.template_param_val(tmpl, "סוג")
+        assert len(sug_val) == 1 and isinstance(sug_val[0], str), sug_val
+        sug_text = sug_val[0]
+    kqst.canonical_special_kq_type_from_name_and_sug(tmpl_name, sug_text)
 
 
 def has_varika(wtel):
