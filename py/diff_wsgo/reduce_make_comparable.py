@@ -2,7 +2,6 @@
 
 import re
 from mb_cmn import hebrew_punctuation as hpu
-from mb_cmn import kq_special_templates as kqst
 from mb_cmn import ws_tmpl1 as wtp1
 from py_misc import hebrew_letter_words as hlw
 from diff_wsgo import separators as seps

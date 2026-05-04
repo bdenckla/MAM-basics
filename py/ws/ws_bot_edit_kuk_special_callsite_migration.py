@@ -4,7 +4,7 @@
 Rewrite rule per call site:
   1. Keep positional parameters unchanged.
   2. Replace template name with מ:כו"ק מיוחד.
-    3. Add סוג according to the explicit old-name-to-סוג mapping.
+  3. Add סוג according to the explicit old-name-to-סוג mapping.
   4. Preserve remaining parameters.
 
 Safety rule:

@@ -36,11 +36,7 @@ def is_parashah_template(name):
 
 def is_std_kq_template(name):
     """Check if template is a standard ketiv/qere body-text variant."""
-    return (
-        name in _STD_KQ_TEMPLATE_NAMES
-        or rkqst.is_unified_special_kq_template_name(name)
-        or rkqst.is_old_special_kq_template_name(name)
-    )
+    return name in _STD_KQ_TEMPLATE_NAMES or rkqst.is_old_special_kq_template_name(name)
 
 
 def is_trivial_kq_template(name):

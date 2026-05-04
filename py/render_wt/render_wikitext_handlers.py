@@ -12,7 +12,6 @@ from mb_cmn import bib_locales as tbn
 from mb_cmn import hebrew_letters as hl
 from mb_cmn import hebrew_points as hpo
 from mb_cmn import hebrew_punctuation as hpu
-from mb_cmn import kq_special_templates as kqst
 from mb_cmn import str_defs as sd
 from mb_cmn import template_names as tmpln
 from mb_cmn import ws_tmpl2 as wtp
@@ -455,10 +454,8 @@ _MASK_EC = "ec"
 _MASK_EL = "el"
 _MASK_ECL = "ecl"
 _MASK_ELP = "elp"
-_BASE_KQ_TMPL_NAMES = ('כו"ק', 'קו"כ')
 _HANDLER_SPECS_FOR_KETIV_QERE = {
-    **{name: {_MASK_EL: kq.handle_kq} for name in _BASE_KQ_TMPL_NAMES},
-    kqst.UNIFIED_SPECIAL_KQ_TEMPLATE_NAME: {_MASK_EL: kq.handle_kq},
+    **tmpln.map_all_std_kq_to_a_constant({_MASK_EL: kq.handle_kq}),
     'מ:קו"כ-אם-2': {_MASK_EL: _handle_kq_trivial},
     "קרי ולא כתיב": {_MASK_EL: kq.handle_kq_qere_velo_ketiv},
     "כתיב ולא קרי": {_MASK_EL: kq.handle_kq_ketiv_velo_qere},
