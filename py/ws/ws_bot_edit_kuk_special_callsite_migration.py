@@ -80,9 +80,7 @@ def _is_rvach_yes(tmpl):
         return False
     rvach_val = wtp.template_param_val(tmpl2, "רווח")
     return (
-        len(rvach_val) == 1
-        and isinstance(rvach_val[0], str)
-        and rvach_val[0].strip() == "כן"
+        len(rvach_val) == 1 and isinstance(rvach_val[0], str) and rvach_val[0] == "כן"
     )
 
 

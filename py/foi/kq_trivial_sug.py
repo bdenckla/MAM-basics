@@ -37,7 +37,7 @@ def extract_sug_text(tmpl):
     """Return סוג text or None when absent/blank."""
     if "סוג" not in wtp.template_param_keys(tmpl):
         return None
-    raw_text = _flatten_text(wtp.template_param_val(tmpl, "סוג")).strip()
+    raw_text = _flatten_text(wtp.template_param_val(tmpl, "סוג"))
     return raw_text or None
 
 
