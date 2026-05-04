@@ -3,14 +3,15 @@
 
 Slides
 ------
-title-card      "MAM is a dataset" / "(MAM is not an edition)"
+title-card           "MAM is a dataset" / "(MAM is not an edition)"
+psalm-5v9-sources    Composite of five Psalm 5:9 source screenshots
 """
 
 import pathlib
 
 from PIL import ImageFont
 
-from slide_generator import slide_render
+from slide_generator import composite_img_sources, slide_render
 
 DECK_NAME = "mam-is-a-dataset"
 IMAGES_DIR = pathlib.Path("misc/mam-is-a-dataset/img")
@@ -41,6 +42,12 @@ def render_title_card():
     print(f"Saved {dest} {img.size}")
 
 
+def render_psalm_5v9_sources():
+    """Render slide-psalm-5v9-sources.png."""
+    composite_img_sources.render_psalm_5v9_sources(IMAGES_DIR)
+
+
 ALL_SLIDES = {
     "title-card": render_title_card,
+    "psalm-5v9-sources": render_psalm_5v9_sources,
 }
