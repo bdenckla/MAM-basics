@@ -55,10 +55,16 @@ def _sug_text_if_present(tmpl):
 
 def _kq_type_for_tmpl(tmpl):
     tmpl_name = wtp.template_name(tmpl)
-    sug_text = _sug_text_if_present(tmpl)
-    if kq_type := kqst.maybe_special_kq_type_from_name_and_sug(tmpl_name, sug_text):
-        return kq_type
+    if kqst.is_special_kq_template_name(tmpl_name):
+        assert kqst.is_unified_special_kq_template_name(tmpl_name), tmpl_name
+        sug_text = _sug_text_if_present(tmpl)
+        assert sug_text is not None, tmpl
+        return kqst.canonical_special_kq_type_from_name_and_sug(tmpl_name, sug_text)
     return tmpln.LATIN_SHORTS[tmpl_name]
+
+
+def _reject_deprecated_special_kq(_foilers, _stack, tmpl):
+    assert False, wtp.template_name(tmpl)
 
 
 _FOI_PATH = {
@@ -79,8 +85,13 @@ _FOI_PATH = {
     "kq-trivial": "z-trivial",
 }
 _FOILERS_FOR_KETIV_QERE = {
-    **tmpln.map_all_std_kq_to_a_constant(_record_kq_as_foi),
+    'כו"ק': _record_kq_as_foi,
+    'קו"כ': _record_kq_as_foi,
     kqst.UNIFIED_SPECIAL_KQ_TEMPLATE_NAME: _record_kq_as_foi,
+    **{
+        name: _reject_deprecated_special_kq
+        for name in kqst.OLD_SPECIAL_KQ_TEMPLATE_NAMES
+    },
     'מ:קו"כ-אם-2': _record_kq_as_foi,
     "קרי ולא כתיב": _record_kq_as_foi,
     "כתיב ולא קרי": _record_kq_as_foi,

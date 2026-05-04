@@ -455,8 +455,9 @@ _MASK_EC = "ec"
 _MASK_EL = "el"
 _MASK_ECL = "ecl"
 _MASK_ELP = "elp"
+_BASE_KQ_TMPL_NAMES = ('כו"ק', 'קו"כ')
 _HANDLER_SPECS_FOR_KETIV_QERE = {
-    **tmpln.map_all_std_kq_to_a_constant({_MASK_EL: kq.handle_kq}),
+    **{name: {_MASK_EL: kq.handle_kq} for name in _BASE_KQ_TMPL_NAMES},
     kqst.UNIFIED_SPECIAL_KQ_TEMPLATE_NAME: {_MASK_EL: kq.handle_kq},
     'מ:קו"כ-אם-2': {_MASK_EL: _handle_kq_trivial},
     "קרי ולא כתיב": {_MASK_EL: kq.handle_kq_qere_velo_ketiv},

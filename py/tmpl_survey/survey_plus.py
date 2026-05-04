@@ -9,7 +9,6 @@ from mb_cmn import bib_locales as tbn
 from mb_misc import my_utils_for_mainish as my_utils_fm
 from mb_cmn import ws_tmpl2 as wtp2
 from mb_cmn import kq_special_templates as kqst
-from mb_cmn import template_names as tmpln
 
 _MINIROW = collections.namedtuple("_MINIROW", "DP, CP, EP")
 
@@ -23,11 +22,11 @@ def _wtel_type_and_subtype(wtel):
 def _survey_tmpl_subtype(tmpl_name, tmpl):
     if not kqst.is_special_kq_template_name(tmpl_name):
         return tmpl_name
-    sug_text = None
-    if "סוג" in wtp2.template_param_keys(tmpl):
-        sug_val = wtp2.template_param_val(tmpl, "סוג")
-        assert len(sug_val) == 1 and isinstance(sug_val[0], str), sug_val
-        sug_text = sug_val[0]
+    assert kqst.is_unified_special_kq_template_name(tmpl_name), tmpl_name
+    assert "סוג" in wtp2.template_param_keys(tmpl), tmpl
+    sug_val = wtp2.template_param_val(tmpl, "סוג")
+    assert len(sug_val) == 1 and isinstance(sug_val[0], str), sug_val
+    sug_text = sug_val[0]
     subtype = kqst.canonical_special_kq_type_from_name_and_sug(tmpl_name, sug_text)
     return f"special-kq/{subtype}"
 
@@ -94,10 +93,6 @@ _EXPECTED_ARGC = {
     "special-kq/k2q1": tuple((2, 3, 4, 5, 6)),
     "special-kq/k2q2": tuple((2, 3, 4, 5, 6)),
     "special-kq/k3q3": tuple((2, 3, 4, 5, 6)),
-    tmpln.K1Q2_SR_KQQ: tuple((2, 3)),
-    tmpln.K2Q1: 2,
-    tmpln.K2Q2: 2,
-    tmpln.K3Q3: 2,
 }
 
 

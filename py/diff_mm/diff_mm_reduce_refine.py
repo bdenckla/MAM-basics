@@ -4,7 +4,6 @@ from mb_cmn import hebrew_punctuation as hpu
 from mb_cmn import kq_special_templates as kqst
 from diff_mm import diff_mm_separators as seps
 from diff_mm import diff_mm_diffs_description as description
-from mb_cmn import template_names as tmpln
 
 
 def refine(vala, valb):
@@ -196,8 +195,6 @@ def _triple_yod_in(siden, argspecs):
 
 _Q_OF_KQ_ARGSPECS = (
     'כו"ק:2',
-    tmpln.K2Q2 + ":2",
-    tmpln.K3Q3 + ":2",
     kqst.UNIFIED_SPECIAL_KQ_TEMPLATE_NAME + ":2",
 )
 _K_OF_KQ_ARGSPECS = (

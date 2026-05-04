@@ -4,7 +4,6 @@ import re
 from mb_cmn import hebrew_punctuation as hpu
 from mb_cmn import kq_special_templates as kqst
 from mb_cmn import ws_tmpl1 as wtp1
-from mb_cmn import ws_tmpl2 as wtp2
 from py_misc import hebrew_letter_words as hlw
 from diff_mm import diff_mm_separators as seps
 from mb_cmn.my_utils import sum_of_map
@@ -43,23 +42,12 @@ def _make_comparable_tmpl(tmpl, stack_ctx):
 
 def _stack_label(tmpl):
     tmpl_name = wtp1.template_name(tmpl)
-    if kqst.is_unified_special_kq_template_name(tmpl_name):
-        return _canonical_special_kq_name_from_tmpl1(tmpl)
+    assert not kqst.is_old_special_kq_template_name(tmpl_name), tmpl_name
     tmpl_el0 = wtp1.template_element(tmpl, 0)
     if len(tmpl_el0) == 1:
         assert isinstance(tmpl_el0[0], str)
         return tmpl_el0[0]
     return str(tmpl_el0)  # ['#בלי קטע:', {'stmpl': 'שם הדף המלא'}]
-
-
-def _canonical_special_kq_name_from_tmpl1(tmpl1):
-    tmpl2 = wtp2.use_tmpl2(tmpl1)
-    assert "סוג" in wtp2.template_param_keys(tmpl2), tmpl2
-    sug_val = wtp2.template_param_val(tmpl2, "סוג")
-    assert len(sug_val) == 1 and isinstance(sug_val[0], str), sug_val
-    return kqst.canonical_special_kq_old_name_from_name_and_sug(
-        wtp2.template_name(tmpl2), sug_val[0]
-    )
 
 
 def _make_comparable_arg(stack_ctx, stack_label, earg):
