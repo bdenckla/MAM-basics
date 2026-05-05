@@ -89,7 +89,7 @@ def render_psalm_5v9_mpplus_steps():
     _json = _PSALM_5V9_JSON.read_text(encoding="utf-8")
     _s9 = _json.index('{"tmpl_name": "כו')  # start of כו"ק object
     _kuk_object = _json[_s9 : _json.index("}}", _s9) + 2]
-    _s10 = _json.index('" לְפ') + 1  # skip opening JSON double-quote
+    _s10 = _json.index('"לְפָנַ֣י') + 1  # skip opening JSON double-quote
     _last_str = _json[_s10 : _json.index('"', _s10)]
 
     steps = [
@@ -116,7 +116,7 @@ def render_psalm_5v9_mpplus_steps():
             "companion_hl_ids": ["rs1", "ind1"],
         },
         {
-            "highlight_text": '"לְמַ֥עַן "',
+            "highlight_text": '"לְמַ֥עַן", " "',
             "companion_hl_ids": ["lmaan"],
         },
         {
@@ -138,7 +138,7 @@ def render_psalm_5v9_mpplus_steps():
             "companion_hl_ids": ["hoshar", "kuk-space", "hayashar"],
         },
         {
-            "highlight_text": '"' + _last_str + '"',
+            "highlight_text": '" ", "' + _last_str + '"',
             "companion_hl_ids": ["text3"],
         },
     ]
