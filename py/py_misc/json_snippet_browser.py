@@ -55,6 +55,26 @@ def _highlight_companion_html(html: str, highlight_text: str) -> str:
     return html.replace(highlight_text, f'<span class="hl">{highlight_text}</span>', 1)
 
 
+def _mid_parts_no_indent_hl(mid: str) -> list:
+    """Split mid into (text, hl_bg) pairs, suppressing highlight on leading
+    whitespace of continuation lines (after each embedded newline)."""
+    parts = mid.split("\n")
+    result = []
+    for i, part in enumerate(parts):
+        if i == 0:
+            if part:
+                result.append((part, True))
+        else:
+            result.append(("\n", False))
+            stripped = part.lstrip(" \t")
+            indent = part[: len(part) - len(stripped)]
+            if indent:
+                result.append((indent, False))
+            if stripped:
+                result.append((stripped, True))
+    return result
+
+
 def _one_span(
     value: str,
     color: str,
@@ -125,11 +145,17 @@ def _build_html(
                     )
                 )
             if mid:
-                code_spans.append(
-                    _one_span(
-                        mid, color, font_size_px, pointed_scale, hl_bg=True, zoom=False
+                for _part, _hl in _mid_parts_no_indent_hl(mid):
+                    code_spans.append(
+                        _one_span(
+                            _part,
+                            color,
+                            font_size_px,
+                            pointed_scale,
+                            hl_bg=_hl,
+                            zoom=False,
+                        )
                     )
-                )
                 zoom_spans.append(
                     _one_span(
                         mid, color, font_size_px, pointed_scale, hl_bg=False, zoom=True
@@ -338,16 +364,17 @@ def _build_multistep_html(
                         )
                     )
                 if mid:
-                    code_spans.append(
-                        _one_span(
-                            mid,
-                            color,
-                            font_size_px,
-                            pointed_scale,
-                            hl_bg=True,
-                            zoom=False,
+                    for _part, _hl in _mid_parts_no_indent_hl(mid):
+                        code_spans.append(
+                            _one_span(
+                                _part,
+                                color,
+                                font_size_px,
+                                pointed_scale,
+                                hl_bg=_hl,
+                                zoom=False,
+                            )
                         )
-                    )
                     zoom_spans.append(
                         _one_span(
                             mid,
