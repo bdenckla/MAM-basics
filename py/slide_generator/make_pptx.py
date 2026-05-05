@@ -19,21 +19,22 @@ def _looks_like_separator_cell(cell: str) -> bool:
     return bool(cell) and set(cell) <= {"-", ":", " "}
 
 
-def _row_image_cell_lines(script_text: str) -> list[tuple[int, str]]:
-    lines: list[tuple[int, str]] = []
+def _row_image_and_narration_cells(script_text: str) -> list[tuple[int, str, str]]:
+    lines: list[tuple[int, str, str]] = []
     for line_number, raw_line in enumerate(script_text.splitlines(), start=1):
         line = raw_line.strip()
         if not line.startswith("|"):
             continue
-        cells = [c.strip() for c in line.strip("|").split("|")]
-        if not cells:
+        parts = line.strip("|").split("|", maxsplit=1)
+        if len(parts) != 2:
             continue
-        image_cell = cells[0]
+        image_cell = parts[0].strip()
+        narration_cell = parts[1].strip()
         if image_cell.lower() == "image":
             continue
         if _looks_like_separator_cell(image_cell):
             continue
-        lines.append((line_number, image_cell))
+        lines.append((line_number, image_cell, narration_cell))
     return lines
 
 
@@ -62,24 +63,26 @@ def _slide_rel_path_from_image_cell(image_cell: str, line_number: int) -> pathli
     )
 
 
-def slide_paths_from_script(script_path: pathlib.Path) -> list[pathlib.Path]:
+def slide_paths_and_notes_from_script(
+    script_path: pathlib.Path,
+) -> list[tuple[pathlib.Path, str]]:
     script_text = script_path.read_text(encoding="utf-8")
-    image_rows = _row_image_cell_lines(script_text)
+    image_rows = _row_image_and_narration_cells(script_text)
     if not image_rows:
         raise SystemExit(f"No slide rows found in {script_path}")
 
     script_dir = script_path.parent
-    slide_paths: list[pathlib.Path] = []
-    for line_number, image_cell in image_rows:
+    slide_rows: list[tuple[pathlib.Path, str]] = []
+    for line_number, image_cell, narration_cell in image_rows:
         slide_rel = _slide_rel_path_from_image_cell(image_cell, line_number)
         slide_path = script_dir / slide_rel
         if not slide_path.is_file():
             raise SystemExit(
                 f"Missing slide image referenced by {script_path}:{line_number}: {slide_path}"
             )
-        slide_paths.append(slide_path)
+        slide_rows.append((slide_path, narration_cell))
 
-    return slide_paths
+    return slide_rows
 
 
 def _fit_inside(
@@ -93,7 +96,9 @@ def _fit_inside(
     return left, top, out_w, out_h
 
 
-def build_pptx(slide_paths: list[pathlib.Path], output_path: pathlib.Path) -> None:
+def build_pptx(
+    slide_rows: list[tuple[pathlib.Path, str]], output_path: pathlib.Path
+) -> None:
     prs = Presentation()
     prs.slide_width = Inches(13.333333)
     prs.slide_height = Inches(7.5)
@@ -102,7 +107,7 @@ def build_pptx(slide_paths: list[pathlib.Path], output_path: pathlib.Path) -> No
     slide_w = int(prs.slide_width)
     slide_h = int(prs.slide_height)
 
-    for slide_path in slide_paths:
+    for slide_path, narration in slide_rows:
         slide = prs.slides.add_slide(blank)
         with Image.open(slide_path) as im:
             img_w, img_h = im.size
@@ -114,12 +119,15 @@ def build_pptx(slide_paths: list[pathlib.Path], output_path: pathlib.Path) -> No
             width=width,
             height=height,
         )
+        notes = slide.notes_slide.notes_text_frame
+        notes.clear()
+        notes.text = narration
 
     output_path.parent.mkdir(parents=True, exist_ok=True)
     prs.save(str(output_path))
-    print(f"Saved {output_path} ({len(slide_paths)} slides)")
+    print(f"Saved {output_path} ({len(slide_rows)} slides)")
 
 
 def cmd_make_pptx(args: argparse.Namespace) -> None:
-    slide_paths = slide_paths_from_script(args.script)
-    build_pptx(slide_paths, args.output)
+    slide_rows = slide_paths_and_notes_from_script(args.script)
+    build_pptx(slide_rows, args.output)
