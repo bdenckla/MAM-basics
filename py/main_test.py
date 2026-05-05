@@ -30,6 +30,11 @@ TEST_MODULE_SPECS = (
         help_text="Run main_mam_simple CLI parser tests.",
     ),
     TestModuleSpec(
+        flag="json-snippet-browser",
+        module_name="tests.test_json_snippet_browser",
+        help_text="Run JSON snippet browser HTML generation tests.",
+    ),
+    TestModuleSpec(
         flag="mb-cmn-kq-special-templates",
         module_name="tests.test_mb_cmn_kq_special_templates",
         help_text="Run special-kq template normalization tests.",

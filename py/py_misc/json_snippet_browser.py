@@ -87,6 +87,13 @@ def _token_class_for_color(color: str) -> str:
     return _TOKEN_CLASS_BY_COLOR[color]
 
 
+def _base_span_font_size_px(text: str, font_size_px: int, pointed_scale: float) -> int:
+    """Return the base font size for a span before any zoom multiplier is applied."""
+    if _has_pointing(text):
+        return round(font_size_px * pointed_scale)
+    return font_size_px
+
+
 def _style_attr(styles: list[str]) -> str:
     """Return an HTML style attribute (leading space) for CSS declarations."""
     if not styles:
@@ -158,12 +165,13 @@ def _span_html_with_class(
     """
     escaped = text.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
     classes = [_token_class_for_color(color)]
-    styles = []
+    base_size_px = _base_span_font_size_px(text, font_size_px, pointed_scale)
+    styles = [f"--base-size-px:{base_size_px}px"]
     if _has_hebrew(text):
         classes.append("heb")
     if _has_pointing(text) and pointed_scale != 1.0:
         classes.append("pointed")
-        styles.append(f"font-size:{round(font_size_px * pointed_scale)}px")
+        styles.append(f"font-size:{base_size_px}px")
     if cls:
         classes.extend(cls.split())
     cls_attr = f' class="{" ".join(classes)}"'
@@ -181,18 +189,19 @@ def _one_span(
     """Return the HTML span(s) for a single pygments token value."""
     escaped = value.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
     classes = [_token_class_for_color(color)]
-    styles = []
+    base_size_px = _base_span_font_size_px(value, font_size_px, pointed_scale)
+    styles = [f"--base-size-px:{base_size_px}px"]
     if hl_bg:
         classes.append("hl-bg")
     if _has_hebrew(value):
         classes.append("heb")
     if zoom:
-        size = round(font_size_px * pointed_scale * 2)
+        size = round(base_size_px * 2)
         classes.append("pointed")
         styles.append(f"font-size:{size}px")
     elif pointed_scale != 1.0 and _has_pointing(value):
         classes.append("pointed")
-        styles.append(f"font-size:{round(font_size_px * pointed_scale)}px")
+        styles.append(f"font-size:{base_size_px}px")
     cls_attr = f' class="{" ".join(classes)}"'
     return f"<span{cls_attr}{_style_attr(styles)}>{escaped}</span>"
 
@@ -522,7 +531,6 @@ def _build_multistep_html(
     pre_html = "".join(pre_parts)
 
     # 6. Build per-step CSS rules.
-    zoom_font_size = round(font_size_px * pointed_scale * 2)
     css_rules = []
     for step_idx, (hl_full, _sub) in enumerate(step_info):
         spec = steps[step_idx]
@@ -537,7 +545,7 @@ def _build_multistep_html(
             )
             css_rules.append(
                 f'body[data-step="{step_idx}"] #zoom .zm-{step_idx} '
-                f"{{ display: inline; font-size: {zoom_font_size}px !important; "
+                f"{{ display: inline; font-size: calc(var(--base-size-px) * 2) !important; "
                 f"font-feature-settings: 'ss03'; }}"
             )
         if companion_hl_ids:
@@ -548,6 +556,7 @@ def _build_multistep_html(
                 )
 
     extra_css = ("\n  " + "\n  ".join(css_rules)) if css_rules else ""
+    max_step = len(steps) - 1
     return f"""<!DOCTYPE html>
 <html>
 <head>
@@ -634,11 +643,91 @@ def _build_multistep_html(
   </div>
 <script>
 (function () {{
+    var MIN_STEP = 0;
+    var MAX_STEP = {max_step};
+
+    function normalizeStep(rawStep) {{
+        if (!Number.isFinite(rawStep)) {{
+            return MIN_STEP;
+        }}
+        if (rawStep < MIN_STEP) {{
+            return MIN_STEP;
+        }}
+        if (rawStep > MAX_STEP) {{
+            return MAX_STEP;
+        }}
+        return rawStep;
+    }}
+
+    function getCurrentStep() {{
+        return normalizeStep(parseInt(document.body.dataset.step || String(MIN_STEP), 10));
+    }}
+
+    function setStep(step) {{
+        document.body.dataset.step = String(normalizeStep(step));
+    }}
+
+    function syncStepInUrl(step) {{
+        var url = new URL(window.location.href);
+        url.searchParams.set('step', String(normalizeStep(step)));
+        window.history.replaceState(null, '', url.toString());
+    }}
+
+    function moveStepBy(delta) {{
+        var currentStep = getCurrentStep();
+        var nextStep = currentStep + delta;
+
+        if (nextStep > MAX_STEP) {{
+            nextStep = MIN_STEP;
+        }} else if (nextStep < MIN_STEP) {{
+            nextStep = MAX_STEP;
+        }}
+
+        if (nextStep === currentStep) {{
+            return false;
+        }}
+
+        setStep(nextStep);
+        syncStepInUrl(nextStep);
+        return true;
+    }}
+
+    function isEditableTarget(target) {{
+        if (!(target instanceof Element)) {{
+            return false;
+        }}
+        return !!target.closest('input, textarea, select, [contenteditable]:not([contenteditable="false"])');
+    }}
+
   var main = document.getElementById('main');
   var zoom = document.getElementById('zoom');
   zoom.innerHTML = main.innerHTML;
-  var n = parseInt(new URLSearchParams(window.location.search).get('step') || '0', 10);
-  document.body.dataset.step = String(n);
+
+    var n = parseInt(new URLSearchParams(window.location.search).get('step') || String(MIN_STEP), 10);
+    setStep(n);
+
+    document.addEventListener('keydown', function (event) {{
+        var delta = 0;
+
+        if (event.ctrlKey || event.altKey || event.metaKey) {{
+            return;
+        }}
+        if (isEditableTarget(event.target)) {{
+            return;
+        }}
+
+        if (event.key === 'ArrowLeft') {{
+            delta = -1;
+        }} else if (event.key === 'ArrowRight') {{
+            delta = 1;
+        }} else {{
+            return;
+        }}
+
+        if (moveStepBy(delta)) {{
+            event.preventDefault();
+        }}
+    }});
 }})();
 </script>
 </body>
