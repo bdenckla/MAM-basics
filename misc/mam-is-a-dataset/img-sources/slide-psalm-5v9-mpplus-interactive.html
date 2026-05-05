@@ -63,6 +63,11 @@
     display: none;
   }
 
+    :root {
+        --hl-rgb: 0,0,0;
+        --hl-alpha-main: 0.35;
+        --hl-alpha-companion: 0.4;
+    }
     .tok-key { color: #9cdcfe; }
     .tok-string { color: #ce9178; }
     .tok-number { color: #b5cea8; }
@@ -76,7 +81,7 @@
         font-feature-settings: 'ss03';
     }
     .hl-bg {
-        background-color: rgba(255,210,0,0.35);
+        background-color: rgba(var(--hl-rgb), var(--hl-alpha-main));
         border-radius: 3px;
     }
     .paseq-bold {
@@ -93,50 +98,50 @@
     unicode-bidi: normal;
     white-space: pre;
   }
-  body[data-step="1"] #main .hl-1 { background-color: rgba(255,210,0,0.35); border-radius: 3px; }
+  body[data-step="1"] #main .hl-1 { background-color: rgba(var(--hl-rgb), var(--hl-alpha-main)); border-radius: 3px; }
   body[data-step="1"] #zoom { display: block; }
   body[data-step="1"] #zoom .zm-1 { display: inline; font-size: calc(var(--base-size-px) * 2) !important; font-feature-settings: 'ss03'; }
-  body[data-step="1"] [data-hl-id="yhvh"] { background-color: rgba(255,210,0,0.4); border-radius: 3px; display: inline; }
-  body[data-step="2"] #main .hl-2 { background-color: rgba(255,210,0,0.35); border-radius: 3px; }
+  body[data-step="1"] [data-hl-id="yhvh"] { background-color: rgba(var(--hl-rgb), var(--hl-alpha-companion)); border-radius: 3px; display: inline; }
+  body[data-step="2"] #main .hl-2 { background-color: rgba(var(--hl-rgb), var(--hl-alpha-main)); border-radius: 3px; }
   body[data-step="2"] #zoom { display: block; }
   body[data-step="2"] #zoom .zm-2 { display: inline; font-size: calc(var(--base-size-px) * 2) !important; font-feature-settings: 'ss03'; }
-  body[data-step="2"] [data-hl-id="paseq"] { background-color: rgba(255,210,0,0.4); border-radius: 3px; display: inline; }
-  body[data-step="3"] #main .hl-3 { background-color: rgba(255,210,0,0.35); border-radius: 3px; }
+  body[data-step="2"] [data-hl-id="paseq"] { background-color: rgba(var(--hl-rgb), var(--hl-alpha-companion)); border-radius: 3px; display: inline; }
+  body[data-step="3"] #main .hl-3 { background-color: rgba(var(--hl-rgb), var(--hl-alpha-main)); border-radius: 3px; }
   body[data-step="3"] #zoom { display: block; }
   body[data-step="3"] #zoom .zm-3 { display: inline; font-size: calc(var(--base-size-px) * 2) !important; font-feature-settings: 'ss03'; }
-  body[data-step="3"] [data-hl-id="nbsp"] { background-color: rgba(255,210,0,0.4); border-radius: 3px; display: inline; }
-  body[data-step="4"] #main .hl-4 { background-color: rgba(255,210,0,0.35); border-radius: 3px; }
+  body[data-step="3"] [data-hl-id="nbsp"] { background-color: rgba(var(--hl-rgb), var(--hl-alpha-companion)); border-radius: 3px; display: inline; }
+  body[data-step="4"] #main .hl-4 { background-color: rgba(var(--hl-rgb), var(--hl-alpha-main)); border-radius: 3px; }
   body[data-step="4"] #zoom { display: block; }
   body[data-step="4"] #zoom .zm-4 { display: inline; font-size: calc(var(--base-size-px) * 2) !important; font-feature-settings: 'ss03'; }
-  body[data-step="4"] [data-hl-id="text1"] { background-color: rgba(255,210,0,0.4); border-radius: 3px; display: inline; }
-  body[data-step="5"] #main .hl-5 { background-color: rgba(255,210,0,0.35); border-radius: 3px; }
+  body[data-step="4"] [data-hl-id="text1"] { background-color: rgba(var(--hl-rgb), var(--hl-alpha-companion)); border-radius: 3px; display: inline; }
+  body[data-step="5"] #main .hl-5 { background-color: rgba(var(--hl-rgb), var(--hl-alpha-main)); border-radius: 3px; }
   body[data-step="5"] #zoom { display: block; }
   body[data-step="5"] #zoom .zm-5 { display: inline; font-size: calc(var(--base-size-px) * 2) !important; font-feature-settings: 'ss03'; }
-  body[data-step="5"] [data-hl-id="rs1"] { background-color: rgba(255,210,0,0.4); border-radius: 3px; display: inline; }
-  body[data-step="5"] [data-hl-id="ind1"] { background-color: rgba(255,210,0,0.4); border-radius: 3px; display: inline; }
-  body[data-step="6"] #main .hl-6 { background-color: rgba(255,210,0,0.35); border-radius: 3px; }
+  body[data-step="5"] [data-hl-id="rs1"] { background-color: rgba(var(--hl-rgb), var(--hl-alpha-companion)); border-radius: 3px; display: inline; }
+  body[data-step="5"] [data-hl-id="ind1"] { background-color: rgba(var(--hl-rgb), var(--hl-alpha-companion)); border-radius: 3px; display: inline; }
+  body[data-step="6"] #main .hl-6 { background-color: rgba(var(--hl-rgb), var(--hl-alpha-main)); border-radius: 3px; }
   body[data-step="6"] #zoom { display: block; }
   body[data-step="6"] #zoom .zm-6 { display: inline; font-size: calc(var(--base-size-px) * 2) !important; font-feature-settings: 'ss03'; }
-  body[data-step="6"] [data-hl-id="lmaan"] { background-color: rgba(255,210,0,0.4); border-radius: 3px; display: inline; }
-  body[data-step="7"] #main .hl-7 { background-color: rgba(255,210,0,0.35); border-radius: 3px; }
+  body[data-step="6"] [data-hl-id="lmaan"] { background-color: rgba(var(--hl-rgb), var(--hl-alpha-companion)); border-radius: 3px; display: inline; }
+  body[data-step="7"] #main .hl-7 { background-color: rgba(var(--hl-rgb), var(--hl-alpha-main)); border-radius: 3px; }
   body[data-step="7"] #zoom { display: block; }
   body[data-step="7"] #zoom .zm-7 { display: inline; font-size: calc(var(--base-size-px) * 2) !important; font-feature-settings: 'ss03'; }
-  body[data-step="7"] [data-hl-id="shoraray"] { background-color: rgba(255,210,0,0.4); border-radius: 3px; display: inline; }
-  body[data-step="8"] #main .hl-8 { background-color: rgba(255,210,0,0.35); border-radius: 3px; }
+  body[data-step="7"] [data-hl-id="shoraray"] { background-color: rgba(var(--hl-rgb), var(--hl-alpha-companion)); border-radius: 3px; display: inline; }
+  body[data-step="8"] #main .hl-8 { background-color: rgba(var(--hl-rgb), var(--hl-alpha-main)); border-radius: 3px; }
   body[data-step="8"] #zoom { display: block; }
   body[data-step="8"] #zoom .zm-8 { display: inline; font-size: calc(var(--base-size-px) * 2) !important; font-feature-settings: 'ss03'; }
-  body[data-step="8"] [data-hl-id="rs2"] { background-color: rgba(255,210,0,0.4); border-radius: 3px; display: inline; }
-  body[data-step="8"] [data-hl-id="ind2"] { background-color: rgba(255,210,0,0.4); border-radius: 3px; display: inline; }
-  body[data-step="9"] #main .hl-9 { background-color: rgba(255,210,0,0.35); border-radius: 3px; }
+  body[data-step="8"] [data-hl-id="rs2"] { background-color: rgba(var(--hl-rgb), var(--hl-alpha-companion)); border-radius: 3px; display: inline; }
+  body[data-step="8"] [data-hl-id="ind2"] { background-color: rgba(var(--hl-rgb), var(--hl-alpha-companion)); border-radius: 3px; display: inline; }
+  body[data-step="9"] #main .hl-9 { background-color: rgba(var(--hl-rgb), var(--hl-alpha-main)); border-radius: 3px; }
   body[data-step="9"] #zoom { display: block; }
   body[data-step="9"] #zoom .zm-9 { display: inline; font-size: calc(var(--base-size-px) * 2) !important; font-feature-settings: 'ss03'; }
-  body[data-step="9"] [data-hl-id="hoshar"] { background-color: rgba(255,210,0,0.4); border-radius: 3px; display: inline; }
-  body[data-step="9"] [data-hl-id="kuk-space"] { background-color: rgba(255,210,0,0.4); border-radius: 3px; display: inline; }
-  body[data-step="9"] [data-hl-id="hayashar"] { background-color: rgba(255,210,0,0.4); border-radius: 3px; display: inline; }
-  body[data-step="10"] #main .hl-10 { background-color: rgba(255,210,0,0.35); border-radius: 3px; }
+  body[data-step="9"] [data-hl-id="hoshar"] { background-color: rgba(var(--hl-rgb), var(--hl-alpha-companion)); border-radius: 3px; display: inline; }
+  body[data-step="9"] [data-hl-id="kuk-space"] { background-color: rgba(var(--hl-rgb), var(--hl-alpha-companion)); border-radius: 3px; display: inline; }
+  body[data-step="9"] [data-hl-id="hayashar"] { background-color: rgba(var(--hl-rgb), var(--hl-alpha-companion)); border-radius: 3px; display: inline; }
+  body[data-step="10"] #main .hl-10 { background-color: rgba(var(--hl-rgb), var(--hl-alpha-main)); border-radius: 3px; }
   body[data-step="10"] #zoom { display: block; }
   body[data-step="10"] #zoom .zm-10 { display: inline; font-size: calc(var(--base-size-px) * 2) !important; font-feature-settings: 'ss03'; }
-  body[data-step="10"] [data-hl-id="text3"] { background-color: rgba(255,210,0,0.4); border-radius: 3px; display: inline; }
+  body[data-step="10"] [data-hl-id="text3"] { background-color: rgba(var(--hl-rgb), var(--hl-alpha-companion)); border-radius: 3px; display: inline; }
 </style>
 </head>
 <body data-step="0">

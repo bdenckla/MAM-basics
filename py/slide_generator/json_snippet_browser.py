@@ -34,6 +34,11 @@ _TOKEN_CLASS_BY_COLOR = {
 }
 
 _TOKEN_CLASSES_CSS = """
+    :root {
+        --hl-rgb: 0,0,0;
+        --hl-alpha-main: 0.35;
+        --hl-alpha-companion: 0.4;
+    }
     .tok-key { color: #9cdcfe; }
     .tok-string { color: #ce9178; }
     .tok-number { color: #b5cea8; }
@@ -47,7 +52,7 @@ _TOKEN_CLASSES_CSS = """
         font-feature-settings: 'ss03';
     }
     .hl-bg {
-        background-color: rgba(255,210,0,0.35);
+        background-color: rgba(var(--hl-rgb), var(--hl-alpha-main));
         border-radius: 3px;
     }
     .paseq-bold {
@@ -548,7 +553,7 @@ def _build_multistep_html(
         if hl_full is not None:
             css_rules.append(
                 f'body[data-step="{step_idx}"] #main .hl-{step_idx} '
-                f"{{ background-color: rgba(255,210,0,0.35); border-radius: 3px; }}"
+                f"{{ background-color: rgba(var(--hl-rgb), var(--hl-alpha-main)); border-radius: 3px; }}"
             )
             css_rules.append(
                 f'body[data-step="{step_idx}"] #zoom {{ display: block; }}'
@@ -562,7 +567,7 @@ def _build_multistep_html(
             for hl_id in companion_hl_ids:
                 css_rules.append(
                     f'body[data-step="{step_idx}"] [data-hl-id="{hl_id}"] '
-                    f"{{ background-color: rgba(255,210,0,0.4); border-radius: 3px; display: inline; }}"
+                    f"{{ background-color: rgba(var(--hl-rgb), var(--hl-alpha-companion)); border-radius: 3px; display: inline; }}"
                 )
 
     extra_css = ("\n  " + "\n  ".join(css_rules)) if css_rules else ""
