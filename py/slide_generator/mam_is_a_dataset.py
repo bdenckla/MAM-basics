@@ -96,37 +96,28 @@ def render_psalm_5v9_mpplus_steps():
         {},  # step 0: no highlight — base view
         {
             "highlight_text": '"יְהֹוָ֤ה"',
-            "companion_highlight_html": "יְהֹוָ֤ה",
+            "companion_hl_ids": ["yhvh"],
         },
         {
             "highlight_text": '{"tmpl_name": "מ:לגרמיה-2"}',
-            "companion_highlight_html": '&thinsp;<span style="font-weight: bold;">׀</span>',
+            "companion_hl_ids": ["paseq"],
         },
         {
             "highlight_text": '{"tmpl_name": "ר0"}',
-            "companion_highlight_html": "&nbsp;",
+            "companion_hl_ids": ["nbsp"],
         },
         {
             "highlight_text": '"נְחֵ֬נִי בְצִדְקָתֶ֗ךָ"',
-            "companion_highlight_html": "נְחֵ֬נִי בְצִדְקָתֶ֗ךָ",
+            "companion_hl_ids": ["text1"],
         },
         {
             "highlight_text": '{"tmpl_name": "ר1"}',
             "highlight_occurrence": 1,
-            "companion_raw_replacements": [
-                [
-                    '<span class="return-sym" style="display:none;">⏎</span>',
-                    '<span class="return-sym hl">⏎</span>',
-                ],
-                [
-                    '<span class="indent">',
-                    '<span class="indent hl">',
-                ],
-            ],
+            "companion_hl_ids": ["rs1", "ind1"],
         },
         {
             "highlight_text": '"לְמַ֥עַן "',
-            "companion_highlight_html": "לְמַ֥עַן ",
+            "companion_hl_ids": ["lmaan"],
         },
         {
             "highlight_text": (
@@ -135,19 +126,20 @@ def render_psalm_5v9_mpplus_steps():
                 '      "1": "שׁוֹרְﬞרָ֑י",\n'
                 '      "2": "א=שׁוֹרֲרָ֑י (חטף)"}}'
             ),
-            "companion_highlight_html": "שׁוֹרְﬞרָ֑י",
+            "companion_hl_ids": ["shoraray"],
         },
         {
             "highlight_text": '{"tmpl_name": "ר1"}',
             "highlight_occurrence": 2,
+            "companion_hl_ids": ["rs2", "ind2"],
         },
         {
             "highlight_text": _kuk_object,
-            "companion_highlight_html": '<span style="color:Gray;">הושר</span>',
+            "companion_hl_ids": ["hoshar", "kuk-space", "hayashar"],
         },
         {
             "highlight_text": '"' + _last_str + '"',
-            "companion_highlight_html": _last_str,
+            "companion_hl_ids": ["text3"],
         },
     ]
     json_snippet_browser.render_json_snippet_browser_steps(

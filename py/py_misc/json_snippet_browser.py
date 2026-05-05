@@ -298,6 +298,7 @@ def _build_multistep_html(
     br, bg, bb = bot_rgb
 
     step_divs = []
+    extra_css_rules = []
     for step_idx, spec in enumerate(steps):
         highlight_text = spec.get("highlight_text")
         highlight_occurrence = spec.get("highlight_occurrence", 1)
@@ -385,18 +386,25 @@ def _build_multistep_html(
         zoom_html = "".join(zoom_spans)
 
         # Companion panel.
-        _hl_key = (
-            companion_highlight_html
-            if companion_highlight_html is not None
-            else highlight_text
-        )
-        hl_companion = (
-            _highlight_companion_html(companion_html, _hl_key)
-            if _hl_key
-            else companion_html
-        )
-        for _old, _new in spec.get("companion_raw_replacements", []):
-            hl_companion = hl_companion.replace(_old, _new, 1)
+        companion_hl_ids = spec.get("companion_hl_ids")
+        if companion_hl_ids is not None:
+            for hl_id in companion_hl_ids:
+                extra_css_rules.append(
+                    f'.step[data-step="{step_idx}"] [data-hl-id="{hl_id}"] {{'
+                    f" background-color: rgba(255,210,0,0.4); border-radius: 3px; display: inline; }}"
+                )
+            hl_companion = companion_html
+        else:
+            _hl_key = (
+                companion_highlight_html
+                if companion_highlight_html is not None
+                else highlight_text
+            )
+            hl_companion = (
+                _highlight_companion_html(companion_html, _hl_key)
+                if _hl_key
+                else companion_html
+            )
         companion_content = f'<div class="companion-html">{hl_companion}</div>'
 
         # Build the step div (hidden by default).
@@ -418,6 +426,7 @@ def _build_multistep_html(
         step_divs.append(f'<div class="step" data-step="{step_idx}">{inner}</div>')
 
     all_steps_html = "\n".join(step_divs)
+    extra_css = ("\n  " + "\n  ".join(extra_css_rules)) if extra_css_rules else ""
     return f"""<!DOCTYPE html>
 <html>
 <head>
@@ -468,6 +477,9 @@ def _build_multistep_html(
     background-color: rgba(255, 210, 0, 0.4);
     border-radius: 3px;
   }}
+  [data-hl-id="rs1"], [data-hl-id="rs2"] {{
+    display: none;
+  }}
   pre {{
     font-family: 'Taamey', 'Consolas', monospace;
     font-size: {font_size_px}px;
@@ -475,7 +487,7 @@ def _build_multistep_html(
     direction: ltr;
     unicode-bidi: normal;
     white-space: pre;
-  }}
+  }}{extra_css}
 </style>
 </head>
 <body>
