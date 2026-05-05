@@ -12,8 +12,7 @@ import pathlib
 
 from PIL import ImageFont
 
-from py_misc import json_snippet_browser
-from slide_generator import composite_img_sources, slide_render
+from slide_generator import composite_img_sources, json_snippet_browser, slide_render
 
 DECK_NAME = "mam-is-a-dataset"
 IMAGES_DIR = pathlib.Path("misc/mam-is-a-dataset/img")
