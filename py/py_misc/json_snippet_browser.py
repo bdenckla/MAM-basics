@@ -55,24 +55,72 @@ def _highlight_companion_html(html: str, highlight_text: str) -> str:
     return html.replace(highlight_text, f'<span class="hl">{highlight_text}</span>', 1)
 
 
-def _mid_parts_no_indent_hl(mid: str) -> list:
-    """Split mid into (text, hl_bg) pairs, suppressing highlight on leading
-    whitespace of continuation lines (after each embedded newline)."""
-    parts = mid.split("\n")
-    result = []
-    for i, part in enumerate(parts):
+def _highlight_sub_ranges(json_text: str, hl_start: int, hl_end: int) -> list:
+    """Compute (char_start, char_end) sub-ranges within [hl_start, hl_end) that get
+    yellow background.  Leading whitespace on continuation lines (after each embedded
+    newline) is excluded — i.e. only the non-indent content of each line is highlighted.
+    Returns a list of (start, end) int pairs.
+    """
+    text = json_text[hl_start:hl_end]
+    lines = text.split("\n")
+    ranges = []
+    pos = hl_start
+    for i, line in enumerate(lines):
+        if i > 0:
+            pos += 1  # skip the \n itself
         if i == 0:
-            if part:
-                result.append((part, True))
+            if line:
+                ranges.append((pos, pos + len(line)))
         else:
-            result.append(("\n", False))
-            stripped = part.lstrip(" \t")
-            indent = part[: len(part) - len(stripped)]
-            if indent:
-                result.append((indent, False))
+            stripped = line.lstrip(" \t")
+            indent_len = len(line) - len(stripped)
             if stripped:
-                result.append((stripped, True))
-    return result
+                ranges.append((pos + indent_len, pos + len(line)))
+        pos += len(line)
+    return ranges
+
+
+def _tokenize_with_splits(json_text: str, split_points: set) -> list:
+    """Tokenize JSON via Pygments, splitting tokens at the given extra character
+    positions.  Returns a list of (char_start, char_end, text, color) tuples.
+    Tokenising once with all split points collected up-front means every step's
+    highlight boundary falls exactly at a span boundary.
+    """
+    spans = []
+    pos = 0
+    for ttype, value in lex(json_text, JsonLexer()):
+        color = _token_color(ttype)
+        tok_end = pos + len(value)
+        tok_splits = sorted(p for p in split_points if pos < p < tok_end)
+        sub_start = pos
+        for sp in tok_splits:
+            sub_text = json_text[sub_start:sp]
+            if sub_text:
+                spans.append((sub_start, sp, sub_text, color))
+            sub_start = sp
+        sub_text = json_text[sub_start:tok_end]
+        if sub_text:
+            spans.append((sub_start, tok_end, sub_text, color))
+        pos = tok_end
+    return spans
+
+
+def _span_html_with_class(
+    text: str, color: str, font_size_px: int, pointed_scale: float, cls: str
+) -> str:
+    """Return HTML for one atomic span carrying a CSS class string.
+    Uses ``unicode-bidi:isolate`` instead of a wrapping <bdi> element so that a
+    single element can be targeted by both display and background-color CSS rules.
+    """
+    escaped = text.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+    styles = [f"color:{color}"]
+    if _has_pointing(text) and pointed_scale != 1.0:
+        styles.append(f"font-size:{round(font_size_px * pointed_scale)}px")
+        styles.append("font-feature-settings:'ss03'")
+    if _has_hebrew(text):
+        styles.append("unicode-bidi:isolate")
+    cls_attr = f' class="{cls}"' if cls else ""
+    return f'<span{cls_attr} style="{";".join(styles)}">{escaped}</span>'
 
 
 def _one_span(
@@ -145,14 +193,43 @@ def _build_html(
                     )
                 )
             if mid:
-                for _part, _hl in _mid_parts_no_indent_hl(mid):
+                mid_abs_start = max(pos, hl_start)
+                cur = 0
+                for rstart, rend in _highlight_sub_ranges(
+                    json_text, mid_abs_start, min(tok_end, hl_end)
+                ):
+                    s = rstart - mid_abs_start
+                    e = rend - mid_abs_start
+                    if s > cur:
+                        code_spans.append(
+                            _one_span(
+                                mid[cur:s],
+                                color,
+                                font_size_px,
+                                pointed_scale,
+                                hl_bg=False,
+                                zoom=False,
+                            )
+                        )
                     code_spans.append(
                         _one_span(
-                            _part,
+                            mid[s:e],
                             color,
                             font_size_px,
                             pointed_scale,
-                            hl_bg=_hl,
+                            hl_bg=True,
+                            zoom=False,
+                        )
+                    )
+                    cur = e
+                if cur < len(mid):
+                    code_spans.append(
+                        _one_span(
+                            mid[cur:],
+                            color,
+                            font_size_px,
+                            pointed_scale,
+                            hl_bg=False,
                             zoom=False,
                         )
                     )
@@ -310,150 +387,115 @@ def _build_multistep_html(
     pointed_scale: float,
     companion_html: str,
 ) -> str:
-    """Build one HTML document with all steps embedded; JS reveals the active step.
+    """Build one HTML document for all steps; CSS + a JS attribute change drives each step.
 
-    Each element of ``steps`` is a dict with optional keys:
-      ``highlight_text``         – the JSON substring to highlight (or absent/None)
-      ``highlight_occurrence``   – which occurrence (1-based, default 1)
-      ``companion_highlight_html`` – text/HTML to find-and-wrap in companion panel
+    The JSON is tokenised once.  All highlight-range boundaries are collected up-front
+    so tokens are split at every needed position.  Each atomic sub-span receives classes:
+
+      t-<n>    – sequential index (stable across steps; useful for debugging)
+      hl-<n>   – this span gets yellow background when step n is active
+      zm-<n>   – this span is visible in the zoom panel when step n is active
+
+    Zoom = highlighted text shown large.  The zoom panel is the same <pre> HTML as the
+    main panel (JS copies innerHTML); per-step CSS makes non-zm spans display:none and
+    scales zm spans up.  Highlighting and zoom are thus the same concept expressed in two
+    CSS properties — no separate per-step token walk is needed.
+
+    A single <pre id="main"> holds the code for the right column.
+    JS copies it into <pre id="zoom"> then sets body[data-step].
+
+    To regenerate after Psalm 5v9 mpplus.json changes, re-run:
+        .venv\\Scripts\\python.exe py\\main_slide_generator.py render-slides --deck mam-is-a-dataset psalm-5v9-mpplus-steps
     """
     W, H = slide_render.W, slide_render.H
     font_uri = _TAAMEY_FONT.as_uri()
-    tokens = list(lex(json_text, JsonLexer()))
     tr, tg, tb = top_rgb
     br, bg, bb = bot_rgb
 
-    step_divs = []
-    extra_css_rules = []
-    for step_idx, spec in enumerate(steps):
-        highlight_text = spec.get("highlight_text")
-        highlight_occurrence = spec.get("highlight_occurrence", 1)
-        companion_highlight_html = spec.get("companion_highlight_html")
+    # 1. For each step compute:
+    #    hl_full – (hl_start, hl_end) full range for zoom (or None if no highlight)
+    #    sub_ranges – list of (start, end) sub-ranges that get yellow bg (no-indent rule)
+    step_info = []
+    for spec in steps:
+        hl_text = spec.get("highlight_text")
+        if not hl_text:
+            step_info.append((None, []))
+            continue
+        occ = spec.get("highlight_occurrence", 1)
+        start = 0
+        for _ in range(occ):
+            hl_start = json_text.index(hl_text, start)
+            start = hl_start + 1
+        hl_end = hl_start + len(hl_text)
+        step_info.append(
+            ((hl_start, hl_end), _highlight_sub_ranges(json_text, hl_start, hl_end))
+        )
 
-        # Compute character-offset highlight range within json_text.
-        if highlight_text:
-            start = 0
-            for _ in range(highlight_occurrence):
-                hl_start = json_text.index(highlight_text, start)
-                start = hl_start + 1
-            hl_end = hl_start + len(highlight_text)
-        else:
-            hl_start = -1
-            hl_end = -1
+    # 2. Collect all character split points from every highlight boundary.
+    split_points = set()
+    for hl_full, sub_ranges in step_info:
+        if hl_full is not None:
+            split_points.update(hl_full)
+        for rstart, rend in sub_ranges:
+            split_points.add(rstart)
+            split_points.add(rend)
 
-        # Walk tokens to build code HTML (with highlight bg) and zoom HTML.
-        code_spans = []
-        zoom_spans = []
-        pos = 0
-        for ttype, value in tokens:
-            color = _token_color(ttype)
-            tok_end = pos + len(value)
-            if highlight_text and pos < hl_end and tok_end > hl_start:
-                pre = value[: max(0, hl_start - pos)]
-                mid = value[max(0, hl_start - pos) : min(len(value), hl_end - pos)]
-                post = value[min(len(value), hl_end - pos) :]
-                if pre:
-                    code_spans.append(
-                        _one_span(
-                            pre,
-                            color,
-                            font_size_px,
-                            pointed_scale,
-                            hl_bg=False,
-                            zoom=False,
-                        )
-                    )
-                if mid:
-                    for _part, _hl in _mid_parts_no_indent_hl(mid):
-                        code_spans.append(
-                            _one_span(
-                                _part,
-                                color,
-                                font_size_px,
-                                pointed_scale,
-                                hl_bg=_hl,
-                                zoom=False,
-                            )
-                        )
-                    zoom_spans.append(
-                        _one_span(
-                            mid,
-                            color,
-                            font_size_px,
-                            pointed_scale,
-                            hl_bg=False,
-                            zoom=True,
-                        )
-                    )
-                if post:
-                    code_spans.append(
-                        _one_span(
-                            post,
-                            color,
-                            font_size_px,
-                            pointed_scale,
-                            hl_bg=False,
-                            zoom=False,
-                        )
-                    )
-            else:
-                code_spans.append(
-                    _one_span(
-                        value,
-                        color,
-                        font_size_px,
-                        pointed_scale,
-                        hl_bg=False,
-                        zoom=False,
-                    )
-                )
-            pos = tok_end
+    # 3. Tokenise once with all split points → atomic sub-spans.
+    spans = _tokenize_with_splits(json_text, split_points)
 
-        code_html = "".join(code_spans)
-        zoom_html = "".join(zoom_spans)
+    # 4. For each span compute which steps highlight / zoom it.
+    span_hl = [set() for _ in spans]
+    span_zm = [set() for _ in spans]
+    for step_idx, (hl_full, sub_ranges) in enumerate(step_info):
+        if hl_full is None:
+            continue
+        hl_start, hl_end = hl_full
+        for i, (cstart, cend, _text, _color) in enumerate(spans):
+            if cstart >= hl_start and cend <= hl_end:
+                span_zm[i].add(step_idx)
+            for rstart, rend in sub_ranges:
+                if cstart >= rstart and cend <= rend:
+                    span_hl[i].add(step_idx)
+                    break
 
-        # Companion panel.
+    # 5. Build the single <pre> inner HTML shared by both #main and #zoom.
+    pre_parts = []
+    for i, (cstart, cend, text, color) in enumerate(spans):
+        hl_cls = " ".join(f"hl-{s}" for s in sorted(span_hl[i]))
+        zm_cls = " ".join(f"zm-{s}" for s in sorted(span_zm[i]))
+        cls = " ".join(filter(None, [f"t-{i}", hl_cls, zm_cls]))
+        pre_parts.append(
+            _span_html_with_class(text, color, font_size_px, pointed_scale, cls)
+        )
+    pre_html = "".join(pre_parts)
+
+    # 6. Build per-step CSS rules.
+    zoom_font_size = round(font_size_px * pointed_scale * 2)
+    css_rules = []
+    for step_idx, (hl_full, _sub) in enumerate(step_info):
+        spec = steps[step_idx]
         companion_hl_ids = spec.get("companion_hl_ids")
-        if companion_hl_ids is not None:
+        if hl_full is not None:
+            css_rules.append(
+                f'body[data-step="{step_idx}"] #main .hl-{step_idx} '
+                f"{{ background-color: rgba(255,210,0,0.35); border-radius: 3px; }}"
+            )
+            css_rules.append(
+                f'body[data-step="{step_idx}"] #zoom {{ display: block; }}'
+            )
+            css_rules.append(
+                f'body[data-step="{step_idx}"] #zoom .zm-{step_idx} '
+                f"{{ display: inline; font-size: {zoom_font_size}px !important; "
+                f"font-feature-settings: 'ss03'; }}"
+            )
+        if companion_hl_ids:
             for hl_id in companion_hl_ids:
-                extra_css_rules.append(
-                    f'.step[data-step="{step_idx}"] [data-hl-id="{hl_id}"] {{'
-                    f" background-color: rgba(255,210,0,0.4); border-radius: 3px; display: inline; }}"
+                css_rules.append(
+                    f'body[data-step="{step_idx}"] [data-hl-id="{hl_id}"] '
+                    f"{{ background-color: rgba(255,210,0,0.4); border-radius: 3px; display: inline; }}"
                 )
-            hl_companion = companion_html
-        else:
-            _hl_key = (
-                companion_highlight_html
-                if companion_highlight_html is not None
-                else highlight_text
-            )
-            hl_companion = (
-                _highlight_companion_html(companion_html, _hl_key)
-                if _hl_key
-                else companion_html
-            )
-        companion_content = f'<div class="companion-html">{hl_companion}</div>'
 
-        # Build the step div (hidden by default).
-        if highlight_text:
-            inner = (
-                f'<div class="col" style="flex:2;flex-direction:column;'
-                f'justify-content:space-between;align-items:flex-start">'
-                f"<pre>{zoom_html}</pre>"
-                f"{companion_content}"
-                f"</div>"
-                f'<div class="col" style="flex:2;justify-content:flex-start">'
-                f"<pre>{code_html}</pre></div>"
-            )
-        else:
-            inner = (
-                f'<div class="col">{companion_content}</div>'
-                f'<div class="col" style="justify-content:flex-start"><pre>{code_html}</pre></div>'
-            )
-        step_divs.append(f'<div class="step" data-step="{step_idx}">{inner}</div>')
-
-    all_steps_html = "\n".join(step_divs)
-    extra_css = ("\n  " + "\n  ".join(extra_css_rules)) if extra_css_rules else ""
+    extra_css = ("\n  " + "\n  ".join(css_rules)) if css_rules else ""
     return f"""<!DOCTYPE html>
 <html>
 <head>
@@ -477,19 +519,33 @@ def _build_multistep_html(
     flex-direction: row;
     align-items: stretch;
   }}
-  .step {{
-    flex: 1;
-    display: none;
-    flex-direction: row;
-    align-items: stretch;
+  #left-col {{
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 60px;
   }}
-  .col {{
+  #right-col {{
+    flex: 2;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 60px;
+    overflow: hidden;
+  }}
+  #zoom {{
+    display: none;
+    flex-shrink: 0;
+  }}
+  #zoom span {{
+    display: none;
+  }}
+  #companion-wrapper {{
     flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 60px;
-    overflow: hidden;
   }}
   .companion-html {{
     font-family: 'Taamey', serif;
@@ -499,10 +555,6 @@ def _build_multistep_html(
     text-align: right;
     color: white;
     width: 100%;
-  }}
-  .hl {{
-    background-color: rgba(255, 210, 0, 0.4);
-    border-radius: 3px;
   }}
   [data-hl-id="rs1"], [data-hl-id="rs2"] {{
     display: none;
@@ -517,15 +569,23 @@ def _build_multistep_html(
   }}{extra_css}
 </style>
 </head>
-<body>
-{all_steps_html}
+<body data-step="0">
+  <div id="left-col">
+    <pre id="zoom"></pre>
+    <div id="companion-wrapper">
+      <div class="companion-html">{companion_html or ""}</div>
+    </div>
+  </div>
+  <div id="right-col">
+    <pre id="main">{pre_html}</pre>
+  </div>
 <script>
 (function () {{
-  var params = new URLSearchParams(window.location.search);
-  var n = parseInt(params.get('step') || '0', 10);
-  var el = document.querySelector('.step[data-step="' + n + '"]');
-  if (!el) el = document.querySelector('.step');
-  if (el) el.style.display = 'flex';
+  var main = document.getElementById('main');
+  var zoom = document.getElementById('zoom');
+  zoom.innerHTML = main.innerHTML;
+  var n = parseInt(new URLSearchParams(window.location.search).get('step') || '0', 10);
+  document.body.dataset.step = String(n);
 }})();
 </script>
 </body>
