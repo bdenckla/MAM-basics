@@ -14,6 +14,7 @@ import pathlib
 from pygments import lex
 from pygments.lexers import JsonLexer
 from pygments.token import Token
+from mb_cmn import provenance
 
 from slide_generator import slide_render
 
@@ -99,6 +100,15 @@ def _style_attr(styles: list[str]) -> str:
     if not styles:
         return ""
     return f' style="{";".join(styles)}"'
+
+
+def _add_html_provenance_comment(html: str) -> str:
+    """Insert a generated-by HTML comment into the document head."""
+    marker = "<head>"
+    if marker not in html:
+        raise ValueError("Expected <head> tag in generated HTML")
+    comment = f"<!-- {provenance.generated_html_comment(__file__)} -->"
+    return html.replace(marker, f"{marker}\n{comment}", 1)
 
 
 def _highlight_companion_html(html: str, highlight_text: str) -> str:
@@ -774,6 +784,7 @@ def render_json_snippet_browser_steps(
         pointed_scale,
         companion_html,
     )
+    html = _add_html_provenance_comment(html)
 
     html_path = json_path.parent.resolve() / f"slide-{slide_base_name}-interactive.html"
     html_path.write_text(html, encoding="utf-8")
@@ -845,6 +856,7 @@ def render_json_snippet_browser(
         highlight_occurrence=highlight_occurrence,
         companion_highlight_html=companion_highlight_html,
     )
+    html = _add_html_provenance_comment(html)
 
     html_dest = json_path.parent.resolve() / f"slide-{slide_name}.html"
     html_dest.write_text(html, encoding="utf-8")

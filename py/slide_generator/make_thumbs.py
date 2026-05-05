@@ -9,16 +9,27 @@ import argparse
 import pathlib
 
 from PIL import Image
+from slide_generator import slide_render
 
 THUMB_SIZE = (480, 270)  # 16:9 thumbnail
 
 
-def make_thumb(slide_path: pathlib.Path, thumb_size: tuple[int, int]) -> None:
+def make_thumb(
+    slide_path: pathlib.Path, thumb_size: tuple[int, int], deck_name: str
+) -> None:
     thumb_path = slide_path.parent / slide_path.name.replace("slide-", "thumb-")
     img = Image.open(slide_path)
     img_thumb = img.copy()
     img_thumb.thumbnail(thumb_size, Image.LANCZOS)
     img_thumb.save(thumb_path, optimize=True)
+    thumb_name = thumb_path.stem.replace("thumb-", "", 1)
+    cmd = f"py/main_slide_generator.py make-thumbs --deck {deck_name}"
+    slide_render.write_provenance(
+        thumb_path,
+        deck_name,
+        f"thumb-{thumb_name}",
+        command=cmd,
+    )
     print(f"{slide_path.name} {img.size} -> {thumb_path.name} {img_thumb.size}")
 
 
@@ -29,4 +40,4 @@ def cmd_make_thumbs(args: argparse.Namespace) -> None:
         print(f"No slide-*.png files found in {args.images_dir}")
         return
     for slide_path in slides:
-        make_thumb(slide_path, thumb_size)
+        make_thumb(slide_path, thumb_size, args.deck)
