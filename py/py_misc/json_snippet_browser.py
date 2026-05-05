@@ -88,6 +88,7 @@ def _build_html(
     companion_first: bool = False,
     companion_html: str = None,
     highlight_text: str = None,
+    highlight_occurrence: int = 1,
     companion_highlight_html: str = None,
 ) -> str:
     W, H = slide_render.W, slide_render.H
@@ -95,8 +96,15 @@ def _build_html(
 
     # Tokenize the whole JSON once, then use character offsets to decide highlight.
     # This avoids re-tokenizing fragments (which changes color assignments).
-    hl_start = json_text.index(highlight_text) if highlight_text else -1
-    hl_end = hl_start + len(highlight_text) if highlight_text else -1
+    if highlight_text:
+        start = 0
+        for _ in range(highlight_occurrence):
+            hl_start = json_text.index(highlight_text, start)
+            start = hl_start + 1
+        hl_end = hl_start + len(highlight_text)
+    else:
+        hl_start = -1
+        hl_end = -1
 
     code_spans = []
     zoom_spans = []
@@ -281,6 +289,7 @@ def render_json_snippet_browser(
     companion_first: bool = False,
     companion_html_path: pathlib.Path = None,
     highlight_text: str = None,
+    highlight_occurrence: int = 1,
     companion_highlight_html: str = None,
 ) -> None:
     """Render a syntax-colored JSON snippet slide via Playwright/Chromium screenshot."""
@@ -308,6 +317,7 @@ def render_json_snippet_browser(
         companion_first,
         companion_html=companion_html,
         highlight_text=highlight_text,
+        highlight_occurrence=highlight_occurrence,
         companion_highlight_html=companion_highlight_html,
     )
 
