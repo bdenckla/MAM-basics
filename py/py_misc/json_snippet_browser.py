@@ -393,7 +393,6 @@ def _build_multistep_html(
     The JSON is tokenised once.  All highlight-range boundaries are collected up-front
     so tokens are split at every needed position.  Each atomic sub-span receives classes:
 
-      t-<n>    – sequential index (stable across steps; useful for debugging)
       hl-<n>   – this span gets yellow background when step n is active
       zm-<n>   – this span is visible in the zoom panel when step n is active
 
@@ -464,7 +463,7 @@ def _build_multistep_html(
     for i, (cstart, cend, text, color) in enumerate(spans):
         hl_cls = " ".join(f"hl-{s}" for s in sorted(span_hl[i]))
         zm_cls = " ".join(f"zm-{s}" for s in sorted(span_zm[i]))
-        cls = " ".join(filter(None, [f"t-{i}", hl_cls, zm_cls]))
+        cls = " ".join(filter(None, [hl_cls, zm_cls]))
         pre_parts.append(
             _span_html_with_class(text, color, font_size_px, pointed_scale, cls)
         )
