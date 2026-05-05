@@ -24,6 +24,38 @@ _COLOR_NUMBER = "#b5cea8"  # light green — numbers
 _COLOR_KEYWORD = "#569cd6"  # blue — true/false/null
 _COLOR_PUNCT = "#d4d4d4"  # light gray — punctuation & whitespace
 
+_TOKEN_CLASS_BY_COLOR = {
+    _COLOR_KEY: "tok-key",
+    _COLOR_STRING: "tok-string",
+    _COLOR_NUMBER: "tok-number",
+    _COLOR_KEYWORD: "tok-keyword",
+    _COLOR_PUNCT: "tok-punct",
+}
+
+_TOKEN_CLASSES_CSS = """
+    .tok-key { color: #9cdcfe; }
+    .tok-string { color: #ce9178; }
+    .tok-number { color: #b5cea8; }
+    .tok-keyword { color: #569cd6; }
+    .tok-punct { color: #d4d4d4; }
+    .heb {
+        unicode-bidi: isolate;
+        direction: rtl;
+    }
+    .pointed {
+        font-feature-settings: 'ss03';
+    }
+    .hl-bg {
+        background-color: rgba(255,210,0,0.35);
+        border-radius: 3px;
+    }
+    .paseq-bold {
+        font-weight: bold;
+    }
+    .variant-gray {
+        color: Gray;
+    }"""
+
 _TAAMEY_FONT = pathlib.Path.home() / "AppData/Local/Microsoft/Windows/Fonts/Taamey.ttf"
 _FONT_SIZE_PX = 48
 
@@ -48,6 +80,18 @@ def _has_pointing(text: str) -> bool:
 def _has_hebrew(text: str) -> bool:
     """Return True if text contains any Hebrew letter."""
     return any("\u05d0" <= ch <= "\u05ea" or "\ufb1d" <= ch <= "\ufb4e" for ch in text)
+
+
+def _token_class_for_color(color: str) -> str:
+    """Return CSS class name for a token color."""
+    return _TOKEN_CLASS_BY_COLOR[color]
+
+
+def _style_attr(styles: list[str]) -> str:
+    """Return an HTML style attribute (leading space) for CSS declarations."""
+    if not styles:
+        return ""
+    return f' style="{";".join(styles)}"'
 
 
 def _highlight_companion_html(html: str, highlight_text: str) -> str:
@@ -113,15 +157,17 @@ def _span_html_with_class(
     single element can be targeted by both display and background-color CSS rules.
     """
     escaped = text.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
-    styles = [f"color:{color}"]
-    if _has_pointing(text) and pointed_scale != 1.0:
-        styles.append(f"font-size:{round(font_size_px * pointed_scale)}px")
-        styles.append("font-feature-settings:'ss03'")
+    classes = [_token_class_for_color(color)]
+    styles = []
     if _has_hebrew(text):
-        styles.append("unicode-bidi:isolate")
-        styles.append("direction:rtl")
-    cls_attr = f' class="{cls}"' if cls else ""
-    return f'<span{cls_attr} style="{";".join(styles)}">{escaped}</span>'
+        classes.append("heb")
+    if _has_pointing(text) and pointed_scale != 1.0:
+        classes.append("pointed")
+        styles.append(f"font-size:{round(font_size_px * pointed_scale)}px")
+    if cls:
+        classes.extend(cls.split())
+    cls_attr = f' class="{" ".join(classes)}"'
+    return f"<span{cls_attr}{_style_attr(styles)}>{escaped}</span>"
 
 
 def _one_span(
@@ -134,16 +180,21 @@ def _one_span(
 ) -> str:
     """Return the HTML span(s) for a single pygments token value."""
     escaped = value.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
-    hl_style = " background-color:rgba(255,210,0,0.35);" if hl_bg else ""
+    classes = [_token_class_for_color(color)]
+    styles = []
+    if hl_bg:
+        classes.append("hl-bg")
+    if _has_hebrew(value):
+        classes.append("heb")
     if zoom:
         size = round(font_size_px * pointed_scale * 2)
-        extra = f" font-size:{size}px; font-feature-settings:'ss03'"
+        classes.append("pointed")
+        styles.append(f"font-size:{size}px")
     elif pointed_scale != 1.0 and _has_pointing(value):
-        extra = f" font-size:{round(font_size_px * pointed_scale)}px; font-feature-settings:'ss03'"
-    else:
-        extra = ""
-    inner = f'<span style="color:{color};{hl_style}{extra}">{escaped}</span>'
-    return f'<bdi dir="rtl">{inner}</bdi>' if _has_hebrew(value) else inner
+        classes.append("pointed")
+        styles.append(f"font-size:{round(font_size_px * pointed_scale)}px")
+    cls_attr = f' class="{" ".join(classes)}"'
+    return f"<span{cls_attr}{_style_attr(styles)}>{escaped}</span>"
 
 
 def _build_html(
@@ -365,6 +416,7 @@ def _build_html(
       rgb({br},{bg},{bb}));
   }}
 {layout_css}
+{_TOKEN_CLASSES_CSS}
   pre {{
     font-family: 'Taamey', 'Consolas', monospace;
     font-size: {font_size_px}px;
@@ -559,6 +611,7 @@ def _build_multistep_html(
   [data-hl-id="rs1"], [data-hl-id="rs2"] {{
     display: none;
   }}
+{_TOKEN_CLASSES_CSS}
   pre {{
     font-family: 'Taamey', 'Consolas', monospace;
     font-size: {font_size_px}px;

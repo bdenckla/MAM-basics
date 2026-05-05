@@ -61,6 +61,29 @@
   [data-hl-id="rs1"], [data-hl-id="rs2"] {
     display: none;
   }
+
+    .tok-key { color: #9cdcfe; }
+    .tok-string { color: #ce9178; }
+    .tok-number { color: #b5cea8; }
+    .tok-keyword { color: #569cd6; }
+    .tok-punct { color: #d4d4d4; }
+    .heb {
+        unicode-bidi: isolate;
+        direction: rtl;
+    }
+    .pointed {
+        font-feature-settings: 'ss03';
+    }
+    .hl-bg {
+        background-color: rgba(255,210,0,0.35);
+        border-radius: 3px;
+    }
+    .paseq-bold {
+        font-weight: bold;
+    }
+    .variant-gray {
+        color: Gray;
+    }
   pre {
     font-family: 'Taamey', 'Consolas', monospace;
     font-size: 34px;
@@ -119,30 +142,30 @@
   <div id="left-col">
     <pre id="zoom"></pre>
     <div id="companion-wrapper">
-      <div class="companion-html"><div><span data-hl-id="yhvh">יְהֹוָ֤ה</span><span data-hl-id="paseq">&thinsp;<span style="font-weight: bold;">׀</span></span><span data-hl-id="nbsp">&nbsp;</span><span data-hl-id="text1">נְחֵ֬נִי בְצִדְקָתֶ֗ךָ</span><span data-hl-id="rs1">⏎</span></div>
+      <div class="companion-html"><div><span data-hl-id="yhvh">יְהֹוָ֤ה</span><span data-hl-id="paseq">&thinsp;<span class="paseq-bold">׀</span></span><span data-hl-id="nbsp">&nbsp;</span><span data-hl-id="text1">נְחֵ֬נִי בְצִדְקָתֶ֗ךָ</span><span data-hl-id="rs1">⏎</span></div>
 <div><span data-hl-id="ind1">&emsp;&emsp;</span><span data-hl-id="lmaan">לְמַ֥עַן </span><span data-hl-id="shoraray">שׁוֹרְﬞרָ֑י</span><span data-hl-id="rs2">⏎</span></div>
-<div><span data-hl-id="ind2">&emsp;&emsp;</span><span data-hl-id="hoshar" style="color:Gray;">הושר</span><span data-hl-id="kuk-space"> </span><span data-hl-id="hayashar">הַיְשַׁ֖ר</span><span data-hl-id="text3"> לְפָנַ֣י דַּרְכֶּֽךָ׃</span></div></div>
+<div><span data-hl-id="ind2">&emsp;&emsp;</span><span data-hl-id="hoshar" class="variant-gray">הושר</span><span data-hl-id="kuk-space"> </span><span data-hl-id="hayashar">הַיְשַׁ֖ר</span><span data-hl-id="text3"> לְפָנַ֣י דַּרְכֶּֽךָ׃</span></div></div>
     </div>
   </div>
   <div id="right-col">
-    <pre id="main"><span style="color:#d4d4d4">[</span><span style="color:#d4d4d4">
-  </span><span class="hl-1 zm-1" style="color:#ce9178;font-size:51px;font-feature-settings:'ss03';unicode-bidi:isolate;direction:rtl">"יְהֹוָ֤ה"</span><span style="color:#d4d4d4">,</span><span style="color:#d4d4d4">
-  </span><span class="hl-2 zm-2" style="color:#d4d4d4">{</span><span class="hl-2 zm-2" style="color:#9cdcfe">"tmpl_name"</span><span class="hl-2 zm-2" style="color:#d4d4d4">:</span><span class="hl-2 zm-2" style="color:#d4d4d4"> </span><span class="hl-2 zm-2" style="color:#ce9178;unicode-bidi:isolate;direction:rtl">"מ:לגרמיה-2"</span><span class="hl-2 zm-2" style="color:#d4d4d4">}</span><span style="color:#d4d4d4">,</span><span style="color:#d4d4d4">
-  </span><span class="hl-3 zm-3" style="color:#d4d4d4">{</span><span class="hl-3 zm-3" style="color:#9cdcfe">"tmpl_name"</span><span class="hl-3 zm-3" style="color:#d4d4d4">:</span><span class="hl-3 zm-3" style="color:#d4d4d4"> </span><span class="hl-3 zm-3" style="color:#ce9178;unicode-bidi:isolate;direction:rtl">"ר0"</span><span class="hl-3 zm-3" style="color:#d4d4d4">}</span><span style="color:#d4d4d4">,</span><span style="color:#d4d4d4">
-  </span><span class="hl-4 zm-4" style="color:#ce9178;font-size:51px;font-feature-settings:'ss03';unicode-bidi:isolate;direction:rtl">"נְחֵ֬נִי בְצִדְקָתֶ֗ךָ"</span><span style="color:#d4d4d4">,</span><span style="color:#d4d4d4">
-  </span><span class="hl-5 zm-5" style="color:#d4d4d4">{</span><span class="hl-5 zm-5" style="color:#9cdcfe">"tmpl_name"</span><span class="hl-5 zm-5" style="color:#d4d4d4">:</span><span class="hl-5 zm-5" style="color:#d4d4d4"> </span><span class="hl-5 zm-5" style="color:#ce9178;unicode-bidi:isolate;direction:rtl">"ר1"</span><span class="hl-5 zm-5" style="color:#d4d4d4">}</span><span style="color:#d4d4d4">,</span><span style="color:#d4d4d4">
-  </span><span class="hl-6 zm-6" style="color:#ce9178;font-size:51px;font-feature-settings:'ss03';unicode-bidi:isolate;direction:rtl">"לְמַ֥עַן "</span><span style="color:#d4d4d4">,</span><span style="color:#d4d4d4">
-  </span><span class="hl-7 zm-7" style="color:#d4d4d4">{</span><span class="hl-7 zm-7" style="color:#9cdcfe">"tmpl_name"</span><span class="hl-7 zm-7" style="color:#d4d4d4">:</span><span class="hl-7 zm-7" style="color:#d4d4d4"> </span><span class="hl-7 zm-7" style="color:#ce9178;unicode-bidi:isolate;direction:rtl">"נוסח"</span><span class="hl-7 zm-7" style="color:#d4d4d4">,</span><span class="zm-7" style="color:#d4d4d4">
-    </span><span class="hl-7 zm-7" style="color:#9cdcfe">"tmpl_params"</span><span class="hl-7 zm-7" style="color:#d4d4d4">:</span><span class="hl-7 zm-7" style="color:#d4d4d4"> </span><span class="hl-7 zm-7" style="color:#d4d4d4">{</span><span class="zm-7" style="color:#d4d4d4">
-      </span><span class="hl-7 zm-7" style="color:#9cdcfe">"1"</span><span class="hl-7 zm-7" style="color:#d4d4d4">:</span><span class="hl-7 zm-7" style="color:#d4d4d4"> </span><span class="hl-7 zm-7" style="color:#ce9178;font-size:51px;font-feature-settings:'ss03';unicode-bidi:isolate;direction:rtl">"שׁוֹרְﬞרָ֑י"</span><span class="hl-7 zm-7" style="color:#d4d4d4">,</span><span class="zm-7" style="color:#d4d4d4">
-      </span><span class="hl-7 zm-7" style="color:#9cdcfe">"2"</span><span class="hl-7 zm-7" style="color:#d4d4d4">:</span><span class="hl-7 zm-7" style="color:#d4d4d4"> </span><span class="hl-7 zm-7" style="color:#ce9178;font-size:51px;font-feature-settings:'ss03';unicode-bidi:isolate;direction:rtl">"א=שׁוֹרֲרָ֑י (חטף)"</span><span class="hl-7 zm-7" style="color:#d4d4d4">}}</span><span style="color:#d4d4d4">,</span><span style="color:#d4d4d4">
-  </span><span class="hl-8 zm-8" style="color:#d4d4d4">{</span><span class="hl-8 zm-8" style="color:#9cdcfe">"tmpl_name"</span><span class="hl-8 zm-8" style="color:#d4d4d4">:</span><span class="hl-8 zm-8" style="color:#d4d4d4"> </span><span class="hl-8 zm-8" style="color:#ce9178;unicode-bidi:isolate;direction:rtl">"ר1"</span><span class="hl-8 zm-8" style="color:#d4d4d4">}</span><span style="color:#d4d4d4">,</span><span style="color:#d4d4d4">
-  </span><span class="hl-9 zm-9" style="color:#d4d4d4">{</span><span class="hl-9 zm-9" style="color:#9cdcfe">"tmpl_name"</span><span class="hl-9 zm-9" style="color:#d4d4d4">:</span><span class="hl-9 zm-9" style="color:#d4d4d4"> </span><span class="hl-9 zm-9" style="color:#ce9178;unicode-bidi:isolate;direction:rtl">"כו\"ק"</span><span class="hl-9 zm-9" style="color:#d4d4d4">,</span><span class="zm-9" style="color:#d4d4d4">
-    </span><span class="hl-9 zm-9" style="color:#9cdcfe">"tmpl_params"</span><span class="hl-9 zm-9" style="color:#d4d4d4">:</span><span class="hl-9 zm-9" style="color:#d4d4d4"> </span><span class="hl-9 zm-9" style="color:#d4d4d4">{</span><span class="zm-9" style="color:#d4d4d4">
-      </span><span class="hl-9 zm-9" style="color:#9cdcfe">"1"</span><span class="hl-9 zm-9" style="color:#d4d4d4">:</span><span class="hl-9 zm-9" style="color:#d4d4d4"> </span><span class="hl-9 zm-9" style="color:#ce9178;unicode-bidi:isolate;direction:rtl">"הושר"</span><span class="hl-9 zm-9" style="color:#d4d4d4">,</span><span class="zm-9" style="color:#d4d4d4">
-      </span><span class="hl-9 zm-9" style="color:#9cdcfe">"2"</span><span class="hl-9 zm-9" style="color:#d4d4d4">:</span><span class="hl-9 zm-9" style="color:#d4d4d4"> </span><span class="hl-9 zm-9" style="color:#ce9178;font-size:51px;font-feature-settings:'ss03';unicode-bidi:isolate;direction:rtl">"הַיְשַׁ֖ר"</span><span class="hl-9 zm-9" style="color:#d4d4d4">}}</span><span style="color:#d4d4d4">,</span><span style="color:#d4d4d4">
-  </span><span class="hl-10 zm-10" style="color:#ce9178;font-size:51px;font-feature-settings:'ss03';unicode-bidi:isolate;direction:rtl">" לְפָנַ֣י דַּרְכֶּֽךָ׃"</span><span style="color:#d4d4d4">
-</span><span style="color:#d4d4d4">]</span><span style="color:#d4d4d4">
+    <pre id="main"><span class="tok-punct">[</span><span class="tok-punct">
+  </span><span class="tok-string heb pointed hl-1 zm-1" style="font-size:51px">"יְהֹוָ֤ה"</span><span class="tok-punct">,</span><span class="tok-punct">
+  </span><span class="tok-punct hl-2 zm-2">{</span><span class="tok-key hl-2 zm-2">"tmpl_name"</span><span class="tok-punct hl-2 zm-2">:</span><span class="tok-punct hl-2 zm-2"> </span><span class="tok-string heb hl-2 zm-2">"מ:לגרמיה-2"</span><span class="tok-punct hl-2 zm-2">}</span><span class="tok-punct">,</span><span class="tok-punct">
+  </span><span class="tok-punct hl-3 zm-3">{</span><span class="tok-key hl-3 zm-3">"tmpl_name"</span><span class="tok-punct hl-3 zm-3">:</span><span class="tok-punct hl-3 zm-3"> </span><span class="tok-string heb hl-3 zm-3">"ר0"</span><span class="tok-punct hl-3 zm-3">}</span><span class="tok-punct">,</span><span class="tok-punct">
+  </span><span class="tok-string heb pointed hl-4 zm-4" style="font-size:51px">"נְחֵ֬נִי בְצִדְקָתֶ֗ךָ"</span><span class="tok-punct">,</span><span class="tok-punct">
+  </span><span class="tok-punct hl-5 zm-5">{</span><span class="tok-key hl-5 zm-5">"tmpl_name"</span><span class="tok-punct hl-5 zm-5">:</span><span class="tok-punct hl-5 zm-5"> </span><span class="tok-string heb hl-5 zm-5">"ר1"</span><span class="tok-punct hl-5 zm-5">}</span><span class="tok-punct">,</span><span class="tok-punct">
+  </span><span class="tok-string heb pointed hl-6 zm-6" style="font-size:51px">"לְמַ֥עַן "</span><span class="tok-punct">,</span><span class="tok-punct">
+  </span><span class="tok-punct hl-7 zm-7">{</span><span class="tok-key hl-7 zm-7">"tmpl_name"</span><span class="tok-punct hl-7 zm-7">:</span><span class="tok-punct hl-7 zm-7"> </span><span class="tok-string heb hl-7 zm-7">"נוסח"</span><span class="tok-punct hl-7 zm-7">,</span><span class="tok-punct zm-7">
+    </span><span class="tok-key hl-7 zm-7">"tmpl_params"</span><span class="tok-punct hl-7 zm-7">:</span><span class="tok-punct hl-7 zm-7"> </span><span class="tok-punct hl-7 zm-7">{</span><span class="tok-punct zm-7">
+      </span><span class="tok-key hl-7 zm-7">"1"</span><span class="tok-punct hl-7 zm-7">:</span><span class="tok-punct hl-7 zm-7"> </span><span class="tok-string heb pointed hl-7 zm-7" style="font-size:51px">"שׁוֹרְﬞרָ֑י"</span><span class="tok-punct hl-7 zm-7">,</span><span class="tok-punct zm-7">
+      </span><span class="tok-key hl-7 zm-7">"2"</span><span class="tok-punct hl-7 zm-7">:</span><span class="tok-punct hl-7 zm-7"> </span><span class="tok-string heb pointed hl-7 zm-7" style="font-size:51px">"א=שׁוֹרֲרָ֑י (חטף)"</span><span class="tok-punct hl-7 zm-7">}}</span><span class="tok-punct">,</span><span class="tok-punct">
+  </span><span class="tok-punct hl-8 zm-8">{</span><span class="tok-key hl-8 zm-8">"tmpl_name"</span><span class="tok-punct hl-8 zm-8">:</span><span class="tok-punct hl-8 zm-8"> </span><span class="tok-string heb hl-8 zm-8">"ר1"</span><span class="tok-punct hl-8 zm-8">}</span><span class="tok-punct">,</span><span class="tok-punct">
+  </span><span class="tok-punct hl-9 zm-9">{</span><span class="tok-key hl-9 zm-9">"tmpl_name"</span><span class="tok-punct hl-9 zm-9">:</span><span class="tok-punct hl-9 zm-9"> </span><span class="tok-string heb hl-9 zm-9">"כו\"ק"</span><span class="tok-punct hl-9 zm-9">,</span><span class="tok-punct zm-9">
+    </span><span class="tok-key hl-9 zm-9">"tmpl_params"</span><span class="tok-punct hl-9 zm-9">:</span><span class="tok-punct hl-9 zm-9"> </span><span class="tok-punct hl-9 zm-9">{</span><span class="tok-punct zm-9">
+      </span><span class="tok-key hl-9 zm-9">"1"</span><span class="tok-punct hl-9 zm-9">:</span><span class="tok-punct hl-9 zm-9"> </span><span class="tok-string heb hl-9 zm-9">"הושר"</span><span class="tok-punct hl-9 zm-9">,</span><span class="tok-punct zm-9">
+      </span><span class="tok-key hl-9 zm-9">"2"</span><span class="tok-punct hl-9 zm-9">:</span><span class="tok-punct hl-9 zm-9"> </span><span class="tok-string heb pointed hl-9 zm-9" style="font-size:51px">"הַיְשַׁ֖ר"</span><span class="tok-punct hl-9 zm-9">}}</span><span class="tok-punct">,</span><span class="tok-punct">
+  </span><span class="tok-string heb pointed hl-10 zm-10" style="font-size:51px">" לְפָנַ֣י דַּרְכֶּֽךָ׃"</span><span class="tok-punct">
+</span><span class="tok-punct">]</span><span class="tok-punct">
 </span></pre>
   </div>
 <script>
