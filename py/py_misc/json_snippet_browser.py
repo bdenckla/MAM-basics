@@ -119,6 +119,7 @@ def _span_html_with_class(
         styles.append("font-feature-settings:'ss03'")
     if _has_hebrew(text):
         styles.append("unicode-bidi:isolate")
+        styles.append("direction:rtl")
     cls_attr = f' class="{cls}"' if cls else ""
     return f'<span{cls_attr} style="{";".join(styles)}">{escaped}</span>'
 
@@ -142,7 +143,7 @@ def _one_span(
     else:
         extra = ""
     inner = f'<span style="color:{color};{hl_style}{extra}">{escaped}</span>'
-    return f"<bdi>{inner}</bdi>" if _has_hebrew(value) else inner
+    return f'<bdi dir="rtl">{inner}</bdi>' if _has_hebrew(value) else inner
 
 
 def _build_html(
