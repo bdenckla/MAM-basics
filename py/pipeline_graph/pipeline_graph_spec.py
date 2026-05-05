@@ -103,7 +103,7 @@ RAW_NODES = [
     RawNode("main_ws_bot__proto", "ws_bot proto", "misc_3"),
     RawNode("main_ws_bot__real", "ws_bot real", "ws_bot"),
     RawNode(
-        "main_gen_misc_authored_english_documents",
+        "main_authored",
         "...english_documents",
         "gen_docs",
     ),
@@ -136,7 +136,7 @@ RAW_EDGES = [
     ),
     RawEdge("main_mam_with_doc", "out_with_doc", "MAM-with-doc outputs"),
     RawEdge(
-        "main_gen_misc_authored_english_documents",
+        "main_authored",
         "out_with_doc",
         "MAM-with-doc outputs",
     ),

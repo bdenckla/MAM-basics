@@ -47,7 +47,7 @@ Python tools for working with [MAM (Miqra according to the Masora)](https://he.w
 
 ### Utilities
 
-- `main_gen_misc_authored_english_documents.py` — generates miscellaneous HTML documentation
+- `main_authored.py` — generates miscellaneous HTML documentation
 - `main_rename_jpeg_scans.py` — renames JPEG scan files by directory structure
 - `main_0_mega.py` — meta-orchestrator that runs multiple jobs in sequence
 
