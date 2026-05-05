@@ -94,223 +94,81 @@ def render_psalm_5v9_mpplus():
     )
 
 
-def render_psalm_5v9_mpplus_step_0():
-    """Render slide-psalm-5v9-mpplus-step-0.png: JSON on left, Wikisource HTML fragment on right."""
-    json_snippet_browser.render_json_snippet_browser(
-        IMAGES_DIR,
-        DECK_NAME,
-        _PSALM_5V9_JSON,
-        "psalm-5v9-mpplus-step-0",
-        top_rgb=_TOP_RGB,
-        bot_rgb=_BOT_RGB,
-        companion_html_path=_PSALM_5V9_WS_FRAGMENT,
-        layout="row",
-        font_size_px=34,
-        pointed_scale=1.5,
-        companion_first=True,
-    )
+def render_psalm_5v9_mpplus_steps():
+    """Render slide-psalm-5v9-mpplus-step-0.png through step-10.png and an interactive HTML.
 
-
-def render_psalm_5v9_mpplus_step_1():
-    """Render slide-psalm-5v9-mpplus-step-1.png: 2-col with יְהֹוָ֤ה highlighted."""
-    json_snippet_browser.render_json_snippet_browser(
-        IMAGES_DIR,
-        DECK_NAME,
-        _PSALM_5V9_JSON,
-        "psalm-5v9-mpplus-step-1",
-        top_rgb=_TOP_RGB,
-        bot_rgb=_BOT_RGB,
-        companion_html_path=_PSALM_5V9_WS_FRAGMENT,
-        layout="row",
-        font_size_px=34,
-        pointed_scale=1.5,
-        companion_first=True,
-        highlight_text='"יְהֹוָ֤ה"',
-        companion_highlight_html="יְהֹוָ֤ה",
-    )
-
-
-def render_psalm_5v9_mpplus_step_2():
-    """Render slide-psalm-5v9-mpplus-step-2.png: 2-col with {"tmpl_name": "מ:לגרמיה-2"} highlighted."""
-    json_snippet_browser.render_json_snippet_browser(
-        IMAGES_DIR,
-        DECK_NAME,
-        _PSALM_5V9_JSON,
-        "psalm-5v9-mpplus-step-2",
-        top_rgb=_TOP_RGB,
-        bot_rgb=_BOT_RGB,
-        companion_html_path=_PSALM_5V9_WS_FRAGMENT,
-        layout="row",
-        font_size_px=34,
-        pointed_scale=1.5,
-        companion_first=True,
-        highlight_text='{"tmpl_name": "מ:לגרמיה-2"}',
-        companion_highlight_html='&thinsp;<span style="font-weight: bold;">׀</span>',
-    )
-
-
-def render_psalm_5v9_mpplus_step_3():
-    """Render slide-psalm-5v9-mpplus-step-3.png: 2-col with {"tmpl_name": "ר0"} highlighted."""
-    json_snippet_browser.render_json_snippet_browser(
-        IMAGES_DIR,
-        DECK_NAME,
-        _PSALM_5V9_JSON,
-        "psalm-5v9-mpplus-step-3",
-        top_rgb=_TOP_RGB,
-        bot_rgb=_BOT_RGB,
-        companion_html_path=_PSALM_5V9_WS_FRAGMENT,
-        layout="row",
-        font_size_px=34,
-        pointed_scale=1.5,
-        companion_first=True,
-        highlight_text='{"tmpl_name": "ר0"}',
-        companion_highlight_html="&nbsp;",
-    )
-
-
-def render_psalm_5v9_mpplus_step_4():
-    """Render slide-psalm-5v9-mpplus-step-4.png: 2-col with נְחֵ֬נִי בְצִדְקָתֶ֗ךָ highlighted."""
-    json_snippet_browser.render_json_snippet_browser(
-        IMAGES_DIR,
-        DECK_NAME,
-        _PSALM_5V9_JSON,
-        "psalm-5v9-mpplus-step-4",
-        top_rgb=_TOP_RGB,
-        bot_rgb=_BOT_RGB,
-        companion_html_path=_PSALM_5V9_WS_FRAGMENT,
-        layout="row",
-        font_size_px=34,
-        pointed_scale=1.5,
-        companion_first=True,
-        highlight_text='"נְחֵ֬נִי בְצִדְקָתֶ֗ךָ"',
-        companion_highlight_html="נְחֵ֬נִי בְצִדְקָתֶ֗ךָ",
-    )
-
-
-def render_psalm_5v9_mpplus_step_5():
-    """Render slide-psalm-5v9-mpplus-step-5.png: 2-col with first {"tmpl_name": "ר1"} highlighted."""
-    json_snippet_browser.render_json_snippet_browser(
-        IMAGES_DIR,
-        DECK_NAME,
-        _PSALM_5V9_JSON,
-        "psalm-5v9-mpplus-step-5",
-        top_rgb=_TOP_RGB,
-        bot_rgb=_BOT_RGB,
-        companion_html_path=_PSALM_5V9_WS_FRAGMENT,
-        layout="row",
-        font_size_px=34,
-        pointed_scale=1.5,
-        companion_first=True,
-        highlight_text='{"tmpl_name": "ר1"}',
-        highlight_occurrence=1,
-    )
-
-
-def render_psalm_5v9_mpplus_step_6():
-    """Render slide-psalm-5v9-mpplus-step-6.png: 2-col with לְמַ֥עַן highlighted."""
-    json_snippet_browser.render_json_snippet_browser(
-        IMAGES_DIR,
-        DECK_NAME,
-        _PSALM_5V9_JSON,
-        "psalm-5v9-mpplus-step-6",
-        top_rgb=_TOP_RGB,
-        bot_rgb=_BOT_RGB,
-        companion_html_path=_PSALM_5V9_WS_FRAGMENT,
-        layout="row",
-        font_size_px=34,
-        pointed_scale=1.5,
-        companion_first=True,
-        highlight_text='"לְמַ֥עַן "',
-        companion_highlight_html="לְמַ֥עַן ",
-    )
-
-
-def render_psalm_5v9_mpplus_step_7():
-    """Render slide-psalm-5v9-mpplus-step-7.png: 2-col with the נוסח template highlighted."""
-    json_snippet_browser.render_json_snippet_browser(
-        IMAGES_DIR,
-        DECK_NAME,
-        _PSALM_5V9_JSON,
-        "psalm-5v9-mpplus-step-7",
-        top_rgb=_TOP_RGB,
-        bot_rgb=_BOT_RGB,
-        companion_html_path=_PSALM_5V9_WS_FRAGMENT,
-        layout="row",
-        font_size_px=34,
-        pointed_scale=1.5,
-        companion_first=True,
-        highlight_text=(
-            '{"tmpl_name": "נוסח",\n'
-            '    "tmpl_params": {\n'
-            '      "1": "שׁוֹרְﬞרָ֑י",\n'
-            '      "2": "א=שׁוֹרֲרָ֑י (חטף)"}}'
-        ),
-        companion_highlight_html="שׁוֹרְﬞרָ֑י",
-    )
-
-
-def render_psalm_5v9_mpplus_step_8():
-    """Render slide-psalm-5v9-mpplus-step-8.png: 2-col with second {"tmpl_name": "ר1"} highlighted."""
-    json_snippet_browser.render_json_snippet_browser(
-        IMAGES_DIR,
-        DECK_NAME,
-        _PSALM_5V9_JSON,
-        "psalm-5v9-mpplus-step-8",
-        top_rgb=_TOP_RGB,
-        bot_rgb=_BOT_RGB,
-        companion_html_path=_PSALM_5V9_WS_FRAGMENT,
-        layout="row",
-        font_size_px=34,
-        pointed_scale=1.5,
-        companion_first=True,
-        highlight_text='{"tmpl_name": "ר1"}',
-        highlight_occurrence=2,
-    )
-
-
-def render_psalm_5v9_mpplus_step_9():
-    """Render slide-psalm-5v9-mpplus-step-9.png: 2-col with the כו"ק template highlighted."""
-    # Extract the כו"ק object verbatim from the file to avoid mark-order issues in source strings.
+    All eleven steps are built from a single HTML file
+    (slide-psalm-5v9-mpplus-interactive.html) that embeds every step's
+    highlight markup.  Opening that file in a browser with ``?step=N``
+    shows the Nth step directly, without needing Playwright.
+    """
+    # Extract dynamic highlight strings verbatim from the JSON file to avoid
+    # mark-order issues that arise when hard-coding pointed Hebrew in source strings.
     _json = _PSALM_5V9_JSON.read_text(encoding="utf-8")
-    _s = _json.index('{"tmpl_name": "כו')
-    _kuk_object = _json[_s : _json.index("}}", _s) + 2]
-    json_snippet_browser.render_json_snippet_browser(
+    _s9 = _json.index('{"tmpl_name": "כו')  # start of כו"ק object
+    _kuk_object = _json[_s9 : _json.index("}}", _s9) + 2]
+    _s10 = _json.index('" לְפ') + 1  # skip opening JSON double-quote
+    _last_str = _json[_s10 : _json.index('"', _s10)]
+
+    steps = [
+        {},  # step 0: no highlight — base view
+        {
+            "highlight_text": '"יְהֹוָ֤ה"',
+            "companion_highlight_html": "יְהֹוָ֤ה",
+        },
+        {
+            "highlight_text": '{"tmpl_name": "מ:לגרמיה-2"}',
+            "companion_highlight_html": '&thinsp;<span style="font-weight: bold;">׀</span>',
+        },
+        {
+            "highlight_text": '{"tmpl_name": "ר0"}',
+            "companion_highlight_html": "&nbsp;",
+        },
+        {
+            "highlight_text": '"נְחֵ֬נִי בְצִדְקָתֶ֗ךָ"',
+            "companion_highlight_html": "נְחֵ֬נִי בְצִדְקָתֶ֗ךָ",
+        },
+        {
+            "highlight_text": '{"tmpl_name": "ר1"}',
+            "highlight_occurrence": 1,
+        },
+        {
+            "highlight_text": '"לְמַ֥עַן "',
+            "companion_highlight_html": "לְמַ֥עַן ",
+        },
+        {
+            "highlight_text": (
+                '{"tmpl_name": "נוסח",\n'
+                '    "tmpl_params": {\n'
+                '      "1": "שׁוֹרְﬞרָ֑י",\n'
+                '      "2": "א=שׁוֹרֲרָ֑י (חטף)"}}'
+            ),
+            "companion_highlight_html": "שׁוֹרְﬞרָ֑י",
+        },
+        {
+            "highlight_text": '{"tmpl_name": "ר1"}',
+            "highlight_occurrence": 2,
+        },
+        {
+            "highlight_text": _kuk_object,
+            "companion_highlight_html": '<span style="color:Gray;">הושר</span>',
+        },
+        {
+            "highlight_text": '"' + _last_str + '"',
+            "companion_highlight_html": _last_str,
+        },
+    ]
+    json_snippet_browser.render_json_snippet_browser_steps(
         IMAGES_DIR,
         DECK_NAME,
         _PSALM_5V9_JSON,
-        "psalm-5v9-mpplus-step-9",
+        "psalm-5v9-mpplus",
+        steps=steps,
         top_rgb=_TOP_RGB,
         bot_rgb=_BOT_RGB,
         companion_html_path=_PSALM_5V9_WS_FRAGMENT,
-        layout="row",
         font_size_px=34,
         pointed_scale=1.5,
-        companion_first=True,
-        highlight_text=_kuk_object,
-        companion_highlight_html='<span style="color:Gray;">הושר</span>',
-    )
-
-
-def render_psalm_5v9_mpplus_step_10():
-    """Render slide-psalm-5v9-mpplus-step-10.png: 2-col with לְפָנַ֣י דַּרְכֶּֽךָ׃ highlighted."""
-    # Extract the last string value verbatim from the file to avoid mark-order issues.
-    _json = _PSALM_5V9_JSON.read_text(encoding="utf-8")
-    _s = _json.index('" לְפ') + 1  # skip the opening JSON double-quote
-    _last_str = _json[_s : _json.index('"', _s)]
-    json_snippet_browser.render_json_snippet_browser(
-        IMAGES_DIR,
-        DECK_NAME,
-        _PSALM_5V9_JSON,
-        "psalm-5v9-mpplus-step-10",
-        top_rgb=_TOP_RGB,
-        bot_rgb=_BOT_RGB,
-        companion_html_path=_PSALM_5V9_WS_FRAGMENT,
-        layout="row",
-        font_size_px=34,
-        pointed_scale=1.5,
-        companion_first=True,
-        highlight_text='"' + _last_str + '"',
-        companion_highlight_html=_last_str,
     )
 
 
@@ -319,15 +177,5 @@ ALL_SLIDES = {
     "psalm-5v9-sources": render_psalm_5v9_sources,
     "psalm-15v1-qamats": render_psalm_15v1_qamats,
     "psalm-5v9-mpplus": render_psalm_5v9_mpplus,
-    "psalm-5v9-mpplus-step-0": render_psalm_5v9_mpplus_step_0,
-    "psalm-5v9-mpplus-step-1": render_psalm_5v9_mpplus_step_1,
-    "psalm-5v9-mpplus-step-2": render_psalm_5v9_mpplus_step_2,
-    "psalm-5v9-mpplus-step-3": render_psalm_5v9_mpplus_step_3,
-    "psalm-5v9-mpplus-step-4": render_psalm_5v9_mpplus_step_4,
-    "psalm-5v9-mpplus-step-5": render_psalm_5v9_mpplus_step_5,
-    "psalm-5v9-mpplus-step-6": render_psalm_5v9_mpplus_step_6,
-    "psalm-5v9-mpplus-step-7": render_psalm_5v9_mpplus_step_7,
-    "psalm-5v9-mpplus-step-8": render_psalm_5v9_mpplus_step_8,
-    "psalm-5v9-mpplus-step-9": render_psalm_5v9_mpplus_step_9,
-    "psalm-5v9-mpplus-step-10": render_psalm_5v9_mpplus_step_10,
+    "psalm-5v9-mpplus-steps": render_psalm_5v9_mpplus_steps,
 }

@@ -275,6 +275,280 @@ def _build_html(
 </html>"""
 
 
+def _build_multistep_html(
+    json_text: str,
+    steps: list,
+    top_rgb: tuple,
+    bot_rgb: tuple,
+    font_size_px: int,
+    pointed_scale: float,
+    companion_html: str,
+) -> str:
+    """Build one HTML document with all steps embedded; JS reveals the active step.
+
+    Each element of ``steps`` is a dict with optional keys:
+      ``highlight_text``         – the JSON substring to highlight (or absent/None)
+      ``highlight_occurrence``   – which occurrence (1-based, default 1)
+      ``companion_highlight_html`` – text/HTML to find-and-wrap in companion panel
+    """
+    W, H = slide_render.W, slide_render.H
+    font_uri = _TAAMEY_FONT.as_uri()
+    tokens = list(lex(json_text, JsonLexer()))
+    tr, tg, tb = top_rgb
+    br, bg, bb = bot_rgb
+
+    step_divs = []
+    for step_idx, spec in enumerate(steps):
+        highlight_text = spec.get("highlight_text")
+        highlight_occurrence = spec.get("highlight_occurrence", 1)
+        companion_highlight_html = spec.get("companion_highlight_html")
+
+        # Compute character-offset highlight range within json_text.
+        if highlight_text:
+            start = 0
+            for _ in range(highlight_occurrence):
+                hl_start = json_text.index(highlight_text, start)
+                start = hl_start + 1
+            hl_end = hl_start + len(highlight_text)
+        else:
+            hl_start = -1
+            hl_end = -1
+
+        # Walk tokens to build code HTML (with highlight bg) and zoom HTML.
+        code_spans = []
+        zoom_spans = []
+        pos = 0
+        for ttype, value in tokens:
+            color = _token_color(ttype)
+            tok_end = pos + len(value)
+            if highlight_text and pos < hl_end and tok_end > hl_start:
+                pre = value[: max(0, hl_start - pos)]
+                mid = value[max(0, hl_start - pos) : min(len(value), hl_end - pos)]
+                post = value[min(len(value), hl_end - pos) :]
+                if pre:
+                    code_spans.append(
+                        _one_span(
+                            pre,
+                            color,
+                            font_size_px,
+                            pointed_scale,
+                            hl_bg=False,
+                            zoom=False,
+                        )
+                    )
+                if mid:
+                    code_spans.append(
+                        _one_span(
+                            mid,
+                            color,
+                            font_size_px,
+                            pointed_scale,
+                            hl_bg=True,
+                            zoom=False,
+                        )
+                    )
+                    zoom_spans.append(
+                        _one_span(
+                            mid,
+                            color,
+                            font_size_px,
+                            pointed_scale,
+                            hl_bg=False,
+                            zoom=True,
+                        )
+                    )
+                if post:
+                    code_spans.append(
+                        _one_span(
+                            post,
+                            color,
+                            font_size_px,
+                            pointed_scale,
+                            hl_bg=False,
+                            zoom=False,
+                        )
+                    )
+            else:
+                code_spans.append(
+                    _one_span(
+                        value,
+                        color,
+                        font_size_px,
+                        pointed_scale,
+                        hl_bg=False,
+                        zoom=False,
+                    )
+                )
+            pos = tok_end
+
+        code_html = "".join(code_spans)
+        zoom_html = "".join(zoom_spans)
+
+        # Companion panel.
+        _hl_key = (
+            companion_highlight_html
+            if companion_highlight_html is not None
+            else highlight_text
+        )
+        hl_companion = (
+            _highlight_companion_html(companion_html, _hl_key)
+            if _hl_key
+            else companion_html
+        )
+        companion_content = f'<div class="companion-html">{hl_companion}</div>'
+
+        # Build the step div (hidden by default).
+        if highlight_text:
+            inner = (
+                f'<div class="col" style="flex:2;flex-direction:column;'
+                f'justify-content:space-between;align-items:flex-start">'
+                f"<pre>{zoom_html}</pre>"
+                f"{companion_content}"
+                f"</div>"
+                f'<div class="col" style="flex:2;justify-content:flex-start">'
+                f"<pre>{code_html}</pre></div>"
+            )
+        else:
+            inner = (
+                f'<div class="col">{companion_content}</div>'
+                f'<div class="col" style="justify-content:flex-start"><pre>{code_html}</pre></div>'
+            )
+        step_divs.append(f'<div class="step" data-step="{step_idx}">{inner}</div>')
+
+    all_steps_html = "\n".join(step_divs)
+    return f"""<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  @font-face {{
+    font-family: 'Taamey';
+    src: url('{font_uri}');
+  }}
+  * {{ margin: 0; padding: 0; box-sizing: border-box; }}
+  html, body {{
+    width: {W}px;
+    height: {H}px;
+    overflow: hidden;
+    background: linear-gradient(to bottom,
+      rgb({tr},{tg},{tb}),
+      rgb({br},{bg},{bb}));
+  }}
+  body {{
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+  }}
+  .step {{
+    flex: 1;
+    display: none;
+    flex-direction: row;
+    align-items: stretch;
+  }}
+  .col {{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px;
+    overflow: hidden;
+  }}
+  .companion-html {{
+    font-family: 'Taamey', serif;
+    direction: rtl;
+    font-size: 80px;
+    line-height: 2.0;
+    text-align: right;
+    color: white;
+    width: 100%;
+  }}
+  .hl {{
+    background-color: rgba(255, 210, 0, 0.4);
+    border-radius: 3px;
+  }}
+  pre {{
+    font-family: 'Taamey', 'Consolas', monospace;
+    font-size: {font_size_px}px;
+    line-height: 1.8;
+    direction: ltr;
+    unicode-bidi: normal;
+    white-space: pre;
+  }}
+</style>
+</head>
+<body>
+{all_steps_html}
+<script>
+(function () {{
+  var params = new URLSearchParams(window.location.search);
+  var n = parseInt(params.get('step') || '0', 10);
+  var el = document.querySelector('.step[data-step="' + n + '"]');
+  if (!el) el = document.querySelector('.step');
+  if (el) el.style.display = 'flex';
+}})();
+</script>
+</body>
+</html>"""
+
+
+def render_json_snippet_browser_steps(
+    images_dir: pathlib.Path,
+    deck_name: str,
+    json_path: pathlib.Path,
+    slide_base_name: str,
+    steps: list,
+    top_rgb: tuple = (13, 94, 87),
+    bot_rgb: tuple = (8, 61, 56),
+    font_size_px: int = _FONT_SIZE_PX,
+    pointed_scale: float = 2.0,
+    companion_html_path: pathlib.Path = None,
+) -> None:
+    """Build one multi-step interactive HTML and screenshot each step as a PNG.
+
+    The interactive HTML is saved alongside the JSON source as
+    ``slide-{slide_base_name}-interactive.html``.  Open it in a browser with
+    ``?step=N`` to view any step.  Playwright then navigates to each
+    ``?step=N`` URL and saves ``slide-{slide_base_name}-step-{N}.png``.
+    """
+    from playwright.sync_api import sync_playwright
+
+    companion_html = None
+    if companion_html_path is not None:
+        companion_html = pathlib.Path(companion_html_path).read_text(encoding="utf-8")
+
+    json_text = json_path.read_text(encoding="utf-8")
+    html = _build_multistep_html(
+        json_text,
+        steps,
+        top_rgb,
+        bot_rgb,
+        font_size_px,
+        pointed_scale,
+        companion_html,
+    )
+
+    html_path = json_path.parent.resolve() / f"slide-{slide_base_name}-interactive.html"
+    html_path.write_text(html, encoding="utf-8")
+    print(f"Saved {html_path}")
+
+    images_dir.mkdir(parents=True, exist_ok=True)
+    html_uri = html_path.as_uri()
+    with sync_playwright() as p:
+        browser = p.chromium.launch()
+        page = browser.new_page(
+            viewport={"width": slide_render.W, "height": slide_render.H}
+        )
+        for step_idx, _spec in enumerate(steps):
+            step_name = f"{slide_base_name}-step-{step_idx}"
+            page.goto(f"{html_uri}?step={step_idx}")
+            page.wait_for_load_state("networkidle")
+            dest = images_dir / f"slide-{step_name}.png"
+            page.screenshot(path=str(dest))
+            slide_render.write_provenance(dest, deck_name, step_name)
+            print(f"Saved {dest}")
+        browser.close()
+
+
 def render_json_snippet_browser(
     images_dir: pathlib.Path,
     deck_name: str,
