@@ -30,6 +30,11 @@
     height: auto;
   }
 
+    :root {
+        --hl-rgb: 0,0,0;
+        --hl-alpha-main: 0.35;
+        --hl-alpha-companion: 0.4;
+    }
     .tok-key { color: #9cdcfe; }
     .tok-string { color: #ce9178; }
     .tok-number { color: #b5cea8; }
@@ -43,7 +48,7 @@
         font-feature-settings: 'ss03';
     }
     .hl-bg {
-        background-color: rgba(255,210,0,0.35);
+        background-color: rgba(var(--hl-rgb), var(--hl-alpha-main));
         border-radius: 3px;
     }
     .paseq-bold {
