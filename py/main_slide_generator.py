@@ -4,6 +4,7 @@
 Subcommands
 -----------
 make-thumbs     Generate thumbnails from slide-*.png images.
+make-pptx       Build a .pptx from script.md slide order.
 render-slides   Render slide PNGs from Python source.
 
 Examples
@@ -17,6 +18,8 @@ Examples
     python py/main_slide_generator.py render-slides --deck mam-is-a-dataset psalm-15v1-qamats
     python py/main_slide_generator.py make-thumbs --deck what-is-mam
     python py/main_slide_generator.py make-thumbs --deck mam-is-a-dataset
+    python py/main_slide_generator.py make-pptx --deck what-is-mam
+    python py/main_slide_generator.py make-pptx --deck mam-is-a-dataset
 """
 
 import argparse
@@ -24,6 +27,7 @@ import pathlib
 
 from slide_generator import make_thumbs
 from slide_generator import mam_is_a_dataset, what_is_mam
+from slide_generator import make_pptx
 
 ALL_DECKS = {
     "what-is-mam": what_is_mam,
@@ -47,6 +51,15 @@ def cmd_make_thumbs(args: argparse.Namespace) -> None:
     if args.images_dir is None:
         args.images_dir = ALL_DECKS[args.deck].IMAGES_DIR
     make_thumbs.cmd_make_thumbs(args)
+
+
+def cmd_make_pptx(args: argparse.Namespace) -> None:
+    deck = ALL_DECKS[args.deck]
+    if args.script is None:
+        args.script = deck.IMAGES_DIR.parent / "script.md"
+    if args.output is None:
+        args.output = args.script.parent / f"{args.deck}.pptx"
+    make_pptx.cmd_make_pptx(args)
 
 
 def main() -> None:
@@ -88,6 +101,32 @@ def main() -> None:
         help=f"Thumbnail height in pixels (default: {make_thumbs.THUMB_SIZE[1]})",
     )
     p_thumbs.set_defaults(func=cmd_make_thumbs)
+
+    # -- make-pptx --
+    p_pptx = sub.add_parser(
+        "make-pptx",
+        help="Build a .pptx from script.md slide order.",
+    )
+    p_pptx.add_argument(
+        "--deck",
+        required=True,
+        choices=list(ALL_DECKS),
+        metavar="DECK",
+        help=f"slide deck to export (one of: {', '.join(ALL_DECKS)})",
+    )
+    p_pptx.add_argument(
+        "--script",
+        type=pathlib.Path,
+        default=None,
+        help="Path to script.md (default: deck's script.md)",
+    )
+    p_pptx.add_argument(
+        "--output",
+        type=pathlib.Path,
+        default=None,
+        help="Path to output .pptx (default: <deck-dir>/<deck>.pptx)",
+    )
+    p_pptx.set_defaults(func=cmd_make_pptx)
 
     # -- render-slides --
     p_slides = sub.add_parser(

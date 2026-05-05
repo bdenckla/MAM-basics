@@ -2,6 +2,7 @@ black
 playwright
 Pillow
 python-bidi
+python-pptx
 pywikibot
 requests
 lxml
