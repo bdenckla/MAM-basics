@@ -113,6 +113,16 @@ def render_psalm_5v9_mpplus_steps():
         {
             "highlight_text": '{"tmpl_name": "ר1"}',
             "highlight_occurrence": 1,
+            "companion_raw_replacements": [
+                [
+                    '<span class="return-sym" style="display:none;">⏎</span>',
+                    '<span class="return-sym hl">⏎</span>',
+                ],
+                [
+                    '<span class="indent">',
+                    '<span class="indent hl">',
+                ],
+            ],
         },
         {
             "highlight_text": '"לְמַ֥עַן "',

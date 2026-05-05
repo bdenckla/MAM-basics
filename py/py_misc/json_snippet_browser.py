@@ -395,6 +395,8 @@ def _build_multistep_html(
             if _hl_key
             else companion_html
         )
+        for _old, _new in spec.get("companion_raw_replacements", []):
+            hl_companion = hl_companion.replace(_old, _new, 1)
         companion_content = f'<div class="companion-html">{hl_companion}</div>'
 
         # Build the step div (hidden by default).
