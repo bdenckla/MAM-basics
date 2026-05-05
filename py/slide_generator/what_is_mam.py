@@ -28,7 +28,7 @@ def _gradient():
     return slide_render.make_gradient(_TOP_RGB, _BOT_RGB)
 
 
-def render_title_card():
+def render_title_card(**kwargs):
     """Render slide-title-card.png."""
     font_bold = ImageFont.truetype(str(slide_render.FONT_DIR / "arialbd.ttf"), size=180)
     font_reg = ImageFont.truetype(str(slide_render.FONT_DIR / "arial.ttf"), size=96)
@@ -53,7 +53,7 @@ def render_title_card():
     print(f"Saved {dest} {img.size}")
 
 
-def render_closing_card():
+def render_closing_card(**kwargs):
     """Render slide-closing-card.png."""
     font_size = 162  # 10% smaller than title card's 180
     font_bold = ImageFont.truetype(
@@ -90,7 +90,7 @@ def render_closing_card():
     print(f"Saved {dest} {img.size}")
 
 
-def render_json_snippet():
+def render_json_snippet(**kwargs):
     """Render slide-json-snippet.png with syntax-colored JSON."""
     json_snippet_slide.render_json_snippet(IMAGES_DIR, _gradient, DECK_NAME)
 

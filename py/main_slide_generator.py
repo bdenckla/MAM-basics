@@ -40,7 +40,7 @@ def cmd_render_slides(args: argparse.Namespace) -> None:
                 f"Unknown slide {name!r} for deck {args.deck!r}. "
                 f"Available: {', '.join(deck.ALL_SLIDES)}"
             )
-        deck.ALL_SLIDES[name]()
+        deck.ALL_SLIDES[name](html_only=args.html_only)
 
 
 def cmd_make_thumbs(args: argparse.Namespace) -> None:
@@ -106,6 +106,12 @@ def main() -> None:
         nargs="?",
         metavar="SLIDE",
         help="slide to render (omit to render all slides in the deck)",
+    )
+    p_slides.add_argument(
+        "--html-only",
+        action="store_true",
+        default=False,
+        help="generate only the interactive HTML, skip PNG screenshots (multi-step slides only)",
     )
     p_slides.set_defaults(func=cmd_render_slides)
 

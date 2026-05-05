@@ -27,7 +27,7 @@ def _gradient():
     return slide_render.make_gradient(_TOP_RGB, _BOT_RGB)
 
 
-def render_title_card():
+def render_title_card(**kwargs):
     """Render slide-title-card.png."""
     font_bold = ImageFont.truetype(str(slide_render.FONT_DIR / "arialbd.ttf"), size=180)
     font_reg = ImageFont.truetype(str(slide_render.FONT_DIR / "arial.ttf"), size=96)
@@ -58,12 +58,12 @@ _PSALM_5V9_WS_FRAGMENT = pathlib.Path(
 )
 
 
-def render_psalm_5v9_sources():
+def render_psalm_5v9_sources(**kwargs):
     """Render slide-psalm-5v9-sources.png."""
     composite_img_sources.render_psalm_5v9_sources(IMAGES_DIR)
 
 
-def render_psalm_15v1_qamats():
+def render_psalm_15v1_qamats(**kwargs):
     """Render slide-psalm-15v1-qamats.png with syntax-colored JSON."""
     json_snippet_browser.render_json_snippet_browser(
         IMAGES_DIR,
@@ -76,7 +76,7 @@ def render_psalm_15v1_qamats():
     )
 
 
-def render_psalm_5v9_mpplus_steps():
+def render_psalm_5v9_mpplus_steps(html_only: bool = False, **kwargs):
     """Render slide-psalm-5v9-mpplus-step-0.png through step-10.png and an interactive HTML.
 
     All eleven steps are built from a single HTML file
@@ -89,7 +89,7 @@ def render_psalm_5v9_mpplus_steps():
     _json = _PSALM_5V9_JSON.read_text(encoding="utf-8")
     _s9 = _json.index('{"tmpl_name": "כו')  # start of כו"ק object
     _kuk_object = _json[_s9 : _json.index("}}", _s9) + 2]
-    _s10 = _json.index('"לְפָנַ֣י') + 1  # skip opening JSON double-quote
+    _s10 = _json.index('" לְפָנַ֣י') + 1  # skip opening JSON double-quote
     _last_str = _json[_s10 : _json.index('"', _s10)]
 
     steps = [
@@ -116,7 +116,7 @@ def render_psalm_5v9_mpplus_steps():
             "companion_hl_ids": ["rs1", "ind1"],
         },
         {
-            "highlight_text": '"לְמַ֥עַן", " "',
+            "highlight_text": '"לְמַ֥עַן "',
             "companion_hl_ids": ["lmaan"],
         },
         {
@@ -138,7 +138,7 @@ def render_psalm_5v9_mpplus_steps():
             "companion_hl_ids": ["hoshar", "kuk-space", "hayashar"],
         },
         {
-            "highlight_text": '" ", "' + _last_str + '"',
+            "highlight_text": '"' + _last_str + '"',
             "companion_hl_ids": ["text3"],
         },
     ]
@@ -153,6 +153,7 @@ def render_psalm_5v9_mpplus_steps():
         companion_html_path=_PSALM_5V9_WS_FRAGMENT,
         font_size_px=34,
         pointed_scale=1.5,
+        html_only=html_only,
     )
 
 

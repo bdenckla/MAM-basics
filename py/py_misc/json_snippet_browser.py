@@ -603,6 +603,7 @@ def render_json_snippet_browser_steps(
     font_size_px: int = _FONT_SIZE_PX,
     pointed_scale: float = 2.0,
     companion_html_path: pathlib.Path = None,
+    html_only: bool = False,
 ) -> None:
     """Build one multi-step interactive HTML and screenshot each step as a PNG.
 
@@ -610,6 +611,10 @@ def render_json_snippet_browser_steps(
     ``slide-{slide_base_name}-interactive.html``.  Open it in a browser with
     ``?step=N`` to view any step.  Playwright then navigates to each
     ``?step=N`` URL and saves ``slide-{slide_base_name}-step-{N}.png``.
+
+    Pass ``html_only=True`` to skip the Playwright screenshot pass and only
+    (re)generate the interactive HTML file.  Useful for rapid iteration on
+    layout and RTL rendering without waiting for PNG generation.
     """
     from playwright.sync_api import sync_playwright
 
@@ -631,6 +636,9 @@ def render_json_snippet_browser_steps(
     html_path = json_path.parent.resolve() / f"slide-{slide_base_name}-interactive.html"
     html_path.write_text(html, encoding="utf-8")
     print(f"Saved {html_path}")
+
+    if html_only:
+        return
 
     images_dir.mkdir(parents=True, exist_ok=True)
     html_uri = html_path.as_uri()
