@@ -125,7 +125,8 @@ def render_psalm_5v9_mpplus_step_1():
         font_size_px=34,
         pointed_scale=1.5,
         companion_first=True,
-        highlight_text="יְהֹוָ֤ה",
+        highlight_text='"יְהֹוָ֤ה"',
+        companion_highlight_html="יְהֹוָ֤ה",
     )
 
 
@@ -181,7 +182,7 @@ def render_psalm_5v9_mpplus_step_4():
         font_size_px=34,
         pointed_scale=1.5,
         companion_first=True,
-        highlight_text="נְחֵ֬נִי בְצִדְקָתֶ֗ךָ",
+        highlight_text='"נְחֵ֬נִי בְצִדְקָתֶ֗ךָ"',
         companion_highlight_html="נְחֵ֬נִי בְצִדְקָתֶ֗ךָ",
     )
 
@@ -219,7 +220,7 @@ def render_psalm_5v9_mpplus_step_6():
         font_size_px=34,
         pointed_scale=1.5,
         companion_first=True,
-        highlight_text="לְמַ֥עַן ",
+        highlight_text='"לְמַ֥עַן "',
         companion_highlight_html="לְמַ֥עַן ",
     )
 
@@ -308,7 +309,7 @@ def render_psalm_5v9_mpplus_step_10():
         font_size_px=34,
         pointed_scale=1.5,
         companion_first=True,
-        highlight_text=_last_str,
+        highlight_text='"' + _last_str + '"',
         companion_highlight_html=_last_str,
     )
 
