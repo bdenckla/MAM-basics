@@ -601,6 +601,7 @@ def _build_multistep_html(
     flex-direction: column;
     overflow: hidden;
     padding: 60px;
+    justify-content: flex-end;
   }}
   #right-col {{
     flex: 2;
@@ -618,10 +619,7 @@ def _build_multistep_html(
     display: none;
   }}
   #companion-wrapper {{
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    flex: 0;
   }}
   .companion-html {{
     font-family: 'Taamey', serif;
@@ -881,3 +879,4 @@ def render_json_snippet_browser(
 
     slide_render.write_provenance(dest, deck_name, slide_name)
     print(f"Saved {dest} ({slide_render.W}, {slide_render.H})")
+

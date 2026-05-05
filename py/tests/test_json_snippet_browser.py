@@ -26,6 +26,25 @@ class TestJsonSnippetBrowser(unittest.TestCase):
         self.assertIn('body[data-step="0"] #main .hl-0', html)
         self.assertIn('body[data-step="0"] #zoom .zm-0', html)
 
+    def test_multistep_zoom_sits_directly_above_companion_view(self):
+        html = json_snippet_browser._build_multistep_html(
+            json_text='{"a": "יְ", "b": "ABC"}',
+            steps=[{"highlight_text": '"יְ"'}],
+            top_rgb=(13, 94, 87),
+            bot_rgb=(8, 61, 56),
+            font_size_px=34,
+            pointed_scale=1.5,
+            companion_html="",
+        )
+
+        self.assertIn("#left-col {", html)
+        self.assertIn("#zoom {", html)
+        self.assertIn("justify-content: flex-end;", html)
+        self.assertIn("flex-shrink: 0;", html)
+        self.assertIn("#companion-wrapper {", html)
+        self.assertIn("flex: 0;", html)
+        self.assertIn('body[data-step="0"] #zoom { display: block; }', html)
+
     def test_single_span_zoom_modulates_pointed_and_plain_text(self):
         pointed_zoom = json_snippet_browser._one_span(
             value="יְ",
