@@ -2,33 +2,11 @@
 """Copy Python support files from this repo to the MAM-simple sibling repo."""
 
 import os
-import re
 import shutil
 
 _MODULE_DIR = os.path.dirname(os.path.abspath(__file__))
 _PY_DIR = os.path.dirname(_MODULE_DIR)
 _REPO_DIR = os.path.dirname(_PY_DIR)
-
-
-_README_MARKER = "main_letter_small_job.py"
-_README_BEGIN = f"<!-- BEGIN_GENERATED: {_README_MARKER} -->"
-_README_END = f"<!-- END_GENERATED: {_README_MARKER} -->"
-
-
-def _update_readme_example(mam_simple_dir):
-    """Inject main_letter_small_job.py source into the MAM-simple README."""
-    src_path = os.path.join(_PY_DIR, "main_letter_small_job.py")
-    readme_path = os.path.join(mam_simple_dir, "README.md")
-    with open(src_path, encoding="utf-8") as fh:
-        src = fh.read()
-    with open(readme_path, encoding="utf-8") as fh:
-        readme = fh.read()
-    new_section = f"{_README_BEGIN}\n```python\n{src}```\n{_README_END}"
-    pattern = rf"{re.escape(_README_BEGIN)}.*?{re.escape(_README_END)}"
-    new_readme = re.sub(pattern, new_section, readme, flags=re.DOTALL)
-    with open(readme_path, "w", encoding="utf-8") as fh:
-        fh.write(new_readme)
-    print(f"Updated {readme_path} example section.")
 
 
 def copy_support_files():
@@ -46,8 +24,6 @@ def copy_support_files():
         src = os.path.join(_PY_DIR, pyfile_relpath)
         dst = f"{mam_simple_pyex}/{pyfile_relpath}"
         shutil.copy(src, dst)
-    mam_simple_dir = os.path.dirname(mam_simple_pyex)
-    _update_readme_example(mam_simple_dir)
 
 
 MAM_SIMPLE_PYEX = "../MAM-simple/py-examples"
