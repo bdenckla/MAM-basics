@@ -3,7 +3,6 @@
 import argparse
 import sys
 
-from mb_sefaria import mam4sef_letter_small_report
 from mb_sefaria import mam4sef_runners
 
 
@@ -20,16 +19,6 @@ def run_ajf():
 def run_both_sef_and_ajf():
     """Create both Sefaria and AJF MAM variants from the XML MAM."""
     mam4sef_runners.run_both_sef_and_ajf()
-
-
-def run_both_sef_and_misc():
-    """Create both main exports plus misc outputs.
-
-    "misc" currently means generating out/letter-small.txt by scanning
-    MAM-simple xml-vtrad-mam data for <letter-small> occurrences.
-    """
-    run_both_sef_and_ajf()
-    mam4sef_letter_small_report.write_letter_small_report()
 
 
 def almost_main():
