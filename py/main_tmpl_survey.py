@@ -5,20 +5,15 @@ import os
 from tmpl_survey import survey_dot
 from tmpl_survey import survey_plain
 from tmpl_survey import survey_plus
-from tmpl_survey import survey_xlsx
 from mb_cmn import file_io
 
 _OUT_DIR = "out/MAM-tmpl-survey"
-_XLSX_DIR = f"{_OUT_DIR}/.novc"
 _SVG_DIR = "../MAM-parsed/gh-pages"
 
 
 def _write_outputs(result, raw_stack_counts, stem, deeply_discard=False, svg_stem=None):
     os.makedirs(os.path.dirname(stem), exist_ok=True)
     file_io.json_dump_to_file_path(result, f"{stem}.json")
-    xlsx_stem = f"{_XLSX_DIR}/{os.path.basename(stem)}"
-    os.makedirs(_XLSX_DIR, exist_ok=True)
-    survey_xlsx.write_xlsx(result, f"{xlsx_stem}.xlsx")
     dot_path = f"{stem}-call-graph.dot"
     if svg_stem is None:
         svg_stem = stem
