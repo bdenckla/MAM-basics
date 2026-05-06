@@ -8,6 +8,7 @@ Subcommands:
 Examples:
     .venv/Scripts/python.exe py/main_parse.py go
     .venv/Scripts/python.exe py/main_parse.py ws
+    .venv/Scripts/python.exe py/main_parse.py ws --write-fmt-1
     .venv/Scripts/python.exe py/main_parse.py ws --book39 Joshua
 """
 
@@ -39,11 +40,16 @@ def _add_subcommands(subparsers) -> None:
 
     ws_parser = subparsers.add_parser(
         "ws",
-        help="Parse downloaded Wikisource data into per-book parsed outputs.",
+        help="Parse downloaded Wikisource data into per-book parsed outputs (fmt-2 by default).",
     )
     mutex = ws_parser.add_mutually_exclusive_group()
     mutex.add_argument("--book39")
     mutex.add_argument("--section6")
+    ws_parser.add_argument(
+        "--write-fmt-1",
+        action="store_true",
+        help="Also write fmt-1 debugging output to .novc/mam-ws-parsed-fmt-1.",
+    )
     ws_parser.set_defaults(func=_run_ws)
 
 
@@ -60,7 +66,7 @@ def _run_go(_args: argparse.Namespace) -> None:
 
 
 def _run_ws(args: argparse.Namespace) -> None:
-    parse_ws.almost_main(_bkids_from_args(args))
+    parse_ws.almost_main(_bkids_from_args(args), write_fmt_1=args.write_fmt_1)
 
 
 if __name__ == "__main__":
