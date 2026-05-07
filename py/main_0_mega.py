@@ -24,6 +24,7 @@ import main_mam_simple
 import main_mam4sef
 import main_mam_osis
 import main_letter_small_job
+import main_tmpl_survey_toy
 from subcommands import diff_mpp
 from subcommands import diff_wsgo
 from subcommands import parse_go
@@ -43,6 +44,10 @@ def _run_letter_small_job():
         main_letter_small_job.find_letter_small_in_job(
             "../MAM-simple/out/xml-vtrad-mam/Job.xml", fp
         )
+
+
+def _run_tmpl_survey_toy():
+    main_tmpl_survey_toy.almost_main("../MAM-parsed/plain/BA-Samuel.json")
 
 
 _STEPS = [
@@ -70,6 +75,11 @@ _STEPS = [
         "tmpl-survey",
         main_tmpl_survey.almost_main,
         "must come after mam_parsed",
+    ),
+    StepRecord(
+        "tmpl-survey-toy",
+        _run_tmpl_survey_toy,
+        "must come after parse-go",
     ),
     StepRecord(
         "mam-simple",

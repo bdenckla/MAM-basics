@@ -94,9 +94,9 @@ def _reformat_survey(survey):
     return sorted(records, key=_keyfn)
 
 
-def main():
+def almost_main(plain_path):
     """Survey the templates used in Samuel."""
-    with open("plain/BA-Samuel.json", encoding="utf-8") as fpi:
+    with open(plain_path, encoding="utf-8") as fpi:
         book24 = json.load(fpi)
     survey = _do_survey(book24["book39s"])
     records = _reformat_survey(survey)
@@ -106,4 +106,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    almost_main("plain/BA-Samuel.json")
