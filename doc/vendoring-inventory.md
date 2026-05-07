@@ -10,7 +10,7 @@ Related issue: bdenckla/MAM-basics#60
 | file(s) | src_pkg | dest_repo | dest_path | mechanism | last_synced | provenance_doc | category | notes |
 |---|---|---|---|---|---|---|---|---|
 | bib_locales.py, cantsys.py, file_io.py, hebrew_accents.py, hebrew_letters.py, hebrew_points.py, hebrew_punctuation.py, my_utils.py, provenance.py, shrink.py, str_defs.py, uni_heb.py | mb_cmn | MAM-simple | py-examples/mb_cmn | copy_script | 2026-05-01 | no | generated | identical |
-| mb_html.py, mb_html_get_lines.py, my_utils_for_mainish.py, osis_book_abbrevs.py, two_col_css_styles.py, verse_and_friends.py, write_utils.py, ws_urls.py | mb_misc | MAM-simple | py-examples/mb_misc | copy_script | 2026-05-01 | no | generated | identical |
+| styles_authored.py, styles_mam_with_doc.py, styles_mam_parsed.py, mb_html.py, mb_html_get_lines.py, my_utils_for_mainish.py, osis_book_abbrevs.py, verse_and_friends.py, write_utils.py, ws_urls.py | mb_misc | MAM-simple | py-examples/mb_misc | copy_script | 2026-05-07 | no | generated | identical |
 | mam4ajf_handlers.py, mam4sef_handlers.py, mam4sef_or_ajf.py, mam4sef_runners.py, sef_cmn.py, sef_header.py, write_utils_sef_or_ajf.py | mb_sefaria | MAM-simple | py-examples/mb_sefaria | copy_script | mixed | no | generated | identical |
 | osis_handlers.py, osis_index_html.py, osis_namespace.py | osis | MAM-simple | py-examples/osis | copy_script | 2026-05-01 | no | generated | identical |
 | cantsys.py, hebrew_accents.py, hebrew_letters.py, hebrew_points.py, hebrew_punctuation.py | mb_cmn | UXLC-utils | py/mb_cmn | unknown | 2026-04-27 | no | stale | identical |

@@ -11,7 +11,7 @@ from mb_cmn import bib_locales as tbn
 from mb_cmn import read_books_from_mam_parsed_plus as plus
 from mwd import mwd_write_index_dot_html as mwdwidh
 from mwd import mwd_write_book as mwdwb
-from mb_misc import two_col_css_styles as tcstyles
+from mb_misc import styles_mam_with_doc
 
 
 def _out_path(filename):
@@ -48,7 +48,7 @@ def almost_main(bkids=None):
     books_mpu = plus.read_parsed_plus_bk39s(bkids)
     edition = "MAM with doc"
     css_href = "two_col_style.css"
-    tcstyles.make_css_file_for_mwd(_out_path(css_href))
+    styles_mam_with_doc.make_css_file_for_mwd(_out_path(css_href))
     if bkids == tbn.ALL_BK39_IDS:
         mwdwidh.write_index_dot_html(edition, (css_href,), _out_path("index.html"))
     survey_for_all_bks = rts.make()

@@ -46,40 +46,7 @@ th, td { padding-right: 0.4em; padding-left: 0.4em; }
 img { max-width: 100%; }
 """
 
-_MAMP_EXTRA_CSS = """
-code {
-    font-family: Consolas, "Courier New", monospace;
-    font-size: 0.85em;
-    background: light-dark(#f0f0f0, #2a2a2a);
-    padding: 0.1em 0.3em;
-    border-radius: 3px;
-}
-pre.json-block {
-    font-family: Consolas, "Courier New", monospace;
-    font-size: 0.85em;
-    background: light-dark(#f8f8f8, #1e1e1e);
-    border: 1px solid light-dark(#ddd, #444);
-    border-radius: 4px;
-    padding: 1em;
-    line-height: 1.5;
-    overflow-x: auto;
-    direction: ltr;
-    unicode-bidi: normal;
-    white-space: pre;
-}
-.tok-key     { color: light-dark(#0033b3, #9cdcfe); }
-.tok-string  { color: light-dark(#067d17, #ce9178); }
-.tok-number  { color: light-dark(#1750eb, #b5cea8); }
-.tok-keyword { color: light-dark(#7b0070, #569cd6); }
-.tok-punct   { color: light-dark(#333333, #d4d4d4); }
-.json-block .heb {
-    unicode-bidi: isolate;
-    direction: rtl;
-}
-.json-block .pointed {
-    font-size: 1.2em;
-    line-height: 1.8;
-}
-"""
 
-MAM_PARSED_STYLES_STR = AUTHORED_STYLES_STR + _MAMP_EXTRA_CSS
+def make_css_file_for_authored(out_path):
+    with open(out_path, "w", encoding="utf-8") as out_fp:
+        out_fp.write(AUTHORED_STYLES_STR.lstrip())

@@ -5,10 +5,10 @@ that are written by the repo owner and rendered from Python source data.
 
 import argparse
 import pathlib
-import shutil
 
 from mb_misc import mb_html
-from mb_misc import two_col_css_styles as tcstyles
+from mb_misc import styles_authored
+from mb_misc import styles_mam_parsed
 from mb_cmn import provenance
 from author import notes_on_aliyot
 from author import tsinnorit_and_oleh_on_ivs
@@ -48,7 +48,7 @@ def almost_main():
     top_dir_old = f"{pages_dir}/tsinnorit_oleh"
     #
     css_href = "style.css"
-    tcstyles.make_css_file_for_authored(f"{top_dir_misc}/{css_href}")
+    styles_authored.make_css_file_for_authored(f"{top_dir_misc}/{css_href}")
     #
     tdm_ch = top_dir_misc, css_href
     tdm_ch_aliyot = top_dir_misc, "aliyot-styles.css"
@@ -78,13 +78,8 @@ def cmd_gen_misc(_args):
 
 def cmd_gen_mam_parsed_docs(_args):
     out_dir = pathlib.Path("../MAM-parsed/gh-pages")
-    # Copy font
-    src_font = pathlib.Path("doc/woff2/Taamey_D.woff2")
-    dst_font_dir = out_dir / "woff2"
-    dst_font_dir.mkdir(parents=True, exist_ok=True)
-    shutil.copy2(src_font, dst_font_dir)
     # Write CSS
-    tcstyles.make_css_file_for_mam_parsed(str(out_dir / "style.css"))
+    styles_mam_parsed.make_css_file_for_mam_parsed(str(out_dir / "style.css"))
     # Write HTML docs
     tdm_ch = str(out_dir), "style.css"
     reading_mam_parsed_plain.gen_html_file(tdm_ch)

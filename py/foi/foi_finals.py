@@ -6,7 +6,7 @@ from mb_cmn import provenance
 
 from py_misc import mwd_utils as mwdu
 from mb_misc import mb_html
-from mb_misc import two_col_css_styles as tcstyles
+from mb_misc import styles_mam_with_doc
 
 from foi import pasoleg_1_labels
 from foi import foi_struct as fct
@@ -36,7 +36,7 @@ def write(args_foi, all_fois):
     It turns the all_fois structure into the final output files.
     """
     auto_outspecs = _auto_outspecs(all_fois)
-    tcstyles.make_css_file_for_mwd(f"{_OUT_DIR_PATH}/{_CSS_HREF}")
+    styles_mam_with_doc.make_css_file_for_mwd(f"{_OUT_DIR_PATH}/{_CSS_HREF}")
     provenance.write_directory_provenance(
         _OUT_DIR_PATH,
         __file__,
