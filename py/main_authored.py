@@ -3,6 +3,10 @@ Generate miscellaneous authored HTML documents (notes, reviews, analyses)
 that are written by the repo owner and rendered from Python source data.
 """
 
+import argparse
+import pathlib
+import shutil
+
 from mb_misc import mb_html
 from mb_misc import two_col_css_styles as tcstyles
 from mb_cmn import provenance
@@ -19,6 +23,8 @@ from author import rocc_4_mid_word_ga3ya_with_shewa
 from author import he_ws_intro_to_mam_gray_maqaf_1 as gray_maqaf
 from author import he_ws_intro_to_mam_pasleg as pasleg
 from author import the_next_700_bibles
+from author import reading_mam_parsed_plain
+from author import reading_mam_parsed_plus
 
 
 def _gen_index_html(top_dir_misc, index_entries):
@@ -66,8 +72,40 @@ def almost_main():
     _gen_index_html(top_dir_misc, index_entries)
 
 
-def main():
+def cmd_gen_misc(_args):
     almost_main()
+
+
+def cmd_gen_mam_parsed_docs(_args):
+    out_dir = pathlib.Path("../MAM-parsed/gh-pages")
+    # Copy font
+    src_font = pathlib.Path("doc/woff2/Taamey_D.woff2")
+    dst_font_dir = out_dir / "woff2"
+    dst_font_dir.mkdir(parents=True, exist_ok=True)
+    shutil.copy2(src_font, dst_font_dir)
+    # Write CSS
+    tcstyles.make_css_file_for_mam_parsed(str(out_dir / "style.css"))
+    # Write HTML docs
+    tdm_ch = str(out_dir), "style.css"
+    reading_mam_parsed_plain.gen_html_file(tdm_ch)
+    reading_mam_parsed_plus.gen_html_file(tdm_ch)
+    print(f"Generated MAM-parsed docs in {out_dir}")
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    sub = parser.add_subparsers(dest="subcommand")
+    sub.add_parser("gen-misc", help="Generate miscellaneous authored HTML documents")
+    sub.add_parser(
+        "gen-mam-parsed-docs",
+        help="Generate reading-MAM-parsed-plain/plus HTML docs in MAM-parsed/gh-pages/",
+    )
+    args = parser.parse_args()
+    if args.subcommand == "gen-mam-parsed-docs":
+        cmd_gen_mam_parsed_docs(args)
+    else:
+        # Default (no subcommand or gen-misc) runs existing behavior
+        cmd_gen_misc(args)
 
 
 if __name__ == "__main__":
