@@ -12,6 +12,7 @@ from mb_cmn import file_io
 from mb_cmn import mam_bknas_and_std_bknas as mbkn_a_sbkn
 from mb_misc import my_utils_for_mainish as my_utils_fm
 from py_misc import mam_csv_in
+from py_misc import mam_parsed_copy_py_files
 from py_misc import mam_parsed_plus
 
 
@@ -81,4 +82,5 @@ def almost_main():
         out_paths_for_section = do_one_section(secid, outfolder)
         for out_paths_for_bk24 in out_paths_for_section:
             all_plus_paths.append(out_paths_for_bk24["plus"])
+    mam_parsed_copy_py_files.copy_support_files()
     return all_plus_paths
