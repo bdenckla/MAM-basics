@@ -46,7 +46,7 @@ th, td { padding-right: 0.4em; padding-left: 0.4em; }
 img { max-width: 100%; }
 """
 
-MAMP_EXTRA_CSS = """
+_MAMP_EXTRA_CSS = """
 code {
     font-family: Consolas, "Courier New", monospace;
     font-size: 0.85em;
@@ -81,3 +81,5 @@ pre.json-block {
     line-height: 1.8;
 }
 """
+
+MAM_PARSED_STYLES_STR = AUTHORED_STYLES_STR + _MAMP_EXTRA_CSS
