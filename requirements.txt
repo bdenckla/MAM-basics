@@ -1,6 +1,7 @@
 black
 playwright
 Pillow
+pyluach
 python-bidi
 python-pptx
 pywikibot
