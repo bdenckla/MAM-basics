@@ -38,6 +38,13 @@ class StepRecord:
     note: str | None
 
 
+def _run_letter_small_job():
+    with open("out/letter-small.txt", "w", encoding="utf-8") as fp:
+        main_letter_small_job.find_letter_small_in_job(
+            "../MAM-simple/out/xml-vtrad-mam/Job.xml", fp
+        )
+
+
 _STEPS = [
     StepRecord(
         "parse-go",
@@ -82,7 +89,7 @@ _STEPS = [
     ),
     StepRecord(
         "letter-small-job",
-        lambda: main_letter_small_job.run("out/letter-small.txt"),
+        _run_letter_small_job,
         "must come after mam_simple",
     ),
     StepRecord("decnreub", main_decnreub.almost_main, None),
