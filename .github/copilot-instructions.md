@@ -161,6 +161,10 @@ git commit -F .novc\commit_msg_<slug>.txt
 
 Use a unique slug per commit (e.g. `commit_msg_add_2eq_check.txt`) — a stale generic filename silently produces the wrong message.
 
+## Git Commit Messages — One Per Repo
+
+When a task touches multiple repositories, compose a **separate commit message for each repo**. Never propose a single combined message that spans repos. Each message should describe only the changes made in that repo, using that repo's perspective.
+
 ## Don't Close Issues Prematurely
 
 Never close a GitHub issue until work is both committed **and** pushed. Closing before pushing leaves the issue marked resolved while the fix is only local.

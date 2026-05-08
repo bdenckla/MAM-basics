@@ -18,7 +18,7 @@ def almost_main(bkids=None):
     """Create MAM-OSIS from MAM-XML."""
     if bkids is None:
         bkids = tbn.ALL_BK39_IDS
-    osis_runner.almost_main(bkids, _PATHS)
+    osis_runner.almost_main(_PATHS, bkids)
 
 
 def main():

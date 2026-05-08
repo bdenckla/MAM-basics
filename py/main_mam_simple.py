@@ -5,6 +5,7 @@ Usage (run from repo root):
     .venv/Scripts/python.exe py/main_mam_simple.py --book39 Ruth
     .venv/Scripts/python.exe py/main_mam_simple.py core-only --book39 Ruth
     .venv/Scripts/python.exe py/main_mam_simple.py doc-only
+    .venv/Scripts/python.exe py/main_mam_simple.py copy-support-files
 """
 
 import argparse
@@ -154,6 +155,11 @@ def _build_parser():
         aliases=["doc"],
         help="Regenerate only the versification differences doc.",
     )
+    subparsers.add_parser(
+        "copy-support-files",
+        aliases=["copy"],
+        help="Copy support files to the MAM-simple repo.",
+    )
     return parser
 
 
@@ -167,7 +173,15 @@ def _add_core_args(parser):
 def _parse_args(argv=None):
     if argv is None:
         argv = sys.argv[1:]
-    if not argv or argv[0] not in {"all", "core-only", "core", "doc-only", "doc"}:
+    if not argv or argv[0] not in {
+        "all",
+        "core-only",
+        "core",
+        "doc-only",
+        "doc",
+        "copy-support-files",
+        "copy",
+    }:
         argv = ["all", *argv]
     return _build_parser().parse_args(argv)
 
@@ -184,6 +198,9 @@ def main():
     args = _parse_args()
     if args.command in {"doc-only", "doc"}:
         _write_versification_doc()
+        return
+    if args.command in {"copy-support-files", "copy"}:
+        mam_simple_copy_py_files.copy_support_files()
         return
     bkids = _bkids_from_args(args)
     almost_main(bkids)
