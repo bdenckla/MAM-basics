@@ -8,7 +8,7 @@ from author import reading_mam_parsed_cmn as cmn
 
 _PLUS_DOC = "reading_mam_parsed_plus.html"
 _CALL_GRAPHS = "https://bdenckla.github.io/MAM-parsed/plus-template-call-graphs.html"
-_SHEETS_TMPL = "https://purl.org/mam/google-sheet#gid=1670945398"
+
 
 # ---------------------------------------------------------------------------
 # JSON snippets
@@ -201,7 +201,7 @@ def s_intro():
         author.para(
             [
                 "For authoritative English and Hebrew descriptions of every template, see the ",
-                mb_html.anchor_h("Templates tab", _SHEETS_TMPL),
+                mb_html.anchor_h("Templates tab", cmn.SHEETS_TMPL),
                 " of the $MAM Google Sheet.",
             ]
         ),
@@ -544,10 +544,8 @@ def s_plus_only_templates():
 
 
 def s_common_templates():
-    sheets_link = mb_html.anchor_h("Templates tab", _SHEETS_TMPL)
-    sheets_data_link = mb_html.anchor_h(
-        "MAM Google Sheet", "https://purl.org/mam/google-sheet#gid=920165745"
-    )
+    sheets_link = mb_html.anchor_h("Templates tab", cmn.SHEETS_TMPL)
+    sheets_data_link = mb_html.anchor_h("MAM Google Sheet", cmn.SHEETS_DATA)
     return [
         author.heading_level_2("Common templates in the EP (verse text) column"),
         author.para(

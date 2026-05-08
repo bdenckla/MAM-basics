@@ -234,6 +234,13 @@ KQ_SPECIAL_ROWS = [
 ]
 
 # ---------------------------------------------------------------------------
+# Google Sheet URLs (shared by plain and plus docs)
+# ---------------------------------------------------------------------------
+
+SHEETS_TMPL = "https://purl.org/mam/google-sheet#gid=1670945398"
+SHEETS_DATA = "https://purl.org/mam/google-sheet#gid=920165745"
+
+# ---------------------------------------------------------------------------
 # Top-level, composite-book, and book39 JSON snippets
 # (shared by plain and plus docs)
 # ---------------------------------------------------------------------------

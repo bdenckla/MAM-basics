@@ -17,9 +17,6 @@ from author import reading_mam_parsed_cmn as cmn
 _FNAME = "reading_mam_parsed_plain.html"
 _TITLE = "Reading MAM-parsed plain JSON"
 
-_SHEETS_TMPL = "https://purl.org/mam/google-sheet#gid=1670945398"
-_SHEETS_DATA = "https://purl.org/mam/google-sheet#gid=920165745"
-
 _JSON_INDEX_0 = """\
 [{"stmpl": "מ:פסוק|איוב|א|ב"}]"""
 
@@ -287,8 +284,8 @@ def _s_template_objects():
 
 
 def _s_common_templates():
-    sheets_link = mb_html.anchor_h("Templates tab", _SHEETS_TMPL)
-    sheets_data_link = mb_html.anchor_h("MAM Google Sheet", _SHEETS_DATA)
+    sheets_link = mb_html.anchor_h("Templates tab", cmn.SHEETS_TMPL)
+    sheets_data_link = mb_html.anchor_h("MAM Google Sheet", cmn.SHEETS_DATA)
     return [
         author.heading_level_2("Common templates in the EP (verse text) column"),
         author.para(
