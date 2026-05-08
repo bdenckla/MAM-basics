@@ -64,4 +64,5 @@ def _build_pre_html(json_text: str) -> str:
         for ttype, value in lex(json_text, JsonLexer())
     ]
     code_html = "".join(spans)
+    code_html = code_html.replace("...", '<span class="ellipsis">...</span>')
     return f'<pre class="json-block">{code_html}</pre>'

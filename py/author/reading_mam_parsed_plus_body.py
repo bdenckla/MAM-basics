@@ -49,7 +49,13 @@ _JSON_GOOD_ENDING = """\
   "wikitext_element": {
     "tmpl_name": "נוסח",
     "tmpl_params": {
-      "1": {"tmpl_name": "מ:סיום בטוב", "tmpl_params": {"1": "..."}}
+      "1": {
+        "tmpl_name": "מ:סיום בטוב",
+        "tmpl_params": {
+          "1": "והיה מדי ... אמר יהוה"
+        }
+      },
+      "2": "=מנהג יפה ... בכתי\\"ל)."
     }
   }
 }"""
@@ -235,7 +241,7 @@ def s_top_level():
         [
             mb_html.code("book24_names"),
             "array",
-            "24-book names for all books in the file.",
+            "A list that always has a single element: the name of this file’s book24.",
         ],
         [
             mb_html.code("sub_book_names"),
@@ -290,32 +296,31 @@ def s_book39():
         [
             mb_html.code("book24_name"),
             "string",
-            "The 24-book name of this sub-book.",
+            [
+                "For a non-composite book (book24=book39), this is the name of the book.",
+                " For a sub-book, this is the name of the book24 to which this sub-book belongs.",
+            ],
         ],
         [
             mb_html.code("sub_book_name"),
             "string | null",
             [
-                "The sub-book name within a composite book (e.g. ",
-                author.hbo('שמ"א'),
-                " within Samuel), or ",
-                mb_html.code("null"),
-                " for non-composite books.",
+                "For a non-composite book (book24=book39), this is null.",
+                " For a sub-book, this is the name of the sub-book.",
             ],
         ],
         [
             mb_html.code("chapters"),
             "object",
-            "Dict keyed by Hebrew-numeral chapter names; values are chapter objects.",
+            "Object keyed by Hebrew-numeral chapter numbers; values are chapter objects.",
         ],
         [
             mb_html.code("good_ending_plus"),
             "object | null",
             [
                 mb_html.code("null"),
-                " for most books; an object for the 4 books/book-parts"
-                " that repeat a penultimate verse for liturgical good-ending purposes"
-                " (Isaiah, Malachi, Lamentations, Ecclesiastes).",
+                " for most books; an object for the 4 book39s"
+                " that are sometimes presented with their next-to-last verse repeated.",
             ],
         ],
     ]
@@ -338,7 +343,7 @@ def s_book39():
                 " for most books (including Job)."
                 " For the 4 books/book-parts that have it"
                 " (Isaiah, Malachi, Lamentations, Ecclesiastes),"
-                " it is an object:",
+                " it is an object, e.g.:",
             ]
         ),
         json_block.json_block_raw_html(_JSON_GOOD_ENDING),
@@ -358,11 +363,7 @@ def s_chapter_verse():
         author.heading_level_2("Chapter structure"),
         author.para(
             [
-                "A dict keyed by Hebrew-letter chapter names, but" " without the ",
-                mb_html.code('"0"'),
-                " (pre-chapter) and ",
-                author.hbo('"תתת"'),
-                " (post-chapter) pseudo-verses."
+                "An object keyed by Hebrew-letter chapter numbers."
                 " A chapter with 22 verses has exactly 22 keys (",
                 author.hbo("א"),
                 " through ",
@@ -434,7 +435,7 @@ def s_chapter_verse():
             [
                 "The ",
                 mb_html.code("tmpl_params"),
-                " dict is absent only when the template has no parameters" " (e.g. ",
+                " object is absent only when the template has no parameters" " (e.g. ",
                 author.hbo("פפ"),
                 ", ",
                 author.hbo("סס"),
