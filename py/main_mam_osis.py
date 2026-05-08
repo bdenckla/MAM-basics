@@ -63,7 +63,7 @@ def _write_callback(xml_elementtree2, out_fp):
 
 def _do_one_book_group(bkg):
     bkg_name = bkg["bkg-name"]
-    xml_path = f"../MAM-simple/out/xml-vtrad-bhs/{bkg_name}.xml"
+    xml_path = f"../MAM-simple/xml-vtrad-bhs/{bkg_name}.xml"
     tree = ET.parse(xml_path)
     root = tree.getroot()
     proot, filename_stem = _process_bk24(root)
