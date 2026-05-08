@@ -44,13 +44,7 @@ class StepRecord:
 
 
 def _run_letter_small_job():
-    (_REPOS / "MAM-simple" / "py-examples-out").mkdir(parents=True, exist_ok=True)
-    with open(
-        "../MAM-simple/py-examples-out/letter-small-job.txt", "w", encoding="utf-8"
-    ) as fp:
-        main_letter_small_job.find_letter_small_in_job(
-            "../MAM-simple/xml-vtrad-mam/Job.xml", fp
-        )
+    main_letter_small_job.find_letter_small_in_job("../MAM-simple/xml-vtrad-mam/Job.xml")
 
 
 def _run_tmpl_survey_toy():
