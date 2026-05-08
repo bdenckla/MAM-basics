@@ -196,8 +196,8 @@ _DIFF_ROWS = [
 def s_intro():
     return [
         author.para(
-            "The $MAM-parsed plus format is a fully parsed JSON representation"
-            " of the biblical text. This document covers:"
+            "The $MAM-parsed-plus format is a parsed JSON representation"
+            " of the $MAM dataset. This document covers:"
         ),
         author.unordered_list(
             [
@@ -212,13 +212,6 @@ def s_intro():
                 "Summary comparison with plain format",
             ]
         ),
-        author.para(
-            [
-                "For authoritative English and Hebrew descriptions of every template, see the ",
-                mb_html.anchor_h("Templates tab", cmn.SHEETS_TMPL),
-                " of the $MAM Google Sheet.",
-            ]
-        ),
     ]
 
 
@@ -230,24 +223,52 @@ def s_differences_from_plain():
 
 
 def s_top_level():
+    _header_rows = [
+        [
+            mb_html.code("book24_names"),
+            "array",
+            "24-book names for all books in the file.",
+        ],
+        [
+            mb_html.code("sub_book_names"),
+            "object",
+            [
+                "Maps each composite-book name to an ordered list of its sub-book names."
+                " Empty object for single-book files.",
+            ],
+        ],
+        [
+            mb_html.code("chapter_counts"),
+            "array",
+            [
+                "One object per sub-book, each with ",
+                mb_html.code("book24_name"),
+                ", ",
+                mb_html.code("sub_book_name"),
+                " (null for non-composite books), and ",
+                mb_html.code("chapter_count"),
+                ".",
+            ],
+        ],
+        [
+            mb_html.code("he_to_int"),
+            "object",
+            "Hebrew numeral \u2192 integer mapping for all chapter and verse keys in the file.",
+        ],
+    ]
     return [
         author.heading_level_2("Top-level structure"),
         json_block.json_block_raw_html(_JSON_TOP_LEVEL_SKEL),
         author.heading_level_2("Header"),
-        author.para(
-            [
-                "The plus header gains a ",
-                mb_html.code("he_to_int"),
-                " key \u2014 a mapping from every Hebrew-numeral string"
-                " that appears as a chapter or verse key in the file to its integer"
-                " equivalent. This allows consumers to navigate chapters and verses"
-                " by integer without needing to implement Hebrew-numeral decoding.",
-            ]
-        ),
+        author.std_table(_header_rows, arg_to_troh=["Key", "Type", "Description"]),
         json_block.json_block_raw_html(_JSON_HEADER),
         author.para(
             [
-                "The mapping is sorted by integer value and covers the union of all"
+                "The ",
+                mb_html.code("he_to_int"),
+                " mapping allows consumers to navigate chapters and verses"
+                " by integer without needing to implement Hebrew-numeral decoding."
+                " It is sorted by integer value and covers the union of all"
                 " chapter and verse keys across all ",
                 mb_html.code("book39s"),
                 " in the file.",
