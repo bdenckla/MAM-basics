@@ -24,6 +24,7 @@
           "files": [
             "bib_locales.py",
             "cantsys.py",
+            "he_wikisource_url.py",
             "hebrew_accents.py",
             "hebrew_letters.py",
             "hebrew_points.py",
@@ -61,6 +62,7 @@
             "bib_locales.py",
             "cantsys.py",
             "file_io.py",
+            "he_wikisource_url.py",
             "hebrew_accents.py",
             "hebrew_letters.py",
             "hebrew_points.py",
@@ -112,7 +114,9 @@
             "shrink.py",
             "str_defs.py",
             "uni_denorm.py",
-            "uni_heb.py"
+            "uni_heb.py",
+            "url_percent.py",
+            "uxlc_change_url.py"
           ]
         }
       ]
@@ -137,7 +141,8 @@
           "files": [
             "hebrew_points.py",
             "str_defs.py",
-            "uni_denorm.py"
+            "uni_denorm.py",
+            "url_percent.py"
           ]
         }
       ]
@@ -215,6 +220,7 @@
           "path": "py/mb_cmn",
           "files": [
             "bib_locales.py",
+            "he_wikisource_url.py",
             "hebrew_accents.py",
             "hebrew_letters.py",
             "hebrew_points.py",
@@ -222,7 +228,10 @@
             "mam_bknas.py",
             "mam_bknas_and_std_bknas.py",
             "polite_download.py",
-            "str_defs.py"
+            "str_defs.py",
+            "template_names.py",
+            "url_percent.py",
+            "uxlc_change_url.py"
           ]
         }
       ]
@@ -241,16 +250,22 @@
           "path": "py/mb_cmn",
           "files": [
             "cantsys.py",
+            "file_io.py",
+            "he_wikisource_url.py",
             "hebrew_accents.py",
             "hebrew_letters.py",
             "hebrew_points.py",
             "hebrew_punctuation.py",
+            "mb_cmn_bib_locales.py",
             "my_diffs.py",
             "my_utils.py",
             "polite_download.py",
+            "provenance.py",
             "str_defs.py",
             "uni_heb.py",
-            "uni_norm_fragile.py"
+            "uni_norm_fragile.py",
+            "url_percent.py",
+            "uxlc_change_url.py"
           ]
         }
       ]
@@ -279,7 +294,9 @@
             "my_utils.py",
             "str_defs.py",
             "uni_heb.py",
-            "uni_norm_fragile.py"
+            "uni_norm_fragile.py",
+            "url_percent.py",
+            "uxlc_change_url.py"
           ]
         }
       ]
