@@ -72,16 +72,23 @@ def _finish_one_book_group(bkg, bkg_rendered, variant):
     bksams = xml_sampe.distribute_sampe(bkg_rendered)
     vtrad_val = _get_vtrad(bkg_rendered)
     xml_root = xml_root_from_bksams.root(bksams, vtrad_val, variant)
-    xml_path = write_utils.bkg_path(variant, bkg["bkg-name"])
-    write_utils_xml.write_root_in_xml_fmt(xml_path, xml_root)
+    xml_path = write_utils.bkg_path(variant, bkg["bkg-name"], out_subdir="")
+    write_utils_xml.write_root_in_xml_fmt(xml_path, xml_root, generator_file=__file__)
     json_root = json_root_from_bksams.root(bksams, vtrad_val, variant)
-    json_path = write_utils.bkg_path(variant, bkg["bkg-name"], fmt_override="vff-json")
+    json_path = write_utils.bkg_path(
+        variant, bkg["bkg-name"], fmt_override="vff-json", out_subdir=""
+    )
     write_utils_json.write_root_in_json_fmt(
         json_path, json_root, generator_file=__file__
     )
     verses_for_write = {"rv-cant-all-three": bkg_rendered}
     write_utils.write_bkg_in_un_fmt(
-        variant, bkg["bkg-name"], verses_for_write, "rv-cant-all-three"
+        variant,
+        bkg["bkg-name"],
+        verses_for_write,
+        "rv-cant-all-three",
+        out_subdir="misc",
+        generator_file=__file__,
     )
 
 

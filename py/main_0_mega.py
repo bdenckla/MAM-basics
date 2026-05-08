@@ -44,9 +44,12 @@ class StepRecord:
 
 
 def _run_letter_small_job():
-    with open("out/letter-small.txt", "w", encoding="utf-8") as fp:
+    (_REPOS / "MAM-simple" / "py-examples-out").mkdir(parents=True, exist_ok=True)
+    with open(
+        "../MAM-simple/py-examples-out/letter-small-job.txt", "w", encoding="utf-8"
+    ) as fp:
         main_letter_small_job.find_letter_small_in_job(
-            "../MAM-simple/out/xml-vtrad-mam/Job.xml", fp
+            "../MAM-simple/xml-vtrad-mam/Job.xml", fp
         )
 
 
