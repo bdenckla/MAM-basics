@@ -12,14 +12,12 @@ _REPO_DIR = os.path.dirname(_PY_DIR)
 def copy_support_files():
     """Copy files to the MAM-simple repo."""
     mam_simple_pyex = os.path.join(_REPO_DIR, MAM_SIMPLE_PYEX)
-    if os.path.exists(mam_simple_pyex):
-        shutil.rmtree(mam_simple_pyex)
-    os.makedirs(mam_simple_pyex)
-    os.makedirs(f"{mam_simple_pyex}/mb_misc")
-    os.makedirs(f"{mam_simple_pyex}/mb_cmn")
-    os.makedirs(f"{mam_simple_pyex}/mb_sefaria")
-    os.makedirs(f"{mam_simple_pyex}/osis")
-    os.makedirs(f"{mam_simple_pyex}/ws")
+    os.makedirs(mam_simple_pyex, exist_ok=True)
+    os.makedirs(f"{mam_simple_pyex}/mb_misc", exist_ok=True)
+    os.makedirs(f"{mam_simple_pyex}/mb_cmn", exist_ok=True)
+    os.makedirs(f"{mam_simple_pyex}/mb_sefaria", exist_ok=True)
+    os.makedirs(f"{mam_simple_pyex}/osis", exist_ok=True)
+    os.makedirs(f"{mam_simple_pyex}/ws", exist_ok=True)
     for pyfile_relpath in PYFILE_RELPATHS:
         src = os.path.join(_PY_DIR, pyfile_relpath)
         dst = f"{mam_simple_pyex}/{pyfile_relpath}"
@@ -29,8 +27,6 @@ def copy_support_files():
 MAM_SIMPLE_PYEX = "../MAM-simple/py-examples"
 PYFILE_RELPATHS = (
     "./main_letter_small_job.py",
-    "./main_mam4sef.py",
-    "./main_mam_osis.py",
     #
     "mb_cmn/cantsys.py",
     "mb_cmn/hebrew_accents.py",
@@ -69,4 +65,5 @@ PYFILE_RELPATHS = (
     "osis/osis_namespace.py",
     "osis/osis_handlers.py",
     "osis/osis_index_html.py",
+    "osis/osis_runner.py",
 )

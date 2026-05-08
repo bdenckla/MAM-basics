@@ -67,7 +67,8 @@ def _read_book_group(variant, bkg_name):
         tbn.VT_SEF: "json-vtrad-sef",
     }
     json_vtrad_xxx = json_vtrad_xxx_dic[vtrad]
-    json_path = f"../MAM-simple/{json_vtrad_xxx}/{bkg_name}.json"
+    input_base = variant.get("variant-input-base", "../MAM-simple")
+    json_path = f"{input_base}/{json_vtrad_xxx}/{bkg_name}.json"
     with open(json_path, encoding="utf-8") as f:
         return json.load(f)
 
