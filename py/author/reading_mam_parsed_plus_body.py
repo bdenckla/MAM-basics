@@ -6,7 +6,6 @@ from author_util import author
 from author_util import json_block
 from author import reading_mam_parsed_cmn as cmn
 
-_PLAIN_DOC = "reading_mam_parsed_plain.html"
 _PLUS_DOC = "reading_mam_parsed_plus.html"
 _CALL_GRAPHS = "https://bdenckla.github.io/MAM-parsed/plus-template-call-graphs.html"
 _SHEETS_TMPL = "https://purl.org/mam/google-sheet#gid=1670945398"
@@ -166,7 +165,7 @@ _JSON_KAFUL = """\
 # ---------------------------------------------------------------------------
 
 
-def s_intro(plain_link):
+def s_intro():
     diff_rows = [
         [
             "Pseudo-verses " + "\u201c" + "0\u201d and \u201c\u05ea\u05ea\u05ea\u201d",
@@ -195,11 +194,9 @@ def s_intro(plain_link):
     ]
     return [
         author.para(
-            [
-                "The plus format shares the same overall structure as the ",
-                plain_link,
-                " but diverges in several ways.",
-            ]
+            "The plus format is a fully parsed representation"
+            " that diverges from the plain format in several ways,"
+            " summarized in the table below."
         ),
         author.para(
             [
@@ -216,7 +213,6 @@ def s_intro(plain_link):
 def s_top_level():
     return [
         author.heading_level_2("Top-level structure"),
-        author.para("Same as plain:"),
         json_block.json_block_raw_html(_JSON_TOP_LEVEL),
         author.heading_level_2("Header"),
         author.para(
@@ -283,8 +279,7 @@ def s_chapter_verse():
         author.heading_level_2("Chapter structure"),
         author.para(
             [
-                "Same as plain \u2014 a dict keyed by Hebrew-letter chapter names \u2014 but"
-                " without the ",
+                "A dict keyed by Hebrew-letter chapter names, but" " without the ",
                 mb_html.code('"0"'),
                 " (pre-chapter) and ",
                 author.hbo('"תתת"'),
@@ -299,7 +294,7 @@ def s_chapter_verse():
         author.heading_level_2("Verse structure"),
         author.para(
             [
-                "Same 3-element array [D, CP, EP], but with differences in each column.",
+                "A 3-element array [D, CP, EP], with column details described below.",
             ]
         ),
         author.heading_level_3("D column (index 0): Section markers"),

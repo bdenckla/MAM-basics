@@ -25,10 +25,9 @@ def gen_html_file(tdm_ch):
 
 
 def _build_body():
-    plain_link = mb_html.anchor_h("plain format", body._PLAIN_DOC)
     return [
         mb_html.heading_level_1(_TITLE),
-        *body.s_intro(plain_link),
+        *body.s_intro(),
         *body.s_top_level(),
         *body.s_book39(),
         *body.s_chapter_verse(),
