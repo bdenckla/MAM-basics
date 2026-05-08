@@ -96,7 +96,7 @@ def build_inventory(mam_parsed_path="../MAM-parsed"):
                         matched_note_count += 1
     return {
         "header": {
-            "description": "Inventory of sigil-like material found in נוסח notes across MAM-parsed plus.",
+            "description": "Inventory of sigil-like material found in נוסח notes across MAM-parsed-plus.",
             "counts": {
                 "notes_scanned": note_count,
                 "notes_with_matches": matched_note_count,

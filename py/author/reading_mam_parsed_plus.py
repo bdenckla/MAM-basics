@@ -16,7 +16,7 @@ from author import reading_mam_parsed_cmn as cmn
 from author import reading_mam_parsed_plus_body as body
 
 _FNAME = "reading_mam_parsed_plus.html"
-_TITLE = "Reading MAM-parsed plus"
+_TITLE = "Reading MAM-parsed-plus"
 
 
 def gen_html_file(tdm_ch):

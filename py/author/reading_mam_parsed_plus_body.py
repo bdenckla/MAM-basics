@@ -196,8 +196,8 @@ _DIFF_ROWS = [
 def s_intro():
     return [
         author.para(
-            "The $MAM-parsed-plus format is a parsed JSON representation"
-            " of the $MAM dataset. This document covers:"
+            "The $MAM-parsed-plus JSON files are a parsed representation"
+            " of the Wikitext of the $MAM dataset. This document covers:"
         ),
         author.unordered_list(
             [

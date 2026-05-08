@@ -3,7 +3,7 @@
 
 Subcommands:
     ctr-vs-mam   Compare CTR verse data against MAM verse data.
-    mpp          Compare MAM-parsed plus revisions and generate HTML reports.
+    mpp          Compare MAM-parsed-plus revisions and generate HTML reports.
     wsgo         Diff Wikisource against Google Sheets and emit auto-edits output.
 
 Examples:
@@ -40,7 +40,7 @@ def _add_subcommands(subparsers) -> None:
 
     mpp_parser = subparsers.add_parser(
         "mpp",
-        help="Compare MAM-parsed plus revisions and write HTML diff reports.",
+        help="Compare MAM-parsed-plus revisions and write HTML diff reports.",
     )
     diff_mpp.add_arguments(mpp_parser)
     mpp_parser.set_defaults(func=_run_mpp)

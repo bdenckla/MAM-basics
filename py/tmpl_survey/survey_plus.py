@@ -1,4 +1,4 @@
-"""Survey Wikisource template usage patterns in MAM-parsed plus data."""
+"""Survey Wikisource template usage patterns in MAM-parsed-plus data."""
 
 import json
 import collections
