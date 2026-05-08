@@ -138,19 +138,19 @@ def _s_chapter():
 def _s_verse():
     col_rows = [
         [
-            "D",
-            [
-                "Verse label (",
-                mb_html.code("מ:פסוק"),
-                " template): book name, chapter, verse, etc.",
-            ],
-        ],
-        [
             "C",
             [
                 "Verse separator: $parashah break or ",
                 mb_html.code('"__"'),
                 " for a plain space",
+            ],
+        ],
+        [
+            "D",
+            [
+                "Verse label (",
+                mb_html.code("מ:פסוק"),
+                " template): book name, chapter, verse, etc.",
             ],
         ],
         ["E", "Verse text with inline templates"],
@@ -188,15 +188,35 @@ def _s_verse():
     return [
         author.heading_level_2("Verse (pseudo-verse) structure"),
         author.para(
-            "Each verse is a 3-element array corresponding to the D, C, and E"
-            " columns of the Google Sheet. (This ordering, rather than C, D, E,"
-            " made more sense in this context.)"
+            "Each verse is a 3-element array corresponding to the C, D, and E"
+            " columns of the Google Sheet."
         ),
         author.std_table(col_rows),
-        author.heading_level_3("Index 0 (Google column D): Verse label"),
+        author.heading_level_3("Index 0 (Google column C): Verse separator"),
         author.para(
             [
-                "The context at index 0 is empty ",
+                "The contents at index 0 indicate how this verse is separated from"
+                " the preceding verse. ",
+                mb_html.code('"__"'),
+                " is by far the most common value, indicating a plain space."
+                " More interesting values include:",
+            ]
+        ),
+        author.std_table(sep_rows, arg_to_troh=["Template", "Meaning"]),
+        author.para("Additional $parashah-related templates that may appear:"),
+        author.std_table(sep_more_rows, arg_to_troh=["Template", "Meaning"]),
+        author.para(
+            [
+                "The ",
+                mb_html.code('"//"\u200b'),
+                " strings sometimes sprinkled in"
+                " index 0 are Wikitext line breaks from the Google Sheet.",
+            ]
+        ),
+        author.heading_level_3("Index 1 (Google column D): Verse label"),
+        author.para(
+            [
+                "The content at index 1 is empty ",
                 mb_html.code("[]"),
                 " for pseudo-verses. For normal verses, it is a list containing exactly"
                 " one element: the ",
@@ -216,28 +236,7 @@ def _s_verse():
                 " (Torah $aliyah identification).",
             ]
         ),
-        author.heading_level_3("Index 1 (Google column C): Verse separator"),
-        author.para(
-            [
-                "The contents at index 1 indicate how this verse is separated from"
-                " the preceding verse. ",
-                mb_html.code('"__"'),
-                " is by far the most common value, indicating a plain space."
-                " More interesting values include:",
-            ]
-        ),
-        author.std_table(sep_rows, arg_to_troh=["Template", "Meaning"]),
-        author.para("Additional $parashah-related templates that may appear:"),
-        author.std_table(sep_more_rows, arg_to_troh=["Template", "Meaning"]),
-        author.para(
-            [
-                "The ",
-                mb_html.code('"//"\u200b'),
-                " strings sometimes sprinkled in"
-                " index 1 are Wikitext line breaks from the Google Sheet.",
-            ]
-        ),
-        author.heading_level_3("EP column (index 2): Verse text"),
+        author.heading_level_3("E column (index 2): Verse text"),
         author.para(
             "Contains the actual verse text as a mixed array of strings"
             " (Hebrew text with cantillation marks) and template objects"
@@ -287,7 +286,7 @@ def _s_common_templates():
     sheets_link = mb_html.anchor_h("Templates tab", cmn.SHEETS_TMPL)
     sheets_data_link = mb_html.anchor_h("MAM Google Sheet", cmn.SHEETS_DATA)
     return [
-        author.heading_level_2("Common templates in the EP (verse text) column"),
+        author.heading_level_2("Common templates in the E (verse text) column"),
         author.para(
             [
                 "For authoritative English and Hebrew descriptions of every template,"

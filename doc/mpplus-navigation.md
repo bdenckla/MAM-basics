@@ -18,8 +18,8 @@ Use `ls ../MAM-parsed/plus/` to see the exact names.
   "book39s": [
     { "chapters": {
         "א": {                // chapter 1
-          "א": [D, CP, EP],   // verse 1
-          "ב": [D, CP, EP],   // verse 2
+          "א": [C, D, E],   // verse 1
+          "ב": [C, D, E],   // verse 2
           ...
         },
         ...

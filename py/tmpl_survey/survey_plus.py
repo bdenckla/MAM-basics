@@ -10,7 +10,7 @@ from mb_misc import my_utils_for_mainish as my_utils_fm
 from mb_cmn import ws_tmpl2 as wtp2
 from mb_cmn import kq_special_templates as kqst
 
-_MINIROW = collections.namedtuple("_MINIROW", "DP, CP, EP")
+_MINIROW = collections.namedtuple("_MINIROW", "CP, DP, EP")
 
 
 def _wtel_type_and_subtype(wtel):
@@ -98,8 +98,8 @@ def _check_argc(wtel_subtype, argc):
 def _record_pseudo_verse(accum, bscv, minirow):
     bscv_dic = _make_bscv_dic(bscv)
     colpairs = (
-        (minirow.DP, "D"),
         (minirow.CP, "C"),
+        (minirow.DP, "D"),
         (minirow.EP, "E"),
     )
     for wtseq, column_letter in colpairs:
@@ -197,7 +197,7 @@ def _do_a_book39(book39, accum):
             minirow = _MINIROW(*psv_contents)
             bscv = bk24na, sub_bkna, chnu, psv_psn
             _record_pseudo_verse(accum, bscv, minirow)
-            cds_plus.store_the_mpasuq_call(accum["mpasuq"], bscv, minirow.CP)
+            cds_plus.store_the_mpasuq_call(accum["mpasuq"], bscv, minirow.DP)
 
 
 def _make_bscv_dic(bscv_tuple):

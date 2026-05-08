@@ -190,10 +190,10 @@ _DIFF_ROWS = [
         "Present",
         "Removed",
     ],
-    ["Wikitext line breaks (\u201c//\u201d)", "Present in D column", "Removed"],
+    ["Wikitext line breaks (\u201c//\u201d)", "Present in C column", "Removed"],
     ["Named params", "not parsed", "unified with positional"],
     [
-        "CP column (verse reference)",
+        "D column (verse label)",
         ["Every verse has ", author.hbo("מ:פסוק")],
         "Only first verse of chapter",
     ],
@@ -374,10 +374,18 @@ def s_chapter_verse():
         author.heading_level_2("Verse structure"),
         author.para(
             [
-                "A 3-element array [D, CP, EP], with column details described below.",
+                "A 3-element array [C, D, E], with column details described below.",
             ]
         ),
-        author.heading_level_3("D column (index 0): Section markers"),
+        author.heading_level_3("C column (index 0): Verse separator"),
+        author.para(
+            [
+                "Simplified compared to plain by removing ",
+                mb_html.code('"//"\u200b'),
+                " Wikitext line breaks.",
+            ]
+        ),
+        author.heading_level_3("D column (index 1): Verse label"),
         author.para(
             [
                 "In plus, only the first verse of each chapter has the ",
@@ -388,15 +396,7 @@ def s_chapter_verse():
             ]
         ),
         json_block.json_block_raw_html(_JSON_D_COLUMN),
-        author.heading_level_3("CP column (index 1): Verse reference"),
-        author.para(
-            [
-                "Simplified compared to plain by removing ",
-                mb_html.code('"//"\u200b'),
-                " Wikitext line breaks.",
-            ]
-        ),
-        author.heading_level_3("EP column (index 2): Verse text"),
+        author.heading_level_3("E column (index 2): Verse text"),
         author.para(
             [
                 "Same mixed array of strings and template objects,"
@@ -627,7 +627,7 @@ def s_common_templates():
     sheets_link = mb_html.anchor_h("Templates tab", cmn.SHEETS_TMPL)
     sheets_data_link = mb_html.anchor_h("MAM Google Sheet", cmn.SHEETS_DATA)
     return [
-        author.heading_level_2("Common templates in the EP (verse text) column"),
+        author.heading_level_2("Common templates in the E (verse text) column"),
         author.para(
             [
                 "For authoritative English and Hebrew descriptions of every template,"
@@ -723,7 +723,7 @@ def s_not_in_plus():
                     ")",
                 ],
                 [mb_html.code('"0"'), " and ", author.hbo('"תתת"'), " pseudo-verses"],
-                [mb_html.code('"//"\u200b'), " Wikitext line breaks in D column"],
+                [mb_html.code('"//"\u200b'), " Wikitext line breaks in C column"],
                 [
                     author.hbo("גלגל-2"),
                     " \u2014 galgal accent annotation (handled differently in plus)",
