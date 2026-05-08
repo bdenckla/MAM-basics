@@ -165,38 +165,39 @@ _JSON_KAFUL = """\
 # ---------------------------------------------------------------------------
 
 
+_DIFF_ROWS = [
+    [
+        "Pseudo-verses " + "\u201c" + "0\u201d and \u201c\u05ea\u05ea\u05ea\u201d",
+        "Present",
+        "Removed",
+    ],
+    [
+        "Custom XML tags (\u05e0\u05d5\u05d9\u05e0\u05e7\u05dc\u05d5\u05d3 etc.)",
+        "Present",
+        "Removed",
+    ],
+    ["Wikitext line breaks (\u201c//\u201d)", "Present in D column", "Removed"],
+    ["Named params", "not parsed", "unified with positional"],
+    [
+        "CP column (verse reference)",
+        ["Every verse has ", author.hbo("מ:פסוק")],
+        "Only first verse of chapter",
+    ],
+    [mb_html.code("good_ending_plus"), "Not present", "Added (at book39 level)"],
+    [
+        "Hebrew numeral help",
+        "Not present",
+        ["Added (", mb_html.code("he_to_int"), ")"],
+    ],
+    ["Words with special letters", "interrupted", "uninterrupted provided"],
+]
+
+
 def s_intro():
-    diff_rows = [
-        [
-            "Pseudo-verses " + "\u201c" + "0\u201d and \u201c\u05ea\u05ea\u05ea\u201d",
-            "Present",
-            "Removed",
-        ],
-        [
-            "Custom XML tags (\u05e0\u05d5\u05d9\u05e0\u05e7\u05dc\u05d5\u05d3 etc.)",
-            "Present",
-            "Removed",
-        ],
-        ["Wikitext line breaks (\u201c//\u201d)", "Present in D column", "Removed"],
-        ["Named params", "not parsed", "unified with positional"],
-        [
-            "CP column (verse reference)",
-            ["Every verse has ", author.hbo("מ:פסוק")],
-            "Only first verse of chapter",
-        ],
-        [mb_html.code("good_ending_plus"), "Not present", "Added (at book39 level)"],
-        [
-            "Hebrew numeral help",
-            "Not present",
-            ["Added (", mb_html.code("he_to_int"), ")"],
-        ],
-        ["Words with special letters", "interrupted", "uninterrupted provided"],
-    ]
     return [
         author.para(
             "The plus format is a fully parsed representation"
-            " that diverges from the plain format in several ways,"
-            " summarized in the table below."
+            " that diverges from the plain format in several ways."
         ),
         author.para(
             [
@@ -205,8 +206,13 @@ def s_intro():
                 " of the $MAM Google Sheet.",
             ]
         ),
+    ]
+
+
+def s_differences_from_plain():
+    return [
         author.heading_level_2("Differences from plain at a glance"),
-        author.std_table(diff_rows, arg_to_troh=["Feature", "Plain", "Plus"]),
+        author.std_table(_DIFF_ROWS, arg_to_troh=["Feature", "Plain", "Plus"]),
     ]
 
 

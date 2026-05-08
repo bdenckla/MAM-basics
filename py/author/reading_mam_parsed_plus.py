@@ -36,4 +36,5 @@ def _build_body():
         *body.s_plus_only_templates(),
         *body.s_common_templates(),
         *body.s_not_in_plus(),
+        *body.s_differences_from_plain(),
     ]
