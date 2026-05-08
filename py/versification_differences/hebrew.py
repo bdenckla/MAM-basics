@@ -3,7 +3,7 @@ from mb_cmn import template_names as tmpln
 from mb_cmn import ws_tmpl2 as wtp
 from mb_cmn.my_utils import sl_map
 from mb_cmn.my_utils import sum_of_seqs
-from py_misc import hebrew_letter_words as hlw
+from mb_misc import hebrew_letter_words as hlw
 from py_misc import wt_qere
 from py_misc.split import my_re_split
 

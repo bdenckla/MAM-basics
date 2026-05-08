@@ -4,7 +4,7 @@ from py_misc import uni_heb_char_classes as uhc
 from diff_wsgo import uni_name
 from diff_wsgo import simplify_simple_diffs as ssd
 from mb_cmn import my_diffs
-from py_misc import hebrew_letter_words as hlw
+from mb_misc import hebrew_letter_words as hlw
 
 
 def get1(str1, str2):

@@ -1,5 +1,5 @@
-from py_misc import hebrew_letter_names as hln
-from py_misc import hebrew_letter_words as hlw
+from mb_misc import hebrew_letter_names as hln
+from mb_misc import hebrew_letter_words as hlw
 from mb_cmn import ws_tmpl2 as wtp
 from mb_cmn import hebrew_punctuation as hpu
 from mb_cmn import str_defs as sd

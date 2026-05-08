@@ -1,6 +1,6 @@
 """Exports mark"""
 
-from py_misc import slh_description
+from mb_misc import slh_description
 from mb_cmn import ws_tmpl2 as wtp
 from mb_cmn import template_names as tmpln
 from mb_cmn import shrink

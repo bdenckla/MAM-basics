@@ -6,7 +6,7 @@ from mb_cmn import ws_tmpl2 as wtp
 from render_wt import render_element as renel
 from render_wt import render_wikitext_handlers as handlers
 from render_wt import render_wikitext_helpers as wt_help
-from py_misc import slh_description
+from mb_misc import slh_description
 from mb_cmn import template_names as tmpln
 from mb_cmn.my_utils import first_and_only
 

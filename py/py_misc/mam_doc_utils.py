@@ -11,7 +11,7 @@ from py_misc import uni_heb_char_classes as uhc
 from render_wt import render_element as renel
 from mb_cmn import hebrew_punctuation as hpu
 from mb_cmn import template_names as tmpln
-from py_misc import hebrew_letter_words as hlw
+from mb_misc import hebrew_letter_words as hlw
 
 
 def mark_doc_targets(renseq):

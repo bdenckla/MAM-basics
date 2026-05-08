@@ -1,6 +1,6 @@
 """Exports in_str, in_seq"""
 
-from py_misc import hebrew_letter_names as hln
+from mb_misc import hebrew_letter_names as hln
 from mb_cmn import hebrew_punctuation as hpu
 from mb_cmn import my_utils
 
