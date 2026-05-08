@@ -65,7 +65,7 @@ codebase and inventory until the corresponding rename work is finished.
   - `mb_sefaria/`: sef_header, mam4sef_handlers, mam4sef_or_ajf,
     sef_cmn, write_utils_sef_or_ajf
   - `osis/`: osis_namespace, osis_handlers, osis_index_html
-  - `main_mam4sef.py`, `main_mam_osis.py` (entry points)
+  - `main_mam4sef_example.py`, `main_mam_osis_example.py` (entry points)
 - **Destination provenance doc:** none
 - **Category:** actively vendored / generated output
 
