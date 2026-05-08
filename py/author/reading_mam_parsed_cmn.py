@@ -234,6 +234,51 @@ KQ_SPECIAL_ROWS = [
 ]
 
 # ---------------------------------------------------------------------------
+# Top-level, composite-book, and book39 JSON snippets
+# (shared by plain and plus docs)
+# ---------------------------------------------------------------------------
+
+JSON_TOP_LEVEL = """\
+{
+  "header": {
+    "book24_names": ["ספר איוב"],
+    "sub_book_names": {},
+    "chapter_counts": [
+      {
+        "book24_name": "ספר איוב",
+        "sub_book_name": null,
+        "chapter_count": 42
+      }
+    ]
+  },
+  "book39s": []
+}"""
+
+JSON_COMPOSITE = """\
+{
+  "header": {
+    "book24_names": ["ספר שמואל"],
+    "sub_book_names": {"ספר שמואל": ["שמ\\"א", "שמ\\"ב"]},
+    "chapter_counts": [
+      {"book24_name": "ספר שמואל", "sub_book_name": "שמ\\"א", "chapter_count": 31},
+      {"book24_name": "ספר שמואל", "sub_book_name": "שמ\\"ב", "chapter_count": 24}
+    ]
+  },
+  "book39s": [
+    {"book24_name": "ספר שמואל", "sub_book_name": "שמ\\"א", "chapters": {}},
+    {"book24_name": "ספר שמואל", "sub_book_name": "שמ\\"ב", "chapters": {}}
+  ]
+}"""
+
+JSON_BOOK39 = """\
+{
+  "book24_name": "ספר איוב",
+  "sub_book_name": null,
+  "chapters": {}
+}"""
+
+
+# ---------------------------------------------------------------------------
 # File naming section (shared by plain and plus docs)
 # ---------------------------------------------------------------------------
 

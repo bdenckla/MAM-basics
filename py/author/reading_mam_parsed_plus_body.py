@@ -14,7 +14,7 @@ _SHEETS_TMPL = "https://purl.org/mam/google-sheet#gid=1670945398"
 # JSON snippets
 # ---------------------------------------------------------------------------
 
-_JSON_TOP_LEVEL = """\
+_JSON_TOP_LEVEL_SKEL = """\
 {
   "header": {},
   "book39s": []
@@ -213,7 +213,7 @@ def s_intro():
 def s_top_level():
     return [
         author.heading_level_2("Top-level structure"),
-        json_block.json_block_raw_html(_JSON_TOP_LEVEL),
+        json_block.json_block_raw_html(_JSON_TOP_LEVEL_SKEL),
         author.heading_level_2("Header"),
         author.para(
             [

@@ -20,45 +20,6 @@ _TITLE = "Reading MAM-parsed plain JSON"
 _SHEETS_TMPL = "https://purl.org/mam/google-sheet#gid=1670945398"
 _SHEETS_DATA = "https://purl.org/mam/google-sheet#gid=920165745"
 
-_JSON_TOP_LEVEL = """\
-{
-  "header": {
-    "book24_names": ["ספר איוב"],
-    "sub_book_names": {},
-    "chapter_counts": [
-      {
-        "book24_name": "ספר איוב",
-        "sub_book_name": null,
-        "chapter_count": 42
-      }
-    ]
-  },
-  "book39s": []
-}"""
-
-_JSON_COMPOSITE = """\
-{
-  "header": {
-    "book24_names": ["ספר שמואל"],
-    "sub_book_names": {"ספר שמואל": ["שמ\\"א", "שמ\\"ב"]},
-    "chapter_counts": [
-      {"book24_name": "ספר שמואל", "sub_book_name": "שמ\\"א", "chapter_count": 31},
-      {"book24_name": "ספר שמואל", "sub_book_name": "שמ\\"ב", "chapter_count": 24}
-    ]
-  },
-  "book39s": [
-    {"book24_name": "ספר שמואל", "sub_book_name": "שמ\\"א", "chapters": {}},
-    {"book24_name": "ספר שמואל", "sub_book_name": "שמ\\"ב", "chapters": {}}
-  ]
-}"""
-
-_JSON_BOOK39 = """\
-{
-  "book24_name": "ספר איוב",
-  "sub_book_name": null,
-  "chapters": {}
-}"""
-
 _JSON_INDEX_0 = """\
 [{"stmpl": "מ:פסוק|איוב|א|ב"}]"""
 
@@ -99,7 +60,7 @@ def gen_html_file(tdm_ch):
 def _build_body():
     return [
         mb_html.heading_level_1(_TITLE),
-        *_s_file_naming(),
+        *cmn.s_file_naming(),
         *_s_top_level(),
         *_s_book39(),
         *_s_chapter(),
@@ -115,10 +76,6 @@ def _build_body():
 # ---------------------------------------------------------------------------
 
 
-def _s_file_naming():
-    return cmn.s_file_naming()
-
-
 def _s_top_level():
     rows = [
         [
@@ -130,7 +87,7 @@ def _s_top_level():
     ]
     return [
         author.heading_level_2("Top-level structure"),
-        json_block.json_block_raw_html(_JSON_TOP_LEVEL),
+        json_block.json_block_raw_html(cmn.JSON_TOP_LEVEL),
         author.std_table(rows, arg_to_troh=["Key", "Type", "Description"]),
         author.heading_level_3("Composite books"),
         author.para(
@@ -140,14 +97,14 @@ def _s_top_level():
                 " has multiple entries:",
             ]
         ),
-        json_block.json_block_raw_html(_JSON_COMPOSITE),
+        json_block.json_block_raw_html(cmn.JSON_COMPOSITE),
     ]
 
 
 def _s_book39():
     return [
         author.heading_level_2("Book39 entry"),
-        json_block.json_block_raw_html(_JSON_BOOK39),
+        json_block.json_block_raw_html(cmn.JSON_BOOK39),
     ]
 
 
