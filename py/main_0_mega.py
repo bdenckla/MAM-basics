@@ -67,6 +67,22 @@ def _run_vendored_letter_small_job():
     )
 
 
+def _run_vendored_mam4sef():
+    subprocess.run(
+        [sys.executable, "py-examples/main_mam4sef.py"],
+        cwd=_REPOS / "MAM-simple",
+        check=True,
+    )
+
+
+def _run_vendored_mam_osis():
+    subprocess.run(
+        [sys.executable, "py-examples/main_mam_osis.py"],
+        cwd=_REPOS / "MAM-simple",
+        check=True,
+    )
+
+
 _STEPS = [
     StepRecord(
         "parse-go",
@@ -128,6 +144,16 @@ _STEPS = [
         "vendored-letter-small-job",
         _run_vendored_letter_small_job,
         "runs MAM-simple/py-examples/main_letter_small_job.py as subprocess; must come after mam_simple",
+    ),
+    StepRecord(
+        "vendored-mam4sef",
+        _run_vendored_mam4sef,
+        "runs MAM-simple/py-examples/main_mam4sef.py as subprocess; must come after mam_simple",
+    ),
+    StepRecord(
+        "vendored-mam-osis",
+        _run_vendored_mam_osis,
+        "runs MAM-simple/py-examples/main_mam_osis.py as subprocess; must come after mam_simple",
     ),
     StepRecord("decnreub", main_decnreub.almost_main, None),
     StepRecord("multimark", main_multimark.almost_main, None),
