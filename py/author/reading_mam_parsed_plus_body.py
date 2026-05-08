@@ -250,9 +250,12 @@ def s_book39():
         author.heading_level_3(mb_html.code("good_ending_plus")),
         author.para(
             [
-                "Some books in the Jewish tradition repeat the penultimate verse"
-                " after the final verse so that public reading ends on a positive note."
-                " The ",
+                "Four books of the Bible end with a verse of rather negative tone."
+                " There is a tradition that prevents these verses from being the last"
+                " verses recited. The tradition is to recite the next-to-last verse"
+                " after reciting the last verse. To facilitate this tradition, some"
+                " publications repeat the next-to-last verse, in unpointed form,"
+                " after the officially-last verse. The ",
                 mb_html.code("good_ending_plus"),
                 " key captures this: it is ",
                 mb_html.code("null"),
