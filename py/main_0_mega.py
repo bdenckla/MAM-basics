@@ -5,8 +5,12 @@ sequence. Useful for a full rebuild from scratch.
 
 import argparse
 from dataclasses import dataclass
+from pathlib import Path
+import subprocess
 import sys
 from typing import Callable
+
+_REPOS = Path(__file__).resolve().parents[2]
 
 import main_explicit_xataf
 
@@ -50,6 +54,22 @@ def _run_tmpl_survey_toy():
     main_tmpl_survey_toy.almost_main("../MAM-parsed/plain/BA-Samuel.json")
 
 
+def _run_vendored_tmpl_survey_toy():
+    subprocess.run(
+        [sys.executable, "py-examples/main_tmpl_survey_toy.py"],
+        cwd=_REPOS / "MAM-parsed",
+        check=True,
+    )
+
+
+def _run_vendored_letter_small_job():
+    subprocess.run(
+        [sys.executable, "py-examples/main_letter_small_job.py"],
+        cwd=_REPOS / "MAM-simple",
+        check=True,
+    )
+
+
 _STEPS = [
     StepRecord(
         "parse-go",
@@ -82,6 +102,11 @@ _STEPS = [
         "must come after parse-go",
     ),
     StepRecord(
+        "vendored-tmpl-survey-toy",
+        _run_vendored_tmpl_survey_toy,
+        "runs MAM-parsed/py-examples/main_tmpl_survey_toy.py as subprocess; must come after parse-go",
+    ),
+    StepRecord(
         "mam-simple",
         main_mam_simple.almost_main,
         "must come after mam_parsed",
@@ -101,6 +126,11 @@ _STEPS = [
         "letter-small-job",
         _run_letter_small_job,
         "must come after mam_simple",
+    ),
+    StepRecord(
+        "vendored-letter-small-job",
+        _run_vendored_letter_small_job,
+        "runs MAM-simple/py-examples/main_letter_small_job.py as subprocess; must come after mam_simple",
     ),
     StepRecord("decnreub", main_decnreub.almost_main, None),
     StepRecord("multimark", main_multimark.almost_main, None),
