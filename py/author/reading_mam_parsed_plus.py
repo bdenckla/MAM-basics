@@ -12,6 +12,7 @@ Body content lives in reading_mam_parsed_plus_body.py.
 
 from mb_misc import mb_html
 from author_util import author
+from author import reading_mam_parsed_cmn as cmn
 from author import reading_mam_parsed_plus_body as body
 
 _FNAME = "reading_mam_parsed_plus.html"
@@ -27,6 +28,7 @@ def gen_html_file(tdm_ch):
 def _build_body():
     return [
         mb_html.heading_level_1(_TITLE),
+        *cmn.s_file_naming(),
         *body.s_intro(),
         *body.s_top_level(),
         *body.s_book39(),

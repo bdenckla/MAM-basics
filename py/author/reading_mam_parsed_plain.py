@@ -116,56 +116,7 @@ def _build_body():
 
 
 def _s_file_naming():
-    rows = [
-        ["A1\u2013A5", "Torah", "Genesis, Exodus, Leviticus, Numbers, Deuteronomy"],
-        ["B1, B2, BA, BC", "Former Prophets", "Joshua, Judges, Samuel, Kings"],
-        [
-            "C1\u2013C3, CA",
-            "Latter Prophets",
-            "Isaiah, Jeremiah, Ezekiel, The 12 Minor Prophets",
-        ],
-        ["D1\u2013D3", "Wisdom", "Psalms, Proverbs, Job"],
-        [
-            "E1\u2013E5",
-            "Five Scrolls",
-            "Song of Songs, Ruth, Lamentations, Ecclesiastes, Esther",
-        ],
-        ["F1, FA, FC", "Late Books", "Daniel, Ezra-Nehemiah, Chronicles"],
-    ]
-    return [
-        author.heading_level_2("File naming"),
-        author.para(
-            [
-                "File names start with two characters that identify the book"
-                " (in the \u201c24 books\u201d sense) and provide a standard ordering."
-                " The first character (",
-                mb_html.code("sec_char"),
-                ") comes from the set ABCDEF and indicates the section of Tanakh."
-                " The second character (",
-                mb_html.code("book24_char"),
-                ") comes from the set 12345AC and indicates the book within that section.",
-            ]
-        ),
-        author.para(
-            [
-                "Files are named ",
-                mb_html.code("{sec_char}{book24_char}-{EnglishName}.json"),
-                ":",
-            ]
-        ),
-        author.std_table(rows, arg_to_troh=["Prefix", "Section", "Books"]),
-        author.para(
-            [
-                "When ",
-                mb_html.code("book24_char"),
-                " is A or C,"
-                " the file is a composite book containing multiple sub-books"
-                " (e.g. BA-Samuel contains both 1 Samuel and 2 Samuel)."
-                " The letter B is not used in order to keep compatibility"
-                " with a set of codes used for the 39-book system.",
-            ]
-        ),
-    ]
+    return cmn.s_file_naming()
 
 
 def _s_top_level():
