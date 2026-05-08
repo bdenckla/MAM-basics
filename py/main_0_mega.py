@@ -44,7 +44,7 @@ class StepRecord:
 
 
 def _run_letter_small_job():
-    main_letter_small_job.find_letter_small_in_job("../MAM-simple/xml-vtrad-mam/Job.xml")
+    main_letter_small_job.almost_main("../MAM-simple/xml-vtrad-mam/Job.xml")
 
 
 def _run_tmpl_survey_toy():
