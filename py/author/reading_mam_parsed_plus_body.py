@@ -35,6 +35,14 @@ _JSON_HEADER = """\
   }
 }"""
 
+_JSON_BOOK39_SKEL = """\
+{
+  "book24_name": "ספר ישעיהו",
+  "sub_book_name": null,
+  "chapters": {},
+  "good_ending_plus": null
+}"""
+
 _JSON_GOOD_ENDING = """\
 {
   "last_chapnver": ["סו", "כד"],
@@ -278,15 +286,43 @@ def s_top_level():
 
 
 def s_book39():
+    _book39_rows = [
+        [
+            mb_html.code("book24_name"),
+            "string",
+            "The 24-book name of this sub-book.",
+        ],
+        [
+            mb_html.code("sub_book_name"),
+            "string | null",
+            [
+                "The sub-book name within a composite book (e.g. ",
+                author.hbo('שמ"א'),
+                " within Samuel), or ",
+                mb_html.code("null"),
+                " for non-composite books.",
+            ],
+        ],
+        [
+            mb_html.code("chapters"),
+            "object",
+            "Dict keyed by Hebrew-numeral chapter names; values are chapter objects.",
+        ],
+        [
+            mb_html.code("good_ending_plus"),
+            "object | null",
+            [
+                mb_html.code("null"),
+                " for most books; an object for the 4 books/book-parts"
+                " that repeat a penultimate verse for liturgical good-ending purposes"
+                " (Isaiah, Malachi, Lamentations, Ecclesiastes).",
+            ],
+        ],
+    ]
     return [
         author.heading_level_2("Book39 entry"),
-        author.para(
-            [
-                "The book39 entry gains a ",
-                mb_html.code("good_ending_plus"),
-                " key:",
-            ]
-        ),
+        json_block.json_block_raw_html(_JSON_BOOK39_SKEL),
+        author.std_table(_book39_rows, arg_to_troh=["Key", "Type", "Description"]),
         author.heading_level_3(mb_html.code("good_ending_plus")),
         author.para(
             [
