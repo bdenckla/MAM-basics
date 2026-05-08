@@ -12,9 +12,9 @@ digraph mam_pipeline {
     ds_parsed_plain  [label="../MAM-parsed/plain/"];
     ds_ws            [label="in/mam-ws/\n(Wikisource JSON)"];
     src_ws_live      [label="Hebrew Wikisource"];
-    ds_simple        [label="../MAM-simple/out/"];
+    ds_simple        [label="../MAM-simple/"];
     ds_with_doc      [label="../MAM-with-doc/docs/"];
-    ds_sefaria       [label="../MAM-for-Sefaria/out/"];
+    ds_sefaria       [label="../MAM-for-Sefaria/"];
     ds_osis          [label="../MAM-OSIS/"];
     ds_out           [label="out/\n(local outputs)"];
     ds_mamgo_auto    [label="../mamgo-auto-edits/"];
