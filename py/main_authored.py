@@ -1,6 +1,15 @@
 """
 Generate miscellaneous authored HTML documents (notes, reviews, analyses)
 that are written by the repo owner and rendered from Python source data.
+
+Subcommands:
+  gen-misc             (default) Write misc authored HTML docs to
+                       MAM-with-doc/gh-pages/misc/.
+  gen-mam-parsed-docs  Write reading_mam_parsed_plain.html and
+                       reading_mam_parsed_plus.html to MAM-parsed/gh-pages/.
+                       Run this after editing py/author/reading_mam_parsed_plain.py,
+                       py/author/reading_mam_parsed_plus.py, or
+                       py/author/reading_mam_parsed_plus_body.py.
 """
 
 import argparse
@@ -99,7 +108,7 @@ def main():
     if args.subcommand == "gen-mam-parsed-docs":
         cmd_gen_mam_parsed_docs(args)
     else:
-        # Default (no subcommand or gen-misc) runs existing behavior
+        # Default (no subcommand, or explicit gen-misc) runs gen-misc.
         cmd_gen_misc(args)
 
 

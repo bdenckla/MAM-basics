@@ -195,20 +195,6 @@ def s_intro(plain_link):
     return [
         author.para(
             [
-                "\u26a0\ufe0f Note: This documentation was AI-generated and is known"
-                " to contain inaccuracies, but it is a lot better than no documentation.",
-            ]
-        ),
-        author.para(
-            [
-                "Cross-references: The per-template extraction rules documented in the"
-                " ",
-                mb_html.code("extract_text"),
-                " example below are also encoded in" " several downstream repos.",
-            ]
-        ),
-        author.para(
-            [
                 "The plus format shares the same overall structure as the ",
                 plain_link,
                 " but diverges in several ways."
