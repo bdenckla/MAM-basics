@@ -8,7 +8,7 @@ from author_util import json_block
 _PLAIN_DOC = "reading_mam_parsed_plain.html"
 _PLUS_DOC = "reading_mam_parsed_plus.html"
 _CALL_GRAPHS = "https://bdenckla.github.io/MAM-parsed/plus-template-call-graphs.html"
-_SHEETS_TMPL = "https://docs.google.com/spreadsheets/d/1mkQyj6by1AtBUabpbaxaZq9Z2X3pX8ZpwG91ZCSOEYs/edit?gid=1670945398#gid=1670945398"
+_SHEETS_TMPL = "https://purl.org/mam/google-sheet#gid=1670945398"
 
 # ---------------------------------------------------------------------------
 # JSON snippets

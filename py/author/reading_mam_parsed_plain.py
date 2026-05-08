@@ -8,8 +8,8 @@ from author_util import json_block
 _FNAME = "reading_mam_parsed_plain.html"
 _TITLE = "Reading MAM-parsed plain JSON"
 
-_SHEETS_TMPL = "https://docs.google.com/spreadsheets/d/1mkQyj6by1AtBUabpbaxaZq9Z2X3pX8ZpwG91ZCSOEYs/edit?gid=1670945398#gid=1670945398"
-_SHEETS_DATA = "https://docs.google.com/spreadsheets/d/1mkQyj6by1AtBUabpbaxaZq9Z2X3pX8ZpwG91ZCSOEYs/edit#gid=920165745"
+_SHEETS_TMPL = "https://purl.org/mam/google-sheet#gid=1670945398"
+_SHEETS_DATA = "https://purl.org/mam/google-sheet#gid=920165745"
 _PLUS_DOC = "reading_mam_parsed_plus.html"
 
 _JSON_TOP_LEVEL = """\
