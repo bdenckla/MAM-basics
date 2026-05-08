@@ -4,6 +4,7 @@
 from mb_misc import mb_html
 from author_util import author
 from author_util import json_block
+from author import reading_mam_parsed_cmn as cmn
 
 _PLAIN_DOC = "reading_mam_parsed_plain.html"
 _PLUS_DOC = "reading_mam_parsed_plus.html"
@@ -197,9 +198,7 @@ def s_intro(plain_link):
             [
                 "The plus format shares the same overall structure as the ",
                 plain_link,
-                " but diverges in several ways."
-                " Read the plain format documentation first,"
-                " then use this document for the differences.",
+                " but diverges in several ways.",
             ]
         ),
         author.para(
@@ -391,41 +390,6 @@ def s_chapter_verse():
 
 
 def s_plus_only_templates():
-    kq_special_rows = [
-        [
-            author.hbo('כו"ק בין שני מקפים'),
-            "Ketiv-$qere between two maqafim (Isaiah 26:20 only)",
-        ],
-        [
-            author.hbo('כו"ק כתיב מילה חדה וקרי תרתין מילין'),
-            "1-word ketiv mapped to 2-atom $qere",
-        ],
-        [
-            author.hbo('כו"ק כתיב מילה חדה וקרי תרתין מילין בין שני מקפים'),
-            "Same as above but between maqafim (1 Chronicles 9:4 only)",
-        ],
-        [
-            author.hbo('כו"ק כתיב תרתין מילין וקרי מילה חדה'),
-            "2-word ketiv mapped to 1-atom $qere",
-        ],
-        [
-            author.hbo('קו"כ כתיב מילה חדה וקרי תרתין מילין'),
-            "Like the k1\u2192q2 case but in reversed (qk) display order, for use after $maqaf (Nehemiah 2:13 only)",
-        ],
-        [
-            author.hbo('כו"ק קרי שונה מהכתיב בשתי מילים'),
-            "1-word ketiv, 2-word $qere (kq display order)",
-        ],
-        [
-            author.hbo('קו"כ קרי שונה מהכתיב בשתי מילים'),
-            "1-word ketiv, 2-word $qere in reversed (qk) display order (2 Kgs 18:27, Isa 36:12)",
-        ],
-        [author.hbo('כו"ק של שתי מילים בהערה אחת'), "2-word ketiv, 2-atom $qere"],
-        [
-            author.hbo('כו"ק של שלוש מילים בהערה אחת'),
-            "3-word ketiv, 3-atom $qere (2 Samuel 21:12)",
-        ],
-    ]
     kaful_params = [
         [
             author.hbo("כפול"),
@@ -512,7 +476,7 @@ def s_plus_only_templates():
                 " template:",
             ]
         ),
-        author.std_table(kq_special_rows, arg_to_troh=["Type", "Meaning"]),
+        author.std_table(cmn.KQ_SPECIAL_ROWS, arg_to_troh=["Type", "Meaning"]),
         author.para("Example (Job 38:1):"),
         json_block.json_block_raw_html(_JSON_KQ_SPECIAL),
         author.heading_level_3(
@@ -585,58 +549,75 @@ def s_plus_only_templates():
 
 
 def s_common_templates():
-    rows = [
-        [author.hbo("מ:לגרמיה-2"), "$Legarmeh (as distinct from $paseq)"],
-        [author.hbo("מ:פסוק"), "Verse label"],
-        [author.hbo("מ:פסק"), "$Paseq (as distinct from $legarmeh)"],
-        [
-            author.hbo("מ:דחי"),
-            "De\u1e25i variation: without stress helper and with stress helper",
-        ],
-        [
-            author.hbo("מ:צינור"),
-            "Tsinnor variation: without stress helper and with stress helper",
-        ],
-        [
-            author.hbo("מ:קמץ"),
-            [
-                "Qamats variation: A $qamats that is qatan in ",
-                author.hbo("ד"),
-                " is gadol in ",
-                author.hbo("ס"),
-            ],
-        ],
-        [author.hbo("מ:מקף אפור"), "Gray (implicit) $maqaf"],
-        [author.hbo("נוסח"), "Documentation note"],
-        [author.hbo('כו"ק'), "Standard ketiv-$qere"],
-        [author.hbo('קו"כ'), "Post-$maqaf ketiv-$qere"],
-        [
-            author.hbo('מ:כו"ק מיוחד'),
-            [
-                "Special ketiv-$qere (9 subtypes via ",
-                author.hbo("סוג="),
-                "; see section above)",
-            ],
-        ],
-        [author.hbo('מ:קו"כ-אם-2'), "Trivial ketiv-$qere"],
-        [
-            [author.hbo("פפ"), ", ", author.hbo("סס"), ", etc."],
-            "Parashah petuchah / setumah",
-        ],
-        [[author.hbo("ר0"), "\u2013", author.hbo("ר4")], "Poetic spacing"],
-    ]
+    sheets_link = mb_html.anchor_h("Templates tab", _SHEETS_TMPL)
+    sheets_data_link = mb_html.anchor_h(
+        "MAM Google Sheet", "https://purl.org/mam/google-sheet#gid=920165745"
+    )
     return [
-        author.heading_level_2("Common templates (shared with plain)"),
+        author.heading_level_2("Common templates in the EP (verse text) column"),
         author.para(
             [
-                "These templates appear in both formats." " In plus they use ",
+                "For authoritative English and Hebrew descriptions of every template,"
+                " see the ",
+                sheets_link,
+                " of the ",
+                sheets_data_link,
+                ".",
+            ]
+        ),
+        author.para(
+            [
+                "In plus format these templates use ",
                 mb_html.code("tmpl_name"),
                 "/",
                 mb_html.code("tmpl_params"),
-                " format:",
+                " format.",
             ]
         ),
-        author.std_table(rows, arg_to_troh=["Template", "Purpose"]),
+        author.heading_level_3("Documentation template (\u05e0\u05d5\u05e1\u05d7)"),
+        author.para(
+            [
+                "Its first parameter is the \u201ctarget\u201d \u2014 what is being documented."
+                " The second parameter contains the documentation"
+                " (anomalous forms, variant readings, uncertain readings, etc.):",
+            ]
+        ),
+        json_block.json_block_raw_html(cmn.JSON_NUSACH),
+        author.heading_level_3("Ketiv-$qere templates"),
+        author.std_table(cmn.KQ_ROWS, arg_to_troh=["Template", "Purpose"]),
+        author.para(
+            [
+                "Current values observed for optional ",
+                author.hbo("\u05e1\u05d5\u05d2="),
+                " in ",
+                author.hbo('\u05de:\u05e7\u05d5"\u05db-\u05d0\u05dd-2'),
+                ":",
+            ]
+        ),
+        author.unordered_list(cmn.KQ_AM2_SUG_LIST),
+        author.para("Example of standard ketiv-$qere:"),
+        json_block.json_block_raw_html(cmn.JSON_KQ),
+        author.heading_level_3("Special letter templates"),
+        author.std_table(cmn.SPECIAL_LETTER_ROWS, arg_to_troh=["Template", "Purpose"]),
+        author.heading_level_3("Accent and cantillation templates"),
+        author.std_table(cmn.ACCENT_ROWS, arg_to_troh=["Template", "Purpose"]),
+        author.heading_level_3("Jerusalem spelling"),
+        author.std_table(cmn.JER_ROWS, arg_to_troh=["Template", "Purpose"]),
+        author.heading_level_3(
+            "Poetic form templates (\u05e1\u05e4\u05e8\u05d9 \u05d0\u05de\u05ea)"
+        ),
+        author.std_table(cmn.POETIC_ROWS, arg_to_troh=["Template", "Purpose"]),
+        author.para(
+            "Many editions will choose to skip poetic formatting by treating"
+            " \u05e40\u2013\u05e44 as simple word spaces."
+        ),
+        author.heading_level_3("Footnote template"),
+        author.std_table(
+            [cmn.FOOTNOTE_ROW],
+            arg_to_troh=["Template", "Purpose"],
+        ),
+        author.heading_level_3("Other templates"),
+        author.std_table(cmn.OTHER_ROWS, arg_to_troh=["Template", "Purpose"]),
     ]
 
 

@@ -12,13 +12,13 @@ Output goes to ../MAM-parsed/gh-pages/reading_mam_parsed_plain.html.
 from mb_misc import mb_html
 from author_util import author
 from author_util import json_block
+from author import reading_mam_parsed_cmn as cmn
 
 _FNAME = "reading_mam_parsed_plain.html"
 _TITLE = "Reading MAM-parsed plain JSON"
 
 _SHEETS_TMPL = "https://purl.org/mam/google-sheet#gid=1670945398"
 _SHEETS_DATA = "https://purl.org/mam/google-sheet#gid=920165745"
-_PLUS_DOC = "reading_mam_parsed_plus.html"
 
 _JSON_TOP_LEVEL = """\
 {
@@ -83,12 +83,6 @@ _JSON_TMPL = """\
 _JSON_CUSTOM_TAG = """\
 {"custom_tag": "noinclude"}
 {"custom_tag": "/noinclude"}"""
-
-_JSON_KQ = """\
-{"stmpl": "קו\\"כ|את|אַ֠תָּ֠ה"}"""
-
-_JSON_NUSACH = """\
-{"stmpl": "נוסח|וּבֵרְﬞכ֥וּ|2=א=וּבֵרֲכ֥וּ (חטף)"}"""
 
 
 def gen_html_file(tdm_ch):
@@ -385,167 +379,6 @@ def _s_template_objects():
 
 
 def _s_common_templates():
-    kq_rows = [
-        [
-            author.hbo('כו"ק'),
-            [
-                "Standard ketiv-$qere. Param 1 = unpointed ketiv,"
-                " param 2 = pointed $qere.",
-            ],
-        ],
-        [
-            author.hbo('קו"כ'),
-            [
-                "Post-$maqaf ketiv-$qere. Same parameters as ",
-                author.hbo('כו"ק'),
-                " but used when the pair follows a $maqaf.",
-            ],
-        ],
-        [
-            author.hbo('מ:קו"כ-אם-2'),
-            [
-                "Trivial ketiv-$qere. Param 1 = pointed ketiv, param 2 = unpointed ketiv,"
-                " param 3 = pointed $qere.",
-            ],
-        ],
-        [
-            author.hbo("כתיב ולא קרי"),
-            [
-                "Ketiv without $qere. Single parameter = the ketiv.",
-            ],
-        ],
-        [
-            author.hbo("קרי ולא כתיב"),
-            [
-                "Qere without ketiv. Single parameter = the $qere.",
-            ],
-        ],
-        [
-            author.hbo('מ:כו"ק מיוחד'),
-            [
-                "Special ketiv-$qere. The required ",
-                author.hbo("סוג="),
-                " named parameter identifies the subtype." " See the ",
-                mb_html.anchor_h("plus format documentation", _PLUS_DOC),
-                " for the full subtype list.",
-            ],
-        ],
-    ]
-    special_letter_rows = [
-        [
-            author.hbo("מ:אות-ג"),
-            "Large letter. Marks a masoretically large letter. Parameter is the pointed letter.",
-        ],
-        [
-            author.hbo("מ:אות-ק"),
-            "Small letter. Marks a masoretically small letter. Parameter is the pointed letter.",
-        ],
-        [
-            author.hbo("מ:אות תלויה"),
-            "Suspended (hung) letter. Appears raised in the text.",
-        ],
-        [
-            author.hbo("מ:אות מנוקדת"),
-            "Dotted letter/word. Marks words with masoretic dots above/below.",
-        ],
-        [
-            author.hbo('מ:נו"ן הפוכה'),
-            "Reversed $nun. The inverted $nun mark (Unicode character).",
-        ],
-    ]
-    accent_rows = [
-        [
-            author.hbo("מ:לגרמיה-2"),
-            "$Legarmeh. The vertical line \u05c0 as $legarmeh (part of the word\u2019s cantillation). Shares Unicode with $paseq but differs in function.",
-        ],
-        [
-            author.hbo("מ:פסק"),
-            "$Paseq. The vertical line \u05c0 as $paseq in the narrow sense, i.e. $paseq as distinct from $legarmeh.",
-        ],
-        [
-            author.hbo("מ:מקף אפור"),
-            "Gray $maqaf. A $maqaf that is only implicit in the manuscript. Appears only in poetic verses.",
-        ],
-        [
-            author.hbo("מ:דחי"),
-            "De\u1e25i variation. Presents both stress-helped and non-stress-helped versions of a word.",
-        ],
-        [
-            author.hbo("מ:צינור"),
-            "Tsinnor variation. Presents both stress-helped and non-stress-helped versions of a word.",
-        ],
-        [
-            author.hbo("גלגל-2"),
-            "Galgal. Distinguishes poetic from prose uses of Unicode YERAH BEN YOMO.",
-        ],
-        [
-            author.hbo("ירח בן יומו"),
-            "Yera\u1e25 ben yomo. Distinguishes prose from poetic uses of Unicode YERAH BEN YOMO.",
-        ],
-        [
-            author.hbo("אתנח הפוך"),
-            "Atna\u1e25 hafukh. Helps distinguish this accent from galgal/yera\u1e25 ben yomo.",
-        ],
-        [
-            author.hbo("מ:קמץ"),
-            [
-                "Qamats variation. Named params: ",
-                author.hbo("ד="),
-                " (grammatical) and ",
-                author.hbo("ס="),
-                " (Sephardic tradition).",
-            ],
-        ],
-    ]
-    jer_rows = [
-        [
-            author.hbo("מ:ירושלם"),
-            "Handles the masoretic spelling of Jerusalem without $yod. Two params (vowel and accent of $lamed).",
-        ],
-        [
-            author.hbo("מ:ירושלמה"),
-            "Like \u05de:\u05d9\u05e8\u05d5\u05e9\u05dc\u05dd but for the directional form \u201cto Jerusalem\u201d (4 cases).",
-        ],
-    ]
-    poetic_rows = [
-        [
-            author.hbo("ר1"),
-            "Following stich on its own line, one indent. In 2 cases (Ps 70, 108) represents a closed $parashah.",
-        ],
-        [author.hbo("ר2"), "Following stich on its own line, two indents."],
-        [author.hbo("ר3"), "Following stich at line start, no indent."],
-        [author.hbo("ר4"), "New verse at line start, no indent."],
-        [
-            author.hbo("ר0"),
-            "Extra division point when a verse has an odd number of stiches, for even-column display.",
-        ],
-        [
-            author.hbo("פרשה-מרכז"),
-            "Centered title. For \u201ctitles\u201d in Job and Proverbs. Parameter is the title text.",
-        ],
-    ]
-    other_rows = [
-        [
-            [author.hbo("פפ"), " / ", author.hbo("סס")],
-            "Parashah petuchah / setumah (primarily in D column)",
-        ],
-        [
-            author.hbo("מ:סיום בטוב"),
-            "Good ending. Repeats the penultimate verse so public reading ends positively. Used at the end of Lamentations, Ecclesiastes, Isaiah, and Malachi.",
-        ],
-        [
-            author.hbo("מ:טעם ומתג באות אחת"),
-            "Normalization-robust meteg for 10 cases where a below-accent and meteg share one letter.",
-        ],
-        [
-            author.hbo("מ:גרש ותלישא גדולה"),
-            "Combined $geresh + $telisha gedolah (2 words, 3 uses). No parameters.",
-        ],
-        [
-            author.hbo("מ:גרשיים ותלישא גדולה"),
-            "Combined gershayim + $telisha gedolah (3 words, 4 uses). No parameters.",
-        ],
-    ]
     sheets_link = mb_html.anchor_h("Templates tab", _SHEETS_TMPL)
     sheets_data_link = mb_html.anchor_h("MAM Google Sheet", _SHEETS_DATA)
     return [
@@ -568,9 +401,19 @@ def _s_common_templates():
                 " (anomalous forms, variant readings, uncertain readings, etc.):",
             ]
         ),
-        json_block.json_block_raw_html(_JSON_NUSACH),
+        json_block.json_block_raw_html(cmn.JSON_NUSACH),
         author.heading_level_3("Ketiv-$qere templates"),
-        author.std_table(kq_rows, arg_to_troh=["Template", "Purpose"]),
+        author.std_table(cmn.KQ_ROWS, arg_to_troh=["Template", "Purpose"]),
+        author.para(
+            [
+                "The nine ",
+                author.hbo("סוג="),
+                " subtypes for ",
+                author.hbo('מ:כו"ק מיוחד'),
+                ":",
+            ]
+        ),
+        author.std_table(cmn.KQ_SPECIAL_ROWS, arg_to_troh=["Type", "Meaning"]),
         author.para(
             [
                 "Current values observed for optional ",
@@ -580,43 +423,30 @@ def _s_common_templates():
                 ":",
             ]
         ),
-        author.unordered_list(
-            [
-                author.hbo('אל"ף נחה באמצע תיבה ולא נקראת'),
-                author.hbo('כתיב ה"א בסיומת של חולם'),
-                author.hbo("כתיב הוא קרי היא"),
-                author.hbo('כתיב חסר יו"ד בסיומת של קמץ ואחריו וי"ו'),
-                author.hbo("כתיב נער קרי נערה"),
-            ]
-        ),
+        author.unordered_list(cmn.KQ_AM2_SUG_LIST),
         author.para("Example of standard ketiv-$qere:"),
-        json_block.json_block_raw_html(_JSON_KQ),
+        json_block.json_block_raw_html(cmn.JSON_KQ),
         author.heading_level_3("Special letter templates"),
-        author.std_table(special_letter_rows, arg_to_troh=["Template", "Purpose"]),
+        author.std_table(cmn.SPECIAL_LETTER_ROWS, arg_to_troh=["Template", "Purpose"]),
         author.heading_level_3("Accent and cantillation templates"),
-        author.std_table(accent_rows, arg_to_troh=["Template", "Purpose"]),
+        author.std_table(cmn.ACCENT_ROWS, arg_to_troh=["Template", "Purpose"]),
         author.heading_level_3("Jerusalem spelling"),
-        author.std_table(jer_rows, arg_to_troh=["Template", "Purpose"]),
+        author.std_table(cmn.JER_ROWS, arg_to_troh=["Template", "Purpose"]),
         author.heading_level_3(
             "Poetic form templates (\u05e1\u05e4\u05e8\u05d9 \u05d0\u05de\u05ea)"
         ),
-        author.std_table(poetic_rows, arg_to_troh=["Template", "Purpose"]),
+        author.std_table(cmn.POETIC_ROWS, arg_to_troh=["Template", "Purpose"]),
         author.para(
             "Many editions will choose to skip poetic formatting by treating"
             " \u05e40\u2013\u05e44 as simple word spaces."
         ),
         author.heading_level_3("Footnote template"),
         author.std_table(
-            [
-                [
-                    author.hbo("מ:הערה"),
-                    "Scroll-difference footnote (Torah and Esther only). Footnote markers appear within the text itself. Parameter is the footnote text.",
-                ]
-            ],
+            [cmn.FOOTNOTE_ROW],
             arg_to_troh=["Template", "Purpose"],
         ),
         author.heading_level_3("Other templates"),
-        author.std_table(other_rows, arg_to_troh=["Template", "Purpose"]),
+        author.std_table(cmn.OTHER_ROWS, arg_to_troh=["Template", "Purpose"]),
     ]
 
 
