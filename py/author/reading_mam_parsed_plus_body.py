@@ -196,8 +196,21 @@ _DIFF_ROWS = [
 def s_intro():
     return [
         author.para(
-            "The plus format is a fully parsed representation"
-            " that diverges from the plain format in several ways."
+            "The $MAM-parsed plus format is a fully parsed JSON representation"
+            " of the biblical text. This document covers:"
+        ),
+        author.unordered_list(
+            [
+                "File naming",
+                "Top-level structure and header metadata",
+                "Book39 entries (including good-ending data)",
+                "Chapter and verse structure",
+                "Template format (expanded from plain)",
+                "Plus-only templates",
+                "Common templates in the verse-text column",
+                "Templates removed in plus (present in plain)",
+                "Summary comparison with plain format",
+            ]
         ),
         author.para(
             [

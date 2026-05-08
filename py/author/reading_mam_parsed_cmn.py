@@ -315,7 +315,9 @@ def s_file_naming():
         author.heading_level_2("File naming"),
         author.para(
             [
-                "File names start with two characters that identify the book"
+                "File names (e.g. ",
+                mb_html.code("A1-Genesis.json"),
+                ") start with two characters that identify the book"
                 " (in the \u201c24 books\u201d sense) and provide a standard ordering."
                 " The first character (",
                 mb_html.code("sec_char"),

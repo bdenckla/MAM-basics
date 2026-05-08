@@ -28,8 +28,8 @@ def gen_html_file(tdm_ch):
 def _build_body():
     return [
         mb_html.heading_level_1(_TITLE),
-        *cmn.s_file_naming(),
         *body.s_intro(),
+        *cmn.s_file_naming(),
         *body.s_top_level(),
         *body.s_book39(),
         *body.s_chapter_verse(),
