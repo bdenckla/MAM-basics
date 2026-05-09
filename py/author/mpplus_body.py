@@ -165,18 +165,21 @@ _DIFF_ROWS = [
 def s_intro():
     return [
         author.para(
-            "The $MAM-parsed-plus JSON files are a parsed representation"
-            " of the Wikitext of the $MAM dataset. This document covers:"
+            "The $MAM-parsed-plus JSON files are formed by:"
+            " (a) parsing the Wikitext in the $MAM Google Sheet"
+            " (b) adding some conveniences and"
+            " (c) removing some data not relevant to most applications."
+            " This document covers:"
         ),
         author.unordered_list(
             [
                 "File naming",
                 "Top-level structure and header metadata",
-                "Book39 entries (including good-ending data)",
+                "Book39 entries",
                 "Chapter and verse structure",
-                "Template format (expanded representation)",
-                "Selected templates",
-                "Common templates in the verse-text column",
+                "Template format",
+                "Selected templates presented in detail",
+                "Common templates",
                 "Differences from plain format",
             ]
         ),

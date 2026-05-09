@@ -33,7 +33,7 @@ def _build_body():
         *body.s_top_level(),
         *body.s_book39(),
         *body.s_chapter_verse(),
-        *body.s_plus_only_templates(),
         *body.s_common_templates(),
+        *body.s_plus_only_templates(),
         *body.s_plain_differences(),
     ]
