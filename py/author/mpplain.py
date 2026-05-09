@@ -6,15 +6,15 @@ To regenerate the output HTML, run from the repo root::
 
     .venv\\Scripts\\python.exe py\\main_authored.py gen-mam-parsed-docs
 
-Output goes to ../MAM-parsed/gh-pages/reading_mam_parsed_plain.html.
+Output goes to ../MAM-parsed/gh-pages/mpplain.html.
 """
 
 from mb_misc import mb_html
 from author_util import author
 from author_util import json_block
-from author import reading_mam_parsed_cmn as cmn
+from author import mp_cmn as cmn
 
-_FNAME = "reading_mam_parsed_plain.html"
+_FNAME = "mpplain.html"
 _TITLE = "Reading MAM-parsed-plain"
 
 _JSON_INDEX_0 = """\
@@ -44,7 +44,7 @@ _JSON_CUSTOM_TAG = """\
 
 
 def gen_html_file(tdm_ch):
-    """Generate reading_mam_parsed_plain.html in the given output directory."""
+    """Generate mpplain.html in the given output directory."""
     cbody = _build_body()
     return author.help_gen_html_file(__file__, tdm_ch, _FNAME, _TITLE, cbody)
 

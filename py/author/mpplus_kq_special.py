@@ -6,18 +6,18 @@ To regenerate the output HTML, run from the repo root::
 
     .venv\\Scripts\\python.exe py\\main_authored.py gen-mam-parsed-docs
 
-Output goes to ../MAM-parsed/gh-pages/reading_mam_parsed_plus_kq_special.html.
+Output goes to ../MAM-parsed/gh-pages/mpplus_kq_special.html.
 """
 
 from mb_misc import mb_html
 from author_util import author
 from author_util import json_block
-from author import reading_mam_parsed_cmn as cmn
+from author import mp_cmn as cmn
 
-_FNAME = "reading_mam_parsed_plus_kq_special.html"
+_FNAME = "mpplus_kq_special.html"
 _TITLE = "Special ketiv-qere template"
 
-_PLUS_DOC = "reading_mam_parsed_plus.html"
+_PLUS_DOC = "mpplus.html"
 
 _JSON_KQ_SPECIAL = """\
 {

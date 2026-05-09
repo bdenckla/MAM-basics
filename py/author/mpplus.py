@@ -6,21 +6,21 @@ To regenerate the output HTML, run from the repo root::
 
     .venv\\Scripts\\python.exe py\\main_authored.py gen-mam-parsed-docs
 
-Output goes to ../MAM-parsed/gh-pages/reading_mam_parsed_plus.html.
-Body content lives in reading_mam_parsed_plus_body.py.
+Output goes to ../MAM-parsed/gh-pages/mpplus.html.
+Body content lives in mpplus_body.py.
 """
 
 from mb_misc import mb_html
 from author_util import author
-from author import reading_mam_parsed_cmn as cmn
-from author import reading_mam_parsed_plus_body as body
+from author import mp_cmn as cmn
+from author import mpplus_body as body
 
-_FNAME = "reading_mam_parsed_plus.html"
+_FNAME = "mpplus.html"
 _TITLE = "Reading MAM-parsed-plus"
 
 
 def gen_html_file(tdm_ch):
-    """Generate reading_mam_parsed_plus.html in the given output directory."""
+    """Generate mpplus.html in the given output directory."""
     cbody = _build_body()
     return author.help_gen_html_file(__file__, tdm_ch, _FNAME, _TITLE, cbody)
 

@@ -6,17 +6,17 @@ To regenerate the output HTML, run from the repo root::
 
     .venv\\Scripts\\python.exe py\\main_authored.py gen-mam-parsed-docs
 
-Output goes to ../MAM-parsed/gh-pages/reading_mam_parsed_plus_kaful.html.
+Output goes to ../MAM-parsed/gh-pages/mpplus_kaful.html.
 """
 
 from mb_misc import mb_html
 from author_util import author
 from author_util import json_block
 
-_FNAME = "reading_mam_parsed_plus_kaful.html"
+_FNAME = "mpplus_kaful.html"
 _TITLE = "Dual-trope text"
 
-_PLUS_DOC = "reading_mam_parsed_plus.html"
+_PLUS_DOC = "mpplus.html"
 
 _JSON_KAFUL = """\
 {

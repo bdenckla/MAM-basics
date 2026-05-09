@@ -5,11 +5,11 @@ that are written by the repo owner and rendered from Python source data.
 Subcommands:
   gen-misc             (default) Write misc authored HTML docs to
                        MAM-with-doc/gh-pages/misc/.
-  gen-mam-parsed-docs  Write reading_mam_parsed_plain.html and
-                       reading_mam_parsed_plus.html to MAM-parsed/gh-pages/.
-                       Run this after editing py/author/reading_mam_parsed_plain.py,
-                       py/author/reading_mam_parsed_plus.py, or
-                       py/author/reading_mam_parsed_plus_body.py.
+  gen-mam-parsed-docs  Write mpplain.html and
+                       mpplus.html to MAM-parsed/gh-pages/.
+                       Run this after editing py/author/mpplain.py,
+                       py/author/mpplus.py, or
+                       py/author/mpplus_body.py.
 """
 
 import argparse
@@ -32,13 +32,13 @@ from author import rocc_4_mid_word_ga3ya_with_shewa
 from author import he_ws_intro_to_mam_gray_maqaf_1 as gray_maqaf
 from author import he_ws_intro_to_mam_pasleg as pasleg
 from author import the_next_700_bibles
-from author import reading_mam_parsed_plain
-from author import reading_mam_parsed_plus
-from author import reading_mam_parsed_plus_aot
-from author import reading_mam_parsed_plus_kq_special
-from author import reading_mam_parsed_plus_haarah_2
-from author import reading_mam_parsed_plus_kaful
-from author import reading_mam_parsed_plus_good_ending
+from author import mpplain
+from author import mpplus
+from author import mpplus_aot
+from author import mpplus_kq_special
+from author import mpplus_haarah_2
+from author import mpplus_kaful
+from author import mpplus_good_ending
 
 
 def _gen_index_html(top_dir_misc, index_entries):
@@ -96,13 +96,13 @@ def cmd_gen_mam_parsed_docs(_args):
     styles_mam_parsed.make_css_file_for_mam_parsed(str(out_dir / "style.css"))
     # Write HTML docs
     tdm_ch = str(out_dir), "style.css"
-    reading_mam_parsed_plain.gen_html_file(tdm_ch)
-    reading_mam_parsed_plus.gen_html_file(tdm_ch)
-    reading_mam_parsed_plus_aot.gen_html_file(tdm_ch)
-    reading_mam_parsed_plus_kq_special.gen_html_file(tdm_ch)
-    reading_mam_parsed_plus_haarah_2.gen_html_file(tdm_ch)
-    reading_mam_parsed_plus_kaful.gen_html_file(tdm_ch)
-    reading_mam_parsed_plus_good_ending.gen_html_file(tdm_ch)
+    mpplain.gen_html_file(tdm_ch)
+    mpplus.gen_html_file(tdm_ch)
+    mpplus_aot.gen_html_file(tdm_ch)
+    mpplus_kq_special.gen_html_file(tdm_ch)
+    mpplus_haarah_2.gen_html_file(tdm_ch)
+    mpplus_kaful.gen_html_file(tdm_ch)
+    mpplus_good_ending.gen_html_file(tdm_ch)
     print(f"Generated MAM-parsed docs in {out_dir}")
 
 

@@ -6,17 +6,17 @@ To regenerate the output HTML, run from the repo root::
 
     .venv\\Scripts\\python.exe py\\main_authored.py gen-mam-parsed-docs
 
-Output goes to ../MAM-parsed/gh-pages/reading_mam_parsed_plus_aot.html.
+Output goes to ../MAM-parsed/gh-pages/mpplus_aot.html.
 """
 
 from mb_misc import mb_html
 from author_util import author
 from author_util import json_block
 
-_FNAME = "reading_mam_parsed_plus_aot.html"
+_FNAME = "mpplus_aot.html"
 _TITLE = "Special letter marking"
 
-_PLUS_DOC = "reading_mam_parsed_plus.html"
+_PLUS_DOC = "mpplus.html"
 
 _JSON_SPECIAL_LETTER = """\
 {
@@ -32,7 +32,7 @@ _JSON_SPECIAL_LETTER = """\
 
 
 def gen_html_file(tdm_ch):
-    """Generate reading_mam_parsed_plus_aot.html in the given output directory."""
+    """Generate mpplus_aot.html in the given output directory."""
     cbody = _build_body()
     return author.help_gen_html_file(__file__, tdm_ch, _FNAME, _TITLE, cbody)
 
