@@ -184,6 +184,9 @@ def dollar_sub(contents):
     return dollar_sub_g.dollar_sub_g(_DOLLAR_SUB_DISPATCH, contents)
 
 
+_WIDE_COL_NAMES = frozenset(["Description", "Purpose"])
+
+
 def std_table(
     table_data,
     coldirs=None,
@@ -193,9 +196,25 @@ def std_table(
     if coldirs:
         assert not tdattrs
         tdattrs = [{"dir": coldir} for coldir in coldirs]
+    thattrs = None
+    if arg_to_troh:
+        wide_indices = {
+            i for i, name in enumerate(arg_to_troh) if name in _WIDE_COL_NAMES
+        }
+        if wide_indices:
+            n = len(arg_to_troh)
+            thattrs = [
+                {"class": "wide-col"} if i in wide_indices else None for i in range(n)
+            ]
+            tdattrs = [
+                _merge_wide_class(
+                    None if tdattrs is None else tdattrs[i], i, wide_indices
+                )
+                for i in range(n)
+            ]
     args_to_table = sl_map((_std_row_of_data, tdattrs), _de_dict(table_data))
     if arg_to_troh:
-        header_row = _std_row_of_headers(arg_to_troh)
+        header_row = _std_row_of_headers(arg_to_troh, thattrs)
         args_to_table = [header_row, *args_to_table]
     return table_c(args_to_table)
 
@@ -260,8 +279,20 @@ def _std_row_of_data(tdattrs, cells):
     return mb_html.table_row_of_data(sl_map(_std_cell, cells), tdattrs)
 
 
-def _std_row_of_headers(cells):
-    return mb_html.table_row_of_headers(sl_map(_std_cell, cells))
+def _std_row_of_headers(cells, thattrs=None):
+    if thattrs is None:
+        return mb_html.table_row_of_headers(sl_map(_std_cell, cells))
+    ths = [mb_html.table_header(_std_cell(c), a) for c, a in zip(cells, thattrs)]
+    return mb_html.table_row(ths)
+
+
+def _merge_wide_class(attr, col_index, wide_indices):
+    if col_index not in wide_indices:
+        return attr
+    if attr is None:
+        return {"class": "wide-col"}
+    existing = attr.get("class", "")
+    return {**attr, "class": (existing + " wide-col").strip()}
 
 
 def _std_cell(htel):
