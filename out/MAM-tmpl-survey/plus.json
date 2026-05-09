@@ -47,22 +47,22 @@
     {
       "wtel_type": "tmpl",
       "wtel_subtype": "מ:אין פרשה בתחילת פרק",
-      "count_C": 0,
-      "count_D": 139,
+      "count_C": 139,
+      "count_D": 0,
       "count_E": 0
     },
     {
       "wtel_type": "tmpl",
       "wtel_subtype": "מ:אין פרשה בתחילת פרק בספרי אמ\"ת",
-      "count_C": 0,
-      "count_D": 33,
+      "count_C": 33,
+      "count_D": 0,
       "count_E": 0
     },
     {
       "wtel_type": "tmpl",
       "wtel_subtype": "מ:אין רווח של פרשה בתחילת פרשת השבוע",
-      "count_C": 0,
-      "count_D": 1,
+      "count_C": 1,
+      "count_D": 0,
       "count_E": 0
     },
     {
@@ -75,15 +75,15 @@
     {
       "wtel_type": "tmpl",
       "wtel_subtype": "מ:הערה",
-      "count_C": 0,
-      "count_D": 4,
+      "count_C": 4,
+      "count_D": 0,
       "count_E": 27
     },
     {
       "wtel_type": "tmpl",
       "wtel_subtype": "מ:הערה-2",
-      "count_C": 0,
-      "count_D": 4,
+      "count_C": 4,
+      "count_D": 0,
       "count_E": 27
     },
     {
@@ -124,22 +124,22 @@
     {
       "wtel_type": "tmpl",
       "wtel_subtype": "מ:ספר חדש",
-      "count_C": 0,
-      "count_D": 24,
+      "count_C": 24,
+      "count_D": 0,
       "count_E": 0
     },
     {
       "wtel_type": "tmpl",
       "wtel_subtype": "מ:עלייה",
-      "count_C": 532,
-      "count_D": 0,
+      "count_C": 0,
+      "count_D": 532,
       "count_E": 0
     },
     {
       "wtel_type": "tmpl",
       "wtel_subtype": "מ:פסוק",
-      "count_C": 895,
-      "count_D": 0,
+      "count_C": 0,
+      "count_D": 895,
       "count_E": 0
     },
     {
@@ -166,8 +166,8 @@
     {
       "wtel_type": "tmpl",
       "wtel_subtype": "מ:קישור בהערה",
-      "count_C": 0,
-      "count_D": 1,
+      "count_C": 1,
+      "count_D": 0,
       "count_E": 27
     },
     {
@@ -187,22 +187,22 @@
     {
       "wtel_type": "tmpl",
       "wtel_subtype": "מ:רווח בתרי עשר בפסוק הראשון",
-      "count_C": 0,
-      "count_D": 12,
+      "count_C": 12,
+      "count_D": 0,
       "count_E": 0
     },
     {
       "wtel_type": "tmpl",
       "wtel_subtype": "מ:רווח לספר בתהלים בפסוק הראשון",
-      "count_C": 0,
-      "count_D": 5,
+      "count_C": 5,
+      "count_D": 0,
       "count_E": 0
     },
     {
       "wtel_type": "tmpl",
       "wtel_subtype": "מ:ששש",
-      "count_C": 0,
-      "count_D": 100,
+      "count_C": 100,
+      "count_D": 0,
       "count_E": 228
     },
     {
@@ -215,36 +215,36 @@
     {
       "wtel_type": "tmpl",
       "wtel_subtype": "נוסח",
-      "count_C": 35,
-      "count_D": 273,
+      "count_C": 273,
+      "count_D": 35,
       "count_E": 3583
     },
     {
       "wtel_type": "tmpl",
       "wtel_subtype": "סס",
-      "count_C": 0,
-      "count_D": 1513,
+      "count_C": 1513,
+      "count_D": 0,
       "count_E": 53
     },
     {
       "wtel_type": "tmpl",
       "wtel_subtype": "ססס",
-      "count_C": 0,
-      "count_D": 324,
+      "count_C": 324,
+      "count_D": 0,
       "count_E": 106
     },
     {
       "wtel_type": "tmpl",
       "wtel_subtype": "פפ",
-      "count_C": 0,
-      "count_D": 1544,
+      "count_C": 1544,
+      "count_D": 0,
       "count_E": 11
     },
     {
       "wtel_type": "tmpl",
       "wtel_subtype": "פפפ",
-      "count_C": 0,
-      "count_D": 3,
+      "count_C": 3,
+      "count_D": 0,
       "count_E": 15
     },
     {
@@ -271,8 +271,8 @@
     {
       "wtel_type": "tmpl",
       "wtel_subtype": "ר1",
-      "count_C": 0,
-      "count_D": 2,
+      "count_C": 2,
+      "count_D": 0,
       "count_E": 4618
     },
     {
@@ -292,15 +292,15 @@
     {
       "wtel_type": "tmpl",
       "wtel_subtype": "ר4",
-      "count_C": 0,
-      "count_D": 4269,
+      "count_C": 4269,
+      "count_D": 0,
       "count_E": 0
     },
     {
       "wtel_type": "tmpl",
       "wtel_subtype": "ש",
-      "count_C": 1,
-      "count_D": 14,
+      "count_C": 14,
+      "count_D": 1,
       "count_E": 3273
     }
   ],
@@ -426,21 +426,21 @@
     },
     {
       "wtel_subtype": "מ:אין פרשה בתחילת פרק",
-      "stack": "D",
+      "stack": "C",
       "count": 139,
       "count_non_nusach": 138,
       "count_nusach": 1
     },
     {
       "wtel_subtype": "מ:אין פרשה בתחילת פרק בספרי אמ\"ת",
-      "stack": "D",
+      "stack": "C",
       "count": 33,
       "count_non_nusach": 32,
       "count_nusach": 1
     },
     {
       "wtel_subtype": "מ:אין רווח של פרשה בתחילת פרשת השבוע",
-      "stack": "D",
+      "stack": "C",
       "count": 1,
       "count_non_nusach": 1,
       "count_nusach": 0
@@ -475,7 +475,7 @@
     },
     {
       "wtel_subtype": "מ:הערה",
-      "stack": "D",
+      "stack": "C",
       "count": 4,
       "count_non_nusach": 4,
       "count_nusach": 0
@@ -489,7 +489,7 @@
     },
     {
       "wtel_subtype": "מ:הערה-2",
-      "stack": "D",
+      "stack": "C",
       "count": 4,
       "count_non_nusach": 0,
       "count_nusach": 4
@@ -587,21 +587,21 @@
     },
     {
       "wtel_subtype": "מ:ספר חדש",
-      "stack": "D",
+      "stack": "C",
       "count": 24,
       "count_non_nusach": 24,
       "count_nusach": 0
     },
     {
       "wtel_subtype": "מ:עלייה",
-      "stack": "C/מ:פסוק",
+      "stack": "D/מ:פסוק",
       "count": 532,
       "count_non_nusach": 521,
       "count_nusach": 11
     },
     {
       "wtel_subtype": "מ:פסוק",
-      "stack": "C",
+      "stack": "D",
       "count": 895,
       "count_non_nusach": 860,
       "count_nusach": 35
@@ -650,7 +650,7 @@
     },
     {
       "wtel_subtype": "מ:קישור בהערה",
-      "stack": "D",
+      "stack": "C",
       "count": 1,
       "count_non_nusach": 0,
       "count_nusach": 1
@@ -706,21 +706,21 @@
     },
     {
       "wtel_subtype": "מ:רווח בתרי עשר בפסוק הראשון",
-      "stack": "D",
+      "stack": "C",
       "count": 12,
       "count_non_nusach": 12,
       "count_nusach": 0
     },
     {
       "wtel_subtype": "מ:רווח לספר בתהלים בפסוק הראשון",
-      "stack": "D",
+      "stack": "C",
       "count": 5,
       "count_non_nusach": 5,
       "count_nusach": 0
     },
     {
       "wtel_subtype": "מ:ששש",
-      "stack": "D",
+      "stack": "C",
       "count": 100,
       "count_non_nusach": 100,
       "count_nusach": 0
@@ -742,15 +742,15 @@
     {
       "wtel_subtype": "נוסח",
       "stack": "C",
-      "count": 35,
-      "count_non_nusach": 35,
+      "count": 273,
+      "count_non_nusach": 273,
       "count_nusach": 0
     },
     {
       "wtel_subtype": "נוסח",
       "stack": "D",
-      "count": 273,
-      "count_non_nusach": 273,
+      "count": 35,
+      "count_non_nusach": 35,
       "count_nusach": 0
     },
     {
@@ -769,7 +769,7 @@
     },
     {
       "wtel_subtype": "סס",
-      "stack": "D",
+      "stack": "C",
       "count": 1513,
       "count_non_nusach": 1444,
       "count_nusach": 69
@@ -790,7 +790,7 @@
     },
     {
       "wtel_subtype": "ססס",
-      "stack": "D",
+      "stack": "C",
       "count": 324,
       "count_non_nusach": 310,
       "count_nusach": 14
@@ -804,14 +804,14 @@
     },
     {
       "wtel_subtype": "פפ",
-      "stack": "D",
+      "stack": "C",
       "count": 1541,
       "count_non_nusach": 1447,
       "count_nusach": 94
     },
     {
       "wtel_subtype": "פפ",
-      "stack": "D/מ:הערה-2",
+      "stack": "C/מ:הערה-2",
       "count": 3,
       "count_non_nusach": 0,
       "count_nusach": 3
@@ -839,7 +839,7 @@
     },
     {
       "wtel_subtype": "פפפ",
-      "stack": "D",
+      "stack": "C",
       "count": 3,
       "count_non_nusach": 2,
       "count_nusach": 1
@@ -874,7 +874,7 @@
     },
     {
       "wtel_subtype": "ר1",
-      "stack": "D",
+      "stack": "C",
       "count": 2,
       "count_non_nusach": 0,
       "count_nusach": 2
@@ -902,7 +902,7 @@
     },
     {
       "wtel_subtype": "ר4",
-      "stack": "D",
+      "stack": "C",
       "count": 4269,
       "count_non_nusach": 4231,
       "count_nusach": 38
@@ -910,16 +910,16 @@
     {
       "wtel_subtype": "ש",
       "stack": "C",
-      "count": 1,
+      "count": 14,
       "count_non_nusach": 0,
-      "count_nusach": 1
+      "count_nusach": 14
     },
     {
       "wtel_subtype": "ש",
       "stack": "D",
-      "count": 14,
+      "count": 1,
       "count_non_nusach": 0,
-      "count_nusach": 14
+      "count_nusach": 1
     },
     {
       "wtel_subtype": "ש",
