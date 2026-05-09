@@ -38,6 +38,7 @@ from author import reading_mam_parsed_plus_aot
 from author import reading_mam_parsed_plus_kq_special
 from author import reading_mam_parsed_plus_haarah_2
 from author import reading_mam_parsed_plus_kaful
+from author import reading_mam_parsed_plus_good_ending
 
 
 def _gen_index_html(top_dir_misc, index_entries):
@@ -101,6 +102,7 @@ def cmd_gen_mam_parsed_docs(_args):
     reading_mam_parsed_plus_kq_special.gen_html_file(tdm_ch)
     reading_mam_parsed_plus_haarah_2.gen_html_file(tdm_ch)
     reading_mam_parsed_plus_kaful.gen_html_file(tdm_ch)
+    reading_mam_parsed_plus_good_ending.gen_html_file(tdm_ch)
     print(f"Generated MAM-parsed docs in {out_dir}")
 
 

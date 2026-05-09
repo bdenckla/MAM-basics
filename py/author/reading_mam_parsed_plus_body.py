@@ -13,6 +13,7 @@ _AOT_DOC = "reading_mam_parsed_plus_aot.html"
 _KQ_SPECIAL_DOC = "reading_mam_parsed_plus_kq_special.html"
 _HAARAH_2_DOC = "reading_mam_parsed_plus_haarah_2.html"
 _KAFUL_DOC = "reading_mam_parsed_plus_kaful.html"
+_GOOD_ENDING_DOC = "reading_mam_parsed_plus_good_ending.html"
 
 
 # ---------------------------------------------------------------------------
@@ -46,23 +47,6 @@ _JSON_BOOK39_SKEL = """\
   "sub_book_name": null,
   "chapters": {},
   "good_ending_plus": null
-}"""
-
-_JSON_GOOD_ENDING = """\
-{
-  "last_chapnver": ["סו", "כד"],
-  "wikitext_element": {
-    "tmpl_name": "נוסח",
-    "tmpl_params": {
-      "1": {
-        "tmpl_name": "מ:סיום בטוב",
-        "tmpl_params": {
-          "1": "והיה מדי ... אמר יהוה"
-        }
-      },
-      "2": "=מנהג יפה ... בכתי\\"ל)."
-    }
-  }
 }"""
 
 _JSON_D_COL_FIRST = """\
@@ -306,29 +290,6 @@ def s_book39():
         author.heading_level_2("Book39 entry"),
         json_block.json_block_raw_html(_JSON_BOOK39_SKEL),
         author.std_table(_book39_rows, arg_to_troh=["Key", "Type", "Description"]),
-        author.heading_level_3(mb_html.code("good_ending_plus")),
-        author.para(
-            [
-                "Four books of the Bible end with a verse of rather negative tone."
-                " There is a tradition that prevents these verses from being the last"
-                " verses recited. The tradition is to recite the next-to-last verse"
-                " after reciting the last verse. To facilitate this tradition, some"
-                " publications repeat the next-to-last verse, in unpointed form,"
-                " after the officially-last verse. The ",
-                mb_html.code("good_ending_plus"),
-                " key captures this: it is ",
-                mb_html.code("null"),
-                " for most books (including Job)."
-                " For the 4 books/book-parts that have it"
-                " (Isaiah, Malachi, Lamentations, Ecclesiastes),"
-                " it is an object; see ",
-                mb_html.anchor_h(
-                    ["the ", author.hbo("מ:סיום בטוב"), " section below"],
-                    "#good-ending-example",
-                ),
-                " for a full example.",
-            ]
-        ),
     ]
 
 
@@ -554,28 +515,16 @@ def s_common_templates():
         ),
         author.heading_level_3("Other templates"),
         author.std_table(cmn.OTHER_ROWS, arg_to_troh=["Template", "Purpose"]),
-        author.heading_level_3(
-            ["Good-ending example — ", author.hbo("מ:סיום בטוב")],
-            {"id": "good-ending-example"},
-        ),
         author.para(
             [
-                "The ",
+                "For the ",
                 mb_html.code("good_ending_plus"),
-                " object's ",
-                mb_html.code("wikitext_element"),
-                " is a ",
-                author.hbo("נוסח"),
-                " template wrapping ",
-                author.hbo("מ:סיום בטוב"),
-                ". Example from Isaiah:",
+                " JSON format and a worked example, see ",
+                mb_html.anchor_h(
+                    ["the ", mb_html.code("good_ending_plus"), " dedicated page"],
+                    _GOOD_ENDING_DOC,
+                ),
+                ".",
             ]
-        ),
-        json_block.json_block_with_notes_raw_html(
-            _JSON_GOOD_ENDING,
-            {
-                9: "Unpointed text of Isa 66:23 (the next-to-last verse of Isaiah)",
-                12: 'Documentation note on the good-ending tradition ("2=" param of the enclosing nusach template)',
-            },
         ),
     ]
