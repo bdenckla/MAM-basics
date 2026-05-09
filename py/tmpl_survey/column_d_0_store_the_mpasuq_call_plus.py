@@ -1,4 +1,5 @@
 from mb_cmn import mam_bknas
+from mb_cmn import hebrew_verse_numerals as hvn
 from mb_cmn import ws_tmpl2 as wtp2
 from tmpl_survey import column_d_alirec as ar
 
@@ -25,10 +26,19 @@ def _store_the_mpasuq_call_itw(io_weeklies, bscv, wtel):
     bk39na = mam_bknas.he_bk39_name(bk24na, sub_bkna)
     params = wtel["tmpl_params"]
     assert params["1"] == bk39na
-    assert params["2"] == chnu
-    assert params["3"] == psv_psn
+    assert _normalize_num_arg(params["2"]) == chnu
+    assert _normalize_num_arg(params["3"]) == psv_psn
     bar_bcv = "|".join((bk39na, chnu, psv_psn))
     _store_the_mpasuq_call_itp(io_weeklies, bar_bcv, params)
+
+
+def _normalize_num_arg(num_arg):
+    """Normalize Hebrew or numeric-string chapter/verse args to numeric strings."""
+    if num_arg in ("0", "תתת"):
+        return num_arg
+    if num_arg.isdigit():
+        return num_arg
+    return str(hvn.STR_TO_INT_DIC[num_arg])
 
 
 def _store_the_mpasuq_call_itp(io_weeklies, bar_bcv, params):

@@ -45,7 +45,7 @@ class StepRecord:
 
 def _run_vendored_tmpl_survey_toy():
     subprocess.run(
-        [sys.executable, "py-examples/main_tmpl_survey_toy.py"],
+        [sys.executable, "py-examples/main_tmpl_survey_toy_example.py"],
         cwd=_REPOS / "MAM-parsed",
         check=True,
     )
@@ -109,7 +109,7 @@ _STEPS = [
     StepRecord(
         "vendored-tmpl-survey-toy",
         _run_vendored_tmpl_survey_toy,
-        "runs MAM-parsed/py-examples/main_tmpl_survey_toy.py as subprocess; must come after parse-go",
+        "runs MAM-parsed/py-examples/main_tmpl_survey_toy_example.py as subprocess; must come after parse-go",
     ),
     StepRecord(
         "mam-simple",
