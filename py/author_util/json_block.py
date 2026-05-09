@@ -22,6 +22,16 @@ def json_block_raw_html(json_text: str):
     return mb_html.raw_html(_build_pre_html(json_text))
 
 
+def json_block_with_notes_raw_html(json_text: str, notes: dict):
+    """Return a raw-HTML htel with a line-numbered <pre> and a notes list.
+
+    notes: dict mapping 1-based line numbers to plain-text annotation strings.
+    """
+    pre_html = _build_pre_html(json_text, with_line_nums=True)
+    notes_html = _build_notes_html(notes)
+    return mb_html.raw_html(pre_html + notes_html)
+
+
 # ---------------------------------------------------------------------------
 # Internal helpers
 # ---------------------------------------------------------------------------
@@ -58,11 +68,45 @@ def _span(text: str, color_cls: str) -> str:
     return f"<span{cls_attr}>{escaped}</span>"
 
 
-def _build_pre_html(json_text: str) -> str:
-    spans = [
-        _span(value, _token_color_class(ttype))
-        for ttype, value in lex(json_text, JsonLexer())
-    ]
-    code_html = "".join(spans)
-    code_html = code_html.replace("...", '<span class="ellipsis">...</span>')
+def _split_by_newlines(tokens):
+    """Split a Pygments token list into a list of per-line token lists.
+
+    Newline characters are consumed (not included in the output tokens).
+    Pygments typically appends a trailing newline; the resulting empty last
+    line is dropped.
+    """
+    lines = [[]]
+    for ttype, value in tokens:
+        if "\n" in value:
+            parts = value.split("\n")
+            lines[-1].append((ttype, parts[0]))
+            for part in parts[1:]:
+                lines.append([(ttype, part)] if part else [])
+        else:
+            lines[-1].append((ttype, value))
+    while lines and all(not v for _, v in lines[-1]):
+        lines.pop()
+    return lines
+
+
+def _build_pre_html(json_text: str, with_line_nums: bool = False) -> str:
+    lines_of_tokens = _split_by_newlines(list(lex(json_text, JsonLexer())))
+    width = len(str(len(lines_of_tokens)))
+    line_htmls = []
+    for i, line_tokens in enumerate(lines_of_tokens, 1):
+        line_html = "".join(_span(v, _token_color_class(t)) for t, v in line_tokens)
+        line_html = line_html.replace("...", '<span class="ellipsis">...</span>')
+        if with_line_nums:
+            ln = f'<span class="ln">{i:{width}d}</span>'
+            line_html = ln + line_html
+        line_htmls.append(line_html)
+    code_html = "\n".join(line_htmls)
     return f'<pre class="json-block">{code_html}</pre>'
+
+
+def _build_notes_html(notes: dict) -> str:
+    items = "".join(
+        f"<dt>Line {ln}</dt><dd>{html_mod.escape(text)}</dd>"
+        for ln, text in sorted(notes.items())
+    )
+    return f'<dl class="json-notes">{items}</dl>'

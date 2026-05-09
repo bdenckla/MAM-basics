@@ -60,12 +60,19 @@ _JSON_GOOD_ENDING = """\
   }
 }"""
 
-_JSON_D_COLUMN = """\
-// First verse (א):
-[{"tmpl_name": "מ:פסוק", "tmpl_params": {"1": "איוב", "2": "א", "3": "א", "סדר": "א"}}]
+_JSON_D_COL_FIRST = """\
+[
+    ...,
+    [{"tmpl_name": "מ:פסוק", "tmpl_params": {"1": "איוב", "2": "א", "3": "א", "סדר": "א"}}],
+    ...
+]"""
 
-// Subsequent verses (ב, ג, ...):
-[]"""
+_JSON_D_COL_SUBSEQ = """\
+[
+    ...,
+    [],
+    ...
+]"""
 
 _JSON_TMPL_FORMAT = """\
 {
@@ -343,10 +350,14 @@ def s_book39():
                 " for most books (including Job)."
                 " For the 4 books/book-parts that have it"
                 " (Isaiah, Malachi, Lamentations, Ecclesiastes),"
-                " it is an object, e.g.:",
+                " it is an object; see ",
+                mb_html.anchor_h(
+                    ["the ", author.hbo("מ:סיום בטוב"), " section below"],
+                    "#good-ending-example",
+                ),
+                " for a full example.",
             ]
         ),
-        json_block.json_block_raw_html(_JSON_GOOD_ENDING),
     ]
 
 
@@ -395,7 +406,10 @@ def s_chapter_verse():
                 ":",
             ]
         ),
-        json_block.json_block_raw_html(_JSON_D_COLUMN),
+        author.para(["Job 1:1 (", author.hbo("א"), " — first verse of the chapter):"]),
+        json_block.json_block_raw_html(_JSON_D_COL_FIRST),
+        author.para(["Job 1:2 (", author.hbo("ב"), " — any subsequent verse):"]),
+        json_block.json_block_raw_html(_JSON_D_COL_SUBSEQ),
         author.heading_level_3("E column (index 2): Verse text"),
         author.para(
             [
@@ -691,6 +705,30 @@ def s_common_templates():
         ),
         author.heading_level_3("Other templates"),
         author.std_table(cmn.OTHER_ROWS, arg_to_troh=["Template", "Purpose"]),
+        author.heading_level_3(
+            ["Good-ending example — ", author.hbo("מ:סיום בטוב")],
+            {"id": "good-ending-example"},
+        ),
+        author.para(
+            [
+                "The ",
+                mb_html.code("good_ending_plus"),
+                " object's ",
+                mb_html.code("wikitext_element"),
+                " is a ",
+                author.hbo("נוסח"),
+                " template wrapping ",
+                author.hbo("מ:סיום בטוב"),
+                ". Example from Isaiah:",
+            ]
+        ),
+        json_block.json_block_with_notes_raw_html(
+            _JSON_GOOD_ENDING,
+            {
+                9: "Unpointed text of Isa 66:23 (the next-to-last verse of Isaiah)",
+                12: 'Documentation note on the good-ending tradition ("2=" param of the enclosing nusach template)',
+            },
+        ),
     ]
 
 

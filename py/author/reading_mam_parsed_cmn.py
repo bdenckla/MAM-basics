@@ -181,7 +181,7 @@ OTHER_ROWS = [
     ],
     [
         author.hbo("מ:סיום בטוב"),
-        "Good ending. Repeats the penultimate verse so public reading ends positively. Used at the end of Lamentations, Ecclesiastes, Isaiah, and Malachi.",
+        "Good ending. Provides an unpointed version of the next-to-last verse. Used at the end of Lamentations, Ecclesiastes, Isaiah, and Malachi.",
     ],
     [
         author.hbo("מ:טעם ומתג באות אחת"),
