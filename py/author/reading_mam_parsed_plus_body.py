@@ -254,7 +254,7 @@ def s_intro():
                 "Book39 entries (including good-ending data)",
                 "Chapter and verse structure",
                 "Template format (expanded representation)",
-                "Plus-only templates",
+                "Selected templates",
                 "Common templates in the verse-text column",
                 "Differences from plain format",
             ]
@@ -526,7 +526,7 @@ def s_plus_only_templates():
         ],
     ]
     return [
-        author.heading_level_2("Plus-only templates"),
+        author.heading_level_2("Selected templates"),
         author.heading_level_3(
             [
                 "Special letter marking \u2014 ",
