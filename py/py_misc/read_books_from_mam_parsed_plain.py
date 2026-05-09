@@ -72,9 +72,18 @@ def _initial_book(bk39):
 _KEY_FOR_ZOT = {"0": "chapter_prefixes", "תתת": "chapter_suffixes"}
 
 
+def _num_key_to_int(num_key):
+    """Convert a chapter/verse key to int (numeric string or Hebrew numeral)."""
+    if isinstance(num_key, int):
+        return num_key
+    if num_key.isdigit():
+        return int(num_key)
+    return hvn.STR_TO_INT_DIC[num_key]
+
+
 def _read_parsed_plain_verse(b_ic_hv, minirow, last_real_bcvt, io_books):
-    bk39id, int_chnu, he_vrnu = b_ic_hv
-    int_vrnu = hvn.STR_TO_INT_DIC[he_vrnu]
+    bk39id, int_chnu, vrnu_key = b_ic_hv
+    int_vrnu = _num_key_to_int(vrnu_key)
     cvt = tbn.mk_cvtmam(int_chnu, int_vrnu)
     my_utils.init_at_key(io_books[bk39id]["verses_plain"], cvt, minirow)
     if last_real_bcvt is not None:
@@ -95,7 +104,8 @@ def _add_next_cp(next_cp, last_real_bcvt, io_books):
 #
 # Pseudo-numbers are '0' and 'תתת'.
 # Aka "zot", aka zero or triple-tav.
-# Real numbers are represented as Hebrew numerals, e.g. 'א'.
+# Real numbers are represented as numeric strings ("1", "2", ...)
+# in current plain output, with backward compatibility for Hebrew numerals.
 #
 # So, in all:
 #
@@ -122,10 +132,10 @@ def _read_parsed_plain_chapters(bk39id, chapters, last_real_bcvt, io_books):
     #     with the elements being cells C, D, & E, in parsed form.
     # cvt: c, v, t. See note above.
     # Can we get rid of this (nested) "for" loop?
-    for he_chnu, ch_contents in chapters.items():
-        int_chnu = hvn.STR_TO_INT_DIC[he_chnu]
-        for he_psv_psn, psv_contents in ch_contents.items():
-            b_ic_hv = bk39id, int_chnu, he_psv_psn
+    for chnu_key, ch_contents in chapters.items():
+        int_chnu = _num_key_to_int(chnu_key)
+        for psv_psn, psv_contents in ch_contents.items():
+            b_ic_hv = bk39id, int_chnu, psv_psn
             last_real_bcvt = _read_parsed_plain_psv(
                 b_ic_hv, psv_contents, last_real_bcvt, io_books
             )
@@ -133,9 +143,9 @@ def _read_parsed_plain_chapters(bk39id, chapters, last_real_bcvt, io_books):
 
 
 def _read_parsed_plain_psv(b_ic_hv, psv_contents, last_real_bcvt, io_books):
-    bk39id, int_chnu, he_psv_psn = b_ic_hv
+    bk39id, int_chnu, psv_psn = b_ic_hv
     minirow = _make_minirowext(*psv_contents)
-    if he_psv_psn not in ("0", "תתת"):
+    if psv_psn not in ("0", "תתת"):
         last_real_bcvt = _read_parsed_plain_verse(
             b_ic_hv, minirow, last_real_bcvt, io_books
         )
@@ -143,7 +153,7 @@ def _read_parsed_plain_psv(b_ic_hv, psv_contents, last_real_bcvt, io_books):
         assert not minirow.DP
         assert not minirow.EP
         # zot: zero or triple-tav, i.e. not a real verse number
-        zot = he_psv_psn  # we know it is '0' or 'תתת'
+        zot = psv_psn  # we know it is '0' or 'תתת'
         kfz = _KEY_FOR_ZOT[zot]
         my_utils.init_at_key(io_books[bk39id][kfz], int_chnu, minirow.CP)
     return last_real_bcvt

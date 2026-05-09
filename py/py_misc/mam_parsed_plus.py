@@ -1,5 +1,6 @@
 """Exports add_plus_stuff"""
 
+from mb_cmn import hebrew_verse_numerals as hvn
 from mb_cmn import ws_tmpl2 as wtp
 from mb_cmn import ws_tmpl1 as wtp1
 from mpplus import mpplus_scrdfftar
@@ -37,9 +38,11 @@ def _aps_to_bk39(bk39):
     out_bk39["good_ending_plus"] = _good_ending(chapters)
     out_bk39["chapters"] = {}
     # Can we get rid of this "for" loop?
-    # Chapter numbers are now integers (from CSV conversion in Phase 1)
-    for chnu, ch_contents in chapters.items():
-        out_bk39["chapters"][chnu] = _aps_to_chapter(ch_contents)
+    # Source may use Hebrew numerals or numeric strings; plus uses numeric strings.
+    for he_chnu, ch_contents in chapters.items():
+        out_bk39["chapters"][_he_to_numeric_str_or_keep(he_chnu)] = _aps_to_chapter(
+            ch_contents
+        )
     return out_bk39
 
 
@@ -48,15 +51,30 @@ def _aps_to_chapter(chapter):
     Add "plus stuff" (extras) to the "chapter" argument.
     The "chapter" argument is a dict that maps a psv_psn to a minirow.
     A psv_psn is a pseudo-verse pseudo-number (0, 1..N, תתת).
-    Verse numbers are integers; pseudo-verses are strings (0, תתת).
+    In plus output, true verse numbers are numeric strings ("1", "2", ...).
+    Pseudo-verses ("0", "תתת") are omitted.
     """
     out_chapter = {}
     # Can we get rid of this "for" loop?
-    for psv_psn, minirow in chapter.items():
-        if _is_truly_a_verse(psv_psn):
+    for he_psv_psn, minirow in chapter.items():
+        if _is_truly_a_verse(he_psv_psn):
             minirow1 = _aps_to_minirow_phase_1(minirow)
-            out_chapter[psv_psn] = _aps_to_minirow_phase_2(minirow1)
+            out_chapter[_he_to_numeric_str_or_keep(he_psv_psn)] = (
+                _aps_to_minirow_phase_2(minirow1)
+            )
     return out_chapter
+
+
+def _he_to_numeric_str_or_keep(he_num):
+    """Convert Hebrew numeral strings to numeric strings for plus output.
+
+    If a key is already a numeric string (for example, "21"), keep it as-is.
+    """
+    if he_num in ("0", "תתת"):
+        return he_num
+    if he_num.isdigit():
+        return he_num
+    return str(hvn.STR_TO_INT_DIC[he_num])
 
 
 def _aps_to_minirow_phase_1(minirow):
@@ -122,17 +140,21 @@ def _make_good_ending_entry(chnu_str, vrnu_str, wtel):
 
 
 def _good_ending(chapters):
-    # Chapter and verse numbers are now numeric strings (from CSV conversion in Phase 1)
-    last_chnu = tuple(chapters.keys())[-1]
-    last_chapter = chapters[last_chnu]
-    last_vrnu = tuple(last_chapter.keys())[-2]
+    # Source chapters may be Hebrew numerals or numeric strings.
+    last_he_chnu = tuple(chapters.keys())[-1]
+    last_chapter = chapters[last_he_chnu]
+    last_he_vrnu = tuple(last_chapter.keys())[-2]
     # Good endings are always wrapped in doc templates,
     # and they are the only thing in the CP of a triple-tav row
     # that is wrapped in a doc template.
     # Can we get rid of this "for" loop?
     for wtel in last_chapter["תתת"].CP:
         if wtp1.is_doc_template(wtel):
-            return _make_good_ending_entry(last_chnu, last_vrnu, wtel)
+            return _make_good_ending_entry(
+                _he_to_numeric_str_or_keep(last_he_chnu),
+                _he_to_numeric_str_or_keep(last_he_vrnu),
+                wtel,
+            )
     return None
 
 
@@ -180,5 +202,5 @@ def _is_truly_a_verse(psv_psn):
 #
 # Any other keys in bk39 (and the values they point to) are preserved.
 #
-# The chapters key is assumed to point to a dict that maps a Hebrew
-# chapter numeral to the contents of a chapter.
+# The chapters key is assumed to point to a dict that maps a chapter key
+# (numeric string in current output) to the contents of a chapter.

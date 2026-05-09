@@ -39,14 +39,12 @@ _MAM_CSV_NAME = {
 def _he_numeral_to_int_str_or_keep(he_str):
     """Convert Hebrew numeral string to numeric string, or keep special values as strings.
 
-    Converts Hebrew numerals to string representation of integers (e.g. "א" → "1")
+    Converts Hebrew numerals to string representation of integers (e.g. "א" -> "1")
     to match JSON format where chapter/verse keys are numeric strings.
-    Special values like '0' and 'תתת' are kept as strings to distinguish them
-    from regular chapter/verse numbers.
+    Special values like '0' and 'תתת' are kept as strings.
     """
     if he_str in ("0", "תתת"):
         return he_str
-    # Convert to int then back to string: "א" → 1 → "1"
     int_val = hvn.STR_TO_INT_DIC.get(he_str)
     if int_val is not None:
         return str(int_val)
