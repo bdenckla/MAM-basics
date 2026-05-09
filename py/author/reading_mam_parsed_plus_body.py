@@ -211,6 +211,33 @@ _DIFF_ROWS = [
         ["Added (", mb_html.code("he_to_int"), ")"],
     ],
     ["Words with special letters", "interrupted", "uninterrupted provided"],
+    [
+        [mb_html.code('{"tmpl": [...]}'), " — parsed template trees"],
+        "Present",
+        [
+            "Removed (replaced by ",
+            mb_html.code("tmpl_name"),
+            "/",
+            mb_html.code("tmpl_params"),
+            ")",
+        ],
+    ],
+    [
+        [mb_html.code('{"stmpl": "..."}'), " — stringified templates"],
+        "Present",
+        [
+            "Removed (replaced by ",
+            mb_html.code("tmpl_name"),
+            "/",
+            mb_html.code("tmpl_params"),
+            ")",
+        ],
+    ],
+    [
+        [author.hbo("גלגל-2"), " — galgal accent annotation"],
+        "Present",
+        "Removed (handled differently in plus)",
+    ],
 ]
 
 
@@ -226,20 +253,27 @@ def s_intro():
                 "Top-level structure and header metadata",
                 "Book39 entries (including good-ending data)",
                 "Chapter and verse structure",
-                "Template format (expanded from plain)",
+                "Template format (expanded representation)",
                 "Plus-only templates",
                 "Common templates in the verse-text column",
-                "Templates removed in plus (present in plain)",
-                "Summary comparison with plain format",
+                "Differences from plain format",
             ]
         ),
     ]
 
 
-def s_differences_from_plain():
+def s_plain_differences():
     return [
-        author.heading_level_2("Differences from plain at a glance"),
+        author.heading_level_2("Differences from plain format"),
         author.std_table(_DIFF_ROWS, arg_to_troh=["Feature", "Plain", "Plus"]),
+        author.para(
+            [
+                "Example of the stringified template format ",
+                mb_html.code('{"stmpl": "..."}'),
+                " (present in plain, replaced in plus):",
+            ]
+        ),
+        json_block.json_block_raw_html(_JSON_TMPL_PLAIN_COMPARE),
     ]
 
 
@@ -391,9 +425,9 @@ def s_chapter_verse():
         author.heading_level_3("C column (index 0): Verse separator"),
         author.para(
             [
-                "Simplified compared to plain by removing ",
+                "The C column contains no ",
                 mb_html.code('"//"\u200b'),
-                " Wikitext line breaks.",
+                " Wikitext line breaks from the source.",
             ]
         ),
         author.heading_level_3("D column (index 1): Verse label"),
@@ -423,8 +457,6 @@ def s_chapter_verse():
         ),
         json_block.json_block_raw_html(_JSON_TMPL_FORMAT),
         author.std_table(tmpl_rows, arg_to_troh=["Key", "Type", "Description"]),
-        author.para("Contrast with the plain format where the same template would be:"),
-        json_block.json_block_raw_html(_JSON_TMPL_PLAIN_COMPARE),
         author.heading_level_3([mb_html.code("tmpl_params"), " keys"]),
         author.para(
             [
@@ -557,8 +589,7 @@ def s_plus_only_templates():
         ),
         author.para(
             [
-                "This template appears in both plain and plus format data."
-                " The following ",
+                "The following ",
                 author.hbo("סוג="),
                 " values are used with the ",
                 author.hbo('מ:כו"ק מיוחד'),
@@ -576,13 +607,13 @@ def s_plus_only_templates():
         ),
         author.para(
             [
-                "The plain format has ",
                 author.hbo("מ:הערה"),
-                " (a scroll-difference footnote) which is"
-                " \u201cnon-targeted\u201d: it carries the footnote text but does not explicitly"
-                " identify which word the note applies to. The plus format adds ",
+                " is the standard (non-targeted) scroll-difference footnote:"
+                " it carries the footnote text but does not explicitly"
+                " identify which word the note applies to."
+                " \u201cTargeted\u201d version ",
                 author.hbo("מ:הערה-2"),
-                ", a \u201ctargeted\u201d version that wraps the target word:",
+                " wraps the target word:",
             ]
         ),
         json_block.json_block_raw_html(_JSON_HAARAH_2),
@@ -728,44 +759,5 @@ def s_common_templates():
                 9: "Unpointed text of Isa 66:23 (the next-to-last verse of Isaiah)",
                 12: 'Documentation note on the good-ending tradition ("2=" param of the enclosing nusach template)',
             },
-        ),
-    ]
-
-
-def s_not_in_plus():
-    return [
-        author.heading_level_2("Templates not in plus (removed from plain)"),
-        author.para("The following plain-format features are absent in plus:"),
-        author.unordered_list(
-            [
-                [
-                    mb_html.code('{"custom_tag": "noinclude"}'),
-                    " / ",
-                    mb_html.code('{"custom_tag": "/noinclude"}'),
-                    " \u2014 custom XML tags",
-                ],
-                [
-                    mb_html.code('{"tmpl": [...]}'),
-                    " \u2014 parsed template trees (replaced by ",
-                    mb_html.code("tmpl_name"),
-                    "/",
-                    mb_html.code("tmpl_params"),
-                    ")",
-                ],
-                [
-                    mb_html.code('{"stmpl": "..."}'),
-                    " \u2014 stringified templates (replaced by ",
-                    mb_html.code("tmpl_name"),
-                    "/",
-                    mb_html.code("tmpl_params"),
-                    ")",
-                ],
-                [mb_html.code('"0"'), " and ", author.hbo('"תתת"'), " pseudo-verses"],
-                [mb_html.code('"//"\u200b'), " Wikitext line breaks in C column"],
-                [
-                    author.hbo("גלגל-2"),
-                    " \u2014 galgal accent annotation (handled differently in plus)",
-                ],
-            ]
         ),
     ]
