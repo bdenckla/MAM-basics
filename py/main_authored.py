@@ -34,6 +34,10 @@ from author import he_ws_intro_to_mam_pasleg as pasleg
 from author import the_next_700_bibles
 from author import reading_mam_parsed_plain
 from author import reading_mam_parsed_plus
+from author import reading_mam_parsed_plus_aot
+from author import reading_mam_parsed_plus_kq_special
+from author import reading_mam_parsed_plus_haarah_2
+from author import reading_mam_parsed_plus_kaful
 
 
 def _gen_index_html(top_dir_misc, index_entries):
@@ -93,6 +97,10 @@ def cmd_gen_mam_parsed_docs(_args):
     tdm_ch = str(out_dir), "style.css"
     reading_mam_parsed_plain.gen_html_file(tdm_ch)
     reading_mam_parsed_plus.gen_html_file(tdm_ch)
+    reading_mam_parsed_plus_aot.gen_html_file(tdm_ch)
+    reading_mam_parsed_plus_kq_special.gen_html_file(tdm_ch)
+    reading_mam_parsed_plus_haarah_2.gen_html_file(tdm_ch)
+    reading_mam_parsed_plus_kaful.gen_html_file(tdm_ch)
     print(f"Generated MAM-parsed docs in {out_dir}")
 
 

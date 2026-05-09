@@ -9,6 +9,11 @@ from author import reading_mam_parsed_cmn as cmn
 _PLUS_DOC = "reading_mam_parsed_plus.html"
 _CALL_GRAPHS = "https://bdenckla.github.io/MAM-parsed/plus-template-call-graphs.html"
 
+_AOT_DOC = "reading_mam_parsed_plus_aot.html"
+_KQ_SPECIAL_DOC = "reading_mam_parsed_plus_kq_special.html"
+_HAARAH_2_DOC = "reading_mam_parsed_plus_haarah_2.html"
+_KAFUL_DOC = "reading_mam_parsed_plus_kaful.html"
+
 
 # ---------------------------------------------------------------------------
 # JSON snippets
@@ -112,74 +117,6 @@ _JSON_NESTED = """\
   }
 }"""
 
-_JSON_SPECIAL_LETTER = """\
-{
-  "tmpl_name": "מ:אות-מיוחדת-במילה",
-  "tmpl_params": {
-    "1": ["שִׁבְ", {"tmpl_name": "מ:אות-ג", "tmpl_params": {"1": "ט֑"}}, "וֹ"],
-    "2": "שִׁבְט֑וֹ",
-    "3": "..ט.",
-    "4": "ג",
-    "5": "ט/ג"
-  }
-}"""
-
-_JSON_KQ_SPECIAL = """\
-{
-  "tmpl_name": "מ:כו\\"ק מיוחד",
-  "tmpl_params": {
-    "1": "מנהסערה",
-    "2": ["מִ֥ן", {"tmpl_name": "מ:פסק"}, "הַסְּעָרָ֗ה"],
-    "סוג": "כו\\"ק כתיב מילה חדה וקרי תרתין מילין"
-  }
-}"""
-
-_JSON_HAARAH_2 = """\
-{
-  "tmpl_name": "מ:הערה-2",
-  "tmpl_params": {
-    "1": "מִנְּשֹֽׂא",
-    "2": "בספרי ספרד ואשכנז מִנְּשֽׂוֹא",
-    "3": "אאא*"
-  }
-}"""
-
-_JSON_HAARAH_2_IN_CONTEXT = """\
-[
-  "וַיֹּ֥אמֶר קַ֖יִן אֶל־יְהֹוָ֑ה גָּד֥וֹל עֲוֺנִ֖י ",
-  {
-    "tmpl_name": "נוסח",
-    "tmpl_params": {
-      "1": {
-        "tmpl_name": "מ:הערה-2",
-        "tmpl_params": {
-          "1": "מִנְּשֹֽׂא",
-          "2": "בספרי ספרד ואשכנז מִנְּשֽׂוֹא",
-          "3": "אאא*"
-        }
-      },
-      "2": "=commentary text..."
-    }
-  },
-  {
-    "tmpl_name": "מ:הערה",
-    "tmpl_params": {
-      "1": "בספרי ספרד ואשכנז מִנְּשֽׂוֹא",
-      "שם": "בספרי ספרד ואשכנז מִנְּשֽׂוֹא"
-    }
-  },
-  "\u05d7"
-]"""
-
-_JSON_KAFUL = """\
-{
-  "tmpl_name": "מ:כפול",
-  "tmpl_params": {
-    "כפול": "...text with two accents on some words...",
-    "א": "...strand 1 (singly-accented)...",
-    "ב": "...strand 2 (singly-accented)..."
-  }
-}"""
 
 # ---------------------------------------------------------------------------
 # Sections
@@ -511,160 +448,41 @@ def s_chapter_verse():
 
 
 def s_plus_only_templates():
-    kaful_params = [
-        [
-            author.hbo("כפול"),
-            "The text with dual accents (as found in the great codexes)",
-        ],
-        [
-            author.hbo("א"),
-            "First singly-accented strand (for Reuben: \u05e4\u05e9\u05d5\u05d8\u05d4; for Decalogues: \u05ea\u05d7\u05ea\u05d5\u05df cantillation)",
-        ],
-        [
-            author.hbo("ב"),
-            "Second singly-accented strand (for Reuben: \u05de\u05d3\u05e8\u05e9\u05d9\u05ea; for Decalogues: \u05e2\u05dc\u05d9\u05d5\u05df cantillation)",
-        ],
-    ]
     return [
         author.heading_level_2("Selected templates"),
-        author.heading_level_3(
+        author.para("Each of the following templates has its own dedicated page:"),
+        author.unordered_list(
             [
-                "Special letter marking \u2014 ",
-                author.hbo("מ:אות-מיוחדת-במילה"),
+                mb_html.anchor_h(
+                    [
+                        "Special letter marking \u2014 ",
+                        author.hbo("מ:אות-מיוחדת-במילה"),
+                    ],
+                    _AOT_DOC,
+                ),
+                mb_html.anchor_h(
+                    [
+                        "Special ketiv-qere template \u2014 ",
+                        author.hbo('מ:כו"ק מיוחד'),
+                    ],
+                    _KQ_SPECIAL_DOC,
+                ),
+                mb_html.anchor_h(
+                    [
+                        "Targeted scroll-difference note \u2014 ",
+                        author.hbo("מ:הערה-2"),
+                    ],
+                    _HAARAH_2_DOC,
+                ),
+                mb_html.anchor_h(
+                    [
+                        "Dual-trope text \u2014 ",
+                        author.hbo("מ:כפול"),
+                    ],
+                    _KAFUL_DOC,
+                ),
             ]
         ),
-        author.para(
-            [
-                "Marks a word containing a letter with a special size or form"
-                " (large, small, suspended, etc.):",
-            ]
-        ),
-        json_block.json_block_raw_html(_JSON_SPECIAL_LETTER),
-        author.para("Arguments:"),
-        author.ordered_list(
-            [
-                "Array showing the word decomposed around the special letter",
-                "The word as a plain string (uninterrupted)",
-                "A dot-mask showing the position of the special letter",
-                [
-                    "The size/type code (",
-                    author.hbo("ג"),
-                    " = large, ",
-                    author.hbo("ק"),
-                    " = small, ",
-                    author.hbo("ע"),
-                    " = hung (suspended))",
-                ],
-                "Letter/type summary",
-            ]
-        ),
-        author.para(
-            [
-                "When the word is followed by a $legarmeh, the ",
-                author.hbo("מ:לגרמיה-2"),
-                " template is included at the end of argument 1,"
-                " and the $paseq/$legarmeh character is appended to argument 2.",
-            ]
-        ),
-        author.heading_level_3(
-            [
-                "Special ketiv-$qere template \u2014 ",
-                author.hbo('מ:כו"ק מיוחד'),
-            ]
-        ),
-        author.para(
-            [
-                "Nine special ketiv-$qere types are encoded in the required named parameter ",
-                author.hbo("סוג="),
-                ".",
-            ]
-        ),
-        author.para(
-            [
-                "The value given to ",
-                author.hbo("סוג="),
-                " is a dataset-level classification tag: it records which structural"
-                " subtype this k/q pair belongs to, independent of any particular $MAM edition.",
-            ]
-        ),
-        author.para(
-            [
-                "The following ",
-                author.hbo("סוג="),
-                " values are used with the ",
-                author.hbo('מ:כו"ק מיוחד'),
-                " template:",
-            ]
-        ),
-        author.std_table(cmn.KQ_SPECIAL_ROWS, arg_to_troh=["Type", "Meaning"]),
-        author.para("Example (Job 38:1):"),
-        json_block.json_block_raw_html(_JSON_KQ_SPECIAL),
-        author.heading_level_3(
-            [
-                "Targeted scroll-difference note \u2014 ",
-                author.hbo("מ:הערה-2"),
-            ]
-        ),
-        author.para(
-            [
-                author.hbo("מ:הערה"),
-                " is the standard (non-targeted) scroll-difference footnote:"
-                " it carries the footnote text but does not explicitly"
-                " identify which word the note applies to."
-                " \u201cTargeted\u201d version ",
-                author.hbo("מ:הערה-2"),
-                " wraps the target word:",
-            ]
-        ),
-        json_block.json_block_raw_html(_JSON_HAARAH_2),
-        author.para("Arguments:"),
-        author.ordered_list(
-            [
-                "The target word (the word the note applies to)",
-                "The footnote text (the scroll-difference description)",
-                [
-                    "Mark position: ",
-                    mb_html.code('"אאא*"'),
-                    " means the note marker (star) comes after the target; ",
-                    mb_html.code('"*אאא"'),
-                    " means it comes before (only Deut 22:6).",
-                ],
-            ]
-        ),
-        author.para(
-            [
-                "The ",
-                author.hbo("מ:הערה"),
-                " template is retained alongside ",
-                author.hbo("מ:הערה-2"),
-                ". The plus"
-                " format redundantly keeps both representations. This is by design: some"
-                " downstream consumers use ",
-                author.hbo("מ:הערה-2"),
-                " only to extract the target word and use ",
-                author.hbo("מ:הערה"),
-                " separately to extract the footnote text.",
-            ]
-        ),
-        author.para("Example in context:"),
-        json_block.json_block_raw_html(_JSON_HAARAH_2_IN_CONTEXT),
-        author.heading_level_3(
-            [
-                "Dual-trope text \u2014 ",
-                author.hbo("מ:כפול"),
-            ]
-        ),
-        author.para(
-            [
-                "This template encodes a dually-accented span of text and its corresponding"
-                " singly-accented \u201cstrands.\u201d Used in three sections with dual cantillation:"
-                " the two Decalogues (Exodus 20, Deuteronomy 5) and the Saga of Reuben"
-                " (Genesis 35:22).",
-            ]
-        ),
-        json_block.json_block_raw_html(_JSON_KAFUL),
-        author.para("Named parameters:"),
-        author.std_table(kaful_params, arg_to_troh=["Param", "Description"]),
     ]
 
 
