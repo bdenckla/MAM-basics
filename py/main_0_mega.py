@@ -43,14 +43,6 @@ class StepRecord:
     note: str | None
 
 
-def _run_letter_small_job():
-    main_letter_small_job.almost_main("../MAM-simple/xml-vtrad-mam/Job.xml")
-
-
-def _run_tmpl_survey_toy():
-    main_tmpl_survey_toy.almost_main("../MAM-parsed/plain/BA-Samuel.json")
-
-
 def _run_vendored_tmpl_survey_toy():
     subprocess.run(
         [sys.executable, "py-examples/main_tmpl_survey_toy.py"],
@@ -61,7 +53,7 @@ def _run_vendored_tmpl_survey_toy():
 
 def _run_vendored_letter_small_job():
     subprocess.run(
-        [sys.executable, "py-examples/main_letter_small_job.py"],
+        [sys.executable, "py-examples/main_letter_small_job_example.py"],
         cwd=_REPOS / "MAM-simple",
         check=True,
     )
@@ -111,7 +103,7 @@ _STEPS = [
     ),
     StepRecord(
         "tmpl-survey-toy",
-        _run_tmpl_survey_toy,
+        main_tmpl_survey_toy.almost_main,
         "must come after parse-go",
     ),
     StepRecord(
@@ -137,13 +129,13 @@ _STEPS = [
     ),
     StepRecord(
         "letter-small-job",
-        _run_letter_small_job,
+        main_letter_small_job.almost_main,
         "must come after mam_simple",
     ),
     StepRecord(
         "vendored-letter-small-job",
         _run_vendored_letter_small_job,
-        "runs MAM-simple/py-examples/main_letter_small_job.py as subprocess; must come after mam_simple",
+        "runs MAM-simple/py-examples/main_letter_small_job_example.py as subprocess; must come after mam_simple",
     ),
     StepRecord(
         "vendored-mam4sef",
