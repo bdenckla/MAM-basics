@@ -75,34 +75,87 @@ def _list_plus_files(rev):
 
 
 def _diff_one_file(old_json, new_json, canonical_stem):
-    """Compare two revisions of a single plus/ JSON file."""
+    """Compare two revisions of a single plus/ JSON file.
+
+    Handles both old format (Hebrew numeral keys) and new format (integer keys).
+    """
     diffs = []
     book39_ids = book39_ids_for_stem(canonical_stem)
-    he_to_int = get_he_to_int(new_json)
+    he_to_int_old = get_he_to_int(old_json)
+    he_to_int_new = get_he_to_int(new_json)
     old_book39s = old_json["book39s"]
     new_book39s = new_json["book39s"]
     for b39_idx, (old_b39, new_b39) in enumerate(zip(old_book39s, new_book39s)):
         book39id = book39_ids[b39_idx]
         old_chapters = old_b39["chapters"]
         new_chapters = new_b39["chapters"]
-        for he_ch in old_chapters:
-            if he_ch not in new_chapters:
+        # Normalize all chapter keys to integers for comparison
+        for ch_key in old_chapters:
+            int_ch = _normalize_key_to_int(ch_key, he_to_int_old)
+            if int_ch is None:
                 continue
-            int_ch = he_to_int[he_ch]
-            old_verses = old_chapters[he_ch]
-            new_verses = new_chapters[he_ch]
-            for he_vr in old_verses:
-                if he_vr not in new_verses:
+            # Find matching key in new_chapters (could be string or int)
+            new_ch_key = _find_matching_key(ch_key, new_chapters)
+            if new_ch_key is None:
+                continue
+            old_verses = old_chapters[ch_key]
+            new_verses = new_chapters[new_ch_key]
+            for vr_key in old_verses:
+                int_vr = _normalize_key_to_int(vr_key, he_to_int_old)
+                if int_vr is None:
                     continue
-                int_vr = he_to_int[he_vr]
-                old_verse = old_verses[he_vr]
-                new_verse = new_verses[he_vr]
+                # Find matching key in new_verses (could be string or int)
+                new_vr_key = _find_matching_key(vr_key, new_verses)
+                if new_vr_key is None:
+                    continue
+                old_verse = old_verses[vr_key]
+                new_verse = new_verses[new_vr_key]
                 old_ep = old_verse[2]
                 new_ep = new_verse[2]
                 diff = _diff_ep(old_ep, new_ep, book39id, int_ch, int_vr)
                 if diff is not None:
                     diffs.append(diff)
     return diffs
+
+
+def _normalize_key_to_int(key, he_to_int):
+    """Convert a key to integer, handling Hebrew numerals, numeric strings, or ints.
+    
+    Args:
+        key: Hebrew numeral string, numeric string ("1", "21"), or integer
+        he_to_int: Mapping from Hebrew numerals to integers (may be empty for new format)
+    
+    Returns:
+        Integer value, or None if the key is a pseudo-verse ("0", "תתת")
+    """
+    if key in ("0", "תתת"):
+        return None
+    if isinstance(key, int):
+        return key
+    # String key - try numeric string first, then Hebrew numeral
+    try:
+        return int(key)
+    except ValueError:
+        # Not a numeric string, try Hebrew numeral mapping
+        return he_to_int.get(key)
+
+
+def _find_matching_key(old_key, new_dict):
+    """Find a matching key in new_dict for the given old_key.
+
+    Handles cross-format matching (string to int or int to string).
+    """
+    if old_key in new_dict:
+        return old_key
+    # Try to find a matching key with normalized format
+    old_int = _normalize_key_to_int(old_key, {})
+    if old_int is None:
+        return None
+    for new_key in new_dict:
+        new_int = _normalize_key_to_int(new_key, {})
+        if new_int == old_int:
+            return new_key
+    return None
 
 
 def _diff_ep(old_ep, new_ep, book39id, chapter, verse):

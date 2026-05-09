@@ -1,5 +1,4 @@
 import json
-from mb_cmn import hebrew_verse_numerals as hvn
 from mb_cmn import bib_locales as tbn
 from mb_cmn import mam_bknas_and_std_bknas as mbkn_a_sbkn
 from mb_cmn.minirow import MinirowExt
@@ -40,12 +39,14 @@ def _gden_cv_to_bcvt(bk39id, good_ending):
     if good_ending is None:
         return None
     out_ge = dict(good_ending)
-    # E.g. good_ending['last_chapnver'] == ['סו', 'כד']
-    he_chnu = good_ending["last_chapnver"][0]
-    he_vrnu = good_ending["last_chapnver"][1]
-    out_ge["last_bcvt"] = tbn.mk_bcvtmam(
-        bk39id, hvn.STR_TO_INT_DIC[he_chnu], hvn.STR_TO_INT_DIC[he_vrnu]
-    )
+    # Chapter and verse numbers are now numeric strings (from CSV conversion)
+    # E.g. good_ending['last_chapnver'] == ["67", "24"]
+    # Convert to integers for bcvt creation
+    str_chnu = good_ending["last_chapnver"][0]
+    str_vrnu = good_ending["last_chapnver"][1]
+    int_chnu = int(str_chnu) if isinstance(str_chnu, str) else str_chnu
+    int_vrnu = int(str_vrnu) if isinstance(str_vrnu, str) else str_vrnu
+    out_ge["last_bcvt"] = tbn.mk_bcvtmam(bk39id, int_chnu, int_vrnu)
     return out_ge
 
 
@@ -62,9 +63,8 @@ def _initial_book(bk39id, bk39):
     return initial_book
 
 
-def _read_parsed_plus_verse(b_ic_hv, minirow, last_real_bcvt, io_books):
-    bk39id, int_chnu, he_vrnu = b_ic_hv
-    int_vrnu = hvn.STR_TO_INT_DIC[he_vrnu]
+def _read_parsed_plus_verse(b_ic_iv, minirow, last_real_bcvt, io_books):
+    bk39id, int_chnu, int_vrnu = b_ic_iv
     bcvt = tbn.mk_bcvtmam(bk39id, int_chnu, int_vrnu)
     init_at_key(io_books[bk39id]["verses_plus"], bcvt, minirow)
     if last_real_bcvt is not None:
@@ -80,7 +80,9 @@ def _add_next_cp(next_cp, last_real_bcvt, io_books):
 
 
 def _read_parsed_plus_chapters(bk39id, chapters, last_real_bcvt, io_books):
-    # he_vrnu: Hebrew verse numeral (א, ...)
+    # Chapter and verse keys are numeric strings ("1", "2", ...)
+    # with exception of pseudo-verses "0" and "תתת" which remain as strings.
+    # Convert numeric strings to ints when building bcvt.
     # vr_contents: verse contents: a 3-element list,
     #     with the elements being cells C, D, & E, in parsed form.
     # bcvt: b, c, v, t
@@ -88,15 +90,16 @@ def _read_parsed_plus_chapters(bk39id, chapters, last_real_bcvt, io_books):
     #     c: chapter number (integer)
     #     v: verse number (integer)
     #     t: vtrad (versification tradition) (always VT_MAM in this context)
-    for he_chnu, ch_contents in chapters.items():
-        int_chnu = hvn.STR_TO_INT_DIC[he_chnu]
-        for he_vrnu, vr_contents in ch_contents.items():
-            minirow = _make_minirowext(*vr_contents)
-            assert he_vrnu not in ("0", "תתת")
-            b_ic_hv = bk39id, int_chnu, he_vrnu
-            last_real_bcvt = _read_parsed_plus_verse(
-                b_ic_hv, minirow, last_real_bcvt, io_books
-            )
+    for str_chnu, ch_contents in chapters.items():
+        int_chnu = int(str_chnu)
+        for str_vrnu, vr_contents in ch_contents.items():
+            if str_vrnu not in ("0", "תתת"):
+                int_vrnu = int(str_vrnu)
+                minirow = _make_minirowext(*vr_contents)
+                b_ic_iv = bk39id, int_chnu, int_vrnu
+                last_real_bcvt = _read_parsed_plus_verse(
+                    b_ic_iv, minirow, last_real_bcvt, io_books
+                )
     return last_real_bcvt
 
 

@@ -1,6 +1,5 @@
 """Exports add_plus_stuff"""
 
-from mb_cmn import hebrew_verse_numerals as hvn
 from mb_cmn import ws_tmpl2 as wtp
 from mb_cmn import ws_tmpl1 as wtp1
 from mpplus import mpplus_scrdfftar
@@ -21,31 +20,8 @@ def add_plus_stuff(section):
     # Search for ^[^#]*\bfor\b.*[:]$
     for bk39 in section["book39s"]:
         out_section["book39s"].append(_aps_to_bk39(bk39))
-    out_section["header"] = _add_he_to_int(section["header"], out_section["book39s"])
+    out_section["header"] = section["header"]
     return out_section
-
-
-def _add_he_to_int(header, book39s):
-    """
-    Add a "he_to_int" mapping to the header. This allows consumers to
-    navigate chapters and verses using integer keys without needing to
-    "know" Hebrew numerals.
-    The mapping is built from the Hebrew-numeral keys that actually appear
-    as chapter or verse keys in the data.
-    """
-    he_keys = set()
-    for bk39 in book39s:
-        for he_chnu, ch_contents in bk39["chapters"].items():
-            he_keys.add(he_chnu)
-            for he_vrnu in ch_contents:
-                he_keys.add(he_vrnu)
-    he_to_int = {
-        he: hvn.STR_TO_INT_DIC[he]
-        for he in sorted(he_keys, key=hvn.STR_TO_INT_DIC.__getitem__)
-    }
-    out_header = dict(header)
-    out_header["he_to_int"] = he_to_int
-    return out_header
 
 
 def _aps_to_bk39(bk39):
@@ -61,8 +37,9 @@ def _aps_to_bk39(bk39):
     out_bk39["good_ending_plus"] = _good_ending(chapters)
     out_bk39["chapters"] = {}
     # Can we get rid of this "for" loop?
-    for he_chnu, ch_contents in chapters.items():
-        out_bk39["chapters"][he_chnu] = _aps_to_chapter(ch_contents)
+    # Chapter numbers are now integers (from CSV conversion in Phase 1)
+    for chnu, ch_contents in chapters.items():
+        out_bk39["chapters"][chnu] = _aps_to_chapter(ch_contents)
     return out_bk39
 
 
@@ -71,6 +48,7 @@ def _aps_to_chapter(chapter):
     Add "plus stuff" (extras) to the "chapter" argument.
     The "chapter" argument is a dict that maps a psv_psn to a minirow.
     A psv_psn is a pseudo-verse pseudo-number (0, 1..N, תתת).
+    Verse numbers are integers; pseudo-verses are strings (0, תתת).
     """
     out_chapter = {}
     # Can we get rid of this "for" loop?
@@ -135,24 +113,26 @@ def _drop_uninteresting_dp(minirow_dp):
     return minirow_dp
 
 
-def _make_good_ending_entry(he_chnu, he_vrnu, wtel):
+def _make_good_ending_entry(chnu_str, vrnu_str, wtel):
+    # Store chapter and verse as numeric strings to match JSON format
     return {
-        "last_chapnver": [he_chnu, he_vrnu],
+        "last_chapnver": [chnu_str, vrnu_str],
         "wikitext_element": wtp.use_tmpl2(wtel),
     }
 
 
 def _good_ending(chapters):
-    last_he_chnu = tuple(chapters.keys())[-1]
-    last_chapter = chapters[last_he_chnu]
-    last_he_vrnu = tuple(last_chapter.keys())[-2]
+    # Chapter and verse numbers are now numeric strings (from CSV conversion in Phase 1)
+    last_chnu = tuple(chapters.keys())[-1]
+    last_chapter = chapters[last_chnu]
+    last_vrnu = tuple(last_chapter.keys())[-2]
     # Good endings are always wrapped in doc templates,
     # and they are the only thing in the CP of a triple-tav row
     # that is wrapped in a doc template.
     # Can we get rid of this "for" loop?
     for wtel in last_chapter["תתת"].CP:
         if wtp1.is_doc_template(wtel):
-            return _make_good_ending_entry(last_he_chnu, last_he_vrnu, wtel)
+            return _make_good_ending_entry(last_chnu, last_vrnu, wtel)
     return None
 
 

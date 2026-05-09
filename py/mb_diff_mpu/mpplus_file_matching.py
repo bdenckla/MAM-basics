@@ -83,14 +83,24 @@ def book39_ids_for_stem(canonical):
 
 
 def get_he_to_int(book_json):
-    """Return the he_to_int mapping, building it on the fly if absent."""
+    """Return the he_to_int mapping, building it on the fly if absent.
+
+    Handles both old JSON format (with Hebrew numeral keys) and new format
+    (with integer keys).
+    """
     he_to_int = book_json["header"].get("he_to_int")
     if he_to_int is not None:
         return he_to_int
     he_keys = set()
     for bk39 in book_json["book39s"]:
-        for he_ch, ch_contents in bk39["chapters"].items():
-            he_keys.add(he_ch)
-            for he_vr in ch_contents:
-                he_keys.add(he_vr)
+        for ch_key, ch_contents in bk39["chapters"].items():
+            # Only include string (Hebrew) keys, skip integer keys
+            if isinstance(ch_key, str):
+                he_keys.add(ch_key)
+                for vr_key in ch_contents:
+                    if isinstance(vr_key, str):
+                        he_keys.add(vr_key)
+    if not he_keys:
+        # No Hebrew keys found; this is new format with integer keys
+        return {}
     return {he: hvn.STR_TO_INT_DIC[he] for he in he_keys}

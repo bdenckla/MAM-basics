@@ -10,6 +10,7 @@ import collections
 from mb_cmn import my_utils
 from mb_cmn import bib_locales as tbn
 from mb_cmn import mam_bknas
+from mb_cmn import hebrew_verse_numerals as hvn
 from ws import ws_tmpl_n_tag_parser as ttp
 from mb_cmn.minirow import Minirow
 
@@ -35,33 +36,52 @@ _MAM_CSV_NAME = {
 }
 
 
+def _he_numeral_to_int_str_or_keep(he_str):
+    """Convert Hebrew numeral string to numeric string, or keep special values as strings.
+
+    Converts Hebrew numerals to string representation of integers (e.g. "א" → "1")
+    to match JSON format where chapter/verse keys are numeric strings.
+    Special values like '0' and 'תתת' are kept as strings to distinguish them
+    from regular chapter/verse numbers.
+    """
+    if he_str in ("0", "תתת"):
+        return he_str
+    # Convert to int then back to string: "א" → 1 → "1"
+    int_val = hvn.STR_TO_INT_DIC.get(he_str)
+    if int_val is not None:
+        return str(int_val)
+    return he_str
+
+
 def _read_csv_lightly(secid, io_light_books, mam_info=None):
-    # he_pverse_pnum: Hebrew pseudo-verse pseudo-numeral
-    # We call it a pseudo-numeral because it is not always a real Hebrew numeral:
-    #    it can be 0 or תתת (zero or triple-tav)
+    # pverse_pnum: pseudo-verse pseudo-numeral
+    # We call it a pseudo-numeral because it is not always a real numeral:
+    #    it can be 0 or תתת (zero or triple-tav, kept as strings)
     # We call it a pseudo-verse because it is not always a real verse:
     #    it can be
     #       chapter-start contents (pnum 0) or
     #       chapter-end contents (pnum תתת)
+    # Regular chapter and verse numbers are represented as numeric strings ("1", "21", etc.)
     alt_mam_dir = mam_info and mam_info["mi-csv_dir"]
     the_csv_path = csv_path(secid, alt_mam_dir)
     with open(the_csv_path, encoding="utf-8") as csv_in_fp:
         for row in map(_ROW._make, csv.reader(csv_in_fp)):
             skip_hccs = mam_info and mam_info.get("mi-skip_hard_c_cells")
             light_keys, minirow = _process_one_row_lightly(row, skip_hccs)
-            he_bn_sbn, he_chnu, he_pverse_pnum = light_keys
-            if he_pverse_pnum == "0":
-                if he_chnu == "א":
-                    my_utils.init_at_key(io_light_books, he_bn_sbn, {})
-                my_utils.init_at_key(io_light_books[he_bn_sbn], he_chnu, {})
-            my_utils.init_at_key(
-                io_light_books[he_bn_sbn][he_chnu], he_pverse_pnum, minirow
-            )
+            bn_sbn, chnu, pverse_pnum = light_keys
+            if pverse_pnum == "0":
+                if chnu == "1":
+                    my_utils.init_at_key(io_light_books, bn_sbn, {})
+                my_utils.init_at_key(io_light_books[bn_sbn], chnu, {})
+            my_utils.init_at_key(io_light_books[bn_sbn][chnu], pverse_pnum, minirow)
 
 
 def _process_one_row_lightly(row, skip_hard_c_cells):
     he_bn_sbn, he_chnu = _he_bn_sbn_chnu(row.A)
-    light_keys = he_bn_sbn, he_chnu, row.B
+    # Convert chapter and verse numbers from Hebrew numerals to numeric strings
+    str_chnu = _he_numeral_to_int_str_or_keep(he_chnu)
+    str_pverse_pnum = _he_numeral_to_int_str_or_keep(row.B)
+    light_keys = he_bn_sbn, str_chnu, str_pverse_pnum
     c_parsed = _parse_cell_c(light_keys, row.C, skip_hard_c_cells)
     d_parsed = ttp.parse(row.D)
     e_parsed = ttp.parse(row.E)
@@ -77,14 +97,14 @@ def _parse_cell_c(light_keys, cell_c, skip_hard_c_cells):
 
 _LIGHT_KEYS_WITH_HARD_CELL_C = set(
     (  # "hard" meaning "too hard to parse"
-        # (miqra_book_names.BS_EXODUS, str('טו'), 'תתת'),
-        (mam_bknas.BS_DEUTER, str("לב"), "תתת"),
-        (mam_bknas.BS_JOSHUA, str("יב"), "תתת"),
-        (mam_bknas.BS_JUDGES, str("ה"), "תתת"),
-        (mam_bknas.BS_SND_SAM, str("כב"), "תתת"),
-        (mam_bknas.BS_QOHELET, str("ג"), "תתת"),
-        (mam_bknas.BS_ESTHER, str("ט"), "תתת"),
-        (mam_bknas.BS_FST_CHR, str("טז"), "תתת"),
+        # (mam_bknas.BS_EXODUS, "15", "תתת"),
+        (mam_bknas.BS_DEUTER, "32", "תתת"),
+        (mam_bknas.BS_JOSHUA, "12", "תתת"),
+        (mam_bknas.BS_JUDGES, "5", "תתת"),
+        (mam_bknas.BS_SND_SAM, "22", "תתת"),
+        (mam_bknas.BS_QOHELET, "3", "תתת"),
+        (mam_bknas.BS_ESTHER, "9", "תתת"),
+        (mam_bknas.BS_FST_CHR, "16", "תתת"),
     )
 )
 
