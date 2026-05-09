@@ -86,7 +86,7 @@ def get_he_to_int(book_json):
     """Return the he_to_int mapping, building it on the fly if absent.
 
     Handles both old JSON format (with Hebrew numeral keys) and new format
-    (with integer keys).
+    (with numeric-string keys like "1", "21").
     """
     he_to_int = book_json["header"].get("he_to_int")
     if he_to_int is not None:
@@ -94,13 +94,13 @@ def get_he_to_int(book_json):
     he_keys = set()
     for bk39 in book_json["book39s"]:
         for ch_key, ch_contents in bk39["chapters"].items():
-            # Only include string (Hebrew) keys, skip integer keys
-            if isinstance(ch_key, str):
+            # Only include Hebrew numeral keys; skip numeric-string keys.
+            if isinstance(ch_key, str) and not ch_key.isdigit():
                 he_keys.add(ch_key)
                 for vr_key in ch_contents:
-                    if isinstance(vr_key, str):
+                    if isinstance(vr_key, str) and not vr_key.isdigit():
                         he_keys.add(vr_key)
     if not he_keys:
-        # No Hebrew keys found; this is new format with integer keys
+        # No Hebrew keys found; this is new format with numeric-string keys.
         return {}
     return {he: hvn.STR_TO_INT_DIC[he] for he in he_keys}
