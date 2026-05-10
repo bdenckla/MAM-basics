@@ -32,6 +32,10 @@ CATEGORY_INFO = {
 def css():
     """Return the full CSS string for diff reports."""
     lines = []
+    lines.append("/* Generated file - DO NOT EDIT DIRECTLY.")
+    lines.append(
+        "   Edit py/mb_diff_mpu/mpplus_assets.py in MAM-basics and regenerate. */"
+    )
     lines.append(":root {")
     lines.append("  --bg: #fafafa; --card-bg: #fff; --border: #ddd;")
     lines.append("  --accent: #4a90d9; --hi-old: #fdd; --hi-new: #dfd;")

@@ -340,8 +340,8 @@ def s_file_naming():
                 "When ",
                 mb_html.code("book24_char"),
                 " is A or C,"
-                " the file is a composite book24, i.e. a book24 that contains sub-books"
-                " (e.g. BA-Samuel contains both 1 Samuel and 2 Samuel)."
+                " the file is for a book24 with sub-books"
+                " (e.g. BA-Samuel has sub-books 1 Samuel and 2 Samuel)."
                 " The letter B is not used in order to keep compatibility"
                 " with a set of codes used for the 39-book system.",
             ]

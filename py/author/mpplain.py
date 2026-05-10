@@ -89,7 +89,7 @@ def _s_top_level():
         author.heading_level_3("Composite books"),
         author.para(
             [
-                "For a composite book24 like Samuel, ",
+                "For Samuel, a book24 with sub-books, ",
                 mb_html.code("book39s"),
                 " has multiple entries:",
             ]

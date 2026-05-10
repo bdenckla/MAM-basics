@@ -212,7 +212,7 @@ def s_top_level():
             "array",
             [
                 "Array of sub-book names for this book24."
-                " (Empty if this book24 has no sub-books, i.e. is not composite.)",
+                " (Empty if this book24 has no sub-books.)",
             ],
         ],
         [
@@ -234,9 +234,9 @@ def s_top_level():
         json_block.json_block_raw_html(_JSON_TOP_LEVEL_SKEL),
         author.heading_level_2("Header"),
         author.std_table(_header_rows, arg_to_troh=["Key", "Type", "Description"]),
-        author.para("Here’s the header for Job, a book24 that is not composite:"),
+        author.para("Here’s the header for Job, a book24 has no sub-books:"),
         json_block.json_block_raw_html(_JSON_HEADER),
-        author.para("Here’s the header for Samuel, a book24 that is composite:"),
+        author.para("Here’s the header for Samuel, a book24 that has sub-books:"),
         json_block.json_block_raw_html(_JSON_HEADER_COMPOSITE),
     ]
 
@@ -247,16 +247,16 @@ def s_book39():
             mb_html.code("book24_name"),
             "string",
             [
-                "For a non-composite book (book24=book39), this is the name of the book.",
-                " For a sub-book, this is the name of the book24 to which this sub-book belongs.",
+                "For a book39 that is not a sub-book, this is its name.",
+                " For a book39 that is a sub-book, this is the name of the book24 to which this sub-book belongs.",
             ],
         ],
         [
             mb_html.code("sub_book_name"),
             "string | null",
             [
-                "For a non-composite book (book24=book39), this is null.",
-                " For a sub-book, this is the name of the sub-book.",
+                "For a book39 that is not a sub-book, this is null.",
+                " For a book39 that is a sub-book, this is its name.",
             ],
         ],
         [
