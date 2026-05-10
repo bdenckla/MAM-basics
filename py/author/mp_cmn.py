@@ -50,7 +50,7 @@ KQ_ROWS = [
     [
         author.hbo("קו״כ"),
         [
-            "Post-$maqaf $ketiv_qere. Same parameters as ",
+            "Post-$maqaf $ketiv_qere. Same params as ",
             author.hbo("כו״ק"),
             " but used when the pair follows a $maqaf.",
         ],
@@ -65,13 +65,13 @@ KQ_ROWS = [
     [
         author.hbo("כתיב ולא קרי"),
         [
-            "Ketiv without $qere. Single parameter = the $ketiv.",
+            "Ketiv without $qere. Param 1 = the $ketiv.",
         ],
     ],
     [
         author.hbo("קרי ולא כתיב"),
         [
-            "Qere without $ketiv. Single parameter = the $qere.",
+            "Qere without $ketiv. Param 1 = the $qere.",
         ],
     ],
     [

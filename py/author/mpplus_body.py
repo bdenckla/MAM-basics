@@ -164,13 +164,13 @@ def s_intro():
             "The $MAM-parsed-plus JSON files are formed by:"
             " (a) parsing the Wikitext in the $MAM Google Sheet"
             " (b) adding some conveniences and"
-            " (c) removing some data not relevant to most applications."
+            " (c) removing some inconveniences."
             " This document covers:"
         ),
         author.unordered_list(
             [
                 "File naming",
-                "Top-level structure and header metadata",
+                "Structure of the top-level and its header",
                 "Structure of a book39, chapter, and verse",
                 "Template format",
                 "Selected templates presented in detail",
@@ -351,7 +351,7 @@ def s_chapter_verse():
                 "An array containing a mix of strings and template objects.",
             ]
         ),
-        author.heading_level_2("Template format in plus"),
+        author.heading_level_2("Template format"),
         author.para("Templates are represented like this:"),
         json_block.json_block_raw_html(_JSON_TMPL_FORMAT),
         author.std_table(tmpl_rows, arg_to_troh=["Key", "Type", "Description"]),
