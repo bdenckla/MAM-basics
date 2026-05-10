@@ -29,8 +29,9 @@ def _add_header(light_books):
         basic = {"book24_name": he_bn, "sub_book_name": he_sbn}
         chap_cnts.append(dict(basic, chapter_count=len(chapters)))
         book39s.append(dict(basic, chapters=chapters))
+    assert len(he_bns) == 1
     header = {
-        "book24_names": tuple(he_bns.keys()),
+        "book24_name": tuple(he_bns.keys())[0],
         "sub_book_names": he_sbns,
         "chapter_counts": chap_cnts,
     }

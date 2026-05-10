@@ -248,7 +248,7 @@ SHEETS_DATA = "https://purl.org/mam/google-sheet#gid=920165745"
 JSON_TOP_LEVEL = """\
 {
   "header": {
-    "book24_names": ["ספר איוב"],
+    "book24_name": "ספר איוב",
     "sub_book_names": {},
     "chapter_counts": [
       {
@@ -264,7 +264,7 @@ JSON_TOP_LEVEL = """\
 JSON_COMPOSITE = """\
 {
   "header": {
-    "book24_names": ["ספר שמואל"],
+    "book24_name": "ספר שמואל",
     "sub_book_names": {"ספר שמואל": ["שמ\\"א", "שמ\\"ב"]},
     "chapter_counts": [
       {"book24_name": "ספר שמואל", "sub_book_name": "שמ\\"א", "chapter_count": 31},

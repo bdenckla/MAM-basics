@@ -28,7 +28,7 @@ _JSON_TOP_LEVEL_SKEL = """\
 
 _JSON_HEADER = """\
 "header": {
-  "book24_names": ["ספר איוב"],
+  "book24_name": "ספר איוב",
   "sub_book_names": {},
   "chapter_counts": [
     { "book24_name": "ספר איוב", "sub_book_name": null, "chapter_count": 42 }
@@ -204,9 +204,9 @@ def s_plain_differences():
 def s_top_level():
     _header_rows = [
         [
-            mb_html.code("book24_names"),
-            "array",
-            "A list that always has a single element: the name of this file’s book24.",
+            mb_html.code("book24_name"),
+            "string",
+            "The name of this file’s book24.",
         ],
         [
             mb_html.code("sub_book_names"),
