@@ -29,16 +29,20 @@ _JSON_TOP_LEVEL_SKEL = """\
 _JSON_HEADER = """\
 "header": {
   "book24_name": "ספר איוב",
-  "sub_book_names": {},
+  "sub_book_names": [],
   "chapter_counts": [
     { "book24_name": "ספר איוב", "sub_book_name": null, "chapter_count": 42 }
-  ],
-  "he_to_int": {
-    "א": 1,
-    "ב": 2,
-    "ג": 3,
-    "...": "..."
-  }
+  ]
+}"""
+
+_JSON_HEADER_COMPOSITE = """\
+"header": {
+    "book24_name": "ספר שמואל",
+    "sub_book_names": ["שמ\\\"א", "שמ\\\"ב"],
+    "chapter_counts": [
+        { "book24_name": "ספר שמואל", "sub_book_name": "שמ\\\"א", "chapter_count": 31 },
+        { "book24_name": "ספר שמואל", "sub_book_name": "שמ\\\"ב", "chapter_count": 24 }
+    ]
 }"""
 
 _JSON_BOOK39_SKEL = """\
@@ -126,11 +130,6 @@ _DIFF_ROWS = [
         "Only first verse of chapter",
     ],
     [mb_html.code("good_ending_plus"), "Not present", "Added (at book39 level)"],
-    [
-        "Hebrew numeral help",
-        "Not present",
-        ["Added (", mb_html.code("he_to_int"), ")"],
-    ],
     ["Words with special letters", "interrupted", "uninterrupted provided"],
     [
         [mb_html.code('{"tmpl": [...]}'), " — parsed template trees"],
@@ -210,17 +209,17 @@ def s_top_level():
         ],
         [
             mb_html.code("sub_book_names"),
-            "object",
+            "array",
             [
-                "Maps each composite-book name to an ordered list of its sub-book names."
-                " Empty object for single-book files.",
+                "Array of sub-book names for this book24."
+                " (Empty array if this book24 has no sub-books, i.e. is not composite.)",
             ],
         ],
         [
             mb_html.code("chapter_counts"),
             "array",
             [
-                "One object per sub-book, each with ",
+                "One object per book39, each with ",
                 mb_html.code("book24_name"),
                 ", ",
                 mb_html.code("sub_book_name"),
@@ -229,11 +228,6 @@ def s_top_level():
                 ".",
             ],
         ],
-        [
-            mb_html.code("he_to_int"),
-            "object",
-            "Hebrew numeral \u2192 integer mapping for all chapter and verse keys in the file.",
-        ],
     ]
     return [
         author.heading_level_2("Top-level structure"),
@@ -241,18 +235,8 @@ def s_top_level():
         author.heading_level_2("Header"),
         author.std_table(_header_rows, arg_to_troh=["Key", "Type", "Description"]),
         json_block.json_block_raw_html(_JSON_HEADER),
-        author.para(
-            [
-                "The ",
-                mb_html.code("he_to_int"),
-                " mapping allows consumers to navigate chapters and verses"
-                " by integer without needing to implement Hebrew-numeral decoding."
-                " It is sorted by integer value and covers the union of all"
-                " chapter and verse keys across all ",
-                mb_html.code("book39s"),
-                " in the file.",
-            ]
-        ),
+        author.para("Example of a composite-book header (Samuel):"),
+        json_block.json_block_raw_html(_JSON_HEADER_COMPOSITE),
     ]
 
 
@@ -309,11 +293,11 @@ def s_chapter_verse():
         author.heading_level_2("Chapter structure"),
         author.para(
             [
-                "An object keyed by Hebrew-letter chapter numbers."
+                "An object keyed by decimal-string chapter numbers."
                 " A chapter with 22 verses has exactly 22 keys (",
-                author.hbo("א"),
+                mb_html.code('"1"'),
                 " through ",
-                author.hbo("כב"),
+                mb_html.code('"22"'),
                 "), nothing more.",
             ]
         ),

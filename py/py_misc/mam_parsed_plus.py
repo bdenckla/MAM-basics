@@ -21,8 +21,26 @@ def add_plus_stuff(section):
     # Search for ^[^#]*\bfor\b.*[:]$
     for bk39 in section["book39s"]:
         out_section["book39s"].append(_aps_to_bk39(bk39))
-    out_section["header"] = section["header"]
+    out_section["header"] = _plus_header(section["header"])
     return out_section
+
+
+def _plus_header(header):
+    """Return a plus-format header with normalized sub_book_names."""
+    out_header = dict(header)
+    sbns = header["sub_book_names"]
+    if isinstance(sbns, dict):
+        if len(sbns) == 0:
+            out_header["sub_book_names"] = []
+            return out_header
+        assert len(sbns) == 1
+        only_key = tuple(sbns.keys())[0]
+        assert only_key == header["book24_name"]
+        out_header["sub_book_names"] = sbns[only_key]
+        return out_header
+    assert isinstance(sbns, list)
+    out_header["sub_book_names"] = sbns
+    return out_header
 
 
 def _aps_to_bk39(bk39):

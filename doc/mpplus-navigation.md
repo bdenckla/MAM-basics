@@ -14,12 +14,12 @@ Use `ls ../MAM-parsed/plus/` to see the exact names.
 ## Structure
 
 ```
-{ "header": { "he_to_int": {"א": 1, "ב": 2, ...}, ... },
+{ "header": { ... },
   "book39s": [
     { "chapters": {
-        "א": {                // chapter 1
-          "א": [C, D, E],   // verse 1
-          "ב": [C, D, E],   // verse 2
+        "1": {              // chapter 1
+          "1": [C, D, E],   // verse 1
+          "2": [C, D, E],   // verse 2
           ...
         },
         ...
@@ -31,11 +31,10 @@ Use `ls ../MAM-parsed/plus/` to see the exact names.
 
 ## Verse lookup by integer chapter:verse
 
-Use the header's `he_to_int` to build a reverse mapping:
+Chapter and verse keys are decimal strings, so integer lookup is direct:
 
 ```python
-int_to_he = {v: k for k, v in header["he_to_int"].items()}
-verse = chapters[int_to_he[chapter_int]][int_to_he[verse_int]]
+verse = chapters[str(chapter_int)][str(verse_int)]
 ep_column = verse[2]  # the text column
 ```
 
