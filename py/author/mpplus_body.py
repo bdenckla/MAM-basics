@@ -79,11 +79,6 @@ _JSON_TMPL_FORMAT = """\
 _JSON_TMPL_PLAIN_COMPARE = """\
 {"stmpl": "קו״כ|את|אַ֠תָּ֠ה"}"""
 
-_JSON_ACCESS = """\
-def tmpl_param(tmpl, key):
-    \\"\\"\\"Get a template parameter by string key (e.g. '1', '2', 'ד').\\"\\"\\"
-    return tmpl['tmpl_params'][key]"""
-
 _JSON_NESTED = """\
 {
   "tmpl_name": "נוסח",
@@ -408,9 +403,6 @@ def s_chapter_verse():
                 ".",
             ]
         ),
-        author.heading_level_3("Accessing template parameters"),
-        author.para("Use tmpl_params directly with the string key:"),
-        json_block.python_block_raw_html(_JSON_ACCESS),
         author.para(
             "Example \u2014 a word with a special letter inside a $ketiv_qere inside a נוסח:"
         ),
