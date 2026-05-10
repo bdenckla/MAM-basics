@@ -52,6 +52,7 @@ img { max-width: 100%; }
 _EXTRA_CSS = """
 code {
     font-family: Consolas, "Courier New", monospace;
+    font-size: 0.85em;
 }
 pre.json-block {
     font-family: Consolas, "Courier New", monospace;
