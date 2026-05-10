@@ -44,7 +44,7 @@ def label_args_of_doc(foilers, stack, tmpl):
 
 
 def label_args_of_kq_triv(foilers, stack, tmpl):
-    """Label the arguments of the מ:קו"כ-אם-2 template."""
+    """Label the arguments of the מ:קו״כ-אם-2 template."""
     # New format: |pketiv|uketiv|pqere|מקורות=(optional)|סוג=(optional)
     # pketiv: pointed ketiv (param 1)
     # uketiv: unpointed ketiv (param 2)

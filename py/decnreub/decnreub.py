@@ -107,7 +107,7 @@ _HANDLERS_FOR_TOP = {
     #
     "string": _hnd_top_return_empty_list,
     "נוסח": _hnd_top_return_empty_list,
-    'כו"ק': _hnd_top_return_empty_list,
+    "כו״ק": _hnd_top_return_empty_list,
     "מ:לגרמיה-2": _hnd_top_return_empty_list,
     "ססס": _hnd_top_return_empty_list,
 }

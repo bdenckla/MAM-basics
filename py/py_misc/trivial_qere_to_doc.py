@@ -84,7 +84,7 @@ def _find_index_of_trivial_ketiv_qere_within_doc_targ(doc_wtel):
 
 
 def _is_trivial_ketiv_qere_tmpl(wtel):
-    return wtp.is_template_with_name(wtel, 'מ:קו"כ-אם-2')
+    return wtp.is_template_with_name(wtel, "מ:קו״כ-אם-2")
 
 
 def _add_provenance(trivial_ketiv_qere_2):

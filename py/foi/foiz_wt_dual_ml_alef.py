@@ -58,10 +58,10 @@ _NOTE_STACK_PARTS = {"doc-part-n", "scrdfftar-note", tmpln.SLH_WORD}
 _STACK_SUMMARIES = {
     tuple(): None,
     ("doc-target",): None,
-    ('כו"ק',): None,
-    ('קו"כ',): None,
-    ("doc-target", 'קו"כ'): None,
-    ("doc-target", 'כו"ק'): None,
+    ("כו״ק",): None,
+    ("קו״כ",): None,
+    ("doc-target", "קו״כ"): None,
+    ("doc-target", "כו״ק"): None,
     ("מ:דחי",): None,
     #
     ("doc-target", "scrdfftar-note"): -1,

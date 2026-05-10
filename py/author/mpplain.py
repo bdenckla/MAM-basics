@@ -313,7 +313,7 @@ def _s_common_templates():
                 "The nine ",
                 author.hbo("סוג="),
                 " subtypes for ",
-                author.hbo('מ:כו"ק מיוחד'),
+                author.hbo("מ:כו״ק מיוחד"),
                 ":",
             ]
         ),
@@ -323,7 +323,7 @@ def _s_common_templates():
                 "Current values observed for optional ",
                 author.hbo("סוג="),
                 " in ",
-                author.hbo('מ:קו"כ-אם-2'),
+                author.hbo("מ:קו״כ-אם-2"),
                 ":",
             ]
         ),

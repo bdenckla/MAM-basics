@@ -316,7 +316,7 @@ def _kq_ruby_html(k_content, q_content):
 
 def postprocess_kq_html(html_str):
     """Replace k/q sentinel pairs with ruby HTML."""
-    # Ketiv-first pattern (כו"ק)
+    # Ketiv-first pattern (כו״ק)
     html_str = re.sub(
         re.escape(_KQ_K_START)
         + r"(.*?)"
@@ -327,7 +327,7 @@ def postprocess_kq_html(html_str):
         lambda m: _kq_ruby_html(m.group(1), m.group(2)),
         html_str,
     )
-    # Qere-first pattern (קו"כ)
+    # Qere-first pattern (קו״כ)
     html_str = re.sub(
         re.escape(_KQ_Q_START)
         + r"(.*?)"

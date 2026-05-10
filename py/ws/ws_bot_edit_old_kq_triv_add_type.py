@@ -16,12 +16,12 @@ For "meteg-removal" (a per-occurrence kind):
   The replacement removes the first meteg (U+05BD) from old_string.
 
 For "kq-trivial-to-kq-trivial-2" (a global-transform kind):
-  Replaces every {{קו"כ-אם}} call with {{מ:קו"כ-אם-2}} across all
+  Replaces every {{קו״כ-אם}} call with {{מ:קו״כ-אם-2}} across all
   chapters, via a full cif2 AST traversal. No per-occurrence entries
   are needed; "edits" may be omitted or set to {}.
 
 For "kq-trivial-2-add-type-tags" (a global-transform kind):
-    Adds סוג=... to {{מ:קו"כ-אם-2}} for five named trivial k/q
+    Adds סוג=... to {{מ:קו״כ-אם-2}} for five named trivial k/q
     subtypes, while leaving subtype misc untagged.
 
 See ws_bot_edit_history.md for a record of previous bots.

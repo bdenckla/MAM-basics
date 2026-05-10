@@ -2,21 +2,23 @@
 """Modern-only special ketiv/qere helpers.
 
 This module intentionally supports only the unified template
-מ:כו"ק מיוחד and its סוג values.
+מ:כו״ק מיוחד and its סוג values.
 """
 
-UNIFIED_SPECIAL_KQ_TEMPLATE_NAME = 'מ:כו"ק מיוחד'
+from mb_cmn import hebrew_punctuation as hpu
+
+UNIFIED_SPECIAL_KQ_TEMPLATE_NAME = "מ:כו״ק מיוחד"
 
 _SPECIAL_KQ_TYPE_FROM_SUG = {
-    'כו"ק בין שני מקפים': "k1q1-mcom",
-    'כו"ק כתיב מילה חדה וקרי תרתין מילין': "k1q2-sr-kqq",
-    'קו"כ כתיב מילה חדה וקרי תרתין מילין': "k1q2-sr-qqk",
-    'כו"ק כתיב מילה חדה וקרי תרתין מילין בין שני מקפים': "k1q2-sr-bcom",
-    'כו"ק קרי שונה מהכתיב בשתי מילים': "k1q2-wr-kqq",
-    'קו"כ קרי שונה מהכתיב בשתי מילים': "k1q2-ur-qqk",
-    'כו"ק כתיב תרתין מילין וקרי מילה חדה': "k2q1",
-    'כו"ק של שתי מילים בהערה אחת': "k2q2",
-    'כו"ק של שלוש מילים בהערה אחת': "k3q3",
+    "כו״ק בין שני מקפים": "k1q1-mcom",
+    "כו״ק כתיב מילה חדה וקרי תרתין מילין": "k1q2-sr-kqq",
+    "קו״כ כתיב מילה חדה וקרי תרתין מילין": "k1q2-sr-qqk",
+    "כו״ק כתיב מילה חדה וקרי תרתין מילין בין שני מקפים": "k1q2-sr-bcom",
+    "כו״ק קרי שונה מהכתיב בשתי מילים": "k1q2-wr-kqq",
+    "קו״כ קרי שונה מהכתיב בשתי מילים": "k1q2-ur-qqk",
+    "כו״ק כתיב תרתין מילין וקרי מילה חדה": "k2q1",
+    "כו״ק של שתי מילים בהערה אחת": "k2q2",
+    "כו״ק של שלוש מילים בהערה אחת": "k3q3",
 }
 
 SPECIAL_KQ_TYPE_KEYS = tuple(_SPECIAL_KQ_TYPE_FROM_SUG.values())
@@ -34,6 +36,7 @@ def canonical_special_kq_type_from_name_and_sug(template_name, sug_text=None):
     """Return canonical k/q subtype key for unified special-kq templates."""
     assert is_unified_special_kq_template_name(template_name), template_name
     assert isinstance(sug_text, str), (template_name, sug_text)
+    sug_text = _normalize_sug_text(sug_text)
     assert sug_text in _SPECIAL_KQ_TYPE_FROM_SUG, sug_text
     return _SPECIAL_KQ_TYPE_FROM_SUG[sug_text]
 
@@ -43,3 +46,11 @@ def maybe_special_kq_type_from_name_and_sug(template_name, sug_text=None):
     if not is_unified_special_kq_template_name(template_name):
         return None
     return canonical_special_kq_type_from_name_and_sug(template_name, sug_text)
+
+
+_Q2_TO_G2 = str.maketrans({'"': hpu.GERSHAYIM})
+
+
+def _normalize_sug_text(sug_text):
+    assert isinstance(sug_text, str), sug_text
+    return sug_text.translate(_Q2_TO_G2)

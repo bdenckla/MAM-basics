@@ -14,7 +14,7 @@ class KqSpecialTemplateNormalizationTests(unittest.TestCase):
     def test_unified_name_and_sug_map_to_same_canonical_type(self):
         kq_type = rkqst.canonical_special_kq_type_from_name_and_sug(
             rkqst.UNIFIED_SPECIAL_KQ_TEMPLATE_NAME,
-            'כו"ק כתיב מילה חדה וקרי תרתין מילין',
+            "כו״ק כתיב מילה חדה וקרי תרתין מילין",
         )
 
         self.assertEqual(kq_type, "k1q2-sr-kqq")

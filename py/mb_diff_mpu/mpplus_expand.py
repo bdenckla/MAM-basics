@@ -8,7 +8,7 @@ _TEMPLATE_REMOVAL_CATS = {
     "מ:צינור": "tsinnor-removal",
 }
 
-_KQ_TRIVIAL_NAMES = frozenset(['קו"כ-אם', 'מ:קו"כ-אם-2'])
+_KQ_TRIVIAL_NAMES = frozenset(["קו״כ-אם", "מ:קו״כ-אם-2"])
 
 
 def _split_kq_if_additions(diff):
@@ -42,13 +42,13 @@ def _split_kq_if_additions(diff):
 
 
 def _is_kq_trivial_rename(diff):
-    """Return True if diff is a pure bot-edit rename: קו"כ-אם → מ:קו"כ-אם-2."""
+    """Return True if diff is a pure bot-edit rename: קו״כ-אם → מ:קו״כ-אם-2."""
     added, removed = template_name_multiset_delta(diff["old_ep"], diff["new_ep"])
     if not added or not removed:
         return False
-    if not all(n == 'קו"כ-אם' for n in removed):
+    if not all(n == "קו״כ-אם" for n in removed):
         return False
-    if not all(n == 'מ:קו"כ-אם-2' for n in added):
+    if not all(n == "מ:קו״כ-אם-2" for n in added):
         return False
     return len(added) == len(removed)
 

@@ -122,8 +122,8 @@ _SLH_TMPL_NAMES = (tmpln.SLH_WORD, "מ:אות-ג", "מ:אות-ק", "מ:אות ת
 # Templates where arg 1 is the target/primary text (return it, ignore annotation args)
 _RETURN_ARG1_TMPL_NAMES = _SLH_TMPL_NAMES + (
     tmpln.SCRDFF_TAR,
-    'מ:נו"ן הפוכה',
-    'מ:קו"כ-אם-2',
+    "מ:נו״ן הפוכה",
+    "מ:קו״כ-אם-2",
 )
 # Templates where arg 2 is the primary word
 _RETURN_ARG2_TMPL_NAMES = ("קרי ולא כתיב", "כתיב ולא קרי")
@@ -142,7 +142,7 @@ _ZERO_CONTENT_TMPL_NAMES = (
 def flatten_text(wtel):
     """Flatten a wikitext element to a plain string, for arg[0] extraction.
 
-    For כו"ק (kethiv-qere) templates, returns only the qere (last arg),
+    For כו״ק (kethiv-qere) templates, returns only the qere (last arg),
     since the kethiv is unpointed and irrelevant to the varika word.
 
     For מ:דחי and מ:צינור (stress-variant) templates, returns only the

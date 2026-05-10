@@ -78,7 +78,7 @@ def _my_plus_equals(accum_x, *key_parts):
 
 
 _EXPECTED_ARGC = {
-    str('כו"ק'): 2,
+    str("כו״ק"): 2,
     str("מ:אות מנוקדת"): 1,
     kqst.UNIFIED_SPECIAL_KQ_TEMPLATE_NAME: tuple((2, 3, 4, 5, 6)),
 }

@@ -146,9 +146,9 @@ def _get_kq_of_kq(side):
 
 def _get_kq_triv(side):
     if isinstance(side, list) and len(side) == 1:
-        if qere := _triple_yod(side[0], 'קו"כ-אם:1'):
+        if qere := _triple_yod(side[0], "קו״כ-אם:1"):
             return qere
-        if qere := _triple_yod(side[0], 'מ:קו"כ-אם-2:1'):
+        if qere := _triple_yod(side[0], "מ:קו״כ-אם-2:1"):
             return qere
     return None
 
@@ -194,15 +194,15 @@ def _triple_yod_in(siden, argspecs):
 
 
 _Q_OF_KQ_ARGSPECS = (
-    'כו"ק:2',
+    "כו״ק:2",
     kqst.UNIFIED_SPECIAL_KQ_TEMPLATE_NAME + ":2",
 )
 _K_OF_KQ_ARGSPECS = (
-    'כו"ק:1',
+    "כו״ק:1",
     kqst.UNIFIED_SPECIAL_KQ_TEMPLATE_NAME + ":1",
 )
 _Q_OF_KQ_PAIR_ARGSPECS = (
-    'כו"ק:2',
+    "כו״ק:2",
     kqst.UNIFIED_SPECIAL_KQ_TEMPLATE_NAME + ":2",
 )
 

@@ -58,7 +58,7 @@ def _html_for_wtseq(wtseq):
 
 _FOILERS = {
     tmpln.SLH_WORD: _record_slh_word_as_foi,
-    'כו"ק': fwh.label_args_of_ketiv_qere,
+    "כו״ק": fwh.label_args_of_ketiv_qere,
     "נוסח": fwh.label_args_of_doc,
     tmpln.SCRDFF_TAR: fwh.label_args_of_scrdfftar,
     tmpln.SCRDFF_NO_TAR: fwh.ignore,

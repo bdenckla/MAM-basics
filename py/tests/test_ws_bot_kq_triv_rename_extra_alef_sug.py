@@ -9,8 +9,8 @@ from ws import ws_bot_edit_kq_triv_rename_extra_alef_sug as mod
 class WsBotRenameExtraAlefSugTests(unittest.TestCase):
     def test_replaces_old_extra_alef_sug_text(self):
         page_text = (
-            '{{מ:קו"כ-אם-2|מָרִ֕אי|מראי|מָרִ֕י|סוג=אל"ף מיותרת}} '
-            '{{מ:קו"כ-אם-2|הַהִ֖וא|ההוא|הַהִ֖יא|סוג=כתיב הוא קרי היא}}'
+            '{{מ:קו״כ-אם-2|מָרִ֕אי|מראי|מָרִ֕י|סוג=אל"ף מיותרת}} '
+            "{{מ:קו״כ-אם-2|הַהִ֖וא|ההוא|הַהִ֖יא|סוג=כתיב הוא קרי היא}}"
         )
 
         out = mod.edit_page_text("Daniel", "א", page_text)
@@ -20,7 +20,7 @@ class WsBotRenameExtraAlefSugTests(unittest.TestCase):
         self.assertIn("סוג=כתיב הוא קרי היא", out)
 
     def test_noop_when_old_text_absent(self):
-        page_text = '{{מ:קו"כ-אם-2|מָרִ֕אי|מראי|מָרִ֕י|סוג=כתיב הוא קרי היא}}'
+        page_text = "{{מ:קו״כ-אם-2|מָרִ֕אי|מראי|מָרִ֕י|סוג=כתיב הוא קרי היא}}"
 
         out = mod.edit_page_text("Daniel", "א", page_text)
 

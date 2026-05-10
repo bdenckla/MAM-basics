@@ -103,7 +103,7 @@ def _hnd_return_maq_str(_1, tmpl):
 HANDLERS = {
     "נוסח": hnd_recurse_on_arg_0,
     tmpln.SCRDFF_TAR: hnd_recurse_on_arg_0,
-    'מ:קו"כ-אם-2': hnd_recurse_on_arg_0,
+    "מ:קו״כ-אם-2": hnd_recurse_on_arg_0,
     #
     "קרי ולא כתיב": _hnd_recurse_on_arg_1,  # {{קרי ולא כתיב|[בְּנֵ֣י]|בְּנֵ֣י}}
     "מ:דחי": _hnd_recurse_on_params,
@@ -125,5 +125,5 @@ HANDLERS = {
     #
     "כתיב ולא קרי": _hnd_return_empty_list,
     tmpln.SCRDFF_NO_TAR: _hnd_return_empty_list,
-    'מ:נו"ן הפוכה': _hnd_return_empty_list,
+    "מ:נו״ן הפוכה": _hnd_return_empty_list,
 }

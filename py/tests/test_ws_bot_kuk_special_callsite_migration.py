@@ -67,7 +67,7 @@ class WsBotKukSpecialCallsiteMigrationTests(unittest.TestCase):
 
                 self.assertEqual(
                     ws_unparse.unparse(out_tmpl),
-                    f'{{{{מ:כו"ק מיוחד|כְּתִיב|קרי|סוג={_sug(old_name)}}}}}',
+                    f"{{{{מ:כו״ק מיוחד|כְּתִיב|קרי|סוג={_sug(old_name)}}}}}",
                 )
 
     def test_preserves_named_params_and_appends_sug(self):
@@ -79,7 +79,7 @@ class WsBotKukSpecialCallsiteMigrationTests(unittest.TestCase):
         self.assertEqual(
             ws_unparse.unparse(out_tmpl),
             (
-                '{{מ:כו"ק מיוחד|כְּתִיב|קרי|מקורות=ל|רווח=לא|'
+                "{{מ:כו״ק מיוחד|כְּתִיב|קרי|מקורות=ל|רווח=לא|"
                 f"סוג={_sug(old_name)}}}}}"
             ),
         )
@@ -103,7 +103,7 @@ class WsBotKukSpecialCallsiteMigrationTests(unittest.TestCase):
         out_tmpl = mod._transform_kuk_special_callsite(tmpl)[0]
         out = ws_unparse.unparse(out_tmpl)
 
-        self.assertEqual(out, f'{{{{מ:כו"ק מיוחד|כְּתִיב|קרי|סוג={_sug(old_name)}}}}}')
+        self.assertEqual(out, f"{{{{מ:כו״ק מיוחד|כְּתִיב|קרי|סוג={_sug(old_name)}}}}}")
         self.assertEqual(out.count("|סוג="), 1)
 
     def test_dispatch_via_ws_bot_edit_kind(self):

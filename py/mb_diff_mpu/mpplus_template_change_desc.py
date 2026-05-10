@@ -49,7 +49,7 @@ def _iter_named_templates(obj, template_name):
 
 def _arg2_param_key(template_name):
     """Return the param key to use as arg2_text for a trivial-kq template."""
-    if template_name == 'מ:קו"כ-אם-2':
+    if template_name == "מ:קו״כ-אם-2":
         return "3"
     return "2"
 
@@ -138,7 +138,7 @@ def _collect_named_template_from_template(tmpl, template_name, parts, instances)
         _collect_named_template_tracking(p1, template_name, parts, instances)
 
 
-_KQ_TRIVIAL_NAMES = ('קו"כ-אם', 'מ:קו"כ-אם-2')
+_KQ_TRIVIAL_NAMES = ("קו״כ-אם", "מ:קו״כ-אם-2")
 
 
 def kq_if_template_addition_parts_list(diff):
@@ -156,7 +156,7 @@ def kq_if_template_addition_parts_list(diff):
         ),
         key=lambda x: x["start"],
     )
-    # Match by arg1_text only: a קו"כ-אם and a מ:קו"כ-אם-2 with the same
+    # Match by arg1_text only: a קו״כ-אם and a מ:קו״כ-אם-2 with the same
     # pointed ketiv represent the same template instance (bot-edit rename).
     remaining_old = Counter(instance["arg1_text"] for instance in old_instances)
     added_instances = []

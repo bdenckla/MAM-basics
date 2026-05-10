@@ -15,7 +15,7 @@ For "meteg-removal" (a per-occurrence kind):
   The replacement removes the first meteg (U+05BD) from old_string.
 
 For "kq-trivial-to-kq-trivial-2" (a global-transform kind):
-  Replaces every {{קו"כ-אם}} call with {{מ:קו"כ-אם-2}} across all
+  Replaces every {{קו״כ-אם}} call with {{מ:קו״כ-אם-2}} across all
   chapters, via a full cif2 AST traversal. No per-occurrence entries
   are needed; "edits" may be omitted or set to {}.
 

@@ -120,11 +120,11 @@ def _diff_one_file(old_json, new_json, canonical_stem):
 
 def _normalize_key_to_int(key, he_to_int):
     """Convert a key to integer, handling Hebrew numerals, numeric strings, or ints.
-    
+
     Args:
         key: Hebrew numeral string, numeric string ("1", "21"), or integer
         he_to_int: Mapping from Hebrew numerals to integers (may be empty for new format)
-    
+
     Returns:
         Integer value, or None if the key is a pseudo-verse ("0", "תתת")
     """

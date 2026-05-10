@@ -72,7 +72,7 @@ TEST_MODULE_SPECS = (
     TestModuleSpec(
         flag="ws-bot-kuk-special-callsite-migration",
         module_name="tests.test_ws_bot_kuk_special_callsite_migration",
-        help_text='Run ws-bot issue67 כו"ק special callsite migration tests.',
+        help_text="Run ws-bot issue67 כו״ק special callsite migration tests.",
     ),
     TestModuleSpec(
         flag="ws-bot-kq-triv-add-type",

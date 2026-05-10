@@ -109,7 +109,7 @@ def _html_for_wtseq(wtseq, column="E"):
 
 _FOILERS_FOR_COLUMN_E = {
     tmpln.SCRDFF_TAR: _record_scrdff_in_col_e,
-    'מ:נו"ן הפוכה': _record_inverted_nun,
+    "מ:נו״ן הפוכה": _record_inverted_nun,
     "מ:סיום בטוב": _record_good_ending,
     "מ:מקף אפור": _record_implicit_maqaf,
     "סס": _record_sampe_in_col_e,

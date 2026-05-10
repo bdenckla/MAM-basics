@@ -18,7 +18,7 @@ def _ezek_40_26_old_ep():
     return [
         "וּמַעֲל֤וֹת שִׁבְעָה֙ ",
         {
-            "tmpl_name": 'קו"כ-אם',
+            "tmpl_name": "קו״כ-אם",
             "tmpl_params": {
                 "1": "עֹֽלוֹתָ֔ו",
                 "2": "א-קרי=עֹֽלוֹתָ֔יו",
@@ -32,7 +32,7 @@ def _ezek_40_26_new_ep():
     return [
         "וּמַעֲל֤וֹת שִׁבְעָה֙ ",
         {
-            "tmpl_name": 'קו"כ-אם',
+            "tmpl_name": "קו״כ-אם",
             "tmpl_params": {
                 "1": "עֹֽלוֹתָ֔ו",
                 "2": "א-קרי=עֹֽלוֹתָ֔יו",
@@ -43,7 +43,7 @@ def _ezek_40_26_new_ep():
             "tmpl_name": "נוסח",
             "tmpl_params": {
                 "1": {
-                    "tmpl_name": 'קו"כ-אם',
+                    "tmpl_name": "קו״כ-אם",
                     "tmpl_params": {
                         "1": "וְאֵלַמָּ֖ו",
                         "2": "ל-קרי=וְאֵֽלַמָּ֖יו",
@@ -216,7 +216,7 @@ def _neighbor_note_new_ep():
             "tmpl_name": "נוסח",
             "tmpl_params": {
                 "1": {
-                    "tmpl_name": 'קו"כ-אם',
+                    "tmpl_name": "קו״כ-אם",
                     "tmpl_params": {
                         "1": "וְאֵ֣ילַמָּ֔ו",
                         "2": "ל-קרי=וְאֵ֣ילַמָּ֔יו",
@@ -234,7 +234,7 @@ def _lam_4_3_old_ep():
             "tmpl_name": "נוסח",
             "tmpl_params": {
                 "1": {
-                    "tmpl_name": 'מ:כו"ק כתיב תרתין מילין וקרי מילה חדה',
+                    "tmpl_name": "מ:כו״ק כתיב תרתין מילין וקרי מילה חדה",
                     "tmpl_params": {
                         "1": "כי ענים",
                         "2": "כַּיְעֵינִ֖ים",
@@ -252,7 +252,7 @@ def _lam_4_3_new_ep():
             "tmpl_name": "נוסח",
             "tmpl_params": {
                 "1": {
-                    "tmpl_name": 'מ:כו"ק כתיב תרתין מילין וקרי מילה חדה',
+                    "tmpl_name": "מ:כו״ק כתיב תרתין מילין וקרי מילה חדה",
                     "tmpl_params": {
                         "1": "כי ענים",
                         "2": "כַּיְעֵנִ֖ים",
@@ -393,7 +393,7 @@ class TemplateMultiplicityDiffTests(unittest.TestCase):
             _ezek_40_26_old_ep(), _ezek_40_26_new_ep()
         )
 
-        self.assertEqual(added, ['קו"כ-אם'])
+        self.assertEqual(added, ["קו״כ-אם"])
         self.assertEqual(removed, [])
 
     def test_diff_ep_detects_duplicate_template_addition(self):
@@ -413,7 +413,7 @@ class TemplateMultiplicityDiffTests(unittest.TestCase):
 
         mpplus_classify.classify_diffs([diff])
         serialized = mpplus_json._serialize_diff(diff)
-        self.assertEqual(serialized["templates_added"], ['קו"כ-אם'])
+        self.assertEqual(serialized["templates_added"], ["קו״כ-אם"])
         self.assertNotIn("templates_removed", serialized)
 
     def test_split_structural_kq_if_addition_scopes_neighboring_note(self):
@@ -428,7 +428,7 @@ class TemplateMultiplicityDiffTests(unittest.TestCase):
         split = mpplus_expand.split_structural_diff(diff)
         self.assertIsNotNone(split)
         self.assertEqual(len(split), 1)
-        self.assertEqual(split[0]["templates_added"], ['קו"כ-אם'])
+        self.assertEqual(split[0]["templates_added"], ["קו״כ-אם"])
         self.assertEqual(
             [note["param2"] for note in split[0]["nusach_notes"]],
             ["הערה על התיבה השנייה"],
@@ -443,7 +443,7 @@ class TemplateMultiplicityDiffTests(unittest.TestCase):
         split = mpplus_expand.split_structural_diff(diff)
         serialized = mpplus_json._serialize_diff(split[0])
 
-        self.assertEqual(serialized["templates_added"], ['קו"כ-אם'])
+        self.assertEqual(serialized["templates_added"], ["קו״כ-אם"])
         self.assertEqual(
             serialized["nusach_notes"][0]["param2"],
             "הערה על התיבה השנייה",
@@ -525,15 +525,15 @@ class TemplateMultiplicityDiffTests(unittest.TestCase):
 
 
 def _std_kq_addition_old_ep():
-    # Tsefaniah 2:9 pattern: bare qere text, no כו"ק wrapper
+    # Tsefaniah 2:9 pattern: bare qere text, no כו״ק wrapper
     return ["גּוֹיִ֖"]
 
 
 def _std_kq_addition_new_ep():
-    # A כו"ק template is added and the qere text also changes (alef added)
+    # A כו״ק template is added and the qere text also changes (alef added)
     return [
         {
-            "tmpl_name": 'כו"ק',
+            "tmpl_name": "כו״ק",
             "tmpl_params": {
                 "1": "גוי",
                 "2": "גּוֹיִ֖י",
@@ -567,14 +567,14 @@ class StdKqAdditionInTextChangedDiffTests(unittest.TestCase):
         mpplus_classify.classify_diffs([diff])
         serialized = mpplus_json._serialize_diff(diff)
         self.assertIn("changes", serialized)
-        self.assertEqual(serialized["templates_added"], ['כו"ק'])
+        self.assertEqual(serialized["templates_added"], ["כו״ק"])
         self.assertNotIn("templates_removed", serialized)
 
     def test_json_serialization_does_not_emit_templates_added_for_pure_text_change(
         self,
     ):
-        # Existing כו"ק template where only param 2 changes: text changed, no structural
-        # addition — templates_added should not appear (כו"ק count is unchanged).
+        # Existing כו״ק template where only param 2 changes: text changed, no structural
+        # addition — templates_added should not appear (כו״ק count is unchanged).
         diff = mpplus_extract._diff_ep(
             _lam_4_3_old_ep(), _lam_4_3_new_ep(), tbn.BK_LAMENT, 4, 3
         )
@@ -586,12 +586,12 @@ class StdKqAdditionInTextChangedDiffTests(unittest.TestCase):
 
 
 # ---------------------------------------------------------------------------
-# Fixtures and tests for מ:קו"כ-אם-2 (new trivial-kq format)
+# Fixtures and tests for מ:קו״כ-אם-2 (new trivial-kq format)
 # ---------------------------------------------------------------------------
 
 
 def _kq_triv2_old_ep():
-    """EP where a plain word will gain a מ:קו"כ-אם-2 template (new format)."""
+    """EP where a plain word will gain a מ:קו״כ-אם-2 template (new format)."""
     return [
         "עֹֽלוֹתָ֔ו ",
         "וְאֵלַמָּ֖ו לִפְנֵיהֶ֑ם׃",
@@ -599,10 +599,10 @@ def _kq_triv2_old_ep():
 
 
 def _kq_triv2_new_ep():
-    """EP where the first word is now wrapped in a מ:קו"כ-אם-2 template."""
+    """EP where the first word is now wrapped in a מ:קו״כ-אם-2 template."""
     return [
         {
-            "tmpl_name": 'מ:קו"כ-אם-2',
+            "tmpl_name": "מ:קו״כ-אם-2",
             "tmpl_params": {
                 "1": "עֹֽלוֹתָ֔ו",
                 "2": "עלותו",
@@ -616,11 +616,11 @@ def _kq_triv2_new_ep():
 
 
 def _kq_triv_rename_old_ep():
-    """EP using the old קו"כ-אם template (pre-bot-edit)."""
+    """EP using the old קו״כ-אם template (pre-bot-edit)."""
     return [
         "אַ ",
         {
-            "tmpl_name": 'קו"כ-אם',
+            "tmpl_name": "קו״כ-אם",
             "tmpl_params": {
                 "1": "עֹֽלוֹתָ֔ו",
                 "2": "א-קרי=עֹֽלוֹתָ֔יו",
@@ -631,11 +631,11 @@ def _kq_triv_rename_old_ep():
 
 
 def _kq_triv_rename_new_ep():
-    """Same content but renamed to מ:קו"כ-אם-2 (post-bot-edit)."""
+    """Same content but renamed to מ:קו״כ-אם-2 (post-bot-edit)."""
     return [
         "אַ ",
         {
-            "tmpl_name": 'מ:קו"כ-אם-2',
+            "tmpl_name": "מ:קו״כ-אם-2",
             "tmpl_params": {
                 "1": "עֹֽלוֹתָ֔ו",
                 "2": "עלותו",
@@ -662,7 +662,7 @@ def _special_kq_old_ep(old_name):
 def _special_kq_new_ep(old_name):
     return [
         {
-            "tmpl_name": 'מ:כו"ק מיוחד',
+            "tmpl_name": "מ:כו״ק מיוחד",
             "tmpl_params": {
                 "1": "כתיב",
                 "2": "קְרִי",
@@ -678,7 +678,7 @@ class KqTrivial2Tests(unittest.TestCase):
             _kq_triv2_old_ep(), _kq_triv2_new_ep()
         )
 
-        self.assertEqual(added, ['מ:קו"כ-אם-2'])
+        self.assertEqual(added, ["מ:קו״כ-אם-2"])
         self.assertEqual(removed, [])
 
     def test_diff_ep_detects_kq_triv2_addition(self):
@@ -698,7 +698,7 @@ class KqTrivial2Tests(unittest.TestCase):
 
         mpplus_classify.classify_diffs([diff])
         serialized = mpplus_json._serialize_diff(diff)
-        self.assertEqual(serialized["templates_added"], ['מ:קו"כ-אם-2'])
+        self.assertEqual(serialized["templates_added"], ["מ:קו״כ-אם-2"])
         self.assertNotIn("templates_removed", serialized)
 
     def test_split_kq_triv2_addition(self):
@@ -711,10 +711,10 @@ class KqTrivial2Tests(unittest.TestCase):
 
         self.assertIsNotNone(split)
         self.assertEqual(len(split), 1)
-        self.assertEqual(split[0]["templates_added"], ['מ:קו"כ-אם-2'])
+        self.assertEqual(split[0]["templates_added"], ["מ:קו״כ-אם-2"])
 
     def test_kq_triv_rename_is_suppressed(self):
-        """A pure bot-edit rename (קו"כ-אם → מ:קו"כ-אם-2) surfaces as no diff cards."""
+        """A pure bot-edit rename (קו״כ-אם → מ:קו״כ-אם-2) surfaces as no diff cards."""
         diff = mpplus_extract._diff_ep(
             _kq_triv_rename_old_ep(), _kq_triv_rename_new_ep(), tbn.BK_EZEKIEL, 40, 1
         )
@@ -726,7 +726,7 @@ class KqTrivial2Tests(unittest.TestCase):
         self.assertEqual(split, [])
 
     def test_flatten_ep_is_identical_for_old_and_new_format(self):
-        """flatten_ep returns the same body text for קו"כ-אם and מ:קו"כ-אם-2."""
+        """flatten_ep returns the same body text for קו״כ-אם and מ:קו״כ-אם-2."""
         old_text = flatten_ep(_kq_triv_rename_old_ep())
         new_text = flatten_ep(_kq_triv_rename_new_ep())
 

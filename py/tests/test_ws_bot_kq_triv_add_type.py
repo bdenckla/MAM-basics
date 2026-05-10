@@ -13,7 +13,7 @@ from ws import ws_bot_edit_kq_triv_add_type as mod
 
 def _trivial_tmpl(pointed_ketiv, unpointed_ketiv, pointed_qere, sug=None):
     elements = [
-        ['מ:קו"כ-אם-2'],
+        ["מ:קו״כ-אם-2"],
         [pointed_ketiv],
         [unpointed_ketiv],
         [pointed_qere],
@@ -104,7 +104,7 @@ class WsBotKqTrivialAddTypeTests(unittest.TestCase):
         self.assertEqual(len(mod.get_warnings()), 1)
         warning = mod.get_warnings()[0]
         self.assertEqual(warning["reason"], "existing-sug")
-        self.assertIn('{{מ:קו"כ-אם-2', warning["old_tmpl_text"])
+        self.assertIn("{{מ:קו״כ-אם-2", warning["old_tmpl_text"])
 
     def test_idempotence_on_repeated_application(self):
         tmpl = _trivial_tmpl("עֹֽלוֹתָ֔ו", "עלותו", "עֹֽלוֹתָ֔יו")

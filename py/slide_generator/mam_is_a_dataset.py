@@ -86,7 +86,7 @@ def render_psalm_5v9_mpplus_steps(html_only: bool = False, **kwargs):
     # Extract dynamic highlight strings verbatim from the JSON file to avoid
     # mark-order issues that arise when hard-coding pointed Hebrew in source strings.
     _json = _PSALM_5V9_JSON.read_text(encoding="utf-8")
-    _s9 = _json.index('{"tmpl_name": "כו')  # start of כו"ק object
+    _s9 = _json.index('{"tmpl_name": "כו')  # start of כו״ק object
     _kuk_object = _json[_s9 : _json.index("}}", _s9) + 2]
     _s10 = _json.index('" לְפָנַ֣י') + 1  # skip opening JSON double-quote
     _last_str = _json[_s10 : _json.index('"', _s10)]

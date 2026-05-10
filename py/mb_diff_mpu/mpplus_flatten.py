@@ -41,7 +41,7 @@ def is_std_kq_template(name):
 
 def is_trivial_kq_template(name):
     """Check if template is a trivial ketiv/qere whose body text is param 1."""
-    return name in ('קו"כ-אם', 'מ:קו"כ-אם-2')
+    return name in ("קו״כ-אם", "מ:קו״כ-אם-2")
 
 
 def is_qere_velo_ketiv_template(name):
@@ -56,7 +56,7 @@ def flatten_ep(ep):
     """Flatten an EP column array to a body text string.
 
     Includes plain text and the body-text contribution of templates
-    (e.g. נוסח param 1, קו"כ params, מ:קמץ dalet variant).
+    (e.g. נוסח param 1, קו״כ params, מ:קמץ dalet variant).
     Excludes נוסח param 2 (manuscript annotations).
     """
     return "".join(flatten_element(el) for el in ep)

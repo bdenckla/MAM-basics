@@ -21,22 +21,22 @@ JSON_NUSACH = """\
 
 KQ_ROWS = [
     [
-        author.hbo('כו"ק'),
+        author.hbo("כו״ק"),
         [
             "Standard ketiv-$qere. Param 1 = unpointed ketiv,"
             " param 2 = pointed $qere.",
         ],
     ],
     [
-        author.hbo('קו"כ'),
+        author.hbo("קו״כ"),
         [
             "Post-$maqaf ketiv-$qere. Same parameters as ",
-            author.hbo('כו"ק'),
+            author.hbo("כו״ק"),
             " but used when the pair follows a $maqaf.",
         ],
     ],
     [
-        author.hbo('מ:קו"כ-אם-2'),
+        author.hbo("מ:קו״כ-אם-2"),
         [
             "Trivial ketiv-$qere. Param 1 = pointed ketiv, param 2 = unpointed ketiv,"
             " param 3 = pointed $qere.",
@@ -55,7 +55,7 @@ KQ_ROWS = [
         ],
     ],
     [
-        author.hbo('מ:כו"ק מיוחד'),
+        author.hbo("מ:כו״ק מיוחד"),
         [
             "Special ketiv-$qere. The required ",
             author.hbo("סוג="),
@@ -90,7 +90,7 @@ SPECIAL_LETTER_ROWS = [
         "Dotted letter/word. Marks words with masoretic dots above/below.",
     ],
     [
-        author.hbo('מ:נו"ן הפוכה'),
+        author.hbo("מ:נו״ן הפוכה"),
         "Reversed $nun. The inverted $nun mark (Unicode character).",
     ],
 ]
@@ -199,36 +199,36 @@ OTHER_ROWS = [
 
 KQ_SPECIAL_ROWS = [
     [
-        author.hbo('כו"ק בין שני מקפים'),
+        author.hbo("כו״ק בין שני מקפים"),
         "Ketiv-$qere between two maqafim (Isaiah 26:20 only)",
     ],
     [
-        author.hbo('כו"ק כתיב מילה חדה וקרי תרתין מילין'),
+        author.hbo("כו״ק כתיב מילה חדה וקרי תרתין מילין"),
         "1-word ketiv mapped to 2-atom $qere",
     ],
     [
-        author.hbo('כו"ק כתיב מילה חדה וקרי תרתין מילין בין שני מקפים'),
+        author.hbo("כו״ק כתיב מילה חדה וקרי תרתין מילין בין שני מקפים"),
         "Same as above but between maqafim (1 Chronicles 9:4 only)",
     ],
     [
-        author.hbo('כו"ק כתיב תרתין מילין וקרי מילה חדה'),
+        author.hbo("כו״ק כתיב תרתין מילין וקרי מילה חדה"),
         "2-word ketiv mapped to 1-atom $qere",
     ],
     [
-        author.hbo('קו"כ כתיב מילה חדה וקרי תרתין מילין'),
+        author.hbo("קו״כ כתיב מילה חדה וקרי תרתין מילין"),
         "Like the k1\u2192q2 case but in reversed (qk) display order, for use after $maqaf (Nehemiah 2:13 only)",
     ],
     [
-        author.hbo('כו"ק קרי שונה מהכתיב בשתי מילים'),
+        author.hbo("כו״ק קרי שונה מהכתיב בשתי מילים"),
         "1-word ketiv, 2-word $qere (kq display order)",
     ],
     [
-        author.hbo('קו"כ קרי שונה מהכתיב בשתי מילים'),
+        author.hbo("קו״כ קרי שונה מהכתיב בשתי מילים"),
         "1-word ketiv, 2-word $qere in reversed (qk) display order (2 Kgs 18:27, Isa 36:12)",
     ],
-    [author.hbo('כו"ק של שתי מילים בהערה אחת'), "2-word ketiv, 2-atom $qere"],
+    [author.hbo("כו״ק של שתי מילים בהערה אחת"), "2-word ketiv, 2-atom $qere"],
     [
-        author.hbo('כו"ק של שלוש מילים בהערה אחת'),
+        author.hbo("כו״ק של שלוש מילים בהערה אחת"),
         "3-word ketiv, 3-atom $qere (2 Samuel 21:12)",
     ],
 ]

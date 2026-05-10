@@ -117,8 +117,8 @@ _HANDLERS = {
     "מ:קמץ": wt_qere.hnd_recurse_on_param_dalet,
     #
     "מ:פסק": wt_qere.hnd_identity,
-    'כו"ק': wt_qere.mktmpl_mp,
-    'קו"כ': wt_qere.mktmpl_mp,
+    "כו״ק": wt_qere.mktmpl_mp,
+    "קו״כ": wt_qere.mktmpl_mp,
 }
 _HANDLERS_A = {
     **_HANDLERS,
@@ -130,13 +130,13 @@ _HANDLERS_B = {
 }
 _RENDERERS = {
     "מ:פסק": lambda w: sd.NBSP + sd.DOUB_VERT_LINE + " ",
-    'כו"ק': _ren_k1q1_kq,
-    'קו"כ': _ren_k1q1_qk,
+    "כו״ק": _ren_k1q1_kq,
+    "קו״כ": _ren_k1q1_qk,
 }
 _TMPL_NAME_REMAPS = {
     "מ:פסק": "paseq",
-    'כו"ק': "k1q1-kq",
-    'קו"כ': "k1q1-qk",
+    "כו״ק": "k1q1-kq",
+    "קו״כ": "k1q1-qk",
 }
 _KQ0 = "kq-complex"
 _FEATURES = {

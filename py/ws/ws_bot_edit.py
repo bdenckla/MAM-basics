@@ -22,17 +22,17 @@ For "explicit-replacement" (a chapter-targeted kind):
         "comment" : (optional) human-readable note
 
 For "kq-trivial-to-kq-trivial-2" (an untargeted kind):
-  Replaces every {{קו"כ-אם}} call with {{מ:קו"כ-אם-2}} across all
+  Replaces every {{קו״כ-אם}} call with {{מ:קו״כ-אם-2}} across all
   chapters, via a full cif2 AST traversal. No per-occurrence entries
   are needed; "edits" may be omitted or set to {}.
 
 For "kq-trivial-2-rename-extra-alef-sug" (an untargeted kind):
     Renames סוג=אל"ף מיותרת to סוג=אל"ף נחה באמצע תיבה ולא נקראת
-    on {{מ:קו"כ-אם-2}} calls.
+    on {{מ:קו״כ-אם-2}} calls.
 
 For "kuk-special-callsite-migration" (an untargeted kind):
-    Migrates call sites of nine deprecated issue-67 כו"ק template names
-    to {{מ:כו"ק מיוחד|...|סוג=...}}, preserving existing params.
+    Migrates call sites of nine deprecated issue-67 כו״ק template names
+    to {{מ:כו״ק מיוחד|...|סוג=...}}, preserving existing params.
     Hard-preflights for רווח=כן and fails fast for manual handling.
 
 Terminology:

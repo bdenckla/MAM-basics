@@ -22,7 +22,7 @@ def _record_kq_as_foi(_foilers, stack, tmpl):
     stack_summary = fwh.stack_summary(_STACK_SUMMARIES, stack)
     foi_target_proper = _html_for_wtseq((tmpl,))
     foi_qualifier = {}
-    if tmpl_name == 'מ:קו"כ-אם-2':
+    if tmpl_name == "מ:קו״כ-אם-2":
         reconciled_subtype, reconciled_qualifier = (
             kq_trivial_sug.reconcile_subtype_for_foi(tmpl)
         )
@@ -81,10 +81,10 @@ _FOI_PATH = {
     "kq-trivial": "z-trivial",
 }
 _FOILERS_FOR_KETIV_QERE = {
-    'כו"ק': _record_kq_as_foi,
-    'קו"כ': _record_kq_as_foi,
+    "כו״ק": _record_kq_as_foi,
+    "קו״כ": _record_kq_as_foi,
     kqst.UNIFIED_SPECIAL_KQ_TEMPLATE_NAME: _record_kq_as_foi,
-    'מ:קו"כ-אם-2': _record_kq_as_foi,
+    "מ:קו״כ-אם-2": _record_kq_as_foi,
     "קרי ולא כתיב": _record_kq_as_foi,
     "כתיב ולא קרי": _record_kq_as_foi,
 }
@@ -99,10 +99,10 @@ _FOILERS = {
 _STACK_SUMMARIES = {
     tuple(): None,
     ("doc-target",): None,
-    ("doc-target", 'מ:קו"כ-אם-2'): None,
-    ("doc-target", 'כו"ק'): None,
+    ("doc-target", "מ:קו״כ-אם-2"): None,
+    ("doc-target", "כו״ק"): None,
     ("doc-target", kqst.UNIFIED_SPECIAL_KQ_TEMPLATE_NAME): None,
-    ('כו"ק',): None,
+    ("כו״ק",): None,
     (kqst.UNIFIED_SPECIAL_KQ_TEMPLATE_NAME,): None,
     ("מ:דחי",): None,
     (fwh.DUALCANT_ARG_COMBINED, "doc-target"): -2,

@@ -233,7 +233,7 @@ def _map_doc_target_to_doc_lemma(doc_target_wtseq):
 
 def _handle_kq_trivial(hctx, tmpl):
     """
-    Handle a trivial ketiv/qere (מ:קו"כ-אם-2): a pointed ketiv, unpointed
+    Handle a trivial ketiv/qere (מ:קו״כ-אם-2): a pointed ketiv, unpointed
     ketiv, and pointed qere.
     """
     # Optional named params (e.g. מקורות, סוג) may extend template length.
@@ -456,7 +456,7 @@ _MASK_ECL = "ecl"
 _MASK_ELP = "elp"
 _HANDLER_SPECS_FOR_KETIV_QERE = {
     **tmpln.map_all_std_kq_to_a_constant({_MASK_EL: kq.handle_kq}),
-    'מ:קו"כ-אם-2': {_MASK_EL: _handle_kq_trivial},
+    "מ:קו״כ-אם-2": {_MASK_EL: _handle_kq_trivial},
     "קרי ולא כתיב": {_MASK_EL: kq.handle_kq_qere_velo_ketiv},
     "כתיב ולא קרי": {_MASK_EL: kq.handle_kq_ketiv_velo_qere},
 }
@@ -496,7 +496,7 @@ _HANDLER_SPECS_FOR_MISC = {
     "מ:אות-ק": {_MASK_ELP: _handle_small_letter},
     "מ:אות-ג": {_MASK_ELP: _handle_large_letter},
     "מ:אות תלויה": {_MASK_EL: _handle_hung_letter},
-    'מ:נו"ן הפוכה': {_MASK_EL: _handle_inverted_nun},
+    "מ:נו״ן הפוכה": {_MASK_EL: _handle_inverted_nun},
     "מ:כפול": {_MASK_EC: _handle_dualcant},
     "מ:סיום בטוב": {
         _MASK_E: _handle_good_ending_in_body,

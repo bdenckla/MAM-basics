@@ -2,7 +2,7 @@
 """Bot edit: rename the extra-alef trivial k/q סוג label per issue 70.
 
 Specifically, rename סוג=אל"ף מיותרת to
-סוג=אל"ף נחה באמצע תיבה ולא נקראת on {{מ:קו"כ-אם-2}} calls.
+סוג=אל"ף נחה באמצע תיבה ולא נקראת on {{מ:קו״כ-אם-2}} calls.
 """
 
 from foi import kq_trivial_sug as kqs

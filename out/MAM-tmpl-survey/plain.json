@@ -12806,7 +12806,7 @@
     },
     {
       "wtel_type": "tmpl",
-      "wtel_subtype": "כו\"ק",
+      "wtel_subtype": "כו״ק",
       "pseudoverse_category": "1 (normal verse)",
       "count_C": 0,
       "count_D": 0,
@@ -12862,7 +12862,7 @@
     },
     {
       "wtel_type": "tmpl",
-      "wtel_subtype": "מ:אין פרשה בתחילת פרק בספרי אמ\"ת",
+      "wtel_subtype": "מ:אין פרשה בתחילת פרק בספרי אמ״ת",
       "pseudoverse_category": "1 (normal verse)",
       "count_C": 33,
       "count_D": 0,
@@ -12990,7 +12990,7 @@
     },
     {
       "wtel_type": "tmpl",
-      "wtel_subtype": "מ:כו\"ק מיוחד",
+      "wtel_subtype": "מ:כו״ק מיוחד",
       "pseudoverse_category": "1 (normal verse)",
       "count_C": 0,
       "count_D": 0,
@@ -13030,7 +13030,7 @@
     },
     {
       "wtel_type": "tmpl",
-      "wtel_subtype": "מ:נו\"ן הפוכה",
+      "wtel_subtype": "מ:נו״ן הפוכה",
       "pseudoverse_category": "1 (normal verse)",
       "count_C": 0,
       "count_D": 0,
@@ -13094,7 +13094,7 @@
     },
     {
       "wtel_type": "tmpl",
-      "wtel_subtype": "מ:קו\"כ-אם-2",
+      "wtel_subtype": "מ:קו״כ-אם-2",
       "pseudoverse_category": "1 (normal verse)",
       "count_C": 0,
       "count_D": 0,
@@ -13294,7 +13294,7 @@
     },
     {
       "wtel_type": "tmpl",
-      "wtel_subtype": "צורות כתיבה בספרי אמ\"ת",
+      "wtel_subtype": "צורות כתיבה בספרי אמ״ת",
       "pseudoverse_category": "2 (post-chapter)",
       "count_C": 11,
       "count_D": 0,
@@ -13302,7 +13302,7 @@
     },
     {
       "wtel_type": "tmpl",
-      "wtel_subtype": "קו\"כ",
+      "wtel_subtype": "קו״כ",
       "pseudoverse_category": "1 (normal verse)",
       "count_C": 0,
       "count_D": 0,
@@ -13679,7 +13679,7 @@
     },
     {
       "wtel_subtype": "גלגל-2",
-      "stack": "E/כו\"ק",
+      "stack": "E/כו״ק",
       "count": 1,
       "count_non_nusach": 1,
       "count_nusach": 0
@@ -13699,7 +13699,7 @@
       "count_nusach": 0
     },
     {
-      "wtel_subtype": "כו\"ק",
+      "wtel_subtype": "כו״ק",
       "stack": "E",
       "count": 884,
       "count_non_nusach": 741,
@@ -13756,7 +13756,7 @@
     },
     {
       "wtel_subtype": "מ:אות-ק",
-      "stack": "E/כו\"ק",
+      "stack": "E/כו״ק",
       "count": 1,
       "count_non_nusach": 0,
       "count_nusach": 1
@@ -13783,7 +13783,7 @@
       "count_nusach": 1
     },
     {
-      "wtel_subtype": "מ:אין פרשה בתחילת פרק בספרי אמ\"ת",
+      "wtel_subtype": "מ:אין פרשה בתחילת פרק בספרי אמ״ת",
       "stack": "C",
       "count": 33,
       "count_non_nusach": 32,
@@ -13819,14 +13819,14 @@
     },
     {
       "wtel_subtype": "מ:דחי",
-      "stack": "E/כו\"ק",
+      "stack": "E/כו״ק",
       "count": 7,
       "count_non_nusach": 6,
       "count_nusach": 1
     },
     {
       "wtel_subtype": "מ:דחי",
-      "stack": "E/מ:קו\"כ-אם-2",
+      "stack": "E/מ:קו״כ-אם-2",
       "count": 8,
       "count_non_nusach": 8,
       "count_nusach": 0
@@ -13937,7 +13937,7 @@
       "count_nusach": 0
     },
     {
-      "wtel_subtype": "מ:כו\"ק מיוחד",
+      "wtel_subtype": "מ:כו״ק מיוחד",
       "stack": "E",
       "count": 37,
       "count_non_nusach": 20,
@@ -13966,14 +13966,14 @@
     },
     {
       "wtel_subtype": "מ:לגרמיה-2",
-      "stack": "E/כו\"ק",
+      "stack": "E/כו״ק",
       "count": 9,
       "count_non_nusach": 9,
       "count_nusach": 0
     },
     {
       "wtel_subtype": "מ:לגרמיה-2",
-      "stack": "E/מ:כו\"ק מיוחד",
+      "stack": "E/מ:כו״ק מיוחד",
       "count": 1,
       "count_non_nusach": 1,
       "count_nusach": 0
@@ -13987,14 +13987,14 @@
     },
     {
       "wtel_subtype": "מ:לגרמיה-2",
-      "stack": "E/מ:קו\"כ-אם-2",
+      "stack": "E/מ:קו״כ-אם-2",
       "count": 2,
       "count_non_nusach": 2,
       "count_nusach": 0
     },
     {
       "wtel_subtype": "מ:לגרמיה-2",
-      "stack": "E/קו\"כ",
+      "stack": "E/קו״כ",
       "count": 1,
       "count_non_nusach": 1,
       "count_nusach": 0
@@ -14014,7 +14014,7 @@
       "count_nusach": 2
     },
     {
-      "wtel_subtype": "מ:נו\"ן הפוכה",
+      "wtel_subtype": "מ:נו״ן הפוכה",
       "stack": "E",
       "count": 9,
       "count_non_nusach": 7,
@@ -14064,7 +14064,7 @@
     },
     {
       "wtel_subtype": "מ:פסק",
-      "stack": "E/מ:כו\"ק מיוחד",
+      "stack": "E/מ:כו״ק מיוחד",
       "count": 5,
       "count_non_nusach": 2,
       "count_nusach": 3
@@ -14091,7 +14091,7 @@
       "count_nusach": 2
     },
     {
-      "wtel_subtype": "מ:קו\"כ-אם-2",
+      "wtel_subtype": "מ:קו״כ-אם-2",
       "stack": "E",
       "count": 148,
       "count_non_nusach": 133,
@@ -14127,7 +14127,7 @@
     },
     {
       "wtel_subtype": "מ:קמץ",
-      "stack": "E/כו\"ק",
+      "stack": "E/כו״ק",
       "count": 10,
       "count_non_nusach": 7,
       "count_nusach": 3
@@ -14148,7 +14148,7 @@
     },
     {
       "wtel_subtype": "מ:קמץ",
-      "stack": "E/מ:קו\"כ-אם-2",
+      "stack": "E/מ:קו״כ-אם-2",
       "count": 2,
       "count_non_nusach": 0,
       "count_nusach": 2
@@ -14350,14 +14350,14 @@
       "count_nusach": 0
     },
     {
-      "wtel_subtype": "צורות כתיבה בספרי אמ\"ת",
+      "wtel_subtype": "צורות כתיבה בספרי אמ״ת",
       "stack": "C",
       "count": 11,
       "count_non_nusach": 11,
       "count_nusach": 0
     },
     {
-      "wtel_subtype": "קו\"כ",
+      "wtel_subtype": "קו״כ",
       "stack": "E",
       "count": 126,
       "count_non_nusach": 108,
@@ -14736,7 +14736,7 @@
       "variations": 1
     },
     {
-      "wtel_subtype": "כו\"ק",
+      "wtel_subtype": "כו״ק",
       "arg_count": 2,
       "count": 884,
       "variations": 1
@@ -14784,7 +14784,7 @@
       "variations": 1
     },
     {
-      "wtel_subtype": "מ:אין פרשה בתחילת פרק בספרי אמ\"ת",
+      "wtel_subtype": "מ:אין פרשה בתחילת פרק בספרי אמ״ת",
       "arg_count": 0,
       "count": 33,
       "variations": 1
@@ -14880,7 +14880,7 @@
       "variations": 1
     },
     {
-      "wtel_subtype": "מ:כו\"ק מיוחד",
+      "wtel_subtype": "מ:כו״ק מיוחד",
       "arg_count": 3,
       "count": 37,
       "variations": 1
@@ -14910,7 +14910,7 @@
       "variations": 1
     },
     {
-      "wtel_subtype": "מ:נו\"ן הפוכה",
+      "wtel_subtype": "מ:נו״ן הפוכה",
       "arg_count": 1,
       "count": 9,
       "variations": 1
@@ -14988,19 +14988,19 @@
       "variations": 1
     },
     {
-      "wtel_subtype": "מ:קו\"כ-אם-2",
+      "wtel_subtype": "מ:קו״כ-אם-2",
       "arg_count": 3,
       "count": 1,
       "variations": 3
     },
     {
-      "wtel_subtype": "מ:קו\"כ-אם-2",
+      "wtel_subtype": "מ:קו״כ-אם-2",
       "arg_count": 4,
       "count": 8,
       "variations": 3
     },
     {
-      "wtel_subtype": "מ:קו\"כ-אם-2",
+      "wtel_subtype": "מ:קו״כ-אם-2",
       "arg_count": 5,
       "count": 139,
       "variations": 3
@@ -15144,13 +15144,13 @@
       "variations": 1
     },
     {
-      "wtel_subtype": "צורות כתיבה בספרי אמ\"ת",
+      "wtel_subtype": "צורות כתיבה בספרי אמ״ת",
       "arg_count": 0,
       "count": 11,
       "variations": 1
     },
     {
-      "wtel_subtype": "קו\"כ",
+      "wtel_subtype": "קו״כ",
       "arg_count": 2,
       "count": 126,
       "variations": 1

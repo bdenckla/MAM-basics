@@ -427,7 +427,7 @@ def s_plus_only_templates():
                 mb_html.anchor_h(
                     [
                         "Special ketiv-qere template \u2014 ",
-                        author.hbo('מ:כו"ק מיוחד'),
+                        author.hbo("מ:כו״ק מיוחד"),
                     ],
                     _KQ_SPECIAL_DOC,
                 ),

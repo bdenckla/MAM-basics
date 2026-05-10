@@ -21,7 +21,7 @@ EXTRA_ALEF = "extra-alef"
 
 
 def classify_tmpl(tmpl):
-    if not wtp.is_template_with_name(tmpl, 'מ:קו"כ-אם-2'):
+    if not wtp.is_template_with_name(tmpl, "מ:קו״כ-אם-2"):
         return None
     ketiv_letters = _ketiv_letters(tmpl)
     qere_text = pointed_qere_text(tmpl)

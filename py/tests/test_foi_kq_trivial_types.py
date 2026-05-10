@@ -11,7 +11,7 @@ from foi import kq_trivial_types as ktt
 
 def _trivial_tmpl(pointed_ketiv, unpointed_ketiv, pointed_qere, sug=None):
     elements = [
-        ['מ:קו"כ-אם-2'],
+        ["מ:קו״כ-אם-2"],
         [pointed_ketiv],
         [unpointed_ketiv],
         [pointed_qere],
@@ -22,7 +22,7 @@ def _trivial_tmpl(pointed_ketiv, unpointed_ketiv, pointed_qere, sug=None):
 
 
 def _std_kq_tmpl(pointed_ketiv, pointed_qere):
-    return wtp.mktmpl([['כו"ק'], [pointed_ketiv], [pointed_qere]], ignore_equals=True)
+    return wtp.mktmpl([["כו״ק"], [pointed_ketiv], [pointed_qere]], ignore_equals=True)
 
 
 class TrivialKqSubtypeClassifierTests(unittest.TestCase):

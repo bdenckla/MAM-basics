@@ -879,4 +879,3 @@ def render_json_snippet_browser(
 
     slide_render.write_provenance(dest, deck_name, slide_name)
     print(f"Saved {dest} ({slide_render.W}, {slide_render.H})")
-

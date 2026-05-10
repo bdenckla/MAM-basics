@@ -264,7 +264,7 @@ def _render_card(diff):
             if (
                 parts is None
                 and len(added) == 1
-                and added[0] in {'קו"כ-אם', 'מ:קו"כ-אם-2'}
+                and added[0] in {"קו״כ-אם", "מ:קו״כ-אם-2"}
                 and not removed
             ):
                 parts = kq_if_template_addition_parts(diff)
