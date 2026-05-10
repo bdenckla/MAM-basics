@@ -12,6 +12,7 @@ import html as html_mod
 
 from pygments import lex
 from pygments.lexers import JsonLexer
+from pygments.lexers import PythonLexer
 from pygments.token import Token
 
 from mb_misc import mb_html
@@ -19,7 +20,12 @@ from mb_misc import mb_html
 
 def json_block_raw_html(json_text: str):
     """Return a raw-HTML htel containing <pre class="json-block">...</pre>."""
-    return mb_html.raw_html(_build_pre_html(json_text))
+    return mb_html.raw_html(_build_pre_html(json_text, JsonLexer()))
+
+
+def python_block_raw_html(py_text: str):
+    """Return a raw-HTML htel containing <pre class="json-block">...</pre>."""
+    return mb_html.raw_html(_build_pre_html(py_text, PythonLexer()))
 
 
 def json_block_with_notes_raw_html(json_text: str, notes: dict):
@@ -27,7 +33,7 @@ def json_block_with_notes_raw_html(json_text: str, notes: dict):
 
     notes: dict mapping 1-based line numbers to plain-text annotation strings.
     """
-    pre_html = _build_pre_html(json_text, with_line_nums=True)
+    pre_html = _build_pre_html(json_text, JsonLexer(), with_line_nums=True)
     notes_html = _build_notes_html(notes)
     return mb_html.raw_html(pre_html + notes_html)
 
@@ -89,8 +95,8 @@ def _split_by_newlines(tokens):
     return lines
 
 
-def _build_pre_html(json_text: str, with_line_nums: bool = False) -> str:
-    lines_of_tokens = _split_by_newlines(list(lex(json_text, JsonLexer())))
+def _build_pre_html(code_text: str, lexer, with_line_nums: bool = False) -> str:
+    lines_of_tokens = _split_by_newlines(list(lex(code_text, lexer)))
     width = len(str(len(lines_of_tokens)))
     line_htmls = []
     for i, line_tokens in enumerate(lines_of_tokens, 1):

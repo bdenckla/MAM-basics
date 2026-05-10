@@ -1,4 +1,4 @@
-"""Exports main"""
+﻿"""Exports main"""
 
 from mb_misc import mb_html
 from author_util import author
@@ -20,7 +20,7 @@ def gen_html_file(tdm_ch):
 _TITLE = "On the Provenance of Chabad’s CTR"
 _H1_CONTENTS = "On the Provenance of Chabad’s $CTR"
 _FNAME = "rocc_1_on_the_provenance_of_ctr.html"
-_ANCHOR = mb_html.anchor_h("document", f"./{_FNAME}")
+_ANCHOR = author.anchor_h("document", f"./{_FNAME}")
 _CONT_PARA_01 = """The $anc_Chabad_website has an edition of the Hebrew Bible
 called $anc_Chabad_CTR ($CTR).
 (This edition also goes by other similar names such as

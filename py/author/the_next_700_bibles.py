@@ -1,4 +1,4 @@
-"""Exports main"""
+﻿"""Exports main"""
 
 from mb_misc import mb_html
 from author_util import author
@@ -21,7 +21,7 @@ def gen_html_file(tdm_ch):
 
 def _endnote_callout(num):
     """Baseline (non-superscript) endnote callout: [N] where N is a link."""
-    return ["[", mb_html.anchor_h(str(num), f"#en{num}"), "]"]
+    return ["[", author.anchor_h(str(num), f"#en{num}"), "]"]
 
 
 def _endnote_body(num, contents):
@@ -38,10 +38,10 @@ def _nbsp(text):
 _TITLE = "The Next 700 Bibles"
 _H1_CONTENTS = "The Next 700 Bibles"
 _FNAME = "the_next_700_bibles.html"
-_ANCHOR = mb_html.anchor_h("document", f"./{_FNAME}")
+_ANCHOR = author.anchor_h("document", f"./{_FNAME}")
 
 _URL_LANDIN_PDF = "https://www.cs.cmu.edu/~crary/819-f09/Landin66.pdf"
-_ANC_LANDIN = mb_html.anchor_h("(PDF)", _URL_LANDIN_PDF)
+_ANC_LANDIN = author.anchor_h("(PDF)", _URL_LANDIN_PDF)
 
 _INTRO_PARA = [
     "This document's title is inspired by the title"

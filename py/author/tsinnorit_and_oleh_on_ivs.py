@@ -1,4 +1,4 @@
-"""Exports main"""
+﻿"""Exports main"""
 
 from mb_cmn.my_utils import sl_map
 from mb_misc import mb_html
@@ -24,7 +24,7 @@ def _gen_redirect_for_old_url(top_dir_old):
     out_path_redir = f"{top_dir_old}/{_FNAME}"
     title_redir = f"Redirect for {_TITLE}"
     write_ctx_redir = mb_html.WriteCtx(title_redir, out_path_redir)
-    anc = mb_html.anchor_h("a different location", f"../misc/{_FNAME}")
+    anc = author.anchor_h("a different location", f"../misc/{_FNAME}")
     cbody_redir = mb_html.para(["This page has moved to ", anc, "."])
     mb_html.write_html_to_file(cbody_redir, write_ctx_redir)
 
@@ -45,7 +45,7 @@ def _make_row(cells):
 _TITLE = "Tsinnorit & Oleh on Initial Vocal Shewa"
 _H1_CONTENTS = "$Tsinnorit & $Oleh on Initial Vocal $Shewa"
 _FNAME = "tsinnorit_and_oleh_on_ivs.html"
-_ANCHOR = mb_html.anchor_h("document", f"./{_FNAME}")
+_ANCHOR = author.anchor_h("document", f"./{_FNAME}")
 _CONT_PARA_01 = [
     "The only primary accents that can appear on an initial vocal $shewa ($IVS)",
     " are prepositives.",

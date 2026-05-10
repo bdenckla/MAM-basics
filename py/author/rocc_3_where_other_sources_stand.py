@@ -1,4 +1,4 @@
-"""Exports main"""
+﻿"""Exports main"""
 
 from mb_misc import mb_html
 from author_util import author
@@ -35,7 +35,7 @@ def gen_html_file(tdm_ch):
 _TITLE = "CTR Psalm 32: Where Other Sources Stand"
 _H1_CONTENTS = "$CTR Psalm 32: Where Other Sources Stand"
 _FNAME = "rocc_3_where_other_sources_stand.html"
-_ANCHOR = mb_html.anchor_h("document", f"./{_FNAME}")
+_ANCHOR = author.anchor_h("document", f"./{_FNAME}")
 _X_01_CPARA = [
     ["This document covers more than its"],
     [" ", rocc_0.short_anchor("parent document")],

@@ -1,4 +1,4 @@
-"""Exports main"""
+﻿"""Exports main"""
 
 from mb_misc import mb_html
 from author_util import author
@@ -27,7 +27,7 @@ def gen_html_file(tdm_ch):
 _TITLE = "Tsinnorit in Psalm 32:5 ועוני"
 _H1_CONTENTS = "$Tsinnorit in Psalm 32:5 ועוני"
 _FNAME = "tsinnorit_in_psalm_32v5.html"
-_ANCHOR = mb_html.anchor_h("document", f"./{_FNAME}")
+_ANCHOR = author.anchor_h("document", f"./{_FNAME}")
 _CONT_PARA_06A = """What accents, if any, can appear on a non-initial vocal $shewa? The
 answer is: none, except for a misplaced $tsinnorit that is seen in
 Psalm 32:5 ועוני in some editions. In these editions, the $tsinnorit
@@ -40,8 +40,8 @@ _CONT_CELLS = [
 _CONT_PARA_06B = """I've found this error in these editions:""".replace("\n", " ")
 _URL_MMA = "https://mechon-mamre.org/c/ct/c2632.htm"
 _URL_CTR = "https://www.chabad.org/library/bible_cdo/aid/16253/#lt=he"
-_ANC_MMA = mb_html.anchor_h("Mechon Mamre", _URL_MMA)
-_ANC_CTR = mb_html.anchor_h("Chabad", _URL_CTR)
+_ANC_MMA = author.anchor_h("Mechon Mamre", _URL_MMA)
+_ANC_CTR = author.anchor_h("Chabad", _URL_CTR)
 _CONT_UL = [
     ['Tana"kh (', _ANC_MMA, ")"],
     ["Complete Tanach with Rashi (", _ANC_CTR, ") (Judaica Press)"],

@@ -1,4 +1,4 @@
-"""Exports main"""
+﻿"""Exports main"""
 
 from mb_misc import mb_html
 from author_util import author
@@ -24,7 +24,7 @@ def gen_html_file(tdm_ch):
 _TITLE = "About Tsinnorit & Oleh"
 _H1_CONTENTS = "About $Tsinnorit & $Oleh"
 _FNAME = "tsinnorit_and_oleh_facts.html"
-_ANCHOR = mb_html.anchor_h("document", f"./{_FNAME}")
+_ANCHOR = author.anchor_h("document", f"./{_FNAME}")
 _CONT_PARA_04A1 = [
     "$Tsinnorit and $oleh always appear as part of a pair.",
     " $Tsinnorit is always paired with either",

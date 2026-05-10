@@ -1,4 +1,4 @@
-import os
+﻿import os
 
 import re
 from mb_misc import mb_html
@@ -219,8 +219,12 @@ def std_table(
     return table_c(args_to_table)
 
 
-def anc_h(contents, href_val):
+def anchor_h(contents, href_val):
     return mb_html.anchor_h(dollar_sub(contents), href_val)
+
+
+def anc_h(contents, href_val):
+    return anchor_h(contents, href_val)
 
 
 def span_color(text, color):
@@ -469,7 +473,9 @@ _ROMANIZED = {
     "$merkha": "merkha",
     "$merkha_metsunneret": "merkha metsunneret",
     "$oleh_veyored": "oleh veyored",
+    "$ketiv": "ketiv",
     "$qere": "qere",
+    "$ketiv_qere": "ketiv/qere",
     "$revia": "revia",
     "$shalshelet": "shalshelet",
     "$shalshelet_gedolah": "shalshelet gedolah",

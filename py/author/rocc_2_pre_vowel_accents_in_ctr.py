@@ -1,4 +1,4 @@
-"""Exports main"""
+﻿"""Exports main"""
 
 from mb_misc import mb_html
 from author_util import author
@@ -110,7 +110,7 @@ def _codes_both_detail(foo, bar, baz):
 _TITLE = "Pre-vowel Accents in Chabad’s CTR"
 _H1_CONTENTS = "Pre-vowel Accents in Chabad’s $CTR"
 _FNAME = "rocc_2_pre_vowel_accents_in_ctr.html"
-_ANCHOR = mb_html.anchor_h("document", f"./{_FNAME}")
+_ANCHOR = author.anchor_h("document", f"./{_FNAME}")
 _TIPEHA_BEFORE_VOWEL_INTRO = _to_encode(
     "$segol and $dexi", "under", "$hehe", "Psalm 32:3", "הֶ֭חרשתי", "הֶ֭חֱרַשְׁתִּי"
 )
