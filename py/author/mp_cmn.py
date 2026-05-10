@@ -107,7 +107,7 @@ SPECIAL_LETTER_ROWS = [
     ],
     [
         author.hbo("מ:נו״ן הפוכה"),
-        "Reversed $nun. The inverted $nun mark (Unicode character).",
+        "Reversed (inverted) $nun.",
     ],
 ]
 

@@ -338,19 +338,13 @@ def s_chapter_verse():
                 " template call when it has something interesting to say—typically when it carries ",
                 "extra metadata such as the ",
                 mb_html.code("סדר"),
-                " (Torah reading section) or ",
+                " or ",
                 mb_html.code("עלייה"),
-                " (Torah ",
-                mb_html.code("aliyah"),
-                ") parameter, or when it is wrapped in a ",
-                author.hbo("נוסח"),
-                " template. Otherwise, the array is empty.",
+                " parameter. Otherwise, the array is empty.",
             ]
         ),
         author.para(["Job 1:1:"]),
         json_block.json_block_raw_html(_JSON_D_COL_FIRST),
-        author.para(["Job 1:2 (and any subsequent verse of Job 1):"]),
-        json_block.json_block_raw_html(_JSON_D_COL_SUBSEQ),
         author.heading_level_3("E column (index 2): Verse text"),
         author.para(
             [
