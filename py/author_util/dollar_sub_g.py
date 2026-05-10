@@ -21,7 +21,12 @@ def _check_no_undollared(dispatch, flat_list):
     for key in dispatch:
         if key.startswith("$"):
             undollared = key[1:]
-            if re.search(rf"(?<!\$)\b{re.escape(undollared)}\b", full_text):
+            # Avoid false positives where a decomposed combining mark creates
+            # an artificial \b split (e.g., "petuh\u0323ah" triggering "ah").
+            if re.search(
+                rf"(?<!\$)(?<![\u0300-\u036F])\b{re.escape(undollared)}\b",
+                full_text,
+            ):
                 snippet = full_text[:200] if len(full_text) > 200 else full_text
                 raise ValueError(
                     f"Found '{undollared}' without '$' prefix. "

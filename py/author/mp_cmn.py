@@ -134,11 +134,11 @@ ACCENT_ROWS = [
     ],
     [
         author.hbo("גלגל-2"),
-        "Galgal. Distinguishes poetic from prose uses of Unicode YERAH BEN YOMO.",
+        "Galgal. Distinguishes poetic from prose uses of Unicode $YBY.",
     ],
     [
         author.hbo("ירח בן יומו"),
-        "Yera\u1e25 ben yomo. Distinguishes prose from poetic uses of Unicode YERAH BEN YOMO.",
+        "Yera\u1e25 ben yomo. Distinguishes prose from poetic uses of Unicode $YBY.",
     ],
     [
         author.hbo("אתנח הפוך"),

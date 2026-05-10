@@ -543,6 +543,9 @@ _DOLLAR_SUB_DISPATCH = {
     #
     "$gaya": "געיה",
     "$parashah_sl_aliyah": _romanized("parashah/aliyah"),
+    "$YBY": mb_html.abbr(
+        "YBY", {"class": "small-caps", "title": "Unicode YERAH BEN YOMO"}
+    ),
     #
     **_rom_with_cap("$ayin", "ayin"),
     **_rom_with_cap("$oleh", "oleh"),
