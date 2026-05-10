@@ -124,7 +124,12 @@ _DIFF_ROWS = [
     [
         "D column (verse label)",
         ["Every verse has ", author.hbo("מ:פסוק")],
-        "Only first verse of chapter",
+        [
+            "Only when ",
+            author.hbo("מ:פסוק"),
+            " has interesting parameters or is wrapped in ",
+            author.hbo("נוסח"),
+        ],
     ],
     [mb_html.code("good_ending_plus"), "Not present", "Added (at book39 level)"],
     ["Words with special letters", "interrupted", "uninterrupted provided"],
@@ -333,9 +338,18 @@ def s_chapter_verse():
         author.heading_level_3("D column (index 1): Verse label"),
         author.para(
             [
-                "In the first verse of each chapter, this is an array containing a ",
+                "This is an array that contains a ",
                 author.hbo("מ:פסוק"),
-                " template call. All other verses have an empty array.",
+                " template call when it has something interesting to say—typically when it carries ",
+                "extra metadata such as the ",
+                mb_html.code("סדר"),
+                " (Torah reading section) or ",
+                mb_html.code("עלייה"),
+                " (Torah ",
+                mb_html.code("aliyah"),
+                ") parameter, or when it is wrapped in a ",
+                author.hbo("נוסח"),
+                " template. Otherwise, the array is empty.",
             ]
         ),
         author.para(["Job 1:1:"]),
