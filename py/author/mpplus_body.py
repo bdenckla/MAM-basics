@@ -31,18 +31,18 @@ _JSON_HEADER = """\
   "book24_name": "ספר איוב",
   "sub_book_names": [],
   "chapter_counts": [
-    { "book24_name": "ספר איוב", "sub_book_name": null, "chapter_count": 42 }
+    { "sub_book_name": null, "chapter_count": 42 }
   ]
 }"""
 
 _JSON_HEADER_COMPOSITE = """\
 "header": {
-    "book24_name": "ספר שמואל",
-    "sub_book_names": ["שמ\\\"א", "שמ\\\"ב"],
-    "chapter_counts": [
-        { "book24_name": "ספר שמואל", "sub_book_name": "שמ\\\"א", "chapter_count": 31 },
-        { "book24_name": "ספר שמואל", "sub_book_name": "שמ\\\"ב", "chapter_count": 24 }
-    ]
+  "book24_name": "ספר שמואל",
+  "sub_book_names": ["שמ\\\"א", "שמ\\\"ב"],
+  "chapter_counts": [
+      { "sub_book_name": "שמ\\\"א", "chapter_count": 31 },
+      { "sub_book_name": "שמ\\\"ב", "chapter_count": 24 }
+  ]
 }"""
 
 _JSON_BOOK39_SKEL = """\
@@ -212,7 +212,7 @@ def s_top_level():
             "array",
             [
                 "Array of sub-book names for this book24."
-                " (Empty array if this book24 has no sub-books, i.e. is not composite.)",
+                " (Empty if this book24 has no sub-books, i.e. is not composite.)",
             ],
         ],
         [
@@ -220,12 +220,12 @@ def s_top_level():
             "array",
             [
                 "One object per book39, each with ",
-                mb_html.code("book24_name"),
-                ", ",
                 mb_html.code("sub_book_name"),
-                " (null for non-composite books), and ",
+                " and ",
                 mb_html.code("chapter_count"),
                 ".",
+                " (The ", mb_html.code("sub_book_name"),
+                " will be null for a book39 that is not a sub-book, i.e. a book39 that is also a book24.)",
             ],
         ],
     ]
@@ -234,8 +234,9 @@ def s_top_level():
         json_block.json_block_raw_html(_JSON_TOP_LEVEL_SKEL),
         author.heading_level_2("Header"),
         author.std_table(_header_rows, arg_to_troh=["Key", "Type", "Description"]),
+        author.para("Here’s the header for Job, a book24 that is not composite:"),
         json_block.json_block_raw_html(_JSON_HEADER),
-        author.para("Example of a composite-book header (Samuel):"),
+        author.para("Here’s the header for Samuel, a book24 that is composite:"),
         json_block.json_block_raw_html(_JSON_HEADER_COMPOSITE),
     ]
 

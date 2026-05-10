@@ -26,21 +26,42 @@ def add_plus_stuff(section):
 
 
 def _plus_header(header):
-    """Return a plus-format header with normalized sub_book_names."""
+    """Return a plus-format header with normalized header fields."""
     out_header = dict(header)
     sbns = header["sub_book_names"]
     if isinstance(sbns, dict):
         if len(sbns) == 0:
             out_header["sub_book_names"] = []
+            out_header["chapter_counts"] = _plus_chapter_counts(header)
             return out_header
         assert len(sbns) == 1
         only_key = tuple(sbns.keys())[0]
         assert only_key == header["book24_name"]
         out_header["sub_book_names"] = sbns[only_key]
+        out_header["chapter_counts"] = _plus_chapter_counts(header)
         return out_header
     assert isinstance(sbns, list)
     out_header["sub_book_names"] = sbns
+    out_header["chapter_counts"] = _plus_chapter_counts(header)
     return out_header
+
+
+def _plus_chapter_counts(header):
+    chapter_counts = header["chapter_counts"]
+    has_bk24_name = ["book24_name" in entry for entry in chapter_counts]
+    out_counts = []
+    if any(has_bk24_name):
+        assert all(has_bk24_name)
+        for entry in chapter_counts:
+            assert entry["book24_name"] == header["book24_name"]
+            out_entry = dict(entry)
+            del out_entry["book24_name"]
+            out_counts.append(out_entry)
+        return out_counts
+    assert not any(has_bk24_name)
+    for entry in chapter_counts:
+        out_counts.append(dict(entry))
+    return out_counts
 
 
 def _aps_to_bk39(bk39):
