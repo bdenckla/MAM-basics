@@ -174,8 +174,7 @@ def s_intro():
             [
                 "File naming",
                 "Top-level structure and header metadata",
-                "Book39 entries",
-                "Chapter and verse structure",
+                "Structure of a book39, chapter, and verse",
                 "Template format",
                 "Selected templates presented in detail",
                 "Common templates",
@@ -224,7 +223,8 @@ def s_top_level():
                 " and ",
                 mb_html.code("chapter_count"),
                 ".",
-                " (The ", mb_html.code("sub_book_name"),
+                " (The ",
+                mb_html.code("sub_book_name"),
                 " will be null for a book39 that is not a sub-book, i.e. a book39 that is also a book24.)",
             ],
         ],
@@ -262,20 +262,23 @@ def s_book39():
         [
             mb_html.code("chapters"),
             "object",
-            "Object keyed by Hebrew-numeral chapter numbers; values are chapter objects.",
+            "Object keyed by chapter numbers; values are chapter objects.",
         ],
         [
             mb_html.code("good_ending_plus"),
             "object | null",
             [
-                mb_html.code("null"),
-                " for most books; an object for the 4 book39s"
-                " that are sometimes presented with their next-to-last verse repeated.",
+                'Non-null only for the 4 book39s with "good endings." See ',
+                mb_html.anchor_h(
+                    ["the ", mb_html.code("good_ending_plus"), " dedicated page"],
+                    _GOOD_ENDING_DOC,
+                ),
+                ".",
             ],
         ],
     ]
     return [
-        author.heading_level_2("Book39 entry"),
+        author.heading_level_2("Book39 structure"),
         json_block.json_block_raw_html(_JSON_BOOK39_SKEL),
         author.std_table(_book39_rows, arg_to_troh=["Key", "Type", "Description"]),
     ]
@@ -294,12 +297,12 @@ def s_chapter_verse():
         author.heading_level_2("Chapter structure"),
         author.para(
             [
-                "An object keyed by decimal-string chapter numbers."
-                " A chapter with 22 verses has exactly 22 keys (",
+                "An object keyed by verse numbers."
+                " For example, a chapter with 22 verses has exactly 22 keys, ",
                 mb_html.code('"1"'),
                 " through ",
                 mb_html.code('"22"'),
-                "), nothing more.",
+                ".",
             ]
         ),
         author.heading_level_2("Verse structure"),
@@ -311,9 +314,14 @@ def s_chapter_verse():
         author.heading_level_3("C column (index 0): Verse separator"),
         author.para(
             [
-                "The C column contains no ",
-                mb_html.code('"//"\u200b'),
-                " Wikitext line breaks from the source.",
+                "The C column usually contains what separates this verse "
+                "from the previous verse. This is usually a space, "
+                "represented as ",
+                mb_html.code('["__"]'),
+                ", but is sometimes something else, such as a $parashah-break "
+                "template (for example ",
+                mb_html.code('"פפ"'),
+                ").",
             ]
         ),
         author.heading_level_3("D column (index 1): Verse label"),
@@ -390,7 +398,7 @@ def s_chapter_verse():
         author.para("Use tmpl_params directly with the string key:"),
         json_block.json_block_raw_html(_JSON_ACCESS),
         author.para(
-            "Example \u2014 a word with a special letter inside a ketiv-$qere inside a nusach:"
+            "Example \u2014 a word with a special letter inside a ketiv-$qere inside a נוסח:"
         ),
         json_block.json_block_raw_html(_JSON_NESTED),
     ]

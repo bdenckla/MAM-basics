@@ -82,7 +82,7 @@ def _build_body():
             _JSON_GOOD_ENDING,
             {
                 9: "Unpointed text of Isa 66:23 (the next-to-last verse of Isaiah)",
-                12: 'Documentation note on the good-ending tradition ("2=" param of the enclosing nusach template)',
+                12: 'Documentation note on the good-ending tradition ("2=" param of the enclosing נוסח template)',
             },
         ),
     ]

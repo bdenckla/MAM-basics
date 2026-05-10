@@ -91,7 +91,7 @@ def _s_top_level():
             [
                 "For Samuel, a book24 with sub-books, ",
                 mb_html.code("book39s"),
-                " has multiple entries:",
+                " has multiple elements:",
             ]
         ),
         json_block.json_block_raw_html(cmn.JSON_COMPOSITE),
@@ -100,7 +100,7 @@ def _s_top_level():
 
 def _s_book39():
     return [
-        author.heading_level_2("Book39 entry"),
+        author.heading_level_2("Book39 structure"),
         json_block.json_block_raw_html(cmn.JSON_BOOK39),
     ]
 

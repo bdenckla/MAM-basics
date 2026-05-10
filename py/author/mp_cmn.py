@@ -5,6 +5,8 @@ from mb_misc import mb_html
 from author_util import author
 from author_util import json_block
 
+_GOOD_ENDING_DOC = "mpplus_good_ending.html"
+
 # ---------------------------------------------------------------------------
 # JSON snippets shared by plain and plus common-templates sections
 # ---------------------------------------------------------------------------
@@ -181,7 +183,14 @@ OTHER_ROWS = [
     ],
     [
         author.hbo("מ:סיום בטוב"),
-        "Good ending. Provides an unpointed version of the next-to-last verse. Used at the end of Lamentations, Ecclesiastes, Isaiah, and Malachi.",
+        [
+            "Good ending. See ",
+            mb_html.anchor_h(
+                ["the ", mb_html.code("good_ending_plus"), " dedicated page"],
+                _GOOD_ENDING_DOC,
+            ),
+            ".",
+        ],
     ],
     [
         author.hbo("מ:טעם ומתג באות אחת"),
