@@ -69,12 +69,12 @@ _JSON_D_COL_SUBSEQ = """\
 
 _JSON_TMPL_FORMAT = """\
 {
-  "tmpl_name": "קו\\"כ",
+  "tmpl_name": "קו״כ",
   "tmpl_params": {"1": "את", "2": "אַ֠תָּ֠ה"}
 }"""
 
 _JSON_TMPL_PLAIN_COMPARE = """\
-{"stmpl": "קו\\"כ|את|אַ֠תָּ֠ה"}"""
+{"stmpl": "קו״כ|את|אַ֠תָּ֠ה"}"""
 
 _JSON_ACCESS = """\
 def tmpl_param(tmpl, key):
@@ -86,7 +86,7 @@ _JSON_NESTED = """\
   "tmpl_name": "נוסח",
   "tmpl_params": {
     "1": {
-      "tmpl_name": "כו\\"ק",
+      "tmpl_name": "כו״ק",
       "tmpl_params": {
         "1": {
           "tmpl_name": "מ:אות-מיוחדת-במילה",
@@ -188,6 +188,17 @@ def s_plain_differences():
     return [
         author.heading_level_2("Differences from plain format"),
         author.std_table(_DIFF_ROWS, arg_to_troh=["Feature", "Plain", "Plus"]),
+        author.para(
+            [
+                "Template names use Hebrew gershayim ",
+                mb_html.code("״"),
+                " (for example ",
+                author.hbo("כו״ק"),
+                "), not ASCII double quote ",
+                mb_html.code('"'),
+                ".",
+            ]
+        ),
         author.para(
             [
                 "Example of the stringified template format ",
@@ -483,7 +494,7 @@ def s_common_templates():
                 "Current values observed for optional ",
                 author.hbo("\u05e1\u05d5\u05d2="),
                 " in ",
-                author.hbo('\u05de:\u05e7\u05d5"\u05db-\u05d0\u05dd-2'),
+                author.hbo("מ:קו״כ-אם-2"),
                 ":",
             ]
         ),
