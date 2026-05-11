@@ -3,7 +3,25 @@
 
 from author_util.claim import ClaimRecord, REGISTRY
 from verify_mp import survey_artifact
-from verify_mp.corpus import Context, iter_all_template_objects
+from verify_mp.corpus import (
+    Context,
+    iter_all_template_objects,
+    iter_template_objects,
+    iter_verses,
+)
+
+# Torah (Pentateuch) + Esther book24_name values — the only books where
+# מ:הערה / מ:הערה-2 may appear.
+_FOOTNOTE_BOOKS = frozenset(
+    [
+        "ספר בראשית",
+        "ספר שמות",
+        "ספר ויקרא",
+        "ספר במדבר",
+        "ספר דברים",
+        "מגילת אסתר",
+    ]
+)
 
 # Normalize straight double-quote (U+0022) → Hebrew gershayim (U+05F4).
 # The plus corpus JSON stores sug= values with straight quotes; claim data uses
@@ -75,15 +93,33 @@ def verify_mp_both_templates_other_set(record: ClaimRecord, ctx: Context) -> Non
     _verify_template_set_observed(record, ctx)
 
 
+def _verify_footnote_books_only(record: ClaimRecord, ctx: Context) -> None:
+    """Assert footnote templates only appear in Torah and Esther books.
+
+    Walks the raw plus corpus and collects every book24_name where a template
+    whose name is in record.data["templates"] appears.  Asserts the resulting
+    set is a subset of _FOOTNOTE_BOOKS.
+    """
+    tmpl_names = frozenset(record.data["templates"])
+    bad_books: set[str] = set()
+    for book39, _ch_key, _v_key, verse in iter_verses(ctx.corpus):
+        book = book39["book24_name"]
+        if book in _FOOTNOTE_BOOKS:
+            continue
+        for col in verse:
+            for tmpl in iter_template_objects(col):
+                if tmpl["tmpl_name"] in tmpl_names:
+                    bad_books.add(book)
+    assert (
+        not bad_books
+    ), f"footnote templates found outside Torah/Esther: {sorted(bad_books)}"
+
+
 def verify_mp_both_templates_footnote(record: ClaimRecord, ctx: Context) -> None:
     """The footnote templates (מ:הערה, מ:הערה-2) appear at least once in the plus corpus
-    (per the precomputed tmpl-survey artifact).
-
-    TODO: Also verify that מ:הערה appears only in Torah and Esther books
-    (record.data["books"] = "Torah and Esther only"). Per-book locality check
-    is deferred to PART B.
-    """
+    (per the precomputed tmpl-survey artifact) and only in Torah and Esther books."""
     _verify_template_set_observed(record, ctx)
+    _verify_footnote_books_only(record, ctx)
 
 
 def verify_mp_both_templates_footnote_links_set(
