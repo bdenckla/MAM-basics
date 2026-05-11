@@ -74,6 +74,19 @@ def iter_plain_verses(corpus_plain: PlainCorpus) -> Iterator[tuple]:
                     yield book39, ch_key, v_key, verse
 
 
+def iter_plain_book39s(corpus_plain: PlainCorpus) -> Iterator[dict]:
+    """Yield every book39 dict across all plain corpus files."""
+    for top in corpus_plain.files:
+        yield from top["book39s"]
+
+
+def iter_plain_chapters(corpus_plain: PlainCorpus) -> Iterator[tuple]:
+    """Yield (book39, ch_key, chapter_dict) for every chapter in the plain corpus."""
+    for book39 in iter_plain_book39s(corpus_plain):
+        for ch_key, chapter in book39["chapters"].items():
+            yield book39, ch_key, chapter
+
+
 def iter_plain_col_objects(node) -> Iterator[dict]:
     """Yield every plain-column dict node (stmpl, custom_tag, etc.) in node."""
     if isinstance(node, dict):
