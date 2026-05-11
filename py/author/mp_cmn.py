@@ -217,7 +217,7 @@ ACCENT_ROWS = claim(
             "Galgal. Distinguishes poetic from prose uses of Unicode $YBY.",
         ],
         [
-            author.hbo("ירח בן יומו"),
+            author.hbo("ירח בן יומו-2"),
             "Yera\u1e25 ben yomo. Distinguishes prose from poetic uses of Unicode $YBY.",
         ],
         [
