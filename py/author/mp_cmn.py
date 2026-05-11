@@ -4,6 +4,7 @@
 from mb_misc import mb_html
 from author_util import author
 from author_util import json_block
+from author_util.claim import claim
 
 _GOOD_ENDING_DOC = "mpplus_good_ending.html"
 
@@ -11,254 +12,405 @@ _GOOD_ENDING_DOC = "mpplus_good_ending.html"
 # JSON snippets shared by plain and plus common-templates sections
 # ---------------------------------------------------------------------------
 
-JSON_KQ = """\
-{"stmpl": "קו״כ|את|אַ֠תָּ֠ה"}"""
+JSON_KQ = claim(
+    "mp.plain.example.kq",
+    """\
+{"stmpl": "קו״כ|את|אַ֠תָּ֠ה"}""",
+    kind="example",
+    subject="mp:plain",
+    data={"stmpl": "קו״כ|את|אַ֠תָּ֠ה"},
+)
 
-JSON_KQ_PLUS = """\
+JSON_KQ_PLUS = claim(
+    "mp.plus.example.kq",
+    """\
 {
     "tmpl_name": "קו״כ",
     "tmpl_params": {
         "1": "את",
         "2": "אַ֠תָּ֠ה"
     }
-}"""
+}""",
+    kind="example",
+    subject="mp:plus",
+    data={
+        "tmpl_name": "קו״כ",
+        "tmpl_params": {"1": "את", "2": "אַ֠תָּ֠ה"},
+    },
+)
 
-JSON_NUSACH = """\
-{"stmpl": "נוסח|וּבֵרְﬞכ֥וּ|2=א=וּבֵרֲכ֥וּ (חטף)"}"""
+JSON_NUSACH = claim(
+    "mp.plain.example.nusach",
+    """\
+{"stmpl": "נוסח|וּבֵרְﬞכ֥וּ|2=א=וּבֵרֲכ֥וּ (חטף)"}""",
+    kind="example",
+    subject="mp:plain",
+    data={"stmpl": "נוסח|וּבֵרְﬞכ֥וּ|2=א=וּבֵרֲכ֥וּ (חטף)"},
+)
 
-JSON_NUSACH_PLUS = """\
+JSON_NUSACH_PLUS = claim(
+    "mp.plus.example.nusach",
+    """\
 {
     "tmpl_name": "נוסח",
     "tmpl_params": {
         "1": "וּבֵרְﬞכ֥וּ",
         "2": "א=וּבֵרֲכ֥וּ (חטף)"
     }
-}"""
+}""",
+    kind="example",
+    subject="mp:plus",
+    data={
+        "tmpl_name": "נוסח",
+        "tmpl_params": {
+            "1": "וּבֵרְﬞכ֥וּ",
+            "2": "א=וּבֵרֲכ֥וּ (חטף)",
+        },
+    },
+)
 
 # ---------------------------------------------------------------------------
 # Table row data
 # ---------------------------------------------------------------------------
 
-KQ_ROWS = [
+KQ_ROWS = claim(
+    "mp.both.templates.kq.set",
     [
-        author.hbo("כו״ק"),
         [
-            "Standard $ketiv_qere. Param 1 = unpointed $ketiv,"
-            " param 2 = pointed $qere.",
-        ],
-    ],
-    [
-        author.hbo("קו״כ"),
-        [
-            "Post-$maqaf $ketiv_qere. Same params as ",
             author.hbo("כו״ק"),
-            " but used when the pair follows a $maqaf.",
+            [
+                "Standard $ketiv_qere. Param 1 = unpointed $ketiv,"
+                " param 2 = pointed $qere.",
+            ],
         ],
-    ],
-    [
-        author.hbo("מ:קו״כ-אם-2"),
         [
-            "Trivial $ketiv_qere. Param 1 = pointed $ketiv, param 2 = unpointed $ketiv,"
-            " param 3 = pointed $qere.",
+            author.hbo("קו״כ"),
+            [
+                "Post-$maqaf $ketiv_qere. Same params as ",
+                author.hbo("כו״ק"),
+                " but used when the pair follows a $maqaf.",
+            ],
         ],
-    ],
-    [
-        author.hbo("כתיב ולא קרי"),
         [
-            "Ketiv without $qere. Param 1 = the $ketiv.",
+            author.hbo("מ:קו״כ-אם-2"),
+            [
+                "Trivial $ketiv_qere. Param 1 = pointed $ketiv, param 2 = unpointed $ketiv,"
+                " param 3 = pointed $qere.",
+            ],
         ],
-    ],
-    [
-        author.hbo("קרי ולא כתיב"),
         [
-            "Qere without $ketiv. Param 1 = the $qere.",
+            author.hbo("כתיב ולא קרי"),
+            [
+                "Ketiv without $qere. Param 1 = the $ketiv.",
+            ],
         ],
-    ],
-    [
-        author.hbo("מ:כו״ק מיוחד"),
         [
-            "Special $ketiv_qere. The required ",
-            author.hbo("סוג="),
-            " named parameter identifies the subtype. Nine subtypes.",
+            author.hbo("קרי ולא כתיב"),
+            [
+                "Qere without $ketiv. Param 1 = the $qere.",
+            ],
         ],
-    ],
-]
-
-KQ_AM2_SUG_LIST = [
-    author.hbo('אל"ף נחה באמצע תיבה ולא נקראת'),
-    author.hbo('כתיב ה"א בסיומת של חולם'),
-    author.hbo("כתיב הוא קרי היא"),
-    author.hbo('כתיב חסר יו"ד בסיומת של קמץ ואחריו וי"ו'),
-    author.hbo("כתיב נער קרי נערה"),
-]
-
-SPECIAL_LETTER_ROWS = [
-    [
-        author.hbo("מ:אות-ג"),
-        "Large letter. Parameter is the letter along with any diacritical marks.",
-    ],
-    [
-        author.hbo("מ:אות-ק"),
-        "Small letter. Parameter is the letter along with any diacritical marks.",
-    ],
-    [
-        author.hbo("מ:אות תלויה"),
-        "Suspended (hung) letter. Parameter is the letter along with any diacritical marks.",
-    ],
-    [
-        author.hbo("מ:נו״ן הפוכה"),
-        "Reversed (inverted) $nun.",
-    ],
-]
-
-ACCENT_ROWS = [
-    [
-        author.hbo("מ:לגרמיה-2"),
-        "$Legarmeh. The vertical line \u05c0 as $legarmeh (part of the word\u2019s cantillation). Shares Unicode with $paseq but differs in function.",
-    ],
-    [
-        author.hbo("מ:פסק"),
-        "$Paseq. The vertical line \u05c0 as $paseq in the narrow sense, i.e. $paseq as distinct from $legarmeh.",
-    ],
-    [
-        author.hbo("מ:מקף אפור"),
-        "Gray $maqaf. A $maqaf that is only implicit in the manuscript. Appears only in poetic verses.",
-    ],
-    [
-        author.hbo("מ:דחי"),
-        "De\u1e25i variation. Presents both stress-helped and non-stress-helped versions of a word.",
-    ],
-    [
-        author.hbo("מ:צינור"),
-        "Tsinnor variation. Presents both stress-helped and non-stress-helped versions of a word.",
-    ],
-    [
-        author.hbo("גלגל-2"),
-        "Galgal. Distinguishes poetic from prose uses of Unicode $YBY.",
-    ],
-    [
-        author.hbo("ירח בן יומו"),
-        "Yera\u1e25 ben yomo. Distinguishes prose from poetic uses of Unicode $YBY.",
-    ],
-    [
-        author.hbo("אתנח הפוך"),
-        "Atna\u1e25 hafukh. Helps distinguish this accent from galgal/yera\u1e25 ben yomo.",
-    ],
-    [
-        author.hbo("מ:קמץ"),
         [
-            "Qamats variation. Named params: ",
-            author.hbo("ד="),
-            " (grammatical) and ",
-            author.hbo("ס="),
-            " (Sephardic tradition).",
+            author.hbo("מ:כו״ק מיוחד"),
+            [
+                "Special $ketiv_qere. The required ",
+                author.hbo("סוג="),
+                " named parameter identifies the subtype. Nine subtypes.",
+            ],
         ],
     ],
-]
+    kind="enum",
+    subject="mp:both",
+    data={
+        "templates": [
+            "כו״ק",
+            "קו״כ",
+            "מ:קו״כ-אם-2",
+            "כתיב ולא קרי",
+            "קרי ולא כתיב",
+            "מ:כו״ק מיוחד",
+        ]
+    },
+)
 
-JER_ROWS = [
+KQ_AM2_SUG_LIST = claim(
+    "mp.both.templates.kq-am2.sug-values",
     [
-        author.hbo("מ:ירושלם"),
-        "Handles the masoretic spelling of Jerusalem without $yod. Two params (vowel and accent of $lamed).",
+        author.hbo('אל"ף נחה באמצע תיבה ולא נקראת'),
+        author.hbo('כתיב ה"א בסיומת של חולם'),
+        author.hbo("כתיב הוא קרי היא"),
+        author.hbo('כתיב חסר יו"ד בסיומת של קמץ ואחריו וי"ו'),
+        author.hbo("כתיב נער קרי נערה"),
     ],
-    [
-        author.hbo("מ:ירושלמה"),
-        "Like \u05de:\u05d9\u05e8\u05d5\u05e9\u05dc\u05dd but for the directional form \u201cto Jerusalem\u201d (4 cases).",
-    ],
-]
+    kind="enum",
+    subject="mp:both",
+    data={
+        "template": "מ:קו״כ-אם-2",
+        "param": "סוג",
+        "values": [
+            'אל"ף נחה באמצע תיבה ולא נקראת',
+            'כתיב ה"א בסיומת של חולם',
+            "כתיב הוא קרי היא",
+            'כתיב חסר יו"ד בסיומת של קמץ ואחריו וי"ו',
+            "כתיב נער קרי נערה",
+        ],
+    },
+)
 
-POETIC_ROWS = [
+SPECIAL_LETTER_ROWS = claim(
+    "mp.both.templates.special-letters.set",
     [
-        author.hbo("ר1"),
-        "Following stich on its own line, one indent. In 2 cases (Ps 70, 108) represents a closed $parashah.",
-    ],
-    [author.hbo("ר2"), "Following stich on its own line, two indents."],
-    [author.hbo("ר3"), "Following stich at line start, no indent."],
-    [author.hbo("ר4"), "New verse at line start, no indent."],
-    [
-        author.hbo("ר0"),
-        "Extra division point when a verse has an odd number of stiches, for even-column display.",
-    ],
-    [
-        author.hbo("פרשה-מרכז"),
-        "Centered title. For \u201ctitles\u201d in Job and Proverbs. Parameter is the title text.",
-    ],
-]
-
-FOOTNOTE_ROW = [
-    author.hbo("מ:הערה"),
-    "Scroll-difference footnote (Torah and Esther only). Footnote markers appear within the text itself. Parameter is the footnote text.",
-]
-
-OTHER_ROWS = [
-    [
-        [author.hbo("פפ"), " / ", author.hbo("סס")],
-        "Parashah petuchah / setumah (primarily in D column)",
-    ],
-    [
-        author.hbo("מ:אות מנוקדת"),
-        "Dotted letter/word. Marks words with masoretic dots above/below.",
-    ],
-    [
-        author.hbo("מ:סיום בטוב"),
         [
-            "Good ending. See ",
-            author.anchor_h(
-                ["the ", mb_html.code("good_ending_plus"), " dedicated page"],
-                _GOOD_ENDING_DOC,
-            ),
-            ".",
+            author.hbo("מ:אות-ג"),
+            "Large letter. Parameter is the letter along with any diacritical marks.",
+        ],
+        [
+            author.hbo("מ:אות-ק"),
+            "Small letter. Parameter is the letter along with any diacritical marks.",
+        ],
+        [
+            author.hbo("מ:אות תלויה"),
+            "Suspended (hung) letter. Parameter is the letter along with any diacritical marks.",
+        ],
+        [
+            author.hbo("מ:נו״ן הפוכה"),
+            "Reversed (inverted) $nun.",
         ],
     ],
-    [
-        author.hbo("מ:טעם ומתג באות אחת"),
-        "Normalization-robust meteg for 10 cases where a below-accent and meteg share one letter.",
-    ],
-    [
-        author.hbo("מ:גרש ותלישא גדולה"),
-        "Combined $geresh + $telisha gedolah (2 words, 3 uses). No parameters.",
-    ],
-    [
-        author.hbo("מ:גרשיים ותלישא גדולה"),
-        "Combined gershayim + $telisha gedolah (3 words, 4 uses). No parameters.",
-    ],
-]
+    kind="enum",
+    subject="mp:both",
+    data={
+        "templates": [
+            "מ:אות-ג",
+            "מ:אות-ק",
+            "מ:אות תלויה",
+            "מ:נו״ן הפוכה",
+        ]
+    },
+)
 
-KQ_SPECIAL_ROWS = [
+ACCENT_ROWS = claim(
+    "mp.both.templates.accents.set",
     [
-        author.hbo("כו״ק בין שני מקפים"),
-        "Ketiv-$qere between two maqafim (Isaiah 26:20 only)",
+        [
+            author.hbo("מ:לגרמיה-2"),
+            "$Legarmeh. The vertical line \u05c0 as $legarmeh (part of the word\u2019s cantillation). Shares Unicode with $paseq but differs in function.",
+        ],
+        [
+            author.hbo("מ:פסק"),
+            "$Paseq. The vertical line \u05c0 as $paseq in the narrow sense, i.e. $paseq as distinct from $legarmeh.",
+        ],
+        [
+            author.hbo("מ:מקף אפור"),
+            "Gray $maqaf. A $maqaf that is only implicit in the manuscript. Appears only in poetic verses.",
+        ],
+        [
+            author.hbo("מ:דחי"),
+            "De\u1e25i variation. Presents both stress-helped and non-stress-helped versions of a word.",
+        ],
+        [
+            author.hbo("מ:צינור"),
+            "Tsinnor variation. Presents both stress-helped and non-stress-helped versions of a word.",
+        ],
+        [
+            author.hbo("גלגל-2"),
+            "Galgal. Distinguishes poetic from prose uses of Unicode $YBY.",
+        ],
+        [
+            author.hbo("ירח בן יומו"),
+            "Yera\u1e25 ben yomo. Distinguishes prose from poetic uses of Unicode $YBY.",
+        ],
+        [
+            author.hbo("אתנח הפוך"),
+            "Atna\u1e25 hafukh. Helps distinguish this accent from galgal/yera\u1e25 ben yomo.",
+        ],
+        [
+            author.hbo("מ:קמץ"),
+            [
+                "Qamats variation. Named params: ",
+                author.hbo("ד="),
+                " (grammatical) and ",
+                author.hbo("ס="),
+                " (Sephardic tradition).",
+            ],
+        ],
     ],
+    kind="enum",
+    subject="mp:both",
+    data={
+        "templates": [
+            "מ:לגרמיה-2",
+            "מ:פסק",
+            "מ:מקף אפור",
+            "מ:דחי",
+            "מ:צינור",
+            "גלגל-2",
+            "ירח בן יומו",
+            "אתנח הפוך",
+            "מ:קמץ",
+        ]
+    },
+)
+
+JER_ROWS = claim(
+    "mp.both.templates.jerusalem.set",
     [
-        author.hbo("כו״ק כתיב מילה חדה וקרי תרתין מילין"),
-        "1-word $ketiv mapped to 2-atom $qere",
+        [
+            author.hbo("מ:ירושלם"),
+            "Handles the masoretic spelling of Jerusalem without $yod. Two params (vowel and accent of $lamed).",
+        ],
+        [
+            author.hbo("מ:ירושלמה"),
+            "Like \u05de:\u05d9\u05e8\u05d5\u05e9\u05dc\u05dd but for the directional form \u201cto Jerusalem\u201d (4 cases).",
+        ],
     ],
+    kind="enum",
+    subject="mp:both",
+    data={"templates": ["מ:ירושלם", "מ:ירושלמה"]},
+)
+
+POETIC_ROWS = claim(
+    "mp.both.templates.poetic.set",
     [
-        author.hbo("כו״ק כתיב מילה חדה וקרי תרתין מילין בין שני מקפים"),
-        "Same as above but between maqafim (1 Chronicles 9:4 only)",
+        [
+            author.hbo("ר1"),
+            "Following stich on its own line, one indent. In 2 cases (Ps 70, 108) represents a closed $parashah.",
+        ],
+        [author.hbo("ר2"), "Following stich on its own line, two indents."],
+        [author.hbo("ר3"), "Following stich at line start, no indent."],
+        [author.hbo("ר4"), "New verse at line start, no indent."],
+        [
+            author.hbo("ר0"),
+            "Extra division point when a verse has an odd number of stiches, for even-column display.",
+        ],
+        [
+            author.hbo("פרשה-מרכז"),
+            "Centered title. For \u201ctitles\u201d in Job and Proverbs. Parameter is the title text.",
+        ],
     ],
+    kind="enum",
+    subject="mp:both",
+    data={
+        "templates": ["ר1", "ר2", "ר3", "ר4", "ר0", "פרשה-מרכז"],
+    },
+)
+
+FOOTNOTE_ROW = claim(
+    "mp.both.templates.footnote",
     [
-        author.hbo("כו״ק כתיב תרתין מילין וקרי מילה חדה"),
-        "2-word $ketiv mapped to 1-atom $qere",
+        author.hbo("מ:הערה"),
+        "Scroll-difference footnote (Torah and Esther only). Footnote markers appear within the text itself. Parameter is the footnote text.",
     ],
+    kind="enum",
+    subject="mp:both",
+    data={"template": "מ:הערה", "books": "Torah and Esther only"},
+)
+
+OTHER_ROWS = claim(
+    "mp.both.templates.other.set",
     [
-        author.hbo("קו״כ כתיב מילה חדה וקרי תרתין מילין"),
-        "Like the k1\u2192q2 case but in reversed (qk) display order, for use after $maqaf (Nehemiah 2:13 only)",
+        [
+            [author.hbo("פפ"), " / ", author.hbo("סס")],
+            "Parashah petuchah / setumah (primarily in D column)",
+        ],
+        [
+            author.hbo("מ:אות מנוקדת"),
+            "Dotted letter/word. Marks words with masoretic dots above/below.",
+        ],
+        [
+            author.hbo("מ:סיום בטוב"),
+            [
+                "Good ending. See ",
+                author.anchor_h(
+                    ["the ", mb_html.code("good_ending_plus"), " dedicated page"],
+                    _GOOD_ENDING_DOC,
+                ),
+                ".",
+            ],
+        ],
+        [
+            author.hbo("מ:טעם ומתג באות אחת"),
+            "Normalization-robust meteg for 10 cases where a below-accent and meteg share one letter.",
+        ],
+        [
+            author.hbo("מ:גרש ותלישא גדולה"),
+            "Combined $geresh + $telisha gedolah (2 words, 3 uses). No parameters.",
+        ],
+        [
+            author.hbo("מ:גרשיים ותלישא גדולה"),
+            "Combined gershayim + $telisha gedolah (3 words, 4 uses). No parameters.",
+        ],
     ],
+    kind="enum",
+    subject="mp:both",
+    data={
+        "templates": [
+            "פפ",
+            "סס",
+            "מ:אות מנוקדת",
+            "מ:סיום בטוב",
+            "מ:טעם ומתג באות אחת",
+            "מ:גרש ותלישא גדולה",
+            "מ:גרשיים ותלישא גדולה",
+        ]
+    },
+)
+
+KQ_SPECIAL_ROWS = claim(
+    "mp.both.templates.kq-special.subtypes",
     [
-        author.hbo("כו״ק קרי שונה מהכתיב בשתי מילים"),
-        "1-word $ketiv, 2-word $qere (kq display order)",
+        [
+            author.hbo("כו״ק בין שני מקפים"),
+            "Ketiv-$qere between two maqafim (Isaiah 26:20 only)",
+        ],
+        [
+            author.hbo("כו״ק כתיב מילה חדה וקרי תרתין מילין"),
+            "1-word $ketiv mapped to 2-atom $qere",
+        ],
+        [
+            author.hbo("כו״ק כתיב מילה חדה וקרי תרתין מילין בין שני מקפים"),
+            "Same as above but between maqafim (1 Chronicles 9:4 only)",
+        ],
+        [
+            author.hbo("כו״ק כתיב תרתין מילין וקרי מילה חדה"),
+            "2-word $ketiv mapped to 1-atom $qere",
+        ],
+        [
+            author.hbo("קו״כ כתיב מילה חדה וקרי תרתין מילין"),
+            "Like the k1\u2192q2 case but in reversed (qk) display order, for use after $maqaf (Nehemiah 2:13 only)",
+        ],
+        [
+            author.hbo("כו״ק קרי שונה מהכתיב בשתי מילים"),
+            "1-word $ketiv, 2-word $qere (kq display order)",
+        ],
+        [
+            author.hbo("קו״כ קרי שונה מהכתיב בשתי מילים"),
+            "1-word $ketiv, 2-word $qere in reversed (qk) display order (2 Kgs 18:27, Isa 36:12)",
+        ],
+        [author.hbo("כו״ק של שתי מילים בהערה אחת"), "2-word $ketiv, 2-atom $qere"],
+        [
+            author.hbo("כו״ק של שלוש מילים בהערה אחת"),
+            "3-word $ketiv, 3-atom $qere (2 Samuel 21:12)",
+        ],
     ],
-    [
-        author.hbo("קו״כ קרי שונה מהכתיב בשתי מילים"),
-        "1-word $ketiv, 2-word $qere in reversed (qk) display order (2 Kgs 18:27, Isa 36:12)",
-    ],
-    [author.hbo("כו״ק של שתי מילים בהערה אחת"), "2-word $ketiv, 2-atom $qere"],
-    [
-        author.hbo("כו״ק של שלוש מילים בהערה אחת"),
-        "3-word $ketiv, 3-atom $qere (2 Samuel 21:12)",
-    ],
-]
+    kind="enum",
+    subject="mp:both",
+    data={
+        "template": "מ:כו״ק מיוחד",
+        "param": "סוג",
+        "values": [
+            "כו״ק בין שני מקפים",
+            "כו״ק כתיב מילה חדה וקרי תרתין מילין",
+            "כו״ק כתיב מילה חדה וקרי תרתין מילין בין שני מקפים",
+            "כו״ק כתיב תרתין מילין וקרי מילה חדה",
+            "קו״כ כתיב מילה חדה וקרי תרתין מילין",
+            "כו״ק קרי שונה מהכתיב בשתי מילים",
+            "קו״כ קרי שונה מהכתיב בשתי מילים",
+            "כו״ק של שתי מילים בהערה אחת",
+            "כו״ק של שלוש מילים בהערה אחת",
+        ],
+    },
+)
 
 # ---------------------------------------------------------------------------
 # Google Sheet URLs (shared by plain and plus docs)
@@ -272,7 +424,9 @@ SHEETS_DATA = "https://purl.org/mam/google-sheet#gid=920165745"
 # (shared by plain and plus docs)
 # ---------------------------------------------------------------------------
 
-JSON_TOP_LEVEL = """\
+JSON_TOP_LEVEL = claim(
+    "mp.plain.example.top-level",
+    """\
 {
   "header": {
     "book24_name": "ספר איוב",
@@ -286,9 +440,14 @@ JSON_TOP_LEVEL = """\
     ]
   },
   "book39s": []
-}"""
+}""",
+    kind="example",
+    subject="mp:plain",
+)
 
-JSON_COMPOSITE = """\
+JSON_COMPOSITE = claim(
+    "mp.plain.example.top-level-composite",
+    """\
 {
   "header": {
     "book24_name": "ספר שמואל",
@@ -302,14 +461,22 @@ JSON_COMPOSITE = """\
     {"book24_name": "ספר שמואל", "sub_book_name": "שמ\\"א", "chapters": {}},
     {"book24_name": "ספר שמואל", "sub_book_name": "שמ\\"ב", "chapters": {}}
   ]
-}"""
+}""",
+    kind="example",
+    subject="mp:plain",
+)
 
-JSON_BOOK39 = """\
+JSON_BOOK39 = claim(
+    "mp.plain.example.book39",
+    """\
 {
   "book24_name": "ספר איוב",
   "sub_book_name": null,
   "chapters": {}
-}"""
+}""",
+    kind="example",
+    subject="mp:plain",
+)
 
 
 # ---------------------------------------------------------------------------
@@ -317,8 +484,9 @@ JSON_BOOK39 = """\
 # ---------------------------------------------------------------------------
 
 
-def s_file_naming():
-    rows = [
+_FILE_NAMING_ROWS = claim(
+    "mp.both.file-naming.book24-prefixes",
+    [
         [
             "A1\N{EN DASH}A5",
             "Torah",
@@ -337,7 +505,41 @@ def s_file_naming():
             "Song of Songs, Ruth, Lamentations, Ecclesiastes, Esther",
         ],
         ["F1, FA, FC", "Late Books", "Daniel, Ezra-Nehemiah, Chronicles"],
-    ]
+    ],
+    kind="enum",
+    subject="mp:both",
+    data={
+        "prefixes": [
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5",
+            "B1",
+            "B2",
+            "BA",
+            "BC",
+            "C1",
+            "C2",
+            "C3",
+            "CA",
+            "D1",
+            "D2",
+            "D3",
+            "E1",
+            "E2",
+            "E3",
+            "E4",
+            "E5",
+            "F1",
+            "FA",
+            "FC",
+        ]
+    },
+)
+
+
+def s_file_naming():
     return [
         author.heading_level_2("File naming"),
         author.para(
@@ -361,7 +563,7 @@ def s_file_naming():
                 ":",
             ]
         ),
-        author.std_table(rows, arg_to_troh=["Prefix", "Section", "Books"]),
+        author.std_table(_FILE_NAMING_ROWS, arg_to_troh=["Prefix", "Section", "Books"]),
         author.para(
             [
                 "When ",

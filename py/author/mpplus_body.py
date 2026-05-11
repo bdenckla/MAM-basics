@@ -4,6 +4,7 @@
 from mb_misc import mb_html
 from author_util import author
 from author_util import json_block
+from author_util.claim import claim
 from author import mp_cmn as cmn
 
 _PLUS_DOC = "mpplus.html"
@@ -20,22 +21,40 @@ _GOOD_ENDING_DOC = "mpplus_good_ending.html"
 # JSON snippets
 # ---------------------------------------------------------------------------
 
-_JSON_TOP_LEVEL_SKEL = """\
+_JSON_TOP_LEVEL_SKEL = claim(
+    "mp.plus.example.top-level-skel",
+    """\
 {
   "header": {},
   "book39s": []
-}"""
+}""",
+    kind="struct",
+    subject="mp:plus",
+    data={"top_level_keys": ["header", "book39s"]},
+)
 
-_JSON_HEADER = """\
+_JSON_HEADER = claim(
+    "mp.plus.example.header-job",
+    """\
 "header": {
   "book24_name": "ספר איוב",
   "sub_book_names": [],
   "chapter_counts": [
     {"sub_book_name": null, "chapter_count": 42}
   ]
-}"""
+}""",
+    kind="example",
+    subject="mp:plus",
+    data={
+        "book24_name": "ספר איוב",
+        "sub_book_names": [],
+        "chapter_counts": [{"sub_book_name": None, "chapter_count": 42}],
+    },
+)
 
-_JSON_HEADER_COMPOSITE = """\
+_JSON_HEADER_COMPOSITE = claim(
+    "mp.plus.example.header-samuel",
+    """\
 "header": {
   "book24_name": "ספר שמואל",
   "sub_book_names": ["שמ\\\"א", "שמ\\\"ב"],
@@ -43,17 +62,35 @@ _JSON_HEADER_COMPOSITE = """\
       {"sub_book_name": "שמ\\\"א", "chapter_count": 31},
       {"sub_book_name": "שמ\\\"ב", "chapter_count": 24}
   ]
-}"""
+}""",
+    kind="example",
+    subject="mp:plus",
+)
 
-_JSON_BOOK39_SKEL = """\
+_JSON_BOOK39_SKEL = claim(
+    "mp.plus.example.book39-skel",
+    """\
 {
   "book24_name": "ספר ישעיהו",
   "sub_book_name": null,
   "chapters": {},
   "good_ending_plus": null
-}"""
+}""",
+    kind="struct",
+    subject="mp:plus",
+    data={
+        "book39_keys": [
+            "book24_name",
+            "sub_book_name",
+            "chapters",
+            "good_ending_plus",
+        ]
+    },
+)
 
-_JSON_D_COL_FIRST = """\
+_JSON_D_COL_FIRST = claim(
+    "mp.plus.example.d-col-first",
+    """\
 [
     ...,
     [
@@ -61,25 +98,51 @@ _JSON_D_COL_FIRST = """\
        "tmpl_params": {"1": "איוב", "2": "א", "3": "א", "סדר": "א"}}
     ],
     ...
-]"""
+]""",
+    kind="example",
+    subject="mp:plus",
+)
 
-_JSON_D_COL_SUBSEQ = """\
+_JSON_D_COL_SUBSEQ = claim(
+    "mp.plus.example.d-col-empty",
+    """\
 [
     ...,
     [],
     ...
-]"""
+]""",
+    kind="example",
+    subject="mp:plus",
+)
 
-_JSON_TMPL_FORMAT = """\
+_JSON_TMPL_FORMAT = claim(
+    "mp.plus.template.format-example",
+    """\
 {
   "tmpl_name": "קו״כ",
   "tmpl_params": {"1": "את", "2": "אַ֠תָּ֠ה"}
-}"""
+}""",
+    kind="format",
+    subject="mp:plus",
+    data={
+        "object_keys": ["tmpl_name", "tmpl_params"],
+        "tmpl_name": "קו״כ",
+        "tmpl_params": {"1": "את", "2": "אַ֠תָּ֠ה"},
+    },
+)
 
-_JSON_TMPL_PLAIN_COMPARE = """\
-{"stmpl": "קו״כ|את|אַ֠תָּ֠ה"}"""
+_JSON_TMPL_PLAIN_COMPARE = claim(
+    "mp.plain.template.stmpl-format-example",
+    """\
+{"stmpl": "קו״כ|את|אַ֠תָּ֠ה"}""",
+    kind="format",
+    subject="mp:plain",
+    data={"stmpl": "קו״כ|את|אַ֠תָּ֠ה"},
+)
 
-_JSON_NESTED = """\
+_JSON_NESTED = claim(
+    "mp.plus.example.nested-tmpl",
+    """\
 {
   "tmpl_name": "נוסח",
   "tmpl_params": {
@@ -95,7 +158,10 @@ _JSON_NESTED = """\
     },
     "2": "..."
   }
-}"""
+}""",
+    kind="example",
+    subject="mp:plus",
+)
 
 
 # ---------------------------------------------------------------------------
@@ -103,59 +169,64 @@ _JSON_NESTED = """\
 # ---------------------------------------------------------------------------
 
 
-_DIFF_ROWS = [
+_DIFF_ROWS = claim(
+    "mp.plus.diff-from-plain",
     [
-        "Pseudo-verses " + "\u201c" + "0\u201d and \u201c\u05ea\u05ea\u05ea\u201d",
-        "Present",
-        "Removed",
-    ],
-    [
-        "Custom XML tags (\u05e0\u05d5\u05d9\u05e0\u05e7\u05dc\u05d5\u05d3 etc.)",
-        "Present",
-        "Removed",
-    ],
-    ["Wikitext line breaks (\u201c//\u201d)", "Present in C column", "Removed"],
-    ["Named params", "not parsed", "unified with positional"],
-    [
-        "D column (verse label)",
-        ["Every verse has ", author.hbo("מ:פסוק")],
         [
-            "Only when ",
-            author.hbo("מ:פסוק"),
-            " has interesting parameters or is wrapped in ",
-            author.hbo("נוסח"),
+            "Pseudo-verses " + "\u201c" + "0\u201d and \u201c\u05ea\u05ea\u05ea\u201d",
+            "Present",
+            "Removed",
+        ],
+        [
+            "Custom XML tags (\u05e0\u05d5\u05d9\u05e0\u05e7\u05dc\u05d5\u05d3 etc.)",
+            "Present",
+            "Removed",
+        ],
+        ["Wikitext line breaks (\u201c//\u201d)", "Present in C column", "Removed"],
+        ["Named params", "not parsed", "unified with positional"],
+        [
+            "D column (verse label)",
+            ["Every verse has ", author.hbo("מ:פסוק")],
+            [
+                "Only when ",
+                author.hbo("מ:פסוק"),
+                " has interesting parameters or is wrapped in ",
+                author.hbo("נוסח"),
+            ],
+        ],
+        [mb_html.code("good_ending_plus"), "Not present", "Added (at book39 level)"],
+        ["Words with special letters", "interrupted", "uninterrupted provided"],
+        [
+            [mb_html.code('{"tmpl": [...]}'), " — parsed template trees"],
+            "Present",
+            [
+                "Removed (replaced by ",
+                mb_html.code("tmpl_name"),
+                "/",
+                mb_html.code("tmpl_params"),
+                ")",
+            ],
+        ],
+        [
+            [mb_html.code('{"stmpl": "..."}'), " — stringified templates"],
+            "Present",
+            [
+                "Removed (replaced by ",
+                mb_html.code("tmpl_name"),
+                "/",
+                mb_html.code("tmpl_params"),
+                ")",
+            ],
+        ],
+        [
+            [author.hbo("גלגל-2"), " — galgal accent annotation"],
+            "Present",
+            "Removed (handled differently in plus)",
         ],
     ],
-    [mb_html.code("good_ending_plus"), "Not present", "Added (at book39 level)"],
-    ["Words with special letters", "interrupted", "uninterrupted provided"],
-    [
-        [mb_html.code('{"tmpl": [...]}'), " — parsed template trees"],
-        "Present",
-        [
-            "Removed (replaced by ",
-            mb_html.code("tmpl_name"),
-            "/",
-            mb_html.code("tmpl_params"),
-            ")",
-        ],
-    ],
-    [
-        [mb_html.code('{"stmpl": "..."}'), " — stringified templates"],
-        "Present",
-        [
-            "Removed (replaced by ",
-            mb_html.code("tmpl_name"),
-            "/",
-            mb_html.code("tmpl_params"),
-            ")",
-        ],
-    ],
-    [
-        [author.hbo("גלגל-2"), " — galgal accent annotation"],
-        "Present",
-        "Removed (handled differently in plus)",
-    ],
-]
+    kind="enum",
+    subject="mp:plus",
+)
 
 
 def s_intro():
@@ -208,35 +279,41 @@ def s_plain_differences():
 
 
 def s_top_level():
-    _header_rows = [
+    _header_rows = claim(
+        "mp.plus.header.fields",
         [
-            mb_html.code("book24_name"),
-            "string",
-            "The name of this file’s book24.",
-        ],
-        [
-            mb_html.code("sub_book_names"),
-            "array",
             [
-                "Array of sub-book names for this book24."
-                " (Empty if this book24 has no sub-books.)",
+                mb_html.code("book24_name"),
+                "string",
+                "The name of this file’s book24.",
+            ],
+            [
+                mb_html.code("sub_book_names"),
+                "array",
+                [
+                    "Array of sub-book names for this book24."
+                    " (Empty if this book24 has no sub-books.)",
+                ],
+            ],
+            [
+                mb_html.code("chapter_counts"),
+                "array",
+                [
+                    "One object per book39, each with ",
+                    mb_html.code("sub_book_name"),
+                    " and ",
+                    mb_html.code("chapter_count"),
+                    ".",
+                    " (The ",
+                    mb_html.code("sub_book_name"),
+                    " will be null for a book39 that is not a sub-book, i.e. a book39 that is also a book24.)",
+                ],
             ],
         ],
-        [
-            mb_html.code("chapter_counts"),
-            "array",
-            [
-                "One object per book39, each with ",
-                mb_html.code("sub_book_name"),
-                " and ",
-                mb_html.code("chapter_count"),
-                ".",
-                " (The ",
-                mb_html.code("sub_book_name"),
-                " will be null for a book39 that is not a sub-book, i.e. a book39 that is also a book24.)",
-            ],
-        ],
-    ]
+        kind="struct",
+        subject="mp:plus",
+        data={"header_keys": ["book24_name", "sub_book_names", "chapter_counts"]},
+    )
     return [
         author.heading_level_2("Top-level structure"),
         json_block.json_block_raw_html(_JSON_TOP_LEVEL_SKEL),
@@ -250,41 +327,55 @@ def s_top_level():
 
 
 def s_book39():
-    _book39_rows = [
+    _book39_rows = claim(
+        "mp.plus.book39.fields",
         [
-            mb_html.code("book24_name"),
-            "string",
             [
-                "For a book39 that is not a sub-book, this is its name.",
-                " For a book39 that is a sub-book, this is the name of the book24 to which this sub-book belongs.",
+                mb_html.code("book24_name"),
+                "string",
+                [
+                    "For a book39 that is not a sub-book, this is its name.",
+                    " For a book39 that is a sub-book, this is the name of the book24 to which this sub-book belongs.",
+                ],
+            ],
+            [
+                mb_html.code("sub_book_name"),
+                "string | null",
+                [
+                    "For a book39 that is not a sub-book, this is null.",
+                    " For a book39 that is a sub-book, this is its name.",
+                ],
+            ],
+            [
+                mb_html.code("chapters"),
+                "object",
+                "Object keyed by chapter numbers; values are chapter objects.",
+            ],
+            [
+                mb_html.code("good_ending_plus"),
+                "object | null",
+                [
+                    'Non-null only for the 4 book39s with "good endings." See ',
+                    author.anchor_h(
+                        ["the ", mb_html.code("good_ending_plus"), " dedicated page"],
+                        _GOOD_ENDING_DOC,
+                    ),
+                    ".",
+                ],
             ],
         ],
-        [
-            mb_html.code("sub_book_name"),
-            "string | null",
-            [
-                "For a book39 that is not a sub-book, this is null.",
-                " For a book39 that is a sub-book, this is its name.",
+        kind="struct",
+        subject="mp:plus",
+        data={
+            "book39_keys": [
+                "book24_name",
+                "sub_book_name",
+                "chapters",
+                "good_ending_plus",
             ],
-        ],
-        [
-            mb_html.code("chapters"),
-            "object",
-            "Object keyed by chapter numbers; values are chapter objects.",
-        ],
-        [
-            mb_html.code("good_ending_plus"),
-            "object | null",
-            [
-                'Non-null only for the 4 book39s with "good endings." See ',
-                author.anchor_h(
-                    ["the ", mb_html.code("good_ending_plus"), " dedicated page"],
-                    _GOOD_ENDING_DOC,
-                ),
-                ".",
-            ],
-        ],
-    ]
+            "good_ending_plus_nonnull_count": 4,
+        },
+    )
     return [
         author.heading_level_2("Book39 structure"),
         json_block.json_block_raw_html(_JSON_BOOK39_SKEL),
@@ -293,55 +384,88 @@ def s_book39():
 
 
 def s_chapter_verse():
-    tmpl_rows = [
-        [mb_html.code("tmpl_name"), "string", "Template name"],
+    tmpl_rows = claim(
+        "mp.plus.template.object-fields",
         [
-            mb_html.code("tmpl_params"),
-            "object",
-            ["Parameters \u2014 present only if needed"],
+            [mb_html.code("tmpl_name"), "string", "Template name"],
+            [
+                mb_html.code("tmpl_params"),
+                "object",
+                ["Parameters \u2014 present only if needed"],
+            ],
         ],
-    ]
+        kind="struct",
+        subject="mp:plus",
+        data={"required_keys": ["tmpl_name"], "optional_keys": ["tmpl_params"]},
+    )
     return [
         author.heading_level_2("Chapter structure"),
         author.para(
-            [
-                "An object keyed by verse numbers."
-                " For example, a chapter with 22 verses has exactly 22 keys, ",
-                mb_html.code('"1"'),
-                " through ",
-                mb_html.code('"22"'),
-                ".",
-            ]
+            claim(
+                "mp.plus.chapter.keyed-by-verse-num",
+                [
+                    "An object keyed by verse numbers."
+                    " For example, a chapter with 22 verses has exactly 22 keys, ",
+                    mb_html.code('"1"'),
+                    " through ",
+                    mb_html.code('"22"'),
+                    ".",
+                ],
+                kind="struct",
+                subject="mp:plus",
+                data={"key_format": "decimal-string-1-indexed-contiguous"},
+            )
         ),
         author.heading_level_2("Verse structure"),
         author.para(
-            [
-                "A 3-element array [C, D, E], with column details described below.",
-            ]
+            claim(
+                "mp.plus.verse.is-3-tuple",
+                [
+                    "A 3-element array [C, D, E], with column details described below.",
+                ],
+                kind="struct",
+                subject="mp:plus",
+                data={"shape": ["sep", "label", "text"], "length": 3},
+            )
         ),
         author.heading_level_3("C column (index 0): Verse separator"),
         author.para(
-            [
-                "The C column usually contains what separates this verse "
-                "from the previous verse. This is usually a space, "
-                "represented as ",
-                mb_html.code('["__"]'),
-                ", but is sometimes something else, such as a פפ $parashah-break "
-                "template.",
-            ]
+            claim(
+                "mp.plus.verse.c-col.semantics",
+                [
+                    "The C column usually contains what separates this verse "
+                    "from the previous verse. This is usually a space, "
+                    "represented as ",
+                    mb_html.code('["__"]'),
+                    ", but is sometimes something else, such as a פפ $parashah-break "
+                    "template.",
+                ],
+                kind="struct",
+                subject="mp:plus",
+                data={"common_value": ["__"]},
+            )
         ),
         author.heading_level_3("D column (index 1): Verse label"),
         author.para(
-            [
-                "This is an array that contains a ",
-                author.hbo("מ:פסוק"),
-                " template call when it has something interesting to say—typically when it carries ",
-                "extra metadata such as the ",
-                mb_html.code("סדר"),
-                " or ",
-                mb_html.code("עלייה"),
-                " parameter. Otherwise, the array is empty.",
-            ]
+            claim(
+                "mp.plus.verse.d-col.semantics",
+                [
+                    "This is an array that contains a ",
+                    author.hbo("מ:פסוק"),
+                    " template call when it has something interesting to say—typically when it carries ",
+                    "extra metadata such as the ",
+                    mb_html.code("סדר"),
+                    " or ",
+                    mb_html.code("עלייה"),
+                    " parameter. Otherwise, the array is empty.",
+                ],
+                kind="struct",
+                subject="mp:plus",
+                data={
+                    "label_template": "מ:פסוק",
+                    "empty_when": "no interesting metadata",
+                },
+            )
         ),
         author.para(
             [
@@ -361,9 +485,15 @@ def s_chapter_verse():
         json_block.json_block_raw_html(_JSON_D_COL_FIRST),
         author.heading_level_3("E column (index 2): Verse text"),
         author.para(
-            [
-                "An array containing a mix of strings and template objects.",
-            ]
+            claim(
+                "mp.plus.verse.e-col.semantics",
+                [
+                    "An array containing a mix of strings and template objects.",
+                ],
+                kind="struct",
+                subject="mp:plus",
+                data={"element_types": ["string", "template_object"]},
+            )
         ),
         author.heading_level_2("Template format"),
         author.para("Templates are represented like this:"),
@@ -371,35 +501,50 @@ def s_chapter_verse():
         author.std_table(tmpl_rows, arg_to_troh=["Key", "Type", "Description"]),
         author.heading_level_3([mb_html.code("tmpl_params"), " keys"]),
         author.para(
-            [
-                "Numeric string keys ",
-                mb_html.code('"1"'),
-                ", ",
-                mb_html.code('"2"'),
-                ", \u2026 correspond to positional arguments,"
-                " Non-numeric keys (e.g. ",
-                mb_html.code('"ד"'),
-                ", ",
-                mb_html.code('"ס"'),
-                ", ",
-                mb_html.code('"סדר"'),
-                ") represent named parameters like ",
-                mb_html.code("ד=..."),
-                " in the Wikitext.",
-            ]
+            claim(
+                "mp.plus.template.tmpl-params-keys",
+                [
+                    "Numeric string keys ",
+                    mb_html.code('"1"'),
+                    ", ",
+                    mb_html.code('"2"'),
+                    ", \u2026 correspond to positional arguments,"
+                    " Non-numeric keys (e.g. ",
+                    mb_html.code('"ד"'),
+                    ", ",
+                    mb_html.code('"ס"'),
+                    ", ",
+                    mb_html.code('"סדר"'),
+                    ") represent named parameters like ",
+                    mb_html.code("ד=..."),
+                    " in the Wikitext.",
+                ],
+                kind="format",
+                subject="mp:plus",
+                data={
+                    "numeric_keys": "positional args",
+                    "non_numeric_keys": "named params",
+                },
+            )
         ),
         author.para(
-            [
-                "The ",
-                mb_html.code("tmpl_params"),
-                " object is absent when the template has no parameters (e.g. ",
-                author.hbo("פפ"),
-                ", ",
-                author.hbo("סס"),
-                ", ",
-                author.hbo("מ:פסק"),
-                ").",
-            ]
+            claim(
+                "mp.plus.template.tmpl-params-omitted-when-empty",
+                [
+                    "The ",
+                    mb_html.code("tmpl_params"),
+                    " object is absent when the template has no parameters (e.g. ",
+                    author.hbo("פפ"),
+                    ", ",
+                    author.hbo("סס"),
+                    ", ",
+                    author.hbo("מ:פסק"),
+                    ").",
+                ],
+                kind="format",
+                subject="mp:plus",
+                data={"examples_no_params": ["פפ", "סס", "מ:פסק"]},
+            )
         ),
         author.heading_level_3("Template parameter values can be complex"),
         author.para(
