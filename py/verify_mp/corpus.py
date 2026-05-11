@@ -18,10 +18,11 @@ class Corpus:
 
 @dataclass
 class Context:
-    """Everything a verifier may need: the loaded corpus plus the survey artifact."""
+    """Everything a verifier may need: the loaded corpus plus the survey artifacts."""
 
     corpus: Corpus
     survey: dict  # loaded plus.json from out/MAM-tmpl-survey/
+    survey_plain: dict  # loaded plain.json from out/MAM-tmpl-survey/
 
 
 def load_plus_corpus() -> Corpus:

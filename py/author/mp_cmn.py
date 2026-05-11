@@ -245,8 +245,9 @@ ACCENT_ROWS = claim(
             "מ:דחי",
             "מ:צינור",
             "גלגל-2",
-            "ירח בן יומו",
-            "אתנח הפוך",
+            "ירח בן יומו-2",
+            # אתנח הפוך is documented above but absent from the parsed corpus
+            # (doc-only per novc_tmpl_survey). Excluded from machine verification.
             "מ:קמץ",
         ]
     },

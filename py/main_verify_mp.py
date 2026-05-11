@@ -23,7 +23,8 @@ def main() -> None:
     registry_load.populate()
     corpus = load_plus_corpus()
     survey = survey_artifact.load()
-    ctx = Context(corpus=corpus, survey=survey)
+    survey_plain = survey_artifact.load_plain()
+    ctx = Context(corpus=corpus, survey=survey, survey_plain=survey_plain)
     driver.run(ctx)
 
 

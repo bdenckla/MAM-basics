@@ -6,13 +6,76 @@ from verify_mp import survey_artifact
 from verify_mp.corpus import Context
 
 
+def _verify_template_set_observed(
+    record: ClaimRecord, ctx: Context, *, key: str = "templates"
+) -> None:
+    """Assert that every declared template appears in the survey column_counts.
+
+    key: the record.data key holding the name(s). If the value is a list,
+    every element is checked. If it is a string (e.g. key="template"), it is
+    wrapped in a list first.
+
+    Only checks declared ⊆ observed; the reverse direction (observed ⊆ declared)
+    is deferred to PART B pending editorial input.
+    """
+    declared_raw = record.data[key]
+    if isinstance(declared_raw, list):
+        declared = frozenset(declared_raw)
+    else:
+        declared = frozenset([declared_raw])
+    observed = survey_artifact.template_names_observed_both(
+        ctx.survey, ctx.survey_plain
+    )
+    missing = declared - observed
+    assert (
+        not missing
+    ), f"declared templates not found in survey column_counts: {sorted(missing)}"
+
+
 def verify_mp_both_templates_kq_set(record: ClaimRecord, ctx: Context) -> None:
     """Every declared kq-family template appears at least once in the plus corpus
     (per the precomputed tmpl-survey artifact)."""
-    declared = frozenset(record.data["templates"])
-    observed = survey_artifact.template_names_observed(ctx.survey)
-    missing = declared - observed
-    assert not missing, (
-        f"declared kq templates not found in survey column_counts: "
-        f"{sorted(missing)}"
-    )
+    _verify_template_set_observed(record, ctx)
+
+
+def verify_mp_both_templates_special_letters_set(
+    record: ClaimRecord, ctx: Context
+) -> None:
+    """Every declared special-letters template appears at least once in the plus corpus
+    (per the precomputed tmpl-survey artifact)."""
+    _verify_template_set_observed(record, ctx)
+
+
+def verify_mp_both_templates_accents_set(record: ClaimRecord, ctx: Context) -> None:
+    """Every declared accents template appears at least once in the plus corpus
+    (per the precomputed tmpl-survey artifact)."""
+    _verify_template_set_observed(record, ctx)
+
+
+def verify_mp_both_templates_jerusalem_set(record: ClaimRecord, ctx: Context) -> None:
+    """Every declared jerusalem template appears at least once in the plus corpus
+    (per the precomputed tmpl-survey artifact)."""
+    _verify_template_set_observed(record, ctx)
+
+
+def verify_mp_both_templates_poetic_set(record: ClaimRecord, ctx: Context) -> None:
+    """Every declared poetic template appears at least once in the plus corpus
+    (per the precomputed tmpl-survey artifact)."""
+    _verify_template_set_observed(record, ctx)
+
+
+def verify_mp_both_templates_other_set(record: ClaimRecord, ctx: Context) -> None:
+    """Every declared other template appears at least once in the plus corpus
+    (per the precomputed tmpl-survey artifact)."""
+    _verify_template_set_observed(record, ctx)
+
+
+def verify_mp_both_templates_footnote(record: ClaimRecord, ctx: Context) -> None:
+    """The footnote template (מ:הערה) appears at least once in the plus corpus
+    (per the precomputed tmpl-survey artifact).
+
+    TODO: Also verify that מ:הערה appears only in Torah and Esther books
+    (record.data["books"] = "Torah and Esther only"). Per-book locality check
+    is deferred to PART B.
+    """
+    _verify_template_set_observed(record, ctx, key="template")
