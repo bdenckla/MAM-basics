@@ -3,7 +3,12 @@
 
 from author_util.claim import ClaimRecord
 from verify_mp import survey_artifact
-from verify_mp.corpus import Context
+from verify_mp.corpus import Context, iter_all_template_objects
+
+# Normalize straight double-quote (U+0022) → Hebrew gershayim (U+05F4).
+# The plus corpus JSON stores sug= values with straight quotes; claim data uses
+# gershayim.  Normalizing both sides ensures they compare equal.
+_NORM_QUOTES = str.maketrans({'"': "״"})
 
 
 def _verify_template_set_observed(
@@ -79,3 +84,53 @@ def verify_mp_both_templates_footnote(record: ClaimRecord, ctx: Context) -> None
     is deferred to PART B.
     """
     _verify_template_set_observed(record, ctx, key="template")
+
+
+# ---------------------------------------------------------------------------
+# Raw-corpus helpers for named-parameter value checks (B2, B3)
+# ---------------------------------------------------------------------------
+
+
+def _verify_named_param_values_subset(record: ClaimRecord, ctx: Context) -> None:
+    """Assert every observed tmpl_params[param] value is among the declared values.
+
+    Walks the raw plus corpus; the survey does not preserve named-parameter values.
+    Handles param values stored as plain strings or as 1-element string lists.
+
+    Reads from record.data: "template" (tmpl_name to match), "param" (param key),
+    "values" (declared allowed values).
+    """
+    tmpl_name = record.data["template"]
+    param_name = record.data["param"]
+    declared = frozenset(v.translate(_NORM_QUOTES) for v in record.data["values"])
+    observed: set[str] = set()
+    for tmpl in iter_all_template_objects(ctx.corpus):
+        if tmpl["tmpl_name"] != tmpl_name:
+            continue
+        raw = tmpl.get("tmpl_params", {}).get(param_name)
+        if raw is None:
+            continue
+        if isinstance(raw, str):
+            observed.add(raw.translate(_NORM_QUOTES))
+        elif isinstance(raw, list) and len(raw) == 1 and isinstance(raw[0], str):
+            observed.add(raw[0].translate(_NORM_QUOTES))
+        else:
+            assert False, f"unexpected {param_name}= value structure: {raw!r}"
+    unexpected = observed - declared
+    assert (
+        not unexpected
+    ), f"unexpected {param_name}= values in {tmpl_name}: {sorted(unexpected)}"
+
+
+def verify_mp_both_templates_kq_special_subtypes(
+    record: ClaimRecord, ctx: Context
+) -> None:
+    """Every סוג= value observed for מ:כו״ק מיוחד is among the nine declared subtypes."""
+    _verify_named_param_values_subset(record, ctx)
+
+
+def verify_mp_both_templates_kq_am2_sug_values(
+    record: ClaimRecord, ctx: Context
+) -> None:
+    """Every observed סוג= value in מ:קו״כ-אם-2 is among the declared values."""
+    _verify_named_param_values_subset(record, ctx)
