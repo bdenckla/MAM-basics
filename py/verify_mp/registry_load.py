@@ -11,6 +11,7 @@ a safe no-op (the idempotency guard prevents duplicate-id errors).
 """
 
 from author import mpplus_body as _body
+from author import mpplain as _plain
 from author import mp_cmn as _cmn  # noqa: F401 — module-level claims register at import
 
 _populated = False
@@ -34,3 +35,6 @@ def populate() -> None:
     _body.s_plus_only_templates()
     _body.s_common_templates()
     _body.s_plain_differences()
+    _plain.s_book39()
+    _plain.s_chapter()
+    _plain.s_verse()
