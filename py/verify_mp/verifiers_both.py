@@ -76,14 +76,34 @@ def verify_mp_both_templates_other_set(record: ClaimRecord, ctx: Context) -> Non
 
 
 def verify_mp_both_templates_footnote(record: ClaimRecord, ctx: Context) -> None:
-    """The footnote template (מ:הערה) appears at least once in the plus corpus
+    """The footnote templates (מ:הערה, מ:הערה-2) appear at least once in the plus corpus
     (per the precomputed tmpl-survey artifact).
 
     TODO: Also verify that מ:הערה appears only in Torah and Esther books
     (record.data["books"] = "Torah and Esther only"). Per-book locality check
     is deferred to PART B.
     """
-    _verify_template_set_observed(record, ctx, key="template")
+    _verify_template_set_observed(record, ctx)
+
+
+def verify_mp_both_templates_footnote_links_set(
+    record: ClaimRecord, ctx: Context
+) -> None:
+    """Every declared footnote-link template appears at least once in the plus corpus
+    (per the precomputed tmpl-survey artifact)."""
+    _verify_template_set_observed(record, ctx)
+
+
+def verify_mp_both_templates_structural_set(record: ClaimRecord, ctx: Context) -> None:
+    """Every declared structural template appears at least once in the plus corpus
+    (per the precomputed tmpl-survey artifact)."""
+    _verify_template_set_observed(record, ctx)
+
+
+def verify_mp_both_templates_navigation_set(record: ClaimRecord, ctx: Context) -> None:
+    """Every declared navigation template appears at least once in the plus corpus
+    (per the precomputed tmpl-survey artifact)."""
+    _verify_template_set_observed(record, ctx)
 
 
 # ---------------------------------------------------------------------------
@@ -154,7 +174,7 @@ def verify_mp_both_templates_all_groups_cover_all_observed(
     for cid, rec in REGISTRY.items():
         if not cid.startswith("mp.both.templates."):
             continue
-        if cid == rec.id:
+        if cid == record.id:
             continue
         if not (cid.endswith(".set") or cid == "mp.both.templates.footnote"):
             continue
