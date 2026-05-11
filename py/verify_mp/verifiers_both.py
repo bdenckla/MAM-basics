@@ -2,18 +2,17 @@
 """Verifiers for mp.both.* claims (claims that apply to both plain and plus)."""
 
 from author_util.claim import ClaimRecord
-from verify_mp.corpus import Context, iter_all_template_objects
+from verify_mp import survey_artifact
+from verify_mp.corpus import Context
 
 
 def verify_mp_both_templates_kq_set(record: ClaimRecord, ctx: Context) -> None:
-    """Every declared kq-family template appears at least once in the plus corpus."""
+    """Every declared kq-family template appears at least once in the plus corpus
+    (per the precomputed tmpl-survey artifact)."""
     declared = frozenset(record.data["templates"])
-    seen = set()
-    for tmpl in iter_all_template_objects(ctx.corpus):
-        name = tmpl["tmpl_name"]
-        if name in declared:
-            seen.add(name)
-    missing = declared - seen
-    assert (
-        not missing
-    ), f"declared kq templates not found in plus corpus: {sorted(missing)}"
+    observed = survey_artifact.template_names_observed(ctx.survey)
+    missing = declared - observed
+    assert not missing, (
+        f"declared kq templates not found in survey column_counts: "
+        f"{sorted(missing)}"
+    )
