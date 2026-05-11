@@ -649,7 +649,27 @@ def s_common_templates():
         author.para("Example of standard $ketiv_qere:"),
         json_block.json_block_raw_html(cmn.JSON_KQ_PLUS),
         author.heading_level_3("Special letter templates"),
-        author.std_table(cmn.SPECIAL_LETTER_ROWS, arg_to_troh=["Template", "Purpose"]),
+        author.std_table(
+            cmn.SPECIAL_LETTER_ROWS
+            + [
+                [
+                    author.hbo("מ:אות-מיוחדת-במילה"),
+                    [
+                        "Marks a whole word containing a special (large, small, or suspended) letter."
+                        " Encodes the word in both interrupted form (arg 1: array decomposed around the special letter)"
+                        " and uninterrupted form (args 2–5: plain word string plus dot-mask, type code, and letter/type summary)."
+                        " Args 2–5 together are sufficient to recover all special-letter information without arg 1."
+                        " See ",
+                        author.anchor_h(
+                            ["dedicated page for ", author.hbo("מ:אות-מיוחדת-במילה")],
+                            _AOT_DOC,
+                        ),
+                        ".",
+                    ],
+                ]
+            ],
+            arg_to_troh=["Template", "Purpose"],
+        ),
         author.heading_level_3("Accent and cantillation templates"),
         author.std_table(
             [

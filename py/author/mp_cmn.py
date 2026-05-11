@@ -176,13 +176,6 @@ SPECIAL_LETTER_ROWS = claim(
             author.hbo("מ:נו״ן הפוכה"),
             "Reversed (inverted) $nun.",
         ],
-        [
-            author.hbo("מ:אות-מיוחדת-במילה"),
-            "Marks a whole word containing a special (large, small, or suspended) letter."
-            " Encodes the word in both interrupted form (arg 1: array decomposed around the special letter)"
-            " and uninterrupted form (args 2–5: plain word string plus dot-mask, type code, and letter/type summary)."
-            " Args 2–5 together are sufficient to recover all special-letter information without arg 1.",
-        ],
     ],
     kind="enum",
     subject="mp:both",
@@ -192,7 +185,6 @@ SPECIAL_LETTER_ROWS = claim(
             "מ:אות-ק",
             "מ:אות תלויה",
             "מ:נו״ן הפוכה",
-            "מ:אות-מיוחדת-במילה",
         ]
     },
 )
