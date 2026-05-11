@@ -5,7 +5,7 @@ import sys
 
 from author_util.claim import REGISTRY, ClaimRecord
 from verify_mp import verifiers_plus, verifiers_both
-from verify_mp.corpus import Corpus
+from verify_mp.corpus import Context
 
 _VERIFIER_MODULES = (verifiers_plus, verifiers_both)
 
@@ -32,7 +32,7 @@ def build_verifiers() -> dict:
     return result
 
 
-def run(corpus: Corpus) -> None:
+def run(ctx: Context) -> None:
     """Run all verifiers; print a report; exit with code 1 if any verifier fails.
 
     Claims with no verifier are reported as 'pending' (not failures), since this
@@ -67,7 +67,7 @@ def run(corpus: Corpus) -> None:
             continue
         fn = verifiers[claim_id]
         try:
-            fn(record, corpus)
+            fn(record, ctx)
             passed.append(claim_id)
         except AssertionError as exc:
             failed.append((claim_id, str(exc)))

@@ -16,6 +16,14 @@ class Corpus:
     book39s: list = field(default_factory=list)
 
 
+@dataclass
+class Context:
+    """Everything a verifier may need: the loaded corpus plus the survey artifact."""
+
+    corpus: Corpus
+    survey: dict  # loaded plus.json from out/MAM-tmpl-survey/
+
+
 def load_plus_corpus() -> Corpus:
     """Load every plus/*.json file and collect all book39s.
 

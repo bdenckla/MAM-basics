@@ -2,14 +2,14 @@
 """Verifiers for mp.both.* claims (claims that apply to both plain and plus)."""
 
 from author_util.claim import ClaimRecord
-from verify_mp.corpus import Corpus, iter_all_template_objects
+from verify_mp.corpus import Context, iter_all_template_objects
 
 
-def verify_mp_both_templates_kq_set(record: ClaimRecord, corpus: Corpus) -> None:
+def verify_mp_both_templates_kq_set(record: ClaimRecord, ctx: Context) -> None:
     """Every declared kq-family template appears at least once in the plus corpus."""
     declared = frozenset(record.data["templates"])
     seen = set()
-    for tmpl in iter_all_template_objects(corpus):
+    for tmpl in iter_all_template_objects(ctx.corpus):
         name = tmpl["tmpl_name"]
         if name in declared:
             seen.add(name)

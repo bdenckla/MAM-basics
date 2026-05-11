@@ -13,7 +13,8 @@ verifier yet are reported as 'pending' without causing a non-zero exit.
 import sys
 
 from verify_mp import registry_load
-from verify_mp.corpus import load_plus_corpus
+from verify_mp.corpus import load_plus_corpus, Context
+from verify_mp import survey_artifact
 from verify_mp import driver
 
 
@@ -21,7 +22,9 @@ def main() -> None:
     sys.stdout.reconfigure(encoding="utf-8")
     registry_load.populate()
     corpus = load_plus_corpus()
-    driver.run(corpus)
+    survey = survey_artifact.load()
+    ctx = Context(corpus=corpus, survey=survey)
+    driver.run(ctx)
 
 
 if __name__ == "__main__":

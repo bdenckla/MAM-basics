@@ -3,16 +3,16 @@
 
 from author_util.claim import ClaimRecord
 from verify_mp.corpus import (
-    Corpus,
+    Context,
     iter_chapters,
     iter_verses,
     iter_all_template_objects,
 )
 
 
-def verify_mp_plus_verse_is_3_tuple(record: ClaimRecord, corpus: Corpus) -> None:
+def verify_mp_plus_verse_is_3_tuple(record: ClaimRecord, ctx: Context) -> None:
     """Every verse value in the plus corpus is a list of exactly 3 elements [C, D, E]."""
-    for book39, ch_key, v_key, verse in iter_verses(corpus):
+    for book39, ch_key, v_key, verse in iter_verses(ctx.corpus):
         assert isinstance(verse, list) and len(verse) == 3, (
             f"book39={book39['book24_name']!r} ch={ch_key} v={v_key}:"
             f" verse has {len(verse) if isinstance(verse, list) else type(verse).__name__}"
@@ -21,10 +21,10 @@ def verify_mp_plus_verse_is_3_tuple(record: ClaimRecord, corpus: Corpus) -> None
 
 
 def verify_mp_plus_chapter_keyed_by_verse_num(
-    record: ClaimRecord, corpus: Corpus
+    record: ClaimRecord, ctx: Context
 ) -> None:
     """Every chapter is keyed by contiguous decimal strings '1'..'N', starting at '1'."""
-    for book39, ch_key, chapter in iter_chapters(corpus):
+    for book39, ch_key, chapter in iter_chapters(ctx.corpus):
         keys = list(chapter.keys())
         n = len(keys)
         expected = [str(i) for i in range(1, n + 1)]
@@ -34,10 +34,10 @@ def verify_mp_plus_chapter_keyed_by_verse_num(
         )
 
 
-def verify_mp_plus_template_format_example(record: ClaimRecord, corpus: Corpus) -> None:
+def verify_mp_plus_template_format_example(record: ClaimRecord, ctx: Context) -> None:
     """Every template object has only 'tmpl_name' (required) and optionally 'tmpl_params'."""
     allowed = frozenset(record.data["object_keys"])
-    for tmpl in iter_all_template_objects(corpus):
+    for tmpl in iter_all_template_objects(ctx.corpus):
         assert "tmpl_name" in tmpl, f"template object missing 'tmpl_name': {tmpl!r}"
         extra = frozenset(tmpl.keys()) - allowed
         assert (
@@ -46,20 +46,20 @@ def verify_mp_plus_template_format_example(record: ClaimRecord, corpus: Corpus) 
 
 
 def verify_mp_plus_template_tmpl_params_omitted_when_empty(
-    record: ClaimRecord, corpus: Corpus
+    record: ClaimRecord, ctx: Context
 ) -> None:
     """No template object in the corpus has an empty 'tmpl_params' dict."""
-    for tmpl in iter_all_template_objects(corpus):
+    for tmpl in iter_all_template_objects(ctx.corpus):
         params = tmpl.get("tmpl_params")
         assert (
             params != {}
         ), f"template {tmpl['tmpl_name']!r} has tmpl_params: {{}} (should be omitted)"
 
 
-def verify_mp_plus_book39_fields(record: ClaimRecord, corpus: Corpus) -> None:
+def verify_mp_plus_book39_fields(record: ClaimRecord, ctx: Context) -> None:
     """Every book39 object has exactly the declared keys."""
     expected = frozenset(record.data["book39_keys"])
-    for book39 in corpus.book39s:
+    for book39 in ctx.corpus.book39s:
         actual = frozenset(book39.keys())
         assert actual == expected, (
             f"book39 {book39.get('book24_name')!r}:"
