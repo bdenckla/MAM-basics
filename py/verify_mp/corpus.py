@@ -7,6 +7,7 @@ from dataclasses import dataclass, field
 from typing import Iterator
 
 _PLUS_DIR = "../MAM-parsed/plus"
+_PLAIN_DIR = "../MAM-parsed/plain"
 
 
 @dataclass
@@ -17,10 +18,18 @@ class Corpus:
 
 
 @dataclass
+class PlainCorpus:
+    """All parsed plain-corpus files (each entry is the full top-level JSON object)."""
+
+    files: list = field(default_factory=list)  # list of top-level dicts
+
+
+@dataclass
 class Context:
     """Everything a verifier may need: the loaded corpus plus the survey artifacts."""
 
     corpus: Corpus
+    corpus_plain: PlainCorpus
     survey: dict  # loaded plus.json from out/MAM-tmpl-survey/
     survey_plain: dict  # loaded plain.json from out/MAM-tmpl-survey/
 
@@ -39,6 +48,39 @@ def load_plus_corpus() -> Corpus:
             data = json.load(fh)
         book39s.extend(data["book39s"])
     return Corpus(book39s=book39s)
+
+
+def load_plain_corpus() -> PlainCorpus:
+    """Load every plain/*.json file.
+
+    Must be called with the repo root as the working directory.
+    """
+    pattern = f"{_PLAIN_DIR}/*.json"
+    paths = sorted(glob.glob(pattern))
+    assert paths, f"No plain JSON files found matching {pattern!r}"
+    files = []
+    for path in paths:
+        with open(path, encoding="utf-8") as fh:
+            files.append(json.load(fh))
+    return PlainCorpus(files=files)
+
+
+def iter_plain_verses(corpus_plain: PlainCorpus) -> Iterator[tuple]:
+    """Yield (book39, ch_key, verse_key, verse) for every verse in the plain corpus."""
+    for top in corpus_plain.files:
+        for book39 in top["book39s"]:
+            for ch_key, chapter in book39["chapters"].items():
+                for v_key, verse in chapter.items():
+                    yield book39, ch_key, v_key, verse
+
+
+def iter_plain_col_objects(node) -> Iterator[dict]:
+    """Yield every plain-column dict node (stmpl, custom_tag, etc.) in node."""
+    if isinstance(node, dict):
+        yield node
+    elif isinstance(node, list):
+        for item in node:
+            yield from iter_plain_col_objects(item)
 
 
 def iter_chapters(corpus: Corpus) -> Iterator[tuple]:

@@ -15,10 +15,10 @@ _GOOD_ENDING_DOC = "mpplus_good_ending.html"
 JSON_KQ = claim(
     "mp.plain.example.kq",
     """\
-{"stmpl": "קו״כ|את|אַ֠תָּ֠ה"}""",
+{"stmpl": "קו"כ|את|אַ֠תָּ֠ה"}""",
     kind="example",
     subject="mp:plain",
-    data={"stmpl": "קו״כ|את|אַ֠תָּ֠ה"},
+    data={"stmpl": "קו\"כ|את|אַ֠תָּ֠ה"},
 )
 
 JSON_KQ_PLUS = claim(
@@ -28,14 +28,14 @@ JSON_KQ_PLUS = claim(
     "tmpl_name": "קו״כ",
     "tmpl_params": {
         "1": "את",
-        "2": "אַ֠תָּ֠ה"
+        "2": "אַ֠תָּ֠ה"
     }
 }""",
     kind="example",
     subject="mp:plus",
     data={
         "tmpl_name": "קו״כ",
-        "tmpl_params": {"1": "את", "2": "אַ֠תָּ֠ה"},
+        "tmpl_params": {"1": "את", "2": "אַ֠תָּ֠ה"},
     },
 )
 
