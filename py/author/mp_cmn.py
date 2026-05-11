@@ -176,6 +176,10 @@ SPECIAL_LETTER_ROWS = claim(
             author.hbo("מ:נו״ן הפוכה"),
             "Reversed (inverted) $nun.",
         ],
+        [
+            author.hbo("מ:אות-מיוחדת-במילה"),
+            "Special letter within a word. Marks a letter requiring non-standard treatment within its word.",
+        ],
     ],
     kind="enum",
     subject="mp:both",
@@ -185,6 +189,7 @@ SPECIAL_LETTER_ROWS = claim(
             "מ:אות-ק",
             "מ:אות תלויה",
             "מ:נו״ן הפוכה",
+            "מ:אות-מיוחדת-במילה",
         ]
     },
 )
@@ -234,6 +239,18 @@ ACCENT_ROWS = claim(
                 " (Sephardic tradition).",
             ],
         ],
+        [
+            author.hbo("מ:טעם"),
+            "Accent extractor. Drops the first code point of its argument, allowing an accent to be specified on a dummy letter for readability.",
+        ],
+        [
+            author.hbo("מ:כפול"),
+            "Dual-cantillation span. Encodes a dually-accented text and its two singly-accented strands. Named params: כפול= (combined), א= and ב= (individual strands). Used for the two Decalogues and the Saga of Reuben.",
+        ],
+        [
+            author.hbo("שני טעמים באות אחת קמץ-תחתון-פתח-עליון"),
+            "Formats the two extra marks (above-accent + patah) on the QUPO Decalogue words (panay and mitahat). Parameter is the above-accent (may use מ:טעם).",
+        ],
     ],
     kind="enum",
     subject="mp:both",
@@ -249,6 +266,9 @@ ACCENT_ROWS = claim(
             # אתנח הפוך is documented above but absent from the parsed corpus
             # (doc-only per novc_tmpl_survey). Excluded from machine verification.
             "מ:קמץ",
+            "מ:טעם",
+            "מ:כפול",
+            "שני טעמים באות אחת קמץ-תחתון-פתח-עליון",
         ]
     },
 )
@@ -296,15 +316,171 @@ POETIC_ROWS = claim(
     },
 )
 
-FOOTNOTE_ROW = claim(
-    "mp.both.templates.footnote",
+STRUCTURAL_ROWS = claim(
+    "mp.both.templates.structural.set",
     [
-        author.hbo("מ:הערה"),
-        "Scroll-difference footnote (Torah and Esther only). Footnote markers appear within the text itself. Parameter is the footnote text.",
+        [
+            author.hbo("מ:ספר חדש"),
+            "New-book marker. Placed at the precise start of each of the 24 books; preceding space follows masoretic tradition. Parameter is the book name. Not used for 2 Sam., 2 Kgs., Neh., 2 Chr., nor for the 11 Minor Prophets after Hosea.",
+        ],
+        [
+            author.hbo("מ:רווח בתרי עשר"),
+            "Inter-prophet spacing. Marks the precise start of each of the 12 minor-prophetic book-parts with defined masoretic spacing. Parameter is the prophet name.",
+        ],
+        [
+            author.hbo("מ:רווח בתרי עשר בפסוק הראשון"),
+            "Variant of מ:רווח בתרי עשר for the first verse of the minor-prophetic book-part.",
+        ],
+        [
+            author.hbo("מ:רווח לספר בתהלים"),
+            "Psalms-book spacing. Marks the precise start of each of the five Psalms divisions with defined masoretic spacing. Parameter is the book designation (e.g. ספר שני). Used at Ps 1, 42, 73, 90, 107.",
+        ],
+        [
+            author.hbo("מ:רווח לספר בתהלים בפסוק הראשון"),
+            "Variant of מ:רווח לספר בתהלים for the first verse of the Psalms division.",
+        ],
+        [
+            author.hbo("מ:אין פרשה בתחילת פרק"),
+            "No-parashah chapter start (21 books). Tags chapters that begin without a coinciding parashah division, so a space can be added before the first verse when presenting sequential text.",
+        ],
+        [
+            author.hbo("מ:אין פרשה בתחילת פרק בספרי אמ\u05f4ת"),
+            "No-parashah chapter start (poetic books). Analogous to the previous template for Ps, Prov, and Job; redirects to ר4.",
+        ],
+        [
+            author.hbo("מ:אין רווח של פרשה בתחילת פרשת השבוע"),
+            "No-parashah weekly-portion start. Used only at Gen 47:28 (the only Torah weekly portion that begins without a parashah).",
+        ],
+        [
+            author.hbo("מ:עלייה"),
+            "Aliyah division marker. Identifies the Torah aliyah. Appears as an optional named parameter of מ:פסוק (עלייה=) and also as a standalone template.",
+        ],
+        [
+            author.hbo("מ:יישור-בשני-הצדדים"),
+            "Full-justification block. Text following this template is justified on both sides (CSS distribution), including the last line. Used for text adjacent to song sections in the 21 books.",
+        ],
+        [
+            author.hbo("מ:יישור-בשני-הצדדים-סוף"),
+            "Closes the full-justification block opened by מ:יישור-בשני-הצדדים.",
+        ],
     ],
     kind="enum",
     subject="mp:both",
-    data={"template": "מ:הערה", "books": "Torah and Esther only"},
+    data={
+        "templates": [
+            "מ:ספר חדש",
+            "מ:רווח בתרי עשר",
+            "מ:רווח בתרי עשר בפסוק הראשון",
+            "מ:רווח לספר בתהלים",
+            "מ:רווח לספר בתהלים בפסוק הראשון",
+            "מ:אין פרשה בתחילת פרק",
+            "מ:אין פרשה בתחילת פרק בספרי אמ\u05f4ת",
+            "מ:אין רווח של פרשה בתחילת פרשת השבוע",
+            "מ:עלייה",
+            "מ:יישור-בשני-הצדדים",
+            "מ:יישור-בשני-הצדדים-סוף",
+        ]
+    },
+)
+
+FOOTNOTE_ROW = claim(
+    "mp.both.templates.footnote",
+    [
+        [author.hbo("מ:הערה"), " / ", author.hbo("מ:הערה-2")],
+        "Scroll-difference footnotes (Torah and Esther only). Footnote markers appear within the text itself. Parameter is the footnote text.",
+    ],
+    kind="enum",
+    subject="mp:both",
+    data={"templates": ["מ:הערה", "מ:הערה-2"], "books": "Torah and Esther only"},
+)
+
+FOOTNOTE_LINKS_ROW = claim(
+    "mp.both.templates.footnote-links.set",
+    [
+        [
+            author.hbo("מ:קישור בהערה"),
+            "Hyperlink inside footnote text (within arg 2 of מ:הערה or מ:הערה-2).",
+        ],
+        [
+            author.hbo("מ:קישור פנימי בהערה"),
+            "Same-page link inside footnote text (within arg 2 of מ:הערה or מ:הערה-2).",
+        ],
+    ],
+    kind="enum",
+    subject="mp:both",
+    data={
+        "templates": [
+            "מ:קישור בהערה",
+            "מ:קישור פנימי בהערה",
+        ]
+    },
+)
+
+NAVIGATION_ROWS = claim(
+    "mp.both.templates.navigation.set",
+    [
+        [
+            author.hbo("מ:פסוק"),
+            "Main navigation template. Appears before every verse (Column D). Required params: book name, chapter, verse (Hebrew letters). Optional: סדר= (seder), עלייה= (aliyah).",
+        ],
+        [
+            author.hbo("מ:שוליים"),
+            "Margin creator. Produces left and right margins for navigation symbols. Single parameter is the margin size (always 5 in Wikisource).",
+        ],
+        [
+            author.hbo("מ:שוליים-סוף"),
+            "Closes the margin block opened by מ:שוליים.",
+        ],
+        [
+            author.hbo("טעמי המקרא באינטרנט"),
+            "Page header. Appears at the top of every page; links to TOC, introductions, and cantillation-font information.",
+        ],
+        [
+            author.hbo("מ:טעמי המקרא"),
+            "Font/style setter. Sets font and styling for pointed Hebrew text. Optional parameter is font size (default 23pt; 18pt inside song-format tables).",
+        ],
+        [
+            author.hbo("מ:טעמי המקרא-סוף"),
+            "Closes the font/style block opened by מ:טעמי המקרא.",
+        ],
+        [
+            author.hbo("ניווט טעמים"),
+            "Cantillation navigation template.",
+        ],
+        [
+            author.hbo("בסיס-משתמש"),
+            "Page-footer attribution. Notes that the page text was originally edited elsewhere. Parameter is a link to the source page. Used mainly for Nevi\u02bcim/Ketuvim pages reconstructed from the Aleppo Codex.",
+        ],
+        [
+            author.hbo("קק"),
+            "Dual-trope section link. Displays a link (\u2193\u2191) to one of the three dual-trope sections (two Decalogues + Saga of Reuben). Parameter is the link markup.",
+        ],
+        [
+            author.hbo("עוגן בשורה"),
+            "In-line page anchor. Used for the three dual-trope sections and the bracketed nun-hafukha verses (Num 10:35\u201336).",
+        ],
+        [
+            author.hbo("צורות כתיבה בספרי אמ\u05f4ת"),
+            "Page-footer note listing alternative poetic-book formatting versions. Used for 11 Psalms.",
+        ],
+    ],
+    kind="enum",
+    subject="mp:both",
+    data={
+        "templates": [
+            "מ:פסוק",
+            "מ:שוליים",
+            "מ:שוליים-סוף",
+            "טעמי המקרא באינטרנט",
+            "מ:טעמי המקרא",
+            "מ:טעמי המקרא-סוף",
+            "ניווט טעמים",
+            "בסיס-משתמש",
+            "קק",
+            "עוגן בשורה",
+            "צורות כתיבה בספרי אמ\u05f4ת",
+        ]
+    },
 )
 
 OTHER_ROWS = claim(
@@ -341,6 +517,38 @@ OTHER_ROWS = claim(
             author.hbo("מ:גרשיים ותלישא גדולה"),
             "Combined gershayim + $telisha gedolah (3 words, 4 uses). No parameters.",
         ],
+        [
+            author.hbo("ססס"),
+            "Closed parashah (setumah) variant appearing mid-line after a blank space, rather than at the start of the next line.",
+        ],
+        [
+            author.hbo("פפפ"),
+            "Open parashah (petuhah) variant starting at the very top of the next line, without an intervening blank line.",
+        ],
+        [
+            author.hbo("רווח בסוף שורה"),
+            "Large end-of-line spacers supporting פפפ; fills remaining line space so the next parashah can start at the top of the following line.",
+        ],
+        [
+            author.hbo("מ:ששש"),
+            "Setumah-like section divider for the 8 shirah (song) sections in the 21 prose books; analogous to ססס.",
+        ],
+        [
+            author.hbo("מ:כל קמץ קטן מרכא"),
+            "Font-rendering workaround for the word כל with qamats qatan and merkha in Taamey Frank CLM (2 occurrences: Ps 35:10, Prov 19:7).",
+        ],
+        [
+            author.hbo("נוסח"),
+            "Documentation template. Param 1 is the target text; param 2 is an editorial note.",
+        ],
+        [
+            author.hbo("מודגש"),
+            "Bold text within the Wikisource page.",
+        ],
+        [
+            author.hbo("ש"),
+            "Paragraph separator within the notes argument (param 2) of נוסח.",
+        ],
     ],
     kind="enum",
     subject="mp:both",
@@ -353,6 +561,14 @@ OTHER_ROWS = claim(
             "מ:טעם ומתג באות אחת",
             "מ:גרש ותלישא גדולה",
             "מ:גרשיים ותלישא גדולה",
+            "ססס",
+            "פפפ",
+            "רווח בסוף שורה",
+            "מ:ששש",
+            "מ:כל קמץ קטן מרכא",
+            "נוסח",
+            "מודגש",
+            "ש",
         ]
     },
 )
