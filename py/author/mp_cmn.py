@@ -519,15 +519,15 @@ OTHER_ROWS = claim(
         ],
         [
             author.hbo("ססס"),
-            "Closed parashah (setumah) variant appearing mid-line after a blank space, rather than at the start of the next line.",
+            "Closed $parashah (setumah) variant appearing mid-line after a blank space, rather than at the start of the next line.",
         ],
         [
             author.hbo("פפפ"),
-            "Open parashah (petuhah) variant starting at the very top of the next line, without an intervening blank line.",
+            "Open $parashah (petuhah) variant starting at the very top of the next line, without an intervening blank line.",
         ],
         [
             author.hbo("רווח בסוף שורה"),
-            "Large end-of-line spacers supporting פפפ; fills remaining line space so the next parashah can start at the top of the following line.",
+            "Large end-of-line spacers supporting פפפ; fills remaining line space so the next $parashah can start at the top of the following line.",
         ],
         [
             author.hbo("מ:ששש"),
@@ -535,7 +535,7 @@ OTHER_ROWS = claim(
         ],
         [
             author.hbo("מ:כל קמץ קטן מרכא"),
-            "Font-rendering workaround for the word כל with qamats qatan and merkha in Taamey Frank CLM (2 occurrences: Ps 35:10, Prov 19:7).",
+            "Font-rendering workaround for the word כל with $qamats qatan and $merkha in Taamey Frank CLM (2 occurrences: Ps 35:10, Prov 19:7).",
         ],
         [
             author.hbo("נוסח"),
