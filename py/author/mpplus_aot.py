@@ -48,8 +48,11 @@ def _build_body():
             [
                 "Marks a whole word containing a special (large, small, or suspended) letter."
                 " The template encodes the word in two forms:"
-                " interrupted (arg 1 — array decomposed around the special letter)"
-                " and uninterrupted (arg 2 — the whole word as a plain string):",
+                " interrupted (arg 1 \u2014 array decomposed around the special letter)"
+                " and uninterrupted (args 2\u20135 \u2014 plain word string plus dot-mask, type code,"
+                " and letter/type summary)."
+                " Args 2\u20135 together are sufficient to recover all special-letter information"
+                " without arg 1:",
             ]
         ),
         json_block.json_block_raw_html(_JSON_SPECIAL_LETTER),

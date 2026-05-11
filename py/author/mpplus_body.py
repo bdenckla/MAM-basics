@@ -201,7 +201,7 @@ _DIFF_ROWS = claim(
             [
                 "whole word wrapped by ",
                 author.hbo("מ:אות-מיוחדת-במילה"),
-                "; uninterrupted form provided in arg 2",
+                "; uninterrupted encoding in args 2\u20135 (plain word + dot-mask + type metadata)",
             ],
         ],
         [
