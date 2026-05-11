@@ -4,10 +4,10 @@
 import sys
 
 from author_util.claim import REGISTRY, ClaimRecord
-from verify_mp import verifiers_plus, verifiers_both
+from verify_mp import verifiers_plus, verifiers_both, verifiers_plain
 from verify_mp.corpus import Context
 
-_VERIFIER_MODULES = (verifiers_plus, verifiers_both)
+_VERIFIER_MODULES = (verifiers_plus, verifiers_both, verifiers_plain)
 
 
 def claim_id_to_fn_name(claim_id: str) -> str:
