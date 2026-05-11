@@ -413,6 +413,14 @@ KQ_SPECIAL_ROWS = claim(
     },
 )
 
+ALL_GROUPS_COVER_ALL_OBSERVED = claim(
+    "mp.both.templates.all-groups-cover-all-observed",
+    "Every template observed in the corpus is covered by at least one declared group.",
+    kind="enum",
+    subject="mp:both",
+    data={},
+)
+
 # ---------------------------------------------------------------------------
 # Google Sheet URLs (shared by plain and plus docs)
 # ---------------------------------------------------------------------------
