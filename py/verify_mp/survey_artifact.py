@@ -64,8 +64,25 @@ def arg_counts_for(survey: dict, tmpl_name: str) -> set[int]:
 def template_names_observed_both(survey_plus: dict, survey_plain: dict) -> set[str]:
     """Union of template names observed in the plus and plain surveys.
 
-    Use this for mp.both.* claims. Some templates exist only in the plain
-    corpus because mpplus_boring_tmpls.py expands them to inline text before
-    writing the plus JSON, so they never appear in the plus survey alone.
+    Use for coverage checks that must account for all templates across both
+    corpora (e.g. the all-groups-cover-all-observed check).  Some templates
+    exist only in the plain corpus because mpplus_boring_tmpls.py expands
+    them to inline text before writing the plus JSON.
     """
     return template_names_observed(survey_plus) | template_names_observed(survey_plain)
+
+
+def template_names_observed_both_intersection(
+    survey_plus: dict, survey_plain: dict
+) -> set[str]:
+    """Intersection of template names observed in the plus and plain surveys.
+
+    Use this for mp:both template-set forward-direction verifiers: an mp:both
+    claim asserts that a template appears in *both* corpora, so the check
+    must use the intersection (plain ∩ plus), not the union.
+
+    Templates expanded to inline text by mpplus_boring_tmpls.py appear only
+    in the plain survey and will *not* be in this intersection; they should
+    carry subject="mp:plain" rather than subject="mp:both".
+    """
+    return template_names_observed(survey_plus) & template_names_observed(survey_plain)

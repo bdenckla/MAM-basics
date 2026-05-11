@@ -256,20 +256,19 @@ ACCENT_ROWS = claim(
             "מ:מקף אפור",
             "מ:דחי",
             "מ:צינור",
-            "גלגל-2",
-            "ירח בן יומו-2",
+            # גלגל-2, ירח בן יומו-2, מ:טעם, and שני טעמים באות אחת קמץ-תחתון-פתח-עליון
+            # are boring templates (expanded by mpplus_boring_tmpls.py in plus);
+            # they appear only in the plain survey. Verified in PLAIN_ONLY.
             # אתנח הפוך is documented above but absent from the parsed corpus
             # (doc-only per novc_tmpl_survey). Excluded from machine verification.
             "מ:קמץ",
-            "מ:טעם",
             "מ:כפול",
-            "שני טעמים באות אחת קמץ-תחתון-פתח-עליון",
         ]
     },
 )
 
 JER_ROWS = claim(
-    "mp.both.templates.jerusalem.set",
+    "mp.plain.templates.jerusalem.set",
     [
         [
             author.hbo("מ:ירושלם"),
@@ -281,7 +280,7 @@ JER_ROWS = claim(
         ],
     ],
     kind="enum",
-    subject="mp:both",
+    subject="mp:plain",
     data={"templates": ["מ:ירושלם", "מ:ירושלמה"]},
 )
 
@@ -307,7 +306,9 @@ POETIC_ROWS = claim(
     kind="enum",
     subject="mp:both",
     data={
-        "templates": ["ר1", "ר2", "ר3", "ר4", "ר0", "פרשה-מרכז"],
+        # פרשה-מרכז is a boring template (expanded by mpplus_boring_tmpls.py);
+        # it appears only in the plain survey. Verified in PLAIN_ONLY.
+        "templates": ["ר1", "ר2", "ר3", "ר4", "ר0"],
     },
 )
 
@@ -362,18 +363,17 @@ STRUCTURAL_ROWS = claim(
     kind="enum",
     subject="mp:both",
     data={
+        # מ:יישור-בשני-הצדדים, מ:יישור-בשני-הצדדים-סוף,
+        # מ:רווח בתרי עשר, and מ:רווח לספר בתהלים appear only in the plain
+        # survey (stripped from plus during corpus construction). Verified in PLAIN_ONLY.
         "templates": [
             "מ:ספר חדש",
-            "מ:רווח בתרי עשר",
             "מ:רווח בתרי עשר בפסוק הראשון",
-            "מ:רווח לספר בתהלים",
             "מ:רווח לספר בתהלים בפסוק הראשון",
             "מ:אין פרשה בתחילת פרק",
             "מ:אין פרשה בתחילת פרק בספרי אמ\u05f4ת",
             "מ:אין רווח של פרשה בתחילת פרשת השבוע",
             "מ:עלייה",
-            "מ:יישור-בשני-הצדדים",
-            "מ:יישור-בשני-הצדדים-סוף",
         ]
     },
 )
@@ -386,7 +386,8 @@ FOOTNOTE_ROW = claim(
     ],
     kind="enum",
     subject="mp:both",
-    data={"templates": ["מ:הערה", "מ:הערה-2"], "books": "Torah and Esther only"},
+    # מ:הערה-2 appears only in the plus survey; it is verified in PLUS_ONLY.
+    data={"templates": ["מ:הערה"], "books": "Torah and Esther only"},
 )
 
 FOOTNOTE_LINKS_ROW = claim(
@@ -462,18 +463,12 @@ NAVIGATION_ROWS = claim(
     kind="enum",
     subject="mp:both",
     data={
+        # מ:שוליים, מ:שוליים-סוף, טעמי המקרא באינטרנט, מ:טעמי המקרא,
+        # מ:טעמי המקרא-סוף, ניווט טעמים, בסיס-משתמש, קק,
+        # עוגן בשורה, and צורות כתיבה בספרי אמ״ת appear only in the plain
+        # survey (not in the plus content format). Verified in PLAIN_ONLY.
         "templates": [
             "מ:פסוק",
-            "מ:שוליים",
-            "מ:שוליים-סוף",
-            "טעמי המקרא באינטרנט",
-            "מ:טעמי המקרא",
-            "מ:טעמי המקרא-סוף",
-            "ניווט טעמים",
-            "בסיס-משתמש",
-            "קק",
-            "עוגן בשורה",
-            "צורות כתיבה בספרי אמ\u05f4ת",
         ]
     },
 )
@@ -548,19 +543,15 @@ OTHER_ROWS = claim(
     kind="enum",
     subject="mp:both",
     data={
+        # מ:אות מנוקדת, מ:טעם ומתג באות אחת, מ:גרש ותלישא גדולה,
+        # מ:גרשיים ותלישא גדולה, רווח בסוף שורה, מ:כל קמץ קטן מרכא, and מ:סיום בטוב
+        # appear only in the plain survey. Verified in PLAIN_ONLY.
         "templates": [
             "פפ",
             "סס",
-            "מ:אות מנוקדת",
-            "מ:סיום בטוב",
-            "מ:טעם ומתג באות אחת",
-            "מ:גרש ותלישא גדולה",
-            "מ:גרשיים ותלישא גדולה",
             "ססס",
             "פפפ",
-            "רווח בסוף שורה",
             "מ:ששש",
-            "מ:כל קמץ קטן מרכא",
             "נוסח",
             "מודגש",
             "ש",
@@ -630,6 +621,72 @@ ALL_GROUPS_COVER_ALL_OBSERVED = claim(
     kind="enum",
     subject="mp:both",
     data={},
+)
+
+# Templates that appear only in the plain survey — either because they are
+# expanded to inline text by mpplus_boring_tmpls.py, or because they are
+# navigation/layout elements not included in the plus content format.
+# They cannot be listed in mp:both claims (they fail the intersection check).
+# This mp:plain claim covers them so the all-groups-cover-all-observed check
+# accounts for every template observed in the plain corpus.
+PLAIN_ONLY = claim(
+    "mp.plain.templates.plain-only.set",
+    "Templates present only in the plain corpus (not in the plus corpus).",
+    kind="enum",
+    subject="mp:plain",
+    data={
+        "templates": [
+            # From ACCENT_ROWS (expanded by mpplus_boring_tmpls.py)
+            "גלגל-2",
+            "ירח בן יומו-2",
+            "מ:טעם",
+            "שני טעמים באות אחת קמץ-תחתון-פתח-עליון",
+            # From POETIC_ROWS (expanded by mpplus_boring_tmpls.py)
+            "פרשה-מרכז",
+            # From OTHER_ROWS (expanded by mpplus_boring_tmpls.py)
+            "מ:אות מנוקדת",
+            "מ:טעם ומתג באות אחת",
+            "מ:גרש ותלישא גדולה",
+            "מ:גרשיים ותלישא גדולה",
+            "רווח בסוף שורה",
+            "מ:כל קמץ קטן מרכא",
+            # From OTHER_ROWS (not in plus content format)
+            "מ:סיום בטוב",
+            # From STRUCTURAL_ROWS (not in plus content format)
+            "מ:רווח בתרי עשר",
+            "מ:רווח לספר בתהלים",
+            "מ:יישור-בשני-הצדדים",
+            "מ:יישור-בשני-הצדדים-סוף",
+            # From NAVIGATION_ROWS (not in plus content format)
+            "מ:שוליים",
+            "מ:שוליים-סוף",
+            "טעמי המקרא באינטרנט",
+            "מ:טעמי המקרא",
+            "מ:טעמי המקרא-סוף",
+            "ניווט טעמים",
+            "בסיס-משתמש",
+            "קק",
+            "עוגן בשורה",
+            "צורות כתיבה בספרי אמ״ת",
+        ]
+    },
+)
+
+# Templates that appear only in the plus survey (not in the plain survey).
+# The all-groups-cover-all-observed check must account for them too.
+PLUS_ONLY = claim(
+    "mp.plus.templates.plus-only.set",
+    "Templates present only in the plus corpus (not in the plain corpus).",
+    kind="enum",
+    subject="mp:plus",
+    data={
+        "templates": [
+            # Plus-only footnote template (counterpart מ:הערה is in both)
+            "מ:הערה-2",
+            # Plus-only special-letter template (previously mistakenly in SPECIAL_LETTER_ROWS)
+            "מ:אות-מיוחדת-במילה",
+        ]
+    },
 )
 
 # ---------------------------------------------------------------------------

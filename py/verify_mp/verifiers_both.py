@@ -32,27 +32,32 @@ _NORM_QUOTES = str.maketrans({'"': "״"})
 def _verify_template_set_observed(
     record: ClaimRecord, ctx: Context, *, key: str = "templates"
 ) -> None:
-    """Assert that every declared template appears in the survey column_counts.
+    """Assert that every declared template appears in both corpus surveys.
 
     key: the record.data key holding the name(s). If the value is a list,
     every element is checked. If it is a string (e.g. key="template"), it is
     wrapped in a list first.
 
-    Only checks declared ⊆ observed; the reverse direction (observed ⊆ declared)
-    is deferred to PART B pending editorial input.
+    Uses the intersection (plain ∩ plus): an mp:both claim asserts that a
+    template appears in *both* corpora. Templates expanded to inline text by
+    mpplus_boring_tmpls.py appear only in plain; they must not be listed in
+    an mp:both claim's data.templates (they should be in an mp:plain claim).
+
+    The reverse direction (observed ∩ declared) is covered by
+    verify_mp_both_templates_all_groups_cover_all_observed.
     """
     declared_raw = record.data[key]
     if isinstance(declared_raw, list):
         declared = frozenset(declared_raw)
     else:
         declared = frozenset([declared_raw])
-    observed = survey_artifact.template_names_observed_both(
+    observed = survey_artifact.template_names_observed_both_intersection(
         ctx.survey, ctx.survey_plain
     )
     missing = declared - observed
     assert (
         not missing
-    ), f"declared templates not found in survey column_counts: {sorted(missing)}"
+    ), f"declared templates not found in both corpus surveys: {sorted(missing)}"
 
 
 def verify_mp_both_templates_kq_set(record: ClaimRecord, ctx: Context) -> None:
@@ -71,12 +76,6 @@ def verify_mp_both_templates_special_letters_set(
 
 def verify_mp_both_templates_accents_set(record: ClaimRecord, ctx: Context) -> None:
     """Every declared accents template appears at least once in the plus corpus
-    (per the precomputed tmpl-survey artifact)."""
-    _verify_template_set_observed(record, ctx)
-
-
-def verify_mp_both_templates_jerusalem_set(record: ClaimRecord, ctx: Context) -> None:
-    """Every declared jerusalem template appears at least once in the plus corpus
     (per the precomputed tmpl-survey artifact)."""
     _verify_template_set_observed(record, ctx)
 
@@ -200,19 +199,23 @@ def verify_mp_both_templates_kq_am2_sug_values(
 def verify_mp_both_templates_all_groups_cover_all_observed(
     record: ClaimRecord, ctx: Context
 ) -> None:
-    """Every template observed in the survey is covered by at least one declared group.
+    """Every template observed in either survey is covered by at least one declared group.
 
-    Collects all declared template names from mp.both.templates.*.set and
-    mp.both.templates.footnote claims in REGISTRY, then asserts that every
-    template name observed in the corpus survey is in the resulting union.
+    Collects all declared template names from mp.both.templates.*.set,
+    mp.both.templates.footnote, and mp.plain.templates.*.set claims in
+    REGISTRY, then asserts that every template name observed in either
+    corpus survey (union) is in the resulting union of declared templates.
     """
     declared: set[str] = set()
     for cid, rec in REGISTRY.items():
-        if not cid.startswith("mp.both.templates."):
+        is_both = cid.startswith("mp.both.templates.") and (
+            cid.endswith(".set") or cid == "mp.both.templates.footnote"
+        )
+        is_plain = cid.startswith("mp.plain.templates.") and cid.endswith(".set")
+        is_plus = cid.startswith("mp.plus.templates.") and cid.endswith(".set")
+        if not (is_both or is_plain or is_plus):
             continue
         if cid == record.id:
-            continue
-        if not (cid.endswith(".set") or cid == "mp.both.templates.footnote"):
             continue
         d = rec.data
         if "templates" in d:

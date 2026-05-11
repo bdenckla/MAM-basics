@@ -2,12 +2,43 @@
 """Verifiers for mp.plain.* structural claims."""
 
 from author_util.claim import ClaimRecord
+from verify_mp import survey_artifact
 from verify_mp.corpus import (
     Context,
     iter_plain_book39s,
     iter_plain_chapters,
     iter_plain_verses,
 )
+
+
+def _verify_template_set_plain_observed(
+    record: ClaimRecord, ctx: Context, *, key: str = "templates"
+) -> None:
+    """Assert that every declared template appears in the plain corpus survey.
+
+    key: the record.data key holding the name(s). If the value is a list,
+    every element is checked. If it is a string, it is wrapped in a list first.
+    """
+    declared_raw = record.data[key]
+    if isinstance(declared_raw, list):
+        declared = frozenset(declared_raw)
+    else:
+        declared = frozenset([declared_raw])
+    observed = survey_artifact.template_names_observed(ctx.survey_plain)
+    missing = declared - observed
+    assert (
+        not missing
+    ), f"declared templates not found in plain corpus survey: {sorted(missing)}"
+
+
+def verify_mp_plain_templates_jerusalem_set(record: ClaimRecord, ctx: Context) -> None:
+    """Every declared Jerusalem template appears at least once in the plain corpus."""
+    _verify_template_set_plain_observed(record, ctx)
+
+
+def verify_mp_plain_templates_plain_only_set(record: ClaimRecord, ctx: Context) -> None:
+    """Every declared plain-only template appears at least once in the plain corpus."""
+    _verify_template_set_plain_observed(record, ctx)
 
 
 def verify_mp_plain_book39_fields(record: ClaimRecord, ctx: Context) -> None:
