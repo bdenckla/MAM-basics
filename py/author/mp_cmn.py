@@ -580,15 +580,15 @@ KQ_SPECIAL_ROWS = claim(
         ],
         [
             author.hbo("קו״כ כתיב מילה חדה וקרי תרתין מילין"),
-            "1-word $ketiv mapped to 2-atom $qere, in reversed (qk) display order, for use after $maqaf (Nehemiah 2:13 only)",
+            "1-word $ketiv mapped to 2-atom $qere, following $maqaf (Nehemiah 2:13 only)",
         ],
         [
             author.hbo("כו״ק קרי שונה מהכתיב בשתי מילים"),
-            "1-word $ketiv, 2-word $qere (kq display order)",
+            "1-word $ketiv, 2-word $qere",
         ],
         [
             author.hbo("קו״כ קרי שונה מהכתיב בשתי מילים"),
-            "1-word $ketiv, 2-word $qere in reversed (qk) display order (2 Kgs 18:27, Isa 36:12)",
+            "1-word $ketiv, 2-word $qere, following $maqaf (2 Kgs 18:27, Isa 36:12)",
         ],
         [author.hbo("כו״ק של שתי מילים בהערה אחת"), "2-word $ketiv, 2-atom $qere"],
         [
