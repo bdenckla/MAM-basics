@@ -18,7 +18,7 @@ JSON_KQ = claim(
 {"stmpl": "קו"כ|את|אַ֠תָּ֠ה"}""",
     kind="example",
     subject="mp:plain",
-    data={"stmpl": "קו\"כ|את|אַ֠תָּ֠ה"},
+    data={"stmpl": 'קו"כ|את|אַ֠תָּ֠ה'},
 )
 
 JSON_KQ_PLUS = claim(
@@ -178,7 +178,9 @@ SPECIAL_LETTER_ROWS = claim(
         ],
         [
             author.hbo("מ:אות-מיוחדת-במילה"),
-            "Special letter within a word. Marks a letter requiring non-standard treatment within its word.",
+            "Marks a whole word containing a special (large, small, or suspended) letter."
+            " Encodes the word in both interrupted form (arg 1: array decomposed around the special letter)"
+            " and uninterrupted form (arg 2: the whole word as a plain string).",
         ],
     ],
     kind="enum",

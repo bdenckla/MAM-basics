@@ -46,8 +46,10 @@ def _build_body():
         author.para(["\u2190 Back to ", back_link]),
         author.para(
             [
-                "Marks a word containing a letter with a special size or form"
-                " (large, small, suspended, etc.):",
+                "Marks a whole word containing a special (large, small, or suspended) letter."
+                " The template encodes the word in two forms:"
+                " interrupted (arg 1 — array decomposed around the special letter)"
+                " and uninterrupted (arg 2 — the whole word as a plain string):",
             ]
         ),
         json_block.json_block_raw_html(_JSON_SPECIAL_LETTER),

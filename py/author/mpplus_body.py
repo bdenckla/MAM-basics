@@ -195,7 +195,15 @@ _DIFF_ROWS = claim(
             ],
         ],
         [mb_html.code("good_ending_plus"), "Not present", "Added (at book39 level)"],
-        ["Words with special letters", "interrupted", "uninterrupted provided"],
+        [
+            "Words with special letters",
+            "word split/interrupted by inline letter templates",
+            [
+                "whole word wrapped by ",
+                author.hbo("מ:אות-מיוחדת-במילה"),
+                "; uninterrupted form provided in arg 2",
+            ],
+        ],
         [
             [mb_html.code('{"tmpl": [...]}'), " — parsed template trees"],
             "Present",
