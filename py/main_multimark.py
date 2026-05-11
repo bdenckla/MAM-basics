@@ -5,7 +5,7 @@ from mb_cmn import file_io
 from multimark import multimark_1 as mm1
 from multimark import multimark_2 as mm2
 
-FIOI_PATH_TO_MULTIMARKS_RAW_JSON = "io/mam-multimarks-raw.json"
+FIOI_PATH_TO_MULTIMARKS_RAW_JSON = "out/mam-multimarks-raw.json"
 # FIOI: file I/O info: this is the output of one program and the input of one or more other programs
 
 
