@@ -154,9 +154,11 @@ def verify_mp_both_templates_all_groups_cover_all_observed(
     for cid, rec in REGISTRY.items():
         if not cid.startswith("mp.both.templates."):
             continue
+        if cid == rec.id:
+            continue
         if not (cid.endswith(".set") or cid == "mp.both.templates.footnote"):
             continue
-        d = rec.data or {}
+        d = rec.data
         if "templates" in d:
             declared.update(d["templates"])
         if "template" in d:

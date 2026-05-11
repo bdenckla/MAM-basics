@@ -34,12 +34,22 @@ def load_plain() -> dict:
 
 
 def template_names_observed(survey: dict) -> set[str]:
-    """Set of all wtel_subtype values that appear in column_counts.
+    """Set of wtel_subtype values for genuine template rows.
+
+    Excluded:
+    - wtel_type == "custom_tag" rows (noinclude, references/, קטע התחלה/סוף…)
+    - wtel_type == "tmpl" rows whose subtype starts with "#" (sectioning
+      markers such as #קטע:… and #בלי קטע:… — MediaWiki transclusion
+      markers recorded as template calls, not real content templates).
 
     For special-kq templates this is the unified template name, NOT the
     per-סוג= subtype string.
     """
-    return {row["wtel_subtype"] for row in survey["column_counts"]}
+    return {
+        row["wtel_subtype"]
+        for row in survey["column_counts"]
+        if row["wtel_type"] == "tmpl" and not row["wtel_subtype"].startswith("#")
+    }
 
 
 def arg_counts_for(survey: dict, tmpl_name: str) -> set[int]:
