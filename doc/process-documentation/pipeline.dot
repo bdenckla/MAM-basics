@@ -17,7 +17,6 @@ digraph mam_pipeline {
     ds_sefaria       [label="../MAM-for-Sefaria/"];
     ds_osis          [label="../MAM-OSIS/"];
     ds_out           [label="out/\n(local outputs)"];
-    ds_mamgo_auto    [label="../mamgo-auto-edits/"];
 
     // ── External prerequisites (not part of _STEPS) ──
     node [shape=box, style=dashed, color=gray, fontcolor=gray];
@@ -74,7 +73,6 @@ digraph mam_pipeline {
     tmpl_survey     -> ds_out;
     misc_1          -> ds_out;
     diff_wsgo       -> ds_out;
-    diff_wsgo       -> ds_mamgo_auto;
     misc_3          -> ds_out;
 
     // Wikisource pipeline

@@ -11,8 +11,9 @@ MS Word, etc.), but the process just changed, so here goes.
 
 2. **Run `py/main_diff.py wsgo`.**
 
-3. **Push the differences** (in auto-edit form) up to the
-   `mamgo-auto-edits` repo on GitHub.
+3. **The differences** (in auto-edit form) are written to
+   `out/diff_mamws_mamgo-auto-edits.json` in this repo. Commit and push
+   that file so the Google Apps Script can fetch it from GitHub.
 
 4. **Go to the MAM Google Sheet.**
 

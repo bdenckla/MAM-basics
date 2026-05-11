@@ -42,7 +42,6 @@ DISPLAY_NODES = [
     DisplayNode("ds_sefaria", "../MAM-for-Sefaria/", DATA_STORES),
     DisplayNode("ds_osis", "../MAM-OSIS/", DATA_STORES),
     DisplayNode("ds_out", "out/\n(local outputs)", DATA_STORES),
-    DisplayNode("ds_mamgo_auto", "../mamgo-auto-edits/", DATA_STORES),
     DisplayNode("download_go", "download fr-google", PREREQUISITES),
     DisplayNode("download_sef", "download fr-sefaria", PREREQUISITES),
     DisplayNode(
@@ -78,7 +77,6 @@ RAW_NODES = [
     RawNode("out_sefaria", "../MAM-for-Sefaria/", "ds_sefaria"),
     RawNode("out_osis", "../MAM-OSIS/", "ds_osis"),
     RawNode("out_local", "out/\n(local outputs)", "ds_out"),
-    RawNode("out_mamgo_auto", "../mamgo-auto-edits/", "ds_mamgo_auto"),
     RawNode("main_download__fr_google", "download fr-google", "download_go"),
     RawNode("main_download__fr_sefaria", "download fr-sefaria", "download_sef"),
     RawNode(
@@ -153,7 +151,6 @@ RAW_EDGES = [
     RawEdge("main_explicit_xataf", "out_local", "Local out/ outputs"),
     RawEdge("main_diff__ctr_vs_mam", "out_local", "Local out/ outputs"),
     RawEdge("main_diff__wsgo", "out_local", "Local out/ outputs"),
-    RawEdge("main_diff__wsgo", "out_mamgo_auto", "Local out/ outputs"),
     RawEdge("main_parse__ws", "out_local", "Local out/ outputs"),
     RawEdge("main_ws_bot__proto", "out_local", "Local out/ outputs"),
     RawEdge(
