@@ -1,7 +1,7 @@
 'use strict'
 
-const MAMGO_AUTO_EDITS_REPO = 'bdenckla/mamgo-auto-edits'
-const MAMGO_AUTO_EDITS_JSON_PATH = 'diff_mamws_mamgo-auto-edits.json'
+const MAMGO_AUTO_EDITS_REPO = 'bdenckla/MAM-basics'
+const MAMGO_AUTO_EDITS_JSON_PATH = 'out/diff_mamws_mamgo-auto-edits.json'
 
 function importAutoEdits() {
   function getMainHeadShaFromBranchApi() {

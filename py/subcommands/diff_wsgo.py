@@ -130,5 +130,5 @@ _MAKE_YYY = {
 }
 _OUT_PATHS = {
     "diffs_list": "out/diff_mamws_mamgo.json",
-    "srrps_list": "../mamgo-auto-edits/diff_mamws_mamgo-auto-edits.json",
+    "srrps_list": "out/diff_mamws_mamgo-auto-edits.json",
 }
