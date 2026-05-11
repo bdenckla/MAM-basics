@@ -223,7 +223,8 @@ _X390 = [
 ]
 BODY_ELEMENTS = [
     author.para_table(_X303_CPARA, _X304_TABLE_DATA_PJ3, [_X305_CPARA]),
-    author.blockquote(_X306_CONT_BLOCKQUOTE),
+    # mb_html rather than author to avoid insistency on "$Ketiv" instead of "Ketiv"
+    mb_html.blockquote(_X306_CONT_BLOCKQUOTE),
     author.para_table(_X310_CPARA, _X311_TABLE_DATA_AJRY, _X312_CPARAS),
     author.para_table(_X320_CPARA, _X321_TABLE_DATA_LA),
     author.para_table(_X330_CPARA, _X331_TABLE_DATA_YVMM),

@@ -371,7 +371,7 @@ def _s_common_templates():
             ]
         ),
         json_block.json_block_raw_html(cmn.JSON_NUSACH),
-        author.heading_level_3("Ketiv-$qere templates"),
+        author.heading_level_3("$Ketiv_qere templates"),
         author.std_table(cmn.KQ_ROWS, arg_to_troh=["Template", "Purpose"]),
         author.para(
             [

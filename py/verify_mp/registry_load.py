@@ -13,6 +13,9 @@ a safe no-op (the idempotency guard prevents duplicate-id errors).
 from author import mpplus_body as _body
 from author import mpplain as _plain
 from author import mp_cmn as _cmn  # noqa: F401 — module-level claims register at import
+from author import (
+    mpplus_aot as _aot,
+)  # noqa: F401 — module-level claims register at import
 
 _populated = False
 

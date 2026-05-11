@@ -106,6 +106,57 @@ def _assert_stmpl_object_in_plain_corpus(record: ClaimRecord, ctx: Context) -> N
     assert False, f"example not found in plain corpus: {target!r}"
 
 
+_MAQAF = "\u05be"  # HEBREW PUNCTUATION MAQAF — appears literally in dot-masks
+
+
+def _derive_aot_arg5(dot_mask: str, type_code: str) -> str:
+    """Derive the expected arg5 from arg3 (dot-mask) and arg4 (type-per-letter code).
+
+    The dot-mask uses '.' for ordinary consonants, the actual letter for each special
+    position, and maqaf (U+05BE) literally where it occurs in the word.
+
+    Pairing: the i-th non-dot, non-maqaf character in the dot-mask pairs with the
+    i-th character of the type code.
+
+    Summary format:
+    - All pairs share the same type → "letters_concatenated/common_type"
+    - Types differ → comma-joined "letter/type" pairs
+    """
+    special_letters = [c for c in dot_mask if c != "." and c != _MAQAF]
+    assert len(special_letters) == len(type_code), (
+        f"len(special_letters)={len(special_letters)} != len(type_code)={len(type_code)}"
+        f" for dot_mask={dot_mask!r}, type_code={type_code!r}"
+    )
+    pairs = list(zip(special_letters, type_code))
+    if len({t for _, t in pairs}) == 1:
+        letters = "".join(ltr for ltr, _ in pairs)
+        return f"{letters}/{pairs[0][1]}"
+    return ",".join(f"{ltr}/{t}" for ltr, t in pairs)
+
+
+def verify_mp_plus_templates_aot_arg5_derivable(
+    record: ClaimRecord, ctx: Context
+) -> None:
+    """For every מ:אות-מיוחדת-במילה template, arg5 is derivable from arg3 and arg4.
+
+    The dot-mask (arg3) combined with the per-letter type code (arg4) uniquely
+    determines the letter/type summary (arg5), making arg5 redundant.
+    """
+    aot_name = record.data["template"]
+    for tmpl in iter_all_template_objects(ctx.corpus):
+        if tmpl["tmpl_name"] != aot_name:
+            continue
+        params = tmpl["tmpl_params"]
+        dot_mask = params["3"]
+        type_code = params["4"]
+        summary = params["5"]
+        expected = _derive_aot_arg5(dot_mask, type_code)
+        assert summary == expected, (
+            f"arg5 {summary!r} != expected {expected!r}"
+            f" (dot-mask={dot_mask!r}, type={type_code!r})"
+        )
+
+
 def verify_mp_plus_example_kq(record: ClaimRecord, ctx: Context) -> None:
     """The kq example template object occurs at least once in the plus corpus."""
     _assert_tmpl_object_in_corpus(record, ctx)

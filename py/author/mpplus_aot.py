@@ -12,6 +12,7 @@ Output goes to ../MAM-parsed/gh-pages/mpplus_aot.html.
 from mb_misc import mb_html
 from author_util import author
 from author_util import json_block
+from author_util.claim import claim
 
 _FNAME = "mpplus_aot.html"
 _TITLE = "Special letter marking"
@@ -29,6 +30,20 @@ _JSON_SPECIAL_LETTER = """\
     "5": "ט/ג"
   }
 }"""
+_AOT_INTRO = claim(
+    "mp.plus.templates.aot.arg5-derivable",
+    [
+        "Marks a whole word containing a special (large, small, or suspended) letter."
+        " The template encodes the word in two forms:"
+        " interrupted (arg 1 — array decomposed around the special letter)"
+        " and uninterrupted (args 2–4 — plain word string, dot-mask, and type code)."
+        " Args 2–4 together are sufficient to recover all special-letter information"
+        " without arg 1 (arg 5 is a redundant letter/type summary, derivable from args 3 and 4):",
+    ],
+    kind="struct",
+    subject="mp:plus",
+    data={"template": "מ:אות-מיוחדת-במילה"},
+)
 
 
 def gen_html_file(tdm_ch):
@@ -44,17 +59,7 @@ def _build_body():
             ["Special letter marking \u2014 ", author.hbo("מ:אות-מיוחדת-במילה")]
         ),
         author.para(["\u2190 Back to ", back_link]),
-        author.para(
-            [
-                "Marks a whole word containing a special (large, small, or suspended) letter."
-                " The template encodes the word in two forms:"
-                " interrupted (arg 1 — array decomposed around the special letter)"
-                " and uninterrupted (args 2–5 — plain word string plus dot-mask, type code,"
-                " and letter/type summary)."
-                " Args 2–5 together are sufficient to recover all special-letter information"
-                " without arg 1:",
-            ]
-        ),
+        author.para(_AOT_INTRO),
         json_block.json_block_raw_html(_JSON_SPECIAL_LETTER),
         author.para("Arguments:"),
         author.ordered_list(

@@ -473,9 +473,6 @@ _ROMANIZED = {
     "$merkha": "merkha",
     "$merkha_metsunneret": "merkha metsunneret",
     "$oleh_veyored": "oleh veyored",
-    "$ketiv": "ketiv",
-    "$qere": "qere",
-    "$ketiv_qere": "ketiv/qere",
     "$revia": "revia",
     "$shalshelet": "shalshelet",
     "$shalshelet_gedolah": "shalshelet gedolah",
@@ -565,6 +562,9 @@ _DOLLAR_SUB_DISPATCH = {
     **_ANCHORS,
     **_UNICODE_NAME_SC,
     **_ABBR_SC,
+    **_rom_with_cap("$ketiv", "ketiv"),
+    **_rom_with_cap("$qere", "qere"),
+    **_rom_with_cap("$ketiv_qere", "ketiv/qere"),
     **_ROMANIZED,
 }
 
