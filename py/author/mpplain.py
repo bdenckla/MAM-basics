@@ -12,6 +12,7 @@ Output goes to ../MAM-parsed/gh-pages/mpplain.html.
 from mb_misc import mb_html
 from author_util import author
 from author_util import json_block
+from author_util.claim import claim
 from author import mp_cmn as cmn
 
 _FNAME = "mpplain.html"
@@ -59,9 +60,9 @@ def _build_body():
         mb_html.heading_level_1(_TITLE),
         *cmn.s_file_naming(),
         *_s_top_level(),
-        *_s_book39(),
-        *_s_chapter(),
-        *_s_verse(),
+        *s_book39(),
+        *s_chapter(),
+        *s_verse(),
         *_s_template_objects(),
         *_s_common_templates(),
         *_s_pseudo_verses(),
@@ -98,23 +99,64 @@ def _s_top_level():
     ]
 
 
-def _s_book39():
+def s_book39():
+    _book39_rows = claim(
+        "mp.plain.book39.fields",
+        [
+            [
+                mb_html.code("book24_name"),
+                "string",
+                [
+                    "For a book39 that is not a sub-book, this is its name."
+                    " For a book39 that is a sub-book, this is the name of the book24"
+                    " to which this sub-book belongs.",
+                ],
+            ],
+            [
+                mb_html.code("sub_book_name"),
+                "string | null",
+                [
+                    "For a book39 that is not a sub-book, this is null."
+                    " For a book39 that is a sub-book, this is its name.",
+                ],
+            ],
+            [
+                mb_html.code("chapters"),
+                "object",
+                "Object keyed by chapter numbers; values are chapter objects.",
+            ],
+        ],
+        kind="struct",
+        subject="mp:plain",
+        data={"book39_keys": ["book24_name", "sub_book_name", "chapters"]},
+    )
     return [
         author.heading_level_2("Book39 structure"),
         json_block.json_block_raw_html(cmn.JSON_BOOK39),
+        author.std_table(_book39_rows, arg_to_troh=["Key", "Type", "Description"]),
     ]
 
 
-def _s_chapter():
-    rows = [
-        [mb_html.code('"0"'), "Pre-chapter", "Wiki navigation templates, page setup"],
-        ["Hebrew numerals", "Normal verses", "Actual verse data"],
+def s_chapter():
+    _chapter_rows = claim(
+        "mp.plain.chapter.pseudo-verse-keys",
         [
-            author.hbo('"תתת"'),
-            "Post-chapter",
-            "Wiki footer templates, end-of-chapter markup",
+            [
+                mb_html.code('"0"'),
+                "Pre-chapter",
+                "Wiki navigation templates, page setup",
+            ],
+            ["Hebrew numerals", "Normal verses", "Actual verse data"],
+            [
+                author.hbo('"תתת"'),
+                "Post-chapter",
+                "Wiki footer templates, end-of-chapter markup",
+            ],
         ],
-    ]
+        kind="struct",
+        subject="mp:plain",
+        data={"pseudo_verse_keys": ["0", "תתת"]},
+    )
     return [
         author.heading_level_2("Chapter structure"),
         author.para(
@@ -124,7 +166,7 @@ def _s_chapter():
                 " dict is keyed as follows:",
             ]
         ),
-        author.std_table(rows, arg_to_troh=["Key", "Category", "Purpose"]),
+        author.std_table(_chapter_rows, arg_to_troh=["Key", "Category", "Purpose"]),
         author.para(
             [
                 "The keys for normal verses are Hebrew numerals conforming to the system"
@@ -135,7 +177,7 @@ def _s_chapter():
     ]
 
 
-def _s_verse():
+def s_verse():
     col_rows = [
         [
             "C",
@@ -188,19 +230,30 @@ def _s_verse():
     return [
         author.heading_level_2("Verse (pseudo-verse) structure"),
         author.para(
-            "Each verse is a 3-element array corresponding to the C, D, and E"
-            " columns of the Google Sheet."
+            claim(
+                "mp.plain.verse.is-3-tuple",
+                "Each verse is a 3-element array corresponding to the C, D, and E"
+                " columns of the Google Sheet.",
+                kind="struct",
+                subject="mp:plain",
+                data={"shape": ["sep", "label", "text"], "length": 3},
+            )
         ),
         author.std_table(col_rows),
         author.heading_level_3("Index 0 (Google column C): Verse separator"),
         author.para(
-            [
-                "The contents at index 0 indicate how this verse is separated from"
-                " the preceding verse. ",
-                mb_html.code('"__"'),
-                " is by far the most common value, indicating a plain space."
-                " More interesting values include:",
-            ]
+            claim(
+                "mp.plain.verse.c-col.semantics",
+                [
+                    "The contents at index 0 indicate how this verse is separated from"
+                    " the preceding verse. ",
+                    mb_html.code('"__"'),
+                    " is by far the most common value, indicating a plain space."
+                    " More interesting values include:",
+                ],
+                kind="struct",
+                subject="mp:plain",
+            )
         ),
         author.std_table(sep_rows, arg_to_troh=["Template", "Meaning"]),
         author.para("Additional $parashah-related templates that may appear:"),
@@ -215,14 +268,20 @@ def _s_verse():
         ),
         author.heading_level_3("Index 1 (Google column D): Verse label"),
         author.para(
-            [
-                "The content at index 1 is empty ",
-                mb_html.code("[]"),
-                " for pseudo-verses. For normal verses, it is a list containing exactly"
-                " one element: the ",
-                author.hbo("מ:פסוק"),
-                " template labeling the verse, e.g. for Job 1:2:",
-            ]
+            claim(
+                "mp.plain.verse.d-col.semantics",
+                [
+                    "The content at index 1 is empty ",
+                    mb_html.code("[]"),
+                    " for pseudo-verses. For normal verses, it is a list containing exactly"
+                    " one element: the ",
+                    author.hbo("מ:פסוק"),
+                    " template labeling the verse, e.g. for Job 1:2:",
+                ],
+                kind="struct",
+                subject="mp:plain",
+                data={"label_template": "מ:פסוק", "always_present": True},
+            )
         ),
         json_block.json_block_raw_html(_JSON_INDEX_0),
         author.para(
@@ -238,9 +297,15 @@ def _s_verse():
         ),
         author.heading_level_3("E column (index 2): Verse text"),
         author.para(
-            "Contains the actual verse text as a mixed array of strings"
-            " (Hebrew text with cantillation marks) and template objects"
-            " (inline markup). Example (Job 1:1):"
+            claim(
+                "mp.plain.verse.e-col.semantics",
+                "Contains the actual verse text as a mixed array of strings"
+                " (Hebrew text with cantillation marks) and template objects"
+                " (inline markup). Example (Job 1:1):",
+                kind="struct",
+                subject="mp:plain",
+                data={"element_types": ["string", "stmpl", "tmpl", "custom_tag"]},
+            )
         ),
         json_block.json_block_raw_html(_JSON_EP_EXAMPLE),
     ]
