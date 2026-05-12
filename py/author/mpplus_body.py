@@ -363,7 +363,7 @@ def s_intro():
         author.unordered_list(
             [
                 "File naming",
-                "Structure of the top-level and its header",
+                "Structure of the top level and its header",
                 "Structure of a book39, chapter, and verse",
                 "Template format",
                 "Selected templates presented in detail",

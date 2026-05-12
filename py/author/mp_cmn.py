@@ -643,7 +643,7 @@ OTHER_ROWS = _claim_payload(
         ],
         [
             author.hbo("מודגש"),
-            "Bold text within the Wikisource page.",
+            "Bold text within the notes argument (param 2) of נוסח.",
         ],
         [
             author.hbo("ש"),
@@ -666,6 +666,30 @@ OTHER_ROWS = _claim_payload(
             "מודגש",
             "ש",
         ]
+    },
+)
+
+MODAG_ONLY_IN_NUSACH_PARAM2 = _claim_payload(
+    "mp.both.templates.modag.only-in-nusach-param2",
+    "Template מודגש appears only within the notes argument (param 2) of נוסח.",
+    kind="struct",
+    subject="mp:both",
+    data={
+        "template": "מודגש",
+        "parent_template": "נוסח",
+        "parent_param": "2",
+    },
+)
+
+SH_ONLY_IN_NUSACH_PARAM2 = _claim_payload(
+    "mp.both.templates.sh.only-in-nusach-param2",
+    "Template ש appears only within the notes argument (param 2) of נוסח.",
+    kind="struct",
+    subject="mp:both",
+    data={
+        "template": "ש",
+        "parent_template": "נוסח",
+        "parent_param": "2",
     },
 )
 

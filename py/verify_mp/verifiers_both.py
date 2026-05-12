@@ -129,6 +129,85 @@ def verify_mp_both_templates_other_set(record: ClaimRecord, ctx: Context) -> Non
     _verify_template_set_observed(record, ctx)
 
 
+def _iter_template_occurrences_with_ancestors(node, *, ancestors=()):
+    """Yield (template_obj, ancestors) pairs from a node tree.
+
+    ancestors is a tuple of (parent_template_name, parent_param_key) pairs
+    describing where the current template object was found.
+    """
+    if isinstance(node, dict):
+        if "tmpl_name" in node:
+            tmpl_name = node["tmpl_name"]
+            yield node, ancestors
+            for param_key, param_val in node.get("tmpl_params", {}).items():
+                yield from _iter_template_occurrences_with_ancestors(
+                    param_val,
+                    ancestors=(*ancestors, (tmpl_name, str(param_key))),
+                )
+        else:
+            for value in node.values():
+                yield from _iter_template_occurrences_with_ancestors(
+                    value,
+                    ancestors=ancestors,
+                )
+    elif isinstance(node, list):
+        for item in node:
+            yield from _iter_template_occurrences_with_ancestors(
+                item,
+                ancestors=ancestors,
+            )
+
+
+def _verify_template_only_in_parent_param(record: ClaimRecord, ctx: Context) -> None:
+    """Assert a template appears only under a specific parent template param."""
+    target = record.data["template"]
+    parent_tmpl = record.data["parent_template"]
+    parent_param = str(record.data["parent_param"])
+
+    bad: list[str] = []
+    seen = 0
+    col_letters = ("C", "D", "E")
+    for book39, ch_key, v_key, verse in iter_verses(ctx.corpus):
+        for col_idx, col in enumerate(verse):
+            for tmpl, ancestors in _iter_template_occurrences_with_ancestors(col):
+                if tmpl["tmpl_name"] != target:
+                    continue
+                seen += 1
+                in_expected_context = any(
+                    anc_name == parent_tmpl and anc_param == parent_param
+                    for anc_name, anc_param in ancestors
+                )
+                if in_expected_context:
+                    continue
+                anc_text = " > ".join(f"{name}[{param}]" for name, param in ancestors)
+                if not anc_text:
+                    anc_text = "<root>"
+                bad.append(
+                    f"{book39['book24_name']} {ch_key}:{v_key}"
+                    f" {col_letters[col_idx]} ancestors={anc_text}"
+                )
+
+    assert seen, f"template {target!r} not found in plus corpus"
+    assert not bad, (
+        f"template {target!r} found outside {parent_tmpl!r} param {parent_param!r};"
+        f" sample locations: {bad[:5]}"
+    )
+
+
+def verify_mp_both_templates_modag_only_in_nusach_param2(
+    record: ClaimRecord, ctx: Context
+) -> None:
+    """Template מודגש appears only in נוסח param 2."""
+    _verify_template_only_in_parent_param(record, ctx)
+
+
+def verify_mp_both_templates_sh_only_in_nusach_param2(
+    record: ClaimRecord, ctx: Context
+) -> None:
+    """Template ש appears only in נוסח param 2."""
+    _verify_template_only_in_parent_param(record, ctx)
+
+
 def _verify_note_books_only(record: ClaimRecord, ctx: Context) -> None:
     """Assert note templates only appear in Torah and Esther books.
 
