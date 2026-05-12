@@ -12,7 +12,7 @@ Output goes to ../MAM-parsed/gh-pages/mpplus_aot.html.
 from mb_misc import mb_html
 from author_util import author
 from author_util import json_block
-from author_util.claim import claim
+from author_util.claim import ClaimCollection, claim
 
 _FNAME = "mpplus_aot.html"
 _TITLE = "Special letter marking"
@@ -30,36 +30,42 @@ _JSON_SPECIAL_LETTER = """\
     "5": "ט/ג"
   }
 }"""
-_AOT_INTRO = claim(
-    "mp.plus.templates.aot.arg5-derivable",
-    [
-        "Marks a whole word containing a special (large, small, or suspended) letter."
-        " The template encodes the word in two forms:"
-        " interrupted (arg 1 — array decomposed around the special letter)"
-        " and uninterrupted (args 2–4 — plain word string, dot-mask, and type code)."
-        " Args 2–4 together are sufficient to recover all special-letter information"
-        " without arg 1 (arg 5 is a redundant letter/type summary, derivable from args 3 and 4):",
-    ],
-    kind="struct",
-    subject="mp:plus",
-    data={"template": "מ:אות-מיוחדת-במילה"},
-)
+
+_AOT_INTRO_PAYLOAD = [
+    "Marks a whole word containing a special (large, small, or suspended) letter."
+    " The template encodes the word in two forms:"
+    " interrupted (arg 1 — array decomposed around the special letter)"
+    " and uninterrupted (args 2–4 — plain word string, dot-mask, and type code)."
+    " Args 2–4 together are sufficient to recover all special-letter information"
+    " without arg 1 (arg 5 is a redundant letter/type summary, derivable from args 3 and 4):",
+]
 
 
-def gen_html_file(tdm_ch):
+def _aot_intro(*, claims: ClaimCollection | None = None):
+    claim_fn = claims.claim if claims is not None else claim
+    return claim_fn(
+        "mp.plus.templates.aot.arg5-derivable",
+        _AOT_INTRO_PAYLOAD,
+        kind="struct",
+        subject="mp:plus",
+        data={"template": "מ:אות-מיוחדת-במילה"},
+    )
+
+
+def gen_html_file(tdm_ch, claims: ClaimCollection | None = None):
     """Generate mpplus_aot.html in the given output directory."""
-    cbody = _build_body()
+    cbody = _build_body(claims=claims)
     return author.help_gen_html_file(__file__, tdm_ch, _FNAME, _TITLE, cbody)
 
 
-def _build_body():
+def _build_body(*, claims: ClaimCollection | None = None):
     back_link = author.anchor_h("Reading $MAM-parsed-plus", _PLUS_DOC)
     return [
         author.heading_level_1(
             ["Special letter marking — ", author.hbo("מ:אות-מיוחדת-במילה")]
         ),
         author.para(["← Back to ", back_link]),
-        author.para(_AOT_INTRO),
+        author.para(_aot_intro(claims=claims)),
         json_block.json_block_raw_html(_JSON_SPECIAL_LETTER),
         author.para("Arguments:"),
         author.ordered_list(

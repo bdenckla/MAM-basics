@@ -15,7 +15,7 @@ from author import mpplain as _plain
 from author import mp_cmn as _cmn  # noqa: F401 — module-level claims register at import
 from author import (
     mpplus_aot as _aot,
-)  # noqa: F401 — module-level claims register at import
+)  # noqa: F401
 from author import (
     mpplus_haarah_2 as _haarah_2,
 )  # noqa: F401 — module-level claims register at import
@@ -28,7 +28,8 @@ def populate() -> None:
 
     mp_cmn and mpplus_body module-level constants register when those modules are
     imported (triggered by the imports above). This function additionally calls every
-    section builder that contains function-local claim() calls.
+    section builder that contains function-local claim() calls, plus any migrated
+    module helpers that now emit claims during body construction.
     """
     global _populated
     if _populated:
@@ -41,6 +42,7 @@ def populate() -> None:
     _body.s_plus_only_templates()
     _body.s_common_templates()
     _body.s_plain_differences()
+    _aot._build_body()
     _plain.s_book39()
     _plain.s_chapter()
     _plain.s_verse()
