@@ -604,8 +604,10 @@ KQ_SPECIAL_ROWS = claim(
         [
             author.hbo("כו״ק כתיב מילה חדה וקרי תרתין מילין"),
             [
-                "1-atom $ketiv mapped to 2-atom $qere. See FOI section ",
+                "1-atom $ketiv mapped to 2-atom $qere. See the rows of FOI section ",
                 _kq_simple_foi_link_for_sug("כו״ק כתיב מילה חדה וקרי תרתין מילין"),
+                " labelled ",
+                mb_html.code("k1q2-sr-kqq"),
                 ".",
             ],
         ],
@@ -613,10 +615,12 @@ KQ_SPECIAL_ROWS = claim(
             author.hbo("כו״ק כתיב מילה חדה וקרי תרתין מילין בין שני מקפים"),
             [
                 "Same as above but between $maqaf marks (1 Chronicles 9:4 only)."
-                " See FOI section ",
+                " See the rows of FOI section ",
                 _kq_simple_foi_link_for_sug(
                     "כו״ק כתיב מילה חדה וקרי תרתין מילין בין שני מקפים"
                 ),
+                " labelled ",
+                mb_html.code("k1q2-sr-bcom"),
                 ".",
             ],
         ],
@@ -632,8 +636,10 @@ KQ_SPECIAL_ROWS = claim(
             author.hbo("קו״כ כתיב מילה חדה וקרי תרתין מילין"),
             [
                 "1-atom $ketiv mapped to 2-atom $qere, following $maqaf (Nehemiah"
-                " 2:13 only). See FOI section ",
+                " 2:13 only). See the rows of FOI section ",
                 _kq_simple_foi_link_for_sug("קו״כ כתיב מילה חדה וקרי תרתין מילין"),
+                " labelled ",
+                mb_html.code("k1q2-sr-qqk"),
                 ".",
             ],
         ],
