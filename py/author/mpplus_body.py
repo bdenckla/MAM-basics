@@ -202,7 +202,7 @@ _CLAIM_DEFS = (
 
 
 def _emit_claim_payload(
-    claims: ClaimCollection | None,
+    claims: ClaimCollection,
     claim_id: str,
     payload,
     *,
@@ -210,8 +210,6 @@ def _emit_claim_payload(
     subject: str,
     data=None,
 ):
-    if claims is None:
-        return payload
     return claims.claim(claim_id, payload, kind=kind, subject=subject, data=data)
 
 
@@ -310,7 +308,7 @@ _JSON_NESTED = """\
 }"""
 
 
-def _json_top_level_skel(*, claims: ClaimCollection | None = None):
+def _json_top_level_skel(*, claims: ClaimCollection):
     return _emit_claim_payload(
         claims,
         "mp.plus.example.top-level-skel",
@@ -321,7 +319,7 @@ def _json_top_level_skel(*, claims: ClaimCollection | None = None):
     )
 
 
-def _json_header(*, claims: ClaimCollection | None = None):
+def _json_header(*, claims: ClaimCollection):
     return _emit_claim_payload(
         claims,
         "mp.plus.example.header-job",
@@ -336,7 +334,7 @@ def _json_header(*, claims: ClaimCollection | None = None):
     )
 
 
-def _json_header_composite(*, claims: ClaimCollection | None = None):
+def _json_header_composite(*, claims: ClaimCollection):
     return _emit_claim_payload(
         claims,
         "mp.plus.example.header-samuel",
@@ -346,7 +344,7 @@ def _json_header_composite(*, claims: ClaimCollection | None = None):
     )
 
 
-def _json_book39_skel(*, claims: ClaimCollection | None = None):
+def _json_book39_skel(*, claims: ClaimCollection):
     return _emit_claim_payload(
         claims,
         "mp.plus.example.book39-skel",
@@ -364,7 +362,7 @@ def _json_book39_skel(*, claims: ClaimCollection | None = None):
     )
 
 
-def _json_d_col_first(*, claims: ClaimCollection | None = None):
+def _json_d_col_first(*, claims: ClaimCollection):
     return _emit_claim_payload(
         claims,
         "mp.plus.example.d-col-first",
@@ -374,7 +372,7 @@ def _json_d_col_first(*, claims: ClaimCollection | None = None):
     )
 
 
-def _json_d_col_subseq(*, claims: ClaimCollection | None = None):
+def _json_d_col_subseq(*, claims: ClaimCollection):
     return _emit_claim_payload(
         claims,
         "mp.plus.example.d-col-empty",
@@ -384,7 +382,7 @@ def _json_d_col_subseq(*, claims: ClaimCollection | None = None):
     )
 
 
-def _json_tmpl_format(*, claims: ClaimCollection | None = None):
+def _json_tmpl_format(*, claims: ClaimCollection):
     return _emit_claim_payload(
         claims,
         "mp.plus.template.format-example",
@@ -399,7 +397,7 @@ def _json_tmpl_format(*, claims: ClaimCollection | None = None):
     )
 
 
-def _json_tmpl_plain_compare(*, claims: ClaimCollection | None = None):
+def _json_tmpl_plain_compare(*, claims: ClaimCollection):
     return _emit_claim_payload(
         claims,
         "mp.plain.template.stmpl-format-example",
@@ -410,7 +408,7 @@ def _json_tmpl_plain_compare(*, claims: ClaimCollection | None = None):
     )
 
 
-def _json_nested(*, claims: ClaimCollection | None = None):
+def _json_nested(*, claims: ClaimCollection):
     return _emit_claim_payload(
         claims,
         "mp.plus.example.nested-tmpl",
@@ -488,7 +486,7 @@ _DIFF_ROWS = [
 ]
 
 
-def _diff_rows(*, claims: ClaimCollection | None = None):
+def _diff_rows(*, claims: ClaimCollection):
     return _emit_claim_payload(
         claims,
         "mp.plus.diff-from-plain",
@@ -525,7 +523,7 @@ def s_intro():
     ]
 
 
-def s_plain_differences(*, claims: ClaimCollection | None = None):
+def s_plain_differences(*, claims: ClaimCollection):
     return [
         author.heading_level_2("Differences from plain format"),
         author.std_table(
@@ -553,7 +551,7 @@ def s_plain_differences(*, claims: ClaimCollection | None = None):
     ]
 
 
-def s_top_level(*, claims: ClaimCollection | None = None):
+def s_top_level(*, claims: ClaimCollection):
     _header_rows = _emit_claim_payload(
         claims,
         "mp.plus.header.fields",
@@ -602,7 +600,7 @@ def s_top_level(*, claims: ClaimCollection | None = None):
     ]
 
 
-def s_book39(*, claims: ClaimCollection | None = None):
+def s_book39(*, claims: ClaimCollection):
     _book39_rows = _emit_claim_payload(
         claims,
         "mp.plus.book39.fields",
@@ -660,7 +658,7 @@ def s_book39(*, claims: ClaimCollection | None = None):
     ]
 
 
-def s_chapter_verse(*, claims: ClaimCollection | None = None):
+def s_chapter_verse(*, claims: ClaimCollection):
     _json_d_col_subseq(claims=claims)
     tmpl_rows = _emit_claim_payload(
         claims,
@@ -888,7 +886,7 @@ def s_plus_only_templates():
     ]
 
 
-def s_common_templates(*, claims: ClaimCollection | None = None):
+def s_common_templates(*, claims: ClaimCollection):
     _emit_claim_payload(
         claims,
         "mp.plus.docs.common-templates.templates-in-plus-survey",

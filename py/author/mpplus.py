@@ -12,6 +12,7 @@ Body content lives in mpplus_body.py.
 
 from mb_misc import mb_html
 from author_util import author
+from author_util.claim import ClaimCollection
 from author import mp_cmn as cmn
 from author import mpplus_body as body
 
@@ -19,21 +20,21 @@ _FNAME = "mpplus.html"
 _TITLE = "Reading MAM-parsed-plus"
 
 
-def gen_html_file(tdm_ch):
+def gen_html_file(tdm_ch, claims: ClaimCollection):
     """Generate mpplus.html in the given output directory."""
-    cbody = _build_body()
+    cbody = _build_body(claims=claims)
     return author.help_gen_html_file(__file__, tdm_ch, _FNAME, _TITLE, cbody)
 
 
-def _build_body():
+def _build_body(*, claims: ClaimCollection):
     return [
         mb_html.heading_level_1(_TITLE),
         *body.s_intro(),
         *cmn.s_file_naming(),
-        *body.s_top_level(),
-        *body.s_book39(),
-        *body.s_chapter_verse(),
-        *body.s_common_templates(),
+        *body.s_top_level(claims=claims),
+        *body.s_book39(claims=claims),
+        *body.s_chapter_verse(claims=claims),
+        *body.s_common_templates(claims=claims),
         *body.s_plus_only_templates(),
-        *body.s_plain_differences(),
+        *body.s_plain_differences(claims=claims),
     ]
