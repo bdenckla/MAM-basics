@@ -45,7 +45,7 @@ def populate() -> None:
     _body.s_plus_only_templates()
     _body.s_common_templates()
     _body.s_plain_differences()
-    _aot._build_body()
+    _aot.populate_claims()
     _plain.populate_claims()
     _haarah_2._build_body()
     _kaful._build_body()

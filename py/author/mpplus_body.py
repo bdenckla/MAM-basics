@@ -682,7 +682,7 @@ def s_plus_only_templates():
             [
                 author.anchor_h(
                     [
-                        "Special letter marking — ",
+                        "Word with special letter(s) — ",
                         author.hbo("מ:אות-מיוחדת-במילה"),
                     ],
                     _AOT_DOC,
@@ -703,7 +703,7 @@ def s_plus_only_templates():
                 ),
                 author.anchor_h(
                     [
-                        "Dual-trope text — ",
+                        "Dual-trope — ",
                         author.hbo("מ:כפול"),
                     ],
                     _KAFUL_DOC,
