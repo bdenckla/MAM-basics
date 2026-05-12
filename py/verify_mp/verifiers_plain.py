@@ -8,7 +8,34 @@ from verify_mp.corpus import (
     iter_plain_book39s,
     iter_plain_chapters,
     iter_plain_verses,
+    iter_plain_col_objects,
 )
+
+_NORM_QUOTES = str.maketrans({'"': "״"})
+
+
+def _plain_node_has_label_template(node, label_template: str) -> bool:
+    """Return whether label_template appears in node as stmpl/tmpl content."""
+    label_template = label_template.translate(_NORM_QUOTES)
+    if isinstance(node, str):
+        return node.translate(_NORM_QUOTES) == label_template
+    if isinstance(node, dict):
+        stmpl = node.get("stmpl")
+        if isinstance(stmpl, str):
+            name = stmpl.split("|", 1)[0].translate(_NORM_QUOTES)
+            if name == label_template:
+                return True
+        for value in node.values():
+            if _plain_node_has_label_template(value, label_template):
+                return True
+    elif isinstance(node, list):
+        if len(node) == 1 and isinstance(node[0], str):
+            if node[0].translate(_NORM_QUOTES) == label_template:
+                return True
+        for item in node:
+            if _plain_node_has_label_template(item, label_template):
+                return True
+    return False
 
 
 def _verify_template_set_plain_observed(
@@ -73,3 +100,109 @@ def verify_mp_plain_chapter_pseudo_verse_keys(
         assert (
             "תתת" in chapter
         ), f"book39={book39['book24_name']!r} ch={ch_key}: missing pseudo-verse key 'תתת'"
+
+
+def verify_mp_plain_template_stmpl_format_example(
+    record: ClaimRecord, ctx: Context
+) -> None:
+    """The declared stmpl example has observed plain-format structure."""
+    target_stmpl = record.data["stmpl"]
+    target_parts = target_stmpl.split("|")
+    assert len(target_parts) >= 2, f"not a valid stmpl shape: {target_stmpl!r}"
+
+    target_name = target_parts[0].translate(_NORM_QUOTES)
+    target_arity = len(target_parts) - 1
+    saw_any_stmpl = False
+    for _book39, _ch_key, _v_key, verse in iter_plain_verses(ctx.corpus_plain):
+        for col in verse:
+            for obj in iter_plain_col_objects(col):
+                if not (isinstance(obj, dict) and isinstance(obj.get("stmpl"), str)):
+                    continue
+                saw_any_stmpl = True
+                observed_parts = obj["stmpl"].split("|")
+                observed_name = observed_parts[0].translate(_NORM_QUOTES)
+                observed_arity = len(observed_parts) - 1
+                if observed_name == target_name and observed_arity == target_arity:
+                    return
+    assert saw_any_stmpl, "plain corpus contains no stmpl objects"
+    assert False, (
+        f"no plain stmpl found with name/arity matching declared example:"
+        f" name={target_name!r}, arity={target_arity}"
+    )
+
+
+def verify_mp_plain_verse_c_col_semantics(record: ClaimRecord, ctx: Context) -> None:
+    """C column is a separator list; '__' is common but not exclusive."""
+    saw_common = False
+    saw_non_common = False
+    for _book39, _ch_key, _v_key, verse in iter_plain_verses(ctx.corpus_plain):
+        c_col = verse[0]
+        assert isinstance(c_col, list), f"C column is not a list: {c_col!r}"
+        for item in c_col:
+            if isinstance(item, str):
+                continue
+            if isinstance(item, dict):
+                assert any(
+                    k in item for k in ["stmpl", "tmpl", "custom_tag"]
+                ), f"unexpected C-column dict shape: {item!r}"
+                continue
+            assert False, f"unexpected C-column item type: {type(item).__name__}"
+        if c_col == ["__"]:
+            saw_common = True
+        else:
+            saw_non_common = True
+    assert saw_common, "never observed common C-column separator ['__']"
+    assert saw_non_common, "C column never deviates from ['__']"
+
+
+def verify_mp_plain_verse_d_col_semantics(record: ClaimRecord, ctx: Context) -> None:
+    """D column is empty for pseudo-verses and labeled for normal verses."""
+    label_template = record.data["label_template"]
+    pseudo_keys = frozenset(["0", "תתת"])
+    for book39, ch_key, v_key, verse in iter_plain_verses(ctx.corpus_plain):
+        d_col = verse[1]
+        assert isinstance(d_col, list), f"D column is not a list: {d_col!r}"
+        if v_key in pseudo_keys:
+            assert d_col == [], (
+                f"book39={book39['book24_name']!r} ch={ch_key} v={v_key}:"
+                f" pseudo-verse D column should be empty, got {d_col!r}"
+            )
+            continue
+
+        assert len(d_col) == 1, (
+            f"book39={book39['book24_name']!r} ch={ch_key} v={v_key}:"
+            f" expected one D-column item, got {len(d_col)}"
+        )
+        item = d_col[0]
+        assert isinstance(item, dict), (
+            f"book39={book39['book24_name']!r} ch={ch_key} v={v_key}:"
+            f" D-column item is not a dict: {item!r}"
+        )
+        assert _plain_node_has_label_template(item, label_template), (
+            f"book39={book39['book24_name']!r} ch={ch_key} v={v_key}:"
+            f" D-column does not include {label_template!r}: {item!r}"
+        )
+
+
+def verify_mp_plain_verse_e_col_semantics(record: ClaimRecord, ctx: Context) -> None:
+    """E column contains plain-text strings and plain template/custom-tag objects."""
+    expected_types = frozenset(record.data["element_types"])
+    assert expected_types == frozenset(
+        ["string", "stmpl", "tmpl", "custom_tag"]
+    ), f"unexpected claim element_types: {sorted(expected_types)}"
+    saw = {k: False for k in expected_types}
+    for _book39, _ch_key, _v_key, verse in iter_plain_verses(ctx.corpus_plain):
+        e_col = verse[2]
+        assert isinstance(e_col, list), f"E column is not a list: {e_col!r}"
+        for item in e_col:
+            if isinstance(item, str):
+                saw["string"] = True
+                continue
+            if not isinstance(item, dict):
+                assert False, f"unexpected E-column item type: {type(item).__name__}"
+            recognized = [k for k in ["stmpl", "tmpl", "custom_tag"] if k in item]
+            assert recognized, f"unexpected E-column dict shape: {item!r}"
+            for key in recognized:
+                saw[key] = True
+    missing = [k for k, found in saw.items() if not found]
+    assert not missing, f"never observed expected E-column element type(s): {missing}"
