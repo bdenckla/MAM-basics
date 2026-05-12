@@ -159,19 +159,29 @@ def _emit_claim_payload(
     kind: str,
     subject: str,
     data=None,
+    register_legacy: bool = False,
 ):
     if claims is None:
-        return payload
+        if not register_legacy:
+            return payload
+        if claim_id in REGISTRY:
+            return payload
+        return claim(claim_id, payload, kind=kind, subject=subject, data=data)
     return claims.claim(claim_id, payload, kind=kind, subject=subject, data=data)
 
 
 def populate_claims(*, claims: ClaimCollection | None = None):
     """Emit mpplain claim metadata into explicit claims or legacy REGISTRY."""
-    claim_fn = claims.claim if claims is not None else claim
-    if claims is None and _CLAIM_DEFS and _CLAIM_DEFS[0][0] in REGISTRY:
-        return
     for claim_id, kind, subject, data in _CLAIM_DEFS:
-        claim_fn(claim_id, None, kind=kind, subject=subject, data=data)
+        _emit_claim_payload(
+            claims,
+            claim_id,
+            None,
+            kind=kind,
+            subject=subject,
+            data=data,
+            register_legacy=True,
+        )
 
 
 def gen_html_file(tdm_ch, claims: ClaimCollection | None = None):
