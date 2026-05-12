@@ -150,7 +150,7 @@ KQ_ROWS = claim(
             [
                 "Special $ketiv_qere. See ",
                 author.anchor_h(
-                    ["dedicated page for ", author.hbo("מ:כו״ק מיוחד")],
+                    "its dedicated page",
                     _KQ_SPECIAL_DOC,
                 ),
                 ".",
@@ -281,7 +281,7 @@ ACCENT_ROWS = claim(
             [
                 "Dual-cantillation span. See ",
                 author.anchor_h(
-                    ["dedicated page for ", author.hbo("מ:כפול")],
+                    "its dedicated page",
                     _KAFUL_DOC,
                 ),
                 ".",
@@ -544,7 +544,7 @@ OTHER_ROWS = claim(
             [
                 "Good ending. See ",
                 author.anchor_h(
-                    ["the ", mb_html.code("good_ending_plus"), " dedicated page"],
+                    "its dedicated page",
                     _GOOD_ENDING_DOC,
                 ),
                 ".",

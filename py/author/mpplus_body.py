@@ -365,7 +365,7 @@ def s_book39():
                 [
                     'Non-null only for the 4 book39s with "good endings." See ',
                     author.anchor_h(
-                        ["the ", mb_html.code("good_ending_plus"), " dedicated page"],
+                        "its dedicated page",
                         _GOOD_ENDING_DOC,
                     ),
                     ".",
@@ -658,7 +658,7 @@ def s_common_templates():
                         " (By “special” we mean large, small, or suspended.)"
                         " See ",
                         author.anchor_h(
-                            ["dedicated page for ", author.hbo("מ:אות-מיוחדת-במילה")],
+                            "its dedicated page",
                             _AOT_DOC,
                         ),
                         ".",
