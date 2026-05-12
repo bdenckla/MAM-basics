@@ -3,6 +3,7 @@
 
 from mb_misc import mb_html
 from mb_cmn import kq_special_templates as kqst
+from mb_cmn import template_names as tmpln
 from author_util import author
 from author_util.claim import claim
 
@@ -273,7 +274,7 @@ ACCENT_ROWS = claim(
             "Dual-cantillation span. Encodes a dually-accented text and its two singly-accented strands. Named params: כפול= (combined), א= and ב= (individual strands). Used for the two Decalogues and the Saga of Reuben.",
         ],
         [
-            author.hbo("שני טעמים באות אחת קמץ-תחתון-פתח-עליון"),
+            author.hbo(tmpln.TWO_ACCENTS_OF_QUPO),
             "Formats the two extra marks (above-accent + patah) on the QUPO Decalogue words (panay and mitahat). Parameter is the above-accent (may use מ:טעם).",
         ],
     ],
@@ -764,7 +765,7 @@ PLAIN_ONLY = claim(
             "גלגל-2",
             "ירח בן יומו-2",
             "מ:טעם",
-            "שני טעמים באות אחת קמץ-תחתון-פתח-עליון",
+            tmpln.TWO_ACCENTS_OF_QUPO,
             # From POETIC_ROWS (expanded by mpplus_boring_tmpls.py)
             "פרשה-מרכז",
             # From OTHER_ROWS (expanded by mpplus_boring_tmpls.py)

@@ -1,7 +1,7 @@
 import json
 
-file_path = r'in\mam-ws\A1-Genesis.json'
-with open(file_path, 'r', encoding='utf-8') as f:
+file_path = r"in\mam-ws\A1-Genesis.json"
+with open(file_path, "r", encoding="utf-8") as f:
     data = json.load(f)
 
 first_chapter_key = next(iter(data.keys()))
@@ -15,7 +15,9 @@ if isinstance(first_chapter_content, list):
         print(f"First item type: {type(first_item)}")
         if isinstance(first_item, dict):
             first_verse_key = next(iter(first_item.keys()))
-            print(f"First verse key: '{first_verse_key}', Type: {type(first_verse_key)}")
+            print(
+                f"First verse key: '{first_verse_key}', Type: {type(first_verse_key)}"
+            )
         else:
             print("First item is not a dictionary.")
 elif isinstance(first_chapter_content, dict):

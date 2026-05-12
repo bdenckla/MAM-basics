@@ -354,8 +354,7 @@ def _s_common_templates():
         author.heading_level_2("Common templates in the E (verse text) column"),
         author.para(
             [
-                "For English and Hebrew descriptions of most templates,"
-                " see the ",
+                "For English and Hebrew descriptions of most templates, see the ",
                 sheets_link,
                 " of the ",
                 sheets_data_link,
