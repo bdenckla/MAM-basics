@@ -169,10 +169,17 @@ class TestExplicitClaims(unittest.TestCase):
 
         self.assertNotIn("mp.plain.book39.fields", claim_mod.REGISTRY)
 
-    def test_mpplain_build_body_registers_legacy_claims(self):
+    def test_mpplain_build_body_has_no_legacy_claim_side_effects(self):
         mpplain = importlib.import_module("author.mpplain")
 
         mpplain._build_body()
+
+        self.assertNotIn("mp.plain.book39.fields", claim_mod.REGISTRY)
+
+    def test_mpplain_populate_claims_registers_legacy_claims(self):
+        mpplain = importlib.import_module("author.mpplain")
+
+        mpplain.populate_claims()
 
         self.assertIn("mp.plain.book39.fields", claim_mod.REGISTRY)
 

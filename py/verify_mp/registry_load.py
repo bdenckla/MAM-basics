@@ -28,7 +28,7 @@ _populated = False
 
 
 def populate() -> None:
-    """Register all plus and both claims by importing and calling all section builders.
+    """Register all plus and both claims by importing helper/builders.
 
     This function calls migrated module helpers (such as mp_cmn.populate_claims)
     and section builders that contain function-local claim() calls.
@@ -46,9 +46,6 @@ def populate() -> None:
     _body.s_common_templates()
     _body.s_plain_differences()
     _aot._build_body()
-    _plain.s_book39()
-    _plain.s_chapter()
-    _plain.s_verse()
-    _plain._s_common_templates()
+    _plain.populate_claims()
     _haarah_2._build_body()
     _kaful._build_body()

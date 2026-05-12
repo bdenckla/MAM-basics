@@ -12,7 +12,7 @@ Output goes to ../MAM-parsed/gh-pages/mpplain.html.
 from mb_misc import mb_html
 from author_util import author
 from author_util import json_block
-from author_util.claim import ClaimCollection, claim
+from author_util.claim import ClaimCollection, REGISTRY, claim
 from author import mp_cmn as cmn
 
 _FNAME = "mpplain.html"
@@ -105,6 +105,74 @@ _PLAIN_ACCENT_TEMPLATES = [
     "שני טעמים באות אחת קמץ-תחתון-פתח-עליון",
 ]
 
+_CLAIM_DEFS = (
+    (
+        "mp.plain.book39.fields",
+        "struct",
+        "mp:plain",
+        {"book39_keys": ["book24_name", "sub_book_name", "chapters"]},
+    ),
+    (
+        "mp.plain.chapter.pseudo-verse-keys",
+        "struct",
+        "mp:plain",
+        {"pseudo_verse_keys": ["0", "תתת"]},
+    ),
+    (
+        "mp.plain.verse.is-3-tuple",
+        "struct",
+        "mp:plain",
+        {"shape": ["sep", "label", "text"], "length": 3},
+    ),
+    (
+        "mp.plain.verse.c-col.semantics",
+        "struct",
+        "mp:plain",
+        None,
+    ),
+    (
+        "mp.plain.verse.d-col.semantics",
+        "struct",
+        "mp:plain",
+        {"label_template": "מ:פסוק", "always_present": True},
+    ),
+    (
+        "mp.plain.verse.e-col.semantics",
+        "struct",
+        "mp:plain",
+        {"element_types": ["string", "stmpl", "tmpl", "custom_tag"]},
+    ),
+    (
+        "mp.plain.docs.common-templates.templates-in-plain-survey",
+        "enum",
+        "mp:plain",
+        {"templates": _PLAIN_COMMON_TEMPLATES},
+    ),
+)
+
+
+def _emit_claim_payload(
+    claims: ClaimCollection | None,
+    claim_id: str,
+    payload,
+    *,
+    kind: str,
+    subject: str,
+    data=None,
+):
+    if claims is None:
+        return payload
+    return claims.claim(claim_id, payload, kind=kind, subject=subject, data=data)
+
+
+def populate_claims(*, claims: ClaimCollection | None = None):
+    """Emit mpplain claim metadata into explicit claims or legacy REGISTRY."""
+    claim_fn = claims.claim if claims is not None else claim
+    if claims is None and _CLAIM_DEFS and _CLAIM_DEFS[0][0] in REGISTRY:
+        return
+    for claim_id, kind, subject, data in _CLAIM_DEFS:
+        claim_fn(claim_id, None, kind=kind, subject=subject, data=data)
+
 
 def gen_html_file(tdm_ch, claims: ClaimCollection | None = None):
     """Generate mpplain.html in the given output directory."""
@@ -162,8 +230,8 @@ def _s_top_level():
 
 
 def s_book39(*, claims: ClaimCollection | None = None):
-    claim_fn = claims.claim if claims is not None else claim
-    _book39_rows = claim_fn(
+    _book39_rows = _emit_claim_payload(
+        claims,
         "mp.plain.book39.fields",
         [
             [
@@ -201,8 +269,8 @@ def s_book39(*, claims: ClaimCollection | None = None):
 
 
 def s_chapter(*, claims: ClaimCollection | None = None):
-    claim_fn = claims.claim if claims is not None else claim
-    _chapter_rows = claim_fn(
+    _chapter_rows = _emit_claim_payload(
+        claims,
         "mp.plain.chapter.pseudo-verse-keys",
         [
             [
@@ -242,7 +310,6 @@ def s_chapter(*, claims: ClaimCollection | None = None):
 
 
 def s_verse(*, claims: ClaimCollection | None = None):
-    claim_fn = claims.claim if claims is not None else claim
     col_rows = [
         [
             "C",
@@ -295,7 +362,8 @@ def s_verse(*, claims: ClaimCollection | None = None):
     return [
         author.heading_level_2("Verse (pseudo-verse) structure"),
         author.para(
-            claim_fn(
+            _emit_claim_payload(
+                claims,
                 "mp.plain.verse.is-3-tuple",
                 "Each verse is a 3-element array corresponding to the C, D, and E"
                 " columns of the Google Sheet.",
@@ -307,7 +375,8 @@ def s_verse(*, claims: ClaimCollection | None = None):
         author.std_table(col_rows),
         author.heading_level_3("Index 0 (Google column C): Verse separator"),
         author.para(
-            claim_fn(
+            _emit_claim_payload(
+                claims,
                 "mp.plain.verse.c-col.semantics",
                 [
                     "The contents at index 0 indicate how this verse is separated from"
@@ -333,7 +402,8 @@ def s_verse(*, claims: ClaimCollection | None = None):
         ),
         author.heading_level_3("Index 1 (Google column D): Verse label"),
         author.para(
-            claim_fn(
+            _emit_claim_payload(
+                claims,
                 "mp.plain.verse.d-col.semantics",
                 [
                     "The content at index 1 is empty ",
@@ -362,7 +432,8 @@ def s_verse(*, claims: ClaimCollection | None = None):
         ),
         author.heading_level_3("E column (index 2): Verse text"),
         author.para(
-            claim_fn(
+            _emit_claim_payload(
+                claims,
                 "mp.plain.verse.e-col.semantics",
                 "Contains the actual verse text as a mixed array of strings"
                 " (Hebrew text with cantillation marks) and template objects"
@@ -413,10 +484,10 @@ def _s_template_objects():
 
 
 def _s_common_templates(*, claims: ClaimCollection | None = None):
-    claim_fn = claims.claim if claims is not None else claim
-    claim_fn(
+    _emit_claim_payload(
+        claims,
         "mp.plain.docs.common-templates.templates-in-plain-survey",
-        "Templates listed in mpplain common-template tables are present in plain survey.",
+        None,
         kind="enum",
         subject="mp:plain",
         data={"templates": _PLAIN_COMMON_TEMPLATES},
