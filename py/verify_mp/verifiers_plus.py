@@ -7,6 +7,7 @@ from verify_mp.corpus import (
     iter_chapters,
     iter_verses,
     iter_all_template_objects,
+    iter_template_objects,
     iter_plain_verses,
     iter_plain_col_objects,
 )
@@ -70,6 +71,71 @@ def verify_mp_plus_template_tmpl_params_omitted_when_empty(
         ), f"template {tmpl['tmpl_name']!r} has tmpl_params: {{}} (should be omitted)"
 
 
+def verify_mp_plus_verse_c_col_semantics(record: ClaimRecord, ctx: Context) -> None:
+    """C column is an array of separators, commonly ['__'] but not always."""
+    common = record.data["common_value"]
+    saw_common = False
+    saw_non_common = False
+    for _book39, _ch_key, _v_key, verse in iter_verses(ctx.corpus):
+        c_col = verse[0]
+        assert isinstance(c_col, list), f"C column is not a list: {c_col!r}"
+        for item in c_col:
+            assert isinstance(item, (str, dict)), f"unexpected C-column item: {item!r}"
+            if isinstance(item, dict):
+                assert "tmpl_name" in item, f"C-column dict missing tmpl_name: {item!r}"
+        if c_col == common:
+            saw_common = True
+        else:
+            saw_non_common = True
+    assert saw_common, f"never observed common C-column value: {common!r}"
+    assert saw_non_common, "C column never deviates from common separator value"
+
+
+def verify_mp_plus_verse_d_col_semantics(record: ClaimRecord, ctx: Context) -> None:
+    """D column is a label array: empty or containing a מ:פסוק template (possibly nested)."""
+    label_tmpl = record.data["label_template"]
+    saw_empty = False
+    saw_non_empty = False
+    for _book39, _ch_key, _v_key, verse in iter_verses(ctx.corpus):
+        d_col = verse[1]
+        assert isinstance(d_col, list), f"D column is not a list: {d_col!r}"
+        if not d_col:
+            saw_empty = True
+            continue
+        saw_non_empty = True
+        found_label = False
+        for tmpl in iter_template_objects(d_col):
+            if tmpl["tmpl_name"] == label_tmpl:
+                found_label = True
+                break
+        assert found_label, f"non-empty D column missing {label_tmpl!r}: {d_col!r}"
+    assert saw_empty, "D column never empty"
+    assert saw_non_empty, "D column never non-empty"
+
+
+def verify_mp_plus_verse_e_col_semantics(record: ClaimRecord, ctx: Context) -> None:
+    """E column is an array containing strings and template objects."""
+    expected_types = frozenset(record.data["element_types"])
+    assert expected_types == frozenset(
+        ["string", "template_object"]
+    ), f"unexpected claim element_types: {sorted(expected_types)}"
+    saw_string = False
+    saw_template = False
+    for _book39, _ch_key, _v_key, verse in iter_verses(ctx.corpus):
+        e_col = verse[2]
+        assert isinstance(e_col, list), f"E column is not a list: {e_col!r}"
+        for item in e_col:
+            if isinstance(item, str):
+                saw_string = True
+            elif isinstance(item, dict):
+                assert "tmpl_name" in item, f"E-column dict missing tmpl_name: {item!r}"
+                saw_template = True
+            else:
+                assert False, f"unexpected E-column item type: {type(item).__name__}"
+    assert saw_string, "never observed string element in E column"
+    assert saw_template, "never observed template object in E column"
+
+
 def verify_mp_plus_book39_fields(record: ClaimRecord, ctx: Context) -> None:
     """Every book39 object has exactly the declared keys."""
     expected = frozenset(record.data["book39_keys"])
@@ -79,6 +145,145 @@ def verify_mp_plus_book39_fields(record: ClaimRecord, ctx: Context) -> None:
             f"book39 {book39.get('book24_name')!r}:"
             f" keys {sorted(actual)} != expected {sorted(expected)}"
         )
+
+
+def verify_mp_plus_example_top_level_skel(record: ClaimRecord, ctx: Context) -> None:
+    """Every plus top-level object has exactly the declared top-level keys."""
+    expected = frozenset(record.data["top_level_keys"])
+    for top in ctx.corpus.files:
+        actual = frozenset(top.keys())
+        assert (
+            actual == expected
+        ), f"top-level keys {sorted(actual)} != expected {sorted(expected)}"
+
+
+def verify_mp_plus_example_book39_skel(record: ClaimRecord, ctx: Context) -> None:
+    """Every plus book39 object has exactly the declared skeleton keys."""
+    expected = frozenset(record.data["book39_keys"])
+    for book39 in ctx.corpus.book39s:
+        actual = frozenset(book39.keys())
+        assert actual == expected, (
+            f"book39 {book39.get('book24_name')!r}:"
+            f" keys {sorted(actual)} != expected {sorted(expected)}"
+        )
+
+
+def verify_mp_plus_header_fields(record: ClaimRecord, ctx: Context) -> None:
+    """Every plus header object has exactly the declared keys."""
+    expected = frozenset(record.data["header_keys"])
+    for top in ctx.corpus.files:
+        header = top["header"]
+        actual = frozenset(header.keys())
+        assert actual == expected, (
+            f"header for {header.get('book24_name')!r}:"
+            f" keys {sorted(actual)} != expected {sorted(expected)}"
+        )
+
+
+def verify_mp_plus_template_object_fields(record: ClaimRecord, ctx: Context) -> None:
+    """Every plus template object has required keys and no undeclared keys."""
+    required = frozenset(record.data["required_keys"])
+    allowed = required | frozenset(record.data["optional_keys"])
+    for tmpl in iter_all_template_objects(ctx.corpus):
+        actual = frozenset(tmpl.keys())
+        missing = required - actual
+        extra = actual - allowed
+        assert not missing, (
+            f"template {tmpl.get('tmpl_name')!r} missing required keys:"
+            f" {sorted(missing)}"
+        )
+        assert not extra, (
+            f"template {tmpl.get('tmpl_name')!r} has unexpected keys:"
+            f" {sorted(extra)}"
+        )
+
+
+def verify_mp_plus_template_tmpl_params_keys(record: ClaimRecord, ctx: Context) -> None:
+    """tmpl_params keys are strings; numeric keys are contiguous positional args."""
+    saw_numeric = False
+    saw_non_numeric = False
+    for tmpl in iter_all_template_objects(ctx.corpus):
+        params = tmpl.get("tmpl_params")
+        if params is None:
+            continue
+        assert isinstance(params, dict), f"tmpl_params is not a dict: {params!r}"
+        numeric_keys: list[int] = []
+        for key in params:
+            assert isinstance(key, str) and key, f"invalid tmpl_params key: {key!r}"
+            if key.isdecimal():
+                saw_numeric = True
+                numeric_keys.append(int(key))
+            else:
+                saw_non_numeric = True
+        numeric_keys.sort()
+        if numeric_keys:
+            expected = list(range(1, len(numeric_keys) + 1))
+            assert numeric_keys == expected, (
+                f"template {tmpl.get('tmpl_name')!r} has non-contiguous numeric keys"
+                f" {numeric_keys!r} (expected {expected!r})"
+            )
+    assert saw_numeric, "never observed numeric tmpl_params keys"
+    assert saw_non_numeric, "never observed non-numeric tmpl_params keys"
+
+
+def _assert_no_stmpl_in_plus_node(node) -> None:
+    """Assert no dict in a plus node tree uses plain-format stmpl encoding."""
+    if isinstance(node, dict):
+        assert (
+            "stmpl" not in node
+        ), f"unexpected plain-format stmpl in plus node: {node!r}"
+        for value in node.values():
+            _assert_no_stmpl_in_plus_node(value)
+    elif isinstance(node, list):
+        for item in node:
+            _assert_no_stmpl_in_plus_node(item)
+
+
+def verify_mp_plus_diff_from_plain(record: ClaimRecord, ctx: Context) -> None:
+    """Core plus-vs-plain structural differences hold in the loaded corpora."""
+    # Plus chapters have only verse-number keys (no plain pseudo-verses).
+    for _book39, _ch_key, chapter in iter_chapters(ctx.corpus):
+        assert (
+            "0" not in chapter and "תתת" not in chapter
+        ), f"plus chapter unexpectedly contains pseudo-verse keys: {list(chapter.keys())!r}"
+
+    # Plain chapters do contain pseudo-verses (a documented format difference).
+    saw_plain_pseudo = False
+    for top in ctx.corpus_plain.files:
+        for book39 in top["book39s"]:
+            for chapter in book39["chapters"].values():
+                if "0" in chapter and "תתת" in chapter:
+                    saw_plain_pseudo = True
+                    break
+            if saw_plain_pseudo:
+                break
+        if saw_plain_pseudo:
+            break
+    assert saw_plain_pseudo, "plain corpus did not show expected pseudo-verse keys"
+
+    # Plus uses parsed template objects and does not embed plain-format stmpl objects.
+    saw_plus_template = False
+    for _book39, _ch_key, _v_key, verse in iter_verses(ctx.corpus):
+        for col in verse:
+            for tmpl in iter_template_objects(col):
+                saw_plus_template = True
+                assert "tmpl_name" in tmpl, f"plus template missing tmpl_name: {tmpl!r}"
+            _assert_no_stmpl_in_plus_node(col)
+    assert saw_plus_template, "no plus template objects observed"
+
+    # Plain contains stringified stmpl objects.
+    saw_plain_stmpl = False
+    for _book39, _ch_key, _v_key, verse in iter_plain_verses(ctx.corpus_plain):
+        for col in verse:
+            for obj in iter_plain_col_objects(col):
+                if isinstance(obj, dict) and "stmpl" in obj:
+                    saw_plain_stmpl = True
+                    break
+            if saw_plain_stmpl:
+                break
+        if saw_plain_stmpl:
+            break
+    assert saw_plain_stmpl, "plain corpus did not show expected stmpl objects"
 
 
 # ---------------------------------------------------------------------------
