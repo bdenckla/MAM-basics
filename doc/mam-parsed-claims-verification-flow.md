@@ -122,35 +122,11 @@ Behavior is covered by py/tests/test_explicit_claims.py, including a test that a
 
 ## 5) Compact flow diagram
 
-```mermaid
-flowchart TD
-    A[main_authored.py\n gen-mam-parsed-docs] --> B[build_docs_with_explicit_claims]
-    B --> C[Write docs + CSS in ../MAM-parsed/gh-pages]
-    B --> D[Return ClaimCollection]
-    D --> E{skip verify?}
-    E -- no --> F[_run_verify_mp]
-    E -- yes --> G[Skip verify]
-    D --> H[claims_doc.write_output -> doc/mp-claims.md]
+Mermaid source: [doc/mam-parsed-claims-verification-flow.mmd](doc/mam-parsed-claims-verification-flow.mmd)
 
-    I[main_authored.py\n verify-mp] --> B
-    I --> F
+Rendered SVG: [doc/mam-parsed-claims-verification-flow.svg](doc/mam-parsed-claims-verification-flow.svg)
 
-    F --> J[load_plus_corpus]
-    F --> K[load_plain_corpus]
-    F --> L[survey_artifact.load plus/plain]
-    J --> M[Context]
-    K --> M
-    L --> M
-    M --> N[driver.run ctx, claims]
-
-    N --> O[claim_id_to_fn_name]
-    O --> P[lookup in verifiers_plus/both/plain]
-    P --> Q[run verifier]
-    Q --> R[PASS or FAIL]
-    P --> S[missing verifier -> pending]
-    N --> T[orphan verifier fn -> exit 2]
-    R --> U[any fail -> exit 1]
-```
+![MAM-parsed claims verification flow](mam-parsed-claims-verification-flow.svg)
 
 ## 6) Key code touchpoints
 
