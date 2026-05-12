@@ -66,7 +66,7 @@ def _build_body():
             [
                 "Array showing the word decomposed around the special letter",
                 "The word as a plain string (uninterrupted)",
-                "A dot-mask showing the position of the special letter",
+                "A dot-mask showing the position of the special letter(s)",
                 [
                     "The size/type code (",
                     author.hbo("ג"),
