@@ -16,6 +16,9 @@ from author import mp_cmn as _cmn  # noqa: F401 — module-level claims register
 from author import (
     mpplus_aot as _aot,
 )  # noqa: F401 — module-level claims register at import
+from author import (
+    mpplus_haarah_2 as _haarah_2,
+)  # noqa: F401 — module-level claims register at import
 
 _populated = False
 

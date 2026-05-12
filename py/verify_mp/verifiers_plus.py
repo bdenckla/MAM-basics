@@ -400,6 +400,15 @@ def verify_mp_plus_example_nusach(record: ClaimRecord, ctx: Context) -> None:
     _assert_tmpl_object_in_corpus(record, ctx)
 
 
+def verify_mp_plus_example_haarah_2_context(record: ClaimRecord, ctx: Context) -> None:
+    """The מ:הערה-2 context example occurs verbatim as a plus E-column value."""
+    target = record.data
+    for _book39, _ch_key, _v_key, verse in iter_verses(ctx.corpus):
+        if verse[2] == target:
+            return
+    assert False, f"plus E-column example not found verbatim: {target!r}"
+
+
 def verify_mp_plus_example_header_job(record: ClaimRecord, ctx: Context) -> None:
     """A Job-like plus header example occurs at least once in the plus corpus."""
 
