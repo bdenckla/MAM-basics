@@ -46,11 +46,7 @@ _JSON_HAARAH_2_IN_CONTEXT_TEXT = """\
         }
       },
       "2": [
-        "...",
-        {
-          "tmpl_name": "ש"
-        },
-        "..."
+        "...", {"tmpl_name": "ש"}, "..."
       ]
     }
   },
