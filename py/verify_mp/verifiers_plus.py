@@ -106,6 +106,34 @@ def _assert_stmpl_object_in_plain_corpus(record: ClaimRecord, ctx: Context) -> N
     assert False, f"example not found in plain corpus: {target!r}"
 
 
+def _assert_plus_header_exists(ctx: Context, predicate, description: str) -> None:
+    """Assert that at least one plus top-level header satisfies predicate."""
+    for top in ctx.corpus.files:
+        header = top["header"]
+        if predicate(header):
+            return
+    assert False, f"plus header example not found: {description}"
+
+
+def _assert_plain_top_exists(ctx: Context, predicate, description: str) -> None:
+    """Assert that at least one plain top-level object satisfies predicate."""
+    for top in ctx.corpus_plain.files:
+        if predicate(top):
+            return
+    assert False, f"plain top-level example not found: {description}"
+
+
+def _has_chapter_count(header: dict, sub_book_name, chapter_count: int) -> bool:
+    """Return whether header.chapter_counts has the given sub-book/count pair."""
+    for row in header["chapter_counts"]:
+        if (
+            row["sub_book_name"] == sub_book_name
+            and row["chapter_count"] == chapter_count
+        ):
+            return True
+    return False
+
+
 _MAQAF = "\u05be"  # HEBREW PUNCTUATION MAQAF — appears literally in dot-masks
 
 
@@ -167,6 +195,80 @@ def verify_mp_plus_example_nusach(record: ClaimRecord, ctx: Context) -> None:
     _assert_tmpl_object_in_corpus(record, ctx)
 
 
+def verify_mp_plus_example_header_job(record: ClaimRecord, ctx: Context) -> None:
+    """A Job-like plus header example occurs at least once in the plus corpus."""
+
+    def _is_job_header(header: dict) -> bool:
+        return (
+            header["book24_name"] == "ספר איוב"
+            and header["sub_book_names"] == {}
+            and _has_chapter_count(header, None, 42)
+        )
+
+    _assert_plus_header_exists(
+        ctx,
+        _is_job_header,
+        "book24=ספר איוב, sub_book_names={}, chapter_count(None)=42",
+    )
+
+
+def verify_mp_plus_example_header_samuel(record: ClaimRecord, ctx: Context) -> None:
+    """A Samuel-like composite-header example occurs at least once in plus corpus."""
+
+    def _is_samuel_header(header: dict) -> bool:
+        return (
+            header["book24_name"] == "ספר שמואל"
+            and header["sub_book_names"].get("ספר שמואל") == ['שמ"א', 'שמ"ב']
+            and _has_chapter_count(header, 'שמ"א', 31)
+            and _has_chapter_count(header, 'שמ"ב', 24)
+        )
+
+    _assert_plus_header_exists(
+        ctx,
+        _is_samuel_header,
+        'book24=ספר שמואל with sub-books שמ"א/שמ"ב and chapter counts 31/24',
+    )
+
+
+def verify_mp_plus_example_d_col_first(record: ClaimRecord, ctx: Context) -> None:
+    """A first-verse D-column example with סדר metadata occurs in the plus corpus."""
+    target = {
+        "tmpl_name": "מ:פסוק",
+        "tmpl_params": {"1": "איוב", "2": "א", "3": "א", "סדר": "א"},
+    }
+    for _book39, _ch_key, _v_key, verse in iter_verses(ctx.corpus):
+        if verse[1] == [target]:
+            return
+    assert False, f"plus D-column first-verse example not found: {target!r}"
+
+
+def verify_mp_plus_example_d_col_empty(record: ClaimRecord, ctx: Context) -> None:
+    """At least one verse has an empty D column in the plus corpus."""
+    for _book39, _ch_key, _v_key, verse in iter_verses(ctx.corpus):
+        if verse[1] == []:
+            return
+    assert False, "plus D-column empty example not found"
+
+
+def verify_mp_plus_example_nested_tmpl(record: ClaimRecord, ctx: Context) -> None:
+    """A nested נוסח -> כו״ק -> מ:אות-מיוחדת-במילה example occurs in plus."""
+    for tmpl in iter_all_template_objects(ctx.corpus):
+        if tmpl["tmpl_name"] != "נוסח":
+            continue
+        arg1 = tmpl.get("tmpl_params", {}).get("1")
+        if not isinstance(arg1, dict) or arg1.get("tmpl_name") != "כו״ק":
+            continue
+        arg1_params = arg1.get("tmpl_params", {})
+        nested = arg1_params.get("1")
+        if (
+            isinstance(nested, dict)
+            and nested.get("tmpl_name") == "מ:אות-מיוחדת-במילה"
+            and arg1_params.get("2") == "וְג֣וּשׁ"
+        ):
+            return
+    assert False, "plus nested-template example not found"
+
+
 def verify_mp_plain_example_kq(record: ClaimRecord, ctx: Context) -> None:
     """The kq example stmpl object occurs at least once in the plain corpus."""
     _assert_stmpl_object_in_plain_corpus(record, ctx)
@@ -175,3 +277,61 @@ def verify_mp_plain_example_kq(record: ClaimRecord, ctx: Context) -> None:
 def verify_mp_plain_example_nusach(record: ClaimRecord, ctx: Context) -> None:
     """The nusach example stmpl object occurs at least once in the plain corpus."""
     _assert_stmpl_object_in_plain_corpus(record, ctx)
+
+
+def verify_mp_plain_example_top_level(record: ClaimRecord, ctx: Context) -> None:
+    """A Job-like plain top-level example occurs in the plain corpus."""
+
+    def _is_job_top(top: dict) -> bool:
+        header = top["header"]
+        return (
+            header["book24_name"] == "ספר איוב"
+            and header["sub_book_names"] == {}
+            and _has_chapter_count(header, None, 42)
+            and isinstance(top["book39s"], list)
+        )
+
+    _assert_plain_top_exists(
+        ctx,
+        _is_job_top,
+        "book24=ספר איוב with chapter_count(None)=42 and top-level book39s list",
+    )
+
+
+def verify_mp_plain_example_top_level_composite(
+    record: ClaimRecord, ctx: Context
+) -> None:
+    """A Samuel-like composite top-level example occurs in the plain corpus."""
+
+    def _is_samuel_top(top: dict) -> bool:
+        header = top["header"]
+        if header["book24_name"] != "ספר שמואל":
+            return False
+        if header["sub_book_names"].get("ספר שמואל") != ['שמ"א', 'שמ"ב']:
+            return False
+        if not (
+            _has_chapter_count(header, 'שמ"א', 31)
+            and _has_chapter_count(header, 'שמ"ב', 24)
+        ):
+            return False
+        sub_books = {b39["sub_book_name"] for b39 in top["book39s"]}
+        return 'שמ"א' in sub_books and 'שמ"ב' in sub_books
+
+    _assert_plain_top_exists(
+        ctx,
+        _is_samuel_top,
+        'book24=ספר שמואל with sub-books שמ"א/שמ"ב and chapter counts 31/24',
+    )
+
+
+def verify_mp_plain_example_book39(record: ClaimRecord, ctx: Context) -> None:
+    """A Job-like plain book39 example occurs in the plain corpus."""
+    for top in ctx.corpus_plain.files:
+        for book39 in top["book39s"]:
+            if (
+                book39["book24_name"] == "ספר איוב"
+                and book39["sub_book_name"] is None
+                and isinstance(book39["chapters"], dict)
+            ):
+                return
+    assert False, "plain book39 example not found: ספר איוב / sub_book_name=None"

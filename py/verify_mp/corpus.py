@@ -12,8 +12,13 @@ _PLAIN_DIR = "../MAM-parsed/plain"
 
 @dataclass
 class Corpus:
-    """All book39 objects from the plus corpus (collected across all book24 JSON files)."""
+    """Loaded plus-corpus data.
 
+    files: full top-level JSON objects from plus/*.json files.
+    book39s: all book39 objects collected across those files.
+    """
+
+    files: list = field(default_factory=list)
     book39s: list = field(default_factory=list)
 
 
@@ -42,12 +47,14 @@ def load_plus_corpus() -> Corpus:
     pattern = f"{_PLUS_DIR}/*.json"
     paths = sorted(glob.glob(pattern))
     assert paths, f"No plus JSON files found matching {pattern!r}"
+    files = []
     book39s = []
     for path in paths:
         with open(path, encoding="utf-8") as fh:
             data = json.load(fh)
+        files.append(data)
         book39s.extend(data["book39s"])
-    return Corpus(book39s=book39s)
+    return Corpus(files=files, book39s=book39s)
 
 
 def load_plain_corpus() -> PlainCorpus:
