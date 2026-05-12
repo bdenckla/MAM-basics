@@ -4,7 +4,7 @@
 from mb_misc import mb_html
 from author_util import author
 from author_util import json_block
-from author_util.claim import claim
+from author_util.claim import ClaimCollection, claim
 from author import mp_cmn as cmn
 
 _PLUS_DOC = "mpplus.html"
@@ -65,44 +65,30 @@ _PLUS_ACCENT_TEMPLATES = [
 _PLUS_OTHER_SINGLE_TEMPLATES = ["נוסח", "מודגש", "ש"]
 
 
+def _claim_fn(claims: ClaimCollection | None):
+    return claims.claim if claims is not None else claim
+
+
 # ---------------------------------------------------------------------------
 # JSON snippets
 # ---------------------------------------------------------------------------
 
-_JSON_TOP_LEVEL_SKEL = claim(
-    "mp.plus.example.top-level-skel",
-    """\
+_JSON_TOP_LEVEL_SKEL = """\
 {
   "header": {},
   "book39s": []
-}""",
-    kind="struct",
-    subject="mp:plus",
-    data={"top_level_keys": ["header", "book39s"]},
-)
+}"""
 
-_JSON_HEADER = claim(
-    "mp.plus.example.header-job",
-    """\
+_JSON_HEADER = """\
 "header": {
   "book24_name": "ספר איוב",
   "sub_book_names": [],
   "chapter_counts": [
     {"sub_book_name": null, "chapter_count": 42}
   ]
-}""",
-    kind="example",
-    subject="mp:plus",
-    data={
-        "book24_name": "ספר איוב",
-        "sub_book_names": [],
-        "chapter_counts": [{"sub_book_name": None, "chapter_count": 42}],
-    },
-)
+}"""
 
-_JSON_HEADER_COMPOSITE = claim(
-    "mp.plus.example.header-samuel",
-    """\
+_JSON_HEADER_COMPOSITE = """\
 "header": {
   "book24_name": "ספר שמואל",
   "sub_book_names": ["שמ\\\"א", "שמ\\\"ב"],
@@ -110,35 +96,17 @@ _JSON_HEADER_COMPOSITE = claim(
       {"sub_book_name": "שמ\\\"א", "chapter_count": 31},
       {"sub_book_name": "שמ\\\"ב", "chapter_count": 24}
   ]
-}""",
-    kind="example",
-    subject="mp:plus",
-)
+}"""
 
-_JSON_BOOK39_SKEL = claim(
-    "mp.plus.example.book39-skel",
-    """\
+_JSON_BOOK39_SKEL = """\
 {
   "book24_name": "ספר ישעיהו",
   "sub_book_name": null,
   "chapters": {},
   "good_ending_plus": null
-}""",
-    kind="struct",
-    subject="mp:plus",
-    data={
-        "book39_keys": [
-            "book24_name",
-            "sub_book_name",
-            "chapters",
-            "good_ending_plus",
-        ]
-    },
-)
+}"""
 
-_JSON_D_COL_FIRST = claim(
-    "mp.plus.example.d-col-first",
-    """\
+_JSON_D_COL_FIRST = """\
 [
     ...,
     [
@@ -146,51 +114,25 @@ _JSON_D_COL_FIRST = claim(
        "tmpl_params": {"1": "איוב", "2": "א", "3": "א", "סדר": "א"}}
     ],
     ...
-]""",
-    kind="example",
-    subject="mp:plus",
-)
+]"""
 
-_JSON_D_COL_SUBSEQ = claim(
-    "mp.plus.example.d-col-empty",
-    """\
+_JSON_D_COL_SUBSEQ = """\
 [
     ...,
     [],
     ...
-]""",
-    kind="example",
-    subject="mp:plus",
-)
+]"""
 
-_JSON_TMPL_FORMAT = claim(
-    "mp.plus.template.format-example",
-    """\
+_JSON_TMPL_FORMAT = """\
 {
   "tmpl_name": "קו״כ",
   "tmpl_params": {"1": "את", "2": "אַ֠תָּ֠ה"}
-}""",
-    kind="format",
-    subject="mp:plus",
-    data={
-        "object_keys": ["tmpl_name", "tmpl_params"],
-        "tmpl_name": "קו״כ",
-        "tmpl_params": {"1": "את", "2": "אַ֠תָּ֠ה"},
-    },
-)
+}"""
 
-_JSON_TMPL_PLAIN_COMPARE = claim(
-    "mp.plain.template.stmpl-format-example",
-    """\
-{"stmpl": "קו״כ|את|אַ֠תָּ֠ה"}""",
-    kind="format",
-    subject="mp:plain",
-    data={"stmpl": "קו״כ|את|אַ֠תָּ֠ה"},
-)
+_JSON_TMPL_PLAIN_COMPARE = """\
+{"stmpl": "קו״כ|את|אַ֠תָּ֠ה"}"""
 
-_JSON_NESTED = claim(
-    "mp.plus.example.nested-tmpl",
-    """\
+_JSON_NESTED = """\
 {
   "tmpl_name": "נוסח",
   "tmpl_params": {
@@ -206,10 +148,108 @@ _JSON_NESTED = claim(
     },
     "2": "..."
   }
-}""",
-    kind="example",
-    subject="mp:plus",
-)
+}"""
+
+
+def _json_top_level_skel(claim_fn):
+    return claim_fn(
+        "mp.plus.example.top-level-skel",
+        _JSON_TOP_LEVEL_SKEL,
+        kind="struct",
+        subject="mp:plus",
+        data={"top_level_keys": ["header", "book39s"]},
+    )
+
+
+def _json_header(claim_fn):
+    return claim_fn(
+        "mp.plus.example.header-job",
+        _JSON_HEADER,
+        kind="example",
+        subject="mp:plus",
+        data={
+            "book24_name": "ספר איוב",
+            "sub_book_names": [],
+            "chapter_counts": [{"sub_book_name": None, "chapter_count": 42}],
+        },
+    )
+
+
+def _json_header_composite(claim_fn):
+    return claim_fn(
+        "mp.plus.example.header-samuel",
+        _JSON_HEADER_COMPOSITE,
+        kind="example",
+        subject="mp:plus",
+    )
+
+
+def _json_book39_skel(claim_fn):
+    return claim_fn(
+        "mp.plus.example.book39-skel",
+        _JSON_BOOK39_SKEL,
+        kind="struct",
+        subject="mp:plus",
+        data={
+            "book39_keys": [
+                "book24_name",
+                "sub_book_name",
+                "chapters",
+                "good_ending_plus",
+            ]
+        },
+    )
+
+
+def _json_d_col_first(claim_fn):
+    return claim_fn(
+        "mp.plus.example.d-col-first",
+        _JSON_D_COL_FIRST,
+        kind="example",
+        subject="mp:plus",
+    )
+
+
+def _json_d_col_subseq(claim_fn):
+    return claim_fn(
+        "mp.plus.example.d-col-empty",
+        _JSON_D_COL_SUBSEQ,
+        kind="example",
+        subject="mp:plus",
+    )
+
+
+def _json_tmpl_format(claim_fn):
+    return claim_fn(
+        "mp.plus.template.format-example",
+        _JSON_TMPL_FORMAT,
+        kind="format",
+        subject="mp:plus",
+        data={
+            "object_keys": ["tmpl_name", "tmpl_params"],
+            "tmpl_name": "קו״כ",
+            "tmpl_params": {"1": "את", "2": "אַ֠תָּ֠ה"},
+        },
+    )
+
+
+def _json_tmpl_plain_compare(claim_fn):
+    return claim_fn(
+        "mp.plain.template.stmpl-format-example",
+        _JSON_TMPL_PLAIN_COMPARE,
+        kind="format",
+        subject="mp:plain",
+        data={"stmpl": "קו״כ|את|אַ֠תָּ֠ה"},
+    )
+
+
+def _json_nested(claim_fn):
+    return claim_fn(
+        "mp.plus.example.nested-tmpl",
+        _JSON_NESTED,
+        kind="example",
+        subject="mp:plus",
+    )
 
 
 # ---------------------------------------------------------------------------
@@ -217,72 +257,76 @@ _JSON_NESTED = claim(
 # ---------------------------------------------------------------------------
 
 
-_DIFF_ROWS = claim(
-    "mp.plus.diff-from-plain",
+_DIFF_ROWS = [
     [
+        "Pseudo-verses “0” and “תתת”",
+        "Present",
+        "Removed",
+    ],
+    [
+        "Custom XML tags (נוינקלוד etc.)",
+        "Present",
+        "Removed",
+    ],
+    ["Wikitext line breaks (“//”)", "Present in C column", "Removed"],
+    ["Named params", "not parsed", "parsed and unified with positional"],
+    [
+        "D column (verse label)",
+        ["Every verse has ", author.hbo("מ:פסוק")],
         [
-            "Pseudo-verses “0” and “תתת”",
-            "Present",
-            "Removed",
-        ],
-        [
-            "Custom XML tags (נוינקלוד etc.)",
-            "Present",
-            "Removed",
-        ],
-        ["Wikitext line breaks (“//”)", "Present in C column", "Removed"],
-        ["Named params", "not parsed", "parsed and unified with positional"],
-        [
-            "D column (verse label)",
-            ["Every verse has ", author.hbo("מ:פסוק")],
-            [
-                "Only when ",
-                author.hbo("מ:פסוק"),
-                " has interesting parameters or is wrapped in ",
-                author.hbo("נוסח"),
-            ],
-        ],
-        [mb_html.code("good_ending_plus"), "Not present", "Added (at book39 level)"],
-        [
-            "Words with special letters",
-            "word split/interrupted by inline letter templates",
-            [
-                "whole word wrapped by ",
-                author.hbo("מ:אות-מיוחדת-במילה"),
-                "; uninterrupted encoding in args 2–4",
-            ],
-        ],
-        [
-            [mb_html.code('{"tmpl": [...]}'), " — parsed template trees"],
-            "Present",
-            [
-                "Removed (replaced by ",
-                mb_html.code("tmpl_name"),
-                "/",
-                mb_html.code("tmpl_params"),
-                ")",
-            ],
-        ],
-        [
-            [mb_html.code('{"stmpl": "..."}'), " — stringified templates"],
-            "Present",
-            [
-                "Removed (replaced by ",
-                mb_html.code("tmpl_name"),
-                "/",
-                mb_html.code("tmpl_params"),
-                ")",
-            ],
-        ],
-        [
-            [author.hbo("גלגל-2"), " — galgal accent annotation"],
-            "Present",
-            "Removed (handled differently in plus)",
+            "Only when ",
+            author.hbo("מ:פסוק"),
+            " has interesting parameters or is wrapped in ",
+            author.hbo("נוסח"),
         ],
     ],
-    kind="enum",
-    subject="mp:plus",
-)
+    [mb_html.code("good_ending_plus"), "Not present", "Added (at book39 level)"],
+    [
+        "Words with special letters",
+        "word split/interrupted by inline letter templates",
+        [
+            "whole word wrapped by ",
+            author.hbo("מ:אות-מיוחדת-במילה"),
+            "; uninterrupted encoding in args 2–4",
+        ],
+    ],
+    [
+        [mb_html.code('{"tmpl": [...]}'), " — parsed template trees"],
+        "Present",
+        [
+            "Removed (replaced by ",
+            mb_html.code("tmpl_name"),
+            "/",
+            mb_html.code("tmpl_params"),
+            ")",
+        ],
+    ],
+    [
+        [mb_html.code('{"stmpl": "..."}'), " — stringified templates"],
+        "Present",
+        [
+            "Removed (replaced by ",
+            mb_html.code("tmpl_name"),
+            "/",
+            mb_html.code("tmpl_params"),
+            ")",
+        ],
+    ],
+    [
+        [author.hbo("גלגל-2"), " — galgal accent annotation"],
+        "Present",
+        "Removed (handled differently in plus)",
+    ],
+]
+
+
+def _diff_rows(claim_fn):
+    return claim_fn(
+        "mp.plus.diff-from-plain",
+        _DIFF_ROWS,
+        kind="enum",
+        subject="mp:plus",
+    )
 
 
 def s_intro():
@@ -312,10 +356,13 @@ def s_intro():
     ]
 
 
-def s_plain_differences():
+def s_plain_differences(*, claims: ClaimCollection | None = None):
+    claim_fn = _claim_fn(claims)
     return [
         author.heading_level_2("Differences from plain format"),
-        author.std_table(_DIFF_ROWS, arg_to_troh=["Feature", "Plain", "Plus"]),
+        author.std_table(
+            _diff_rows(claim_fn), arg_to_troh=["Feature", "Plain", "Plus"]
+        ),
         author.para(
             [
                 "Template names use Hebrew gershayim ",
@@ -334,12 +381,13 @@ def s_plain_differences():
                 " (present in plain, replaced in plus):",
             ]
         ),
-        json_block.json_block_raw_html(_JSON_TMPL_PLAIN_COMPARE),
+        json_block.json_block_raw_html(_json_tmpl_plain_compare(claim_fn)),
     ]
 
 
-def s_top_level():
-    _header_rows = claim(
+def s_top_level(*, claims: ClaimCollection | None = None):
+    claim_fn = _claim_fn(claims)
+    _header_rows = claim_fn(
         "mp.plus.header.fields",
         [
             [
@@ -376,18 +424,19 @@ def s_top_level():
     )
     return [
         author.heading_level_2("Top-level structure"),
-        json_block.json_block_raw_html(_JSON_TOP_LEVEL_SKEL),
+        json_block.json_block_raw_html(_json_top_level_skel(claim_fn)),
         author.heading_level_2("Header"),
         author.std_table(_header_rows, arg_to_troh=["Key", "Type", "Description"]),
         author.para("Here’s the header for Job, a book24 has no sub-books:"),
-        json_block.json_block_raw_html(_JSON_HEADER),
+        json_block.json_block_raw_html(_json_header(claim_fn)),
         author.para("Here’s the header for Samuel, a book24 that has sub-books:"),
-        json_block.json_block_raw_html(_JSON_HEADER_COMPOSITE),
+        json_block.json_block_raw_html(_json_header_composite(claim_fn)),
     ]
 
 
-def s_book39():
-    _book39_rows = claim(
+def s_book39(*, claims: ClaimCollection | None = None):
+    claim_fn = _claim_fn(claims)
+    _book39_rows = claim_fn(
         "mp.plus.book39.fields",
         [
             [
@@ -438,13 +487,15 @@ def s_book39():
     )
     return [
         author.heading_level_2("Book39 structure"),
-        json_block.json_block_raw_html(_JSON_BOOK39_SKEL),
+        json_block.json_block_raw_html(_json_book39_skel(claim_fn)),
         author.std_table(_book39_rows, arg_to_troh=["Key", "Type", "Description"]),
     ]
 
 
-def s_chapter_verse():
-    tmpl_rows = claim(
+def s_chapter_verse(*, claims: ClaimCollection | None = None):
+    claim_fn = _claim_fn(claims)
+    _json_d_col_subseq(claim_fn)
+    tmpl_rows = claim_fn(
         "mp.plus.template.object-fields",
         [
             [mb_html.code("tmpl_name"), "string", "Template name"],
@@ -461,7 +512,7 @@ def s_chapter_verse():
     return [
         author.heading_level_2("Chapter structure"),
         author.para(
-            claim(
+            claim_fn(
                 "mp.plus.chapter.keyed-by-verse-num",
                 [
                     "An object keyed by verse numbers."
@@ -478,7 +529,7 @@ def s_chapter_verse():
         ),
         author.heading_level_2("Verse structure"),
         author.para(
-            claim(
+            claim_fn(
                 "mp.plus.verse.is-3-tuple",
                 [
                     "A 3-element array [C, D, E], with column details described below.",
@@ -490,7 +541,7 @@ def s_chapter_verse():
         ),
         author.heading_level_3("C column (index 0): Verse separator"),
         author.para(
-            claim(
+            claim_fn(
                 "mp.plus.verse.c-col.semantics",
                 [
                     "The C column usually contains what separates this verse "
@@ -507,7 +558,7 @@ def s_chapter_verse():
         ),
         author.heading_level_3("D column (index 1): Verse label"),
         author.para(
-            claim(
+            claim_fn(
                 "mp.plus.verse.d-col.semantics",
                 [
                     "This is an array that contains a ",
@@ -542,10 +593,10 @@ def s_chapter_verse():
             ]
         ),
         author.para(["Job 1:1:"]),
-        json_block.json_block_raw_html(_JSON_D_COL_FIRST),
+        json_block.json_block_raw_html(_json_d_col_first(claim_fn)),
         author.heading_level_3("E column (index 2): Verse text"),
         author.para(
-            claim(
+            claim_fn(
                 "mp.plus.verse.e-col.semantics",
                 [
                     "An array containing a mix of strings and template objects.",
@@ -557,11 +608,11 @@ def s_chapter_verse():
         ),
         author.heading_level_2("Template format"),
         author.para("Templates are represented like this:"),
-        json_block.json_block_raw_html(_JSON_TMPL_FORMAT),
+        json_block.json_block_raw_html(_json_tmpl_format(claim_fn)),
         author.std_table(tmpl_rows, arg_to_troh=["Key", "Type", "Description"]),
         author.heading_level_3([mb_html.code("tmpl_params"), " keys"]),
         author.para(
-            claim(
+            claim_fn(
                 "mp.plus.template.tmpl-params-keys",
                 [
                     "Numeric string keys ",
@@ -588,7 +639,7 @@ def s_chapter_verse():
             )
         ),
         author.para(
-            claim(
+            claim_fn(
                 "mp.plus.template.tmpl-params-omitted-when-empty",
                 [
                     "The ",
@@ -619,7 +670,7 @@ def s_chapter_verse():
         author.para(
             "Example — a word with a special letter inside a $ketiv_qere inside a נוסח:"
         ),
-        json_block.json_block_raw_html(_JSON_NESTED),
+        json_block.json_block_raw_html(_json_nested(claim_fn)),
     ]
 
 
@@ -662,8 +713,9 @@ def s_plus_only_templates():
     ]
 
 
-def s_common_templates():
-    claim(
+def s_common_templates(*, claims: ClaimCollection | None = None):
+    claim_fn = _claim_fn(claims)
+    claim_fn(
         "mp.plus.docs.common-templates.templates-in-plus-survey",
         "Templates listed in mpplus common-template tables are present in plus survey.",
         kind="enum",

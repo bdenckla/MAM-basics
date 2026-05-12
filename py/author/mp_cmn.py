@@ -279,7 +279,7 @@ ACCENT_ROWS = claim(
         [
             author.hbo("מ:כפול"),
             [
-                "Dual-cantillation span. See ",
+                "Dual-trope span. See ",
                 author.anchor_h(
                     "its dedicated page",
                     _KAFUL_DOC,

@@ -55,7 +55,7 @@ def _build_body(*, claims: ClaimCollection | None = None):
     kaful_params = [
         [
             author.hbo("כפול"),
-            "The text with dual accents (as found in the great codexes)",
+            "The text with dual trope (as found in the great codexes)",
         ],
         [
             author.hbo("א"),
