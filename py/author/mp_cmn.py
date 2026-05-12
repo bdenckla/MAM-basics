@@ -5,7 +5,7 @@ from mb_misc import mb_html
 from mb_cmn import kq_special_templates as kqst
 from mb_cmn import template_names as tmpln
 from author_util import author
-from author_util.claim import ClaimCollection, REGISTRY, claim
+from author_util.claim import ClaimCollection
 from typing import Any
 
 _GOOD_ENDING_DOC = "mpplus_good_ending.html"
@@ -34,7 +34,7 @@ _CLAIM_DEFS: list[tuple[str, Any, str, str, Any]] = []
 
 
 def _emit_claim_payload(
-    claims: ClaimCollection | None,
+    claims: ClaimCollection,
     claim_id: str,
     payload,
     *,
@@ -42,8 +42,6 @@ def _emit_claim_payload(
     subject: str,
     data: Any = None,
 ):
-    if claims is None:
-        return claim(claim_id, payload, kind=kind, subject=subject, data=data)
     return claims.claim(claim_id, payload, kind=kind, subject=subject, data=data)
 
 
@@ -1050,10 +1048,8 @@ _FILE_NAMING_ROWS = _claim_payload(
 )
 
 
-def populate_claims(*, claims: ClaimCollection | None = None):
-    """Emit mp_cmn claims into explicit claims or legacy REGISTRY."""
-    if claims is None and _CLAIM_DEFS and _CLAIM_DEFS[0][0] in REGISTRY:
-        return
+def populate_claims(*, claims: ClaimCollection):
+    """Emit mp_cmn claims into an explicit claims collection."""
     for claim_id, payload, kind, subject, data in _CLAIM_DEFS:
         _emit_claim_payload(
             claims,

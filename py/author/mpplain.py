@@ -12,7 +12,7 @@ Output goes to ../MAM-parsed/gh-pages/mpplain.html.
 from mb_misc import mb_html
 from author_util import author
 from author_util import json_block
-from author_util.claim import ClaimCollection, REGISTRY, claim
+from author_util.claim import ClaimCollection
 from author import mp_cmn as cmn
 
 _FNAME = "mpplain.html"
@@ -152,26 +152,19 @@ _CLAIM_DEFS = (
 
 
 def _emit_claim_payload(
-    claims: ClaimCollection | None,
+    claims: ClaimCollection,
     claim_id: str,
     payload,
     *,
     kind: str,
     subject: str,
     data=None,
-    register_legacy: bool = False,
 ):
-    if claims is None:
-        if not register_legacy:
-            return payload
-        if claim_id in REGISTRY:
-            return payload
-        return claim(claim_id, payload, kind=kind, subject=subject, data=data)
     return claims.claim(claim_id, payload, kind=kind, subject=subject, data=data)
 
 
-def populate_claims(*, claims: ClaimCollection | None = None):
-    """Emit mpplain claim metadata into explicit claims or legacy REGISTRY."""
+def populate_claims(*, claims: ClaimCollection):
+    """Emit mpplain claim metadata into an explicit claims collection."""
     for claim_id, kind, subject, data in _CLAIM_DEFS:
         _emit_claim_payload(
             claims,
@@ -180,11 +173,10 @@ def populate_claims(*, claims: ClaimCollection | None = None):
             kind=kind,
             subject=subject,
             data=data,
-            register_legacy=True,
         )
 
 
-def gen_html_file(tdm_ch, claims: ClaimCollection | None = None):
+def gen_html_file(tdm_ch, claims: ClaimCollection):
     """Generate mpplain.html in the given output directory."""
     cbody = _build_body(claims=claims)
     return author.help_gen_html_file(__file__, tdm_ch, _FNAME, _TITLE, cbody)
@@ -195,7 +187,7 @@ def gen_html_file(tdm_ch, claims: ClaimCollection | None = None):
 # ---------------------------------------------------------------------------
 
 
-def _build_body(*, claims: ClaimCollection | None = None):
+def _build_body(*, claims: ClaimCollection):
     return [
         mb_html.heading_level_1(_TITLE),
         *cmn.s_file_naming(),
@@ -239,7 +231,7 @@ def _s_top_level():
     ]
 
 
-def s_book39(*, claims: ClaimCollection | None = None):
+def s_book39(*, claims: ClaimCollection):
     _book39_rows = _emit_claim_payload(
         claims,
         "mp.plain.book39.fields",
@@ -278,7 +270,7 @@ def s_book39(*, claims: ClaimCollection | None = None):
     ]
 
 
-def s_chapter(*, claims: ClaimCollection | None = None):
+def s_chapter(*, claims: ClaimCollection):
     _chapter_rows = _emit_claim_payload(
         claims,
         "mp.plain.chapter.pseudo-verse-keys",
@@ -319,7 +311,7 @@ def s_chapter(*, claims: ClaimCollection | None = None):
     ]
 
 
-def s_verse(*, claims: ClaimCollection | None = None):
+def s_verse(*, claims: ClaimCollection):
     col_rows = [
         [
             "C",
@@ -493,7 +485,7 @@ def _s_template_objects():
     ]
 
 
-def _s_common_templates(*, claims: ClaimCollection | None = None):
+def _s_common_templates(*, claims: ClaimCollection):
     _emit_claim_payload(
         claims,
         "mp.plain.docs.common-templates.templates-in-plain-survey",

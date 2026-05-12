@@ -4,7 +4,7 @@
 from mb_misc import mb_html
 from author_util import author
 from author_util import json_block
-from author_util.claim import ClaimCollection, REGISTRY, claim
+from author_util.claim import ClaimCollection
 from author import mp_cmn as cmn
 
 _PLUS_DOC = "mpplus.html"
@@ -209,19 +209,14 @@ def _emit_claim_payload(
     kind: str,
     subject: str,
     data=None,
-    register_legacy: bool = False,
 ):
     if claims is None:
-        if not register_legacy:
-            return payload
-        if claim_id in REGISTRY:
-            return payload
-        return claim(claim_id, payload, kind=kind, subject=subject, data=data)
+        return payload
     return claims.claim(claim_id, payload, kind=kind, subject=subject, data=data)
 
 
-def populate_claims(*, claims: ClaimCollection | None = None):
-    """Emit mpplus_body claim metadata into explicit claims or legacy REGISTRY."""
+def populate_claims(*, claims: ClaimCollection):
+    """Emit mpplus_body claim metadata into an explicit claims collection."""
     for claim_id, kind, subject, data in _CLAIM_DEFS:
         _emit_claim_payload(
             claims,
@@ -230,7 +225,6 @@ def populate_claims(*, claims: ClaimCollection | None = None):
             kind=kind,
             subject=subject,
             data=data,
-            register_legacy=True,
         )
 
 
