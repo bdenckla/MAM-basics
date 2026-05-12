@@ -14,7 +14,7 @@ import json
 from mb_misc import mb_html
 from author_util import author
 from author_util import json_block
-from author_util.claim import ClaimCollection, REGISTRY, claim
+from author_util.claim import ClaimCollection
 
 _FNAME = "mpplus_haarah_2.html"
 _TITLE = "Targeted scroll-difference note"
@@ -61,58 +61,51 @@ _JSON_HAARAH_2_IN_CONTEXT_TEXT = """\
 ]"""
 
 _HAARAH_2_IN_CONTEXT_CLAIM_ID = "mp.plus.example.haarah-2-context"
+_HAARAH_2_IN_CONTEXT_CLAIM_DATA = json.loads(_JSON_HAARAH_2_IN_CONTEXT_TEXT)
 
 
 def _emit_claim_payload(
-    claims: ClaimCollection | None,
+    claims: ClaimCollection,
     claim_id: str,
     payload,
     *,
     kind: str,
     subject: str,
     data=None,
-    register_legacy: bool = False,
 ):
-    if claims is None:
-        if not register_legacy:
-            return payload
-        if claim_id in REGISTRY:
-            return payload
-        return claim(claim_id, payload, kind=kind, subject=subject, data=data)
     return claims.claim(claim_id, payload, kind=kind, subject=subject, data=data)
 
 
-def _haarah_2_in_context(*, claims: ClaimCollection | None = None):
+def _haarah_2_in_context(*, claims: ClaimCollection):
     return _emit_claim_payload(
         claims,
         _HAARAH_2_IN_CONTEXT_CLAIM_ID,
         _JSON_HAARAH_2_IN_CONTEXT_TEXT,
         kind="example",
         subject="mp:plus",
-        data=json.loads(_JSON_HAARAH_2_IN_CONTEXT_TEXT),
+        data=_HAARAH_2_IN_CONTEXT_CLAIM_DATA,
     )
 
 
-def populate_claims(*, claims: ClaimCollection | None = None):
-    """Emit mpplus_haarah_2 claim metadata into explicit claims or legacy REGISTRY."""
+def populate_claims(*, claims: ClaimCollection):
+    """Emit mpplus_haarah_2 claim metadata into an explicit claims collection."""
     _emit_claim_payload(
         claims,
         _HAARAH_2_IN_CONTEXT_CLAIM_ID,
         None,
         kind="example",
         subject="mp:plus",
-        data=json.loads(_JSON_HAARAH_2_IN_CONTEXT_TEXT),
-        register_legacy=True,
+        data=_HAARAH_2_IN_CONTEXT_CLAIM_DATA,
     )
 
 
-def gen_html_file(tdm_ch, claims: ClaimCollection | None = None):
+def gen_html_file(tdm_ch, claims: ClaimCollection):
     """Generate mpplus_haarah_2.html in the given output directory."""
     cbody = _build_body(claims=claims)
     return author.help_gen_html_file(__file__, tdm_ch, _FNAME, _TITLE, cbody)
 
 
-def _build_body(*, claims: ClaimCollection | None = None):
+def _build_body(*, claims: ClaimCollection):
     back_link = author.anchor_h("Reading $MAM-parsed-plus", _PLUS_DOC)
     return [
         author.heading_level_1(
