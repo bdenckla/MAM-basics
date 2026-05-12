@@ -315,6 +315,32 @@ ACCENT_ROWS = claim(
     },
 )
 
+ACCENT_ROW_TEMPLATE_NAMES = (
+    "מ:לגרמיה-2",
+    "מ:פסק",
+    "מ:מקף אפור",
+    "מ:דחי",
+    "מ:צינור",
+    "גלגל-2",
+    "ירח בן יומו-2",
+    "אתנח הפוך",
+    "מ:קמץ",
+    "מ:טעם",
+    "מ:כפול",
+    tmpln.TWO_ACCENTS_OF_QUPO,
+)
+
+assert len(ACCENT_ROW_TEMPLATE_NAMES) == len(ACCENT_ROWS)
+
+ACCENT_ROW_BY_TEMPLATE = dict(zip(ACCENT_ROW_TEMPLATE_NAMES, ACCENT_ROWS))
+
+
+def accent_rows_for_templates(template_names):
+    missing = [n for n in template_names if n not in ACCENT_ROW_BY_TEMPLATE]
+    assert not missing, f"unknown accent template(s): {sorted(missing)}"
+    return [ACCENT_ROW_BY_TEMPLATE[n] for n in template_names]
+
+
 JER_ROWS = claim(
     "mp.plain.templates.jerusalem.set",
     [
@@ -444,6 +470,8 @@ NOTE_ROW = claim(
     # מ:הערה-2 appears only in the plus survey; it is verified in PLUS_ONLY.
     data={"templates": [tmpln.SCRDFF_NO_TAR], "books": "Torah and Esther only"},
 )
+
+NOTE_ROW_PLAIN = [author.hbo(tmpln.SCRDFF_NO_TAR), NOTE_ROW[1]]
 
 NOTE_LINKS_ROW = claim(
     "mp.both.templates.note-links.set",
@@ -613,6 +641,34 @@ OTHER_ROWS = claim(
         ]
     },
 )
+
+OTHER_ROW_TEMPLATE_NAMES = (
+    "פפ/סס",
+    "מ:אות מנוקדת",
+    "מ:סיום בטוב",
+    "מ:טעם ומתג באות אחת",
+    "מ:גרש ותלישא גדולה",
+    "מ:גרשיים ותלישא גדולה",
+    "ססס",
+    "פפפ",
+    "רווח בסוף שורה",
+    "מ:ששש",
+    "מ:כל קמץ קטן מרכא",
+    "נוסח",
+    "מודגש",
+    "ש",
+)
+
+assert len(OTHER_ROW_TEMPLATE_NAMES) == len(OTHER_ROWS)
+
+OTHER_ROW_BY_TEMPLATE = dict(zip(OTHER_ROW_TEMPLATE_NAMES, OTHER_ROWS))
+
+
+def other_rows_for_templates(template_names):
+    missing = [n for n in template_names if n not in OTHER_ROW_BY_TEMPLATE]
+    assert not missing, f"unknown other template(s): {sorted(missing)}"
+    return [OTHER_ROW_BY_TEMPLATE[n] for n in template_names]
+
 
 KQ_SPECIAL_ROWS = claim(
     "mp.both.templates.kq-special.subtypes",

@@ -91,6 +91,20 @@ _PLAIN_COMMON_TEMPLATES = [
     "ש",
 ]
 
+_PLAIN_ACCENT_TEMPLATES = [
+    "מ:לגרמיה-2",
+    "מ:פסק",
+    "מ:מקף אפור",
+    "מ:דחי",
+    "מ:צינור",
+    "גלגל-2",
+    "ירח בן יומו-2",
+    "מ:קמץ",
+    "מ:טעם",
+    "מ:כפול",
+    "שני טעמים באות אחת קמץ-תחתון-פתח-עליון",
+]
+
 
 def gen_html_file(tdm_ch):
     """Generate mpplain.html in the given output directory."""
@@ -453,7 +467,7 @@ def _s_common_templates():
         author.std_table(cmn.SPECIAL_LETTER_ROWS, arg_to_troh=["Template", "Purpose"]),
         author.heading_level_3("Accent and cantillation templates"),
         author.std_table(
-            [cmn.ACCENT_ROWS[i] for i in (0, 1, 2, 3, 4, 5, 6, 8, 9, 10, 11)],
+            cmn.accent_rows_for_templates(_PLAIN_ACCENT_TEMPLATES),
             arg_to_troh=["Template", "Purpose"],
         ),
         author.heading_level_3("Jerusalem spelling"),
@@ -466,7 +480,7 @@ def _s_common_templates():
         ),
         author.heading_level_3("Note template"),
         author.std_table(
-            [[cmn.NOTE_ROW[0][0], cmn.NOTE_ROW[1]]],
+            [cmn.NOTE_ROW_PLAIN],
             arg_to_troh=["Template", "Purpose"],
         ),
         author.heading_level_3("Other templates"),

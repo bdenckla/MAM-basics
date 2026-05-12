@@ -52,6 +52,18 @@ _PLUS_COMMON_TEMPLATES = [
     "ש",
 ]
 
+_PLUS_ACCENT_TEMPLATES = [
+    "מ:לגרמיה-2",
+    "מ:פסק",
+    "מ:מקף אפור",
+    "מ:דחי",
+    "מ:צינור",
+    "מ:קמץ",
+    "מ:כפול",
+]
+
+_PLUS_OTHER_SINGLE_TEMPLATES = ["נוסח", "מודגש", "ש"]
+
 
 # ---------------------------------------------------------------------------
 # JSON snippets
@@ -716,7 +728,7 @@ def s_common_templates():
         ),
         author.heading_level_3("Accent and cantillation templates"),
         author.std_table(
-            [cmn.ACCENT_ROWS[i] for i in (0, 1, 2, 3, 4, 8, 10)],
+            cmn.accent_rows_for_templates(_PLUS_ACCENT_TEMPLATES),
             arg_to_troh=["Template", "Purpose"],
         ),
         author.heading_level_3("Poetic form templates (ספרי אמת)"),
@@ -756,9 +768,7 @@ def s_common_templates():
                         ", but for the 8 shirah (song) sections; not an official setumah break.",
                     ],
                 ],
-                cmn.OTHER_ROWS[11],
-                cmn.OTHER_ROWS[12],
-                cmn.OTHER_ROWS[13],
+                *cmn.other_rows_for_templates(_PLUS_OTHER_SINGLE_TEMPLATES),
             ],
             arg_to_troh=["Template", "Purpose"],
         ),
