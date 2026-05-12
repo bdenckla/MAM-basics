@@ -62,7 +62,10 @@ class ClaimRecord:
 
 @dataclass(frozen=True)
 class ClaimEmission:
+    # Canonical record tracked by claim id.
     record: ClaimRecord
+    # Actual emitted record for this call site (preserves per-emission provenance).
+    emitted_record: ClaimRecord
 
 
 def _infer_defined_in(stack_depth: int = 1) -> str:
@@ -99,7 +102,11 @@ def make_record(
 
 
 class ClaimCollection:
-    """Explicit claim collector with canonical records and per-use emissions."""
+    """Explicit claim collector with canonical records and per-use emissions.
+
+    records_by_id stores one canonical ClaimRecord per claim id.
+    emissions preserves every emission event, including its call-site provenance.
+    """
 
     def __init__(self) -> None:
         self.records_by_id: dict[str, ClaimRecord] = {}
@@ -118,7 +125,7 @@ class ClaimCollection:
             ):
                 raise ValueError(f"conflicting duplicate claim id: {record.id!r}")
             canonical = existing
-        self.emissions.append(ClaimEmission(record=canonical))
+        self.emissions.append(ClaimEmission(record=canonical, emitted_record=record))
 
     def claim(
         self,

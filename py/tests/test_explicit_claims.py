@@ -30,6 +30,40 @@ class TestExplicitClaims(unittest.TestCase):
         self.assertEqual(len(claims.records_by_id), 1)
         self.assertEqual(len(claims.emissions), 2)
 
+    def test_claim_collection_duplicate_emissions_preserve_defined_in_provenance(self):
+        claims = claim_mod.ClaimCollection()
+        claim_id = "mp.both.templates.kq-special.subtypes"
+        common = {
+            "kind": "enum",
+            "subject": "mp:both",
+            "data": {"allowed": ["ctor", "func"]},
+        }
+
+        claims.emit(
+            claim_mod.make_record(
+                claim_id,
+                **common,
+                defined_in="author.mp_cmn",
+            )
+        )
+        claims.emit(
+            claim_mod.make_record(
+                claim_id,
+                **common,
+                defined_in="author.mpplus_kq_special",
+            )
+        )
+
+        self.assertEqual(len(claims.records_by_id), 1)
+        self.assertEqual(claims.records_by_id[claim_id].defined_in, "author.mp_cmn")
+        self.assertEqual(len(claims.emissions), 2)
+        self.assertEqual(claims.emissions[0].record.defined_in, "author.mp_cmn")
+        self.assertEqual(claims.emissions[1].record.defined_in, "author.mp_cmn")
+        self.assertEqual(
+            [e.emitted_record.defined_in for e in claims.emissions],
+            ["author.mp_cmn", "author.mpplus_kq_special"],
+        )
+
     def test_claim_collection_rejects_conflicting_duplicate_id(self):
         claims = claim_mod.ClaimCollection()
         claims.claim(
