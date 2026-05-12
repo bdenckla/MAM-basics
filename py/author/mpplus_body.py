@@ -4,7 +4,7 @@
 from mb_misc import mb_html
 from author_util import author
 from author_util import json_block
-from author_util.claim import ClaimCollection, claim
+from author_util.claim import ClaimCollection, REGISTRY, claim
 from author import mp_cmn as cmn
 
 _PLUS_DOC = "mpplus.html"
@@ -64,6 +64,142 @@ _PLUS_ACCENT_TEMPLATES = [
 
 _PLUS_OTHER_SINGLE_TEMPLATES = ["נוסח", "מודגש", "ש"]
 
+_CLAIM_DEFS = (
+    (
+        "mp.plus.example.top-level-skel",
+        "struct",
+        "mp:plus",
+        {"top_level_keys": ["header", "book39s"]},
+    ),
+    (
+        "mp.plus.example.header-job",
+        "example",
+        "mp:plus",
+        {
+            "book24_name": "ספר איוב",
+            "sub_book_names": [],
+            "chapter_counts": [{"sub_book_name": None, "chapter_count": 42}],
+        },
+    ),
+    ("mp.plus.example.header-samuel", "example", "mp:plus", None),
+    (
+        "mp.plus.example.book39-skel",
+        "struct",
+        "mp:plus",
+        {
+            "book39_keys": [
+                "book24_name",
+                "sub_book_name",
+                "chapters",
+                "good_ending_plus",
+            ]
+        },
+    ),
+    ("mp.plus.example.d-col-first", "example", "mp:plus", None),
+    ("mp.plus.example.d-col-empty", "example", "mp:plus", None),
+    (
+        "mp.plus.template.format-example",
+        "format",
+        "mp:plus",
+        {
+            "object_keys": ["tmpl_name", "tmpl_params"],
+            "tmpl_name": "קו״כ",
+            "tmpl_params": {"1": "את", "2": "אַ֠תָּ֠ה"},
+        },
+    ),
+    (
+        "mp.plain.template.stmpl-format-example",
+        "format",
+        "mp:plain",
+        {"stmpl": "קו״כ|את|אַ֠תָּ֠ה"},
+    ),
+    ("mp.plus.example.nested-tmpl", "example", "mp:plus", None),
+    ("mp.plus.diff-from-plain", "enum", "mp:plus", None),
+    (
+        "mp.plus.header.fields",
+        "struct",
+        "mp:plus",
+        {"header_keys": ["book24_name", "sub_book_names", "chapter_counts"]},
+    ),
+    (
+        "mp.plus.book39.fields",
+        "struct",
+        "mp:plus",
+        {
+            "book39_keys": [
+                "book24_name",
+                "sub_book_name",
+                "chapters",
+                "good_ending_plus",
+            ],
+            "good_ending_plus_nonnull_count": 4,
+        },
+    ),
+    (
+        "mp.plus.template.object-fields",
+        "struct",
+        "mp:plus",
+        {
+            "required_keys": ["tmpl_name"],
+            "optional_keys": ["tmpl_params"],
+        },
+    ),
+    (
+        "mp.plus.chapter.keyed-by-verse-num",
+        "struct",
+        "mp:plus",
+        {"key_format": "decimal-string-1-indexed-contiguous"},
+    ),
+    (
+        "mp.plus.verse.is-3-tuple",
+        "struct",
+        "mp:plus",
+        {"shape": ["sep", "label", "text"], "length": 3},
+    ),
+    (
+        "mp.plus.verse.c-col.semantics",
+        "struct",
+        "mp:plus",
+        {"common_value": ["__"]},
+    ),
+    (
+        "mp.plus.verse.d-col.semantics",
+        "struct",
+        "mp:plus",
+        {
+            "label_template": "מ:פסוק",
+            "empty_when": "no interesting metadata",
+        },
+    ),
+    (
+        "mp.plus.verse.e-col.semantics",
+        "struct",
+        "mp:plus",
+        {"element_types": ["string", "template_object"]},
+    ),
+    (
+        "mp.plus.template.tmpl-params-keys",
+        "format",
+        "mp:plus",
+        {
+            "numeric_keys": "positional args",
+            "non_numeric_keys": "named params",
+        },
+    ),
+    (
+        "mp.plus.template.tmpl-params-omitted-when-empty",
+        "format",
+        "mp:plus",
+        {"examples_no_params": ["פפ", "סס", "מ:פסק"]},
+    ),
+    (
+        "mp.plus.docs.common-templates.templates-in-plus-survey",
+        "enum",
+        "mp:plus",
+        {"templates": _PLUS_COMMON_TEMPLATES},
+    ),
+)
+
 
 def _emit_claim_payload(
     claims: ClaimCollection | None,
@@ -73,10 +209,29 @@ def _emit_claim_payload(
     kind: str,
     subject: str,
     data=None,
+    register_legacy: bool = False,
 ):
     if claims is None:
+        if not register_legacy:
+            return payload
+        if claim_id in REGISTRY:
+            return payload
         return claim(claim_id, payload, kind=kind, subject=subject, data=data)
     return claims.claim(claim_id, payload, kind=kind, subject=subject, data=data)
+
+
+def populate_claims(*, claims: ClaimCollection | None = None):
+    """Emit mpplus_body claim metadata into explicit claims or legacy REGISTRY."""
+    for claim_id, kind, subject, data in _CLAIM_DEFS:
+        _emit_claim_payload(
+            claims,
+            claim_id,
+            None,
+            kind=kind,
+            subject=subject,
+            data=data,
+            register_legacy=True,
+        )
 
 
 # ---------------------------------------------------------------------------
