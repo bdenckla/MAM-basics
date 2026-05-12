@@ -52,14 +52,6 @@ def _build_body():
         ),
         author.para(
             [
-                "The value given to ",
-                author.hbo("סוג="),
-                " is a dataset-level classification tag: it records which structural"
-                " subtype this k/q pair belongs to, independent of any particular $MAM edition.",
-            ]
-        ),
-        author.para(
-            [
                 "The sub-typing serves two purposes: it pre-categorizes these rare k/q pairs so"
                 " that consuming applications do not need to re-derive the classification from"
                 " the template parameters alone, and it exposes enough granularity for"

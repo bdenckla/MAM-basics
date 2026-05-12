@@ -2,11 +2,41 @@
 """Shared table data for mpplain and mpplus docs."""
 
 from mb_misc import mb_html
+from mb_cmn import kq_special_templates as kqst
 from author_util import author
-from author_util import json_block
 from author_util.claim import claim
 
 _GOOD_ENDING_DOC = "mpplus_good_ending.html"
+_KQ_SIMPLE_FOI_URL = (
+    "https://bdenckla.github.io/MAM-with-doc/foi/foi-kq-simple.html#intro-"
+)
+
+# Keep this aligned with foi/foiz_wt_kq_1.py:_FOI_PATH for special k/q types.
+_KQ_SIMPLE_FOI_INTRO_BY_SPECIAL_KQ_TYPE = {
+    "k1q1-mcom": "k1q1-mcom",
+    "k1q2-sr-kqq": "k1q2sr",
+    "k1q2-sr-qqk": "k1q2sr",
+    "k1q2-sr-bcom": "k1q2sr",
+    "k1q2-wr-kqq": "k1q2wr",
+    "k1q2-ur-qqk": "k1q2ur",
+    "k2q1": "k2q1",
+    "k2q2": "k2q2",
+    "k3q3": "k3q3",
+}
+
+
+def _kq_simple_foi_link(label: str):
+    return author.anc_h(label, _KQ_SIMPLE_FOI_URL + label)
+
+
+def _kq_simple_foi_link_for_sug(sug_text: str):
+    kq_type = kqst.canonical_special_kq_type_from_name_and_sug(
+        kqst.UNIFIED_SPECIAL_KQ_TEMPLATE_NAME,
+        sug_text,
+    )
+    intro_label = _KQ_SIMPLE_FOI_INTRO_BY_SPECIAL_KQ_TYPE[kq_type]
+    return _kq_simple_foi_link(intro_label)
+
 
 # ---------------------------------------------------------------------------
 # JSON snippets shared by plain and plus common-templates sections
@@ -564,36 +594,81 @@ KQ_SPECIAL_ROWS = claim(
     [
         [
             author.hbo("כו״ק בין שני מקפים"),
-            "$Ketiv_qere between two $maqaf marks (Isaiah 26:20 only)",
+            [
+                "$Ketiv_qere between two $maqaf marks (Isaiah 26:20 only)."
+                " See FOI section ",
+                _kq_simple_foi_link_for_sug("כו״ק בין שני מקפים"),
+                ".",
+            ],
         ],
         [
             author.hbo("כו״ק כתיב מילה חדה וקרי תרתין מילין"),
-            "1-atom $ketiv mapped to 2-atom $qere",
+            [
+                "1-atom $ketiv mapped to 2-atom $qere. See FOI section ",
+                _kq_simple_foi_link_for_sug("כו״ק כתיב מילה חדה וקרי תרתין מילין"),
+                ".",
+            ],
         ],
         [
             author.hbo("כו״ק כתיב מילה חדה וקרי תרתין מילין בין שני מקפים"),
-            "Same as above but between $maqaf marks (1 Chronicles 9:4 only)",
+            [
+                "Same as above but between $maqaf marks (1 Chronicles 9:4 only)."
+                " See FOI section ",
+                _kq_simple_foi_link_for_sug(
+                    "כו״ק כתיב מילה חדה וקרי תרתין מילין בין שני מקפים"
+                ),
+                ".",
+            ],
         ],
         [
             author.hbo("כו״ק כתיב תרתין מילין וקרי מילה חדה"),
-            "2-atom $ketiv mapped to 1-atom $qere",
+            [
+                "2-atom $ketiv mapped to 1-atom $qere. See FOI section ",
+                _kq_simple_foi_link_for_sug("כו״ק כתיב תרתין מילין וקרי מילה חדה"),
+                ".",
+            ],
         ],
         [
             author.hbo("קו״כ כתיב מילה חדה וקרי תרתין מילין"),
-            "1-atom $ketiv mapped to 2-atom $qere, following $maqaf (Nehemiah 2:13 only)",
+            [
+                "1-atom $ketiv mapped to 2-atom $qere, following $maqaf (Nehemiah"
+                " 2:13 only). See FOI section ",
+                _kq_simple_foi_link_for_sug("קו״כ כתיב מילה חדה וקרי תרתין מילין"),
+                ".",
+            ],
         ],
         [
             author.hbo("כו״ק קרי שונה מהכתיב בשתי מילים"),
-            "1-atom $ketiv, 2-atom $qere",
+            [
+                "1-atom $ketiv, 2-atom $qere. See FOI section ",
+                _kq_simple_foi_link_for_sug("כו״ק קרי שונה מהכתיב בשתי מילים"),
+                ".",
+            ],
         ],
         [
             author.hbo("קו״כ קרי שונה מהכתיב בשתי מילים"),
-            "1-atom $ketiv, 2-atom $qere, following $maqaf (2 Kgs 18:27, Isa 36:12)",
+            [
+                "1-atom $ketiv, 2-atom $qere, following $maqaf (2 Kgs 18:27, Isa"
+                " 36:12). See FOI section ",
+                _kq_simple_foi_link_for_sug("קו״כ קרי שונה מהכתיב בשתי מילים"),
+                ".",
+            ],
         ],
-        [author.hbo("כו״ק של שתי מילים בהערה אחת"), "2-atom $ketiv, 2-atom $qere"],
+        [
+            author.hbo("כו״ק של שתי מילים בהערה אחת"),
+            [
+                "2-atom $ketiv, 2-atom $qere. See FOI section ",
+                _kq_simple_foi_link_for_sug("כו״ק של שתי מילים בהערה אחת"),
+                ".",
+            ],
+        ],
         [
             author.hbo("כו״ק של שלוש מילים בהערה אחת"),
-            "3-atom $ketiv, 3-atom $qere (2 Samuel 21:12)",
+            [
+                "3-atom $ketiv, 3-atom $qere (2 Samuel 21:12). See FOI section ",
+                _kq_simple_foi_link_for_sug("כו״ק של שלוש מילים בהערה אחת"),
+                ".",
+            ],
         ],
     ],
     kind="enum",
