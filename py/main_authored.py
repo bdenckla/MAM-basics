@@ -16,11 +16,9 @@ Subcommands:
 """
 
 import argparse
-import pathlib
 
 from mb_misc import mb_html
 from mb_misc import styles_authored
-from mb_misc import styles_mam_parsed
 from mb_cmn import provenance
 from author import notes_on_aliyot
 from author import tsinnorit_and_oleh_on_ivs
@@ -35,16 +33,9 @@ from author import rocc_4_mid_word_ga3ya_with_shewa
 from author import he_ws_intro_to_mam_gray_maqaf_1 as gray_maqaf
 from author import he_ws_intro_to_mam_pasleg as pasleg
 from author import the_next_700_bibles
-from author import mpplain
-from author import mpplus
-from author import mpplus_aot
-from author import mpplus_kq_special
-from author import mpplus_haarah_2
-from author import mpplus_kaful
-from author import mpplus_good_ending
+from author import mam_parsed_docs_build
 from verify_mp import claims_doc
 from verify_mp import driver as verify_driver
-from verify_mp import registry_load
 from verify_mp import survey_artifact
 from verify_mp.corpus import Context, load_plus_corpus, load_plain_corpus
 
@@ -98,9 +89,11 @@ def cmd_gen_misc(_args):
     almost_main()
 
 
-def _run_verify_mp(*, populate_registry: bool) -> None:
+def _run_verify_mp(*, populate_registry: bool, claims=None) -> None:
     """Run MAM-parsed claim verification against corpus + survey artifacts."""
-    if populate_registry:
+    if claims is None and populate_registry:
+        from verify_mp import registry_load
+
         registry_load.populate()
     corpus = load_plus_corpus()
     corpus_plain = load_plain_corpus()
@@ -112,29 +105,19 @@ def _run_verify_mp(*, populate_registry: bool) -> None:
         survey=survey,
         survey_plain=survey_plain,
     )
-    verify_driver.run(ctx)
+    verify_driver.run(ctx, claims=claims)
 
 
 def cmd_gen_mam_parsed_docs(_args):
-    out_dir = pathlib.Path("../MAM-parsed/gh-pages")
-    # Write CSS
-    styles_mam_parsed.make_css_file_for_mam_parsed(str(out_dir / "style.css"))
-    # Write HTML docs
-    tdm_ch = str(out_dir), "style.css"
-    mpplain.gen_html_file(tdm_ch)
-    mpplus.gen_html_file(tdm_ch)
-    mpplus_aot.gen_html_file(tdm_ch)
-    mpplus_kq_special.gen_html_file(tdm_ch)
-    mpplus_haarah_2.gen_html_file(tdm_ch)
-    mpplus_kaful.gen_html_file(tdm_ch)
-    mpplus_good_ending.gen_html_file(tdm_ch)
+    out_dir = "../MAM-parsed/gh-pages"
+    claims = mam_parsed_docs_build.build_docs_with_explicit_claims(out_dir)
 
     skip_verify = bool(getattr(_args, "skip_verify_mp", False)) if _args else False
     if not skip_verify:
         print("Running MAM-parsed verification...")
-        _run_verify_mp(populate_registry=False)
+        _run_verify_mp(populate_registry=False, claims=claims)
 
-    claims_path = claims_doc.write_output(populate_registry=False)
+    claims_path = claims_doc.write_output(claims, populate_registry=False)
     print(f"Generated MAM-parsed docs in {out_dir}")
     print(f"Generated claims index in {claims_path}")
 

@@ -4,7 +4,6 @@
 from typing import Mapping
 
 from author_util.claim import ClaimCollection, ClaimRecord
-from verify_mp import registry_load
 from verify_mp import driver as _driver
 from verify_mp import verifiers_plus, verifiers_both, verifiers_plain
 
@@ -95,6 +94,8 @@ def write_output(
     invoke section builders) can pass populate_registry=False.
     """
     if claims is None and populate_registry:
+        from verify_mp import registry_load
+
         registry_load.populate()
     text = generate(claims)
     with open(path, "w", encoding="utf-8") as fh:
