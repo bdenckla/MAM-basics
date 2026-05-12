@@ -56,9 +56,9 @@ def _build_body():
     back_link = author.anchor_h("Reading $MAM-parsed-plus", _PLUS_DOC)
     return [
         author.heading_level_1(
-            ["Special letter marking \u2014 ", author.hbo("מ:אות-מיוחדת-במילה")]
+            ["Special letter marking — ", author.hbo("מ:אות-מיוחדת-במילה")]
         ),
-        author.para(["\u2190 Back to ", back_link]),
+        author.para(["← Back to ", back_link]),
         author.para(_AOT_INTRO),
         json_block.json_block_raw_html(_JSON_SPECIAL_LETTER),
         author.para("Arguments:"),

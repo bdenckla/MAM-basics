@@ -83,9 +83,9 @@ def _build_body():
     back_link = author.anchor_h("Reading $MAM-parsed-plus", _PLUS_DOC)
     return [
         author.heading_level_1(
-            ["Targeted scroll-difference note \u2014 ", author.hbo("מ:הערה-2")]
+            ["Targeted scroll-difference note — ", author.hbo("מ:הערה-2")]
         ),
-        author.para(["\u2190 Back to ", back_link]),
+        author.para(["← Back to ", back_link]),
         author.para(
             [
                 author.hbo("מ:הערה"),

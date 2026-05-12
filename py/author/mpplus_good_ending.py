@@ -46,7 +46,7 @@ def _build_body():
     back_link = author.anchor_h("Reading $MAM-parsed-plus", _PLUS_DOC)
     return [
         author.heading_level_1(mb_html.code("good_ending_plus")),
-        author.para(["\u2190 Back to ", back_link]),
+        author.para(["← Back to ", back_link]),
         author.para(
             [
                 "Four books of the Bible end with a verse of rather negative tone."
@@ -64,7 +64,7 @@ def _build_body():
                 " it is an object (see example below).",
             ]
         ),
-        author.heading_level_2(["Example \u2014 ", author.hbo("מ:סיום בטוב")]),
+        author.heading_level_2(["Example — ", author.hbo("מ:סיום בטוב")]),
         author.para(
             [
                 "The ",

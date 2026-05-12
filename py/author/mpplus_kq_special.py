@@ -40,9 +40,9 @@ def _build_body():
     back_link = author.anchor_h("Reading $MAM-parsed-plus", _PLUS_DOC)
     return [
         author.heading_level_1(
-            ["Special $ketiv_qere template \u2014 ", author.hbo("מ:כו״ק מיוחד")]
+            ["Special $ketiv_qere template — ", author.hbo("מ:כו״ק מיוחד")]
         ),
-        author.para(["\u2190 Back to ", back_link]),
+        author.para(["← Back to ", back_link]),
         author.para(
             [
                 "Nine special $ketiv_qere types are encoded in the required named parameter ",

@@ -52,8 +52,8 @@ def _build_body():
         ],
     ]
     return [
-        author.heading_level_1(["Dual-trope text \u2014 ", author.hbo("מ:כפול")]),
-        author.para(["\u2190 Back to ", back_link]),
+        author.heading_level_1(["Dual-trope text — ", author.hbo("מ:כפול")]),
+        author.para(["← Back to ", back_link]),
         author.para(
             [
                 "This template encodes a dually-accented span of text and its corresponding"

@@ -173,16 +173,16 @@ _DIFF_ROWS = claim(
     "mp.plus.diff-from-plain",
     [
         [
-            "Pseudo-verses " + "\u201c" + "0\u201d and \u201c\u05ea\u05ea\u05ea\u201d",
+            "Pseudo-verses “0” and “תתת”",
             "Present",
             "Removed",
         ],
         [
-            "Custom XML tags (\u05e0\u05d5\u05d9\u05e0\u05e7\u05dc\u05d5\u05d3 etc.)",
+            "Custom XML tags (נוינקלוד etc.)",
             "Present",
             "Removed",
         ],
-        ["Wikitext line breaks (\u201c//\u201d)", "Present in C column", "Removed"],
+        ["Wikitext line breaks (“//”)", "Present in C column", "Removed"],
         ["Named params", "not parsed", "parsed and unified with positional"],
         [
             "D column (verse label)",
@@ -399,7 +399,7 @@ def s_chapter_verse():
             [
                 mb_html.code("tmpl_params"),
                 "object",
-                ["Parameters \u2014 present only if needed"],
+                ["Parameters — present only if needed"],
             ],
         ],
         kind="struct",
@@ -516,7 +516,7 @@ def s_chapter_verse():
                     mb_html.code('"1"'),
                     ", ",
                     mb_html.code('"2"'),
-                    ", \u2026 correspond to positional arguments,"
+                    ", … correspond to positional arguments,"
                     " Non-numeric keys (e.g. ",
                     mb_html.code('"ד"'),
                     ", ",
@@ -565,7 +565,7 @@ def s_chapter_verse():
             ]
         ),
         author.para(
-            "Example \u2014 a word with a special letter inside a $ketiv_qere inside a נוסח:"
+            "Example — a word with a special letter inside a $ketiv_qere inside a נוסח:"
         ),
         json_block.json_block_raw_html(_JSON_NESTED),
     ]
@@ -579,28 +579,28 @@ def s_plus_only_templates():
             [
                 author.anchor_h(
                     [
-                        "Special letter marking \u2014 ",
+                        "Special letter marking — ",
                         author.hbo("מ:אות-מיוחדת-במילה"),
                     ],
                     _AOT_DOC,
                 ),
                 author.anchor_h(
                     [
-                        "Special $ketiv_qere template \u2014 ",
+                        "Special $ketiv_qere template — ",
                         author.hbo("מ:כו״ק מיוחד"),
                     ],
                     _KQ_SPECIAL_DOC,
                 ),
                 author.anchor_h(
                     [
-                        "Targeted scroll-difference note \u2014 ",
+                        "Targeted scroll-difference note — ",
                         author.hbo("מ:הערה-2"),
                     ],
                     _HAARAH_2_DOC,
                 ),
                 author.anchor_h(
                     [
-                        "Dual-trope text \u2014 ",
+                        "Dual-trope text — ",
                         author.hbo("מ:כפול"),
                     ],
                     _KAFUL_DOC,
@@ -624,10 +624,10 @@ def s_common_templates():
                 ".",
             ]
         ),
-        author.heading_level_3("Documentation template (\u05e0\u05d5\u05e1\u05d7)"),
+        author.heading_level_3("Documentation template (נוסח)"),
         author.para(
             [
-                "The first parameter is the \u201ctarget\u201d \u2014 what is being documented."
+                "The first parameter is the “target” — what is being documented."
                 " The second parameter contains the documentation"
                 " (anomalous forms, variant readings, uncertain readings, etc.):",
             ]
@@ -638,7 +638,7 @@ def s_common_templates():
         author.para(
             [
                 "Current values observed for optional ",
-                author.hbo("\u05e1\u05d5\u05d2="),
+                author.hbo("סוג="),
                 " in ",
                 author.hbo("מ:קו״כ-אם-2"),
                 ":",
@@ -676,16 +676,14 @@ def s_common_templates():
             ],
             arg_to_troh=["Template", "Purpose"],
         ),
-        author.heading_level_3(
-            "Poetic form templates (\u05e1\u05e4\u05e8\u05d9 \u05d0\u05de\u05ea)"
-        ),
+        author.heading_level_3("Poetic form templates (ספרי אמת)"),
         author.std_table(
             [row for row in cmn.POETIC_ROWS if row[0] != author.hbo("פרשה-מרכז")],
             arg_to_troh=["Template", "Purpose"],
         ),
         author.para(
             "Many editions will choose to skip poetic formatting by treating"
-            " \u05e40\u2013\u05e44 as simple word spaces."
+            " ר0–ר4 as simple word spaces."
         ),
         author.heading_level_3("Note template"),
         author.std_table(

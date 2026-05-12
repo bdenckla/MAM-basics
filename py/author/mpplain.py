@@ -170,7 +170,7 @@ def s_chapter():
         author.para(
             [
                 "The keys for normal verses are Hebrew numerals conforming to the system"
-                " that uses \u05d8\u05d5 and \u05d8\u05d6 for 15 and 16,"
+                " that uses טו and טז for 15 and 16,"
                 " avoiding the divine-name letter-pairs."
             ]
         ),
@@ -203,11 +203,11 @@ def s_verse():
         [author.hbo("סס"), "Parashah setumah (closed paragraph)"],
         [
             author.hbo("מ:ספר חדש"),
-            "New book marker \u2014 marks the start of one of the 24 books with defined spacing. Not used for second halves of two-part books or individual Minor Prophets after Hosea.",
+            "New book marker — marks the start of one of the 24 books with defined spacing. Not used for second halves of two-part books or individual Minor Prophets after Hosea.",
         ],
         [
             author.hbo("מ:אין פרשה בתחילת פרק"),
-            "No $parashah at chapter start \u2014 tags chapters that don\u2019t begin with a visible $parashah.",
+            "No $parashah at chapter start — tags chapters that don\u2019t begin with a visible $parashah.",
         ],
     ]
     sep_more_rows = [
@@ -217,7 +217,7 @@ def s_verse():
         ],
         [
             author.hbo("ססס"),
-            "Closed $parashah inline \u2014 blank spaces mid-line with text before and after",
+            "Closed $parashah inline — blank spaces mid-line with text before and after",
         ],
         [author.hbo("סס2"), "Narrow closed $parashah"],
         [author.hbo("פסקא באמצע פסוק"), "Parashah division within a verse"],
@@ -261,7 +261,7 @@ def s_verse():
         author.para(
             [
                 "The ",
-                mb_html.code('"//"\u200b'),
+                mb_html.code('"//"\N{ZERO WIDTH SPACE}'),
                 " strings sometimes sprinkled in"
                 " index 0 are Wikitext line breaks from the Google Sheet.",
             ]
@@ -361,10 +361,10 @@ def _s_common_templates():
                 ".",
             ]
         ),
-        author.heading_level_3("Documentation template (\u05e0\u05d5\u05e1\u05d7)"),
+        author.heading_level_3("Documentation template (נוסח)"),
         author.para(
             [
-                "Its first parameter is the \u201ctarget\u201d \u2014 what is being documented."
+                "Its first parameter is the \u201ctarget\u201d — what is being documented."
                 " The second parameter contains the documentation"
                 " (anomalous forms, variant readings, uncertain readings, etc.):",
             ]
@@ -400,13 +400,11 @@ def _s_common_templates():
         author.std_table(cmn.ACCENT_ROWS, arg_to_troh=["Template", "Purpose"]),
         author.heading_level_3("Jerusalem spelling"),
         author.std_table(cmn.JER_ROWS, arg_to_troh=["Template", "Purpose"]),
-        author.heading_level_3(
-            "Poetic form templates (\u05e1\u05e4\u05e8\u05d9 \u05d0\u05de\u05ea)"
-        ),
+        author.heading_level_3("Poetic form templates (ספרי אמת)"),
         author.std_table(cmn.POETIC_ROWS, arg_to_troh=["Template", "Purpose"]),
         author.para(
             "Many editions will choose to skip poetic formatting by treating"
-            " \u05e40\u2013\u05e44 as simple word spaces."
+            " ר0–ר4 as simple word spaces."
         ),
         author.heading_level_3("Note template"),
         author.std_table(
@@ -420,7 +418,7 @@ def _s_common_templates():
 
 def _s_pseudo_verses():
     return [
-        author.heading_level_2("Pseudo-verses (0 and \u05ea\u05ea\u05ea)"),
+        author.heading_level_2("Pseudo-verses (0 and תתת)"),
         author.para(
             [
                 "The ",

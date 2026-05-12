@@ -247,7 +247,7 @@ FTNT_7_H = [
 ]
 FTNT_7_E_MAIN = [
     "In the Leningrad Codex there is an explicit $paseq annotation;",
-    ' and in the Aleppo Codex there is a Masorah note "\u200fב\u200f"',
+    ' and in the Aleppo Codex there is a Masorah note "ב"',
     " comparing it to the clear $paseq",
     " in the identical phrase in Psalms 85:9",
     " (where the same note also appears).",

@@ -232,11 +232,11 @@ ACCENT_ROWS = claim(
     [
         [
             author.hbo("מ:לגרמיה-2"),
-            "$Legarmeh. The vertical line \u05c0 as $legarmeh (part of the word\u2019s cantillation). Shares Unicode with $paseq but differs in function.",
+            "$Legarmeh. The vertical line ׀ as $legarmeh (part of the word\u2019s cantillation). Shares Unicode with $paseq but differs in function.",
         ],
         [
             author.hbo("מ:פסק"),
-            "$Paseq. The vertical line \u05c0 as $paseq in the narrow sense, i.e. $paseq as distinct from $legarmeh.",
+            "$Paseq. The vertical line ׀ as $paseq in the narrow sense, i.e. $paseq as distinct from $legarmeh.",
         ],
         [
             author.hbo("מ:מקף אפור"),
@@ -244,7 +244,7 @@ ACCENT_ROWS = claim(
         ],
         [
             author.hbo("מ:דחי"),
-            "De\u1e25i variation. Presents both stress-helped and non-stress-helped versions of a word.",
+            "Deḥi variation. Presents both stress-helped and non-stress-helped versions of a word.",
         ],
         [
             author.hbo("מ:צינור"),
@@ -256,11 +256,11 @@ ACCENT_ROWS = claim(
         ],
         [
             author.hbo("ירח בן יומו-2"),
-            "Yera\u1e25 ben yomo. Distinguishes prose from poetic uses of Unicode $YBY.",
+            "Yeraḥ ben yomo. Distinguishes prose from poetic uses of Unicode $YBY.",
         ],
         [
             author.hbo("אתנח הפוך"),
-            "Atna\u1e25 hafukh. Helps distinguish this accent from galgal/yera\u1e25 ben yomo.",
+            "Atnaḥ hafukh. Helps distinguish this accent from galgal/yeraḥ ben yomo.",
         ],
         [
             author.hbo("מ:קמץ"),
@@ -324,7 +324,7 @@ JER_ROWS = claim(
         ],
         [
             author.hbo("מ:ירושלמה"),
-            "Like \u05de:\u05d9\u05e8\u05d5\u05e9\u05dc\u05dd but for the directional form \u201cto Jerusalem\u201d (4 cases).",
+            "Like מ:ירושלם but for the directional form \u201cto Jerusalem\u201d (4 cases).",
         ],
     ],
     kind="enum",
@@ -500,18 +500,18 @@ NAVIGATION_ROWS = claim(
         ],
         [
             author.hbo("בסיס-משתמש"),
-            "Page-footer attribution. Notes that the page text was originally edited elsewhere. Parameter is a link to the source page. Used mainly for Nevi\u02bcim/Ketuvim pages reconstructed from the Aleppo Codex.",
+            "Page-footer attribution. Notes that the page text was originally edited elsewhere. Parameter is a link to the source page. Used mainly for Neviʼim/Ketuvim pages reconstructed from the Aleppo Codex.",
         ],
         [
             author.hbo("קק"),
-            "Dual-trope section link. Displays a link (\u2193\u2191) to one of the three dual-trope sections (two Decalogues + Saga of Reuben). Parameter is the link markup.",
+            "Dual-trope section link. Displays a link (↓↑) to one of the three dual-trope sections (two Decalogues + Saga of Reuben). Parameter is the link markup.",
         ],
         [
             author.hbo("עוגן בשורה"),
-            "In-line page anchor. Used for the three dual-trope sections and the bracketed nun-hafukha verses (Num 10:35\u201336).",
+            "In-line page anchor. Used for the three dual-trope sections and the bracketed nun-hafukha verses (Num 10:35–36).",
         ],
         [
-            author.hbo("צורות כתיבה בספרי אמ\u05f4ת"),
+            author.hbo("צורות כתיבה בספרי אמ״ת"),
             "Page-footer note listing alternative poetic-book formatting versions. Used for 11 Psalms.",
         ],
     ],
