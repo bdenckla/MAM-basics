@@ -595,8 +595,7 @@ KQ_SPECIAL_ROWS = claim(
         [
             author.hbo("כו״ק בין שני מקפים"),
             [
-                "$Ketiv_qere between two $maqaf marks (Isaiah 26:20 only)."
-                " See FOI section ",
+                "$Ketiv_qere between two $maqaf marks." " See FOI section ",
                 _kq_simple_foi_link_for_sug("כו״ק בין שני מקפים"),
                 ".",
             ],
@@ -612,7 +611,7 @@ KQ_SPECIAL_ROWS = claim(
         [
             author.hbo("כו״ק כתיב מילה חדה וקרי תרתין מילין בין שני מקפים"),
             [
-                "Same as above but between $maqaf marks (1 Chronicles 9:4 only)."
+                "Same as above but between $maqaf marks."
                 " See the rows of FOI section ",
                 _kq_simple_foi_link_for_sug(
                     "כו״ק כתיב מילה חדה וקרי תרתין מילין בין שני מקפים"
@@ -631,8 +630,8 @@ KQ_SPECIAL_ROWS = claim(
         [
             author.hbo("קו״כ כתיב מילה חדה וקרי תרתין מילין"),
             [
-                "1-atom $ketiv mapped to 2-atom $qere, following $maqaf (Nehemiah"
-                " 2:13 only). See the rows of FOI section ",
+                "1-atom $ketiv mapped to 2-atom $qere, following $maqaf."
+                " See the rows of FOI section ",
                 _kq_simple_foi_link_for_sug("קו״כ כתיב מילה חדה וקרי תרתין מילין"),
                 " labelled k1q2-sr-qqk.",
             ],
@@ -648,8 +647,7 @@ KQ_SPECIAL_ROWS = claim(
         [
             author.hbo("קו״כ קרי שונה מהכתיב בשתי מילים"),
             [
-                "1-atom $ketiv, 2-atom $qere, following $maqaf (2 Kgs 18:27, Isa"
-                " 36:12). See FOI section ",
+                "1-atom $ketiv, 2-atom $qere, following $maqaf. See FOI section ",
                 _kq_simple_foi_link_for_sug("קו״כ קרי שונה מהכתיב בשתי מילים"),
                 ".",
             ],
@@ -665,7 +663,7 @@ KQ_SPECIAL_ROWS = claim(
         [
             author.hbo("כו״ק של שלוש מילים בהערה אחת"),
             [
-                "3-atom $ketiv, 3-atom $qere (2 Samuel 21:12). See FOI section ",
+                "3-atom $ketiv, 3-atom $qere. See FOI section ",
                 _kq_simple_foi_link_for_sug("כו״ק של שלוש מילים בהערה אחת"),
                 ".",
             ],
