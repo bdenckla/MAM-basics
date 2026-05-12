@@ -3,6 +3,7 @@
 
 from author_util.claim import ClaimRecord, REGISTRY
 from verify_mp import survey_artifact
+from verify_mp import kq_special_counts
 from verify_mp.corpus import (
     Context,
     iter_all_template_objects,
@@ -182,6 +183,13 @@ def verify_mp_both_templates_kq_special_subtypes(
 ) -> None:
     """Every סוג= value observed for מ:כו״ק מיוחד is among the nine declared subtypes."""
     _verify_named_param_values_subset(record, ctx)
+
+
+def verify_mp_both_templates_kq_special_subtype_counts(
+    record: ClaimRecord, ctx: Context
+) -> None:
+    """Each kq-special subtype has declared word counts and allowed atom-count pairs."""
+    kq_special_counts.verify(record, ctx)
 
 
 def verify_mp_both_templates_kq_am2_sug_values(

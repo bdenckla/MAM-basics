@@ -568,7 +568,7 @@ KQ_SPECIAL_ROWS = claim(
         ],
         [
             author.hbo("כו״ק כתיב מילה חדה וקרי תרתין מילין"),
-            "1-word $ketiv mapped to 2-atom $qere",
+            "1-atom $ketiv mapped to 2-atom $qere",
         ],
         [
             author.hbo("כו״ק כתיב מילה חדה וקרי תרתין מילין בין שני מקפים"),
@@ -576,24 +576,24 @@ KQ_SPECIAL_ROWS = claim(
         ],
         [
             author.hbo("כו״ק כתיב תרתין מילין וקרי מילה חדה"),
-            "2-word $ketiv mapped to 1-atom $qere",
+            "2-atom $ketiv mapped to 1-atom $qere",
         ],
         [
             author.hbo("קו״כ כתיב מילה חדה וקרי תרתין מילין"),
-            "1-word $ketiv mapped to 2-atom $qere, following $maqaf (Nehemiah 2:13 only)",
+            "1-atom $ketiv mapped to 2-atom $qere, following $maqaf (Nehemiah 2:13 only)",
         ],
         [
             author.hbo("כו״ק קרי שונה מהכתיב בשתי מילים"),
-            "1-word $ketiv, 2-word $qere",
+            "1-atom $ketiv, 2-atom $qere",
         ],
         [
             author.hbo("קו״כ קרי שונה מהכתיב בשתי מילים"),
-            "1-word $ketiv, 2-word $qere, following $maqaf (2 Kgs 18:27, Isa 36:12)",
+            "1-atom $ketiv, 2-atom $qere, following $maqaf (2 Kgs 18:27, Isa 36:12)",
         ],
-        [author.hbo("כו״ק של שתי מילים בהערה אחת"), "2-word $ketiv, 2-atom $qere"],
+        [author.hbo("כו״ק של שתי מילים בהערה אחת"), "2-atom $ketiv, 2-atom $qere"],
         [
             author.hbo("כו״ק של שלוש מילים בהערה אחת"),
-            "3-word $ketiv, 3-atom $qere (2 Samuel 21:12)",
+            "3-atom $ketiv, 3-atom $qere (2 Samuel 21:12)",
         ],
     ],
     kind="enum",
@@ -612,6 +612,64 @@ KQ_SPECIAL_ROWS = claim(
             "כו״ק של שתי מילים בהערה אחת",
             "כו״ק של שלוש מילים בהערה אחת",
         ],
+    },
+)
+
+KQ_SPECIAL_SUBTYPE_COUNTS = claim(
+    "mp.both.templates.kq-special.subtype-counts",
+    "For each kq-special subtype, verify declared ketiv/qere word counts and allowed atom-count pairs.",
+    kind="struct",
+    subject="mp:both",
+    data={
+        "template": "מ:כו״ק מיוחד",
+        "param": "סוג",
+        "subtype_counts": {
+            "כו״ק בין שני מקפים": {
+                "ketiv_words": 1,
+                "qere_words": 1,
+                "atom_pairs": [[1, 1]],
+            },
+            "כו״ק כתיב מילה חדה וקרי תרתין מילין": {
+                "ketiv_words": 1,
+                "qere_words": 2,
+                "atom_pairs": [[1, 1], [1, 2]],
+            },
+            "כו״ק כתיב מילה חדה וקרי תרתין מילין בין שני מקפים": {
+                "ketiv_words": 1,
+                "qere_words": 2,
+                "atom_pairs": [[1, 2]],
+            },
+            "כו״ק כתיב תרתין מילין וקרי מילה חדה": {
+                "ketiv_words": 2,
+                "qere_words": 1,
+                "atom_pairs": [[2, 1]],
+            },
+            "קו״כ כתיב מילה חדה וקרי תרתין מילין": {
+                "ketiv_words": 1,
+                "qere_words": 2,
+                "atom_pairs": [[1, 2]],
+            },
+            "כו״ק קרי שונה מהכתיב בשתי מילים": {
+                "ketiv_words": 1,
+                "qere_words": 2,
+                "atom_pairs": [[1, 1], [1, 2]],
+            },
+            "קו״כ קרי שונה מהכתיב בשתי מילים": {
+                "ketiv_words": 1,
+                "qere_words": 2,
+                "atom_pairs": [[1, 2]],
+            },
+            "כו״ק של שתי מילים בהערה אחת": {
+                "ketiv_words": 2,
+                "qere_words": 2,
+                "atom_pairs": [[2, 1], [2, 2]],
+            },
+            "כו״ק של שלוש מילים בהערה אחת": {
+                "ketiv_words": 3,
+                "qere_words": 3,
+                "atom_pairs": [[3, 3]],
+            },
+        },
     },
 )
 
