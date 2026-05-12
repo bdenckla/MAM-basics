@@ -292,7 +292,7 @@ ACCENT_ROWS = claim(
                 _TWO_ACCENTS_OF_QUPO_ABBREV,
                 {"title": tmpln.TWO_ACCENTS_OF_QUPO},
             ),
-            "Formats the two extra marks (above-accent + patah) on the QUPO Decalogue words (panay and mitahat). Parameter is the above-accent (may use מ:טעם).",
+            "Formats the two extra marks (above-accent + patah) on the QUPO Decalogue words (פני and מתחת). Parameter is the above-accent (may use מ:טעם).",
         ],
     ],
     kind="enum",
