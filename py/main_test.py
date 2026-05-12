@@ -35,6 +35,11 @@ TEST_MODULE_SPECS = (
         help_text="Run JSON snippet browser HTML generation tests.",
     ),
     TestModuleSpec(
+        flag="explicit-claims",
+        module_name="tests.test_explicit_claims",
+        help_text="Run explicit claim collection core tests.",
+    ),
+    TestModuleSpec(
         flag="mb-cmn-kq-special-templates",
         module_name="tests.test_mb_cmn_kq_special_templates",
         help_text="Run special-kq template normalization tests.",

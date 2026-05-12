@@ -4,7 +4,10 @@
 import glob
 import json
 from dataclasses import dataclass, field
-from typing import Iterator
+from typing import Iterator, Mapping, TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from author_util.claim import ClaimRecord
 
 _PLUS_DIR = "../MAM-parsed/plus"
 _PLAIN_DIR = "../MAM-parsed/plain"
@@ -37,6 +40,7 @@ class Context:
     corpus_plain: PlainCorpus
     survey: dict  # loaded plus.json from out/MAM-tmpl-survey/
     survey_plain: dict  # loaded plain.json from out/MAM-tmpl-survey/
+    claim_records: Mapping[str, "ClaimRecord"] | None = None
 
 
 def load_plus_corpus() -> Corpus:

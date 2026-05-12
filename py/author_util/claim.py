@@ -66,14 +66,26 @@ class ClaimRecord:
     defined_in: str  # module name where the claim() call lives
 
 
-REGISTRY: dict[str, ClaimRecord] = {}
+@dataclass(frozen=True)
+class ClaimEmission:
+    record: ClaimRecord
 
 
-def claim(claim_id: str, payload, *, kind: str, subject: str, data: Any = None):
-    """Register a claim and return `payload` unchanged.
+def _infer_defined_in(stack_depth: int = 1) -> str:
+    frame = inspect.stack()[stack_depth]
+    module = inspect.getmodule(frame.frame)
+    return module.__name__ if module is not None else "<unknown>"
 
-    Raises on duplicate id, unknown kind, or unknown subject.
-    """
+
+def make_record(
+    claim_id: str,
+    *,
+    kind: str,
+    subject: str,
+    data: Any = None,
+    defined_in: str | None = None,
+) -> ClaimRecord:
+    """Validate claim metadata and return a canonical ClaimRecord."""
     if kind not in KINDS:
         raise ValueError(f"claim {claim_id!r}: unknown kind {kind!r}")
     if subject not in SUBJECTS:
@@ -83,16 +95,67 @@ def claim(claim_id: str, payload, *, kind: str, subject: str, data: Any = None):
         raise ValueError(
             f"claim {claim_id!r}: id must start with 'mp.{expected_ns}.' for subject {subject!r}"
         )
-    if claim_id in REGISTRY:
-        raise ValueError(f"duplicate claim id: {claim_id!r}")
-    frame = inspect.stack()[1]
-    module = inspect.getmodule(frame.frame)
-    defined_in = module.__name__ if module is not None else "<unknown>"
-    REGISTRY[claim_id] = ClaimRecord(
+    return ClaimRecord(
         id=claim_id,
         kind=kind,
         subject=subject,
         data=data,
-        defined_in=defined_in,
+        defined_in=defined_in if defined_in is not None else _infer_defined_in(3),
     )
+
+
+class ClaimCollection:
+    """Explicit claim collector with canonical records and per-use emissions."""
+
+    def __init__(self) -> None:
+        self.records_by_id: dict[str, ClaimRecord] = {}
+        self.emissions: list[ClaimEmission] = []
+
+    def emit(self, record: ClaimRecord) -> None:
+        existing = self.records_by_id.get(record.id)
+        if existing is None:
+            self.records_by_id[record.id] = record
+            canonical = record
+        else:
+            if (
+                existing.kind != record.kind
+                or existing.subject != record.subject
+                or existing.data != record.data
+            ):
+                raise ValueError(f"conflicting duplicate claim id: {record.id!r}")
+            canonical = existing
+        self.emissions.append(ClaimEmission(record=canonical))
+
+    def claim(
+        self,
+        claim_id: str,
+        payload,
+        *,
+        kind: str,
+        subject: str,
+        data: Any = None,
+    ):
+        """Validate + emit claim metadata and return payload unchanged."""
+        record = make_record(
+            claim_id,
+            kind=kind,
+            subject=subject,
+            data=data,
+        )
+        self.emit(record)
+        return payload
+
+
+REGISTRY: dict[str, ClaimRecord] = {}
+
+
+def claim(claim_id: str, payload, *, kind: str, subject: str, data: Any = None):
+    """Register a claim and return `payload` unchanged.
+
+    Raises on duplicate id, unknown kind, or unknown subject.
+    """
+    record = make_record(claim_id, kind=kind, subject=subject, data=data)
+    if claim_id in REGISTRY:
+        raise ValueError(f"duplicate claim id: {claim_id!r}")
+    REGISTRY[claim_id] = record
     return payload

@@ -4,7 +4,7 @@
 import glob
 from pathlib import Path
 
-from author_util.claim import ClaimRecord, REGISTRY
+from author_util.claim import ClaimRecord
 from verify_mp import survey_artifact
 from verify_mp import kq_special_counts
 from verify_mp.corpus import (
@@ -245,11 +245,14 @@ def verify_mp_both_templates_all_groups_cover_all_observed(
 
     Collects all declared template names from mp.both.templates.*.set,
     mp.both.templates.note, and mp.plain.templates.*.set claims in
-    REGISTRY, then asserts that every template name observed in either
+    ctx.claim_records, then asserts that every template name observed in either
     corpus survey (union) is in the resulting union of declared templates.
     """
+    assert (
+        ctx.claim_records is not None
+    ), "ctx.claim_records was not provided to verifier context"
     declared: set[str] = set()
-    for cid, rec in REGISTRY.items():
+    for cid, rec in ctx.claim_records.items():
         is_both = cid.startswith("mp.both.templates.") and (
             cid.endswith(".set") or cid == "mp.both.templates.note"
         )

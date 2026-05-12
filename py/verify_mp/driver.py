@@ -2,8 +2,9 @@
 """Verifier driver: build dispatch dict, run verifiers, report results."""
 
 import sys
+from typing import Mapping
 
-from author_util.claim import REGISTRY, ClaimRecord
+from author_util.claim import REGISTRY, ClaimCollection, ClaimRecord
 from verify_mp import verifiers_plus, verifiers_both, verifiers_plain
 from verify_mp.corpus import Context
 
@@ -19,10 +20,23 @@ def claim_id_to_fn_name(claim_id: str) -> str:
     return "verify_" + claim_id.replace(".", "_").replace("-", "_")
 
 
-def build_verifiers() -> dict:
-    """Map each registered claim id to its verifier function (where one exists)."""
+def _records_by_id(
+    claims: ClaimCollection | Mapping[str, ClaimRecord] | None,
+) -> Mapping[str, ClaimRecord]:
+    if claims is None:
+        return REGISTRY
+    if isinstance(claims, ClaimCollection):
+        return claims.records_by_id
+    return claims
+
+
+def build_verifiers(
+    claims: ClaimCollection | Mapping[str, ClaimRecord] | None = None,
+) -> dict:
+    """Map each claim id to its verifier function (where one exists)."""
+    records = _records_by_id(claims)
     result = {}
-    for claim_id in REGISTRY:
+    for claim_id in records:
         fn_name = claim_id_to_fn_name(claim_id)
         for mod in _VERIFIER_MODULES:
             fn = getattr(mod, fn_name, None)
@@ -32,24 +46,29 @@ def build_verifiers() -> dict:
     return result
 
 
-def run(ctx: Context) -> None:
+def run(
+    ctx: Context,
+    claims: ClaimCollection | Mapping[str, ClaimRecord] | None = None,
+) -> None:
     """Run all verifiers; print a report; exit with code 1 if any verifier fails.
 
     Claims with no verifier are reported as 'pending' (not failures), since this
     verifier suite is built incrementally.  A verifier function that exists in a
-    verifier module but has no matching claim id in REGISTRY IS treated as an error
+    verifier module but has no matching claim id IS treated as an error
     (orphaned verifier).
     """
-    verifiers = build_verifiers()
+    records = _records_by_id(claims)
+    ctx.claim_records = records
+    verifiers = build_verifiers(records)
 
-    # Check for orphaned verifier functions (verifier exists, claim id not in REGISTRY).
+    # Check for orphaned verifier functions (verifier exists, claim id not in claims).
     all_fn_names = {
         name
         for mod in _VERIFIER_MODULES
         for name in dir(mod)
         if name.startswith("verify_")
     }
-    registered_fn_names = {claim_id_to_fn_name(cid) for cid in REGISTRY}
+    registered_fn_names = {claim_id_to_fn_name(cid) for cid in records}
     orphaned = all_fn_names - registered_fn_names
     if orphaned:
         print("ERROR: verifier function(s) with no matching claim id:", file=sys.stderr)
@@ -61,7 +80,7 @@ def run(ctx: Context) -> None:
     failed: list[tuple[str, str]] = []
     pending: list[str] = []
 
-    for claim_id, record in sorted(REGISTRY.items()):
+    for claim_id, record in sorted(records.items()):
         if claim_id not in verifiers:
             pending.append(claim_id)
             continue
