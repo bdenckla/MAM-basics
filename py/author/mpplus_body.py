@@ -300,7 +300,7 @@ _DIFF_ROWS = [
     [mb_html.code("good_ending_plus"), "Not present", "Added (at book39 level)"],
     [
         "Words with special letters",
-        "word split/interrupted by inline letter templates",
+        "word interrupted by inline letter templates",
         [
             "whole word wrapped by ",
             author.hbo("מ:אות-מיוחדת-במילה"),
