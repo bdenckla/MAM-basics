@@ -603,7 +603,7 @@ KQ_SPECIAL_ROWS = claim(
         [
             author.hbo("כו״ק כתיב מילה חדה וקרי תרתין מילין"),
             [
-                "1-atom $ketiv mapped to 2-atom $qere. See the rows of FOI section ",
+                "1-atom $ketiv, 2-atom $qere. See the rows of FOI section ",
                 _kq_simple_foi_link_for_sug("כו״ק כתיב מילה חדה וקרי תרתין מילין"),
                 " labelled k1q2-sr-kqq.",
             ],
@@ -622,7 +622,7 @@ KQ_SPECIAL_ROWS = claim(
         [
             author.hbo("כו״ק כתיב תרתין מילין וקרי מילה חדה"),
             [
-                "2-atom $ketiv mapped to 1-atom $qere. See FOI section ",
+                "2-atom $ketiv, 1-atom $qere. See FOI section ",
                 _kq_simple_foi_link_for_sug("כו״ק כתיב תרתין מילין וקרי מילה חדה"),
                 ".",
             ],
@@ -630,7 +630,7 @@ KQ_SPECIAL_ROWS = claim(
         [
             author.hbo("קו״כ כתיב מילה חדה וקרי תרתין מילין"),
             [
-                "1-atom $ketiv mapped to 2-atom $qere, following $maqaf."
+                "1-atom $ketiv, 2-atom $qere, following $maqaf."
                 " See the rows of FOI section ",
                 _kq_simple_foi_link_for_sug("קו״כ כתיב מילה חדה וקרי תרתין מילין"),
                 " labelled k1q2-sr-qqk.",
