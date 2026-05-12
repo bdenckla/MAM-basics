@@ -19,6 +19,9 @@ from author import (
 from author import (
     mpplus_haarah_2 as _haarah_2,
 )  # noqa: F401
+from author import (
+    mpplus_kaful as _kaful,
+)  # noqa: F401
 
 _populated = False
 
@@ -48,3 +51,4 @@ def populate() -> None:
     _plain.s_verse()
     _plain._s_common_templates()
     _haarah_2._build_body()
+    _kaful._build_body()

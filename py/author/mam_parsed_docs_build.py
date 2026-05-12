@@ -71,7 +71,7 @@ def build_docs_with_explicit_claims(
         mpplus_aot.gen_html_file(tdm_ch, claims=claims)
         mpplus_kq_special.gen_html_file(tdm_ch)
         mpplus_haarah_2.gen_html_file(tdm_ch, claims=claims)
-        mpplus_kaful.gen_html_file(tdm_ch)
+        mpplus_kaful.gen_html_file(tdm_ch, claims=claims)
         mpplus_good_ending.gen_html_file(tdm_ch)
 
     return claims

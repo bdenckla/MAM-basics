@@ -12,6 +12,7 @@ Output goes to ../MAM-parsed/gh-pages/mpplus_kaful.html.
 from mb_misc import mb_html
 from author_util import author
 from author_util import json_block
+from author_util.claim import ClaimCollection, claim
 
 _FNAME = "mpplus_kaful.html"
 _TITLE = "Dual-trope text"
@@ -29,13 +30,27 @@ _JSON_KAFUL = """\
 }"""
 
 
-def gen_html_file(tdm_ch):
+def _json_kaful(*, claims: ClaimCollection | None = None):
+    claim_fn = claims.claim if claims is not None else claim
+    return claim_fn(
+        "mp.plus.example.kaful-template-object",
+        _JSON_KAFUL,
+        kind="example",
+        subject="mp:plus",
+        data={
+            "tmpl_name": "מ:כפול",
+            "tmpl_param_names": ["כפול", "א", "ב"],
+        },
+    )
+
+
+def gen_html_file(tdm_ch, claims: ClaimCollection | None = None):
     """Generate reading_mam_parsed_plus_kaful.html in the given output directory."""
-    cbody = _build_body()
+    cbody = _build_body(claims=claims)
     return author.help_gen_html_file(__file__, tdm_ch, _FNAME, _TITLE, cbody)
 
 
-def _build_body():
+def _build_body(*, claims: ClaimCollection | None = None):
     back_link = author.anchor_h("Reading $MAM-parsed-plus", _PLUS_DOC)
     kaful_params = [
         [
@@ -62,7 +77,7 @@ def _build_body():
                 " (Genesis 35:22).",
             ]
         ),
-        json_block.json_block_raw_html(_JSON_KAFUL),
+        json_block.json_block_raw_html(_json_kaful(claims=claims)),
         author.para("Named parameters:"),
         author.std_table(kaful_params, arg_to_troh=["Param", "Description"]),
     ]
