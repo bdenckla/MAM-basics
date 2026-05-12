@@ -1048,7 +1048,7 @@ _FILE_NAMING_ROWS = _claim_payload(
 )
 
 
-def populate_claims(*, claims: ClaimCollection):
+def emit_claims(*, claims: ClaimCollection):
     """Emit mp_cmn claims into an explicit claims collection."""
     for claim_id, payload, kind, subject, data in _CLAIM_DEFS:
         _emit_claim_payload(

@@ -24,7 +24,7 @@ def build_docs_with_explicit_claims(
     from author import mpplus_kaful
     from author import mpplus_good_ending
 
-    mp_cmn.populate_claims(claims=claims)
+    mp_cmn.emit_claims(claims=claims)
     styles_mam_parsed.make_css_file_for_mam_parsed(str(out_dir_path / css_href))
     tdm_ch = str(out_dir_path), css_href
     mpplain.gen_html_file(tdm_ch, claims=claims)
