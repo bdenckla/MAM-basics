@@ -25,6 +25,10 @@ def _std_kq_tmpl(pointed_ketiv, pointed_qere):
     return wtp.mktmpl([["כו״ק"], [pointed_ketiv], [pointed_qere]], ignore_equals=True)
 
 
+def _special_kq_tmpl(sug_text):
+    return wtp.mktmpl([["מ:כו״ק מיוחד"], ["כְּתִיב"], ["קרי"], [f"סוג={sug_text}"]])
+
+
 class TrivialKqSubtypeClassifierTests(unittest.TestCase):
     def test_classify_xolam_he(self):
         tmpl = _trivial_tmpl("סוּתֹֽה", "סותה", "סוּתֽוֹ")
@@ -192,6 +196,26 @@ class TrivialKqFoiQualificationTests(unittest.TestCase):
             fct.qtar_qual(foi_target)["sug_cat"],
             kqs.UNRECOGNIZED_SUG_CAT_PREFIX + "סוג לא מוכר",
         )
+
+    def test_record_kq_as_foi_adds_full_special_kq_type_qualifier(self):
+        cases = (
+            ("כו״ק כתיב מילה חדה וקרי תרתין מילין", "k1q2-sr-kqq"),
+            ("קו״כ כתיב מילה חדה וקרי תרתין מילין", "k1q2-sr-qqk"),
+            ("כו״ק כתיב מילה חדה וקרי תרתין מילין בין שני מקפים", "k1q2-sr-bcom"),
+        )
+
+        for sug_text, expected_full_type in cases:
+            with self.subTest(expected_full_type=expected_full_type):
+                tmpl = _special_kq_tmpl(sug_text)
+
+                found = foiz_wt_kq_1._record_kq_as_foi(None, tuple(), tmpl)
+                foi_path, foi_target = found[0]
+
+                self.assertEqual(foi_path, ("kq-simple", "k1q2sr"))
+                self.assertEqual(
+                    fct.qtar_qual(foi_target),
+                    {"kq_type_full": expected_full_type},
+                )
 
 
 class TrivialKqSugReconciliationTests(unittest.TestCase):

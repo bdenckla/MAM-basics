@@ -18,10 +18,13 @@ def find_fois_wt(mroge):
 
 def _record_kq_as_foi(_foilers, stack, tmpl):
     tmpl_name = wtp.template_name(tmpl)
-    foi_path = "kq-simple", _FOI_PATH[_kq_type_for_tmpl(tmpl)]
+    kq_type = _kq_type_for_tmpl(tmpl)
+    foi_path = "kq-simple", _FOI_PATH[kq_type]
     stack_summary = fwh.stack_summary(_STACK_SUMMARIES, stack)
     foi_target_proper = _html_for_wtseq((tmpl,))
     foi_qualifier = {}
+    if kqst.is_special_kq_template_name(tmpl_name):
+        foi_qualifier["kq_type_full"] = kq_type
     if tmpl_name == "מ:קו״כ-אם-2":
         reconciled_subtype, reconciled_qualifier = (
             kq_trivial_sug.reconcile_subtype_for_foi(tmpl)
