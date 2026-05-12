@@ -12,7 +12,7 @@ Output goes to ../MAM-parsed/gh-pages/mpplain.html.
 from mb_misc import mb_html
 from author_util import author
 from author_util import json_block
-from author_util.claim import claim
+from author_util.claim import ClaimCollection, claim
 from author import mp_cmn as cmn
 
 _FNAME = "mpplain.html"
@@ -106,9 +106,9 @@ _PLAIN_ACCENT_TEMPLATES = [
 ]
 
 
-def gen_html_file(tdm_ch):
+def gen_html_file(tdm_ch, claims: ClaimCollection | None = None):
     """Generate mpplain.html in the given output directory."""
-    cbody = _build_body()
+    cbody = _build_body(claims=claims)
     return author.help_gen_html_file(__file__, tdm_ch, _FNAME, _TITLE, cbody)
 
 
@@ -117,16 +117,16 @@ def gen_html_file(tdm_ch):
 # ---------------------------------------------------------------------------
 
 
-def _build_body():
+def _build_body(*, claims: ClaimCollection | None = None):
     return [
         mb_html.heading_level_1(_TITLE),
         *cmn.s_file_naming(),
         *_s_top_level(),
-        *s_book39(),
-        *s_chapter(),
-        *s_verse(),
+        *s_book39(claims=claims),
+        *s_chapter(claims=claims),
+        *s_verse(claims=claims),
         *_s_template_objects(),
-        *_s_common_templates(),
+        *_s_common_templates(claims=claims),
         *_s_pseudo_verses(),
     ]
 
@@ -161,8 +161,9 @@ def _s_top_level():
     ]
 
 
-def s_book39():
-    _book39_rows = claim(
+def s_book39(*, claims: ClaimCollection | None = None):
+    claim_fn = claims.claim if claims is not None else claim
+    _book39_rows = claim_fn(
         "mp.plain.book39.fields",
         [
             [
@@ -199,8 +200,9 @@ def s_book39():
     ]
 
 
-def s_chapter():
-    _chapter_rows = claim(
+def s_chapter(*, claims: ClaimCollection | None = None):
+    claim_fn = claims.claim if claims is not None else claim
+    _chapter_rows = claim_fn(
         "mp.plain.chapter.pseudo-verse-keys",
         [
             [
@@ -239,7 +241,8 @@ def s_chapter():
     ]
 
 
-def s_verse():
+def s_verse(*, claims: ClaimCollection | None = None):
+    claim_fn = claims.claim if claims is not None else claim
     col_rows = [
         [
             "C",
@@ -292,7 +295,7 @@ def s_verse():
     return [
         author.heading_level_2("Verse (pseudo-verse) structure"),
         author.para(
-            claim(
+            claim_fn(
                 "mp.plain.verse.is-3-tuple",
                 "Each verse is a 3-element array corresponding to the C, D, and E"
                 " columns of the Google Sheet.",
@@ -304,7 +307,7 @@ def s_verse():
         author.std_table(col_rows),
         author.heading_level_3("Index 0 (Google column C): Verse separator"),
         author.para(
-            claim(
+            claim_fn(
                 "mp.plain.verse.c-col.semantics",
                 [
                     "The contents at index 0 indicate how this verse is separated from"
@@ -330,7 +333,7 @@ def s_verse():
         ),
         author.heading_level_3("Index 1 (Google column D): Verse label"),
         author.para(
-            claim(
+            claim_fn(
                 "mp.plain.verse.d-col.semantics",
                 [
                     "The content at index 1 is empty ",
@@ -359,7 +362,7 @@ def s_verse():
         ),
         author.heading_level_3("E column (index 2): Verse text"),
         author.para(
-            claim(
+            claim_fn(
                 "mp.plain.verse.e-col.semantics",
                 "Contains the actual verse text as a mixed array of strings"
                 " (Hebrew text with cantillation marks) and template objects"
@@ -409,8 +412,9 @@ def _s_template_objects():
     ]
 
 
-def _s_common_templates():
-    claim(
+def _s_common_templates(*, claims: ClaimCollection | None = None):
+    claim_fn = claims.claim if claims is not None else claim
+    claim_fn(
         "mp.plain.docs.common-templates.templates-in-plain-survey",
         "Templates listed in mpplain common-template tables are present in plain survey.",
         kind="enum",

@@ -66,7 +66,7 @@ def build_docs_with_explicit_claims(
 
         styles_mam_parsed.make_css_file_for_mam_parsed(str(out_dir_path / css_href))
         tdm_ch = str(out_dir_path), css_href
-        mpplain.gen_html_file(tdm_ch)
+        mpplain.gen_html_file(tdm_ch, claims=claims)
         mpplus.gen_html_file(tdm_ch)
         mpplus_aot.gen_html_file(tdm_ch, claims=claims)
         mpplus_kq_special.gen_html_file(tdm_ch)

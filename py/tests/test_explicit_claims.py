@@ -163,6 +163,28 @@ class TestExplicitClaims(unittest.TestCase):
         self.assertIn("mp.plus.example.kaful-template-object", claims.records_by_id)
         self.assertNotIn("mp.plus.example.kaful-template-object", claim_mod.REGISTRY)
 
+    def test_mpplain_import_has_no_claim_side_effects(self):
+        importlib.invalidate_caches()
+        importlib.import_module("author.mpplain")
+
+        self.assertNotIn("mp.plain.book39.fields", claim_mod.REGISTRY)
+
+    def test_mpplain_build_body_registers_legacy_claims(self):
+        mpplain = importlib.import_module("author.mpplain")
+
+        mpplain._build_body()
+
+        self.assertIn("mp.plain.book39.fields", claim_mod.REGISTRY)
+
+    def test_mpplain_build_body_can_emit_explicit_claims(self):
+        mpplain = importlib.import_module("author.mpplain")
+        claims = claim_mod.ClaimCollection()
+
+        mpplain._build_body(claims=claims)
+
+        self.assertIn("mp.plain.book39.fields", claims.records_by_id)
+        self.assertNotIn("mp.plain.book39.fields", claim_mod.REGISTRY)
+
 
 if __name__ == "__main__":
     unittest.main()
