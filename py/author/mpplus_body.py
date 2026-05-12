@@ -654,10 +654,8 @@ def s_common_templates():
                 [
                     author.hbo("מ:אות-מיוחדת-במילה"),
                     [
-                        "Marks a whole word containing a special (large, small, or suspended) letter."
-                        " Encodes the word in both interrupted form (arg 1: array decomposed around the special letter)"
-                        " and uninterrupted form (args 2–4: plain word string, dot-mask, and type code)."
-                        " Args 2–4 together are sufficient to recover all special-letter information without arg 1 (arg 5 is a redundant letter/type summary, derivable from args 3 and 4)."
+                        "Marks a whole word containing a special letter."
+                        " (By “special” we mean large, small, or suspended.)"
                         " See ",
                         author.anchor_h(
                             ["dedicated page for ", author.hbo("מ:אות-מיוחדת-במילה")],

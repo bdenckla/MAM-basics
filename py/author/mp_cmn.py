@@ -11,6 +11,7 @@ _GOOD_ENDING_DOC = "mpplus_good_ending.html"
 _KQ_SIMPLE_FOI_URL = (
     "https://bdenckla.github.io/MAM-with-doc/foi/foi-kq-simple.html#intro-"
 )
+_TWO_ACCENTS_OF_QUPO_ABBREV = "שני טעמים ..."
 
 # Keep this aligned with foi/foiz_wt_kq_1.py:_FOI_PATH for special k/q types.
 _KQ_SIMPLE_FOI_INTRO_BY_SPECIAL_KQ_TYPE = {
@@ -144,9 +145,7 @@ KQ_ROWS = claim(
         [
             author.hbo("מ:כו״ק מיוחד"),
             [
-                "Special $ketiv_qere. The required ",
-                author.hbo("סוג="),
-                " named parameter identifies the subtype. Nine subtypes.",
+                "Special $ketiv_qere. See <its dedicated page>.",
             ],
         ],
     ],
@@ -271,10 +270,13 @@ ACCENT_ROWS = claim(
         ],
         [
             author.hbo("מ:כפול"),
-            "Dual-cantillation span. Encodes a dually-accented text and its two singly-accented strands. Named params: כפול= (combined), א= and ב= (individual strands). Used for the two Decalogues and the Saga of Reuben.",
+            "Dual-cantillation span. See <its dedicated page>.",
         ],
         [
-            author.hbo(tmpln.TWO_ACCENTS_OF_QUPO),
+            author.hbo(
+                _TWO_ACCENTS_OF_QUPO_ABBREV,
+                {"title": tmpln.TWO_ACCENTS_OF_QUPO},
+            ),
             "Formats the two extra marks (above-accent + patah) on the QUPO Decalogue words (panay and mitahat). Parameter is the above-accent (may use מ:טעם).",
         ],
     ],
@@ -413,7 +415,7 @@ NOTE_ROW = claim(
     "mp.both.templates.note",
     [
         [author.hbo(tmpln.SCRDFF_NO_TAR), " / ", author.hbo(tmpln.SCRDFF_TAR)],
-        "Scroll-difference notes (Torah and Esther only). Note markers appear within the text itself. Parameter is the note text.",
+        "Scroll-difference notes (Torah and Esther only). See <the dedicated page for מ:הערה-2>.",
     ],
     kind="enum",
     subject="mp:both",
