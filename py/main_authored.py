@@ -42,6 +42,9 @@ from author import mpplus_haarah_2
 from author import mpplus_kaful
 from author import mpplus_good_ending
 from verify_mp import claims_doc
+from verify_mp import driver as verify_driver
+from verify_mp import survey_artifact
+from verify_mp.corpus import Context, load_plus_corpus, load_plain_corpus
 
 
 def _gen_index_html(top_dir_misc, index_entries):
@@ -106,6 +109,22 @@ def cmd_gen_mam_parsed_docs(_args):
     mpplus_haarah_2.gen_html_file(tdm_ch)
     mpplus_kaful.gen_html_file(tdm_ch)
     mpplus_good_ending.gen_html_file(tdm_ch)
+
+    skip_verify = bool(getattr(_args, "skip_verify_mp", False)) if _args else False
+    if not skip_verify:
+        print("Running MAM-parsed verification...")
+        corpus = load_plus_corpus()
+        corpus_plain = load_plain_corpus()
+        survey = survey_artifact.load()
+        survey_plain = survey_artifact.load_plain()
+        ctx = Context(
+            corpus=corpus,
+            corpus_plain=corpus_plain,
+            survey=survey,
+            survey_plain=survey_plain,
+        )
+        verify_driver.run(ctx)
+
     claims_path = claims_doc.write_output(populate_registry=False)
     print(f"Generated MAM-parsed docs in {out_dir}")
     print(f"Generated claims index in {claims_path}")
@@ -123,6 +142,10 @@ def main():
     sub.add_parser(
         "gen-mam-parsed-docs",
         help="Generate reading-MAM-parsed-plain/plus HTML docs in MAM-parsed/gh-pages/",
+    ).add_argument(
+        "--skip-verify-mp",
+        action="store_true",
+        help="Skip running claim verification after generating MAM-parsed docs.",
     )
     sub.add_parser(
         "gen-mp-claims-index",
