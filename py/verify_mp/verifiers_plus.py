@@ -414,13 +414,41 @@ def verify_mp_plus_example_nusach(record: ClaimRecord, ctx: Context) -> None:
     _assert_tmpl_object_in_corpus(record, ctx)
 
 
+def _match_with_ellipsis_placeholders(expected, actual) -> bool:
+    """Match nested JSON-like structures, treating "..." string as wildcard."""
+    if isinstance(expected, str):
+        if expected == "...":
+            return isinstance(actual, str)
+        return actual == expected
+
+    if isinstance(expected, list):
+        if not isinstance(actual, list) or len(actual) != len(expected):
+            return False
+        return all(
+            _match_with_ellipsis_placeholders(e_item, a_item)
+            for e_item, a_item in zip(expected, actual)
+        )
+
+    if isinstance(expected, dict):
+        if not isinstance(actual, dict) or frozenset(actual.keys()) != frozenset(
+            expected.keys()
+        ):
+            return False
+        return all(
+            _match_with_ellipsis_placeholders(expected[key], actual[key])
+            for key in expected
+        )
+
+    return actual == expected
+
+
 def verify_mp_plus_example_haarah_2_context(record: ClaimRecord, ctx: Context) -> None:
-    """The מ:הערה-2 context example occurs verbatim as a plus E-column value."""
+    """The מ:הערה-2 context example occurs with optional "..." string wildcards."""
     target = record.data
     for _book39, _ch_key, _v_key, verse in iter_verses(ctx.corpus):
-        if verse[2] == target:
+        if _match_with_ellipsis_placeholders(target, verse[2]):
             return
-    assert False, f"plus E-column example not found verbatim: {target!r}"
+    assert False, f"plus E-column example pattern not found: {target!r}"
 
 
 def verify_mp_plus_example_header_job(record: ClaimRecord, ctx: Context) -> None:
