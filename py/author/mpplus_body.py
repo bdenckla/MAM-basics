@@ -689,7 +689,7 @@ def s_plus_only_templates():
                 ),
                 author.anchor_h(
                     [
-                        "Special $ketiv_qere template — ",
+                        "Special $ketiv_qere — ",
                         author.hbo("מ:כו״ק מיוחד"),
                     ],
                     _KQ_SPECIAL_DOC,
