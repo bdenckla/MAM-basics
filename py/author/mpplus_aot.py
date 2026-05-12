@@ -12,7 +12,7 @@ Output goes to ../MAM-parsed/gh-pages/mpplus_aot.html.
 from mb_misc import mb_html
 from author_util import author
 from author_util import json_block
-from author_util.claim import ClaimCollection, REGISTRY, claim
+from author_util.claim import ClaimCollection
 
 _FNAME = "mpplus_aot.html"
 _TITLE = "Word with special letter(s)"
@@ -45,25 +45,18 @@ _AOT_INTRO_PAYLOAD = [
 
 
 def _emit_claim_payload(
-    claims: ClaimCollection | None,
+    claims: ClaimCollection,
     claim_id: str,
     payload,
     *,
     kind: str,
     subject: str,
     data=None,
-    register_legacy: bool = False,
 ):
-    if claims is None:
-        if not register_legacy:
-            return payload
-        if claim_id in REGISTRY:
-            return payload
-        return claim(claim_id, payload, kind=kind, subject=subject, data=data)
     return claims.claim(claim_id, payload, kind=kind, subject=subject, data=data)
 
 
-def _aot_intro(*, claims: ClaimCollection | None = None):
+def _aot_intro(*, claims: ClaimCollection):
     return _emit_claim_payload(
         claims,
         _AOT_INTRO_CLAIM_ID,
@@ -74,8 +67,8 @@ def _aot_intro(*, claims: ClaimCollection | None = None):
     )
 
 
-def populate_claims(*, claims: ClaimCollection | None = None):
-    """Emit mpplus_aot claim metadata into explicit claims or legacy REGISTRY."""
+def populate_claims(*, claims: ClaimCollection):
+    """Emit mpplus_aot claim metadata into an explicit claims collection."""
     _emit_claim_payload(
         claims,
         _AOT_INTRO_CLAIM_ID,
@@ -83,17 +76,16 @@ def populate_claims(*, claims: ClaimCollection | None = None):
         kind="struct",
         subject="mp:plus",
         data=_AOT_INTRO_CLAIM_DATA,
-        register_legacy=True,
     )
 
 
-def gen_html_file(tdm_ch, claims: ClaimCollection | None = None):
+def gen_html_file(tdm_ch, claims: ClaimCollection):
     """Generate mpplus_aot.html in the given output directory."""
     cbody = _build_body(claims=claims)
     return author.help_gen_html_file(__file__, tdm_ch, _FNAME, _TITLE, cbody)
 
 
-def _build_body(*, claims: ClaimCollection | None = None):
+def _build_body(*, claims: ClaimCollection):
     back_link = author.anchor_h("Reading $MAM-parsed-plus", _PLUS_DOC)
     return [
         author.heading_level_1(

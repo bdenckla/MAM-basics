@@ -112,19 +112,21 @@ class TestExplicitClaims(unittest.TestCase):
 
         self.assertNotIn("mp.plus.templates.aot.arg5-derivable", claim_mod.REGISTRY)
 
-    def test_mpplus_aot_build_body_has_no_legacy_claim_side_effects(self):
+    def test_mpplus_aot_build_body_requires_explicit_claims(self):
         aot = importlib.import_module("author.mpplus_aot")
 
-        aot._build_body()
+        with self.assertRaises(TypeError):
+            aot._build_body()
 
         self.assertNotIn("mp.plus.templates.aot.arg5-derivable", claim_mod.REGISTRY)
 
-    def test_mpplus_aot_populate_claims_registers_legacy_claim(self):
+    def test_mpplus_aot_populate_claims_requires_explicit_claims(self):
         aot = importlib.import_module("author.mpplus_aot")
 
-        aot.populate_claims()
+        with self.assertRaises(TypeError):
+            aot.populate_claims()
 
-        self.assertIn("mp.plus.templates.aot.arg5-derivable", claim_mod.REGISTRY)
+        self.assertNotIn("mp.plus.templates.aot.arg5-derivable", claim_mod.REGISTRY)
 
     def test_mpplus_aot_build_body_can_emit_explicit_claim(self):
         aot = importlib.import_module("author.mpplus_aot")
