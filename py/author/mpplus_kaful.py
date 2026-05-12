@@ -12,7 +12,7 @@ Output goes to ../MAM-parsed/gh-pages/mpplus_kaful.html.
 from mb_misc import mb_html
 from author_util import author
 from author_util import json_block
-from author_util.claim import ClaimCollection, claim
+from author_util.claim import ClaimCollection, REGISTRY, claim
 
 _FNAME = "mpplus_kaful.html"
 _TITLE = "Dual-trope"
@@ -29,18 +29,49 @@ _JSON_KAFUL = """\
   }
 }"""
 
+_KAFUL_CLAIM_ID = "mp.plus.example.kaful-template-object"
+_KAFUL_CLAIM_DATA = {
+    "tmpl_name": "מ:כפול",
+    "tmpl_param_names": ["כפול", "א", "ב"],
+}
+
+
+def _emit_claim_payload(
+    claims: ClaimCollection | None,
+    claim_id: str,
+    payload,
+    *,
+    kind: str,
+    subject: str,
+    data=None,
+):
+    if claims is None:
+        return payload
+    return claims.claim(claim_id, payload, kind=kind, subject=subject, data=data)
+
 
 def _json_kaful(*, claims: ClaimCollection | None = None):
-    claim_fn = claims.claim if claims is not None else claim
-    return claim_fn(
-        "mp.plus.example.kaful-template-object",
+    return _emit_claim_payload(
+        claims,
+        _KAFUL_CLAIM_ID,
         _JSON_KAFUL,
         kind="example",
         subject="mp:plus",
-        data={
-            "tmpl_name": "מ:כפול",
-            "tmpl_param_names": ["כפול", "א", "ב"],
-        },
+        data=_KAFUL_CLAIM_DATA,
+    )
+
+
+def populate_claims(*, claims: ClaimCollection | None = None):
+    """Emit mpplus_kaful claim metadata into explicit claims or legacy REGISTRY."""
+    claim_fn = claims.claim if claims is not None else claim
+    if claims is None and _KAFUL_CLAIM_ID in REGISTRY:
+        return
+    claim_fn(
+        _KAFUL_CLAIM_ID,
+        None,
+        kind="example",
+        subject="mp:plus",
+        data=_KAFUL_CLAIM_DATA,
     )
 
 
@@ -51,6 +82,8 @@ def gen_html_file(tdm_ch, claims: ClaimCollection | None = None):
 
 
 def _build_body(*, claims: ClaimCollection | None = None):
+    if claims is None:
+        populate_claims()
     back_link = author.anchor_h("Reading $MAM-parsed-plus", _PLUS_DOC)
     kaful_params = [
         [
