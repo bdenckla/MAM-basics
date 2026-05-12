@@ -59,18 +59,6 @@ def _json_kaful(*, claims: ClaimCollection):
     )
 
 
-def populate_claims(*, claims: ClaimCollection):
-    """Emit mpplus_kaful claim metadata into an explicit claims collection."""
-    _emit_claim_payload(
-        claims,
-        _KAFUL_CLAIM_ID,
-        None,
-        kind="example",
-        subject="mp:plus",
-        data=_KAFUL_CLAIM_DATA,
-    )
-
-
 def gen_html_file(tdm_ch, claims: ClaimCollection):
     """Generate reading_mam_parsed_plus_kaful.html in the given output directory."""
     cbody = _build_body(claims=claims)

@@ -12,6 +12,7 @@ Output goes to ../MAM-parsed/gh-pages/mpplus_good_ending.html.
 from mb_misc import mb_html
 from author_util import author
 from author_util import json_block
+from author_util.claim import ClaimCollection
 
 _FNAME = "mpplus_good_ending.html"
 _TITLE = "good_ending_plus"
@@ -36,13 +37,13 @@ _JSON_GOOD_ENDING = """\
 }"""
 
 
-def gen_html_file(tdm_ch):
+def gen_html_file(tdm_ch, claims: ClaimCollection):
     """Generate reading_mam_parsed_plus_good_ending.html in the given output directory."""
-    cbody = _build_body()
+    cbody = _build_body(claims=claims)
     return author.help_gen_html_file(__file__, tdm_ch, _FNAME, _TITLE, cbody)
 
 
-def _build_body():
+def _build_body(*, claims: ClaimCollection):
     back_link = author.anchor_h("Reading $MAM-parsed-plus", _PLUS_DOC)
     return [
         author.heading_level_1(mb_html.code("good_ending_plus")),

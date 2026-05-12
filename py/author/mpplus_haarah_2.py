@@ -87,18 +87,6 @@ def _haarah_2_in_context(*, claims: ClaimCollection):
     )
 
 
-def populate_claims(*, claims: ClaimCollection):
-    """Emit mpplus_haarah_2 claim metadata into an explicit claims collection."""
-    _emit_claim_payload(
-        claims,
-        _HAARAH_2_IN_CONTEXT_CLAIM_ID,
-        None,
-        kind="example",
-        subject="mp:plus",
-        data=_HAARAH_2_IN_CONTEXT_CLAIM_DATA,
-    )
-
-
 def gen_html_file(tdm_ch, claims: ClaimCollection):
     """Generate mpplus_haarah_2.html in the given output directory."""
     cbody = _build_body(claims=claims)

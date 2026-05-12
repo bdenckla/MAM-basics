@@ -9,9 +9,9 @@ To regenerate the output HTML, run from the repo root::
 Output goes to ../MAM-parsed/gh-pages/mpplus_kq_special.html.
 """
 
-from mb_misc import mb_html
 from author_util import author
 from author_util import json_block
+from author_util.claim import ClaimCollection
 from author import mp_cmn as cmn
 
 _FNAME = "mpplus_kq_special.html"
@@ -29,19 +29,44 @@ _JSON_KQ_SPECIAL = """\
   }
 }"""
 
+_KQ_SPECIAL_SUBTYPES_CLAIM_ID = "mp.both.templates.kq-special.subtypes"
+_KQ_SPECIAL_SUBTYPES_CLAIM_DATA = {
+    "template": "מ:כו״ק מיוחד",
+    "param": "סוג",
+    "values": [
+        "כו״ק בין שני מקפים",
+        "כו״ק כתיב מילה חדה וקרי תרתין מילין",
+        "כו״ק כתיב מילה חדה וקרי תרתין מילין בין שני מקפים",
+        "כו״ק כתיב תרתין מילין וקרי מילה חדה",
+        "קו״כ כתיב מילה חדה וקרי תרתין מילין",
+        "כו״ק קרי שונה מהכתיב בשתי מילים",
+        "קו״כ קרי שונה מהכתיב בשתי מילים",
+        "כו״ק של שתי מילים בהערה אחת",
+        "כו״ק של שלוש מילים בהערה אחת",
+    ],
+}
 
-def gen_html_file(tdm_ch):
+
+def _kq_special_rows(*, claims: ClaimCollection):
+    return claims.claim(
+        _KQ_SPECIAL_SUBTYPES_CLAIM_ID,
+        cmn.KQ_SPECIAL_ROWS,
+        kind="enum",
+        subject="mp:both",
+        data=_KQ_SPECIAL_SUBTYPES_CLAIM_DATA,
+    )
+
+
+def gen_html_file(tdm_ch, claims: ClaimCollection):
     """Generate reading_mam_parsed_plus_kq_special.html in the given output directory."""
-    cbody = _build_body()
+    cbody = _build_body(claims=claims)
     return author.help_gen_html_file(__file__, tdm_ch, _FNAME, _TITLE, cbody)
 
 
-def _build_body():
+def _build_body(*, claims: ClaimCollection):
     back_link = author.anchor_h("Reading $MAM-parsed-plus", _PLUS_DOC)
     return [
-        author.heading_level_1(
-            ["Special $ketiv_qere — ", author.hbo("מ:כו״ק מיוחד")]
-        ),
+        author.heading_level_1(["Special $ketiv_qere — ", author.hbo("מ:כו״ק מיוחד")]),
         author.para(["← Back to ", back_link]),
         author.para(
             [
@@ -71,7 +96,10 @@ def _build_body():
                 " template:",
             ]
         ),
-        author.std_table(cmn.KQ_SPECIAL_ROWS, arg_to_troh=["Type", "Meaning"]),
+        author.std_table(
+            _kq_special_rows(claims=claims),
+            arg_to_troh=["Type", "Meaning"],
+        ),
         author.para("Example (Job 38:1):"),
         json_block.json_block_raw_html(_JSON_KQ_SPECIAL),
     ]

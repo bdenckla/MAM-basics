@@ -2,47 +2,9 @@
 """Shared MAM-parsed authored-doc build traversal with explicit claims."""
 
 from pathlib import Path
-import sys
-from contextlib import contextmanager
 
-from author_util import claim as claim_mod
 from author_util.claim import ClaimCollection
 from mb_misc import styles_mam_parsed
-
-_CLAIM_MODULES = (
-    "author.mp_cmn",
-    "author.mpplain",
-    "author.mpplus_body",
-    "author.mpplus_aot",
-    "author.mpplus_haarah_2",
-)
-
-
-@contextmanager
-def _explicit_claim_scope(claims: ClaimCollection):
-    """Route claim emissions into `claims` for the duration of a build."""
-    legacy_claim = claim_mod.claim
-    claim_mod.claim = claims.claim
-
-    for mod_name in _CLAIM_MODULES:
-        mod = sys.modules.get(mod_name)
-        if mod is not None and hasattr(mod, "claim"):
-            setattr(mod, "claim", claims.claim)
-
-    try:
-        yield
-    finally:
-        claim_mod.claim = legacy_claim
-        for mod_name in _CLAIM_MODULES:
-            mod = sys.modules.get(mod_name)
-            if mod is not None and hasattr(mod, "claim"):
-                setattr(mod, "claim", legacy_claim)
-
-
-def _seed_from_registry(claims: ClaimCollection) -> None:
-    """Compatibility bridge for claims emitted before this helper runs."""
-    for record in claim_mod.REGISTRY.values():
-        claims.emit(record)
 
 
 def build_docs_with_explicit_claims(
@@ -52,28 +14,25 @@ def build_docs_with_explicit_claims(
 ) -> ClaimCollection:
     """Generate all MAM-parsed authored docs and return explicit claims."""
     claims = ClaimCollection()
-    _seed_from_registry(claims)
-
     out_dir_path = Path(out_dir)
-    with _explicit_claim_scope(claims):
-        from author import mp_cmn
-        from author import mpplain
-        from author import mpplus
-        from author import mpplus_aot
-        from author import mpplus_kq_special
-        from author import mpplus_haarah_2
-        from author import mpplus_kaful
-        from author import mpplus_good_ending
+    from author import mp_cmn
+    from author import mpplain
+    from author import mpplus
+    from author import mpplus_aot
+    from author import mpplus_kq_special
+    from author import mpplus_haarah_2
+    from author import mpplus_kaful
+    from author import mpplus_good_ending
 
-        mp_cmn.populate_claims(claims=claims)
-        styles_mam_parsed.make_css_file_for_mam_parsed(str(out_dir_path / css_href))
-        tdm_ch = str(out_dir_path), css_href
-        mpplain.gen_html_file(tdm_ch, claims=claims)
-        mpplus.gen_html_file(tdm_ch, claims=claims)
-        mpplus_aot.gen_html_file(tdm_ch, claims=claims)
-        mpplus_kq_special.gen_html_file(tdm_ch)
-        mpplus_haarah_2.gen_html_file(tdm_ch, claims=claims)
-        mpplus_kaful.gen_html_file(tdm_ch, claims=claims)
-        mpplus_good_ending.gen_html_file(tdm_ch)
+    mp_cmn.populate_claims(claims=claims)
+    styles_mam_parsed.make_css_file_for_mam_parsed(str(out_dir_path / css_href))
+    tdm_ch = str(out_dir_path), css_href
+    mpplain.gen_html_file(tdm_ch, claims=claims)
+    mpplus.gen_html_file(tdm_ch, claims=claims)
+    mpplus_aot.gen_html_file(tdm_ch, claims=claims)
+    mpplus_kq_special.gen_html_file(tdm_ch, claims=claims)
+    mpplus_haarah_2.gen_html_file(tdm_ch, claims=claims)
+    mpplus_kaful.gen_html_file(tdm_ch, claims=claims)
+    mpplus_good_ending.gen_html_file(tdm_ch, claims=claims)
 
     return claims

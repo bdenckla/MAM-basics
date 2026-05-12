@@ -67,18 +67,6 @@ def _aot_intro(*, claims: ClaimCollection):
     )
 
 
-def populate_claims(*, claims: ClaimCollection):
-    """Emit mpplus_aot claim metadata into an explicit claims collection."""
-    _emit_claim_payload(
-        claims,
-        _AOT_INTRO_CLAIM_ID,
-        None,
-        kind="struct",
-        subject="mp:plus",
-        data=_AOT_INTRO_CLAIM_DATA,
-    )
-
-
 def gen_html_file(tdm_ch, claims: ClaimCollection):
     """Generate mpplus_aot.html in the given output directory."""
     cbody = _build_body(claims=claims)

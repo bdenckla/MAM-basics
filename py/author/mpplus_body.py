@@ -213,19 +213,6 @@ def _emit_claim_payload(
     return claims.claim(claim_id, payload, kind=kind, subject=subject, data=data)
 
 
-def populate_claims(*, claims: ClaimCollection):
-    """Emit mpplus_body claim metadata into an explicit claims collection."""
-    for claim_id, kind, subject, data in _CLAIM_DEFS:
-        _emit_claim_payload(
-            claims,
-            claim_id,
-            None,
-            kind=kind,
-            subject=subject,
-            data=data,
-        )
-
-
 # ---------------------------------------------------------------------------
 # JSON snippets
 # ---------------------------------------------------------------------------
