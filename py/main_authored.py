@@ -8,7 +8,7 @@ Subcommands:
   gen-mam-parsed-docs  Write mpplain.html and
                        mpplus.html to MAM-parsed/gh-pages/.
     verify-mp            Run MAM-parsed claim verification.
-    gen-mp-claims-index  Write doc/mp-claims.md from registered claims
+        gen-mp-claims-index  Write doc/mp-claims.md from explicit claims
                                              and available verifier functions.
                        Run this after editing py/author/mpplain.py,
                        py/author/mpplus.py, or
@@ -89,12 +89,8 @@ def cmd_gen_misc(_args):
     almost_main()
 
 
-def _run_verify_mp(*, populate_registry: bool, claims=None) -> None:
+def _run_verify_mp(*, claims) -> None:
     """Run MAM-parsed claim verification against corpus + survey artifacts."""
-    if claims is None and populate_registry:
-        from verify_mp import registry_load
-
-        registry_load.populate()
     corpus = load_plus_corpus()
     corpus_plain = load_plain_corpus()
     survey = survey_artifact.load()
@@ -115,20 +111,25 @@ def cmd_gen_mam_parsed_docs(_args):
     skip_verify = bool(getattr(_args, "skip_verify_mp", False)) if _args else False
     if not skip_verify:
         print("Running MAM-parsed verification...")
-        _run_verify_mp(populate_registry=False, claims=claims)
+        _run_verify_mp(claims=claims)
 
-    claims_path = claims_doc.write_output(claims, populate_registry=False)
+    claims_path = claims_doc.write_output(claims)
     print(f"Generated MAM-parsed docs in {out_dir}")
     print(f"Generated claims index in {claims_path}")
 
 
 def cmd_gen_mp_claims_index(_args):
-    out_path = claims_doc.write_output()
+    out_dir = "../MAM-parsed/gh-pages"
+    claims = mam_parsed_docs_build.build_docs_with_explicit_claims(out_dir)
+    out_path = claims_doc.write_output(claims)
     print(f"Generated claims index in {out_path}")
 
 
 def cmd_verify_mp(_args):
-    _run_verify_mp(populate_registry=True)
+    claims = mam_parsed_docs_build.build_docs_with_explicit_claims(
+        "../MAM-parsed/gh-pages"
+    )
+    _run_verify_mp(claims=claims)
 
 
 def main():

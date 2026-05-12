@@ -7,9 +7,6 @@ from verify_mp import claims_doc, driver
 
 
 class TestExplicitClaims(unittest.TestCase):
-    def setUp(self):
-        claim_mod.REGISTRY.clear()
-
     def test_claim_collection_allows_identical_duplicate_emissions(self):
         claims = claim_mod.ClaimCollection()
 
@@ -55,24 +52,9 @@ class TestExplicitClaims(unittest.TestCase):
                 data={"x": 2},
             )
 
-    def test_legacy_registry_claim_still_rejects_any_duplicate(self):
-        claim_mod.claim(
-            "mp.plain.example.legacy-dup",
-            "first",
-            kind="example",
-            subject="mp:plain",
-        )
-
-        with self.assertRaisesRegex(
-            ValueError,
-            r"duplicate claim id: 'mp\.plain\.example\.legacy-dup'",
-        ):
-            claim_mod.claim(
-                "mp.plain.example.legacy-dup",
-                "second",
-                kind="example",
-                subject="mp:plain",
-            )
+    def test_legacy_global_registry_api_is_removed(self):
+        self.assertFalse(hasattr(claim_mod, "REGISTRY"))
+        self.assertFalse(hasattr(claim_mod, "claim"))
 
     def test_claims_doc_generate_uses_explicit_claims(self):
         claims = claim_mod.ClaimCollection()
@@ -108,9 +90,9 @@ class TestExplicitClaims(unittest.TestCase):
 
     def test_mpplus_aot_import_has_no_claim_side_effects(self):
         importlib.invalidate_caches()
-        importlib.import_module("author.mpplus_aot")
+        aot = importlib.import_module("author.mpplus_aot")
 
-        self.assertNotIn("mp.plus.templates.aot.arg5-derivable", claim_mod.REGISTRY)
+        self.assertFalse(hasattr(aot, "populate_claims"))
 
     def test_mpplus_aot_build_body_requires_explicit_claims(self):
         aot = importlib.import_module("author.mpplus_aot")
@@ -118,15 +100,9 @@ class TestExplicitClaims(unittest.TestCase):
         with self.assertRaises(TypeError):
             aot._build_body()
 
-        self.assertNotIn("mp.plus.templates.aot.arg5-derivable", claim_mod.REGISTRY)
-
     def test_mpplus_aot_populate_claims_requires_explicit_claims(self):
         aot = importlib.import_module("author.mpplus_aot")
-
-        with self.assertRaises(TypeError):
-            aot.populate_claims()
-
-        self.assertNotIn("mp.plus.templates.aot.arg5-derivable", claim_mod.REGISTRY)
+        self.assertFalse(hasattr(aot, "populate_claims"))
 
     def test_mpplus_aot_build_body_can_emit_explicit_claim(self):
         aot = importlib.import_module("author.mpplus_aot")
@@ -135,27 +111,22 @@ class TestExplicitClaims(unittest.TestCase):
         aot._build_body(claims=claims)
 
         self.assertIn("mp.plus.templates.aot.arg5-derivable", claims.records_by_id)
-        self.assertNotIn("mp.plus.templates.aot.arg5-derivable", claim_mod.REGISTRY)
 
     def test_mpplus_haarah_2_import_has_no_claim_side_effects(self):
         importlib.invalidate_caches()
-        importlib.import_module("author.mpplus_haarah_2")
+        haarah_2 = importlib.import_module("author.mpplus_haarah_2")
 
-        self.assertNotIn("mp.plus.example.haarah-2-context", claim_mod.REGISTRY)
+        self.assertFalse(hasattr(haarah_2, "populate_claims"))
 
     def test_mpplus_haarah_2_build_body_has_no_legacy_claim_side_effects(self):
         haarah_2 = importlib.import_module("author.mpplus_haarah_2")
+        claims = claim_mod.ClaimCollection()
 
-        haarah_2._build_body()
-
-        self.assertNotIn("mp.plus.example.haarah-2-context", claim_mod.REGISTRY)
+        haarah_2._build_body(claims=claims)
 
     def test_mpplus_haarah_2_populate_claims_registers_legacy_claim(self):
         haarah_2 = importlib.import_module("author.mpplus_haarah_2")
-
-        haarah_2.populate_claims()
-
-        self.assertIn("mp.plus.example.haarah-2-context", claim_mod.REGISTRY)
+        self.assertFalse(hasattr(haarah_2, "populate_claims"))
 
     def test_mpplus_haarah_2_build_body_can_emit_explicit_claim(self):
         haarah_2 = importlib.import_module("author.mpplus_haarah_2")
@@ -164,21 +135,18 @@ class TestExplicitClaims(unittest.TestCase):
         haarah_2._build_body(claims=claims)
 
         self.assertIn("mp.plus.example.haarah-2-context", claims.records_by_id)
-        self.assertNotIn("mp.plus.example.haarah-2-context", claim_mod.REGISTRY)
 
     def test_mpplus_kaful_import_has_no_claim_side_effects(self):
         importlib.invalidate_caches()
-        importlib.import_module("author.mpplus_kaful")
+        kaful = importlib.import_module("author.mpplus_kaful")
 
-        self.assertNotIn("mp.plus.example.kaful-template-object", claim_mod.REGISTRY)
+        self.assertFalse(hasattr(kaful, "populate_claims"))
 
     def test_mpplus_kaful_build_body_requires_explicit_claims(self):
         kaful = importlib.import_module("author.mpplus_kaful")
 
         with self.assertRaises(TypeError):
             kaful._build_body()
-
-        self.assertNotIn("mp.plus.example.kaful-template-object", claim_mod.REGISTRY)
 
     def test_mpplus_kaful_build_body_can_emit_explicit_claim(self):
         kaful = importlib.import_module("author.mpplus_kaful")
@@ -187,27 +155,22 @@ class TestExplicitClaims(unittest.TestCase):
         kaful._build_body(claims=claims)
 
         self.assertIn("mp.plus.example.kaful-template-object", claims.records_by_id)
-        self.assertNotIn("mp.plus.example.kaful-template-object", claim_mod.REGISTRY)
 
     def test_mpplain_import_has_no_claim_side_effects(self):
         importlib.invalidate_caches()
-        importlib.import_module("author.mpplain")
+        mpplain = importlib.import_module("author.mpplain")
 
-        self.assertNotIn("mp.plain.book39.fields", claim_mod.REGISTRY)
+        self.assertFalse(hasattr(mpplain, "populate_claims"))
 
     def test_mpplain_build_body_has_no_legacy_claim_side_effects(self):
         mpplain = importlib.import_module("author.mpplain")
+        claims = claim_mod.ClaimCollection()
 
-        mpplain._build_body()
-
-        self.assertNotIn("mp.plain.book39.fields", claim_mod.REGISTRY)
+        mpplain._build_body(claims=claims)
 
     def test_mpplain_populate_claims_registers_legacy_claims(self):
         mpplain = importlib.import_module("author.mpplain")
-
-        mpplain.populate_claims()
-
-        self.assertIn("mp.plain.book39.fields", claim_mod.REGISTRY)
+        self.assertFalse(hasattr(mpplain, "populate_claims"))
 
     def test_mpplain_build_body_can_emit_explicit_claims(self):
         mpplain = importlib.import_module("author.mpplain")
@@ -216,7 +179,6 @@ class TestExplicitClaims(unittest.TestCase):
         mpplain._build_body(claims=claims)
 
         self.assertIn("mp.plain.book39.fields", claims.records_by_id)
-        self.assertNotIn("mp.plain.book39.fields", claim_mod.REGISTRY)
 
 
 if __name__ == "__main__":

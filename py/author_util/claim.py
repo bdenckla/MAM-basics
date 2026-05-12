@@ -3,28 +3,22 @@
 
 A *claim* is a falsifiable statement made by the docs about the data corpus
 (MAM-parsed-plain or MAM-parsed-plus). Each claim is given a stable id and
-registered in `REGISTRY` at import time. A separate verifier module is
-expected to map each id to a function that programmatically checks the
+emitted into an explicit `ClaimCollection` during doc generation. A separate
+verifier module maps each id to a function that programmatically checks the
 claim against the corpus.
 
 Usage (inline, returns its payload unchanged so it slots into the existing
 author-helper calls):
 
-    author.para(claim(
-        "mp.plus.verse.is-3-tuple",
-        "Each verse is a 3-element array [C, D, E].",
-        kind="struct", subject="mp:plus",
-        data={"shape": ["sep", "label", "text"]},
-    ))
-
-For module-level constants (e.g. row tables, JSON snippets) wrap the value
-at its definition site:
-
-    KQ_ROWS = claim(
-        "mp.both.templates.kq.set",
-        [ ... ],
-        kind="enum", subject="mp:both",
-        data={"templates": ["כו״ק", ...]},
+    claims = ClaimCollection()
+    author.para(
+        claims.claim(
+            "mp.plus.verse.is-3-tuple",
+            "Each verse is a 3-element array [C, D, E].",
+            kind="struct",
+            subject="mp:plus",
+            data={"shape": ["sep", "label", "text"]},
+        )
     )
 
 Fields:
@@ -37,7 +31,7 @@ Fields:
                 list of expected template names, etc.). May be None during
                 bootstrap; verifier authors will fill it in.
 
-The wrapper performs *no* verification itself; it only records the claim.
+The collector performs *no* verification itself; it only records claims.
 """
 
 from dataclasses import dataclass
@@ -144,18 +138,3 @@ class ClaimCollection:
         )
         self.emit(record)
         return payload
-
-
-REGISTRY: dict[str, ClaimRecord] = {}
-
-
-def claim(claim_id: str, payload, *, kind: str, subject: str, data: Any = None):
-    """Register a claim and return `payload` unchanged.
-
-    Raises on duplicate id, unknown kind, or unknown subject.
-    """
-    record = make_record(claim_id, kind=kind, subject=subject, data=data)
-    if claim_id in REGISTRY:
-        raise ValueError(f"duplicate claim id: {claim_id!r}")
-    REGISTRY[claim_id] = record
-    return payload

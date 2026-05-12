@@ -4,7 +4,7 @@
 import sys
 from typing import Mapping
 
-from author_util.claim import REGISTRY, ClaimCollection, ClaimRecord
+from author_util.claim import ClaimCollection, ClaimRecord
 from verify_mp import verifiers_plus, verifiers_both, verifiers_plain
 from verify_mp.corpus import Context
 
@@ -21,17 +21,15 @@ def claim_id_to_fn_name(claim_id: str) -> str:
 
 
 def _records_by_id(
-    claims: ClaimCollection | Mapping[str, ClaimRecord] | None,
+    claims: ClaimCollection | Mapping[str, ClaimRecord],
 ) -> Mapping[str, ClaimRecord]:
-    if claims is None:
-        return REGISTRY
     if isinstance(claims, ClaimCollection):
         return claims.records_by_id
     return claims
 
 
 def build_verifiers(
-    claims: ClaimCollection | Mapping[str, ClaimRecord] | None = None,
+    claims: ClaimCollection | Mapping[str, ClaimRecord],
 ) -> dict:
     """Map each claim id to its verifier function (where one exists)."""
     records = _records_by_id(claims)
@@ -48,7 +46,7 @@ def build_verifiers(
 
 def run(
     ctx: Context,
-    claims: ClaimCollection | Mapping[str, ClaimRecord] | None = None,
+    claims: ClaimCollection | Mapping[str, ClaimRecord],
 ) -> None:
     """Run all verifiers; print a report; exit with code 1 if any verifier fails.
 

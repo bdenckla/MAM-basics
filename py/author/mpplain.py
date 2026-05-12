@@ -105,51 +105,6 @@ _PLAIN_ACCENT_TEMPLATES = [
     "שני טעמים באות אחת קמץ-תחתון-פתח-עליון",
 ]
 
-_CLAIM_DEFS = (
-    (
-        "mp.plain.book39.fields",
-        "struct",
-        "mp:plain",
-        {"book39_keys": ["book24_name", "sub_book_name", "chapters"]},
-    ),
-    (
-        "mp.plain.chapter.pseudo-verse-keys",
-        "struct",
-        "mp:plain",
-        {"pseudo_verse_keys": ["0", "תתת"]},
-    ),
-    (
-        "mp.plain.verse.is-3-tuple",
-        "struct",
-        "mp:plain",
-        {"shape": ["sep", "label", "text"], "length": 3},
-    ),
-    (
-        "mp.plain.verse.c-col.semantics",
-        "struct",
-        "mp:plain",
-        None,
-    ),
-    (
-        "mp.plain.verse.d-col.semantics",
-        "struct",
-        "mp:plain",
-        {"label_template": "מ:פסוק", "always_present": True},
-    ),
-    (
-        "mp.plain.verse.e-col.semantics",
-        "struct",
-        "mp:plain",
-        {"element_types": ["string", "stmpl", "tmpl", "custom_tag"]},
-    ),
-    (
-        "mp.plain.docs.common-templates.templates-in-plain-survey",
-        "enum",
-        "mp:plain",
-        {"templates": _PLAIN_COMMON_TEMPLATES},
-    ),
-)
-
 
 def _emit_claim_payload(
     claims: ClaimCollection,
@@ -161,19 +116,6 @@ def _emit_claim_payload(
     data=None,
 ):
     return claims.claim(claim_id, payload, kind=kind, subject=subject, data=data)
-
-
-def populate_claims(*, claims: ClaimCollection):
-    """Emit mpplain claim metadata into an explicit claims collection."""
-    for claim_id, kind, subject, data in _CLAIM_DEFS:
-        _emit_claim_payload(
-            claims,
-            claim_id,
-            None,
-            kind=kind,
-            subject=subject,
-            data=data,
-        )
 
 
 def gen_html_file(tdm_ch, claims: ClaimCollection):
