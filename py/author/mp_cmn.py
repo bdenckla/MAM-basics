@@ -5,7 +5,8 @@ from mb_misc import mb_html
 from mb_cmn import kq_special_templates as kqst
 from mb_cmn import template_names as tmpln
 from author_util import author
-from author_util.claim import claim
+from author_util.claim import ClaimCollection, REGISTRY, claim
+from typing import Any
 
 _GOOD_ENDING_DOC = "mpplus_good_ending.html"
 _KQ_SPECIAL_DOC = "mpplus_kq_special.html"
@@ -29,6 +30,20 @@ _KQ_SIMPLE_FOI_INTRO_BY_SPECIAL_KQ_TYPE = {
     "k3q3": "k3q3",
 }
 
+_CLAIM_DEFS: list[tuple[str, Any, str, str, Any]] = []
+
+
+def _claim_payload(
+    claim_id: str,
+    payload,
+    *,
+    kind: str,
+    subject: str,
+    data: Any = None,
+):
+    _CLAIM_DEFS.append((claim_id, payload, kind, subject, data))
+    return payload
+
 
 def _kq_simple_foi_link(label: str):
     return author.anc_h(label, _KQ_SIMPLE_FOI_URL + label)
@@ -47,7 +62,7 @@ def _kq_simple_foi_link_for_sug(sug_text: str):
 # JSON snippets shared by plain and plus common-templates sections
 # ---------------------------------------------------------------------------
 
-JSON_KQ = claim(
+JSON_KQ = _claim_payload(
     "mp.plain.example.kq",
     """\
 {"stmpl": "קו"כ|את|אַ֠תָּ֠ה"}""",
@@ -56,7 +71,7 @@ JSON_KQ = claim(
     data={"stmpl": 'קו"כ|את|אַ֠תָּ֠ה'},
 )
 
-JSON_KQ_PLUS = claim(
+JSON_KQ_PLUS = _claim_payload(
     "mp.plus.example.kq",
     """\
 {
@@ -74,7 +89,7 @@ JSON_KQ_PLUS = claim(
     },
 )
 
-JSON_NUSACH = claim(
+JSON_NUSACH = _claim_payload(
     "mp.plain.example.nusach",
     """\
 {"stmpl": "נוסח|וּבֵרְﬞכ֥וּ|2=א=וּבֵרֲכ֥וּ (חטף)"}""",
@@ -83,7 +98,7 @@ JSON_NUSACH = claim(
     data={"stmpl": "נוסח|וּבֵרְﬞכ֥וּ|2=א=וּבֵרֲכ֥וּ (חטף)"},
 )
 
-JSON_NUSACH_PLUS = claim(
+JSON_NUSACH_PLUS = _claim_payload(
     "mp.plus.example.nusach",
     """\
 {
@@ -108,7 +123,7 @@ JSON_NUSACH_PLUS = claim(
 # Table row data
 # ---------------------------------------------------------------------------
 
-KQ_ROWS = claim(
+KQ_ROWS = _claim_payload(
     "mp.both.templates.kq.set",
     [
         [
@@ -171,7 +186,7 @@ KQ_ROWS = claim(
     },
 )
 
-KQ_AM2_SUG_LIST = claim(
+KQ_AM2_SUG_LIST = _claim_payload(
     "mp.both.templates.kq-am2.sug-values",
     [
         author.hbo('אל"ף נחה באמצע תיבה ולא נקראת'),
@@ -195,7 +210,7 @@ KQ_AM2_SUG_LIST = claim(
     },
 )
 
-SPECIAL_LETTER_ROWS = claim(
+SPECIAL_LETTER_ROWS = _claim_payload(
     "mp.both.templates.special-letters.set",
     [
         [
@@ -227,7 +242,7 @@ SPECIAL_LETTER_ROWS = claim(
     },
 )
 
-ACCENT_ROWS = claim(
+ACCENT_ROWS = _claim_payload(
     "mp.both.templates.accents.set",
     [
         [
@@ -341,7 +356,7 @@ def accent_rows_for_templates(template_names):
     return [ACCENT_ROW_BY_TEMPLATE[n] for n in template_names]
 
 
-JER_ROWS = claim(
+JER_ROWS = _claim_payload(
     "mp.plain.templates.jerusalem.set",
     [
         [
@@ -358,7 +373,7 @@ JER_ROWS = claim(
     data={"templates": ["מ:ירושלם", "מ:ירושלמה"]},
 )
 
-POETIC_ROWS = claim(
+POETIC_ROWS = _claim_payload(
     "mp.both.templates.poetic.set",
     [
         [
@@ -386,7 +401,7 @@ POETIC_ROWS = claim(
     },
 )
 
-STRUCTURAL_ROWS = claim(
+STRUCTURAL_ROWS = _claim_payload(
     "mp.both.templates.structural.set",
     [
         [
@@ -452,7 +467,7 @@ STRUCTURAL_ROWS = claim(
     },
 )
 
-NOTE_ROW = claim(
+NOTE_ROW = _claim_payload(
     "mp.both.templates.note",
     [
         [author.hbo(tmpln.SCRDFF_NO_TAR), " / ", author.hbo(tmpln.SCRDFF_TAR)],
@@ -473,7 +488,7 @@ NOTE_ROW = claim(
 
 NOTE_ROW_PLAIN = [author.hbo(tmpln.SCRDFF_NO_TAR), NOTE_ROW[1]]
 
-NOTE_LINKS_ROW = claim(
+NOTE_LINKS_ROW = _claim_payload(
     "mp.both.templates.note-links.set",
     [
         [
@@ -495,7 +510,7 @@ NOTE_LINKS_ROW = claim(
     },
 )
 
-NAVIGATION_ROWS = claim(
+NAVIGATION_ROWS = _claim_payload(
     "mp.both.templates.navigation.set",
     [
         [
@@ -556,7 +571,7 @@ NAVIGATION_ROWS = claim(
     },
 )
 
-OTHER_ROWS = claim(
+OTHER_ROWS = _claim_payload(
     "mp.both.templates.other.set",
     [
         [
@@ -670,7 +685,7 @@ def other_rows_for_templates(template_names):
     return [OTHER_ROW_BY_TEMPLATE[n] for n in template_names]
 
 
-KQ_SPECIAL_ROWS = claim(
+KQ_SPECIAL_ROWS = _claim_payload(
     "mp.both.templates.kq-special.subtypes",
     [
         [
@@ -771,7 +786,7 @@ KQ_SPECIAL_ROWS = claim(
     },
 )
 
-KQ_SPECIAL_SUBTYPE_COUNTS = claim(
+KQ_SPECIAL_SUBTYPE_COUNTS = _claim_payload(
     "mp.both.templates.kq-special.subtype-counts",
     "For each kq-special subtype, verify declared ketiv/qere atom counts.",
     kind="struct",
@@ -820,7 +835,7 @@ KQ_SPECIAL_SUBTYPE_COUNTS = claim(
     },
 )
 
-ALL_GROUPS_COVER_ALL_OBSERVED = claim(
+ALL_GROUPS_COVER_ALL_OBSERVED = _claim_payload(
     "mp.both.templates.all-groups-cover-all-observed",
     "Every template observed in the corpus is covered by at least one declared group.",
     kind="enum",
@@ -834,7 +849,7 @@ ALL_GROUPS_COVER_ALL_OBSERVED = claim(
 # They cannot be listed in mp:both claims (they fail the intersection check).
 # This mp:plain claim covers them so the all-groups-cover-all-observed check
 # accounts for every template observed in the plain corpus.
-PLAIN_ONLY = claim(
+PLAIN_ONLY = _claim_payload(
     "mp.plain.templates.plain-only.set",
     "Templates present only in the plain corpus (not in the plus corpus).",
     kind="enum",
@@ -879,7 +894,7 @@ PLAIN_ONLY = claim(
 
 # Templates that appear only in the plus survey (not in the plain survey).
 # The all-groups-cover-all-observed check must account for them too.
-PLUS_ONLY = claim(
+PLUS_ONLY = _claim_payload(
     "mp.plus.templates.plus-only.set",
     "Templates present only in the plus corpus (not in the plain corpus).",
     kind="enum",
@@ -906,7 +921,7 @@ SHEETS_DATA = "https://purl.org/mam/google-sheet#gid=920165745"
 # (shared by plain and plus docs)
 # ---------------------------------------------------------------------------
 
-JSON_TOP_LEVEL = claim(
+JSON_TOP_LEVEL = _claim_payload(
     "mp.plain.example.top-level",
     """\
 {
@@ -927,7 +942,7 @@ JSON_TOP_LEVEL = claim(
     subject="mp:plain",
 )
 
-JSON_COMPOSITE = claim(
+JSON_COMPOSITE = _claim_payload(
     "mp.plain.example.top-level-composite",
     """\
 {
@@ -948,7 +963,7 @@ JSON_COMPOSITE = claim(
     subject="mp:plain",
 )
 
-JSON_BOOK39 = claim(
+JSON_BOOK39 = _claim_payload(
     "mp.plain.example.book39",
     """\
 {
@@ -966,7 +981,7 @@ JSON_BOOK39 = claim(
 # ---------------------------------------------------------------------------
 
 
-_FILE_NAMING_ROWS = claim(
+_FILE_NAMING_ROWS = _claim_payload(
     "mp.both.file-naming.book24-prefixes",
     [
         [
@@ -1019,6 +1034,15 @@ _FILE_NAMING_ROWS = claim(
         ]
     },
 )
+
+
+def populate_claims(*, claims: ClaimCollection | None = None):
+    """Emit mp_cmn claims into explicit claims or legacy REGISTRY."""
+    claim_fn = claims.claim if claims is not None else claim
+    if claims is None and _CLAIM_DEFS and _CLAIM_DEFS[0][0] in REGISTRY:
+        return
+    for claim_id, payload, kind, subject, data in _CLAIM_DEFS:
+        claim_fn(claim_id, payload, kind=kind, subject=subject, data=data)
 
 
 def s_file_naming():
