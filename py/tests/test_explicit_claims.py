@@ -156,6 +156,34 @@ class TestExplicitClaims(unittest.TestCase):
 
         self.assertIn("mp.plus.example.kaful-template-object", claims.records_by_id)
 
+    def test_mpplus_build_body_can_emit_representative_explicit_claims(self):
+        mpplus = importlib.import_module("author.mpplus")
+        claims = claim_mod.ClaimCollection()
+
+        mpplus._build_body(claims=claims)
+
+        representative_ids = [
+            "mp.plus.example.top-level-skel",
+            "mp.plus.header.fields",
+            "mp.plus.book39.fields",
+            "mp.plus.chapter.keyed-by-verse-num",
+            "mp.plus.verse.is-3-tuple",
+            "mp.plus.template.object-fields",
+            "mp.plus.template.format-example",
+            "mp.plain.template.stmpl-format-example",
+            "mp.plus.diff-from-plain",
+            "mp.plus.docs.common-templates.templates-in-plus-survey",
+        ]
+
+        for claim_id in representative_ids:
+            with self.subTest(claim_id=claim_id):
+                self.assertIn(claim_id, claims.records_by_id)
+
+    def test_mpplus_body_has_no_stale_claim_defs_table(self):
+        mpplus_body = importlib.import_module("author.mpplus_body")
+
+        self.assertFalse(hasattr(mpplus_body, "_CLAIM_DEFS"))
+
     def test_mpplain_import_has_no_claim_side_effects(self):
         importlib.invalidate_caches()
         mpplain = importlib.import_module("author.mpplain")
