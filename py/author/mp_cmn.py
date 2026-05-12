@@ -639,7 +639,8 @@ KQ_SPECIAL_ROWS = claim(
         [
             author.hbo("כו״ק קרי שונה מהכתיב בשתי מילים"),
             [
-                "1-atom $ketiv, 2-atom $qere. See FOI section ",
+                "1-atom $ketiv not strongly related to its 2-atom $qere."
+                " See FOI section ",
                 _kq_simple_foi_link_for_sug("כו״ק קרי שונה מהכתיב בשתי מילים"),
                 ".",
             ],
@@ -647,7 +648,8 @@ KQ_SPECIAL_ROWS = claim(
         [
             author.hbo("קו״כ קרי שונה מהכתיב בשתי מילים"),
             [
-                "1-atom $ketiv, 2-atom $qere, following $maqaf. See FOI section ",
+                "1-atom $ketiv not strongly related to its 2-atom $qere,"
+                " following $maqaf. See FOI section ",
                 _kq_simple_foi_link_for_sug("קו״כ קרי שונה מהכתיב בשתי מילים"),
                 ".",
             ],
