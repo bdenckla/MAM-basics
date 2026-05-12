@@ -7,6 +7,7 @@ Subcommands:
                        MAM-with-doc/gh-pages/misc/.
   gen-mam-parsed-docs  Write mpplain.html and
                        mpplus.html to MAM-parsed/gh-pages/.
+    verify-mp            Run MAM-parsed claim verification.
     gen-mp-claims-index  Write doc/mp-claims.md from registered claims
                                              and available verifier functions.
                        Run this after editing py/author/mpplain.py,
@@ -43,6 +44,7 @@ from author import mpplus_kaful
 from author import mpplus_good_ending
 from verify_mp import claims_doc
 from verify_mp import driver as verify_driver
+from verify_mp import registry_load
 from verify_mp import survey_artifact
 from verify_mp.corpus import Context, load_plus_corpus, load_plain_corpus
 
@@ -96,6 +98,23 @@ def cmd_gen_misc(_args):
     almost_main()
 
 
+def _run_verify_mp(*, populate_registry: bool) -> None:
+    """Run MAM-parsed claim verification against corpus + survey artifacts."""
+    if populate_registry:
+        registry_load.populate()
+    corpus = load_plus_corpus()
+    corpus_plain = load_plain_corpus()
+    survey = survey_artifact.load()
+    survey_plain = survey_artifact.load_plain()
+    ctx = Context(
+        corpus=corpus,
+        corpus_plain=corpus_plain,
+        survey=survey,
+        survey_plain=survey_plain,
+    )
+    verify_driver.run(ctx)
+
+
 def cmd_gen_mam_parsed_docs(_args):
     out_dir = pathlib.Path("../MAM-parsed/gh-pages")
     # Write CSS
@@ -113,17 +132,7 @@ def cmd_gen_mam_parsed_docs(_args):
     skip_verify = bool(getattr(_args, "skip_verify_mp", False)) if _args else False
     if not skip_verify:
         print("Running MAM-parsed verification...")
-        corpus = load_plus_corpus()
-        corpus_plain = load_plain_corpus()
-        survey = survey_artifact.load()
-        survey_plain = survey_artifact.load_plain()
-        ctx = Context(
-            corpus=corpus,
-            corpus_plain=corpus_plain,
-            survey=survey,
-            survey_plain=survey_plain,
-        )
-        verify_driver.run(ctx)
+        _run_verify_mp(populate_registry=False)
 
     claims_path = claims_doc.write_output(populate_registry=False)
     print(f"Generated MAM-parsed docs in {out_dir}")
@@ -133,6 +142,10 @@ def cmd_gen_mam_parsed_docs(_args):
 def cmd_gen_mp_claims_index(_args):
     out_path = claims_doc.write_output()
     print(f"Generated claims index in {out_path}")
+
+
+def cmd_verify_mp(_args):
+    _run_verify_mp(populate_registry=True)
 
 
 def main():
@@ -151,11 +164,14 @@ def main():
         "gen-mp-claims-index",
         help="Generate doc/mp-claims.md from claim registrations and verifier functions.",
     )
+    sub.add_parser("verify-mp", help="Run MAM-parsed claim verification.")
     args = parser.parse_args()
     if args.subcommand == "gen-mam-parsed-docs":
         cmd_gen_mam_parsed_docs(args)
     elif args.subcommand == "gen-mp-claims-index":
         cmd_gen_mp_claims_index(args)
+    elif args.subcommand == "verify-mp":
+        cmd_verify_mp(args)
     else:
         # Default (no subcommand, or explicit gen-misc) runs gen-misc.
         cmd_gen_misc(args)
