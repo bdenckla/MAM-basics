@@ -44,3 +44,4 @@ def populate() -> None:
     _plain.s_book39()
     _plain.s_chapter()
     _plain.s_verse()
+    _plain._s_common_templates()

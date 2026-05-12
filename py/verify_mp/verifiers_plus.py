@@ -25,6 +25,20 @@ def verify_mp_plus_templates_plus_only_set(record: ClaimRecord, ctx: Context) ->
     ), f"declared templates not found in plus corpus survey: {sorted(missing)}"
 
 
+def verify_mp_plus_docs_common_templates_templates_in_plus_survey(
+    record: ClaimRecord, ctx: Context
+) -> None:
+    """Every template listed in mpplus common-template tables appears in plus survey."""
+    from verify_mp import survey_artifact
+
+    declared = frozenset(record.data["templates"])
+    observed = survey_artifact.template_names_observed(ctx.survey)
+    missing = declared - observed
+    assert (
+        not missing
+    ), f"mpplus docs list templates not found in plus survey: {sorted(missing)}"
+
+
 def verify_mp_plus_verse_is_3_tuple(record: ClaimRecord, ctx: Context) -> None:
     """Every verse value in the plus corpus is a list of exactly 3 elements [C, D, E]."""
     for book39, ch_key, v_key, verse in iter_verses(ctx.corpus):

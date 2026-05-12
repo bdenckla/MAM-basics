@@ -43,6 +43,54 @@ _JSON_CUSTOM_TAG = """\
 {"custom_tag": "noinclude"}
 {"custom_tag": "/noinclude"}"""
 
+_PLAIN_COMMON_TEMPLATES = [
+    "כו״ק",
+    "קו״כ",
+    "מ:קו״כ-אם-2",
+    "כתיב ולא קרי",
+    "קרי ולא כתיב",
+    "מ:כו״ק מיוחד",
+    "מ:אות-ג",
+    "מ:אות-ק",
+    "מ:אות תלויה",
+    "מ:נו״ן הפוכה",
+    "מ:לגרמיה-2",
+    "מ:פסק",
+    "מ:מקף אפור",
+    "מ:דחי",
+    "מ:צינור",
+    "גלגל-2",
+    "ירח בן יומו-2",
+    "מ:קמץ",
+    "מ:טעם",
+    "מ:כפול",
+    "שני טעמים באות אחת קמץ-תחתון-פתח-עליון",
+    "מ:ירושלם",
+    "מ:ירושלמה",
+    "ר1",
+    "ר2",
+    "ר3",
+    "ר4",
+    "ר0",
+    "פרשה-מרכז",
+    "מ:הערה",
+    "פפ",
+    "סס",
+    "מ:אות מנוקדת",
+    "מ:סיום בטוב",
+    "מ:טעם ומתג באות אחת",
+    "מ:גרש ותלישא גדולה",
+    "מ:גרשיים ותלישא גדולה",
+    "ססס",
+    "פפפ",
+    "רווח בסוף שורה",
+    "מ:ששש",
+    "מ:כל קמץ קטן מרכא",
+    "נוסח",
+    "מודגש",
+    "ש",
+]
+
 
 def gen_html_file(tdm_ch):
     """Generate mpplain.html in the given output directory."""
@@ -348,6 +396,13 @@ def _s_template_objects():
 
 
 def _s_common_templates():
+    claim(
+        "mp.plain.docs.common-templates.templates-in-plain-survey",
+        "Templates listed in mpplain common-template tables are present in plain survey.",
+        kind="enum",
+        subject="mp:plain",
+        data={"templates": _PLAIN_COMMON_TEMPLATES},
+    )
     sheets_link = author.anchor_h("Templates tab", cmn.SHEETS_TMPL)
     sheets_data_link = author.anchor_h("$MAM Google Sheet", cmn.SHEETS_DATA)
     return [
@@ -397,7 +452,10 @@ def _s_common_templates():
         author.heading_level_3("Special letter templates"),
         author.std_table(cmn.SPECIAL_LETTER_ROWS, arg_to_troh=["Template", "Purpose"]),
         author.heading_level_3("Accent and cantillation templates"),
-        author.std_table(cmn.ACCENT_ROWS, arg_to_troh=["Template", "Purpose"]),
+        author.std_table(
+            [cmn.ACCENT_ROWS[i] for i in (0, 1, 2, 3, 4, 5, 6, 8, 9, 10, 11)],
+            arg_to_troh=["Template", "Purpose"],
+        ),
         author.heading_level_3("Jerusalem spelling"),
         author.std_table(cmn.JER_ROWS, arg_to_troh=["Template", "Purpose"]),
         author.heading_level_3("Poetic form templates (ספרי אמת)"),
@@ -408,7 +466,7 @@ def _s_common_templates():
         ),
         author.heading_level_3("Note template"),
         author.std_table(
-            [cmn.NOTE_ROW],
+            [[cmn.NOTE_ROW[0][0], cmn.NOTE_ROW[1]]],
             arg_to_troh=["Template", "Purpose"],
         ),
         author.heading_level_3("Other templates"),

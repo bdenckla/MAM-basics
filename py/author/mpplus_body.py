@@ -16,6 +16,42 @@ _HAARAH_2_DOC = "mpplus_haarah_2.html"
 _KAFUL_DOC = "mpplus_kaful.html"
 _GOOD_ENDING_DOC = "mpplus_good_ending.html"
 
+_PLUS_COMMON_TEMPLATES = [
+    "כו״ק",
+    "קו״כ",
+    "מ:קו״כ-אם-2",
+    "כתיב ולא קרי",
+    "קרי ולא כתיב",
+    "מ:כו״ק מיוחד",
+    "מ:אות-ג",
+    "מ:אות-ק",
+    "מ:אות תלויה",
+    "מ:נו״ן הפוכה",
+    "מ:אות-מיוחדת-במילה",
+    "מ:לגרמיה-2",
+    "מ:פסק",
+    "מ:מקף אפור",
+    "מ:דחי",
+    "מ:צינור",
+    "מ:קמץ",
+    "מ:כפול",
+    "ר1",
+    "ר2",
+    "ר3",
+    "ר4",
+    "ר0",
+    "מ:הערה",
+    "מ:הערה-2",
+    "פפ",
+    "פפפ",
+    "סס",
+    "ססס",
+    "מ:ששש",
+    "נוסח",
+    "מודגש",
+    "ש",
+]
+
 
 # ---------------------------------------------------------------------------
 # JSON snippets
@@ -244,6 +280,10 @@ def s_intro():
             " (a) parsing the Wikitext in the $MAM Google Sheet"
             " (b) adding some conveniences and"
             " (c) removing some inconveniences."
+            " Of course, what is considered an inconvenience and what is considered a convenience"
+            " can only be determined relative to a particular application."
+            " Nonetheless, we believe that for most applications,"
+            " the plus format is more convenient to work with than the plain format."
             " This document covers:"
         ),
         author.unordered_list(
@@ -611,6 +651,13 @@ def s_plus_only_templates():
 
 
 def s_common_templates():
+    claim(
+        "mp.plus.docs.common-templates.templates-in-plus-survey",
+        "Templates listed in mpplus common-template tables are present in plus survey.",
+        kind="enum",
+        subject="mp:plus",
+        data={"templates": _PLUS_COMMON_TEMPLATES},
+    )
     sheets_link = author.anchor_h("Templates tab", cmn.SHEETS_TMPL)
     sheets_data_link = author.anchor_h("$MAM Google Sheet", cmn.SHEETS_DATA)
     return [
@@ -669,11 +716,7 @@ def s_common_templates():
         ),
         author.heading_level_3("Accent and cantillation templates"),
         author.std_table(
-            [
-                row
-                for row in cmn.ACCENT_ROWS
-                if row[0] not in [author.hbo("גלגל-2"), author.hbo("ירח בן יומו")]
-            ],
+            [cmn.ACCENT_ROWS[i] for i in (0, 1, 2, 3, 4, 8, 10)],
             arg_to_troh=["Template", "Purpose"],
         ),
         author.heading_level_3("Poetic form templates (ספרי אמת)"),
@@ -713,7 +756,9 @@ def s_common_templates():
                         ", but for the 8 shirah (song) sections; not an official setumah break.",
                     ],
                 ],
-                cmn.OTHER_ROWS[2],
+                cmn.OTHER_ROWS[11],
+                cmn.OTHER_ROWS[12],
+                cmn.OTHER_ROWS[13],
             ],
             arg_to_troh=["Template", "Purpose"],
         ),

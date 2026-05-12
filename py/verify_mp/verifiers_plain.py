@@ -68,6 +68,13 @@ def verify_mp_plain_templates_plain_only_set(record: ClaimRecord, ctx: Context) 
     _verify_template_set_plain_observed(record, ctx)
 
 
+def verify_mp_plain_docs_common_templates_templates_in_plain_survey(
+    record: ClaimRecord, ctx: Context
+) -> None:
+    """Every template listed in mpplain common-template tables appears in plain survey."""
+    _verify_template_set_plain_observed(record, ctx)
+
+
 def verify_mp_plain_book39_fields(record: ClaimRecord, ctx: Context) -> None:
     """Every book39 object in the plain corpus has exactly the declared keys."""
     expected = frozenset(record.data["book39_keys"])
