@@ -60,6 +60,18 @@ def _build_body():
         ),
         author.para(
             [
+                "The sub-typing serves two purposes: it pre-categorizes these rare k/q pairs so"
+                " that consuming applications do not need to re-derive the classification from"
+                " the template parameters alone, and it exposes enough granularity for"
+                " applications that wish to present different subtypes differently."
+                " For example, the Wikisource edition of $MAM groups the nine subtypes into four"
+                " display families based on whether the pair is flanked by $maqaf marks, and"
+                " (for pairs not so flanked) whether the $qere precedes or follows the $ketiv"
+                " in the text.",
+            ]
+        ),
+        author.para(
+            [
                 "The following ",
                 author.hbo("סוג="),
                 " values are used with the ",
