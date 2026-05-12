@@ -8,6 +8,9 @@ from author_util import author
 from author_util.claim import claim
 
 _GOOD_ENDING_DOC = "mpplus_good_ending.html"
+_KQ_SPECIAL_DOC = "mpplus_kq_special.html"
+_HAARAH_2_DOC = "mpplus_haarah_2.html"
+_KAFUL_DOC = "mpplus_kaful.html"
 _KQ_SIMPLE_FOI_URL = (
     "https://bdenckla.github.io/MAM-with-doc/foi/foi-kq-simple.html#intro-"
 )
@@ -145,7 +148,12 @@ KQ_ROWS = claim(
         [
             author.hbo("מ:כו״ק מיוחד"),
             [
-                "Special $ketiv_qere. See <its dedicated page>.",
+                "Special $ketiv_qere. See ",
+                author.anchor_h(
+                    ["dedicated page for ", author.hbo("מ:כו״ק מיוחד")],
+                    _KQ_SPECIAL_DOC,
+                ),
+                ".",
             ],
         ],
     ],
@@ -270,7 +278,14 @@ ACCENT_ROWS = claim(
         ],
         [
             author.hbo("מ:כפול"),
-            "Dual-cantillation span. See <its dedicated page>.",
+            [
+                "Dual-cantillation span. See ",
+                author.anchor_h(
+                    ["dedicated page for ", author.hbo("מ:כפול")],
+                    _KAFUL_DOC,
+                ),
+                ".",
+            ],
         ],
         [
             author.hbo(
@@ -415,7 +430,14 @@ NOTE_ROW = claim(
     "mp.both.templates.note",
     [
         [author.hbo(tmpln.SCRDFF_NO_TAR), " / ", author.hbo(tmpln.SCRDFF_TAR)],
-        "Scroll-difference notes (Torah and Esther only). See <the dedicated page for מ:הערה-2>.",
+        [
+            "Scroll-difference notes (Torah and Esther only). See ",
+            author.anchor_h(
+                ["dedicated page for ", author.hbo("מ:הערה-2")],
+                _HAARAH_2_DOC,
+            ),
+            ".",
+        ],
     ],
     kind="enum",
     subject="mp:both",
