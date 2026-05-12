@@ -18,7 +18,7 @@ from author import (
 )  # noqa: F401
 from author import (
     mpplus_haarah_2 as _haarah_2,
-)  # noqa: F401 — module-level claims register at import
+)  # noqa: F401
 
 _populated = False
 
@@ -47,3 +47,4 @@ def populate() -> None:
     _plain.s_chapter()
     _plain.s_verse()
     _plain._s_common_templates()
+    _haarah_2._build_body()

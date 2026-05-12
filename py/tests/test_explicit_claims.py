@@ -119,6 +119,28 @@ class TestExplicitClaims(unittest.TestCase):
 
         self.assertIn("mp.plus.templates.aot.arg5-derivable", claim_mod.REGISTRY)
 
+    def test_mpplus_haarah_2_import_has_no_claim_side_effects(self):
+        importlib.invalidate_caches()
+        importlib.import_module("author.mpplus_haarah_2")
+
+        self.assertNotIn("mp.plus.example.haarah-2-context", claim_mod.REGISTRY)
+
+    def test_mpplus_haarah_2_build_body_registers_legacy_claim(self):
+        haarah_2 = importlib.import_module("author.mpplus_haarah_2")
+
+        haarah_2._build_body()
+
+        self.assertIn("mp.plus.example.haarah-2-context", claim_mod.REGISTRY)
+
+    def test_mpplus_haarah_2_build_body_can_emit_explicit_claim(self):
+        haarah_2 = importlib.import_module("author.mpplus_haarah_2")
+        claims = claim_mod.ClaimCollection()
+
+        haarah_2._build_body(claims=claims)
+
+        self.assertIn("mp.plus.example.haarah-2-context", claims.records_by_id)
+        self.assertNotIn("mp.plus.example.haarah-2-context", claim_mod.REGISTRY)
+
 
 if __name__ == "__main__":
     unittest.main()

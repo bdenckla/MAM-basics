@@ -14,7 +14,7 @@ import json
 from mb_misc import mb_html
 from author_util import author
 from author_util import json_block
-from author_util.claim import claim
+from author_util.claim import ClaimCollection, claim
 
 _FNAME = "mpplus_haarah_2.html"
 _TITLE = "Targeted scroll-difference note"
@@ -64,22 +64,25 @@ _JSON_HAARAH_2_IN_CONTEXT_TEXT = """\
   "׃"
 ]"""
 
-_JSON_HAARAH_2_IN_CONTEXT = claim(
-    "mp.plus.example.haarah-2-context",
-    _JSON_HAARAH_2_IN_CONTEXT_TEXT,
-    kind="example",
-    subject="mp:plus",
-    data=json.loads(_JSON_HAARAH_2_IN_CONTEXT_TEXT),
-)
+
+def _haarah_2_in_context(*, claims: ClaimCollection | None = None):
+    claim_fn = claims.claim if claims is not None else claim
+    return claim_fn(
+        "mp.plus.example.haarah-2-context",
+        _JSON_HAARAH_2_IN_CONTEXT_TEXT,
+        kind="example",
+        subject="mp:plus",
+        data=json.loads(_JSON_HAARAH_2_IN_CONTEXT_TEXT),
+    )
 
 
-def gen_html_file(tdm_ch):
+def gen_html_file(tdm_ch, claims: ClaimCollection | None = None):
     """Generate mpplus_haarah_2.html in the given output directory."""
-    cbody = _build_body()
+    cbody = _build_body(claims=claims)
     return author.help_gen_html_file(__file__, tdm_ch, _FNAME, _TITLE, cbody)
 
 
-def _build_body():
+def _build_body(*, claims: ClaimCollection | None = None):
     back_link = author.anchor_h("Reading $MAM-parsed-plus", _PLUS_DOC)
     return [
         author.heading_level_1(
@@ -128,5 +131,5 @@ def _build_body():
             ]
         ),
         author.heading_level_2("Example in context"),
-        json_block.json_block_raw_html(_JSON_HAARAH_2_IN_CONTEXT),
+        json_block.json_block_raw_html(_haarah_2_in_context(claims=claims)),
     ]
