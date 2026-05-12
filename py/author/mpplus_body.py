@@ -183,7 +183,7 @@ _DIFF_ROWS = claim(
             "Removed",
         ],
         ["Wikitext line breaks (\u201c//\u201d)", "Present in C column", "Removed"],
-        ["Named params", "not parsed", "unified with positional"],
+        ["Named params", "not parsed", "parsed and unified with positional"],
         [
             "D column (verse label)",
             ["Every verse has ", author.hbo("מ:פסוק")],
@@ -201,7 +201,7 @@ _DIFF_ROWS = claim(
             [
                 "whole word wrapped by ",
                 author.hbo("מ:אות-מיוחדת-במילה"),
-                "; uninterrupted encoding in args 2–5 (plain word + dot-mask + type metadata)",
+                "; uninterrupted encoding in args 2–4",
             ],
         ],
         [
