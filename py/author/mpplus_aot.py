@@ -52,9 +52,14 @@ def _emit_claim_payload(
     kind: str,
     subject: str,
     data=None,
+    register_legacy: bool = False,
 ):
     if claims is None:
-        return payload
+        if not register_legacy:
+            return payload
+        if claim_id in REGISTRY:
+            return payload
+        return claim(claim_id, payload, kind=kind, subject=subject, data=data)
     return claims.claim(claim_id, payload, kind=kind, subject=subject, data=data)
 
 
@@ -71,15 +76,14 @@ def _aot_intro(*, claims: ClaimCollection | None = None):
 
 def populate_claims(*, claims: ClaimCollection | None = None):
     """Emit mpplus_aot claim metadata into explicit claims or legacy REGISTRY."""
-    claim_fn = claims.claim if claims is not None else claim
-    if claims is None and _AOT_INTRO_CLAIM_ID in REGISTRY:
-        return
-    claim_fn(
+    _emit_claim_payload(
+        claims,
         _AOT_INTRO_CLAIM_ID,
         None,
         kind="struct",
         subject="mp:plus",
         data=_AOT_INTRO_CLAIM_DATA,
+        register_legacy=True,
     )
 
 
