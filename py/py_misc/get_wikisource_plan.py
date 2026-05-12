@@ -2,6 +2,7 @@ from mb_cmn import bib_locales as tbn
 from py_misc import mam_csv_in
 from mb_cmn import mam_bknas_and_std_bknas as mbkn_a_sbkn
 from mb_cmn import mam_bknas
+from mb_cmn import hebrew_verse_numerals as hvn
 from mb_cmn.my_utils import sum_of_map
 from mb_cmn.my_utils import sl_map
 from mb_cmn.my_utils import dv_map
@@ -43,7 +44,13 @@ def _get_book_plans_for_one_section(secid):
 
 
 def _get_he_chnus(light_book):
-    return list(light_book.keys())
+    out_he_chnus = []
+    for chapter_id in light_book.keys():
+        if chapter_id.isdigit():
+            out_he_chnus.append(hvn.INT_TO_STR_DIC[int(chapter_id)])
+        else:
+            out_he_chnus.append(chapter_id)
+    return out_he_chnus
 
 
 def _get_chapter_plan(he_bn_sbn, he_chnu):
