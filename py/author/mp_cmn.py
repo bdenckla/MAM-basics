@@ -367,15 +367,15 @@ STRUCTURAL_ROWS = claim(
             "Variant of מ:רווח לספר בתהלים for the first verse of the Psalms division.",
         ],
         [
-            author.hbo("מ:אין פרשה בתחילת פרק"),
+            author.hbo(tmpln.NO_PAR_AT_STA_OF_CHAP21),
             "No-parashah chapter start (21 books). Tags chapters that begin without a coinciding parashah division, so a space can be added before the first verse when presenting sequential text.",
         ],
         [
-            author.hbo("מ:אין פרשה בתחילת פרק בספרי אמ\u05f4ת"),
+            author.hbo(tmpln.NO_PAR_AT_STA_OF_CHAP03),
             "No-parashah chapter start (poetic books). Analogous to the previous template for Ps, Prov, and Job; redirects to ר4.",
         ],
         [
-            author.hbo("מ:אין רווח של פרשה בתחילת פרשת השבוע"),
+            author.hbo(tmpln.NO_PAR_AT_STA_OF_WEEKLY),
             "No-parashah weekly-portion start. Used only at Gen 47:28 (the only Torah weekly portion that begins without a parashah).",
         ],
         [
@@ -401,9 +401,9 @@ STRUCTURAL_ROWS = claim(
             "מ:ספר חדש",
             "מ:רווח בתרי עשר בפסוק הראשון",
             "מ:רווח לספר בתהלים בפסוק הראשון",
-            "מ:אין פרשה בתחילת פרק",
-            "מ:אין פרשה בתחילת פרק בספרי אמ\u05f4ת",
-            "מ:אין רווח של פרשה בתחילת פרשת השבוע",
+            tmpln.NO_PAR_AT_STA_OF_CHAP21,
+            tmpln.NO_PAR_AT_STA_OF_CHAP03,
+            tmpln.NO_PAR_AT_STA_OF_WEEKLY,
             "מ:עלייה",
         ]
     },
@@ -412,13 +412,13 @@ STRUCTURAL_ROWS = claim(
 NOTE_ROW = claim(
     "mp.both.templates.note",
     [
-        [author.hbo("מ:הערה"), " / ", author.hbo("מ:הערה-2")],
+        [author.hbo(tmpln.SCRDFF_NO_TAR), " / ", author.hbo(tmpln.SCRDFF_TAR)],
         "Scroll-difference notes (Torah and Esther only). Note markers appear within the text itself. Parameter is the note text.",
     ],
     kind="enum",
     subject="mp:both",
     # מ:הערה-2 appears only in the plus survey; it is verified in PLUS_ONLY.
-    data={"templates": ["מ:הערה"], "books": "Torah and Esther only"},
+    data={"templates": [tmpln.SCRDFF_NO_TAR], "books": "Torah and Esther only"},
 )
 
 NOTE_LINKS_ROW = claim(
@@ -807,9 +807,9 @@ PLUS_ONLY = claim(
     data={
         "templates": [
             # Plus-only note template (counterpart מ:הערה is in both)
-            "מ:הערה-2",
+            tmpln.SCRDFF_TAR,
             # Plus-only special-letter template (previously mistakenly in SPECIAL_LETTER_ROWS)
-            "מ:אות-מיוחדת-במילה",
+            tmpln.SLH_WORD,
         ]
     },
 )
