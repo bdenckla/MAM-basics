@@ -606,9 +606,7 @@ KQ_SPECIAL_ROWS = claim(
             [
                 "1-atom $ketiv mapped to 2-atom $qere. See the rows of FOI section ",
                 _kq_simple_foi_link_for_sug("כו״ק כתיב מילה חדה וקרי תרתין מילין"),
-                " labelled ",
-                mb_html.code("k1q2-sr-kqq"),
-                ".",
+                " labelled k1q2-sr-kqq.",
             ],
         ],
         [
@@ -619,9 +617,7 @@ KQ_SPECIAL_ROWS = claim(
                 _kq_simple_foi_link_for_sug(
                     "כו״ק כתיב מילה חדה וקרי תרתין מילין בין שני מקפים"
                 ),
-                " labelled ",
-                mb_html.code("k1q2-sr-bcom"),
-                ".",
+                " labelled k1q2-sr-bcom.",
             ],
         ],
         [
@@ -638,9 +634,7 @@ KQ_SPECIAL_ROWS = claim(
                 "1-atom $ketiv mapped to 2-atom $qere, following $maqaf (Nehemiah"
                 " 2:13 only). See the rows of FOI section ",
                 _kq_simple_foi_link_for_sug("קו״כ כתיב מילה חדה וקרי תרתין מילין"),
-                " labelled ",
-                mb_html.code("k1q2-sr-qqk"),
-                ".",
+                " labelled k1q2-sr-qqk.",
             ],
         ],
         [
