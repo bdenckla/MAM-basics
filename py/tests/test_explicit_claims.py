@@ -141,10 +141,17 @@ class TestExplicitClaims(unittest.TestCase):
 
         self.assertNotIn("mp.plus.example.haarah-2-context", claim_mod.REGISTRY)
 
-    def test_mpplus_haarah_2_build_body_registers_legacy_claim(self):
+    def test_mpplus_haarah_2_build_body_has_no_legacy_claim_side_effects(self):
         haarah_2 = importlib.import_module("author.mpplus_haarah_2")
 
         haarah_2._build_body()
+
+        self.assertNotIn("mp.plus.example.haarah-2-context", claim_mod.REGISTRY)
+
+    def test_mpplus_haarah_2_populate_claims_registers_legacy_claim(self):
+        haarah_2 = importlib.import_module("author.mpplus_haarah_2")
+
+        haarah_2.populate_claims()
 
         self.assertIn("mp.plus.example.haarah-2-context", claim_mod.REGISTRY)
 

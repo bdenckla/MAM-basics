@@ -14,7 +14,7 @@ import json
 from mb_misc import mb_html
 from author_util import author
 from author_util import json_block
-from author_util.claim import ClaimCollection, claim
+from author_util.claim import ClaimCollection, REGISTRY, claim
 
 _FNAME = "mpplus_haarah_2.html"
 _TITLE = "Targeted scroll-difference note"
@@ -60,12 +60,42 @@ _JSON_HAARAH_2_IN_CONTEXT_TEXT = """\
   "׃"
 ]"""
 
+_HAARAH_2_IN_CONTEXT_CLAIM_ID = "mp.plus.example.haarah-2-context"
+
+
+def _emit_claim_payload(
+    claims: ClaimCollection | None,
+    claim_id: str,
+    payload,
+    *,
+    kind: str,
+    subject: str,
+    data=None,
+):
+    if claims is None:
+        return payload
+    return claims.claim(claim_id, payload, kind=kind, subject=subject, data=data)
+
 
 def _haarah_2_in_context(*, claims: ClaimCollection | None = None):
-    claim_fn = claims.claim if claims is not None else claim
-    return claim_fn(
-        "mp.plus.example.haarah-2-context",
+    return _emit_claim_payload(
+        claims,
+        _HAARAH_2_IN_CONTEXT_CLAIM_ID,
         _JSON_HAARAH_2_IN_CONTEXT_TEXT,
+        kind="example",
+        subject="mp:plus",
+        data=json.loads(_JSON_HAARAH_2_IN_CONTEXT_TEXT),
+    )
+
+
+def populate_claims(*, claims: ClaimCollection | None = None):
+    """Emit mpplus_haarah_2 claim metadata into explicit claims or legacy REGISTRY."""
+    claim_fn = claims.claim if claims is not None else claim
+    if claims is None and _HAARAH_2_IN_CONTEXT_CLAIM_ID in REGISTRY:
+        return
+    claim_fn(
+        _HAARAH_2_IN_CONTEXT_CLAIM_ID,
+        None,
         kind="example",
         subject="mp:plus",
         data=json.loads(_JSON_HAARAH_2_IN_CONTEXT_TEXT),

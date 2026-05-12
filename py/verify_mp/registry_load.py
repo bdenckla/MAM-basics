@@ -47,5 +47,5 @@ def populate() -> None:
     _body.s_plain_differences()
     _aot.populate_claims()
     _plain.populate_claims()
-    _haarah_2._build_body()
+    _haarah_2.populate_claims()
     _kaful._build_body()
