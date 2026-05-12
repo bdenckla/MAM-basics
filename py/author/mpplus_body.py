@@ -65,8 +65,18 @@ _PLUS_ACCENT_TEMPLATES = [
 _PLUS_OTHER_SINGLE_TEMPLATES = ["נוסח", "מודגש", "ש"]
 
 
-def _claim_fn(claims: ClaimCollection | None):
-    return claims.claim if claims is not None else claim
+def _emit_claim_payload(
+    claims: ClaimCollection | None,
+    claim_id: str,
+    payload,
+    *,
+    kind: str,
+    subject: str,
+    data=None,
+):
+    if claims is None:
+        return claim(claim_id, payload, kind=kind, subject=subject, data=data)
+    return claims.claim(claim_id, payload, kind=kind, subject=subject, data=data)
 
 
 # ---------------------------------------------------------------------------
@@ -151,8 +161,9 @@ _JSON_NESTED = """\
 }"""
 
 
-def _json_top_level_skel(claim_fn):
-    return claim_fn(
+def _json_top_level_skel(*, claims: ClaimCollection | None = None):
+    return _emit_claim_payload(
+        claims,
         "mp.plus.example.top-level-skel",
         _JSON_TOP_LEVEL_SKEL,
         kind="struct",
@@ -161,8 +172,9 @@ def _json_top_level_skel(claim_fn):
     )
 
 
-def _json_header(claim_fn):
-    return claim_fn(
+def _json_header(*, claims: ClaimCollection | None = None):
+    return _emit_claim_payload(
+        claims,
         "mp.plus.example.header-job",
         _JSON_HEADER,
         kind="example",
@@ -175,8 +187,9 @@ def _json_header(claim_fn):
     )
 
 
-def _json_header_composite(claim_fn):
-    return claim_fn(
+def _json_header_composite(*, claims: ClaimCollection | None = None):
+    return _emit_claim_payload(
+        claims,
         "mp.plus.example.header-samuel",
         _JSON_HEADER_COMPOSITE,
         kind="example",
@@ -184,8 +197,9 @@ def _json_header_composite(claim_fn):
     )
 
 
-def _json_book39_skel(claim_fn):
-    return claim_fn(
+def _json_book39_skel(*, claims: ClaimCollection | None = None):
+    return _emit_claim_payload(
+        claims,
         "mp.plus.example.book39-skel",
         _JSON_BOOK39_SKEL,
         kind="struct",
@@ -201,8 +215,9 @@ def _json_book39_skel(claim_fn):
     )
 
 
-def _json_d_col_first(claim_fn):
-    return claim_fn(
+def _json_d_col_first(*, claims: ClaimCollection | None = None):
+    return _emit_claim_payload(
+        claims,
         "mp.plus.example.d-col-first",
         _JSON_D_COL_FIRST,
         kind="example",
@@ -210,8 +225,9 @@ def _json_d_col_first(claim_fn):
     )
 
 
-def _json_d_col_subseq(claim_fn):
-    return claim_fn(
+def _json_d_col_subseq(*, claims: ClaimCollection | None = None):
+    return _emit_claim_payload(
+        claims,
         "mp.plus.example.d-col-empty",
         _JSON_D_COL_SUBSEQ,
         kind="example",
@@ -219,8 +235,9 @@ def _json_d_col_subseq(claim_fn):
     )
 
 
-def _json_tmpl_format(claim_fn):
-    return claim_fn(
+def _json_tmpl_format(*, claims: ClaimCollection | None = None):
+    return _emit_claim_payload(
+        claims,
         "mp.plus.template.format-example",
         _JSON_TMPL_FORMAT,
         kind="format",
@@ -233,8 +250,9 @@ def _json_tmpl_format(claim_fn):
     )
 
 
-def _json_tmpl_plain_compare(claim_fn):
-    return claim_fn(
+def _json_tmpl_plain_compare(*, claims: ClaimCollection | None = None):
+    return _emit_claim_payload(
+        claims,
         "mp.plain.template.stmpl-format-example",
         _JSON_TMPL_PLAIN_COMPARE,
         kind="format",
@@ -243,8 +261,9 @@ def _json_tmpl_plain_compare(claim_fn):
     )
 
 
-def _json_nested(claim_fn):
-    return claim_fn(
+def _json_nested(*, claims: ClaimCollection | None = None):
+    return _emit_claim_payload(
+        claims,
         "mp.plus.example.nested-tmpl",
         _JSON_NESTED,
         kind="example",
@@ -320,8 +339,9 @@ _DIFF_ROWS = [
 ]
 
 
-def _diff_rows(claim_fn):
-    return claim_fn(
+def _diff_rows(*, claims: ClaimCollection | None = None):
+    return _emit_claim_payload(
+        claims,
         "mp.plus.diff-from-plain",
         _DIFF_ROWS,
         kind="enum",
@@ -357,11 +377,10 @@ def s_intro():
 
 
 def s_plain_differences(*, claims: ClaimCollection | None = None):
-    claim_fn = _claim_fn(claims)
     return [
         author.heading_level_2("Differences from plain format"),
         author.std_table(
-            _diff_rows(claim_fn), arg_to_troh=["Feature", "Plain", "Plus"]
+            _diff_rows(claims=claims), arg_to_troh=["Feature", "Plain", "Plus"]
         ),
         author.para(
             [
@@ -381,13 +400,13 @@ def s_plain_differences(*, claims: ClaimCollection | None = None):
                 " (present in plain, replaced in plus):",
             ]
         ),
-        json_block.json_block_raw_html(_json_tmpl_plain_compare(claim_fn)),
+        json_block.json_block_raw_html(_json_tmpl_plain_compare(claims=claims)),
     ]
 
 
 def s_top_level(*, claims: ClaimCollection | None = None):
-    claim_fn = _claim_fn(claims)
-    _header_rows = claim_fn(
+    _header_rows = _emit_claim_payload(
+        claims,
         "mp.plus.header.fields",
         [
             [
@@ -424,19 +443,19 @@ def s_top_level(*, claims: ClaimCollection | None = None):
     )
     return [
         author.heading_level_2("Top-level structure"),
-        json_block.json_block_raw_html(_json_top_level_skel(claim_fn)),
+        json_block.json_block_raw_html(_json_top_level_skel(claims=claims)),
         author.heading_level_2("Header"),
         author.std_table(_header_rows, arg_to_troh=["Key", "Type", "Description"]),
         author.para("Here’s the header for Job, a book24 has no sub-books:"),
-        json_block.json_block_raw_html(_json_header(claim_fn)),
+        json_block.json_block_raw_html(_json_header(claims=claims)),
         author.para("Here’s the header for Samuel, a book24 that has sub-books:"),
-        json_block.json_block_raw_html(_json_header_composite(claim_fn)),
+        json_block.json_block_raw_html(_json_header_composite(claims=claims)),
     ]
 
 
 def s_book39(*, claims: ClaimCollection | None = None):
-    claim_fn = _claim_fn(claims)
-    _book39_rows = claim_fn(
+    _book39_rows = _emit_claim_payload(
+        claims,
         "mp.plus.book39.fields",
         [
             [
@@ -487,15 +506,15 @@ def s_book39(*, claims: ClaimCollection | None = None):
     )
     return [
         author.heading_level_2("Book39 structure"),
-        json_block.json_block_raw_html(_json_book39_skel(claim_fn)),
+        json_block.json_block_raw_html(_json_book39_skel(claims=claims)),
         author.std_table(_book39_rows, arg_to_troh=["Key", "Type", "Description"]),
     ]
 
 
 def s_chapter_verse(*, claims: ClaimCollection | None = None):
-    claim_fn = _claim_fn(claims)
-    _json_d_col_subseq(claim_fn)
-    tmpl_rows = claim_fn(
+    _json_d_col_subseq(claims=claims)
+    tmpl_rows = _emit_claim_payload(
+        claims,
         "mp.plus.template.object-fields",
         [
             [mb_html.code("tmpl_name"), "string", "Template name"],
@@ -512,7 +531,8 @@ def s_chapter_verse(*, claims: ClaimCollection | None = None):
     return [
         author.heading_level_2("Chapter structure"),
         author.para(
-            claim_fn(
+            _emit_claim_payload(
+                claims,
                 "mp.plus.chapter.keyed-by-verse-num",
                 [
                     "An object keyed by verse numbers."
@@ -529,7 +549,8 @@ def s_chapter_verse(*, claims: ClaimCollection | None = None):
         ),
         author.heading_level_2("Verse structure"),
         author.para(
-            claim_fn(
+            _emit_claim_payload(
+                claims,
                 "mp.plus.verse.is-3-tuple",
                 [
                     "A 3-element array [C, D, E], with column details described below.",
@@ -541,7 +562,8 @@ def s_chapter_verse(*, claims: ClaimCollection | None = None):
         ),
         author.heading_level_3("C column (index 0): Verse separator"),
         author.para(
-            claim_fn(
+            _emit_claim_payload(
+                claims,
                 "mp.plus.verse.c-col.semantics",
                 [
                     "The C column usually contains what separates this verse "
@@ -558,7 +580,8 @@ def s_chapter_verse(*, claims: ClaimCollection | None = None):
         ),
         author.heading_level_3("D column (index 1): Verse label"),
         author.para(
-            claim_fn(
+            _emit_claim_payload(
+                claims,
                 "mp.plus.verse.d-col.semantics",
                 [
                     "This is an array that contains a ",
@@ -593,10 +616,11 @@ def s_chapter_verse(*, claims: ClaimCollection | None = None):
             ]
         ),
         author.para(["Job 1:1:"]),
-        json_block.json_block_raw_html(_json_d_col_first(claim_fn)),
+        json_block.json_block_raw_html(_json_d_col_first(claims=claims)),
         author.heading_level_3("E column (index 2): Verse text"),
         author.para(
-            claim_fn(
+            _emit_claim_payload(
+                claims,
                 "mp.plus.verse.e-col.semantics",
                 [
                     "An array containing a mix of strings and template objects.",
@@ -608,11 +632,12 @@ def s_chapter_verse(*, claims: ClaimCollection | None = None):
         ),
         author.heading_level_2("Template format"),
         author.para("Templates are represented like this:"),
-        json_block.json_block_raw_html(_json_tmpl_format(claim_fn)),
+        json_block.json_block_raw_html(_json_tmpl_format(claims=claims)),
         author.std_table(tmpl_rows, arg_to_troh=["Key", "Type", "Description"]),
         author.heading_level_3([mb_html.code("tmpl_params"), " keys"]),
         author.para(
-            claim_fn(
+            _emit_claim_payload(
+                claims,
                 "mp.plus.template.tmpl-params-keys",
                 [
                     "Numeric string keys ",
@@ -639,7 +664,8 @@ def s_chapter_verse(*, claims: ClaimCollection | None = None):
             )
         ),
         author.para(
-            claim_fn(
+            _emit_claim_payload(
+                claims,
                 "mp.plus.template.tmpl-params-omitted-when-empty",
                 [
                     "The ",
@@ -670,7 +696,7 @@ def s_chapter_verse(*, claims: ClaimCollection | None = None):
         author.para(
             "Example — a word with a special letter inside a $ketiv_qere inside a נוסח:"
         ),
-        json_block.json_block_raw_html(_json_nested(claim_fn)),
+        json_block.json_block_raw_html(_json_nested(claims=claims)),
     ]
 
 
@@ -714,8 +740,8 @@ def s_plus_only_templates():
 
 
 def s_common_templates(*, claims: ClaimCollection | None = None):
-    claim_fn = _claim_fn(claims)
-    claim_fn(
+    _emit_claim_payload(
+        claims,
         "mp.plus.docs.common-templates.templates-in-plus-survey",
         "Templates listed in mpplus common-template tables are present in plus survey.",
         kind="enum",
