@@ -118,13 +118,13 @@ class TestExplicitClaims(unittest.TestCase):
 
         self.assertFalse(hasattr(haarah_2, "populate_claims"))
 
-    def test_mpplus_haarah_2_build_body_has_no_legacy_claim_side_effects(self):
+    def test_mpplus_haarah_2_build_body_has_no_implicit_claim_side_effects(self):
         haarah_2 = importlib.import_module("author.mpplus_haarah_2")
         claims = claim_mod.ClaimCollection()
 
         haarah_2._build_body(claims=claims)
 
-    def test_mpplus_haarah_2_populate_claims_registers_legacy_claim(self):
+    def test_mpplus_haarah_2_has_no_populate_claims_symbol(self):
         haarah_2 = importlib.import_module("author.mpplus_haarah_2")
         self.assertFalse(hasattr(haarah_2, "populate_claims"))
 
@@ -162,13 +162,13 @@ class TestExplicitClaims(unittest.TestCase):
 
         self.assertFalse(hasattr(mpplain, "populate_claims"))
 
-    def test_mpplain_build_body_has_no_legacy_claim_side_effects(self):
+    def test_mpplain_build_body_has_no_implicit_claim_side_effects(self):
         mpplain = importlib.import_module("author.mpplain")
         claims = claim_mod.ClaimCollection()
 
         mpplain._build_body(claims=claims)
 
-    def test_mpplain_populate_claims_registers_legacy_claims(self):
+    def test_mpplain_has_no_populate_claims_symbol(self):
         mpplain = importlib.import_module("author.mpplain")
         self.assertFalse(hasattr(mpplain, "populate_claims"))
 
