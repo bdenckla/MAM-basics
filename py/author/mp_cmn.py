@@ -617,7 +617,7 @@ KQ_SPECIAL_ROWS = claim(
 
 KQ_SPECIAL_SUBTYPE_COUNTS = claim(
     "mp.both.templates.kq-special.subtype-counts",
-    "For each kq-special subtype, verify declared ketiv/qere word counts and allowed atom-count pairs.",
+    "For each kq-special subtype, verify declared ketiv/qere atom counts.",
     kind="struct",
     subject="mp:both",
     data={
@@ -625,49 +625,40 @@ KQ_SPECIAL_SUBTYPE_COUNTS = claim(
         "param": "סוג",
         "subtype_counts": {
             "כו״ק בין שני מקפים": {
-                "ketiv_words": 1,
-                "qere_words": 1,
-                "atom_pairs": [[1, 1]],
+                "ketiv_atoms": 1,
+                "qere_atoms": 1,
             },
             "כו״ק כתיב מילה חדה וקרי תרתין מילין": {
-                "ketiv_words": 1,
-                "qere_words": 2,
-                "atom_pairs": [[1, 1], [1, 2]],
+                "ketiv_atoms": 1,
+                "qere_atoms": 2,
             },
             "כו״ק כתיב מילה חדה וקרי תרתין מילין בין שני מקפים": {
-                "ketiv_words": 1,
-                "qere_words": 2,
-                "atom_pairs": [[1, 2]],
+                "ketiv_atoms": 1,
+                "qere_atoms": 2,
             },
             "כו״ק כתיב תרתין מילין וקרי מילה חדה": {
-                "ketiv_words": 2,
-                "qere_words": 1,
-                "atom_pairs": [[2, 1]],
+                "ketiv_atoms": 2,
+                "qere_atoms": 1,
             },
             "קו״כ כתיב מילה חדה וקרי תרתין מילין": {
-                "ketiv_words": 1,
-                "qere_words": 2,
-                "atom_pairs": [[1, 2]],
+                "ketiv_atoms": 1,
+                "qere_atoms": 2,
             },
             "כו״ק קרי שונה מהכתיב בשתי מילים": {
-                "ketiv_words": 1,
-                "qere_words": 2,
-                "atom_pairs": [[1, 1], [1, 2]],
+                "ketiv_atoms": 1,
+                "qere_atoms": 2,
             },
             "קו״כ קרי שונה מהכתיב בשתי מילים": {
-                "ketiv_words": 1,
-                "qere_words": 2,
-                "atom_pairs": [[1, 2]],
+                "ketiv_atoms": 1,
+                "qere_atoms": 2,
             },
             "כו״ק של שתי מילים בהערה אחת": {
-                "ketiv_words": 2,
-                "qere_words": 2,
-                "atom_pairs": [[2, 1], [2, 2]],
+                "ketiv_atoms": 2,
+                "qere_atoms": 2,
             },
             "כו״ק של שלוש מילים בהערה אחת": {
-                "ketiv_words": 3,
-                "qere_words": 3,
-                "atom_pairs": [[3, 3]],
+                "ketiv_atoms": 3,
+                "qere_atoms": 3,
             },
         },
     },

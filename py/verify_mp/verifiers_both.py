@@ -188,7 +188,7 @@ def verify_mp_both_templates_kq_special_subtypes(
 def verify_mp_both_templates_kq_special_subtype_counts(
     record: ClaimRecord, ctx: Context
 ) -> None:
-    """Each kq-special subtype has declared word counts and allowed atom-count pairs."""
+    """Each kq-special subtype has declared fixed ketiv/qere atom counts."""
     kq_special_counts.verify(record, ctx)
 
 
