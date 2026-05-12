@@ -7,6 +7,8 @@ Subcommands:
                        MAM-with-doc/gh-pages/misc/.
   gen-mam-parsed-docs  Write mpplain.html and
                        mpplus.html to MAM-parsed/gh-pages/.
+    gen-mp-claims-index  Write doc/mp-claims.md from registered claims
+                                             and available verifier functions.
                        Run this after editing py/author/mpplain.py,
                        py/author/mpplus.py, or
                        py/author/mpplus_body.py.
@@ -39,6 +41,7 @@ from author import mpplus_kq_special
 from author import mpplus_haarah_2
 from author import mpplus_kaful
 from author import mpplus_good_ending
+from verify_mp import claims_doc
 
 
 def _gen_index_html(top_dir_misc, index_entries):
@@ -103,7 +106,14 @@ def cmd_gen_mam_parsed_docs(_args):
     mpplus_haarah_2.gen_html_file(tdm_ch)
     mpplus_kaful.gen_html_file(tdm_ch)
     mpplus_good_ending.gen_html_file(tdm_ch)
+    claims_path = claims_doc.write_output(populate_registry=False)
     print(f"Generated MAM-parsed docs in {out_dir}")
+    print(f"Generated claims index in {claims_path}")
+
+
+def cmd_gen_mp_claims_index(_args):
+    out_path = claims_doc.write_output()
+    print(f"Generated claims index in {out_path}")
 
 
 def main():
@@ -114,9 +124,15 @@ def main():
         "gen-mam-parsed-docs",
         help="Generate reading-MAM-parsed-plain/plus HTML docs in MAM-parsed/gh-pages/",
     )
+    sub.add_parser(
+        "gen-mp-claims-index",
+        help="Generate doc/mp-claims.md from claim registrations and verifier functions.",
+    )
     args = parser.parse_args()
     if args.subcommand == "gen-mam-parsed-docs":
         cmd_gen_mam_parsed_docs(args)
+    elif args.subcommand == "gen-mp-claims-index":
+        cmd_gen_mp_claims_index(args)
     else:
         # Default (no subcommand, or explicit gen-misc) runs gen-misc.
         cmd_gen_misc(args)
