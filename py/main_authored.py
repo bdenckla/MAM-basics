@@ -7,9 +7,11 @@ Subcommands:
                        MAM-with-doc/gh-pages/misc/.
   gen-mam-parsed-docs  Write mpplain.html and
                        mpplus.html to MAM-parsed/gh-pages/.
-    verify-mp            Run MAM-parsed claim verification.
-        gen-mp-claims-index  Write doc/mp-claims.md from explicit claims
-                                             and available verifier functions.
+  verify-mp            Run MAM-parsed claim verification without
+                       rewriting MAM-parsed authored HTML/CSS outputs.
+  gen-mp-claims-index  Write doc/mp-claims.md from explicit claims and
+                       available verifier functions without rewriting
+                       MAM-parsed authored HTML/CSS outputs.
                        Run this after editing py/author/mpplain.py,
                        py/author/mpplus.py, or
                        py/author/mpplus_body.py.
@@ -119,16 +121,13 @@ def cmd_gen_mam_parsed_docs(_args):
 
 
 def cmd_gen_mp_claims_index(_args):
-    out_dir = "../MAM-parsed/gh-pages"
-    claims = mam_parsed_docs_build.build_docs_with_explicit_claims(out_dir)
+    claims = mam_parsed_docs_build.collect_explicit_claims()
     out_path = claims_doc.write_output(claims)
     print(f"Generated claims index in {out_path}")
 
 
 def cmd_verify_mp(_args):
-    claims = mam_parsed_docs_build.build_docs_with_explicit_claims(
-        "../MAM-parsed/gh-pages"
-    )
+    claims = mam_parsed_docs_build.collect_explicit_claims()
     _run_verify_mp(claims=claims)
 
 
@@ -146,9 +145,15 @@ def main():
     )
     sub.add_parser(
         "gen-mp-claims-index",
-        help="Generate doc/mp-claims.md from claim registrations and verifier functions.",
+        help=(
+            "Generate doc/mp-claims.md from explicit claims and verifier functions "
+            "without regenerating MAM-parsed docs/CSS."
+        ),
     )
-    sub.add_parser("verify-mp", help="Run MAM-parsed claim verification.")
+    sub.add_parser(
+        "verify-mp",
+        help="Run MAM-parsed claim verification without regenerating docs/CSS.",
+    )
     args = parser.parse_args()
     if args.subcommand == "gen-mam-parsed-docs":
         cmd_gen_mam_parsed_docs(args)

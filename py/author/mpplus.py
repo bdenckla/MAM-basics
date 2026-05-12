@@ -22,11 +22,11 @@ _TITLE = "Reading MAM-parsed-plus"
 
 def gen_html_file(tdm_ch, claims: ClaimCollection):
     """Generate mpplus.html in the given output directory."""
-    cbody = _build_body(claims=claims)
+    cbody = build_body(claims=claims)
     return author.help_gen_html_file(__file__, tdm_ch, _FNAME, _TITLE, cbody)
 
 
-def _build_body(*, claims: ClaimCollection):
+def build_body(*, claims: ClaimCollection):
     return [
         mb_html.heading_level_1(_TITLE),
         *body.s_intro(),
@@ -38,3 +38,7 @@ def _build_body(*, claims: ClaimCollection):
         *body.s_plus_only_templates(),
         *body.s_plain_differences(claims=claims),
     ]
+
+
+def _build_body(*, claims: ClaimCollection):
+    return build_body(claims=claims)

@@ -120,7 +120,7 @@ def _emit_claim_payload(
 
 def gen_html_file(tdm_ch, claims: ClaimCollection):
     """Generate mpplain.html in the given output directory."""
-    cbody = _build_body(claims=claims)
+    cbody = build_body(claims=claims)
     return author.help_gen_html_file(__file__, tdm_ch, _FNAME, _TITLE, cbody)
 
 
@@ -129,7 +129,7 @@ def gen_html_file(tdm_ch, claims: ClaimCollection):
 # ---------------------------------------------------------------------------
 
 
-def _build_body(*, claims: ClaimCollection):
+def build_body(*, claims: ClaimCollection):
     return [
         mb_html.heading_level_1(_TITLE),
         *cmn.s_file_naming(),
@@ -141,6 +141,10 @@ def _build_body(*, claims: ClaimCollection):
         *_s_common_templates(claims=claims),
         *_s_pseudo_verses(),
     ]
+
+
+def _build_body(*, claims: ClaimCollection):
+    return build_body(claims=claims)
 
 
 # ---------------------------------------------------------------------------

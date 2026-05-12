@@ -7,14 +7,8 @@ from author_util.claim import ClaimCollection
 from mb_misc import styles_mam_parsed
 
 
-def build_docs_with_explicit_claims(
-    out_dir: str | Path,
-    *,
-    css_href: str = "style.css",
-) -> ClaimCollection:
-    """Generate all MAM-parsed authored docs and return explicit claims."""
-    claims = ClaimCollection()
-    out_dir_path = Path(out_dir)
+def _run_mam_parsed_authored_traversal(*, claims: ClaimCollection, tdm_ch=None):
+    """Run authored traversal to emit explicit claims, optionally writing docs."""
     from author import mp_cmn
     from author import mpplain
     from author import mpplus
@@ -25,8 +19,16 @@ def build_docs_with_explicit_claims(
     from author import mpplus_good_ending
 
     mp_cmn.emit_claims(claims=claims)
-    styles_mam_parsed.make_css_file_for_mam_parsed(str(out_dir_path / css_href))
-    tdm_ch = str(out_dir_path), css_href
+    if tdm_ch is None:
+        mpplain.build_body(claims=claims)
+        mpplus.build_body(claims=claims)
+        mpplus_aot.build_body(claims=claims)
+        mpplus_kq_special.build_body(claims=claims)
+        mpplus_haarah_2.build_body(claims=claims)
+        mpplus_kaful.build_body(claims=claims)
+        mpplus_good_ending.build_body(claims=claims)
+        return
+
     mpplain.gen_html_file(tdm_ch, claims=claims)
     mpplus.gen_html_file(tdm_ch, claims=claims)
     mpplus_aot.gen_html_file(tdm_ch, claims=claims)
@@ -34,5 +36,26 @@ def build_docs_with_explicit_claims(
     mpplus_haarah_2.gen_html_file(tdm_ch, claims=claims)
     mpplus_kaful.gen_html_file(tdm_ch, claims=claims)
     mpplus_good_ending.gen_html_file(tdm_ch, claims=claims)
+
+
+def build_docs_with_explicit_claims(
+    out_dir: str | Path,
+    *,
+    css_href: str = "style.css",
+) -> ClaimCollection:
+    """Generate all MAM-parsed authored docs and return explicit claims."""
+    claims = ClaimCollection()
+    out_dir_path = Path(out_dir)
+    styles_mam_parsed.make_css_file_for_mam_parsed(str(out_dir_path / css_href))
+    tdm_ch = str(out_dir_path), css_href
+    _run_mam_parsed_authored_traversal(claims=claims, tdm_ch=tdm_ch)
+
+    return claims
+
+
+def collect_explicit_claims() -> ClaimCollection:
+    """Collect explicit claims using authored traversal without writing docs."""
+    claims = ClaimCollection()
+    _run_mam_parsed_authored_traversal(claims=claims)
 
     return claims

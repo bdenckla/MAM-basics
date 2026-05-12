@@ -59,11 +59,11 @@ def _kq_special_rows(*, claims: ClaimCollection):
 
 def gen_html_file(tdm_ch, claims: ClaimCollection):
     """Generate reading_mam_parsed_plus_kq_special.html in the given output directory."""
-    cbody = _build_body(claims=claims)
+    cbody = build_body(claims=claims)
     return author.help_gen_html_file(__file__, tdm_ch, _FNAME, _TITLE, cbody)
 
 
-def _build_body(*, claims: ClaimCollection):
+def build_body(*, claims: ClaimCollection):
     back_link = author.anchor_h("Reading $MAM-parsed-plus", _PLUS_DOC)
     return [
         author.heading_level_1(["Special $ketiv_qere — ", author.hbo("מ:כו״ק מיוחד")]),
@@ -103,3 +103,7 @@ def _build_body(*, claims: ClaimCollection):
         author.para("Example (Job 38:1):"),
         json_block.json_block_raw_html(_JSON_KQ_SPECIAL),
     ]
+
+
+def _build_body(*, claims: ClaimCollection):
+    return build_body(claims=claims)
