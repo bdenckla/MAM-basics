@@ -46,7 +46,9 @@ def _emit_claim_payload(
     data=None,
 ):
     if claims is None:
-        return payload
+        if claim_id in REGISTRY:
+            return payload
+        return claim(claim_id, payload, kind=kind, subject=subject, data=data)
     return claims.claim(claim_id, payload, kind=kind, subject=subject, data=data)
 
 
@@ -63,10 +65,8 @@ def _json_kaful(*, claims: ClaimCollection | None = None):
 
 def populate_claims(*, claims: ClaimCollection | None = None):
     """Emit mpplus_kaful claim metadata into explicit claims or legacy REGISTRY."""
-    claim_fn = claims.claim if claims is not None else claim
-    if claims is None and _KAFUL_CLAIM_ID in REGISTRY:
-        return
-    claim_fn(
+    _emit_claim_payload(
+        claims,
         _KAFUL_CLAIM_ID,
         None,
         kind="example",
