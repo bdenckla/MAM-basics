@@ -72,8 +72,8 @@ def _build_body():
         author.para(
             [
                 author.hbo("מ:הערה"),
-                " is the standard (non-targeted) scroll-difference footnote:"
-                " it carries the footnote text but does not explicitly"
+                " is the standard (non-targeted) scroll-difference note:"
+                " it carries the note text but does not explicitly"
                 " identify which word the note applies to."
                 " \u201cTargeted\u201d version ",
                 author.hbo("מ:הערה-2"),
@@ -85,7 +85,7 @@ def _build_body():
         author.ordered_list(
             [
                 "The target word (the word the note applies to)",
-                "The footnote text (the scroll-difference description)",
+                "The note text (the scroll-difference description)",
                 [
                     "Mark position: ",
                     mb_html.code('"אאא*"'),
@@ -107,7 +107,7 @@ def _build_body():
                 author.hbo("מ:הערה-2"),
                 " only to extract the target word and use ",
                 author.hbo("מ:הערה"),
-                " separately to extract the footnote text.",
+                " separately to extract the note text.",
             ]
         ),
         author.heading_level_2("Example in context"),

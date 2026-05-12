@@ -408,11 +408,11 @@ STRUCTURAL_ROWS = claim(
     },
 )
 
-FOOTNOTE_ROW = claim(
-    "mp.both.templates.footnote",
+NOTE_ROW = claim(
+    "mp.both.templates.note",
     [
         [author.hbo("מ:הערה"), " / ", author.hbo("מ:הערה-2")],
-        "Scroll-difference footnotes (Torah and Esther only). Footnote markers appear within the text itself. Parameter is the footnote text.",
+        "Scroll-difference notes (Torah and Esther only). Note markers appear within the text itself. Parameter is the note text.",
     ],
     kind="enum",
     subject="mp:both",
@@ -420,16 +420,16 @@ FOOTNOTE_ROW = claim(
     data={"templates": ["מ:הערה"], "books": "Torah and Esther only"},
 )
 
-FOOTNOTE_LINKS_ROW = claim(
-    "mp.both.templates.footnote-links.set",
+NOTE_LINKS_ROW = claim(
+    "mp.both.templates.note-links.set",
     [
         [
             author.hbo("מ:קישור בהערה"),
-            "Hyperlink inside footnote text (within arg 2 of מ:הערה or מ:הערה-2).",
+            "Hyperlink inside note text (within arg 2 of מ:הערה or מ:הערה-2).",
         ],
         [
             author.hbo("מ:קישור פנימי בהערה"),
-            "Same-page link inside footnote text (within arg 2 of מ:הערה or מ:הערה-2).",
+            "Same-page link inside note text (within arg 2 of מ:הערה or מ:הערה-2).",
         ],
     ],
     kind="enum",
@@ -805,7 +805,7 @@ PLUS_ONLY = claim(
     subject="mp:plus",
     data={
         "templates": [
-            # Plus-only footnote template (counterpart מ:הערה is in both)
+            # Plus-only note template (counterpart מ:הערה is in both)
             "מ:הערה-2",
             # Plus-only special-letter template (previously mistakenly in SPECIAL_LETTER_ROWS)
             "מ:אות-מיוחדת-במילה",

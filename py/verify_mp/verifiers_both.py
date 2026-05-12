@@ -13,7 +13,7 @@ from verify_mp.corpus import (
 
 # Torah (Pentateuch) + Esther book24_name values — the only books where
 # מ:הערה / מ:הערה-2 may appear.
-_FOOTNOTE_BOOKS = frozenset(
+_NOTE_BOOKS = frozenset(
     [
         "ספר בראשית",
         "ספר שמות",
@@ -93,18 +93,18 @@ def verify_mp_both_templates_other_set(record: ClaimRecord, ctx: Context) -> Non
     _verify_template_set_observed(record, ctx)
 
 
-def _verify_footnote_books_only(record: ClaimRecord, ctx: Context) -> None:
-    """Assert footnote templates only appear in Torah and Esther books.
+def _verify_note_books_only(record: ClaimRecord, ctx: Context) -> None:
+    """Assert note templates only appear in Torah and Esther books.
 
     Walks the raw plus corpus and collects every book24_name where a template
-    whose name is in record.data["templates"] appears.  Asserts the resulting
-    set is a subset of _FOOTNOTE_BOOKS.
+    whose name is in record.data["templates"] appears. Asserts the resulting
+    set is a subset of _NOTE_BOOKS.
     """
     tmpl_names = frozenset(record.data["templates"])
     bad_books: set[str] = set()
     for book39, _ch_key, _v_key, verse in iter_verses(ctx.corpus):
         book = book39["book24_name"]
-        if book in _FOOTNOTE_BOOKS:
+        if book in _NOTE_BOOKS:
             continue
         for col in verse:
             for tmpl in iter_template_objects(col):
@@ -112,20 +112,18 @@ def _verify_footnote_books_only(record: ClaimRecord, ctx: Context) -> None:
                     bad_books.add(book)
     assert (
         not bad_books
-    ), f"footnote templates found outside Torah/Esther: {sorted(bad_books)}"
+    ), f"note templates found outside Torah/Esther: {sorted(bad_books)}"
 
 
-def verify_mp_both_templates_footnote(record: ClaimRecord, ctx: Context) -> None:
-    """The footnote templates (מ:הערה, מ:הערה-2) appear at least once in the plus corpus
+def verify_mp_both_templates_note(record: ClaimRecord, ctx: Context) -> None:
+    """The note templates (מ:הערה, מ:הערה-2) appear at least once in the plus corpus
     (per the precomputed tmpl-survey artifact) and only in Torah and Esther books."""
     _verify_template_set_observed(record, ctx)
-    _verify_footnote_books_only(record, ctx)
+    _verify_note_books_only(record, ctx)
 
 
-def verify_mp_both_templates_footnote_links_set(
-    record: ClaimRecord, ctx: Context
-) -> None:
-    """Every declared footnote-link template appears at least once in the plus corpus
+def verify_mp_both_templates_note_links_set(record: ClaimRecord, ctx: Context) -> None:
+    """Every declared note-link template appears at least once in the plus corpus
     (per the precomputed tmpl-survey artifact)."""
     _verify_template_set_observed(record, ctx)
 
@@ -210,14 +208,14 @@ def verify_mp_both_templates_all_groups_cover_all_observed(
     """Every template observed in either survey is covered by at least one declared group.
 
     Collects all declared template names from mp.both.templates.*.set,
-    mp.both.templates.footnote, and mp.plain.templates.*.set claims in
+    mp.both.templates.note, and mp.plain.templates.*.set claims in
     REGISTRY, then asserts that every template name observed in either
     corpus survey (union) is in the resulting union of declared templates.
     """
     declared: set[str] = set()
     for cid, rec in REGISTRY.items():
         is_both = cid.startswith("mp.both.templates.") and (
-            cid.endswith(".set") or cid == "mp.both.templates.footnote"
+            cid.endswith(".set") or cid == "mp.both.templates.note"
         )
         is_plain = cid.startswith("mp.plain.templates.") and cid.endswith(".set")
         is_plus = cid.startswith("mp.plus.templates.") and cid.endswith(".set")

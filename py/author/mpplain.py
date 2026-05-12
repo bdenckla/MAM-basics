@@ -409,9 +409,9 @@ def _s_common_templates():
             "Many editions will choose to skip poetic formatting by treating"
             " \u05e40\u2013\u05e44 as simple word spaces."
         ),
-        author.heading_level_3("Footnote template"),
+        author.heading_level_3("Note template"),
         author.std_table(
-            [cmn.FOOTNOTE_ROW],
+            [cmn.NOTE_ROW],
             arg_to_troh=["Template", "Purpose"],
         ),
         author.heading_level_3("Other templates"),
