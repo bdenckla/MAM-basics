@@ -170,12 +170,13 @@ class TestExplicitClaims(unittest.TestCase):
 
         self.assertNotIn("mp.plus.example.kaful-template-object", claim_mod.REGISTRY)
 
-    def test_mpplus_kaful_build_body_registers_legacy_claim(self):
+    def test_mpplus_kaful_build_body_requires_explicit_claims(self):
         kaful = importlib.import_module("author.mpplus_kaful")
 
-        kaful._build_body()
+        with self.assertRaises(TypeError):
+            kaful._build_body()
 
-        self.assertIn("mp.plus.example.kaful-template-object", claim_mod.REGISTRY)
+        self.assertNotIn("mp.plus.example.kaful-template-object", claim_mod.REGISTRY)
 
     def test_mpplus_kaful_build_body_can_emit_explicit_claim(self):
         kaful = importlib.import_module("author.mpplus_kaful")
