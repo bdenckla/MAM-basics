@@ -33,6 +33,20 @@ _KQ_SIMPLE_FOI_INTRO_BY_SPECIAL_KQ_TYPE = {
 _CLAIM_DEFS: list[tuple[str, Any, str, str, Any]] = []
 
 
+def _emit_claim_payload(
+    claims: ClaimCollection | None,
+    claim_id: str,
+    payload,
+    *,
+    kind: str,
+    subject: str,
+    data: Any = None,
+):
+    if claims is None:
+        return claim(claim_id, payload, kind=kind, subject=subject, data=data)
+    return claims.claim(claim_id, payload, kind=kind, subject=subject, data=data)
+
+
 def _claim_payload(
     claim_id: str,
     payload,
@@ -1038,11 +1052,17 @@ _FILE_NAMING_ROWS = _claim_payload(
 
 def populate_claims(*, claims: ClaimCollection | None = None):
     """Emit mp_cmn claims into explicit claims or legacy REGISTRY."""
-    claim_fn = claims.claim if claims is not None else claim
     if claims is None and _CLAIM_DEFS and _CLAIM_DEFS[0][0] in REGISTRY:
         return
     for claim_id, payload, kind, subject, data in _CLAIM_DEFS:
-        claim_fn(claim_id, payload, kind=kind, subject=subject, data=data)
+        _emit_claim_payload(
+            claims,
+            claim_id,
+            payload,
+            kind=kind,
+            subject=subject,
+            data=data,
+        )
 
 
 def s_file_naming():
