@@ -918,55 +918,117 @@ ALL_GROUPS_COVER_ALL_OBSERVED = _claim_payload(
     data={},
 )
 
-# Templates that appear only in the plain survey — either because they are
-# expanded to inline text by mpplus_boring_tmpls.py, or because they are
-# navigation/layout elements not included in the plus content format.
-# They cannot be listed in mp:both claims (they fail the intersection check).
-# This mp:plain claim covers them so the all-groups-cover-all-observed check
-# accounts for every template observed in the plain corpus.
+# Templates that appear only in the plain survey are grouped into 3 categories
+# for dedicated documentation.
+PLAIN_ONLY_TAGGING_ONLY_TEMPLATES = (
+    # From STRUCTURAL_ROWS (not in plus content format)
+    "מ:רווח בתרי עשר",
+    "מ:רווח לספר בתהלים",
+    "מ:יישור-בשני-הצדדים",
+    "מ:יישור-בשני-הצדדים-סוף",
+    # From NAVIGATION_ROWS (not in plus content format)
+    "מ:שוליים",
+    "מ:שוליים-סוף",
+    "טעמי המקרא באינטרנט",
+    "מ:טעמי המקרא",
+    "מ:טעמי המקרא-סוף",
+    "ניווט טעמים",
+    "בסיס-משתמש",
+    "צורות כתיבה בספרי אמ״ת",
+)
+
+PLAIN_ONLY_PRE_EVALUATED_TEMPLATES = (
+    # Expanded/removed by mpplus_boring_tmpls.py handlers.
+    "גלגל-2",
+    "ירח בן יומו-2",
+    "מ:טעם",
+    tmpln.TWO_ACCENTS_OF_QUPO,
+    "פרשה-מרכז",
+    "מ:אות מנוקדת",
+    "מ:טעם ומתג באות אחת",
+    "מ:גרש ותלישא גדולה",
+    "מ:גרשיים ותלישא גדולה",
+    "רווח בסוף שורה",
+    "מ:כל קמץ קטן מרכא",
+    "קק",
+    "עוגן בשורה",
+)
+
+PLAIN_ONLY_PRE_EVALUATED_HANDLER_BEHAVIOR = {
+    "גלגל-2": "_just_take_arg_1",
+    "ירח בן יומו-2": "_just_take_arg_1",
+    "מ:טעם": "_handle_accent",
+    tmpln.TWO_ACCENTS_OF_QUPO: "_handle_qupo",
+    "פרשה-מרכז": "_handle_pseudo_title",
+    "מ:אות מנוקדת": "_handle_word_with_puncta_extraordinaria",
+    "מ:טעם ומתג באות אחת": "constant replacement",
+    "מ:גרש ותלישא גדולה": "constant replacement",
+    "מ:גרשיים ותלישא גדולה": "constant replacement",
+    "רווח בסוף שורה": "constant empty string",
+    "מ:כל קמץ קטן מרכא": "constant replacement",
+    "קק": "constant empty string",
+    "עוגן בשורה": "constant empty string",
+}
+
+PLAIN_ONLY_MISC_NOT_APPLICABLE_TO_PLUS_TEMPLATES = (
+    # From NOTE_ROW and OTHER_ROWS.
+    tmpln.SCRDFF_NO_TAR,
+    "מ:סיום בטוב",
+)
+
+PLAIN_ONLY_CATEGORY_DEFS = (
+    (
+        "Tagging-only templates removed",
+        PLAIN_ONLY_TAGGING_ONLY_TEMPLATES,
+    ),
+    (
+        "Pre-evaluated templates removed",
+        PLAIN_ONLY_PRE_EVALUATED_TEMPLATES,
+    ),
+    (
+        "Misc. not applicable to plus templates removed",
+        PLAIN_ONLY_MISC_NOT_APPLICABLE_TO_PLUS_TEMPLATES,
+    ),
+)
+
+_PLAIN_ONLY_TEMPLATES = [
+    template
+    for _category_name, templates in PLAIN_ONLY_CATEGORY_DEFS
+    for template in templates
+]
+
+# Fail fast if any template appears in more than one category.
+_plain_only_seen = set()
+for _category_name, _templates in PLAIN_ONLY_CATEGORY_DEFS:
+    _overlap = _plain_only_seen.intersection(_templates)
+    assert not _overlap, (
+        "plain-only category overlap detected in "
+        f"{_category_name!r}: {sorted(_overlap)}"
+    )
+    _plain_only_seen.update(_templates)
+
+assert frozenset(PLAIN_ONLY_PRE_EVALUATED_HANDLER_BEHAVIOR.keys()) == frozenset(
+    PLAIN_ONLY_PRE_EVALUATED_TEMPLATES
+), "pre-evaluated handler map must cover exactly the pre-evaluated category"
+
+PLAIN_ONLY_TEMPLATE_SET = frozenset(_PLAIN_ONLY_TEMPLATES)
+PLAIN_ONLY_CATEGORY_UNION = frozenset(
+    template
+    for _category_name, templates in PLAIN_ONLY_CATEGORY_DEFS
+    for template in templates
+)
+assert PLAIN_ONLY_CATEGORY_UNION == PLAIN_ONLY_TEMPLATE_SET
+
+# Templates that appear only in the plain survey. They cannot be listed in
+# mp:both claims (they fail the intersection check). This mp:plain claim covers
+# them so the all-groups-cover-all-observed check accounts for every template
+# observed in the plain corpus.
 PLAIN_ONLY = _claim_payload(
     "mp.plain.templates.plain-only.set",
     "Templates present only in the plain corpus (not in the plus corpus).",
     kind="enum",
     subject="mp:plain",
-    data={
-        "templates": [
-            # From ACCENT_ROWS (expanded by mpplus_boring_tmpls.py)
-            "גלגל-2",
-            "ירח בן יומו-2",
-            "מ:טעם",
-            tmpln.TWO_ACCENTS_OF_QUPO,
-            # From POETIC_ROWS (expanded by mpplus_boring_tmpls.py)
-            "פרשה-מרכז",
-            # From OTHER_ROWS (expanded by mpplus_boring_tmpls.py)
-            "מ:אות מנוקדת",
-            "מ:טעם ומתג באות אחת",
-            "מ:גרש ותלישא גדולה",
-            "מ:גרשיים ותלישא גדולה",
-            "רווח בסוף שורה",
-            "מ:כל קמץ קטן מרכא",
-            # From NOTE_ROW (plus now keeps only the targeted form מ:הערה-2)
-            tmpln.SCRDFF_NO_TAR,
-            # From OTHER_ROWS (not in plus content format)
-            "מ:סיום בטוב",
-            # From STRUCTURAL_ROWS (not in plus content format)
-            "מ:רווח בתרי עשר",
-            "מ:רווח לספר בתהלים",
-            "מ:יישור-בשני-הצדדים",
-            "מ:יישור-בשני-הצדדים-סוף",
-            # From NAVIGATION_ROWS (not in plus content format)
-            "מ:שוליים",
-            "מ:שוליים-סוף",
-            "טעמי המקרא באינטרנט",
-            "מ:טעמי המקרא",
-            "מ:טעמי המקרא-סוף",
-            "ניווט טעמים",
-            "בסיס-משתמש",
-            "קק",
-            "עוגן בשורה",
-            "צורות כתיבה בספרי אמ״ת",
-        ]
-    },
+    data={"templates": _PLAIN_ONLY_TEMPLATES},
 )
 
 # Templates that appear only in the plus survey (not in the plain survey).

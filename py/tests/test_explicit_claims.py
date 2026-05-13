@@ -205,14 +205,36 @@ class TestExplicitClaims(unittest.TestCase):
             "mp.plus.verse.is-3-tuple",
             "mp.plus.template.object-fields",
             "mp.plus.template.format-example",
-            "mp.plain.template.stmpl-format-example",
-            "mp.plus.diff-from-plain",
+            "mp.plus.docs.diff-from-plain.links",
             "mp.plus.docs.common-templates.templates-in-plus-survey",
         ]
 
         for claim_id in representative_ids:
             with self.subTest(claim_id=claim_id):
                 self.assertIn(claim_id, claims.records_by_id)
+
+    def test_mpplus_diff_from_plain_build_body_can_emit_explicit_claims(self):
+        diff_doc = importlib.import_module("author.mpplus_diff_from_plain")
+        claims = claim_mod.ClaimCollection()
+
+        diff_doc._build_body(claims=claims)
+
+        self.assertIn("mp.plus.diff-from-plain", claims.records_by_id)
+        self.assertIn("mp.plain.template.stmpl-format-example", claims.records_by_id)
+
+    def test_mpplus_plain_only_templates_build_body_can_emit_explicit_claims(self):
+        plain_only_doc = importlib.import_module("author.mpplus_plain_only_templates")
+        claims = claim_mod.ClaimCollection()
+
+        plain_only_doc._build_body(claims=claims)
+
+        self.assertIn(
+            "mp.plain.docs.plain-only-templates.categories", claims.records_by_id
+        )
+        self.assertIn(
+            "mp.plain.docs.plain-only-templates.pre-evaluated.handlers",
+            claims.records_by_id,
+        )
 
     def test_mpplus_body_has_no_stale_claim_defs_table(self):
         mpplus_body = importlib.import_module("author.mpplus_body")

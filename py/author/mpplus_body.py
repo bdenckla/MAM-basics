@@ -9,6 +9,8 @@ from author import mp_cmn as cmn
 
 _PLUS_DOC = "mpplus.html"
 _CALL_GRAPHS = "https://bdenckla.github.io/MAM-parsed/plus-template-call-graphs.html"
+_DIFF_FROM_PLAIN_DOC = "mpplus_diff_from_plain.html"
+_PLAIN_ONLY_TEMPLATES_DOC = "mpplus_plain_only_templates.html"
 
 _AOT_DOC = "mpplus_aot.html"
 _KQ_SPECIAL_DOC = "mpplus_kq_special.html"
@@ -136,9 +138,6 @@ _JSON_TMPL_FORMAT = """\
   "tmpl_params": {"1": "את", "2": "אַ֠תָּ֠ה"}
 }"""
 
-_JSON_TMPL_PLAIN_COMPARE = """\
-{"stmpl": "קו״כ|את|אַ֠תָּ֠ה"}"""
-
 _JSON_NESTED = """\
 {
   "tmpl_name": "נוסח",
@@ -247,17 +246,6 @@ def _json_tmpl_format(*, claims: ClaimCollection):
     )
 
 
-def _json_tmpl_plain_compare(*, claims: ClaimCollection):
-    return _emit_claim_payload(
-        claims,
-        "mp.plain.template.stmpl-format-example",
-        _JSON_TMPL_PLAIN_COMPARE,
-        kind="format",
-        subject="mp:plain",
-        data={"stmpl": "קו״כ|את|אַ֠תָּ֠ה"},
-    )
-
-
 def _json_nested(*, claims: ClaimCollection):
     return _emit_claim_payload(
         claims,
@@ -271,87 +259,6 @@ def _json_nested(*, claims: ClaimCollection):
 # ---------------------------------------------------------------------------
 # Sections
 # ---------------------------------------------------------------------------
-
-
-_DIFF_ROWS = [
-    [
-        "Pseudo-verses “0” and “תתת”",
-        "Present",
-        "Removed",
-    ],
-    [
-        "Custom XML tags (נוינקלוד etc.)",
-        "Present",
-        "Removed",
-    ],
-    ["Wikitext line breaks (“//”)", "Present in C column", "Removed"],
-    ["Named params", "not parsed", "parsed and unified with positional"],
-    [
-        "D column (verse label)",
-        ["Every verse has ", author.hbo("מ:פסוק")],
-        [
-            "Only when ",
-            author.hbo("מ:פסוק"),
-            " has interesting parameters or is wrapped in ",
-            author.hbo("נוסח"),
-        ],
-    ],
-    [mb_html.code("good_ending_plus"), "Not present", "Added (at book39 level)"],
-    [
-        "Words with special letters",
-        "word interrupted by inline letter templates",
-        [
-            "whole word wrapped by ",
-            author.hbo("מ:אות-מיוחדת-במילה"),
-            "; uninterrupted encoding in args 2–4",
-        ],
-    ],
-    [
-        [mb_html.code('{"tmpl": [...]}'), " — parsed template trees"],
-        "Present",
-        [
-            "Removed (replaced by ",
-            mb_html.code("tmpl_name"),
-            "/",
-            mb_html.code("tmpl_params"),
-            ")",
-        ],
-    ],
-    [
-        [mb_html.code('{"stmpl": "..."}'), " — stringified templates"],
-        "Present",
-        [
-            "Removed (replaced by ",
-            mb_html.code("tmpl_name"),
-            "/",
-            mb_html.code("tmpl_params"),
-            ")",
-        ],
-    ],
-    [
-        [author.hbo("גלגל-2"), " — galgal accent annotation"],
-        "Present",
-        "Removed (handled differently in plus)",
-    ],
-    [
-        "Scroll-difference note template",
-        [author.hbo("מ:הערה"), " (non-targeted)"],
-        [
-            author.hbo("מ:הערה-2"),
-            " (targeted)",
-        ],
-    ],
-]
-
-
-def _diff_rows(*, claims: ClaimCollection):
-    return _emit_claim_payload(
-        claims,
-        "mp.plus.diff-from-plain",
-        _DIFF_ROWS,
-        kind="enum",
-        subject="mp:plus",
-    )
 
 
 def s_intro():
@@ -381,30 +288,36 @@ def s_intro():
 
 
 def s_plain_differences(*, claims: ClaimCollection):
+    _emit_claim_payload(
+        claims,
+        "mp.plus.docs.diff-from-plain.links",
+        "Differences-from-plain content is split into dedicated pages.",
+        kind="struct",
+        subject="mp:plus",
+        data={
+            "primary_differences_page": _DIFF_FROM_PLAIN_DOC,
+            "plain_only_templates_page": _PLAIN_ONLY_TEMPLATES_DOC,
+        },
+    )
+
     return [
         author.heading_level_2("Differences from plain format"),
-        author.std_table(
-            _diff_rows(claims=claims), arg_to_troh=["Feature", "Plain", "Plus"]
-        ),
         author.para(
             [
-                "Template names use Hebrew gershayim ",
-                mb_html.code("״"),
-                " (for example ",
-                author.hbo("כו״ק"),
-                "), not ASCII double quote ",
-                mb_html.code('"'),
+                "The primary differences table has moved to ",
+                author.anchor_h("its dedicated page", _DIFF_FROM_PLAIN_DOC),
                 ".",
             ]
         ),
         author.para(
             [
-                "Example of the stringified template format ",
-                mb_html.code('{"stmpl": "..."}'),
-                " (present in plain, replaced in plus):",
+                "That page is intentionally concise."
+                " For an exhaustive list of templates removed from plus, grouped as"
+                " Tagging-only, Pre-evaluated, and Misc. not applicable to plus, see ",
+                author.anchor_h("Plain-only Templates", _PLAIN_ONLY_TEMPLATES_DOC),
+                ".",
             ]
         ),
-        json_block.json_block_raw_html(_json_tmpl_plain_compare(claims=claims)),
     ]
 
 
