@@ -2,12 +2,12 @@
 === holman-ketiv-qere ===
   PROVENANCE DOCS: ['py/mb_cmn/PROVENANCE.md', 'py/mb_cmn/provenance.md', 'py/mb_diff_mpu/PROVENANCE.md', 'py/mb_diff_mpu/provenance.md']
   COPY SCRIPTS: ['py/main_update_vendored_files.py', 'py/mb_cmn/vendoring_sync.py']
-  mb_cmn dir (py/mb_cmn): ['bib_locales.py', 'cantsys.py', 'he_wikisource_url.py', 'hebrew_accents.py', 'hebrew_letters.py', 'hebrew_points.py', 'hebrew_punctuation.py', 'hebrew_verse_numerals.py', 'mam_bknas.py', 'mam_bknas_and_std_bknas.py', 'str_defs.py', 'template_names.py', 'uni_denorm.py', 'vendoring_sync.py']
+  mb_cmn dir (py/mb_cmn): ['bib_locales.py', 'cantsys.py', 'he_wikisource_url.py', 'hebrew_accents.py', 'hebrew_letters.py', 'hebrew_points.py', 'hebrew_punctuation.py', 'hebrew_verse_numerals.py', 'mam_bknas.py', 'mam_bknas_and_std_bknas.py', 'retired_kq_special_templates.py', 'retired_template_names.py', 'str_defs.py', 'template_names.py', 'uni_denorm.py', 'url_percent.py', 'vendoring_sync.py']
 
 === al-hatorah ===
   PROVENANCE DOCS: ['py/mb_cmn/PROVENANCE.md', 'py/mb_cmn/provenance.md']
   COPY SCRIPTS: ['py/main_update_vendored_files.py', 'py/mb_cmn/vendoring_sync.py']
-  mb_cmn dir (py/mb_cmn): ['bib_locales.py', 'cantsys.py', 'file_io.py', 'he_wikisource_url.py', 'hebrew_accents.py', 'hebrew_letters.py', 'hebrew_points.py', 'hebrew_punctuation.py', 'hebrew_verse_numerals.py', 'mam_bknas.py', 'mam_bknas_and_std_bknas.py', 'minirow.py', 'my_diffs.py', 'my_utils.py', 'provenance.py', 'read_books_from_mam_parsed_plus.py', 'shrink.py', 'str_defs.py', 'template_names.py', 'uni_denorm.py', 'uni_heb.py', 'uni_norm_fragile.py', 'vendoring_sync.py', 'ws_tmpl1.py', 'ws_tmpl2.py', 'ws_tmpl_named_params.py']
+  mb_cmn dir (py/mb_cmn): ['bib_locales.py', 'cantsys.py', 'file_io.py', 'he_wikisource_url.py', 'hebrew_accents.py', 'hebrew_letters.py', 'hebrew_points.py', 'hebrew_punctuation.py', 'hebrew_verse_numerals.py', 'mam_bknas.py', 'mam_bknas_and_std_bknas.py', 'minirow.py', 'my_diffs.py', 'my_utils.py', 'provenance.py', 'read_books_from_mam_parsed_plus.py', 'shrink.py', 'str_defs.py', 'template_names.py', 'uni_denorm.py', 'uni_heb.py', 'uni_norm_fragile.py', 'url_percent.py', 'vendoring_sync.py', 'ws_tmpl1.py', 'ws_tmpl2.py', 'ws_tmpl_named_params.py']
 
 === book-of-job ===
   provenance docs: none
@@ -34,9 +34,9 @@
   mb_cmn dir (mb_cmn): ['cantsys.py', 'file_io.py', 'hebrew_accents.py', 'hebrew_letters.py', 'hebrew_points.py', 'hebrew_punctuation.py', 'str_defs.py', 'uni_heb.py']
 
 === mgketer ===
-  provenance docs: none
-  copy scripts: none found
-  mb_cmn dir (py/mb_cmn): ['bib_locales.py', 'he_wikisource_url.py', 'hebrew_accents.py', 'hebrew_letters.py', 'hebrew_points.py', 'hebrew_punctuation.py', 'mam_bknas.py', 'mam_bknas_and_std_bknas.py', 'polite_download.py', 'str_defs.py', 'template_names.py', 'url_percent.py', 'uxlc_change_url.py']
+  PROVENANCE DOCS: ['py/mb_cmn/PROVENANCE.md', 'py/mb_cmn/provenance.md', 'py/mb_diff_mpu/PROVENANCE.md', 'py/mb_diff_mpu/provenance.md']
+  COPY SCRIPTS: ['py/main_update_vendored_files.py', 'py/mb_cmn/vendoring_sync.py']
+  mb_cmn dir (py/mb_cmn): ['bib_locales.py', 'cantsys.py', 'he_wikisource_url.py', 'hebrew_accents.py', 'hebrew_letters.py', 'hebrew_points.py', 'hebrew_punctuation.py', 'mam_bknas.py', 'mam_bknas_and_std_bknas.py', 'polite_download.py', 'str_defs.py', 'template_names.py', 'url_percent.py', 'uxlc_change_url.py', 'vendoring_sync.py']
 
 === UXLC-utils ===
   provenance docs: none

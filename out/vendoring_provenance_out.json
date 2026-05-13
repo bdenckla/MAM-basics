@@ -32,9 +32,12 @@
             "hebrew_verse_numerals.py",
             "mam_bknas.py",
             "mam_bknas_and_std_bknas.py",
+            "retired_kq_special_templates.py",
+            "retired_template_names.py",
             "str_defs.py",
             "template_names.py",
             "uni_denorm.py",
+            "url_percent.py",
             "vendoring_sync.py"
           ]
         }
@@ -81,6 +84,7 @@
             "uni_denorm.py",
             "uni_heb.py",
             "uni_norm_fragile.py",
+            "url_percent.py",
             "vendoring_sync.py",
             "ws_tmpl1.py",
             "ws_tmpl2.py",
@@ -213,13 +217,22 @@
         "py/mb_diff_mpu",
         "py/python_modules"
       ],
-      "found_provenance_docs": [],
-      "copy_scripts": [],
+      "found_provenance_docs": [
+        "py/mb_cmn/PROVENANCE.md",
+        "py/mb_cmn/provenance.md",
+        "py/mb_diff_mpu/PROVENANCE.md",
+        "py/mb_diff_mpu/provenance.md"
+      ],
+      "copy_scripts": [
+        "py/main_update_vendored_files.py",
+        "py/mb_cmn/vendoring_sync.py"
+      ],
       "mb_cmn_dirs": [
         {
           "path": "py/mb_cmn",
           "files": [
             "bib_locales.py",
+            "cantsys.py",
             "he_wikisource_url.py",
             "hebrew_accents.py",
             "hebrew_letters.py",
@@ -231,7 +244,8 @@
             "str_defs.py",
             "template_names.py",
             "url_percent.py",
-            "uxlc_change_url.py"
+            "uxlc_change_url.py",
+            "vendoring_sync.py"
           ]
         }
       ]

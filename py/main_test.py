@@ -50,6 +50,11 @@ TEST_MODULE_SPECS = (
         help_text="Run URL percent-encoding helper tests.",
     ),
     TestModuleSpec(
+        flag="mb-cmn-provenance",
+        module_name="tests.test_mb_cmn_provenance",
+        help_text="Run provenance generated-by path formatting tests.",
+    ),
+    TestModuleSpec(
         flag="mpplus-extract",
         module_name="tests.test_mpplus_extract",
         help_text="Run MP-plus extraction/diff tests.",

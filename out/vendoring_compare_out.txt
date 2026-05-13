@@ -12,14 +12,22 @@ my_utils.py                                MAM-simple                 py-example
 provenance.py                              MAM-simple                 py-examples/mb_cmn/provenance.py                        identical      2026-05-01   generated
 shrink.py                                  MAM-simple                 py-examples/mb_cmn/shrink.py                            identical      2026-05-01   generated
 str_defs.py                                MAM-simple                 py-examples/mb_cmn/str_defs.py                          identical      2026-05-01   generated
+template_names.py                          MAM-simple                 py-examples/mb_cmn/template_names.py                    identical      2026-05-09   generated
 uni_heb.py                                 MAM-simple                 py-examples/mb_cmn/uni_heb.py                           identical      2026-05-01   generated
 url_percent.py                             MAM-simple                 py-examples/mb_cmn/url_percent.py                       identical      2026-05-03   generated
+ws_tmpl1.py                                MAM-simple                 py-examples/mb_cmn/ws_tmpl1.py                          identical      2026-05-09   generated
+ws_tmpl2.py                                MAM-simple                 py-examples/mb_cmn/ws_tmpl2.py                          identical      2026-05-09   generated
+ws_tmpl_named_params.py                    MAM-simple                 py-examples/mb_cmn/ws_tmpl_named_params.py              identical      2026-05-07   generated
+hebrew_letter_names.py                     MAM-simple                 py-examples/mb_misc/hebrew_letter_names.py              identical      2026-05-07   generated
+hebrew_letter_words.py                     MAM-simple                 py-examples/mb_misc/hebrew_letter_words.py              identical      2026-05-07   generated
+letter_small_job.py                        MAM-simple                 py-examples/mb_misc/letter_small_job.py                 identical      2026-05-09   generated
 mb_html.py                                 MAM-simple                 py-examples/mb_misc/mb_html.py                          identical      2026-05-07   generated
 mb_html_get_lines.py                       MAM-simple                 py-examples/mb_misc/mb_html_get_lines.py                identical      2026-05-07   generated
 my_utils_for_mainish.py                    MAM-simple                 py-examples/mb_misc/my_utils_for_mainish.py             identical      2026-05-01   generated
 osis_book_abbrevs.py                       MAM-simple                 py-examples/mb_misc/osis_book_abbrevs.py                identical      2026-05-01   generated
+slh_description.py                         MAM-simple                 py-examples/mb_misc/slh_description.py                  identical      2026-05-07   generated
 styles_authored.py                         MAM-simple                 py-examples/mb_misc/styles_authored.py                  identical      2026-05-07   generated
-styles_mam_parsed.py                       MAM-simple                 py-examples/mb_misc/styles_mam_parsed.py                identical      2026-05-07   generated
+styles_mam_parsed.py                       MAM-simple                 py-examples/mb_misc/styles_mam_parsed.py                identical      2026-05-09   generated
 styles_mam_with_doc.py                     MAM-simple                 py-examples/mb_misc/styles_mam_with_doc.py              identical      2026-05-07   generated
 verse_and_friends.py                       MAM-simple                 py-examples/mb_misc/verse_and_friends.py                identical      2026-05-01   generated
 write_utils.py                             MAM-simple                 py-examples/mb_misc/write_utils.py                      identical      2026-05-07   generated
@@ -31,13 +39,13 @@ mam4sef_runners.py                         MAM-simple                 py-example
 sef_cmn.py                                 MAM-simple                 py-examples/mb_sefaria/sef_cmn.py                       identical      2026-05-01   generated
 sef_header.py                              MAM-simple                 py-examples/mb_sefaria/sef_header.py                    identical      2026-05-03   generated
 write_utils_sef_or_ajf.py                  MAM-simple                 py-examples/mb_sefaria/write_utils_sef_or_ajf.py        identical      2026-05-01   generated
-osis_handlers.py                           MAM-simple                 py-examples/osis/osis_handlers.py                       identical      2026-05-01   generated
+osis_handlers.py                           MAM-simple                 py-examples/osis/osis_handlers.py                       identical      2026-05-07   generated
 osis_index_html.py                         MAM-simple                 py-examples/osis/osis_index_html.py                     identical      2026-05-01   generated
 osis_namespace.py                          MAM-simple                 py-examples/osis/osis_namespace.py                      identical      2026-05-01   generated
-osis_runner.py                             MAM-simple                 py-examples/osis/osis_runner.py                         DIFFERS        2026-05-07   generated
+osis_runner.py                             MAM-simple                 py-examples/osis/osis_runner.py                         identical      2026-05-07   generated
 bib_locales.py                             holman-ketiv-qere          py/mb_cmn/bib_locales.py                                identical      2026-04-27   
 cantsys.py                                 holman-ketiv-qere          py/mb_cmn/cantsys.py                                    identical      2026-04-27   
-he_wikisource_url.py                       holman-ketiv-qere          py/mb_cmn/he_wikisource_url.py                          DIFFERS        2026-05-03   
+he_wikisource_url.py                       holman-ketiv-qere          py/mb_cmn/he_wikisource_url.py                          identical      2026-05-10   
 hebrew_accents.py                          holman-ketiv-qere          py/mb_cmn/hebrew_accents.py                             identical      2026-04-27   
 hebrew_letters.py                          holman-ketiv-qere          py/mb_cmn/hebrew_letters.py                             identical      2026-04-27   
 hebrew_points.py                           holman-ketiv-qere          py/mb_cmn/hebrew_points.py                              identical      2026-04-27   
@@ -45,23 +53,26 @@ hebrew_punctuation.py                      holman-ketiv-qere          py/mb_cmn/
 hebrew_verse_numerals.py                   holman-ketiv-qere          py/mb_cmn/hebrew_verse_numerals.py                      identical      2026-04-27   
 mam_bknas.py                               holman-ketiv-qere          py/mb_cmn/mam_bknas.py                                  identical      2026-04-27   
 mam_bknas_and_std_bknas.py                 holman-ketiv-qere          py/mb_cmn/mam_bknas_and_std_bknas.py                    identical      2026-04-27   
+retired_kq_special_templates.py            holman-ketiv-qere          py/mb_cmn/retired_kq_special_templates.py               identical      2026-05-10   
+retired_template_names.py                  holman-ketiv-qere          py/mb_cmn/retired_template_names.py                     identical      2026-05-10   
 str_defs.py                                holman-ketiv-qere          py/mb_cmn/str_defs.py                                   identical      2026-04-27   
-template_names.py                          holman-ketiv-qere          py/mb_cmn/template_names.py                             identical      2026-05-04   
+template_names.py                          holman-ketiv-qere          py/mb_cmn/template_names.py                             identical      2026-05-10   
 uni_denorm.py                              holman-ketiv-qere          py/mb_cmn/uni_denorm.py                                 identical      2026-04-27   
+url_percent.py                             holman-ketiv-qere          py/mb_cmn/url_percent.py                                identical      2026-05-10   
 vendoring_sync.py                          holman-ketiv-qere          py/mb_cmn/vendoring_sync.py                             identical      2026-04-27   
 change_ops.py                              holman-ketiv-qere          py/mb_diff_mpu/change_ops.py                            identical      2026-04-27   
 change_ops_apply.py                        holman-ketiv-qere          py/mb_diff_mpu/change_ops_apply.py                      identical      2026-04-27   
 change_ops_extract.py                      holman-ketiv-qere          py/mb_diff_mpu/change_ops_extract.py                    identical      2026-04-27   
 change_ops_render.py                       holman-ketiv-qere          py/mb_diff_mpu/change_ops_render.py                     identical      2026-04-27   
-describe_diff.py                           holman-ketiv-qere          py/mb_diff_mpu/describe_diff.py                         DIFFERS        2026-04-27   
+describe_diff.py                           holman-ketiv-qere          py/mb_diff_mpu/describe_diff.py                         identical      2026-05-10   
 grapheme_diff.py                           holman-ketiv-qere          py/mb_diff_mpu/grapheme_diff.py                         identical      2026-04-27   
-mpplus_flatten.py                          holman-ketiv-qere          py/mb_diff_mpu/mpplus_flatten.py                        DIFFERS        2026-04-27   
+mpplus_flatten.py                          holman-ketiv-qere          py/mb_diff_mpu/mpplus_flatten.py                        identical      2026-05-10   
 mpplus_param_access.py                     holman-ketiv-qere          py/mb_diff_mpu/mpplus_param_access.py                   identical      2026-04-27   
-mpplus_structure.py                        holman-ketiv-qere          py/mb_diff_mpu/mpplus_structure.py                      DIFFERS        2026-04-27   
+mpplus_structure.py                        holman-ketiv-qere          py/mb_diff_mpu/mpplus_structure.py                      identical      2026-05-10   
 bib_locales.py                             al-hatorah                 py/mb_cmn/bib_locales.py                                identical      2026-04-27   
 cantsys.py                                 al-hatorah                 py/mb_cmn/cantsys.py                                    identical      2026-04-27   
 file_io.py                                 al-hatorah                 py/mb_cmn/file_io.py                                    identical      2026-04-27   
-he_wikisource_url.py                       al-hatorah                 py/mb_cmn/he_wikisource_url.py                          DIFFERS        2026-05-03   
+he_wikisource_url.py                       al-hatorah                 py/mb_cmn/he_wikisource_url.py                          identical      2026-05-09   
 hebrew_accents.py                          al-hatorah                 py/mb_cmn/hebrew_accents.py                             identical      2026-04-27   
 hebrew_letters.py                          al-hatorah                 py/mb_cmn/hebrew_letters.py                             identical      2026-04-27   
 hebrew_points.py                           al-hatorah                 py/mb_cmn/hebrew_points.py                              identical      2026-04-27   
@@ -69,20 +80,21 @@ hebrew_punctuation.py                      al-hatorah                 py/mb_cmn/
 hebrew_verse_numerals.py                   al-hatorah                 py/mb_cmn/hebrew_verse_numerals.py                      identical      2026-04-27   
 mam_bknas.py                               al-hatorah                 py/mb_cmn/mam_bknas.py                                  identical      2026-04-27   
 mam_bknas_and_std_bknas.py                 al-hatorah                 py/mb_cmn/mam_bknas_and_std_bknas.py                    identical      2026-04-27   
-minirow.py                                 al-hatorah                 py/mb_cmn/minirow.py                                    identical      2026-04-27   
+minirow.py                                 al-hatorah                 py/mb_cmn/minirow.py                                    identical      2026-05-09   
 my_diffs.py                                al-hatorah                 py/mb_cmn/my_diffs.py                                   identical      2026-04-27   
 my_utils.py                                al-hatorah                 py/mb_cmn/my_utils.py                                   identical      2026-04-27   
-provenance.py                              al-hatorah                 py/mb_cmn/provenance.py                                 identical      2026-04-27   
-read_books_from_mam_parsed_plus.py         al-hatorah                 py/mb_cmn/read_books_from_mam_parsed_plus.py            identical      2026-04-27   
+provenance.py                              al-hatorah                 py/mb_cmn/provenance.py                                 DIFFERS        2026-04-27   
+read_books_from_mam_parsed_plus.py         al-hatorah                 py/mb_cmn/read_books_from_mam_parsed_plus.py            identical      2026-05-09   
 shrink.py                                  al-hatorah                 py/mb_cmn/shrink.py                                     identical      2026-04-27   
 str_defs.py                                al-hatorah                 py/mb_cmn/str_defs.py                                   identical      2026-04-27   
-template_names.py                          al-hatorah                 py/mb_cmn/template_names.py                             identical      2026-05-04   
+template_names.py                          al-hatorah                 py/mb_cmn/template_names.py                             identical      2026-05-09   
 uni_denorm.py                              al-hatorah                 py/mb_cmn/uni_denorm.py                                 identical      2026-04-27   
 uni_heb.py                                 al-hatorah                 py/mb_cmn/uni_heb.py                                    identical      2026-04-27   
 uni_norm_fragile.py                        al-hatorah                 py/mb_cmn/uni_norm_fragile.py                           identical      2026-04-27   
+url_percent.py                             al-hatorah                 py/mb_cmn/url_percent.py                                DIFFERS        2026-05-10   
 vendoring_sync.py                          al-hatorah                 py/mb_cmn/vendoring_sync.py                             identical      2026-04-27   
-ws_tmpl1.py                                al-hatorah                 py/mb_cmn/ws_tmpl1.py                                   identical      2026-04-27   
-ws_tmpl2.py                                al-hatorah                 py/mb_cmn/ws_tmpl2.py                                   identical      2026-04-27   
+ws_tmpl1.py                                al-hatorah                 py/mb_cmn/ws_tmpl1.py                                   identical      2026-05-09   
+ws_tmpl2.py                                al-hatorah                 py/mb_cmn/ws_tmpl2.py                                   identical      2026-05-09   
 ws_tmpl_named_params.py                    al-hatorah                 py/mb_cmn/ws_tmpl_named_params.py                       identical      2026-04-27   
 bib_locales.py                             book-of-job                mb_cmn/bib_locales.py                                   DIFFERS        2026-04-27   
 cantsys.py                                 book-of-job                mb_cmn/cantsys.py                                       identical      2026-04-27   
@@ -123,19 +135,21 @@ hebrew_points.py                           diffable-pointed-hebrew    mb_cmn/heb
 hebrew_punctuation.py                      diffable-pointed-hebrew    mb_cmn/hebrew_punctuation.py                            DIFFERS        2026-04-27   
 str_defs.py                                diffable-pointed-hebrew    mb_cmn/str_defs.py                                      DIFFERS        2026-04-27   
 uni_heb.py                                 diffable-pointed-hebrew    mb_cmn/uni_heb.py                                       DIFFERS        2026-04-27   
-bib_locales.py                             mgketer                    py/mb_cmn/bib_locales.py                                DIFFERS        2026-04-27   
+bib_locales.py                             mgketer                    py/mb_cmn/bib_locales.py                                identical      2026-04-27   
+cantsys.py                                 mgketer                    py/mb_cmn/cantsys.py                                    identical      2026-05-10   
 he_wikisource_url.py                       mgketer                    py/mb_cmn/he_wikisource_url.py                          identical      2026-05-03   
-hebrew_accents.py                          mgketer                    py/mb_cmn/hebrew_accents.py                             DIFFERS        2026-04-27   
-hebrew_letters.py                          mgketer                    py/mb_cmn/hebrew_letters.py                             DIFFERS        2026-04-27   
-hebrew_points.py                           mgketer                    py/mb_cmn/hebrew_points.py                              DIFFERS        2026-04-27   
-hebrew_punctuation.py                      mgketer                    py/mb_cmn/hebrew_punctuation.py                         DIFFERS        2026-04-27   
-mam_bknas.py                               mgketer                    py/mb_cmn/mam_bknas.py                                  DIFFERS        2026-04-27   
-mam_bknas_and_std_bknas.py                 mgketer                    py/mb_cmn/mam_bknas_and_std_bknas.py                    DIFFERS        2026-04-27   
+hebrew_accents.py                          mgketer                    py/mb_cmn/hebrew_accents.py                             identical      2026-05-10   
+hebrew_letters.py                          mgketer                    py/mb_cmn/hebrew_letters.py                             identical      2026-04-27   
+hebrew_points.py                           mgketer                    py/mb_cmn/hebrew_points.py                              identical      2026-05-10   
+hebrew_punctuation.py                      mgketer                    py/mb_cmn/hebrew_punctuation.py                         identical      2026-05-10   
+mam_bknas.py                               mgketer                    py/mb_cmn/mam_bknas.py                                  identical      2026-04-27   
+mam_bknas_and_std_bknas.py                 mgketer                    py/mb_cmn/mam_bknas_and_std_bknas.py                    identical      2026-04-27   
 polite_download.py                         mgketer                    py/mb_cmn/polite_download.py                            identical      2026-04-27   
-str_defs.py                                mgketer                    py/mb_cmn/str_defs.py                                   DIFFERS        2026-04-27   
-template_names.py                          mgketer                    py/mb_cmn/template_names.py                             identical      2026-05-04   
+str_defs.py                                mgketer                    py/mb_cmn/str_defs.py                                   identical      2026-05-10   
+template_names.py                          mgketer                    py/mb_cmn/template_names.py                             identical      2026-05-10   
 url_percent.py                             mgketer                    py/mb_cmn/url_percent.py                                identical      2026-05-03   
 uxlc_change_url.py                         mgketer                    py/mb_cmn/uxlc_change_url.py                            identical      2026-05-03   
+vendoring_sync.py                          mgketer                    py/mb_cmn/vendoring_sync.py                             identical      2026-05-10   
 grapheme_diff.py                           mgketer                    py/mb_diff_mpu/grapheme_diff.py                         identical      2026-04-27   
 my_diffs.py                                mgketer                    py/python_modules/my_diffs.py                           DIFFERS        2026-04-27   placed in python_modules/ not mb_cmn/
 uni_denorm.py                              mgketer                    py/python_modules/uni_denorm.py                         DIFFERS        2026-04-27   placed in python_modules/ not mb_cmn/
@@ -149,7 +163,7 @@ hebrew_punctuation.py                      UXLC-utils                 py/mb_cmn/
 my_diffs.py                                UXLC-utils                 py/mb_cmn/my_diffs.py                                   DIFFERS        2026-04-27   
 my_utils.py                                UXLC-utils                 py/mb_cmn/my_utils.py                                   DIFFERS        2026-04-27   
 polite_download.py                         UXLC-utils                 py/mb_cmn/polite_download.py                            DIFFERS        2026-04-27   
-provenance.py                              UXLC-utils                 py/mb_cmn/provenance.py                                 identical      2026-05-07   
+provenance.py                              UXLC-utils                 py/mb_cmn/provenance.py                                 DIFFERS        2026-05-07   
 str_defs.py                                UXLC-utils                 py/mb_cmn/str_defs.py                                   DIFFERS        2026-04-27   
 uni_heb.py                                 UXLC-utils                 py/mb_cmn/uni_heb.py                                    DIFFERS        2026-04-27   
 uni_norm_fragile.py                        UXLC-utils                 py/mb_cmn/uni_norm_fragile.py                           DIFFERS        2026-04-27   
