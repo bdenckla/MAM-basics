@@ -36,154 +36,160 @@ def _kq_simple_foi_link_for_sug(sug_text: str):
     return _kq_simple_foi_link(intro_label)
 
 
-_claim_payload = _claims_core.claim_payload
+_claim_def = _claims_core.claim_def
 
-KQ_SPECIAL_ROWS = _claim_payload(
-    "mp.both.templates.kq-special.subtypes",
+KQ_SPECIAL_ROWS = [
     [
+        author.hbo("כו״ק בין שני מקפים"),
         [
-            author.hbo("כו״ק בין שני מקפים"),
-            [
-                "$Ketiv_qere between two $maqaf marks." " See FOI section ",
-                _kq_simple_foi_link_for_sug("כו״ק בין שני מקפים"),
-                ".",
-            ],
-        ],
-        [
-            author.hbo("כו״ק כתיב מילה חדה וקרי תרתין מילין"),
-            [
-                "1-atom $ketiv, 2-atom $qere. See the rows of FOI section ",
-                _kq_simple_foi_link_for_sug("כו״ק כתיב מילה חדה וקרי תרתין מילין"),
-                " labelled k1q2-sr-kqq.",
-            ],
-        ],
-        [
-            author.hbo("כו״ק כתיב מילה חדה וקרי תרתין מילין בין שני מקפים"),
-            [
-                "Same as above but between $maqaf marks."
-                " See the rows of FOI section ",
-                _kq_simple_foi_link_for_sug(
-                    "כו״ק כתיב מילה חדה וקרי תרתין מילין בין שני מקפים"
-                ),
-                " labelled k1q2-sr-bcom.",
-            ],
-        ],
-        [
-            author.hbo("כו״ק כתיב תרתין מילין וקרי מילה חדה"),
-            [
-                "2-atom $ketiv, 1-atom $qere. See FOI section ",
-                _kq_simple_foi_link_for_sug("כו״ק כתיב תרתין מילין וקרי מילה חדה"),
-                ".",
-            ],
-        ],
-        [
-            author.hbo("קו״כ כתיב מילה חדה וקרי תרתין מילין"),
-            [
-                "1-atom $ketiv, 2-atom $qere, following $maqaf."
-                " See the rows of FOI section ",
-                _kq_simple_foi_link_for_sug("קו״כ כתיב מילה חדה וקרי תרתין מילין"),
-                " labelled k1q2-sr-qqk.",
-            ],
-        ],
-        [
-            author.hbo("כו״ק קרי שונה מהכתיב בשתי מילים"),
-            [
-                "1-atom $ketiv not strongly related to its 2-atom $qere."
-                " See FOI section ",
-                _kq_simple_foi_link_for_sug("כו״ק קרי שונה מהכתיב בשתי מילים"),
-                ".",
-            ],
-        ],
-        [
-            author.hbo("קו״כ קרי שונה מהכתיב בשתי מילים"),
-            [
-                "1-atom $ketiv not strongly related to its 2-atom $qere,"
-                " following $maqaf. See FOI section ",
-                _kq_simple_foi_link_for_sug("קו״כ קרי שונה מהכתיב בשתי מילים"),
-                ".",
-            ],
-        ],
-        [
-            author.hbo("כו״ק של שתי מילים בהערה אחת"),
-            [
-                "2-atom $ketiv, 2-atom $qere. See FOI section ",
-                _kq_simple_foi_link_for_sug("כו״ק של שתי מילים בהערה אחת"),
-                ".",
-            ],
-        ],
-        [
-            author.hbo("כו״ק של שלוש מילים בהערה אחת"),
-            [
-                "3-atom $ketiv, 3-atom $qere. See FOI section ",
-                _kq_simple_foi_link_for_sug("כו״ק של שלוש מילים בהערה אחת"),
-                ".",
-            ],
+            "$Ketiv_qere between two $maqaf marks." " See FOI section ",
+            _kq_simple_foi_link_for_sug("כו״ק בין שני מקפים"),
+            ".",
         ],
     ],
-    kind="enum",
-    subject="mp:both",
-    data={
-        "template": "מ:כו״ק מיוחד",
-        "param": "סוג",
-        "values": [
-            "כו״ק בין שני מקפים",
-            "כו״ק כתיב מילה חדה וקרי תרתין מילין",
-            "כו״ק כתיב מילה חדה וקרי תרתין מילין בין שני מקפים",
-            "כו״ק כתיב תרתין מילין וקרי מילה חדה",
-            "קו״כ כתיב מילה חדה וקרי תרתין מילין",
-            "כו״ק קרי שונה מהכתיב בשתי מילים",
-            "קו״כ קרי שונה מהכתיב בשתי מילים",
-            "כו״ק של שתי מילים בהערה אחת",
-            "כו״ק של שלוש מילים בהערה אחת",
+    [
+        author.hbo("כו״ק כתיב מילה חדה וקרי תרתין מילין"),
+        [
+            "1-atom $ketiv, 2-atom $qere. See the rows of FOI section ",
+            _kq_simple_foi_link_for_sug("כו״ק כתיב מילה חדה וקרי תרתין מילין"),
+            " labelled k1q2-sr-kqq.",
         ],
-    },
+    ],
+    [
+        author.hbo("כו״ק כתיב מילה חדה וקרי תרתין מילין בין שני מקפים"),
+        [
+            "Same as above but between $maqaf marks." " See the rows of FOI section ",
+            _kq_simple_foi_link_for_sug(
+                "כו״ק כתיב מילה חדה וקרי תרתין מילין בין שני מקפים"
+            ),
+            " labelled k1q2-sr-bcom.",
+        ],
+    ],
+    [
+        author.hbo("כו״ק כתיב תרתין מילין וקרי מילה חדה"),
+        [
+            "2-atom $ketiv, 1-atom $qere. See FOI section ",
+            _kq_simple_foi_link_for_sug("כו״ק כתיב תרתין מילין וקרי מילה חדה"),
+            ".",
+        ],
+    ],
+    [
+        author.hbo("קו״כ כתיב מילה חדה וקרי תרתין מילין"),
+        [
+            "1-atom $ketiv, 2-atom $qere, following $maqaf."
+            " See the rows of FOI section ",
+            _kq_simple_foi_link_for_sug("קו״כ כתיב מילה חדה וקרי תרתין מילין"),
+            " labelled k1q2-sr-qqk.",
+        ],
+    ],
+    [
+        author.hbo("כו״ק קרי שונה מהכתיב בשתי מילים"),
+        [
+            "1-atom $ketiv not strongly related to its 2-atom $qere."
+            " See FOI section ",
+            _kq_simple_foi_link_for_sug("כו״ק קרי שונה מהכתיב בשתי מילים"),
+            ".",
+        ],
+    ],
+    [
+        author.hbo("קו״כ קרי שונה מהכתיב בשתי מילים"),
+        [
+            "1-atom $ketiv not strongly related to its 2-atom $qere,"
+            " following $maqaf. See FOI section ",
+            _kq_simple_foi_link_for_sug("קו״כ קרי שונה מהכתיב בשתי מילים"),
+            ".",
+        ],
+    ],
+    [
+        author.hbo("כו״ק של שתי מילים בהערה אחת"),
+        [
+            "2-atom $ketiv, 2-atom $qere. See FOI section ",
+            _kq_simple_foi_link_for_sug("כו״ק של שתי מילים בהערה אחת"),
+            ".",
+        ],
+    ],
+    [
+        author.hbo("כו״ק של שלוש מילים בהערה אחת"),
+        [
+            "3-atom $ketiv, 3-atom $qere. See FOI section ",
+            _kq_simple_foi_link_for_sug("כו״ק של שלוש מילים בהערה אחת"),
+            ".",
+        ],
+    ],
+]
+
+KQ_SPECIAL_SUBTYPE_COUNTS = (
+    "For each kq-special subtype, verify declared ketiv/qere atom counts."
 )
 
-KQ_SPECIAL_SUBTYPE_COUNTS = _claim_payload(
-    "mp.both.templates.kq-special.subtype-counts",
-    "For each kq-special subtype, verify declared ketiv/qere atom counts.",
-    kind="struct",
-    subject="mp:both",
-    data={
-        "template": "מ:כו״ק מיוחד",
-        "param": "סוג",
-        "subtype_counts": {
-            "כו״ק בין שני מקפים": {
-                "ketiv_atoms": 1,
-                "qere_atoms": 1,
-            },
-            "כו״ק כתיב מילה חדה וקרי תרתין מילין": {
-                "ketiv_atoms": 1,
-                "qere_atoms": 2,
-            },
-            "כו״ק כתיב מילה חדה וקרי תרתין מילין בין שני מקפים": {
-                "ketiv_atoms": 1,
-                "qere_atoms": 2,
-            },
-            "כו״ק כתיב תרתין מילין וקרי מילה חדה": {
-                "ketiv_atoms": 2,
-                "qere_atoms": 1,
-            },
-            "קו״כ כתיב מילה חדה וקרי תרתין מילין": {
-                "ketiv_atoms": 1,
-                "qere_atoms": 2,
-            },
-            "כו״ק קרי שונה מהכתיב בשתי מילים": {
-                "ketiv_atoms": 1,
-                "qere_atoms": 2,
-            },
-            "קו״כ קרי שונה מהכתיב בשתי מילים": {
-                "ketiv_atoms": 1,
-                "qere_atoms": 2,
-            },
-            "כו״ק של שתי מילים בהערה אחת": {
-                "ketiv_atoms": 2,
-                "qere_atoms": 2,
-            },
-            "כו״ק של שלוש מילים בהערה אחת": {
-                "ketiv_atoms": 3,
-                "qere_atoms": 3,
+CLAIM_DEFS = (
+    _claim_def(
+        "mp.both.templates.kq-special.subtypes",
+        KQ_SPECIAL_ROWS,
+        kind="enum",
+        subject="mp:both",
+        data={
+            "template": "מ:כו״ק מיוחד",
+            "param": "סוג",
+            "values": [
+                "כו״ק בין שני מקפים",
+                "כו״ק כתיב מילה חדה וקרי תרתין מילין",
+                "כו״ק כתיב מילה חדה וקרי תרתין מילין בין שני מקפים",
+                "כו״ק כתיב תרתין מילין וקרי מילה חדה",
+                "קו״כ כתיב מילה חדה וקרי תרתין מילין",
+                "כו״ק קרי שונה מהכתיב בשתי מילים",
+                "קו״כ קרי שונה מהכתיב בשתי מילים",
+                "כו״ק של שתי מילים בהערה אחת",
+                "כו״ק של שלוש מילים בהערה אחת",
+            ],
+        },
+    ),
+    _claim_def(
+        "mp.both.templates.kq-special.subtype-counts",
+        KQ_SPECIAL_SUBTYPE_COUNTS,
+        kind="struct",
+        subject="mp:both",
+        data={
+            "template": "מ:כו״ק מיוחד",
+            "param": "סוג",
+            "subtype_counts": {
+                "כו״ק בין שני מקפים": {
+                    "ketiv_atoms": 1,
+                    "qere_atoms": 1,
+                },
+                "כו״ק כתיב מילה חדה וקרי תרתין מילין": {
+                    "ketiv_atoms": 1,
+                    "qere_atoms": 2,
+                },
+                "כו״ק כתיב מילה חדה וקרי תרתין מילין בין שני מקפים": {
+                    "ketiv_atoms": 1,
+                    "qere_atoms": 2,
+                },
+                "כו״ק כתיב תרתין מילין וקרי מילה חדה": {
+                    "ketiv_atoms": 2,
+                    "qere_atoms": 1,
+                },
+                "קו״כ כתיב מילה חדה וקרי תרתין מילין": {
+                    "ketiv_atoms": 1,
+                    "qere_atoms": 2,
+                },
+                "כו״ק קרי שונה מהכתיב בשתי מילים": {
+                    "ketiv_atoms": 1,
+                    "qere_atoms": 2,
+                },
+                "קו״כ קרי שונה מהכתיב בשתי מילים": {
+                    "ketiv_atoms": 1,
+                    "qere_atoms": 2,
+                },
+                "כו״ק של שתי מילים בהערה אחת": {
+                    "ketiv_atoms": 2,
+                    "qere_atoms": 2,
+                },
+                "כו״ק של שלוש מילים בהערה אחת": {
+                    "ketiv_atoms": 3,
+                    "qere_atoms": 3,
+                },
             },
         },
-    },
+    ),
 )

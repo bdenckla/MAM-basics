@@ -6,51 +6,20 @@ from author import mp_cmn_claims_core as _claims_core
 from author import mp_cmn_json_snippets as jsnip
 from author_util import author
 
-_claim_payload = _claims_core.claim_payload
+_claim_def = _claims_core.claim_def
 
 # ---------------------------------------------------------------------------
 # JSON snippets shared by plain and plus common-templates sections
 # ---------------------------------------------------------------------------
 
-JSON_KQ = _claim_payload(
-    "mp.plain.example.kq",
-    jsnip.read_text("mp_cmn_examples_and_file_naming", "kq_plain.json"),
-    kind="example",
-    subject="mp:plain",
-    data={"stmpl": 'קו"כ|את|אַ֠תָּ֠ה'},
-)
+JSON_KQ = jsnip.read_text("mp_cmn_examples_and_file_naming", "kq_plain.json")
 
-JSON_KQ_PLUS = _claim_payload(
-    "mp.plus.example.kq",
-    jsnip.read_text("mp_cmn_examples_and_file_naming", "kq_plus.json"),
-    kind="example",
-    subject="mp:plus",
-    data={
-        "tmpl_name": "קו״כ",
-        "tmpl_params": {"1": "את", "2": "אַ֠תָּ֠ה"},
-    },
-)
+JSON_KQ_PLUS = jsnip.read_text("mp_cmn_examples_and_file_naming", "kq_plus.json")
 
-JSON_NUSACH = _claim_payload(
-    "mp.plain.example.nusach",
-    jsnip.read_text("mp_cmn_examples_and_file_naming", "nusach_plain.json"),
-    kind="example",
-    subject="mp:plain",
-    data={"stmpl": "נוסח|וּבֵרְﬞכ֥וּ|2=א=וּבֵרֲכ֥וּ (חטף)"},
-)
+JSON_NUSACH = jsnip.read_text("mp_cmn_examples_and_file_naming", "nusach_plain.json")
 
-JSON_NUSACH_PLUS = _claim_payload(
-    "mp.plus.example.nusach",
-    jsnip.read_text("mp_cmn_examples_and_file_naming", "nusach_plus.json"),
-    kind="example",
-    subject="mp:plus",
-    data={
-        "tmpl_name": "נוסח",
-        "tmpl_params": {
-            "1": "וּבֵרְﬞכ֥וּ",
-            "2": "א=וּבֵרֲכ֥וּ (חטף)",
-        },
-    },
+JSON_NUSACH_PLUS = jsnip.read_text(
+    "mp_cmn_examples_and_file_naming", "nusach_plus.json"
 )
 
 # ---------------------------------------------------------------------------
@@ -65,26 +34,11 @@ SHEETS_DATA = "https://purl.org/mam/google-sheet#gid=920165745"
 # (shared by plain and plus docs)
 # ---------------------------------------------------------------------------
 
-JSON_TOP_LEVEL = _claim_payload(
-    "mp.plain.example.top-level",
-    jsnip.read_text("mp_cmn_examples_and_file_naming", "top_level.json"),
-    kind="example",
-    subject="mp:plain",
-)
+JSON_TOP_LEVEL = jsnip.read_text("mp_cmn_examples_and_file_naming", "top_level.json")
 
-JSON_COMPOSITE = _claim_payload(
-    "mp.plain.example.top-level-composite",
-    jsnip.read_text("mp_cmn_examples_and_file_naming", "composite.json"),
-    kind="example",
-    subject="mp:plain",
-)
+JSON_COMPOSITE = jsnip.read_text("mp_cmn_examples_and_file_naming", "composite.json")
 
-JSON_BOOK39 = _claim_payload(
-    "mp.plain.example.book39",
-    jsnip.read_text("mp_cmn_examples_and_file_naming", "book39.json"),
-    kind="example",
-    subject="mp:plain",
-)
+JSON_BOOK39 = jsnip.read_text("mp_cmn_examples_and_file_naming", "book39.json")
 
 
 # ---------------------------------------------------------------------------
@@ -92,58 +46,117 @@ JSON_BOOK39 = _claim_payload(
 # ---------------------------------------------------------------------------
 
 
-_FILE_NAMING_ROWS = _claim_payload(
-    "mp.both.file-naming.book24-prefixes",
+_FILE_NAMING_ROWS = [
     [
-        [
-            "A1\N{EN DASH}A5",
-            "Torah",
-            "Genesis, Exodus, Leviticus, Numbers, Deuteronomy",
-        ],
-        ["B1, B2, BA, BC", "Former Prophets", "Joshua, Judges, Samuel, Kings"],
-        [
-            "C1\N{EN DASH}C3, CA",
-            "Latter Prophets",
-            "Isaiah, Jeremiah, Ezekiel, The 12 Minor Prophets",
-        ],
-        ["D1\N{EN DASH}D3", "Wisdom", "Psalms, Proverbs, Job"],
-        [
-            "E1\N{EN DASH}E5",
-            "Five Scrolls",
-            "Song of Songs, Ruth, Lamentations, Ecclesiastes, Esther",
-        ],
-        ["F1, FA, FC", "Late Books", "Daniel, Ezra-Nehemiah, Chronicles"],
+        "A1\N{EN DASH}A5",
+        "Torah",
+        "Genesis, Exodus, Leviticus, Numbers, Deuteronomy",
     ],
-    kind="enum",
-    subject="mp:both",
-    data={
-        "prefixes": [
-            "A1",
-            "A2",
-            "A3",
-            "A4",
-            "A5",
-            "B1",
-            "B2",
-            "BA",
-            "BC",
-            "C1",
-            "C2",
-            "C3",
-            "CA",
-            "D1",
-            "D2",
-            "D3",
-            "E1",
-            "E2",
-            "E3",
-            "E4",
-            "E5",
-            "F1",
-            "FA",
-            "FC",
-        ]
-    },
+    ["B1, B2, BA, BC", "Former Prophets", "Joshua, Judges, Samuel, Kings"],
+    [
+        "C1\N{EN DASH}C3, CA",
+        "Latter Prophets",
+        "Isaiah, Jeremiah, Ezekiel, The 12 Minor Prophets",
+    ],
+    ["D1\N{EN DASH}D3", "Wisdom", "Psalms, Proverbs, Job"],
+    [
+        "E1\N{EN DASH}E5",
+        "Five Scrolls",
+        "Song of Songs, Ruth, Lamentations, Ecclesiastes, Esther",
+    ],
+    ["F1, FA, FC", "Late Books", "Daniel, Ezra-Nehemiah, Chronicles"],
+]
+
+CLAIM_DEFS = (
+    _claim_def(
+        "mp.plain.example.kq",
+        JSON_KQ,
+        kind="example",
+        subject="mp:plain",
+        data={"stmpl": 'קו"כ|את|אַ֠תָּ֠ה'},
+    ),
+    _claim_def(
+        "mp.plus.example.kq",
+        JSON_KQ_PLUS,
+        kind="example",
+        subject="mp:plus",
+        data={
+            "tmpl_name": "קו״כ",
+            "tmpl_params": {"1": "את", "2": "אַ֠תָּ֠ה"},
+        },
+    ),
+    _claim_def(
+        "mp.plain.example.nusach",
+        JSON_NUSACH,
+        kind="example",
+        subject="mp:plain",
+        data={"stmpl": "נוסח|וּבֵרְﬞכ֥וּ|2=א=וּבֵרֲכ֥וּ (חטף)"},
+    ),
+    _claim_def(
+        "mp.plus.example.nusach",
+        JSON_NUSACH_PLUS,
+        kind="example",
+        subject="mp:plus",
+        data={
+            "tmpl_name": "נוסח",
+            "tmpl_params": {
+                "1": "וּבֵרְﬞכ֥וּ",
+                "2": "א=וּבֵרֲכ֥וּ (חטף)",
+            },
+        },
+    ),
+    _claim_def(
+        "mp.plain.example.top-level",
+        JSON_TOP_LEVEL,
+        kind="example",
+        subject="mp:plain",
+    ),
+    _claim_def(
+        "mp.plain.example.top-level-composite",
+        JSON_COMPOSITE,
+        kind="example",
+        subject="mp:plain",
+    ),
+    _claim_def(
+        "mp.plain.example.book39",
+        JSON_BOOK39,
+        kind="example",
+        subject="mp:plain",
+    ),
+    _claim_def(
+        "mp.both.file-naming.book24-prefixes",
+        _FILE_NAMING_ROWS,
+        kind="enum",
+        subject="mp:both",
+        data={
+            "prefixes": [
+                "A1",
+                "A2",
+                "A3",
+                "A4",
+                "A5",
+                "B1",
+                "B2",
+                "BA",
+                "BC",
+                "C1",
+                "C2",
+                "C3",
+                "CA",
+                "D1",
+                "D2",
+                "D3",
+                "E1",
+                "E2",
+                "E3",
+                "E4",
+                "E5",
+                "F1",
+                "FA",
+                "FC",
+            ]
+        },
+    ),
 )
 
 

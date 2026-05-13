@@ -4,7 +4,7 @@
 from mb_cmn import template_names as tmpln
 from author import mp_cmn_claims_core as _claims_core
 
-_claim_payload = _claims_core.claim_payload
+_claim_def = _claims_core.claim_def
 
 # Templates that appear only in the plain survey are grouped into 3 categories
 # for dedicated documentation.
@@ -111,27 +111,32 @@ assert PLAIN_ONLY_CATEGORY_UNION == PLAIN_ONLY_TEMPLATE_SET
 # mp:both claims (they fail the intersection check). This mp:plain claim covers
 # them so the all-groups-cover-all-observed check accounts for every template
 # observed in the plain corpus.
-PLAIN_ONLY = _claim_payload(
-    "mp.plain.templates.plain-only.set",
-    "Templates present only in the plain corpus (not in the plus corpus).",
-    kind="enum",
-    subject="mp:plain",
-    data={"templates": _PLAIN_ONLY_TEMPLATES},
-)
+PLAIN_ONLY = "Templates present only in the plain corpus (not in the plus corpus)."
 
 # Templates that appear only in the plus survey (not in the plain survey).
 # The all-groups-cover-all-observed check must account for them too.
-PLUS_ONLY = _claim_payload(
-    "mp.plus.templates.plus-only.set",
-    "Templates present only in the plus corpus (not in the plain corpus).",
-    kind="enum",
-    subject="mp:plus",
-    data={
-        "templates": [
-            # Plus-only note template (the non-targeted counterpart remains plain-only)
-            tmpln.SCRDFF_TAR,
-            # Plus-only special-letter template (previously mistakenly in SPECIAL_LETTER_ROWS)
-            tmpln.SLH_WORD,
-        ]
-    },
+PLUS_ONLY = "Templates present only in the plus corpus (not in the plain corpus)."
+
+CLAIM_DEFS = (
+    _claim_def(
+        "mp.plain.templates.plain-only.set",
+        PLAIN_ONLY,
+        kind="enum",
+        subject="mp:plain",
+        data={"templates": _PLAIN_ONLY_TEMPLATES},
+    ),
+    _claim_def(
+        "mp.plus.templates.plus-only.set",
+        PLUS_ONLY,
+        kind="enum",
+        subject="mp:plus",
+        data={
+            "templates": [
+                # Plus-only note template (the non-targeted counterpart remains plain-only)
+                tmpln.SCRDFF_TAR,
+                # Plus-only special-letter template (previously mistakenly in SPECIAL_LETTER_ROWS)
+                tmpln.SLH_WORD,
+            ]
+        },
+    ),
 )

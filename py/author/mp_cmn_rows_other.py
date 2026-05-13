@@ -4,118 +4,128 @@
 from author import mp_cmn_claims_core as _claims_core
 from author_util import author
 
-_claim_payload = _claims_core.claim_payload
+_claim_def = _claims_core.claim_def
 
 _GOOD_ENDING_DOC = "mpplus_good_ending.html"
 
-OTHER_ROWS = _claim_payload(
-    "mp.both.templates.other.set",
+OTHER_ROWS = [
     [
+        [author.hbo("פפ"), " / ", author.hbo("סס")],
+        "Parashah petuchah / setumah (primarily in D column)",
+    ],
+    [
+        author.hbo("מ:אות מנוקדת"),
+        "Dotted letter/word. Marks words with masoretic dots above/below.",
+    ],
+    [
+        author.hbo("מ:סיום בטוב"),
         [
-            [author.hbo("פפ"), " / ", author.hbo("סס")],
-            "Parashah petuchah / setumah (primarily in D column)",
-        ],
-        [
-            author.hbo("מ:אות מנוקדת"),
-            "Dotted letter/word. Marks words with masoretic dots above/below.",
-        ],
-        [
-            author.hbo("מ:סיום בטוב"),
-            [
-                "Good ending. See ",
-                author.anchor_h(
-                    "its dedicated page",
-                    _GOOD_ENDING_DOC,
-                ),
-                ".",
-            ],
-        ],
-        [
-            author.hbo("מ:טעם ומתג באות אחת"),
-            "Normalization-robust meteg for 10 cases where a below-accent and meteg share one letter.",
-        ],
-        [
-            author.hbo("מ:גרש ותלישא גדולה"),
-            "Combined $geresh + $telisha gedolah (2 words, 3 uses). No parameters.",
-        ],
-        [
-            author.hbo("מ:גרשיים ותלישא גדולה"),
-            "Combined gershayim + $telisha gedolah (3 words, 4 uses). No parameters.",
-        ],
-        [
-            author.hbo("ססס"),
-            "Closed $parashah (setumah) variant appearing mid-line after a blank space, rather than at the start of the next line.",
-        ],
-        [
-            author.hbo("פפפ"),
-            "Open $parashah (petuhah) variant starting at the very top of the next line, without an intervening blank line.",
-        ],
-        [
-            author.hbo("רווח בסוף שורה"),
-            "Large end-of-line spacers supporting פפפ; fills remaining line space so the next $parashah can start at the top of the following line.",
-        ],
-        [
-            author.hbo("מ:ששש"),
-            "Setumah-like section divider for the 8 shirah (song) sections in the 21 prose books; analogous to ססס.",
-        ],
-        [
-            author.hbo("מ:כל קמץ קטן מרכא"),
-            "Font-rendering workaround for the word כל with $qamats qatan and $merkha in Taamey Frank CLM (2 occurrences: Ps 35:10, Prov 19:7).",
-        ],
-        [
-            author.hbo("נוסח"),
-            "Documentation template. Param 1 is the target text; param 2 is the documentation note.",
-        ],
-        [
-            author.hbo("מודגש"),
-            "Bold text within the notes argument (param 2) of נוסח.",
-        ],
-        [
-            author.hbo("ש"),
-            "Paragraph separator within the notes argument (param 2) of נוסח.",
+            "Good ending. See ",
+            author.anchor_h(
+                "its dedicated page",
+                _GOOD_ENDING_DOC,
+            ),
+            ".",
         ],
     ],
-    kind="enum",
-    subject="mp:both",
-    data={
-        # מ:אות מנוקדת, מ:טעם ומתג באות אחת, מ:גרש ותלישא גדולה,
-        # מ:גרשיים ותלישא גדולה, רווח בסוף שורה, מ:כל קמץ קטן מרכא, and מ:סיום בטוב
-        # appear only in the plain survey. Verified in PLAIN_ONLY.
-        "templates": [
-            "פפ",
-            "סס",
-            "ססס",
-            "פפפ",
-            "מ:ששש",
-            "נוסח",
-            "מודגש",
-            "ש",
-        ]
-    },
+    [
+        author.hbo("מ:טעם ומתג באות אחת"),
+        "Normalization-robust meteg for 10 cases where a below-accent and meteg share one letter.",
+    ],
+    [
+        author.hbo("מ:גרש ותלישא גדולה"),
+        "Combined $geresh + $telisha gedolah (2 words, 3 uses). No parameters.",
+    ],
+    [
+        author.hbo("מ:גרשיים ותלישא גדולה"),
+        "Combined gershayim + $telisha gedolah (3 words, 4 uses). No parameters.",
+    ],
+    [
+        author.hbo("ססס"),
+        "Closed $parashah (setumah) variant appearing mid-line after a blank space, rather than at the start of the next line.",
+    ],
+    [
+        author.hbo("פפפ"),
+        "Open $parashah (petuhah) variant starting at the very top of the next line, without an intervening blank line.",
+    ],
+    [
+        author.hbo("רווח בסוף שורה"),
+        "Large end-of-line spacers supporting פפפ; fills remaining line space so the next $parashah can start at the top of the following line.",
+    ],
+    [
+        author.hbo("מ:ששש"),
+        "Setumah-like section divider for the 8 shirah (song) sections in the 21 prose books; analogous to ססס.",
+    ],
+    [
+        author.hbo("מ:כל קמץ קטן מרכא"),
+        "Font-rendering workaround for the word כל with $qamats qatan and $merkha in Taamey Frank CLM (2 occurrences: Ps 35:10, Prov 19:7).",
+    ],
+    [
+        author.hbo("נוסח"),
+        "Documentation template. Param 1 is the target text; param 2 is the documentation note.",
+    ],
+    [
+        author.hbo("מודגש"),
+        "Bold text within the notes argument (param 2) of נוסח.",
+    ],
+    [
+        author.hbo("ש"),
+        "Paragraph separator within the notes argument (param 2) of נוסח.",
+    ],
+]
+
+MODAG_ONLY_IN_NUSACH_PARAM2 = (
+    "Template מודגש appears only within the notes argument (param 2) of נוסח."
 )
 
-MODAG_ONLY_IN_NUSACH_PARAM2 = _claim_payload(
-    "mp.both.templates.modag.only-in-nusach-param2",
-    "Template מודגש appears only within the notes argument (param 2) of נוסח.",
-    kind="struct",
-    subject="mp:both",
-    data={
-        "template": "מודגש",
-        "parent_template": "נוסח",
-        "parent_param": "2",
-    },
+SH_ONLY_IN_NUSACH_PARAM2 = (
+    "Template ש appears only within the notes argument (param 2) of נוסח."
 )
 
-SH_ONLY_IN_NUSACH_PARAM2 = _claim_payload(
-    "mp.both.templates.sh.only-in-nusach-param2",
-    "Template ש appears only within the notes argument (param 2) of נוסח.",
-    kind="struct",
-    subject="mp:both",
-    data={
-        "template": "ש",
-        "parent_template": "נוסח",
-        "parent_param": "2",
-    },
+CLAIM_DEFS = (
+    _claim_def(
+        "mp.both.templates.other.set",
+        OTHER_ROWS,
+        kind="enum",
+        subject="mp:both",
+        data={
+            # מ:אות מנוקדת, מ:טעם ומתג באות אחת, מ:גרש ותלישא גדולה,
+            # מ:גרשיים ותלישא גדולה, רווח בסוף שורה, מ:כל קמץ קטן מרכא, and מ:סיום בטוב
+            # appear only in the plain survey. Verified in PLAIN_ONLY.
+            "templates": [
+                "פפ",
+                "סס",
+                "ססס",
+                "פפפ",
+                "מ:ששש",
+                "נוסח",
+                "מודגש",
+                "ש",
+            ]
+        },
+    ),
+    _claim_def(
+        "mp.both.templates.modag.only-in-nusach-param2",
+        MODAG_ONLY_IN_NUSACH_PARAM2,
+        kind="struct",
+        subject="mp:both",
+        data={
+            "template": "מודגש",
+            "parent_template": "נוסח",
+            "parent_param": "2",
+        },
+    ),
+    _claim_def(
+        "mp.both.templates.sh.only-in-nusach-param2",
+        SH_ONLY_IN_NUSACH_PARAM2,
+        kind="struct",
+        subject="mp:both",
+        data={
+            "template": "ש",
+            "parent_template": "נוסח",
+            "parent_param": "2",
+        },
+    ),
 )
 
 OTHER_ROW_TEMPLATE_NAMES = (

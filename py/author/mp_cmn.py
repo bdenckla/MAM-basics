@@ -9,20 +9,6 @@ from author import mp_cmn_kq_special as _kq_special
 from author import mp_cmn_plain_only as _plain_only
 from author_util import author
 from author_util.claim import ClaimCollection
-from typing import Any
-
-
-def _emit_claim_payload(
-    claims: ClaimCollection,
-    claim_id: str,
-    payload,
-    *,
-    kind: str,
-    subject: str,
-    data: Any = None,
-):
-    return claims.claim(claim_id, payload, kind=kind, subject=subject, data=data)
-
 
 # ---------------------------------------------------------------------------
 # JSON snippets shared by plain and plus common-templates sections
@@ -102,12 +88,12 @@ s_file_naming = _examples_and_file_naming.s_file_naming
 
 def emit_claims(*, claims: ClaimCollection):
     """Emit mp_cmn claims into an explicit claims collection."""
-    for claim_id, payload, kind, subject, data in _claims_core.iter_claim_defs():
-        _emit_claim_payload(
-            claims,
-            claim_id,
-            payload,
-            kind=kind,
-            subject=subject,
-            data=data,
-        )
+    _claims_core.emit_claim_defs(
+        claims=claims,
+        claim_defs=_examples_and_file_naming.CLAIM_DEFS,
+    )
+    _claims_core.emit_claim_defs(claims=claims, claim_defs=_groups_misc.CLAIM_DEFS)
+    _claims_core.emit_claim_defs(claims=claims, claim_defs=_kq_special.CLAIM_DEFS)
+    _claims_core.emit_claim_defs(claims=claims, claim_defs=_plain_only.CLAIM_DEFS)
+    _claims_core.emit_claim_defs(claims=claims, claim_defs=_rows_core.CLAIM_DEFS)
+    _claims_core.emit_claim_defs(claims=claims, claim_defs=_rows_other.CLAIM_DEFS)

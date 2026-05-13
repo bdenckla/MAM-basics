@@ -129,6 +129,25 @@ class TestExplicitClaims(unittest.TestCase):
 
         self.assertFalse(hasattr(aot, "populate_claims"))
 
+    def test_mp_cmn_claims_core_has_no_import_time_claim_table(self):
+        core = importlib.import_module("author.mp_cmn_claims_core")
+
+        self.assertFalse(hasattr(core, "_CLAIM_DEFS"))
+        self.assertFalse(hasattr(core, "claim_payload"))
+        self.assertFalse(hasattr(core, "iter_claim_defs"))
+
+    def test_mp_cmn_import_has_no_claim_side_effects(self):
+        importlib.invalidate_caches()
+        mp_cmn = importlib.import_module("author.mp_cmn")
+        claims = claim_mod.ClaimCollection()
+
+        self.assertTrue(hasattr(mp_cmn, "emit_claims"))
+        self.assertNotIn("mp.plain.example.top-level-composite", claims.records_by_id)
+
+        mp_cmn.emit_claims(claims=claims)
+
+        self.assertIn("mp.plain.example.top-level-composite", claims.records_by_id)
+
     def test_mpplus_aot_build_body_requires_explicit_claims(self):
         aot = importlib.import_module("author.mpplus_aot")
 
