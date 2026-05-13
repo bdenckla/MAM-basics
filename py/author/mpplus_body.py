@@ -373,7 +373,6 @@ def s_intro():
                 "Structure of the top level and its header",
                 "Structure of a book39, chapter, and verse",
                 "Template format",
-                "Selected templates presented in detail",
                 "Common templates",
                 "Differences from plain format",
             ]
@@ -702,45 +701,6 @@ def s_chapter_verse(*, claims: ClaimCollection):
             "Example — a word with a special letter inside a $ketiv_qere inside a נוסח:"
         ),
         json_block.json_block_raw_html(_json_nested(claims=claims)),
-    ]
-
-
-def s_plus_only_templates():
-    return [
-        author.heading_level_2("Selected templates"),
-        author.para("Each of the following templates has its own dedicated page:"),
-        author.unordered_list(
-            [
-                author.anchor_h(
-                    [
-                        "Word with special letter(s) — ",
-                        author.hbo("מ:אות-מיוחדת-במילה"),
-                    ],
-                    _AOT_DOC,
-                ),
-                author.anchor_h(
-                    [
-                        "Special $ketiv_qere — ",
-                        author.hbo("מ:כו״ק מיוחד"),
-                    ],
-                    _KQ_SPECIAL_DOC,
-                ),
-                author.anchor_h(
-                    [
-                        "Targeted scroll-difference note — ",
-                        author.hbo("מ:הערה-2"),
-                    ],
-                    _HAARAH_2_DOC,
-                ),
-                author.anchor_h(
-                    [
-                        "Dual-trope — ",
-                        author.hbo("מ:כפול"),
-                    ],
-                    _KAFUL_DOC,
-                ),
-            ]
-        ),
     ]
 
 

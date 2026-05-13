@@ -35,7 +35,6 @@ def build_body(*, claims: ClaimCollection):
         *body.s_book39(claims=claims),
         *body.s_chapter_verse(claims=claims),
         *body.s_common_templates(claims=claims),
-        *body.s_plus_only_templates(),
         *body.s_plain_differences(claims=claims),
     ]
 
