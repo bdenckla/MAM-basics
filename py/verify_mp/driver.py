@@ -5,6 +5,7 @@ import sys
 from typing import Mapping
 
 from author_util.claim import ClaimCollection, ClaimRecord
+from verify_mp import payload_examples
 from verify_mp import verifiers_plus, verifiers_both, verifiers_plain
 from verify_mp.corpus import Context
 
@@ -79,12 +80,18 @@ def run(
     pending: list[str] = []
 
     for claim_id, record in sorted(records.items()):
-        if claim_id not in verifiers:
+        has_generic_example_verifier = payload_examples.is_example_claim(record)
+
+        if claim_id not in verifiers and not has_generic_example_verifier:
             pending.append(claim_id)
             continue
-        fn = verifiers[claim_id]
+
+        fn = verifiers.get(claim_id)
         try:
-            fn(record, ctx)
+            if has_generic_example_verifier:
+                payload_examples.verify_example_payload(record, ctx)
+            if fn is not None:
+                fn(record, ctx)
             passed.append(claim_id)
         except AssertionError as exc:
             failed.append((claim_id, str(exc)))

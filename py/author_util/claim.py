@@ -54,6 +54,7 @@ SUBJECTS = frozenset({"mp:plain", "mp:plus", "mp:both"})
 @dataclass(frozen=True)
 class ClaimRecord:
     id: str
+    payload: Any
     kind: str
     subject: str
     data: Any
@@ -77,6 +78,7 @@ def _infer_defined_in(stack_depth: int = 1) -> str:
 def make_record(
     claim_id: str,
     *,
+    payload: Any = None,
     kind: str,
     subject: str,
     data: Any = None,
@@ -94,6 +96,7 @@ def make_record(
         )
     return ClaimRecord(
         id=claim_id,
+        payload=payload,
         kind=kind,
         subject=subject,
         data=data,
@@ -139,6 +142,7 @@ class ClaimCollection:
         """Validate + emit claim metadata and return payload unchanged."""
         record = make_record(
             claim_id,
+            payload=payload,
             kind=kind,
             subject=subject,
             data=data,

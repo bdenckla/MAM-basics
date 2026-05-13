@@ -151,13 +151,36 @@ def verify_mp_plus_verse_e_col_semantics(record: ClaimRecord, ctx: Context) -> N
 
 
 def verify_mp_plus_book39_fields(record: ClaimRecord, ctx: Context) -> None:
-    """Every book39 object has exactly the declared keys."""
+    """Every book39 object has declared keys and expected good-ending distribution."""
     expected = frozenset(record.data["book39_keys"])
+    nonnull_good_endings = []
     for book39 in ctx.corpus.book39s:
         actual = frozenset(book39.keys())
         assert actual == expected, (
             f"book39 {book39.get('book24_name')!r}:"
             f" keys {sorted(actual)} != expected {sorted(expected)}"
+        )
+        if book39["good_ending_plus"] is not None:
+            nonnull_good_endings.append(book39)
+
+    expected_nonnull_count = record.data.get("good_ending_plus_nonnull_count")
+    if expected_nonnull_count is not None:
+        assert len(nonnull_good_endings) == expected_nonnull_count, (
+            f"good_ending_plus non-null count {len(nonnull_good_endings)}"
+            f" != expected {expected_nonnull_count}"
+        )
+
+    expected_book39s = record.data.get("good_ending_plus_nonnull_book39s")
+    if expected_book39s is not None:
+        observed_book39s = frozenset(
+            (b39["book24_name"], b39["sub_book_name"]) for b39 in nonnull_good_endings
+        )
+        expected_book39s_set = frozenset(
+            (row["book24_name"], row["sub_book_name"]) for row in expected_book39s
+        )
+        assert observed_book39s == expected_book39s_set, (
+            f"book39 set with non-null good_ending_plus"
+            f" {sorted(observed_book39s)} != expected {sorted(expected_book39s_set)}"
         )
 
 
@@ -353,21 +376,6 @@ def _has_chapter_count(header: dict, sub_book_name, chapter_count: int) -> bool:
     return False
 
 
-def _header_sub_book_names_match(header: dict, expected: list[str]) -> bool:
-    """Match legacy and unified header sub_book_names shapes.
-
-    Legacy plain headers used {book24_name: [sub-books]} (or {} for none).
-    Unified headers use a direct list of sub-book names.
-    """
-    actual = header["sub_book_names"]
-    if isinstance(actual, list):
-        return actual == expected
-    assert isinstance(actual, dict)
-    if len(expected) == 0:
-        return actual == {}
-    return actual.get(header["book24_name"]) == expected
-
-
 _MAQAF = "\u05be"  # HEBREW PUNCTUATION MAQAF — appears literally in dot-masks
 
 
@@ -557,7 +565,7 @@ def verify_mp_plain_example_top_level(record: ClaimRecord, ctx: Context) -> None
         header = top["header"]
         return (
             header["book24_name"] == "ספר איוב"
-            and _header_sub_book_names_match(header, [])
+            and header["sub_book_names"] == []
             and _has_chapter_count(header, None, 42)
             and isinstance(top["book39s"], list)
         )
@@ -578,7 +586,7 @@ def verify_mp_plain_example_top_level_composite(
         header = top["header"]
         if header["book24_name"] != "ספר שמואל":
             return False
-        if not _header_sub_book_names_match(header, ['שמ"א', 'שמ"ב']):
+        if header["sub_book_names"] != ['שמ"א', 'שמ"ב']:
             return False
         if not (
             _has_chapter_count(header, 'שמ"א', 31)

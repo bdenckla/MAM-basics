@@ -275,6 +275,12 @@ def s_book39(*, claims: ClaimCollection):
         data={
             "book39_keys": [*thb.BOOK39_KEYS_COMMON, "good_ending_plus"],
             "good_ending_plus_nonnull_count": 4,
+            "good_ending_plus_nonnull_book39s": [
+                {"book24_name": "ספר ישעיהו", "sub_book_name": None},
+                {"book24_name": "ספר תרי עשר", "sub_book_name": "מלאכי"},
+                {"book24_name": "מגילת איכה", "sub_book_name": None},
+                {"book24_name": "מגילת קהלת", "sub_book_name": None},
+            ],
         },
     )
     return [
