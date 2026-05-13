@@ -13,28 +13,14 @@ from mb_misc import mb_html
 from author_util import author
 from author_util import json_block
 from author_util.claim import ClaimCollection
+from author import mp_cmn_json_snippets as jsnip
 
 _FNAME = "mpplus_good_ending.html"
 _TITLE = "good_ending_plus"
 
 _PLUS_DOC = "mpplus.html"
 
-_JSON_GOOD_ENDING = """\
-{
-  "last_chapnver": ["66", "24"],
-  "wikitext_element": {
-    "tmpl_name": "נוסח",
-    "tmpl_params": {
-      "1": {
-        "tmpl_name": "מ:סיום בטוב",
-        "tmpl_params": {
-          "1": "והיה מדי ... אמר יהוה"
-        }
-      },
-      "2": "=מנהג יפה ... בכתי\\"ל)."
-    }
-  }
-}"""
+_JSON_GOOD_ENDING = jsnip.read_text("mpplus_good_ending", "good_ending.json")
 
 
 def gen_html_file(tdm_ch, claims: ClaimCollection):

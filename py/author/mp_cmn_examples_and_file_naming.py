@@ -3,6 +3,7 @@
 
 from mb_misc import mb_html
 from author import mp_cmn_claims_core as _claims_core
+from author import mp_cmn_json_snippets as jsnip
 from author_util import author
 
 _claim_payload = _claims_core.claim_payload
@@ -13,8 +14,7 @@ _claim_payload = _claims_core.claim_payload
 
 JSON_KQ = _claim_payload(
     "mp.plain.example.kq",
-    """\
-{"stmpl": "קו"כ|את|אַ֠תָּ֠ה"}""",
+    jsnip.read_text("mp_cmn_examples_and_file_naming", "kq_plain.json"),
     kind="example",
     subject="mp:plain",
     data={"stmpl": 'קו"כ|את|אַ֠תָּ֠ה'},
@@ -22,14 +22,7 @@ JSON_KQ = _claim_payload(
 
 JSON_KQ_PLUS = _claim_payload(
     "mp.plus.example.kq",
-    """\
-{
-    "tmpl_name": "קו״כ",
-    "tmpl_params": {
-        "1": "את",
-        "2": "אַ֠תָּ֠ה"
-    }
-}""",
+    jsnip.read_text("mp_cmn_examples_and_file_naming", "kq_plus.json"),
     kind="example",
     subject="mp:plus",
     data={
@@ -40,8 +33,7 @@ JSON_KQ_PLUS = _claim_payload(
 
 JSON_NUSACH = _claim_payload(
     "mp.plain.example.nusach",
-    """\
-{"stmpl": "נוסח|וּבֵרְﬞכ֥וּ|2=א=וּבֵרֲכ֥וּ (חטף)"}""",
+    jsnip.read_text("mp_cmn_examples_and_file_naming", "nusach_plain.json"),
     kind="example",
     subject="mp:plain",
     data={"stmpl": "נוסח|וּבֵרְﬞכ֥וּ|2=א=וּבֵרֲכ֥וּ (חטף)"},
@@ -49,14 +41,7 @@ JSON_NUSACH = _claim_payload(
 
 JSON_NUSACH_PLUS = _claim_payload(
     "mp.plus.example.nusach",
-    """\
-{
-    "tmpl_name": "נוסח",
-    "tmpl_params": {
-        "1": "וּבֵרְﬞכ֥וּ",
-        "2": "א=וּבֵרֲכ֥וּ (חטף)"
-    }
-}""",
+    jsnip.read_text("mp_cmn_examples_and_file_naming", "nusach_plus.json"),
     kind="example",
     subject="mp:plus",
     data={
@@ -82,54 +67,21 @@ SHEETS_DATA = "https://purl.org/mam/google-sheet#gid=920165745"
 
 JSON_TOP_LEVEL = _claim_payload(
     "mp.plain.example.top-level",
-    """\
-{
-  "header": {
-    "book24_name": "ספר איוב",
-    "sub_book_names": {},
-    "chapter_counts": [
-      {
-        "book24_name": "ספר איוב",
-        "sub_book_name": null,
-        "chapter_count": 42
-      }
-    ]
-  },
-  "book39s": []
-}""",
+    jsnip.read_text("mp_cmn_examples_and_file_naming", "top_level.json"),
     kind="example",
     subject="mp:plain",
 )
 
 JSON_COMPOSITE = _claim_payload(
     "mp.plain.example.top-level-composite",
-    """\
-{
-  "header": {
-    "book24_name": "ספר שמואל",
-    "sub_book_names": {"ספר שמואל": ["שמ\\"א", "שמ\\"ב"]},
-    "chapter_counts": [
-      {"book24_name": "ספר שמואל", "sub_book_name": "שמ\\"א", "chapter_count": 31},
-      {"book24_name": "ספר שמואל", "sub_book_name": "שמ\\"ב", "chapter_count": 24}
-    ]
-  },
-  "book39s": [
-    {"book24_name": "ספר שמואל", "sub_book_name": "שמ\\"א", "chapters": {}},
-    {"book24_name": "ספר שמואל", "sub_book_name": "שמ\\"ב", "chapters": {}}
-  ]
-}""",
+    jsnip.read_text("mp_cmn_examples_and_file_naming", "composite.json"),
     kind="example",
     subject="mp:plain",
 )
 
 JSON_BOOK39 = _claim_payload(
     "mp.plain.example.book39",
-    """\
-{
-  "book24_name": "ספר איוב",
-  "sub_book_name": null,
-  "chapters": {}
-}""",
+    jsnip.read_text("mp_cmn_examples_and_file_naming", "book39.json"),
     kind="example",
     subject="mp:plain",
 )

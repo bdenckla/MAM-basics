@@ -13,23 +13,14 @@ from mb_misc import mb_html
 from author_util import author
 from author_util import json_block
 from author_util.claim import ClaimCollection
+from author import mp_cmn_json_snippets as jsnip
 
 _FNAME = "mpplus_aot.html"
 _TITLE = "Word with special letter(s)"
 
 _PLUS_DOC = "mpplus.html"
 
-_JSON_SPECIAL_LETTER = """\
-{
-  "tmpl_name": "מ:אות-מיוחדת-במילה",
-  "tmpl_params": {
-    "1": ["שִׁבְ", {"tmpl_name": "מ:אות-ג", "tmpl_params": {"1": "ט֑"}}, "וֹ"],
-    "2": "שִׁבְט֑וֹ",
-    "3": "..ט.",
-    "4": "ג",
-    "5": "ט/ג"
-  }
-}"""
+_JSON_SPECIAL_LETTER = jsnip.read_text("mpplus_aot", "special_letter.json")
 
 _AOT_INTRO_CLAIM_ID = "mp.plus.templates.aot.arg5-derivable"
 _AOT_INTRO_CLAIM_DATA = {"template": "מ:אות-מיוחדת-במילה"}

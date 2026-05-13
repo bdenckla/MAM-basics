@@ -13,6 +13,7 @@ from mb_misc import mb_html
 from author_util import author
 from author_util import json_block
 from author_util.claim import ClaimCollection
+from author import mp_cmn_json_snippets as jsnip
 
 DIFF_FROM_PLAIN_DOC = "mpplus_diff_from_plain.html"
 PLAIN_ONLY_TEMPLATES_DOC = "mpplus_plain_only_templates.html"
@@ -20,8 +21,9 @@ PLAIN_ONLY_TEMPLATES_DOC = "mpplus_plain_only_templates.html"
 _PLUS_DOC = "mpplus.html"
 _TITLE = "Differences from plain format"
 
-_JSON_TMPL_PLAIN_COMPARE = """\
-{"stmpl": "קו״כ|את|אַ֠תָּ֠ה"}"""
+_JSON_TMPL_PLAIN_COMPARE = jsnip.read_text(
+    "mpplus_diff_from_plain", "tmpl_plain_compare.json"
+)
 
 
 _DIFF_ROWS = [

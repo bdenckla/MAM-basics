@@ -13,21 +13,14 @@ from mb_misc import mb_html
 from author_util import author
 from author_util import json_block
 from author_util.claim import ClaimCollection
+from author import mp_cmn_json_snippets as jsnip
 
 _FNAME = "mpplus_kaful.html"
 _TITLE = "Dual-trope"
 
 _PLUS_DOC = "mpplus.html"
 
-_JSON_KAFUL = """\
-{
-  "tmpl_name": "מ:כפול",
-  "tmpl_params": {
-    "כפול": "...text with two accents on some words...",
-    "א": "...strand 1 (singly-accented)...",
-    "ב": "...strand 2 (singly-accented)..."
-  }
-}"""
+_JSON_KAFUL = jsnip.read_text("mpplus_kaful", "kaful.json")
 
 _KAFUL_CLAIM_ID = "mp.plus.example.kaful-template-object"
 _KAFUL_CLAIM_DATA = {

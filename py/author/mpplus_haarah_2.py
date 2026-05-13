@@ -15,43 +15,18 @@ from mb_misc import mb_html
 from author_util import author
 from author_util import json_block
 from author_util.claim import ClaimCollection
+from author import mp_cmn_json_snippets as jsnip
 
 _FNAME = "mpplus_haarah_2.html"
 _TITLE = "Targeted scroll-difference note"
 
 _PLUS_DOC = "mpplus.html"
 
-_JSON_HAARAH_2 = """\
-{
-  "tmpl_name": "מ:הערה-2",
-  "tmpl_params": {
-    "1": "מִנְּשֹֽׂא",
-    "2": "בספרי ספרד ואשכנז מִנְּשֽׂוֹא",
-    "3": "אאא*"
-  }
-}"""
+_JSON_HAARAH_2 = jsnip.read_text("mpplus_haarah_2", "haarah_2.json")
 
-_JSON_HAARAH_2_IN_CONTEXT_TEXT = """\
-[
-  "וַיֹּ֥אמֶר קַ֖יִן אֶל־יְהֹוָ֑ה גָּד֥וֹל עֲוֺנִ֖י ",
-  {
-    "tmpl_name": "נוסח",
-    "tmpl_params": {
-      "1": {
-        "tmpl_name": "מ:הערה-2",
-        "tmpl_params": {
-          "1": "מִנְּשֹֽׂא",
-          "2": "בספרי ספרד ואשכנז מִנְּשֽׂוֹא",
-          "3": "אאא*"
-        }
-      },
-      "2": [
-        "...", {"tmpl_name": "ש"}, "..."
-      ]
-    }
-  },
-  "׃"
-]"""
+_JSON_HAARAH_2_IN_CONTEXT_TEXT = jsnip.read_text(
+    "mpplus_haarah_2", "haarah_2_in_context.json"
+)
 
 _HAARAH_2_IN_CONTEXT_CLAIM_ID = "mp.plus.example.haarah-2-context"
 _HAARAH_2_IN_CONTEXT_CLAIM_DATA = json.loads(_JSON_HAARAH_2_IN_CONTEXT_TEXT)

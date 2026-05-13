@@ -13,21 +13,14 @@ from author_util import author
 from author_util import json_block
 from author_util.claim import ClaimCollection
 from author import mp_cmn as cmn
+from author import mp_cmn_json_snippets as jsnip
 
 _FNAME = "mpplus_kq_special.html"
 _TITLE = "Special ketiv/qere"
 
 _PLUS_DOC = "mpplus.html"
 
-_JSON_KQ_SPECIAL = """\
-{
-  "tmpl_name": "מ:כו״ק מיוחד",
-  "tmpl_params": {
-    "1": "מנהסערה",
-    "2": ["מִ֥ן", {"tmpl_name": "מ:פסק"}, "הַסְּעָרָ֗ה"],
-    "סוג": "כו״ק כתיב מילה חדה וקרי תרתין מילין"
-  }
-}"""
+_JSON_KQ_SPECIAL = jsnip.read_text("mpplus_kq_special", "kq_special.json")
 
 _KQ_SPECIAL_SUBTYPES_CLAIM_ID = "mp.both.templates.kq-special.subtypes"
 _KQ_SPECIAL_SUBTYPES_CLAIM_DATA = {

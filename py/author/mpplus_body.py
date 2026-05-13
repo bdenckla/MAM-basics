@@ -6,6 +6,8 @@ from author_util import author
 from author_util import json_block
 from author_util.claim import ClaimCollection
 from author import mp_cmn as cmn
+from author import mp_cmn_json_snippets as jsnip
+from author import mp_cmn_top_header_book39 as thb
 
 _PLUS_DOC = "mpplus.html"
 _CALL_GRAPHS = "https://bdenckla.github.io/MAM-parsed/plus-template-call-graphs.html"
@@ -78,90 +80,17 @@ def _emit_claim_payload(
     return claims.claim(claim_id, payload, kind=kind, subject=subject, data=data)
 
 
-# ---------------------------------------------------------------------------
-# JSON snippets
-# ---------------------------------------------------------------------------
-
-_JSON_TOP_LEVEL_SKEL = """\
-{
-  "header": {},
-  "book39s": []
-}"""
-
-_JSON_HEADER = """\
-"header": {
-  "book24_name": "ספר איוב",
-  "sub_book_names": [],
-  "chapter_counts": [
-    {"sub_book_name": null, "chapter_count": 42}
-  ]
-}"""
-
-_JSON_HEADER_COMPOSITE = """\
-"header": {
-  "book24_name": "ספר שמואל",
-  "sub_book_names": ["שמ\\\"א", "שמ\\\"ב"],
-  "chapter_counts": [
-      {"sub_book_name": "שמ\\\"א", "chapter_count": 31},
-      {"sub_book_name": "שמ\\\"ב", "chapter_count": 24}
-  ]
-}"""
-
-_JSON_BOOK39_SKEL = """\
-{
-  "book24_name": "ספר ישעיהו",
-  "sub_book_name": null,
-  "chapters": {},
-  "good_ending_plus": null
-}"""
-
-_JSON_D_COL_FIRST = """\
-[
-    ...,
-    [
-      {"tmpl_name": "מ:פסוק",
-       "tmpl_params": {"1": "איוב", "2": "א", "3": "א", "סדר": "א"}}
-    ],
-    ...
-]"""
-
-_JSON_D_COL_SUBSEQ = """\
-[
-    ...,
-    [],
-    ...
-]"""
-
-_JSON_TMPL_FORMAT = """\
-{
-  "tmpl_name": "קו״כ",
-  "tmpl_params": {"1": "את", "2": "אַ֠תָּ֠ה"}
-}"""
-
-_JSON_NESTED = """\
-{
-  "tmpl_name": "נוסח",
-  "tmpl_params": {
-    "1": {
-      "tmpl_name": "כו״ק",
-      "tmpl_params": {
-        "1": {
-          "tmpl_name": "מ:אות-מיוחדת-במילה",
-          "tmpl_params": {...},
-        },
-        "2": "וְג֣וּשׁ"
-      }
-    },
-    "2": "..."
-  }
-}"""
+_JSON_D_COL_FIRST = jsnip.read_text("mpplus_body", "d_col_first.json")
+_JSON_D_COL_SUBSEQ = jsnip.read_text("mpplus_body", "d_col_subseq.json")
+_JSON_TMPL_FORMAT = jsnip.read_text("mpplus_body", "tmpl_format.json")
+_JSON_NESTED = jsnip.read_text("mpplus_body", "nested_tmpl.json")
 
 
 def _json_top_level_skel(*, claims: ClaimCollection):
     return _emit_claim_payload(
         claims,
         "mp.plus.example.top-level-skel",
-        _JSON_TOP_LEVEL_SKEL,
+        thb.JSON_TOP_LEVEL_SKEL,
         kind="struct",
         subject="mp:plus",
         data={"top_level_keys": ["header", "book39s"]},
@@ -172,7 +101,7 @@ def _json_header(*, claims: ClaimCollection):
     return _emit_claim_payload(
         claims,
         "mp.plus.example.header-job",
-        _JSON_HEADER,
+        thb.JSON_HEADER,
         kind="example",
         subject="mp:plus",
         data={
@@ -187,7 +116,7 @@ def _json_header_composite(*, claims: ClaimCollection):
     return _emit_claim_payload(
         claims,
         "mp.plus.example.header-samuel",
-        _JSON_HEADER_COMPOSITE,
+        thb.JSON_HEADER_COMPOSITE,
         kind="example",
         subject="mp:plus",
     )
@@ -197,7 +126,7 @@ def _json_book39_skel(*, claims: ClaimCollection):
     return _emit_claim_payload(
         claims,
         "mp.plus.example.book39-skel",
-        _JSON_BOOK39_SKEL,
+        thb.JSON_BOOK39_SKEL_PLUS,
         kind="struct",
         subject="mp:plus",
         data={
@@ -316,38 +245,10 @@ def s_top_level(*, claims: ClaimCollection):
     _header_rows = _emit_claim_payload(
         claims,
         "mp.plus.header.fields",
-        [
-            [
-                mb_html.code("book24_name"),
-                "string",
-                "The name of this file’s book24.",
-            ],
-            [
-                mb_html.code("sub_book_names"),
-                "array",
-                [
-                    "Array of sub-book names for this book24."
-                    " (Empty if this book24 has no sub-books.)",
-                ],
-            ],
-            [
-                mb_html.code("chapter_counts"),
-                "array",
-                [
-                    "One object per book39, each with ",
-                    mb_html.code("sub_book_name"),
-                    " and ",
-                    mb_html.code("chapter_count"),
-                    ".",
-                    " (The ",
-                    mb_html.code("sub_book_name"),
-                    " will be null for a book39 that is not a sub-book, i.e. a book39 that is also a book24.)",
-                ],
-            ],
-        ],
+        thb.header_rows(),
         kind="struct",
         subject="mp:plus",
-        data={"header_keys": ["book24_name", "sub_book_names", "chapter_counts"]},
+        data={"header_keys": thb.HEADER_KEYS},
     )
     return [
         author.heading_level_2("Top-level structure"),
@@ -366,49 +267,13 @@ def s_book39(*, claims: ClaimCollection):
         claims,
         "mp.plus.book39.fields",
         [
-            [
-                mb_html.code("book24_name"),
-                "string",
-                [
-                    "For a book39 that is not a sub-book, this is its name.",
-                    " For a book39 that is a sub-book, this is the name of the book24 to which this sub-book belongs.",
-                ],
-            ],
-            [
-                mb_html.code("sub_book_name"),
-                "string | null",
-                [
-                    "For a book39 that is not a sub-book, this is null.",
-                    " For a book39 that is a sub-book, this is its name.",
-                ],
-            ],
-            [
-                mb_html.code("chapters"),
-                "object",
-                "Object keyed by chapter numbers; values are chapter objects.",
-            ],
-            [
-                mb_html.code("good_ending_plus"),
-                "object | null",
-                [
-                    'Non-null only for the 4 book39s with "good endings." See ',
-                    author.anchor_h(
-                        "its dedicated page",
-                        _GOOD_ENDING_DOC,
-                    ),
-                    ".",
-                ],
-            ],
+            *thb.book39_rows_common(),
+            thb.book39_good_ending_row(_GOOD_ENDING_DOC),
         ],
         kind="struct",
         subject="mp:plus",
         data={
-            "book39_keys": [
-                "book24_name",
-                "sub_book_name",
-                "chapters",
-                "good_ending_plus",
-            ],
+            "book39_keys": [*thb.BOOK39_KEYS_COMMON, "good_ending_plus"],
             "good_ending_plus_nonnull_count": 4,
         },
     )
