@@ -167,11 +167,11 @@ def _s_intro():
 
 
 def _s_top_level(*, claims: ClaimCollection):
-    top_level_example = cmn.emit_claim_by_id(
+    cmn.emit_claim_by_id(
         claims=claims,
         claim_id="mp.plain.example.top-level",
     )
-    top_level_composite_example = cmn.emit_claim_by_id(
+    cmn.emit_claim_by_id(
         claims=claims,
         claim_id="mp.plain.example.top-level-composite",
     )
@@ -179,21 +179,17 @@ def _s_top_level(*, claims: ClaimCollection):
     return [
         author.heading_level_2("Top-level structure"),
         json_block.json_block_raw_html(thb.JSON_TOP_LEVEL_SKEL),
-        author.para("Minimal top-level example (Job):"),
-        json_block.json_block_raw_html(top_level_example),
         author.heading_level_2("Header"),
         author.std_table(header_rows, arg_to_troh=["Key", "Type", "Description"]),
         author.para("Here’s the header for Job, a book24 has no sub-books:"),
         json_block.json_block_raw_html(thb.JSON_HEADER),
         author.para("Here’s the header for Samuel, a book24 that has sub-books:"),
         json_block.json_block_raw_html(thb.JSON_HEADER_COMPOSITE),
-        author.para("Minimal top-level composite example (Samuel):"),
-        json_block.json_block_raw_html(top_level_composite_example),
     ]
 
 
 def s_book39(*, claims: ClaimCollection):
-    book39_example = cmn.emit_claim_by_id(
+    cmn.emit_claim_by_id(
         claims=claims,
         claim_id="mp.plain.example.book39",
     )
@@ -208,8 +204,6 @@ def s_book39(*, claims: ClaimCollection):
     return [
         author.heading_level_2("Book39 structure"),
         json_block.json_block_raw_html(thb.JSON_BOOK39_SKEL_COMMON),
-        author.para("Minimal book39 example (Job):"),
-        json_block.json_block_raw_html(book39_example),
         author.std_table(_book39_rows, arg_to_troh=["Key", "Type", "Description"]),
     ]
 
