@@ -304,17 +304,8 @@ def s_plain_differences(*, claims: ClaimCollection):
         author.heading_level_2("Differences from plain format"),
         author.para(
             [
-                "The primary differences table has moved to ",
-                author.anchor_h("its dedicated page", _DIFF_FROM_PLAIN_DOC),
-                ".",
-            ]
-        ),
-        author.para(
-            [
-                "That page is intentionally concise."
-                " For an exhaustive list of templates removed from plus, grouped as"
-                " Tagging-only, Pre-evaluated, and Misc. not applicable to plus, see ",
-                author.anchor_h("Plain-only Templates", _PLAIN_ONLY_TEMPLATES_DOC),
+                "Differences from the plain format are described on ",
+                author.anchor_h("a dedicated page", _DIFF_FROM_PLAIN_DOC),
                 ".",
             ]
         ),

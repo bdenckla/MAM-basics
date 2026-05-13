@@ -643,7 +643,7 @@ OTHER_ROWS = _claim_payload(
         ],
         [
             author.hbo("נוסח"),
-            "Documentation template. Param 1 is the target text; param 2 is an editorial note.",
+            "Documentation template. Param 1 is the target text; param 2 is the documentation note.",
         ],
         [
             author.hbo("מודגש"),
