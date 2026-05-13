@@ -333,6 +333,14 @@ _DIFF_ROWS = [
         "Present",
         "Removed (handled differently in plus)",
     ],
+    [
+        "Scroll-difference note template",
+        [author.hbo("מ:הערה"), " (non-targeted)"],
+        [
+            author.hbo("מ:הערה-2"),
+            " (targeted)",
+        ],
+    ],
 ]
 
 

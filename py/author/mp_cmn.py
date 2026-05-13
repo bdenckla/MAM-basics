@@ -484,10 +484,7 @@ NOTE_ROW = _claim_payload(
     [
         [author.hbo(tmpln.SCRDFF_TAR)],
         [
-            "Targeted scroll-difference notes in plus (Torah and Esther only)."
-            " The plain corpus still carries ",
-            author.hbo(tmpln.SCRDFF_NO_TAR),
-            ". See ",
+            "Targeted scroll-difference note (Torah and Esther only). See ",
             author.anchor_h(
                 ["dedicated page for ", author.hbo("מ:הערה-2")],
                 _HAARAH_2_DOC,
@@ -500,7 +497,12 @@ NOTE_ROW = _claim_payload(
     data={"templates": [tmpln.SCRDFF_TAR], "books": "Torah and Esther only"},
 )
 
-NOTE_ROW_PLAIN = [author.hbo(tmpln.SCRDFF_NO_TAR), NOTE_ROW[1]]
+NOTE_ROW_PLAIN = [
+    author.hbo(tmpln.SCRDFF_NO_TAR),
+    [
+        "Non-targeted scroll-difference note (Torah and Esther only).",
+    ],
+]
 
 NOTE_LINKS_ROW = _claim_payload(
     "mp.both.templates.note-links.set",
