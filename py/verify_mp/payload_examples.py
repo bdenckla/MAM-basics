@@ -4,6 +4,13 @@
 These checks are intentionally data-oriented: if a claim carries a JSON snippet
 example, the snippet must match actual corpus data.
 
+This module intentionally implements a small custom JSON pattern-matching
+language. We considered off-the-shelf approaches (for example JSON Schema and
+JSONPath/JMESPath), but they were not a clean fit for this use case, which
+needs all of the following at once: exact-key object matching, ordered list
+matching with explicit wildcard gaps, anchored tokenized string-gap matching,
+and recursive "match anywhere in subtree" search over JSON-like nodes.
+
 Snippet wildcard semantics are encoded explicitly with strict-JSON tokens:
 - "__verify_mp_any_value__" as a wildcard value
 - "__verify_mp_list_gap__" as a wildcard list subsequence
