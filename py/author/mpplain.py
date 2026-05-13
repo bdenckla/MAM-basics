@@ -508,12 +508,7 @@ def _s_common_templates(*, claims: ClaimCollection):
         ),
         author.heading_level_3("Other templates"),
         author.std_table(
-            cmn.other_rows_shared_core(),
-            arg_to_troh=["Template", "Purpose"],
-        ),
-        author.para("Additional entries:"),
-        author.std_table(
-            cmn.other_rows_plain_extras(),
+            cmn.other_rows_shared_core() + cmn.other_rows_plain_extras(),
             arg_to_troh=["Template", "Purpose"],
         ),
     ]
