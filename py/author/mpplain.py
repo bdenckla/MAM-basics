@@ -163,6 +163,7 @@ def gen_html_file(tdm_ch, claims: ClaimCollection):
 def build_body(*, claims: ClaimCollection):
     return [
         mb_html.heading_level_1(_TITLE),
+        *_s_intro(),
         *cmn.s_file_naming(),
         *_s_top_level(),
         *s_book39(claims=claims),
@@ -181,6 +182,32 @@ def _build_body(*, claims: ClaimCollection):
 # ---------------------------------------------------------------------------
 # Sections
 # ---------------------------------------------------------------------------
+
+
+def _s_intro():
+    return [
+        author.para(
+            "The $MAM-parsed-plain JSON files are formed by parsing the Wikitext"
+            " in the $MAM Google Sheet with minimal post-processing."
+        ),
+        author.para(
+            "Use plain when you want a representation that stays close to the"
+            " $MAM Google Sheet."
+            " Use plus when you want conveniences"
+            " intended to simplify most application code."
+        ),
+        author.para("This document covers:"),
+        author.unordered_list(
+            [
+                "File naming",
+                "Structure of the top level",
+                "Structure of a book39, chapter, and verse",
+                "Template and custom-tag objects",
+                "Common templates",
+                "Pseudo-verses",
+            ]
+        ),
+    ]
 
 
 def _s_top_level():
