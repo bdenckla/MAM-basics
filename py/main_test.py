@@ -40,6 +40,11 @@ TEST_MODULE_SPECS = (
         help_text="Run explicit claim collection core tests.",
     ),
     TestModuleSpec(
+        flag="diff-mpp-unpinned-latest",
+        module_name="tests.test_diff_mpp_unpinned_latest",
+        help_text="Run change-log unpinned-latest preservation regression tests.",
+    ),
+    TestModuleSpec(
         flag="mb-cmn-kq-special-templates",
         module_name="tests.test_mb_cmn_kq_special_templates",
         help_text="Run special-kq template normalization tests.",

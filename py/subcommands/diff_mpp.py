@@ -19,6 +19,8 @@ When run with no arguments, the script compares the latest named release
 (the release boundary closest to HEAD) against HEAD. If commits exist beyond
 that release and produce diffs, it writes
 ../MAM-with-doc/gh-pages/change-log/unpinned-latest.html.
+When unreleased diffs are absent, unpinned-latest artifacts are rewritten as
+empty reports so stale content is not left behind.
 """
 
 import argparse
@@ -39,6 +41,10 @@ CHANGE_LOG_DIR = "../MAM-with-doc/gh-pages/change-log"
 RELEASES_JSON = f"{CHANGE_LOG_DIR}/releases.json"
 UNPINNED_LATEST_HTML = f"{CHANGE_LOG_DIR}/unpinned-latest.html"
 UNPINNED_LATEST_JSON = UNPINNED_LATEST_HTML.removesuffix(".html") + ".json"
+PRESERVED_CHANGE_LOG_ARTIFACTS = (
+    UNPINNED_LATEST_HTML,
+    UNPINNED_LATEST_JSON,
+)
 
 
 def _commit_date(rev):
@@ -110,14 +116,6 @@ def default_output_path(old_rev, new_rev):
     return f"{CHANGE_LOG_DIR}/{slug}.html"
 
 
-def _remove_unpinned_latest_artifacts():
-    """Delete stale unpinned-latest artifacts when no unreleased report exists."""
-    for path in (UNPINNED_LATEST_HTML, UNPINNED_LATEST_JSON):
-        if os.path.isfile(path):
-            os.remove(path)
-            print(f"Removed stale {path}")
-
-
 def generate_report(old_rev, new_rev, output, *, write_when_empty=True):
     """Generate one diff report. Returns the expanded diff count."""
     print(f"Comparing {old_rev} -> {new_rev} ...")
@@ -163,24 +161,34 @@ def run_all():
 def run_unpinned_latest():
     """Generate unpinned-latest report and return its index entry, else None."""
     latest_release = _latest_release_entry()
+    if latest_release is None:
+        raise RuntimeError("releases.json has no release entries")
     old_rev = latest_release["new"]
     commit_count = _count_newer_commits(old_rev)
     if commit_count == 0:
-        _remove_unpinned_latest_artifacts()
+        generate_report(
+            old_rev,
+            "HEAD",
+            UNPINNED_LATEST_HTML,
+            write_when_empty=True,
+        )
         print(
             f"No commits after latest named release ({old_rev}); "
-            "skipping unpinned-latest report"
+            "wrote empty unpinned-latest artifacts: "
+            f"{', '.join(PRESERVED_CHANGE_LOG_ARTIFACTS)}"
         )
         return None
     count, old_date = generate_report(
         old_rev,
         "HEAD",
         UNPINNED_LATEST_HTML,
-        write_when_empty=False,
+        write_when_empty=True,
     )
     if count == 0:
-        _remove_unpinned_latest_artifacts()
-        print("No diffs in unreleased commit range; skipped unpinned-latest report")
+        print(
+            "No diffs in unreleased commit range; wrote empty "
+            "unpinned-latest artifacts"
+        )
         return None
     return {"name": "unpinned-latest", "count": count, "old_date": old_date}
 
