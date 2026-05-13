@@ -2,8 +2,16 @@
 """Generic payload verification for mp.*.example.* claims.
 
 These checks are intentionally data-oriented: if a claim carries a JSON snippet
-example, the snippet must match actual corpus data. Snippets may use ellipsis
-placeholders to omit detail.
+example, the snippet must match actual corpus data.
+
+Snippet wildcard semantics are encoded explicitly with strict-JSON tokens:
+- "__verify_mp_any_value__" as a wildcard value
+- "__verify_mp_list_gap__" as a wildcard list subsequence
+- {"__verify_mp_any_dict__": true} as a dict wildcard
+- {"__verify_mp_any_list__": true} as a list wildcard
+- {"__verify_mp_any_string__": true} as an any-string wildcard
+- {"__verify_mp_any_string__": ["lit", "__verify_mp_string_gap__", "lit"]}
+    as a tokenized mid-string wildcard pattern
 """
 
 import json
@@ -12,12 +20,12 @@ import re
 from author_util.claim import ClaimRecord
 from verify_mp.corpus import Context
 
-_ELLIPSIS = "..."
-_DICT_WILDCARD_KEY = "__verify_mp_dict_wildcard__"
-
-_DICT_ELLIPSIS_RE = re.compile(r"\{\s*\.\.\.\s*\}")
-_BARE_ELLIPSIS_RE = re.compile(r"(?<![\w\"])\.\.\.(?![\w\"])")
-_TRAILING_COMMA_RE = re.compile(r",(\s*[}\]])")
+_ANY_VALUE_TOKEN = "__verify_mp_any_value__"
+_LIST_GAP_TOKEN = "__verify_mp_list_gap__"
+_ANY_DICT_MARKER_KEY = "__verify_mp_any_dict__"
+_ANY_LIST_MARKER_KEY = "__verify_mp_any_list__"
+_ANY_STRING_TOKEN = "__verify_mp_any_string__"
+_MID_STRING_GAP_TOKEN = "__verify_mp_string_gap__"
 
 
 def is_example_claim(record: ClaimRecord) -> bool:
@@ -36,7 +44,7 @@ def verify_example_payload(record: ClaimRecord, ctx: Context) -> None:
 
 
 def _normalize_payload(record: ClaimRecord):
-    """Parse JSON-snippet payloads and normalize ellipsis placeholders."""
+    """Parse strict-JSON snippet payloads."""
     payload = record.payload
     if not isinstance(payload, str):
         return payload
@@ -45,24 +53,13 @@ def _normalize_payload(record: ClaimRecord):
     if not text:
         return payload
 
-    # Allow key-value fragments like '"header": {...}' in snippet files.
-    if text.startswith('"') and ":" in text:
-        text = "{" + text + "}"
-
     if not text.startswith("{") and not text.startswith("["):
         return payload
-
-    # Allow `{...}` as a dict wildcard placeholder.
-    text = _DICT_ELLIPSIS_RE.sub(f'{{"{_DICT_WILDCARD_KEY}": true}}', text)
-    # Allow bare `...` as wildcard placeholders in arrays/values.
-    text = _BARE_ELLIPSIS_RE.sub(f'"{_ELLIPSIS}"', text)
-    # Accept trailing commas in human-authored snippets.
-    text = _TRAILING_COMMA_RE.sub(r"\1", text)
 
     try:
         return json.loads(text)
     except json.JSONDecodeError as exc:
-        assert False, f"claim {record.id}: payload is not parseable JSON snippet: {exc}"
+        assert False, f"claim {record.id}: payload must be strict JSON: {exc}"
 
 
 def _roots_for_subject(record: ClaimRecord, ctx: Context) -> list:
@@ -87,52 +84,77 @@ def _contains_pattern(node, pattern) -> bool:
 
 
 def _match_pattern(expected, actual) -> bool:
-    """Match expected pattern against actual value with ellipsis support."""
+    """Match expected pattern against actual value with token-based wildcards.
+
+    For ordinary dict patterns (non-token objects), matching is exact-key:
+    expected and actual must have identical key sets.
+    """
+    if expected == _ANY_VALUE_TOKEN:
+        return True
+
     if isinstance(expected, str):
-        if expected == _ELLIPSIS:
-            return True
-        if not isinstance(actual, str):
-            return False
-        return _match_string_with_ellipsis(expected, actual)
+        return expected == actual
 
     if isinstance(expected, dict):
-        if expected == {_DICT_WILDCARD_KEY: True}:
+        if expected == {_ANY_DICT_MARKER_KEY: True}:
             return isinstance(actual, dict)
+        if expected == {_ANY_LIST_MARKER_KEY: True}:
+            return isinstance(actual, list)
+        if _ANY_STRING_TOKEN in expected:
+            assert (
+                len(expected) == 1
+            ), f"invalid tokenized string pattern object; expected only {_ANY_STRING_TOKEN!r}: {expected!r}"
+            return _match_any_string_pattern(expected[_ANY_STRING_TOKEN], actual)
         if not isinstance(actual, dict):
             return False
-        for key, value in expected.items():
-            if key not in actual:
-                return False
-            if not _match_pattern(value, actual[key]):
-                return False
-        return True
+        if frozenset(expected.keys()) != frozenset(actual.keys()):
+            return False
+        return all(
+            _match_pattern(value, actual[key]) for key, value in expected.items()
+        )
 
     if isinstance(expected, list):
         if not isinstance(actual, list):
             return False
-        if len(expected) == 0:
-            # Empty list in snippets is used as a placeholder for "this is a list".
-            return True
         return _match_list_pattern(expected, actual)
 
     return expected == actual
 
 
-def _match_string_with_ellipsis(expected: str, actual: str) -> bool:
-    """Match strings, interpreting '...' inside expected as a wildcard segment."""
-    if _ELLIPSIS not in expected:
-        return expected == actual
+def _match_any_string_pattern(pattern, actual) -> bool:
+    """Match strict-JSON tokenized string wildcard patterns."""
+    if not isinstance(actual, str):
+        return False
 
-    # Placeholders like "...explanatory text..." are wildcards for any string.
-    if expected.startswith(_ELLIPSIS) and expected.endswith(_ELLIPSIS):
+    if pattern is True:
         return True
 
-    regex = "^" + re.escape(expected).replace(re.escape(_ELLIPSIS), ".*") + "$"
+    if isinstance(pattern, list):
+        return _match_string_parts(pattern, actual)
+
+    assert False, (
+        "invalid any-string token payload; expected true or list of parts: "
+        f"{pattern!r}"
+    )
+
+
+def _match_string_parts(parts: list, actual: str) -> bool:
+    """Match a string from literal parts and explicit mid-string gap tokens."""
+    for part in parts:
+        assert isinstance(part, str), f"string parts must be strings: {parts!r}"
+
+    regex = "^"
+    for part in parts:
+        if part == _MID_STRING_GAP_TOKEN:
+            regex += ".*"
+            continue
+        regex += re.escape(part)
+    regex += "$"
     return re.match(regex, actual) is not None
 
 
 def _match_list_pattern(expected: list, actual: list) -> bool:
-    """List matcher where an item '...' in expected means any subsequence."""
+    """List matcher where _LIST_GAP_TOKEN in expected means any subsequence."""
     memo: dict[tuple[int, int], bool] = {}
 
     def _rec(i: int, j: int) -> bool:
@@ -146,7 +168,7 @@ def _match_list_pattern(expected: list, actual: list) -> bool:
             return result
 
         token = expected[i]
-        if token == _ELLIPSIS:
+        if token == _LIST_GAP_TOKEN:
             for next_j in range(j, len(actual) + 1):
                 if _rec(i + 1, next_j):
                     memo[key] = True

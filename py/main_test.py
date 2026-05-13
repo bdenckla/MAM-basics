@@ -40,6 +40,11 @@ TEST_MODULE_SPECS = (
         help_text="Run explicit claim collection core tests.",
     ),
     TestModuleSpec(
+        flag="verify-mp-payload-examples",
+        module_name="tests.test_verify_mp_payload_examples",
+        help_text="Run strict JSON payload-example matcher tests.",
+    ),
+    TestModuleSpec(
         flag="diff-mpp-unpinned-latest",
         module_name="tests.test_diff_mpp_unpinned_latest",
         help_text="Run change-log unpinned-latest preservation regression tests.",

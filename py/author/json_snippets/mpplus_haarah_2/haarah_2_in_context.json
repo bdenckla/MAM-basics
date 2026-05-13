@@ -1,5 +1,5 @@
 [
-  "וַיֹּ֥אמֶר קַ֖יִן אֶל־יְהֹוָ֑ה גָּד֥וֹל עֲוֺנִ֖י ",
+  {"__verify_mp_any_string__": true},
   {
     "tmpl_name": "נוסח",
     "tmpl_params": {
@@ -12,9 +12,11 @@
         }
       },
       "2": [
-        "...", {"tmpl_name": "ש"}, "..."
+        "__verify_mp_list_gap__",
+        {"tmpl_name": "ש"},
+        "__verify_mp_list_gap__"
       ]
     }
   },
-  "׃"
+  {"__verify_mp_any_string__": true}
 ]

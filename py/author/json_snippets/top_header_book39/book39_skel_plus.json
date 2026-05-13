@@ -1,6 +1,6 @@
 {
   "book24_name": "ספר ישעיהו",
   "sub_book_name": null,
-  "chapters": {},
-  "good_ending_plus": {...}
+  "chapters": {"__verify_mp_any_dict__": true},
+  "good_ending_plus": {"__verify_mp_any_dict__": true}
 }

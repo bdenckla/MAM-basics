@@ -6,11 +6,11 @@
       "tmpl_params": {
         "1": {
           "tmpl_name": "מ:אות-מיוחדת-במילה",
-          "tmpl_params": {...},
+          "tmpl_params": {"__verify_mp_any_dict__": true}
         },
         "2": "וְג֣וּשׁ"
       }
     },
-    "2": "..."
+    "2": "__verify_mp_any_value__"
   }
 }

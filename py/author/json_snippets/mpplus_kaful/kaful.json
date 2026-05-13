@@ -1,8 +1,8 @@
 {
   "tmpl_name": "מ:כפול",
   "tmpl_params": {
-    "כפול": "...text with two accents on some words...",
-    "א": "...strand 1 (singly-accented)...",
-    "ב": "...strand 2 (singly-accented)..."
+    "כפול": {"__verify_mp_any_string__": ["__verify_mp_string_gap__"]},
+    "א": {"__verify_mp_any_string__": ["__verify_mp_string_gap__"]},
+    "ב": {"__verify_mp_any_string__": ["__verify_mp_string_gap__"]}
   }
 }
