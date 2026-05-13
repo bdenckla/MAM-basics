@@ -43,6 +43,37 @@ _JSON_CUSTOM_TAG = """\
 {"custom_tag": "noinclude"}
 {"custom_tag": "/noinclude"}"""
 
+_JSON_TOP_LEVEL = """\
+{
+    "header": {
+        "book24_name": "ספר איוב",
+        "sub_book_names": [],
+        "chapter_counts": [
+            {
+                "sub_book_name": null,
+                "chapter_count": 42
+            }
+        ]
+    },
+    "book39s": []
+}"""
+
+_JSON_COMPOSITE = """\
+{
+    "header": {
+        "book24_name": "ספר שמואל",
+        "sub_book_names": ["שמ\\"א", "שמ\\"ב"],
+        "chapter_counts": [
+            {"sub_book_name": "שמ\\"א", "chapter_count": 31},
+            {"sub_book_name": "שמ\\"ב", "chapter_count": 24}
+        ]
+    },
+    "book39s": [
+        {"book24_name": "ספר שמואל", "sub_book_name": "שמ\\"א", "chapters": {}},
+        {"book24_name": "ספר שמואל", "sub_book_name": "שמ\\"ב", "chapters": {}}
+    ]
+}"""
+
 _PLAIN_COMMON_TEMPLATES = [
     "כו״ק",
     "קו״כ",
@@ -163,8 +194,15 @@ def _s_top_level():
     ]
     return [
         author.heading_level_2("Top-level structure"),
-        json_block.json_block_raw_html(cmn.JSON_TOP_LEVEL),
+        json_block.json_block_raw_html(_JSON_TOP_LEVEL),
         author.std_table(rows, arg_to_troh=["Key", "Type", "Description"]),
+        author.para(
+            [
+                "The plain header now uses the same shared shape as plus for "
+                "sub-book names and chapter counts. This is an intentional "
+                "simplification aligned with current one-file-per-book24 output.",
+            ]
+        ),
         author.heading_level_3("Composite books"),
         author.para(
             [
@@ -173,7 +211,7 @@ def _s_top_level():
                 " has multiple elements:",
             ]
         ),
-        json_block.json_block_raw_html(cmn.JSON_COMPOSITE),
+        json_block.json_block_raw_html(_JSON_COMPOSITE),
     ]
 
 

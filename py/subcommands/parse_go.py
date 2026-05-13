@@ -5,8 +5,6 @@ Also exports do_one_section, which is called directly by
 main_download.py fr-google as part of the download pipeline.
 """
 
-import collections
-
 from mb_cmn import bib_locales as tbn
 from mb_cmn import file_io
 from mb_cmn import mam_bknas_and_std_bknas as mbkn_a_sbkn
@@ -19,15 +17,17 @@ from py_misc import mam_parsed_plus
 
 def _add_header(light_books):
     he_bns = {}  # we use a dict as a set that preserves insertion order
-    he_sbns = collections.defaultdict(list)
+    # We now emit the plain header in the same shape as plus for shared fields.
+    # This simplification matches current one-file-per-book24 output practice.
+    he_sbns = []
     chap_cnts = []
     book39s = []
     for (he_bn, he_sbn), chapters in light_books.items():
         he_bns[he_bn] = True  # True is a dummy ("don't care") value
         if he_sbn is not None:
-            he_sbns[he_bn].append(he_sbn)
+            he_sbns.append(he_sbn)
         basic = {"book24_name": he_bn, "sub_book_name": he_sbn}
-        chap_cnts.append(dict(basic, chapter_count=len(chapters)))
+        chap_cnts.append({"sub_book_name": he_sbn, "chapter_count": len(chapters)})
         book39s.append(dict(basic, chapters=chapters))
     assert len(he_bns) == 1
     header = {

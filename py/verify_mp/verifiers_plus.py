@@ -353,6 +353,21 @@ def _has_chapter_count(header: dict, sub_book_name, chapter_count: int) -> bool:
     return False
 
 
+def _header_sub_book_names_match(header: dict, expected: list[str]) -> bool:
+    """Match legacy and unified header sub_book_names shapes.
+
+    Legacy plain headers used {book24_name: [sub-books]} (or {} for none).
+    Unified headers use a direct list of sub-book names.
+    """
+    actual = header["sub_book_names"]
+    if isinstance(actual, list):
+        return actual == expected
+    assert isinstance(actual, dict)
+    if len(expected) == 0:
+        return actual == {}
+    return actual.get(header["book24_name"]) == expected
+
+
 _MAQAF = "\u05be"  # HEBREW PUNCTUATION MAQAF — appears literally in dot-masks
 
 
@@ -542,7 +557,7 @@ def verify_mp_plain_example_top_level(record: ClaimRecord, ctx: Context) -> None
         header = top["header"]
         return (
             header["book24_name"] == "ספר איוב"
-            and header["sub_book_names"] == {}
+            and _header_sub_book_names_match(header, [])
             and _has_chapter_count(header, None, 42)
             and isinstance(top["book39s"], list)
         )
@@ -563,7 +578,7 @@ def verify_mp_plain_example_top_level_composite(
         header = top["header"]
         if header["book24_name"] != "ספר שמואל":
             return False
-        if header["sub_book_names"].get("ספר שמואל") != ['שמ"א', 'שמ"ב']:
+        if not _header_sub_book_names_match(header, ['שמ"א', 'שמ"ב']):
             return False
         if not (
             _has_chapter_count(header, 'שמ"א', 31)

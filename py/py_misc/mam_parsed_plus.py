@@ -26,7 +26,12 @@ def add_plus_stuff(section):
 
 
 def _plus_header(header):
-    """Return a plus-format header with normalized header fields."""
+    """Return a plus-format header from legacy or already-unified input.
+
+    Legacy plain headers used a dict for sub_book_names and included
+    book24_name inside each chapter_counts entry. Current plain headers
+    already match plus shape for these fields.
+    """
     out_header = dict(header)
     sbns = header["sub_book_names"]
     if isinstance(sbns, dict):
@@ -47,6 +52,7 @@ def _plus_header(header):
 
 
 def _plus_chapter_counts(header):
+    """Normalize chapter_counts to plus shape, preserving current shape as-is."""
     chapter_counts = header["chapter_counts"]
     has_bk24_name = ["book24_name" in entry for entry in chapter_counts]
     out_counts = []

@@ -149,6 +149,9 @@ def build_body(*, claims: ClaimCollection):
         author.para(
             [
                 "This table stays concise so the main format differences are quick to scan.",
+                " Header metadata is intentionally aligned between plain and plus now",
+                " (a simplification that fits current one-file-per-book24 outputs),",
+                " so header-shape differences are not listed here.",
                 " The exhaustive list of templates removed from plus is on ",
                 author.anchor_h("Plain-only Templates", PLAIN_ONLY_TEMPLATES_DOC),
                 ".",
