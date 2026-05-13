@@ -167,14 +167,6 @@ def _s_intro():
 
 
 def _s_top_level(*, claims: ClaimCollection):
-    cmn.emit_claim_by_id(
-        claims=claims,
-        claim_id="mp.plain.example.top-level",
-    )
-    cmn.emit_claim_by_id(
-        claims=claims,
-        claim_id="mp.plain.example.top-level-composite",
-    )
     header_rows = thb.header_rows()
     return [
         author.heading_level_2("Top-level structure"),
@@ -189,10 +181,6 @@ def _s_top_level(*, claims: ClaimCollection):
 
 
 def s_book39(*, claims: ClaimCollection):
-    cmn.emit_claim_by_id(
-        claims=claims,
-        claim_id="mp.plain.example.book39",
-    )
     _book39_rows = _emit_claim_payload(
         claims,
         "mp.plain.book39.fields",

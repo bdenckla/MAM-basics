@@ -81,7 +81,6 @@ def _emit_claim_payload(
 
 
 _JSON_D_COL_FIRST = jsnip.read_text("mpplus_body", "d_col_first.json")
-_JSON_D_COL_SUBSEQ = jsnip.read_text("mpplus_body", "d_col_subseq.json")
 _JSON_TMPL_FORMAT = jsnip.read_text("mpplus_body", "tmpl_format.json")
 _JSON_NESTED = jsnip.read_text("mpplus_body", "nested_tmpl.json")
 
@@ -145,16 +144,6 @@ def _json_d_col_first(*, claims: ClaimCollection):
         claims,
         "mp.plus.example.d-col-first",
         _JSON_D_COL_FIRST,
-        kind="example",
-        subject="mp:plus",
-    )
-
-
-def _json_d_col_subseq(*, claims: ClaimCollection):
-    return _emit_claim_payload(
-        claims,
-        "mp.plus.example.d-col-empty",
-        _JSON_D_COL_SUBSEQ,
         kind="example",
         subject="mp:plus",
     )
@@ -291,7 +280,6 @@ def s_book39(*, claims: ClaimCollection):
 
 
 def s_chapter_verse(*, claims: ClaimCollection):
-    _json_d_col_subseq(claims=claims)
     tmpl_rows = _emit_claim_payload(
         claims,
         "mp.plus.template.object-fields",

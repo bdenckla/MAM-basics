@@ -144,11 +144,11 @@ class TestExplicitClaims(unittest.TestCase):
 
         self.assertTrue(hasattr(mp_cmn, "emit_claim_by_id"))
         self.assertFalse(hasattr(mp_cmn, "emit_claims"))
-        self.assertNotIn("mp.plain.example.top-level-composite", claims.records_by_id)
+        self.assertNotIn("mp.plain.book39.fields", claims.records_by_id)
 
         mpplain._build_body(claims=claims)
 
-        self.assertIn("mp.plain.example.top-level-composite", claims.records_by_id)
+        self.assertIn("mp.plain.book39.fields", claims.records_by_id)
 
     def test_mpplus_aot_build_body_requires_explicit_claims(self):
         aot = importlib.import_module("author.mpplus_aot")

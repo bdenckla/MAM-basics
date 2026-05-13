@@ -79,9 +79,6 @@ PLUS_ONLY = _plain_only.PLUS_ONLY
 
 SHEETS_TMPL = _examples_and_file_naming.SHEETS_TMPL
 SHEETS_DATA = _examples_and_file_naming.SHEETS_DATA
-JSON_TOP_LEVEL = _examples_and_file_naming.JSON_TOP_LEVEL
-JSON_COMPOSITE = _examples_and_file_naming.JSON_COMPOSITE
-JSON_BOOK39 = _examples_and_file_naming.JSON_BOOK39
 _FILE_NAMING_ROWS = _examples_and_file_naming._FILE_NAMING_ROWS
 s_file_naming = _examples_and_file_naming.s_file_naming
 

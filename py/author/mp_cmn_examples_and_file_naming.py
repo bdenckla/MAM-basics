@@ -30,18 +30,6 @@ SHEETS_TMPL = "https://purl.org/mam/google-sheet#gid=1670945398"
 SHEETS_DATA = "https://purl.org/mam/google-sheet#gid=920165745"
 
 # ---------------------------------------------------------------------------
-# Top-level, composite-book, and book39 JSON snippets
-# (shared by plain and plus docs)
-# ---------------------------------------------------------------------------
-
-JSON_TOP_LEVEL = jsnip.read_text("mp_cmn_examples_and_file_naming", "top_level.json")
-
-JSON_COMPOSITE = jsnip.read_text("mp_cmn_examples_and_file_naming", "composite.json")
-
-JSON_BOOK39 = jsnip.read_text("mp_cmn_examples_and_file_naming", "book39.json")
-
-
-# ---------------------------------------------------------------------------
 # File naming section (shared by plain and plus docs)
 # ---------------------------------------------------------------------------
 
@@ -104,24 +92,6 @@ CLAIM_DEFS = (
                 "2": "א=וּבֵרֲכ֥וּ (חטף)",
             },
         },
-    ),
-    _claim_def(
-        "mp.plain.example.top-level",
-        JSON_TOP_LEVEL,
-        kind="example",
-        subject="mp:plain",
-    ),
-    _claim_def(
-        "mp.plain.example.top-level-composite",
-        JSON_COMPOSITE,
-        kind="example",
-        subject="mp:plain",
-    ),
-    _claim_def(
-        "mp.plain.example.book39",
-        JSON_BOOK39,
-        kind="example",
-        subject="mp:plain",
     ),
     _claim_def(
         "mp.both.file-naming.book24-prefixes",
