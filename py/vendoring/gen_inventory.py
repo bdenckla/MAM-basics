@@ -18,6 +18,28 @@ _COMPARE_OUT = _REPO_ROOT / "out" / "vendoring_compare_out.txt"
 _PROVENANCE_OUT = _REPO_ROOT / "out" / "vendoring_provenance_out.txt"
 _PROVENANCE_OUT_JSON = _REPO_ROOT / "out" / "vendoring_provenance_out.json"
 _GENERATOR_FILE = Path(__file__).resolve()
+_INTENTIONALLY_NON_VENDORED_ROWS = [
+    {
+        "repo": "MAM-simple",
+        "path": "py-examples/main_mam4sef_example.py",
+        "notes": "Maintained directly in MAM-simple; not copied from MAM-basics.",
+    },
+    {
+        "repo": "MAM-simple",
+        "path": "py-examples/main_mam_osis_example.py",
+        "notes": "Maintained directly in MAM-simple; not copied from MAM-basics.",
+    },
+    {
+        "repo": "MAM-simple",
+        "path": "py-examples/main_letter_small_job_example.py",
+        "notes": "Maintained directly in MAM-simple; not copied from MAM-basics.",
+    },
+    {
+        "repo": "MAM-parsed",
+        "path": "py-examples/main_tmpl_survey_toy_example.py",
+        "notes": "Maintained directly in MAM-parsed; not copied from MAM-basics.",
+    },
+]
 
 
 def _make_source_path(src_pkg: str) -> str:
@@ -328,7 +350,17 @@ def main(refresh_live_inputs: bool = True) -> None:
         "",
         f"*{row_count} rows, {file_count} files. {ignored_file_count} files ignored (dest_repos: {ignored_repos_sorted}).*",
         "",
+        "## Intentionally non-vendored",
+        "",
+        "These Python files live outside MAM-basics and are intentionally maintained in their destination repos.",
+        "",
+        "| repo | path | notes |",
+        "|---|---|---|",
     ]
+    for row in _INTENTIONALLY_NON_VENDORED_ROWS:
+        lines.append(f"| {row['repo']} | {row['path']} | {row['notes']} |")
+    lines.append("")
+
     out_path = _REPO_ROOT / "doc" / "vendoring-inventory.md"
     out_path.write_text("\n".join(lines), encoding="utf-8")
     print(
