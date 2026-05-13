@@ -160,7 +160,9 @@ CLAIM_DEFS = (
 )
 
 
-def s_file_naming():
+def s_file_naming(*, file_naming_rows=None):
+    if file_naming_rows is None:
+        file_naming_rows = _FILE_NAMING_ROWS
     return [
         author.heading_level_2("File naming"),
         author.para(
@@ -184,7 +186,7 @@ def s_file_naming():
                 ":",
             ]
         ),
-        author.std_table(_FILE_NAMING_ROWS, arg_to_troh=["Prefix", "Section", "Books"]),
+        author.std_table(file_naming_rows, arg_to_troh=["Prefix", "Section", "Books"]),
         author.para(
             [
                 "When ",

@@ -9,7 +9,6 @@ from mb_misc import styles_mam_parsed
 
 def _run_mam_parsed_authored_traversal(*, claims: ClaimCollection, tdm_ch=None):
     """Run authored traversal to emit explicit claims, optionally writing docs."""
-    from author import mp_cmn
     from author import mpplain
     from author import mpplus
     from author import mpplus_aot
@@ -20,7 +19,6 @@ def _run_mam_parsed_authored_traversal(*, claims: ClaimCollection, tdm_ch=None):
     from author import mpplus_diff_from_plain
     from author import mpplus_plain_only_templates
 
-    mp_cmn.emit_claims(claims=claims)
     if tdm_ch is None:
         mpplain.build_body(claims=claims)
         mpplus.build_body(claims=claims)

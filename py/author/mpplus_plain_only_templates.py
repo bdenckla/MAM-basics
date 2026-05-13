@@ -66,6 +66,9 @@ def gen_html_file(tdm_ch, claims: ClaimCollection):
 
 
 def build_body(*, claims: ClaimCollection):
+    cmn.emit_claim_by_id(claims=claims, claim_id="mp.plain.templates.plain-only.set")
+    cmn.emit_claim_by_id(claims=claims, claim_id="mp.plus.templates.plus-only.set")
+
     _emit_claim_payload(
         claims,
         "mp.plain.docs.plain-only-templates.categories",

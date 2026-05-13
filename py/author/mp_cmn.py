@@ -2,13 +2,13 @@
 """Shared table data for mpplain and mpplus docs."""
 
 from mb_cmn import template_names as tmpln
-from author import mp_cmn_claims_core as _claims_core
 from author import mp_cmn_examples_and_file_naming as _examples_and_file_naming
 from author import mp_cmn_groups_misc as _groups_misc
 from author import mp_cmn_kq_special as _kq_special
 from author import mp_cmn_plain_only as _plain_only
 from author_util import author
 from author_util.claim import ClaimCollection
+from typing import Any
 
 # ---------------------------------------------------------------------------
 # JSON snippets shared by plain and plus common-templates sections
@@ -86,14 +86,20 @@ _FILE_NAMING_ROWS = _examples_and_file_naming._FILE_NAMING_ROWS
 s_file_naming = _examples_and_file_naming.s_file_naming
 
 
-def emit_claims(*, claims: ClaimCollection):
-    """Emit mp_cmn claims into an explicit claims collection."""
-    _claims_core.emit_claim_defs(
-        claims=claims,
-        claim_defs=_examples_and_file_naming.CLAIM_DEFS,
-    )
-    _claims_core.emit_claim_defs(claims=claims, claim_defs=_groups_misc.CLAIM_DEFS)
-    _claims_core.emit_claim_defs(claims=claims, claim_defs=_kq_special.CLAIM_DEFS)
-    _claims_core.emit_claim_defs(claims=claims, claim_defs=_plain_only.CLAIM_DEFS)
-    _claims_core.emit_claim_defs(claims=claims, claim_defs=_rows_core.CLAIM_DEFS)
-    _claims_core.emit_claim_defs(claims=claims, claim_defs=_rows_other.CLAIM_DEFS)
+_ALL_CLAIM_DEFS = (
+    *_examples_and_file_naming.CLAIM_DEFS,
+    *_groups_misc.CLAIM_DEFS,
+    *_kq_special.CLAIM_DEFS,
+    *_plain_only.CLAIM_DEFS,
+    *_rows_core.CLAIM_DEFS,
+    *_rows_other.CLAIM_DEFS,
+)
+_CLAIM_DEF_BY_ID = {
+    claim_id: claim_def for claim_def in _ALL_CLAIM_DEFS for claim_id in [claim_def[0]]
+}
+assert len(_CLAIM_DEF_BY_ID) == len(_ALL_CLAIM_DEFS), "duplicate mp_cmn claim id"
+
+
+def emit_claim_by_id(*, claims: ClaimCollection, claim_id: str) -> Any:
+    _claim_id, payload, kind, subject, data = _CLAIM_DEF_BY_ID[claim_id]
+    return claims.claim(_claim_id, payload, kind=kind, subject=subject, data=data)

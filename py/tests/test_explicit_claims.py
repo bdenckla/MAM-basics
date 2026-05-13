@@ -139,12 +139,14 @@ class TestExplicitClaims(unittest.TestCase):
     def test_mp_cmn_import_has_no_claim_side_effects(self):
         importlib.invalidate_caches()
         mp_cmn = importlib.import_module("author.mp_cmn")
+        mpplain = importlib.import_module("author.mpplain")
         claims = claim_mod.ClaimCollection()
 
-        self.assertTrue(hasattr(mp_cmn, "emit_claims"))
+        self.assertTrue(hasattr(mp_cmn, "emit_claim_by_id"))
+        self.assertFalse(hasattr(mp_cmn, "emit_claims"))
         self.assertNotIn("mp.plain.example.top-level-composite", claims.records_by_id)
 
-        mp_cmn.emit_claims(claims=claims)
+        mpplain._build_body(claims=claims)
 
         self.assertIn("mp.plain.example.top-level-composite", claims.records_by_id)
 

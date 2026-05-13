@@ -27,10 +27,14 @@ def gen_html_file(tdm_ch, claims: ClaimCollection):
 
 
 def build_body(*, claims: ClaimCollection):
+    file_naming_rows = cmn.emit_claim_by_id(
+        claims=claims,
+        claim_id="mp.both.file-naming.book24-prefixes",
+    )
     return [
         mb_html.heading_level_1(_TITLE),
         *body.s_intro(),
-        *cmn.s_file_naming(),
+        *cmn.s_file_naming(file_naming_rows=file_naming_rows),
         *body.s_top_level(claims=claims),
         *body.s_book39(claims=claims),
         *body.s_chapter_verse(claims=claims),

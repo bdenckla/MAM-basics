@@ -480,6 +480,59 @@ def s_chapter_verse(*, claims: ClaimCollection):
 
 
 def s_common_templates(*, claims: ClaimCollection):
+    cmn.emit_claim_by_id(claims=claims, claim_id="mp.both.templates.structural.set")
+    cmn.emit_claim_by_id(claims=claims, claim_id="mp.both.templates.navigation.set")
+    cmn.emit_claim_by_id(claims=claims, claim_id="mp.both.templates.note-links.set")
+    cmn.emit_claim_by_id(
+        claims=claims,
+        claim_id="mp.both.templates.all-groups-cover-all-observed",
+    )
+    cmn.emit_claim_by_id(claims=claims, claim_id="mp.both.templates.other.set")
+    cmn.emit_claim_by_id(
+        claims=claims,
+        claim_id="mp.both.templates.modag.only-in-nusach-param2",
+    )
+    cmn.emit_claim_by_id(
+        claims=claims,
+        claim_id="mp.both.templates.sh.only-in-nusach-param2",
+    )
+    cmn.emit_claim_by_id(claims=claims, claim_id="mp.plus.templates.plus-only.set")
+
+    json_nusach_plus = cmn.emit_claim_by_id(
+        claims=claims,
+        claim_id="mp.plus.example.nusach",
+    )
+    kq_rows = cmn.emit_claim_by_id(claims=claims, claim_id="mp.both.templates.kq.set")
+    cmn.emit_claim_by_id(
+        claims=claims,
+        claim_id="mp.both.templates.kq-special.subtypes",
+    )
+    cmn.emit_claim_by_id(
+        claims=claims,
+        claim_id="mp.both.templates.kq-special.subtype-counts",
+    )
+    kq_am2_sug_list = cmn.emit_claim_by_id(
+        claims=claims,
+        claim_id="mp.both.templates.kq-am2.sug-values",
+    )
+    json_kq_plus = cmn.emit_claim_by_id(claims=claims, claim_id="mp.plus.example.kq")
+    special_letter_rows = cmn.emit_claim_by_id(
+        claims=claims,
+        claim_id="mp.both.templates.special-letters.set",
+    )
+    accent_rows = cmn.emit_claim_by_id(
+        claims=claims,
+        claim_id="mp.both.templates.accents.set",
+    )
+    poetic_rows = cmn.emit_claim_by_id(
+        claims=claims,
+        claim_id="mp.both.templates.poetic.set",
+    )
+    note_row = cmn.emit_claim_by_id(claims=claims, claim_id="mp.both.templates.note")
+
+    accent_row_by_template = dict(zip(cmn.ACCENT_ROW_TEMPLATE_NAMES, accent_rows))
+    plus_accent_rows = [accent_row_by_template[n] for n in _PLUS_ACCENT_TEMPLATES]
+
     _emit_claim_payload(
         claims,
         "mp.plus.docs.common-templates.templates-in-plus-survey",
@@ -509,9 +562,9 @@ def s_common_templates(*, claims: ClaimCollection):
                 " (anomalous forms, variant readings, uncertain readings, etc.):",
             ]
         ),
-        json_block.json_block_raw_html(cmn.JSON_NUSACH_PLUS),
+        json_block.json_block_raw_html(json_nusach_plus),
         author.heading_level_3("$Ketiv_qere templates"),
-        author.std_table(cmn.KQ_ROWS, arg_to_troh=["Template", "Purpose"]),
+        author.std_table(kq_rows, arg_to_troh=["Template", "Purpose"]),
         author.para(
             [
                 "Current values observed for optional ",
@@ -521,12 +574,12 @@ def s_common_templates(*, claims: ClaimCollection):
                 ":",
             ]
         ),
-        author.unordered_list(cmn.KQ_AM2_SUG_LIST),
+        author.unordered_list(kq_am2_sug_list),
         author.para("Example of standard $ketiv_qere:"),
-        json_block.json_block_raw_html(cmn.JSON_KQ_PLUS),
+        json_block.json_block_raw_html(json_kq_plus),
         author.heading_level_3("Special letter templates"),
         author.std_table(
-            cmn.SPECIAL_LETTER_ROWS
+            special_letter_rows
             + [
                 [
                     author.hbo("מ:אות-מיוחדת-במילה"),
@@ -546,12 +599,12 @@ def s_common_templates(*, claims: ClaimCollection):
         ),
         author.heading_level_3("Accent and cantillation templates"),
         author.std_table(
-            cmn.accent_rows_for_templates(_PLUS_ACCENT_TEMPLATES),
+            plus_accent_rows,
             arg_to_troh=["Template", "Purpose"],
         ),
         author.heading_level_3("Poetic form templates (ספרי אמת)"),
         author.std_table(
-            [row for row in cmn.POETIC_ROWS if row[0] != author.hbo("פרשה-מרכז")],
+            [row for row in poetic_rows if row[0] != author.hbo("פרשה-מרכז")],
             arg_to_troh=["Template", "Purpose"],
         ),
         author.para(
@@ -560,7 +613,7 @@ def s_common_templates(*, claims: ClaimCollection):
         ),
         author.heading_level_3("Note template"),
         author.std_table(
-            [cmn.NOTE_ROW],
+            [note_row],
             arg_to_troh=["Template", "Purpose"],
         ),
         author.heading_level_3("Other templates"),

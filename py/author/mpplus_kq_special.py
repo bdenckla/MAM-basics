@@ -22,31 +22,15 @@ _PLUS_DOC = "mpplus.html"
 
 _JSON_KQ_SPECIAL = jsnip.read_text("mpplus_kq_special", "kq_special.json")
 
-_KQ_SPECIAL_SUBTYPES_CLAIM_ID = "mp.both.templates.kq-special.subtypes"
-_KQ_SPECIAL_SUBTYPES_CLAIM_DATA = {
-    "template": "מ:כו״ק מיוחד",
-    "param": "סוג",
-    "values": [
-        "כו״ק בין שני מקפים",
-        "כו״ק כתיב מילה חדה וקרי תרתין מילין",
-        "כו״ק כתיב מילה חדה וקרי תרתין מילין בין שני מקפים",
-        "כו״ק כתיב תרתין מילין וקרי מילה חדה",
-        "קו״כ כתיב מילה חדה וקרי תרתין מילין",
-        "כו״ק קרי שונה מהכתיב בשתי מילים",
-        "קו״כ קרי שונה מהכתיב בשתי מילים",
-        "כו״ק של שתי מילים בהערה אחת",
-        "כו״ק של שלוש מילים בהערה אחת",
-    ],
-}
-
 
 def _kq_special_rows(*, claims: ClaimCollection):
-    return claims.claim(
-        _KQ_SPECIAL_SUBTYPES_CLAIM_ID,
-        cmn.KQ_SPECIAL_ROWS,
-        kind="enum",
-        subject="mp:both",
-        data=_KQ_SPECIAL_SUBTYPES_CLAIM_DATA,
+    cmn.emit_claim_by_id(
+        claims=claims,
+        claim_id="mp.both.templates.kq-special.subtype-counts",
+    )
+    return cmn.emit_claim_by_id(
+        claims=claims,
+        claim_id="mp.both.templates.kq-special.subtypes",
     )
 
 
