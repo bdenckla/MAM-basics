@@ -43,35 +43,36 @@ _JSON_CUSTOM_TAG = """\
 {"custom_tag": "noinclude"}
 {"custom_tag": "/noinclude"}"""
 
-_JSON_TOP_LEVEL = """\
+_JSON_TOP_LEVEL_SKEL = """\
 {
-    "header": {
-        "book24_name": "ספר איוב",
-        "sub_book_names": [],
-        "chapter_counts": [
-            {
-                "sub_book_name": null,
-                "chapter_count": 42
-            }
-        ]
-    },
-    "book39s": []
+  "header": {},
+  "book39s": []
 }"""
 
-_JSON_COMPOSITE = """\
+_JSON_HEADER = """\
+"header": {
+  "book24_name": "ספר איוב",
+  "sub_book_names": [],
+  "chapter_counts": [
+      {"sub_book_name": null, "chapter_count": 42}
+  ]
+}"""
+
+_JSON_HEADER_COMPOSITE = """\
+"header": {
+  "book24_name": "ספר שמואל",
+  "sub_book_names": ["שמ\"א", "שמ\"ב"],
+  "chapter_counts": [
+      {"sub_book_name": "שמ\"א", "chapter_count": 31},
+      {"sub_book_name": "שמ\"ב", "chapter_count": 24}
+  ]
+}"""
+
+_JSON_BOOK39_SKEL = """\
 {
-    "header": {
-        "book24_name": "ספר שמואל",
-        "sub_book_names": ["שמ\\"א", "שמ\\"ב"],
-        "chapter_counts": [
-            {"sub_book_name": "שמ\\"א", "chapter_count": 31},
-            {"sub_book_name": "שמ\\"ב", "chapter_count": 24}
-        ]
-    },
-    "book39s": [
-        {"book24_name": "ספר שמואל", "sub_book_name": "שמ\\"א", "chapters": {}},
-        {"book24_name": "ספר שמואל", "sub_book_name": "שמ\\"ב", "chapters": {}}
-    ]
+  "book24_name": "ספר ישעיהו",
+  "sub_book_name": null,
+  "chapters": {}
 }"""
 
 _PLAIN_COMMON_TEMPLATES = [
@@ -211,34 +212,44 @@ def _s_intro():
 
 
 def _s_top_level():
-    rows = [
+    header_rows = [
         [
-            mb_html.code("header"),
-            "object",
-            "Metadata: book names, sub-book names, chapter counts.",
+            mb_html.code("book24_name"),
+            "string",
+            "The name of this file’s book24.",
         ],
-        [mb_html.code("book39s"), "array", "One element per book39 (sub-book)."],
+        [
+            mb_html.code("sub_book_names"),
+            "array",
+            [
+                "Array of sub-book names for this book24."
+                " (Empty if this book24 has no sub-books.)",
+            ],
+        ],
+        [
+            mb_html.code("chapter_counts"),
+            "array",
+            [
+                "One object per book39, each with ",
+                mb_html.code("sub_book_name"),
+                " and ",
+                mb_html.code("chapter_count"),
+                ".",
+                " (The ",
+                mb_html.code("sub_book_name"),
+                " will be null for a book39 that is not a sub-book, i.e. a book39 that is also a book24.)",
+            ],
+        ],
     ]
     return [
         author.heading_level_2("Top-level structure"),
-        json_block.json_block_raw_html(_JSON_TOP_LEVEL),
-        author.std_table(rows, arg_to_troh=["Key", "Type", "Description"]),
-        author.para(
-            [
-                "The plain header now uses the same shared shape as plus for "
-                "sub-book names and chapter counts. This is an intentional "
-                "simplification aligned with current one-file-per-book24 output.",
-            ]
-        ),
-        author.heading_level_3("Composite books"),
-        author.para(
-            [
-                "For Samuel, a book24 with sub-books, ",
-                mb_html.code("book39s"),
-                " has multiple elements:",
-            ]
-        ),
-        json_block.json_block_raw_html(_JSON_COMPOSITE),
+        json_block.json_block_raw_html(_JSON_TOP_LEVEL_SKEL),
+        author.heading_level_2("Header"),
+        author.std_table(header_rows, arg_to_troh=["Key", "Type", "Description"]),
+        author.para("Here’s the header for Job, a book24 has no sub-books:"),
+        json_block.json_block_raw_html(_JSON_HEADER),
+        author.para("Here’s the header for Samuel, a book24 that has sub-books:"),
+        json_block.json_block_raw_html(_JSON_HEADER_COMPOSITE),
     ]
 
 
@@ -276,7 +287,7 @@ def s_book39(*, claims: ClaimCollection):
     )
     return [
         author.heading_level_2("Book39 structure"),
-        json_block.json_block_raw_html(cmn.JSON_BOOK39),
+        json_block.json_block_raw_html(_JSON_BOOK39_SKEL),
         author.std_table(_book39_rows, arg_to_troh=["Key", "Type", "Description"]),
     ]
 
