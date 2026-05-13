@@ -790,29 +790,7 @@ def s_common_templates(*, claims: ClaimCollection):
         ),
         author.heading_level_3("Other templates"),
         author.std_table(
-            [
-                [
-                    [
-                        author.hbo("פפ"),
-                        " / ",
-                        author.hbo("פפפ"),
-                        " / ",
-                        author.hbo("סס"),
-                        " / ",
-                        author.hbo("ססס"),
-                    ],
-                    "Parashah petuḥah / setumah variants.",
-                ],
-                [
-                    author.hbo("מ:ששש"),
-                    [
-                        "Shirah space. Like ",
-                        author.hbo("ססס"),
-                        ", but for the 8 shirah (song) sections; not an official setumah break.",
-                    ],
-                ],
-                *cmn.other_rows_for_templates(_PLUS_OTHER_SINGLE_TEMPLATES),
-            ],
+            cmn.other_rows_shared_core(),
             arg_to_troh=["Template", "Purpose"],
         ),
     ]

@@ -725,6 +725,41 @@ def other_rows_for_templates(template_names):
     return [OTHER_ROW_BY_TEMPLATE[n] for n in template_names]
 
 
+def other_rows_shared_core():
+    return [
+        [
+            [
+                author.hbo("פפ"),
+                " / ",
+                author.hbo("פפפ"),
+                " / ",
+                author.hbo("סס"),
+                " / ",
+                author.hbo("ססס"),
+            ],
+            "Parashah petuhah / setumah variants.",
+        ],
+        OTHER_ROW_BY_TEMPLATE["מ:ששש"],
+        OTHER_ROW_BY_TEMPLATE["נוסח"],
+        OTHER_ROW_BY_TEMPLATE["מודגש"],
+        OTHER_ROW_BY_TEMPLATE["ש"],
+    ]
+
+
+def other_rows_plain_extras():
+    return other_rows_for_templates(
+        [
+            "מ:אות מנוקדת",
+            "מ:סיום בטוב",
+            "מ:טעם ומתג באות אחת",
+            "מ:גרש ותלישא גדולה",
+            "מ:גרשיים ותלישא גדולה",
+            "רווח בסוף שורה",
+            "מ:כל קמץ קטן מרכא",
+        ]
+    )
+
+
 KQ_SPECIAL_ROWS = _claim_payload(
     "mp.both.templates.kq-special.subtypes",
     [
