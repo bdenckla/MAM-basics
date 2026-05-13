@@ -15,7 +15,7 @@ from verify_mp.corpus import (
 )
 
 # Torah (Pentateuch) + Esther book24_name values — the only books where
-# מ:הערה / מ:הערה-2 may appear.
+# targeted scroll-difference notes (מ:הערה-2) may appear in plus.
 _NOTE_BOOKS = frozenset(
     [
         "ספר בראשית",
@@ -95,6 +95,22 @@ def _verify_template_set_observed(
     assert (
         not missing
     ), f"declared templates not found in both corpus surveys: {sorted(missing)}"
+
+
+def _verify_template_set_observed_in_plus(
+    record: ClaimRecord, ctx: Context, *, key: str = "templates"
+) -> None:
+    """Assert that every declared template appears in the plus corpus survey."""
+    declared_raw = record.data[key]
+    if isinstance(declared_raw, list):
+        declared = frozenset(declared_raw)
+    else:
+        declared = frozenset([declared_raw])
+    observed = survey_artifact.template_names_observed(ctx.survey)
+    missing = declared - observed
+    assert (
+        not missing
+    ), f"declared templates not found in plus corpus survey: {sorted(missing)}"
 
 
 def verify_mp_both_templates_kq_set(record: ClaimRecord, ctx: Context) -> None:
@@ -231,9 +247,8 @@ def _verify_note_books_only(record: ClaimRecord, ctx: Context) -> None:
 
 
 def verify_mp_both_templates_note(record: ClaimRecord, ctx: Context) -> None:
-    """The note templates (מ:הערה, מ:הערה-2) appear at least once in the plus corpus
-    (per the precomputed tmpl-survey artifact) and only in Torah and Esther books."""
-    _verify_template_set_observed(record, ctx)
+    """Template מ:הערה-2 appears in plus and only in Torah and Esther books."""
+    _verify_template_set_observed_in_plus(record, ctx)
     _verify_note_books_only(record, ctx)
 
 

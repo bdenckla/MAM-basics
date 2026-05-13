@@ -50,13 +50,6 @@ _JSON_HAARAH_2_IN_CONTEXT_TEXT = """\
       ]
     }
   },
-  {
-    "tmpl_name": "מ:הערה",
-    "tmpl_params": {
-      "1": "בספרי ספרד ואשכנז מִנְּשֽׂוֹא",
-      "שם": "בספרי ספרד ואשכנז מִנְּשֽׂוֹא"
-    }
-  },
   "׃"
 ]"""
 
@@ -102,13 +95,9 @@ def build_body(*, claims: ClaimCollection):
         author.para(["← Back to ", back_link]),
         author.para(
             [
-                author.hbo("מ:הערה"),
-                " is the standard (non-targeted) scroll-difference note:"
-                " it carries the note text but does not explicitly"
-                " identify which word the note applies to."
-                " \u201cTargeted\u201d version ",
+                "In plus output, scroll-difference notes are represented by ",
                 author.hbo("מ:הערה-2"),
-                " wraps the target word:",
+                ", which wraps the target word and carries the note text:",
             ]
         ),
         json_block.json_block_raw_html(_JSON_HAARAH_2),
@@ -128,17 +117,20 @@ def build_body(*, claims: ClaimCollection):
         ),
         author.para(
             [
-                "The ",
+                "The non-targeted template ",
                 author.hbo("מ:הערה"),
-                " template is retained alongside ",
+                " is no longer retained alongside ",
                 author.hbo("מ:הערה-2"),
-                ". The plus"
-                " format redundantly keeps both representations. This is by design: some"
-                " downstream consumers use ",
-                author.hbo("מ:הערה-2"),
-                " only to extract the target word and use ",
-                author.hbo("מ:הערה"),
-                " separately to extract the note text.",
+                " in plus."
+                " This intentionally drops one edge-case distinction at Deut 11:21:"
+                " the star marker can indicate pre-word or post-word position"
+                " ("
+                '"*אאא"'
+                " or "
+                '"אאא*"'
+                "), but not post-sof-pasuq position ("
+                '"אאא׃*"'
+                ").",
             ]
         ),
         author.heading_level_2("Example in context"),

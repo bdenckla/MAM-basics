@@ -482,9 +482,12 @@ STRUCTURAL_ROWS = _claim_payload(
 NOTE_ROW = _claim_payload(
     "mp.both.templates.note",
     [
-        [author.hbo(tmpln.SCRDFF_NO_TAR), " / ", author.hbo(tmpln.SCRDFF_TAR)],
+        [author.hbo(tmpln.SCRDFF_TAR)],
         [
-            "Scroll-difference notes (Torah and Esther only). See ",
+            "Targeted scroll-difference notes in plus (Torah and Esther only)."
+            " The plain corpus still carries ",
+            author.hbo(tmpln.SCRDFF_NO_TAR),
+            ". See ",
             author.anchor_h(
                 ["dedicated page for ", author.hbo("מ:הערה-2")],
                 _HAARAH_2_DOC,
@@ -494,8 +497,7 @@ NOTE_ROW = _claim_payload(
     ],
     kind="enum",
     subject="mp:both",
-    # מ:הערה-2 appears only in the plus survey; it is verified in PLUS_ONLY.
-    data={"templates": [tmpln.SCRDFF_NO_TAR], "books": "Torah and Esther only"},
+    data={"templates": [tmpln.SCRDFF_TAR], "books": "Torah and Esther only"},
 )
 
 NOTE_ROW_PLAIN = [author.hbo(tmpln.SCRDFF_NO_TAR), NOTE_ROW[1]]
@@ -937,7 +939,7 @@ PLUS_ONLY = _claim_payload(
     subject="mp:plus",
     data={
         "templates": [
-            # Plus-only note template (counterpart מ:הערה is in both)
+            # Plus-only note template (the non-targeted counterpart remains plain-only)
             tmpln.SCRDFF_TAR,
             # Plus-only special-letter template (previously mistakenly in SPECIAL_LETTER_ROWS)
             tmpln.SLH_WORD,

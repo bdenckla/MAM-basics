@@ -70,6 +70,11 @@ TEST_MODULE_SPECS = (
         help_text="Run MP-plus file pairing tests.",
     ),
     TestModuleSpec(
+        flag="mpplus-scrdfftar",
+        module_name="tests.test_mpplus_scrdfftar",
+        help_text="Run MP-plus scroll-difference targeting tests.",
+    ),
+    TestModuleSpec(
         flag="polite-download",
         module_name="tests.test_polite_download",
         help_text="Run polite download behavior tests.",

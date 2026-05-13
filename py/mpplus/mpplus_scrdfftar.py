@@ -17,7 +17,7 @@ from mb_cmn import hebrew_punctuation as hpu
 
 def add(wtseq):
     """
-    For each scrdff in wtseq, add a TARGETED scrdff.
+    For each scrdff in wtseq, replace it with a TARGETED scrdff.
     (scrdff: scroll-difference [note])
     (wtseq: Wikitext [element] sequence)
     Normal scrdff notes just have a location, whereas targeted scrdff notes
@@ -56,11 +56,7 @@ def _make_edit_instructions(wtseq_pre, wtel, wtseq_post):
     out_wtseq, del_offsets = edin
     for del_offset in del_offsets:
         assert del_offset != 0 and _sgn(del_offset) == _sgn(del_offsets[0])
-    if del_offsets[0] < 0:
-        out_wtseq2 = *out_wtseq, wtel
-    else:
-        out_wtseq2 = wtel, *out_wtseq
-    return out_wtseq2, del_offsets
+    return out_wtseq, del_offsets
 
 
 def _sgn(an_int):

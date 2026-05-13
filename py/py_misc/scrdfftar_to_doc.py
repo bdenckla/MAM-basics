@@ -17,7 +17,7 @@ def convert(wtseq):  # wtseq: Wikitext sequence (list or tuple)
     fold that scrdfftar's contents into the doc.
 
     Also, remove any scrdff from the top level of wtseq.
-    (MAM-parsed-plus is redundant: it has both scrdff and scrdfftar.)
+    (Older/transitional data may still carry scrdff alongside scrdfftar.)
 
     We only care about top level because other code
     recurses and ends up calling this again at lower
