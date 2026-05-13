@@ -908,6 +908,8 @@ PLAIN_ONLY = _claim_payload(
             "מ:גרשיים ותלישא גדולה",
             "רווח בסוף שורה",
             "מ:כל קמץ קטן מרכא",
+            # From NOTE_ROW (plus now keeps only the targeted form מ:הערה-2)
+            tmpln.SCRDFF_NO_TAR,
             # From OTHER_ROWS (not in plus content format)
             "מ:סיום בטוב",
             # From STRUCTURAL_ROWS (not in plus content format)

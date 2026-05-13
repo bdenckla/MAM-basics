@@ -26,7 +26,7 @@ def _std_kq_tmpl(pointed_ketiv, pointed_qere):
 
 
 def _special_kq_tmpl(sug_text):
-    return wtp.mktmpl([["מ:כו״ק מיוחד"], ["כְּתִיב"], ["קרי"], [f"סוג={sug_text}"]])
+    return wtp.mktmpl([["מ:כו״ק מיוחד"], ["כְּתִיב"], ["קרי"], [f"סוג={sug_text}"]])
 
 
 class TrivialKqSubtypeClassifierTests(unittest.TestCase):

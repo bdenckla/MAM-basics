@@ -28,21 +28,21 @@
       "wtel_subtype": "מ:אות-ג",
       "count_C": 0,
       "count_D": 0,
-      "count_E": 68
+      "count_E": 63
     },
     {
       "wtel_type": "tmpl",
       "wtel_subtype": "מ:אות-מיוחדת-במילה",
       "count_C": 0,
       "count_D": 0,
-      "count_E": 101
+      "count_E": 95
     },
     {
       "wtel_type": "tmpl",
       "wtel_subtype": "מ:אות-ק",
       "count_C": 0,
       "count_D": 0,
-      "count_E": 31
+      "count_E": 30
     },
     {
       "wtel_type": "tmpl",
@@ -71,13 +71,6 @@
       "count_C": 0,
       "count_D": 0,
       "count_E": 2316
-    },
-    {
-      "wtel_type": "tmpl",
-      "wtel_subtype": "מ:הערה",
-      "count_C": 4,
-      "count_D": 0,
-      "count_E": 27
     },
     {
       "wtel_type": "tmpl",
@@ -348,13 +341,6 @@
       "count_nusach": 3
     },
     {
-      "wtel_subtype": "מ:אות-ג",
-      "stack": "E/מ:הערה/מ:אות-מיוחדת-במילה",
-      "count": 5,
-      "count_non_nusach": 5,
-      "count_nusach": 0
-    },
-    {
       "wtel_subtype": "מ:אות-מיוחדת-במילה",
       "stack": "E",
       "count": 79,
@@ -374,13 +360,6 @@
       "count": 6,
       "count_non_nusach": 0,
       "count_nusach": 6
-    },
-    {
-      "wtel_subtype": "מ:אות-מיוחדת-במילה",
-      "stack": "E/מ:הערה",
-      "count": 6,
-      "count_non_nusach": 6,
-      "count_nusach": 0
     },
     {
       "wtel_subtype": "מ:אות-מיוחדת-במילה",
@@ -416,13 +395,6 @@
       "count": 2,
       "count_non_nusach": 0,
       "count_nusach": 2
-    },
-    {
-      "wtel_subtype": "מ:אות-ק",
-      "stack": "E/מ:הערה/מ:אות-מיוחדת-במילה",
-      "count": 1,
-      "count_non_nusach": 1,
-      "count_nusach": 0
     },
     {
       "wtel_subtype": "מ:אין פרשה בתחילת פרק",
@@ -471,20 +443,6 @@
       "stack": "E/מ:קמץ",
       "count": 14,
       "count_non_nusach": 14,
-      "count_nusach": 0
-    },
-    {
-      "wtel_subtype": "מ:הערה",
-      "stack": "C",
-      "count": 4,
-      "count_non_nusach": 4,
-      "count_nusach": 0
-    },
-    {
-      "wtel_subtype": "מ:הערה",
-      "stack": "E",
-      "count": 27,
-      "count_non_nusach": 27,
       "count_nusach": 0
     },
     {
@@ -964,19 +922,19 @@
     {
       "wtel_subtype": "מ:אות-ג",
       "arg_count": 1,
-      "count": 68,
+      "count": 63,
       "variations": 1
     },
     {
       "wtel_subtype": "מ:אות-מיוחדת-במילה",
       "arg_count": 5,
-      "count": 101,
+      "count": 95,
       "variations": 1
     },
     {
       "wtel_subtype": "מ:אות-ק",
       "arg_count": 1,
-      "count": 31,
+      "count": 30,
       "variations": 1
     },
     {
@@ -1001,12 +959,6 @@
       "wtel_subtype": "מ:דחי",
       "arg_count": 2,
       "count": 2316,
-      "variations": 1
-    },
-    {
-      "wtel_subtype": "מ:הערה",
-      "arg_count": 2,
-      "count": 31,
       "variations": 1
     },
     {

@@ -457,14 +457,14 @@ def verify_mp_plus_example_header_job(record: ClaimRecord, ctx: Context) -> None
     def _is_job_header(header: dict) -> bool:
         return (
             header["book24_name"] == "ספר איוב"
-            and header["sub_book_names"] == {}
+            and header["sub_book_names"] == []
             and _has_chapter_count(header, None, 42)
         )
 
     _assert_plus_header_exists(
         ctx,
         _is_job_header,
-        "book24=ספר איוב, sub_book_names={}, chapter_count(None)=42",
+        "book24=ספר איוב, sub_book_names=[], chapter_count(None)=42",
     )
 
 
@@ -474,7 +474,7 @@ def verify_mp_plus_example_header_samuel(record: ClaimRecord, ctx: Context) -> N
     def _is_samuel_header(header: dict) -> bool:
         return (
             header["book24_name"] == "ספר שמואל"
-            and header["sub_book_names"].get("ספר שמואל") == ['שמ"א', 'שמ"ב']
+            and header["sub_book_names"] == ['שמ"א', 'שמ"ב']
             and _has_chapter_count(header, 'שמ"א', 31)
             and _has_chapter_count(header, 'שמ"ב', 24)
         )
