@@ -96,7 +96,12 @@ NOTE_ROW = _claim_payload(
 NOTE_ROW_PLAIN = [
     author.hbo(tmpln.SCRDFF_NO_TAR),
     [
-        "Non-targeted scroll-difference note (Torah and Esther only).",
+        "Non-targeted scroll-difference note (Torah and Esther only). See ",
+        author.anchor_h(
+            ["Wikisource template page for ", author.hbo("מ:הערה")],
+            "https://he.wikisource.org/wiki/תבנית:הערה",
+        ),
+        ".",
     ],
 ]
 
