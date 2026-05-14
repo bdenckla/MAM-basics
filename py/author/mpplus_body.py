@@ -22,6 +22,7 @@ _KQ_SPECIAL_DOC = "mpplus_kq_special.html"
 _HAARAH_2_DOC = "mpplus_haarah_2.html"
 _KAFUL_DOC = "mpplus_kaful.html"
 _GOOD_ENDING_DOC = "mpplus_good_ending.html"
+_GOOD_ENDING_TMPL_DOC = "mpplus_good_ending_tmpl.html"
 _NUSACH_DOC = "mpplus_nusach.html"
 
 _PLUS_COMMON_TEMPLATES = [
@@ -285,6 +286,17 @@ def s_book39(*, claims: ClaimCollection):
         author.heading_level_2("Book39 structure"),
         json_block.json_block_raw_html(_json_book39_skel(claims=claims)),
         author.std_table(_book39_rows, arg_to_troh=["Key", "Type", "Description"]),
+        author.para(
+            [
+                "The template ",
+                author.hbo("מ:סיום בטוב"),
+                " used inside ",
+                mb_html.code("good_ending_plus"),
+                " is documented on ",
+                author.anchor_h("its dedicated page", _GOOD_ENDING_TMPL_DOC),
+                ".",
+            ]
+        ),
     ]
 
 

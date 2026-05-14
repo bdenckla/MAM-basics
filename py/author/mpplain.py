@@ -24,6 +24,7 @@ _TITLE = "Reading MAM-parsed-plain"
 _KQ_AM2_DOC = "mpplain_kq_am2.html"
 _KQ_SPECIAL_DOC = "mpplain_kq_special.html"
 _KAFUL_DOC = "mpplain_kaful.html"
+_GOOD_ENDING_TMPL_DOC = "mpplain_good_ending_tmpl.html"
 _NUSACH_DOC = "mpplain_nusach.html"
 
 _JSON_INDEX_0 = jsnip.read_text("mpplain", "index_0.json")
@@ -500,9 +501,9 @@ def _s_common_templates(*, claims: ClaimCollection):
         ["ר1", "ר2", "ר3", "ר4", "ר0"]
     )
     whitespace_extra_rows = cmn.other_rows_for_templates(["רווח בסוף שורה"])
-    other_templates_rows = cmn.other_rows_for_templates(
-        ["מ:סיום בטוב"]
-    ) + cmn.poetic_rows_for_templates(["פרשה-מרכז"])
+    other_templates_rows = [
+        cmn.good_ending_row(good_ending_doc=_GOOD_ENDING_TMPL_DOC)
+    ] + cmn.poetic_rows_for_templates(["פרשה-מרכז"])
 
     _emit_claim_payload(
         claims,

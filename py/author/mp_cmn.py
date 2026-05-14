@@ -54,6 +54,7 @@ other_rows_for_templates = _rows_other.other_rows_for_templates
 whitespace_rows_shared = _rows_other.whitespace_rows_shared
 other_rows_shared_core = _rows_other.other_rows_shared_core
 other_rows_plain_extras = _rows_other.other_rows_plain_extras
+good_ending_row = _rows_other.good_ending_row
 
 _kq_simple_foi_link = _kq_special._kq_simple_foi_link
 _kq_simple_foi_link_for_sug = _kq_special._kq_simple_foi_link_for_sug

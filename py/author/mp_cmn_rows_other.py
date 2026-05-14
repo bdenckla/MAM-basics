@@ -6,7 +6,7 @@ from author_util import author
 
 _claim_def = _claims_core.claim_def
 
-_GOOD_ENDING_DOC = "mpplus_good_ending.html"
+_GOOD_ENDING_TMPL_DOC = "mpplus_good_ending_tmpl.html"
 _NUSACH_DOC = "mpplus_nusach.html"
 
 
@@ -24,6 +24,20 @@ def _nusach_row(nusach_doc):
     ]
 
 
+def _good_ending_row(good_ending_doc):
+    return [
+        author.hbo("מ:סיום בטוב"),
+        [
+            "Good ending. See ",
+            author.anchor_h(
+                "its dedicated page",
+                good_ending_doc,
+            ),
+            ".",
+        ],
+    ]
+
+
 OTHER_ROWS = [
     [
         [author.hbo("פפ"), " / ", author.hbo("סס")],
@@ -33,17 +47,7 @@ OTHER_ROWS = [
         author.hbo("מ:אות מנוקדת"),
         "Dotted letter/word. Marks words with masoretic dots above/below.",
     ],
-    [
-        author.hbo("מ:סיום בטוב"),
-        [
-            "Good ending. See ",
-            author.anchor_h(
-                "its dedicated page",
-                _GOOD_ENDING_DOC,
-            ),
-            ".",
-        ],
-    ],
+    _good_ending_row(_GOOD_ENDING_TMPL_DOC),
     [
         author.hbo("מ:טעם ומתג באות אחת"),
         "Normalization-robust meteg for 10 cases where a below-accent and meteg share one letter.",
@@ -195,15 +199,17 @@ def other_rows_shared_core(*, nusach_doc=_NUSACH_DOC):
     ]
 
 
-def other_rows_plain_extras():
-    return other_rows_for_templates(
-        [
-            "מ:אות מנוקדת",
-            "מ:סיום בטוב",
-            "מ:טעם ומתג באות אחת",
-            "מ:גרש ותלישא גדולה",
-            "מ:גרשיים ותלישא גדולה",
-            "רווח בסוף שורה",
-            "מ:כל קמץ קטן מרכא",
-        ]
-    )
+def good_ending_row(*, good_ending_doc=_GOOD_ENDING_TMPL_DOC):
+    return _good_ending_row(good_ending_doc)
+
+
+def other_rows_plain_extras(*, good_ending_doc=_GOOD_ENDING_TMPL_DOC):
+    return [
+        OTHER_ROW_BY_TEMPLATE["מ:אות מנוקדת"],
+        _good_ending_row(good_ending_doc),
+        OTHER_ROW_BY_TEMPLATE["מ:טעם ומתג באות אחת"],
+        OTHER_ROW_BY_TEMPLATE["מ:גרש ותלישא גדולה"],
+        OTHER_ROW_BY_TEMPLATE["מ:גרשיים ותלישא גדולה"],
+        OTHER_ROW_BY_TEMPLATE["רווח בסוף שורה"],
+        OTHER_ROW_BY_TEMPLATE["מ:כל קמץ קטן מרכא"],
+    ]
