@@ -539,14 +539,6 @@ def s_common_templates(*, claims: ClaimCollection):
                 ".",
             ]
         ),
-        author.heading_level_3("Documentation template (נוסח)"),
-        author.para(
-            [
-                "See ",
-                author.anchor_h("its dedicated page", _NUSACH_DOC),
-                ".",
-            ]
-        ),
         author.heading_level_3("$Ketiv_qere templates"),
         author.std_table(kq_rows, arg_to_troh=["Template", "Purpose"]),
         author.para(
@@ -603,7 +595,7 @@ def s_common_templates(*, claims: ClaimCollection):
         ),
         author.heading_level_3("Documentation templates"),
         author.std_table(
-            cmn.other_rows_shared_core(),
+            cmn.other_rows_shared_core(nusach_doc=_NUSACH_DOC),
             arg_to_troh=["Template", "Purpose"],
         ),
     ]

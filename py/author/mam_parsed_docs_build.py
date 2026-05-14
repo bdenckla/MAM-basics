@@ -17,6 +17,7 @@ def _run_mam_parsed_authored_traversal(*, claims: ClaimCollection, tdm_ch=None):
     from author import mpplus_kaful
     from author import mpplus_good_ending
     from author import mpplus_nusach
+    from author import mpplain_nusach
     from author import mpplus_diff_from_plain
     from author import mpplus_plain_only_templates
 
@@ -29,6 +30,7 @@ def _run_mam_parsed_authored_traversal(*, claims: ClaimCollection, tdm_ch=None):
         mpplus_kaful.build_body(claims=claims)
         mpplus_good_ending.build_body(claims=claims)
         mpplus_nusach.build_body(claims=claims)
+        mpplain_nusach.build_body(claims=claims)
         mpplus_diff_from_plain.build_body(claims=claims)
         mpplus_plain_only_templates.build_body(claims=claims)
         return
@@ -41,6 +43,7 @@ def _run_mam_parsed_authored_traversal(*, claims: ClaimCollection, tdm_ch=None):
     mpplus_kaful.gen_html_file(tdm_ch, claims=claims)
     mpplus_good_ending.gen_html_file(tdm_ch, claims=claims)
     mpplus_nusach.gen_html_file(tdm_ch, claims=claims)
+    mpplain_nusach.gen_html_file(tdm_ch, claims=claims)
     mpplus_diff_from_plain.gen_html_file(tdm_ch, claims=claims)
     mpplus_plain_only_templates.gen_html_file(tdm_ch, claims=claims)
 

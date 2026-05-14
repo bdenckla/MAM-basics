@@ -9,6 +9,21 @@ _claim_def = _claims_core.claim_def
 _GOOD_ENDING_DOC = "mpplus_good_ending.html"
 _NUSACH_DOC = "mpplus_nusach.html"
 
+
+def _nusach_row(nusach_doc):
+    return [
+        author.hbo("נוסח"),
+        [
+            "Documentation template. See ",
+            author.anchor_h(
+                "its dedicated page",
+                nusach_doc,
+            ),
+            ".",
+        ],
+    ]
+
+
 OTHER_ROWS = [
     [
         [author.hbo("פפ"), " / ", author.hbo("סס")],
@@ -61,17 +76,7 @@ OTHER_ROWS = [
         author.hbo("מ:כל קמץ קטן מרכא"),
         "Font-rendering workaround for the word כל with $qamats qatan and $merkha in Taamey Frank CLM (2 occurrences: Ps 35:10, Prov 19:7).",
     ],
-    [
-        author.hbo("נוסח"),
-        [
-            "Documentation template. See ",
-            author.anchor_h(
-                "its dedicated page",
-                _NUSACH_DOC,
-            ),
-            ".",
-        ],
-    ],
+    _nusach_row(_NUSACH_DOC),
     [
         author.hbo("מודגש"),
         "Bold text within the notes argument (param 2) of נוסח.",
@@ -182,9 +187,9 @@ def whitespace_rows_shared():
     ]
 
 
-def other_rows_shared_core():
+def other_rows_shared_core(*, nusach_doc=_NUSACH_DOC):
     return [
-        OTHER_ROW_BY_TEMPLATE["נוסח"],
+        _nusach_row(nusach_doc),
         OTHER_ROW_BY_TEMPLATE["מודגש"],
         OTHER_ROW_BY_TEMPLATE["ש"],
     ]

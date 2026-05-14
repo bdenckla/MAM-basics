@@ -19,7 +19,7 @@ from author import mp_cmn_top_header_book39 as thb
 
 _FNAME = "mpplain.html"
 _TITLE = "Reading MAM-parsed-plain"
-_NUSACH_DOC = "mpplus_nusach.html"
+_NUSACH_DOC = "mpplain_nusach.html"
 
 _JSON_INDEX_0 = jsnip.read_text("mpplain", "index_0.json")
 _JSON_EP_EXAMPLE = jsnip.read_text("mpplain", "ep_example.json")
@@ -485,14 +485,6 @@ def _s_common_templates(*, claims: ClaimCollection):
                 ".",
             ]
         ),
-        author.heading_level_3("Documentation template (נוסח)"),
-        author.para(
-            [
-                "See ",
-                author.anchor_h("its dedicated page", _NUSACH_DOC),
-                ".",
-            ]
-        ),
         author.heading_level_3("$Ketiv_qere templates"),
         author.std_table(kq_rows, arg_to_troh=["Template", "Purpose"]),
         author.para(
@@ -542,7 +534,8 @@ def _s_common_templates(*, claims: ClaimCollection):
         ),
         author.heading_level_3("Documentation templates"),
         author.std_table(
-            cmn.other_rows_shared_core() + cmn.other_rows_plain_extras(),
+            cmn.other_rows_shared_core(nusach_doc=_NUSACH_DOC)
+            + cmn.other_rows_plain_extras(),
             arg_to_troh=["Template", "Purpose"],
         ),
     ]
