@@ -208,6 +208,26 @@ POETIC_ROWS = [
     ],
 ]
 
+POETIC_ROW_TEMPLATE_NAMES = (
+    "ר1",
+    "ר2",
+    "ר3",
+    "ר4",
+    "ר0",
+    "פרשה-מרכז",
+)
+
+assert len(POETIC_ROW_TEMPLATE_NAMES) == len(POETIC_ROWS)
+
+POETIC_ROW_BY_TEMPLATE = dict(zip(POETIC_ROW_TEMPLATE_NAMES, POETIC_ROWS))
+
+
+def poetic_rows_for_templates(template_names):
+    missing = [n for n in template_names if n not in POETIC_ROW_BY_TEMPLATE]
+    assert not missing, f"unknown poetic template(s): {sorted(missing)}"
+    return [POETIC_ROW_BY_TEMPLATE[n] for n in template_names]
+
+
 CLAIM_DEFS = (
     _claim_def(
         "mp.both.templates.kq.set",

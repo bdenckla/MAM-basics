@@ -456,13 +456,29 @@ def _s_common_templates(*, claims: ClaimCollection):
         claims=claims,
         claim_id="mp.plain.templates.jerusalem.set",
     )
-    poetic_rows = cmn.emit_claim_by_id(
+    cmn.emit_claim_by_id(
         claims=claims,
         claim_id="mp.both.templates.poetic.set",
     )
 
     accent_row_by_template = dict(zip(cmn.ACCENT_ROW_TEMPLATE_NAMES, accent_rows))
     plain_accent_rows = [accent_row_by_template[n] for n in _PLAIN_ACCENT_TEMPLATES]
+    plain_extra_accent_rows = cmn.other_rows_for_templates(
+        [
+            "מ:אות מנוקדת",
+            "מ:טעם ומתג באות אחת",
+            "מ:גרש ותלישא גדולה",
+            "מ:גרשיים ותלישא גדולה",
+            "מ:כל קמץ קטן מרכא",
+        ]
+    )
+    whitespace_poetic_rows = cmn.poetic_rows_for_templates(
+        ["ר1", "ר2", "ר3", "ר4", "ר0"]
+    )
+    whitespace_extra_rows = cmn.other_rows_for_templates(["רווח בסוף שורה"])
+    other_templates_rows = cmn.other_rows_for_templates(
+        ["מ:סיום בטוב"]
+    ) + cmn.poetic_rows_for_templates(["פרשה-מרכז"])
 
     _emit_claim_payload(
         claims,
@@ -513,14 +529,16 @@ def _s_common_templates(*, claims: ClaimCollection):
         author.std_table(special_letter_rows, arg_to_troh=["Template", "Purpose"]),
         author.heading_level_3("Accent, vowel, and punctuation templates"),
         author.std_table(
-            plain_accent_rows,
+            plain_accent_rows + plain_extra_accent_rows,
             arg_to_troh=["Template", "Purpose"],
         ),
         author.heading_level_3("Jerusalem spelling"),
         author.std_table(jer_rows, arg_to_troh=["Template", "Purpose"]),
         author.heading_level_3("Whitespace templates"),
         author.std_table(
-            cmn.whitespace_rows_shared() + poetic_rows,
+            cmn.whitespace_rows_shared()
+            + whitespace_poetic_rows
+            + whitespace_extra_rows,
             arg_to_troh=["Template", "Purpose"],
         ),
         author.para(
@@ -534,8 +552,12 @@ def _s_common_templates(*, claims: ClaimCollection):
         ),
         author.heading_level_3("Documentation templates"),
         author.std_table(
-            cmn.other_rows_shared_core(nusach_doc=_NUSACH_DOC)
-            + cmn.other_rows_plain_extras(),
+            cmn.other_rows_shared_core(nusach_doc=_NUSACH_DOC),
+            arg_to_troh=["Template", "Purpose"],
+        ),
+        author.heading_level_3("Other templates"),
+        author.std_table(
+            other_templates_rows,
             arg_to_troh=["Template", "Purpose"],
         ),
     ]
