@@ -184,13 +184,13 @@ class TestExplicitClaims(unittest.TestCase):
         haarah_2 = importlib.import_module("author.mpplus_haarah_2")
         self.assertFalse(hasattr(haarah_2, "populate_claims"))
 
-    def test_mpplus_haarah_2_build_body_emits_no_explicit_claim(self):
+    def test_mpplus_haarah_2_build_body_emits_explicit_claim(self):
         haarah_2 = importlib.import_module("author.mpplus_haarah_2")
         claims = claim_mod.ClaimCollection()
 
         haarah_2._build_body(claims=claims)
 
-        self.assertEqual({}, claims.records_by_id)
+        self.assertIn("mp.plus.template.haarah-2.required-params", claims.records_by_id)
 
     def test_mpplus_kaful_import_has_no_claim_side_effects(self):
         importlib.invalidate_caches()

@@ -35,10 +35,10 @@ _JSON_CUSTOM_TAG = jsnip.read_text("mpplain", "custom_tag_pair.json")
 
 _CLAIM_ID_BOOK39_SKEL_COMMON = "mp.plain.docs.book39-skeleton.common"
 _CLAIM_ID_EXAMPLE_INDEX_0 = "mp.plain.example.verse-label-template-object"
-_CLAIM_ID_E_COL_FORMAT = "mp.plain.docs.verse-e-col.mixed-array"
+_CLAIM_ID_E_COL_SEGMENTATION = "mp.plain.verse.e-col.text-template-segmentation"
 _CLAIM_ID_EXAMPLE_STMPL = "mp.plain.example.stmpl-format"
-_CLAIM_ID_TMPL_FORMAT = "mp.plain.docs.tmpl-tree-format"
-_CLAIM_ID_CUSTOM_TAG_FORMAT = "mp.plain.docs.custom-tag-format"
+_CLAIM_ID_TMPL_TREE_SHAPE = "mp.plain.template-node.recursive-shape"
+_CLAIM_ID_CUSTOM_TAG_KEYS_VALUES = "mp.plain.docs.custom-tag.keys-and-values"
 
 _PLAIN_COMMON_TEMPLATES = [
     "כו״ק",
@@ -381,6 +381,20 @@ def s_verse(*, claims: ClaimCollection):
                 data={"label_template": "מ:פסוק", "always_present": True},
             )
         ),
+        author.para(
+            _emit_claim_payload(
+                claims,
+                "mp.plain.verse.d-col.named-params",
+                "Normal verses carry one מ:פסוק call in D with optional named params סדר and עלייה; pseudo-verses have empty D.",
+                kind="struct",
+                subject="mp:plain",
+                data={
+                    "label_template": "מ:פסוק",
+                    "always_present": True,
+                    "allowed_named_params": ["סדר", "עלייה"],
+                },
+            )
+        ),
         json_block.json_block_raw_html(
             _emit_claim_payload(
                 claims,
@@ -414,16 +428,17 @@ def s_verse(*, claims: ClaimCollection):
                 data={"element_types": ["string", "stmpl", "tmpl", "custom_tag"]},
             )
         ),
-        json_block.json_block_raw_html(
+        author.para(
             _emit_claim_payload(
                 claims,
-                _CLAIM_ID_E_COL_FORMAT,
-                _JSON_EP_EXAMPLE,
-                kind="format",
+                _CLAIM_ID_E_COL_SEGMENTATION,
+                "E-column content is segmented as a sequence of strings and templates.",
+                kind="struct",
                 subject="mp:plain",
-                data={"element_types": ["string", "stmpl"]},
+                data={"element_types": ["string", "stmpl", "tmpl", "custom_tag"]},
             )
         ),
+        json_block.json_block_raw_html(_JSON_EP_EXAMPLE),
     ]
 
 
@@ -457,35 +472,36 @@ def _s_template_objects(*, claims: ClaimCollection):
         ),
         author.heading_level_3("2. Parsed template tree (tmpl)"),
         author.para("Longer and/or more complex templates appear as parse trees:"),
-        json_block.json_block_raw_html(
+        json_block.json_block_raw_html(_JSON_TMPL),
+        author.para(
             _emit_claim_payload(
                 claims,
-                _CLAIM_ID_TMPL_FORMAT,
-                _JSON_TMPL,
-                kind="format",
+                _CLAIM_ID_TMPL_TREE_SHAPE,
+                "A template is a recursive parse-tree whose segments contain strings and nested templates.",
+                kind="struct",
                 subject="mp:plain",
-                data={"key": "tmpl"},
+                data={
+                    "key": "tmpl",
+                    "allowed_node_types": ["string", "stmpl", "tmpl"],
+                },
             )
-        ),
-        author.para(
-            [
-                "The first sub-array is the template name."
-                " Subsequent sub-arrays are the arguments,"
-                " which may contain nested template \u201ccalls\u201d.",
-            ]
         ),
         author.heading_level_3("3. Custom XML tag (custom_tag)"),
-        author.para("Wikitext custom XML tags that appear in pseudo-verses:"),
-        json_block.json_block_raw_html(
+        author.para(
             _emit_claim_payload(
                 claims,
-                _CLAIM_ID_CUSTOM_TAG_FORMAT,
-                _JSON_CUSTOM_TAG,
+                _CLAIM_ID_CUSTOM_TAG_KEYS_VALUES,
+                "Custom-tag objects use the custom_tag key and only the documented tag values.",
                 kind="format",
                 subject="mp:plain",
-                data={"key": "custom_tag"},
+                data={
+                    "key": "custom_tag",
+                    "allowed_values": ["noinclude", "/noinclude", "references/"],
+                    "allowed_prefixes": ["קטע התחלה=", "קטע סוף="],
+                },
             )
         ),
+        json_block.json_block_raw_html(_JSON_CUSTOM_TAG),
     ]
 
 

@@ -17,7 +17,7 @@ from author import mp_cmn_json_snippets as jsnip
 
 _FNAME = "mpplus_haarah_2.html"
 _TITLE = "Targeted scroll-difference note"
-_CLAIM_ID_HAARAH_2_FORMAT = "mp.plus.docs.haarah-2.template-object"
+_CLAIM_ID_HAARAH_2_FORMAT = "mp.plus.template.haarah-2.required-params"
 
 _PLUS_DOC = "mpplus.html"
 
@@ -32,26 +32,24 @@ def gen_html_file(tdm_ch, claims: ClaimCollection):
 
 def build_body(*, claims: ClaimCollection):
     back_link = author.anchor_h("Reading $MAM-parsed-plus", _PLUS_DOC)
-    json_haarah_2 = claims.claim(
+    semantic_shape_claim = claims.claim(
         _CLAIM_ID_HAARAH_2_FORMAT,
-        _JSON_HAARAH_2,
-        kind="format",
+        "Every מ:הערה-2 template carries target content, note text, and a documented mark-position code.",
+        kind="struct",
         subject="mp:plus",
-        data={"tmpl_name": "מ:הערה-2"},
+        data={
+            "template": "מ:הערה-2",
+            "required_params": ["1", "2", "3"],
+            "allowed_mark_positions": ["אאא*", "*אאא"],
+        },
     )
     return [
         author.heading_level_1(
             ["Targeted scroll-difference note — ", author.hbo("מ:הערה-2")]
         ),
         author.para(["← Back to ", back_link]),
-        author.para(
-            [
-                "Scroll-difference notes are represented by ",
-                author.hbo("מ:הערה-2"),
-                ", which wraps the target word and carries the note text:",
-            ]
-        ),
-        json_block.json_block_raw_html(json_haarah_2),
+        author.para(semantic_shape_claim),
+        json_block.json_block_raw_html(_JSON_HAARAH_2),
         author.para("Arguments:"),
         author.ordered_list(
             [

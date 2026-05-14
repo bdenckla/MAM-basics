@@ -266,6 +266,12 @@ def s_top_level(*, claims: ClaimCollection):
 
 
 def s_book39(*, claims: ClaimCollection):
+    good_ending_nonnull_book39s = [
+        {"book24_name": "ספר ישעיהו", "sub_book_name": None},
+        {"book24_name": "ספר תרי עשר", "sub_book_name": "מלאכי"},
+        {"book24_name": "מגילת איכה", "sub_book_name": None},
+        {"book24_name": "מגילת קהלת", "sub_book_name": None},
+    ]
     _book39_rows = _emit_claim_payload(
         claims,
         "mp.plus.book39.fields",
@@ -278,12 +284,18 @@ def s_book39(*, claims: ClaimCollection):
         data={
             "book39_keys": [*thb.BOOK39_KEYS_COMMON, "good_ending_plus"],
             "good_ending_plus_nonnull_count": 4,
-            "good_ending_plus_nonnull_book39s": [
-                {"book24_name": "ספר ישעיהו", "sub_book_name": None},
-                {"book24_name": "ספר תרי עשר", "sub_book_name": "מלאכי"},
-                {"book24_name": "מגילת איכה", "sub_book_name": None},
-                {"book24_name": "מגילת קהלת", "sub_book_name": None},
-            ],
+            "good_ending_plus_nonnull_book39s": good_ending_nonnull_book39s,
+        },
+    )
+    _emit_claim_payload(
+        claims,
+        "mp.plus.book39.good-ending-plus.nonnull-book39s",
+        "Exactly four book39 objects have a non-null good_ending_plus field.",
+        kind="struct",
+        subject="mp:plus",
+        data={
+            "good_ending_plus_nonnull_count": 4,
+            "good_ending_plus_nonnull_book39s": good_ending_nonnull_book39s,
         },
     )
     return [

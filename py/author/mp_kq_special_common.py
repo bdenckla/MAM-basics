@@ -32,9 +32,9 @@ def build_body(
 ):
     """Build common dedicated-page body for מ:כו״ק מיוחד."""
     back_link = author.anchor_h(back_label, back_doc)
-    json_kq_special = claims.claim(
+    semantic_shape_claim = claims.claim(
         claim_id,
-        example_json,
+        "Special $ketiv_qere entries use the unified template with two positional fields and the required named parameter סוג.",
         kind=claim_kind,
         subject=claim_subject,
         data=claim_data,
@@ -48,13 +48,7 @@ def build_body(
             ]
         ),
         author.para(["← Back to ", back_link]),
-        author.para(
-            [
-                "Nine special $ketiv_qere types are encoded in the required named parameter ",
-                author.hbo("סוג="),
-                ".",
-            ]
-        ),
+        author.para(semantic_shape_claim),
         author.para(
             [
                 "The sub-typing serves two purposes: it pre-categorizes these rare k/q pairs so"
@@ -81,5 +75,5 @@ def build_body(
             arg_to_troh=["Type", "Meaning"],
         ),
         author.para("Example (Job 38:1):"),
-        json_block.json_block_raw_html(json_kq_special),
+        json_block.json_block_raw_html(example_json),
     ]

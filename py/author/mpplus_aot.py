@@ -21,7 +21,7 @@ _TITLE = "Word with special letter(s)"
 _PLUS_DOC = "mpplus.html"
 
 _JSON_SPECIAL_LETTER = jsnip.read_text("mpplus_aot", "special_letter.json")
-_CLAIM_ID_AOT_FORMAT = "mp.plus.docs.aot.template-object"
+_CLAIM_ID_AOT_FORMAT = "mp.plus.template.aot.required-params"
 
 _AOT_INTRO_CLAIM_ID = "mp.plus.templates.aot.arg5-derivable"
 _AOT_INTRO_CLAIM_DATA = {"template": "מ:אות-מיוחדת-במילה"}
@@ -67,13 +67,17 @@ def gen_html_file(tdm_ch, claims: ClaimCollection):
 
 def build_body(*, claims: ClaimCollection):
     back_link = author.anchor_h("Reading $MAM-parsed-plus", _PLUS_DOC)
-    json_special_letter = _emit_claim_payload(
+    aot_semantic_claim = _emit_claim_payload(
         claims,
         _CLAIM_ID_AOT_FORMAT,
-        _JSON_SPECIAL_LETTER,
-        kind="format",
+        "Every מ:אות-מיוחדת-במילה template carries the required parameter schema for interrupted word, uninterrupted word, dot-mask, type code, and summary.",
+        kind="struct",
         subject="mp:plus",
-        data={"tmpl_name": "מ:אות-מיוחדת-במילה"},
+        data={
+            "template": "מ:אות-מיוחדת-במילה",
+            "required_params": ["1", "2", "3", "4", "5"],
+            "allowed_type_codes": ["ג", "ק", "ת"],
+        },
     )
     return [
         author.heading_level_1(
@@ -81,7 +85,8 @@ def build_body(*, claims: ClaimCollection):
         ),
         author.para(["← Back to ", back_link]),
         author.para(_aot_intro(claims=claims)),
-        json_block.json_block_raw_html(json_special_letter),
+        author.para(aot_semantic_claim),
+        json_block.json_block_raw_html(_JSON_SPECIAL_LETTER),
         author.para("Arguments:"),
         author.ordered_list(
             [
@@ -94,7 +99,7 @@ def build_body(*, claims: ClaimCollection):
                     " = large, ",
                     author.hbo("ק"),
                     " = small, ",
-                    author.hbo("ע"),
+                    author.hbo("ת"),
                     " = hung (suspended))",
                 ],
                 "Letter/type summary",
