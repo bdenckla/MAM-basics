@@ -69,19 +69,13 @@ class TestVerifyMpPayloadExamples(unittest.TestCase):
         with self.assertRaisesRegex(AssertionError, r"payload must be strict JSON"):
             payload_examples._normalize_payload(record)
 
-    def test_match_pattern_any_value_marker(self):
-        expected = {pattern_match.ANY_VALUE_MARKER_KEY: True}
-
-        self.assertTrue(pattern_match.match_pattern(expected, {"x": 1}))
-        self.assertTrue(pattern_match.match_pattern(expected, "abc"))
-
-    def test_match_pattern_any_value_bare_string_is_literal(self):
+    def test_match_pattern_marker_name_bare_string_is_literal(self):
         self.assertTrue(
             pattern_match.match_pattern(
-                "__verify_mp_any_value__", "__verify_mp_any_value__"
+                "__verify_mp_any_dict__", "__verify_mp_any_dict__"
             )
         )
-        self.assertFalse(pattern_match.match_pattern("__verify_mp_any_value__", "abc"))
+        self.assertFalse(pattern_match.match_pattern("__verify_mp_any_dict__", "abc"))
 
     def test_match_pattern_any_dict_marker(self):
         expected = {pattern_match.ANY_DICT_MARKER_KEY: True}
@@ -200,7 +194,6 @@ class TestVerifyMpPayloadExamples(unittest.TestCase):
         record = claims.records_by_id["mp.plus.example.nested-tmpl"]
 
         self.assertIsInstance(record.payload, str)
-        self.assertNotIn("__verify_mp_any_value__", record.payload)
         self.assertIn("__verify_mp_any_string_dict_or_list__", record.payload)
 
 

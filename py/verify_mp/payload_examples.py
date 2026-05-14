@@ -12,7 +12,6 @@ matching, and recursive "match anywhere in subtree" search over JSON-like
 nodes.
 
 Snippet wildcard semantics are encoded explicitly with strict-JSON tokens:
-- {"__verify_mp_any_value__": true} as a wildcard value
 - {"__verify_mp_any_dict__": true} as a dict wildcard
 - {"__verify_mp_any_list__": true} as a list wildcard
 - {"__verify_mp_any_string__": true} as an any-string wildcard
