@@ -209,6 +209,8 @@ def s_intro():
                 "Structure of a book39, chapter, and verse",
                 "Template format",
                 "Common templates",
+                # Normally we avoid mentioning "plain" in "plus" and vice versa,
+                # but this is an intentional exception to the rule.
                 "Differences from plain format",
             ]
         ),
@@ -229,6 +231,8 @@ def s_plain_differences(*, claims: ClaimCollection):
     )
 
     return [
+        # Normally we avoid mentioning "plain" in "plus" and vice versa,
+        # but this is an intentional exception to the rule.
         author.heading_level_2("Differences from plain format"),
         author.para(
             [
