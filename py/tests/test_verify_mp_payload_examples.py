@@ -5,6 +5,7 @@ import unittest
 from author import mam_parsed_docs_build
 from author_util import claim as claim_mod
 from verify_mp import payload_examples
+from verify_mp import pattern_match
 from verify_mp.corpus import Context, Corpus, PlainCorpus
 
 
@@ -68,63 +69,67 @@ class TestVerifyMpPayloadExamples(unittest.TestCase):
         with self.assertRaisesRegex(AssertionError, r"payload must be strict JSON"):
             payload_examples._normalize_payload(record)
 
-    def test_match_pattern_any_value_token(self):
+    def test_match_pattern_any_value_marker(self):
+        expected = {pattern_match.ANY_VALUE_MARKER_KEY: True}
+
+        self.assertTrue(pattern_match.match_pattern(expected, {"x": 1}))
+        self.assertTrue(pattern_match.match_pattern(expected, "abc"))
+
+    def test_match_pattern_any_value_bare_string_is_literal(self):
         self.assertTrue(
-            payload_examples._match_pattern(payload_examples._ANY_VALUE_TOKEN, {"x": 1})
+            pattern_match.match_pattern(
+                "__verify_mp_any_value__", "__verify_mp_any_value__"
+            )
         )
-        self.assertTrue(
-            payload_examples._match_pattern(payload_examples._ANY_VALUE_TOKEN, "abc")
-        )
+        self.assertFalse(pattern_match.match_pattern("__verify_mp_any_value__", "abc"))
 
     def test_match_pattern_any_dict_marker(self):
-        expected = {payload_examples._ANY_DICT_MARKER_KEY: True}
+        expected = {pattern_match.ANY_DICT_MARKER_KEY: True}
 
-        self.assertTrue(payload_examples._match_pattern(expected, {"k": "v"}))
-        self.assertFalse(
-            payload_examples._match_pattern(expected, ["not", "a", "dict"])
-        )
+        self.assertTrue(pattern_match.match_pattern(expected, {"k": "v"}))
+        self.assertFalse(pattern_match.match_pattern(expected, ["not", "a", "dict"]))
 
     def test_match_pattern_any_list_marker(self):
-        expected = {payload_examples._ANY_LIST_MARKER_KEY: True}
+        expected = {pattern_match.ANY_LIST_MARKER_KEY: True}
 
-        self.assertTrue(payload_examples._match_pattern(expected, ["x"]))
-        self.assertFalse(payload_examples._match_pattern(expected, {"not": "a list"}))
+        self.assertTrue(pattern_match.match_pattern(expected, ["x"]))
+        self.assertFalse(pattern_match.match_pattern(expected, {"not": "a list"}))
 
     def test_match_pattern_any_string_dict_or_list_marker(self):
-        expected = {payload_examples._ANY_STRING_DICT_OR_LIST_MARKER_KEY: True}
+        expected = {pattern_match.ANY_STRING_DICT_OR_LIST_MARKER_KEY: True}
 
-        self.assertTrue(payload_examples._match_pattern(expected, "abc"))
-        self.assertTrue(payload_examples._match_pattern(expected, {"k": "v"}))
-        self.assertTrue(payload_examples._match_pattern(expected, ["x", "y"]))
-        self.assertFalse(payload_examples._match_pattern(expected, 7))
+        self.assertTrue(pattern_match.match_pattern(expected, "abc"))
+        self.assertTrue(pattern_match.match_pattern(expected, {"k": "v"}))
+        self.assertTrue(pattern_match.match_pattern(expected, ["x", "y"]))
+        self.assertFalse(pattern_match.match_pattern(expected, 7))
 
     def test_match_pattern_empty_list_is_literal_empty(self):
-        self.assertTrue(payload_examples._match_pattern([], []))
-        self.assertFalse(payload_examples._match_pattern([], [1]))
+        self.assertTrue(pattern_match.match_pattern([], []))
+        self.assertFalse(pattern_match.match_pattern([], [1]))
 
     def test_match_pattern_empty_object_is_literal_empty(self):
-        self.assertTrue(payload_examples._match_pattern({}, {}))
-        self.assertFalse(payload_examples._match_pattern({}, {"x": 1}))
+        self.assertTrue(pattern_match.match_pattern({}, {}))
+        self.assertFalse(pattern_match.match_pattern({}, {"x": 1}))
 
     def test_match_pattern_nonempty_object_requires_exact_keys(self):
         expected = {"a": 1}
 
-        self.assertTrue(payload_examples._match_pattern(expected, {"a": 1}))
-        self.assertFalse(payload_examples._match_pattern(expected, {"a": 1, "b": 2}))
+        self.assertTrue(pattern_match.match_pattern(expected, {"a": 1}))
+        self.assertFalse(pattern_match.match_pattern(expected, {"a": 1, "b": 2}))
 
     def test_match_pattern_any_string_true(self):
-        expected = {payload_examples._ANY_STRING_TOKEN: True}
+        expected = {pattern_match.ANY_STRING_TOKEN: True}
 
-        self.assertTrue(payload_examples._match_pattern(expected, "abc"))
-        self.assertFalse(payload_examples._match_pattern(expected, 123))
+        self.assertTrue(pattern_match.match_pattern(expected, "abc"))
+        self.assertFalse(pattern_match.match_pattern(expected, 123))
 
     def test_match_pattern_invalid_any_string_payload_fails_fast(self):
-        expected = {payload_examples._ANY_STRING_TOKEN: "not-a-list-or-bool"}
+        expected = {pattern_match.ANY_STRING_TOKEN: "not-a-list-or-bool"}
 
         with self.assertRaisesRegex(
             AssertionError, r"invalid any-string token payload"
         ):
-            payload_examples._match_pattern(expected, "abc")
+            pattern_match.match_pattern(expected, "abc")
 
     def test_verify_example_payload_searches_recursively(self):
         record = _make_record(

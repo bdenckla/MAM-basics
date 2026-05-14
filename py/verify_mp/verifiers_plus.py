@@ -11,6 +11,7 @@ from verify_mp.corpus import (
     iter_plain_verses,
     iter_plain_col_objects,
 )
+from verify_mp import pattern_match
 
 
 def verify_mp_plus_templates_plus_only_set(record: ClaimRecord, ctx: Context) -> None:
@@ -377,11 +378,6 @@ def _has_chapter_count(header: dict, sub_book_name, chapter_count: int) -> bool:
 
 
 _MAQAF = "\u05be"  # HEBREW PUNCTUATION MAQAF — appears literally in dot-masks
-_ANY_VALUE_TOKEN = "__verify_mp_any_value__"
-_ANY_DICT_MARKER_KEY = "__verify_mp_any_dict__"
-_ANY_LIST_MARKER_KEY = "__verify_mp_any_list__"
-_ANY_STRING_TOKEN = "__verify_mp_any_string__"
-_ANY_STRING_DICT_OR_LIST_MARKER_KEY = "__verify_mp_any_string_dict_or_list__"
 
 
 def _derive_aot_arg5(dot_mask: str, type_code: str) -> str:
@@ -448,7 +444,7 @@ def verify_mp_plus_example_kaful_template_object(
     """Every plus מ:כפול instance uses only observed value types for key params."""
     tmpl_name = record.data["tmpl_name"]
     param_names = record.data["tmpl_param_names"]
-    observed_type_pattern = {_ANY_STRING_DICT_OR_LIST_MARKER_KEY: True}
+    observed_type_pattern = {pattern_match.ANY_STRING_DICT_OR_LIST_MARKER_KEY: True}
 
     saw_kaful = False
     for tmpl in iter_all_template_objects(ctx.corpus):
@@ -464,61 +460,12 @@ def verify_mp_plus_example_kaful_template_object(
                 param_name in params
             ), f"template {tmpl_name!r} missing param {param_name!r}: {tmpl!r}"
             value = params[param_name]
-            assert _match_with_tokens(observed_type_pattern, value), (
+            assert pattern_match.match_pattern(observed_type_pattern, value), (
                 f"template {tmpl_name!r} param {param_name!r} has unsupported type "
                 f"{type(value).__name__}: {value!r}"
             )
 
     assert saw_kaful, f"plus corpus has no template {tmpl_name!r}"
-
-
-def _match_with_tokens(expected, actual) -> bool:
-    """Match nested JSON-like structures using strict __verify_mp_*__ tokens."""
-    if expected == _ANY_VALUE_TOKEN:
-        return True
-
-    if isinstance(expected, str):
-        return actual == expected
-
-    if isinstance(expected, list):
-        if not isinstance(actual, list):
-            return False
-        if len(expected) != len(actual):
-            return False
-        return all(_match_with_tokens(exp, act) for exp, act in zip(expected, actual))
-
-    if isinstance(expected, dict):
-        if expected == {_ANY_DICT_MARKER_KEY: True}:
-            return isinstance(actual, dict)
-        if expected == {_ANY_LIST_MARKER_KEY: True}:
-            return isinstance(actual, list)
-        if expected == {_ANY_STRING_DICT_OR_LIST_MARKER_KEY: True}:
-            return isinstance(actual, (str, dict, list))
-        if _ANY_STRING_TOKEN in expected:
-            assert (
-                len(expected) == 1
-            ), f"invalid tokenized string pattern object: {expected!r}"
-            return _match_any_string_tokens(expected[_ANY_STRING_TOKEN], actual)
-        if not isinstance(actual, dict) or frozenset(actual.keys()) != frozenset(
-            expected.keys()
-        ):
-            return False
-        if len(expected) == 0:
-            return len(actual) == 0
-        return all(_match_with_tokens(expected[key], actual[key]) for key in expected)
-
-    return actual == expected
-
-
-def _match_any_string_tokens(pattern, actual) -> bool:
-    """Match strict any-string tokens used inside pattern dicts."""
-    if not isinstance(actual, str):
-        return False
-
-    if pattern is True:
-        return True
-
-    assert False, f"invalid any-string token payload; expected true: {pattern!r}"
 
 
 def verify_mp_plus_example_header_job(record: ClaimRecord, ctx: Context) -> None:

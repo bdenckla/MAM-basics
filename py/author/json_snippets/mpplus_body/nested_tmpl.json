@@ -11,6 +11,6 @@
         "2": "וְג֣וּשׁ"
       }
     },
-    "2": "__verify_mp_any_value__"
+    "2": {"__verify_mp_any_value__": true}
   }
 }

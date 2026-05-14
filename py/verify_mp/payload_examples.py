@@ -12,7 +12,7 @@ matching, and recursive "match anywhere in subtree" search over JSON-like
 nodes.
 
 Snippet wildcard semantics are encoded explicitly with strict-JSON tokens:
-- "__verify_mp_any_value__" as a wildcard value
+- {"__verify_mp_any_value__": true} as a wildcard value
 - {"__verify_mp_any_dict__": true} as a dict wildcard
 - {"__verify_mp_any_list__": true} as a list wildcard
 - {"__verify_mp_any_string__": true} as an any-string wildcard
@@ -23,12 +23,7 @@ import json
 
 from author_util.claim import ClaimRecord
 from verify_mp.corpus import Context
-
-_ANY_VALUE_TOKEN = "__verify_mp_any_value__"
-_ANY_DICT_MARKER_KEY = "__verify_mp_any_dict__"
-_ANY_LIST_MARKER_KEY = "__verify_mp_any_list__"
-_ANY_STRING_TOKEN = "__verify_mp_any_string__"
-_ANY_STRING_DICT_OR_LIST_MARKER_KEY = "__verify_mp_any_string_dict_or_list__"
+from verify_mp.pattern_match import match_pattern
 
 
 def is_example_claim(record: ClaimRecord) -> bool:
@@ -77,63 +72,10 @@ def _roots_for_subject(record: ClaimRecord, ctx: Context) -> list:
 
 def _contains_pattern(node, pattern) -> bool:
     """Return whether pattern matches node itself or any descendant node."""
-    if _match_pattern(pattern, node):
+    if match_pattern(pattern, node):
         return True
     if isinstance(node, dict):
         return any(_contains_pattern(value, pattern) for value in node.values())
     if isinstance(node, list):
         return any(_contains_pattern(item, pattern) for item in node)
     return False
-
-
-def _match_pattern(expected, actual) -> bool:
-    """Match expected pattern against actual value with token-based wildcards.
-
-    For ordinary dict patterns (non-token objects), matching is exact-key:
-    expected and actual must have identical key sets.
-    """
-    if expected == _ANY_VALUE_TOKEN:
-        return True
-
-    if isinstance(expected, str):
-        return expected == actual
-
-    if isinstance(expected, dict):
-        if expected == {_ANY_DICT_MARKER_KEY: True}:
-            return isinstance(actual, dict)
-        if expected == {_ANY_LIST_MARKER_KEY: True}:
-            return isinstance(actual, list)
-        if expected == {_ANY_STRING_DICT_OR_LIST_MARKER_KEY: True}:
-            return isinstance(actual, (str, dict, list))
-        if _ANY_STRING_TOKEN in expected:
-            assert (
-                len(expected) == 1
-            ), f"invalid tokenized string pattern object; expected only {_ANY_STRING_TOKEN!r}: {expected!r}"
-            return _match_any_string_pattern(expected[_ANY_STRING_TOKEN], actual)
-        if not isinstance(actual, dict):
-            return False
-        if frozenset(expected.keys()) != frozenset(actual.keys()):
-            return False
-        return all(
-            _match_pattern(value, actual[key]) for key, value in expected.items()
-        )
-
-    if isinstance(expected, list):
-        if not isinstance(actual, list):
-            return False
-        if len(expected) != len(actual):
-            return False
-        return all(_match_pattern(exp, act) for exp, act in zip(expected, actual))
-
-    return expected == actual
-
-
-def _match_any_string_pattern(pattern, actual) -> bool:
-    """Match strict-JSON tokenized string wildcard patterns."""
-    if not isinstance(actual, str):
-        return False
-
-    if pattern is True:
-        return True
-
-    assert False, f"invalid any-string token payload; expected true: {pattern!r}"
