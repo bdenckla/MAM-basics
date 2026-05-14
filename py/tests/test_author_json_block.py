@@ -20,9 +20,7 @@ class TestAuthorJsonBlock(unittest.TestCase):
         self.assertNotIn("__verify_mp_any_", masked)
 
     def test_mask_verify_wildcards_replaces_token_form(self):
-        src = (
-            '{"k": "__verify_mp_any_value__", "k2": {"__verify_mp_any_string__": true}}'
-        )
+        src = '{"k": "__verify_mp_any_value__", "k2": {"__verify_mp_any_string_dict_or_list__": true}}'
 
         masked = json_block._mask_verify_wildcards_for_display(src)
 

@@ -111,20 +111,6 @@ class TestVerifyMpPayloadExamples(unittest.TestCase):
         self.assertTrue(pattern_match.match_pattern(expected, {"a": 1}))
         self.assertFalse(pattern_match.match_pattern(expected, {"a": 1, "b": 2}))
 
-    def test_match_pattern_any_string_true(self):
-        expected = {pattern_match.ANY_STRING_TOKEN: True}
-
-        self.assertTrue(pattern_match.match_pattern(expected, "abc"))
-        self.assertFalse(pattern_match.match_pattern(expected, 123))
-
-    def test_match_pattern_invalid_any_string_payload_fails_fast(self):
-        expected = {pattern_match.ANY_STRING_TOKEN: "not-a-list-or-bool"}
-
-        with self.assertRaisesRegex(
-            AssertionError, r"invalid any-string token payload"
-        ):
-            pattern_match.match_pattern(expected, "abc")
-
     def test_verify_example_payload_searches_recursively(self):
         record = _make_record(
             claim_id="mp.plus.example.recursive",

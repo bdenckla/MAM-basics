@@ -3,7 +3,6 @@
 
 ANY_DICT_MARKER_KEY = "__verify_mp_any_dict__"
 ANY_LIST_MARKER_KEY = "__verify_mp_any_list__"
-ANY_STRING_TOKEN = "__verify_mp_any_string__"
 ANY_STRING_DICT_OR_LIST_MARKER_KEY = "__verify_mp_any_string_dict_or_list__"
 
 
@@ -19,12 +18,6 @@ def match_pattern(expected, actual) -> bool:
             return isinstance(actual, list)
         if expected == {ANY_STRING_DICT_OR_LIST_MARKER_KEY: True}:
             return isinstance(actual, (str, dict, list))
-        if ANY_STRING_TOKEN in expected:
-            assert len(expected) == 1, (
-                "invalid tokenized string pattern object; expected only "
-                f"{ANY_STRING_TOKEN!r}: {expected!r}"
-            )
-            return _match_any_string_pattern(expected[ANY_STRING_TOKEN], actual)
         if not isinstance(actual, dict):
             return False
         if frozenset(expected.keys()) != frozenset(actual.keys()):
@@ -39,14 +32,3 @@ def match_pattern(expected, actual) -> bool:
         return all(match_pattern(exp, act) for exp, act in zip(expected, actual))
 
     return expected == actual
-
-
-def _match_any_string_pattern(pattern, actual) -> bool:
-    """Match strict any-string token payloads."""
-    if not isinstance(actual, str):
-        return False
-
-    if pattern is True:
-        return True
-
-    assert False, f"invalid any-string token payload; expected true: {pattern!r}"
