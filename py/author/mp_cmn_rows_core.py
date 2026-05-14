@@ -131,7 +131,14 @@ ACCENT_ROWS = [
     ],
     [
         author.hbo("מ:טעם"),
-        "Accent extractor. Drops the first code point of its argument, allowing an accent to be specified on a dummy letter for readability.",
+        [
+            "Accent extractor. Drops the first code point of its argument, allowing an accent to be specified on a dummy letter for readability. Currently only used inside ",
+            author.hbo(
+                _TWO_ACCENTS_OF_QUPO_ABBREV,
+                {"title": tmpln.TWO_ACCENTS_OF_QUPO},
+            ),
+            ".",
+        ],
     ],
     [
         author.hbo("מ:כפול"),

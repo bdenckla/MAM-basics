@@ -81,7 +81,6 @@ _PLAIN_ACCENT_TEMPLATES = [
     "מ:מקף אפור",
     "גלגל-2",
     "ירח בן יומו-2",
-    "מ:טעם",
 ]
 
 _CHOICE_TEMPLATES = [
@@ -93,6 +92,7 @@ _CHOICE_TEMPLATES = [
 
 _MULTIMARK_TEMPLATES = [
     "שני טעמים באות אחת קמץ-תחתון-פתח-עליון",
+    "מ:טעם",
     "מ:טעם ומתג באות אחת",
     "מ:גרש ותלישא גדולה",
     "מ:גרשיים ותלישא גדולה",
@@ -474,8 +474,8 @@ def _s_common_templates(*, claims: ClaimCollection):
     plain_accent_rows = cmn.accent_rows_for_templates(_PLAIN_ACCENT_TEMPLATES)
     plain_choice_rows = cmn.accent_rows_for_templates(_CHOICE_TEMPLATES)
     plain_multimark_rows = [
-        *cmn.accent_rows_for_templates([_MULTIMARK_TEMPLATES[0]]),
-        *cmn.other_rows_for_templates(_MULTIMARK_TEMPLATES[1:]),
+        *cmn.accent_rows_for_templates(_MULTIMARK_TEMPLATES[:2]),
+        *cmn.other_rows_for_templates(_MULTIMARK_TEMPLATES[2:]),
         *jer_rows,
     ]
     plain_extra_accent_rows = cmn.other_rows_for_templates(["מ:אות מנוקדת"])
