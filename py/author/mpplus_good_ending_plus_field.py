@@ -15,13 +15,15 @@ from author_util import json_block
 from author_util.claim import ClaimCollection
 from author import mp_cmn_json_snippets as jsnip
 
-_FNAME = "mpplus_good_ending.html"
+_FNAME = "mpplus_good_ending_plus_field.html"
 _TITLE = "good_ending_plus"
 
 _PLUS_DOC = "mpplus.html"
 _GOOD_ENDING_TMPL_DOC = "mpplus_good_ending_tmpl.html"
 
-_JSON_GOOD_ENDING = jsnip.read_text("mpplus_good_ending", "good_ending.json")
+_JSON_GOOD_ENDING = jsnip.read_text(
+    "mpplus_good_ending_plus_field", "good_ending_plus_field.json"
+)
 
 
 def gen_html_file(tdm_ch, claims: ClaimCollection):
@@ -37,29 +39,10 @@ def build_body(*, claims: ClaimCollection):
         author.para(["← Back to ", back_link]),
         author.para(
             [
-                "Four books of the Bible end with a verse of rather negative tone."
-                " There is a tradition that prevents these verses from being the last"
-                " verses recited. The tradition is to recite the next-to-last verse"
-                " after reciting the last verse. To facilitate this tradition, some"
-                " publications repeat the next-to-last verse, in unpointed form,"
-                " after the officially-last verse. The ",
-                mb_html.code("good_ending_plus"),
-                " key captures this: it is ",
-                mb_html.code("null"),
-                " for most books."
-                " For the 4 book39s that have it"
-                " (Isaiah, Malachi, Lamentations, Ecclesiastes),"
-                " it is an object (see example below).",
-            ]
-        ),
-        author.para(
-            [
-                "The template ",
-                author.hbo("מ:סיום בטוב"),
-                " nested in ",
-                mb_html.code("wikitext_element"),
-                " has separate documentation on ",
-                author.anchor_h("its dedicated page", _GOOD_ENDING_TMPL_DOC),
+                ["The ", mb_html.code("good_ending_plus"), " field houses"],
+                [" the ", author.hbo("מ:סיום בטוב"), " template,"],
+                " which is documented on ",
+                author.anchor_h("a dedicated page", _GOOD_ENDING_TMPL_DOC),
                 ".",
             ]
         ),

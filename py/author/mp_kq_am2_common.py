@@ -26,12 +26,7 @@ def build_body(
     """Build common dedicated-page body for מ:קו״כ-אם-2."""
     back_link = author.anchor_h(back_label, back_doc)
     return [
-        author.heading_level_1(
-            [
-                "Trivial $ketiv_qere — ",
-                author.hbo("מ:קו״כ-אם-2")
-            ]
-        ),
+        author.heading_level_1(["Trivial $ketiv_qere — ", author.hbo("מ:קו״כ-אם-2")]),
         author.para(["← Back to ", back_link]),
         author.para(
             [

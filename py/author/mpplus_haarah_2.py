@@ -38,7 +38,7 @@ def build_body(*, claims: ClaimCollection):
         author.para(["← Back to ", back_link]),
         author.para(
             [
-                "In plus output, scroll-difference notes are represented by ",
+                "Scroll-difference notes are represented by ",
                 author.hbo("מ:הערה-2"),
                 ", which wraps the target word and carries the note text:",
             ]

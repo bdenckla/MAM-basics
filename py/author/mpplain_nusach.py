@@ -33,9 +33,7 @@ def build_body(*, claims: ClaimCollection):
     )
     plain_back_link = author.anchor_h("Reading $MAM-parsed-plain", _PLAIN_DOC)
     return [
-        author.heading_level_1(
-            ["Documentation template (", author.hbo("נוסח"), ")"]
-        ),
+        author.heading_level_1(["Documentation template (", author.hbo("נוסח"), ")"]),
         author.para(["← Back to ", plain_back_link]),
         author.para(
             [

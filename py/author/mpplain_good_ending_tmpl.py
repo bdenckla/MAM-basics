@@ -13,6 +13,7 @@ from author_util import author
 from author_util import json_block
 from author_util.claim import ClaimCollection
 from author import mp_cmn_json_snippets as jsnip
+from author import mp_good_ending_common
 
 _FNAME = "mpplain_good_ending_tmpl.html"
 _TITLE = "Good-ending template (מ:סיום בטוב)"
@@ -32,26 +33,13 @@ def gen_html_file(tdm_ch, claims: ClaimCollection):
 
 def build_body(*, claims: ClaimCollection):
     plain_back_link = author.anchor_h("Reading $MAM-parsed-plain", _PLAIN_DOC)
+
     return [
         author.heading_level_1(
             ["Good-ending template (", author.hbo("מ:סיום בטוב"), ")"]
         ),
         author.para(["← Back to ", plain_back_link]),
-        author.para(
-            [
-                "This template marks the unpointed next-to-last verse used in the"
-                " good-ending recitation tradition. In plain format, a simple use"
-                " can appear as a stringified template.",
-            ]
-        ),
-        author.para(
-            [
-                "In practice, this template may be nested inside larger template"
-                " structures (for example inside ",
-                author.hbo("נוסח"),
-                "), but the core plain representation is shown below.",
-            ]
-        ),
+        author.para(mp_good_ending_common.MAIN_DESCRIPTION),
         json_block.json_block_raw_html(_JSON_GOOD_ENDING_TMPL),
     ]
 

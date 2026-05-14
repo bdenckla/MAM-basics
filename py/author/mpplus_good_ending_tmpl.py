@@ -13,6 +13,7 @@ from author_util import author
 from author_util import json_block
 from author_util.claim import ClaimCollection
 from author import mp_cmn_json_snippets as jsnip
+from author import mp_good_ending_common
 from mb_misc import mb_html
 
 _FNAME = "mpplus_good_ending_tmpl.html"
@@ -38,26 +39,13 @@ def build_body(*, claims: ClaimCollection):
             ["Good-ending template (", author.hbo("מ:סיום בטוב"), ")"]
         ),
         author.para(["← Back to ", plus_back_link]),
+        author.para(mp_good_ending_common.MAIN_DESCRIPTION),
+        # TODO: below is a verifiable claim
         author.para(
             [
-                "This template marks the unpointed next-to-last verse used in the"
-                " good-ending recitation tradition. In plus format it appears"
-                " as a standard template object with ",
-                mb_html.code("tmpl_name"),
-                " and optional ",
-                mb_html.code("tmpl_params"),
-                ".",
-            ]
-        ),
-        author.para(
-            [
-                "In practice, it is typically nested inside ",
-                author.hbo("נוסח"),
-                " in the ",
-                mb_html.code("wikitext_element"),
-                " value of ",
-                mb_html.code("good_ending_plus"),
-                ".",
+                ["In practice, it is always nested inside ", author.hbo("נוסח")],
+                [" in the ", mb_html.code("good_ending_plus")],
+                [" field of the book39 header."],
             ]
         ),
         json_block.json_block_raw_html(_JSON_GOOD_ENDING_TMPL),
