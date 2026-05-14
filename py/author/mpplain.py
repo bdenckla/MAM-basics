@@ -19,6 +19,7 @@ from author import mp_cmn_top_header_book39 as thb
 
 _FNAME = "mpplain.html"
 _TITLE = "Reading MAM-parsed-plain"
+_NUSACH_DOC = "mpplus_nusach.html"
 
 _JSON_INDEX_0 = jsnip.read_text("mpplain", "index_0.json")
 _JSON_EP_EXAMPLE = jsnip.read_text("mpplain", "ep_example.json")
@@ -429,10 +430,6 @@ def _s_common_templates(*, claims: ClaimCollection):
         claim_id="mp.both.templates.sh.only-in-nusach-param2",
     )
 
-    json_nusach = cmn.emit_claim_by_id(
-        claims=claims,
-        claim_id="mp.plain.example.nusach",
-    )
     kq_rows = cmn.emit_claim_by_id(claims=claims, claim_id="mp.both.templates.kq.set")
     kq_special_rows = cmn.emit_claim_by_id(
         claims=claims,
@@ -491,12 +488,11 @@ def _s_common_templates(*, claims: ClaimCollection):
         author.heading_level_3("Documentation template (נוסח)"),
         author.para(
             [
-                "Its first parameter is the “target” — what is being documented."
-                " The second parameter contains the documentation"
-                " (anomalous forms, variant readings, uncertain readings, etc.):",
+                "See ",
+                author.anchor_h("its dedicated page", _NUSACH_DOC),
+                ".",
             ]
         ),
-        json_block.json_block_raw_html(json_nusach),
         author.heading_level_3("$Ketiv_qere templates"),
         author.std_table(kq_rows, arg_to_troh=["Template", "Purpose"]),
         author.para(
