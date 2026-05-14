@@ -90,6 +90,14 @@ class TestVerifyMpPayloadExamples(unittest.TestCase):
         self.assertTrue(payload_examples._match_pattern(expected, ["x"]))
         self.assertFalse(payload_examples._match_pattern(expected, {"not": "a list"}))
 
+    def test_match_pattern_any_string_dict_or_list_marker(self):
+        expected = {payload_examples._ANY_STRING_DICT_OR_LIST_MARKER_KEY: True}
+
+        self.assertTrue(payload_examples._match_pattern(expected, "abc"))
+        self.assertTrue(payload_examples._match_pattern(expected, {"k": "v"}))
+        self.assertTrue(payload_examples._match_pattern(expected, ["x", "y"]))
+        self.assertFalse(payload_examples._match_pattern(expected, 7))
+
     def test_match_pattern_empty_list_is_literal_empty(self):
         self.assertTrue(payload_examples._match_pattern([], []))
         self.assertFalse(payload_examples._match_pattern([], [1]))
@@ -104,34 +112,11 @@ class TestVerifyMpPayloadExamples(unittest.TestCase):
         self.assertTrue(payload_examples._match_pattern(expected, {"a": 1}))
         self.assertFalse(payload_examples._match_pattern(expected, {"a": 1, "b": 2}))
 
-    def test_match_pattern_list_gap_token(self):
-        expected = ["start", payload_examples._LIST_GAP_TOKEN, "end"]
-
-        self.assertTrue(
-            payload_examples._match_pattern(expected, ["start", "mid", "end"])
-        )
-        self.assertTrue(
-            payload_examples._match_pattern(expected, ["start", "m1", "m2", "end"])
-        )
-        self.assertFalse(payload_examples._match_pattern(expected, ["start", "mid"]))
-
     def test_match_pattern_any_string_true(self):
         expected = {payload_examples._ANY_STRING_TOKEN: True}
 
         self.assertTrue(payload_examples._match_pattern(expected, "abc"))
         self.assertFalse(payload_examples._match_pattern(expected, 123))
-
-    def test_match_pattern_any_string_with_mid_gap(self):
-        expected = {
-            payload_examples._ANY_STRING_TOKEN: [
-                "prefix",
-                payload_examples._MID_STRING_GAP_TOKEN,
-                "suffix",
-            ]
-        }
-
-        self.assertTrue(payload_examples._match_pattern(expected, "prefix---suffix"))
-        self.assertFalse(payload_examples._match_pattern(expected, "prefix---suf"))
 
     def test_match_pattern_invalid_any_string_payload_fails_fast(self):
         expected = {payload_examples._ANY_STRING_TOKEN: "not-a-list-or-bool"}

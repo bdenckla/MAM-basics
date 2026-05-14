@@ -1,8 +1,8 @@
 {
   "tmpl_name": "מ:כפול",
   "tmpl_params": {
-    "כפול": {"__verify_mp_any_string__": ["__verify_mp_string_gap__"]},
-    "א": {"__verify_mp_any_string__": ["__verify_mp_string_gap__"]},
-    "ב": {"__verify_mp_any_string__": ["__verify_mp_string_gap__"]}
+    "כפול": {"__verify_mp_any_string_dict_or_list__": true},
+    "א": {"__verify_mp_any_string_dict_or_list__": true},
+    "ב": {"__verify_mp_any_string_dict_or_list__": true}
   }
 }

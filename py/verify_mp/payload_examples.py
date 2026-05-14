@@ -8,31 +8,27 @@ This module intentionally implements a small custom JSON pattern-matching
 language. We considered off-the-shelf approaches (for example JSON Schema and
 JSONPath/JMESPath), but they were not a clean fit for this use case, which
 needs all of the following at once: exact-key object matching, ordered list
-matching with explicit wildcard gaps, anchored tokenized string-gap matching,
-and recursive "match anywhere in subtree" search over JSON-like nodes.
+matching, and recursive "match anywhere in subtree" search over JSON-like
+nodes.
 
 Snippet wildcard semantics are encoded explicitly with strict-JSON tokens:
 - "__verify_mp_any_value__" as a wildcard value
-- "__verify_mp_list_gap__" as a wildcard list subsequence
 - {"__verify_mp_any_dict__": true} as a dict wildcard
 - {"__verify_mp_any_list__": true} as a list wildcard
 - {"__verify_mp_any_string__": true} as an any-string wildcard
-- {"__verify_mp_any_string__": ["lit", "__verify_mp_string_gap__", "lit"]}
-    as a tokenized mid-string wildcard pattern
+- {"__verify_mp_any_string_dict_or_list__": true} as a string/dict/list wildcard
 """
 
 import json
-import re
 
 from author_util.claim import ClaimRecord
 from verify_mp.corpus import Context
 
 _ANY_VALUE_TOKEN = "__verify_mp_any_value__"
-_LIST_GAP_TOKEN = "__verify_mp_list_gap__"
 _ANY_DICT_MARKER_KEY = "__verify_mp_any_dict__"
 _ANY_LIST_MARKER_KEY = "__verify_mp_any_list__"
 _ANY_STRING_TOKEN = "__verify_mp_any_string__"
-_MID_STRING_GAP_TOKEN = "__verify_mp_string_gap__"
+_ANY_STRING_DICT_OR_LIST_MARKER_KEY = "__verify_mp_any_string_dict_or_list__"
 
 
 def is_example_claim(record: ClaimRecord) -> bool:
@@ -107,6 +103,8 @@ def _match_pattern(expected, actual) -> bool:
             return isinstance(actual, dict)
         if expected == {_ANY_LIST_MARKER_KEY: True}:
             return isinstance(actual, list)
+        if expected == {_ANY_STRING_DICT_OR_LIST_MARKER_KEY: True}:
+            return isinstance(actual, (str, dict, list))
         if _ANY_STRING_TOKEN in expected:
             assert (
                 len(expected) == 1
@@ -123,7 +121,9 @@ def _match_pattern(expected, actual) -> bool:
     if isinstance(expected, list):
         if not isinstance(actual, list):
             return False
-        return _match_list_pattern(expected, actual)
+        if len(expected) != len(actual):
+            return False
+        return all(_match_pattern(exp, act) for exp, act in zip(expected, actual))
 
     return expected == actual
 
@@ -136,63 +136,4 @@ def _match_any_string_pattern(pattern, actual) -> bool:
     if pattern is True:
         return True
 
-    if isinstance(pattern, list):
-        return _match_string_parts(pattern, actual)
-
-    assert False, (
-        "invalid any-string token payload; expected true or list of parts: "
-        f"{pattern!r}"
-    )
-
-
-def _match_string_parts(parts: list, actual: str) -> bool:
-    """Match a string from literal parts and explicit mid-string gap tokens."""
-    for part in parts:
-        assert isinstance(part, str), f"string parts must be strings: {parts!r}"
-
-    regex = "^"
-    for part in parts:
-        if part == _MID_STRING_GAP_TOKEN:
-            regex += ".*"
-            continue
-        regex += re.escape(part)
-    regex += "$"
-    return re.match(regex, actual) is not None
-
-
-def _match_list_pattern(expected: list, actual: list) -> bool:
-    """List matcher where _LIST_GAP_TOKEN in expected means any subsequence."""
-    memo: dict[tuple[int, int], bool] = {}
-
-    def _rec(i: int, j: int) -> bool:
-        key = (i, j)
-        if key in memo:
-            return memo[key]
-
-        if i == len(expected):
-            result = j == len(actual)
-            memo[key] = result
-            return result
-
-        token = expected[i]
-        if token == _LIST_GAP_TOKEN:
-            for next_j in range(j, len(actual) + 1):
-                if _rec(i + 1, next_j):
-                    memo[key] = True
-                    return True
-            memo[key] = False
-            return False
-
-        if j == len(actual):
-            memo[key] = False
-            return False
-
-        if _match_pattern(token, actual[j]):
-            result = _rec(i + 1, j + 1)
-            memo[key] = result
-            return result
-
-        memo[key] = False
-        return False
-
-    return _rec(0, 0)
+    assert False, f"invalid any-string token payload; expected true: {pattern!r}"
