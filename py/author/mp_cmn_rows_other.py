@@ -7,6 +7,7 @@ from author_util import author
 _claim_def = _claims_core.claim_def
 
 _GOOD_ENDING_DOC = "mpplus_good_ending.html"
+_NUSACH_DOC = "mpplus_nusach.html"
 
 OTHER_ROWS = [
     [
@@ -62,7 +63,14 @@ OTHER_ROWS = [
     ],
     [
         author.hbo("נוסח"),
-        "Documentation template. Param 1 is the target text; param 2 is the documentation note.",
+        [
+            "Documentation template. See ",
+            author.anchor_h(
+                "its dedicated page",
+                _NUSACH_DOC,
+            ),
+            ".",
+        ],
     ],
     [
         author.hbo("מודגש"),

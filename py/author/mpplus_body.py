@@ -19,6 +19,7 @@ _KQ_SPECIAL_DOC = "mpplus_kq_special.html"
 _HAARAH_2_DOC = "mpplus_haarah_2.html"
 _KAFUL_DOC = "mpplus_kaful.html"
 _GOOD_ENDING_DOC = "mpplus_good_ending.html"
+_NUSACH_DOC = "mpplus_nusach.html"
 
 _PLUS_COMMON_TEMPLATES = [
     "כו״ק",
@@ -486,10 +487,6 @@ def s_common_templates(*, claims: ClaimCollection):
     )
     cmn.emit_claim_by_id(claims=claims, claim_id="mp.plus.templates.plus-only.set")
 
-    json_nusach_plus = cmn.emit_claim_by_id(
-        claims=claims,
-        claim_id="mp.plus.example.nusach",
-    )
     kq_rows = cmn.emit_claim_by_id(claims=claims, claim_id="mp.both.templates.kq.set")
     cmn.emit_claim_by_id(
         claims=claims,
@@ -545,12 +542,11 @@ def s_common_templates(*, claims: ClaimCollection):
         author.heading_level_3("Documentation template (נוסח)"),
         author.para(
             [
-                "The first parameter is the “target” — what is being documented."
-                " The second parameter contains the documentation"
-                " (anomalous forms, variant readings, uncertain readings, etc.):",
+                "See ",
+                author.anchor_h("its dedicated page", _NUSACH_DOC),
+                ".",
             ]
         ),
-        json_block.json_block_raw_html(json_nusach_plus),
         author.heading_level_3("$Ketiv_qere templates"),
         author.std_table(kq_rows, arg_to_troh=["Template", "Purpose"]),
         author.para(
