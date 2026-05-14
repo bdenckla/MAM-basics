@@ -18,7 +18,6 @@ _FNAME = "mpplain_nusach.html"
 _TITLE = "Documentation template (נוסח) in plain format"
 
 _PLAIN_DOC = "mpplain.html"
-_PLUS_NUSACH_DOC = "mpplus_nusach.html"
 
 
 def gen_html_file(tdm_ch, claims: ClaimCollection):
@@ -33,10 +32,6 @@ def build_body(*, claims: ClaimCollection):
         claim_id="mp.plain.example.nusach",
     )
     plain_back_link = author.anchor_h("Reading $MAM-parsed-plain", _PLAIN_DOC)
-    plus_nusach_link = author.anchor_h(
-        "plus-format נוסח page",
-        _PLUS_NUSACH_DOC,
-    )
     return [
         author.heading_level_1(
             ["Documentation template (", author.hbo("נוסח"), ") in plain format"]
