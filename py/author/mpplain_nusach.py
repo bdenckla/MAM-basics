@@ -15,7 +15,7 @@ from author_util.claim import ClaimCollection
 from author import mp_cmn as cmn
 
 _FNAME = "mpplain_nusach.html"
-_TITLE = "Documentation template (נוסח) in plain format"
+_TITLE = "Documentation template (נוסח)"
 
 _PLAIN_DOC = "mpplain.html"
 
@@ -34,7 +34,7 @@ def build_body(*, claims: ClaimCollection):
     plain_back_link = author.anchor_h("Reading $MAM-parsed-plain", _PLAIN_DOC)
     return [
         author.heading_level_1(
-            ["Documentation template (", author.hbo("נוסח"), ") in plain format"]
+            ["Documentation template (", author.hbo("נוסח"), ")"]
         ),
         author.para(["← Back to ", plain_back_link]),
         author.para(

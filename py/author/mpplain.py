@@ -396,8 +396,8 @@ def s_verse(*, claims: ClaimCollection):
 
 def _s_template_objects():
     return [
-        author.heading_level_2("Template objects in plain"),
-        author.para("The plain format uses three kinds of template objects:"),
+        author.heading_level_2("Template objects"),
+        author.para("Three kinds of template objects are used:"),
         author.heading_level_3("1. Stringified template (stmpl)"),
         author.para(
             [

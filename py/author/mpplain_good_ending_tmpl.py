@@ -15,7 +15,7 @@ from author_util.claim import ClaimCollection
 from author import mp_cmn_json_snippets as jsnip
 
 _FNAME = "mpplain_good_ending_tmpl.html"
-_TITLE = "Good-ending template (מ:סיום בטוב) in plain format"
+_TITLE = "Good-ending template (מ:סיום בטוב)"
 
 _PLAIN_DOC = "mpplain.html"
 
@@ -34,7 +34,7 @@ def build_body(*, claims: ClaimCollection):
     plain_back_link = author.anchor_h("Reading $MAM-parsed-plain", _PLAIN_DOC)
     return [
         author.heading_level_1(
-            ["Good-ending template (", author.hbo("מ:סיום בטוב"), ") in plain format"]
+            ["Good-ending template (", author.hbo("מ:סיום בטוב"), ")"]
         ),
         author.para(["← Back to ", plain_back_link]),
         author.para(

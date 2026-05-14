@@ -15,7 +15,7 @@ from author_util.claim import ClaimCollection
 from author import mp_cmn as cmn
 
 _FNAME = "mpplus_nusach.html"
-_TITLE = "Documentation template (נוסח) in plus format"
+_TITLE = "Documentation template (נוסח)"
 
 _PLUS_DOC = "mpplus.html"
 
@@ -34,7 +34,7 @@ def build_body(*, claims: ClaimCollection):
     plus_back_link = author.anchor_h("Reading $MAM-parsed-plus", _PLUS_DOC)
     return [
         author.heading_level_1(
-            ["Documentation template (", author.hbo("נוסח"), ") in plus format"]
+            ["Documentation template (", author.hbo("נוסח"), ")"]
         ),
         author.para(["← Back to ", plus_back_link]),
         author.para(

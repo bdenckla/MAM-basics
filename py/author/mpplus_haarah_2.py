@@ -64,7 +64,7 @@ def build_body(*, claims: ClaimCollection):
                 author.hbo("מ:הערה"),
                 " is no longer retained alongside ",
                 author.hbo("מ:הערה-2"),
-                " in plus."
+                "."
                 " This intentionally drops one edge-case distinction at Deut 11:21:"
                 " the star marker can indicate pre-word or post-word position"
                 " ("

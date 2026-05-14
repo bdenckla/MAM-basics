@@ -21,7 +21,6 @@ def build_body(
     claims: ClaimCollection,
     back_doc: str,
     back_label: str,
-    heading_suffix: str,
     example_json: str,
 ):
     """Build common dedicated-page body for מ:קו״כ-אם-2."""
@@ -30,8 +29,7 @@ def build_body(
         author.heading_level_1(
             [
                 "Trivial $ketiv_qere — ",
-                author.hbo("מ:קו״כ-אם-2"),
-                heading_suffix,
+                author.hbo("מ:קו״כ-אם-2")
             ]
         ),
         author.para(["← Back to ", back_link]),

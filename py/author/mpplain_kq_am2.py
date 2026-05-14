@@ -15,7 +15,7 @@ from author import mp_kq_am2_common as common
 from author import mp_cmn_json_snippets as jsnip
 
 _FNAME = "mpplain_kq_am2.html"
-_TITLE = "Trivial ketiv/qere in plain format"
+_TITLE = "Trivial ketiv/qere"
 
 _PLAIN_DOC = "mpplain.html"
 
@@ -33,7 +33,6 @@ def build_body(*, claims: ClaimCollection):
         claims=claims,
         back_doc=_PLAIN_DOC,
         back_label="Reading $MAM-parsed-plain",
-        heading_suffix=" in plain format",
         example_json=_JSON_KQ_AM2_PLAIN,
     )
 

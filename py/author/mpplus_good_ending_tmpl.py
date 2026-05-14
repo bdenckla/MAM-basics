@@ -16,7 +16,7 @@ from author import mp_cmn_json_snippets as jsnip
 from mb_misc import mb_html
 
 _FNAME = "mpplus_good_ending_tmpl.html"
-_TITLE = "Good-ending template (מ:סיום בטוב) in plus format"
+_TITLE = "Good-ending template (מ:סיום בטוב)"
 
 _PLUS_DOC = "mpplus.html"
 
@@ -35,7 +35,7 @@ def build_body(*, claims: ClaimCollection):
     plus_back_link = author.anchor_h("Reading $MAM-parsed-plus", _PLUS_DOC)
     return [
         author.heading_level_1(
-            ["Good-ending template (", author.hbo("מ:סיום בטוב"), ") in plus format"]
+            ["Good-ending template (", author.hbo("מ:סיום בטוב"), ")"]
         ),
         author.para(["← Back to ", plus_back_link]),
         author.para(
