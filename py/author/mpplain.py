@@ -15,10 +15,12 @@ from author_util import json_block
 from author_util.claim import ClaimCollection
 from author import mp_cmn as cmn
 from author import mp_cmn_json_snippets as jsnip
+from author import mp_kq_am2_common as kq_am2_common
 from author import mp_cmn_top_header_book39 as thb
 
 _FNAME = "mpplain.html"
 _TITLE = "Reading MAM-parsed-plain"
+_KQ_AM2_DOC = "mpplain_kq_am2.html"
 _NUSACH_DOC = "mpplain_nusach.html"
 
 _JSON_INDEX_0 = jsnip.read_text("mpplain", "index_0.json")
@@ -440,7 +442,10 @@ def _s_common_templates(*, claims: ClaimCollection):
         claim_id="mp.both.templates.sh.only-in-nusach-param2",
     )
 
-    kq_rows = cmn.emit_claim_by_id(claims=claims, claim_id="mp.both.templates.kq.set")
+    kq_rows = kq_am2_common.with_dedicated_page_link(
+        cmn.emit_claim_by_id(claims=claims, claim_id="mp.both.templates.kq.set"),
+        doc_name=_KQ_AM2_DOC,
+    )
     kq_special_rows = cmn.emit_claim_by_id(
         claims=claims,
         claim_id="mp.both.templates.kq-special.subtypes",

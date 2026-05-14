@@ -6,6 +6,7 @@ from author_util import author
 from author_util import json_block
 from author_util.claim import ClaimCollection
 from author import mp_cmn as cmn
+from author import mp_kq_am2_common as kq_am2_common
 from author import mp_cmn_json_snippets as jsnip
 from author import mp_cmn_top_header_book39 as thb
 
@@ -15,6 +16,7 @@ _DIFF_FROM_PLAIN_DOC = "mpplus_diff_from_plain.html"
 _PLAIN_ONLY_TEMPLATES_DOC = "mpplus_plain_only_templates.html"
 
 _AOT_DOC = "mpplus_aot.html"
+_KQ_AM2_DOC = "mpplus_kq_am2.html"
 _KQ_SPECIAL_DOC = "mpplus_kq_special.html"
 _HAARAH_2_DOC = "mpplus_haarah_2.html"
 _KAFUL_DOC = "mpplus_kaful.html"
@@ -490,7 +492,10 @@ def s_common_templates(*, claims: ClaimCollection):
     )
     cmn.emit_claim_by_id(claims=claims, claim_id="mp.plus.templates.plus-only.set")
 
-    kq_rows = cmn.emit_claim_by_id(claims=claims, claim_id="mp.both.templates.kq.set")
+    kq_rows = kq_am2_common.with_dedicated_page_link(
+        cmn.emit_claim_by_id(claims=claims, claim_id="mp.both.templates.kq.set"),
+        doc_name=_KQ_AM2_DOC,
+    )
     cmn.emit_claim_by_id(
         claims=claims,
         claim_id="mp.both.templates.kq-special.subtypes",
@@ -498,10 +503,6 @@ def s_common_templates(*, claims: ClaimCollection):
     cmn.emit_claim_by_id(
         claims=claims,
         claim_id="mp.both.templates.kq-special.subtype-counts",
-    )
-    kq_am2_sug_list = cmn.emit_claim_by_id(
-        claims=claims,
-        claim_id="mp.both.templates.kq-am2.sug-values",
     )
     json_kq_plus = cmn.emit_claim_by_id(claims=claims, claim_id="mp.plus.example.kq")
     special_letter_rows = cmn.emit_claim_by_id(
@@ -544,16 +545,6 @@ def s_common_templates(*, claims: ClaimCollection):
         ),
         author.heading_level_3("$Ketiv_qere templates"),
         author.std_table(kq_rows, arg_to_troh=["Template", "Purpose"]),
-        author.para(
-            [
-                "Current values observed for optional ",
-                author.hbo("סוג="),
-                " in ",
-                author.hbo("מ:קו״כ-אם-2"),
-                ":",
-            ]
-        ),
-        author.unordered_list(kq_am2_sug_list),
         author.para("Example of standard $ketiv_qere:"),
         json_block.json_block_raw_html(json_kq_plus),
         author.heading_level_3("Special letter templates"),

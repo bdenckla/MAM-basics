@@ -12,11 +12,13 @@ def _run_mam_parsed_authored_traversal(*, claims: ClaimCollection, tdm_ch=None):
     from author import mpplain
     from author import mpplus
     from author import mpplus_aot
+    from author import mpplus_kq_am2
     from author import mpplus_kq_special
     from author import mpplus_haarah_2
     from author import mpplus_kaful
     from author import mpplus_good_ending
     from author import mpplus_nusach
+    from author import mpplain_kq_am2
     from author import mpplain_nusach
     from author import mpplus_diff_from_plain
     from author import mpplus_plain_only_templates
@@ -25,11 +27,13 @@ def _run_mam_parsed_authored_traversal(*, claims: ClaimCollection, tdm_ch=None):
         mpplain.build_body(claims=claims)
         mpplus.build_body(claims=claims)
         mpplus_aot.build_body(claims=claims)
+        mpplus_kq_am2.build_body(claims=claims)
         mpplus_kq_special.build_body(claims=claims)
         mpplus_haarah_2.build_body(claims=claims)
         mpplus_kaful.build_body(claims=claims)
         mpplus_good_ending.build_body(claims=claims)
         mpplus_nusach.build_body(claims=claims)
+        mpplain_kq_am2.build_body(claims=claims)
         mpplain_nusach.build_body(claims=claims)
         mpplus_diff_from_plain.build_body(claims=claims)
         mpplus_plain_only_templates.build_body(claims=claims)
@@ -38,11 +42,13 @@ def _run_mam_parsed_authored_traversal(*, claims: ClaimCollection, tdm_ch=None):
     mpplain.gen_html_file(tdm_ch, claims=claims)
     mpplus.gen_html_file(tdm_ch, claims=claims)
     mpplus_aot.gen_html_file(tdm_ch, claims=claims)
+    mpplus_kq_am2.gen_html_file(tdm_ch, claims=claims)
     mpplus_kq_special.gen_html_file(tdm_ch, claims=claims)
     mpplus_haarah_2.gen_html_file(tdm_ch, claims=claims)
     mpplus_kaful.gen_html_file(tdm_ch, claims=claims)
     mpplus_good_ending.gen_html_file(tdm_ch, claims=claims)
     mpplus_nusach.gen_html_file(tdm_ch, claims=claims)
+    mpplain_kq_am2.gen_html_file(tdm_ch, claims=claims)
     mpplain_nusach.gen_html_file(tdm_ch, claims=claims)
     mpplus_diff_from_plain.gen_html_file(tdm_ch, claims=claims)
     mpplus_plain_only_templates.gen_html_file(tdm_ch, claims=claims)
