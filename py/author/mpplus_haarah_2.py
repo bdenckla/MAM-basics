@@ -9,8 +9,6 @@ To regenerate the output HTML, run from the repo root::
 Output goes to ../MAM-parsed/gh-pages/mpplus_haarah_2.html.
 """
 
-import json
-
 from mb_misc import mb_html
 from author_util import author
 from author_util import json_block
@@ -23,36 +21,6 @@ _TITLE = "Targeted scroll-difference note"
 _PLUS_DOC = "mpplus.html"
 
 _JSON_HAARAH_2 = jsnip.read_text("mpplus_haarah_2", "haarah_2.json")
-
-_JSON_HAARAH_2_IN_CONTEXT_TEXT = jsnip.read_text(
-    "mpplus_haarah_2", "haarah_2_in_context.json"
-)
-
-_HAARAH_2_IN_CONTEXT_CLAIM_ID = "mp.plus.example.haarah-2-context"
-_HAARAH_2_IN_CONTEXT_CLAIM_DATA = json.loads(_JSON_HAARAH_2_IN_CONTEXT_TEXT)
-
-
-def _emit_claim_payload(
-    claims: ClaimCollection,
-    claim_id: str,
-    payload,
-    *,
-    kind: str,
-    subject: str,
-    data=None,
-):
-    return claims.claim(claim_id, payload, kind=kind, subject=subject, data=data)
-
-
-def _haarah_2_in_context(*, claims: ClaimCollection):
-    return _emit_claim_payload(
-        claims,
-        _HAARAH_2_IN_CONTEXT_CLAIM_ID,
-        _JSON_HAARAH_2_IN_CONTEXT_TEXT,
-        kind="example",
-        subject="mp:plus",
-        data=_HAARAH_2_IN_CONTEXT_CLAIM_DATA,
-    )
 
 
 def gen_html_file(tdm_ch, claims: ClaimCollection):
@@ -108,8 +76,6 @@ def build_body(*, claims: ClaimCollection):
                 ").",
             ]
         ),
-        author.heading_level_2("Example in context"),
-        json_block.json_block_raw_html(_haarah_2_in_context(claims=claims)),
     ]
 
 

@@ -546,15 +546,6 @@ def _match_list_with_tokens(expected: list, actual: list) -> bool:
     return _rec(0, 0)
 
 
-def verify_mp_plus_example_haarah_2_context(record: ClaimRecord, ctx: Context) -> None:
-    """The מ:הערה-2 context example occurs with strict tokenized wildcards."""
-    target = record.data
-    for _book39, _ch_key, _v_key, verse in iter_verses(ctx.corpus):
-        if _match_with_tokens(target, verse[2]):
-            return
-    assert False, f"plus E-column example pattern not found: {target!r}"
-
-
 def verify_mp_plus_example_header_job(record: ClaimRecord, ctx: Context) -> None:
     """A Job-like plus header example occurs at least once in the plus corpus."""
 
