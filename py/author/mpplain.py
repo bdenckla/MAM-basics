@@ -15,12 +15,15 @@ from author_util import json_block
 from author_util.claim import ClaimCollection
 from author import mp_cmn as cmn
 from author import mp_cmn_json_snippets as jsnip
+from author import mp_cmn_dedicated_rows as dedicated_rows
 from author import mp_kq_am2_common as kq_am2_common
 from author import mp_cmn_top_header_book39 as thb
 
 _FNAME = "mpplain.html"
 _TITLE = "Reading MAM-parsed-plain"
 _KQ_AM2_DOC = "mpplain_kq_am2.html"
+_KQ_SPECIAL_DOC = "mpplain_kq_special.html"
+_KAFUL_DOC = "mpplain_kaful.html"
 _NUSACH_DOC = "mpplain_nusach.html"
 
 _JSON_INDEX_0 = jsnip.read_text("mpplain", "index_0.json")
@@ -159,6 +162,8 @@ def _s_intro():
             "The $MAM-parsed-plain JSON files are formed by parsing the Wikitext"
             " in the $MAM Google Sheet with minimal post-processing."
         ),
+        # Normally we avoid mentioning "plus" in "plain" and vice versa,
+        # but this is an intentional exception to the rule.
         author.para(
             "Use plain when you want a representation that stays close to the"
             " $MAM Google Sheet."
@@ -446,6 +451,10 @@ def _s_common_templates(*, claims: ClaimCollection):
         cmn.emit_claim_by_id(claims=claims, claim_id="mp.both.templates.kq.set"),
         doc_name=_KQ_AM2_DOC,
     )
+    kq_rows = dedicated_rows.with_kq_special_dedicated_page_link(
+        kq_rows,
+        doc_name=_KQ_SPECIAL_DOC,
+    )
     kq_special_rows = cmn.emit_claim_by_id(
         claims=claims,
         claim_id="mp.both.templates.kq-special.subtypes",
@@ -477,7 +486,10 @@ def _s_common_templates(*, claims: ClaimCollection):
     )
 
     plain_accent_rows = cmn.accent_rows_for_templates(_PLAIN_ACCENT_TEMPLATES)
-    plain_choice_rows = cmn.accent_rows_for_templates(_CHOICE_TEMPLATES)
+    plain_choice_rows = dedicated_rows.with_kaful_dedicated_page_link(
+        cmn.accent_rows_for_templates(_CHOICE_TEMPLATES),
+        doc_name=_KAFUL_DOC,
+    )
     plain_multimark_rows = [
         *cmn.accent_rows_for_templates(_MULTIMARK_TEMPLATES[:2]),
         *cmn.other_rows_for_templates(_MULTIMARK_TEMPLATES[2:]),

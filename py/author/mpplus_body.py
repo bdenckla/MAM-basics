@@ -6,6 +6,7 @@ from author_util import author
 from author_util import json_block
 from author_util.claim import ClaimCollection
 from author import mp_cmn as cmn
+from author import mp_cmn_dedicated_rows as dedicated_rows
 from author import mp_kq_am2_common as kq_am2_common
 from author import mp_cmn_json_snippets as jsnip
 from author import mp_cmn_top_header_book39 as thb
@@ -187,6 +188,8 @@ def _json_nested(*, claims: ClaimCollection):
 
 def s_intro():
     return [
+        # Normally we avoid mentioning "plain" in "plus" and vice versa,
+        # but this is an intentional exception to the rule.
         author.para(
             "The $MAM-parsed-plus JSON files are formed by:"
             " (a) parsing the Wikitext in the $MAM Google Sheet"
@@ -496,6 +499,10 @@ def s_common_templates(*, claims: ClaimCollection):
         cmn.emit_claim_by_id(claims=claims, claim_id="mp.both.templates.kq.set"),
         doc_name=_KQ_AM2_DOC,
     )
+    kq_rows = dedicated_rows.with_kq_special_dedicated_page_link(
+        kq_rows,
+        doc_name=_KQ_SPECIAL_DOC,
+    )
     cmn.emit_claim_by_id(
         claims=claims,
         claim_id="mp.both.templates.kq-special.subtypes",
@@ -520,7 +527,10 @@ def s_common_templates(*, claims: ClaimCollection):
     note_row = cmn.emit_claim_by_id(claims=claims, claim_id="mp.both.templates.note")
 
     plus_accent_rows = cmn.accent_rows_for_templates(_PLUS_ACCENT_TEMPLATES)
-    plus_choice_rows = cmn.accent_rows_for_templates(_CHOICE_TEMPLATES)
+    plus_choice_rows = dedicated_rows.with_kaful_dedicated_page_link(
+        cmn.accent_rows_for_templates(_CHOICE_TEMPLATES),
+        doc_name=_KAFUL_DOC,
+    )
 
     _emit_claim_payload(
         claims,

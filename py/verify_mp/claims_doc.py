@@ -5,6 +5,7 @@ from typing import Mapping
 
 from author_util.claim import ClaimCollection, ClaimRecord
 from verify_mp import driver as _driver
+from verify_mp import payload_examples
 from verify_mp import verifiers_plus, verifiers_both, verifiers_plain
 
 _OUT_PATH = "doc/mp-claims.md"
@@ -52,10 +53,25 @@ def generate(claims: ClaimCollection | Mapping[str, ClaimRecord]) -> str:
     ]
 
     for _claim_id, record in sorted(records.items()):
-        fn = _find_verifier_fn(record.id)
-        if fn is not None:
-            fn_name = fn.__name__
-            docstring = _fn_docstring(fn)
+        specific_fn = _find_verifier_fn(record.id)
+        has_generic_example_verifier = payload_examples.is_example_claim(record)
+
+        verifier_names = []
+        verifier_docstrings = []
+
+        if has_generic_example_verifier:
+            verifier_names.append("verify_example_payload (generic)")
+            verifier_docstrings.append(
+                _fn_docstring(payload_examples.verify_example_payload)
+            )
+
+        if specific_fn is not None:
+            verifier_names.append(specific_fn.__name__)
+            verifier_docstrings.append(_fn_docstring(specific_fn))
+
+        if verifier_names:
+            fn_name = " + ".join(verifier_names)
+            docstring = " + ".join(verifier_docstrings)
         else:
             fn_name = "pending"
             docstring = ""
