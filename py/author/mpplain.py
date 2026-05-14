@@ -523,15 +523,18 @@ def _s_common_templates(*, claims: ClaimCollection):
         json_block.json_block_raw_html(json_kq),
         author.heading_level_3("Special letter templates"),
         author.std_table(special_letter_rows, arg_to_troh=["Template", "Purpose"]),
-        author.heading_level_3("Accent and cantillation templates"),
+        author.heading_level_3("Accent, vowel, and punctuation templates"),
         author.std_table(
             plain_accent_rows,
             arg_to_troh=["Template", "Purpose"],
         ),
         author.heading_level_3("Jerusalem spelling"),
         author.std_table(jer_rows, arg_to_troh=["Template", "Purpose"]),
-        author.heading_level_3("Poetic form templates (ספרי אמת)"),
-        author.std_table(poetic_rows, arg_to_troh=["Template", "Purpose"]),
+        author.heading_level_3("Whitespace templates"),
+        author.std_table(
+            cmn.whitespace_rows_shared() + poetic_rows,
+            arg_to_troh=["Template", "Purpose"],
+        ),
         author.para(
             "Many editions will choose to skip poetic formatting by treating"
             " ר0–ר4 as simple word spaces."
@@ -541,7 +544,7 @@ def _s_common_templates(*, claims: ClaimCollection):
             [cmn.NOTE_ROW_PLAIN],
             arg_to_troh=["Template", "Purpose"],
         ),
-        author.heading_level_3("Other templates"),
+        author.heading_level_3("Documentation templates"),
         author.std_table(
             cmn.other_rows_shared_core() + cmn.other_rows_plain_extras(),
             arg_to_troh=["Template", "Purpose"],

@@ -48,6 +48,7 @@ SH_ONLY_IN_NUSACH_PARAM2 = _rows_other.SH_ONLY_IN_NUSACH_PARAM2
 OTHER_ROW_TEMPLATE_NAMES = _rows_other.OTHER_ROW_TEMPLATE_NAMES
 OTHER_ROW_BY_TEMPLATE = _rows_other.OTHER_ROW_BY_TEMPLATE
 other_rows_for_templates = _rows_other.other_rows_for_templates
+whitespace_rows_shared = _rows_other.whitespace_rows_shared
 other_rows_shared_core = _rows_other.other_rows_shared_core
 other_rows_plain_extras = _rows_other.other_rows_plain_extras
 

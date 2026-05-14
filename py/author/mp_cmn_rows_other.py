@@ -156,7 +156,7 @@ def other_rows_for_templates(template_names):
     return [OTHER_ROW_BY_TEMPLATE[n] for n in template_names]
 
 
-def other_rows_shared_core():
+def whitespace_rows_shared():
     return [
         [
             [
@@ -171,6 +171,11 @@ def other_rows_shared_core():
             "Parashah petuhah / setumah variants.",
         ],
         OTHER_ROW_BY_TEMPLATE["מ:ששש"],
+    ]
+
+
+def other_rows_shared_core():
+    return [
         OTHER_ROW_BY_TEMPLATE["נוסח"],
         OTHER_ROW_BY_TEMPLATE["מודגש"],
         OTHER_ROW_BY_TEMPLATE["ש"],

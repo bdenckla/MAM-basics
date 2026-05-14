@@ -585,14 +585,15 @@ def s_common_templates(*, claims: ClaimCollection):
             ],
             arg_to_troh=["Template", "Purpose"],
         ),
-        author.heading_level_3("Accent and cantillation templates"),
+        author.heading_level_3("Accent, vowel, and punctuation templates"),
         author.std_table(
             plus_accent_rows,
             arg_to_troh=["Template", "Purpose"],
         ),
-        author.heading_level_3("Poetic form templates (ספרי אמת)"),
+        author.heading_level_3("Whitespace templates"),
         author.std_table(
-            [row for row in poetic_rows if row[0] != author.hbo("פרשה-מרכז")],
+            cmn.whitespace_rows_shared()
+            + [row for row in poetic_rows if row[0] != author.hbo("פרשה-מרכז")],
             arg_to_troh=["Template", "Purpose"],
         ),
         author.para(
@@ -604,7 +605,7 @@ def s_common_templates(*, claims: ClaimCollection):
             [note_row],
             arg_to_troh=["Template", "Purpose"],
         ),
-        author.heading_level_3("Other templates"),
+        author.heading_level_3("Documentation templates"),
         author.std_table(
             cmn.other_rows_shared_core(),
             arg_to_troh=["Template", "Purpose"],
