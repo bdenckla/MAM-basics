@@ -195,6 +195,14 @@ class TestVerifyMpPayloadExamples(unittest.TestCase):
 
         self.assertEqual([], failures, msg="\n".join(failures))
 
+    def test_nested_tmpl_example_uses_narrow_wildcard_token(self):
+        claims = mam_parsed_docs_build.collect_explicit_claims()
+        record = claims.records_by_id["mp.plus.example.nested-tmpl"]
+
+        self.assertIsInstance(record.payload, str)
+        self.assertNotIn("__verify_mp_any_value__", record.payload)
+        self.assertIn("__verify_mp_any_string_dict_or_list__", record.payload)
+
 
 if __name__ == "__main__":
     unittest.main()
