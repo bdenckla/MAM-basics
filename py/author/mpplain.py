@@ -515,15 +515,11 @@ def _s_common_templates(*, claims: ClaimCollection):
         kq_rows,
         doc_name=_KQ_SPECIAL_DOC,
     )
-    kq_special_rows = cmn.emit_claim_by_id(
-        claims=claims,
-        claim_id="mp.both.templates.kq-special.subtypes",
-    )
     cmn.emit_claim_by_id(
         claims=claims,
         claim_id="mp.both.templates.kq-special.subtype-counts",
     )
-    kq_am2_sug_list = cmn.emit_claim_by_id(
+    cmn.emit_claim_by_id(
         claims=claims,
         claim_id="mp.both.templates.kq-am2.sug-values",
     )
@@ -587,26 +583,6 @@ def _s_common_templates(*, claims: ClaimCollection):
         ),
         author.heading_level_3("$Ketiv_qere templates"),
         author.std_table(kq_rows, arg_to_troh=["Template", "Purpose"]),
-        author.para(
-            [
-                "The nine ",
-                author.hbo("סוג="),
-                " subtypes for ",
-                author.hbo("מ:כו״ק מיוחד"),
-                ":",
-            ]
-        ),
-        author.std_table(kq_special_rows, arg_to_troh=["Type", "Meaning"]),
-        author.para(
-            [
-                "Current values observed for optional ",
-                author.hbo("סוג="),
-                " in ",
-                author.hbo("מ:קו״כ-אם-2"),
-                ":",
-            ]
-        ),
-        author.unordered_list(kq_am2_sug_list),
         author.para("Example of standard $ketiv_qere:"),
         json_block.json_block_raw_html(json_kq),
         author.heading_level_3("Special letter templates"),
