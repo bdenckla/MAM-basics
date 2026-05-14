@@ -563,7 +563,7 @@ def _s_common_templates(*, claims: ClaimCollection):
         ),
         author.heading_level_3("Choice templates"),
         author.para(
-            "Most applications will need to make a choice between two or three options"
+            "Most applications will need to make a choice between the two or three options"
             " presented by these templates."
         ),
         author.std_table(
