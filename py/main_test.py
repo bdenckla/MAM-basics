@@ -115,6 +115,11 @@ TEST_MODULE_SPECS = (
         help_text="Run ws-bot real-run diff-link formatting tests.",
     ),
     TestModuleSpec(
+        flag="undollared-check",
+        module_name="tests.test_undollared_check",
+        help_text="Run undollared accent-name checker tests (Dexi/Tsinnor/Qamats).",
+    ),
+    TestModuleSpec(
         flag="ws-urls-encoding",
         module_name="tests.test_ws_urls_encoding",
         help_text="Run Wikisource URL encoding tests.",

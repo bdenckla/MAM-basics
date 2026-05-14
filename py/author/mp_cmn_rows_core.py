@@ -101,11 +101,11 @@ ACCENT_ROWS = [
     ],
     [
         author.hbo("מ:דחי"),
-        "Deḥi variation. Presents both stress-helped and non-stress-helped versions of a word.",
+        "$Dexi variation. Presents both stress-helped and non-stress-helped versions of a word.",
     ],
     [
         author.hbo("מ:צינור"),
-        "Tsinnor variation. Presents both stress-helped and non-stress-helped versions of a word.",
+        "$Tsinnor variation. Presents both stress-helped and non-stress-helped versions of a word.",
     ],
     [
         author.hbo("גלגל-2"),
@@ -122,7 +122,7 @@ ACCENT_ROWS = [
     [
         author.hbo("מ:קמץ"),
         [
-            "Qamats variation. Named params: ",
+            "$Qamats variation. Named params: ",
             author.hbo("ד="),
             " (grammatical) and ",
             author.hbo("ס="),
