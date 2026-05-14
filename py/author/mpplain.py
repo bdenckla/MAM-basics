@@ -79,14 +79,24 @@ _PLAIN_ACCENT_TEMPLATES = [
     "מ:לגרמיה-2",
     "מ:פסק",
     "מ:מקף אפור",
-    "מ:דחי",
-    "מ:צינור",
     "גלגל-2",
     "ירח בן יומו-2",
-    "מ:קמץ",
     "מ:טעם",
+]
+
+_CHOICE_TEMPLATES = [
+    "מ:דחי",
+    "מ:צינור",
+    "מ:קמץ",
     "מ:כפול",
+]
+
+_MULTIMARK_TEMPLATES = [
     "שני טעמים באות אחת קמץ-תחתון-פתח-עליון",
+    "מ:טעם ומתג באות אחת",
+    "מ:גרש ותלישא גדולה",
+    "מ:גרשיים ותלישא גדולה",
+    "מ:כל קמץ קטן מרכא",
 ]
 
 
@@ -448,7 +458,7 @@ def _s_common_templates(*, claims: ClaimCollection):
         claims=claims,
         claim_id="mp.both.templates.special-letters.set",
     )
-    accent_rows = cmn.emit_claim_by_id(
+    cmn.emit_claim_by_id(
         claims=claims,
         claim_id="mp.both.templates.accents.set",
     )
@@ -461,17 +471,14 @@ def _s_common_templates(*, claims: ClaimCollection):
         claim_id="mp.both.templates.poetic.set",
     )
 
-    accent_row_by_template = dict(zip(cmn.ACCENT_ROW_TEMPLATE_NAMES, accent_rows))
-    plain_accent_rows = [accent_row_by_template[n] for n in _PLAIN_ACCENT_TEMPLATES]
-    plain_extra_accent_rows = cmn.other_rows_for_templates(
-        [
-            "מ:אות מנוקדת",
-            "מ:טעם ומתג באות אחת",
-            "מ:גרש ותלישא גדולה",
-            "מ:גרשיים ותלישא גדולה",
-            "מ:כל קמץ קטן מרכא",
-        ]
-    )
+    plain_accent_rows = cmn.accent_rows_for_templates(_PLAIN_ACCENT_TEMPLATES)
+    plain_choice_rows = cmn.accent_rows_for_templates(_CHOICE_TEMPLATES)
+    plain_multimark_rows = [
+        *cmn.accent_rows_for_templates([_MULTIMARK_TEMPLATES[0]]),
+        *cmn.other_rows_for_templates(_MULTIMARK_TEMPLATES[1:]),
+        *jer_rows,
+    ]
+    plain_extra_accent_rows = cmn.other_rows_for_templates(["מ:אות מנוקדת"])
     whitespace_poetic_rows = cmn.poetic_rows_for_templates(
         ["ר1", "ר2", "ר3", "ר4", "ר0"]
     )
@@ -532,8 +539,20 @@ def _s_common_templates(*, claims: ClaimCollection):
             plain_accent_rows + plain_extra_accent_rows,
             arg_to_troh=["Template", "Purpose"],
         ),
-        author.heading_level_3("Jerusalem spelling"),
-        author.std_table(jer_rows, arg_to_troh=["Template", "Purpose"]),
+        author.heading_level_3("Multimark templates"),
+        author.std_table(
+            plain_multimark_rows,
+            arg_to_troh=["Template", "Purpose"],
+        ),
+        author.heading_level_3("Choice templates"),
+        author.para(
+            "Most applications will need to make a choice between two or three options"
+            " presented by these templates."
+        ),
+        author.std_table(
+            plain_choice_rows,
+            arg_to_troh=["Template", "Purpose"],
+        ),
         author.heading_level_3("Whitespace templates"),
         author.std_table(
             cmn.whitespace_rows_shared()

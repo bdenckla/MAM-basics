@@ -60,6 +60,9 @@ _PLUS_ACCENT_TEMPLATES = [
     "מ:לגרמיה-2",
     "מ:פסק",
     "מ:מקף אפור",
+]
+
+_CHOICE_TEMPLATES = [
     "מ:דחי",
     "מ:צינור",
     "מ:קמץ",
@@ -505,7 +508,7 @@ def s_common_templates(*, claims: ClaimCollection):
         claims=claims,
         claim_id="mp.both.templates.special-letters.set",
     )
-    accent_rows = cmn.emit_claim_by_id(
+    cmn.emit_claim_by_id(
         claims=claims,
         claim_id="mp.both.templates.accents.set",
     )
@@ -515,8 +518,8 @@ def s_common_templates(*, claims: ClaimCollection):
     )
     note_row = cmn.emit_claim_by_id(claims=claims, claim_id="mp.both.templates.note")
 
-    accent_row_by_template = dict(zip(cmn.ACCENT_ROW_TEMPLATE_NAMES, accent_rows))
-    plus_accent_rows = [accent_row_by_template[n] for n in _PLUS_ACCENT_TEMPLATES]
+    plus_accent_rows = cmn.accent_rows_for_templates(_PLUS_ACCENT_TEMPLATES)
+    plus_choice_rows = cmn.accent_rows_for_templates(_CHOICE_TEMPLATES)
 
     _emit_claim_payload(
         claims,
@@ -576,6 +579,15 @@ def s_common_templates(*, claims: ClaimCollection):
         author.heading_level_3("Accent, vowel, and punctuation templates"),
         author.std_table(
             plus_accent_rows,
+            arg_to_troh=["Template", "Purpose"],
+        ),
+        author.heading_level_3("Choice templates"),
+        author.para(
+            "Most applications will need to make a choice between two or three options"
+            " presented by these templates."
+        ),
+        author.std_table(
+            plus_choice_rows,
             arg_to_troh=["Template", "Purpose"],
         ),
         author.heading_level_3("Whitespace templates"),
