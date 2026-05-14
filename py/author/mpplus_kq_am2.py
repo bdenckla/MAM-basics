@@ -16,6 +16,7 @@ from author import mp_cmn_json_snippets as jsnip
 
 _FNAME = "mpplus_kq_am2.html"
 _TITLE = "Trivial ketiv/qere"
+_CLAIM_ID_EXAMPLE_KQ_AM2_PLUS = "mp.plus.example.kq-am2-template-object"
 
 _PLUS_DOC = "mpplus.html"
 
@@ -33,6 +34,9 @@ def build_body(*, claims: ClaimCollection):
         claims=claims,
         back_doc=_PLUS_DOC,
         back_label="Reading $MAM-parsed-plus",
+        claim_id=_CLAIM_ID_EXAMPLE_KQ_AM2_PLUS,
+        claim_kind="example",
+        claim_subject="mp:plus",
         example_json=_JSON_KQ_AM2_PLUS,
     )
 

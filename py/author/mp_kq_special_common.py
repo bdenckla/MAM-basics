@@ -24,10 +24,21 @@ def build_body(
     back_doc: str,
     back_label: str,
     heading_suffix: str,
+    claim_id: str,
+    claim_kind: str,
+    claim_subject: str,
+    claim_data=None,
     example_json: str,
 ):
     """Build common dedicated-page body for מ:כו״ק מיוחד."""
     back_link = author.anchor_h(back_label, back_doc)
+    json_kq_special = claims.claim(
+        claim_id,
+        example_json,
+        kind=claim_kind,
+        subject=claim_subject,
+        data=claim_data,
+    )
     return [
         author.heading_level_1(
             [
@@ -70,5 +81,5 @@ def build_body(
             arg_to_troh=["Type", "Meaning"],
         ),
         author.para("Example (Job 38:1):"),
-        json_block.json_block_raw_html(example_json),
+        json_block.json_block_raw_html(json_kq_special),
     ]

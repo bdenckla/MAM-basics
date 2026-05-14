@@ -16,6 +16,7 @@ from author import mp_cmn_json_snippets as jsnip
 
 _FNAME = "mpplain_kq_am2.html"
 _TITLE = "Trivial ketiv/qere"
+_CLAIM_ID_EXAMPLE_KQ_AM2_PLAIN = "mp.plain.example.kq-am2-template-stmpl"
 
 _PLAIN_DOC = "mpplain.html"
 
@@ -33,6 +34,9 @@ def build_body(*, claims: ClaimCollection):
         claims=claims,
         back_doc=_PLAIN_DOC,
         back_label="Reading $MAM-parsed-plain",
+        claim_id=_CLAIM_ID_EXAMPLE_KQ_AM2_PLAIN,
+        claim_kind="example",
+        claim_subject="mp:plain",
         example_json=_JSON_KQ_AM2_PLAIN,
     )
 

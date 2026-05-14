@@ -33,6 +33,13 @@ _JSON_STMPL = jsnip.read_text("mpplain", "stmpl.json")
 _JSON_TMPL = jsnip.read_text("mpplain", "tmpl_tree.json")
 _JSON_CUSTOM_TAG = jsnip.read_text("mpplain", "custom_tag_pair.json")
 
+_CLAIM_ID_BOOK39_SKEL_COMMON = "mp.plain.docs.book39-skeleton.common"
+_CLAIM_ID_EXAMPLE_INDEX_0 = "mp.plain.example.verse-label-template-object"
+_CLAIM_ID_E_COL_FORMAT = "mp.plain.docs.verse-e-col.mixed-array"
+_CLAIM_ID_EXAMPLE_STMPL = "mp.plain.example.stmpl-format"
+_CLAIM_ID_TMPL_FORMAT = "mp.plain.docs.tmpl-tree-format"
+_CLAIM_ID_CUSTOM_TAG_FORMAT = "mp.plain.docs.custom-tag-format"
+
 _PLAIN_COMMON_TEMPLATES = [
     "כו״ק",
     "קו״כ",
@@ -142,7 +149,7 @@ def build_body(*, claims: ClaimCollection):
         *s_book39(claims=claims),
         *s_chapter(claims=claims),
         *s_verse(claims=claims),
-        *_s_template_objects(),
+        *_s_template_objects(claims=claims),
         *_s_common_templates(claims=claims),
         *_s_pseudo_verses(),
     ]
@@ -210,7 +217,16 @@ def s_book39(*, claims: ClaimCollection):
     )
     return [
         author.heading_level_2("Book39 structure"),
-        json_block.json_block_raw_html(thb.JSON_BOOK39_SKEL_COMMON),
+        json_block.json_block_raw_html(
+            _emit_claim_payload(
+                claims,
+                _CLAIM_ID_BOOK39_SKEL_COMMON,
+                thb.JSON_BOOK39_SKEL_COMMON,
+                kind="struct",
+                subject="mp:plain",
+                data={"book39_keys": thb.BOOK39_KEYS_COMMON},
+            )
+        ),
         author.std_table(_book39_rows, arg_to_troh=["Key", "Type", "Description"]),
     ]
 
@@ -365,7 +381,15 @@ def s_verse(*, claims: ClaimCollection):
                 data={"label_template": "מ:פסוק", "always_present": True},
             )
         ),
-        json_block.json_block_raw_html(_JSON_INDEX_0),
+        json_block.json_block_raw_html(
+            _emit_claim_payload(
+                claims,
+                _CLAIM_ID_EXAMPLE_INDEX_0,
+                _JSON_INDEX_0,
+                kind="example",
+                subject="mp:plain",
+            )
+        ),
         author.para(
             [
                 "The three required parameters are book name (Hebrew alphabet string),"
@@ -390,11 +414,20 @@ def s_verse(*, claims: ClaimCollection):
                 data={"element_types": ["string", "stmpl", "tmpl", "custom_tag"]},
             )
         ),
-        json_block.json_block_raw_html(_JSON_EP_EXAMPLE),
+        json_block.json_block_raw_html(
+            _emit_claim_payload(
+                claims,
+                _CLAIM_ID_E_COL_FORMAT,
+                _JSON_EP_EXAMPLE,
+                kind="format",
+                subject="mp:plain",
+                data={"element_types": ["string", "stmpl"]},
+            )
+        ),
     ]
 
 
-def _s_template_objects():
+def _s_template_objects(*, claims: ClaimCollection):
     return [
         author.heading_level_2("Template objects"),
         author.para("Three kinds of template objects are used:"),
@@ -404,7 +437,15 @@ def _s_template_objects():
                 "Many templates are simple enough to appear as a pipe-delimited string:",
             ]
         ),
-        json_block.json_block_raw_html(_JSON_STMPL),
+        json_block.json_block_raw_html(
+            _emit_claim_payload(
+                claims,
+                _CLAIM_ID_EXAMPLE_STMPL,
+                _JSON_STMPL,
+                kind="example",
+                subject="mp:plain",
+            )
+        ),
         author.para(
             [
                 "This represents the Wikitext ",
@@ -416,7 +457,16 @@ def _s_template_objects():
         ),
         author.heading_level_3("2. Parsed template tree (tmpl)"),
         author.para("Longer and/or more complex templates appear as parse trees:"),
-        json_block.json_block_raw_html(_JSON_TMPL),
+        json_block.json_block_raw_html(
+            _emit_claim_payload(
+                claims,
+                _CLAIM_ID_TMPL_FORMAT,
+                _JSON_TMPL,
+                kind="format",
+                subject="mp:plain",
+                data={"key": "tmpl"},
+            )
+        ),
         author.para(
             [
                 "The first sub-array is the template name."
@@ -426,7 +476,16 @@ def _s_template_objects():
         ),
         author.heading_level_3("3. Custom XML tag (custom_tag)"),
         author.para("Wikitext custom XML tags that appear in pseudo-verses:"),
-        json_block.json_block_raw_html(_JSON_CUSTOM_TAG),
+        json_block.json_block_raw_html(
+            _emit_claim_payload(
+                claims,
+                _CLAIM_ID_CUSTOM_TAG_FORMAT,
+                _JSON_CUSTOM_TAG,
+                kind="format",
+                subject="mp:plain",
+                data={"key": "custom_tag"},
+            )
+        ),
     ]
 
 

@@ -21,6 +21,7 @@ _TITLE = "Word with special letter(s)"
 _PLUS_DOC = "mpplus.html"
 
 _JSON_SPECIAL_LETTER = jsnip.read_text("mpplus_aot", "special_letter.json")
+_CLAIM_ID_AOT_FORMAT = "mp.plus.docs.aot.template-object"
 
 _AOT_INTRO_CLAIM_ID = "mp.plus.templates.aot.arg5-derivable"
 _AOT_INTRO_CLAIM_DATA = {"template": "מ:אות-מיוחדת-במילה"}
@@ -66,13 +67,21 @@ def gen_html_file(tdm_ch, claims: ClaimCollection):
 
 def build_body(*, claims: ClaimCollection):
     back_link = author.anchor_h("Reading $MAM-parsed-plus", _PLUS_DOC)
+    json_special_letter = _emit_claim_payload(
+        claims,
+        _CLAIM_ID_AOT_FORMAT,
+        _JSON_SPECIAL_LETTER,
+        kind="format",
+        subject="mp:plus",
+        data={"tmpl_name": "מ:אות-מיוחדת-במילה"},
+    )
     return [
         author.heading_level_1(
             ["Word with special letter(s) — ", author.hbo("מ:אות-מיוחדת-במילה")]
         ),
         author.para(["← Back to ", back_link]),
         author.para(_aot_intro(claims=claims)),
-        json_block.json_block_raw_html(_JSON_SPECIAL_LETTER),
+        json_block.json_block_raw_html(json_special_letter),
         author.para("Arguments:"),
         author.ordered_list(
             [

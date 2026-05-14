@@ -16,6 +16,7 @@ from author import mp_kq_special_common as kq_special_common
 
 _FNAME = "mpplain_kq_special.html"
 _TITLE = "Special ketiv/qere (plain format)"
+_CLAIM_ID_KQ_SPECIAL_PLAIN = "mp.plain.docs.kq-special.template-stmpl"
 
 _PLAIN_DOC = "mpplain.html"
 
@@ -34,6 +35,10 @@ def build_body(*, claims: ClaimCollection):
         back_doc=_PLAIN_DOC,
         back_label="Reading $MAM-parsed-plain",
         heading_suffix=" (plain format)",
+        claim_id=_CLAIM_ID_KQ_SPECIAL_PLAIN,
+        claim_kind="format",
+        claim_subject="mp:plain",
+        claim_data={"stmpl": "מ:כו״ק מיוחד"},
         example_json=_JSON_KQ_SPECIAL,
     )
 

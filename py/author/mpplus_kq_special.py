@@ -16,6 +16,7 @@ from author import mp_kq_special_common as kq_special_common
 
 _FNAME = "mpplus_kq_special.html"
 _TITLE = "Special ketiv/qere"
+_CLAIM_ID_KQ_SPECIAL_PLUS = "mp.plus.docs.kq-special.template-object"
 
 _PLUS_DOC = "mpplus.html"
 
@@ -34,6 +35,10 @@ def build_body(*, claims: ClaimCollection):
         back_doc=_PLUS_DOC,
         back_label="Reading $MAM-parsed-plus",
         heading_suffix="",
+        claim_id=_CLAIM_ID_KQ_SPECIAL_PLUS,
+        claim_kind="format",
+        claim_subject="mp:plus",
+        claim_data={"tmpl_name": "מ:כו״ק מיוחד"},
         example_json=_JSON_KQ_SPECIAL,
     )
 

@@ -21,10 +21,19 @@ def build_body(
     claims: ClaimCollection,
     back_doc: str,
     back_label: str,
+    claim_id: str,
+    claim_kind: str,
+    claim_subject: str,
     example_json: str,
 ):
     """Build common dedicated-page body for מ:קו״כ-אם-2."""
     back_link = author.anchor_h(back_label, back_doc)
+    json_kq_am2 = claims.claim(
+        claim_id,
+        example_json,
+        kind=claim_kind,
+        subject=claim_subject,
+    )
     return [
         author.heading_level_1(["Trivial $ketiv_qere — ", author.hbo("מ:קו״כ-אם-2")]),
         author.para(["← Back to ", back_link]),
@@ -36,7 +45,7 @@ def build_body(
             ]
         ),
         author.para("Example (Deuteronomy 13:16):"),
-        json_block.json_block_raw_html(example_json),
+        json_block.json_block_raw_html(json_kq_am2),
         author.para(
             [
                 "Current values observed for optional ",
