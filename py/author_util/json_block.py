@@ -9,6 +9,7 @@ overall LTR JSON structure.
 """
 
 import html as html_mod
+import re
 
 from pygments import lex
 from pygments.lexers import JsonLexer
@@ -17,10 +18,16 @@ from pygments.token import Token
 
 from mb_misc import mb_html
 
+_VERIFY_ANY_MARKER_OBJECT_RE = re.compile(
+    r'\{\s*"(?P<key>__verify_mp_any_[a-z_]+__)"\s*:\s*true\s*\}'
+)
+_VERIFY_ANY_MARKER_TOKEN_RE = re.compile(r'"__verify_mp_any_[a-z_]+__"')
+
 
 def json_block_raw_html(json_text: str):
     """Return a raw-HTML htel containing <pre class="json-block">...</pre>."""
-    return mb_html.raw_html(_build_pre_html(json_text, JsonLexer()))
+    masked_json = _mask_verify_wildcards_for_display(json_text)
+    return mb_html.raw_html(_build_pre_html(masked_json, JsonLexer()))
 
 
 def python_block_raw_html(py_text: str):
@@ -33,7 +40,8 @@ def json_block_with_notes_raw_html(json_text: str, notes: dict):
 
     notes: dict mapping 1-based line numbers to plain-text annotation strings.
     """
-    pre_html = _build_pre_html(json_text, JsonLexer(), with_line_nums=True)
+    masked_json = _mask_verify_wildcards_for_display(json_text)
+    pre_html = _build_pre_html(masked_json, JsonLexer(), with_line_nums=True)
     notes_html = _build_notes_html(notes)
     return mb_html.raw_html(pre_html + notes_html)
 
@@ -41,6 +49,21 @@ def json_block_with_notes_raw_html(json_text: str, notes: dict):
 # ---------------------------------------------------------------------------
 # Internal helpers
 # ---------------------------------------------------------------------------
+
+
+def _mask_verify_wildcards_for_display(json_text: str) -> str:
+    """Mask internal verify wildcard markers before JSON display rendering."""
+
+    def _replace_marker_object(match: re.Match[str]) -> str:
+        key = match.group("key")
+        if key == "__verify_mp_any_dict__":
+            return "{...}"
+        if key == "__verify_mp_any_list__":
+            return "[...]"
+        return "..."
+
+    masked = _VERIFY_ANY_MARKER_OBJECT_RE.sub(_replace_marker_object, json_text)
+    return _VERIFY_ANY_MARKER_TOKEN_RE.sub("...", masked)
 
 
 def _token_color_class(ttype) -> str:
