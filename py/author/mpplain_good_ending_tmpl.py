@@ -17,6 +17,7 @@ from author import mp_good_ending_common
 
 _FNAME = "mpplain_good_ending_tmpl.html"
 _TITLE = "Good-ending template (מ:סיום בטוב)"
+_CLAIM_ID_EXAMPLE_GOOD_ENDING_TMPL = "mp.plain.example.good-ending-template-stmpl"
 
 _PLAIN_DOC = "mpplain.html"
 
@@ -33,6 +34,12 @@ def gen_html_file(tdm_ch, claims: ClaimCollection):
 
 def build_body(*, claims: ClaimCollection):
     plain_back_link = author.anchor_h("Reading $MAM-parsed-plain", _PLAIN_DOC)
+    json_good_ending_tmpl = claims.claim(
+        _CLAIM_ID_EXAMPLE_GOOD_ENDING_TMPL,
+        _JSON_GOOD_ENDING_TMPL,
+        kind="example",
+        subject="mp:plain",
+    )
 
     return [
         author.heading_level_1(
@@ -40,7 +47,7 @@ def build_body(*, claims: ClaimCollection):
         ),
         author.para(["← Back to ", plain_back_link]),
         author.para(mp_good_ending_common.MAIN_DESCRIPTION),
-        json_block.json_block_raw_html(_JSON_GOOD_ENDING_TMPL),
+        json_block.json_block_raw_html(json_good_ending_tmpl),
     ]
 
 

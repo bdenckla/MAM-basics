@@ -97,6 +97,43 @@ class TestVerifyMpPayloadExamples(unittest.TestCase):
         self.assertTrue(pattern_match.match_pattern(expected, ["x", "y"]))
         self.assertFalse(pattern_match.match_pattern(expected, 7))
 
+    def test_match_pattern_wildcard_string_marker(self):
+        expected = {pattern_match.WILDCARD_STRING_MARKER_KEY: "והיה מדי ... אמר יהוה"}
+
+        self.assertTrue(
+            pattern_match.match_pattern(expected, "והיה מדי שבת בשבתו ... אמר יהוה")
+        )
+        self.assertFalse(pattern_match.match_pattern(expected, "והיה מדי ... אמר"))
+
+    def test_match_pattern_wildcard_string_non_string_actual(self):
+        expected = {pattern_match.WILDCARD_STRING_MARKER_KEY: "prefix ... suffix"}
+
+        self.assertFalse(pattern_match.match_pattern(expected, {"not": "a string"}))
+        self.assertFalse(pattern_match.match_pattern(expected, ["not", "a", "string"]))
+
+    def test_match_pattern_wildcard_string_requires_exactly_one_ellipsis(self):
+        expected = {
+            pattern_match.WILDCARD_STRING_MARKER_KEY: "no wildcard separator here"
+        }
+
+        with self.assertRaisesRegex(AssertionError, r"exactly one '\.\.\.'"):
+            pattern_match.match_pattern(expected, "anything")
+
+    def test_match_pattern_wildcard_string_requires_string_pattern(self):
+        expected = {pattern_match.WILDCARD_STRING_MARKER_KEY: 17}
+
+        with self.assertRaisesRegex(AssertionError, r"value must be a string"):
+            pattern_match.match_pattern(expected, "anything")
+
+    def test_match_pattern_wildcard_string_wrapper_must_have_only_one_key(self):
+        expected = {
+            pattern_match.WILDCARD_STRING_MARKER_KEY: "prefix ... suffix",
+            "extra": True,
+        }
+
+        with self.assertRaisesRegex(AssertionError, r"must contain only"):
+            pattern_match.match_pattern(expected, "prefix x suffix")
+
     def test_match_pattern_empty_list_is_literal_empty(self):
         self.assertTrue(pattern_match.match_pattern([], []))
         self.assertFalse(pattern_match.match_pattern([], [1]))
@@ -181,6 +218,17 @@ class TestVerifyMpPayloadExamples(unittest.TestCase):
 
         self.assertIsInstance(record.payload, str)
         self.assertIn("__verify_mp_any_string_dict_or_list__", record.payload)
+
+    def test_good_ending_examples_are_claims(self):
+        claims = mam_parsed_docs_build.collect_explicit_claims()
+
+        self.assertIn(
+            "mp.plain.example.good-ending-template-stmpl", claims.records_by_id
+        )
+        self.assertIn(
+            "mp.plus.example.good-ending-template-object", claims.records_by_id
+        )
+        self.assertIn("mp.plus.example.good-ending-plus-field", claims.records_by_id)
 
 
 if __name__ == "__main__":

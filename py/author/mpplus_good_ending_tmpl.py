@@ -18,6 +18,7 @@ from mb_misc import mb_html
 
 _FNAME = "mpplus_good_ending_tmpl.html"
 _TITLE = "Good-ending template (מ:סיום בטוב)"
+_CLAIM_ID_EXAMPLE_GOOD_ENDING_TMPL = "mp.plus.example.good-ending-template-object"
 
 _PLUS_DOC = "mpplus.html"
 
@@ -34,6 +35,12 @@ def gen_html_file(tdm_ch, claims: ClaimCollection):
 
 def build_body(*, claims: ClaimCollection):
     plus_back_link = author.anchor_h("Reading $MAM-parsed-plus", _PLUS_DOC)
+    json_good_ending_tmpl = claims.claim(
+        _CLAIM_ID_EXAMPLE_GOOD_ENDING_TMPL,
+        _JSON_GOOD_ENDING_TMPL,
+        kind="example",
+        subject="mp:plus",
+    )
     return [
         author.heading_level_1(
             ["Good-ending template (", author.hbo("מ:סיום בטוב"), ")"]
@@ -48,7 +55,7 @@ def build_body(*, claims: ClaimCollection):
                 [" field of the book39 header."],
             ]
         ),
-        json_block.json_block_raw_html(_JSON_GOOD_ENDING_TMPL),
+        json_block.json_block_raw_html(json_good_ending_tmpl),
     ]
 
 

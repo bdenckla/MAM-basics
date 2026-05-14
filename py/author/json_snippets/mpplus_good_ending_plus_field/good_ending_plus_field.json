@@ -5,11 +5,9 @@
     "tmpl_params": {
       "1": {
         "tmpl_name": "מ:סיום בטוב",
-        "tmpl_params": {
-          "1": "והיה מדי ... אמר יהוה"
-        }
+        "tmpl_params": {"1": {"__verify_mp_wildcard_string__": "והיה מדי ... אמר יהוה"}}
       },
-      "2": "=מנהג יפה ... בכתי\"ל)."
+      "2": {"__verify_mp_wildcard_string__": "=מנהג יפה ... בכתי\"ל)."}
     }
   }
 }

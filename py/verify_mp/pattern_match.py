@@ -4,6 +4,7 @@
 ANY_DICT_MARKER_KEY = "__verify_mp_any_dict__"
 ANY_LIST_MARKER_KEY = "__verify_mp_any_list__"
 ANY_STRING_DICT_OR_LIST_MARKER_KEY = "__verify_mp_any_string_dict_or_list__"
+WILDCARD_STRING_MARKER_KEY = "__verify_mp_wildcard_string__"
 
 
 def match_pattern(expected, actual) -> bool:
@@ -18,6 +19,13 @@ def match_pattern(expected, actual) -> bool:
             return isinstance(actual, list)
         if expected == {ANY_STRING_DICT_OR_LIST_MARKER_KEY: True}:
             return isinstance(actual, (str, dict, list))
+        if WILDCARD_STRING_MARKER_KEY in expected:
+            assert set(expected.keys()) == {WILDCARD_STRING_MARKER_KEY}, (
+                f"wildcard-string wrapper must contain only "
+                f"{WILDCARD_STRING_MARKER_KEY}: {expected!r}"
+            )
+            pattern = expected[WILDCARD_STRING_MARKER_KEY]
+            return _match_wildcard_string(pattern=pattern, actual=actual)
         if not isinstance(actual, dict):
             return False
         if frozenset(expected.keys()) != frozenset(actual.keys()):
@@ -32,3 +40,25 @@ def match_pattern(expected, actual) -> bool:
         return all(match_pattern(exp, act) for exp, act in zip(expected, actual))
 
     return expected == actual
+
+
+def _match_wildcard_string(*, pattern, actual) -> bool:
+    """Return whether actual matches wildcard-string marker pattern."""
+    assert isinstance(
+        pattern, str
+    ), f"{WILDCARD_STRING_MARKER_KEY} value must be a string: {pattern!r}"
+    dotdotdot_count = pattern.count("...")
+    assert dotdotdot_count == 1, (
+        f"{WILDCARD_STRING_MARKER_KEY} value must contain exactly one '...': "
+        f"{pattern!r}"
+    )
+
+    if not isinstance(actual, str):
+        return False
+
+    prefix, suffix = pattern.split("...", 1)
+    if not actual.startswith(prefix):
+        return False
+    if not actual.endswith(suffix):
+        return False
+    return len(actual) >= len(prefix) + len(suffix)

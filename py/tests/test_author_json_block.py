@@ -32,11 +32,23 @@ class TestAuthorJsonBlock(unittest.TestCase):
         src = '{"header": {"__verify_mp_any_dict__": true}}'
 
         html = json_block.json_block_with_notes_raw_html(src, {1: "top-level note"})
+        raw_html = html["_raw_html"] if isinstance(html, dict) else html
 
-        self.assertNotIn("__verify_mp_any_", html)
-        self.assertIn('<span class="ellipsis">...</span>', html)
-        self.assertIn('class="ln"', html)
-        self.assertIn("top-level note", html)
+        self.assertNotIn("__verify_mp_any_", raw_html)
+        self.assertIn(
+            '<span class="tok-punct">.</span><span class="tok-punct">.</span><span class="tok-punct">.</span>',
+            raw_html,
+        )
+        self.assertIn('class="ln"', raw_html)
+        self.assertIn("top-level note", raw_html)
+
+    def test_mask_verify_wildcards_unwraps_wildcard_string_marker(self):
+        src = '{"k": {"__verify_mp_wildcard_string__": "והיה מדי ... אמר יהוה"}}'
+
+        masked = json_block._mask_verify_wildcards_for_display(src)
+
+        self.assertNotIn("__verify_mp_wildcard_string__", masked)
+        self.assertIn('"k": "והיה מדי ... אמר יהוה"', masked)
 
 
 if __name__ == "__main__":

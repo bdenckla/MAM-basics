@@ -15,6 +15,7 @@ Snippet wildcard semantics are encoded explicitly with strict-JSON tokens:
 - {"__verify_mp_any_dict__": true} as a dict wildcard
 - {"__verify_mp_any_list__": true} as a list wildcard
 - {"__verify_mp_any_string_dict_or_list__": true} as a string/dict/list wildcard
+- {"__verify_mp_wildcard_string__": "prefix ... suffix"} as a wildcard string
 """
 
 import json

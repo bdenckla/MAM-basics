@@ -17,6 +17,7 @@ from author import mp_cmn_json_snippets as jsnip
 
 _FNAME = "mpplus_good_ending_plus_field.html"
 _TITLE = "good_ending_plus"
+_CLAIM_ID_EXAMPLE_GOOD_ENDING_PLUS_FIELD = "mp.plus.example.good-ending-plus-field"
 
 _PLUS_DOC = "mpplus.html"
 _GOOD_ENDING_TMPL_DOC = "mpplus_good_ending_tmpl.html"
@@ -34,6 +35,12 @@ def gen_html_file(tdm_ch, claims: ClaimCollection):
 
 def build_body(*, claims: ClaimCollection):
     back_link = author.anchor_h("Reading $MAM-parsed-plus", _PLUS_DOC)
+    json_good_ending = claims.claim(
+        _CLAIM_ID_EXAMPLE_GOOD_ENDING_PLUS_FIELD,
+        _JSON_GOOD_ENDING,
+        kind="example",
+        subject="mp:plus",
+    )
     return [
         author.heading_level_1(mb_html.code("good_ending_plus")),
         author.para(["← Back to ", back_link]),
@@ -59,10 +66,10 @@ def build_body(*, claims: ClaimCollection):
             ]
         ),
         json_block.json_block_with_notes_raw_html(
-            _JSON_GOOD_ENDING,
+            json_good_ending,
             {
-                9: "Unpointed text of 66:23 (the next-to-last verse of Isaiah)",
-                12: "Documentation note on the good-ending tradition",
+                8: "Unpointed text of 66:23 (the next-to-last verse of Isaiah)",
+                10: "Documentation note on the good-ending tradition",
             },
         ),
     ]

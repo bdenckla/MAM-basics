@@ -22,6 +22,9 @@ _VERIFY_ANY_MARKER_OBJECT_RE = re.compile(
     r'\{\s*"(?P<key>__verify_mp_any_[a-z_]+__)"\s*:\s*true\s*\}'
 )
 _VERIFY_ANY_MARKER_TOKEN_RE = re.compile(r'"__verify_mp_any_[a-z_]+__"')
+_VERIFY_WILDCARD_STRING_OBJECT_RE = re.compile(
+    r'\{\s*"__verify_mp_wildcard_string__"\s*:\s*(?P<value>"(?:\\.|[^"\\])*")\s*\}'
+)
 
 
 def json_block_raw_html(json_text: str):
@@ -62,7 +65,13 @@ def _mask_verify_wildcards_for_display(json_text: str) -> str:
             return "[...]"
         return "..."
 
+    def _replace_wildcard_string_object(match: re.Match[str]) -> str:
+        return match.group("value")
+
     masked = _VERIFY_ANY_MARKER_OBJECT_RE.sub(_replace_marker_object, json_text)
+    masked = _VERIFY_WILDCARD_STRING_OBJECT_RE.sub(
+        _replace_wildcard_string_object, masked
+    )
     return _VERIFY_ANY_MARKER_TOKEN_RE.sub("...", masked)
 
 
