@@ -172,16 +172,16 @@ def _s_intro():
         author.para(
             "The $MAM-parsed-plain JSON files are formed by parsing the Wikitext"
             " in the $MAM Google Sheet with minimal post-processing."
-        ),
-        # Normally we avoid mentioning "plus" in "plain" and vice versa,
-        # but this is an intentional exception to the rule.
-        author.para(
-            "Use plain when you want a representation that stays close to the"
+            #
+            # Normally we avoid mentioning "plus" in "plain" and vice versa,
+            # but this is an intentional exception to the rule.
+            " Use plain when you want a format that stays close to the"
             " $MAM Google Sheet."
             " Use plus when you want conveniences"
             " intended to simplify most application code."
+            #
+            " This document covers:"
         ),
-        author.para("This document covers:"),
         author.unordered_list(
             [
                 "File naming",

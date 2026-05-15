@@ -11,7 +11,6 @@ from author import mp_kq_am2_common as kq_am2_common
 from author import mp_cmn_json_snippets as jsnip
 from author import mp_cmn_top_header_book39 as thb
 
-_PLUS_DOC = "mpplus.html"
 _CALL_GRAPHS = "https://bdenckla.github.io/MAM-parsed/plus-template-call-graphs.html"
 _DIFF_FROM_PLAIN_DOC = "mpplus_diff_from_plain.html"
 _PLAIN_ONLY_TEMPLATES_DOC = "mpplus_plain_only_templates.html"
@@ -19,10 +18,8 @@ _PLAIN_ONLY_TEMPLATES_DOC = "mpplus_plain_only_templates.html"
 _AOT_DOC = "mpplus_aot.html"
 _KQ_AM2_DOC = "mpplus_kq_am2.html"
 _KQ_SPECIAL_DOC = "mpplus_kq_special.html"
-_HAARAH_2_DOC = "mpplus_haarah_2.html"
 _KAFUL_DOC = "mpplus_kaful.html"
 _GOOD_ENDING_DOC = "mpplus_good_ending_plus_field.html"
-_GOOD_ENDING_TMPL_DOC = "mpplus_good_ending_tmpl.html"
 _NUSACH_DOC = "mpplus_nusach.html"
 
 _PLUS_COMMON_TEMPLATES = [
