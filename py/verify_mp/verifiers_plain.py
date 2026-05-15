@@ -206,6 +206,83 @@ def verify_mp_plain_docs_common_templates_templates_in_plain_survey(
     _verify_template_set_plain_observed(record, ctx)
 
 
+def _assert_plain_header_exists(ctx: Context, predicate, description: str) -> None:
+    """Assert that at least one plain top-level header satisfies predicate."""
+    for top in ctx.corpus_plain.files:
+        header = top["header"]
+        if predicate(header):
+            return
+    assert False, f"plain header example not found: {description}"
+
+
+def _has_chapter_count(header: dict, sub_book_name, chapter_count: int) -> bool:
+    """Return whether header.chapter_counts has the given sub-book/count pair."""
+    for row in header["chapter_counts"]:
+        if (
+            row["sub_book_name"] == sub_book_name
+            and row["chapter_count"] == chapter_count
+        ):
+            return True
+    return False
+
+
+def verify_mp_plain_example_top_level_skel(record: ClaimRecord, ctx: Context) -> None:
+    """Every plain top-level object has exactly the declared top-level keys."""
+    expected = frozenset(record.data["top_level_keys"])
+    for top in ctx.corpus_plain.files:
+        actual = frozenset(top.keys())
+        assert (
+            actual == expected
+        ), f"top-level keys {sorted(actual)} != expected {sorted(expected)}"
+
+
+def verify_mp_plain_header_fields(record: ClaimRecord, ctx: Context) -> None:
+    """Every plain header object has exactly the declared keys."""
+    expected = frozenset(record.data["header_keys"])
+    for top in ctx.corpus_plain.files:
+        header = top["header"]
+        actual = frozenset(header.keys())
+        assert actual == expected, (
+            f"header for {header.get('book24_name')!r}:"
+            f" keys {sorted(actual)} != expected {sorted(expected)}"
+        )
+
+
+def verify_mp_plain_example_header_job(record: ClaimRecord, ctx: Context) -> None:
+    """A Job-like header example occurs at least once in the plain corpus."""
+
+    def _is_job_header(header: dict) -> bool:
+        return (
+            header["book24_name"] == "ספר איוב"
+            and header["sub_book_names"] == []
+            and _has_chapter_count(header, None, 42)
+        )
+
+    _assert_plain_header_exists(
+        ctx,
+        _is_job_header,
+        "book24=ספר איוב, sub_book_names=[], chapter_count(None)=42",
+    )
+
+
+def verify_mp_plain_example_header_samuel(record: ClaimRecord, ctx: Context) -> None:
+    """A Samuel-like composite header example occurs at least once in plain corpus."""
+
+    def _is_samuel_header(header: dict) -> bool:
+        return (
+            header["book24_name"] == "ספר שמואל"
+            and header["sub_book_names"] == ['שמ"א', 'שמ"ב']
+            and _has_chapter_count(header, 'שמ"א', 31)
+            and _has_chapter_count(header, 'שמ"ב', 24)
+        )
+
+    _assert_plain_header_exists(
+        ctx,
+        _is_samuel_header,
+        'book24=ספר שמואל with sub-books שמ"א/שמ"ב and chapter counts 31/24',
+    )
+
+
 def verify_mp_plain_book39_fields(record: ClaimRecord, ctx: Context) -> None:
     """Every book39 object in the plain corpus has exactly the declared keys."""
     expected = frozenset(record.data["book39_keys"])
@@ -639,12 +716,16 @@ def verify_mp_plain_docs_plain_only_templates_pre_evaluated_handlers(
 
 
 REGISTRY: dict[str, VerifierFn] = {
+    "mp.plain.example.header-job": verify_mp_plain_example_header_job,
+    "mp.plain.example.header-samuel": verify_mp_plain_example_header_samuel,
+    "mp.plain.example.top-level-skel": verify_mp_plain_example_top_level_skel,
     "mp.plain.book39.fields": verify_mp_plain_book39_fields,
     "mp.plain.chapter.pseudo-verse-keys": verify_mp_plain_chapter_pseudo_verse_keys,
     "mp.plain.docs.common-templates.templates-in-plain-survey": verify_mp_plain_docs_common_templates_templates_in_plain_survey,
     "mp.plain.docs.custom-tag.keys-and-values": verify_mp_plain_docs_custom_tag_keys_and_values,
     "mp.plain.docs.plain-only-templates.categories": verify_mp_plain_docs_plain_only_templates_categories,
     "mp.plain.docs.plain-only-templates.pre-evaluated.handlers": verify_mp_plain_docs_plain_only_templates_pre_evaluated_handlers,
+    "mp.plain.header.fields": verify_mp_plain_header_fields,
     "mp.plain.kq-special.semantic-shape": verify_mp_plain_kq_special_semantic_shape,
     "mp.plain.template-node.recursive-shape": verify_mp_plain_template_node_recursive_shape,
     "mp.plain.template.stmpl-format-example": verify_mp_plain_template_stmpl_format_example,

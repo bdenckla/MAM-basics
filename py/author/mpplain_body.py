@@ -132,6 +132,42 @@ def _emit_claim_payload(
     return claims.claim(claim_id, payload, kind=kind, subject=subject, data=data)
 
 
+def _json_top_level_skel(*, claims: ClaimCollection):
+    return _emit_claim_payload(
+        claims,
+        "mp.plain.example.top-level-skel",
+        thb.JSON_TOP_LEVEL_SKEL,
+        kind="struct",
+        subject="mp:plain",
+        data={"top_level_keys": ["header", "book39s"]},
+    )
+
+
+def _json_header(*, claims: ClaimCollection):
+    return _emit_claim_payload(
+        claims,
+        "mp.plain.example.header-job",
+        thb.JSON_HEADER,
+        kind="example",
+        subject="mp:plain",
+        data={
+            "book24_name": "ספר איוב",
+            "sub_book_names": [],
+            "chapter_counts": [{"sub_book_name": None, "chapter_count": 42}],
+        },
+    )
+
+
+def _json_header_composite(*, claims: ClaimCollection):
+    return _emit_claim_payload(
+        claims,
+        "mp.plain.example.header-samuel",
+        thb.JSON_HEADER_COMPOSITE,
+        kind="example",
+        subject="mp:plain",
+    )
+
+
 # ---------------------------------------------------------------------------
 # Sections
 # ---------------------------------------------------------------------------
@@ -166,16 +202,23 @@ def s_intro():
 
 
 def s_top_level(*, claims: ClaimCollection):
-    header_rows = thb.header_rows()
+    header_rows = _emit_claim_payload(
+        claims,
+        "mp.plain.header.fields",
+        thb.header_rows(),
+        kind="struct",
+        subject="mp:plain",
+        data={"header_keys": thb.HEADER_KEYS},
+    )
     return [
         author.heading_level_2("Top-level structure"),
-        json_block.json_block_raw_html(thb.JSON_TOP_LEVEL_SKEL),
+        json_block.json_block_raw_html(_json_top_level_skel(claims=claims)),
         author.heading_level_2("Header"),
         tblh.key_type_desc_table(header_rows),
         author.para("Here’s the header for Job, a book24 has no sub-books:"),
-        json_block.json_block_raw_html(thb.JSON_HEADER),
+        json_block.json_block_raw_html(_json_header(claims=claims)),
         author.para("Here’s the header for Samuel, a book24 that has sub-books:"),
-        json_block.json_block_raw_html(thb.JSON_HEADER_COMPOSITE),
+        json_block.json_block_raw_html(_json_header_composite(claims=claims)),
     ]
 
 
@@ -247,23 +290,9 @@ def s_chapter(*, claims: ClaimCollection):
 
 def s_verse(*, claims: ClaimCollection):
     col_rows = [
-        [
-            "C",
-            [
-                "Verse separator: $parashah break or ",
-                mb_html.code('"__"'),
-                " for a plain space",
-            ],
-        ],
-        [
-            "D",
-            [
-                "Verse label (",
-                mb_html.code("מ:פסוק"),
-                " template): book name, chapter, verse, etc.",
-            ],
-        ],
-        ["E", "Verse text with inline templates"],
+        ["C", "Verse separator: usually a plain space or a $parashah break"],
+        ["D", "Verse label: usually just book, chapter, & verse"],
+        ["E", "Verse text: strings and templates"],
     ]
 
     return [

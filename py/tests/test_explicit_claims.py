@@ -216,10 +216,12 @@ class TestExplicitClaims(unittest.TestCase):
 
         self.assertTrue(hasattr(mp_cmn, "emit_claim_by_id"))
         self.assertFalse(hasattr(mp_cmn, "emit_claims"))
+        self.assertNotIn("mp.plain.example.top-level-skel", claims.records_by_id)
         self.assertNotIn("mp.plain.book39.fields", claims.records_by_id)
 
         mpplain._build_body(claims=claims)
 
+        self.assertIn("mp.plain.example.top-level-skel", claims.records_by_id)
         self.assertIn("mp.plain.book39.fields", claims.records_by_id)
 
     def test_mpplus_aot_build_body_requires_explicit_claims(self):
@@ -356,7 +358,17 @@ class TestExplicitClaims(unittest.TestCase):
 
         mpplain._build_body(claims=claims)
 
-        self.assertIn("mp.plain.book39.fields", claims.records_by_id)
+        representative_ids = [
+            "mp.plain.example.top-level-skel",
+            "mp.plain.header.fields",
+            "mp.plain.example.header-job",
+            "mp.plain.example.header-samuel",
+            "mp.plain.book39.fields",
+        ]
+
+        for claim_id in representative_ids:
+            with self.subTest(claim_id=claim_id):
+                self.assertIn(claim_id, claims.records_by_id)
 
     def test_collect_explicit_claims_does_not_write_docs_or_css(self):
         docs_build = importlib.import_module("author.mam_parsed_docs_build")
@@ -375,6 +387,7 @@ class TestExplicitClaims(unittest.TestCase):
 
         make_css_mock.assert_not_called()
         build_body_mock.assert_called_once()
+        self.assertIn("mp.plain.header.fields", claims.records_by_id)
         self.assertIn("mp.plain.book39.fields", claims.records_by_id)
 
 
