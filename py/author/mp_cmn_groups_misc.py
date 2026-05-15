@@ -14,7 +14,10 @@ _PSALMS_DIVISION_FIRST_VERSE_ABBREV = "מ:רווח לספר בתהלים ..."
 STRUCTURAL_ROWS = [
     [
         author.hbo("מ:ספר חדש"),
-        "New-book marker. Placed at the precise start of each of the 24 books; preceding space follows masoretic tradition. Parameter is the book name. Not used for 2 Sam., 2 Kgs., Neh., 2 Chr., nor for the 11 Minor Prophets after Hosea.",
+        "New-book marker. Placed at the start of each of the 24 books. Parameter is the book name.",
+        # The text above used to conclude with the following, but I deemed it implied already
+        # and I wanted to keep the text short:
+        # Not used for 2 Sam., 2 Kgs., Neh., 2 Chr., nor for the 11 Minor Prophets after Hosea.
     ],
     [
         author.hbo("מ:רווח בתרי עשר"),
