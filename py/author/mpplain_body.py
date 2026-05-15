@@ -85,8 +85,6 @@ _PLAIN_ACCENT_TEMPLATES = [
     "מ:לגרמיה-2",
     "מ:פסק",
     "מ:מקף אפור",
-    "גלגל-2",
-    "ירח בן יומו-2",
 ]
 
 _CHOICE_TEMPLATES = [
@@ -548,14 +546,18 @@ def s_common_templates(*, claims: ClaimCollection):
         *cmn.other_rows_for_templates(_MULTIMARK_TEMPLATES[2:]),
         *jer_rows,
     ]
-    plain_extra_accent_rows = cmn.other_rows_for_templates(["מ:אות מנוקדת"])
     whitespace_poetic_rows = cmn.poetic_rows_for_templates(
         ["ר1", "ר2", "ר3", "ר4", "ר0"]
     )
     whitespace_extra_rows = cmn.other_rows_for_templates(["רווח בסוף שורה"])
-    other_templates_rows = [
-        cmn.good_ending_row(good_ending_doc=_GOOD_ENDING_TMPL_DOC)
-    ] + cmn.poetic_rows_for_templates(["פרשה-מרכז"])
+    other_templates_rows = (
+        [cmn.good_ending_row(good_ending_doc=_GOOD_ENDING_TMPL_DOC)]
+        + cmn.poetic_rows_for_templates(["פרשה-מרכז"])
+        + [
+            *cmn.accent_rows_for_templates(["גלגל-2", "ירח בן יומו-2"]),
+            *cmn.other_rows_for_templates(["מ:אות מנוקדת"]),
+        ]
+    )
 
     _emit_claim_payload(
         claims,
@@ -584,9 +586,9 @@ def s_common_templates(*, claims: ClaimCollection):
         json_block.json_block_raw_html(json_kq),
         author.heading_level_3("Special letter templates"),
         author.std_table(special_letter_rows, arg_to_troh=["Template", "Purpose"]),
-        author.heading_level_3("Accent, vowel, and punctuation templates"),
+        author.heading_level_3("Punctuation templates"),
         author.std_table(
-            plain_accent_rows + plain_extra_accent_rows,
+            plain_accent_rows,
             arg_to_troh=["Template", "Purpose"],
         ),
         author.heading_level_3("Multimark templates"),

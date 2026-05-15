@@ -640,7 +640,7 @@ def s_common_templates(*, claims: ClaimCollection):
             ],
             arg_to_troh=["Template", "Purpose"],
         ),
-        author.heading_level_3("Accent, vowel, and punctuation templates"),
+        author.heading_level_3("Punctuation templates"),
         author.std_table(
             plus_accent_rows,
             arg_to_troh=["Template", "Purpose"],
