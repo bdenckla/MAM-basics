@@ -151,8 +151,8 @@ def build_body(*, claims: ClaimCollection):
         *_s_top_level(claims=claims),
         *s_book39(claims=claims),
         *s_chapter(claims=claims),
+        *_s_template_format(claims=claims),
         *s_verse(claims=claims),
-        *_s_template_objects(claims=claims),
         *_s_common_templates(claims=claims),
         *_s_pseudo_verses(),
     ]
@@ -445,9 +445,9 @@ def s_verse(*, claims: ClaimCollection):
     ]
 
 
-def _s_template_objects(*, claims: ClaimCollection):
+def _s_template_format(*, claims: ClaimCollection):
     return [
-        author.heading_level_2("Template objects"),
+        author.heading_level_2("Template format"),
         author.para("Three kinds of template objects are used:"),
         author.heading_level_3("1. Stringified template (stmpl)"),
         author.para(
@@ -489,7 +489,8 @@ def _s_template_objects(*, claims: ClaimCollection):
         ),
         author.para(
             "A parsed template tree is used in cases where a stringified template would be inappropriate,"
-            " such as when the template is long and/or contains nested templates."),
+            " such as when the template is long and/or contains nested templates."
+        ),
         author.para("Example — a long template with string parameters only:"),
         json_block.json_block_raw_html(
             _emit_claim_payload(

@@ -340,6 +340,73 @@ def s_chapter_verse(*, claims: ClaimCollection):
                 data={"key_format": "decimal-string-1-indexed-contiguous"},
             )
         ),
+        author.heading_level_2("Template format"),
+        author.para("Templates are represented like this:"),
+        json_block.json_block_raw_html(_json_tmpl_format(claims=claims)),
+        author.std_table(tmpl_rows, arg_to_troh=["Key", "Type", "Description"]),
+        author.heading_level_3([mb_html.code("tmpl_params"), " keys"]),
+        author.para(
+            _emit_claim_payload(
+                claims,
+                "mp.plus.template.tmpl-params-keys",
+                [
+                    "Numeric string keys ",
+                    mb_html.code('"1"'),
+                    ", ",
+                    mb_html.code('"2"'),
+                    ", … correspond to positional arguments,"
+                    " Non-numeric keys (e.g. ",
+                    mb_html.code('"ד"'),
+                    ", ",
+                    mb_html.code('"ס"'),
+                    ", ",
+                    mb_html.code('"סדר"'),
+                    ") represent named parameters like ",
+                    mb_html.code("ד=..."),
+                    " in the Wikitext.",
+                ],
+                kind="format",
+                subject="mp:plus",
+                data={
+                    "numeric_keys": "positional args",
+                    "non_numeric_keys": "named params",
+                },
+            )
+        ),
+        author.para(
+            _emit_claim_payload(
+                claims,
+                "mp.plus.template.tmpl-params-omitted-when-empty",
+                [
+                    "The ",
+                    mb_html.code("tmpl_params"),
+                    " object is absent when the template has no parameters (e.g. ",
+                    author.hbo("פפ"),
+                    ", ",
+                    author.hbo("סס"),
+                    ", ",
+                    author.hbo("מ:פסק"),
+                    ").",
+                ],
+                kind="format",
+                subject="mp:plus",
+                data={"examples_no_params": ["פפ", "סס", "מ:פסק"]},
+            )
+        ),
+        author.heading_level_3("Template parameter values can be complex"),
+        author.para(
+            [
+                "Parameter values can themselves be strings, nested template objects,"
+                " or arrays of mixed strings and template objects."
+                " For a visual overview of which templates nest inside which, see the ",
+                author.anchor_h("plus template call graphs", _CALL_GRAPHS),
+                ".",
+            ]
+        ),
+        author.para(
+            "Example — a word with a special letter inside a $ketiv_qere inside a נוסח:"
+        ),
+        json_block.json_block_raw_html(_json_nested(claims=claims)),
         author.heading_level_2("Verse structure"),
         author.para(
             _emit_claim_payload(
@@ -423,73 +490,6 @@ def s_chapter_verse(*, claims: ClaimCollection):
                 data={"element_types": ["string", "template_object"]},
             )
         ),
-        author.heading_level_2("Template format"),
-        author.para("Templates are represented like this:"),
-        json_block.json_block_raw_html(_json_tmpl_format(claims=claims)),
-        author.std_table(tmpl_rows, arg_to_troh=["Key", "Type", "Description"]),
-        author.heading_level_3([mb_html.code("tmpl_params"), " keys"]),
-        author.para(
-            _emit_claim_payload(
-                claims,
-                "mp.plus.template.tmpl-params-keys",
-                [
-                    "Numeric string keys ",
-                    mb_html.code('"1"'),
-                    ", ",
-                    mb_html.code('"2"'),
-                    ", … correspond to positional arguments,"
-                    " Non-numeric keys (e.g. ",
-                    mb_html.code('"ד"'),
-                    ", ",
-                    mb_html.code('"ס"'),
-                    ", ",
-                    mb_html.code('"סדר"'),
-                    ") represent named parameters like ",
-                    mb_html.code("ד=..."),
-                    " in the Wikitext.",
-                ],
-                kind="format",
-                subject="mp:plus",
-                data={
-                    "numeric_keys": "positional args",
-                    "non_numeric_keys": "named params",
-                },
-            )
-        ),
-        author.para(
-            _emit_claim_payload(
-                claims,
-                "mp.plus.template.tmpl-params-omitted-when-empty",
-                [
-                    "The ",
-                    mb_html.code("tmpl_params"),
-                    " object is absent when the template has no parameters (e.g. ",
-                    author.hbo("פפ"),
-                    ", ",
-                    author.hbo("סס"),
-                    ", ",
-                    author.hbo("מ:פסק"),
-                    ").",
-                ],
-                kind="format",
-                subject="mp:plus",
-                data={"examples_no_params": ["פפ", "סס", "מ:פסק"]},
-            )
-        ),
-        author.heading_level_3("Template parameter values can be complex"),
-        author.para(
-            [
-                "Parameter values can themselves be strings, nested template objects,"
-                " or arrays of mixed strings and template objects."
-                " For a visual overview of which templates nest inside which, see the ",
-                author.anchor_h("plus template call graphs", _CALL_GRAPHS),
-                ".",
-            ]
-        ),
-        author.para(
-            "Example — a word with a special letter inside a $ketiv_qere inside a נוסח:"
-        ),
-        json_block.json_block_raw_html(_json_nested(claims=claims)),
     ]
 
 
