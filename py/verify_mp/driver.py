@@ -80,6 +80,39 @@ def _exit_if_unregistered_verify_functions() -> None:
     sys.exit(2)
 
 
+def _exit_if_stale_registry_keys(
+    registry: Mapping[str, VerifierFn],
+    records: Mapping[str, ClaimRecord],
+) -> None:
+    """Print stale REGISTRY keys and exit with status 2."""
+    stale_registry_keys = sorted(set(registry) - set(records))
+    if not stale_registry_keys:
+        return
+
+    print("ERROR: REGISTRY key(s) with no matching claim id:", file=sys.stderr)
+    for claim_id in stale_registry_keys:
+        print(f"  {claim_id}", file=sys.stderr)
+    sys.exit(2)
+
+
+def _print_results(
+    passed: list[str],
+    failed: list[tuple[str, str]],
+    pending: list[str],
+) -> None:
+    """Print verifier results and summary counts."""
+    print("Results:")
+    for claim_id in passed:
+        print(f"  PASS    {claim_id}")
+    for claim_id, msg in failed:
+        print(f"  FAIL    {claim_id}")
+        print(f"          {msg}")
+    for claim_id in pending:
+        print(f"  pending {claim_id}")
+
+    print(f"\n{len(passed)} passed, {len(failed)} failed, {len(pending)} pending")
+
+
 def run(
     ctx: Context,
     claims: ClaimCollection | Mapping[str, ClaimRecord],
@@ -97,14 +130,7 @@ def run(
         claim_id: registry[claim_id] for claim_id in records if claim_id in registry
     }
 
-    # Check for stale REGISTRY keys (registered but not present in claims collection).
-    stale_registry_keys = sorted(set(registry) - set(records))
-    if stale_registry_keys:
-        print("ERROR: REGISTRY key(s) with no matching claim id:", file=sys.stderr)
-        for claim_id in stale_registry_keys:
-            print(f"  {claim_id}", file=sys.stderr)
-        sys.exit(2)
-
+    _exit_if_stale_registry_keys(registry, records)
     _exit_if_unregistered_verify_functions()
 
     passed: list[str] = []
@@ -128,15 +154,6 @@ def run(
         except AssertionError as exc:
             failed.append((claim_id, str(exc)))
 
-    print("Results:")
-    for cid in passed:
-        print(f"  PASS    {cid}")
-    for cid, msg in failed:
-        print(f"  FAIL    {cid}")
-        print(f"          {msg}")
-    for cid in pending:
-        print(f"  pending {cid}")
-
-    print(f"\n{len(passed)} passed, {len(failed)} failed, {len(pending)} pending")
+    _print_results(passed, failed, pending)
     if failed:
         sys.exit(1)
