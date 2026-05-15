@@ -191,7 +191,7 @@ def s_intro():
         author.unordered_list(
             [
                 "File naming",
-                "Structure of the top level",
+                "Structure of the top level and its header",
                 "Structure of a book39, chapter, and verse",
                 "Template and custom-tag objects",
                 "Selected templates",
@@ -296,7 +296,8 @@ def s_verse(*, claims: ClaimCollection):
     ]
 
     return [
-        author.heading_level_2("Verse (pseudo-verse) structure"),
+        author.heading_level_2("Verse structure"),
+        author.para("(This section documents both normal verses and pseudo-verses.)"),
         author.para(
             _emit_claim_payload(
                 claims,
