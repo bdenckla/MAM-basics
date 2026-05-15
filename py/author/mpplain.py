@@ -31,6 +31,7 @@ _JSON_INDEX_0 = jsnip.read_text("mpplain", "index_0.json")
 _JSON_EP_EXAMPLE = jsnip.read_text("mpplain", "ep_example.json")
 _JSON_STMPL = jsnip.read_text("mpplain", "stmpl.json")
 _JSON_TMPL = jsnip.read_text("mpplain", "tmpl_tree.json")
+_JSON_TMPL_NESTED = jsnip.read_text("mpplain", "tmpl_tree_nested.json")
 _JSON_CUSTOM_TAG = jsnip.read_text("mpplain", "custom_tag_pair.json")
 
 _CLAIM_ID_BOOK39_SKEL_COMMON = "mp.plain.docs.book39-skeleton.common"
@@ -472,7 +473,10 @@ def _s_template_objects(*, claims: ClaimCollection):
         ),
         author.heading_level_3("2. Parsed template tree (tmpl)"),
         author.para("Longer and/or more complex templates appear as parse trees:"),
+        author.para("Example — a template with string parameters only:"),
         json_block.json_block_raw_html(_JSON_TMPL),
+        author.para("Example — a template nested inside another template:"),
+        json_block.json_block_raw_html(_JSON_TMPL_NESTED),
         author.para(
             _emit_claim_payload(
                 claims,
