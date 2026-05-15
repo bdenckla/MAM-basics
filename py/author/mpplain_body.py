@@ -16,6 +16,7 @@ _KQ_SPECIAL_DOC = "mpplain_kq_special.html"
 _KAFUL_DOC = "mpplain_kaful.html"
 _GOOD_ENDING_TMPL_DOC = "mpplain_good_ending_tmpl.html"
 _NUSACH_DOC = "mpplain_nusach.html"
+_POETIC_SPACING_DOC = "mpplus_poetic_spacing.html"
 
 _JSON_INDEX_0 = jsnip.read_text("mpplain", "index_0.json")
 _JSON_EP_EXAMPLE = jsnip.read_text("mpplain", "ep_example.json")
@@ -546,9 +547,14 @@ def s_common_templates(*, claims: ClaimCollection):
         *cmn.other_rows_for_templates(_MULTIMARK_TEMPLATES[2:]),
         *jer_rows,
     ]
-    whitespace_poetic_rows = cmn.poetic_rows_for_templates(
-        ["ר1", "ר2", "ר3", "ר4", "ר0"]
-    )
+    poetic_spacing_row = [
+        author.hbo("ר0–ר4"),
+        [
+            "Poetic spacing: See ",
+            author.anchor_h("their dedicated page", _POETIC_SPACING_DOC),
+            ".",
+        ],
+    ]
     whitespace_extra_rows = cmn.other_rows_for_templates(["רווח בסוף שורה"])
     other_templates_rows = (
         [cmn.good_ending_row(good_ending_doc=_GOOD_ENDING_TMPL_DOC)]
@@ -607,9 +613,7 @@ def s_common_templates(*, claims: ClaimCollection):
         ),
         author.heading_level_3("Whitespace templates"),
         author.std_table(
-            cmn.whitespace_rows_shared()
-            + whitespace_poetic_rows
-            + whitespace_extra_rows,
+            cmn.whitespace_rows_shared() + [poetic_spacing_row] + whitespace_extra_rows,
             arg_to_troh=["Template", "Purpose"],
         ),
         author.para(
