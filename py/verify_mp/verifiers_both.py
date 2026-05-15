@@ -3,6 +3,7 @@
 
 import glob
 from pathlib import Path
+from typing import Callable
 
 from author_util.claim import ClaimRecord
 from verify_mp import survey_artifact
@@ -13,6 +14,8 @@ from verify_mp.corpus import (
     iter_template_objects,
     iter_verses,
 )
+
+VerifierFn = Callable[[ClaimRecord, Context], None]
 
 # Torah (Pentateuch) + Esther book24_name values — the only books where
 # targeted scroll-difference notes (מ:הערה-2) may appear in plus.
@@ -368,3 +371,23 @@ def verify_mp_both_templates_all_groups_cover_all_observed(
     assert (
         not uncovered
     ), f"observed templates not covered by any declared group: {sorted(uncovered)}"
+
+
+REGISTRY: dict[str, VerifierFn] = {
+    "mp.both.file-naming.book24-prefixes": verify_mp_both_file_naming_book24_prefixes,
+    "mp.both.templates.accents.set": verify_mp_both_templates_accents_set,
+    "mp.both.templates.all-groups-cover-all-observed": verify_mp_both_templates_all_groups_cover_all_observed,
+    "mp.both.templates.kq-am2.sug-values": verify_mp_both_templates_kq_am2_sug_values,
+    "mp.both.templates.kq-special.subtype-counts": verify_mp_both_templates_kq_special_subtype_counts,
+    "mp.both.templates.kq-special.subtypes": verify_mp_both_templates_kq_special_subtypes,
+    "mp.both.templates.kq.set": verify_mp_both_templates_kq_set,
+    "mp.both.templates.modag.only-in-nusach-param2": verify_mp_both_templates_modag_only_in_nusach_param2,
+    "mp.both.templates.navigation.set": verify_mp_both_templates_navigation_set,
+    "mp.both.templates.note": verify_mp_both_templates_note,
+    "mp.both.templates.note-links.set": verify_mp_both_templates_note_links_set,
+    "mp.both.templates.other.set": verify_mp_both_templates_other_set,
+    "mp.both.templates.poetic.set": verify_mp_both_templates_poetic_set,
+    "mp.both.templates.sh.only-in-nusach-param2": verify_mp_both_templates_sh_only_in_nusach_param2,
+    "mp.both.templates.special-letters.set": verify_mp_both_templates_special_letters_set,
+    "mp.both.templates.structural.set": verify_mp_both_templates_structural_set,
+}

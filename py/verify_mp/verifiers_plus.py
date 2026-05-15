@@ -2,6 +2,7 @@
 """Verifiers for mp.plus.* and mp.plain.example.* claims."""
 
 from pathlib import Path
+from typing import Callable
 
 from author_util.claim import ClaimRecord
 from verify_mp.corpus import (
@@ -14,6 +15,8 @@ from verify_mp.corpus import (
     iter_plain_col_objects,
 )
 from verify_mp import pattern_match
+
+VerifierFn = Callable[[ClaimRecord, Context], None]
 
 _NORM_QUOTES = str.maketrans({'"': "״"})
 
@@ -806,3 +809,39 @@ def verify_mp_plain_example_kq(record: ClaimRecord, ctx: Context) -> None:
 def verify_mp_plain_example_nusach(record: ClaimRecord, ctx: Context) -> None:
     """The nusach example stmpl object occurs at least once in the plain corpus."""
     _assert_stmpl_object_in_plain_corpus(record, ctx)
+
+
+REGISTRY: dict[str, VerifierFn] = {
+    "mp.plain.example.kq": verify_mp_plain_example_kq,
+    "mp.plain.example.nusach": verify_mp_plain_example_nusach,
+    "mp.plus.book39.fields": verify_mp_plus_book39_fields,
+    "mp.plus.book39.good-ending-plus.nonnull-book39s": verify_mp_plus_book39_good_ending_plus_nonnull_book39s,
+    "mp.plus.chapter.keyed-by-verse-num": verify_mp_plus_chapter_keyed_by_verse_num,
+    "mp.plus.diff-from-plain": verify_mp_plus_diff_from_plain,
+    "mp.plus.docs.common-templates.templates-in-plus-survey": verify_mp_plus_docs_common_templates_templates_in_plus_survey,
+    "mp.plus.docs.diff-from-plain.links": verify_mp_plus_docs_diff_from_plain_links,
+    "mp.plus.example.book39-skel": verify_mp_plus_example_book39_skel,
+    "mp.plus.example.d-col-first": verify_mp_plus_example_d_col_first,
+    "mp.plus.example.header-job": verify_mp_plus_example_header_job,
+    "mp.plus.example.header-samuel": verify_mp_plus_example_header_samuel,
+    "mp.plus.example.kaful-template-object": verify_mp_plus_example_kaful_template_object,
+    "mp.plus.example.kq": verify_mp_plus_example_kq,
+    "mp.plus.example.nested-tmpl": verify_mp_plus_example_nested_tmpl,
+    "mp.plus.example.nusach": verify_mp_plus_example_nusach,
+    "mp.plus.example.top-level-skel": verify_mp_plus_example_top_level_skel,
+    "mp.plus.good-ending-plus.nested-in-nusach": verify_mp_plus_good_ending_plus_nested_in_nusach,
+    "mp.plus.header.fields": verify_mp_plus_header_fields,
+    "mp.plus.kq-special.semantic-shape": verify_mp_plus_kq_special_semantic_shape,
+    "mp.plus.template.aot.required-params": verify_mp_plus_template_aot_required_params,
+    "mp.plus.template.format-example": verify_mp_plus_template_format_example,
+    "mp.plus.template.haarah-2.required-params": verify_mp_plus_template_haarah_2_required_params,
+    "mp.plus.template.object-fields": verify_mp_plus_template_object_fields,
+    "mp.plus.template.tmpl-params-keys": verify_mp_plus_template_tmpl_params_keys,
+    "mp.plus.template.tmpl-params-omitted-when-empty": verify_mp_plus_template_tmpl_params_omitted_when_empty,
+    "mp.plus.templates.aot.arg5-derivable": verify_mp_plus_templates_aot_arg5_derivable,
+    "mp.plus.templates.plus-only.set": verify_mp_plus_templates_plus_only_set,
+    "mp.plus.verse.c-col.semantics": verify_mp_plus_verse_c_col_semantics,
+    "mp.plus.verse.d-col.semantics": verify_mp_plus_verse_d_col_semantics,
+    "mp.plus.verse.e-col.semantics": verify_mp_plus_verse_e_col_semantics,
+    "mp.plus.verse.is-3-tuple": verify_mp_plus_verse_is_3_tuple,
+}

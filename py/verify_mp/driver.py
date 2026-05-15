@@ -2,7 +2,7 @@
 """Verifier driver: build dispatch dict, run verifiers, report results."""
 
 import sys
-from typing import Mapping
+from typing import Callable, Mapping
 
 from author_util.claim import ClaimCollection, ClaimRecord
 from verify_mp import payload_examples
@@ -11,14 +11,7 @@ from verify_mp.corpus import Context
 
 _VERIFIER_MODULES = (verifiers_plus, verifiers_both, verifiers_plain)
 
-
-def claim_id_to_fn_name(claim_id: str) -> str:
-    """Derive the canonical verifier function name for a claim id.
-
-    Convention: replace '.' and '-' with '_', prepend 'verify_'.
-    Example: 'mp.plus.verse.is-3-tuple' -> 'verify_mp_plus_verse_is_3_tuple'.
-    """
-    return "verify_" + claim_id.replace(".", "_").replace("-", "_")
+VerifierFn = Callable[[ClaimRecord, Context], None]
 
 
 def _records_by_id(
@@ -29,20 +22,27 @@ def _records_by_id(
     return claims
 
 
+def merged_registry() -> dict[str, VerifierFn]:
+    """Return all verifier REGISTRY entries merged across verifier modules."""
+    merged: dict[str, VerifierFn] = {}
+    for mod in _VERIFIER_MODULES:
+        for claim_id, fn in mod.REGISTRY.items():
+            assert (
+                claim_id not in merged
+            ), f"duplicate verifier REGISTRY key across modules: {claim_id!r}"
+            merged[claim_id] = fn
+    return merged
+
+
 def build_verifiers(
     claims: ClaimCollection | Mapping[str, ClaimRecord],
 ) -> dict:
     """Map each claim id to its verifier function (where one exists)."""
     records = _records_by_id(claims)
-    result = {}
-    for claim_id in records:
-        fn_name = claim_id_to_fn_name(claim_id)
-        for mod in _VERIFIER_MODULES:
-            fn = getattr(mod, fn_name, None)
-            if fn is not None:
-                result[claim_id] = fn
-                break
-    return result
+    registry = merged_registry()
+    return {
+        claim_id: registry[claim_id] for claim_id in records if claim_id in registry
+    }
 
 
 def run(
@@ -52,27 +52,48 @@ def run(
     """Run all verifiers; print a report; exit with code 1 if any verifier fails.
 
     Claims with no verifier are reported as 'pending' (not failures), since this
-    verifier suite is built incrementally.  A verifier function that exists in a
-    verifier module but has no matching claim id IS treated as an error
-    (orphaned verifier).
+    verifier suite is built incrementally. Explicit-REGISTRY mismatches are
+    treated as errors: stale REGISTRY keys and unregistered verify_* functions.
     """
     records = _records_by_id(claims)
     ctx.claim_records = records
-    verifiers = build_verifiers(records)
-
-    # Check for orphaned verifier functions (verifier exists, claim id not in claims).
-    all_fn_names = {
-        name
-        for mod in _VERIFIER_MODULES
-        for name in dir(mod)
-        if name.startswith("verify_")
+    registry = merged_registry()
+    verifiers = {
+        claim_id: registry[claim_id] for claim_id in records if claim_id in registry
     }
-    registered_fn_names = {claim_id_to_fn_name(cid) for cid in records}
-    orphaned = all_fn_names - registered_fn_names
-    if orphaned:
-        print("ERROR: verifier function(s) with no matching claim id:", file=sys.stderr)
-        for name in sorted(orphaned):
-            print(f"  {name}", file=sys.stderr)
+
+    # Check for stale REGISTRY keys (registered but not present in claims collection).
+    stale_registry_keys = sorted(set(registry) - set(records))
+    if stale_registry_keys:
+        print("ERROR: REGISTRY key(s) with no matching claim id:", file=sys.stderr)
+        for claim_id in stale_registry_keys:
+            print(f"  {claim_id}", file=sys.stderr)
+        sys.exit(2)
+
+    # Check for verify_* functions that were defined but not registered.
+    unregistered_by_module: dict[str, list[str]] = {}
+    for mod in _VERIFIER_MODULES:
+        verify_functions = {
+            fn
+            for name, fn in vars(mod).items()
+            if name.startswith("verify_") and callable(fn)
+        }
+        registered_functions = set(mod.REGISTRY.values())
+        unregistered = sorted(
+            fn.__name__ for fn in (verify_functions - registered_functions)
+        )
+        if unregistered:
+            unregistered_by_module[mod.__name__.split(".")[-1]] = unregistered
+
+    if unregistered_by_module:
+        print(
+            "ERROR: verifier function(s) not referenced by module REGISTRY:",
+            file=sys.stderr,
+        )
+        for module_name, fn_names in sorted(unregistered_by_module.items()):
+            print(f"  {module_name}", file=sys.stderr)
+            for fn_name in fn_names:
+                print(f"    {fn_name}", file=sys.stderr)
         sys.exit(2)
 
     passed: list[str] = []

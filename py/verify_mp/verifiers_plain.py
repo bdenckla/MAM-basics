@@ -2,6 +2,7 @@
 """Verifiers for mp.plain.* structural claims."""
 
 from collections import Counter
+from typing import Callable
 
 from author import mp_cmn as cmn
 from author_util.claim import ClaimRecord
@@ -13,6 +14,8 @@ from verify_mp.corpus import (
     iter_plain_verses,
     iter_plain_col_objects,
 )
+
+VerifierFn = Callable[[ClaimRecord, Context], None]
 
 _NORM_QUOTES = str.maketrans({'"': "״"})
 
@@ -633,3 +636,24 @@ def verify_mp_plain_docs_plain_only_templates_pre_evaluated_handlers(
     )
     unknown = set(declared.values()) - allowed_behavior_labels
     assert not unknown, f"unknown handler behavior label(s): {sorted(unknown)}"
+
+
+REGISTRY: dict[str, VerifierFn] = {
+    "mp.plain.book39.fields": verify_mp_plain_book39_fields,
+    "mp.plain.chapter.pseudo-verse-keys": verify_mp_plain_chapter_pseudo_verse_keys,
+    "mp.plain.docs.common-templates.templates-in-plain-survey": verify_mp_plain_docs_common_templates_templates_in_plain_survey,
+    "mp.plain.docs.custom-tag.keys-and-values": verify_mp_plain_docs_custom_tag_keys_and_values,
+    "mp.plain.docs.plain-only-templates.categories": verify_mp_plain_docs_plain_only_templates_categories,
+    "mp.plain.docs.plain-only-templates.pre-evaluated.handlers": verify_mp_plain_docs_plain_only_templates_pre_evaluated_handlers,
+    "mp.plain.kq-special.semantic-shape": verify_mp_plain_kq_special_semantic_shape,
+    "mp.plain.template-node.recursive-shape": verify_mp_plain_template_node_recursive_shape,
+    "mp.plain.template.stmpl-format-example": verify_mp_plain_template_stmpl_format_example,
+    "mp.plain.templates.jerusalem.set": verify_mp_plain_templates_jerusalem_set,
+    "mp.plain.templates.plain-only.set": verify_mp_plain_templates_plain_only_set,
+    "mp.plain.verse.c-col.top5-items": verify_mp_plain_verse_c_col_top5_items,
+    "mp.plain.verse.d-col.named-params": verify_mp_plain_verse_d_col_named_params,
+    "mp.plain.verse.d-col.semantics": verify_mp_plain_verse_d_col_semantics,
+    "mp.plain.verse.e-col.semantics": verify_mp_plain_verse_e_col_semantics,
+    "mp.plain.verse.e-col.text-template-segmentation": verify_mp_plain_verse_e_col_text_template_segmentation,
+    "mp.plain.verse.is-3-tuple": verify_mp_plain_verse_is_3_tuple,
+}
