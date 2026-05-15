@@ -21,6 +21,14 @@ from mb_misc import mb_html
 _VERIFY_ANY_MARKER_OBJECT_RE = re.compile(
     r'\{\s*"(?P<key>__verify_mp_any_[a-z_]+__)"\s*:\s*true\s*\}'
 )
+# Pygments tokenizes bare `...` (outside a string) as three separate single-
+# character punctuation tokens.  This constant matches the resulting HTML so
+# that the second pass in _build_pre_html can wrap them as a single ellipsis.
+_THREE_DOT_SPANS = (
+    '<span class="tok-punct">.</span>'
+    '<span class="tok-punct">.</span>'
+    '<span class="tok-punct">.</span>'
+)
 _VERIFY_ANY_MARKER_TOKEN_RE = re.compile(r'"__verify_mp_any_[a-z_]+__"')
 _VERIFY_WILDCARD_STRING_OBJECT_RE = re.compile(
     r'\{\s*"__verify_mp_wildcard_string__"\s*:\s*(?P<value>"(?:\\.|[^"\\])*")\s*\}'
@@ -134,6 +142,9 @@ def _build_pre_html(code_text: str, lexer, with_line_nums: bool = False) -> str:
     for i, line_tokens in enumerate(lines_of_tokens, 1):
         line_html = "".join(_span(v, _token_color_class(t)) for t, v in line_tokens)
         line_html = line_html.replace("...", '<span class="ellipsis">...</span>')
+        line_html = line_html.replace(
+            _THREE_DOT_SPANS, '<span class="ellipsis">...</span>'
+        )
         if with_line_nums:
             ln = f'<span class="ln">{i:{width}d}</span>'
             line_html = ln + line_html

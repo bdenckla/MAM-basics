@@ -1,7 +1,7 @@
 {
   "tmpl": [
     ["מ:קישור בהערה"],
-    ["https://www.nli.org.il/he/manuscripts/NNL_ALEPH990001395350205171/NLI#$FL34539128"],
+    [{"__verify_mp_wildcard_string__": "https://www.nli.org.il/...FL34539128"}],
     ["כת\"י קיימברידג' Add. 1728"]
   ]
 }

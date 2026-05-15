@@ -38,6 +38,8 @@ _CLAIM_ID_BOOK39_SKEL_COMMON = "mp.plain.docs.book39-skeleton.common"
 _CLAIM_ID_EXAMPLE_INDEX_0 = "mp.plain.example.verse-label-template-object"
 _CLAIM_ID_E_COL_SEGMENTATION = "mp.plain.verse.e-col.text-template-segmentation"
 _CLAIM_ID_EXAMPLE_STMPL = "mp.plain.example.stmpl-format"
+_CLAIM_ID_EXAMPLE_TMPL_TREE = "mp.plain.example.tmpl-tree"
+_CLAIM_ID_EXAMPLE_TMPL_TREE_NESTED = "mp.plain.example.tmpl-tree-nested"
 _CLAIM_ID_TMPL_TREE_SHAPE = "mp.plain.template-node.recursive-shape"
 _CLAIM_ID_CUSTOM_TAG_KEYS_VALUES = "mp.plain.docs.custom-tag.keys-and-values"
 
@@ -474,9 +476,25 @@ def _s_template_objects(*, claims: ClaimCollection):
         author.heading_level_3("2. Parsed template tree (tmpl)"),
         author.para("Longer and/or more complex templates appear as parse trees:"),
         author.para("Example — a template with string parameters only:"),
-        json_block.json_block_raw_html(_JSON_TMPL),
+        json_block.json_block_raw_html(
+            _emit_claim_payload(
+                claims,
+                _CLAIM_ID_EXAMPLE_TMPL_TREE,
+                _JSON_TMPL,
+                kind="example",
+                subject="mp:plain",
+            )
+        ),
         author.para("Example — a template nested inside another template:"),
-        json_block.json_block_raw_html(_JSON_TMPL_NESTED),
+        json_block.json_block_raw_html(
+            _emit_claim_payload(
+                claims,
+                _CLAIM_ID_EXAMPLE_TMPL_TREE_NESTED,
+                _JSON_TMPL_NESTED,
+                kind="example",
+                subject="mp:plain",
+            )
+        ),
         author.para(
             _emit_claim_payload(
                 claims,

@@ -35,7 +35,8 @@ class TestAuthorJsonBlock(unittest.TestCase):
         raw_html = html["_raw_html"] if isinstance(html, dict) else html
 
         self.assertNotIn("__verify_mp_any_", raw_html)
-        self.assertIn(
+        self.assertIn('<span class="ellipsis">...</span>', raw_html)
+        self.assertNotIn(
             '<span class="tok-punct">.</span><span class="tok-punct">.</span><span class="tok-punct">.</span>',
             raw_html,
         )
