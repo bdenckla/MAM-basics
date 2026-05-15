@@ -85,93 +85,114 @@ SPECIAL_LETTER_ROWS = [
     ],
 ]
 
-ACCENT_ROWS = [
-    [
-        author.hbo("מ:לגרמיה-2"),
-        "$Legarmeh. The vertical line ׀ as $legarmeh (part of the word\u2019s cantillation). Shares Unicode with $paseq but differs in function.",
-    ],
-    [
-        author.hbo("מ:פסק"),
-        "$Paseq. The vertical line ׀ as $paseq in the narrow sense, i.e. $paseq as distinct from $legarmeh.",
-    ],
-    [
-        author.hbo("מ:מקף אפור"),
-        "Gray $maqaf. A $maqaf that is only implicit in the manuscript. Appears only in poetic verses.",
-    ],
-    [
+_ACCENT_TEMPLATE_NAMES_BY_ROW = (
+    (
+        ("מ:לגרמיה-2",),
         [
-            author.hbo("מ:דחי"),
-            mb_html.line_break(),
-            author.hbo("מ:צינור"),
+            author.hbo("מ:לגרמיה-2"),
+            "$Legarmeh. The vertical line ׀ as $legarmeh (part of the word\u2019s cantillation). Shares Unicode with $paseq but differs in function.",
         ],
-        "$Dexi/$tsinnor variation. Presents both stress-helped and non-stress-helped versions of a word.",
-    ],
-    [
-        author.hbo("גלגל-2"),
-        "Galgal. Distinguishes poetic from prose uses of Unicode $YBY.",
-    ],
-    [
-        author.hbo("ירח בן יומו-2"),
-        "Yeraḥ ben yomo. Distinguishes prose from poetic uses of Unicode $YBY.",
-    ],
-    [
-        author.hbo("אתנח הפוך"),
-        "Atnaḥ hafukh. Helps distinguish this accent from galgal/yeraḥ ben yomo.",
-    ],
-    [
-        author.hbo("מ:קמץ"),
+    ),
+    (
+        ("מ:פסק",),
         [
-            "$Qamats variation. Named params: ",
-            author.hbo("ד="),
-            " (grammatical) and ",
-            author.hbo("ס="),
-            " (Sephardic tradition).",
+            author.hbo("מ:פסק"),
+            "$Paseq. The vertical line ׀ as $paseq in the narrow sense, i.e. $paseq as distinct from $legarmeh.",
         ],
-    ],
-    [
-        author.hbo("מ:טעם"),
+    ),
+    (
+        ("מ:מקף אפור",),
         [
-            "Accent extractor. Drops the first code point of its argument, allowing an accent to be specified on a dummy letter for readability. Currently only used inside ",
+            author.hbo("מ:מקף אפור"),
+            "Gray $maqaf. A $maqaf that is only implicit in the manuscript. Appears only in poetic verses.",
+        ],
+    ),
+    (
+        ("מ:דחי", "מ:צינור"),
+        [
+            [
+                author.hbo("מ:דחי"),
+                mb_html.line_break(),
+                author.hbo("מ:צינור"),
+            ],
+            "$Dexi/$tsinnor variation. Presents both stress-helped and non-stress-helped versions of a word.",
+        ],
+    ),
+    (
+        ("גלגל-2",),
+        [
+            author.hbo("גלגל-2"),
+            "Galgal. Distinguishes poetic from prose uses of Unicode $YBY.",
+        ],
+    ),
+    (
+        ("ירח בן יומו-2",),
+        [
+            author.hbo("ירח בן יומו-2"),
+            "Yeraḥ ben yomo. Distinguishes prose from poetic uses of Unicode $YBY.",
+        ],
+    ),
+    (
+        ("אתנח הפוך",),
+        [
+            author.hbo("אתנח הפוך"),
+            "Atnaḥ hafukh. Helps distinguish this accent from galgal/yeraḥ ben yomo.",
+        ],
+    ),
+    (
+        ("מ:קמץ",),
+        [
+            author.hbo("מ:קמץ"),
+            [
+                "$Qamats variation. Named params: ",
+                author.hbo("ד="),
+                " (grammatical) and ",
+                author.hbo("ס="),
+                " (Sephardic tradition).",
+            ],
+        ],
+    ),
+    (
+        ("מ:טעם",),
+        [
+            author.hbo("מ:טעם"),
+            [
+                "Accent extractor. Drops the first code point of its argument, allowing an accent to be specified on a dummy letter for readability. Currently only used inside ",
+                author.hbo(
+                    _TWO_ACCENTS_OF_QUPO_ABBREV,
+                    {"title": tmpln.TWO_ACCENTS_OF_QUPO},
+                ),
+                ".",
+            ],
+        ],
+    ),
+    (
+        ("מ:כפול",),
+        [
+            author.hbo("מ:כפול"),
+            [
+                "Dual-trope span. See ",
+                author.anchor_h(
+                    "its dedicated page",
+                    _KAFUL_DOC,
+                ),
+                ".",
+            ],
+        ],
+    ),
+    (
+        (tmpln.TWO_ACCENTS_OF_QUPO,),
+        [
             author.hbo(
                 _TWO_ACCENTS_OF_QUPO_ABBREV,
                 {"title": tmpln.TWO_ACCENTS_OF_QUPO},
             ),
-            ".",
+            "Formats the two extra marks (above-accent + patah) on the QUPO Decalogue words (פני and מתחת). Parameter is the above-accent (may use מ:טעם).",
         ],
-    ],
-    [
-        author.hbo("מ:כפול"),
-        [
-            "Dual-trope span. See ",
-            author.anchor_h(
-                "its dedicated page",
-                _KAFUL_DOC,
-            ),
-            ".",
-        ],
-    ],
-    [
-        author.hbo(
-            _TWO_ACCENTS_OF_QUPO_ABBREV,
-            {"title": tmpln.TWO_ACCENTS_OF_QUPO},
-        ),
-        "Formats the two extra marks (above-accent + patah) on the QUPO Decalogue words (פני and מתחת). Parameter is the above-accent (may use מ:טעם).",
-    ],
-]
-
-_ACCENT_TEMPLATE_NAMES_BY_ROW = (
-    (("מ:לגרמיה-2",), ACCENT_ROWS[0]),
-    (("מ:פסק",), ACCENT_ROWS[1]),
-    (("מ:מקף אפור",), ACCENT_ROWS[2]),
-    (("מ:דחי", "מ:צינור"), ACCENT_ROWS[3]),
-    (("גלגל-2",), ACCENT_ROWS[4]),
-    (("ירח בן יומו-2",), ACCENT_ROWS[5]),
-    (("אתנח הפוך",), ACCENT_ROWS[6]),
-    (("מ:קמץ",), ACCENT_ROWS[7]),
-    (("מ:טעם",), ACCENT_ROWS[8]),
-    (("מ:כפול",), ACCENT_ROWS[9]),
-    ((tmpln.TWO_ACCENTS_OF_QUPO,), ACCENT_ROWS[10]),
+    ),
 )
+
+ACCENT_ROWS = [row for _template_names, row in _ACCENT_TEMPLATE_NAMES_BY_ROW]
 
 ACCENT_ROW_TEMPLATE_NAMES = tuple(
     template_name
