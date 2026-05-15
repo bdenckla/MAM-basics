@@ -221,7 +221,7 @@ def s_intro():
                 "Structure of the top level and its header",
                 "Structure of a book39, chapter, and verse",
                 "Template format",
-                "Common templates",
+                "Selected templates",
                 # Normally we avoid mentioning "plain" in "plus" and vice versa,
                 # but this is an intentional exception to the rule.
                 "Differences from plain format",
@@ -583,7 +583,7 @@ def s_common_templates(*, claims: ClaimCollection):
     _emit_claim_payload(
         claims,
         "mp.plus.docs.common-templates.templates-in-plus-survey",
-        "Templates listed in mpplus common-template tables are present in plus survey.",
+        "Templates listed in mpplus selected-template tables are present in plus survey.",
         kind="enum",
         subject="mp:plus",
         data={"templates": _PLUS_COMMON_TEMPLATES},
@@ -591,7 +591,7 @@ def s_common_templates(*, claims: ClaimCollection):
     sheets_link = author.anchor_h("Templates tab", cmn.SHEETS_TMPL)
     sheets_data_link = author.anchor_h("$MAM Google Sheet", cmn.SHEETS_DATA)
     return [
-        author.heading_level_2("Common templates in the E (verse text) column"),
+        author.heading_level_2("Selected templates"),
         author.para(
             [
                 "For English and Hebrew descriptions of most templates, see the ",

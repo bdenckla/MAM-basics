@@ -144,7 +144,7 @@ def s_intro():
                 "Structure of the top level",
                 "Structure of a book39, chapter, and verse",
                 "Template and custom-tag objects",
-                "Common templates",
+                "Selected templates",
                 "Pseudo-verses",
             ]
         ),
@@ -568,7 +568,7 @@ def s_common_templates(*, claims: ClaimCollection):
     sheets_link = author.anchor_h("Templates tab", cmn.SHEETS_TMPL)
     sheets_data_link = author.anchor_h("$MAM Google Sheet", cmn.SHEETS_DATA)
     return [
-        author.heading_level_2("Common templates in the E (verse text) column"),
+        author.heading_level_2("Selected templates"),
         author.para(
             [
                 "For English and Hebrew descriptions of most templates, see the ",
