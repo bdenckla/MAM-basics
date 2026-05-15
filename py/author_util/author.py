@@ -112,6 +112,24 @@ def hbo(contents, attr=None):
     return mb_html.bdi(contents, _awl(attr, "hbo"))
 
 
+def hbo_with_ellipsis_title(abbrev_with_ellipsis: str, full_label: str, attr=None):
+    """Render an abbreviated Hebrew label with dotted underline on ellipsis only."""
+    suffix = " ..."
+    assert abbrev_with_ellipsis.endswith(suffix), abbrev_with_ellipsis
+    attr_nn = attr or {}
+    assert "title" not in attr_nn, attr_nn
+    prefix = abbrev_with_ellipsis[: -len(suffix)]
+    attr_with_title = {"title": full_label, **attr_nn}
+    return hbo(
+        [
+            prefix,
+            " ",
+            mb_html.span("...", {"class": "ellipsis-title"}),
+        ],
+        attr_with_title,
+    )
+
+
 def para_hbo(contents, attr=None):
     return mb_html.para(contents, _awc(_awl(attr, "hbo"), "center"))
 

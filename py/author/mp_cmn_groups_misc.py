@@ -24,9 +24,9 @@ STRUCTURAL_ROWS = [
         "Inter-prophet spacing. Marks the precise start of each of the 12 minor-prophetic book-parts with defined masoretic spacing. Parameter is the prophet name.",
     ],
     [
-        author.hbo(
+        author.hbo_with_ellipsis_title(
             _MINOR_PROPHETS_FIRST_VERSE_ABBREV,
-            {"title": "מ:רווח בתרי עשר בפסוק הראשון"},
+            "מ:רווח בתרי עשר בפסוק הראשון",
         ),
         "First-verse spacing marker for minor-prophetic book-parts. Parameter is the prophet name.",
     ],
@@ -35,9 +35,9 @@ STRUCTURAL_ROWS = [
         "Psalms-book spacing. Marks the precise start of each of the five Psalms divisions with defined masoretic spacing. Parameter is the book designation (e.g. ספר שני). Used at Ps 1, 42, 73, 90, 107.",
     ],
     [
-        author.hbo(
+        author.hbo_with_ellipsis_title(
             _PSALMS_DIVISION_FIRST_VERSE_ABBREV,
-            {"title": "מ:רווח לספר בתהלים בפסוק הראשון"},
+            "מ:רווח לספר בתהלים בפסוק הראשון",
         ),
         "First-verse spacing marker for each Psalms division. Parameter is the division designation (e.g. ספר שני).",
     ],

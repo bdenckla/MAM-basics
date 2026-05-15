@@ -115,7 +115,7 @@ _ACCENT_TEMPLATE_NAMES_BY_ROW = (
                 mb_html.line_break(),
                 author.hbo("מ:צינור"),
             ],
-            "$Dexi/$tsinnor variation. Presents both stress-helped and non-stress-helped versions of a word.",
+            "$Dexi and $tsinnor variation. Presents both stress-helped and non-stress-helped versions of a word.",
         ],
     ),
     (
