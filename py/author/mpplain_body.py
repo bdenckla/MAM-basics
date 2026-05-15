@@ -106,6 +106,20 @@ _MULTIMARK_TEMPLATES = [
 ]
 
 
+def _find_template_row(rows, template_name):
+    expected = author.hbo(template_name)
+    for row in rows:
+        if row[0] == expected:
+            return row
+        if isinstance(row[0], dict):
+            attr = row[0].get("attr")
+            if isinstance(attr, dict) and attr.get("title") == template_name:
+                return row
+        if isinstance(row[0], str) and f'title="{template_name}"' in row[0]:
+            return row
+    raise AssertionError(f"Template row not found: {template_name!r}")
+
+
 def _emit_claim_payload(
     claims: ClaimCollection,
     claim_id: str,
@@ -252,35 +266,6 @@ def s_verse(*, claims: ClaimCollection):
         ["E", "Verse text with inline templates"],
     ]
 
-    sep_rows = [
-        [author.hbo("פפ"), "Parashah petuchah (open paragraph)"],
-        [author.hbo("סס"), "Parashah setumah (closed paragraph)"],
-        [
-            author.hbo("מ:ספר חדש"),
-            "New book marker — marks the start of one of the 24 books with defined spacing. Not used for second halves of two-part books or individual Minor Prophets after Hosea.",
-        ],
-        [
-            author.hbo("מ:אין פרשה בתחילת פרק"),
-            "No $parashah at chapter start — tags chapters that don’t begin with a visible $parashah.",
-        ],
-    ]
-    sep_more_rows = [
-        [
-            author.hbo("פפפ"),
-            "Open $parashah starting immediately on the next line (no blank line)",
-        ],
-        [
-            author.hbo("ססס"),
-            "Closed $parashah inline — blank spaces mid-line with text before and after",
-        ],
-        [author.hbo("סס2"), "Narrow closed $parashah"],
-        [author.hbo("פסקא באמצע פסוק"), "Parashah division within a verse"],
-        [author.hbo("מ:רווח בתרי עשר"), "Spacing between Minor Prophets"],
-        [
-            author.hbo("מ:רווח לספר בתהלים"),
-            "Spacing between the 5 “books” of Psalms (Psalms 1, 42, 73, 90, 107)",
-        ],
-    ]
     return [
         author.heading_level_2("Verse (pseudo-verse) structure"),
         author.para(
@@ -301,26 +286,20 @@ def s_verse(*, claims: ClaimCollection):
                 claims,
                 "mp.plain.verse.c-col.semantics",
                 [
-                    "The contents at index 0 indicate how this verse is separated from"
-                    " the preceding verse. ",
-                    mb_html.code('"__"'),
-                    " is by far the most common value, indicating a plain space."
-                    " More interesting values include:",
+                    "The list at index 0 indicates how this verse is separated from"
+                    " the preceding verse.",
+                    [" Double underscore (", mb_html.code('"__"'), ")"],
+                    " is by far the most common value found in the list at index 0. It indicates a plain space.",
+                    [" Double slash (", mb_html.code('"//"'), ")"],
+                    " is the next most common value, indicating a line break in the Wikitext source."
+                    " (This double slash is not Biblical data and all applications should ignore it"
+                    " unless they are doing something like trying to recreate the Wikitext source, verbatim.)"
+                    " Other common values are calls to the ר4 template, the פפ template, or the סס template."
+                    " (See the Whitespace templates section below).",
                 ],
                 kind="struct",
                 subject="mp:plain",
             )
-        ),
-        author.std_table(sep_rows, arg_to_troh=["Template", "Meaning"]),
-        author.para("Additional $parashah-related templates that may appear:"),
-        author.std_table(sep_more_rows, arg_to_troh=["Template", "Meaning"]),
-        author.para(
-            [
-                "The ",
-                mb_html.code('"//"\N{ZERO WIDTH SPACE}'),
-                " strings sometimes sprinkled in"
-                " index 0 are Wikitext line breaks from the Google Sheet.",
-            ]
         ),
         author.heading_level_3("Index 1 (Google column D): Verse label"),
         author.para(
@@ -487,7 +466,9 @@ def s_template_format(*, claims: ClaimCollection):
 
 
 def s_common_templates(*, claims: ClaimCollection):
-    cmn.emit_claim_by_id(claims=claims, claim_id="mp.both.templates.structural.set")
+    structural_rows = cmn.emit_claim_by_id(
+        claims=claims, claim_id="mp.both.templates.structural.set"
+    )
     cmn.emit_claim_by_id(claims=claims, claim_id="mp.both.templates.navigation.set")
     cmn.emit_claim_by_id(claims=claims, claim_id="mp.both.templates.note-links.set")
     cmn.emit_claim_by_id(
@@ -557,6 +538,14 @@ def s_common_templates(*, claims: ClaimCollection):
         ],
     ]
     whitespace_extra_rows = cmn.other_rows_for_templates(["רווח בסוף שורה"])
+    whitespace_parashah_rows = [
+        _find_template_row(structural_rows, "מ:ספר חדש"),
+        _find_template_row(structural_rows, "מ:אין פרשה בתחילת פרק"),
+        _find_template_row(structural_rows, "מ:רווח בתרי עשר"),
+        _find_template_row(structural_rows, "מ:רווח לספר בתהלים"),
+        [author.hbo("סס2"), "Narrow closed $parashah"],
+        [author.hbo("פסקא באמצע פסוק"), "$parashah division within a verse"],
+    ]
     other_templates_rows = (
         [cmn.good_ending_row(good_ending_doc=_GOOD_ENDING_TMPL_DOC)]
         + cmn.poetic_rows_for_templates(["פרשה-מרכז"])
@@ -605,7 +594,10 @@ def s_common_templates(*, claims: ClaimCollection):
         tblh.tmpl_purp_table(plain_choice_rows),
         author.heading_level_3("Whitespace templates"),
         tblh.tmpl_purp_table(
-            cmn.whitespace_rows_shared() + [poetic_spacing_row] + whitespace_extra_rows
+            cmn.whitespace_rows_shared()
+            + [poetic_spacing_row]
+            + whitespace_extra_rows
+            + whitespace_parashah_rows
         ),
         author.para(
             "Many editions will choose to skip poetic formatting by treating"
