@@ -547,10 +547,6 @@ def s_common_templates(*, claims: ClaimCollection):
     )
     cmn.emit_claim_by_id(
         claims=claims,
-        claim_id="mp.both.templates.kq-special.subtypes",
-    )
-    cmn.emit_claim_by_id(
-        claims=claims,
         claim_id="mp.both.templates.kq-special.subtype-counts",
     )
     json_kq_plus = cmn.emit_claim_by_id(claims=claims, claim_id="mp.plus.example.kq")

@@ -498,10 +498,6 @@ def s_common_templates(*, claims: ClaimCollection):
         claims=claims,
         claim_id="mp.both.templates.kq-special.subtype-counts",
     )
-    cmn.emit_claim_by_id(
-        claims=claims,
-        claim_id="mp.both.templates.kq-am2.sug-values",
-    )
     json_kq = cmn.emit_claim_by_id(claims=claims, claim_id="mp.plain.example.kq")
     special_letter_rows = cmn.emit_claim_by_id(
         claims=claims,
