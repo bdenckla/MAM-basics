@@ -10,6 +10,9 @@ _claim_def = _claims_core.claim_def
 _HAARAH_2_DOC = "mpplus_haarah_2.html"
 _MINOR_PROPHETS_FIRST_VERSE_ABBREV = "מ:רווח בתרי עשר ..."
 _PSALMS_DIVISION_FIRST_VERSE_ABBREV = "מ:רווח לספר בתהלים ..."
+_NO_PAR_AT_STA_OF_CHAP21_ABBREV = "מ:אין פרשה ... פרק"
+_NO_PAR_AT_STA_OF_CHAP03_ABBREV = "מ:אין פרשה ... אמ״ת"
+_NO_PAR_AT_STA_OF_WEEKLY_ABBREV = "מ:אין רווח ... השבוע"
 
 STRUCTURAL_ROWS = [
     [
@@ -42,15 +45,24 @@ STRUCTURAL_ROWS = [
         "First-verse spacing marker for each Psalms division. Parameter is the division designation (e.g. ספר שני).",
     ],
     [
-        author.hbo(tmpln.NO_PAR_AT_STA_OF_CHAP21),
+        author.hbo_with_ellipsis_title(
+            _NO_PAR_AT_STA_OF_CHAP21_ABBREV,
+            tmpln.NO_PAR_AT_STA_OF_CHAP21,
+        ),
         "No-$parashah chapter start (21 books). Tags chapters that begin without a coinciding $parashah division, so a space can be added before the first verse when presenting sequential text.",
     ],
     [
-        author.hbo(tmpln.NO_PAR_AT_STA_OF_CHAP03),
+        author.hbo_with_ellipsis_title(
+            _NO_PAR_AT_STA_OF_CHAP03_ABBREV,
+            tmpln.NO_PAR_AT_STA_OF_CHAP03,
+        ),
         "No-$parashah chapter start (poetic books). Analogous to the previous template for Ps, Prov, and Job; redirects to ר4.",
     ],
     [
-        author.hbo(tmpln.NO_PAR_AT_STA_OF_WEEKLY),
+        author.hbo_with_ellipsis_title(
+            _NO_PAR_AT_STA_OF_WEEKLY_ABBREV,
+            tmpln.NO_PAR_AT_STA_OF_WEEKLY,
+        ),
         "No-$parashah weekly-portion start. Used only at Gen 47:28 (the only Torah weekly portion that begins without a $parashah).",
     ],
     [
