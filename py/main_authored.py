@@ -13,6 +13,7 @@ Subcommands:
                        available verifier functions without rewriting
                        MAM-parsed authored HTML/CSS outputs.
                        Run this after editing py/author/mpplain.py,
+                       py/author/mpplain_body.py,
                        py/author/mpplus.py, or
                        py/author/mpplus_body.py.
 """
