@@ -10,6 +10,7 @@ from author import mp_cmn_dedicated_rows as dedicated_rows
 from author import mp_kq_am2_common as kq_am2_common
 from author import mp_cmn_json_snippets as jsnip
 from author import mp_cmn_top_header_book39 as thb
+from author import mp_table_helpers as tblh
 
 _CALL_GRAPHS = "https://bdenckla.github.io/MAM-parsed/plus-template-call-graphs.html"
 _DIFF_FROM_PLAIN_DOC = "mpplus_diff_from_plain.html"
@@ -277,7 +278,7 @@ def s_top_level(*, claims: ClaimCollection):
         author.heading_level_2("Top-level structure"),
         json_block.json_block_raw_html(_json_top_level_skel(claims=claims)),
         author.heading_level_2("Header"),
-        author.std_table(_header_rows, arg_to_troh=["Key", "Type", "Description"]),
+        tblh.key_type_desc_table(_header_rows),
         author.para("Here’s the header for Job, a book24 has no sub-books:"),
         json_block.json_block_raw_html(_json_header(claims=claims)),
         author.para("Here’s the header for Samuel, a book24 that has sub-books:"),
@@ -321,7 +322,7 @@ def s_book39(*, claims: ClaimCollection):
     return [
         author.heading_level_2("Book39 structure"),
         json_block.json_block_raw_html(_json_book39_skel(claims=claims)),
-        author.std_table(_book39_rows, arg_to_troh=["Key", "Type", "Description"]),
+        tblh.key_type_desc_table(_book39_rows),
     ]
 
 
@@ -363,7 +364,7 @@ def s_chapter_verse(*, claims: ClaimCollection):
         author.heading_level_2("Template format"),
         author.para("Templates are represented like this:"),
         json_block.json_block_raw_html(_json_tmpl_format(claims=claims)),
-        author.std_table(tmpl_rows, arg_to_troh=["Key", "Type", "Description"]),
+        tblh.key_type_desc_table(tmpl_rows),
         author.heading_level_3([mb_html.code("tmpl_params"), " keys"]),
         author.para(
             _emit_claim_payload(
@@ -617,11 +618,11 @@ def s_common_templates(*, claims: ClaimCollection):
             ]
         ),
         author.heading_level_3("$Ketiv_qere templates"),
-        author.std_table(kq_rows, arg_to_troh=["Template", "Purpose"]),
+        tblh.tmpl_purp_table(kq_rows),
         author.para("Example of standard $ketiv_qere:"),
         json_block.json_block_raw_html(json_kq_plus),
         author.heading_level_3("Special letter templates"),
-        author.std_table(
+        tblh.tmpl_purp_table(
             special_letter_rows
             + [
                 [
@@ -637,50 +638,30 @@ def s_common_templates(*, claims: ClaimCollection):
                         ".",
                     ],
                 ]
-            ],
-            arg_to_troh=["Template", "Purpose"],
+            ]
         ),
         author.heading_level_3("Punctuation templates"),
-        author.std_table(
-            plus_accent_rows,
-            arg_to_troh=["Template", "Purpose"],
-        ),
+        tblh.tmpl_purp_table(plus_accent_rows),
         author.heading_level_3("Choice templates"),
         author.para(
             "Most applications will need to make a choice between the two or three options"
             " presented by these templates."
         ),
-        author.std_table(
-            plus_choice_rows,
-            arg_to_troh=["Template", "Purpose"],
-        ),
+        tblh.tmpl_purp_table(plus_choice_rows),
         author.heading_level_3("Whitespace templates"),
-        author.std_table(
-            cmn.whitespace_rows_shared() + [poetic_spacing_row] + whitespace_plus_rows,
-            arg_to_troh=["Template", "Purpose"],
+        tblh.tmpl_purp_table(
+            cmn.whitespace_rows_shared() + [poetic_spacing_row] + whitespace_plus_rows
         ),
         author.para(
             "Many editions will choose to skip poetic formatting by treating"
             " ר0–ר4 as simple word spaces."
         ),
         author.heading_level_3("Lack-of-whitespace templates"),
-        author.std_table(
-            lack_of_whitespace_rows,
-            arg_to_troh=["Template", "Purpose"],
-        ),
+        tblh.tmpl_purp_table(lack_of_whitespace_rows),
         author.heading_level_3("Other templates"),
-        author.std_table(
-            other_misc_rows,
-            arg_to_troh=["Template", "Purpose"],
-        ),
+        tblh.tmpl_purp_table(other_misc_rows),
         author.heading_level_3("Note template"),
-        author.std_table(
-            [note_row],
-            arg_to_troh=["Template", "Purpose"],
-        ),
+        tblh.tmpl_purp_table([note_row]),
         author.heading_level_3("Documentation templates"),
-        author.std_table(
-            cmn.other_rows_shared_core(nusach_doc=_NUSACH_DOC),
-            arg_to_troh=["Template", "Purpose"],
-        ),
+        tblh.tmpl_purp_table(cmn.other_rows_shared_core(nusach_doc=_NUSACH_DOC)),
     ]

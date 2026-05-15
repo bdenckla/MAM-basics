@@ -40,6 +40,11 @@ TEST_MODULE_SPECS = (
         help_text="Run explicit claim collection core tests.",
     ),
     TestModuleSpec(
+        flag="author-std-table",
+        module_name="tests.test_author_std_table",
+        help_text="Run author.std_table generic caller-attrs tests.",
+    ),
+    TestModuleSpec(
         flag="verify-mp-payload-examples",
         module_name="tests.test_verify_mp_payload_examples",
         help_text="Run strict JSON payload-example matcher tests.",

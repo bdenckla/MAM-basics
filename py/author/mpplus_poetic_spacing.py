@@ -12,6 +12,7 @@ Output goes to ../MAM-parsed/gh-pages/mpplus_poetic_spacing.html.
 from author_util import author
 from author_util.claim import ClaimCollection
 from author import mp_cmn as cmn
+from author import mp_table_helpers as tblh
 
 _FNAME = "mpplus_poetic_spacing.html"
 _TITLE = "Poetic spacing templates"
@@ -42,7 +43,7 @@ def build_body(*, claims: ClaimCollection):
         author.para(
             "These templates control line placement and indentation in poetic verses."
         ),
-        author.std_table(poetic_rows, arg_to_troh=["Template", "Purpose"]),
+        tblh.tmpl_purp_table(poetic_rows),
         author.para(
             "Many editions will choose to skip poetic formatting by treating"
             " ר0–ר4 as simple word spaces."

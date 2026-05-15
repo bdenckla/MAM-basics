@@ -10,6 +10,7 @@ from author import mp_cmn_json_snippets as jsnip
 from author import mp_cmn_dedicated_rows as dedicated_rows
 from author import mp_kq_am2_common as kq_am2_common
 from author import mp_cmn_top_header_book39 as thb
+from author import mp_table_helpers as tblh
 
 _KQ_AM2_DOC = "mpplain_kq_am2.html"
 _KQ_SPECIAL_DOC = "mpplain_kq_special.html"
@@ -156,7 +157,7 @@ def s_top_level(*, claims: ClaimCollection):
         author.heading_level_2("Top-level structure"),
         json_block.json_block_raw_html(thb.JSON_TOP_LEVEL_SKEL),
         author.heading_level_2("Header"),
-        author.std_table(header_rows, arg_to_troh=["Key", "Type", "Description"]),
+        tblh.key_type_desc_table(header_rows),
         author.para("Here’s the header for Job, a book24 has no sub-books:"),
         json_block.json_block_raw_html(thb.JSON_HEADER),
         author.para("Here’s the header for Samuel, a book24 that has sub-books:"),
@@ -185,7 +186,7 @@ def s_book39(*, claims: ClaimCollection):
                 data={"book39_keys": thb.BOOK39_KEYS_COMMON},
             )
         ),
-        author.std_table(_book39_rows, arg_to_troh=["Key", "Type", "Description"]),
+        tblh.key_type_desc_table(_book39_rows),
     ]
 
 
@@ -219,7 +220,7 @@ def s_chapter(*, claims: ClaimCollection):
                 " dict is keyed as follows:",
             ]
         ),
-        author.std_table(_chapter_rows, arg_to_troh=["Key", "Category", "Purpose"]),
+        tblh.key_category_purpose_table(_chapter_rows),
         author.para(
             [
                 "The keys for normal verses are Hebrew numerals conforming to the system"
@@ -587,54 +588,35 @@ def s_common_templates(*, claims: ClaimCollection):
             ]
         ),
         author.heading_level_3("$Ketiv_qere templates"),
-        author.std_table(kq_rows, arg_to_troh=["Template", "Purpose"]),
+        tblh.tmpl_purp_table(kq_rows),
         author.para("Example of standard $ketiv_qere:"),
         json_block.json_block_raw_html(json_kq),
         author.heading_level_3("Special letter templates"),
-        author.std_table(special_letter_rows, arg_to_troh=["Template", "Purpose"]),
+        tblh.tmpl_purp_table(special_letter_rows),
         author.heading_level_3("Punctuation templates"),
-        author.std_table(
-            plain_accent_rows,
-            arg_to_troh=["Template", "Purpose"],
-        ),
+        tblh.tmpl_purp_table(plain_accent_rows),
         author.heading_level_3("Multimark templates"),
-        author.std_table(
-            plain_multimark_rows,
-            arg_to_troh=["Template", "Purpose"],
-        ),
+        tblh.tmpl_purp_table(plain_multimark_rows),
         author.heading_level_3("Choice templates"),
         author.para(
             "Most applications will need to make a choice between the two or three options"
             " presented by these templates."
         ),
-        author.std_table(
-            plain_choice_rows,
-            arg_to_troh=["Template", "Purpose"],
-        ),
+        tblh.tmpl_purp_table(plain_choice_rows),
         author.heading_level_3("Whitespace templates"),
-        author.std_table(
-            cmn.whitespace_rows_shared() + [poetic_spacing_row] + whitespace_extra_rows,
-            arg_to_troh=["Template", "Purpose"],
+        tblh.tmpl_purp_table(
+            cmn.whitespace_rows_shared() + [poetic_spacing_row] + whitespace_extra_rows
         ),
         author.para(
             "Many editions will choose to skip poetic formatting by treating"
             " ר0–ר4 as simple word spaces."
         ),
         author.heading_level_3("Note template"),
-        author.std_table(
-            [cmn.NOTE_ROW_PLAIN],
-            arg_to_troh=["Template", "Purpose"],
-        ),
+        tblh.tmpl_purp_table([cmn.NOTE_ROW_PLAIN]),
         author.heading_level_3("Documentation templates"),
-        author.std_table(
-            cmn.other_rows_shared_core(nusach_doc=_NUSACH_DOC),
-            arg_to_troh=["Template", "Purpose"],
-        ),
+        tblh.tmpl_purp_table(cmn.other_rows_shared_core(nusach_doc=_NUSACH_DOC)),
         author.heading_level_3("Other templates"),
-        author.std_table(
-            other_templates_rows,
-            arg_to_troh=["Template", "Purpose"],
-        ),
+        tblh.tmpl_purp_table(other_templates_rows),
     ]
 
 
