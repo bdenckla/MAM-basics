@@ -284,7 +284,7 @@ def s_verse(*, claims: ClaimCollection):
         author.para(
             _emit_claim_payload(
                 claims,
-                "mp.plain.verse.c-col.semantics",
+                "mp.plain.verse.c-col.top5-items",
                 [
                     "The list at index 0 indicates how this verse is separated from"
                     " the preceding verse.",
@@ -299,6 +299,7 @@ def s_verse(*, claims: ClaimCollection):
                 ],
                 kind="struct",
                 subject="mp:plain",
+                data={"top5": ["__", "//", "ר4", "פפ", "סס"]},
             )
         ),
         author.heading_level_3("Index 1 (Google column D): Verse label"),
