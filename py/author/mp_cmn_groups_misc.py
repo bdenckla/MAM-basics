@@ -32,15 +32,15 @@ STRUCTURAL_ROWS = [
     ],
     [
         author.hbo(tmpln.NO_PAR_AT_STA_OF_CHAP21),
-        "No-parashah chapter start (21 books). Tags chapters that begin without a coinciding parashah division, so a space can be added before the first verse when presenting sequential text.",
+        "No-$parashah chapter start (21 books). Tags chapters that begin without a coinciding $parashah division, so a space can be added before the first verse when presenting sequential text.",
     ],
     [
         author.hbo(tmpln.NO_PAR_AT_STA_OF_CHAP03),
-        "No-parashah chapter start (poetic books). Analogous to the previous template for Ps, Prov, and Job; redirects to ר4.",
+        "No-$parashah chapter start (poetic books). Analogous to the previous template for Ps, Prov, and Job; redirects to ר4.",
     ],
     [
         author.hbo(tmpln.NO_PAR_AT_STA_OF_WEEKLY),
-        "No-parashah weekly-portion start. Used only at Gen 47:28 (the only Torah weekly portion that begins without a parashah).",
+        "No-$parashah weekly-portion start. Used only at Gen 47:28 (the only Torah weekly portion that begins without a $parashah).",
     ],
     [
         author.hbo("מ:עלייה"),

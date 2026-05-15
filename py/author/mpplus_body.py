@@ -23,6 +23,14 @@ _GOOD_ENDING_DOC = "mpplus_good_ending_plus_field.html"
 _NUSACH_DOC = "mpplus_nusach.html"
 
 _PLUS_COMMON_TEMPLATES = [
+    "מ:ספר חדש",
+    "מ:רווח בתרי עשר בפסוק הראשון",
+    "מ:רווח לספר בתהלים בפסוק הראשון",
+    "מ:אין פרשה בתחילת פרק",
+    "מ:אין פרשה בתחילת פרק בספרי אמ״ת",
+    "מ:אין רווח של פרשה בתחילת פרשת השבוע",
+    "מ:קישור בהערה",
+    "מ:קישור פנימי בהערה",
     "כו״ק",
     "קו״כ",
     "מ:קו״כ-אם-2",
@@ -71,6 +79,14 @@ _CHOICE_TEMPLATES = [
 ]
 
 _PLUS_OTHER_SINGLE_TEMPLATES = ["נוסח", "מודגש", "ש"]
+
+
+def _find_template_row(rows, template_name):
+    expected = author.hbo(template_name)
+    for row in rows:
+        if row[0] == expected:
+            return row
+    raise AssertionError(f"Template row not found: {template_name!r}")
 
 
 def _emit_claim_payload(
@@ -491,9 +507,13 @@ def s_chapter_verse(*, claims: ClaimCollection):
 
 
 def s_common_templates(*, claims: ClaimCollection):
-    cmn.emit_claim_by_id(claims=claims, claim_id="mp.both.templates.structural.set")
+    structural_rows = cmn.emit_claim_by_id(
+        claims=claims, claim_id="mp.both.templates.structural.set"
+    )
     cmn.emit_claim_by_id(claims=claims, claim_id="mp.both.templates.navigation.set")
-    cmn.emit_claim_by_id(claims=claims, claim_id="mp.both.templates.note-links.set")
+    note_links_rows = cmn.emit_claim_by_id(
+        claims=claims, claim_id="mp.both.templates.note-links.set"
+    )
     cmn.emit_claim_by_id(
         claims=claims,
         claim_id="mp.both.templates.all-groups-cover-all-observed",
@@ -545,6 +565,20 @@ def s_common_templates(*, claims: ClaimCollection):
         cmn.accent_rows_for_templates(_CHOICE_TEMPLATES),
         doc_name=_KAFUL_DOC,
     )
+
+    whitespace_plus_rows = [
+        _find_template_row(structural_rows, "מ:רווח בתרי עשר בפסוק הראשון"),
+        _find_template_row(structural_rows, "מ:רווח לספר בתהלים בפסוק הראשון"),
+    ]
+    lack_of_whitespace_rows = [
+        _find_template_row(structural_rows, "מ:אין פרשה בתחילת פרק"),
+        _find_template_row(structural_rows, "מ:אין פרשה בתחילת פרק בספרי אמ״ת"),
+        _find_template_row(structural_rows, "מ:אין רווח של פרשה בתחילת פרשת השבוע"),
+    ]
+    other_misc_rows = [
+        _find_template_row(structural_rows, "מ:ספר חדש"),
+        *note_links_rows,
+    ]
 
     _emit_claim_payload(
         claims,
@@ -608,12 +642,23 @@ def s_common_templates(*, claims: ClaimCollection):
         author.heading_level_3("Whitespace templates"),
         author.std_table(
             cmn.whitespace_rows_shared()
-            + [row for row in poetic_rows if row[0] != author.hbo("פרשה-מרכז")],
+            + [row for row in poetic_rows if row[0] != author.hbo("פרשה-מרכז")]
+            + whitespace_plus_rows,
             arg_to_troh=["Template", "Purpose"],
         ),
         author.para(
             "Many editions will choose to skip poetic formatting by treating"
             " ר0–ר4 as simple word spaces."
+        ),
+        author.heading_level_3("Lack-of-whitespace templates"),
+        author.std_table(
+            lack_of_whitespace_rows,
+            arg_to_troh=["Template", "Purpose"],
+        ),
+        author.heading_level_3("Other templates"),
+        author.std_table(
+            other_misc_rows,
+            arg_to_troh=["Template", "Purpose"],
         ),
         author.heading_level_3("Note template"),
         author.std_table(
