@@ -2,16 +2,50 @@
 """Verifier driver: build dispatch dict, run verifiers, report results."""
 
 import sys
+from types import ModuleType
 from typing import Callable, Mapping
 
 from author_util.claim import ClaimCollection, ClaimRecord
 from verify_mp import payload_examples
 from verify_mp import verifiers_plus, verifiers_both, verifiers_plain
 from verify_mp.corpus import Context
-
-_VERIFIER_MODULES = (verifiers_plus, verifiers_both, verifiers_plain)
+from verify_mp.verifiers_both import REGISTRY as REGISTRY_BOTH
+from verify_mp.verifiers_plain import REGISTRY as REGISTRY_PLAIN
+from verify_mp.verifiers_plus import REGISTRY as REGISTRY_PLUS
 
 VerifierFn = Callable[[ClaimRecord, Context], None]
+
+_VERIFIER_MODULES: tuple[ModuleType, ...] = (
+    verifiers_plus,
+    verifiers_both,
+    verifiers_plain,
+)
+
+
+def _module_label(module: ModuleType) -> str:
+    return module.__name__.split(".")[-1]
+
+
+def _registry_for_module(module: ModuleType) -> Mapping[str, VerifierFn]:
+    """Return explicit REGISTRY symbol for known modules, else module.REGISTRY."""
+    if module is verifiers_plus:
+        return REGISTRY_PLUS
+    if module is verifiers_both:
+        return REGISTRY_BOTH
+    if module is verifiers_plain:
+        return REGISTRY_PLAIN
+    return module.REGISTRY
+
+
+def _verifier_sources() -> tuple[tuple[str, ModuleType, Mapping[str, VerifierFn]], ...]:
+    """Return (module_label, module, registry) tuples for all verifier modules."""
+    result: list[tuple[str, ModuleType, Mapping[str, VerifierFn]]] = []
+    for module in _VERIFIER_MODULES:
+        # Keep explicit symbol links for discoverability in tooling; fall back to
+        # module.REGISTRY for test doubles.
+        registry = _registry_for_module(module)
+        result.append((_module_label(module), module, registry))
+    return tuple(result)
 
 
 def _records_by_id(
@@ -25,8 +59,8 @@ def _records_by_id(
 def merged_registry() -> dict[str, VerifierFn]:
     """Return all verifier REGISTRY entries merged across verifier modules."""
     merged: dict[str, VerifierFn] = {}
-    for mod in _VERIFIER_MODULES:
-        for claim_id, fn in mod.REGISTRY.items():
+    for _module_name, _module, registry in _verifier_sources():
+        for claim_id, fn in registry.items():
             assert (
                 claim_id not in merged
             ), f"duplicate verifier REGISTRY key across modules: {claim_id!r}"
@@ -48,18 +82,18 @@ def build_verifiers(
 def _unregistered_verify_functions_by_module() -> dict[str, list[str]]:
     """Return verify_* functions not referenced by module REGISTRY."""
     unregistered_by_module: dict[str, list[str]] = {}
-    for mod in _VERIFIER_MODULES:
+    for module_name, module, registry in _verifier_sources():
         verify_functions = {
             fn
-            for name, fn in vars(mod).items()
+            for name, fn in vars(module).items()
             if name.startswith("verify_") and callable(fn)
         }
-        registered_functions = set(mod.REGISTRY.values())
+        registered_functions = set(registry.values())
         unregistered = sorted(
             fn.__name__ for fn in (verify_functions - registered_functions)
         )
         if unregistered:
-            unregistered_by_module[mod.__name__.split(".")[-1]] = unregistered
+            unregistered_by_module[module_name] = unregistered
     return unregistered_by_module
 
 
