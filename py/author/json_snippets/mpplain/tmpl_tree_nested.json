@@ -1,7 +1,7 @@
 {
   "tmpl": [
     ["נוסח"],
-    ["עַל־פָּנָֽ", {"tmpl": [[{"__verify_mp_wildcard_string__": "שני טעמים ..."}], {"__verify_mp_any_list__": true}]}, "י"],
+    ["עַל־פָּנָֽ", {"tmpl": [[{"__verify_mp_wildcard_string__": "שני טעמים ..."}], {"__verify_mp_any_list__": true}]}, "י"],
     {"__verify_mp_any_list__": true}
   ]
 }

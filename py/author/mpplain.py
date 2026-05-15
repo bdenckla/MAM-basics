@@ -474,8 +474,23 @@ def _s_template_objects(*, claims: ClaimCollection):
             ]
         ),
         author.heading_level_3("2. Parsed template tree (tmpl)"),
-        author.para("Longer and/or more complex templates appear as parse trees:"),
-        author.para("Example — a template with string parameters only:"),
+        author.para(
+            _emit_claim_payload(
+                claims,
+                _CLAIM_ID_TMPL_TREE_SHAPE,
+                "A parsed template tree’s segments contain strings and nested templates.",
+                kind="struct",
+                subject="mp:plain",
+                data={
+                    "key": "tmpl",
+                    "allowed_node_types": ["string", "stmpl", "tmpl"],
+                },
+            )
+        ),
+        author.para(
+            "A parsed template tree is used in cases where a stringified template would be inappropriate,"
+            " such as when the template is long and/or contains nested templates."),
+        author.para("Example — a long template with string parameters only:"),
         json_block.json_block_raw_html(
             _emit_claim_payload(
                 claims,
@@ -493,19 +508,6 @@ def _s_template_objects(*, claims: ClaimCollection):
                 _JSON_TMPL_NESTED,
                 kind="example",
                 subject="mp:plain",
-            )
-        ),
-        author.para(
-            _emit_claim_payload(
-                claims,
-                _CLAIM_ID_TMPL_TREE_SHAPE,
-                "A template is a recursive parse-tree whose segments contain strings and nested templates.",
-                kind="struct",
-                subject="mp:plain",
-                data={
-                    "key": "tmpl",
-                    "allowed_node_types": ["string", "stmpl", "tmpl"],
-                },
             )
         ),
         author.heading_level_3("3. Custom XML tag (custom_tag)"),
