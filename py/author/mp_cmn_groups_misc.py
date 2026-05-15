@@ -8,6 +8,8 @@ from author_util import author
 _claim_def = _claims_core.claim_def
 
 _HAARAH_2_DOC = "mpplus_haarah_2.html"
+_MINOR_PROPHETS_FIRST_VERSE_ABBREV = "מ:רווח בתרי עשר ..."
+_PSALMS_DIVISION_FIRST_VERSE_ABBREV = "מ:רווח לספר בתהלים ..."
 
 STRUCTURAL_ROWS = [
     [
@@ -19,7 +21,10 @@ STRUCTURAL_ROWS = [
         "Inter-prophet spacing. Marks the precise start of each of the 12 minor-prophetic book-parts with defined masoretic spacing. Parameter is the prophet name.",
     ],
     [
-        author.hbo("מ:רווח בתרי עשר בפסוק הראשון"),
+        author.hbo(
+            _MINOR_PROPHETS_FIRST_VERSE_ABBREV,
+            {"title": "מ:רווח בתרי עשר בפסוק הראשון"},
+        ),
         "First-verse spacing marker for minor-prophetic book-parts. Parameter is the prophet name.",
     ],
     [
@@ -27,7 +32,10 @@ STRUCTURAL_ROWS = [
         "Psalms-book spacing. Marks the precise start of each of the five Psalms divisions with defined masoretic spacing. Parameter is the book designation (e.g. ספר שני). Used at Ps 1, 42, 73, 90, 107.",
     ],
     [
-        author.hbo("מ:רווח לספר בתהלים בפסוק הראשון"),
+        author.hbo(
+            _PSALMS_DIVISION_FIRST_VERSE_ABBREV,
+            {"title": "מ:רווח לספר בתהלים בפסוק הראשון"},
+        ),
         "First-verse spacing marker for each Psalms division. Parameter is the division designation (e.g. ספר שני).",
     ],
     [

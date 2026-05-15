@@ -86,6 +86,12 @@ def _find_template_row(rows, template_name):
     for row in rows:
         if row[0] == expected:
             return row
+        if isinstance(row[0], dict):
+            attr = row[0].get("attr")
+            if isinstance(attr, dict) and attr.get("title") == template_name:
+                return row
+        if isinstance(row[0], str) and f'title="{template_name}"' in row[0]:
+            return row
     raise AssertionError(f"Template row not found: {template_name!r}")
 
 
