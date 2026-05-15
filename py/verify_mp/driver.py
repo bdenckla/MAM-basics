@@ -45,6 +45,41 @@ def build_verifiers(
     }
 
 
+def _unregistered_verify_functions_by_module() -> dict[str, list[str]]:
+    """Return verify_* functions not referenced by module REGISTRY."""
+    unregistered_by_module: dict[str, list[str]] = {}
+    for mod in _VERIFIER_MODULES:
+        verify_functions = {
+            fn
+            for name, fn in vars(mod).items()
+            if name.startswith("verify_") and callable(fn)
+        }
+        registered_functions = set(mod.REGISTRY.values())
+        unregistered = sorted(
+            fn.__name__ for fn in (verify_functions - registered_functions)
+        )
+        if unregistered:
+            unregistered_by_module[mod.__name__.split(".")[-1]] = unregistered
+    return unregistered_by_module
+
+
+def _exit_if_unregistered_verify_functions() -> None:
+    """Print unregistered verifier functions and exit with status 2."""
+    unregistered_by_module = _unregistered_verify_functions_by_module()
+    if not unregistered_by_module:
+        return
+
+    print(
+        "ERROR: verifier function(s) not referenced by module REGISTRY:",
+        file=sys.stderr,
+    )
+    for module_name, fn_names in sorted(unregistered_by_module.items()):
+        print(f"  {module_name}", file=sys.stderr)
+        for fn_name in fn_names:
+            print(f"    {fn_name}", file=sys.stderr)
+    sys.exit(2)
+
+
 def run(
     ctx: Context,
     claims: ClaimCollection | Mapping[str, ClaimRecord],
@@ -70,31 +105,7 @@ def run(
             print(f"  {claim_id}", file=sys.stderr)
         sys.exit(2)
 
-    # Check for verify_* functions that were defined but not registered.
-    unregistered_by_module: dict[str, list[str]] = {}
-    for mod in _VERIFIER_MODULES:
-        verify_functions = {
-            fn
-            for name, fn in vars(mod).items()
-            if name.startswith("verify_") and callable(fn)
-        }
-        registered_functions = set(mod.REGISTRY.values())
-        unregistered = sorted(
-            fn.__name__ for fn in (verify_functions - registered_functions)
-        )
-        if unregistered:
-            unregistered_by_module[mod.__name__.split(".")[-1]] = unregistered
-
-    if unregistered_by_module:
-        print(
-            "ERROR: verifier function(s) not referenced by module REGISTRY:",
-            file=sys.stderr,
-        )
-        for module_name, fn_names in sorted(unregistered_by_module.items()):
-            print(f"  {module_name}", file=sys.stderr)
-            for fn_name in fn_names:
-                print(f"    {fn_name}", file=sys.stderr)
-        sys.exit(2)
+    _exit_if_unregistered_verify_functions()
 
     passed: list[str] = []
     failed: list[tuple[str, str]] = []
