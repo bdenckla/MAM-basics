@@ -21,6 +21,7 @@ _KQ_SPECIAL_DOC = "mpplus_kq_special.html"
 _KAFUL_DOC = "mpplus_kaful.html"
 _GOOD_ENDING_DOC = "mpplus_good_ending_plus_field.html"
 _NUSACH_DOC = "mpplus_nusach.html"
+_POETIC_SPACING_DOC = "mpplus_poetic_spacing.html"
 
 _PLUS_COMMON_TEMPLATES = [
     "מ:ספר חדש",
@@ -560,7 +561,7 @@ def s_common_templates(*, claims: ClaimCollection):
         claims=claims,
         claim_id="mp.both.templates.accents.set",
     )
-    poetic_rows = cmn.emit_claim_by_id(
+    cmn.emit_claim_by_id(
         claims=claims,
         claim_id="mp.both.templates.poetic.set",
     )
@@ -571,6 +572,14 @@ def s_common_templates(*, claims: ClaimCollection):
         cmn.accent_rows_for_templates(_CHOICE_TEMPLATES),
         doc_name=_KAFUL_DOC,
     )
+    poetic_spacing_row = [
+        author.hbo("ר0–ר4"),
+        [
+            "Poetic spacing: See ",
+            author.anchor_h("their dedicated page", _POETIC_SPACING_DOC),
+            ".",
+        ],
+    ]
 
     whitespace_plus_rows = [
         _find_template_row(structural_rows, "מ:רווח בתרי עשר בפסוק הראשון"),
@@ -647,9 +656,7 @@ def s_common_templates(*, claims: ClaimCollection):
         ),
         author.heading_level_3("Whitespace templates"),
         author.std_table(
-            cmn.whitespace_rows_shared()
-            + [row for row in poetic_rows if row[0] != author.hbo("פרשה-מרכז")]
-            + whitespace_plus_rows,
+            cmn.whitespace_rows_shared() + [poetic_spacing_row] + whitespace_plus_rows,
             arg_to_troh=["Template", "Purpose"],
         ),
         author.para(

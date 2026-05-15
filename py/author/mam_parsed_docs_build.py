@@ -26,6 +26,7 @@ def _run_mam_parsed_authored_traversal(*, claims: ClaimCollection, tdm_ch=None):
     from author import mpplain_nusach
     from author import mpplus_diff_from_plain
     from author import mpplus_plain_only_templates
+    from author import mpplus_poetic_spacing
 
     if tdm_ch is None:
         mpplain.build_body(claims=claims)
@@ -45,6 +46,7 @@ def _run_mam_parsed_authored_traversal(*, claims: ClaimCollection, tdm_ch=None):
         mpplain_nusach.build_body(claims=claims)
         mpplus_diff_from_plain.build_body(claims=claims)
         mpplus_plain_only_templates.build_body(claims=claims)
+        mpplus_poetic_spacing.build_body(claims=claims)
         return
 
     mpplain.gen_html_file(tdm_ch, claims=claims)
@@ -64,6 +66,7 @@ def _run_mam_parsed_authored_traversal(*, claims: ClaimCollection, tdm_ch=None):
     mpplain_nusach.gen_html_file(tdm_ch, claims=claims)
     mpplus_diff_from_plain.gen_html_file(tdm_ch, claims=claims)
     mpplus_plain_only_templates.gen_html_file(tdm_ch, claims=claims)
+    mpplus_poetic_spacing.gen_html_file(tdm_ch, claims=claims)
 
 
 def build_docs_with_explicit_claims(
