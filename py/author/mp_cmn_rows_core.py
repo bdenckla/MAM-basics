@@ -4,6 +4,7 @@
 from mb_cmn import template_names as tmpln
 from author import mp_cmn_claims_core as _claims_core
 from author_util import author
+from mb_misc import mb_html
 
 _claim_def = _claims_core.claim_def
 
@@ -69,16 +70,14 @@ KQ_AM2_SUG_LIST = [
 
 SPECIAL_LETTER_ROWS = [
     [
-        author.hbo("מ:אות-ג"),
-        "Large letter. Parameter is the letter along with any diacritical marks.",
-    ],
-    [
-        author.hbo("מ:אות-ק"),
-        "Small letter. Parameter is the letter along with any diacritical marks.",
-    ],
-    [
-        author.hbo("מ:אות תלויה"),
-        "Suspended (hung) letter. Parameter is the letter along with any diacritical marks.",
+        [
+            author.hbo("מ:אות-ג"),
+            mb_html.line_break(),
+            author.hbo("מ:אות-ק"),
+            mb_html.line_break(),
+            author.hbo("מ:אות תלויה"),
+        ],
+        "Large, small, or hung letter. Parameter is the letter along with any diacritical marks.",
     ],
     [
         author.hbo("מ:נו״ן הפוכה"),
@@ -100,12 +99,12 @@ ACCENT_ROWS = [
         "Gray $maqaf. A $maqaf that is only implicit in the manuscript. Appears only in poetic verses.",
     ],
     [
-        author.hbo("מ:דחי"),
-        "$Dexi variation. Presents both stress-helped and non-stress-helped versions of a word.",
-    ],
-    [
-        author.hbo("מ:צינור"),
-        "$Tsinnor variation. Presents both stress-helped and non-stress-helped versions of a word.",
+        [
+            author.hbo("מ:דחי"),
+            mb_html.line_break(),
+            author.hbo("מ:צינור"),
+        ],
+        "$Dexi/$tsinnor variation. Presents both stress-helped and non-stress-helped versions of a word.",
     ],
     [
         author.hbo("גלגל-2"),
@@ -160,30 +159,47 @@ ACCENT_ROWS = [
     ],
 ]
 
-ACCENT_ROW_TEMPLATE_NAMES = (
-    "מ:לגרמיה-2",
-    "מ:פסק",
-    "מ:מקף אפור",
-    "מ:דחי",
-    "מ:צינור",
-    "גלגל-2",
-    "ירח בן יומו-2",
-    "אתנח הפוך",
-    "מ:קמץ",
-    "מ:טעם",
-    "מ:כפול",
-    tmpln.TWO_ACCENTS_OF_QUPO,
+_ACCENT_TEMPLATE_NAMES_BY_ROW = (
+    (("מ:לגרמיה-2",), ACCENT_ROWS[0]),
+    (("מ:פסק",), ACCENT_ROWS[1]),
+    (("מ:מקף אפור",), ACCENT_ROWS[2]),
+    (("מ:דחי", "מ:צינור"), ACCENT_ROWS[3]),
+    (("גלגל-2",), ACCENT_ROWS[4]),
+    (("ירח בן יומו-2",), ACCENT_ROWS[5]),
+    (("אתנח הפוך",), ACCENT_ROWS[6]),
+    (("מ:קמץ",), ACCENT_ROWS[7]),
+    (("מ:טעם",), ACCENT_ROWS[8]),
+    (("מ:כפול",), ACCENT_ROWS[9]),
+    ((tmpln.TWO_ACCENTS_OF_QUPO,), ACCENT_ROWS[10]),
 )
 
-assert len(ACCENT_ROW_TEMPLATE_NAMES) == len(ACCENT_ROWS)
+ACCENT_ROW_TEMPLATE_NAMES = tuple(
+    template_name
+    for template_names, _row in _ACCENT_TEMPLATE_NAMES_BY_ROW
+    for template_name in template_names
+)
+ACCENT_ROW_BY_TEMPLATE = {
+    template_name: row
+    for template_names, row in _ACCENT_TEMPLATE_NAMES_BY_ROW
+    for template_name in template_names
+}
 
-ACCENT_ROW_BY_TEMPLATE = dict(zip(ACCENT_ROW_TEMPLATE_NAMES, ACCENT_ROWS))
+assert len(ACCENT_ROW_BY_TEMPLATE) == len(ACCENT_ROW_TEMPLATE_NAMES)
 
 
 def accent_rows_for_templates(template_names):
     missing = [n for n in template_names if n not in ACCENT_ROW_BY_TEMPLATE]
     assert not missing, f"unknown accent template(s): {sorted(missing)}"
-    return [ACCENT_ROW_BY_TEMPLATE[n] for n in template_names]
+    rows = []
+    seen_rows = set()
+    for template_name in template_names:
+        row = ACCENT_ROW_BY_TEMPLATE[template_name]
+        row_id = id(row)
+        if row_id in seen_rows:
+            continue
+        seen_rows.add(row_id)
+        rows.append(row)
+    return rows
 
 
 JER_ROWS = [

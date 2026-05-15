@@ -628,7 +628,7 @@ def s_common_templates(*, claims: ClaimCollection):
                     author.hbo("מ:אות-מיוחדת-במילה"),
                     [
                         "Marks a whole word containing a special letter."
-                        " (By “special” we mean large, small, or suspended.)"
+                        " (By “special” we mean large, small, or hung.)"
                         " See ",
                         author.anchor_h(
                             "its dedicated page",
