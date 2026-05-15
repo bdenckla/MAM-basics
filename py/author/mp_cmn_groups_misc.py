@@ -20,7 +20,7 @@ STRUCTURAL_ROWS = [
     ],
     [
         author.hbo("מ:רווח בתרי עשר בפסוק הראשון"),
-        "Variant of מ:רווח בתרי עשר for the first verse of the minor-prophetic book-part.",
+        "First-verse spacing marker for minor-prophetic book-parts. Parameter is the prophet name.",
     ],
     [
         author.hbo("מ:רווח לספר בתהלים"),
@@ -28,7 +28,7 @@ STRUCTURAL_ROWS = [
     ],
     [
         author.hbo("מ:רווח לספר בתהלים בפסוק הראשון"),
-        "Variant of מ:רווח לספר בתהלים for the first verse of the Psalms division.",
+        "First-verse spacing marker for each Psalms division. Parameter is the division designation (e.g. ספר שני).",
     ],
     [
         author.hbo(tmpln.NO_PAR_AT_STA_OF_CHAP21),
