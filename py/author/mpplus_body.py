@@ -110,6 +110,7 @@ def _emit_claim_payload(
 
 
 _JSON_D_COL_FIRST = jsnip.read_text("mpplus_body", "d_col_first.json")
+_JSON_EP_EXAMPLE = jsnip.read_text("mpplus_body", "ep_example.json")
 _JSON_TMPL_FORMAT = jsnip.read_text("mpplus_body", "tmpl_format.json")
 _JSON_NESTED = jsnip.read_text("mpplus_body", "nested_tmpl.json")
 
@@ -505,13 +506,15 @@ def s_chapter_verse(*, claims: ClaimCollection):
                 claims,
                 "mp.plus.verse.e-col.semantics",
                 [
-                    "Column E is an array containing a mix of strings and templates.",
+                    "Column E is an array containing a mix of strings and templates."
+                    " Example (Job 1:1):",
                 ],
                 kind="struct",
                 subject="mp:plus",
                 data={"element_types": ["string", "template_object"]},
             )
         ),
+        json_block.json_block_raw_html(_JSON_EP_EXAMPLE),
     ]
 
 
