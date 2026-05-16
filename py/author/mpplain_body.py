@@ -291,7 +291,7 @@ def s_verse(*, claims: ClaimCollection):
     col_items = [
         "C — Verse separator: usually a plain space or a $parashah break",
         "D — Verse label: usually just book, chapter, & verse",
-        "E — Verse text: strings and templates",
+        "E — Verse proper: strings and templates",
     ]
     return [
         author.heading_level_2("Verse structure"),
@@ -346,7 +346,7 @@ def s_verse(*, claims: ClaimCollection):
                     " For normal verses, it is an array with exactly"
                     " one element: either the ",
                     author.hbo("מ:פסוק"),
-                    " template directly, or ",
+                    " template or ",
                     author.hbo("מ:פסוק"),
                     " wrapped in a ",
                     author.hbo("נוסח"),
@@ -372,13 +372,12 @@ def s_verse(*, claims: ClaimCollection):
                 subject="mp:plain",
             )
         ),
-        author.heading_level_3("E column (index 2): Verse text"),
+        author.heading_level_3("E column (index 2): Verse proper"),
         author.para(
             _emit_claim_payload(
                 claims,
                 "mp.plain.verse.e-col.semantics",
-                "Column E is an array mixing strings"
-                " (Hebrew text with cantillation marks) and templates."
+                "Column E is an array mixing strings and templates."
                 " Example (Job 1:1):",
                 kind="struct",
                 subject="mp:plain",
@@ -656,7 +655,7 @@ def s_pseudo_verses():
                 " and ",
                 author.hbo('"תתת"'),
                 " keys are pseudo-verses that contain"
-                " Wiki-specific navigation and formatting markup, not biblical text."
+                " Wiki-specific navigation and formatting markup, not biblical content."
                 " They can generally be skipped when extracting verse content.",
             ]
         ),

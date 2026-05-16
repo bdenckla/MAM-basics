@@ -345,7 +345,7 @@ def s_chapter_verse(*, claims: ClaimCollection):
     col_items = [
         "C — Verse separator: usually a plain space or a $parashah break",
         "D — Verse label: empty unless more than book, chapter, and verse",
-        "E — Verse text: strings and templates",
+        "E — Verse proper: strings and templates",
     ]
     return [
         author.heading_level_2("Chapter structure"),
@@ -473,19 +473,20 @@ def s_chapter_verse(*, claims: ClaimCollection):
                 claims,
                 "mp.plus.verse.d-col.semantics",
                 [
-                    "Column D is an array. When non-empty, it contains exactly"
+                    "Column D is an array that, if not empty, contains exactly"
                     " one element: either a ",
                     author.hbo("מ:פסוק"),
-                    " template call directly, or ",
+                    " template or ",
                     author.hbo("מ:פסוק"),
                     " wrapped in a ",
                     author.hbo("נוסח"),
-                    " template—typically carrying extra data such as the ",
+                    " template."
+                    "When Column D is not empty, its מ:פסוק call always has the ",
                     mb_html.code("סדר"),
-                    " or ",
+                    " and/or ",
                     mb_html.code("עלייה"),
                     " parameter."
-                    " When there is no such data, the array is empty."
+                    " When there is no such extra data, the array is empty."
                     " For example, here is the value for the D column for Job 1:1:",
                 ],
                 kind="struct",
@@ -498,7 +499,7 @@ def s_chapter_verse(*, claims: ClaimCollection):
             )
         ),
         json_block.json_block_raw_html(_json_d_col_first(claims=claims)),
-        author.heading_level_3("E column (index 2): Verse text"),
+        author.heading_level_3("E column (index 2): Verse proper"),
         author.para(
             _emit_claim_payload(
                 claims,

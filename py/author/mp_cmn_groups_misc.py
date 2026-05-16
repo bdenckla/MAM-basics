@@ -71,7 +71,7 @@ STRUCTURAL_ROWS = [
     ],
     [
         author.hbo("מ:יישור-בשני-הצדדים"),
-        "Full-justification block. Text following this template is justified on both sides (CSS distribution), including the last line. Used for text adjacent to song sections in the 21 books.",
+        "Full-justification block. Content following this template is justified on both sides (CSS distribution), including the last line. Used for content adjacent to song sections in the 21 books.",
     ],
     [
         author.hbo("מ:יישור-בשני-הצדדים-סוף"),
@@ -106,11 +106,11 @@ NOTE_ROW_PLAIN = [
 NOTE_LINKS_ROW = [
     [
         author.hbo("מ:קישור בהערה"),
-        "Hyperlink inside note text (within arg 2 of מ:הערה-2).",
+        "Hyperlink inside note content (within arg 2 of מ:הערה-2).",
     ],
     [
         author.hbo("מ:קישור פנימי בהערה"),
-        "Same-page link inside note text (within arg 2 of מ:הערה-2).",
+        "Same-page link inside note content (within arg 2 of מ:הערה-2).",
     ],
 ]
 
@@ -133,7 +133,7 @@ NAVIGATION_ROWS = [
     ],
     [
         author.hbo("מ:טעמי המקרא"),
-        "Font/style setter. Sets font and styling for pointed Hebrew text. Optional parameter is font size (default 23pt; 18pt inside song-format tables).",
+        "Font/style setter. Sets font and styling for pointed Hebrew. Optional parameter is font size (default 23pt; 18pt inside song-format tables).",
     ],
     [
         author.hbo("מ:טעמי המקרא-סוף"),
@@ -145,7 +145,7 @@ NAVIGATION_ROWS = [
     ],
     [
         author.hbo("בסיס-משתמש"),
-        "Page-footer attribution. Notes that the page text was originally edited elsewhere. Parameter is a link to the source page. Used mainly for Neviʼim/Ketuvim pages reconstructed from the Aleppo Codex.",
+        "Page-footer attribution. Notes that the page was originally edited elsewhere. Parameter is a link to the source page. Used mainly for Neviʼim/Ketuvim pages reconstructed from the Aleppo Codex.",
     ],
     [
         author.hbo("קק"),

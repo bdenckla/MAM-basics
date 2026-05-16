@@ -48,7 +48,7 @@ def build_body(
     kaful_params = [
         [
             author.hbo("כפול"),
-            "The text with dual trope (as found in the great codexes)",
+            "The content with dual trope (as found in the great codexes)",
         ],
         [
             author.hbo("א"),
@@ -64,7 +64,7 @@ def build_body(
         author.para(["← Back to ", back_link]),
         author.para(
             [
-                "This template encodes a dually-accented span of text and its corresponding"
+                "This template encodes a dually-accented content and its corresponding"
                 " singly-accented \u201cstrands.\u201d Used in three sections with dual cantillation:"
                 " the two Decalogues (Exodus 20, Deuteronomy 5) and the Saga of Reuben"
                 " (Genesis 35:22).",

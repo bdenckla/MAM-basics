@@ -83,7 +83,7 @@ OTHER_ROWS = [
     _nusach_row(_NUSACH_DOC),
     [
         author.hbo("מודגש"),
-        "Bold text within the notes argument (param 2) of נוסח.",
+        "Bold styling within the notes argument (param 2) of נוסח.",
     ],
     [
         author.hbo("ש"),

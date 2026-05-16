@@ -56,9 +56,8 @@ def build_body(
                 " the template parameters alone, and it exposes enough granularity for"
                 " applications that wish to present different subtypes differently."
                 " For example, the Wikisource edition of $MAM groups the nine subtypes into four"
-                " display families based on whether the pair is flanked by $maqaf marks, and"
-                " (for pairs not so flanked) whether the $qere precedes or follows the $ketiv"
-                " in the text.",
+                " display families based on whether $maqaf marks"
+                " appear before and/or after the k/q pair.",
             ]
         ),
         author.para(

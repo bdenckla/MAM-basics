@@ -34,7 +34,7 @@ def build_body(*, claims: ClaimCollection):
     back_link = author.anchor_h("Reading $MAM-parsed-plus", _PLUS_DOC)
     semantic_shape_claim = claims.claim(
         _CLAIM_ID_HAARAH_2_FORMAT,
-        "Every מ:הערה-2 template carries target content, note text, and a documented mark-position code.",
+        "Every מ:הערה-2 template carries target content, note content, and a documented mark-position code.",
         kind="struct",
         subject="mp:plus",
         data={
@@ -54,7 +54,7 @@ def build_body(*, claims: ClaimCollection):
         author.ordered_list(
             [
                 "The target word (the word the note applies to)",
-                "The note text (the scroll-difference description)",
+                "The note content (the scroll-difference description)",
                 [
                     "Mark position: ",
                     mb_html.code('"אאא*"'),
