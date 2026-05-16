@@ -482,7 +482,8 @@ def s_chapter_verse(*, claims: ClaimCollection):
                     mb_html.code("סדר"),
                     " or ",
                     mb_html.code("עלייה"),
-                    " parameter. Otherwise, the array is empty.",
+                    " parameter. Otherwise, the array is empty."
+                    " For example, here is the value for the D column for Job 1:1:",
                 ],
                 kind="struct",
                 subject="mp:plus",
@@ -492,21 +493,6 @@ def s_chapter_verse(*, claims: ClaimCollection):
                 },
             )
         ),
-        author.para(
-            [
-                "The ",
-                mb_html.code("עלייה"),
-                " value itself is a ",
-                author.hbo("מ:עלייה"),
-                " template; see ",
-                author.anchor_h(
-                    "notes on $aliyot",
-                    "https://bdenckla.github.io/MAM-with-doc/misc/notes_on_aliyot.html",
-                ),
-                ".",
-            ]
-        ),
-        author.para(["Job 1:1:"]),
         json_block.json_block_raw_html(_json_d_col_first(claims=claims)),
         author.heading_level_3("E column (index 2): Verse text"),
         author.para(
@@ -621,6 +607,35 @@ def s_common_templates(*, claims: ClaimCollection):
                 " of the ",
                 sheets_data_link,
                 ".",
+            ]
+        ),
+        author.heading_level_3("Verse label templates"),
+        tblh.tmpl_purp_table(
+            [
+                [
+                    author.hbo("מ:פסוק"),
+                    [
+                        "Verse label. Takes book name, chapter, and verse as positional"
+                        " params. Optional named params include ",
+                        author.hbo("סדר="),
+                        " (seder number) and ",
+                        author.hbo("עלייה="),
+                        " ($aliyah identification; value is a ",
+                        author.hbo("מ:עלייה"),
+                        " template).",
+                    ],
+                ],
+                [
+                    author.hbo("מ:עלייה"),
+                    [
+                        "Torah $aliyah identifier. See ",
+                        author.anchor_h(
+                            "notes on $aliyot",
+                            "https://bdenckla.github.io/MAM-with-doc/misc/notes_on_aliyot.html",
+                        ),
+                        ".",
+                    ],
+                ],
             ]
         ),
         author.heading_level_3("$Ketiv_qere templates"),
