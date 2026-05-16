@@ -478,7 +478,7 @@ def s_chapter_verse(*, claims: ClaimCollection):
                     "This is an array that contains a ",
                     author.hbo("מ:פסוק"),
                     " template call when it has something interesting to say—typically when it carries ",
-                    "extra metadata such as the ",
+                    "extra data such as the ",
                     mb_html.code("סדר"),
                     " or ",
                     mb_html.code("עלייה"),
@@ -488,7 +488,7 @@ def s_chapter_verse(*, claims: ClaimCollection):
                 subject="mp:plus",
                 data={
                     "label_template": "מ:פסוק",
-                    "empty_when": "no interesting metadata",
+                    "empty_when": "no interesting data",
                 },
             )
         ),
