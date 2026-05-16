@@ -313,22 +313,30 @@ def s_verse(*, claims: ClaimCollection):
             _emit_claim_payload(
                 claims,
                 "mp.plain.verse.c-col.top5-items",
-                [
-                    "The list at index 0 indicates how this verse is separated from"
-                    " the preceding verse.",
-                    [" Double underscore (", mb_html.code('"__"'), ")"],
-                    " is by far the most common value found in the list at index 0. It indicates a plain space.",
-                    [" Double slash (", mb_html.code('"//"'), ")"],
-                    " is the next most common value, indicating a line break in the Wikitext source."
-                    " (This double slash is not Biblical data and all applications should ignore it"
-                    " unless they are doing something like trying to recreate the Wikitext source, verbatim.)"
-                    " Other common values are calls to the ר4 template, the פפ template, or the סס template."
-                    " (See the Whitespace templates section below).",
-                ],
+                "The list at index 0 indicates how this verse is separated from"
+                " the preceding verse:",
                 kind="struct",
                 subject="mp:plain",
                 data={"top5": ["__", "//", "ר4", "פפ", "סס"]},
             )
+        ),
+        author.unordered_list(
+            [
+                [
+                    "Double underscore (",
+                    mb_html.code('"__"'),
+                    ") is by far the most common value. It indicates a plain space.",
+                ],
+                [
+                    "Double slash (",
+                    mb_html.code('"//"'),
+                    ") is the next most common value, indicating a line break in the Wikitext source."
+                    " (This double slash is not Biblical data and all applications should ignore it"
+                    " unless they are doing something like trying to recreate the Wikitext source, verbatim.)",
+                ],
+                "Other common values are calls to the ר4 template, the פפ template, or the סס template."
+                " (See the Whitespace templates section below.)",
+            ]
         ),
         author.heading_level_3("D column (index 1): Verse label"),
         author.para(
