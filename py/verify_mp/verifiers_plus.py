@@ -117,25 +117,40 @@ def verify_mp_plus_verse_c_col_semantics(record: ClaimRecord, ctx: Context) -> N
 
 
 def verify_mp_plus_verse_d_col_semantics(record: ClaimRecord, ctx: Context) -> None:
-    """D column is a label array: empty or containing a מ:פסוק template (possibly nested)."""
+    """D column: empty or a single direct or נוסח-wrapped מ:פסוק template."""
     label_tmpl = record.data["label_template"]
+    nusach_wrapper = record.data["nusach_wrapper"]
     saw_empty = False
-    saw_non_empty = False
+    saw_direct = False
+    saw_wrapped = False
     for _book39, _ch_key, _v_key, verse in iter_verses(ctx.corpus):
         d_col = verse[1]
         assert isinstance(d_col, list), f"D column is not a list: {d_col!r}"
         if not d_col:
             saw_empty = True
             continue
-        saw_non_empty = True
-        found_label = False
-        for tmpl in iter_template_objects(d_col):
-            if tmpl["tmpl_name"] == label_tmpl:
-                found_label = True
-                break
-        assert found_label, f"non-empty D column missing {label_tmpl!r}: {d_col!r}"
+        assert (
+            len(d_col) == 1
+        ), f"expected exactly 1 D-column item, got {len(d_col)}: {d_col!r}"
+        item = d_col[0]
+        assert (
+            isinstance(item, dict) and "tmpl_name" in item
+        ), f"D-column item is not a template object: {item!r}"
+        top_name = item["tmpl_name"]
+        assert top_name in (label_tmpl, nusach_wrapper), (
+            f"D-column top-level template {top_name!r} is neither"
+            f" {label_tmpl!r} nor {nusach_wrapper!r}: {item!r}"
+        )
+        if top_name == nusach_wrapper:
+            saw_wrapped = True
+            assert any(
+                t["tmpl_name"] == label_tmpl for t in iter_template_objects(item)
+            ), f"{nusach_wrapper!r}-wrapped D column missing {label_tmpl!r}: {item!r}"
+        else:
+            saw_direct = True
     assert saw_empty, "D column never empty"
-    assert saw_non_empty, "D column never non-empty"
+    assert saw_direct, "never observed direct מ:פסוק in D column"
+    assert saw_wrapped, "never observed נוסח-wrapped מ:פסוק in D column"
 
 
 def verify_mp_plus_verse_e_col_semantics(record: ClaimRecord, ctx: Context) -> None:

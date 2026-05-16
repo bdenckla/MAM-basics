@@ -44,6 +44,19 @@ def _plain_node_has_label_template(node, label_template: str) -> bool:
     return False
 
 
+def _plain_top_level_tmpl_name(item: dict) -> str | None:
+    """Return the top-level template name of a plain template dict, or None."""
+    stmpl = item.get("stmpl")
+    if isinstance(stmpl, str):
+        return stmpl.split("|", 1)[0]
+    tmpl_tree = item.get("tmpl")
+    if isinstance(tmpl_tree, list) and tmpl_tree:
+        first = tmpl_tree[0]
+        if isinstance(first, list) and first and isinstance(first[0], str):
+            return first[0]
+    return None
+
+
 def _iter_plain_template_occurrences(node):
     """Yield (kind, template_name, args) for plain stmpl/tmpl template objects."""
     if isinstance(node, dict):
@@ -376,14 +389,19 @@ def verify_mp_plain_verse_c_col_top5_items(record: ClaimRecord, ctx: Context) ->
 
 
 def verify_mp_plain_verse_d_col_semantics(record: ClaimRecord, ctx: Context) -> None:
-    """D column is empty for pseudo-verses and labeled for normal verses.
+    """D column: empty for pseudo-verses; one direct or נוסח-wrapped מ:פסוק for normal verses.
 
     Also checks that the label template uses only the declared named-parameter keys.
     """
     label_template = record.data["label_template"]
+    nusach_wrapper = record.data["nusach_wrapper"]
     allowed_named_params = frozenset(record.data["allowed_named_params"])
     pseudo_keys = frozenset(["0", "תתת"])
     observed_named_params: set[str] = set()
+    saw_direct = False
+    saw_wrapped = False
+    label_norm = label_template.translate(_NORM_QUOTES)
+    nusach_norm = nusach_wrapper.translate(_NORM_QUOTES)
     for book39, ch_key, v_key, verse in iter_plain_verses(ctx.corpus_plain):
         d_col = verse[1]
         assert isinstance(d_col, list), f"D column is not a list: {d_col!r}"
@@ -403,14 +421,25 @@ def verify_mp_plain_verse_d_col_semantics(record: ClaimRecord, ctx: Context) -> 
             f"book39={book39['book24_name']!r} ch={ch_key} v={v_key}:"
             f" D-column item is not a dict: {item!r}"
         )
-        assert _plain_node_has_label_template(item, label_template), (
+        top_name = _plain_top_level_tmpl_name(item)
+        assert top_name is not None and top_name.translate(_NORM_QUOTES) in (
+            label_norm,
+            nusach_norm,
+        ), (
             f"book39={book39['book24_name']!r} ch={ch_key} v={v_key}:"
-            f" D-column does not include {label_template!r}: {item!r}"
+            f" D-column top-level template {top_name!r} is neither"
+            f" {label_template!r} nor {nusach_wrapper!r}: {item!r}"
         )
+        if top_name.translate(_NORM_QUOTES) == nusach_norm:
+            saw_wrapped = True
+            assert _plain_node_has_label_template(item, label_template), (
+                f"book39={book39['book24_name']!r} ch={ch_key} v={v_key}:"
+                f" {nusach_wrapper!r}-wrapped D column missing {label_template!r}: {item!r}"
+            )
+        else:
+            saw_direct = True
         for kind, tmpl_name, args in _iter_plain_template_occurrences(item):
-            if tmpl_name.translate(_NORM_QUOTES) != label_template.translate(
-                _NORM_QUOTES
-            ):
+            if tmpl_name.translate(_NORM_QUOTES) != label_norm:
                 continue
             named_params = _named_params_from_plain_template(kind, args)
             observed_named_params.update(named_params)
@@ -420,6 +449,8 @@ def verify_mp_plain_verse_d_col_semantics(record: ClaimRecord, ctx: Context) -> 
                 f" unexpected D-label named params {sorted(unexpected)}"
                 f" (allowed {sorted(allowed_named_params)})"
             )
+    assert saw_direct, "never observed direct מ:פסוק in D column"
+    assert saw_wrapped, "never observed נוסח-wrapped מ:פסוק in D column"
     assert observed_named_params <= allowed_named_params, (
         f"observed named params {sorted(observed_named_params)} exceed allowed"
         f" {sorted(allowed_named_params)}"

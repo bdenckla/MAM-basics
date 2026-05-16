@@ -474,21 +474,27 @@ def s_chapter_verse(*, claims: ClaimCollection):
                 claims,
                 "mp.plus.verse.d-col.semantics",
                 [
-                    "Column D is an array that contains a ",
+                    "Column D is an array. When non-empty, it contains exactly"
+                    " one element: either a ",
                     author.hbo("מ:פסוק"),
-                    " template call when it has something interesting to say—typically when it carries ",
-                    "extra data such as the ",
+                    " template call directly, or ",
+                    author.hbo("מ:פסוק"),
+                    " wrapped in a ",
+                    author.hbo("נוסח"),
+                    " template—typically carrying extra data such as the ",
                     mb_html.code("סדר"),
                     " or ",
                     mb_html.code("עלייה"),
-                    " parameter. Otherwise, the array is empty."
+                    " parameter."
+                    " When there is no such data, the array is empty."
                     " For example, here is the value for the D column for Job 1:1:",
                 ],
                 kind="struct",
                 subject="mp:plus",
                 data={
                     "label_template": "מ:פסוק",
-                    "empty_when": "no interesting data",
+                    "nusach_wrapper": "נוסח",
+                    "empty_when": "no label data",
                 },
             )
         ),

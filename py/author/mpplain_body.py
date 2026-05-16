@@ -344,15 +344,20 @@ def s_verse(*, claims: ClaimCollection):
                 [
                     "Column D is an empty array for pseudo-verses."
                     " For normal verses, it is an array with exactly"
-                    " one element: the ",
+                    " one element: either the ",
                     author.hbo("מ:פסוק"),
-                    " template labeling the verse."
+                    " template directly, or ",
+                    author.hbo("מ:פסוק"),
+                    " wrapped in a ",
+                    author.hbo("נוסח"),
+                    " template."
                     " For example, here is the D column value for Job 1:2:",
                 ],
                 kind="struct",
                 subject="mp:plain",
                 data={
                     "label_template": "מ:פסוק",
+                    "nusach_wrapper": "נוסח",
                     "always_present": True,
                     "allowed_named_params": ["סדר", "עלייה"],
                 },
