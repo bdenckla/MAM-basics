@@ -452,16 +452,16 @@ def s_chapter_verse(*, claims: ClaimCollection):
                 claims,
                 "mp.plus.verse.c-col.semantics",
                 [
-                    "The C column usually contains what separates this verse "
-                    "from the previous verse. This is usually a space, "
-                    "represented as ",
-                    mb_html.code('["__"]'),
-                    ", but is sometimes something else, such as a פפ $parashah-break "
-                    "template.",
+                    "The list at index 0 indicates how this verse is separated from"
+                    " the preceding verse.",
+                    [" Double underscore (", mb_html.code('"__"'), ")"],
+                    " is by far the most common value found in the list at index 0. It indicates a plain space."
+                    " Other common values are calls to the ר4 template, the פפ template, or the סס template."
+                    " (See the Whitespace templates section below).",
                 ],
                 kind="struct",
                 subject="mp:plus",
-                data={"common_value": ["__"]},
+                data={"top4": ["__", "ר4", "פפ", "סס"]},
             )
         ),
         author.heading_level_3("D column (index 1): Verse label"),
