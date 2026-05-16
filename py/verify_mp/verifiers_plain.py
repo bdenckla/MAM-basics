@@ -376,9 +376,14 @@ def verify_mp_plain_verse_c_col_top5_items(record: ClaimRecord, ctx: Context) ->
 
 
 def verify_mp_plain_verse_d_col_semantics(record: ClaimRecord, ctx: Context) -> None:
-    """D column is empty for pseudo-verses and labeled for normal verses."""
+    """D column is empty for pseudo-verses and labeled for normal verses.
+
+    Also checks that the label template uses only the declared named-parameter keys.
+    """
     label_template = record.data["label_template"]
+    allowed_named_params = frozenset(record.data["allowed_named_params"])
     pseudo_keys = frozenset(["0", "תתת"])
+    observed_named_params: set[str] = set()
     for book39, ch_key, v_key, verse in iter_plain_verses(ctx.corpus_plain):
         d_col = verse[1]
         assert isinstance(d_col, list), f"D column is not a list: {d_col!r}"
@@ -402,60 +407,19 @@ def verify_mp_plain_verse_d_col_semantics(record: ClaimRecord, ctx: Context) -> 
             f"book39={book39['book24_name']!r} ch={ch_key} v={v_key}:"
             f" D-column does not include {label_template!r}: {item!r}"
         )
-
-
-def verify_mp_plain_verse_d_col_named_params(record: ClaimRecord, ctx: Context) -> None:
-    """D-column verse-label templates use only the declared named-parameter keys."""
-    label_template = record.data["label_template"]
-    allowed_named_params = frozenset(record.data["allowed_named_params"])
-    always_present = bool(record.data.get("always_present", False))
-    pseudo_keys = frozenset(["0", "תתת"])
-
-    observed_named_params: set[str] = set()
-    for book39, ch_key, v_key, verse in iter_plain_verses(ctx.corpus_plain):
-        d_col = verse[1]
-        assert isinstance(d_col, list), f"D column is not a list: {d_col!r}"
-
-        if v_key in pseudo_keys:
-            assert d_col == [], (
+        for kind, tmpl_name, args in _iter_plain_template_occurrences(item):
+            if tmpl_name.translate(_NORM_QUOTES) != label_template.translate(
+                _NORM_QUOTES
+            ):
+                continue
+            named_params = _named_params_from_plain_template(kind, args)
+            observed_named_params.update(named_params)
+            unexpected = named_params - allowed_named_params
+            assert not unexpected, (
                 f"book39={book39['book24_name']!r} ch={ch_key} v={v_key}:"
-                f" pseudo-verse D column should be empty, got {d_col!r}"
+                f" unexpected D-label named params {sorted(unexpected)}"
+                f" (allowed {sorted(allowed_named_params)})"
             )
-            continue
-
-        if always_present:
-            assert len(d_col) == 1, (
-                f"book39={book39['book24_name']!r} ch={ch_key} v={v_key}:"
-                f" expected one D-column item, got {len(d_col)}"
-            )
-
-        label_occurrences = []
-        for item in d_col:
-            for kind, tmpl_name, args in _iter_plain_template_occurrences(item):
-                if tmpl_name.translate(_NORM_QUOTES) == label_template.translate(
-                    _NORM_QUOTES
-                ):
-                    label_occurrences.append((kind, args))
-
-        if always_present:
-            assert len(label_occurrences) == 1, (
-                f"book39={book39['book24_name']!r} ch={ch_key} v={v_key}:"
-                f" expected exactly one {label_template!r} template in D,"
-                f" found {len(label_occurrences)}"
-            )
-        elif not label_occurrences:
-            continue
-
-        kind, args = label_occurrences[0]
-        named_params = _named_params_from_plain_template(kind, args)
-        observed_named_params.update(named_params)
-        unexpected = named_params - allowed_named_params
-        assert not unexpected, (
-            f"book39={book39['book24_name']!r} ch={ch_key} v={v_key}:"
-            f" unexpected D-label named params {sorted(unexpected)}"
-            f" (allowed {sorted(allowed_named_params)})"
-        )
-
     assert observed_named_params <= allowed_named_params, (
         f"observed named params {sorted(observed_named_params)} exceed allowed"
         f" {sorted(allowed_named_params)}"
@@ -713,7 +677,6 @@ REGISTRY: dict[str, VerifierFn] = {
     "mp.plain.templates.jerusalem.set": verify_mp_plain_templates_jerusalem_set,
     "mp.plain.templates.plain-only.set": verify_mp_plain_templates_plain_only_set,
     "mp.plain.verse.c-col.top5-items": verify_mp_plain_verse_c_col_top5_items,
-    "mp.plain.verse.d-col.named-params": verify_mp_plain_verse_d_col_named_params,
     "mp.plain.verse.d-col.semantics": verify_mp_plain_verse_d_col_semantics,
     "mp.plain.verse.e-col.semantics": verify_mp_plain_verse_e_col_semantics,
     "mp.plain.verse.is-3-tuple": verify_mp_plain_verse_is_3_tuple,

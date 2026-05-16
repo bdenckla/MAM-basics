@@ -451,7 +451,7 @@ def s_chapter_verse(*, claims: ClaimCollection):
             _emit_claim_payload(
                 claims,
                 "mp.plus.verse.c-col.semantics",
-                "The list at index 0 indicates how this verse is separated from"
+                "Column C is an array indicating how this verse is separated from"
                 " the preceding verse:",
                 kind="struct",
                 subject="mp:plus",
@@ -461,9 +461,8 @@ def s_chapter_verse(*, claims: ClaimCollection):
         author.unordered_list(
             [
                 [
-                    "Double underscore (",
-                    mb_html.code('"__"'),
-                    ") is by far the most common value. It indicates a plain space.",
+                    ["Double underscore (", mb_html.code('"__"'), ")"],
+                    " is by far the most common value. It indicates a plain space.",
                 ],
                 "Other common values are calls to the ר4 template, the פפ template, or the סס template."
                 " (See the Whitespace templates section below.)",
@@ -475,7 +474,7 @@ def s_chapter_verse(*, claims: ClaimCollection):
                 claims,
                 "mp.plus.verse.d-col.semantics",
                 [
-                    "This is an array that contains a ",
+                    "Column D is an array that contains a ",
                     author.hbo("מ:פסוק"),
                     " template call when it has something interesting to say—typically when it carries ",
                     "extra data such as the ",
@@ -500,7 +499,7 @@ def s_chapter_verse(*, claims: ClaimCollection):
                 claims,
                 "mp.plus.verse.e-col.semantics",
                 [
-                    "An array containing a mix of strings and templates.",
+                    "Column E is an array containing a mix of strings and templates.",
                 ],
                 kind="struct",
                 subject="mp:plus",

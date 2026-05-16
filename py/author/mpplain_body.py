@@ -313,7 +313,7 @@ def s_verse(*, claims: ClaimCollection):
             _emit_claim_payload(
                 claims,
                 "mp.plain.verse.c-col.top5-items",
-                "The list at index 0 indicates how this verse is separated from"
+                "Column C is an array indicating how this verse is separated from"
                 " the preceding verse:",
                 kind="struct",
                 subject="mp:plain",
@@ -323,14 +323,12 @@ def s_verse(*, claims: ClaimCollection):
         author.unordered_list(
             [
                 [
-                    "Double underscore (",
-                    mb_html.code('"__"'),
-                    ") is by far the most common value. It indicates a plain space.",
+                    ["Double underscore (", mb_html.code('"__"'), ")"],
+                    " is by far the most common value. It indicates a plain space.",
                 ],
                 [
-                    "Double slash (",
-                    mb_html.code('"//"'),
-                    ") is the next most common value, indicating a line break in the Wikitext source."
+                    ["Double slash (", mb_html.code('"//"'), ")"],
+                    " is the next most common value, indicating a line break in the Wikitext source."
                     " (This double slash is not Biblical data and all applications should ignore it"
                     " unless they are doing something like trying to recreate the Wikitext source, verbatim.)",
                 ],
@@ -344,9 +342,8 @@ def s_verse(*, claims: ClaimCollection):
                 claims,
                 "mp.plain.verse.d-col.semantics",
                 [
-                    "The content at index 1 is empty ",
-                    mb_html.code("[]"),
-                    " for pseudo-verses. For normal verses, it is a list containing exactly"
+                    "Column D is an empty array for pseudo-verses."
+                    " For normal verses, it is an array with exactly"
                     " one element: the ",
                     author.hbo("מ:פסוק"),
                     " template labeling the verse."
@@ -354,7 +351,11 @@ def s_verse(*, claims: ClaimCollection):
                 ],
                 kind="struct",
                 subject="mp:plain",
-                data={"label_template": "מ:פסוק", "always_present": True},
+                data={
+                    "label_template": "מ:פסוק",
+                    "always_present": True,
+                    "allowed_named_params": ["סדר", "עלייה"],
+                },
             )
         ),
         json_block.json_block_raw_html(
@@ -366,26 +367,12 @@ def s_verse(*, claims: ClaimCollection):
                 subject="mp:plain",
             )
         ),
-        author.para(
-            _emit_claim_payload(
-                claims,
-                "mp.plain.verse.d-col.named-params",
-                "Normal verses carry one מ:פסוק call in D with optional named params סדר and עלייה; pseudo-verses have empty D.",
-                kind="struct",
-                subject="mp:plain",
-                data={
-                    "label_template": "מ:פסוק",
-                    "always_present": True,
-                    "allowed_named_params": ["סדר", "עלייה"],
-                },
-            )
-        ),
         author.heading_level_3("E column (index 2): Verse text"),
         author.para(
             _emit_claim_payload(
                 claims,
                 "mp.plain.verse.e-col.semantics",
-                "Contains the verse proper as an array mixing strings"
+                "Column E is an array mixing strings"
                 " (Hebrew text with cantillation marks) and templates."
                 " Example (Job 1:1):",
                 kind="struct",
