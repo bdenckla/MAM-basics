@@ -345,7 +345,7 @@ def s_chapter_verse(*, claims: ClaimCollection):
     col_items = [
         "C — Verse separator: usually a plain space or a $parashah break",
         "D — Verse label: empty unless more than book, chapter, and verse",
-        "E — Verse text: strings and template objects",
+        "E — Verse text: strings and templates",
     ]
     return [
         author.heading_level_2("Chapter structure"),
@@ -423,7 +423,7 @@ def s_chapter_verse(*, claims: ClaimCollection):
         author.para(
             [
                 "Parameter values can themselves be strings, nested template objects,"
-                " or arrays of mixed strings and template objects."
+                " or arrays mixing strings and templates."
                 " For a visual overview of which templates nest inside which, see the ",
                 author.anchor_h("plus template call graphs", _CALL_GRAPHS),
                 ".",
@@ -509,7 +509,7 @@ def s_chapter_verse(*, claims: ClaimCollection):
                 claims,
                 "mp.plus.verse.e-col.semantics",
                 [
-                    "An array containing a mix of strings and template objects.",
+                    "An array containing a mix of strings and templates.",
                 ],
                 kind="struct",
                 subject="mp:plus",

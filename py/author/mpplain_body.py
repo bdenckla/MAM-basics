@@ -400,9 +400,9 @@ def s_verse(*, claims: ClaimCollection):
             _emit_claim_payload(
                 claims,
                 "mp.plain.verse.e-col.semantics",
-                "Contains the actual verse text as a mixed array of strings"
-                " (Hebrew text with cantillation marks) and template objects"
-                " (inline markup). Example (Job 1:1):",
+                "Contains the verse proper as an array mixing strings"
+                " (Hebrew text with cantillation marks) and templates."
+                " Example (Job 1:1):",
                 kind="struct",
                 subject="mp:plain",
                 data={"element_types": ["string", "stmpl", "tmpl", "custom_tag"]},
