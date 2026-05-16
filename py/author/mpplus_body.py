@@ -656,19 +656,9 @@ def s_common_templates(*, claims: ClaimCollection):
                     [
                         "Verse label. Takes book name, chapter, and verse as positional"
                         " params. Optional named params include ",
-                        author.hbo("סדר="),
-                        " (seder number) and ",
-                        author.hbo("עלייה="),
-                        " ($aliyah identification; value is a ",
-                        author.hbo("מ:עלייה"),
-                        " template)."
-                        " (Those params are, broadly speaking, optional,"
-                        " e.g. in the $MAM Google Sheet they are optional."
-                        " But in the \u201cplus\u201d format, when ",
-                        author.hbo("מ:פסוק"),
-                        " appears directly (unwrapped) in column D,"
-                        " they are always present because calls without them"
-                        " are deemed uninteresting and dropped.)",
+                        [author.hbo("סדר="), " (seder number) and "],
+                        [author.hbo("עלייה="), " (value is a "],
+                        [author.hbo("מ:עלייה"), " template)."]
                     ],
                 ],
                 [

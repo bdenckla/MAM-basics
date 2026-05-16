@@ -588,12 +588,9 @@ def s_common_templates(*, claims: ClaimCollection):
                     [
                         "Verse label. Takes book name, chapter, and verse as positional"
                         " params. Optional named params include ",
-                        author.hbo("סדר="),
-                        " (seder number) and ",
-                        author.hbo("עלייה="),
-                        " ($aliyah identification; value is a ",
-                        author.hbo("מ:עלייה"),
-                        " template).",
+                        [author.hbo("סדר="), " (seder number) and "],
+                        [author.hbo("עלייה="), " (value is a "],
+                        [author.hbo("מ:עלייה"), " template)."]
                     ],
                 ],
                 [
