@@ -463,27 +463,40 @@ def verify_mp_plain_verse_d_col_named_params(record: ClaimRecord, ctx: Context) 
 
 
 def verify_mp_plain_verse_e_col_semantics(record: ClaimRecord, ctx: Context) -> None:
-    """E column contains plain-text strings and plain template/custom-tag objects."""
-    expected_types = frozenset(record.data["element_types"])
-    assert expected_types == frozenset(
+    """E column is a segmented sequence of strings and plain template/custom-tag objects.
+
+    Checks: (1) every item is of a declared type, (2) all declared types are observed,
+    and (3) tmpl nodes satisfy the recursive tmpl-tree grammar.
+    """
+    allowed_types = frozenset(record.data["element_types"])
+    assert allowed_types == frozenset(
         ["string", "stmpl", "tmpl", "custom_tag"]
-    ), f"unexpected claim element_types: {sorted(expected_types)}"
-    saw = {k: False for k in expected_types}
+    ), f"unexpected claim element_types: {sorted(allowed_types)}"
+    observed_types: set[str] = set()
     for _book39, _ch_key, _v_key, verse in iter_plain_verses(ctx.corpus_plain):
         e_col = verse[2]
         assert isinstance(e_col, list), f"E column is not a list: {e_col!r}"
         for item in e_col:
             if isinstance(item, str):
-                saw["string"] = True
+                observed_types.add("string")
                 continue
-            if not isinstance(item, dict):
-                assert False, f"unexpected E-column item type: {type(item).__name__}"
-            recognized = [k for k in ["stmpl", "tmpl", "custom_tag"] if k in item]
-            assert recognized, f"unexpected E-column dict shape: {item!r}"
-            for key in recognized:
-                saw[key] = True
-    missing = [k for k, found in saw.items() if not found]
-    assert not missing, f"never observed expected E-column element type(s): {missing}"
+            assert isinstance(
+                item, dict
+            ), f"unexpected E-column item type: {type(item).__name__}"
+            kind = _plain_node_kind(item)
+            observed_types.add(kind)
+            assert kind in allowed_types, (
+                f"unexpected E-column node kind {kind!r};"
+                f" allowed kinds are {sorted(allowed_types)}"
+            )
+            if kind == "tmpl":
+                _validate_plain_tmpl_tree_node(
+                    item, allowed_node_types=frozenset(["string", "stmpl", "tmpl"])
+                )
+    assert observed_types == allowed_types, (
+        f"E-column observed types {sorted(observed_types)}"
+        f" != declared {sorted(allowed_types)}"
+    )
 
 
 def verify_mp_plain_docs_custom_tag_keys_and_values(
@@ -539,38 +552,6 @@ def verify_mp_plain_template_node_recursive_shape(
                     node, allowed_node_types=allowed_node_types
                 )
     assert saw_tmpl, "no plain tmpl nodes observed"
-
-
-def verify_mp_plain_verse_e_col_text_template_segmentation(
-    record: ClaimRecord, ctx: Context
-) -> None:
-    """E-column segmentation is a sequence of strings and plain-format node objects."""
-    allowed_types = frozenset(record.data["element_types"])
-    observed_types: set[str] = set()
-    for _book39, _ch_key, _v_key, verse in iter_plain_verses(ctx.corpus_plain):
-        e_col = verse[2]
-        assert isinstance(e_col, list), f"E column is not a list: {e_col!r}"
-        for item in e_col:
-            if isinstance(item, str):
-                observed_types.add("string")
-                continue
-            assert isinstance(
-                item, dict
-            ), f"unexpected E-column item type: {type(item).__name__}"
-            kind = _plain_node_kind(item)
-            observed_types.add(kind)
-            assert kind in allowed_types, (
-                f"unexpected E-column node kind {kind!r};"
-                f" allowed kinds are {sorted(allowed_types)}"
-            )
-            if kind == "tmpl":
-                _validate_plain_tmpl_tree_node(
-                    item, allowed_node_types=frozenset(["string", "stmpl", "tmpl"])
-                )
-    assert observed_types <= allowed_types, (
-        f"observed E-column element types {sorted(observed_types)}"
-        f" exceed declared {sorted(allowed_types)}"
-    )
 
 
 def verify_mp_plain_kq_special_semantic_shape(
@@ -735,6 +716,5 @@ REGISTRY: dict[str, VerifierFn] = {
     "mp.plain.verse.d-col.named-params": verify_mp_plain_verse_d_col_named_params,
     "mp.plain.verse.d-col.semantics": verify_mp_plain_verse_d_col_semantics,
     "mp.plain.verse.e-col.semantics": verify_mp_plain_verse_e_col_semantics,
-    "mp.plain.verse.e-col.text-template-segmentation": verify_mp_plain_verse_e_col_text_template_segmentation,
     "mp.plain.verse.is-3-tuple": verify_mp_plain_verse_is_3_tuple,
 }

@@ -28,7 +28,6 @@ _JSON_CUSTOM_TAG = jsnip.read_text("mpplain", "custom_tag_pair.json")
 
 _CLAIM_ID_BOOK39_SKEL_COMMON = "mp.plain.docs.book39-skeleton.common"
 _CLAIM_ID_EXAMPLE_INDEX_0 = "mp.plain.example.verse-label-template-object"
-_CLAIM_ID_E_COL_SEGMENTATION = "mp.plain.verse.e-col.text-template-segmentation"
 _CLAIM_ID_EXAMPLE_STMPL = "mp.plain.example.stmpl-format"
 _CLAIM_ID_EXAMPLE_TMPL_TREE = "mp.plain.example.tmpl-tree"
 _CLAIM_ID_EXAMPLE_TMPL_TREE_NESTED = "mp.plain.example.tmpl-tree-nested"
@@ -294,7 +293,6 @@ def s_verse(*, claims: ClaimCollection):
         "D — Verse label: usually just book, chapter, & verse",
         "E — Verse text: strings and templates",
     ]
-
     return [
         author.heading_level_2("Verse structure"),
         author.para("(This section documents both normal verses and pseudo-verses.)"),
@@ -403,16 +401,6 @@ def s_verse(*, claims: ClaimCollection):
                 "Contains the verse proper as an array mixing strings"
                 " (Hebrew text with cantillation marks) and templates."
                 " Example (Job 1:1):",
-                kind="struct",
-                subject="mp:plain",
-                data={"element_types": ["string", "stmpl", "tmpl", "custom_tag"]},
-            )
-        ),
-        author.para(
-            _emit_claim_payload(
-                claims,
-                _CLAIM_ID_E_COL_SEGMENTATION,
-                "E-column content is segmented as a sequence of strings and templates.",
                 kind="struct",
                 subject="mp:plain",
                 data={"element_types": ["string", "stmpl", "tmpl", "custom_tag"]},
