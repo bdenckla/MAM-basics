@@ -349,11 +349,21 @@ def s_verse(*, claims: ClaimCollection):
                     " for pseudo-verses. For normal verses, it is a list containing exactly"
                     " one element: the ",
                     author.hbo("מ:פסוק"),
-                    " template labeling the verse, e.g. for Job 1:2:",
+                    " template labeling the verse."
+                    " For example, here is the D column value for Job 1:2:",
                 ],
                 kind="struct",
                 subject="mp:plain",
                 data={"label_template": "מ:פסוק", "always_present": True},
+            )
+        ),
+        json_block.json_block_raw_html(
+            _emit_claim_payload(
+                claims,
+                _CLAIM_ID_EXAMPLE_INDEX_0,
+                _JSON_INDEX_0,
+                kind="example",
+                subject="mp:plain",
             )
         ),
         author.para(
@@ -369,37 +379,6 @@ def s_verse(*, claims: ClaimCollection):
                     "allowed_named_params": ["סדר", "עלייה"],
                 },
             )
-        ),
-        json_block.json_block_raw_html(
-            _emit_claim_payload(
-                claims,
-                _CLAIM_ID_EXAMPLE_INDEX_0,
-                _JSON_INDEX_0,
-                kind="example",
-                subject="mp:plain",
-            )
-        ),
-        author.para(
-            [
-                "The three required parameters are book name (Hebrew alphabet string),"
-                " chapter number (Hebrew numeral), and verse number (Hebrew numeral)."
-                " Optional named parameters include ",
-                author.hbo("סדר="),
-                " (seder number) and ",
-                author.hbo("עלייה="),
-                " (Torah $aliyah identification). The ",
-                author.hbo("עלייה="),
-                " value itself is a nested ",
-                author.hbo("מ:עלייה"),
-                " template (an ",
-                mb_html.code("stmpl"),
-                "); see ",
-                author.anchor_h(
-                    "notes on $aliyot",
-                    "https://bdenckla.github.io/MAM-with-doc/misc/notes_on_aliyot.html",
-                ),
-                ".",
-            ]
         ),
         author.heading_level_3("E column (index 2): Verse text"),
         author.para(
@@ -608,6 +587,35 @@ def s_common_templates(*, claims: ClaimCollection):
                 " of the ",
                 sheets_data_link,
                 ".",
+            ]
+        ),
+        author.heading_level_3("Verse label templates"),
+        tblh.tmpl_purp_table(
+            [
+                [
+                    author.hbo("מ:פסוק"),
+                    [
+                        "Verse label. Takes book name, chapter, and verse as positional"
+                        " params. Optional named params include ",
+                        author.hbo("סדר="),
+                        " (seder number) and ",
+                        author.hbo("עלייה="),
+                        " ($aliyah identification; value is a ",
+                        author.hbo("מ:עלייה"),
+                        " template).",
+                    ],
+                ],
+                [
+                    author.hbo("מ:עלייה"),
+                    [
+                        "Torah $aliyah identifier. See ",
+                        author.anchor_h(
+                            "notes on $aliyot",
+                            "https://bdenckla.github.io/MAM-with-doc/misc/notes_on_aliyot.html",
+                        ),
+                        ".",
+                    ],
+                ],
             ]
         ),
         author.heading_level_3("$Ketiv_qere templates"),
