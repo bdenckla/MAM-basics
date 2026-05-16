@@ -342,6 +342,11 @@ def s_chapter_verse(*, claims: ClaimCollection):
         subject="mp:plus",
         data={"required_keys": ["tmpl_name"], "optional_keys": ["tmpl_params"]},
     )
+    col_rows = [
+        ["C", "Verse separator: usually a plain space or a $parashah break"],
+        ["D", "Verse label: empty unless the verse carries extra metadata"],
+        ["E", "Verse text: strings and template objects"],
+    ]
     return [
         author.heading_level_2("Chapter structure"),
         author.para(
@@ -433,14 +438,14 @@ def s_chapter_verse(*, claims: ClaimCollection):
             _emit_claim_payload(
                 claims,
                 "mp.plus.verse.is-3-tuple",
-                [
-                    "A 3-element array [C, D, E], with column details described below.",
-                ],
+                "Each verse is a 3-element array corresponding to the C, D, and E"
+                " columns of the Google Sheet.",
                 kind="struct",
                 subject="mp:plus",
                 data={"shape": ["sep", "label", "text"], "length": 3},
             )
         ),
+        author.std_table(col_rows),
         author.heading_level_3("C column (index 0): Verse separator"),
         author.para(
             _emit_claim_payload(
