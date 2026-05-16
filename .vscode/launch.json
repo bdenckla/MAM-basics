@@ -5,11 +5,11 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "authored: MAM-parsed docs",
+            "name": "authored: unverified MAM-parsed docs",
             "type": "debugpy",
             "request": "launch",
             "program": "py/main_authored.py",
-            "args": ["gen-mam-parsed-docs"],
+            "args": ["gen-mam-parsed-docs", "--skip-verify-mp"],
             "console": "integratedTerminal"
         },
         {

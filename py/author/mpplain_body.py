@@ -290,7 +290,7 @@ def s_chapter(*, claims: ClaimCollection):
 def s_verse(*, claims: ClaimCollection):
     col_items = [
         "C — Verse separator: usually a plain space or a $parashah break",
-        "D — Verse label: usually just book, chapter, & verse",
+        "D — Verse label: usually just book, chapter, and verse",
         "E — Verse proper: strings and templates",
     ]
     return [
@@ -344,7 +344,7 @@ def s_verse(*, claims: ClaimCollection):
                 [
                     "Column D is an empty array for pseudo-verses."
                     " For normal verses, it is an array with exactly"
-                    " one element: either the ",
+                    " one element: either a ",
                     author.hbo("מ:פסוק"),
                     " template or ",
                     author.hbo("מ:פסוק"),

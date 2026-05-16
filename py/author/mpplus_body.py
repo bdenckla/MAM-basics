@@ -476,29 +476,12 @@ def s_chapter_verse(*, claims: ClaimCollection):
                 [
                     "Column D is an array that, if not empty, contains exactly"
                     " one element: either a ",
-                    author.hbo("מ:פסוק"),
-                    " template or ",
-                    author.hbo("מ:פסוק"),
-                    " wrapped in a ",
-                    author.hbo("נוסח"),
-                    " template." " When Column D contains a direct (unwrapped) ",
-                    author.hbo("מ:פסוק"),
-                    ", it always has at least one of the ",
-                    mb_html.code("סדר"),
-                    " or ",
-                    mb_html.code("עלייה"),
-                    " named params; calls without named params are dropped."
-                    " When Column D contains a ",
-                    author.hbo("נוסח"),
-                    "-wrapped ",
-                    author.hbo("מ:פסוק"),
-                    ", the ",
-                    author.hbo("נוסח"),
-                    " wrapper itself makes the entry interesting;" " the inner ",
-                    author.hbo("מ:פסוק"),
-                    " may lack named params."
-                    " When there is no such extra data, the array is empty."
-                    " For example, here is the value for the D column for Job 1:1:",
+                    [author.hbo("מ:פסוק"), " template or "],
+                    [author.hbo("מ:פסוק"), " wrapped in a "],
+                    [author.hbo("נוסח"), " template."],
+                    # Normally we avoid mentioning "plain" in "plus" and vice versa,
+                    # but this is an intentional exception to the rule.
+                    " Column D in the plus format is sparse compared to the plain format:",
                 ],
                 kind="struct",
                 subject="mp:plus",
@@ -509,6 +492,43 @@ def s_chapter_verse(*, claims: ClaimCollection):
                     "named_params": ["סדר", "עלייה"],
                 },
             )
+        ),
+        author.unordered_list(
+            [
+                [
+                    "When Column D contains a direct (unwrapped) ",
+                    author.hbo("מ:פסוק"),
+                    ", it always has at least one of the ",
+                    mb_html.code("סדר"),
+                    " or ",
+                    mb_html.code("עלייה"),
+                    " named params."
+                    " Direct calls without named params do not appear, as they are considered uninteresting.",
+                ],
+                [
+                    "When Column D contains a ",
+                    author.hbo("נוסח"),
+                    "-wrapped ",
+                    author.hbo("מ:פסוק"),
+                    ", the ",
+                    author.hbo("נוסח"),
+                    " wrapper itself makes the entry interesting even if the inner ",
+                    author.hbo("מ:פסוק"),
+                    " lacks named params.",
+                ],
+                [
+                    "When there are neither named params nor ",
+                    author.hbo("נוסח"),
+                    " wrapping, the array is empty.",
+                ],
+            ]
+        ),
+        author.para(
+            [
+                "For example, here is the D column value for Job 1:1, kept because of its ",
+                mb_html.code("סדר"),
+                " param:",
+            ]
         ),
         json_block.json_block_raw_html(_json_d_col_first(claims=claims)),
         author.heading_level_3("E column (index 2): Verse proper"),
