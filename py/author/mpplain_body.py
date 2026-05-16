@@ -289,10 +289,10 @@ def s_chapter(*, claims: ClaimCollection):
 
 
 def s_verse(*, claims: ClaimCollection):
-    col_rows = [
-        ["C", "Verse separator: usually a plain space or a $parashah break"],
-        ["D", "Verse label: usually just book, chapter, & verse"],
-        ["E", "Verse text: strings and templates"],
+    col_items = [
+        "C — Verse separator: usually a plain space or a $parashah break",
+        "D — Verse label: usually just book, chapter, & verse",
+        "E — Verse text: strings and templates",
     ]
 
     return [
@@ -309,7 +309,7 @@ def s_verse(*, claims: ClaimCollection):
                 data={"shape": ["sep", "label", "text"], "length": 3},
             )
         ),
-        author.std_table(col_rows),
+        author.unordered_list(col_items),
         author.heading_level_3("Index 0 (Google column C): Verse separator"),
         author.para(
             _emit_claim_payload(

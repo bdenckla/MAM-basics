@@ -342,10 +342,10 @@ def s_chapter_verse(*, claims: ClaimCollection):
         subject="mp:plus",
         data={"required_keys": ["tmpl_name"], "optional_keys": ["tmpl_params"]},
     )
-    col_rows = [
-        ["C", "Verse separator: usually a plain space or a $parashah break"],
-        ["D", "Verse label: empty unless the verse carries extra metadata"],
-        ["E", "Verse text: strings and template objects"],
+    col_items = [
+        "C — Verse separator: usually a plain space or a $parashah break",
+        "D — Verse label: empty unless the verse carries extra metadata",
+        "E — Verse text: strings and template objects",
     ]
     return [
         author.heading_level_2("Chapter structure"),
@@ -445,7 +445,7 @@ def s_chapter_verse(*, claims: ClaimCollection):
                 data={"shape": ["sep", "label", "text"], "length": 3},
             )
         ),
-        author.std_table(col_rows),
+        author.unordered_list(col_items),
         author.heading_level_3("C column (index 0): Verse separator"),
         author.para(
             _emit_claim_payload(
