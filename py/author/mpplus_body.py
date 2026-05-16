@@ -481,12 +481,22 @@ def s_chapter_verse(*, claims: ClaimCollection):
                     author.hbo("מ:פסוק"),
                     " wrapped in a ",
                     author.hbo("נוסח"),
-                    " template."
-                    "When Column D is not empty, its מ:פסוק call always has the ",
+                    " template." " When Column D contains a direct (unwrapped) ",
+                    author.hbo("מ:פסוק"),
+                    ", it always has at least one of the ",
                     mb_html.code("סדר"),
-                    " and/or ",
+                    " or ",
                     mb_html.code("עלייה"),
-                    " parameter."
+                    " named params; calls without named params are dropped."
+                    " When Column D contains a ",
+                    author.hbo("נוסח"),
+                    "-wrapped ",
+                    author.hbo("מ:פסוק"),
+                    ", the ",
+                    author.hbo("נוסח"),
+                    " wrapper itself makes the entry interesting;" " the inner ",
+                    author.hbo("מ:פסוק"),
+                    " may lack named params."
                     " When there is no such extra data, the array is empty."
                     " For example, here is the value for the D column for Job 1:1:",
                 ],
@@ -496,6 +506,7 @@ def s_chapter_verse(*, claims: ClaimCollection):
                     "label_template": "מ:פסוק",
                     "nusach_wrapper": "נוסח",
                     "empty_when": "no label data",
+                    "named_params": ["סדר", "עלייה"],
                 },
             )
         ),
@@ -630,7 +641,14 @@ def s_common_templates(*, claims: ClaimCollection):
                         author.hbo("עלייה="),
                         " ($aliyah identification; value is a ",
                         author.hbo("מ:עלייה"),
-                        " template).",
+                        " template)."
+                        " (Those params are, broadly speaking, optional,"
+                        " e.g. in the $MAM Google Sheet they are optional."
+                        " But in the \u201cplus\u201d format, when ",
+                        author.hbo("מ:פסוק"),
+                        " appears directly (unwrapped) in column D,"
+                        " they are always present because calls without them"
+                        " are deemed uninteresting and dropped.)",
                     ],
                 ],
                 [

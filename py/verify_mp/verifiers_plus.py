@@ -117,12 +117,20 @@ def verify_mp_plus_verse_c_col_semantics(record: ClaimRecord, ctx: Context) -> N
 
 
 def verify_mp_plus_verse_d_col_semantics(record: ClaimRecord, ctx: Context) -> None:
-    """D column: empty or a single direct or נוסח-wrapped מ:פסוק template."""
+    """D column: empty or a single direct or נוסח-wrapped מ:פסוק template.
+
+    When non-empty and direct (not נוסח-wrapped), the מ:פסוק call always has
+    at least one named param (סדר= and/or עלייה=); calls without named params
+    are dropped. In the נוסח-wrapped case, the inner מ:פסוק may lack named
+    params; the נוסח wrapper itself is what makes the entry interesting.
+    """
     label_tmpl = record.data["label_template"]
     nusach_wrapper = record.data["nusach_wrapper"]
+    named_params = frozenset(record.data["named_params"])
     saw_empty = False
     saw_direct = False
     saw_wrapped = False
+    saw_direct_with_named_params = False
     for _book39, _ch_key, _v_key, verse in iter_verses(ctx.corpus):
         d_col = verse[1]
         assert isinstance(d_col, list), f"D column is not a list: {d_col!r}"
@@ -148,9 +156,19 @@ def verify_mp_plus_verse_d_col_semantics(record: ClaimRecord, ctx: Context) -> N
             ), f"{nusach_wrapper!r}-wrapped D column missing {label_tmpl!r}: {item!r}"
         else:
             saw_direct = True
+            pasuk_params = item.get("tmpl_params", {})
+            has_named = any(k in named_params for k in pasuk_params)
+            assert has_named, (
+                f"direct D-column {label_tmpl!r} has no named param"
+                f" ({sorted(named_params)!r}): {item!r}"
+            )
+            saw_direct_with_named_params = True
     assert saw_empty, "D column never empty"
     assert saw_direct, "never observed direct מ:פסוק in D column"
     assert saw_wrapped, "never observed נוסח-wrapped מ:פסוק in D column"
+    assert (
+        saw_direct_with_named_params
+    ), "never observed direct מ:פסוק with named param in D column"
 
 
 def verify_mp_plus_verse_e_col_semantics(record: ClaimRecord, ctx: Context) -> None:
