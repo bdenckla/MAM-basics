@@ -310,7 +310,7 @@ def s_verse(*, claims: ClaimCollection):
             )
         ),
         author.unordered_list(col_items),
-        author.heading_level_3("Index 0 (Google column C): Verse separator"),
+        author.heading_level_3("C column (index 0): Verse separator"),
         author.para(
             _emit_claim_payload(
                 claims,
@@ -332,7 +332,7 @@ def s_verse(*, claims: ClaimCollection):
                 data={"top5": ["__", "//", "ר4", "פפ", "סס"]},
             )
         ),
-        author.heading_level_3("Index 1 (Google column D): Verse label"),
+        author.heading_level_3("D column (index 1): Verse label"),
         author.para(
             _emit_claim_payload(
                 claims,

@@ -344,7 +344,7 @@ def s_chapter_verse(*, claims: ClaimCollection):
     )
     col_items = [
         "C — Verse separator: usually a plain space or a $parashah break",
-        "D — Verse label: empty unless the verse carries extra metadata",
+        "D — Verse label: empty unless more than book, chapter, and verse",
         "E — Verse text: strings and template objects",
     ]
     return [
