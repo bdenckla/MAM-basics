@@ -370,7 +370,6 @@ def s_chapter_verse(*, claims: ClaimCollection):
         author.para("Templates are represented like this:"),
         json_block.json_block_raw_html(_json_tmpl_format(claims=claims)),
         tblh.key_type_desc_table(tmpl_rows),
-        author.heading_level_3([mb_html.code("tmpl_params"), " keys"]),
         author.para(
             _emit_claim_payload(
                 claims,
