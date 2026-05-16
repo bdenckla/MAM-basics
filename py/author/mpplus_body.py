@@ -506,7 +506,7 @@ def s_chapter_verse(*, claims: ClaimCollection):
                 claims,
                 "mp.plus.verse.e-col.semantics",
                 [
-                    "Column E is an array containing a mix of strings and templates."
+                    "Column E is an array mixing strings and templates."
                     " Example (Job 1:1):",
                 ],
                 kind="struct",
