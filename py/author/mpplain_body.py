@@ -66,6 +66,8 @@ _PLAIN_COMMON_TEMPLATES = [
     "ר0",
     "פרשה-מרכז",
     "מ:הערה",
+    "מ:קישור בהערה",
+    "מ:קישור פנימי בהערה",
     "פפ",
     "סס",
     "מ:אות מנוקדת",
@@ -404,7 +406,9 @@ def s_template_format(*, claims: ClaimCollection):
 
 
 def s_common_templates(*, claims: ClaimCollection):
-    structural_rows, _ = body_shared.emit_common_templates_claim_prelude(claims=claims)
+    structural_rows, note_links_rows = body_shared.emit_common_templates_claim_prelude(
+        claims=claims
+    )
     kq_rows = body_shared.build_kq_rows(
         claims=claims,
         kq_am2_doc=_KQ_AM2_DOC,
@@ -442,6 +446,7 @@ def s_common_templates(*, claims: ClaimCollection):
     other_templates_rows = (
         [cmn.good_ending_row(good_ending_doc=_GOOD_ENDING_TMPL_DOC)]
         + cmn.poetic_rows_for_templates(["פרשה-מרכז"])
+        + note_links_rows
         + [
             *cmn.accent_rows_for_templates(["גלגל-2", "ירח בן יומו-2"]),
             *cmn.other_rows_for_templates(["מ:אות מנוקדת"]),

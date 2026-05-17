@@ -255,10 +255,34 @@ def verify_mp_both_templates_note(record: ClaimRecord, ctx: Context) -> None:
     _verify_note_books_only(record, ctx)
 
 
+def _verify_template_set_listed_in_docs_claims(
+    record: ClaimRecord, ctx: Context, *, docs_claim_ids: tuple[str, ...]
+) -> None:
+    """Assert declared templates are listed in each provided docs-template claim."""
+    assert (
+        ctx.claim_records is not None
+    ), "ctx.claim_records was not provided to verifier context"
+    declared = frozenset(record.data["templates"])
+    for claim_id in docs_claim_ids:
+        docs_claim = ctx.claim_records[claim_id]
+        listed = frozenset(docs_claim.data["templates"])
+        missing = declared - listed
+        assert (
+            not missing
+        ), f"templates from {record.id} missing in {claim_id}: {sorted(missing)}"
+
+
 def verify_mp_both_templates_note_links_set(record: ClaimRecord, ctx: Context) -> None:
-    """Every declared note-link template appears at least once in the plus corpus
-    (per the precomputed tmpl-survey artifact)."""
+    """Declared note-link templates are observed in corpus and listed in both docs."""
     _verify_template_set_observed(record, ctx)
+    _verify_template_set_listed_in_docs_claims(
+        record,
+        ctx,
+        docs_claim_ids=(
+            "mp.plain.docs.common-templates.templates-in-plain-survey",
+            "mp.plus.docs.common-templates.templates-in-plus-survey",
+        ),
+    )
 
 
 def verify_mp_both_templates_structural_set(record: ClaimRecord, ctx: Context) -> None:
