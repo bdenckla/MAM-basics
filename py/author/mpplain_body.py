@@ -36,6 +36,7 @@ _CLAIM_ID_TMPL_TREE_SHAPE = "mp.plain.template-node.recursive-shape"
 _CLAIM_ID_CUSTOM_TAG_KEYS_VALUES = "mp.plain.docs.custom-tag.keys-and-values"
 
 _PLAIN_COMMON_TEMPLATES = [
+    "מ:עלייה",
     "כו״ק",
     "קו״כ",
     "מ:קו״כ-אם-2",
@@ -64,6 +65,14 @@ _PLAIN_COMMON_TEMPLATES = [
     "ר3",
     "ר4",
     "ר0",
+    "מ:ספר חדש",
+    "מ:רווח בתרי עשר",
+    "מ:רווח בתרי עשר בפסוק הראשון",
+    "מ:רווח לספר בתהלים",
+    "מ:רווח לספר בתהלים בפסוק הראשון",
+    "מ:אין פרשה בתחילת פרק",
+    "מ:אין פרשה בתחילת פרק בספרי אמ״ת",
+    "מ:אין רווח של פרשה בתחילת פרשת השבוע",
     "פרשה-מרכז",
     "מ:הערה",
     "מ:קישור בהערה",
@@ -435,11 +444,17 @@ def s_common_templates(*, claims: ClaimCollection):
     whitespace_extra_rows = cmn.other_rows_for_templates(["רווח בסוף שורה"])
     whitespace_parashah_rows = [
         _find_template_row(structural_rows, "מ:ספר חדש"),
-        _find_template_row(structural_rows, "מ:אין פרשה בתחילת פרק"),
         _find_template_row(structural_rows, "מ:רווח בתרי עשר"),
+        _find_template_row(structural_rows, "מ:רווח בתרי עשר בפסוק הראשון"),
         _find_template_row(structural_rows, "מ:רווח לספר בתהלים"),
+        _find_template_row(structural_rows, "מ:רווח לספר בתהלים בפסוק הראשון"),
         [author.hbo("סס2"), "Narrow closed $parashah"],
         [author.hbo("פסקא באמצע פסוק"), "$parashah division within a verse"],
+    ]
+    lack_of_whitespace_rows = [
+        _find_template_row(structural_rows, "מ:אין פרשה בתחילת פרק"),
+        _find_template_row(structural_rows, "מ:אין פרשה בתחילת פרק בספרי אמ״ת"),
+        _find_template_row(structural_rows, "מ:אין רווח של פרשה בתחילת פרשת השבוע"),
     ]
     plain_note_links_rows = [
         [
@@ -499,6 +514,8 @@ def s_common_templates(*, claims: ClaimCollection):
             "Many editions will choose to skip poetic formatting by treating"
             " ר0–ר4 as simple word spaces."
         ),
+        author.heading_level_3("Lack-of-whitespace templates"),
+        tblh.tmpl_purp_table(lack_of_whitespace_rows),
         author.heading_level_3("Note template"),
         tblh.tmpl_purp_table([cmn.NOTE_ROW_PLAIN]),
         author.heading_level_3("Documentation templates"),

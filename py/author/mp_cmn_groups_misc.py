@@ -2,17 +2,28 @@
 """Miscellaneous shared template-group constants extracted from mp_cmn."""
 
 from mb_cmn import template_names as tmpln
+from mb_misc import mb_html
 from author import mp_cmn_claims_core as _claims_core
 from author_util import author
 
 _claim_def = _claims_core.claim_def
 
 _HAARAH_2_DOC = "mpplus_haarah_2.html"
-_MINOR_PROPHETS_FIRST_VERSE_ABBREV = "מ:רווח בתרי עשר ..."
-_PSALMS_DIVISION_FIRST_VERSE_ABBREV = "מ:רווח לספר בתהלים ..."
 _NO_PAR_AT_STA_OF_CHAP21_ABBREV = "מ:אין פרשה ... פרק"
 _NO_PAR_AT_STA_OF_CHAP03_ABBREV = "מ:אין פרשה ... אמ״ת"
 _NO_PAR_AT_STA_OF_WEEKLY_ABBREV = "מ:אין רווח ... השבוע"
+
+
+def _first_verse_two_line_label(base_label: str, full_label: str):
+    return author.hbo(
+        [
+            base_label,
+            mb_html.line_break(),
+            "בפסוק הראשון",
+        ],
+        {"title": full_label},
+    )
+
 
 STRUCTURAL_ROWS = [
     [
@@ -27,8 +38,8 @@ STRUCTURAL_ROWS = [
         "Inter-prophet spacing. Marks the precise start of each of the 12 minor-prophetic book-parts with defined masoretic spacing. Parameter is the prophet name.",
     ],
     [
-        author.hbo_with_ellipsis_title(
-            _MINOR_PROPHETS_FIRST_VERSE_ABBREV,
+        _first_verse_two_line_label(
+            "מ:רווח בתרי עשר",
             "מ:רווח בתרי עשר בפסוק הראשון",
         ),
         "First-verse spacing marker for minor-prophetic book-parts. Parameter is the prophet name.",
@@ -38,8 +49,8 @@ STRUCTURAL_ROWS = [
         "Psalms-book spacing. Marks the precise start of each of the five Psalms divisions with defined masoretic spacing. Parameter is the book designation (e.g. ספר שני). Used at Ps 1, 42, 73, 90, 107.",
     ],
     [
-        author.hbo_with_ellipsis_title(
-            _PSALMS_DIVISION_FIRST_VERSE_ABBREV,
+        _first_verse_two_line_label(
+            "מ:רווח לספר בתהלים",
             "מ:רווח לספר בתהלים בפסוק הראשון",
         ),
         "First-verse spacing marker for each Psalms division. Parameter is the division designation (e.g. ספר שני).",

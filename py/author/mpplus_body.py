@@ -25,6 +25,7 @@ _NUSACH_DOC = "mpplus_nusach.html"
 _POETIC_SPACING_DOC = "mpplus_poetic_spacing.html"
 
 _PLUS_COMMON_TEMPLATES = [
+    "מ:עלייה",
     "מ:ספר חדש",
     "מ:רווח בתרי עשר בפסוק הראשון",
     "מ:רווח לספר בתהלים בפסוק הראשון",
@@ -516,6 +517,7 @@ def s_common_templates(*, claims: ClaimCollection):
     poetic_spacing_row = body_shared.poetic_spacing_row(doc_name=_POETIC_SPACING_DOC)
 
     whitespace_plus_rows = [
+        _find_template_row(structural_rows, "מ:ספר חדש"),
         _find_template_row(structural_rows, "מ:רווח בתרי עשר בפסוק הראשון"),
         _find_template_row(structural_rows, "מ:רווח לספר בתהלים בפסוק הראשון"),
     ]
@@ -524,10 +526,7 @@ def s_common_templates(*, claims: ClaimCollection):
         _find_template_row(structural_rows, "מ:אין פרשה בתחילת פרק בספרי אמ״ת"),
         _find_template_row(structural_rows, "מ:אין רווח של פרשה בתחילת פרשת השבוע"),
     ]
-    other_misc_rows = [
-        _find_template_row(structural_rows, "מ:ספר חדש"),
-        *note_links_rows,
-    ]
+    other_misc_rows = [*note_links_rows]
 
     _emit_claim_payload(
         claims,

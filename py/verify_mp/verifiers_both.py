@@ -286,9 +286,16 @@ def verify_mp_both_templates_note_links_set(record: ClaimRecord, ctx: Context) -
 
 
 def verify_mp_both_templates_structural_set(record: ClaimRecord, ctx: Context) -> None:
-    """Every declared structural template appears at least once in the plus corpus
-    (per the precomputed tmpl-survey artifact)."""
+    """Declared structural templates are observed in corpus and listed in both docs."""
     _verify_template_set_observed(record, ctx)
+    _verify_template_set_listed_in_docs_claims(
+        record,
+        ctx,
+        docs_claim_ids=(
+            "mp.plain.docs.common-templates.templates-in-plain-survey",
+            "mp.plus.docs.common-templates.templates-in-plus-survey",
+        ),
+    )
 
 
 def verify_mp_both_templates_navigation_set(record: ClaimRecord, ctx: Context) -> None:
