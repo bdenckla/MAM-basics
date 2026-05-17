@@ -10,6 +10,7 @@ from author import mp_cmn_json_snippets as jsnip
 from author import mp_cmn_dedicated_rows as dedicated_rows
 from author import mp_kq_am2_common as kq_am2_common
 from author import mp_cmn_top_header_book39 as thb
+from author import mp_body_shared as body_shared
 from author import mp_table_helpers as tblh
 
 _KQ_AM2_DOC = "mpplain_kq_am2.html"
@@ -105,30 +106,8 @@ _MULTIMARK_TEMPLATES = [
 ]
 
 
-def _find_template_row(rows, template_name):
-    expected = author.hbo(template_name)
-    for row in rows:
-        if row[0] == expected:
-            return row
-        if isinstance(row[0], dict):
-            attr = row[0].get("attr")
-            if isinstance(attr, dict) and attr.get("title") == template_name:
-                return row
-        if isinstance(row[0], str) and f'title="{template_name}"' in row[0]:
-            return row
-    raise AssertionError(f"Template row not found: {template_name!r}")
-
-
-def _emit_claim_payload(
-    claims: ClaimCollection,
-    claim_id: str,
-    payload,
-    *,
-    kind: str,
-    subject: str,
-    data=None,
-):
-    return claims.claim(claim_id, payload, kind=kind, subject=subject, data=data)
+_find_template_row = body_shared.find_template_row
+_emit_claim_payload = body_shared.emit_claim_payload
 
 
 def _json_top_level_skel(*, claims: ClaimCollection):
@@ -590,7 +569,7 @@ def s_common_templates(*, claims: ClaimCollection):
                         " params. Optional named params include ",
                         [author.hbo("סדר="), " (seder number) and "],
                         [author.hbo("עלייה="), " (value is a "],
-                        [author.hbo("מ:עלייה"), " template)."]
+                        [author.hbo("מ:עלייה"), " template)."],
                     ],
                 ],
                 [
