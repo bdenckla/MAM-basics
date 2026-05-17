@@ -311,11 +311,6 @@ def s_chapter_verse(*, claims: ClaimCollection):
         subject="mp:plus",
         data={"required_keys": ["tmpl_name"], "optional_keys": ["tmpl_params"]},
     )
-    col_items = [
-        "C — Verse separator: usually a plain space or a $parashah break",
-        "D — Verse label: empty unless more than book, chapter, and verse",
-        "E — Verse proper: strings and templates",
-    ]
     return [
         author.heading_level_2("Chapter structure"),
         author.para(
@@ -401,68 +396,41 @@ def s_chapter_verse(*, claims: ClaimCollection):
             "Example — a word with a special letter inside a $ketiv_qere inside a נוסח:"
         ),
         json_block.json_block_raw_html(_json_nested(claims=claims)),
-        author.heading_level_2("Verse structure"),
-        author.para(
-            _emit_claim_payload(
-                claims,
-                "mp.plus.verse.is-3-tuple",
-                "Each verse is a 3-element array corresponding to the C, D, and E"
-                " columns of the Google Sheet.",
-                kind="struct",
-                subject="mp:plus",
-                data={"shape": ["sep", "label", "text"], "length": 3},
-            )
+        *body_shared.verse_structure_prelude(
+            claims=claims,
+            claim_id="mp.plus.verse.is-3-tuple",
+            subject="mp:plus",
+            d_col_item="D — Verse label: empty unless more than book, chapter, and verse",
         ),
-        author.unordered_list(col_items),
-        author.heading_level_3("C column (index 0): Verse separator"),
-        author.para(
-            _emit_claim_payload(
-                claims,
-                "mp.plus.verse.c-col.semantics",
-                "Column C is an array indicating how this verse is separated from"
-                " the preceding verse:",
-                kind="struct",
-                subject="mp:plus",
-                data={"top4": ["__", "ר4", "פפ", "סס"]},
-            )
+        *body_shared.verse_c_column_block(
+            claims=claims,
+            claim_id="mp.plus.verse.c-col.semantics",
+            subject="mp:plus",
+            top_items_data_key="top4",
+            top_items=["__", "ר4", "פפ", "סס"],
+            include_double_slash=False,
         ),
-        author.unordered_list(
-            [
-                [
-                    ["Double underscore (", mb_html.code('"__"'), ")"],
-                    " is by far the most common value. It indicates a plain space.",
-                ],
-                "Other common values are calls to the ר4 template, the פפ template, or the סס template."
-                " (See the Whitespace templates section below.)",
-            ]
-        ),
-        author.heading_level_3("D column (index 1): Verse label"),
-        author.para(
-            _emit_claim_payload(
-                claims,
-                "mp.plus.verse.d-col.semantics",
-                [
-                    "Column D is an array that, if not empty, contains exactly"
-                    " one element: either a ",
-                    [author.hbo("מ:פסוק"), " template or "],
-                    [author.hbo("מ:פסוק"), " wrapped in a "],
-                    [author.hbo("נוסח"), " template."],
-                    # Normally we avoid mentioning "plain" in "plus" and vice versa,
-                    # but this is an intentional exception to the rule.
-                    " Column D in the plus format is sparse compared to the plain format:",
-                ],
-                kind="struct",
-                subject="mp:plus",
-                data={
-                    "label_template": "מ:פסוק",
-                    "nusach_wrapper": "נוסח",
-                    "empty_when": "no label data",
-                    "named_params": ["סדר", "עלייה"],
-                },
-            )
-        ),
-        author.unordered_list(
-            [
+        *body_shared.verse_d_column_block(
+            claims=claims,
+            claim_id="mp.plus.verse.d-col.semantics",
+            subject="mp:plus",
+            semantics_payload=[
+                "Column D is an array that, if not empty, contains exactly"
+                " one element: either a ",
+                [author.hbo("מ:פסוק"), " template or "],
+                [author.hbo("מ:פסוק"), " wrapped in a "],
+                [author.hbo("נוסח"), " template."],
+                # Normally we avoid mentioning "plain" in "plus" and vice versa,
+                # but this is an intentional exception to the rule.
+                " Column D in the plus format is sparse compared to the plain format:",
+            ],
+            semantics_data={
+                "label_template": "מ:פסוק",
+                "nusach_wrapper": "נוסח",
+                "empty_when": "no label data",
+                "named_params": ["סדר", "עלייה"],
+            },
+            extra_bullets=[
                 [
                     "When Column D contains a direct (unwrapped) ",
                     author.hbo("מ:פסוק"),
@@ -489,16 +457,14 @@ def s_chapter_verse(*, claims: ClaimCollection):
                     author.hbo("נוסח"),
                     " wrapping, the array is empty.",
                 ],
-            ]
-        ),
-        author.para(
-            [
+            ],
+            example_intro=[
                 "For example, here is the D column value for Job 1:1, kept because of its ",
                 mb_html.code("סדר"),
                 " param:",
-            ]
+            ],
+            example_json=_json_d_col_first(claims=claims),
         ),
-        json_block.json_block_raw_html(_json_d_col_first(claims=claims)),
         author.heading_level_3("E column (index 2): Verse proper"),
         author.para(
             _emit_claim_payload(

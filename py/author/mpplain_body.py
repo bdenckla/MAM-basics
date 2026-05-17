@@ -256,89 +256,50 @@ def s_chapter(*, claims: ClaimCollection):
 
 
 def s_verse(*, claims: ClaimCollection):
-    col_items = [
-        "C — Verse separator: usually a plain space or a $parashah break",
-        "D — Verse label: usually just book, chapter, and verse",
-        "E — Verse proper: strings and templates",
-    ]
     return [
-        author.heading_level_2("Verse structure"),
-        author.para("(This section documents both normal verses and pseudo-verses.)"),
-        author.para(
-            _emit_claim_payload(
-                claims,
-                "mp.plain.verse.is-3-tuple",
-                "Each verse is a 3-element array corresponding to the C, D, and E"
-                " columns of the Google Sheet.",
-                kind="struct",
-                subject="mp:plain",
-                data={"shape": ["sep", "label", "text"], "length": 3},
-            )
+        *body_shared.verse_structure_prelude(
+            claims=claims,
+            claim_id="mp.plain.verse.is-3-tuple",
+            subject="mp:plain",
+            d_col_item="D — Verse label: usually just book, chapter, and verse",
+            preface_text="(This section documents both normal verses and pseudo-verses.)",
         ),
-        author.unordered_list(col_items),
-        author.heading_level_3("C column (index 0): Verse separator"),
-        author.para(
-            _emit_claim_payload(
-                claims,
-                "mp.plain.verse.c-col.top5-items",
-                "Column C is an array indicating how this verse is separated from"
-                " the preceding verse:",
-                kind="struct",
-                subject="mp:plain",
-                data={"top5": ["__", "//", "ר4", "פפ", "סס"]},
-            )
+        *body_shared.verse_c_column_block(
+            claims=claims,
+            claim_id="mp.plain.verse.c-col.top5-items",
+            subject="mp:plain",
+            top_items_data_key="top5",
+            top_items=["__", "//", "ר4", "פפ", "סס"],
+            include_double_slash=True,
         ),
-        author.unordered_list(
-            [
-                [
-                    ["Double underscore (", mb_html.code('"__"'), ")"],
-                    " is by far the most common value. It indicates a plain space.",
-                ],
-                [
-                    ["Double slash (", mb_html.code('"//"'), ")"],
-                    " is the next most common value, indicating a line break in the Wikitext source."
-                    " (This double slash is not Biblical data and all applications should ignore it"
-                    " unless they are doing something like trying to recreate the Wikitext source, verbatim.)",
-                ],
-                "Other common values are calls to the ר4 template, the פפ template, or the סס template."
-                " (See the Whitespace templates section below.)",
-            ]
-        ),
-        author.heading_level_3("D column (index 1): Verse label"),
-        author.para(
-            _emit_claim_payload(
-                claims,
-                "mp.plain.verse.d-col.semantics",
-                [
-                    "Column D is an empty array for pseudo-verses."
-                    " For normal verses, it is an array with exactly"
-                    " one element: either a ",
-                    author.hbo("מ:פסוק"),
-                    " template or ",
-                    author.hbo("מ:פסוק"),
-                    " wrapped in a ",
-                    author.hbo("נוסח"),
-                    " template."
-                    " For example, here is the D column value for Job 1:2:",
-                ],
-                kind="struct",
-                subject="mp:plain",
-                data={
-                    "label_template": "מ:פסוק",
-                    "nusach_wrapper": "נוסח",
-                    "always_present": True,
-                    "allowed_named_params": ["סדר", "עלייה"],
-                },
-            )
-        ),
-        json_block.json_block_raw_html(
-            _emit_claim_payload(
+        *body_shared.verse_d_column_block(
+            claims=claims,
+            claim_id="mp.plain.verse.d-col.semantics",
+            subject="mp:plain",
+            semantics_payload=[
+                "Column D is an empty array for pseudo-verses."
+                " For normal verses, it is an array with exactly"
+                " one element: either a ",
+                author.hbo("מ:פסוק"),
+                " template or ",
+                author.hbo("מ:פסוק"),
+                " wrapped in a ",
+                author.hbo("נוסח"),
+                " template." " For example, here is the D column value for Job 1:2:",
+            ],
+            semantics_data={
+                "label_template": "מ:פסוק",
+                "nusach_wrapper": "נוסח",
+                "always_present": True,
+                "allowed_named_params": ["סדר", "עלייה"],
+            },
+            example_json=_emit_claim_payload(
                 claims,
                 _CLAIM_ID_EXAMPLE_INDEX_0,
                 _JSON_INDEX_0,
                 kind="example",
                 subject="mp:plain",
-            )
+            ),
         ),
         author.heading_level_3("E column (index 2): Verse proper"),
         author.para(

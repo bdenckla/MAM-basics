@@ -4,6 +4,7 @@
 from author_util import author
 from author_util import json_block
 from author_util.claim import ClaimCollection
+from mb_misc import mb_html
 from author import mp_cmn as cmn
 from author import mp_cmn_dedicated_rows as dedicated_rows
 from author import mp_kq_am2_common as kq_am2_common
@@ -183,3 +184,117 @@ def poetic_spacing_row(*, doc_name: str):
             ".",
         ],
     ]
+
+
+def verse_structure_prelude(
+    *,
+    claims: ClaimCollection,
+    claim_id: str,
+    subject: str,
+    d_col_item: str,
+    preface_text: str | None = None,
+):
+    col_items = [
+        "C — Verse separator: usually a plain space or a $parashah break",
+        d_col_item,
+        "E — Verse proper: strings and templates",
+    ]
+    out = [author.heading_level_2("Verse structure")]
+    if preface_text is not None:
+        out.append(author.para(preface_text))
+    out.extend(
+        [
+            author.para(
+                emit_claim_payload(
+                    claims,
+                    claim_id,
+                    "Each verse is a 3-element array corresponding to the C, D, and E"
+                    " columns of the Google Sheet.",
+                    kind="struct",
+                    subject=subject,
+                    data={"shape": ["sep", "label", "text"], "length": 3},
+                )
+            ),
+            author.unordered_list(col_items),
+        ]
+    )
+    return out
+
+
+def verse_c_column_block(
+    *,
+    claims: ClaimCollection,
+    claim_id: str,
+    subject: str,
+    top_items_data_key: str,
+    top_items,
+    include_double_slash: bool,
+):
+    bullets = [
+        [
+            ["Double underscore (", mb_html.code('"__"'), ")"],
+            " is by far the most common value. It indicates a plain space.",
+        ]
+    ]
+    if include_double_slash:
+        bullets.append(
+            [
+                ["Double slash (", mb_html.code('"//"'), ")"],
+                " is the next most common value, indicating a line break in the Wikitext source."
+                " (This double slash is not Biblical data and all applications should ignore it"
+                " unless they are doing something like trying to recreate the Wikitext source, verbatim.)",
+            ]
+        )
+    bullets.append(
+        "Other common values are calls to the ר4 template, the פפ template, or the סס template."
+        " (See the Whitespace templates section below.)"
+    )
+
+    return [
+        author.heading_level_3("C column (index 0): Verse separator"),
+        author.para(
+            emit_claim_payload(
+                claims,
+                claim_id,
+                "Column C is an array indicating how this verse is separated from"
+                " the preceding verse:",
+                kind="struct",
+                subject=subject,
+                data={top_items_data_key: top_items},
+            )
+        ),
+        author.unordered_list(bullets),
+    ]
+
+
+def verse_d_column_block(
+    *,
+    claims: ClaimCollection,
+    claim_id: str,
+    subject: str,
+    semantics_payload,
+    semantics_data,
+    extra_bullets=None,
+    example_intro=None,
+    example_json=None,
+):
+    out = [
+        author.heading_level_3("D column (index 1): Verse label"),
+        author.para(
+            emit_claim_payload(
+                claims,
+                claim_id,
+                semantics_payload,
+                kind="struct",
+                subject=subject,
+                data=semantics_data,
+            )
+        ),
+    ]
+    if extra_bullets is not None:
+        out.append(author.unordered_list(extra_bullets))
+    if example_intro is not None:
+        out.append(author.para(example_intro))
+    if example_json is not None:
+        out.append(json_block.json_block_raw_html(example_json))
+    return out
