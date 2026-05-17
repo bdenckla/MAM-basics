@@ -246,24 +246,14 @@ def s_plain_differences(*, claims: ClaimCollection):
 
 
 def s_top_level(*, claims: ClaimCollection):
-    _header_rows = _emit_claim_payload(
-        claims,
-        "mp.plus.header.fields",
-        thb.header_rows(),
-        kind="struct",
+    return body_shared.build_top_level_section(
+        claims=claims,
         subject="mp:plus",
-        data={"header_keys": thb.HEADER_KEYS},
+        header_claim_id="mp.plus.header.fields",
+        top_level_skel_fn=_json_top_level_skel,
+        header_fn=_json_header,
+        header_composite_fn=_json_header_composite,
     )
-    return [
-        author.heading_level_2("Top-level structure"),
-        json_block.json_block_raw_html(_json_top_level_skel(claims=claims)),
-        author.heading_level_2("Header"),
-        tblh.key_type_desc_table(_header_rows),
-        author.para("Here’s the header for Job, a book24 has no sub-books:"),
-        json_block.json_block_raw_html(_json_header(claims=claims)),
-        author.para("Here’s the header for Samuel, a book24 that has sub-books:"),
-        json_block.json_block_raw_html(_json_header_composite(claims=claims)),
-    ]
 
 
 def s_book39(*, claims: ClaimCollection):

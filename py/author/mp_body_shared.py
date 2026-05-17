@@ -2,7 +2,10 @@
 """Shared helpers for mpplain and mpplus body modules."""
 
 from author_util import author
+from author_util import json_block
 from author_util.claim import ClaimCollection
+from author import mp_cmn_top_header_book39 as thb
+from author import mp_table_helpers as tblh
 
 
 def find_template_row(rows, template_name):
@@ -29,3 +32,32 @@ def emit_claim_payload(
     data=None,
 ):
     return claims.claim(claim_id, payload, kind=kind, subject=subject, data=data)
+
+
+def build_top_level_section(
+    *,
+    claims: ClaimCollection,
+    subject: str,
+    header_claim_id: str,
+    top_level_skel_fn,
+    header_fn,
+    header_composite_fn,
+):
+    header_rows = emit_claim_payload(
+        claims,
+        header_claim_id,
+        thb.header_rows(),
+        kind="struct",
+        subject=subject,
+        data={"header_keys": thb.HEADER_KEYS},
+    )
+    return [
+        author.heading_level_2("Top-level structure"),
+        json_block.json_block_raw_html(top_level_skel_fn(claims=claims)),
+        author.heading_level_2("Header"),
+        tblh.key_type_desc_table(header_rows),
+        author.para("Here’s the header for Job, a book24 has no sub-books:"),
+        json_block.json_block_raw_html(header_fn(claims=claims)),
+        author.para("Here’s the header for Samuel, a book24 that has sub-books:"),
+        json_block.json_block_raw_html(header_composite_fn(claims=claims)),
+    ]
