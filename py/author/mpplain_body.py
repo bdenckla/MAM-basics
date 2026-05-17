@@ -15,6 +15,7 @@ from author import mp_table_helpers as tblh
 _KQ_AM2_DOC = "mpplain_kq_am2.html"
 _KQ_SPECIAL_DOC = "mpplain_kq_special.html"
 _KAFUL_DOC = "mpplain_kaful.html"
+_MULTIMARK_DOC = "mpplain_multimark.html"
 _GOOD_ENDING_TMPL_DOC = "mpplain_good_ending_tmpl.html"
 _NUSACH_DOC = "mpplain_nusach.html"
 _POETIC_SPACING_DOC = "mpplus_poetic_spacing.html"
@@ -418,10 +419,6 @@ def s_common_templates(*, claims: ClaimCollection):
         claims=claims,
         claim_id="mp.both.templates.accents.set",
     )
-    jer_rows = cmn.emit_claim_by_id(
-        claims=claims,
-        claim_id="mp.plain.templates.jerusalem.set",
-    )
     cmn.emit_claim_by_id(
         claims=claims,
         claim_id="mp.both.templates.poetic.set",
@@ -432,11 +429,6 @@ def s_common_templates(*, claims: ClaimCollection):
         cmn.accent_rows_for_templates(_CHOICE_TEMPLATES),
         doc_name=_KAFUL_DOC,
     )
-    plain_multimark_rows = [
-        *cmn.accent_rows_for_templates(_MULTIMARK_TEMPLATES[:2]),
-        *cmn.other_rows_for_templates(_MULTIMARK_TEMPLATES[2:]),
-        *jer_rows,
-    ]
     poetic_spacing_row = body_shared.poetic_spacing_row(doc_name=_POETIC_SPACING_DOC)
     whitespace_extra_rows = cmn.other_rows_for_templates(["רווח בסוף שורה"])
     whitespace_parashah_rows = [
@@ -473,7 +465,13 @@ def s_common_templates(*, claims: ClaimCollection):
         author.heading_level_3("Punctuation templates"),
         tblh.tmpl_purp_table(plain_accent_rows),
         author.heading_level_3("Multimark templates"),
-        tblh.tmpl_purp_table(plain_multimark_rows),
+        author.para(
+            [
+                "See ",
+                author.anchor_h("their dedicated page", _MULTIMARK_DOC),
+                ".",
+            ]
+        ),
         author.heading_level_3("Choice templates"),
         body_shared.choice_templates_intro_para(),
         tblh.tmpl_purp_table(plain_choice_rows),
