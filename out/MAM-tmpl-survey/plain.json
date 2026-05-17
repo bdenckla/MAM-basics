@@ -1,4 +1,5 @@
 {
+  "template_name_normalization_note": "In the plain survey, template names are normalized: ASCII double quote (\") is converted to Hebrew gershayim (U+05F4). This applies to both stmpl and tmpl template forms in plain data.",
   "mpasuq": {
     "flirecs": [
       {

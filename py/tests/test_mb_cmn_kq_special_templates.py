@@ -3,6 +3,7 @@ import unittest
 
 from mb_cmn import retired_kq_special_templates as rkqst
 from mb_cmn import retired_template_names as rtmpln
+from mb_cmn import ws_tmpl1 as wtp1
 
 
 class KqSpecialTemplateNormalizationTests(unittest.TestCase):
@@ -31,6 +32,14 @@ class KqSpecialTemplateNormalizationTests(unittest.TestCase):
                 rkqst.UNIFIED_SPECIAL_KQ_TEMPLATE_NAME,
                 "סוג שלא מוכר",
             )
+
+    def test_ws_tmpl1_template_name_normalization_matches_stmpl_and_tmpl(self):
+        raw_name = 'מ:אין פרשה בתחילת פרק בספרי אמ"ת'
+        stmpl = {"stmpl": raw_name}
+        tmpl = {"tmpl": [[raw_name]]}
+
+        self.assertEqual(wtp1.template_name(stmpl), wtp1.template_name(tmpl))
+        self.assertEqual(wtp1.template_name(stmpl), "מ:אין פרשה בתחילת פרק בספרי אמ״ת")
 
 
 if __name__ == "__main__":

@@ -23,6 +23,8 @@ def _psv_category(bscv):
 
 def _wtel_type_and_subtype(wtel):
     if wtp1.is_template(wtel):
+        # template_name() intentionally normalizes ASCII quote shorthand to
+        # gershayim, and this applies to both stmpl and tmpl template forms.
         tmpl_name = wtp1.template_name(wtel)
         return "tmpl", _survey_tmpl_subtype(tmpl_name, wtel)
     if wtp1.is_abtag(wtel):
