@@ -575,10 +575,10 @@ def s_common_templates(*, claims: ClaimCollection):
         ),
         author.heading_level_3("Lack-of-whitespace templates"),
         tblh.tmpl_purp_table(lack_of_whitespace_rows),
-        author.heading_level_3("Other templates"),
-        tblh.tmpl_purp_table(other_misc_rows),
         author.heading_level_3("Note template"),
         tblh.tmpl_purp_table([note_row]),
         author.heading_level_3("Documentation templates"),
         tblh.tmpl_purp_table(cmn.other_rows_shared_core(nusach_doc=_NUSACH_DOC)),
+        author.heading_level_3("Other templates"),
+        tblh.tmpl_purp_table(other_misc_rows),
     ]
