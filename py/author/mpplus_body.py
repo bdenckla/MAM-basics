@@ -319,7 +319,9 @@ def s_chapter_verse(*, claims: ClaimCollection):
                 claims,
                 "mp.plus.chapter.keyed-by-verse-num",
                 [
-                    "An object keyed by verse numbers."
+                    "The ",
+                    mb_html.code("chapters"),
+                    " object is keyed by verse numbers."
                     " For example, a chapter with 22 verses has exactly 22 keys, ",
                     mb_html.code('"1"'),
                     " through ",
