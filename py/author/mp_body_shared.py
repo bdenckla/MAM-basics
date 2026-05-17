@@ -4,6 +4,9 @@
 from author_util import author
 from author_util import json_block
 from author_util.claim import ClaimCollection
+from author import mp_cmn as cmn
+from author import mp_cmn_dedicated_rows as dedicated_rows
+from author import mp_kq_am2_common as kq_am2_common
 from author import mp_cmn_top_header_book39 as thb
 from author import mp_table_helpers as tblh
 
@@ -60,4 +63,123 @@ def build_top_level_section(
         json_block.json_block_raw_html(header_fn(claims=claims)),
         author.para("Here’s the header for Samuel, a book24 that has sub-books:"),
         json_block.json_block_raw_html(header_composite_fn(claims=claims)),
+    ]
+
+
+def emit_common_templates_claim_prelude(
+    *, claims: ClaimCollection, plus_only: bool = False
+):
+    structural_rows = cmn.emit_claim_by_id(
+        claims=claims, claim_id="mp.both.templates.structural.set"
+    )
+    cmn.emit_claim_by_id(claims=claims, claim_id="mp.both.templates.navigation.set")
+    note_links_rows = cmn.emit_claim_by_id(
+        claims=claims, claim_id="mp.both.templates.note-links.set"
+    )
+    cmn.emit_claim_by_id(
+        claims=claims,
+        claim_id="mp.both.templates.all-groups-cover-all-observed",
+    )
+    cmn.emit_claim_by_id(claims=claims, claim_id="mp.both.templates.other.set")
+    cmn.emit_claim_by_id(
+        claims=claims,
+        claim_id="mp.both.templates.modag.only-in-nusach-param2",
+    )
+    cmn.emit_claim_by_id(
+        claims=claims,
+        claim_id="mp.both.templates.sh.only-in-nusach-param2",
+    )
+    if plus_only:
+        cmn.emit_claim_by_id(claims=claims, claim_id="mp.plus.templates.plus-only.set")
+    return structural_rows, note_links_rows
+
+
+def build_kq_rows(*, claims: ClaimCollection, kq_am2_doc: str, kq_special_doc: str):
+    kq_rows = kq_am2_common.with_dedicated_page_link(
+        cmn.emit_claim_by_id(claims=claims, claim_id="mp.both.templates.kq.set"),
+        doc_name=kq_am2_doc,
+    )
+    kq_rows = dedicated_rows.with_kq_special_dedicated_page_link(
+        kq_rows,
+        doc_name=kq_special_doc,
+    )
+    cmn.emit_claim_by_id(
+        claims=claims,
+        claim_id="mp.both.templates.kq-special.subtype-counts",
+    )
+    return kq_rows
+
+
+def selected_templates_intro_block():
+    sheets_link = author.anchor_h("Templates tab", cmn.SHEETS_TMPL)
+    sheets_data_link = author.anchor_h("$MAM Google Sheet", cmn.SHEETS_DATA)
+    return [
+        author.heading_level_2("Selected templates"),
+        author.para(
+            [
+                "For English and Hebrew descriptions of most templates, see the ",
+                sheets_link,
+                " of the ",
+                sheets_data_link,
+                ".",
+            ]
+        ),
+    ]
+
+
+def verse_label_templates_block():
+    return [
+        author.heading_level_3("Verse label templates"),
+        tblh.tmpl_purp_table(
+            [
+                [
+                    author.hbo("מ:פסוק"),
+                    [
+                        "Verse label. Takes book name, chapter, and verse as positional"
+                        " params. Optional named params include ",
+                        [author.hbo("סדר="), " (seder number) and "],
+                        [author.hbo("עלייה="), " (value is a "],
+                        [author.hbo("מ:עלייה"), " template)."],
+                    ],
+                ],
+                [
+                    author.hbo("מ:עלייה"),
+                    [
+                        "Torah $aliyah identifier. See ",
+                        author.anchor_h(
+                            "notes on $aliyot",
+                            "https://bdenckla.github.io/MAM-with-doc/misc/notes_on_aliyot.html",
+                        ),
+                        ".",
+                    ],
+                ],
+            ]
+        ),
+    ]
+
+
+def ketiv_qere_block(*, kq_rows, json_kq):
+    return [
+        author.heading_level_3("$Ketiv_qere templates"),
+        tblh.tmpl_purp_table(kq_rows),
+        author.para("Example of standard $ketiv_qere:"),
+        json_block.json_block_raw_html(json_kq),
+    ]
+
+
+def choice_templates_intro_para():
+    return author.para(
+        "Most applications will need to make a choice between the two or three options"
+        " presented by these templates."
+    )
+
+
+def poetic_spacing_row(*, doc_name: str):
+    return [
+        author.hbo("ר0–ר4"),
+        [
+            "Poetic spacing: See ",
+            author.anchor_h("their dedicated page", doc_name),
+            ".",
+        ],
     ]

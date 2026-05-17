@@ -7,7 +7,6 @@ from author_util import json_block
 from author_util.claim import ClaimCollection
 from author import mp_cmn as cmn
 from author import mp_cmn_dedicated_rows as dedicated_rows
-from author import mp_kq_am2_common as kq_am2_common
 from author import mp_cmn_json_snippets as jsnip
 from author import mp_cmn_top_header_book39 as thb
 from author import mp_body_shared as body_shared
@@ -519,39 +518,14 @@ def s_chapter_verse(*, claims: ClaimCollection):
 
 
 def s_common_templates(*, claims: ClaimCollection):
-    structural_rows = cmn.emit_claim_by_id(
-        claims=claims, claim_id="mp.both.templates.structural.set"
-    )
-    cmn.emit_claim_by_id(claims=claims, claim_id="mp.both.templates.navigation.set")
-    note_links_rows = cmn.emit_claim_by_id(
-        claims=claims, claim_id="mp.both.templates.note-links.set"
-    )
-    cmn.emit_claim_by_id(
+    structural_rows, note_links_rows = body_shared.emit_common_templates_claim_prelude(
         claims=claims,
-        claim_id="mp.both.templates.all-groups-cover-all-observed",
+        plus_only=True,
     )
-    cmn.emit_claim_by_id(claims=claims, claim_id="mp.both.templates.other.set")
-    cmn.emit_claim_by_id(
+    kq_rows = body_shared.build_kq_rows(
         claims=claims,
-        claim_id="mp.both.templates.modag.only-in-nusach-param2",
-    )
-    cmn.emit_claim_by_id(
-        claims=claims,
-        claim_id="mp.both.templates.sh.only-in-nusach-param2",
-    )
-    cmn.emit_claim_by_id(claims=claims, claim_id="mp.plus.templates.plus-only.set")
-
-    kq_rows = kq_am2_common.with_dedicated_page_link(
-        cmn.emit_claim_by_id(claims=claims, claim_id="mp.both.templates.kq.set"),
-        doc_name=_KQ_AM2_DOC,
-    )
-    kq_rows = dedicated_rows.with_kq_special_dedicated_page_link(
-        kq_rows,
-        doc_name=_KQ_SPECIAL_DOC,
-    )
-    cmn.emit_claim_by_id(
-        claims=claims,
-        claim_id="mp.both.templates.kq-special.subtype-counts",
+        kq_am2_doc=_KQ_AM2_DOC,
+        kq_special_doc=_KQ_SPECIAL_DOC,
     )
     json_kq_plus = cmn.emit_claim_by_id(claims=claims, claim_id="mp.plus.example.kq")
     special_letter_rows = cmn.emit_claim_by_id(
@@ -573,14 +547,7 @@ def s_common_templates(*, claims: ClaimCollection):
         cmn.accent_rows_for_templates(_CHOICE_TEMPLATES),
         doc_name=_KAFUL_DOC,
     )
-    poetic_spacing_row = [
-        author.hbo("ר0–ר4"),
-        [
-            "Poetic spacing: See ",
-            author.anchor_h("their dedicated page", _POETIC_SPACING_DOC),
-            ".",
-        ],
-    ]
+    poetic_spacing_row = body_shared.poetic_spacing_row(doc_name=_POETIC_SPACING_DOC)
 
     whitespace_plus_rows = [
         _find_template_row(structural_rows, "מ:רווח בתרי עשר בפסוק הראשון"),
@@ -604,49 +571,10 @@ def s_common_templates(*, claims: ClaimCollection):
         subject="mp:plus",
         data={"templates": _PLUS_COMMON_TEMPLATES},
     )
-    sheets_link = author.anchor_h("Templates tab", cmn.SHEETS_TMPL)
-    sheets_data_link = author.anchor_h("$MAM Google Sheet", cmn.SHEETS_DATA)
     return [
-        author.heading_level_2("Selected templates"),
-        author.para(
-            [
-                "For English and Hebrew descriptions of most templates, see the ",
-                sheets_link,
-                " of the ",
-                sheets_data_link,
-                ".",
-            ]
-        ),
-        author.heading_level_3("Verse label templates"),
-        tblh.tmpl_purp_table(
-            [
-                [
-                    author.hbo("מ:פסוק"),
-                    [
-                        "Verse label. Takes book name, chapter, and verse as positional"
-                        " params. Optional named params include ",
-                        [author.hbo("סדר="), " (seder number) and "],
-                        [author.hbo("עלייה="), " (value is a "],
-                        [author.hbo("מ:עלייה"), " template)."],
-                    ],
-                ],
-                [
-                    author.hbo("מ:עלייה"),
-                    [
-                        "Torah $aliyah identifier. See ",
-                        author.anchor_h(
-                            "notes on $aliyot",
-                            "https://bdenckla.github.io/MAM-with-doc/misc/notes_on_aliyot.html",
-                        ),
-                        ".",
-                    ],
-                ],
-            ]
-        ),
-        author.heading_level_3("$Ketiv_qere templates"),
-        tblh.tmpl_purp_table(kq_rows),
-        author.para("Example of standard $ketiv_qere:"),
-        json_block.json_block_raw_html(json_kq_plus),
+        *body_shared.selected_templates_intro_block(),
+        *body_shared.verse_label_templates_block(),
+        *body_shared.ketiv_qere_block(kq_rows=kq_rows, json_kq=json_kq_plus),
         author.heading_level_3("Special letter templates"),
         tblh.tmpl_purp_table(
             special_letter_rows
@@ -669,10 +597,7 @@ def s_common_templates(*, claims: ClaimCollection):
         author.heading_level_3("Punctuation templates"),
         tblh.tmpl_purp_table(plus_accent_rows),
         author.heading_level_3("Choice templates"),
-        author.para(
-            "Most applications will need to make a choice between the two or three options"
-            " presented by these templates."
-        ),
+        body_shared.choice_templates_intro_para(),
         tblh.tmpl_purp_table(plus_choice_rows),
         author.heading_level_3("Whitespace templates"),
         tblh.tmpl_purp_table(
