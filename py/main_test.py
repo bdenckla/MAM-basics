@@ -80,6 +80,11 @@ TEST_MODULE_SPECS = (
         help_text="Run MP-plus extraction/diff tests.",
     ),
     TestModuleSpec(
+        flag="tmpl-survey-focused-targets",
+        module_name="tests.test_tmpl_survey_focused_targets",
+        help_text="Run focused template call-graph target configuration tests.",
+    ),
+    TestModuleSpec(
         flag="mpplus-file-matching",
         module_name="tests.test_mpplus_file_matching",
         help_text="Run MP-plus file pairing tests.",

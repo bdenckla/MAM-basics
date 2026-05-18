@@ -1,0 +1,40 @@
+digraph template_call_graph {
+    rankdir=LR;
+    node [fontname="SBL Hebrew,Helvetica", fontsize=12];
+    edge [fontname="Helvetica", fontsize=9];
+
+    // Column nodes
+    node [shape=box, style=bold];
+    "C";
+    "D";
+    "E";
+
+    // Template nodes
+    node [shape=box, style=""];
+
+    // Edges
+    "C" -> "נוסח" [label="277"];
+    "D" -> "נוסח" [label="35"];
+    "E" -> "כו״ק" [label="741"];
+    "E" -> "מ:דחי" [label="2240"];
+    "E" -> "מ:כפול" [label="34"];
+    "E" -> "מ:קו״כ-אם-2" [label="133"];
+    "E" -> "מ:קמץ" [label="330"];
+    "E" -> "נוסח" [label="3541"];
+    "E" -> "פרשה-מרכז" [label="26"];
+    "כו״ק" -> "מ:דחי" [label="7"];
+    "כו״ק" -> "מ:קמץ" [label="10"];
+    "מ:דחי" -> "מ:אות-ג" [label="4"];
+    "מ:דחי" -> "מ:אות-ק" [label="2"];
+    "מ:דחי" -> "מ:ירושלם" [label="2"];
+    "מ:כפול" -> "מ:קמץ" [label="4"];
+    "מ:כפול" -> "נוסח" [label="42"];
+    "מ:קו״כ-אם-2" -> "מ:דחי" [label="8"];
+    "מ:קו״כ-אם-2" -> "מ:קמץ" [label="2"];
+    "מ:קמץ" -> "מ:דחי" [label="14"];
+    "נוסח" -> "כו״ק" [label="143"];
+    "נוסח" -> "מ:דחי" [label="37"];
+    "נוסח" -> "מ:קו״כ-אם-2" [label="15"];
+    "נוסח" -> "מ:קמץ" [label="29"];
+    "פרשה-מרכז" -> "מ:דחי" [label="10"];
+}
