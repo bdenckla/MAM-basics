@@ -15,6 +15,7 @@ from author import mp_table_helpers as tblh
 _CALL_GRAPHS = "https://bdenckla.github.io/MAM-parsed/plus-template-call-graphs.html"
 _DIFF_FROM_PLAIN_DOC = "mpplus_diff_from_plain.html"
 _PLAIN_ONLY_TEMPLATES_DOC = "mpplus_plain_only_templates.html"
+_PLAIN_DOC = "mpplain.html"
 
 _AOT_DOC = "mpplus_aot.html"
 _KQ_AM2_DOC = "mpplus_kq_am2.html"
@@ -190,18 +191,21 @@ def _json_nested(*, claims: ClaimCollection):
 
 def s_intro():
     return [
-        # Normally we avoid mentioning "plain" in "plus" and vice versa,
-        # but this is an intentional exception to the rule.
         author.para(
-            "The $MAM-parsed-plus JSON files are formed by:"
-            " (a) parsing the Wikitext in the $MAM Google Sheet"
-            " (b) adding some conveniences and"
-            " (c) removing some inconveniences."
-            " Of course, what is considered an inconvenience and what is considered a convenience"
-            " can only be determined relative to a particular application."
-            " Nonetheless, we believe that for most applications,"
-            " the plus format is more convenient to work with than the plain format."
-            " This document covers:"
+            [
+                "The $MAM-parsed-plus JSON files are formed by:"
+                " (a) parsing the Wikitext in the $MAM Google Sheet"
+                " (b) adding some conveniences and"
+                " (c) removing some inconveniences."
+                " Of course, what is considered an inconvenience and what is considered a convenience"
+                " can only be determined relative to a particular application."
+                # Normally we avoid mentioning "plain" in "plus" and vice versa,
+                # but this is an intentional exception to the rule.
+                " Nonetheless, we believe that for most applications,"
+                " the plus format is more convenient to work with than the ",
+                author.anchor_h("plain", _PLAIN_DOC),
+                " format." " This document covers:",
+            ]
         ),
         author.unordered_list(
             [

@@ -12,6 +12,7 @@ from author import mp_cmn_top_header_book39 as thb
 from author import mp_body_shared as body_shared
 from author import mp_table_helpers as tblh
 
+_PLUS_DOC = "mpplus.html"
 _KQ_AM2_DOC = "mpplain_kq_am2.html"
 _KQ_SPECIAL_DOC = "mpplain_kq_special.html"
 _KAFUL_DOC = "mpplain_kaful.html"
@@ -155,17 +156,19 @@ def _json_header_composite(*, claims: ClaimCollection):
 def s_intro():
     return [
         author.para(
-            "The $MAM-parsed-plain JSON files are formed by parsing the Wikitext"
-            " in the $MAM Google Sheet with minimal post-processing."
-            #
-            # Normally we avoid mentioning "plus" in "plain" and vice versa,
-            # but this is an intentional exception to the rule.
-            " Use plain when you want a format that stays close to the"
-            " $MAM Google Sheet."
-            " Use plus when you want conveniences"
-            " intended to simplify most application code."
-            #
-            " This document covers:"
+            [
+                "The $MAM-parsed-plain JSON files are formed by parsing the Wikitext"
+                " in the $MAM Google Sheet with minimal post-processing."
+                " Use plain when you want a format that stays close to the"
+                " $MAM Google Sheet."
+                " Use ",
+                # Normally we avoid mentioning "plus" in "plain" and vice versa,
+                # but this is an intentional exception to the rule.
+                author.anchor_h("plus", _PLUS_DOC),
+                " when you want conveniences"
+                " intended to simplify most application code."
+                " This document covers:",
+            ]
         ),
         author.unordered_list(
             [
