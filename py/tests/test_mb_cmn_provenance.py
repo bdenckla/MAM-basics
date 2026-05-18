@@ -2,6 +2,7 @@
 
 import unittest
 from pathlib import Path
+from tempfile import TemporaryDirectory
 
 from mb_cmn import provenance
 
@@ -58,6 +59,29 @@ class TestMbCmnProvenance(unittest.TestCase):
         non_mam_path = repos_root / "MAM-simple" / "py" / "fake_generator.py"
         with self.assertRaises(ValueError):
             provenance.generated_by_text(str(non_mam_path))
+
+    def test_write_directory_provenance_uses_default_sidecar_name(self):
+        with TemporaryDirectory() as tmp_dir:
+            provenance.write_directory_provenance(
+                tmp_dir,
+                str(Path(__file__).resolve()),
+                "demo artifacts",
+            )
+            default_path = Path(tmp_dir) / "provenance.md"
+            self.assertTrue(default_path.exists())
+            self.assertFalse((Path(tmp_dir) / "_provenance.md").exists())
+
+    def test_write_directory_provenance_allows_sidecar_name_override(self):
+        with TemporaryDirectory() as tmp_dir:
+            provenance.write_directory_provenance(
+                tmp_dir,
+                str(Path(__file__).resolve()),
+                "demo artifacts",
+                sidecar_name="_provenance.md",
+            )
+            custom_path = Path(tmp_dir) / "_provenance.md"
+            self.assertTrue(custom_path.exists())
+            self.assertFalse((Path(tmp_dir) / "provenance.md").exists())
 
 
 if __name__ == "__main__":
