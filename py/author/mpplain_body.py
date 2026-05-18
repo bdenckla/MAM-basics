@@ -107,16 +107,6 @@ _CHOICE_TEMPLATES = [
     "מ:כפול",
 ]
 
-_MULTIMARK_TEMPLATES = [
-    "שני טעמים באות אחת קמץ-תחתון-פתח-עליון",
-    "מ:טעם",
-    "מ:טעם ומתג באות אחת",
-    "מ:גרש ותלישא גדולה",
-    "מ:גרשיים ותלישא גדולה",
-    "מ:כל קמץ קטן מרכא",
-]
-
-
 _find_template_row = body_shared.find_template_row
 _emit_claim_payload = body_shared.emit_claim_payload
 

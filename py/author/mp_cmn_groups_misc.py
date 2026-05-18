@@ -35,7 +35,7 @@ STRUCTURAL_ROWS = [
     ],
     [
         author.hbo("מ:רווח בתרי עשר"),
-        "Inter-prophet spacing. Marks the precise start of each of the 12 minor-prophetic book-parts with defined masoretic spacing. Parameter is the prophet name.",
+        "The \u201cverse 0\u201d partner to מ:רווח בתרי עשר בפסוק הראשון.",
     ],
     [
         _first_verse_two_line_label(
@@ -46,7 +46,7 @@ STRUCTURAL_ROWS = [
     ],
     [
         author.hbo("מ:רווח לספר בתהלים"),
-        "Psalms-book spacing. Marks the precise start of each of the five Psalms divisions with defined masoretic spacing. Parameter is the book designation (e.g. ספר שני). Used at Ps 1, 42, 73, 90, 107.",
+        "The \u201cverse 0\u201d partner to מ:רווח לספר בתהלים בפסוק הראשון.",
     ],
     [
         _first_verse_two_line_label(
