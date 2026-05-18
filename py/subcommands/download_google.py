@@ -23,6 +23,14 @@ def _download_section(secid, downloader):
     file_io.with_tmp_openw(out_path, {"newline": ""}, _write_callback, text)
 
 
+def _download_tmpl_doc(downloader):
+    gurl_part_with_gid = f"pub?output=csv&gid={_GURL_TMPL_GID}"
+    rurl = "/".join((_GURL_BASE, _GURL_ID, gurl_part_with_gid))
+    text = downloader.get_text(rurl, timeout=10, encoding="utf-8")
+    my_utils_fm.show_progress_g(__file__, _TMPL_DOC_CSV_PATH)
+    file_io.with_tmp_openw(_TMPL_DOC_CSV_PATH, {"newline": ""}, _write_callback, text)
+
+
 def _write_callback(text, out_fp):
     out_fp.write(text)
 
@@ -34,6 +42,8 @@ def run(section=None, skip_download=False, download_only=False):
         with polite_download.PoliteDownloader(_GOOGLE_DOWNLOAD_CONFIG) as downloader:
             for secid in secids:
                 _download_section(secid, downloader)
+            if section is None:
+                _download_tmpl_doc(downloader)
     if download_only:
         return
     all_plus_paths = parse_go.almost_main()
@@ -62,6 +72,9 @@ _GURL_GIDS = {
     tbn.SEC_NEV_RISH: 779581656,
     tbn.SEC_TORAH: 957434826,
 }
+# GID for the template documentation tab (not a text-section tab)
+_GURL_TMPL_GID = 1670945398
+_TMPL_DOC_CSV_PATH = "in/mam-go/template-documentation-tab.csv"
 _GOOGLE_DOWNLOAD_CONFIG = polite_download.PoliteDownloadConfig(
     user_agent=f"Denckla-Dowload-MAM-Bot/1.1 ({_GURL_BASE})",
     default_timeout_s=15.0,
