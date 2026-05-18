@@ -227,6 +227,14 @@ def verify_mp_both_templates_sampe_pabp_arg_value(
     expected = record.data["arg_value"]
     templates = frozenset(record.data["templates"])
     bad = []
+
+    def _normalize_param_1(val):
+        if isinstance(val, str):
+            return val
+        if isinstance(val, list):
+            return "".join(val)
+        return None
+
     for tmpl in iter_all_template_objects(ctx.corpus):
         if tmpl["tmpl_name"] not in templates:
             continue
@@ -234,7 +242,7 @@ def verify_mp_both_templates_sampe_pabp_arg_value(
         if "1" not in params:
             continue
         val = params["1"]
-        if val != [expected]:
+        if _normalize_param_1(val) != expected:
             bad.append(f"{tmpl['tmpl_name']} param 1 = {val!r}")
     assert not bad, f"unexpected param 1 values: {bad[:5]}"
 

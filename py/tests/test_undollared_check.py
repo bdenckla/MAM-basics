@@ -4,6 +4,7 @@ import unittest
 from author_util import dollar_sub_g
 from author_util import author
 from author import mp_cmn_rows_core as rows_core
+from author import mp_cmn_rows_other as rows_other
 
 
 def _dispatch_with(*keys):
@@ -65,6 +66,46 @@ class TestChoiceRowsSmokeTest(unittest.TestCase):
         desc = rows_core.ACCENT_ROWS[8][1]
         result = self._run_sub(desc)
         self.assertIsNotNone(result)
+
+    def test_galgal_row_description_renders(self):
+        desc = rows_core.ACCENT_ROWS[5][1]
+        result = self._run_sub(desc)
+        self.assertIsNotNone(result)
+
+    def test_yby_row_description_renders(self):
+        desc = rows_core.ACCENT_ROWS[6][1]
+        result = self._run_sub(desc)
+        self.assertIsNotNone(result)
+
+    def test_other_rows_parashah_set_rows_render(self):
+        for desc in (
+            rows_other.OTHER_ROWS[0][1],
+            rows_other.OTHER_ROWS[6][1],
+            rows_other.OTHER_ROWS[7][1],
+            rows_other.OTHER_ROWS[9][1],
+            rows_other.whitespace_rows_shared()[0][1],
+        ):
+            result = self._run_sub(desc)
+            self.assertIsNotNone(result)
+
+
+class TestIssue169TokenPresence(unittest.TestCase):
+    def test_issue_169_tokens_exist(self):
+        tokens = (
+            "$parashah",
+            "$Parashah",
+            "$petuxah",
+            "$Petuxah",
+            "$setumah",
+            "$Setumah",
+            "$galgal",
+            "$Galgal",
+            "$yby",
+            "$Yby",
+        )
+        for token in tokens:
+            rendered = author.dollar_sub(token)
+            self.assertIsNotNone(rendered)
 
 
 if __name__ == "__main__":

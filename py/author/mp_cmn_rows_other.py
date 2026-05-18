@@ -41,7 +41,7 @@ def _good_ending_row(good_ending_doc):
 OTHER_ROWS = [
     [
         [author.hbo("פפ"), " / ", author.hbo("סס")],
-        "Parashah petuchah / setumah (primarily in D column)",
+        "$Parashah $petuxah / $setumah (primarily in D column)",
     ],
     [
         author.hbo("מ:אות מנוקדת"),
@@ -62,11 +62,11 @@ OTHER_ROWS = [
     ],
     [
         author.hbo("ססס"),
-        "Closed $parashah (setumah) variant appearing mid-line after a blank space, rather than at the start of the next line.",
+        "Closed $parashah ($setumah) variant appearing mid-line after a blank space, rather than at the start of the next line.",
     ],
     [
         author.hbo("פפפ"),
-        "Open $parashah (petuhah) variant starting at the very top of the next line, without an intervening blank line.",
+        "Open $parashah ($petuxah) variant starting at the very top of the next line, without an intervening blank line.",
     ],
     [
         author.hbo("רווח בסוף שורה"),
@@ -74,7 +74,7 @@ OTHER_ROWS = [
     ],
     [
         author.hbo("מ:ששש"),
-        "Setumah-like section divider for the 8 shirah (song) sections in the 21 prose books; analogous to ססס.",
+        "$Setumah-like section divider for the 8 shirah (song) sections in the 21 prose books; analogous to ססס.",
     ],
     [
         author.hbo("מ:כל קמץ קטן מרכא"),
@@ -204,7 +204,7 @@ def whitespace_rows_shared():
                 author.hbo("ססס"),
             ],
             [
-                "Parashah petuhah / setumah variants."
+                "$Parashah $petuxah / $setumah variants."
                 " When any of these appears within a verse (rather than between verses),",
                 [" it takes the argument ", author.hbo("פסקא באמצע פסוק"), "."],
             ],

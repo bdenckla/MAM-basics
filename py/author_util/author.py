@@ -447,7 +447,6 @@ _ABBR_SC = {
 _ROMANIZED = {
     "$aliyah": "aliyah",
     "$aliyot": "aliyot",
-    "$parashah": "parashah",
     "$parashiyot": "parashiyot",
     "$kohen": "kohen",
     "$levi": "levi",
@@ -472,7 +471,6 @@ _ROMANIZED = {
     "$telisha": "telisha",
     "$tevir": "tevir",
     "$vav": "vav",
-    "$yby": "yeraḥ ben yomo",
     "$ah": "atnaḥ hafukh",
     "$qq": "qamats qatan",
     "$qg": "qamats gadol",
@@ -555,6 +553,11 @@ _DOLLAR_SUB_DISPATCH = {
     **_rom_with_cap("$ketiv", "ketiv"),
     **_rom_with_cap("$qere", "qere"),
     **_rom_with_cap("$ketiv_qere", "ketiv/qere"),
+    **_rom_with_cap("$parashah", "parashah"),
+    **_rom_with_cap("$petuxah", "petuḥah"),
+    **_rom_with_cap("$setumah", "setumah"),
+    **_rom_with_cap("$galgal", "galgal"),
+    **_rom_with_cap("$yby", "yeraḥ ben yomo"),
     **_ROMANIZED,
 }
 

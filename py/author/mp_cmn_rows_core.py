@@ -122,21 +122,21 @@ _ACCENT_TEMPLATE_NAMES_BY_ROW = (
         ("גלגל-2",),
         [
             author.hbo("גלגל-2"),
-            "Galgal. Distinguishes poetic from prose uses of Unicode $YBY.",
+            "$Galgal. Distinguishes poetic from prose uses of Unicode $YBY.",
         ],
     ),
     (
         ("ירח בן יומו-2",),
         [
             author.hbo("ירח בן יומו-2"),
-            "Yeraḥ ben yomo. Distinguishes prose from poetic uses of Unicode $YBY.",
+            "$Yby. Distinguishes prose from poetic uses of Unicode $YBY.",
         ],
     ),
     (
         ("אתנח הפוך",),
         [
             author.hbo("אתנח הפוך"),
-            "Atnaḥ hafukh. Helps distinguish this accent from galgal/yeraḥ ben yomo.",
+            "Atnaḥ hafukh. Helps distinguish this accent from $galgal/$yby.",
         ],
     ),
     (
