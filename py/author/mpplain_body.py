@@ -246,7 +246,7 @@ def s_chapter(*, claims: ClaimCollection):
             [
                 "The ",
                 mb_html.code("chapters"),
-                " dict is keyed as follows:",
+                " object is keyed as follows:",
             ]
         ),
         tblh.key_category_purpose_table(_chapter_rows),
