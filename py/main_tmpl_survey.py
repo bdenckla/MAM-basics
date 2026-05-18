@@ -29,6 +29,7 @@ def _write_outputs(
     deeply_discard=False,
     svg_stem=None,
     normalization_note=None,
+    discarded=None,
 ):
     os.makedirs(os.path.dirname(stem), exist_ok=True)
     result_with_note = result
@@ -41,7 +42,9 @@ def _write_outputs(
     if svg_stem is None:
         svg_stem = stem
     svg_path = f"{svg_stem}-call-graph.svg"
-    survey_dot.write_dot_file(raw_stack_counts, dot_path, deeply_discard)
+    survey_dot.write_dot_file(
+        raw_stack_counts, dot_path, deeply_discard, discarded=discarded
+    )
     survey_dot.render_svg(dot_path, svg_path)
     survey_dot.write_focused_dot_files(
         raw_stack_counts, stem, deeply_discard, svg_stem=svg_stem
@@ -50,21 +53,25 @@ def _write_outputs(
 
 def almost_main():
     """Survey the use of templates in MAM plain and plus."""
-    plain_result, plain_raw_sc = survey_plain.survey()
+    plain_result, plain_raw_sc, plain_discarded = survey_plain.survey()
     _write_outputs(
         plain_result,
         plain_raw_sc,
         f"{_OUT_DIR}/plain",
         svg_stem=f"{_SVG_DIR}/plain",
         normalization_note=_PLAIN_TMPL_NAME_NORMALIZATION_NOTE,
+        discarded=plain_discarded,
     )
-    plus_result, plus_raw_sc = survey_plus.survey(plain_result["mpasuq"])
+    plus_result, plus_raw_sc, plus_discarded = survey_plus.survey(
+        plain_result["mpasuq"]
+    )
     _write_outputs(
         plus_result,
         plus_raw_sc,
         f"{_OUT_DIR}/plus",
         deeply_discard=True,
         svg_stem=f"{_SVG_DIR}/plus",
+        discarded=plus_discarded,
     )
 
 

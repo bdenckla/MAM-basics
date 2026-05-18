@@ -11,6 +11,7 @@ from mb_cmn import ws_tmpl2 as wtp2
 from mb_cmn import kq_special_templates as kqst
 
 _MINIROW = collections.namedtuple("_MINIROW", "CP, DP, EP")
+_NUSACH_ARG2_CONTEXT = ("נוסח", "2")
 
 
 def _wtel_type_and_subtype(wtel):
@@ -63,10 +64,33 @@ def _record_tmpl(accum, wtel_rec, wtel_subtype):
     _check_argc(wtel_subtype, argc)
     _my_plus_equals(accum["arg_counts"], wtel_subtype, argc)
     new_stack = *stack, wtel_subtype
-    for arg in wtp2.template_param_vals(wtel):
+    for param_key in wtp2.template_param_keys(wtel):
+        arg = wtp2.template_param_val(wtel, param_key)
         for arg_wtel in arg:
+            if _record_parent_context(accum, wtel_subtype, param_key, arg_wtel):
+                accum["tmpl_has_tmpl_children"][wtel_subtype] = True
             arg_wtel_rec = bscv, new_stack, arg_wtel
             _record_wtel(accum, arg_wtel_rec)
+
+
+def _record_parent_context(accum, parent_subtype, param_key, arg_wtel):
+    if isinstance(arg_wtel, str):
+        return False
+    assert isinstance(arg_wtel, dict)
+    wtel_type, child_subtype = _wtel_type_and_subtype(arg_wtel)
+    if wtel_type != "tmpl":
+        return False
+    accum["tmpl_parent_contexts"][child_subtype].add((parent_subtype, str(param_key)))
+    return True
+
+
+def _nusach_arg2_only_leaf_templates(accum):
+    return {
+        tmpl
+        for tmpl, contexts in accum["tmpl_parent_contexts"].items()
+        if contexts == {_NUSACH_ARG2_CONTEXT}
+        and not accum["tmpl_has_tmpl_children"][tmpl]
+    }
 
 
 def _string_from_stack(stack):
@@ -217,13 +241,18 @@ def _do_a_book24(bk24id, accum):
 
 
 def survey(plain_mpasuq):
-    """Survey the use of templates in MAM plus. Return the result dict."""
+    """Survey the use of templates in MAM plus.
+
+    Returns (result_dict, raw_stack_counts, nusach_arg2_only_leaf_templates).
+    """
     accum = {
         "mpasuq": [],
         "naked_sam2_pe2_pe3": [],
         "column_counts": collections.defaultdict(int),
         "stack_counts": collections.defaultdict(int),
         "arg_counts": collections.defaultdict(int),
+        "tmpl_parent_contexts": collections.defaultdict(set),
+        "tmpl_has_tmpl_children": collections.defaultdict(bool),
     }
     for bk24id in tbn.ALL_BK24_IDS:
         _do_a_book24(bk24id, accum)
@@ -235,7 +264,7 @@ def survey(plain_mpasuq):
         "stack_counts": _flatten_stack_counts(accum),
         "arg_counts": _flatten_arg_counts(accum),
     }
-    return result, accum["stack_counts"]
+    return result, accum["stack_counts"], _nusach_arg2_only_leaf_templates(accum)
 
 
 def _mpasuq_dedup(plus_mpasuq, plain_mpasuq):

@@ -6,7 +6,7 @@ import subprocess
 
 _COLUMN_LETTERS = {"C", "D", "E"}
 _DEEPLY_DISCARDED = {"מ:הערה"}
-_DISCARDED = {"מ:כפול", "נוסח", "ש"}
+_BASE_DISCARDED = {"מ:כפול", "נוסח"}
 _DOT_FALLBACK = os.path.join(
     os.environ.get("ProgramFiles", r"C:\Program Files"), "Graphviz", "bin", "dot.exe"
 )
@@ -25,7 +25,7 @@ def _filter_deeply_discarded(stack_counts):
 def _edges_from_stack_counts(stack_counts, discarded=None):
     """Extract (caller, callee) -> count from raw stack_counts defaultdict."""
     if discarded is None:
-        discarded = _DISCARDED
+        discarded = _BASE_DISCARDED
     edges = {}
     for key, count in stack_counts.items():
         wtel_subtype, stack_str = key
@@ -37,6 +37,20 @@ def _edges_from_stack_counts(stack_counts, discarded=None):
         edge = (caller, callee)
         edges[edge] = edges.get(edge, 0) + count
     return edges
+
+
+def _discarded_for_full_graph(discarded):
+    """Base structural discards plus caller-provided full-graph discards."""
+    if discarded is None:
+        return set(_BASE_DISCARDED)
+    return _BASE_DISCARDED | set(discarded)
+
+
+def _discard_note_text(discarded):
+    """Build graph-note text for discarded templates."""
+    if not discarded:
+        return None
+    return ", ".join(sorted(discarded)) + " have been discarded"
 
 
 def _collapse_equivalent_nodes(edges):
@@ -208,7 +222,7 @@ def _write_dot(edges, groups, fp, note=_DEFAULT_NOTE, focus_target=None):
     fp.write("\n")
     # Note
     if note is _DEFAULT_NOTE:
-        note_text = ", ".join(sorted(_DISCARDED)) + " have been discarded"
+        note_text = _discard_note_text(_BASE_DISCARDED)
     else:
         note_text = note
     if note_text:
@@ -258,14 +272,16 @@ _FOCUSED_TARGETS = [
 ]
 
 
-def write_dot_file(stack_counts, out_path, deeply_discard=False):
+def write_dot_file(stack_counts, out_path, deeply_discard=False, discarded=None):
     """Write a .dot call graph from raw stack_counts accumulator."""
     if deeply_discard:
         stack_counts = _filter_deeply_discarded(stack_counts)
-    edges = _edges_from_stack_counts(stack_counts)
+    full_discarded = _discarded_for_full_graph(discarded)
+    edges = _edges_from_stack_counts(stack_counts, discarded=full_discarded)
     edges, groups = _collapse_equivalent_nodes(edges)
+    note = _discard_note_text(full_discarded)
     with open(out_path, "w", encoding="utf-8") as fp:
-        _write_dot(edges, groups, fp)
+        _write_dot(edges, groups, fp, note=note)
 
 
 def _identity_groups(edges):
