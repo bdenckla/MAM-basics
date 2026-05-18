@@ -341,10 +341,13 @@ def _add_attr(attrdic, attrkey, attrval):
 
 
 def _rom_with_cap(locase_key: str, locase_val: str):
-    return {
+    out = {
         locase_key: _romanized(locase_val),
         _upcase_key(locase_key): _romanized(_cap(locase_val)),
     }
+    if _is_multiword_romanized(locase_val):
+        out[_icap_key(locase_key)] = _romanized(_initial_cap(locase_val))
+    return out
 
 
 # def _rom_with_wpl(locase_key: str, letter_name: str, letter_itself: str):
@@ -362,6 +365,20 @@ def _upcase_key(locase_key: str):
     assert key[1].isalpha()
     assert key[1].islower()
     return "$" + key[1].upper() + key[2:]
+
+
+def _icap_key(locase_key: str):
+    upcased = _upcase_key(locase_key)
+    return "$icap_" + upcased[1:]
+
+
+def _initial_cap(string: str):
+    assert string
+    return string[0].upper() + string[1:]
+
+
+def _is_multiword_romanized(string: str):
+    return " " in string or "/" in string
 
 
 # def _wpl_key(key: str):

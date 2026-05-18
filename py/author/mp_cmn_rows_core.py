@@ -129,7 +129,7 @@ _ACCENT_TEMPLATE_NAMES_BY_ROW = (
         ("ירח בן יומו-2",),
         [
             author.hbo("ירח בן יומו-2"),
-            "$Yby. Distinguishes prose from poetic uses of Unicode $YBY.",
+            "$icap_Yby. Distinguishes prose from poetic uses of Unicode $YBY.",
         ],
     ),
     (
