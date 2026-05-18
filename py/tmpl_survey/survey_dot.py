@@ -1,5 +1,6 @@
 """Generate a Graphviz dot file showing the template call graph."""
 
+from dataclasses import dataclass
 import os
 import shutil
 import subprocess
@@ -266,10 +267,22 @@ def _focused_edges(all_edges, target):
     }
 
 
-_FOCUSED_TARGETS = [
-    ("מ:כפול", "kaful", False),
-    ("נוסח", "nusach", True),
-]
+@dataclass(frozen=True)
+class _FocusedTarget:
+    tmpl_name: str
+    slug: str
+    collapse: bool
+
+
+# First-pass focused targets for template-specific subset documentation.
+# Keep this list intentionally small for now; exhaustive generation is deferred.
+_FOCUSED_TARGETS = (
+    _FocusedTarget("מ:כפול", "kaful", False),
+    _FocusedTarget("נוסח", "nusach", True),
+    _FocusedTarget("מ:פסוק", "pasuk", False),
+    _FocusedTarget("כו״ק", "kuk", False),
+    _FocusedTarget("מ:דחי", "dchi", False),
+)
 
 
 def write_dot_file(stack_counts, out_path, deeply_discard=False, discarded=None):
@@ -303,7 +316,10 @@ def write_focused_dot_files(stack_counts, stem, deeply_discard=False, svg_stem=N
         stack_counts = _filter_deeply_discarded(stack_counts)
     if svg_stem is None:
         svg_stem = stem
-    for target, slug, collapse in _FOCUSED_TARGETS:
+    for spec in _FOCUSED_TARGETS:
+        target = spec.tmpl_name
+        slug = spec.slug
+        collapse = spec.collapse
         edges = _edges_from_stack_counts(stack_counts, discarded=set())
         edges = _focused_edges(edges, target)
         if collapse:

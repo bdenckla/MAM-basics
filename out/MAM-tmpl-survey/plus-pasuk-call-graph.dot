@@ -1,0 +1,24 @@
+digraph template_call_graph {
+    rankdir=LR;
+    node [fontname="SBL Hebrew,Helvetica", fontsize=12];
+    edge [fontname="Helvetica", fontsize=9];
+
+    // Column nodes
+    node [shape=box, style=bold];
+    "C";
+    "D";
+    "E";
+
+    // Template nodes
+    node [shape=box, style=""];
+
+    // Edges
+    "C" -> "נוסח" [label="273"];
+    "D" -> "מ:פסוק" [label="860"];
+    "D" -> "נוסח" [label="35"];
+    "E" -> "מ:כפול" [label="34"];
+    "E" -> "נוסח" [label="3541"];
+    "מ:כפול" -> "נוסח" [label="42"];
+    "מ:פסוק" -> "מ:עלייה" [label="532"];
+    "נוסח" -> "מ:פסוק" [label="35"];
+}
