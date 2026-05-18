@@ -117,11 +117,11 @@ NOTE_ROW_PLAIN = [
 NOTE_LINKS_ROW = [
     [
         author.hbo("מ:קישור בהערה"),
-        "Hyperlink inside note content (within arg 2 of מ:הערה-2).",
+        "External URL link inside note content (within arg 2 of מ:הערה-2).",
     ],
     [
         author.hbo("מ:קישור פנימי בהערה"),
-        "Same-page link inside note content (within arg 2 of מ:הערה-2).",
+        "Internal Wikisource link inside note content (within arg 2 of מ:הערה-2).",
     ],
 ]
 

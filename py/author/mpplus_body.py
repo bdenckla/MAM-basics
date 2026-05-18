@@ -585,5 +585,16 @@ def s_common_templates(*, claims: ClaimCollection):
         author.heading_level_3("Documentation templates"),
         tblh.tmpl_purp_table(cmn.other_rows_shared_core(nusach_doc=_NUSACH_DOC)),
         author.heading_level_3("Other templates"),
+        author.para(
+            [
+                "In this table, ",
+                author.hbo("מ:קישור פנימי בהערה"),
+                " means param 1 is a Wikisource-internal target (path or fragment) rendered under ",
+                mb_html.code("https://he.wikisource.org/wiki/"),
+                "; ",
+                author.hbo("מ:קישור בהערה"),
+                " means param 1 is an external URL used as-is.",
+            ]
+        ),
         tblh.tmpl_purp_table(other_misc_rows),
     ]
