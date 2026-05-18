@@ -70,6 +70,11 @@ TEST_MODULE_SPECS = (
         help_text="Run provenance generated-by path formatting tests.",
     ),
     TestModuleSpec(
+        flag="graph-provenance",
+        module_name="tests.test_graph_provenance",
+        help_text="Run graph artifact DOT/SVG provenance tests.",
+    ),
+    TestModuleSpec(
         flag="mpplus-extract",
         module_name="tests.test_mpplus_extract",
         help_text="Run MP-plus extraction/diff tests.",

@@ -6,7 +6,7 @@ from pipeline_graph import pipeline_graph
 
 def almost_main():
     """Write the DOT and SVG files for the process pipeline graph."""
-    pipeline_graph.write_pipeline_files()
+    pipeline_graph.write_pipeline_files(generator_file=__file__)
 
 
 def main():

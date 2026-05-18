@@ -4,6 +4,8 @@ import os
 import shutil
 import subprocess
 
+from mb_cmn import provenance
+
 _COLUMN_LETTERS = {"C", "D", "E"}
 _DEEPLY_DISCARDED = {"מ:הערה"}
 _BASE_DISCARDED = {"מ:כפול", "נוסח"}
@@ -168,7 +170,14 @@ def _make_unique_node_id(preferred, used_ids):
 _DEFAULT_NOTE = object()
 
 
-def _write_dot(edges, groups, fp, note=_DEFAULT_NOTE, focus_target=None):
+def _write_dot(
+    edges,
+    groups,
+    fp,
+    note=_DEFAULT_NOTE,
+    focus_target=None,
+    generated_by=None,
+):
     # Build abbreviation map for all non-column nodes
     all_names = set()
     for caller, callee in edges:
@@ -178,10 +187,15 @@ def _write_dot(edges, groups, fp, note=_DEFAULT_NOTE, focus_target=None):
     all_names -= _COLUMN_LETTERS
     abbrevs = _build_abbreviations(all_names)
 
+    if generated_by:
+        fp.write(f"// {generated_by}\n")
+        fp.write("// Do not edit by hand.\n")
     fp.write("digraph template_call_graph {\n")
     fp.write("    rankdir=LR;\n")
     fp.write('    node [fontname="SBL Hebrew,Helvetica", fontsize=12];\n')
     fp.write('    edge [fontname="Helvetica", fontsize=9];\n')
+    if generated_by:
+        fp.write(f"    graph [comment={_dot_quoted(generated_by)}];\n")
     fp.write("\n")
     # Column nodes styled distinctly
     if col_nodes:
@@ -272,8 +286,21 @@ _FOCUSED_TARGETS = [
 ]
 
 
-def write_dot_file(stack_counts, out_path, deeply_discard=False, discarded=None):
+def _generated_by_text(generator_file):
+    if generator_file is None:
+        return None
+    return provenance.generated_by_text(generator_file)
+
+
+def write_dot_file(
+    stack_counts,
+    out_path,
+    deeply_discard=False,
+    discarded=None,
+    generator_file=None,
+):
     """Write a .dot call graph from raw stack_counts accumulator."""
+    generated_by = _generated_by_text(generator_file)
     if deeply_discard:
         stack_counts = _filter_deeply_discarded(stack_counts)
     full_discarded = _discarded_for_full_graph(discarded)
@@ -281,7 +308,7 @@ def write_dot_file(stack_counts, out_path, deeply_discard=False, discarded=None)
     edges, groups = _collapse_equivalent_nodes(edges)
     note = _discard_note_text(full_discarded)
     with open(out_path, "w", encoding="utf-8") as fp:
-        _write_dot(edges, groups, fp, note=note)
+        _write_dot(edges, groups, fp, note=note, generated_by=generated_by)
 
 
 def _identity_groups(edges):
@@ -293,12 +320,19 @@ def _identity_groups(edges):
     return {node: [node] for node in all_nodes - _COLUMN_LETTERS}
 
 
-def write_focused_dot_files(stack_counts, stem, deeply_discard=False, svg_stem=None):
+def write_focused_dot_files(
+    stack_counts,
+    stem,
+    deeply_discard=False,
+    svg_stem=None,
+    generator_file=None,
+):
     """Write per-target focused .dot/.svg call graphs.
 
     If svg_stem is given, SVG files are written relative to that stem
     instead of the dot stem.
     """
+    generated_by = _generated_by_text(generator_file)
     if deeply_discard:
         stack_counts = _filter_deeply_discarded(stack_counts)
     if svg_stem is None:
@@ -313,8 +347,15 @@ def write_focused_dot_files(stack_counts, stem, deeply_discard=False, svg_stem=N
         dot_path = f"{stem}-{slug}-call-graph.dot"
         svg_path = f"{svg_stem}-{slug}-call-graph.svg"
         with open(dot_path, "w", encoding="utf-8") as fp:
-            _write_dot(edges, groups, fp, note=None, focus_target=target)
-        render_svg(dot_path, svg_path)
+            _write_dot(
+                edges,
+                groups,
+                fp,
+                note=None,
+                focus_target=target,
+                generated_by=generated_by,
+            )
+        render_svg(dot_path, svg_path, generator_file=generator_file)
 
 
 def _find_dot():
@@ -327,7 +368,29 @@ def _find_dot():
     return None
 
 
-def render_svg(dot_path, svg_path):
+def _with_svg_comment_inserted(svg_text, comment_text):
+    marker = f"<!-- {comment_text} -->"
+    if marker in svg_text:
+        return svg_text
+    svg_tag_index = svg_text.find("<svg ")
+    if svg_tag_index == -1:
+        raise ValueError("Could not locate <svg ...> tag for provenance insertion")
+    return svg_text[:svg_tag_index] + marker + "\n" + svg_text[svg_tag_index:]
+
+
+def _ensure_svg_comment(svg_path, comment_text):
+    marker = f"<!-- {comment_text} -->"
+    graphviz_escaped_marker = f"<!-- {comment_text.replace('-', '&#45;')} -->"
+    with open(svg_path, "r", encoding="utf-8") as svg_fp:
+        svg_text = svg_fp.read()
+    if marker in svg_text or graphviz_escaped_marker in svg_text:
+        return
+    updated_svg_text = _with_svg_comment_inserted(svg_text, comment_text)
+    with open(svg_path, "w", encoding="utf-8") as svg_fp:
+        svg_fp.write(updated_svg_text)
+
+
+def render_svg(dot_path, svg_path, generator_file=None):
     """Render a .dot file to SVG. Returns True on success, False if dot is unavailable."""
     dot = _find_dot()
     if dot is None:
@@ -338,4 +401,7 @@ def render_svg(dot_path, svg_path):
         encoding="utf-8",
         capture_output=True,
     )
+    generated_by = _generated_by_text(generator_file)
+    if generated_by is not None:
+        _ensure_svg_comment(svg_path, generated_by)
     return True

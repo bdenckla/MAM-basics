@@ -37,17 +37,29 @@ def _write_outputs(
         result_with_note = _with_tmpl_name_normalization_note(
             result, normalization_note
         )
-    file_io.json_dump_to_file_path(result_with_note, f"{stem}.json")
+    file_io.json_dump_to_file_path(
+        result_with_note,
+        f"{stem}.json",
+        generator_file=__file__,
+    )
     dot_path = f"{stem}-call-graph.dot"
     if svg_stem is None:
         svg_stem = stem
     svg_path = f"{svg_stem}-call-graph.svg"
     survey_dot.write_dot_file(
-        raw_stack_counts, dot_path, deeply_discard, discarded=discarded
+        raw_stack_counts,
+        dot_path,
+        deeply_discard,
+        discarded=discarded,
+        generator_file=__file__,
     )
-    survey_dot.render_svg(dot_path, svg_path)
+    survey_dot.render_svg(dot_path, svg_path, generator_file=__file__)
     survey_dot.write_focused_dot_files(
-        raw_stack_counts, stem, deeply_discard, svg_stem=svg_stem
+        raw_stack_counts,
+        stem,
+        deeply_discard,
+        svg_stem=svg_stem,
+        generator_file=__file__,
     )
 
 
