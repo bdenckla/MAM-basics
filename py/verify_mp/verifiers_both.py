@@ -220,6 +220,25 @@ def verify_mp_both_templates_modag_only_in_nusach_param2(
     _verify_template_only_in_parent_param(record, ctx)
 
 
+def verify_mp_both_templates_sampe_pabp_arg_value(
+    record: ClaimRecord, ctx: Context
+) -> None:
+    """When סס/ססס/פפ/פפפ have positional param 1, it must equal the declared arg_value."""
+    expected = record.data["arg_value"]
+    templates = frozenset(record.data["templates"])
+    bad = []
+    for tmpl in iter_all_template_objects(ctx.corpus):
+        if tmpl["tmpl_name"] not in templates:
+            continue
+        params = tmpl.get("tmpl_params", {})
+        if "1" not in params:
+            continue
+        val = params["1"]
+        if val != [expected]:
+            bad.append(f"{tmpl['tmpl_name']} param 1 = {val!r}")
+    assert not bad, f"unexpected param 1 values: {bad[:5]}"
+
+
 def verify_mp_both_templates_sh_only_in_nusach_param2(
     record: ClaimRecord, ctx: Context
 ) -> None:
@@ -418,6 +437,7 @@ REGISTRY: dict[str, VerifierFn] = {
     "mp.both.templates.note-links.set": verify_mp_both_templates_note_links_set,
     "mp.both.templates.other.set": verify_mp_both_templates_other_set,
     "mp.both.templates.poetic.set": verify_mp_both_templates_poetic_set,
+    "mp.both.templates.sampe.pabp-arg-value": verify_mp_both_templates_sampe_pabp_arg_value,
     "mp.both.templates.sh.only-in-nusach-param2": verify_mp_both_templates_sh_only_in_nusach_param2,
     "mp.both.templates.special-letters.set": verify_mp_both_templates_special_letters_set,
     "mp.both.templates.structural.set": verify_mp_both_templates_structural_set,

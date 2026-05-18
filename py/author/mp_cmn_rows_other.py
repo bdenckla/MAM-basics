@@ -99,6 +99,14 @@ SH_ONLY_IN_NUSACH_PARAM2 = (
     "Template ש appears only within the notes argument (param 2) of נוסח."
 )
 
+PABP_ARG_VALUE_STRUCT = (
+    "Argument value passed as the first positional parameter to"
+    " סס, ססס, פפ, or פפפ"
+    " when the parashah division appears within a verse rather than between verses."
+    " This is a parameter value, not a template name."
+    " Verified by corpus assertions in survey_plain.py and survey_plus.py."
+)
+
 CLAIM_DEFS = (
     _claim_def(
         "mp.both.templates.other.set",
@@ -119,6 +127,16 @@ CLAIM_DEFS = (
                 "מודגש",
                 "ש",
             ]
+        },
+    ),
+    _claim_def(
+        "mp.both.templates.sampe.pabp-arg-value",
+        PABP_ARG_VALUE_STRUCT,
+        kind="struct",
+        subject="mp:both",
+        data={
+            "arg_value": "פסקא באמצע פסוק",
+            "templates": ["סס", "ססס", "פפ", "פפפ"],
         },
     ),
     _claim_def(
@@ -185,7 +203,11 @@ def whitespace_rows_shared():
                 " / ",
                 author.hbo("ססס"),
             ],
-            "Parashah petuhah / setumah variants.",
+            [
+                "Parashah petuhah / setumah variants."
+                " When any of these appears within a verse (rather than between verses),",
+                [" it takes the argument ", author.hbo("פסקא באמצע פסוק"), "."],
+            ],
         ],
         OTHER_ROW_BY_TEMPLATE["מ:ששש"],
     ]

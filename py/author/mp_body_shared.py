@@ -84,6 +84,10 @@ def emit_common_templates_claim_prelude(
     cmn.emit_claim_by_id(claims=claims, claim_id="mp.both.templates.other.set")
     cmn.emit_claim_by_id(
         claims=claims,
+        claim_id="mp.both.templates.sampe.pabp-arg-value",
+    )
+    cmn.emit_claim_by_id(
+        claims=claims,
         claim_id="mp.both.templates.modag.only-in-nusach-param2",
     )
     cmn.emit_claim_by_id(

@@ -441,14 +441,6 @@ def s_common_templates(*, claims: ClaimCollection):
         _find_template_row(structural_rows, "מ:רווח בתרי עשר בפסוק הראשון"),
         _find_template_row(structural_rows, "מ:רווח לספר בתהלים"),
         _find_template_row(structural_rows, "מ:רווח לספר בתהלים בפסוק הראשון"),
-        [
-            author.hbo("פסקא באמצע פסוק"),
-            [
-                "Wraps a $parashah-division template (like ",
-                author.hbo("סס"),
-                ") when it appears within a verse, rather than between verses",
-            ],
-        ],
     ]
     lack_of_whitespace_rows = [
         _find_template_row(structural_rows, "מ:אין פרשה בתחילת פרק"),
