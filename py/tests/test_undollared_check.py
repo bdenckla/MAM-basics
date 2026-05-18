@@ -102,6 +102,10 @@ class TestIssue169TokenPresence(unittest.TestCase):
             "$Galgal",
             "$yby",
             "$Yby",
+            "$icap_Yby",
+            "$icap_Ketiv_qere",
+            "$icap_Munleg",
+            "$icap_Xolam_xaser",
         )
         for token in tokens:
             rendered = author.dollar_sub(token)

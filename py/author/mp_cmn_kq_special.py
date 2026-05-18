@@ -42,7 +42,7 @@ KQ_SPECIAL_ROWS = [
     [
         author.hbo("כו״ק בין שני מקפים"),
         [
-            "$Ketiv_qere between two $maqaf marks." " See FOI section ",
+            "$icap_Ketiv_qere between two $maqaf marks." " See FOI section ",
             _kq_simple_foi_link_for_sug("כו״ק בין שני מקפים"),
             ".",
         ],
