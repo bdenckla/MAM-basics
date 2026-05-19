@@ -35,8 +35,10 @@ class TestTmplSurveyFocusedTargets(unittest.TestCase):
 
             render_calls = []
             orig_render_svg = survey_dot.render_svg
-            survey_dot.render_svg = lambda dot_path, svg_path: render_calls.append(
-                (dot_path, svg_path)
+            survey_dot.render_svg = (
+                lambda dot_path, svg_path, generator_file=None: render_calls.append(
+                    (dot_path, svg_path, generator_file)
+                )
             )
             try:
                 survey_dot.write_focused_dot_files(
@@ -50,6 +52,36 @@ class TestTmplSurveyFocusedTargets(unittest.TestCase):
                 self.assertTrue(os.path.exists(dot_path), dot_path)
 
             self.assertEqual(len(slugs), len(render_calls))
+
+    def test_focused_dchi_graph_excludes_cross_stack_transitive_leakage(self):
+        stack_counts = {
+            ("נוסח", "C"): 2,
+            ("נוסח", "D"): 3,
+            ("נוסח", "E"): 5,
+            ("מ:דחי", "E/נוסח"): 7,
+            ("מ:אות-ג", "E/נוסח/מ:דחי"): 11,
+        }
+
+        with tempfile.TemporaryDirectory() as tdir:
+            stem = os.path.join(tdir, "plain")
+            orig_render_svg = survey_dot.render_svg
+            survey_dot.render_svg = lambda dot_path, svg_path, generator_file=None: None
+            try:
+                survey_dot.write_focused_dot_files(
+                    stack_counts, stem, deeply_discard=False, svg_stem=stem
+                )
+            finally:
+                survey_dot.render_svg = orig_render_svg
+
+            dchi_dot_path = f"{stem}-dchi-call-graph.dot"
+            with open(dchi_dot_path, encoding="utf-8") as dot_fp:
+                dot_text = dot_fp.read()
+
+        self.assertIn('"E" -> "נוסח" [label="5"]', dot_text)
+        self.assertIn('"נוסח" -> "מ:דחי" [label="7"]', dot_text)
+        self.assertIn('"מ:דחי" -> "מ:אות-ג" [label="11"]', dot_text)
+        self.assertNotIn('"C" -> "נוסח"', dot_text)
+        self.assertNotIn('"D" -> "נוסח"', dot_text)
 
 
 if __name__ == "__main__":
