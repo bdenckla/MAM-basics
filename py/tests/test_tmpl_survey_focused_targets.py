@@ -84,7 +84,7 @@ class TestTmplSurveyFocusedTargets(unittest.TestCase):
         self.assertNotIn('"נוסח"', dot_text)
         self.assertIn("מ:כפול, נוסח have been discarded", dot_text)
 
-    def test_focused_nusach_keeps_discarded_target(self):
+    def test_focused_nusach_uses_targeted_discard_set(self):
         stack_counts = {
             ("נוסח", "C"): 2,
             ("מ:דחי", "C/נוסח"): 3,
@@ -103,8 +103,14 @@ class TestTmplSurveyFocusedTargets(unittest.TestCase):
             with open(nusach_dot_path, encoding="utf-8") as dot_fp:
                 dot_text = dot_fp.read()
 
-        self.assertIn('"C" -> "נוסח" [label="5"]', dot_text)
-        self.assertIn('"נוסח" -> "מ:דחי" [label="3"]', dot_text)
+        self.assertIn('"C" -> "נוסח" [label="2"]', dot_text)
+        self.assertNotIn('"נוסח" -> "מ:דחי" [label="3"]', dot_text)
+        self.assertIn("כו״ק", dot_text)
+        self.assertIn("מ:קו״כ-אם-2", dot_text)
+        self.assertIn("מ:כו״ק מיוחד", dot_text)
+        self.assertIn("מ:קמץ", dot_text)
+        self.assertIn("מ:דחי", dot_text)
+        self.assertIn("have been discarded", dot_text)
 
     def test_focused_pasuk_skips_standard_discard_set(self):
         stack_counts = {
