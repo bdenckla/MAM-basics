@@ -60,6 +60,7 @@ class TestTmplSurveyFocusedTargets(unittest.TestCase):
             ("נוסח", "E"): 5,
             ("מ:דחי", "E/נוסח"): 7,
             ("מ:אות-ג", "E/נוסח/מ:דחי"): 11,
+            ("מ:אות-ס", "E/נוסח/מ:דחי/מ:אות-ג"): 13,
         }
 
         with tempfile.TemporaryDirectory() as tdir:
@@ -77,9 +78,10 @@ class TestTmplSurveyFocusedTargets(unittest.TestCase):
             with open(dchi_dot_path, encoding="utf-8") as dot_fp:
                 dot_text = dot_fp.read()
 
-        self.assertIn('"E" -> "נוסח" [label="5"]', dot_text)
-        self.assertIn('"נוסח" -> "מ:דחי" [label="7"]', dot_text)
-        self.assertIn('"מ:דחי" -> "מ:אות-ג" [label="11"]', dot_text)
+        self.assertIn('"E" -> "נוסח" [label="31"]', dot_text)
+        self.assertIn('"נוסח" -> "מ:דחי" [label="31"]', dot_text)
+        self.assertIn('"מ:דחי" -> "מ:אות-ג" [label="24"]', dot_text)
+        self.assertIn('"מ:אות-ג" -> "מ:אות-ס" [label="13"]', dot_text)
         self.assertNotIn('"C" -> "נוסח"', dot_text)
         self.assertNotIn('"D" -> "נוסח"', dot_text)
 

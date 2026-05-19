@@ -14,8 +14,8 @@ digraph template_call_graph {
     node [shape=box, style=""];
 
     // Edges
-    "D" -> "מ:פסוק" [label="860"];
-    "D" -> "נוסח" [label="35"];
+    "D" -> "מ:פסוק" [label="1381"];
+    "D" -> "נוסח" [label="46"];
     "מ:פסוק" -> "מ:עלייה" [label="532"];
-    "נוסח" -> "מ:פסוק" [label="35"];
+    "נוסח" -> "מ:פסוק" [label="46"];
 }

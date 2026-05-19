@@ -256,69 +256,28 @@ def _write_dot(
     fp.write("}\n")
 
 
-def _focused_edges(all_edges, target):
-    """Keep only edges on call chains involving target, plus one level past it."""
-    predecessors = {}
-    successors = {}
-    for caller, callee in all_edges:
-        predecessors.setdefault(callee, set()).add(caller)
-        predecessors.setdefault(caller, set())
-        successors.setdefault(caller, set()).add(callee)
-        successors.setdefault(callee, set())
-    # Find all nodes that can reach target (reverse BFS)
-    before = {target}
-    frontier = [target]
-    while frontier:
-        node = frontier.pop()
-        for pred in predecessors.get(node, ()):
-            if pred not in before:
-                before.add(pred)
-                frontier.append(pred)
-    return {
-        edge: count
-        for edge, count in all_edges.items()
-        if (edge[0] in before and edge[1] in before) or edge[0] == target
-    }
-
-
 def _split_stack_str(stack_str):
     """Return stack elements from a slash-delimited stack string."""
     return tuple(stack_str.split("/"))
 
 
-def _focused_stack_keys(stack_counts, target):
-    """Return raw stack-count keys that belong to a focused target scope.
+def _focused_edges_from_stack_counts(stack_counts, target):
+    """Build focused edges from only stacks that involve the target.
 
-    Scope has two parts:
-    1. Ancestor branch edges that actually lead to a target occurrence.
-    2. Descendant edges where the target appears in the stack path.
+    For each raw stack-count record where target appears anywhere in the full
+    stack path (stack parts + current callee), decompose that full path into
+    adjacent caller->callee edges and accumulate the record count.
     """
-    target_stacks = [
-        _split_stack_str(stack_str)
-        for (wtel_subtype, stack_str), _count in stack_counts.items()
-        if wtel_subtype == target
-    ]
-
-    focused_keys = set()
-
-    for stack_parts in target_stacks:
-        focused_keys.add((target, "/".join(stack_parts)))
-        for i in range(1, len(stack_parts)):
-            callee = stack_parts[i]
-            caller_stack = "/".join(stack_parts[:i])
-            focused_keys.add((callee, caller_stack))
-
-    for (wtel_subtype, stack_str), _count in stack_counts.items():
-        if target in _split_stack_str(stack_str):
-            focused_keys.add((wtel_subtype, stack_str))
-
-    return focused_keys
-
-
-def _focused_stack_counts(stack_counts, target):
-    """Filter stack_counts down to focused keys for a target template."""
-    focused_keys = _focused_stack_keys(stack_counts, target)
-    return {key: count for key, count in stack_counts.items() if key in focused_keys}
+    focused_edges = {}
+    for (wtel_subtype, stack_str), count in stack_counts.items():
+        stack_parts = _split_stack_str(stack_str)
+        full_path = (*stack_parts, wtel_subtype)
+        if target not in full_path:
+            continue
+        for caller, callee in zip(full_path, full_path[1:]):
+            edge = (caller, callee)
+            focused_edges[edge] = focused_edges.get(edge, 0) + count
+    return focused_edges
 
 
 @dataclass(frozen=True)
@@ -394,9 +353,7 @@ def write_focused_dot_files(
         target = spec.tmpl_name
         slug = spec.slug
         collapse = spec.collapse
-        focused_stack_counts = _focused_stack_counts(stack_counts, target)
-        edges = _edges_from_stack_counts(focused_stack_counts, discarded=set())
-        edges = _focused_edges(edges, target)
+        edges = _focused_edges_from_stack_counts(stack_counts, target)
         if collapse:
             edges, groups = _collapse_equivalent_nodes(edges)
         else:
