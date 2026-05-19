@@ -58,7 +58,11 @@ def table_datum(contents):
 
 
 def stem_eq(path1, path2):
-    return _norm_stem(path1) == _norm_stem(path2)
+    py_stem = _norm_stem(path1)
+    out_stem = _norm_stem(path2)
+    if out_stem == "index":
+        return py_stem.endswith("index") and py_stem != "index"
+    return py_stem == out_stem
 
 
 def assert_stem_eq(path1, path2):
