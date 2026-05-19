@@ -9,22 +9,11 @@ from mb_cmn import provenance
 from tmpl_survey import svg_provenance_norm
 
 _COLUMN_LETTERS = {"C", "D", "E"}
-_DEEPLY_DISCARDED = {"מ:הערה"}
 _BASE_DISCARDED = {"מ:כפול", "נוסח"}
 _FOCUSED_NO_DISCARD_TARGETS = {"מ:פסוק"}
 _DOT_FALLBACK = os.path.join(
     os.environ.get("ProgramFiles", r"C:\Program Files"), "Graphviz", "bin", "dot.exe"
 )
-
-
-def _filter_deeply_discarded(stack_counts):
-    """Remove entries where any deeply-discarded template appears in the chain."""
-    return {
-        key: count
-        for key, count in stack_counts.items()
-        if key[0] not in _DEEPLY_DISCARDED
-        and not any(p in _DEEPLY_DISCARDED for p in key[1].split("/"))
-    }
 
 
 def _edges_from_stack_counts(stack_counts, discarded=None):
@@ -317,14 +306,11 @@ def _generated_by_text(generator_file):
 def write_dot_file(
     stack_counts,
     out_path,
-    deeply_discard=False,
     discarded=None,
     generator_file=None,
 ):
     """Write a .dot call graph from raw stack_counts accumulator."""
     generated_by = _generated_by_text(generator_file)
-    if deeply_discard:
-        stack_counts = _filter_deeply_discarded(stack_counts)
     full_discarded = _discarded_for_full_graph(discarded)
     edges = _edges_from_stack_counts(stack_counts, discarded=full_discarded)
     edges, groups = _collapse_equivalent_nodes(edges)
@@ -352,7 +338,6 @@ def _focused_discarded_for_target(target, full_discarded):
 def write_focused_dot_files(
     stack_counts,
     stem,
-    deeply_discard=False,
     svg_stem=None,
     generator_file=None,
     discarded=None,
@@ -363,8 +348,6 @@ def write_focused_dot_files(
     instead of the dot stem.
     """
     generated_by = _generated_by_text(generator_file)
-    if deeply_discard:
-        stack_counts = _filter_deeply_discarded(stack_counts)
     full_discarded = _discarded_for_full_graph(discarded)
     if svg_stem is None:
         svg_stem = stem

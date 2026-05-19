@@ -42,7 +42,7 @@ class TestTmplSurveyFocusedTargets(unittest.TestCase):
             )
             try:
                 survey_dot.write_focused_dot_files(
-                    stack_counts, stem, deeply_discard=False, svg_stem=svg_stem
+                    stack_counts, stem, svg_stem=svg_stem
                 )
             finally:
                 survey_dot.render_svg = orig_render_svg
@@ -68,9 +68,7 @@ class TestTmplSurveyFocusedTargets(unittest.TestCase):
             orig_render_svg = survey_dot.render_svg
             survey_dot.render_svg = lambda dot_path, svg_path, generator_file=None: None
             try:
-                survey_dot.write_focused_dot_files(
-                    stack_counts, stem, deeply_discard=False, svg_stem=stem
-                )
+                survey_dot.write_focused_dot_files(stack_counts, stem, svg_stem=stem)
             finally:
                 survey_dot.render_svg = orig_render_svg
 
@@ -97,9 +95,7 @@ class TestTmplSurveyFocusedTargets(unittest.TestCase):
             orig_render_svg = survey_dot.render_svg
             survey_dot.render_svg = lambda dot_path, svg_path, generator_file=None: None
             try:
-                survey_dot.write_focused_dot_files(
-                    stack_counts, stem, deeply_discard=False, svg_stem=stem
-                )
+                survey_dot.write_focused_dot_files(stack_counts, stem, svg_stem=stem)
             finally:
                 survey_dot.render_svg = orig_render_svg
 
@@ -122,9 +118,7 @@ class TestTmplSurveyFocusedTargets(unittest.TestCase):
             orig_render_svg = survey_dot.render_svg
             survey_dot.render_svg = lambda dot_path, svg_path, generator_file=None: None
             try:
-                survey_dot.write_focused_dot_files(
-                    stack_counts, stem, deeply_discard=False, svg_stem=stem
-                )
+                survey_dot.write_focused_dot_files(stack_counts, stem, svg_stem=stem)
             finally:
                 survey_dot.render_svg = orig_render_svg
 

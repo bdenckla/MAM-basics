@@ -12,6 +12,7 @@ from mb_cmn import kq_special_templates as kqst
 
 _MINIROW = collections.namedtuple("_MINIROW", "CP, DP, EP")
 _NUSACH_ARG2_CONTEXT = ("נוסח", "2")
+_NON_TARGETED_SCROLL_DIFF_NOTE_TMPL = "מ:הערה"
 
 
 def _wtel_type_and_subtype(wtel):
@@ -117,6 +118,19 @@ def _handle_int(argc_expectation):
 def _check_argc(wtel_subtype, argc):
     exp = _EXPECTED_ARGC.get(wtel_subtype)
     assert exp is None or argc in _handle_int(exp)
+
+
+def _assert_plus_excludes_non_targeted_scroll_diff_notes(stack_counts):
+    for wtel_subtype, stack_str in stack_counts:
+        # We assert this invariant because deep discard was removed from
+        # survey_dot, where it was previously needed to suppress מ:הערה chains.
+        assert (
+            wtel_subtype != _NON_TARGETED_SCROLL_DIFF_NOTE_TMPL
+        ), f"Unexpected {_NON_TARGETED_SCROLL_DIFF_NOTE_TMPL} as plus subtype"
+        assert _NON_TARGETED_SCROLL_DIFF_NOTE_TMPL not in stack_str.split("/"), (
+            "Unexpected "
+            f"{_NON_TARGETED_SCROLL_DIFF_NOTE_TMPL} in plus stack path: {stack_str}"
+        )
 
 
 def _record_pseudo_verse(accum, bscv, minirow):
@@ -256,6 +270,7 @@ def survey(plain_mpasuq):
     }
     for bk24id in tbn.ALL_BK24_IDS:
         _do_a_book24(bk24id, accum)
+    _assert_plus_excludes_non_targeted_scroll_diff_notes(accum["stack_counts"])
     plus_mpasuq = cdp.process_all_mpasuq_calls(accum["mpasuq"])
     result = {
         "mpasuq": _mpasuq_dedup(plus_mpasuq, plain_mpasuq),

@@ -26,7 +26,6 @@ def _write_outputs(
     result,
     raw_stack_counts,
     stem,
-    deeply_discard=False,
     svg_stem=None,
     normalization_note=None,
     discarded=None,
@@ -49,7 +48,6 @@ def _write_outputs(
     survey_dot.write_dot_file(
         raw_stack_counts,
         dot_path,
-        deeply_discard,
         discarded=discarded,
         generator_file=__file__,
     )
@@ -57,7 +55,6 @@ def _write_outputs(
     survey_dot.write_focused_dot_files(
         raw_stack_counts,
         stem,
-        deeply_discard,
         svg_stem=svg_stem,
         generator_file=__file__,
         discarded=discarded,
@@ -82,7 +79,6 @@ def almost_main():
         plus_result,
         plus_raw_sc,
         f"{_OUT_DIR}/plus",
-        deeply_discard=True,
         svg_stem=f"{_SVG_DIR}/plus",
         discarded=plus_discarded,
     )

@@ -85,6 +85,11 @@ TEST_MODULE_SPECS = (
         help_text="Run focused template call-graph target configuration tests.",
     ),
     TestModuleSpec(
+        flag="tmpl-survey-plus-invariants",
+        module_name="tests.test_tmpl_survey_plus_invariants",
+        help_text="Run plus-survey invariants for non-targeted note templates.",
+    ),
+    TestModuleSpec(
         flag="mpplus-file-matching",
         module_name="tests.test_mpplus_file_matching",
         help_text="Run MP-plus file pairing tests.",
