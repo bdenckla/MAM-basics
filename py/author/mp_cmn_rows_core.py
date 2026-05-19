@@ -136,7 +136,7 @@ _ACCENT_TEMPLATE_NAMES_BY_ROW = (
         ("אתנח הפוך",),
         [
             author.hbo("אתנח הפוך"),
-            "Atnaḥ hafukh. Helps distinguish this accent from $galgal/$yby.",
+            "Atnaḥ hafukh. Helps distinguish this accent from $galgal/$yby.",
         ],
     ),
     (

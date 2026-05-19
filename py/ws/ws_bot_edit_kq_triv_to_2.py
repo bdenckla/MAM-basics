@@ -11,7 +11,7 @@ Edge cases (logged as warnings, old template left in place):
 Special case (param 1 is a מ:דחי call):
   - Param 1 is {{מ:דחי|pketiv-1d|pketiv-2d}}; the whole מ:דחי call
     becomes param 1 of the new template, and the unpointed ketiv is
-    derived from the first arg of מ:דחי (pketiv-1d, the single-deḥi form).
+    derived from the first arg of מ:דחי (pketiv-1d, the single-deḥi form).
 
 Special case (param 1 is a מ:קמץ call):
   - Param 1 is {{מ:קמץ|ד=pketiv|ס=pketiv-alt}}; the whole מ:קמץ call
@@ -62,7 +62,7 @@ def _parse_param1(el):
 
     ketiv_wt_el is the list to use directly as a template element in new_els.
     pointed_ketiv_str is the plain string from which the unpointed ketiv
-    is derived (always pketiv-1d, the single-deḥi form).
+    is derived (always pketiv-1d, the single-deḥi form).
     dexi_arg2 is None for the plain-string case, or the second arg string
     of the מ:דחי call (used to synthesize the qere מ:דחי call).
 
@@ -114,11 +114,11 @@ def _parse_param1(el):
 
 
 def _assert_dexi_counts(arg1, arg2):
-    """Assert arg1 has exactly 1 deḥi mark and arg2 has exactly 2."""
+    """Assert arg1 has exactly 1 deḥi mark and arg2 has exactly 2."""
     n1 = arg1.count(hac.DEX)
     n2 = arg2.count(hac.DEX)
-    assert n1 == 1, f"expected 1 deḥi in arg1, got {n1}: {arg1!r}"
-    assert n2 == 2, f"expected 2 deḥi in arg2, got {n2}: {arg2!r}"
+    assert n1 == 1, f"expected 1 deḥi in arg1, got {n1}: {arg1!r}"
+    assert n2 == 2, f"expected 2 deḥi in arg2, got {n2}: {arg2!r}"
 
 
 def _insert_yod(s):
