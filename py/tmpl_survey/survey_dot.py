@@ -21,6 +21,11 @@ _NUSACH_FOCUSED_DISCARDED = {
 _DOT_FALLBACK = os.path.join(
     os.environ.get("ProgramFiles", r"C:\Program Files"), "Graphviz", "bin", "dot.exe"
 )
+_FOCUS_NODE_ATTR_PARTS = (
+    'fillcolor="lightgoldenrod1"',
+    'style="filled"',
+    "penwidth=2.5",
+)
 
 
 def _edges_from_stack_counts(stack_counts, discarded=None):
@@ -151,13 +156,15 @@ def _dot_quoted(name):
     return f'"{escaped}"'
 
 
-def _node_attrs(label=None, tooltip=None):
-    """Return a dot attribute string for label and optional tooltip."""
+def _node_attrs(label=None, tooltip=None, extra_parts=None):
+    """Return a dot attribute string for label, tooltip, and extra attrs."""
     parts = []
     if label is not None:
         parts.append(f"label={_dot_quoted(label)}")
     if tooltip:
         parts.append(f"tooltip={_dot_quoted(tooltip)}")
+    if extra_parts:
+        parts.extend(extra_parts)
     return " [" + ", ".join(parts) + "]"
 
 
@@ -231,6 +238,9 @@ def _write_dot(
         label = None
         tooltip = None
         node_id = rep
+        node_attr_parts = None
+        if focus_target is not None and focus_target in members:
+            node_attr_parts = _FOCUS_NODE_ATTR_PARTS
         if len(members) > 1:
             tooltip = _group_tooltip(members)
             if focus_target is None:
@@ -253,10 +263,11 @@ def _write_dot(
         else:
             used_ids.add(node_id)
         node_ids[rep] = node_id
-        if label is not None:
+        if label is not None or node_attr_parts is not None:
             emitted_label = None if label == node_id else label
             fp.write(
-                f"    {_dot_quoted(node_id)}{_node_attrs(emitted_label, tooltip)};\n"
+                f"    {_dot_quoted(node_id)}"
+                f"{_node_attrs(emitted_label, tooltip, extra_parts=node_attr_parts)};\n"
             )
     fp.write("\n")
     # Note

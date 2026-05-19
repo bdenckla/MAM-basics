@@ -13,6 +13,7 @@ digraph template_call_graph {
 
     // Template nodes
     node [shape=box, style=""];
+    "מ:פסוק" [fillcolor="lightgoldenrod1", style="filled", penwidth=2.5];
 
     // Edges
     "C" -> "מ:פסוק" [label="81"];

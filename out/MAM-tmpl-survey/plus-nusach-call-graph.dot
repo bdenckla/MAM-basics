@@ -36,6 +36,7 @@ digraph template_call_graph {
 ש"];
     "מ:אות-ג, ..." [tooltip="מ:אות-ג
 מ:אות-ק"];
+    "נוסח" [fillcolor="lightgoldenrod1", style="filled", penwidth=2.5];
 
     // Note
     graph [label="כו״ק, מ:דחי, מ:כו״ק מיוחד, מ:קו״כ-אם-2, מ:קמץ have been discarded", labelloc=b, fontsize=10];

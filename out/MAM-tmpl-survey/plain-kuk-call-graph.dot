@@ -12,6 +12,7 @@ digraph template_call_graph {
 
     // Template nodes
     node [shape=box, style=""];
+    "כו״ק" [fillcolor="lightgoldenrod1", style="filled", penwidth=2.5];
 
     // Note
     graph [label="מ:כפול, מ:קישור בהערה, מ:קישור פנימי בהערה, נוסח, ש have been discarded", labelloc=b, fontsize=10];

@@ -13,6 +13,7 @@ digraph template_call_graph {
     // Template nodes
     node [shape=box, style=""];
     "מ:טעם ומתג באות אחת" [label="מ:טעם … אחת", tooltip="מ:טעם ומתג באות אחת"];
+    "מ:כפול" [fillcolor="lightgoldenrod1", style="filled", penwidth=2.5];
     "שני טעמים באות אחת קמץ-תחתון-פתח-עליון" [label="שני … קמץ-תחתון-פתח-עליון", tooltip="שני טעמים באות אחת קמץ-תחתון-פתח-עליון"];
 
     // Edges

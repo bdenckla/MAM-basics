@@ -46,6 +46,7 @@ digraph template_call_graph {
 ר3
 ר4
 ש"];
+    "נוסח" [fillcolor="lightgoldenrod1", style="filled", penwidth=2.5];
     "שני טעמים באות אחת קמץ-תחתון-פתח-עליון" [label="שני … קמץ-תחתון-פתח-עליון", tooltip="שני טעמים באות אחת קמץ-תחתון-פתח-עליון"];
 
     // Note
