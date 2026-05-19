@@ -5,11 +5,11 @@
          * I define the "pointed consonants" as the set of letters which:
              * has *dagesh* or *mapiq* versions of all chars that can have them
              * has both *shin* and *sin*, but lacks "unpointed" (ambiguous) *shin*
-             * has both of the *vav*-based vowels (*ḥolam male* & *shuruq*)
+             * has both of the *vav*-based vowels (*ḥolam male* & *shuruq*)
      * V for vowel points (a somewhat vague concept).
        * I define the vowel points as:
            * excluding the points in the *vav*-based vowels
-               * Thus the only *ḥolam* in layer V is *ḥolam ḥaser*.
+               * Thus the only *ḥolam* in layer V is *ḥolam ḥaser*.
            * including *sheva nach*, even though it indicates the absence of any vowel
      * A for accents including *meteg* & trope marks
      * S for "specials" (everything not captured in LVA)
@@ -24,12 +24,12 @@
     * using `w` distinguishes it from the `v` used for *vet*
     * using `w` harkens back to an older style of romanization
         * This older style reflects speculation about historical pronunciation.
-* `o` & `u` for the *vav*-based vowels (*ḥolam male* & *shuruq*)
+* `o` & `u` for the *vav*-based vowels (*ḥolam male* & *shuruq*)
 * We use `x` for *chet* because in the IPA, \[x\] & \[χ\] represent velar and uvular voiceless fricatives, sounds that are in the *ballpark* of how *chet* is usually pronounced.
    * According to some, the ideal pronunciation of *chet* may be \[ħ\] (a voiceless *pharyngeal* fricative). I.e. the connection of `x` to \[x\] & \[χ\] is just as a mnemonic, not a technical claim of phonetic judgment.
 
 * P f B v w o u
-    * Pei, fei, Bet, vet, vav, ḥolam male, shuruq
+    * Pei, fei, Bet, vet, vav, ḥolam male, shuruq
 * K k q x h
     * kaf, khaf, qof, chet, hei
 * te ta ts
@@ -60,7 +60,7 @@ In the table below:
 |`d`&#x5d3;|`D`&#x5d3;&#x5bc;|||
 |`h`&#x5d4;|`H`&#x5d4;&#x5bc;|||
 |`w`&#x5d5;|`W`&#x5d5;&#x5bc;|||
-|`o`&#x5d5;&#x5b9;||||ḥolam male
+|`o`&#x5d5;&#x5b9;||||ḥolam male
 |`u`&#x5d5;&#x5bc;||||shuruq
 |`z`&#x5d6;|`Z`&#x5d6;&#x5bc;|||
 |`x`&#x5d7;||||
@@ -98,13 +98,13 @@ In the table below:
 * There is no separate encoding of the following points, since their
   encoding is always combined with the consonant to which they belong:
     * shin dot and sin dot
-    * the \[high\] point used with vav to form ḥolam male
+    * the \[high\] point used with vav to form ḥolam male
     * the \[mid\] point used with vav to form shuruq
     * all dagesh and mapiq points
 * Another way of summarizing the "alphabet" of layer L:
     * Everything "in the middle" (consonants plus mid dots) plus:
         * shin dots & sin dots
-        * the point used with vav to form ḥolam male
+        * the point used with vav to form ḥolam male
 
 * tcs: target character system, e.g.:
    * 0: Jacobson's technical romanization
@@ -114,13 +114,13 @@ In the table below:
 * Ambiguous *shin* (*shin* without a *shin* dot or *sin* dot) is not representable.
    * I.e. this is a system for representing fully pointed Hebrew.
 
-* *Vav haluma* is represented as a *vav* (`w`) in layer L and a *ḥolam ḥaser* (`o`) in layer V.
+* *Vav haluma* is represented as a *vav* (`w`) in layer L and a *ḥolam ḥaser* (`o`) in layer V.
     * This is usually pronounced, roughly, "vo".
-    * Recall that *ḥolam male* is represented entirely in layer L.
-    * In Unicode, *vav haluma* and *ḥolam male* can be either:
+    * Recall that *ḥolam male* is represented entirely in layer L.
+    * In Unicode, *vav haluma* and *ḥolam male* can be either:
         * not distinguished (represented identically)
         * "half-distinguished" (see below).
-    * In contrast, in split Hebrew, the only option is to fully distinguish *vav haluma* and *ḥolam male*.
+    * In contrast, in split Hebrew, the only option is to fully distinguish *vav haluma* and *ḥolam male*.
 
 * Full ambiguities in Unicode
    * In Unicode, *shuruq* (indicating a vowel sound) cannot be distinguished from *vav* with a *dagesh* (indicating a consonant sound). Perhaps you could make this distinction by using presentation form U+FB35 (HEBREW LETTER VAV WITH DAGESH) as *shuruq* but that seems like a bad idea. For one thing your distinction would not survive a normalization that gets rid of presentation forms.
@@ -134,12 +134,12 @@ In the table below:
           * *t* = U-*qamats katan*-U
           * *c* = *qamats gadol*
           * I.e. there is no way to represent only *qamats gadol*.
-       * *s* = *vav* followed by *ḥolam*
-          * *t* = U-*vav*-U followed by U-*ḥolam ḥaser* for *vav*-U
-          * *c* = *ḥolam male*
+       * *s* = *vav* followed by *ḥolam*
+          * *t* = U-*vav*-U followed by U-*ḥolam ḥaser* for *vav*-U
+          * *c* = *ḥolam male*
           * *d* = *vav haluma*
-          * I.e. there is no way to represent only *ḥolam male*.
-          * E.g. there is no code point "*ḥolam* to make *ḥolam male*".
+          * I.e. there is no way to represent only *ḥolam male*.
+          * E.g. there is no code point "*ḥolam* to make *ḥolam male*".
    * So, even when we try to distinguish *c* from *d*, some ambiguity persists.
       * Some ambiguity persists because without some context, when we encounter *s* we don't know whether *c* or *d* was intended.
       * The needed context could simply be documentation, e.g.:
