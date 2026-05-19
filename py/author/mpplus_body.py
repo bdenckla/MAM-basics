@@ -12,7 +12,7 @@ from author import mp_cmn_top_header_book39 as thb
 from author import mp_body_shared as body_shared
 from author import mp_table_helpers as tblh
 
-_CALL_GRAPHS = "https://bdenckla.github.io/MAM-parsed/plus-template-call-graphs.html"
+_CALL_GRAPHS = "https://bdenckla.github.io/MAM-parsed/mpplus-template-call-graphs.html"
 _DIFF_FROM_PLAIN_DOC = "mpplus_diff_from_plain.html"
 _PLAIN_ONLY_TEMPLATES_DOC = "mpplus_plain_only_templates.html"
 _PLAIN_DOC = "mpplain.html"

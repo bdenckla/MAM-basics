@@ -58,7 +58,7 @@ def table_datum(contents):
 
 
 def stem_eq(path1, path2):
-    return _stem(path1) == _stem(path2)
+    return _norm_stem(path1) == _norm_stem(path2)
 
 
 def assert_stem_eq(path1, path2):
@@ -389,6 +389,10 @@ def _is_multiword_romanized(string: str):
 def _stem(path):
     basename = os.path.basename(path)
     return os.path.splitext(basename)[0]
+
+
+def _norm_stem(path):
+    return _stem(path).replace("-", "_")
 
 
 def _anc_h(contents, href_val):

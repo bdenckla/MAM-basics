@@ -9,9 +9,11 @@ from mb_misc import styles_mam_parsed
 
 def _run_mam_parsed_authored_traversal(*, claims: ClaimCollection, tdm_ch=None):
     """Run authored traversal to emit explicit claims, optionally writing docs."""
+    from author import mp_index
     from author import mpplain
     from author import mpplus
     from author import mpplus_aot
+    from author import mpplus_template_call_graphs
     from author import mpplus_kq_am2
     from author import mpplus_kq_special
     from author import mpplain_kq_special
@@ -30,8 +32,10 @@ def _run_mam_parsed_authored_traversal(*, claims: ClaimCollection, tdm_ch=None):
     from author import mpplus_poetic_spacing
 
     if tdm_ch is None:
+        mp_index.build_body(claims=claims)
         mpplain.build_body(claims=claims)
         mpplus.build_body(claims=claims)
+        mpplus_template_call_graphs.build_body(claims=claims)
         mpplus_aot.build_body(claims=claims)
         mpplus_kq_am2.build_body(claims=claims)
         mpplus_kq_special.build_body(claims=claims)
@@ -51,8 +55,10 @@ def _run_mam_parsed_authored_traversal(*, claims: ClaimCollection, tdm_ch=None):
         mpplus_poetic_spacing.build_body(claims=claims)
         return
 
+    mp_index.gen_html_file(tdm_ch, claims=claims)
     mpplain.gen_html_file(tdm_ch, claims=claims)
     mpplus.gen_html_file(tdm_ch, claims=claims)
+    mpplus_template_call_graphs.gen_html_file(tdm_ch, claims=claims)
     mpplus_aot.gen_html_file(tdm_ch, claims=claims)
     mpplus_kq_am2.gen_html_file(tdm_ch, claims=claims)
     mpplus_kq_special.gen_html_file(tdm_ch, claims=claims)

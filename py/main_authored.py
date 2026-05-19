@@ -5,8 +5,9 @@ that are written by the repo owner and rendered from Python source data.
 Subcommands:
   gen-misc             (default) Write misc authored HTML docs to
                        MAM-with-doc/gh-pages/misc/.
-  gen-mam-parsed-docs  Write mpplain.html and
-                       mpplus.html to MAM-parsed/gh-pages/.
+  gen-mam-parsed-docs  Write index.html, mpplain.html,
+                       mpplus.html, and mpplus-template-call-graphs.html
+                       to MAM-parsed/gh-pages/.
   verify-mp            Run MAM-parsed claim verification without
                        rewriting MAM-parsed authored HTML/CSS outputs.
   gen-mp-claims-index  Write doc/mp-claims.md from explicit claims and
@@ -138,7 +139,7 @@ def main():
     sub.add_parser("gen-misc", help="Generate miscellaneous authored HTML documents")
     sub.add_parser(
         "gen-mam-parsed-docs",
-        help="Generate reading-MAM-parsed-plain/plus HTML docs in MAM-parsed/gh-pages/",
+        help="Generate authored MAM-parsed HTML docs in MAM-parsed/gh-pages/",
     ).add_argument(
         "--skip-verify-mp",
         action="store_true",
