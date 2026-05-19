@@ -10,6 +10,7 @@ from mb_cmn import provenance
 _COLUMN_LETTERS = {"C", "D", "E"}
 _DEEPLY_DISCARDED = {"מ:הערה"}
 _BASE_DISCARDED = {"מ:כפול", "נוסח"}
+_FOCUSED_NO_DISCARD_TARGETS = {"מ:פסוק"}
 _DOT_FALLBACK = os.path.join(
     os.environ.get("ProgramFiles", r"C:\Program Files"), "Graphviz", "bin", "dot.exe"
 )
@@ -261,16 +262,24 @@ def _split_stack_str(stack_str):
     return tuple(stack_str.split("/"))
 
 
-def _focused_edges_from_stack_counts(stack_counts, target):
+def _focused_edges_from_stack_counts(stack_counts, target, discarded=None):
     """Build focused edges from only stacks that involve the target.
 
     For each raw stack-count record where target appears anywhere in the full
     stack path (stack parts + current callee), decompose that full path into
     adjacent caller->callee edges and accumulate the record count.
+
+    If discarded is provided, discarded templates are removed from the path
+    before edge decomposition, and records whose callee is discarded are
+    ignored.
     """
+    if discarded is None:
+        discarded = set()
     focused_edges = {}
     for (wtel_subtype, stack_str), count in stack_counts.items():
-        stack_parts = _split_stack_str(stack_str)
+        stack_parts = [p for p in _split_stack_str(stack_str) if p not in discarded]
+        if wtel_subtype in discarded:
+            continue
         full_path = (*stack_parts, wtel_subtype)
         if target not in full_path:
             continue
@@ -332,12 +341,20 @@ def _identity_groups(edges):
     return {node: [node] for node in all_nodes - _COLUMN_LETTERS}
 
 
+def _focused_discarded_for_target(target, full_discarded):
+    """Return discard set used for a specific focused target."""
+    if target in full_discarded or target in _FOCUSED_NO_DISCARD_TARGETS:
+        return set()
+    return full_discarded
+
+
 def write_focused_dot_files(
     stack_counts,
     stem,
     deeply_discard=False,
     svg_stem=None,
     generator_file=None,
+    discarded=None,
 ):
     """Write per-target focused .dot/.svg call graphs.
 
@@ -347,13 +364,20 @@ def write_focused_dot_files(
     generated_by = _generated_by_text(generator_file)
     if deeply_discard:
         stack_counts = _filter_deeply_discarded(stack_counts)
+    full_discarded = _discarded_for_full_graph(discarded)
     if svg_stem is None:
         svg_stem = stem
     for spec in _FOCUSED_TARGETS:
         target = spec.tmpl_name
         slug = spec.slug
         collapse = spec.collapse
-        edges = _focused_edges_from_stack_counts(stack_counts, target)
+        focused_discarded = _focused_discarded_for_target(target, full_discarded)
+        edges = _focused_edges_from_stack_counts(
+            stack_counts,
+            target,
+            discarded=focused_discarded,
+        )
+        note = _discard_note_text(focused_discarded)
         if collapse:
             edges, groups = _collapse_equivalent_nodes(edges)
         else:
@@ -365,7 +389,7 @@ def write_focused_dot_files(
                 edges,
                 groups,
                 fp,
-                note=None,
+                note=note,
                 focus_target=target,
                 generated_by=generated_by,
             )

@@ -60,6 +60,7 @@ def _write_outputs(
         deeply_discard,
         svg_stem=svg_stem,
         generator_file=__file__,
+        discarded=discarded,
     )
 
 

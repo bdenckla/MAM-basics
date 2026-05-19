@@ -13,13 +13,14 @@ digraph template_call_graph {
     // Template nodes
     node [shape=box, style=""];
 
+    // Note
+    graph [label="מ:כפול, מ:קישור בהערה, מ:קישור פנימי בהערה, מודגש, נוסח, ש have been discarded", labelloc=b, fontsize=10];
+
     // Edges
-    "E" -> "כו״ק" [label="763"];
-    "E" -> "נוסח" [label="149"];
+    "E" -> "כו״ק" [label="912"];
     "כו״ק" -> "מ:אות-מיוחדת-במילה" [label="2"];
     "כו״ק" -> "מ:דחי" [label="7"];
     "כו״ק" -> "מ:לגרמיה-2" [label="9"];
     "כו״ק" -> "מ:קמץ" [label="10"];
     "מ:אות-מיוחדת-במילה" -> "מ:אות-ק" [label="1"];
-    "נוסח" -> "כו״ק" [label="149"];
 }

@@ -13,12 +13,14 @@ digraph template_call_graph {
     // Template nodes
     node [shape=box, style=""];
 
+    // Note
+    graph [label="מ:כפול, מ:קישור בהערה, מ:קישור פנימי בהערה, נוסח, ש have been discarded", labelloc=b, fontsize=10];
+
     // Edges
-    "E" -> "כו״ק" [label="6"];
-    "E" -> "מ:דחי" [label="2242"];
+    "E" -> "כו״ק" [label="7"];
+    "E" -> "מ:דחי" [label="2285"];
     "E" -> "מ:קו״כ-אם-2" [label="8"];
     "E" -> "מ:קמץ" [label="14"];
-    "E" -> "נוסח" [label="44"];
     "E" -> "פרשה-מרכז" [label="10"];
     "כו״ק" -> "מ:דחי" [label="7"];
     "מ:דחי" -> "מ:אות-ג" [label="4"];
@@ -26,7 +28,5 @@ digraph template_call_graph {
     "מ:דחי" -> "מ:ירושלם" [label="2"];
     "מ:קו״כ-אם-2" -> "מ:דחי" [label="8"];
     "מ:קמץ" -> "מ:דחי" [label="14"];
-    "נוסח" -> "כו״ק" [label="1"];
-    "נוסח" -> "מ:דחי" [label="43"];
     "פרשה-מרכז" -> "מ:דחי" [label="10"];
 }

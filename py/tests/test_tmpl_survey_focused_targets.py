@@ -78,12 +78,64 @@ class TestTmplSurveyFocusedTargets(unittest.TestCase):
             with open(dchi_dot_path, encoding="utf-8") as dot_fp:
                 dot_text = dot_fp.read()
 
-        self.assertIn('"E" -> "נוסח" [label="31"]', dot_text)
-        self.assertIn('"נוסח" -> "מ:דחי" [label="31"]', dot_text)
+        self.assertIn('"E" -> "מ:דחי" [label="31"]', dot_text)
         self.assertIn('"מ:דחי" -> "מ:אות-ג" [label="24"]', dot_text)
         self.assertIn('"מ:אות-ג" -> "מ:אות-ס" [label="13"]', dot_text)
         self.assertNotIn('"C" -> "נוסח"', dot_text)
         self.assertNotIn('"D" -> "נוסח"', dot_text)
+        self.assertNotIn('"נוסח"', dot_text)
+        self.assertIn("מ:כפול, נוסח have been discarded", dot_text)
+
+    def test_focused_nusach_keeps_discarded_target(self):
+        stack_counts = {
+            ("נוסח", "C"): 2,
+            ("מ:דחי", "C/נוסח"): 3,
+        }
+
+        with tempfile.TemporaryDirectory() as tdir:
+            stem = os.path.join(tdir, "plain")
+            orig_render_svg = survey_dot.render_svg
+            survey_dot.render_svg = lambda dot_path, svg_path, generator_file=None: None
+            try:
+                survey_dot.write_focused_dot_files(
+                    stack_counts, stem, deeply_discard=False, svg_stem=stem
+                )
+            finally:
+                survey_dot.render_svg = orig_render_svg
+
+            nusach_dot_path = f"{stem}-nusach-call-graph.dot"
+            with open(nusach_dot_path, encoding="utf-8") as dot_fp:
+                dot_text = dot_fp.read()
+
+        self.assertIn('"C" -> "נוסח" [label="5"]', dot_text)
+        self.assertIn('"נוסח" -> "מ:דחי" [label="3"]', dot_text)
+
+    def test_focused_pasuk_skips_standard_discard_set(self):
+        stack_counts = {
+            ("נוסח", "D"): 2,
+            ("מ:פסוק", "D/נוסח"): 3,
+            ("מ:עלייה", "D/נוסח/מ:פסוק"): 5,
+        }
+
+        with tempfile.TemporaryDirectory() as tdir:
+            stem = os.path.join(tdir, "plain")
+            orig_render_svg = survey_dot.render_svg
+            survey_dot.render_svg = lambda dot_path, svg_path, generator_file=None: None
+            try:
+                survey_dot.write_focused_dot_files(
+                    stack_counts, stem, deeply_discard=False, svg_stem=stem
+                )
+            finally:
+                survey_dot.render_svg = orig_render_svg
+
+            pasuk_dot_path = f"{stem}-pasuk-call-graph.dot"
+            with open(pasuk_dot_path, encoding="utf-8") as dot_fp:
+                dot_text = dot_fp.read()
+
+        self.assertIn('"D" -> "נוסח" [label="8"]', dot_text)
+        self.assertIn('"נוסח" -> "מ:פסוק" [label="8"]', dot_text)
+        self.assertIn('"מ:פסוק" -> "מ:עלייה" [label="5"]', dot_text)
+        self.assertNotIn("have been discarded", dot_text)
 
 
 if __name__ == "__main__":
