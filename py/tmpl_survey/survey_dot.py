@@ -117,6 +117,22 @@ def _build_abbreviations(names):
     return raw
 
 
+def _build_adjacency_sets(edges):
+    """Return predecessor/successor sets keyed by node."""
+    predecessors = {}
+    successors = {}
+    all_nodes = set()
+    for caller, callee in edges:
+        all_nodes.add(caller)
+        all_nodes.add(callee)
+        successors.setdefault(caller, set()).add(callee)
+        predecessors.setdefault(callee, set()).add(caller)
+    for node in all_nodes:
+        predecessors.setdefault(node, set())
+        successors.setdefault(node, set())
+    return predecessors, successors
+
+
 def _group_tooltip(members):
     """Return a tooltip listing all members of a collapsed group."""
     return "\n".join(members)
@@ -138,10 +154,12 @@ def _node_attrs(label=None, tooltip=None):
     return " [" + ", ".join(parts) + "]"
 
 
-def _focused_group_label(rep, members, target, abbrevs):
+def _focused_group_label(rep, members, target, abbrevs, predecessors, successors):
     """Return a label for a node in a focused graph."""
     if len(members) > 1 and rep != target:
-        return f"direct children of {target}"
+        if predecessors.get(rep, set()) == {target} and not successors.get(rep, set()):
+            return f"dead-end children of {target}"
+        return f"{abbrevs[rep]}, ..."
     return abbrevs[rep]
 
 
@@ -175,6 +193,7 @@ def _write_dot(
     for caller, callee in edges:
         all_names.add(caller)
         all_names.add(callee)
+    predecessors, successors = _build_adjacency_sets(edges)
     col_nodes = _COLUMN_LETTERS & all_names
     all_names -= _COLUMN_LETTERS
     abbrevs = _build_abbreviations(all_names)
@@ -211,7 +230,14 @@ def _write_dot(
                 label = f"{abbrevs[rep]}, …"
                 node_id = _make_unique_node_id(label, used_ids)
             else:
-                label = _focused_group_label(rep, members, focus_target, abbrevs)
+                label = _focused_group_label(
+                    rep,
+                    members,
+                    focus_target,
+                    abbrevs,
+                    predecessors,
+                    successors,
+                )
                 if rep != focus_target:
                     node_id = _make_unique_node_id(label, used_ids)
         elif abbrevs[rep] != rep:

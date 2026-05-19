@@ -131,6 +131,35 @@ class TestTmplSurveyFocusedTargets(unittest.TestCase):
         self.assertIn('"מ:פסוק" -> "מ:עלייה" [label="5"]', dot_text)
         self.assertNotIn("have been discarded", dot_text)
 
+    def test_focused_nusach_special_label_only_for_dead_end_direct_children(self):
+        stack_counts = {
+            ("נוסח", "C"): 1,
+            ("A1", "C/נוסח"): 3,
+            ("A2", "C/נוסח"): 5,
+            ("X", "C/נוסח"): 2,
+            ("B1", "C/נוסח/X"): 7,
+            ("B2", "C/נוסח/X"): 11,
+        }
+
+        with tempfile.TemporaryDirectory() as tdir:
+            stem = os.path.join(tdir, "plain")
+            orig_render_svg = survey_dot.render_svg
+            survey_dot.render_svg = lambda dot_path, svg_path, generator_file=None: None
+            try:
+                survey_dot.write_focused_dot_files(stack_counts, stem, svg_stem=stem)
+            finally:
+                survey_dot.render_svg = orig_render_svg
+
+            nusach_dot_path = f"{stem}-nusach-call-graph.dot"
+            with open(nusach_dot_path, encoding="utf-8") as dot_fp:
+                dot_text = dot_fp.read()
+
+        self.assertIn('"dead-end children of נוסח" [tooltip="A1\nA2"]', dot_text)
+        self.assertIn('"נוסח" -> "dead-end children of נוסח" [label="8"]', dot_text)
+        self.assertIn('"X" -> "B1, ..." [label="18"]', dot_text)
+        self.assertNotIn('"X" -> "dead-end children of נוסח"', dot_text)
+        self.assertNotIn("direct children of נוסח", dot_text)
+
 
 if __name__ == "__main__":
     unittest.main()

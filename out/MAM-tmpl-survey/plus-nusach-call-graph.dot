@@ -14,7 +14,7 @@ digraph template_call_graph {
 
     // Template nodes
     node [shape=box, style=""];
-    "direct children of נוסח" [tooltip="כתיב ולא קרי
+    "dead-end children of נוסח" [tooltip="כתיב ולא קרי
 מ:אין פרשה בתחילת פרק
 מ:אין פרשה בתחילת פרק בספרי אמ״ת
 מ:נו״ן הפוכה
@@ -32,7 +32,7 @@ digraph template_call_graph {
 ר3
 ר4
 ש"];
-    "direct children of נוסח (2)" [label="direct children of נוסח", tooltip="מ:אות-ג
+    "מ:אות-ג, ..." [tooltip="מ:אות-ג
 מ:אות-ק"];
 
     // Edges
@@ -43,7 +43,7 @@ digraph template_call_graph {
     "כו״ק" -> "מ:אות-מיוחדת-במילה" [label="2"];
     "כו״ק" -> "מ:דחי" [label="1"];
     "כו״ק" -> "מ:קמץ" [label="3"];
-    "מ:אות-מיוחדת-במילה" -> "direct children of נוסח (2)" [label="89"];
+    "מ:אות-מיוחדת-במילה" -> "מ:אות-ג, ..." [label="89"];
     "מ:אות-מיוחדת-במילה" -> "מ:לגרמיה-2" [label="4"];
     "מ:דחי" -> "מ:אות-מיוחדת-במילה" [label="12"];
     "מ:הערה-2" -> "מ:אות-מיוחדת-במילה" [label="10"];
@@ -54,7 +54,7 @@ digraph template_call_graph {
     "מ:קו״כ-אם-2" -> "מ:קמץ" [label="2"];
     "מ:קמץ" -> "מ:מקף אפור" [label="2"];
     "נוסח" -> "כו״ק" [label="149"];
-    "נוסח" -> "direct children of נוסח" [label="3592"];
+    "נוסח" -> "dead-end children of נוסח" [label="3592"];
     "נוסח" -> "מ:אות-מיוחדת-במילה" [label="156"];
     "נוסח" -> "מ:דחי" [label="49"];
     "נוסח" -> "מ:הערה-2" [label="40"];
