@@ -16,16 +16,14 @@ def convert(wtseq):  # wtseq: Wikitext sequence (list or tuple)
     if that doc's target is a scrdfftar,
     fold that scrdfftar's contents into the doc.
 
-    Also, remove any scrdff from the top level of wtseq.
-    (Older/transitional data may still carry scrdff alongside scrdfftar.)
+    Fail fast if any non-targeted scrdff appears at top level.
 
     We only care about top level because other code
     recurses and ends up calling this again at lower
     levels.
     """
-    wtseq_type = type(wtseq)  # list or tuple
-    wtseq_f = wtseq_type(filter(_is_not_scrdff, wtseq))
-    return my_utils.ss_map(_convert, wtseq_f)
+    _assert_no_non_targeted_scrdff_at_top_level(wtseq)
+    return my_utils.ss_map(_convert, wtseq)
 
 
 def _convert(wtel):
@@ -69,8 +67,13 @@ def _convert_doc_of_scrdfftar(doc_tmpl):
     return _make_doc_tmpl(scrdfftar, doc_tmpl_pvs[1:])
 
 
-def _is_not_scrdff(wtel):
-    return not wtp.is_scrdff_template(wtel)
+def _assert_no_non_targeted_scrdff_at_top_level(wtseq):
+    for wtel in wtseq:
+        if wtp.is_scrdff_template(wtel):
+            raise RuntimeError(
+                "Unexpected non-targeted scroll-difference template "
+                f"{tmpln.SCRDFF_NO_TAR} in plus scrdfftar-to-doc conversion"
+            )
 
 
 def _is_doc_of_scrdfftar(wtel):

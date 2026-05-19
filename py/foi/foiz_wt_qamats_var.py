@@ -115,7 +115,7 @@ _FOILERS = {
     "נוסח": fwh.label_args_of_doc,
     "מ:קו״כ-אם-2": fwh.label_args_of_kq_triv,
     tmpln.SCRDFF_TAR: fwh.label_args_of_scrdfftar,
-    tmpln.SCRDFF_NO_TAR: fwh.ignore,
+    tmpln.SCRDFF_NO_TAR: fwh.fail_on_unexpected_template_in_plus,
 }
 _STACK_SUMMARIES = {
     tuple(): None,

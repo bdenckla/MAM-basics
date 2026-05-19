@@ -100,6 +100,11 @@ TEST_MODULE_SPECS = (
         help_text="Run MP-plus scroll-difference targeting tests.",
     ),
     TestModuleSpec(
+        flag="mpplus-latest-note-schema",
+        module_name="tests.test_mpplus_latest_note_schema",
+        help_text="Run MP-plus latest-schema fail-fast tests for note templates.",
+    ),
+    TestModuleSpec(
         flag="polite-download",
         module_name="tests.test_polite_download",
         help_text="Run polite download behavior tests.",

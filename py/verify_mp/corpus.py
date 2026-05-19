@@ -6,6 +6,8 @@ import json
 from dataclasses import dataclass, field
 from typing import Iterator, Mapping, TYPE_CHECKING
 
+from mb_cmn import mpplus_schema_guard as mpplus_guard
+
 if TYPE_CHECKING:
     from author_util.claim import ClaimRecord
 
@@ -56,6 +58,7 @@ def load_plus_corpus() -> Corpus:
     for path in paths:
         with open(path, encoding="utf-8") as fh:
             data = json.load(fh)
+        mpplus_guard.assert_no_non_targeted_scrdff_in_plus(data, path)
         files.append(data)
         book39s.extend(data["book39s"])
     return Corpus(files=files, book39s=book39s)

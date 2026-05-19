@@ -121,7 +121,7 @@ _FOILERS_FOR_COLUMN_E = {
     "נוסח": fwh.label_args_of_doc,
     # label_args_of_scrdfftar is called in _record_scrdff_in_col_x
     # tmpln.SCRDFF_TAR: fwh.label_args_of_scrdfftar,
-    tmpln.SCRDFF_NO_TAR: fwh.ignore,
+    tmpln.SCRDFF_NO_TAR: fwh.fail_on_unexpected_template_in_plus,
 }
 _FOILERS_FOR_COLUMN_C = {
     tmpln.SCRDFF_TAR: _record_scrdff_in_col_c,

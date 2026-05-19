@@ -81,6 +81,13 @@ def _ignore(_hctx, _tmpl):
     return ""
 
 
+def _fail_non_targeted_scrdff(_hctx, _tmpl):
+    raise RuntimeError(
+        "Unexpected non-targeted scroll-difference template "
+        f"{tmpln.SCRDFF_NO_TAR} in plus rendering"
+    )
+
+
 def _handle_scrdfftar(hctx, tmpl):
     """
     This is displayed on Wikisource as a footnote.
@@ -484,7 +491,7 @@ _HANDLER_SPECS_FOR_MISC = {
     "מ:קישור פנימי בהערה": {_MASK_P: _handle_anchor_with_href_internal},
     "__": {_MASK_C: _ignore},
     "נוסח": {_MASK_EC: _handle_doc},
-    tmpln.SCRDFF_NO_TAR: {_MASK_EC: _ignore},
+    tmpln.SCRDFF_NO_TAR: {_MASK_EC: _fail_non_targeted_scrdff},
     tmpln.SCRDFF_TAR: {_MASK_EC: _handle_scrdfftar},
     tmpln.SLH_WORD: {_MASK_ELP: _handle_slh_word},
     "מ:לגרמיה-2": {_MASK_ELP: _handle_legarmeih_2},
@@ -519,9 +526,6 @@ _DUALCANT_ARG_HELPER_DIC = {
 }
 #######################################################################
 # Notes on ignored templates:
-#
-# We ignore plain scrdff templates in favor of (synthesized)
-# scrdfftar templates.
 #
 # resh1_in_col_c happens only two times:
 #    between verses 1 and 2 of Psalm 70 and

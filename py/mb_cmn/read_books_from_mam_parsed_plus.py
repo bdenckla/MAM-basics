@@ -1,6 +1,7 @@
 import json
 from mb_cmn import bib_locales as tbn
 from mb_cmn import mam_bknas_and_std_bknas as mbkn_a_sbkn
+from mb_cmn import mpplus_schema_guard as mpplus_guard
 from mb_cmn.minirow import MinirowExt
 from mb_cmn.my_utils import sl_map
 from mb_cmn.my_utils import sum_of_dics
@@ -22,6 +23,7 @@ def read_parsed_plus_bk24(bk24id, mam_parsed_path="../MAM-parsed"):
     in_path = f"{mam_parsed_path}/plus/{osdf24}.json"
     with open(in_path, encoding="utf-8") as json_in_fp:
         in_bk24 = json.load(json_in_fp)
+    mpplus_guard.assert_no_non_targeted_scrdff_in_plus(in_bk24, in_path)
     last_real_bcvt = None
     books_out = {}
     for in_bk39 in in_bk24["book39s"]:

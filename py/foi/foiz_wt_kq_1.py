@@ -97,7 +97,7 @@ _FOILERS = {
     "מ:כפול": fwh.label_args_of_dualcant,
     "נוסח": fwh.label_args_of_doc,
     tmpln.SCRDFF_TAR: fwh.label_args_of_scrdfftar,
-    tmpln.SCRDFF_NO_TAR: fwh.ignore,
+    tmpln.SCRDFF_NO_TAR: fwh.fail_on_unexpected_template_in_plus,
 }
 _STACK_SUMMARIES = {
     tuple(): None,

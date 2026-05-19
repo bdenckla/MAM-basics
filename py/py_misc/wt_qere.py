@@ -92,6 +92,13 @@ def _hnd_return_empty_list(_1, _2):
     return []
 
 
+def _hnd_fail_non_targeted_scrdff(_1, tmpl):
+    raise RuntimeError(
+        "Unexpected non-targeted scroll-difference template "
+        f"{tmpln.SCRDFF_NO_TAR} in plus processing"
+    )
+
+
 def _hnd_return_leg_str(_1, tmpl):
     return [hpu.PASOLEG]
 
@@ -124,6 +131,6 @@ HANDLERS = {
     "מ:מקף אפור": _hnd_return_maq_str,
     #
     "כתיב ולא קרי": _hnd_return_empty_list,
-    tmpln.SCRDFF_NO_TAR: _hnd_return_empty_list,
+    tmpln.SCRDFF_NO_TAR: _hnd_fail_non_targeted_scrdff,
     "מ:נו״ן הפוכה": _hnd_return_empty_list,
 }

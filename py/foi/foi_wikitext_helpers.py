@@ -97,6 +97,15 @@ def ignore(_foilers, _stack, _tmpl):
     return []
 
 
+def fail_on_unexpected_template_in_plus(_foilers, stack, tmpl):
+    """Fail fast for templates that are invalid in plus corpus data."""
+    tmpl_name = wtp.template_name(tmpl)
+    stack_str = "/".join(stack) if stack else "<root>"
+    raise RuntimeError(
+        f"Unexpected template {tmpl_name} in plus FOI traversal at stack {stack_str}"
+    )
+
+
 ######################################################################
 ######################################################################
 
