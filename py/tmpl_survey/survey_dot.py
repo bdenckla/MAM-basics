@@ -6,6 +6,7 @@ import shutil
 import subprocess
 
 from mb_cmn import provenance
+from tmpl_survey import svg_provenance_norm
 
 _COLUMN_LETTERS = {"C", "D", "E"}
 _DEEPLY_DISCARDED = {"מ:הערה"}
@@ -442,4 +443,13 @@ def render_svg(dot_path, svg_path, generator_file=None):
     generated_by = _generated_by_text(generator_file)
     if generated_by is not None:
         _ensure_svg_comment(svg_path, generated_by)
+        with open(svg_path, "r", encoding="utf-8") as svg_fp:
+            svg_text = svg_fp.read()
+        normalized_svg_text = svg_provenance_norm.normalize_generated_by_comment_hyphen(
+            svg_text,
+            generated_by,
+        )
+        if normalized_svg_text != svg_text:
+            with open(svg_path, "w", encoding="utf-8") as svg_fp:
+                svg_fp.write(normalized_svg_text)
     return True

@@ -3,10 +3,12 @@
 import unittest
 from pathlib import Path
 from tempfile import TemporaryDirectory
+from unittest import mock
 
 from mb_cmn import provenance
 from pipeline_graph import pipeline_graph
 from tmpl_survey import survey_dot
+from tmpl_survey import svg_provenance_norm
 
 
 class TestGraphProvenance(unittest.TestCase):
@@ -73,6 +75,110 @@ class TestGraphProvenance(unittest.TestCase):
         marker = f"<!-- {expected} -->"
         self.assertEqual(svg_text.count(marker), 1)
         self.assertLess(svg_text.find(marker), svg_text.find("<svg "))
+
+    def test_svg_fallback_accepts_graphviz_escaped_marker(self):
+        expected = self._generated_by()
+        escaped_marker = f"<!-- {expected.replace('-', '&#45;')} -->"
+        with TemporaryDirectory() as tmp_dir:
+            svg_path = Path(tmp_dir) / "graph.svg"
+            svg_path.write_text(
+                '<?xml version="1.0" encoding="UTF-8"?>\n'
+                f"{escaped_marker}\n"
+                '<svg xmlns="http://www.w3.org/2000/svg"></svg>\n',
+                encoding="utf-8",
+            )
+            survey_dot._ensure_svg_comment(str(svg_path), expected)
+            svg_text = svg_path.read_text(encoding="utf-8")
+
+        self.assertEqual(svg_text.count(escaped_marker), 1)
+        self.assertNotIn(f"<!-- {expected} -->\n<!-- {expected} -->", svg_text)
+
+    def test_normalize_generated_by_comment_hyphen(self):
+        expected = self._generated_by()
+        escaped_marker = f"<!-- {expected.replace('-', '&#45;')} -->"
+        raw_marker = f"<!-- {expected} -->"
+        svg_text = (
+            '<?xml version="1.0" encoding="UTF-8"?>\n'
+            f"{escaped_marker}\n"
+            '<svg xmlns="http://www.w3.org/2000/svg"></svg>\n'
+        )
+
+        normalized = svg_provenance_norm.normalize_generated_by_comment_hyphen(
+            svg_text,
+            expected,
+        )
+
+        self.assertIn(raw_marker, normalized)
+        self.assertNotIn(escaped_marker, normalized)
+
+    def test_normalize_generated_by_comment_hyphen_skips_double_hyphen(self):
+        comment_text = "This -- is not allowed"
+        escaped_marker = f"<!-- {comment_text.replace('-', '&#45;')} -->"
+        svg_text = (
+            '<?xml version="1.0" encoding="UTF-8"?>\n'
+            f"{escaped_marker}\n"
+            '<svg xmlns="http://www.w3.org/2000/svg"></svg>\n'
+        )
+
+        normalized = svg_provenance_norm.normalize_generated_by_comment_hyphen(
+            svg_text,
+            comment_text,
+        )
+
+        self.assertEqual(normalized, svg_text)
+
+    def test_normalize_generated_by_comment_hyphen_skips_trailing_hyphen(self):
+        comment_text = "ends with hyphen-"
+        escaped_marker = f"<!-- {comment_text.replace('-', '&#45;')} -->"
+        svg_text = (
+            '<?xml version="1.0" encoding="UTF-8"?>\n'
+            f"{escaped_marker}\n"
+            '<svg xmlns="http://www.w3.org/2000/svg"></svg>\n'
+        )
+
+        normalized = svg_provenance_norm.normalize_generated_by_comment_hyphen(
+            svg_text,
+            comment_text,
+        )
+
+        self.assertEqual(normalized, svg_text)
+
+    def test_render_svg_normalizes_escaped_provenance_comment(self):
+        expected = self._generated_by()
+        escaped_marker = f"<!-- {expected.replace('-', '&#45;')} -->"
+        raw_marker = f"<!-- {expected} -->"
+        with TemporaryDirectory() as tmp_dir:
+            dot_path = Path(tmp_dir) / "graph.dot"
+            svg_path = Path(tmp_dir) / "graph.svg"
+            dot_path.write_text("digraph g {}\n", encoding="utf-8")
+
+            def fake_run(args, check, encoding, capture_output):
+                output_index = args.index("-o") + 1
+                out_path = Path(args[output_index])
+                out_path.write_text(
+                    '<?xml version="1.0" encoding="UTF-8"?>\n'
+                    f"{escaped_marker}\n"
+                    '<svg xmlns="http://www.w3.org/2000/svg"></svg>\n',
+                    encoding="utf-8",
+                )
+
+            with (
+                mock.patch.object(survey_dot, "_find_dot", return_value="dot"),
+                mock.patch(
+                    "tmpl_survey.survey_dot.subprocess.run", side_effect=fake_run
+                ),
+            ):
+                rendered = survey_dot.render_svg(
+                    str(dot_path),
+                    str(svg_path),
+                    generator_file=__file__,
+                )
+
+            svg_text = svg_path.read_text(encoding="utf-8")
+
+        self.assertTrue(rendered)
+        self.assertIn(raw_marker, svg_text)
+        self.assertNotIn(escaped_marker, svg_text)
 
     def test_pipeline_dot_text_includes_provenance_comment(self):
         expected = self._generated_by()
