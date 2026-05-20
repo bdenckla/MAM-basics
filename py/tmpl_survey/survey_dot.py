@@ -26,6 +26,8 @@ _FOCUS_NODE_ATTR_PARTS = (
     'style="filled"',
     "penwidth=2.5",
 )
+_EDGE_LABEL_MAX_CHARS = 72
+_ONE_HOP_LABEL_MAX_PARTS = 2
 
 
 def _edges_from_stack_counts(stack_counts, discarded=None):
@@ -392,6 +394,65 @@ def _edge_mode_end_id(start):
     return f"{start}::stack-end"
 
 
+def _is_start_to_end_one_hop_edge(edge, starts):
+    """Return True when an edge goes directly from a start to its stack-end."""
+    src, dst, _tmpl_name = edge
+    return src in starts and dst == _edge_mode_end_id(src)
+
+
+def _format_collapsed_one_hop_label(template_counts):
+    """Return a stable full label for collapsed one-hop templates on one edge."""
+    parts = [
+        f"{tmpl_name} ({count})"
+        for tmpl_name, count in sorted(template_counts.items())
+    ]
+    return " | ".join(parts)
+
+
+def _format_collapsed_one_hop_short_label(template_counts, tmpl_abbrevs):
+    """Return a stable shortened label for collapsed one-hop templates on one edge."""
+    parts = [
+        f"{tmpl_abbrevs[tmpl_name]} ({count})"
+        for tmpl_name, count in sorted(template_counts.items())
+    ]
+    return " | ".join(parts)
+
+
+def _truncate_edge_label(display_label, full_label):
+    """Clamp very long edge labels while preserving full text in tooltip."""
+    if len(display_label) <= _EDGE_LABEL_MAX_CHARS:
+        return display_label
+    return display_label[: _EDGE_LABEL_MAX_CHARS - 1] + "…"
+
+
+def _compact_one_hop_short_label(short_label):
+    """Compact long one-hop merged labels to avoid excessively wide diagrams."""
+    parts = short_label.split(" | ")
+    if len(parts) <= _ONE_HOP_LABEL_MAX_PARTS and len(short_label) <= _EDGE_LABEL_MAX_CHARS:
+        return short_label
+    if len(parts) <= 1:
+        return _truncate_edge_label(short_label, short_label)
+
+    max_kept = min(_ONE_HOP_LABEL_MAX_PARTS, len(parts) - 1)
+    for keep_count in range(max_kept, 0, -1):
+        remaining = len(parts) - keep_count
+        candidate = " | ".join([*parts[:keep_count], f"… +{remaining} more"])
+        if len(candidate) <= _EDGE_LABEL_MAX_CHARS or keep_count == 1:
+            return candidate
+    return "…"
+
+
+def _single_template_edge_label_and_tooltip(tmpl_name, count, tmpl_abbrevs):
+    """Return (label, tooltip) for a single-template edge label."""
+    full_label = f"{tmpl_name} ({count})"
+    short_name = tmpl_abbrevs[tmpl_name]
+    short_label = f"{short_name} ({count})"
+    display_label = _truncate_edge_label(short_label, full_label)
+    if display_label == full_label:
+        return display_label, None
+    return display_label, full_label
+
+
 def _write_edge_templates_dot(paths, fp, note=_DEFAULT_NOTE, generated_by=None):
     """Write edge-labeled DOT where templates are on edges, not nodes."""
     starts = {start for start, _template_path, _count in paths}
@@ -460,11 +521,44 @@ def _write_edge_templates_dot(paths, fp, note=_DEFAULT_NOTE, generated_by=None):
         fp.write("\n")
 
     fp.write("    // Edge-labeled templates\n")
-    for (src, dst, tmpl_name), count in sorted(edge_counts.items()):
-        edge_label = f"{tmpl_name} ({count})"
+    one_hop_counts = {}
+    remaining_edges = {}
+    for edge, count in edge_counts.items():
+        if _is_start_to_end_one_hop_edge(edge, starts):
+            src, dst, tmpl_name = edge
+            agg = one_hop_counts.setdefault((src, dst), {})
+            agg[tmpl_name] = agg.get(tmpl_name, 0) + count
+        else:
+            remaining_edges[edge] = count
+
+    edge_template_names = {tmpl_name for (_src, _dst, tmpl_name) in edge_counts}
+    tmpl_abbrevs = _build_abbreviations(edge_template_names)
+
+    for (src, dst, tmpl_name), count in sorted(remaining_edges.items()):
+        edge_label, edge_tooltip = _single_template_edge_label_and_tooltip(
+            tmpl_name,
+            count,
+            tmpl_abbrevs,
+        )
+        edge_attr = f"label={_dot_quoted(edge_label)}"
+        if edge_tooltip:
+            edge_attr += f", tooltip={_dot_quoted(edge_tooltip)}"
         fp.write(
             f"    {_dot_quoted(src)} -> {_dot_quoted(dst)}"
-            f" [label={_dot_quoted(edge_label)}];\n"
+            f" [{edge_attr}];\n"
+        )
+
+    for (src, dst), template_counts in sorted(one_hop_counts.items()):
+        edge_full_label = _format_collapsed_one_hop_label(template_counts)
+        edge_label = _format_collapsed_one_hop_short_label(template_counts, tmpl_abbrevs)
+        edge_label = _compact_one_hop_short_label(edge_label)
+        edge_label = _truncate_edge_label(edge_label, edge_full_label)
+        edge_attr = f"label={_dot_quoted(edge_label)}"
+        if edge_label != edge_full_label:
+            edge_attr += f", tooltip={_dot_quoted(edge_full_label)}"
+        fp.write(
+            f"    {_dot_quoted(src)} -> {_dot_quoted(dst)}"
+            f" [{edge_attr}];\n"
         )
     fp.write("}\n")
 

@@ -38,49 +38,10 @@ digraph template_call_graph_templates_as_edges {
     graph [label="מ:כפול, מ:קישור בהערה, מ:קישור פנימי בהערה, מודגש, נוסח, ש have been discarded", labelloc=b, fontsize=10];
 
     // Edge-labeled templates
-    "C" -> "C::stack-end" [label="מ:אין פרשה בתחילת פרק (139)"];
-    "C" -> "C::stack-end" [label="מ:אין פרשה בתחילת פרק בספרי אמ״ת (33)"];
-    "C" -> "C::stack-end" [label="מ:אין רווח של פרשה בתחילת פרשת השבוע (1)"];
-    "C" -> "C::stack-end" [label="מ:הערה-2 (4)"];
-    "C" -> "C::stack-end" [label="מ:ספר חדש (24)"];
-    "C" -> "C::stack-end" [label="מ:רווח בתרי עשר בפסוק הראשון (12)"];
-    "C" -> "C::stack-end" [label="מ:רווח לספר בתהלים בפסוק הראשון (5)"];
-    "C" -> "C::stack-end" [label="מ:ששש (100)"];
-    "C" -> "C::stack-end" [label="סס (1513)"];
-    "C" -> "C::stack-end" [label="ססס (324)"];
-    "C" -> "C::stack-end" [label="פפ (1541)"];
-    "C" -> "C::stack-end" [label="פפפ (3)"];
-    "C" -> "C::stack-end" [label="ר1 (2)"];
-    "C" -> "C::stack-end" [label="ר4 (4269)"];
     "C" -> "C::stack::מ:הערה-2" [label="מ:הערה-2 (3)"];
     "C::stack::מ:הערה-2" -> "C::stack-end" [label="פפ (3)"];
-    "D" -> "D::stack-end" [label="מ:פסוק (895)"];
     "D" -> "D::stack::מ:פסוק" [label="מ:פסוק (532)"];
     "D::stack::מ:פסוק" -> "D::stack-end" [label="מ:עלייה (532)"];
-    "E" -> "E::stack-end" [label="כו״ק (884)"];
-    "E" -> "E::stack-end" [label="כתיב ולא קרי (8)"];
-    "E" -> "E::stack-end" [label="מ:אות-מיוחדת-במילה (79)"];
-    "E" -> "E::stack-end" [label="מ:דחי (2287)"];
-    "E" -> "E::stack-end" [label="מ:הערה-2 (27)"];
-    "E" -> "E::stack-end" [label="מ:כו״ק מיוחד (37)"];
-    "E" -> "E::stack-end" [label="מ:לגרמיה-2 (1811)"];
-    "E" -> "E::stack-end" [label="מ:מקף אפור (114)"];
-    "E" -> "E::stack-end" [label="מ:נו״ן הפוכה (9)"];
-    "E" -> "E::stack-end" [label="מ:פסק (515)"];
-    "E" -> "E::stack-end" [label="מ:צינור (56)"];
-    "E" -> "E::stack-end" [label="מ:קו״כ-אם-2 (148)"];
-    "E" -> "E::stack-end" [label="מ:קמץ (363)"];
-    "E" -> "E::stack-end" [label="מ:ששש (228)"];
-    "E" -> "E::stack-end" [label="סס (53)"];
-    "E" -> "E::stack-end" [label="ססס (106)"];
-    "E" -> "E::stack-end" [label="פפ (11)"];
-    "E" -> "E::stack-end" [label="פפפ (15)"];
-    "E" -> "E::stack-end" [label="קו״כ (126)"];
-    "E" -> "E::stack-end" [label="קרי ולא כתיב (9)"];
-    "E" -> "E::stack-end" [label="ר0 (536)"];
-    "E" -> "E::stack-end" [label="ר1 (4618)"];
-    "E" -> "E::stack-end" [label="ר2 (568)"];
-    "E" -> "E::stack-end" [label="ר3 (170)"];
     "E" -> "E::stack::כו״ק" [label="כו״ק (28)"];
     "E" -> "E::stack::מ:אות-מיוחדת-במילה" [label="מ:אות-מיוחדת-במילה (85)"];
     "E" -> "E::stack::מ:דחי" [label="מ:דחי (12)"];
@@ -115,4 +76,7 @@ digraph template_call_graph_templates_as_edges {
     "E::stack::מ:קמץ" -> "E::stack-end" [label="מ:דחי (14)"];
     "E::stack::מ:קמץ" -> "E::stack-end" [label="מ:מקף אפור (2)"];
     "E::stack::קו״כ" -> "E::stack-end" [label="מ:לגרמיה-2 (1)"];
+    "C" -> "C::stack-end" [label="מ:אין … פרק (139) | מ:אין … אמ״ת (33) | … +12 more", tooltip="מ:אין פרשה בתחילת פרק (139) | מ:אין פרשה בתחילת פרק בספרי אמ״ת (33) | מ:אין רווח של פרשה בתחילת פרשת השבוע (1) | מ:הערה-2 (4) | מ:ספר חדש (24) | מ:רווח בתרי עשר בפסוק הראשון (12) | מ:רווח לספר בתהלים בפסוק הראשון (5) | מ:ששש (100) | סס (1513) | ססס (324) | פפ (1541) | פפפ (3) | ר1 (2) | ר4 (4269)"];
+    "D" -> "D::stack-end" [label="מ:פסוק (895)"];
+    "E" -> "E::stack-end" [label="כו״ק (884) | כתיב … קרי (8) | … +22 more", tooltip="כו״ק (884) | כתיב ולא קרי (8) | מ:אות-מיוחדת-במילה (79) | מ:דחי (2287) | מ:הערה-2 (27) | מ:כו״ק מיוחד (37) | מ:לגרמיה-2 (1811) | מ:מקף אפור (114) | מ:נו״ן הפוכה (9) | מ:פסק (515) | מ:צינור (56) | מ:קו״כ-אם-2 (148) | מ:קמץ (363) | מ:ששש (228) | סס (53) | ססס (106) | פפ (11) | פפפ (15) | קו״כ (126) | קרי ולא כתיב (9) | ר0 (536) | ר1 (4618) | ר2 (568) | ר3 (170)"];
 }
