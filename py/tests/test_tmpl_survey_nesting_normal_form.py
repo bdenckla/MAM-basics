@@ -26,7 +26,7 @@ class TestTmplSurveyNestingNormalForm(unittest.TestCase):
 
     def test_regex_like_grammar_shape(self):
         self.assertEqual(
-            "rank-1?rank-2?rank-3?rank-4?rank-5?rank-6?",
+            "rank-1?rank-2?rank-3?rank-4?rank-5?rank-6?rank-7?",
             nnf.regex_like_grammar(),
         )
 

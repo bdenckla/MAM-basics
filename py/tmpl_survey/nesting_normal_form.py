@@ -4,7 +4,7 @@ We project each observed stack path onto a small set of ranked templates and
 require the ranked projection to be strictly increasing in rank.
 
 Regex-like shape for the ranked projection:
-    rank-1?rank-2?rank-3?rank-4?rank-5?rank-6?
+    rank-1?rank-2?rank-3?rank-4?rank-5?rank-6?rank-7?
 
 Where, by default:
 - rank-1: מ:כפול
@@ -13,6 +13,8 @@ Where, by default:
 - rank-4: מ:קמץ
 - rank-5: מ:דחי
 - rank-6: מ:אות-מיוחדת-במילה
+- rank-7: terminal note markers
+    (מ:לגרמיה-2, מ:פסק, מ:מקף אפור, מ:אות-ק, מ:אות-ג, מ:אות תלויה)
 """
 
 from __future__ import annotations
@@ -32,6 +34,19 @@ _DEFAULT_RANK_GROUPS: tuple[tuple[str, frozenset[str]], ...] = (
     ("rank-4", frozenset({"מ:קמץ"})),
     ("rank-5", frozenset({"מ:דחי"})),
     ("rank-6", frozenset({"מ:אות-מיוחדת-במילה"})),
+    (
+        "rank-7",
+        frozenset(
+            {
+                "מ:לגרמיה-2",
+                "מ:פסק",
+                "מ:מקף אפור",
+                "מ:אות-ק",
+                "מ:אות-ג",
+                "מ:אות תלויה",
+            }
+        ),
+    ),
 )
 _COLUMN_LETTERS: tuple[str, str, str] = ("C", "D", "E")
 
@@ -75,7 +90,7 @@ def default_case_rank_maps() -> Dict[str, Dict[str, int]]:
 
 def regex_like_grammar() -> str:
     """Return the rank grammar in compact regex-like notation."""
-    return "rank-1?rank-2?rank-3?rank-4?rank-5?rank-6?"
+    return "rank-1?rank-2?rank-3?rank-4?rank-5?rank-6?rank-7?"
 
 
 def _ranked_projection(full_path: Sequence[str], rank_map: RankMap) -> List[str]:
