@@ -82,6 +82,80 @@ def _ranked_projection(full_path: Sequence[str], rank_map: RankMap) -> List[str]
     return [name for name in full_path if name in rank_map]
 
 
+def _full_template_path(callee: str, stack_str: str) -> Tuple[str, ...]:
+    """Return full template path as stack templates + callee template.
+
+    Stack strings are prefixed by column letter (C/D/E) in survey data;
+    that prefix is removed so coverage reflects only template symbols.
+    """
+    parts = [p for p in stack_str.split("/") if p]
+    if parts and parts[0] in _COLUMN_LETTERS:
+        parts = parts[1:]
+    return tuple(parts + [callee])
+
+
+def summarize_rank_coverage_counts(
+    stack_counts: StackCounts,
+    rank_map: RankMap,
+) -> Dict[str, int]:
+    """Summarize weighted rank-coverage categories over observed stack paths.
+
+    Categories use coverage cov on full template path (stack templates + callee):
+    - fully_checked: cov = 1
+    - partially_checked: 0 < cov < 1
+    - totally_unchecked: cov = 0
+    """
+    fully_checked = 0
+    partially_checked = 0
+    totally_unchecked = 0
+
+    for (callee, stack_str), count in stack_counts.items():
+        if count <= 0:
+            continue
+        full_path = _full_template_path(callee, stack_str)
+        if not full_path:
+            continue
+        ranked_count = sum(1 for name in full_path if name in rank_map)
+        if ranked_count == len(full_path):
+            fully_checked += count
+        elif ranked_count == 0:
+            totally_unchecked += count
+        else:
+            partially_checked += count
+
+    return {
+        "fully_checked": fully_checked,
+        "partially_checked": partially_checked,
+        "totally_unchecked": totally_unchecked,
+        "total": fully_checked + partially_checked + totally_unchecked,
+    }
+
+
+def summarize_rank_coverage_by_case(
+    stack_counts: StackCounts,
+    dataset_key: str,
+    case_rank_maps: Mapping[str, RankMap],
+) -> Dict[str, Dict[str, int]]:
+    """Summarize coverage categories for C/D/E cases of one dataset."""
+    assert dataset_key in ("plain", "plus"), dataset_key
+
+    by_case: Dict[str, Dict[str, int]] = {}
+    for column in _COLUMN_LETTERS:
+        case_key = f"{dataset_key}-{column}"
+        rank_map = case_rank_maps.get(case_key)
+        if rank_map is None:
+            raise ValueError(
+                f"Missing rank map for case {case_key!r}. "
+                "Expected case rank maps for all columns C/D/E."
+            )
+        column_stack_counts = _stack_counts_for_column(stack_counts, column)
+        by_case[case_key] = summarize_rank_coverage_counts(
+            column_stack_counts,
+            rank_map,
+        )
+    return by_case
+
+
 def find_rank_violations(
     stack_counts: StackCounts,
     rank_map: RankMap | None = None,

@@ -156,6 +156,58 @@ class TestTmplSurveyNestingNormalForm(unittest.TestCase):
             )
         self.assertIn("plus-E", str(ctx.exception))
 
+    def test_summarize_rank_coverage_counts_classifies_cov_buckets(self):
+        rank_map = nnf.build_rank_map((
+            ("rank-1", ("A",)),
+            ("rank-2", ("B",)),
+            ("rank-3", ("C",)),
+        ))
+        stack_counts = {
+            # full template path A/B/C => cov=1
+            ("C", "C/A/B"): 2,
+            # full template path A/X/C => 0<cov<1
+            ("C", "C/A/X"): 3,
+            # full template path X/Y/Z => cov=0
+            ("Z", "C/X/Y"): 5,
+        }
+        summary = nnf.summarize_rank_coverage_counts(stack_counts, rank_map)
+        self.assertEqual(
+            {
+                "fully_checked": 2,
+                "partially_checked": 3,
+                "totally_unchecked": 5,
+                "total": 10,
+            },
+            summary,
+        )
+
+    def test_summarize_rank_coverage_by_case_returns_dataset_case_keys(self):
+        stack_counts = {
+            ("B", "C/A"): 1,
+            ("B", "D/A"): 1,
+            ("Z", "E/X"): 1,
+        }
+        a_before_b = nnf.build_rank_map((
+            ("rank-1", ("A",)),
+            ("rank-2", ("B",)),
+        ))
+        case_rank_maps = {
+            "plain-C": a_before_b,
+            "plain-D": a_before_b,
+            "plain-E": a_before_b,
+        }
+
+        summary = nnf.summarize_rank_coverage_by_case(
+            stack_counts,
+            dataset_key="plain",
+            case_rank_maps=case_rank_maps,
+        )
+
+        self.assertEqual({"plain-C", "plain-D", "plain-E"}, set(summary))
+        self.assertEqual(1, summary["plain-C"]["fully_checked"])
+        self.assertEqual(1, summary["plain-D"]["fully_checked"])
+        self.assertEqual(1, summary["plain-E"]["totally_unchecked"])
+
     def test_infer_expanded_stack_grammar_has_edges_and_order(self):
         baseline = {
             ("C", "R/A/B"): 2,

@@ -1226,5 +1226,43 @@
       "count": 3288,
       "variations": 1
     }
-  ]
+  ],
+  "normal_order_cov_counts_by_case": {
+    "plain-C": {
+      "fully_checked": 277,
+      "partially_checked": 242,
+      "totally_unchecked": 16700,
+      "total": 17219
+    },
+    "plain-D": {
+      "fully_checked": 35,
+      "partially_checked": 47,
+      "totally_unchecked": 23688,
+      "total": 23770
+    },
+    "plain-E": {
+      "fully_checked": 7189,
+      "partially_checked": 3814,
+      "totally_unchecked": 9565,
+      "total": 20568
+    },
+    "plus-C": {
+      "fully_checked": 273,
+      "partially_checked": 242,
+      "totally_unchecked": 7746,
+      "total": 8261
+    },
+    "plus-D": {
+      "fully_checked": 35,
+      "partially_checked": 47,
+      "totally_unchecked": 1381,
+      "total": 1463
+    },
+    "plus-E": {
+      "fully_checked": 7642,
+      "partially_checked": 3713,
+      "totally_unchecked": 8540,
+      "total": 19895
+    }
+  }
 }
