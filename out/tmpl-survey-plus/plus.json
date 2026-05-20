@@ -1246,5 +1246,163 @@
       "totally_unchecked": 0,
       "total": 4181
     }
+  },
+  "normal_order_cov_top_paths_by_case": {
+    "plus-C": {
+      "fully_checked": [],
+      "partially_checked": [
+        {
+          "stack_path": "C/נוסח/פפ",
+          "count": 94
+        },
+        {
+          "stack_path": "C/נוסח/סס",
+          "count": 69
+        },
+        {
+          "stack_path": "C/נוסח/ר4",
+          "count": 38
+        },
+        {
+          "stack_path": "C/נוסח/ססס",
+          "count": 14
+        },
+        {
+          "stack_path": "C/נוסח/ש",
+          "count": 14
+        },
+        {
+          "stack_path": "C/נוסח/מ:הערה-2",
+          "count": 4
+        },
+        {
+          "stack_path": "C/נוסח/מ:הערה-2/פפ",
+          "count": 3
+        },
+        {
+          "stack_path": "C/נוסח/ר1",
+          "count": 2
+        },
+        {
+          "stack_path": "C/נוסח/מ:אין פרשה בתחילת פרק",
+          "count": 1
+        },
+        {
+          "stack_path": "C/נוסח/מ:אין פרשה בתחילת פרק בספרי אמ״ת",
+          "count": 1
+        }
+      ],
+      "totally_unchecked": []
+    },
+    "plus-D": {
+      "fully_checked": [],
+      "partially_checked": [
+        {
+          "stack_path": "D/נוסח/מ:פסוק",
+          "count": 35
+        },
+        {
+          "stack_path": "D/נוסח/מ:פסוק/מ:עלייה",
+          "count": 11
+        },
+        {
+          "stack_path": "D/נוסח/ש",
+          "count": 1
+        }
+      ],
+      "totally_unchecked": [
+        {
+          "stack_path": "D/מ:פסוק/מ:עלייה",
+          "count": 521
+        }
+      ]
+    },
+    "plus-E": {
+      "fully_checked": [
+        {
+          "stack_path": "E/נוסח/כו״ק",
+          "count": 143
+        },
+        {
+          "stack_path": "E/נוסח/מ:לגרמיה-2",
+          "count": 78
+        },
+        {
+          "stack_path": "E/נוסח/מ:אות-מיוחדת-במילה",
+          "count": 75
+        },
+        {
+          "stack_path": "E/נוסח/מ:אות-מיוחדת-במילה/מ:אות-ג",
+          "count": 52
+        },
+        {
+          "stack_path": "E/מ:כפול/נוסח",
+          "count": 42
+        },
+        {
+          "stack_path": "E/נוסח/מ:דחי",
+          "count": 37
+        },
+        {
+          "stack_path": "E/נוסח/מ:קמץ",
+          "count": 27
+        },
+        {
+          "stack_path": "E/נוסח/מ:אות-מיוחדת-במילה/מ:אות-ק",
+          "count": 25
+        },
+        {
+          "stack_path": "E/נוסח/מ:הערה-2",
+          "count": 23
+        },
+        {
+          "stack_path": "E/נוסח/מ:פסק",
+          "count": 22
+        }
+      ],
+      "partially_checked": [
+        {
+          "stack_path": "E/נוסח/ש",
+          "count": 3215
+        },
+        {
+          "stack_path": "E/מ:כפול/נוסח/ש",
+          "count": 58
+        },
+        {
+          "stack_path": "E/נוסח/ר3",
+          "count": 47
+        },
+        {
+          "stack_path": "E/נוסח/ר1",
+          "count": 36
+        },
+        {
+          "stack_path": "E/נוסח/מ:קישור בהערה",
+          "count": 27
+        },
+        {
+          "stack_path": "E/נוסח/מודגש",
+          "count": 19
+        },
+        {
+          "stack_path": "E/מ:כפול/סס",
+          "count": 18
+        },
+        {
+          "stack_path": "E/נוסח/פפפ",
+          "count": 6
+        },
+        {
+          "stack_path": "E/נוסח/סס",
+          "count": 4
+        },
+        {
+          "stack_path": "E/נוסח/פפ",
+          "count": 4
+        }
+      ],
+      "totally_unchecked": []
+    }
   }
 }

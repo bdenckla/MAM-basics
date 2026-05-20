@@ -199,6 +199,79 @@ class TestTmplSurveyNestingNormalForm(unittest.TestCase):
             summary,
         )
 
+    def test_summarize_rank_coverage_top_paths_returns_counts_per_bucket(self):
+        rank_map = nnf.build_rank_map((
+            ("rank-1", ("A",)),
+            ("rank-2", ("B",)),
+            ("rank-3", ("C",)),
+        ))
+        stack_counts = {
+            # singleton is excluded
+            ("A", "E"): 7,
+            # fully checked
+            ("C", "E/A/B"): 2,
+            # partially checked
+            ("C", "E/A/X"): 3,
+            ("C", "E/A/Y"): 5,
+            # totally unchecked
+            ("Z", "E/X/Y"): 5,
+            ("Z", "E/Y/X"): 1,
+        }
+        top_paths = nnf.summarize_rank_coverage_top_paths(
+            stack_counts,
+            rank_map,
+            max_paths=1,
+        )
+        self.assertEqual(
+            [{"stack_path": "E/A/B/C", "count": 2}],
+            top_paths["fully_checked"],
+        )
+        self.assertEqual(
+            [{"stack_path": "E/A/Y/C", "count": 5}],
+            top_paths["partially_checked"],
+        )
+        self.assertEqual(
+            [{"stack_path": "E/X/Y/Z", "count": 5}],
+            top_paths["totally_unchecked"],
+        )
+
+    def test_summarize_rank_coverage_top_paths_by_case_returns_case_keys(self):
+        stack_counts = {
+            ("B", "C/A"): 1,
+            ("B", "D/A"): 2,
+            ("Z", "E/X"): 3,
+        }
+        a_before_b = nnf.build_rank_map((
+            ("rank-1", ("A",)),
+            ("rank-2", ("B",)),
+        ))
+        case_rank_maps = {
+            "plain-C": a_before_b,
+            "plain-D": a_before_b,
+            "plain-E": a_before_b,
+        }
+
+        by_case = nnf.summarize_rank_coverage_top_paths_by_case(
+            stack_counts,
+            dataset_key="plain",
+            case_rank_maps=case_rank_maps,
+            max_paths=10,
+        )
+
+        self.assertEqual({"plain-C", "plain-D", "plain-E"}, set(by_case))
+        self.assertEqual(
+            [{"stack_path": "C/A/B", "count": 1}],
+            by_case["plain-C"]["fully_checked"],
+        )
+        self.assertEqual(
+            [{"stack_path": "D/A/B", "count": 2}],
+            by_case["plain-D"]["fully_checked"],
+        )
+        self.assertEqual(
+            [{"stack_path": "E/X/Z", "count": 3}],
+            by_case["plain-E"]["totally_unchecked"],
+        )
+
     def test_summarize_rank_coverage_by_case_returns_dataset_case_keys(self):
         stack_counts = {
             ("B", "C/A"): 1,

@@ -113,6 +113,32 @@ def _is_singleton_template_stack(full_template_path: Sequence[str]) -> bool:
     return len(full_template_path) <= 1
 
 
+_CHECKEDNESS_KEYS: tuple[str, str, str] = (
+    "fully_checked",
+    "partially_checked",
+    "totally_unchecked",
+)
+
+
+def _checkedness_bucket(
+    full_template_path: Sequence[str],
+    rank_map: RankMap,
+) -> str | None:
+    if _is_singleton_template_stack(full_template_path):
+        return None
+    ranked_count = sum(1 for name in full_template_path if name in rank_map)
+    if ranked_count == len(full_template_path):
+        return "fully_checked"
+    if ranked_count == 0:
+        return "totally_unchecked"
+    return "partially_checked"
+
+
+def _full_stack_path_for_output(callee: str, stack_str: str) -> str:
+    parts = [p for p in stack_str.split("/") if p]
+    return "/".join(parts + [callee])
+
+
 def summarize_rank_coverage_counts(
     stack_counts: StackCounts,
     rank_map: RankMap,
@@ -134,12 +160,12 @@ def summarize_rank_coverage_counts(
         if count <= 0:
             continue
         full_path = _full_template_path(callee, stack_str)
-        if _is_singleton_template_stack(full_path):
+        bucket = _checkedness_bucket(full_path, rank_map)
+        if bucket is None:
             continue
-        ranked_count = sum(1 for name in full_path if name in rank_map)
-        if ranked_count == len(full_path):
+        if bucket == "fully_checked":
             fully_checked += count
-        elif ranked_count == 0:
+        elif bucket == "totally_unchecked":
             totally_unchecked += count
         else:
             partially_checked += count
@@ -150,6 +176,45 @@ def summarize_rank_coverage_counts(
         "totally_unchecked": totally_unchecked,
         "total": fully_checked + partially_checked + totally_unchecked,
     }
+
+
+def summarize_rank_coverage_top_paths(
+    stack_counts: StackCounts,
+    rank_map: RankMap,
+    max_paths: int = 10,
+) -> Dict[str, List[dict[str, object]]]:
+    """Return top full stack paths per checkedness bucket.
+
+    Paths are emitted as strings that include column prefix and callee template,
+    for example: E/מ:כפול/נוסח/ש
+    """
+    if max_paths < 0:
+        raise ValueError(f"max_paths must be >= 0, got {max_paths}")
+
+    path_counts = {
+        key: defaultdict(int) for key in _CHECKEDNESS_KEYS
+    }
+    for (callee, stack_str), count in stack_counts.items():
+        if count <= 0:
+            continue
+        full_path = _full_template_path(callee, stack_str)
+        bucket = _checkedness_bucket(full_path, rank_map)
+        if bucket is None:
+            continue
+        path_key = _full_stack_path_for_output(callee, stack_str)
+        path_counts[bucket][path_key] += count
+
+    top_paths_by_bucket: Dict[str, List[dict[str, object]]] = {}
+    for bucket in _CHECKEDNESS_KEYS:
+        ranked = sorted(
+            path_counts[bucket].items(),
+            key=lambda kv: (-kv[1], kv[0]),
+        )
+        top_paths_by_bucket[bucket] = [
+            {"stack_path": stack_path, "count": count}
+            for stack_path, count in ranked[:max_paths]
+        ]
+    return top_paths_by_bucket
 
 
 def summarize_rank_coverage_by_case(
@@ -173,6 +238,33 @@ def summarize_rank_coverage_by_case(
         by_case[case_key] = summarize_rank_coverage_counts(
             column_stack_counts,
             rank_map,
+        )
+    return by_case
+
+
+def summarize_rank_coverage_top_paths_by_case(
+    stack_counts: StackCounts,
+    dataset_key: str,
+    case_rank_maps: Mapping[str, RankMap],
+    max_paths: int = 10,
+) -> Dict[str, Dict[str, List[dict[str, object]]]]:
+    """Return top full stack paths per checkedness bucket for C/D/E cases."""
+    assert dataset_key in ("plain", "plus"), dataset_key
+
+    by_case: Dict[str, Dict[str, List[dict[str, object]]]] = {}
+    for column in _COLUMN_LETTERS:
+        case_key = f"{dataset_key}-{column}"
+        rank_map = case_rank_maps.get(case_key)
+        if rank_map is None:
+            raise ValueError(
+                f"Missing rank map for case {case_key!r}. "
+                "Expected case rank maps for all columns C/D/E."
+            )
+        column_stack_counts = _stack_counts_for_column(stack_counts, column)
+        by_case[case_key] = summarize_rank_coverage_top_paths(
+            column_stack_counts,
+            rank_map,
+            max_paths=max_paths,
         )
     return by_case
 
