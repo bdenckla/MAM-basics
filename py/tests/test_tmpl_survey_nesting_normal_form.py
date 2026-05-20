@@ -2,10 +2,28 @@
 
 import unittest
 
+import main_tmpl_survey
 from tmpl_survey import nesting_normal_form as nnf
 
 
 class TestTmplSurveyNestingNormalForm(unittest.TestCase):
+    def test_plus_e_uses_custom_rank_overrides(self):
+        case_rank_maps = main_tmpl_survey._case_rank_maps(
+            main_tmpl_survey._default_case_rank_groups()
+        )
+
+        plus_e = case_rank_maps["plus-E"]
+        self.assertEqual(plus_e["כו״ק"], plus_e["מ:כו״ק מיוחד"])
+        self.assertEqual(plus_e["כו״ק"], plus_e["מ:קו״כ-אם-2"])
+        self.assertEqual(plus_e["כו״ק"], plus_e["קו״כ"])
+        self.assertEqual(plus_e["מ:דחי"], plus_e["מ:הערה-2"])
+
+        plain_e = case_rank_maps["plain-E"]
+        self.assertNotIn("מ:כו״ק מיוחד", plain_e)
+        self.assertNotIn("מ:קו״כ-אם-2", plain_e)
+        self.assertNotIn("קו״כ", plain_e)
+        self.assertNotIn("מ:הערה-2", plain_e)
+
     def test_regex_like_grammar_shape(self):
         self.assertEqual("a?b?c?d?e?f?", nnf.regex_like_grammar())
 
