@@ -7,7 +7,13 @@ from author_util.claim import ClaimCollection
 from mb_misc import styles_mam_parsed
 
 
-def _run_mam_parsed_authored_traversal(*, claims: ClaimCollection, tdm_ch=None):
+def _run_mam_parsed_authored_traversal(
+    *,
+    claims: ClaimCollection,
+    tdm_ch_root=None,
+    tdm_ch_plain=None,
+    tdm_ch_plus=None,
+):
     """Run authored traversal to emit explicit claims, optionally writing docs."""
     from author import mp_index
     from author import mpplain
@@ -31,7 +37,7 @@ def _run_mam_parsed_authored_traversal(*, claims: ClaimCollection, tdm_ch=None):
     from author import mpplus_plain_only_templates
     from author import mpplus_poetic_spacing
 
-    if tdm_ch is None:
+    if tdm_ch_root is None and tdm_ch_plain is None and tdm_ch_plus is None:
         mp_index.build_body(claims=claims)
         mpplain.build_body(claims=claims)
         mpplus.build_body(claims=claims)
@@ -55,27 +61,32 @@ def _run_mam_parsed_authored_traversal(*, claims: ClaimCollection, tdm_ch=None):
         mpplus_poetic_spacing.build_body(claims=claims)
         return
 
-    mp_index.gen_html_file(tdm_ch, claims=claims)
-    mpplain.gen_html_file(tdm_ch, claims=claims)
-    mpplus.gen_html_file(tdm_ch, claims=claims)
-    mpplus_template_call_graphs.gen_html_file(tdm_ch, claims=claims)
-    mpplus_aot.gen_html_file(tdm_ch, claims=claims)
-    mpplus_kq_am2.gen_html_file(tdm_ch, claims=claims)
-    mpplus_kq_special.gen_html_file(tdm_ch, claims=claims)
-    mpplain_kq_special.gen_html_file(tdm_ch, claims=claims)
-    mpplus_haarah_2.gen_html_file(tdm_ch, claims=claims)
-    mpplus_kaful.gen_html_file(tdm_ch, claims=claims)
-    mpplain_kaful.gen_html_file(tdm_ch, claims=claims)
-    mpplain_multimark.gen_html_file(tdm_ch, claims=claims)
-    mpplus_good_ending_plus_field.gen_html_file(tdm_ch, claims=claims)
-    mpplus_good_ending_tmpl.gen_html_file(tdm_ch, claims=claims)
-    mpplain_good_ending_tmpl.gen_html_file(tdm_ch, claims=claims)
-    mpplus_nusach.gen_html_file(tdm_ch, claims=claims)
-    mpplain_kq_am2.gen_html_file(tdm_ch, claims=claims)
-    mpplain_nusach.gen_html_file(tdm_ch, claims=claims)
-    mpplus_diff_from_plain.gen_html_file(tdm_ch, claims=claims)
-    mpplus_plain_only_templates.gen_html_file(tdm_ch, claims=claims)
-    mpplus_poetic_spacing.gen_html_file(tdm_ch, claims=claims)
+    assert tdm_ch_root is not None
+    assert tdm_ch_plain is not None
+    assert tdm_ch_plus is not None
+
+    mp_index.gen_html_file(tdm_ch_root, claims=claims)
+    mpplain.gen_html_file(tdm_ch_plain, claims=claims)
+    mpplain_kq_special.gen_html_file(tdm_ch_plain, claims=claims)
+    mpplain_kaful.gen_html_file(tdm_ch_plain, claims=claims)
+    mpplain_multimark.gen_html_file(tdm_ch_plain, claims=claims)
+    mpplain_good_ending_tmpl.gen_html_file(tdm_ch_plain, claims=claims)
+    mpplain_kq_am2.gen_html_file(tdm_ch_plain, claims=claims)
+    mpplain_nusach.gen_html_file(tdm_ch_plain, claims=claims)
+
+    mpplus.gen_html_file(tdm_ch_plus, claims=claims)
+    mpplus_template_call_graphs.gen_html_file(tdm_ch_plus, claims=claims)
+    mpplus_aot.gen_html_file(tdm_ch_plus, claims=claims)
+    mpplus_kq_am2.gen_html_file(tdm_ch_plus, claims=claims)
+    mpplus_kq_special.gen_html_file(tdm_ch_plus, claims=claims)
+    mpplus_haarah_2.gen_html_file(tdm_ch_plus, claims=claims)
+    mpplus_kaful.gen_html_file(tdm_ch_plus, claims=claims)
+    mpplus_good_ending_plus_field.gen_html_file(tdm_ch_plus, claims=claims)
+    mpplus_good_ending_tmpl.gen_html_file(tdm_ch_plus, claims=claims)
+    mpplus_nusach.gen_html_file(tdm_ch_plus, claims=claims)
+    mpplus_diff_from_plain.gen_html_file(tdm_ch_plus, claims=claims)
+    mpplus_plain_only_templates.gen_html_file(tdm_ch_plus, claims=claims)
+    mpplus_poetic_spacing.gen_html_file(tdm_ch_plus, claims=claims)
 
 
 def build_docs_with_explicit_claims(
@@ -86,9 +97,21 @@ def build_docs_with_explicit_claims(
     """Generate all MAM-parsed authored docs and return explicit claims."""
     claims = ClaimCollection()
     out_dir_path = Path(out_dir)
+    plain_html_dir = out_dir_path / "plain" / "html"
+    plus_html_dir = out_dir_path / "plus" / "html"
+    plain_html_dir.mkdir(parents=True, exist_ok=True)
+    plus_html_dir.mkdir(parents=True, exist_ok=True)
+
     styles_mam_parsed.make_css_file_for_mam_parsed(str(out_dir_path / css_href))
-    tdm_ch = str(out_dir_path), css_href
-    _run_mam_parsed_authored_traversal(claims=claims, tdm_ch=tdm_ch)
+    tdm_ch_root = str(out_dir_path), css_href
+    tdm_ch_plain = str(plain_html_dir), "../../style.css"
+    tdm_ch_plus = str(plus_html_dir), "../../style.css"
+    _run_mam_parsed_authored_traversal(
+        claims=claims,
+        tdm_ch_root=tdm_ch_root,
+        tdm_ch_plain=tdm_ch_plain,
+        tdm_ch_plus=tdm_ch_plus,
+    )
 
     return claims
 
