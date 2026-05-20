@@ -22,7 +22,7 @@ class TestTmplSurveyPlusInvariants(unittest.TestCase):
                 stack_counts
             )
 
-    def test_assert_plus_excludes_non_targeted_notes_rejects_stack_path(self):
+    def test_assert_plus_excludes_non_targeted_notes_rejects_non_targeted_note_stack(self):
         stack_counts = {
             ("מ:אות-מיוחדת-במילה", "E/מ:הערה"): 1,
         }

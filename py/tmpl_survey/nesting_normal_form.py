@@ -143,6 +143,22 @@ def _fs_stack_with_top(top: str, fs_stack: str) -> str:
     return "/".join(parts + [top])
 
 
+def _read_preferred_or_alias(
+    record: Mapping[str, object],
+    preferred_key: str,
+    alias_key: str,
+) -> object:
+    preferred = record.get(preferred_key)
+    if preferred is not None:
+        return preferred
+    alias = record.get(alias_key)
+    if alias is not None:
+        return alias
+    raise KeyError(
+        f"Record must contain {preferred_key!r} or {alias_key!r}: {record!r}"
+    )
+
+
 def summarize_rank_coverage_counts(
     stack_counts: StackCounts,
     rank_map: RankMap,
@@ -350,7 +366,11 @@ def assert_stack_counts_in_normal_form(
         )
     ]
     for v in violations:
-        example_stack = v.get("example_stack", v["example_path"])
+        example_stack = _read_preferred_or_alias(
+            v,
+            "example_stack",
+            "example_path",
+        )
         lines.append(
             "  - "
             f"{v['caller']} (rank {v['caller_rank']}) -> "
@@ -553,7 +573,11 @@ def assert_stack_counts_follow_expanded_grammar(
         )
     ]
     for v in violations:
-        example_stack = v.get("example_stack", v["example_path"])
+        example_stack = _read_preferred_or_alias(
+            v,
+            "example_stack",
+            "example_path",
+        )
         if v["kind"] == "unexpected-edge":
             lines.append(
                 "  - "
