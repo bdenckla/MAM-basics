@@ -8,7 +8,8 @@ from tmpl_survey import survey_plus
 from mb_cmn import file_io
 
 _OUT_DIR = "out/MAM-tmpl-survey"
-_SVG_DIR = "../MAM-parsed/gh-pages"
+_PLAIN_SVG_DIR = "../MAM-parsed/gh-pages/plain/svg"
+_PLUS_SVG_DIR = "../MAM-parsed/gh-pages/plus/svg"
 _PLAIN_TMPL_NAME_NORMALIZATION_NOTE = (
     "In the plain survey, template names are normalized: ASCII double quote "
     '(") is converted to Hebrew gershayim (U+05F4). This applies to both '
@@ -31,6 +32,8 @@ def _write_outputs(
     discarded=None,
 ):
     os.makedirs(os.path.dirname(stem), exist_ok=True)
+    if svg_stem is not None:
+        os.makedirs(os.path.dirname(svg_stem), exist_ok=True)
     result_with_note = result
     if normalization_note is not None:
         result_with_note = _with_tmpl_name_normalization_note(
@@ -52,6 +55,19 @@ def _write_outputs(
         generator_file=__file__,
     )
     survey_dot.render_svg(dot_path, svg_path, generator_file=__file__)
+    edge_mode_dot_path = f"{stem}-call-graph-templates-as-edges.dot"
+    edge_mode_svg_path = f"{svg_stem}-call-graph-templates-as-edges.svg"
+    survey_dot.write_edge_template_dot_file(
+        raw_stack_counts,
+        edge_mode_dot_path,
+        discarded=discarded,
+        generator_file=__file__,
+    )
+    survey_dot.render_svg(
+        edge_mode_dot_path,
+        edge_mode_svg_path,
+        generator_file=__file__,
+    )
     survey_dot.write_focused_dot_files(
         raw_stack_counts,
         stem,
@@ -68,7 +84,7 @@ def almost_main():
         plain_result,
         plain_raw_sc,
         f"{_OUT_DIR}/plain",
-        svg_stem=f"{_SVG_DIR}/plain",
+        svg_stem=f"{_PLAIN_SVG_DIR}/plain",
         normalization_note=_PLAIN_TMPL_NAME_NORMALIZATION_NOTE,
         discarded=plain_discarded,
     )
@@ -79,7 +95,7 @@ def almost_main():
         plus_result,
         plus_raw_sc,
         f"{_OUT_DIR}/plus",
-        svg_stem=f"{_SVG_DIR}/plus",
+        svg_stem=f"{_PLUS_SVG_DIR}/plus",
         discarded=plus_discarded,
     )
 

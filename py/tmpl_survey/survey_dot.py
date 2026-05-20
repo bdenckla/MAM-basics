@@ -363,6 +363,130 @@ def write_dot_file(
         _write_dot(edges, groups, fp, note=note, generated_by=generated_by)
 
 
+def _edge_template_paths_from_stack_counts(stack_counts, discarded=None):
+    """Extract start/template-path records used by edge-labeled stack graphs."""
+    if discarded is None:
+        discarded = set()
+    paths = []
+    for (wtel_subtype, stack_str), count in stack_counts.items():
+        if wtel_subtype in discarded:
+            continue
+        stack_parts = [p for p in _split_stack_str(stack_str) if p not in discarded]
+        if not stack_parts:
+            continue
+        start = stack_parts[0]
+        template_path = tuple((*stack_parts[1:], wtel_subtype))
+        if not template_path:
+            continue
+        paths.append((start, template_path, count))
+    return paths
+
+
+def _edge_mode_state_id(start, template_prefix):
+    """Return synthetic node id for a partial stack state."""
+    return f"{start}::stack::{'/'.join(template_prefix)}"
+
+
+def _edge_mode_end_id(start):
+    """Return synthetic node id for a stack-end sink."""
+    return f"{start}::stack-end"
+
+
+def _write_edge_templates_dot(paths, fp, note=_DEFAULT_NOTE, generated_by=None):
+    """Write edge-labeled DOT where templates are on edges, not nodes."""
+    starts = {start for start, _template_path, _count in paths}
+    state_tooltips = {}
+    edge_counts = {}
+    for start, template_path, count in paths:
+        prev_node = start
+        for idx, tmpl_name in enumerate(template_path):
+            is_last = idx == len(template_path) - 1
+            if is_last:
+                next_node = _edge_mode_end_id(start)
+            else:
+                prefix = template_path[: idx + 1]
+                next_node = _edge_mode_state_id(start, prefix)
+                state_tooltips.setdefault(next_node, f"{start}/{'/'.join(prefix)}")
+            edge = (prev_node, next_node, tmpl_name)
+            edge_counts[edge] = edge_counts.get(edge, 0) + count
+            prev_node = next_node
+
+    if generated_by:
+        fp.write(f"// {generated_by}\n")
+        fp.write("// Do not edit by hand.\n")
+    fp.write("digraph template_call_graph_templates_as_edges {\n")
+    fp.write("    rankdir=LR;\n")
+    fp.write('    node [fontname="SBL Hebrew,Helvetica", fontsize=12];\n')
+    fp.write('    edge [fontname="SBL Hebrew,Helvetica", fontsize=9];\n')
+    if generated_by:
+        fp.write(f"    graph [comment={_dot_quoted(generated_by)}];\n")
+    fp.write("\n")
+
+    if starts:
+        fp.write("    // Stack start nodes\n")
+        fp.write("    node [shape=box, style=bold];\n")
+        for start in sorted(starts):
+            fp.write(f"    {_dot_quoted(start)};\n")
+        fp.write("\n")
+
+    if state_tooltips:
+        fp.write("    // Internal stack-state nodes\n")
+        fp.write('    node [shape=circle, style="", width=0.18, height=0.18, fixedsize=true];\n')
+        for node_id in sorted(state_tooltips):
+            fp.write(
+                f"    {_dot_quoted(node_id)}"
+                f"{_node_attrs(label='', tooltip=state_tooltips[node_id])};\n"
+            )
+        fp.write("\n")
+
+    if starts:
+        fp.write("    // Stack-end nodes\n")
+        fp.write('    node [shape=doublecircle, style="", width=0.35, height=0.35, fixedsize=true];\n')
+        for start in sorted(starts):
+            end_id = _edge_mode_end_id(start)
+            fp.write(
+                f"    {_dot_quoted(end_id)}"
+                f"{_node_attrs(label=f'{start} end', tooltip=f'Stack end for {start}')};\n"
+            )
+        fp.write("\n")
+
+    if note is _DEFAULT_NOTE:
+        note_text = _discard_note_text(_BASE_DISCARDED)
+    else:
+        note_text = note
+    if note_text:
+        fp.write("    // Note\n")
+        fp.write(f'    graph [label="{note_text}", labelloc=b, fontsize=10];\n')
+        fp.write("\n")
+
+    fp.write("    // Edge-labeled templates\n")
+    for (src, dst, tmpl_name), count in sorted(edge_counts.items()):
+        edge_label = f"{tmpl_name} ({count})"
+        fp.write(
+            f"    {_dot_quoted(src)} -> {_dot_quoted(dst)}"
+            f" [label={_dot_quoted(edge_label)}];\n"
+        )
+    fp.write("}\n")
+
+
+def write_edge_template_dot_file(
+    stack_counts,
+    out_path,
+    discarded=None,
+    generator_file=None,
+):
+    """Write a .dot graph where templates are labels on edges, not nodes."""
+    generated_by = _generated_by_text(generator_file)
+    full_discarded = _discarded_for_full_graph(discarded)
+    paths = _edge_template_paths_from_stack_counts(
+        stack_counts,
+        discarded=full_discarded,
+    )
+    note = _discard_note_text(full_discarded)
+    with open(out_path, "w", encoding="utf-8") as fp:
+        _write_edge_templates_dot(paths, fp, note=note, generated_by=generated_by)
+
+
 def _identity_groups(edges):
     """Return trivial groups (each node maps to itself) — no collapsing."""
     all_nodes = set()
