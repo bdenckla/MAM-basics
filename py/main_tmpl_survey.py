@@ -36,8 +36,10 @@ def _default_case_rank_groups():
     # plus-E custom normal order relative to defaults:
     # - add targeted note template to dehi rank (rank 5 in 1-based numbering)
     # - add plus-only ketiv/qere variants to the ketiv/qere rank (rank 3)
-    plus_e_group_names["e"].add("מ:הערה-2")
-    plus_e_group_names["c"].update({"מ:כו״ק מיוחד", "מ:קו״כ-אם-2", "קו״כ"})
+    plus_e_group_names["rank-5"].add("מ:הערה-2")
+    plus_e_group_names["rank-3"].update(
+        {"מ:כו״ק מיוחד", "מ:קו״כ-אם-2", "קו״כ"}
+    )
     plus_e_groups = tuple(
         (label, frozenset(plus_e_group_names[label]))
         for label, _names in default_groups

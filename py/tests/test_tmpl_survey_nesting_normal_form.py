@@ -25,7 +25,10 @@ class TestTmplSurveyNestingNormalForm(unittest.TestCase):
         self.assertNotIn("מ:הערה-2", plain_e)
 
     def test_regex_like_grammar_shape(self):
-        self.assertEqual("a?b?c?d?e?f?", nnf.regex_like_grammar())
+        self.assertEqual(
+            "rank-1?rank-2?rank-3?rank-4?rank-5?rank-6?",
+            nnf.regex_like_grammar(),
+        )
 
     def test_allows_strictly_increasing_rank_order(self):
         stack_counts = {
@@ -92,8 +95,8 @@ class TestTmplSurveyNestingNormalForm(unittest.TestCase):
             ("B", "E/A"): 1,
         }
         same_order = nnf.build_rank_map((
-            ("a", ("A",)),
-            ("b", ("B",)),
+            ("rank-1", ("A",)),
+            ("rank-2", ("B",)),
         ))
         case_rank_maps = {
             "plain-C": same_order,
@@ -113,12 +116,12 @@ class TestTmplSurveyNestingNormalForm(unittest.TestCase):
             ("B", "E/A"): 1,
         }
         a_before_b = nnf.build_rank_map((
-            ("a", ("A",)),
-            ("b", ("B",)),
+            ("rank-1", ("A",)),
+            ("rank-2", ("B",)),
         ))
         b_before_a = nnf.build_rank_map((
-            ("a", ("B",)),
-            ("b", ("A",)),
+            ("rank-1", ("B",)),
+            ("rank-2", ("A",)),
         ))
         case_rank_maps = {
             "plain-C": a_before_b,
@@ -138,8 +141,12 @@ class TestTmplSurveyNestingNormalForm(unittest.TestCase):
             ("B", "C/A"): 1,
         }
         case_rank_maps = {
-            "plus-C": nnf.build_rank_map((("a", ("A",)), ("b", ("B",)))),
-            "plus-D": nnf.build_rank_map((("a", ("A",)), ("b", ("B",)))),
+            "plus-C": nnf.build_rank_map(
+                (("rank-1", ("A",)), ("rank-2", ("B",)))
+            ),
+            "plus-D": nnf.build_rank_map(
+                (("rank-1", ("A",)), ("rank-2", ("B",)))
+            ),
         }
         with self.assertRaises(ValueError) as ctx:
             nnf.assert_stack_counts_in_normal_form_by_case(

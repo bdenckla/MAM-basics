@@ -8,16 +8,16 @@ MAM template-survey data.
 We project each observed stack path onto ranked templates and require the
 projection to follow this regex-like grammar:
 
-`a?b?c?d?e?f?`
+`rank-1?rank-2?rank-3?rank-4?rank-5?rank-6?`
 
 Ranks:
 
-- `a`: `מ:כפול`
-- `b`: `נוסח`
-- `c`: ketiv/qere templates: `כו״ק`, `כתיב ולא קרי`, `קרי ולא כתיב`
-- `d`: `מ:קמץ`
-- `e`: `מ:דחי`
-- `f`: `מ:אות-מיוחדת-במילה`
+- `rank-1`: `מ:כפול`
+- `rank-2`: `נוסח`
+- `rank-3`: ketiv/qere templates: `כו״ק`, `כתיב ולא קרי`, `קרי ולא כתיב`
+- `rank-4`: `מ:קמץ`
+- `rank-5`: `מ:דחי`
+- `rank-6`: `מ:אות-מיוחדת-במילה`
 
 Equivalent graph statement: along the ranked projection of each root-to-leaf
 path, rank must be strictly increasing (each rank appears at most once).
@@ -28,7 +28,7 @@ Some nestings are syntactically possible but not desired as project normal form.
 Examples considered illegal by this convention:
 
 - descending rank: `מ:דחי -> מ:קמץ` (i.e., `מ:קמץ` inside `מ:דחי`)
-- duplicate rank group: `כתיב ולא קרי -> כו״ק` (both are rank `c`)
+- duplicate rank group: `כתיב ולא קרי -> כו״ק` (both are rank `rank-3`)
 
 ## Enforcement
 
