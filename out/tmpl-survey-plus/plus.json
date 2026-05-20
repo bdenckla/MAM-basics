@@ -1228,24 +1228,6 @@
     }
   ],
   "normal_order_cov_counts_by_case": {
-    "plain-C": {
-      "fully_checked": 0,
-      "partially_checked": 242,
-      "totally_unchecked": 2,
-      "total": 244
-    },
-    "plain-D": {
-      "fully_checked": 0,
-      "partially_checked": 47,
-      "totally_unchecked": 521,
-      "total": 568
-    },
-    "plain-E": {
-      "fully_checked": 294,
-      "partially_checked": 3814,
-      "totally_unchecked": 12,
-      "total": 4120
-    },
     "plus-C": {
       "fully_checked": 0,
       "partially_checked": 242,

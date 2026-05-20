@@ -205,23 +205,20 @@ def almost_main(write_expanded_stack_grammar_lock=False):
         write_expanded_stack_grammar_locks=write_expanded_stack_grammar_lock,
     )
 
-    normal_order_cov_counts_by_case = {}
-    normal_order_cov_counts_by_case.update(
+    plain_result["normal_order_cov_counts_by_case"] = (
         nesting_normal_form.summarize_rank_coverage_by_case(
             plain_raw_sc,
             dataset_key="plain",
             case_rank_maps=case_rank_maps,
         )
     )
-    normal_order_cov_counts_by_case.update(
+    plus_result["normal_order_cov_counts_by_case"] = (
         nesting_normal_form.summarize_rank_coverage_by_case(
             plus_raw_sc,
             dataset_key="plus",
             case_rank_maps=case_rank_maps,
         )
     )
-    plain_result["normal_order_cov_counts_by_case"] = normal_order_cov_counts_by_case
-    plus_result["normal_order_cov_counts_by_case"] = normal_order_cov_counts_by_case
 
     _write_outputs(
         plain_result,
