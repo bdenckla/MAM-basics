@@ -3,9 +3,16 @@
 This document defines an assert-only nesting convention for selected templates in
 MAM template-survey data.
 
+## Terminology
+
+- `fs_stack`: forward-slash separated stack string.
+- `top` (or `stack top` in prose): the template currently on top.
+- `stack`: a tuple/list stack representation, or the concept in general when
+	representation is obvious from context.
+
 ## Rank Grammar
 
-We project each observed stack path onto ranked templates and require the
+We project each observed stack onto ranked templates and require the
 projection to follow this regex-like grammar:
 
 `rank-1?rank-2?rank-3?rank-4?rank-5?rank-6?`
@@ -22,7 +29,7 @@ Ranks:
 Equivalent graph statement: along the ranked projection of each root-to-leaf
 path, rank must be strictly increasing (each rank appears at most once).
 
-Paths with full template path length (before projection) `<= 1` are considered
+Stacks with length (before projection) `<= 1` are considered
 "not even a candidate for checking" and are excluded from coverage counts.
 
 ## Why this is useful
@@ -38,16 +45,16 @@ Examples considered illegal by this convention:
 The checker is assert-only:
 
 - no auto-normalization
-- violations raise `AssertionError` with aggregated counts and an example path
+- violations raise `AssertionError` with aggregated counts and an example stack
 
 It runs in both plain and plus surveys.
 
 Coverage buckets in survey outputs:
 
-- uncounted (implicit): full template path length before projection `<= 1`
-- `totally_unchecked`: candidate path (full length `>= 2`) whose ranked projection length is `<= 1`
-- `fully_checked`: candidate path with ranked projection length `>= 2` that has only ranked templates (`cov = 1`)
-- `partially_checked`: candidate path with ranked projection length `>= 2` that mixes ranked and unranked templates (`0 < cov < 1`)
+- uncounted (implicit): stack length before projection `<= 1`
+- `totally_unchecked`: candidate stack (length `>= 2`) whose ranked projection length is `<= 1`
+- `fully_checked`: candidate stack with ranked projection length `>= 2` that has only ranked templates (`cov = 1`)
+- `partially_checked`: candidate stack with ranked projection length `>= 2` that mixes ranked and unranked templates (`0 < cov < 1`)
 
 ## Expanded All-Stack Grammar
 

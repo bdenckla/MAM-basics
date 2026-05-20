@@ -301,8 +301,8 @@ def _split_stack_str(stack_str):
 def _focused_edges_from_stack_counts(stack_counts, target, discarded=None):
     """Build focused edges from only stacks that involve the target.
 
-    For each raw stack-count record where target appears anywhere in the full
-    stack path (stack parts + current callee), decompose that full path into
+    For each raw stack-count record where target appears anywhere in the stack
+    (fs_stack parts + top), decompose that stack into
     adjacent caller->callee edges and accumulate the record count.
 
     If discarded is provided, discarded templates are removed from the path
@@ -312,14 +312,14 @@ def _focused_edges_from_stack_counts(stack_counts, target, discarded=None):
     if discarded is None:
         discarded = set()
     focused_edges = {}
-    for (wtel_subtype, stack_str), count in stack_counts.items():
-        stack_parts = [p for p in _split_stack_str(stack_str) if p not in discarded]
-        if wtel_subtype in discarded:
+    for (top, fs_stack), count in stack_counts.items():
+        fs_stack_parts = [p for p in _split_stack_str(fs_stack) if p not in discarded]
+        if top in discarded:
             continue
-        full_path = (*stack_parts, wtel_subtype)
-        if target not in full_path:
+        stack = (*fs_stack_parts, top)
+        if target not in stack:
             continue
-        for caller, callee in zip(full_path, full_path[1:]):
+        for caller, callee in zip(stack, stack[1:]):
             edge = (caller, callee)
             focused_edges[edge] = focused_edges.get(edge, 0) + count
     return focused_edges
@@ -365,23 +365,23 @@ def write_dot_file(
         _write_dot(edges, groups, fp, note=note, generated_by=generated_by)
 
 
-def _edge_template_paths_from_stack_counts(stack_counts, discarded=None):
-    """Extract start/template-path records used by edge-labeled stack graphs."""
+def _edge_template_stacks_from_stack_counts(stack_counts, discarded=None):
+    """Extract start/template-stack records used by edge-labeled stack graphs."""
     if discarded is None:
         discarded = set()
-    paths = []
-    for (wtel_subtype, stack_str), count in stack_counts.items():
-        if wtel_subtype in discarded:
+    stacks = []
+    for (top, fs_stack), count in stack_counts.items():
+        if top in discarded:
             continue
-        stack_parts = [p for p in _split_stack_str(stack_str) if p not in discarded]
-        if not stack_parts:
+        fs_stack_parts = [p for p in _split_stack_str(fs_stack) if p not in discarded]
+        if not fs_stack_parts:
             continue
-        start = stack_parts[0]
-        template_path = tuple((*stack_parts[1:], wtel_subtype))
-        if not template_path:
+        start = fs_stack_parts[0]
+        template_stack = tuple((*fs_stack_parts[1:], top))
+        if not template_stack:
             continue
-        paths.append((start, template_path, count))
-    return paths
+        stacks.append((start, template_stack, count))
+    return stacks
 
 
 def _edge_mode_state_id(start, template_prefix):
@@ -468,21 +468,21 @@ def _single_template_edge_label_and_tooltip(tmpl_name, count, tmpl_abbrevs):
     return display_label, full_label
 
 
-def _write_edge_templates_dot(paths, fp, note=_DEFAULT_NOTE, generated_by=None):
+def _write_edge_templates_dot(stacks, fp, note=_DEFAULT_NOTE, generated_by=None):
     """Write edge-labeled DOT where templates are on edges, not nodes."""
     has_child_contexts = set()
-    for start, template_path, _count in paths:
-        for prefix_len in range(1, len(template_path)):
-            has_child_contexts.add((start, template_path[:prefix_len]))
+    for start, template_stack, _count in stacks:
+        for prefix_len in range(1, len(template_stack)):
+            has_child_contexts.add((start, template_stack[:prefix_len]))
 
     start_node_meta = {}
     state_tooltips = {}
     end_tooltips = {}
     edge_counts = {}
-    for start, template_path, count in paths:
-        first_hop = template_path[0]
+    for start, template_stack, count in stacks:
+        first_hop = template_stack[0]
         is_one_hop_leaf = (start, (first_hop,)) not in has_child_contexts
-        if len(template_path) == 1 and is_one_hop_leaf:
+        if len(template_stack) == 1 and is_one_hop_leaf:
             start_node = _edge_mode_one_hop_start_id(start)
             start_node_meta.setdefault(
                 start_node,
@@ -495,9 +495,9 @@ def _write_edge_templates_dot(paths, fp, note=_DEFAULT_NOTE, generated_by=None):
                 (start, f"Stack start for {start}/{first_hop}"),
             )
         prev_node = start_node
-        for idx, tmpl_name in enumerate(template_path):
-            context_prefix = template_path[: idx + 1]
-            is_last_in_path = idx == len(template_path) - 1
+        for idx, tmpl_name in enumerate(template_stack):
+            context_prefix = template_stack[: idx + 1]
+            is_last_in_path = idx == len(template_stack) - 1
             if (start, context_prefix) in has_child_contexts:
                 if is_last_in_path:
                     # Leaf-only terminal policy: skip rows that stop at non-leaf contexts.
@@ -625,13 +625,13 @@ def write_edge_template_dot_file(
     """Write a .dot graph where templates are labels on edges, not nodes."""
     generated_by = _generated_by_text(generator_file)
     full_discarded = _discarded_for_full_graph(discarded)
-    paths = _edge_template_paths_from_stack_counts(
+    stacks = _edge_template_stacks_from_stack_counts(
         stack_counts,
         discarded=full_discarded,
     )
     note = _discard_note_text(full_discarded)
     with open(out_path, "w", encoding="utf-8") as fp:
-        _write_edge_templates_dot(paths, fp, note=note, generated_by=generated_by)
+        _write_edge_templates_dot(stacks, fp, note=note, generated_by=generated_by)
 
 
 def _identity_groups(edges):

@@ -1,6 +1,6 @@
 """Validate template nesting against a rank-based normal form.
 
-We project each observed stack path onto a small set of ranked templates and
+We project each observed stack onto a small set of ranked templates and
 require the ranked projection to be strictly increasing in rank.
 
 Regex-like shape for the ranked projection:
@@ -23,7 +23,9 @@ from collections import defaultdict
 from typing import Dict, Iterable, List, Mapping, Sequence, Tuple
 
 TemplateName = str
-StackCounts = Mapping[Tuple[TemplateName, str], int]
+StackTop = TemplateName
+FsStack = str
+StackCounts = Mapping[Tuple[StackTop, FsStack], int]
 RankMap = Mapping[TemplateName, int]
 RankGroups = Sequence[tuple[str, Iterable[str]]]
 
@@ -93,24 +95,26 @@ def regex_like_grammar() -> str:
     return "rank-1?rank-2?rank-3?rank-4?rank-5?rank-6?rank-7?"
 
 
-def _ranked_projection(full_path: Sequence[str], rank_map: RankMap) -> List[str]:
-    return [name for name in full_path if name in rank_map]
+def _ranked_projection(stack: Sequence[str], rank_map: RankMap) -> List[str]:
+    return [name for name in stack if name in rank_map]
 
 
-def _full_template_path(callee: str, stack_str: str) -> Tuple[str, ...]:
-    """Return full template path as stack templates + callee template.
+def _stack_from_fs_stack(top: str, fs_stack: str) -> Tuple[str, ...]:
+    """Return stack tuple from fs_stack templates plus top template.
+
+    Here fs_stack means the forward-slash separated stack string.
 
     Stack strings are prefixed by column letter (C/D/E) in survey data;
     that prefix is removed so coverage reflects only template symbols.
     """
-    parts = [p for p in stack_str.split("/") if p]
+    parts = [p for p in fs_stack.split("/") if p]
     if parts and parts[0] in _COLUMN_LETTERS:
         parts = parts[1:]
-    return tuple(parts + [callee])
+    return tuple(parts + [top])
 
 
-def _is_singleton_template_stack(full_template_path: Sequence[str]) -> bool:
-    return len(full_template_path) <= 1
+def _is_singleton_stack(stack: Sequence[str]) -> bool:
+    return len(stack) <= 1
 
 
 _CHECKEDNESS_KEYS: tuple[str, str, str] = (
@@ -121,33 +125,33 @@ _CHECKEDNESS_KEYS: tuple[str, str, str] = (
 
 
 def _checkedness_bucket(
-    full_template_path: Sequence[str],
+    stack: Sequence[str],
     rank_map: RankMap,
 ) -> str | None:
-    if _is_singleton_template_stack(full_template_path):
+    if _is_singleton_stack(stack):
         return None
-    ranked_count = sum(1 for name in full_template_path if name in rank_map)
+    ranked_count = sum(1 for name in stack if name in rank_map)
     if ranked_count <= 1:
         return "totally_unchecked"
-    if ranked_count == len(full_template_path):
+    if ranked_count == len(stack):
         return "fully_checked"
     return "partially_checked"
 
 
-def _full_stack_path_for_output(callee: str, stack_str: str) -> str:
-    parts = [p for p in stack_str.split("/") if p]
-    return "/".join(parts + [callee])
+def _fs_stack_with_top(top: str, fs_stack: str) -> str:
+    parts = [p for p in fs_stack.split("/") if p]
+    return "/".join(parts + [top])
 
 
 def summarize_rank_coverage_counts(
     stack_counts: StackCounts,
     rank_map: RankMap,
 ) -> Dict[str, int]:
-    """Summarize weighted rank-coverage categories over observed stack paths.
+    """Summarize weighted rank-coverage categories over observed stacks.
 
     Singleton template stacks are excluded entirely.
 
-    Categories use coverage cov on full template path (stack templates + callee):
+    Categories use coverage cov on stack (fs_stack templates + top):
     - totally_unchecked: projected ranked path len <= 1
     - fully_checked: cov = 1
     - partially_checked: projected ranked path len >= 2 and 0 < cov < 1
@@ -156,11 +160,11 @@ def summarize_rank_coverage_counts(
     partially_checked = 0
     totally_unchecked = 0
 
-    for (callee, stack_str), count in stack_counts.items():
+    for (top, fs_stack), count in stack_counts.items():
         if count <= 0:
             continue
-        full_path = _full_template_path(callee, stack_str)
-        bucket = _checkedness_bucket(full_path, rank_map)
+        stack = _stack_from_fs_stack(top, fs_stack)
+        bucket = _checkedness_bucket(stack, rank_map)
         if bucket is None:
             continue
         if bucket == "fully_checked":
@@ -183,36 +187,41 @@ def summarize_rank_coverage_top_paths(
     rank_map: RankMap,
     max_paths: int = 10,
 ) -> Dict[str, List[dict[str, object]]]:
-    """Return top full stack paths per checkedness bucket.
+    """Return top stacks per checkedness bucket.
 
-    Paths are emitted as strings that include column prefix and callee template,
+    Stacks are emitted as strings that include column prefix and top template,
     for example: E/מ:כפול/נוסח/ש
     """
     if max_paths < 0:
         raise ValueError(f"max_paths must be >= 0, got {max_paths}")
 
-    path_counts = {
+    fs_stack_counts = {
         key: defaultdict(int) for key in _CHECKEDNESS_KEYS
     }
-    for (callee, stack_str), count in stack_counts.items():
+    for (top, fs_stack), count in stack_counts.items():
         if count <= 0:
             continue
-        full_path = _full_template_path(callee, stack_str)
-        bucket = _checkedness_bucket(full_path, rank_map)
+        stack = _stack_from_fs_stack(top, fs_stack)
+        bucket = _checkedness_bucket(stack, rank_map)
         if bucket is None:
             continue
-        path_key = _full_stack_path_for_output(callee, stack_str)
-        path_counts[bucket][path_key] += count
+        stack_key = _fs_stack_with_top(top, fs_stack)
+        fs_stack_counts[bucket][stack_key] += count
 
     top_paths_by_bucket: Dict[str, List[dict[str, object]]] = {}
     for bucket in _CHECKEDNESS_KEYS:
         ranked = sorted(
-            path_counts[bucket].items(),
+            fs_stack_counts[bucket].items(),
             key=lambda kv: (-kv[1], kv[0]),
         )
         top_paths_by_bucket[bucket] = [
-            {"stack_path": stack_path, "count": count}
-            for stack_path, count in ranked[:max_paths]
+            {
+                "stack": fs_stack_with_top,
+                # Backward-compatible alias kept during terminology migration.
+                "stack_path": fs_stack_with_top,
+                "count": count,
+            }
+            for fs_stack_with_top, count in ranked[:max_paths]
         ]
     return top_paths_by_bucket
 
@@ -248,7 +257,7 @@ def summarize_rank_coverage_top_paths_by_case(
     case_rank_maps: Mapping[str, RankMap],
     max_paths: int = 10,
 ) -> Dict[str, Dict[str, List[dict[str, object]]]]:
-    """Return top full stack paths per checkedness bucket for C/D/E cases."""
+    """Return top stacks per checkedness bucket for C/D/E cases."""
     assert dataset_key in ("plain", "plus"), dataset_key
 
     by_case: Dict[str, Dict[str, List[dict[str, object]]]] = {}
@@ -284,15 +293,15 @@ def find_rank_violations(
     bad_counts: Dict[Tuple[str, str, str], int] = defaultdict(int)
     examples: Dict[Tuple[str, str, str], str] = {}
 
-    for (callee, stack_str), count in stack_counts.items():
+    for (top, fs_stack), count in stack_counts.items():
         if count <= 0:
             continue
-        full_template_path = _full_template_path(callee, stack_str)
-        if _is_singleton_template_stack(full_template_path):
+        stack = _stack_from_fs_stack(top, fs_stack)
+        if _is_singleton_stack(stack):
             # Normal-order checking is about ordering relations, which require
-            # at least two templates in the stack path.
+            # at least two templates in the stack.
             continue
-        ranked = _ranked_projection(full_template_path, rank_map)
+        ranked = _ranked_projection(stack, rank_map)
         for caller, child in zip(ranked, ranked[1:]):
             caller_rank = rank_map[caller]
             child_rank = rank_map[child]
@@ -304,7 +313,7 @@ def find_rank_violations(
             if relation is not None:
                 key = (caller, child, relation)
                 bad_counts[key] += count
-                examples.setdefault(key, "/".join(full_template_path))
+                examples.setdefault(key, "/".join(stack))
 
     violations: List[dict[str, object]] = []
     for (caller, child, relation), count in sorted(bad_counts.items()):
@@ -316,6 +325,8 @@ def find_rank_violations(
                 "callee_rank": rank_map[child],
                 "relation": relation,
                 "count": count,
+                "example_stack": examples[(caller, child, relation)],
+                # Backward-compatible alias kept during terminology migration.
                 "example_path": examples[(caller, child, relation)],
             }
         )
@@ -339,12 +350,13 @@ def assert_stack_counts_in_normal_form(
         )
     ]
     for v in violations:
+        example_stack = v.get("example_stack", v["example_path"])
         lines.append(
             "  - "
             f"{v['caller']} (rank {v['caller_rank']}) -> "
             f"{v['callee']} (rank {v['callee_rank']}), "
             f"relation={v['relation']}, "
-            f"count={v['count']}, example={v['example_path']}"
+            f"count={v['count']}, example={example_stack}"
         )
     raise AssertionError("\n".join(lines))
 
@@ -357,12 +369,12 @@ def _stack_counts_for_column(
     assert column_letter in _COLUMN_LETTERS, column_letter
 
     filtered: Dict[Tuple[str, str], int] = {}
-    for (callee, stack_str), count in stack_counts.items():
+    for (top, fs_stack), count in stack_counts.items():
         if count <= 0:
             continue
-        parts = [p for p in stack_str.split("/") if p]
+        parts = [p for p in fs_stack.split("/") if p]
         if parts and parts[0] == column_letter:
-            filtered[(callee, stack_str)] = count
+            filtered[(top, fs_stack)] = count
     return filtered
 
 
@@ -404,14 +416,14 @@ def merge_stack_counts(*stack_counts_maps: StackCounts) -> Dict[Tuple[str, str],
     return dict(merged)
 
 
-def _iter_weighted_paths(stack_counts: StackCounts):
-    for (callee, stack_str), count in stack_counts.items():
+def _iter_weighted_stacks(stack_counts: StackCounts):
+    for (top, fs_stack), count in stack_counts.items():
         if count <= 0:
             continue
-        full_path = tuple([p for p in stack_str.split("/") if p] + [callee])
-        if not full_path:
+        stack = tuple([p for p in fs_stack.split("/") if p] + [top])
+        if not stack:
             continue
-        yield full_path, count
+        yield stack, count
 
 
 def infer_expanded_stack_grammar(stack_counts: StackCounts) -> Dict[str, object]:
@@ -428,12 +440,12 @@ def infer_expanded_stack_grammar(stack_counts: StackCounts) -> Dict[str, object]
     edge_counts: Dict[Tuple[str, str], int] = defaultdict(int)
     order_counts: Dict[Tuple[str, str], int] = defaultdict(int)
 
-    for full_path, count in _iter_weighted_paths(stack_counts):
-        for parent, child in zip(full_path, full_path[1:]):
+    for stack, count in _iter_weighted_stacks(stack_counts):
+        for parent, child in zip(stack, stack[1:]):
             edge_counts[(parent, child)] += count
 
         first_pos: Dict[str, int] = {}
-        for idx, symbol in enumerate(full_path):
+        for idx, symbol in enumerate(stack):
             first_pos.setdefault(symbol, idx)
 
         symbols_in_order = [k for k, _v in sorted(first_pos.items(), key=lambda kv: kv[1])]
@@ -479,15 +491,15 @@ def find_expanded_grammar_violations(
     bad_orders: Dict[Tuple[str, str], int] = defaultdict(int)
     bad_order_examples: Dict[Tuple[str, str], str] = {}
 
-    for full_path, count in _iter_weighted_paths(stack_counts):
-        for parent, child in zip(full_path, full_path[1:]):
+    for stack, count in _iter_weighted_stacks(stack_counts):
+        for parent, child in zip(stack, stack[1:]):
             key = (parent, child)
             if key not in allowed_edges:
                 bad_edges[key] += count
-                bad_edge_examples.setdefault(key, "/".join(full_path))
+                bad_edge_examples.setdefault(key, "/".join(stack))
 
         first_pos: Dict[str, int] = {}
-        for idx, symbol in enumerate(full_path):
+        for idx, symbol in enumerate(stack):
             first_pos.setdefault(symbol, idx)
 
         for before, after in must_precede:
@@ -495,7 +507,7 @@ def find_expanded_grammar_violations(
                 if first_pos[before] > first_pos[after]:
                     key = (before, after)
                     bad_orders[key] += count
-                    bad_order_examples.setdefault(key, "/".join(full_path))
+                    bad_order_examples.setdefault(key, "/".join(stack))
 
     violations: List[dict[str, object]] = []
     for (parent, child), count in sorted(bad_edges.items()):
@@ -505,6 +517,8 @@ def find_expanded_grammar_violations(
                 "parent": parent,
                 "child": child,
                 "count": count,
+                "example_stack": bad_edge_examples[(parent, child)],
+                # Backward-compatible alias kept during terminology migration.
                 "example_path": bad_edge_examples[(parent, child)],
             }
         )
@@ -514,6 +528,8 @@ def find_expanded_grammar_violations(
                 "kind": "order-permutation",
                 "must_precede": [before, after],
                 "count": count,
+                "example_stack": bad_order_examples[(before, after)],
+                # Backward-compatible alias kept during terminology migration.
                 "example_path": bad_order_examples[(before, after)],
             }
         )
@@ -537,17 +553,20 @@ def assert_stack_counts_follow_expanded_grammar(
         )
     ]
     for v in violations:
+        example_stack = v.get("example_stack", v["example_path"])
         if v["kind"] == "unexpected-edge":
             lines.append(
                 "  - "
                 f"unexpected-edge {v['parent']} -> {v['child']}, "
-                f"count={v['count']}, example={v['example_path']}"
+                f"count={v['count']}, example={example_stack}"
             )
         else:
-            before, after = v["must_precede"]
+            must_precede = v["must_precede"]
+            assert isinstance(must_precede, list) and len(must_precede) == 2
+            before, after = must_precede
             lines.append(
                 "  - "
                 f"order-permutation expected {before} before {after}, "
-                f"count={v['count']}, example={v['example_path']}"
+                f"count={v['count']}, example={example_stack}"
             )
     raise AssertionError("\n".join(lines))

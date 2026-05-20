@@ -130,7 +130,7 @@ def _assert_plus_excludes_non_targeted_scroll_diff_notes(stack_counts):
         ), f"Unexpected {_NON_TARGETED_SCROLL_DIFF_NOTE_TMPL} as plus subtype"
         assert _NON_TARGETED_SCROLL_DIFF_NOTE_TMPL not in stack_str.split("/"), (
             "Unexpected "
-            f"{_NON_TARGETED_SCROLL_DIFF_NOTE_TMPL} in plus stack path: {stack_str}"
+            f"{_NON_TARGETED_SCROLL_DIFF_NOTE_TMPL} in plus stack: {stack_str}"
         )
 
 
