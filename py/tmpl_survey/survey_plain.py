@@ -5,11 +5,10 @@ import collections
 
 from tmpl_survey import column_d_0_process_all_mpasuq_calls as cdp
 from tmpl_survey import column_d_0_store_the_mpasuq_call as cds
+from tmpl_survey import nesting_normal_form
 from mb_cmn import bib_locales as tbn
-from mb_cmn import my_utils
 from mb_misc import my_utils_for_mainish as my_utils_fm
 from mb_cmn import ws_tmpl1 as wtp1
-from mb_cmn import ws_tmpl2 as wtp2
 from mb_cmn import kq_special_templates as kqst
 
 _MINIROW = collections.namedtuple("_MINIROW", "CP, DP, EP")
@@ -293,6 +292,10 @@ def survey():
     }
     for bk24id in tbn.ALL_BK24_IDS:
         _do_a_book24(bk24id, accum)
+    nesting_normal_form.assert_stack_counts_in_normal_form(
+        accum["stack_counts"],
+        dataset_name="plain survey",
+    )
     result = {
         "mpasuq": cdp.process_all_mpasuq_calls(accum["mpasuq"]),
         "naked_sam2_pe2_pe3": accum["naked_sam2_pe2_pe3"],

@@ -5,6 +5,7 @@ import collections
 
 from tmpl_survey import column_d_0_process_all_mpasuq_calls as cdp
 from tmpl_survey import column_d_0_store_the_mpasuq_call_plus as cds_plus
+from tmpl_survey import nesting_normal_form
 from mb_cmn import bib_locales as tbn
 from mb_misc import my_utils_for_mainish as my_utils_fm
 from mb_cmn import ws_tmpl2 as wtp2
@@ -271,6 +272,10 @@ def survey(plain_mpasuq):
     for bk24id in tbn.ALL_BK24_IDS:
         _do_a_book24(bk24id, accum)
     _assert_plus_excludes_non_targeted_scroll_diff_notes(accum["stack_counts"])
+    nesting_normal_form.assert_stack_counts_in_normal_form(
+        accum["stack_counts"],
+        dataset_name="plus survey",
+    )
     plus_mpasuq = cdp.process_all_mpasuq_calls(accum["mpasuq"])
     result = {
         "mpasuq": _mpasuq_dedup(plus_mpasuq, plain_mpasuq),
