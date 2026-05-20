@@ -10,7 +10,6 @@ digraph template_call_graph_templates_as_edges {
     node [shape=box, style=bold];
     "C::start" [label="C", tooltip="Stack start for C (one-hop aggregate)"];
     "C::start::מ:הערה-2" [label="C", tooltip="Stack start for C/מ:הערה-2"];
-    "D::start" [label="D", tooltip="Stack start for D (one-hop aggregate)"];
     "D::start::מ:פסוק" [label="D", tooltip="Stack start for D/מ:פסוק"];
     "E::start" [label="E", tooltip="Stack start for E (one-hop aggregate)"];
     "E::start::כו״ק" [label="E", tooltip="Stack start for E/כו״ק"];
@@ -42,7 +41,6 @@ digraph template_call_graph_templates_as_edges {
     node [shape=doublecircle, style="", width=0.35, height=0.35, fixedsize=true];
     "C::stack-end" [label="end", tooltip="Stack end for C"];
     "C::stack-end::מ:הערה-2" [label="end", tooltip="Stack end for C/מ:הערה-2"];
-    "D::stack-end" [label="end", tooltip="Stack end for D"];
     "D::stack-end::מ:פסוק" [label="end", tooltip="Stack end for D/מ:פסוק"];
     "E::stack-end" [label="end", tooltip="Stack end for E"];
     "E::stack-end::כו״ק" [label="end", tooltip="Stack end for E/כו״ק"];
@@ -62,7 +60,6 @@ digraph template_call_graph_templates_as_edges {
     "C::start::מ:הערה-2" -> "C::stack::מ:הערה-2" [label="מ:הערה-2 (3)"];
     "D::stack::מ:פסוק" -> "D::stack-end::מ:פסוק" [label="מ:עלייה (532)"];
     "D::start::מ:פסוק" -> "D::stack::מ:פסוק" [label="מ:פסוק (532)"];
-    "E::stack::כו״ק" -> "E::stack-end::כו״ק" [label="מ:אות-מיוחדת-במילה (1)"];
     "E::stack::כו״ק" -> "E::stack-end::כו״ק" [label="מ:דחי (7)"];
     "E::stack::כו״ק" -> "E::stack-end::כו״ק" [label="מ:לגרמיה-2 (9)"];
     "E::stack::כו״ק" -> "E::stack-end::כו״ק" [label="מ:קמץ (10)"];
@@ -72,11 +69,9 @@ digraph template_call_graph_templates_as_edges {
     "E::stack::מ:אות-מיוחדת-במילה" -> "E::stack-end::מ:אות-מיוחדת-במילה" [label="מ:אות-ג (52)"];
     "E::stack::מ:אות-מיוחדת-במילה" -> "E::stack-end::מ:אות-מיוחדת-במילה" [label="מ:אות-ק (25)"];
     "E::stack::מ:אות-מיוחדת-במילה" -> "E::stack-end::מ:אות-מיוחדת-במילה" [label="מ:לגרמיה-2 (4)"];
-    "E::stack::מ:דחי" -> "E::stack-end::מ:דחי" [label="מ:אות-מיוחדת-במילה (6)"];
     "E::stack::מ:דחי" -> "E::stack::מ:דחי/מ:אות-מיוחדת-במילה" [label="מ:אות-מיוחדת-במילה (6)"];
     "E::stack::מ:דחי/מ:אות-מיוחדת-במילה" -> "E::stack-end::מ:דחי" [label="מ:אות-ג (4)"];
     "E::stack::מ:דחי/מ:אות-מיוחדת-במילה" -> "E::stack-end::מ:דחי" [label="מ:אות-ק (2)"];
-    "E::stack::מ:הערה-2" -> "E::stack-end::מ:הערה-2" [label="מ:אות-מיוחדת-במילה (9)"];
     "E::stack::מ:הערה-2" -> "E::stack::מ:הערה-2/מ:אות-מיוחדת-במילה" [label="מ:אות-מיוחדת-במילה (9)"];
     "E::stack::מ:הערה-2/מ:אות-מיוחדת-במילה" -> "E::stack-end::מ:הערה-2" [label="מ:אות-ג (7)"];
     "E::stack::מ:הערה-2/מ:אות-מיוחדת-במילה" -> "E::stack-end::מ:הערה-2" [label="מ:אות-ק (2)"];
@@ -96,7 +91,6 @@ digraph template_call_graph_templates_as_edges {
     "E::start::מ:קו״כ-אם-2" -> "E::stack::מ:קו״כ-אם-2" [label="מ:קו״כ-אם-2 (12)"];
     "E::start::מ:קמץ" -> "E::stack::מ:קמץ" [label="מ:קמץ (16)"];
     "E::start::קו״כ" -> "E::stack::קו״כ" [label="קו״כ (1)"];
-    "C::start" -> "C::stack-end" [label="מ:אין … פרק (139) | מ:אין … אמ״ת (33) | … +12 more", tooltip="מ:אין פרשה בתחילת פרק (139) | מ:אין פרשה בתחילת פרק בספרי אמ״ת (33) | מ:אין רווח של פרשה בתחילת פרשת השבוע (1) | מ:הערה-2 (4) | מ:ספר חדש (24) | מ:רווח בתרי עשר בפסוק הראשון (12) | מ:רווח לספר בתהלים בפסוק הראשון (5) | מ:ששש (100) | סס (1513) | ססס (324) | פפ (1541) | פפפ (3) | ר1 (2) | ר4 (4269)"];
-    "D::start" -> "D::stack-end" [label="מ:פסוק (895)"];
-    "E::start" -> "E::stack-end" [label="כו״ק (884) | כתיב … קרי (8) | … +22 more", tooltip="כו״ק (884) | כתיב ולא קרי (8) | מ:אות-מיוחדת-במילה (79) | מ:דחי (2287) | מ:הערה-2 (27) | מ:כו״ק מיוחד (37) | מ:לגרמיה-2 (1811) | מ:מקף אפור (114) | מ:נו״ן הפוכה (9) | מ:פסק (515) | מ:צינור (56) | מ:קו״כ-אם-2 (148) | מ:קמץ (363) | מ:ששש (228) | סס (53) | ססס (106) | פפ (11) | פפפ (15) | קו״כ (126) | קרי ולא כתיב (9) | ר0 (536) | ר1 (4618) | ר2 (568) | ר3 (170)"];
+    "C::start" -> "C::stack-end" [label="מ:אין … פרק (139) | מ:אין … אמ״ת (33) | … +11 more", tooltip="מ:אין פרשה בתחילת פרק (139) | מ:אין פרשה בתחילת פרק בספרי אמ״ת (33) | מ:אין רווח של פרשה בתחילת פרשת השבוע (1) | מ:ספר חדש (24) | מ:רווח בתרי עשר בפסוק הראשון (12) | מ:רווח לספר בתהלים בפסוק הראשון (5) | מ:ששש (100) | סס (1513) | ססס (324) | פפ (1541) | פפפ (3) | ר1 (2) | ר4 (4269)"];
+    "E::start" -> "E::stack-end" [label="כתיב … קרי (8) | מ:לגרמיה-2 (1811) | … +14 more", tooltip="כתיב ולא קרי (8) | מ:לגרמיה-2 (1811) | מ:מקף אפור (114) | מ:נו״ן הפוכה (9) | מ:פסק (515) | מ:צינור (56) | מ:ששש (228) | סס (53) | ססס (106) | פפ (11) | פפפ (15) | קרי ולא כתיב (9) | ר0 (536) | ר1 (4618) | ר2 (568) | ר3 (170)"];
 }

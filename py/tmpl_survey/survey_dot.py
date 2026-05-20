@@ -470,13 +470,19 @@ def _single_template_edge_label_and_tooltip(tmpl_name, count, tmpl_abbrevs):
 
 def _write_edge_templates_dot(paths, fp, note=_DEFAULT_NOTE, generated_by=None):
     """Write edge-labeled DOT where templates are on edges, not nodes."""
+    has_child_contexts = set()
+    for start, template_path, _count in paths:
+        for prefix_len in range(1, len(template_path)):
+            has_child_contexts.add((start, template_path[:prefix_len]))
+
     start_node_meta = {}
     state_tooltips = {}
     end_tooltips = {}
     edge_counts = {}
     for start, template_path, count in paths:
         first_hop = template_path[0]
-        if len(template_path) == 1:
+        is_one_hop_leaf = (start, (first_hop,)) not in has_child_contexts
+        if len(template_path) == 1 and is_one_hop_leaf:
             start_node = _edge_mode_one_hop_start_id(start)
             start_node_meta.setdefault(
                 start_node,
@@ -490,9 +496,16 @@ def _write_edge_templates_dot(paths, fp, note=_DEFAULT_NOTE, generated_by=None):
             )
         prev_node = start_node
         for idx, tmpl_name in enumerate(template_path):
-            is_last = idx == len(template_path) - 1
-            if is_last:
-                if len(template_path) == 1:
+            context_prefix = template_path[: idx + 1]
+            is_last_in_path = idx == len(template_path) - 1
+            if (start, context_prefix) in has_child_contexts:
+                if is_last_in_path:
+                    # Leaf-only terminal policy: skip rows that stop at non-leaf contexts.
+                    continue
+                next_node = _edge_mode_state_id(start, context_prefix)
+                state_tooltips.setdefault(next_node, f"{start}/{'/'.join(context_prefix)}")
+            else:
+                if len(context_prefix) == 1:
                     next_node = _edge_mode_one_hop_end_id(start)
                     end_tooltips.setdefault(
                         next_node,
@@ -504,10 +517,6 @@ def _write_edge_templates_dot(paths, fp, note=_DEFAULT_NOTE, generated_by=None):
                         next_node,
                         f"Stack end for {start}/{first_hop}",
                     )
-            else:
-                prefix = template_path[: idx + 1]
-                next_node = _edge_mode_state_id(start, prefix)
-                state_tooltips.setdefault(next_node, f"{start}/{'/'.join(prefix)}")
             edge = (prev_node, next_node, tmpl_name)
             edge_counts[edge] = edge_counts.get(edge, 0) + count
             prev_node = next_node
