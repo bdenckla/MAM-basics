@@ -19,7 +19,7 @@ _KAFUL_DOC = "mpplain_kaful.html"
 _MULTIMARK_DOC = "mpplain_multimark.html"
 _GOOD_ENDING_TMPL_DOC = "mpplain_good_ending_tmpl.html"
 _NUSACH_DOC = "mpplain_nusach.html"
-_POETIC_SPACING_DOC = "../../plus/html/mpplus_poetic_spacing.html"
+_POETIC_SPACING_DOC = "mpplain_poetic_spacing.html"
 
 _JSON_INDEX_0 = jsnip.read_text("mpplain", "index_0.json")
 _JSON_EP_EXAMPLE = jsnip.read_text("mpplain", "ep_example.json")

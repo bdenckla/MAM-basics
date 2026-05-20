@@ -35,6 +35,7 @@ def _run_mam_parsed_authored_traversal(
     from author import mpplain_nusach
     from author import mpplus_diff_from_plain
     from author import mpplus_plain_only_templates
+    from author import mpplain_poetic_spacing
     from author import mpplus_poetic_spacing
 
     if tdm_ch_root is None and tdm_ch_plain is None and tdm_ch_plus is None:
@@ -58,6 +59,7 @@ def _run_mam_parsed_authored_traversal(
         mpplain_nusach.build_body(claims=claims)
         mpplus_diff_from_plain.build_body(claims=claims)
         mpplus_plain_only_templates.build_body(claims=claims)
+        mpplain_poetic_spacing.build_body(claims=claims)
         mpplus_poetic_spacing.build_body(claims=claims)
         return
 
@@ -73,6 +75,7 @@ def _run_mam_parsed_authored_traversal(
     mpplain_good_ending_tmpl.gen_html_file(tdm_ch_plain, claims=claims)
     mpplain_kq_am2.gen_html_file(tdm_ch_plain, claims=claims)
     mpplain_nusach.gen_html_file(tdm_ch_plain, claims=claims)
+    mpplain_poetic_spacing.gen_html_file(tdm_ch_plain, claims=claims)
 
     mpplus.gen_html_file(tdm_ch_plus, claims=claims)
     mpplus_template_call_graphs.gen_html_file(tdm_ch_plus, claims=claims)
