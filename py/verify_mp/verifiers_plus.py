@@ -508,9 +508,9 @@ def verify_mp_plus_docs_diff_from_plain_links(
         ".html"
     ), f"plain_only_templates_page must be an .html file name, got {plain_only!r}"
 
-    gh_pages_dir = Path("../MAM-parsed/gh-pages")
-    primary_path = gh_pages_dir / primary
-    plain_only_path = gh_pages_dir / plain_only
+    plus_html_dir = Path("../MAM-parsed/gh-pages/plus/html")
+    primary_path = plus_html_dir / primary
+    plain_only_path = plus_html_dir / plain_only
     assert (
         primary_path.exists()
     ), f"declared doc link target does not exist: {primary_path}"

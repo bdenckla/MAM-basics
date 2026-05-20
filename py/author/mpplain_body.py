@@ -12,14 +12,14 @@ from author import mp_cmn_top_header_book39 as thb
 from author import mp_body_shared as body_shared
 from author import mp_table_helpers as tblh
 
-_PLUS_DOC = "mpplus.html"
+_PLUS_DOC = "../../plus/html/mpplus.html"
 _KQ_AM2_DOC = "mpplain_kq_am2.html"
 _KQ_SPECIAL_DOC = "mpplain_kq_special.html"
 _KAFUL_DOC = "mpplain_kaful.html"
 _MULTIMARK_DOC = "mpplain_multimark.html"
 _GOOD_ENDING_TMPL_DOC = "mpplain_good_ending_tmpl.html"
 _NUSACH_DOC = "mpplain_nusach.html"
-_POETIC_SPACING_DOC = "mpplus_poetic_spacing.html"
+_POETIC_SPACING_DOC = "../../plus/html/mpplus_poetic_spacing.html"
 
 _JSON_INDEX_0 = jsnip.read_text("mpplain", "index_0.json")
 _JSON_EP_EXAMPLE = jsnip.read_text("mpplain", "ep_example.json")
