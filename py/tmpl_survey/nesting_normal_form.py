@@ -94,11 +94,17 @@ def _full_template_path(callee: str, stack_str: str) -> Tuple[str, ...]:
     return tuple(parts + [callee])
 
 
+def _is_singleton_template_stack(full_template_path: Sequence[str]) -> bool:
+    return len(full_template_path) <= 1
+
+
 def summarize_rank_coverage_counts(
     stack_counts: StackCounts,
     rank_map: RankMap,
 ) -> Dict[str, int]:
     """Summarize weighted rank-coverage categories over observed stack paths.
+
+    Singleton template stacks are excluded entirely.
 
     Categories use coverage cov on full template path (stack templates + callee):
     - fully_checked: cov = 1
@@ -113,7 +119,7 @@ def summarize_rank_coverage_counts(
         if count <= 0:
             continue
         full_path = _full_template_path(callee, stack_str)
-        if not full_path:
+        if _is_singleton_template_stack(full_path):
             continue
         ranked_count = sum(1 for name in full_path if name in rank_map)
         if ranked_count == len(full_path):
@@ -174,9 +180,12 @@ def find_rank_violations(
     for (callee, stack_str), count in stack_counts.items():
         if count <= 0:
             continue
-        full_path = [p for p in stack_str.split("/") if p]
-        full_path.append(callee)
-        ranked = _ranked_projection(full_path, rank_map)
+        full_template_path = _full_template_path(callee, stack_str)
+        if _is_singleton_template_stack(full_template_path):
+            # Normal-order checking is about ordering relations, which require
+            # at least two templates in the stack path.
+            continue
+        ranked = _ranked_projection(full_template_path, rank_map)
         for caller, child in zip(ranked, ranked[1:]):
             caller_rank = rank_map[caller]
             child_rank = rank_map[child]
@@ -188,7 +197,7 @@ def find_rank_violations(
             if relation is not None:
                 key = (caller, child, relation)
                 bad_counts[key] += count
-                examples.setdefault(key, "/".join(full_path))
+                examples.setdefault(key, "/".join(full_template_path))
 
     violations: List[dict[str, object]] = []
     for (caller, child, relation), count in sorted(bad_counts.items()):

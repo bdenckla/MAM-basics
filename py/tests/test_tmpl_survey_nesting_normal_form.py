@@ -163,6 +163,8 @@ class TestTmplSurveyNestingNormalForm(unittest.TestCase):
             ("rank-3", ("C",)),
         ))
         stack_counts = {
+            # singleton template stack is excluded
+            ("A", "C"): 2,
             # full template path A/B/C => cov=1
             ("C", "C/A/B"): 2,
             # full template path A/X/C => 0<cov<1
@@ -177,6 +179,22 @@ class TestTmplSurveyNestingNormalForm(unittest.TestCase):
                 "partially_checked": 3,
                 "totally_unchecked": 5,
                 "total": 10,
+            },
+            summary,
+        )
+
+    def test_summarize_rank_coverage_counts_excludes_singleton_stack_only_case(self):
+        rank_map = nnf.build_rank_map((("rank-1", ("A",)),))
+        stack_counts = {
+            ("A", "C"): 7,
+        }
+        summary = nnf.summarize_rank_coverage_counts(stack_counts, rank_map)
+        self.assertEqual(
+            {
+                "fully_checked": 0,
+                "partially_checked": 0,
+                "totally_unchecked": 0,
+                "total": 0,
             },
             summary,
         )

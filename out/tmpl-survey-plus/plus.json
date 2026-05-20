@@ -1229,40 +1229,40 @@
   ],
   "normal_order_cov_counts_by_case": {
     "plain-C": {
-      "fully_checked": 277,
+      "fully_checked": 0,
       "partially_checked": 242,
-      "totally_unchecked": 16700,
-      "total": 17219
+      "totally_unchecked": 2,
+      "total": 244
     },
     "plain-D": {
-      "fully_checked": 35,
+      "fully_checked": 0,
       "partially_checked": 47,
-      "totally_unchecked": 23688,
-      "total": 23770
+      "totally_unchecked": 521,
+      "total": 568
     },
     "plain-E": {
-      "fully_checked": 7189,
+      "fully_checked": 294,
       "partially_checked": 3814,
-      "totally_unchecked": 9565,
-      "total": 20568
+      "totally_unchecked": 12,
+      "total": 4120
     },
     "plus-C": {
-      "fully_checked": 273,
+      "fully_checked": 0,
       "partially_checked": 242,
-      "totally_unchecked": 7746,
-      "total": 8261
+      "totally_unchecked": 0,
+      "total": 242
     },
     "plus-D": {
-      "fully_checked": 35,
+      "fully_checked": 0,
       "partially_checked": 47,
-      "totally_unchecked": 1381,
-      "total": 1463
+      "totally_unchecked": 521,
+      "total": 568
     },
     "plus-E": {
-      "fully_checked": 7642,
+      "fully_checked": 468,
       "partially_checked": 3713,
-      "totally_unchecked": 8540,
-      "total": 19895
+      "totally_unchecked": 0,
+      "total": 4181
     }
   }
 }
