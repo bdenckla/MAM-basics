@@ -7,7 +7,8 @@ from tmpl_survey import survey_plain
 from tmpl_survey import survey_plus
 from mb_cmn import file_io
 
-_OUT_DIR = "out/MAM-tmpl-survey"
+_PLAIN_OUT_DIR = "out/tmpl-survey-plain"
+_PLUS_OUT_DIR = "out/tmpl-survey-plus"
 _PLAIN_SVG_DIR = "../MAM-parsed/gh-pages/plain/svg"
 _PLUS_SVG_DIR = "../MAM-parsed/gh-pages/plus/svg"
 _PLAIN_TMPL_NAME_NORMALIZATION_NOTE = (
@@ -83,7 +84,7 @@ def almost_main():
     _write_outputs(
         plain_result,
         plain_raw_sc,
-        f"{_OUT_DIR}/plain",
+        f"{_PLAIN_OUT_DIR}/plain",
         svg_stem=f"{_PLAIN_SVG_DIR}/plain",
         normalization_note=_PLAIN_TMPL_NAME_NORMALIZATION_NOTE,
         discarded=plain_discarded,
@@ -94,7 +95,7 @@ def almost_main():
     _write_outputs(
         plus_result,
         plus_raw_sc,
-        f"{_OUT_DIR}/plus",
+        f"{_PLUS_OUT_DIR}/plus",
         svg_stem=f"{_PLUS_SVG_DIR}/plus",
         discarded=plus_discarded,
     )

@@ -40,8 +40,8 @@ class Context:
 
     corpus: Corpus
     corpus_plain: PlainCorpus
-    survey: dict  # loaded plus.json from out/MAM-tmpl-survey/
-    survey_plain: dict  # loaded plain.json from out/MAM-tmpl-survey/
+    survey: dict  # loaded plus.json from out/tmpl-survey-plus/
+    survey_plain: dict  # loaded plain.json from out/tmpl-survey-plain/
     claim_records: Mapping[str, "ClaimRecord"] | None = None
 
 

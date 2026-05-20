@@ -4,13 +4,13 @@
 import json
 import os
 
-_PATH = "out/MAM-tmpl-survey/plus.json"
-_PLAIN_PATH = "out/MAM-tmpl-survey/plain.json"
+_PATH = "out/tmpl-survey-plus/plus.json"
+_PLAIN_PATH = "out/tmpl-survey-plain/plain.json"
 _REGEN_MSG = "    .venv\\Scripts\\python.exe py\\main_tmpl_survey.py"
 
 
 def load() -> dict:
-    """Load out/MAM-tmpl-survey/plus.json. Caller must run from repo root.
+    """Load out/tmpl-survey-plus/plus.json. Caller must run from repo root.
 
     Raises FileNotFoundError with an instructive message if absent. Does NOT
     regenerate; that is intentionally a manual step (`py\\main_tmpl_survey.py`).
@@ -24,7 +24,7 @@ def load() -> dict:
 
 
 def load_plain() -> dict:
-    """Load out/MAM-tmpl-survey/plain.json. Same guarantees as load()."""
+    """Load out/tmpl-survey-plain/plain.json. Same guarantees as load()."""
     if not os.path.exists(_PLAIN_PATH):
         raise FileNotFoundError(
             f"{_PLAIN_PATH} not found. Generate it first with:\n{_REGEN_MSG}"

@@ -65,8 +65,8 @@ _run_verify_mp(claims=...) in py/main_authored.py performs:
 
 1. load_plus_corpus() from verify_mp/corpus.py (loads ../MAM-parsed/plus/*.json)
 2. load_plain_corpus() from verify_mp/corpus.py (loads ../MAM-parsed/plain/*.json)
-3. survey_artifact.load() (loads out/MAM-tmpl-survey/plus.json)
-4. survey_artifact.load_plain() (loads out/MAM-tmpl-survey/plain.json)
+3. survey_artifact.load() (loads out/tmpl-survey-plus/plus.json)
+4. survey_artifact.load_plain() (loads out/tmpl-survey-plain/plain.json)
 5. Context(...) construction
 6. verify_mp/driver.py::run(ctx, claims=claims)
 
