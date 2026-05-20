@@ -38,3 +38,35 @@ The checker is assert-only:
 - violations raise `AssertionError` with aggregated counts and an example path
 
 It runs in both plain and plus surveys.
+
+## Expanded All-Stack Grammar
+
+The rank grammar above covers only selected templates. To expand checking to
+all stack symbols, use a data-driven grammar inferred from baseline stack data.
+
+The inferred grammar has two parts:
+
+- `allowed_edges`: adjacent parent->child transitions seen in baseline stacks
+- `must_precede`: ordered symbol pairs where `A` and `B` co-occur and `A` is
+	never observed after `B`
+
+Why this is "reasonably strict":
+
+- It allows many unseen stacks (for example unseen prefixes and novel
+	combinations of previously-seen transitions).
+- It rejects permutations that reverse stable relative order constraints.
+- It rejects transitions that were never observed in the baseline grammar.
+
+Implementation entry points in
+`py/tmpl_survey/nesting_normal_form.py`:
+
+- `infer_expanded_stack_grammar(stack_counts)`
+- `assert_stack_counts_follow_expanded_grammar(stack_counts, grammar, dataset_name)`
+- `find_expanded_grammar_violations(stack_counts, grammar)`
+- `merge_stack_counts(*stack_counts_maps)`
+
+Suggested workflow:
+
+1. Build baseline grammar from union of plain and plus raw stack counts.
+2. Save grammar JSON as a lock file committed to the repo.
+3. On future runs, assert both datasets against the lock file grammar.

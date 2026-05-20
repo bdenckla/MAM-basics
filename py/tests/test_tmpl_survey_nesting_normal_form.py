@@ -67,6 +67,83 @@ class TestTmplSurveyNestingNormalForm(unittest.TestCase):
         self.assertEqual(2, violations[0]["callee_rank"])
         self.assertEqual(8, violations[0]["count"])
 
+    def test_infer_expanded_stack_grammar_has_edges_and_order(self):
+        baseline = {
+            ("C", "R/A/B"): 2,
+            ("X", "R/C"): 1,
+            ("A", "R/X"): 1,
+        }
+        grammar = nnf.infer_expanded_stack_grammar(baseline)
+
+        self.assertEqual("expanded-stack-grammar-v1", grammar["version"])
+        self.assertIn(["R", "A"], grammar["allowed_edges"])
+        self.assertIn(["A", "B"], grammar["allowed_edges"])
+        self.assertIn(["B", "C"], grammar["allowed_edges"])
+        self.assertIn(["A", "C"], grammar["must_precede"])
+
+    def test_expanded_stack_grammar_allows_unseen_but_consistent_stack(self):
+        baseline = {
+            ("C", "R/A/B"): 2,
+            ("X", "R/C"): 1,
+            ("A", "R/X"): 1,
+        }
+        grammar = nnf.infer_expanded_stack_grammar(baseline)
+        candidate = {
+            ("B", "R/A"): 1,
+        }
+        nnf.assert_stack_counts_follow_expanded_grammar(
+            candidate,
+            grammar,
+            dataset_name="unit-candidate",
+        )
+
+    def test_expanded_stack_grammar_rejects_permutation(self):
+        baseline = {
+            ("C", "R/A/B"): 2,
+            ("X", "R/C"): 1,
+            ("A", "R/X"): 1,
+        }
+        grammar = nnf.infer_expanded_stack_grammar(baseline)
+
+        # This path uses known edges (R->C, C->X, X->A) but reverses
+        # the baseline order constraint A before C.
+        candidate = {
+            ("A", "R/C/X"): 1,
+        }
+        with self.assertRaises(AssertionError) as ctx:
+            nnf.assert_stack_counts_follow_expanded_grammar(
+                candidate,
+                grammar,
+                dataset_name="unit-candidate",
+            )
+        msg = str(ctx.exception)
+        self.assertIn("order-permutation", msg)
+        self.assertIn("expected A before C", msg)
+
+    def test_expanded_stack_grammar_detects_unexpected_edge(self):
+        baseline = {
+            ("C", "R/A/B"): 2,
+        }
+        grammar = nnf.infer_expanded_stack_grammar(baseline)
+        candidate = {
+            ("B", "R/C"): 1,
+        }
+        violations = nnf.find_expanded_grammar_violations(candidate, grammar)
+        edge_violations = [v for v in violations if v["kind"] == "unexpected-edge"]
+        self.assertTrue(edge_violations)
+        self.assertIn(
+            ("R", "C"),
+            {(v["parent"], v["child"]) for v in edge_violations},
+        )
+
+    def test_merge_stack_counts_sums_shared_keys(self):
+        first = {("A", "R"): 2, ("B", "R/A"): 3}
+        second = {("A", "R"): 5, ("C", "R/A/B"): 7}
+        merged = nnf.merge_stack_counts(first, second)
+        self.assertEqual(7, merged[("A", "R")])
+        self.assertEqual(3, merged[("B", "R/A")])
+        self.assertEqual(7, merged[("C", "R/A/B")])
+
 
 if __name__ == "__main__":
     unittest.main()
