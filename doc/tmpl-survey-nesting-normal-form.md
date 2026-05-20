@@ -67,6 +67,18 @@ Implementation entry points in
 
 Suggested workflow:
 
-1. Build baseline grammar from union of plain and plus raw stack counts.
-2. Save grammar JSON as a lock file committed to the repo.
-3. On future runs, assert both datasets against the lock file grammar.
+1. Build a plain grammar lock from plain raw stack counts.
+2. Build a plus grammar lock from plus raw stack counts.
+3. Commit both lock files.
+4. On future runs, assert each dataset against its own lock file grammar.
+
+Runtime wiring:
+
+- Lock file paths:
+	- `py/tmpl_survey/expanded_stack_grammar_plain.lock.json`
+	- `py/tmpl_survey/expanded_stack_grammar_plus.lock.json`
+- Main survey command validates plain stacks against the plain lock and plus
+	stacks against the plus lock.
+- To create or refresh both lock files from current data, run:
+
+	`.venv/Scripts/python.exe py/main_tmpl_survey.py --write-expanded-stack-grammar-lock`

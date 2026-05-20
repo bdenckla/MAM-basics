@@ -1,7 +1,10 @@
 """Survey Wikisource template usage patterns across the MAM corpus (plain and plus)."""
 
+import argparse
+import json
 import os
 
+from tmpl_survey import nesting_normal_form
 from tmpl_survey import survey_dot
 from tmpl_survey import survey_plain
 from tmpl_survey import survey_plus
@@ -11,6 +14,12 @@ _PLAIN_OUT_DIR = "out/tmpl-survey-plain"
 _PLUS_OUT_DIR = "out/tmpl-survey-plus"
 _PLAIN_SVG_DIR = "../MAM-parsed/gh-pages/plain/svg"
 _PLUS_SVG_DIR = "../MAM-parsed/gh-pages/plus/svg"
+_PLAIN_EXPANDED_STACK_GRAMMAR_LOCK_PATH = (
+    "py/tmpl_survey/expanded_stack_grammar_plain.lock.json"
+)
+_PLUS_EXPANDED_STACK_GRAMMAR_LOCK_PATH = (
+    "py/tmpl_survey/expanded_stack_grammar_plus.lock.json"
+)
 _PLAIN_TMPL_NAME_NORMALIZATION_NOTE = (
     "In the plain survey, template names are normalized: ASCII double quote "
     '(") is converted to Hebrew gershayim (U+05F4). This applies to both '
@@ -78,9 +87,82 @@ def _write_outputs(
     )
 
 
-def almost_main():
+def _read_json_file(path):
+    with open(path, encoding="utf-8") as fp:
+        return json.load(fp)
+
+
+def _write_expanded_stack_grammar_locks(plain_grammar, plus_grammar):
+    file_io.json_dump_to_file_path(
+        plain_grammar,
+        _PLAIN_EXPANDED_STACK_GRAMMAR_LOCK_PATH,
+        generator_file=__file__,
+    )
+    file_io.json_dump_to_file_path(
+        plus_grammar,
+        _PLUS_EXPANDED_STACK_GRAMMAR_LOCK_PATH,
+        generator_file=__file__,
+    )
+
+
+def _assert_with_expanded_stack_grammar_locks(
+    plain_raw_sc,
+    plus_raw_sc,
+    write_expanded_stack_grammar_locks=False,
+):
+    plain_inferred_grammar = nesting_normal_form.infer_expanded_stack_grammar(plain_raw_sc)
+    plus_inferred_grammar = nesting_normal_form.infer_expanded_stack_grammar(plus_raw_sc)
+
+    if write_expanded_stack_grammar_locks:
+        _write_expanded_stack_grammar_locks(
+            plain_inferred_grammar,
+            plus_inferred_grammar,
+        )
+
+    missing_paths = [
+        path
+        for path in (
+            _PLAIN_EXPANDED_STACK_GRAMMAR_LOCK_PATH,
+            _PLUS_EXPANDED_STACK_GRAMMAR_LOCK_PATH,
+        )
+        if not os.path.exists(path)
+    ]
+    if missing_paths:
+        missing = ", ".join(missing_paths)
+        raise FileNotFoundError(
+            "Expanded stack grammar lock file(s) not found at "
+            f"{missing}. "
+            "Run py/main_tmpl_survey.py --write-expanded-stack-grammar-lock "
+            "to create/update both plain and plus locks."
+        )
+
+    plain_grammar_lock = _read_json_file(_PLAIN_EXPANDED_STACK_GRAMMAR_LOCK_PATH)
+    plus_grammar_lock = _read_json_file(_PLUS_EXPANDED_STACK_GRAMMAR_LOCK_PATH)
+
+    nesting_normal_form.assert_stack_counts_follow_expanded_grammar(
+        plain_raw_sc,
+        plain_grammar_lock,
+        dataset_name="plain survey (plain expanded stack grammar lock)",
+    )
+    nesting_normal_form.assert_stack_counts_follow_expanded_grammar(
+        plus_raw_sc,
+        plus_grammar_lock,
+        dataset_name="plus survey (plus expanded stack grammar lock)",
+    )
+
+
+def almost_main(write_expanded_stack_grammar_lock=False):
     """Survey the use of templates in MAM plain and plus."""
     plain_result, plain_raw_sc, plain_discarded = survey_plain.survey()
+    plus_result, plus_raw_sc, plus_discarded = survey_plus.survey(
+        plain_result["mpasuq"]
+    )
+    _assert_with_expanded_stack_grammar_locks(
+        plain_raw_sc,
+        plus_raw_sc,
+        write_expanded_stack_grammar_locks=write_expanded_stack_grammar_lock,
+    )
+
     _write_outputs(
         plain_result,
         plain_raw_sc,
@@ -88,9 +170,6 @@ def almost_main():
         svg_stem=f"{_PLAIN_SVG_DIR}/plain",
         normalization_note=_PLAIN_TMPL_NAME_NORMALIZATION_NOTE,
         discarded=plain_discarded,
-    )
-    plus_result, plus_raw_sc, plus_discarded = survey_plus.survey(
-        plain_result["mpasuq"]
     )
     _write_outputs(
         plus_result,
@@ -101,9 +180,27 @@ def almost_main():
     )
 
 
+def build_parser() -> argparse.ArgumentParser:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "--write-expanded-stack-grammar-lock",
+        action="store_true",
+        help=(
+            "Infer expanded stack grammar separately for plain and plus surveys, "
+            "write/update both lock files, and validate the current run against "
+            "the matching lock for each dataset."
+        ),
+    )
+    return parser
+
+
 def main():
     """Survey the use of templates in MAM plain and plus."""
-    almost_main()
+    parser = build_parser()
+    args = parser.parse_args()
+    almost_main(
+        write_expanded_stack_grammar_lock=args.write_expanded_stack_grammar_lock
+    )
 
 
 if __name__ == "__main__":
