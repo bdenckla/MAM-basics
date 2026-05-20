@@ -122,9 +122,9 @@ Behavior is covered by py/tests/test_explicit_claims.py, including a test that a
 
 ## 5) Compact flow diagram
 
-Mermaid source: [doc/mam-parsed-claims-verification-flow.mmd](doc/mam-parsed-claims-verification-flow.mmd)
+Mermaid source: [mam-parsed-claims-verification-flow.mmd](mam-parsed-claims-verification-flow.mmd)
 
-Rendered SVG: [doc/mam-parsed-claims-verification-flow.svg](doc/mam-parsed-claims-verification-flow.svg)
+Rendered SVG: [mam-parsed-claims-verification-flow.svg](mam-parsed-claims-verification-flow.svg)
 
 ![MAM-parsed claims verification flow](mam-parsed-claims-verification-flow.svg)
 
