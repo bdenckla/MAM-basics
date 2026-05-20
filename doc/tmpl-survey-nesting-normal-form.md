@@ -22,6 +22,9 @@ Ranks:
 Equivalent graph statement: along the ranked projection of each root-to-leaf
 path, rank must be strictly increasing (each rank appears at most once).
 
+Paths with full template path length (before projection) `<= 1` are considered
+"not even a candidate for checking" and are excluded from coverage counts.
+
 ## Why this is useful
 
 Some nestings are syntactically possible but not desired as project normal form.
@@ -38,6 +41,13 @@ The checker is assert-only:
 - violations raise `AssertionError` with aggregated counts and an example path
 
 It runs in both plain and plus surveys.
+
+Coverage buckets in survey outputs:
+
+- uncounted (implicit): full template path length before projection `<= 1`
+- `totally_unchecked`: candidate path (full length `>= 2`) whose ranked projection length is `<= 1`
+- `fully_checked`: candidate path with ranked projection length `>= 2` that has only ranked templates (`cov = 1`)
+- `partially_checked`: candidate path with ranked projection length `>= 2` that mixes ranked and unranked templates (`0 < cov < 1`)
 
 ## Expanded All-Stack Grammar
 

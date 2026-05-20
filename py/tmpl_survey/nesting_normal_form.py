@@ -127,10 +127,10 @@ def _checkedness_bucket(
     if _is_singleton_template_stack(full_template_path):
         return None
     ranked_count = sum(1 for name in full_template_path if name in rank_map)
+    if ranked_count <= 1:
+        return "totally_unchecked"
     if ranked_count == len(full_template_path):
         return "fully_checked"
-    if ranked_count == 0:
-        return "totally_unchecked"
     return "partially_checked"
 
 
@@ -148,9 +148,9 @@ def summarize_rank_coverage_counts(
     Singleton template stacks are excluded entirely.
 
     Categories use coverage cov on full template path (stack templates + callee):
+    - totally_unchecked: projected ranked path len <= 1
     - fully_checked: cov = 1
-    - partially_checked: 0 < cov < 1
-    - totally_unchecked: cov = 0
+    - partially_checked: projected ranked path len >= 2 and 0 < cov < 1
     """
     fully_checked = 0
     partially_checked = 0

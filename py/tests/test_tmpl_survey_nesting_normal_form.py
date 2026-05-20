@@ -165,6 +165,8 @@ class TestTmplSurveyNestingNormalForm(unittest.TestCase):
         stack_counts = {
             # singleton template stack is excluded
             ("A", "C"): 2,
+            # full template path X/A projects to A (len=1) => totally_unchecked
+            ("A", "C/X"): 4,
             # full template path A/B/C => cov=1
             ("C", "C/A/B"): 2,
             # full template path A/X/C => 0<cov<1
@@ -177,8 +179,8 @@ class TestTmplSurveyNestingNormalForm(unittest.TestCase):
             {
                 "fully_checked": 2,
                 "partially_checked": 3,
-                "totally_unchecked": 5,
-                "total": 10,
+                "totally_unchecked": 9,
+                "total": 14,
             },
             summary,
         )
@@ -199,6 +201,23 @@ class TestTmplSurveyNestingNormalForm(unittest.TestCase):
             summary,
         )
 
+    def test_summarize_rank_coverage_counts_treats_projected_singleton_candidate_as_unchecked(self):
+        rank_map = nnf.build_rank_map((("rank-1", ("A",)),))
+        stack_counts = {
+            # Full path X/A (len=2) is a candidate and projects to singleton A.
+            ("A", "C/X"): 7,
+        }
+        summary = nnf.summarize_rank_coverage_counts(stack_counts, rank_map)
+        self.assertEqual(
+            {
+                "fully_checked": 0,
+                "partially_checked": 0,
+                "totally_unchecked": 7,
+                "total": 7,
+            },
+            summary,
+        )
+
     def test_summarize_rank_coverage_top_paths_returns_counts_per_bucket(self):
         rank_map = nnf.build_rank_map((
             ("rank-1", ("A",)),
@@ -206,8 +225,8 @@ class TestTmplSurveyNestingNormalForm(unittest.TestCase):
             ("rank-3", ("C",)),
         ))
         stack_counts = {
-            # singleton is excluded
-            ("A", "E"): 7,
+            # full template path X/A projects to A (len=1) => totally unchecked
+            ("A", "E/X"): 7,
             # fully checked
             ("C", "E/A/B"): 2,
             # partially checked
@@ -231,7 +250,7 @@ class TestTmplSurveyNestingNormalForm(unittest.TestCase):
             top_paths["partially_checked"],
         )
         self.assertEqual(
-            [{"stack_path": "E/X/Y/Z", "count": 5}],
+            [{"stack_path": "E/X/A", "count": 7}],
             top_paths["totally_unchecked"],
         )
 

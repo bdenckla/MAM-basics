@@ -1230,27 +1230,28 @@
   "normal_order_cov_counts_by_case": {
     "plus-C": {
       "fully_checked": 0,
-      "partially_checked": 242,
-      "totally_unchecked": 0,
+      "partially_checked": 0,
+      "totally_unchecked": 242,
       "total": 242
     },
     "plus-D": {
       "fully_checked": 0,
-      "partially_checked": 47,
-      "totally_unchecked": 521,
+      "partially_checked": 0,
+      "totally_unchecked": 568,
       "total": 568
     },
     "plus-E": {
       "fully_checked": 732,
-      "partially_checked": 3449,
-      "totally_unchecked": 0,
+      "partially_checked": 59,
+      "totally_unchecked": 3390,
       "total": 4181
     }
   },
   "normal_order_cov_top_paths_by_case": {
     "plus-C": {
       "fully_checked": [],
-      "partially_checked": [
+      "partially_checked": [],
+      "totally_unchecked": [
         {
           "stack_path": "C/נוסח/פפ",
           "count": 94
@@ -1291,12 +1292,16 @@
           "stack_path": "C/נוסח/מ:אין פרשה בתחילת פרק בספרי אמ״ת",
           "count": 1
         }
-      ],
-      "totally_unchecked": []
+      ]
     },
     "plus-D": {
       "fully_checked": [],
-      "partially_checked": [
+      "partially_checked": [],
+      "totally_unchecked": [
+        {
+          "stack_path": "D/מ:פסוק/מ:עלייה",
+          "count": 521
+        },
         {
           "stack_path": "D/נוסח/מ:פסוק",
           "count": 35
@@ -1308,12 +1313,6 @@
         {
           "stack_path": "D/נוסח/ש",
           "count": 1
-        }
-      ],
-      "totally_unchecked": [
-        {
-          "stack_path": "D/מ:פסוק/מ:עלייה",
-          "count": 521
         }
       ]
     },
@@ -1362,12 +1361,18 @@
       ],
       "partially_checked": [
         {
-          "stack_path": "E/נוסח/ש",
-          "count": 3215
-        },
-        {
           "stack_path": "E/מ:כפול/נוסח/ש",
           "count": 58
+        },
+        {
+          "stack_path": "E/מ:כפול/נוסח/פפ",
+          "count": 1
+        }
+      ],
+      "totally_unchecked": [
+        {
+          "stack_path": "E/נוסח/ש",
+          "count": 3215
         },
         {
           "stack_path": "E/נוסח/ר3",
@@ -1400,9 +1405,12 @@
         {
           "stack_path": "E/נוסח/פפ",
           "count": 4
+        },
+        {
+          "stack_path": "E/נוסח/מ:קישור פנימי בהערה",
+          "count": 3
         }
-      ],
-      "totally_unchecked": []
+      ]
     }
   }
 }

@@ -15221,27 +15221,28 @@
   "normal_order_cov_counts_by_case": {
     "plain-C": {
       "fully_checked": 0,
-      "partially_checked": 242,
-      "totally_unchecked": 2,
+      "partially_checked": 0,
+      "totally_unchecked": 244,
       "total": 244
     },
     "plain-D": {
       "fully_checked": 0,
-      "partially_checked": 47,
-      "totally_unchecked": 521,
+      "partially_checked": 0,
+      "totally_unchecked": 568,
       "total": 568
     },
     "plain-E": {
       "fully_checked": 539,
-      "partially_checked": 3581,
-      "totally_unchecked": 0,
+      "partially_checked": 81,
+      "totally_unchecked": 3500,
       "total": 4120
     }
   },
   "normal_order_cov_top_paths_by_case": {
     "plain-C": {
       "fully_checked": [],
-      "partially_checked": [
+      "partially_checked": [],
+      "totally_unchecked": [
         {
           "stack_path": "C/נוסח/פפ",
           "count": 97
@@ -15267,6 +15268,10 @@
           "count": 4
         },
         {
+          "stack_path": "C/מודגש/קק",
+          "count": 2
+        },
+        {
           "stack_path": "C/נוסח/ר1",
           "count": 2
         },
@@ -15277,22 +15282,17 @@
         {
           "stack_path": "C/נוסח/מ:אין פרשה בתחילת פרק בספרי אמ״ת",
           "count": 1
-        },
-        {
-          "stack_path": "C/נוסח/מ:קישור בהערה",
-          "count": 1
-        }
-      ],
-      "totally_unchecked": [
-        {
-          "stack_path": "C/מודגש/קק",
-          "count": 2
         }
       ]
     },
     "plain-D": {
       "fully_checked": [],
-      "partially_checked": [
+      "partially_checked": [],
+      "totally_unchecked": [
+        {
+          "stack_path": "D/מ:פסוק/מ:עלייה",
+          "count": 521
+        },
         {
           "stack_path": "D/נוסח/מ:פסוק",
           "count": 35
@@ -15304,12 +15304,6 @@
         {
           "stack_path": "D/נוסח/ש",
           "count": 1
-        }
-      ],
-      "totally_unchecked": [
-        {
-          "stack_path": "D/מ:פסוק/מ:עלייה",
-          "count": 521
         }
       ]
     },
@@ -15358,12 +15352,42 @@
       ],
       "partially_checked": [
         {
-          "stack_path": "E/נוסח/ש",
-          "count": 3215
-        },
-        {
           "stack_path": "E/מ:כפול/נוסח/ש",
           "count": 58
+        },
+        {
+          "stack_path": "E/מ:כפול/נוסח/מ:טעם ומתג באות אחת",
+          "count": 9
+        },
+        {
+          "stack_path": "E/מ:כפול/נוסח/שני טעמים באות אחת קמץ-תחתון-פתח-עליון",
+          "count": 3
+        },
+        {
+          "stack_path": "E/מ:כפול/נוסח/שני טעמים באות אחת קמץ-תחתון-פתח-עליון/מ:טעם",
+          "count": 3
+        },
+        {
+          "stack_path": "E/נוסח/מ:כו״ק מיוחד/מ:פסק",
+          "count": 3
+        },
+        {
+          "stack_path": "E/נוסח/מ:קו״כ-אם-2/מ:קמץ",
+          "count": 2
+        },
+        {
+          "stack_path": "E/נוסח/מ:קמץ/מ:כל קמץ קטן מרכא",
+          "count": 2
+        },
+        {
+          "stack_path": "E/מ:כפול/נוסח/פפ",
+          "count": 1
+        }
+      ],
+      "totally_unchecked": [
+        {
+          "stack_path": "E/נוסח/ש",
+          "count": 3215
         },
         {
           "stack_path": "E/נוסח/ר3",
@@ -15396,9 +15420,12 @@
         {
           "stack_path": "E/נוסח/מ:קו״כ-אם-2",
           "count": 15
+        },
+        {
+          "stack_path": "E/פרשה-מרכז/מ:דחי",
+          "count": 10
         }
-      ],
-      "totally_unchecked": []
+      ]
     }
   }
 }
