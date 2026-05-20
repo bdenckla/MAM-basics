@@ -389,15 +389,30 @@ def _edge_mode_state_id(start, template_prefix):
     return f"{start}::stack::{'/'.join(template_prefix)}"
 
 
-def _edge_mode_end_id(start):
-    """Return synthetic node id for a stack-end sink."""
+def _edge_mode_start_id(start, first_hop):
+    """Return synthetic node id for a stack start per first hop."""
+    return f"{start}::start::{first_hop}"
+
+
+def _edge_mode_one_hop_start_id(start):
+    """Return synthetic node id for the shared one-hop start node."""
+    return f"{start}::start"
+
+
+def _edge_mode_end_id(start, first_hop):
+    """Return synthetic node id for a stack-end sink per first hop."""
+    return f"{start}::stack-end::{first_hop}"
+
+
+def _edge_mode_one_hop_end_id(start):
+    """Return synthetic node id for the shared one-hop stack-end sink."""
     return f"{start}::stack-end"
 
 
 def _is_start_to_end_one_hop_edge(edge, starts):
-    """Return True when an edge goes directly from a start to its stack-end."""
+    """Return True when an edge goes directly from a start-node to one-hop sink."""
     src, dst, _tmpl_name = edge
-    return src in starts and dst == _edge_mode_end_id(src)
+    return src in starts and dst.endswith("::stack-end")
 
 
 def _format_collapsed_one_hop_label(template_counts):
@@ -455,15 +470,40 @@ def _single_template_edge_label_and_tooltip(tmpl_name, count, tmpl_abbrevs):
 
 def _write_edge_templates_dot(paths, fp, note=_DEFAULT_NOTE, generated_by=None):
     """Write edge-labeled DOT where templates are on edges, not nodes."""
-    starts = {start for start, _template_path, _count in paths}
+    start_node_meta = {}
     state_tooltips = {}
+    end_tooltips = {}
     edge_counts = {}
     for start, template_path, count in paths:
-        prev_node = start
+        first_hop = template_path[0]
+        if len(template_path) == 1:
+            start_node = _edge_mode_one_hop_start_id(start)
+            start_node_meta.setdefault(
+                start_node,
+                (start, f"Stack start for {start} (one-hop aggregate)"),
+            )
+        else:
+            start_node = _edge_mode_start_id(start, first_hop)
+            start_node_meta.setdefault(
+                start_node,
+                (start, f"Stack start for {start}/{first_hop}"),
+            )
+        prev_node = start_node
         for idx, tmpl_name in enumerate(template_path):
             is_last = idx == len(template_path) - 1
             if is_last:
-                next_node = _edge_mode_end_id(start)
+                if len(template_path) == 1:
+                    next_node = _edge_mode_one_hop_end_id(start)
+                    end_tooltips.setdefault(
+                        next_node,
+                        f"Stack end for {start}",
+                    )
+                else:
+                    next_node = _edge_mode_end_id(start, first_hop)
+                    end_tooltips.setdefault(
+                        next_node,
+                        f"Stack end for {start}/{first_hop}",
+                    )
             else:
                 prefix = template_path[: idx + 1]
                 next_node = _edge_mode_state_id(start, prefix)
@@ -483,11 +523,15 @@ def _write_edge_templates_dot(paths, fp, note=_DEFAULT_NOTE, generated_by=None):
         fp.write(f"    graph [comment={_dot_quoted(generated_by)}];\n")
     fp.write("\n")
 
-    if starts:
+    if start_node_meta:
         fp.write("    // Stack start nodes\n")
         fp.write("    node [shape=box, style=bold];\n")
-        for start in sorted(starts):
-            fp.write(f"    {_dot_quoted(start)};\n")
+        for start_node in sorted(start_node_meta):
+            start_label, start_tooltip = start_node_meta[start_node]
+            fp.write(
+                f"    {_dot_quoted(start_node)}"
+                f"{_node_attrs(label=start_label, tooltip=start_tooltip)};\n"
+            )
         fp.write("\n")
 
     if state_tooltips:
@@ -500,14 +544,13 @@ def _write_edge_templates_dot(paths, fp, note=_DEFAULT_NOTE, generated_by=None):
             )
         fp.write("\n")
 
-    if starts:
+    if end_tooltips:
         fp.write("    // Stack-end nodes\n")
         fp.write('    node [shape=doublecircle, style="", width=0.35, height=0.35, fixedsize=true];\n')
-        for start in sorted(starts):
-            end_id = _edge_mode_end_id(start)
+        for end_id in sorted(end_tooltips):
             fp.write(
                 f"    {_dot_quoted(end_id)}"
-                f"{_node_attrs(label=f'{start} end', tooltip=f'Stack end for {start}')};\n"
+                f"{_node_attrs(label='end', tooltip=end_tooltips[end_id])};\n"
             )
         fp.write("\n")
 
@@ -523,8 +566,9 @@ def _write_edge_templates_dot(paths, fp, note=_DEFAULT_NOTE, generated_by=None):
     fp.write("    // Edge-labeled templates\n")
     one_hop_counts = {}
     remaining_edges = {}
+    start_node_ids = set(start_node_meta)
     for edge, count in edge_counts.items():
-        if _is_start_to_end_one_hop_edge(edge, starts):
+        if _is_start_to_end_one_hop_edge(edge, start_node_ids):
             src, dst, tmpl_name = edge
             agg = one_hop_counts.setdefault((src, dst), {})
             agg[tmpl_name] = agg.get(tmpl_name, 0) + count
