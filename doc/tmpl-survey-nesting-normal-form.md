@@ -20,13 +20,15 @@ Ranks:
 - `f`: `מ:אות-מיוחדת-במילה`
 
 Equivalent graph statement: along the ranked projection of each root-to-leaf
-path, rank must be nondecreasing.
+path, rank must be strictly increasing (each rank appears at most once).
 
 ## Why this is useful
 
 Some nestings are syntactically possible but not desired as project normal form.
-Example: `מ:דחי -> מ:קמץ` (i.e., `מ:קמץ` inside `מ:דחי`) is considered illegal by
-this convention.
+Examples considered illegal by this convention:
+
+- descending rank: `מ:דחי -> מ:קמץ` (i.e., `מ:קמץ` inside `מ:דחי`)
+- duplicate rank group: `כתיב ולא קרי -> כו״ק` (both are rank `c`)
 
 ## Enforcement
 

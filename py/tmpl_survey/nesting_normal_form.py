@@ -1,7 +1,7 @@
 """Validate template nesting against a rank-based normal form.
 
 We project each observed stack path onto a small set of ranked templates and
-require the ranked projection to be nondecreasing in rank.
+require the ranked projection to be strictly increasing in rank.
 
 Regex-like shape for the ranked projection:
     a?b?c?d?e?f?
@@ -60,16 +60,16 @@ def find_rank_violations(
     stack_counts: StackCounts,
     rank_map: RankMap | None = None,
 ) -> List[dict[str, object]]:
-    """Return aggregated rank-order violations from stack_counts.
+    """Return aggregated grammar violations from stack_counts.
 
     A violation is an adjacent pair in the ranked projection where
-    rank(caller) > rank(callee).
+    rank(caller) >= rank(callee).
     """
     if rank_map is None:
         rank_map = DEFAULT_RANK_MAP
 
-    bad_counts: Dict[Tuple[str, str], int] = defaultdict(int)
-    examples: Dict[Tuple[str, str], str] = {}
+    bad_counts: Dict[Tuple[str, str, str], int] = defaultdict(int)
+    examples: Dict[Tuple[str, str, str], str] = {}
 
     for (callee, stack_str), count in stack_counts.items():
         if count <= 0:
@@ -78,21 +78,29 @@ def find_rank_violations(
         full_path.append(callee)
         ranked = _ranked_projection(full_path, rank_map)
         for caller, child in zip(ranked, ranked[1:]):
-            if rank_map[caller] > rank_map[child]:
-                key = (caller, child)
+            caller_rank = rank_map[caller]
+            child_rank = rank_map[child]
+            relation = None
+            if caller_rank > child_rank:
+                relation = "descending"
+            elif caller_rank == child_rank:
+                relation = "duplicate-rank"
+            if relation is not None:
+                key = (caller, child, relation)
                 bad_counts[key] += count
                 examples.setdefault(key, "/".join(full_path))
 
     violations: List[dict[str, object]] = []
-    for (caller, child), count in sorted(bad_counts.items()):
+    for (caller, child, relation), count in sorted(bad_counts.items()):
         violations.append(
             {
                 "caller": caller,
                 "callee": child,
                 "caller_rank": rank_map[caller],
                 "callee_rank": rank_map[child],
+                "relation": relation,
                 "count": count,
-                "example_path": examples[(caller, child)],
+                "example_path": examples[(caller, child, relation)],
             }
         )
     return violations
@@ -103,7 +111,7 @@ def assert_stack_counts_in_normal_form(
     dataset_name: str,
     rank_map: RankMap | None = None,
 ) -> None:
-    """Raise AssertionError when ranked nesting violates normal-form order."""
+    """Raise AssertionError when ranked nesting violates grammar order."""
     violations = find_rank_violations(stack_counts, rank_map=rank_map)
     if not violations:
         return
@@ -119,6 +127,7 @@ def assert_stack_counts_in_normal_form(
             "  - "
             f"{v['caller']} (rank {v['caller_rank']}) -> "
             f"{v['callee']} (rank {v['callee_rank']}), "
+            f"relation={v['relation']}, "
             f"count={v['count']}, example={v['example_path']}"
         )
     raise AssertionError("\n".join(lines))

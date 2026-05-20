@@ -9,7 +9,7 @@ class TestTmplSurveyNestingNormalForm(unittest.TestCase):
     def test_regex_like_grammar_shape(self):
         self.assertEqual("a?b?c?d?e?f?", nnf.regex_like_grammar())
 
-    def test_allows_nondecreasing_rank_order(self):
+    def test_allows_strictly_increasing_rank_order(self):
         stack_counts = {
             ("מ:אות-מיוחדת-במילה", "E/מ:כפול/נוסח/כו״ק/מ:קמץ/מ:דחי"): 2,
         }
@@ -28,6 +28,16 @@ class TestTmplSurveyNestingNormalForm(unittest.TestCase):
         with self.assertRaises(AssertionError) as ctx:
             nnf.assert_stack_counts_in_normal_form(stack_counts, dataset_name="unit")
         self.assertIn("מ:דחי (rank 4) -> מ:קמץ (rank 3)", str(ctx.exception))
+        self.assertIn("relation=descending", str(ctx.exception))
+
+    def test_rejects_duplicate_rank_transition(self):
+        stack_counts = {
+            ("כו״ק", "E/כתיב ולא קרי"): 3,
+        }
+        with self.assertRaises(AssertionError) as ctx:
+            nnf.assert_stack_counts_in_normal_form(stack_counts, dataset_name="unit")
+        self.assertIn("כתיב ולא קרי (rank 2) -> כו״ק (rank 2)", str(ctx.exception))
+        self.assertIn("relation=duplicate-rank", str(ctx.exception))
 
     def test_aggregates_violation_counts(self):
         stack_counts = {
@@ -38,6 +48,23 @@ class TestTmplSurveyNestingNormalForm(unittest.TestCase):
         self.assertEqual(1, len(violations))
         self.assertEqual("מ:דחי", violations[0]["caller"])
         self.assertEqual("מ:קמץ", violations[0]["callee"])
+        self.assertEqual("descending", violations[0]["relation"])
+        self.assertEqual(4, violations[0]["caller_rank"])
+        self.assertEqual(3, violations[0]["callee_rank"])
+        self.assertEqual(8, violations[0]["count"])
+
+    def test_aggregates_duplicate_rank_violation_counts(self):
+        stack_counts = {
+            ("כו״ק", "E/כתיב ולא קרי"): 3,
+            ("כו״ק", "D/נוסח/כתיב ולא קרי"): 5,
+        }
+        violations = nnf.find_rank_violations(stack_counts)
+        self.assertEqual(1, len(violations))
+        self.assertEqual("כתיב ולא קרי", violations[0]["caller"])
+        self.assertEqual("כו״ק", violations[0]["callee"])
+        self.assertEqual("duplicate-rank", violations[0]["relation"])
+        self.assertEqual(2, violations[0]["caller_rank"])
+        self.assertEqual(2, violations[0]["callee_rank"])
         self.assertEqual(8, violations[0]["count"])
 
 
