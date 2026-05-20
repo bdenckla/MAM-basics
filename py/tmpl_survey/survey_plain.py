@@ -275,7 +275,7 @@ def _do_a_book24(bk24id, accum):
         _do_a_book39(book39, accum)
 
 
-def survey():
+def survey(case_rank_maps):
     """Survey the use of templates in MAM plain.
 
     Returns (result_dict, raw_stack_counts, nusach_arg2_only_leaf_templates).
@@ -292,9 +292,10 @@ def survey():
     }
     for bk24id in tbn.ALL_BK24_IDS:
         _do_a_book24(bk24id, accum)
-    nesting_normal_form.assert_stack_counts_in_normal_form(
+    nesting_normal_form.assert_stack_counts_in_normal_form_by_case(
         accum["stack_counts"],
-        dataset_name="plain survey",
+        dataset_key="plain",
+        case_rank_maps=case_rank_maps,
     )
     result = {
         "mpasuq": cdp.process_all_mpasuq_calls(accum["mpasuq"]),

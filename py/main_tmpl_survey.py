@@ -27,6 +27,28 @@ _PLAIN_TMPL_NAME_NORMALIZATION_NOTE = (
 )
 
 
+def _default_case_rank_groups():
+    default_groups = nesting_normal_form.default_rank_groups()
+    return {
+        "plain-C": default_groups,
+        "plain-D": default_groups,
+        "plain-E": default_groups,
+        "plus-C": default_groups,
+        "plus-D": default_groups,
+        "plus-E": default_groups,
+    }
+
+
+_NORMAL_FORM_CASE_RANK_GROUPS = _default_case_rank_groups()
+
+
+def _case_rank_maps(case_rank_groups):
+    return {
+        case_key: nesting_normal_form.build_rank_map(rank_groups)
+        for case_key, rank_groups in case_rank_groups.items()
+    }
+
+
 def _with_tmpl_name_normalization_note(result, note_text):
     note_key = "template_name_normalization_note"
     assert note_key not in result
@@ -153,9 +175,13 @@ def _assert_with_expanded_stack_grammar_locks(
 
 def almost_main(write_expanded_stack_grammar_lock=False):
     """Survey the use of templates in MAM plain and plus."""
-    plain_result, plain_raw_sc, plain_discarded = survey_plain.survey()
+    case_rank_maps = _case_rank_maps(_NORMAL_FORM_CASE_RANK_GROUPS)
+    plain_result, plain_raw_sc, plain_discarded = survey_plain.survey(
+        case_rank_maps=case_rank_maps
+    )
     plus_result, plus_raw_sc, plus_discarded = survey_plus.survey(
-        plain_result["mpasuq"]
+        plain_result["mpasuq"],
+        case_rank_maps=case_rank_maps,
     )
     _assert_with_expanded_stack_grammar_locks(
         plain_raw_sc,

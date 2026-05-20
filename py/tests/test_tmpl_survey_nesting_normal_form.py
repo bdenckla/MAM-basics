@@ -67,6 +67,70 @@ class TestTmplSurveyNestingNormalForm(unittest.TestCase):
         self.assertEqual(2, violations[0]["callee_rank"])
         self.assertEqual(8, violations[0]["count"])
 
+    def test_case_rank_maps_allow_per_column_configuration(self):
+        stack_counts = {
+            ("B", "C/A"): 1,
+            ("B", "D/A"): 1,
+            ("B", "E/A"): 1,
+        }
+        same_order = nnf.build_rank_map((
+            ("a", ("A",)),
+            ("b", ("B",)),
+        ))
+        case_rank_maps = {
+            "plain-C": same_order,
+            "plain-D": same_order,
+            "plain-E": same_order,
+        }
+        nnf.assert_stack_counts_in_normal_form_by_case(
+            stack_counts,
+            dataset_key="plain",
+            case_rank_maps=case_rank_maps,
+        )
+
+    def test_case_rank_maps_can_fail_one_column_only(self):
+        stack_counts = {
+            ("B", "C/A"): 1,
+            ("B", "D/A"): 1,
+            ("B", "E/A"): 1,
+        }
+        a_before_b = nnf.build_rank_map((
+            ("a", ("A",)),
+            ("b", ("B",)),
+        ))
+        b_before_a = nnf.build_rank_map((
+            ("a", ("B",)),
+            ("b", ("A",)),
+        ))
+        case_rank_maps = {
+            "plain-C": a_before_b,
+            "plain-D": a_before_b,
+            "plain-E": b_before_a,
+        }
+        with self.assertRaises(AssertionError) as ctx:
+            nnf.assert_stack_counts_in_normal_form_by_case(
+                stack_counts,
+                dataset_key="plain",
+                case_rank_maps=case_rank_maps,
+            )
+        self.assertIn("plain survey (E column)", str(ctx.exception))
+
+    def test_case_rank_maps_require_all_dataset_columns(self):
+        stack_counts = {
+            ("B", "C/A"): 1,
+        }
+        case_rank_maps = {
+            "plus-C": nnf.build_rank_map((("a", ("A",)), ("b", ("B",)))),
+            "plus-D": nnf.build_rank_map((("a", ("A",)), ("b", ("B",)))),
+        }
+        with self.assertRaises(ValueError) as ctx:
+            nnf.assert_stack_counts_in_normal_form_by_case(
+                stack_counts,
+                dataset_key="plus",
+                case_rank_maps=case_rank_maps,
+            )
+        self.assertIn("plus-E", str(ctx.exception))
+
     def test_infer_expanded_stack_grammar_has_edges_and_order(self):
         baseline = {
             ("C", "R/A/B"): 2,

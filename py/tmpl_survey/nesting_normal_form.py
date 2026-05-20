@@ -23,6 +23,7 @@ from typing import Dict, Iterable, List, Mapping, Sequence, Tuple
 TemplateName = str
 StackCounts = Mapping[Tuple[TemplateName, str], int]
 RankMap = Mapping[TemplateName, int]
+RankGroups = Sequence[tuple[str, Iterable[str]]]
 
 _DEFAULT_RANK_GROUPS: tuple[tuple[str, frozenset[str]], ...] = (
     ("a", frozenset({"מ:כפול"})),
@@ -32,6 +33,12 @@ _DEFAULT_RANK_GROUPS: tuple[tuple[str, frozenset[str]], ...] = (
     ("e", frozenset({"מ:דחי"})),
     ("f", frozenset({"מ:אות-מיוחדת-במילה"})),
 )
+_COLUMN_LETTERS: tuple[str, str, str] = ("C", "D", "E")
+
+
+def default_rank_groups() -> tuple[tuple[str, frozenset[str]], ...]:
+    """Return the default rank groups used by rank-based normal form."""
+    return _DEFAULT_RANK_GROUPS
 
 
 def _build_rank_map(rank_groups: Sequence[tuple[str, Iterable[str]]]) -> Dict[str, int]:
@@ -44,7 +51,26 @@ def _build_rank_map(rank_groups: Sequence[tuple[str, Iterable[str]]]) -> Dict[st
     return rank_map
 
 
+def build_rank_map(rank_groups: RankGroups) -> Dict[str, int]:
+    """Build a rank map from ordered rank groups.
+
+    Each group is a tuple of (label, template_names). The label is metadata
+    only; rank order is determined by position in the sequence.
+    """
+    return _build_rank_map(rank_groups)
+
+
 DEFAULT_RANK_MAP: Dict[str, int] = _build_rank_map(_DEFAULT_RANK_GROUPS)
+
+
+def default_case_rank_maps() -> Dict[str, Dict[str, int]]:
+    """Return default rank maps for plain/plus x C/D/E cases."""
+    case_rank_maps: Dict[str, Dict[str, int]] = {}
+    for dataset in ("plain", "plus"):
+        for column in _COLUMN_LETTERS:
+            case_key = f"{dataset}-{column}"
+            case_rank_maps[case_key] = dict(DEFAULT_RANK_MAP)
+    return case_rank_maps
 
 
 def regex_like_grammar() -> str:
@@ -131,6 +157,51 @@ def assert_stack_counts_in_normal_form(
             f"count={v['count']}, example={v['example_path']}"
         )
     raise AssertionError("\n".join(lines))
+
+
+def _stack_counts_for_column(
+    stack_counts: StackCounts,
+    column_letter: str,
+) -> Dict[Tuple[str, str], int]:
+    """Return a copy of stack_counts restricted to a single column prefix."""
+    assert column_letter in _COLUMN_LETTERS, column_letter
+
+    filtered: Dict[Tuple[str, str], int] = {}
+    for (callee, stack_str), count in stack_counts.items():
+        if count <= 0:
+            continue
+        parts = [p for p in stack_str.split("/") if p]
+        if parts and parts[0] == column_letter:
+            filtered[(callee, stack_str)] = count
+    return filtered
+
+
+def assert_stack_counts_in_normal_form_by_case(
+    stack_counts: StackCounts,
+    dataset_key: str,
+    case_rank_maps: Mapping[str, RankMap],
+) -> None:
+    """Assert normal form separately for C/D/E using dataset-specific rank maps.
+
+    dataset_key must be "plain" or "plus". Expected case keys in case_rank_maps
+    are f"{dataset_key}-C", f"{dataset_key}-D", and f"{dataset_key}-E".
+    """
+    assert dataset_key in ("plain", "plus"), dataset_key
+
+    for column in _COLUMN_LETTERS:
+        case_key = f"{dataset_key}-{column}"
+        rank_map = case_rank_maps.get(case_key)
+        if rank_map is None:
+            raise ValueError(
+                f"Missing rank map for case {case_key!r}. "
+                "Expected case rank maps for all columns C/D/E."
+            )
+        column_stack_counts = _stack_counts_for_column(stack_counts, column)
+        assert_stack_counts_in_normal_form(
+            column_stack_counts,
+            dataset_name=f"{dataset_key} survey ({column} column)",
+            rank_map=rank_map,
+        )
 
 
 def merge_stack_counts(*stack_counts_maps: StackCounts) -> Dict[Tuple[str, str], int]:
