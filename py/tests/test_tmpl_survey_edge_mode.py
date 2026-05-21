@@ -27,12 +27,16 @@ class TestTmplSurveyEdgeMode(unittest.TestCase):
             dot_text,
         )
         self.assertNotIn('"C::start" -> "C::stack-end" [label="מ:פסוק (3)"]', dot_text)
-        self.assertIn('"C::start::מ:פסוק" -> "C::stack::מ:פסוק" [label="מ:פסוק (7)"]', dot_text)
+        self.assertIn(
+            '"C::start::מ:פסוק" -> "C::stack::מ:פסוק" [label="מ:פסוק (7)"]', dot_text
+        )
         self.assertIn(
             '"C::stack::מ:פסוק" -> "C::stack-end::מ:פסוק" [label="מ:אות-ג (7)"]',
             dot_text,
         )
-        self.assertIn('"C::stack-end" [label="end", tooltip="Stack end for C"]', dot_text)
+        self.assertIn(
+            '"C::stack-end" [label="end", tooltip="Stack end for C"]', dot_text
+        )
         self.assertNotIn('"מ:פסוק";', dot_text)
 
     def test_write_edge_template_dot_file_applies_discard_set(self):
@@ -114,8 +118,8 @@ class TestTmplSurveyEdgeMode(unittest.TestCase):
             dot_text,
         )
         self.assertIn('tooltip="a middle a (1) | b middle b (1)', dot_text)
-        self.assertIn('g middle g (1)', dot_text)
-        self.assertIn('h middle h (1)', dot_text)
+        self.assertIn("g middle g (1)", dot_text)
+        self.assertIn("h middle h (1)", dot_text)
 
 
 if __name__ == "__main__":

@@ -114,10 +114,12 @@ class TestTmplSurveyNestingNormalForm(unittest.TestCase):
             ("B", "D/A"): 1,
             ("B", "E/A"): 1,
         }
-        same_order = nnf.build_rank_map((
-            ("rank-1", ("A",)),
-            ("rank-2", ("B",)),
-        ))
+        same_order = nnf.build_rank_map(
+            (
+                ("rank-1", ("A",)),
+                ("rank-2", ("B",)),
+            )
+        )
         case_rank_maps = {
             "plain-C": same_order,
             "plain-D": same_order,
@@ -135,14 +137,18 @@ class TestTmplSurveyNestingNormalForm(unittest.TestCase):
             ("B", "D/A"): 1,
             ("B", "E/A"): 1,
         }
-        a_before_b = nnf.build_rank_map((
-            ("rank-1", ("A",)),
-            ("rank-2", ("B",)),
-        ))
-        b_before_a = nnf.build_rank_map((
-            ("rank-1", ("B",)),
-            ("rank-2", ("A",)),
-        ))
+        a_before_b = nnf.build_rank_map(
+            (
+                ("rank-1", ("A",)),
+                ("rank-2", ("B",)),
+            )
+        )
+        b_before_a = nnf.build_rank_map(
+            (
+                ("rank-1", ("B",)),
+                ("rank-2", ("A",)),
+            )
+        )
         case_rank_maps = {
             "plain-C": a_before_b,
             "plain-D": a_before_b,
@@ -161,12 +167,8 @@ class TestTmplSurveyNestingNormalForm(unittest.TestCase):
             ("B", "C/A"): 1,
         }
         case_rank_maps = {
-            "plus-C": nnf.build_rank_map(
-                (("rank-1", ("A",)), ("rank-2", ("B",)))
-            ),
-            "plus-D": nnf.build_rank_map(
-                (("rank-1", ("A",)), ("rank-2", ("B",)))
-            ),
+            "plus-C": nnf.build_rank_map((("rank-1", ("A",)), ("rank-2", ("B",)))),
+            "plus-D": nnf.build_rank_map((("rank-1", ("A",)), ("rank-2", ("B",)))),
         }
         with self.assertRaises(ValueError) as ctx:
             nnf.assert_stack_counts_in_normal_form_by_case(
@@ -177,11 +179,13 @@ class TestTmplSurveyNestingNormalForm(unittest.TestCase):
         self.assertIn("plus-E", str(ctx.exception))
 
     def test_summarize_rank_coverage_counts_classifies_cov_buckets(self):
-        rank_map = nnf.build_rank_map((
-            ("rank-1", ("A",)),
-            ("rank-2", ("B",)),
-            ("rank-3", ("C",)),
-        ))
+        rank_map = nnf.build_rank_map(
+            (
+                ("rank-1", ("A",)),
+                ("rank-2", ("B",)),
+                ("rank-3", ("C",)),
+            )
+        )
         stack_counts = {
             # singleton template stack is excluded
             ("A", "C"): 2,
@@ -222,7 +226,9 @@ class TestTmplSurveyNestingNormalForm(unittest.TestCase):
             summary,
         )
 
-    def test_summarize_rank_coverage_counts_treats_projected_singleton_candidate_as_unchecked(self):
+    def test_summarize_rank_coverage_counts_treats_projected_singleton_candidate_as_unchecked(
+        self,
+    ):
         rank_map = nnf.build_rank_map((("rank-1", ("A",)),))
         stack_counts = {
             # Stack X/A (len=2) is a candidate and projects to singleton A.
@@ -240,10 +246,12 @@ class TestTmplSurveyNestingNormalForm(unittest.TestCase):
         )
 
     def test_summarize_rank_coverage_counts_drops_nusach_slots_early(self):
-        rank_map = nnf.build_rank_map((
-            ("rank-1", ("נוסח",)),
-            ("rank-2", ("כו״ק",)),
-        ))
+        rank_map = nnf.build_rank_map(
+            (
+                ("rank-1", ("נוסח",)),
+                ("rank-2", ("כו״ק",)),
+            )
+        )
         stack_counts = {
             # Without early slot dropping this path would be partially_checked
             # (stack len=3 vs ranked len=2). With early dropping it is len=2,
@@ -266,11 +274,13 @@ class TestTmplSurveyNestingNormalForm(unittest.TestCase):
         )
 
     def test_summarize_rank_coverage_top_paths_returns_counts_per_bucket(self):
-        rank_map = nnf.build_rank_map((
-            ("rank-1", ("A",)),
-            ("rank-2", ("B",)),
-            ("rank-3", ("C",)),
-        ))
+        rank_map = nnf.build_rank_map(
+            (
+                ("rank-1", ("A",)),
+                ("rank-2", ("B",)),
+                ("rank-3", ("C",)),
+            )
+        )
         stack_counts = {
             # stack X/A (rest X + top A) projects to A (len=1)
             # => totally unchecked
@@ -301,9 +311,7 @@ class TestTmplSurveyNestingNormalForm(unittest.TestCase):
 
         self.assertEqual(1, len(top_paths["totally_unchecked"]))
         self.assertIn("stack", top_paths["totally_unchecked"][0])
-        self.assertEqual(
-            "E/X/A", _read_top_stack(top_paths["totally_unchecked"][0])
-        )
+        self.assertEqual("E/X/A", _read_top_stack(top_paths["totally_unchecked"][0]))
         self.assertEqual(7, top_paths["totally_unchecked"][0]["count"])
 
     def test_summarize_rank_coverage_top_paths_by_case_returns_case_keys(self):
@@ -312,10 +320,12 @@ class TestTmplSurveyNestingNormalForm(unittest.TestCase):
             ("B", "D/A"): 2,
             ("Z", "E/X"): 3,
         }
-        a_before_b = nnf.build_rank_map((
-            ("rank-1", ("A",)),
-            ("rank-2", ("B",)),
-        ))
+        a_before_b = nnf.build_rank_map(
+            (
+                ("rank-1", ("A",)),
+                ("rank-2", ("B",)),
+            )
+        )
         case_rank_maps = {
             "plain-C": a_before_b,
             "plain-D": a_before_b,
@@ -332,12 +342,16 @@ class TestTmplSurveyNestingNormalForm(unittest.TestCase):
         self.assertEqual({"plain-C", "plain-D", "plain-E"}, set(by_case))
         self.assertEqual(1, len(by_case["plain-C"]["fully_checked"]))
         self.assertIn("stack", by_case["plain-C"]["fully_checked"][0])
-        self.assertEqual("C/A/B", _read_top_stack(by_case["plain-C"]["fully_checked"][0]))
+        self.assertEqual(
+            "C/A/B", _read_top_stack(by_case["plain-C"]["fully_checked"][0])
+        )
         self.assertEqual(1, by_case["plain-C"]["fully_checked"][0]["count"])
 
         self.assertEqual(1, len(by_case["plain-D"]["fully_checked"]))
         self.assertIn("stack", by_case["plain-D"]["fully_checked"][0])
-        self.assertEqual("D/A/B", _read_top_stack(by_case["plain-D"]["fully_checked"][0]))
+        self.assertEqual(
+            "D/A/B", _read_top_stack(by_case["plain-D"]["fully_checked"][0])
+        )
         self.assertEqual(2, by_case["plain-D"]["fully_checked"][0]["count"])
 
         self.assertEqual(1, len(by_case["plain-E"]["totally_unchecked"]))
@@ -353,10 +367,12 @@ class TestTmplSurveyNestingNormalForm(unittest.TestCase):
             ("B", "D/A"): 1,
             ("Z", "E/X"): 1,
         }
-        a_before_b = nnf.build_rank_map((
-            ("rank-1", ("A",)),
-            ("rank-2", ("B",)),
-        ))
+        a_before_b = nnf.build_rank_map(
+            (
+                ("rank-1", ("A",)),
+                ("rank-2", ("B",)),
+            )
+        )
         case_rank_maps = {
             "plain-C": a_before_b,
             "plain-D": a_before_b,

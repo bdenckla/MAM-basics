@@ -192,7 +192,9 @@ def _node_attrs(label=None, tooltip=None, extra_parts=None):
 def _focused_group_label(rep, members, target, abbrevs, predecessors, successors):
     """Return a label for a node in a focused graph."""
     if len(members) > 1 and not _matches_target(rep, target):
-        predecessor_bases = {_base_template_name(x) for x in predecessors.get(rep, set())}
+        predecessor_bases = {
+            _base_template_name(x) for x in predecessors.get(rep, set())
+        }
         if predecessor_bases == {target} and not successors.get(rep, set()):
             return f"dead-end children of {target}"
         return f"{abbrevs[rep]}, ..."
@@ -261,7 +263,9 @@ def _write_dot(
         tooltip = None
         node_id = rep
         node_attr_parts = None
-        if focus_target is not None and any(_matches_target(x, focus_target) for x in members):
+        if focus_target is not None and any(
+            _matches_target(x, focus_target) for x in members
+        ):
             node_attr_parts = _FOCUS_NODE_ATTR_PARTS
         if len(members) > 1:
             tooltip = _group_tooltip(members)
@@ -442,8 +446,7 @@ def _is_start_to_end_one_hop_edge(edge, starts):
 def _format_collapsed_one_hop_label(template_counts):
     """Return a stable full label for collapsed one-hop templates on one edge."""
     parts = [
-        f"{tmpl_name} ({count})"
-        for tmpl_name, count in sorted(template_counts.items())
+        f"{tmpl_name} ({count})" for tmpl_name, count in sorted(template_counts.items())
     ]
     return " | ".join(parts)
 
@@ -467,7 +470,10 @@ def _truncate_edge_label(display_label, full_label):
 def _compact_one_hop_short_label(short_label):
     """Compact long one-hop merged labels to avoid excessively wide diagrams."""
     parts = short_label.split(" | ")
-    if len(parts) <= _ONE_HOP_LABEL_MAX_PARTS and len(short_label) <= _EDGE_LABEL_MAX_CHARS:
+    if (
+        len(parts) <= _ONE_HOP_LABEL_MAX_PARTS
+        and len(short_label) <= _EDGE_LABEL_MAX_CHARS
+    ):
         return short_label
     if len(parts) <= 1:
         return _truncate_edge_label(short_label, short_label)
@@ -527,7 +533,9 @@ def _write_edge_templates_dot(stacks, fp, note=_DEFAULT_NOTE, generated_by=None)
                     # Leaf-only terminal policy: skip rows that stop at non-leaf contexts.
                     continue
                 next_node = _edge_mode_state_id(start, context_prefix)
-                state_tooltips.setdefault(next_node, f"{start}/{'/'.join(context_prefix)}")
+                state_tooltips.setdefault(
+                    next_node, f"{start}/{'/'.join(context_prefix)}"
+                )
             else:
                 if len(context_prefix) == 1:
                     next_node = _edge_mode_one_hop_end_id(start)
@@ -569,7 +577,9 @@ def _write_edge_templates_dot(stacks, fp, note=_DEFAULT_NOTE, generated_by=None)
 
     if state_tooltips:
         fp.write("    // Internal stack-state nodes\n")
-        fp.write('    node [shape=circle, style="", width=0.18, height=0.18, fixedsize=true];\n')
+        fp.write(
+            '    node [shape=circle, style="", width=0.18, height=0.18, fixedsize=true];\n'
+        )
         for node_id in sorted(state_tooltips):
             fp.write(
                 f"    {_dot_quoted(node_id)}"
@@ -579,7 +589,9 @@ def _write_edge_templates_dot(stacks, fp, note=_DEFAULT_NOTE, generated_by=None)
 
     if end_tooltips:
         fp.write("    // Stack-end nodes\n")
-        fp.write('    node [shape=doublecircle, style="", width=0.35, height=0.35, fixedsize=true];\n')
+        fp.write(
+            '    node [shape=doublecircle, style="", width=0.35, height=0.35, fixedsize=true];\n'
+        )
         for end_id in sorted(end_tooltips):
             fp.write(
                 f"    {_dot_quoted(end_id)}"
@@ -620,23 +632,19 @@ def _write_edge_templates_dot(stacks, fp, note=_DEFAULT_NOTE, generated_by=None)
         edge_attr = f"label={_dot_quoted(edge_label)}"
         if edge_tooltip:
             edge_attr += f", tooltip={_dot_quoted(edge_tooltip)}"
-        fp.write(
-            f"    {_dot_quoted(src)} -> {_dot_quoted(dst)}"
-            f" [{edge_attr}];\n"
-        )
+        fp.write(f"    {_dot_quoted(src)} -> {_dot_quoted(dst)}" f" [{edge_attr}];\n")
 
     for (src, dst), template_counts in sorted(one_hop_counts.items()):
         edge_full_label = _format_collapsed_one_hop_label(template_counts)
-        edge_label = _format_collapsed_one_hop_short_label(template_counts, tmpl_abbrevs)
+        edge_label = _format_collapsed_one_hop_short_label(
+            template_counts, tmpl_abbrevs
+        )
         edge_label = _compact_one_hop_short_label(edge_label)
         edge_label = _truncate_edge_label(edge_label, edge_full_label)
         edge_attr = f"label={_dot_quoted(edge_label)}"
         if edge_label != edge_full_label:
             edge_attr += f", tooltip={_dot_quoted(edge_full_label)}"
-        fp.write(
-            f"    {_dot_quoted(src)} -> {_dot_quoted(dst)}"
-            f" [{edge_attr}];\n"
-        )
+        fp.write(f"    {_dot_quoted(src)} -> {_dot_quoted(dst)}" f" [{edge_attr}];\n")
     fp.write("}\n")
 
 

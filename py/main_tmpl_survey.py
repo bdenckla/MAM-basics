@@ -30,9 +30,7 @@ _PLAIN_TMPL_NAME_NORMALIZATION_NOTE = (
 def _default_case_rank_groups():
     default_groups = nesting_normal_form.default_rank_groups()
 
-    plus_e_group_names = {
-        label: set(names) for label, names in default_groups
-    }
+    plus_e_group_names = {label: set(names) for label, names in default_groups}
     plus_e_group_names["rank-5"].add("מ:הערה-2")
     plus_e_groups = tuple(
         (label, frozenset(plus_e_group_names[label]))
@@ -142,8 +140,12 @@ def _assert_with_expanded_stack_grammar_locks(
     plus_raw_sc,
     write_expanded_stack_grammar_locks=False,
 ):
-    plain_inferred_grammar = nesting_normal_form.infer_expanded_stack_grammar(plain_raw_sc)
-    plus_inferred_grammar = nesting_normal_form.infer_expanded_stack_grammar(plus_raw_sc)
+    plain_inferred_grammar = nesting_normal_form.infer_expanded_stack_grammar(
+        plain_raw_sc
+    )
+    plus_inferred_grammar = nesting_normal_form.infer_expanded_stack_grammar(
+        plus_raw_sc
+    )
 
     if write_expanded_stack_grammar_locks:
         _write_expanded_stack_grammar_locks(

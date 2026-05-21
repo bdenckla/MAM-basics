@@ -110,9 +110,9 @@ def _child_stack_symbol(parent_subtype, arg_key):
     if parent_subtype != _NUSACH_TEMPLATE_SYMBOL:
         return parent_subtype
     slot = str(arg_key)
-    assert slot in _NUSACH_SLOTS, (
-        f"Unexpected נוסח arg slot {slot!r}; expected one of {sorted(_NUSACH_SLOTS)}"
-    )
+    assert (
+        slot in _NUSACH_SLOTS
+    ), f"Unexpected נוסח arg slot {slot!r}; expected one of {sorted(_NUSACH_SLOTS)}"
     return _NUSACH_SYMBOL_BY_SLOT[slot]
 
 
