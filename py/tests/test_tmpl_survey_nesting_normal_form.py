@@ -185,7 +185,7 @@ class TestTmplSurveyNestingNormalForm(unittest.TestCase):
         stack_counts = {
             # singleton template stack is excluded
             ("A", "C"): 2,
-            # stack X/A (fs_stack X + top A) projects to A (len=1)
+            # stack X/A (rest X + top A) projects to A (len=1)
             # => totally_unchecked
             ("A", "C/X"): 4,
             # stack A/B/C => cov=1
@@ -246,7 +246,7 @@ class TestTmplSurveyNestingNormalForm(unittest.TestCase):
             ("rank-3", ("C",)),
         ))
         stack_counts = {
-            # stack X/A (fs_stack X + top A) projects to A (len=1)
+            # stack X/A (rest X + top A) projects to A (len=1)
             # => totally unchecked
             ("A", "E/X"): 7,
             # fully checked
