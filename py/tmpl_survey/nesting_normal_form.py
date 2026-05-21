@@ -143,34 +143,6 @@ def _fs_stack_with_top(top: str, fs_stack: str) -> str:
     return "/".join(parts + [top])
 
 
-def _read_preferred_or_alias(
-    record: Mapping[str, object],
-    preferred_key: str,
-    alias_key: str,
-) -> object:
-    preferred = record.get(preferred_key)
-    if preferred is not None:
-        return preferred
-    alias = record.get(alias_key)
-    if alias is not None:
-        return alias
-    raise KeyError(
-        f"Record must contain {preferred_key!r} or {alias_key!r}: {record!r}"
-    )
-
-
-def _preferred_with_alias(
-    preferred_key: str,
-    alias_key: str,
-    value: object,
-) -> Dict[str, object]:
-    """Return a compatibility pair with preferred key plus migration alias."""
-    return {
-        preferred_key: value,
-        alias_key: value,
-    }
-
-
 def summarize_rank_coverage_counts(
     stack_counts: StackCounts,
     rank_map: RankMap,
@@ -244,7 +216,7 @@ def summarize_rank_coverage_top_paths(
         )
         top_paths_by_bucket[bucket] = [
             {
-                **_preferred_with_alias("stack", "stack_path", fs_stack_with_top),
+                "stack": fs_stack_with_top,
                 "count": count,
             }
             for fs_stack_with_top, count in ranked[:max_paths]
@@ -351,11 +323,7 @@ def find_rank_violations(
                 "callee_rank": rank_map[child],
                 "relation": relation,
                 "count": count,
-                **_preferred_with_alias(
-                    "example_stack",
-                    "example_path",
-                    examples[(caller, child, relation)],
-                ),
+                "example_stack": examples[(caller, child, relation)],
             }
         )
     return violations
@@ -378,17 +346,12 @@ def assert_stack_counts_in_normal_form(
         )
     ]
     for v in violations:
-        example_stack = _read_preferred_or_alias(
-            v,
-            "example_stack",
-            "example_path",
-        )
         lines.append(
             "  - "
             f"{v['caller']} (rank {v['caller_rank']}) -> "
             f"{v['callee']} (rank {v['callee_rank']}), "
             f"relation={v['relation']}, "
-            f"count={v['count']}, example={example_stack}"
+            f"count={v['count']}, example={v['example_stack']}"
         )
     raise AssertionError("\n".join(lines))
 
@@ -549,11 +512,7 @@ def find_expanded_grammar_violations(
                 "parent": parent,
                 "child": child,
                 "count": count,
-                **_preferred_with_alias(
-                    "example_stack",
-                    "example_path",
-                    bad_edge_examples[(parent, child)],
-                ),
+                "example_stack": bad_edge_examples[(parent, child)],
             }
         )
     for (before, after), count in sorted(bad_orders.items()):
@@ -562,11 +521,7 @@ def find_expanded_grammar_violations(
                 "kind": "order-permutation",
                 "must_precede": [before, after],
                 "count": count,
-                **_preferred_with_alias(
-                    "example_stack",
-                    "example_path",
-                    bad_order_examples[(before, after)],
-                ),
+                "example_stack": bad_order_examples[(before, after)],
             }
         )
     return violations
@@ -589,16 +544,11 @@ def assert_stack_counts_follow_expanded_grammar(
         )
     ]
     for v in violations:
-        example_stack = _read_preferred_or_alias(
-            v,
-            "example_stack",
-            "example_path",
-        )
         if v["kind"] == "unexpected-edge":
             lines.append(
                 "  - "
                 f"unexpected-edge {v['parent']} -> {v['child']}, "
-                f"count={v['count']}, example={example_stack}"
+                f"count={v['count']}, example={v['example_stack']}"
             )
         else:
             must_precede = v["must_precede"]
@@ -607,6 +557,6 @@ def assert_stack_counts_follow_expanded_grammar(
             lines.append(
                 "  - "
                 f"order-permutation expected {before} before {after}, "
-                f"count={v['count']}, example={example_stack}"
+                f"count={v['count']}, example={v['example_stack']}"
             )
     raise AssertionError("\n".join(lines))
