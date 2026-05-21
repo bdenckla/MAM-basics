@@ -1142,9 +1142,9 @@
   ],
   "normal_order_cov_counts_by_case": {
     "plus-C": {
-      "fully_checked": 14,
-      "partially_checked": 0,
-      "totally_unchecked": 228,
+      "fully_checked": 232,
+      "partially_checked": 3,
+      "totally_unchecked": 7,
       "total": 242
     },
     "plus-D": {
@@ -1154,22 +1154,15 @@
       "total": 568
     },
     "plus-E": {
-      "fully_checked": 4005,
-      "partially_checked": 1,
-      "totally_unchecked": 175,
+      "fully_checked": 4128,
+      "partially_checked": 0,
+      "totally_unchecked": 53,
       "total": 4181
     }
   },
   "normal_order_cov_top_paths_by_case": {
     "plus-C": {
       "fully_checked": [
-        {
-          "stack": "C/נוסח/נוסח@2/ש",
-          "count": 14
-        }
-      ],
-      "partially_checked": [],
-      "totally_unchecked": [
         {
           "stack": "C/נוסח/נוסח@1/פפ",
           "count": 94
@@ -1187,16 +1180,28 @@
           "count": 14
         },
         {
-          "stack": "C/נוסח/נוסח@1/מ:הערה-2",
-          "count": 4
-        },
-        {
-          "stack": "C/נוסח/נוסח@1/מ:הערה-2/פפ",
-          "count": 3
+          "stack": "C/נוסח/נוסח@2/ש",
+          "count": 14
         },
         {
           "stack": "C/נוסח/נוסח@1/ר1",
           "count": 2
+        },
+        {
+          "stack": "C/נוסח/נוסח@1/פפפ",
+          "count": 1
+        }
+      ],
+      "partially_checked": [
+        {
+          "stack": "C/נוסח/נוסח@1/מ:הערה-2/פפ",
+          "count": 3
+        }
+      ],
+      "totally_unchecked": [
+        {
+          "stack": "C/נוסח/נוסח@1/מ:הערה-2",
+          "count": 4
         },
         {
           "stack": "C/נוסח/נוסח@1/מ:אין פרשה בתחילת פרק",
@@ -1207,7 +1212,7 @@
           "count": 1
         },
         {
-          "stack": "C/נוסח/נוסח@1/פפפ",
+          "stack": "C/נוסח/נוסח@2/מ:קישור בהערה",
           "count": 1
         }
       ]
@@ -1254,6 +1259,10 @@
           "count": 47
         },
         {
+          "stack": "E/נוסח/נוסח@1/ר3",
+          "count": 47
+        },
+        {
           "stack": "E/מ:כפול/נוסח",
           "count": 42
         },
@@ -1266,33 +1275,16 @@
           "count": 37
         },
         {
-          "stack": "E/נוסח/נוסח@2/מ:אות-מיוחדת-במילה",
-          "count": 34
-        },
-        {
-          "stack": "E/נוסח/נוסח@2/מ:לגרמיה-2",
-          "count": 31
-        },
-        {
-          "stack": "E/נוסח/נוסח@2/מ:אות-מיוחדת-במילה/מ:אות-ג",
-          "count": 29
-        }
-      ],
-      "partially_checked": [
-        {
-          "stack": "E/מ:כפול/נוסח/נוסח@1/פפ",
-          "count": 1
-        }
-      ],
-      "totally_unchecked": [
-        {
-          "stack": "E/נוסח/נוסח@1/ר3",
-          "count": 47
-        },
-        {
           "stack": "E/נוסח/נוסח@1/ר1",
           "count": 36
         },
+        {
+          "stack": "E/נוסח/נוסח@2/מ:אות-מיוחדת-במילה",
+          "count": 34
+        }
+      ],
+      "partially_checked": [],
+      "totally_unchecked": [
         {
           "stack": "E/נוסח/נוסח@2/מ:קישור בהערה",
           "count": 27
@@ -1302,28 +1294,16 @@
           "count": 19
         },
         {
-          "stack": "E/מ:כפול/סס",
-          "count": 18
-        },
-        {
-          "stack": "E/נוסח/נוסח@1/פפפ",
-          "count": 6
-        },
-        {
-          "stack": "E/נוסח/נוסח@1/סס",
-          "count": 4
-        },
-        {
-          "stack": "E/נוסח/נוסח@1/פפ",
-          "count": 4
-        },
-        {
-          "stack": "E/נוסח/נוסח@1/ססס",
-          "count": 3
-        },
-        {
           "stack": "E/נוסח/נוסח@2/מ:קישור פנימי בהערה",
           "count": 3
+        },
+        {
+          "stack": "E/נוסח/נוסח@1/מ:נו״ן הפוכה",
+          "count": 2
+        },
+        {
+          "stack": "E/נוסח/נוסח@1/מ:צינור",
+          "count": 2
         }
       ]
     }

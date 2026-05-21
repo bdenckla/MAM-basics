@@ -14927,9 +14927,9 @@
   ],
   "normal_order_cov_counts_by_case": {
     "plain-C": {
-      "fully_checked": 14,
+      "fully_checked": 235,
       "partially_checked": 0,
-      "totally_unchecked": 230,
+      "totally_unchecked": 9,
       "total": 244
     },
     "plain-D": {
@@ -14939,22 +14939,15 @@
       "total": 568
     },
     "plain-E": {
-      "fully_checked": 3881,
-      "partially_checked": 18,
-      "totally_unchecked": 221,
+      "fully_checked": 4004,
+      "partially_checked": 17,
+      "totally_unchecked": 99,
       "total": 4120
     }
   },
   "normal_order_cov_top_paths_by_case": {
     "plain-C": {
       "fully_checked": [
-        {
-          "stack": "C/נוסח/נוסח@2/ש",
-          "count": 14
-        }
-      ],
-      "partially_checked": [],
-      "totally_unchecked": [
         {
           "stack": "C/נוסח/נוסח@1/פפ",
           "count": 97
@@ -14972,15 +14965,26 @@
           "count": 14
         },
         {
+          "stack": "C/נוסח/נוסח@2/ש",
+          "count": 14
+        },
+        {
+          "stack": "C/נוסח/נוסח@1/ר1",
+          "count": 2
+        },
+        {
+          "stack": "C/נוסח/נוסח@1/פפפ",
+          "count": 1
+        }
+      ],
+      "partially_checked": [],
+      "totally_unchecked": [
+        {
           "stack": "C/נוסח/נוסח@1/מ:סיום בטוב",
           "count": 4
         },
         {
           "stack": "C/מודגש/קק",
-          "count": 2
-        },
-        {
-          "stack": "C/נוסח/נוסח@1/ר1",
           "count": 2
         },
         {
@@ -14992,7 +14996,7 @@
           "count": 1
         },
         {
-          "stack": "C/נוסח/נוסח@1/פפפ",
+          "stack": "C/נוסח/נוסח@2/מ:קישור בהערה",
           "count": 1
         }
       ]
@@ -15039,6 +15043,10 @@
           "count": 49
         },
         {
+          "stack": "E/נוסח/נוסח@1/ר3",
+          "count": 47
+        },
+        {
           "stack": "E/מ:כפול/נוסח",
           "count": 42
         },
@@ -15047,20 +15055,16 @@
           "count": 37
         },
         {
+          "stack": "E/נוסח/נוסח@1/ר1",
+          "count": 36
+        },
+        {
           "stack": "E/נוסח/נוסח@2/מ:לגרמיה-2",
           "count": 33
         },
         {
           "stack": "E/נוסח/נוסח@2/מ:אות-ג",
           "count": 29
-        },
-        {
-          "stack": "E/נוסח/נוסח@1/מ:קמץ",
-          "count": 27
-        },
-        {
-          "stack": "E/נוסח/נוסח@1/מ:אות-ג",
-          "count": 25
         }
       ],
       "partially_checked": [
@@ -15079,21 +15083,9 @@
         {
           "stack": "E/נוסח/נוסח@1/מ:קמץ/מ:כל קמץ קטן מרכא",
           "count": 2
-        },
-        {
-          "stack": "E/מ:כפול/נוסח/נוסח@1/פפ",
-          "count": 1
         }
       ],
       "totally_unchecked": [
-        {
-          "stack": "E/נוסח/נוסח@1/ר3",
-          "count": 47
-        },
-        {
-          "stack": "E/נוסח/נוסח@1/ר1",
-          "count": 36
-        },
         {
           "stack": "E/נוסח/נוסח@2/מ:קישור בהערה",
           "count": 27
@@ -15101,10 +15093,6 @@
         {
           "stack": "E/נוסח/נוסח@2/מודגש",
           "count": 19
-        },
-        {
-          "stack": "E/מ:כפול/סס",
-          "count": 18
         },
         {
           "stack": "E/פרשה-מרכז/מ:דחי",
@@ -15115,16 +15103,28 @@
           "count": 7
         },
         {
-          "stack": "E/נוסח/נוסח@1/פפפ",
-          "count": 6
-        },
-        {
           "stack": "E/מ:הערה/מ:אות-ג",
           "count": 5
         },
         {
           "stack": "E/נוסח/נוסח@1/מ:גרשיים ותלישא גדולה",
           "count": 4
+        },
+        {
+          "stack": "E/נוסח/נוסח@1/מ:גרש ותלישא גדולה",
+          "count": 3
+        },
+        {
+          "stack": "E/נוסח/נוסח@1/מ:ירושלם",
+          "count": 3
+        },
+        {
+          "stack": "E/נוסח/נוסח@2/מ:קישור פנימי בהערה",
+          "count": 3
+        },
+        {
+          "stack": "E/מ:דחי/מ:ירושלם",
+          "count": 2
         }
       ]
     }

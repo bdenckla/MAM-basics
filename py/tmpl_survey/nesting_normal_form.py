@@ -29,10 +29,16 @@ StackCounts = Mapping[Tuple[StackTop, StackRest], int]
 RankMap = Mapping[TemplateName, int]
 RankGroups = Sequence[tuple[str, Iterable[str]]]
 
+_KETIV_QERE_TEMPLATES = frozenset(
+    {"כו״ק", "כתיב ולא קרי", "קרי ולא כתיב", "מ:כו״ק מיוחד", "מ:קו״כ-אם-2", "קו״כ"}
+)
+_WHITESPACE_TEMPLATES = frozenset(
+    {"ר0", "ר1", "ר2", "ר3", "ר4", "סס", "ססס", "פפ", "פפפ"}
+)
 _DEFAULT_RANK_GROUPS: tuple[tuple[str, frozenset[str]], ...] = (
     ("rank-1", frozenset({"מ:כפול"})),
     ("rank-2", frozenset({"נוסח"})),
-    ("rank-3", frozenset({"כו״ק", "כתיב ולא קרי", "קרי ולא כתיב", "מ:כו״ק מיוחד", "מ:קו״כ-אם-2", "קו״כ"})),
+    ("rank-3", _KETIV_QERE_TEMPLATES | _WHITESPACE_TEMPLATES),
     ("rank-4", frozenset({"מ:קמץ"})),
     ("rank-5", frozenset({"מ:דחי"})),
     ("rank-6", frozenset({"מ:אות-מיוחדת-במילה"})),
@@ -213,9 +219,7 @@ def summarize_rank_coverage_top_paths(
     if max_paths < 0:
         raise ValueError(f"max_paths must be >= 0, got {max_paths}")
 
-    stack_with_top_counts = {
-        key: defaultdict(int) for key in _CHECKEDNESS_KEYS
-    }
+    stack_with_top_counts = {key: defaultdict(int) for key in _CHECKEDNESS_KEYS}
     for (stack_top, stack_rest), count in stack_counts.items():
         if count <= 0:
             continue
@@ -461,7 +465,9 @@ def infer_expanded_stack_grammar(stack_counts: StackCounts) -> Dict[str, object]
         for idx, symbol in enumerate(stack):
             first_pos.setdefault(symbol, idx)
 
-        symbols_in_order = [k for k, _v in sorted(first_pos.items(), key=lambda kv: kv[1])]
+        symbols_in_order = [
+            k for k, _v in sorted(first_pos.items(), key=lambda kv: kv[1])
+        ]
         for idx, before in enumerate(symbols_in_order):
             for after in symbols_in_order[idx + 1 :]:
                 if before != after:
