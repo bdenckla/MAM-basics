@@ -15,8 +15,8 @@ from author_util.claim import ClaimCollection
 _FNAME = "mpplus-template-call-graphs.html"
 _TITLE = "Plus template call graphs"
 _SVG_FULL = "../svg/plus-call-graph.svg"
-_SVG_KAFUL = "../svg/plus-kaful-call-graph.svg"
-_SVG_NUSACH = "../svg/plus-nusach-call-graph.svg"
+_SVG_KAFUL = "../svg/plus-kpvl-call-graph.svg"
+_SVG_NUSACH = "../svg/plus-nvox-call-graph.svg"
 
 
 def gen_html_file(tdm_ch, claims: ClaimCollection):

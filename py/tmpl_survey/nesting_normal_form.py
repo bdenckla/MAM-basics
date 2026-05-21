@@ -55,6 +55,8 @@ _RANK_NAME_ALIASES: Dict[str, str] = {
     "נוסח@1": "נוסח",
     "נוסח@2": "נוסח",
 }
+_NUSACH_TEMPLATE_SYMBOL = "נוסח"
+_NUSACH_SLOT_SYMBOLS = frozenset(_RANK_NAME_ALIASES)
 
 
 def default_rank_groups() -> tuple[tuple[str, frozenset[str]], ...]:
@@ -105,7 +107,16 @@ def _normalize_rank_name(name: str) -> str:
 
 def _ranked_projection(stack: Sequence[str], rank_map: RankMap) -> List[str]:
     ranked: List[str] = []
-    for name in stack:
+    for idx, name in enumerate(stack):
+        # Explicit chained form may contain .../נוסח/נוסח@1/... .
+        # In rank-space both map to נוסח, so skip the slot alias when it
+        # immediately follows the explicit parent to avoid duplicate-rank noise.
+        if (
+            name in _NUSACH_SLOT_SYMBOLS
+            and idx > 0
+            and stack[idx - 1] == _NUSACH_TEMPLATE_SYMBOL
+        ):
+            continue
         normalized = _normalize_rank_name(name)
         if normalized in rank_map:
             ranked.append(normalized)

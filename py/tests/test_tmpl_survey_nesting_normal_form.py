@@ -62,6 +62,13 @@ class TestTmplSurveyNestingNormalForm(unittest.TestCase):
         }
         nnf.assert_stack_counts_in_normal_form(stack_counts, dataset_name="unit")
 
+    def test_allows_explicit_nusach_parent_followed_by_slot(self):
+        stack_counts = {
+            ("מ:דחי", "E/מ:כפול/נוסח/נוסח@1/מ:קמץ"): 2,
+            ("מ:דחי", "D/מ:כפול/נוסח/נוסח@2/מ:קמץ"): 3,
+        }
+        nnf.assert_stack_counts_in_normal_form(stack_counts, dataset_name="unit")
+
     def test_rejects_duplicate_rank_transition(self):
         stack_counts = {
             ("כו״ק", "E/כתיב ולא קרי"): 3,

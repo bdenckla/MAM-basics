@@ -15,12 +15,12 @@ _MINIROW = collections.namedtuple("_MINIROW", "CP, DP, EP")
 _PSV_PSN_CATEGORIES = {"0": "0 (pre-chapter)", str("תתת"): "2 (post-chapter)"}
 _NUSACH_ARG2_CONTEXT = ("נוסח", "2")
 _NUSACH_SLOTS = {"1", "2"}
+_NUSACH_TEMPLATE_SYMBOL = "נוסח"
 _NUSACH_SYMBOL_BY_SLOT = {
     "1": "נוסח@1",
     "2": "נוסח@2",
 }
 _NUSACH_SLOT_BY_SYMBOL = {
-    "נוסח": "legacy",
     "נוסח@1": "1",
     "נוסח@2": "2",
 }
@@ -94,7 +94,7 @@ def _record_tmpl(accum, wtel_rec, wtel_subtype):
     _check_argc(wtel_subtype, argc)
     _my_plus_equals(accum["arg_counts"], wtel_subtype, argc)
     for arg_idx, arg in enumerate(wtp1.template_arguments(wtel), start=1):
-        new_stack = *stack, _child_stack_symbol(wtel_subtype, arg_idx)
+        new_stack = *stack, *_child_stack_symbols(wtel_subtype, arg_idx)
         # e.g. for a, b, c in {{f|a|b|c}}
         for arg_wtel in arg:
             if _record_parent_context(accum, wtel_subtype, arg_idx, arg_wtel):
@@ -103,8 +103,14 @@ def _record_tmpl(accum, wtel_rec, wtel_subtype):
             _record_wtel(accum, arg_wtel_rec)
 
 
+def _child_stack_symbols(parent_subtype, arg_key):
+    if parent_subtype != _NUSACH_TEMPLATE_SYMBOL:
+        return (parent_subtype,)
+    return (_NUSACH_TEMPLATE_SYMBOL, _child_stack_symbol(parent_subtype, arg_key))
+
+
 def _child_stack_symbol(parent_subtype, arg_key):
-    if parent_subtype != "נוסח":
+    if parent_subtype != _NUSACH_TEMPLATE_SYMBOL:
         return parent_subtype
     slot = str(arg_key)
     assert slot in _NUSACH_SLOTS, (
@@ -230,9 +236,16 @@ def _strip_nusach(stack_str):
         return stack_str, None
 
     marker = parts[1]
-    nusach_slot = _NUSACH_SLOT_BY_SYMBOL.get(marker)
-    if nusach_slot is not None:
-        return "/".join(parts[:1] + parts[2:]), nusach_slot
+    if marker == _NUSACH_TEMPLATE_SYMBOL:
+        assert len(parts) >= 3, f"Invalid נוסח stack (missing slot marker): {stack_str}"
+        slot = _NUSACH_SLOT_BY_SYMBOL.get(parts[2])
+        assert slot is not None, f"Invalid נוסח slot marker in stack: {stack_str}"
+        # Chained form: C/נוסח/נוסח@1/... -> C/... with slot classification.
+        return "/".join(parts[:1] + parts[3:]), slot
+
+    assert marker not in _NUSACH_SLOT_BY_SYMBOL, (
+        f"Direct נוסח slot form is unsupported; expected explicit נוסח parent: {stack_str}"
+    )
     return stack_str, None
 
 

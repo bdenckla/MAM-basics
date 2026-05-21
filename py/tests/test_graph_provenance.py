@@ -45,10 +45,10 @@ class TestGraphProvenance(unittest.TestCase):
                 str(stem),
                 generator_file=__file__,
             )
-            kaful_text = (Path(tmp_dir) / "focused-kaful-call-graph.dot").read_text(
+            kaful_text = (Path(tmp_dir) / "focused-kpvl-call-graph.dot").read_text(
                 encoding="utf-8"
             )
-            nusach_text = (Path(tmp_dir) / "focused-nusach-call-graph.dot").read_text(
+            nusach_text = (Path(tmp_dir) / "focused-nvox-call-graph.dot").read_text(
                 encoding="utf-8"
             )
 

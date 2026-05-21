@@ -11,10 +11,10 @@ class TestTmplSurveyFocusedTargets(unittest.TestCase):
     def test_focused_targets_include_trial_templates(self):
         got = [(x.tmpl_name, x.slug, x.collapse) for x in survey_dot._FOCUSED_TARGETS]
         expected = [
-            ("מ:כפול", "kaful", False),
-            ("נוסח", "nusach", True),
+            ("מ:כפול", "kpvl", False),
+            ("נוסח", "nvox", True),
             ("מ:פסוק", "pasuk", False),
-            ("כו״ק", "kuk", False),
+            ("כו״ק", "kvq", False),
             ("מ:דחי", "dchi", False),
         ]
         self.assertEqual(expected, got)
@@ -115,7 +115,7 @@ class TestTmplSurveyFocusedTargets(unittest.TestCase):
             finally:
                 survey_dot.render_svg = orig_render_svg
 
-            nusach_dot_path = f"{stem}-nusach-call-graph.dot"
+            nusach_dot_path = f"{stem}-nvox-call-graph.dot"
             with open(nusach_dot_path, encoding="utf-8") as dot_fp:
                 dot_text = dot_fp.read()
 
@@ -174,7 +174,7 @@ class TestTmplSurveyFocusedTargets(unittest.TestCase):
             finally:
                 survey_dot.render_svg = orig_render_svg
 
-            nusach_dot_path = f"{stem}-nusach-call-graph.dot"
+            nusach_dot_path = f"{stem}-nvox-call-graph.dot"
             with open(nusach_dot_path, encoding="utf-8") as dot_fp:
                 dot_text = dot_fp.read()
 

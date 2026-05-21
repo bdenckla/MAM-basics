@@ -6,6 +6,7 @@ import shutil
 import subprocess
 
 from mb_cmn import provenance
+from mb_cmn import uni_heb as uh
 from tmpl_survey import svg_provenance_norm
 
 _COLUMN_LETTERS = {"C", "D", "E"}
@@ -354,10 +355,10 @@ class _FocusedTarget:
 # First-pass focused targets for template-specific subset documentation.
 # Keep this list intentionally small for now; exhaustive generation is deferred.
 _FOCUSED_TARGETS = (
-    _FocusedTarget("מ:כפול", "kaful", False),
-    _FocusedTarget("נוסח", "nusach", True),
+    _FocusedTarget("מ:כפול", uh.he_ascii_slug("כפול"), False),
+    _FocusedTarget("נוסח", uh.he_ascii_slug("נוסח"), True),
     _FocusedTarget("מ:פסוק", "pasuk", False),
-    _FocusedTarget("כו״ק", "kuk", False),
+    _FocusedTarget("כו״ק", uh.he_ascii_slug("כו״ק"), False),
     _FocusedTarget("מ:דחי", "dchi", False),
 )
 
