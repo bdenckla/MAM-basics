@@ -13,9 +13,9 @@ class TestTmplSurveyFocusedTargets(unittest.TestCase):
         expected = [
             ("מ:כפול", "kpvl", False),
             ("נוסח", "nvox", True),
-            ("מ:פסוק", "pasuk", False),
+            ("מ:פסוק", "povq", False),
             ("כו״ק", "kvq", False),
-            ("מ:דחי", "dchi", False),
+            ("מ:דחי", "dxy", False),
         ]
         self.assertEqual(expected, got)
 
@@ -67,7 +67,7 @@ class TestTmplSurveyFocusedTargets(unittest.TestCase):
         self.assertEqual(3, edges[("נוסח@1", "מ:דחי")])
         self.assertEqual(5, edges[("נוסח@2", "מ:דחי")])
 
-    def test_focused_dchi_graph_excludes_cross_stack_transitive_leakage(self):
+    def test_focused_dxy_graph_excludes_cross_stack_transitive_leakage(self):
         stack_counts = {
             ("נוסח", "C"): 2,
             ("נוסח", "D"): 3,
@@ -86,8 +86,8 @@ class TestTmplSurveyFocusedTargets(unittest.TestCase):
             finally:
                 survey_dot.render_svg = orig_render_svg
 
-            dchi_dot_path = f"{stem}-dchi-call-graph.dot"
-            with open(dchi_dot_path, encoding="utf-8") as dot_fp:
+            dxy_dot_path = f"{stem}-dxy-call-graph.dot"
+            with open(dxy_dot_path, encoding="utf-8") as dot_fp:
                 dot_text = dot_fp.read()
 
         self.assertIn('"E" -> "מ:דחי" [label="31"]', dot_text)
@@ -146,7 +146,7 @@ class TestTmplSurveyFocusedTargets(unittest.TestCase):
             finally:
                 survey_dot.render_svg = orig_render_svg
 
-            pasuk_dot_path = f"{stem}-pasuk-call-graph.dot"
+            pasuk_dot_path = f"{stem}-povq-call-graph.dot"
             with open(pasuk_dot_path, encoding="utf-8") as dot_fp:
                 dot_text = dot_fp.read()
 
@@ -199,8 +199,8 @@ class TestTmplSurveyFocusedTargets(unittest.TestCase):
             finally:
                 survey_dot.render_svg = orig_render_svg
 
-            dchi_dot_path = f"{stem}-dchi-call-graph.dot"
-            with open(dchi_dot_path, encoding="utf-8") as dot_fp:
+            dxy_dot_path = f"{stem}-dxy-call-graph.dot"
+            with open(dxy_dot_path, encoding="utf-8") as dot_fp:
                 dot_text = dot_fp.read()
 
         self.assertIn(

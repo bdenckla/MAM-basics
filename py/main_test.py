@@ -70,6 +70,11 @@ TEST_MODULE_SPECS = (
         help_text="Run provenance generated-by path formatting tests.",
     ),
     TestModuleSpec(
+        flag="mb-cmn-uni-heb",
+        module_name="tests.test_mb_cmn_uni_heb",
+        help_text="Run Hebrew direct-ASCII mapping helper tests.",
+    ),
+    TestModuleSpec(
         flag="graph-provenance",
         module_name="tests.test_graph_provenance",
         help_text="Run graph artifact DOT/SVG provenance tests.",
