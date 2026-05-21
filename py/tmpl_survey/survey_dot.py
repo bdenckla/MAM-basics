@@ -53,10 +53,12 @@ def _edges_from_stack_counts(stack_counts, discarded=None):
         discarded = _BASE_DISCARDED
     edges = {}
     for key, count in stack_counts.items():
-        wtel_subtype, stack_str = key
-        parts = [p for p in stack_str.split("/") if not _is_discarded(p, discarded)]
-        caller = parts[-1]
-        callee = wtel_subtype
+        stack_top, stack_rest = key
+        rest_parts = [
+            p for p in stack_rest.split("/") if not _is_discarded(p, discarded)
+        ]
+        caller = rest_parts[-1]
+        callee = stack_top
         if _is_discarded(callee, discarded):
             continue
         edge = (caller, callee)
@@ -311,16 +313,16 @@ def _write_dot(
     fp.write("}\n")
 
 
-def _split_stack_str(stack_str):
-    """Return stack elements from a slash-delimited stack string."""
-    return tuple(stack_str.split("/"))
+def _split_stack_rest(stack_rest):
+    """Return stack-rest elements from a slash-delimited stack-rest string."""
+    return tuple(stack_rest.split("/"))
 
 
 def _focused_edges_from_stack_counts(stack_counts, target, discarded=None):
     """Build focused edges from only stacks that involve the target.
 
     For each raw stack-count record where target appears anywhere in the stack
-    (fs_stack parts + top), decompose that stack into
+    (stack_rest parts + stack_top), decompose that stack into
     adjacent caller->callee edges and accumulate the record count.
 
     If discarded is provided, discarded templates are removed from the path
@@ -330,13 +332,13 @@ def _focused_edges_from_stack_counts(stack_counts, target, discarded=None):
     if discarded is None:
         discarded = set()
     focused_edges = {}
-    for (top, fs_stack), count in stack_counts.items():
-        fs_stack_parts = [
-            p for p in _split_stack_str(fs_stack) if not _is_discarded(p, discarded)
+    for (stack_top, stack_rest), count in stack_counts.items():
+        rest_parts = [
+            p for p in _split_stack_rest(stack_rest) if not _is_discarded(p, discarded)
         ]
-        if _is_discarded(top, discarded):
+        if _is_discarded(stack_top, discarded):
             continue
-        stack = (*fs_stack_parts, top)
+        stack = (*rest_parts, stack_top)
         if not any(_matches_target(x, target) for x in stack):
             continue
         for caller, callee in zip(stack, stack[1:]):
@@ -390,16 +392,16 @@ def _edge_template_stacks_from_stack_counts(stack_counts, discarded=None):
     if discarded is None:
         discarded = set()
     stacks = []
-    for (top, fs_stack), count in stack_counts.items():
-        if _is_discarded(top, discarded):
+    for (stack_top, stack_rest), count in stack_counts.items():
+        if _is_discarded(stack_top, discarded):
             continue
-        fs_stack_parts = [
-            p for p in _split_stack_str(fs_stack) if not _is_discarded(p, discarded)
+        rest_parts = [
+            p for p in _split_stack_rest(stack_rest) if not _is_discarded(p, discarded)
         ]
-        if not fs_stack_parts:
+        if not rest_parts:
             continue
-        start = fs_stack_parts[0]
-        template_stack = tuple((*fs_stack_parts[1:], top))
+        start = rest_parts[0]
+        template_stack = tuple((*rest_parts[1:], stack_top))
         if not template_stack:
             continue
         stacks.append((start, template_stack, count))

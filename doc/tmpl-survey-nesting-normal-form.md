@@ -5,8 +5,9 @@ MAM template-survey data.
 
 ## Terminology
 
-- `fs_stack`: forward-slash separated stack string.
-- `top` (or `stack top` in prose): the template currently on top.
+- `stack_rest`: forward-slash separated stack-rest string.
+- `stack_top`: the template currently on top.
+- `top` / `rest`: short forms used only where local context is already clear.
 - `stack`: a tuple/list stack representation, or the concept in general when
 	representation is obvious from context.
 

@@ -84,7 +84,9 @@ _SAM2_PE2_PE3 = {"סס", "פפ", "פפפ"}
 
 def _record_tmpl(accum, wtel_rec, wtel_subtype):
     bscv, stack, wtel = wtel_rec
-    _my_plus_equals(accum["stack_counts"], wtel_subtype, _string_from_stack(stack))
+    stack_top = wtel_subtype
+    stack_rest = _stack_rest_from_stack(stack)
+    _my_plus_equals(accum["stack_counts"], stack_top, stack_rest)
     argc = wtp1.template_len(wtel) - 1
     _check_argc(wtel_subtype, argc)
     _my_plus_equals(accum["arg_counts"], wtel_subtype, argc)
@@ -134,7 +136,7 @@ def _nusach_arg2_only_leaf_templates(accum):
     }
 
 
-def _string_from_stack(stack):
+def _stack_rest_from_stack(stack):
     return "/".join(stack)
 
 
@@ -205,12 +207,12 @@ def _flatten_stack_counts(accum):
     dic = accum["stack_counts"]
     grouped = {}
     for key, count in dic.items():
-        wtel_subtype, stack_str = key
-        group_key = (wtel_subtype, stack_str)
+        stack_top, stack_rest = key
+        group_key = (stack_top, stack_rest)
         if group_key not in grouped:
             grouped[group_key] = {
-                "wtel_subtype": wtel_subtype,
-                "stack": stack_str,
+                "wtel_subtype": stack_top,
+                "stack": stack_rest,
                 "count": 0,
             }
         grouped[group_key]["count"] += count

@@ -24,8 +24,8 @@ from typing import Dict, Iterable, List, Mapping, Sequence, Tuple
 
 TemplateName = str
 StackTop = TemplateName
-FsStack = str
-StackCounts = Mapping[Tuple[StackTop, FsStack], int]
+StackRest = str
+StackCounts = Mapping[Tuple[StackTop, StackRest], int]
 RankMap = Mapping[TemplateName, int]
 RankGroups = Sequence[tuple[str, Iterable[str]]]
 
@@ -123,18 +123,18 @@ def _ranked_projection(stack: Sequence[str], rank_map: RankMap) -> List[str]:
     return ranked
 
 
-def _stack_from_fs_stack(top: str, fs_stack: str) -> Tuple[str, ...]:
-    """Return stack tuple from fs_stack templates plus top template.
+def _stack_from_top_and_rest(stack_top: str, stack_rest: str) -> Tuple[str, ...]:
+    """Return stack tuple from stack_rest templates plus stack_top template.
 
-    Here fs_stack means the forward-slash separated stack string.
+    Here stack_rest means the forward-slash separated stack-rest string.
 
     Stack strings are prefixed by column letter (C/D/E) in survey data;
     that prefix is removed so coverage reflects only template symbols.
     """
-    parts = [p for p in fs_stack.split("/") if p]
+    parts = [p for p in stack_rest.split("/") if p]
     if parts and parts[0] in _COLUMN_LETTERS:
         parts = parts[1:]
-    return tuple(parts + [top])
+    return tuple(parts + [stack_top])
 
 
 def _is_singleton_stack(stack: Sequence[str]) -> bool:
@@ -162,9 +162,9 @@ def _checkedness_bucket(
     return "partially_checked"
 
 
-def _fs_stack_with_top(top: str, fs_stack: str) -> str:
-    parts = [p for p in fs_stack.split("/") if p]
-    return "/".join(parts + [top])
+def _stack_with_top_from_rest(stack_top: str, stack_rest: str) -> str:
+    parts = [p for p in stack_rest.split("/") if p]
+    return "/".join(parts + [stack_top])
 
 
 def summarize_rank_coverage_counts(
@@ -175,7 +175,7 @@ def summarize_rank_coverage_counts(
 
     Singleton template stacks are excluded entirely.
 
-    Categories use coverage cov on stack (fs_stack templates + top):
+    Categories use coverage cov on stack (stack_rest templates + stack_top):
     - totally_unchecked: projected ranked path len <= 1
     - fully_checked: cov = 1
     - partially_checked: projected ranked path len >= 2 and 0 < cov < 1
@@ -184,10 +184,10 @@ def summarize_rank_coverage_counts(
     partially_checked = 0
     totally_unchecked = 0
 
-    for (top, fs_stack), count in stack_counts.items():
+    for (stack_top, stack_rest), count in stack_counts.items():
         if count <= 0:
             continue
-        stack = _stack_from_fs_stack(top, fs_stack)
+        stack = _stack_from_top_and_rest(stack_top, stack_rest)
         bucket = _checkedness_bucket(stack, rank_map)
         if bucket is None:
             continue
@@ -219,31 +219,31 @@ def summarize_rank_coverage_top_paths(
     if max_paths < 0:
         raise ValueError(f"max_paths must be >= 0, got {max_paths}")
 
-    fs_stack_counts = {
+    stack_with_top_counts = {
         key: defaultdict(int) for key in _CHECKEDNESS_KEYS
     }
-    for (top, fs_stack), count in stack_counts.items():
+    for (stack_top, stack_rest), count in stack_counts.items():
         if count <= 0:
             continue
-        stack = _stack_from_fs_stack(top, fs_stack)
+        stack = _stack_from_top_and_rest(stack_top, stack_rest)
         bucket = _checkedness_bucket(stack, rank_map)
         if bucket is None:
             continue
-        stack_key = _fs_stack_with_top(top, fs_stack)
-        fs_stack_counts[bucket][stack_key] += count
+        stack_key = _stack_with_top_from_rest(stack_top, stack_rest)
+        stack_with_top_counts[bucket][stack_key] += count
 
     top_paths_by_bucket: Dict[str, List[dict[str, object]]] = {}
     for bucket in _CHECKEDNESS_KEYS:
         ranked = sorted(
-            fs_stack_counts[bucket].items(),
+            stack_with_top_counts[bucket].items(),
             key=lambda kv: (-kv[1], kv[0]),
         )
         top_paths_by_bucket[bucket] = [
             {
-                "stack": fs_stack_with_top,
+                "stack": stack_with_top,
                 "count": count,
             }
-            for fs_stack_with_top, count in ranked[:max_paths]
+            for stack_with_top, count in ranked[:max_paths]
         ]
     return top_paths_by_bucket
 
@@ -315,10 +315,10 @@ def find_rank_violations(
     bad_counts: Dict[Tuple[str, str, str], int] = defaultdict(int)
     examples: Dict[Tuple[str, str, str], str] = {}
 
-    for (top, fs_stack), count in stack_counts.items():
+    for (stack_top, stack_rest), count in stack_counts.items():
         if count <= 0:
             continue
-        stack = _stack_from_fs_stack(top, fs_stack)
+        stack = _stack_from_top_and_rest(stack_top, stack_rest)
         if _is_singleton_stack(stack):
             # Normal-order checking is about ordering relations, which require
             # at least two templates in the stack.
@@ -388,12 +388,12 @@ def _stack_counts_for_column(
     assert column_letter in _COLUMN_LETTERS, column_letter
 
     filtered: Dict[Tuple[str, str], int] = {}
-    for (top, fs_stack), count in stack_counts.items():
+    for (stack_top, stack_rest), count in stack_counts.items():
         if count <= 0:
             continue
-        parts = [p for p in fs_stack.split("/") if p]
+        parts = [p for p in stack_rest.split("/") if p]
         if parts and parts[0] == column_letter:
-            filtered[(top, fs_stack)] = count
+            filtered[(stack_top, stack_rest)] = count
     return filtered
 
 
@@ -436,10 +436,10 @@ def merge_stack_counts(*stack_counts_maps: StackCounts) -> Dict[Tuple[str, str],
 
 
 def _iter_weighted_stacks(stack_counts: StackCounts):
-    for (top, fs_stack), count in stack_counts.items():
+    for (stack_top, stack_rest), count in stack_counts.items():
         if count <= 0:
             continue
-        stack = tuple([p for p in fs_stack.split("/") if p] + [top])
+        stack = tuple([p for p in stack_rest.split("/") if p] + [stack_top])
         if not stack:
             continue
         yield stack, count
