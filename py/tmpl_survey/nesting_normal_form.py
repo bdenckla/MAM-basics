@@ -80,9 +80,10 @@ RANK_GROUPS_FOR_PLUS_D = (
 RANK_GROUPS_FOR_PLUS_E: tuple[frozenset[str], ...] = (
     frozenset({"מ:כפול"}),
     frozenset({"נוסח"}),
+    frozenset({"מ:הערה-2"}),
     _KETIV_QERE_TEMPLATES,
     frozenset({"מ:קמץ"}),
-    frozenset({"מ:דחי", "מ:צינור", "מ:הערה-2"}),
+    frozenset({"מ:דחי", "מ:צינור"}),
     frozenset({"מ:אות-מיוחדת-במילה"}),
     _END_COL_E | _END_WHITESPACE | _END_DOCNOTE,
 )
