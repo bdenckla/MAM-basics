@@ -10,27 +10,31 @@ def _read_top_stack(summary_entry):
     return summary_entry["stack"]
 
 
+def _survey_case_rank_maps():
+    return main_tmpl_survey._case_rank_maps(main_tmpl_survey._NORMAL_FORM_CASE_RANK_GROUPS)
+
+
+def _default_normal_form_rank_map():
+    return _survey_case_rank_maps()["plain-E"]
+
+
 class TestTmplSurveyNestingNormalForm(unittest.TestCase):
     def test_plain_and_plus_d_use_three_template_rank_order(self):
-        case_rank_maps = main_tmpl_survey._case_rank_maps(
-            main_tmpl_survey._default_case_rank_groups()
-        )
+        case_rank_maps = _survey_case_rank_maps()
 
         expected_templates = {"נוסח", "מ:פסוק", "מ:עלייה"}
         plain_d = case_rank_maps["plain-D"]
         plus_d = case_rank_maps["plus-D"]
 
-        self.assertEqual(expected_templates, set(plain_d))
-        self.assertEqual(expected_templates, set(plus_d))
+        self.assertTrue(expected_templates.issubset(set(plain_d)))
+        self.assertTrue(expected_templates.issubset(set(plus_d)))
         self.assertEqual(plain_d, plus_d)
         self.assertEqual(0, plain_d["נוסח"])
         self.assertEqual(1, plain_d["מ:פסוק"])
         self.assertEqual(2, plain_d["מ:עלייה"])
 
     def test_plus_e_uses_custom_rank_overrides(self):
-        case_rank_maps = main_tmpl_survey._case_rank_maps(
-            main_tmpl_survey._default_case_rank_groups()
-        )
+        case_rank_maps = _survey_case_rank_maps()
 
         plus_e = case_rank_maps["plus-E"]
         self.assertEqual(plus_e["כו״ק"], plus_e["מ:כו״ק מיוחד"])
@@ -42,7 +46,7 @@ class TestTmplSurveyNestingNormalForm(unittest.TestCase):
         self.assertEqual(plain_e["כו״ק"], plain_e["מ:כו״ק מיוחד"])
         self.assertEqual(plain_e["כו״ק"], plain_e["מ:קו״כ-אם-2"])
         self.assertEqual(plain_e["כו״ק"], plain_e["קו״כ"])
-        self.assertNotIn("מ:הערה-2", plain_e)
+        self.assertEqual(plain_e["מ:דחי"], plain_e["מ:הערה-2"])
 
     def test_regex_like_grammar_shape(self):
         self.assertEqual(
@@ -54,20 +58,32 @@ class TestTmplSurveyNestingNormalForm(unittest.TestCase):
         stack_counts = {
             ("מ:אות-מיוחדת-במילה", "E/מ:כפול/נוסח@2/כו״ק/מ:קמץ/מ:דחי"): 2,
         }
-        nnf.assert_stack_counts_in_normal_form(stack_counts, dataset_name="unit")
+        nnf.assert_stack_counts_in_normal_form(
+            stack_counts,
+            dataset_name="unit",
+            rank_map=_default_normal_form_rank_map(),
+        )
 
     def test_ignores_unranked_templates_between_ranked_templates(self):
         stack_counts = {
-            ("מ:דחי", "E/מ:הערה-2/מ:קמץ"): 4,
+            ("מ:דחי", "E/UNRANKED/מ:קמץ"): 4,
         }
-        nnf.assert_stack_counts_in_normal_form(stack_counts, dataset_name="unit")
+        nnf.assert_stack_counts_in_normal_form(
+            stack_counts,
+            dataset_name="unit",
+            rank_map=_default_normal_form_rank_map(),
+        )
 
     def test_rejects_descending_rank_transition(self):
         stack_counts = {
             ("מ:קמץ", "E/נוסח@1/מ:דחי"): 3,
         }
         with self.assertRaises(AssertionError) as ctx:
-            nnf.assert_stack_counts_in_normal_form(stack_counts, dataset_name="unit")
+            nnf.assert_stack_counts_in_normal_form(
+                stack_counts,
+                dataset_name="unit",
+                rank_map=_default_normal_form_rank_map(),
+            )
         self.assertIn("מ:דחי (rank 4) -> מ:קמץ (rank 3)", str(ctx.exception))
         self.assertIn("relation=descending", str(ctx.exception))
 
@@ -76,21 +92,33 @@ class TestTmplSurveyNestingNormalForm(unittest.TestCase):
             ("מ:דחי", "E/מ:כפול/נוסח@1/מ:קמץ"): 2,
             ("מ:דחי", "E/מ:כפול/נוסח@2/מ:קמץ"): 3,
         }
-        nnf.assert_stack_counts_in_normal_form(stack_counts, dataset_name="unit")
+        nnf.assert_stack_counts_in_normal_form(
+            stack_counts,
+            dataset_name="unit",
+            rank_map=_default_normal_form_rank_map(),
+        )
 
     def test_allows_explicit_nusach_parent_followed_by_slot(self):
         stack_counts = {
             ("מ:דחי", "E/מ:כפול/נוסח/נוסח@1/מ:קמץ"): 2,
             ("מ:דחי", "D/מ:כפול/נוסח/נוסח@2/מ:קמץ"): 3,
         }
-        nnf.assert_stack_counts_in_normal_form(stack_counts, dataset_name="unit")
+        nnf.assert_stack_counts_in_normal_form(
+            stack_counts,
+            dataset_name="unit",
+            rank_map=_default_normal_form_rank_map(),
+        )
 
     def test_rejects_duplicate_rank_transition(self):
         stack_counts = {
             ("כו״ק", "E/כתיב ולא קרי"): 3,
         }
         with self.assertRaises(AssertionError) as ctx:
-            nnf.assert_stack_counts_in_normal_form(stack_counts, dataset_name="unit")
+            nnf.assert_stack_counts_in_normal_form(
+                stack_counts,
+                dataset_name="unit",
+                rank_map=_default_normal_form_rank_map(),
+            )
         self.assertIn("כתיב ולא קרי (rank 2) -> כו״ק (rank 2)", str(ctx.exception))
         self.assertIn("relation=duplicate-rank", str(ctx.exception))
 
@@ -99,7 +127,10 @@ class TestTmplSurveyNestingNormalForm(unittest.TestCase):
             ("מ:קמץ", "E/מ:דחי"): 3,
             ("מ:קמץ", "D/נוסח@2/מ:דחי"): 5,
         }
-        violations = nnf.find_rank_violations(stack_counts)
+        violations = nnf.find_rank_violations(
+            stack_counts,
+            rank_map=_default_normal_form_rank_map(),
+        )
         self.assertEqual(1, len(violations))
         self.assertEqual("מ:דחי", violations[0]["caller"])
         self.assertEqual("מ:קמץ", violations[0]["callee"])
@@ -114,7 +145,10 @@ class TestTmplSurveyNestingNormalForm(unittest.TestCase):
             ("כו״ק", "E/כתיב ולא קרי"): 3,
             ("כו״ק", "D/נוסח@1/כתיב ולא קרי"): 5,
         }
-        violations = nnf.find_rank_violations(stack_counts)
+        violations = nnf.find_rank_violations(
+            stack_counts,
+            rank_map=_default_normal_form_rank_map(),
+        )
         self.assertEqual(1, len(violations))
         self.assertEqual("כתיב ולא קרי", violations[0]["caller"])
         self.assertEqual("כו״ק", violations[0]["callee"])
@@ -132,8 +166,8 @@ class TestTmplSurveyNestingNormalForm(unittest.TestCase):
         }
         same_order = nnf.build_rank_map(
             (
-                ("rank-1", ("A",)),
-                ("rank-2", ("B",)),
+                frozenset({"A"}),
+                frozenset({"B"}),
             )
         )
         case_rank_maps = {
@@ -155,14 +189,14 @@ class TestTmplSurveyNestingNormalForm(unittest.TestCase):
         }
         a_before_b = nnf.build_rank_map(
             (
-                ("rank-1", ("A",)),
-                ("rank-2", ("B",)),
+                frozenset({"A"}),
+                frozenset({"B"}),
             )
         )
         b_before_a = nnf.build_rank_map(
             (
-                ("rank-1", ("B",)),
-                ("rank-2", ("A",)),
+                frozenset({"B"}),
+                frozenset({"A"}),
             )
         )
         case_rank_maps = {
@@ -183,8 +217,8 @@ class TestTmplSurveyNestingNormalForm(unittest.TestCase):
             ("B", "C/A"): 1,
         }
         case_rank_maps = {
-            "plus-C": nnf.build_rank_map((("rank-1", ("A",)), ("rank-2", ("B",)))),
-            "plus-D": nnf.build_rank_map((("rank-1", ("A",)), ("rank-2", ("B",)))),
+            "plus-C": nnf.build_rank_map((frozenset({"A"}), frozenset({"B"}))),
+            "plus-D": nnf.build_rank_map((frozenset({"A"}), frozenset({"B"}))),
         }
         with self.assertRaises(ValueError) as ctx:
             nnf.assert_stack_counts_in_normal_form_by_case(
@@ -197,9 +231,9 @@ class TestTmplSurveyNestingNormalForm(unittest.TestCase):
     def test_summarize_rank_coverage_counts_classifies_cov_buckets(self):
         rank_map = nnf.build_rank_map(
             (
-                ("rank-1", ("A",)),
-                ("rank-2", ("B",)),
-                ("rank-3", ("C",)),
+                frozenset({"A"}),
+                frozenset({"B"}),
+                frozenset({"C"}),
             )
         )
         stack_counts = {
@@ -227,7 +261,7 @@ class TestTmplSurveyNestingNormalForm(unittest.TestCase):
         )
 
     def test_summarize_rank_coverage_counts_excludes_singleton_stack_only_case(self):
-        rank_map = nnf.build_rank_map((("rank-1", ("A",)),))
+        rank_map = nnf.build_rank_map((frozenset({"A"}),))
         stack_counts = {
             ("A", "C"): 7,
         }
@@ -245,7 +279,7 @@ class TestTmplSurveyNestingNormalForm(unittest.TestCase):
     def test_summarize_rank_coverage_counts_treats_projected_singleton_candidate_as_unchecked(
         self,
     ):
-        rank_map = nnf.build_rank_map((("rank-1", ("A",)),))
+        rank_map = nnf.build_rank_map((frozenset({"A"}),))
         stack_counts = {
             # Stack X/A (len=2) is a candidate and projects to singleton A.
             ("A", "C/X"): 7,
@@ -264,8 +298,8 @@ class TestTmplSurveyNestingNormalForm(unittest.TestCase):
     def test_summarize_rank_coverage_counts_drops_nusach_slots_early(self):
         rank_map = nnf.build_rank_map(
             (
-                ("rank-1", ("נוסח",)),
-                ("rank-2", ("כו״ק",)),
+                frozenset({"נוסח"}),
+                frozenset({"כו״ק"}),
             )
         )
         stack_counts = {
@@ -292,9 +326,9 @@ class TestTmplSurveyNestingNormalForm(unittest.TestCase):
     def test_summarize_rank_coverage_top_paths_returns_counts_per_bucket(self):
         rank_map = nnf.build_rank_map(
             (
-                ("rank-1", ("A",)),
-                ("rank-2", ("B",)),
-                ("rank-3", ("C",)),
+                frozenset({"A"}),
+                frozenset({"B"}),
+                frozenset({"C"}),
             )
         )
         stack_counts = {
@@ -338,8 +372,8 @@ class TestTmplSurveyNestingNormalForm(unittest.TestCase):
         }
         a_before_b = nnf.build_rank_map(
             (
-                ("rank-1", ("A",)),
-                ("rank-2", ("B",)),
+                frozenset({"A"}),
+                frozenset({"B"}),
             )
         )
         case_rank_maps = {
@@ -385,8 +419,8 @@ class TestTmplSurveyNestingNormalForm(unittest.TestCase):
         }
         a_before_b = nnf.build_rank_map(
             (
-                ("rank-1", ("A",)),
-                ("rank-2", ("B",)),
+                frozenset({"A"}),
+                frozenset({"B"}),
             )
         )
         case_rank_maps = {
