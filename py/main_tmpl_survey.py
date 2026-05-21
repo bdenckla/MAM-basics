@@ -5,6 +5,7 @@ import json
 import os
 
 from tmpl_survey import nesting_normal_form
+from tmpl_survey import stack_path_lookup
 from tmpl_survey import survey_dot
 from tmpl_survey import survey_plain
 from tmpl_survey import survey_plus
@@ -31,7 +32,7 @@ def _default_case_rank_groups():
     default_groups = nesting_normal_form.default_rank_groups()
     d_groups = (
         ("rank-1", frozenset({"נוסח"})),
-        ("rank-2", frozenset({"מ:פסוק"})),
+        ("rank-2", frozenset({"מ:פסוק", "ש"})),
         ("rank-3", frozenset({"מ:עלייה"})),
     )
 
@@ -265,6 +266,7 @@ def build_parser() -> argparse.ArgumentParser:
             "the matching lock for each dataset."
         ),
     )
+    stack_path_lookup.add_parser_args(parser)
     return parser
 
 
@@ -272,6 +274,8 @@ def main():
     """Survey the use of templates in MAM plain and plus."""
     parser = build_parser()
     args = parser.parse_args()
+    if stack_path_lookup.maybe_handle_cli(parser, args):
+        return
     almost_main(
         write_expanded_stack_grammar_lock=args.write_expanded_stack_grammar_lock
     )
