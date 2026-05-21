@@ -51,6 +51,10 @@ _DEFAULT_RANK_GROUPS: tuple[tuple[str, frozenset[str]], ...] = (
     ),
 )
 _COLUMN_LETTERS: tuple[str, str, str] = ("C", "D", "E")
+_RANK_NAME_ALIASES: Dict[str, str] = {
+    "נוסח@1": "נוסח",
+    "נוסח@2": "נוסח",
+}
 
 
 def default_rank_groups() -> tuple[tuple[str, frozenset[str]], ...]:
@@ -95,8 +99,17 @@ def regex_like_grammar() -> str:
     return "rank-1?rank-2?rank-3?rank-4?rank-5?rank-6?rank-7?"
 
 
+def _normalize_rank_name(name: str) -> str:
+    return _RANK_NAME_ALIASES.get(name, name)
+
+
 def _ranked_projection(stack: Sequence[str], rank_map: RankMap) -> List[str]:
-    return [name for name in stack if name in rank_map]
+    ranked: List[str] = []
+    for name in stack:
+        normalized = _normalize_rank_name(name)
+        if normalized in rank_map:
+            ranked.append(normalized)
+    return ranked
 
 
 def _stack_from_fs_stack(top: str, fs_stack: str) -> Tuple[str, ...]:
@@ -130,7 +143,7 @@ def _checkedness_bucket(
 ) -> str | None:
     if _is_singleton_stack(stack):
         return None
-    ranked_count = sum(1 for name in stack if name in rank_map)
+    ranked_count = len(_ranked_projection(stack, rank_map))
     if ranked_count <= 1:
         return "totally_unchecked"
     if ranked_count == len(stack):

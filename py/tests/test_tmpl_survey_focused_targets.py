@@ -54,6 +54,19 @@ class TestTmplSurveyFocusedTargets(unittest.TestCase):
 
             self.assertEqual(len(slugs), len(render_calls))
 
+    def test_focused_edge_extraction_matches_nusach_suffixes(self):
+        stack_counts = {
+            ("מ:דחי", "C/נוסח@1"): 3,
+            ("מ:עלייה", "C/נוסח@2/מ:דחי"): 5,
+        }
+
+        edges = survey_dot._focused_edges_from_stack_counts(stack_counts, target="נוסח")
+
+        self.assertEqual(3, edges[("C", "נוסח@1")])
+        self.assertEqual(5, edges[("C", "נוסח@2")])
+        self.assertEqual(3, edges[("נוסח@1", "מ:דחי")])
+        self.assertEqual(5, edges[("נוסח@2", "מ:דחי")])
+
     def test_focused_dchi_graph_excludes_cross_stack_transitive_leakage(self):
         stack_counts = {
             ("נוסח", "C"): 2,
@@ -87,8 +100,10 @@ class TestTmplSurveyFocusedTargets(unittest.TestCase):
 
     def test_focused_nusach_uses_targeted_discard_set(self):
         stack_counts = {
-            ("נוסח", "C"): 2,
-            ("מ:דחי", "C/נוסח"): 3,
+            ("נוסח@1", "C"): 2,
+            ("נוסח@2", "C"): 4,
+            ("מ:דחי", "C/נוסח@1"): 3,
+            ("מ:עלייה", "C/נוסח@2"): 7,
         }
 
         with tempfile.TemporaryDirectory() as tdir:
@@ -104,8 +119,10 @@ class TestTmplSurveyFocusedTargets(unittest.TestCase):
             with open(nusach_dot_path, encoding="utf-8") as dot_fp:
                 dot_text = dot_fp.read()
 
-        self.assertIn('"C" -> "נוסח" [label="2"]', dot_text)
-        self.assertNotIn('"נוסח" -> "מ:דחי" [label="3"]', dot_text)
+        self.assertIn('"C" -> "נוסח@1" [label="2"]', dot_text)
+        self.assertIn('"C" -> "נוסח@2" [label="11"]', dot_text)
+        self.assertIn('"נוסח@2" -> "מ:עלייה" [label="7"]', dot_text)
+        self.assertNotIn('"נוסח@1" -> "מ:דחי" [label="3"]', dot_text)
         self.assertIn("כו״ק", dot_text)
         self.assertIn("מ:קו״כ-אם-2", dot_text)
         self.assertIn("מ:כו״ק מיוחד", dot_text)

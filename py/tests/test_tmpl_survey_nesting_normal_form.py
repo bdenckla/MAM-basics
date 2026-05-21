@@ -36,7 +36,7 @@ class TestTmplSurveyNestingNormalForm(unittest.TestCase):
 
     def test_allows_strictly_increasing_rank_order(self):
         stack_counts = {
-            ("מ:אות-מיוחדת-במילה", "E/מ:כפול/נוסח/כו״ק/מ:קמץ/מ:דחי"): 2,
+            ("מ:אות-מיוחדת-במילה", "E/מ:כפול/נוסח@2/כו״ק/מ:קמץ/מ:דחי"): 2,
         }
         nnf.assert_stack_counts_in_normal_form(stack_counts, dataset_name="unit")
 
@@ -48,12 +48,19 @@ class TestTmplSurveyNestingNormalForm(unittest.TestCase):
 
     def test_rejects_descending_rank_transition(self):
         stack_counts = {
-            ("מ:קמץ", "E/מ:דחי"): 3,
+            ("מ:קמץ", "E/נוסח@1/מ:דחי"): 3,
         }
         with self.assertRaises(AssertionError) as ctx:
             nnf.assert_stack_counts_in_normal_form(stack_counts, dataset_name="unit")
         self.assertIn("מ:דחי (rank 4) -> מ:קמץ (rank 3)", str(ctx.exception))
         self.assertIn("relation=descending", str(ctx.exception))
+
+    def test_treats_nusach_suffixes_as_ranked_nusach(self):
+        stack_counts = {
+            ("מ:דחי", "E/מ:כפול/נוסח@1/מ:קמץ"): 2,
+            ("מ:דחי", "E/מ:כפול/נוסח@2/מ:קמץ"): 3,
+        }
+        nnf.assert_stack_counts_in_normal_form(stack_counts, dataset_name="unit")
 
     def test_rejects_duplicate_rank_transition(self):
         stack_counts = {
@@ -67,7 +74,7 @@ class TestTmplSurveyNestingNormalForm(unittest.TestCase):
     def test_aggregates_violation_counts(self):
         stack_counts = {
             ("מ:קמץ", "E/מ:דחי"): 3,
-            ("מ:קמץ", "D/נוסח/מ:דחי"): 5,
+            ("מ:קמץ", "D/נוסח@2/מ:דחי"): 5,
         }
         violations = nnf.find_rank_violations(stack_counts)
         self.assertEqual(1, len(violations))
@@ -82,7 +89,7 @@ class TestTmplSurveyNestingNormalForm(unittest.TestCase):
     def test_aggregates_duplicate_rank_violation_counts(self):
         stack_counts = {
             ("כו״ק", "E/כתיב ולא קרי"): 3,
-            ("כו״ק", "D/נוסח/כתיב ולא קרי"): 5,
+            ("כו״ק", "D/נוסח@1/כתיב ולא קרי"): 5,
         }
         violations = nnf.find_rank_violations(stack_counts)
         self.assertEqual(1, len(violations))

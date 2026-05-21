@@ -28,6 +28,22 @@ _FOCUS_NODE_ATTR_PARTS = (
 )
 _EDGE_LABEL_MAX_CHARS = 72
 _ONE_HOP_LABEL_MAX_PARTS = 2
+_BASE_TEMPLATE_ALIASES = {
+    "נוסח@1": "נוסח",
+    "נוסח@2": "נוסח",
+}
+
+
+def _base_template_name(name):
+    return _BASE_TEMPLATE_ALIASES.get(name, name)
+
+
+def _matches_target(name, target):
+    return _base_template_name(name) == target
+
+
+def _is_discarded(name, discarded):
+    return _base_template_name(name) in discarded
 
 
 def _edges_from_stack_counts(stack_counts, discarded=None):
@@ -37,10 +53,10 @@ def _edges_from_stack_counts(stack_counts, discarded=None):
     edges = {}
     for key, count in stack_counts.items():
         wtel_subtype, stack_str = key
-        parts = [p for p in stack_str.split("/") if p not in discarded]
+        parts = [p for p in stack_str.split("/") if not _is_discarded(p, discarded)]
         caller = parts[-1]
         callee = wtel_subtype
-        if callee in discarded:
+        if _is_discarded(callee, discarded):
             continue
         edge = (caller, callee)
         edges[edge] = edges.get(edge, 0) + count
@@ -172,8 +188,9 @@ def _node_attrs(label=None, tooltip=None, extra_parts=None):
 
 def _focused_group_label(rep, members, target, abbrevs, predecessors, successors):
     """Return a label for a node in a focused graph."""
-    if len(members) > 1 and rep != target:
-        if predecessors.get(rep, set()) == {target} and not successors.get(rep, set()):
+    if len(members) > 1 and not _matches_target(rep, target):
+        predecessor_bases = {_base_template_name(x) for x in predecessors.get(rep, set())}
+        if predecessor_bases == {target} and not successors.get(rep, set()):
             return f"dead-end children of {target}"
         return f"{abbrevs[rep]}, ..."
     return abbrevs[rep]
@@ -241,7 +258,7 @@ def _write_dot(
         tooltip = None
         node_id = rep
         node_attr_parts = None
-        if focus_target is not None and focus_target in members:
+        if focus_target is not None and any(_matches_target(x, focus_target) for x in members):
             node_attr_parts = _FOCUS_NODE_ATTR_PARTS
         if len(members) > 1:
             tooltip = _group_tooltip(members)
@@ -257,7 +274,7 @@ def _write_dot(
                     predecessors,
                     successors,
                 )
-                if rep != focus_target:
+                if not _matches_target(rep, focus_target):
                     node_id = _make_unique_node_id(label, used_ids)
         elif abbrevs[rep] != rep:
             label = abbrevs[rep]
@@ -313,11 +330,13 @@ def _focused_edges_from_stack_counts(stack_counts, target, discarded=None):
         discarded = set()
     focused_edges = {}
     for (top, fs_stack), count in stack_counts.items():
-        fs_stack_parts = [p for p in _split_stack_str(fs_stack) if p not in discarded]
-        if top in discarded:
+        fs_stack_parts = [
+            p for p in _split_stack_str(fs_stack) if not _is_discarded(p, discarded)
+        ]
+        if _is_discarded(top, discarded):
             continue
         stack = (*fs_stack_parts, top)
-        if target not in stack:
+        if not any(_matches_target(x, target) for x in stack):
             continue
         for caller, callee in zip(stack, stack[1:]):
             edge = (caller, callee)
@@ -371,9 +390,11 @@ def _edge_template_stacks_from_stack_counts(stack_counts, discarded=None):
         discarded = set()
     stacks = []
     for (top, fs_stack), count in stack_counts.items():
-        if top in discarded:
+        if _is_discarded(top, discarded):
             continue
-        fs_stack_parts = [p for p in _split_stack_str(fs_stack) if p not in discarded]
+        fs_stack_parts = [
+            p for p in _split_stack_str(fs_stack) if not _is_discarded(p, discarded)
+        ]
         if not fs_stack_parts:
             continue
         start = fs_stack_parts[0]

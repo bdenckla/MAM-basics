@@ -37,8 +37,8 @@ class TestTmplSurveyEdgeMode(unittest.TestCase):
 
     def test_write_edge_template_dot_file_applies_discard_set(self):
         stack_counts = {
-            ("נוסח", "D"): 4,
-            ("מ:פסוק", "D/נוסח"): 5,
+            ("נוסח@1", "D"): 4,
+            ("מ:פסוק", "D/נוסח@2"): 5,
         }
 
         with tempfile.TemporaryDirectory() as tdir:
@@ -49,6 +49,7 @@ class TestTmplSurveyEdgeMode(unittest.TestCase):
 
         self.assertIn('"D::start" -> "D::stack-end" [label="מ:פסוק (5)"]', dot_text)
         self.assertNotIn('label="נוסח (', dot_text)
+        self.assertNotIn('label="נוסח@', dot_text)
         self.assertIn("מ:כפול, נוסח have been discarded", dot_text)
 
     def test_write_edge_template_dot_file_includes_provenance(self):

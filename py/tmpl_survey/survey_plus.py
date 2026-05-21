@@ -14,6 +14,17 @@ from mb_cmn import kq_special_templates as kqst
 _MINIROW = collections.namedtuple("_MINIROW", "CP, DP, EP")
 _NUSACH_ARG2_CONTEXT = ("נוסח", "2")
 _NON_TARGETED_SCROLL_DIFF_NOTE_TMPL = "מ:הערה"
+_NUSACH_SLOTS = {"1", "2"}
+_NUSACH_SYMBOL_BY_SLOT = {
+    "1": "נוסח@1",
+    "2": "נוסח@2",
+}
+_NUSACH_SLOT_BY_SYMBOL = {
+    "נוסח": "legacy",
+    "נוסח@1": "1",
+    "נוסח@2": "2",
+}
+_NUSACH_SLOT_MARKERS = frozenset(_NUSACH_SLOT_BY_SYMBOL.values())
 
 
 def _wtel_type_and_subtype(wtel):
@@ -65,14 +76,24 @@ def _record_tmpl(accum, wtel_rec, wtel_subtype):
     argc = wtp2.template_len(wtel) - 1
     _check_argc(wtel_subtype, argc)
     _my_plus_equals(accum["arg_counts"], wtel_subtype, argc)
-    new_stack = *stack, wtel_subtype
     for param_key in wtp2.template_param_keys(wtel):
+        new_stack = *stack, _child_stack_symbol(wtel_subtype, param_key)
         arg = wtp2.template_param_val(wtel, param_key)
         for arg_wtel in arg:
             if _record_parent_context(accum, wtel_subtype, param_key, arg_wtel):
                 accum["tmpl_has_tmpl_children"][wtel_subtype] = True
             arg_wtel_rec = bscv, new_stack, arg_wtel
             _record_wtel(accum, arg_wtel_rec)
+
+
+def _child_stack_symbol(parent_subtype, arg_key):
+    if parent_subtype != "נוסח":
+        return parent_subtype
+    slot = str(arg_key)
+    assert slot in _NUSACH_SLOTS, (
+        f"Unexpected נוסח arg slot {slot!r}; expected one of {sorted(_NUSACH_SLOTS)}"
+    )
+    return _NUSACH_SYMBOL_BY_SLOT[slot]
 
 
 def _record_parent_context(accum, parent_subtype, param_key, arg_wtel):
@@ -179,7 +200,7 @@ def _flatten_stack_counts(accum):
     grouped = {}
     for key, count in dic.items():
         wtel_subtype, stack_str = key
-        base_stack, is_nusach = _strip_nusach(stack_str)
+        base_stack, nusach_slot = _strip_nusach(stack_str)
         group_key = (wtel_subtype, base_stack)
         if group_key not in grouped:
             grouped[group_key] = {
@@ -190,19 +211,24 @@ def _flatten_stack_counts(accum):
                 "count_nusach": 0,
             }
         rec = grouped[group_key]
-        if is_nusach:
-            rec["count_nusach"] = count
+        if nusach_slot in _NUSACH_SLOT_MARKERS:
+            rec["count_nusach"] += count
         else:
-            rec["count_non_nusach"] = count
+            rec["count_non_nusach"] += count
         rec["count"] = rec["count_non_nusach"] + rec["count_nusach"]
     return _sort_dics_by_values(list(grouped.values()))
 
 
 def _strip_nusach(stack_str):
     parts = stack_str.split("/")
-    if len(parts) >= 2 and parts[1] == "נוסח":
-        return "/".join(parts[:1] + parts[2:]), True
-    return stack_str, False
+    if len(parts) < 2:
+        return stack_str, None
+
+    marker = parts[1]
+    nusach_slot = _NUSACH_SLOT_BY_SYMBOL.get(marker)
+    if nusach_slot is not None:
+        return "/".join(parts[:1] + parts[2:]), nusach_slot
+    return stack_str, None
 
 
 def _flatten_arg_counts(accum):
