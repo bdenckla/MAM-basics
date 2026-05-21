@@ -156,8 +156,8 @@ def verify_mp_plus_verse_d_col_semantics(record: ClaimRecord, ctx: Context) -> N
             ), f"{nusach_wrapper!r}-wrapped D column missing {label_tmpl!r}: {item!r}"
         else:
             saw_direct = True
-            pasuk_params = item.get("tmpl_params", {})
-            has_named = any(k in named_params for k in pasuk_params)
+            label_params = item.get("tmpl_params", {})
+            has_named = any(k in named_params for k in label_params)
             assert has_named, (
                 f"direct D-column {label_tmpl!r} has no named param"
                 f" ({sorted(named_params)!r}): {item!r}"
