@@ -1142,9 +1142,9 @@
   ],
   "normal_order_cov_counts_by_case": {
     "plus-C": {
-      "fully_checked": 233,
-      "partially_checked": 3,
-      "totally_unchecked": 6,
+      "fully_checked": 240,
+      "partially_checked": 0,
+      "totally_unchecked": 2,
       "total": 242
     },
     "plus-D": {
@@ -1184,6 +1184,14 @@
           "count": 14
         },
         {
+          "stack": "C/נוסח/נוסח@1/מ:הערה-2",
+          "count": 4
+        },
+        {
+          "stack": "C/נוסח/נוסח@1/מ:הערה-2/פפ",
+          "count": 3
+        },
+        {
           "stack": "C/נוסח/נוסח@1/ר1",
           "count": 2
         },
@@ -1196,17 +1204,8 @@
           "count": 1
         }
       ],
-      "partially_checked": [
-        {
-          "stack": "C/נוסח/נוסח@1/מ:הערה-2/פפ",
-          "count": 3
-        }
-      ],
+      "partially_checked": [],
       "totally_unchecked": [
-        {
-          "stack": "C/נוסח/נוסח@1/מ:הערה-2",
-          "count": 4
-        },
         {
           "stack": "C/נוסח/נוסח@1/מ:אין פרשה בתחילת פרק",
           "count": 1

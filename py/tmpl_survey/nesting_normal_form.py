@@ -20,14 +20,14 @@ Where, by default:
 from __future__ import annotations
 
 from collections import defaultdict
-from typing import Dict, Iterable, List, Mapping, Sequence, Tuple
+from typing import Dict, List, Mapping, Sequence, Tuple
 
 TemplateName = str
 StackTop = TemplateName
 StackRest = str
 StackCounts = Mapping[Tuple[StackTop, StackRest], int]
 RankMap = Mapping[TemplateName, int]
-RankGroups = Sequence[tuple[str, Iterable[str]]]
+RankGroups = Sequence[frozenset[str]]
 
 _KETIV_QERE_TEMPLATES = frozenset(
     {
@@ -57,15 +57,38 @@ _TERMINAL_TEMPLATES = frozenset(
         "מודגש",
     }
 )
-_DEFAULT_RANK_GROUPS: tuple[tuple[str, frozenset[str]], ...] = (
-    ("rank-1", frozenset({"מ:כפול"})),
-    ("rank-2", frozenset({"נוסח"})),
-    ("rank-3", _KETIV_QERE_TEMPLATES | _WHITESPACE_TEMPLATES),
-    ("rank-4", frozenset({"מ:קמץ"})),
-    ("rank-5", frozenset({"מ:דחי", "מ:צינור"})),
-    ("rank-6", frozenset({"מ:אות-מיוחדת-במילה"})),
-    ("rank-7", _TERMINAL_TEMPLATES),
+_TERMINAL_TEMPLATES_FOR_DOCNOTES = frozenset(
+    {
+        "ש",
+        "מ:קישור בהערה",
+        "מ:קישור פנימי בהערה",
+        "מודגש",
+    }
 )
+RANK_GROUPS_FOR_PLUS_C: tuple[frozenset[str], ...] = (
+    frozenset({"נוסח"}),
+    frozenset({"מ:הערה-2"}),
+    _WHITESPACE_TEMPLATES,
+    _TERMINAL_TEMPLATES_FOR_DOCNOTES,
+)
+RANK_GROUPS_FOR_PLUS_D = (
+    frozenset({"נוסח"}),
+    frozenset({"מ:פסוק"}),
+    frozenset({"מ:עלייה"}),
+    _TERMINAL_TEMPLATES_FOR_DOCNOTES,
+)
+RANK_GROUPS_FOR_PLUS_E: tuple[frozenset[str], ...] = (
+    frozenset({"מ:כפול"}),
+    frozenset({"נוסח"}),
+    _KETIV_QERE_TEMPLATES | _WHITESPACE_TEMPLATES,
+    frozenset({"מ:קמץ"}),
+    frozenset({"מ:דחי", "מ:צינור", "מ:הערה-2"}),
+    frozenset({"מ:אות-מיוחדת-במילה"}),
+    _TERMINAL_TEMPLATES | _TERMINAL_TEMPLATES_FOR_DOCNOTES,
+)
+RANK_GROUPS_FOR_PLAIN_C = RANK_GROUPS_FOR_PLUS_C
+RANK_GROUPS_FOR_PLAIN_D = RANK_GROUPS_FOR_PLUS_D
+RANK_GROUPS_FOR_PLAIN_E = RANK_GROUPS_FOR_PLUS_E
 _COLUMN_LETTERS: tuple[str, str, str] = ("C", "D", "E")
 _NUSACH_SLOT_SYMBOLS = frozenset({"נוסח@1", "נוסח@2"})
 
@@ -79,14 +102,9 @@ def _drop_nusach_slot_symbols(stack: Sequence[str]) -> List[str]:
     return [name for name in stack if name not in _NUSACH_SLOT_SYMBOLS]
 
 
-def default_rank_groups() -> tuple[tuple[str, frozenset[str]], ...]:
-    """Return the default rank groups used by rank-based normal form."""
-    return _DEFAULT_RANK_GROUPS
-
-
-def _build_rank_map(rank_groups: Sequence[tuple[str, Iterable[str]]]) -> Dict[str, int]:
+def _build_rank_map(rank_groups: RankGroups) -> Dict[str, int]:
     rank_map: Dict[str, int] = {}
-    for rank, (_label, names) in enumerate(rank_groups):
+    for rank, names in enumerate(rank_groups):
         for name in names:
             if name in rank_map:
                 raise ValueError(f"Template {name!r} appears in multiple rank groups")
@@ -97,23 +115,10 @@ def _build_rank_map(rank_groups: Sequence[tuple[str, Iterable[str]]]) -> Dict[st
 def build_rank_map(rank_groups: RankGroups) -> Dict[str, int]:
     """Build a rank map from ordered rank groups.
 
-    Each group is a tuple of (label, template_names). The label is metadata
-    only; rank order is determined by position in the sequence.
+    Each group is a set of template names; rank order is determined by
+    position in the sequence.
     """
     return _build_rank_map(rank_groups)
-
-
-DEFAULT_RANK_MAP: Dict[str, int] = _build_rank_map(_DEFAULT_RANK_GROUPS)
-
-
-def default_case_rank_maps() -> Dict[str, Dict[str, int]]:
-    """Return default rank maps for plain/plus x C/D/E cases."""
-    case_rank_maps: Dict[str, Dict[str, int]] = {}
-    for dataset in ("plain", "plus"):
-        for column in _COLUMN_LETTERS:
-            case_key = f"{dataset}-{column}"
-            case_rank_maps[case_key] = dict(DEFAULT_RANK_MAP)
-    return case_rank_maps
 
 
 def regex_like_grammar() -> str:
@@ -309,16 +314,13 @@ def summarize_rank_coverage_top_paths_by_case(
 
 def find_rank_violations(
     stack_counts: StackCounts,
-    rank_map: RankMap | None = None,
+    rank_map: RankMap,
 ) -> List[dict[str, object]]:
     """Return aggregated grammar violations from stack_counts.
 
     A violation is an adjacent pair in the ranked projection where
     rank(caller) >= rank(callee).
     """
-    if rank_map is None:
-        rank_map = DEFAULT_RANK_MAP
-
     bad_counts: Dict[Tuple[str, str, str], int] = defaultdict(int)
     examples: Dict[Tuple[str, str, str], str] = {}
 
@@ -363,7 +365,7 @@ def find_rank_violations(
 def assert_stack_counts_in_normal_form(
     stack_counts: StackCounts,
     dataset_name: str,
-    rank_map: RankMap | None = None,
+    rank_map: RankMap,
 ) -> None:
     """Raise AssertionError when ranked nesting violates grammar order."""
     violations = find_rank_violations(stack_counts, rank_map=rank_map)

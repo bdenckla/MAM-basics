@@ -28,32 +28,14 @@ _PLAIN_TMPL_NAME_NORMALIZATION_NOTE = (
 )
 
 
-def _default_case_rank_groups():
-    default_groups = nesting_normal_form.default_rank_groups()
-    d_groups = (
-        ("rank-1", frozenset({"נוסח"})),
-        ("rank-2", frozenset({"מ:פסוק", "ש"})),
-        ("rank-3", frozenset({"מ:עלייה"})),
-    )
-
-    plus_e_group_names = {label: set(names) for label, names in default_groups}
-    plus_e_group_names["rank-5"].add("מ:הערה-2")
-    plus_e_groups = tuple(
-        (label, frozenset(plus_e_group_names[label]))
-        for label, _names in default_groups
-    )
-
-    return {
-        "plain-C": default_groups,
-        "plain-D": d_groups,
-        "plain-E": default_groups,
-        "plus-C": default_groups,
-        "plus-D": d_groups,
-        "plus-E": plus_e_groups,
-    }
-
-
-_NORMAL_FORM_CASE_RANK_GROUPS = _default_case_rank_groups()
+_NORMAL_FORM_CASE_RANK_GROUPS = {
+    "plain-C": nesting_normal_form.RANK_GROUPS_FOR_PLAIN_C,
+    "plain-D": nesting_normal_form.RANK_GROUPS_FOR_PLAIN_D,
+    "plain-E": nesting_normal_form.RANK_GROUPS_FOR_PLAIN_E,
+    "plus-C": nesting_normal_form.RANK_GROUPS_FOR_PLUS_C,
+    "plus-D": nesting_normal_form.RANK_GROUPS_FOR_PLUS_D,
+    "plus-E": nesting_normal_form.RANK_GROUPS_FOR_PLUS_E,
+}
 
 
 def _case_rank_maps(case_rank_groups):
