@@ -64,10 +64,7 @@ _DEFAULT_RANK_GROUPS: tuple[tuple[str, frozenset[str]], ...] = (
     ("rank-4", frozenset({"מ:קמץ"})),
     ("rank-5", frozenset({"מ:דחי", "מ:צינור"})),
     ("rank-6", frozenset({"מ:אות-מיוחדת-במילה"})),
-    (
-        "rank-7",
-        _TERMINAL_TEMPLATES,
-    ),
+    ("rank-7", _TERMINAL_TEMPLATES),
 )
 _COLUMN_LETTERS: tuple[str, str, str] = ("C", "D", "E")
 _NUSACH_SLOT_SYMBOLS = frozenset({"נוסח@1", "נוסח@2"})

@@ -29,6 +29,11 @@ _PLAIN_TMPL_NAME_NORMALIZATION_NOTE = (
 
 def _default_case_rank_groups():
     default_groups = nesting_normal_form.default_rank_groups()
+    d_groups = (
+        ("rank-1", frozenset({"נוסח"})),
+        ("rank-2", frozenset({"מ:פסוק"})),
+        ("rank-3", frozenset({"מ:עלייה"})),
+    )
 
     plus_e_group_names = {label: set(names) for label, names in default_groups}
     plus_e_group_names["rank-5"].add("מ:הערה-2")
@@ -39,10 +44,10 @@ def _default_case_rank_groups():
 
     return {
         "plain-C": default_groups,
-        "plain-D": default_groups,
+        "plain-D": d_groups,
         "plain-E": default_groups,
         "plus-C": default_groups,
-        "plus-D": default_groups,
+        "plus-D": d_groups,
         "plus-E": plus_e_groups,
     }
 

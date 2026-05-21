@@ -1148,9 +1148,9 @@
       "total": 242
     },
     "plus-D": {
-      "fully_checked": 1,
+      "fully_checked": 567,
       "partially_checked": 0,
-      "totally_unchecked": 567,
+      "totally_unchecked": 1,
       "total": 568
     },
     "plus-E": {
@@ -1220,13 +1220,6 @@
     "plus-D": {
       "fully_checked": [
         {
-          "stack": "D/נוסח/נוסח@2/ש",
-          "count": 1
-        }
-      ],
-      "partially_checked": [],
-      "totally_unchecked": [
-        {
           "stack": "D/מ:פסוק/מ:עלייה",
           "count": 521
         },
@@ -1237,6 +1230,13 @@
         {
           "stack": "D/נוסח/נוסח@1/מ:פסוק/מ:עלייה",
           "count": 11
+        }
+      ],
+      "partially_checked": [],
+      "totally_unchecked": [
+        {
+          "stack": "D/נוסח/נוסח@2/ש",
+          "count": 1
         }
       ]
     },

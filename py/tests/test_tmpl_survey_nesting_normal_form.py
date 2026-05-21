@@ -11,6 +11,22 @@ def _read_top_stack(summary_entry):
 
 
 class TestTmplSurveyNestingNormalForm(unittest.TestCase):
+    def test_plain_and_plus_d_use_three_template_rank_order(self):
+        case_rank_maps = main_tmpl_survey._case_rank_maps(
+            main_tmpl_survey._default_case_rank_groups()
+        )
+
+        expected_templates = {"נוסח", "מ:פסוק", "מ:עלייה"}
+        plain_d = case_rank_maps["plain-D"]
+        plus_d = case_rank_maps["plus-D"]
+
+        self.assertEqual(expected_templates, set(plain_d))
+        self.assertEqual(expected_templates, set(plus_d))
+        self.assertEqual(plain_d, plus_d)
+        self.assertEqual(0, plain_d["נוסח"])
+        self.assertEqual(1, plain_d["מ:פסוק"])
+        self.assertEqual(2, plain_d["מ:עלייה"])
+
     def test_plus_e_uses_custom_rank_overrides(self):
         case_rank_maps = main_tmpl_survey._case_rank_maps(
             main_tmpl_survey._default_case_rank_groups()
@@ -23,9 +39,9 @@ class TestTmplSurveyNestingNormalForm(unittest.TestCase):
         self.assertEqual(plus_e["מ:דחי"], plus_e["מ:הערה-2"])
 
         plain_e = case_rank_maps["plain-E"]
-        self.assertNotIn("מ:כו״ק מיוחד", plain_e)
-        self.assertNotIn("מ:קו״כ-אם-2", plain_e)
-        self.assertNotIn("קו״כ", plain_e)
+        self.assertEqual(plain_e["כו״ק"], plain_e["מ:כו״ק מיוחד"])
+        self.assertEqual(plain_e["כו״ק"], plain_e["מ:קו״כ-אם-2"])
+        self.assertEqual(plain_e["כו״ק"], plain_e["קו״כ"])
         self.assertNotIn("מ:הערה-2", plain_e)
 
     def test_regex_like_grammar_shape(self):
