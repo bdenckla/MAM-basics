@@ -30,31 +30,43 @@ RankMap = Mapping[TemplateName, int]
 RankGroups = Sequence[tuple[str, Iterable[str]]]
 
 _KETIV_QERE_TEMPLATES = frozenset(
-    {"כו״ק", "כתיב ולא קרי", "קרי ולא כתיב", "מ:כו״ק מיוחד", "מ:קו״כ-אם-2", "קו״כ"}
+    {
+        "כו״ק",
+        "קו״כ",
+        "כתיב ולא קרי",
+        "קרי ולא כתיב",
+        "מ:כו״ק מיוחד",
+        "מ:קו״כ-אם-2",
+    }
 )
 _WHITESPACE_TEMPLATES = frozenset(
     {"ר0", "ר1", "ר2", "ר3", "ר4", "סס", "ססס", "פפ", "פפפ"}
+)
+_TERMINAL_TEMPLATES = frozenset(
+    {
+        "מ:לגרמיה-2",
+        "מ:פסק",
+        "מ:מקף אפור",
+        "מ:אות-ק",
+        "מ:אות-ג",
+        "מ:אות תלויה",
+        "מ:נו״ן הפוכה",
+        "ש",
+        "מ:קישור בהערה",
+        "מ:קישור פנימי בהערה",
+        "מודגש",
+    }
 )
 _DEFAULT_RANK_GROUPS: tuple[tuple[str, frozenset[str]], ...] = (
     ("rank-1", frozenset({"מ:כפול"})),
     ("rank-2", frozenset({"נוסח"})),
     ("rank-3", _KETIV_QERE_TEMPLATES | _WHITESPACE_TEMPLATES),
     ("rank-4", frozenset({"מ:קמץ"})),
-    ("rank-5", frozenset({"מ:דחי"})),
+    ("rank-5", frozenset({"מ:דחי", "מ:צינור"})),
     ("rank-6", frozenset({"מ:אות-מיוחדת-במילה"})),
     (
         "rank-7",
-        frozenset(
-            {
-                "מ:לגרמיה-2",
-                "מ:פסק",
-                "מ:מקף אפור",
-                "מ:אות-ק",
-                "מ:אות-ג",
-                "מ:אות תלויה",
-                "ש",
-            }
-        ),
+        _TERMINAL_TEMPLATES,
     ),
 )
 _COLUMN_LETTERS: tuple[str, str, str] = ("C", "D", "E")

@@ -14927,9 +14927,9 @@
   ],
   "normal_order_cov_counts_by_case": {
     "plain-C": {
-      "fully_checked": 235,
+      "fully_checked": 236,
       "partially_checked": 0,
-      "totally_unchecked": 9,
+      "totally_unchecked": 8,
       "total": 244
     },
     "plain-D": {
@@ -14939,9 +14939,9 @@
       "total": 568
     },
     "plain-E": {
-      "fully_checked": 4004,
+      "fully_checked": 4057,
       "partially_checked": 17,
-      "totally_unchecked": 99,
+      "totally_unchecked": 46,
       "total": 4120
     }
   },
@@ -14975,6 +14975,10 @@
         {
           "stack": "C/נוסח/נוסח@1/פפפ",
           "count": 1
+        },
+        {
+          "stack": "C/נוסח/נוסח@2/מ:קישור בהערה",
+          "count": 1
         }
       ],
       "partially_checked": [],
@@ -14993,10 +14997,6 @@
         },
         {
           "stack": "C/נוסח/נוסח@1/מ:אין פרשה בתחילת פרק בספרי אמ״ת",
-          "count": 1
-        },
-        {
-          "stack": "C/נוסח/נוסח@2/מ:קישור בהערה",
           "count": 1
         }
       ]
@@ -15087,14 +15087,6 @@
       ],
       "totally_unchecked": [
         {
-          "stack": "E/נוסח/נוסח@2/מ:קישור בהערה",
-          "count": 27
-        },
-        {
-          "stack": "E/נוסח/נוסח@2/מודגש",
-          "count": 19
-        },
-        {
           "stack": "E/פרשה-מרכז/מ:דחי",
           "count": 10
         },
@@ -15119,12 +15111,20 @@
           "count": 3
         },
         {
-          "stack": "E/נוסח/נוסח@2/מ:קישור פנימי בהערה",
-          "count": 3
-        },
-        {
           "stack": "E/מ:דחי/מ:ירושלם",
           "count": 2
+        },
+        {
+          "stack": "E/נוסח/נוסח@1/גלגל-2",
+          "count": 2
+        },
+        {
+          "stack": "E/נוסח/נוסח@2/מ:גרש ותלישא גדולה",
+          "count": 2
+        },
+        {
+          "stack": "E/כו״ק/גלגל-2",
+          "count": 1
         }
       ]
     }

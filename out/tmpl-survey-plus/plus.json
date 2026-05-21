@@ -1142,9 +1142,9 @@
   ],
   "normal_order_cov_counts_by_case": {
     "plus-C": {
-      "fully_checked": 232,
+      "fully_checked": 233,
       "partially_checked": 3,
-      "totally_unchecked": 7,
+      "totally_unchecked": 6,
       "total": 242
     },
     "plus-D": {
@@ -1154,9 +1154,9 @@
       "total": 568
     },
     "plus-E": {
-      "fully_checked": 4128,
+      "fully_checked": 4181,
       "partially_checked": 0,
-      "totally_unchecked": 53,
+      "totally_unchecked": 0,
       "total": 4181
     }
   },
@@ -1190,6 +1190,10 @@
         {
           "stack": "C/נוסח/נוסח@1/פפפ",
           "count": 1
+        },
+        {
+          "stack": "C/נוסח/נוסח@2/מ:קישור בהערה",
+          "count": 1
         }
       ],
       "partially_checked": [
@@ -1209,10 +1213,6 @@
         },
         {
           "stack": "C/נוסח/נוסח@1/מ:אין פרשה בתחילת פרק בספרי אמ״ת",
-          "count": 1
-        },
-        {
-          "stack": "C/נוסח/נוסח@2/מ:קישור בהערה",
           "count": 1
         }
       ]
@@ -1284,28 +1284,7 @@
         }
       ],
       "partially_checked": [],
-      "totally_unchecked": [
-        {
-          "stack": "E/נוסח/נוסח@2/מ:קישור בהערה",
-          "count": 27
-        },
-        {
-          "stack": "E/נוסח/נוסח@2/מודגש",
-          "count": 19
-        },
-        {
-          "stack": "E/נוסח/נוסח@2/מ:קישור פנימי בהערה",
-          "count": 3
-        },
-        {
-          "stack": "E/נוסח/נוסח@1/מ:נו״ן הפוכה",
-          "count": 2
-        },
-        {
-          "stack": "E/נוסח/נוסח@1/מ:צינור",
-          "count": 2
-        }
-      ]
+      "totally_unchecked": []
     }
   }
 }
