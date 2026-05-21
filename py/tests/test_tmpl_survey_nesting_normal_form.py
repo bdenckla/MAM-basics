@@ -239,6 +239,32 @@ class TestTmplSurveyNestingNormalForm(unittest.TestCase):
             summary,
         )
 
+    def test_summarize_rank_coverage_counts_drops_nusach_slots_early(self):
+        rank_map = nnf.build_rank_map((
+            ("rank-1", ("נוסח",)),
+            ("rank-2", ("כו״ק",)),
+        ))
+        stack_counts = {
+            # Without early slot dropping this path would be partially_checked
+            # (stack len=3 vs ranked len=2). With early dropping it is len=2,
+            # so the same ranked path is fully_checked.
+            ("כו״ק", "E/נוסח/נוסח@1"): 5,
+            # This path becomes singleton after slot dropping and is therefore
+            # excluded from coverage totals.
+            ("כו״ק", "D/נוסח@2"): 7,
+        }
+
+        summary = nnf.summarize_rank_coverage_counts(stack_counts, rank_map)
+        self.assertEqual(
+            {
+                "fully_checked": 5,
+                "partially_checked": 0,
+                "totally_unchecked": 0,
+                "total": 5,
+            },
+            summary,
+        )
+
     def test_summarize_rank_coverage_top_paths_returns_counts_per_bucket(self):
         rank_map = nnf.build_rank_map((
             ("rank-1", ("A",)),

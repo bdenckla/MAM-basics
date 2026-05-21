@@ -51,12 +51,16 @@ _DEFAULT_RANK_GROUPS: tuple[tuple[str, frozenset[str]], ...] = (
     ),
 )
 _COLUMN_LETTERS: tuple[str, str, str] = ("C", "D", "E")
-_RANK_NAME_ALIASES: Dict[str, str] = {
-    "נוסח@1": "נוסח",
-    "נוסח@2": "נוסח",
-}
-_NUSACH_TEMPLATE_SYMBOL = "נוסח"
-_NUSACH_SLOT_SYMBOLS = frozenset(_RANK_NAME_ALIASES)
+_NUSACH_SLOT_SYMBOLS = frozenset({"נוסח@1", "נוסח@2"})
+
+
+def _drop_nusach_slot_symbols(stack: Sequence[str]) -> List[str]:
+    """Remove explicit nusach slot markers from stack symbols.
+
+    Normal-order checking treats the explicit slots (נוסח@1/נוסח@2) as
+    bookkeeping details, not structural templates in the stack.
+    """
+    return [name for name in stack if name not in _NUSACH_SLOT_SYMBOLS]
 
 
 def default_rank_groups() -> tuple[tuple[str, frozenset[str]], ...]:
@@ -101,25 +105,11 @@ def regex_like_grammar() -> str:
     return "rank-1?rank-2?rank-3?rank-4?rank-5?rank-6?rank-7?"
 
 
-def _normalize_rank_name(name: str) -> str:
-    return _RANK_NAME_ALIASES.get(name, name)
-
-
 def _ranked_projection(stack: Sequence[str], rank_map: RankMap) -> List[str]:
     ranked: List[str] = []
-    for idx, name in enumerate(stack):
-        # Explicit chained form may contain .../נוסח/נוסח@1/... .
-        # In rank-space both map to נוסח, so skip the slot alias when it
-        # immediately follows the explicit parent to avoid duplicate-rank noise.
-        if (
-            name in _NUSACH_SLOT_SYMBOLS
-            and idx > 0
-            and stack[idx - 1] == _NUSACH_TEMPLATE_SYMBOL
-        ):
-            continue
-        normalized = _normalize_rank_name(name)
-        if normalized in rank_map:
-            ranked.append(normalized)
+    for name in stack:
+        if name in rank_map:
+            ranked.append(name)
     return ranked
 
 
@@ -130,11 +120,14 @@ def _stack_from_top_and_rest(stack_top: str, stack_rest: str) -> Tuple[str, ...]
 
     Stack strings are prefixed by column letter (C/D/E) in survey data;
     that prefix is removed so coverage reflects only template symbols.
+
+    Explicit nusach slots (נוסח@1/נוסח@2) are also removed here so
+    normal-order checks and coverage are computed on structural templates.
     """
     parts = [p for p in stack_rest.split("/") if p]
     if parts and parts[0] in _COLUMN_LETTERS:
         parts = parts[1:]
-    return tuple(parts + [stack_top])
+    return tuple(_drop_nusach_slot_symbols(parts + [stack_top]))
 
 
 def _is_singleton_stack(stack: Sequence[str]) -> bool:
