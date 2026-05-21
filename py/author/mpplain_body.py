@@ -408,7 +408,7 @@ def s_template_format(*, claims: ClaimCollection):
 
 
 def s_common_templates(*, claims: ClaimCollection):
-    structural_rows, _ = body_shared.emit_common_templates_claim_prelude(claims=claims)
+    structural_rows = body_shared.emit_common_templates_claim_prelude(claims=claims)
     kq_rows = body_shared.build_kq_rows(
         claims=claims,
         kq_am2_doc=_KQ_AM2_DOC,
@@ -447,20 +447,9 @@ def s_common_templates(*, claims: ClaimCollection):
         _find_template_row(structural_rows, "מ:אין פרשה בתחילת פרק בספרי אמ״ת"),
         _find_template_row(structural_rows, "מ:אין רווח של פרשה בתחילת פרשת השבוע"),
     ]
-    plain_note_links_rows = [
-        [
-            author.hbo("מ:קישור בהערה"),
-            "External URL link inside note content (within arg 2 of מ:הערה).",
-        ],
-        [
-            author.hbo("מ:קישור פנימי בהערה"),
-            "Internal Wikisource link inside note content (within arg 2 of מ:הערה).",
-        ],
-    ]
     other_templates_rows = (
         [cmn.good_ending_row(good_ending_doc=_GOOD_ENDING_TMPL_DOC)]
         + cmn.poetic_rows_for_templates(["פרשה-מרכז"])
-        + plain_note_links_rows
         + [
             *cmn.accent_rows_for_templates(["גלגל-2", "ירח בן יומו-2"]),
             *cmn.other_rows_for_templates(["מ:אות מנוקדת"]),
@@ -511,18 +500,8 @@ def s_common_templates(*, claims: ClaimCollection):
         tblh.tmpl_purp_table([cmn.NOTE_ROW_PLAIN]),
         author.heading_level_3("Documentation templates"),
         tblh.tmpl_purp_table(cmn.other_rows_shared_core(docnote_doc=_DOCNOTE_DOC)),
+        body_shared.note_links_param1_explanation_para(),
         author.heading_level_3("Other templates"),
-        author.para(
-            [
-                "In this table, ",
-                author.hbo("מ:קישור פנימי בהערה"),
-                " means param 1 is a Wikisource-internal target (path or fragment) rendered under ",
-                mb_html.code("https://he.wikisource.org/wiki/"),
-                "; ",
-                author.hbo("מ:קישור בהערה"),
-                " means param 1 is an external URL used as-is.",
-            ]
-        ),
         tblh.tmpl_purp_table(other_templates_rows),
     ]
 

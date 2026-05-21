@@ -24,6 +24,19 @@ def _docnote_row(docnote_doc):
     ]
 
 
+def _docnote_note_links_rows():
+    return [
+        [
+            author.hbo("מ:קישור בהערה"),
+            "External URL link within the notes argument (param 2) of נוסח.",
+        ],
+        [
+            author.hbo("מ:קישור פנימי בהערה"),
+            "Internal Wikisource link within the notes argument (param 2) of נוסח.",
+        ],
+    ]
+
+
 def _good_ending_row(good_ending_doc):
     return [
         author.hbo("מ:סיום בטוב"),
@@ -216,8 +229,9 @@ def whitespace_rows_shared():
 def other_rows_shared_core(*, docnote_doc=_DOCNOTE_DOC):
     return [
         _docnote_row(docnote_doc),
-        OTHER_ROW_BY_TEMPLATE["מודגש"],
         OTHER_ROW_BY_TEMPLATE["ש"],
+        OTHER_ROW_BY_TEMPLATE["מודגש"],
+        *_docnote_note_links_rows(),
     ]
 
 

@@ -254,6 +254,20 @@ def verify_mp_both_templates_sh_only_in_docnote_param2(
     _verify_template_only_in_parent_param(record, ctx)
 
 
+def verify_mp_both_templates_note_link_external_only_in_docnote_param2(
+    record: ClaimRecord, ctx: Context
+) -> None:
+    """Template מ:קישור בהערה appears only in נוסח param 2."""
+    _verify_template_only_in_parent_param(record, ctx)
+
+
+def verify_mp_both_templates_note_link_internal_only_in_docnote_param2(
+    record: ClaimRecord, ctx: Context
+) -> None:
+    """Template מ:קישור פנימי בהערה appears only in נוסח param 2."""
+    _verify_template_only_in_parent_param(record, ctx)
+
+
 def _verify_note_books_only(record: ClaimRecord, ctx: Context) -> None:
     """Assert note templates only appear in Torah and Esther books.
 
@@ -440,6 +454,8 @@ REGISTRY: dict[str, VerifierFn] = {
     "mp.both.templates.kq-special.subtypes": verify_mp_both_templates_kq_special_subtypes,
     "mp.both.templates.kq.set": verify_mp_both_templates_kq_set,
     "mp.both.templates.modag.only-in-docnote-param2": verify_mp_both_templates_modag_only_in_docnote_param2,
+    "mp.both.templates.note-link-external.only-in-docnote-param2": verify_mp_both_templates_note_link_external_only_in_docnote_param2,
+    "mp.both.templates.note-link-internal.only-in-docnote-param2": verify_mp_both_templates_note_link_internal_only_in_docnote_param2,
     "mp.both.templates.navigation.set": verify_mp_both_templates_navigation_set,
     "mp.both.templates.note": verify_mp_both_templates_note,
     "mp.both.templates.note-links.set": verify_mp_both_templates_note_links_set,

@@ -491,7 +491,7 @@ def s_chapter_verse(*, claims: ClaimCollection):
 
 
 def s_common_templates(*, claims: ClaimCollection):
-    structural_rows, note_links_rows = body_shared.emit_common_templates_claim_prelude(
+    structural_rows = body_shared.emit_common_templates_claim_prelude(
         claims=claims,
         plus_only=True,
     )
@@ -532,8 +532,6 @@ def s_common_templates(*, claims: ClaimCollection):
         _find_template_row(structural_rows, "מ:אין פרשה בתחילת פרק בספרי אמ״ת"),
         _find_template_row(structural_rows, "מ:אין רווח של פרשה בתחילת פרשת השבוע"),
     ]
-    other_misc_rows = [*note_links_rows]
-
     _emit_claim_payload(
         claims,
         "mp.plus.docs.common-templates.templates-in-plus-survey",
@@ -584,18 +582,6 @@ def s_common_templates(*, claims: ClaimCollection):
         tblh.tmpl_purp_table([note_row]),
         author.heading_level_3("Documentation templates"),
         tblh.tmpl_purp_table(cmn.other_rows_shared_core(docnote_doc=_DOCNOTE_DOC)),
-        author.heading_level_3("Other templates"),
-        author.para(
-            [
-                "In this table, ",
-                author.hbo("מ:קישור פנימי בהערה"),
-                " means param 1 is a Wikisource-internal target (path or fragment) rendered under ",
-                mb_html.code("https://he.wikisource.org/wiki/"),
-                "; ",
-                author.hbo("מ:קישור בהערה"),
-                " means param 1 is an external URL used as-is.",
-            ]
-        ),
-        tblh.tmpl_purp_table(other_misc_rows),
+        body_shared.note_links_param1_explanation_para(),
     ]
 

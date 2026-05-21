@@ -74,8 +74,14 @@ def emit_common_templates_claim_prelude(
         claims=claims, claim_id="mp.both.templates.structural.set"
     )
     cmn.emit_claim_by_id(claims=claims, claim_id="mp.both.templates.navigation.set")
-    note_links_rows = cmn.emit_claim_by_id(
-        claims=claims, claim_id="mp.both.templates.note-links.set"
+    cmn.emit_claim_by_id(claims=claims, claim_id="mp.both.templates.note-links.set")
+    cmn.emit_claim_by_id(
+        claims=claims,
+        claim_id="mp.both.templates.note-link-external.only-in-docnote-param2",
+    )
+    cmn.emit_claim_by_id(
+        claims=claims,
+        claim_id="mp.both.templates.note-link-internal.only-in-docnote-param2",
     )
     cmn.emit_claim_by_id(
         claims=claims,
@@ -96,7 +102,7 @@ def emit_common_templates_claim_prelude(
     )
     if plus_only:
         cmn.emit_claim_by_id(claims=claims, claim_id="mp.plus.templates.plus-only.set")
-    return structural_rows, note_links_rows
+    return structural_rows
 
 
 def build_kq_rows(*, claims: ClaimCollection, kq_am2_doc: str, kq_special_doc: str):
@@ -176,6 +182,20 @@ def choice_templates_intro_para():
     return author.para(
         "Most applications will need to make a choice between the two or three options"
         " presented by these templates."
+    )
+
+
+def note_links_param1_explanation_para():
+    return author.para(
+        [
+            "In this table, ",
+            author.hbo("מ:קישור פנימי בהערה"),
+            " param 1 is a Wikisource-internal target (path or fragment) rendered under ",
+            mb_html.code("https://he.wikisource.org/wiki/"),
+            "; ",
+            author.hbo("מ:קישור בהערה"),
+            " param 1 is an external URL used as-is.",
+        ]
     )
 
 

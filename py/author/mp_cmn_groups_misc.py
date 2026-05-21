@@ -117,13 +117,21 @@ NOTE_ROW_PLAIN = [
 NOTE_LINKS_ROW = [
     [
         author.hbo("מ:קישור בהערה"),
-        "External URL link inside note content (within arg 2 of מ:הערה-2).",
+        "External URL link within the notes argument (param 2) of נוסח.",
     ],
     [
         author.hbo("מ:קישור פנימי בהערה"),
-        "Internal Wikisource link inside note content (within arg 2 of מ:הערה-2).",
+        "Internal Wikisource link within the notes argument (param 2) of נוסח.",
     ],
 ]
+
+NOTE_LINK_EXTERNAL_ONLY_IN_DOCNOTE_PARAM2 = (
+    "Template מ:קישור בהערה appears only within the notes argument (param 2) of נוסח."
+)
+
+NOTE_LINK_INTERNAL_ONLY_IN_DOCNOTE_PARAM2 = (
+    "Template מ:קישור פנימי בהערה appears only within the notes argument (param 2) of נוסח."
+)
 
 NAVIGATION_ROWS = [
     [
@@ -214,6 +222,28 @@ CLAIM_DEFS = (
                 "מ:קישור בהערה",
                 "מ:קישור פנימי בהערה",
             ]
+        },
+    ),
+    _claim_def(
+        "mp.both.templates.note-link-external.only-in-docnote-param2",
+        NOTE_LINK_EXTERNAL_ONLY_IN_DOCNOTE_PARAM2,
+        kind="struct",
+        subject="mp:both",
+        data={
+            "template": "מ:קישור בהערה",
+            "parent_template": "נוסח",
+            "parent_param": "2",
+        },
+    ),
+    _claim_def(
+        "mp.both.templates.note-link-internal.only-in-docnote-param2",
+        NOTE_LINK_INTERNAL_ONLY_IN_DOCNOTE_PARAM2,
+        kind="struct",
+        subject="mp:both",
+        data={
+            "template": "מ:קישור פנימי בהערה",
+            "parent_template": "נוסח",
+            "parent_param": "2",
         },
     ),
     _claim_def(
