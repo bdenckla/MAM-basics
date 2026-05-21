@@ -40,13 +40,17 @@ class TestTmplSurveyNestingNormalForm(unittest.TestCase):
         self.assertEqual(plus_e["כו״ק"], plus_e["מ:כו״ק מיוחד"])
         self.assertEqual(plus_e["כו״ק"], plus_e["מ:קו״כ-אם-2"])
         self.assertEqual(plus_e["כו״ק"], plus_e["קו״כ"])
-        self.assertEqual(plus_e["מ:דחי"], plus_e["מ:הערה-2"])
+        self.assertLess(plus_e["מ:הערה-2"], plus_e["כו״ק"])
+        self.assertLess(plus_e["כו״ק"], plus_e["מ:קמץ"])
+        self.assertLess(plus_e["מ:קמץ"], plus_e["מ:דחי"])
 
         plain_e = case_rank_maps["plain-E"]
         self.assertEqual(plain_e["כו״ק"], plain_e["מ:כו״ק מיוחד"])
         self.assertEqual(plain_e["כו״ק"], plain_e["מ:קו״כ-אם-2"])
         self.assertEqual(plain_e["כו״ק"], plain_e["קו״כ"])
-        self.assertEqual(plain_e["מ:דחי"], plain_e["מ:הערה-2"])
+        self.assertLess(plain_e["מ:הערה-2"], plain_e["כו״ק"])
+        self.assertLess(plain_e["כו״ק"], plain_e["מ:קמץ"])
+        self.assertLess(plain_e["מ:קמץ"], plain_e["מ:דחי"])
 
     def test_regex_like_grammar_shape(self):
         self.assertEqual(
@@ -84,7 +88,7 @@ class TestTmplSurveyNestingNormalForm(unittest.TestCase):
                 dataset_name="unit",
                 rank_map=_default_normal_form_rank_map(),
             )
-        self.assertIn("מ:דחי (rank 4) -> מ:קמץ (rank 3)", str(ctx.exception))
+        self.assertIn("מ:דחי (rank 5) -> מ:קמץ (rank 4)", str(ctx.exception))
         self.assertIn("relation=descending", str(ctx.exception))
 
     def test_treats_docnote_suffixes_as_ranked_docnote(self):
@@ -119,7 +123,7 @@ class TestTmplSurveyNestingNormalForm(unittest.TestCase):
                 dataset_name="unit",
                 rank_map=_default_normal_form_rank_map(),
             )
-        self.assertIn("כתיב ולא קרי (rank 2) -> כו״ק (rank 2)", str(ctx.exception))
+        self.assertIn("כתיב ולא קרי (rank 3) -> כו״ק (rank 3)", str(ctx.exception))
         self.assertIn("relation=duplicate-rank", str(ctx.exception))
 
     def test_aggregates_violation_counts(self):
@@ -135,8 +139,8 @@ class TestTmplSurveyNestingNormalForm(unittest.TestCase):
         self.assertEqual("מ:דחי", violations[0]["caller"])
         self.assertEqual("מ:קמץ", violations[0]["callee"])
         self.assertEqual("descending", violations[0]["relation"])
-        self.assertEqual(4, violations[0]["caller_rank"])
-        self.assertEqual(3, violations[0]["callee_rank"])
+        self.assertEqual(5, violations[0]["caller_rank"])
+        self.assertEqual(4, violations[0]["callee_rank"])
         self.assertEqual(8, violations[0]["count"])
         self.assertIn("example_stack", violations[0])
 
@@ -153,8 +157,8 @@ class TestTmplSurveyNestingNormalForm(unittest.TestCase):
         self.assertEqual("כתיב ולא קרי", violations[0]["caller"])
         self.assertEqual("כו״ק", violations[0]["callee"])
         self.assertEqual("duplicate-rank", violations[0]["relation"])
-        self.assertEqual(2, violations[0]["caller_rank"])
-        self.assertEqual(2, violations[0]["callee_rank"])
+        self.assertEqual(3, violations[0]["caller_rank"])
+        self.assertEqual(3, violations[0]["callee_rank"])
         self.assertEqual(8, violations[0]["count"])
         self.assertIn("example_stack", violations[0])
 
