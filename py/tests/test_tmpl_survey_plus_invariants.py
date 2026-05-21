@@ -45,11 +45,11 @@ class TestTmplSurveyPlusInvariants(unittest.TestCase):
         self.assertEqual(3, len(records))
         self.assertEqual(
             [
-                ("מ:פסוק", "E", 5),
-                ("מ:פסוק", "E/נוסח/נוסח@1", 2),
-                ("מ:פסוק", "E/נוסח/נוסח@2", 3),
+                ("E/מ:פסוק", 5),
+                ("E/נוסח/נוסח@1/מ:פסוק", 2),
+                ("E/נוסח/נוסח@2/מ:פסוק", 3),
             ],
-            [(r["wtel_subtype"], r["stack"], r["count"]) for r in records],
+            [(r["stack"], r["count"]) for r in records],
         )
 
     def test_plus_flatten_stack_counts_splits_nusach_slots(self):
@@ -64,11 +64,11 @@ class TestTmplSurveyPlusInvariants(unittest.TestCase):
         self.assertEqual(3, len(records))
         self.assertEqual(
             [
-                ("מ:פסוק", "D", 11),
-                ("מ:פסוק", "D/נוסח/נוסח@1", 13),
-                ("מ:פסוק", "D/נוסח/נוסח@2", 17),
+                ("D/מ:פסוק", 11),
+                ("D/נוסח/נוסח@1/מ:פסוק", 13),
+                ("D/נוסח/נוסח@2/מ:פסוק", 17),
             ],
-            [(r["wtel_subtype"], r["stack"], r["count"]) for r in records],
+            [(r["stack"], r["count"]) for r in records],
         )
 
     def test_plain_flatten_stack_counts_preserves_direct_nusach_slots(self):
@@ -79,7 +79,7 @@ class TestTmplSurveyPlusInvariants(unittest.TestCase):
         }
         records = survey_plain._flatten_stack_counts(accum)
         self.assertEqual(1, len(records))
-        self.assertEqual("E/נוסח@1", records[0]["stack"])
+        self.assertEqual("E/נוסח@1/מ:פסוק", records[0]["stack"])
         self.assertEqual(1, records[0]["count"])
 
     def test_plus_flatten_stack_counts_preserves_direct_nusach_slots(self):
@@ -90,7 +90,7 @@ class TestTmplSurveyPlusInvariants(unittest.TestCase):
         }
         records = survey_plus._flatten_stack_counts(accum)
         self.assertEqual(1, len(records))
-        self.assertEqual("D/נוסח@2", records[0]["stack"])
+        self.assertEqual("D/נוסח@2/מ:פסוק", records[0]["stack"])
         self.assertEqual(1, records[0]["count"])
 
     def test_assert_plus_excludes_non_targeted_notes_passes_for_haarah_2_only(self):
