@@ -42,13 +42,15 @@ class TestTmplSurveyPlusInvariants(unittest.TestCase):
             }
         }
         records = survey_plain._flatten_stack_counts(accum)
-        self.assertEqual(1, len(records))
-        rec = records[0]
-        self.assertEqual("מ:פסוק", rec["wtel_subtype"])
-        self.assertEqual("E", rec["stack"])
-        self.assertEqual(10, rec["count"])
-        self.assertNotIn("count_nusach_1", rec)
-        self.assertNotIn("count_nusach_2", rec)
+        self.assertEqual(3, len(records))
+        self.assertEqual(
+            [
+                ("מ:פסוק", "E", 5),
+                ("מ:פסוק", "E/נוסח/נוסח@1", 2),
+                ("מ:פסוק", "E/נוסח/נוסח@2", 3),
+            ],
+            [(r["wtel_subtype"], r["stack"], r["count"]) for r in records],
+        )
 
     def test_plus_flatten_stack_counts_splits_nusach_slots(self):
         accum = {
@@ -59,31 +61,37 @@ class TestTmplSurveyPlusInvariants(unittest.TestCase):
             }
         }
         records = survey_plus._flatten_stack_counts(accum)
-        self.assertEqual(1, len(records))
-        rec = records[0]
-        self.assertEqual("מ:פסוק", rec["wtel_subtype"])
-        self.assertEqual("D", rec["stack"])
-        self.assertEqual(41, rec["count"])
-        self.assertNotIn("count_nusach_1", rec)
-        self.assertNotIn("count_nusach_2", rec)
+        self.assertEqual(3, len(records))
+        self.assertEqual(
+            [
+                ("מ:פסוק", "D", 11),
+                ("מ:פסוק", "D/נוסח/נוסח@1", 13),
+                ("מ:פסוק", "D/נוסח/נוסח@2", 17),
+            ],
+            [(r["wtel_subtype"], r["stack"], r["count"]) for r in records],
+        )
 
-    def test_plain_flatten_stack_counts_rejects_direct_nusach_slots(self):
+    def test_plain_flatten_stack_counts_preserves_direct_nusach_slots(self):
         accum = {
             "stack_counts": {
                 ("מ:פסוק", "E/נוסח@1"): 1,
             }
         }
-        with self.assertRaises(AssertionError):
-            survey_plain._flatten_stack_counts(accum)
+        records = survey_plain._flatten_stack_counts(accum)
+        self.assertEqual(1, len(records))
+        self.assertEqual("E/נוסח@1", records[0]["stack"])
+        self.assertEqual(1, records[0]["count"])
 
-    def test_plus_flatten_stack_counts_rejects_direct_nusach_slots(self):
+    def test_plus_flatten_stack_counts_preserves_direct_nusach_slots(self):
         accum = {
             "stack_counts": {
                 ("מ:פסוק", "D/נוסח@2"): 1,
             }
         }
-        with self.assertRaises(AssertionError):
-            survey_plus._flatten_stack_counts(accum)
+        records = survey_plus._flatten_stack_counts(accum)
+        self.assertEqual(1, len(records))
+        self.assertEqual("D/נוסח@2", records[0]["stack"])
+        self.assertEqual(1, records[0]["count"])
 
     def test_assert_plus_excludes_non_targeted_notes_passes_for_haarah_2_only(self):
         stack_counts = {

@@ -20,10 +20,6 @@ _NUSACH_SYMBOL_BY_SLOT = {
     "1": "נוסח@1",
     "2": "נוסח@2",
 }
-_NUSACH_SLOT_BY_SYMBOL = {
-    "נוסח@1": "1",
-    "נוסח@2": "2",
-}
 
 
 def _wtel_type_and_subtype(wtel):
@@ -205,35 +201,15 @@ def _flatten_stack_counts(accum):
     grouped = {}
     for key, count in dic.items():
         wtel_subtype, stack_str = key
-        base_stack, _ = _strip_nusach(stack_str)
-        group_key = (wtel_subtype, base_stack)
+        group_key = (wtel_subtype, stack_str)
         if group_key not in grouped:
             grouped[group_key] = {
                 "wtel_subtype": wtel_subtype,
-                "stack": base_stack,
+                "stack": stack_str,
                 "count": 0,
             }
         grouped[group_key]["count"] += count
     return _sort_dics_by_values(list(grouped.values()))
-
-
-def _strip_nusach(stack_str):
-    parts = stack_str.split("/")
-    if len(parts) < 2:
-        return stack_str, None
-
-    marker = parts[1]
-    if marker == _NUSACH_TEMPLATE_SYMBOL:
-        assert len(parts) >= 3, f"Invalid נוסח stack (missing slot marker): {stack_str}"
-        slot = _NUSACH_SLOT_BY_SYMBOL.get(parts[2])
-        assert slot is not None, f"Invalid נוסח slot marker in stack: {stack_str}"
-        # Chained form: C/נוסח/נוסח@1/... -> C/... with slot classification.
-        return "/".join(parts[:1] + parts[3:]), slot
-
-    assert marker not in _NUSACH_SLOT_BY_SYMBOL, (
-        f"Direct נוסח slot form is unsupported; expected explicit נוסח parent: {stack_str}"
-    )
-    return stack_str, None
 
 
 def _flatten_arg_counts(accum):

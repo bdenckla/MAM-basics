@@ -302,12 +302,22 @@
     {
       "wtel_subtype": "כו״ק",
       "stack": "E",
-      "count": 884
+      "count": 741
+    },
+    {
+      "wtel_subtype": "כו״ק",
+      "stack": "E/נוסח/נוסח@1",
+      "count": 143
     },
     {
       "wtel_subtype": "כתיב ולא קרי",
       "stack": "E",
-      "count": 8
+      "count": 6
+    },
+    {
+      "wtel_subtype": "כתיב ולא קרי",
+      "stack": "E/נוסח/נוסח@1",
+      "count": 2
     },
     {
       "wtel_subtype": "מ:אות תלויה",
@@ -316,68 +326,108 @@
     },
     {
       "wtel_subtype": "מ:אות-ג",
-      "stack": "E/מ:אות-מיוחדת-במילה",
-      "count": 52
-    },
-    {
-      "wtel_subtype": "מ:אות-ג",
-      "stack": "E/מ:דחי/מ:אות-מיוחדת-במילה",
+      "stack": "E/מ:הערה-2/מ:אות-מיוחדת-במילה",
       "count": 4
     },
     {
       "wtel_subtype": "מ:אות-ג",
-      "stack": "E/מ:הערה-2/מ:אות-מיוחדת-במילה",
-      "count": 7
+      "stack": "E/נוסח/נוסח@1/מ:אות-מיוחדת-במילה",
+      "count": 23
+    },
+    {
+      "wtel_subtype": "מ:אות-ג",
+      "stack": "E/נוסח/נוסח@1/מ:דחי/מ:אות-מיוחדת-במילה",
+      "count": 4
+    },
+    {
+      "wtel_subtype": "מ:אות-ג",
+      "stack": "E/נוסח/נוסח@1/מ:הערה-2/מ:אות-מיוחדת-במילה",
+      "count": 3
+    },
+    {
+      "wtel_subtype": "מ:אות-ג",
+      "stack": "E/נוסח/נוסח@2/מ:אות-מיוחדת-במילה",
+      "count": 29
     },
     {
       "wtel_subtype": "מ:אות-מיוחדת-במילה",
       "stack": "E",
-      "count": 79
-    },
-    {
-      "wtel_subtype": "מ:אות-מיוחדת-במילה",
-      "stack": "E/כו״ק",
-      "count": 1
-    },
-    {
-      "wtel_subtype": "מ:אות-מיוחדת-במילה",
-      "stack": "E/מ:דחי",
-      "count": 6
+      "count": 4
     },
     {
       "wtel_subtype": "מ:אות-מיוחדת-במילה",
       "stack": "E/מ:הערה-2",
-      "count": 9
+      "count": 4
+    },
+    {
+      "wtel_subtype": "מ:אות-מיוחדת-במילה",
+      "stack": "E/נוסח/נוסח@1",
+      "count": 41
+    },
+    {
+      "wtel_subtype": "מ:אות-מיוחדת-במילה",
+      "stack": "E/נוסח/נוסח@1/כו״ק",
+      "count": 1
+    },
+    {
+      "wtel_subtype": "מ:אות-מיוחדת-במילה",
+      "stack": "E/נוסח/נוסח@1/מ:דחי",
+      "count": 6
+    },
+    {
+      "wtel_subtype": "מ:אות-מיוחדת-במילה",
+      "stack": "E/נוסח/נוסח@1/מ:הערה-2",
+      "count": 5
+    },
+    {
+      "wtel_subtype": "מ:אות-מיוחדת-במילה",
+      "stack": "E/נוסח/נוסח@2",
+      "count": 34
     },
     {
       "wtel_subtype": "מ:אות-ק",
-      "stack": "E/כו״ק/מ:אות-מיוחדת-במילה",
+      "stack": "E/נוסח/נוסח@1/כו״ק/מ:אות-מיוחדת-במילה",
       "count": 1
     },
     {
       "wtel_subtype": "מ:אות-ק",
-      "stack": "E/מ:אות-מיוחדת-במילה",
-      "count": 25
+      "stack": "E/נוסח/נוסח@1/מ:אות-מיוחדת-במילה",
+      "count": 20
     },
     {
       "wtel_subtype": "מ:אות-ק",
-      "stack": "E/מ:דחי/מ:אות-מיוחדת-במילה",
+      "stack": "E/נוסח/נוסח@1/מ:דחי/מ:אות-מיוחדת-במילה",
       "count": 2
     },
     {
       "wtel_subtype": "מ:אות-ק",
-      "stack": "E/מ:הערה-2/מ:אות-מיוחדת-במילה",
+      "stack": "E/נוסח/נוסח@1/מ:הערה-2/מ:אות-מיוחדת-במילה",
       "count": 2
+    },
+    {
+      "wtel_subtype": "מ:אות-ק",
+      "stack": "E/נוסח/נוסח@2/מ:אות-מיוחדת-במילה",
+      "count": 5
     },
     {
       "wtel_subtype": "מ:אין פרשה בתחילת פרק",
       "stack": "C",
-      "count": 139
+      "count": 138
+    },
+    {
+      "wtel_subtype": "מ:אין פרשה בתחילת פרק",
+      "stack": "C/נוסח/נוסח@1",
+      "count": 1
     },
     {
       "wtel_subtype": "מ:אין פרשה בתחילת פרק בספרי אמ״ת",
       "stack": "C",
-      "count": 33
+      "count": 32
+    },
+    {
+      "wtel_subtype": "מ:אין פרשה בתחילת פרק בספרי אמ״ת",
+      "stack": "C/נוסח/נוסח@1",
+      "count": 1
     },
     {
       "wtel_subtype": "מ:אין רווח של פרשה בתחילת פרשת השבוע",
@@ -387,12 +437,12 @@
     {
       "wtel_subtype": "מ:דחי",
       "stack": "E",
-      "count": 2287
+      "count": 2250
     },
     {
       "wtel_subtype": "מ:דחי",
       "stack": "E/כו״ק",
-      "count": 7
+      "count": 6
     },
     {
       "wtel_subtype": "מ:דחי",
@@ -405,19 +455,39 @@
       "count": 14
     },
     {
+      "wtel_subtype": "מ:דחי",
+      "stack": "E/נוסח/נוסח@1",
+      "count": 37
+    },
+    {
+      "wtel_subtype": "מ:דחי",
+      "stack": "E/נוסח/נוסח@1/כו״ק",
+      "count": 1
+    },
+    {
       "wtel_subtype": "מ:הערה-2",
-      "stack": "C",
+      "stack": "C/נוסח/נוסח@1",
       "count": 4
     },
     {
       "wtel_subtype": "מ:הערה-2",
       "stack": "E",
-      "count": 27
+      "count": 4
+    },
+    {
+      "wtel_subtype": "מ:הערה-2",
+      "stack": "E/נוסח/נוסח@1",
+      "count": 23
     },
     {
       "wtel_subtype": "מ:כו״ק מיוחד",
       "stack": "E",
-      "count": 37
+      "count": 20
+    },
+    {
+      "wtel_subtype": "מ:כו״ק מיוחד",
+      "stack": "E/נוסח/נוסח@1",
+      "count": 17
     },
     {
       "wtel_subtype": "מ:כפול",
@@ -427,17 +497,12 @@
     {
       "wtel_subtype": "מ:לגרמיה-2",
       "stack": "E",
-      "count": 1797
+      "count": 1719
     },
     {
       "wtel_subtype": "מ:לגרמיה-2",
       "stack": "E/כו״ק",
       "count": 9
-    },
-    {
-      "wtel_subtype": "מ:לגרמיה-2",
-      "stack": "E/מ:אות-מיוחדת-במילה",
-      "count": 4
     },
     {
       "wtel_subtype": "מ:לגרמיה-2",
@@ -452,6 +517,26 @@
     {
       "wtel_subtype": "מ:לגרמיה-2",
       "stack": "E/מ:קו״כ-אם-2",
+      "count": 2
+    },
+    {
+      "wtel_subtype": "מ:לגרמיה-2",
+      "stack": "E/נוסח/נוסח@1",
+      "count": 47
+    },
+    {
+      "wtel_subtype": "מ:לגרמיה-2",
+      "stack": "E/נוסח/נוסח@1/מ:אות-מיוחדת-במילה",
+      "count": 2
+    },
+    {
+      "wtel_subtype": "מ:לגרמיה-2",
+      "stack": "E/נוסח/נוסח@2",
+      "count": 31
+    },
+    {
+      "wtel_subtype": "מ:לגרמיה-2",
+      "stack": "E/נוסח/נוסח@2/מ:אות-מיוחדת-במילה",
       "count": 2
     },
     {
@@ -462,17 +547,27 @@
     {
       "wtel_subtype": "מ:מקף אפור",
       "stack": "E",
-      "count": 114
+      "count": 93
     },
     {
       "wtel_subtype": "מ:מקף אפור",
-      "stack": "E/מ:קמץ",
+      "stack": "E/נוסח/נוסח@1",
+      "count": 21
+    },
+    {
+      "wtel_subtype": "מ:מקף אפור",
+      "stack": "E/נוסח/נוסח@1/מ:קמץ",
       "count": 2
     },
     {
       "wtel_subtype": "מ:נו״ן הפוכה",
       "stack": "E",
-      "count": 9
+      "count": 7
+    },
+    {
+      "wtel_subtype": "מ:נו״ן הפוכה",
+      "stack": "E/נוסח/נוסח@1",
+      "count": 2
     },
     {
       "wtel_subtype": "מ:ספר חדש",
@@ -482,22 +577,32 @@
     {
       "wtel_subtype": "מ:עלייה",
       "stack": "D/מ:פסוק",
-      "count": 532
+      "count": 521
+    },
+    {
+      "wtel_subtype": "מ:עלייה",
+      "stack": "D/נוסח/נוסח@1/מ:פסוק",
+      "count": 11
     },
     {
       "wtel_subtype": "מ:פסוק",
       "stack": "D",
-      "count": 895
+      "count": 860
+    },
+    {
+      "wtel_subtype": "מ:פסוק",
+      "stack": "D/נוסח/נוסח@1",
+      "count": 35
     },
     {
       "wtel_subtype": "מ:פסק",
       "stack": "E",
-      "count": 507
+      "count": 485
     },
     {
       "wtel_subtype": "מ:פסק",
       "stack": "E/מ:כו״ק מיוחד",
-      "count": 5
+      "count": 2
     },
     {
       "wtel_subtype": "מ:פסק",
@@ -510,39 +615,64 @@
       "count": 1
     },
     {
+      "wtel_subtype": "מ:פסק",
+      "stack": "E/נוסח/נוסח@1",
+      "count": 14
+    },
+    {
+      "wtel_subtype": "מ:פסק",
+      "stack": "E/נוסח/נוסח@1/מ:כו״ק מיוחד",
+      "count": 3
+    },
+    {
+      "wtel_subtype": "מ:פסק",
+      "stack": "E/נוסח/נוסח@2",
+      "count": 8
+    },
+    {
       "wtel_subtype": "מ:צינור",
       "stack": "E",
-      "count": 56
+      "count": 54
+    },
+    {
+      "wtel_subtype": "מ:צינור",
+      "stack": "E/נוסח/נוסח@1",
+      "count": 2
     },
     {
       "wtel_subtype": "מ:קו״כ-אם-2",
       "stack": "E",
-      "count": 148
+      "count": 133
+    },
+    {
+      "wtel_subtype": "מ:קו״כ-אם-2",
+      "stack": "E/נוסח/נוסח@1",
+      "count": 15
     },
     {
       "wtel_subtype": "מ:קישור בהערה",
-      "stack": "C",
+      "stack": "C/נוסח/נוסח@2",
       "count": 1
     },
     {
       "wtel_subtype": "מ:קישור בהערה",
-      "stack": "E",
+      "stack": "E/נוסח/נוסח@2",
       "count": 27
     },
     {
       "wtel_subtype": "מ:קישור פנימי בהערה",
-      "stack": "E",
+      "stack": "E/נוסח/נוסח@2",
       "count": 3
     },
     {
       "wtel_subtype": "מ:קמץ",
       "stack": "E",
-      "count": 357
+      "count": 330
     },
     {
       "wtel_subtype": "מ:קמץ",
       "stack": "E/כו״ק",
-      "count": 10
+      "count": 7
     },
     {
       "wtel_subtype": "מ:קמץ",
@@ -556,7 +686,17 @@
     },
     {
       "wtel_subtype": "מ:קמץ",
-      "stack": "E/מ:קו״כ-אם-2",
+      "stack": "E/נוסח/נוסח@1",
+      "count": 27
+    },
+    {
+      "wtel_subtype": "מ:קמץ",
+      "stack": "E/נוסח/נוסח@1/כו״ק",
+      "count": 3
+    },
+    {
+      "wtel_subtype": "מ:קמץ",
+      "stack": "E/נוסח/נוסח@1/מ:קו״כ-אם-2",
       "count": 2
     },
     {
@@ -581,7 +721,7 @@
     },
     {
       "wtel_subtype": "מודגש",
-      "stack": "E",
+      "stack": "E/נוסח/נוסח@2",
       "count": 19
     },
     {
@@ -607,12 +747,17 @@
     {
       "wtel_subtype": "סס",
       "stack": "C",
-      "count": 1513
+      "count": 1444
+    },
+    {
+      "wtel_subtype": "סס",
+      "stack": "C/נוסח/נוסח@1",
+      "count": 69
     },
     {
       "wtel_subtype": "סס",
       "stack": "E",
-      "count": 35
+      "count": 31
     },
     {
       "wtel_subtype": "סס",
@@ -620,29 +765,49 @@
       "count": 18
     },
     {
+      "wtel_subtype": "סס",
+      "stack": "E/נוסח/נוסח@1",
+      "count": 4
+    },
+    {
       "wtel_subtype": "ססס",
       "stack": "C",
-      "count": 324
+      "count": 310
+    },
+    {
+      "wtel_subtype": "ססס",
+      "stack": "C/נוסח/נוסח@1",
+      "count": 14
     },
     {
       "wtel_subtype": "ססס",
       "stack": "E",
-      "count": 106
+      "count": 103
+    },
+    {
+      "wtel_subtype": "ססס",
+      "stack": "E/נוסח/נוסח@1",
+      "count": 3
     },
     {
       "wtel_subtype": "פפ",
       "stack": "C",
-      "count": 1541
+      "count": 1447
     },
     {
       "wtel_subtype": "פפ",
-      "stack": "C/מ:הערה-2",
+      "stack": "C/נוסח/נוסח@1",
+      "count": 94
+    },
+    {
+      "wtel_subtype": "פפ",
+      "stack": "C/נוסח/נוסח@1/מ:הערה-2",
       "count": 3
     },
     {
       "wtel_subtype": "פפ",
       "stack": "E",
-      "count": 8
+      "count": 4
     },
     {
       "wtel_subtype": "פפ",
@@ -655,39 +820,74 @@
       "count": 1
     },
     {
+      "wtel_subtype": "פפ",
+      "stack": "E/נוסח/נוסח@1",
+      "count": 4
+    },
+    {
       "wtel_subtype": "פפפ",
       "stack": "C",
-      "count": 3
+      "count": 2
     },
     {
       "wtel_subtype": "פפפ",
-      "stack": "E",
-      "count": 15
+      "stack": "C/נוסח/נוסח@1",
+      "count": 1
     },
     {
-      "wtel_subtype": "קו״כ",
-      "stack": "E",
-      "count": 126
-    },
-    {
-      "wtel_subtype": "קרי ולא כתיב",
+      "wtel_subtype": "פפפ",
       "stack": "E",
       "count": 9
     },
     {
+      "wtel_subtype": "פפפ",
+      "stack": "E/נוסח/נוסח@1",
+      "count": 6
+    },
+    {
+      "wtel_subtype": "קו״כ",
+      "stack": "E",
+      "count": 108
+    },
+    {
+      "wtel_subtype": "קו״כ",
+      "stack": "E/נוסח/נוסח@1",
+      "count": 18
+    },
+    {
+      "wtel_subtype": "קרי ולא כתיב",
+      "stack": "E",
+      "count": 3
+    },
+    {
+      "wtel_subtype": "קרי ולא כתיב",
+      "stack": "E/נוסח/נוסח@1",
+      "count": 6
+    },
+    {
       "wtel_subtype": "ר0",
       "stack": "E",
-      "count": 536
+      "count": 534
+    },
+    {
+      "wtel_subtype": "ר0",
+      "stack": "E/נוסח/נוסח@1",
+      "count": 2
     },
     {
       "wtel_subtype": "ר1",
-      "stack": "C",
+      "stack": "C/נוסח/נוסח@1",
       "count": 2
     },
     {
       "wtel_subtype": "ר1",
       "stack": "E",
-      "count": 4618
+      "count": 4582
+    },
+    {
+      "wtel_subtype": "ר1",
+      "stack": "E/נוסח/נוסח@1",
+      "count": 36
     },
     {
       "wtel_subtype": "ר2",
@@ -697,32 +897,42 @@
     {
       "wtel_subtype": "ר3",
       "stack": "E",
-      "count": 170
+      "count": 123
+    },
+    {
+      "wtel_subtype": "ר3",
+      "stack": "E/נוסח/נוסח@1",
+      "count": 47
     },
     {
       "wtel_subtype": "ר4",
       "stack": "C",
-      "count": 4269
+      "count": 4231
+    },
+    {
+      "wtel_subtype": "ר4",
+      "stack": "C/נוסח/נוסח@1",
+      "count": 38
     },
     {
       "wtel_subtype": "ש",
-      "stack": "C",
+      "stack": "C/נוסח/נוסח@2",
       "count": 14
     },
     {
       "wtel_subtype": "ש",
-      "stack": "D",
+      "stack": "D/נוסח/נוסח@2",
       "count": 1
-    },
-    {
-      "wtel_subtype": "ש",
-      "stack": "E",
-      "count": 3215
     },
     {
       "wtel_subtype": "ש",
       "stack": "E/מ:כפול/נוסח/נוסח@2",
       "count": 58
+    },
+    {
+      "wtel_subtype": "ש",
+      "stack": "E/נוסח/נוסח@2",
+      "count": 3215
     }
   ],
   "arg_counts": [
