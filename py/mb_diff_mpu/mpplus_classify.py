@@ -174,7 +174,7 @@ def _classify_structural_change(diff):
     if _LEGAR & (old_names ^ new_names):
         return "legarmeih-paseq"
     if not added and removed == ["מ:דחי"]:
-        return "dehi-removal"
+        return "deḥi-removal"
     if not added and removed == ["מ:צינור"]:
         return "tsinnor-removal"
     return "template-change"
