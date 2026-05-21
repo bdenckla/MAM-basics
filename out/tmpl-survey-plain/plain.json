@@ -13395,1087 +13395,777 @@
     {
       "wtel_subtype": "#בלי קטע:",
       "stack": "C",
-      "count": 923,
-      "count_non_nusach": 923,
-      "count_nusach": 0
+      "count": 923
     },
     {
       "wtel_subtype": "#בלי קטע:דברי הימים א טז/טעמים",
       "stack": "C",
-      "count": 1,
-      "count_non_nusach": 1,
-      "count_nusach": 0
+      "count": 1
     },
     {
       "wtel_subtype": "#בלי קטע:דברים לב/טעמים",
       "stack": "C",
-      "count": 1,
-      "count_non_nusach": 1,
-      "count_nusach": 0
+      "count": 1
     },
     {
       "wtel_subtype": "#בלי קטע:יהושע יב/טעמים",
       "stack": "C",
-      "count": 1,
-      "count_non_nusach": 1,
-      "count_nusach": 0
+      "count": 1
     },
     {
       "wtel_subtype": "#בלי קטע:מלכי כנען/צורת השיר",
       "stack": "C",
-      "count": 1,
-      "count_non_nusach": 1,
-      "count_nusach": 0
+      "count": 1
     },
     {
       "wtel_subtype": "#בלי קטע:עשרת בני המן/צורת השיר",
       "stack": "C",
-      "count": 1,
-      "count_non_nusach": 1,
-      "count_nusach": 0
+      "count": 1
     },
     {
       "wtel_subtype": "#בלי קטע:שופטים ה/טעמים",
       "stack": "C",
-      "count": 1,
-      "count_non_nusach": 1,
-      "count_nusach": 0
+      "count": 1
     },
     {
       "wtel_subtype": "#בלי קטע:שירת אסף/צורת השיר",
       "stack": "C",
-      "count": 1,
-      "count_non_nusach": 1,
-      "count_nusach": 0
+      "count": 1
     },
     {
       "wtel_subtype": "#בלי קטע:שירת דבורה/צורת השיר",
       "stack": "C",
-      "count": 1,
-      "count_non_nusach": 1,
-      "count_nusach": 0
+      "count": 1
     },
     {
       "wtel_subtype": "#בלי קטע:שירת דוד/צורת השיר",
       "stack": "C",
-      "count": 1,
-      "count_non_nusach": 1,
-      "count_nusach": 0
+      "count": 1
     },
     {
       "wtel_subtype": "#בלי קטע:שירת האזינו/צורת השיר",
       "stack": "C",
-      "count": 1,
-      "count_non_nusach": 1,
-      "count_nusach": 0
+      "count": 1
     },
     {
       "wtel_subtype": "#בלי קטע:שירת הים/צורת השיר",
       "stack": "C",
-      "count": 1,
-      "count_non_nusach": 1,
-      "count_nusach": 0
+      "count": 1
     },
     {
       "wtel_subtype": "#בלי קטע:שירת העתים/צורת השיר",
       "stack": "C",
-      "count": 1,
-      "count_non_nusach": 1,
-      "count_nusach": 0
+      "count": 1
     },
     {
       "wtel_subtype": "#בלי קטע:שמואל ב כב/טעמים",
       "stack": "C",
-      "count": 1,
-      "count_non_nusach": 1,
-      "count_nusach": 0
+      "count": 1
     },
     {
       "wtel_subtype": "#בלי קטע:שמות טו/טעמים",
       "stack": "C",
-      "count": 1,
-      "count_non_nusach": 1,
-      "count_nusach": 0
+      "count": 1
     },
     {
       "wtel_subtype": "#קטע:אסתר ט/טעמים",
       "stack": "C",
-      "count": 58,
-      "count_non_nusach": 58,
-      "count_nusach": 0
+      "count": 58
     },
     {
       "wtel_subtype": "#קטע:דברי הימים א טז/טעמים",
       "stack": "C",
-      "count": 28,
-      "count_non_nusach": 28,
-      "count_nusach": 0
+      "count": 28
     },
     {
       "wtel_subtype": "#קטע:דברים לב/טעמים",
       "stack": "C",
-      "count": 18,
-      "count_non_nusach": 18,
-      "count_nusach": 0
+      "count": 18
     },
     {
       "wtel_subtype": "#קטע:יהושע יב/טעמים",
       "stack": "C",
-      "count": 16,
-      "count_non_nusach": 16,
-      "count_nusach": 0
+      "count": 16
     },
     {
       "wtel_subtype": "#קטע:מלכי כנען/צורות נוספות",
       "stack": "C",
-      "count": 1,
-      "count_non_nusach": 1,
-      "count_nusach": 0
+      "count": 1
     },
     {
       "wtel_subtype": "#קטע:מלכי כנען/צורת השיר",
       "stack": "C",
-      "count": 1,
-      "count_non_nusach": 1,
-      "count_nusach": 0
+      "count": 1
     },
     {
       "wtel_subtype": "#קטע:עשרת בני המן/צורות נוספות",
       "stack": "C",
-      "count": 1,
-      "count_non_nusach": 1,
-      "count_nusach": 0
+      "count": 1
     },
     {
       "wtel_subtype": "#קטע:עשרת בני המן/צורת השיר",
       "stack": "C",
-      "count": 1,
-      "count_non_nusach": 1,
-      "count_nusach": 0
+      "count": 1
     },
     {
       "wtel_subtype": "#קטע:עשרת הדברות בסיס/טעמים",
       "stack": "C",
-      "count": 1,
-      "count_non_nusach": 1,
-      "count_nusach": 0
+      "count": 1
     },
     {
       "wtel_subtype": "#קטע:עשרת הדברות/טעמים",
       "stack": "C",
-      "count": 2,
-      "count_non_nusach": 2,
-      "count_nusach": 0
+      "count": 2
     },
     {
       "wtel_subtype": "#קטע:קהלת ג/טעמים",
       "stack": "C",
-      "count": 30,
-      "count_non_nusach": 30,
-      "count_nusach": 0
+      "count": 30
     },
     {
       "wtel_subtype": "#קטע:שירת אסף/צורות נוספות",
       "stack": "C",
-      "count": 1,
-      "count_non_nusach": 1,
-      "count_nusach": 0
+      "count": 1
     },
     {
       "wtel_subtype": "#קטע:שירת אסף/צורת השיר",
       "stack": "C",
-      "count": 1,
-      "count_non_nusach": 1,
-      "count_nusach": 0
+      "count": 1
     },
     {
       "wtel_subtype": "#קטע:שירת דבורה/צורות נוספות",
       "stack": "C",
-      "count": 1,
-      "count_non_nusach": 1,
-      "count_nusach": 0
+      "count": 1
     },
     {
       "wtel_subtype": "#קטע:שירת דבורה/צורת השיר",
       "stack": "C",
-      "count": 1,
-      "count_non_nusach": 1,
-      "count_nusach": 0
+      "count": 1
     },
     {
       "wtel_subtype": "#קטע:שירת דוד/צורות נוספות",
       "stack": "C",
-      "count": 1,
-      "count_non_nusach": 1,
-      "count_nusach": 0
+      "count": 1
     },
     {
       "wtel_subtype": "#קטע:שירת דוד/צורת השיר",
       "stack": "C",
-      "count": 1,
-      "count_non_nusach": 1,
-      "count_nusach": 0
+      "count": 1
     },
     {
       "wtel_subtype": "#קטע:שירת האזינו/צורות נוספות",
       "stack": "C",
-      "count": 1,
-      "count_non_nusach": 1,
-      "count_nusach": 0
+      "count": 1
     },
     {
       "wtel_subtype": "#קטע:שירת האזינו/צורת השיר",
       "stack": "C",
-      "count": 1,
-      "count_non_nusach": 1,
-      "count_nusach": 0
+      "count": 1
     },
     {
       "wtel_subtype": "#קטע:שירת הים/צורות נוספות",
       "stack": "C",
-      "count": 1,
-      "count_non_nusach": 1,
-      "count_nusach": 0
+      "count": 1
     },
     {
       "wtel_subtype": "#קטע:שירת הים/צורת השיר",
       "stack": "C",
-      "count": 1,
-      "count_non_nusach": 1,
-      "count_nusach": 0
+      "count": 1
     },
     {
       "wtel_subtype": "#קטע:שירת העתים/צורות נוספות",
       "stack": "C",
-      "count": 1,
-      "count_non_nusach": 1,
-      "count_nusach": 0
+      "count": 1
     },
     {
       "wtel_subtype": "#קטע:שירת העתים/צורת השיר",
       "stack": "C",
-      "count": 1,
-      "count_non_nusach": 1,
-      "count_nusach": 0
+      "count": 1
     },
     {
       "wtel_subtype": "#קטע:שמות טו/טעמים",
       "stack": "C",
-      "count": 16,
-      "count_non_nusach": 16,
-      "count_nusach": 0
+      "count": 16
     },
     {
       "wtel_subtype": "בסיס-משתמש",
       "stack": "C",
-      "count": 118,
-      "count_non_nusach": 118,
-      "count_nusach": 0
+      "count": 118
     },
     {
       "wtel_subtype": "גלגל-2",
       "stack": "E",
-      "count": 39,
-      "count_non_nusach": 36,
-      "count_nusach": 3
+      "count": 39
     },
     {
       "wtel_subtype": "גלגל-2",
       "stack": "E/כו״ק",
-      "count": 1,
-      "count_non_nusach": 1,
-      "count_nusach": 0
+      "count": 1
     },
     {
       "wtel_subtype": "טעמי המקרא באינטרנט",
       "stack": "C",
-      "count": 929,
-      "count_non_nusach": 929,
-      "count_nusach": 0
+      "count": 929
     },
     {
       "wtel_subtype": "ירח בן יומו-2",
       "stack": "E",
-      "count": 16,
-      "count_non_nusach": 16,
-      "count_nusach": 0
+      "count": 16
     },
     {
       "wtel_subtype": "כו״ק",
       "stack": "E",
-      "count": 884,
-      "count_non_nusach": 741,
-      "count_nusach": 143
+      "count": 884
     },
     {
       "wtel_subtype": "כתיב ולא קרי",
       "stack": "E",
-      "count": 8,
-      "count_non_nusach": 6,
-      "count_nusach": 2
+      "count": 8
     },
     {
       "wtel_subtype": "מ:אות מנוקדת",
       "stack": "E",
-      "count": 15,
-      "count_non_nusach": 8,
-      "count_nusach": 7
+      "count": 15
     },
     {
       "wtel_subtype": "מ:אות תלויה",
       "stack": "E",
-      "count": 4,
-      "count_non_nusach": 4,
-      "count_nusach": 0
+      "count": 4
     },
     {
       "wtel_subtype": "מ:אות-ג",
       "stack": "E",
-      "count": 54,
-      "count_non_nusach": 0,
-      "count_nusach": 54
+      "count": 54
     },
     {
       "wtel_subtype": "מ:אות-ג",
       "stack": "E/מ:דחי",
-      "count": 4,
-      "count_non_nusach": 0,
-      "count_nusach": 4
+      "count": 4
     },
     {
       "wtel_subtype": "מ:אות-ג",
       "stack": "E/מ:הערה",
-      "count": 5,
-      "count_non_nusach": 5,
-      "count_nusach": 0
+      "count": 5
     },
     {
       "wtel_subtype": "מ:אות-ק",
       "stack": "E",
-      "count": 26,
-      "count_non_nusach": 0,
-      "count_nusach": 26
+      "count": 26
     },
     {
       "wtel_subtype": "מ:אות-ק",
       "stack": "E/כו״ק",
-      "count": 1,
-      "count_non_nusach": 0,
-      "count_nusach": 1
+      "count": 1
     },
     {
       "wtel_subtype": "מ:אות-ק",
       "stack": "E/מ:דחי",
-      "count": 2,
-      "count_non_nusach": 0,
-      "count_nusach": 2
+      "count": 2
     },
     {
       "wtel_subtype": "מ:אות-ק",
       "stack": "E/מ:הערה",
-      "count": 1,
-      "count_non_nusach": 1,
-      "count_nusach": 0
+      "count": 1
     },
     {
       "wtel_subtype": "מ:אין פרשה בתחילת פרק",
       "stack": "C",
-      "count": 139,
-      "count_non_nusach": 138,
-      "count_nusach": 1
+      "count": 139
     },
     {
       "wtel_subtype": "מ:אין פרשה בתחילת פרק בספרי אמ״ת",
       "stack": "C",
-      "count": 33,
-      "count_non_nusach": 32,
-      "count_nusach": 1
+      "count": 33
     },
     {
       "wtel_subtype": "מ:אין רווח של פרשה בתחילת פרשת השבוע",
       "stack": "C",
-      "count": 1,
-      "count_non_nusach": 1,
-      "count_nusach": 0
+      "count": 1
     },
     {
       "wtel_subtype": "מ:גרש ותלישא גדולה",
       "stack": "E",
-      "count": 5,
-      "count_non_nusach": 0,
-      "count_nusach": 5
+      "count": 5
     },
     {
       "wtel_subtype": "מ:גרשיים ותלישא גדולה",
       "stack": "E",
-      "count": 5,
-      "count_non_nusach": 0,
-      "count_nusach": 5
+      "count": 5
     },
     {
       "wtel_subtype": "מ:דחי",
       "stack": "E",
-      "count": 2277,
-      "count_non_nusach": 2240,
-      "count_nusach": 37
+      "count": 2277
     },
     {
       "wtel_subtype": "מ:דחי",
       "stack": "E/כו״ק",
-      "count": 7,
-      "count_non_nusach": 6,
-      "count_nusach": 1
+      "count": 7
     },
     {
       "wtel_subtype": "מ:דחי",
       "stack": "E/מ:קו״כ-אם-2",
-      "count": 8,
-      "count_non_nusach": 8,
-      "count_nusach": 0
+      "count": 8
     },
     {
       "wtel_subtype": "מ:דחי",
       "stack": "E/מ:קמץ",
-      "count": 14,
-      "count_non_nusach": 14,
-      "count_nusach": 0
+      "count": 14
     },
     {
       "wtel_subtype": "מ:דחי",
       "stack": "E/פרשה-מרכז",
-      "count": 10,
-      "count_non_nusach": 10,
-      "count_nusach": 0
+      "count": 10
     },
     {
       "wtel_subtype": "מ:הערה",
       "stack": "C",
-      "count": 4,
-      "count_non_nusach": 4,
-      "count_nusach": 0
+      "count": 4
     },
     {
       "wtel_subtype": "מ:הערה",
       "stack": "E",
-      "count": 27,
-      "count_non_nusach": 27,
-      "count_nusach": 0
+      "count": 27
     },
     {
       "wtel_subtype": "מ:טעם",
       "stack": "E/מ:כפול/נוסח/נוסח@1/שני טעמים באות אחת קמץ-תחתון-פתח-עליון",
-      "count": 3,
-      "count_non_nusach": 3,
-      "count_nusach": 0
+      "count": 3
     },
     {
       "wtel_subtype": "מ:טעם",
       "stack": "E/מ:כפול/שני טעמים באות אחת קמץ-תחתון-פתח-עליון",
-      "count": 1,
-      "count_non_nusach": 1,
-      "count_nusach": 0
+      "count": 1
     },
     {
       "wtel_subtype": "מ:טעם ומתג באות אחת",
       "stack": "E/מ:כפול",
-      "count": 1,
-      "count_non_nusach": 1,
-      "count_nusach": 0
+      "count": 1
     },
     {
       "wtel_subtype": "מ:טעם ומתג באות אחת",
       "stack": "E/מ:כפול/נוסח/נוסח@1",
-      "count": 9,
-      "count_non_nusach": 9,
-      "count_nusach": 0
+      "count": 9
     },
     {
       "wtel_subtype": "מ:טעמי המקרא",
       "stack": "C",
-      "count": 1912,
-      "count_non_nusach": 1912,
-      "count_nusach": 0
+      "count": 1912
     },
     {
       "wtel_subtype": "מ:טעמי המקרא-סוף",
       "stack": "C",
-      "count": 1908,
-      "count_non_nusach": 1908,
-      "count_nusach": 0
+      "count": 1908
     },
     {
       "wtel_subtype": "מ:יישור-בשני-הצדדים",
       "stack": "C",
-      "count": 2,
-      "count_non_nusach": 2,
-      "count_nusach": 0
+      "count": 2
     },
     {
       "wtel_subtype": "מ:יישור-בשני-הצדדים-סוף",
       "stack": "C",
-      "count": 2,
-      "count_non_nusach": 2,
-      "count_nusach": 0
+      "count": 2
     },
     {
       "wtel_subtype": "מ:ירושלם",
       "stack": "E",
-      "count": 634,
-      "count_non_nusach": 630,
-      "count_nusach": 4
+      "count": 634
     },
     {
       "wtel_subtype": "מ:ירושלם",
       "stack": "E/מ:דחי",
-      "count": 2,
-      "count_non_nusach": 2,
-      "count_nusach": 0
+      "count": 2
     },
     {
       "wtel_subtype": "מ:ירושלמה",
       "stack": "E",
-      "count": 4,
-      "count_non_nusach": 4,
-      "count_nusach": 0
+      "count": 4
     },
     {
       "wtel_subtype": "מ:כו״ק מיוחד",
       "stack": "E",
-      "count": 37,
-      "count_non_nusach": 20,
-      "count_nusach": 17
+      "count": 37
     },
     {
       "wtel_subtype": "מ:כל קמץ קטן מרכא",
       "stack": "E/מ:קמץ",
-      "count": 2,
-      "count_non_nusach": 0,
-      "count_nusach": 2
+      "count": 2
     },
     {
       "wtel_subtype": "מ:כפול",
       "stack": "E",
-      "count": 34,
-      "count_non_nusach": 34,
-      "count_nusach": 0
+      "count": 34
     },
     {
       "wtel_subtype": "מ:לגרמיה-2",
       "stack": "E",
-      "count": 1801,
-      "count_non_nusach": 1719,
-      "count_nusach": 82
+      "count": 1801
     },
     {
       "wtel_subtype": "מ:לגרמיה-2",
       "stack": "E/כו״ק",
-      "count": 9,
-      "count_non_nusach": 9,
-      "count_nusach": 0
+      "count": 9
     },
     {
       "wtel_subtype": "מ:לגרמיה-2",
       "stack": "E/מ:כו״ק מיוחד",
-      "count": 1,
-      "count_non_nusach": 1,
-      "count_nusach": 0
+      "count": 1
     },
     {
       "wtel_subtype": "מ:לגרמיה-2",
       "stack": "E/מ:כפול",
-      "count": 14,
-      "count_non_nusach": 14,
-      "count_nusach": 0
+      "count": 14
     },
     {
       "wtel_subtype": "מ:לגרמיה-2",
       "stack": "E/מ:קו״כ-אם-2",
-      "count": 2,
-      "count_non_nusach": 2,
-      "count_nusach": 0
+      "count": 2
     },
     {
       "wtel_subtype": "מ:לגרמיה-2",
       "stack": "E/קו״כ",
-      "count": 1,
-      "count_non_nusach": 1,
-      "count_nusach": 0
+      "count": 1
     },
     {
       "wtel_subtype": "מ:מקף אפור",
       "stack": "E",
-      "count": 114,
-      "count_non_nusach": 93,
-      "count_nusach": 21
+      "count": 114
     },
     {
       "wtel_subtype": "מ:מקף אפור",
       "stack": "E/מ:קמץ",
-      "count": 2,
-      "count_non_nusach": 0,
-      "count_nusach": 2
+      "count": 2
     },
     {
       "wtel_subtype": "מ:נו״ן הפוכה",
       "stack": "E",
-      "count": 9,
-      "count_non_nusach": 7,
-      "count_nusach": 2
+      "count": 9
     },
     {
       "wtel_subtype": "מ:סיום בטוב",
       "stack": "C",
-      "count": 4,
-      "count_non_nusach": 0,
-      "count_nusach": 4
+      "count": 4
     },
     {
       "wtel_subtype": "מ:ספר חדש",
       "stack": "C",
-      "count": 24,
-      "count_non_nusach": 24,
-      "count_nusach": 0
+      "count": 24
     },
     {
       "wtel_subtype": "מ:עלייה",
       "stack": "D/מ:פסוק",
-      "count": 532,
-      "count_non_nusach": 521,
-      "count_nusach": 11
+      "count": 532
     },
     {
       "wtel_subtype": "מ:פסוק",
       "stack": "C",
-      "count": 81,
-      "count_non_nusach": 81,
-      "count_nusach": 0
+      "count": 81
     },
     {
       "wtel_subtype": "מ:פסוק",
       "stack": "D",
-      "count": 23202,
-      "count_non_nusach": 23167,
-      "count_nusach": 35
+      "count": 23202
     },
     {
       "wtel_subtype": "מ:פסק",
       "stack": "E",
-      "count": 507,
-      "count_non_nusach": 485,
-      "count_nusach": 22
+      "count": 507
     },
     {
       "wtel_subtype": "מ:פסק",
       "stack": "E/מ:כו״ק מיוחד",
-      "count": 5,
-      "count_non_nusach": 2,
-      "count_nusach": 3
+      "count": 5
     },
     {
       "wtel_subtype": "מ:פסק",
       "stack": "E/מ:כפול",
-      "count": 7,
-      "count_non_nusach": 7,
-      "count_nusach": 0
+      "count": 7
     },
     {
       "wtel_subtype": "מ:פסק",
       "stack": "E/מ:כפול/נוסח/נוסח@1",
-      "count": 1,
-      "count_non_nusach": 1,
-      "count_nusach": 0
+      "count": 1
     },
     {
       "wtel_subtype": "מ:צינור",
       "stack": "E",
-      "count": 56,
-      "count_non_nusach": 54,
-      "count_nusach": 2
+      "count": 56
     },
     {
       "wtel_subtype": "מ:קו״כ-אם-2",
       "stack": "E",
-      "count": 148,
-      "count_non_nusach": 133,
-      "count_nusach": 15
+      "count": 148
     },
     {
       "wtel_subtype": "מ:קישור בהערה",
       "stack": "C",
-      "count": 1,
-      "count_non_nusach": 0,
-      "count_nusach": 1
+      "count": 1
     },
     {
       "wtel_subtype": "מ:קישור בהערה",
       "stack": "E",
-      "count": 27,
-      "count_non_nusach": 0,
-      "count_nusach": 27
+      "count": 27
     },
     {
       "wtel_subtype": "מ:קישור פנימי בהערה",
       "stack": "E",
-      "count": 3,
-      "count_non_nusach": 0,
-      "count_nusach": 3
+      "count": 3
     },
     {
       "wtel_subtype": "מ:קמץ",
       "stack": "E",
-      "count": 357,
-      "count_non_nusach": 330,
-      "count_nusach": 27
+      "count": 357
     },
     {
       "wtel_subtype": "מ:קמץ",
       "stack": "E/כו״ק",
-      "count": 10,
-      "count_non_nusach": 7,
-      "count_nusach": 3
+      "count": 10
     },
     {
       "wtel_subtype": "מ:קמץ",
       "stack": "E/מ:כפול",
-      "count": 4,
-      "count_non_nusach": 4,
-      "count_nusach": 0
+      "count": 4
     },
     {
       "wtel_subtype": "מ:קמץ",
       "stack": "E/מ:כפול/נוסח/נוסח@1",
-      "count": 2,
-      "count_non_nusach": 2,
-      "count_nusach": 0
+      "count": 2
     },
     {
       "wtel_subtype": "מ:קמץ",
       "stack": "E/מ:קו״כ-אם-2",
-      "count": 2,
-      "count_non_nusach": 0,
-      "count_nusach": 2
+      "count": 2
     },
     {
       "wtel_subtype": "מ:רווח בתרי עשר",
       "stack": "C",
-      "count": 12,
-      "count_non_nusach": 12,
-      "count_nusach": 0
+      "count": 12
     },
     {
       "wtel_subtype": "מ:רווח בתרי עשר בפסוק הראשון",
       "stack": "C",
-      "count": 12,
-      "count_non_nusach": 12,
-      "count_nusach": 0
+      "count": 12
     },
     {
       "wtel_subtype": "מ:רווח לספר בתהלים",
       "stack": "C",
-      "count": 5,
-      "count_non_nusach": 5,
-      "count_nusach": 0
+      "count": 5
     },
     {
       "wtel_subtype": "מ:רווח לספר בתהלים בפסוק הראשון",
       "stack": "C",
-      "count": 5,
-      "count_non_nusach": 5,
-      "count_nusach": 0
+      "count": 5
     },
     {
       "wtel_subtype": "מ:שוליים",
       "stack": "C",
-      "count": 937,
-      "count_non_nusach": 937,
-      "count_nusach": 0
+      "count": 937
     },
     {
       "wtel_subtype": "מ:שוליים-סוף",
       "stack": "C",
-      "count": 937,
-      "count_non_nusach": 937,
-      "count_nusach": 0
+      "count": 937
     },
     {
       "wtel_subtype": "מ:ששש",
       "stack": "C",
-      "count": 100,
-      "count_non_nusach": 100,
-      "count_nusach": 0
+      "count": 100
     },
     {
       "wtel_subtype": "מ:ששש",
       "stack": "E",
-      "count": 228,
-      "count_non_nusach": 228,
-      "count_nusach": 0
+      "count": 228
     },
     {
       "wtel_subtype": "מודגש",
       "stack": "C",
-      "count": 2,
-      "count_non_nusach": 2,
-      "count_nusach": 0
+      "count": 2
     },
     {
       "wtel_subtype": "מודגש",
       "stack": "E",
-      "count": 19,
-      "count_non_nusach": 0,
-      "count_nusach": 19
+      "count": 19
     },
     {
       "wtel_subtype": "נוסח",
       "stack": "C",
-      "count": 277,
-      "count_non_nusach": 277,
-      "count_nusach": 0
+      "count": 277
     },
     {
       "wtel_subtype": "נוסח",
       "stack": "D",
-      "count": 35,
-      "count_non_nusach": 35,
-      "count_nusach": 0
+      "count": 35
     },
     {
       "wtel_subtype": "נוסח",
       "stack": "E",
-      "count": 3541,
-      "count_non_nusach": 3541,
-      "count_nusach": 0
+      "count": 3541
     },
     {
       "wtel_subtype": "נוסח",
       "stack": "E/מ:כפול",
-      "count": 42,
-      "count_non_nusach": 42,
-      "count_nusach": 0
+      "count": 42
     },
     {
       "wtel_subtype": "ניווט טעמים",
       "stack": "C",
-      "count": 929,
-      "count_non_nusach": 929,
-      "count_nusach": 0
+      "count": 929
     },
     {
       "wtel_subtype": "סס",
       "stack": "C",
-      "count": 1527,
-      "count_non_nusach": 1458,
-      "count_nusach": 69
+      "count": 1527
     },
     {
       "wtel_subtype": "סס",
       "stack": "E",
-      "count": 35,
-      "count_non_nusach": 31,
-      "count_nusach": 4
+      "count": 35
     },
     {
       "wtel_subtype": "סס",
       "stack": "E/מ:כפול",
-      "count": 18,
-      "count_non_nusach": 18,
-      "count_nusach": 0
+      "count": 18
     },
     {
       "wtel_subtype": "ססס",
       "stack": "C",
-      "count": 324,
-      "count_non_nusach": 310,
-      "count_nusach": 14
+      "count": 324
     },
     {
       "wtel_subtype": "ססס",
       "stack": "E",
-      "count": 106,
-      "count_non_nusach": 103,
-      "count_nusach": 3
+      "count": 106
     },
     {
       "wtel_subtype": "עוגן בשורה",
       "stack": "C",
-      "count": 4,
-      "count_non_nusach": 4,
-      "count_nusach": 0
+      "count": 4
     },
     {
       "wtel_subtype": "פפ",
       "stack": "C",
-      "count": 1548,
-      "count_non_nusach": 1451,
-      "count_nusach": 97
+      "count": 1548
     },
     {
       "wtel_subtype": "פפ",
       "stack": "E",
-      "count": 8,
-      "count_non_nusach": 4,
-      "count_nusach": 4
+      "count": 8
     },
     {
       "wtel_subtype": "פפ",
       "stack": "E/מ:כפול",
-      "count": 2,
-      "count_non_nusach": 2,
-      "count_nusach": 0
+      "count": 2
     },
     {
       "wtel_subtype": "פפ",
       "stack": "E/מ:כפול/נוסח/נוסח@1",
-      "count": 1,
-      "count_non_nusach": 1,
-      "count_nusach": 0
+      "count": 1
     },
     {
       "wtel_subtype": "פפפ",
       "stack": "C",
-      "count": 21,
-      "count_non_nusach": 20,
-      "count_nusach": 1
+      "count": 21
     },
     {
       "wtel_subtype": "פפפ",
       "stack": "E",
-      "count": 15,
-      "count_non_nusach": 9,
-      "count_nusach": 6
+      "count": 15
     },
     {
       "wtel_subtype": "פרשה-מרכז",
       "stack": "E",
-      "count": 26,
-      "count_non_nusach": 26,
-      "count_nusach": 0
+      "count": 26
     },
     {
       "wtel_subtype": "צורות כתיבה בספרי אמ״ת",
       "stack": "C",
-      "count": 11,
-      "count_non_nusach": 11,
-      "count_nusach": 0
+      "count": 11
     },
     {
       "wtel_subtype": "קו״כ",
       "stack": "E",
-      "count": 126,
-      "count_non_nusach": 108,
-      "count_nusach": 18
+      "count": 126
     },
     {
       "wtel_subtype": "קק",
       "stack": "C",
-      "count": 1,
-      "count_non_nusach": 1,
-      "count_nusach": 0
+      "count": 1
     },
     {
       "wtel_subtype": "קק",
       "stack": "C/מודגש",
-      "count": 2,
-      "count_non_nusach": 2,
-      "count_nusach": 0
+      "count": 2
     },
     {
       "wtel_subtype": "קרי ולא כתיב",
       "stack": "E",
-      "count": 9,
-      "count_non_nusach": 3,
-      "count_nusach": 6
+      "count": 9
     },
     {
       "wtel_subtype": "ר0",
       "stack": "E",
-      "count": 536,
-      "count_non_nusach": 534,
-      "count_nusach": 2
+      "count": 536
     },
     {
       "wtel_subtype": "ר1",
       "stack": "C",
-      "count": 2,
-      "count_non_nusach": 0,
-      "count_nusach": 2
+      "count": 2
     },
     {
       "wtel_subtype": "ר1",
       "stack": "E",
-      "count": 4618,
-      "count_non_nusach": 4582,
-      "count_nusach": 36
+      "count": 4618
     },
     {
       "wtel_subtype": "ר2",
       "stack": "E",
-      "count": 568,
-      "count_non_nusach": 568,
-      "count_nusach": 0
+      "count": 568
     },
     {
       "wtel_subtype": "ר3",
       "stack": "E",
-      "count": 170,
-      "count_non_nusach": 123,
-      "count_nusach": 47
+      "count": 170
     },
     {
       "wtel_subtype": "ר4",
       "stack": "C",
-      "count": 4269,
-      "count_non_nusach": 4231,
-      "count_nusach": 38
+      "count": 4269
     },
     {
       "wtel_subtype": "רווח בסוף שורה",
       "stack": "E",
-      "count": 1,
-      "count_non_nusach": 1,
-      "count_nusach": 0
+      "count": 1
     },
     {
       "wtel_subtype": "ש",
       "stack": "C",
-      "count": 14,
-      "count_non_nusach": 0,
-      "count_nusach": 14
+      "count": 14
     },
     {
       "wtel_subtype": "ש",
       "stack": "D",
-      "count": 1,
-      "count_non_nusach": 0,
-      "count_nusach": 1
+      "count": 1
     },
     {
       "wtel_subtype": "ש",
       "stack": "E",
-      "count": 3215,
-      "count_non_nusach": 0,
-      "count_nusach": 3215
+      "count": 3215
     },
     {
       "wtel_subtype": "ש",
       "stack": "E/מ:כפול/נוסח/נוסח@2",
-      "count": 58,
-      "count_non_nusach": 58,
-      "count_nusach": 0
+      "count": 58
     },
     {
       "wtel_subtype": "שני טעמים באות אחת קמץ-תחתון-פתח-עליון",
       "stack": "E/מ:כפול",
-      "count": 1,
-      "count_non_nusach": 1,
-      "count_nusach": 0
+      "count": 1
     },
     {
       "wtel_subtype": "שני טעמים באות אחת קמץ-תחתון-פתח-עליון",
       "stack": "E/מ:כפול/נוסח/נוסח@1",
-      "count": 3,
-      "count_non_nusach": 3,
-      "count_nusach": 0
+      "count": 3
     }
   ],
   "arg_counts": [

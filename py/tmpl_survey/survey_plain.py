@@ -24,7 +24,6 @@ _NUSACH_SLOT_BY_SYMBOL = {
     "נוסח@1": "1",
     "נוסח@2": "2",
 }
-_NUSACH_SLOT_MARKERS = frozenset(_NUSACH_SLOT_BY_SYMBOL.values())
 
 
 def _psv_category(bscv):
@@ -211,22 +210,15 @@ def _flatten_stack_counts(accum):
     grouped = {}
     for key, count in dic.items():
         wtel_subtype, stack_str = key
-        base_stack, nusach_slot = _strip_nusach(stack_str)
+        base_stack, _ = _strip_nusach(stack_str)
         group_key = (wtel_subtype, base_stack)
         if group_key not in grouped:
             grouped[group_key] = {
                 "wtel_subtype": wtel_subtype,
                 "stack": base_stack,
                 "count": 0,
-                "count_non_nusach": 0,
-                "count_nusach": 0,
             }
-        rec = grouped[group_key]
-        if nusach_slot in _NUSACH_SLOT_MARKERS:
-            rec["count_nusach"] += count
-        else:
-            rec["count_non_nusach"] += count
-        rec["count"] = rec["count_non_nusach"] + rec["count_nusach"]
+        grouped[group_key]["count"] += count
     return _sort_dics_by_values(list(grouped.values()))
 
 

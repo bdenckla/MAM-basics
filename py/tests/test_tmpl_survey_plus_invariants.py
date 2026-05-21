@@ -46,8 +46,6 @@ class TestTmplSurveyPlusInvariants(unittest.TestCase):
         rec = records[0]
         self.assertEqual("מ:פסוק", rec["wtel_subtype"])
         self.assertEqual("E", rec["stack"])
-        self.assertEqual(5, rec["count_non_nusach"])
-        self.assertEqual(5, rec["count_nusach"])
         self.assertEqual(10, rec["count"])
         self.assertNotIn("count_nusach_1", rec)
         self.assertNotIn("count_nusach_2", rec)
@@ -65,8 +63,6 @@ class TestTmplSurveyPlusInvariants(unittest.TestCase):
         rec = records[0]
         self.assertEqual("מ:פסוק", rec["wtel_subtype"])
         self.assertEqual("D", rec["stack"])
-        self.assertEqual(11, rec["count_non_nusach"])
-        self.assertEqual(30, rec["count_nusach"])
         self.assertEqual(41, rec["count"])
         self.assertNotIn("count_nusach_1", rec)
         self.assertNotIn("count_nusach_2", rec)
