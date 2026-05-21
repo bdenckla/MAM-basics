@@ -23,17 +23,16 @@ class TestTmplSurveyEdgeMode(unittest.TestCase):
                 dot_text = dot_fp.read()
 
         self.assertIn(
-            '"C" -> "C::stack-end" [label="מ:דחי (4) | מ:פסוק (3)"]',
+            '"C::start" -> "C::stack-end" [label="מ:דחי (4)"]',
             dot_text,
         )
-        self.assertNotIn('"C" -> "C::stack-end" [label="מ:דחי (4)"]', dot_text)
-        self.assertNotIn('"C" -> "C::stack-end" [label="מ:פסוק (3)"]', dot_text)
-        self.assertIn('"C" -> "C::stack::מ:פסוק" [label="מ:פסוק (7)"]', dot_text)
+        self.assertNotIn('"C::start" -> "C::stack-end" [label="מ:פסוק (3)"]', dot_text)
+        self.assertIn('"C::start::מ:פסוק" -> "C::stack::מ:פסוק" [label="מ:פסוק (7)"]', dot_text)
         self.assertIn(
-            '"C::stack::מ:פסוק" -> "C::stack-end" [label="מ:אות-ג (7)"]',
+            '"C::stack::מ:פסוק" -> "C::stack-end::מ:פסוק" [label="מ:אות-ג (7)"]',
             dot_text,
         )
-        self.assertIn('"C::stack-end" [label="C end", tooltip="Stack end for C"]', dot_text)
+        self.assertIn('"C::stack-end" [label="end", tooltip="Stack end for C"]', dot_text)
         self.assertNotIn('"מ:פסוק";', dot_text)
 
     def test_write_edge_template_dot_file_applies_discard_set(self):
@@ -48,7 +47,7 @@ class TestTmplSurveyEdgeMode(unittest.TestCase):
             with open(dot_path, encoding="utf-8") as dot_fp:
                 dot_text = dot_fp.read()
 
-        self.assertIn('"D" -> "D::stack-end" [label="מ:פסוק (5)"]', dot_text)
+        self.assertIn('"D::start" -> "D::stack-end" [label="מ:פסוק (5)"]', dot_text)
         self.assertNotIn('label="נוסח (', dot_text)
         self.assertIn("מ:כפול, נוסח have been discarded", dot_text)
 
@@ -83,11 +82,11 @@ class TestTmplSurveyEdgeMode(unittest.TestCase):
                 dot_text = dot_fp.read()
 
         self.assertIn(
-            '"C" -> "C::stack-end" [label="first … final (2)", tooltip="first middle final (2)"]',
+            '"C::start" -> "C::stack-end" [label="first … final (2)", tooltip="first middle final (2)"]',
             dot_text,
         )
         self.assertIn(
-            '"C::stack::short name" -> "C::stack-end" [label="alpha … gamma (1)", tooltip="alpha beta gamma (1)"]',
+            '"C::stack::short name" -> "C::stack-end::short name" [label="alpha … gamma (1)", tooltip="alpha beta gamma (1)"]',
             dot_text,
         )
 
