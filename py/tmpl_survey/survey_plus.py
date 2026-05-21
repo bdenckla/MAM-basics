@@ -208,8 +208,7 @@ def _stack_count_dic(stack_and_count):
     stack_top, stack_rest = stack_and_count[0]
     count = stack_and_count[1]
     return {
-        "wtel_subtype": stack_top,
-        "stack": stack_rest,
+        "stack": f"{stack_rest}/{stack_top}",
         "count": count,
     }
 
