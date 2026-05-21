@@ -361,11 +361,11 @@ class _FocusedTarget:
 # First-pass focused targets for template-specific subset documentation.
 # Keep this list intentionally small for now; exhaustive generation is deferred.
 _FOCUSED_TARGETS = (
-    _FocusedTarget("מ:כפול", uh.he_ascii_slug("כפול"), False),
-    _FocusedTarget("נוסח", uh.he_ascii_slug("נוסח"), True),
-    _FocusedTarget("מ:פסוק", uh.he_ascii_slug("פסוק"), False),
+    _FocusedTarget("מ:כפול", "dualcant", False),
+    _FocusedTarget("נוסח", "docnote", True),
+    _FocusedTarget("מ:פסוק", "mpasuq", False),
     _FocusedTarget("כו״ק", uh.he_ascii_slug("כו״ק"), False),
-    _FocusedTarget("מ:דחי", uh.he_ascii_slug("דחי"), False),
+    _FocusedTarget("מ:דחי", "dexi", False),
 )
 
 
