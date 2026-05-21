@@ -15,10 +15,10 @@ from author import mp_table_helpers as tblh
 _PLUS_DOC = "../../plus/html/mpplus.html"
 _KQ_AM2_DOC = "mpplain_kq_am2.html"
 _KQ_SPECIAL_DOC = "mpplain_kq_special.html"
-_KAFUL_DOC = "mpplain_kaful.html"
+_DUALCANT_DOC = "mpplain_dualcant.html"
 _MULTIMARK_DOC = "mpplain_multimark.html"
 _GOOD_ENDING_TMPL_DOC = "mpplain_good_ending_tmpl.html"
-_NUSACH_DOC = "mpplain_nusach.html"
+_DOCNOTE_DOC = "mpplain_docnote.html"
 _POETIC_SPACING_DOC = "mpplain_poetic_spacing.html"
 
 _JSON_INDEX_0 = jsnip.read_text("mpplain", "index_0.json")
@@ -294,7 +294,7 @@ def s_verse(*, claims: ClaimCollection):
             ],
             semantics_data={
                 "label_template": "מ:פסוק",
-                "nusach_wrapper": "נוסח",
+                "docnote_wrapper": "נוסח",
                 "always_present": True,
                 "allowed_named_params": ["סדר", "עלייה"],
             },
@@ -429,9 +429,9 @@ def s_common_templates(*, claims: ClaimCollection):
     )
 
     plain_accent_rows = cmn.accent_rows_for_templates(_PLAIN_ACCENT_TEMPLATES)
-    plain_choice_rows = dedicated_rows.with_kaful_dedicated_page_link(
+    plain_choice_rows = dedicated_rows.with_dualcant_dedicated_page_link(
         cmn.accent_rows_for_templates(_CHOICE_TEMPLATES),
-        doc_name=_KAFUL_DOC,
+        doc_name=_DUALCANT_DOC,
     )
     poetic_spacing_row = body_shared.poetic_spacing_row(doc_name=_POETIC_SPACING_DOC)
     whitespace_extra_rows = cmn.other_rows_for_templates(["רווח בסוף שורה"])
@@ -510,7 +510,7 @@ def s_common_templates(*, claims: ClaimCollection):
         author.heading_level_3("Note template"),
         tblh.tmpl_purp_table([cmn.NOTE_ROW_PLAIN]),
         author.heading_level_3("Documentation templates"),
-        tblh.tmpl_purp_table(cmn.other_rows_shared_core(nusach_doc=_NUSACH_DOC)),
+        tblh.tmpl_purp_table(cmn.other_rows_shared_core(docnote_doc=_DOCNOTE_DOC)),
         author.heading_level_3("Other templates"),
         author.para(
             [
@@ -556,3 +556,4 @@ def s_pseudo_verses():
             ]
         ),
     ]
+

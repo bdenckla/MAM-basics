@@ -45,18 +45,18 @@ class TestGraphProvenance(unittest.TestCase):
                 str(stem),
                 generator_file=__file__,
             )
-            kaful_text = (Path(tmp_dir) / "focused-kpvl-call-graph.dot").read_text(
+            dualcant_text = (Path(tmp_dir) / "focused-kpvl-call-graph.dot").read_text(
                 encoding="utf-8"
             )
-            nusach_text = (Path(tmp_dir) / "focused-nvox-call-graph.dot").read_text(
+            docnote_text = (Path(tmp_dir) / "focused-nvox-call-graph.dot").read_text(
                 encoding="utf-8"
             )
 
-        self.assertIn(f"// {expected}", kaful_text)
-        self.assertIn(f"// {expected}", nusach_text)
+        self.assertIn(f"// {expected}", dualcant_text)
+        self.assertIn(f"// {expected}", docnote_text)
         self.assertIn(
             f"graph [comment={survey_dot._dot_quoted(expected)}];",
-            kaful_text,
+            dualcant_text,
         )
 
     def test_svg_fallback_comment_insertion_is_idempotent(self):
@@ -196,3 +196,4 @@ class TestGraphProvenance(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+

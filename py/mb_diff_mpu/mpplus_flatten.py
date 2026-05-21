@@ -5,8 +5,8 @@ Exports:
     flatten_ep_for_diff             — flatten EP body text for diff tokenization
     flatten_ep_words_only_for_diff  — same but omits positional-punctuation templates
     flatten_element                 — flatten a nested EP element
-    flatten_ep_with_nusach_for_diff — diff flatten while tracking נוסח note spans
-    find_relevant_nusach            — filter note spans to those relevant to a diff
+    flatten_ep_with_docnote_for_diff — diff flatten while tracking נוסח note spans
+    find_relevant_docnote            — filter note spans to those relevant to a diff
     is_parashah_template            — identify parashah-marker templates
     is_std_kq_template              — identify standard ketiv/qere templates
     is_trivial_kq_template          — identify trivial ketiv/qere templates
@@ -326,7 +326,7 @@ def _flatten_template(tmpl):
     return ""
 
 
-def _flatten_ep_with_nusach(ep):
+def _flatten_ep_with_docnote(ep):
     """Flatten EP column and track נוסח templates that have param 2."""
     parts = []
     notes = []
@@ -335,7 +335,7 @@ def _flatten_ep_with_nusach(ep):
     return "".join(parts), notes
 
 
-def flatten_ep_with_nusach_for_diff(ep):
+def flatten_ep_with_docnote_for_diff(ep):
     """Flatten EP column for diffing and track נוסח templates that have param 2."""
     buf = _new_diff_buffer()
     notes = []
@@ -471,8 +471,8 @@ def _changed_new_positions(old_text, new_text):
     return changed
 
 
-def find_relevant_nusach(old_text, new_text, notes, text_changed):
-    """Filter nusach notes to those relevant to the change."""
+def find_relevant_docnote(old_text, new_text, notes, text_changed):
+    """Filter docnote notes to those relevant to the change."""
     if not notes:
         return []
     if not text_changed:
@@ -484,3 +484,4 @@ def find_relevant_nusach(old_text, new_text, notes, text_changed):
         if any(pos in note_positions for pos in changed):
             result.append(note)
     return result
+

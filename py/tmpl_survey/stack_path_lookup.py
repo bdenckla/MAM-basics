@@ -6,8 +6,8 @@ from mb_cmn import bib_locales as tbn
 from mb_cmn import ws_tmpl1 as wtp1
 from mb_cmn import ws_tmpl2 as wtp2
 
-_NUSACH_TEMPLATE_SYMBOL = "נוסח"
-_NUSACH_SYMBOL_BY_SLOT = {
+_DOCNOTE_TEMPLATE_SYMBOL = "נוסח"
+_DOCNOTE_SYMBOL_BY_SLOT = {
     "1": "נוסח@1",
     "2": "נוסח@2",
 }
@@ -74,15 +74,15 @@ def _dataset_file_paths(dataset_key):
     return paths
 
 
-def _nusach_child_stack_symbols(parent_subtype, arg_key):
-    if parent_subtype != _NUSACH_TEMPLATE_SYMBOL:
+def _docnote_child_stack_symbols(parent_subtype, arg_key):
+    if parent_subtype != _DOCNOTE_TEMPLATE_SYMBOL:
         return (parent_subtype,)
     slot = str(arg_key)
-    assert slot in _NUSACH_SYMBOL_BY_SLOT, (
+    assert slot in _DOCNOTE_SYMBOL_BY_SLOT, (
         f"Unexpected נוסח arg slot {slot!r}; expected one of "
-        f"{sorted(_NUSACH_SYMBOL_BY_SLOT.keys())}"
+        f"{sorted(_DOCNOTE_SYMBOL_BY_SLOT.keys())}"
     )
-    return (_NUSACH_TEMPLATE_SYMBOL, _NUSACH_SYMBOL_BY_SLOT[slot])
+    return (_DOCNOTE_TEMPLATE_SYMBOL, _DOCNOTE_SYMBOL_BY_SLOT[slot])
 
 
 def _path_matches(stack, subtype, target_path):
@@ -151,7 +151,7 @@ def _walk_wtel_plain(
         limit,
     )
     for arg_idx, arg in enumerate(wtp1.template_arguments(wtel), start=1):
-        new_stack = (*stack, *_nusach_child_stack_symbols(subtype, arg_idx))
+        new_stack = (*stack, *_docnote_child_stack_symbols(subtype, arg_idx))
         for arg_wtel in arg:
             _walk_wtel_plain(
                 arg_wtel,
@@ -192,7 +192,7 @@ def _walk_wtel_plus(
         limit,
     )
     for param_key in wtp2.template_param_keys(wtel):
-        new_stack = (*stack, *_nusach_child_stack_symbols(subtype, param_key))
+        new_stack = (*stack, *_docnote_child_stack_symbols(subtype, param_key))
         for arg_wtel in wtp2.template_param_val(wtel, param_key):
             _walk_wtel_plus(
                 arg_wtel,

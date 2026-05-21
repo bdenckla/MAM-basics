@@ -12,7 +12,7 @@ from tmpl_survey import svg_provenance_norm
 _COLUMN_LETTERS = {"C", "D", "E"}
 _BASE_DISCARDED = {"מ:כפול", "נוסח"}
 _FOCUSED_NO_DISCARD_TARGETS = {"מ:פסוק"}
-_NUSACH_FOCUSED_DISCARDED = {
+_DOCNOTE_FOCUSED_DISCARDED = {
     "כו״ק",
     "מ:קו״כ-אם-2",
     "מ:כו״ק מיוחד",
@@ -678,7 +678,7 @@ def _identity_groups(edges):
 def _focused_discarded_for_target(target, full_discarded):
     """Return discard set used for a specific focused target."""
     if target == "נוסח":
-        return set(_NUSACH_FOCUSED_DISCARDED)
+        return set(_DOCNOTE_FOCUSED_DISCARDED)
     if target in full_discarded or target in _FOCUSED_NO_DISCARD_TARGETS:
         return set()
     return full_discarded
@@ -785,3 +785,4 @@ def render_svg(dot_path, svg_path, generator_file=None):
             with open(svg_path, "w", encoding="utf-8") as svg_fp:
                 svg_fp.write(normalized_svg_text)
     return True
+

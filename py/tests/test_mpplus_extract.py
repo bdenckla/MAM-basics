@@ -430,7 +430,7 @@ class TemplateMultiplicityDiffTests(unittest.TestCase):
         self.assertEqual(len(split), 1)
         self.assertEqual(split[0]["templates_added"], ["קו״כ-אם"])
         self.assertEqual(
-            [note["param2"] for note in split[0]["nusach_notes"]],
+            [note["param2"] for note in split[0]["docnote_notes"]],
             ["הערה על התיבה השנייה"],
         )
 
@@ -445,7 +445,7 @@ class TemplateMultiplicityDiffTests(unittest.TestCase):
 
         self.assertEqual(serialized["templates_added"], ["קו״כ-אם"])
         self.assertEqual(
-            serialized["nusach_notes"][0]["param2"],
+            serialized["docnote_notes"][0]["param2"],
             "הערה על התיבה השנייה",
         )
 
@@ -772,3 +772,4 @@ class CanonicalBookIdTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+

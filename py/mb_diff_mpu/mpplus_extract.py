@@ -14,8 +14,8 @@ from mb_diff_mpu.mpplus_file_matching import (
     matched_plus_file_pairs,
 )
 from mb_diff_mpu.mpplus_flatten import (
-    find_relevant_nusach,
-    flatten_ep_with_nusach_for_diff,
+    find_relevant_docnote,
+    flatten_ep_with_docnote_for_diff,
     flatten_ep_for_diff,
     flatten_ep_words_only_for_diff,
 )
@@ -167,7 +167,7 @@ def _diff_ep(old_ep, new_ep, book39id, chapter, verse):
     Ignores format differences like tmpl_args vs tmpl_params.
     """
     old_text = flatten_ep_for_diff(old_ep)
-    new_text, new_nusach = flatten_ep_with_nusach_for_diff(new_ep)
+    new_text, new_docnote = flatten_ep_with_docnote_for_diff(new_ep)
     text_changed = old_text != new_text
     if text_changed:
         old_words_only = flatten_ep_words_only_for_diff(old_ep)
@@ -181,7 +181,7 @@ def _diff_ep(old_ep, new_ep, book39id, chapter, verse):
         if old_counts == new_counts:
             if structural_signature(old_ep) == structural_signature(new_ep):
                 return None  # No meaningful change
-    nusach_notes = find_relevant_nusach(old_text, new_text, new_nusach, text_changed)
+    docnote_notes = find_relevant_docnote(old_text, new_text, new_docnote, text_changed)
     return {
         "book": book39id,
         "chapter": chapter,
@@ -191,7 +191,7 @@ def _diff_ep(old_ep, new_ep, book39id, chapter, verse):
         "old_ep": old_ep,
         "new_ep": new_ep,
         "text_changed": text_changed,
-        "nusach_notes": nusach_notes,
+        "docnote_notes": docnote_notes,
     }
 
 
@@ -215,3 +215,4 @@ def diff_all_books(old_rev, new_rev):
             continue
         all_diffs.extend(_diff_one_file(old_json, new_json, stem))
     return all_diffs
+

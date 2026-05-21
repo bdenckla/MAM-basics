@@ -6,7 +6,7 @@ from author_util import author
 from author_util import json_block
 from author_util.claim import ClaimCollection
 
-_KAFUL_CLAIM_DATA = {
+_DUALCANT_CLAIM_DATA = {
     "tmpl_name": "מ:כפול",
     "tmpl_param_names": ["כפול", "א", "ב"],
 }
@@ -37,15 +37,15 @@ def build_body(
 ):
     """Build common dedicated-page body for מ:כפול."""
     back_link = author.anchor_h(back_label, back_doc)
-    json_kaful = _emit_claim_payload(
+    json_dualcant = _emit_claim_payload(
         claims,
         claim_id,
         example_json,
         kind=claim_kind,
         subject=claim_subject,
-        data=_KAFUL_CLAIM_DATA,
+        data=_DUALCANT_CLAIM_DATA,
     )
-    kaful_params = [
+    dualcant_params = [
         [
             author.hbo("כפול"),
             "The content with dual trope (as found in the great codexes)",
@@ -70,7 +70,8 @@ def build_body(
                 " (Genesis 35:22).",
             ]
         ),
-        json_block.json_block_raw_html(json_kaful),
+        json_block.json_block_raw_html(json_dualcant),
         author.para("Named parameters:"),
-        author.std_table(kaful_params, arg_to_troh=["Param", "Description"]),
+        author.std_table(dualcant_params, arg_to_troh=["Param", "Description"]),
     ]
+

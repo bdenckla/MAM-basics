@@ -266,25 +266,25 @@ class TestExplicitClaims(unittest.TestCase):
 
         self.assertIn("mp.plus.template.haarah-2.required-params", claims.records_by_id)
 
-    def test_mpplus_kaful_import_has_no_claim_side_effects(self):
+    def test_mpplus_dualcant_import_has_no_claim_side_effects(self):
         importlib.invalidate_caches()
-        kaful = importlib.import_module("author.mpplus_kaful")
+        dualcant = importlib.import_module("author.mpplus_dualcant")
 
-        self.assertFalse(hasattr(kaful, "populate_claims"))
+        self.assertFalse(hasattr(dualcant, "populate_claims"))
 
-    def test_mpplus_kaful_build_body_requires_explicit_claims(self):
-        kaful = importlib.import_module("author.mpplus_kaful")
+    def test_mpplus_dualcant_build_body_requires_explicit_claims(self):
+        dualcant = importlib.import_module("author.mpplus_dualcant")
 
         with self.assertRaises(TypeError):
-            kaful._build_body()
+            dualcant._build_body()
 
-    def test_mpplus_kaful_build_body_can_emit_explicit_claim(self):
-        kaful = importlib.import_module("author.mpplus_kaful")
+    def test_mpplus_dualcant_build_body_can_emit_explicit_claim(self):
+        dualcant = importlib.import_module("author.mpplus_dualcant")
         claims = claim_mod.ClaimCollection()
 
-        kaful._build_body(claims=claims)
+        dualcant._build_body(claims=claims)
 
-        self.assertIn("mp.plus.example.kaful-template-object", claims.records_by_id)
+        self.assertIn("mp.plus.example.dualcant-template-object", claims.records_by_id)
 
     def test_mpplus_build_body_can_emit_representative_explicit_claims(self):
         mpplus = importlib.import_module("author.mpplus")
@@ -393,3 +393,4 @@ class TestExplicitClaims(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+

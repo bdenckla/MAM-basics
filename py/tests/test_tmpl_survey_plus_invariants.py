@@ -7,33 +7,33 @@ from tmpl_survey import survey_plus
 
 
 class TestTmplSurveyPlusInvariants(unittest.TestCase):
-    def test_plain_child_stack_symbols_include_explicit_nusach_parent(self):
+    def test_plain_child_stack_symbols_include_explicit_docnote_parent(self):
         self.assertEqual(
             ("נוסח", "נוסח@1"), survey_plain._child_stack_symbols("נוסח", 1)
         )
         self.assertEqual(("מ:כפול",), survey_plain._child_stack_symbols("מ:כפול", 1))
 
-    def test_plain_child_stack_symbol_splits_nusach_args(self):
+    def test_plain_child_stack_symbol_splits_docnote_args(self):
         self.assertEqual("נוסח@1", survey_plain._child_stack_symbol("נוסח", 1))
         self.assertEqual("נוסח@2", survey_plain._child_stack_symbol("נוסח", "2"))
         self.assertEqual("מ:כפול", survey_plain._child_stack_symbol("מ:כפול", 1))
         with self.assertRaises(AssertionError):
             survey_plain._child_stack_symbol("נוסח", 3)
 
-    def test_plus_child_stack_symbols_include_explicit_nusach_parent(self):
+    def test_plus_child_stack_symbols_include_explicit_docnote_parent(self):
         self.assertEqual(
             ("נוסח", "נוסח@2"), survey_plus._child_stack_symbols("נוסח", 2)
         )
         self.assertEqual(("מ:כפול",), survey_plus._child_stack_symbols("מ:כפול", 1))
 
-    def test_plus_child_stack_symbol_splits_nusach_args(self):
+    def test_plus_child_stack_symbol_splits_docnote_args(self):
         self.assertEqual("נוסח@1", survey_plus._child_stack_symbol("נוסח", 1))
         self.assertEqual("נוסח@2", survey_plus._child_stack_symbol("נוסח", "2"))
         self.assertEqual("מ:כפול", survey_plus._child_stack_symbol("מ:כפול", 1))
         with self.assertRaises(AssertionError):
             survey_plus._child_stack_symbol("נוסח", "arg")
 
-    def test_plain_flatten_stack_counts_splits_nusach_slots(self):
+    def test_plain_flatten_stack_counts_splits_docnote_slots(self):
         accum = {
             "stack_counts": {
                 ("מ:פסוק", "E"): 5,
@@ -52,7 +52,7 @@ class TestTmplSurveyPlusInvariants(unittest.TestCase):
             [(r["stack"], r["count"]) for r in records],
         )
 
-    def test_plus_flatten_stack_counts_splits_nusach_slots(self):
+    def test_plus_flatten_stack_counts_splits_docnote_slots(self):
         accum = {
             "stack_counts": {
                 ("מ:פסוק", "D"): 11,
@@ -71,7 +71,7 @@ class TestTmplSurveyPlusInvariants(unittest.TestCase):
             [(r["stack"], r["count"]) for r in records],
         )
 
-    def test_plain_flatten_stack_counts_preserves_direct_nusach_slots(self):
+    def test_plain_flatten_stack_counts_preserves_direct_docnote_slots(self):
         accum = {
             "stack_counts": {
                 ("מ:פסוק", "E/נוסח@1"): 1,
@@ -82,7 +82,7 @@ class TestTmplSurveyPlusInvariants(unittest.TestCase):
         self.assertEqual("E/נוסח@1/מ:פסוק", records[0]["stack"])
         self.assertEqual(1, records[0]["count"])
 
-    def test_plus_flatten_stack_counts_preserves_direct_nusach_slots(self):
+    def test_plus_flatten_stack_counts_preserves_direct_docnote_slots(self):
         accum = {
             "stack_counts": {
                 ("מ:פסוק", "D/נוסח@2"): 1,
@@ -123,3 +123,4 @@ class TestTmplSurveyPlusInvariants(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+

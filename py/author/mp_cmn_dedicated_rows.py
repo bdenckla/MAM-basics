@@ -6,7 +6,7 @@ from author import mp_cmn_rows_core as rows_core
 from author_util import author
 
 _KQ_SPECIAL_NAME = author.hbo("מ:כו״ק מיוחד")
-_KAFUL_NAME = author.hbo("מ:כפול")
+_DUALCANT_NAME = author.hbo("מ:כפול")
 _TWO_ACCENTS_ABBREV = "שני טעמים ..."
 
 
@@ -59,11 +59,11 @@ def with_kq_special_dedicated_page_link(kq_rows, *, doc_name: str):
     return out_rows
 
 
-def with_kaful_dedicated_page_link(accent_rows, *, doc_name: str):
+def with_dualcant_dedicated_page_link(accent_rows, *, doc_name: str):
     """Return accent rows with מ:כפול pointing to the caller-provided page."""
     out_rows = []
     for tmpl_cell, purpose in accent_rows:
-        if tmpl_cell != _KAFUL_NAME:
+        if tmpl_cell != _DUALCANT_NAME:
             out_rows.append([tmpl_cell, purpose])
             continue
 
@@ -79,3 +79,4 @@ def with_kaful_dedicated_page_link(accent_rows, *, doc_name: str):
         )
 
     return out_rows
+

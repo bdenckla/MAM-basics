@@ -20,9 +20,9 @@ _PLAIN_DOC = "../../plain/html/mpplain.html"
 _AOT_DOC = "mpplus_aot.html"
 _KQ_AM2_DOC = "mpplus_kq_am2.html"
 _KQ_SPECIAL_DOC = "mpplus_kq_special.html"
-_KAFUL_DOC = "mpplus_kaful.html"
+_DUALCANT_DOC = "mpplus_dualcant.html"
 _GOOD_ENDING_DOC = "mpplus_good_ending_plus_field.html"
-_NUSACH_DOC = "mpplus_nusach.html"
+_DOCNOTE_DOC = "mpplus_docnote.html"
 _POETIC_SPACING_DOC = "mpplus_poetic_spacing.html"
 
 _PLUS_COMMON_TEMPLATES = [
@@ -433,7 +433,7 @@ def s_chapter_verse(*, claims: ClaimCollection):
             ],
             semantics_data={
                 "label_template": "מ:פסוק",
-                "nusach_wrapper": "נוסח",
+                "docnote_wrapper": "נוסח",
                 "empty_when": "no label data",
                 "named_params": ["סדר", "עלייה"],
             },
@@ -516,9 +516,9 @@ def s_common_templates(*, claims: ClaimCollection):
     note_row = cmn.emit_claim_by_id(claims=claims, claim_id="mp.both.templates.note")
 
     plus_accent_rows = cmn.accent_rows_for_templates(_PLUS_ACCENT_TEMPLATES)
-    plus_choice_rows = dedicated_rows.with_kaful_dedicated_page_link(
+    plus_choice_rows = dedicated_rows.with_dualcant_dedicated_page_link(
         cmn.accent_rows_for_templates(_CHOICE_TEMPLATES),
-        doc_name=_KAFUL_DOC,
+        doc_name=_DUALCANT_DOC,
     )
     poetic_spacing_row = body_shared.poetic_spacing_row(doc_name=_POETIC_SPACING_DOC)
 
@@ -583,7 +583,7 @@ def s_common_templates(*, claims: ClaimCollection):
         author.heading_level_3("Note template"),
         tblh.tmpl_purp_table([note_row]),
         author.heading_level_3("Documentation templates"),
-        tblh.tmpl_purp_table(cmn.other_rows_shared_core(nusach_doc=_NUSACH_DOC)),
+        tblh.tmpl_purp_table(cmn.other_rows_shared_core(docnote_doc=_DOCNOTE_DOC)),
         author.heading_level_3("Other templates"),
         author.para(
             [
@@ -598,3 +598,4 @@ def s_common_templates(*, claims: ClaimCollection):
         ),
         tblh.tmpl_purp_table(other_misc_rows),
     ]
+

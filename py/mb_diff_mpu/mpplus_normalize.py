@@ -101,7 +101,7 @@ def _normalize_qvk(tmpl):
         tmpl["tmpl_args"].append(stripped)
 
 
-def _normalize_nusach_param2(tmpl):
+def _normalize_docnote_param2(tmpl):
     """Replace נוסח param 2 with a sentinel.
 
     Param 2 of נוסח templates contains manuscript-note text that is
@@ -125,7 +125,7 @@ def _normalize_element(el):
         if "tmpl_name" in el:
             _normalize_params(el)
             _normalize_qvk(el)
-            _normalize_nusach_param2(el)
+            _normalize_docnote_param2(el)
         for value in el.values():
             _normalize_element(value)
     elif isinstance(el, list):
@@ -152,3 +152,4 @@ def normalize_ep(ep):
 def normalize_structure(ep):
     """Return the structural signature of a normalized EP."""
     return structural_signature(normalize_ep(ep))
+

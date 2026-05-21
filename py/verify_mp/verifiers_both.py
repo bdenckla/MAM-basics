@@ -213,7 +213,7 @@ def _verify_template_only_in_parent_param(record: ClaimRecord, ctx: Context) -> 
     )
 
 
-def verify_mp_both_templates_modag_only_in_nusach_param2(
+def verify_mp_both_templates_modag_only_in_docnote_param2(
     record: ClaimRecord, ctx: Context
 ) -> None:
     """Template מודגש appears only in נוסח param 2."""
@@ -247,7 +247,7 @@ def verify_mp_both_templates_sampe_pabp_arg_value(
     assert not bad, f"unexpected param 1 values: {bad[:5]}"
 
 
-def verify_mp_both_templates_sh_only_in_nusach_param2(
+def verify_mp_both_templates_sh_only_in_docnote_param2(
     record: ClaimRecord, ctx: Context
 ) -> None:
     """Template ש appears only in נוסח param 2."""
@@ -439,14 +439,15 @@ REGISTRY: dict[str, VerifierFn] = {
     "mp.both.templates.kq-special.subtype-counts": verify_mp_both_templates_kq_special_subtype_counts,
     "mp.both.templates.kq-special.subtypes": verify_mp_both_templates_kq_special_subtypes,
     "mp.both.templates.kq.set": verify_mp_both_templates_kq_set,
-    "mp.both.templates.modag.only-in-nusach-param2": verify_mp_both_templates_modag_only_in_nusach_param2,
+    "mp.both.templates.modag.only-in-docnote-param2": verify_mp_both_templates_modag_only_in_docnote_param2,
     "mp.both.templates.navigation.set": verify_mp_both_templates_navigation_set,
     "mp.both.templates.note": verify_mp_both_templates_note,
     "mp.both.templates.note-links.set": verify_mp_both_templates_note_links_set,
     "mp.both.templates.other.set": verify_mp_both_templates_other_set,
     "mp.both.templates.poetic.set": verify_mp_both_templates_poetic_set,
     "mp.both.templates.sampe.pabp-arg-value": verify_mp_both_templates_sampe_pabp_arg_value,
-    "mp.both.templates.sh.only-in-nusach-param2": verify_mp_both_templates_sh_only_in_nusach_param2,
+    "mp.both.templates.sh.only-in-docnote-param2": verify_mp_both_templates_sh_only_in_docnote_param2,
     "mp.both.templates.special-letters.set": verify_mp_both_templates_special_letters_set,
     "mp.both.templates.structural.set": verify_mp_both_templates_structural_set,
 }
+

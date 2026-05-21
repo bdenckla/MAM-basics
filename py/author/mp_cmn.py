@@ -16,8 +16,8 @@ from typing import Any
 
 JSON_KQ = _examples_and_file_naming.JSON_KQ
 JSON_KQ_PLUS = _examples_and_file_naming.JSON_KQ_PLUS
-JSON_NUSACH = _examples_and_file_naming.JSON_NUSACH
-JSON_NUSACH_PLUS = _examples_and_file_naming.JSON_NUSACH_PLUS
+JSON_DOCNOTE = _examples_and_file_naming.JSON_DOCNOTE
+JSON_DOCNOTE_PLUS = _examples_and_file_naming.JSON_DOCNOTE_PLUS
 
 # ---------------------------------------------------------------------------
 # Table row data
@@ -46,8 +46,8 @@ NAVIGATION_ROWS = _groups_misc.NAVIGATION_ROWS
 from author import mp_cmn_rows_other as _rows_other  # noqa: E402
 
 OTHER_ROWS = _rows_other.OTHER_ROWS
-MODAG_ONLY_IN_NUSACH_PARAM2 = _rows_other.MODAG_ONLY_IN_NUSACH_PARAM2
-SH_ONLY_IN_NUSACH_PARAM2 = _rows_other.SH_ONLY_IN_NUSACH_PARAM2
+MODAG_ONLY_IN_DOCNOTE_PARAM2 = _rows_other.MODAG_ONLY_IN_DOCNOTE_PARAM2
+SH_ONLY_IN_DOCNOTE_PARAM2 = _rows_other.SH_ONLY_IN_DOCNOTE_PARAM2
 OTHER_ROW_TEMPLATE_NAMES = _rows_other.OTHER_ROW_TEMPLATE_NAMES
 OTHER_ROW_BY_TEMPLATE = _rows_other.OTHER_ROW_BY_TEMPLATE
 other_rows_for_templates = _rows_other.other_rows_for_templates
@@ -105,3 +105,4 @@ assert len(_CLAIM_DEF_BY_ID) == len(_ALL_CLAIM_DEFS), "duplicate mp_cmn claim id
 def emit_claim_by_id(*, claims: ClaimCollection, claim_id: str) -> Any:
     _claim_id, payload, kind, subject, data = _CLAIM_DEF_BY_ID[claim_id]
     return claims.claim(_claim_id, payload, kind=kind, subject=subject, data=data)
+

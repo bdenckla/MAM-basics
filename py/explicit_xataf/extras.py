@@ -1,4 +1,4 @@
-"""Handling of "extras" — non-varika nusach notes that mention ḥataf."""
+"""Handling of "extras" — non-varika docnote notes that mention ḥataf."""
 
 import json
 
@@ -38,8 +38,8 @@ def write_extras(all_extras):
     result = {
         "header": {
             "description": (
-                "Non-varika nusach notes that mention ḥataf. "
-                "These are nusach notes whose target word does NOT contain "
+                "Non-varika docnote notes that mention ḥataf. "
+                "These are docnote notes whose target word does NOT contain "
                 "varika (U+FB1E) but whose commentary text mentions "
                 "ḥataf in some way."
             ),
@@ -79,11 +79,11 @@ def write_extras(all_extras):
             "entry_fields": {
                 "ref": "Verse reference",
                 "target_word": (
-                    "The target word (arg[0] of the nusach template), "
+                    "The target word (arg[0] of the docnote template), "
                     "flattened to plain text"
                 ),
-                "nusach_comment": (
-                    "The full commentary text (arg[1] of the nusach template)"
+                "docnote_comment": (
+                    "The full commentary text (arg[1] of the docnote template)"
                 ),
                 "category": "One of the categories defined above",
                 "translation": (
@@ -103,3 +103,4 @@ def write_extras(all_extras):
         print(f" ({n_uncat} uncategorized)")
     else:
         print()
+

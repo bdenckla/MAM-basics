@@ -1,11 +1,11 @@
 """Render נוסח param 2 (manuscript annotations) as HTML.
 
-Ported from mgketer's mpplus_nusach module, adapted for the MAM-basics
+Ported from mgketer's mpplus_docnote module, adapted for the MAM-basics
 diff pipeline.  Handles template markup inside note bodies and wraps
 pointed Hebrew (vocalized/cantillated text) in spans for CSS sizing.
 
 Exports:
-    nusach_body_to_html  — convert a param-2 value to displayable HTML
+    docnote_body_to_html  — convert a param-2 value to displayable HTML
 """
 
 import re
@@ -29,7 +29,7 @@ _SLH_CSS_CLASS = {
 # ── Public API ────────────────────────────────────────────────────
 
 
-def nusach_body_to_html(body):
+def docnote_body_to_html(body):
     """Convert a נוסח note body (param 2) to displayable HTML.
 
     The *body* value can be a plain string, a list of strings and
@@ -137,3 +137,4 @@ def _wrap_pointed_in_text(text):
         prev = end
     parts.append(text[prev:])
     return "".join(parts)
+

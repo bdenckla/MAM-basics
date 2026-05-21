@@ -73,8 +73,8 @@ def _serialize_diff(d):
             out["templates_removed"] = removed
         if not added and not removed:
             out["template_structure_changed"] = True
-    if d["nusach_notes"]:
-        out["nusach_notes"] = d["nusach_notes"]
+    if d["docnote_notes"]:
+        out["docnote_notes"] = d["docnote_notes"]
     return out
 
 
@@ -111,3 +111,4 @@ def write_json(diffs, old_rev, new_rev, out_path):
     os.makedirs(os.path.dirname(out_path), exist_ok=True)
     with open(out_path, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
+

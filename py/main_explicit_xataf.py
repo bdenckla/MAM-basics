@@ -34,8 +34,8 @@ def _process_one_book(bkid, book_mpu):
     for bcvt, minirow in verses.items():
         ref = _bcvt_to_ref(bcvt)
         for column in (minirow.CP, minirow.EP):
-            nusach_tmpls = ext.find_nusach_tmpls(column)
-            for tmpl in nusach_tmpls:
+            docnote_tmpls = ext.find_docnote_tmpls(column)
+            for tmpl in docnote_tmpls:
                 arg0 = wtp.template_param_val(tmpl, "1")
                 arg1 = wtp.template_param_val(tmpl, "2")
                 if ext.has_varika(arg0):
@@ -62,7 +62,7 @@ def _process_one_book(bkid, book_mpu):
                             {
                                 "ref": ref,
                                 "target_word": ext.flatten_text(arg0),
-                                "nusach_comment": joined,
+                                "docnote_comment": joined,
                             }
                         )
     return mappings, failures, extra_list
@@ -159,7 +159,7 @@ def almost_main():
                 "ref": "Verse reference",
                 "varika_word": "The word as it appears in MAM, with shewa+varika",
                 "reason": "Short classification of why extraction failed",
-                "arg1_strings": "Raw string fragments from the nusach note's second argument",
+                "arg1_strings": "Raw string fragments from the docnote note's second argument",
             },
         },
         "counts": counts,
@@ -181,3 +181,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

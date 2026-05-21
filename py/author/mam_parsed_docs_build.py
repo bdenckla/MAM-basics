@@ -24,15 +24,15 @@ def _run_mam_parsed_authored_traversal(
     from author import mpplus_kq_special
     from author import mpplain_kq_special
     from author import mpplus_haarah_2
-    from author import mpplus_kaful
-    from author import mpplain_kaful
+    from author import mpplus_dualcant
+    from author import mpplain_dualcant
     from author import mpplain_multimark
     from author import mpplus_good_ending_plus_field
     from author import mpplus_good_ending_tmpl
     from author import mpplain_good_ending_tmpl
-    from author import mpplus_nusach
+    from author import mpplus_docnote
     from author import mpplain_kq_am2
-    from author import mpplain_nusach
+    from author import mpplain_docnote
     from author import mpplus_diff_from_plain
     from author import mpplus_plain_only_templates
     from author import mpplain_poetic_spacing
@@ -48,15 +48,15 @@ def _run_mam_parsed_authored_traversal(
         mpplus_kq_special.build_body(claims=claims)
         mpplain_kq_special.build_body(claims=claims)
         mpplus_haarah_2.build_body(claims=claims)
-        mpplus_kaful.build_body(claims=claims)
-        mpplain_kaful.build_body(claims=claims)
+        mpplus_dualcant.build_body(claims=claims)
+        mpplain_dualcant.build_body(claims=claims)
         mpplain_multimark.build_body(claims=claims)
         mpplus_good_ending_plus_field.build_body(claims=claims)
         mpplus_good_ending_tmpl.build_body(claims=claims)
         mpplain_good_ending_tmpl.build_body(claims=claims)
-        mpplus_nusach.build_body(claims=claims)
+        mpplus_docnote.build_body(claims=claims)
         mpplain_kq_am2.build_body(claims=claims)
-        mpplain_nusach.build_body(claims=claims)
+        mpplain_docnote.build_body(claims=claims)
         mpplus_diff_from_plain.build_body(claims=claims)
         mpplus_plain_only_templates.build_body(claims=claims)
         mpplain_poetic_spacing.build_body(claims=claims)
@@ -70,11 +70,11 @@ def _run_mam_parsed_authored_traversal(
     mp_index.gen_html_file(tdm_ch_root, claims=claims)
     mpplain.gen_html_file(tdm_ch_plain, claims=claims)
     mpplain_kq_special.gen_html_file(tdm_ch_plain, claims=claims)
-    mpplain_kaful.gen_html_file(tdm_ch_plain, claims=claims)
+    mpplain_dualcant.gen_html_file(tdm_ch_plain, claims=claims)
     mpplain_multimark.gen_html_file(tdm_ch_plain, claims=claims)
     mpplain_good_ending_tmpl.gen_html_file(tdm_ch_plain, claims=claims)
     mpplain_kq_am2.gen_html_file(tdm_ch_plain, claims=claims)
-    mpplain_nusach.gen_html_file(tdm_ch_plain, claims=claims)
+    mpplain_docnote.gen_html_file(tdm_ch_plain, claims=claims)
     mpplain_poetic_spacing.gen_html_file(tdm_ch_plain, claims=claims)
 
     mpplus.gen_html_file(tdm_ch_plus, claims=claims)
@@ -83,10 +83,10 @@ def _run_mam_parsed_authored_traversal(
     mpplus_kq_am2.gen_html_file(tdm_ch_plus, claims=claims)
     mpplus_kq_special.gen_html_file(tdm_ch_plus, claims=claims)
     mpplus_haarah_2.gen_html_file(tdm_ch_plus, claims=claims)
-    mpplus_kaful.gen_html_file(tdm_ch_plus, claims=claims)
+    mpplus_dualcant.gen_html_file(tdm_ch_plus, claims=claims)
     mpplus_good_ending_plus_field.gen_html_file(tdm_ch_plus, claims=claims)
     mpplus_good_ending_tmpl.gen_html_file(tdm_ch_plus, claims=claims)
-    mpplus_nusach.gen_html_file(tdm_ch_plus, claims=claims)
+    mpplus_docnote.gen_html_file(tdm_ch_plus, claims=claims)
     mpplus_diff_from_plain.gen_html_file(tdm_ch_plus, claims=claims)
     mpplus_plain_only_templates.gen_html_file(tdm_ch_plus, claims=claims)
     mpplus_poetic_spacing.gen_html_file(tdm_ch_plus, claims=claims)

@@ -394,14 +394,14 @@ def verify_mp_plain_verse_d_col_semantics(record: ClaimRecord, ctx: Context) -> 
     Also checks that the label template uses only the declared named-parameter keys.
     """
     label_template = record.data["label_template"]
-    nusach_wrapper = record.data["nusach_wrapper"]
+    docnote_wrapper = record.data["docnote_wrapper"]
     allowed_named_params = frozenset(record.data["allowed_named_params"])
     pseudo_keys = frozenset(["0", "תתת"])
     observed_named_params: set[str] = set()
     saw_direct = False
     saw_wrapped = False
     label_norm = label_template.translate(_NORM_QUOTES)
-    nusach_norm = nusach_wrapper.translate(_NORM_QUOTES)
+    docnote_norm = docnote_wrapper.translate(_NORM_QUOTES)
     for book39, ch_key, v_key, verse in iter_plain_verses(ctx.corpus_plain):
         d_col = verse[1]
         assert isinstance(d_col, list), f"D column is not a list: {d_col!r}"
@@ -424,17 +424,17 @@ def verify_mp_plain_verse_d_col_semantics(record: ClaimRecord, ctx: Context) -> 
         top_name = _plain_top_level_tmpl_name(item)
         assert top_name is not None and top_name.translate(_NORM_QUOTES) in (
             label_norm,
-            nusach_norm,
+            docnote_norm,
         ), (
             f"book39={book39['book24_name']!r} ch={ch_key} v={v_key}:"
             f" D-column top-level template {top_name!r} is neither"
-            f" {label_template!r} nor {nusach_wrapper!r}: {item!r}"
+            f" {label_template!r} nor {docnote_wrapper!r}: {item!r}"
         )
-        if top_name.translate(_NORM_QUOTES) == nusach_norm:
+        if top_name.translate(_NORM_QUOTES) == docnote_norm:
             saw_wrapped = True
             assert _plain_node_has_label_template(item, label_template), (
                 f"book39={book39['book24_name']!r} ch={ch_key} v={v_key}:"
-                f" {nusach_wrapper!r}-wrapped D column missing {label_template!r}: {item!r}"
+                f" {docnote_wrapper!r}-wrapped D column missing {label_template!r}: {item!r}"
             )
         else:
             saw_direct = True
@@ -712,3 +712,4 @@ REGISTRY: dict[str, VerifierFn] = {
     "mp.plain.verse.e-col.semantics": verify_mp_plain_verse_e_col_semantics,
     "mp.plain.verse.is-3-tuple": verify_mp_plain_verse_is_3_tuple,
 }
+

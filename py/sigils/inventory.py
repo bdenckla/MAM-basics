@@ -38,7 +38,7 @@ def build_inventory(mam_parsed_path="../MAM-parsed"):
         for bcvt, minirow in verses.items():
             ref = _bcvt_to_ref(bcvt)
             for column_name, column in (("CP", minirow.CP), ("EP", minirow.EP)):
-                for tmpl in doc_extract.find_nusach_tmpls(column):
+                for tmpl in doc_extract.find_docnote_tmpls(column):
                     note_count += 1
                     note_text = _note_text(tmpl)
                     if note_text.strip() == "":
@@ -243,3 +243,4 @@ def _sorted_inventory(inventory):
     ):
         out.append({"item": key, **value})
     return out
+

@@ -42,7 +42,7 @@ def build_body(*, claims: ClaimCollection):
         subject="mp:plus",
     )
     nested_claim = claims.claim(
-        "mp.plus.good-ending-plus.nested-in-nusach",
+        "mp.plus.good-ending-plus.nested-in-docnote",
         [
             ["In practice, it is always nested inside ", author.hbo("נוסח")],
             [" in the ", mb_html.code("good_ending_plus")],

@@ -16,10 +16,10 @@ JSON_KQ = jsnip.read_text("mp_cmn_examples_and_file_naming", "kq_plain.json")
 
 JSON_KQ_PLUS = jsnip.read_text("mp_cmn_examples_and_file_naming", "kq_plus.json")
 
-JSON_NUSACH = jsnip.read_text("mp_cmn_examples_and_file_naming", "nusach_plain.json")
+JSON_DOCNOTE = jsnip.read_text("mp_cmn_examples_and_file_naming", "docnote_plain.json")
 
-JSON_NUSACH_PLUS = jsnip.read_text(
-    "mp_cmn_examples_and_file_naming", "nusach_plus.json"
+JSON_DOCNOTE_PLUS = jsnip.read_text(
+    "mp_cmn_examples_and_file_naming", "docnote_plus.json"
 )
 
 # ---------------------------------------------------------------------------
@@ -74,15 +74,15 @@ CLAIM_DEFS = (
         },
     ),
     _claim_def(
-        "mp.plain.example.nusach",
-        JSON_NUSACH,
+        "mp.plain.example.docnote",
+        JSON_DOCNOTE,
         kind="example",
         subject="mp:plain",
         data={"stmpl": "נוסח|וּבֵרְﬞכ֥וּ|2=א=וּבֵרֲכ֥וּ (חטף)"},
     ),
     _claim_def(
-        "mp.plus.example.nusach",
-        JSON_NUSACH_PLUS,
+        "mp.plus.example.docnote",
+        JSON_DOCNOTE_PLUS,
         kind="example",
         subject="mp:plus",
         data={
@@ -169,3 +169,4 @@ def s_file_naming(*, file_naming_rows=None):
             ]
         ),
     ]
+

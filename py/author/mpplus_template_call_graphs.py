@@ -37,15 +37,15 @@ def build_body(*, claims: ClaimCollection):
         ),
         author.blockquote(
             author.para(
-                "The full graph omits kaful, nusach, and sh to keep the core shape readable."
+                "The full graph omits dualcant, docnote, and sh to keep the core shape readable."
             )
         ),
         mb_html.heading_level_2("Full call graph"),
         _svg_object(_SVG_FULL, "Full call graph (SVG not supported)"),
-        mb_html.heading_level_2("Focused call graph: kaful"),
-        _svg_object(_SVG_KPVL, "Kaful call graph (SVG not supported)"),
-        mb_html.heading_level_2("Focused call graph: nusach"),
-        _svg_object(_SVG_NVOX, "Nusach call graph (SVG not supported)"),
+        mb_html.heading_level_2("Focused call graph: dualcant"),
+        _svg_object(_SVG_KPVL, "Dualcant call graph (SVG not supported)"),
+        mb_html.heading_level_2("Focused call graph: docnote"),
+        _svg_object(_SVG_NVOX, "Docnote call graph (SVG not supported)"),
     ]
 
 

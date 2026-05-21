@@ -4,7 +4,7 @@ from mb_diff_mpu.mpplus_structure import template_name_multiset_delta
 from mb_diff_mpu.mpplus_template_change_desc import kq_if_template_addition_parts_list
 
 _TEMPLATE_REMOVAL_CATS = {
-    "מ:דחי": "dehi-removal",
+    "מ:דחי": "deḥi-removal",
     "מ:צינור": "tsinnor-removal",
 }
 
@@ -21,7 +21,7 @@ def _split_kq_if_additions(diff):
     if not additions:
         return None
 
-    notes = diff.get("nusach_notes", [])
+    notes = diff.get("docnote_notes", [])
     subs = []
     for addition in additions:
         sub = dict(diff)
@@ -32,7 +32,7 @@ def _split_kq_if_additions(diff):
             "arg1_text": addition["arg1_text"],
             "arg2_text": addition["arg2_text"],
         }
-        sub["nusach_notes"] = [
+        sub["docnote_notes"] = [
             note
             for note in notes
             if note["end"] > addition["start"] and note["start"] < addition["end"]
@@ -66,13 +66,14 @@ def split_structural_diff(diff):
     if added or len(splittable) < 2:
         return None
 
-    notes = diff.get("nusach_notes", [])
+    notes = diff.get("docnote_notes", [])
     subs = []
     for i, tname in enumerate(sorted(splittable)):
         sub = dict(diff)
         sub["category"] = _TEMPLATE_REMOVAL_CATS[tname]
         sub["templates_added"] = []
         sub["templates_removed"] = [tname]
-        sub["nusach_notes"] = notes if i == 0 else []
+        sub["docnote_notes"] = notes if i == 0 else []
         subs.append(sub)
     return subs
+

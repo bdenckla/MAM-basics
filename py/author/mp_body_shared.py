@@ -88,11 +88,11 @@ def emit_common_templates_claim_prelude(
     )
     cmn.emit_claim_by_id(
         claims=claims,
-        claim_id="mp.both.templates.modag.only-in-nusach-param2",
+        claim_id="mp.both.templates.modag.only-in-docnote-param2",
     )
     cmn.emit_claim_by_id(
         claims=claims,
-        claim_id="mp.both.templates.sh.only-in-nusach-param2",
+        claim_id="mp.both.templates.sh.only-in-docnote-param2",
     )
     if plus_only:
         cmn.emit_claim_by_id(claims=claims, claim_id="mp.plus.templates.plus-only.set")
@@ -302,3 +302,4 @@ def verse_d_column_block(
     if example_json is not None:
         out.append(json_block.json_block_raw_html(example_json))
     return out
+

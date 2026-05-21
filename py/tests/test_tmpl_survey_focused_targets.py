@@ -54,7 +54,7 @@ class TestTmplSurveyFocusedTargets(unittest.TestCase):
 
             self.assertEqual(len(slugs), len(render_calls))
 
-    def test_focused_edge_extraction_matches_nusach_suffixes(self):
+    def test_focused_edge_extraction_matches_docnote_suffixes(self):
         stack_counts = {
             ("מ:דחי", "C/נוסח@1"): 3,
             ("מ:עלייה", "C/נוסח@2/מ:דחי"): 5,
@@ -98,7 +98,7 @@ class TestTmplSurveyFocusedTargets(unittest.TestCase):
         self.assertNotIn('"נוסח"', dot_text)
         self.assertIn("מ:כפול, נוסח have been discarded", dot_text)
 
-    def test_focused_nusach_uses_targeted_discard_set(self):
+    def test_focused_docnote_uses_targeted_discard_set(self):
         stack_counts = {
             ("נוסח@1", "C"): 2,
             ("נוסח@2", "C"): 4,
@@ -115,8 +115,8 @@ class TestTmplSurveyFocusedTargets(unittest.TestCase):
             finally:
                 survey_dot.render_svg = orig_render_svg
 
-            nusach_dot_path = f"{stem}-nvox-call-graph.dot"
-            with open(nusach_dot_path, encoding="utf-8") as dot_fp:
+            docnote_dot_path = f"{stem}-nvox-call-graph.dot"
+            with open(docnote_dot_path, encoding="utf-8") as dot_fp:
                 dot_text = dot_fp.read()
 
         self.assertIn('"C" -> "נוסח@1" [label="2"]', dot_text)
@@ -130,7 +130,7 @@ class TestTmplSurveyFocusedTargets(unittest.TestCase):
         self.assertIn("מ:דחי", dot_text)
         self.assertIn("have been discarded", dot_text)
 
-    def test_focused_pasuk_skips_standard_discard_set(self):
+    def test_focused_mpasuq_skips_standard_discard_set(self):
         stack_counts = {
             ("נוסח", "D"): 2,
             ("מ:פסוק", "D/נוסח"): 3,
@@ -146,8 +146,8 @@ class TestTmplSurveyFocusedTargets(unittest.TestCase):
             finally:
                 survey_dot.render_svg = orig_render_svg
 
-            pasuk_dot_path = f"{stem}-povq-call-graph.dot"
-            with open(pasuk_dot_path, encoding="utf-8") as dot_fp:
+            mpasuq_dot_path = f"{stem}-povq-call-graph.dot"
+            with open(mpasuq_dot_path, encoding="utf-8") as dot_fp:
                 dot_text = dot_fp.read()
 
         self.assertIn('"D" -> "נוסח" [label="8"]', dot_text)
@@ -155,7 +155,7 @@ class TestTmplSurveyFocusedTargets(unittest.TestCase):
         self.assertIn('"מ:פסוק" -> "מ:עלייה" [label="5"]', dot_text)
         self.assertNotIn("have been discarded", dot_text)
 
-    def test_focused_nusach_special_label_only_for_dead_end_direct_children(self):
+    def test_focused_docnote_special_label_only_for_dead_end_direct_children(self):
         stack_counts = {
             ("נוסח", "C"): 1,
             ("A1", "C/נוסח"): 3,
@@ -174,8 +174,8 @@ class TestTmplSurveyFocusedTargets(unittest.TestCase):
             finally:
                 survey_dot.render_svg = orig_render_svg
 
-            nusach_dot_path = f"{stem}-nvox-call-graph.dot"
-            with open(nusach_dot_path, encoding="utf-8") as dot_fp:
+            docnote_dot_path = f"{stem}-nvox-call-graph.dot"
+            with open(docnote_dot_path, encoding="utf-8") as dot_fp:
                 dot_text = dot_fp.read()
 
         self.assertIn('"dead-end children of נוסח" [tooltip="A1\nA2"]', dot_text)
@@ -237,3 +237,4 @@ class TestTmplSurveyFocusedTargets(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+

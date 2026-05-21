@@ -11,7 +11,7 @@ from collections import Counter
 from mb_diff_mpu.grapheme_diff import char_diff_spans
 from mb_diff_mpu.mpplus_structure import template_name_multiset_delta
 from mb_diff_mpu.describe_diff import describe_change, add_name_tooltips
-from mb_diff_mpu.mpplus_nusach import nusach_body_to_html
+from mb_diff_mpu.mpplus_docnote import docnote_body_to_html
 from mb_diff_mpu.mpplus_assets import CATEGORY_INFO, write_shared_assets
 from mb_diff_mpu.mpplus_expand import split_structural_diff
 from mb_diff_mpu.mpplus_template_change_desc import kq_if_template_addition_parts
@@ -78,23 +78,23 @@ def _word_char_ranges(text):
     return ranges
 
 
-def _distribute_nusach(old_text, new_text, nusach_notes, expected_count):
-    """Distribute nusach notes across sub-diffs by word-position overlap.
+def _distribute_docnote(old_text, new_text, docnote_notes, expected_count):
+    """Distribute docnote notes across sub-diffs by word-position overlap.
 
     Narrows on the raw (pre-display-transform) text to get word index
     ranges, converts those to character positions, and assigns each
-    nusach note to the sub-diff whose character range overlaps the
+    docnote note to the sub-diff whose character range overlaps the
     note's [start, end) span.
     """
     empty = [[] for _ in range(expected_count)]
-    if not nusach_notes:
+    if not docnote_notes:
         return empty
     raw_pairs = _narrow_to_changed_words(old_text, new_text)
     if len(raw_pairs) != expected_count:
         # Display and raw narrowing diverged (e.g. paseq spacing);
         # fall back to attaching all notes to the last sub-diff.
         result = [[] for _ in range(expected_count)]
-        result[-1] = [n["param2"] for n in nusach_notes]
+        result[-1] = [n["param2"] for n in docnote_notes]
         return result
     word_ranges = _word_char_ranges(new_text)
     result = []
@@ -103,7 +103,7 @@ def _distribute_nusach(old_text, new_text, nusach_notes, expected_count):
         char_end = word_ranges[j2 - 1][1]
         matching = [
             n["param2"]
-            for n in nusach_notes
+            for n in docnote_notes
             if n["end"] > char_start and n["start"] < char_end
         ]
         result.append(matching)
@@ -136,11 +136,11 @@ def _expand_diffs(diffs):
             if split is not None:
                 for sub in split:
                     out = dict(sub)
-                    out["nusach_notes"] = _note_bodies(sub.get("nusach_notes", []))
+                    out["docnote_notes"] = _note_bodies(sub.get("docnote_notes", []))
                     expanded.append(out)
                 continue
             out = dict(diff)
-            out["nusach_notes"] = _note_bodies(diff.get("nusach_notes", []))
+            out["docnote_notes"] = _note_bodies(diff.get("docnote_notes", []))
             expanded.append(out)
             continue
         old_display = normalize_paseq_spacing(
@@ -150,9 +150,9 @@ def _expand_diffs(diffs):
             display_text(diff["new_text"], diff["new_ep"])
         )
         pairs = _narrow_to_changed_words(old_display, new_display)
-        nusach_notes = diff.get("nusach_notes", [])
-        notes_per_pair = _distribute_nusach(
-            diff["old_text"], diff["new_text"], nusach_notes, len(pairs)
+        docnote_notes = diff.get("docnote_notes", [])
+        notes_per_pair = _distribute_docnote(
+            diff["old_text"], diff["new_text"], docnote_notes, len(pairs)
         )
         tmpl_added, tmpl_removed = template_name_multiset_delta(
             diff["old_ep"], diff["new_ep"]
@@ -168,7 +168,7 @@ def _expand_diffs(diffs):
                 "narrowed_new": new_narrow,
                 "old_ep": diff["old_ep"],
                 "new_ep": diff["new_ep"],
-                "nusach_notes": notes_per_pair[idx],
+                "docnote_notes": notes_per_pair[idx],
             }
             if tmpl_added:
                 sub["templates_added"] = tmpl_added
@@ -256,7 +256,7 @@ def _render_card(diff):
         # For dedicated template-removal categories, use the category's
         # specific template name rather than computing from old_ep/new_ep
         # (which may reflect the full verse change when a diff was split).
-        _CAT_TEMPLATE = {"dehi-removal": "מ:דחי", "tsinnor-removal": "מ:צינור"}
+        _CAT_TEMPLATE = {"deḥi-removal": "מ:דחי", "tsinnor-removal": "מ:צינור"}
         if cat in _CAT_TEMPLATE:
             eng_desc = f"Template change (removed: {_CAT_TEMPLATE[cat]})"
         else:
@@ -319,12 +319,12 @@ def _render_card(diff):
             f'<span class="heb new-side">{new_html}</span>'
             "</div>"
         )
-    for note in diff.get("nusach_notes", []):
-        body_html = nusach_body_to_html(note)
+    for note in diff.get("docnote_notes", []):
+        body_html = docnote_body_to_html(note)
         lines.append(
-            '<div class="nusach-note">'
-            '<span class="nusach-label">נוסח</span>'
-            f'<div class="nusach-body">{body_html}</div>'
+            '<div class="docnote-note">'
+            '<span class="docnote-label">נוסח</span>'
+            f'<div class="docnote-body">{body_html}</div>'
             "</div>"
         )
     lines.append("</div>")
@@ -385,3 +385,4 @@ def write_report(diffs, old_rev, new_rev, out_path, old_date="", new_date=""):
     with open(out_path, "w", encoding="utf-8") as f:
         f.write(html)
     return total
+

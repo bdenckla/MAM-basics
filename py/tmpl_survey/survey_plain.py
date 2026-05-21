@@ -13,10 +13,10 @@ from mb_cmn import kq_special_templates as kqst
 
 _MINIROW = collections.namedtuple("_MINIROW", "CP, DP, EP")
 _PSV_PSN_CATEGORIES = {"0": "0 (pre-chapter)", str("תתת"): "2 (post-chapter)"}
-_NUSACH_ARG2_CONTEXT = ("נוסח", "2")
-_NUSACH_SLOTS = {"1", "2"}
-_NUSACH_TEMPLATE_SYMBOL = "נוסח"
-_NUSACH_SYMBOL_BY_SLOT = {
+_DOCNOTE_ARG2_CONTEXT = ("נוסח", "2")
+_DOCNOTE_SLOTS = {"1", "2"}
+_DOCNOTE_TEMPLATE_SYMBOL = "נוסח"
+_DOCNOTE_SYMBOL_BY_SLOT = {
     "1": "נוסח@1",
     "2": "נוסח@2",
 }
@@ -101,19 +101,19 @@ def _record_tmpl(accum, wtel_rec, wtel_subtype):
 
 
 def _child_stack_symbols(parent_subtype, arg_key):
-    if parent_subtype != _NUSACH_TEMPLATE_SYMBOL:
+    if parent_subtype != _DOCNOTE_TEMPLATE_SYMBOL:
         return (parent_subtype,)
-    return (_NUSACH_TEMPLATE_SYMBOL, _child_stack_symbol(parent_subtype, arg_key))
+    return (_DOCNOTE_TEMPLATE_SYMBOL, _child_stack_symbol(parent_subtype, arg_key))
 
 
 def _child_stack_symbol(parent_subtype, arg_key):
-    if parent_subtype != _NUSACH_TEMPLATE_SYMBOL:
+    if parent_subtype != _DOCNOTE_TEMPLATE_SYMBOL:
         return parent_subtype
     slot = str(arg_key)
     assert (
-        slot in _NUSACH_SLOTS
-    ), f"Unexpected נוסח arg slot {slot!r}; expected one of {sorted(_NUSACH_SLOTS)}"
-    return _NUSACH_SYMBOL_BY_SLOT[slot]
+        slot in _DOCNOTE_SLOTS
+    ), f"Unexpected נוסח arg slot {slot!r}; expected one of {sorted(_DOCNOTE_SLOTS)}"
+    return _DOCNOTE_SYMBOL_BY_SLOT[slot]
 
 
 def _record_parent_context(accum, parent_subtype, arg_key, arg_wtel):
@@ -127,11 +127,11 @@ def _record_parent_context(accum, parent_subtype, arg_key, arg_wtel):
     return True
 
 
-def _nusach_arg2_only_leaf_templates(accum):
+def _docnote_arg2_only_leaf_templates(accum):
     return {
         tmpl
         for tmpl, contexts in accum["tmpl_parent_contexts"].items()
-        if contexts == {_NUSACH_ARG2_CONTEXT}
+        if contexts == {_DOCNOTE_ARG2_CONTEXT}
         and not accum["tmpl_has_tmpl_children"][tmpl]
     }
 
@@ -286,7 +286,7 @@ def _do_a_book24(bk24id, accum):
 def survey(case_rank_maps):
     """Survey the use of templates in MAM plain.
 
-    Returns (result_dict, raw_stack_counts, nusach_arg2_only_leaf_templates).
+    Returns (result_dict, raw_stack_counts, docnote_arg2_only_leaf_templates).
     """
     accum = {
         "mpasuq": [],
@@ -313,4 +313,5 @@ def survey(case_rank_maps):
         "stack_counts": _flatten_stack_counts(accum),
         "arg_counts": _flatten_arg_counts(accum),
     }
-    return result, accum["stack_counts"], _nusach_arg2_only_leaf_templates(accum)
+    return result, accum["stack_counts"], _docnote_arg2_only_leaf_templates(accum)
+

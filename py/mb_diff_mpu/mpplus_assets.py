@@ -22,7 +22,7 @@ CATEGORY_INFO = {
     "vowel-change": ("Vowel change", "#6a1b9a"),
     "legarmeih-paseq": ("Legarmeh / paseq", "#ad1457"),
     "maqaf-afor": ("Gray maqaf", "#78909c"),
-    "dehi-removal": ("Dehi removal", "#c62828"),
+    "deḥi-removal": ("Dehi removal", "#c62828"),
     "tsinnor-removal": ("Tsinnor removal", "#0097a7"),
     "template-change": ("Template change", "#795548"),
     "misc": ("Miscellaneous", "#37474f"),
@@ -114,19 +114,19 @@ table.summary tr.total-row { font-weight: 600; cursor: default; }
 .change-desc { font-size: .85rem; color: #555; }
 .book-header { margin-top: 1.2rem; margin-bottom: .3rem; }
 .book-header.hidden { display: none; }
-.nusach-note {
+.docnote-note {
   border-left: 3px solid #f9a825;
   background: #fffde7;
   padding: .3rem .6rem;
   margin-top: .3rem;
   border-radius: 4px;
 }
-.nusach-label {
+.docnote-label {
   font-weight: 600;
   color: #f57f17;
   font-size: .8rem;
 }
-.nusach-body {
+.docnote-body {
   direction: rtl;
   unicode-bidi: embed;
   margin-top: .1rem;
@@ -284,3 +284,4 @@ def write_shared_assets(out_dir):
             with open(path, "w", encoding="utf-8") as f:
                 f.write(content)
     _copy_woff2(out_dir)
+

@@ -9,7 +9,7 @@ from mb_misc import mb_html
 _claim_def = _claims_core.claim_def
 
 _KQ_SPECIAL_DOC = "mpplus_kq_special.html"
-_KAFUL_DOC = "mpplus_kaful.html"
+_DUALCANT_DOC = "mpplus_dualcant.html"
 _TWO_ACCENTS_OF_QUPO_ABBREV = "שני טעמים ..."
 
 KQ_ROWS = [
@@ -174,7 +174,7 @@ _ACCENT_TEMPLATE_NAMES_BY_ROW = (
                 "Dual-trope span. See ",
                 author.anchor_h(
                     "its dedicated page",
-                    _KAFUL_DOC,
+                    _DUALCANT_DOC,
                 ),
                 ".",
             ],

@@ -193,7 +193,7 @@ def has_varika(wtel):
     return hpo.VARIKA in flatten_text(wtel)
 
 
-def find_nusach_tmpls(wt_seq):
+def find_docnote_tmpls(wt_seq):
     """Recursively find all נוסח templates in a wikitext sequence."""
     results = []
     for wtel in wt_seq:
@@ -203,7 +203,8 @@ def find_nusach_tmpls(wt_seq):
             elif wtp.is_template(wtel):
                 for arg in wtp.template_param_vals(wtel):
                     if isinstance(arg, list):
-                        results.extend(find_nusach_tmpls(arg))
+                        results.extend(find_docnote_tmpls(arg))
         elif isinstance(wtel, list):
-            results.extend(find_nusach_tmpls(wtel))
+            results.extend(find_docnote_tmpls(wtel))
     return results
+

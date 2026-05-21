@@ -7,17 +7,17 @@ from author_util import author
 _claim_def = _claims_core.claim_def
 
 _GOOD_ENDING_TMPL_DOC = "mpplus_good_ending_tmpl.html"
-_NUSACH_DOC = "mpplus_nusach.html"
+_DOCNOTE_DOC = "mpplus_docnote.html"
 
 
-def _nusach_row(nusach_doc):
+def _docnote_row(docnote_doc):
     return [
         author.hbo("נוסח"),
         [
             "Documentation template. See ",
             author.anchor_h(
                 "its dedicated page",
-                nusach_doc,
+                docnote_doc,
             ),
             ".",
         ],
@@ -80,7 +80,7 @@ OTHER_ROWS = [
         author.hbo("מ:כל קמץ קטן מרכא"),
         "Font-rendering workaround for the word כל with $qamats qatan and $merkha in Taamey Frank CLM (2 occurrences: Ps 35:10, Prov 19:7).",
     ],
-    _nusach_row(_NUSACH_DOC),
+    _docnote_row(_DOCNOTE_DOC),
     [
         author.hbo("מודגש"),
         "Bold styling within the notes argument (param 2) of נוסח.",
@@ -91,11 +91,11 @@ OTHER_ROWS = [
     ],
 ]
 
-MODAG_ONLY_IN_NUSACH_PARAM2 = (
+MODAG_ONLY_IN_DOCNOTE_PARAM2 = (
     "Template מודגש appears only within the notes argument (param 2) of נוסח."
 )
 
-SH_ONLY_IN_NUSACH_PARAM2 = (
+SH_ONLY_IN_DOCNOTE_PARAM2 = (
     "Template ש appears only within the notes argument (param 2) of נוסח."
 )
 
@@ -140,8 +140,8 @@ CLAIM_DEFS = (
         },
     ),
     _claim_def(
-        "mp.both.templates.modag.only-in-nusach-param2",
-        MODAG_ONLY_IN_NUSACH_PARAM2,
+        "mp.both.templates.modag.only-in-docnote-param2",
+        MODAG_ONLY_IN_DOCNOTE_PARAM2,
         kind="struct",
         subject="mp:both",
         data={
@@ -151,8 +151,8 @@ CLAIM_DEFS = (
         },
     ),
     _claim_def(
-        "mp.both.templates.sh.only-in-nusach-param2",
-        SH_ONLY_IN_NUSACH_PARAM2,
+        "mp.both.templates.sh.only-in-docnote-param2",
+        SH_ONLY_IN_DOCNOTE_PARAM2,
         kind="struct",
         subject="mp:both",
         data={
@@ -213,9 +213,9 @@ def whitespace_rows_shared():
     ]
 
 
-def other_rows_shared_core(*, nusach_doc=_NUSACH_DOC):
+def other_rows_shared_core(*, docnote_doc=_DOCNOTE_DOC):
     return [
-        _nusach_row(nusach_doc),
+        _docnote_row(docnote_doc),
         OTHER_ROW_BY_TEMPLATE["מודגש"],
         OTHER_ROW_BY_TEMPLATE["ש"],
     ]
@@ -235,3 +235,4 @@ def other_rows_plain_extras(*, good_ending_doc=_GOOD_ENDING_TMPL_DOC):
         OTHER_ROW_BY_TEMPLATE["רווח בסוף שורה"],
         OTHER_ROW_BY_TEMPLATE["מ:כל קמץ קטן מרכא"],
     ]
+

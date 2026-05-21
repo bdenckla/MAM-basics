@@ -125,7 +125,7 @@ def verify_mp_plus_verse_d_col_semantics(record: ClaimRecord, ctx: Context) -> N
     params; the נוסח wrapper itself is what makes the entry interesting.
     """
     label_tmpl = record.data["label_template"]
-    nusach_wrapper = record.data["nusach_wrapper"]
+    docnote_wrapper = record.data["docnote_wrapper"]
     named_params = frozenset(record.data["named_params"])
     saw_empty = False
     saw_direct = False
@@ -145,15 +145,15 @@ def verify_mp_plus_verse_d_col_semantics(record: ClaimRecord, ctx: Context) -> N
             isinstance(item, dict) and "tmpl_name" in item
         ), f"D-column item is not a template object: {item!r}"
         top_name = item["tmpl_name"]
-        assert top_name in (label_tmpl, nusach_wrapper), (
+        assert top_name in (label_tmpl, docnote_wrapper), (
             f"D-column top-level template {top_name!r} is neither"
-            f" {label_tmpl!r} nor {nusach_wrapper!r}: {item!r}"
+            f" {label_tmpl!r} nor {docnote_wrapper!r}: {item!r}"
         )
-        if top_name == nusach_wrapper:
+        if top_name == docnote_wrapper:
             saw_wrapped = True
             assert any(
                 t["tmpl_name"] == label_tmpl for t in iter_template_objects(item)
-            ), f"{nusach_wrapper!r}-wrapped D column missing {label_tmpl!r}: {item!r}"
+            ), f"{docnote_wrapper!r}-wrapped D column missing {label_tmpl!r}: {item!r}"
         else:
             saw_direct = True
             label_params = item.get("tmpl_params", {})
@@ -239,7 +239,7 @@ def _node_contains_key(node, key: str) -> bool:
     return False
 
 
-def verify_mp_plus_good_ending_plus_nested_in_nusach(
+def verify_mp_plus_good_ending_plus_nested_in_docnote(
     record: ClaimRecord, ctx: Context
 ) -> None:
     """Non-null good_ending_plus values are נוסח templates nesting מ:סיום בטוב as arg1."""
@@ -736,12 +736,12 @@ def verify_mp_plus_example_kq(record: ClaimRecord, ctx: Context) -> None:
     _assert_tmpl_object_in_corpus(record, ctx)
 
 
-def verify_mp_plus_example_nusach(record: ClaimRecord, ctx: Context) -> None:
-    """The nusach example template object occurs at least once in the plus corpus."""
+def verify_mp_plus_example_docnote(record: ClaimRecord, ctx: Context) -> None:
+    """The docnote example template object occurs at least once in the plus corpus."""
     _assert_tmpl_object_in_corpus(record, ctx)
 
 
-def verify_mp_plus_example_kaful_template_object(
+def verify_mp_plus_example_dualcant_template_object(
     record: ClaimRecord, ctx: Context
 ) -> None:
     """Every plus מ:כפול instance uses only observed value types for key params."""
@@ -749,12 +749,12 @@ def verify_mp_plus_example_kaful_template_object(
     param_names = record.data["tmpl_param_names"]
     observed_type_pattern = {pattern_match.ANY_STRING_DICT_OR_LIST_MARKER_KEY: True}
 
-    saw_kaful = False
+    saw_dualcant = False
     for tmpl in iter_all_template_objects(ctx.corpus):
         if tmpl["tmpl_name"] != tmpl_name:
             continue
 
-        saw_kaful = True
+        saw_dualcant = True
         params = tmpl["tmpl_params"]
         assert isinstance(params, dict), f"tmpl_params is not a dict: {params!r}"
 
@@ -768,7 +768,7 @@ def verify_mp_plus_example_kaful_template_object(
                 f"{type(value).__name__}: {value!r}"
             )
 
-    assert saw_kaful, f"plus corpus has no template {tmpl_name!r}"
+    assert saw_dualcant, f"plus corpus has no template {tmpl_name!r}"
 
 
 def verify_mp_plus_example_header_job(record: ClaimRecord, ctx: Context) -> None:
@@ -842,14 +842,14 @@ def verify_mp_plain_example_kq(record: ClaimRecord, ctx: Context) -> None:
     _assert_stmpl_object_in_plain_corpus(record, ctx)
 
 
-def verify_mp_plain_example_nusach(record: ClaimRecord, ctx: Context) -> None:
-    """The nusach example stmpl object occurs at least once in the plain corpus."""
+def verify_mp_plain_example_docnote(record: ClaimRecord, ctx: Context) -> None:
+    """The docnote example stmpl object occurs at least once in the plain corpus."""
     _assert_stmpl_object_in_plain_corpus(record, ctx)
 
 
 REGISTRY: dict[str, VerifierFn] = {
     "mp.plain.example.kq": verify_mp_plain_example_kq,
-    "mp.plain.example.nusach": verify_mp_plain_example_nusach,
+    "mp.plain.example.docnote": verify_mp_plain_example_docnote,
     "mp.plus.book39.fields": verify_mp_plus_book39_fields,
     "mp.plus.book39.good-ending-plus.nonnull-book39s": verify_mp_plus_book39_good_ending_plus_nonnull_book39s,
     "mp.plus.chapter.keyed-by-verse-num": verify_mp_plus_chapter_keyed_by_verse_num,
@@ -860,12 +860,12 @@ REGISTRY: dict[str, VerifierFn] = {
     "mp.plus.example.d-col-first": verify_mp_plus_example_d_col_first,
     "mp.plus.example.header-job": verify_mp_plus_example_header_job,
     "mp.plus.example.header-samuel": verify_mp_plus_example_header_samuel,
-    "mp.plus.example.kaful-template-object": verify_mp_plus_example_kaful_template_object,
+    "mp.plus.example.dualcant-template-object": verify_mp_plus_example_dualcant_template_object,
     "mp.plus.example.kq": verify_mp_plus_example_kq,
     "mp.plus.example.nested-tmpl": verify_mp_plus_example_nested_tmpl,
-    "mp.plus.example.nusach": verify_mp_plus_example_nusach,
+    "mp.plus.example.docnote": verify_mp_plus_example_docnote,
     "mp.plus.example.top-level-skel": verify_mp_plus_example_top_level_skel,
-    "mp.plus.good-ending-plus.nested-in-nusach": verify_mp_plus_good_ending_plus_nested_in_nusach,
+    "mp.plus.good-ending-plus.nested-in-docnote": verify_mp_plus_good_ending_plus_nested_in_docnote,
     "mp.plus.header.fields": verify_mp_plus_header_fields,
     "mp.plus.kq-special.semantic-shape": verify_mp_plus_kq_special_semantic_shape,
     "mp.plus.template.aot.required-params": verify_mp_plus_template_aot_required_params,
@@ -881,3 +881,4 @@ REGISTRY: dict[str, VerifierFn] = {
     "mp.plus.verse.e-col.semantics": verify_mp_plus_verse_e_col_semantics,
     "mp.plus.verse.is-3-tuple": verify_mp_plus_verse_is_3_tuple,
 }
+

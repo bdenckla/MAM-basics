@@ -87,7 +87,7 @@ class TestTmplSurveyNestingNormalForm(unittest.TestCase):
         self.assertIn("מ:דחי (rank 4) -> מ:קמץ (rank 3)", str(ctx.exception))
         self.assertIn("relation=descending", str(ctx.exception))
 
-    def test_treats_nusach_suffixes_as_ranked_nusach(self):
+    def test_treats_docnote_suffixes_as_ranked_docnote(self):
         stack_counts = {
             ("מ:דחי", "E/מ:כפול/נוסח@1/מ:קמץ"): 2,
             ("מ:דחי", "E/מ:כפול/נוסח@2/מ:קמץ"): 3,
@@ -98,7 +98,7 @@ class TestTmplSurveyNestingNormalForm(unittest.TestCase):
             rank_map=_default_normal_form_rank_map(),
         )
 
-    def test_allows_explicit_nusach_parent_followed_by_slot(self):
+    def test_allows_explicit_docnote_parent_followed_by_slot(self):
         stack_counts = {
             ("מ:דחי", "E/מ:כפול/נוסח/נוסח@1/מ:קמץ"): 2,
             ("מ:דחי", "D/מ:כפול/נוסח/נוסח@2/מ:קמץ"): 3,
@@ -295,7 +295,7 @@ class TestTmplSurveyNestingNormalForm(unittest.TestCase):
             summary,
         )
 
-    def test_summarize_rank_coverage_counts_drops_nusach_slots_early(self):
+    def test_summarize_rank_coverage_counts_drops_docnote_slots_early(self):
         rank_map = nnf.build_rank_map(
             (
                 frozenset({"נוסח"}),
@@ -521,3 +521,4 @@ class TestTmplSurveyNestingNormalForm(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
