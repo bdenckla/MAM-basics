@@ -86,7 +86,7 @@ _X118_CONT_PARA = """In addition to $tsinnor and $tsinnorit,
 there are three other pairs of accents for which
 $CTR declines to avail itself
 of distinctions that were available in Unicode 2.0:""".replace("\n", " ")
-X118_TIPEHA = "$TIPEHA", "$dexi (!)", "$tarxa$hs_sl_hs$tipeha"
+X118_TIPEHA = "$TIPEHA", "$dexi (!)", "$tarxa$hs_sl_hs$tipexa"
 X118_GERESH = "$GERESH", "$germuq (!)", "$geresh"
 X118_YETIV = "$YETIV", "$yetiv", "$mahapakh (!)"
 _X118_LIST_ITEMS_TIP_GER_YET = [

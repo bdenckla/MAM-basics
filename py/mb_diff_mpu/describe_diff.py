@@ -232,7 +232,7 @@ def _describe_diff(old_text, new_text, pred, name_fn, poetic=False):
 
     pred: function that identifies the character type (accent or mark)
     name_fn: function that returns the human name for the character
-    poetic: if True, use poetic accent names (e.g. tarha for tipeha)
+    poetic: if True, use poetic accent names (e.g. tarha for tipeḥa)
     """
     if poetic and name_fn is accent_name:
         _name = lambda ch: accent_name(ch, poetic=True)

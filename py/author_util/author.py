@@ -505,7 +505,7 @@ _ROMANIZED = {
     "$tav": "tav",
     "$segol": "segol",
     "$hehe": "he",  # hehe = Hebrew [letter] he (avoids clash with English "he")
-    "$tipeha": "tipeḥa",
+    "$tipexa": "tipeḥa",
     "$xolam": "ḥolam",
     "$xolam_xaser_xx": "ḥ. ḥ.",  # a bit like germuq_gm
     "$malei": "malei",

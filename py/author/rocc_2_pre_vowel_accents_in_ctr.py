@@ -202,7 +202,7 @@ distinguishes the following prepositives from their impositive “lookalikes”
 by the logical order of an accent code point relative to that vowel:""".replace(
     "\n", " "
 )
-_CODES_BOTH_TIPEHA = "$TIPEHA", "$dexi (!)", "$tarxa$hs_sl_hs$tipeha"
+_CODES_BOTH_TIPEHA = "$TIPEHA", "$dexi (!)", "$tarxa$hs_sl_hs$tipexa"
 _CODES_BOTH_GERESH = "$GERESH", "$germuq (!)", "$geresh"
 _CODES_BOTH_YETIV = "$YETIV", "$yetiv", "$mahapakh (!)"
 _CONT_02_UL = [
