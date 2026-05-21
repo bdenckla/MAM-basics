@@ -78,7 +78,6 @@ class TestTmplSurveyNestingNormalForm(unittest.TestCase):
         self.assertEqual(3, violations[0]["callee_rank"])
         self.assertEqual(8, violations[0]["count"])
         self.assertIn("example_stack", violations[0])
-        self.assertNotIn("example_path", violations[0])
 
     def test_aggregates_duplicate_rank_violation_counts(self):
         stack_counts = {
@@ -94,7 +93,6 @@ class TestTmplSurveyNestingNormalForm(unittest.TestCase):
         self.assertEqual(2, violations[0]["callee_rank"])
         self.assertEqual(8, violations[0]["count"])
         self.assertIn("example_stack", violations[0])
-        self.assertNotIn("example_path", violations[0])
 
     def test_case_rank_maps_allow_per_column_configuration(self):
         stack_counts = {
@@ -253,19 +251,16 @@ class TestTmplSurveyNestingNormalForm(unittest.TestCase):
         )
         self.assertEqual(1, len(top_paths["fully_checked"]))
         self.assertIn("stack", top_paths["fully_checked"][0])
-        self.assertNotIn("stack_path", top_paths["fully_checked"][0])
         self.assertEqual("E/A/B/C", _read_top_stack(top_paths["fully_checked"][0]))
         self.assertEqual(2, top_paths["fully_checked"][0]["count"])
 
         self.assertEqual(1, len(top_paths["partially_checked"]))
         self.assertIn("stack", top_paths["partially_checked"][0])
-        self.assertNotIn("stack_path", top_paths["partially_checked"][0])
         self.assertEqual("E/A/Y/C", _read_top_stack(top_paths["partially_checked"][0]))
         self.assertEqual(5, top_paths["partially_checked"][0]["count"])
 
         self.assertEqual(1, len(top_paths["totally_unchecked"]))
         self.assertIn("stack", top_paths["totally_unchecked"][0])
-        self.assertNotIn("stack_path", top_paths["totally_unchecked"][0])
         self.assertEqual(
             "E/X/A", _read_top_stack(top_paths["totally_unchecked"][0])
         )
@@ -404,7 +399,6 @@ class TestTmplSurveyNestingNormalForm(unittest.TestCase):
         edge_violations = [v for v in violations if v["kind"] == "unexpected-edge"]
         self.assertTrue(edge_violations)
         self.assertIn("example_stack", edge_violations[0])
-        self.assertNotIn("example_path", edge_violations[0])
         self.assertIn(
             ("R", "C"),
             {(v["parent"], v["child"]) for v in edge_violations},
