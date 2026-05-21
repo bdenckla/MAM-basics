@@ -45,10 +45,10 @@ class TestGraphProvenance(unittest.TestCase):
                 str(stem),
                 generator_file=__file__,
             )
-            dualcant_text = (Path(tmp_dir) / "focused-kpvl-call-graph.dot").read_text(
+            dualcant_text = (Path(tmp_dir) / "focused-dualcant-call-graph.dot").read_text(
                 encoding="utf-8"
             )
-            docnote_text = (Path(tmp_dir) / "focused-nvox-call-graph.dot").read_text(
+            docnote_text = (Path(tmp_dir) / "focused-docnote-call-graph.dot").read_text(
                 encoding="utf-8"
             )
 

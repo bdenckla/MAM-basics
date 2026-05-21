@@ -11,11 +11,11 @@ class TestTmplSurveyFocusedTargets(unittest.TestCase):
     def test_focused_targets_include_trial_templates(self):
         got = [(x.tmpl_name, x.slug, x.collapse) for x in survey_dot._FOCUSED_TARGETS]
         expected = [
-            ("מ:כפול", "kpvl", False),
-            ("נוסח", "nvox", True),
-            ("מ:פסוק", "povq", False),
+            ("מ:כפול", "dualcant", False),
+            ("נוסח", "docnote", True),
+            ("מ:פסוק", "mpasuq", False),
             ("כו״ק", "kvq", False),
-            ("מ:דחי", "dxy", False),
+            ("מ:דחי", "dexi", False),
         ]
         self.assertEqual(expected, got)
 
@@ -67,7 +67,7 @@ class TestTmplSurveyFocusedTargets(unittest.TestCase):
         self.assertEqual(3, edges[("נוסח@1", "מ:דחי")])
         self.assertEqual(5, edges[("נוסח@2", "מ:דחי")])
 
-    def test_focused_dxy_graph_excludes_cross_stack_transitive_leakage(self):
+    def test_focused_dexi_graph_excludes_cross_stack_transitive_leakage(self):
         stack_counts = {
             ("נוסח", "C"): 2,
             ("נוסח", "D"): 3,
@@ -86,8 +86,8 @@ class TestTmplSurveyFocusedTargets(unittest.TestCase):
             finally:
                 survey_dot.render_svg = orig_render_svg
 
-            dxy_dot_path = f"{stem}-dxy-call-graph.dot"
-            with open(dxy_dot_path, encoding="utf-8") as dot_fp:
+            dexi_dot_path = f"{stem}-dexi-call-graph.dot"
+            with open(dexi_dot_path, encoding="utf-8") as dot_fp:
                 dot_text = dot_fp.read()
 
         self.assertIn('"E" -> "מ:דחי" [label="31"]', dot_text)
@@ -115,7 +115,7 @@ class TestTmplSurveyFocusedTargets(unittest.TestCase):
             finally:
                 survey_dot.render_svg = orig_render_svg
 
-            docnote_dot_path = f"{stem}-nvox-call-graph.dot"
+            docnote_dot_path = f"{stem}-docnote-call-graph.dot"
             with open(docnote_dot_path, encoding="utf-8") as dot_fp:
                 dot_text = dot_fp.read()
 
@@ -146,7 +146,7 @@ class TestTmplSurveyFocusedTargets(unittest.TestCase):
             finally:
                 survey_dot.render_svg = orig_render_svg
 
-            mpasuq_dot_path = f"{stem}-povq-call-graph.dot"
+            mpasuq_dot_path = f"{stem}-mpasuq-call-graph.dot"
             with open(mpasuq_dot_path, encoding="utf-8") as dot_fp:
                 dot_text = dot_fp.read()
 
@@ -174,7 +174,7 @@ class TestTmplSurveyFocusedTargets(unittest.TestCase):
             finally:
                 survey_dot.render_svg = orig_render_svg
 
-            docnote_dot_path = f"{stem}-nvox-call-graph.dot"
+            docnote_dot_path = f"{stem}-docnote-call-graph.dot"
             with open(docnote_dot_path, encoding="utf-8") as dot_fp:
                 dot_text = dot_fp.read()
 
@@ -199,8 +199,8 @@ class TestTmplSurveyFocusedTargets(unittest.TestCase):
             finally:
                 survey_dot.render_svg = orig_render_svg
 
-            dxy_dot_path = f"{stem}-dxy-call-graph.dot"
-            with open(dxy_dot_path, encoding="utf-8") as dot_fp:
+            dexi_dot_path = f"{stem}-dexi-call-graph.dot"
+            with open(dexi_dot_path, encoding="utf-8") as dot_fp:
                 dot_text = dot_fp.read()
 
         self.assertIn(

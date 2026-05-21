@@ -15,8 +15,8 @@ from author_util.claim import ClaimCollection
 _FNAME = "mpplus-template-call-graphs.html"
 _TITLE = "Plus template call graphs"
 _SVG_FULL = "../svg/plus-call-graph.svg"
-_SVG_KPVL = "../svg/plus-kpvl-call-graph.svg"
-_SVG_NVOX = "../svg/plus-nvox-call-graph.svg"
+_SVG_DUALCANT = "../svg/plus-dualcant-call-graph.svg"
+_SVG_DOCNOTE = "../svg/plus-docnote-call-graph.svg"
 
 
 def gen_html_file(tdm_ch, claims: ClaimCollection):
@@ -43,9 +43,9 @@ def build_body(*, claims: ClaimCollection):
         mb_html.heading_level_2("Full call graph"),
         _svg_object(_SVG_FULL, "Full call graph (SVG not supported)"),
         mb_html.heading_level_2("Focused call graph: dualcant"),
-        _svg_object(_SVG_KPVL, "Dualcant call graph (SVG not supported)"),
+        _svg_object(_SVG_DUALCANT, "Dualcant call graph (SVG not supported)"),
         mb_html.heading_level_2("Focused call graph: docnote"),
-        _svg_object(_SVG_NVOX, "Docnote call graph (SVG not supported)"),
+        _svg_object(_SVG_DOCNOTE, "Docnote call graph (SVG not supported)"),
     ]
 
 
