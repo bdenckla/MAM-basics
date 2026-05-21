@@ -32,7 +32,7 @@ RankGroups = Sequence[tuple[str, Iterable[str]]]
 _DEFAULT_RANK_GROUPS: tuple[tuple[str, frozenset[str]], ...] = (
     ("rank-1", frozenset({"מ:כפול"})),
     ("rank-2", frozenset({"נוסח"})),
-    ("rank-3", frozenset({"כו״ק", "כתיב ולא קרי", "קרי ולא כתיב"})),
+    ("rank-3", frozenset({"כו״ק", "כתיב ולא קרי", "קרי ולא כתיב", "מ:כו״ק מיוחד", "מ:קו״כ-אם-2", "קו״כ"})),
     ("rank-4", frozenset({"מ:קמץ"})),
     ("rank-5", frozenset({"מ:דחי"})),
     ("rank-6", frozenset({"מ:אות-מיוחדת-במילה"})),
@@ -46,6 +46,7 @@ _DEFAULT_RANK_GROUPS: tuple[tuple[str, frozenset[str]], ...] = (
                 "מ:אות-ק",
                 "מ:אות-ג",
                 "מ:אות תלויה",
+                "ש",
             }
         ),
     ),

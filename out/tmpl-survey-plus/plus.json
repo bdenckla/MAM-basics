@@ -1142,27 +1142,32 @@
   ],
   "normal_order_cov_counts_by_case": {
     "plus-C": {
-      "fully_checked": 0,
+      "fully_checked": 14,
       "partially_checked": 0,
-      "totally_unchecked": 242,
+      "totally_unchecked": 228,
       "total": 242
     },
     "plus-D": {
-      "fully_checked": 0,
+      "fully_checked": 1,
       "partially_checked": 0,
-      "totally_unchecked": 568,
+      "totally_unchecked": 567,
       "total": 568
     },
     "plus-E": {
-      "fully_checked": 732,
-      "partially_checked": 59,
-      "totally_unchecked": 3390,
+      "fully_checked": 4005,
+      "partially_checked": 1,
+      "totally_unchecked": 175,
       "total": 4181
     }
   },
   "normal_order_cov_top_paths_by_case": {
     "plus-C": {
-      "fully_checked": [],
+      "fully_checked": [
+        {
+          "stack": "C/נוסח/נוסח@2/ש",
+          "count": 14
+        }
+      ],
       "partially_checked": [],
       "totally_unchecked": [
         {
@@ -1179,10 +1184,6 @@
         },
         {
           "stack": "C/נוסח/נוסח@1/ססס",
-          "count": 14
-        },
-        {
-          "stack": "C/נוסח/נוסח@2/ש",
           "count": 14
         },
         {
@@ -1204,11 +1205,20 @@
         {
           "stack": "C/נוסח/נוסח@1/מ:אין פרשה בתחילת פרק בספרי אמ״ת",
           "count": 1
+        },
+        {
+          "stack": "C/נוסח/נוסח@1/פפפ",
+          "count": 1
         }
       ]
     },
     "plus-D": {
-      "fully_checked": [],
+      "fully_checked": [
+        {
+          "stack": "D/נוסח/נוסח@2/ש",
+          "count": 1
+        }
+      ],
       "partially_checked": [],
       "totally_unchecked": [
         {
@@ -1222,18 +1232,22 @@
         {
           "stack": "D/נוסח/נוסח@1/מ:פסוק/מ:עלייה",
           "count": 11
-        },
-        {
-          "stack": "D/נוסח/נוסח@2/ש",
-          "count": 1
         }
       ]
     },
     "plus-E": {
       "fully_checked": [
         {
+          "stack": "E/נוסח/נוסח@2/ש",
+          "count": 3215
+        },
+        {
           "stack": "E/נוסח/נוסח@1/כו״ק",
           "count": 143
+        },
+        {
+          "stack": "E/מ:כפול/נוסח/נוסח@2/ש",
+          "count": 58
         },
         {
           "stack": "E/נוסח/נוסח@1/מ:לגרמיה-2",
@@ -1262,31 +1276,15 @@
         {
           "stack": "E/נוסח/נוסח@2/מ:אות-מיוחדת-במילה/מ:אות-ג",
           "count": 29
-        },
-        {
-          "stack": "E/נוסח/נוסח@1/מ:קמץ",
-          "count": 27
-        },
-        {
-          "stack": "E/נוסח/נוסח@1/מ:אות-מיוחדת-במילה/מ:אות-ג",
-          "count": 23
         }
       ],
       "partially_checked": [
-        {
-          "stack": "E/מ:כפול/נוסח/נוסח@2/ש",
-          "count": 58
-        },
         {
           "stack": "E/מ:כפול/נוסח/נוסח@1/פפ",
           "count": 1
         }
       ],
       "totally_unchecked": [
-        {
-          "stack": "E/נוסח/נוסח@2/ש",
-          "count": 3215
-        },
         {
           "stack": "E/נוסח/נוסח@1/ר3",
           "count": 47
@@ -1321,6 +1319,10 @@
         },
         {
           "stack": "E/נוסח/נוסח@1/ססס",
+          "count": 3
+        },
+        {
+          "stack": "E/נוסח/נוסח@2/מ:קישור פנימי בהערה",
           "count": 3
         }
       ]

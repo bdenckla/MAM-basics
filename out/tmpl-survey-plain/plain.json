@@ -14927,27 +14927,32 @@
   ],
   "normal_order_cov_counts_by_case": {
     "plain-C": {
-      "fully_checked": 0,
+      "fully_checked": 14,
       "partially_checked": 0,
-      "totally_unchecked": 244,
+      "totally_unchecked": 230,
       "total": 244
     },
     "plain-D": {
-      "fully_checked": 0,
+      "fully_checked": 1,
       "partially_checked": 0,
-      "totally_unchecked": 568,
+      "totally_unchecked": 567,
       "total": 568
     },
     "plain-E": {
-      "fully_checked": 539,
-      "partially_checked": 81,
-      "totally_unchecked": 3500,
+      "fully_checked": 3881,
+      "partially_checked": 18,
+      "totally_unchecked": 221,
       "total": 4120
     }
   },
   "normal_order_cov_top_paths_by_case": {
     "plain-C": {
-      "fully_checked": [],
+      "fully_checked": [
+        {
+          "stack": "C/נוסח/נוסח@2/ש",
+          "count": 14
+        }
+      ],
       "partially_checked": [],
       "totally_unchecked": [
         {
@@ -14964,10 +14969,6 @@
         },
         {
           "stack": "C/נוסח/נוסח@1/ססס",
-          "count": 14
-        },
-        {
-          "stack": "C/נוסח/נוסח@2/ש",
           "count": 14
         },
         {
@@ -14989,11 +14990,20 @@
         {
           "stack": "C/נוסח/נוסח@1/מ:אין פרשה בתחילת פרק בספרי אמ״ת",
           "count": 1
+        },
+        {
+          "stack": "C/נוסח/נוסח@1/פפפ",
+          "count": 1
         }
       ]
     },
     "plain-D": {
-      "fully_checked": [],
+      "fully_checked": [
+        {
+          "stack": "D/נוסח/נוסח@2/ש",
+          "count": 1
+        }
+      ],
       "partially_checked": [],
       "totally_unchecked": [
         {
@@ -15007,18 +15017,22 @@
         {
           "stack": "D/נוסח/נוסח@1/מ:פסוק/מ:עלייה",
           "count": 11
-        },
-        {
-          "stack": "D/נוסח/נוסח@2/ש",
-          "count": 1
         }
       ]
     },
     "plain-E": {
       "fully_checked": [
         {
+          "stack": "E/נוסח/נוסח@2/ש",
+          "count": 3215
+        },
+        {
           "stack": "E/נוסח/נוסח@1/כו״ק",
           "count": 143
+        },
+        {
+          "stack": "E/מ:כפול/נוסח/נוסח@2/ש",
+          "count": 58
         },
         {
           "stack": "E/נוסח/נוסח@1/מ:לגרמיה-2",
@@ -15047,21 +15061,9 @@
         {
           "stack": "E/נוסח/נוסח@1/מ:אות-ג",
           "count": 25
-        },
-        {
-          "stack": "E/נוסח/נוסח@1/מ:אות-ק",
-          "count": 21
-        },
-        {
-          "stack": "E/נוסח/נוסח@1/מ:מקף אפור",
-          "count": 21
         }
       ],
       "partially_checked": [
-        {
-          "stack": "E/מ:כפול/נוסח/נוסח@2/ש",
-          "count": 58
-        },
         {
           "stack": "E/מ:כפול/נוסח/נוסח@1/מ:טעם ומתג באות אחת",
           "count": 9
@@ -15075,14 +15077,6 @@
           "count": 3
         },
         {
-          "stack": "E/נוסח/נוסח@1/מ:כו״ק מיוחד/מ:פסק",
-          "count": 3
-        },
-        {
-          "stack": "E/נוסח/נוסח@1/מ:קו״כ-אם-2/מ:קמץ",
-          "count": 2
-        },
-        {
           "stack": "E/נוסח/נוסח@1/מ:קמץ/מ:כל קמץ קטן מרכא",
           "count": 2
         },
@@ -15092,10 +15086,6 @@
         }
       ],
       "totally_unchecked": [
-        {
-          "stack": "E/נוסח/נוסח@2/ש",
-          "count": 3215
-        },
         {
           "stack": "E/נוסח/נוסח@1/ר3",
           "count": 47
@@ -15117,20 +15107,24 @@
           "count": 18
         },
         {
-          "stack": "E/נוסח/נוסח@1/קו״כ",
-          "count": 18
-        },
-        {
-          "stack": "E/נוסח/נוסח@1/מ:כו״ק מיוחד",
-          "count": 17
-        },
-        {
-          "stack": "E/נוסח/נוסח@1/מ:קו״כ-אם-2",
-          "count": 15
-        },
-        {
           "stack": "E/פרשה-מרכז/מ:דחי",
           "count": 10
+        },
+        {
+          "stack": "E/נוסח/נוסח@1/מ:אות מנוקדת",
+          "count": 7
+        },
+        {
+          "stack": "E/נוסח/נוסח@1/פפפ",
+          "count": 6
+        },
+        {
+          "stack": "E/מ:הערה/מ:אות-ג",
+          "count": 5
+        },
+        {
+          "stack": "E/נוסח/נוסח@1/מ:גרשיים ותלישא גדולה",
+          "count": 4
         }
       ]
     }
