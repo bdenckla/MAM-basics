@@ -14927,9 +14927,9 @@
   ],
   "normal_order_cov_counts_by_case": {
     "plain-C": {
-      "fully_checked": 236,
+      "fully_checked": 238,
       "partially_checked": 0,
-      "totally_unchecked": 8,
+      "totally_unchecked": 6,
       "total": 244
     },
     "plain-D": {
@@ -14973,6 +14973,14 @@
           "count": 2
         },
         {
+          "stack": "C/נוסח/נוסח@1/מ:אין פרשה בתחילת פרק",
+          "count": 1
+        },
+        {
+          "stack": "C/נוסח/נוסח@1/מ:אין פרשה בתחילת פרק בספרי אמ״ת",
+          "count": 1
+        },
+        {
           "stack": "C/נוסח/נוסח@1/פפפ",
           "count": 1
         },
@@ -14990,14 +14998,6 @@
         {
           "stack": "C/מודגש/קק",
           "count": 2
-        },
-        {
-          "stack": "C/נוסח/נוסח@1/מ:אין פרשה בתחילת פרק",
-          "count": 1
-        },
-        {
-          "stack": "C/נוסח/נוסח@1/מ:אין פרשה בתחילת פרק בספרי אמ״ת",
-          "count": 1
         }
       ]
     },

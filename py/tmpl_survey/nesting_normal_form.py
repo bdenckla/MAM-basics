@@ -39,10 +39,16 @@ _KETIV_QERE_TEMPLATES = frozenset(
         "מ:קו״כ-אם-2",
     }
 )
-_WHITESPACE_TEMPLATES = frozenset(
+_END_WHITESPACE = frozenset(
     {"ר0", "ר1", "ר2", "ר3", "ר4", "סס", "ססס", "פפ", "פפפ"}
 )
-_TERMINAL_TEMPLATES = frozenset(
+_END_LACK_OF_WHITESPACE = frozenset(
+    {
+        "מ:אין פרשה בתחילת פרק",
+        "מ:אין פרשה בתחילת פרק בספרי אמ״ת",
+    }
+)
+_END_COL_E = frozenset(
     {
         "מ:לגרמיה-2",
         "מ:פסק",
@@ -51,13 +57,9 @@ _TERMINAL_TEMPLATES = frozenset(
         "מ:אות-ג",
         "מ:אות תלויה",
         "מ:נו״ן הפוכה",
-        "ש",
-        "מ:קישור בהערה",
-        "מ:קישור פנימי בהערה",
-        "מודגש",
     }
 )
-_TERMINAL_TEMPLATES_FOR_DOCNOTES = frozenset(
+_END_DOCNOTE = frozenset(
     {
         "ש",
         "מ:קישור בהערה",
@@ -68,23 +70,21 @@ _TERMINAL_TEMPLATES_FOR_DOCNOTES = frozenset(
 RANK_GROUPS_FOR_PLUS_C: tuple[frozenset[str], ...] = (
     frozenset({"נוסח"}),
     frozenset({"מ:הערה-2"}),
-    _WHITESPACE_TEMPLATES,
-    _TERMINAL_TEMPLATES_FOR_DOCNOTES,
+    _END_LACK_OF_WHITESPACE | _END_WHITESPACE | _END_DOCNOTE,
 )
 RANK_GROUPS_FOR_PLUS_D = (
     frozenset({"נוסח"}),
     frozenset({"מ:פסוק"}),
-    frozenset({"מ:עלייה"}),
-    _TERMINAL_TEMPLATES_FOR_DOCNOTES,
+    frozenset({"מ:עלייה"}) | _END_DOCNOTE,
 )
 RANK_GROUPS_FOR_PLUS_E: tuple[frozenset[str], ...] = (
     frozenset({"מ:כפול"}),
     frozenset({"נוסח"}),
-    _KETIV_QERE_TEMPLATES | _WHITESPACE_TEMPLATES,
+    _KETIV_QERE_TEMPLATES,
     frozenset({"מ:קמץ"}),
     frozenset({"מ:דחי", "מ:צינור", "מ:הערה-2"}),
     frozenset({"מ:אות-מיוחדת-במילה"}),
-    _TERMINAL_TEMPLATES | _TERMINAL_TEMPLATES_FOR_DOCNOTES,
+    _END_COL_E | _END_WHITESPACE | _END_DOCNOTE,
 )
 RANK_GROUPS_FOR_PLAIN_C = RANK_GROUPS_FOR_PLUS_C
 RANK_GROUPS_FOR_PLAIN_D = RANK_GROUPS_FOR_PLUS_D
