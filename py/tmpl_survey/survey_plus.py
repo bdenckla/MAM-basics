@@ -199,19 +199,19 @@ def _keyfn(dic):
 
 
 def _flatten_stack_counts(accum):
-    dic = accum["stack_counts"]
-    grouped = {}
-    for key, count in dic.items():
-        stack_top, stack_rest = key
-        group_key = (stack_top, stack_rest)
-        if group_key not in grouped:
-            grouped[group_key] = {
-                "wtel_subtype": stack_top,
-                "stack": stack_rest,
-                "count": 0,
-            }
-        grouped[group_key]["count"] += count
-    return _sort_dics_by_values(list(grouped.values()))
+    stacks_to_counts = accum["stack_counts"]
+    stack_count_dics = map(_stack_count_dic, stacks_to_counts.items())
+    return _sort_dics_by_values(list(stack_count_dics))
+
+
+def _stack_count_dic(stack_and_count):
+    stack_top, stack_rest = stack_and_count[0]
+    count = stack_and_count[1]
+    return {
+        "wtel_subtype": stack_top,
+        "stack": stack_rest,
+        "count": count,
+    }
 
 
 def _flatten_arg_counts(accum):
