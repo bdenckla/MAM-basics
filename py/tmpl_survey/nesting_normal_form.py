@@ -159,6 +159,18 @@ def _read_preferred_or_alias(
     )
 
 
+def _preferred_with_alias(
+    preferred_key: str,
+    alias_key: str,
+    value: object,
+) -> Dict[str, object]:
+    """Return a compatibility pair with preferred key plus migration alias."""
+    return {
+        preferred_key: value,
+        alias_key: value,
+    }
+
+
 def summarize_rank_coverage_counts(
     stack_counts: StackCounts,
     rank_map: RankMap,
@@ -232,9 +244,7 @@ def summarize_rank_coverage_top_paths(
         )
         top_paths_by_bucket[bucket] = [
             {
-                "stack": fs_stack_with_top,
-                # Backward-compatible alias kept during terminology migration.
-                "stack_path": fs_stack_with_top,
+                **_preferred_with_alias("stack", "stack_path", fs_stack_with_top),
                 "count": count,
             }
             for fs_stack_with_top, count in ranked[:max_paths]
@@ -341,9 +351,11 @@ def find_rank_violations(
                 "callee_rank": rank_map[child],
                 "relation": relation,
                 "count": count,
-                "example_stack": examples[(caller, child, relation)],
-                # Backward-compatible alias kept during terminology migration.
-                "example_path": examples[(caller, child, relation)],
+                **_preferred_with_alias(
+                    "example_stack",
+                    "example_path",
+                    examples[(caller, child, relation)],
+                ),
             }
         )
     return violations
@@ -537,9 +549,11 @@ def find_expanded_grammar_violations(
                 "parent": parent,
                 "child": child,
                 "count": count,
-                "example_stack": bad_edge_examples[(parent, child)],
-                # Backward-compatible alias kept during terminology migration.
-                "example_path": bad_edge_examples[(parent, child)],
+                **_preferred_with_alias(
+                    "example_stack",
+                    "example_path",
+                    bad_edge_examples[(parent, child)],
+                ),
             }
         )
     for (before, after), count in sorted(bad_orders.items()):
@@ -548,9 +562,11 @@ def find_expanded_grammar_violations(
                 "kind": "order-permutation",
                 "must_precede": [before, after],
                 "count": count,
-                "example_stack": bad_order_examples[(before, after)],
-                # Backward-compatible alias kept during terminology migration.
-                "example_path": bad_order_examples[(before, after)],
+                **_preferred_with_alias(
+                    "example_stack",
+                    "example_path",
+                    bad_order_examples[(before, after)],
+                ),
             }
         )
     return violations
