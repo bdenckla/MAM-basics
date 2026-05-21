@@ -48,7 +48,7 @@ def _is_discarded(name, discarded):
 
 
 def _edges_from_stack_counts(stack_counts, discarded=None):
-    """Extract (caller, callee) -> count from raw stack_counts defaultdict."""
+    """Extract (caller, callee) → count from raw stack_counts defaultdict."""
     if discarded is None:
         discarded = _BASE_DISCARDED
     edges = {}

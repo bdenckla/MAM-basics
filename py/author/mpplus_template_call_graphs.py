@@ -33,12 +33,12 @@ def build_body(*, claims: ClaimCollection):
             "These call graphs show which plus templates can appear inside other templates."
         ),
         author.para(
-            "Each directed edge A -> B means template A contains template B as a parameter value."
+            "Each directed edge A → B means template B appears in an argument to template A."
         ),
-        author.blockquote(
-            author.para(
-                "The full graph omits dualcant, docnote, and sh to keep the core shape readable."
-            )
+        author.para(
+            "The full graph omits some templates to keep it more readable."
+            " The templates omitted include נוסח and מ:כפול."
+            " A full list of templates omitted appears on the diagram itself."
         ),
         mb_html.heading_level_2("Full call graph"),
         _svg_object(_SVG_FULL, "Full call graph (SVG not supported)"),
