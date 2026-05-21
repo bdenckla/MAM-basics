@@ -1154,8 +1154,8 @@
       "total": 568
     },
     "plus-E": {
-      "fully_checked": 129,
-      "partially_checked": 662,
+      "fully_checked": 732,
+      "partially_checked": 59,
       "totally_unchecked": 3390,
       "total": 4181
     }
@@ -1232,58 +1232,16 @@
     "plus-E": {
       "fully_checked": [
         {
-          "stack": "E/מ:כפול/נוסח",
-          "count": 42
-        },
-        {
-          "stack": "E/מ:כפול/מ:לגרמיה-2",
-          "count": 14
-        },
-        {
-          "stack": "E/מ:קמץ/מ:דחי",
-          "count": 14
-        },
-        {
-          "stack": "E/כו״ק/מ:לגרמיה-2",
-          "count": 9
-        },
-        {
-          "stack": "E/מ:קו״כ-אם-2/מ:דחי",
-          "count": 8
-        },
-        {
-          "stack": "E/כו״ק/מ:קמץ",
-          "count": 7
-        },
-        {
-          "stack": "E/מ:כפול/מ:פסק",
-          "count": 7
-        },
-        {
-          "stack": "E/כו״ק/מ:דחי",
-          "count": 6
-        },
-        {
-          "stack": "E/מ:אות-מיוחדת-במילה/מ:אות תלויה",
-          "count": 4
-        },
-        {
-          "stack": "E/מ:הערה-2/מ:אות-מיוחדת-במילה",
-          "count": 4
-        }
-      ],
-      "partially_checked": [
-        {
           "stack": "E/נוסח/נוסח@1/כו״ק",
           "count": 143
         },
         {
-          "stack": "E/מ:כפול/נוסח/נוסח@2/ש",
-          "count": 58
-        },
-        {
           "stack": "E/נוסח/נוסח@1/מ:לגרמיה-2",
           "count": 47
+        },
+        {
+          "stack": "E/מ:כפול/נוסח",
+          "count": 42
         },
         {
           "stack": "E/נוסח/נוסח@1/מ:אות-מיוחדת-במילה",
@@ -1312,6 +1270,16 @@
         {
           "stack": "E/נוסח/נוסח@1/מ:אות-מיוחדת-במילה/מ:אות-ג",
           "count": 23
+        }
+      ],
+      "partially_checked": [
+        {
+          "stack": "E/מ:כפול/נוסח/נוסח@2/ש",
+          "count": 58
+        },
+        {
+          "stack": "E/מ:כפול/נוסח/נוסח@1/פפ",
+          "count": 1
         }
       ],
       "totally_unchecked": [
