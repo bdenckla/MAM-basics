@@ -160,7 +160,7 @@ def _misc_terminal_templates_cell(last_rank_group: frozenset[str]):
             with_breaks.append(mb_html.line_break())
         with_breaks.append(line)
 
-    return author.hbo(with_breaks)
+    return with_breaks
 
 
 def _svg_object(svg_href: str, fallback: str):
