@@ -118,6 +118,15 @@ _MISC_TERMINAL_ABBR = {
     "מ:קישור בהערה": "...",
     "מ:קישור פנימי בהערה": "...",
 }
+_KETIV_QERE_LINES = [
+    ["כו״ק", "כתיב ולא קרי", "מ:כו״ק מיוחד", "מ:קו״כ-אם-2", "קו״כ", "קרי ולא כתיב"],
+]
+_KETIV_QERE_ABBR = {
+    "מ:כו״ק מיוחד": "...",
+    "מ:קו״כ-אם-2": "...",
+    "קו״כ": "...",
+    "קרי ולא כתיב": "...",
+}
 
 
 def _plus_e_rank_table_rows():
@@ -143,8 +152,12 @@ def _default_rank_handler(templates: frozenset[str]):
     return ", ".join(sorted(templates))
 
 
-def _misc_terminal_templates_cell(last_rank_group: frozenset[str]):
-    return _custom_handler(_MISC_TERMINAL_LINES, _MISC_TERMINAL_ABBR, last_rank_group)
+def _misc_terminal_templates_cell(rank_group: frozenset[str]):
+    return _custom_handler(_MISC_TERMINAL_LINES, _MISC_TERMINAL_ABBR, rank_group)
+
+
+def _ketiv_qere_templates_cell(rank_group: frozenset[str]):
+    return _custom_handler(_KETIV_QERE_LINES, _KETIV_QERE_ABBR, rank_group)
 
 
 def _custom_handler(lines, abbr, rank_group: frozenset[str]):
@@ -158,6 +171,7 @@ def _custom_handler(lines, abbr, rank_group: frozenset[str]):
 
 
 _CUSTOM_RANK_HANDLERS = {
+    3: _ketiv_qere_templates_cell,
     7: _misc_terminal_templates_cell,
 }
 
