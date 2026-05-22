@@ -8,29 +8,16 @@ To regenerate the output HTML, run from the repo root::
 Output goes to ../MAM-parsed/gh-pages/plus/html/mpplus-template-call-graphs.html.
 """
 
-from mb_cmn import my_utils
 from mb_misc import mb_html
 from author_util import author
 from author_util.claim import ClaimCollection
-from tmpl_survey import nesting_normal_form
+from author import mpplus_nesting_normal_order as normal_order
 
 _FNAME = "mpplus-template-call-graphs.html"
 _TITLE = "Plus template nesting"  # title is slightly out of sync with the .py/.html filename, but that's fine since the title is more user-facing
-_PLUS_DOC = "mpplus.html"
 _SVG_FULL = "../svg/plus-call-graph.svg"
 _SVG_DUALCANT = "../svg/plus-dualcant-call-graph.svg"
 _SVG_DOCNOTE = "../svg/plus-docnote-call-graph.svg"
-
-_PLUS_E_RANK_CATEGORY_SYMBOLS = (
-    "choice",
-    "doc-note",
-    "scrdff-note",
-    "$ketiv_qere",
-    "choice",
-    "choice",
-    "word-with-special-letter",
-    "misc. terminal",
-)
 
 
 def gen_html_file(tdm_ch, claims: ClaimCollection):
@@ -44,7 +31,7 @@ def build_body(*, claims: ClaimCollection):
     return [
         mb_html.heading_level_1(_TITLE),
         mb_html.heading_level_2("Normal order"),
-        *_normal_order(),
+        *normal_order.build_normal_order(),
         mb_html.heading_level_2("Call graphs"),
         author.para(
             "These call graphs show which plus templates can appear inside other templates."
@@ -65,115 +52,6 @@ def build_body(*, claims: ClaimCollection):
         _svg_object(_SVG_DOCNOTE, "Docnote call graph (SVG not supported)"),
     ]
 
-
-def _normal_order():
-    return [
-        mb_html.para(
-            "MAM-parsed-plus imposes a somewhat arbitrary order on the nesting of templates."
-        ),
-        author.para(
-            "Although the order is somewhat arbitrary, it is important that there be"
-            " such an order, to make the data easier to use."
-            " As with many standards, the existence of the standard is more important"
-            " than the details of the standard."
-        ),
-        author.para(
-            "The order is a partial order on templates."
-            " In other words, templates are ordered by equivalence classes."
-        ),
-        author.para(
-            "These equivalence classes can also be thought of as ranks."
-            " Templates within an equivalence class are exclusive of each other,"
-            " i.e. can never be nested within each other, so there is no need to"
-            " define an ordering amongst them."
-        ),
-        author.para(
-            [
-                "Here are the ranks for column E,",
-                " with symbolic categories that align with sections in the ",
-                author.anchor_h("main mpplus document", _PLUS_DOC),
-                ".",
-            ]
-        ),
-        author.std_table(
-            _plus_e_rank_table_rows(),
-            coldirs=["rtl", "ltr"],
-            arg_to_troh=["Template(s)", "Category"],
-        ),
-    ]
-
-
-_MISC_TERMINAL_LINES = [
-    ["מ:אות-ק", "מ:אות-ג", "מ:אות תלויה", "מ:נו״ן הפוכה"],
-    #
-    ["מ:לגרמיה-2", "מ:פסק", "מ:מקף אפור"],
-    #
-    ["מ:קישור בהערה", "מ:קישור פנימי בהערה", "מודגש", "ש"],
-    #
-    ["סס", "ססס", "פפ", "פפפ"],
-    #
-    ["ר0", "ר1", "ר2", "ר3", "ר4"],
-]
-_MISC_TERMINAL_ABBR = {
-    "מ:קישור בהערה": "...",
-    "מ:קישור פנימי בהערה": "...",
-}
-_KETIV_QERE_LINES = [
-    ["כו״ק", "כתיב ולא קרי", "מ:כו״ק מיוחד", "מ:קו״כ-אם-2", "קו״כ", "קרי ולא כתיב"],
-]
-_KETIV_QERE_ABBR = {
-    "מ:כו״ק מיוחד": "...",
-    "מ:קו״כ-אם-2": "...",
-    "קו״כ": "...",
-    "קרי ולא כתיב": "...",
-}
-
-
-def _plus_e_rank_table_rows():
-    rank_groups = nesting_normal_form.RANK_GROUPS_FOR_PLUS_E
-    if len(rank_groups) != len(_PLUS_E_RANK_CATEGORY_SYMBOLS):
-        raise ValueError(
-            "Expected one symbolic category per plus-E rank group: "
-            f"{len(rank_groups)} groups vs "
-            f"{len(_PLUS_E_RANK_CATEGORY_SYMBOLS)} symbols"
-        )
-
-    out: list[list[object]] = []
-    for idx, (symbol, templates) in enumerate(
-        zip(_PLUS_E_RANK_CATEGORY_SYMBOLS, rank_groups)
-    ):
-        rank_handler = _CUSTOM_RANK_HANDLERS.get(idx) or _default_rank_handler
-        tmpl_comma_sep = rank_handler(templates)
-        out.append([tmpl_comma_sep, symbol])
-    return out
-
-
-def _default_rank_handler(templates: frozenset[str]):
-    return ", ".join(sorted(templates))
-
-
-def _misc_terminal_templates_cell(rank_group: frozenset[str]):
-    return _custom_handler(_MISC_TERMINAL_LINES, _MISC_TERMINAL_ABBR, rank_group)
-
-
-def _ketiv_qere_templates_cell(rank_group: frozenset[str]):
-    return _custom_handler(_KETIV_QERE_LINES, _KETIV_QERE_ABBR, rank_group)
-
-
-def _custom_handler(lines, abbr, rank_group: frozenset[str]):
-    flattened = [tmpl for line in lines for tmpl in line]
-    assert sorted(flattened) == sorted(rank_group)
-    out_lines = []
-    for line in lines:
-        abbr_line = [abbr.get(tmpl, tmpl) for tmpl in line]
-        out_lines.append(", ".join(abbr_line))
-    return my_utils.intersperse(mb_html.line_break(), out_lines)
-
-
-_CUSTOM_RANK_HANDLERS = {
-    3: _ketiv_qere_templates_cell,
-    7: _misc_terminal_templates_cell,
-}
 
 def _svg_object(svg_href: str, fallback: str):
     return mb_html.raw_html(
