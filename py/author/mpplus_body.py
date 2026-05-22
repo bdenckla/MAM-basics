@@ -12,18 +12,16 @@ from author import mp_cmn_top_header_book39 as thb
 from author import mp_body_shared as body_shared
 from author import mp_table_helpers as tblh
 
-_CALL_GRAPHS = "mpplus-template-call-graphs.html"
-_DIFF_FROM_PLAIN_DOC = "mpplus_diff_from_plain.html"
-_PLAIN_ONLY_TEMPLATES_DOC = "mpplus_plain_only_templates.html"
-_PLAIN_DOC = "../../plain/html/mpplain.html"
-
-_AOT_DOC = "mpplus_aot.html"
-_KQ_AM2_DOC = "mpplus_kq_am2.html"
-_KQ_SPECIAL_DOC = "mpplus_kq_special.html"
-_DUALCANT_DOC = "mpplus_dualcant.html"
-_GOOD_ENDING_DOC = "mpplus_good_ending_plus_field.html"
-_DOCNOTE_DOC = "mpplus_docnote.html"
-_POETIC_SPACING_DOC = "mpplus_poetic_spacing.html"
+_DEDPG_PLAIN = "../../plain/html/mpplain.html"
+_DEDPG_TMPL_NESTING = "mpplus-template-call-graphs.html"
+_DEDPG_DIFF_FROM_PLAIN = "mpplus_diff_from_plain.html"
+_DEDPG_AOT = "mpplus_aot.html"
+_DEDPG_KQ_AM2 = "mpplus_kq_am2.html"
+_DEDPG_KQ_SPECIAL = "mpplus_kq_special.html"
+_DEDPG_DUALCANT = "mpplus_dualcant.html"
+_DEDPG_GOOD_ENDING = "mpplus_good_ending_plus_field.html"
+_DEDPG_DOCNOTE = "mpplus_docnote.html"
+_DEDPG_POETIC_SPACING = "mpplus_poetic_spacing.html"
 
 _PLUS_COMMON_TEMPLATES = [
     "מ:עלייה",
@@ -203,7 +201,7 @@ def s_intro():
                 # but this is an intentional exception to the rule.
                 " Nonetheless, we believe that for most applications,"
                 " the plus format is more convenient to work with than the ",
-                author.anchor_h("plain", _PLAIN_DOC),
+                author.anchor_h("plain", _DEDPG_PLAIN),
                 " format." " This document covers:",
             ]
         ),
@@ -223,18 +221,6 @@ def s_intro():
 
 
 def s_plain_differences(*, claims: ClaimCollection):
-    _emit_claim_payload(
-        claims,
-        "mp.plus.docs.diff-from-plain.links",
-        "Differences-from-plain content is split into dedicated pages.",
-        kind="struct",
-        subject="mp:plus",
-        data={
-            "primary_differences_page": _DIFF_FROM_PLAIN_DOC,
-            "plain_only_templates_page": _PLAIN_ONLY_TEMPLATES_DOC,
-        },
-    )
-
     return [
         # Normally we avoid mentioning "plain" in "plus" and vice versa,
         # but this is an intentional exception to the rule.
@@ -242,7 +228,7 @@ def s_plain_differences(*, claims: ClaimCollection):
         author.para(
             [
                 "Differences from the plain format are described on ",
-                author.anchor_h("a dedicated page", _DIFF_FROM_PLAIN_DOC),
+                author.anchor_h("a dedicated page", _DEDPG_DIFF_FROM_PLAIN),
                 ".",
             ]
         ),
@@ -272,7 +258,7 @@ def s_book39(*, claims: ClaimCollection):
         "mp.plus.book39.fields",
         [
             *thb.book39_rows_common(),
-            thb.book39_good_ending_row(_GOOD_ENDING_DOC),
+            thb.book39_good_ending_row(_DEDPG_GOOD_ENDING),
         ],
         kind="struct",
         subject="mp:plus",
@@ -394,8 +380,8 @@ def s_chapter_verse(*, claims: ClaimCollection):
             [
                 "Parameter values can themselves be strings, nested template objects,"
                 " or arrays mixing strings and templates."
-                " For a visual overview of which templates nest inside which, see the ",
-                author.anchor_h("plus template call graphs", _CALL_GRAPHS),
+                " See the a dedicated page on",
+                author.anchor_h("template nesting", _DEDPG_TMPL_NESTING),
                 ".",
             ]
         ),
@@ -497,8 +483,8 @@ def s_common_templates(*, claims: ClaimCollection):
     )
     kq_rows = body_shared.build_kq_rows(
         claims=claims,
-        kq_am2_doc=_KQ_AM2_DOC,
-        kq_special_doc=_KQ_SPECIAL_DOC,
+        kq_am2_doc=_DEDPG_KQ_AM2,
+        kq_special_doc=_DEDPG_KQ_SPECIAL,
     )
     json_kq_plus = cmn.emit_claim_by_id(claims=claims, claim_id="mp.plus.example.kq")
     special_letter_rows = cmn.emit_claim_by_id(
@@ -518,9 +504,9 @@ def s_common_templates(*, claims: ClaimCollection):
     plus_accent_rows = cmn.accent_rows_for_templates(_PLUS_ACCENT_TEMPLATES)
     plus_choice_rows = dedicated_rows.with_dualcant_dedicated_page_link(
         cmn.accent_rows_for_templates(_CHOICE_TEMPLATES),
-        doc_name=_DUALCANT_DOC,
+        doc_name=_DEDPG_DUALCANT,
     )
-    poetic_spacing_row = body_shared.poetic_spacing_row(doc_name=_POETIC_SPACING_DOC)
+    poetic_spacing_row = body_shared.poetic_spacing_row(doc_name=_DEDPG_POETIC_SPACING)
 
     whitespace_plus_rows = [
         _find_template_row(structural_rows, "מ:ספר חדש"),
@@ -556,7 +542,7 @@ def s_common_templates(*, claims: ClaimCollection):
                         " See ",
                         author.anchor_h(
                             "its dedicated page",
-                            _AOT_DOC,
+                            _DEDPG_AOT,
                         ),
                         ".",
                     ],
@@ -581,7 +567,7 @@ def s_common_templates(*, claims: ClaimCollection):
         author.heading_level_3("Note template"),
         tblh.tmpl_purp_table([note_row]),
         author.heading_level_3("Documentation templates"),
-        tblh.tmpl_purp_table(cmn.other_rows_shared_core(docnote_doc=_DOCNOTE_DOC)),
+        tblh.tmpl_purp_table(cmn.other_rows_shared_core(docnote_doc=_DEDPG_DOCNOTE)),
         body_shared.note_links_param1_explanation_para(),
     ]
 

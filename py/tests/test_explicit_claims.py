@@ -300,7 +300,6 @@ class TestExplicitClaims(unittest.TestCase):
             "mp.plus.verse.is-3-tuple",
             "mp.plus.template.object-fields",
             "mp.plus.template.format-example",
-            "mp.plus.docs.diff-from-plain.links",
             "mp.plus.docs.common-templates.templates-in-plus-survey",
         ]
 

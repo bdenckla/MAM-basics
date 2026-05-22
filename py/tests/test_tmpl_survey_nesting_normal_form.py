@@ -52,12 +52,6 @@ class TestTmplSurveyNestingNormalForm(unittest.TestCase):
         self.assertLess(plain_e["כו״ק"], plain_e["מ:קמץ"])
         self.assertLess(plain_e["מ:קמץ"], plain_e["מ:דחי"])
 
-    def test_regex_like_grammar_shape(self):
-        self.assertEqual(
-            "rank-1?rank-2?rank-3?rank-4?rank-5?rank-6?rank-7?",
-            nnf.regex_like_grammar(),
-        )
-
     def test_allows_strictly_increasing_rank_order(self):
         stack_counts = {
             ("מ:אות-מיוחדת-במילה", "E/מ:כפול/נוסח@2/כו״ק/מ:קמץ/מ:דחי"): 2,

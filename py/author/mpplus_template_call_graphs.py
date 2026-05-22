@@ -11,12 +11,25 @@ Output goes to ../MAM-parsed/gh-pages/plus/html/mpplus-template-call-graphs.html
 from mb_misc import mb_html
 from author_util import author
 from author_util.claim import ClaimCollection
+from tmpl_survey import nesting_normal_form
 
 _FNAME = "mpplus-template-call-graphs.html"
-_TITLE = "Plus template call graphs"
+_TITLE = "Plus template nesting"  # title is slightly out of sync with the .py/.html filename, but that's fine since the title is more user-facing
+_PLUS_DOC = "mpplus.html"
 _SVG_FULL = "../svg/plus-call-graph.svg"
 _SVG_DUALCANT = "../svg/plus-dualcant-call-graph.svg"
 _SVG_DOCNOTE = "../svg/plus-docnote-call-graph.svg"
+
+_PLUS_E_RANK_CATEGORY_SYMBOLS = (
+    "choice",
+    "doc-note",
+    "scrdff-note",
+    "$ketiv_qere",
+    "choice",
+    "choice",
+    "word-with-special-letter",
+    "misc. terminal",
+)
 
 
 def gen_html_file(tdm_ch, claims: ClaimCollection):
@@ -29,6 +42,9 @@ def build_body(*, claims: ClaimCollection):
     del claims
     return [
         mb_html.heading_level_1(_TITLE),
+        mb_html.heading_level_2("Normal order"),
+        *_normal_order_intro(),
+        mb_html.heading_level_2("Call graphs"),
         author.para(
             "These call graphs show which plus templates can appear inside other templates."
         ),
@@ -47,6 +63,62 @@ def build_body(*, claims: ClaimCollection):
         mb_html.heading_level_2("Focused call graph: docnote"),
         _svg_object(_SVG_DOCNOTE, "Docnote call graph (SVG not supported)"),
     ]
+
+
+def _normal_order_intro():
+    return [
+        mb_html.para(
+            "MAM-parsed-plus imposes a somewhat arbitrary order on the nesting of templates."
+        ),
+        author.para(
+            "Although the order is somewhat arbitrary, it is important that there be"
+            " such an order, to make the data easier to use."
+            " As with many standards, the existence of the standard is more important"
+            " than the details of the standard."
+        ),
+        author.para(
+            "The order is a partial order on templates."
+            " In other words, templates are ordered by equivalence classes."
+        ),
+        author.para(
+            "These equivalence classes can also be thought of as ranks."
+            " Templates within an equivalence class are exclusive of each other,"
+            " i.e. can never be nested within each other, so there is no need to"
+            " define an ordering amongst them."
+        ),
+        author.para(
+            [
+                "Here are the ranks for column E,",
+                " with symbolic categories that align with sections in the ",
+                author.anchor_h("main mpplus document", _PLUS_DOC),
+                ".",
+            ]
+        ),
+        author.std_table(
+            _plus_e_rank_table_rows(),
+            arg_to_troh=["Symbolic category", "Templates"],
+        ),
+    ]
+
+
+def _plus_e_rank_table_rows():
+    rank_groups = nesting_normal_form.RANK_GROUPS_FOR_PLUS_E
+    if len(rank_groups) != len(_PLUS_E_RANK_CATEGORY_SYMBOLS):
+        raise ValueError(
+            "Expected one symbolic category per plus-E rank group: "
+            f"{len(rank_groups)} groups vs "
+            f"{len(_PLUS_E_RANK_CATEGORY_SYMBOLS)} symbols"
+        )
+
+    out: list[list[str]] = []
+    for symbol, templates in zip(_PLUS_E_RANK_CATEGORY_SYMBOLS, rank_groups):
+        out.append(
+            [
+                symbol,
+                ", ".join(sorted(templates)),
+            ]
+        )
+    return out
 
 
 def _svg_object(svg_href: str, fallback: str):

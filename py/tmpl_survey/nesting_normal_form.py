@@ -3,18 +3,6 @@
 We project each observed stack onto a small set of ranked templates and
 require the ranked projection to be strictly increasing in rank.
 
-Regex-like shape for the ranked projection:
-    rank-1?rank-2?rank-3?rank-4?rank-5?rank-6?rank-7?
-
-Where, by default:
-- rank-1: מ:כפול
-- rank-2: נוסח
-- rank-3: ketiv/qere templates (כו״ק, כתיב ולא קרי, קרי ולא כתיב)
-- rank-4: מ:קמץ
-- rank-5: מ:דחי
-- rank-6: מ:אות-מיוחדת-במילה
-- rank-7: terminal note markers
-    (מ:לגרמיה-2, מ:פסק, מ:מקף אפור, מ:אות-ק, מ:אות-ג, מ:אות תלויה)
 """
 
 from __future__ import annotations
@@ -120,11 +108,6 @@ def build_rank_map(rank_groups: RankGroups) -> Dict[str, int]:
     position in the sequence.
     """
     return _build_rank_map(rank_groups)
-
-
-def regex_like_grammar() -> str:
-    """Return the rank grammar in compact regex-like notation."""
-    return "rank-1?rank-2?rank-3?rank-4?rank-5?rank-6?rank-7?"
 
 
 def _ranked_projection(stack: Sequence[str], rank_map: RankMap) -> List[str]:

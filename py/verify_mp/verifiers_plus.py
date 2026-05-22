@@ -491,43 +491,6 @@ def _assert_tmpl_object_in_corpus(record: ClaimRecord, ctx: Context) -> None:
     assert False, f"example not found in plus corpus: {target!r}"
 
 
-def verify_mp_plus_docs_diff_from_plain_links(
-    record: ClaimRecord, ctx: Context
-) -> None:
-    """Declared differences-from-plain doc links resolve to expected pages."""
-    del ctx  # This verifier checks declared doc link targets, not corpus structure.
-
-    data = record.data
-    primary = data["primary_differences_page"]
-    plain_only = data["plain_only_templates_page"]
-
-    assert isinstance(primary, str) and primary.endswith(
-        ".html"
-    ), f"primary_differences_page must be an .html file name, got {primary!r}"
-    assert isinstance(plain_only, str) and plain_only.endswith(
-        ".html"
-    ), f"plain_only_templates_page must be an .html file name, got {plain_only!r}"
-
-    plus_html_dir = Path("../MAM-parsed/gh-pages/plus/html")
-    primary_path = plus_html_dir / primary
-    plain_only_path = plus_html_dir / plain_only
-    assert (
-        primary_path.exists()
-    ), f"declared doc link target does not exist: {primary_path}"
-    assert (
-        plain_only_path.exists()
-    ), f"declared doc link target does not exist: {plain_only_path}"
-
-    expected_primary = "mpplus_diff_from_plain.html"
-    expected_plain_only = "mpplus_plain_only_templates.html"
-    assert (
-        primary == expected_primary
-    ), f"primary_differences_page {primary!r} != expected {expected_primary!r}"
-    assert (
-        plain_only == expected_plain_only
-    ), f"plain_only_templates_page {plain_only!r} != expected {expected_plain_only!r}"
-
-
 def _assert_stmpl_object_in_plain_corpus(record: ClaimRecord, ctx: Context) -> None:
     """Assert that record.data (a dict with 'stmpl') appears at least once in the plain corpus."""
     target = record.data
@@ -855,7 +818,6 @@ REGISTRY: dict[str, VerifierFn] = {
     "mp.plus.chapter.keyed-by-verse-num": verify_mp_plus_chapter_keyed_by_verse_num,
     "mp.plus.diff-from-plain": verify_mp_plus_diff_from_plain,
     "mp.plus.docs.common-templates.templates-in-plus-survey": verify_mp_plus_docs_common_templates_templates_in_plus_survey,
-    "mp.plus.docs.diff-from-plain.links": verify_mp_plus_docs_diff_from_plain_links,
     "mp.plus.example.book39-skel": verify_mp_plus_example_book39_skel,
     "mp.plus.example.d-col-first": verify_mp_plus_example_d_col_first,
     "mp.plus.example.header-job": verify_mp_plus_example_header_job,
