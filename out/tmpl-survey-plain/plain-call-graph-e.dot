@@ -13,7 +13,7 @@ digraph template_call_graph {
     "שני טעמים באות אחת קמץ-תחתון-פתח-עליון" [label="שני … קמץ-תחתון-פתח-עליון", tooltip="שני טעמים באות אחת קמץ-תחתון-פתח-עליון"];
 
     // Note
-    graph [label="מ:כפול, מ:קישור בהערה, מ:קישור פנימי בהערה, נוסח, ש have been discarded", labelloc=b, fontsize=10];
+    graph [label="מ:כפול, נוסח have been discarded", labelloc=b, fontsize=10];
 
     // Edges
     "כו״ק" -> "גלגל-2" [label="1"];

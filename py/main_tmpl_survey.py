@@ -55,13 +55,11 @@ def _write_outputs(
     result,
     raw_stack_counts,
     stem,
-    svg_stem=None,
+    svg_stem,
     normalization_note=None,
-    discarded=None,
 ):
     os.makedirs(os.path.dirname(stem), exist_ok=True)
-    if svg_stem is not None:
-        os.makedirs(os.path.dirname(svg_stem), exist_ok=True)
+    os.makedirs(os.path.dirname(svg_stem), exist_ok=True)
     result_with_note = result
     if normalization_note is not None:
         result_with_note = _with_tmpl_name_normalization_note(
@@ -80,7 +78,6 @@ def _write_outputs(
         raw_stack_counts,
         dot_path,
         svg_path,
-        discarded=discarded,
         generator_file=__file__,
     )
     survey_dot.write_focused_dot_files(
@@ -88,7 +85,6 @@ def _write_outputs(
         stem,
         svg_stem=svg_stem,
         generator_file=__file__,
-        discarded=discarded,
     )
 
 
@@ -163,10 +159,10 @@ def _assert_with_expanded_stack_grammar_locks(
 def almost_main(write_expanded_stack_grammar_lock=False):
     """Survey the use of templates in MAM plain and plus."""
     case_rank_maps = _case_rank_maps(_NORMAL_FORM_CASE_RANK_GROUPS)
-    plain_result, plain_raw_sc, plain_discarded = survey_plain.survey(
+    plain_result, plain_raw_sc = survey_plain.survey(
         case_rank_maps=case_rank_maps
     )
-    plus_result, plus_raw_sc, plus_discarded = survey_plus.survey(
+    plus_result, plus_raw_sc = survey_plus.survey(
         plain_result["mpasuq"],
         case_rank_maps=case_rank_maps,
     )
@@ -213,14 +209,12 @@ def almost_main(write_expanded_stack_grammar_lock=False):
         f"{_PLAIN_OUT_DIR}/plain",
         svg_stem=f"{_PLAIN_SVG_DIR}/plain",
         normalization_note=_PLAIN_TMPL_NAME_NORMALIZATION_NOTE,
-        discarded=plain_discarded,
     )
     _write_outputs(
         plus_result,
         plus_raw_sc,
         f"{_PLUS_OUT_DIR}/plus",
         svg_stem=f"{_PLUS_SVG_DIR}/plus",
-        discarded=plus_discarded,
     )
 
 

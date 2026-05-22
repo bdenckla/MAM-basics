@@ -13,7 +13,7 @@ digraph template_call_graph {
 מ:אות-ק"];
 
     // Note
-    graph [label="מ:כפול, מ:קישור בהערה, מ:קישור פנימי בהערה, מודגש, נוסח, ש have been discarded", labelloc=b, fontsize=10];
+    graph [label="מ:כפול, נוסח have been discarded", labelloc=b, fontsize=10];
 
     // Edges
     "כו״ק" -> "מ:אות-מיוחדת-במילה" [label="2"];

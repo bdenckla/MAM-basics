@@ -127,15 +127,6 @@ def _record_parent_context(accum, parent_subtype, arg_key, arg_wtel):
     return True
 
 
-def _docnote_arg2_only_leaf_templates(accum):
-    return {
-        tmpl
-        for tmpl, contexts in accum["tmpl_parent_contexts"].items()
-        if contexts == {_DOCNOTE_ARG2_CONTEXT}
-        and not accum["tmpl_has_tmpl_children"][tmpl]
-    }
-
-
 def _stack_rest_from_stack(stack):
     return "/".join(stack)
 
@@ -313,4 +304,4 @@ def survey(case_rank_maps):
         "stack_counts": _flatten_stack_counts(accum),
         "arg_counts": _flatten_arg_counts(accum),
     }
-    return result, accum["stack_counts"], _docnote_arg2_only_leaf_templates(accum)
+    return result, accum["stack_counts"]

@@ -10,7 +10,7 @@ digraph template_call_graph {
     node [shape=box, style=""];
 
     // Note
-    graph [label="מ:כפול, מ:קישור בהערה, מ:קישור פנימי בהערה, נוסח, ש have been discarded", labelloc=b, fontsize=10];
+    graph [label="מ:כפול, נוסח have been discarded", labelloc=b, fontsize=10];
 
     // Edges
     "מ:פסוק" -> "מ:עלייה" [label="532"];
