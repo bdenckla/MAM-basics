@@ -26,15 +26,13 @@ def gen_html_file(tdm_ch, claims: ClaimCollection):
     return author.help_gen_html_file(__file__, tdm_ch, _FNAME, _TITLE, cbody)
 
 
-def build_body(*, claims: ClaimCollection):
-    del claims
+def _call_graphs_paras():
     return [
-        mb_html.heading_level_1(_TITLE),
-        mb_html.heading_level_2("Normal order"),
-        *normal_order.build_normal_order(),
-        mb_html.heading_level_2("Call graphs"),
         author.para(
-            "These call graphs show which plus templates can appear inside other templates."
+            "The rest of this document shows call graphs."
+            " These graphs show which templates appear inside other templates."
+            " Whereas the normal order shown above constrains the possible template nestings,"
+            " the call graphs show the actual nestings that occur in practice."
         ),
         author.para(
             "Each directed edge A → B means template B appears in an argument to template A."
@@ -44,6 +42,17 @@ def build_body(*, claims: ClaimCollection):
             " The templates omitted include נוסח and מ:כפול."
             " A full list of templates omitted appears on the diagram itself."
         ),
+    ]
+
+
+def build_body(*, claims: ClaimCollection):
+    del claims
+    return [
+        mb_html.heading_level_1(_TITLE),
+        mb_html.heading_level_2("Normal order"),
+        *normal_order.build_normal_order(),
+        mb_html.heading_level_2("Call graphs"),
+        *_call_graphs_paras(),
         mb_html.heading_level_2("Full call graph"),
         _svg_object(_SVG_FULL, "Full call graph (SVG not supported)"),
         mb_html.heading_level_2("Focused call graph: dualcant"),
