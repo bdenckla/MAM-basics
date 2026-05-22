@@ -380,9 +380,8 @@ def s_chapter_verse(*, claims: ClaimCollection):
             [
                 "Parameter values can themselves be strings, nested template objects,"
                 " or arrays mixing strings and templates."
-                " See the a dedicated page on",
-                author.anchor_h("template nesting", _DEDPG_TMPL_NESTING),
-                ".",
+                " See the dedicated page on",
+                [" ", author.anchor_h("template nesting", _DEDPG_TMPL_NESTING), "."],
             ]
         ),
         author.para(

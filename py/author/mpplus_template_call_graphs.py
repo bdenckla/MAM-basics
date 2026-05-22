@@ -43,7 +43,7 @@ def build_body(*, claims: ClaimCollection):
     return [
         mb_html.heading_level_1(_TITLE),
         mb_html.heading_level_2("Normal order"),
-        *_normal_order_intro(),
+        *_normal_order(),
         mb_html.heading_level_2("Call graphs"),
         author.para(
             "These call graphs show which plus templates can appear inside other templates."
@@ -65,7 +65,7 @@ def build_body(*, claims: ClaimCollection):
     ]
 
 
-def _normal_order_intro():
+def _normal_order():
     return [
         mb_html.para(
             "MAM-parsed-plus imposes a somewhat arbitrary order on the nesting of templates."
@@ -96,7 +96,8 @@ def _normal_order_intro():
         ),
         author.std_table(
             _plus_e_rank_table_rows(),
-            arg_to_troh=["Symbolic category", "Templates"],
+            coldirs=["rtl", "ltr"],
+            arg_to_troh=["Template(s)", "Category"],
         ),
     ]
 
@@ -112,12 +113,8 @@ def _plus_e_rank_table_rows():
 
     out: list[list[str]] = []
     for symbol, templates in zip(_PLUS_E_RANK_CATEGORY_SYMBOLS, rank_groups):
-        out.append(
-            [
-                symbol,
-                ", ".join(sorted(templates)),
-            ]
-        )
+        tmpl_comma_sep = ", ".join(sorted(templates))
+        out.append([tmpl_comma_sep, symbol])
     return out
 
 
