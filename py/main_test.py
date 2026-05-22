@@ -95,11 +95,6 @@ TEST_MODULE_SPECS = (
         help_text="Run plus-survey invariants for non-targeted note templates.",
     ),
     TestModuleSpec(
-        flag="tmpl-survey-edge-mode",
-        module_name="tests.test_tmpl_survey_edge_mode",
-        help_text="Run edge-labeled template survey call-graph tests.",
-    ),
-    TestModuleSpec(
         flag="tmpl-survey-nesting-normal-form",
         module_name="tests.test_tmpl_survey_nesting_normal_form",
         help_text="Run template-survey nesting normal-form invariant tests.",

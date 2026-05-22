@@ -83,19 +83,6 @@ def _write_outputs(
         generator_file=__file__,
     )
     survey_dot.render_svg(dot_path, svg_path, generator_file=__file__)
-    edge_mode_dot_path = f"{stem}-call-graph-templates-as-edges.dot"
-    edge_mode_svg_path = f"{svg_stem}-call-graph-templates-as-edges.svg"
-    survey_dot.write_edge_template_dot_file(
-        raw_stack_counts,
-        edge_mode_dot_path,
-        discarded=discarded,
-        generator_file=__file__,
-    )
-    survey_dot.render_svg(
-        edge_mode_dot_path,
-        edge_mode_svg_path,
-        generator_file=__file__,
-    )
     survey_dot.write_focused_dot_files(
         raw_stack_counts,
         stem,
