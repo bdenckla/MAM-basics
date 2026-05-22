@@ -7,6 +7,7 @@ import subprocess
 
 from mb_cmn import provenance
 from mb_cmn import uni_heb as uh
+from tmpl_survey import dot_node_collapse
 from tmpl_survey import svg_provenance_norm
 
 _COLUMN_LETTERS = {"C", "D", "E"}
@@ -145,55 +146,6 @@ def _discard_note_text(discarded):
     if not discarded:
         return None
     return ", ".join(sorted(discarded)) + " have been discarded"
-
-
-def _collapse_equivalent_nodes(edges):
-    """Collapse nodes with identical predecessor/successor sets.
-
-    Two non-column nodes are equivalent when they have the same set of
-    predecessors and the same set of successors (ignoring edge counts).
-    Returns (new_edges, groups) where groups maps each representative node
-    to the sorted list of original nodes it stands for.
-    """
-    predecessors = {}
-    successors = {}
-    all_nodes = set()
-    for caller, callee in edges:
-        all_nodes.add(caller)
-        all_nodes.add(callee)
-        successors.setdefault(caller, set()).add(callee)
-        predecessors.setdefault(callee, set()).add(caller)
-    for node in all_nodes:
-        predecessors.setdefault(node, set())
-        successors.setdefault(node, set())
-
-    collapsible = all_nodes - _COLUMN_LETTERS
-
-    sig_to_nodes = {}
-    for node in collapsible:
-        sig = (frozenset(predecessors[node]), frozenset(successors[node]))
-        sig_to_nodes.setdefault(sig, []).append(node)
-
-    node_to_rep = {}
-    groups = {}
-    for members in sig_to_nodes.values():
-        sorted_members = sorted(members)
-        rep = sorted_members[0]
-        for m in sorted_members:
-            node_to_rep[m] = rep
-        groups[rep] = sorted_members
-
-    for col in _COLUMN_LETTERS & all_nodes:
-        node_to_rep[col] = col
-
-    new_edges = {}
-    for (caller, callee), count in edges.items():
-        new_caller = node_to_rep[caller]
-        new_callee = node_to_rep[callee]
-        new_edge = (new_caller, new_callee)
-        new_edges[new_edge] = new_edges.get(new_edge, 0) + count
-
-    return new_edges, groups
 
 
 def _abbreviate_name(name):
@@ -475,6 +427,7 @@ def _write_full_graph_dot_paths(
     out_path,
     discarded,
     generated_by,
+    collapse_node_groups=None,
 ):
     full_discarded = _discarded_for_full_graph(discarded)
     edges_by_column = _edges_by_column_from_stack_counts(
@@ -486,7 +439,11 @@ def _write_full_graph_dot_paths(
     note = _discard_note_text(full_discarded)
     for column in columns:
         edges = edges_by_column.get(column, {})
-        collapsed_edges, groups = _collapse_equivalent_nodes(edges)
+        collapsed_edges, groups = dot_node_collapse.collapse_edges_for_output(
+            edges,
+            _COLUMN_LETTERS,
+            collapse_node_groups=collapse_node_groups,
+        )
         dot_path = _with_column_suffix(out_path, column, needs_disambiguation)
         with open(dot_path, "w", encoding="utf-8") as fp:
             _write_dot(
@@ -519,6 +476,7 @@ def write_dot_file(
     out_path,
     discarded=None,
     generator_file=None,
+    collapse_node_groups=None,
 ):
     """Write a .dot call graph from raw stack_counts accumulator."""
     generated_by = _generated_by_text(generator_file)
@@ -527,6 +485,7 @@ def write_dot_file(
         out_path,
         discarded=discarded,
         generated_by=generated_by,
+        collapse_node_groups=collapse_node_groups,
     )
 
 
@@ -536,6 +495,7 @@ def write_dot_and_svg_files(
     svg_path,
     discarded=None,
     generator_file=None,
+    collapse_node_groups=None,
 ):
     """Write column-versioned full .dot files and render matching .svg files."""
     generated_by = _generated_by_text(generator_file)
@@ -544,6 +504,7 @@ def write_dot_and_svg_files(
         dot_path,
         discarded=discarded,
         generated_by=generated_by,
+        collapse_node_groups=collapse_node_groups,
     )
     svg_paths = _svg_paths_for_dot_paths(dot_paths, dot_path, svg_path)
     for out_dot_path, out_svg_path in zip(dot_paths, svg_paths):
@@ -606,7 +567,10 @@ def write_focused_dot_files(
         for column in columns:
             edges = edges_by_column.get(column, {})
             if collapse:
-                edges, groups = _collapse_equivalent_nodes(edges)
+                edges, groups = dot_node_collapse.collapse_equivalent_nodes(
+                    edges,
+                    _COLUMN_LETTERS,
+                )
             else:
                 groups = _identity_groups(edges)
             dot_path = _with_column_suffix(base_dot_path, column, needs_disambiguation)

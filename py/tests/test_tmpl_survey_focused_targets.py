@@ -5,6 +5,7 @@ import tempfile
 import unittest
 
 from tmpl_survey import survey_dot
+from tmpl_survey import dot_node_collapse
 
 
 class TestTmplSurveyFocusedTargets(unittest.TestCase):
@@ -65,6 +66,24 @@ class TestTmplSurveyFocusedTargets(unittest.TestCase):
         self.assertEqual(3, edges[("נוסח@1", "מ:דחי")])
         self.assertEqual(5, edges[("נוסח@2", "מ:דחי")])
         self.assertEqual(5, edges[("מ:דחי", "מ:עלייה")])
+
+    def test_full_graph_explicit_node_group_collapse_merges_named_nodes(self):
+        edges = {
+            ("כו״ק", "X"): 7,
+            ("קו״כ", "X"): 11,
+            ("מ:קו״כ-אם-2", "X"): 13,
+        }
+
+        collapsed_edges, groups = dot_node_collapse.collapse_edges_for_output(
+            edges,
+            {"C", "D", "E"},
+            collapse_node_groups=(("כו״ק", "קו״כ", "מ:קו״כ-אם-2"),),
+        )
+
+        self.assertEqual(31, collapsed_edges[("כו״ק", "X")])
+        self.assertNotIn(("קו״כ", "X"), collapsed_edges)
+        self.assertNotIn(("מ:קו״כ-אם-2", "X"), collapsed_edges)
+        self.assertEqual(["כו״ק", "מ:קו״כ-אם-2", "קו״כ"], groups["כו״ק"])
 
     def test_node_mode_edge_extraction_keeps_column_roots_from_longer_stacks(self):
         stack_counts = {
