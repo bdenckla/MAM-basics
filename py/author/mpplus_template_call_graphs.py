@@ -8,6 +8,7 @@ To regenerate the output HTML, run from the repo root::
 Output goes to ../MAM-parsed/gh-pages/plus/html/mpplus-template-call-graphs.html.
 """
 
+from mb_cmn import my_utils
 from mb_misc import mb_html
 from author_util import author
 from author_util.claim import ClaimCollection
@@ -142,27 +143,18 @@ def _default_rank_handler(templates: frozenset[str]):
     return ", ".join(sorted(templates))
 
 
-
 def _misc_terminal_templates_cell(last_rank_group: frozenset[str]):
-    flattened = [tmpl for line in _MISC_TERMINAL_LINES for tmpl in line]
-    if sorted(flattened) != sorted(last_rank_group):
-        raise AssertionError(
-            "_MISC_TERMINAL_LINES must match sorted last element of "
-            "nesting_normal_form.RANK_GROUPS_FOR_PLUS_E"
-        )
+    return _custom_handler(_MISC_TERMINAL_LINES, _MISC_TERMINAL_ABBR, last_rank_group)
 
-    lines = []
-    for line in _MISC_TERMINAL_LINES:
-        abbr_line = [_MISC_TERMINAL_ABBR.get(tmpl, tmpl) for tmpl in line]
-        lines.append(", ".join(abbr_line))
 
-    with_breaks: list[object] = []
-    for idx, line in enumerate(lines):
-        if idx > 0:
-            with_breaks.append(mb_html.line_break())
-        with_breaks.append(line)
-
-    return with_breaks
+def _custom_handler(lines, abbr, rank_group: frozenset[str]):
+    flattened = [tmpl for line in lines for tmpl in line]
+    assert sorted(flattened) == sorted(rank_group)
+    out_lines = []
+    for line in lines:
+        abbr_line = [abbr.get(tmpl, tmpl) for tmpl in line]
+        out_lines.append(", ".join(abbr_line))
+    return my_utils.intersperse(mb_html.line_break(), out_lines)
 
 
 _CUSTOM_RANK_HANDLERS = {
