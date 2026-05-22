@@ -15,9 +15,13 @@ from author import mpplus_nesting_normal_order as normal_order
 
 _FNAME = "mpplus-template-call-graphs.html"
 _TITLE = "Plus template nesting"  # title is slightly out of sync with the .py/.html filename, but that's fine since the title is more user-facing
-_SVG_FULL = "../svg/plus-call-graph.svg"
+_SVG_FULL_C = "../svg/plus-call-graph-c.svg"
+_SVG_FULL_D = "../svg/plus-call-graph-d.svg"
+_SVG_FULL_E = "../svg/plus-call-graph-e.svg"
 _SVG_DUALCANT = "../svg/plus-dualcant-call-graph.svg"
-_SVG_DOCNOTE = "../svg/plus-docnote-call-graph.svg"
+_SVG_DOCNOTE_C = "../svg/plus-docnote-call-graph-c.svg"
+_SVG_DOCNOTE_D = "../svg/plus-docnote-call-graph-d.svg"
+_SVG_DOCNOTE_E = "../svg/plus-docnote-call-graph-e.svg"
 
 
 def gen_html_file(tdm_ch, claims: ClaimCollection):
@@ -53,12 +57,20 @@ def build_body(*, claims: ClaimCollection):
         *normal_order.build_normal_order(),
         mb_html.heading_level_2("Call graphs"),
         *_call_graphs_paras(),
-        mb_html.heading_level_2("Full call graph"),
-        _svg_object(_SVG_FULL, "Full call graph (SVG not supported)"),
+        mb_html.heading_level_2("Full call graph (C)"),
+        _svg_object(_SVG_FULL_C, "Full call graph C (SVG not supported)"),
+        mb_html.heading_level_2("Full call graph (D)"),
+        _svg_object(_SVG_FULL_D, "Full call graph D (SVG not supported)"),
+        mb_html.heading_level_2("Full call graph (E)"),
+        _svg_object(_SVG_FULL_E, "Full call graph E (SVG not supported)"),
         mb_html.heading_level_2("Focused call graph: dualcant"),
         _svg_object(_SVG_DUALCANT, "Dualcant call graph (SVG not supported)"),
-        mb_html.heading_level_2("Focused call graph: docnote"),
-        _svg_object(_SVG_DOCNOTE, "Docnote call graph (SVG not supported)"),
+        mb_html.heading_level_2("Focused call graph: docnote (C)"),
+        _svg_object(_SVG_DOCNOTE_C, "Docnote call graph C (SVG not supported)"),
+        mb_html.heading_level_2("Focused call graph: docnote (D)"),
+        _svg_object(_SVG_DOCNOTE_D, "Docnote call graph D (SVG not supported)"),
+        mb_html.heading_level_2("Focused call graph: docnote (E)"),
+        _svg_object(_SVG_DOCNOTE_E, "Docnote call graph E (SVG not supported)"),
     ]
 
 

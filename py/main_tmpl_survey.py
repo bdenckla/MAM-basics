@@ -76,13 +76,13 @@ def _write_outputs(
     if svg_stem is None:
         svg_stem = stem
     svg_path = f"{svg_stem}-call-graph.svg"
-    survey_dot.write_dot_file(
+    survey_dot.write_dot_and_svg_files(
         raw_stack_counts,
         dot_path,
+        svg_path,
         discarded=discarded,
         generator_file=__file__,
     )
-    survey_dot.render_svg(dot_path, svg_path, generator_file=__file__)
     survey_dot.write_focused_dot_files(
         raw_stack_counts,
         stem,

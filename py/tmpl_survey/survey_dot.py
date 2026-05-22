@@ -28,6 +28,8 @@ _FOCUS_NODE_ATTR_PARTS = (
     "penwidth=2.5",
 )
 _MIN_STACK_LEN_FOR_NODE_MODE = 3
+_MIN_TEMPLATE_STACK_LEN_FOR_NODE_MODE = _MIN_STACK_LEN_FOR_NODE_MODE - 1
+_COLUMN_ORDER = ("C", "D", "E")
 _BASE_TEMPLATE_ALIASES = {
     "נוסח@1": "נוסח",
     "נוסח@2": "נוסח",
@@ -47,15 +49,25 @@ def _is_discarded(name, discarded):
 
 
 def _edges_from_stack_counts(stack_counts, discarded=None):
-    """Extract node-mode edges from stacks longer than two nodes.
+    """Extract node-mode edges aggregated across column-specific variants.
 
-    This suppresses one-hop stacks like E -> terminal-template in
-    templates-as-nodes outputs, while preserving column roots by
-    decomposing longer stacks into adjacent edges.
+    Column letters are used to partition graph variants but are not rendered
+    as graph nodes.
     """
+    edges = {}
+    for edges_for_column in _edges_by_column_from_stack_counts(
+        stack_counts, discarded=discarded
+    ).values():
+        for edge, count in edges_for_column.items():
+            edges[edge] = edges.get(edge, 0) + count
+    return edges
+
+
+def _template_stacks_by_column(stack_counts, discarded=None):
+    """Return {column_letter: [(template_stack, count), ...]} from raw records."""
     if discarded is None:
         discarded = _BASE_DISCARDED
-    edges = {}
+    by_column = {}
     for key, count in stack_counts.items():
         stack_top, stack_rest = key
         rest_parts = [
@@ -64,12 +76,61 @@ def _edges_from_stack_counts(stack_counts, discarded=None):
         if _is_discarded(stack_top, discarded):
             continue
         stack = (*rest_parts, stack_top)
-        if len(stack) < _MIN_STACK_LEN_FOR_NODE_MODE:
+        if not stack:
             continue
-        for caller, callee in zip(stack, stack[1:]):
-            edge = (caller, callee)
-            edges[edge] = edges.get(edge, 0) + count
-    return edges
+        column = stack[0]
+        if column not in _COLUMN_LETTERS:
+            continue
+        template_stack = stack[1:]
+        by_column.setdefault(column, []).append((template_stack, count))
+    return by_column
+
+
+def _edges_by_column_from_stack_counts(stack_counts, discarded=None):
+    """Return node-mode edges grouped by source column version."""
+    by_column = _template_stacks_by_column(stack_counts, discarded=discarded)
+    edges_by_column = {}
+    for column, records in by_column.items():
+        edges = {}
+        for template_stack, count in records:
+            if len(template_stack) < _MIN_TEMPLATE_STACK_LEN_FOR_NODE_MODE:
+                continue
+            for caller, callee in zip(template_stack, template_stack[1:]):
+                edge = (caller, callee)
+                edges[edge] = edges.get(edge, 0) + count
+        edges_by_column[column] = edges
+    return edges_by_column
+
+
+def _column_sort_key(column):
+    try:
+        return (_COLUMN_ORDER.index(column), column)
+    except ValueError:
+        return (len(_COLUMN_ORDER), column)
+
+
+def _sorted_columns(columns):
+    return sorted(columns, key=_column_sort_key)
+
+
+def _with_column_suffix(path, column, needs_disambiguation):
+    if not needs_disambiguation:
+        return path
+    root, ext = os.path.splitext(path)
+    return f"{root}-{column.lower()}{ext}"
+
+
+def _column_versions_for_output(edges_by_column):
+    columns = _sorted_columns(edges_by_column.keys())
+    if columns:
+        return columns
+    # Preserve prior behavior for empty inputs by emitting one unsuffixed graph.
+    return [None]
+
+
+def _maybe_remove_legacy_unsuffixed(path, needs_disambiguation):
+    if needs_disambiguation and os.path.exists(path):
+        os.remove(path)
 
 
 def _discarded_for_full_graph(discarded):
@@ -342,24 +403,38 @@ def _focused_edges_from_stack_counts(stack_counts, target, discarded=None):
     One-hop stacks are ignored so focused templates-as-nodes graphs only
     reflect stacks longer than two nodes.
     """
-    if discarded is None:
-        discarded = set()
     focused_edges = {}
-    for (stack_top, stack_rest), count in stack_counts.items():
-        rest_parts = [
-            p for p in _split_stack_rest(stack_rest) if not _is_discarded(p, discarded)
-        ]
-        if _is_discarded(stack_top, discarded):
-            continue
-        stack = (*rest_parts, stack_top)
-        if len(stack) < _MIN_STACK_LEN_FOR_NODE_MODE:
-            continue
-        if not any(_matches_target(x, target) for x in stack):
-            continue
-        for caller, callee in zip(stack, stack[1:]):
-            edge = (caller, callee)
+    for edges_for_column in _focused_edges_by_column_from_stack_counts(
+        stack_counts,
+        target,
+        discarded=discarded,
+    ).values():
+        for edge, count in edges_for_column.items():
             focused_edges[edge] = focused_edges.get(edge, 0) + count
     return focused_edges
+
+
+def _focused_edges_by_column_from_stack_counts(stack_counts, target, discarded=None):
+    """Return focused node-mode edges grouped by source column version."""
+    if discarded is None:
+        discarded = set()
+    by_column = _template_stacks_by_column(stack_counts, discarded=discarded)
+    focused_edges_by_column = {}
+    for column, records in by_column.items():
+        focused_edges = {}
+        has_target = False
+        for template_stack, count in records:
+            if not any(_matches_target(x, target) for x in template_stack):
+                continue
+            has_target = True
+            if len(template_stack) < _MIN_TEMPLATE_STACK_LEN_FOR_NODE_MODE:
+                continue
+            for caller, callee in zip(template_stack, template_stack[1:]):
+                edge = (caller, callee)
+                focused_edges[edge] = focused_edges.get(edge, 0) + count
+        if has_target:
+            focused_edges_by_column[column] = focused_edges
+    return focused_edges_by_column
 
 
 @dataclass(frozen=True)
@@ -386,6 +461,59 @@ def _generated_by_text(generator_file):
     return provenance.generated_by_text(generator_file)
 
 
+def _full_graph_dot_paths(out_path, edges_by_column):
+    columns = _column_versions_for_output(edges_by_column)
+    needs_disambiguation = len(columns) > 1
+    return [
+        _with_column_suffix(out_path, column, needs_disambiguation)
+        for column in columns
+    ]
+
+
+def _write_full_graph_dot_paths(
+    stack_counts,
+    out_path,
+    discarded,
+    generated_by,
+):
+    full_discarded = _discarded_for_full_graph(discarded)
+    edges_by_column = _edges_by_column_from_stack_counts(
+        stack_counts,
+        discarded=full_discarded,
+    )
+    columns = _column_versions_for_output(edges_by_column)
+    needs_disambiguation = len(columns) > 1
+    note = _discard_note_text(full_discarded)
+    for column in columns:
+        edges = edges_by_column.get(column, {})
+        collapsed_edges, groups = _collapse_equivalent_nodes(edges)
+        dot_path = _with_column_suffix(out_path, column, needs_disambiguation)
+        with open(dot_path, "w", encoding="utf-8") as fp:
+            _write_dot(
+                collapsed_edges,
+                groups,
+                fp,
+                note=note,
+                generated_by=generated_by,
+            )
+    _maybe_remove_legacy_unsuffixed(out_path, needs_disambiguation)
+    return _full_graph_dot_paths(out_path, edges_by_column)
+
+
+def _svg_paths_for_dot_paths(dot_paths, dot_base_path, svg_base_path):
+    svg_paths = []
+    dot_base_root, _ = os.path.splitext(dot_base_path)
+    svg_base_root, svg_ext = os.path.splitext(svg_base_path)
+    for dot_path in dot_paths:
+        dot_root, _ = os.path.splitext(dot_path)
+        if dot_root == dot_base_root:
+            suffix = ""
+        else:
+            suffix = dot_root[len(dot_base_root) :]
+        svg_paths.append(f"{svg_base_root}{suffix}{svg_ext}")
+    return svg_paths
+
+
 def write_dot_file(
     stack_counts,
     out_path,
@@ -394,12 +522,36 @@ def write_dot_file(
 ):
     """Write a .dot call graph from raw stack_counts accumulator."""
     generated_by = _generated_by_text(generator_file)
-    full_discarded = _discarded_for_full_graph(discarded)
-    edges = _edges_from_stack_counts(stack_counts, discarded=full_discarded)
-    edges, groups = _collapse_equivalent_nodes(edges)
-    note = _discard_note_text(full_discarded)
-    with open(out_path, "w", encoding="utf-8") as fp:
-        _write_dot(edges, groups, fp, note=note, generated_by=generated_by)
+    _write_full_graph_dot_paths(
+        stack_counts,
+        out_path,
+        discarded=discarded,
+        generated_by=generated_by,
+    )
+
+
+def write_dot_and_svg_files(
+    stack_counts,
+    dot_path,
+    svg_path,
+    discarded=None,
+    generator_file=None,
+):
+    """Write column-versioned full .dot files and render matching .svg files."""
+    generated_by = _generated_by_text(generator_file)
+    dot_paths = _write_full_graph_dot_paths(
+        stack_counts,
+        dot_path,
+        discarded=discarded,
+        generated_by=generated_by,
+    )
+    svg_paths = _svg_paths_for_dot_paths(dot_paths, dot_path, svg_path)
+    for out_dot_path, out_svg_path in zip(dot_paths, svg_paths):
+        render_svg(out_dot_path, out_svg_path, generator_file=generator_file)
+    _maybe_remove_legacy_unsuffixed(
+        svg_path,
+        needs_disambiguation=(len(dot_paths) > 1),
+    )
 
 
 def _identity_groups(edges):
@@ -441,28 +593,36 @@ def write_focused_dot_files(
         slug = spec.slug
         collapse = spec.collapse
         focused_discarded = _focused_discarded_for_target(target, full_discarded)
-        edges = _focused_edges_from_stack_counts(
+        edges_by_column = _focused_edges_by_column_from_stack_counts(
             stack_counts,
             target,
             discarded=focused_discarded,
         )
         note = _discard_note_text(focused_discarded)
-        if collapse:
-            edges, groups = _collapse_equivalent_nodes(edges)
-        else:
-            groups = _identity_groups(edges)
-        dot_path = f"{stem}-{slug}-call-graph.dot"
-        svg_path = f"{svg_stem}-{slug}-call-graph.svg"
-        with open(dot_path, "w", encoding="utf-8") as fp:
-            _write_dot(
-                edges,
-                groups,
-                fp,
-                note=note,
-                focus_target=target,
-                generated_by=generated_by,
-            )
-        render_svg(dot_path, svg_path, generator_file=generator_file)
+        columns = _column_versions_for_output(edges_by_column)
+        needs_disambiguation = len(columns) > 1
+        base_dot_path = f"{stem}-{slug}-call-graph.dot"
+        base_svg_path = f"{svg_stem}-{slug}-call-graph.svg"
+        for column in columns:
+            edges = edges_by_column.get(column, {})
+            if collapse:
+                edges, groups = _collapse_equivalent_nodes(edges)
+            else:
+                groups = _identity_groups(edges)
+            dot_path = _with_column_suffix(base_dot_path, column, needs_disambiguation)
+            svg_path = _with_column_suffix(base_svg_path, column, needs_disambiguation)
+            with open(dot_path, "w", encoding="utf-8") as fp:
+                _write_dot(
+                    edges,
+                    groups,
+                    fp,
+                    note=note,
+                    focus_target=target,
+                    generated_by=generated_by,
+                )
+            render_svg(dot_path, svg_path, generator_file=generator_file)
+        _maybe_remove_legacy_unsuffixed(base_dot_path, needs_disambiguation)
+        _maybe_remove_legacy_unsuffixed(base_svg_path, needs_disambiguation)
 
 
 def _find_dot():

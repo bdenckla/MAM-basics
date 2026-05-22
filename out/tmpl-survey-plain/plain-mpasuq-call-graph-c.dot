@@ -8,10 +8,6 @@ digraph template_call_graph {
 
     // Template nodes
     node [shape=box, style=""];
-    "מ:פסוק" [fillcolor="lightgoldenrod1", style="filled", penwidth=2.5];
 
     // Edges
-    "מ:פסוק" -> "מ:עלייה" [label="532"];
-    "נוסח" -> "נוסח@1" [label="46"];
-    "נוסח@1" -> "מ:פסוק" [label="46"];
 }

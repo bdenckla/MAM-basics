@@ -62,10 +62,9 @@ class TestTmplSurveyFocusedTargets(unittest.TestCase):
 
         edges = survey_dot._focused_edges_from_stack_counts(stack_counts, target="נוסח")
 
-        self.assertEqual(3, edges[("C", "נוסח@1")])
-        self.assertEqual(5, edges[("C", "נוסח@2")])
         self.assertEqual(3, edges[("נוסח@1", "מ:דחי")])
         self.assertEqual(5, edges[("נוסח@2", "מ:דחי")])
+        self.assertEqual(5, edges[("מ:דחי", "מ:עלייה")])
 
     def test_node_mode_edge_extraction_keeps_column_roots_from_longer_stacks(self):
         stack_counts = {
@@ -75,8 +74,8 @@ class TestTmplSurveyFocusedTargets(unittest.TestCase):
 
         edges = survey_dot._edges_from_stack_counts(stack_counts, discarded=set())
 
-        # One-hop rows are ignored, but longer rows still contribute E->A.
-        self.assertEqual(3, edges[("E", "A")])
+        # Column letters partition graph versions; they are not emitted as nodes.
+        self.assertNotIn(("E", "A"), edges)
         self.assertEqual(3, edges[("A", "B")])
 
     def test_focused_dexi_graph_excludes_cross_stack_transitive_leakage(self):
@@ -102,11 +101,11 @@ class TestTmplSurveyFocusedTargets(unittest.TestCase):
             with open(dexi_dot_path, encoding="utf-8") as dot_fp:
                 dot_text = dot_fp.read()
 
-        self.assertIn('"E" -> "מ:דחי" [label="24"]', dot_text)
         self.assertIn('"מ:דחי" -> "מ:אות-ג" [label="24"]', dot_text)
         self.assertIn('"מ:אות-ג" -> "מ:אות-ס" [label="13"]', dot_text)
         self.assertNotIn('"C" -> "נוסח"', dot_text)
         self.assertNotIn('"D" -> "נוסח"', dot_text)
+        self.assertNotIn('"E" ->', dot_text)
         self.assertNotIn('"נוסח"', dot_text)
         self.assertIn("מ:כפול, נוסח have been discarded", dot_text)
 
@@ -132,7 +131,7 @@ class TestTmplSurveyFocusedTargets(unittest.TestCase):
                 dot_text = dot_fp.read()
 
         self.assertNotIn('"C" -> "נוסח@1"', dot_text)
-        self.assertIn('"C" -> "נוסח@2" [label="7"]', dot_text)
+        self.assertNotIn('"C" -> "נוסח@2"', dot_text)
         self.assertIn('"נוסח@2" -> "מ:עלייה" [label="7"]', dot_text)
         self.assertNotIn('"נוסח@1" -> "מ:דחי" [label="3"]', dot_text)
         self.assertIn("כו״ק", dot_text)
@@ -162,10 +161,30 @@ class TestTmplSurveyFocusedTargets(unittest.TestCase):
             with open(mpasuq_dot_path, encoding="utf-8") as dot_fp:
                 dot_text = dot_fp.read()
 
-        self.assertIn('"D" -> "נוסח" [label="8"]', dot_text)
         self.assertIn('"נוסח" -> "מ:פסוק" [label="8"]', dot_text)
         self.assertIn('"מ:פסוק" -> "מ:עלייה" [label="5"]', dot_text)
         self.assertNotIn("have been discarded", dot_text)
+
+    def test_focused_outputs_disambiguate_multi_column_versions(self):
+        stack_counts = {
+            ("מ:דחי", "C/נוסח"): 2,
+            ("מ:אות-ג", "C/נוסח/מ:דחי"): 3,
+            ("מ:דחי", "E/נוסח"): 5,
+            ("מ:אות-ג", "E/נוסח/מ:דחי"): 7,
+        }
+
+        with tempfile.TemporaryDirectory() as tdir:
+            stem = os.path.join(tdir, "plain")
+            orig_render_svg = survey_dot.render_svg
+            survey_dot.render_svg = lambda dot_path, svg_path, generator_file=None: None
+            try:
+                survey_dot.write_focused_dot_files(stack_counts, stem, svg_stem=stem)
+            finally:
+                survey_dot.render_svg = orig_render_svg
+
+            self.assertTrue(os.path.exists(f"{stem}-dexi-call-graph-c.dot"))
+            self.assertTrue(os.path.exists(f"{stem}-dexi-call-graph-e.dot"))
+            self.assertFalse(os.path.exists(f"{stem}-dexi-call-graph.dot"))
 
     def test_focused_docnote_special_label_only_for_dead_end_direct_children(self):
         stack_counts = {

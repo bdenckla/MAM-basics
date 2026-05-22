@@ -32,6 +32,32 @@ class TestGraphProvenance(unittest.TestCase):
         self.assertIn(f"graph [comment={survey_dot._dot_quoted(expected)}];", dot_text)
         self.assertIn("have been discarded", dot_text)
 
+    def test_write_dot_file_disambiguates_multi_column_versions(self):
+        expected = self._generated_by()
+        stack_counts = {
+            ("B", "C/A"): 2,
+            ("B", "E/A"): 3,
+        }
+        with TemporaryDirectory() as tmp_dir:
+            dot_path = Path(tmp_dir) / "graph.dot"
+            survey_dot.write_dot_file(
+                stack_counts,
+                str(dot_path),
+                discarded=set(),
+                generator_file=__file__,
+            )
+            dot_c = Path(tmp_dir) / "graph-c.dot"
+            dot_e = Path(tmp_dir) / "graph-e.dot"
+            dot_c_text = dot_c.read_text(encoding="utf-8")
+            has_dot_c = dot_c.exists()
+            has_dot_e = dot_e.exists()
+            has_unsuffixed = dot_path.exists()
+
+        self.assertTrue(has_dot_c)
+        self.assertTrue(has_dot_e)
+        self.assertFalse(has_unsuffixed)
+        self.assertIn(f"// {expected}", dot_c_text)
+
     def test_write_focused_dot_files_include_provenance_comments(self):
         stack_counts = {
             ("מ:כפול", "C"): 2,
