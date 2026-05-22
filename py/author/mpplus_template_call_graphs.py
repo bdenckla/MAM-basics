@@ -102,6 +102,23 @@ def _normal_order():
     ]
 
 
+_MISC_TERMINAL_LINES = [
+    ["מ:אות-ק", "מ:אות-ג", "מ:אות תלויה", "מ:נו״ן הפוכה"],
+    #
+    ["מ:לגרמיה-2", "מ:פסק", "מ:מקף אפור"],
+    #
+    ["מ:קישור בהערה", "מ:קישור פנימי בהערה", "מודגש", "ש"],
+    #
+    ["סס", "ססס", "פפ", "פפפ"],
+    #
+    ["ר0", "ר1", "ר2", "ר3", "ר4"],
+]
+_MISC_TERMINAL_ABBR = {
+    "מ:קישור בהערה": "...",
+    "מ:קישור פנימי בהערה": "...",
+}
+
+
 def _plus_e_rank_table_rows():
     rank_groups = nesting_normal_form.RANK_GROUPS_FOR_PLUS_E
     if len(rank_groups) != len(_PLUS_E_RANK_CATEGORY_SYMBOLS):
@@ -111,11 +128,39 @@ def _plus_e_rank_table_rows():
             f"{len(_PLUS_E_RANK_CATEGORY_SYMBOLS)} symbols"
         )
 
-    out: list[list[str]] = []
-    for symbol, templates in zip(_PLUS_E_RANK_CATEGORY_SYMBOLS, rank_groups):
+    out: list[list[object]] = []
+    last_rank_index = len(rank_groups) - 1
+    for idx, (symbol, templates) in enumerate(
+        zip(_PLUS_E_RANK_CATEGORY_SYMBOLS, rank_groups)
+    ):
+        if idx == last_rank_index:
+            out.append([_misc_terminal_templates_cell(templates), symbol])
+            continue
         tmpl_comma_sep = ", ".join(sorted(templates))
         out.append([tmpl_comma_sep, symbol])
     return out
+
+
+def _misc_terminal_templates_cell(last_rank_group: frozenset[str]):
+    flattened = [tmpl for line in _MISC_TERMINAL_LINES for tmpl in line]
+    if sorted(flattened) != sorted(last_rank_group):
+        raise AssertionError(
+            "_MISC_TERMINAL_LINES must match sorted last element of "
+            "nesting_normal_form.RANK_GROUPS_FOR_PLUS_E"
+        )
+
+    lines = []
+    for line in _MISC_TERMINAL_LINES:
+        abbr_line = [_MISC_TERMINAL_ABBR.get(tmpl, tmpl) for tmpl in line]
+        lines.append(", ".join(abbr_line))
+
+    with_breaks: list[object] = []
+    for idx, line in enumerate(lines):
+        if idx > 0:
+            with_breaks.append(mb_html.line_break())
+        with_breaks.append(line)
+
+    return author.hbo(with_breaks)
 
 
 def _svg_object(svg_href: str, fallback: str):
