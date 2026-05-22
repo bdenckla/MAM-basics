@@ -129,16 +129,18 @@ def _plus_e_rank_table_rows():
         )
 
     out: list[list[object]] = []
-    last_rank_index = len(rank_groups) - 1
     for idx, (symbol, templates) in enumerate(
         zip(_PLUS_E_RANK_CATEGORY_SYMBOLS, rank_groups)
     ):
-        if idx == last_rank_index:
-            out.append([_misc_terminal_templates_cell(templates), symbol])
-            continue
-        tmpl_comma_sep = ", ".join(sorted(templates))
+        rank_handler = _CUSTOM_RANK_HANDLERS.get(idx) or _default_rank_handler
+        tmpl_comma_sep = rank_handler(templates)
         out.append([tmpl_comma_sep, symbol])
     return out
+
+
+def _default_rank_handler(templates: frozenset[str]):
+    return ", ".join(sorted(templates))
+
 
 
 def _misc_terminal_templates_cell(last_rank_group: frozenset[str]):
@@ -162,6 +164,10 @@ def _misc_terminal_templates_cell(last_rank_group: frozenset[str]):
 
     return with_breaks
 
+
+_CUSTOM_RANK_HANDLERS = {
+    7: _misc_terminal_templates_cell,
+}
 
 def _svg_object(svg_href: str, fallback: str):
     return mb_html.raw_html(
