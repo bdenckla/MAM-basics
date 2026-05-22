@@ -466,4 +466,3 @@ REGISTRY: dict[str, VerifierFn] = {
     "mp.both.templates.special-letters.set": verify_mp_both_templates_special_letters_set,
     "mp.both.templates.structural.set": verify_mp_both_templates_structural_set,
 }
-

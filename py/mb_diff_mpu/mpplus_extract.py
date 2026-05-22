@@ -215,4 +215,3 @@ def diff_all_books(old_rev, new_rev):
             continue
         all_diffs.extend(_diff_one_file(old_json, new_json, stem))
     return all_diffs
-

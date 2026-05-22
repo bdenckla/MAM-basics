@@ -484,4 +484,3 @@ def find_relevant_docnote(old_text, new_text, notes, text_changed):
         if any(pos in note_positions for pos in changed):
             result.append(note)
     return result
-

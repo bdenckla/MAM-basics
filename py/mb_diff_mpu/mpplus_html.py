@@ -385,4 +385,3 @@ def write_report(diffs, old_rev, new_rev, out_path, old_date="", new_date=""):
     with open(out_path, "w", encoding="utf-8") as f:
         f.write(html)
     return total
-

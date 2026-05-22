@@ -152,4 +152,3 @@ def normalize_ep(ep):
 def normalize_structure(ep):
     """Return the structural signature of a normalized EP."""
     return structural_signature(normalize_ep(ep))
-

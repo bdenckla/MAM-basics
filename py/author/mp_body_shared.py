@@ -322,4 +322,3 @@ def verse_d_column_block(
     if example_json is not None:
         out.append(json_block.json_block_raw_html(example_json))
     return out
-

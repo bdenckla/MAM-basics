@@ -105,4 +105,3 @@ assert len(_CLAIM_DEF_BY_ID) == len(_ALL_CLAIM_DEFS), "duplicate mp_cmn claim id
 def emit_claim_by_id(*, claims: ClaimCollection, claim_id: str) -> Any:
     _claim_id, payload, kind, subject, data = _CLAIM_DEF_BY_ID[claim_id]
     return claims.claim(_claim_id, payload, kind=kind, subject=subject, data=data)
-

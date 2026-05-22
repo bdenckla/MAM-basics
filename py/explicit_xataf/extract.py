@@ -207,4 +207,3 @@ def find_docnote_tmpls(wt_seq):
         elif isinstance(wtel, list):
             results.extend(find_docnote_tmpls(wtel))
     return results
-

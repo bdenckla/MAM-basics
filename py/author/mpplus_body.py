@@ -569,4 +569,3 @@ def s_common_templates(*, claims: ClaimCollection):
         tblh.tmpl_purp_table(cmn.other_rows_shared_core(docnote_doc=_DEDPG_DOCNOTE)),
         body_shared.note_links_param1_explanation_para(),
     ]
-

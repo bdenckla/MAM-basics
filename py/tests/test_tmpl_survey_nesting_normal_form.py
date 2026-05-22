@@ -11,7 +11,9 @@ def _read_top_stack(summary_entry):
 
 
 def _survey_case_rank_maps():
-    return main_tmpl_survey._case_rank_maps(main_tmpl_survey._NORMAL_FORM_CASE_RANK_GROUPS)
+    return main_tmpl_survey._case_rank_maps(
+        main_tmpl_survey._NORMAL_FORM_CASE_RANK_GROUPS
+    )
 
 
 def _default_normal_form_rank_map():
@@ -519,4 +521,3 @@ class TestTmplSurveyNestingNormalForm(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-

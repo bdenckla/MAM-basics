@@ -243,4 +243,3 @@ def _sorted_inventory(inventory):
     ):
         out.append({"item": key, **value})
     return out
-

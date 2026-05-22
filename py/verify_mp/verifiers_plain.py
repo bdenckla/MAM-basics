@@ -712,4 +712,3 @@ REGISTRY: dict[str, VerifierFn] = {
     "mp.plain.verse.e-col.semantics": verify_mp_plain_verse_e_col_semantics,
     "mp.plain.verse.is-3-tuple": verify_mp_plain_verse_is_3_tuple,
 }
-

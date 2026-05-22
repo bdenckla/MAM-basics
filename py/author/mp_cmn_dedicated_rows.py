@@ -79,4 +79,3 @@ def with_dualcant_dedicated_page_link(accent_rows, *, doc_name: str):
         )
 
     return out_rows
-

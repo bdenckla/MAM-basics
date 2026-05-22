@@ -284,4 +284,3 @@ def write_shared_assets(out_dir):
             with open(path, "w", encoding="utf-8") as f:
                 f.write(content)
     _copy_woff2(out_dir)
-

@@ -43,4 +43,3 @@ def build_body(*, claims: ClaimCollection):
 
 def _build_body(*, claims: ClaimCollection):
     return build_body(claims=claims)
-

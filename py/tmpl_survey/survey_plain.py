@@ -314,4 +314,3 @@ def survey(case_rank_maps):
         "arg_counts": _flatten_arg_counts(accum),
     }
     return result, accum["stack_counts"], _docnote_arg2_only_leaf_templates(accum)
-

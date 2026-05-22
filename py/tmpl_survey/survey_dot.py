@@ -785,4 +785,3 @@ def render_svg(dot_path, svg_path, generator_file=None):
             with open(svg_path, "w", encoding="utf-8") as svg_fp:
                 svg_fp.write(normalized_svg_text)
     return True
-

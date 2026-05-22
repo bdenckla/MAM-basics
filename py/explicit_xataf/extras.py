@@ -103,4 +103,3 @@ def write_extras(all_extras):
         print(f" ({n_uncat} uncategorized)")
     else:
         print()
-

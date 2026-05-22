@@ -27,9 +27,7 @@ _KETIV_QERE_TEMPLATES = frozenset(
         "מ:קו״כ-אם-2",
     }
 )
-_END_WHITESPACE = frozenset(
-    {"ר0", "ר1", "ר2", "ר3", "ר4", "סס", "ססס", "פפ", "פפפ"}
-)
+_END_WHITESPACE = frozenset({"ר0", "ר1", "ר2", "ר3", "ר4", "סס", "ססס", "פפ", "פפפ"})
 _END_LACK_OF_WHITESPACE = frozenset(
     {
         "מ:אין פרשה בתחילת פרק",
@@ -579,4 +577,3 @@ def assert_stack_counts_follow_expanded_grammar(
                 f"count={v['count']}, example={v['example_stack']}"
             )
     raise AssertionError("\n".join(lines))
-

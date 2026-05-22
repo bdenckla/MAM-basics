@@ -74,4 +74,3 @@ def build_body(
         author.para("Named parameters:"),
         author.std_table(dualcant_params, arg_to_troh=["Param", "Description"]),
     ]
-

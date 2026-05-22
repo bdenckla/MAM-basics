@@ -25,10 +25,7 @@ def add_parser_args(parser):
         "--find-stack-path-dataset",
         choices=("plain", "plus", "both"),
         default="plus",
-        help=(
-            "Dataset to scan when --find-stack-path is used. "
-            "Default: plus."
-        ),
+        help=("Dataset to scan when --find-stack-path is used. " "Default: plus."),
     )
     parser.add_argument(
         "--find-stack-path-limit",

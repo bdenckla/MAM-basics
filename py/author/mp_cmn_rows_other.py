@@ -249,4 +249,3 @@ def other_rows_plain_extras(*, good_ending_doc=_GOOD_ENDING_TMPL_DOC):
         OTHER_ROW_BY_TEMPLATE["רווח בסוף שורה"],
         OTHER_ROW_BY_TEMPLATE["מ:כל קמץ קטן מרכא"],
     ]
-

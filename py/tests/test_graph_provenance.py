@@ -45,9 +45,9 @@ class TestGraphProvenance(unittest.TestCase):
                 str(stem),
                 generator_file=__file__,
             )
-            dualcant_text = (Path(tmp_dir) / "focused-dualcant-call-graph.dot").read_text(
-                encoding="utf-8"
-            )
+            dualcant_text = (
+                Path(tmp_dir) / "focused-dualcant-call-graph.dot"
+            ).read_text(encoding="utf-8")
             docnote_text = (Path(tmp_dir) / "focused-docnote-call-graph.dot").read_text(
                 encoding="utf-8"
             )
@@ -196,4 +196,3 @@ class TestGraphProvenance(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-

@@ -137,4 +137,3 @@ def _wrap_pointed_in_text(text):
         prev = end
     parts.append(text[prev:])
     return "".join(parts)
-

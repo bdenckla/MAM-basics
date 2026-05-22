@@ -76,4 +76,3 @@ def split_structural_diff(diff):
         sub["docnote_notes"] = notes if i == 0 else []
         subs.append(sub)
     return subs
-

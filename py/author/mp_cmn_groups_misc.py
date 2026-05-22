@@ -129,9 +129,7 @@ NOTE_LINK_EXTERNAL_ONLY_IN_DOCNOTE_PARAM2 = (
     "Template מ:קישור בהערה appears only within the notes argument (param 2) of נוסח."
 )
 
-NOTE_LINK_INTERNAL_ONLY_IN_DOCNOTE_PARAM2 = (
-    "Template מ:קישור פנימי בהערה appears only within the notes argument (param 2) of נוסח."
-)
+NOTE_LINK_INTERNAL_ONLY_IN_DOCNOTE_PARAM2 = "Template מ:קישור פנימי בהערה appears only within the notes argument (param 2) of נוסח."
 
 NAVIGATION_ROWS = [
     [

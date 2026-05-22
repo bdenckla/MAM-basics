@@ -535,4 +535,3 @@ def s_pseudo_verses():
             ]
         ),
     ]
-
