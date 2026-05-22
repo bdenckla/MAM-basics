@@ -15,7 +15,7 @@ digraph template_call_graph {
     "מ:פסוק" [fillcolor="lightgoldenrod1", style="filled", penwidth=2.5];
 
     // Edges
-    "D" -> "מ:פסוק" [label="1381"];
+    "D" -> "מ:פסוק" [label="521"];
     "D" -> "נוסח" [label="46"];
     "מ:פסוק" -> "מ:עלייה" [label="532"];
     "נוסח" -> "נוסח@1" [label="46"];

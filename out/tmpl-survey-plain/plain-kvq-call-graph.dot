@@ -18,7 +18,7 @@ digraph template_call_graph {
     graph [label="מ:כפול, מ:קישור בהערה, מ:קישור פנימי בהערה, נוסח, ש have been discarded", labelloc=b, fontsize=10];
 
     // Edges
-    "E" -> "כו״ק" [label="912"];
+    "E" -> "כו״ק" [label="28"];
     "כו״ק" -> "גלגל-2" [label="1"];
     "כו״ק" -> "מ:אות-ק" [label="1"];
     "כו״ק" -> "מ:דחי" [label="7"];

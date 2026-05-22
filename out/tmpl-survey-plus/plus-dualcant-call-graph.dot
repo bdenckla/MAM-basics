@@ -15,7 +15,7 @@ digraph template_call_graph {
     "מ:כפול" [fillcolor="lightgoldenrod1", style="filled", penwidth=2.5];
 
     // Edges
-    "E" -> "מ:כפול" [label="183"];
+    "E" -> "מ:כפול" [label="149"];
     "מ:כפול" -> "מ:לגרמיה-2" [label="14"];
     "מ:כפול" -> "מ:פסק" [label="7"];
     "מ:כפול" -> "מ:קמץ" [label="4"];

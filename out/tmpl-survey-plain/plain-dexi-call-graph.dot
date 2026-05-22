@@ -19,7 +19,7 @@ digraph template_call_graph {
 
     // Edges
     "E" -> "כו״ק" [label="7"];
-    "E" -> "מ:דחי" [label="2285"];
+    "E" -> "מ:דחי" [label="8"];
     "E" -> "מ:קו״כ-אם-2" [label="8"];
     "E" -> "מ:קמץ" [label="14"];
     "E" -> "פרשה-מרכז" [label="10"];

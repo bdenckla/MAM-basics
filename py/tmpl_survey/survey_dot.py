@@ -29,6 +29,7 @@ _FOCUS_NODE_ATTR_PARTS = (
 )
 _EDGE_LABEL_MAX_CHARS = 72
 _ONE_HOP_LABEL_MAX_PARTS = 2
+_MIN_STACK_LEN_FOR_NODE_MODE = 3
 _BASE_TEMPLATE_ALIASES = {
     "נוסח@1": "נוסח",
     "נוסח@2": "נוסח",
@@ -48,7 +49,12 @@ def _is_discarded(name, discarded):
 
 
 def _edges_from_stack_counts(stack_counts, discarded=None):
-    """Extract (caller, callee) → count from raw stack_counts defaultdict."""
+    """Extract node-mode edges from stacks longer than two nodes.
+
+    This suppresses one-hop stacks like E -> terminal-template in
+    templates-as-nodes outputs, while preserving column roots by
+    decomposing longer stacks into adjacent edges.
+    """
     if discarded is None:
         discarded = _BASE_DISCARDED
     edges = {}
@@ -57,12 +63,14 @@ def _edges_from_stack_counts(stack_counts, discarded=None):
         rest_parts = [
             p for p in stack_rest.split("/") if not _is_discarded(p, discarded)
         ]
-        caller = rest_parts[-1]
-        callee = stack_top
-        if _is_discarded(callee, discarded):
+        if _is_discarded(stack_top, discarded):
             continue
-        edge = (caller, callee)
-        edges[edge] = edges.get(edge, 0) + count
+        stack = (*rest_parts, stack_top)
+        if len(stack) < _MIN_STACK_LEN_FOR_NODE_MODE:
+            continue
+        for caller, callee in zip(stack, stack[1:]):
+            edge = (caller, callee)
+            edges[edge] = edges.get(edge, 0) + count
     return edges
 
 
@@ -332,6 +340,9 @@ def _focused_edges_from_stack_counts(stack_counts, target, discarded=None):
     If discarded is provided, discarded templates are removed from the path
     before edge decomposition, and records whose callee is discarded are
     ignored.
+
+    One-hop stacks are ignored so focused templates-as-nodes graphs only
+    reflect stacks longer than two nodes.
     """
     if discarded is None:
         discarded = set()
@@ -343,6 +354,8 @@ def _focused_edges_from_stack_counts(stack_counts, target, discarded=None):
         if _is_discarded(stack_top, discarded):
             continue
         stack = (*rest_parts, stack_top)
+        if len(stack) < _MIN_STACK_LEN_FOR_NODE_MODE:
+            continue
         if not any(_matches_target(x, target) for x in stack):
             continue
         for caller, callee in zip(stack, stack[1:]):

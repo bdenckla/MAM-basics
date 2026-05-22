@@ -55,10 +55,10 @@ digraph template_call_graph {
     graph [label="כו״ק, מ:דחי, מ:כו״ק מיוחד, מ:קו״כ-אם-2, מ:קמץ have been discarded", labelloc=b, fontsize=10];
 
     // Edges
-    "C" -> "נוסח" [label="519"];
-    "D" -> "נוסח" [label="82"];
+    "C" -> "נוסח" [label="242"];
+    "D" -> "נוסח" [label="47"];
     "E" -> "מ:כפול" [label="117"];
-    "E" -> "נוסח" [label="7180"];
+    "E" -> "נוסח" [label="3639"];
     "מ:כפול" -> "נוסח" [label="117"];
     "מ:פסוק" -> "מ:עלייה" [label="11"];
     "נוסח" -> "נוסח@1" [label="585"];

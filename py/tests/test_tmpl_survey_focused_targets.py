@@ -67,6 +67,18 @@ class TestTmplSurveyFocusedTargets(unittest.TestCase):
         self.assertEqual(3, edges[("נוסח@1", "מ:דחי")])
         self.assertEqual(5, edges[("נוסח@2", "מ:דחי")])
 
+    def test_node_mode_edge_extraction_keeps_column_roots_from_longer_stacks(self):
+        stack_counts = {
+            ("A", "E"): 2,
+            ("B", "E/A"): 3,
+        }
+
+        edges = survey_dot._edges_from_stack_counts(stack_counts, discarded=set())
+
+        # One-hop rows are ignored, but longer rows still contribute E->A.
+        self.assertEqual(3, edges[("E", "A")])
+        self.assertEqual(3, edges[("A", "B")])
+
     def test_focused_dexi_graph_excludes_cross_stack_transitive_leakage(self):
         stack_counts = {
             ("נוסח", "C"): 2,
@@ -90,7 +102,7 @@ class TestTmplSurveyFocusedTargets(unittest.TestCase):
             with open(dexi_dot_path, encoding="utf-8") as dot_fp:
                 dot_text = dot_fp.read()
 
-        self.assertIn('"E" -> "מ:דחי" [label="31"]', dot_text)
+        self.assertIn('"E" -> "מ:דחי" [label="24"]', dot_text)
         self.assertIn('"מ:דחי" -> "מ:אות-ג" [label="24"]', dot_text)
         self.assertIn('"מ:אות-ג" -> "מ:אות-ס" [label="13"]', dot_text)
         self.assertNotIn('"C" -> "נוסח"', dot_text)
@@ -119,8 +131,8 @@ class TestTmplSurveyFocusedTargets(unittest.TestCase):
             with open(docnote_dot_path, encoding="utf-8") as dot_fp:
                 dot_text = dot_fp.read()
 
-        self.assertIn('"C" -> "נוסח@1" [label="2"]', dot_text)
-        self.assertIn('"C" -> "נוסח@2" [label="11"]', dot_text)
+        self.assertNotIn('"C" -> "נוסח@1"', dot_text)
+        self.assertIn('"C" -> "נוסח@2" [label="7"]', dot_text)
         self.assertIn('"נוסח@2" -> "מ:עלייה" [label="7"]', dot_text)
         self.assertNotIn('"נוסח@1" -> "מ:דחי" [label="3"]', dot_text)
         self.assertIn("כו״ק", dot_text)
