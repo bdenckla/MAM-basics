@@ -9,13 +9,13 @@ from tmpl_survey import nesting_normal_form
 _PLUS_DOC = "mpplus.html"
 
 _PLUS_E_RANK_CATEGORY_SYMBOLS = (
-    "choice",
-    "doc-note",
-    "scrdff-note",
+    "choice of cantillation",
+    "documentation note",
+    "scroll difference note",
     "$ketiv_qere",
-    "choice",
-    "choice",
-    "word-with-special-letter",
+    ["choice of $qamats ", author.dquote("size")],
+    "choice of stress helper",
+    "word with special letter",
     "misc. terminal",
 )
 
@@ -24,13 +24,15 @@ _MISC_TERMINAL_LINES = [
     #
     ["מ:לגרמיה-2", "מ:פסק", "מ:מקף אפור"],
     #
-    ["מ:קישור בהערה", "מ:קישור פנימי בהערה", "מודגש", "ש"],
+    ["ש", "מודגש", "מ:קישור בהערה", "מ:קישור פנימי בהערה"],
     #
     ["סס", "ססס", "פפ", "פפפ"],
     #
     ["ר0", "ר1", "ר2", "ר3", "ר4"],
 ]
 _MISC_TERMINAL_ABBR = {
+    "מ:אות תלויה": "...",
+    "מ:נו״ן הפוכה": "...",
     "מ:קישור בהערה": "...",
     "מ:קישור פנימי בהערה": "...",
 }
