@@ -30,6 +30,8 @@ def dquote(contents):
     """Wrap contents in curly double quotes."""
     if isinstance(contents, str):
         return sd.LDQM + contents + sd.RDQM
+    if mb_html.is_htel(contents):
+        return [sd.LDQM, contents, sd.RDQM]
     return [sd.LDQM, *contents, sd.RDQM]
 
 

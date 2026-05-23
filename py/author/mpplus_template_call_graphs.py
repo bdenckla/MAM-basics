@@ -15,12 +15,8 @@ from author import mpplus_nesting_normal_order as normal_order
 
 _FNAME = "mpplus-template-call-graphs.html"
 _TITLE = "Plus template nesting"  # title is slightly out of sync with the .py/.html filename, but that's fine since the title is more user-facing
-_SVG_FULL_C = "../svg/plus-call-graph-c.svg"
-_SVG_FULL_D = "../svg/plus-call-graph-d.svg"
 _SVG_FULL_E = "../svg/plus-call-graph-e.svg"
 _SVG_DUALCANT = "../svg/plus-dualcant-call-graph.svg"
-_SVG_DOCNOTE_C = "../svg/plus-docnote-call-graph-c.svg"
-_SVG_DOCNOTE_D = "../svg/plus-docnote-call-graph-d.svg"
 _SVG_DOCNOTE_E = "../svg/plus-docnote-call-graph-e.svg"
 
 
@@ -34,17 +30,51 @@ def _call_graphs_paras():
     return [
         author.para(
             "The rest of this document shows call graphs."
-            " These graphs show which templates appear inside other templates."
+            " These graphs show which templates nest inside other templates."
             " Whereas the normal order shown above constrains the possible template nestings,"
             " the call graphs show the actual nestings that occur in practice."
         ),
         author.para(
-            "Each directed edge A → B means template B appears in an argument to template A."
+            "The presence of a directed edge A → B indicates that, somewhere in $MAM-parsed-plus,"
+            " a call to template A contains a call to template B."
+            " The edge is labeled with the number of times this nesting occurs."
         ),
+    ]
+
+
+def _intro_to_full_graph():
+    return [
         author.para(
-            "The full graph omits some templates to keep it more readable."
-            " The templates omitted include נוסח and מ:כפול."
-            " A full list of templates omitted appears on the diagram itself."
+            "The full graph omits the נוסח and מ:כפול templates."
+            " This is to keep it more readable."
+        ),
+    ]
+
+
+_KQ = author.dquote(author.hbo("כו״ק, …"))
+_QMC = author.hbo("מ:קמץ")
+_EDGE_FROM = ["edge from ", _KQ, " to ", _QMC]
+
+
+def _after_full_graph():
+    return [
+        author.para(["Let’s look at the ", *_EDGE_FROM, " above."]),
+        author.unordered_list(
+            [
+                [
+                    "The notation ",
+                    _KQ,
+                    " is a shorthand for a group of three $ketiv_qere templates."
+                    " You can see the list of all three by hovering over the node in the SVG graph.",
+                ],
+                [
+                    ["The ", author.dquote("12"), " ", *_EDGE_FROM],
+                    " indicates that 12 times in $MAM-parsed-plus,",
+                    " a call to one of those three templates contains a call to ",
+                    _QMC,
+                    ".",
+                ],
+            ],
         ),
     ]
 
@@ -58,7 +88,9 @@ def build_body(*, claims: ClaimCollection):
         mb_html.heading_level_2("Call graphs"),
         *_call_graphs_paras(),
         mb_html.heading_level_2("Full call graph (E)"),
+        *_intro_to_full_graph(),
         _svg_object(_SVG_FULL_E, "Full call graph E (SVG not supported)"),
+        *_after_full_graph(),
         mb_html.heading_level_2("Focused call graph: dualcant"),
         _svg_object(_SVG_DUALCANT, "Dualcant call graph (SVG not supported)"),
         mb_html.heading_level_2("Focused call graph: docnote (E)"),

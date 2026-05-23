@@ -26,9 +26,7 @@ _PLAIN_TMPL_NAME_NORMALIZATION_NOTE = (
     '(") is converted to Hebrew gershayim (U+05F4). This applies to both '
     "stmpl and tmpl template forms in plain data."
 )
-_PLUS_FULL_GRAPH_COLLAPSE_NODE_GROUPS = (
-    ("כו״ק", "קו״כ", "מ:קו״כ-אם-2"),
-)
+_PLUS_FULL_GRAPH_COLLAPSE_NODE_GROUPS = (("כו״ק", "קו״כ", "מ:קו״כ-אם-2"),)
 
 
 _NORMAL_FORM_CASE_RANK_GROUPS = {
@@ -164,9 +162,7 @@ def _assert_with_expanded_stack_grammar_locks(
 def almost_main(write_expanded_stack_grammar_lock=False):
     """Survey the use of templates in MAM plain and plus."""
     case_rank_maps = _case_rank_maps(_NORMAL_FORM_CASE_RANK_GROUPS)
-    plain_result, plain_raw_sc = survey_plain.survey(
-        case_rank_maps=case_rank_maps
-    )
+    plain_result, plain_raw_sc = survey_plain.survey(case_rank_maps=case_rank_maps)
     plus_result, plus_raw_sc = survey_plus.survey(
         plain_result["mpasuq"],
         case_rank_maps=case_rank_maps,

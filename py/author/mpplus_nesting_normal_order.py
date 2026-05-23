@@ -53,9 +53,7 @@ def build_normal_order():
 
 def _normal_order():
     return [
-        mb_html.para(
-            "MAM-parsed-plus imposes an order on the nesting of templates."
-        ),
+        mb_html.para("MAM-parsed-plus imposes an order on the nesting of templates."),
         author.para(
             "Although the order is somewhat arbitrary, it is important that there be"
             " such an order, to make the data easier to use."
