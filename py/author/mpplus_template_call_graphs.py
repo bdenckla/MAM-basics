@@ -120,7 +120,16 @@ _after_full_graph = list(
 )
 
 _edge_counts_are_low = [
-    author.para("The edge counts in the graph above are quite low.")
+    author.para(
+        [
+            "The edge counts in the graph above are quite low."
+            " This shows that, ignoring נוסח and מ:כפול, nesting in column E is rare."
+            " Though it is still low, the highest count, 97, is somewhat misleading."
+            " It is somewhat misleading since the special letter templates, by definition,"
+            " must be nested under מ:אות-מיוחדת-במילה."
+            " (The special letter templates are מ:אות-ק (small), מ:אות-ג (large), and מ:אות תלויה (hung).)"
+        ]
+    )
 ]
 
 
@@ -135,9 +144,9 @@ def build_body(*, claims: ClaimCollection):
         mb_html.heading_level_2("Call graph for column E"),
         *_intro_to_full_graph,
         _svg_object(_SVG_FULL_E, "Call graph for column E (SVG not supported)"),
-        mb_html.heading_level_2("Col. E: details of one edge"),
+        mb_html.heading_level_3("Col. E: details of one edge"),
         *_after_full_graph,
-        mb_html.heading_level_2("Col. E: edge counts are low"),
+        mb_html.heading_level_3("Col. E: edge counts are low"),
         *_edge_counts_are_low,
         mb_html.heading_level_2("Call graph for column D"),
         _svg_object(_SVG_FULL_D, "Call graph for column D (SVG not supported)"),
