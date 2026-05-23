@@ -7,90 +7,78 @@ from tmpl_survey import survey_plus
 
 
 class TestTmplSurveyPlusInvariants(unittest.TestCase):
-    def test_plain_child_stack_symbols_include_explicit_docnote_parent(self):
-        self.assertEqual(
-            ("נוסח", "נוסח@1"), survey_plain._child_stack_symbols("נוסח", 1)
-        )
+    def test_plain_child_stack_symbols_match_parent_template(self):
+        self.assertEqual(("נוסח",), survey_plain._child_stack_symbols("נוסח", 1))
         self.assertEqual(("מ:כפול",), survey_plain._child_stack_symbols("מ:כפול", 1))
 
-    def test_plain_child_stack_symbol_splits_docnote_args(self):
-        self.assertEqual("נוסח@1", survey_plain._child_stack_symbol("נוסח", 1))
-        self.assertEqual("נוסח@2", survey_plain._child_stack_symbol("נוסח", "2"))
+    def test_plain_child_stack_symbol_is_parent_template(self):
+        self.assertEqual("נוסח", survey_plain._child_stack_symbol("נוסח", 1))
+        self.assertEqual("נוסח", survey_plain._child_stack_symbol("נוסח", "2"))
         self.assertEqual("מ:כפול", survey_plain._child_stack_symbol("מ:כפול", 1))
-        with self.assertRaises(AssertionError):
-            survey_plain._child_stack_symbol("נוסח", 3)
 
-    def test_plus_child_stack_symbols_include_explicit_docnote_parent(self):
-        self.assertEqual(
-            ("נוסח", "נוסח@2"), survey_plus._child_stack_symbols("נוסח", 2)
-        )
+    def test_plus_child_stack_symbols_match_parent_template(self):
+        self.assertEqual(("נוסח",), survey_plus._child_stack_symbols("נוסח", 2))
         self.assertEqual(("מ:כפול",), survey_plus._child_stack_symbols("מ:כפול", 1))
 
-    def test_plus_child_stack_symbol_splits_docnote_args(self):
-        self.assertEqual("נוסח@1", survey_plus._child_stack_symbol("נוסח", 1))
-        self.assertEqual("נוסח@2", survey_plus._child_stack_symbol("נוסח", "2"))
+    def test_plus_child_stack_symbol_is_parent_template(self):
+        self.assertEqual("נוסח", survey_plus._child_stack_symbol("נוסח", 1))
+        self.assertEqual("נוסח", survey_plus._child_stack_symbol("נוסח", "2"))
         self.assertEqual("מ:כפול", survey_plus._child_stack_symbol("מ:כפול", 1))
-        with self.assertRaises(AssertionError):
-            survey_plus._child_stack_symbol("נוסח", "arg")
 
-    def test_plain_flatten_stack_counts_splits_docnote_slots(self):
+    def test_plain_flatten_stack_counts_uses_unsuffixed_docnote(self):
         accum = {
             "stack_counts": {
                 ("מ:פסוק", "E"): 5,
-                ("מ:פסוק", "E/נוסח/נוסח@1"): 2,
-                ("מ:פסוק", "E/נוסח/נוסח@2"): 3,
+                ("מ:פסוק", "E/נוסח"): 5,
             }
         }
         records = survey_plain._flatten_stack_counts(accum)
-        self.assertEqual(3, len(records))
+        self.assertEqual(2, len(records))
         self.assertEqual(
             [
                 ("E/מ:פסוק", 5),
-                ("E/נוסח/נוסח@1/מ:פסוק", 2),
-                ("E/נוסח/נוסח@2/מ:פסוק", 3),
+                ("E/נוסח/מ:פסוק", 5),
             ],
             [(r["stack"], r["count"]) for r in records],
         )
 
-    def test_plus_flatten_stack_counts_splits_docnote_slots(self):
+    def test_plus_flatten_stack_counts_uses_unsuffixed_docnote(self):
         accum = {
             "stack_counts": {
                 ("מ:פסוק", "D"): 11,
-                ("מ:פסוק", "D/נוסח/נוסח@1"): 13,
-                ("מ:פסוק", "D/נוסח/נוסח@2"): 17,
+                ("מ:פסוק", "D/נוסח"): 30,
             }
         }
         records = survey_plus._flatten_stack_counts(accum)
-        self.assertEqual(3, len(records))
+        self.assertEqual(2, len(records))
         self.assertEqual(
             [
                 ("D/מ:פסוק", 11),
-                ("D/נוסח/נוסח@1/מ:פסוק", 13),
-                ("D/נוסח/נוסח@2/מ:פסוק", 17),
+                ("D/נוסח/מ:פסוק", 30),
             ],
             [(r["stack"], r["count"]) for r in records],
         )
 
-    def test_plain_flatten_stack_counts_preserves_direct_docnote_slots(self):
+    def test_plain_flatten_stack_counts_preserves_direct_docnote(self):
         accum = {
             "stack_counts": {
-                ("מ:פסוק", "E/נוסח@1"): 1,
+                ("מ:פסוק", "E/נוסח"): 1,
             }
         }
         records = survey_plain._flatten_stack_counts(accum)
         self.assertEqual(1, len(records))
-        self.assertEqual("E/נוסח@1/מ:פסוק", records[0]["stack"])
+        self.assertEqual("E/נוסח/מ:פסוק", records[0]["stack"])
         self.assertEqual(1, records[0]["count"])
 
-    def test_plus_flatten_stack_counts_preserves_direct_docnote_slots(self):
+    def test_plus_flatten_stack_counts_preserves_direct_docnote(self):
         accum = {
             "stack_counts": {
-                ("מ:פסוק", "D/נוסח@2"): 1,
+                ("מ:פסוק", "D/נוסח"): 1,
             }
         }
         records = survey_plus._flatten_stack_counts(accum)
         self.assertEqual(1, len(records))
-        self.assertEqual("D/נוסח@2/מ:פסוק", records[0]["stack"])
+        self.assertEqual("D/נוסח/מ:פסוק", records[0]["stack"])
         self.assertEqual(1, records[0]["count"])
 
     def test_assert_plus_excludes_non_targeted_notes_passes_for_haarah_2_only(self):

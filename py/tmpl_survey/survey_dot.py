@@ -31,14 +31,10 @@ _FOCUS_NODE_ATTR_PARTS = (
 _MIN_STACK_LEN_FOR_NODE_MODE = 3
 _MIN_TEMPLATE_STACK_LEN_FOR_NODE_MODE = _MIN_STACK_LEN_FOR_NODE_MODE - 1
 _COLUMN_ORDER = ("C", "D", "E")
-_BASE_TEMPLATE_ALIASES = {
-    "נוסח@1": "נוסח",
-    "נוסח@2": "נוסח",
-}
 
 
 def _base_template_name(name):
-    return _BASE_TEMPLATE_ALIASES.get(name, name)
+    return name
 
 
 def _matches_target(name, target):

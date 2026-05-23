@@ -7,21 +7,13 @@ from mb_cmn import ws_tmpl1 as wtp1
 from mb_cmn import ws_tmpl2 as wtp2
 from tmpl_survey import stack_path_verbose_payload as spvp
 
-_DOCNOTE_TEMPLATE_SYMBOL = "נוסח"
-_DOCNOTE_SYMBOL_BY_SLOT = {
-    "1": "נוסח@1",
-    "2": "נוסח@2",
-}
-_DOCNOTE_SLOT_SYMBOLS = frozenset(_DOCNOTE_SYMBOL_BY_SLOT.values())
-
 
 def add_parser_args(parser):
     parser.add_argument(
         "--find-stack-path",
         help=(
             "Find locations where an exact stack path occurs, e.g. "
-            "D/נוסח/נוסח@2/ש. For נוסח slots, "
-            "D/נוסח/ש is shorthand for both נוסח@1 and נוסח@2. "
+            "D/נוסח/ש. "
             "When provided, survey generation is skipped."
         ),
     )
@@ -98,61 +90,13 @@ def _dataset_file_paths(dataset_key):
     return paths
 
 
-def _docnote_child_stack_symbols(parent_subtype, arg_key):
-    if parent_subtype != _DOCNOTE_TEMPLATE_SYMBOL:
-        return (parent_subtype,)
-    slot = str(arg_key)
-    assert slot in _DOCNOTE_SYMBOL_BY_SLOT, (
-        f"Unexpected נוסח arg slot {slot!r}; expected one of "
-        f"{sorted(_DOCNOTE_SYMBOL_BY_SLOT.keys())}"
-    )
-    return (_DOCNOTE_TEMPLATE_SYMBOL, _DOCNOTE_SYMBOL_BY_SLOT[slot])
+def _child_stack_symbols(parent_subtype, arg_key):
+    _ = arg_key
+    return (parent_subtype,)
 
 
 def _path_matches(stack, subtype, target_path):
-    path_tokens = (*stack, subtype)
-    target_tokens = tuple(target_path.split("/"))
-
-    # Accept a shorthand where ".../נוסח/..." can match either
-    # ".../נוסח/נוסח@1/..." or ".../נוסח/נוסח@2/...".
-    # If the target explicitly includes נוסח@1 or נוסח@2, that explicit
-    # value remains strict.
-    path_idx = 0
-    target_idx = 0
-    while target_idx < len(target_tokens):
-        if path_idx >= len(path_tokens):
-            return False
-        cur_target = target_tokens[target_idx]
-        cur_path = path_tokens[path_idx]
-        if cur_target != cur_path:
-            return False
-
-        path_idx += 1
-        target_idx += 1
-
-        if cur_target != _DOCNOTE_TEMPLATE_SYMBOL:
-            continue
-
-        if (
-            target_idx < len(target_tokens)
-            and target_tokens[target_idx] in _DOCNOTE_SLOT_SYMBOLS
-        ):
-            if (
-                path_idx >= len(path_tokens)
-                or path_tokens[path_idx] != target_tokens[target_idx]
-            ):
-                return False
-            path_idx += 1
-            target_idx += 1
-            continue
-
-        if (
-            path_idx < len(path_tokens)
-            and path_tokens[path_idx] in _DOCNOTE_SLOT_SYMBOLS
-        ):
-            path_idx += 1
-
-    return path_idx == len(path_tokens)
+    return (*stack, subtype) == tuple(target_path.split("/"))
 
 
 def _build_hit_payload(dataset_key, bscv, stack, subtype, template_chain, verbose):
@@ -227,7 +171,7 @@ def _walk_wtel_plain(
         verbose=verbose,
     )
     for arg_idx, arg in enumerate(wtp1.template_arguments(wtel), start=1):
-        new_stack = (*stack, *_docnote_child_stack_symbols(subtype, arg_idx))
+        new_stack = (*stack, *_child_stack_symbols(subtype, arg_idx))
         for arg_wtel in arg:
             _walk_wtel_plain(
                 arg_wtel,
@@ -272,7 +216,7 @@ def _walk_wtel_plus(
         verbose=verbose,
     )
     for param_key in wtp2.template_param_keys(wtel):
-        new_stack = (*stack, *_docnote_child_stack_symbols(subtype, param_key))
+        new_stack = (*stack, *_child_stack_symbols(subtype, param_key))
         for arg_wtel in wtp2.template_param_val(wtel, param_key):
             _walk_wtel_plus(
                 arg_wtel,

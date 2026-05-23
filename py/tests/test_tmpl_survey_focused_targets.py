@@ -55,16 +55,15 @@ class TestTmplSurveyFocusedTargets(unittest.TestCase):
 
             self.assertEqual(len(slugs), len(render_calls))
 
-    def test_focused_edge_extraction_matches_docnote_suffixes(self):
+    def test_focused_edge_extraction_uses_unsuffixed_docnote(self):
         stack_counts = {
-            ("מ:דחי", "C/נוסח@1"): 3,
-            ("מ:עלייה", "C/נוסח@2/מ:דחי"): 5,
+            ("מ:דחי", "C/נוסח"): 3,
+            ("מ:עלייה", "C/נוסח/מ:דחי"): 5,
         }
 
         edges = survey_dot._focused_edges_from_stack_counts(stack_counts, target="נוסח")
 
-        self.assertEqual(3, edges[("נוסח@1", "מ:דחי")])
-        self.assertEqual(5, edges[("נוסח@2", "מ:דחי")])
+        self.assertEqual(8, edges[("נוסח", "מ:דחי")])
         self.assertEqual(5, edges[("מ:דחי", "מ:עלייה")])
 
     def test_full_graph_explicit_node_group_collapse_merges_named_nodes(self):
@@ -130,10 +129,9 @@ class TestTmplSurveyFocusedTargets(unittest.TestCase):
 
     def test_focused_docnote_uses_targeted_discard_set(self):
         stack_counts = {
-            ("נוסח@1", "C"): 2,
-            ("נוסח@2", "C"): 4,
-            ("מ:דחי", "C/נוסח@1"): 3,
-            ("מ:עלייה", "C/נוסח@2"): 7,
+            ("נוסח", "C"): 6,
+            ("מ:דחי", "C/נוסח"): 3,
+            ("מ:עלייה", "C/נוסח"): 7,
         }
 
         with tempfile.TemporaryDirectory() as tdir:
@@ -149,10 +147,9 @@ class TestTmplSurveyFocusedTargets(unittest.TestCase):
             with open(docnote_dot_path, encoding="utf-8") as dot_fp:
                 dot_text = dot_fp.read()
 
-        self.assertNotIn('"C" -> "נוסח@1"', dot_text)
-        self.assertNotIn('"C" -> "נוסח@2"', dot_text)
-        self.assertIn('"נוסח@2" -> "מ:עלייה" [label="7"]', dot_text)
-        self.assertNotIn('"נוסח@1" -> "מ:דחי" [label="3"]', dot_text)
+        self.assertNotIn('"C" -> "נוסח"', dot_text)
+        self.assertIn('"נוסח" -> "מ:עלייה" [label="7"]', dot_text)
+        self.assertNotIn('"נוסח" -> "מ:דחי" [label="3"]', dot_text)
         self.assertIn("כו״ק", dot_text)
         self.assertIn("מ:קו״כ-אם-2", dot_text)
         self.assertIn("מ:כו״ק מיוחד", dot_text)

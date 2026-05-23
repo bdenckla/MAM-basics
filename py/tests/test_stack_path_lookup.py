@@ -8,7 +8,7 @@ from unittest import mock
 from tmpl_survey import stack_path_lookup as spl
 from tmpl_survey import stack_path_verbose_payload as spvp
 
-_TARGET_PATH = "D/נוסח/נוסח@2/ש"
+_TARGET_PATH = "D/נוסח/ש"
 
 
 def _fixture_from_d_column(d_col_wtseq):
@@ -199,7 +199,7 @@ class TestStackPathLookup(unittest.TestCase):
         with self.assertRaises(SystemExit):
             spl.maybe_handle_cli(parser, args)
 
-    def test_docnote_shorthand_matches_slot_1_and_slot_2(self):
+    def test_docnote_path_matches_arg_1_and_arg_2(self):
         fixture = {
             "book39s": [
                 {
@@ -249,18 +249,12 @@ class TestStackPathLookup(unittest.TestCase):
         self.assertEqual("1", hits[0]["psv_psn"])
         self.assertEqual("2", hits[1]["psv_psn"])
 
-    def test_docnote_explicit_slot_stays_strict(self):
-        self.assertFalse(
-            spl._path_matches(
-                ("D", "נוסח", "נוסח@2"),
-                "ש",
-                "D/נוסח/נוסח@1/ש",
-            )
-        )
+    def test_path_match_is_exact(self):
+        self.assertFalse(spl._path_matches(("D", "נוסח"), "ש", "D/מ:כפול/ש"))
         self.assertTrue(
             spl._path_matches(
-                ("D", "נוסח", "נוסח@2"),
+                ("D", "נוסח"),
                 "ש",
-                "D/נוסח/נוסח@2/ש",
+                "D/נוסח/ש",
             )
         )

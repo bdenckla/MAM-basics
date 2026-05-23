@@ -56,7 +56,7 @@ class TestTmplSurveyNestingNormalForm(unittest.TestCase):
 
     def test_allows_strictly_increasing_rank_order(self):
         stack_counts = {
-            ("מ:אות-מיוחדת-במילה", "E/מ:כפול/נוסח@2/כו״ק/מ:קמץ/מ:דחי"): 2,
+            ("מ:אות-מיוחדת-במילה", "E/מ:כפול/נוסח/כו״ק/מ:קמץ/מ:דחי"): 2,
         }
         nnf.assert_stack_counts_in_normal_form(
             stack_counts,
@@ -76,7 +76,7 @@ class TestTmplSurveyNestingNormalForm(unittest.TestCase):
 
     def test_rejects_descending_rank_transition(self):
         stack_counts = {
-            ("מ:קמץ", "E/נוסח@1/מ:דחי"): 3,
+            ("מ:קמץ", "E/נוסח/מ:דחי"): 3,
         }
         with self.assertRaises(AssertionError) as ctx:
             nnf.assert_stack_counts_in_normal_form(
@@ -87,10 +87,9 @@ class TestTmplSurveyNestingNormalForm(unittest.TestCase):
         self.assertIn("מ:דחי (rank 5) -> מ:קמץ (rank 4)", str(ctx.exception))
         self.assertIn("relation=descending", str(ctx.exception))
 
-    def test_treats_docnote_suffixes_as_ranked_docnote(self):
+    def test_treats_docnote_as_ranked_template(self):
         stack_counts = {
-            ("מ:דחי", "E/מ:כפול/נוסח@1/מ:קמץ"): 2,
-            ("מ:דחי", "E/מ:כפול/נוסח@2/מ:קמץ"): 3,
+            ("מ:דחי", "E/מ:כפול/נוסח/מ:קמץ"): 5,
         }
         nnf.assert_stack_counts_in_normal_form(
             stack_counts,
@@ -98,10 +97,10 @@ class TestTmplSurveyNestingNormalForm(unittest.TestCase):
             rank_map=_default_normal_form_rank_map(),
         )
 
-    def test_allows_explicit_docnote_parent_followed_by_slot(self):
+    def test_allows_docnote_parent_in_multiple_columns(self):
         stack_counts = {
-            ("מ:דחי", "E/מ:כפול/נוסח/נוסח@1/מ:קמץ"): 2,
-            ("מ:דחי", "D/מ:כפול/נוסח/נוסח@2/מ:קמץ"): 3,
+            ("מ:דחי", "E/מ:כפול/נוסח/מ:קמץ"): 2,
+            ("מ:דחי", "D/מ:כפול/נוסח/מ:קמץ"): 3,
         }
         nnf.assert_stack_counts_in_normal_form(
             stack_counts,
@@ -125,7 +124,7 @@ class TestTmplSurveyNestingNormalForm(unittest.TestCase):
     def test_aggregates_violation_counts(self):
         stack_counts = {
             ("מ:קמץ", "E/מ:דחי"): 3,
-            ("מ:קמץ", "D/נוסח@2/מ:דחי"): 5,
+            ("מ:קמץ", "D/נוסח/מ:דחי"): 5,
         }
         violations = nnf.find_rank_violations(
             stack_counts,
@@ -143,7 +142,7 @@ class TestTmplSurveyNestingNormalForm(unittest.TestCase):
     def test_aggregates_duplicate_rank_violation_counts(self):
         stack_counts = {
             ("כו״ק", "E/כתיב ולא קרי"): 3,
-            ("כו״ק", "D/נוסח@1/כתיב ולא קרי"): 5,
+            ("כו״ק", "D/נוסח/כתיב ולא קרי"): 5,
         }
         violations = nnf.find_rank_violations(
             stack_counts,
@@ -295,7 +294,7 @@ class TestTmplSurveyNestingNormalForm(unittest.TestCase):
             summary,
         )
 
-    def test_summarize_rank_coverage_counts_drops_docnote_slots_early(self):
+    def test_summarize_rank_coverage_counts_handles_plain_docnote_paths(self):
         rank_map = nnf.build_rank_map(
             (
                 frozenset({"נוסח"}),
@@ -303,22 +302,17 @@ class TestTmplSurveyNestingNormalForm(unittest.TestCase):
             )
         )
         stack_counts = {
-            # Without early slot dropping this path would be partially_checked
-            # (stack len=3 vs ranked len=2). With early dropping it is len=2,
-            # so the same ranked path is fully_checked.
-            ("כו״ק", "E/נוסח/נוסח@1"): 5,
-            # This path becomes singleton after slot dropping and is therefore
-            # excluded from coverage totals.
-            ("כו״ק", "D/נוסח@2"): 7,
+            ("כו״ק", "E/נוסח"): 5,
+            ("כו״ק", "D/נוסח"): 7,
         }
 
         summary = nnf.summarize_rank_coverage_counts(stack_counts, rank_map)
         self.assertEqual(
             {
-                "fully_checked": 5,
+                "fully_checked": 12,
                 "partially_checked": 0,
                 "totally_unchecked": 0,
-                "total": 5,
+                "total": 12,
             },
             summary,
         )

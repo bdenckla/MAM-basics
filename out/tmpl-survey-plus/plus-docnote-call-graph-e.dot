@@ -11,7 +11,11 @@ digraph template_call_graph {
     "dead-end children of נוסח" [tooltip="כתיב ולא קרי
 מ:מקף אפור
 מ:נו״ן הפוכה
+מ:פסק
 מ:צינור
+מ:קישור בהערה
+מ:קישור פנימי בהערה
+מודגש
 סס
 ססס
 פפ
@@ -20,16 +24,11 @@ digraph template_call_graph {
 קרי ולא כתיב
 ר0
 ר1
-ר3"];
+ר3
+ש"];
     "מ:אות-ג, ..." [tooltip="מ:אות-ג
 מ:אות-ק"];
-    "dead-end children of נוסח (2)" [label="dead-end children of נוסח", tooltip="מ:קישור בהערה
-מ:קישור פנימי בהערה
-מודגש
-ש"];
     "נוסח" [fillcolor="lightgoldenrod1", style="filled", penwidth=2.5];
-    "נוסח@1" [fillcolor="lightgoldenrod1", style="filled", penwidth=2.5];
-    "נוסח@2" [fillcolor="lightgoldenrod1", style="filled", penwidth=2.5];
 
     // Note
     graph [label="כו״ק, מ:דחי, מ:כו״ק מיוחד, מ:קו״כ-אם-2, מ:קמץ have been discarded", labelloc=b, fontsize=10];
@@ -39,15 +38,8 @@ digraph template_call_graph {
     "מ:אות-מיוחדת-במילה" -> "מ:לגרמיה-2" [label="4"];
     "מ:הערה-2" -> "מ:אות-מיוחדת-במילה" [label="10"];
     "מ:כפול" -> "נוסח" [label="102"];
-    "נוסח" -> "נוסח@1" [label="354"];
-    "נוסח" -> "נוסח@2" [label="3431"];
-    "נוסח@1" -> "dead-end children of נוסח" [label="156"];
-    "נוסח@1" -> "מ:אות-מיוחדת-במילה" [label="100"];
-    "נוסח@1" -> "מ:הערה-2" [label="33"];
-    "נוסח@1" -> "מ:לגרמיה-2" [label="47"];
-    "נוסח@1" -> "מ:פסק" [label="18"];
-    "נוסח@2" -> "מ:אות-מיוחדת-במילה" [label="70"];
-    "נוסח@2" -> "מ:לגרמיה-2" [label="31"];
-    "נוסח@2" -> "מ:פסק" [label="8"];
-    "נוסח@2" -> "dead-end children of נוסח (2)" [label="3322"];
+    "נוסח" -> "dead-end children of נוסח" [label="3504"];
+    "נוסח" -> "מ:אות-מיוחדת-במילה" [label="170"];
+    "נוסח" -> "מ:הערה-2" [label="33"];
+    "נוסח" -> "מ:לגרמיה-2" [label="78"];
 }

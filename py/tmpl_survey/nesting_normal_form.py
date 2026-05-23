@@ -77,16 +77,6 @@ RANK_GROUPS_FOR_PLAIN_C = RANK_GROUPS_FOR_PLUS_C
 RANK_GROUPS_FOR_PLAIN_D = RANK_GROUPS_FOR_PLUS_D
 RANK_GROUPS_FOR_PLAIN_E = RANK_GROUPS_FOR_PLUS_E
 _COLUMN_LETTERS: tuple[str, str, str] = ("C", "D", "E")
-_DOCNOTE_SLOT_SYMBOLS = frozenset({"נוסח@1", "נוסח@2"})
-
-
-def _drop_docnote_slot_symbols(stack: Sequence[str]) -> List[str]:
-    """Remove explicit docnote slot markers from stack symbols.
-
-    Normal-order checking treats the explicit slots (נוסח@1/נוסח@2) as
-    bookkeeping details, not structural templates in the stack.
-    """
-    return [name for name in stack if name not in _DOCNOTE_SLOT_SYMBOLS]
 
 
 def _build_rank_map(rank_groups: RankGroups) -> Dict[str, int]:
@@ -124,13 +114,12 @@ def _stack_from_top_and_rest(stack_top: str, stack_rest: str) -> Tuple[str, ...]
     Stack strings are prefixed by column letter (C/D/E) in survey data;
     that prefix is removed so coverage reflects only template symbols.
 
-    Explicit docnote slots (נוסח@1/נוסח@2) are also removed here so
-    normal-order checks and coverage are computed on structural templates.
+    Stack content is used as-is for normal-order checks and coverage.
     """
     parts = [p for p in stack_rest.split("/") if p]
     if parts and parts[0] in _COLUMN_LETTERS:
         parts = parts[1:]
-    return tuple(_drop_docnote_slot_symbols(parts + [stack_top]))
+    return tuple(parts + [stack_top])
 
 
 def _is_singleton_stack(stack: Sequence[str]) -> bool:

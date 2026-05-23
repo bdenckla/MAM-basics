@@ -9,20 +9,23 @@ digraph template_call_graph {
     // Template nodes
     node [shape=box, style=""];
     "dead-end children of נוסח" [tooltip="גלגל-2
+כתיב ולא קרי
+מ:אות מנוקדת
 מ:אות-ג
 מ:אות-ק
 מ:גרש ותלישא גדולה
 מ:גרשיים ותלישא גדולה
-מ:ירושלם
-מ:לגרמיה-2
-מ:פסק"];
-    "dead-end children of נוסח (2)" [label="dead-end children of נוסח", tooltip="כתיב ולא קרי
-מ:אות מנוקדת
 מ:טעם ומתג באות אחת
+מ:ירושלם
 מ:כל קמץ קטן מרכא
+מ:לגרמיה-2
 מ:מקף אפור
 מ:נו״ן הפוכה
+מ:פסק
 מ:צינור
+מ:קישור בהערה
+מ:קישור פנימי בהערה
+מודגש
 סס
 ססס
 פפ
@@ -31,14 +34,9 @@ digraph template_call_graph {
 קרי ולא כתיב
 ר0
 ר1
-ר3"];
-    "dead-end children of נוסח (3)" [label="dead-end children of נוסח", tooltip="מ:קישור בהערה
-מ:קישור פנימי בהערה
-מודגש
+ר3
 ש"];
     "נוסח" [fillcolor="lightgoldenrod1", style="filled", penwidth=2.5];
-    "נוסח@1" [fillcolor="lightgoldenrod1", style="filled", penwidth=2.5];
-    "נוסח@2" [fillcolor="lightgoldenrod1", style="filled", penwidth=2.5];
     "שני טעמים באות אחת קמץ-תחתון-פתח-עליון" [label="שני … קמץ-תחתון-פתח-עליון", tooltip="שני טעמים באות אחת קמץ-תחתון-פתח-עליון"];
 
     // Note
@@ -46,12 +44,7 @@ digraph template_call_graph {
 
     // Edges
     "מ:כפול" -> "נוסח" [label="117"];
-    "נוסח" -> "נוסח@1" [label="312"];
-    "נוסח" -> "נוסח@2" [label="3402"];
-    "נוסח@1" -> "dead-end children of נוסח" [label="132"];
-    "נוסח@1" -> "dead-end children of נוסח (2)" [label="174"];
-    "נוסח@1" -> "שני טעמים באות אחת קמץ-תחתון-פתח-עליון" [label="6"];
-    "נוסח@2" -> "dead-end children of נוסח" [label="80"];
-    "נוסח@2" -> "dead-end children of נוסח (3)" [label="3322"];
+    "נוסח" -> "dead-end children of נוסח" [label="3708"];
+    "נוסח" -> "שני טעמים באות אחת קמץ-תחתון-פתח-עליון" [label="6"];
     "שני טעמים באות אחת קמץ-תחתון-פתח-עליון" -> "מ:טעם" [label="3"];
 }

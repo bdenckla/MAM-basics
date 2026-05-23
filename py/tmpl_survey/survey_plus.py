@@ -12,14 +12,7 @@ from mb_cmn import ws_tmpl2 as wtp2
 from mb_cmn import kq_special_templates as kqst
 
 _MINIROW = collections.namedtuple("_MINIROW", "CP, DP, EP")
-_DOCNOTE_ARG2_CONTEXT = ("נוסח", "2")
 _NON_TARGETED_SCROLL_DIFF_NOTE_TMPL = "מ:הערה"
-_DOCNOTE_SLOTS = {"1", "2"}
-_DOCNOTE_TEMPLATE_SYMBOL = "נוסח"
-_DOCNOTE_SYMBOL_BY_SLOT = {
-    "1": "נוסח@1",
-    "2": "נוסח@2",
-}
 
 
 def _wtel_type_and_subtype(wtel):
@@ -84,19 +77,12 @@ def _record_tmpl(accum, wtel_rec, wtel_subtype):
 
 
 def _child_stack_symbols(parent_subtype, arg_key):
-    if parent_subtype != _DOCNOTE_TEMPLATE_SYMBOL:
-        return (parent_subtype,)
-    return (_DOCNOTE_TEMPLATE_SYMBOL, _child_stack_symbol(parent_subtype, arg_key))
+    return (_child_stack_symbol(parent_subtype, arg_key),)
 
 
 def _child_stack_symbol(parent_subtype, arg_key):
-    if parent_subtype != _DOCNOTE_TEMPLATE_SYMBOL:
-        return parent_subtype
-    slot = str(arg_key)
-    assert (
-        slot in _DOCNOTE_SLOTS
-    ), f"Unexpected נוסח arg slot {slot!r}; expected one of {sorted(_DOCNOTE_SLOTS)}"
-    return _DOCNOTE_SYMBOL_BY_SLOT[slot]
+    _ = arg_key
+    return parent_subtype
 
 
 def _record_parent_context(accum, parent_subtype, param_key, arg_wtel):

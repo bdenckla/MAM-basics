@@ -10,26 +10,21 @@ digraph template_call_graph {
     node [shape=box, style=""];
     "dead-end children of נוסח" [tooltip="מ:אין פרשה בתחילת פרק
 מ:אין פרשה בתחילת פרק בספרי אמ״ת
+מ:קישור בהערה
 סס
 ססס
 פפפ
 ר1
-ר4"];
-    "dead-end children of נוסח (2)" [label="dead-end children of נוסח", tooltip="מ:קישור בהערה
+ר4
 ש"];
     "נוסח" [fillcolor="lightgoldenrod1", style="filled", penwidth=2.5];
-    "נוסח@1" [fillcolor="lightgoldenrod1", style="filled", penwidth=2.5];
-    "נוסח@2" [fillcolor="lightgoldenrod1", style="filled", penwidth=2.5];
 
     // Note
     graph [label="כו״ק, מ:דחי, מ:כו״ק מיוחד, מ:קו״כ-אם-2, מ:קמץ have been discarded", labelloc=b, fontsize=10];
 
     // Edges
     "מ:הערה-2" -> "פפ" [label="3"];
-    "נוסח" -> "נוסח@1" [label="227"];
-    "נוסח" -> "נוסח@2" [label="15"];
-    "נוסח@1" -> "dead-end children of נוסח" [label="126"];
-    "נוסח@1" -> "מ:הערה-2" [label="7"];
-    "נוסח@1" -> "פפ" [label="94"];
-    "נוסח@2" -> "dead-end children of נוסח (2)" [label="15"];
+    "נוסח" -> "dead-end children of נוסח" [label="141"];
+    "נוסח" -> "מ:הערה-2" [label="7"];
+    "נוסח" -> "פפ" [label="94"];
 }
