@@ -16,8 +16,8 @@ from author import mpplus_nesting_normal_order as normal_order
 _FNAME = "mpplus-template-call-graphs.html"
 _TITLE = "Plus template nesting"  # title is slightly out of sync with the .py/.html filename, but that's fine since the title is more user-facing
 _SVG_FULL_E = "../svg/plus-call-graph-e.svg"
-_SVG_DUALCANT = "../svg/plus-dualcant-call-graph.svg"
-_SVG_DOCNOTE_E = "../svg/plus-docnote-call-graph-e.svg"
+_SVG_FULL_D = "../svg/plus-call-graph-d.svg"
+_SVG_FULL_C = "../svg/plus-call-graph-c.svg"
 
 
 def gen_html_file(tdm_ch, claims: ClaimCollection):
@@ -137,10 +137,10 @@ def build_body(*, claims: ClaimCollection):
         *_intro_to_full_graph(),
         _svg_object(_SVG_FULL_E, "Full call graph E (SVG not supported)"),
         *_after_full_graph(),
-        mb_html.heading_level_2("Focused call graph: dualcant"),
-        _svg_object(_SVG_DUALCANT, "Dualcant call graph (SVG not supported)"),
-        mb_html.heading_level_2("Focused call graph: docnote (E)"),
-        _svg_object(_SVG_DOCNOTE_E, "Docnote call graph E (SVG not supported)"),
+        mb_html.heading_level_2("Call graph for column D"),
+        _svg_object(_SVG_FULL_D, "Call graph for column D (SVG not supported)"),
+        mb_html.heading_level_2("Call graph for column C"),
+        _svg_object(_SVG_FULL_C, "Call graph for column C (SVG not supported)"),
     ]
 
 
