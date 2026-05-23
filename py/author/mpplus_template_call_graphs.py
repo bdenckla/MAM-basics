@@ -26,29 +26,27 @@ def gen_html_file(tdm_ch, claims: ClaimCollection):
     return author.help_gen_html_file(__file__, tdm_ch, _FNAME, _TITLE, cbody)
 
 
-def _call_graphs_paras():
-    return [
-        author.para(
-            "The rest of this document shows call graphs."
-            " These graphs show which templates nest inside other templates."
-            " Whereas the normal order shown above constrains the possible template nestings,"
-            " the call graphs show the actual nestings that occur in practice."
-        ),
-        author.para(
-            "The presence of a directed edge A → B indicates that, somewhere in $MAM-parsed-plus,"
-            " a call to template B nests within a call to template A."
-            " The edge is labeled with the number of times this nesting occurs."
-        ),
-    ]
+_call_graphs_paras = [
+    author.para(
+        "The rest of this document shows call graphs."
+        " These graphs show which templates nest inside other templates."
+        " Whereas the normal order shown above constrains the possible template nestings,"
+        " the call graphs show the actual nestings that occur in practice."
+    ),
+    author.para(
+        "The presence of a directed edge A → B indicates that, somewhere in $MAM-parsed-plus,"
+        " a call to template B nests within a call to template A."
+        " The edge is labeled with the number of times this nesting occurs."
+    ),
+]
 
 
-def _intro_to_full_graph():
-    return [
-        author.para(
-            "The full graph omits the נוסח and מ:כפול templates."
-            " This is to keep it more readable."
-        ),
-    ]
+_intro_to_full_graph = [
+    author.para(
+        "The full graph omits the נוסח and מ:כפול templates."
+        " This is to keep it more readable."
+    ),
+]
 
 
 _KQ = author.hbo("כו״ק")
@@ -74,12 +72,10 @@ _KQ_TO_QMC_EXAMPLES = (
     ["Gen 13:3 ", _KQ_TO_QMC_EXAMPLES_PROPER[1]],
 )
 _KQ_ELLIPSIS_THREE = ("כו״ק", "מ:קו״כ-אם-2", "קו״כ")
-
 _AFTER_FULL_GRAPH_0 = [
     "To better understand the graph above, let’s look at one particular edge in the graph.",
     [" Let’s look at the ", *_EDGE_FROM_KQ_TO_QMC, "."],
 ]
-
 _AFTER_FULL_GRAPH_1 = [
     ["The notation ", _KQ_ELLIPSIS],
     " is a shorthand for a group of three $ketiv_qere templates."
@@ -109,20 +105,23 @@ _AFTER_FULL_GRAPH_5 = [
 ]
 
 
-def _after_full_graph():
-    return list(
-        map(
-            author.para,
-            [
-                _AFTER_FULL_GRAPH_0,
-                _AFTER_FULL_GRAPH_1,
-                _AFTER_FULL_GRAPH_2,
-                _AFTER_FULL_GRAPH_3,
-                _AFTER_FULL_GRAPH_4,
-                _AFTER_FULL_GRAPH_5,
-            ],
-        )
+_after_full_graph = list(
+    map(
+        author.para,
+        [
+            _AFTER_FULL_GRAPH_0,
+            _AFTER_FULL_GRAPH_1,
+            _AFTER_FULL_GRAPH_2,
+            _AFTER_FULL_GRAPH_3,
+            _AFTER_FULL_GRAPH_4,
+            _AFTER_FULL_GRAPH_5,
+        ],
     )
+)
+
+_edge_counts_are_low = [
+    author.para("The edge counts in the graph above are quite low.")
+]
 
 
 def build_body(*, claims: ClaimCollection):
@@ -132,11 +131,14 @@ def build_body(*, claims: ClaimCollection):
         mb_html.heading_level_2("Normal order"),
         *normal_order.build_normal_order(),
         mb_html.heading_level_2("Call graphs"),
-        *_call_graphs_paras(),
+        *_call_graphs_paras,
         mb_html.heading_level_2("Call graph for column E"),
-        *_intro_to_full_graph(),
+        *_intro_to_full_graph,
         _svg_object(_SVG_FULL_E, "Call graph for column E (SVG not supported)"),
-        *_after_full_graph(),
+        mb_html.heading_level_2("Col. E: details of one edge"),
+        *_after_full_graph,
+        mb_html.heading_level_2("Col. E: edge counts are low"),
+        *_edge_counts_are_low,
         mb_html.heading_level_2("Call graph for column D"),
         _svg_object(_SVG_FULL_D, "Call graph for column D (SVG not supported)"),
         mb_html.heading_level_2("Call graph for column C"),
