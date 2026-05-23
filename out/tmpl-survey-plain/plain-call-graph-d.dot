@@ -9,9 +9,8 @@ digraph template_call_graph {
     // Template nodes
     node [shape=box, style=""];
 
-    // Note
-    graph [label="מ:כפול, נוסח have been discarded", labelloc=b, fontsize=10];
-
     // Edges
     "מ:פסוק" -> "מ:עלייה" [label="532"];
+    "נוסח" -> "מ:פסוק" [label="46"];
+    "נוסח" -> "ש" [label="1"];
 }

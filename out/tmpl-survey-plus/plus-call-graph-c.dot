@@ -8,10 +8,19 @@ digraph template_call_graph {
 
     // Template nodes
     node [shape=box, style=""];
-
-    // Note
-    graph [label="מ:כפול, נוסח have been discarded", labelloc=b, fontsize=10];
+    "מ:אין … פרק, …" [tooltip="מ:אין פרשה בתחילת פרק
+מ:אין פרשה בתחילת פרק בספרי אמ״ת
+מ:קישור בהערה
+סס
+ססס
+פפפ
+ר1
+ר4
+ש"];
 
     // Edges
     "מ:הערה-2" -> "פפ" [label="3"];
+    "נוסח" -> "מ:אין … פרק, …" [label="141"];
+    "נוסח" -> "מ:הערה-2" [label="7"];
+    "נוסח" -> "פפ" [label="94"];
 }

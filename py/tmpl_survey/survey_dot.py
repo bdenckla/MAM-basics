@@ -137,6 +137,17 @@ def _discarded_for_full_graph(discarded):
     return _BASE_DISCARDED | set(discarded)
 
 
+def _discarded_for_full_graph_column(full_discarded, column):
+    """Return discard set for one full-graph column version.
+
+    Keep C/D unfiltered so their graphs preserve all template nodes/edges.
+    Keep legacy filtering for E to preserve readability in the large graph.
+    """
+    if column in {"C", "D"}:
+        return set()
+    return set(full_discarded)
+
+
 def _discard_note_text(discarded):
     """Build graph-note text for discarded templates."""
     if not discarded:
@@ -409,8 +420,7 @@ def _generated_by_text(generator_file):
     return provenance.generated_by_text(generator_file)
 
 
-def _full_graph_dot_paths(out_path, edges_by_column):
-    columns = _column_versions_for_output(edges_by_column)
+def _full_graph_dot_paths(out_path, columns):
     needs_disambiguation = len(columns) > 1
     return [
         _with_column_suffix(out_path, column, needs_disambiguation)
@@ -426,15 +436,23 @@ def _write_full_graph_dot_paths(
     collapse_node_groups=None,
 ):
     full_discarded = _discarded_for_full_graph(discarded)
-    edges_by_column = _edges_by_column_from_stack_counts(
+    edges_by_column_no_discard = _edges_by_column_from_stack_counts(
+        stack_counts,
+        discarded=set(),
+    )
+    edges_by_column_with_full_discard = _edges_by_column_from_stack_counts(
         stack_counts,
         discarded=full_discarded,
     )
-    columns = _column_versions_for_output(edges_by_column)
+    columns = _column_versions_for_output(edges_by_column_no_discard)
     needs_disambiguation = len(columns) > 1
-    note = _discard_note_text(full_discarded)
     for column in columns:
-        edges = edges_by_column.get(column, {})
+        column_discarded = _discarded_for_full_graph_column(full_discarded, column)
+        if column_discarded:
+            edges = edges_by_column_with_full_discard.get(column, {})
+        else:
+            edges = edges_by_column_no_discard.get(column, {})
+        note = _discard_note_text(column_discarded)
         collapsed_edges, groups = dot_node_collapse.collapse_edges_for_output(
             edges,
             _COLUMN_LETTERS,
@@ -450,7 +468,7 @@ def _write_full_graph_dot_paths(
                 generated_by=generated_by,
             )
     _maybe_remove_legacy_unsuffixed(out_path, needs_disambiguation)
-    return _full_graph_dot_paths(out_path, edges_by_column)
+    return _full_graph_dot_paths(out_path, columns)
 
 
 def _svg_paths_for_dot_paths(dot_paths, dot_base_path, svg_base_path):
