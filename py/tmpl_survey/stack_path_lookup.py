@@ -5,6 +5,7 @@ import json
 from mb_cmn import bib_locales as tbn
 from mb_cmn import ws_tmpl1 as wtp1
 from mb_cmn import ws_tmpl2 as wtp2
+from tmpl_survey import stack_path_verbose_payload as spvp
 
 _DOCNOTE_TEMPLATE_SYMBOL = "נוסח"
 _DOCNOTE_SYMBOL_BY_SLOT = {
@@ -25,7 +26,10 @@ def add_parser_args(parser):
         "--find-stack-path-dataset",
         choices=("plain", "plus", "both"),
         default="plus",
-        help=("Dataset to scan when --find-stack-path is used. " "Default: plus."),
+        help=(
+            "Dataset to scan when --find-stack-path or "
+            "--find-stack-path-verbose is used. Default: plus."
+        ),
     )
     parser.add_argument(
         "--find-stack-path-limit",
@@ -33,26 +37,46 @@ def add_parser_args(parser):
         default=10,
         help=(
             "Maximum number of locations to return when --find-stack-path "
-            "is used. Default: 10."
+            "or --find-stack-path-verbose is used. Default: 10."
+        ),
+    )
+    parser.add_argument(
+        "--find-stack-path-verbose",
+        metavar="FIND_STACK_PATH_VERBOSE",
+        help=(
+            "Verbose variant of --find-stack-path. Provide a stack path, and "
+            "include each matching subtree as raw JSON and as de-parsed "
+            "Wikitext."
         ),
     )
 
 
 def maybe_handle_cli(parser, args):
-    if not args.find_stack_path:
+    if args.find_stack_path and args.find_stack_path_verbose:
+        parser.error(
+            "Use either --find-stack-path or --find-stack-path-verbose, not both"
+        )
+    target_path = args.find_stack_path
+    verbose = False
+    if args.find_stack_path_verbose:
+        target_path = args.find_stack_path_verbose
+        verbose = True
+    if not target_path:
         return False
     if args.find_stack_path_limit < 1:
         parser.error("--find-stack-path-limit must be >= 1")
     hits = search_stack_path(
-        args.find_stack_path,
+        target_path,
         args.find_stack_path_dataset,
         args.find_stack_path_limit,
+        verbose=verbose,
     )
     print_results(
-        args.find_stack_path,
+        target_path,
         args.find_stack_path_dataset,
         args.find_stack_path_limit,
         hits,
+        verbose=verbose,
     )
     return True
 
@@ -86,8 +110,19 @@ def _path_matches(stack, subtype, target_path):
     return f"{'/'.join(stack)}/{subtype}" == target_path
 
 
+def _verse_key(dataset_key, bscv):
+    return (
+        dataset_key,
+        bscv["bk24na"],
+        bscv["sub_bkna"],
+        bscv["chnu"],
+        bscv["psv_psn"],
+    )
+
+
 def _record_hit_if_match(
     hits,
+    hit_lookup,
     seen_verses,
     dataset_key,
     bscv,
@@ -95,30 +130,32 @@ def _record_hit_if_match(
     subtype,
     target_path,
     limit,
+    wtel,
+    verbose=False,
 ):
-    if len(hits) >= limit:
+    if len(hits) >= limit and not verbose:
         return
     if not _path_matches(stack, subtype, target_path):
         return
-    key = (
-        dataset_key,
-        bscv["bk24na"],
-        bscv["sub_bkna"],
-        bscv["chnu"],
-        bscv["psv_psn"],
-    )
+    key = _verse_key(dataset_key, bscv)
     if key in seen_verses:
+        if verbose:
+            hit_lookup[key]["matches"].append(
+                spvp.build_match_payload(dataset_key, stack, subtype, wtel)
+            )
         return
     seen_verses.add(key)
-    hits.append(
-        {
-            "dataset": dataset_key,
-            "bk24na": bscv["bk24na"],
-            "sub_bkna": bscv["sub_bkna"],
-            "chnu": bscv["chnu"],
-            "psv_psn": bscv["psv_psn"],
-        }
-    )
+    hit = {
+        "dataset": dataset_key,
+        "bk24na": bscv["bk24na"],
+        "sub_bkna": bscv["sub_bkna"],
+        "chnu": bscv["chnu"],
+        "psv_psn": bscv["psv_psn"],
+    }
+    if verbose:
+        hit["matches"] = [spvp.build_match_payload(dataset_key, stack, subtype, wtel)]
+    hits.append(hit)
+    hit_lookup[key] = hit
 
 
 def _walk_wtel_plain(
@@ -126,12 +163,14 @@ def _walk_wtel_plain(
     stack,
     target_path,
     hits,
+    hit_lookup,
     seen_verses,
     dataset_key,
     bscv,
     limit,
+    verbose=False,
 ):
-    if len(hits) >= limit or isinstance(wtel, str):
+    if isinstance(wtel, str):
         return
     assert isinstance(wtel, dict)
     if not wtp1.is_template(wtel):
@@ -139,6 +178,7 @@ def _walk_wtel_plain(
     subtype = wtp1.template_name(wtel)
     _record_hit_if_match(
         hits,
+        hit_lookup,
         seen_verses,
         dataset_key,
         bscv,
@@ -146,6 +186,8 @@ def _walk_wtel_plain(
         subtype,
         target_path,
         limit,
+        wtel,
+        verbose=verbose,
     )
     for arg_idx, arg in enumerate(wtp1.template_arguments(wtel), start=1):
         new_stack = (*stack, *_docnote_child_stack_symbols(subtype, arg_idx))
@@ -155,10 +197,12 @@ def _walk_wtel_plain(
                 new_stack,
                 target_path,
                 hits,
+                hit_lookup,
                 seen_verses,
                 dataset_key,
                 bscv,
                 limit,
+                verbose=verbose,
             )
 
 
@@ -167,12 +211,14 @@ def _walk_wtel_plus(
     stack,
     target_path,
     hits,
+    hit_lookup,
     seen_verses,
     dataset_key,
     bscv,
     limit,
+    verbose=False,
 ):
-    if len(hits) >= limit or isinstance(wtel, str):
+    if isinstance(wtel, str):
         return
     assert isinstance(wtel, dict)
     if not wtp2.is_template(wtel):
@@ -180,6 +226,7 @@ def _walk_wtel_plus(
     subtype = wtp2.template_name(wtel)
     _record_hit_if_match(
         hits,
+        hit_lookup,
         seen_verses,
         dataset_key,
         bscv,
@@ -187,6 +234,8 @@ def _walk_wtel_plus(
         subtype,
         target_path,
         limit,
+        wtel,
+        verbose=verbose,
     )
     for param_key in wtp2.template_param_keys(wtel):
         new_stack = (*stack, *_docnote_child_stack_symbols(subtype, param_key))
@@ -196,15 +245,18 @@ def _walk_wtel_plus(
                 new_stack,
                 target_path,
                 hits,
+                hit_lookup,
                 seen_verses,
                 dataset_key,
                 bscv,
                 limit,
+                verbose=verbose,
             )
 
 
-def _find_stack_path_in_dataset(target_path, dataset_key, limit):
+def _find_stack_path_in_dataset(target_path, dataset_key, limit, verbose=False):
     hits = []
+    hit_lookup = {}
     seen_verses = set()
     walker = _walk_wtel_plain if dataset_key == "plain" else _walk_wtel_plus
     for in_path in _dataset_file_paths(dataset_key):
@@ -230,25 +282,27 @@ def _find_stack_path_in_dataset(target_path, dataset_key, limit):
                         "psv_psn": psv_psn,
                     }
                     for col, wtseq in zip(("C", "D", "E"), psv_contents):
-                        if len(hits) >= limit:
+                        if len(hits) >= limit and not verbose:
                             break
                         for wtel in wtseq:
-                            if len(hits) >= limit:
+                            if len(hits) >= limit and not verbose:
                                 break
                             walker(
                                 wtel,
                                 (col,),
                                 target_path,
                                 hits,
+                                hit_lookup,
                                 seen_verses,
                                 dataset_key,
                                 bscv,
                                 limit,
+                                verbose=verbose,
                             )
     return hits
 
 
-def search_stack_path(target_path, dataset_key, limit):
+def search_stack_path(target_path, dataset_key, limit, verbose=False):
     if dataset_key == "both":
         datasets = ("plain", "plus")
     else:
@@ -258,15 +312,22 @@ def search_stack_path(target_path, dataset_key, limit):
         remaining = limit - len(hits)
         if remaining <= 0:
             break
-        hits.extend(_find_stack_path_in_dataset(target_path, name, remaining))
+        hits.extend(
+            _find_stack_path_in_dataset(
+                target_path,
+                name,
+                remaining,
+                verbose=verbose,
+            )
+        )
     return hits
 
 
-def print_results(target_path, dataset_key, limit, hits):
+def print_results(target_path, dataset_key, limit, hits, verbose=False):
     print(
         json.dumps(
             {
-                "mode": "find-stack-path",
+                "mode": "find-stack-path-verbose" if verbose else "find-stack-path",
                 "target_path": target_path,
                 "dataset": dataset_key,
                 "limit": limit,

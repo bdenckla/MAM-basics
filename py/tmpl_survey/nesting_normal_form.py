@@ -354,12 +354,7 @@ def assert_stack_counts_in_normal_form(
     if not violations:
         return
 
-    lines = [
-        (
-            f"Template nesting normal-form violation in {dataset_name}: "
-            f"expected ranked projection to match {regex_like_grammar()}"
-        )
-    ]
+    lines = [f"Template nesting normal-form violation in {dataset_name}"]
     for v in violations:
         lines.append(
             "  - "

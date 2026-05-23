@@ -100,6 +100,11 @@ TEST_MODULE_SPECS = (
         help_text="Run template-survey nesting normal-form invariant tests.",
     ),
     TestModuleSpec(
+        flag="tmpl-survey-stack-path-lookup",
+        module_name="tests.test_stack_path_lookup",
+        help_text="Run stack-path lookup CLI/search and verbose payload tests.",
+    ),
+    TestModuleSpec(
         flag="mpplus-file-matching",
         module_name="tests.test_mpplus_file_matching",
         help_text="Run MP-plus file pairing tests.",
