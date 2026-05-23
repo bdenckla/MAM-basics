@@ -12,6 +12,7 @@ _DOCNOTE_SYMBOL_BY_SLOT = {
     "1": "נוסח@1",
     "2": "נוסח@2",
 }
+_DOCNOTE_SLOT_SYMBOLS = frozenset(_DOCNOTE_SYMBOL_BY_SLOT.values())
 
 
 def add_parser_args(parser):
@@ -19,7 +20,9 @@ def add_parser_args(parser):
         "--find-stack-path",
         help=(
             "Find locations where an exact stack path occurs, e.g. "
-            "D/נוסח/נוסח@2/ש. When provided, survey generation is skipped."
+            "D/נוסח/נוסח@2/ש. For נוסח slots, "
+            "D/נוסח/ש is shorthand for both נוסח@1 and נוסח@2. "
+            "When provided, survey generation is skipped."
         ),
     )
     parser.add_argument(
@@ -107,23 +110,79 @@ def _docnote_child_stack_symbols(parent_subtype, arg_key):
 
 
 def _path_matches(stack, subtype, target_path):
-    return f"{'/'.join(stack)}/{subtype}" == target_path
+    path_tokens = (*stack, subtype)
+    target_tokens = tuple(target_path.split("/"))
+
+    # Accept a shorthand where ".../נוסח/..." can match either
+    # ".../נוסח/נוסח@1/..." or ".../נוסח/נוסח@2/...".
+    # If the target explicitly includes נוסח@1 or נוסח@2, that explicit
+    # value remains strict.
+    path_idx = 0
+    target_idx = 0
+    while target_idx < len(target_tokens):
+        if path_idx >= len(path_tokens):
+            return False
+        cur_target = target_tokens[target_idx]
+        cur_path = path_tokens[path_idx]
+        if cur_target != cur_path:
+            return False
+
+        path_idx += 1
+        target_idx += 1
+
+        if cur_target != _DOCNOTE_TEMPLATE_SYMBOL:
+            continue
+
+        if (
+            target_idx < len(target_tokens)
+            and target_tokens[target_idx] in _DOCNOTE_SLOT_SYMBOLS
+        ):
+            if (
+                path_idx >= len(path_tokens)
+                or path_tokens[path_idx] != target_tokens[target_idx]
+            ):
+                return False
+            path_idx += 1
+            target_idx += 1
+            continue
+
+        if path_idx < len(path_tokens) and path_tokens[path_idx] in _DOCNOTE_SLOT_SYMBOLS:
+            path_idx += 1
+
+    return path_idx == len(path_tokens)
 
 
-def _verse_key(dataset_key, bscv):
-    return (
-        dataset_key,
-        bscv["bk24na"],
-        bscv["sub_bkna"],
-        bscv["chnu"],
-        bscv["psv_psn"],
+def _build_hit_payload(dataset_key, bscv, stack, subtype, wtel, template_chain, verbose):
+    hit = {
+        "dataset": dataset_key,
+        "bk24na": bscv["bk24na"],
+        "sub_bkna": bscv["sub_bkna"],
+        "chnu": bscv["chnu"],
+        "psv_psn": bscv["psv_psn"],
+    }
+    if verbose:
+        hit.update(
+            spvp.build_match_payload(
+                dataset_key,
+                stack,
+                subtype,
+                wtel,
+                template_chain,
+            )
+        )
+        return hit
+    hit.update(
+        {
+            "column": stack[0],
+            "stack_path": f"{'/'.join(stack)}/{subtype}",
+            "subtype": subtype,
+        }
     )
+    return hit
 
 
 def _record_hit_if_match(
     hits,
-    hit_lookup,
-    seen_verses,
     dataset_key,
     bscv,
     stack,
@@ -134,43 +193,21 @@ def _record_hit_if_match(
     template_chain,
     verbose=False,
 ):
-    if len(hits) >= limit and not verbose:
+    if len(hits) >= limit:
         return
     if not _path_matches(stack, subtype, target_path):
         return
-    key = _verse_key(dataset_key, bscv)
-    if key in seen_verses:
-        if verbose:
-            hit_lookup[key]["matches"].append(
-                spvp.build_match_payload(
-                    dataset_key,
-                    stack,
-                    subtype,
-                    wtel,
-                    template_chain,
-                )
-            )
-        return
-    seen_verses.add(key)
-    hit = {
-        "dataset": dataset_key,
-        "bk24na": bscv["bk24na"],
-        "sub_bkna": bscv["sub_bkna"],
-        "chnu": bscv["chnu"],
-        "psv_psn": bscv["psv_psn"],
-    }
-    if verbose:
-        hit["matches"] = [
-            spvp.build_match_payload(
-                dataset_key,
-                stack,
-                subtype,
-                wtel,
-                template_chain,
-            )
-        ]
-    hits.append(hit)
-    hit_lookup[key] = hit
+    hits.append(
+        _build_hit_payload(
+            dataset_key,
+            bscv,
+            stack,
+            subtype,
+            wtel,
+            template_chain,
+            verbose,
+        )
+    )
 
 
 def _walk_wtel_plain(
@@ -178,8 +215,6 @@ def _walk_wtel_plain(
     stack,
     target_path,
     hits,
-    hit_lookup,
-    seen_verses,
     dataset_key,
     bscv,
     limit,
@@ -195,8 +230,6 @@ def _walk_wtel_plain(
     chain_with_cur = (*template_chain, (subtype, wtel))
     _record_hit_if_match(
         hits,
-        hit_lookup,
-        seen_verses,
         dataset_key,
         bscv,
         stack,
@@ -215,8 +248,6 @@ def _walk_wtel_plain(
                 new_stack,
                 target_path,
                 hits,
-                hit_lookup,
-                seen_verses,
                 dataset_key,
                 bscv,
                 limit,
@@ -230,8 +261,6 @@ def _walk_wtel_plus(
     stack,
     target_path,
     hits,
-    hit_lookup,
-    seen_verses,
     dataset_key,
     bscv,
     limit,
@@ -247,8 +276,6 @@ def _walk_wtel_plus(
     chain_with_cur = (*template_chain, (subtype, wtel))
     _record_hit_if_match(
         hits,
-        hit_lookup,
-        seen_verses,
         dataset_key,
         bscv,
         stack,
@@ -267,8 +294,6 @@ def _walk_wtel_plus(
                 new_stack,
                 target_path,
                 hits,
-                hit_lookup,
-                seen_verses,
                 dataset_key,
                 bscv,
                 limit,
@@ -279,8 +304,6 @@ def _walk_wtel_plus(
 
 def _find_stack_path_in_dataset(target_path, dataset_key, limit, verbose=False):
     hits = []
-    hit_lookup = {}
-    seen_verses = set()
     walker = _walk_wtel_plain if dataset_key == "plain" else _walk_wtel_plus
     for in_path in _dataset_file_paths(dataset_key):
         if len(hits) >= limit:
@@ -305,18 +328,16 @@ def _find_stack_path_in_dataset(target_path, dataset_key, limit, verbose=False):
                         "psv_psn": psv_psn,
                     }
                     for col, wtseq in zip(("C", "D", "E"), psv_contents):
-                        if len(hits) >= limit and not verbose:
+                        if len(hits) >= limit:
                             break
                         for wtel in wtseq:
-                            if len(hits) >= limit and not verbose:
+                            if len(hits) >= limit:
                                 break
                             walker(
                                 wtel,
                                 (col,),
                                 target_path,
                                 hits,
-                                hit_lookup,
-                                seen_verses,
                                 dataset_key,
                                 bscv,
                                 limit,

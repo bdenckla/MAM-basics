@@ -51,44 +51,69 @@ def _intro_to_full_graph():
     ]
 
 
-_KQ = author.dquote(author.hbo("כו״ק, …"))
+_KQ = author.hbo("כו״ק")
+_TRIV_KQ = author.hbo("מ:קו״כ-אם-2")
+_QK = author.hbo("קו״כ")
+_KQ_ELLIPSIS = author.dquote(author.hbo("כו״ק, …"))
 _QMC = author.hbo("מ:קמץ")
-_EDGE_FROM = ["edge from ", _KQ, " to ", _QMC]
-_KQ_TO_QMC_EDGE_EXAMPLES = (
-    "{{כו״ק|קסומי|{{מ:קמץ|ד=קׇסֳמִי־|ס=קָסֳמִי־}}}}",
-    "{{כו״ק|סובאים|{{מ:קמץ|ד=סׇבָאִ֖ים|ס=סָבָאִ֖ים}}}}",
-    "{{מ:קו״כ-אם-2|{{מ:קמץ|ד=אׇֽהֳלֹה֙|ס=אָֽהֳלֹה֙}}|אהלה|{{מ:קמץ|ד=אׇֽהֳלֹוֹ֙|ס=אָֽהֳלֹוֹ֙}}|מקורות=ל-קרי|סוג=כתיב ה\"א בסיומת של חולם}}",
+_EDGE_FROM_KQ_TO_QMC = ["edge from ", _KQ_ELLIPSIS, " to ", _QMC]
+_KQ_TO_QMC_BREAKDOWN = [
+    ["10 cases where ", _KQ, " contains ", _QMC],
+    ["2 cases where ", _TRIV_KQ, " contains ", _QMC],
+    ["0 cases where ", _QK, " contains ", _QMC],
+]
+_KQ_TO_QMC_EXAMPLES_PROPER = (
+    author.hbo("{{כו״ק|קסומי|{{מ:קמץ|...}}}}"),
+    author.hbo("{{מ:קו״כ-אם-2|{{מ:קמץ|...}}|אהלה|{{מ:קמץ|...}}|...}}"),
 )
+_KQ_TO_QMC_EXAMPLES = (
+    ["1 Sam 28:8 ", _KQ_TO_QMC_EXAMPLES_PROPER[0]],
+    ["Gen 13:3 ", _KQ_TO_QMC_EXAMPLES_PROPER[1]],
+)
+_KQ_ELLIPSIS_THREE = ("כו״ק", "מ:קו״כ-אם-2", "קו״כ")
 
 
-def _kq_to_qmc_edge_example_items():
-    return [[mb_html.code(wikitext)] for wikitext in _KQ_TO_QMC_EDGE_EXAMPLES]
+_AFTER_FULL_GRAPH_LI_1 = [
+    ["The notation ", _KQ_ELLIPSIS],
+    " is a shorthand for a group of three $ketiv_qere templates."
+    " You can see the list of all three by hovering over the node in the SVG graph:",
+    author.unordered_list(_KQ_ELLIPSIS_THREE),
+]
+_AFTER_FULL_GRAPH_LI_2 = [
+    ["The ", author.dquote("12"), " ", *_EDGE_FROM_KQ_TO_QMC],
+    [" indicates that 12 times in $MAM-parsed-plus,"],
+    [" a call to one of those three templates contains a call to ", _QMC, "."],
+]
+_AFTER_FULL_GRAPH_LI_3 = [
+    [
+        "Not shown on the graph is how many times each those three templates contains a call to ",
+        _QMC,
+        ".",
+    ],
+    [" It happens to break down like this:"],
+    author.unordered_list(_KQ_TO_QMC_BREAKDOWN),
+]
+_AFTER_FULL_GRAPH_LI_4 = [
+    ["Here are two concrete Wikitext examples:"],
+    author.unordered_list(_KQ_TO_QMC_EXAMPLES),
+]
 
 
 def _after_full_graph():
+
     return [
-        author.para(["Let’s look at the ", *_EDGE_FROM, " above."]),
+        author.para(
+            [
+                "To better understand the graph above, let’s look at one particular edge in the graph.",
+                [" Let’s look at the ", *_EDGE_FROM_KQ_TO_QMC, "."],
+            ]
+        ),
         author.unordered_list(
             [
-                [
-                    "The notation ",
-                    _KQ,
-                    " is a shorthand for a group of three $ketiv_qere templates."
-                    " You can see the list of all three by hovering over the node in the SVG graph.",
-                ],
-                [
-                    ["The ", author.dquote("12"), " ", *_EDGE_FROM],
-                    " indicates that 12 times in $MAM-parsed-plus,",
-                    " a call to one of those three templates contains a call to ",
-                    _QMC,
-                    ". Here are three concrete Wikitext examples:",
-                    author.unordered_list(_kq_to_qmc_edge_example_items()),
-                    [
-                        "For this specific edge count, ",
-                        author.hbo("קו״כ"),
-                        " contributes 0 occurrences.",
-                    ],
-                ],
+                _AFTER_FULL_GRAPH_LI_1,
+                _AFTER_FULL_GRAPH_LI_2,
+                _AFTER_FULL_GRAPH_LI_3,
+                _AFTER_FULL_GRAPH_LI_4,
             ],
         ),
     ]

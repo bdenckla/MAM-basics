@@ -28,20 +28,28 @@ def _fixture_from_d_column(d_col_wtseq):
 
 
 class TestStackPathLookup(unittest.TestCase):
-    def _search_with_fixture(self, fixture, *, dataset_key, verbose=False, limit=10):
+    def _search_with_fixture(
+        self,
+        fixture,
+        *,
+        dataset_key,
+        target_path=_TARGET_PATH,
+        verbose=False,
+        limit=10,
+    ):
         fixture_json = json.dumps(fixture, ensure_ascii=False)
         with (
             mock.patch.object(spl, "_dataset_file_paths", return_value=["dummy.json"]),
             mock.patch("builtins.open", mock.mock_open(read_data=fixture_json)),
         ):
             return spl.search_stack_path(
-                _TARGET_PATH,
+                target_path,
                 dataset_key,
                 limit,
                 verbose=verbose,
             )
 
-    def test_non_verbose_shape_is_unchanged(self):
+    def test_non_verbose_hit_is_occurrence_with_verse_metadata(self):
         fixture = _fixture_from_d_column(
             [
                 {
@@ -64,11 +72,14 @@ class TestStackPathLookup(unittest.TestCase):
                 "sub_bkna": None,
                 "chnu": "1",
                 "psv_psn": "1",
+                "column": "D",
+                "stack_path": _TARGET_PATH,
+                "subtype": "ש",
             },
             hits[0],
         )
 
-    def test_verbose_groups_all_matches_in_same_verse(self):
+    def test_verbose_returns_one_hit_per_match_occurrence(self):
         fixture = _fixture_from_d_column(
             [
                 {
@@ -92,29 +103,31 @@ class TestStackPathLookup(unittest.TestCase):
             fixture,
             dataset_key="plus",
             verbose=True,
-            limit=1,
         )
 
-        self.assertEqual(1, len(hits))
-        self.assertIn("matches", hits[0])
-        self.assertEqual(2, len(hits[0]["matches"]))
+        self.assertEqual(2, len(hits))
 
-        for match in hits[0]["matches"]:
-            self.assertEqual("D", match["column"])
-            self.assertEqual(_TARGET_PATH, match["stack_path"])
-            self.assertEqual("ש", match["subtype"])
-            self.assertIn("match_tree_json", match)
-            self.assertIn("match_tree_wikitext", match)
-            self.assertEqual(["נוסח", "ש"], match["path_template_subtypes"])
-            self.assertEqual("נוסח", match["path_root_subtype"])
-            self.assertEqual("נוסח", match["path_parent_subtype"])
-            self.assertIn("path_root_wikitext", match)
-            self.assertIn("path_parent_wikitext", match)
+        for hit in hits:
+            self.assertEqual("plus", hit["dataset"])
+            self.assertEqual("ספר מבחן", hit["bk24na"])
+            self.assertEqual(None, hit["sub_bkna"])
+            self.assertEqual("1", hit["chnu"])
+            self.assertEqual("1", hit["psv_psn"])
+            self.assertEqual("D", hit["column"])
+            self.assertEqual(_TARGET_PATH, hit["stack_path"])
+            self.assertEqual("ש", hit["subtype"])
+            self.assertIn("match_tree_json", hit)
+            self.assertIn("match_tree_wikitext", hit)
+            self.assertEqual(["נוסח", "ש"], hit["path_template_subtypes"])
+            self.assertEqual("נוסח", hit["path_root_subtype"])
+            self.assertEqual("נוסח", hit["path_parent_subtype"])
+            self.assertIn("path_root_wikitext", hit)
+            self.assertIn("path_parent_wikitext", hit)
 
-        wikitexts = {match["match_tree_wikitext"] for match in hits[0]["matches"]}
+        wikitexts = {hit["match_tree_wikitext"] for hit in hits}
         self.assertEqual({"{{ש}}", "{{ש|ג}}"}, wikitexts)
 
-        parent_wikitexts = {match["path_parent_wikitext"] for match in hits[0]["matches"]}
+        parent_wikitexts = {hit["path_parent_wikitext"] for hit in hits}
         self.assertEqual(
             {
                 "{{נוסח|א|{{ש}}}}",
@@ -184,3 +197,69 @@ class TestStackPathLookup(unittest.TestCase):
 
         with self.assertRaises(SystemExit):
             spl.maybe_handle_cli(parser, args)
+
+    def test_docnote_shorthand_matches_slot_1_and_slot_2(self):
+        fixture = {
+            "book39s": [
+                {
+                    "book24_name": "ספר מבחן",
+                    "sub_book_name": None,
+                    "chapters": {
+                        "1": {
+                            "1": [
+                                [],
+                                [
+                                    {
+                                        "tmpl_name": "נוסח",
+                                        "tmpl_params": {
+                                            "1": {"tmpl_name": "ש"},
+                                            "2": "א",
+                                        },
+                                    }
+                                ],
+                                [],
+                            ],
+                            "2": [
+                                [],
+                                [
+                                    {
+                                        "tmpl_name": "נוסח",
+                                        "tmpl_params": {
+                                            "1": "ב",
+                                            "2": {"tmpl_name": "ש"},
+                                        },
+                                    }
+                                ],
+                                [],
+                            ],
+                        }
+                    },
+                }
+            ]
+        }
+
+        hits = self._search_with_fixture(
+            fixture,
+            dataset_key="plus",
+            target_path="D/נוסח/ש",
+        )
+
+        self.assertEqual(2, len(hits))
+        self.assertEqual("1", hits[0]["psv_psn"])
+        self.assertEqual("2", hits[1]["psv_psn"])
+
+    def test_docnote_explicit_slot_stays_strict(self):
+        self.assertFalse(
+            spl._path_matches(
+                ("D", "נוסח", "נוסח@2"),
+                "ש",
+                "D/נוסח/נוסח@1/ש",
+            )
+        )
+        self.assertTrue(
+            spl._path_matches(
+                ("D", "נוסח", "נוסח@2"),
+                "ש",
+                "D/נוסח/נוסח@2/ש",
+            )
+        )
