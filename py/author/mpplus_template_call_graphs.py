@@ -72,19 +72,23 @@ _KQ_TO_QMC_EXAMPLES = (
 )
 _KQ_ELLIPSIS_THREE = ("כו״ק", "מ:קו״כ-אם-2", "קו״כ")
 
+_AFTER_FULL_GRAPH_0 = [
+    "To better understand the graph above, let’s look at one particular edge in the graph.",
+    [" Let’s look at the ", *_EDGE_FROM_KQ_TO_QMC, "."],
+]
 
-_AFTER_FULL_GRAPH_LI_1 = [
+_AFTER_FULL_GRAPH_1 = [
     ["The notation ", _KQ_ELLIPSIS],
     " is a shorthand for a group of three $ketiv_qere templates."
     " You can see the list of all three by hovering over the node in the SVG graph:",
     author.unordered_list(_KQ_ELLIPSIS_THREE),
 ]
-_AFTER_FULL_GRAPH_LI_2 = [
+_AFTER_FULL_GRAPH_2 = [
     ["The ", author.dquote("12"), " ", *_EDGE_FROM_KQ_TO_QMC],
     [" indicates that 12 times in $MAM-parsed-plus,"],
     [" a call to one of those three templates contains a call to ", _QMC, "."],
 ]
-_AFTER_FULL_GRAPH_LI_3 = [
+_AFTER_FULL_GRAPH_3 = [
     [
         "Not shown on the graph is how many times each those three templates contains a call to ",
         _QMC,
@@ -93,30 +97,25 @@ _AFTER_FULL_GRAPH_LI_3 = [
     [" It happens to break down like this:"],
     author.unordered_list(_KQ_TO_QMC_BREAKDOWN),
 ]
-_AFTER_FULL_GRAPH_LI_4 = [
+_AFTER_FULL_GRAPH_4 = [
     ["Here are two concrete Wikitext examples:"],
     author.unordered_list(_KQ_TO_QMC_EXAMPLES),
 ]
 
 
 def _after_full_graph():
-
-    return [
-        author.para(
+    return list(
+        map(
+            author.para,
             [
-                "To better understand the graph above, let’s look at one particular edge in the graph.",
-                [" Let’s look at the ", *_EDGE_FROM_KQ_TO_QMC, "."],
-            ]
-        ),
-        author.unordered_list(
-            [
-                _AFTER_FULL_GRAPH_LI_1,
-                _AFTER_FULL_GRAPH_LI_2,
-                _AFTER_FULL_GRAPH_LI_3,
-                _AFTER_FULL_GRAPH_LI_4,
+                _AFTER_FULL_GRAPH_0,
+                _AFTER_FULL_GRAPH_1,
+                _AFTER_FULL_GRAPH_2,
+                _AFTER_FULL_GRAPH_3,
+                _AFTER_FULL_GRAPH_4,
             ],
-        ),
-    ]
+        )
+    )
 
 
 def build_body(*, claims: ClaimCollection):

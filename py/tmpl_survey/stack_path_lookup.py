@@ -146,7 +146,10 @@ def _path_matches(stack, subtype, target_path):
             target_idx += 1
             continue
 
-        if path_idx < len(path_tokens) and path_tokens[path_idx] in _DOCNOTE_SLOT_SYMBOLS:
+        if (
+            path_idx < len(path_tokens)
+            and path_tokens[path_idx] in _DOCNOTE_SLOT_SYMBOLS
+        ):
             path_idx += 1
 
     return path_idx == len(path_tokens)
