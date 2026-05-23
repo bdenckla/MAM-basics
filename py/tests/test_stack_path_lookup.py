@@ -72,9 +72,7 @@ class TestStackPathLookup(unittest.TestCase):
                 "sub_bkna": None,
                 "chnu": "1",
                 "psv_psn": "1",
-                "column": "D",
                 "stack_path": _TARGET_PATH,
-                "subtype": "ש",
             },
             hits[0],
         )
@@ -113,9 +111,7 @@ class TestStackPathLookup(unittest.TestCase):
             "sub_bkna",
             "chnu",
             "psv_psn",
-            "column",
             "stack_path",
-            "subtype",
             "path_root_wikitext",
             "path_root_json",
         }
@@ -127,9 +123,7 @@ class TestStackPathLookup(unittest.TestCase):
             self.assertEqual(None, hit["sub_bkna"])
             self.assertEqual("1", hit["chnu"])
             self.assertEqual("1", hit["psv_psn"])
-            self.assertEqual("D", hit["column"])
             self.assertEqual(_TARGET_PATH, hit["stack_path"])
-            self.assertEqual("ש", hit["subtype"])
             self.assertIn("path_root_wikitext", hit)
             self.assertIn("path_root_json", hit)
             self.assertEqual("נוסח", hit["path_root_json"]["tmpl_name"])

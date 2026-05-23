@@ -152,16 +152,14 @@ def _path_matches(stack, subtype, target_path):
     return path_idx == len(path_tokens)
 
 
-def _build_hit_payload(dataset_key, bscv, stack, subtype, wtel, template_chain, verbose):
+def _build_hit_payload(dataset_key, bscv, stack, subtype, template_chain, verbose):
     hit = {
         "dataset": dataset_key,
         "bk24na": bscv["bk24na"],
         "sub_bkna": bscv["sub_bkna"],
         "chnu": bscv["chnu"],
         "psv_psn": bscv["psv_psn"],
-        "column": stack[0],
         "stack_path": f"{'/'.join(stack)}/{subtype}",
-        "subtype": subtype,
     }
     if verbose:
         hit.update(spvp.build_root_payload(dataset_key, template_chain))
@@ -177,7 +175,6 @@ def _record_hit_if_match(
     subtype,
     target_path,
     limit,
-    wtel,
     template_chain,
     verbose=False,
 ):
@@ -191,7 +188,6 @@ def _record_hit_if_match(
             bscv,
             stack,
             subtype,
-            wtel,
             template_chain,
             verbose,
         )
@@ -224,7 +220,6 @@ def _walk_wtel_plain(
         subtype,
         target_path,
         limit,
-        wtel,
         chain_with_cur,
         verbose=verbose,
     )
@@ -270,7 +265,6 @@ def _walk_wtel_plus(
         subtype,
         target_path,
         limit,
-        wtel,
         chain_with_cur,
         verbose=verbose,
     )
