@@ -47,9 +47,9 @@ def add_parser_args(parser):
         "--find-stack-path-verbose",
         metavar="FIND_STACK_PATH_VERBOSE",
         help=(
-            "Verbose variant of --find-stack-path. Provide a stack path, and "
-            "include each matching subtree as raw JSON and as de-parsed "
-            "Wikitext, plus caller/path template context."
+            "Variant of --find-stack-path that includes path-root context. "
+            "Each hit includes the same fields as non-verbose, plus "
+            "path_root_wikitext and path_root_json."
         ),
     )
 
@@ -159,25 +159,13 @@ def _build_hit_payload(dataset_key, bscv, stack, subtype, wtel, template_chain, 
         "sub_bkna": bscv["sub_bkna"],
         "chnu": bscv["chnu"],
         "psv_psn": bscv["psv_psn"],
+        "column": stack[0],
+        "stack_path": f"{'/'.join(stack)}/{subtype}",
+        "subtype": subtype,
     }
     if verbose:
-        hit.update(
-            spvp.build_match_payload(
-                dataset_key,
-                stack,
-                subtype,
-                wtel,
-                template_chain,
-            )
-        )
+        hit.update(spvp.build_root_payload(dataset_key, template_chain))
         return hit
-    hit.update(
-        {
-            "column": stack[0],
-            "stack_path": f"{'/'.join(stack)}/{subtype}",
-            "subtype": subtype,
-        }
-    )
     return hit
 
 

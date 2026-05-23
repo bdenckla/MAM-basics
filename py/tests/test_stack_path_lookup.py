@@ -107,7 +107,21 @@ class TestStackPathLookup(unittest.TestCase):
 
         self.assertEqual(2, len(hits))
 
+        expected_keys = {
+            "dataset",
+            "bk24na",
+            "sub_bkna",
+            "chnu",
+            "psv_psn",
+            "column",
+            "stack_path",
+            "subtype",
+            "path_root_wikitext",
+            "path_root_json",
+        }
+
         for hit in hits:
+            self.assertEqual(expected_keys, set(hit.keys()))
             self.assertEqual("plus", hit["dataset"])
             self.assertEqual("ספר מבחן", hit["bk24na"])
             self.assertEqual(None, hit["sub_bkna"])
@@ -116,24 +130,17 @@ class TestStackPathLookup(unittest.TestCase):
             self.assertEqual("D", hit["column"])
             self.assertEqual(_TARGET_PATH, hit["stack_path"])
             self.assertEqual("ש", hit["subtype"])
-            self.assertIn("match_tree_json", hit)
-            self.assertIn("match_tree_wikitext", hit)
-            self.assertEqual(["נוסח", "ש"], hit["path_template_subtypes"])
-            self.assertEqual("נוסח", hit["path_root_subtype"])
-            self.assertEqual("נוסח", hit["path_parent_subtype"])
             self.assertIn("path_root_wikitext", hit)
-            self.assertIn("path_parent_wikitext", hit)
+            self.assertIn("path_root_json", hit)
+            self.assertEqual("נוסח", hit["path_root_json"]["tmpl_name"])
 
-        wikitexts = {hit["match_tree_wikitext"] for hit in hits}
-        self.assertEqual({"{{ש}}", "{{ש|ג}}"}, wikitexts)
-
-        parent_wikitexts = {hit["path_parent_wikitext"] for hit in hits}
+        root_wikitexts = {hit["path_root_wikitext"] for hit in hits}
         self.assertEqual(
             {
                 "{{נוסח|א|{{ש}}}}",
                 "{{נוסח|ב|{{ש|ג}}}}",
             },
-            parent_wikitexts,
+            root_wikitexts,
         )
 
     def test_plus_tree_deparse_handles_nested_templates(self):

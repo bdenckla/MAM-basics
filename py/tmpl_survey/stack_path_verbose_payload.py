@@ -27,6 +27,15 @@ def _path_template_context(dataset_key, template_chain):
     }
 
 
+def build_root_payload(dataset_key, template_chain):
+    assert template_chain
+    _root_subtype, root_wtel = template_chain[0]
+    return {
+        "path_root_wikitext": wtel_to_wikitext(dataset_key, root_wtel),
+        "path_root_json": root_wtel,
+    }
+
+
 def build_match_payload(dataset_key, stack, subtype, wtel, template_chain):
     return {
         "column": stack[0],
