@@ -54,6 +54,15 @@ def _intro_to_full_graph():
 _KQ = author.dquote(author.hbo("כו״ק, …"))
 _QMC = author.hbo("מ:קמץ")
 _EDGE_FROM = ["edge from ", _KQ, " to ", _QMC]
+_KQ_TO_QMC_EDGE_EXAMPLES = (
+    "{{כו״ק|קסומי|{{מ:קמץ|ד=קׇסֳמִי־|ס=קָסֳמִי־}}}}",
+    "{{כו״ק|סובאים|{{מ:קמץ|ד=סׇבָאִ֖ים|ס=סָבָאִ֖ים}}}}",
+    "{{מ:קו״כ-אם-2|{{מ:קמץ|ד=אׇֽהֳלֹה֙|ס=אָֽהֳלֹה֙}}|אהלה|{{מ:קמץ|ד=אׇֽהֳלֹוֹ֙|ס=אָֽהֳלֹוֹ֙}}|מקורות=ל-קרי|סוג=כתיב ה\"א בסיומת של חולם}}",
+)
+
+
+def _kq_to_qmc_edge_example_items():
+    return [[mb_html.code(wikitext)] for wikitext in _KQ_TO_QMC_EDGE_EXAMPLES]
 
 
 def _after_full_graph():
@@ -72,7 +81,13 @@ def _after_full_graph():
                     " indicates that 12 times in $MAM-parsed-plus,",
                     " a call to one of those three templates contains a call to ",
                     _QMC,
-                    ".",
+                    ". Here are three concrete Wikitext examples:",
+                    author.unordered_list(_kq_to_qmc_edge_example_items()),
+                    [
+                        "For this specific edge count, ",
+                        author.hbo("קו״כ"),
+                        " contributes 0 occurrences.",
+                    ],
                 ],
             ],
         ),

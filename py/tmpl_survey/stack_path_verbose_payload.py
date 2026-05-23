@@ -4,13 +4,37 @@ from mb_cmn import ws_tmpl2 as wtp2
 from ws import ws_unparse
 
 
-def build_match_payload(dataset_key, stack, subtype, wtel):
+def _path_template_context(dataset_key, template_chain):
+    assert template_chain
+    subtypes = [subtype for subtype, _wtel in template_chain]
+    root_subtype, root_wtel = template_chain[0]
+    root_ctx = {
+        "path_template_subtypes": subtypes,
+        "path_root_subtype": root_subtype,
+        "path_root_wikitext": wtel_to_wikitext(dataset_key, root_wtel),
+    }
+    if len(template_chain) == 1:
+        return {
+            **root_ctx,
+            "path_parent_subtype": None,
+            "path_parent_wikitext": None,
+        }
+    parent_subtype, parent_wtel = template_chain[-2]
+    return {
+        **root_ctx,
+        "path_parent_subtype": parent_subtype,
+        "path_parent_wikitext": wtel_to_wikitext(dataset_key, parent_wtel),
+    }
+
+
+def build_match_payload(dataset_key, stack, subtype, wtel, template_chain):
     return {
         "column": stack[0],
         "stack_path": f"{'/'.join(stack)}/{subtype}",
         "subtype": subtype,
         "match_tree_json": wtel,
         "match_tree_wikitext": wtel_to_wikitext(dataset_key, wtel),
+        **_path_template_context(dataset_key, template_chain),
     }
 
 

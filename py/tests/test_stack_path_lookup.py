@@ -105,9 +105,23 @@ class TestStackPathLookup(unittest.TestCase):
             self.assertEqual("ש", match["subtype"])
             self.assertIn("match_tree_json", match)
             self.assertIn("match_tree_wikitext", match)
+            self.assertEqual(["נוסח", "ש"], match["path_template_subtypes"])
+            self.assertEqual("נוסח", match["path_root_subtype"])
+            self.assertEqual("נוסח", match["path_parent_subtype"])
+            self.assertIn("path_root_wikitext", match)
+            self.assertIn("path_parent_wikitext", match)
 
         wikitexts = {match["match_tree_wikitext"] for match in hits[0]["matches"]}
         self.assertEqual({"{{ש}}", "{{ש|ג}}"}, wikitexts)
+
+        parent_wikitexts = {match["path_parent_wikitext"] for match in hits[0]["matches"]}
+        self.assertEqual(
+            {
+                "{{נוסח|א|{{ש}}}}",
+                "{{נוסח|ב|{{ש|ג}}}}",
+            },
+            parent_wikitexts,
+        )
 
     def test_plus_tree_deparse_handles_nested_templates(self):
         match_tree = {

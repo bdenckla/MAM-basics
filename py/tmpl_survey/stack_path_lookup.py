@@ -46,7 +46,7 @@ def add_parser_args(parser):
         help=(
             "Verbose variant of --find-stack-path. Provide a stack path, and "
             "include each matching subtree as raw JSON and as de-parsed "
-            "Wikitext."
+            "Wikitext, plus caller/path template context."
         ),
     )
 
@@ -131,6 +131,7 @@ def _record_hit_if_match(
     target_path,
     limit,
     wtel,
+    template_chain,
     verbose=False,
 ):
     if len(hits) >= limit and not verbose:
@@ -141,7 +142,13 @@ def _record_hit_if_match(
     if key in seen_verses:
         if verbose:
             hit_lookup[key]["matches"].append(
-                spvp.build_match_payload(dataset_key, stack, subtype, wtel)
+                spvp.build_match_payload(
+                    dataset_key,
+                    stack,
+                    subtype,
+                    wtel,
+                    template_chain,
+                )
             )
         return
     seen_verses.add(key)
@@ -153,7 +160,15 @@ def _record_hit_if_match(
         "psv_psn": bscv["psv_psn"],
     }
     if verbose:
-        hit["matches"] = [spvp.build_match_payload(dataset_key, stack, subtype, wtel)]
+        hit["matches"] = [
+            spvp.build_match_payload(
+                dataset_key,
+                stack,
+                subtype,
+                wtel,
+                template_chain,
+            )
+        ]
     hits.append(hit)
     hit_lookup[key] = hit
 
@@ -168,6 +183,7 @@ def _walk_wtel_plain(
     dataset_key,
     bscv,
     limit,
+    template_chain=(),
     verbose=False,
 ):
     if isinstance(wtel, str):
@@ -176,6 +192,7 @@ def _walk_wtel_plain(
     if not wtp1.is_template(wtel):
         return
     subtype = wtp1.template_name(wtel)
+    chain_with_cur = (*template_chain, (subtype, wtel))
     _record_hit_if_match(
         hits,
         hit_lookup,
@@ -187,6 +204,7 @@ def _walk_wtel_plain(
         target_path,
         limit,
         wtel,
+        chain_with_cur,
         verbose=verbose,
     )
     for arg_idx, arg in enumerate(wtp1.template_arguments(wtel), start=1):
@@ -202,6 +220,7 @@ def _walk_wtel_plain(
                 dataset_key,
                 bscv,
                 limit,
+                template_chain=chain_with_cur,
                 verbose=verbose,
             )
 
@@ -216,6 +235,7 @@ def _walk_wtel_plus(
     dataset_key,
     bscv,
     limit,
+    template_chain=(),
     verbose=False,
 ):
     if isinstance(wtel, str):
@@ -224,6 +244,7 @@ def _walk_wtel_plus(
     if not wtp2.is_template(wtel):
         return
     subtype = wtp2.template_name(wtel)
+    chain_with_cur = (*template_chain, (subtype, wtel))
     _record_hit_if_match(
         hits,
         hit_lookup,
@@ -235,6 +256,7 @@ def _walk_wtel_plus(
         target_path,
         limit,
         wtel,
+        chain_with_cur,
         verbose=verbose,
     )
     for param_key in wtp2.template_param_keys(wtel):
@@ -250,6 +272,7 @@ def _walk_wtel_plus(
                 dataset_key,
                 bscv,
                 limit,
+                template_chain=chain_with_cur,
                 verbose=verbose,
             )
 
