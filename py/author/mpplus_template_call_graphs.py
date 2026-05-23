@@ -36,7 +36,7 @@ def _call_graphs_paras():
         ),
         author.para(
             "The presence of a directed edge A → B indicates that, somewhere in $MAM-parsed-plus,"
-            " a call to template A contains a call to template B."
+            " a call to template B nests within a call to template A."
             " The edge is labeled with the number of times this nesting occurs."
         ),
     ]
@@ -57,10 +57,13 @@ _QK = author.hbo("קו״כ")
 _KQ_ELLIPSIS = author.dquote(author.hbo("כו״ק, …"))
 _QMC = author.hbo("מ:קמץ")
 _EDGE_FROM_KQ_TO_QMC = ["edge from ", _KQ_ELLIPSIS, " to ", _QMC]
+_TEN_CASES = ["10 cases where ", _QMC, " nests within ", _KQ]
+_TWO_CASES = ["2 cases where ", _QMC, " nests within ", _TRIV_KQ]
+_ZERO_CASES = ["0 cases where ", _QMC, " nests within ", _QK]
 _KQ_TO_QMC_BREAKDOWN = [
-    ["10 cases where ", _KQ, " contains ", _QMC],
-    ["2 cases where ", _TRIV_KQ, " contains ", _QMC],
-    ["0 cases where ", _QK, " contains ", _QMC],
+    _TEN_CASES,
+    _TWO_CASES,
+    _ZERO_CASES,
 ]
 _KQ_TO_QMC_EXAMPLES_PROPER = (
     author.hbo("{{כו״ק|קסומי|{{מ:קמץ|...}}}}"),
@@ -86,13 +89,12 @@ _AFTER_FULL_GRAPH_1 = [
 _AFTER_FULL_GRAPH_2 = [
     ["The ", author.dquote("12"), " ", *_EDGE_FROM_KQ_TO_QMC],
     [" indicates that 12 times in $MAM-parsed-plus,"],
-    [" a call to one of those three templates contains a call to ", _QMC, "."],
+    [" a call to ", _QMC, " nests within a call to one of those three templates."],
 ]
 _AFTER_FULL_GRAPH_3 = [
     [
-        "Not shown on the graph is how many times each those three templates contains a call to ",
-        _QMC,
-        ".",
+        ["Not shown on the graph is how many times ", _QMC],
+        " nests within a call to each of those three templates.",
     ],
     [" It happens to break down like this:"],
     author.unordered_list(_KQ_TO_QMC_BREAKDOWN),
@@ -100,6 +102,10 @@ _AFTER_FULL_GRAPH_3 = [
 _AFTER_FULL_GRAPH_4 = [
     ["Here are two concrete Wikitext examples:"],
     author.unordered_list(_KQ_TO_QMC_EXAMPLES),
+]
+_AFTER_FULL_GRAPH_5 = [
+    ["Note that the Gen 13:3 example contains both of the ", *_TWO_CASES, ":"],
+    [" two calls to ", _QMC, " nest within a single call to ", _TRIV_KQ, "."],
 ]
 
 
@@ -113,6 +119,7 @@ def _after_full_graph():
                 _AFTER_FULL_GRAPH_2,
                 _AFTER_FULL_GRAPH_3,
                 _AFTER_FULL_GRAPH_4,
+                _AFTER_FULL_GRAPH_5,
             ],
         )
     )
