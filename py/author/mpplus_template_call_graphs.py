@@ -39,16 +39,12 @@ _CALL_GRAPHS = [
         " The edge is labeled with the number of times this nesting occurs."
     ),
 ]
-
-
 _CALL_GRAPH_FOR_COLUMN_E = [
     author.para(
-        "The full graph omits the נוסח and מ:כפול templates."
+        "The call graph below, for column E, omits the נוסח and מ:כפול templates."
         " This is to keep it more readable."
     ),
 ]
-
-
 _KQ = author.hbo("כו״ק")
 _TRIV_KQ = author.hbo("מ:קו״כ-אם-2")
 _QK = author.hbo("קו״כ")
@@ -103,8 +99,6 @@ _AFTER_FULL_GRAPH_5 = [
     ["Note that the Gen 13:3 example contains both of the ", *_TWO_CASES, ":"],
     [" two calls to ", _QMC, " nest within a single call to ", _TRIV_KQ, "."],
 ]
-
-
 _DETAILS_OF_ONE_EDGE = list(
     map(
         author.para,
@@ -118,7 +112,6 @@ _DETAILS_OF_ONE_EDGE = list(
         ],
     )
 )
-
 _EDGE_COUNTS_ARE_LOW = [
     author.para(
         [
@@ -130,6 +123,22 @@ _EDGE_COUNTS_ARE_LOW = [
             " (The special letter templates are מ:אות-ק (small), מ:אות-ג (large), and מ:אות תלויה (hung).)"
         ]
     )
+]
+_CALL_GRAPH_FOR_COLUMN_D = [
+    author.para(
+        "The call graph below, for column D, is, as expected, much simpler than the one for column E."
+        " Recall that ש is the paragraph divider template, used exclusively in the second argument to נוסח."
+    ),
+]
+_CALL_GRAPH_FOR_COLUMN_C = [
+    author.para(
+        [
+            "The call graph below, for column C, is, like the one for column D, quite simple."
+            " Indeed it may look a little simpler than it really is because many whitespace templates are",
+            [" ", author.dquote("hiding")],
+            [" beneath the ", author.dquote("מ:אין … פרק, …")," node."],
+        ]
+    ),
 ]
 
 
@@ -155,9 +164,11 @@ def build_body(*, claims: ClaimCollection):
         *_EDGE_COUNTS_ARE_LOW,
         #
         mb_html.heading_level_2("Call graph for column D"),
+        *_CALL_GRAPH_FOR_COLUMN_D,
         _svg_object(_SVG_FULL_D, "Call graph for column D (SVG not supported)"),
         #
         mb_html.heading_level_2("Call graph for column C"),
+        *_CALL_GRAPH_FOR_COLUMN_C,
         _svg_object(_SVG_FULL_C, "Call graph for column C (SVG not supported)"),
     ]
 
