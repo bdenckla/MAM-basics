@@ -84,6 +84,66 @@ class TestTmplSurveyFocusedTargets(unittest.TestCase):
         self.assertNotIn(("מ:קו״כ-אם-2", "X"), collapsed_edges)
         self.assertEqual(["כו״ק", "מ:קו״כ-אם-2", "קו״כ"], groups["כו״ק"])
 
+    def test_full_graph_explicit_collapse_prefers_named_representative(self):
+        edges = {
+            ("כו״ק", "X"): 7,
+            ("קו״כ", "X"): 11,
+            ("מ:קו״כ-אם-2", "X"): 13,
+        }
+
+        collapsed_edges, groups = dot_node_collapse.collapse_edges_for_output(
+            edges,
+            {"C", "D", "E"},
+            collapse_node_groups=(("כו״ק", "קו״כ", "מ:קו״כ-אם-2"),),
+            preferred_representatives=("מ:קו״כ-אם-2",),
+        )
+
+        self.assertEqual(31, collapsed_edges[("מ:קו״כ-אם-2", "X")])
+        self.assertNotIn(("כו״ק", "X"), collapsed_edges)
+        self.assertNotIn(("קו״כ", "X"), collapsed_edges)
+        self.assertEqual(["כו״ק", "מ:קו״כ-אם-2", "קו״כ"], groups["מ:קו״כ-אם-2"])
+
+    def test_equivalent_collapse_can_prefer_shortest_representative(self):
+        edges = {
+            ("P", "a-long"): 5,
+            ("P", "b"): 7,
+            ("a-long", "Q"): 5,
+            ("b", "Q"): 7,
+        }
+
+        collapsed_edges, groups = dot_node_collapse.collapse_edges_for_output(
+            edges,
+            {"C", "D", "E"},
+            prefer_shortest_representative=True,
+        )
+
+        self.assertEqual(12, collapsed_edges[("P", "b")])
+        self.assertEqual(12, collapsed_edges[("b", "Q")])
+        self.assertNotIn(("P", "a-long"), collapsed_edges)
+        self.assertNotIn(("a-long", "Q"), collapsed_edges)
+        self.assertEqual(["a-long", "b"], groups["b"])
+
+    def test_preferred_representative_takes_priority_over_shortest(self):
+        edges = {
+            ("P", "a-long"): 5,
+            ("P", "b"): 7,
+            ("a-long", "Q"): 5,
+            ("b", "Q"): 7,
+        }
+
+        collapsed_edges, groups = dot_node_collapse.collapse_edges_for_output(
+            edges,
+            {"C", "D", "E"},
+            preferred_representatives=("a-long",),
+            prefer_shortest_representative=True,
+        )
+
+        self.assertEqual(12, collapsed_edges[("P", "a-long")])
+        self.assertEqual(12, collapsed_edges[("a-long", "Q")])
+        self.assertNotIn(("P", "b"), collapsed_edges)
+        self.assertNotIn(("b", "Q"), collapsed_edges)
+        self.assertEqual(["a-long", "b"], groups["a-long"])
+
     def test_node_mode_edge_extraction_keeps_column_roots_from_longer_stacks(self):
         stack_counts = {
             ("A", "E"): 2,

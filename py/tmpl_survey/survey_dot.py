@@ -434,6 +434,8 @@ def _write_full_graph_dot_paths(
     discarded,
     generated_by,
     collapse_node_groups=None,
+    preferred_representatives=None,
+    prefer_shortest_representative=False,
 ):
     full_discarded = _discarded_for_full_graph(discarded)
     edges_by_column_no_discard = _edges_by_column_from_stack_counts(
@@ -457,6 +459,8 @@ def _write_full_graph_dot_paths(
             edges,
             _COLUMN_LETTERS,
             collapse_node_groups=collapse_node_groups,
+            preferred_representatives=preferred_representatives,
+            prefer_shortest_representative=prefer_shortest_representative,
         )
         dot_path = _with_column_suffix(out_path, column, needs_disambiguation)
         with open(dot_path, "w", encoding="utf-8") as fp:
@@ -491,6 +495,8 @@ def write_dot_file(
     discarded=None,
     generator_file=None,
     collapse_node_groups=None,
+    preferred_representatives=None,
+    prefer_shortest_representative=False,
 ):
     """Write a .dot call graph from raw stack_counts accumulator."""
     generated_by = _generated_by_text(generator_file)
@@ -500,6 +506,8 @@ def write_dot_file(
         discarded=discarded,
         generated_by=generated_by,
         collapse_node_groups=collapse_node_groups,
+        preferred_representatives=preferred_representatives,
+        prefer_shortest_representative=prefer_shortest_representative,
     )
 
 
@@ -510,6 +518,8 @@ def write_dot_and_svg_files(
     discarded=None,
     generator_file=None,
     collapse_node_groups=None,
+    preferred_representatives=None,
+    prefer_shortest_representative=False,
 ):
     """Write column-versioned full .dot files and render matching .svg files."""
     generated_by = _generated_by_text(generator_file)
@@ -519,6 +529,8 @@ def write_dot_and_svg_files(
         discarded=discarded,
         generated_by=generated_by,
         collapse_node_groups=collapse_node_groups,
+        preferred_representatives=preferred_representatives,
+        prefer_shortest_representative=prefer_shortest_representative,
     )
     svg_paths = _svg_paths_for_dot_paths(dot_paths, dot_path, svg_path)
     for out_dot_path, out_svg_path in zip(dot_paths, svg_paths):

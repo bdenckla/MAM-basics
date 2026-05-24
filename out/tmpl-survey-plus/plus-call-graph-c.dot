@@ -8,7 +8,7 @@ digraph template_call_graph {
 
     // Template nodes
     node [shape=box, style=""];
-    "מ:אין … פרק, …" [tooltip="מ:אין פרשה בתחילת פרק
+    "סס, …" [tooltip="מ:אין פרשה בתחילת פרק
 מ:אין פרשה בתחילת פרק בספרי אמ״ת
 מ:קישור בהערה
 סס
@@ -20,7 +20,7 @@ digraph template_call_graph {
 
     // Edges
     "מ:הערה-2" -> "פפ" [label="3"];
-    "נוסח" -> "מ:אין … פרק, …" [label="141"];
     "נוסח" -> "מ:הערה-2" [label="7"];
+    "נוסח" -> "סס, …" [label="141"];
     "נוסח" -> "פפ" [label="94"];
 }

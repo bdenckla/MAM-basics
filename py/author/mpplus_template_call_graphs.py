@@ -124,6 +124,18 @@ _EDGE_COUNTS_ARE_LOW = [
         ]
     )
 ]
+# Top 10 non-trivial stacks in stack_counts (with depth (> 2), counting the column segment) are:
+
+# E/נוסח/ש = 3215 (depth 3)
+# D/מ:פסוק/מ:עלייה = 521 (depth 3)
+# E/נוסח/כו״ק = 143 (depth 3)
+# C/נוסח/פפ = 94 (depth 3)
+# E/נוסח/מ:לגרמיה-2 = 78 (depth 3)
+# E/נוסח/מ:אות-מיוחדת-במילה = 75 (depth 3)
+# C/נוסח/סס = 69 (depth 3)
+# E/מ:כפול/נוסח/ש = 58 (depth 4)
+# E/נוסח/מ:אות-מיוחדת-במילה/מ:אות-ג = 52 (depth 4)
+# E/נוסח/ר3 = 47 (depth 3)
 _CALL_GRAPH_FOR_COLUMN_D = [
     author.para(
         "The call graph below, for column D, is, as expected, much simpler than the one for column E."

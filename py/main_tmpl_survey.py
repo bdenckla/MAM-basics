@@ -27,6 +27,8 @@ _PLAIN_TMPL_NAME_NORMALIZATION_NOTE = (
     "stmpl and tmpl template forms in plain data."
 )
 _PLUS_FULL_GRAPH_COLLAPSE_NODE_GROUPS = (("כו״ק", "קו״כ", "מ:קו״כ-אם-2"),)
+_PLUS_FULL_GRAPH_PREFERRED_REPRESENTATIVES = ("סס",)
+_PLUS_FULL_GRAPH_PREFER_SHORTEST_REPRESENTATIVE = True
 
 
 _NORMAL_FORM_CASE_RANK_GROUPS = {
@@ -59,6 +61,8 @@ def _write_outputs(
     svg_stem,
     normalization_note=None,
     full_graph_collapse_node_groups=None,
+    full_graph_preferred_representatives=None,
+    full_graph_prefer_shortest_representative=False,
 ):
     os.makedirs(os.path.dirname(stem), exist_ok=True)
     os.makedirs(os.path.dirname(svg_stem), exist_ok=True)
@@ -82,6 +86,8 @@ def _write_outputs(
         svg_path,
         generator_file=__file__,
         collapse_node_groups=full_graph_collapse_node_groups,
+        preferred_representatives=full_graph_preferred_representatives,
+        prefer_shortest_representative=full_graph_prefer_shortest_representative,
     )
     survey_dot.write_focused_dot_files(
         raw_stack_counts,
@@ -217,6 +223,8 @@ def almost_main(write_expanded_stack_grammar_lock=False):
         f"{_PLUS_OUT_DIR}/plus",
         svg_stem=f"{_PLUS_SVG_DIR}/plus",
         full_graph_collapse_node_groups=_PLUS_FULL_GRAPH_COLLAPSE_NODE_GROUPS,
+        full_graph_preferred_representatives=_PLUS_FULL_GRAPH_PREFERRED_REPRESENTATIVES,
+        full_graph_prefer_shortest_representative=_PLUS_FULL_GRAPH_PREFER_SHORTEST_REPRESENTATIVE,
     )
 
 
