@@ -146,9 +146,10 @@ _CALL_GRAPH_FOR_COLUMN_C = [
     author.para(
         [
             "The call graph below, for column C, is, like the one for column D, quite simple."
-            " Indeed it may look a little simpler than it really is because many whitespace templates are",
+            " Indeed it may look a little simpler than it really is because many templates are",
             [" ", author.dquote("hiding")],
-            [" beneath the ", author.dquote("מ:אין … פרק, …")," node."],
+            [" beneath the ", author.dquote("סס, …")," node."],
+            " (You can see the list of all of them by hovering over that node in the SVG graph.)",
         ]
     ),
 ]
