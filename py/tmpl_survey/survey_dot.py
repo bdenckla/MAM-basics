@@ -13,13 +13,6 @@ from tmpl_survey import svg_provenance_norm
 _COLUMN_LETTERS = {"C", "D", "E"}
 _BASE_DISCARDED = {"מ:כפול", "נוסח"}
 _FOCUSED_NO_DISCARD_TARGETS = {"מ:פסוק"}
-_DOCNOTE_FOCUSED_DISCARDED = {
-    "כו״ק",
-    "מ:קו״כ-אם-2",
-    "מ:כו״ק מיוחד",
-    "מ:קמץ",
-    "מ:דחי",
-}
 _DOT_FALLBACK = os.path.join(
     os.environ.get("ProgramFiles", r"C:\Program Files"), "Graphviz", "bin", "dot.exe"
 )
@@ -176,22 +169,6 @@ def _build_abbreviations(names):
     return raw
 
 
-def _build_adjacency_sets(edges):
-    """Return predecessor/successor sets keyed by node."""
-    predecessors = {}
-    successors = {}
-    all_nodes = set()
-    for caller, callee in edges:
-        all_nodes.add(caller)
-        all_nodes.add(callee)
-        successors.setdefault(caller, set()).add(callee)
-        predecessors.setdefault(callee, set()).add(caller)
-    for node in all_nodes:
-        predecessors.setdefault(node, set())
-        successors.setdefault(node, set())
-    return predecessors, successors
-
-
 def _group_tooltip(members):
     """Return a tooltip listing all members of a collapsed group."""
     return "\n".join(members)
@@ -213,18 +190,6 @@ def _node_attrs(label=None, tooltip=None, extra_parts=None):
     if extra_parts:
         parts.extend(extra_parts)
     return " [" + ", ".join(parts) + "]"
-
-
-def _focused_group_label(rep, members, target, abbrevs, predecessors, successors):
-    """Return a label for a node in a focused graph."""
-    if len(members) > 1 and not _matches_target(rep, target):
-        predecessor_bases = {
-            _base_template_name(x) for x in predecessors.get(rep, set())
-        }
-        if predecessor_bases == {target} and not successors.get(rep, set()):
-            return f"dead-end children of {target}"
-        return f"{abbrevs[rep]}, ..."
-    return abbrevs[rep]
 
 
 def _make_unique_node_id(preferred, used_ids):
@@ -257,7 +222,6 @@ def _write_dot(
     for caller, callee in edges:
         all_names.add(caller)
         all_names.add(callee)
-    predecessors, successors = _build_adjacency_sets(edges)
     col_nodes = _COLUMN_LETTERS & all_names
     all_names -= _COLUMN_LETTERS
     abbrevs = _build_abbreviations(all_names)
@@ -299,14 +263,7 @@ def _write_dot(
                 label = f"{abbrevs[rep]}, …"
                 node_id = _make_unique_node_id(label, used_ids)
             else:
-                label = _focused_group_label(
-                    rep,
-                    members,
-                    focus_target,
-                    abbrevs,
-                    predecessors,
-                    successors,
-                )
+                label = f"{abbrevs[rep]}, ..."
                 if not _matches_target(rep, focus_target):
                     node_id = _make_unique_node_id(label, used_ids)
         elif abbrevs[rep] != rep:
@@ -400,17 +357,15 @@ def _focused_edges_by_column_from_stack_counts(stack_counts, target, discarded=N
 class _FocusedTarget:
     tmpl_name: str
     slug: str
-    collapse: bool
 
 
 # First-pass focused targets for template-specific subset documentation.
 # Keep this list intentionally small for now; exhaustive generation is deferred.
 _FOCUSED_TARGETS = (
-    _FocusedTarget("מ:כפול", "dualcant", False),
-    _FocusedTarget("נוסח", "docnote", True),
-    _FocusedTarget("מ:פסוק", "mpasuq", False),
-    _FocusedTarget("כו״ק", uh.he_ascii_slug("כו״ק"), False),
-    _FocusedTarget("מ:דחי", "dexi", False),
+    _FocusedTarget("מ:כפול", "dualcant"),
+    _FocusedTarget("מ:פסוק", "mpasuq"),
+    _FocusedTarget("כו״ק", uh.he_ascii_slug("כו״ק")),
+    _FocusedTarget("מ:דחי", "dexi"),
 )
 
 
@@ -552,8 +507,6 @@ def _identity_groups(edges):
 
 def _focused_discarded_for_target(target, full_discarded):
     """Return discard set used for a specific focused target."""
-    if target == "נוסח":
-        return set(_DOCNOTE_FOCUSED_DISCARDED)
     if target in full_discarded or target in _FOCUSED_NO_DISCARD_TARGETS:
         return set()
     return full_discarded
@@ -578,7 +531,6 @@ def write_focused_dot_files(
     for spec in _FOCUSED_TARGETS:
         target = spec.tmpl_name
         slug = spec.slug
-        collapse = spec.collapse
         focused_discarded = _focused_discarded_for_target(target, full_discarded)
         edges_by_column = _focused_edges_by_column_from_stack_counts(
             stack_counts,
@@ -592,13 +544,7 @@ def write_focused_dot_files(
         base_svg_path = f"{svg_stem}-{slug}-call-graph.svg"
         for column in columns:
             edges = edges_by_column.get(column, {})
-            if collapse:
-                edges, groups = dot_node_collapse.collapse_equivalent_nodes(
-                    edges,
-                    _COLUMN_LETTERS,
-                )
-            else:
-                groups = _identity_groups(edges)
+            groups = _identity_groups(edges)
             dot_path = _with_column_suffix(base_dot_path, column, needs_disambiguation)
             svg_path = _with_column_suffix(base_svg_path, column, needs_disambiguation)
             with open(dot_path, "w", encoding="utf-8") as fp:

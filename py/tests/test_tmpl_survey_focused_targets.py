@@ -10,20 +10,18 @@ from tmpl_survey import dot_node_collapse
 
 class TestTmplSurveyFocusedTargets(unittest.TestCase):
     def test_focused_targets_include_trial_templates(self):
-        got = [(x.tmpl_name, x.slug, x.collapse) for x in survey_dot._FOCUSED_TARGETS]
+        got = [(x.tmpl_name, x.slug) for x in survey_dot._FOCUSED_TARGETS]
         expected = [
-            ("מ:כפול", "dualcant", False),
-            ("נוסח", "docnote", True),
-            ("מ:פסוק", "mpasuq", False),
-            ("כו״ק", "kvq", False),
-            ("מ:דחי", "dexi", False),
+            ("מ:כפול", "dualcant"),
+            ("מ:פסוק", "mpasuq"),
+            ("כו״ק", "kvq"),
+            ("מ:דחי", "dexi"),
         ]
         self.assertEqual(expected, got)
 
     def test_write_focused_dot_files_writes_all_expected_dots(self):
         stack_counts = {
             ("מ:כפול", "C"): 1,
-            ("נוסח", "C"): 1,
             ("מ:פסוק", "D"): 1,
             ("כו״ק", "E"): 1,
             ("מ:דחי", "E"): 1,
@@ -52,19 +50,22 @@ class TestTmplSurveyFocusedTargets(unittest.TestCase):
             for slug in slugs:
                 dot_path = f"{stem}-{slug}-call-graph.dot"
                 self.assertTrue(os.path.exists(dot_path), dot_path)
+            self.assertFalse(os.path.exists(f"{stem}-docnote-call-graph.dot"))
+            self.assertFalse(os.path.exists(f"{svg_stem}-docnote-call-graph.svg"))
 
             self.assertEqual(len(slugs), len(render_calls))
 
-    def test_focused_edge_extraction_uses_unsuffixed_docnote(self):
+    def test_focused_edge_extraction_uses_unsuffixed_target(self):
         stack_counts = {
-            ("מ:דחי", "C/נוסח"): 3,
-            ("מ:עלייה", "C/נוסח/מ:דחי"): 5,
+            ("מ:פסוק", "D"): 3,
+            ("מ:עלייה", "D/מ:פסוק"): 5,
         }
 
-        edges = survey_dot._focused_edges_from_stack_counts(stack_counts, target="נוסח")
+        edges = survey_dot._focused_edges_from_stack_counts(
+            stack_counts, target="מ:פסוק"
+        )
 
-        self.assertEqual(8, edges[("נוסח", "מ:דחי")])
-        self.assertEqual(5, edges[("מ:דחי", "מ:עלייה")])
+        self.assertEqual(5, edges[("מ:פסוק", "מ:עלייה")])
 
     def test_full_graph_explicit_node_group_collapse_merges_named_nodes(self):
         edges = {
@@ -187,36 +188,6 @@ class TestTmplSurveyFocusedTargets(unittest.TestCase):
         self.assertNotIn('"נוסח"', dot_text)
         self.assertIn("מ:כפול, נוסח have been discarded", dot_text)
 
-    def test_focused_docnote_uses_targeted_discard_set(self):
-        stack_counts = {
-            ("נוסח", "C"): 6,
-            ("מ:דחי", "C/נוסח"): 3,
-            ("מ:עלייה", "C/נוסח"): 7,
-        }
-
-        with tempfile.TemporaryDirectory() as tdir:
-            stem = os.path.join(tdir, "plain")
-            orig_render_svg = survey_dot.render_svg
-            survey_dot.render_svg = lambda dot_path, svg_path, generator_file=None: None
-            try:
-                survey_dot.write_focused_dot_files(stack_counts, stem, svg_stem=stem)
-            finally:
-                survey_dot.render_svg = orig_render_svg
-
-            docnote_dot_path = f"{stem}-docnote-call-graph.dot"
-            with open(docnote_dot_path, encoding="utf-8") as dot_fp:
-                dot_text = dot_fp.read()
-
-        self.assertNotIn('"C" -> "נוסח"', dot_text)
-        self.assertIn('"נוסח" -> "מ:עלייה" [label="7"]', dot_text)
-        self.assertNotIn('"נוסח" -> "מ:דחי" [label="3"]', dot_text)
-        self.assertIn("כו״ק", dot_text)
-        self.assertIn("מ:קו״כ-אם-2", dot_text)
-        self.assertIn("מ:כו״ק מיוחד", dot_text)
-        self.assertIn("מ:קמץ", dot_text)
-        self.assertIn("מ:דחי", dot_text)
-        self.assertIn("have been discarded", dot_text)
-
     def test_focused_mpasuq_skips_standard_discard_set(self):
         stack_counts = {
             ("נוסח", "D"): 2,
@@ -261,35 +232,6 @@ class TestTmplSurveyFocusedTargets(unittest.TestCase):
             self.assertTrue(os.path.exists(f"{stem}-dexi-call-graph-c.dot"))
             self.assertTrue(os.path.exists(f"{stem}-dexi-call-graph-e.dot"))
             self.assertFalse(os.path.exists(f"{stem}-dexi-call-graph.dot"))
-
-    def test_focused_docnote_special_label_only_for_dead_end_direct_children(self):
-        stack_counts = {
-            ("נוסח", "C"): 1,
-            ("A1", "C/נוסח"): 3,
-            ("A2", "C/נוסח"): 5,
-            ("X", "C/נוסח"): 2,
-            ("B1", "C/נוסח/X"): 7,
-            ("B2", "C/נוסח/X"): 11,
-        }
-
-        with tempfile.TemporaryDirectory() as tdir:
-            stem = os.path.join(tdir, "plain")
-            orig_render_svg = survey_dot.render_svg
-            survey_dot.render_svg = lambda dot_path, svg_path, generator_file=None: None
-            try:
-                survey_dot.write_focused_dot_files(stack_counts, stem, svg_stem=stem)
-            finally:
-                survey_dot.render_svg = orig_render_svg
-
-            docnote_dot_path = f"{stem}-docnote-call-graph.dot"
-            with open(docnote_dot_path, encoding="utf-8") as dot_fp:
-                dot_text = dot_fp.read()
-
-        self.assertIn('"dead-end children of נוסח" [tooltip="A1\nA2"]', dot_text)
-        self.assertIn('"נוסח" -> "dead-end children of נוסח" [label="8"]', dot_text)
-        self.assertIn('"X" -> "B1, ..." [label="18"]', dot_text)
-        self.assertNotIn('"X" -> "dead-end children of נוסח"', dot_text)
-        self.assertNotIn("direct children of נוסח", dot_text)
 
     def test_focused_target_node_has_highlight_style(self):
         stack_counts = {

@@ -76,7 +76,7 @@ class TestGraphProvenance(unittest.TestCase):
     def test_write_focused_dot_files_include_provenance_comments(self):
         stack_counts = {
             ("מ:כפול", "C"): 2,
-            ("נוסח", "D"): 1,
+            ("מ:פסוק", "D/נוסח"): 1,
         }
         expected = self._generated_by()
         with TemporaryDirectory() as tmp_dir:
@@ -89,12 +89,12 @@ class TestGraphProvenance(unittest.TestCase):
             dualcant_text = (
                 Path(tmp_dir) / "focused-dualcant-call-graph.dot"
             ).read_text(encoding="utf-8")
-            docnote_text = (Path(tmp_dir) / "focused-docnote-call-graph.dot").read_text(
+            mpasuq_text = (Path(tmp_dir) / "focused-mpasuq-call-graph.dot").read_text(
                 encoding="utf-8"
             )
 
         self.assertIn(f"// {expected}", dualcant_text)
-        self.assertIn(f"// {expected}", docnote_text)
+        self.assertIn(f"// {expected}", mpasuq_text)
         self.assertIn(
             f"graph [comment={survey_dot._dot_quoted(expected)}];",
             dualcant_text,
