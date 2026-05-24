@@ -12,7 +12,6 @@ from tmpl_survey import svg_provenance_norm
 
 _COLUMN_LETTERS = {"C", "D", "E"}
 _BASE_DISCARDED = {"מ:כפול", "נוסח"}
-_FOCUSED_NO_DISCARD_TARGETS = {"מ:פסוק"}
 _DOT_FALLBACK = os.path.join(
     os.environ.get("ProgramFiles", r"C:\Program Files"), "Graphviz", "bin", "dot.exe"
 )
@@ -363,7 +362,6 @@ class _FocusedTarget:
 # Keep this list intentionally small for now; exhaustive generation is deferred.
 _FOCUSED_TARGETS = (
     _FocusedTarget("מ:כפול", "dualcant"),
-    _FocusedTarget("מ:פסוק", "mpasuq"),
     _FocusedTarget("כו״ק", uh.he_ascii_slug("כו״ק")),
     _FocusedTarget("מ:דחי", "dexi"),
 )
@@ -507,7 +505,7 @@ def _identity_groups(edges):
 
 def _focused_discarded_for_target(target, full_discarded):
     """Return discard set used for a specific focused target."""
-    if target in full_discarded or target in _FOCUSED_NO_DISCARD_TARGETS:
+    if target in full_discarded:
         return set()
     return full_discarded
 

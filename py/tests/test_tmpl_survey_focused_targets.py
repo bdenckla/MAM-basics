@@ -13,7 +13,6 @@ class TestTmplSurveyFocusedTargets(unittest.TestCase):
         got = [(x.tmpl_name, x.slug) for x in survey_dot._FOCUSED_TARGETS]
         expected = [
             ("מ:כפול", "dualcant"),
-            ("מ:פסוק", "mpasuq"),
             ("כו״ק", "kvq"),
             ("מ:דחי", "dexi"),
         ]
@@ -22,7 +21,6 @@ class TestTmplSurveyFocusedTargets(unittest.TestCase):
     def test_write_focused_dot_files_writes_all_expected_dots(self):
         stack_counts = {
             ("מ:כפול", "C"): 1,
-            ("מ:פסוק", "D"): 1,
             ("כו״ק", "E"): 1,
             ("מ:דחי", "E"): 1,
         }
@@ -52,20 +50,22 @@ class TestTmplSurveyFocusedTargets(unittest.TestCase):
                 self.assertTrue(os.path.exists(dot_path), dot_path)
             self.assertFalse(os.path.exists(f"{stem}-docnote-call-graph.dot"))
             self.assertFalse(os.path.exists(f"{svg_stem}-docnote-call-graph.svg"))
+            self.assertFalse(os.path.exists(f"{stem}-mpasuq-call-graph.dot"))
+            self.assertFalse(os.path.exists(f"{svg_stem}-mpasuq-call-graph.svg"))
 
             self.assertEqual(len(slugs), len(render_calls))
 
     def test_focused_edge_extraction_uses_unsuffixed_target(self):
         stack_counts = {
-            ("מ:פסוק", "D"): 3,
-            ("מ:עלייה", "D/מ:פסוק"): 5,
+            ("מ:דחי", "E"): 3,
+            ("מ:עלייה", "E/מ:דחי"): 5,
         }
 
         edges = survey_dot._focused_edges_from_stack_counts(
-            stack_counts, target="מ:פסוק"
+            stack_counts, target="מ:דחי"
         )
 
-        self.assertEqual(5, edges[("מ:פסוק", "מ:עלייה")])
+        self.assertEqual(5, edges[("מ:דחי", "מ:עלייה")])
 
     def test_full_graph_explicit_node_group_collapse_merges_named_nodes(self):
         edges = {
@@ -188,11 +188,11 @@ class TestTmplSurveyFocusedTargets(unittest.TestCase):
         self.assertNotIn('"נוסח"', dot_text)
         self.assertIn("מ:כפול, נוסח have been discarded", dot_text)
 
-    def test_focused_mpasuq_skips_standard_discard_set(self):
+    def test_focused_dualcant_skips_standard_discard_set(self):
         stack_counts = {
             ("נוסח", "D"): 2,
-            ("מ:פסוק", "D/נוסח"): 3,
-            ("מ:עלייה", "D/נוסח/מ:פסוק"): 5,
+            ("מ:כפול", "D/נוסח"): 3,
+            ("מ:עלייה", "D/נוסח/מ:כפול"): 5,
         }
 
         with tempfile.TemporaryDirectory() as tdir:
@@ -204,12 +204,12 @@ class TestTmplSurveyFocusedTargets(unittest.TestCase):
             finally:
                 survey_dot.render_svg = orig_render_svg
 
-            mpasuq_dot_path = f"{stem}-mpasuq-call-graph.dot"
-            with open(mpasuq_dot_path, encoding="utf-8") as dot_fp:
+            dualcant_dot_path = f"{stem}-dualcant-call-graph.dot"
+            with open(dualcant_dot_path, encoding="utf-8") as dot_fp:
                 dot_text = dot_fp.read()
 
-        self.assertIn('"נוסח" -> "מ:פסוק" [label="8"]', dot_text)
-        self.assertIn('"מ:פסוק" -> "מ:עלייה" [label="5"]', dot_text)
+        self.assertIn('"נוסח" -> "מ:כפול" [label="8"]', dot_text)
+        self.assertIn('"מ:כפול" -> "מ:עלייה" [label="5"]', dot_text)
         self.assertNotIn("have been discarded", dot_text)
 
     def test_focused_outputs_disambiguate_multi_column_versions(self):
