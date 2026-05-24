@@ -258,3 +258,40 @@ class TestStackPathLookup(unittest.TestCase):
                 "D/נוסח/ש",
             )
         )
+
+    def test_print_results_falls_back_to_stdout_buffer_on_encoding_error(self):
+        fake_stdout = mock.Mock()
+        fake_stdout.write.side_effect = UnicodeEncodeError(
+            "cp1252",
+            "נוסח",
+            0,
+            1,
+            "character maps to <undefined>",
+        )
+        fake_stdout.buffer = mock.Mock()
+
+        with mock.patch.object(spl.sys, "stdout", fake_stdout):
+            spl.print_results(
+                _TARGET_PATH,
+                "plus",
+                10,
+                [
+                    {
+                        "dataset": "plus",
+                        "bk24na": "ספר מבחן",
+                        "sub_bkna": None,
+                        "chnu": "1",
+                        "psv_psn": "1",
+                        "stack_path": _TARGET_PATH,
+                    }
+                ],
+                verbose=False,
+            )
+
+        written = b"".join(
+            call.args[0]
+            for call in fake_stdout.buffer.write.call_args_list
+            if isinstance(call.args[0], (bytes, bytearray))
+        )
+        self.assertIn("נוסח", written.decode("utf-8"))
+        fake_stdout.buffer.flush.assert_called_once()

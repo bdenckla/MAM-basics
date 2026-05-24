@@ -1,6 +1,7 @@
 """Find verse locations for exact template stack paths in plain/plus parsed data."""
 
 import json
+import sys
 
 from mb_cmn import bib_locales as tbn
 from mb_cmn import ws_tmpl1 as wtp1
@@ -296,18 +297,38 @@ def search_stack_path(target_path, dataset_key, limit, verbose=False):
     return hits
 
 
+def _write_stdout_text(text):
+    try:
+        sys.stdout.write(text)
+        if not text.endswith("\n"):
+            sys.stdout.write("\n")
+    except UnicodeEncodeError:
+        # Some Windows terminals expose stdout with cp1252; write UTF-8 bytes
+        # directly when available so Hebrew and niqqud are preserved.
+        stdout_buffer = getattr(sys.stdout, "buffer", None)
+        if stdout_buffer is None:
+            escaped = text.encode("ascii", "backslashreplace").decode("ascii")
+            sys.stdout.write(escaped)
+            if not escaped.endswith("\n"):
+                sys.stdout.write("\n")
+            return
+        stdout_buffer.write(text.encode("utf-8"))
+        if not text.endswith("\n"):
+            stdout_buffer.write(b"\n")
+        stdout_buffer.flush()
+
+
 def print_results(target_path, dataset_key, limit, hits, verbose=False):
-    print(
-        json.dumps(
-            {
-                "mode": "find-stack-path-verbose" if verbose else "find-stack-path",
-                "target_path": target_path,
-                "dataset": dataset_key,
-                "limit": limit,
-                "count": len(hits),
-                "hits": hits,
-            },
-            ensure_ascii=False,
-            indent=2,
-        )
+    text = json.dumps(
+        {
+            "mode": "find-stack-path-verbose" if verbose else "find-stack-path",
+            "target_path": target_path,
+            "dataset": dataset_key,
+            "limit": limit,
+            "count": len(hits),
+            "hits": hits,
+        },
+        ensure_ascii=False,
+        indent=2,
     )
+    _write_stdout_text(text)
