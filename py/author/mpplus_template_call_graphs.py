@@ -26,7 +26,7 @@ def gen_html_file(tdm_ch, claims: ClaimCollection):
     return author.help_gen_html_file(__file__, tdm_ch, _FNAME, _TITLE, cbody)
 
 
-_call_graphs_paras = [
+_CALL_GRAPHS = [
     author.para(
         "The rest of this document shows call graphs."
         " These graphs show which templates nest inside other templates."
@@ -41,7 +41,7 @@ _call_graphs_paras = [
 ]
 
 
-_intro_to_full_graph = [
+_CALL_GRAPH_FOR_COLUMN_E = [
     author.para(
         "The full graph omits the נוסח and מ:כפול templates."
         " This is to keep it more readable."
@@ -105,7 +105,7 @@ _AFTER_FULL_GRAPH_5 = [
 ]
 
 
-_after_full_graph = list(
+_DETAILS_OF_ONE_EDGE = list(
     map(
         author.para,
         [
@@ -119,7 +119,7 @@ _after_full_graph = list(
     )
 )
 
-_edge_counts_are_low = [
+_EDGE_COUNTS_ARE_LOW = [
     author.para(
         [
             "The edge counts in the graph above are quite low."
@@ -137,19 +137,26 @@ def build_body(*, claims: ClaimCollection):
     del claims
     return [
         mb_html.heading_level_1(_TITLE),
+        #
         mb_html.heading_level_2("Normal order"),
         *normal_order.build_normal_order(),
+        #
         mb_html.heading_level_2("Call graphs"),
-        *_call_graphs_paras,
+        *_CALL_GRAPHS,
+        #
         mb_html.heading_level_2("Call graph for column E"),
-        *_intro_to_full_graph,
+        *_CALL_GRAPH_FOR_COLUMN_E,
         _svg_object(_SVG_FULL_E, "Call graph for column E (SVG not supported)"),
+        #
         mb_html.heading_level_3("Col. E: details of one edge"),
-        *_after_full_graph,
+        *_DETAILS_OF_ONE_EDGE,
+        #
         mb_html.heading_level_3("Col. E: edge counts are low"),
-        *_edge_counts_are_low,
+        *_EDGE_COUNTS_ARE_LOW,
+        #
         mb_html.heading_level_2("Call graph for column D"),
         _svg_object(_SVG_FULL_D, "Call graph for column D (SVG not supported)"),
+        #
         mb_html.heading_level_2("Call graph for column C"),
         _svg_object(_SVG_FULL_C, "Call graph for column C (SVG not supported)"),
     ]
