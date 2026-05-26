@@ -48,6 +48,15 @@ def run(args: argparse.Namespace, split_wlc_to_books_fn) -> None:
         out_dir=args.split_out_dir,
         keep_line_fn=None,
     )
+    split_out_path = args.split_out_dir / "_provenance.json"
+    _write_split_out_provenance(
+        split_out_path=split_out_path,
+        input_path=args.input,
+        out_dir=args.split_out_dir,
+        verses_seen=raw_result.verses_seen,
+        verses_written=raw_result.verses_written,
+        books_written=raw_result.books_written,
+    )
 
     seen_refs: dict[str, set[tuple[int, int]]] = {}
     excluded_refs: dict[str, set[tuple[int, int]]] = {}
@@ -81,6 +90,7 @@ def run(args: argparse.Namespace, split_wlc_to_books_fn) -> None:
     print(f"Raw books written: {raw_result.books_written}")
     print(f"Raw verses written: {raw_result.verses_written}")
     print(f"Raw book order: {','.join(raw_result.book_order)}")
+    print(f"Raw split provenance: {split_out_path}")
     print(f"Filtered output directory: {args.out_dir}")
     print(f"Filtered verses seen: {filtered_result.verses_seen}")
     print(f"Filtered verses excluded: {filtered_result.verses_excluded}")
@@ -88,6 +98,36 @@ def run(args: argparse.Namespace, split_wlc_to_books_fn) -> None:
     print(f"Filtered verses written: {filtered_result.verses_written}")
     print(f"Filtered book order: {','.join(filtered_result.book_order)}")
     print(f"Exclusion provenance: {filtered_out_path}")
+
+
+def _write_split_out_provenance(
+    split_out_path: Path,
+    input_path: Path,
+    out_dir: Path,
+    verses_seen: int,
+    verses_written: int,
+    books_written: int,
+) -> None:
+    payload: dict[str, object] = {
+        "artifacts_description": "unfiltered WLC split outputs",
+        "payload_provenance_note": (
+            "Payload files in this directory remain in their native data format, "
+            "so provenance is recorded here rather than inside each file."
+        ),
+        "input": str(input_path),
+        "out_dir": str(out_dir),
+        "summary": {
+            "verses_seen": verses_seen,
+            "verses_written": verses_written,
+            "books_written": books_written,
+        },
+    }
+    payload = provenance.with_json_provenance(payload, __file__)
+
+    split_out_path.parent.mkdir(parents=True, exist_ok=True)
+    with split_out_path.open("w", encoding="utf-8", newline="\n") as f_out:
+        json.dump(payload, f_out, ensure_ascii=False, indent=2)
+        f_out.write("\n")
 
 
 def _format_int_ranges(sorted_values: list[int]) -> list[str]:
