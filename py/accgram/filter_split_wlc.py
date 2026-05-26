@@ -4,6 +4,7 @@ import argparse
 from pathlib import Path
 
 from mb_cmn import bib_locales as tbn
+from py_misc import get_cvm_rec_from_bcvt as gcrfb
 
 
 # WLC 4.22 two-character book code -> mb_cmn bk39id
@@ -91,15 +92,26 @@ def _wlc_bb_to_bk39id(bb: str) -> str:
     return bk39id
 
 
+def _wlc_bhs_to_mam_bcvt(bk39id: str, chnu: int, vrnu: int):
+    """Convert a WLC verse ref (BHS versification) to MAM bcvt."""
+    bcvtbhs = tbn.mk_bcvtbhs(bk39id, chnu, vrnu)
+    cvm_rec = gcrfb.get_cvm_rec_from_bcvt(bcvtbhs)
+    if cvm_rec is None:
+        return tbn.mk_bcvtmam(bk39id, chnu, vrnu)
+    _, cvtmam = gcrfb.cvm_rec_get_parts(cvm_rec)
+    return tbn.mk_bcvt(bk39id, cvtmam)
+
+
 def should_keep_line(bb: str, chnu: int, vrnu: int) -> bool:
     # Exclude Psalms and Proverbs wholesale.
     if bb in ("ps", "pr"):
         return False
 
     bk39id = _wlc_bb_to_bk39id(bb)
-    bcvtmam = tbn.mk_bcvtmam(bk39id, chnu, vrnu)
+    bcvtmam = _wlc_bhs_to_mam_bcvt(bk39id, chnu, vrnu)
 
-    # Exclude all dual-cantillation locales (Gen 35:22, Ex 20:2-13, Deut 5:6-17).
+    # Exclude all dual-cantillation locales, reckoned from WLC/BHS refs.
+    # These map to MAM locales internally before checking has_dualcant.
     if tbn.has_dualcant(bcvtmam):
         return False
 
