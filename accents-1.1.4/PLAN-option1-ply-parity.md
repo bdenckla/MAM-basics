@@ -75,6 +75,7 @@ Cadence:
 
 ### Progress Log
 - 2026-05-26: Added Python CLI entry point py/main_accgram.py with subcommand split-wlc to split wlc422_ps.txt into per-book fixtures under .novc/wlc_422_ps using wlc_422_ps_bb.txt naming. Evidence: command run succeeded with 39 books and 23213 verse lines written. Next: define baseline output generation flow per split book to allow incremental parity captures.
+- 2026-05-26: Added py/main_accgram.py subcommand filter-split-wlc to write filtered fixtures under .novc/wlc_422_psf. Evidence: command run succeeded with 37 output files and 18723 verse lines; Psalms and Proverbs files are absent; gn35:22, ex20:2-13, and dt5:6-17 are excluded; for Job, prose ranges jb1:1-3:1 and jb42:7-42:17 remain while the poetic block jb3:2-42:6 is excluded. Next: use filtered fixtures as Stage 1 default corpus for parity-focused parser bring-up.
 
 ## Acceptance Criteria
 - The Stage 1 parity corpus produces equivalent parse success/error outcomes.
