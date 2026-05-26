@@ -81,7 +81,7 @@ struct err
  *   accentual parse trees.  display_all enables display for all
  *   passages - not just ones w/ errors.
  */
-int yydebug = 0, accdebug = 0;
+int accdebug = 0;
 int display_tree = 0, display_all = 1;
 
 extern FILE *yyin;
