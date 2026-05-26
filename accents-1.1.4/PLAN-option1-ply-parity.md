@@ -50,6 +50,32 @@ Implement a Python port of Accents using PLY (lex + yacc style) with behavior pa
 - Add basic documentation for running parity checks.
 - Mark known limitations explicitly.
 
+## Progress Tracking
+Use this file as the canonical progress record for Stage 1.
+
+Status labels:
+- Not started
+- In progress
+- Blocked
+- Done
+
+Cadence:
+- Update this section each time a meaningful task lands.
+- Keep entries factual and short: date, change, evidence, next step.
+
+### Stage 1 Status Board
+- 1. Baseline and fixtures: In progress
+- 2. Token model definition: Not started
+- 3. Lexer port in PLY: Not started
+- 4. Grammar port in PLY: Not started
+- 5. Tree and utility layer: Not started
+- 6. CLI wrapper: Not started
+- 7. Verification: Not started
+- 8. Hardening: Not started
+
+### Progress Log
+- 2026-05-26: Added Python CLI entry point py/main_accgram.py with subcommand split-wlc to split wlc422_ps.txt into per-book fixtures under .novc/wlc_422_ps using wlc_422_ps_bb.txt naming. Evidence: command run succeeded with 39 books and 23213 verse lines written. Next: define baseline output generation flow per split book to allow incremental parity captures.
+
 ## Acceptance Criteria
 - The Stage 1 parity corpus produces equivalent parse success/error outcomes.
 - Selected tree outputs match expected structure for representative verses.
