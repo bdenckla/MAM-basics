@@ -1,28 +1,28 @@
-1 Chronicles 1:1
+1Chronicles 1:1
 0 silluq_clause
   1 tifcha_phrase
     mereka tifcha 
   1 silluq_phrase
     silluq 
-1 Chronicles 1:2
+1Chronicles 1:2
 0 silluq_clause
   1 tifcha_phrase
     mereka tifcha 
   1 silluq_phrase
     silluq 
-1 Chronicles 1:3
+1Chronicles 1:3
 0 silluq_clause
   1 tifcha_phrase
     mereka tifcha 
   1 silluq_phrase
     silluq 
-1 Chronicles 1:4
+1Chronicles 1:4
 0 silluq_clause
   1 tifcha_phrase
     mereka tifcha 
   1 silluq_phrase
     mereka silluq 
-1 Chronicles 1:5
+1Chronicles 1:5
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -40,7 +40,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 1:6
+1Chronicles 1:6
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -52,7 +52,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 1:7
+1Chronicles 1:7
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -64,7 +64,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 1:8
+1Chronicles 1:8
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -76,7 +76,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 1:9
+1Chronicles 1:9
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -97,7 +97,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 1:10
+1Chronicles 1:10
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -112,7 +112,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 1:11
+1Chronicles 1:11
 0 silluq_clause
   1 tifcha_clause
     2 tevir_clause
@@ -127,7 +127,7 @@
       tifcha 
   1 silluq_phrase
     silluq 
-1 Chronicles 1:12
+1Chronicles 1:12
 0 silluq_clause
   1 tifcha_clause
     2 revia_clause
@@ -142,7 +142,7 @@
         tifcha 
   1 silluq_phrase
     silluq 
-1 Chronicles 1:13
+1Chronicles 1:13
 0 silluq_clause
   1 tifcha_clause
     2 revia_phrase
@@ -154,7 +154,7 @@
         mereka tifcha 
   1 silluq_phrase
     silluq 
-1 Chronicles 1:14
+1Chronicles 1:14
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -166,19 +166,19 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 1:15
+1Chronicles 1:15
 0 silluq_clause
   1 tifcha_phrase
     mereka tifcha 
   1 silluq_phrase
     silluq 
-1 Chronicles 1:16
+1Chronicles 1:16
 0 silluq_clause
   1 tifcha_phrase
     mereka tifcha 
   1 silluq_phrase
     silluq 
-1 Chronicles 1:17
+1Chronicles 1:17
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -196,7 +196,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 1:18
+1Chronicles 1:18
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -208,7 +208,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 1:19
+1Chronicles 1:19
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -232,7 +232,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 1:20
+1Chronicles 1:20
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -247,19 +247,19 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 1:21
+1Chronicles 1:21
 0 silluq_clause
   1 tifcha_phrase
     mereka tifcha 
   1 silluq_phrase
     silluq 
-1 Chronicles 1:22
+1Chronicles 1:22
 0 silluq_clause
   1 tifcha_phrase
     mereka tifcha 
   1 silluq_phrase
     silluq 
-1 Chronicles 1:23
+1Chronicles 1:23
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -271,31 +271,31 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 1:24
+1Chronicles 1:24
 0 silluq_clause
   1 tifcha_phrase
     mereka tifcha 
   1 silluq_phrase
     silluq 
-1 Chronicles 1:25
+1Chronicles 1:25
 0 silluq_clause
   1 tifcha_phrase
     mereka tifcha 
   1 silluq_phrase
     silluq 
-1 Chronicles 1:26
+1Chronicles 1:26
 0 silluq_clause
   1 tifcha_phrase
     mereka tifcha 
   1 silluq_phrase
     silluq 
-1 Chronicles 1:27
+1Chronicles 1:27
 0 silluq_clause
   1 tifcha_phrase
     tifcha 
   1 silluq_phrase
     mereka silluq 
-1 Chronicles 1:28
+1Chronicles 1:28
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -307,7 +307,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 1:29
+1Chronicles 1:29
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -325,7 +325,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 1:30
+1Chronicles 1:30
 0 silluq_clause
   1 zaqef_phrase
     munach zaqef 
@@ -334,7 +334,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 1:31
+1Chronicles 1:31
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -346,7 +346,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 1:32
+1Chronicles 1:32
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -370,7 +370,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 1:33
+1Chronicles 1:33
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -391,7 +391,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 1:34
+1Chronicles 1:34
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -406,7 +406,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 1:35
+1Chronicles 1:35
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -421,7 +421,7 @@
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 1:36
+1Chronicles 1:36
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -439,7 +439,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 1:37
+1Chronicles 1:37
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -451,7 +451,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 1:38
+1Chronicles 1:38
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -466,7 +466,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 1:39
+1Chronicles 1:39
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -478,7 +478,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 1:40
+1Chronicles 1:40
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -496,7 +496,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 1:41
+1Chronicles 1:41
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -511,7 +511,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 1:42
+1Chronicles 1:42
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -526,7 +526,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 1:43
+1Chronicles 1:43
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -553,7 +553,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 1:44
+1Chronicles 1:44
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -568,7 +568,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 1:45
+1Chronicles 1:45
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -583,7 +583,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 1:46
+1Chronicles 1:46
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -607,7 +607,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 1:47
+1Chronicles 1:47
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -622,7 +622,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 1:48
+1Chronicles 1:48
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -637,7 +637,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 1:49
+1Chronicles 1:49
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -652,7 +652,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 1:50
+1Chronicles 1:50
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -682,7 +682,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 1:51
+1Chronicles 1:51
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -703,7 +703,7 @@
           mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 1:52
+1Chronicles 1:52
 0 silluq_clause
   1 tifcha_clause
     2 tevir_phrase
@@ -712,7 +712,7 @@
       mereka tifcha 
   1 silluq_phrase
     mereka silluq 
-1 Chronicles 1:53
+1Chronicles 1:53
 0 silluq_clause
   1 tifcha_clause
     2 tevir_phrase
@@ -721,7 +721,7 @@
       mereka tifcha 
   1 silluq_phrase
     ERROR 
-1 Chronicles 1:54
+1Chronicles 1:54
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -733,7 +733,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 2:1
+1Chronicles 2:1
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -751,7 +751,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 2:2
+1Chronicles 2:2
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -763,7 +763,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 2:3
+1Chronicles 2:3
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -802,7 +802,7 @@
           mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 2:4
+1Chronicles 2:4
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -820,13 +820,13 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 2:5
+1Chronicles 2:5
 0 silluq_clause
   1 tifcha_phrase
     tifcha 
   1 silluq_phrase
     mereka silluq 
-1 Chronicles 2:6
+1Chronicles 2:6
 0 silluq_clause
   1 tifcha_clause
     2 revia_phrase
@@ -841,7 +841,7 @@
         mereka tifcha 
   1 silluq_phrase
     mereka silluq 
-1 Chronicles 2:7
+1Chronicles 2:7
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -859,13 +859,13 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 2:8
+1Chronicles 2:8
 0 silluq_clause
   1 tifcha_phrase
     mereka tifcha 
   1 silluq_phrase
     silluq 
-1 Chronicles 2:9
+1Chronicles 2:9
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -877,7 +877,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 2:10
+1Chronicles 2:10
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -895,7 +895,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 2:11
+1Chronicles 2:11
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -907,7 +907,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 2:12
+1Chronicles 2:12
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -919,7 +919,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 2:13
+1Chronicles 2:13
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -940,7 +940,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 2:14
+1Chronicles 2:14
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -952,7 +952,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 2:15
+1Chronicles 2:15
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -964,7 +964,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 2:16
+1Chronicles 2:16
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -982,7 +982,7 @@
           mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 2:17
+1Chronicles 2:17
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -1000,7 +1000,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 2:18
+1Chronicles 2:18
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -1021,7 +1021,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 2:19
+1Chronicles 2:19
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -1039,7 +1039,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 2:20
+1Chronicles 2:20
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -1051,7 +1051,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 2:21
+1Chronicles 2:21
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1078,7 +1078,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 2:22
+1Chronicles 2:22
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -1099,7 +1099,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 2:23
+1Chronicles 2:23
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -1120,7 +1120,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 2:24
+1Chronicles 2:24
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -1141,7 +1141,7 @@
           tifcha 
         4 silluq_phrase
           mereka silluq 
-1 Chronicles 2:25
+1Chronicles 2:25
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -1159,7 +1159,7 @@
         tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 2:26
+1Chronicles 2:26
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -1174,7 +1174,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 2:27
+1Chronicles 2:27
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -1186,7 +1186,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 2:28
+1Chronicles 2:28
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -1201,7 +1201,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 2:29
+1Chronicles 2:29
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -1219,7 +1219,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 2:30
+1Chronicles 2:30
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -1231,7 +1231,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 2:31
+1Chronicles 2:31
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -1249,7 +1249,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 2:32
+1Chronicles 2:32
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1267,7 +1267,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 2:33
+1Chronicles 2:33
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -1279,7 +1279,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 2:34
+1Chronicles 2:34
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -1297,7 +1297,7 @@
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 2:35
+1Chronicles 2:35
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -1312,7 +1312,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 2:36
+1Chronicles 2:36
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -1324,7 +1324,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 2:37
+1Chronicles 2:37
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -1336,7 +1336,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 2:38
+1Chronicles 2:38
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -1348,7 +1348,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 2:39
+1Chronicles 2:39
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -1360,7 +1360,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 2:40
+1Chronicles 2:40
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -1372,7 +1372,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 2:41
+1Chronicles 2:41
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -1384,7 +1384,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 2:42
+1Chronicles 2:42
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1402,7 +1402,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 2:43
+1Chronicles 2:43
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -1414,7 +1414,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 2:44
+1Chronicles 2:44
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -1429,7 +1429,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 2:45
+1Chronicles 2:45
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -1441,7 +1441,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 2:46
+1Chronicles 2:46
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1462,7 +1462,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 2:47
+1Chronicles 2:47
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -1477,7 +1477,7 @@
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 2:48
+1Chronicles 2:48
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -1489,7 +1489,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 2:49
+1Chronicles 2:49
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1513,7 +1513,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 2:50
+1Chronicles 2:50
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1534,7 +1534,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 2:51
+1Chronicles 2:51
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -1546,7 +1546,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 2:52
+1Chronicles 2:52
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1564,7 +1564,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 2:53
+1Chronicles 2:53
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1597,7 +1597,7 @@
         mayela 
       3 silluq_phrase
         silluq 
-1 Chronicles 2:54
+1Chronicles 2:54
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1618,7 +1618,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 2:55
+1Chronicles 2:55
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1642,7 +1642,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 3:1
+1Chronicles 3:1
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1678,7 +1678,7 @@
           tifcha 
         4 silluq_phrase
           silluq 
-1 Chronicles 3:2
+1Chronicles 3:2
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1696,7 +1696,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 3:3
+1Chronicles 3:3
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -1708,7 +1708,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 3:4
+1Chronicles 3:4
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1735,7 +1735,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 3:5
+1Chronicles 3:5
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -1759,19 +1759,19 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 3:6
+1Chronicles 3:6
 0 silluq_clause
   1 tifcha_phrase
     mereka tifcha 
   1 silluq_phrase
     silluq 
-1 Chronicles 3:7
+1Chronicles 3:7
 0 silluq_clause
   1 tifcha_phrase
     mereka tifcha 
   1 silluq_phrase
     silluq 
-1 Chronicles 3:8
+1Chronicles 3:8
 0 silluq_clause
   1 tifcha_clause
     2 tevir_phrase
@@ -1780,7 +1780,7 @@
       tifcha 
   1 silluq_phrase
     silluq 
-1 Chronicles 3:9
+1Chronicles 3:9
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -1792,7 +1792,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 3:10
+1Chronicles 3:10
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -1807,7 +1807,7 @@
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 3:11
+1Chronicles 3:11
 0 silluq_clause
   1 tifcha_clause
     2 tevir_phrase
@@ -1816,7 +1816,7 @@
       mereka tifcha 
   1 silluq_phrase
     mereka silluq 
-1 Chronicles 3:12
+1Chronicles 3:12
 0 silluq_clause
   1 tifcha_clause
     2 tevir_phrase
@@ -1825,7 +1825,7 @@
       mereka tifcha 
   1 silluq_phrase
     mereka silluq 
-1 Chronicles 3:13
+1Chronicles 3:13
 0 silluq_clause
   1 tifcha_clause
     2 tevir_phrase
@@ -1834,13 +1834,13 @@
       mereka tifcha 
   1 silluq_phrase
     mereka silluq 
-1 Chronicles 3:14
+1Chronicles 3:14
 0 silluq_clause
   1 tifcha_phrase
     mereka tifcha 
   1 silluq_phrase
     mereka silluq 
-1 Chronicles 3:15
+1Chronicles 3:15
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1870,7 +1870,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 3:16
+1Chronicles 3:16
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -1882,7 +1882,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 3:17
+1Chronicles 3:17
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -1894,7 +1894,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 3:18
+1Chronicles 3:18
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -1906,7 +1906,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 3:19
+1Chronicles 3:19
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -1927,7 +1927,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 3:20
+1Chronicles 3:20
 0 silluq_clause
   1 tifcha_clause
     2 tevir_clause
@@ -1942,7 +1942,7 @@
       mereka tifcha 
   1 silluq_phrase
     silluq 
-1 Chronicles 3:21
+1Chronicles 3:21
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -1960,7 +1960,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 3:22
+1Chronicles 3:22
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -1984,7 +1984,7 @@
           tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 3:23
+1Chronicles 3:23
 0 silluq_clause
   1 tifcha_clause
     2 revia_phrase
@@ -1996,7 +1996,7 @@
         tifcha 
   1 silluq_phrase
     silluq 
-1 Chronicles 3:24
+1Chronicles 3:24
 0 silluq_clause
   1 tifcha_clause
     2 revia_phrase
@@ -2020,7 +2020,7 @@
         tifcha 
   1 silluq_phrase
     silluq 
-1 Chronicles 4:1
+1Chronicles 4:1
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -2035,7 +2035,7 @@
         tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 4:2
+1Chronicles 4:2
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2056,7 +2056,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 4:3
+1Chronicles 4:3
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2074,7 +2074,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 4:4
+1Chronicles 4:4
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2098,7 +2098,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 4:5
+1Chronicles 4:5
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2116,7 +2116,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 4:6
+1Chronicles 4:6
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2134,7 +2134,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 4:7
+1Chronicles 4:7
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -2146,7 +2146,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 4:8
+1Chronicles 4:8
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -2161,7 +2161,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 4:9
+1Chronicles 4:9
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -2185,7 +2185,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 4:10
+1Chronicles 4:10
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2218,7 +2218,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 4:11
+1Chronicles 4:11
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -2230,7 +2230,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 4:12
+1Chronicles 4:12
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2254,7 +2254,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 4:13
+1Chronicles 4:13
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -2269,7 +2269,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 4:14
+1Chronicles 4:14
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -2293,7 +2293,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 4:15
+1Chronicles 4:15
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2311,7 +2311,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 4:16
+1Chronicles 4:16
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -2326,7 +2326,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 4:17
+1Chronicles 4:17
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -2347,7 +2347,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 4:18
+1Chronicles 4:18
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2383,7 +2383,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 4:19
+1Chronicles 4:19
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2404,7 +2404,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 4:20
+1Chronicles 4:20
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -2425,7 +2425,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 4:21
+1Chronicles 4:21
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2452,7 +2452,7 @@
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 4:22
+1Chronicles 4:22
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -2473,7 +2473,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 4:23
+1Chronicles 4:23
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2491,7 +2491,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 4:24
+1Chronicles 4:24
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -2506,7 +2506,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 4:25
+1Chronicles 4:25
 0 silluq_clause
   1 tifcha_clause
     2 tevir_phrase
@@ -2515,7 +2515,7 @@
       mereka tifcha 
   1 silluq_phrase
     mereka silluq 
-1 Chronicles 4:26
+1Chronicles 4:26
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -2530,7 +2530,7 @@
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 4:27
+1Chronicles 4:27
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2560,7 +2560,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 4:28
+1Chronicles 4:28
 0 silluq_clause
   1 tifcha_clause
     2 tevir_phrase
@@ -2569,19 +2569,19 @@
       mereka tifcha 
   1 silluq_phrase
     mereka silluq 
-1 Chronicles 4:29
+1Chronicles 4:29
 0 silluq_clause
   1 tifcha_phrase
     mereka tifcha 
   1 silluq_phrase
     silluq 
-1 Chronicles 4:30
+1Chronicles 4:30
 0 silluq_clause
   1 tifcha_phrase
     mereka tifcha 
   1 silluq_phrase
     silluq 
-1 Chronicles 4:31
+1Chronicles 4:31
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2599,7 +2599,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 4:32
+1Chronicles 4:32
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2617,7 +2617,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 4:33
+1Chronicles 4:33
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -2641,7 +2641,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 4:34
+1Chronicles 4:34
 0 silluq_clause
   1 zaqef_phrase
     munach zaqef 
@@ -2650,7 +2650,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 4:35
+1Chronicles 4:35
 0 silluq_clause
   1 atnach_phrase
     atnach 
@@ -2665,7 +2665,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 4:36
+1Chronicles 4:36
 0 silluq_clause
   1 tifcha_clause
     2 tevir_clause
@@ -2683,7 +2683,7 @@
       tifcha 
   1 silluq_phrase
     silluq 
-1 Chronicles 4:37
+1Chronicles 4:37
 0 silluq_clause
   1 tifcha_clause
     2 tevir_phrase
@@ -2692,7 +2692,7 @@
       mereka tifcha 
   1 silluq_phrase
     silluq 
-1 Chronicles 4:38
+1Chronicles 4:38
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2716,7 +2716,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 4:39
+1Chronicles 4:39
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2734,7 +2734,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 4:40
+1Chronicles 4:40
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2761,7 +2761,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 4:41
+1Chronicles 4:41
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2797,7 +2797,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 4:42
+1Chronicles 4:42
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2830,7 +2830,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 4:43
+1Chronicles 4:43
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -2848,7 +2848,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 5:1
+1Chronicles 5:1
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -2878,7 +2878,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 5:2
+1Chronicles 5:2
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2896,7 +2896,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 5:3
+1Chronicles 5:3
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -2908,7 +2908,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 5:4
+1Chronicles 5:4
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -2923,7 +2923,7 @@
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 5:5
+1Chronicles 5:5
 0 silluq_clause
   1 tifcha_clause
     2 tevir_phrase
@@ -2932,7 +2932,7 @@
       mereka tifcha 
   1 silluq_phrase
     mereka silluq 
-1 Chronicles 5:6
+1Chronicles 5:6
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -2950,7 +2950,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 5:7
+1Chronicles 5:7
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2968,7 +2968,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 5:8
+1Chronicles 5:8
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2992,7 +2992,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 5:9
+1Chronicles 5:9
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -3016,7 +3016,7 @@
         tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 5:10
+1Chronicles 5:10
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -3043,7 +3043,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 5:11
+1Chronicles 5:11
 0 silluq_clause
   1 tifcha_clause
     2 revia_phrase
@@ -3055,7 +3055,7 @@
         mereka tifcha 
   1 silluq_phrase
     silluq 
-1 Chronicles 5:12
+1Chronicles 5:12
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -3070,7 +3070,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 5:13
+1Chronicles 5:13
 0 silluq_clause
   1 tifcha_clause
     2 revia_clause
@@ -3094,7 +3094,7 @@
         mereka tifcha 
   1 silluq_phrase
     silluq 
-1 Chronicles 5:14
+1Chronicles 5:14
 0 silluq_clause
   1 tifcha_clause
     2 revia_clause
@@ -3115,7 +3115,7 @@
         mereka tifcha 
   1 silluq_phrase
     silluq 
-1 Chronicles 5:15
+1Chronicles 5:15
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -3127,7 +3127,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 5:16
+1Chronicles 5:16
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -3142,7 +3142,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 5:17
+1Chronicles 5:17
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -3160,7 +3160,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 5:18
+1Chronicles 5:18
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -3193,7 +3193,7 @@
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 5:19
+1Chronicles 5:19
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -3205,7 +3205,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 5:20
+1Chronicles 5:20
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -3235,7 +3235,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 5:21
+1Chronicles 5:21
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -3265,7 +3265,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 5:22
+1Chronicles 5:22
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -3283,7 +3283,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 5:23
+1Chronicles 5:23
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -3310,7 +3310,7 @@
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 5:24
+1Chronicles 5:24
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -3349,7 +3349,7 @@
           tifcha 
         4 silluq_phrase
           mereka silluq 
-1 Chronicles 5:25
+1Chronicles 5:25
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -3373,7 +3373,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 5:26
+1Chronicles 5:26
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -3418,7 +3418,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 5:27
+1Chronicles 5:27
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -3433,7 +3433,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 5:28
+1Chronicles 5:28
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -3448,7 +3448,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 5:29
+1Chronicles 5:29
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -3472,7 +3472,7 @@
           tifcha 
         4 silluq_phrase
           silluq 
-1 Chronicles 5:30
+1Chronicles 5:30
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -3484,7 +3484,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 5:31
+1Chronicles 5:31
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -3496,7 +3496,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 5:32
+1Chronicles 5:32
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -3508,7 +3508,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 5:33
+1Chronicles 5:33
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -3520,7 +3520,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 5:34
+1Chronicles 5:34
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -3532,7 +3532,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 5:35
+1Chronicles 5:35
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -3544,7 +3544,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 5:36
+1Chronicles 5:36
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -3565,7 +3565,7 @@
           mereka tifcha 
         4 silluq_phrase
           silluq 
-1 Chronicles 5:37
+1Chronicles 5:37
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -3577,7 +3577,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 5:38
+1Chronicles 5:38
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -3589,7 +3589,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 5:39
+1Chronicles 5:39
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -3601,7 +3601,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 5:40
+1Chronicles 5:40
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -3613,7 +3613,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 5:41
+1Chronicles 5:41
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -3631,7 +3631,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 6:1
+1Chronicles 6:1
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -3646,7 +3646,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 6:2
+1Chronicles 6:2
 0 silluq_clause
   1 tifcha_clause
     2 tevir_phrase
@@ -3655,7 +3655,7 @@
       mereka tifcha 
   1 silluq_phrase
     mereka silluq 
-1 Chronicles 6:3
+1Chronicles 6:3
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -3670,7 +3670,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 6:4
+1Chronicles 6:4
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -3685,7 +3685,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 6:5
+1Chronicles 6:5
 0 silluq_clause
   1 atnach_phrase
     atnach 
@@ -3697,7 +3697,7 @@
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 6:6
+1Chronicles 6:6
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -3709,7 +3709,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 6:7
+1Chronicles 6:7
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -3724,7 +3724,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 6:8
+1Chronicles 6:8
 0 silluq_clause
   1 tifcha_clause
     2 tevir_phrase
@@ -3733,7 +3733,7 @@
       mereka tifcha 
   1 silluq_phrase
     mereka silluq 
-1 Chronicles 6:9
+1Chronicles 6:9
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -3745,7 +3745,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 6:10
+1Chronicles 6:10
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -3757,7 +3757,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 6:11
+1Chronicles 6:11
 0 silluq_clause
   1 atnach_phrase
     atnach 
@@ -3772,7 +3772,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 6:12
+1Chronicles 6:12
 0 silluq_clause
   1 tifcha_clause
     2 tevir_phrase
@@ -3781,7 +3781,7 @@
       mereka tifcha 
   1 silluq_phrase
     mereka silluq 
-1 Chronicles 6:13
+1Chronicles 6:13
 0 silluq_clause
   1 tifcha_clause
     2 tevir_phrase
@@ -3790,7 +3790,7 @@
       mereka tifcha 
   1 silluq_phrase
     silluq 
-1 Chronicles 6:14
+1Chronicles 6:14
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -3805,7 +3805,7 @@
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 6:15
+1Chronicles 6:15
 0 silluq_clause
   1 tifcha_clause
     2 tevir_phrase
@@ -3814,7 +3814,7 @@
       mereka tifcha 
   1 silluq_phrase
     mereka silluq 
-1 Chronicles 6:16
+1Chronicles 6:16
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -3832,7 +3832,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 6:17
+1Chronicles 6:17
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -3856,7 +3856,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 6:18
+1Chronicles 6:18
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -3880,7 +3880,7 @@
           tifcha 
         4 silluq_phrase
           silluq 
-1 Chronicles 6:19
+1Chronicles 6:19
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -3892,7 +3892,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 6:20
+1Chronicles 6:20
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -3904,7 +3904,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 6:21
+1Chronicles 6:21
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -3916,7 +3916,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 6:22
+1Chronicles 6:22
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -3928,7 +3928,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 6:23
+1Chronicles 6:23
 0 silluq_clause
   1 zaqef_phrase
     munach zaqef 
@@ -3937,7 +3937,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 6:24
+1Chronicles 6:24
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -3952,31 +3952,31 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 6:25
+1Chronicles 6:25
 0 silluq_clause
   1 tifcha_phrase
     mereka tifcha 
   1 silluq_phrase
     silluq 
-1 Chronicles 6:26
+1Chronicles 6:26
 0 silluq_clause
   1 tifcha_phrase
     mereka tifcha 
   1 silluq_phrase
     silluq 
-1 Chronicles 6:27
+1Chronicles 6:27
 0 silluq_clause
   1 tifcha_phrase
     mereka tifcha 
   1 silluq_phrase
     silluq 
-1 Chronicles 6:28
+1Chronicles 6:28
 0 silluq_clause
   1 tifcha_phrase
     mereka tifcha 
   1 silluq_phrase
     silluq 
-1 Chronicles 6:29
+1Chronicles 6:29
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -3997,19 +3997,19 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 6:30
+1Chronicles 6:30
 0 silluq_clause
   1 tifcha_phrase
     mereka tifcha 
   1 silluq_phrase
     silluq 
-1 Chronicles 6:31
+1Chronicles 6:31
 0 silluq_clause
   1 tifcha_phrase
     mereka tifcha 
   1 silluq_phrase
     silluq 
-1 Chronicles 6:32
+1Chronicles 6:32
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -4021,7 +4021,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 6:33
+1Chronicles 6:33
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -4039,7 +4039,7 @@
           tifcha 
         4 silluq_phrase
           mereka silluq 
-1 Chronicles 6:34
+1Chronicles 6:34
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -4075,7 +4075,7 @@
           tifcha 
         4 silluq_phrase
           mereka silluq 
-1 Chronicles 6:35
+1Chronicles 6:35
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -4090,7 +4090,7 @@
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 6:36
+1Chronicles 6:36
 0 silluq_clause
   1 tifcha_clause
     2 tevir_phrase
@@ -4099,7 +4099,7 @@
       mereka tifcha 
   1 silluq_phrase
     mereka silluq 
-1 Chronicles 6:37
+1Chronicles 6:37
 0 silluq_clause
   1 tifcha_clause
     2 tevir_phrase
@@ -4108,13 +4108,13 @@
       mereka tifcha 
   1 silluq_phrase
     mereka silluq 
-1 Chronicles 6:38
+1Chronicles 6:38
 0 silluq_clause
   1 tifcha_phrase
     mereka tifcha 
   1 silluq_phrase
     mereka silluq 
-1 Chronicles 6:39
+1Chronicles 6:39
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -4138,7 +4138,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 6:40
+1Chronicles 6:40
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -4153,7 +4153,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 6:41
+1Chronicles 6:41
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -4165,7 +4165,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 6:42
+1Chronicles 6:42
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -4186,7 +4186,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 6:43
+1Chronicles 6:43
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -4198,7 +4198,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 6:44
+1Chronicles 6:44
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -4210,7 +4210,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 6:45
+1Chronicles 6:45
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -4234,7 +4234,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 6:46
+1Chronicles 6:46
 0 silluq_clause
   1 tifcha_clause
     2 revia_clause
@@ -4255,7 +4255,7 @@
         tifcha 
   1 silluq_phrase
     mereka silluq 
-1 Chronicles 6:47
+1Chronicles 6:47
 0 silluq_clause
   1 zaqef_clause
     2 revia_clause
@@ -4282,7 +4282,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 6:48
+1Chronicles 6:48
 0 silluq_clause
   1 zaqef_clause
     2 revia_clause
@@ -4306,7 +4306,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 6:49
+1Chronicles 6:49
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -4318,7 +4318,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 6:50
+1Chronicles 6:50
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -4345,7 +4345,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 6:51
+1Chronicles 6:51
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -4363,7 +4363,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 6:52
+1Chronicles 6:52
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -4381,7 +4381,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 6:53
+1Chronicles 6:53
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -4393,7 +4393,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 6:54
+1Chronicles 6:54
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -4405,7 +4405,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 6:55
+1Chronicles 6:55
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -4429,7 +4429,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 6:56
+1Chronicles 6:56
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -4456,7 +4456,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 6:57
+1Chronicles 6:57
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -4471,7 +4471,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 6:58
+1Chronicles 6:58
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -4483,7 +4483,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 6:59
+1Chronicles 6:59
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -4498,7 +4498,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 6:60
+1Chronicles 6:60
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -4510,7 +4510,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 6:61
+1Chronicles 6:61
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -4531,7 +4531,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 6:62
+1Chronicles 6:62
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -4552,7 +4552,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 6:63
+1Chronicles 6:63
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -4576,7 +4576,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 6:64
+1Chronicles 6:64
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -4588,7 +4588,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 6:65
+1Chronicles 6:65
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -4603,7 +4603,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 6:66
+1Chronicles 6:66
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -4615,7 +4615,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 7:1
+1Chronicles 7:1
 0 silluq_clause
   1 tifcha_clause
     2 revia_phrase
@@ -4627,7 +4627,7 @@
         mereka tifcha 
   1 silluq_phrase
     silluq 
-1 Chronicles 7:2
+1Chronicles 7:2
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -4669,7 +4669,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 7:3
+1Chronicles 7:3
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -4693,7 +4693,7 @@
           tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 7:4
+1Chronicles 7:4
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -4717,7 +4717,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 7:5
+1Chronicles 7:5
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -4744,7 +4744,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 7:6
+1Chronicles 7:6
 0 silluq_clause
   1 tifcha_clause
     2 revia_phrase
@@ -4756,7 +4756,7 @@
         tifcha 
   1 silluq_phrase
     silluq 
-1 Chronicles 7:7
+1Chronicles 7:7
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -4801,7 +4801,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 7:8
+1Chronicles 7:8
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -4831,7 +4831,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 7:9
+1Chronicles 7:9
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -4852,7 +4852,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 7:10
+1Chronicles 7:10
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -4879,7 +4879,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 7:11
+1Chronicles 7:11
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -4906,7 +4906,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 7:12
+1Chronicles 7:12
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -4918,7 +4918,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 7:13
+1Chronicles 7:13
 0 silluq_clause
   1 tifcha_clause
     2 revia_phrase
@@ -4930,7 +4930,7 @@
         mereka tifcha 
   1 silluq_phrase
     mereka silluq 
-1 Chronicles 7:14
+1Chronicles 7:14
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -4954,7 +4954,7 @@
           tifcha 
         4 silluq_phrase
           mereka silluq 
-1 Chronicles 7:15
+1Chronicles 7:15
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -4981,7 +4981,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 7:16
+1Chronicles 7:16
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -5005,7 +5005,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 7:17
+1Chronicles 7:17
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -5023,7 +5023,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 7:18
+1Chronicles 7:18
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -5041,7 +5041,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 7:19
+1Chronicles 7:19
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -5056,7 +5056,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 7:20
+1Chronicles 7:20
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -5074,7 +5074,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 7:21
+1Chronicles 7:21
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -5101,7 +5101,7 @@
           tifcha 
         4 silluq_phrase
           silluq 
-1 Chronicles 7:22
+1Chronicles 7:22
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -5116,7 +5116,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 7:23
+1Chronicles 7:23
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -5140,7 +5140,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 7:24
+1Chronicles 7:24
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -5158,7 +5158,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 7:25
+1Chronicles 7:25
 0 silluq_clause
   1 tifcha_clause
     2 revia_phrase
@@ -5170,7 +5170,7 @@
         tifcha 
   1 silluq_phrase
     mereka silluq 
-1 Chronicles 7:26
+1Chronicles 7:26
 0 silluq_clause
   1 tifcha_clause
     2 tevir_phrase
@@ -5179,13 +5179,13 @@
       mereka tifcha 
   1 silluq_phrase
     mereka silluq 
-1 Chronicles 7:27
+1Chronicles 7:27
 0 silluq_clause
   1 tifcha_phrase
     mereka tifcha 
   1 silluq_phrase
     mereka silluq 
-1 Chronicles 7:28
+1Chronicles 7:28
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -5215,7 +5215,7 @@
           tifcha 
         4 silluq_phrase
           silluq 
-1 Chronicles 7:29
+1Chronicles 7:29
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -5242,7 +5242,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 7:30
+1Chronicles 7:30
 0 silluq_clause
   1 tifcha_clause
     2 revia_phrase
@@ -5254,7 +5254,7 @@
         mereka tifcha 
   1 silluq_phrase
     mereka silluq 
-1 Chronicles 7:31
+1Chronicles 7:31
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -5269,7 +5269,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 7:32
+1Chronicles 7:32
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -5287,7 +5287,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 7:33
+1Chronicles 7:33
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -5302,7 +5302,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 7:34
+1Chronicles 7:34
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -5314,7 +5314,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 7:35
+1Chronicles 7:35
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -5326,7 +5326,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 7:36
+1Chronicles 7:36
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -5341,7 +5341,7 @@
         tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 7:37
+1Chronicles 7:37
 0 silluq_clause
   1 tifcha_clause
     2 revia_phrase
@@ -5353,7 +5353,7 @@
         tifcha 
   1 silluq_phrase
     silluq 
-1 Chronicles 7:38
+1Chronicles 7:38
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -5365,7 +5365,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 7:39
+1Chronicles 7:39
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -5377,7 +5377,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 7:40
+1Chronicles 7:40
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -5407,7 +5407,7 @@
           mereka tifcha 
         4 silluq_phrase
           silluq 
-1 Chronicles 8:1
+1Chronicles 8:1
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -5428,7 +5428,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 8:2
+1Chronicles 8:2
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -5440,7 +5440,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 8:3
+1Chronicles 8:3
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -5452,19 +5452,19 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 8:4
+1Chronicles 8:4
 0 silluq_clause
   1 tifcha_phrase
     mereka tifcha 
   1 silluq_phrase
     silluq 
-1 Chronicles 8:5
+1Chronicles 8:5
 0 silluq_clause
   1 tifcha_phrase
     mereka tifcha 
   1 silluq_phrase
     silluq 
-1 Chronicles 8:6
+1Chronicles 8:6
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -5485,7 +5485,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 8:7
+1Chronicles 8:7
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -5500,7 +5500,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 8:8
+1Chronicles 8:8
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -5521,7 +5521,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 8:9
+1Chronicles 8:9
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -5539,7 +5539,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 8:10
+1Chronicles 8:10
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -5551,7 +5551,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 8:11
+1Chronicles 8:11
 0 silluq_clause
   1 tifcha_clause
     2 tevir_phrase
@@ -5560,7 +5560,7 @@
       mereka tifcha 
   1 silluq_phrase
     silluq 
-1 Chronicles 8:12
+1Chronicles 8:12
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -5581,7 +5581,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 8:13
+1Chronicles 8:13
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -5602,19 +5602,19 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 8:14
+1Chronicles 8:14
 0 silluq_clause
   1 tifcha_phrase
     mereka tifcha 
   1 silluq_phrase
     silluq 
-1 Chronicles 8:15
+1Chronicles 8:15
 0 silluq_clause
   1 tifcha_phrase
     mereka tifcha 
   1 silluq_phrase
     silluq 
-1 Chronicles 8:16
+1Chronicles 8:16
 0 silluq_clause
   1 tifcha_clause
     2 tevir_phrase
@@ -5623,13 +5623,13 @@
       tifcha 
   1 silluq_phrase
     mereka silluq 
-1 Chronicles 8:17
+1Chronicles 8:17
 0 silluq_clause
   1 tifcha_phrase
     mereka tifcha 
   1 silluq_phrase
     mereka silluq 
-1 Chronicles 8:18
+1Chronicles 8:18
 0 silluq_clause
   1 tifcha_clause
     2 tevir_phrase
@@ -5638,19 +5638,19 @@
       tifcha 
   1 silluq_phrase
     mereka silluq 
-1 Chronicles 8:19
+1Chronicles 8:19
 0 silluq_clause
   1 tifcha_phrase
     mereka tifcha 
   1 silluq_phrase
     silluq 
-1 Chronicles 8:20
+1Chronicles 8:20
 0 silluq_clause
   1 tifcha_phrase
     mereka tifcha 
   1 silluq_phrase
     silluq 
-1 Chronicles 8:21
+1Chronicles 8:21
 0 silluq_clause
   1 tifcha_clause
     2 tevir_phrase
@@ -5659,37 +5659,37 @@
       tifcha 
   1 silluq_phrase
     mereka silluq 
-1 Chronicles 8:22
+1Chronicles 8:22
 0 silluq_clause
   1 tifcha_phrase
     mereka tifcha 
   1 silluq_phrase
     silluq 
-1 Chronicles 8:23
+1Chronicles 8:23
 0 silluq_clause
   1 tifcha_phrase
     mereka tifcha 
   1 silluq_phrase
     silluq 
-1 Chronicles 8:24
+1Chronicles 8:24
 0 silluq_clause
   1 tifcha_phrase
     mereka tifcha 
   1 silluq_phrase
     silluq 
-1 Chronicles 8:25
+1Chronicles 8:25
 0 silluq_clause
   1 tifcha_phrase
     mereka tifcha 
   1 silluq_phrase
     mereka silluq 
-1 Chronicles 8:26
+1Chronicles 8:26
 0 silluq_clause
   1 tifcha_phrase
     mereka tifcha 
   1 silluq_phrase
     silluq 
-1 Chronicles 8:27
+1Chronicles 8:27
 0 silluq_clause
   1 tifcha_clause
     2 tevir_phrase
@@ -5698,7 +5698,7 @@
       tifcha 
   1 silluq_phrase
     mereka silluq 
-1 Chronicles 8:28
+1Chronicles 8:28
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -5713,7 +5713,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 8:29
+1Chronicles 8:29
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -5725,7 +5725,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 8:30
+1Chronicles 8:30
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -5737,13 +5737,13 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 8:31
+1Chronicles 8:31
 0 silluq_clause
   1 tifcha_phrase
     mereka tifcha 
   1 silluq_phrase
     silluq 
-1 Chronicles 8:32
+1Chronicles 8:32
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -5761,7 +5761,7 @@
           mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 8:33
+1Chronicles 8:33
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -5788,7 +5788,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 8:34
+1Chronicles 8:34
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -5800,7 +5800,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 8:35
+1Chronicles 8:35
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -5812,7 +5812,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 8:36
+1Chronicles 8:36
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -5836,7 +5836,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 8:37
+1Chronicles 8:37
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -5851,7 +5851,7 @@
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 8:38
+1Chronicles 8:38
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -5878,7 +5878,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 8:39
+1Chronicles 8:39
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -5899,7 +5899,7 @@
           tifcha 
         4 silluq_phrase
           silluq 
-1 Chronicles 8:40
+1Chronicles 8:40
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -5926,7 +5926,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 9:1
+1Chronicles 9:1
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -5950,7 +5950,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 9:2
+1Chronicles 9:2
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -5974,7 +5974,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 9:3
+1Chronicles 9:3
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -5992,7 +5992,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 9:4
+1Chronicles 9:4
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -6004,7 +6004,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 9:5
+1Chronicles 9:5
 0 silluq_clause
   1 zaqef_phrase
     munach zaqef 
@@ -6013,7 +6013,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 9:6
+1Chronicles 9:6
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -6025,7 +6025,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 9:7
+1Chronicles 9:7
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -6043,7 +6043,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 9:8
+1Chronicles 9:8
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6067,7 +6067,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 9:9
+1Chronicles 9:9
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6088,7 +6088,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 9:10
+1Chronicles 9:10
 0 silluq_clause
   1 atnach_phrase
     atnach 
@@ -6097,7 +6097,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 9:11
+1Chronicles 9:11
 0 silluq_clause
   1 zaqef_clause
     2 revia_clause
@@ -6115,7 +6115,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 9:12
+1Chronicles 9:12
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6136,7 +6136,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 9:13
+1Chronicles 9:13
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6163,7 +6163,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 9:14
+1Chronicles 9:14
 0 silluq_clause
   1 atnach_phrase
     atnach 
@@ -6175,7 +6175,7 @@
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 9:15
+1Chronicles 9:15
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -6193,7 +6193,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 9:16
+1Chronicles 9:16
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6217,7 +6217,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 9:17
+1Chronicles 9:17
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6235,7 +6235,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 9:18
+1Chronicles 9:18
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -6256,7 +6256,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 9:19
+1Chronicles 9:19
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6289,7 +6289,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 9:20
+1Chronicles 9:20
 0 silluq_clause
   1 tifcha_clause
     2 revia_phrase
@@ -6301,7 +6301,7 @@
         tifcha 
   1 silluq_phrase
     mereka silluq 
-1 Chronicles 9:21
+1Chronicles 9:21
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -6313,7 +6313,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 9:22
+1Chronicles 9:22
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6340,7 +6340,7 @@
           mereka tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 9:23
+1Chronicles 9:23
 0 silluq_clause
   1 tifcha_clause
     2 tevir_clause
@@ -6352,7 +6352,7 @@
       mereka tifcha 
   1 silluq_phrase
     silluq 
-1 Chronicles 9:24
+1Chronicles 9:24
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -6367,7 +6367,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 9:25
+1Chronicles 9:25
 0 silluq_clause
   1 tifcha_clause
     2 tevir_clause
@@ -6379,7 +6379,7 @@
       mereka tifcha 
   1 silluq_phrase
     silluq 
-1 Chronicles 9:26
+1Chronicles 9:26
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6409,7 +6409,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 9:27
+1Chronicles 9:27
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -6424,7 +6424,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 9:28
+1Chronicles 9:28
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -6439,7 +6439,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 9:29
+1Chronicles 9:29
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6466,7 +6466,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 9:30
+1Chronicles 9:30
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -6478,7 +6478,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 9:31
+1Chronicles 9:31
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6499,7 +6499,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 9:32
+1Chronicles 9:32
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -6514,7 +6514,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 9:33
+1Chronicles 9:33
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -6535,7 +6535,7 @@
         tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 9:34
+1Chronicles 9:34
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -6550,7 +6550,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 9:35
+1Chronicles 9:35
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -6565,7 +6565,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 9:36
+1Chronicles 9:36
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -6580,7 +6580,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 9:37
+1Chronicles 9:37
 0 silluq_clause
   1 zaqef_phrase
     munach zaqef 
@@ -6589,7 +6589,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 9:38
+1Chronicles 9:38
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -6607,7 +6607,7 @@
           mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 9:39
+1Chronicles 9:39
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6634,7 +6634,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 9:40
+1Chronicles 9:40
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -6646,7 +6646,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 9:41
+1Chronicles 9:41
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -6658,7 +6658,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 9:42
+1Chronicles 9:42
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6682,7 +6682,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 9:43
+1Chronicles 9:43
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -6697,7 +6697,7 @@
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 9:44
+1Chronicles 9:44
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -6724,7 +6724,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 10:1
+1Chronicles 10:1
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -6742,7 +6742,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 10:2
+1Chronicles 10:2
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -6763,7 +6763,7 @@
           tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 10:3
+1Chronicles 10:3
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6781,7 +6781,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 10:4
+1Chronicles 10:4
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6823,7 +6823,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 10:5
+1Chronicles 10:5
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -6838,7 +6838,7 @@
         tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 10:6
+1Chronicles 10:6
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -6850,7 +6850,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 10:7
+1Chronicles 10:7
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6880,7 +6880,7 @@
           tifcha 
         4 silluq_phrase
           silluq 
-1 Chronicles 10:8
+1Chronicles 10:8
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6907,7 +6907,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 10:9
+1Chronicles 10:9
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -6931,7 +6931,7 @@
           tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 10:10
+1Chronicles 10:10
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6949,7 +6949,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 10:11
+1Chronicles 10:11
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -6967,7 +6967,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 10:12
+1Chronicles 10:12
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -7006,7 +7006,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 10:13
+1Chronicles 10:13
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7027,7 +7027,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 10:14
+1Chronicles 10:14
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -7045,7 +7045,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 11:1
+1Chronicles 11:1
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -7063,7 +7063,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 11:2
+1Chronicles 11:2
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7105,7 +7105,7 @@
           tifcha 
         4 silluq_phrase
           mereka silluq 
-1 Chronicles 11:3
+1Chronicles 11:3
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7135,7 +7135,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 11:4
+1Chronicles 11:4
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -7156,7 +7156,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 11:5
+1Chronicles 11:5
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7183,7 +7183,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 11:6
+1Chronicles 11:6
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -7207,7 +7207,7 @@
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 11:7
+1Chronicles 11:7
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -7219,7 +7219,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 11:8
+1Chronicles 11:8
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7240,7 +7240,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 11:9
+1Chronicles 11:9
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -7252,7 +7252,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 11:10
+1Chronicles 11:10
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7273,7 +7273,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 11:11
+1Chronicles 11:11
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -7300,7 +7300,7 @@
           mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 11:12
+1Chronicles 11:12
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -7315,7 +7315,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 11:13
+1Chronicles 11:13
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7342,7 +7342,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 11:14
+1Chronicles 11:14
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7360,7 +7360,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 11:15
+1Chronicles 11:15
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7384,7 +7384,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 11:16
+1Chronicles 11:16
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -7399,7 +7399,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 11:17
+1Chronicles 11:17
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -7417,7 +7417,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 11:18
+1Chronicles 11:18
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7450,7 +7450,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 11:19
+1Chronicles 11:19
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7480,7 +7480,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 11:20
+1Chronicles 11:20
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7507,7 +7507,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 11:21
+1Chronicles 11:21
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7525,7 +7525,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 11:22
+1Chronicles 11:22
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -7558,7 +7558,7 @@
           mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 11:23
+1Chronicles 11:23
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7591,7 +7591,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 11:24
+1Chronicles 11:24
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -7606,7 +7606,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 11:25
+1Chronicles 11:25
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7627,7 +7627,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 11:26
+1Chronicles 11:26
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -7645,7 +7645,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 11:27
+1Chronicles 11:27
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -7657,7 +7657,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 11:28
+1Chronicles 11:28
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -7669,7 +7669,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 11:29
+1Chronicles 11:29
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -7681,7 +7681,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 11:30
+1Chronicles 11:30
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -7693,7 +7693,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 11:31
+1Chronicles 11:31
 0 silluq_clause
   1 zaqef_clause
     2 revia_phrase
@@ -7708,7 +7708,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 11:32
+1Chronicles 11:32
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -7720,7 +7720,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 11:33
+1Chronicles 11:33
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -7732,7 +7732,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 11:34
+1Chronicles 11:34
 0 silluq_clause
   1 zaqef_clause
     2 revia_phrase
@@ -7747,7 +7747,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 11:35
+1Chronicles 11:35
 0 silluq_clause
   1 tifcha_clause
     2 tevir_phrase
@@ -7756,7 +7756,7 @@
       tifcha 
   1 silluq_phrase
     mereka silluq 
-1 Chronicles 11:36
+1Chronicles 11:36
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -7768,7 +7768,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 11:37
+1Chronicles 11:37
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -7780,7 +7780,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 11:38
+1Chronicles 11:38
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -7792,7 +7792,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 11:39
+1Chronicles 11:39
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -7813,7 +7813,7 @@
           tifcha 
         4 silluq_phrase
           mereka silluq 
-1 Chronicles 11:40
+1Chronicles 11:40
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -7825,7 +7825,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 11:41
+1Chronicles 11:41
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -7837,7 +7837,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 11:42
+1Chronicles 11:42
 0 silluq_clause
   1 tifcha_clause
     2 revia_clause
@@ -7852,7 +7852,7 @@
         tifcha 
   1 silluq_phrase
     mereka silluq 
-1 Chronicles 11:43
+1Chronicles 11:43
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -7864,7 +7864,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 11:44
+1Chronicles 11:44
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -7882,7 +7882,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 11:45
+1Chronicles 11:45
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -7894,7 +7894,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 11:46
+1Chronicles 11:46
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7912,7 +7912,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 11:47
+1Chronicles 11:47
 0 silluq_clause
   1 zaqef_phrase
     munach zaqef 
@@ -7921,7 +7921,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 12:1
+1Chronicles 12:1
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7951,7 +7951,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 12:2
+1Chronicles 12:2
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7972,7 +7972,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 12:3
+1Chronicles 12:3
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7999,7 +7999,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 12:4
+1Chronicles 12:4
 0 silluq_clause
   1 tifcha_clause
     2 tevir_phrase
@@ -8008,7 +8008,7 @@
       mereka tifcha 
   1 silluq_phrase
     silluq 
-1 Chronicles 12:5
+1Chronicles 12:5
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -8020,7 +8020,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 12:6
+1Chronicles 12:6
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -8032,7 +8032,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 12:7
+1Chronicles 12:7
 0 silluq_clause
   1 tifcha_clause
     2 tevir_clause
@@ -8047,7 +8047,7 @@
       tifcha 
   1 silluq_phrase
     silluq 
-1 Chronicles 12:8
+1Chronicles 12:8
 0 silluq_clause
   1 tifcha_clause
     2 tevir_phrase
@@ -8056,7 +8056,7 @@
       mereka tifcha 
   1 silluq_phrase
     silluq 
-1 Chronicles 12:9
+1Chronicles 12:9
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8089,7 +8089,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 12:10
+1Chronicles 12:10
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -8107,7 +8107,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 12:11
+1Chronicles 12:11
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -8119,7 +8119,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 12:12
+1Chronicles 12:12
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -8131,7 +8131,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 12:13
+1Chronicles 12:13
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -8143,7 +8143,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 12:14
+1Chronicles 12:14
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -8155,7 +8155,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 12:15
+1Chronicles 12:15
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -8173,7 +8173,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 12:16
+1Chronicles 12:16
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8200,7 +8200,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 12:17
+1Chronicles 12:17
 0 silluq_clause
   1 zaqef_clause
     2 revia_phrase
@@ -8215,7 +8215,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 12:18
+1Chronicles 12:18
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -8263,7 +8263,7 @@
           mereka tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 12:19
+1Chronicles 12:19
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -8305,7 +8305,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 12:20
+1Chronicles 12:20
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -8341,7 +8341,7 @@
           tifcha 
         4 silluq_phrase
           mereka silluq 
-1 Chronicles 12:21
+1Chronicles 12:21
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8368,7 +8368,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 12:22
+1Chronicles 12:22
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8389,7 +8389,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 12:23
+1Chronicles 12:23
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8407,7 +8407,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 12:24
+1Chronicles 12:24
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8437,7 +8437,7 @@
         tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 12:25
+1Chronicles 12:25
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -8455,7 +8455,7 @@
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 12:26
+1Chronicles 12:26
 0 silluq_clause
   1 zaqef_clause
     2 revia_phrase
@@ -8470,7 +8470,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 12:27
+1Chronicles 12:27
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -8482,7 +8482,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 12:28
+1Chronicles 12:28
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -8497,7 +8497,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 12:29
+1Chronicles 12:29
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -8509,7 +8509,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 12:30
+1Chronicles 12:30
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -8533,7 +8533,7 @@
           tifcha 
         4 silluq_phrase
           mereka silluq 
-1 Chronicles 12:31
+1Chronicles 12:31
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -8551,7 +8551,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 12:32
+1Chronicles 12:32
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8575,7 +8575,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 12:33
+1Chronicles 12:33
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8599,7 +8599,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 12:34
+1Chronicles 12:34
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -8620,7 +8620,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 12:35
+1Chronicles 12:35
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -8638,7 +8638,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 12:36
+1Chronicles 12:36
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -8650,7 +8650,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 12:37
+1Chronicles 12:37
 0 silluq_clause
   1 tifcha_clause
     2 revia_phrase
@@ -8662,7 +8662,7 @@
         mereka tifcha 
   1 silluq_phrase
     mereka silluq 
-1 Chronicles 12:38
+1Chronicles 12:38
 0 silluq_clause
   1 zaqef_clause
     2 revia_clause
@@ -8689,7 +8689,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 12:39
+1Chronicles 12:39
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -8722,7 +8722,7 @@
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 12:40
+1Chronicles 12:40
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8740,7 +8740,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 12:41
+1Chronicles 12:41
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -8776,7 +8776,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 13:1
+1Chronicles 13:1
 0 silluq_clause
   1 tifcha_clause
     2 revia_phrase
@@ -8788,7 +8788,7 @@
         tifcha 
   1 silluq_phrase
     silluq 
-1 Chronicles 13:2
+1Chronicles 13:2
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8833,7 +8833,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 13:3
+1Chronicles 13:3
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -8848,7 +8848,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 13:4
+1Chronicles 13:4
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -8860,7 +8860,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 13:5
+1Chronicles 13:5
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8884,7 +8884,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 13:6
+1Chronicles 13:6
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8908,7 +8908,7 @@
           mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 13:7
+1Chronicles 13:7
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8932,7 +8932,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 13:8
+1Chronicles 13:8
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -8956,7 +8956,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 13:9
+1Chronicles 13:9
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -8980,7 +8980,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 13:10
+1Chronicles 13:10
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9004,7 +9004,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 13:11
+1Chronicles 13:11
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -9031,7 +9031,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 13:12
+1Chronicles 13:12
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9055,7 +9055,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 13:13
+1Chronicles 13:13
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -9073,7 +9073,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 13:14
+1Chronicles 13:14
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -9094,7 +9094,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 14:1
+1Chronicles 14:1
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -9121,7 +9121,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 14:2
+1Chronicles 14:2
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -9145,7 +9145,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 14:3
+1Chronicles 14:3
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -9163,7 +9163,7 @@
         tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 14:4
+1Chronicles 14:4
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9184,25 +9184,25 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 14:5
+1Chronicles 14:5
 0 silluq_clause
   1 tifcha_phrase
     mereka tifcha 
   1 silluq_phrase
     silluq 
-1 Chronicles 14:6
+1Chronicles 14:6
 0 silluq_clause
   1 tifcha_phrase
     mereka tifcha 
   1 silluq_phrase
     silluq 
-1 Chronicles 14:7
+1Chronicles 14:7
 0 silluq_clause
   1 tifcha_phrase
     mereka tifcha 
   1 silluq_phrase
     silluq 
-1 Chronicles 14:8
+1Chronicles 14:8
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9226,7 +9226,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 14:9
+1Chronicles 14:9
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -9238,7 +9238,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 14:10
+1Chronicles 14:10
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9268,7 +9268,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 14:11
+1Chronicles 14:11
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -9298,7 +9298,7 @@
           mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 14:12
+1Chronicles 14:12
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -9313,7 +9313,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 14:13
+1Chronicles 14:13
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -9325,7 +9325,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 14:14
+1Chronicles 14:14
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9355,7 +9355,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 14:15
+1Chronicles 14:15
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9385,7 +9385,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 14:16
+1Chronicles 14:16
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -9406,7 +9406,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 14:17
+1Chronicles 14:17
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -9421,7 +9421,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 15:1
+1Chronicles 15:1
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -9439,7 +9439,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 15:2
+1Chronicles 15:2
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9475,7 +9475,7 @@
           tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 15:3
+1Chronicles 15:3
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -9496,7 +9496,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 15:4
+1Chronicles 15:4
 0 silluq_clause
   1 tifcha_clause
     2 tevir_phrase
@@ -9505,7 +9505,7 @@
       mereka tifcha 
   1 silluq_phrase
     silluq 
-1 Chronicles 15:5
+1Chronicles 15:5
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -9520,7 +9520,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 15:6
+1Chronicles 15:6
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -9535,7 +9535,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 15:7
+1Chronicles 15:7
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -9550,7 +9550,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 15:8
+1Chronicles 15:8
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -9562,7 +9562,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 15:9
+1Chronicles 15:9
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -9574,7 +9574,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 15:10
+1Chronicles 15:10
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -9592,7 +9592,7 @@
           tifcha 
         4 silluq_phrase
           mereka silluq 
-1 Chronicles 15:11
+1Chronicles 15:11
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -9616,7 +9616,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 15:12
+1Chronicles 15:12
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -9649,7 +9649,7 @@
           tifcha 
         4 silluq_phrase
           silluq 
-1 Chronicles 15:13
+1Chronicles 15:13
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -9670,7 +9670,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 15:14
+1Chronicles 15:14
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -9688,7 +9688,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 15:15
+1Chronicles 15:15
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9712,7 +9712,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 15:16
+1Chronicles 15:16
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -9742,7 +9742,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 15:17
+1Chronicles 15:17
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9772,7 +9772,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 15:18
+1Chronicles 15:18
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -9814,7 +9814,7 @@
         tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 15:19
+1Chronicles 15:19
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -9829,7 +9829,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 15:20
+1Chronicles 15:20
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9850,7 +9850,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 15:21
+1Chronicles 15:21
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9871,7 +9871,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 15:22
+1Chronicles 15:22
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -9889,7 +9889,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 15:23
+1Chronicles 15:23
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -9901,7 +9901,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 15:24
+1Chronicles 15:24
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9946,7 +9946,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 15:25
+1Chronicles 15:25
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -9970,7 +9970,7 @@
           mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 15:26
+1Chronicles 15:26
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9991,7 +9991,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 15:27
+1Chronicles 15:27
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10024,7 +10024,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 15:28
+1Chronicles 15:28
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10054,7 +10054,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 15:29
+1Chronicles 15:29
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10090,7 +10090,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 16:1
+1Chronicles 16:1
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10117,7 +10117,7 @@
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 16:2
+1Chronicles 16:2
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -10132,7 +10132,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 16:3
+1Chronicles 16:3
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10156,7 +10156,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 16:4
+1Chronicles 16:4
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -10180,7 +10180,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 16:5
+1Chronicles 16:5
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -10219,7 +10219,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 16:6
+1Chronicles 16:6
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -10234,7 +10234,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 16:7
+1Chronicles 16:7
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10255,7 +10255,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 16:8
+1Chronicles 16:8
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -10267,7 +10267,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 16:9
+1Chronicles 16:9
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -10279,7 +10279,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 16:10
+1Chronicles 16:10
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -10294,7 +10294,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 16:11
+1Chronicles 16:11
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -10306,7 +10306,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 16:12
+1Chronicles 16:12
 0 silluq_clause
   1 zaqef_clause
     2 revia_phrase
@@ -10321,7 +10321,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 16:13
+1Chronicles 16:13
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -10333,7 +10333,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 16:14
+1Chronicles 16:14
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -10345,7 +10345,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 16:15
+1Chronicles 16:15
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -10357,7 +10357,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 16:16
+1Chronicles 16:16
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -10369,7 +10369,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 16:17
+1Chronicles 16:17
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -10381,7 +10381,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 16:18
+1Chronicles 16:18
 0 silluq_clause
   1 zaqef_clause
     2 revia_phrase
@@ -10396,7 +10396,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 16:19
+1Chronicles 16:19
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -10408,7 +10408,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 16:20
+1Chronicles 16:20
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -10420,7 +10420,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 16:21
+1Chronicles 16:21
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -10432,7 +10432,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 16:22
+1Chronicles 16:22
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -10444,7 +10444,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 16:23
+1Chronicles 16:23
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -10456,7 +10456,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 16:24
+1Chronicles 16:24
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -10468,7 +10468,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 16:25
+1Chronicles 16:25
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -10480,7 +10480,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 16:26
+1Chronicles 16:26
 0 silluq_clause
   1 zaqef_clause
     2 pashta_clause
@@ -10495,7 +10495,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 16:27
+1Chronicles 16:27
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -10507,7 +10507,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 16:28
+1Chronicles 16:28
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -10519,7 +10519,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 16:29
+1Chronicles 16:29
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -10537,7 +10537,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 16:30
+1Chronicles 16:30
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -10549,7 +10549,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 16:31
+1Chronicles 16:31
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -10561,7 +10561,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 16:32
+1Chronicles 16:32
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -10573,7 +10573,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 16:33
+1Chronicles 16:33
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -10588,7 +10588,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 16:34
+1Chronicles 16:34
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -10600,7 +10600,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 16:35
+1Chronicles 16:35
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -10627,7 +10627,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 16:36
+1Chronicles 16:36
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10651,7 +10651,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 16:37
+1Chronicles 16:37
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10678,7 +10678,7 @@
         tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 16:38
+1Chronicles 16:38
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -10696,7 +10696,7 @@
         tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 16:39
+1Chronicles 16:39
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10720,7 +10720,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 16:40
+1Chronicles 16:40
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -10744,7 +10744,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 16:41
+1Chronicles 16:41
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10774,7 +10774,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 16:42
+1Chronicles 16:42
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10795,7 +10795,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 16:43
+1Chronicles 16:43
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -10807,7 +10807,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 17:1
+1Chronicles 17:1
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -10837,7 +10837,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 17:2
+1Chronicles 17:2
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10858,7 +10858,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 17:3
+1Chronicles 17:3
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -10876,7 +10876,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 17:4
+1Chronicles 17:4
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10897,7 +10897,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 17:5
+1Chronicles 17:5
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10927,7 +10927,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 17:6
+1Chronicles 17:6
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -10960,7 +10960,7 @@
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 17:7
+1Chronicles 17:7
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10996,7 +10996,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 17:8
+1Chronicles 17:8
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11023,7 +11023,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 17:9
+1Chronicles 17:9
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11050,7 +11050,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 17:10
+1Chronicles 17:10
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11074,7 +11074,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 17:11
+1Chronicles 17:11
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11101,7 +11101,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 17:12
+1Chronicles 17:12
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -11113,7 +11113,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 17:13
+1Chronicles 17:13
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11140,7 +11140,7 @@
           mereka tifcha 
         4 silluq_phrase
           silluq 
-1 Chronicles 17:14
+1Chronicles 17:14
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -11158,7 +11158,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 17:15
+1Chronicles 17:15
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11179,7 +11179,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 17:16
+1Chronicles 17:16
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11209,7 +11209,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 17:17
+1Chronicles 17:17
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11233,7 +11233,7 @@
           tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 17:18
+1Chronicles 17:18
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -11248,7 +11248,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 17:19
+1Chronicles 17:19
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -11272,7 +11272,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 17:20
+1Chronicles 17:20
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11290,7 +11290,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 17:21
+1Chronicles 17:21
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11329,7 +11329,7 @@
             mereka tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 17:22
+1Chronicles 17:22
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -11350,7 +11350,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 17:23
+1Chronicles 17:23
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -11374,7 +11374,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 17:24
+1Chronicles 17:24
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11401,7 +11401,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 17:25
+1Chronicles 17:25
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11431,7 +11431,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 17:26
+1Chronicles 17:26
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -11452,7 +11452,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 17:27
+1Chronicles 17:27
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11482,7 +11482,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 18:1
+1Chronicles 18:1
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11506,7 +11506,7 @@
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 18:2
+1Chronicles 18:2
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -11524,7 +11524,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 18:3
+1Chronicles 18:3
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -11542,7 +11542,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 18:4
+1Chronicles 18:4
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11572,7 +11572,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 18:5
+1Chronicles 18:5
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11599,7 +11599,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 18:6
+1Chronicles 18:6
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11629,7 +11629,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 18:7
+1Chronicles 18:7
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11653,7 +11653,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 18:8
+1Chronicles 18:8
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11686,7 +11686,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 18:9
+1Chronicles 18:9
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -11707,7 +11707,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 18:10
+1Chronicles 18:10
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11743,7 +11743,7 @@
           mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 18:11
+1Chronicles 18:11
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11779,7 +11779,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 18:12
+1Chronicles 18:12
 0 silluq_clause
   1 zaqef_clause
     2 revia_phrase
@@ -11794,7 +11794,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 18:13
+1Chronicles 18:13
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11818,7 +11818,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 18:14
+1Chronicles 18:14
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -11836,7 +11836,7 @@
           mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 18:15
+1Chronicles 18:15
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -11848,7 +11848,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 18:16
+1Chronicles 18:16
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -11863,7 +11863,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 18:17
+1Chronicles 18:17
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11881,7 +11881,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 19:1
+1Chronicles 19:1
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11902,7 +11902,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 19:2
+1Chronicles 19:2
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11938,7 +11938,7 @@
         tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 19:3
+1Chronicles 19:3
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11974,7 +11974,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 19:4
+1Chronicles 19:4
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11995,7 +11995,7 @@
         atnach 
   1 silluq_phrase
     silluq 
-1 Chronicles 19:5
+1Chronicles 19:5
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12022,7 +12022,7 @@
           mereka tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 19:6
+1Chronicles 19:6
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12061,7 +12061,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 19:7
+1Chronicles 19:7
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12100,7 +12100,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 19:8
+1Chronicles 19:8
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -12118,7 +12118,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 19:9
+1Chronicles 19:9
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12139,7 +12139,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 19:10
+1Chronicles 19:10
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -12166,7 +12166,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 19:11
+1Chronicles 19:11
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12190,7 +12190,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 19:12
+1Chronicles 19:12
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12214,7 +12214,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 19:13
+1Chronicles 19:13
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12235,7 +12235,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 19:14
+1Chronicles 19:14
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -12253,7 +12253,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 19:15
+1Chronicles 19:15
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12280,7 +12280,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 19:16
+1Chronicles 19:16
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -12313,7 +12313,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 19:17
+1Chronicles 19:17
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12346,7 +12346,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 19:18
+1Chronicles 19:18
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -12379,7 +12379,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 19:19
+1Chronicles 19:19
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12406,7 +12406,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 20:1
+1Chronicles 20:1
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12448,7 +12448,7 @@
         tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 20:2
+1Chronicles 20:2
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12478,7 +12478,7 @@
         tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 20:3
+1Chronicles 20:3
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12514,7 +12514,7 @@
         tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 20:4
+1Chronicles 20:4
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12544,7 +12544,7 @@
           mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 20:5
+1Chronicles 20:5
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -12574,7 +12574,7 @@
           tifcha 
         4 silluq_phrase
           silluq 
-1 Chronicles 20:6
+1Chronicles 20:6
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -12598,7 +12598,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 20:7
+1Chronicles 20:7
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -12616,7 +12616,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 20:8
+1Chronicles 20:8
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -12631,7 +12631,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 21:1
+1Chronicles 21:1
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -12649,7 +12649,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 21:2
+1Chronicles 21:2
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12679,7 +12679,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 21:3
+1Chronicles 21:3
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12715,7 +12715,7 @@
           mereka tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 21:4
+1Chronicles 21:4
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -12736,7 +12736,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 21:5
+1Chronicles 21:5
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -12766,7 +12766,7 @@
             tifcha 
         4 silluq_phrase
           mereka silluq 
-1 Chronicles 21:6
+1Chronicles 21:6
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12784,7 +12784,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 21:7
+1Chronicles 21:7
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12802,7 +12802,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 21:8
+1Chronicles 21:8
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12832,7 +12832,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 21:9
+1Chronicles 21:9
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -12844,7 +12844,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 21:10
+1Chronicles 21:10
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12874,7 +12874,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 21:11
+1Chronicles 21:11
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -12889,7 +12889,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 21:12
+1Chronicles 21:12
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -12931,7 +12931,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 21:13
+1Chronicles 21:13
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -12955,7 +12955,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 21:14
+1Chronicles 21:14
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -12976,7 +12976,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 21:15
+1Chronicles 21:15
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -13015,7 +13015,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 21:16
+1Chronicles 21:16
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13057,7 +13057,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 21:17
+1Chronicles 21:17
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13096,7 +13096,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 21:18
+1Chronicles 21:18
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -13123,7 +13123,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 21:19
+1Chronicles 21:19
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -13135,7 +13135,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 21:20
+1Chronicles 21:20
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13159,7 +13159,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 21:21
+1Chronicles 21:21
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -13186,7 +13186,7 @@
             tifcha 
         4 silluq_phrase
           silluq 
-1 Chronicles 21:22
+1Chronicles 21:22
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13216,7 +13216,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 21:23
+1Chronicles 21:23
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13246,7 +13246,7 @@
           mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 21:24
+1Chronicles 21:24
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13276,7 +13276,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 21:25
+1Chronicles 21:25
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -13294,7 +13294,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 21:26
+1Chronicles 21:26
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13324,7 +13324,7 @@
           tifcha 
         4 silluq_phrase
           mereka silluq 
-1 Chronicles 21:27
+1Chronicles 21:27
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -13336,7 +13336,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 21:28
+1Chronicles 21:28
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -13357,7 +13357,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 21:29
+1Chronicles 21:29
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -13375,7 +13375,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 21:30
+1Chronicles 21:30
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -13396,7 +13396,7 @@
           tifcha 
         4 silluq_phrase
           mereka silluq 
-1 Chronicles 22:1
+1Chronicles 22:1
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -13414,7 +13414,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 22:2
+1Chronicles 22:2
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -13444,7 +13444,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 22:3
+1Chronicles 22:3
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -13465,7 +13465,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 22:4
+1Chronicles 22:4
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -13486,7 +13486,7 @@
         tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 22:5
+1Chronicles 22:5
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -13525,7 +13525,7 @@
         tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 22:6
+1Chronicles 22:6
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -13543,7 +13543,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 22:7
+1Chronicles 22:7
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -13567,7 +13567,7 @@
             tifcha 
           5 silluq_phrase
             mereka silluq 
-1 Chronicles 22:8
+1Chronicles 22:8
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13603,7 +13603,7 @@
           mereka tifcha 
         4 silluq_phrase
           silluq 
-1 Chronicles 22:9
+1Chronicles 22:9
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13639,7 +13639,7 @@
           mereka tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 22:10
+1Chronicles 22:10
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13669,7 +13669,7 @@
         tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 22:11
+1Chronicles 22:11
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -13696,7 +13696,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 22:12
+1Chronicles 22:12
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13717,7 +13717,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 22:13
+1Chronicles 22:13
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -13747,7 +13747,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 22:14
+1Chronicles 22:14
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13792,7 +13792,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 22:15
+1Chronicles 22:15
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13813,7 +13813,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 22:16
+1Chronicles 22:16
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -13831,7 +13831,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 22:17
+1Chronicles 22:17
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -13843,7 +13843,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 22:18
+1Chronicles 22:18
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13876,7 +13876,7 @@
           mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 22:19
+1Chronicles 22:19
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13921,7 +13921,7 @@
           tifcha 
         4 silluq_phrase
           mereka silluq 
-1 Chronicles 23:1
+1Chronicles 23:1
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -13936,7 +13936,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 23:2
+1Chronicles 23:2
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -13948,7 +13948,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 23:3
+1Chronicles 23:3
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13975,7 +13975,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 23:4
+1Chronicles 23:4
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13996,7 +13996,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 23:5
+1Chronicles 23:5
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -14017,7 +14017,7 @@
           mereka tifcha 
         4 silluq_phrase
           silluq 
-1 Chronicles 23:6
+1Chronicles 23:6
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -14032,13 +14032,13 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 23:7
+1Chronicles 23:7
 0 silluq_clause
   1 tifcha_phrase
     tifcha 
   1 silluq_phrase
     mereka silluq 
-1 Chronicles 23:8
+1Chronicles 23:8
 0 silluq_clause
   1 tifcha_clause
     2 revia_phrase
@@ -14050,7 +14050,7 @@
         mereka tifcha 
   1 silluq_phrase
     silluq 
-1 Chronicles 23:9
+1Chronicles 23:9
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -14071,7 +14071,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 23:10
+1Chronicles 23:10
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -14089,7 +14089,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 23:11
+1Chronicles 23:11
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -14116,7 +14116,7 @@
           tifcha 
         4 silluq_phrase
           silluq 
-1 Chronicles 23:12
+1Chronicles 23:12
 0 silluq_clause
   1 tifcha_clause
     2 revia_phrase
@@ -14128,7 +14128,7 @@
         mereka tifcha 
   1 silluq_phrase
     silluq 
-1 Chronicles 23:13
+1Chronicles 23:13
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -14152,7 +14152,7 @@
           mereka tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 23:14
+1Chronicles 23:14
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -14167,7 +14167,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 23:15
+1Chronicles 23:15
 0 silluq_clause
   1 zaqef_phrase
     munach zaqef 
@@ -14176,13 +14176,13 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 23:16
+1Chronicles 23:16
 0 silluq_clause
   1 tifcha_phrase
     mereka tifcha 
   1 silluq_phrase
     mereka silluq 
-1 Chronicles 23:17
+1Chronicles 23:17
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -14200,13 +14200,13 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 23:18
+1Chronicles 23:18
 0 silluq_clause
   1 tifcha_phrase
     mereka tifcha 
   1 silluq_phrase
     mereka silluq 
-1 Chronicles 23:19
+1Chronicles 23:19
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -14230,7 +14230,7 @@
           tifcha 
         4 silluq_phrase
           silluq 
-1 Chronicles 23:20
+1Chronicles 23:20
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -14245,7 +14245,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 23:21
+1Chronicles 23:21
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -14257,7 +14257,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 23:22
+1Chronicles 23:22
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -14278,7 +14278,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 23:23
+1Chronicles 23:23
 0 silluq_clause
   1 tifcha_clause
     2 revia_phrase
@@ -14290,7 +14290,7 @@
         tifcha 
   1 silluq_phrase
     silluq 
-1 Chronicles 23:24
+1Chronicles 23:24
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -14323,7 +14323,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 23:25
+1Chronicles 23:25
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -14344,7 +14344,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 23:26
+1Chronicles 23:26
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -14359,7 +14359,7 @@
         tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 23:27
+1Chronicles 23:27
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -14380,7 +14380,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 23:28
+1Chronicles 23:28
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -14413,7 +14413,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 23:29
+1Chronicles 23:29
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -14434,7 +14434,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 23:30
+1Chronicles 23:30
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -14452,7 +14452,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 23:31
+1Chronicles 23:31
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -14476,7 +14476,7 @@
         tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 23:32
+1Chronicles 23:32
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -14503,7 +14503,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 24:1
+1Chronicles 24:1
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -14524,7 +14524,7 @@
           tifcha 
         4 silluq_phrase
           silluq 
-1 Chronicles 24:2
+1Chronicles 24:2
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -14545,7 +14545,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 24:3
+1Chronicles 24:3
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -14566,7 +14566,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 24:4
+1Chronicles 24:4
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -14599,7 +14599,7 @@
           mereka tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 24:5
+1Chronicles 24:5
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -14617,7 +14617,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 24:6
+1Chronicles 24:6
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -14665,7 +14665,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 24:7
+1Chronicles 24:7
 0 silluq_clause
   1 zaqef_clause
     2 pashta_clause
@@ -14680,7 +14680,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 24:8
+1Chronicles 24:8
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -14692,7 +14692,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 24:9
+1Chronicles 24:9
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -14704,7 +14704,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 24:10
+1Chronicles 24:10
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -14716,7 +14716,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 24:11
+1Chronicles 24:11
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -14728,7 +14728,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 24:12
+1Chronicles 24:12
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -14740,7 +14740,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 24:13
+1Chronicles 24:13
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -14752,7 +14752,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 24:14
+1Chronicles 24:14
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -14764,7 +14764,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 24:15
+1Chronicles 24:15
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -14776,7 +14776,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 24:16
+1Chronicles 24:16
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -14788,7 +14788,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 24:17
+1Chronicles 24:17
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -14800,7 +14800,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 24:18
+1Chronicles 24:18
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -14812,7 +14812,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 24:19
+1Chronicles 24:19
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -14839,7 +14839,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 24:20
+1Chronicles 24:20
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -14857,7 +14857,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 24:21
+1Chronicles 24:21
 0 silluq_clause
   1 atnach_phrase
     atnach 
@@ -14869,7 +14869,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 24:22
+1Chronicles 24:22
 0 silluq_clause
   1 zaqef_phrase
     munach zaqef 
@@ -14878,7 +14878,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 24:23
+1Chronicles 24:23
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -14902,7 +14902,7 @@
           tifcha 
         4 silluq_phrase
           silluq 
-1 Chronicles 24:24
+1Chronicles 24:24
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -14914,7 +14914,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 24:25
+1Chronicles 24:25
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -14926,7 +14926,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 24:26
+1Chronicles 24:26
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -14938,7 +14938,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 24:27
+1Chronicles 24:27
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -14953,7 +14953,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 24:28
+1Chronicles 24:28
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -14965,13 +14965,13 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 24:29
+1Chronicles 24:29
 0 silluq_clause
   1 tifcha_phrase
     tifcha 
   1 silluq_phrase
     mereka silluq 
-1 Chronicles 24:30
+1Chronicles 24:30
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -14989,7 +14989,7 @@
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 24:31
+1Chronicles 24:31
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -15025,7 +15025,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 25:1
+1Chronicles 25:1
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -15058,7 +15058,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 25:2
+1Chronicles 25:2
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -15082,7 +15082,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 25:3
+1Chronicles 25:3
 0 silluq_clause
   1 atnach_phrase
     atnach 
@@ -15118,7 +15118,7 @@
           mereka tifcha 
         4 silluq_phrase
           silluq 
-1 Chronicles 25:4
+1Chronicles 25:4
 0 silluq_clause
   1 atnach_phrase
     atnach 
@@ -15154,7 +15154,7 @@
           tifcha 
         4 silluq_phrase
           silluq 
-1 Chronicles 25:5
+1Chronicles 25:5
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -15184,7 +15184,7 @@
           mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 25:6
+1Chronicles 25:6
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -15214,7 +15214,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 25:7
+1Chronicles 25:7
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -15235,7 +15235,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 25:8
+1Chronicles 25:8
 0 silluq_clause
   1 zaqef_clause
     2 revia_clause
@@ -15253,7 +15253,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 25:9
+1Chronicles 25:9
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -15277,7 +15277,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 25:10
+1Chronicles 25:10
 0 silluq_clause
   1 zaqef_phrase
     munach zaqef 
@@ -15286,7 +15286,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 25:11
+1Chronicles 25:11
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -15298,7 +15298,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 25:12
+1Chronicles 25:12
 0 silluq_clause
   1 zaqef_phrase
     munach zaqef 
@@ -15307,7 +15307,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 25:13
+1Chronicles 25:13
 0 silluq_clause
   1 zaqef_phrase
     munach zaqef 
@@ -15316,7 +15316,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 25:14
+1Chronicles 25:14
 0 silluq_clause
   1 zaqef_phrase
     munach zaqef 
@@ -15325,7 +15325,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 25:15
+1Chronicles 25:15
 0 silluq_clause
   1 zaqef_phrase
     munach zaqef 
@@ -15334,7 +15334,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 25:16
+1Chronicles 25:16
 0 silluq_clause
   1 zaqef_phrase
     munach zaqef 
@@ -15343,7 +15343,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 25:17
+1Chronicles 25:17
 0 silluq_clause
   1 zaqef_phrase
     munach zaqef 
@@ -15352,7 +15352,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 25:18
+1Chronicles 25:18
 0 silluq_clause
   1 zaqef_phrase
     munach zaqef 
@@ -15361,7 +15361,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 25:19
+1Chronicles 25:19
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -15373,7 +15373,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 25:20
+1Chronicles 25:20
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -15385,7 +15385,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 25:21
+1Chronicles 25:21
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -15397,7 +15397,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 25:22
+1Chronicles 25:22
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -15409,7 +15409,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 25:23
+1Chronicles 25:23
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -15421,7 +15421,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 25:24
+1Chronicles 25:24
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -15433,7 +15433,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 25:25
+1Chronicles 25:25
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -15445,7 +15445,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 25:26
+1Chronicles 25:26
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -15457,7 +15457,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 25:27
+1Chronicles 25:27
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -15469,7 +15469,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 25:28
+1Chronicles 25:28
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -15481,7 +15481,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 25:29
+1Chronicles 25:29
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -15493,7 +15493,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 25:30
+1Chronicles 25:30
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -15505,7 +15505,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 25:31
+1Chronicles 25:31
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -15517,7 +15517,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 26:1
+1Chronicles 26:1
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -15532,7 +15532,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 26:2
+1Chronicles 26:2
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -15556,7 +15556,7 @@
           tifcha 
         4 silluq_phrase
           silluq 
-1 Chronicles 26:3
+1Chronicles 26:3
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -15568,7 +15568,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 26:4
+1Chronicles 26:4
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -15592,7 +15592,7 @@
           tifcha 
         4 silluq_phrase
           silluq 
-1 Chronicles 26:5
+1Chronicles 26:5
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -15610,7 +15610,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 26:6
+1Chronicles 26:6
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -15628,7 +15628,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 26:7
+1Chronicles 26:7
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -15649,7 +15649,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 26:8
+1Chronicles 26:8
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -15676,7 +15676,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 26:9
+1Chronicles 26:9
 0 silluq_clause
   1 tifcha_clause
     2 revia_phrase
@@ -15688,7 +15688,7 @@
         tifcha 
   1 silluq_phrase
     mereka silluq 
-1 Chronicles 26:10
+1Chronicles 26:10
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -15706,7 +15706,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 26:11
+1Chronicles 26:11
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -15727,7 +15727,7 @@
         tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 26:12
+1Chronicles 26:12
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -15748,7 +15748,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 26:13
+1Chronicles 26:13
 0 silluq_clause
   1 tifcha_clause
     2 tevir_clause
@@ -15760,7 +15760,7 @@
       mereka tifcha 
   1 silluq_phrase
     mereka silluq 
-1 Chronicles 26:14
+1Chronicles 26:14
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -15790,7 +15790,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 26:15
+1Chronicles 26:15
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -15802,7 +15802,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 26:16
+1Chronicles 26:16
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -15826,7 +15826,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 26:17
+1Chronicles 26:17
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -15850,7 +15850,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 26:18
+1Chronicles 26:18
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -15868,7 +15868,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 26:19
+1Chronicles 26:19
 0 silluq_clause
   1 zaqef_clause
     2 revia_phrase
@@ -15883,7 +15883,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 26:20
+1Chronicles 26:20
 0 silluq_clause
   1 atnach_phrase
     atnach 
@@ -15901,7 +15901,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 26:21
+1Chronicles 26:21
 0 silluq_clause
   1 tifcha_clause
     2 revia_clause
@@ -15919,7 +15919,7 @@
         mereka tifcha 
   1 silluq_phrase
     silluq 
-1 Chronicles 26:22
+1Chronicles 26:22
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -15937,7 +15937,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 26:23
+1Chronicles 26:23
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -15949,7 +15949,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 26:24
+1Chronicles 26:24
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -15961,7 +15961,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 26:25
+1Chronicles 26:25
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -15982,7 +15982,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 26:26
+1Chronicles 26:26
 0 silluq_clause
   1 tifcha_clause
     2 revia_phrase
@@ -16003,7 +16003,7 @@
             mereka tifcha 
   1 silluq_phrase
     mereka silluq 
-1 Chronicles 26:27
+1Chronicles 26:27
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -16015,7 +16015,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 26:28
+1Chronicles 26:28
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16045,7 +16045,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 26:29
+1Chronicles 26:29
 0 silluq_clause
   1 zaqef_clause
     2 revia_clause
@@ -16063,7 +16063,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 26:30
+1Chronicles 26:30
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16096,7 +16096,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 26:31
+1Chronicles 26:31
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16126,7 +16126,7 @@
           mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 26:32
+1Chronicles 26:32
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -16159,7 +16159,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 27:1
+1Chronicles 27:1
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16198,7 +16198,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 27:2
+1Chronicles 27:2
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16225,7 +16225,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 27:3
+1Chronicles 27:3
 0 silluq_clause
   1 tifcha_clause
     2 revia_phrase
@@ -16237,7 +16237,7 @@
         mereka tifcha 
   1 silluq_phrase
     mereka silluq 
-1 Chronicles 27:4
+1Chronicles 27:4
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16270,7 +16270,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 27:5
+1Chronicles 27:5
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16297,7 +16297,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 27:6
+1Chronicles 27:6
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -16315,7 +16315,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 27:7
+1Chronicles 27:7
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16345,7 +16345,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 27:8
+1Chronicles 27:8
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16369,7 +16369,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 27:9
+1Chronicles 27:9
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16393,7 +16393,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 27:10
+1Chronicles 27:10
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16417,7 +16417,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 27:11
+1Chronicles 27:11
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16441,7 +16441,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 27:12
+1Chronicles 27:12
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16465,7 +16465,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 27:13
+1Chronicles 27:13
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16489,7 +16489,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 27:14
+1Chronicles 27:14
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16513,7 +16513,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 27:15
+1Chronicles 27:15
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16537,7 +16537,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 27:16
+1Chronicles 27:16
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16561,7 +16561,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 27:17
+1Chronicles 27:17
 0 silluq_clause
   1 tifcha_clause
     2 tevir_phrase
@@ -16570,7 +16570,7 @@
       mereka tifcha 
   1 silluq_phrase
     mereka silluq 
-1 Chronicles 27:18
+1Chronicles 27:18
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -16588,7 +16588,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 27:19
+1Chronicles 27:19
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -16606,7 +16606,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 27:20
+1Chronicles 27:20
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -16627,7 +16627,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 27:21
+1Chronicles 27:21
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16648,7 +16648,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 27:22
+1Chronicles 27:22
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -16666,7 +16666,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 27:23
+1Chronicles 27:23
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16693,7 +16693,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 27:24
+1Chronicles 27:24
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16723,7 +16723,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 27:25
+1Chronicles 27:25
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16753,7 +16753,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 27:26
+1Chronicles 27:26
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16774,7 +16774,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 27:27
+1Chronicles 27:27
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -16795,7 +16795,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 27:28
+1Chronicles 27:28
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16813,7 +16813,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 27:29
+1Chronicles 27:29
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16837,7 +16837,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 27:30
+1Chronicles 27:30
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -16855,7 +16855,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 27:31
+1Chronicles 27:31
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -16873,7 +16873,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 27:32
+1Chronicles 27:32
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16891,7 +16891,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 27:33
+1Chronicles 27:33
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -16903,7 +16903,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 27:34
+1Chronicles 27:34
 0 silluq_clause
   1 zaqef_clause
     2 revia_phrase
@@ -16918,7 +16918,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 28:1
+1Chronicles 28:1
 0 silluq_clause
   1 tifcha_clause
     2 tevir_clause
@@ -16939,7 +16939,7 @@
       mereka tifcha 
   1 silluq_phrase
     silluq 
-1 Chronicles 28:2
+1Chronicles 28:2
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16975,7 +16975,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 28:3
+1Chronicles 28:3
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16996,7 +16996,7 @@
         tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 28:4
+1Chronicles 28:4
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17035,7 +17035,7 @@
           tifcha 
         4 silluq_phrase
           silluq 
-1 Chronicles 28:5
+1Chronicles 28:5
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -17068,7 +17068,7 @@
             mereka tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 28:6
+1Chronicles 28:6
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -17092,7 +17092,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 28:7
+1Chronicles 28:7
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -17110,7 +17110,7 @@
           mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 28:8
+1Chronicles 28:8
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17143,7 +17143,7 @@
           mereka tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 28:9
+1Chronicles 28:9
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17182,7 +17182,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 28:10
+1Chronicles 28:10
 0 silluq_clause
   1 tifcha_clause
     2 revia_clause
@@ -17200,7 +17200,7 @@
           mereka tifcha 
   1 silluq_phrase
     mereka silluq 
-1 Chronicles 28:11
+1Chronicles 28:11
 0 silluq_clause
   1 tifcha_clause
     2 tevir_clause
@@ -17215,7 +17215,7 @@
       mereka tifcha 
   1 silluq_phrase
     mereka silluq 
-1 Chronicles 28:12
+1Chronicles 28:12
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17245,7 +17245,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 28:13
+1Chronicles 28:13
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17263,7 +17263,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 28:14
+1Chronicles 28:14
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17287,7 +17287,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 28:15
+1Chronicles 28:15
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17317,7 +17317,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 28:16
+1Chronicles 28:16
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -17332,7 +17332,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 28:17
+1Chronicles 28:17
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -17356,7 +17356,7 @@
           tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 28:18
+1Chronicles 28:18
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -17380,7 +17380,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 28:19
+1Chronicles 28:19
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -17395,7 +17395,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 28:20
+1Chronicles 28:20
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17434,7 +17434,7 @@
             tifcha 
           5 silluq_phrase
             mereka silluq 
-1 Chronicles 28:21
+1Chronicles 28:21
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17467,7 +17467,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 29:1
+1Chronicles 29:1
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17497,7 +17497,7 @@
           tifcha 
         4 silluq_phrase
           mereka silluq 
-1 Chronicles 29:2
+1Chronicles 29:2
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17539,7 +17539,7 @@
           tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 29:3
+1Chronicles 29:3
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17566,7 +17566,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 29:4
+1Chronicles 29:4
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -17587,7 +17587,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 29:5
+1Chronicles 29:5
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17611,7 +17611,7 @@
           tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 29:6
+1Chronicles 29:6
 0 silluq_clause
   1 zaqef_clause
     2 revia_clause
@@ -17632,7 +17632,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 29:7
+1Chronicles 29:7
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -17674,7 +17674,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 29:8
+1Chronicles 29:8
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17692,7 +17692,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 29:9
+1Chronicles 29:9
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17722,7 +17722,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 29:10
+1Chronicles 29:10
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17752,7 +17752,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 29:11
+1Chronicles 29:11
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17779,7 +17779,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 29:12
+1Chronicles 29:12
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17806,7 +17806,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 29:13
+1Chronicles 29:13
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -17821,7 +17821,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 29:14
+1Chronicles 29:14
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17845,7 +17845,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 29:15
+1Chronicles 29:15
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -17863,7 +17863,7 @@
         tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 29:16
+1Chronicles 29:16
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -17884,7 +17884,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-1 Chronicles 29:17
+1Chronicles 29:17
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -17923,7 +17923,7 @@
           mereka tifcha 
         4 silluq_phrase
           silluq 
-1 Chronicles 29:18
+1Chronicles 29:18
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17953,7 +17953,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 29:19
+1Chronicles 29:19
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17983,7 +17983,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 29:20
+1Chronicles 29:20
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -18013,7 +18013,7 @@
           tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 29:21
+1Chronicles 29:21
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -18046,7 +18046,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 29:22
+1Chronicles 29:22
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -18073,7 +18073,7 @@
           mereka tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 29:23
+1Chronicles 29:23
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -18091,7 +18091,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 29:24
+1Chronicles 29:24
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -18115,7 +18115,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 29:25
+1Chronicles 29:25
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -18145,7 +18145,7 @@
           tifcha 
       3 silluq_phrase
         silluq 
-1 Chronicles 29:26
+1Chronicles 29:26
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -18157,7 +18157,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 29:27
+1Chronicles 29:27
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -18184,7 +18184,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-1 Chronicles 29:28
+1Chronicles 29:28
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -18205,7 +18205,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-1 Chronicles 29:29
+1Chronicles 29:29
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -18238,7 +18238,7 @@
           tifcha 
         4 silluq_phrase
           mereka silluq 
-1 Chronicles 29:30
+1Chronicles 29:30
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase

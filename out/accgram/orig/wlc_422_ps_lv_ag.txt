@@ -1,4 +1,4 @@
-Leviticus 1:1
+Levit 1:1
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -16,7 +16,7 @@ Leviticus 1:1
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 1:2
+Levit 1:2
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -52,7 +52,7 @@ Leviticus 1:2
         tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 1:3
+Levit 1:3
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -76,7 +76,7 @@ Leviticus 1:3
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 1:4
+Levit 1:4
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -91,7 +91,7 @@ Leviticus 1:4
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 1:5
+Levit 1:5
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -121,7 +121,7 @@ Leviticus 1:5
           tifcha 
         4 silluq_phrase
           mereka silluq 
-Leviticus 1:6
+Levit 1:6
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -133,7 +133,7 @@ Leviticus 1:6
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 1:7
+Levit 1:7
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -151,7 +151,7 @@ Leviticus 1:7
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 1:8
+Levit 1:8
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -184,7 +184,7 @@ Leviticus 1:8
         tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 1:9
+Levit 1:9
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -205,7 +205,7 @@ Leviticus 1:9
           mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 1:10
+Levit 1:10
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -220,7 +220,7 @@ Leviticus 1:10
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 1:11
+Levit 1:11
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -244,7 +244,7 @@ Leviticus 1:11
         tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 1:12
+Levit 1:12
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -274,7 +274,7 @@ Leviticus 1:12
           tifcha 
         4 silluq_phrase
           silluq 
-Leviticus 1:13
+Levit 1:13
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -298,7 +298,7 @@ Leviticus 1:13
             mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 1:14
+Levit 1:14
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -319,7 +319,7 @@ Leviticus 1:14
           mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 1:15
+Levit 1:15
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -346,7 +346,7 @@ Leviticus 1:15
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 1:16
+Levit 1:16
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -367,7 +367,7 @@ Leviticus 1:16
         tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 1:17
+Levit 1:17
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -397,7 +397,7 @@ Leviticus 1:17
           mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 2:1
+Levit 2:1
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -427,7 +427,7 @@ Leviticus 2:1
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 2:2
+Levit 2:2
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -472,7 +472,7 @@ Leviticus 2:2
           mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 2:3
+Levit 2:3
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -490,7 +490,7 @@ Leviticus 2:3
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 2:4
+Levit 2:4
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -511,7 +511,7 @@ Leviticus 2:4
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 2:5
+Levit 2:5
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -526,7 +526,7 @@ Leviticus 2:5
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 2:6
+Levit 2:6
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -544,7 +544,7 @@ Leviticus 2:6
       tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 2:7
+Levit 2:7
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -556,7 +556,7 @@ Leviticus 2:7
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 2:8
+Levit 2:8
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -580,7 +580,7 @@ Leviticus 2:8
         tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 2:9
+Levit 2:9
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -601,7 +601,7 @@ Leviticus 2:9
         mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 2:10
+Levit 2:10
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -619,7 +619,7 @@ Leviticus 2:10
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 2:11
+Levit 2:11
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -649,7 +649,7 @@ Leviticus 2:11
           tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 2:12
+Levit 2:12
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -664,7 +664,7 @@ Leviticus 2:12
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 2:13
+Levit 2:13
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -691,7 +691,7 @@ Leviticus 2:13
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 2:14
+Levit 2:14
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -718,7 +718,7 @@ Leviticus 2:14
           tifcha 
         4 silluq_phrase
           mereka silluq 
-Leviticus 2:15
+Levit 2:15
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -736,7 +736,7 @@ Leviticus 2:15
       tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 2:16
+Levit 2:16
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -760,7 +760,7 @@ Leviticus 2:16
       tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 3:1
+Levit 3:1
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -784,7 +784,7 @@ Leviticus 3:1
           mereka tifcha 
         4 silluq_phrase
           mereka silluq 
-Leviticus 3:2
+Levit 3:2
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -811,7 +811,7 @@ Leviticus 3:2
         tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 3:3
+Levit 3:3
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -841,7 +841,7 @@ Leviticus 3:3
           tifcha 
         4 silluq_phrase
           silluq 
-Leviticus 3:4
+Levit 3:4
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -871,7 +871,7 @@ Leviticus 3:4
         tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 3:5
+Levit 3:5
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -895,7 +895,7 @@ Leviticus 3:5
         mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 3:6
+Levit 3:6
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -916,7 +916,7 @@ Leviticus 3:6
         tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 3:7
+Levit 3:7
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -928,7 +928,7 @@ Leviticus 3:7
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 3:8
+Levit 3:8
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -955,7 +955,7 @@ Leviticus 3:8
         tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 3:9
+Levit 3:9
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -991,7 +991,7 @@ Leviticus 3:9
           tifcha 
         4 silluq_phrase
           silluq 
-Leviticus 3:10
+Levit 3:10
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1021,7 +1021,7 @@ Leviticus 3:10
         tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 3:11
+Levit 3:11
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -1033,7 +1033,7 @@ Leviticus 3:11
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 3:12
+Levit 3:12
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -1045,7 +1045,7 @@ Leviticus 3:12
       tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 3:13
+Levit 3:13
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1072,7 +1072,7 @@ Leviticus 3:13
         tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 3:14
+Levit 3:14
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1102,7 +1102,7 @@ Leviticus 3:14
           tifcha 
         4 silluq_phrase
           silluq 
-Leviticus 3:15
+Levit 3:15
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1132,7 +1132,7 @@ Leviticus 3:15
         tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 3:16
+Levit 3:16
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -1150,7 +1150,7 @@ Leviticus 3:16
         tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 3:17
+Levit 3:17
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1168,13 +1168,13 @@ Leviticus 3:17
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 4:1
+Levit 4:1
 0 silluq_clause
   1 tifcha_phrase
     mereka tifcha 
   1 silluq_phrase
     mereka silluq 
-Leviticus 4:2
+Levit 4:2
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1204,7 +1204,7 @@ Leviticus 4:2
         tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 4:3
+Levit 4:3
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -1228,7 +1228,7 @@ Leviticus 4:3
         tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 4:4
+Levit 4:4
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -1252,7 +1252,7 @@ Leviticus 4:4
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 4:5
+Levit 4:5
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -1267,7 +1267,7 @@ Leviticus 4:5
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 4:6
+Levit 4:6
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -1291,7 +1291,7 @@ Leviticus 4:6
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 4:7
+Levit 4:7
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1330,7 +1330,7 @@ Leviticus 4:7
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 4:8
+Levit 4:8
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -1357,7 +1357,7 @@ Leviticus 4:8
           tifcha 
         4 silluq_phrase
           silluq 
-Leviticus 4:9
+Levit 4:9
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1387,7 +1387,7 @@ Leviticus 4:9
         tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 4:10
+Levit 4:10
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -1408,7 +1408,7 @@ Leviticus 4:10
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 4:11
+Levit 4:11
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1426,7 +1426,7 @@ Leviticus 4:11
       tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 4:12
+Levit 4:12
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1453,7 +1453,7 @@ Leviticus 4:12
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 4:13
+Levit 4:13
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1480,7 +1480,7 @@ Leviticus 4:13
         mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 4:14
+Levit 4:14
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1510,7 +1510,7 @@ Leviticus 4:14
           tifcha 
         4 silluq_phrase
           mereka silluq 
-Leviticus 4:15
+Levit 4:15
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -1528,7 +1528,7 @@ Leviticus 4:15
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 4:16
+Levit 4:16
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -1543,7 +1543,7 @@ Leviticus 4:16
       tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 4:17
+Levit 4:17
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -1567,7 +1567,7 @@ Leviticus 4:17
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 4:18
+Levit 4:18
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1606,7 +1606,7 @@ Leviticus 4:18
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 4:19
+Levit 4:19
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -1618,7 +1618,7 @@ Leviticus 4:19
       tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 4:20
+Levit 4:20
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -1642,7 +1642,7 @@ Leviticus 4:20
         tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 4:21
+Levit 4:21
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1669,7 +1669,7 @@ Leviticus 4:21
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 4:22
+Levit 4:22
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -1690,7 +1690,7 @@ Leviticus 4:22
         tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 4:23
+Levit 4:23
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1711,7 +1711,7 @@ Leviticus 4:23
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 4:24
+Levit 4:24
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1735,7 +1735,7 @@ Leviticus 4:24
       tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 4:25
+Levit 4:25
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1762,7 +1762,7 @@ Leviticus 4:25
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 4:26
+Levit 4:26
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1783,7 +1783,7 @@ Leviticus 4:26
         tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 4:27
+Levit 4:27
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -1804,7 +1804,7 @@ Leviticus 4:27
         mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 4:28
+Levit 4:28
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1831,7 +1831,7 @@ Leviticus 4:28
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 4:29
+Levit 4:29
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1855,7 +1855,7 @@ Leviticus 4:29
         tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 4:30
+Levit 4:30
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1879,7 +1879,7 @@ Leviticus 4:30
         tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 4:31
+Levit 4:31
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -1909,7 +1909,7 @@ Leviticus 4:31
         tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 4:32
+Levit 4:32
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -1924,7 +1924,7 @@ Leviticus 4:32
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 4:33
+Levit 4:33
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1951,7 +1951,7 @@ Leviticus 4:33
           mereka tifcha 
         4 silluq_phrase
           silluq 
-Leviticus 4:34
+Levit 4:34
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1978,7 +1978,7 @@ Leviticus 4:34
         tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 4:35
+Levit 4:35
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -2008,7 +2008,7 @@ Leviticus 4:35
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 5:1
+Levit 5:1
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2032,7 +2032,7 @@ Leviticus 5:1
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 5:2
+Levit 5:2
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -2071,7 +2071,7 @@ Leviticus 5:2
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 5:3
+Levit 5:3
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2098,7 +2098,7 @@ Leviticus 5:3
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 5:4
+Levit 5:4
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -2128,7 +2128,7 @@ Leviticus 5:4
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 5:5
+Levit 5:5
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -2143,7 +2143,7 @@ Leviticus 5:5
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 5:6
+Levit 5:6
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -2167,7 +2167,7 @@ Leviticus 5:6
         tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 5:7
+Levit 5:7
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -2194,7 +2194,7 @@ Leviticus 5:7
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 5:8
+Levit 5:8
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2218,7 +2218,7 @@ Leviticus 5:8
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 5:9
+Levit 5:9
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2242,7 +2242,7 @@ Leviticus 5:9
       tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 5:10
+Levit 5:10
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -2260,7 +2260,7 @@ Leviticus 5:10
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 5:11
+Levit 5:11
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -2305,7 +2305,7 @@ Leviticus 5:11
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 5:12
+Levit 5:12
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -2335,7 +2335,7 @@ Leviticus 5:12
       tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 5:13
+Levit 5:13
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -2353,13 +2353,13 @@ Leviticus 5:13
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 5:14
+Levit 5:14
 0 silluq_clause
   1 tifcha_phrase
     mereka tifcha 
   1 silluq_phrase
     mereka silluq 
-Leviticus 5:15
+Levit 5:15
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2392,7 +2392,7 @@ Leviticus 5:15
           mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 5:16
+Levit 5:16
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2422,7 +2422,7 @@ Leviticus 5:16
           mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 5:17
+Levit 5:17
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2449,7 +2449,7 @@ Leviticus 5:17
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 5:18
+Levit 5:18
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -2473,7 +2473,7 @@ Leviticus 5:18
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 5:19
+Levit 5:19
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -2485,13 +2485,13 @@ Leviticus 5:19
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 5:20
+Levit 5:20
 0 silluq_clause
   1 tifcha_phrase
     mereka tifcha 
   1 silluq_phrase
     mereka silluq 
-Leviticus 5:21
+Levit 5:21
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2521,7 +2521,7 @@ Leviticus 5:21
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 5:22
+Levit 5:22
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -2542,7 +2542,7 @@ Leviticus 5:22
           mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 5:23
+Levit 5:23
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -2578,7 +2578,7 @@ Leviticus 5:23
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 5:24
+Levit 5:24
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -2611,7 +2611,7 @@ Leviticus 5:24
         tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 5:25
+Levit 5:25
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -2626,7 +2626,7 @@ Leviticus 5:25
         mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 5:26
+Levit 5:26
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -2644,13 +2644,13 @@ Leviticus 5:26
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 6:1
+Levit 6:1
 0 silluq_clause
   1 tifcha_phrase
     mereka tifcha 
   1 silluq_phrase
     mereka silluq 
-Leviticus 6:2
+Levit 6:2
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2677,7 +2677,7 @@ Leviticus 6:2
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 6:3
+Levit 6:3
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -2710,7 +2710,7 @@ Leviticus 6:3
         tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 6:4
+Levit 6:4
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2734,7 +2734,7 @@ Leviticus 6:4
         tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 6:5
+Levit 6:5
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2761,7 +2761,7 @@ Leviticus 6:5
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 6:6
+Levit 6:6
 0 silluq_clause
   1 tifcha_clause
     2 revia_phrase
@@ -2773,7 +2773,7 @@ Leviticus 6:6
         mereka tifcha 
   1 silluq_phrase
     mereka silluq 
-Leviticus 6:7
+Levit 6:7
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -2791,7 +2791,7 @@ Leviticus 6:7
         tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 6:8
+Levit 6:8
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2827,7 +2827,7 @@ Leviticus 6:8
           tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 6:9
+Levit 6:9
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -2848,7 +2848,7 @@ Leviticus 6:9
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 6:10
+Levit 6:10
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2875,7 +2875,7 @@ Leviticus 6:10
         tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 6:11
+Levit 6:11
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2905,13 +2905,13 @@ Leviticus 6:11
         mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 6:12
+Levit 6:12
 0 silluq_clause
   1 tifcha_phrase
     mereka tifcha 
   1 silluq_phrase
     mereka silluq 
-Leviticus 6:13
+Levit 6:13
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2944,7 +2944,7 @@ Leviticus 6:13
         tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 6:14
+Levit 6:14
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -2968,7 +2968,7 @@ Leviticus 6:14
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 6:15
+Levit 6:15
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -2986,7 +2986,7 @@ Leviticus 6:15
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 6:16
+Levit 6:16
 0 silluq_clause
   1 tifcha_clause
     2 tevir_phrase
@@ -2995,13 +2995,13 @@ Leviticus 6:16
       mereka tifcha 
   1 silluq_phrase
     mereka silluq 
-Leviticus 6:17
+Levit 6:17
 0 silluq_clause
   1 tifcha_phrase
     mereka tifcha 
   1 silluq_phrase
     mereka silluq 
-Leviticus 6:18
+Levit 6:18
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -3031,7 +3031,7 @@ Leviticus 6:18
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 6:19
+Levit 6:19
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -3052,7 +3052,7 @@ Leviticus 6:19
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 6:20
+Levit 6:20
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -3079,7 +3079,7 @@ Leviticus 6:20
           tifcha 
         4 silluq_phrase
           mereka silluq 
-Leviticus 6:21
+Levit 6:21
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -3100,7 +3100,7 @@ Leviticus 6:21
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 6:22
+Levit 6:22
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -3112,7 +3112,7 @@ Leviticus 6:22
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 6:23
+Levit 6:23
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -3133,7 +3133,7 @@ Leviticus 6:23
       tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 7:1
+Levit 7:1
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -3145,7 +3145,7 @@ Leviticus 7:1
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 7:2
+Levit 7:2
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -3169,7 +3169,7 @@ Leviticus 7:2
         mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 7:3
+Levit 7:3
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -3187,7 +3187,7 @@ Leviticus 7:3
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 7:4
+Levit 7:4
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -3217,7 +3217,7 @@ Leviticus 7:4
         tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 7:5
+Levit 7:5
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -3235,7 +3235,7 @@ Leviticus 7:5
       tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 7:6
+Levit 7:6
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -3253,7 +3253,7 @@ Leviticus 7:6
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 7:7
+Levit 7:7
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -3274,7 +3274,7 @@ Leviticus 7:7
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 7:8
+Levit 7:8
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -3295,7 +3295,7 @@ Leviticus 7:8
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 7:9
+Levit 7:9
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -3319,7 +3319,7 @@ Leviticus 7:9
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 7:10
+Levit 7:10
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -3334,7 +3334,7 @@ Leviticus 7:10
         tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 7:11
+Levit 7:11
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -3346,7 +3346,7 @@ Leviticus 7:11
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 7:12
+Levit 7:12
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -3379,7 +3379,7 @@ Leviticus 7:12
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 7:13
+Levit 7:13
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -3397,7 +3397,7 @@ Leviticus 7:13
       tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 7:14
+Levit 7:14
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -3421,7 +3421,7 @@ Leviticus 7:14
           mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 7:15
+Levit 7:15
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -3442,7 +3442,7 @@ Leviticus 7:15
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 7:16
+Levit 7:16
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -3472,7 +3472,7 @@ Leviticus 7:16
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 7:17
+Levit 7:17
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -3490,7 +3490,7 @@ Leviticus 7:17
         tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 7:18
+Levit 7:18
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -3523,7 +3523,7 @@ Leviticus 7:18
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 7:19
+Levit 7:19
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -3547,7 +3547,7 @@ Leviticus 7:19
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 7:20
+Levit 7:20
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -3574,7 +3574,7 @@ Leviticus 7:20
         mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 7:21
+Levit 7:21
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -3613,13 +3613,13 @@ Leviticus 7:21
         mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 7:22
+Levit 7:22
 0 silluq_clause
   1 tifcha_phrase
     mereka tifcha 
   1 silluq_phrase
     mereka silluq 
-Leviticus 7:23
+Levit 7:23
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -3640,7 +3640,7 @@ Leviticus 7:23
         tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 7:24
+Levit 7:24
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -3658,7 +3658,7 @@ Leviticus 7:24
       tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 7:25
+Levit 7:25
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -3685,7 +3685,7 @@ Leviticus 7:25
         mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 7:26
+Levit 7:26
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -3703,7 +3703,7 @@ Leviticus 7:26
       tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 7:27
+Levit 7:27
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -3718,13 +3718,13 @@ Leviticus 7:27
         mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 7:28
+Levit 7:28
 0 silluq_clause
   1 tifcha_phrase
     mereka tifcha 
   1 silluq_phrase
     mereka silluq 
-Leviticus 7:29
+Levit 7:29
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -3751,7 +3751,7 @@ Leviticus 7:29
           tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 7:30
+Levit 7:30
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -3778,7 +3778,7 @@ Leviticus 7:30
             tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 7:31
+Levit 7:31
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -3799,7 +3799,7 @@ Leviticus 7:31
         tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 7:32
+Levit 7:32
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -3817,7 +3817,7 @@ Leviticus 7:32
       tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 7:33
+Levit 7:33
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -3838,7 +3838,7 @@ Leviticus 7:33
         mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 7:34
+Levit 7:34
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -3874,7 +3874,7 @@ Leviticus 7:34
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 7:35
+Levit 7:35
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -3898,7 +3898,7 @@ Leviticus 7:35
         tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 7:36
+Levit 7:36
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -3922,7 +3922,7 @@ Leviticus 7:36
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 7:37
+Levit 7:37
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -3946,7 +3946,7 @@ Leviticus 7:37
         tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 7:38
+Levit 7:38
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -3970,13 +3970,13 @@ Leviticus 7:38
           tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 8:1
+Levit 8:1
 0 silluq_clause
   1 tifcha_phrase
     mereka tifcha 
   1 silluq_phrase
     mereka silluq 
-Leviticus 8:2
+Levit 8:2
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -4012,7 +4012,7 @@ Leviticus 8:2
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 8:3
+Levit 8:3
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -4024,7 +4024,7 @@ Leviticus 8:3
       tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 8:4
+Levit 8:4
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -4048,7 +4048,7 @@ Leviticus 8:4
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 8:5
+Levit 8:5
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -4063,7 +4063,7 @@ Leviticus 8:5
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 8:6
+Levit 8:6
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -4078,7 +4078,7 @@ Leviticus 8:6
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 8:7
+Levit 8:7
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -4117,7 +4117,7 @@ Leviticus 8:7
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 8:8
+Levit 8:8
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -4135,7 +4135,7 @@ Leviticus 8:8
         tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 8:9
+Levit 8:9
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -4162,7 +4162,7 @@ Leviticus 8:9
           mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 8:10
+Levit 8:10
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -4180,7 +4180,7 @@ Leviticus 8:10
       tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 8:11
+Levit 8:11
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -4204,7 +4204,7 @@ Leviticus 8:11
           tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 8:12
+Levit 8:12
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -4222,7 +4222,7 @@ Leviticus 8:12
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 8:13
+Levit 8:13
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -4252,7 +4252,7 @@ Leviticus 8:13
         mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 8:14
+Levit 8:14
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -4273,7 +4273,7 @@ Leviticus 8:14
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 8:15
+Levit 8:15
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -4309,7 +4309,7 @@ Leviticus 8:15
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 8:16
+Levit 8:16
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -4336,7 +4336,7 @@ Leviticus 8:16
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 8:17
+Levit 8:17
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -4360,7 +4360,7 @@ Leviticus 8:17
         mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 8:18
+Levit 8:18
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -4381,7 +4381,7 @@ Leviticus 8:18
         tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 8:19
+Levit 8:19
 0 silluq_clause
   1 atnach_phrase
     atnach 
@@ -4393,7 +4393,7 @@ Leviticus 8:19
         tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 8:20
+Levit 8:20
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -4414,7 +4414,7 @@ Leviticus 8:20
         tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 8:21
+Levit 8:21
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -4444,7 +4444,7 @@ Leviticus 8:21
           mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 8:22
+Levit 8:22
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -4468,7 +4468,7 @@ Leviticus 8:22
         tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 8:23
+Levit 8:23
 0 silluq_clause
   1 atnach_clause
     2 segolta_phrase
@@ -4498,7 +4498,7 @@ Leviticus 8:23
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 8:24
+Levit 8:24
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -4534,7 +4534,7 @@ Leviticus 8:24
         tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 8:25
+Levit 8:25
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -4564,7 +4564,7 @@ Leviticus 8:25
       tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 8:26
+Levit 8:26
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -4600,7 +4600,7 @@ Leviticus 8:26
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 8:27
+Levit 8:27
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -4624,7 +4624,7 @@ Leviticus 8:27
         tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 8:28
+Levit 8:28
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -4648,7 +4648,7 @@ Leviticus 8:28
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 8:29
+Levit 8:29
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -4678,7 +4678,7 @@ Leviticus 8:29
           mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 8:30
+Levit 8:30
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -4720,7 +4720,7 @@ Leviticus 8:30
           mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 8:31
+Levit 8:31
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -4759,7 +4759,7 @@ Leviticus 8:31
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 8:32
+Levit 8:32
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -4771,7 +4771,7 @@ Leviticus 8:32
       tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 8:33
+Levit 8:33
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -4804,7 +4804,7 @@ Leviticus 8:33
         tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 8:34
+Levit 8:34
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -4819,7 +4819,7 @@ Leviticus 8:34
         tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 8:35
+Levit 8:35
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -4843,7 +4843,7 @@ Leviticus 8:35
       tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 8:36
+Levit 8:36
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -4861,7 +4861,7 @@ Leviticus 8:36
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 9:1
+Levit 9:1
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -4882,7 +4882,7 @@ Leviticus 9:1
       tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 9:2
+Levit 9:2
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -4903,7 +4903,7 @@ Leviticus 9:2
       tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 9:3
+Levit 9:3
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -4924,7 +4924,7 @@ Leviticus 9:3
           tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 9:4
+Levit 9:4
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -4951,7 +4951,7 @@ Leviticus 9:4
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 9:5
+Levit 9:5
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -4978,7 +4978,7 @@ Leviticus 9:5
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 9:6
+Levit 9:6
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -4996,7 +4996,7 @@ Leviticus 9:6
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 9:7
+Levit 9:7
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -5035,7 +5035,7 @@ Leviticus 9:7
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 9:8
+Levit 9:8
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -5050,7 +5050,7 @@ Leviticus 9:8
         mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 9:9
+Levit 9:9
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -5080,7 +5080,7 @@ Leviticus 9:9
         tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 9:10
+Levit 9:10
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -5104,7 +5104,7 @@ Leviticus 9:10
         mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 9:11
+Levit 9:11
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -5119,7 +5119,7 @@ Leviticus 9:11
         tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 9:12
+Levit 9:12
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -5140,7 +5140,7 @@ Leviticus 9:12
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 9:13
+Levit 9:13
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -5158,7 +5158,7 @@ Leviticus 9:13
       tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 9:14
+Levit 9:14
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -5170,7 +5170,7 @@ Leviticus 9:14
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 9:15
+Levit 9:15
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -5194,7 +5194,7 @@ Leviticus 9:15
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 9:16
+Levit 9:16
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -5206,7 +5206,7 @@ Leviticus 9:16
       tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 9:17
+Levit 9:17
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -5230,7 +5230,7 @@ Leviticus 9:17
       tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 9:18
+Levit 9:18
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -5257,7 +5257,7 @@ Leviticus 9:18
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 9:19
+Levit 9:19
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -5278,7 +5278,7 @@ Leviticus 9:19
           tifcha 
         4 silluq_phrase
           silluq 
-Leviticus 9:20
+Levit 9:20
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -5290,7 +5290,7 @@ Leviticus 9:20
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 9:21
+Levit 9:21
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -5314,7 +5314,7 @@ Leviticus 9:21
       tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 9:22
+Levit 9:22
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -5335,7 +5335,7 @@ Leviticus 9:22
           tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 9:23
+Levit 9:23
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -5356,7 +5356,7 @@ Leviticus 9:23
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 9:24
+Levit 9:24
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -5386,7 +5386,7 @@ Leviticus 9:24
         tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 10:1
+Levit 10:1
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -5422,7 +5422,7 @@ Leviticus 10:1
         darga merekakefula tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 10:2
+Levit 10:2
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -5437,7 +5437,7 @@ Leviticus 10:2
       tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 10:3
+Levit 10:3
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -5461,7 +5461,7 @@ Leviticus 10:3
       tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 10:4
+Levit 10:4
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -5497,7 +5497,7 @@ Leviticus 10:4
         tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 10:5
+Levit 10:5
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -5518,7 +5518,7 @@ Leviticus 10:5
       tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 10:6
+Levit 10:6
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -5554,7 +5554,7 @@ Leviticus 10:6
           tifcha 
         4 silluq_phrase
           mereka silluq 
-Leviticus 10:7
+Levit 10:7
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -5578,7 +5578,7 @@ Leviticus 10:7
       tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 10:8
+Levit 10:8
 0 silluq_clause
   1 zaqef_phrase
     munach zaqef 
@@ -5587,7 +5587,7 @@ Leviticus 10:8
       tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 10:9
+Levit 10:9
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -5614,7 +5614,7 @@ Leviticus 10:9
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 10:10
+Levit 10:10
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -5629,7 +5629,7 @@ Leviticus 10:10
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 10:11
+Levit 10:11
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -5650,7 +5650,7 @@ Leviticus 10:11
           tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 10:12
+Levit 10:12
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -5689,7 +5689,7 @@ Leviticus 10:12
         mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 10:13
+Levit 10:13
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -5713,7 +5713,7 @@ Leviticus 10:13
       tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 10:14
+Levit 10:14
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -5749,7 +5749,7 @@ Leviticus 10:14
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 10:15
+Levit 10:15
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -5782,7 +5782,7 @@ Leviticus 10:15
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 10:16
+Levit 10:16
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -5812,7 +5812,7 @@ Leviticus 10:16
         tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 10:17
+Levit 10:17
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -5848,7 +5848,7 @@ Leviticus 10:17
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 10:18
+Levit 10:18
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -5869,7 +5869,7 @@ Leviticus 10:18
         tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 10:19
+Levit 10:19
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -5902,7 +5902,7 @@ Leviticus 10:19
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 10:20
+Levit 10:20
 0 silluq_clause
   1 zaqef_phrase
     munach zaqef 
@@ -5911,7 +5911,7 @@ Leviticus 10:20
       tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 11:1
+Levit 11:1
 0 silluq_clause
   1 tifcha_clause
     2 tevir_phrase
@@ -5920,7 +5920,7 @@ Leviticus 11:1
       mereka tifcha 
   1 silluq_phrase
     mereka silluq 
-Leviticus 11:2
+Levit 11:2
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -5941,7 +5941,7 @@ Leviticus 11:2
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 11:3
+Levit 11:3
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -5965,7 +5965,7 @@ Leviticus 11:3
       tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 11:4
+Levit 11:4
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6004,7 +6004,7 @@ Leviticus 11:4
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 11:5
+Levit 11:5
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6025,7 +6025,7 @@ Leviticus 11:5
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 11:6
+Levit 11:6
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6046,7 +6046,7 @@ Leviticus 11:6
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 11:7
+Levit 11:7
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6073,7 +6073,7 @@ Leviticus 11:7
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 11:8
+Levit 11:8
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6091,7 +6091,7 @@ Leviticus 11:8
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 11:9
+Levit 11:9
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6118,7 +6118,7 @@ Leviticus 11:9
           tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 11:10
+Levit 11:10
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6151,7 +6151,7 @@ Leviticus 11:10
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 11:11
+Levit 11:11
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -6169,7 +6169,7 @@ Leviticus 11:11
         tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 11:12
+Levit 11:12
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -6184,7 +6184,7 @@ Leviticus 11:12
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 11:13
+Levit 11:13
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6208,7 +6208,7 @@ Leviticus 11:13
         tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 11:14
+Levit 11:14
 0 silluq_clause
   1 zaqef_phrase
     methiga-zaqef 
@@ -6217,13 +6217,13 @@ Leviticus 11:14
       tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 11:15
+Levit 11:15
 0 silluq_clause
   1 tifcha_phrase
     mereka tifcha 
   1 silluq_phrase
     silluq 
-Leviticus 11:16
+Levit 11:16
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6241,19 +6241,19 @@ Leviticus 11:16
       tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 11:17
+Levit 11:17
 0 silluq_clause
   1 tifcha_phrase
     mereka tifcha 
   1 silluq_phrase
     silluq 
-Leviticus 11:18
+Levit 11:18
 0 silluq_clause
   1 tifcha_phrase
     mereka tifcha 
   1 silluq_phrase
     silluq 
-Leviticus 11:19
+Levit 11:19
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6271,7 +6271,7 @@ Leviticus 11:19
       tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 11:20
+Levit 11:20
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6289,7 +6289,7 @@ Leviticus 11:20
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 11:21
+Levit 11:21
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6319,7 +6319,7 @@ Leviticus 11:21
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 11:22
+Levit 11:22
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6343,7 +6343,7 @@ Leviticus 11:22
         tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 11:23
+Levit 11:23
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6361,7 +6361,7 @@ Leviticus 11:23
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 11:24
+Levit 11:24
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -6373,7 +6373,7 @@ Leviticus 11:24
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 11:25
+Levit 11:25
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -6385,7 +6385,7 @@ Leviticus 11:25
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 11:26
+Levit 11:26
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6415,7 +6415,7 @@ Leviticus 11:26
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 11:27
+Levit 11:27
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6439,7 +6439,7 @@ Leviticus 11:27
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 11:28
+Levit 11:28
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6457,7 +6457,7 @@ Leviticus 11:28
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 11:29
+Levit 11:29
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6475,7 +6475,7 @@ Leviticus 11:29
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 11:30
+Levit 11:30
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -6487,7 +6487,7 @@ Leviticus 11:30
       tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 11:31
+Levit 11:31
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -6505,7 +6505,7 @@ Leviticus 11:31
         tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 11:32
+Levit 11:32
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6538,7 +6538,7 @@ Leviticus 11:32
         mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 11:33
+Levit 11:33
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -6556,7 +6556,7 @@ Leviticus 11:33
         tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 11:34
+Levit 11:34
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -6583,7 +6583,7 @@ Leviticus 11:34
         tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 11:35
+Levit 11:35
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -6607,7 +6607,7 @@ Leviticus 11:35
       tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 11:36
+Levit 11:36
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -6622,7 +6622,7 @@ Leviticus 11:36
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 11:37
+Levit 11:37
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6640,7 +6640,7 @@ Leviticus 11:37
       tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 11:38
+Levit 11:38
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6658,7 +6658,7 @@ Leviticus 11:38
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 11:39
+Levit 11:39
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6676,7 +6676,7 @@ Leviticus 11:39
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 11:40
+Levit 11:40
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6700,7 +6700,7 @@ Leviticus 11:40
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 11:41
+Levit 11:41
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -6712,7 +6712,7 @@ Leviticus 11:41
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 11:42
+Levit 11:42
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6739,7 +6739,7 @@ Leviticus 11:42
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 11:43
+Levit 11:43
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6763,7 +6763,7 @@ Leviticus 11:43
         tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 11:44
+Levit 11:44
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -6793,7 +6793,7 @@ Leviticus 11:44
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 11:45
+Levit 11:45
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6820,7 +6820,7 @@ Leviticus 11:45
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 11:46
+Levit 11:46
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6844,7 +6844,7 @@ Leviticus 11:46
       tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 11:47
+Levit 11:47
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -6871,13 +6871,13 @@ Leviticus 11:47
           tifcha 
         4 silluq_phrase
           mereka silluq 
-Leviticus 12:1
+Levit 12:1
 0 silluq_clause
   1 tifcha_phrase
     mereka tifcha 
   1 silluq_phrase
     mereka silluq 
-Leviticus 12:2
+Levit 12:2
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6913,7 +6913,7 @@ Leviticus 12:2
           mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 12:3
+Levit 12:3
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -6925,7 +6925,7 @@ Leviticus 12:3
       tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 12:4
+Levit 12:4
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6952,7 +6952,7 @@ Leviticus 12:4
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 12:5
+Levit 12:5
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -6973,7 +6973,7 @@ Leviticus 12:5
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 12:6
+Levit 12:6
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -7006,7 +7006,7 @@ Leviticus 12:6
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 12:7
+Levit 12:7
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7033,7 +7033,7 @@ Leviticus 12:7
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 12:8
+Levit 12:8
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -7063,7 +7063,7 @@ Leviticus 12:8
         tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 13:1
+Levit 13:1
 0 silluq_clause
   1 zaqef_phrase
     munach zaqef 
@@ -7072,7 +7072,7 @@ Leviticus 13:1
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 13:2
+Levit 13:2
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7105,7 +7105,7 @@ Leviticus 13:2
           mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 13:3
+Levit 13:3
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7138,7 +7138,7 @@ Leviticus 13:3
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 13:4
+Levit 13:4
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7165,7 +7165,7 @@ Leviticus 13:4
         tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 13:5
+Levit 13:5
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -7192,7 +7192,7 @@ Leviticus 13:5
         mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 13:6
+Levit 13:6
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -7225,7 +7225,7 @@ Leviticus 13:6
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 13:7
+Levit 13:7
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7246,7 +7246,7 @@ Leviticus 13:7
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 13:8
+Levit 13:8
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7267,7 +7267,7 @@ Leviticus 13:8
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 13:9
+Levit 13:9
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -7282,7 +7282,7 @@ Leviticus 13:9
       tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 13:10
+Levit 13:10
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7309,7 +7309,7 @@ Leviticus 13:10
         mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 13:11
+Levit 13:11
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7330,7 +7330,7 @@ Leviticus 13:11
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 13:12
+Levit 13:12
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7357,7 +7357,7 @@ Leviticus 13:12
       tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 13:13
+Levit 13:13
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7381,7 +7381,7 @@ Leviticus 13:13
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 13:14
+Levit 13:14
 0 silluq_clause
   1 tifcha_clause
     2 tevir_phrase
@@ -7390,7 +7390,7 @@ Leviticus 13:14
       mereka tifcha 
   1 silluq_phrase
     silluq 
-Leviticus 13:15
+Levit 13:15
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -7408,7 +7408,7 @@ Leviticus 13:15
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 13:16
+Levit 13:16
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -7423,7 +7423,7 @@ Leviticus 13:16
       tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 13:17
+Levit 13:17
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7447,7 +7447,7 @@ Leviticus 13:17
         tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 13:18
+Levit 13:18
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -7459,7 +7459,7 @@ Leviticus 13:18
         atnach 
   1 silluq_phrase
     silluq 
-Leviticus 13:19
+Levit 13:19
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7480,7 +7480,7 @@ Leviticus 13:19
       tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 13:20
+Levit 13:20
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7504,7 +7504,7 @@ Leviticus 13:20
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 13:21
+Levit 13:21
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7531,7 +7531,7 @@ Leviticus 13:21
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 13:22
+Levit 13:22
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -7546,7 +7546,7 @@ Leviticus 13:22
         tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 13:23
+Levit 13:23
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7567,7 +7567,7 @@ Leviticus 13:23
       tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 13:24
+Levit 13:24
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -7591,7 +7591,7 @@ Leviticus 13:24
           mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 13:25
+Levit 13:25
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7627,7 +7627,7 @@ Leviticus 13:25
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 13:26
+Levit 13:26
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7654,7 +7654,7 @@ Leviticus 13:26
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 13:27
+Levit 13:27
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -7678,7 +7678,7 @@ Leviticus 13:27
           mereka tifcha 
         4 silluq_phrase
           silluq 
-Leviticus 13:28
+Levit 13:28
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7705,7 +7705,7 @@ Leviticus 13:28
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 13:29
+Levit 13:29
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7723,7 +7723,7 @@ Leviticus 13:29
       tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 13:30
+Levit 13:30
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7759,7 +7759,7 @@ Leviticus 13:30
           mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 13:31
+Levit 13:31
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7786,7 +7786,7 @@ Leviticus 13:31
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 13:32
+Levit 13:32
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -7813,7 +7813,7 @@ Leviticus 13:32
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 13:33
+Levit 13:33
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -7831,7 +7831,7 @@ Leviticus 13:33
         mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 13:34
+Levit 13:34
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7867,7 +7867,7 @@ Leviticus 13:34
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 13:35
+Levit 13:35
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -7882,7 +7882,7 @@ Leviticus 13:35
       tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 13:36
+Levit 13:36
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7906,7 +7906,7 @@ Leviticus 13:36
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 13:37
+Levit 13:37
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -7924,7 +7924,7 @@ Leviticus 13:37
       tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 13:38
+Levit 13:38
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7942,7 +7942,7 @@ Leviticus 13:38
       tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 13:39
+Levit 13:39
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -7963,7 +7963,7 @@ Leviticus 13:39
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 13:40
+Levit 13:40
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -7978,7 +7978,7 @@ Leviticus 13:40
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 13:41
+Levit 13:41
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7996,7 +7996,7 @@ Leviticus 13:41
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 13:42
+Levit 13:42
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8020,7 +8020,7 @@ Leviticus 13:42
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 13:43
+Levit 13:43
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8044,7 +8044,7 @@ Leviticus 13:43
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 13:44
+Levit 13:44
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -8059,7 +8059,7 @@ Leviticus 13:44
         tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 13:45
+Levit 13:45
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8089,7 +8089,7 @@ Leviticus 13:45
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 13:46
+Levit 13:46
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -8110,7 +8110,7 @@ Leviticus 13:46
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 13:47
+Levit 13:47
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -8128,7 +8128,7 @@ Leviticus 13:47
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 13:48
+Levit 13:48
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8149,7 +8149,7 @@ Leviticus 13:48
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 13:49
+Levit 13:49
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8179,7 +8179,7 @@ Leviticus 13:49
       tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 13:50
+Levit 13:50
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -8191,7 +8191,7 @@ Leviticus 13:50
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 13:51
+Levit 13:51
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8227,7 +8227,7 @@ Leviticus 13:51
         tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 13:52
+Levit 13:52
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8266,7 +8266,7 @@ Leviticus 13:52
         tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 13:53
+Levit 13:53
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -8293,7 +8293,7 @@ Leviticus 13:53
       tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 13:54
+Levit 13:54
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8314,7 +8314,7 @@ Leviticus 13:54
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 13:55
+Levit 13:55
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8350,7 +8350,7 @@ Leviticus 13:55
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 13:56
+Levit 13:56
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -8383,7 +8383,7 @@ Leviticus 13:56
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 13:57
+Levit 13:57
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8410,7 +8410,7 @@ Leviticus 13:57
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 13:58
+Levit 13:58
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8434,7 +8434,7 @@ Leviticus 13:58
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 13:59
+Levit 13:59
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8464,13 +8464,13 @@ Leviticus 13:59
       tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 14:1
+Levit 14:1
 0 silluq_clause
   1 tifcha_phrase
     mereka tifcha 
   1 silluq_phrase
     mereka silluq 
-Leviticus 14:2
+Levit 14:2
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8488,7 +8488,7 @@ Leviticus 14:2
       tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 14:3
+Levit 14:3
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8515,7 +8515,7 @@ Leviticus 14:3
           mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 14:4
+Levit 14:4
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8539,7 +8539,7 @@ Leviticus 14:4
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 14:5
+Levit 14:5
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8557,7 +8557,7 @@ Leviticus 14:5
       tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 14:6
+Levit 14:6
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8593,7 +8593,7 @@ Leviticus 14:6
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 14:7
+Levit 14:7
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -8617,7 +8617,7 @@ Leviticus 14:7
           mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 14:8
+Levit 14:8
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8644,7 +8644,7 @@ Leviticus 14:8
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 14:9
+Levit 14:9
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8677,7 +8677,7 @@ Leviticus 14:9
           tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 14:10
+Levit 14:10
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8710,7 +8710,7 @@ Leviticus 14:10
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 14:11
+Levit 14:11
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -8734,7 +8734,7 @@ Leviticus 14:11
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 14:12
+Levit 14:12
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -8758,7 +8758,7 @@ Leviticus 14:12
         tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 14:13
+Levit 14:13
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -8791,7 +8791,7 @@ Leviticus 14:13
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 14:14
+Levit 14:14
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -8824,7 +8824,7 @@ Leviticus 14:14
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 14:15
+Levit 14:15
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -8839,7 +8839,7 @@ Leviticus 14:15
         mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 14:16
+Levit 14:16
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8863,7 +8863,7 @@ Leviticus 14:16
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 14:17
+Levit 14:17
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8899,7 +8899,7 @@ Leviticus 14:17
       tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 14:18
+Levit 14:18
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8926,7 +8926,7 @@ Leviticus 14:18
         tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 14:19
+Levit 14:19
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8947,7 +8947,7 @@ Leviticus 14:19
       tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 14:20
+Levit 14:20
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -8965,7 +8965,7 @@ Leviticus 14:20
         tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 14:21
+Levit 14:21
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -8998,7 +8998,7 @@ Leviticus 14:21
         tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 14:22
+Levit 14:22
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9025,7 +9025,7 @@ Leviticus 14:22
         tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 14:23
+Levit 14:23
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -9043,7 +9043,7 @@ Leviticus 14:23
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 14:24
+Levit 14:24
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -9061,7 +9061,7 @@ Leviticus 14:24
         tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 14:25
+Levit 14:25
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -9094,7 +9094,7 @@ Leviticus 14:25
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 14:26
+Levit 14:26
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -9106,7 +9106,7 @@ Leviticus 14:26
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 14:27
+Levit 14:27
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9127,7 +9127,7 @@ Leviticus 14:27
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 14:28
+Levit 14:28
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9163,7 +9163,7 @@ Leviticus 14:28
       tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 14:29
+Levit 14:29
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9187,7 +9187,7 @@ Leviticus 14:29
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 14:30
+Levit 14:30
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9205,7 +9205,7 @@ Leviticus 14:30
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 14:31
+Levit 14:31
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -9229,7 +9229,7 @@ Leviticus 14:31
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 14:32
+Levit 14:32
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -9247,7 +9247,7 @@ Leviticus 14:32
         mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 14:33
+Levit 14:33
 0 silluq_clause
   1 zaqef_phrase
     munach zaqef 
@@ -9256,7 +9256,7 @@ Leviticus 14:33
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 14:34
+Levit 14:34
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9283,7 +9283,7 @@ Leviticus 14:34
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 14:35
+Levit 14:35
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9304,7 +9304,7 @@ Leviticus 14:35
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 14:36
+Levit 14:36
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9331,7 +9331,7 @@ Leviticus 14:36
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 14:37
+Levit 14:37
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9358,7 +9358,7 @@ Leviticus 14:37
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 14:38
+Levit 14:38
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -9373,7 +9373,7 @@ Leviticus 14:38
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 14:39
+Levit 14:39
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -9391,7 +9391,7 @@ Leviticus 14:39
           mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 14:40
+Levit 14:40
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9421,7 +9421,7 @@ Leviticus 14:40
         tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 14:41
+Levit 14:41
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -9448,7 +9448,7 @@ Leviticus 14:41
           tifcha 
         4 silluq_phrase
           silluq 
-Leviticus 14:42
+Levit 14:42
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9469,7 +9469,7 @@ Leviticus 14:42
         tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 14:43
+Levit 14:43
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9490,7 +9490,7 @@ Leviticus 14:43
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 14:44
+Levit 14:44
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9517,7 +9517,7 @@ Leviticus 14:44
         tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 14:45
+Levit 14:45
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9544,7 +9544,7 @@ Leviticus 14:45
         tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 14:46
+Levit 14:46
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9562,7 +9562,7 @@ Leviticus 14:46
       tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 14:47
+Levit 14:47
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -9580,7 +9580,7 @@ Leviticus 14:47
         tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 14:48
+Levit 14:48
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9616,7 +9616,7 @@ Leviticus 14:48
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 14:49
+Levit 14:49
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -9634,7 +9634,7 @@ Leviticus 14:49
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 14:50
+Levit 14:50
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -9646,7 +9646,7 @@ Leviticus 14:50
       tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 14:51
+Levit 14:51
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -9685,7 +9685,7 @@ Leviticus 14:51
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 14:52
+Levit 14:52
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -9712,7 +9712,7 @@ Leviticus 14:52
           tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 14:53
+Levit 14:53
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -9730,7 +9730,7 @@ Leviticus 14:53
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 14:54
+Levit 14:54
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -9742,19 +9742,19 @@ Leviticus 14:54
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 14:55
+Levit 14:55
 0 silluq_clause
   1 tifcha_phrase
     mereka tifcha 
   1 silluq_phrase
     silluq 
-Leviticus 14:56
+Levit 14:56
 0 silluq_clause
   1 tifcha_phrase
     mereka tifcha 
   1 silluq_phrase
     silluq 
-Leviticus 14:57
+Levit 14:57
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -9769,7 +9769,7 @@ Leviticus 14:57
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 15:1
+Levit 15:1
 0 silluq_clause
   1 zaqef_phrase
     munach zaqef 
@@ -9778,7 +9778,7 @@ Leviticus 15:1
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 15:2
+Levit 15:2
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9805,7 +9805,7 @@ Leviticus 15:2
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 15:3
+Levit 15:3
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -9832,7 +9832,7 @@ Leviticus 15:3
         tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 15:4
+Levit 15:4
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -9853,7 +9853,7 @@ Leviticus 15:4
         mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 15:5
+Levit 15:5
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -9871,7 +9871,7 @@ Leviticus 15:5
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 15:6
+Levit 15:6
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9892,7 +9892,7 @@ Leviticus 15:6
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 15:7
+Levit 15:7
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -9907,7 +9907,7 @@ Leviticus 15:7
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 15:8
+Levit 15:8
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -9925,7 +9925,7 @@ Leviticus 15:8
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 15:9
+Levit 15:9
 0 silluq_clause
   1 tifcha_clause
     2 revia_phrase
@@ -9937,7 +9937,7 @@ Leviticus 15:9
         tifcha 
   1 silluq_phrase
     silluq 
-Leviticus 15:10
+Levit 15:10
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9964,7 +9964,7 @@ Leviticus 15:10
           mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 15:11
+Levit 15:11
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9985,7 +9985,7 @@ Leviticus 15:11
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 15:12
+Levit 15:12
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -10003,7 +10003,7 @@ Leviticus 15:12
         tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 15:13
+Levit 15:13
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10030,7 +10030,7 @@ Leviticus 15:13
         mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 15:14
+Levit 15:14
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10063,7 +10063,7 @@ Leviticus 15:14
         tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 15:15
+Levit 15:15
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10087,7 +10087,7 @@ Leviticus 15:15
         mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 15:16
+Levit 15:16
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -10105,7 +10105,7 @@ Leviticus 15:16
         tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 15:17
+Levit 15:17
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -10120,7 +10120,7 @@ Leviticus 15:17
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 15:18
+Levit 15:18
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -10141,7 +10141,7 @@ Leviticus 15:18
         tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 15:19
+Levit 15:19
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10168,7 +10168,7 @@ Leviticus 15:19
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 15:20
+Levit 15:20
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -10186,7 +10186,7 @@ Leviticus 15:20
         mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 15:21
+Levit 15:21
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -10201,7 +10201,7 @@ Leviticus 15:21
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 15:22
+Levit 15:22
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -10219,7 +10219,7 @@ Leviticus 15:22
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 15:23
+Levit 15:23
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -10240,7 +10240,7 @@ Leviticus 15:23
       tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 15:24
+Levit 15:24
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10270,7 +10270,7 @@ Leviticus 15:24
         mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 15:25
+Levit 15:25
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10306,7 +10306,7 @@ Leviticus 15:25
           tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 15:26
+Levit 15:26
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10336,7 +10336,7 @@ Leviticus 15:26
           tifcha 
         4 silluq_phrase
           silluq 
-Leviticus 15:27
+Levit 15:27
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -10351,7 +10351,7 @@ Leviticus 15:27
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 15:28
+Levit 15:28
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -10366,7 +10366,7 @@ Leviticus 15:28
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 15:29
+Levit 15:29
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10393,7 +10393,7 @@ Leviticus 15:29
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 15:30
+Levit 15:30
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10417,7 +10417,7 @@ Leviticus 15:30
         tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 15:31
+Levit 15:31
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -10435,7 +10435,7 @@ Leviticus 15:31
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 15:32
+Levit 15:32
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -10450,7 +10450,7 @@ Leviticus 15:32
         tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 15:33
+Levit 15:33
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10477,7 +10477,7 @@ Leviticus 15:33
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 16:1
+Levit 16:1
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10498,7 +10498,7 @@ Leviticus 16:1
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 16:2
+Levit 16:2
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -10543,7 +10543,7 @@ Leviticus 16:2
           tifcha 
         4 silluq_phrase
           silluq 
-Leviticus 16:3
+Levit 16:3
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -10561,7 +10561,7 @@ Leviticus 16:3
         tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 16:4
+Levit 16:4
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -10597,7 +10597,7 @@ Leviticus 16:4
           tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 16:5
+Levit 16:5
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10621,7 +10621,7 @@ Leviticus 16:5
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 16:6
+Levit 16:6
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -10636,7 +10636,7 @@ Leviticus 16:6
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 16:7
+Levit 16:7
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -10654,7 +10654,7 @@ Leviticus 16:7
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 16:8
+Levit 16:8
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -10675,7 +10675,7 @@ Leviticus 16:8
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 16:9
+Levit 16:9
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10696,7 +10696,7 @@ Leviticus 16:9
       tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 16:10
+Levit 16:10
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10723,7 +10723,7 @@ Leviticus 16:10
         tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 16:11
+Levit 16:11
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10747,7 +10747,7 @@ Leviticus 16:11
         mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 16:12
+Levit 16:12
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10774,7 +10774,7 @@ Leviticus 16:12
       tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 16:13
+Levit 16:13
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -10798,7 +10798,7 @@ Leviticus 16:13
           mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 16:14
+Levit 16:14
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10825,7 +10825,7 @@ Leviticus 16:14
           tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 16:15
+Levit 16:15
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10864,7 +10864,7 @@ Leviticus 16:15
           tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 16:16
+Levit 16:16
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10894,7 +10894,7 @@ Leviticus 16:16
           tifcha 
         4 silluq_phrase
           silluq 
-Leviticus 16:17
+Levit 16:17
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -10924,7 +10924,7 @@ Leviticus 16:17
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 16:18
+Levit 16:18
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -10954,7 +10954,7 @@ Leviticus 16:18
           mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 16:19
+Levit 16:19
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -10972,7 +10972,7 @@ Leviticus 16:19
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 16:20
+Levit 16:20
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10990,7 +10990,7 @@ Leviticus 16:20
       tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 16:21
+Levit 16:21
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -11032,7 +11032,7 @@ Leviticus 16:21
           mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 16:22
+Levit 16:22
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -11047,7 +11047,7 @@ Leviticus 16:22
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 16:23
+Levit 16:23
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11071,7 +11071,7 @@ Leviticus 16:23
       tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 16:24
+Levit 16:24
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11098,7 +11098,7 @@ Leviticus 16:24
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 16:25
+Levit 16:25
 0 silluq_clause
   1 tifcha_clause
     2 tevir_phrase
@@ -11107,7 +11107,7 @@ Leviticus 16:25
       mereka tifcha 
   1 silluq_phrase
     mereka silluq 
-Leviticus 16:26
+Levit 16:26
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11128,7 +11128,7 @@ Leviticus 16:26
       tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 16:27
+Levit 16:27
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11158,7 +11158,7 @@ Leviticus 16:27
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 16:28
+Levit 16:28
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -11176,7 +11176,7 @@ Leviticus 16:28
       tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 16:29
+Levit 16:29
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -11206,7 +11206,7 @@ Leviticus 16:29
           tifcha 
         4 silluq_phrase
           mereka silluq 
-Leviticus 16:30
+Levit 16:30
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -11227,7 +11227,7 @@ Leviticus 16:30
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 16:31
+Levit 16:31
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11245,7 +11245,7 @@ Leviticus 16:31
       tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 16:32
+Levit 16:32
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11272,7 +11272,7 @@ Leviticus 16:32
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 16:33
+Levit 16:33
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11296,7 +11296,7 @@ Leviticus 16:33
         mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 16:34
+Levit 16:34
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11329,13 +11329,13 @@ Leviticus 16:34
           mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 17:1
+Levit 17:1
 0 silluq_clause
   1 tifcha_phrase
     mereka tifcha 
   1 silluq_phrase
     mereka silluq 
-Leviticus 17:2
+Levit 17:2
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11362,7 +11362,7 @@ Leviticus 17:2
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 17:3
+Levit 17:3
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11392,7 +11392,7 @@ Leviticus 17:3
         tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 17:4
+Levit 17:4
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -11431,7 +11431,7 @@ Leviticus 17:4
           mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 17:5
+Levit 17:5
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -11470,7 +11470,7 @@ Leviticus 17:5
         tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 17:6
+Levit 17:6
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11491,7 +11491,7 @@ Leviticus 17:6
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 17:7
+Levit 17:7
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11518,7 +11518,7 @@ Leviticus 17:7
         mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 17:8
+Levit 17:8
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -11539,7 +11539,7 @@ Leviticus 17:8
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 17:9
+Levit 17:9
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11563,7 +11563,7 @@ Leviticus 17:9
         mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 17:10
+Levit 17:10
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11596,7 +11596,7 @@ Leviticus 17:10
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 17:11
+Levit 17:11
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -11623,7 +11623,7 @@ Leviticus 17:11
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 17:12
+Levit 17:12
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11644,7 +11644,7 @@ Leviticus 17:12
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 17:13
+Levit 17:13
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11680,7 +11680,7 @@ Leviticus 17:13
         tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 17:14
+Levit 17:14
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -11713,7 +11713,7 @@ Leviticus 17:14
         tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 17:15
+Levit 17:15
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11740,7 +11740,7 @@ Leviticus 17:15
         mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 17:16
+Levit 17:16
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11758,13 +11758,13 @@ Leviticus 17:16
       tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 18:1
+Levit 18:1
 0 silluq_clause
   1 tifcha_phrase
     mereka tifcha 
   1 silluq_phrase
     mereka silluq 
-Leviticus 18:2
+Levit 18:2
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11782,7 +11782,7 @@ Leviticus 18:2
       tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 18:3
+Levit 18:3
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -11806,7 +11806,7 @@ Leviticus 18:3
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 18:4
+Levit 18:4
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -11821,7 +11821,7 @@ Leviticus 18:4
       tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 18:5
+Levit 18:5
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11842,7 +11842,7 @@ Leviticus 18:5
       tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 18:6
+Levit 18:6
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11860,7 +11860,7 @@ Leviticus 18:6
       tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 18:7
+Levit 18:7
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -11878,7 +11878,7 @@ Leviticus 18:7
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 18:8
+Levit 18:8
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -11890,7 +11890,7 @@ Leviticus 18:8
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 18:9
+Levit 18:9
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11911,7 +11911,7 @@ Leviticus 18:9
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 18:10
+Levit 18:10
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11929,7 +11929,7 @@ Leviticus 18:10
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 18:11
+Levit 18:11
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11947,7 +11947,7 @@ Leviticus 18:11
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 18:12
+Levit 18:12
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -11959,7 +11959,7 @@ Leviticus 18:12
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 18:13
+Levit 18:13
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -11971,7 +11971,7 @@ Leviticus 18:13
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 18:14
+Levit 18:14
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -11989,7 +11989,7 @@ Leviticus 18:14
         tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 18:15
+Levit 18:15
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -12007,7 +12007,7 @@ Leviticus 18:15
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 18:16
+Levit 18:16
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -12019,7 +12019,7 @@ Leviticus 18:16
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 18:17
+Levit 18:17
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -12034,7 +12034,7 @@ Leviticus 18:17
         tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 18:20
+Levit 18:20
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12049,7 +12049,7 @@ Leviticus 18:20
         atnach 
   1 silluq_phrase
     silluq 
-Leviticus 18:21
+Levit 18:21
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -12064,7 +12064,7 @@ Leviticus 18:21
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 18:22
+Levit 18:22
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -12079,7 +12079,7 @@ Leviticus 18:22
       tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 18:23
+Levit 18:23
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -12103,7 +12103,7 @@ Leviticus 18:23
           tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 18:24
+Levit 18:24
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -12121,7 +12121,7 @@ Leviticus 18:24
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 18:25
+Levit 18:25
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -12136,7 +12136,7 @@ Leviticus 18:25
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 18:26
+Levit 18:26
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12163,7 +12163,7 @@ Leviticus 18:26
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 18:27
+Levit 18:27
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12181,7 +12181,7 @@ Leviticus 18:27
       tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 18:28
+Levit 18:28
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12202,7 +12202,7 @@ Leviticus 18:28
         tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 18:29
+Levit 18:29
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12223,7 +12223,7 @@ Leviticus 18:29
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 18:30
+Levit 18:30
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12247,7 +12247,7 @@ Leviticus 18:30
       tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 19:1
+Levit 19:1
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12265,7 +12265,7 @@ Leviticus 19:1
       tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 19:4
+Levit 19:4
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12289,7 +12289,7 @@ Leviticus 19:4
       tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 19:5
+Levit 19:5
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -12304,7 +12304,7 @@ Leviticus 19:5
       tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 19:6
+Levit 19:6
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -12325,7 +12325,7 @@ Leviticus 19:6
         tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 19:7
+Levit 19:7
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -12340,7 +12340,7 @@ Leviticus 19:7
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 19:8
+Levit 19:8
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12361,7 +12361,7 @@ Leviticus 19:8
         mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 19:9
+Levit 19:9
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12382,7 +12382,7 @@ Leviticus 19:9
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 19:10
+Levit 19:10
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12406,7 +12406,7 @@ Leviticus 19:10
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 19:11
+Levit 19:11
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -12418,7 +12418,7 @@ Leviticus 19:11
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 19:12
+Levit 19:12
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -12433,7 +12433,7 @@ Leviticus 19:12
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 19:13
+Levit 19:13
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -12451,7 +12451,7 @@ Leviticus 19:13
         tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 19:14
+Levit 19:14
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -12469,7 +12469,7 @@ Leviticus 19:14
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 19:15
+Levit 19:15
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12490,7 +12490,7 @@ Leviticus 19:15
       tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 19:16
+Levit 19:16
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12508,7 +12508,7 @@ Leviticus 19:16
       tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 19:17
+Levit 19:17
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -12526,7 +12526,7 @@ Leviticus 19:17
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 19:18
+Levit 19:18
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12544,7 +12544,7 @@ Leviticus 19:18
       tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 19:19
+Levit 19:19
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -12574,7 +12574,7 @@ Leviticus 19:19
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 19:20
+Levit 19:20
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12610,7 +12610,7 @@ Leviticus 19:20
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 19:21
+Levit 19:21
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12628,7 +12628,7 @@ Leviticus 19:21
       tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 19:22
+Levit 19:22
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12652,7 +12652,7 @@ Leviticus 19:22
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 19:23
+Levit 19:23
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12679,7 +12679,7 @@ Leviticus 19:23
           tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 19:24
+Levit 19:24
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12697,7 +12697,7 @@ Leviticus 19:24
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 19:25
+Levit 19:25
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12718,7 +12718,7 @@ Leviticus 19:25
       tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 19:26
+Levit 19:26
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -12730,7 +12730,7 @@ Leviticus 19:26
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 19:27
+Levit 19:27
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -12748,7 +12748,7 @@ Leviticus 19:27
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 19:28
+Levit 19:28
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12772,7 +12772,7 @@ Leviticus 19:28
       tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 19:29
+Levit 19:29
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -12787,7 +12787,7 @@ Leviticus 19:29
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 19:30
+Levit 19:30
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -12802,7 +12802,7 @@ Leviticus 19:30
       tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 19:31
+Levit 19:31
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12820,7 +12820,7 @@ Leviticus 19:31
       tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 19:32
+Levit 19:32
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12838,7 +12838,7 @@ Leviticus 19:32
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 19:33
+Levit 19:33
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -12853,7 +12853,7 @@ Leviticus 19:33
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 19:34
+Levit 19:34
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12880,7 +12880,7 @@ Leviticus 19:34
       tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 19:35
+Levit 19:35
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -12895,7 +12895,7 @@ Leviticus 19:35
         tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 19:36
+Levit 19:36
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -12919,7 +12919,7 @@ Leviticus 19:36
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 19:37
+Levit 19:37
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12937,13 +12937,13 @@ Leviticus 19:37
       tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 20:1
+Levit 20:1
 0 silluq_clause
   1 tifcha_phrase
     mereka tifcha 
   1 silluq_phrase
     mereka silluq 
-Leviticus 20:2
+Levit 20:2
 0 silluq_clause
   1 atnach_clause
     2 segolta_phrase
@@ -12970,7 +12970,7 @@ Leviticus 20:2
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 20:3
+Levit 20:3
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13006,7 +13006,7 @@ Leviticus 20:3
           tifcha 
         4 silluq_phrase
           mereka silluq 
-Leviticus 20:4
+Levit 20:4
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13030,7 +13030,7 @@ Leviticus 20:4
       tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 20:5
+Levit 20:5
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -13057,7 +13057,7 @@ Leviticus 20:5
           mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 20:6
+Levit 20:6
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13084,7 +13084,7 @@ Leviticus 20:6
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 20:7
+Levit 20:7
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -13102,7 +13102,7 @@ Leviticus 20:7
         mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 20:8
+Levit 20:8
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13120,7 +13120,7 @@ Leviticus 20:8
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 20:9
+Levit 20:9
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -13141,7 +13141,7 @@ Leviticus 20:9
         tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 20:10
+Levit 20:10
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13162,7 +13162,7 @@ Leviticus 20:10
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 20:11
+Levit 20:11
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13183,7 +13183,7 @@ Leviticus 20:11
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 20:12
+Levit 20:12
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13204,7 +13204,7 @@ Leviticus 20:12
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 20:13
+Levit 20:13
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13225,7 +13225,7 @@ Leviticus 20:13
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 20:14
+Levit 20:14
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -13252,7 +13252,7 @@ Leviticus 20:14
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 20:15
+Levit 20:15
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -13270,7 +13270,7 @@ Leviticus 20:15
       tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 20:16
+Levit 20:16
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13291,7 +13291,7 @@ Leviticus 20:16
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 20:17
+Levit 20:17
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13324,7 +13324,7 @@ Leviticus 20:17
         tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 20:18
+Levit 20:18
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13354,7 +13354,7 @@ Leviticus 20:18
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 20:19
+Levit 20:19
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -13372,7 +13372,7 @@ Leviticus 20:19
         tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 20:20
+Levit 20:20
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13393,7 +13393,7 @@ Leviticus 20:20
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 20:21
+Levit 20:21
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -13414,7 +13414,7 @@ Leviticus 20:21
         tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 20:22
+Levit 20:22
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13444,7 +13444,7 @@ Leviticus 20:22
           tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 20:23
+Levit 20:23
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13468,7 +13468,7 @@ Leviticus 20:23
         tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 20:24
+Levit 20:24
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -13507,7 +13507,7 @@ Leviticus 20:24
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 20:25
+Levit 20:25
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13540,7 +13540,7 @@ Leviticus 20:25
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 20:26
+Levit 20:26
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13561,7 +13561,7 @@ Leviticus 20:26
         tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 20:27
+Levit 20:27
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -13582,7 +13582,7 @@ Leviticus 20:27
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 21:1
+Levit 21:1
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13603,7 +13603,7 @@ Leviticus 21:1
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 21:2
+Levit 21:2
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13624,7 +13624,7 @@ Leviticus 21:2
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 21:3
+Levit 21:3
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13642,7 +13642,7 @@ Leviticus 21:3
       tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 21:4
+Levit 21:4
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -13654,7 +13654,7 @@ Leviticus 21:4
       mayela 
     2 silluq_phrase
       silluq 
-Leviticus 21:5
+Levit 21:5
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13675,7 +13675,7 @@ Leviticus 21:5
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 21:6
+Levit 21:6
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13702,7 +13702,7 @@ Leviticus 21:6
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 21:7
+Levit 21:7
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13723,7 +13723,7 @@ Leviticus 21:7
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 21:8
+Levit 21:8
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -13747,7 +13747,7 @@ Leviticus 21:8
           mereka tifcha 
         4 silluq_phrase
           silluq 
-Leviticus 21:9
+Levit 21:9
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13771,7 +13771,7 @@ Leviticus 21:9
         tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 21:10
+Levit 21:10
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13798,7 +13798,7 @@ Leviticus 21:10
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 21:11
+Levit 21:11
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -13813,7 +13813,7 @@ Leviticus 21:11
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 21:12
+Levit 21:12
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13843,7 +13843,7 @@ Leviticus 21:12
         tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 21:13
+Levit 21:13
 0 silluq_clause
   1 zaqef_phrase
     zaqefgadol 
@@ -13852,7 +13852,7 @@ Leviticus 21:13
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 21:14
+Levit 21:14
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13873,7 +13873,7 @@ Leviticus 21:14
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 21:15
+Levit 21:15
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -13888,13 +13888,13 @@ Leviticus 21:15
         mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 21:16
+Levit 21:16
 0 silluq_clause
   1 tifcha_phrase
     mereka tifcha 
   1 silluq_phrase
     mereka silluq 
-Leviticus 21:17
+Levit 21:17
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -13921,7 +13921,7 @@ Leviticus 21:17
           tifcha 
         4 silluq_phrase
           mereka silluq 
-Leviticus 21:18
+Levit 21:18
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -13942,7 +13942,7 @@ Leviticus 21:18
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 21:19
+Levit 21:19
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -13957,7 +13957,7 @@ Leviticus 21:19
       tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 21:20
+Levit 21:20
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -13978,7 +13978,7 @@ Leviticus 21:20
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 21:21
+Levit 21:21
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -14014,7 +14014,7 @@ Leviticus 21:21
           mereka tifcha 
         4 silluq_phrase
           silluq 
-Leviticus 21:22
+Levit 21:22
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -14029,7 +14029,7 @@ Leviticus 21:22
       tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 21:23
+Levit 21:23
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -14059,7 +14059,7 @@ Leviticus 21:23
           mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 21:24
+Levit 21:24
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -14074,13 +14074,13 @@ Leviticus 21:24
       tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 22:1
+Levit 22:1
 0 silluq_clause
   1 tifcha_phrase
     mereka tifcha 
   1 silluq_phrase
     mereka silluq 
-Leviticus 22:2
+Levit 22:2
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -14107,7 +14107,7 @@ Leviticus 22:2
         tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 22:3
+Levit 22:3
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -14146,7 +14146,7 @@ Leviticus 22:3
         tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 22:4
+Levit 22:4
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -14185,7 +14185,7 @@ Leviticus 22:4
           mereka tifcha 
         4 silluq_phrase
           silluq 
-Leviticus 22:5
+Levit 22:5
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -14209,7 +14209,7 @@ Leviticus 22:5
         tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 22:6
+Levit 22:6
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -14236,7 +14236,7 @@ Leviticus 22:6
           mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 22:7
+Levit 22:7
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -14254,7 +14254,7 @@ Leviticus 22:7
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 22:8
+Levit 22:8
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -14269,7 +14269,7 @@ Leviticus 22:8
       tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 22:9
+Levit 22:9
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -14290,7 +14290,7 @@ Leviticus 22:9
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 22:10
+Levit 22:10
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -14305,7 +14305,7 @@ Leviticus 22:10
         tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 22:11
+Levit 22:11
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -14329,7 +14329,7 @@ Leviticus 22:11
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 22:12
+Levit 22:12
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -14347,7 +14347,7 @@ Leviticus 22:12
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 22:13
+Levit 22:13
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -14380,7 +14380,7 @@ Leviticus 22:13
       tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 22:14
+Levit 22:14
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -14401,7 +14401,7 @@ Leviticus 22:14
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 22:15
+Levit 22:15
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -14416,7 +14416,7 @@ Leviticus 22:15
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 22:16
+Levit 22:16
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -14437,13 +14437,13 @@ Leviticus 22:16
         mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 22:17
+Levit 22:17
 0 silluq_clause
   1 tifcha_phrase
     mereka tifcha 
   1 silluq_phrase
     mereka silluq 
-Leviticus 22:18
+Levit 22:18
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -14482,7 +14482,7 @@ Leviticus 22:18
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 22:19
+Levit 22:19
 0 silluq_clause
   1 atnach_phrase
     atnach 
@@ -14497,7 +14497,7 @@ Leviticus 22:19
           tifcha 
         4 silluq_phrase
           silluq 
-Leviticus 22:20
+Levit 22:20
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -14512,7 +14512,7 @@ Leviticus 22:20
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 22:21
+Levit 22:21
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -14545,7 +14545,7 @@ Leviticus 22:21
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 22:22
+Levit 22:22
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -14575,7 +14575,7 @@ Leviticus 22:22
           tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 22:23
+Levit 22:23
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -14593,7 +14593,7 @@ Leviticus 22:23
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 22:24
+Levit 22:24
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -14611,7 +14611,7 @@ Leviticus 22:24
       tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 22:25
+Levit 22:25
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -14635,13 +14635,13 @@ Leviticus 22:25
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 22:26
+Levit 22:26
 0 silluq_clause
   1 tifcha_phrase
     mereka tifcha 
   1 silluq_phrase
     mereka silluq 
-Leviticus 22:27
+Levit 22:27
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -14671,7 +14671,7 @@ Leviticus 22:27
           mereka tifcha 
         4 silluq_phrase
           silluq 
-Leviticus 22:28
+Levit 22:28
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -14686,7 +14686,7 @@ Leviticus 22:28
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 22:29
+Levit 22:29
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -14698,7 +14698,7 @@ Leviticus 22:29
       tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 22:30
+Levit 22:30
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -14716,7 +14716,7 @@ Leviticus 22:30
       tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 22:31
+Levit 22:31
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -14734,7 +14734,7 @@ Leviticus 22:31
       tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 22:32
+Levit 22:32
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -14755,7 +14755,7 @@ Leviticus 22:32
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 22:33
+Levit 22:33
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -14773,13 +14773,13 @@ Leviticus 22:33
       tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 23:1
+Levit 23:1
 0 silluq_clause
   1 tifcha_phrase
     mereka tifcha 
   1 silluq_phrase
     mereka silluq 
-Leviticus 23:2
+Levit 23:2
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -14803,7 +14803,7 @@ Leviticus 23:2
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 23:3
+Levit 23:3
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -14836,7 +14836,7 @@ Leviticus 23:3
         tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 23:4
+Levit 23:4
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -14854,7 +14854,7 @@ Leviticus 23:4
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 23:5
+Levit 23:5
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -14872,7 +14872,7 @@ Leviticus 23:5
       tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 23:6
+Levit 23:6
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -14890,7 +14890,7 @@ Leviticus 23:6
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 23:7
+Levit 23:7
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -14908,7 +14908,7 @@ Leviticus 23:7
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 23:8
+Levit 23:8
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -14929,13 +14929,13 @@ Leviticus 23:8
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 23:9
+Levit 23:9
 0 silluq_clause
   1 tifcha_phrase
     mereka tifcha 
   1 silluq_phrase
     mereka silluq 
-Leviticus 23:10
+Levit 23:10
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -14968,7 +14968,7 @@ Leviticus 23:10
         mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 23:11
+Levit 23:11
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -14989,7 +14989,7 @@ Leviticus 23:11
         tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 23:12
+Levit 23:12
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -15007,7 +15007,7 @@ Leviticus 23:12
         tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 23:13
+Levit 23:13
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -15025,7 +15025,7 @@ Leviticus 23:13
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 23:14
+Levit 23:14
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -15061,7 +15061,7 @@ Leviticus 23:14
         tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 23:15
+Levit 23:15
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -15085,7 +15085,7 @@ Leviticus 23:15
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 23:16
+Levit 23:16
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -15106,7 +15106,7 @@ Leviticus 23:16
         mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 23:17
+Levit 23:17
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -15136,7 +15136,7 @@ Leviticus 23:17
       tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 23:18
+Levit 23:18
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -15172,7 +15172,7 @@ Leviticus 23:18
           mereka tifcha 
         4 silluq_phrase
           silluq 
-Leviticus 23:19
+Levit 23:19
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -15190,7 +15190,7 @@ Leviticus 23:19
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 23:20
+Levit 23:20
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -15214,7 +15214,7 @@ Leviticus 23:20
         mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 23:21
+Levit 23:21
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -15244,7 +15244,7 @@ Leviticus 23:21
         mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 23:22
+Levit 23:22
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -15277,13 +15277,13 @@ Leviticus 23:22
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 23:23
+Levit 23:23
 0 silluq_clause
   1 tifcha_phrase
     mereka tifcha 
   1 silluq_phrase
     mereka silluq 
-Leviticus 23:24
+Levit 23:24
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -15310,7 +15310,7 @@ Leviticus 23:24
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 23:25
+Levit 23:25
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -15322,13 +15322,13 @@ Leviticus 23:25
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 23:26
+Levit 23:26
 0 silluq_clause
   1 tifcha_phrase
     mereka tifcha 
   1 silluq_phrase
     mereka silluq 
-Leviticus 23:27
+Levit 23:27
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -15355,7 +15355,7 @@ Leviticus 23:27
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 23:28
+Levit 23:28
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -15382,7 +15382,7 @@ Leviticus 23:28
           tifcha 
         4 silluq_phrase
           mereka silluq 
-Leviticus 23:29
+Levit 23:29
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -15400,7 +15400,7 @@ Leviticus 23:29
       tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 23:30
+Levit 23:30
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -15424,7 +15424,7 @@ Leviticus 23:30
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 23:31
+Levit 23:31
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -15442,7 +15442,7 @@ Leviticus 23:31
         tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 23:32
+Levit 23:32
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -15469,13 +15469,13 @@ Leviticus 23:32
           tifcha 
         4 silluq_phrase
           silluq 
-Leviticus 23:33
+Levit 23:33
 0 silluq_clause
   1 tifcha_phrase
     mereka tifcha 
   1 silluq_phrase
     mereka silluq 
-Leviticus 23:34
+Levit 23:34
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -15505,7 +15505,7 @@ Leviticus 23:34
           mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 23:35
+Levit 23:35
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -15517,7 +15517,7 @@ Leviticus 23:35
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 23:36
+Levit 23:36
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -15544,7 +15544,7 @@ Leviticus 23:36
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 23:37
+Levit 23:37
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -15571,7 +15571,7 @@ Leviticus 23:37
           mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 23:38
+Levit 23:38
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -15595,7 +15595,7 @@ Leviticus 23:38
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 23:39
+Levit 23:39
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -15628,7 +15628,7 @@ Leviticus 23:39
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 23:40
+Levit 23:40
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -15658,7 +15658,7 @@ Leviticus 23:40
           mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 23:41
+Levit 23:41
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -15682,7 +15682,7 @@ Leviticus 23:41
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 23:42
+Levit 23:42
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -15700,7 +15700,7 @@ Leviticus 23:42
         tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 23:43
+Levit 23:43
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -15727,7 +15727,7 @@ Leviticus 23:43
       tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 23:44
+Levit 23:44
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -15742,13 +15742,13 @@ Leviticus 23:44
       tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 24:1
+Levit 24:1
 0 silluq_clause
   1 tifcha_phrase
     mereka tifcha 
   1 silluq_phrase
     mereka silluq 
-Leviticus 24:2
+Levit 24:2
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -15772,7 +15772,7 @@ Leviticus 24:2
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 24:3
+Levit 24:3
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -15796,7 +15796,7 @@ Leviticus 24:3
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 24:4
+Levit 24:4
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -15814,7 +15814,7 @@ Leviticus 24:4
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 24:5
+Levit 24:5
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -15838,7 +15838,7 @@ Leviticus 24:5
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 24:6
+Levit 24:6
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -15856,7 +15856,7 @@ Leviticus 24:6
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 24:7
+Levit 24:7
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -15874,7 +15874,7 @@ Leviticus 24:7
         tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 24:8
+Levit 24:8
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -15895,7 +15895,7 @@ Leviticus 24:8
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 24:9
+Levit 24:9
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -15919,7 +15919,7 @@ Leviticus 24:9
         mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 24:10
+Levit 24:10
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -15955,7 +15955,7 @@ Leviticus 24:10
           tifcha 
         4 silluq_phrase
           silluq 
-Leviticus 24:11
+Levit 24:11
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -15979,7 +15979,7 @@ Leviticus 24:11
         mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 24:12
+Levit 24:12
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -15991,13 +15991,13 @@ Leviticus 24:12
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 24:13
+Levit 24:13
 0 silluq_clause
   1 tifcha_phrase
     mereka tifcha 
   1 silluq_phrase
     mereka silluq 
-Leviticus 24:14
+Levit 24:14
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16021,7 +16021,7 @@ Leviticus 24:14
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 24:15
+Levit 24:15
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -16036,7 +16036,7 @@ Leviticus 24:15
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 24:16
+Levit 24:16
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16060,7 +16060,7 @@ Leviticus 24:16
         tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 24:17
+Levit 24:17
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -16075,7 +16075,7 @@ Leviticus 24:17
       tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 24:18
+Levit 24:18
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -16087,7 +16087,7 @@ Leviticus 24:18
       tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 24:19
+Levit 24:19
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -16105,7 +16105,7 @@ Leviticus 24:19
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 24:20
+Levit 24:20
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16135,7 +16135,7 @@ Leviticus 24:20
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 24:21
+Levit 24:21
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -16147,7 +16147,7 @@ Leviticus 24:21
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 24:22
+Levit 24:22
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16168,7 +16168,7 @@ Leviticus 24:22
         mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 24:23
+Levit 24:23
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -16201,7 +16201,7 @@ Leviticus 24:23
           mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 25:1
+Levit 25:1
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -16213,7 +16213,7 @@ Leviticus 25:1
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 25:2
+Levit 25:2
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16243,7 +16243,7 @@ Leviticus 25:2
         tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 25:3
+Levit 25:3
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16261,7 +16261,7 @@ Leviticus 25:3
       tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 25:4
+Levit 25:4
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16288,7 +16288,7 @@ Leviticus 25:4
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 25:5
+Levit 25:5
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16306,7 +16306,7 @@ Leviticus 25:5
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 25:6
+Levit 25:6
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16333,7 +16333,7 @@ Leviticus 25:6
         tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 25:7
+Levit 25:7
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -16348,7 +16348,7 @@ Leviticus 25:7
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 25:8
+Levit 25:8
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16381,7 +16381,7 @@ Leviticus 25:8
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 25:9
+Levit 25:9
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16408,7 +16408,7 @@ Leviticus 25:9
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 25:10
+Levit 25:10
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16447,7 +16447,7 @@ Leviticus 25:10
           mereka tifcha 
         4 silluq_phrase
           silluq 
-Leviticus 25:11
+Levit 25:11
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -16474,7 +16474,7 @@ Leviticus 25:11
           mereka tifcha 
         4 silluq_phrase
           silluq 
-Leviticus 25:12
+Levit 25:12
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16495,7 +16495,7 @@ Leviticus 25:12
         tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 25:13
+Levit 25:13
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -16510,7 +16510,7 @@ Leviticus 25:13
         tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 25:14
+Levit 25:14
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16528,7 +16528,7 @@ Leviticus 25:14
       tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 25:15
+Levit 25:15
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16546,7 +16546,7 @@ Leviticus 25:15
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 25:16
+Levit 25:16
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16582,7 +16582,7 @@ Leviticus 25:16
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 25:17
+Levit 25:17
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16603,7 +16603,7 @@ Leviticus 25:17
         mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 25:18
+Levit 25:18
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16621,7 +16621,7 @@ Leviticus 25:18
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 25:19
+Levit 25:19
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16639,7 +16639,7 @@ Leviticus 25:19
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 25:20
+Levit 25:20
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -16660,7 +16660,7 @@ Leviticus 25:20
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 25:21
+Levit 25:21
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16684,7 +16684,7 @@ Leviticus 25:21
         tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 25:22
+Levit 25:22
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16717,7 +16717,7 @@ Leviticus 25:22
         tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 25:23
+Levit 25:23
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16741,7 +16741,7 @@ Leviticus 25:23
         tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 25:24
+Levit 25:24
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -16753,7 +16753,7 @@ Leviticus 25:24
       tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 25:25
+Levit 25:25
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -16777,7 +16777,7 @@ Leviticus 25:25
           tifcha 
         4 silluq_phrase
           mereka silluq 
-Leviticus 25:26
+Levit 25:26
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -16798,7 +16798,7 @@ Leviticus 25:26
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 25:27
+Levit 25:27
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16822,7 +16822,7 @@ Leviticus 25:27
       tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 25:28
+Levit 25:28
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -16861,7 +16861,7 @@ Leviticus 25:28
         tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 25:29
+Levit 25:29
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16888,7 +16888,7 @@ Leviticus 25:29
       tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 25:30
+Levit 25:30
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -16921,7 +16921,7 @@ Leviticus 25:30
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 25:31
+Levit 25:31
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16948,7 +16948,7 @@ Leviticus 25:31
         tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 25:32
+Levit 25:32
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16966,7 +16966,7 @@ Leviticus 25:32
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 25:33
+Levit 25:33
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16999,7 +16999,7 @@ Leviticus 25:33
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 25:34
+Levit 25:34
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -17017,7 +17017,7 @@ Leviticus 25:34
         tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 25:35
+Levit 25:35
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -17038,7 +17038,7 @@ Leviticus 25:35
           tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 25:36
+Levit 25:36
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17056,7 +17056,7 @@ Leviticus 25:36
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 25:37
+Levit 25:37
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -17071,7 +17071,7 @@ Leviticus 25:37
       tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 25:38
+Levit 25:38
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17098,7 +17098,7 @@ Leviticus 25:38
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 25:39
+Levit 25:39
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -17113,7 +17113,7 @@ Leviticus 25:39
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 25:40
+Levit 25:40
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -17125,7 +17125,7 @@ Leviticus 25:40
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 25:41
+Levit 25:41
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17149,7 +17149,7 @@ Leviticus 25:41
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 25:42
+Levit 25:42
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -17164,7 +17164,7 @@ Leviticus 25:42
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 25:43
+Levit 25:43
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -17176,7 +17176,7 @@ Leviticus 25:43
       tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 25:44
+Levit 25:44
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -17197,7 +17197,7 @@ Leviticus 25:44
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 25:45
+Levit 25:45
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17227,7 +17227,7 @@ Leviticus 25:45
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 25:46
+Levit 25:46
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17254,7 +17254,7 @@ Leviticus 25:46
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 25:47
+Levit 25:47
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17284,7 +17284,7 @@ Leviticus 25:47
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 25:48
+Levit 25:48
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -17299,7 +17299,7 @@ Leviticus 25:48
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 25:49
+Levit 25:49
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17323,7 +17323,7 @@ Leviticus 25:49
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 25:50
+Levit 25:50
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17356,7 +17356,7 @@ Leviticus 25:50
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 25:51
+Levit 25:51
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -17374,7 +17374,7 @@ Leviticus 25:51
         tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 25:52
+Levit 25:52
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -17395,7 +17395,7 @@ Leviticus 25:52
         tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 25:53
+Levit 25:53
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -17410,7 +17410,7 @@ Leviticus 25:53
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 25:54
+Levit 25:54
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -17428,7 +17428,7 @@ Leviticus 25:54
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 25:55
+Levit 25:55
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17449,7 +17449,7 @@ Leviticus 25:55
       tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 26:1
+Levit 26:1
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17485,7 +17485,7 @@ Leviticus 26:1
         mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 26:2
+Levit 26:2
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -17500,7 +17500,7 @@ Leviticus 26:2
       tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 26:3
+Levit 26:3
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -17515,7 +17515,7 @@ Leviticus 26:3
         tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 26:4
+Levit 26:4
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -17533,7 +17533,7 @@ Leviticus 26:4
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 26:5
+Levit 26:5
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17557,7 +17557,7 @@ Leviticus 26:5
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 26:6
+Levit 26:6
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17584,7 +17584,7 @@ Leviticus 26:6
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 26:7
+Levit 26:7
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -17602,7 +17602,7 @@ Leviticus 26:7
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 26:10
+Levit 26:10
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -17617,7 +17617,7 @@ Leviticus 26:10
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 26:11
+Levit 26:11
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -17629,7 +17629,7 @@ Leviticus 26:11
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 26:12
+Levit 26:12
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17647,7 +17647,7 @@ Leviticus 26:12
       tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 26:13
+Levit 26:13
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17677,7 +17677,7 @@ Leviticus 26:13
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 26:14
+Levit 26:14
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -17692,7 +17692,7 @@ Leviticus 26:14
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 26:15
+Levit 26:15
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -17713,7 +17713,7 @@ Leviticus 26:15
         tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 26:16
+Levit 26:16
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17743,7 +17743,7 @@ Leviticus 26:16
         tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 26:17
+Levit 26:17
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17767,7 +17767,7 @@ Leviticus 26:17
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 26:18
+Levit 26:18
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -17788,7 +17788,7 @@ Leviticus 26:18
         tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 26:19
+Levit 26:19
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -17806,7 +17806,7 @@ Leviticus 26:19
         tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 26:20
+Levit 26:20
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -17827,7 +17827,7 @@ Leviticus 26:20
           mereka tifcha 
         4 silluq_phrase
           silluq 
-Leviticus 26:21
+Levit 26:21
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17851,7 +17851,7 @@ Leviticus 26:21
         tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 26:22
+Levit 26:22
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17878,7 +17878,7 @@ Leviticus 26:22
       tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 26:23
+Levit 26:23
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -17893,7 +17893,7 @@ Leviticus 26:23
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 26:24
+Levit 26:24
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -17914,7 +17914,7 @@ Leviticus 26:24
         tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 26:25
+Levit 26:25
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17944,7 +17944,7 @@ Leviticus 26:25
         tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 26:26
+Levit 26:26
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -17971,7 +17971,7 @@ Leviticus 26:26
       tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 26:27
+Levit 26:27
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -17986,7 +17986,7 @@ Leviticus 26:27
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 26:28
+Levit 26:28
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -18004,7 +18004,7 @@ Leviticus 26:28
         tifcha 
       3 silluq_phrase
         ERROR 
-Leviticus 26:29
+Levit 26:29
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -18016,7 +18016,7 @@ Leviticus 26:29
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 26:30
+Levit 26:30
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -18046,7 +18046,7 @@ Leviticus 26:30
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 26:31
+Levit 26:31
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -18067,7 +18067,7 @@ Leviticus 26:31
         tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 26:32
+Levit 26:32
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -18085,7 +18085,7 @@ Leviticus 26:32
         tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 26:33
+Levit 26:33
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -18109,7 +18109,7 @@ Leviticus 26:33
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 26:34
+Levit 26:34
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -18139,7 +18139,7 @@ Leviticus 26:34
         tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 26:35
+Levit 26:35
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -18154,7 +18154,7 @@ Leviticus 26:35
         tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 26:36
+Levit 26:36
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -18187,7 +18187,7 @@ Leviticus 26:36
           tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 26:37
+Levit 26:37
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -18208,7 +18208,7 @@ Leviticus 26:37
         tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 26:38
+Levit 26:38
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -18223,7 +18223,7 @@ Leviticus 26:38
         tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 26:39
+Levit 26:39
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -18247,7 +18247,7 @@ Leviticus 26:39
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 26:40
+Levit 26:40
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -18268,7 +18268,7 @@ Leviticus 26:40
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 26:41
+Levit 26:41
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -18301,7 +18301,7 @@ Leviticus 26:41
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 26:42
+Levit 26:42
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -18319,7 +18319,7 @@ Leviticus 26:42
         tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 26:43
+Levit 26:43
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -18349,7 +18349,7 @@ Leviticus 26:43
           tifcha 
         4 silluq_phrase
           mereka silluq 
-Leviticus 26:44
+Levit 26:44
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -18379,7 +18379,7 @@ Leviticus 26:44
         mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 26:45
+Levit 26:45
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -18400,7 +18400,7 @@ Leviticus 26:45
           tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 26:46
+Levit 26:46
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -18430,13 +18430,13 @@ Leviticus 26:46
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 27:1
+Levit 27:1
 0 silluq_clause
   1 tifcha_phrase
     mereka tifcha 
   1 silluq_phrase
     mereka silluq 
-Leviticus 27:2
+Levit 27:2
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -18460,7 +18460,7 @@ Leviticus 27:2
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 27:3
+Levit 27:3
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -18490,7 +18490,7 @@ Leviticus 27:3
           mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 27:4
+Levit 27:4
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -18502,7 +18502,7 @@ Leviticus 27:4
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 27:5
+Levit 27:5
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -18529,7 +18529,7 @@ Leviticus 27:5
       tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 27:6
+Levit 27:6
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -18559,7 +18559,7 @@ Leviticus 27:6
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 27:7
+Levit 27:7
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -18583,7 +18583,7 @@ Leviticus 27:7
       tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 27:8
+Levit 27:8
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -18616,7 +18616,7 @@ Leviticus 27:8
         tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 27:9
+Levit 27:9
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -18637,7 +18637,7 @@ Leviticus 27:9
         tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 27:10
+Levit 27:10
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -18661,7 +18661,7 @@ Leviticus 27:10
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 27:11
+Levit 27:11
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -18685,7 +18685,7 @@ Leviticus 27:11
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 27:12
+Levit 27:12
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -18703,7 +18703,7 @@ Leviticus 27:12
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 27:13
+Levit 27:13
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -18715,7 +18715,7 @@ Leviticus 27:13
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 27:14
+Levit 27:14
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -18745,7 +18745,7 @@ Leviticus 27:14
         tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 27:15
+Levit 27:15
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -18766,7 +18766,7 @@ Leviticus 27:15
         tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 27:16
+Levit 27:16
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -18796,7 +18796,7 @@ Leviticus 27:16
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 27:17
+Levit 27:17
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -18808,7 +18808,7 @@ Leviticus 27:17
       tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 27:18
+Levit 27:18
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -18838,7 +18838,7 @@ Leviticus 27:18
       tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 27:19
+Levit 27:19
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -18862,7 +18862,7 @@ Leviticus 27:19
         tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 27:20
+Levit 27:20
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -18880,7 +18880,7 @@ Leviticus 27:20
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 27:21
+Levit 27:21
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -18901,7 +18901,7 @@ Leviticus 27:21
       tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 27:22
+Levit 27:22
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -18922,7 +18922,7 @@ Leviticus 27:22
       tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 27:23
+Levit 27:23
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -18949,7 +18949,7 @@ Leviticus 27:23
         tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 27:24
+Levit 27:24
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -18967,7 +18967,7 @@ Leviticus 27:24
       tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 27:25
+Levit 27:25
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -18982,7 +18982,7 @@ Leviticus 27:25
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 27:26
+Levit 27:26
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -19006,7 +19006,7 @@ Leviticus 27:26
         tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 27:27
+Levit 27:27
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -19024,7 +19024,7 @@ Leviticus 27:27
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 27:28
+Levit 27:28
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -19054,7 +19054,7 @@ Leviticus 27:28
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 27:29
+Levit 27:29
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -19072,7 +19072,7 @@ Leviticus 27:29
       tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 27:30
+Levit 27:30
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -19093,7 +19093,7 @@ Leviticus 27:30
       tifcha 
     2 silluq_phrase
       silluq 
-Leviticus 27:31
+Levit 27:31
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -19108,7 +19108,7 @@ Leviticus 27:31
       tifcha 
     2 silluq_phrase
       mereka silluq 
-Leviticus 27:32
+Levit 27:32
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -19129,7 +19129,7 @@ Leviticus 27:32
         tifcha 
       3 silluq_phrase
         silluq 
-Leviticus 27:33
+Levit 27:33
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -19150,7 +19150,7 @@ Leviticus 27:33
           tifcha 
       3 silluq_phrase
         mereka silluq 
-Leviticus 27:34
+Levit 27:34
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause

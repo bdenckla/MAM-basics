@@ -1,4 +1,4 @@
-Deuteronomy 1:1
+Deuter 1:1
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -28,7 +28,7 @@ Deuteronomy 1:1
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 1:2
+Deuter 1:2
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -46,7 +46,7 @@ Deuteronomy 1:2
       tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 1:3
+Deuter 1:3
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -76,7 +76,7 @@ Deuteronomy 1:3
           tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 1:4
+Deuter 1:4
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -109,7 +109,7 @@ Deuteronomy 1:4
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 1:5
+Deuter 1:5
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -127,7 +127,7 @@ Deuteronomy 1:5
           mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 1:6
+Deuter 1:6
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -142,7 +142,7 @@ Deuteronomy 1:6
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 1:7
+Deuter 1:7
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -175,7 +175,7 @@ Deuteronomy 1:7
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 1:8
+Deuter 1:8
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -208,7 +208,7 @@ Deuteronomy 1:8
           tifcha 
         4 silluq_phrase
           silluq 
-Deuteronomy 1:9
+Deuter 1:9
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -223,7 +223,7 @@ Deuteronomy 1:9
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 1:10
+Deuter 1:10
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -238,7 +238,7 @@ Deuteronomy 1:10
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 1:11
+Deuter 1:11
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -262,7 +262,7 @@ Deuteronomy 1:11
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 1:12
+Deuter 1:12
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -274,7 +274,7 @@ Deuteronomy 1:12
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 1:13
+Deuter 1:13
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -292,7 +292,7 @@ Deuteronomy 1:13
       tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 1:14
+Deuter 1:14
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -307,7 +307,7 @@ Deuteronomy 1:14
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 1:15
+Deuter 1:15
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -346,7 +346,7 @@ Deuteronomy 1:15
         tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 1:16
+Deuter 1:16
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -370,7 +370,7 @@ Deuteronomy 1:16
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 1:17
+Deuter 1:17
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -406,7 +406,7 @@ Deuteronomy 1:17
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 1:18
+Deuter 1:18
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -418,7 +418,7 @@ Deuteronomy 1:18
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 1:19
+Deuter 1:19
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -454,7 +454,7 @@ Deuteronomy 1:19
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 1:20
+Deuter 1:20
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -472,7 +472,7 @@ Deuteronomy 1:20
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 1:21
+Deuter 1:21
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -502,7 +502,7 @@ Deuteronomy 1:21
         tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 1:22
+Deuter 1:22
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -547,7 +547,7 @@ Deuteronomy 1:22
             mereka tifcha 
           5 silluq_phrase
             silluq 
-Deuteronomy 1:23
+Deuter 1:23
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -565,7 +565,7 @@ Deuteronomy 1:23
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 1:24
+Deuter 1:24
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -583,7 +583,7 @@ Deuteronomy 1:24
       tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 1:25
+Deuter 1:25
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -610,7 +610,7 @@ Deuteronomy 1:25
           mereka tifcha 
         4 silluq_phrase
           mereka silluq 
-Deuteronomy 1:26
+Deuter 1:26
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -625,7 +625,7 @@ Deuteronomy 1:26
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 1:27
+Deuter 1:27
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -652,7 +652,7 @@ Deuteronomy 1:27
         mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 1:28
+Deuter 1:28
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -685,7 +685,7 @@ Deuteronomy 1:28
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 1:29
+Deuter 1:29
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -697,7 +697,7 @@ Deuteronomy 1:29
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 1:30
+Deuter 1:30
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -721,7 +721,7 @@ Deuteronomy 1:30
         tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 1:31
+Deuter 1:31
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -751,7 +751,7 @@ Deuteronomy 1:31
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 1:32
+Deuter 1:32
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -769,7 +769,7 @@ Deuteronomy 1:32
         tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 1:33
+Deuter 1:33
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -805,7 +805,7 @@ Deuteronomy 1:33
         tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 1:34
+Deuter 1:34
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -817,7 +817,7 @@ Deuteronomy 1:34
       tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 1:35
+Deuter 1:35
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -844,7 +844,7 @@ Deuteronomy 1:35
           tifcha 
         4 silluq_phrase
           silluq 
-Deuteronomy 1:36
+Deuter 1:36
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -871,7 +871,7 @@ Deuteronomy 1:36
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 1:37
+Deuter 1:37
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -889,7 +889,7 @@ Deuteronomy 1:37
       tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 1:38
+Deuter 1:38
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -910,7 +910,7 @@ Deuteronomy 1:38
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 1:39
+Deuter 1:39
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -940,7 +940,7 @@ Deuteronomy 1:39
         tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 1:40
+Deuter 1:40
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -952,7 +952,7 @@ Deuteronomy 1:40
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 1:41
+Deuter 1:41
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -991,7 +991,7 @@ Deuteronomy 1:41
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 1:42
+Deuter 1:42
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1024,7 +1024,7 @@ Deuteronomy 1:42
         tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 1:43
+Deuter 1:43
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -1042,7 +1042,7 @@ Deuteronomy 1:43
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 1:44
+Deuter 1:44
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1069,7 +1069,7 @@ Deuteronomy 1:44
         tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 1:45
+Deuter 1:45
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -1087,7 +1087,7 @@ Deuteronomy 1:45
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 1:46
+Deuter 1:46
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -1099,7 +1099,7 @@ Deuteronomy 1:46
       tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 2:1
+Deuter 2:1
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1123,13 +1123,13 @@ Deuteronomy 2:1
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 2:2
+Deuter 2:2
 0 silluq_clause
   1 tifcha_phrase
     mereka tifcha 
   1 silluq_phrase
     mereka silluq 
-Deuteronomy 2:3
+Deuter 2:3
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -1144,7 +1144,7 @@ Deuteronomy 2:3
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 2:4
+Deuter 2:4
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -1174,7 +1174,7 @@ Deuteronomy 2:4
         tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 2:5
+Deuter 2:5
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -1201,7 +1201,7 @@ Deuteronomy 2:5
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 2:6
+Deuter 2:6
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -1222,7 +1222,7 @@ Deuteronomy 2:6
         tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 2:7
+Deuter 2:7
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1261,7 +1261,7 @@ Deuteronomy 2:7
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 2:8
+Deuter 2:8
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1297,7 +1297,7 @@ Deuteronomy 2:8
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 2:9
+Deuter 2:9
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1333,7 +1333,7 @@ Deuteronomy 2:9
           mereka tifcha 
         4 silluq_phrase
           silluq 
-Deuteronomy 2:10
+Deuter 2:10
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -1348,7 +1348,7 @@ Deuteronomy 2:10
         tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 2:11
+Deuter 2:11
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -1366,7 +1366,7 @@ Deuteronomy 2:11
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 2:12
+Deuter 2:12
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -1405,7 +1405,7 @@ Deuteronomy 2:12
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 2:13
+Deuter 2:13
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -1423,7 +1423,7 @@ Deuteronomy 2:13
       tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 2:14
+Deuter 2:14
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1462,7 +1462,7 @@ Deuteronomy 2:14
           mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 2:15
+Deuter 2:15
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1480,7 +1480,7 @@ Deuteronomy 2:15
       tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 2:16
+Deuter 2:16
 0 silluq_clause
   1 tifcha_clause
     2 tevir_clause
@@ -1492,13 +1492,13 @@ Deuteronomy 2:16
       tifcha 
   1 silluq_phrase
     mereka silluq 
-Deuteronomy 2:17
+Deuter 2:17
 0 silluq_clause
   1 tifcha_phrase
     mereka tifcha 
   1 silluq_phrase
     mereka silluq 
-Deuteronomy 2:18
+Deuter 2:18
 0 silluq_clause
   1 tifcha_clause
     2 tevir_phrase
@@ -1507,7 +1507,7 @@ Deuteronomy 2:18
       mereka tifcha 
   1 silluq_phrase
     silluq 
-Deuteronomy 2:19
+Deuter 2:19
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1537,7 +1537,7 @@ Deuteronomy 2:19
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 2:20
+Deuter 2:20
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -1558,7 +1558,7 @@ Deuteronomy 2:20
           mereka tifcha 
         4 silluq_phrase
           silluq 
-Deuteronomy 2:21
+Deuter 2:21
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -1579,7 +1579,7 @@ Deuteronomy 2:21
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 2:22
+Deuter 2:22
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1609,7 +1609,7 @@ Deuteronomy 2:22
           tifcha 
         4 silluq_phrase
           mereka silluq 
-Deuteronomy 2:23
+Deuter 2:23
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -1630,7 +1630,7 @@ Deuteronomy 2:23
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 2:24
+Deuter 2:24
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -1657,7 +1657,7 @@ Deuteronomy 2:24
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 2:25
+Deuter 2:25
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1693,7 +1693,7 @@ Deuteronomy 2:25
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 2:26
+Deuter 2:26
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1711,7 +1711,7 @@ Deuteronomy 2:26
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 2:27
+Deuter 2:27
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -1726,7 +1726,7 @@ Deuteronomy 2:27
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 2:28
+Deuter 2:28
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1747,7 +1747,7 @@ Deuteronomy 2:28
       tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 2:29
+Deuter 2:29
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1783,7 +1783,7 @@ Deuteronomy 2:29
           mereka tifcha 
         4 silluq_phrase
           mereka silluq 
-Deuteronomy 2:30
+Deuter 2:30
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1819,7 +1819,7 @@ Deuteronomy 2:30
           mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 2:31
+Deuter 2:31
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1849,7 +1849,7 @@ Deuteronomy 2:31
         tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 2:32
+Deuter 2:32
 0 silluq_clause
   1 tifcha_clause
     2 tevir_clause
@@ -1861,7 +1861,7 @@ Deuteronomy 2:32
       tifcha 
   1 silluq_phrase
     silluq 
-Deuteronomy 2:33
+Deuter 2:33
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -1879,7 +1879,7 @@ Deuteronomy 2:33
         tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 2:34
+Deuter 2:34
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1903,7 +1903,7 @@ Deuteronomy 2:34
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 2:35
+Deuter 2:35
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -1915,7 +1915,7 @@ Deuteronomy 2:35
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 2:36
+Deuter 2:36
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1951,7 +1951,7 @@ Deuteronomy 2:36
           mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 2:37
+Deuter 2:37
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -1975,7 +1975,7 @@ Deuteronomy 2:37
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 3:1
+Deuter 3:1
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -1996,7 +1996,7 @@ Deuteronomy 3:1
         tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 3:2
+Deuter 3:2
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2032,7 +2032,7 @@ Deuteronomy 3:2
           mereka tifcha 
         4 silluq_phrase
           silluq 
-Deuteronomy 3:3
+Deuter 3:3
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -2056,7 +2056,7 @@ Deuteronomy 3:3
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 3:4
+Deuter 3:4
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2086,7 +2086,7 @@ Deuteronomy 3:4
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 3:5
+Deuter 3:5
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -2107,7 +2107,7 @@ Deuteronomy 3:5
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 3:6
+Deuter 3:6
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -2131,7 +2131,7 @@ Deuteronomy 3:6
         tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 3:7
+Deuter 3:7
 0 silluq_clause
   1 tifcha_clause
     2 tevir_phrase
@@ -2140,7 +2140,7 @@ Deuteronomy 3:7
       mereka tifcha 
   1 silluq_phrase
     mereka silluq 
-Deuteronomy 3:8
+Deuter 3:8
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2170,7 +2170,7 @@ Deuteronomy 3:8
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 3:9
+Deuter 3:9
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -2188,7 +2188,7 @@ Deuteronomy 3:9
         tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 3:10
+Deuter 3:10
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2215,7 +2215,7 @@ Deuteronomy 3:10
         mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 3:11
+Deuter 3:11
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -2254,7 +2254,7 @@ Deuteronomy 3:11
           tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 3:12
+Deuter 3:12
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -2284,7 +2284,7 @@ Deuteronomy 3:12
           tifcha 
         4 silluq_phrase
           silluq 
-Deuteronomy 3:13
+Deuter 3:13
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2311,7 +2311,7 @@ Deuteronomy 3:13
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 3:14
+Deuter 3:14
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2338,13 +2338,13 @@ Deuteronomy 3:14
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 3:15
+Deuter 3:15
 0 silluq_clause
   1 tifcha_phrase
     tifcha 
   1 silluq_phrase
     mereka silluq 
-Deuteronomy 3:16
+Deuter 3:16
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2371,7 +2371,7 @@ Deuteronomy 3:16
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 3:17
+Deuter 3:17
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -2395,7 +2395,7 @@ Deuteronomy 3:17
           mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 3:18
+Deuter 3:18
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -2428,7 +2428,7 @@ Deuteronomy 3:18
             mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 3:19
+Deuter 3:19
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -2458,7 +2458,7 @@ Deuteronomy 3:19
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 3:20
+Deuter 3:20
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -2497,7 +2497,7 @@ Deuteronomy 3:20
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 3:21
+Deuter 3:21
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -2533,7 +2533,7 @@ Deuteronomy 3:21
           mereka tifcha 
         4 silluq_phrase
           mereka silluq 
-Deuteronomy 3:22
+Deuter 3:22
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -2551,7 +2551,7 @@ Deuteronomy 3:22
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 3:23
+Deuter 3:23
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -2563,7 +2563,7 @@ Deuteronomy 3:23
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 3:24
+Deuter 3:24
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2593,7 +2593,7 @@ Deuteronomy 3:24
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 3:25
+Deuter 3:25
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2617,7 +2617,7 @@ Deuteronomy 3:25
         tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 3:26
+Deuter 3:26
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2647,7 +2647,7 @@ Deuteronomy 3:26
             tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 3:27
+Deuter 3:27
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -2671,7 +2671,7 @@ Deuteronomy 3:27
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 3:28
+Deuter 3:28
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -2698,7 +2698,7 @@ Deuteronomy 3:28
           tifcha 
         4 silluq_phrase
           mereka silluq 
-Deuteronomy 3:29
+Deuter 3:29
 0 silluq_clause
   1 zaqef_phrase
     munach zaqef 
@@ -2707,7 +2707,7 @@ Deuteronomy 3:29
       tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 4:1
+Deuter 4:1
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2743,7 +2743,7 @@ Deuteronomy 4:1
           mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 4:2
+Deuter 4:2
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2776,7 +2776,7 @@ Deuteronomy 4:2
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 4:3
+Deuter 4:3
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2809,7 +2809,7 @@ Deuteronomy 4:3
           mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 4:4
+Deuter 4:4
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2827,7 +2827,7 @@ Deuteronomy 4:4
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 4:5
+Deuter 4:5
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2860,7 +2860,7 @@ Deuteronomy 4:5
             mereka tifcha 
         4 silluq_phrase
           silluq 
-Deuteronomy 4:6
+Deuter 4:6
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -2902,7 +2902,7 @@ Deuteronomy 4:6
           mereka tifcha 
         4 silluq_phrase
           silluq 
-Deuteronomy 4:7
+Deuter 4:7
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2923,7 +2923,7 @@ Deuteronomy 4:7
         tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 4:8
+Deuter 4:8
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2953,7 +2953,7 @@ Deuteronomy 4:8
           mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 4:9
+Deuter 4:9
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2986,7 +2986,7 @@ Deuteronomy 4:9
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 4:10
+Deuter 4:10
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -3037,7 +3037,7 @@ Deuteronomy 4:10
         tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 4:11
+Deuter 4:11
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -3058,7 +3058,7 @@ Deuteronomy 4:11
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 4:12
+Deuter 4:12
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -3082,7 +3082,7 @@ Deuteronomy 4:12
           mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 4:13
+Deuter 4:13
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -3109,7 +3109,7 @@ Deuteronomy 4:13
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 4:14
+Deuter 4:14
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -3142,7 +3142,7 @@ Deuteronomy 4:14
             mereka tifcha 
         4 silluq_phrase
           silluq 
-Deuteronomy 4:15
+Deuter 4:15
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -3166,7 +3166,7 @@ Deuteronomy 4:15
             tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 4:16
+Deuter 4:16
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -3184,7 +3184,7 @@ Deuteronomy 4:16
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 4:17
+Deuter 4:17
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -3205,7 +3205,7 @@ Deuteronomy 4:17
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 4:18
+Deuter 4:18
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -3223,7 +3223,7 @@ Deuteronomy 4:18
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 4:19
+Deuter 4:19
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -3274,7 +3274,7 @@ Deuteronomy 4:19
           tifcha 
         4 silluq_phrase
           silluq 
-Deuteronomy 4:20
+Deuter 4:20
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -3298,7 +3298,7 @@ Deuteronomy 4:20
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 4:21
+Deuter 4:21
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -3331,7 +3331,7 @@ Deuteronomy 4:21
             mereka tifcha 
           5 silluq_phrase
             silluq 
-Deuteronomy 4:22
+Deuter 4:22
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -3358,7 +3358,7 @@ Deuteronomy 4:22
           mereka tifcha 
         4 silluq_phrase
           silluq 
-Deuteronomy 4:23
+Deuter 4:23
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -3388,7 +3388,7 @@ Deuteronomy 4:23
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 4:24
+Deuter 4:24
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -3406,7 +3406,7 @@ Deuteronomy 4:24
       tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 4:25
+Deuter 4:25
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -3436,7 +3436,7 @@ Deuteronomy 4:25
           mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 4:26
+Deuter 4:26
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -3475,7 +3475,7 @@ Deuteronomy 4:26
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 4:27
+Deuter 4:27
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -3502,7 +3502,7 @@ Deuteronomy 4:27
             tifcha 
         4 silluq_phrase
           silluq 
-Deuteronomy 4:28
+Deuter 4:28
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -3526,7 +3526,7 @@ Deuteronomy 4:28
           mereka tifcha 
         4 silluq_phrase
           mereka silluq 
-Deuteronomy 4:29
+Deuter 4:29
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -3544,7 +3544,7 @@ Deuteronomy 4:29
         tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 4:30
+Deuter 4:30
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -3574,7 +3574,7 @@ Deuteronomy 4:30
           tifcha 
         4 silluq_phrase
           silluq 
-Deuteronomy 4:31
+Deuter 4:31
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -3598,7 +3598,7 @@ Deuteronomy 4:31
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 4:32
+Deuter 4:32
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -3634,7 +3634,7 @@ Deuteronomy 4:32
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 4:33
+Deuter 4:33
 0 silluq_clause
   1 tifcha_clause
     2 tevir_clause
@@ -3646,7 +3646,7 @@ Deuteronomy 4:33
       mereka tifcha 
   1 silluq_phrase
     silluq 
-Deuteronomy 4:34
+Deuter 4:34
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -3694,7 +3694,7 @@ Deuteronomy 4:34
         tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 4:35
+Deuter 4:35
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -3712,7 +3712,7 @@ Deuteronomy 4:35
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 4:36
+Deuter 4:36
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -3736,7 +3736,7 @@ Deuteronomy 4:36
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 4:37
+Deuter 4:37
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -3760,7 +3760,7 @@ Deuteronomy 4:37
         mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 4:38
+Deuter 4:38
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -3787,7 +3787,7 @@ Deuteronomy 4:38
           tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 4:39
+Deuter 4:39
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -3817,7 +3817,7 @@ Deuteronomy 4:39
       tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 4:40
+Deuter 4:40
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -3856,7 +3856,7 @@ Deuteronomy 4:40
           mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 4:41
+Deuter 4:41
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -3874,7 +3874,7 @@ Deuteronomy 4:41
       tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 4:42
+Deuter 4:42
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -3907,7 +3907,7 @@ Deuteronomy 4:42
           mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 4:43
+Deuter 4:43
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -3928,7 +3928,7 @@ Deuteronomy 4:43
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 4:44
+Deuter 4:44
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -3943,7 +3943,7 @@ Deuteronomy 4:44
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 4:45
+Deuter 4:45
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -3967,7 +3967,7 @@ Deuteronomy 4:45
         tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 4:46
+Deuter 4:46
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -4006,7 +4006,7 @@ Deuteronomy 4:46
         tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 4:47
+Deuter 4:47
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -4033,7 +4033,7 @@ Deuteronomy 4:47
       tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 4:48
+Deuter 4:48
 0 silluq_clause
   1 tifcha_clause
     2 tevir_clause
@@ -4045,7 +4045,7 @@ Deuteronomy 4:48
       mereka tifcha 
   1 silluq_phrase
     mereka silluq 
-Deuteronomy 4:49
+Deuter 4:49
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -4066,7 +4066,7 @@ Deuteronomy 4:49
       tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 5:1
+Deuter 5:1
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -4099,7 +4099,7 @@ Deuteronomy 5:1
         tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 5:2
+Deuter 5:2
 0 silluq_clause
   1 tifcha_clause
     2 revia_phrase
@@ -4111,7 +4111,7 @@ Deuteronomy 5:2
         tifcha 
   1 silluq_phrase
     silluq 
-Deuteronomy 5:3
+Deuter 5:3
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -4132,7 +4132,7 @@ Deuteronomy 5:3
           tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 5:4
+Deuter 5:4
 0 silluq_clause
   1 tifcha_clause
     2 revia_clause
@@ -4147,7 +4147,7 @@ Deuteronomy 5:4
         tifcha 
   1 silluq_phrase
     mereka silluq 
-Deuteronomy 5:5
+Deuter 5:5
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -4174,7 +4174,7 @@ Deuteronomy 5:5
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 5:22
+Deuter 5:22
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -4210,7 +4210,7 @@ Deuteronomy 5:22
         tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 5:23
+Deuter 5:23
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -4234,7 +4234,7 @@ Deuteronomy 5:23
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 5:24
+Deuter 5:24
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -4267,7 +4267,7 @@ Deuteronomy 5:24
           tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 5:25
+Deuter 5:25
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -4300,7 +4300,7 @@ Deuteronomy 5:25
           tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 5:26
+Deuter 5:26
 0 silluq_clause
   1 tifcha_clause
     2 tevir_clause
@@ -4315,7 +4315,7 @@ Deuteronomy 5:26
       tifcha 
   1 silluq_phrase
     silluq 
-Deuteronomy 5:27
+Deuter 5:27
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -4348,7 +4348,7 @@ Deuteronomy 5:27
           tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 5:28
+Deuter 5:28
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -4384,7 +4384,7 @@ Deuteronomy 5:28
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 5:29
+Deuter 5:29
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -4411,7 +4411,7 @@ Deuteronomy 5:29
         tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 5:30
+Deuter 5:30
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -4423,7 +4423,7 @@ Deuteronomy 5:30
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 5:31
+Deuter 5:31
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -4456,7 +4456,7 @@ Deuteronomy 5:31
           mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 5:32
+Deuter 5:32
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -4474,7 +4474,7 @@ Deuteronomy 5:32
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 5:33
+Deuter 5:33
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -4504,7 +4504,7 @@ Deuteronomy 5:33
           tifcha 
         4 silluq_phrase
           mereka silluq 
-Deuteronomy 6:1
+Deuter 6:1
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -4534,7 +4534,7 @@ Deuteronomy 6:1
           mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 6:2
+Deuter 6:2
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -4567,7 +4567,7 @@ Deuteronomy 6:2
       tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 6:3
+Deuter 6:3
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -4603,7 +4603,7 @@ Deuteronomy 6:3
           mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 6:4
+Deuter 6:4
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -4615,7 +4615,7 @@ Deuteronomy 6:4
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 6:5
+Deuter 6:5
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -4630,7 +4630,7 @@ Deuteronomy 6:5
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 6:6
+Deuter 6:6
 0 silluq_clause
   1 tifcha_clause
     2 revia_clause
@@ -4645,7 +4645,7 @@ Deuteronomy 6:6
         tifcha 
   1 silluq_phrase
     silluq 
-Deuteronomy 6:7
+Deuter 6:7
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -4666,7 +4666,7 @@ Deuteronomy 6:7
         tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 6:8
+Deuter 6:8
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -4678,7 +4678,7 @@ Deuteronomy 6:8
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 6:9
+Deuter 6:9
 0 silluq_clause
   1 tifcha_clause
     2 tevir_phrase
@@ -4687,7 +4687,7 @@ Deuteronomy 6:9
       mereka tifcha 
   1 silluq_phrase
     silluq 
-Deuteronomy 6:10
+Deuter 6:10
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -4720,7 +4720,7 @@ Deuteronomy 6:10
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 6:11
+Deuter 6:11
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -4747,7 +4747,7 @@ Deuteronomy 6:11
       tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 6:12
+Deuter 6:12
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -4765,7 +4765,7 @@ Deuteronomy 6:12
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 6:13
+Deuter 6:13
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -4780,7 +4780,7 @@ Deuteronomy 6:13
       tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 6:14
+Deuter 6:14
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -4801,7 +4801,7 @@ Deuteronomy 6:14
         tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 6:15
+Deuter 6:15
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -4828,7 +4828,7 @@ Deuteronomy 6:15
           tifcha 
         4 silluq_phrase
           mereka silluq 
-Deuteronomy 6:16
+Deuter 6:16
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -4843,7 +4843,7 @@ Deuteronomy 6:16
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 6:17
+Deuter 6:17
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -4858,7 +4858,7 @@ Deuteronomy 6:17
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 6:18
+Deuter 6:18
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -4888,7 +4888,7 @@ Deuteronomy 6:18
           mereka tifcha 
         4 silluq_phrase
           silluq 
-Deuteronomy 6:19
+Deuter 6:19
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -4900,7 +4900,7 @@ Deuteronomy 6:19
       tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 6:20
+Deuter 6:20
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -4927,7 +4927,7 @@ Deuteronomy 6:20
           mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 6:21
+Deuter 6:21
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -4948,7 +4948,7 @@ Deuteronomy 6:21
         tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 6:22
+Deuter 6:22
 0 silluq_clause
   1 tifcha_clause
     2 tevir_clause
@@ -4963,7 +4963,7 @@ Deuteronomy 6:22
       mereka tifcha 
   1 silluq_phrase
     silluq 
-Deuteronomy 6:23
+Deuter 6:23
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -4987,7 +4987,7 @@ Deuteronomy 6:23
           mereka tifcha 
         4 silluq_phrase
           silluq 
-Deuteronomy 6:24
+Deuter 6:24
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -5014,7 +5014,7 @@ Deuteronomy 6:24
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 6:25
+Deuter 6:25
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -5035,7 +5035,7 @@ Deuteronomy 6:25
           mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 7:1
+Deuter 7:1
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -5074,7 +5074,7 @@ Deuteronomy 7:1
           mereka tifcha 
         4 silluq_phrase
           silluq 
-Deuteronomy 7:2
+Deuter 7:2
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -5101,7 +5101,7 @@ Deuteronomy 7:2
           tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 7:3
+Deuter 7:3
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -5119,7 +5119,7 @@ Deuteronomy 7:3
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 7:4
+Deuter 7:4
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -5143,7 +5143,7 @@ Deuteronomy 7:4
         tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 7:5
+Deuter 7:5
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -5170,7 +5170,7 @@ Deuteronomy 7:5
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 7:6
+Deuter 7:6
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -5209,7 +5209,7 @@ Deuteronomy 7:6
           tifcha 
         4 silluq_phrase
           mereka silluq 
-Deuteronomy 7:7
+Deuter 7:7
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -5230,7 +5230,7 @@ Deuteronomy 7:7
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 7:8
+Deuter 7:8
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -5266,7 +5266,7 @@ Deuteronomy 7:8
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 7:9
+Deuter 7:9
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -5293,7 +5293,7 @@ Deuteronomy 7:9
             mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 7:10
+Deuter 7:10
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -5314,7 +5314,7 @@ Deuteronomy 7:10
         tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 7:11
+Deuter 7:11
 0 silluq_clause
   1 tifcha_clause
     2 revia_clause
@@ -5329,7 +5329,7 @@ Deuteronomy 7:11
         tifcha 
   1 silluq_phrase
     silluq 
-Deuteronomy 7:12
+Deuter 7:12
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -5365,7 +5365,7 @@ Deuteronomy 7:12
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 7:13
+Deuter 7:13
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -5401,7 +5401,7 @@ Deuteronomy 7:13
           mereka tifcha 
         4 silluq_phrase
           mereka silluq 
-Deuteronomy 7:14
+Deuter 7:14
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -5416,7 +5416,7 @@ Deuteronomy 7:14
         mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 7:15
+Deuter 7:15
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -5443,7 +5443,7 @@ Deuteronomy 7:15
         tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 7:16
+Deuter 7:16
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -5470,7 +5470,7 @@ Deuteronomy 7:16
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 7:17
+Deuter 7:17
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -5491,7 +5491,7 @@ Deuteronomy 7:17
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 7:18
+Deuter 7:18
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -5512,7 +5512,7 @@ Deuteronomy 7:18
         tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 7:19
+Deuter 7:19
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -5548,7 +5548,7 @@ Deuteronomy 7:19
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 7:20
+Deuter 7:20
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -5575,7 +5575,7 @@ Deuteronomy 7:20
           tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 7:21
+Deuter 7:21
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -5593,7 +5593,7 @@ Deuteronomy 7:21
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 7:22
+Deuter 7:22
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -5617,7 +5617,7 @@ Deuteronomy 7:22
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 7:23
+Deuter 7:23
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -5638,7 +5638,7 @@ Deuteronomy 7:23
         tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 7:24
+Deuter 7:24
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -5665,7 +5665,7 @@ Deuteronomy 7:24
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 7:25
+Deuter 7:25
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -5692,7 +5692,7 @@ Deuteronomy 7:25
             mereka tifcha 
         4 silluq_phrase
           silluq 
-Deuteronomy 7:26
+Deuter 7:26
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -5713,7 +5713,7 @@ Deuteronomy 7:26
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 8:1
+Deuter 8:1
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -5743,7 +5743,7 @@ Deuteronomy 8:1
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 8:2
+Deuter 8:2
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -5779,7 +5779,7 @@ Deuteronomy 8:2
           mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 8:3
+Deuter 8:3
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -5818,7 +5818,7 @@ Deuteronomy 8:3
           mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 8:4
+Deuter 8:4
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -5839,7 +5839,7 @@ Deuteronomy 8:4
       tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 8:5
+Deuter 8:5
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -5860,7 +5860,7 @@ Deuteronomy 8:5
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 8:6
+Deuter 8:6
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -5875,7 +5875,7 @@ Deuteronomy 8:6
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 8:7
+Deuter 8:7
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -5905,7 +5905,7 @@ Deuteronomy 8:7
           mereka tifcha 
         4 silluq_phrase
           silluq 
-Deuteronomy 8:8
+Deuter 8:8
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -5923,7 +5923,7 @@ Deuteronomy 8:8
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 8:9
+Deuter 8:9
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -5950,7 +5950,7 @@ Deuteronomy 8:9
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 8:10
+Deuter 8:10
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -5968,7 +5968,7 @@ Deuteronomy 8:10
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 8:11
+Deuter 8:11
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -5992,7 +5992,7 @@ Deuteronomy 8:11
           mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 8:12
+Deuter 8:12
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -6007,7 +6007,7 @@ Deuteronomy 8:12
         tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 8:13
+Deuter 8:13
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6025,7 +6025,7 @@ Deuteronomy 8:13
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 8:14
+Deuter 8:14
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -6046,7 +6046,7 @@ Deuteronomy 8:14
           mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 8:15
+Deuter 8:15
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6079,7 +6079,7 @@ Deuteronomy 8:15
         tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 8:16
+Deuter 8:16
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6106,7 +6106,7 @@ Deuteronomy 8:16
         tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 8:17
+Deuter 8:17
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -6124,7 +6124,7 @@ Deuteronomy 8:17
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 8:18
+Deuter 8:18
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6151,7 +6151,7 @@ Deuteronomy 8:18
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 8:19
+Deuter 8:19
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6187,7 +6187,7 @@ Deuteronomy 8:19
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 8:20
+Deuter 8:20
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6214,7 +6214,7 @@ Deuteronomy 8:20
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 9:1
+Deuter 9:1
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6244,7 +6244,7 @@ Deuteronomy 9:1
         mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 9:2
+Deuter 9:2
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -6265,7 +6265,7 @@ Deuteronomy 9:2
           tifcha 
         4 silluq_phrase
           mereka silluq 
-Deuteronomy 9:3
+Deuter 9:3
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6301,7 +6301,7 @@ Deuteronomy 9:3
           mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 9:4
+Deuter 9:4
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -6334,7 +6334,7 @@ Deuteronomy 9:4
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 9:5
+Deuter 9:5
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6382,7 +6382,7 @@ Deuteronomy 9:5
           mereka tifcha 
         4 silluq_phrase
           silluq 
-Deuteronomy 9:6
+Deuter 9:6
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -6412,7 +6412,7 @@ Deuteronomy 9:6
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 9:7
+Deuter 9:7
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6448,7 +6448,7 @@ Deuteronomy 9:7
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 9:8
+Deuter 9:8
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -6463,7 +6463,7 @@ Deuteronomy 9:8
         tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 9:9
+Deuter 9:9
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6502,7 +6502,7 @@ Deuteronomy 9:9
           tifcha 
         4 silluq_phrase
           mereka silluq 
-Deuteronomy 9:10
+Deuter 9:10
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6535,7 +6535,7 @@ Deuteronomy 9:10
           mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 9:11
+Deuter 9:11
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6565,7 +6565,7 @@ Deuteronomy 9:11
           mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 9:12
+Deuter 9:12
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6604,7 +6604,7 @@ Deuteronomy 9:12
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 9:13
+Deuter 9:13
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -6622,7 +6622,7 @@ Deuteronomy 9:13
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 9:14
+Deuter 9:14
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6649,7 +6649,7 @@ Deuteronomy 9:14
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 9:15
+Deuter 9:15
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6676,7 +6676,7 @@ Deuteronomy 9:15
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 9:16
+Deuter 9:16
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6706,7 +6706,7 @@ Deuteronomy 9:16
           mereka tifcha 
         4 silluq_phrase
           silluq 
-Deuteronomy 9:17
+Deuter 9:17
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6727,7 +6727,7 @@ Deuteronomy 9:17
       tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 9:18
+Deuter 9:18
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6766,7 +6766,7 @@ Deuteronomy 9:18
           mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 9:19
+Deuter 9:19
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6796,7 +6796,7 @@ Deuteronomy 9:19
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 9:20
+Deuter 9:20
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6814,7 +6814,7 @@ Deuteronomy 9:20
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 9:23
+Deuter 9:23
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6859,7 +6859,7 @@ Deuteronomy 9:23
           mereka tifcha 
         4 silluq_phrase
           silluq 
-Deuteronomy 9:24
+Deuter 9:24
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -6871,7 +6871,7 @@ Deuteronomy 9:24
       tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 9:25
+Deuter 9:25
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -6892,7 +6892,7 @@ Deuteronomy 9:25
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 9:26
+Deuter 9:26
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -6919,7 +6919,7 @@ Deuteronomy 9:26
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 9:27
+Deuter 9:27
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6946,7 +6946,7 @@ Deuteronomy 9:27
         tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 9:28
+Deuter 9:28
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -6979,7 +6979,7 @@ Deuteronomy 9:28
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 9:29
+Deuter 9:29
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -6997,7 +6997,7 @@ Deuteronomy 9:29
         tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 10:1
+Deuter 10:1
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7024,7 +7024,7 @@ Deuteronomy 10:1
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 10:2
+Deuter 10:2
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7048,7 +7048,7 @@ Deuteronomy 10:2
       tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 10:3
+Deuter 10:3
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7072,7 +7072,7 @@ Deuteronomy 10:3
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 10:4
+Deuter 10:4
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7099,7 +7099,7 @@ Deuteronomy 10:4
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 10:5
+Deuter 10:5
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7129,7 +7129,7 @@ Deuteronomy 10:5
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 10:6
+Deuter 10:6
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -7156,7 +7156,7 @@ Deuteronomy 10:6
           mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 10:7
+Deuter 10:7
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -7171,7 +7171,7 @@ Deuteronomy 10:7
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 10:8
+Deuter 10:8
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7198,7 +7198,7 @@ Deuteronomy 10:8
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 10:9
+Deuter 10:9
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -7225,7 +7225,7 @@ Deuteronomy 10:9
           mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 10:10
+Deuter 10:10
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7264,7 +7264,7 @@ Deuteronomy 10:10
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 10:11
+Deuter 10:11
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7291,7 +7291,7 @@ Deuteronomy 10:11
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 10:12
+Deuter 10:12
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7333,7 +7333,7 @@ Deuteronomy 10:12
           tifcha 
         4 silluq_phrase
           silluq 
-Deuteronomy 10:13
+Deuter 10:13
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7357,7 +7357,7 @@ Deuteronomy 10:13
       tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 10:14
+Deuter 10:14
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7375,7 +7375,7 @@ Deuteronomy 10:14
       tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 10:15
+Deuter 10:15
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -7399,7 +7399,7 @@ Deuteronomy 10:15
           tifcha 
     2 silluq_phrase
       ERROR 
-Deuteronomy 10:16
+Deuter 10:16
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -7417,7 +7417,7 @@ Deuteronomy 10:16
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 10:17
+Deuter 10:17
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7453,7 +7453,7 @@ Deuteronomy 10:17
           mereka tifcha 
         4 silluq_phrase
           silluq 
-Deuteronomy 10:18
+Deuter 10:18
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -7471,7 +7471,7 @@ Deuteronomy 10:18
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 10:19
+Deuter 10:19
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -7483,7 +7483,7 @@ Deuteronomy 10:19
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 10:20
+Deuter 10:20
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -7501,7 +7501,7 @@ Deuteronomy 10:20
         tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 10:21
+Deuter 10:21
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -7522,7 +7522,7 @@ Deuteronomy 10:21
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 10:22
+Deuter 10:22
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -7546,7 +7546,7 @@ Deuteronomy 10:22
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 11:1
+Deuter 11:1
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -7567,7 +7567,7 @@ Deuteronomy 11:1
           tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 11:2
+Deuter 11:2
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -7606,7 +7606,7 @@ Deuteronomy 11:2
           tifcha 
         4 silluq_phrase
           silluq 
-Deuteronomy 11:3
+Deuter 11:3
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7624,7 +7624,7 @@ Deuteronomy 11:3
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 11:4
+Deuter 11:4
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7654,7 +7654,7 @@ Deuteronomy 11:4
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 11:5
+Deuter 11:5
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -7669,7 +7669,7 @@ Deuteronomy 11:5
       tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 11:6
+Deuter 11:6
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -7705,7 +7705,7 @@ Deuteronomy 11:6
         tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 11:7
+Deuter 11:7
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7723,7 +7723,7 @@ Deuteronomy 11:7
       tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 11:8
+Deuter 11:8
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7756,7 +7756,7 @@ Deuteronomy 11:8
           mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 11:9
+Deuter 11:9
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7780,7 +7780,7 @@ Deuteronomy 11:9
         mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 11:10
+Deuter 11:10
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7813,7 +7813,7 @@ Deuteronomy 11:10
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 11:11
+Deuter 11:11
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7837,7 +7837,7 @@ Deuteronomy 11:11
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 11:12
+Deuter 11:12
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -7867,7 +7867,7 @@ Deuteronomy 11:12
           tifcha 
         4 silluq_phrase
           mereka silluq 
-Deuteronomy 11:13
+Deuter 11:13
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7900,7 +7900,7 @@ Deuteronomy 11:13
         tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 11:14
+Deuter 11:14
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -7918,7 +7918,7 @@ Deuteronomy 11:14
         tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 11:15
+Deuter 11:15
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -7933,7 +7933,7 @@ Deuteronomy 11:15
       tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 11:16
+Deuter 11:16
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -7957,7 +7957,7 @@ Deuteronomy 11:16
         tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 11:17
+Deuter 11:17
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7993,7 +7993,7 @@ Deuteronomy 11:17
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 11:18
+Deuter 11:18
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8017,7 +8017,7 @@ Deuteronomy 11:18
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 11:19
+Deuter 11:19
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -8038,7 +8038,7 @@ Deuteronomy 11:19
         tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 11:20
+Deuter 11:20
 0 silluq_clause
   1 tifcha_clause
     2 tevir_phrase
@@ -8047,7 +8047,7 @@ Deuteronomy 11:20
       mereka tifcha 
   1 silluq_phrase
     silluq 
-Deuteronomy 11:21
+Deuter 11:21
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8074,7 +8074,7 @@ Deuteronomy 11:21
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 11:22
+Deuter 11:22
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -8101,7 +8101,7 @@ Deuteronomy 11:22
         mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 11:23
+Deuter 11:23
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -8119,7 +8119,7 @@ Deuteronomy 11:23
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 11:24
+Deuter 11:24
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -8149,7 +8149,7 @@ Deuteronomy 11:24
         tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 11:25
+Deuter 11:25
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -8176,7 +8176,7 @@ Deuteronomy 11:25
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 11:26
+Deuter 11:26
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -8194,7 +8194,7 @@ Deuteronomy 11:26
       tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 11:27
+Deuter 11:27
 0 silluq_clause
   1 atnach_phrase
     atnach 
@@ -8215,7 +8215,7 @@ Deuteronomy 11:27
           mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 11:28
+Deuter 11:28
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8251,7 +8251,7 @@ Deuteronomy 11:28
           mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 11:29
+Deuter 11:29
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8281,7 +8281,7 @@ Deuteronomy 11:29
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 11:30
+Deuter 11:30
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8320,7 +8320,7 @@ Deuteronomy 11:30
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 11:31
+Deuter 11:31
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8344,7 +8344,7 @@ Deuteronomy 11:31
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 11:32
+Deuter 11:32
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -8362,7 +8362,7 @@ Deuteronomy 11:32
         mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 12:1
+Deuter 12:1
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -8395,7 +8395,7 @@ Deuteronomy 12:1
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 12:2
+Deuter 12:2
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -8425,7 +8425,7 @@ Deuteronomy 12:2
         tifcha 
       3 silluq_phrase
         ERROR 
-Deuteronomy 12:3
+Deuter 12:3
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8455,7 +8455,7 @@ Deuteronomy 12:3
         tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 12:4
+Deuter 12:4
 0 silluq_clause
   1 zaqef_phrase
     munach zaqef 
@@ -8464,7 +8464,7 @@ Deuteronomy 12:4
       tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 12:5
+Deuter 12:5
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8488,7 +8488,7 @@ Deuteronomy 12:5
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 12:6
+Deuter 12:6
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8521,7 +8521,7 @@ Deuteronomy 12:6
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 12:7
+Deuter 12:7
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8551,7 +8551,7 @@ Deuteronomy 12:7
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 12:8
+Deuter 12:8
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -8572,7 +8572,7 @@ Deuteronomy 12:8
       tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 12:9
+Deuter 12:9
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -8590,7 +8590,7 @@ Deuteronomy 12:9
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 12:10
+Deuter 12:10
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -8614,7 +8614,7 @@ Deuteronomy 12:10
         tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 12:11
+Deuter 12:11
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8659,7 +8659,7 @@ Deuteronomy 12:11
           mereka tifcha 
         4 silluq_phrase
           silluq 
-Deuteronomy 12:12
+Deuter 12:12
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -8698,7 +8698,7 @@ Deuteronomy 12:12
           mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 12:13
+Deuter 12:13
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -8713,7 +8713,7 @@ Deuteronomy 12:13
       tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 12:14
+Deuter 12:14
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8740,7 +8740,7 @@ Deuteronomy 12:14
           mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 12:15
+Deuter 12:15
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -8770,7 +8770,7 @@ Deuteronomy 12:15
         tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 12:16
+Deuter 12:16
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -8782,7 +8782,7 @@ Deuteronomy 12:16
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 12:17
+Deuter 12:17
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8812,7 +8812,7 @@ Deuteronomy 12:17
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 12:18
+Deuter 12:18
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -8860,7 +8860,7 @@ Deuteronomy 12:18
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 12:19
+Deuter 12:19
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -8875,7 +8875,7 @@ Deuteronomy 12:19
       tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 12:20
+Deuter 12:20
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -8899,7 +8899,7 @@ Deuteronomy 12:20
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 12:21
+Deuter 12:21
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -8944,7 +8944,7 @@ Deuteronomy 12:21
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 12:22
+Deuter 12:22
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8971,7 +8971,7 @@ Deuteronomy 12:22
         tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 12:23
+Deuter 12:23
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8992,7 +8992,7 @@ Deuteronomy 12:23
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 12:24
+Deuter 12:24
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -9004,7 +9004,7 @@ Deuteronomy 12:24
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 12:25
+Deuter 12:25
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -9022,7 +9022,7 @@ Deuteronomy 12:25
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 12:26
+Deuter 12:26
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -9040,7 +9040,7 @@ Deuteronomy 12:26
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 12:27
+Deuter 12:27
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9070,7 +9070,7 @@ Deuteronomy 12:27
         tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 12:28
+Deuter 12:28
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9106,7 +9106,7 @@ Deuteronomy 12:28
           tifcha 
         4 silluq_phrase
           mereka silluq 
-Deuteronomy 12:29
+Deuter 12:29
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -9130,7 +9130,7 @@ Deuteronomy 12:29
         tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 12:30
+Deuter 12:30
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9166,7 +9166,7 @@ Deuteronomy 12:30
         tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 12:31
+Deuter 12:31
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -9199,7 +9199,7 @@ Deuteronomy 12:31
           mereka tifcha 
         4 silluq_phrase
           silluq 
-Deuteronomy 13:1
+Deuter 13:1
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9223,7 +9223,7 @@ Deuteronomy 13:1
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 13:2
+Deuter 13:2
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9244,7 +9244,7 @@ Deuteronomy 13:2
         tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 13:3
+Deuter 13:3
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9268,7 +9268,7 @@ Deuteronomy 13:3
         mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 13:4
+Deuter 13:4
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9310,7 +9310,7 @@ Deuteronomy 13:4
           tifcha 
         4 silluq_phrase
           silluq 
-Deuteronomy 13:5
+Deuter 13:5
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -9331,7 +9331,7 @@ Deuteronomy 13:5
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 13:6
+Deuter 13:6
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9379,7 +9379,7 @@ Deuteronomy 13:6
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 13:7
+Deuter 13:7
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -9424,7 +9424,7 @@ Deuteronomy 13:7
           tifcha 
         4 silluq_phrase
           silluq 
-Deuteronomy 13:8
+Deuter 13:8
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9448,7 +9448,7 @@ Deuteronomy 13:8
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 13:9
+Deuter 13:9
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -9469,7 +9469,7 @@ Deuteronomy 13:9
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 13:10
+Deuter 13:10
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9490,7 +9490,7 @@ Deuteronomy 13:10
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 13:11
+Deuter 13:11
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -9517,7 +9517,7 @@ Deuteronomy 13:11
           mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 13:12
+Deuter 13:12
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -9538,7 +9538,7 @@ Deuteronomy 13:12
           tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 13:13
+Deuter 13:13
 0 silluq_clause
   1 tifcha_clause
     2 revia_clause
@@ -9556,7 +9556,7 @@ Deuteronomy 13:13
         mereka tifcha 
   1 silluq_phrase
     silluq 
-Deuteronomy 13:14
+Deuter 13:14
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9586,7 +9586,7 @@ Deuteronomy 13:14
           mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 13:15
+Deuter 13:15
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -9607,7 +9607,7 @@ Deuteronomy 13:15
         tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 13:17
+Deuter 13:17
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -9643,7 +9643,7 @@ Deuteronomy 13:17
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 13:18
+Deuter 13:18
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -9670,7 +9670,7 @@ Deuteronomy 13:18
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 13:19
+Deuter 13:19
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9706,7 +9706,7 @@ Deuteronomy 13:19
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 14:1
+Deuter 14:1
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -9727,7 +9727,7 @@ Deuteronomy 14:1
           mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 14:2
+Deuter 14:2
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9763,13 +9763,13 @@ Deuteronomy 14:2
           tifcha 
         4 silluq_phrase
           mereka silluq 
-Deuteronomy 14:3
+Deuter 14:3
 0 silluq_clause
   1 tifcha_phrase
     mereka tifcha 
   1 silluq_phrase
     silluq 
-Deuteronomy 14:4
+Deuter 14:4
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -9784,7 +9784,7 @@ Deuteronomy 14:4
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 14:5
+Deuter 14:5
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -9796,7 +9796,7 @@ Deuteronomy 14:5
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 14:6
+Deuter 14:6
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9820,7 +9820,7 @@ Deuteronomy 14:6
       tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 14:7
+Deuter 14:7
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9856,7 +9856,7 @@ Deuteronomy 14:7
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 14:8
+Deuter 14:8
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9883,7 +9883,7 @@ Deuteronomy 14:8
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 14:9
+Deuter 14:9
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9904,7 +9904,7 @@ Deuteronomy 14:9
         mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 14:10
+Deuter 14:10
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -9919,13 +9919,13 @@ Deuteronomy 14:10
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 14:11
+Deuter 14:11
 0 silluq_clause
   1 tifcha_phrase
     mereka tifcha 
   1 silluq_phrase
     silluq 
-Deuteronomy 14:12
+Deuter 14:12
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -9940,7 +9940,7 @@ Deuteronomy 14:12
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 14:13
+Deuter 14:13
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -9952,13 +9952,13 @@ Deuteronomy 14:13
       tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 14:14
+Deuter 14:14
 0 silluq_clause
   1 tifcha_phrase
     mereka tifcha 
   1 silluq_phrase
     silluq 
-Deuteronomy 14:15
+Deuter 14:15
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9976,19 +9976,19 @@ Deuteronomy 14:15
       tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 14:16
+Deuter 14:16
 0 silluq_clause
   1 tifcha_phrase
     mereka tifcha 
   1 silluq_phrase
     silluq 
-Deuteronomy 14:17
+Deuter 14:17
 0 silluq_clause
   1 tifcha_phrase
     mereka tifcha 
   1 silluq_phrase
     silluq 
-Deuteronomy 14:18
+Deuter 14:18
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -10003,7 +10003,7 @@ Deuteronomy 14:18
       tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 14:19
+Deuter 14:19
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10021,13 +10021,13 @@ Deuteronomy 14:19
       tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 14:20
+Deuter 14:20
 0 silluq_clause
   1 tifcha_phrase
     mereka tifcha 
   1 silluq_phrase
     silluq 
-Deuteronomy 14:21
+Deuter 14:21
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10060,7 +10060,7 @@ Deuteronomy 14:21
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 14:22
+Deuter 14:22
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -10075,7 +10075,7 @@ Deuteronomy 14:22
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 14:23
+Deuter 14:23
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -10114,7 +10114,7 @@ Deuteronomy 14:23
           mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 14:24
+Deuter 14:24
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -10147,7 +10147,7 @@ Deuteronomy 14:24
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 14:25
+Deuter 14:25
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -10174,7 +10174,7 @@ Deuteronomy 14:25
             mereka tifcha 
         4 silluq_phrase
           silluq 
-Deuteronomy 14:26
+Deuter 14:26
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10213,7 +10213,7 @@ Deuteronomy 14:26
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 14:27
+Deuter 14:27
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -10228,7 +10228,7 @@ Deuteronomy 14:27
         mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 14:28
+Deuter 14:28
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10255,7 +10255,7 @@ Deuteronomy 14:28
       tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 14:29
+Deuter 14:29
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10291,13 +10291,13 @@ Deuteronomy 14:29
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 15:1
+Deuter 15:1
 0 silluq_clause
   1 tifcha_phrase
     mereka tifcha 
   1 silluq_phrase
     mereka silluq 
-Deuteronomy 15:2
+Deuter 15:2
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -10330,7 +10330,7 @@ Deuteronomy 15:2
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 15:3
+Deuter 15:3
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -10345,7 +10345,7 @@ Deuteronomy 15:3
         tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 15:4
+Deuter 15:4
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -10378,7 +10378,7 @@ Deuteronomy 15:4
             mereka tifcha 
           5 silluq_phrase
             silluq 
-Deuteronomy 15:5
+Deuter 15:5
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10405,7 +10405,7 @@ Deuteronomy 15:5
           mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 15:6
+Deuter 15:6
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10441,7 +10441,7 @@ Deuteronomy 15:6
           tifcha 
         4 silluq_phrase
           mereka silluq 
-Deuteronomy 15:7
+Deuter 15:7
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10474,7 +10474,7 @@ Deuteronomy 15:7
         tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 15:8
+Deuter 15:8
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -10501,7 +10501,7 @@ Deuteronomy 15:8
           mereka tifcha 
         4 silluq_phrase
           silluq 
-Deuteronomy 15:9
+Deuter 15:9
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -10543,7 +10543,7 @@ Deuteronomy 15:9
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 15:10
+Deuter 15:10
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10579,7 +10579,7 @@ Deuteronomy 15:10
           tifcha 
         4 silluq_phrase
           mereka silluq 
-Deuteronomy 15:11
+Deuter 15:11
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -10612,7 +10612,7 @@ Deuteronomy 15:11
           tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 15:12
+Deuter 15:12
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10642,7 +10642,7 @@ Deuteronomy 15:12
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 15:13
+Deuter 15:13
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -10654,7 +10654,7 @@ Deuteronomy 15:13
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 15:14
+Deuter 15:14
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10678,7 +10678,7 @@ Deuteronomy 15:14
         mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 15:15
+Deuter 15:15
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10705,7 +10705,7 @@ Deuteronomy 15:15
         mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 15:16
+Deuter 15:16
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10729,7 +10729,7 @@ Deuteronomy 15:16
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 15:17
+Deuter 15:17
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10750,7 +10750,7 @@ Deuteronomy 15:17
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 15:18
+Deuter 15:18
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10789,7 +10789,7 @@ Deuteronomy 15:18
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 15:19
+Deuter 15:19
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10816,7 +10816,7 @@ Deuteronomy 15:19
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 15:20
+Deuter 15:20
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10834,7 +10834,7 @@ Deuteronomy 15:20
       tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 15:21
+Deuter 15:21
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10861,7 +10861,7 @@ Deuteronomy 15:21
         tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 15:22
+Deuter 15:22
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -10879,7 +10879,7 @@ Deuteronomy 15:22
         tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 15:23
+Deuter 15:23
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -10891,7 +10891,7 @@ Deuteronomy 15:23
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 16:1
+Deuter 16:1
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10924,7 +10924,7 @@ Deuteronomy 16:1
           tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 16:2
+Deuter 16:2
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -10945,7 +10945,7 @@ Deuteronomy 16:2
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 16:3
+Deuter 16:3
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10984,7 +10984,7 @@ Deuteronomy 16:3
             tifcha 
           5 silluq_phrase
             mereka silluq 
-Deuteronomy 16:4
+Deuter 16:4
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -11005,7 +11005,7 @@ Deuteronomy 16:4
           mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 16:5
+Deuter 16:5
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -11020,7 +11020,7 @@ Deuteronomy 16:5
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 16:6
+Deuter 16:6
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11050,7 +11050,7 @@ Deuteronomy 16:6
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 16:7
+Deuter 16:7
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11077,7 +11077,7 @@ Deuteronomy 16:7
         tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 16:8
+Deuter 16:8
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -11098,7 +11098,7 @@ Deuteronomy 16:8
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 16:9
+Deuter 16:9
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -11119,7 +11119,7 @@ Deuteronomy 16:9
           tifcha 
         4 silluq_phrase
           silluq 
-Deuteronomy 16:10
+Deuter 16:10
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11143,7 +11143,7 @@ Deuteronomy 16:10
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 16:11
+Deuter 16:11
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -11188,7 +11188,7 @@ Deuteronomy 16:11
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 16:12
+Deuter 16:12
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -11206,7 +11206,7 @@ Deuteronomy 16:12
         tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 16:13
+Deuter 16:13
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -11224,7 +11224,7 @@ Deuteronomy 16:13
         tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 16:14
+Deuter 16:14
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -11248,7 +11248,7 @@ Deuteronomy 16:14
             mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 16:15
+Deuter 16:15
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11284,7 +11284,7 @@ Deuteronomy 16:15
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 16:16
+Deuter 16:16
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11320,7 +11320,7 @@ Deuteronomy 16:16
         mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 16:17
+Deuter 16:17
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -11335,7 +11335,7 @@ Deuteronomy 16:17
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 16:18
+Deuter 16:18
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11359,7 +11359,7 @@ Deuteronomy 16:18
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 16:19
+Deuter 16:19
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -11386,7 +11386,7 @@ Deuteronomy 16:19
           tifcha 
         4 silluq_phrase
           mereka silluq 
-Deuteronomy 16:20
+Deuter 16:20
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -11404,7 +11404,7 @@ Deuteronomy 16:20
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 16:21
+Deuter 16:21
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -11425,7 +11425,7 @@ Deuteronomy 16:21
           mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 16:22
+Deuter 16:22
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -11437,7 +11437,7 @@ Deuteronomy 16:22
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 17:1
+Deuter 17:1
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11464,7 +11464,7 @@ Deuteronomy 17:1
         mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 17:2
+Deuter 17:2
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11488,7 +11488,7 @@ Deuteronomy 17:2
           mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 17:3
+Deuter 17:3
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11518,7 +11518,7 @@ Deuteronomy 17:3
           mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 17:4
+Deuter 17:4
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -11542,7 +11542,7 @@ Deuteronomy 17:4
             mereka tifcha 
         4 silluq_phrase
           silluq 
-Deuteronomy 17:5
+Deuter 17:5
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11572,7 +11572,7 @@ Deuteronomy 17:5
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 17:6
+Deuter 17:6
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -11596,7 +11596,7 @@ Deuteronomy 17:6
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 17:7
+Deuter 17:7
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11617,7 +11617,7 @@ Deuteronomy 17:7
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 17:8
+Deuter 17:8
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11656,7 +11656,7 @@ Deuteronomy 17:8
             mereka tifcha 
         4 silluq_phrase
           silluq 
-Deuteronomy 17:9
+Deuter 17:9
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11686,7 +11686,7 @@ Deuteronomy 17:9
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 17:10
+Deuter 17:10
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11713,7 +11713,7 @@ Deuteronomy 17:10
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 17:11
+Deuter 17:11
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -11740,7 +11740,7 @@ Deuteronomy 17:11
           mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 17:12
+Deuter 17:12
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11776,7 +11776,7 @@ Deuteronomy 17:12
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 17:13
+Deuter 17:13
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -11788,7 +11788,7 @@ Deuteronomy 17:13
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 17:14
+Deuter 17:14
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11818,7 +11818,7 @@ Deuteronomy 17:14
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 17:15
+Deuter 17:15
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11857,7 +11857,7 @@ Deuteronomy 17:15
           mereka tifcha 
         4 silluq_phrase
           silluq 
-Deuteronomy 17:16
+Deuter 17:16
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -11893,7 +11893,7 @@ Deuteronomy 17:16
             mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 17:17
+Deuter 17:17
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11914,7 +11914,7 @@ Deuteronomy 17:17
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 17:18
+Deuter 17:18
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -11938,7 +11938,7 @@ Deuteronomy 17:18
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 17:19
+Deuter 17:19
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -11971,7 +11971,7 @@ Deuteronomy 17:19
           mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 17:20
+Deuter 17:20
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11995,7 +11995,7 @@ Deuteronomy 17:20
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 18:1
+Deuter 18:1
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -12019,7 +12019,7 @@ Deuteronomy 18:1
         tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 18:2
+Deuter 18:2
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -12037,7 +12037,7 @@ Deuteronomy 18:2
         tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 18:3
+Deuter 18:3
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -12067,7 +12067,7 @@ Deuteronomy 18:3
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 18:4
+Deuter 18:4
 0 silluq_clause
   1 tifcha_clause
     2 revia_clause
@@ -12082,7 +12082,7 @@ Deuteronomy 18:4
         mereka tifcha 
   1 silluq_phrase
     silluq 
-Deuteronomy 18:5
+Deuter 18:5
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -12103,7 +12103,7 @@ Deuteronomy 18:5
         mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 18:6
+Deuter 18:6
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12130,7 +12130,7 @@ Deuteronomy 18:6
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 18:7
+Deuter 18:7
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -12151,7 +12151,7 @@ Deuteronomy 18:7
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 18:8
+Deuter 18:8
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -12163,7 +12163,7 @@ Deuteronomy 18:8
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 18:9
+Deuter 18:9
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12184,7 +12184,7 @@ Deuteronomy 18:9
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 18:10
+Deuter 18:10
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -12202,7 +12202,7 @@ Deuteronomy 18:10
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 18:11
+Deuter 18:11
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -12220,7 +12220,7 @@ Deuteronomy 18:11
         tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 18:12
+Deuter 18:12
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -12241,7 +12241,7 @@ Deuteronomy 18:12
           mereka tifcha 
         4 silluq_phrase
           silluq 
-Deuteronomy 18:13
+Deuter 18:13
 0 silluq_clause
   1 zaqef_phrase
     munach zaqef 
@@ -12250,7 +12250,7 @@ Deuteronomy 18:13
       tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 18:14
+Deuter 18:14
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12283,7 +12283,7 @@ Deuteronomy 18:14
             tifcha 
         4 silluq_phrase
           mereka silluq 
-Deuteronomy 18:15
+Deuter 18:15
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12301,7 +12301,7 @@ Deuteronomy 18:15
       tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 18:16
+Deuter 18:16
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12337,7 +12337,7 @@ Deuteronomy 18:16
           mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 18:17
+Deuter 18:17
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -12349,7 +12349,7 @@ Deuteronomy 18:17
       tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 18:18
+Deuter 18:18
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -12373,7 +12373,7 @@ Deuteronomy 18:18
           tifcha 
         4 silluq_phrase
           mereka silluq 
-Deuteronomy 18:19
+Deuter 18:19
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12397,7 +12397,7 @@ Deuteronomy 18:19
       tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 18:20
+Deuter 18:20
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12427,7 +12427,7 @@ Deuteronomy 18:20
       tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 18:21
+Deuter 18:21
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -12445,7 +12445,7 @@ Deuteronomy 18:21
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 18:22
+Deuter 18:22
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12478,7 +12478,7 @@ Deuteronomy 18:22
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 19:1
+Deuter 19:1
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12508,7 +12508,7 @@ Deuteronomy 19:1
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 19:2
+Deuter 19:2
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -12529,7 +12529,7 @@ Deuteronomy 19:2
           mereka tifcha 
         4 silluq_phrase
           silluq 
-Deuteronomy 19:3
+Deuter 19:3
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -12556,7 +12556,7 @@ Deuteronomy 19:3
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 19:4
+Deuter 19:4
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12583,7 +12583,7 @@ Deuteronomy 19:4
           mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 19:5
+Deuter 19:5
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -12619,7 +12619,7 @@ Deuteronomy 19:5
           mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 19:6
+Deuter 19:6
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -12658,7 +12658,7 @@ Deuteronomy 19:6
           tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 19:7
+Deuter 19:7
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -12673,7 +12673,7 @@ Deuteronomy 19:7
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 19:8
+Deuter 19:8
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12700,7 +12700,7 @@ Deuteronomy 19:8
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 19:9
+Deuter 19:9
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -12736,7 +12736,7 @@ Deuteronomy 19:9
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 19:10
+Deuter 19:10
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12763,7 +12763,7 @@ Deuteronomy 19:10
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 19:11
+Deuter 19:11
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12790,7 +12790,7 @@ Deuteronomy 19:11
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 19:12
+Deuter 19:12
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12814,7 +12814,7 @@ Deuteronomy 19:12
           mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 19:13
+Deuter 19:13
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -12829,7 +12829,7 @@ Deuteronomy 19:13
         tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 19:14
+Deuter 19:14
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12862,7 +12862,7 @@ Deuteronomy 19:14
             mereka tifcha 
           5 silluq_phrase
             silluq 
-Deuteronomy 19:15
+Deuter 19:15
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12895,7 +12895,7 @@ Deuteronomy 19:15
           mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 19:16
+Deuter 19:16
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -12907,7 +12907,7 @@ Deuteronomy 19:16
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 19:17
+Deuter 19:17
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -12928,7 +12928,7 @@ Deuteronomy 19:17
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 19:18
+Deuter 19:18
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -12946,7 +12946,7 @@ Deuteronomy 19:18
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 19:19
+Deuter 19:19
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -12961,7 +12961,7 @@ Deuteronomy 19:19
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 19:20
+Deuter 19:20
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -12982,7 +12982,7 @@ Deuteronomy 19:20
           tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 19:21
+Deuter 19:21
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -13003,7 +13003,7 @@ Deuteronomy 19:21
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 20:1
+Deuter 20:1
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13039,7 +13039,7 @@ Deuteronomy 20:1
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 20:2
+Deuter 20:2
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -13054,7 +13054,7 @@ Deuteronomy 20:2
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 20:3
+Deuter 20:3
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13081,7 +13081,7 @@ Deuteronomy 20:3
           tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 20:4
+Deuter 20:4
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13102,7 +13102,7 @@ Deuteronomy 20:4
         tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 20:5
+Deuter 20:5
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -13135,7 +13135,7 @@ Deuteronomy 20:5
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 20:6
+Deuter 20:6
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13162,7 +13162,7 @@ Deuteronomy 20:6
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 20:7
+Deuter 20:7
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13189,7 +13189,7 @@ Deuteronomy 20:7
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 20:8
+Deuter 20:8
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -13219,7 +13219,7 @@ Deuteronomy 20:8
         mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 20:9
+Deuter 20:9
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -13237,7 +13237,7 @@ Deuteronomy 20:9
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 20:10
+Deuter 20:10
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -13252,7 +13252,7 @@ Deuteronomy 20:10
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 20:11
+Deuter 20:11
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13279,7 +13279,7 @@ Deuteronomy 20:11
           tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 20:12
+Deuter 20:12
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13297,7 +13297,7 @@ Deuteronomy 20:12
       tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 20:13
+Deuter 20:13
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -13312,7 +13312,7 @@ Deuteronomy 20:13
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 20:14
+Deuter 20:14
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -13342,7 +13342,7 @@ Deuteronomy 20:14
           mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 20:15
+Deuter 20:15
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13363,7 +13363,7 @@ Deuteronomy 20:15
         mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 20:16
+Deuter 20:16
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13390,7 +13390,7 @@ Deuteronomy 20:16
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 20:17
+Deuter 20:17
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13411,7 +13411,7 @@ Deuteronomy 20:17
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 20:18
+Deuter 20:18
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13438,7 +13438,7 @@ Deuteronomy 20:18
       tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 20:19
+Deuter 20:19
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13477,7 +13477,7 @@ Deuteronomy 20:19
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 20:20
+Deuter 20:20
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13510,7 +13510,7 @@ Deuteronomy 20:20
             tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 21:1
+Deuter 21:1
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13537,7 +13537,7 @@ Deuteronomy 21:1
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 21:2
+Deuter 21:2
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -13555,7 +13555,7 @@ Deuteronomy 21:2
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 21:3
+Deuter 21:3
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -13585,7 +13585,7 @@ Deuteronomy 21:3
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 21:4
+Deuter 21:4
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13609,7 +13609,7 @@ Deuteronomy 21:4
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 21:5
+Deuter 21:5
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -13639,7 +13639,7 @@ Deuteronomy 21:5
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 21:6
+Deuter 21:6
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13666,7 +13666,7 @@ Deuteronomy 21:6
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 21:7
+Deuter 21:7
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -13687,7 +13687,7 @@ Deuteronomy 21:7
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 21:8
+Deuter 21:8
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13711,7 +13711,7 @@ Deuteronomy 21:8
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 21:9
+Deuter 21:9
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -13729,7 +13729,7 @@ Deuteronomy 21:9
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 21:10
+Deuter 21:10
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -13747,7 +13747,7 @@ Deuteronomy 21:10
         tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 21:11
+Deuter 21:11
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13768,7 +13768,7 @@ Deuteronomy 21:11
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 21:12
+Deuter 21:12
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -13786,7 +13786,7 @@ Deuteronomy 21:12
         tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 21:13
+Deuter 21:13
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13822,7 +13822,7 @@ Deuteronomy 21:13
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 21:14
+Deuter 21:14
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13849,7 +13849,7 @@ Deuteronomy 21:14
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 21:15
+Deuter 21:15
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13879,7 +13879,7 @@ Deuteronomy 21:15
         mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 21:16
+Deuter 21:16
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13909,7 +13909,7 @@ Deuteronomy 21:16
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 21:17
+Deuter 21:17
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13939,7 +13939,7 @@ Deuteronomy 21:17
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 21:18
+Deuter 21:18
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13966,7 +13966,7 @@ Deuteronomy 21:18
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 21:19
+Deuter 21:19
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -13981,7 +13981,7 @@ Deuteronomy 21:19
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 21:20
+Deuter 21:20
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -14005,7 +14005,7 @@ Deuteronomy 21:20
       tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 21:21
+Deuter 21:21
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -14026,7 +14026,7 @@ Deuteronomy 21:21
       tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 21:22
+Deuter 21:22
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -14044,7 +14044,7 @@ Deuteronomy 21:22
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 21:23
+Deuter 21:23
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -14080,7 +14080,7 @@ Deuteronomy 21:23
           mereka tifcha 
         4 silluq_phrase
           silluq 
-Deuteronomy 22:1
+Deuter 22:1
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -14101,7 +14101,7 @@ Deuteronomy 22:1
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 22:2
+Deuter 22:2
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -14131,7 +14131,7 @@ Deuteronomy 22:2
           tifcha 
         4 silluq_phrase
           silluq 
-Deuteronomy 22:3
+Deuter 22:3
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -14158,7 +14158,7 @@ Deuteronomy 22:3
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 22:4
+Deuter 22:4
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -14179,7 +14179,7 @@ Deuteronomy 22:4
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 22:5
+Deuter 22:5
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -14200,7 +14200,7 @@ Deuteronomy 22:5
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 22:6
+Deuter 22:6
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -14236,7 +14236,7 @@ Deuteronomy 22:6
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 22:7
+Deuter 22:7
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -14260,7 +14260,7 @@ Deuteronomy 22:7
         tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 22:8
+Deuter 22:8
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -14284,7 +14284,7 @@ Deuteronomy 22:8
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 22:9
+Deuter 22:9
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -14305,13 +14305,13 @@ Deuteronomy 22:9
         tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 22:10
+Deuter 22:10
 0 silluq_clause
   1 tifcha_phrase
     mereka tifcha 
   1 silluq_phrase
     silluq 
-Deuteronomy 22:11
+Deuter 22:11
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -14323,7 +14323,7 @@ Deuteronomy 22:11
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 22:12
+Deuter 22:12
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -14338,7 +14338,7 @@ Deuteronomy 22:12
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 22:13
+Deuter 22:13
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -14350,7 +14350,7 @@ Deuteronomy 22:13
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 22:14
+Deuter 22:14
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -14380,7 +14380,7 @@ Deuteronomy 22:14
           mereka tifcha 
         4 silluq_phrase
           silluq 
-Deuteronomy 22:15
+Deuter 22:15
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -14401,7 +14401,7 @@ Deuteronomy 22:15
         mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 22:16
+Deuter 22:16
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -14425,7 +14425,7 @@ Deuteronomy 22:16
           tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 22:17
+Deuter 22:17
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -14458,7 +14458,7 @@ Deuteronomy 22:17
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 22:18
+Deuter 22:18
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -14473,7 +14473,7 @@ Deuteronomy 22:18
       tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 22:19
+Deuter 22:19
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -14506,7 +14506,7 @@ Deuteronomy 22:19
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 22:20
+Deuter 22:20
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -14521,7 +14521,7 @@ Deuteronomy 22:20
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 22:21
+Deuter 22:21
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -14551,7 +14551,7 @@ Deuteronomy 22:21
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 22:22
+Deuter 22:22
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -14581,7 +14581,7 @@ Deuteronomy 22:22
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 22:23
+Deuter 22:23
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -14602,7 +14602,7 @@ Deuteronomy 22:23
         tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 22:24
+Deuter 22:24
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -14641,7 +14641,7 @@ Deuteronomy 22:24
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 22:25
+Deuter 22:25
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -14671,7 +14671,7 @@ Deuteronomy 22:25
           mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 22:26
+Deuter 22:26
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -14698,7 +14698,7 @@ Deuteronomy 22:26
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 22:27
+Deuter 22:27
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -14719,7 +14719,7 @@ Deuteronomy 22:27
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 22:28
+Deuter 22:28
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -14737,7 +14737,7 @@ Deuteronomy 22:28
         munach atnach 
   1 silluq_phrase
     silluq 
-Deuteronomy 22:29
+Deuter 22:29
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -14764,7 +14764,7 @@ Deuteronomy 22:29
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 23:1
+Deuter 23:1
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -14776,7 +14776,7 @@ Deuteronomy 23:1
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 23:2
+Deuter 23:2
 0 silluq_clause
   1 tifcha_clause
     2 tevir_phrase
@@ -14785,7 +14785,7 @@ Deuteronomy 23:2
       mereka tifcha 
   1 silluq_phrase
     mereka silluq 
-Deuteronomy 23:3
+Deuter 23:3
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -14803,7 +14803,7 @@ Deuteronomy 23:3
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 23:4
+Deuter 23:4
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -14827,7 +14827,7 @@ Deuteronomy 23:4
           mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 23:5
+Deuter 23:5
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -14857,7 +14857,7 @@ Deuteronomy 23:5
           mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 23:6
+Deuter 23:6
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -14881,7 +14881,7 @@ Deuteronomy 23:6
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 23:7
+Deuter 23:7
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -14893,7 +14893,7 @@ Deuteronomy 23:7
       tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 23:8
+Deuter 23:8
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -14911,7 +14911,7 @@ Deuteronomy 23:8
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 23:9
+Deuter 23:9
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -14926,7 +14926,7 @@ Deuteronomy 23:9
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 23:10
+Deuter 23:10
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -14941,7 +14941,7 @@ Deuteronomy 23:10
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 23:11
+Deuter 23:11
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -14968,7 +14968,7 @@ Deuteronomy 23:11
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 23:12
+Deuter 23:12
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -14983,7 +14983,7 @@ Deuteronomy 23:12
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 23:13
+Deuter 23:13
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -15001,7 +15001,7 @@ Deuteronomy 23:13
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 23:14
+Deuter 23:14
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -15025,7 +15025,7 @@ Deuteronomy 23:14
           tifcha 
         4 silluq_phrase
           mereka silluq 
-Deuteronomy 23:15
+Deuter 23:15
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -15061,7 +15061,7 @@ Deuteronomy 23:15
         tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 23:16
+Deuter 23:16
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -15073,7 +15073,7 @@ Deuteronomy 23:16
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 23:17
+Deuter 23:17
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -15094,7 +15094,7 @@ Deuteronomy 23:17
       tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 23:18
+Deuter 23:18
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -15106,7 +15106,7 @@ Deuteronomy 23:18
       mereka tifcha 
     2 silluq_phrase
       ERROR 
-Deuteronomy 23:19
+Deuter 23:19
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -15130,7 +15130,7 @@ Deuteronomy 23:19
         mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 23:20
+Deuter 23:20
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -15148,7 +15148,7 @@ Deuteronomy 23:20
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 23:21
+Deuter 23:21
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -15178,7 +15178,7 @@ Deuteronomy 23:21
           mereka tifcha 
         4 silluq_phrase
           silluq 
-Deuteronomy 23:22
+Deuter 23:22
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -15205,7 +15205,7 @@ Deuteronomy 23:22
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 23:23
+Deuter 23:23
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -15217,7 +15217,7 @@ Deuteronomy 23:23
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 23:24
+Deuter 23:24
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -15238,7 +15238,7 @@ Deuteronomy 23:24
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 23:25
+Deuter 23:25
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -15259,7 +15259,7 @@ Deuteronomy 23:25
       tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 23:26
+Deuter 23:26
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -15283,7 +15283,7 @@ Deuteronomy 23:26
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 24:1
+Deuter 24:1
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -15319,7 +15319,7 @@ Deuteronomy 24:1
           tifcha 
         4 silluq_phrase
           silluq 
-Deuteronomy 24:2
+Deuter 24:2
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -15331,7 +15331,7 @@ Deuteronomy 24:2
       tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 24:3
+Deuter 24:3
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -15364,7 +15364,7 @@ Deuteronomy 24:3
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 24:4
+Deuter 24:4
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -15403,7 +15403,7 @@ Deuteronomy 24:4
           mereka tifcha 
         4 silluq_phrase
           silluq 
-Deuteronomy 24:5
+Deuter 24:5
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -15436,7 +15436,7 @@ Deuteronomy 24:5
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 24:6
+Deuter 24:6
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -15448,7 +15448,7 @@ Deuteronomy 24:6
       tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 24:7
+Deuter 24:7
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -15475,7 +15475,7 @@ Deuteronomy 24:7
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 24:8
+Deuter 24:8
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -15496,7 +15496,7 @@ Deuteronomy 24:8
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 24:9
+Deuter 24:9
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -15514,7 +15514,7 @@ Deuteronomy 24:9
       tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 24:10
+Deuter 24:10
 0 silluq_clause
   1 atnach_phrase
     ERROR 
@@ -15523,7 +15523,7 @@ Deuteronomy 24:10
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 24:11
+Deuter 24:11
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -15547,7 +15547,7 @@ Deuteronomy 24:11
           tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 24:12
+Deuter 24:12
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -15559,7 +15559,7 @@ Deuteronomy 24:12
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 24:13
+Deuter 24:13
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -15583,7 +15583,7 @@ Deuteronomy 24:13
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 24:14
+Deuter 24:14
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -15601,7 +15601,7 @@ Deuteronomy 24:14
           mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 24:15
+Deuter 24:15
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -15634,7 +15634,7 @@ Deuteronomy 24:15
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 24:16
+Deuter 24:16
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -15652,7 +15652,7 @@ Deuteronomy 24:16
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 24:17
+Deuter 24:17
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -15670,7 +15670,7 @@ Deuteronomy 24:17
         tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 24:18
+Deuter 24:18
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -15703,7 +15703,7 @@ Deuteronomy 24:18
         tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 24:19
+Deuter 24:19
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -15736,7 +15736,7 @@ Deuteronomy 24:19
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 24:20
+Deuter 24:20
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -15757,7 +15757,7 @@ Deuteronomy 24:20
         mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 24:21
+Deuter 24:21
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -15778,7 +15778,7 @@ Deuteronomy 24:21
         mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 24:22
+Deuter 24:22
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -15802,7 +15802,7 @@ Deuteronomy 24:22
         tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 25:1
+Deuter 25:1
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -15826,7 +15826,7 @@ Deuteronomy 25:1
         tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 25:2
+Deuter 25:2
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -15847,7 +15847,7 @@ Deuteronomy 25:2
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 25:3
+Deuter 25:3
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -15865,13 +15865,13 @@ Deuteronomy 25:3
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 25:4
+Deuter 25:4
 0 silluq_clause
   1 tifcha_phrase
     mereka tifcha 
   1 silluq_phrase
     silluq 
-Deuteronomy 25:5
+Deuter 25:5
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -15907,7 +15907,7 @@ Deuteronomy 25:5
           tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 25:6
+Deuter 25:6
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -15931,7 +15931,7 @@ Deuteronomy 25:6
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 25:7
+Deuter 25:7
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -15967,7 +15967,7 @@ Deuteronomy 25:7
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 25:8
+Deuter 25:8
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -15982,7 +15982,7 @@ Deuteronomy 25:8
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 25:9
+Deuter 25:9
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16009,7 +16009,7 @@ Deuteronomy 25:9
         tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 25:12
+Deuter 25:12
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -16021,7 +16021,7 @@ Deuteronomy 25:12
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 25:13
+Deuter 25:13
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -16036,7 +16036,7 @@ Deuteronomy 25:13
       tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 25:14
+Deuter 25:14
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -16051,7 +16051,7 @@ Deuteronomy 25:14
       tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 25:15
+Deuter 25:15
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16084,7 +16084,7 @@ Deuteronomy 25:15
           mereka tifcha 
         4 silluq_phrase
           mereka silluq 
-Deuteronomy 25:16
+Deuter 25:16
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -16099,7 +16099,7 @@ Deuteronomy 25:16
       tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 25:17
+Deuter 25:17
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -16117,7 +16117,7 @@ Deuteronomy 25:17
       tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 25:18
+Deuter 25:18
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16141,7 +16141,7 @@ Deuteronomy 25:18
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 25:19
+Deuter 25:19
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16183,7 +16183,7 @@ Deuteronomy 25:19
       tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 26:1
+Deuter 26:1
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16207,7 +16207,7 @@ Deuteronomy 26:1
       tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 26:2
+Deuter 26:2
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -16246,7 +16246,7 @@ Deuteronomy 26:2
           mereka tifcha 
         4 silluq_phrase
           silluq 
-Deuteronomy 26:3
+Deuter 26:3
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16282,7 +16282,7 @@ Deuteronomy 26:3
             tifcha 
         4 silluq_phrase
           mereka silluq 
-Deuteronomy 26:4
+Deuter 26:4
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -16303,7 +16303,7 @@ Deuteronomy 26:4
           tifcha 
         4 silluq_phrase
           mereka silluq 
-Deuteronomy 26:5
+Deuter 26:5
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16336,7 +16336,7 @@ Deuteronomy 26:5
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 26:6
+Deuter 26:6
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -16351,7 +16351,7 @@ Deuteronomy 26:6
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 26:7
+Deuter 26:7
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -16375,7 +16375,7 @@ Deuteronomy 26:7
           tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 26:8
+Deuter 26:8
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16399,7 +16399,7 @@ Deuteronomy 26:8
       tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 26:9
+Deuter 26:9
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -16420,7 +16420,7 @@ Deuteronomy 26:9
           mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 26:10
+Deuter 26:10
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16456,7 +16456,7 @@ Deuteronomy 26:10
           tifcha 
         4 silluq_phrase
           mereka silluq 
-Deuteronomy 26:11
+Deuter 26:11
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -16480,7 +16480,7 @@ Deuteronomy 26:11
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 26:12
+Deuter 26:12
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -16510,7 +16510,7 @@ Deuteronomy 26:12
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 26:13
+Deuter 26:13
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16540,7 +16540,7 @@ Deuteronomy 26:13
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 26:14
+Deuter 26:14
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16576,7 +16576,7 @@ Deuteronomy 26:14
           tifcha 
         4 silluq_phrase
           mereka silluq 
-Deuteronomy 26:15
+Deuter 26:15
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16615,7 +16615,7 @@ Deuteronomy 26:15
           mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 26:16
+Deuter 26:16
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -16642,7 +16642,7 @@ Deuteronomy 26:16
         tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 26:17
+Deuter 26:17
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -16663,7 +16663,7 @@ Deuteronomy 26:17
           tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 26:18
+Deuter 26:18
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16687,7 +16687,7 @@ Deuteronomy 26:18
       tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 26:19
+Deuter 26:19
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16711,7 +16711,7 @@ Deuteronomy 26:19
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 27:1
+Deuter 27:1
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16738,7 +16738,7 @@ Deuteronomy 27:1
           mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 27:2
+Deuter 27:2
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -16768,7 +16768,7 @@ Deuteronomy 27:2
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 27:3
+Deuter 27:3
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -16807,7 +16807,7 @@ Deuteronomy 27:3
           mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 27:4
+Deuter 27:4
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -16837,7 +16837,7 @@ Deuteronomy 27:4
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 27:5
+Deuter 27:5
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16858,7 +16858,7 @@ Deuteronomy 27:5
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 27:6
+Deuter 27:6
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16882,7 +16882,7 @@ Deuteronomy 27:6
         tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 27:7
+Deuter 27:7
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -16897,7 +16897,7 @@ Deuteronomy 27:7
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 27:8
+Deuter 27:8
 0 silluq_clause
   1 tifcha_clause
     2 revia_phrase
@@ -16909,7 +16909,7 @@ Deuteronomy 27:8
         mereka tifcha 
   1 silluq_phrase
     mereka silluq 
-Deuteronomy 27:9
+Deuter 27:9
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16939,7 +16939,7 @@ Deuteronomy 27:9
           tifcha 
         4 silluq_phrase
           silluq 
-Deuteronomy 27:10
+Deuter 27:10
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -16963,7 +16963,7 @@ Deuteronomy 27:10
           mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 27:11
+Deuter 27:11
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -16975,7 +16975,7 @@ Deuteronomy 27:11
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 27:12
+Deuter 27:12
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17005,7 +17005,7 @@ Deuteronomy 27:12
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 27:13
+Deuter 27:13
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -17026,7 +17026,7 @@ Deuteronomy 27:13
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 27:14
+Deuter 27:14
 0 silluq_clause
   1 tifcha_clause
     2 revia_phrase
@@ -17038,7 +17038,7 @@ Deuteronomy 27:14
         mereka tifcha 
   1 silluq_phrase
     mereka silluq 
-Deuteronomy 27:15
+Deuter 27:15
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -17065,7 +17065,7 @@ Deuteronomy 27:15
         tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 27:16
+Deuter 27:16
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -17080,7 +17080,7 @@ Deuteronomy 27:16
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 27:17
+Deuter 27:17
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -17095,7 +17095,7 @@ Deuteronomy 27:17
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 27:18
+Deuter 27:18
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -17110,7 +17110,7 @@ Deuteronomy 27:18
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 27:19
+Deuter 27:19
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -17128,7 +17128,7 @@ Deuteronomy 27:19
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 27:20
+Deuter 27:20
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17149,7 +17149,7 @@ Deuteronomy 27:20
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 27:21
+Deuter 27:21
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -17164,7 +17164,7 @@ Deuteronomy 27:21
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 27:22
+Deuter 27:22
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17185,7 +17185,7 @@ Deuteronomy 27:22
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 27:23
+Deuter 27:23
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -17200,7 +17200,7 @@ Deuteronomy 27:23
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 27:24
+Deuter 27:24
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -17215,7 +17215,7 @@ Deuteronomy 27:24
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 27:25
+Deuter 27:25
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17233,7 +17233,7 @@ Deuteronomy 27:25
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 27:26
+Deuter 27:26
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -17251,7 +17251,7 @@ Deuteronomy 27:26
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 28:1
+Deuter 28:1
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17293,7 +17293,7 @@ Deuteronomy 28:1
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 28:2
+Deuter 28:2
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -17311,7 +17311,7 @@ Deuteronomy 28:2
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 28:3
+Deuter 28:3
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -17323,7 +17323,7 @@ Deuteronomy 28:3
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 28:4
+Deuter 28:4
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -17338,13 +17338,13 @@ Deuteronomy 28:4
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 28:5
+Deuter 28:5
 0 silluq_clause
   1 tifcha_phrase
     mereka tifcha 
   1 silluq_phrase
     silluq 
-Deuteronomy 28:6
+Deuter 28:6
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -17356,7 +17356,7 @@ Deuteronomy 28:6
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 28:7
+Deuter 28:7
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17380,7 +17380,7 @@ Deuteronomy 28:7
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 28:8
+Deuter 28:8
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17407,7 +17407,7 @@ Deuteronomy 28:8
           mereka tifcha 
         4 silluq_phrase
           mereka silluq 
-Deuteronomy 28:9
+Deuter 28:9
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17434,7 +17434,7 @@ Deuteronomy 28:9
         tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 28:10
+Deuter 28:10
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17455,7 +17455,7 @@ Deuteronomy 28:10
       tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 28:11
+Deuter 28:11
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17485,7 +17485,7 @@ Deuteronomy 28:11
           tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 28:12
+Deuter 28:12
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17521,7 +17521,7 @@ Deuteronomy 28:12
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 28:13
+Deuter 28:13
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17557,7 +17557,7 @@ Deuteronomy 28:13
           tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 28:14
+Deuter 28:14
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -17587,7 +17587,7 @@ Deuteronomy 28:14
           mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 28:15
+Deuter 28:15
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17623,7 +17623,7 @@ Deuteronomy 28:15
         mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 28:16
+Deuter 28:16
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -17635,13 +17635,13 @@ Deuteronomy 28:16
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 28:17
+Deuter 28:17
 0 silluq_clause
   1 tifcha_phrase
     mereka tifcha 
   1 silluq_phrase
     silluq 
-Deuteronomy 28:18
+Deuter 28:18
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -17653,7 +17653,7 @@ Deuteronomy 28:18
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 28:19
+Deuter 28:19
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -17665,7 +17665,7 @@ Deuteronomy 28:19
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 28:20
+Deuter 28:20
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17695,7 +17695,7 @@ Deuteronomy 28:20
           mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 28:21
+Deuter 28:21
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -17722,7 +17722,7 @@ Deuteronomy 28:21
           mereka tifcha 
         4 silluq_phrase
           silluq 
-Deuteronomy 28:22
+Deuter 28:22
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17749,7 +17749,7 @@ Deuteronomy 28:22
       tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 28:23
+Deuter 28:23
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -17764,7 +17764,7 @@ Deuteronomy 28:23
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 28:24
+Deuter 28:24
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -17785,7 +17785,7 @@ Deuteronomy 28:24
         tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 28:25
+Deuter 28:25
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -17812,7 +17812,7 @@ Deuteronomy 28:25
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 28:26
+Deuter 28:26
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17830,7 +17830,7 @@ Deuteronomy 28:26
       tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 28:27
+Deuter 28:27
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17851,7 +17851,7 @@ Deuteronomy 28:27
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 28:28
+Deuter 28:28
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -17866,7 +17866,7 @@ Deuteronomy 28:28
       tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 28:29
+Deuter 28:29
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17896,7 +17896,7 @@ Deuteronomy 28:29
         tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 28:30
+Deuter 28:30
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17917,7 +17917,7 @@ Deuteronomy 28:30
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 28:31
+Deuter 28:31
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -17953,7 +17953,7 @@ Deuteronomy 28:31
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 28:32
+Deuter 28:32
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17974,7 +17974,7 @@ Deuteronomy 28:32
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 28:33
+Deuter 28:33
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17998,7 +17998,7 @@ Deuteronomy 28:33
           mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 28:34
+Deuter 28:34
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -18010,7 +18010,7 @@ Deuteronomy 28:34
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 28:35
+Deuter 28:35
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -18034,7 +18034,7 @@ Deuteronomy 28:35
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 28:36
+Deuter 28:36
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -18064,7 +18064,7 @@ Deuteronomy 28:36
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 28:37
+Deuter 28:37
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -18085,7 +18085,7 @@ Deuteronomy 28:37
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 28:38
+Deuter 28:38
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -18100,7 +18100,7 @@ Deuteronomy 28:38
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 28:39
+Deuter 28:39
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -18118,7 +18118,7 @@ Deuteronomy 28:39
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 28:40
+Deuter 28:40
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -18139,7 +18139,7 @@ Deuteronomy 28:40
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 28:41
+Deuter 28:41
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -18154,7 +18154,7 @@ Deuteronomy 28:41
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 28:42
+Deuter 28:42
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -18166,7 +18166,7 @@ Deuteronomy 28:42
       tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 28:43
+Deuter 28:43
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -18184,7 +18184,7 @@ Deuteronomy 28:43
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 28:44
+Deuter 28:44
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -18205,7 +18205,7 @@ Deuteronomy 28:44
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 28:45
+Deuter 28:45
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -18241,7 +18241,7 @@ Deuteronomy 28:45
           mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 28:46
+Deuter 28:46
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -18256,7 +18256,7 @@ Deuteronomy 28:46
       tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 28:47
+Deuter 28:47
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -18277,7 +18277,7 @@ Deuteronomy 28:47
       tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 28:48
+Deuter 28:48
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -18310,7 +18310,7 @@ Deuteronomy 28:48
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 28:49
+Deuter 28:49
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -18331,7 +18331,7 @@ Deuteronomy 28:49
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 28:50
+Deuter 28:50
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -18349,7 +18349,7 @@ Deuteronomy 28:50
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 28:51
+Deuter 28:51
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -18382,7 +18382,7 @@ Deuteronomy 28:51
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 28:52
+Deuter 28:52
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -18421,7 +18421,7 @@ Deuteronomy 28:52
             mereka tifcha 
         4 silluq_phrase
           silluq 
-Deuteronomy 28:53
+Deuter 28:53
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -18448,7 +18448,7 @@ Deuteronomy 28:53
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 28:54
+Deuter 28:54
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -18472,7 +18472,7 @@ Deuteronomy 28:54
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 28:55
+Deuter 28:55
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -18505,7 +18505,7 @@ Deuteronomy 28:55
           tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 28:56
+Deuter 28:56
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -18535,7 +18535,7 @@ Deuteronomy 28:56
         tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 28:57
+Deuter 28:57
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -18571,7 +18571,7 @@ Deuteronomy 28:57
           tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 28:58
+Deuter 28:58
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -18607,7 +18607,7 @@ Deuteronomy 28:58
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 28:59
+Deuter 28:59
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -18631,7 +18631,7 @@ Deuteronomy 28:59
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 28:60
+Deuter 28:60
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -18652,7 +18652,7 @@ Deuteronomy 28:60
       tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 28:61
+Deuter 28:61
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -18682,7 +18682,7 @@ Deuteronomy 28:61
         tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 28:62
+Deuter 28:62
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -18709,7 +18709,7 @@ Deuteronomy 28:62
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 28:63
+Deuter 28:63
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -18748,7 +18748,7 @@ Deuteronomy 28:63
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 28:64
+Deuter 28:64
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -18775,7 +18775,7 @@ Deuteronomy 28:64
           mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 28:65
+Deuter 28:65
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -18799,7 +18799,7 @@ Deuteronomy 28:65
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 28:66
+Deuter 28:66
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -18820,7 +18820,7 @@ Deuteronomy 28:66
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 28:67
+Deuter 28:67
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -18844,7 +18844,7 @@ Deuteronomy 28:67
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 28:68
+Deuter 28:68
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -18871,7 +18871,7 @@ Deuteronomy 28:68
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 28:69
+Deuter 28:69
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -18895,7 +18895,7 @@ Deuteronomy 28:69
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 29:1
+Deuter 29:1
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -18919,7 +18919,7 @@ Deuteronomy 29:1
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 29:2
+Deuter 29:2
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -18940,7 +18940,7 @@ Deuteronomy 29:2
         tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 29:3
+Deuter 29:3
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -18958,7 +18958,7 @@ Deuteronomy 29:3
       tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 29:4
+Deuter 29:4
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -18979,7 +18979,7 @@ Deuteronomy 29:4
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 29:5
+Deuter 29:5
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -19006,7 +19006,7 @@ Deuteronomy 29:5
           mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 29:6
+Deuter 29:6
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -19024,7 +19024,7 @@ Deuteronomy 29:6
         tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 29:7
+Deuter 29:7
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -19045,7 +19045,7 @@ Deuteronomy 29:7
       tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 29:8
+Deuter 29:8
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -19069,7 +19069,7 @@ Deuteronomy 29:8
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 29:9
+Deuter 29:9
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -19096,7 +19096,7 @@ Deuteronomy 29:9
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 29:10
+Deuter 29:10
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -19117,7 +19117,7 @@ Deuteronomy 29:10
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 29:11
+Deuter 29:11
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -19141,7 +19141,7 @@ Deuteronomy 29:11
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 29:12
+Deuter 29:12
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -19171,7 +19171,7 @@ Deuteronomy 29:12
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 29:13
+Deuter 29:13
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -19192,7 +19192,7 @@ Deuteronomy 29:13
         tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 29:14
+Deuter 29:14
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -19219,7 +19219,7 @@ Deuteronomy 29:14
         tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 29:15
+Deuter 29:15
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -19237,7 +19237,7 @@ Deuteronomy 29:15
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 29:16
+Deuter 29:16
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -19258,7 +19258,7 @@ Deuteronomy 29:16
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 29:17
+Deuter 29:17
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -19297,7 +19297,7 @@ Deuteronomy 29:17
           mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 29:18
+Deuter 29:18
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -19330,7 +19330,7 @@ Deuteronomy 29:18
         mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 29:19
+Deuter 29:19
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -19369,7 +19369,7 @@ Deuteronomy 29:19
         tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 29:20
+Deuter 29:20
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -19396,7 +19396,7 @@ Deuteronomy 29:20
           mereka tifcha 
         4 silluq_phrase
           silluq 
-Deuteronomy 29:21
+Deuter 29:21
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -19438,7 +19438,7 @@ Deuteronomy 29:21
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 29:22
+Deuter 29:22
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -19477,7 +19477,7 @@ Deuteronomy 29:22
           tifcha 
         4 silluq_phrase
           silluq 
-Deuteronomy 29:23
+Deuter 29:23
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -19501,7 +19501,7 @@ Deuteronomy 29:23
         mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 29:24
+Deuter 29:24
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -19528,7 +19528,7 @@ Deuteronomy 29:24
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 29:25
+Deuter 29:25
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -19555,7 +19555,7 @@ Deuteronomy 29:25
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 29:26
+Deuter 29:26
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -19573,7 +19573,7 @@ Deuteronomy 29:26
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 29:27
+Deuter 29:27
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -19594,7 +19594,7 @@ Deuteronomy 29:27
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 29:28
+Deuter 29:28
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -19621,7 +19621,7 @@ Deuteronomy 29:28
           tifcha 
         4 silluq_phrase
           mereka silluq 
-Deuteronomy 30:1
+Deuter 30:1
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -19657,7 +19657,7 @@ Deuteronomy 30:1
             mereka tifcha 
         4 silluq_phrase
           silluq 
-Deuteronomy 30:2
+Deuter 30:2
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -19684,7 +19684,7 @@ Deuteronomy 30:2
         tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 30:3
+Deuter 30:3
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -19711,7 +19711,7 @@ Deuteronomy 30:3
           mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 30:4
+Deuter 30:4
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -19732,7 +19732,7 @@ Deuteronomy 30:4
         tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 30:5
+Deuter 30:5
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -19753,7 +19753,7 @@ Deuteronomy 30:5
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 30:6
+Deuter 30:6
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -19774,7 +19774,7 @@ Deuteronomy 30:6
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 30:7
+Deuter 30:7
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -19792,7 +19792,7 @@ Deuteronomy 30:7
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 30:8
+Deuter 30:8
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -19816,7 +19816,7 @@ Deuteronomy 30:8
           mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 30:9
+Deuter 30:9
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -19855,7 +19855,7 @@ Deuteronomy 30:9
         tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 30:10
+Deuter 30:10
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -19891,7 +19891,7 @@ Deuteronomy 30:10
         tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 30:11
+Deuter 30:11
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -19918,7 +19918,7 @@ Deuteronomy 30:11
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 30:12
+Deuter 30:12
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -19939,7 +19939,7 @@ Deuteronomy 30:12
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 30:13
+Deuter 30:13
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -19963,7 +19963,7 @@ Deuteronomy 30:13
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 30:14
+Deuter 30:14
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -19978,7 +19978,7 @@ Deuteronomy 30:14
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 30:15
+Deuter 30:15
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -19996,7 +19996,7 @@ Deuteronomy 30:15
       tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 30:16
+Deuter 30:16
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -20038,7 +20038,7 @@ Deuteronomy 30:16
             mereka tifcha 
           5 silluq_phrase
             silluq 
-Deuteronomy 30:17
+Deuter 30:17
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -20056,7 +20056,7 @@ Deuteronomy 30:17
           mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 30:18
+Deuter 30:18
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -20086,7 +20086,7 @@ Deuteronomy 30:18
           mereka tifcha 
         4 silluq_phrase
           silluq 
-Deuteronomy 30:19
+Deuter 30:19
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -20116,7 +20116,7 @@ Deuteronomy 30:19
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 30:20
+Deuter 30:20
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -20149,7 +20149,7 @@ Deuteronomy 30:20
               mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 31:1
+Deuter 31:1
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -20164,7 +20164,7 @@ Deuteronomy 31:1
         mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 31:2
+Deuter 31:2
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -20191,7 +20191,7 @@ Deuteronomy 31:2
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 31:3
+Deuter 31:3
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -20227,7 +20227,7 @@ Deuteronomy 31:3
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 31:4
+Deuter 31:4
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -20251,7 +20251,7 @@ Deuteronomy 31:4
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 31:5
+Deuter 31:5
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -20269,7 +20269,7 @@ Deuteronomy 31:5
           mereka tifcha 
         4 silluq_phrase
           silluq 
-Deuteronomy 31:6
+Deuter 31:6
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -20296,7 +20296,7 @@ Deuteronomy 31:6
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 31:7
+Deuter 31:7
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -20332,7 +20332,7 @@ Deuteronomy 31:7
       tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 31:8
+Deuter 31:8
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -20359,7 +20359,7 @@ Deuteronomy 31:8
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 31:9
+Deuter 31:9
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -20389,7 +20389,7 @@ Deuteronomy 31:9
       tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 31:10
+Deuter 31:10
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -20410,7 +20410,7 @@ Deuteronomy 31:10
           mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 31:11
+Deuter 31:11
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -20440,7 +20440,7 @@ Deuteronomy 31:11
         mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 31:12
+Deuter 31:12
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -20476,7 +20476,7 @@ Deuteronomy 31:12
           tifcha 
         4 silluq_phrase
           mereka silluq 
-Deuteronomy 31:13
+Deuter 31:13
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -20515,7 +20515,7 @@ Deuteronomy 31:13
           tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 31:14
+Deuter 31:14
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -20551,7 +20551,7 @@ Deuteronomy 31:14
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 31:15
+Deuter 31:15
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -20569,7 +20569,7 @@ Deuteronomy 31:15
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 31:16
+Deuter 31:16
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -20614,7 +20614,7 @@ Deuteronomy 31:16
             mereka tifcha 
           5 silluq_phrase
             silluq 
-Deuteronomy 31:17
+Deuter 31:17
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -20656,7 +20656,7 @@ Deuteronomy 31:17
           tifcha 
         4 silluq_phrase
           mereka silluq 
-Deuteronomy 31:18
+Deuter 31:18
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -20680,7 +20680,7 @@ Deuteronomy 31:18
         tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 31:19
+Deuter 31:19
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -20707,7 +20707,7 @@ Deuteronomy 31:19
         tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 31:20
+Deuter 31:20
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -20746,7 +20746,7 @@ Deuteronomy 31:20
           tifcha 
         4 silluq_phrase
           silluq 
-Deuteronomy 31:21
+Deuter 31:21
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -20794,7 +20794,7 @@ Deuteronomy 31:21
           tifcha 
         4 silluq_phrase
           mereka silluq 
-Deuteronomy 31:22
+Deuter 31:22
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -20809,7 +20809,7 @@ Deuteronomy 31:22
       tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 31:23
+Deuter 31:23
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -20842,7 +20842,7 @@ Deuteronomy 31:23
       tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 31:24
+Deuter 31:24
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -20863,7 +20863,7 @@ Deuteronomy 31:24
       tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 31:25
+Deuter 31:25
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -20878,7 +20878,7 @@ Deuteronomy 31:25
         mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 31:26
+Deuter 31:26
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -20905,7 +20905,7 @@ Deuteronomy 31:26
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 31:27
+Deuter 31:27
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -20935,7 +20935,7 @@ Deuteronomy 31:27
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 31:28
+Deuter 31:28
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -20962,7 +20962,7 @@ Deuteronomy 31:28
           tifcha 
         4 silluq_phrase
           silluq 
-Deuteronomy 31:29
+Deuter 31:29
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -20998,7 +20998,7 @@ Deuteronomy 31:29
           tifcha 
         4 silluq_phrase
           mereka silluq 
-Deuteronomy 31:30
+Deuter 31:30
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -21019,7 +21019,7 @@ Deuteronomy 31:30
       tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 32:1
+Deuter 32:1
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -21031,7 +21031,7 @@ Deuteronomy 32:1
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 32:2
+Deuter 32:2
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -21052,7 +21052,7 @@ Deuteronomy 32:2
         tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 32:3
+Deuter 32:3
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -21067,7 +21067,7 @@ Deuteronomy 32:3
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 32:4
+Deuter 32:4
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -21091,7 +21091,7 @@ Deuteronomy 32:4
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 32:5
+Deuter 32:5
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -21106,7 +21106,7 @@ Deuteronomy 32:5
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 32:6
+Deuter 32:6
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -21130,7 +21130,7 @@ Deuteronomy 32:6
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 32:7
+Deuter 32:7
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -21154,7 +21154,7 @@ Deuteronomy 32:7
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 32:8
+Deuter 32:8
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -21178,7 +21178,7 @@ Deuteronomy 32:8
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 32:9
+Deuter 32:9
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -21193,7 +21193,7 @@ Deuteronomy 32:9
       tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 32:10
+Deuter 32:10
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -21217,7 +21217,7 @@ Deuteronomy 32:10
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 32:11
+Deuter 32:11
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -21241,7 +21241,7 @@ Deuteronomy 32:11
         tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 32:12
+Deuter 32:12
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -21253,7 +21253,7 @@ Deuteronomy 32:12
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 32:13
+Deuter 32:13
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -21277,7 +21277,7 @@ Deuteronomy 32:13
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 32:14
+Deuter 32:14
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -21304,7 +21304,7 @@ Deuteronomy 32:14
       tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 32:15
+Deuter 32:15
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -21328,7 +21328,7 @@ Deuteronomy 32:15
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 32:16
+Deuter 32:16
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -21340,7 +21340,7 @@ Deuteronomy 32:16
       tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 32:17
+Deuter 32:17
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -21367,7 +21367,7 @@ Deuteronomy 32:17
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 32:18
+Deuter 32:18
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -21379,7 +21379,7 @@ Deuteronomy 32:18
       tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 32:19
+Deuter 32:19
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -21391,7 +21391,7 @@ Deuteronomy 32:19
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 32:20
+Deuter 32:20
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -21418,7 +21418,7 @@ Deuteronomy 32:20
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 32:21
+Deuter 32:21
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -21442,7 +21442,7 @@ Deuteronomy 32:21
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 32:22
+Deuter 32:22
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -21466,7 +21466,7 @@ Deuteronomy 32:22
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 32:23
+Deuter 32:23
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -21478,7 +21478,7 @@ Deuteronomy 32:23
       tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 32:24
+Deuter 32:24
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -21499,7 +21499,7 @@ Deuteronomy 32:24
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 32:25
+Deuter 32:25
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -21523,7 +21523,7 @@ Deuteronomy 32:25
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 32:26
+Deuter 32:26
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -21535,7 +21535,7 @@ Deuteronomy 32:26
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 32:27
+Deuter 32:27
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -21562,7 +21562,7 @@ Deuteronomy 32:27
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 32:28
+Deuter 32:28
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -21577,7 +21577,7 @@ Deuteronomy 32:28
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 32:29
+Deuter 32:29
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -21589,7 +21589,7 @@ Deuteronomy 32:29
       tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 32:30
+Deuter 32:30
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -21616,7 +21616,7 @@ Deuteronomy 32:30
         tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 32:31
+Deuter 32:31
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -21631,7 +21631,7 @@ Deuteronomy 32:31
       tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 32:32
+Deuter 32:32
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -21655,7 +21655,7 @@ Deuteronomy 32:32
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 32:33
+Deuter 32:33
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -21667,7 +21667,7 @@ Deuteronomy 32:33
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 32:34
+Deuter 32:34
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -21679,7 +21679,7 @@ Deuteronomy 32:34
       tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 32:35
+Deuter 32:35
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -21703,7 +21703,7 @@ Deuteronomy 32:35
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 32:36
+Deuter 32:36
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -21727,7 +21727,7 @@ Deuteronomy 32:36
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 32:37
+Deuter 32:37
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -21739,7 +21739,7 @@ Deuteronomy 32:37
       tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 32:38
+Deuter 32:38
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -21763,7 +21763,7 @@ Deuteronomy 32:38
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 32:39
+Deuter 32:39
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -21796,7 +21796,7 @@ Deuteronomy 32:39
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 32:40
+Deuter 32:40
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -21811,7 +21811,7 @@ Deuteronomy 32:40
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 32:41
+Deuter 32:41
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -21835,7 +21835,7 @@ Deuteronomy 32:41
         tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 32:42
+Deuter 32:42
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -21859,7 +21859,7 @@ Deuteronomy 32:42
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 32:43
+Deuter 32:43
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -21883,7 +21883,7 @@ Deuteronomy 32:43
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 32:44
+Deuter 32:44
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -21901,7 +21901,7 @@ Deuteronomy 32:44
       tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 32:45
+Deuter 32:45
 0 silluq_clause
   1 tifcha_clause
     2 revia_phrase
@@ -21913,7 +21913,7 @@ Deuteronomy 32:45
         mereka tifcha 
   1 silluq_phrase
     silluq 
-Deuteronomy 32:46
+Deuter 32:46
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -21946,7 +21946,7 @@ Deuteronomy 32:46
           tifcha 
         4 silluq_phrase
           mereka silluq 
-Deuteronomy 32:47
+Deuter 32:47
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -21982,7 +21982,7 @@ Deuteronomy 32:47
           tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 32:48
+Deuter 32:48
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -21997,7 +21997,7 @@ Deuteronomy 32:48
         mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 32:49
+Deuter 32:49
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -22033,7 +22033,7 @@ Deuteronomy 32:49
           mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 32:50
+Deuter 32:50
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -22066,7 +22066,7 @@ Deuteronomy 32:50
         tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 32:51
+Deuter 32:51
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -22096,7 +22096,7 @@ Deuteronomy 32:51
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 32:52
+Deuter 32:52
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -22117,7 +22117,7 @@ Deuteronomy 32:52
           mereka tifcha 
         4 silluq_phrase
           mereka silluq 
-Deuteronomy 33:1
+Deuter 33:1
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -22135,7 +22135,7 @@ Deuteronomy 33:1
       tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 33:2
+Deuter 33:2
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -22171,7 +22171,7 @@ Deuteronomy 33:2
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 33:3
+Deuter 33:3
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -22195,7 +22195,7 @@ Deuteronomy 33:3
         tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 33:4
+Deuter 33:4
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -22207,7 +22207,7 @@ Deuteronomy 33:4
       tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 33:5
+Deuter 33:5
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -22225,7 +22225,7 @@ Deuteronomy 33:5
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 33:6
+Deuter 33:6
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -22237,7 +22237,7 @@ Deuteronomy 33:6
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 33:7
+Deuter 33:7
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -22267,7 +22267,7 @@ Deuteronomy 33:7
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 33:8
+Deuter 33:8
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -22288,7 +22288,7 @@ Deuteronomy 33:8
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 33:9
+Deuter 33:9
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -22321,7 +22321,7 @@ Deuteronomy 33:9
         tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 33:10
+Deuter 33:10
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -22345,7 +22345,7 @@ Deuteronomy 33:10
         tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 33:11
+Deuter 33:11
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -22366,7 +22366,7 @@ Deuteronomy 33:11
         tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 33:12
+Deuter 33:12
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -22390,7 +22390,7 @@ Deuteronomy 33:12
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 33:13
+Deuter 33:13
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -22411,7 +22411,7 @@ Deuteronomy 33:13
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 33:14
+Deuter 33:14
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -22423,7 +22423,7 @@ Deuteronomy 33:14
       tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 33:15
+Deuter 33:15
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -22435,7 +22435,7 @@ Deuteronomy 33:15
       tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 33:16
+Deuter 33:16
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -22462,7 +22462,7 @@ Deuteronomy 33:16
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 33:17
+Deuter 33:17
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -22498,7 +22498,7 @@ Deuteronomy 33:17
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 33:18
+Deuter 33:18
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -22513,7 +22513,7 @@ Deuteronomy 33:18
       tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 33:19
+Deuter 33:19
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -22537,7 +22537,7 @@ Deuteronomy 33:19
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 33:20
+Deuter 33:20
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -22555,7 +22555,7 @@ Deuteronomy 33:20
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 33:21
+Deuter 33:21
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -22588,7 +22588,7 @@ Deuteronomy 33:21
           tifcha 
         4 silluq_phrase
           silluq 
-Deuteronomy 33:22
+Deuter 33:22
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -22603,7 +22603,7 @@ Deuteronomy 33:22
       tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 33:23
+Deuter 33:23
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -22624,7 +22624,7 @@ Deuteronomy 33:23
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 33:24
+Deuter 33:24
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -22645,7 +22645,7 @@ Deuteronomy 33:24
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 33:25
+Deuter 33:25
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -22657,7 +22657,7 @@ Deuteronomy 33:25
       tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 33:26
+Deuter 33:26
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -22675,7 +22675,7 @@ Deuteronomy 33:26
         tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 33:27
+Deuter 33:27
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -22696,7 +22696,7 @@ Deuteronomy 33:27
         tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 33:28
+Deuter 33:28
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -22714,7 +22714,7 @@ Deuteronomy 33:28
       tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 33:29
+Deuter 33:29
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -22747,7 +22747,7 @@ Deuteronomy 33:29
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 34:1
+Deuter 34:1
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -22777,7 +22777,7 @@ Deuteronomy 34:1
         tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 34:2
+Deuter 34:2
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -22801,7 +22801,7 @@ Deuteronomy 34:2
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 34:3
+Deuter 34:3
 0 silluq_clause
   1 tifcha_clause
     2 revia_phrase
@@ -22816,7 +22816,7 @@ Deuteronomy 34:3
         mereka tifcha 
   1 silluq_phrase
     silluq 
-Deuteronomy 34:4
+Deuter 34:4
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -22849,7 +22849,7 @@ Deuteronomy 34:4
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 34:5
+Deuter 34:5
 0 silluq_clause
   1 tifcha_clause
     2 tevir_clause
@@ -22861,7 +22861,7 @@ Deuteronomy 34:5
       mereka tifcha 
   1 silluq_phrase
     mereka silluq 
-Deuteronomy 34:6
+Deuter 34:6
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -22885,7 +22885,7 @@ Deuteronomy 34:6
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 34:7
+Deuter 34:7
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -22903,7 +22903,7 @@ Deuteronomy 34:7
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Deuteronomy 34:8
+Deuter 34:8
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -22921,7 +22921,7 @@ Deuteronomy 34:8
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-Deuteronomy 34:9
+Deuter 34:9
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -22954,7 +22954,7 @@ Deuteronomy 34:9
           mereka tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 34:10
+Deuter 34:10
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -22975,7 +22975,7 @@ Deuteronomy 34:10
         tifcha 
       3 silluq_phrase
         silluq 
-Deuteronomy 34:11
+Deuter 34:11
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -22999,7 +22999,7 @@ Deuteronomy 34:11
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Deuteronomy 34:12
+Deuter 34:12
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause

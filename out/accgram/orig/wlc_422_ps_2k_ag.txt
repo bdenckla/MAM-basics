@@ -1,4 +1,4 @@
-2 Kings 1:1
+2Kings 1:1
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -10,7 +10,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 1:2
+2Kings 1:2
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -46,7 +46,7 @@
           tifcha 
         4 silluq_phrase
           mereka silluq 
-2 Kings 1:3
+2Kings 1:3
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -88,7 +88,7 @@
               mereka tifcha 
             6 silluq_phrase
               mereka silluq 
-2 Kings 1:4
+2Kings 1:4
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -112,7 +112,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 1:5
+2Kings 1:5
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -124,7 +124,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 1:6
+2Kings 1:6
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -184,7 +184,7 @@
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 1:7
+2Kings 1:7
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -208,7 +208,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 1:8
+2Kings 1:8
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -232,7 +232,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 1:9
+2Kings 1:9
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -268,7 +268,7 @@
             mereka tifcha 
           5 silluq_phrase
             silluq 
-2 Kings 1:10
+2Kings 1:10
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -307,7 +307,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 1:11
+2Kings 1:11
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -337,7 +337,7 @@
           mereka tifcha 
         4 silluq_phrase
           mereka silluq 
-2 Kings 1:12
+2Kings 1:12
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -373,7 +373,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 1:13
+2Kings 1:13
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -421,7 +421,7 @@
               tifcha 
         4 silluq_phrase
           silluq 
-2 Kings 1:14
+2Kings 1:14
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -454,7 +454,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 1:15
+2Kings 1:15
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -481,7 +481,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 1:16
+2Kings 1:16
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -529,7 +529,7 @@
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 1:17
+2Kings 1:17
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -562,7 +562,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 1:18
+2Kings 1:18
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -583,7 +583,7 @@
           mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 2:1
+2Kings 2:1
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -607,7 +607,7 @@
         tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 2:2
+2Kings 2:2
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -634,7 +634,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 2:3
+2Kings 2:3
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -667,7 +667,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 2:4
+2Kings 2:4
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -697,7 +697,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 2:5
+2Kings 2:5
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -730,7 +730,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 2:6
+2Kings 2:6
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -757,7 +757,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 2:7
+2Kings 2:7
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -778,7 +778,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 2:8
+2Kings 2:8
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -796,7 +796,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 2:9
+2Kings 2:9
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -829,7 +829,7 @@
           mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 2:10
+2Kings 2:10
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -850,7 +850,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 2:11
+2Kings 2:11
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -883,7 +883,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 2:12
+2Kings 2:12
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -919,7 +919,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 2:13
+2Kings 2:13
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -937,7 +937,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 2:14
+2Kings 2:14
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -976,7 +976,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 2:15
+2Kings 2:15
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1006,7 +1006,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 2:16
+2Kings 2:16
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -1045,7 +1045,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 2:17
+2Kings 2:17
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -1063,7 +1063,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 2:18
+2Kings 2:18
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -1081,7 +1081,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 2:19
+2Kings 2:19
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1111,7 +1111,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 2:20
+2Kings 2:20
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1132,7 +1132,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 2:21
+2Kings 2:21
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1165,7 +1165,7 @@
           tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 2:22
+2Kings 2:22
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -1180,7 +1180,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 2:23
+2Kings 2:23
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -1210,7 +1210,7 @@
           mereka tifcha 
         4 silluq_phrase
           mereka silluq 
-2 Kings 2:24
+2Kings 2:24
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1237,7 +1237,7 @@
           mereka tifcha 
         4 silluq_phrase
           silluq 
-2 Kings 2:25
+2Kings 2:25
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -1249,7 +1249,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 3:1
+2Kings 3:1
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1276,7 +1276,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 3:2
+2Kings 3:2
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1303,7 +1303,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 3:3
+2Kings 3:3
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -1324,7 +1324,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 3:4
+2Kings 3:4
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -1342,7 +1342,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 3:5
+2Kings 3:5
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -1354,7 +1354,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 3:6
+2Kings 3:6
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -1372,7 +1372,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 3:7
+2Kings 3:7
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1408,7 +1408,7 @@
           mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 3:8
+2Kings 3:8
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -1426,7 +1426,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 3:9
+2Kings 3:9
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1450,7 +1450,7 @@
         tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 3:10
+2Kings 3:10
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -1474,7 +1474,7 @@
           mereka tifcha 
         4 silluq_phrase
           silluq 
-2 Kings 3:11
+2Kings 3:11
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1513,7 +1513,7 @@
           mereka tifcha 
         4 silluq_phrase
           mereka silluq 
-2 Kings 3:12
+2Kings 3:12
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1537,7 +1537,7 @@
           tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 3:13
+2Kings 3:13
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1582,7 +1582,7 @@
           mereka tifcha 
         4 silluq_phrase
           silluq 
-2 Kings 3:14
+2Kings 3:14
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1612,7 +1612,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 3:15
+2Kings 3:15
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -1630,7 +1630,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 3:16
+2Kings 3:16
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -1648,7 +1648,7 @@
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 3:17
+2Kings 3:17
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1675,7 +1675,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 3:18
+2Kings 3:18
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -1687,7 +1687,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 3:19
+2Kings 3:19
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1720,7 +1720,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 3:20
+2Kings 3:20
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1738,7 +1738,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 3:21
+2Kings 3:21
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1765,7 +1765,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 3:22
+2Kings 3:22
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -1783,7 +1783,7 @@
         tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 3:23
+2Kings 3:23
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1807,7 +1807,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 3:24
+2Kings 3:24
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -1834,7 +1834,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 3:25
+2Kings 3:25
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1867,7 +1867,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 3:26
+2Kings 3:26
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1897,7 +1897,7 @@
           mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 3:27
+2Kings 3:27
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1927,7 +1927,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 4:1
+2Kings 4:1
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1972,7 +1972,7 @@
             tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 4:2
+2Kings 4:2
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2002,7 +2002,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 4:3
+2Kings 4:3
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2023,7 +2023,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 4:4
+2Kings 4:4
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2047,7 +2047,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 4:5
+2Kings 4:5
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2071,7 +2071,7 @@
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 4:6
+2Kings 4:6
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2101,7 +2101,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 4:7
+2Kings 4:7
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2134,7 +2134,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 4:8
+2Kings 4:8
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2164,7 +2164,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 4:9
+2Kings 4:9
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2188,7 +2188,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 4:10
+2Kings 4:10
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2212,7 +2212,7 @@
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 4:11
+2Kings 4:11
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -2224,7 +2224,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 4:12
+2Kings 4:12
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2245,7 +2245,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 4:13
+2Kings 4:13
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -2284,7 +2284,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 4:14
+2Kings 4:14
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -2305,7 +2305,7 @@
           mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 4:15
+2Kings 4:15
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -2320,7 +2320,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 4:16
+2Kings 4:16
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2350,7 +2350,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 4:17
+2Kings 4:17
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -2368,7 +2368,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 4:18
+2Kings 4:18
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -2383,7 +2383,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 4:19
+2Kings 4:19
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -2401,7 +2401,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 4:20
+2Kings 4:20
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -2419,7 +2419,7 @@
         tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 4:21
+2Kings 4:21
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2437,7 +2437,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 4:22
+2Kings 4:22
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -2467,7 +2467,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 4:23
+2Kings 4:23
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2491,7 +2491,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 4:24
+2Kings 4:24
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2512,7 +2512,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 4:25
+2Kings 4:25
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -2545,7 +2545,7 @@
           tifcha 
         4 silluq_phrase
           mereka silluq 
-2 Kings 4:26
+2Kings 4:26
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -2569,7 +2569,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 4:27
+2Kings 4:27
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2608,7 +2608,7 @@
           mereka tifcha 
         4 silluq_phrase
           silluq 
-2 Kings 4:28
+2Kings 4:28
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -2626,7 +2626,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 4:29
+2Kings 4:29
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -2656,7 +2656,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 4:30
+2Kings 4:30
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2674,7 +2674,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 4:31
+2Kings 4:31
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2704,7 +2704,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 4:32
+2Kings 4:32
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -2722,7 +2722,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 4:33
+2Kings 4:33
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -2737,7 +2737,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 4:34
+2Kings 4:34
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2764,7 +2764,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 4:35
+2Kings 4:35
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2794,7 +2794,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 4:36
+2Kings 4:36
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2818,7 +2818,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 4:37
+2Kings 4:37
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2836,7 +2836,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 4:38
+2Kings 4:38
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2872,7 +2872,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 4:39
+2Kings 4:39
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -2905,7 +2905,7 @@
           mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 4:40
+2Kings 4:40
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -2935,7 +2935,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 4:41
+2Kings 4:41
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2965,7 +2965,7 @@
           mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 4:42
+2Kings 4:42
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2995,7 +2995,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 4:43
+2Kings 4:43
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -3031,7 +3031,7 @@
           tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 4:44
+2Kings 4:44
 0 silluq_clause
   1 tifcha_clause
     2 tevir_phrase
@@ -3040,7 +3040,7 @@
       mereka tifcha 
   1 silluq_phrase
     mereka silluq 
-2 Kings 5:1
+2Kings 5:1
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -3073,7 +3073,7 @@
           mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 5:2
+2Kings 5:2
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -3097,7 +3097,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 5:3
+2Kings 5:3
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -3121,7 +3121,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 5:4
+2Kings 5:4
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -3142,7 +3142,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 5:5
+2Kings 5:5
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -3172,7 +3172,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 5:6
+2Kings 5:6
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -3202,7 +3202,7 @@
           tifcha 
         4 silluq_phrase
           silluq 
-2 Kings 5:7
+2Kings 5:7
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -3244,7 +3244,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 5:8
+2Kings 5:8
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -3286,7 +3286,7 @@
             mereka tifcha 
         4 silluq_phrase
           silluq 
-2 Kings 5:9
+2Kings 5:9
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -3298,7 +3298,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 5:10
+2Kings 5:10
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -3325,7 +3325,7 @@
           tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 5:11
+2Kings 5:11
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -3358,7 +3358,7 @@
           tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 5:12
+2Kings 5:12
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -3385,7 +3385,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 5:13
+2Kings 5:13
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -3418,7 +3418,7 @@
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 5:14
+2Kings 5:14
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -3445,7 +3445,7 @@
           mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 5:15
+2Kings 5:15
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -3484,7 +3484,7 @@
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 5:16
+2Kings 5:16
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -3502,7 +3502,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 5:17
+2Kings 5:17
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -3538,7 +3538,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 5:18
+2Kings 5:18
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -3574,7 +3574,7 @@
           mereka tifcha 
         4 silluq_phrase
           mereka silluq 
-2 Kings 5:19
+2Kings 5:19
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -3586,7 +3586,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 5:20
+2Kings 5:20
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -3625,7 +3625,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 5:21
+2Kings 5:21
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -3649,7 +3649,7 @@
           tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 5:22
+2Kings 5:22
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -3688,7 +3688,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 5:23
+2Kings 5:23
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -3724,7 +3724,7 @@
           tifcha 
         4 silluq_phrase
           silluq 
-2 Kings 5:24
+2Kings 5:24
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -3742,7 +3742,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 5:25
+2Kings 5:25
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -3769,7 +3769,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 5:26
+2Kings 5:26
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -3805,7 +3805,7 @@
           tifcha 
         4 silluq_phrase
           silluq 
-2 Kings 5:27
+2Kings 5:27
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -3820,7 +3820,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 6:1
+2Kings 6:1
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -3841,7 +3841,7 @@
           tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 6:2
+2Kings 6:2
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -3868,7 +3868,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 6:3
+2Kings 6:3
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -3886,7 +3886,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 6:4
+2Kings 6:4
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -3904,7 +3904,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 6:5
+2Kings 6:5
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -3925,7 +3925,7 @@
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 6:6
+2Kings 6:6
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -3949,7 +3949,7 @@
           tifcha 
         4 silluq_phrase
           silluq 
-2 Kings 6:7
+2Kings 6:7
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -3961,7 +3961,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 6:8
+2Kings 6:8
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -3985,7 +3985,7 @@
             mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 6:9
+2Kings 6:9
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -4012,7 +4012,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 6:10
+2Kings 6:10
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -4036,7 +4036,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 6:11
+2Kings 6:11
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -4066,7 +4066,7 @@
           mereka tifcha 
         4 silluq_phrase
           mereka silluq 
-2 Kings 6:12
+2Kings 6:12
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -4099,7 +4099,7 @@
             mereka tifcha 
           5 silluq_phrase
             mereka silluq 
-2 Kings 6:13
+2Kings 6:13
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -4120,7 +4120,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 6:14
+2Kings 6:14
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -4138,7 +4138,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 6:15
+2Kings 6:15
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -4168,7 +4168,7 @@
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 6:16
+2Kings 6:16
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -4186,7 +4186,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 6:17
+2Kings 6:17
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -4222,7 +4222,7 @@
             tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 6:18
+2Kings 6:18
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -4246,7 +4246,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 6:19
+2Kings 6:19
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -4276,7 +4276,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 6:20
+2Kings 6:20
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -4309,7 +4309,7 @@
           tifcha 
         4 silluq_phrase
           mereka silluq 
-2 Kings 6:21
+2Kings 6:21
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -4327,7 +4327,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 6:22
+2Kings 6:22
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -4360,7 +4360,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 6:23
+2Kings 6:23
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -4393,7 +4393,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 6:24
+2Kings 6:24
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -4417,7 +4417,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 6:25
+2Kings 6:25
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -4444,7 +4444,7 @@
           mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 6:26
+2Kings 6:26
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -4471,7 +4471,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 6:27
+2Kings 6:27
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -4489,7 +4489,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 6:28
+2Kings 6:28
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -4516,7 +4516,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 6:29
+2Kings 6:29
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -4540,7 +4540,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 6:30
+2Kings 6:30
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -4567,7 +4567,7 @@
           tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 6:31
+2Kings 6:31
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -4588,7 +4588,7 @@
         tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 6:32
+2Kings 6:32
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -4654,7 +4654,7 @@
               mereka tifcha 
         4 silluq_phrase
           silluq 
-2 Kings 6:33
+2Kings 6:33
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -4681,7 +4681,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 7:1
+2Kings 7:1
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -4711,7 +4711,7 @@
               tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 7:2
+2Kings 7:2
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -4753,7 +4753,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 7:3
+2Kings 7:3
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -4780,7 +4780,7 @@
             mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 7:4
+2Kings 7:4
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -4816,7 +4816,7 @@
           tifcha 
         4 silluq_phrase
           silluq 
-2 Kings 7:5
+2Kings 7:5
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -4840,7 +4840,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 7:6
+2Kings 7:6
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -4879,7 +4879,7 @@
           mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 7:7
+2Kings 7:7
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -4906,7 +4906,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 7:8
+2Kings 7:8
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -4954,7 +4954,7 @@
           tifcha 
         4 silluq_phrase
           silluq 
-2 Kings 7:9
+2Kings 7:9
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -4993,7 +4993,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 7:10
+2Kings 7:10
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -5035,7 +5035,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 7:11
+2Kings 7:11
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -5050,7 +5050,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 7:12
+2Kings 7:12
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -5101,7 +5101,7 @@
           tifcha 
         4 silluq_phrase
           silluq 
-2 Kings 7:13
+2Kings 7:13
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -5143,7 +5143,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 7:14
+2Kings 7:14
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -5164,7 +5164,7 @@
         tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 7:15
+2Kings 7:15
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -5197,7 +5197,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 7:16
+2Kings 7:16
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -5224,7 +5224,7 @@
           tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 7:17
+2Kings 7:17
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -5257,7 +5257,7 @@
           mereka tifcha 
         4 silluq_phrase
           silluq 
-2 Kings 7:18
+2Kings 7:18
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -5296,7 +5296,7 @@
           tifcha 
         4 silluq_phrase
           silluq 
-2 Kings 7:19
+2Kings 7:19
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -5335,7 +5335,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 7:20
+2Kings 7:20
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -5350,7 +5350,7 @@
         tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 8:1
+2Kings 8:1
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -5383,7 +5383,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 8:2
+2Kings 8:2
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -5410,7 +5410,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 8:3
+2Kings 8:3
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -5437,7 +5437,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 8:4
+2Kings 8:4
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -5461,7 +5461,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 8:5
+2Kings 8:5
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -5503,7 +5503,7 @@
           tifcha 
         4 silluq_phrase
           mereka silluq 
-2 Kings 8:6
+2Kings 8:6
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -5536,7 +5536,7 @@
           mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 8:7
+2Kings 8:7
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -5560,7 +5560,7 @@
           mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 8:8
+2Kings 8:8
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -5593,7 +5593,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 8:9
+2Kings 8:9
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -5635,7 +5635,7 @@
           tifcha 
         4 silluq_phrase
           mereka silluq 
-2 Kings 8:10
+2Kings 8:10
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -5653,7 +5653,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 8:11
+2Kings 8:11
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -5665,7 +5665,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 8:12
+2Kings 8:12
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -5707,7 +5707,7 @@
           tifcha 
         4 silluq_phrase
           silluq 
-2 Kings 8:13
+2Kings 8:13
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -5737,7 +5737,7 @@
           tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 8:14
+2Kings 8:14
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -5767,7 +5767,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 8:15
+2Kings 8:15
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -5788,7 +5788,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 8:16
+2Kings 8:16
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -5812,7 +5812,7 @@
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 8:17
+2Kings 8:17
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -5830,7 +5830,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 8:18
+2Kings 8:18
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -5863,7 +5863,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 8:19
+2Kings 8:19
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -5887,7 +5887,7 @@
           tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 8:20
+2Kings 8:20
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -5905,7 +5905,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 8:21
+2Kings 8:21
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -5941,7 +5941,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 8:22
+2Kings 8:22
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -5965,7 +5965,7 @@
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 8:23
+2Kings 8:23
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -5986,7 +5986,7 @@
           mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 8:24
+2Kings 8:24
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6007,7 +6007,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 8:25
+2Kings 8:25
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6028,7 +6028,7 @@
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 8:26
+2Kings 8:26
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6055,7 +6055,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 8:27
+2Kings 8:27
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6082,7 +6082,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 8:28
+2Kings 8:28
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -6103,7 +6103,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 8:29
+2Kings 8:29
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6148,7 +6148,7 @@
           tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 9:1
+2Kings 9:1
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6184,7 +6184,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 9:2
+2Kings 9:2
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -6214,7 +6214,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 9:3
+2Kings 9:3
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6241,7 +6241,7 @@
         tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 9:4
+2Kings 9:4
 0 silluq_clause
   1 tifcha_clause
     2 tevir_phrase
@@ -6250,7 +6250,7 @@
       mereka tifcha 
   1 silluq_phrase
     mereka silluq 
-2 Kings 9:5
+2Kings 9:5
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6283,7 +6283,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 9:6
+2Kings 9:6
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6313,7 +6313,7 @@
           mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 9:7
+2Kings 9:7
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -6340,7 +6340,7 @@
           mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 9:8
+2Kings 9:8
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -6358,7 +6358,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 9:9
+2Kings 9:9
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6376,7 +6376,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 9:10
+2Kings 9:10
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -6394,7 +6394,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 9:11
+2Kings 9:11
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6430,7 +6430,7 @@
           mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 9:12
+2Kings 9:12
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -6463,7 +6463,7 @@
           mereka tifcha 
         4 silluq_phrase
           silluq 
-2 Kings 9:13
+2Kings 9:13
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6490,7 +6490,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 9:14
+2Kings 9:14
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -6520,7 +6520,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 9:15
+2Kings 9:15
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6559,7 +6559,7 @@
           tifcha 
         4 silluq_phrase
           mereka silluq 
-2 Kings 9:16
+2Kings 9:16
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6583,7 +6583,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 9:17
+2Kings 9:17
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6619,7 +6619,7 @@
           mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 9:18
+2Kings 9:18
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6655,7 +6655,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 9:19
+2Kings 9:19
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -6685,7 +6685,7 @@
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 9:20
+2Kings 9:20
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6712,7 +6712,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 9:21
+2Kings 9:21
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6748,7 +6748,7 @@
           tifcha 
         4 silluq_phrase
           mereka silluq 
-2 Kings 9:22
+2Kings 9:22
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6781,7 +6781,7 @@
           tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 9:23
+2Kings 9:23
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -6796,7 +6796,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 9:24
+2Kings 9:24
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6820,7 +6820,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 9:25
+2Kings 9:25
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6871,7 +6871,7 @@
           tifcha 
         4 silluq_phrase
           silluq 
-2 Kings 9:26
+2Kings 9:26
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6904,7 +6904,7 @@
           tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 9:27
+2Kings 9:27
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6946,7 +6946,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 9:28
+2Kings 9:28
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -6964,7 +6964,7 @@
         tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 9:29
+2Kings 9:29
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6982,7 +6982,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 9:30
+2Kings 9:30
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -7003,7 +7003,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 9:31
+2Kings 9:31
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -7018,7 +7018,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 9:32
+2Kings 9:32
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7042,7 +7042,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 9:33
+2Kings 9:33
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -7057,7 +7057,7 @@
         tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 9:34
+2Kings 9:34
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -7081,7 +7081,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 9:35
+2Kings 9:35
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -7099,7 +7099,7 @@
           tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 9:36
+2Kings 9:36
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -7132,7 +7132,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 9:37
+2Kings 9:37
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -7153,7 +7153,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 10:1
+2Kings 10:1
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -7180,7 +7180,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 10:2
+2Kings 10:2
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7207,7 +7207,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 10:3
+2Kings 10:3
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7228,7 +7228,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 10:4
+2Kings 10:4
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7255,7 +7255,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 10:5
+2Kings 10:5
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7282,7 +7282,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 10:6
+2Kings 10:6
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7327,7 +7327,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 10:7
+2Kings 10:7
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7360,7 +7360,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 10:8
+2Kings 10:8
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7387,7 +7387,7 @@
           mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 10:9
+2Kings 10:9
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7420,7 +7420,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 10:10
+2Kings 10:10
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7453,7 +7453,7 @@
           tifcha 
         4 silluq_phrase
           mereka silluq 
-2 Kings 10:11
+2Kings 10:11
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7474,7 +7474,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 10:12
+2Kings 10:12
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7495,7 +7495,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 10:13
+2Kings 10:13
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7531,7 +7531,7 @@
           mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 10:14
+2Kings 10:14
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7561,7 +7561,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 10:15
+2Kings 10:15
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7600,7 +7600,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 10:16
+2Kings 10:16
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7618,7 +7618,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 10:17
+2Kings 10:17
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7645,7 +7645,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 10:18
+2Kings 10:18
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7669,7 +7669,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 10:19
+2Kings 10:19
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7702,7 +7702,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 10:20
+2Kings 10:20
 0 silluq_clause
   1 tifcha_clause
     2 revia_phrase
@@ -7714,7 +7714,7 @@
         tifcha 
   1 silluq_phrase
     silluq 
-2 Kings 10:21
+2Kings 10:21
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7744,7 +7744,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 10:22
+2Kings 10:22
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7768,7 +7768,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 10:23
+2Kings 10:23
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -7801,7 +7801,7 @@
           mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 10:24
+2Kings 10:24
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -7840,7 +7840,7 @@
           tifcha 
         4 silluq_phrase
           mereka silluq 
-2 Kings 10:25
+2Kings 10:25
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7882,7 +7882,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 10:26
+2Kings 10:26
 0 silluq_clause
   1 tifcha_clause
     2 tevir_phrase
@@ -7891,7 +7891,7 @@
       mereka tifcha 
   1 silluq_phrase
     silluq 
-2 Kings 10:27
+2Kings 10:27
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -7912,7 +7912,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 10:28
+2Kings 10:28
 0 silluq_clause
   1 tifcha_clause
     2 tevir_phrase
@@ -7921,7 +7921,7 @@
       tifcha 
   1 silluq_phrase
     silluq 
-2 Kings 10:29
+2Kings 10:29
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7951,7 +7951,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 10:30
+2Kings 10:30
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7987,7 +7987,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 10:31
+2Kings 10:31
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -8017,7 +8017,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 10:32
+2Kings 10:32
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -8035,7 +8035,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 10:33
+2Kings 10:33
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8065,7 +8065,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 10:34
+2Kings 10:34
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -8086,7 +8086,7 @@
           mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 10:35
+2Kings 10:35
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8107,7 +8107,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 10:36
+2Kings 10:36
 0 silluq_clause
   1 zaqef_clause
     2 revia_phrase
@@ -8122,7 +8122,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 11:1
+2Kings 11:1
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8146,7 +8146,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 11:2
+2Kings 11:2
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8179,7 +8179,7 @@
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 11:3
+2Kings 11:3
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8197,7 +8197,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 11:4
+2Kings 11:4
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8239,7 +8239,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 11:5
+2Kings 11:5
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -8263,7 +8263,7 @@
           tifcha 
         4 silluq_phrase
           mereka silluq 
-2 Kings 11:6
+2Kings 11:6
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8284,7 +8284,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 11:7
+2Kings 11:7
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8305,7 +8305,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 11:8
+2Kings 11:8
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8329,7 +8329,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 11:9
+2Kings 11:9
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -8362,7 +8362,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 11:10
+2Kings 11:10
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8386,7 +8386,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 11:11
+2Kings 11:11
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8416,7 +8416,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 11:12
+2Kings 11:12
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8443,7 +8443,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 11:13
+2Kings 11:13
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -8458,7 +8458,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 11:14
+2Kings 11:14
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8497,7 +8497,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 11:15
+2Kings 11:15
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8533,7 +8533,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 11:16
+2Kings 11:16
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8554,7 +8554,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 11:17
+2Kings 11:17
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8581,7 +8581,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 11:18
+2Kings 11:18
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8617,7 +8617,7 @@
         tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 11:19
+2Kings 11:19
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8650,7 +8650,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 11:20
+2Kings 11:20
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -8665,13 +8665,13 @@
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 12:1
+2Kings 12:1
 0 silluq_clause
   1 tifcha_phrase
     mereka tifcha 
   1 silluq_phrase
     mereka silluq 
-2 Kings 12:2
+2Kings 12:2
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8695,7 +8695,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 12:3
+2Kings 12:3
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -8713,7 +8713,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 12:4
+2Kings 12:4
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -8728,7 +8728,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 12:5
+2Kings 12:5
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8767,7 +8767,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 12:6
+2Kings 12:6
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8797,7 +8797,7 @@
           mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 12:7
+2Kings 12:7
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -8815,7 +8815,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 12:8
+2Kings 12:8
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8851,7 +8851,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 12:9
+2Kings 12:9
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -8869,7 +8869,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 12:10
+2Kings 12:10
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8908,7 +8908,7 @@
           tifcha 
         4 silluq_phrase
           mereka silluq 
-2 Kings 12:11
+2Kings 12:11
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8938,7 +8938,7 @@
           tifcha 
         4 silluq_phrase
           mereka silluq 
-2 Kings 12:12
+2Kings 12:12
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8971,7 +8971,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 12:13
+2Kings 12:13
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8998,7 +8998,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 12:14
+2Kings 12:14
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9025,7 +9025,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 12:15
+2Kings 12:15
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -9037,7 +9037,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 12:16
+2Kings 12:16
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9058,7 +9058,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 12:17
+2Kings 12:17
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9076,7 +9076,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 12:18
+2Kings 12:18
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9103,7 +9103,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 12:19
+2Kings 12:19
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9148,7 +9148,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 12:20
+2Kings 12:20
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -9169,7 +9169,7 @@
           mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 12:21
+2Kings 12:21
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -9187,7 +9187,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 12:22
+2Kings 12:22
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9214,7 +9214,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 13:1
+2Kings 13:1
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9241,7 +9241,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 13:2
+2Kings 13:2
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -9262,7 +9262,7 @@
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 13:3
+2Kings 13:3
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -9286,7 +9286,7 @@
           mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 13:4
+2Kings 13:4
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -9310,7 +9310,7 @@
           mereka tifcha 
         4 silluq_phrase
           mereka silluq 
-2 Kings 13:5
+2Kings 13:5
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9334,7 +9334,7 @@
         tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 13:6
+2Kings 13:6
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -9361,7 +9361,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 13:7
+2Kings 13:7
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9391,7 +9391,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 13:8
+2Kings 13:8
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -9412,7 +9412,7 @@
           mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 13:9
+2Kings 13:9
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9433,7 +9433,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 13:10
+2Kings 13:10
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9460,7 +9460,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 13:11
+2Kings 13:11
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -9481,7 +9481,7 @@
           mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 13:12
+2Kings 13:12
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9511,7 +9511,7 @@
           mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 13:13
+2Kings 13:13
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9535,7 +9535,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 13:14
+2Kings 13:14
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9568,7 +9568,7 @@
           mereka tifcha 
         4 silluq_phrase
           silluq 
-2 Kings 13:15
+2Kings 13:15
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9586,7 +9586,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 13:16
+2Kings 13:16
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9613,7 +9613,7 @@
         tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 13:17
+2Kings 13:17
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -9649,7 +9649,7 @@
             tifcha 
         4 silluq_phrase
           silluq 
-2 Kings 13:18
+2Kings 13:18
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -9670,7 +9670,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 13:19
+2Kings 13:19
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9703,7 +9703,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 13:20
+2Kings 13:20
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -9718,7 +9718,7 @@
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 13:21
+2Kings 13:21
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9754,7 +9754,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 13:22
+2Kings 13:22
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9772,7 +9772,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 13:23
+2Kings 13:23
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9799,7 +9799,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 13:24
+2Kings 13:24
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -9814,7 +9814,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 13:25
+2Kings 13:25
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9853,7 +9853,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 14:1
+2Kings 14:1
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -9871,7 +9871,7 @@
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 14:2
+2Kings 14:2
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9898,7 +9898,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 14:3
+2Kings 14:3
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9922,7 +9922,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 14:4
+2Kings 14:4
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -9937,7 +9937,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 14:5
+2Kings 14:5
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -9961,7 +9961,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 14:6
+2Kings 14:6
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -9994,7 +9994,7 @@
           mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 14:7
+2Kings 14:7
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10018,7 +10018,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 14:8
+2Kings 14:8
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10039,7 +10039,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 14:9
+2Kings 14:9
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -10090,7 +10090,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 14:10
+2Kings 14:10
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10123,7 +10123,7 @@
             tifcha 
           5 silluq_phrase
             mereka silluq 
-2 Kings 14:11
+2Kings 14:11
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -10144,7 +10144,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 14:12
+2Kings 14:12
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -10156,7 +10156,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 14:13
+2Kings 14:13
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -10192,7 +10192,7 @@
           mereka tifcha 
         4 silluq_phrase
           silluq 
-2 Kings 14:14
+2Kings 14:14
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10219,7 +10219,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 14:15
+2Kings 14:15
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10249,7 +10249,7 @@
           mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 14:16
+2Kings 14:16
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10276,7 +10276,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 14:17
+2Kings 14:17
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10297,7 +10297,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 14:18
+2Kings 14:18
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -10315,7 +10315,7 @@
           mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 14:19
+2Kings 14:19
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -10336,7 +10336,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 14:20
+2Kings 14:20
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -10351,7 +10351,7 @@
         tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 14:21
+2Kings 14:21
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10378,7 +10378,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 14:22
+2Kings 14:22
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10396,7 +10396,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 14:23
+2Kings 14:23
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10423,7 +10423,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 14:24
+2Kings 14:24
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -10444,7 +10444,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 14:25
+2Kings 14:25
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10483,7 +10483,7 @@
           tifcha 
         4 silluq_phrase
           mereka silluq 
-2 Kings 14:26
+2Kings 14:26
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -10504,7 +10504,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 14:27
+2Kings 14:27
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -10528,7 +10528,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 14:28
+2Kings 14:28
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10561,7 +10561,7 @@
           mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 14:29
+2Kings 14:29
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10582,7 +10582,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 15:1
+2Kings 15:1
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10603,7 +10603,7 @@
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 15:2
+2Kings 15:2
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10630,7 +10630,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 15:3
+2Kings 15:3
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -10642,7 +10642,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 15:4
+2Kings 15:4
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -10657,7 +10657,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 15:5
+2Kings 15:5
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10687,7 +10687,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 15:6
+2Kings 15:6
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -10708,7 +10708,7 @@
           mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 15:7
+2Kings 15:7
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10732,7 +10732,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 15:8
+2Kings 15:8
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10756,7 +10756,7 @@
         tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 15:9
+2Kings 15:9
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10783,7 +10783,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 15:10
+2Kings 15:10
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10801,7 +10801,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 15:11
+2Kings 15:11
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -10819,7 +10819,7 @@
           mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 15:12
+2Kings 15:12
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10840,7 +10840,7 @@
           munach atnach 
   1 silluq_phrase
     silluq 
-2 Kings 15:13
+2Kings 15:13
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10864,7 +10864,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 15:14
+2Kings 15:14
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10891,7 +10891,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 15:15
+2Kings 15:15
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10915,7 +10915,7 @@
           mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 15:16
+2Kings 15:16
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10942,7 +10942,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 15:17
+2Kings 15:17
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10966,7 +10966,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 15:18
+2Kings 15:18
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -10987,7 +10987,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 15:19
+2Kings 15:19
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11017,7 +11017,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 15:20
+2Kings 15:20
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11056,7 +11056,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 15:21
+2Kings 15:21
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -11077,7 +11077,7 @@
           mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 15:22
+2Kings 15:22
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -11092,7 +11092,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 15:23
+2Kings 15:23
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11116,7 +11116,7 @@
         tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 15:24
+2Kings 15:24
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -11137,7 +11137,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 15:25
+2Kings 15:25
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11167,7 +11167,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 15:26
+2Kings 15:26
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -11188,7 +11188,7 @@
           mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 15:27
+2Kings 15:27
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11212,7 +11212,7 @@
         tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 15:28
+2Kings 15:28
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -11233,7 +11233,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 15:29
+2Kings 15:29
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -11275,7 +11275,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 15:30
+2Kings 15:30
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11308,7 +11308,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 15:31
+2Kings 15:31
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -11326,7 +11326,7 @@
           mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 15:32
+2Kings 15:32
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -11344,7 +11344,7 @@
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 15:33
+2Kings 15:33
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11368,7 +11368,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 15:34
+2Kings 15:34
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -11383,7 +11383,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 15:35
+2Kings 15:35
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11413,7 +11413,7 @@
           mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 15:36
+2Kings 15:36
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -11434,7 +11434,7 @@
           mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 15:37
+2Kings 15:37
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -11458,7 +11458,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 15:38
+2Kings 15:38
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11485,7 +11485,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 16:1
+2Kings 16:1
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11506,7 +11506,7 @@
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 16:2
+2Kings 16:2
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11533,7 +11533,7 @@
           mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 16:3
+2Kings 16:3
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -11566,7 +11566,7 @@
             tifcha 
           5 silluq_phrase
             mereka silluq 
-2 Kings 16:4
+2Kings 16:4
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -11581,7 +11581,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 16:5
+2Kings 16:5
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -11605,7 +11605,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 16:6
+2Kings 16:6
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11638,7 +11638,7 @@
           tifcha 
         4 silluq_phrase
           mereka silluq 
-2 Kings 16:7
+2Kings 16:7
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11677,7 +11677,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 16:8
+2Kings 16:8
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11701,7 +11701,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 16:9
+2Kings 16:9
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11725,7 +11725,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 16:10
+2Kings 16:10
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11758,7 +11758,7 @@
           tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 16:11
+2Kings 16:11
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -11785,7 +11785,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 16:12
+2Kings 16:12
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11806,7 +11806,7 @@
         tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 16:13
+2Kings 16:13
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11827,7 +11827,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 16:14
+2Kings 16:14
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -11863,7 +11863,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 16:15
+2Kings 16:15
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11911,7 +11911,7 @@
         tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 16:16
+2Kings 16:16
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -11923,7 +11923,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 16:17
+2Kings 16:17
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11956,7 +11956,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 16:18
+2Kings 16:18
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11980,7 +11980,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 16:19
+2Kings 16:19
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -12001,7 +12001,7 @@
           mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 16:20
+2Kings 16:20
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12022,7 +12022,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 17:1
+2Kings 17:1
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12046,7 +12046,7 @@
         tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 17:2
+2Kings 17:2
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -12067,7 +12067,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 17:3
+2Kings 17:3
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -12088,7 +12088,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 17:4
+2Kings 17:4
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12121,7 +12121,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 17:5
+2Kings 17:5
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -12139,7 +12139,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 17:6
+2Kings 17:6
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12169,7 +12169,7 @@
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 17:7
+2Kings 17:7
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12199,7 +12199,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 17:8
+2Kings 17:8
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12223,7 +12223,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 17:9
+2Kings 17:9
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12250,7 +12250,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 17:10
+2Kings 17:10
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -12271,7 +12271,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 17:11
+2Kings 17:11
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12298,7 +12298,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 17:12
+2Kings 17:12
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -12316,7 +12316,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 17:13
+2Kings 17:13
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12358,7 +12358,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 17:14
+2Kings 17:14
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -12382,7 +12382,7 @@
           tifcha 
         4 silluq_phrase
           silluq 
-2 Kings 17:15
+2Kings 17:15
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12430,7 +12430,7 @@
             tifcha 
           5 silluq_phrase
             mereka silluq 
-2 Kings 17:16
+2Kings 17:16
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12463,7 +12463,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 17:17
+2Kings 17:17
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12490,7 +12490,7 @@
           mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 17:18
+2Kings 17:18
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12514,7 +12514,7 @@
           mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 17:19
+2Kings 17:19
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -12535,7 +12535,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 17:20
+2Kings 17:20
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12559,7 +12559,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 17:21
+2Kings 17:21
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12586,7 +12586,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 17:22
+2Kings 17:22
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12604,7 +12604,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 17:23
+2Kings 17:23
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12637,7 +12637,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 17:24
+2Kings 17:24
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12676,7 +12676,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 17:25
+2Kings 17:25
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12703,7 +12703,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 17:26
+2Kings 17:26
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -12754,7 +12754,7 @@
           tifcha 
         4 silluq_phrase
           mereka silluq 
-2 Kings 17:27
+2Kings 17:27
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12784,7 +12784,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 17:28
+2Kings 17:28
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12814,7 +12814,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 17:29
+2Kings 17:29
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -12850,7 +12850,7 @@
             mereka tifcha 
         4 silluq_phrase
           silluq 
-2 Kings 17:30
+2Kings 17:30
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12874,7 +12874,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 17:31
+2Kings 17:31
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -12898,7 +12898,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 17:32
+2Kings 17:32
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -12919,7 +12919,7 @@
           mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 17:33
+2Kings 17:33
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -12943,7 +12943,7 @@
           mereka tifcha 
         4 silluq_phrase
           silluq 
-2 Kings 17:34
+2Kings 17:34
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12985,7 +12985,7 @@
             mereka tifcha 
           5 silluq_phrase
             silluq 
-2 Kings 17:35
+2Kings 17:35
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13012,7 +13012,7 @@
           mereka tifcha 
         4 silluq_phrase
           silluq 
-2 Kings 17:36
+2Kings 17:36
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -13036,7 +13036,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 17:37
+2Kings 17:37
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13057,7 +13057,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 17:38
+2Kings 17:38
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -13072,7 +13072,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 17:39
+2Kings 17:39
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -13093,7 +13093,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 17:40
+2Kings 17:40
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -13108,7 +13108,7 @@
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 17:41
+2Kings 17:41
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13144,7 +13144,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 18:1
+2Kings 18:1
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13165,7 +13165,7 @@
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 18:2
+2Kings 18:2
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13192,7 +13192,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 18:3
+2Kings 18:3
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -13204,7 +13204,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 18:4
+2Kings 18:4
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13243,7 +13243,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 18:5
+2Kings 18:5
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -13267,7 +13267,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 18:6
+2Kings 18:6
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13291,7 +13291,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 18:7
+2Kings 18:7
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13309,7 +13309,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 18:8
+2Kings 18:8
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -13324,7 +13324,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 18:9
+2Kings 18:9
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13357,7 +13357,7 @@
         tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 18:10
+2Kings 18:10
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13387,7 +13387,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 18:11
+2Kings 18:11
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -13408,7 +13408,7 @@
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 18:12
+2Kings 18:12
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13444,7 +13444,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 18:13
+2Kings 18:13
 0 silluq_clause
   1 tifcha_clause
     2 revia_clause
@@ -13465,7 +13465,7 @@
           tifcha 
   1 silluq_phrase
     silluq 
-2 Kings 18:14
+2Kings 18:14
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13498,7 +13498,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 18:15
+2Kings 18:15
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13516,7 +13516,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 18:16
+2Kings 18:16
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13543,7 +13543,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 18:17
+2Kings 18:17
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -13585,7 +13585,7 @@
             tifcha 
           5 silluq_phrase
             mereka silluq 
-2 Kings 18:18
+2Kings 18:18
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13612,7 +13612,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 18:19
+2Kings 18:19
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13642,7 +13642,7 @@
           tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 18:20
+2Kings 18:20
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13666,7 +13666,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 18:21
+2Kings 18:21
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13702,7 +13702,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 18:22
+2Kings 18:22
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -13738,7 +13738,7 @@
             tifcha 
           5 silluq_phrase
             silluq 
-2 Kings 18:23
+2Kings 18:23
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13765,7 +13765,7 @@
           mereka tifcha 
         4 silluq_phrase
           mereka silluq 
-2 Kings 18:24
+2Kings 18:24
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -13792,7 +13792,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 18:25
+2Kings 18:25
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13822,7 +13822,7 @@
           mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 18:26
+2Kings 18:26
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13858,7 +13858,7 @@
           tifcha 
         4 silluq_phrase
           silluq 
-2 Kings 18:27
+2Kings 18:27
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13897,7 +13897,7 @@
             mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 18:28
+2Kings 18:28
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13921,7 +13921,7 @@
           mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 18:29
+2Kings 18:29
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13942,7 +13942,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 18:30
+2Kings 18:30
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13966,7 +13966,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 18:31
+2Kings 18:31
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -13996,7 +13996,7 @@
           tifcha 
         4 silluq_phrase
           mereka silluq 
-2 Kings 18:32
+2Kings 18:32
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -14038,7 +14038,7 @@
           tifcha 
         4 silluq_phrase
           silluq 
-2 Kings 18:33
+2Kings 18:33
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -14053,7 +14053,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 18:34
+2Kings 18:34
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -14074,7 +14074,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 18:35
+2Kings 18:35
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -14095,7 +14095,7 @@
         tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 18:36
+2Kings 18:36
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -14113,7 +14113,7 @@
         tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 18:37
+2Kings 18:37
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -14137,7 +14137,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 19:1
+2Kings 19:1
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -14161,7 +14161,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 19:2
+2Kings 19:2
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -14188,7 +14188,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 19:3
+2Kings 19:3
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -14218,7 +14218,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 19:4
+2Kings 19:4
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -14260,7 +14260,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 19:5
+2Kings 19:5
 0 silluq_clause
   1 tifcha_clause
     2 revia_phrase
@@ -14272,7 +14272,7 @@
         mereka tifcha 
   1 silluq_phrase
     silluq 
-2 Kings 19:6
+2Kings 19:6
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -14308,7 +14308,7 @@
                 mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 19:7
+2Kings 19:7
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -14326,7 +14326,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 19:8
+2Kings 19:8
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -14353,7 +14353,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 19:9
+2Kings 19:9
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -14380,7 +14380,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 19:10
+2Kings 19:10
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -14413,7 +14413,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 19:11
+2Kings 19:11
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -14437,7 +14437,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 19:12
+2Kings 19:12
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -14458,7 +14458,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 19:13
+2Kings 19:13
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -14476,7 +14476,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 19:14
+2Kings 19:14
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -14497,7 +14497,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 19:15
+2Kings 19:15
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -14536,7 +14536,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 19:16
+2Kings 19:16
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -14569,7 +14569,7 @@
           tifcha 
         4 silluq_phrase
           mereka silluq 
-2 Kings 19:17
+2Kings 19:17
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -14587,7 +14587,7 @@
         tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 19:18
+2Kings 19:18
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -14608,7 +14608,7 @@
           mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 19:19
+2Kings 19:19
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -14635,7 +14635,7 @@
           mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 19:20
+2Kings 19:20
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -14662,7 +14662,7 @@
           mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 19:21
+2Kings 19:21
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -14695,7 +14695,7 @@
           tifcha 
         4 silluq_phrase
           silluq 
-2 Kings 19:22
+2Kings 19:22
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -14716,7 +14716,7 @@
         tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 19:23
+2Kings 19:23
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -14758,7 +14758,7 @@
           tifcha 
         4 silluq_phrase
           silluq 
-2 Kings 19:24
+2Kings 19:24
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -14779,7 +14779,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 19:25
+2Kings 19:25
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -14806,7 +14806,7 @@
             mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 19:26
+2Kings 19:26
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -14836,7 +14836,7 @@
           tifcha 
         4 silluq_phrase
           mereka silluq 
-2 Kings 19:27
+2Kings 19:27
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -14851,7 +14851,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 19:28
+2Kings 19:28
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -14884,7 +14884,7 @@
           tifcha 
         4 silluq_phrase
           mereka silluq 
-2 Kings 19:29
+2Kings 19:29
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -14911,7 +14911,7 @@
           mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 19:30
+2Kings 19:30
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -14929,7 +14929,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 19:31
+2Kings 19:31
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -14950,7 +14950,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 19:32
+2Kings 19:32
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -14980,7 +14980,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 19:33
+2Kings 19:33
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -14995,7 +14995,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 19:34
+2Kings 19:34
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -15013,7 +15013,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 19:35
+2Kings 19:35
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -15049,7 +15049,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 19:36
+2Kings 19:36
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -15064,7 +15064,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 19:37
+2Kings 19:37
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -15094,7 +15094,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 20:1
+2Kings 20:1
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -15130,7 +15130,7 @@
           mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 20:2
+2Kings 20:2
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -15145,7 +15145,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 20:3
+2Kings 20:3
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -15172,7 +15172,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 20:4
+2Kings 20:4
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -15193,7 +15193,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 20:5
+2Kings 20:5
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -15238,7 +15238,7 @@
           tifcha 
         4 silluq_phrase
           mereka silluq 
-2 Kings 20:6
+2Kings 20:6
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -15274,7 +15274,7 @@
           tifcha 
         4 silluq_phrase
           mereka silluq 
-2 Kings 20:7
+2Kings 20:7
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -15292,7 +15292,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 20:8
+2Kings 20:8
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -15316,7 +15316,7 @@
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 20:9
+2Kings 20:9
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -15349,7 +15349,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 20:10
+2Kings 20:10
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -15376,7 +15376,7 @@
           tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 20:11
+2Kings 20:11
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -15403,7 +15403,7 @@
           tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 20:12
+2Kings 20:12
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -15430,7 +15430,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 20:13
+2Kings 20:13
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -15478,7 +15478,7 @@
           tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 20:14
+2Kings 20:14
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -15520,7 +15520,7 @@
             tifcha 
         4 silluq_phrase
           silluq 
-2 Kings 20:15
+2Kings 20:15
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -15547,7 +15547,7 @@
           mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 20:16
+2Kings 20:16
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -15559,7 +15559,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 20:17
+2Kings 20:17
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -15586,7 +15586,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 20:18
+2Kings 20:18
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -15610,7 +15610,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 20:19
+2Kings 20:19
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -15634,7 +15634,7 @@
           mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 20:20
+2Kings 20:20
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -15667,7 +15667,7 @@
           mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 20:21
+2Kings 20:21
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -15682,7 +15682,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 21:1
+2Kings 21:1
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -15706,7 +15706,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 21:2
+2Kings 21:2
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -15730,7 +15730,7 @@
           tifcha 
         4 silluq_phrase
           mereka silluq 
-2 Kings 21:3
+2Kings 21:3
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -15775,7 +15775,7 @@
           tifcha 
         4 silluq_phrase
           silluq 
-2 Kings 21:4
+2Kings 21:4
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -15793,7 +15793,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 21:5
+2Kings 21:5
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -15805,7 +15805,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 21:6
+2Kings 21:6
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -15832,7 +15832,7 @@
           mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 21:7
+2Kings 21:7
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -15874,7 +15874,7 @@
           mereka tifcha 
         4 silluq_phrase
           silluq 
-2 Kings 21:8
+2Kings 21:8
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -15913,7 +15913,7 @@
           mereka tifcha 
         4 silluq_phrase
           mereka silluq 
-2 Kings 21:9
+2Kings 21:9
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -15940,7 +15940,7 @@
             tifcha 
           5 silluq_phrase
             mereka silluq 
-2 Kings 21:10
+2Kings 21:10
 0 silluq_clause
   1 tifcha_clause
     2 tevir_phrase
@@ -15949,7 +15949,7 @@
       mereka tifcha 
   1 silluq_phrase
     silluq 
-2 Kings 21:11
+2Kings 21:11
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -15976,7 +15976,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 21:12
+2Kings 21:12
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16009,7 +16009,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 21:13
+2Kings 21:13
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16039,7 +16039,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 21:14
+2Kings 21:14
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16063,7 +16063,7 @@
         tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 21:15
+2Kings 21:15
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16093,7 +16093,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 21:16
+2Kings 21:16
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16123,7 +16123,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 21:17
+2Kings 21:17
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16147,7 +16147,7 @@
           mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 21:18
+2Kings 21:18
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16168,7 +16168,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 21:19
+2Kings 21:19
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16192,7 +16192,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 21:20
+2Kings 21:20
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -16204,7 +16204,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 21:21
+2Kings 21:21
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -16228,7 +16228,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 21:22
+2Kings 21:22
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -16243,7 +16243,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 21:23
+2Kings 21:23
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -16255,7 +16255,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 21:24
+2Kings 21:24
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16276,7 +16276,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 21:25
+2Kings 21:25
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -16297,7 +16297,7 @@
           mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 21:26
+2Kings 21:26
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -16315,7 +16315,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 22:1
+2Kings 22:1
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16342,7 +16342,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 22:2
+2Kings 22:2
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -16363,7 +16363,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 22:3
+2Kings 22:3
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16393,7 +16393,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 22:4
+2Kings 22:4
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16420,7 +16420,7 @@
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 22:5
+2Kings 22:5
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16453,7 +16453,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 22:6
+2Kings 22:6
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -16474,7 +16474,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 22:7
+2Kings 22:7
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16492,7 +16492,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 22:8
+2Kings 22:8
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16522,7 +16522,7 @@
         tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 22:9
+2Kings 22:9
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16564,7 +16564,7 @@
           tifcha 
         4 silluq_phrase
           mereka silluq 
-2 Kings 22:10
+2Kings 22:10
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16591,7 +16591,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 22:11
+2Kings 22:11
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16609,7 +16609,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 22:12
+2Kings 22:12
 0 silluq_clause
   1 tifcha_clause
     2 revia_clause
@@ -16636,7 +16636,7 @@
         mereka tifcha 
   1 silluq_phrase
     silluq 
-2 Kings 22:13
+2Kings 22:13
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16687,7 +16687,7 @@
           tifcha 
         4 silluq_phrase
           mereka silluq 
-2 Kings 22:14
+2Kings 22:14
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16726,7 +16726,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 22:15
+2Kings 22:15
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -16744,7 +16744,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 22:16
+2Kings 22:16
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16771,7 +16771,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 22:17
+2Kings 22:17
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16804,7 +16804,7 @@
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 22:18
+2Kings 22:18
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16831,7 +16831,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 22:19
+2Kings 22:19
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16879,7 +16879,7 @@
         tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 22:20
+2Kings 22:20
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -16912,7 +16912,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 23:1
+2Kings 23:1
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -16927,7 +16927,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 23:2
+2Kings 23:2
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16963,7 +16963,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 23:3
+2Kings 23:3
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17011,7 +17011,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 23:4
+2Kings 23:4
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -17059,7 +17059,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 23:5
+2Kings 23:5
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17095,7 +17095,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 23:6
+2Kings 23:6
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17125,7 +17125,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 23:7
+2Kings 23:7
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17149,7 +17149,7 @@
           tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 23:8
+2Kings 23:8
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17191,7 +17191,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 23:9
+2Kings 23:9
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17215,7 +17215,7 @@
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 23:10
+2Kings 23:10
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -17239,7 +17239,7 @@
           tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 23:11
+2Kings 23:11
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17266,7 +17266,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 23:12
+2Kings 23:12
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17302,7 +17302,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 23:13
+2Kings 23:13
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -17347,7 +17347,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 23:14
+2Kings 23:14
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17365,7 +17365,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 23:15
+2Kings 23:15
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17401,7 +17401,7 @@
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 23:16
+2Kings 23:16
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17443,7 +17443,7 @@
           tifcha 
         4 silluq_phrase
           silluq 
-2 Kings 23:17
+2Kings 23:17
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -17485,7 +17485,7 @@
           tifcha 
         4 silluq_phrase
           mereka silluq 
-2 Kings 23:18
+2Kings 23:18
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17515,7 +17515,7 @@
           tifcha 
         4 silluq_phrase
           silluq 
-2 Kings 23:19
+2Kings 23:19
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17551,7 +17551,7 @@
           mereka tifcha 
         4 silluq_phrase
           silluq 
-2 Kings 23:20
+2Kings 23:20
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17575,7 +17575,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 23:21
+2Kings 23:21
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17602,7 +17602,7 @@
           mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 23:22
+2Kings 23:22
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17632,7 +17632,7 @@
           mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 23:23
+2Kings 23:23
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17659,7 +17659,7 @@
         tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 23:24
+2Kings 23:24
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17704,7 +17704,7 @@
           mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 23:25
+2Kings 23:25
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17731,7 +17731,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 23:26
+2Kings 23:26
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17761,7 +17761,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 23:27
+2Kings 23:27
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17800,7 +17800,7 @@
             mereka tifcha 
           5 silluq_phrase
             silluq 
-2 Kings 23:28
+2Kings 23:28
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -17821,7 +17821,7 @@
           mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 23:29
+2Kings 23:29
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -17851,7 +17851,7 @@
           tifcha 
         4 silluq_phrase
           silluq 
-2 Kings 23:30
+2Kings 23:30
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17887,7 +17887,7 @@
           mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 23:31
+2Kings 23:31
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17911,7 +17911,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 23:32
+2Kings 23:32
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -17923,7 +17923,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 23:33
+2Kings 23:33
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17947,7 +17947,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 23:34
+2Kings 23:34
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17974,7 +17974,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 23:35
+2Kings 23:35
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -18013,7 +18013,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 23:36
+2Kings 23:36
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -18025,7 +18025,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 24:1
+2Kings 24:1
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -18046,7 +18046,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 24:2
+2Kings 24:2
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -18082,7 +18082,7 @@
           tifcha 
         4 silluq_phrase
           mereka silluq 
-2 Kings 24:3
+2Kings 24:3
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -18109,7 +18109,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 24:4
+2Kings 24:4
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -18127,7 +18127,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 24:5
+2Kings 24:5
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -18148,7 +18148,7 @@
           mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 24:6
+2Kings 24:6
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -18163,7 +18163,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 24:7
+2Kings 24:7
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -18196,7 +18196,7 @@
           mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 24:8
+2Kings 24:8
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -18220,7 +18220,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 24:9
+2Kings 24:9
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -18232,7 +18232,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 24:10
+2Kings 24:10
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -18253,7 +18253,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 24:11
+2Kings 24:11
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -18268,7 +18268,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 24:12
+2Kings 24:12
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -18298,7 +18298,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 24:13
+2Kings 24:13
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -18334,7 +18334,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 24:14
+2Kings 24:14
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -18367,7 +18367,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 24:15
+2Kings 24:15
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -18397,7 +18397,7 @@
           mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 24:16
+2Kings 24:16
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -18427,7 +18427,7 @@
         tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 24:17
+2Kings 24:17
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -18442,7 +18442,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 24:18
+2Kings 24:18
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -18469,7 +18469,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 24:19
+2Kings 24:19
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -18481,7 +18481,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 24:20
+2Kings 24:20
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -18505,7 +18505,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 25:1
+2Kings 25:1
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -18538,7 +18538,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 25:2
+2Kings 25:2
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -18556,7 +18556,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 25:3
+2Kings 25:3
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -18571,7 +18571,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 25:4
+2Kings 25:4
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -18604,7 +18604,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 25:5
+2Kings 25:5
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -18625,7 +18625,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 25:6
+2Kings 25:6
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -18646,7 +18646,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 25:7
+2Kings 25:7
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -18676,7 +18676,7 @@
           tifcha 
         4 silluq_phrase
           silluq 
-2 Kings 25:8
+2Kings 25:8
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -18709,7 +18709,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 25:9
+2Kings 25:9
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -18724,7 +18724,7 @@
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 25:10
+2Kings 25:10
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -18742,7 +18742,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 25:11
+2Kings 25:11
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -18772,7 +18772,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 25:12
+2Kings 25:12
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -18787,7 +18787,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 25:13
+2Kings 25:13
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -18811,7 +18811,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 25:14
+2Kings 25:14
 0 silluq_clause
   1 tifcha_clause
     2 revia_clause
@@ -18826,7 +18826,7 @@
         mereka tifcha 
   1 silluq_phrase
     silluq 
-2 Kings 25:15
+2Kings 25:15
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -18850,7 +18850,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 25:16
+2Kings 25:16
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -18877,7 +18877,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 25:17
+2Kings 25:17
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -18913,7 +18913,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 25:18
+2Kings 25:18
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -18934,7 +18934,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 25:19
+2Kings 25:19
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -18982,7 +18982,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 25:20
+2Kings 25:20
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -19000,7 +19000,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Kings 25:21
+2Kings 25:21
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -19015,7 +19015,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 25:22
+2Kings 25:22
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -19042,7 +19042,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Kings 25:23
+2Kings 25:23
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -19084,7 +19084,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 25:24
+2Kings 25:24
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -19111,7 +19111,7 @@
           mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 25:25
+2Kings 25:25
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -19150,7 +19150,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 25:26
+2Kings 25:26
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -19171,7 +19171,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 25:27
+2Kings 25:27
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -19213,7 +19213,7 @@
           mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 25:28
+2Kings 25:28
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -19237,7 +19237,7 @@
             mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Kings 25:29
+2Kings 25:29
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -19255,7 +19255,7 @@
         tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Kings 25:30
+2Kings 25:30
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause

@@ -1,4 +1,4 @@
-2 Samuel 1:1
+2Samuel 1:1
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -25,7 +25,7 @@
         tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 1:2
+2Samuel 1:2
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -58,7 +58,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 1:3
+2Samuel 1:3
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -79,7 +79,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 1:4
+2Samuel 1:4
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -118,7 +118,7 @@
             mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 1:5
+2Samuel 1:5
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -136,7 +136,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 1:6
+2Samuel 1:6
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -166,7 +166,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 1:7
+2Samuel 1:7
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -181,7 +181,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 1:8
+2Samuel 1:8
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -196,7 +196,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 1:9
+2Samuel 1:9
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -217,7 +217,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 1:10
+2Samuel 1:10
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -256,7 +256,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 1:11
+2Samuel 1:11
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -271,7 +271,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 1:12
+2Samuel 1:12
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -301,7 +301,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 1:13
+2Samuel 1:13
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -328,7 +328,7 @@
           mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 1:14
+2Samuel 1:14
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -352,7 +352,7 @@
           tifcha 
         4 silluq_phrase
           mereka silluq 
-2 Samuel 1:15
+2Samuel 1:15
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -373,7 +373,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 1:16
+2Samuel 1:16
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -400,7 +400,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 1:17
+2Samuel 1:17
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -415,7 +415,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 1:18
+2Samuel 1:18
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -430,7 +430,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 1:19
+2Samuel 1:19
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -448,7 +448,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 1:20
+2Samuel 1:20
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -469,7 +469,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 1:21
+2Samuel 1:21
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -496,7 +496,7 @@
           tifcha 
         4 silluq_phrase
           mereka silluq 
-2 Samuel 1:22
+2Samuel 1:22
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -526,7 +526,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 1:23
+2Samuel 1:23
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -550,7 +550,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 1:24
+2Samuel 1:24
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -580,7 +580,7 @@
           tifcha 
         4 silluq_phrase
           silluq 
-2 Samuel 1:25
+2Samuel 1:25
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -601,7 +601,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 1:26
+2Samuel 1:26
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -628,7 +628,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 1:27
+2Samuel 1:27
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -640,7 +640,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 2:1
+2Samuel 2:1
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -673,7 +673,7 @@
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 2:2
+2Samuel 2:2
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -700,7 +700,7 @@
           tifcha 
         4 silluq_phrase
           mereka silluq 
-2 Samuel 2:3
+2Samuel 2:3
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -715,7 +715,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 2:4
+2Samuel 2:4
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -748,7 +748,7 @@
           mereka tifcha 
         4 silluq_phrase
           silluq 
-2 Samuel 2:5
+2Samuel 2:5
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -787,7 +787,7 @@
           tifcha 
         4 silluq_phrase
           silluq 
-2 Samuel 2:6
+2Samuel 2:6
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -811,7 +811,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 2:7
+2Samuel 2:7
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -841,7 +841,7 @@
           tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 2:8
+2Samuel 2:8
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -865,7 +865,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 2:9
+2Samuel 2:9
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -889,7 +889,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 2:10
+2Samuel 2:10
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -919,7 +919,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 2:11
+2Samuel 2:11
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -940,7 +940,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 2:12
+2Samuel 2:12
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -958,7 +958,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 2:13
+2Samuel 2:13
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -991,7 +991,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 2:14
+2Samuel 2:14
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1015,7 +1015,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 2:15
+2Samuel 2:15
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -1036,7 +1036,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 2:16
+2Samuel 2:16
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1069,7 +1069,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 2:17
+2Samuel 2:17
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -1090,7 +1090,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 2:18
+2Samuel 2:18
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1117,7 +1117,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 2:19
+2Samuel 2:19
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -1138,7 +1138,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 2:20
+2Samuel 2:20
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1159,7 +1159,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 2:21
+2Samuel 2:21
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1195,7 +1195,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 2:22
+2Samuel 2:22
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1228,7 +1228,7 @@
           tifcha 
         4 silluq_phrase
           silluq 
-2 Samuel 2:23
+2Samuel 2:23
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1261,7 +1261,7 @@
         tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 2:24
+2Samuel 2:24
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -1294,7 +1294,7 @@
             tifcha 
           5 silluq_phrase
             mereka silluq 
-2 Samuel 2:25
+2Samuel 2:25
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1315,7 +1315,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 2:26
+2Samuel 2:26
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1351,7 +1351,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 2:27
+2Samuel 2:27
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -1378,7 +1378,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 2:28
+2Samuel 2:28
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1402,7 +1402,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 2:29
+2Samuel 2:29
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1432,7 +1432,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 2:30
+2Samuel 2:30
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1459,7 +1459,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 2:31
+2Samuel 2:31
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1483,7 +1483,7 @@
         tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 2:32
+2Samuel 2:32
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1516,7 +1516,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 3:1
+2Samuel 3:1
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1546,7 +1546,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 3:2
+2Samuel 3:2
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -1567,7 +1567,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 3:3
+2Samuel 3:3
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -1591,7 +1591,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 3:4
+2Samuel 3:4
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -1603,7 +1603,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 3:5
+2Samuel 3:5
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -1621,7 +1621,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 3:6
+2Samuel 3:6
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1651,7 +1651,7 @@
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 3:7
+2Samuel 3:7
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -1672,7 +1672,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 3:8
+2Samuel 3:8
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -1717,7 +1717,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 3:9
+2Samuel 3:9
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1744,7 +1744,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 3:10
+2Samuel 3:10
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -1768,7 +1768,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 3:11
+2Samuel 3:11
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -1783,7 +1783,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 3:12
+2Samuel 3:12
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -1813,7 +1813,7 @@
           mereka tifcha 
         4 silluq_phrase
           silluq 
-2 Samuel 3:13
+2Samuel 3:13
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -1852,7 +1852,7 @@
           tifcha 
         4 silluq_phrase
           mereka silluq 
-2 Samuel 3:14
+2Samuel 3:14
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1882,7 +1882,7 @@
           tifcha 
         4 silluq_phrase
           mereka silluq 
-2 Samuel 3:15
+2Samuel 3:15
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1900,7 +1900,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 3:16
+2Samuel 3:16
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -1924,7 +1924,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 3:17
+2Samuel 3:17
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -1951,7 +1951,7 @@
           tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 3:18
+2Samuel 3:18
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -1987,7 +1987,7 @@
           tifcha 
         4 silluq_phrase
           silluq 
-2 Samuel 3:19
+2Samuel 3:19
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -2017,7 +2017,7 @@
           tifcha 
         4 silluq_phrase
           mereka silluq 
-2 Samuel 3:20
+2Samuel 3:20
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2038,7 +2038,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 3:21
+2Samuel 3:21
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2074,7 +2074,7 @@
         tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 3:22
+2Samuel 3:22
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2101,7 +2101,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 3:23
+2Samuel 3:23
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -2128,7 +2128,7 @@
           tifcha 
         4 silluq_phrase
           mereka silluq 
-2 Samuel 3:24
+2Samuel 3:24
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2152,7 +2152,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 3:25
+2Samuel 3:25
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2185,7 +2185,7 @@
             mereka tifcha 
         4 silluq_phrase
           silluq 
-2 Samuel 3:26
+2Samuel 3:26
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2209,7 +2209,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 3:27
+2Samuel 3:27
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2242,7 +2242,7 @@
           tifcha 
         4 silluq_phrase
           mereka silluq 
-2 Samuel 3:28
+2Samuel 3:28
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2266,7 +2266,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 3:29
+2Samuel 3:29
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2296,7 +2296,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 3:30
+2Samuel 3:30
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2320,7 +2320,7 @@
         tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 3:31
+2Samuel 3:31
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2347,7 +2347,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 3:32
+2Samuel 3:32
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -2368,7 +2368,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 3:33
+2Samuel 3:33
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -2383,7 +2383,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 3:34
+2Samuel 3:34
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2407,7 +2407,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 3:35
+2Samuel 3:35
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -2440,7 +2440,7 @@
           tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 3:36
+2Samuel 3:36
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -2461,7 +2461,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 3:37
+2Samuel 3:37
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -2482,7 +2482,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 3:38
+2Samuel 3:38
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -2503,7 +2503,7 @@
             mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 3:39
+2Samuel 3:39
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2527,7 +2527,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 4:1
+2Samuel 4:1
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2548,7 +2548,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 4:2
+2Samuel 4:2
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -2578,7 +2578,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 4:3
+2Samuel 4:3
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -2593,7 +2593,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 4:4
+2Samuel 4:4
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2632,7 +2632,7 @@
           mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 4:5
+2Samuel 4:5
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2662,7 +2662,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 4:6
+2Samuel 4:6
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2689,7 +2689,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 4:7
+2Samuel 4:7
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2725,7 +2725,7 @@
           mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 4:8
+2Samuel 4:8
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -2770,7 +2770,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 4:9
+2Samuel 4:9
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -2797,7 +2797,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 4:10
+2Samuel 4:10
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2824,7 +2824,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 4:11
+2Samuel 4:11
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -2854,7 +2854,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 4:12
+2Samuel 4:12
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2884,7 +2884,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 5:1
+2Samuel 5:1
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -2908,7 +2908,7 @@
           mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 5:2
+2Samuel 5:2
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2950,7 +2950,7 @@
           mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 5:3
+2Samuel 5:3
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -2977,7 +2977,7 @@
         tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 5:4
+2Samuel 5:4
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -2992,7 +2992,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 5:5
+2Samuel 5:5
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -3019,7 +3019,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 5:6
+2Samuel 5:6
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -3052,7 +3052,7 @@
           mereka tifcha 
         4 silluq_phrase
           silluq 
-2 Samuel 5:7
+2Samuel 5:7
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -3067,7 +3067,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 5:8
+2Samuel 5:8
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -3106,7 +3106,7 @@
           mereka tifcha 
         4 silluq_phrase
           silluq 
-2 Samuel 5:9
+2Samuel 5:9
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -3130,7 +3130,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 5:10
+2Samuel 5:10
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -3145,7 +3145,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 5:11
+2Samuel 5:11
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -3172,7 +3172,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 5:12
+2Samuel 5:12
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -3196,7 +3196,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 5:13
+2Samuel 5:13
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -3220,7 +3220,7 @@
         tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 5:14
+2Samuel 5:14
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -3241,19 +3241,19 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 5:15
+2Samuel 5:15
 0 silluq_clause
   1 tifcha_phrase
     mereka tifcha 
   1 silluq_phrase
     mereka silluq 
-2 Samuel 5:16
+2Samuel 5:16
 0 silluq_clause
   1 tifcha_phrase
     mereka tifcha 
   1 silluq_phrase
     silluq 
-2 Samuel 5:17
+2Samuel 5:17
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -3277,7 +3277,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 5:18
+2Samuel 5:18
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -3289,7 +3289,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 5:19
+2Samuel 5:19
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -3322,7 +3322,7 @@
           tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 5:20
+2Samuel 5:20
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -3352,7 +3352,7 @@
           mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 5:21
+2Samuel 5:21
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -3364,7 +3364,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 5:22
+2Samuel 5:22
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -3379,7 +3379,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 5:23
+2Samuel 5:23
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -3403,7 +3403,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 5:24
+2Samuel 5:24
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -3433,7 +3433,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 5:25
+2Samuel 5:25
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -3457,7 +3457,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 6:1
+2Samuel 6:1
 0 silluq_clause
   1 tifcha_clause
     2 tevir_phrase
@@ -3466,7 +3466,7 @@
       mereka tifcha 
   1 silluq_phrase
     mereka silluq 
-2 Samuel 6:2
+2Samuel 6:2
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -3505,7 +3505,7 @@
             mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 6:3
+2Samuel 6:3
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -3538,7 +3538,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 6:4
+2Samuel 6:4
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -3562,7 +3562,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 6:5
+2Samuel 6:5
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -3592,7 +3592,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 6:6
+2Samuel 6:6
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -3613,7 +3613,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 6:7
+2Samuel 6:7
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -3637,7 +3637,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 6:8
+2Samuel 6:8
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -3664,7 +3664,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 6:9
+2Samuel 6:9
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -3685,7 +3685,7 @@
           mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 6:10
+2Samuel 6:10
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -3706,7 +3706,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 6:11
+2Samuel 6:11
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -3727,7 +3727,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 6:12
+2Samuel 6:12
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -3766,7 +3766,7 @@
           mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 6:13
+2Samuel 6:13
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -3784,7 +3784,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 6:14
+2Samuel 6:14
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -3802,7 +3802,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 6:15
+2Samuel 6:15
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -3820,7 +3820,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 6:16
+2Samuel 6:16
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -3856,7 +3856,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 6:17
+2Samuel 6:17
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -3886,7 +3886,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 6:18
+2Samuel 6:18
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -3904,7 +3904,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 6:19
+2Samuel 6:19
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -3937,7 +3937,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 6:20
+2Samuel 6:20
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -3973,7 +3973,7 @@
           mereka tifcha 
         4 silluq_phrase
           mereka silluq 
-2 Samuel 6:21
+2Samuel 6:21
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -4003,7 +4003,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 6:22
+2Samuel 6:22
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -4027,7 +4027,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 6:23
+2Samuel 6:23
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -4045,7 +4045,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 7:1
+2Samuel 7:1
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -4063,7 +4063,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 7:2
+2Samuel 7:2
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -4090,7 +4090,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 7:3
+2Samuel 7:3
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -4111,7 +4111,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 7:4
+2Samuel 7:4
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -4129,7 +4129,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 7:5
+2Samuel 7:5
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -4150,7 +4150,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 7:6
+2Samuel 7:6
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -4186,7 +4186,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 7:7
+2Samuel 7:7
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -4222,7 +4222,7 @@
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 7:8
+2Samuel 7:8
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -4258,7 +4258,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 7:9
+2Samuel 7:9
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -4285,7 +4285,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 7:10
+2Samuel 7:10
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -4312,7 +4312,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 7:11
+2Samuel 7:11
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -4339,7 +4339,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 7:12
+2Samuel 7:12
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -4369,7 +4369,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 7:13
+2Samuel 7:13
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -4384,7 +4384,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 7:14
+2Samuel 7:14
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -4414,7 +4414,7 @@
           tifcha 
         4 silluq_phrase
           mereka silluq 
-2 Samuel 7:15
+2Samuel 7:15
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -4432,7 +4432,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 7:16
+2Samuel 7:16
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -4450,7 +4450,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 7:17
+2Samuel 7:17
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -4471,7 +4471,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 7:18
+2Samuel 7:18
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -4501,7 +4501,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 7:19
+2Samuel 7:19
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -4525,7 +4525,7 @@
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 7:20
+2Samuel 7:20
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -4543,7 +4543,7 @@
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 7:21
+2Samuel 7:21
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -4564,7 +4564,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 7:22
+2Samuel 7:22
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -4585,7 +4585,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 7:23
+2Samuel 7:23
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -4630,7 +4630,7 @@
           tifcha 
         4 silluq_phrase
           silluq 
-2 Samuel 7:24
+2Samuel 7:24
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -4651,7 +4651,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 7:25
+2Samuel 7:25
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -4678,7 +4678,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 7:26
+2Samuel 7:26
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -4705,7 +4705,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 7:27
+2Samuel 7:27
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -4744,7 +4744,7 @@
           tifcha 
         4 silluq_phrase
           silluq 
-2 Samuel 7:28
+2Samuel 7:28
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -4774,7 +4774,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 7:29
+2Samuel 7:29
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -4810,7 +4810,7 @@
           mereka tifcha 
         4 silluq_phrase
           silluq 
-2 Samuel 8:1
+2Samuel 8:1
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -4834,7 +4834,7 @@
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 8:2
+2Samuel 8:2
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -4867,7 +4867,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 8:3
+2Samuel 8:3
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -4885,7 +4885,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 8:4
+2Samuel 8:4
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -4915,7 +4915,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 8:5
+2Samuel 8:5
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -4942,7 +4942,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 8:6
+2Samuel 8:6
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -4972,7 +4972,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 8:7
+2Samuel 8:7
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -4996,7 +4996,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 8:8
+2Samuel 8:8
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -5014,7 +5014,7 @@
         tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 8:9
+2Samuel 8:9
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -5035,7 +5035,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 8:10
+2Samuel 8:10
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -5071,7 +5071,7 @@
           mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 8:11
+2Samuel 8:11
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -5095,7 +5095,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 8:12
+2Samuel 8:12
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -5116,7 +5116,7 @@
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 8:13
+2Samuel 8:13
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -5137,7 +5137,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 8:14
+2Samuel 8:14
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -5167,7 +5167,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 8:15
+2Samuel 8:15
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -5185,7 +5185,7 @@
           mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 8:16
+2Samuel 8:16
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -5197,7 +5197,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 8:17
+2Samuel 8:17
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -5212,7 +5212,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 8:18
+2Samuel 8:18
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -5230,7 +5230,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 9:1
+2Samuel 9:1
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -5254,7 +5254,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 9:2
+2Samuel 9:2
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -5275,7 +5275,7 @@
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 9:3
+2Samuel 9:3
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -5305,7 +5305,7 @@
           mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 9:4
+2Samuel 9:4
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -5329,7 +5329,7 @@
             mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 9:5
+2Samuel 9:5
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -5347,7 +5347,7 @@
           mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 9:6
+2Samuel 9:6
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -5374,7 +5374,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 9:7
+2Samuel 9:7
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -5410,7 +5410,7 @@
           tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 9:8
+2Samuel 9:8
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -5428,7 +5428,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 9:9
+2Samuel 9:9
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -5452,7 +5452,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 9:10
+2Samuel 9:10
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -5494,7 +5494,7 @@
           tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 9:11
+2Samuel 9:11
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -5530,7 +5530,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 9:12
+2Samuel 9:12
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -5548,7 +5548,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 9:13
+2Samuel 9:13
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -5572,7 +5572,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 10:1
+2Samuel 10:1
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -5596,7 +5596,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 10:2
+2Samuel 10:2
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -5632,7 +5632,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 10:3
+2Samuel 10:3
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -5671,7 +5671,7 @@
           tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 10:4
+2Samuel 10:4
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -5695,7 +5695,7 @@
         munach atnach 
   1 silluq_phrase
     silluq 
-2 Samuel 10:5
+2Samuel 10:5
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -5719,7 +5719,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 10:6
+2Samuel 10:6
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -5761,7 +5761,7 @@
             mereka tifcha 
           5 silluq_phrase
             silluq 
-2 Samuel 10:7
+2Samuel 10:7
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -5779,7 +5779,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 10:8
+2Samuel 10:8
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -5803,7 +5803,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 10:9
+2Samuel 10:9
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -5833,7 +5833,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 10:10
+2Samuel 10:10
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -5857,7 +5857,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 10:11
+2Samuel 10:11
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -5884,7 +5884,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 10:12
+2Samuel 10:12
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -5905,7 +5905,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 10:13
+2Samuel 10:13
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -5926,7 +5926,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 10:14
+2Samuel 10:14
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -5959,7 +5959,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 10:15
+2Samuel 10:15
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -5974,7 +5974,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 10:16
+2Samuel 10:16
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6001,7 +6001,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 10:17
+2Samuel 10:17
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6028,7 +6028,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 10:18
+2Samuel 10:18
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -6061,7 +6061,7 @@
         tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 10:19
+2Samuel 10:19
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6088,7 +6088,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 11:1
+2Samuel 11:1
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6124,7 +6124,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 11:2
+2Samuel 11:2
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6160,7 +6160,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 11:3
+2Samuel 11:3
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -6184,7 +6184,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 11:4
+2Samuel 11:4
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6208,7 +6208,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 11:5
+2Samuel 11:5
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -6226,7 +6226,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 11:6
+2Samuel 11:6
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6250,7 +6250,7 @@
         tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 11:7
+2Samuel 11:7
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -6271,7 +6271,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 11:8
+2Samuel 11:8
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6295,7 +6295,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 11:9
+2Samuel 11:9
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6316,7 +6316,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 11:10
+2Samuel 11:10
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6346,7 +6346,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 11:11
+2Samuel 11:11
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6394,7 +6394,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 11:12
+2Samuel 11:12
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -6418,7 +6418,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 11:13
+2Samuel 11:13
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -6445,7 +6445,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 11:14
+2Samuel 11:14
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -6463,7 +6463,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 11:15
+2Samuel 11:15
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -6487,7 +6487,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 11:16
+2Samuel 11:16
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -6514,7 +6514,7 @@
           mereka tifcha 
         4 silluq_phrase
           silluq 
-2 Samuel 11:17
+2Samuel 11:17
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6538,7 +6538,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 11:18
+2Samuel 11:18
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -6553,7 +6553,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 11:19
+2Samuel 11:19
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -6571,7 +6571,7 @@
           mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 11:20
+2Samuel 11:20
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6601,7 +6601,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 11:21
+2Samuel 11:21
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6640,7 +6640,7 @@
             mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 11:22
+2Samuel 11:22
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -6661,7 +6661,7 @@
           mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 11:23
+2Samuel 11:23
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6685,7 +6685,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 11:24
+2Samuel 11:24
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6709,7 +6709,7 @@
           mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 11:25
+2Samuel 11:25
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6739,7 +6739,7 @@
         tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 11:26
+2Samuel 11:26
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6757,7 +6757,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 11:27
+2Samuel 11:27
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6784,7 +6784,7 @@
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 12:1
+2Samuel 12:1
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -6814,7 +6814,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 12:2
+2Samuel 12:2
 0 silluq_clause
   1 tifcha_clause
     2 revia_phrase
@@ -6826,7 +6826,7 @@
         mereka tifcha 
   1 silluq_phrase
     mereka silluq 
-2 Samuel 12:3
+2Samuel 12:3
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -6862,7 +6862,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 12:4
+2Samuel 12:4
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -6904,7 +6904,7 @@
           tifcha 
         4 silluq_phrase
           mereka silluq 
-2 Samuel 12:5
+2Samuel 12:5
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -6931,7 +6931,7 @@
             tifcha 
           5 silluq_phrase
             mereka silluq 
-2 Samuel 12:6
+2Samuel 12:6
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -6952,7 +6952,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 12:7
+2Samuel 12:7
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -6982,7 +6982,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 12:8
+2Samuel 12:8
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7012,7 +7012,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 12:9
+2Samuel 12:9
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -7051,7 +7051,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 12:10
+2Samuel 12:10
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -7084,7 +7084,7 @@
           mereka tifcha 
         4 silluq_phrase
           silluq 
-2 Samuel 12:11
+2Samuel 12:11
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7120,7 +7120,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 12:12
+2Samuel 12:12
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -7141,7 +7141,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 12:13
+2Samuel 12:13
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7168,7 +7168,7 @@
           mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 12:14
+2Samuel 12:14
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7195,7 +7195,7 @@
           mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 12:15
+2Samuel 12:15
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -7216,7 +7216,7 @@
           tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 12:16
+2Samuel 12:16
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -7237,7 +7237,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 12:17
+2Samuel 12:17
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7261,7 +7261,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 12:18
+2Samuel 12:18
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -7303,7 +7303,7 @@
           mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 12:19
+2Samuel 12:19
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7327,7 +7327,7 @@
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 12:20
+2Samuel 12:20
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7363,7 +7363,7 @@
             tifcha 
         4 silluq_phrase
           silluq 
-2 Samuel 12:21
+2Samuel 12:21
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7396,7 +7396,7 @@
           tifcha 
         4 silluq_phrase
           mereka silluq 
-2 Samuel 12:22
+2Samuel 12:22
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -7423,7 +7423,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 12:23
+2Samuel 12:23
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7453,7 +7453,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 12:24
+2Samuel 12:24
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7483,7 +7483,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 12:25
+2Samuel 12:25
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7504,7 +7504,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 12:26
+2Samuel 12:26
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -7519,7 +7519,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 12:27
+2Samuel 12:27
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -7540,7 +7540,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 12:28
+2Samuel 12:28
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7567,7 +7567,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 12:29
+2Samuel 12:29
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -7582,7 +7582,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 12:30
+2Samuel 12:30
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7606,7 +7606,7 @@
         tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 12:31
+2Samuel 12:31
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7645,7 +7645,7 @@
         tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 13:1
+2Samuel 13:1
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -7663,7 +7663,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 13:2
+2Samuel 13:2
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7693,7 +7693,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 13:3
+2Samuel 13:3
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7717,7 +7717,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 13:4
+2Samuel 13:4
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7753,7 +7753,7 @@
             mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 13:5
+2Samuel 13:5
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7795,7 +7795,7 @@
           tifcha 
         4 silluq_phrase
           silluq 
-2 Samuel 13:6
+2Samuel 13:6
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -7828,7 +7828,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 13:7
+2Samuel 13:7
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -7852,7 +7852,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 13:8
+2Samuel 13:8
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -7876,7 +7876,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 13:9
+2Samuel 13:9
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7903,7 +7903,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 13:10
+2Samuel 13:10
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7939,7 +7939,7 @@
           mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 13:11
+2Samuel 13:11
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -7960,7 +7960,7 @@
           mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 13:12
+2Samuel 13:12
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -7984,7 +7984,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 13:13
+2Samuel 13:13
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8020,7 +8020,7 @@
           mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 13:14
+2Samuel 13:14
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -8038,7 +8038,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 13:15
+2Samuel 13:15
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8068,7 +8068,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 13:16
+2Samuel 13:16
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8095,7 +8095,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 13:17
+2Samuel 13:17
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8122,7 +8122,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 13:18
+2Samuel 13:18
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8149,7 +8149,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 13:19
+2Samuel 13:19
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8176,7 +8176,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 13:20
+2Samuel 13:20
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -8215,7 +8215,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 13:21
+2Samuel 13:21
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -8233,7 +8233,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 13:22
+2Samuel 13:22
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -8260,7 +8260,7 @@
           tifcha 
         4 silluq_phrase
           mereka silluq 
-2 Samuel 13:23
+2Samuel 13:23
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8284,7 +8284,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 13:24
+2Samuel 13:24
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8308,7 +8308,7 @@
         tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 13:25
+2Samuel 13:25
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8338,7 +8338,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 13:26
+2Samuel 13:26
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8365,7 +8365,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 13:27
+2Samuel 13:27
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -8383,7 +8383,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 13:28
+2Samuel 13:28
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8422,7 +8422,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 13:29
+2Samuel 13:29
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8452,7 +8452,7 @@
           mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 13:30
+2Samuel 13:30
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8479,7 +8479,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 13:31
+2Samuel 13:31
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -8494,7 +8494,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 13:32
+2Samuel 13:32
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8536,7 +8536,7 @@
           tifcha 
         4 silluq_phrase
           mereka silluq 
-2 Samuel 13:33
+2Samuel 13:33
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8557,7 +8557,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 13:34
+2Samuel 13:34
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -8587,7 +8587,7 @@
             tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 13:35
+2Samuel 13:35
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8605,7 +8605,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 13:36
+2Samuel 13:36
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8638,7 +8638,7 @@
           tifcha 
         4 silluq_phrase
           mereka silluq 
-2 Samuel 13:37
+2Samuel 13:37
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -8656,7 +8656,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 13:38
+2Samuel 13:38
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -8668,7 +8668,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 13:39
+2Samuel 13:39
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8686,7 +8686,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 14:1
+2Samuel 14:1
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -8698,7 +8698,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 14:2
+2Samuel 14:2
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8743,7 +8743,7 @@
             tifcha 
           5 silluq_phrase
             silluq 
-2 Samuel 14:3
+2Samuel 14:3
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8764,7 +8764,7 @@
         tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 14:4
+2Samuel 14:4
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8788,7 +8788,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 14:5
+2Samuel 14:5
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -8806,7 +8806,7 @@
           mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 14:6
+2Samuel 14:6
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8833,7 +8833,7 @@
         tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 14:7
+2Samuel 14:7
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8881,7 +8881,7 @@
           mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 14:8
+2Samuel 14:8
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -8896,7 +8896,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 14:9
+2Samuel 14:9
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8923,7 +8923,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 14:10
+2Samuel 14:10
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -8941,7 +8941,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 14:11
+2Samuel 14:11
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8977,7 +8977,7 @@
           mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 14:12
+2Samuel 14:12
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -8998,7 +8998,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 14:13
+2Samuel 14:13
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9031,7 +9031,7 @@
           mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 14:14
+2Samuel 14:14
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -9067,7 +9067,7 @@
             mereka tifcha 
         4 silluq_phrase
           silluq 
-2 Samuel 14:15
+2Samuel 14:15
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9100,7 +9100,7 @@
           mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 14:16
+2Samuel 14:16
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9124,7 +9124,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 14:17
+2Samuel 14:17
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9160,7 +9160,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 14:18
+2Samuel 14:18
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9193,7 +9193,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 14:19
+2Samuel 14:19
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -9244,7 +9244,7 @@
             mereka tifcha 
           5 silluq_phrase
             silluq 
-2 Samuel 14:20
+2Samuel 14:20
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9274,7 +9274,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 14:21
+2Samuel 14:21
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9295,7 +9295,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 14:22
+2Samuel 14:22
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -9322,7 +9322,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 14:23
+2Samuel 14:23
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -9334,7 +9334,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 14:24
+2Samuel 14:24
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9358,7 +9358,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 14:25
+2Samuel 14:25
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -9382,7 +9382,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 14:26
+2Samuel 14:26
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -9415,7 +9415,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 14:27
+2Samuel 14:27
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9436,7 +9436,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 14:28
+2Samuel 14:28
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -9451,7 +9451,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 14:29
+2Samuel 14:29
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9481,7 +9481,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 14:30
+2Samuel 14:30
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9508,7 +9508,7 @@
         tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 14:31
+2Samuel 14:31
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -9529,7 +9529,7 @@
           mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 14:32
+2Samuel 14:32
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9571,7 +9571,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 14:33
+2Samuel 14:33
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -9598,7 +9598,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 15:1
+2Samuel 15:1
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9622,7 +9622,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 15:2
+2Samuel 15:2
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9667,7 +9667,7 @@
           mereka tifcha 
         4 silluq_phrase
           silluq 
-2 Samuel 15:3
+2Samuel 15:3
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9685,7 +9685,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 15:4
+2Samuel 15:4
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9709,7 +9709,7 @@
           mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 15:5
+2Samuel 15:5
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9730,7 +9730,7 @@
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 15:6
+2Samuel 15:6
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9757,7 +9757,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 15:7
+2Samuel 15:7
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -9787,7 +9787,7 @@
               mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 15:8
+2Samuel 15:8
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9814,7 +9814,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 15:9
+2Samuel 15:9
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -9826,7 +9826,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 15:10
+2Samuel 15:10
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9853,7 +9853,7 @@
           mereka tifcha 
         4 silluq_phrase
           silluq 
-2 Samuel 15:11
+2Samuel 15:11
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9877,7 +9877,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 15:12
+2Samuel 15:12
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9913,7 +9913,7 @@
           mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 15:13
+2Samuel 15:13
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9934,7 +9934,7 @@
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 15:14
+2Samuel 15:14
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -9970,7 +9970,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 15:15
+2Samuel 15:15
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -9985,7 +9985,7 @@
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 15:16
+2Samuel 15:16
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -10006,7 +10006,7 @@
           tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 15:17
+2Samuel 15:17
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -10021,7 +10021,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 15:18
+2Samuel 15:18
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10051,7 +10051,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 15:19
+2Samuel 15:19
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10078,7 +10078,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 15:20
+2Samuel 15:20
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10111,7 +10111,7 @@
         tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 15:21
+2Samuel 15:21
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -10153,7 +10153,7 @@
           tifcha 
         4 silluq_phrase
           mereka silluq 
-2 Samuel 15:22
+2Samuel 15:22
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -10177,7 +10177,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 15:23
+2Samuel 15:23
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10213,7 +10213,7 @@
           tifcha 
         4 silluq_phrase
           silluq 
-2 Samuel 15:24
+2Samuel 15:24
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10246,7 +10246,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 15:25
+2Samuel 15:25
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10276,7 +10276,7 @@
           mereka tifcha 
         4 silluq_phrase
           silluq 
-2 Samuel 15:26
+2Samuel 15:26
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10300,7 +10300,7 @@
           mereka tifcha 
         4 silluq_phrase
           silluq 
-2 Samuel 15:27
+2Samuel 15:27
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10327,7 +10327,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 15:28
+2Samuel 15:28
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10348,7 +10348,7 @@
         tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 15:29
+2Samuel 15:29
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -10363,7 +10363,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 15:30
+2Samuel 15:30
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10402,7 +10402,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 15:31
+2Samuel 15:31
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10426,7 +10426,7 @@
           mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 15:32
+2Samuel 15:32
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10456,7 +10456,7 @@
           tifcha 
         4 silluq_phrase
           silluq 
-2 Samuel 15:33
+2Samuel 15:33
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -10474,7 +10474,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 15:34
+2Samuel 15:34
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10507,7 +10507,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 15:35
+2Samuel 15:35
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10540,7 +10540,7 @@
           mereka tifcha 
         4 silluq_phrase
           silluq 
-2 Samuel 15:36
+2Samuel 15:36
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10567,7 +10567,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 15:37
+2Samuel 15:37
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -10585,7 +10585,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 16:1
+2Samuel 16:1
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10621,7 +10621,7 @@
           mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 16:2
+2Samuel 16:2
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -10654,7 +10654,7 @@
           mereka tifcha 
         4 silluq_phrase
           silluq 
-2 Samuel 16:3
+2Samuel 16:3
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -10693,7 +10693,7 @@
             tifcha 
           5 silluq_phrase
             mereka silluq 
-2 Samuel 16:4
+2Samuel 16:4
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10720,7 +10720,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 16:5
+2Samuel 16:5
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -10747,7 +10747,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 16:6
+2Samuel 16:6
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10771,7 +10771,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 16:7
+2Samuel 16:7
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -10786,7 +10786,7 @@
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 16:8
+2Samuel 16:8
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10828,7 +10828,7 @@
           mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 16:9
+2Samuel 16:9
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10855,7 +10855,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 16:10
+2Samuel 16:10
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -10885,7 +10885,7 @@
           tifcha 
         4 silluq_phrase
           mereka silluq 
-2 Samuel 16:11
+2Samuel 16:11
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -10918,7 +10918,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 16:12
+2Samuel 16:12
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -10939,7 +10939,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 16:13
+2Samuel 16:13
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -10975,7 +10975,7 @@
           tifcha 
         4 silluq_phrase
           silluq 
-2 Samuel 16:14
+2Samuel 16:14
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -10990,7 +10990,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 16:15
+2Samuel 16:15
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11011,7 +11011,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 16:16
+2Samuel 16:16
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -11038,7 +11038,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 16:17
+2Samuel 16:17
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11056,7 +11056,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 16:18
+2Samuel 16:18
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -11080,7 +11080,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 16:19
+2Samuel 16:19
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11107,7 +11107,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 16:20
+2Samuel 16:20
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -11122,7 +11122,7 @@
         tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 16:21
+2Samuel 16:21
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11155,7 +11155,7 @@
           tifcha 
         4 silluq_phrase
           mereka silluq 
-2 Samuel 16:22
+2Samuel 16:22
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -11176,7 +11176,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 16:23
+2Samuel 16:23
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11203,7 +11203,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 17:1
+2Samuel 17:1
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -11227,7 +11227,7 @@
           mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 17:2
+2Samuel 17:2
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11251,7 +11251,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 17:3
+2Samuel 17:3
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -11272,7 +11272,7 @@
           tifcha 
         4 silluq_phrase
           mereka silluq 
-2 Samuel 17:4
+2Samuel 17:4
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -11284,7 +11284,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 17:5
+2Samuel 17:5
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11305,7 +11305,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 17:6
+2Samuel 17:6
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -11335,7 +11335,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 17:7
+2Samuel 17:7
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -11350,7 +11350,7 @@
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 17:8
+2Samuel 17:8
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11386,7 +11386,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 17:9
+2Samuel 17:9
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11428,7 +11428,7 @@
               tifcha 
             6 silluq_phrase
               mereka silluq 
-2 Samuel 17:10
+2Samuel 17:10
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -11452,7 +11452,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 17:11
+2Samuel 17:11
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11479,7 +11479,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 17:12
+2Samuel 17:12
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11509,7 +11509,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 17:13
+2Samuel 17:13
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11539,7 +11539,7 @@
           mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 17:14
+2Samuel 17:14
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11584,7 +11584,7 @@
             tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 17:15
+2Samuel 17:15
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11614,7 +11614,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 17:16
+2Samuel 17:16
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11647,7 +11647,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 17:17
+2Samuel 17:17
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11680,7 +11680,7 @@
         tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 17:18
+2Samuel 17:18
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11710,7 +11710,7 @@
           tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 17:19
+2Samuel 17:19
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11731,7 +11731,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 17:20
+2Samuel 17:20
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11773,7 +11773,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 17:21
+2Samuel 17:21
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11812,7 +11812,7 @@
           mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 17:22
+2Samuel 17:22
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11842,7 +11842,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 17:23
+2Samuel 17:23
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -11878,7 +11878,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 17:24
+2Samuel 17:24
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -11902,7 +11902,7 @@
           mereka tifcha 
         4 silluq_phrase
           silluq 
-2 Samuel 17:25
+2Samuel 17:25
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -11935,7 +11935,7 @@
           mereka tifcha 
         4 silluq_phrase
           mereka silluq 
-2 Samuel 17:26
+2Samuel 17:26
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -11947,7 +11947,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 17:27
+2Samuel 17:27
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -11974,7 +11974,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 17:28
+2Samuel 17:28
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -11992,7 +11992,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 17:29
+2Samuel 17:29
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12025,7 +12025,7 @@
             mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 18:1
+2Samuel 18:1
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -12043,7 +12043,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 18:2
+2Samuel 18:2
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12085,7 +12085,7 @@
           tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 18:3
+2Samuel 18:3
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12121,7 +12121,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 18:4
+2Samuel 18:4
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12151,7 +12151,7 @@
           tifcha 
         4 silluq_phrase
           silluq 
-2 Samuel 18:5
+2Samuel 18:5
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12181,7 +12181,7 @@
           tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 18:6
+2Samuel 18:6
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -12196,7 +12196,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 18:7
+2Samuel 18:7
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12220,7 +12220,7 @@
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 18:8
+2Samuel 18:8
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -12244,7 +12244,7 @@
           tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 18:9
+2Samuel 18:9
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12286,7 +12286,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 18:10
+2Samuel 18:10
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12313,7 +12313,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 18:11
+2Samuel 18:11
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12349,7 +12349,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 18:12
+2Samuel 18:12
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12394,7 +12394,7 @@
           tifcha 
         4 silluq_phrase
           silluq 
-2 Samuel 18:13
+2Samuel 18:13
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12412,7 +12412,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 18:14
+2Samuel 18:14
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -12439,7 +12439,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 18:15
+2Samuel 18:15
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12457,7 +12457,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 18:16
+2Samuel 18:16
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12478,7 +12478,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 18:17
+2Samuel 18:17
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12505,7 +12505,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 18:18
+2Samuel 18:18
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12547,7 +12547,7 @@
           tifcha 
         4 silluq_phrase
           mereka silluq 
-2 Samuel 18:19
+2Samuel 18:19
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12568,7 +12568,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 18:20
+2Samuel 18:20
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12595,7 +12595,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 18:21
+2Samuel 18:21
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12619,7 +12619,7 @@
         tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 18:22
+2Samuel 18:22
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12655,7 +12655,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 18:23
+2Samuel 18:23
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -12676,7 +12676,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 18:24
+2Samuel 18:24
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -12703,7 +12703,7 @@
           tifcha 
         4 silluq_phrase
           mereka silluq 
-2 Samuel 18:25
+2Samuel 18:25
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12724,7 +12724,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 18:26
+2Samuel 18:26
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -12751,7 +12751,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 18:27
+2Samuel 18:27
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12781,7 +12781,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 18:28
+2Samuel 18:28
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12820,7 +12820,7 @@
           mereka tifcha 
         4 silluq_phrase
           mereka silluq 
-2 Samuel 18:29
+2Samuel 18:29
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -12850,7 +12850,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 18:30
+2Samuel 18:30
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -12865,7 +12865,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 18:31
+2Samuel 18:31
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -12892,7 +12892,7 @@
           tifcha 
         4 silluq_phrase
           mereka silluq 
-2 Samuel 18:32
+2Samuel 18:32
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -12925,7 +12925,7 @@
           mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 19:1
+2Samuel 19:1
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -12961,7 +12961,7 @@
           tifcha 
         4 silluq_phrase
           mereka silluq 
-2 Samuel 19:2
+2Samuel 19:2
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -12976,7 +12976,7 @@
         tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 19:3
+2Samuel 19:3
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -13003,7 +13003,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 19:4
+2Samuel 19:4
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -13027,7 +13027,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 19:5
+2Samuel 19:5
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13051,7 +13051,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 19:6
+2Samuel 19:6
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -13087,7 +13087,7 @@
             tifcha 
           5 silluq_phrase
             silluq 
-2 Samuel 19:7
+2Samuel 19:7
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13135,7 +13135,7 @@
           tifcha 
         4 silluq_phrase
           mereka silluq 
-2 Samuel 19:8
+2Samuel 19:8
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13174,7 +13174,7 @@
           tifcha 
         4 silluq_phrase
           silluq 
-2 Samuel 19:9
+2Samuel 19:9
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -13207,7 +13207,7 @@
             tifcha 
           5 silluq_phrase
             mereka silluq 
-2 Samuel 19:10
+2Samuel 19:10
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13243,7 +13243,7 @@
           mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 19:11
+2Samuel 19:11
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13267,7 +13267,7 @@
           tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 19:12
+2Samuel 19:12
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -13312,7 +13312,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 19:13
+2Samuel 19:13
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -13330,7 +13330,7 @@
         tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 19:14
+2Samuel 19:14
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13366,7 +13366,7 @@
           tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 19:15
+2Samuel 19:15
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -13387,7 +13387,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 19:16
+2Samuel 19:16
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -13414,7 +13414,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 19:17
+2Samuel 19:17
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13441,7 +13441,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 19:18
+2Samuel 19:18
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -13471,7 +13471,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 19:19
+2Samuel 19:19
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13501,7 +13501,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 19:20
+2Samuel 19:20
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -13534,7 +13534,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 19:21
+2Samuel 19:21
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13564,7 +13564,7 @@
           tifcha 
         4 silluq_phrase
           mereka silluq 
-2 Samuel 19:22
+2Samuel 19:22
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13585,7 +13585,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 19:23
+2Samuel 19:23
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13621,7 +13621,7 @@
           mereka tifcha 
         4 silluq_phrase
           mereka silluq 
-2 Samuel 19:24
+2Samuel 19:24
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -13636,7 +13636,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 19:25
+2Samuel 19:25
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13672,7 +13672,7 @@
           tifcha 
         4 silluq_phrase
           mereka silluq 
-2 Samuel 19:26
+2Samuel 19:26
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -13696,7 +13696,7 @@
           mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 19:27
+2Samuel 19:27
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -13720,7 +13720,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 19:28
+2Samuel 19:28
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -13741,7 +13741,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 19:29
+2Samuel 19:29
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13777,7 +13777,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 19:30
+2Samuel 19:30
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13804,7 +13804,7 @@
           tifcha 
         4 silluq_phrase
           silluq 
-2 Samuel 19:31
+2Samuel 19:31
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13831,7 +13831,7 @@
         tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 19:32
+2Samuel 19:32
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13855,7 +13855,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 19:33
+2Samuel 19:33
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13882,7 +13882,7 @@
           mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 19:34
+2Samuel 19:34
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -13903,7 +13903,7 @@
           tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 19:35
+2Samuel 19:35
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -13924,7 +13924,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 19:36
+2Samuel 19:36
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -13963,7 +13963,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 19:37
+2Samuel 19:37
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -13987,7 +13987,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 19:38
+2Samuel 19:38
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -14023,7 +14023,7 @@
           mereka tifcha 
         4 silluq_phrase
           silluq 
-2 Samuel 19:39
+2Samuel 19:39
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -14053,7 +14053,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 19:40
+2Samuel 19:40
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -14074,7 +14074,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 19:41
+2Samuel 19:41
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -14101,7 +14101,7 @@
           tifcha 
         4 silluq_phrase
           mereka silluq 
-2 Samuel 19:42
+2Samuel 19:42
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -14131,7 +14131,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 19:43
+2Samuel 19:43
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -14167,7 +14167,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 19:44
+2Samuel 19:44
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -14209,7 +14209,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 20:1
+2Samuel 20:1
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -14248,7 +14248,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 20:2
+2Samuel 20:2
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -14275,7 +14275,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 20:3
+2Samuel 20:3
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -14311,7 +14311,7 @@
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 20:4
+2Samuel 20:4
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -14329,7 +14329,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 20:5
+2Samuel 20:5
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -14344,7 +14344,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 20:6
+2Samuel 20:6
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -14383,7 +14383,7 @@
           mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 20:7
+2Samuel 20:7
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -14410,7 +14410,7 @@
           tifcha 
         4 silluq_phrase
           mereka silluq 
-2 Samuel 20:8
+2Samuel 20:8
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -14452,7 +14452,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 20:9
+2Samuel 20:9
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -14476,7 +14476,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 20:10
+2Samuel 20:10
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -14512,7 +14512,7 @@
           tifcha 
         4 silluq_phrase
           mereka silluq 
-2 Samuel 20:11
+2Samuel 20:11
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -14536,7 +14536,7 @@
           mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 20:12
+2Samuel 20:12
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -14569,7 +14569,7 @@
           mereka tifcha 
         4 silluq_phrase
           silluq 
-2 Samuel 20:13
+2Samuel 20:13
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -14590,7 +14590,7 @@
           tifcha 
         4 silluq_phrase
           mereka silluq 
-2 Samuel 20:14
+2Samuel 20:14
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -14614,7 +14614,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 20:15
+2Samuel 20:15
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -14650,7 +14650,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 20:16
+2Samuel 20:16
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -14674,7 +14674,7 @@
           tifcha 
         4 silluq_phrase
           silluq 
-2 Samuel 20:17
+2Samuel 20:17
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -14701,7 +14701,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 20:18
+2Samuel 20:18
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -14722,7 +14722,7 @@
           tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 20:19
+2Samuel 20:19
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -14746,7 +14746,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 20:20
+2Samuel 20:20
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -14764,7 +14764,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 20:21
+2Samuel 20:21
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -14806,7 +14806,7 @@
           mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 20:22
+2Samuel 20:22
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -14842,7 +14842,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 20:23
+2Samuel 20:23
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -14863,7 +14863,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 20:24
+2Samuel 20:24
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -14875,7 +14875,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 20:25
+2Samuel 20:25
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -14887,7 +14887,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 20:26
+2Samuel 20:26
 0 silluq_clause
   1 zaqef_clause
     2 revia_phrase
@@ -14902,7 +14902,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 21:1
+2Samuel 21:1
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -14935,7 +14935,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 21:2
+2Samuel 21:2
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -14974,7 +14974,7 @@
             mereka tifcha 
           5 silluq_phrase
             silluq 
-2 Samuel 21:3
+2Samuel 21:3
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -14995,7 +14995,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 21:4
+2Samuel 21:4
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -15022,7 +15022,7 @@
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 21:5
+2Samuel 21:5
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -15049,7 +15049,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 21:6
+2Samuel 21:6
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -15076,7 +15076,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 21:7
+2Samuel 21:7
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -15100,7 +15100,7 @@
           tifcha 
         4 silluq_phrase
           mereka silluq 
-2 Samuel 21:8
+2Samuel 21:8
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -15136,7 +15136,7 @@
           mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 21:9
+2Samuel 21:9
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -15169,7 +15169,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 21:10
+2Samuel 21:10
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -15202,7 +15202,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 21:11
+2Samuel 21:11
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -15217,7 +15217,7 @@
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 21:12
+2Samuel 21:12
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -15262,7 +15262,7 @@
           tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 21:13
+2Samuel 21:13
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -15283,7 +15283,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 21:14
+2Samuel 21:14
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -15316,7 +15316,7 @@
         tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 21:15
+2Samuel 21:15
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -15337,7 +15337,7 @@
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 21:16
+2Samuel 21:16
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -15367,7 +15367,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 21:17
+2Samuel 21:17
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -15397,7 +15397,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 21:18
+2Samuel 21:18
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -15430,7 +15430,7 @@
           tifcha 
         4 silluq_phrase
           mereka silluq 
-2 Samuel 21:19
+2Samuel 21:19
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -15463,7 +15463,7 @@
           tifcha 
         4 silluq_phrase
           silluq 
-2 Samuel 21:20
+2Samuel 21:20
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -15493,7 +15493,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 21:21
+2Samuel 21:21
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -15511,7 +15511,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 21:22
+2Samuel 21:22
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -15526,7 +15526,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 22:1
+2Samuel 22:1
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -15547,7 +15547,7 @@
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 22:2
+2Samuel 22:2
 0 silluq_clause
   1 atnach_phrase
     atnach 
@@ -15559,7 +15559,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 22:3
+2Samuel 22:3
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -15586,7 +15586,7 @@
           tifcha 
         4 silluq_phrase
           silluq 
-2 Samuel 22:4
+2Samuel 22:4
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -15598,7 +15598,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 22:5
+2Samuel 22:5
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -15610,7 +15610,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 22:6
+2Samuel 22:6
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -15622,7 +15622,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 22:7
+2Samuel 22:7
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -15646,7 +15646,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 22:8
+2Samuel 22:8
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -15664,7 +15664,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 22:9
+2Samuel 22:9
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -15682,7 +15682,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 22:10
+2Samuel 22:10
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -15694,7 +15694,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 22:11
+2Samuel 22:11
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -15706,7 +15706,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 22:12
+2Samuel 22:12
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -15721,7 +15721,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 22:13
+2Samuel 22:13
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -15733,7 +15733,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 22:14
+2Samuel 22:14
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -15745,7 +15745,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 22:15
+2Samuel 22:15
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -15757,7 +15757,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 22:16
+2Samuel 22:16
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -15778,7 +15778,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 22:17
+2Samuel 22:17
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -15790,7 +15790,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 22:18
+2Samuel 22:18
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -15808,7 +15808,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 22:19
+2Samuel 22:19
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -15823,7 +15823,7 @@
         tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 22:20
+2Samuel 22:20
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -15835,7 +15835,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 22:21
+2Samuel 22:21
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -15847,7 +15847,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 22:22
+2Samuel 22:22
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -15859,7 +15859,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 22:23
+2Samuel 22:23
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -15871,7 +15871,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 22:24
+2Samuel 22:24
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -15883,7 +15883,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 22:25
+2Samuel 22:25
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -15898,7 +15898,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 22:26
+2Samuel 22:26
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -15910,7 +15910,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 22:27
+2Samuel 22:27
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -15922,7 +15922,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 22:28
+2Samuel 22:28
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -15934,7 +15934,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 22:29
+2Samuel 22:29
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -15946,7 +15946,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 22:30
+2Samuel 22:30
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -15958,7 +15958,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 22:31
+2Samuel 22:31
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -15979,7 +15979,7 @@
           tifcha 
         4 silluq_phrase
           mereka silluq 
-2 Samuel 22:32
+2Samuel 22:32
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -15991,7 +15991,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 22:33
+2Samuel 22:33
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -16003,7 +16003,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 22:34
+2Samuel 22:34
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -16015,7 +16015,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 22:35
+2Samuel 22:35
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -16027,7 +16027,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 22:36
+2Samuel 22:36
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -16039,7 +16039,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 22:37
+2Samuel 22:37
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -16051,7 +16051,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 22:38
+2Samuel 22:38
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -16063,7 +16063,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 22:39
+2Samuel 22:39
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -16075,7 +16075,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 22:40
+2Samuel 22:40
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -16087,7 +16087,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 22:41
+2Samuel 22:41
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -16102,7 +16102,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 22:42
+2Samuel 22:42
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -16114,7 +16114,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 22:43
+2Samuel 22:43
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -16126,7 +16126,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 22:44
+2Samuel 22:44
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -16147,7 +16147,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 22:45
+2Samuel 22:45
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -16159,7 +16159,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 22:46
+2Samuel 22:46
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -16171,7 +16171,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 22:47
+2Samuel 22:47
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -16186,7 +16186,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 22:48
+2Samuel 22:48
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -16201,7 +16201,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 22:49
+2Samuel 22:49
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -16219,7 +16219,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 22:50
+2Samuel 22:50
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -16234,7 +16234,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 22:51
+2Samuel 22:51
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -16249,7 +16249,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 23:1
+2Samuel 23:1
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -16279,7 +16279,7 @@
           tifcha 
         4 silluq_phrase
           mereka silluq 
-2 Samuel 23:2
+2Samuel 23:2
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -16291,7 +16291,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 23:3
+2Samuel 23:3
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16318,7 +16318,7 @@
           tifcha 
         4 silluq_phrase
           mereka silluq 
-2 Samuel 23:4
+2Samuel 23:4
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -16336,7 +16336,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 23:5
+2Samuel 23:5
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -16360,7 +16360,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 23:6
+2Samuel 23:6
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -16375,7 +16375,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 23:7
+2Samuel 23:7
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16396,7 +16396,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 23:8
+2Samuel 23:8
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -16429,7 +16429,7 @@
           tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 23:9
+2Samuel 23:9
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -16453,7 +16453,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 23:10
+2Samuel 23:10
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16486,7 +16486,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 23:11
+2Samuel 23:11
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -16516,7 +16516,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 23:12
+2Samuel 23:12
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16534,7 +16534,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 23:13
+2Samuel 23:13
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16561,7 +16561,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 23:14
+2Samuel 23:14
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -16576,7 +16576,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 23:15
+2Samuel 23:15
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -16594,7 +16594,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 23:16
+2Samuel 23:16
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16627,7 +16627,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 23:17
+2Samuel 23:17
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16657,7 +16657,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 23:18
+2Samuel 23:18
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16690,7 +16690,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 23:19
+2Samuel 23:19
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16708,7 +16708,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 23:20
+2Samuel 23:20
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -16741,7 +16741,7 @@
           mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 23:21
+2Samuel 23:21
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -16771,7 +16771,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 23:22
+2Samuel 23:22
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -16786,7 +16786,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 23:23
+2Samuel 23:23
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -16801,7 +16801,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 23:24
+2Samuel 23:24
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -16813,7 +16813,7 @@
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 23:25
+2Samuel 23:25
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -16825,7 +16825,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 23:26
+2Samuel 23:26
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -16837,7 +16837,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 23:27
+2Samuel 23:27
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -16849,7 +16849,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 23:28
+2Samuel 23:28
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -16861,7 +16861,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 23:29
+2Samuel 23:29
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -16879,7 +16879,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 23:30
+2Samuel 23:30
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -16891,7 +16891,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 23:31
+2Samuel 23:31
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -16903,7 +16903,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 23:32
+2Samuel 23:32
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -16915,7 +16915,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 23:33
+2Samuel 23:33
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -16927,7 +16927,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 23:34
+2Samuel 23:34
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -16939,7 +16939,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 23:35
+2Samuel 23:35
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -16951,7 +16951,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 23:36
+2Samuel 23:36
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -16963,7 +16963,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 23:37
+2Samuel 23:37
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -16984,7 +16984,7 @@
           tifcha 
         4 silluq_phrase
           mereka silluq 
-2 Samuel 23:38
+2Samuel 23:38
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -16996,7 +16996,7 @@
       tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 23:39
+2Samuel 23:39
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -17008,7 +17008,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 24:1
+2Samuel 24:1
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17035,7 +17035,7 @@
           mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 24:2
+2Samuel 24:2
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17071,7 +17071,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 24:3
+2Samuel 24:3
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17101,7 +17101,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 24:4
+2Samuel 24:4
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17128,7 +17128,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 24:5
+2Samuel 24:5
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -17149,7 +17149,7 @@
             mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 24:6
+2Samuel 24:6
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17173,7 +17173,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 24:7
+2Samuel 24:7
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17194,7 +17194,7 @@
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 24:8
+2Samuel 24:8
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -17212,7 +17212,7 @@
         mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 24:9
+2Samuel 24:9
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -17239,7 +17239,7 @@
           mereka tifcha 
         4 silluq_phrase
           silluq 
-2 Samuel 24:10
+2Samuel 24:10
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17278,7 +17278,7 @@
             mereka tifcha 
           5 silluq_phrase
             silluq 
-2 Samuel 24:11
+2Samuel 24:11
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -17299,7 +17299,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 24:12
+2Samuel 24:12
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17326,7 +17326,7 @@
       mereka tifcha 
     2 silluq_phrase
       silluq 
-2 Samuel 24:13
+2Samuel 24:13
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -17368,7 +17368,7 @@
           mereka tifcha 
         4 silluq_phrase
           silluq 
-2 Samuel 24:14
+2Samuel 24:14
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -17389,7 +17389,7 @@
         tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 24:15
+2Samuel 24:15
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17416,7 +17416,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 24:16
+2Samuel 24:16
 0 silluq_clause
   1 atnach_clause
     2 segolta_clause
@@ -17458,7 +17458,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 24:17
+2Samuel 24:17
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17494,7 +17494,7 @@
         tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 24:18
+2Samuel 24:18
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -17518,7 +17518,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 24:19
+2Samuel 24:19
 0 silluq_clause
   1 zaqef_clause
     2 pashta_phrase
@@ -17530,7 +17530,7 @@
       tifcha 
     2 silluq_phrase
       mereka silluq 
-2 Samuel 24:20
+2Samuel 24:20
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17557,7 +17557,7 @@
           tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 24:21
+2Samuel 24:21
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -17587,7 +17587,7 @@
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 24:22
+2Samuel 24:22
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17617,7 +17617,7 @@
           mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 24:23
+2Samuel 24:23
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -17641,7 +17641,7 @@
         mereka tifcha 
       3 silluq_phrase
         silluq 
-2 Samuel 24:24
+2Samuel 24:24
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -17677,7 +17677,7 @@
         tifcha 
       3 silluq_phrase
         mereka silluq 
-2 Samuel 24:25
+2Samuel 24:25
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause

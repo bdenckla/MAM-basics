@@ -1,4 +1,4 @@
-Zephaniah 1:1
+Tsefaniah 1:1
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -25,7 +25,7 @@ Zephaniah 1:1
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Zephaniah 1:2
+Tsefaniah 1:2
 0 silluq_clause
   1 tifcha_clause
     2 revia_clause
@@ -40,7 +40,7 @@ Zephaniah 1:2
         mereka tifcha 
   1 silluq_phrase
     silluq 
-Zephaniah 1:3
+Tsefaniah 1:3
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -70,7 +70,7 @@ Zephaniah 1:3
           mereka tifcha 
     2 silluq_phrase
       silluq 
-Zephaniah 1:4
+Tsefaniah 1:4
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -97,7 +97,7 @@ Zephaniah 1:4
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Zephaniah 1:5
+Tsefaniah 1:5
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -115,7 +115,7 @@ Zephaniah 1:5
         tifcha 
       3 silluq_phrase
         silluq 
-Zephaniah 1:6
+Tsefaniah 1:6
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -130,7 +130,7 @@ Zephaniah 1:6
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Zephaniah 1:7
+Tsefaniah 1:7
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -154,7 +154,7 @@ Zephaniah 1:7
           tifcha 
       3 silluq_phrase
         mereka silluq 
-Zephaniah 1:8
+Tsefaniah 1:8
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -175,7 +175,7 @@ Zephaniah 1:8
       mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Zephaniah 1:9
+Tsefaniah 1:9
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -196,7 +196,7 @@ Zephaniah 1:9
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Zephaniah 1:10
+Tsefaniah 1:10
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -220,7 +220,7 @@ Zephaniah 1:10
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Zephaniah 1:11
+Tsefaniah 1:11
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -238,7 +238,7 @@ Zephaniah 1:11
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Zephaniah 1:12
+Tsefaniah 1:12
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -271,7 +271,7 @@ Zephaniah 1:12
           mereka tifcha 
         4 silluq_phrase
           mereka silluq 
-Zephaniah 1:13
+Tsefaniah 1:13
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -298,7 +298,7 @@ Zephaniah 1:13
           mereka tifcha 
         4 silluq_phrase
           silluq 
-Zephaniah 1:14
+Tsefaniah 1:14
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -322,7 +322,7 @@ Zephaniah 1:14
         mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-Zephaniah 1:15
+Tsefaniah 1:15
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -349,7 +349,7 @@ Zephaniah 1:15
           mereka tifcha 
         4 silluq_phrase
           silluq 
-Zephaniah 1:16
+Tsefaniah 1:16
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -367,7 +367,7 @@ Zephaniah 1:16
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Zephaniah 1:17
+Tsefaniah 1:17
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -394,7 +394,7 @@ Zephaniah 1:17
         tifcha 
       3 silluq_phrase
         silluq 
-Zephaniah 1:18
+Tsefaniah 1:18
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -430,7 +430,7 @@ Zephaniah 1:18
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Zephaniah 2:1
+Tsefaniah 2:1
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -442,7 +442,7 @@ Zephaniah 2:1
       tifcha 
     2 silluq_phrase
       mereka silluq 
-Zephaniah 2:2
+Tsefaniah 2:2
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -478,7 +478,7 @@ Zephaniah 2:2
           tifcha 
         4 silluq_phrase
           silluq 
-Zephaniah 2:3
+Tsefaniah 2:3
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -508,7 +508,7 @@ Zephaniah 2:3
           tifcha 
         4 silluq_phrase
           silluq 
-Zephaniah 2:4
+Tsefaniah 2:4
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -535,7 +535,7 @@ Zephaniah 2:4
         tifcha 
       3 silluq_phrase
         silluq 
-Zephaniah 2:5
+Tsefaniah 2:5
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -562,7 +562,7 @@ Zephaniah 2:5
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Zephaniah 2:6
+Tsefaniah 2:6
 0 silluq_clause
   1 tifcha_clause
     2 revia_clause
@@ -577,7 +577,7 @@ Zephaniah 2:6
         mereka tifcha 
   1 silluq_phrase
     mereka silluq 
-Zephaniah 2:7
+Tsefaniah 2:7
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -607,7 +607,7 @@ Zephaniah 2:7
           mereka tifcha 
       3 silluq_phrase
         mereka silluq 
-Zephaniah 2:8
+Tsefaniah 2:8
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -631,7 +631,7 @@ Zephaniah 2:8
         tifcha 
       3 silluq_phrase
         silluq 
-Zephaniah 2:9
+Tsefaniah 2:9
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -673,7 +673,7 @@ Zephaniah 2:9
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Zephaniah 2:10
+Tsefaniah 2:10
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -691,7 +691,7 @@ Zephaniah 2:10
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Zephaniah 2:11
+Tsefaniah 2:11
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -718,7 +718,7 @@ Zephaniah 2:11
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Zephaniah 2:12
+Tsefaniah 2:12
 0 silluq_clause
   1 zaqef_phrase
     munach zaqef 
@@ -727,7 +727,7 @@ Zephaniah 2:12
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Zephaniah 2:13
+Tsefaniah 2:13
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -751,7 +751,7 @@ Zephaniah 2:13
         tifcha 
       3 silluq_phrase
         silluq 
-Zephaniah 2:14
+Tsefaniah 2:14
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -784,7 +784,7 @@ Zephaniah 2:14
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Zephaniah 2:15
+Tsefaniah 2:15
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -826,7 +826,7 @@ Zephaniah 2:15
           tifcha 
         4 silluq_phrase
           mereka silluq 
-Zephaniah 3:1
+Tsefaniah 3:1
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -838,7 +838,7 @@ Zephaniah 3:1
       tifcha 
     2 silluq_phrase
       silluq 
-Zephaniah 3:2
+Tsefaniah 3:2
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -862,7 +862,7 @@ Zephaniah 3:2
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Zephaniah 3:3
+Tsefaniah 3:3
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -883,7 +883,7 @@ Zephaniah 3:3
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Zephaniah 3:4
+Tsefaniah 3:4
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -907,7 +907,7 @@ Zephaniah 3:4
         tifcha 
       3 silluq_phrase
         silluq 
-Zephaniah 3:5
+Tsefaniah 3:5
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -934,7 +934,7 @@ Zephaniah 3:5
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Zephaniah 3:6
+Tsefaniah 3:6
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -958,7 +958,7 @@ Zephaniah 3:6
         tifcha 
     2 silluq_phrase
       mereka silluq 
-Zephaniah 3:7
+Tsefaniah 3:7
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -988,7 +988,7 @@ Zephaniah 3:7
         tifcha 
       3 silluq_phrase
         silluq 
-Zephaniah 3:8
+Tsefaniah 3:8
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1027,7 +1027,7 @@ Zephaniah 3:8
           tifcha 
         4 silluq_phrase
           silluq 
-Zephaniah 3:9
+Tsefaniah 3:9
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -1048,7 +1048,7 @@ Zephaniah 3:9
         tifcha 
       3 silluq_phrase
         mereka silluq 
-Zephaniah 3:10
+Tsefaniah 3:10
 0 silluq_clause
   1 atnach_clause
     2 tifcha_phrase
@@ -1066,7 +1066,7 @@ Zephaniah 3:10
         tifcha 
       3 silluq_phrase
         silluq 
-Zephaniah 3:11
+Tsefaniah 3:11
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1102,7 +1102,7 @@ Zephaniah 3:11
           tifcha 
       3 silluq_phrase
         mereka silluq 
-Zephaniah 3:12
+Tsefaniah 3:12
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -1117,7 +1117,7 @@ Zephaniah 3:12
       tifcha 
     2 silluq_phrase
       mereka silluq 
-Zephaniah 3:13
+Tsefaniah 3:13
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1141,7 +1141,7 @@ Zephaniah 3:13
         mereka tifcha 
     2 silluq_phrase
       mereka silluq 
-Zephaniah 3:14
+Tsefaniah 3:14
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1165,7 +1165,7 @@ Zephaniah 3:14
         tifcha 
       3 silluq_phrase
         silluq 
-Zephaniah 3:15
+Tsefaniah 3:15
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
@@ -1189,7 +1189,7 @@ Zephaniah 3:15
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Zephaniah 3:16
+Tsefaniah 3:16
 0 silluq_clause
   1 atnach_clause
     2 zaqef_phrase
@@ -1204,7 +1204,7 @@ Zephaniah 3:16
       tifcha 
     2 silluq_phrase
       mereka silluq 
-Zephaniah 3:17
+Tsefaniah 3:17
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -1231,7 +1231,7 @@ Zephaniah 3:17
         mereka tifcha 
       3 silluq_phrase
         silluq 
-Zephaniah 3:18
+Tsefaniah 3:18
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -1246,7 +1246,7 @@ Zephaniah 3:18
       mereka tifcha 
     2 silluq_phrase
       silluq 
-Zephaniah 3:19
+Tsefaniah 3:19
 0 silluq_clause
   1 atnach_clause
     2 tifcha_clause
@@ -1276,7 +1276,7 @@ Zephaniah 3:19
           tifcha 
         4 silluq_phrase
           silluq 
-Zephaniah 3:20
+Tsefaniah 3:20
 0 silluq_clause
   1 atnach_clause
     2 zaqef_clause
