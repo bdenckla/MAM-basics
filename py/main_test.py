@@ -35,6 +35,11 @@ TEST_MODULE_SPECS = (
         help_text="Run accgram filter-split provenance sidecar tests.",
     ),
     TestModuleSpec(
+        flag="accgram-run-orig",
+        module_name="tests.test_accgram_run_orig",
+        help_text="Run accgram run-orig WSL invocation/normalization tests.",
+    ),
+    TestModuleSpec(
         flag="json-snippet-browser",
         module_name="tests.test_json_snippet_browser",
         help_text="Run JSON snippet browser HTML generation tests.",

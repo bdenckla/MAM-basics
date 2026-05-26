@@ -1,0 +1,18 @@
+accents warning 6 (yyparse): verse is missing sof pasuq, Haggai 2:12
+accents warning 3 (yyparse): general parsing error Haggai 2:12
+accents warning 3 (yyparse): general parsing error Haggai 2:12
+accents warning 3 (yyparse): general parsing error Haggai 2:12
+accents warning 3 (yyparse): general parsing error Haggai 2:12
+accents warning 3 (yyparse): general parsing error Haggai 2:12
+accents warning 3 (yyparse): general parsing error Haggai 2:12
+accents warning 3 (yyparse): general parsing error Haggai 2:12
+accents warning 3 (yyparse): general parsing error Haggai 2:12
+accents warning 3 (yyparse): general parsing error Haggai 2:12
+accents warning 3 (yyparse): general parsing error Haggai 2:12
+accents warning 3 (yyparse): general parsing error Haggai 2:12
+accents warning 3 (yyparse): general parsing error Haggai 2:12
+accents warning 3 (yyparse): general parsing error Haggai 2:12
+accents warning 3 (yyparse): general parsing error Haggai 2:12
+accents warning 3 (yyparse): general parsing error Haggai 2:12
+accents warning 3 (yyparse): general parsing error Haggai 2:12
+accents warning 3 (yyparse): general parsing error Haggai 2:12

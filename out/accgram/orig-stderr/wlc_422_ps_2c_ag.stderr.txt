@@ -1,0 +1,27 @@
+accents warning 6 (yyparse): verse is missing sof pasuq, 2 Chronicles 22:12
+accents warning 3 (yyparse): general parsing error 2 Chronicles 22:12
+accents warning 3 (yyparse): general parsing error 2 Chronicles 22:12
+accents warning 3 (yyparse): general parsing error 2 Chronicles 22:12
+accents warning 3 (yyparse): general parsing error 2 Chronicles 22:12
+accents warning 3 (yyparse): general parsing error 2 Chronicles 22:12
+accents warning 6 (yyparse): verse is missing sof pasuq, 2 Chronicles 26:15
+accents warning 3 (yyparse): general parsing error 2 Chronicles 26:15
+accents warning 3 (yyparse): general parsing error 2 Chronicles 26:15
+accents warning 3 (yyparse): general parsing error 2 Chronicles 26:15
+accents warning 3 (yyparse): general parsing error 2 Chronicles 26:15
+accents warning 3 (yyparse): general parsing error 2 Chronicles 26:15
+accents warning 3 (yyparse): general parsing error 2 Chronicles 26:15
+accents warning 3 (yyparse): general parsing error 2 Chronicles 26:15
+accents warning 3 (yyparse): general parsing error 2 Chronicles 26:15
+accents warning 3 (yyparse): general parsing error 2 Chronicles 26:15
+accents warning 3 (yyparse): general parsing error 2 Chronicles 26:15
+accents warning 3 (yyparse): general parsing error 2 Chronicles 26:15
+accents warning 3 (yyparse): general parsing error 2 Chronicles 26:15
+accents warning 3 (yyparse): general parsing error 2 Chronicles 26:15
+accents warning 3 (yyparse): general parsing error 2 Chronicles 26:15
+accents warning 3 (yyparse): general parsing error 2 Chronicles 26:15
+accents warning 3 (yyparse): general parsing error 2 Chronicles 26:15
+accents warning 3 (yyparse): general parsing error 2 Chronicles 26:15
+accents warning 3 (yyparse): general parsing error 2 Chronicles 26:15
+accents warning 3 (yyparse): general parsing error 2 Chronicles 26:15
+accents warning 3 (yyparse): general parsing error 2 Chronicles 26:15

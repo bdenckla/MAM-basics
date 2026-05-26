@@ -1,0 +1,89 @@
+accents warning 6 (yyparse): verse is missing sof pasuq, Jeremiah 4:19
+accents warning 3 (yyparse): general parsing error Jeremiah 4:19
+accents warning 3 (yyparse): general parsing error Jeremiah 4:19
+accents warning 3 (yyparse): general parsing error Jeremiah 4:19
+accents warning 3 (yyparse): general parsing error Jeremiah 4:19
+accents warning 3 (yyparse): general parsing error Jeremiah 4:19
+accents warning 3 (yyparse): general parsing error Jeremiah 4:19
+accents warning 3 (yyparse): general parsing error Jeremiah 4:19
+accents warning 3 (yyparse): general parsing error Jeremiah 4:19
+accents warning 3 (yyparse): general parsing error Jeremiah 4:19
+accents warning 3 (yyparse): general parsing error Jeremiah 4:19
+accents warning 3 (yyparse): general parsing error Jeremiah 4:19
+accents warning 3 (yyparse): general parsing error Jeremiah 4:19
+accents warning 3 (yyparse): general parsing error Jeremiah 4:19
+accents warning 3 (yyparse): general parsing error Jeremiah 4:19
+accents warning 3 (yyparse): general parsing error Jeremiah 4:19
+accents warning 3 (yyparse): general parsing error Jeremiah 4:19
+accents warning 6 (yyparse): verse is missing sof pasuq, Jeremiah 9:10
+accents warning 3 (yyparse): general parsing error Jeremiah 9:10
+accents warning 3 (yyparse): general parsing error Jeremiah 9:10
+accents warning 3 (yyparse): general parsing error Jeremiah 9:10
+accents warning 6 (yyparse): verse is missing sof pasuq, Jeremiah 9:11
+accents warning 3 (yyparse): general parsing error Jeremiah 9:11
+accents warning 3 (yyparse): general parsing error Jeremiah 9:11
+accents warning 3 (yyparse): general parsing error Jeremiah 9:11
+accents warning 6 (yyparse): verse is missing sof pasuq, Jeremiah 10:3
+accents warning 3 (yyparse): general parsing error Jeremiah 10:3
+accents warning 3 (yyparse): general parsing error Jeremiah 10:3
+accents warning 3 (yyparse): general parsing error Jeremiah 10:3
+accents warning 3 (yyparse): general parsing error Jeremiah 10:3
+accents warning 6 (yyparse): verse is missing sof pasuq, Jeremiah 31:32
+accents warning 3 (yyparse): general parsing error Jeremiah 31:32
+accents warning 3 (yyparse): general parsing error Jeremiah 31:32
+accents warning 3 (yyparse): general parsing error Jeremiah 31:32
+accents warning 3 (yyparse): general parsing error Jeremiah 31:32
+accents warning 3 (yyparse): general parsing error Jeremiah 31:32
+accents warning 3 (yyparse): general parsing error Jeremiah 31:32
+accents warning 3 (yyparse): general parsing error Jeremiah 31:32
+accents warning 3 (yyparse): general parsing error Jeremiah 31:32
+accents warning 3 (yyparse): general parsing error Jeremiah 31:32
+accents warning 3 (yyparse): general parsing error Jeremiah 31:32
+accents warning 6 (yyparse): verse is missing sof pasuq, Jeremiah 38:11
+accents warning 3 (yyparse): general parsing error Jeremiah 38:11
+accents warning 3 (yyparse): general parsing error Jeremiah 38:11
+accents warning 3 (yyparse): general parsing error Jeremiah 38:11
+accents warning 3 (yyparse): general parsing error Jeremiah 38:11
+accents warning 3 (yyparse): general parsing error Jeremiah 38:11
+accents warning 3 (yyparse): general parsing error Jeremiah 38:11
+accents warning 3 (yyparse): general parsing error Jeremiah 38:11
+accents warning 3 (yyparse): general parsing error Jeremiah 38:11
+accents warning 3 (yyparse): general parsing error Jeremiah 38:11
+accents warning 3 (yyparse): general parsing error Jeremiah 38:11
+accents warning 3 (yyparse): general parsing error Jeremiah 38:11
+accents warning 3 (yyparse): general parsing error Jeremiah 38:11
+accents warning 3 (yyparse): general parsing error Jeremiah 38:11
+accents warning 3 (yyparse): general parsing error Jeremiah 38:11
+accents warning 3 (yyparse): general parsing error Jeremiah 38:11
+accents warning 3 (yyparse): general parsing error Jeremiah 38:11
+accents warning 3 (yyparse): general parsing error Jeremiah 38:11
+accents warning 3 (yyparse): general parsing error Jeremiah 38:11
+accents warning 6 (yyparse): verse is missing sof pasuq, Jeremiah 48:12
+accents warning 3 (yyparse): general parsing error Jeremiah 48:12
+accents warning 3 (yyparse): general parsing error Jeremiah 48:12
+accents warning 3 (yyparse): general parsing error Jeremiah 48:12
+accents warning 3 (yyparse): general parsing error Jeremiah 48:12
+accents warning 3 (yyparse): general parsing error Jeremiah 48:12
+accents warning 3 (yyparse): general parsing error Jeremiah 48:12
+accents warning 3 (yyparse): general parsing error Jeremiah 48:12
+accents warning 3 (yyparse): general parsing error Jeremiah 48:12
+accents warning 3 (yyparse): general parsing error Jeremiah 48:12
+accents warning 3 (yyparse): general parsing error Jeremiah 48:12
+accents warning 3 (yyparse): general parsing error Jeremiah 48:12
+accents warning 6 (yyparse): verse is missing sof pasuq, Jeremiah 49:19
+accents warning 3 (yyparse): general parsing error Jeremiah 49:19
+accents warning 3 (yyparse): general parsing error Jeremiah 49:19
+accents warning 3 (yyparse): general parsing error Jeremiah 49:19
+accents warning 3 (yyparse): general parsing error Jeremiah 49:19
+accents warning 3 (yyparse): general parsing error Jeremiah 49:19
+accents warning 3 (yyparse): general parsing error Jeremiah 49:19
+accents warning 3 (yyparse): general parsing error Jeremiah 49:19
+accents warning 3 (yyparse): general parsing error Jeremiah 49:19
+accents warning 3 (yyparse): general parsing error Jeremiah 49:19
+accents warning 3 (yyparse): general parsing error Jeremiah 49:19
+accents warning 3 (yyparse): general parsing error Jeremiah 49:19
+accents warning 3 (yyparse): general parsing error Jeremiah 49:19
+accents warning 3 (yyparse): general parsing error Jeremiah 49:19
+accents warning 3 (yyparse): general parsing error Jeremiah 49:19
+accents warning 3 (yyparse): general parsing error Jeremiah 49:19
+accents warning 3 (yyparse): general parsing error Jeremiah 49:19

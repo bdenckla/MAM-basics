@@ -7,12 +7,14 @@ Subcommands:
                 Split like split-wlc, but exclude Psalms/Proverbs entirely,
                 exclude poetically-cantillated verses of Job, and exclude
                 all dual-cantillation verses.
+    run-orig    Run accents (via WSL) on split files and write *_ag outputs.
 
 Examples:
     .venv/Scripts/python.exe py/main_accgram.py split-wlc
     .venv/Scripts/python.exe py/main_accgram.py split-wlc --out-dir .novc/wlc_422_ps
     .venv/Scripts/python.exe py/main_accgram.py split-wlc --input C:/path/to/wlc422_ps.txt
     .venv/Scripts/python.exe py/main_accgram.py filter-split-wlc
+    .venv/Scripts/python.exe py/main_accgram.py run-orig
 """
 
 from __future__ import annotations
@@ -20,7 +22,7 @@ from __future__ import annotations
 import argparse
 from pathlib import Path
 
-from accgram import filter_split_wlc, split_wlc
+from accgram import filter_split_wlc, run_orig, split_wlc
 
 
 def _repo_root() -> Path:
@@ -39,6 +41,10 @@ def _run_split_wlc(args: argparse.Namespace) -> None:
 
 def _run_filter_split_wlc(args: argparse.Namespace) -> None:
     filter_split_wlc.run(args, split_wlc.split_wlc_to_books)
+
+
+def _run_orig(args: argparse.Namespace) -> None:
+    run_orig.run(args)
 
 
 def main() -> None:
@@ -73,6 +79,16 @@ def main() -> None:
         repo_root=_repo_root(),
     )
     filter_split_wlc_parser.set_defaults(func=_run_filter_split_wlc)
+
+    run_orig_parser = subparsers.add_parser(
+        "run-orig",
+        help=(
+            "Run accents (via WSL) on split input files and write *_ag.txt outputs "
+            "plus stderr sidecars (default: out/accgram/orig-stderr)."
+        ),
+    )
+    run_orig.add_args(run_orig_parser, repo_root=_repo_root())
+    run_orig_parser.set_defaults(func=_run_orig)
 
     args = parser.parse_args()
     args.func(args)

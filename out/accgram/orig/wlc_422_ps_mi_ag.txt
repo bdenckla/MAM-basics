@@ -1,0 +1,2460 @@
+Micah 1:1
+0 silluq_clause
+  1 atnach_clause
+    2 zaqef_clause
+      3 revia_clause
+        4 legarmeh_phrase
+          legarmeh 
+        4 revia_phrase
+          munach revia 
+      3 zaqef_clause
+        4 pashta_phrase
+          pashta 
+        4 zaqef_phrase
+          munach zaqef 
+    2 atnach_clause
+      3 tifcha_clause
+        4 tevir_phrase
+          mereka tevir 
+        4 tifcha_phrase
+          mereka tifcha 
+      3 atnach_phrase
+        munach atnach 
+  1 silluq_clause
+    2 tifcha_phrase
+      mereka tifcha 
+    2 silluq_phrase
+      silluq 
+Micah 1:2
+0 silluq_clause
+  1 atnach_clause
+    2 zaqef_clause
+      3 pashta_phrase
+        pashta 
+      3 zaqef_phrase
+        munach zaqef 
+    2 atnach_clause
+      3 tifcha_phrase
+        tifcha 
+      3 atnach_phrase
+        munach atnach 
+  1 silluq_clause
+    2 zaqef_clause
+      3 pashta_phrase
+        telishaqetanna azla mahpak pashta 
+      3 zaqef_phrase
+        zaqef 
+    2 silluq_clause
+      3 tifcha_phrase
+        tifcha 
+      3 silluq_phrase
+        mereka silluq 
+Micah 1:3
+0 silluq_clause
+  1 atnach_clause
+    2 tifcha_phrase
+      mereka tifcha 
+    2 atnach_phrase
+      munach atnach 
+  1 silluq_clause
+    2 tifcha_phrase
+      mereka tifcha 
+    2 silluq_phrase
+      mereka silluq 
+Micah 1:4
+0 silluq_clause
+  1 atnach_clause
+    2 zaqef_clause
+      3 pashta_phrase
+        mahpak pashta 
+      3 zaqef_phrase
+        zaqef 
+    2 atnach_clause
+      3 tifcha_phrase
+        tifcha 
+      3 atnach_phrase
+        atnach 
+  1 silluq_clause
+    2 zaqef_clause
+      3 pashta_phrase
+        pashta 
+      3 zaqef_phrase
+        munach zaqef 
+    2 silluq_clause
+      3 tifcha_phrase
+        tifcha 
+      3 silluq_phrase
+        mereka silluq 
+Micah 1:5
+0 silluq_clause
+  1 atnach_clause
+    2 zaqef_clause
+      3 pashta_phrase
+        mahpak pashta 
+      3 zaqef_phrase
+        zaqef 
+    2 atnach_clause
+      3 tifcha_phrase
+        tifcha 
+      3 atnach_phrase
+        munach atnach 
+  1 silluq_clause
+    2 zaqef_clause
+      3 revia_phrase
+        munach revia 
+      3 zaqef_clause
+        4 pashta_phrase
+          pashta 
+        4 zaqef_phrase
+          zaqef 
+    2 silluq_clause
+      3 zaqef_clause
+        4 pashta_phrase
+          pashta 
+        4 zaqef_phrase
+          munach zaqef 
+      3 silluq_clause
+        4 tifcha_phrase
+          tifcha 
+        4 silluq_phrase
+          silluq 
+Micah 1:6
+0 silluq_clause
+  1 atnach_clause
+    2 tifcha_clause
+      3 tevir_phrase
+        mereka tevir 
+      3 tifcha_phrase
+        mereka tifcha 
+    2 atnach_phrase
+      munach atnach 
+  1 silluq_clause
+    2 zaqef_clause
+      3 pashta_phrase
+        mahpak pashta 
+      3 zaqef_phrase
+        zaqef 
+    2 silluq_clause
+      3 tifcha_phrase
+        tifcha 
+      3 silluq_phrase
+        silluq 
+Micah 1:7
+0 silluq_clause
+  1 atnach_clause
+    2 zaqef_clause
+      3 revia_phrase
+        munach revia 
+      3 zaqef_clause
+        4 pashta_phrase
+          pashta 
+        4 zaqef_phrase
+          munach zaqef 
+    2 atnach_clause
+      3 tifcha_phrase
+        tifcha 
+      3 atnach_phrase
+        munach atnach 
+  1 silluq_clause
+    2 zaqef_clause
+      3 pashta_clause
+        4 big_telisha_phrase
+          telishagedola 
+        4 pashta_phrase
+          mahpak pashta 
+      3 zaqef_phrase
+        zaqef 
+    2 silluq_clause
+      3 tifcha_phrase
+        mereka tifcha 
+      3 silluq_phrase
+        silluq 
+Micah 1:8
+0 silluq_clause
+  1 atnach_clause
+    2 zaqef_clause
+      3 pashta_phrase
+        pashta 
+      3 zaqef_phrase
+        munach zaqef 
+    2 atnach_clause
+      3 tifcha_phrase
+        mereka tifcha 
+      3 atnach_phrase
+        atnach 
+  1 silluq_clause
+    2 zaqef_clause
+      3 pashta_phrase
+        mahpak pashta 
+      3 zaqef_phrase
+        zaqef 
+    2 silluq_clause
+      3 tifcha_phrase
+        tifcha 
+      3 silluq_phrase
+        mereka silluq 
+Micah 1:9
+0 silluq_clause
+  1 atnach_clause
+    2 tifcha_phrase
+      mereka tifcha 
+    2 atnach_phrase
+      atnach 
+  1 silluq_clause
+    2 zaqef_clause
+      3 pashta_phrase
+        pashta 
+      3 zaqef_phrase
+        zaqef 
+    2 silluq_clause
+      3 tifcha_clause
+        4 tevir_phrase
+          tevir 
+        4 tifcha_phrase
+          mereka tifcha 
+      3 silluq_phrase
+        silluq 
+Micah 1:10
+0 silluq_clause
+  1 atnach_clause
+    2 zaqef_clause
+      3 pashta_phrase
+        pashta 
+      3 zaqef_phrase
+        zaqef 
+    2 atnach_clause
+      3 tifcha_phrase
+        tifcha 
+      3 atnach_phrase
+        atnach 
+  1 silluq_clause
+    2 zaqef_phrase
+      munach zaqef 
+    2 silluq_clause
+      3 tifcha_phrase
+        tifcha 
+      3 silluq_phrase
+        silluq 
+Micah 1:11
+0 silluq_clause
+  1 atnach_clause
+    2 tifcha_clause
+      3 tevir_phrase
+        mereka tevir 
+      3 tifcha_phrase
+        mereka tifcha 
+    2 atnach_phrase
+      atnach 
+  1 silluq_clause
+    2 zaqef_clause
+      3 pashta_phrase
+        mahpak pashta 
+      3 zaqef_phrase
+        munach zaqef 
+    2 silluq_clause
+      3 zaqef_clause
+        4 pashta_phrase
+          pashta 
+        4 zaqef_phrase
+          munach zaqef 
+      3 silluq_clause
+        4 tifcha_phrase
+          mereka tifcha 
+        4 silluq_phrase
+          silluq 
+Micah 1:12
+0 silluq_clause
+  1 atnach_clause
+    2 tifcha_phrase
+      mereka tifcha 
+    2 atnach_phrase
+      munach atnach 
+  1 silluq_clause
+    2 zaqef_clause
+      3 pashta_phrase
+        mahpak pashta 
+      3 zaqef_phrase
+        munach zaqef 
+    2 silluq_clause
+      3 tifcha_phrase
+        tifcha 
+      3 silluq_phrase
+        silluq 
+Micah 1:13
+0 silluq_clause
+  1 atnach_clause
+    2 tifcha_clause
+      3 tevir_phrase
+        darga tevir 
+      3 tifcha_phrase
+        tifcha 
+    2 atnach_phrase
+      munach atnach 
+  1 silluq_clause
+    2 zaqef_clause
+      3 pashta_phrase
+        azla mereka pashta 
+      3 zaqef_phrase
+        zaqef 
+    2 silluq_clause
+      3 tifcha_phrase
+        mereka tifcha 
+      3 silluq_phrase
+        mereka silluq 
+Micah 1:14
+0 silluq_clause
+  1 atnach_clause
+    2 zaqef_clause
+      3 pashta_phrase
+        pashta 
+      3 zaqef_phrase
+        munach zaqef 
+    2 atnach_clause
+      3 tifcha_phrase
+        tifcha 
+      3 atnach_phrase
+        munach atnach 
+  1 silluq_clause
+    2 zaqef_clause
+      3 pashta_phrase
+        mahpak pashta 
+      3 zaqef_phrase
+        zaqef 
+    2 silluq_clause
+      3 tifcha_phrase
+        tifcha 
+      3 silluq_phrase
+        silluq 
+Micah 1:15
+0 silluq_clause
+  1 atnach_clause
+    2 zaqef_clause
+      3 revia_phrase
+        revia 
+      3 zaqef_clause
+        4 pashta_phrase
+          pashta 
+        4 zaqef_phrase
+          munach zaqef 
+    2 atnach_clause
+      3 tifcha_phrase
+        tifcha 
+      3 atnach_phrase
+        atnach 
+  1 silluq_clause
+    2 tifcha_phrase
+      mereka tifcha 
+    2 silluq_phrase
+      mereka silluq 
+Micah 1:16
+0 silluq_clause
+  1 atnach_clause
+    2 zaqef_phrase
+      munach zaqef 
+    2 atnach_clause
+      3 tifcha_phrase
+        tifcha 
+      3 atnach_phrase
+        atnach 
+  1 silluq_clause
+    2 zaqef_clause
+      3 pashta_phrase
+        mahpak pashta 
+      3 zaqef_phrase
+        zaqef 
+    2 silluq_clause
+      3 tifcha_phrase
+        mereka tifcha 
+      3 silluq_phrase
+        silluq 
+Micah 2:1
+0 silluq_clause
+  1 atnach_clause
+    2 tifcha_clause
+      3 tevir_phrase
+        darga tevir 
+      3 tifcha_phrase
+        mereka tifcha 
+    2 atnach_phrase
+      atnach 
+  1 silluq_clause
+    2 zaqef_clause
+      3 pashta_phrase
+        mahpak pashta 
+      3 zaqef_phrase
+        zaqef 
+    2 silluq_clause
+      3 tifcha_phrase
+        mereka tifcha 
+      3 silluq_phrase
+        silluq 
+Micah 2:2
+0 silluq_clause
+  1 atnach_clause
+    2 zaqef_clause
+      3 pashta_phrase
+        mahpak pashta 
+      3 zaqef_phrase
+        zaqef 
+    2 atnach_clause
+      3 tifcha_phrase
+        tifcha 
+      3 atnach_phrase
+        atnach 
+  1 silluq_clause
+    2 zaqef_clause
+      3 pashta_phrase
+        pashta 
+      3 zaqef_phrase
+        munach zaqef 
+    2 silluq_clause
+      3 tifcha_phrase
+        tifcha 
+      3 silluq_phrase
+        silluq 
+Micah 2:3
+0 silluq_clause
+  1 atnach_clause
+    2 zaqef_clause
+      3 revia_phrase
+        revia 
+      3 zaqef_clause
+        4 pashta_phrase
+          yetiv 
+        4 zaqef_phrase
+          munach zaqef 
+    2 atnach_clause
+      3 tifcha_clause
+        4 tevir_phrase
+          mereka tevir 
+        4 tifcha_phrase
+          mereka tifcha 
+      3 atnach_phrase
+        atnach 
+  1 silluq_clause
+    2 zaqef_clause
+      3 revia_clause
+        4 big_telisha_phrase
+          telishagedola 
+        4 revia_clause
+          5 geresh_phrase
+            azla geresh 
+          5 revia_phrase
+            revia 
+      3 zaqef_clause
+        4 pashta_phrase
+          mahpak pashta 
+        4 zaqef_phrase
+          zaqef 
+    2 silluq_clause
+      3 tifcha_clause
+        4 tevir_phrase
+          tevir 
+        4 tifcha_phrase
+          mereka tifcha 
+      3 silluq_phrase
+        silluq 
+Micah 2:4
+0 silluq_clause
+  1 atnach_clause
+    2 zaqef_clause
+      3 revia_clause
+        4 geresh_phrase
+          azla geresh 
+        4 revia_phrase
+          darga munach revia 
+      3 zaqef_clause
+        4 pashta_phrase
+          azla mahpak pashta 
+        4 zaqef_clause
+          5 pashta_phrase
+            pashta 
+          5 zaqef_phrase
+            munach zaqef 
+    2 atnach_clause
+      3 tifcha_phrase
+        mereka tifcha 
+      3 atnach_phrase
+        atnach 
+  1 silluq_clause
+    2 zaqef_clause
+      3 pashta_phrase
+        yetiv 
+      3 zaqef_phrase
+        munach zaqef 
+    2 silluq_clause
+      3 tifcha_phrase
+        mereka tifcha 
+      3 silluq_phrase
+        silluq 
+Micah 2:5
+0 silluq_clause
+  1 atnach_clause
+    2 zaqef_clause
+      3 pashta_phrase
+        pashta 
+      3 zaqef_phrase
+        munach zaqef 
+    2 atnach_clause
+      3 tifcha_phrase
+        mereka tifcha 
+      3 atnach_phrase
+        atnach 
+  1 silluq_clause
+    2 tifcha_phrase
+      tifcha 
+    2 silluq_phrase
+      silluq 
+Micah 2:6
+0 silluq_clause
+  1 atnach_clause
+    2 tifcha_phrase
+      tifcha 
+    2 atnach_phrase
+      atnach 
+  1 silluq_clause
+    2 zaqef_phrase
+      munach zaqef 
+    2 silluq_clause
+      3 tifcha_phrase
+        mereka tifcha 
+      3 silluq_phrase
+        silluq 
+Micah 2:7
+0 silluq_clause
+  1 atnach_clause
+    2 zaqef_clause
+      3 revia_phrase
+        revia 
+      3 zaqef_clause
+        4 pashta_phrase
+          pashta 
+        4 zaqef_phrase
+          munach zaqef 
+    2 atnach_clause
+      3 zaqef_phrase
+        munach zaqef 
+      3 atnach_clause
+        4 tifcha_phrase
+          tifcha 
+        4 atnach_phrase
+          atnach 
+  1 silluq_clause
+    2 zaqef_phrase
+      munach zaqef 
+    2 silluq_clause
+      3 tifcha_phrase
+        tifcha 
+      3 silluq_phrase
+        silluq 
+Micah 2:9
+0 silluq_clause
+  1 atnach_clause
+    2 zaqef_clause
+      3 pashta_phrase
+        mahpak pashta 
+      3 zaqef_phrase
+        munach zaqef 
+    2 atnach_clause
+      3 tifcha_phrase
+        tifcha 
+      3 atnach_phrase
+        atnach 
+  1 silluq_clause
+    2 zaqef_clause
+      3 pashta_phrase
+        pashta 
+      3 zaqef_phrase
+        zaqef 
+    2 silluq_clause
+      3 tifcha_phrase
+        mereka tifcha 
+      3 silluq_phrase
+        silluq 
+Micah 2:10
+0 silluq_clause
+  1 atnach_clause
+    2 zaqef_phrase
+      munach zaqef 
+    2 atnach_clause
+      3 tifcha_phrase
+        mereka tifcha 
+      3 atnach_phrase
+        atnach 
+  1 silluq_clause
+    2 tifcha_clause
+      3 tevir_phrase
+        mereka tevir 
+      3 tifcha_phrase
+        tifcha 
+    2 silluq_phrase
+      mereka silluq 
+Micah 2:11
+0 silluq_clause
+  1 atnach_clause
+    2 zaqef_clause
+      3 pashta_clause
+        4 geresh_phrase
+          gershayim 
+        4 pashta_phrase
+          mereka pashta 
+      3 zaqef_phrase
+        munach zaqef 
+    2 atnach_clause
+      3 zaqef_phrase
+        munach zaqef 
+      3 atnach_clause
+        4 tifcha_phrase
+          tifcha 
+        4 atnach_phrase
+          atnach 
+  1 silluq_clause
+    2 tifcha_phrase
+      mereka tifcha 
+    2 silluq_phrase
+      mereka silluq 
+Micah 2:12
+0 silluq_clause
+  1 atnach_clause
+    2 zaqef_clause
+      3 revia_clause
+        4 geresh_phrase
+          azla geresh 
+        4 revia_phrase
+          munach revia 
+      3 zaqef_clause
+        4 pashta_phrase
+          mahpak pashta 
+        4 zaqef_phrase
+          munach zaqef 
+    2 atnach_clause
+      3 tifcha_phrase
+        mereka tifcha 
+      3 atnach_phrase
+        munach atnach 
+  1 silluq_clause
+    2 zaqef_clause
+      3 pashta_phrase
+        pashta 
+      3 zaqef_phrase
+        munach zaqef 
+    2 silluq_clause
+      3 tifcha_phrase
+        tifcha 
+      3 silluq_phrase
+        silluq 
+Micah 2:13
+0 silluq_clause
+  1 atnach_clause
+    2 zaqef_clause
+      3 pashta_phrase
+        mahpak pashta 
+      3 zaqef_phrase
+        zaqef 
+    2 atnach_clause
+      3 zaqef_clause
+        4 pashta_phrase
+          pashta 
+        4 zaqef_phrase
+          zaqef 
+      3 atnach_clause
+        4 tifcha_phrase
+          tifcha 
+        4 atnach_phrase
+          munach atnach 
+  1 silluq_clause
+    2 zaqef_clause
+      3 pashta_phrase
+        mahpak pashta 
+      3 zaqef_phrase
+        zaqef 
+    2 silluq_clause
+      3 tifcha_phrase
+        tifcha 
+      3 silluq_phrase
+        silluq 
+Micah 3:1
+0 silluq_clause
+  1 atnach_clause
+    2 zaqef_clause
+      3 revia_phrase
+        revia 
+      3 zaqef_clause
+        4 pashta_phrase
+          pashta 
+        4 zaqef_phrase
+          munach zaqef 
+    2 atnach_clause
+      3 tifcha_phrase
+        tifcha 
+      3 atnach_phrase
+        munach atnach 
+  1 silluq_clause
+    2 zaqef_phrase
+      munach zaqef 
+    2 silluq_clause
+      3 tifcha_phrase
+        tifcha 
+      3 silluq_phrase
+        silluq 
+Micah 3:2
+0 silluq_clause
+  1 atnach_clause
+    2 tifcha_phrase
+      mereka tifcha 
+    2 atnach_phrase
+      munach atnach 
+  1 silluq_clause
+    2 zaqef_clause
+      3 pashta_phrase
+        mahpak pashta 
+      3 zaqef_phrase
+        zaqef 
+    2 silluq_clause
+      3 tifcha_phrase
+        tifcha 
+      3 silluq_phrase
+        mereka silluq 
+Micah 3:3
+0 silluq_clause
+  1 atnach_clause
+    2 segolta_clause
+      3 zarqa_phrase
+        munach zarqa 
+      3 segolta_phrase
+        munach segolta 
+    2 atnach_clause
+      3 zaqef_clause
+        4 pashta_phrase
+          pashta 
+        4 zaqef_phrase
+          munach zaqef 
+      3 atnach_clause
+        4 tifcha_phrase
+          tifcha 
+        4 atnach_phrase
+          atnach 
+  1 silluq_clause
+    2 zaqef_clause
+      3 pashta_phrase
+        pashta 
+      3 zaqef_phrase
+        munach zaqef 
+    2 silluq_clause
+      3 tifcha_phrase
+        tifcha 
+      3 silluq_phrase
+        mereka silluq 
+Micah 3:4
+0 silluq_clause
+  1 atnach_clause
+    2 zaqef_clause
+      3 pashta_phrase
+        yetiv 
+      3 zaqef_phrase
+        munach zaqef 
+    2 atnach_clause
+      3 tifcha_phrase
+        mereka tifcha 
+      3 atnach_phrase
+        atnach 
+  1 silluq_clause
+    2 zaqef_clause
+      3 pashta_phrase
+        azla mahpak pashta 
+      3 zaqef_phrase
+        munach zaqef 
+    2 silluq_clause
+      3 tifcha_phrase
+        mereka tifcha 
+      3 silluq_phrase
+        silluq 
+Micah 3:5
+0 silluq_clause
+  1 atnach_clause
+    2 zaqef_clause
+      3 pashta_phrase
+        yetiv 
+      3 zaqef_phrase
+        munach zaqef 
+    2 atnach_clause
+      3 tifcha_phrase
+        tifcha 
+      3 atnach_phrase
+        munach atnach 
+  1 silluq_clause
+    2 zaqef_clause
+      3 pashta_phrase
+        mahpak pashta 
+      3 zaqef_phrase
+        munach zaqef 
+    2 silluq_clause
+      3 zaqef_clause
+        4 pashta_phrase
+          pashta 
+        4 zaqef_phrase
+          munach zaqef 
+      3 silluq_clause
+        4 tifcha_phrase
+          mereka tifcha 
+        4 silluq_phrase
+          silluq 
+Micah 3:6
+0 silluq_clause
+  1 atnach_clause
+    2 zaqef_clause
+      3 pashta_clause
+        4 geresh_phrase
+          gershayim 
+        4 pashta_phrase
+          mahpak pashta 
+      3 zaqef_phrase
+        zaqef 
+    2 atnach_clause
+      3 tifcha_phrase
+        mereka tifcha 
+      3 atnach_phrase
+        atnach 
+  1 silluq_clause
+    2 zaqef_clause
+      3 pashta_phrase
+        mahpak pashta 
+      3 zaqef_phrase
+        zaqef 
+    2 silluq_clause
+      3 tifcha_phrase
+        mereka tifcha 
+      3 silluq_phrase
+        silluq 
+Micah 3:7
+0 silluq_clause
+  1 atnach_clause
+    2 zaqef_clause
+      3 revia_phrase
+        munach revia 
+      3 zaqef_clause
+        4 pashta_phrase
+          pashta 
+        4 zaqef_phrase
+          munach zaqef 
+    2 atnach_clause
+      3 tifcha_phrase
+        mereka tifcha 
+      3 atnach_phrase
+        atnach 
+  1 silluq_clause
+    2 tifcha_clause
+      3 tevir_phrase
+        tevir 
+      3 tifcha_phrase
+        mereka tifcha 
+    2 silluq_phrase
+      silluq 
+Micah 3:8
+0 silluq_clause
+  1 atnach_clause
+    2 zaqef_clause
+      3 revia_phrase
+        revia 
+      3 zaqef_clause
+        4 pashta_clause
+          5 geresh_phrase
+            gershayim 
+          5 pashta_phrase
+            mahpak pashta 
+        4 zaqef_phrase
+          munach zaqef 
+    2 atnach_clause
+      3 tifcha_phrase
+        tifcha 
+      3 atnach_phrase
+        atnach 
+  1 silluq_clause
+    2 zaqef_clause
+      3 pashta_phrase
+        mahpak pashta 
+      3 zaqef_phrase
+        zaqef 
+    2 silluq_clause
+      3 tifcha_phrase
+        tifcha 
+      3 silluq_phrase
+        silluq 
+Micah 3:9
+0 silluq_clause
+  1 atnach_clause
+    2 zaqef_clause
+      3 revia_phrase
+        munach revia 
+      3 zaqef_clause
+        4 pashta_phrase
+          pashta 
+        4 zaqef_phrase
+          munach zaqef 
+    2 atnach_clause
+      3 tifcha_phrase
+        tifcha 
+      3 atnach_phrase
+        munach atnach 
+  1 silluq_clause
+    2 zaqef_phrase
+      munach zaqef 
+    2 silluq_clause
+      3 tifcha_phrase
+        mereka tifcha 
+      3 silluq_phrase
+        silluq 
+Micah 3:10
+0 silluq_clause
+  1 atnach_clause
+    2 tifcha_phrase
+      mereka tifcha 
+    2 atnach_phrase
+      atnach 
+  1 silluq_clause
+    2 tifcha_phrase
+      tifcha 
+    2 silluq_phrase
+      silluq 
+Micah 3:11
+0 silluq_clause
+  1 atnach_clause
+    2 zaqef_clause
+      3 revia_clause
+        4 legarmeh_phrase
+          legarmeh 
+        4 revia_phrase
+          munach revia 
+      3 zaqef_clause
+        4 pashta_phrase
+          pashta 
+        4 zaqef_phrase
+          munach zaqef 
+    2 atnach_clause
+      3 tifcha_phrase
+        tifcha 
+      3 atnach_phrase
+        munach atnach 
+  1 silluq_clause
+    2 zaqef_clause
+      3 pashta_phrase
+        pashta 
+      3 zaqef_phrase
+        munach zaqef 
+    2 silluq_clause
+      3 zaqef_clause
+        4 pashta_phrase
+          mahpak pashta 
+        4 zaqef_phrase
+          zaqef 
+      3 silluq_clause
+        4 tifcha_phrase
+          mereka tifcha 
+        4 silluq_phrase
+          silluq 
+Micah 3:12
+0 silluq_clause
+  1 atnach_clause
+    2 zaqef_clause
+      3 pashta_phrase
+        pashta 
+      3 zaqef_phrase
+        zaqef 
+    2 atnach_clause
+      3 tifcha_phrase
+        tifcha 
+      3 atnach_phrase
+        munach atnach 
+  1 silluq_clause
+    2 zaqef_clause
+      3 pashta_phrase
+        pashta 
+      3 zaqef_phrase
+        munach zaqef 
+    2 silluq_clause
+      3 tifcha_phrase
+        mereka tifcha 
+      3 silluq_phrase
+        mereka silluq 
+Micah 4:1
+0 silluq_clause
+  1 atnach_clause
+    2 zaqef_clause
+      3 revia_clause
+        4 legarmeh_phrase
+          legarmeh 
+        4 revia_phrase
+          munach revia 
+      3 zaqef_clause
+        4 pashta_clause
+          5 big_telisha_phrase
+            telishagedola 
+          5 pashta_phrase
+            munach mahpak pashta 
+        4 zaqef_phrase
+          munach zaqef 
+    2 atnach_clause
+      3 tifcha_phrase
+        mereka tifcha 
+      3 atnach_phrase
+        atnach 
+  1 silluq_clause
+    2 tifcha_phrase
+      mereka tifcha 
+    2 silluq_phrase
+      silluq 
+Micah 4:2
+0 silluq_clause
+  1 atnach_clause
+    2 zaqef_clause
+      3 revia_clause
+        4 geresh_phrase
+          gershayim 
+        4 revia_phrase
+          munach revia 
+      3 zaqef_clause
+        4 pashta_phrase
+          pashta 
+        4 zaqef_clause
+          5 revia_clause
+            6 legarmeh_phrase
+              legarmeh 
+            6 revia_phrase
+              munach revia 
+          5 zaqef_clause
+            6 pashta_phrase
+              pashta 
+            6 zaqef_phrase
+              munach zaqef 
+    2 atnach_clause
+      3 zaqef_clause
+        4 pashta_phrase
+          pashta 
+        4 zaqef_phrase
+          zaqef 
+      3 atnach_clause
+        4 tifcha_phrase
+          tifcha 
+        4 atnach_phrase
+          atnach 
+  1 silluq_clause
+    2 zaqef_clause
+      3 pashta_phrase
+        mahpak pashta 
+      3 zaqef_phrase
+        munach zaqef 
+    2 silluq_clause
+      3 tifcha_phrase
+        tifcha 
+      3 silluq_phrase
+        silluq 
+Micah 4:3
+0 silluq_clause
+  1 atnach_clause
+    2 zaqef_clause
+      3 revia_phrase
+        revia 
+      3 zaqef_clause
+        4 pashta_phrase
+          yetiv 
+        4 zaqef_phrase
+          munach zaqef 
+    2 atnach_clause
+      3 tifcha_clause
+        4 tevir_phrase
+          tevir 
+        4 tifcha_phrase
+          mereka tifcha 
+      3 atnach_phrase
+        atnach 
+  1 silluq_clause
+    2 zaqef_clause
+      3 revia_clause
+        4 geresh_phrase
+          azla geresh 
+        4 revia_phrase
+          revia 
+      3 zaqef_clause
+        4 pashta_phrase
+          pashta 
+        4 zaqef_phrase
+          zaqef 
+    2 silluq_clause
+      3 zaqef_clause
+        4 pashta_clause
+          5 geresh_phrase
+            gershayim 
+          5 pashta_phrase
+            mahpak pashta 
+        4 zaqef_phrase
+          zaqef 
+      3 silluq_clause
+        4 tifcha_phrase
+          mereka tifcha 
+        4 silluq_phrase
+          silluq 
+Micah 4:4
+0 silluq_clause
+  1 atnach_clause
+    2 tifcha_clause
+      3 revia_phrase
+        revia 
+      3 tifcha_clause
+        4 tevir_phrase
+          munach darga tevir 
+        4 tifcha_phrase
+          mereka tifcha 
+    2 atnach_phrase
+      munach atnach 
+  1 silluq_clause
+    2 tifcha_clause
+      3 tevir_phrase
+        tevir 
+      3 tifcha_phrase
+        mereka tifcha 
+    2 silluq_phrase
+      silluq 
+Micah 4:5
+0 silluq_clause
+  1 atnach_clause
+    2 zaqef_clause
+      3 pashta_phrase
+        yetiv 
+      3 zaqef_phrase
+        munach zaqef 
+    2 atnach_clause
+      3 zaqef_phrase
+        zaqefgadol 
+      3 atnach_clause
+        4 tifcha_phrase
+          tifcha 
+        4 atnach_phrase
+          munach atnach 
+  1 silluq_clause
+    2 tifcha_clause
+      3 revia_phrase
+        revia 
+      3 tifcha_clause
+        4 tevir_phrase
+          tevir 
+        4 tifcha_phrase
+          mereka tifcha 
+    2 silluq_phrase
+      mereka silluq 
+Micah 4:6
+0 silluq_clause
+  1 atnach_clause
+    2 zaqef_clause
+      3 revia_clause
+        4 geresh_phrase
+          azla geresh 
+        4 revia_phrase
+          revia 
+      3 zaqef_clause
+        4 pashta_phrase
+          pashta 
+        4 zaqef_phrase
+          munach zaqef 
+    2 atnach_clause
+      3 tifcha_phrase
+        tifcha 
+      3 atnach_phrase
+        atnach 
+  1 silluq_clause
+    2 tifcha_phrase
+      tifcha 
+    2 silluq_phrase
+      silluq 
+Micah 4:7
+0 silluq_clause
+  1 atnach_clause
+    2 zaqef_clause
+      3 pashta_phrase
+        mahpak pashta 
+      3 zaqef_phrase
+        zaqef 
+    2 atnach_clause
+      3 tifcha_phrase
+        tifcha 
+      3 atnach_phrase
+        munach atnach 
+  1 silluq_clause
+    2 zaqef_clause
+      3 pashta_phrase
+        azla mahpak pashta 
+      3 zaqef_phrase
+        munach zaqef 
+    2 silluq_clause
+      3 tifcha_phrase
+        tifcha 
+      3 silluq_phrase
+        silluq 
+Micah 4:8
+0 silluq_clause
+  1 atnach_clause
+    2 tifcha_clause
+      3 revia_phrase
+        munach revia 
+      3 tifcha_clause
+        4 tevir_phrase
+          tevir 
+        4 tifcha_phrase
+          tifcha 
+    2 atnach_phrase
+      munach atnach 
+  1 silluq_clause
+    2 zaqef_clause
+      3 revia_phrase
+        revia 
+      3 zaqef_clause
+        4 pashta_phrase
+          pashta 
+        4 zaqef_phrase
+          munach zaqef 
+    2 silluq_clause
+      3 tifcha_phrase
+        tifcha 
+      3 silluq_phrase
+        mereka silluq 
+Micah 4:9
+0 silluq_clause
+  1 atnach_clause
+    2 zaqef_phrase
+      zaqefgadol 
+    2 atnach_clause
+      3 tifcha_phrase
+        mereka tifcha 
+      3 atnach_phrase
+        atnach 
+  1 silluq_clause
+    2 zaqef_clause
+      3 revia_phrase
+        munach revia 
+      3 zaqef_clause
+        4 pashta_phrase
+          pashta 
+        4 zaqef_phrase
+          zaqef 
+    2 silluq_clause
+      3 tifcha_phrase
+        mereka tifcha 
+      3 silluq_phrase
+        silluq 
+Micah 4:10
+0 silluq_clause
+  1 atnach_clause
+    2 tifcha_clause
+      3 tevir_phrase
+        darga tevir 
+      3 tifcha_phrase
+        tifcha 
+    2 atnach_phrase
+      atnach 
+  1 silluq_clause
+    2 zaqef_clause
+      3 revia_clause
+        4 geresh_phrase
+          telishaqetanna azla geresh 
+        4 revia_phrase
+          munach revia 
+      3 zaqef_clause
+        4 pashta_phrase
+          mahpak pashta 
+        4 zaqef_phrase
+          munach zaqef 
+    2 silluq_clause
+      3 zaqef_clause
+        4 pashta_phrase
+          yetiv 
+        4 zaqef_phrase
+          munach zaqef 
+      3 silluq_clause
+        4 tifcha_phrase
+          tifcha 
+        4 silluq_phrase
+          silluq 
+Micah 4:11
+0 silluq_clause
+  1 atnach_clause
+    2 tifcha_clause
+      3 tevir_phrase
+        tevir 
+      3 tifcha_phrase
+        mereka tifcha 
+    2 atnach_phrase
+      munach atnach 
+  1 silluq_clause
+    2 zaqef_phrase
+      munach zaqef 
+    2 silluq_clause
+      3 tifcha_phrase
+        mereka tifcha 
+      3 silluq_phrase
+        silluq 
+Micah 4:12
+0 silluq_clause
+  1 atnach_clause
+    2 zaqef_clause
+      3 revia_phrase
+        revia 
+      3 zaqef_clause
+        4 pashta_phrase
+          mahpak pashta 
+        4 zaqef_phrase
+          munach zaqef 
+    2 atnach_clause
+      3 tifcha_phrase
+        mereka tifcha 
+      3 atnach_phrase
+        atnach 
+  1 silluq_clause
+    2 tifcha_phrase
+      mereka tifcha 
+    2 silluq_phrase
+      mereka silluq 
+Micah 4:13
+0 silluq_clause
+  1 atnach_clause
+    2 zaqef_clause
+      3 revia_phrase
+        darga munach revia 
+      3 zaqef_clause
+        4 pashta_clause
+          5 geresh_phrase
+            gershayim 
+          5 pashta_phrase
+            mahpak pashta 
+        4 zaqef_clause
+          5 pashta_phrase
+            pashta 
+          5 zaqef_phrase
+            munach zaqef 
+    2 atnach_clause
+      3 tifcha_phrase
+        tifcha 
+      3 atnach_phrase
+        munach atnach 
+  1 silluq_clause
+    2 zaqef_clause
+      3 pashta_phrase
+        mahpak pashta 
+      3 zaqef_phrase
+        zaqef 
+    2 silluq_clause
+      3 tifcha_phrase
+        tifcha 
+      3 silluq_phrase
+        mereka silluq 
+Micah 4:14
+0 silluq_clause
+  1 atnach_clause
+    2 zaqef_clause
+      3 pashta_phrase
+        pashta 
+      3 zaqef_phrase
+        munach zaqef 
+    2 atnach_clause
+      3 tifcha_phrase
+        tifcha 
+      3 atnach_phrase
+        munach atnach 
+  1 silluq_clause
+    2 zaqef_clause
+      3 pashta_phrase
+        pashta 
+      3 zaqef_phrase
+        munach zaqef 
+    2 silluq_clause
+      3 tifcha_phrase
+        tifcha 
+      3 silluq_phrase
+        mereka silluq 
+Micah 5:1
+0 silluq_clause
+  1 atnach_clause
+    2 zaqef_clause
+      3 revia_clause
+        4 geresh_phrase
+          gershayim 
+        4 revia_phrase
+          munach revia 
+      3 zaqef_clause
+        4 pashta_phrase
+          pashta 
+        4 zaqef_clause
+          5 pashta_phrase
+            pashta 
+          5 zaqef_phrase
+            munach zaqef 
+    2 atnach_clause
+      3 zaqef_clause
+        4 pashta_phrase
+          pashta 
+        4 zaqef_phrase
+          munach zaqef 
+      3 atnach_clause
+        4 tifcha_phrase
+          mereka tifcha 
+        4 atnach_phrase
+          atnach 
+  1 silluq_clause
+    2 tifcha_phrase
+      mereka tifcha 
+    2 silluq_phrase
+      mereka silluq 
+Micah 5:2
+0 silluq_clause
+  1 atnach_clause
+    2 zaqef_phrase
+      munach zaqef 
+    2 atnach_clause
+      3 tifcha_phrase
+        mereka tifcha 
+      3 atnach_phrase
+        atnach 
+  1 silluq_clause
+    2 zaqef_phrase
+      munach zaqef 
+    2 silluq_clause
+      3 tifcha_phrase
+        tifcha 
+      3 silluq_phrase
+        mereka silluq 
+Micah 5:3
+0 silluq_clause
+  1 atnach_clause
+    2 zaqef_clause
+      3 revia_phrase
+        revia 
+      3 zaqef_clause
+        4 pashta_phrase
+          pashta 
+        4 zaqef_phrase
+          munach zaqef 
+    2 atnach_clause
+      3 zaqef_phrase
+        zaqefgadol 
+      3 atnach_clause
+        4 tifcha_phrase
+          tifcha 
+        4 atnach_phrase
+          munach atnach 
+  1 silluq_clause
+    2 zaqef_phrase
+      zaqefgadol 
+    2 silluq_clause
+      3 tifcha_phrase
+        mereka tifcha 
+      3 silluq_phrase
+        silluq 
+Micah 5:4
+0 silluq_clause
+  1 atnach_clause
+    2 tifcha_phrase
+      mereka tifcha 
+    2 atnach_phrase
+      atnach 
+  1 silluq_clause
+    2 zaqef_clause
+      3 revia_clause
+        4 legarmeh_phrase
+          legarmeh 
+        4 revia_phrase
+          munach revia 
+      3 zaqef_clause
+        4 pashta_phrase
+          mahpak pashta 
+        4 zaqef_phrase
+          zaqef 
+    2 silluq_clause
+      3 zaqef_clause
+        4 pashta_phrase
+          mahpak pashta 
+        4 zaqef_phrase
+          munach zaqef 
+      3 silluq_clause
+        4 tifcha_phrase
+          tifcha 
+        4 silluq_phrase
+          mereka silluq 
+Micah 5:5
+0 silluq_clause
+  1 atnach_clause
+    2 zaqef_clause
+      3 pashta_clause
+        4 geresh_phrase
+          gershayim 
+        4 pashta_phrase
+          mahpak pashta 
+      3 zaqef_phrase
+        zaqef 
+    2 atnach_clause
+      3 tifcha_phrase
+        mereka tifcha 
+      3 atnach_phrase
+        atnach 
+  1 silluq_clause
+    2 zaqef_clause
+      3 pashta_phrase
+        pashta 
+      3 zaqef_phrase
+        zaqef 
+    2 silluq_clause
+      3 zaqef_phrase
+        munach zaqef 
+      3 silluq_clause
+        4 tifcha_phrase
+          mereka tifcha 
+        4 silluq_phrase
+          silluq 
+Micah 5:6
+0 silluq_clause
+  1 atnach_clause
+    2 zaqef_clause
+      3 revia_clause
+        4 legarmeh_phrase
+          legarmeh 
+        4 revia_phrase
+          munach revia 
+      3 zaqef_clause
+        4 pashta_phrase
+          pashta 
+        4 zaqef_phrase
+          munach zaqef 
+    2 atnach_clause
+      3 zaqef_clause
+        4 pashta_phrase
+          pashta 
+        4 zaqef_phrase
+          munach zaqef 
+      3 atnach_clause
+        4 tifcha_phrase
+          tifcha 
+        4 atnach_phrase
+          atnach 
+  1 silluq_clause
+    2 zaqef_clause
+      3 pashta_phrase
+        mahpak pashta 
+      3 zaqef_phrase
+        zaqef 
+    2 silluq_clause
+      3 tifcha_phrase
+        mereka tifcha 
+      3 silluq_phrase
+        mereka silluq 
+Micah 5:7
+0 silluq_clause
+  1 atnach_clause
+    2 zaqef_clause
+      3 revia_clause
+        4 geresh_phrase
+          telishaqetanna azla geresh 
+        4 revia_phrase
+          revia 
+      3 zaqef_clause
+        4 pashta_phrase
+          pashta 
+        4 zaqef_phrase
+          munach zaqef 
+    2 atnach_clause
+      3 zaqef_clause
+        4 pashta_phrase
+          pashta 
+        4 zaqef_phrase
+          munach zaqef 
+      3 atnach_clause
+        4 tifcha_phrase
+          tifcha 
+        4 atnach_phrase
+          atnach 
+  1 silluq_clause
+    2 tifcha_clause
+      3 tevir_phrase
+        darga tevir 
+      3 tifcha_phrase
+        mereka tifcha 
+    2 silluq_phrase
+      mereka silluq 
+Micah 5:8
+0 silluq_clause
+  1 atnach_clause
+    2 tifcha_phrase
+      mereka tifcha 
+    2 atnach_phrase
+      atnach 
+  1 silluq_clause
+    2 tifcha_phrase
+      tifcha 
+    2 silluq_phrase
+      silluq 
+Micah 5:9
+0 silluq_clause
+  1 atnach_clause
+    2 zaqef_clause
+      3 pashta_phrase
+        mahpak pashta 
+      3 zaqef_phrase
+        zaqef 
+    2 atnach_clause
+      3 tifcha_phrase
+        mereka tifcha 
+      3 atnach_phrase
+        atnach 
+  1 silluq_clause
+    2 tifcha_phrase
+      tifcha 
+    2 silluq_phrase
+      silluq 
+Micah 5:10
+0 silluq_clause
+  1 atnach_clause
+    2 tifcha_phrase
+      tifcha 
+    2 atnach_phrase
+      munach atnach 
+  1 silluq_clause
+    2 tifcha_phrase
+      tifcha 
+    2 silluq_phrase
+      silluq 
+Micah 5:11
+0 silluq_clause
+  1 atnach_clause
+    2 tifcha_phrase
+      mereka tifcha 
+    2 atnach_phrase
+      atnach 
+  1 silluq_clause
+    2 tifcha_phrase
+      tifcha 
+    2 silluq_phrase
+      mereka silluq 
+Micah 5:12
+0 silluq_clause
+  1 atnach_clause
+    2 tifcha_clause
+      3 tevir_phrase
+        darga tevir 
+      3 tifcha_phrase
+        tifcha 
+    2 atnach_phrase
+      atnach 
+  1 silluq_clause
+    2 tifcha_phrase
+      mereka tifcha 
+    2 silluq_phrase
+      mereka silluq 
+Micah 5:13
+0 silluq_clause
+  1 atnach_clause
+    2 tifcha_phrase
+      mereka tifcha 
+    2 atnach_phrase
+      atnach 
+  1 silluq_clause
+    2 tifcha_phrase
+      tifcha 
+    2 silluq_phrase
+      silluq 
+Micah 5:14
+0 silluq_clause
+  1 atnach_clause
+    2 tifcha_clause
+      3 tevir_clause
+        4 geresh_phrase
+          geresh 
+        4 tevir_phrase
+          darga tevir 
+      3 tifcha_phrase
+        tifcha 
+    2 atnach_phrase
+      atnach 
+  1 silluq_clause
+    2 tifcha_phrase
+      tifcha 
+    2 silluq_phrase
+      mereka silluq 
+Micah 6:1
+0 silluq_clause
+  1 atnach_clause
+    2 zaqef_phrase
+      zaqefgadol 
+    2 atnach_clause
+      3 tifcha_phrase
+        mereka tifcha 
+      3 atnach_phrase
+        atnach 
+  1 silluq_clause
+    2 zaqef_clause
+      3 pashta_phrase
+        yetiv 
+      3 zaqef_phrase
+        munach zaqef 
+    2 silluq_clause
+      3 tifcha_phrase
+        mereka tifcha 
+      3 silluq_phrase
+        silluq 
+Micah 6:2
+0 silluq_clause
+  1 atnach_clause
+    2 zaqef_clause
+      3 pashta_phrase
+        mahpak pashta 
+      3 zaqef_phrase
+        munach zaqef 
+    2 atnach_clause
+      3 tifcha_phrase
+        tifcha 
+      3 atnach_phrase
+        munach atnach 
+  1 silluq_clause
+    2 zaqef_clause
+      3 pashta_phrase
+        munach mahpak pashta 
+      3 zaqef_phrase
+        zaqef 
+    2 silluq_clause
+      3 tifcha_phrase
+        tifcha 
+      3 silluq_phrase
+        silluq 
+Micah 6:3
+0 silluq_clause
+  1 atnach_clause
+    2 tifcha_clause
+      3 tevir_phrase
+        tevir 
+      3 tifcha_phrase
+        mereka tifcha 
+    2 atnach_phrase
+      munach atnach 
+  1 silluq_phrase
+    mereka silluq 
+Micah 6:4
+0 silluq_clause
+  1 atnach_clause
+    2 zaqef_clause
+      3 pashta_phrase
+        mahpak pashta 
+      3 zaqef_phrase
+        munach zaqef 
+    2 atnach_clause
+      3 tifcha_phrase
+        mereka tifcha 
+      3 atnach_phrase
+        atnach 
+  1 silluq_clause
+    2 zaqef_phrase
+      munach zaqef 
+    2 silluq_clause
+      3 tifcha_phrase
+        tifcha 
+      3 silluq_phrase
+        mereka silluq 
+Micah 6:5
+0 silluq_clause
+  1 atnach_clause
+    2 zaqef_clause
+      3 revia_phrase
+        revia 
+      3 zaqef_clause
+        4 pashta_phrase
+          pashta 
+        4 zaqef_clause
+          5 revia_phrase
+            revia 
+          5 zaqef_clause
+            6 pashta_phrase
+              pashta 
+            6 zaqef_phrase
+              munach zaqef 
+    2 atnach_clause
+      3 tifcha_phrase
+        mereka tifcha 
+      3 atnach_phrase
+        munach atnach 
+  1 silluq_clause
+    2 zaqef_clause
+      3 pashta_phrase
+        pashta 
+      3 zaqef_phrase
+        zaqef 
+    2 silluq_clause
+      3 zaqef_phrase
+        zaqefgadol 
+      3 silluq_clause
+        4 tifcha_phrase
+          tifcha 
+        4 silluq_phrase
+          mereka silluq 
+Micah 6:6
+0 silluq_clause
+  1 atnach_clause
+    2 zaqef_clause
+      3 pashta_phrase
+        pashta 
+      3 zaqef_phrase
+        munach zaqef 
+    2 atnach_clause
+      3 tifcha_phrase
+        tifcha 
+      3 atnach_phrase
+        munach atnach 
+  1 silluq_clause
+    2 zaqef_phrase
+      munach zaqef 
+    2 silluq_clause
+      3 tifcha_phrase
+        tifcha 
+      3 silluq_phrase
+        mereka silluq 
+Micah 6:7
+0 silluq_clause
+  1 atnach_clause
+    2 zaqef_clause
+      3 pashta_phrase
+        mahpak pashta 
+      3 zaqef_phrase
+        munach zaqef 
+    2 atnach_clause
+      3 tifcha_phrase
+        tifcha 
+      3 atnach_phrase
+        atnach 
+  1 silluq_clause
+    2 zaqef_clause
+      3 pashta_phrase
+        mahpak pashta 
+      3 zaqef_phrase
+        zaqef 
+    2 silluq_clause
+      3 tifcha_phrase
+        mereka tifcha 
+      3 silluq_phrase
+        mereka silluq 
+Micah 6:8
+0 silluq_clause
+  1 atnach_clause
+    2 tifcha_clause
+      3 tevir_phrase
+        mereka tevir 
+      3 tifcha_phrase
+        tifcha 
+    2 atnach_phrase
+      atnach 
+  1 silluq_clause
+    2 zaqef_clause
+      3 revia_clause
+        4 geresh_phrase
+          gershayim 
+        4 revia_phrase
+          munach revia 
+      3 zaqef_clause
+        4 pashta_phrase
+          munach mahpak pashta 
+        4 zaqef_phrase
+          munach zaqef 
+    2 silluq_clause
+      3 tifcha_phrase
+        mereka tifcha 
+      3 silluq_phrase
+        silluq 
+Micah 6:9
+0 silluq_clause
+  1 atnach_clause
+    2 zaqef_clause
+      3 pashta_phrase
+        mahpak pashta 
+      3 zaqef_phrase
+        munach zaqef 
+    2 atnach_clause
+      3 tifcha_phrase
+        tifcha 
+      3 atnach_phrase
+        munach atnach 
+  1 silluq_clause
+    2 tifcha_phrase
+      mereka tifcha 
+    2 silluq_phrase
+      mereka silluq 
+Micah 6:10
+0 silluq_clause
+  1 atnach_clause
+    2 zaqef_clause
+      3 revia_phrase
+        revia 
+      3 zaqef_clause
+        4 pashta_phrase
+          pashta 
+        4 zaqef_phrase
+          munach zaqef 
+    2 atnach_clause
+      3 tifcha_phrase
+        tifcha 
+      3 atnach_phrase
+        atnach 
+  1 silluq_clause
+    2 tifcha_phrase
+      mereka tifcha 
+    2 silluq_phrase
+      silluq 
+Micah 6:11
+0 silluq_clause
+  1 atnach_clause
+    2 tifcha_phrase
+      tifcha 
+    2 atnach_phrase
+      munach atnach 
+  1 silluq_clause
+    2 tifcha_phrase
+      tifcha 
+    2 silluq_phrase
+      mereka silluq 
+Micah 6:12
+0 silluq_clause
+  1 atnach_clause
+    2 zaqef_clause
+      3 pashta_phrase
+        mahpak pashta 
+      3 zaqef_phrase
+        munach zaqef 
+    2 atnach_clause
+      3 tifcha_phrase
+        tifcha 
+      3 atnach_phrase
+        atnach 
+  1 silluq_clause
+    2 tifcha_phrase
+      tifcha 
+    2 silluq_phrase
+      mereka silluq 
+Micah 6:13
+0 silluq_clause
+  1 atnach_clause
+    2 tifcha_phrase
+      tifcha 
+    2 atnach_phrase
+      munach atnach 
+  1 silluq_clause
+    2 tifcha_phrase
+      tifcha 
+    2 silluq_phrase
+      silluq 
+Micah 6:14
+0 silluq_clause
+  1 atnach_clause
+    2 zaqef_clause
+      3 pashta_phrase
+        mahpak pashta 
+      3 zaqef_phrase
+        munach zaqef 
+    2 atnach_clause
+      3 tifcha_phrase
+        tifcha 
+      3 atnach_phrase
+        atnach 
+  1 silluq_clause
+    2 zaqef_clause
+      3 pashta_phrase
+        pashta 
+      3 zaqef_phrase
+        munach zaqef 
+    2 silluq_clause
+      3 tifcha_phrase
+        mereka tifcha 
+      3 silluq_phrase
+        mereka silluq 
+Micah 6:15
+0 silluq_clause
+  1 atnach_clause
+    2 tifcha_phrase
+      mereka tifcha 
+    2 atnach_phrase
+      munach atnach 
+  1 silluq_clause
+    2 zaqef_clause
+      3 pashta_phrase
+        mahpak pashta 
+      3 zaqef_phrase
+        munach zaqef 
+    2 silluq_clause
+      3 tifcha_phrase
+        tifcha 
+      3 silluq_phrase
+        mereka silluq 
+Micah 6:16
+0 silluq_clause
+  1 atnach_clause
+    2 zaqef_clause
+      3 revia_clause
+        4 geresh_phrase
+          gershayim 
+        4 revia_phrase
+          munach revia 
+      3 zaqef_clause
+        4 pashta_phrase
+          pashta 
+        4 zaqef_phrase
+          munach zaqef 
+    2 atnach_clause
+      3 tifcha_phrase
+        tifcha 
+      3 atnach_phrase
+        atnach 
+  1 silluq_clause
+    2 zaqef_clause
+      3 revia_clause
+        4 geresh_phrase
+          telishaqetanna azla geresh 
+        4 revia_phrase
+          revia 
+      3 zaqef_clause
+        4 pashta_phrase
+          pashta 
+        4 zaqef_phrase
+          zaqef 
+    2 silluq_clause
+      3 tifcha_phrase
+        mereka tifcha 
+      3 silluq_phrase
+        silluq 
+Micah 7:1
+0 silluq_clause
+  1 atnach_clause
+    2 zaqef_clause
+      3 revia_phrase
+        munach revia 
+      3 zaqef_clause
+        4 pashta_phrase
+          mahpak pashta 
+        4 zaqef_phrase
+          zaqef 
+    2 atnach_clause
+      3 tifcha_phrase
+        tifcha 
+      3 atnach_phrase
+        atnach 
+  1 silluq_clause
+    2 zaqef_phrase
+      munach zaqef 
+    2 silluq_clause
+      3 tifcha_phrase
+        tifcha 
+      3 silluq_phrase
+        mereka silluq 
+Micah 7:2
+0 silluq_clause
+  1 atnach_clause
+    2 zaqef_clause
+      3 pashta_phrase
+        mahpak pashta 
+      3 zaqef_phrase
+        zaqef 
+    2 atnach_clause
+      3 tifcha_phrase
+        mereka tifcha 
+      3 atnach_phrase
+        atnach 
+  1 silluq_clause
+    2 zaqef_clause
+      3 pashta_phrase
+        pashta 
+      3 zaqef_phrase
+        munach zaqef 
+    2 silluq_clause
+      3 tifcha_phrase
+        mereka tifcha 
+      3 silluq_phrase
+        mereka silluq 
+Micah 7:3
+0 silluq_clause
+  1 atnach_clause
+    2 zaqef_clause
+      3 pashta_phrase
+        mahpak pashta 
+      3 zaqef_phrase
+        zaqef 
+    2 atnach_clause
+      3 zaqef_phrase
+        munach zaqef 
+      3 atnach_clause
+        4 tifcha_phrase
+          tifcha 
+        4 atnach_phrase
+          atnach 
+  1 silluq_clause
+    2 tifcha_clause
+      3 revia_phrase
+        revia 
+      3 tifcha_clause
+        4 tevir_phrase
+          azla mereka tevir 
+        4 tifcha_phrase
+          tifcha 
+    2 silluq_phrase
+      silluq 
+Micah 7:4
+0 silluq_clause
+  1 atnach_clause
+    2 zaqef_phrase
+      munach zaqef 
+    2 atnach_clause
+      3 tifcha_phrase
+        tifcha 
+      3 atnach_phrase
+        atnach 
+  1 silluq_clause
+    2 zaqef_clause
+      3 pashta_phrase
+        mahpak pashta 
+      3 zaqef_phrase
+        munach zaqef 
+    2 silluq_clause
+      3 tifcha_phrase
+        mereka tifcha 
+      3 silluq_phrase
+        silluq 
+Micah 7:5
+0 silluq_clause
+  1 atnach_clause
+    2 zaqef_phrase
+      munach zaqef 
+    2 atnach_clause
+      3 tifcha_phrase
+        tifcha 
+      3 atnach_phrase
+        atnach 
+  1 silluq_clause
+    2 zaqef_phrase
+      munach zaqef 
+    2 silluq_clause
+      3 tifcha_phrase
+        tifcha 
+      3 silluq_phrase
+        silluq 
+Micah 7:6
+0 silluq_clause
+  1 atnach_clause
+    2 zaqef_clause
+      3 pashta_phrase
+        pashta 
+      3 zaqef_phrase
+        munach zaqef 
+    2 atnach_clause
+      3 zaqef_clause
+        4 pashta_phrase
+          yetiv 
+        4 zaqef_phrase
+          munach zaqef 
+      3 atnach_clause
+        4 tifcha_phrase
+          tifcha 
+        4 atnach_phrase
+          atnach 
+  1 silluq_clause
+    2 tifcha_phrase
+      mereka tifcha 
+    2 silluq_phrase
+      mereka silluq 
+Micah 7:7
+0 silluq_clause
+  1 atnach_clause
+    2 zaqef_clause
+      3 pashta_phrase
+        pashta 
+      3 zaqef_phrase
+        munach zaqef 
+    2 atnach_clause
+      3 tifcha_phrase
+        tifcha 
+      3 atnach_phrase
+        munach atnach 
+  1 silluq_clause
+    2 tifcha_phrase
+      tifcha 
+    2 silluq_phrase
+      silluq 
+Micah 7:8
+0 silluq_clause
+  1 atnach_clause
+    2 zaqef_clause
+      3 pashta_phrase
+        mahpak pashta 
+      3 zaqef_phrase
+        zaqef 
+    2 atnach_clause
+      3 tifcha_phrase
+        mereka tifcha 
+      3 atnach_phrase
+        atnach 
+  1 silluq_clause
+    2 zaqef_phrase
+      munach zaqef 
+    2 silluq_clause
+      3 tifcha_phrase
+        tifcha 
+      3 silluq_phrase
+        mereka silluq 
+Micah 7:9
+0 silluq_clause
+  1 atnach_clause
+    2 zaqef_clause
+      3 pashta_phrase
+        mahpak pashta 
+      3 zaqef_phrase
+        zaqef 
+    2 atnach_clause
+      3 tifcha_phrase
+        mereka tifcha 
+      3 atnach_phrase
+        atnach 
+  1 silluq_clause
+    2 zaqef_clause
+      3 pashta_phrase
+        telishaqetanna azla mahpak pashta 
+      3 zaqef_phrase
+        munach zaqef 
+    2 silluq_clause
+      3 zaqef_phrase
+        munach zaqef 
+      3 silluq_clause
+        4 tifcha_phrase
+          tifcha 
+        4 silluq_phrase
+          silluq 
+Micah 7:10
+0 silluq_clause
+  1 atnach_clause
+    2 zaqef_clause
+      3 pashta_phrase
+        mahpak pashta 
+      3 zaqef_phrase
+        munach zaqef 
+    2 atnach_clause
+      3 zaqef_phrase
+        munach zaqef 
+      3 atnach_clause
+        4 tifcha_phrase
+          tifcha 
+        4 atnach_phrase
+          munach atnach 
+  1 silluq_clause
+    2 zaqef_clause
+      3 pashta_phrase
+        pashta 
+      3 zaqef_phrase
+        munach zaqef 
+    2 silluq_clause
+      3 tifcha_clause
+        4 tevir_phrase
+          tevir 
+        4 tifcha_phrase
+          mereka tifcha 
+      3 silluq_phrase
+        mereka silluq 
+Micah 7:11
+0 silluq_clause
+  1 atnach_clause
+    2 tifcha_phrase
+      tifcha 
+    2 atnach_phrase
+      munach atnach 
+  1 silluq_clause
+    2 tifcha_phrase
+      mereka tifcha 
+    2 silluq_phrase
+      silluq 
+Micah 7:12
+0 silluq_clause
+  1 atnach_clause
+    2 zaqef_clause
+      3 pashta_phrase
+        mereka pashta 
+      3 zaqef_phrase
+        munach zaqef 
+    2 atnach_clause
+      3 tifcha_phrase
+        mereka tifcha 
+      3 atnach_phrase
+        munach atnach 
+  1 silluq_clause
+    2 zaqef_clause
+      3 pashta_phrase
+        mahpak pashta 
+      3 zaqef_phrase
+        zaqef 
+    2 silluq_clause
+      3 tifcha_phrase
+        mereka tifcha 
+      3 silluq_phrase
+        mereka silluq 
+Micah 7:13
+0 silluq_clause
+  1 atnach_clause
+    2 tifcha_clause
+      3 tevir_phrase
+        mereka tevir 
+      3 tifcha_phrase
+        tifcha 
+    2 atnach_phrase
+      atnach 
+  1 silluq_clause
+    2 tifcha_phrase
+      tifcha 
+    2 silluq_phrase
+      silluq 
+Micah 7:14
+0 silluq_clause
+  1 atnach_clause
+    2 zaqef_clause
+      3 revia_phrase
+        darga munach revia 
+      3 zaqef_clause
+        4 pashta_phrase
+          yetiv 
+        4 zaqef_phrase
+          zaqef 
+    2 atnach_clause
+      3 zaqef_phrase
+        munach zaqef 
+      3 atnach_clause
+        4 tifcha_phrase
+          tifcha 
+        4 atnach_phrase
+          munach atnach 
+  1 silluq_clause
+    2 tifcha_clause
+      3 tevir_phrase
+        mereka tevir 
+      3 tifcha_phrase
+        tifcha 
+    2 silluq_phrase
+      mereka silluq 
+Micah 7:15
+0 silluq_clause
+  1 atnach_clause
+    2 tifcha_phrase
+      mereka tifcha 
+    2 atnach_phrase
+      munach atnach 
+  1 silluq_clause
+    2 tifcha_phrase
+      tifcha 
+    2 silluq_phrase
+      silluq 
+Micah 7:16
+0 silluq_clause
+  1 atnach_clause
+    2 zaqef_clause
+      3 pashta_phrase
+        mahpak pashta 
+      3 zaqef_phrase
+        zaqef 
+    2 atnach_clause
+      3 tifcha_phrase
+        tifcha 
+      3 atnach_phrase
+        atnach 
+  1 silluq_clause
+    2 zaqef_clause
+      3 pashta_phrase
+        mahpak pashta 
+      3 zaqef_phrase
+        zaqef 
+    2 silluq_clause
+      3 tifcha_phrase
+        tifcha 
+      3 silluq_phrase
+        silluq 
+Micah 7:17
+0 silluq_clause
+  1 atnach_clause
+    2 zaqef_clause
+      3 pashta_phrase
+        mahpak pashta 
+      3 zaqef_phrase
+        zaqef 
+    2 atnach_clause
+      3 zaqef_phrase
+        munach zaqef 
+      3 atnach_clause
+        4 tifcha_phrase
+          tifcha 
+        4 atnach_phrase
+          atnach 
+  1 silluq_clause
+    2 zaqef_clause
+      3 pashta_phrase
+        mahpak pashta 
+      3 zaqef_phrase
+        zaqef 
+    2 silluq_clause
+      3 tifcha_phrase
+        tifcha 
+      3 silluq_phrase
+        silluq 
+Micah 7:18
+0 silluq_clause
+  1 atnach_clause
+    2 zaqef_clause
+      3 revia_phrase
+        munach revia 
+      3 zaqef_clause
+        4 pashta_phrase
+          mahpak pashta 
+        4 zaqef_phrase
+          munach zaqef 
+    2 atnach_clause
+      3 tifcha_phrase
+        tifcha 
+      3 atnach_phrase
+        atnach 
+  1 silluq_clause
+    2 zaqef_clause
+      3 pashta_phrase
+        mahpak pashta 
+      3 zaqef_phrase
+        zaqef 
+    2 silluq_clause
+      3 tifcha_phrase
+        mereka tifcha 
+      3 silluq_phrase
+        silluq 
+Micah 7:19
+0 silluq_clause
+  1 atnach_clause
+    2 zaqef_phrase
+      munach zaqef 
+    2 atnach_clause
+      3 tifcha_phrase
+        tifcha 
+      3 atnach_phrase
+        atnach 
+  1 silluq_clause
+    2 tifcha_clause
+      3 tevir_phrase
+        tevir 
+      3 tifcha_phrase
+        mereka tifcha 
+    2 silluq_phrase
+      silluq 
+Micah 7:20
+0 silluq_clause
+  1 atnach_clause
+    2 zaqef_clause
+      3 pashta_phrase
+        mahpak pashta 
+      3 zaqef_phrase
+        zaqef 
+    2 atnach_clause
+      3 tifcha_phrase
+        tifcha 
+      3 atnach_phrase
+        atnach 
+  1 silluq_clause
+    2 tifcha_phrase
+      mereka tifcha 
+    2 silluq_phrase
+      mereka silluq 

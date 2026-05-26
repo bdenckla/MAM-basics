@@ -1,0 +1,39 @@
+accents warning 6 (yyparse): verse is missing sof pasuq, 1 Kings 6:2
+accents warning 3 (yyparse): general parsing error 1 Kings 6:2
+accents warning 3 (yyparse): general parsing error 1 Kings 6:2
+accents warning 3 (yyparse): general parsing error 1 Kings 6:2
+accents warning 3 (yyparse): general parsing error 1 Kings 6:2
+accents warning 3 (yyparse): general parsing error 1 Kings 6:2
+accents warning 3 (yyparse): general parsing error 1 Kings 6:2
+accents warning 6 (yyparse): verse is missing sof pasuq, 1 Kings 16:33
+accents warning 3 (yyparse): general parsing error 1 Kings 16:33
+accents warning 3 (yyparse): general parsing error 1 Kings 16:33
+accents warning 3 (yyparse): general parsing error 1 Kings 16:33
+accents warning 3 (yyparse): general parsing error 1 Kings 16:33
+accents warning 3 (yyparse): general parsing error 1 Kings 16:33
+accents warning 3 (yyparse): general parsing error 1 Kings 16:33
+accents warning 6 (yyparse): verse is missing sof pasuq, 1 Kings 19:11
+accents warning 3 (yyparse): general parsing error 1 Kings 19:11
+accents warning 3 (yyparse): general parsing error 1 Kings 19:11
+accents warning 3 (yyparse): general parsing error 1 Kings 19:11
+accents warning 3 (yyparse): general parsing error 1 Kings 19:11
+accents warning 3 (yyparse): general parsing error 1 Kings 19:11
+accents warning 3 (yyparse): general parsing error 1 Kings 19:11
+accents warning 6 (yyparse): verse is missing sof pasuq, 1 Kings 20:29
+accents warning 3 (yyparse): general parsing error 1 Kings 20:29
+accents warning 3 (yyparse): general parsing error 1 Kings 20:29
+accents warning 3 (yyparse): general parsing error 1 Kings 20:29
+accents warning 3 (yyparse): general parsing error 1 Kings 20:29
+accents warning 3 (yyparse): general parsing error 1 Kings 20:29
+accents warning 3 (yyparse): general parsing error 1 Kings 20:29
+accents warning 3 (yyparse): general parsing error 1 Kings 20:29
+accents warning 3 (yyparse): general parsing error 1 Kings 20:29
+accents warning 3 (yyparse): general parsing error 1 Kings 20:29
+accents warning 3 (yyparse): general parsing error 1 Kings 20:29
+accents warning 3 (yyparse): general parsing error 1 Kings 20:29
+accents warning 3 (yyparse): general parsing error 1 Kings 20:29
+accents warning 3 (yyparse): general parsing error 1 Kings 20:29
+accents warning 3 (yyparse): general parsing error 1 Kings 20:29
+accents warning 3 (yyparse): general parsing error 1 Kings 20:29
+accents warning 3 (yyparse): general parsing error 1 Kings 20:29
+accents warning 3 (yyparse): general parsing error 1 Kings 20:29

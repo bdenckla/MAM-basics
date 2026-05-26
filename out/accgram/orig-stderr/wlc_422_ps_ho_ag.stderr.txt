@@ -1,0 +1,32 @@
+accents warning 6 (yyparse): verse is missing sof pasuq, Hosea 4:19
+accents warning 3 (yyparse): general parsing error Hosea 4:19
+accents warning 3 (yyparse): general parsing error Hosea 4:19
+accents warning 3 (yyparse): general parsing error Hosea 4:19
+accents warning 3 (yyparse): general parsing error Hosea 4:19
+accents warning 3 (yyparse): general parsing error Hosea 4:19
+accents warning 3 (yyparse): general parsing error Hosea 4:19
+accents warning 3 (yyparse): general parsing error Hosea 4:19
+accents warning 3 (yyparse): general parsing error Hosea 4:19
+accents warning 3 (yyparse): general parsing error Hosea 4:19
+accents warning 3 (yyparse): general parsing error Hosea 4:19
+accents warning 3 (yyparse): general parsing error Hosea 4:19
+accents warning 3 (yyparse): general parsing error Hosea 4:19
+accents warning 3 (yyparse): general parsing error Hosea 4:19
+accents warning 3 (yyparse): general parsing error Hosea 4:19
+accents warning 3 (yyparse): general parsing error Hosea 4:19
+accents warning 3 (yyparse): general parsing error Hosea 4:19
+accents warning 3 (yyparse): general parsing error Hosea 4:19
+accents warning 3 (yyparse): general parsing error Hosea 4:19
+accents warning 6 (yyparse): verse is missing sof pasuq, Hosea 8:9
+accents warning 3 (yyparse): general parsing error Hosea 8:9
+accents warning 3 (yyparse): general parsing error Hosea 8:9
+accents warning 3 (yyparse): general parsing error Hosea 8:9
+accents warning 3 (yyparse): general parsing error Hosea 8:9
+accents warning 3 (yyparse): general parsing error Hosea 8:9
+accents warning 3 (yyparse): general parsing error Hosea 8:9
+accents warning 3 (yyparse): general parsing error Hosea 8:9
+accents warning 3 (yyparse): general parsing error Hosea 8:9
+accents warning 3 (yyparse): general parsing error Hosea 8:9
+accents warning 3 (yyparse): general parsing error Hosea 8:9
+accents warning 3 (yyparse): general parsing error Hosea 8:9
+accents warning 3 (yyparse): general parsing error Hosea 8:9

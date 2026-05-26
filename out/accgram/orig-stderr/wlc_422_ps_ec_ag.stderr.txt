@@ -1,0 +1,9 @@
+accents warning 6 (yyparse): verse is missing sof pasuq, Ecclesiastes 7:21
+accents warning 3 (yyparse): general parsing error Ecclesiastes 7:21
+accents warning 3 (yyparse): general parsing error Ecclesiastes 7:21
+accents warning 3 (yyparse): general parsing error Ecclesiastes 7:21
+accents warning 3 (yyparse): general parsing error Ecclesiastes 7:21
+accents warning 6 (yyparse): verse is missing sof pasuq, Ecclesiastes 9:18
+accents warning 3 (yyparse): general parsing error Ecclesiastes 9:18
+accents warning 3 (yyparse): general parsing error Ecclesiastes 9:18
+accents warning 3 (yyparse): general parsing error Ecclesiastes 9:18

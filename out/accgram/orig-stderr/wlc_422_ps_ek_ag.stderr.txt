@@ -1,0 +1,31 @@
+accents warning 6 (yyparse): verse is missing sof pasuq, Ezekiel 11:1
+accents warning 3 (yyparse): general parsing error Ezekiel 11:1
+accents warning 3 (yyparse): general parsing error Ezekiel 11:1
+accents warning 3 (yyparse): general parsing error Ezekiel 11:1
+accents warning 6 (yyparse): verse is missing sof pasuq, Ezekiel 14:11
+accents warning 3 (yyparse): general parsing error Ezekiel 14:11
+accents warning 3 (yyparse): general parsing error Ezekiel 14:11
+accents warning 3 (yyparse): general parsing error Ezekiel 14:11
+accents warning 3 (yyparse): general parsing error Ezekiel 14:11
+accents warning 3 (yyparse): general parsing error Ezekiel 14:11
+accents warning 3 (yyparse): general parsing error Ezekiel 14:11
+accents warning 3 (yyparse): general parsing error Ezekiel 14:11
+accents warning 3 (yyparse): general parsing error Ezekiel 14:11
+accents warning 3 (yyparse): general parsing error Ezekiel 14:11
+accents warning 3 (yyparse): general parsing error Ezekiel 14:11
+accents warning 6 (yyparse): verse is missing sof pasuq, Ezekiel 33:20
+accents warning 3 (yyparse): general parsing error Ezekiel 33:20
+accents warning 3 (yyparse): general parsing error Ezekiel 33:20
+accents warning 3 (yyparse): general parsing error Ezekiel 33:20
+accents warning 3 (yyparse): general parsing error Ezekiel 33:20
+accents warning 3 (yyparse): general parsing error Ezekiel 33:20
+accents warning 3 (yyparse): general parsing error Ezekiel 33:20
+accents warning 3 (yyparse): general parsing error Ezekiel 33:20
+accents warning 3 (yyparse): general parsing error Ezekiel 33:20
+accents warning 3 (yyparse): general parsing error Ezekiel 33:20
+accents warning 3 (yyparse): general parsing error Ezekiel 33:20
+accents warning 3 (yyparse): general parsing error Ezekiel 33:20
+accents warning 3 (yyparse): general parsing error Ezekiel 33:20
+accents warning 3 (yyparse): general parsing error Ezekiel 33:20
+accents warning 3 (yyparse): general parsing error Ezekiel 33:20
+accents warning 3 (yyparse): general parsing error Ezekiel 33:20

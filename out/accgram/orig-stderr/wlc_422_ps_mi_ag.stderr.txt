@@ -1,0 +1,6 @@
+accents warning 6 (yyparse): verse is missing sof pasuq, Micah 2:7
+accents warning 3 (yyparse): general parsing error Micah 2:7
+accents warning 3 (yyparse): general parsing error Micah 2:7
+accents warning 3 (yyparse): general parsing error Micah 2:7
+accents warning 3 (yyparse): general parsing error Micah 2:7
+accents warning 3 (yyparse): general parsing error Micah 2:7

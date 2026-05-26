@@ -1,0 +1,35 @@
+accents warning 6 (yyparse): verse is missing sof pasuq, Amos 1:14
+accents warning 3 (yyparse): general parsing error Amos 1:14
+accents warning 3 (yyparse): general parsing error Amos 1:14
+accents warning 3 (yyparse): general parsing error Amos 1:14
+accents warning 3 (yyparse): general parsing error Amos 1:14
+accents warning 3 (yyparse): general parsing error Amos 1:14
+accents warning 3 (yyparse): general parsing error Amos 1:14
+accents warning 3 (yyparse): general parsing error Amos 1:14
+accents warning 3 (yyparse): general parsing error Amos 1:14
+accents warning 3 (yyparse): general parsing error Amos 1:14
+accents warning 6 (yyparse): verse is missing sof pasuq, Amos 6:6
+accents warning 3 (yyparse): general parsing error Amos 6:6
+accents warning 3 (yyparse): general parsing error Amos 6:6
+accents warning 3 (yyparse): general parsing error Amos 6:6
+accents warning 3 (yyparse): general parsing error Amos 6:6
+accents warning 3 (yyparse): general parsing error Amos 6:6
+accents warning 3 (yyparse): general parsing error Amos 6:6
+accents warning 3 (yyparse): general parsing error Amos 6:6
+accents warning 3 (yyparse): general parsing error Amos 6:6
+accents warning 3 (yyparse): general parsing error Amos 6:6
+accents warning 6 (yyparse): verse is missing sof pasuq, Amos 9:5
+accents warning 3 (yyparse): general parsing error Amos 9:5
+accents warning 3 (yyparse): general parsing error Amos 9:5
+accents warning 3 (yyparse): general parsing error Amos 9:5
+accents warning 3 (yyparse): general parsing error Amos 9:5
+accents warning 3 (yyparse): general parsing error Amos 9:5
+accents warning 3 (yyparse): general parsing error Amos 9:5
+accents warning 3 (yyparse): general parsing error Amos 9:5
+accents warning 3 (yyparse): general parsing error Amos 9:5
+accents warning 3 (yyparse): general parsing error Amos 9:5
+accents warning 3 (yyparse): general parsing error Amos 9:5
+accents warning 3 (yyparse): general parsing error Amos 9:5
+accents warning 3 (yyparse): general parsing error Amos 9:5
+accents warning 3 (yyparse): general parsing error Amos 9:5
+accents warning 3 (yyparse): general parsing error Amos 9:5

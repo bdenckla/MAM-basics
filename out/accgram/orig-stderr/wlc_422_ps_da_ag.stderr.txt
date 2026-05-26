@@ -1,0 +1,12 @@
+accents warning 6 (yyparse): verse is missing sof pasuq, Daniel 2:41
+accents warning 3 (yyparse): general parsing error Daniel 2:41
+accents warning 3 (yyparse): general parsing error Daniel 2:41
+accents warning 3 (yyparse): general parsing error Daniel 2:41
+accents warning 3 (yyparse): general parsing error Daniel 2:41
+accents warning 3 (yyparse): general parsing error Daniel 2:41
+accents warning 3 (yyparse): general parsing error Daniel 2:41
+accents warning 3 (yyparse): general parsing error Daniel 2:41
+accents warning 3 (yyparse): general parsing error Daniel 2:41
+accents warning 3 (yyparse): general parsing error Daniel 2:41
+accents warning 3 (yyparse): general parsing error Daniel 2:41
+accents warning 3 (yyparse): general parsing error Daniel 2:41

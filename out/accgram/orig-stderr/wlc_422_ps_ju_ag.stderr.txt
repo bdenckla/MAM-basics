@@ -1,0 +1,8 @@
+accents warning 6 (yyparse): verse is missing sof pasuq, Judges 13:19
+accents warning 3 (yyparse): general parsing error Judges 13:19
+accents warning 3 (yyparse): general parsing error Judges 13:19
+accents warning 3 (yyparse): general parsing error Judges 13:19
+accents warning 3 (yyparse): general parsing error Judges 13:19
+accents warning 3 (yyparse): general parsing error Judges 13:19
+accents warning 3 (yyparse): general parsing error Judges 13:19
+accents warning 3 (yyparse): general parsing error Judges 13:19

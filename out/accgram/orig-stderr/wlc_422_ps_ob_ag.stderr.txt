@@ -1,0 +1,6 @@
+accents warning 6 (yyparse): verse is missing sof pasuq, Obadiah 1:2
+accents warning 3 (yyparse): general parsing error Obadiah 1:2
+accents warning 3 (yyparse): general parsing error Obadiah 1:2
+accents warning 3 (yyparse): general parsing error Obadiah 1:2
+accents warning 3 (yyparse): general parsing error Obadiah 1:2
+accents warning 3 (yyparse): general parsing error Obadiah 1:2

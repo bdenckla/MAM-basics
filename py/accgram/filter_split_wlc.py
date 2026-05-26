@@ -6,51 +6,8 @@ from pathlib import Path
 
 from mb_cmn import bib_locales as tbn
 from mb_cmn import provenance
+from accgram.wlc_book_codes import wlc_bb_to_bk39id
 from py_misc import get_cvm_rec_from_bcvt as gcrfb
-
-
-# WLC 4.22 two-character book code -> mb_cmn bk39id
-_WLC_BB_TO_BK39ID = {
-    "gn": tbn.BK_GENESIS,
-    "ex": tbn.BK_EXODUS,
-    "lv": tbn.BK_LEVIT,
-    "nu": tbn.BK_NUMBERS,
-    "dt": tbn.BK_DEUTER,
-    "js": tbn.BK_JOSHUA,
-    "ju": tbn.BK_JUDGES,
-    "1s": tbn.BK_FST_SAM,
-    "2s": tbn.BK_SND_SAM,
-    "1k": tbn.BK_FST_KGS,
-    "2k": tbn.BK_SND_KGS,
-    "is": tbn.BK_ISAIAH,
-    "je": tbn.BK_JEREM,
-    "ek": tbn.BK_EZEKIEL,
-    "ho": tbn.BK_HOSHEA,
-    "jl": tbn.BK_JOEL,
-    "am": tbn.BK_AMOS,
-    "ob": tbn.BK_OVADIAH,
-    "jn": tbn.BK_JONAH,
-    "mi": tbn.BK_MIKHAH,
-    "na": tbn.BK_NAXUM,
-    "hb": tbn.BK_XABA,
-    "zp": tbn.BK_TSEF,
-    "hg": tbn.BK_XAGGAI,
-    "zc": tbn.BK_ZEKHAR,
-    "ma": tbn.BK_MALAKHI,
-    "ps": tbn.BK_PSALMS,
-    "pr": tbn.BK_PROV,
-    "jb": tbn.BK_JOB,
-    "ca": tbn.BK_SONG,
-    "ru": tbn.BK_RUTH,
-    "lm": tbn.BK_LAMENT,
-    "ec": tbn.BK_QOHELET,
-    "es": tbn.BK_ESTHER,
-    "da": tbn.BK_DANIEL,
-    "er": tbn.BK_EZRA,
-    "ne": tbn.BK_NEXEM,
-    "1c": tbn.BK_FST_CHR,
-    "2c": tbn.BK_SND_CHR,
-}
 
 
 def default_out_dir(repo_root: Path) -> Path:
@@ -226,10 +183,7 @@ def _write_filtered_out_provenance(
 
 
 def _wlc_bb_to_bk39id(bb: str) -> str:
-    bk39id = _WLC_BB_TO_BK39ID.get(bb)
-    if bk39id is None:
-        raise ValueError(f"Unknown WLC book code in input: {bb}")
-    return bk39id
+    return wlc_bb_to_bk39id(bb)
 
 
 def _wlc_bhs_to_mam_bcvt(bk39id: str, chnu: int, vrnu: int):
