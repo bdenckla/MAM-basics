@@ -51,7 +51,7 @@
 # if HAVE_GETOPT_H
 #  include <getopt.h>
 # else /* not HAVE_GETOPT_H */
-extern int optind, opterr;
+int accdebug = 0;
 # endif /* not HAVE_GETOPT_H */
 # if HAVE_STRING_H
 #  include <string.h>
