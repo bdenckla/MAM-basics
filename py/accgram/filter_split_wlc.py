@@ -11,11 +11,11 @@ from py_misc import get_cvm_rec_from_bcvt as gcrfb
 
 
 def default_split_out_dir(repo_root: Path) -> Path:
-    return repo_root / ".novc" / "wlc_422_ps"
+    return repo_root.parent / "wlc-utils-io" / "out" / "goerwitz" / "wlc_422_ps"
 
 
 def default_out_dir(repo_root: Path) -> Path:
-    return repo_root / ".novc" / "wlc_422_psf"
+    return repo_root.parent / "wlc-utils-io" / "out" / "goerwitz" / "wlc_422_psf"
 
 
 def add_args(parser: argparse.ArgumentParser, default_input_path: Path, repo_root: Path) -> None:
@@ -29,13 +29,13 @@ def add_args(parser: argparse.ArgumentParser, default_input_path: Path, repo_roo
         "--split-out-dir",
         type=Path,
         default=default_split_out_dir(repo_root),
-        help="Directory for unfiltered split files (default: .novc/wlc_422_ps under this repo).",
+        help="Directory for unfiltered split files (default: ../wlc-utils-io/out/goerwitz/wlc_422_ps).",
     )
     parser.add_argument(
         "--out-dir",
         type=Path,
         default=default_out_dir(repo_root),
-        help="Directory for filtered output files (default: .novc/wlc_422_psf under this repo).",
+        help="Directory for filtered output files (default: ../wlc-utils-io/out/goerwitz/wlc_422_psf).",
     )
 
 

@@ -16,7 +16,7 @@ class RunResult:
 
 
 def default_in_dir(repo_root: Path) -> Path:
-    return repo_root / ".novc" / "wlc_422_psf"
+    return repo_root.parent / "wlc-utils-io" / "out" / "goerwitz" / "wlc_422_psf"
 
 
 def default_out_dir(repo_root: Path) -> Path:
