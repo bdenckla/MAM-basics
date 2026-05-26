@@ -1,0 +1,8 @@
+*.o
+config.log
+config.status
+Makefile
+acc2tre.c
+tnk2acc.c
+# Linux (WSL) executable
+accents
