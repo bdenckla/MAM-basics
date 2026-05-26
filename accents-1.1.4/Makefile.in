@@ -1,0 +1,107 @@
+#
+#  Run ./configure to generate a Makefile before attempting a make.
+#
+
+### System configuration section. ###########################################
+ 
+srcdir = @srcdir@
+VPATH = @srcdir@
+
+CC = @CC@
+CFLAGS = @CFLAGS@
+ALL_CFLAGS = -I$(srcdir) $(CFLAGS)
+DEFINES = @DEFS@
+INSTALL = @INSTALL@
+INSTALL_DATA = @INSTALL_DATA@
+INSTALL_PROGRAM = @INSTALL_PROGRAM@
+LDFLAGS = @LDFLAGS@
+LEX=@LEX@
+# If you're using flex, and want speed (but don't care abt. size)
+# LEXFLAGS=LEX = -f
+LEX_OUTPUT_ROOT=@LEX_OUTPUT_ROOT@
+YACC=@YACC@
+
+prefix = @prefix@
+exec_prefix = @exec_prefix@
+
+# Directories in which to install executable and manual page.
+bindir = $(exec_prefix)/bin
+mandir = $(prefix)/man/man1
+manext = .1
+
+### End of system configuration section. ####################################
+
+SHELL = /bin/sh
+
+# Files that can be generated, but should be up to date for a distribution.
+DISTDEP = Makefile
+# Files to distribute.
+SRC = accents.c tnk2acc.l parsebc.c acc2tre.y accutil.c
+C_SRC = accents.c tnk2acc.c parsebc.c acc2tre.c accutil.c
+C_OBJ = accents.o parsebc.o acc2tre.o accutil.o
+DISTFILES = $(SRC) accents.h install-sh Makefile.in configure \
+	configure.in accents.man COPYING Obad.new Obad.new.data \
+	Obad.old Obad.old.data INSTALL
+
+### Targets required by GNU standards #######################################
+
+all: accents
+
+check: all
+	./accents -p < Obad.new | diff - Obad.new.data
+	./accents -p < Obad.old | diff - Obad.old.data
+	@echo "Everything checks out okay."
+
+installcheck: all check install
+
+install: all
+	$(INSTALL_PROGRAM) accents $(bindir)/accents;
+	$(INSTALL_DATA) accents.man $(mandir)/accents$(manext)
+
+uninstall:
+	rm -f $(bindir)/accents
+
+clean mostlyclean:
+	rm -f lex.yy.c *.o *~ a.out y.out y.tab.c y.output #*#
+	rm -f *.aux *.cp *.cps *.dvi *.fn *.fns *.ky *.kys *.log
+	rm -f *.pg *.pgs *.toc *.tp *.tps *.vr *.vrs
+	rm -f *.ev *.evs *.ov *.ovs *.cv *.cvs *.ma *.mas
+
+distclean clobber: clean
+	rm -f .depend accents tnk2acc.c acc2tre.c
+	rm -f Makefile config.status config.cache config.log
+
+dist: $(DISTDEP) $(SRC)
+	distname=accents-1.1.4; \
+	rm -fr $$distname; mkdir $$distname; \
+	for file in $(DISTFILES); do \
+	  ln $$file $$distname/$$file \
+	  || { echo copying $$file instead; cp -p $$file $$distname/$$file;}; \
+	done; \
+	chmod -R a+rX $$distname; \
+	tar -chz -f $$distname.tar.gz $$distname; \
+	rm -fr $$distname
+
+### End targets required by GNU standards ###################################
+
+Makefile: Makefile.in config.status
+	./config.status
+
+config.status: configure
+	./config.status --recheck
+
+.c.o:
+	$(CC) $(DEFINES) $(ALL_CFLAGS) -c $<
+
+accents: Makefile $(C_OBJ)
+	$(CC) $(LDFLAGS) $(C_OBJ) $(LIBS) -o accents
+
+tnk2acc.c: tnk2acc.l
+	$(LEX) $(LEXFLAGS) $(srcdir)/tnk2acc.l
+	mv $(LEX_OUTPUT_ROOT).c tnk2acc.c
+
+accents.o: accents.c accents.h
+tnk2acc.o: tnk2acc.c
+parsebc.o: parsebc.c accents.h
+acc2tre.o: acc2tre.c accents.h tnk2acc.c
+accutil.o: accutil.c accents.h
