@@ -5,6 +5,7 @@ import json
 from pathlib import Path
 
 from mb_cmn import bib_locales as tbn
+from mb_cmn import provenance
 from py_misc import get_cvm_rec_from_bcvt as gcrfb
 
 
@@ -87,8 +88,8 @@ def run(args: argparse.Namespace, split_wlc_to_books_fn) -> None:
         out_dir=args.out_dir,
         keep_line_fn=keep_line_with_logging,
     )
-    filtered_out_path = args.out_dir / "filtered-out.json"
-    _write_filtered_out_json(
+    filtered_out_path = args.out_dir / "_provenance.json"
+    _write_filtered_out_provenance(
         filtered_out_path=filtered_out_path,
         input_path=args.input,
         out_dir=args.out_dir,
@@ -105,7 +106,7 @@ def run(args: argparse.Namespace, split_wlc_to_books_fn) -> None:
     print(f"Books written: {result.books_written}")
     print(f"Verses written: {result.verses_written}")
     print(f"Book order: {','.join(result.book_order)}")
-    print(f"Exclusion log: {filtered_out_path}")
+    print(f"Exclusion provenance: {filtered_out_path}")
 
 
 def _format_int_ranges(sorted_values: list[int]) -> list[str]:
@@ -157,15 +158,14 @@ def _summarize_partial_book(
     return summary
 
 
-def _write_filtered_out_json(
-    filtered_out_path: Path,
+def _build_filtered_out_payload(
     input_path: Path,
     out_dir: Path,
     verses_seen: int,
     verses_excluded: int,
     seen_refs: dict[str, set[tuple[int, int]]],
     excluded_refs: dict[str, set[tuple[int, int]]],
-) -> None:
+) -> dict[str, object]:
     books_fully_excluded: list[str] = []
     books_partially_excluded: dict[str, dict[str, object]] = {}
 
@@ -177,7 +177,7 @@ def _write_filtered_out_json(
             continue
         books_partially_excluded[bb] = _summarize_partial_book(seen_book_refs, excluded_book_refs)
 
-    payload: dict[str, object] = {
+    return {
         "input": str(input_path),
         "out_dir": str(out_dir),
         "summary": {
@@ -191,9 +191,37 @@ def _write_filtered_out_json(
         "books_partially_excluded": books_partially_excluded,
     }
 
+
+def _write_filtered_out_provenance(
+    filtered_out_path: Path,
+    input_path: Path,
+    out_dir: Path,
+    verses_seen: int,
+    verses_excluded: int,
+    seen_refs: dict[str, set[tuple[int, int]]],
+    excluded_refs: dict[str, set[tuple[int, int]]],
+) -> None:
+    exclusion_payload = _build_filtered_out_payload(
+        input_path=input_path,
+        out_dir=out_dir,
+        verses_seen=verses_seen,
+        verses_excluded=verses_excluded,
+        seen_refs=seen_refs,
+        excluded_refs=excluded_refs,
+    )
+    payload: dict[str, object] = {
+        "artifacts_description": "filtered WLC split outputs and exclusion diagnostics",
+        "payload_provenance_note": (
+            "Payload files in this directory remain in their native data format, "
+            "so provenance is recorded here rather than inside each file."
+        ),
+        **exclusion_payload,
+    }
+    payload = provenance.with_json_provenance(payload, __file__)
+
     filtered_out_path.parent.mkdir(parents=True, exist_ok=True)
     with filtered_out_path.open("w", encoding="utf-8", newline="\n") as f_out:
-        json.dump(payload, f_out, ensure_ascii=False, indent=2, sort_keys=True)
+        json.dump(payload, f_out, ensure_ascii=False, indent=2)
         f_out.write("\n")
 
 
