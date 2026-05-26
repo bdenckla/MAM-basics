@@ -6,8 +6,11 @@ from collections import OrderedDict
 from dataclasses import dataclass
 from pathlib import Path
 
+from accgram.wlc_book_codes import wlc_bb_to_accents_book_name
+
 
 _BOOK_LINE_RE = re.compile(r"^([0-9a-z]{2})(\d+):(\d+)\b")
+_LINE_REF_RE = re.compile(r"^([0-9a-z]{2})(\d+:\d+\s+.*)$")
 
 
 @dataclass(frozen=True)
@@ -38,7 +41,11 @@ def add_args(parser: argparse.ArgumentParser, default_input_path: Path, repo_roo
     )
 
 
-def split_wlc_to_books(input_path: Path, out_dir: Path, keep_line_fn=None) -> SplitResult:
+def split_wlc_to_books(
+    input_path: Path,
+    out_dir: Path,
+    keep_line_fn=None,
+) -> SplitResult:
     if not input_path.is_file():
         raise FileNotFoundError(f"Input file not found: {input_path}")
 
@@ -82,8 +89,25 @@ def split_wlc_to_books(input_path: Path, out_dir: Path, keep_line_fn=None) -> Sp
     verses_written = 0
     for bb, lines in per_book.items():
         out_path = out_dir / f"wlc_422_ps_{bb}.txt"
+        output_lines = []
+        book_name = wlc_bb_to_accents_book_name(bb)
+        output_lines.append(f"{book_name}\n")
+
+        for raw_line in lines:
+            stripped = raw_line.strip()
+            if not stripped:
+                continue
+            # Core transformation: "gn1:2 ..." -> "1:2 ..." (drop 2-char WLC book code).
+            m = _LINE_REF_RE.match(stripped)
+            if m is None:
+                raise ValueError(
+                    "Unexpected verse line format during accents normalization: "
+                    f"bb={bb} line={stripped[:120]}"
+                )
+            output_lines.append(f"{m.group(2)}\n")
+
         with out_path.open("w", encoding="utf-8", newline="") as f_out:
-            f_out.writelines(lines)
+            f_out.writelines(output_lines)
         verses_written += len(lines)
 
     return SplitResult(

@@ -37,7 +37,7 @@ TEST_MODULE_SPECS = (
     TestModuleSpec(
         flag="accgram-run-orig",
         module_name="tests.test_accgram_run_orig",
-        help_text="Run accgram run-orig WSL invocation/normalization tests.",
+        help_text="Run accgram run-orig WSL invocation/pass-through tests.",
     ),
     TestModuleSpec(
         flag="json-snippet-browser",

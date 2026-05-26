@@ -11,14 +11,43 @@ from accgram import run_orig
 
 
 class TestAccgramRunOrig(unittest.TestCase):
-    def test_normalize_strips_bb_prefix_and_adds_book_heading(self):
-        raw = "ob1:1 X:AZO73WN\nob1:2 HIN."\
-            "71H\n"
-        normalized = run_orig._normalize_for_accents(raw_text=raw, bb="ob")
-        self.assertTrue(normalized.startswith("Obadiah\n"))
-        self.assertIn("1:1 X:AZO73WN\n", normalized)
-        self.assertIn("1:2 HIN.71H\n", normalized)
-        self.assertNotIn("ob1:1", normalized)
+    def test_run_orig_passes_pre_normalized_input_through(self):
+        with TemporaryDirectory() as tmp_dir:
+            base = Path(tmp_dir)
+            in_dir = base / "in"
+            out_dir = base / "out"
+            stderr_dir = base / "err"
+            accents_bin = base / "accents"
+
+            in_dir.mkdir(parents=True, exist_ok=True)
+            accents_bin.write_text("fake-binary", encoding="utf-8")
+            payload = "Obadiah\n1:1 X:AZO73WN\n"
+            (in_dir / "wlc_422_ps_ob.txt").write_text(payload, encoding="utf-8")
+
+            seen_payloads: list[str] = []
+
+            class FakeCompletedProcess:
+                def __init__(self, stdout: bytes, stderr: bytes, returncode: int = 0):
+                    self.stdout = stdout
+                    self.stderr = stderr
+                    self.returncode = returncode
+
+            def fake_run(cmd, input, capture_output, check):
+                self.assertEqual(cmd[0], "wsl")
+                self.assertTrue(capture_output)
+                self.assertFalse(check)
+                seen_payloads.append(input.decode("utf-8"))
+                return FakeCompletedProcess(stdout=b"", stderr=b"")
+
+            with patch("accgram.run_orig.subprocess.run", side_effect=fake_run):
+                run_orig.run_orig(
+                    in_dir=in_dir,
+                    out_dir=out_dir,
+                    stderr_dir=stderr_dir,
+                    accents_bin=accents_bin,
+                )
+
+            self.assertEqual(seen_payloads, [payload])
 
     def test_run_orig_writes_stdout_and_stderr_sidecars(self):
         with TemporaryDirectory() as tmp_dir:
@@ -31,8 +60,8 @@ class TestAccgramRunOrig(unittest.TestCase):
             in_dir.mkdir(parents=True, exist_ok=True)
             accents_bin.write_text("fake-binary", encoding="utf-8")
 
-            (in_dir / "wlc_422_ps_ob.txt").write_text("ob1:1 X\n", encoding="utf-8")
-            (in_dir / "wlc_422_ps_gn.txt").write_text("gn1:1 Y\n", encoding="utf-8")
+            (in_dir / "wlc_422_ps_ob.txt").write_text("Obadiah\n1:1 X\n", encoding="utf-8")
+            (in_dir / "wlc_422_ps_gn.txt").write_text("Genesis\n1:1 Y\n", encoding="utf-8")
 
             calls: list[list[str]] = []
 
@@ -60,7 +89,6 @@ class TestAccgramRunOrig(unittest.TestCase):
                     out_dir=out_dir,
                     stderr_dir=stderr_dir,
                     accents_bin=accents_bin,
-                    normalize=True,
                 )
 
             self.assertEqual(result.input_count, 2)
@@ -86,7 +114,7 @@ class TestAccgramRunOrig(unittest.TestCase):
 
             in_dir.mkdir(parents=True, exist_ok=True)
             accents_bin.write_text("fake-binary", encoding="utf-8")
-            (in_dir / "wlc_422_ps_ob.txt").write_text("ob1:1 X\n", encoding="utf-8")
+            (in_dir / "wlc_422_ps_ob.txt").write_text("Obadiah\n1:1 X\n", encoding="utf-8")
 
             class FakeCompletedProcess:
                 def __init__(self):
@@ -100,7 +128,6 @@ class TestAccgramRunOrig(unittest.TestCase):
                     out_dir=out_dir,
                     stderr_dir=stderr_dir,
                     accents_bin=accents_bin,
-                    normalize=True,
                 )
 
             self.assertEqual(result.nonzero_exit_count, 1)

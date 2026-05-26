@@ -1,16 +1,9 @@
 from __future__ import annotations
 
 import argparse
-import re
 import subprocess
 from dataclasses import dataclass
 from pathlib import Path
-
-from accgram.wlc_book_codes import wlc_bb_to_accents_book_name
-
-
-_INPUT_FILE_RE = re.compile(r"^wlc_422_ps_([0-9a-z]{2})\.txt$")
-_LINE_REF_RE = re.compile(r"^([0-9a-z]{2})(\d+:\d+\s+.*)$")
 
 
 @dataclass(frozen=True)
@@ -63,14 +56,6 @@ def add_args(parser: argparse.ArgumentParser, repo_root: Path) -> None:
         default=default_accents_bin(repo_root),
         help="Path to Linux accents binary (invoked via WSL).",
     )
-    parser.add_argument(
-        "--skip-normalize",
-        action="store_true",
-        help=(
-            "Pipe input files to accents as-is. By default, run-orig normalizes "
-            "wlc_422_ps_bb.txt lines to the headings/reference style expected by accents."
-        ),
-    )
 
 
 def _to_wsl_path(path: Path) -> str:
@@ -82,39 +67,12 @@ def _to_wsl_path(path: Path) -> str:
     return f"/mnt/{drive.lower()}{rest}"
 
 
-def _book_code_from_name(name: str) -> str | None:
-    m = _INPUT_FILE_RE.match(name)
-    if m is None:
-        return None
-    return m.group(1)
-
-
-def _normalize_for_accents(raw_text: str, bb: str | None) -> str:
-    lines: list[str] = []
-    if bb is not None:
-        book_name = wlc_bb_to_accents_book_name(bb)
-        if book_name is not None:
-            lines.append(book_name)
-
-    for raw_line in raw_text.splitlines():
-        if not raw_line.strip():
-            continue
-        m = _LINE_REF_RE.match(raw_line)
-        if m is None:
-            lines.append(raw_line)
-            continue
-        lines.append(m.group(2))
-
-    return "\n".join(lines) + "\n"
-
-
 def run(args: argparse.Namespace) -> None:
     result = run_orig(
         in_dir=args.in_dir,
         out_dir=args.out_dir,
         stderr_dir=args.stderr_dir,
         accents_bin=args.accents_bin,
-        normalize=(not args.skip_normalize),
     )
     print(f"Input directory: {args.in_dir}")
     print(f"Output directory: {args.out_dir}")
@@ -131,7 +89,6 @@ def run_orig(
     out_dir: Path,
     stderr_dir: Path,
     accents_bin: Path,
-    normalize: bool = True,
 ) -> RunResult:
     if not in_dir.is_dir():
         raise FileNotFoundError(f"Input directory not found: {in_dir}")
@@ -152,10 +109,7 @@ def run_orig(
         output_path = out_dir / f"{stem}_ag.txt"
         stderr_path = stderr_dir / f"{stem}_ag.stderr.txt"
 
-        raw_text = input_path.read_text(encoding="utf-8")
-        payload = raw_text
-        if normalize:
-            payload = _normalize_for_accents(raw_text=raw_text, bb=_book_code_from_name(input_path.name))
+        payload = input_path.read_text(encoding="utf-8")
 
         cp = subprocess.run(
             ["wsl", accents_wsl_path, "-p"],
