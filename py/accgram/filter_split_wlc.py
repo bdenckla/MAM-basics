@@ -10,6 +10,10 @@ from accgram.wlc_book_codes import wlc_bb_to_bk39id
 from py_misc import get_cvm_rec_from_bcvt as gcrfb
 
 
+def default_split_out_dir(repo_root: Path) -> Path:
+    return repo_root / ".novc" / "wlc_422_ps"
+
+
 def default_out_dir(repo_root: Path) -> Path:
     return repo_root / ".novc" / "wlc_422_psf"
 
@@ -22,14 +26,29 @@ def add_args(parser: argparse.ArgumentParser, default_input_path: Path, repo_roo
         help="Path to source wlc422_ps.txt file.",
     )
     parser.add_argument(
+        "--split-out-dir",
+        type=Path,
+        default=default_split_out_dir(repo_root),
+        help="Directory for unfiltered split files (default: .novc/wlc_422_ps under this repo).",
+    )
+    parser.add_argument(
         "--out-dir",
         type=Path,
         default=default_out_dir(repo_root),
-        help="Directory for output files (default: .novc/wlc_422_psf under this repo).",
+        help="Directory for filtered output files (default: .novc/wlc_422_psf under this repo).",
     )
 
 
 def run(args: argparse.Namespace, split_wlc_to_books_fn) -> None:
+    if args.split_out_dir == args.out_dir:
+        raise ValueError("--split-out-dir and --out-dir must be different directories.")
+
+    raw_result = split_wlc_to_books_fn(
+        input_path=args.input,
+        out_dir=args.split_out_dir,
+        keep_line_fn=None,
+    )
+
     seen_refs: dict[str, set[tuple[int, int]]] = {}
     excluded_refs: dict[str, set[tuple[int, int]]] = {}
 
@@ -40,7 +59,7 @@ def run(args: argparse.Namespace, split_wlc_to_books_fn) -> None:
             excluded_refs.setdefault(bb, set()).add((chnu, vrnu))
         return keep
 
-    result = split_wlc_to_books_fn(
+    filtered_result = split_wlc_to_books_fn(
         input_path=args.input,
         out_dir=args.out_dir,
         keep_line_fn=keep_line_with_logging,
@@ -50,19 +69,24 @@ def run(args: argparse.Namespace, split_wlc_to_books_fn) -> None:
         filtered_out_path=filtered_out_path,
         input_path=args.input,
         out_dir=args.out_dir,
-        verses_seen=result.verses_seen,
-        verses_excluded=result.verses_excluded,
+        verses_seen=filtered_result.verses_seen,
+        verses_excluded=filtered_result.verses_excluded,
         seen_refs=seen_refs,
         excluded_refs=excluded_refs,
     )
 
     print(f"Input: {args.input}")
-    print(f"Output directory: {args.out_dir}")
-    print(f"Verses seen: {result.verses_seen}")
-    print(f"Verses excluded: {result.verses_excluded}")
-    print(f"Books written: {result.books_written}")
-    print(f"Verses written: {result.verses_written}")
-    print(f"Book order: {','.join(result.book_order)}")
+    print(f"Raw output directory: {args.split_out_dir}")
+    print(f"Raw verses seen: {raw_result.verses_seen}")
+    print(f"Raw books written: {raw_result.books_written}")
+    print(f"Raw verses written: {raw_result.verses_written}")
+    print(f"Raw book order: {','.join(raw_result.book_order)}")
+    print(f"Filtered output directory: {args.out_dir}")
+    print(f"Filtered verses seen: {filtered_result.verses_seen}")
+    print(f"Filtered verses excluded: {filtered_result.verses_excluded}")
+    print(f"Filtered books written: {filtered_result.books_written}")
+    print(f"Filtered verses written: {filtered_result.verses_written}")
+    print(f"Filtered book order: {','.join(filtered_result.book_order)}")
     print(f"Exclusion provenance: {filtered_out_path}")
 
 

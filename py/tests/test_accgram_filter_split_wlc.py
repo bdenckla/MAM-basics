@@ -14,11 +14,23 @@ from accgram import filter_split_wlc
 class TestAccgramFilterSplitWlc(unittest.TestCase):
     def test_run_writes_native_provenance_json_sidecar(self):
         with TemporaryDirectory() as tmp_dir:
-            out_dir = Path(tmp_dir) / "out"
+            split_out_dir = Path(tmp_dir) / "raw"
+            out_dir = Path(tmp_dir) / "filtered"
             input_path = Path(tmp_dir) / "wlc422_ps.txt"
             input_path.write_text("dummy", encoding="utf-8")
+            calls: list[tuple[Path, Path, object]] = []
 
             def fake_split_wlc_to_books(input_path, out_dir, keep_line_fn):
+                calls.append((input_path, out_dir, keep_line_fn))
+                if keep_line_fn is None:
+                    return SimpleNamespace(
+                        verses_seen=3,
+                        verses_excluded=0,
+                        books_written=3,
+                        verses_written=3,
+                        book_order=["gn", "ps", "pr"],
+                    )
+
                 self.assertFalse(keep_line_fn("ps", 1, 1))
                 self.assertTrue(keep_line_fn("gn", 1, 1))
                 self.assertFalse(keep_line_fn("pr", 1, 1))
@@ -30,8 +42,14 @@ class TestAccgramFilterSplitWlc(unittest.TestCase):
                     book_order=["gn"],
                 )
 
-            args = SimpleNamespace(input=input_path, out_dir=out_dir)
+            args = SimpleNamespace(input=input_path, split_out_dir=split_out_dir, out_dir=out_dir)
             filter_split_wlc.run(args, fake_split_wlc_to_books)
+
+            self.assertEqual(len(calls), 2)
+            self.assertEqual(calls[0][1], split_out_dir)
+            self.assertIsNone(calls[0][2])
+            self.assertEqual(calls[1][1], out_dir)
+            self.assertIsNotNone(calls[1][2])
 
             provenance_path = out_dir / "_provenance.json"
             self.assertTrue(provenance_path.exists())
@@ -49,6 +67,16 @@ class TestAccgramFilterSplitWlc(unittest.TestCase):
             self.assertEqual(payload["summary"]["verses_seen"], 3)
             self.assertEqual(payload["summary"]["verses_excluded"], 2)
             self.assertIn("ps", payload["books_fully_excluded"])
+
+    def test_run_rejects_same_output_directories(self):
+        with TemporaryDirectory() as tmp_dir:
+            out_dir = Path(tmp_dir) / "out"
+            input_path = Path(tmp_dir) / "wlc422_ps.txt"
+            input_path.write_text("dummy", encoding="utf-8")
+
+            args = SimpleNamespace(input=input_path, split_out_dir=out_dir, out_dir=out_dir)
+            with self.assertRaisesRegex(ValueError, "must be different directories"):
+                filter_split_wlc.run(args, lambda input_path, out_dir, keep_line_fn=None: None)
 
 
 if __name__ == "__main__":

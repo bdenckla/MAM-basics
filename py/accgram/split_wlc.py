@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import argparse
 import re
 from collections import OrderedDict
 from dataclasses import dataclass
@@ -20,25 +19,6 @@ class SplitResult:
     verses_written: int
     verses_excluded: int
     book_order: list[str]
-
-
-def default_out_dir(repo_root: Path) -> Path:
-    return repo_root / ".novc" / "wlc_422_ps"
-
-
-def add_args(parser: argparse.ArgumentParser, default_input_path: Path, repo_root: Path) -> None:
-    parser.add_argument(
-        "--input",
-        type=Path,
-        default=default_input_path,
-        help="Path to source wlc422_ps.txt file.",
-    )
-    parser.add_argument(
-        "--out-dir",
-        type=Path,
-        default=default_out_dir(repo_root),
-        help="Directory for output files (default: .novc/wlc_422_ps under this repo).",
-    )
 
 
 def split_wlc_to_books(
@@ -117,13 +97,3 @@ def split_wlc_to_books(
         verses_excluded=verses_excluded,
         book_order=list(per_book.keys()),
     )
-
-
-def run(args: argparse.Namespace) -> None:
-    result = split_wlc_to_books(input_path=args.input, out_dir=args.out_dir)
-    print(f"Input: {args.input}")
-    print(f"Output directory: {args.out_dir}")
-    print(f"Verses seen: {result.verses_seen}")
-    print(f"Books written: {result.books_written}")
-    print(f"Verses written: {result.verses_written}")
-    print(f"Book order: {','.join(result.book_order)}")
