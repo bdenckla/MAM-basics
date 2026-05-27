@@ -30,16 +30,6 @@ TEST_MODULE_SPECS = (
         help_text="Run main_mam_simple CLI parser tests.",
     ),
     TestModuleSpec(
-        flag="accgram-filter-split-wlc",
-        module_name="tests.test_accgram_filter_split_wlc",
-        help_text="Run accgram filter-split provenance sidecar tests.",
-    ),
-    TestModuleSpec(
-        flag="accgram-run-orig",
-        module_name="tests.test_accgram_run_orig",
-        help_text="Run accgram run-orig WSL invocation/pass-through tests.",
-    ),
-    TestModuleSpec(
         flag="json-snippet-browser",
         module_name="tests.test_json_snippet_browser",
         help_text="Run JSON snippet browser HTML generation tests.",
