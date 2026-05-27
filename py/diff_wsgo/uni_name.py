@@ -14,6 +14,9 @@ def name(string_len_1):
 
 
 _SHORT_NAMES = {
+    # XXX there's a lot of overlap between this dict and the following
+    # dicts in mb_diff_mpu/describe_diff.py:
+    # LETTER_NAMES, POINT_NAMES, ACCENT_NAMES
     " ": "space",  # 0020
     sd.CGJ: "combining-grapheme-joiner",  # 034f
     sd.ZWJ: "zero-width-joiner",  # 200d
