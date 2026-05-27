@@ -74,7 +74,7 @@ def write_provenance(
     title: str | None = None,
     removed_paths: Sequence[str] = (),
 ) -> None:
-    """Write standardized provenance.md in dest_dir."""
+    """Write standardized _provenance.md in dest_dir."""
     normalized_copied = sorted({p.replace("\\", "/") for p in copied_files})
     normalized_removed = sorted({p.replace("\\", "/") for p in removed_paths})
 
@@ -105,7 +105,7 @@ def write_provenance(
     lines.append(f"Date copied: {date_str}")
     lines.append("")
 
-    provenance_path = dest_dir / "provenance.md"
+    provenance_path = dest_dir / "_provenance.md"
     provenance_path.write_text("\n".join(lines), encoding="utf-8")
 
 
