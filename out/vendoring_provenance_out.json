@@ -8,12 +8,7 @@
         "py/mb_cmn",
         "py/mb_diff_mpu"
       ],
-      "found_provenance_docs": [
-        "py/mb_cmn/PROVENANCE.md",
-        "py/mb_cmn/provenance.md",
-        "py/mb_diff_mpu/PROVENANCE.md",
-        "py/mb_diff_mpu/provenance.md"
-      ],
+      "found_provenance_docs": [],
       "copy_scripts": [
         "py/main_update_vendored_files.py",
         "py/mb_cmn/vendoring_sync.py"
@@ -50,10 +45,7 @@
         "py",
         "py/mb_cmn"
       ],
-      "found_provenance_docs": [
-        "py/mb_cmn/PROVENANCE.md",
-        "py/mb_cmn/provenance.md"
-      ],
+      "found_provenance_docs": [],
       "copy_scripts": [
         "py/main_update_vendored_files.py",
         "py/mb_cmn/vendoring_sync.py"
@@ -217,12 +209,7 @@
         "py/mb_diff_mpu",
         "py/python_modules"
       ],
-      "found_provenance_docs": [
-        "py/mb_cmn/PROVENANCE.md",
-        "py/mb_cmn/provenance.md",
-        "py/mb_diff_mpu/PROVENANCE.md",
-        "py/mb_diff_mpu/provenance.md"
-      ],
+      "found_provenance_docs": [],
       "copy_scripts": [
         "py/main_update_vendored_files.py",
         "py/mb_cmn/vendoring_sync.py"
@@ -292,7 +279,10 @@
         "py/mb_cmn"
       ],
       "found_provenance_docs": [],
-      "copy_scripts": [],
+      "copy_scripts": [
+        "py/main_update_vendored_files.py",
+        "py/mb_cmn/vendoring_sync.py"
+      ],
       "mb_cmn_dirs": [
         {
           "path": "py/mb_cmn",
@@ -304,13 +294,19 @@
             "hebrew_letters.py",
             "hebrew_points.py",
             "hebrew_punctuation.py",
+            "kq_special_templates.py",
             "my_diffs.py",
             "my_utils.py",
+            "provenance.py",
+            "retired_kq_special_templates.py",
+            "retired_template_names.py",
             "str_defs.py",
+            "template_names.py",
             "uni_heb.py",
             "uni_norm_fragile.py",
             "url_percent.py",
-            "uxlc_change_url.py"
+            "uxlc_change_url.py",
+            "vendoring_sync.py"
           ]
         }
       ]

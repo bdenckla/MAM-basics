@@ -114,7 +114,7 @@ linux-sh/        Shell scripts for Linux setup
 ```
 
 Naming note: `mb_` means "from MAM-basics." For currently vendored
-packages such as `mb_cmn` and `mb_diff_mpu`, the prefix also signals
-vendoring origin. For `mb_xml` and `mb_json`, which are not currently
-vendored, `mb_` is additionally useful to avoid collisions with common
-`xml` and `json` package names.
+packages such as `mb_cmn`, `mb_diff_mpu`, and `mb_author`, the prefix
+also signals vendoring origin. For `mb_xml` and `mb_json`, which are
+not currently vendored, `mb_` is additionally useful to avoid collisions
+with common `xml` and `json` package names.

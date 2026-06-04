@@ -13,10 +13,10 @@ Subcommands:
   gen-mp-claims-index  Write doc/mp-claims.md from explicit claims and
                        available verifier functions without rewriting
                        MAM-parsed authored HTML/CSS outputs.
-                       Run this after editing py/author/mpplain.py,
-                       py/author/mpplain_body.py,
-                       py/author/mpplus.py, or
-                       py/author/mpplus_body.py.
+                       Run this after editing py/author_misc/mpplain.py,
+                       py/author_misc/mpplain_body.py,
+                       py/author_misc/mpplus.py, or
+                       py/author_misc/mpplus_body.py.
 """
 
 import argparse
@@ -24,20 +24,20 @@ import argparse
 from mb_misc import mb_html
 from mb_misc import styles_authored
 from mb_cmn import provenance
-from author import notes_on_aliyot
-from author import tsinnorit_and_oleh_on_ivs
-from author import tsinnorit_and_oleh_facts
-from author import tsinnorit_in_psalm_32v5
-from author import tsinnorit_and_the_xxd_in_bhs
-from author import rocc_0_review_of_ctr
-from author import rocc_1_on_the_provenance_of_ctr
-from author import rocc_2_pre_vowel_accents_in_ctr
-from author import rocc_3_where_other_sources_stand
-from author import rocc_4_mid_word_ga3ya_with_shewa
-from author import he_ws_intro_to_mam_gray_maqaf_1 as gray_maqaf
-from author import he_ws_intro_to_mam_pasleg as pasleg
-from author import the_next_700_bibles
-from author import mam_parsed_docs_build
+from author_misc import notes_on_aliyot
+from author_misc import tsinnorit_and_oleh_on_ivs
+from author_misc import tsinnorit_and_oleh_facts
+from author_misc import tsinnorit_in_psalm_32v5
+from author_misc import tsinnorit_and_the_xxd_in_bhs
+from author_misc import rocc_0_review_of_ctr
+from author_misc import rocc_1_on_the_provenance_of_ctr
+from author_misc import rocc_2_pre_vowel_accents_in_ctr
+from author_misc import rocc_3_where_other_sources_stand
+from author_misc import rocc_4_mid_word_ga3ya_with_shewa
+from author_misc import he_ws_intro_to_mam_gray_maqaf_1 as gray_maqaf
+from author_misc import he_ws_intro_to_mam_pasleg as pasleg
+from author_misc import the_next_700_bibles
+from author_misc import mam_parsed_docs_build
 from verify_mp import claims_doc
 from verify_mp import driver as verify_driver
 from verify_mp import survey_artifact

@@ -1,6 +1,6 @@
 from mb_misc import mb_html
 from author_rocc import rocc_0_review_of_ctr_header as rocc_0
-from author_util import author
+from mb_author import author
 
 # author.pasoleg_qm("וָ֨לַיְלָה׀"),
 # author.pasoleg_qm("וָלַ֨יְלָה׀"),

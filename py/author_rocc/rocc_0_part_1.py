@@ -1,7 +1,7 @@
-from author import rocc_1_on_the_provenance_of_ctr as prov
-from author import rocc_2_pre_vowel_accents_in_ctr as pre_vowel
+from author_misc import rocc_1_on_the_provenance_of_ctr as prov
+from author_misc import rocc_2_pre_vowel_accents_in_ctr as pre_vowel
 from author_rocc import rocc_util as ru
-from author_util import author
+from mb_author import author
 from author_rocc import rocc_121_schematic as c121
 
 _X107_CONT_PARA = [

@@ -3,7 +3,7 @@
 
 from typing import Mapping
 
-from author_util.claim import ClaimCollection, ClaimRecord
+from mb_author.claim import ClaimCollection, ClaimRecord
 from verify_mp import driver as _driver
 from verify_mp import payload_examples
 

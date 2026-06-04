@@ -4,7 +4,7 @@ from types import SimpleNamespace
 import unittest
 from unittest import mock
 
-import author_util.claim as claim_mod
+import mb_author.claim as claim_mod
 from verify_mp import claims_doc, driver
 
 
@@ -45,7 +45,7 @@ class TestExplicitClaims(unittest.TestCase):
             claim_mod.make_record(
                 claim_id,
                 **common,
-                defined_in="author.mp_cmn",
+                defined_in="author_misc.mp_cmn",
             )
         )
         claims.emit(
@@ -57,13 +57,13 @@ class TestExplicitClaims(unittest.TestCase):
         )
 
         self.assertEqual(len(claims.records_by_id), 1)
-        self.assertEqual(claims.records_by_id[claim_id].defined_in, "author.mp_cmn")
+        self.assertEqual(claims.records_by_id[claim_id].defined_in, "author_misc.mp_cmn")
         self.assertEqual(len(claims.emissions), 2)
-        self.assertEqual(claims.emissions[0].record.defined_in, "author.mp_cmn")
-        self.assertEqual(claims.emissions[1].record.defined_in, "author.mp_cmn")
+        self.assertEqual(claims.emissions[0].record.defined_in, "author_misc.mp_cmn")
+        self.assertEqual(claims.emissions[1].record.defined_in, "author_misc.mp_cmn")
         self.assertEqual(
             [e.emitted_record.defined_in for e in claims.emissions],
-            ["author.mp_cmn", "author.mpplus_kq_special"],
+            ["author_misc.mp_cmn", "author.mpplus_kq_special"],
         )
 
     def test_claim_collection_rejects_conflicting_duplicate_id(self):
@@ -197,12 +197,12 @@ class TestExplicitClaims(unittest.TestCase):
 
     def test_mpplus_aot_import_has_no_claim_side_effects(self):
         importlib.invalidate_caches()
-        aot = importlib.import_module("author.mpplus_aot")
+        aot = importlib.import_module("author_misc.mpplus_aot")
 
         self.assertFalse(hasattr(aot, "populate_claims"))
 
     def test_mp_cmn_claims_core_has_no_import_time_claim_table(self):
-        core = importlib.import_module("author.mp_cmn_claims_core")
+        core = importlib.import_module("author_misc.mp_cmn_claims_core")
 
         self.assertFalse(hasattr(core, "_CLAIM_DEFS"))
         self.assertFalse(hasattr(core, "claim_payload"))
@@ -210,8 +210,8 @@ class TestExplicitClaims(unittest.TestCase):
 
     def test_mp_cmn_import_has_no_claim_side_effects(self):
         importlib.invalidate_caches()
-        mp_cmn = importlib.import_module("author.mp_cmn")
-        mpplain = importlib.import_module("author.mpplain")
+        mp_cmn = importlib.import_module("author_misc.mp_cmn")
+        mpplain = importlib.import_module("author_misc.mpplain")
         claims = claim_mod.ClaimCollection()
 
         self.assertTrue(hasattr(mp_cmn, "emit_claim_by_id"))
@@ -225,17 +225,17 @@ class TestExplicitClaims(unittest.TestCase):
         self.assertIn("mp.plain.book39.fields", claims.records_by_id)
 
     def test_mpplus_aot_build_body_requires_explicit_claims(self):
-        aot = importlib.import_module("author.mpplus_aot")
+        aot = importlib.import_module("author_misc.mpplus_aot")
 
         with self.assertRaises(TypeError):
             aot._build_body()
 
     def test_mpplus_aot_populate_claims_requires_explicit_claims(self):
-        aot = importlib.import_module("author.mpplus_aot")
+        aot = importlib.import_module("author_misc.mpplus_aot")
         self.assertFalse(hasattr(aot, "populate_claims"))
 
     def test_mpplus_aot_build_body_can_emit_explicit_claim(self):
-        aot = importlib.import_module("author.mpplus_aot")
+        aot = importlib.import_module("author_misc.mpplus_aot")
         claims = claim_mod.ClaimCollection()
 
         aot._build_body(claims=claims)
@@ -244,22 +244,22 @@ class TestExplicitClaims(unittest.TestCase):
 
     def test_mpplus_haarah_2_import_has_no_claim_side_effects(self):
         importlib.invalidate_caches()
-        haarah_2 = importlib.import_module("author.mpplus_haarah_2")
+        haarah_2 = importlib.import_module("author_misc.mpplus_haarah_2")
 
         self.assertFalse(hasattr(haarah_2, "populate_claims"))
 
     def test_mpplus_haarah_2_build_body_has_no_implicit_claim_side_effects(self):
-        haarah_2 = importlib.import_module("author.mpplus_haarah_2")
+        haarah_2 = importlib.import_module("author_misc.mpplus_haarah_2")
         claims = claim_mod.ClaimCollection()
 
         haarah_2._build_body(claims=claims)
 
     def test_mpplus_haarah_2_has_no_populate_claims_symbol(self):
-        haarah_2 = importlib.import_module("author.mpplus_haarah_2")
+        haarah_2 = importlib.import_module("author_misc.mpplus_haarah_2")
         self.assertFalse(hasattr(haarah_2, "populate_claims"))
 
     def test_mpplus_haarah_2_build_body_emits_explicit_claim(self):
-        haarah_2 = importlib.import_module("author.mpplus_haarah_2")
+        haarah_2 = importlib.import_module("author_misc.mpplus_haarah_2")
         claims = claim_mod.ClaimCollection()
 
         haarah_2._build_body(claims=claims)
@@ -268,18 +268,18 @@ class TestExplicitClaims(unittest.TestCase):
 
     def test_mpplus_dualcant_import_has_no_claim_side_effects(self):
         importlib.invalidate_caches()
-        dualcant = importlib.import_module("author.mpplus_dualcant")
+        dualcant = importlib.import_module("author_misc.mpplus_dualcant")
 
         self.assertFalse(hasattr(dualcant, "populate_claims"))
 
     def test_mpplus_dualcant_build_body_requires_explicit_claims(self):
-        dualcant = importlib.import_module("author.mpplus_dualcant")
+        dualcant = importlib.import_module("author_misc.mpplus_dualcant")
 
         with self.assertRaises(TypeError):
             dualcant._build_body()
 
     def test_mpplus_dualcant_build_body_can_emit_explicit_claim(self):
-        dualcant = importlib.import_module("author.mpplus_dualcant")
+        dualcant = importlib.import_module("author_misc.mpplus_dualcant")
         claims = claim_mod.ClaimCollection()
 
         dualcant._build_body(claims=claims)
@@ -287,7 +287,7 @@ class TestExplicitClaims(unittest.TestCase):
         self.assertIn("mp.plus.example.dualcant-template-object", claims.records_by_id)
 
     def test_mpplus_build_body_can_emit_representative_explicit_claims(self):
-        mpplus = importlib.import_module("author.mpplus")
+        mpplus = importlib.import_module("author_misc.mpplus")
         claims = claim_mod.ClaimCollection()
 
         mpplus._build_body(claims=claims)
@@ -308,7 +308,7 @@ class TestExplicitClaims(unittest.TestCase):
                 self.assertIn(claim_id, claims.records_by_id)
 
     def test_mpplus_diff_from_plain_build_body_can_emit_explicit_claims(self):
-        diff_doc = importlib.import_module("author.mpplus_diff_from_plain")
+        diff_doc = importlib.import_module("author_misc.mpplus_diff_from_plain")
         claims = claim_mod.ClaimCollection()
 
         diff_doc._build_body(claims=claims)
@@ -317,7 +317,7 @@ class TestExplicitClaims(unittest.TestCase):
         self.assertIn("mp.plain.template.stmpl-format-example", claims.records_by_id)
 
     def test_mpplus_plain_only_templates_build_body_can_emit_explicit_claims(self):
-        plain_only_doc = importlib.import_module("author.mpplus_plain_only_templates")
+        plain_only_doc = importlib.import_module("author_misc.mpplus_plain_only_templates")
         claims = claim_mod.ClaimCollection()
 
         plain_only_doc._build_body(claims=claims)
@@ -331,28 +331,28 @@ class TestExplicitClaims(unittest.TestCase):
         )
 
     def test_mpplus_body_has_no_stale_claim_defs_table(self):
-        mpplus_body = importlib.import_module("author.mpplus_body")
+        mpplus_body = importlib.import_module("author_misc.mpplus_body")
 
         self.assertFalse(hasattr(mpplus_body, "_CLAIM_DEFS"))
 
     def test_mpplain_import_has_no_claim_side_effects(self):
         importlib.invalidate_caches()
-        mpplain = importlib.import_module("author.mpplain")
+        mpplain = importlib.import_module("author_misc.mpplain")
 
         self.assertFalse(hasattr(mpplain, "populate_claims"))
 
     def test_mpplain_build_body_has_no_implicit_claim_side_effects(self):
-        mpplain = importlib.import_module("author.mpplain")
+        mpplain = importlib.import_module("author_misc.mpplain")
         claims = claim_mod.ClaimCollection()
 
         mpplain._build_body(claims=claims)
 
     def test_mpplain_has_no_populate_claims_symbol(self):
-        mpplain = importlib.import_module("author.mpplain")
+        mpplain = importlib.import_module("author_misc.mpplain")
         self.assertFalse(hasattr(mpplain, "populate_claims"))
 
     def test_mpplain_build_body_can_emit_explicit_claims(self):
-        mpplain = importlib.import_module("author.mpplain")
+        mpplain = importlib.import_module("author_misc.mpplain")
         claims = claim_mod.ClaimCollection()
 
         mpplain._build_body(claims=claims)
@@ -370,16 +370,16 @@ class TestExplicitClaims(unittest.TestCase):
                 self.assertIn(claim_id, claims.records_by_id)
 
     def test_collect_explicit_claims_does_not_write_docs_or_css(self):
-        docs_build = importlib.import_module("author.mam_parsed_docs_build")
-        mpplain = importlib.import_module("author.mpplain")
+        docs_build = importlib.import_module("author_misc.mam_parsed_docs_build")
+        mpplain = importlib.import_module("author_misc.mpplain")
 
         with mock.patch(
-            "author.mam_parsed_docs_build.styles_mam_parsed.make_css_file_for_mam_parsed"
+            "author_misc.mam_parsed_docs_build.styles_mam_parsed.make_css_file_for_mam_parsed"
         ) as make_css_mock, mock.patch(
-            "author.mpplain.gen_html_file",
+            "author_misc.mpplain.gen_html_file",
             side_effect=AssertionError("collect_explicit_claims must not write docs"),
         ), mock.patch(
-            "author.mpplain.build_body",
+            "author_misc.mpplain.build_body",
             wraps=mpplain.build_body,
         ) as build_body_mock:
             claims = docs_build.collect_explicit_claims()

@@ -1,7 +1,7 @@
 from mb_misc import mb_html
-from author_util import author
-from author import tsinnorit_and_oleh_on_ivs as ivs
-from author import tsinnorit_in_psalm_32v5 as tip_32v5
+from mb_author import author
+from author_misc import tsinnorit_and_oleh_on_ivs as ivs
+from author_misc import tsinnorit_in_psalm_32v5 as tip_32v5
 from author_rocc import rocc_util as ru
 
 _CPARA = [

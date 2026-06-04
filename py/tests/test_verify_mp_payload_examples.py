@@ -2,8 +2,8 @@
 import json
 import unittest
 
-from author import mam_parsed_docs_build
-from author_util import claim as claim_mod
+from author_misc import mam_parsed_docs_build
+from mb_author import claim as claim_mod
 from verify_mp import payload_examples
 from verify_mp import pattern_match
 from verify_mp.corpus import Context, Corpus, PlainCorpus

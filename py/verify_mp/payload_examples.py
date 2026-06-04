@@ -20,7 +20,7 @@ Snippet wildcard semantics are encoded explicitly with strict-JSON tokens:
 
 import json
 
-from author_util.claim import ClaimRecord
+from mb_author.claim import ClaimRecord
 from verify_mp.corpus import Context
 from verify_mp.pattern_match import match_pattern
 

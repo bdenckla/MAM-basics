@@ -9,7 +9,7 @@ from typing import Iterator, Mapping, TYPE_CHECKING
 from mb_cmn import mpplus_schema_guard as mpplus_guard
 
 if TYPE_CHECKING:
-    from author_util.claim import ClaimRecord
+    from mb_author.claim import ClaimRecord
 
 _PLUS_DIR = "../MAM-parsed/plus"
 _PLAIN_DIR = "../MAM-parsed/plain"

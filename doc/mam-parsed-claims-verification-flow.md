@@ -8,7 +8,7 @@ This write-up documents the current explicit-claims architecture used by:
 - py/main_authored.py gen-mp-claims-index
 
 The primary source of truth is the current code in py/main_authored.py,
-py/author/mam_parsed_docs_build.py, py/author_util/claim.py, and
+py/author_misc/mam_parsed_docs_build.py, py/mb_author/claim.py, and
 py/verify_mp/.
 
 ## 1) MAM-parsed doc generation (current path)
@@ -115,8 +115,8 @@ Current model (new):
 
 Removed legacy model:
 
-- No module-level REGISTRY in author_util/claim.py
-- No module-level claim(...) API in author_util/claim.py
+- No module-level REGISTRY in mb_author/claim.py
+- No module-level claim(...) API in mb_author/claim.py
 
 Behavior is covered by py/tests/test_explicit_claims.py, including a test that asserts legacy globals are removed.
 
@@ -131,8 +131,8 @@ Rendered SVG: [mam-parsed-claims-verification-flow.svg](mam-parsed-claims-verifi
 ## 6) Key code touchpoints
 
 - py/main_authored.py
-- py/author/mam_parsed_docs_build.py
-- py/author_util/claim.py
+- py/author_misc/mam_parsed_docs_build.py
+- py/mb_author/claim.py
 - py/verify_mp/driver.py
 - py/verify_mp/corpus.py
 - py/verify_mp/survey_artifact.py

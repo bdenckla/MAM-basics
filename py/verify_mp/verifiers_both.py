@@ -5,7 +5,7 @@ import glob
 from pathlib import Path
 from typing import Callable
 
-from author_util.claim import ClaimRecord
+from mb_author.claim import ClaimRecord
 from verify_mp import survey_artifact
 from verify_mp import kq_special_counts
 from verify_mp.corpus import (

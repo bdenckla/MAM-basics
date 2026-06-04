@@ -5,7 +5,7 @@ from collections import Counter
 from pathlib import Path
 from typing import Callable
 
-from author_util.claim import ClaimRecord
+from mb_author.claim import ClaimRecord
 from verify_mp.corpus import (
     Context,
     iter_chapters,

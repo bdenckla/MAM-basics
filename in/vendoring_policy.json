@@ -7,7 +7,9 @@
       "mb_misc": "py/mb_misc",
       "mb_sefaria": "py/mb_sefaria",
       "osis": "py/osis",
-      "mb_diff_mpu": "py/mb_diff_mpu"
+      "mb_diff_mpu": "py/mb_diff_mpu",
+      "mb_author": "py/mb_author",
+      "author_misc": "py/author_misc"
     }
   },
   "repos": {

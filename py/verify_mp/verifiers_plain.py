@@ -4,8 +4,8 @@
 from collections import Counter
 from typing import Callable
 
-from author import mp_cmn as cmn
-from author_util.claim import ClaimRecord
+from author_misc import mp_cmn as cmn
+from mb_author.claim import ClaimRecord
 from verify_mp import survey_artifact
 from verify_mp.corpus import (
     Context,

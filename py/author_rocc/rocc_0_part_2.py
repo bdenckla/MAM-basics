@@ -1,8 +1,8 @@
 from mb_misc import mb_html
-from author_util import author
-from author import rocc_4_mid_word_ga3ya_with_shewa as mwgws
-from author import rocc_3_where_other_sources_stand as stand
-from author import rocc_1_on_the_provenance_of_ctr as prov
+from mb_author import author
+from author_misc import rocc_4_mid_word_ga3ya_with_shewa as mwgws
+from author_misc import rocc_3_where_other_sources_stand as stand
+from author_misc import rocc_1_on_the_provenance_of_ctr as prov
 from author_rocc import rocc_util as ru
 from author_rocc import rocc_212_pj3 as pj3
 from author_rocc import rocc_213_ajry as ajry

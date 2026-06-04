@@ -1,4 +1,4 @@
-from author_util import author
+from mb_author import author
 from mb_misc import mb_html
 from mb_misc import ws_urls
 

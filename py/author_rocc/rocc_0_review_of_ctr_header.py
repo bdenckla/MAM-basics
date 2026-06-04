@@ -1,5 +1,5 @@
 from mb_misc import mb_html
-from author_util import author
+from mb_author import author
 
 
 def anchor():

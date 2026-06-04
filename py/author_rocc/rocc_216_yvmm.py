@@ -1,4 +1,4 @@
-from author_util import author
+from mb_author import author
 
 _CPARA = "Now let’s look at יומם in Psalm 32:4 (ignoring $CTR):"
 TD_CTR = (author.hbo_es("י֘וֹמָ֣ם"), "$munax with $tsinnorit (!)")

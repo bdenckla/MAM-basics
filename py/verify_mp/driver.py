@@ -5,7 +5,7 @@ import sys
 from types import ModuleType
 from typing import Callable, Mapping
 
-from author_util.claim import ClaimCollection, ClaimRecord
+from mb_author.claim import ClaimCollection, ClaimRecord
 from verify_mp import payload_examples
 from verify_mp import verifiers_plus, verifiers_both, verifiers_plain
 from verify_mp.corpus import Context

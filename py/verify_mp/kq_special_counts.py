@@ -4,7 +4,7 @@
 import re
 from collections import defaultdict
 
-from author_util.claim import ClaimRecord
+from mb_author.claim import ClaimRecord
 from mb_cmn import hebrew_punctuation as hpu
 from verify_mp.corpus import Context, iter_all_template_objects
 

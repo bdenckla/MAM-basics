@@ -1,4 +1,4 @@
-from author_util import author
+from mb_author import author
 from mb_misc import hebrew_letter_words as hlw
 from author_rocc import rocc_util as ru
 

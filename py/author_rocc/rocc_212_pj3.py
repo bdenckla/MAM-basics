@@ -1,6 +1,6 @@
-from author_util import author
+from mb_author import author
 from author_rocc import rocc_util as ru
-from author import rocc_2_pre_vowel_accents_in_ctr as pre_vowel
+from author_misc import rocc_2_pre_vowel_accents_in_ctr as pre_vowel
 
 _CPARA = """First let’s look at פשע in Psalm 32:1:"""
 TD_CTR_KCT_WMG = ru.gray_abg_njvy("פֶּ֝֗שַׁע"), "$revia on $pe & $germuq_gm on $pe"
