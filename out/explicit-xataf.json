@@ -15,7 +15,7 @@
       "ref": "Verse reference",
       "varika_word": "The word as it appears in MAM, with shewa+varika",
       "reason": "Short classification of why extraction failed",
-      "arg1_strings": "Raw string fragments from the nusach note's second argument"
+      "arg1_strings": "Raw string fragments from the docnote note's second argument"
     }
   },
   "counts": {
