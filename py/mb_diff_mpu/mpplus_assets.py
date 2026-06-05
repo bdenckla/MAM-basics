@@ -22,7 +22,7 @@ CATEGORY_INFO = {
     "vowel-change": ("Vowel change", "#6a1b9a"),
     "legarmeih-paseq": ("Legarmeh / paseq", "#ad1457"),
     "maqaf-afor": ("Gray maqaf", "#78909c"),
-    "deḥi-removal": ("Dehi removal", "#c62828"),
+    "dexi-removal": ("Deḥi removal", "#c62828"),
     "tsinnor-removal": ("Tsinnor removal", "#0097a7"),
     "template-change": ("Template change", "#795548"),
     "misc": ("Miscellaneous", "#37474f"),

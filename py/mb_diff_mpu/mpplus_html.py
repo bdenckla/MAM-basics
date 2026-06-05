@@ -256,7 +256,7 @@ def _render_card(diff):
         # For dedicated template-removal categories, use the category's
         # specific template name rather than computing from old_ep/new_ep
         # (which may reflect the full verse change when a diff was split).
-        _CAT_TEMPLATE = {"deḥi-removal": "מ:דחי", "tsinnor-removal": "מ:צינור"}
+        _CAT_TEMPLATE = {"dexi-removal": "מ:דחי", "tsinnor-removal": "מ:צינור"}
         if cat in _CAT_TEMPLATE:
             eng_desc = f"Template change (removed: {_CAT_TEMPLATE[cat]})"
         else:
