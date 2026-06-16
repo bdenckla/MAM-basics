@@ -181,7 +181,7 @@ def letter_ref(ch, occurrence, letter_counts, force_ordinal=False):
 
 
 POETIC_ACCENTS = {
-    ha.TIP: "tarha",
+    ha.TIP: "tarḥa",
     ha.ZSH_OR_TSIT: "tsinnorit",
     ha.Z_OR_TSOR: "tsinnor",
 }
