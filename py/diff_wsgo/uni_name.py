@@ -46,8 +46,8 @@ _SHORT_NAMES = {
     ha.QOM: "qadma/metigah/azla",  # 05a8
     ha.TEL_Q: "telisha-qetana",  # 05a9
     ha.YBY: "yerax-ben-yomo/galgal",  # 05aa
-    ha.OLE: "ole",  # 05ab
-    ha.ILU: "iluy",  # 05ac
+    ha.OLE: "oleh",  # 05ab
+    ha.ILU: "illuy",  # 05ac
     ha.DEX: "dexi",  # 05ad
     ha.Z_OR_TSOR: "zarqa/tsinnor",  # 05ae
     hpo.SHEVA: "sheva",  # 05b0

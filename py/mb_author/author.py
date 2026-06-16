@@ -534,7 +534,7 @@ _ROMANIZED = {
     "$nun": "nun",
     "$pashta": "pashta",
     "$xolam_malei": "ḥolam malei",
-    "$iluy": "iluy",
+    "$iluy": "illuy",
 }
 _UNICODE_NAME_SC = dv_map(_unicode_name_sc, _UNICODE_NAME_SC)
 _ABBR_SC = dv_map(_abbreviation_sc, _ABBR_SC)
