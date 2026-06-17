@@ -16,22 +16,27 @@ Examples
     python py/main_slide_generator.py render-slides --deck mam-is-a-dataset title-card
     python py/main_slide_generator.py render-slides --deck mam-is-a-dataset psalm-5v9-sources
     python py/main_slide_generator.py render-slides --deck mam-is-a-dataset psalm-15v1-qamats
+    python py/main_slide_generator.py render-slides --deck the-next-700-bibles
+    python py/main_slide_generator.py render-slides --deck the-next-700-bibles title-card
     python py/main_slide_generator.py make-thumbs --deck what-is-mam
     python py/main_slide_generator.py make-thumbs --deck mam-is-a-dataset
+    python py/main_slide_generator.py make-thumbs --deck the-next-700-bibles
     python py/main_slide_generator.py make-pptx --deck what-is-mam
     python py/main_slide_generator.py make-pptx --deck mam-is-a-dataset
+    python py/main_slide_generator.py make-pptx --deck the-next-700-bibles
 """
 
 import argparse
 import pathlib
 
 from slide_generator import make_thumbs
-from slide_generator import mam_is_a_dataset, what_is_mam
+from slide_generator import mam_is_a_dataset, the_next_700_bibles, what_is_mam
 from slide_generator import make_pptx
 
 ALL_DECKS = {
     "what-is-mam": what_is_mam,
     "mam-is-a-dataset": mam_is_a_dataset,
+    "the-next-700-bibles": the_next_700_bibles,
 }
 
 

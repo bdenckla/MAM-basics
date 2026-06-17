@@ -36,7 +36,6 @@ from author_misc import rocc_3_where_other_sources_stand
 from author_misc import rocc_4_mid_word_ga3ya_with_shewa
 from author_misc import he_ws_intro_to_mam_gray_maqaf_1 as gray_maqaf
 from author_misc import he_ws_intro_to_mam_pasleg as pasleg
-from author_misc import the_next_700_bibles
 from author_misc import mam_parsed_docs_build
 from verify_mp import claims_doc
 from verify_mp import driver as verify_driver
@@ -84,7 +83,6 @@ def almost_main():
         rocc_4_mid_word_ga3ya_with_shewa.gen_html_file(tdm_ch),
         gray_maqaf.gen_html_file(tdm_ch, body_class="wide"),
         pasleg.gen_html_file(tdm_ch, body_class="wide"),
-        the_next_700_bibles.gen_html_file(tdm_ch),
     ]
     _gen_index_html(top_dir_misc, index_entries)
 
