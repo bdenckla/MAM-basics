@@ -32,6 +32,7 @@ This document covers:
 - manuscript sigla and compound sigla
 - bibliographic and edition abbreviations
 - Masora-specific qualifiers attached to sigla
+- operators that structure נוסח notes (`=`, `!=`, `+`)
 - uncertain, conflicting, or still-undecoded forms
 - translation-display strategy for sigils
 
@@ -115,6 +116,22 @@ The categories below are intentionally conservative.
 - Conflicting: different sources point in different directions.
 - Unknown: seen in data, but not yet decoded confidently.
 
+## Operators used with sigils
+
+Sigla and abbreviations are the *vocabulary* of a נוסח note; the operators
+below are its *grammar* — the punctuation that says how a sigil relates to a
+reading. They need interpretation even for a Hebrew reader, so they are decoded
+here alongside the sigils rather than left to translation-only work. (Technical
+terms inside notes — accent and mark names, the Aramaic `תרי טעמי` "two accents",
+and the like — remain out of scope per the section above; those belong to the
+translation-policy glossary.)
+
+| Operator | Meaning |
+|---|---|
+| `=` | "reads" / "equals": `X=Y` means manuscript or edition X reads Y. A note that opens with `=` has MAM as its implicit subject ("MAM reads …"). |
+| `!=` | "surprisingly equals": `X!=Y` flags X's reading Y as striking or unexpected. The bang attaches to the `=`, not to the sigil before it: `ק3!=X` reads "ק3 *surprisingly* reads X", not "ק3-with-a-bang reads X", so the whole `!=` is best read as a unit. Beware the false friend: in programming `!=` means "not equal", the *opposite* of the sense here; in MAM notes `!=` still asserts an equality (X does read Y), and the bang only adds "and that is surprising". |
+| `+` | "superimpose": `Z+Z` repeats a letter in order to avoid typographic issues that otherwise might happen in some fonts. The issues of concern are mainly reorderings and collisions. For example, `זֶ֠+ז֞ה` shows the zayin once with telisha gedolah and segol, and then again with geresh. This is to avoid reorderings or collisions that might occur with `זֶ֠֞ה`. Strictly speaking, `+` (plus) is not an operator used directly with a sigil, but we list it here because it can appear in the `Y` of `X=Y` and `X!=Y` expressions that involve sigils. |
+
 ## Confirmed Items
 
 ### Manuscript Sigla
@@ -126,7 +143,7 @@ The categories below are intentionally conservative.
 | א(ס) | Aleppo Codex according to Jacob Sapir's notes in Me'orot Nathan | Confirmed | Wikisource, Accordance header | Both sources tie this specifically to Jacob Sapir and Me'orot Nathan. |
 | ב | Ms Or 4445 in the British Library (Torah) | Confirmed | Accordance header, Wikisource | Also appears as כתי״ב in prose contexts. |
 | ב1 | British Library Or. 2375 | Confirmed | JC3 sigil list, MAM-with-doc corpus evidence | Frequently cited in Ketuvim contexts; often described in prose as a Yemenite manuscript. |
-| ותיקן-448 | Vatican Ms 448 | Confirmed | MAM-with-doc corpus evidence | The shelfmark is already explicit in the corpus form; prose notes also cite the same witness as `vat448`. |
+| ותיקן-448 | Vatican Ms 448 | Confirmed | MAM-with-doc corpus evidence | The shelfmark is already explicit in the corpus form; prose notes also cite the same manuscript as `vat448`. |
 | ק | Cairo Codex of the Prophets | Confirmed | Accordance header, Wikisource | Also appears as כתי״ק in prose contexts. |
 | ק3 | Cairo 18 manuscript (Torah) | Confirmed | Wikisource | Listed there explicitly as כתי״ק3. |
 | ל | Leningrad Codex | Confirmed | Accordance header, Wikisource | Also appears as כתי״ל in prose contexts. |
@@ -142,7 +159,7 @@ The categories below are intentionally conservative.
 | פטרבורג-EVR-II-B-92 | St. Petersburg Ms EVR-II-B-92 | Confirmed | mgketer test case, MAM-with-doc corpus evidence | Writings manuscript cited in Daniel and related Ketuvim notes. |
 | ש | Ms Sassoon 507 | Confirmed | Accordance header, Wikisource | Also appears as כתי״ש in prose contexts. |
 | ש1 | Ms Sassoon 1053 | Confirmed | Accordance header, Wikisource | |
-| ש2 | Ms Sassoon 82 ("Keter Shem Tov") | Confirmed | JC3 sigil list, MAM-with-doc corpus evidence | Often a Sephardic witness in prose explanations. |
+| ש2 | Ms Sassoon 82 ("Keter Shem Tov") | Confirmed | JC3 sigil list, MAM-with-doc corpus evidence | Often a Sephardic manuscript in prose explanations. |
 | ת | Ms Cambridge Add. 1753, cited as Y in Accordance | Confirmed | Accordance header | The Hebrew sigil is confirmed in the Accordance header, but see the note below about preferred display form. |
 | ל-א | Ms Petersburg EVR-II-B-55 / B 247 | Confirmed | Wikisource | Newer than the Accordance list. |
 | ק13 | Ms Cambridge T-S 13 | Confirmed | Wikisource | |
@@ -220,14 +237,14 @@ The key change in judgment is that Wikisource now carries much more weight than 
 - In Daniel, MAM-parsed explicitly groups `ק-מ,ב1,ב2` together as `כתבי־היד התימנים`.
 - Daniel 8:2 is especially useful because the prose note itself says `וכמו כן בכתבי־היד התימנים (ק-מ,ב1,ב2)`.
 - The current inventory output tracks 27 real authority-expression occurrences of `ב2`, and they are Daniel occurrences.
-- Across those Daniel occurrences, `ב2` repeatedly appears beside `ק-מ` and `ב1` as a parallel witness.
-- The Daniel notes also preserve manuscript-specific uncertainty markers such as `ב2?` and `ב2?[נכתבה בו א' ונמחקה!]`, which strongly suggests that `ב2` is being treated there as a discrete witness rather than as a vague group label.
+- Across those Daniel occurrences, `ב2` repeatedly appears beside `ק-מ` and `ב1` as a parallel manuscript.
+- The Daniel notes also preserve manuscript-specific uncertainty markers such as `ב2?` and `ב2?[נכתבה בו א' ונמחקה!]`, which strongly suggests that `ב2` is being treated there as a discrete manuscript rather than as a vague group label.
 - That is strong enough for a provisional classification: `ב2` is a Yemenite Ketuvim manuscript, distinct from `ב1`.
 - Daniel itself also has separate authority expressions such as `ק-מ,ת451` and `ב1,ק-מ,ת451`, while other Ketuvim notes name `ת451` explicitly in Benaiah/Joseph ben Benaiah contexts rather than using the sigil `ב2`.
 - So the current local evidence not only fails to prove that `ב2 = ת451`; it presently leans against that collapse.
 - What is still missing is the decisive catalog-level identification such as a shelfmark or a primary-source sigil glossary entry.
 
-There is also nearby prose in the Ketuvim corpus about additional books written by Benaiah the scribe and his son Joseph, but I do not yet have a secure enough link to assert that this prose specifically identifies `ב2`; at this point it is safer to treat those prose mentions as contextual evidence about the Yemenite witness cluster, not as a firm decoding of `ב2` itself.
+There is also nearby prose in the Ketuvim corpus about additional books written by Benaiah the scribe and his son Joseph, but I do not yet have a secure enough link to assert that this prose specifically identifies `ב2`; at this point it is safer to treat those prose mentions as contextual evidence about the Yemenite manuscript cluster, not as a firm decoding of `ב2` itself.
 
 ### ל-מ
 
