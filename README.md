@@ -50,6 +50,7 @@ Python tools for working with [MAM (Miqra according to the Masora)](https://he.w
 - `main_authored.py` — generates miscellaneous HTML documentation
 - `main_rename_jpeg_scans.py` — renames JPEG scan files by directory structure
 - `main_0_mega.py` — meta-orchestrator that runs multiple jobs in sequence
+- `main_repo_maintenance.py` — routine repo maintenance: clean `.novc/`, run `main_test.py`, run `main_0_mega.py`
 
 ### Cross-repo utility entrypoint
 
