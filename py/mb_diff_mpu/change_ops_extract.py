@@ -393,7 +393,7 @@ def extract_change_ops(
             return ops
         return [GenericTextReplace(old_fragment=old_text, new_fragment=new_text)]
 
-    # Structural categories (deḥi-removal, tsinnor-removal, template-change)
+    # Structural categories (dexi-removal, tsinnor-removal, template-change)
     if old_ep is not None and new_ep is not None:
         return _extract_structural_ops(old_ep, new_ep)
 

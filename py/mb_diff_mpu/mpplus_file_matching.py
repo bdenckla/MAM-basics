@@ -54,7 +54,7 @@ def _json_plus_files_or_raise(filenames, side_label):
 
 def _canonical_stem(filename):
     """Normalize any historical plus/ filename to its canonical OSDF-24 stem."""
-    hwdb = "\N{LATIN SMALL LETTER H WITH DOT BELOW}"  # U+1E25: ḥ
+    hwdb = "\N{LATIN SMALL LETTER H WITH DOT BELOW}"  # U+1E25 = h-with-dot-below
     stem = filename.removesuffix(".json").replace(hwdb, "x")
     if stem in _CANONICAL_STEM_TO_BOOK39_IDS:
         return stem

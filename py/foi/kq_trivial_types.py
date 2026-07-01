@@ -17,7 +17,7 @@ HI_SPELLED_HU = "hi-spelled-hu"
 N3RH_SPELLED_N3R = "n3rh-spelled-n3r"
 EXTRA_ALEF = "extra-alef"
 
-# Use x where plain h would be misleading for the guttural / ḥ slot.
+# Use x where plain h would be misleading for the guttural / x slot.
 
 
 def classify_tmpl(tmpl):

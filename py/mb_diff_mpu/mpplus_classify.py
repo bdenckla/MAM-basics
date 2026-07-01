@@ -117,7 +117,7 @@ def _classify_text_change(diff):
     # Pure meteg addition
     if non_space_added == {"meteg"} and not non_space_removed:
         return "meteg-addition"
-    # Varika (U+FB1E) addition — implicit ḥataf vowels
+    # Varika (U+FB1E) addition — implicit xataf vowels
     if (
         "varika" in non_space_added
         and non_space_added <= {"varika"}

@@ -91,7 +91,7 @@ def _just_take_arg_1(tmpl):
 def _yerushalax_subhandler(tmpl, vowel_for_implicit_yod):
     assert wtp.template_len(tmpl) in (2, 3)
     # Below, accent is a "maybe" since sometimes there is no
-    # accent. E.g. accent on the word is deḥi, a prepositive
+    # accent. E.g. accent on the word is dexi, a prepositive
     # without a helper.
     vowel = wtp.template_i0(tmpl, 1)
     assert isinstance(vowel, str)

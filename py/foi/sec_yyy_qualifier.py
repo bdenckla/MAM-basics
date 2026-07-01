@@ -289,7 +289,7 @@ _QUALIFIERS_FOR_SEC_MERK = {
         None,
     ),  # Ps107:6 (es2: example set 2)
     # "מִ֝מְּצֻ֥קוֹתֵיהֶ֗ם": None,  # Ps107:13, 107:19
-    # note that the word above is the same as Ps107:6 מִ֝מְּצ֥וּקוֹתֵיהֶ֗ם modulo a malei/ḥaser
+    # note that the word above is the same as Ps107:6 מִ֝מְּצ֥וּקוֹתֵיהֶ֗ם modulo a malei/xaser
     # difference (shuruq vs qubuts).
     "בֵּ֝רַ֥כְנוּכֶ֗ם": (None, "11.41", _MER_NOT_SEC),  # Ps118:26
     "תְּ֝שׁ֥וּעָתְךָ֗": (None, "11.40.es1.rn1", f"{_MER_NOT_SEC}."),  # Ps119:41
