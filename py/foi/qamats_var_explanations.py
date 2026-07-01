@@ -79,7 +79,7 @@ _ACCENT_NAMES = {
     "ger_m": "geresh muqdam",
     "mer": "merkha",
     "mos": "meteg",
-    "mun": "munaḥ",
+    "mun": "munaḥ",
 }
 
 
@@ -97,7 +97,7 @@ OVERALL_EXPLANATION = (
             "side. accent-0 means no accent intervenes between the disputed qamats",
             "qatan and the following letter, while accent-1-(...) means that one",
             "accent does intervene there. The accent abbreviations are ger_m =",
-            "geresh muqdam, mer = merkha, mun = munaḥ, and mos = meteg or silluq;",
+            "geresh muqdam, mer = merkha, mun = munaḥ, and mos = meteg or silluq;",
             "in this page, mos can be read simply as meteg (ga'ya). qq-count-N",
             "means that the disputed atom has a qamats qatan count of N.",
         )

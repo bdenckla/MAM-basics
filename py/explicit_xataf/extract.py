@@ -64,7 +64,7 @@ def join_arg1_strings(arg1):
 
 
 def _has_xataf(word):
-    """Return whether the word contains any ḥataf vowel (including ḥataf ḥiriq)."""
+    """Return whether the word contains any ḥataf vowel (including ḥataf ḥiriq)."""
     return any(hv in word for hv in XATAF_VOWELS) or XATAF_XIRIQ in word
 
 
@@ -113,7 +113,7 @@ def classify_failure(arg1):
     """Return a short reason why extraction failed."""
     joined = join_arg1_strings(arg1)
     if "חטף" not in joined:
-        return "no ḥataf in alternative reading"
+        return "no ḥataf in alternative reading"
     return "non-standard format (inline reference or other)"
 
 

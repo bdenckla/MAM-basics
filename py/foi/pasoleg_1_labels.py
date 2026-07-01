@@ -21,7 +21,7 @@ def explanation_for_path(path_parts):
 
 
 OVERALL_EXPLANATION = (
-    "This page groups pasoleg-related accent patterns, especially munaḥ legarmeih and munaḥ paseq sequences together with their most characteristic stopping accents.",
+    "This page groups pasoleg-related accent patterns, especially munaḥ legarmeih and munaḥ paseq sequences together with their most characteristic stopping accents.",
     "The compact labels summarize the starting pattern, the stopping pattern, and how many accents intervene. Prefixes such as dualcant/upper and dualcant/lower mark the upper and lower cantillation systems in the dual-cantillation passages.",
 )
 
@@ -122,9 +122,9 @@ _TOKEN_LONG_NAMES = {
     "qa": "qadma",
     "rev": "revia",
     "tev": "tevir",
-    "⅃": "munaḥ",
-    "⅃-leg": "munaḥ legarmeih",
-    "⅃-pas": "munaḥ paseq",
+    "⅃": "munaḥ",
+    "⅃-leg": "munaḥ legarmeih",
+    "⅃-pas": "munaḥ paseq",
 }
 
 
@@ -161,7 +161,7 @@ _EXPLANATIONS_BY_LABEL = {
     munpas_pazer_label(("⅃-pas",), style="bare"): _explanation(
         "⅃-pas", ("plain", "paz"), _mid("bare", ("⅃-pas",))
     ),
-    "⅃-pas,(rev)": "munaḥ paseq preceding revia",
-    "⅃-pas-⅃": "munaḥ paseq preceding munaḥ legarmeih",
+    "⅃-pas,(rev)": "munaḥ paseq preceding revia",
+    "⅃-pas-⅃": "munaḥ paseq preceding munaḥ legarmeih",
     "shalshelet": "shalshelet legarmeih",
 }

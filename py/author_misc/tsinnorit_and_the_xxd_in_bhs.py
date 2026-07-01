@@ -38,7 +38,7 @@ def gen_html_file(tdm_ch):
     return author.help_gen_html_file(__file__, tdm_ch, _FNAME, _TITLE, cbody)
 
 
-_TITLE = "Tsinnorit and the Ḥolam Ḥaser dot in BHS"
+_TITLE = "Tsinnorit and the Ḥolam Ḥaser dot in BHS"
 _H1_CONTENTS = "$Tsinnorit and the $Xolam_xaser Dot in $BHS"
 _FNAME = "tsinnorit_and_the_xxd_in_bhs.html"
 _ANCHOR = author.anchor_h("document", f"./{_FNAME}")

@@ -4,10 +4,10 @@ OVERALL_EXPLANATION_DML_A1 = (
         (
             "This page groups words having one of the dual-mater patterns",
             "alef-vav or alef-yod.",
-            "Most groups collect cases where alef-vav corresponds to a ḥolam vowel,",
+            "Most groups collect cases where alef-vav corresponds to a ḥolam vowel,",
             "while other groups collect cases where alef-vav corresponds to a",
             "shuruq vowel or",
-            "alef-yod corresponds to a ḥiriq vowel.",
+            "alef-yod corresponds to a ḥiriq vowel.",
         )
     ),
     " ".join(
@@ -24,7 +24,7 @@ OVERALL_EXPLANATION_DML_A1 = (
 EXPLANATIONS_DML_A1 = {
     ("a-misc",): " ".join(
         (
-            "that the word contains alef-vav-ḥolam and does not fall under",
+            "that the word contains alef-vav-ḥolam and does not fall under",
             "any of b-ot,",
             "c-m.lot, c-smol, or c-xatot",
         )
@@ -41,7 +41,7 @@ EXPLANATIONS_DML_A1 = {
     ("e-alef-yod",): {
         "label": " ".join(
             (
-                "that the word contains ḥiriq followed immediately by a bare",
+                "that the word contains ḥiriq followed immediately by a bare",
                 "alef and a",
                 "bare yod",
             )
@@ -54,7 +54,7 @@ EXPLANATIONS_DML_A1 = {
 OVERALL_EXPLANATION_DML_A2 = (
     " ".join(
         (
-            "This page groups words containing a vav-ḥolam-alef sequence, with",
+            "This page groups words containing a vav-ḥolam-alef sequence, with",
             "the labels",
             "dividing the examples into a few recurring subpatterns and a",
             "miscellaneous",
@@ -75,7 +75,7 @@ OVERALL_EXPLANATION_DML_A2 = (
 EXPLANATIONS_DML_A2 = {
     ("a-misc",): " ".join(
         (
-            "that the word contains vav-ḥolam-alef and does not fall under",
+            "that the word contains vav-ḥolam-alef and does not fall under",
             "a-misc/2 or",
             "b-not-final",
         )

@@ -90,17 +90,17 @@ def _join_with_and(items):
 
 _VOWP_NAMES = {
     ":": "sheva",
-    ":∵": "ḥataf segol",
-    ":_": "ḥataf pataḥ",
-    ":a": "ḥataf qamats",
-    "i": "ḥiriq",
+    ":∵": "ḥataf segol",
+    ":_": "ḥataf pataḥ",
+    ":a": "ḥataf qamats",
+    "i": "ḥiriq",
     "‥": "tsere",
     "∵": "segol",
-    "_": "pataḥ",
+    "_": "pataḥ",
     "a": "qamats",
     "oa": "qamats qatan",
-    "o": "ḥolam",
-    "xxfv": "ḥolam ḥaser for vav",
+    "o": "ḥolam",
+    "xxfv": "ḥolam ḥaser for vav",
     "u": "qubuts",
 }
 
@@ -123,9 +123,9 @@ OVERALL_EXPLANATION = (
             "stress-helpers counts distinct stress-helper patterns. In many-vowp",
             "labels, the segment after the vowel-point count names the missing",
             "vowel point or points, so many-vowp/12-vowp/:a/17-lett means 12",
-            "distinct vowel points, with only ḥataf qamats missing, and 17",
-            "distinct letters. Some shorthand decodings are :a = ḥataf qamats,",
-            "xxfv = ḥolam ḥaser for vav, and u = qubuts.",
+            "distinct vowel points, with only ḥataf qamats missing, and 17",
+            "distinct letters. Some shorthand decodings are :a = ḥataf qamats,",
+            "xxfv = ḥolam ḥaser for vav, and u = qubuts.",
         )
     ),
 )

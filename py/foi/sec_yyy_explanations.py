@@ -194,9 +194,9 @@ _SHEWA_FOLLOWUP_CLAUSES = {
 
 _SHEWA_PATTERN_PARTS = {
     ":": "simple shewa",
-    ":∵": "ḥataf segol",
-    ":_": "ḥataf pataḥ",
-    ":a": "ḥataf qamats",
+    ":∵": "ḥataf segol",
+    ":_": "ḥataf pataḥ",
+    ":a": "ḥataf qamats",
     "(mos)": "meteg",
     "varika": "varika",
 }
@@ -231,13 +231,13 @@ OVERALL_EXPLANATION_SHEWA = (
     " ".join(
         (
             "These pages group sec-merk and sec-misc examples by the vocalization",
-            "of the consonant that carries the relevant shewa or ḥataf sign.",
+            "of the consonant that carries the relevant shewa or ḥataf sign.",
         )
     ),
     " ".join(
         (
-            "In the shorthand labels, : means simple shewa, :∵ means ḥataf segol,",
-            ":_ means ḥataf pataḥ, :a means ḥataf qamats, (mos) means meteg on",
+            "In the shorthand labels, : means simple shewa, :∵ means ḥataf segol,",
+            ":_ means ḥataf pataḥ, :a means ḥataf qamats, (mos) means meteg on",
             "that same consonant, varika means varika on that same consonant, and",
             "gutt-: means a guttural with simple shewa. Commas join marks that",
             "occur on the same consonant.",
