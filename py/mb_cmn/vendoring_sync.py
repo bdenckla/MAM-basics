@@ -73,6 +73,7 @@ def write_provenance(
     date_str: str,
     title: str | None = None,
     removed_paths: Sequence[str] = (),
+    newline: str = "",
 ) -> None:
     """Write standardized _provenance.md in dest_dir."""
     normalized_copied = sorted({p.replace("\\", "/") for p in copied_files})
@@ -106,7 +107,7 @@ def write_provenance(
     lines.append("")
 
     provenance_path = dest_dir / "_provenance.md"
-    provenance_path.write_text("\n".join(lines), encoding="utf-8")
+    provenance_path.write_text("\n".join(lines), encoding="utf-8", newline=newline)
 
 
 def _git_stdout(repo_path: Path, *args: str) -> str:
