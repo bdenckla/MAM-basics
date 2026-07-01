@@ -21,7 +21,7 @@ def copy_support_files():
         dst = f"{mam_parsed_pyex}/{pyfile_relpath}"
         shutil.copy(src, dst)
     prov_path = f"{mam_parsed_pyex}/provenance.md"
-    with open(prov_path, "w", encoding="utf-8") as f:
+    with open(prov_path, "w", encoding="utf-8", newline="") as f:
         f.write(_PROVENANCE_MD)
 
 
