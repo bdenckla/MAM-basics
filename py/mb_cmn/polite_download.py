@@ -261,7 +261,9 @@ class PoliteDownloader:
                 response.url,
             )
             if method == "GET" and allow_cache:
-                self._write_cache_entry(prepared_url, result, response.headers)
+                self._write_cache_entry(
+                    prepared_url, result, response.headers, newline=""
+                )
             return result
         raise RuntimeError(f"Retry loop exhausted for {prepared_url}")
 
@@ -332,7 +334,9 @@ class PoliteDownloader:
             final_url=meta["final_url"],
         )
 
-    def _write_cache_entry(self, prepared_url, result, response_headers):
+    def _write_cache_entry(
+        self, prepared_url, result, response_headers, newline: str = ""
+    ):
         paths = self._cache_paths(prepared_url)
         if paths is None:
             return
@@ -344,7 +348,7 @@ class PoliteDownloader:
             "final_url": result.final_url,
             "last_modified": response_headers.get("Last-Modified"),
         }
-        with open(meta_path, "w", encoding="utf-8") as meta_fp:
+        with open(meta_path, "w", encoding="utf-8", newline=newline) as meta_fp:
             json.dump(meta, meta_fp, ensure_ascii=False, indent=2)
             meta_fp.write("\n")
         with open(body_path, "wb") as body_fp:

@@ -30,11 +30,12 @@ def write_directory_provenance(
     artifacts_description: str,
     sidecar_name: str = _SIDECAR_NAME,
     repo_name: str | None = None,
+    newline: str = "",
 ):
     """Write a provenance sidecar for a directory of generated artifacts."""
     out_path = Path(dir_path) / sidecar_name
     out_path.parent.mkdir(parents=True, exist_ok=True)
-    with out_path.open("w", encoding="utf-8") as out_fp:
+    with out_path.open("w", encoding="utf-8", newline=newline) as out_fp:
         out_fp.write(
             directory_provenance_markdown(
                 generator_file, artifacts_description, repo_name
