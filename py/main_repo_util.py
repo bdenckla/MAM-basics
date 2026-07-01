@@ -13,12 +13,13 @@ import argparse
 from pathlib import Path
 from typing import Sequence
 
+from mb_cmn import paths
 from repo_util.audit_line_terms import run_audit_line_terms_across_repos
 from repo_util.commit_across_repos import run_commit_across_repos
 from repo_util.repo_selection import select_repo_infos
 from repo_util.run_black import run_black_across_repos
 
-REPO_ROOT = Path(__file__).resolve().parent.parent
+REPO_ROOT = paths.repo_root()
 DEFAULT_WORKSPACE_FILE = REPO_ROOT / "MAM-basics.code-workspace"
 
 

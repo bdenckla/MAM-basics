@@ -5,12 +5,13 @@ sequence. Useful for a full rebuild from scratch.
 
 import argparse
 from dataclasses import dataclass
-from pathlib import Path
 import subprocess
 import sys
 from typing import Callable
 
-_REPOS = Path(__file__).resolve().parents[2]
+from mb_cmn import paths
+
+_REPOS = paths.repos_root()
 
 import main_explicit_xataf
 

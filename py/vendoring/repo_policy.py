@@ -6,7 +6,8 @@ from __future__ import annotations
 import json
 from dataclasses import dataclass
 from functools import lru_cache
-from pathlib import Path
+
+from mb_cmn import paths
 
 
 @dataclass(frozen=True)
@@ -41,7 +42,7 @@ class VendoringPolicy:
     overrides: tuple[OverridePolicy, ...]
 
 
-_POLICY_PATH = Path(__file__).resolve().parents[2] / "in" / "vendoring_policy.json"
+_POLICY_PATH = paths.repo_root() / "in" / "vendoring_policy.json"
 
 
 def _expect_dict(value: object, label: str) -> dict[object, object]:

@@ -9,10 +9,11 @@ import json
 import sys
 from pathlib import Path, PurePosixPath
 
+from mb_cmn import paths
 from vendoring.discover import iter_inventory_seed_rows, provenance_dest_repos
 
-_REPOS = Path(__file__).resolve().parents[3]
-_MAM = _REPOS / "MAM-basics"
+_REPOS = paths.repos_root()
+_MAM = paths.repo_root()
 _OUT_TXT = _MAM / "out" / "vendoring_provenance_out.txt"
 _OUT_JSON = _MAM / "out" / "vendoring_provenance_out.json"
 

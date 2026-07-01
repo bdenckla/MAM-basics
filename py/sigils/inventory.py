@@ -3,6 +3,7 @@ import re
 
 from mb_cmn import bib_locales as tbn
 from mb_cmn import file_io
+from mb_cmn import paths
 from mb_cmn import read_books_from_mam_parsed_plus as plus
 from mb_cmn import ws_tmpl2 as wtp
 from explicit_xataf import extract as doc_extract
@@ -24,7 +25,7 @@ _PROSE_ABBREV_RE = re.compile(
 _TOKEN_SPLIT_RE = re.compile(r"[\s,]+")
 
 
-def build_inventory(mam_parsed_path="../MAM-parsed"):
+def build_inventory(mam_parsed_path=str(paths.sibling_repo("MAM-parsed"))):
     books_mpu = plus.read_parsed_plus_bk39s(mam_parsed_path=mam_parsed_path)
     expression_examples = {}
     token_examples = {}
@@ -117,7 +118,8 @@ def build_inventory(mam_parsed_path="../MAM-parsed"):
 
 
 def write_inventory(
-    out_path="out/sigil-inventory.json", mam_parsed_path="../MAM-parsed"
+    out_path="out/sigil-inventory.json",
+    mam_parsed_path=str(paths.sibling_repo("MAM-parsed")),
 ):
     inventory = build_inventory(mam_parsed_path)
     file_io.json_dump_to_file_path(inventory, out_path)

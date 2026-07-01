@@ -2,12 +2,15 @@ import json
 from mb_cmn import hebrew_verse_numerals as hvn
 from mb_cmn import bib_locales as tbn
 from mb_cmn import mam_bknas_and_std_bknas as mbkn_a_sbkn
+from mb_cmn import paths
 from mb_cmn import ws_tmpl1 as wtp1
 from mb_cmn import my_utils
 from mb_cmn.minirow import MinirowExt
 
 
-def read_parsed_plain_bk39s(bk39ids=None, mam_parsed_path="../MAM-parsed"):
+def read_parsed_plain_bk39s(
+    bk39ids=None, mam_parsed_path=str(paths.sibling_repo("MAM-parsed"))
+):
     """Read all bk24s covering bk39ids"""
     real_bk39ids = bk39ids or tbn.ALL_BK39_IDS
     books_out = {}

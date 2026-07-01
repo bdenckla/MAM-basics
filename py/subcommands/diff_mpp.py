@@ -28,6 +28,7 @@ import json
 import os
 import subprocess
 
+from mb_cmn import paths
 from mb_diff_mpu import (
     mpplus_classify,
     mpplus_extract,
@@ -36,8 +37,8 @@ from mb_diff_mpu import (
     mpplus_json,
 )
 
-MAM_PARSED_DIR = "../MAM-parsed"
-CHANGE_LOG_DIR = "../MAM-with-doc/gh-pages/change-log"
+MAM_PARSED_DIR = str(paths.sibling_repo("MAM-parsed"))
+CHANGE_LOG_DIR = str(paths.sibling_repo("MAM-with-doc") / "gh-pages" / "change-log")
 RELEASES_JSON = f"{CHANGE_LOG_DIR}/releases.json"
 UNPINNED_LATEST_HTML = f"{CHANGE_LOG_DIR}/unpinned-latest.html"
 UNPINNED_LATEST_JSON = UNPINNED_LATEST_HTML.removesuffix(".html") + ".json"

@@ -8,6 +8,7 @@ Exports:
 import json
 import subprocess
 
+from mb_cmn import paths
 from mb_diff_mpu.mpplus_file_matching import (
     book39_ids_for_stem,
     get_he_to_int,
@@ -24,7 +25,7 @@ from mb_diff_mpu.mpplus_structure import (
     template_name_counter,
 )
 
-MAM_PARSED_DIR = "../MAM-parsed"
+MAM_PARSED_DIR = str(paths.sibling_repo("MAM-parsed"))
 
 # ── Git helpers ──────────────────────────────────────────────
 

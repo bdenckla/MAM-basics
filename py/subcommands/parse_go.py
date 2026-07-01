@@ -8,6 +8,7 @@ main_download.py fr-google as part of the download pipeline.
 from mb_cmn import bib_locales as tbn
 from mb_cmn import file_io
 from mb_cmn import mam_bknas_and_std_bknas as mbkn_a_sbkn
+from mb_cmn import paths
 from mb_misc import my_utils_for_mainish as my_utils_fm
 import main_authored
 from py_misc import mam_csv_in
@@ -78,7 +79,7 @@ def almost_main():
     For each of the 6 CSVs (one per section), this program parses the
     Wikitext inside the CSV and outputs that to a JSON file.
     """
-    outfolder = "../MAM-parsed"
+    outfolder = str(paths.sibling_repo("MAM-parsed"))
     all_plus_paths = []
     for secid in tbn.ALL_SECIDS:
         out_paths_for_section = do_one_section(secid, outfolder)

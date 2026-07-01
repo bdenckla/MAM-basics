@@ -4,14 +4,14 @@
 import os
 import shutil
 
-_MODULE_DIR = os.path.dirname(os.path.abspath(__file__))
-_PY_DIR = os.path.dirname(_MODULE_DIR)
-_REPO_DIR = os.path.dirname(_PY_DIR)
+from mb_cmn import paths
+
+_PY_DIR = paths.repo_root() / "py"
 
 
 def copy_support_files():
     """Copy files to the MAM-parsed repo."""
-    mam_parsed_pyex = os.path.join(_REPO_DIR, MAM_PARSED_PYEX)
+    mam_parsed_pyex = MAM_PARSED_PYEX
     mam_parsed_pyex_mb_misc = f"{mam_parsed_pyex}/mb_misc"
     if os.path.exists(mam_parsed_pyex_mb_misc):
         shutil.rmtree(mam_parsed_pyex_mb_misc)
@@ -25,7 +25,7 @@ def copy_support_files():
         f.write(_PROVENANCE_MD)
 
 
-MAM_PARSED_PYEX = "../MAM-parsed/py-examples"
+MAM_PARSED_PYEX = str(paths.sibling_repo("MAM-parsed") / "py-examples")
 PYFILE_RELPATHS = ("mb_misc/tmpl_survey_toy.py",)
 
 _PROVENANCE_MD = """\

@@ -4,14 +4,14 @@
 import os
 import shutil
 
-_MODULE_DIR = os.path.dirname(os.path.abspath(__file__))
-_PY_DIR = os.path.dirname(_MODULE_DIR)
-_REPO_DIR = os.path.dirname(_PY_DIR)
+from mb_cmn import paths
+
+_PY_DIR = paths.repo_root() / "py"
 
 
 def copy_support_files():
     """Copy files to the MAM-simple repo."""
-    mam_simple_pyex = os.path.join(_REPO_DIR, MAM_SIMPLE_PYEX)
+    mam_simple_pyex = MAM_SIMPLE_PYEX
     os.makedirs(mam_simple_pyex, exist_ok=True)  # keep: top dir has non-vendored files
     for subdir in ("mb_misc", "mb_cmn", "mb_sefaria", "osis", "ws"):
         subdir_path = f"{mam_simple_pyex}/{subdir}"
@@ -27,7 +27,7 @@ def copy_support_files():
         f.write(_PROVENANCE_MD)
 
 
-MAM_SIMPLE_PYEX = "../MAM-simple/py-examples"
+MAM_SIMPLE_PYEX = str(paths.sibling_repo("MAM-simple") / "py-examples")
 PYFILE_RELPATHS = (
     "mb_misc/letter_small_job.py",
     #

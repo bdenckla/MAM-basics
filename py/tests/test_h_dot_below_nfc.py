@@ -32,9 +32,10 @@ Scope also excludes:
 import subprocess
 import unicodedata
 import unittest
-from pathlib import Path
 
-REPO_ROOT = Path(__file__).resolve().parents[2]
+from mb_cmn import paths
+
+REPO_ROOT = paths.repo_root()
 
 _COMBINING_DOT_BELOW = chr(0x0323)
 _H_WITH_DOT_BELOW = chr(0x1E25)

@@ -23,6 +23,7 @@ import argparse
 
 from mb_misc import mb_html
 from mb_misc import styles_authored
+from mb_cmn import paths
 from mb_cmn import provenance
 from author_misc import notes_on_aliyot
 from author_misc import tsinnorit_and_oleh_on_ivs
@@ -59,7 +60,7 @@ def _gen_index_html(top_dir_misc, index_entries):
 
 def almost_main():
     # XXX TODO: rm *.html (to avoid stale files when output names change)
-    pages_dir = "../MAM-with-doc/gh-pages"
+    pages_dir = str(paths.sibling_repo("MAM-with-doc") / "gh-pages")
     top_dir_misc = f"{pages_dir}/misc"
     top_dir_old = f"{pages_dir}/tsinnorit_oleh"
     #
@@ -107,7 +108,7 @@ def _run_verify_mp(*, claims) -> None:
 
 
 def cmd_gen_mam_parsed_docs(_args):
-    out_dir = "../MAM-parsed/gh-pages"
+    out_dir = str(paths.sibling_repo("MAM-parsed") / "gh-pages")
     claims = mam_parsed_docs_build.build_docs_with_explicit_claims(out_dir)
 
     skip_verify = bool(getattr(_args, "skip_verify_mp", False)) if _args else False

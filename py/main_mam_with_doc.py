@@ -8,6 +8,7 @@ from mb_misc import my_utils_for_mainish as my_utils_fm
 from py_misc import ren_tag_survey as rts
 from py_misc import mwd_utils as mwdu
 from mb_cmn import bib_locales as tbn
+from mb_cmn import paths
 from mb_cmn import read_books_from_mam_parsed_plus as plus
 from mwd import mwd_write_index_dot_html as mwdwidh
 from mwd import mwd_write_book as mwdwb
@@ -16,7 +17,7 @@ from mb_misc import styles_mam_with_doc
 
 def _out_path(filename):
     # Write into the repository's GitHub Pages publish directory.
-    return f"../MAM-with-doc/gh-pages/{filename}"
+    return str(paths.sibling_repo("MAM-with-doc") / "gh-pages" / filename)
 
 
 def _handle_survey_results(bkids, survey):

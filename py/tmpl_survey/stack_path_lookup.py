@@ -4,6 +4,7 @@ import json
 import sys
 
 from mb_cmn import bib_locales as tbn
+from mb_cmn import paths
 from mb_cmn import ws_tmpl1 as wtp1
 from mb_cmn import ws_tmpl2 as wtp2
 from tmpl_survey import stack_path_verbose_payload as spvp
@@ -79,7 +80,7 @@ def maybe_handle_cli(parser, args):
 
 def _dataset_folder(dataset_key):
     assert dataset_key in {"plain", "plus"}, dataset_key
-    return f"../MAM-parsed/{dataset_key}"
+    return str(paths.sibling_repo("MAM-parsed") / dataset_key)
 
 
 def _dataset_file_paths(dataset_key):

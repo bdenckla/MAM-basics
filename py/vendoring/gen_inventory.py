@@ -6,6 +6,7 @@ import json
 import re
 from pathlib import Path, PurePosixPath
 
+from mb_cmn import paths
 from mb_cmn import provenance as mb_provenance
 from vendoring.discover import (
     IDENTITY_VALUES,
@@ -13,7 +14,7 @@ from vendoring.discover import (
     iter_inventory_seed_rows,
 )
 
-_REPO_ROOT = Path(__file__).resolve().parents[2]
+_REPO_ROOT = paths.repo_root()
 _COMPARE_OUT = _REPO_ROOT / "out" / "vendoring_compare_out.txt"
 _PROVENANCE_OUT = _REPO_ROOT / "out" / "vendoring_provenance_out.txt"
 _PROVENANCE_OUT_JSON = _REPO_ROOT / "out" / "vendoring_provenance_out.json"

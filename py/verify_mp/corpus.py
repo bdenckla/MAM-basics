@@ -7,12 +7,13 @@ from dataclasses import dataclass, field
 from typing import Iterator, Mapping, TYPE_CHECKING
 
 from mb_cmn import mpplus_schema_guard as mpplus_guard
+from mb_cmn import paths
 
 if TYPE_CHECKING:
     from mb_author.claim import ClaimRecord
 
-_PLUS_DIR = "../MAM-parsed/plus"
-_PLAIN_DIR = "../MAM-parsed/plain"
+_PLUS_DIR = str(paths.sibling_repo("MAM-parsed") / "plus")
+_PLAIN_DIR = str(paths.sibling_repo("MAM-parsed") / "plain")
 
 
 @dataclass

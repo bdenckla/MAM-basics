@@ -2,6 +2,7 @@
 
 from mb_cmn import bib_locales as tbn
 from mb_cmn import file_io
+from mb_cmn import paths
 from mb_cmn import provenance
 
 from py_misc import mwd_utils as mwdu
@@ -48,7 +49,7 @@ def write(args_foi, all_fois):
         _write_finals3(args_foi, all_fois, outspec)
 
 
-_OUT_DIR_PATH = "../MAM-with-doc/gh-pages/foi"
+_OUT_DIR_PATH = str(paths.sibling_repo("MAM-with-doc") / "gh-pages" / "foi")
 _CSS_HREF = "two_col_style.css"
 
 

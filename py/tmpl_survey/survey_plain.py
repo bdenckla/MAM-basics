@@ -7,6 +7,7 @@ from tmpl_survey import column_d_0_process_all_mpasuq_calls as cdp
 from tmpl_survey import column_d_0_store_the_mpasuq_call as cds
 from tmpl_survey import nesting_normal_form
 from mb_cmn import bib_locales as tbn
+from mb_cmn import paths
 from mb_misc import my_utils_for_mainish as my_utils_fm
 from mb_cmn import ws_tmpl1 as wtp1
 from mb_cmn import kq_special_templates as kqst
@@ -249,7 +250,7 @@ def _make_bscv_dic(bscv_tuple):
 
 def _do_a_book24(bk24id, accum):
     my_utils_fm.show_progress_g(__file__, bk24id)
-    folder = "../MAM-parsed/plain"
+    folder = str(paths.sibling_repo("MAM-parsed") / "plain")
     osdf24 = tbn.ordered_short_dash_full_24(bk24id)
     in_path = f"{folder}/{osdf24}.json"
     with open(in_path, encoding="utf-8") as json_in_fp:

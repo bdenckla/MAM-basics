@@ -6,9 +6,12 @@ import json
 from foi import kq_trivial_sug as kqs
 from mb_cmn import bib_locales as tbn
 from mb_cmn import file_io
+from mb_cmn import paths
 from mb_cmn import uni_denorm as udn
 
-DEFAULT_FOI_KQ_SIMPLE_PATH = "../MAM-with-doc/gh-pages/foi/foi-kq-simple.json"
+DEFAULT_FOI_KQ_SIMPLE_PATH = str(
+    paths.sibling_repo("MAM-with-doc") / "gh-pages" / "foi" / "foi-kq-simple.json"
+)
 
 _Z_TRIVIAL_PREFIX = "z-trivial/"
 _MISC_SUBTYPE = "misc"

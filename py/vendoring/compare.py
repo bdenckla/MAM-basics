@@ -10,10 +10,11 @@ import subprocess
 import sys
 from pathlib import Path
 
+from mb_cmn import paths
 from vendoring.discover import iter_compare_copies, source_pkg_dirs
 
-_MAM = Path(__file__).resolve().parents[2]
-_REPOS = _MAM.parent
+_MAM = paths.repo_root()
+_REPOS = paths.repos_root()
 
 
 def _sha256(path: Path) -> str:

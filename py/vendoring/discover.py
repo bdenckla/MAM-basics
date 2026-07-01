@@ -7,10 +7,11 @@ from dataclasses import dataclass
 from functools import lru_cache
 from pathlib import Path
 
+from mb_cmn import paths
 from vendoring.repo_policy import OverridePolicy, RepoPolicy, load_policy
 
-_MAM = Path(__file__).resolve().parents[2]
-_REPOS = _MAM.parent
+_MAM = paths.repo_root()
+_REPOS = paths.repos_root()
 
 IDENTITY_VALUES = {"identical", "DIFFERS", "MISSING-DEST", "MISSING-SRC"}
 
