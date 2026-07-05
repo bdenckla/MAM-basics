@@ -125,6 +125,11 @@ TEST_MODULE_SPECS = (
         help_text="Run polite download behavior tests.",
     ),
     TestModuleSpec(
+        flag="versification-and-cantillation-doc",
+        module_name="tests.test_versification_and_cantillation_doc",
+        help_text="Run generated versification-and-cantillation doc consistency tests.",
+    ),
+    TestModuleSpec(
         flag="versification-differences-doc",
         module_name="tests.test_versification_differences_doc",
         help_text="Run generated versification doc consistency tests.",

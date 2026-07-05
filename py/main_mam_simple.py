@@ -26,6 +26,7 @@ from mb_xml import xml_root_from_bksams
 from mb_xml import xml_distribute_sampe as xml_sampe
 from mb_json import json_root_from_bksams
 from versification_differences import generate_doc
+from versification_and_cantillation import generate_doc as vc_generate_doc
 
 
 def _do_not_convert(_bkids, books_mpu):
@@ -126,11 +127,10 @@ def almost_main(bkids=None):
 
 
 def _write_versification_doc():
-    did_write = generate_doc.write_output_if_changed()
-    if did_write:
-        print(f"updated: {generate_doc.output_path()}")
-    else:
-        print(f"already up to date: {generate_doc.output_path()}")
+    for gen in (generate_doc, vc_generate_doc):
+        did_write = gen.write_output_if_changed()
+        status = "updated" if did_write else "already up to date"
+        print(f"{status}: {gen.output_path()}")
 
 
 def _build_parser():
