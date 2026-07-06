@@ -37,9 +37,7 @@ def write_output_if_changed() -> bool:
     current = _OUTPUT_PATH.read_text(encoding="utf-8") if _OUTPUT_PATH.exists() else None
     if current == actual:
         return False
-    # Match the sibling versification_differences generator: default newline
-    # handling (CRLF in the Windows working tree), which the repo's autocrlf=true
-    # normalizes to LF in the committed blob. Forcing newline="" here would leave
-    # the working copy LF and churn on every checkout.
-    _OUTPUT_PATH.write_text(actual, encoding="utf-8")
+    # MAM-simple's line-ending policy is LF (.gitattributes eol=lf); write LF
+    # directly so the Windows working tree matches and doesn't churn.
+    _OUTPUT_PATH.write_text(actual, encoding="utf-8", newline="")
     return True

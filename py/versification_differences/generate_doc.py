@@ -29,7 +29,9 @@ def write_output_if_changed() -> bool:
     current = _OUTPUT_PATH.read_text(encoding="utf-8")
     if current == actual:
         return False
-    _OUTPUT_PATH.write_text(actual, encoding="utf-8")
+    # MAM-simple's line-ending policy is LF (.gitattributes eol=lf); write LF
+    # directly so the Windows working tree matches and doesn't churn.
+    _OUTPUT_PATH.write_text(actual, encoding="utf-8", newline="")
     return True
 
 
