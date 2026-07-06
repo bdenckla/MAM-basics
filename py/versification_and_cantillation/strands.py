@@ -87,7 +87,7 @@ def _red(word):  # last word of a chanted verse — "stop"
     return f'<span style="color:red">{word}</span>'
 
 
-# Diacritic-stripping for the early-split ("taḥton / elyon / MAM / BHS") table cells.
+# Diacritic-stripping for the early-split ("taxton / elyon / MAM / BHS") table cells.
 # The table is about *where each cantillation ends its verse*, so it keeps only the
 # marks that carry that signal — the cantillation accents (te'amim) and the
 # accent-coupled punctuation (maqaf, sof pasuq, legarmeh) — and drops the rest (vowel

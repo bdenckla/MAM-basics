@@ -32,6 +32,7 @@ Scope also excludes:
 import subprocess
 import unicodedata
 import unittest
+from pathlib import Path
 
 from mb_cmn import paths
 

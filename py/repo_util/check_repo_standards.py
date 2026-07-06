@@ -28,8 +28,19 @@ File-scan (over tracked *.py files):
     character to attach to, so it renders as a floating/invisible diacritic
     on the opening quote itself. See user-level CLAUDE.md's "no orphan
     combining marks" rule.
+  - nfc_h_dot_below: cross-repo signal for the issue #187 / #49 convention --
+    Latin transliteration of Hebrew het must use precomposed U+1E25/U+1E24,
+    never the decomposed "h"/"H" + COMBINING DOT BELOW (U+0323); and a '#'
+    comment must use neither Unicode form (plain ASCII "x"/"X" instead, since
+    comments don't flow to output). Reports two finding lists: decomposed
+    het-dot-below in any tracked text file, and either het-dot-below form in a
+    .py '#' comment. Mirrors the detection logic of tests/test_h_dot_below_nfc.py
+    (the authoritative per-repo guard, which carries each repo's full out/ +
+    external-in/ exclusion set); this cross-repo scan excludes only generated
+    out/ (the main noise source) and vcs/build dirs, so external in/ snapshots
+    may still surface here -- treat the vendored guard test as authoritative.
 
-Both file-scan checks are heuristic text scans (matching this repo's existing
+These file-scan checks are heuristic text scans (matching this repo's existing
 style, e.g. tests/test_h_dot_below_nfc.py, and book-of-job's
 check_escape_sequences.py), not a full tokenizer/AST parse.
 """
@@ -68,6 +79,34 @@ _RAW_STRING_SPAN_PATTERN = re.compile(
 _RANGE_PATTERN = re.compile(r"\\[uU][0-9A-Fa-f]{4,8}-\\[uU][0-9A-Fa-f]{4,8}")
 
 _QUOTE_CHARS = ("'", '"')
+
+# het-dot-below forms for the nfc_h_dot_below check. Built via \N{...} names so
+# this source stays plain ASCII (no literal het-dot-below glyph, precomposed or
+# decomposed, ever appears in these bytes).
+_COMBINING_DOT_BELOW = "\N{COMBINING DOT BELOW}"  # U+0323
+_H_WITH_DOT_BELOW = "\N{LATIN SMALL LETTER H WITH DOT BELOW}"  # U+1E25
+_H_CAP_WITH_DOT_BELOW = "\N{LATIN CAPITAL LETTER H WITH DOT BELOW}"  # U+1E24
+
+# Binary file extensions to skip in the all-text-files NFC scan (mirrors
+# tests/test_h_dot_below_nfc.py's _BINARY_EXTENSIONS).
+_BINARY_EXTENSIONS = {
+    ".png",
+    ".woff2",
+    ".svg",
+    ".jpg",
+    ".jpeg",
+    ".gif",
+    ".ico",
+    ".pdf",
+    ".ttf",
+    ".otf",
+    ".eot",
+    ".zip",
+    ".gz",
+    ".pyc",
+    ".exe",
+    ".dll",
+}
 
 # This checker's own source mentions the escape/quote patterns it looks for
 # only inside regex literals, which do not themselves match (see docstring),
@@ -248,6 +287,112 @@ def _scan_py_files(
     }
 
 
+def _tracked_files(repo_dir: Path) -> list[str]:
+    result = run_cmd(["git", "-C", str(repo_dir), "ls-files"])
+    if result.returncode != 0:
+        raise RuntimeError(
+            result.stderr.strip() or f"Failed to list tracked files in {repo_dir}"
+        )
+    return [line for line in result.stdout.splitlines() if line.strip()]
+
+
+def _is_excluded_from_nfc_scan(
+    rel_path: str, *, exclude_novc: bool, exclude_dot_venv: bool
+) -> bool:
+    """Exclude vcs/build dirs and generated out/ from the NFC scan. Generated
+    out/ is deliberately excluded here (and in the guard test) -- regenerating
+    it in non-NFC form is a separate concern. External in/ snapshots are NOT
+    excluded at this cross-repo layer; the per-repo guard test's own exclusion
+    set is authoritative for those."""
+    normalized = rel_path.replace("\\", "/")
+    if _is_excluded_from_scan(
+        rel_path, exclude_novc=exclude_novc, exclude_dot_venv=exclude_dot_venv
+    ):
+        return True
+    return normalized == "out" or normalized.startswith("out/")
+
+
+def _find_decomposed_h_dot_below(text: str) -> list[int]:
+    """Return 1-indexed line numbers containing a decomposed het-dot-below
+    ("h"/"H" immediately followed by U+0323). Ignores U+0323 on other base
+    letters, which is a different, in-scope-elsewhere combination."""
+    line_numbers: list[int] = []
+    for i, ch in enumerate(text):
+        if (
+            ch in ("h", "H")
+            and i + 1 < len(text)
+            and text[i + 1] == _COMBINING_DOT_BELOW
+        ):
+            line_no = text.count("\n", 0, i) + 1
+            if line_no not in line_numbers:
+                line_numbers.append(line_no)
+    return line_numbers
+
+
+def _comment_has_h_dot_below(comment: str) -> bool:
+    """True if `comment` contains het-dot-below specifically -- precomposed
+    U+1E25/U+1E24 or decomposed "h"/"H" + U+0323 -- but NOT U+0323 on any
+    other base letter."""
+    if _H_WITH_DOT_BELOW in comment or _H_CAP_WITH_DOT_BELOW in comment:
+        return True
+    for i, ch in enumerate(comment):
+        if (
+            ch in ("h", "H")
+            and i + 1 < len(comment)
+            and comment[i + 1] == _COMBINING_DOT_BELOW
+        ):
+            return True
+    return False
+
+
+def _find_h_dot_below_comments(text: str) -> list[int]:
+    """Return 1-indexed line numbers of '#' comments containing het-dot-below
+    in either Unicode form."""
+    line_numbers: list[int] = []
+    for line_no, line in enumerate(text.split("\n"), start=1):
+        hash_idx = line.find("#")
+        if hash_idx == -1:
+            continue
+        if _comment_has_h_dot_below(line[hash_idx:]):
+            line_numbers.append(line_no)
+    return line_numbers
+
+
+def _scan_nfc_h_dot_below(
+    repo_dir: Path, *, exclude_novc: bool, exclude_dot_venv: bool
+) -> dict:
+    decomposed_findings: list[str] = []
+    comment_findings: list[str] = []
+    scanned = 0
+    for rel_path in _tracked_files(repo_dir):
+        if _is_excluded_from_nfc_scan(
+            rel_path, exclude_novc=exclude_novc, exclude_dot_venv=exclude_dot_venv
+        ):
+            continue
+        full_path = repo_dir / rel_path
+        if not full_path.is_file():
+            continue
+        if full_path.suffix.lower() in _BINARY_EXTENSIONS:
+            continue
+        try:
+            text = full_path.read_text(encoding="utf-8")
+        except (UnicodeDecodeError, OSError):
+            continue
+        scanned += 1
+        decomposed_findings.extend(
+            f"{rel_path}:{line_no}" for line_no in _find_decomposed_h_dot_below(text)
+        )
+        if rel_path.replace("\\", "/").endswith(".py"):
+            comment_findings.extend(
+                f"{rel_path}:{line_no}" for line_no in _find_h_dot_below_comments(text)
+            )
+    return {
+        "text_file_count_scanned": scanned,
+        "decomposed_findings": decomposed_findings,
+        "comment_findings": comment_findings,
+    }
+
+
 def _render_txt_report(results: list[dict]) -> str:
     lines: list[str] = []
     for repo in results:
@@ -264,6 +409,16 @@ def _render_txt_report(results: list[dict]) -> str:
         if repo["orphan_combining_mark_findings"]:
             lines.append("orphan_combining_mark_findings:")
             for finding in repo["orphan_combining_mark_findings"]:
+                lines.append(f"  - {finding}")
+        nfc = repo["nfc_h_dot_below"]
+        lines.append(f"text_file_count_scanned: {nfc['text_file_count_scanned']}")
+        if nfc["decomposed_findings"]:
+            lines.append("nfc_h_dot_below decomposed_findings:")
+            for finding in nfc["decomposed_findings"]:
+                lines.append(f"  - {finding}")
+        if nfc["comment_findings"]:
+            lines.append("nfc_h_dot_below comment_findings:")
+            for finding in nfc["comment_findings"]:
                 lines.append(f"  - {finding}")
         lines.append("")
     return "\n".join(lines) + "\n"
@@ -284,6 +439,9 @@ def run_check_repo_standards_across_repos(
         scan = _scan_py_files(
             repo_dir, exclude_novc=exclude_novc, exclude_dot_venv=exclude_dot_venv
         )
+        nfc_scan = _scan_nfc_h_dot_below(
+            repo_dir, exclude_novc=exclude_novc, exclude_dot_venv=exclude_dot_venv
+        )
         results.append(
             {
                 "repo": repo_info.name,
@@ -292,6 +450,7 @@ def run_check_repo_standards_across_repos(
                 "path_utility": _check_path_utility(repo_dir),
                 "black_pin": _check_black_pin(repo_dir),
                 **scan,
+                "nfc_h_dot_below": nfc_scan,
             }
         )
 
@@ -302,10 +461,11 @@ def run_check_repo_standards_across_repos(
 
     print(f"REPO_COUNT={len(results)}")
     for repo in results:
+        nfc = repo["nfc_h_dot_below"]
         print(
             "REPO={0}; MAINTENANCE_SCRIPT={1}; GITATTRIBUTES_LF={2}; "
             "PATH_UTILITY={3}; BLACK_PINNED={4}; HEX_ESCAPES={5}; "
-            "ORPHAN_MARKS={6}".format(
+            "ORPHAN_MARKS={6}; NFC_H_DOT={7}".format(
                 repo["repo"],
                 repo["maintenance_script"]["present"],
                 repo["gitattributes_lf"]["has_eol_lf_rule"],
@@ -313,6 +473,7 @@ def run_check_repo_standards_across_repos(
                 repo["black_pin"]["black_pinned"],
                 len(repo["hex_escape_findings"]),
                 len(repo["orphan_combining_mark_findings"]),
+                len(nfc["decomposed_findings"]) + len(nfc["comment_findings"]),
             )
         )
 

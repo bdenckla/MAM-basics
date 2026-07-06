@@ -169,6 +169,11 @@ TEST_MODULE_SPECS = (
         module_name="tests.test_ws_urls_encoding",
         help_text="Run Wikisource URL encoding tests.",
     ),
+    TestModuleSpec(
+        flag="h-dot-below-nfc",
+        module_name="tests.test_h_dot_below_nfc",
+        help_text="Run NFC h-with-dot-below enforcement tests (issue #187).",
+    ),
 )
 
 
