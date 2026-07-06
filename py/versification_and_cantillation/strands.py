@@ -56,10 +56,13 @@ def gather_examples(books_mpu):
     def verse(vp, bk, chnu, vrnu):
         return vp[tbn.mk_bcvtmam(bk, chnu, vrnu)]
 
+    tax_201 = _cells(verse(exo, tbn.BK_EXODUS, 20, 1), _TAXTON)
     tax_202 = _cells(verse(exo, tbn.BK_EXODUS, 20, 2), _TAXTON)
     ely_202 = _cells(verse(exo, tbn.BK_EXODUS, 20, 2), _ELYON)
     tax_203 = _cells(verse(exo, tbn.BK_EXODUS, 20, 3), _TAXTON)
+    tax_204 = _cells(verse(exo, tbn.BK_EXODUS, 20, 4), _TAXTON)
     tax_205 = _cells(verse(exo, tbn.BK_EXODUS, 20, 5), _TAXTON)
+    tax_2011 = _cells(verse(exo, tbn.BK_EXODUS, 20, 11), _TAXTON)
     ely_2012 = _cells(verse(exo, tbn.BK_EXODUS, 20, 12), _ELYON)
     tax_2012 = _cells(verse(exo, tbn.BK_EXODUS, 20, 12), _TAXTON)
     num_261 = _cells(verse(num, tbn.BK_NUMBERS, 26, 1), _TAXTON)
@@ -72,6 +75,10 @@ def gather_examples(books_mpu):
     # Numbers 26:1 is a single chanted verse split by a mid-verse petuxah into two runs.
     assert len(num_261) == 2, len(num_261)
 
+    def rng(first_cell, last_cell):
+        """A 'firstword…lastword' range label, both words byte-faithful from data."""
+        return f"{_first_word(first_cell)}…{_last_word(last_cell)}"
+
     return {
         # early split — boundary words of the two dual-trope units
         "early_taxton_avadim": _last_word(tax_202[0]),   # …עֲבָדִ֑ים  (etnachta, mid-verse)
@@ -80,6 +87,18 @@ def gather_examples(books_mpu):
         "early_elyon_panai": _last_word(ely_202[1]),     # …עַל־פָּנַ֗י (revia, runs on)
         "early_taxton_laarets": _last_word(tax_203[-1]),  # …לָאָֽרֶץ׃ (end of MAM 20:3)
         "early_mitsvotai": _last_word(tax_205[-1]),      # …מִצְוֺתָֽי׃ (end of MAM 20:5)
+        # early split — assembled first…last ranges for the overlapping-boundaries
+        # table (each end-word carries its own strand's mark; the elyon "long" range
+        # is the one verse that spans MAM 20:2b–20:5, past פני to מצותי)
+        "early_row_201": rng(tax_201[0], tax_201[0]),
+        "early_taxrow_202a": rng(tax_202[0], tax_202[0]),
+        "early_elyrow_202a": rng(ely_202[0], ely_202[0]),
+        "early_taxrow_202b": rng(tax_202[1], tax_202[1]),
+        "early_elyrow_long": rng(ely_202[1], tax_205[-1]),
+        "early_taxrow_203": rng(tax_203[0], tax_203[-1]),
+        "early_taxrow_204": rng(tax_204[0], tax_204[-1]),
+        "early_taxrow_205": rng(tax_205[0], tax_205[-1]),
+        "early_row_2011": rng(tax_2011[0], tax_2011[0]),
         # late split — the four upper cells end in sof pasuq; the last is shared
         "late_elyon_ends": [_last_word(cell) for cell in ely_2012],
         "late_taxton_end": _last_word(tax_2012[-1]),     # …שָֽׁקֶר׃ (shared outer end)

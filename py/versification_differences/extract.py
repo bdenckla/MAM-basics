@@ -104,7 +104,7 @@ def _extract_bhs_simple_shift_section(case_rec, books_mpu):
     verses = books_mpu[case_rec.book_id]["verses_plus"]
     anchor_bcvt = case_rec.mam_anchor_bcvt
     shifted_bcvt_seq = _shifted_bcvt_seq(case_rec, verses)
-    rows = [_mk_unchanged_row(_preceding_bcvt(verses, anchor_bcvt), verses)]
+    rows = [_mk_context_row(_preceding_bcvt(verses, anchor_bcvt), verses)]
     rows.append(_mk_row(anchor_bcvt, verses))
     rows.extend(
         _mk_row(shifted_bcvt, verses)
@@ -125,7 +125,7 @@ def _extract_bhs_simple_shift_section(case_rec, books_mpu):
 def _extract_bhs_split_one_vs_many_section(case_rec, books_mpu):
     verses = books_mpu[case_rec.book_id]["verses_plus"]
     anchor_bcvt = case_rec.mam_anchor_bcvt
-    rows = [_mk_unchanged_row(_preceding_bcvt(verses, anchor_bcvt), verses)]
+    rows = [_mk_context_row(_preceding_bcvt(verses, anchor_bcvt), verses)]
     rows.extend(_split_anchor_rows(case_rec, verses[anchor_bcvt]))
     shifted_chnu = tbn.bcvt_get_chnu(anchor_bcvt)
     first_shifted_bcvt = tbn.mk_bcvtmam(
@@ -151,7 +151,7 @@ def _extract_bhs_split_one_vs_many_section(case_rec, books_mpu):
 def _extract_bhs_complex_boundary_section(case_rec, books_mpu):
     verses = books_mpu[case_rec.book_id]["verses_plus"]
     rows = [
-        _mk_unchanged_row(_preceding_bcvt(verses, case_rec.mam_anchor_bcvt), verses)
+        _mk_context_row(_preceding_bcvt(verses, case_rec.mam_anchor_bcvt), verses)
     ]
     rows.extend(_split_anchor_rows(case_rec, verses[case_rec.mam_anchor_bcvt]))
     return SimpleShiftSectionRec(
@@ -229,7 +229,15 @@ def _mk_row(mam_bcvt, verses):
     return _mk_row_for_vtrad(tbn.VT_BHS, mam_bcvt, verses)
 
 
-def _mk_unchanged_row(mam_bcvt, verses):
+def _mk_context_row(mam_bcvt, verses):
+    """A row for the context verse around a split. Its label is usually identical in
+    both traditions — but when this verse is itself already shifted by an earlier
+    split in the same chapter (so it appears in the MAM→BHS difference map), use its
+    real mapped BHS label. E.g. the late Decalogue context verse is MAM 20:11 /
+    BHS 20:12, shifted +1 by the early split at עבדים; the naive "unchanged" label
+    would wrongly print 20:11."""
+    if mam_bcvt in vtrad_data.BCV_DIC_FROM_MAM_TO_YYY[tbn.VT_BHS]:
+        return _mk_row(mam_bcvt, verses)
     cv_label = _cv_label(mam_bcvt)
     return SimpleShiftRowRec(
         hebrew_range=hebrew.range_label_for_minirow(verses[mam_bcvt]),
