@@ -74,7 +74,7 @@ OVERVIEW_CLASSIFICATIONS = (
     ),
     OverviewClassificationRec(
         classification=CLASS_PRESENT_VS_ABSENT,
-        display_title=CLASS_PRESENT_VS_ABSENT,
+        display_title="Present-vs-absent",
         body_lines=(
             "This is not just a versification difference because",
             "the two editions in question actually have different text.",

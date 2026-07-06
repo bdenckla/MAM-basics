@@ -9,6 +9,8 @@ not a מ:כפול. See MAM-basics/py/author_misc/mp_dualcant_common.py.
 """
 
 from mb_cmn import bib_locales as tbn
+from mb_cmn import hebrew_accent_strip as has
+from mb_cmn import hebrew_punctuation as hpunc
 from mb_cmn import ws_tmpl2 as wtp
 
 _DUALCANT = "מ:כפול"
@@ -48,6 +50,21 @@ def _first_word(text):
     return text.split()[0]
 
 
+# Diacritic-stripping for the early-split ("taḥton / elyon / MAM / BHS") table cells.
+# The table is about *where each cantillation ends its verse*, so it keeps only the
+# marks that carry that signal — the cantillation accents (te'amim) and the
+# accent-coupled punctuation (maqaf, sof pasuq, legarmeh) — and drops the rest (vowel
+# points, dagesh, shin/sin dots, rafe, and ordinary meteg). The keep-sets and the
+# silluq-vs-meteg rule live in the vendorable mb_cmn.hebrew_accent_strip kernel.
+def _strip_pointing(word):
+    """Reduce a byte-faithful Hebrew word to consonants + accents + accent-coupled
+    punctuation. A word's U+05BD is *silluq* (an accent, kept) only when the word is
+    verse-final, i.e. carries sof pasuq; otherwise every U+05BD is an ordinary meteg
+    (a ga'ya, e.g. on אָנֹכִי here) and is dropped."""
+    keep_meteg = has.METEG_SILLUQ if hpunc.SOPA in word else has.METEG_DROP
+    return has.strip_to_accents(word, keep_meteg=keep_meteg)
+
+
 def gather_examples(books_mpu):
     """Return the dict of byte-faithful Hebrew example strings the doc splices in."""
     exo = books_mpu[tbn.BK_EXODUS]["verses_plus"]
@@ -76,8 +93,13 @@ def gather_examples(books_mpu):
     assert len(num_261) == 2, len(num_261)
 
     def rng(first_cell, last_cell):
-        """A 'firstword…lastword' range label, both words byte-faithful from data."""
-        return f"{_first_word(first_cell)}…{_last_word(last_cell)}"
+        """A 'firstword…lastword' range label for the early-split table, each word
+        stripped to consonants + accents + accent-coupled punctuation (see
+        _strip_pointing). rng feeds only that table (and its merged-cell caption),
+        so stripping here leaves the surrounding byte-faithful prose untouched."""
+        first = _strip_pointing(_first_word(first_cell))
+        last = _strip_pointing(_last_word(last_cell))
+        return f"{first}…{last}"
 
     return {
         # early split — boundary words of the two dual-trope units

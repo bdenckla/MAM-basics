@@ -19,28 +19,32 @@ _TEMPLATE = """\
 # Versification and Cantillation
 
 This is a companion to
-[versification-differences.md](versification-differences.md). That catalog
-deliberately treats a "verse" as nothing more than *the span of text between two
-cv-labels*, and stays silent about cantillation. This document discusses the
-cases in which cantillation helps explain the cause of the versification
-difference: the four Decalogue splits and the Numbers 25/26 boundary.
+[versification-differences.md](versification-differences.md). That document
+deliberately treats a "verse" as nothing more than the span of text between two
+cv-labels, ignoring cantillation. This document discusses the
+cases in which cantillation helps explain why the versification
+differences arose: the four Decalogue splits and the Numbers 25/26 boundary.
 
 Every MAM numbered verse ends at a *sof pasuq* — all 23,202 numbered verses, not
-just the cases below. But some numbered verses in the Decalogues in MAM have one
-or more *sof pasuq* marks besides the one at the end, and it is at these *sof
-pasuq* marks where the Decalogue versification differences occur, because BHS ends
-a numbered verse at those locations, too. (Sefaria is a mix of MAM and BHS
-versification.)
+just the cases below. But some MAM numbered verses in the Decalogues have one
+or more "extra" *sof pasuq* marks besides the one at the end.
+It is at these places where the Decalogue versification differences occur,
+because BHS ends a numbered verse at these "extra" *sof pasuq* marks, too.
+(The Sefaria Decalogues have a mix of MAM and BHS versification.)
 
-Then there is the difference regarding the Numbers 25/26 boundary. This is
-something quite different than the Decalogue cases. There in Numbers, the chanted
-verse that MAM calls 26:1 is divided by BHS into a 25:19 span (a verse number that
-does not exist in MAM) and a 26:1 span, with the division point being an
-*etnaḥta*. Apparently someone felt that the *etnaḥta*, even reinforced with a
-פסקא באמצע פסוק, was insufficient to reflect the desired strength of semantic
-division at this point.
-Or, perhaps this verse-break has its origin in some version of the text other than
-the Masoretic, perhaps not even the Hebrew!
+The difference regarding the Numbers 25/26 boundary
+has little in common with the Decalogue cases.
+There in Numbers, BHS splits the chanted verse that MAM calls 26:1 into
+a 25:19 span (a verse number that does not exist in MAM)
+and a 26:1 span.
+BHS 26:1 starts right after an *etnaḥta*.
+Although this *etnaḥta* is reinforced with a פסקא באמצע פסוק,
+perhaps someone felt that a chapter break, too,
+was needed to communicate an even stronger break at this point.
+Or, perhaps this chapter break has its origin in a
+non-cantillated (perhaps even non-Hebrew) version of the text.
+In such a text, this chapter break's defiance of the chanted verse boundary
+becomes irrelevant (or at least invisible).
 
 ## Terminology
 
@@ -77,7 +81,7 @@ traditions agree.)
 
 The whole story is then *how the two cantillations' boundaries sit relative to each
 other* — and this differs between the two splits. At the **early** split they
-**overlap** (the cuts interleave); at the **late** split the upper is **strictly
+**overlap** (the splits interleave); at the **late** split the upper is **strictly
 contained within** a single lower verse.
 
 ### The early split — overlapping boundaries
@@ -89,7 +93,7 @@ verse (MAM 20:2), the *elyon* ends a verse early, at {early_elyon_avadim}
 ({early_taxton_avadim}) and reads on. Conversely, where *taḥton* ends at
 {early_taxton_panai} (*sof pasuq*), the *elyon* has only *revia*
 ({early_elyon_panai}) and reads on — its verse running to {early_mitsvotai}
-(end of MAM 20:5). So the two sets of cuts interleave rather than nest.
+(end of MAM 20:5). So the two sets of splits interleave rather than nest.
 
 In the table below each end-word carries its own strand's mark: a bare *sof pasuq*
 (`׃`) means that strand ends its verse there; an ordinary accent means it reads

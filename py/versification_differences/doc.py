@@ -36,15 +36,17 @@ def render_intro_overview_summary_markdown():
     lines.extend(
         (
             "",
-            'Within *this* document, "verse" means only the span of text between cv-labels; the',
-            "definitions and tables below do not depend on the notion of a *chanted verse* (where",
-            "*sof pasuq* / *silluq* falls). Most of these spans do coincide with chanted verses.",
-            "For five of the eight cases below"
+            'Within *this* document, "verse" means only the span of text between cv-labels.',
+            " How these spans are cantillated is not relevant to this document."
+            " So, we could say that this document is only concerned with"
+            " the boundaries of numbered verses,"
+            " not the boundaries of chanted verses."
+            " For example, this document is not concerned with where *sof pasuq* falls."
+            " Nonetheless, in five of the eight cases below"
             " — the four Decalogue splits and the Num. 25/26 boundary —"
-            " cantillation helps explain the cause of the difference;"
-            " that cause is explained in a companion document,",
-            "[versification-and-cantillation.md](versification-and-cantillation.md), which this",
-            "catalog deliberately keeps separate from the per-case descriptions here.",
+            " cantillation can help explain why the versification difference arose."
+            " The role of cantillation in those five cases is discussed in",
+            "[versification-and-cantillation.md](versification-and-cantillation.md).",
             "",
             "The eight cases where differences occur are:",
             "",
