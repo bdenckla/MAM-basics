@@ -97,8 +97,12 @@ verse (MAM 20:2), the *elyon* ends a verse early, at {early_elyon_avadim}
 
 In the table below each end-word carries its own strand's mark: a bare *sof pasuq*
 (`׃`) means that strand ends its verse there; an ordinary accent means it reads
-on. The one long *elyon* verse ({early_elyrow_long}) spans four *taḥton*
-verses, shown as the merged cell.
+on. Within each cantillation a chanted verse's **first** word is shown in green
+(*start*) and its **last** word in red (*stop*); the words between (and the `…`)
+are left plain. The one long *elyon* verse ({early_elyrow_long}) has no verse-end of
+its own until מצותי, so across the four *taḥton* rows it spans (MAM 20:2b–20:5) only
+its opening word (green, in the 20:2b row) and closing word (red, in the 20:5 row)
+are colored.
 
 <table>
   <tr>
@@ -116,27 +120,29 @@ verses, shown as the merged cell.
   <tr>
     <td>{early_taxrow_202a}</td>
     <td>{early_elyrow_202a}</td>
-    <td>20:2a</td>
+    <td rowspan="2">20:2</td>
     <td>20:2</td>
   </tr>
   <tr>
     <td>{early_taxrow_202b}</td>
-    <td rowspan="4">{early_elyrow_long}</td>
-    <td>20:2b</td>
+    <td>{early_elyrow_202b}</td>
     <td>20:3</td>
   </tr>
   <tr>
     <td>{early_taxrow_203}</td>
+    <td>{early_elyrow_203}</td>
     <td>20:3</td>
     <td>20:4</td>
   </tr>
   <tr>
     <td>{early_taxrow_204}</td>
+    <td>{early_elyrow_204}</td>
     <td>20:4</td>
     <td>20:5</td>
   </tr>
   <tr>
     <td>{early_taxrow_205}</td>
+    <td>{early_elyrow_205}</td>
     <td>20:5</td>
     <td>20:6</td>
   </tr>

@@ -42,12 +42,49 @@ def _cells(minirow, param):
     return cells
 
 
+def _el_text(el):
+    """Best-effort plain text of one strand element, for reading off word boundaries.
+    A plain run is itself; a nested qamats (מ:קמץ) template contributes its word
+    variant; a paseq/legarmeh separator contributes only a space (a word break)."""
+    if isinstance(el, str):
+        return el
+    if wtp.is_template(el):
+        for val in wtp.template_param_vals(el):
+            if len(val) == 1 and isinstance(val[0], str):
+                return val[0]
+        return " "
+    return ""
+
+
+def _strand_word_text(minirow, param):
+    """The flat plain text of one cantillation strand across a whole verse, resolving
+    nested strand templates (see _el_text). Unlike _cells (which yields verse-internal
+    'cells' and can only take a strand that is a single plain string), this tolerates the
+    nested paseq/legarmeh/qamats markup the elyon strand carries — it is used only to read
+    a verse's first and last *word*, so word breaks, not exact punctuation, are what matter."""
+    parts = []
+    for wtel in minirow.EP:
+        if wtp.is_template_with_name(wtel, _DUALCANT):
+            parts.extend(_el_text(el) for el in wtp.template_param_val(wtel, param))
+        elif isinstance(wtel, str):
+            parts.append(wtel)
+    return "".join(parts)
+
+
 def _last_word(text):
     return text.split()[-1]
 
 
 def _first_word(text):
     return text.split()[0]
+
+
+def _green(word):  # first word of a chanted verse — "start"
+    return f'<span style="color:green">{word}</span>'
+
+
+def _red(word):  # last word of a chanted verse — "stop"
+    return f'<span style="color:red">{word}</span>'
 
 
 # Diacritic-stripping for the early-split ("taḥton / elyon / MAM / BHS") table cells.
@@ -79,6 +116,19 @@ def gather_examples(books_mpu):
     tax_203 = _cells(verse(exo, tbn.BK_EXODUS, 20, 3), _TAXTON)
     tax_204 = _cells(verse(exo, tbn.BK_EXODUS, 20, 4), _TAXTON)
     tax_205 = _cells(verse(exo, tbn.BK_EXODUS, 20, 5), _TAXTON)
+
+    # The elyon reading of the three interior verses. Unlike the taxton strand, the
+    # elyon strand of these verses carries nested paseq/legarmeh/qamats templates, so
+    # _cells can't grab it as a plain cell; _strand_word_text flattens the whole verse's
+    # elyon strand to read off its first and last *word*. The long elyon verse runs
+    # mid-verse through 20:3–20:4 (no sof pasuq) and ends only at 20:5's מצותי.
+    def ely_ends(vrnu):
+        words = _strand_word_text(verse(exo, tbn.BK_EXODUS, 20, vrnu), _ELYON).split()
+        return words[0], words[-1]
+
+    ely_203_first, ely_203_last = ely_ends(3)
+    ely_204_first, ely_204_last = ely_ends(4)
+    ely_205_first, ely_205_last = ely_ends(5)
     tax_2011 = _cells(verse(exo, tbn.BK_EXODUS, 20, 11), _TAXTON)
     ely_2012 = _cells(verse(exo, tbn.BK_EXODUS, 20, 12), _ELYON)
     tax_2012 = _cells(verse(exo, tbn.BK_EXODUS, 20, 12), _TAXTON)
@@ -92,14 +142,26 @@ def gather_examples(books_mpu):
     # Numbers 26:1 is a single chanted verse split by a mid-verse petuxah into two runs.
     assert len(num_261) == 2, len(num_261)
 
-    def rng(first_cell, last_cell):
+    def _range(first_word, last_word, *, start, stop):
         """A 'firstword…lastword' range label for the early-split table, each word
         stripped to consonants + accents + accent-coupled punctuation (see
-        _strip_pointing). rng feeds only that table (and its merged-cell caption),
-        so stripping here leaves the surrounding byte-faithful prose untouched."""
-        first = _strip_pointing(_first_word(first_cell))
-        last = _strip_pointing(_last_word(last_cell))
+        _strip_pointing). It feeds only that table (and its prose caption), so stripping
+        here leaves the surrounding byte-faithful prose untouched.
+
+        ``start``/``stop`` color the range's endpoints as a chanted verse's first
+        (green) and last (red) word. Suppress an endpoint (start=False / stop=False)
+        when the range is only part of a chanted verse, or wholly interior to one."""
+        first = _strip_pointing(first_word)
+        last = _strip_pointing(last_word)
+        if start:
+            first = _green(first)
+        if stop:
+            last = _red(last)
         return f"{first}…{last}"
+
+    def rng(first_cell, last_cell, *, start=True, stop=True):
+        """`_range` over a first cell's first word and a last cell's last word."""
+        return _range(_first_word(first_cell), _last_word(last_cell), start=start, stop=stop)
 
     return {
         # early split — boundary words of the two dual-trope units
@@ -110,13 +172,24 @@ def gather_examples(books_mpu):
         "early_taxton_laarets": _last_word(tax_203[-1]),  # …לָאָֽרֶץ׃ (end of MAM 20:3)
         "early_mitsvotai": _last_word(tax_205[-1]),      # …מִצְוֺתָֽי׃ (end of MAM 20:5)
         # early split — assembled first…last ranges for the overlapping-boundaries
-        # table (each end-word carries its own strand's mark; the elyon "long" range
-        # is the one verse that spans MAM 20:2b–20:5, past פני to מצותי)
+        # table. Each end-word carries its own strand's mark, and the first/last word
+        # of a chanted verse is colored green (start) / red (stop). A verse that spans
+        # multiple table rows colors only its outer endpoints (interior rows plain):
+        #  - taxton 20:2 spans rows 202a+202b: green on 202a's start, red on 202b's end.
+        #  - the long elyon verse spans rows 202b–205: green on 202b's start (לא), red on
+        #    205's end (מצותי); rows 203/204 are wholly interior, so entirely plain.
         "early_row_201": rng(tax_201[0], tax_201[0]),
-        "early_taxrow_202a": rng(tax_202[0], tax_202[0]),
+        "early_taxrow_202a": rng(tax_202[0], tax_202[0], stop=False),
         "early_elyrow_202a": rng(ely_202[0], ely_202[0]),
-        "early_taxrow_202b": rng(tax_202[1], tax_202[1]),
-        "early_elyrow_long": rng(ely_202[1], tax_205[-1]),
+        "early_taxrow_202b": rng(tax_202[1], tax_202[1], start=False),
+        "early_elyrow_202b": rng(ely_202[1], ely_202[1], stop=False),
+        "early_elyrow_203": _range(ely_203_first, ely_203_last, start=False, stop=False),
+        "early_elyrow_204": _range(ely_204_first, ely_204_last, start=False, stop=False),
+        "early_elyrow_205": _range(ely_205_first, ely_205_last, start=False, stop=True),
+        # plain (uncolored) label spliced into the prose caption for the long elyon verse
+        "early_elyrow_long": _range(
+            _first_word(ely_202[1]), ely_205_last, start=False, stop=False
+        ),
         "early_taxrow_203": rng(tax_203[0], tax_203[-1]),
         "early_taxrow_204": rng(tax_204[0], tax_204[-1]),
         "early_taxrow_205": rng(tax_205[0], tax_205[-1]),
