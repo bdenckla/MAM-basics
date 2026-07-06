@@ -6,7 +6,9 @@ output stays in lockstep with the source text.
 
 The document is a standalone HTML page (it is served via GitHub Pages at
 https://bdenckla.github.io/MAM-simple/versification-and-cantillation.html),
-so it carries its own <head>/CSS rather than relying on GitHub's Markdown viewer.
+so it carries its own <head> and links its own stylesheet
+(versification-and-cantillation.css, deployed alongside it by generate_doc.py)
+rather than relying on GitHub's Markdown viewer.
 
 On rolling our own HTML (a deliberate choice, not ignorance of `mb_misc.mb_html`):
 this page is authored *prose with holes* — multi-paragraph English/Hebrew text with
@@ -36,36 +38,11 @@ _VDIFF_URL = (
     "https://github.com/bdenckla/MAM-simple/blob/main/doc/versification-differences.md"
 )
 
-# Plain CSS (NOT run through str.format, so its braces need no escaping).
-_STYLE = """\
-body {
-  max-width: 46rem;
-  margin: 2rem auto;
-  padding: 0 1rem;
-  font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  line-height: 1.55;
-  color: #1a1a1a;
-}
-h1, h2, h3 { line-height: 1.25; }
-h1 { font-size: 1.9rem; }
-h2 { margin-top: 2rem; }
-code {
-  background: #f0f0f0;
-  padding: 0.1em 0.3em;
-  border-radius: 3px;
-  font-size: 0.9em;
-}
-table { border-collapse: collapse; margin: 1rem 0; }
-th, td { border: 1px solid #ccc; padding: 0.3rem 0.6rem; text-align: start; }
-th { background: #f5f5f5; }
-blockquote {
-  border-inline-start: 4px solid #ddd;
-  margin: 1rem 0;
-  padding: 0.2rem 1rem;
-  color: #333;
-}
-a { color: #0645ad; }
-"""
+# The external stylesheet, linked from the <head> and deployed next to the HTML
+# (same basename, sibling file in gh-pages/) by generate_doc.py. The CSS lives in
+# its own .css file — not a string here — because it is static (no interpolation,
+# unlike _BODY_TEMPLATE below), so it is better edited/linted as real CSS.
+CSS_FILENAME = "versification-and-cantillation.css"
 
 # str.format template for the <body> contents. The only braces are the
 # {placeholders} below; all Hebrew example words are substituted from data. Latin
@@ -372,7 +349,7 @@ def render_full_html(books_mpu):
         '<meta charset="utf-8">\n'
         '<meta name="viewport" content="width=device-width, initial-scale=1">\n'
         "<title>Versification and Cantillation</title>\n"
-        f"<style>\n{_STYLE}</style>\n"
+        f'<link rel="stylesheet" href="{CSS_FILENAME}">\n'
         "</head>\n"
         "<body>\n"
         f"{body}"
