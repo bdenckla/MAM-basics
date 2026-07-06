@@ -46,7 +46,8 @@ def render_intro_overview_summary_markdown():
             " — the four Decalogue splits and the Num. 25/26 boundary —"
             " cantillation can help explain why the versification difference arose."
             " The role of cantillation in those five cases is discussed in",
-            "[versification-and-cantillation.md](versification-and-cantillation.md).",
+            "[versification-and-cantillation.html]"
+            "(https://bdenckla.github.io/MAM-simple/versification-and-cantillation.html).",
             "",
             "The eight cases where differences occur are:",
             "",
