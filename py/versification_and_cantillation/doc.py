@@ -250,10 +250,13 @@ cantillation, and its verdict is <em>negative</em>: at the point BHS splits, can
 marks <strong>not</strong> a verse end but a mid-verse <em>etnaḥta</em>.</p>
 
 <p>MAM keeps Numbers 26:1 as a <strong>single chanted verse</strong> whose interior carries a
-mid-verse paragraph break — a פסקא באמצע פסוק (here a <em>petuḥah</em>):</p>
+mid-verse paragraph break — a פסקא באמצע פסוק (here a <em>petuḥah</em>). The break is shown
+below as a line break, which is what a <em>petuḥah</em> ("open" section) in fact is: the text
+after it resumes on a fresh line. Both lines are one and the same chanted verse:</p>
 
-<blockquote>
-{num_seg0} &nbsp;[<em>petuḥah</em>]&nbsp; {num_seg1_first} … {num_seg1_last}
+<blockquote class="verse">
+{num_seg0}<br>
+{num_seg1_first} … {num_seg1_last}
 </blockquote>
 
 <p>The verse ends, as always, at <em>sof pasuq</em> ({num_seg1_last}); the word before the
