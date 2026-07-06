@@ -9,8 +9,10 @@ def write_root_in_xml_fmt(out_path, root, generator_file=None):
     """Write root XML node in XML format"""
     xml_elementtree = ET.ElementTree(root)
     ET.indent(xml_elementtree)
+    # Force LF: a plain text-mode write would emit CRLF on Windows and churn the
+    # deployed LF copies in sibling repos (e.g. MAM-simple).
     file_io.with_tmp_openw(
-        out_path, {}, _write_callback, xml_elementtree, generator_file
+        out_path, {"newline": ""}, _write_callback, xml_elementtree, generator_file
     )
 
 
