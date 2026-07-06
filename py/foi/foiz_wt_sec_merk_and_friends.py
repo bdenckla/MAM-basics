@@ -185,7 +185,7 @@ def _psg_class(cword):
 # See Yeivin ITM sections:
 #    #325: Gaʿya before Paseq
 #    #332: Gaʿya on an Open, Post-stress Syllable
-#    #338: Gaʿya on a Closed, Ṣere-vowelled, Post-stress Syllable
+#    #338: Gaʿya on a Closed, Ṣere-vowelled, Post-stress Syllable
 #    #354: Gaʿya on a Guttural-closed Syllable
 _PSG_CLOSED_AFTER_TSERE = "psg-closed-after-tsere"
 _PSG_CLOSED_BY_GUTTURAL = "psg-closed-by-guttural"

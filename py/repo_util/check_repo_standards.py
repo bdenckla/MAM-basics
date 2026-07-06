@@ -34,7 +34,13 @@ File-scan (over tracked *.py files):
     comment must use neither Unicode form (plain ASCII "x"/"X" instead, since
     comments don't flow to output). Reports two finding lists: decomposed
     het-dot-below in any tracked text file, and either het-dot-below form in a
-    .py '#' comment. Mirrors the detection logic of tests/test_h_dot_below_nfc.py
+    .py '#' comment. Also reports nfc_latin_diacritics: the GENERAL rule that
+    generalizes the het NFC convention to every Latin base letter carrying a
+    combining diacritic that has a precomposed NFC form (t/s + dot-below,
+    a + breve, i + acute, a + diaeresis, ...). This is pure NFC precomposition
+    on Latin-script clusters only -- Hebrew codepoints are never touched, so the
+    repos' intentional non-Unicode Hebrew mark order is preserved. Mirrors the
+    detection logic of tests/test_h_dot_below_nfc.py
     (the authoritative per-repo guard, which carries each repo's full out/ +
     external-in/ exclusion set); this cross-repo scan excludes only generated
     out/ (the main noise source) and vcs/build dirs, so external in/ snapshots
@@ -332,6 +338,69 @@ def _find_decomposed_h_dot_below(text: str) -> list[int]:
     return line_numbers
 
 
+_HEBREW_RANGES_NFC = ((0x0590, 0x05FF), (0xFB1D, 0xFB4F))
+
+# Fast gate: NFC composition onto a Latin base only draws from the Combining
+# Diacritical Marks block (U+0300-U+036F). Files with none of those can skip the
+# expensive per-char scan (Hebrew marks live at U+0591-U+05C7, outside this
+# range). Raw-string range escape -- the accepted \uXXXX-range convention here
+# (see the hex_escape_style docstring); no literal combining mark is typed.
+_LATIN_MARK_GATE = re.compile(r"[\u0300-\u036f]")
+
+
+def _is_hebrew_cp(ch: str) -> bool:
+    o = ord(ch)
+    return any(lo <= o <= hi for lo, hi in _HEBREW_RANGES_NFC)
+
+
+def _is_latin_base(ch: str) -> bool:
+    """Non-combining char whose Unicode name starts with 'LATIN'."""
+    if unicodedata.combining(ch) != 0:
+        return False
+    try:
+        return unicodedata.name(ch).startswith("LATIN")
+    except ValueError:
+        return False
+
+
+def _find_decomposed_latin_clusters(text: str) -> list[int]:
+    """Return 1-indexed line numbers where a Latin base + combining mark(s) has
+    a strictly-shorter NFC (precomposed) form -- the general NFC-Latin-diacritic
+    convention (generalizes nfc_h_dot_below beyond het to t/s + dot-below,
+    a + breve, i + acute, etc.). Composes conceptually only Latin-script
+    clusters; every Hebrew codepoint is left untouched, so Hebrew mark order is
+    never disturbed."""
+    if not _LATIN_MARK_GATE.search(text):
+        return []
+    line_numbers: list[int] = []
+    i = 0
+    n = len(text)
+    while i < n:
+        ch = text[i]
+        if (
+            _is_latin_base(ch)
+            and i + 1 < n
+            and unicodedata.combining(text[i + 1]) != 0
+        ):
+            j = i + 1
+            while (
+                j < n
+                and unicodedata.combining(text[j]) != 0
+                and not _is_hebrew_cp(text[j])
+            ):
+                j += 1
+            cluster = text[i:j]
+            nfc = unicodedata.normalize("NFC", cluster)
+            if len(nfc) < len(cluster) and not any(_is_hebrew_cp(c) for c in nfc):
+                line_no = text.count("\n", 0, i) + 1
+                if line_no not in line_numbers:
+                    line_numbers.append(line_no)
+            i = j
+            continue
+        i += 1
+    return line_numbers
+
+
 def _comment_has_h_dot_below(comment: str) -> bool:
     """True if `comment` contains het-dot-below specifically -- precomposed
     U+1E25/U+1E24 or decomposed "h"/"H" + U+0323 -- but NOT U+0323 on any
@@ -366,6 +435,7 @@ def _scan_nfc_h_dot_below(
 ) -> dict:
     decomposed_findings: list[str] = []
     comment_findings: list[str] = []
+    latin_decomposed_findings: list[str] = []
     scanned = 0
     for rel_path in _tracked_files(repo_dir):
         if _is_excluded_from_nfc_scan(
@@ -385,6 +455,9 @@ def _scan_nfc_h_dot_below(
         decomposed_findings.extend(
             f"{rel_path}:{line_no}" for line_no in _find_decomposed_h_dot_below(text)
         )
+        latin_decomposed_findings.extend(
+            f"{rel_path}:{line_no}" for line_no in _find_decomposed_latin_clusters(text)
+        )
         if rel_path.replace("\\", "/").endswith(".py"):
             comment_findings.extend(
                 f"{rel_path}:{line_no}" for line_no in _find_h_dot_below_comments(text)
@@ -393,6 +466,7 @@ def _scan_nfc_h_dot_below(
         "text_file_count_scanned": scanned,
         "decomposed_findings": decomposed_findings,
         "comment_findings": comment_findings,
+        "latin_decomposed_findings": latin_decomposed_findings,
     }
 
 
@@ -422,6 +496,10 @@ def _render_txt_report(results: list[dict]) -> str:
         if nfc["comment_findings"]:
             lines.append("nfc_h_dot_below comment_findings:")
             for finding in nfc["comment_findings"]:
+                lines.append(f"  - {finding}")
+        if nfc.get("latin_decomposed_findings"):
+            lines.append("nfc_latin_diacritics decomposed_findings:")
+            for finding in nfc["latin_decomposed_findings"]:
                 lines.append(f"  - {finding}")
         lines.append("")
     return "\n".join(lines) + "\n"
@@ -468,7 +546,7 @@ def run_check_repo_standards_across_repos(
         print(
             "REPO={0}; MAINTENANCE_SCRIPT={1}; GITATTRIBUTES_LF={2}; "
             "PATH_UTILITY={3}; BLACK_PINNED={4}; HEX_ESCAPES={5}; "
-            "ORPHAN_MARKS={6}; NFC_H_DOT={7}".format(
+            "ORPHAN_MARKS={6}; NFC_H_DOT={7}; NFC_LATIN={8}".format(
                 repo["repo"],
                 repo["maintenance_script"]["present"],
                 repo["gitattributes_lf"]["has_eol_lf_rule"],
@@ -477,6 +555,7 @@ def run_check_repo_standards_across_repos(
                 len(repo["hex_escape_findings"]),
                 len(repo["orphan_combining_mark_findings"]),
                 len(nfc["decomposed_findings"]) + len(nfc["comment_findings"]),
+                len(nfc["latin_decomposed_findings"]),
             )
         )
 

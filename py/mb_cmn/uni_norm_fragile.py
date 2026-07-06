@@ -16,7 +16,7 @@ _DROP_TABLE = str.maketrans(
         hpo.SIND: None,
         hpu.LODOT: None,  # See "Note on lower dot"
         "\N{COMBINING ACUTE ACCENT}": None,
-        # COMBINING ACUTE ACCENT is used in í in Martín in a documentation note.
+        # COMBINING ACUTE ACCENT is used in í in Martín in a documentation note.
         # We drop it because otherwise the string is fragile, since we define
         # fragile to mean "changed by normalization to NFC".
     }
