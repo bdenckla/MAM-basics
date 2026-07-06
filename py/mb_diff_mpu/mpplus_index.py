@@ -3,6 +3,11 @@ Generate the change-log index.html listing all releases.
 
 Exports:
     write_index — write index.html from a list of release info dicts
+
+Like its sibling mpplus_html.py, this builds HTML by string assembly and deliberately
+bypasses the repo's `mb_misc.mb_html` tree-builder — a considered choice keeping the
+whole mb_diff_mpu report subsystem string-based and self-contained, not an oversight.
+See mpplus_html.py's module docstring for the full rationale.
 """
 
 

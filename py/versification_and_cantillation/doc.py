@@ -7,6 +7,20 @@ output stays in lockstep with the source text.
 The document is a standalone HTML page (it is served via GitHub Pages at
 https://bdenckla.github.io/MAM-simple/versification-and-cantillation.html),
 so it carries its own <head>/CSS rather than relying on GitHub's Markdown viewer.
+
+On rolling our own HTML (a deliberate choice, not ignorance of `mb_misc.mb_html`):
+this page is authored *prose with holes* — multi-paragraph English/Hebrew text with
+dense inline markup (<em>/<strong>/<code>/<blockquote>) and only a handful of
+`{placeholder}` slots filled from data. That is a template-fill problem, for which a
+`str.format` template is idiomatic. `mb_html` is the wrong tool here: it is a
+tree-builder for *data-driven* HTML (build structure from records via htel_mk /
+table_row_of_data), so expressing authored prose through it would bury the prose in
+nested calls; worse, its whitespace assertions (no double spaces, no leading/trailing
+space in text nodes) are sane for tokenized Hebrew data but hostile to free prose.
+This file also began life as a Markdown generator (render_full_markdown) and was
+ported to HTML only when it needed a Pages-served <head>/CSS, which is why the body
+reads as authored markup rather than assembled elements. (The mpplus_*.py diff-report
+generators likewise bypass `mb_html`, for their own — different — reasons.)
 """
 
 from pathlib import Path

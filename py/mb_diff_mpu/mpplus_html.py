@@ -3,6 +3,17 @@ Generate an HTML diff report with mgketer-style category filtering.
 
 Exports:
     write_report  — write the HTML report file
+
+This subsystem builds HTML by string assembly, deliberately bypassing the repo's
+`mb_misc.mb_html` tree-builder (nothing in mb_diff_mpu imports it). The choice is
+intentional, not an oversight: the diff/highlight machinery this report is built on
+already yields HTML *as strings* (e.g. char_diff_spans, and the postprocess_*_html
+passes that rewrite Hebrew maqaf/paseq/kq spans by regex over emitted markup), so the
+natural currency here is HTML text, not htel elements. Feeding those fragments through
+mb_html would mean round-tripping strings back into a tree only to serialize them
+again. The module keeps its own `_esc` escaper and ships its CSS/JS as external assets
+(style.css, filter.js via write_shared_assets) rather than an mb_html <head>. The
+sibling mpplus_index.py bypasses mb_html for the same reason.
 """
 
 import difflib
