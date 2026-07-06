@@ -299,17 +299,20 @@ def _tracked_files(repo_dir: Path) -> list[str]:
 def _is_excluded_from_nfc_scan(
     rel_path: str, *, exclude_novc: bool, exclude_dot_venv: bool
 ) -> bool:
-    """Exclude vcs/build dirs and generated out/ from the NFC scan. Generated
-    out/ is deliberately excluded here (and in the guard test) -- regenerating
-    it in non-NFC form is a separate concern. External in/ snapshots are NOT
-    excluded at this cross-repo layer; the per-repo guard test's own exclusion
-    set is authoritative for those."""
+    """Exclude vcs/build dirs and generated output trees (out/, gh-pages/) from
+    the NFC scan. Generated output is deliberately excluded here (and in the
+    guard tests) -- regenerating it in non-NFC form is a separate concern.
+    External in/ snapshots are NOT excluded at this cross-repo layer; the
+    per-repo guard test's own exclusion set is authoritative for those."""
     normalized = rel_path.replace("\\", "/")
     if _is_excluded_from_scan(
         rel_path, exclude_novc=exclude_novc, exclude_dot_venv=exclude_dot_venv
     ):
         return True
-    return normalized == "out" or normalized.startswith("out/")
+    for gen in ("out", "gh-pages"):
+        if normalized == gen or normalized.startswith(f"{gen}/"):
+            return True
+    return False
 
 
 def _find_decomposed_h_dot_below(text: str) -> list[int]:
