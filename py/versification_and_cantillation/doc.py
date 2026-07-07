@@ -184,10 +184,18 @@ four strictly contained within the one {taxton} verse, both ending together at �
 
 {late_table}
 
-<p>BHS numbers at each upper start, giving <strong>four verses where MAM has one</strong>.
-Sefaria, unlike BHS, does <strong>not</strong> honor the upper cantillation here — it keeps
-MAM's single verse (one cv-label). This late split is the one place where Sefaria and
-BHS part ways. Deuteronomy 5:16 works identically.</p>
+<p>(This table mirrors the early-split one, with the roles reversed. The four columns are
+the four short commandments in scripture order. The {taxton} (<abbr title="taḥton">T</abbr>)
+row is now the single verse spanning all four — green on its first word, red on שקר, its
+interior plain — while each {elyon} (<abbr title="elyon">E</abbr>) commandment is its own
+verse. The number rows add Sefaria (<abbr title="Sefaria verse number">S</abbr>): MAM and
+Sefaria each number once for the one {taxton} verse (the spanning cells), whereas BHS
+numbers each {elyon} start.)</p>
+
+<p>So BHS gives <strong>four verses where MAM has one</strong>. Sefaria, unlike BHS, does
+<strong>not</strong> honor the upper cantillation here — it keeps MAM's single verse (one
+cv-label). This late split is the one place where Sefaria and BHS part ways. Deuteronomy
+5:16 works identically.</p>
 
 <h2>Numbers 25/26: a break at an <em>etnaḥta</em>, not a <em>sof pasuq</em></h2>
 
@@ -260,7 +268,7 @@ match Exodus.</p>
 <p>The <strong>early split</strong> is not re-tabulated: through Deuteronomy 5:6–5:9 the
 text is word-for-word the Exodus text (bar vowel-pointing), so its table would be
 uniformly washed out. The differences live almost entirely in the <em>Sabbath</em>
-commandment and in a single word of the <em>late split</em>.</p>
+commandment, with only a connective וְ and one substituted word in the <em>late split</em>.</p>
 
 <h3>The Sabbath — a different, longer text</h3>
 
@@ -275,12 +283,14 @@ words differ:</p>
 fourth (5:14) differ at both ends; the third (5:13) shares its start (ויום) but not its
 end — Deuteronomy runs on past Exodus's בשעריך to כמוך.</p>
 
-<h3>The late split — identical but for one word</h3>
+<h3>The late split — nearly identical</h3>
 
-<p>Here the two Decalogues read word for word alike, with a single exception: the ninth
-commandment ends עֵד שָׁוְא in Deuteronomy where Exodus has עֵד שָׁקֶר. The
-{taxton}/{elyon} structure — four upper verses nested in one lower verse, all ending
-together — is unchanged:</p>
+<p>Here the two Decalogues read very nearly alike. Deuteronomy joins the commandments with
+a connective וְ (וְלֹא, "and you shall not") where Exodus sets them without it, and its
+ninth commandment ends עֵד שָׁוְא where Exodus has עֵד שָׁקֶר. Those wording differences
+aside, the {taxton}/{elyon} structure — four {elyon} verses nested in one {taxton} verse,
+all ending together — is unchanged, so only וְלֹא and שָׁוְא stand at full strength while
+everything matching Exodus washes out:</p>
 
 {deut_late_table}
 """
@@ -367,41 +377,41 @@ _EARLY_STRAND_TABLE = """\
   </tr>
 </table>"""
 
-# The late split (Exod 20:12): one taxton verse, four nested elyon verses sharing its
-# outer end; MAM/Sefaria keep one number, BHS numbers each elyon start (four verses).
+# The late split (Exod 20:12), transposed like _SAB_TABLE but mirrored: the taxton is the
+# single verse spanning all four columns (green start on 20:12's first word, red stop on
+# שקר, interior plain), while each of the four short commandments is its own elyon verse.
+# The columns are those commandments in scripture order. MAM/Sefaria keep one number
+# (colspan), BHS numbers each elyon start (four verses). Unlike the two tables above this
+# one carries a Sefaria (S) row, since the late split is where Sefaria and BHS diverge.
 _LATE_TABLE = """\
-<table>
+<table dir="rtl">
   <tr>
-    <th>scripture order →</th>
-    <th>"You shall not murder"</th>
-    <th>"… commit adultery"</th>
-    <th>"… steal"</th>
-    <th>"… bear false witness"</th>
+    <th><abbr title="taḥton (lower cantillation strand)">T</abbr></th>
+    <td>{late_taxrow_0}</td>
+    <td>{late_taxrow_1}</td>
+    <td>{late_taxrow_2}</td>
+    <td>{late_taxrow_3}</td>
   </tr>
   <tr>
-    <th>{taxton} (MAM)</th>
-    <td colspan="4">one verse — ends {late_taxton_end}</td>
+    <th><abbr title="elyon (upper cantillation strand)">E</abbr></th>
+    <td>{late_elyrow_0}</td>
+    <td>{late_elyrow_1}</td>
+    <td>{late_elyrow_2}</td>
+    <td>{late_elyrow_3}</td>
   </tr>
   <tr>
-    <th>upper</th>
-    <td>ends {late_elyon_0}</td>
-    <td>ends {late_elyon_1}</td>
-    <td>ends {late_elyon_2}</td>
-    <td>ends {late_elyon_3}</td>
-  </tr>
-  <tr>
-    <th>MAM #</th>
+    <th><abbr title="MAM verse number">M</abbr></th>
     <td colspan="4">20:12</td>
   </tr>
   <tr>
-    <th>BHS #</th>
+    <th><abbr title="BHS verse number">B</abbr></th>
     <td>20:13</td>
     <td>20:14</td>
     <td>20:15</td>
     <td>20:16</td>
   </tr>
   <tr>
-    <th>Sef #</th>
+    <th><abbr title="Sefaria verse number">S</abbr></th>
     <td colspan="4">20:13</td>
   </tr>
 </table>"""
@@ -473,41 +483,39 @@ _DEUT_SAB_TABLE = """\
   </tr>
 </table>"""
 
-# Appendix — the Deuteronomy late split (5:16), same shape as _LATE_TABLE. Only the ninth
-# commandment's end-word differs from Exodus (שָׁוְא vs שָׁקֶר), so it alone is full-strength.
+# Appendix — the Deuteronomy late split (5:16), same shape as _LATE_TABLE, its words shaded
+# against their Exodus twins (agree = washed out). Deut differs at the connective וְ on the
+# 2nd–4th commandments (וְלֹא vs Exodus's לֹא) and the ninth's end-word (שָׁוְא vs שָׁקֶר),
+# so only those forms stay full-strength; everything else washes out.
 _DEUT_LATE_TABLE = """\
-<table>
+<table dir="rtl">
   <tr>
-    <th>scripture order →</th>
-    <th>"You shall not murder"</th>
-    <th>"… commit adultery"</th>
-    <th>"… steal"</th>
-    <th>"… bear false witness"</th>
+    <th><abbr title="taḥton (lower cantillation strand)">T</abbr></th>
+    <td>{deut_late_taxrow_0}</td>
+    <td>{deut_late_taxrow_1}</td>
+    <td>{deut_late_taxrow_2}</td>
+    <td>{deut_late_taxrow_3}</td>
   </tr>
   <tr>
-    <th>{taxton} (MAM)</th>
-    <td colspan="4">one verse — ends {deut_late_taxton_end}</td>
+    <th><abbr title="elyon (upper cantillation strand)">E</abbr></th>
+    <td>{deut_late_elyrow_0}</td>
+    <td>{deut_late_elyrow_1}</td>
+    <td>{deut_late_elyrow_2}</td>
+    <td>{deut_late_elyrow_3}</td>
   </tr>
   <tr>
-    <th>upper</th>
-    <td>ends {deut_late_elyon_0}</td>
-    <td>ends {deut_late_elyon_1}</td>
-    <td>ends {deut_late_elyon_2}</td>
-    <td>ends {deut_late_elyon_3}</td>
-  </tr>
-  <tr>
-    <th>MAM #</th>
+    <th><abbr title="MAM verse number">M</abbr></th>
     <td colspan="4">5:16</td>
   </tr>
   <tr>
-    <th>BHS #</th>
+    <th><abbr title="BHS verse number">B</abbr></th>
     <td>5:17</td>
     <td>5:18</td>
     <td>5:19</td>
     <td>5:20</td>
   </tr>
   <tr>
-    <th>Sef #</th>
+    <th><abbr title="Sefaria verse number">S</abbr></th>
     <td colspan="4">5:17</td>
   </tr>
 </table>"""
@@ -525,16 +533,12 @@ _TABLE_TEMPLATES = {
 
 def render_full_html(books_mpu):
     examples = strands.gather_examples(books_mpu)
-    late = examples.pop("late_elyon_ends")
-    deut_late = examples.pop("deut_late_elyon_ends")
     fields = {
         "vdiff_url": _VDIFF_URL,
         "pbp_foi_url": _PBP_FOI_URL,
         "taxton": _TAXTON,
         "elyon": _ELYON,
         **examples,
-        **{f"late_elyon_{i}": w for i, w in enumerate(late)},
-        **{f"deut_late_elyon_{i}": w for i, w in enumerate(deut_late)},
     }
     comment = provenance.generated_html_comment(_GENERATOR_FILE)
     tables = {name: tmpl.format(**fields) for name, tmpl in _TABLE_TEMPLATES.items()}

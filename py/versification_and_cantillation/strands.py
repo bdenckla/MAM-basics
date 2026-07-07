@@ -129,16 +129,6 @@ def _deut_range(ex_ends, de_ends, *, start, stop):
     return f"{first}…{last}"
 
 
-def _late_shade(de_cell, ex_cell):
-    """Shade one late-split end-word: the last word of a Deuteronomy cell against the last
-    word of its Exodus twin. Unlike the Sabbath ranges these are shown byte-faithfully (the
-    body's late table does too, e.g. late_taxton_end), so agreement is tested on the full
-    pointed word — the ninth commandment's שָׁוְא (Deut) vs שָׁקֶר (Exod) being the lone
-    difference among the four."""
-    de_word, ex_word = _last_word(de_cell), _last_word(ex_cell)
-    return _shade(de_word, "mid", de_word == ex_word)
-
-
 def gather_examples(books_mpu):
     """Return the dict of byte-faithful Hebrew example strings the doc splices in."""
     exo = books_mpu[tbn.BK_EXODUS]["verses_plus"]
@@ -229,6 +219,39 @@ def gather_examples(books_mpu):
         """`_range` over a first cell's first word and a last cell's last word."""
         return _range(_first_word(first_cell), _last_word(last_cell), start=start, stop=stop)
 
+    def cell_ends(cell):
+        return _first_word(cell), _last_word(cell)
+
+    # Late split (Exod 20:12), transposed like the Sabbath table but with the roles
+    # mirrored. There, the taxton read four verses and the elyon was the one spanning
+    # verse; here the taxton is the single spanning verse (green on the first
+    # commandment's start, red on שקר, its two interior cells plain) and each of the
+    # four elyon commandments is its own verse (green start / red stop). The four
+    # columns are those commandments in scripture order; tax_2012[i]/ely_2012[i] are the
+    # two strands' readings of commandment i, so each column shows both. The four upper
+    # verses all close in sof pasuq; the last shares its שקר with the taxton's outer end.
+    n_late = len(ely_2012)  # 4 short commandments
+    late_taxrows = {
+        f"late_taxrow_{i}": rng(c, c, start=(i == 0), stop=(i == n_late - 1))
+        for i, c in enumerate(tax_2012)
+    }
+    late_elyrows = {f"late_elyrow_{i}": rng(c, c) for i, c in enumerate(ely_2012)}
+    # Deuteronomy appendix — the same late split (Deut 5:16), shaded against its Exodus
+    # twin like the appendix Sabbath (see _deut_range): words matching Exodus wash out,
+    # words that differ stay full strength. Deut differs in two ways here — a connective
+    # וְ on the 2nd–4th commandments (וְלֹא vs Exodus's asyndetic לֹא) and the ninth's
+    # end-word (שָׁוְא vs שָׁקֶר) — so those are the only forms left at full strength.
+    deut_late_taxrows = {
+        f"deut_late_taxrow_{i}": _deut_range(
+            cell_ends(ex), cell_ends(de), start=(i == 0), stop=(i == n_late - 1)
+        )
+        for i, (ex, de) in enumerate(zip(tax_2012, tax_516_deut))
+    }
+    deut_late_elyrows = {
+        f"deut_late_elyrow_{i}": _deut_range(cell_ends(ex), cell_ends(de), start=True, stop=True)
+        for i, (ex, de) in enumerate(zip(ely_2012, ely_516_deut))
+    }
+
     return {
         # early split — boundary words of the two dual-trope units
         "early_taxton_avadim": _last_word(tax_202[0]),   # …עֲבָדִ֑ים  (etnachta, mid-verse)
@@ -273,9 +296,9 @@ def gather_examples(books_mpu):
         "sab_elyrow_10": _range(*strand_ends(10, _ELYON), start=False, stop=True),
         # (The Sabbath table's MAM/BHS number rows — MAM 20:7–20:10, BHS 20:8–20:11 — are
         # static Exodus verse numbers, so they are hardcoded in the table template.)
-        # late split — the four upper cells end in sof pasuq; the last is shared
-        "late_elyon_ends": [_last_word(cell) for cell in ely_2012],
-        "late_taxton_end": _last_word(tax_2012[-1]),     # …שָֽׁקֶר׃ (shared outer end)
+        # late split — the taxton spanning verse and the four upper commandments (built above)
+        **late_taxrows,
+        **late_elyrows,
         # Deuteronomy appendix — Sabbath (Deut 5:11-5:14 mirrors Exod 20:7-20:10), each
         # Deut endpoint shaded against its Exodus twin (see _deut_range): identical words
         # wash out, differing words stay full-strength, so זכור→שמור and Deut's longer text
@@ -288,10 +311,9 @@ def gather_examples(books_mpu):
         "deut_sab_elyrow_12": _deut_range(strand_ends(8, _ELYON), deut_strand_ends(12, _ELYON), start=False, stop=False),
         "deut_sab_elyrow_13": _deut_range(strand_ends(9, _ELYON), deut_strand_ends(13, _ELYON), start=False, stop=False),
         "deut_sab_elyrow_14": _deut_range(strand_ends(10, _ELYON), deut_strand_ends(14, _ELYON), start=False, stop=True),
-        # Deuteronomy appendix — late split (Deut 5:16). The three shared commandments wash
-        # out; only the ninth's end-word differs (עֵד שָׁוְא vs Exodus עֵד שָׁקֶר).
-        "deut_late_elyon_ends": [_late_shade(dc, ec) for dc, ec in zip(ely_516_deut, ely_2012)],
-        "deut_late_taxton_end": _late_shade(tax_516_deut[-1], tax_2012[-1]),
+        # Deuteronomy appendix — late split (Deut 5:16), taxton and elyon rows (built above)
+        **deut_late_taxrows,
+        **deut_late_elyrows,
         # Numbers 25/26
         "num_seg0": num_261[0],                          # וַיְהִ֖י אַחֲרֵ֣י הַמַּגֵּפָ֑ה
         "num_seg0_last": _last_word(num_261[0]),         # הַמַּגֵּפָ֑ה (etnachta)
