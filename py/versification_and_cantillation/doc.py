@@ -106,30 +106,11 @@ The <strong>{taxton}</strong> (תחתון) (lower) strand
 divides the passage into twelve chanted verses.
 The <strong>{elyon}</strong> (עליון) (upper) strand
 divides the passage into <strong>ten</strong> chanted verses,
-each traditionally construed as one of the Ten Commandments.
-Relative to the {taxton} strand, the lengths of the {elyon} verses are uneven: some are very long,
-containing part or all of multiple {taxton} verses,
-while four are very short, containing only a two words each.
-To land on ten, it does two complementary things.
-Toward the end it makes four very short (two-word) verses, giving
-"You shall not murder / commit adultery / steal / bear false witness" a verse each.
-Toward the beginning it does the opposite, merging what the {taxton} reads as
-several verses into one very long verse —
-and it does this a second time, later, for the Sabbath commandment.
-The long verses pay for the short ones:
-without the merges, the four extra short verses would push the count past ten.
-The {taxton}, by contrast, ignores the ten-commandment grouping
-and divides the same text into <strong>twelve</strong> chanted verses.</p>
-
-<p>MAM versifies the Decalogues
-according to the chanted verses of the <strong>{taxton}</strong> cantillation.
-In the MAM-simple data these strands are the
-<code>cant-alef</code> ({taxton})
-and
-<code>cant-bet</code> ({elyon}) elements.
-(The <code>cant-combined</code> elements have the two sets of accents superimposed,
-in the (hard to read) style of the great manuscripts.)
-</p>
+each traditionally taken to be one of the Ten Commandments.
+Relative to the {taxton}, the lengths of the {elyon} verses are uneven.
+There are two elyon verses that are quite long, each containing at least three {taxton} verses.
+On the other hand, there are four consecutive elyon verses that are very short:
+all four are contained within a single {taxton} verse.
 
 <h2>The Decalogues: two versification policies</h2>
 
