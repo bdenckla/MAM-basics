@@ -141,7 +141,6 @@ def gather_examples(books_mpu):
     tax_202 = _cells(verse(exo, tbn.BK_EXODUS, 20, 2), _TAXTON)
     ely_202 = _cells(verse(exo, tbn.BK_EXODUS, 20, 2), _ELYON)
     tax_203 = _cells(verse(exo, tbn.BK_EXODUS, 20, 3), _TAXTON)
-    tax_204 = _cells(verse(exo, tbn.BK_EXODUS, 20, 4), _TAXTON)
     tax_205 = _cells(verse(exo, tbn.BK_EXODUS, 20, 5), _TAXTON)
 
     # The elyon reading of the three interior verses. Unlike the taxton strand, the
@@ -155,6 +154,9 @@ def gather_examples(books_mpu):
 
     def ely_ends(vrnu):
         return strand_ends(vrnu, _ELYON)
+
+    def tax_ends(vrnu):
+        return strand_ends(vrnu, _TAXTON)
 
     def deut_strand_ends(vrnu, param):
         """strand_ends for the Deuteronomy Decalogue (chapter 5). The Deut counterpart of
@@ -176,8 +178,22 @@ def gather_examples(books_mpu):
     # The early split's verse (Exod 20:2) has exactly two dual-trope units:
     # unit 0 = "I am the LORD … house of bondage"; unit 1 = "no other gods … before Me".
     assert len(tax_202) == 2 and len(ely_202) == 2, (len(tax_202), len(ely_202))
-    # The late split (Exod 20:12) reads as four cells in the upper cantillation.
-    assert len(ely_2012) == 4, len(ely_2012)
+    # #200 regression: the taxton and elyon rows of column 20:4 cover the same text span,
+    # so their chanted-verse-initial *word* must share consonants (both לא־תשתחוה). Before
+    # the fix, _cells dropped 20:4's opening clause and the taxton row started at כי.
+    def _consonants(word):
+        return "".join(ch for ch in word if 0x05D0 <= ord(ch) <= 0x05EA)
+
+    assert _consonants(tax_ends(4)[0]) == _consonants(ely_ends(4)[0]), (
+        tax_ends(4)[0],
+        ely_ends(4)[0],
+    )
+    # The late split (Exod 20:12) reads as four cells in each cantillation. Unlike the
+    # early split (see #200), _cells and _strand_word_text agree for 20:12's taxton (its
+    # four cells are clean single-string מ:כפול units), so it keeps using _cells — but
+    # assert taxton/elyon stay cell-aligned, so a future nested template silently dropping
+    # a taxton cell fails loudly here instead of misaligning the late-split columns.
+    assert len(tax_2012) == len(ely_2012) == 4, (len(tax_2012), len(ely_2012))
     # The Deuteronomy late split (5:16) shares that structure — four upper cells.
     assert len(ely_516_deut) == 4, len(ely_516_deut)
     # Numbers 26:1 is a single chanted verse split by a mid-verse petuxah into two runs.
@@ -278,9 +294,15 @@ def gather_examples(books_mpu):
         "early_elyrow_long": _range(
             _first_word(ely_202[1]), ely_205_last, start=False, stop=False
         ),
-        "early_taxrow_203": rng(tax_203[0], tax_203[-1]),
-        "early_taxrow_204": rng(tax_204[0], tax_204[-1]),
-        "early_taxrow_205": rng(tax_205[0], tax_205[-1]),
+        # These read the whole-verse taxton first/last *word* via _strand_word_text
+        # (tax_ends), not via _cells[0]/_cells[-1], exactly as the elyon rows and the
+        # Sabbath table do. _cells silently drops a מ:כפול unit whose strand isn't a
+        # single plain string (e.g. MAM 20:4's opening clause, whose qamats-qatan carries
+        # a nested מ:קמץ template), which made 20:4's taxton cell start at כי instead of
+        # its true chanted-verse-initial לא־תשתחוה. See issue #200.
+        "early_taxrow_203": _range(*tax_ends(3), start=True, stop=True),
+        "early_taxrow_204": _range(*tax_ends(4), start=True, stop=True),
+        "early_taxrow_205": _range(*tax_ends(5), start=True, stop=True),
         # Sabbath merge, transposed like the early-split table: the taxton row's four
         # cells are each a whole verse (green start / red stop); the elyon row is one
         # verse spanning all four — green on 20:7's start, red on 20:10's end, the two
