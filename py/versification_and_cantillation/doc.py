@@ -140,9 +140,14 @@ versifications differ only in which chanted-verse starts have a cv-label:</p>
   <li><strong>BHS</strong> places a cv-label at the start of every {taxton} <strong>or</strong> {elyon} verse —
   the union of the two cantillations' verse boundaries.</li>
   <li><strong>Sefaria</strong> is a hybrid of MAM and BHS:
-  it honors the {elyon} cantillation's extra boundary at
-  the <em>early</em> split but not at the <em>late</em> split.</li>
+  it places a cv-label at the start of every {taxton} verse,
+  and at the start of some but not all {elyon} verses.</li>
 </ul>
+
+<p>From here on we discuss only MAM and BHS: describing Sefaria in detail adds
+nothing of interest, since it is merely a hybrid of the two. The Sefaria details
+can be found in the <a href="{vdiff_url}">parent document</a>, which treats
+versification without reference to cantillation.</p>
 
 <p>Because BHS honors a superset of MAM's boundaries, every MAM Decalogue verse maps
 to <em>one or more</em> whole BHS verses, never the reverse.</p>
@@ -172,8 +177,7 @@ Deuteronomy Decalogue, which shares the same structure but differs in its text.)
 <p>Because BHS numbers at every {taxton} <strong>or</strong> {elyon} verse-start (their union),
 the lone {elyon} boundary that {taxton} lacks — at {early_elyon_avadim} —
 adds one BHS verse: MAM's single 20:2 becomes BHS 20:2 / 20:3, and the rest of the
-chapter shifts up by one. Sefaria matches BHS here; Deuteronomy 5:6 behaves
-identically.</p>
+chapter shifts up by one. Deuteronomy 5:6 behaves identically.</p>
 
 <h3>The late split — nested boundaries</h3>
 
@@ -188,14 +192,11 @@ four strictly contained within the one {taxton} verse, both ending together at �
 the four short commandments in scripture order. The {taxton} (<abbr title="taḥton">T</abbr>)
 row is now the single verse spanning all four — green on its first word, red on שקר, its
 interior plain — while each {elyon} (<abbr title="elyon">E</abbr>) commandment is its own
-verse. The number rows add Sefaria (<abbr title="Sefaria verse number">S</abbr>): MAM and
-Sefaria each number once for the one {taxton} verse (the spanning cells), whereas BHS
-numbers each {elyon} start.)</p>
+verse. The number rows show that MAM numbers once for the one {taxton} verse (the spanning
+cells), whereas BHS numbers each {elyon} start.)</p>
 
-<p>So BHS gives <strong>four verses where MAM has one</strong>. Sefaria, unlike BHS, does
-<strong>not</strong> honor the upper cantillation here — it keeps MAM's single verse (one
-cv-label). This late split is the one place where Sefaria and BHS part ways. Deuteronomy
-5:16 works identically.</p>
+<p>So BHS gives <strong>four verses where MAM has one</strong>. Deuteronomy 5:16 works
+identically.</p>
 
 <h2>Numbers 25/26: a break at an <em>etnaḥta</em>, not a <em>sof pasuq</em></h2>
 
@@ -219,7 +220,7 @@ disjunctive, but not a verse end. BHS promotes that break to a verse <strong>and
 boundary, making its 25:19 end at {num_seg0_last} — on an <em>etnaḥta</em>, <strong>not</strong> a
 <em>sof pasuq</em>. So BHS's 25:19 is not a chanted verse; the MAM-simple data marks it
 <code>ends-with-sampe: "pe2"</code> and <code>contents-corresponds-to: "less than a full verse in
-MAM"</code>. Sefaria, like MAM, keeps the single verse.</p>
+MAM"</code>.</p>
 
 <p>Why did BHS make this a <em>chapter</em> boundary as well? The <em>etnaḥta</em> and its
 accompanying פסקא באמצע פסוק already signal a strong break here; perhaps someone
@@ -380,9 +381,8 @@ _EARLY_STRAND_TABLE = """\
 # The late split (Exod 20:12), transposed like _SAB_TABLE but mirrored: the taxton is the
 # single verse spanning all four columns (green start on 20:12's first word, red stop on
 # שקר, interior plain), while each of the four short commandments is its own elyon verse.
-# The columns are those commandments in scripture order. MAM/Sefaria keep one number
-# (colspan), BHS numbers each elyon start (four verses). Unlike the two tables above this
-# one carries a Sefaria (S) row, since the late split is where Sefaria and BHS diverge.
+# The columns are those commandments in scripture order. MAM keeps one number (colspan),
+# BHS numbers each elyon start (four verses).
 _LATE_TABLE = """\
 <table dir="rtl">
   <tr>
@@ -410,41 +410,33 @@ _LATE_TABLE = """\
     <td>20:15</td>
     <td>20:16</td>
   </tr>
-  <tr>
-    <th><abbr title="Sefaria verse number">S</abbr></th>
-    <td colspan="4">20:13</td>
-  </tr>
 </table>"""
 
-# The closing summary: one row per passage, contrasting where MAM/BHS/Sefaria number.
+# The closing summary: one row per passage, contrasting where MAM/BHS number.
 _SUMMARY_TABLE = """\
 <table>
   <tr>
     <th>Passage</th>
     <th>MAM numbers at</th>
     <th>BHS numbers at</th>
-    <th>Sefaria</th>
     <th>Boundary relationship</th>
   </tr>
   <tr>
     <td>Decalogues — early (Exod 20:2, Deut 5:6)</td>
     <td>{taxton} starts</td>
     <td>{taxton} <strong>or</strong> upper starts</td>
-    <td>as BHS</td>
     <td>dual cantillation — <strong>overlapping</strong></td>
   </tr>
   <tr>
     <td>Decalogues — late (Exod 20:12, Deut 5:16)</td>
     <td>{taxton} starts</td>
     <td>{taxton} <strong>or</strong> upper starts</td>
-    <td>{taxton} starts only</td>
     <td>dual cantillation — <strong>nested</strong></td>
   </tr>
   <tr>
     <td>Numbers 25/26</td>
     <td>chanted-verse starts</td>
     <td>+ mid-verse break (onto <em>etnaḥta</em>)</td>
-    <td>as MAM</td>
     <td>break at <em>etnaḥta</em>, not <em>sof pasuq</em></td>
   </tr>
 </table>"""
@@ -513,10 +505,6 @@ _DEUT_LATE_TABLE = """\
     <td>5:18</td>
     <td>5:19</td>
     <td>5:20</td>
-  </tr>
-  <tr>
-    <th><abbr title="Sefaria verse number">S</abbr></th>
-    <td colspan="4">5:17</td>
   </tr>
 </table>"""
 
