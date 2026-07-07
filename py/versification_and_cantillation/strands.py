@@ -122,9 +122,12 @@ def gather_examples(books_mpu):
     # _cells can't grab it as a plain cell; _strand_word_text flattens the whole verse's
     # elyon strand to read off its first and last *word*. The long elyon verse runs
     # mid-verse through 20:3–20:4 (no sof pasuq) and ends only at 20:5's מצותי.
-    def ely_ends(vrnu):
-        words = _strand_word_text(verse(exo, tbn.BK_EXODUS, 20, vrnu), _ELYON).split()
+    def strand_ends(vrnu, param):
+        words = _strand_word_text(verse(exo, tbn.BK_EXODUS, 20, vrnu), param).split()
         return words[0], words[-1]
+
+    def ely_ends(vrnu):
+        return strand_ends(vrnu, _ELYON)
 
     ely_203_first, ely_203_last = ely_ends(3)
     ely_204_first, ely_204_last = ely_ends(4)
@@ -141,6 +144,13 @@ def gather_examples(books_mpu):
     assert len(ely_2012) == 4, len(ely_2012)
     # Numbers 26:1 is a single chanted verse split by a mid-verse petuxah into two runs.
     assert len(num_261) == 2, len(num_261)
+    # Sabbath merge: the elyon runs unbroken across 20:7-20:9 (no sof pasuq) and closes
+    # only at 20:10, so what the taxton reads as four verses is one elyon verse.
+    for _sab in (7, 8, 9):
+        assert hpunc.SOPA not in _strand_word_text(
+            verse(exo, tbn.BK_EXODUS, 20, _sab), _ELYON
+        ), _sab
+    assert hpunc.SOPA in _strand_word_text(verse(exo, tbn.BK_EXODUS, 20, 10), _ELYON)
 
     def _range(first_word, last_word, *, start, stop):
         """A 'firstword…lastword' range label for the early-split table, each word
@@ -194,6 +204,19 @@ def gather_examples(books_mpu):
         "early_taxrow_204": rng(tax_204[0], tax_204[-1]),
         "early_taxrow_205": rng(tax_205[0], tax_205[-1]),
         "early_row_2011": rng(tax_2011[0], tax_2011[0]),
+        # Sabbath merge, transposed like the early-split table: the taxton row's four
+        # cells are each a whole verse (green start / red stop); the elyon row is one
+        # verse spanning all four — green on 20:7's start, red on 20:10's end, the two
+        # interior cells (20:8, 20:9) wholly plain. Words use _strand_word_text (not
+        # _cells): 20:9's taxton strand is all nested markup, so _cells yields nothing.
+        "sab_taxrow_7": _range(*strand_ends(7, _TAXTON), start=True, stop=True),
+        "sab_taxrow_8": _range(*strand_ends(8, _TAXTON), start=True, stop=True),
+        "sab_taxrow_9": _range(*strand_ends(9, _TAXTON), start=True, stop=True),
+        "sab_taxrow_10": _range(*strand_ends(10, _TAXTON), start=True, stop=True),
+        "sab_elyrow_7": _range(*strand_ends(7, _ELYON), start=True, stop=False),
+        "sab_elyrow_8": _range(*strand_ends(8, _ELYON), start=False, stop=False),
+        "sab_elyrow_9": _range(*strand_ends(9, _ELYON), start=False, stop=False),
+        "sab_elyrow_10": _range(*strand_ends(10, _ELYON), start=False, stop=True),
         # late split — the four upper cells end in sof pasuq; the last is shared
         "late_elyon_ends": [_last_word(cell) for cell in ely_2012],
         "late_taxton_end": _last_word(tax_2012[-1]),     # …שָֽׁקֶר׃ (shared outer end)

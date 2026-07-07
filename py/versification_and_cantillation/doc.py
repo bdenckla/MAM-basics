@@ -89,7 +89,7 @@ all versifications discussed here (MAM, BHS, and Sefaria)
 make the same trade-off in the face of this "impossible" situation:
 they all agree to label Genesis 35:22 as a single numbered verse.)</p>
 
-<p>Other than the Decalogues cases,
+<p>Other than the cases in the Decalogues,
 the one other case in our versifications (MAM, BHS, and Sefaria)
 where a numbered verse is not a chanted verse
 is the Numbers 25/26 boundary in BHS versification.
@@ -102,18 +102,22 @@ BHS 26:1 starts right after an <em>etnaḥta</em>.</p>
 <h2>The Decalogues: background</h2>
 
 <p>Each of the Decalogues carries <strong>two</strong> parallel strands of cantillation.
-The <strong>lower</strong> ({taxton}, תחתון) strand divides the passage into ordinary-length chanted verses.
-The <strong>upper</strong> ({elyon}, עליון) strand favors a different division of the text.
-That division splits the passage into exactly <strong>ten</strong> chanted verses — one
-per commandment (the עשרת הדברות, the "Ten Commandments"). To land on ten, it does two
-complementary things. Toward the end it makes four very short (two-word) verses, giving
+The <strong>lower</strong> ({taxton}, תחתון) strand
+divides the passage into twelve ordinary-length chanted verses.
+The <strong>upper</strong> ({elyon}, עליון) strand
+has a different division of the text.
+The {elyon} divides the passage into <strong>ten</strong> chanted verses,
+each traditionally construed as one of the Ten Commandments.
+To land on ten, it does two complementary things.
+Toward the end it makes four very short (two-word) verses, giving
 "You shall not murder / commit adultery / steal / bear false witness" a verse each.
 Toward the beginning it does the opposite, merging what the {taxton} reads as
-several verses into one very long verse — and it does this a second time, later, for the
-Sabbath commandment. The long verses pay for the short ones: without the merges, the four
-extra short verses would push the count past ten. The {taxton}, by contrast,
-ignores the ten-commandment grouping and cuts the same text into <strong>twelve</strong>
-ordinary-length verses.</p>
+several verses into one very long verse —
+and it does this a second time, later, for the Sabbath commandment.
+The long verses pay for the short ones:
+without the merges, the four extra short verses would push the count past ten.
+The {taxton}, by contrast, ignores the ten-commandment grouping
+and divides the same text into <strong>twelve</strong> ordinary-length verses.</p>
 
 <p>MAM versifies the Decalogues
 according to the chanted verses of the <strong>lower</strong> cantillation.
@@ -139,9 +143,7 @@ three traditions differ only in <em>whose</em> chanted-verse starts they honor:<
 </ul>
 
 <p>Because BHS honors a superset of MAM's boundaries, every MAM Decalogue verse maps
-to <em>one or more</em> whole BHS verses, never the reverse. (Outside the Decalogues there
-is only one cantillation, so "lower or upper" collapses to it and all three
-traditions agree.)</p>
+to <em>one or more</em> whole BHS verses, never the reverse.</p>
 
 <p>The whole story is then <em>how the two cantillations' boundaries sit relative to each
 other</em> — and this differs between the two splits. At the <strong>early</strong> split they
@@ -221,6 +223,48 @@ are colored.</p>
     <td>{early_row_2011}</td>
     <td>20:11</td>
     <td>20:12</td>
+  </tr>
+</table>
+
+<table dir="rtl">
+  <tr>
+    <th>{taxton}</th>
+    <td>{early_taxrow_202a}</td>
+    <td>{early_taxrow_202b}</td>
+    <td>{early_taxrow_203}</td>
+    <td>{early_taxrow_204}</td>
+    <td>{early_taxrow_205}</td>
+  </tr>
+  <tr>
+    <th>{elyon}</th>
+    <td>{early_elyrow_202a}</td>
+    <td>{early_elyrow_202b}</td>
+    <td>{early_elyrow_203}</td>
+    <td>{early_elyrow_204}</td>
+    <td>{early_elyrow_205}</td>
+  </tr>
+</table>
+
+<p>The {elyon}'s <em>second</em> merge — the Sabbath commandment, MAM 20:7–20:10 — reads
+the same way, in the same transposed form. The {taxton} divides it into four verses (each
+cell green-start / red-stop); the {elyon} reads all four as one verse, so only its outer
+endpoints are colored — green on 20:7's start, red on 20:10's end — and the two interior
+cells are wholly plain:</p>
+
+<table dir="rtl">
+  <tr>
+    <th>{taxton}</th>
+    <td>{sab_taxrow_7}</td>
+    <td>{sab_taxrow_8}</td>
+    <td>{sab_taxrow_9}</td>
+    <td>{sab_taxrow_10}</td>
+  </tr>
+  <tr>
+    <th>{elyon}</th>
+    <td>{sab_elyrow_7}</td>
+    <td>{sab_elyrow_8}</td>
+    <td>{sab_elyrow_9}</td>
+    <td>{sab_elyrow_10}</td>
   </tr>
 </table>
 
