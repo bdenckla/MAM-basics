@@ -50,49 +50,65 @@ CSS_FILENAME = "versification-and-cantillation.css"
 _BODY_TEMPLATE = """\
 <h1>Versification and Cantillation</h1>
 
-<p>This is a companion to
-<a href="{vdiff_url}">versification-differences.md</a>. That document
-deliberately treats a "verse" as nothing more than the span of text between two
-cv-labels, ignoring cantillation. This document discusses the
-cases in which cantillation helps explain why the versification
-differences arose: the four Decalogue splits and the Numbers 25/26 boundary.</p>
+<p>This document is a companion to <a href="{vdiff_url}">versification-differences.md</a>.
+That document deliberately ignores cantillation,
+treating a "verse" as nothing more than a span of text between two cv-labels.
+That definition of a verse is what we will call a "numbered verse" in this document.
+In this document we will not ignore cantillation,
+and it will be important to make a distinction between a numbered verse and a chanted verse.
+We define a chanted verse as a span of text between two sof pasuq marks,
+where that span's accents obey the rules of cantillation.</p>
 
-<p>Every MAM numbered verse ends at a <em>sof pasuq</em> — all 23,202 numbered verses, not
-just the cases below. But some MAM numbered verses in the Decalogues have one
-or more "extra" <em>sof pasuq</em> marks besides the one at the end.
-It is at these places where the Decalogue versification differences occur,
+<p>In cases that are rare, but central to this document,
+a numbered verse is not also a chanted verse.
+Most such cases give rise to versification (verse numbering) differences.
+We shall discuss five such cases: the four Decalogue splits and the Numbers 25/26 boundary.</p>
+
+<p>(The only such case that does not give rise to numbering differences is Genesis 35:22.
+Despite containing two chanted verses in one of its cantillation strands,
+all three numbering systems discussed here (MAM, BHS, and Sefaria)
+agree to label it as a single numbered verse.</p>
+
+<p>Every MAM numbered verse ends with a <em>sof pasuq</em>
+— all 23,202 numbered verses, not just the cases below.
+But some MAM numbered verses in the Decalogues
+have one or more "extra" <em>sof pasuq</em> marks besides the one at the end.
+It is at these places where the Decalogue numbering differences occur,
 because BHS ends a numbered verse at these "extra" <em>sof pasuq</em> marks, too.
-(The Sefaria Decalogues have a mix of MAM and BHS versification.)</p>
+(The Sefaria Decalogues have a mix of MAM and BHS numbering.)</p>
 
-<p>The difference regarding the Numbers 25/26 boundary
+<p>The numbering difference regarding the Numbers 25/26 boundary
 has little in common with the Decalogue cases.
-There in Numbers, BHS splits the chanted verse that MAM calls 26:1 into
+In Numbers, BHS splits the chanted verse that MAM calls 26:1 into
 a 25:19 span (a verse number that does not exist in MAM)
 and a 26:1 span.
 BHS 26:1 starts right after an <em>etnaḥta</em>.</p>
 
-<h2>Terminology</h2>
+<h2>The Decalogues: background</h2>
 
-<ul>
-  <li><strong>Chanted verse</strong> — a span that ends where the cantillation ends a verse: the
-  strong disjunctive <em>silluq</em> on the last stressed syllable, immediately followed
-  by <em>sof pasuq</em> (the <code>׃</code> mark). A <em>sof pasuq</em> is the visible signature of a
-  chanted-verse end. (<em>Silluq</em> is only that verse-final mark; the identical-looking
-  mark elsewhere in a verse is an ordinary <em>meteg</em>, a metrical mark, not a
-  verse-end. Likewise the vertical stroke of <em>paseq</em> / <em>legarmeh</em> is unrelated —
-  it is not a verse boundary.)</li>
-  <li><strong>The two Decalogues.</strong> The Decalogue carries <strong>two</strong> parallel cantillations.
-  The <strong>lower</strong> (<em>taḥton</em>, תחתון) parses the passage into ordinary-length verses;
-  the <strong>upper</strong> (<em>elyon</em>, עליון) favors a different division of the text, most
-  strikingly with four very short (two-word) verses toward the end. MAM numbers
-  the Decalogue by the <strong>lower</strong> cantillation. In the MAM-simple data these strands
-  are the <code>cant-alef</code> (lower / <em>taḥton</em>) and <code>cant-bet</code> (upper / <em>elyon</em>) elements,
-  with <code>cant-combined</code> the two superimposed.</li>
-</ul>
+<p>Each of the Decalogues carries <strong>two</strong> parallel strands of cantillation.
+The <strong>lower</strong> (<em>taḥton</em>, תחתון) strand divides the passage into ordinary-length chanted verses.
+The <strong>upper</strong> (<em>elyon</em>, עליון) strand favors a different division of the text.
+The <em>elyon</em> division includes four very short (two-word) chanted verses toward the end.
+It also includes a very long verse toward the beginning.
+This long verse is complementary to the short verses because, conceptually,
+it allows the <em>elyon</em> to have those four short verses later
+while still having XXX fill this number in here XXX verses, like the <em>taḥton</em>.
+XXX verify this that the taxton and elyon verse counts are equal XXX</p>
+
+<p>MAM gives verse numbers to the Decalogues
+according to the chanted verses of the <strong>lower</strong> cantillation.
+In the MAM-simple data these strands are the
+<code>cant-alef</code> (lower / <em>taḥton</em>)
+and
+<code>cant-bet</code> (upper / <em>elyon</em>) elements.
+(The <code>cant-combined</code> elements have the two sets of accents superimposed,
+in the (hard to read) style of the great manuscripts.)</li>
+</p>
 
 <h2>The Decalogue: two numbering policies</h2>
 
-<p>A cv-number marks the <strong>start</strong> of a numbered verse. Across the Decalogue the
+<p>A cv-number marks the <strong>start</strong> of a numbered verse. Across the Decalogues, the
 three traditions differ only in <em>whose</em> chanted-verse starts they honor:</p>
 
 <ul>
@@ -322,7 +338,7 @@ real chanted-verse ends (in the other cantillation); here, BHS's extra boundary 
 <p>In every Decalogue case MAM's numbered boundaries coincide with lower chanted-verse
 ends, and BHS's extra boundaries are upper chanted-verse ends. In Numbers 25/26 BHS's
 extra boundary is not a chanted-verse end in <em>any</em> cantillation — it lands on an
-<em>etnaḥta</em>. That is the whole cantillational story behind these versification
+<em>etnaḥta</em>. That is the whole cantillational story behind these numbering
 differences.</p>
 
 <p>The other differences catalogued in
