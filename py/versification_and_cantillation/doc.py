@@ -102,12 +102,14 @@ BHS 26:1 starts right after an <em>etnaḥta</em>.</p>
 <h2>The Decalogues: background</h2>
 
 <p>Each of the Decalogues carries <strong>two</strong> parallel strands of cantillation.
-The <strong>lower</strong> ({taxton}, תחתון) strand
-divides the passage into twelve ordinary-length chanted verses.
-The <strong>upper</strong> ({elyon}, עליון) strand
-has a different division of the text.
-The {elyon} divides the passage into <strong>ten</strong> chanted verses,
+The <strong>{taxton}</strong> (תחתון) (lower) strand
+divides the passage into twelve chanted verses.
+The <strong>{elyon}</strong> (עליון) (upper) strand
+divides the passage into <strong>ten</strong> chanted verses,
 each traditionally construed as one of the Ten Commandments.
+Relative to the {taxton} strand, the lengths of the {elyon} verses are uneven: some are very long,
+containing part or all of multiple {taxton} verses,
+while four are very short, containing only a two words each.
 To land on ten, it does two complementary things.
 Toward the end it makes four very short (two-word) verses, giving
 "You shall not murder / commit adultery / steal / bear false witness" a verse each.
@@ -117,14 +119,14 @@ and it does this a second time, later, for the Sabbath commandment.
 The long verses pay for the short ones:
 without the merges, the four extra short verses would push the count past ten.
 The {taxton}, by contrast, ignores the ten-commandment grouping
-and divides the same text into <strong>twelve</strong> ordinary-length verses.</p>
+and divides the same text into <strong>twelve</strong> chanted verses.</p>
 
 <p>MAM versifies the Decalogues
-according to the chanted verses of the <strong>lower</strong> cantillation.
+according to the chanted verses of the <strong>{taxton}</strong> cantillation.
 In the MAM-simple data these strands are the
-<code>cant-alef</code> (lower / {taxton})
+<code>cant-alef</code> ({taxton})
 and
-<code>cant-bet</code> (upper / {elyon}) elements.
+<code>cant-bet</code> ({elyon}) elements.
 (The <code>cant-combined</code> elements have the two sets of accents superimposed,
 in the (hard to read) style of the great manuscripts.)
 </p>
@@ -135,10 +137,10 @@ in the (hard to read) style of the great manuscripts.)
 three traditions differ only in <em>whose</em> chanted-verse starts they honor:</p>
 
 <ul>
-  <li><strong>MAM</strong> places a number at the start of every <strong>lower</strong> ({taxton}) verse.</li>
-  <li><strong>BHS</strong> places a number at the start of every <strong>lower <em>or</em> upper</strong> verse — the
+  <li><strong>MAM</strong> places a number at the start of every <strong>{taxton}</strong> ({taxton}) verse.</li>
+  <li><strong>BHS</strong> places a number at the start of every <strong>{taxton} <em>or</em> {elyon}</strong> verse — the
   union of the two cantillations' verse boundaries.</li>
-  <li><strong>Sefaria</strong> is a hybrid: it honors the upper cantillation's extra boundary at
+  <li><strong>Sefaria</strong> is a hybrid: it honors the {elyon} cantillation's extra boundary at
   the <em>early</em> split but not at the <em>late</em> split.</li>
 </ul>
 
@@ -147,8 +149,8 @@ to <em>one or more</em> whole BHS verses, never the reverse.</p>
 
 <p>The whole story is then <em>how the two cantillations' boundaries sit relative to each
 other</em> — and this differs between the two splits. At the <strong>early</strong> split they
-<strong>overlap</strong> (the splits interleave); at the <strong>late</strong> split the upper is <strong>strictly
-contained within</strong> a single lower verse.</p>
+<strong>overlap</strong> (the splits interleave); at the <strong>late</strong> split the {elyon} is <strong>strictly
+contained within</strong> a single {taxton} verse.</p>
 
 <h3>The early split — overlapping boundaries</h3>
 
@@ -276,10 +278,10 @@ identically.</p>
 
 <h3>The late split — nested boundaries</h3>
 
-<p>Here the two cantillations <strong>share</strong> the outer boundary and the upper merely
-subdivides the interior. In MAM Exodus 20:12 the lower cantillation runs the four
-short commandments as a <strong>single</strong> verse; the upper gives each its own verse — all
-four strictly contained within the one lower verse, both ending together at שקר:</p>
+<p>Here the two cantillations <strong>share</strong> the outer boundary and the {elyon} merely
+subdivides the interior. In MAM Exodus 20:12 the {taxton} cantillation runs the four
+short commandments as a <strong>single</strong> verse; the {elyon} gives each its own verse — all
+four strictly contained within the one {taxton} verse, both ending together at שקר:</p>
 
 <table>
   <tr>
@@ -290,7 +292,7 @@ four strictly contained within the one lower verse, both ending together at שק
     <th>"… bear false witness"</th>
   </tr>
   <tr>
-    <th>lower (MAM)</th>
+    <th>{taxton} (MAM)</th>
     <td colspan="4">one verse — ends {late_taxton_end}</td>
   </tr>
   <tr>
@@ -377,16 +379,16 @@ real chanted-verse ends (in the other cantillation); here, BHS's extra boundary 
   </tr>
   <tr>
     <td>Decalogues — early (Exod 20:2, Deut 5:6)</td>
-    <td>lower starts</td>
-    <td>lower <strong>or</strong> upper starts</td>
+    <td>{taxton} starts</td>
+    <td>{taxton} <strong>or</strong> upper starts</td>
     <td>as BHS</td>
     <td>dual cantillation — <strong>overlapping</strong></td>
   </tr>
   <tr>
     <td>Decalogues — late (Exod 20:12, Deut 5:16)</td>
-    <td>lower starts</td>
-    <td>lower <strong>or</strong> upper starts</td>
-    <td>lower starts only</td>
+    <td>{taxton} starts</td>
+    <td>{taxton} <strong>or</strong> upper starts</td>
+    <td>{taxton} starts only</td>
     <td>dual cantillation — <strong>nested</strong></td>
   </tr>
   <tr>
@@ -398,7 +400,7 @@ real chanted-verse ends (in the other cantillation); here, BHS's extra boundary 
   </tr>
 </table>
 
-<p>In the Decalogues, MAM's numbered boundaries coincide with lower chanted-verse
+<p>In the Decalogues, MAM's numbered boundaries coincide with {taxton} chanted-verse
 ends, and BHS's extra boundaries are upper chanted-verse ends. In Numbers 25/26 BHS's
 extra boundary is not a chanted-verse end in <em>any</em> cantillation — it lands on an
 <em>etnaḥta</em>. That is the whole cantillational story behind these versification
