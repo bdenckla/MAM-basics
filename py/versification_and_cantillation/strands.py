@@ -102,6 +102,18 @@ def _strip_pointing(word):
     return has.strip_to_accents(word, keep_meteg=keep_meteg)
 
 
+# Abstract Decalogue verse label "E/D N", N=1 at Exodus 20:2 / Deuteronomy 5:6. The two
+# Decalogues share an identical taxton/elyon structure, differing only in chapter (Exod
+# 20 / Deut 5) and start-verse (20:2 / 5:6), so a single N stands in for both; the
+# concrete Exodus and Deuteronomy cv-numbers ride along as a hover tooltip. The mapping
+# N -> concrete verse (Exod 20:N+1, Deut 5:N+5) holds for whichever versification labels
+# a cell, so the same helper serves both the MAM row (E/D 6–9 on taxton 20:7–20:10) and
+# the BHS row (E/D 7–10, a constant one higher — BHS gained its extra verse back at the
+# early split and the elyon adds no boundary inside 20:7–20:10, so no drift here).
+def _ed_num(n):
+    return f'<span title="Exodus 20:{n + 1} / Deuteronomy 5:{n + 5}">E/D {n}</span>'
+
+
 def gather_examples(books_mpu):
     """Return the dict of byte-faithful Hebrew example strings the doc splices in."""
     exo = books_mpu[tbn.BK_EXODUS]["verses_plus"]
@@ -217,6 +229,19 @@ def gather_examples(books_mpu):
         "sab_elyrow_8": _range(*strand_ends(8, _ELYON), start=False, stop=False),
         "sab_elyrow_9": _range(*strand_ends(9, _ELYON), start=False, stop=False),
         "sab_elyrow_10": _range(*strand_ends(10, _ELYON), start=False, stop=True),
+        # Sabbath merge — MAM/BHS numbers per taxton verse, in abstract "E/D N" form.
+        # MAM numbers at each taxton start (20:7–20:10 = E/D 6–9); BHS matches boundary
+        # for boundary here (no extra elyon start inside the merge), so it runs a
+        # constant one higher (E/D 7–10). The equal spacing of the two rows is the
+        # section's point: overlapping-but-whole boundaries produce no numbering drift.
+        "sab_mamnum_7": _ed_num(6),
+        "sab_mamnum_8": _ed_num(7),
+        "sab_mamnum_9": _ed_num(8),
+        "sab_mamnum_10": _ed_num(9),
+        "sab_bhsnum_7": _ed_num(7),
+        "sab_bhsnum_8": _ed_num(8),
+        "sab_bhsnum_9": _ed_num(9),
+        "sab_bhsnum_10": _ed_num(10),
         # late split — the four upper cells end in sof pasuq; the last is shared
         "late_elyon_ends": [_last_word(cell) for cell in ely_2012],
         "late_taxton_end": _last_word(tax_2012[-1]),     # …שָֽׁקֶר׃ (shared outer end)

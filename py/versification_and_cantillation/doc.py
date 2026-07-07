@@ -151,12 +151,18 @@ other — and this differs between the two splits. At the early split they
 <h3>The early split — overlapping boundaries</h3>
 
 <p>When an {elyon} verse contains multiple {taxton} verses in their entirety, there is no numbering drift between MAM and BHS.
-This happens in MAM 20:7–20:10, as can be seen in the table below:</p>
+This is the case with the four consecutive {taxton} verses in the table below,
+although unfortunately the point is somewhat muddied
+by a drift that has already happened, earlier in the Decalogues:</p>
 
 {sab_table}
 
 <p>(In the table above, each chanted verse's first word is shown in green (<em>start</em>)
-and its last word in red (<em>stop</em>)).</p>
+and its last word in red (<em>stop</em>). The bottom two rows give each {taxton} verse's
+MAM and BHS number in the abstract form <code>E/D&nbsp;N</code>, where N&nbsp;=&nbsp;1 at
+Exodus 20:2 / Deuteronomy 5:6 and counts up from there — one label for both Decalogues,
+which share this structure; hover a cell for the concrete Exodus and Deuteronomy verse
+numbers.)</p>
 
 {early_num_table}
 
@@ -261,6 +267,20 @@ _SAB_TABLE = """\
     <td>{sab_elyrow_8}</td>
     <td>{sab_elyrow_9}</td>
     <td>{sab_elyrow_10}</td>
+  </tr>
+  <tr>
+    <th>MAM #</th>
+    <td>{sab_mamnum_7}</td>
+    <td>{sab_mamnum_8}</td>
+    <td>{sab_mamnum_9}</td>
+    <td>{sab_mamnum_10}</td>
+  </tr>
+  <tr>
+    <th>BHS #</th>
+    <td>{sab_bhsnum_7}</td>
+    <td>{sab_bhsnum_8}</td>
+    <td>{sab_bhsnum_9}</td>
+    <td>{sab_bhsnum_10}</td>
   </tr>
 </table>"""
 
