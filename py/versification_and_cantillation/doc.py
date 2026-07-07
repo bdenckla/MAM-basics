@@ -23,6 +23,13 @@ This file also began life as a Markdown generator (render_full_markdown) and was
 ported to HTML only when it needed a Pages-served <head>/CSS, which is why the body
 reads as authored markup rather than assembled elements. (The mpplus_*.py diff-report
 generators likewise bypass `mb_html`, for their own — different — reasons.)
+
+Editing note: the rendered output is a *snapshot* — tests/test_versification_and_cantillation_doc.py
+asserts it byte-for-byte against the deployed MAM-simple/gh-pages/ copy. So any edit here
+or in strands.py is a no-op (and turns that test red) until you regenerate the deployed
+file: `generate_doc.write_output_if_changed()`. Run the suite from the repo root via
+`py/main_test.py` (a bare `pytest` has no mb_cmn on sys.path). The Hebrew example words
+are not authored here — they come from strands.gather_examples; see that module.
 """
 
 from pathlib import Path
@@ -59,15 +66,21 @@ CSS_FILENAME = "versification-and-cantillation.css"
 # str.format template for the <body> contents. The only braces are the
 # {placeholders} below; all Hebrew example words are substituted from data. Latin
 # transliteration uses precomposed "h with dot below" (U+1E25 = NFC), per issue #187.
+#
+# Terminology convention (keep consistent): the scheme-noun is "versification", never
+# "numbering" (the latter word is deliberately absent). Kept and distinct: "numbered
+# verse" (a defined term) and the act-verbs "numbers at" / "places a number at".
 _BODY_TEMPLATE = """\
 <h1>Versification and Cantillation</h1>
 
 <p>This document is a companion to <a href="{vdiff_url}">versification-differences.md</a>.
 That document deliberately ignores cantillation,
-treating a "verse" as nothing more than a span of text between two cv-labels.
-That definition of a verse is what we will call a "numbered verse" in this document.
-In this document we will not ignore cantillation,
-and it will be important to make a distinction between a numbered verse and a chanted verse.
+treating a verse as nothing more than a span of text between two cv-labels.
+That definition of a verse is what we will call
+a <strong>numbered verse</strong> in this document,
+where we will not ignore cantillation,
+and it will be important to make a distinction
+between a numbered verse and a <strong>chanted verse</strong>.
 We define a chanted verse as a span of text between two sof pasuq marks,
 where that span's accents obey the rules of cantillation.</p>
 
@@ -90,7 +103,7 @@ make the same trade-off in the face of this "impossible" situation:
 they all agree to label Genesis 35:22 as a single numbered verse.)</p>
 
 <p>Other than the cases in the Decalogues,
-the one other case in our versifications (MAM, BHS, and Sefaria)
+the one other case in our versifications
 where a numbered verse is not a chanted verse
 is the Numbers 25/26 boundary in BHS versification.
 This case has little in common with the cases in the Decalogues.
@@ -101,57 +114,49 @@ BHS 26:1 starts right after an <em>etnaḥta</em>.</p>
 
 <h2>The Decalogues: background</h2>
 
-<p>Each of the Decalogues carries <strong>two</strong> parallel strands of cantillation.
+<p>Each of the Decalogues has <strong>two</strong> parallel strands of cantillation.
 The <strong>{taxton}</strong> (תחתון) (lower) strand
 divides the passage into twelve chanted verses.
 The <strong>{elyon}</strong> (עליון) (upper) strand
-divides the passage into <strong>ten</strong> chanted verses,
+divides the passage into ten chanted verses,
 each traditionally taken to be one of the Ten Commandments.
 Relative to the {taxton}, the lengths of the {elyon} verses are uneven.
-There are two elyon verses that are quite long, each containing at least three {taxton} verses.
-On the other hand, there are four consecutive elyon verses that are very short:
-all four are contained within a single {taxton} verse.
+There are two {elyon} verses that are quite long, containing, respectively "three and a half" and four {taxton} verses.
+(That "half" will be explained below.)
+On the other hand, there are four consecutive {elyon} verses that are very short:
+all four are contained within a single {taxton} verse.</p>
 
 <h2>The Decalogues: two versification policies</h2>
 
-<p>A cv-number marks the <strong>start</strong> of a numbered verse. Across the Decalogues, the
-three traditions differ only in <em>whose</em> chanted-verse starts they honor:</p>
+<p>A cv-label marks the start of a numbered verse. In the Decalogues, our
+versifications differ only in which chanted-verse starts have a cv-label:</p>
 
 <ul>
-  <li><strong>MAM</strong> places a number at the start of every <strong>{taxton}</strong> ({taxton}) verse.</li>
-  <li><strong>BHS</strong> places a number at the start of every <strong>{taxton} <em>or</em> {elyon}</strong> verse — the
-  union of the two cantillations' verse boundaries.</li>
-  <li><strong>Sefaria</strong> is a hybrid: it honors the {elyon} cantillation's extra boundary at
+  <li><strong>MAM</strong> places a cv-label at the start of every {taxton} verse.</li>
+  <li><strong>BHS</strong> places a cv-label at the start of every {taxton} <strong>or</strong> {elyon} verse —
+  the union of the two cantillations' verse boundaries.</li>
+  <li><strong>Sefaria</strong> is a hybrid of MAM and BHS:
+  it honors the {elyon} cantillation's extra boundary at
   the <em>early</em> split but not at the <em>late</em> split.</li>
 </ul>
 
 <p>Because BHS honors a superset of MAM's boundaries, every MAM Decalogue verse maps
 to <em>one or more</em> whole BHS verses, never the reverse.</p>
 
-<p>The whole story is then <em>how the two cantillations' boundaries sit relative to each
-other</em> — and this differs between the two splits. At the <strong>early</strong> split they
-<strong>overlap</strong> (the splits interleave); at the <strong>late</strong> split the {elyon} is <strong>strictly
-contained within</strong> a single {taxton} verse.</p>
+<p>The whole story is then how the two cantillations' boundaries sit relative to each
+other — and this differs between the two splits. At the early split they
+<strong>overlap</strong> (the splits interleave); at the late split the {elyon} is
+<strong>strictly contained within</strong> a single {taxton} verse.</p>
 
 <h3>The early split — overlapping boundaries</h3>
 
-<p>Here the {taxton} and {elyon} place their verse-ends at <em>different</em> points, and
-neither's boundaries nest inside the other's. Inside what {taxton} reads as one
-verse (MAM 20:2), the {elyon} ends a verse early, at {early_elyon_avadim}
-(<em>silluq</em> / <em>sof pasuq</em>), where {taxton} has only <em>etnaḥta</em>
-({early_taxton_avadim}) and reads on. Conversely, where {taxton} ends at
-{early_taxton_panai} (<em>sof pasuq</em>), the {elyon} has only <em>revia</em>
-({early_elyon_panai}) and reads on — its verse running to {early_mitsvotai}
-(end of MAM 20:5). So the two sets of splits interleave rather than nest.</p>
+<p>When an {elyon} verse contains multiple {taxton} verses in their entirety, there is no numbering drift between MAM and BHS.
+This happens in MAM 20:7–20:10, as can be seen in the table below:</p>
 
-<p>In the table below each end-word carries its own strand's mark: a bare <em>sof pasuq</em>
-(<code>׃</code>) means that strand ends its verse there; an ordinary accent means it reads
-on. Within each cantillation a chanted verse's <strong>first</strong> word is shown in green
-(<em>start</em>) and its <strong>last</strong> word in red (<em>stop</em>); the words between (and the <code>…</code>)
-are left plain. The one long {elyon} verse ({early_elyrow_long}) has no verse-end of
-its own until מצותי, so across the four {taxton} rows it spans (MAM 20:2b–20:5) only
-its opening word (green, in the 20:2b row) and closing word (red, in the 20:5 row)
-are colored.</p>
+XXX insert MAM 20:7–20:10 table here XXX
+
+<p>(In the table above,  chanted verse's first word is shown in green (<em>start</em>)
+and its last word in red (<em>stop</em>)).</p>
 
 <table>
   <tr>
@@ -302,7 +307,7 @@ four strictly contained within the one {taxton} verse, both ending together at �
 
 <p>BHS numbers at each upper start, giving <strong>four verses where MAM has one</strong>.
 Sefaria, unlike BHS, does <strong>not</strong> honor the upper cantillation here — it keeps
-MAM's single verse (one number). This late split is the one place where Sefaria and
+MAM's single verse (one cv-label). This late split is the one place where Sefaria and
 BHS part ways. Deuteronomy 5:16 works identically.</p>
 
 <h2>Numbers 25/26: a break at an <em>etnaḥta</em>, not a <em>sof pasuq</em></h2>
@@ -311,7 +316,7 @@ BHS part ways. Deuteronomy 5:16 works identically.</p>
 cantillation, and its verdict is <em>negative</em>: at the point BHS splits, cantillation
 marks <strong>not</strong> a verse end but a mid-verse <em>etnaḥta</em>.</p>
 
-<p>MAM keeps Numbers 26:1 as a <strong>single chanted verse</strong> whose interior carries a
+<p>MAM keeps Numbers 26:1 as a <strong>single chanted verse</strong> whose interior has a
 mid-verse paragraph break — a פסקא באמצע פסוק (here a <em>petuḥah</em>). The break is shown
 below as a line break, which is what a <em>petuḥah</em> ("open" section) in fact is: the text
 after it resumes on a fresh line. Both lines are one and the same chanted verse:</p>
@@ -322,7 +327,7 @@ after it resumes on a fresh line. Both lines are one and the same chanted verse:
 </blockquote>
 
 <p>The verse ends, as always, at <em>sof pasuq</em> ({num_seg1_last}); the word before the
-break, {num_seg0_last}, carries only <em>etnaḥta</em> — the strongest <strong>mid-verse</strong>
+break, {num_seg0_last}, has only <em>etnaḥta</em> — the strongest <strong>mid-verse</strong>
 disjunctive, but not a verse end. BHS promotes that break to a verse <strong>and</strong> chapter
 boundary, making its 25:19 end at {num_seg0_last} — on an <em>etnaḥta</em>, <strong>not</strong> a
 <em>sof pasuq</em>. So BHS's 25:19 is not a chanted verse; the MAM-simple data marks it
@@ -338,7 +343,7 @@ boundary becomes irrelevant (or at least invisible).</p>
 
 <p>Note what is and isn't doing the work. The פסקא באמצע פסוק is <strong>not</strong> the cause and
 is not part of the cantillation — such mid-verse paragraph breaks occur in
-<a href="{pbp_foi_url}">many verses</a> no tradition splits (e.g. Deuteronomy 2:8); here it merely <strong>reinforces</strong> a
+<a href="{pbp_foi_url}">many verses</a> none of our versifications split (e.g. Deuteronomy 2:8); here it merely <strong>reinforces</strong> a
 division the <em>etnaḥta</em> already marks. And it is that <em>etnaḥta</em> that explains both
 sides: why there is a strong division to split on, and why a cantillation-sensitive
 versification like MAM's refuses to treat it as a verse end — a mid-verse pause, however
@@ -386,13 +391,6 @@ ends, and BHS's extra boundaries are upper chanted-verse ends. In Numbers 25/26 
 extra boundary is not a chanted-verse end in <em>any</em> cantillation — it lands on an
 <em>etnaḥta</em>. That is the whole cantillational story behind these versification
 differences.</p>
-
-<p>The other differences catalogued in
-<a href="{vdiff_url}">versification-differences.md</a> — the 1 Samuel 23/24
-and Jeremiah 30/31 chapter-boundary shifts, and the Joshua 21 present-vs-absent
-case — are <strong>not</strong> cantillational: the first two shift only a chapter <em>number</em>
-across a boundary both traditions already agree on, and the third is a genuine
-difference of text.</p>
 """
 
 
