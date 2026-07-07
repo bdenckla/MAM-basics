@@ -16,7 +16,9 @@ class TestVersificationAndCantillationDoc(unittest.TestCase):
 
     def test_full_generated_doc_matches_current_doc(self):
         expected = _CURRENT_DOC_PATH.read_text(encoding="utf-8")
-        books_mpu = plus.read_parsed_plus_bk39s((tbn.BK_EXODUS, tbn.BK_NUMBERS))
+        books_mpu = plus.read_parsed_plus_bk39s(
+            (tbn.BK_EXODUS, tbn.BK_NUMBERS, tbn.BK_DEUTER)
+        )
 
         self.assertEqual(vc_doc.render_full_html(books_mpu), expected)
 

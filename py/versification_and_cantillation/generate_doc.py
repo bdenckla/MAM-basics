@@ -33,8 +33,9 @@ _OUTPUT_PATH = (
 _CSS_SOURCE_PATH = Path(doc.__file__).with_name(doc.CSS_FILENAME)
 _CSS_OUTPUT_PATH = _OUTPUT_PATH.with_name(doc.CSS_FILENAME)
 
-# Only the dual-cantillation book (Exodus) and Numbers are quoted by the doc.
-_SOURCE_BK39IDS = (tbn.BK_EXODUS, tbn.BK_NUMBERS)
+# The doc quotes Exodus and Numbers in the body, and Deuteronomy in the appendix (both
+# dual-cantillation Decalogue books; Numbers 25/26 is the non-Decalogue case).
+_SOURCE_BK39IDS = (tbn.BK_EXODUS, tbn.BK_NUMBERS, tbn.BK_DEUTER)
 
 
 def render_full_html():

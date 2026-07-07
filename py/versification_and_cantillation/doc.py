@@ -25,11 +25,15 @@ reads as authored markup rather than assembled elements. (The mpplus_*.py diff-r
 generators likewise bypass `mb_html`, for their own — different — reasons.)
 
 Editing note: the rendered output is a *snapshot* — tests/test_versification_and_cantillation_doc.py
-asserts it byte-for-byte against the deployed MAM-simple/gh-pages/ copy. So any edit here
-or in strands.py is a no-op (and turns that test red) until you regenerate the deployed
-file: `generate_doc.write_output_if_changed()`. Run the suite from the repo root via
-`py/main_test.py` (a bare `pytest` has no mb_cmn on sys.path). The Hebrew example words
-are not authored here — they come from strands.gather_examples; see that module.
+asserts it byte-for-byte against the deployed MAM-simple/gh-pages/ copy. So any edit here,
+in strands.py, or in the .css (whose source of truth is the copy beside this file, NOT the
+gh-pages copy — that one is overwritten on regen) is a no-op (and turns that test red)
+until you regenerate the deployed files. Regenerate via the CLI subcommand, from the repo
+root: `.venv/Scripts/python.exe py/main_mam_simple.py doc-only` (alias `doc`). That drives
+generate_doc.write_output_if_changed() for this doc and the sibling versification-
+differences doc together; don't hand-roll a one-off regen script. Then run the suite from
+the repo root via `py/main_test.py` (a bare `pytest` has no mb_cmn on sys.path). The Hebrew
+example words are not authored here — they come from strands.gather_examples; see that module.
 """
 
 from pathlib import Path
@@ -159,12 +163,9 @@ by a drift that has already happened, earlier in the Decalogues:</p>
 
 <p>(In the table above, each chanted verse's first word is shown in green (<em>start</em>)
 and its last word in red (<em>stop</em>). The bottom two rows give each {taxton} verse's
-MAM and BHS number in the abstract form <code>E/D&nbsp;N</code>, where N&nbsp;=&nbsp;1 at
-Exodus 20:2 / Deuteronomy 5:6 and counts up from there — one label for both Decalogues,
-which share this structure; hover a cell for the concrete Exodus and Deuteronomy verse
-numbers.)</p>
-
-{early_num_table}
+MAM and BHS number. All examples in this document are from the <strong>Exodus</strong>
+Decalogue; the <a href="#appendix-deuteronomy">appendix</a> revisits these points in the
+Deuteronomy Decalogue, which shares the same structure but differs in its text.)</p>
 
 {early_strand_table}
 
@@ -240,6 +241,48 @@ ends, and BHS's extra boundaries are upper chanted-verse ends. In Numbers 25/26 
 extra boundary is not a chanted-verse end in <em>any</em> cantillation — it lands on an
 <em>etnaḥta</em>. That is the whole cantillational story behind these versification
 differences.</p>
+
+<h2 id="appendix-deuteronomy">Appendix: the same points in Deuteronomy</h2>
+
+<p>Every example above is drawn from the <strong>Exodus</strong> Decalogue. The
+Deuteronomy Decalogue (Deuteronomy 5:6–5:17) carries the same two strands of cantillation
+with the same verse structure — the code that builds this document asserts as much
+against the Deuteronomy source — so the same points hold there. What differs are aspects
+of the wording (substituted words, added phrases) that leave those cantillation and
+versification points intact: the boundaries still fall in the same structural places, only
+on different words. This appendix re-shows the two points where that wording difference is
+visible, in Deuteronomy's own words. In the tables below a word is
+<span class="vc-mid vc-agree">washed out</span> when it is identical to its Exodus
+counterpart and shown at <span class="vc-mid">full strength</span> when it differs, so the
+eye lands on the differences; start/stop words keep their green/red hue, paled when they
+match Exodus.</p>
+
+<p>The <strong>early split</strong> is not re-tabulated: through Deuteronomy 5:6–5:9 the
+text is word-for-word the Exodus text (bar vowel-pointing), so its table would be
+uniformly washed out. The differences live almost entirely in the <em>Sabbath</em>
+commandment and in a single word of the <em>late split</em>.</p>
+
+<h3>The Sabbath — a different, longer text</h3>
+
+<p>Deuteronomy's Sabbath commandment opens with שמור (not Exodus's זכור) and is
+considerably longer, so although the {taxton}/{elyon} verse structure is unchanged — one
+{elyon} verse spanning four {taxton} verses, exactly as in Exodus — most of the boundary
+words differ:</p>
+
+{deut_sab_table}
+
+<p>Only the second {taxton} verse (5:12) matches Exodus at both ends. The first (5:11) and
+fourth (5:14) differ at both ends; the third (5:13) shares its start (ויום) but not its
+end — Deuteronomy runs on past Exodus's בשעריך to כמוך.</p>
+
+<h3>The late split — identical but for one word</h3>
+
+<p>Here the two Decalogues read word for word alike, with a single exception: the ninth
+commandment ends עֵד שָׁוְא in Deuteronomy where Exodus has עֵד שָׁקֶר. The
+{taxton}/{elyon} structure — four upper verses nested in one lower verse, all ending
+together — is unchanged:</p>
+
+{deut_late_table}
 """
 
 # The document's tables live here as their own str.format templates rather than inline in
@@ -255,100 +298,44 @@ differences.</p>
 _SAB_TABLE = """\
 <table dir="rtl">
   <tr>
-    <th>{taxton}</th>
+    <th><abbr title="taḥton (lower cantillation strand)">T</abbr></th>
     <td>{sab_taxrow_7}</td>
     <td>{sab_taxrow_8}</td>
     <td>{sab_taxrow_9}</td>
     <td>{sab_taxrow_10}</td>
   </tr>
   <tr>
-    <th>{elyon}</th>
+    <th><abbr title="elyon (upper cantillation strand)">E</abbr></th>
     <td>{sab_elyrow_7}</td>
     <td>{sab_elyrow_8}</td>
     <td>{sab_elyrow_9}</td>
     <td>{sab_elyrow_10}</td>
   </tr>
   <tr>
-    <th>MAM #</th>
-    <td>{sab_mamnum_7}</td>
-    <td>{sab_mamnum_8}</td>
-    <td>{sab_mamnum_9}</td>
-    <td>{sab_mamnum_10}</td>
+    <th><abbr title="MAM verse number">M</abbr></th>
+    <td>20:7</td>
+    <td>20:8</td>
+    <td>20:9</td>
+    <td>20:10</td>
   </tr>
   <tr>
-    <th>BHS #</th>
-    <td>{sab_bhsnum_7}</td>
-    <td>{sab_bhsnum_8}</td>
-    <td>{sab_bhsnum_9}</td>
-    <td>{sab_bhsnum_10}</td>
-  </tr>
-</table>"""
-
-# The early split's overlapping boundaries: taxton/elyon end-words alongside the MAM and
-# BHS verse numbers, showing where BHS gains a verse (20:2 -> 20:2/20:3) and drifts +1.
-_EARLY_NUM_TABLE = """\
-<table>
-  <tr>
-    <th>{taxton}</th>
-    <th>{elyon}</th>
-    <th>MAM</th>
-    <th>BHS</th>
-  </tr>
-  <tr>
-    <td>{early_row_201}</td>
-    <td>{early_row_201}</td>
-    <td>20:1</td>
-    <td>20:1</td>
-  </tr>
-  <tr>
-    <td>{early_taxrow_202a}</td>
-    <td>{early_elyrow_202a}</td>
-    <td rowspan="2">20:2</td>
-    <td>20:2</td>
-  </tr>
-  <tr>
-    <td>{early_taxrow_202b}</td>
-    <td>{early_elyrow_202b}</td>
-    <td>20:3</td>
-  </tr>
-  <tr>
-    <td>{early_taxrow_203}</td>
-    <td>{early_elyrow_203}</td>
-    <td>20:3</td>
-    <td>20:4</td>
-  </tr>
-  <tr>
-    <td>{early_taxrow_204}</td>
-    <td>{early_elyrow_204}</td>
-    <td>20:4</td>
-    <td>20:5</td>
-  </tr>
-  <tr>
-    <td>{early_taxrow_205}</td>
-    <td>{early_elyrow_205}</td>
-    <td>20:5</td>
-    <td>20:6</td>
-  </tr>
-  <tr>
-    <td>…</td>
-    <td>…</td>
-    <td>…</td>
-    <td>…</td>
-  </tr>
-  <tr>
-    <td>{early_row_2011}</td>
-    <td>{early_row_2011}</td>
+    <th><abbr title="BHS verse number">B</abbr></th>
+    <td>20:8</td>
+    <td>20:9</td>
+    <td>20:10</td>
     <td>20:11</td>
-    <td>20:12</td>
   </tr>
 </table>"""
 
-# The same early split, transposed: the four taxton verses 20:2-20:5 across the top, the
-# one long elyon verse (green 20:2b start, red 20:5 stop) spanning the interior below.
+# The early split as a single transposed table (Sabbath-table style): the taxton and elyon
+# strands across the top, MAM and BHS verse numbers below, over the four consecutive taxton
+# verses 20:2-20:5. The lone elyon boundary inside MAM 20:2 splits it into 20:2a/20:2b —
+# where BHS gains a verse and the numbering drifts +1 (MAM's one 20:2 spans both columns,
+# shown by the colspan; by 20:5 BHS has already advanced to 20:6).
 _EARLY_STRAND_TABLE = """\
 <table dir="rtl">
   <tr>
-    <th>{taxton}</th>
+    <th><abbr title="taḥton (lower cantillation strand)">T</abbr></th>
     <td>{early_taxrow_202a}</td>
     <td>{early_taxrow_202b}</td>
     <td>{early_taxrow_203}</td>
@@ -356,12 +343,27 @@ _EARLY_STRAND_TABLE = """\
     <td>{early_taxrow_205}</td>
   </tr>
   <tr>
-    <th>{elyon}</th>
+    <th><abbr title="elyon (upper cantillation strand)">E</abbr></th>
     <td>{early_elyrow_202a}</td>
     <td>{early_elyrow_202b}</td>
     <td>{early_elyrow_203}</td>
     <td>{early_elyrow_204}</td>
     <td>{early_elyrow_205}</td>
+  </tr>
+  <tr>
+    <th><abbr title="MAM verse number">M</abbr></th>
+    <td colspan="2">20:2</td>
+    <td>20:3</td>
+    <td>20:4</td>
+    <td>20:5</td>
+  </tr>
+  <tr>
+    <th><abbr title="BHS verse number">B</abbr></th>
+    <td>20:2</td>
+    <td>20:3</td>
+    <td>20:4</td>
+    <td>20:5</td>
+    <td>20:6</td>
   </tr>
 </table>"""
 
@@ -437,19 +439,94 @@ _SUMMARY_TABLE = """\
   </tr>
 </table>"""
 
+# Appendix — the Deuteronomy Sabbath (5:11–5:14), same shape as _SAB_TABLE but with
+# Deut's own words (shaded agree/differ vs Exodus) and Deut verse numbers.
+_DEUT_SAB_TABLE = """\
+<table dir="rtl">
+  <tr>
+    <th><abbr title="taḥton (lower cantillation strand)">T</abbr></th>
+    <td>{deut_sab_taxrow_11}</td>
+    <td>{deut_sab_taxrow_12}</td>
+    <td>{deut_sab_taxrow_13}</td>
+    <td>{deut_sab_taxrow_14}</td>
+  </tr>
+  <tr>
+    <th><abbr title="elyon (upper cantillation strand)">E</abbr></th>
+    <td>{deut_sab_elyrow_11}</td>
+    <td>{deut_sab_elyrow_12}</td>
+    <td>{deut_sab_elyrow_13}</td>
+    <td>{deut_sab_elyrow_14}</td>
+  </tr>
+  <tr>
+    <th><abbr title="MAM verse number">M</abbr></th>
+    <td>5:11</td>
+    <td>5:12</td>
+    <td>5:13</td>
+    <td>5:14</td>
+  </tr>
+  <tr>
+    <th><abbr title="BHS verse number">B</abbr></th>
+    <td>5:12</td>
+    <td>5:13</td>
+    <td>5:14</td>
+    <td>5:15</td>
+  </tr>
+</table>"""
+
+# Appendix — the Deuteronomy late split (5:16), same shape as _LATE_TABLE. Only the ninth
+# commandment's end-word differs from Exodus (שָׁוְא vs שָׁקֶר), so it alone is full-strength.
+_DEUT_LATE_TABLE = """\
+<table>
+  <tr>
+    <th>scripture order →</th>
+    <th>"You shall not murder"</th>
+    <th>"… commit adultery"</th>
+    <th>"… steal"</th>
+    <th>"… bear false witness"</th>
+  </tr>
+  <tr>
+    <th>{taxton} (MAM)</th>
+    <td colspan="4">one verse — ends {deut_late_taxton_end}</td>
+  </tr>
+  <tr>
+    <th>upper</th>
+    <td>ends {deut_late_elyon_0}</td>
+    <td>ends {deut_late_elyon_1}</td>
+    <td>ends {deut_late_elyon_2}</td>
+    <td>ends {deut_late_elyon_3}</td>
+  </tr>
+  <tr>
+    <th>MAM #</th>
+    <td colspan="4">5:16</td>
+  </tr>
+  <tr>
+    <th>BHS #</th>
+    <td>5:17</td>
+    <td>5:18</td>
+    <td>5:19</td>
+    <td>5:20</td>
+  </tr>
+  <tr>
+    <th>Sef #</th>
+    <td colspan="4">5:17</td>
+  </tr>
+</table>"""
+
 # Filled over the same `fields` dict, then spliced into _BODY_TEMPLATE by these keys.
 _TABLE_TEMPLATES = {
     "sab_table": _SAB_TABLE,
-    "early_num_table": _EARLY_NUM_TABLE,
     "early_strand_table": _EARLY_STRAND_TABLE,
     "late_table": _LATE_TABLE,
     "summary_table": _SUMMARY_TABLE,
+    "deut_sab_table": _DEUT_SAB_TABLE,
+    "deut_late_table": _DEUT_LATE_TABLE,
 }
 
 
 def render_full_html(books_mpu):
     examples = strands.gather_examples(books_mpu)
     late = examples.pop("late_elyon_ends")
+    deut_late = examples.pop("deut_late_elyon_ends")
     fields = {
         "vdiff_url": _VDIFF_URL,
         "pbp_foi_url": _PBP_FOI_URL,
@@ -457,6 +534,7 @@ def render_full_html(books_mpu):
         "elyon": _ELYON,
         **examples,
         **{f"late_elyon_{i}": w for i, w in enumerate(late)},
+        **{f"deut_late_elyon_{i}": w for i, w in enumerate(deut_late)},
     }
     comment = provenance.generated_html_comment(_GENERATOR_FILE)
     tables = {name: tmpl.format(**fields) for name, tmpl in _TABLE_TEMPLATES.items()}
