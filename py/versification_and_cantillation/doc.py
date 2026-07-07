@@ -153,11 +153,120 @@ other — and this differs between the two splits. At the early split they
 <p>When an {elyon} verse contains multiple {taxton} verses in their entirety, there is no numbering drift between MAM and BHS.
 This happens in MAM 20:7–20:10, as can be seen in the table below:</p>
 
-XXX insert MAM 20:7–20:10 table here XXX
+{sab_table}
 
-<p>(In the table above,  chanted verse's first word is shown in green (<em>start</em>)
+<p>(In the table above, each chanted verse's first word is shown in green (<em>start</em>)
 and its last word in red (<em>stop</em>)).</p>
 
+{early_num_table}
+
+{early_strand_table}
+
+<p>Because BHS numbers at every {taxton} <strong>or</strong> {elyon} verse-start (their union),
+the lone {elyon} boundary that {taxton} lacks — at {early_elyon_avadim} —
+adds one BHS verse: MAM's single 20:2 becomes BHS 20:2 / 20:3, and the rest of the
+chapter shifts up by one. Sefaria matches BHS here; Deuteronomy 5:6 behaves
+identically.</p>
+
+<h3>The late split — nested boundaries</h3>
+
+<p>Here the two cantillations <strong>share</strong> the outer boundary and the {elyon} merely
+subdivides the interior. In MAM Exodus 20:12 the {taxton} cantillation runs the four
+short commandments as a <strong>single</strong> verse; the {elyon} gives each its own verse — all
+four strictly contained within the one {taxton} verse, both ending together at שקר:</p>
+
+{late_table}
+
+<p>BHS numbers at each upper start, giving <strong>four verses where MAM has one</strong>.
+Sefaria, unlike BHS, does <strong>not</strong> honor the upper cantillation here — it keeps
+MAM's single verse (one cv-label). This late split is the one place where Sefaria and
+BHS part ways. Deuteronomy 5:16 works identically.</p>
+
+<h2>Numbers 25/26: a break at an <em>etnaḥta</em>, not a <em>sof pasuq</em></h2>
+
+<p>This boundary is cantillational in the <strong>opposite</strong> way. Here there is only one
+cantillation, and its verdict is <em>negative</em>: at the point BHS splits, cantillation
+marks <strong>not</strong> a verse end but a mid-verse <em>etnaḥta</em>.</p>
+
+<p>MAM keeps Numbers 26:1 as a <strong>single chanted verse</strong> whose interior has a
+mid-verse paragraph break — a פסקא באמצע פסוק (here a <em>petuḥah</em>). The break is shown
+below as a line break, which is what a <em>petuḥah</em> ("open" section) in fact is: the text
+after it resumes on a fresh line. Both lines are one and the same chanted verse:</p>
+
+<blockquote class="verse">
+{num_seg0}<br>
+{num_seg1_first} … {num_seg1_last}
+</blockquote>
+
+<p>The verse ends, as always, at <em>sof pasuq</em> ({num_seg1_last}); the word before the
+break, {num_seg0_last}, has only <em>etnaḥta</em> — the strongest <strong>mid-verse</strong>
+disjunctive, but not a verse end. BHS promotes that break to a verse <strong>and</strong> chapter
+boundary, making its 25:19 end at {num_seg0_last} — on an <em>etnaḥta</em>, <strong>not</strong> a
+<em>sof pasuq</em>. So BHS's 25:19 is not a chanted verse; the MAM-simple data marks it
+<code>ends-with-sampe: "pe2"</code> and <code>contents-corresponds-to: "less than a full verse in
+MAM"</code>. Sefaria, like MAM, keeps the single verse.</p>
+
+<p>Why did BHS make this a <em>chapter</em> boundary as well? The <em>etnaḥta</em> and its
+accompanying פסקא באמצע פסוק already signal a strong break here; perhaps someone
+nonetheless felt that a chapter break was needed to communicate an even stronger break
+at this point. Or perhaps this chapter break has its origin in a non-cantillated
+(perhaps even non-Hebrew) version of the text, where its defiance of the chanted verse
+boundary becomes irrelevant (or at least invisible).</p>
+
+<p>Note what is and isn't doing the work. The פסקא באמצע פסוק is <strong>not</strong> the cause and
+is not part of the cantillation — such mid-verse paragraph breaks occur in
+<a href="{pbp_foi_url}">many verses</a> none of our versifications split (e.g. Deuteronomy 2:8); here it merely <strong>reinforces</strong> a
+division the <em>etnaḥta</em> already marks. And it is that <em>etnaḥta</em> that explains both
+sides: why there is a strong division to split on, and why a cantillation-sensitive
+versification like MAM's refuses to treat it as a verse end — a mid-verse pause, however
+strong, is still mid-verse.</p>
+
+<p>The contrast with the Decalogues is the point: there, BHS's extra boundaries <strong>are</strong>
+real chanted-verse ends (in the other cantillation); here, BHS's extra boundary is
+<strong>not</strong> a chanted-verse end in any cantillation — it lands on an <em>etnaḥta</em>.</p>
+
+<h2>Summary</h2>
+
+{summary_table}
+
+<p>In the Decalogues, MAM's numbered boundaries coincide with {taxton} chanted-verse
+ends, and BHS's extra boundaries are upper chanted-verse ends. In Numbers 25/26 BHS's
+extra boundary is not a chanted-verse end in <em>any</em> cantillation — it lands on an
+<em>etnaḥta</em>. That is the whole cantillational story behind these versification
+differences.</p>
+"""
+
+# The document's tables live here as their own str.format templates rather than inline in
+# _BODY_TEMPLATE above, so the authored prose reads top-to-bottom without the
+# placeholder-dense table markup breaking the flow (the tables can't be read in source
+# anyway — nearly every cell is a {placeholder} filled from data). render_full_html fills
+# each table over the same `fields` dict, then splices the rendered HTML into
+# _BODY_TEMPLATE via matching {..._table} placeholders (a second format pass — safe
+# because the rendered tables contain no braces of their own).
+
+# MAM 20:7-20:10 (the Sabbath commandment): the {taxton} reads four verses, the {elyon}
+# one verse spanning all four (green start on 20:7, red stop on 20:10, interior plain).
+_SAB_TABLE = """\
+<table dir="rtl">
+  <tr>
+    <th>{taxton}</th>
+    <td>{sab_taxrow_7}</td>
+    <td>{sab_taxrow_8}</td>
+    <td>{sab_taxrow_9}</td>
+    <td>{sab_taxrow_10}</td>
+  </tr>
+  <tr>
+    <th>{elyon}</th>
+    <td>{sab_elyrow_7}</td>
+    <td>{sab_elyrow_8}</td>
+    <td>{sab_elyrow_9}</td>
+    <td>{sab_elyrow_10}</td>
+  </tr>
+</table>"""
+
+# The early split's overlapping boundaries: taxton/elyon end-words alongside the MAM and
+# BHS verse numbers, showing where BHS gains a verse (20:2 -> 20:2/20:3) and drifts +1.
+_EARLY_NUM_TABLE = """\
 <table>
   <tr>
     <th>{taxton}</th>
@@ -212,8 +321,11 @@ and its last word in red (<em>stop</em>)).</p>
     <td>20:11</td>
     <td>20:12</td>
   </tr>
-</table>
+</table>"""
 
+# The same early split, transposed: the four taxton verses 20:2-20:5 across the top, the
+# one long elyon verse (green 20:2b start, red 20:5 stop) spanning the interior below.
+_EARLY_STRAND_TABLE = """\
 <table dir="rtl">
   <tr>
     <th>{taxton}</th>
@@ -231,44 +343,11 @@ and its last word in red (<em>stop</em>)).</p>
     <td>{early_elyrow_204}</td>
     <td>{early_elyrow_205}</td>
   </tr>
-</table>
+</table>"""
 
-<p>The {elyon}'s <em>second</em> merge — the Sabbath commandment, MAM 20:7–20:10 — reads
-the same way, in the same transposed form. The {taxton} divides it into four verses (each
-cell green-start / red-stop); the {elyon} reads all four as one verse, so only its outer
-endpoints are colored — green on 20:7's start, red on 20:10's end — and the two interior
-cells are wholly plain:</p>
-
-<table dir="rtl">
-  <tr>
-    <th>{taxton}</th>
-    <td>{sab_taxrow_7}</td>
-    <td>{sab_taxrow_8}</td>
-    <td>{sab_taxrow_9}</td>
-    <td>{sab_taxrow_10}</td>
-  </tr>
-  <tr>
-    <th>{elyon}</th>
-    <td>{sab_elyrow_7}</td>
-    <td>{sab_elyrow_8}</td>
-    <td>{sab_elyrow_9}</td>
-    <td>{sab_elyrow_10}</td>
-  </tr>
-</table>
-
-<p>Because BHS numbers at every {taxton} <strong>or</strong> {elyon} verse-start (their union),
-the lone {elyon} boundary that {taxton} lacks — at {early_elyon_avadim} —
-adds one BHS verse: MAM's single 20:2 becomes BHS 20:2 / 20:3, and the rest of the
-chapter shifts up by one. Sefaria matches BHS here; Deuteronomy 5:6 behaves
-identically.</p>
-
-<h3>The late split — nested boundaries</h3>
-
-<p>Here the two cantillations <strong>share</strong> the outer boundary and the {elyon} merely
-subdivides the interior. In MAM Exodus 20:12 the {taxton} cantillation runs the four
-short commandments as a <strong>single</strong> verse; the {elyon} gives each its own verse — all
-four strictly contained within the one {taxton} verse, both ending together at שקר:</p>
-
+# The late split (Exod 20:12): one taxton verse, four nested elyon verses sharing its
+# outer end; MAM/Sefaria keep one number, BHS numbers each elyon start (four verses).
+_LATE_TABLE = """\
 <table>
   <tr>
     <th>scripture order →</th>
@@ -303,58 +382,10 @@ four strictly contained within the one {taxton} verse, both ending together at �
     <th>Sef #</th>
     <td colspan="4">20:13</td>
   </tr>
-</table>
+</table>"""
 
-<p>BHS numbers at each upper start, giving <strong>four verses where MAM has one</strong>.
-Sefaria, unlike BHS, does <strong>not</strong> honor the upper cantillation here — it keeps
-MAM's single verse (one cv-label). This late split is the one place where Sefaria and
-BHS part ways. Deuteronomy 5:16 works identically.</p>
-
-<h2>Numbers 25/26: a break at an <em>etnaḥta</em>, not a <em>sof pasuq</em></h2>
-
-<p>This boundary is cantillational in the <strong>opposite</strong> way. Here there is only one
-cantillation, and its verdict is <em>negative</em>: at the point BHS splits, cantillation
-marks <strong>not</strong> a verse end but a mid-verse <em>etnaḥta</em>.</p>
-
-<p>MAM keeps Numbers 26:1 as a <strong>single chanted verse</strong> whose interior has a
-mid-verse paragraph break — a פסקא באמצע פסוק (here a <em>petuḥah</em>). The break is shown
-below as a line break, which is what a <em>petuḥah</em> ("open" section) in fact is: the text
-after it resumes on a fresh line. Both lines are one and the same chanted verse:</p>
-
-<blockquote class="verse">
-{num_seg0}<br>
-{num_seg1_first} … {num_seg1_last}
-</blockquote>
-
-<p>The verse ends, as always, at <em>sof pasuq</em> ({num_seg1_last}); the word before the
-break, {num_seg0_last}, has only <em>etnaḥta</em> — the strongest <strong>mid-verse</strong>
-disjunctive, but not a verse end. BHS promotes that break to a verse <strong>and</strong> chapter
-boundary, making its 25:19 end at {num_seg0_last} — on an <em>etnaḥta</em>, <strong>not</strong> a
-<em>sof pasuq</em>. So BHS's 25:19 is not a chanted verse; the MAM-simple data marks it
-<code>ends-with-sampe: "pe2"</code> and <code>contents-corresponds-to: "less than a full verse in
-MAM"</code>. Sefaria, like MAM, keeps the single verse.</p>
-
-<p>Why did BHS make this a <em>chapter</em> boundary as well? The <em>etnaḥta</em> and its
-accompanying פסקא באמצע פסוק already signal a strong break here; perhaps someone
-nonetheless felt that a chapter break was needed to communicate an even stronger break
-at this point. Or perhaps this chapter break has its origin in a non-cantillated
-(perhaps even non-Hebrew) version of the text, where its defiance of the chanted verse
-boundary becomes irrelevant (or at least invisible).</p>
-
-<p>Note what is and isn't doing the work. The פסקא באמצע פסוק is <strong>not</strong> the cause and
-is not part of the cantillation — such mid-verse paragraph breaks occur in
-<a href="{pbp_foi_url}">many verses</a> none of our versifications split (e.g. Deuteronomy 2:8); here it merely <strong>reinforces</strong> a
-division the <em>etnaḥta</em> already marks. And it is that <em>etnaḥta</em> that explains both
-sides: why there is a strong division to split on, and why a cantillation-sensitive
-versification like MAM's refuses to treat it as a verse end — a mid-verse pause, however
-strong, is still mid-verse.</p>
-
-<p>The contrast with the Decalogues is the point: there, BHS's extra boundaries <strong>are</strong>
-real chanted-verse ends (in the other cantillation); here, BHS's extra boundary is
-<strong>not</strong> a chanted-verse end in any cantillation — it lands on an <em>etnaḥta</em>.</p>
-
-<h2>Summary</h2>
-
+# The closing summary: one row per passage, contrasting where MAM/BHS/Sefaria number.
+_SUMMARY_TABLE = """\
 <table>
   <tr>
     <th>Passage</th>
@@ -384,14 +415,16 @@ real chanted-verse ends (in the other cantillation); here, BHS's extra boundary 
     <td>as MAM</td>
     <td>break at <em>etnaḥta</em>, not <em>sof pasuq</em></td>
   </tr>
-</table>
+</table>"""
 
-<p>In the Decalogues, MAM's numbered boundaries coincide with {taxton} chanted-verse
-ends, and BHS's extra boundaries are upper chanted-verse ends. In Numbers 25/26 BHS's
-extra boundary is not a chanted-verse end in <em>any</em> cantillation — it lands on an
-<em>etnaḥta</em>. That is the whole cantillational story behind these versification
-differences.</p>
-"""
+# Filled over the same `fields` dict, then spliced into _BODY_TEMPLATE by these keys.
+_TABLE_TEMPLATES = {
+    "sab_table": _SAB_TABLE,
+    "early_num_table": _EARLY_NUM_TABLE,
+    "early_strand_table": _EARLY_STRAND_TABLE,
+    "late_table": _LATE_TABLE,
+    "summary_table": _SUMMARY_TABLE,
+}
 
 
 def render_full_html(books_mpu):
@@ -406,7 +439,8 @@ def render_full_html(books_mpu):
         **{f"late_elyon_{i}": w for i, w in enumerate(late)},
     }
     comment = provenance.generated_html_comment(_GENERATOR_FILE)
-    body = _BODY_TEMPLATE.format(**fields)
+    tables = {name: tmpl.format(**fields) for name, tmpl in _TABLE_TEMPLATES.items()}
+    body = _BODY_TEMPLATE.format(**fields, **tables)
     return (
         "<!doctype html>\n"
         f"<!-- {comment} -->\n"
