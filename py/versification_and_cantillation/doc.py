@@ -339,6 +339,17 @@ _SAB_TABLE = """\
     <td>20:10</td>
     <td>20:11</td>
   </tr>
+  <tr>
+    <th>t</th>
+    <td class="vc-grad"></td>
+    <td class="vc-grad"></td>
+    <td class="vc-grad"></td>
+    <td class="vc-grad"></td>
+  </tr>
+  <tr>
+    <th>e</th>
+    <td class="vc-grad" colspan="4"></td>
+  </tr>
 </table>"""
 
 # The early split as a single transposed table (Sabbath-table style): the taxton and elyon
@@ -379,6 +390,18 @@ _EARLY_STRAND_TABLE = """\
     <td>20:5</td>
     <td>20:6</td>
   </tr>
+  <tr>
+    <th>t</th>
+    <td class="vc-grad" colspan="2"></td>
+    <td class="vc-grad"></td>
+    <td class="vc-grad"></td>
+    <td class="vc-grad"></td>
+  </tr>
+  <tr>
+    <th>e</th>
+    <td class="vc-grad"></td>
+    <td class="vc-grad" colspan="4"></td>
+  </tr>
 </table>"""
 
 # The late split (Exod 20:12), transposed like _SAB_TABLE but mirrored: the taxton is the
@@ -412,6 +435,17 @@ _LATE_TABLE = """\
     <td>20:14</td>
     <td>20:15</td>
     <td>20:16</td>
+  </tr>
+  <tr>
+    <th>t</th>
+    <td class="vc-grad" colspan="4"></td>
+  </tr>
+  <tr>
+    <th>e</th>
+    <td class="vc-grad"></td>
+    <td class="vc-grad"></td>
+    <td class="vc-grad"></td>
+    <td class="vc-grad"></td>
   </tr>
 </table>"""
 
@@ -476,6 +510,17 @@ _DEUT_SAB_TABLE = """\
     <td>5:14</td>
     <td>5:15</td>
   </tr>
+  <tr>
+    <th>t</th>
+    <td class="vc-grad"></td>
+    <td class="vc-grad"></td>
+    <td class="vc-grad"></td>
+    <td class="vc-grad"></td>
+  </tr>
+  <tr>
+    <th>e</th>
+    <td class="vc-grad" colspan="4"></td>
+  </tr>
 </table>"""
 
 # Appendix — the Deuteronomy late split (5:16), same shape as _LATE_TABLE, its words shaded
@@ -508,6 +553,17 @@ _DEUT_LATE_TABLE = """\
     <td>5:18</td>
     <td>5:19</td>
     <td>5:20</td>
+  </tr>
+  <tr>
+    <th>t</th>
+    <td class="vc-grad" colspan="4"></td>
+  </tr>
+  <tr>
+    <th>e</th>
+    <td class="vc-grad"></td>
+    <td class="vc-grad"></td>
+    <td class="vc-grad"></td>
+    <td class="vc-grad"></td>
   </tr>
 </table>"""
 
