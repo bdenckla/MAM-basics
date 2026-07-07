@@ -159,25 +159,28 @@ other — and this differs between the two splits. At the early split they
 
 <h3>The early split — overlapping boundaries</h3>
 
-<p>When an {elyon} verse contains multiple {taxton} verses in their entirety, there is no numbering drift between MAM and BHS.
+<p>When an {elyon} verse contains multiple {taxton} verses in their entirety,
+there is no numbering drift between MAM and BHS.
 This is the case with the four consecutive {taxton} verses in the table below,
 although unfortunately the point is somewhat muddied
 by a drift that has already happened, earlier in the Decalogues:</p>
 
 {sab_table}
 
-<p>(In the table above, each chanted verse's first word is shown in green (<em>start</em>)
-and its last word in red (<em>stop</em>). The bottom two rows give each {taxton} verse's
+<p>(In the table above, each chanted verse's first word is shown in green
+and its last word in red. The bottom two rows give each {taxton} verse's
 MAM and BHS number. All examples in this document are from the <strong>Exodus</strong>
 Decalogue; the <a href="#appendix-deuteronomy">appendix</a> revisits these points in the
 Deuteronomy Decalogue, which shares the same structure but differs in its text.)</p>
 
-{early_strand_table}
+<p>When an {elyon} verse contains only part of a {taxton} verse,
+the numbering drifts between MAM and BHS.
+The table below shows the source of the drift encountered above:
+two {elyon} verses contain four {taxton} verses in their entirety,
+but they are not contained "nicely".
+</p>
 
-<p>Because BHS numbers at every {taxton} <strong>or</strong> {elyon} verse-start (their union),
-the lone {elyon} boundary that {taxton} lacks — at {early_elyon_avadim} —
-adds one BHS verse: MAM's single 20:2 becomes BHS 20:2 / 20:3, and the rest of the
-chapter shifts up by one. Deuteronomy 5:6 behaves identically.</p>
+{early_strand_table}
 
 <h3>The late split — nested boundaries</h3>
 
@@ -263,7 +266,7 @@ on different words. This appendix re-shows the two points where that wording dif
 visible, in Deuteronomy's own words. In the tables below a word is
 <span class="vc-mid vc-agree">washed out</span> when it is identical to its Exodus
 counterpart and shown at <span class="vc-mid">full strength</span> when it differs, so the
-eye lands on the differences; start/stop words keep their green/red hue, paled when they
+eye lands on the differences; first/last words keep their green/red hue, paled when they
 match Exodus.</p>
 
 <p>The <strong>early split</strong> is not re-tabulated: through Deuteronomy 5:6–5:9 the
@@ -281,8 +284,8 @@ words differ:</p>
 {deut_sab_table}
 
 <p>Only the second {taxton} verse (5:12) matches Exodus at both ends. The first (5:11) and
-fourth (5:14) differ at both ends; the third (5:13) shares its start (ויום) but not its
-end — Deuteronomy runs on past Exodus's בשעריך to כמוך.</p>
+fourth (5:14) differ at both ends; the third (5:13) shares its first word (ויום) but not its
+last word — Deuteronomy runs on past Exodus's בשעריך to כמוך.</p>
 
 <h3>The late split — nearly identical</h3>
 
@@ -322,14 +325,14 @@ _SAB_TABLE = """\
     <td>{sab_elyrow_9}</td>
     <td>{sab_elyrow_10}</td>
   </tr>
-  <tr>
+  <tr class="cv">
     <th><abbr title="MAM verse number">M</abbr></th>
     <td>20:7</td>
     <td>20:8</td>
     <td>20:9</td>
     <td>20:10</td>
   </tr>
-  <tr>
+  <tr class="cv">
     <th><abbr title="BHS verse number">B</abbr></th>
     <td>20:8</td>
     <td>20:9</td>
@@ -361,14 +364,14 @@ _EARLY_STRAND_TABLE = """\
     <td>{early_elyrow_204}</td>
     <td>{early_elyrow_205}</td>
   </tr>
-  <tr>
+  <tr class="cv">
     <th><abbr title="MAM verse number">M</abbr></th>
     <td colspan="2">20:2</td>
     <td>20:3</td>
     <td>20:4</td>
     <td>20:5</td>
   </tr>
-  <tr>
+  <tr class="cv">
     <th><abbr title="BHS verse number">B</abbr></th>
     <td>20:2</td>
     <td>20:3</td>
@@ -399,11 +402,11 @@ _LATE_TABLE = """\
     <td>{late_elyrow_2}</td>
     <td>{late_elyrow_3}</td>
   </tr>
-  <tr>
+  <tr class="cv">
     <th><abbr title="MAM verse number">M</abbr></th>
     <td colspan="4">20:12</td>
   </tr>
-  <tr>
+  <tr class="cv">
     <th><abbr title="BHS verse number">B</abbr></th>
     <td>20:13</td>
     <td>20:14</td>
@@ -459,14 +462,14 @@ _DEUT_SAB_TABLE = """\
     <td>{deut_sab_elyrow_13}</td>
     <td>{deut_sab_elyrow_14}</td>
   </tr>
-  <tr>
+  <tr class="cv">
     <th><abbr title="MAM verse number">M</abbr></th>
     <td>5:11</td>
     <td>5:12</td>
     <td>5:13</td>
     <td>5:14</td>
   </tr>
-  <tr>
+  <tr class="cv">
     <th><abbr title="BHS verse number">B</abbr></th>
     <td>5:12</td>
     <td>5:13</td>
@@ -495,11 +498,11 @@ _DEUT_LATE_TABLE = """\
     <td>{deut_late_elyrow_2}</td>
     <td>{deut_late_elyrow_3}</td>
   </tr>
-  <tr>
+  <tr class="cv">
     <th><abbr title="MAM verse number">M</abbr></th>
     <td colspan="4">5:16</td>
   </tr>
-  <tr>
+  <tr class="cv">
     <th><abbr title="BHS verse number">B</abbr></th>
     <td>5:17</td>
     <td>5:18</td>
