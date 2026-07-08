@@ -155,15 +155,19 @@ the BHS numbering drifts forward relative to MAM.
 The table below shows the first of two such drifts in the Decalogues.
 Two {elyon} verses contain four {taxton} verses in their entirety,
 but they are not contained "nicely".
-They are not contained "nicely" because:
-<ul>
-<li>The {elyon} verse {early_elyon_short_verse} contains only the first "half" of the {taxton} verse {early_taxton_split_verse}.</li>
-<li>The {elyon} verse {early_elyon_long_verse} contains "three and a half" {taxton} verses. The {elyon} contains:
-<ul>
-<li>The second "half" of the {taxton} verse {early_taxton_split_verse}.</li>
-<li>Three whole {taxton} verses.</li>
-</ul>
+They are not contained "nicely" for the reasons listed below.
 </p>
+<ul>
+  <li>
+    The {elyon} verse {early_elyon_short_verse} contains only the first "half" of the {taxton} verse {early_taxton_split_verse}.
+  </li>
+  <li>The {elyon} verse {early_elyon_long_verse} contains "three and a half" {taxton} verses. The {elyon} contains:
+    <ul>
+      <li>The second "half" of the {taxton} verse {early_taxton_split_verse}.</li>
+      <li>Three whole {taxton} verses.</li>
+    </ul>
+  </li>
+</ul>
 
 {early_strand_table}
 
@@ -173,6 +177,8 @@ In addition, a schematic version of each chanted verse is shown at the bottom of
 All examples in this document are from the <strong>Exodus</strong> Decalogue;
 the <a href="#appendix-deuteronomy">appendix</a> revisits these points in the
 Deuteronomy Decalogue, which shares the same structure but differs in its details.)</p>
+
+<h3>The middle no-drift case</h3>
 
 <p>When an {elyon} verse contains multiple {taxton} verses in their entirety,
 there is no numbering drift between MAM and BHS.
@@ -185,7 +191,7 @@ by a drift that has already happened, which we described above:</p>
 <h3>The late drift</h3>
 
 <p>When an {elyon} verse contains only part of a {taxton} verse,
-the numbering drifts between MAM and BHS.
+the BHS numbering drifts forward relative to MAM.
 The table below shows a drift due to
 four {elyon} verses each containing only a "quarter" of a {taxton} verse.
 </p>
