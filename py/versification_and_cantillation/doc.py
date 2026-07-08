@@ -267,7 +267,7 @@ it never causes a numbered verse break, much less a chapter break,
 in any of our versifications.
 (The פסקא באמצע פסוק phenomenon also has a {setumah} form,
 which is considered a weaker break than the {petuxah} form.)
-See, for example, Deuteronomy 2:8.</p>
+See, for example, Deuteronomy 2:8 — one of <a href="{pbp_foi_url}">many such verses</a>.</p>
 
 <h2 id="appendix-deuteronomy">Appendix: the same points in Deuteronomy</h2>
 
