@@ -13,11 +13,18 @@ from functools import partial
 from mb_cmn import bib_locales as tbn
 from mb_cmn import hebrew_accent_strip as has
 from mb_cmn import hebrew_punctuation as hpunc
+from mb_cmn import template_names as tmpln
 from mb_cmn import ws_tmpl2 as wtp
 
 _DUALCANT = "מ:כפול"
 _TAXTON = "א"  # lower / תחתון
 _ELYON = "ב"  # upper / עליון
+
+# A ketiv/qere (כו״ק) template stores the ketiv (written form) as arg "1" and the qere
+# (the pointed *read* form) as arg "2"; every strand here reads a verse the way it is
+# chanted, so it always takes the qere — see _el_text and issue #199. (This matches how
+# py_misc/wt_qere.py resolves the read form: recurse on the kq template's 2nd argument.)
+_KQ_QERE = "2"
 
 
 def _strand_str(unit, param):
@@ -39,22 +46,53 @@ def _cells(minirow, param):
             strand = _strand_str(wtel, param)
             if strand is not None:
                 cells.append(strand)
-        elif isinstance(wtel, str) and wtel.strip():
-            cells.append(wtel.strip())
+        elif isinstance(wtel, str):
+            if wtel.strip():
+                cells.append(wtel.strip())
+        else:
+            # Same gap the audit in issue #199 closed for _strand_word_text: a top-level
+            # ketiv/qere is neither a מ:כפול nor a plain run, so it fell through and was silently
+            # dropped, losing its word; contribute its qere instead (see _word_template_text,
+            # which — like the old skip — still yields nothing for a non-word template such as a
+            # נוסח petuxah wrapper, so Num 26:1 stays two cells). No current caller feeds _cells
+            # a verse with a top-level kq, so this is latent-correctness only, but it keeps
+            # _cells consistent with the flat word text.
+            text = _word_template_text(wtel).strip()
+            if text:
+                cells.append(text)
     return cells
 
 
 def _el_text(el):
     """Best-effort plain text of one strand element, for reading off word boundaries.
-    A plain run is itself; a nested qamats (מ:קמץ) template contributes its word
-    variant; a paseq/legarmeh separator contributes only a space (a word break)."""
+    A plain run is itself; a ketiv/qere (כו״ק) template contributes its *qere* — the
+    pointed read form the cantillation strands display, never the ketiv (issue #199); a
+    nested qamats (מ:קמץ) template contributes its word variant; a paseq/legarmeh separator
+    contributes only a space (a word break)."""
     if isinstance(el, str):
         return el
+    if wtp.is_template_with_name_in(el, tmpln.STD_KQ_TMPL_NAMES):
+        return "".join(_el_text(sub) for sub in wtp.template_param_val(el, _KQ_QERE))
     if wtp.is_template(el):
         for val in wtp.template_param_vals(el):
             if len(val) == 1 and isinstance(val[0], str):
                 return val[0]
         return " "
+    return ""
+
+
+def _word_template_text(wtel):
+    """The word text a *top-level* template (one sitting directly in EP, neither a מ:כפול
+    strand unit nor a plain string) contributes to a strand. Only a ketiv/qere carries one —
+    its qere, the read form the strands display; issue #199 is that dropping such a top-level
+    כו״ק deleted Deut 5:9's last word מִצְוֺתָֽי and left first/last-word extraction seeing the
+    bare ׃ that follows it. Every other top-level template contributes no word and is dropped,
+    exactly as before this branch existed: e.g. a נוסח documentation/scroll-difference wrapper
+    whose payload is only a petuxah separator (Num 26:1). This is deliberately narrower than
+    _el_text — routing a נוסח through _el_text's generic first-plain-string heuristic would
+    wrongly splice its description text into the strand."""
+    if wtp.is_template_with_name_in(wtel, tmpln.STD_KQ_TMPL_NAMES):
+        return "".join(_el_text(sub) for sub in wtp.template_param_val(wtel, _KQ_QERE))
     return ""
 
 
@@ -70,6 +108,13 @@ def _strand_word_text(minirow, param):
             parts.extend(_el_text(el) for el in wtp.template_param_val(wtel, param))
         elif isinstance(wtel, str):
             parts.append(wtel)
+        else:
+            # A top-level template that is *not* a dual-cant unit — most notably a ketiv/qere —
+            # can still carry a word both strands read; append its qere (see _word_template_text).
+            # Dropping it here silently deleted a word from the flat strand (issue #199): Deut
+            # 5:9's top-level כו״ק held the verse's last word מִצְוֺתָֽי, so first/last-word
+            # extraction saw the bare ׃ that follows it.
+            parts.append(_word_template_text(wtel))
     return "".join(parts)
 
 

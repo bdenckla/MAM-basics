@@ -30,6 +30,45 @@ class TestVersificationAndCantillationDoc(unittest.TestCase):
         self.assertTrue(vc_generate_doc.check_output_matches())
 
 
+class TestStrandWordExtraction(unittest.TestCase):
+    """Issue #199: _strand_word_text must not drop a top-level non-מ:כפול template (e.g. a
+    ketiv/qere) from the flat strand — Deut 5:9 carries its last word inside a top-level כו״ק,
+    and dropping it made first/last-word extraction return the bare sof pasuq that follows."""
+
+    maxDiff = None
+
+    @classmethod
+    def setUpClass(cls):
+        books = plus.read_parsed_plus_bk39s((tbn.BK_EXODUS, tbn.BK_DEUTER))
+        cls.exo = books[tbn.BK_EXODUS]["verses_plus"]
+        cls.deu = books[tbn.BK_DEUTER]["verses_plus"]
+
+    def _last(self, vp, bk, ch, vr, param):
+        # _strand_words already returns a word list (see _strand_word_text().split()).
+        return vc_strands._strand_words(vp, bk, ch, vr, param)[-1]
+
+    def test_deut_5_9_last_word_is_the_qere_not_the_sof_pasuq(self):
+        # Before the fix this returned the bare "׃": the top-level כו״ק holding the qere
+        # מִצְוֺתָֽי fell through _strand_word_text and vanished from the strand.
+        expected = "מִצְוֺתָֽי׃"  # qere מִצְוֺתָֽי + the trailing sof pasuq
+        for param in (vc_strands._TAXTON, vc_strands._ELYON):
+            with self.subTest(param=param):
+                self.assertEqual(self._last(self.deu, tbn.BK_DEUTER, 5, 9, param), expected)
+
+    def test_exodus_20_5_and_deut_5_9_agree_at_the_verse_end(self):
+        # The whole point of the bug report: the two Decalogues in fact agree at this endpoint
+        # (both read the qere), so a correct extraction makes them equal — the earlier "Exodus
+        # vs Deuteronomy differ" was purely the dropped-template artifact.
+        for param in (vc_strands._TAXTON, vc_strands._ELYON):
+            with self.subTest(param=param):
+                ex_last = self._last(self.exo, tbn.BK_EXODUS, 20, 5, param)
+                de_last = self._last(self.deu, tbn.BK_DEUTER, 5, 9, param)
+                self.assertEqual(de_last, ex_last)
+                self.assertEqual(
+                    vc_strands._strip_pointing(de_last), vc_strands._strip_pointing(ex_last)
+                )
+
+
 class TestStrandBalancer(unittest.TestCase):
     """The letter-equalizing pass of issue #201: every taxton/elyon column the doc emits
     must be consonant-equal at both boundaries after balancing, and the balancer must fail
