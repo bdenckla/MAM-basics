@@ -469,14 +469,23 @@ def gather_examples(books_mpu):
     )
 
     # Numbers 25/26 — a single chanted verse split by a mid-verse petuxah into two runs.
+    # Like the Exodus tables, this section is about *where each cantillation ends*, so the
+    # words are shown stripped to their accent signal (consonants + accents + accent-coupled
+    # punctuation; see _strip_pointing) rather than fully pointed. None of these words but the
+    # sof-pasuq one carries SOPA, so _strip_pointing correctly reads a U+05BD as silluq only in
+    # the verse-final לֵאמֹֽר׃ and as an ordinary (dropped) meteg elsewhere.
     num_261 = _cells(_verse(num, tbn.BK_NUMBERS, 26, 1), _TAXTON)
     assert len(num_261) == 2, len(num_261)
+
+    def _strip_seg(text):
+        return " ".join(_strip_pointing(w) for w in text.split())
+
     out.update(
         {
-            "num_seg0": num_261[0],  # וַיְהִ֖י אַחֲרֵ֣י הַמַּגֵּפָ֑ה
-            "num_seg0_last": _last_word(num_261[0]),  # הַמַּגֵּפָ֑ה (etnachta)
-            "num_seg1_first": _first_word(num_261[1]),  # וַיֹּ֤אמֶר
-            "num_seg1_last": _last_word(num_261[1]),  # לֵאמֹֽר׃ (sof pasuq)
+            "num_seg0": _strip_seg(num_261[0]),  # וַיְהִ֖י אַחֲרֵ֣י הַמַּגֵּפָ֑ה (three words)
+            "num_seg0_last": _strip_pointing(_last_word(num_261[0])),  # הַמַּגֵּפָ֑ה (etnachta)
+            "num_seg1_first": _strip_pointing(_first_word(num_261[1])),  # וַיֹּ֤אמֶר
+            "num_seg1_last": _strip_pointing(_last_word(num_261[1])),  # לֵאמֹֽר׃ (silluq + sof pasuq)
         }
     )
     return out
