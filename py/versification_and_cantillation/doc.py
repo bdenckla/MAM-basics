@@ -223,26 +223,22 @@ making its 25:19 end at {num_seg0_last} —
 on an <em>etnaḥta</em>, <strong>not</strong> a <em>sof pasuq</em>.
 So BHS's 25:19 is not a chanted verse.</p>
 
-<p>Why did BHS make this a numbered verse (and chapter!) break?
+<p>Why did BHS choose to start a numbered verse (and a chapter!) here?
 The <em>etnaḥta</em> and its accompanying פסקא באמצע פסוק already signal a strong break here;
 perhaps someone nonetheless felt that a chapter break was needed
 to communicate an even stronger break at this point.
 Or perhaps this chapter break has its origin in a non-cantillated
 (perhaps even non-Hebrew) version of the text,
-where its defiance of the chanted verse boundary becomes irrelevant
+where cantillation-location of a chapter break is irrelevant
 (or at least invisible).</p>
 
-<p>Note what is and isn't doing the work. The פסקא באמצע פסוק is <strong>not</strong> the cause and
-is not part of the cantillation — such mid-verse paragraph breaks occur in
-<a href="{pbp_foi_url}">many verses</a> none of our versifications split (e.g. Deuteronomy 2:8); here it merely <strong>reinforces</strong> a
-division the <em>etnaḥta</em> already marks. And it is that <em>etnaḥta</em> that explains both
-sides: why there is a strong division to split on, and why a cantillation-sensitive
-versification like MAM's refuses to treat it as a verse end — a mid-verse pause, however
-strong, is still mid-verse.</p>
-
-<p>The contrast with the Decalogues is the point: there, BHS's extra boundaries <strong>are</strong>
-real chanted-verse ends (in the other cantillation); here, BHS's extra boundary is
-<strong>not</strong> a chanted-verse end in any cantillation — it lands on an <em>etnaḥta</em>.</p>
+<p>Note that the פסקא באמצע פסוק does not explain the chapter break.
+Even in the {petuxah} form it takes here,
+it never causes a numbered verse break, much less a chapter break,
+in any of our versifications.
+(The פסקא באמצע פסוק phenomenon also has a {setumah} form,
+which is considered a weaker break than the {petuxah} form.)
+See, for example, Deuteronomy 2:8.</p>
 
 <h2>Summary</h2>
 
