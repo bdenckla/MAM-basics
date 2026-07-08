@@ -63,19 +63,19 @@ _PBP_FOI_URL = (
 # syntax, same idea); here we stay with str.format's {curly} placeholders, the scheme the
 # rest of this template already uses.
 #
-# Centralizing the wrapper also makes the markup *choice* a one-line change. Today it is an
-# <em> gloss; but <em> is not semantic here (we are not emphasizing these words), and the
-# repo's other generated docs mark romanized Hebrew as <span class="romanized"> (styled
-# italic via span.romanized in the CSS — see mb_author/author.py, mb_misc/styles_authored.css,
-# and the sibling gh-pages stylesheets). Switching _romanized to emit that span — and adding
-# the matching CSS rule — is left to a follow-up, so this commit is a pure abstraction whose
-# only output change is that {petuxah}/{setumah} now resolve at all.
+# Centralizing the wrapper keeps the markup *choice* in one place. It emits a
+# <span class="romanized"> — styled italic via span.romanized in the CSS (see
+# versification-and-cantillation.css) — matching how the repo's other generated docs mark
+# romanized Hebrew (mb_author/author.py, mb_misc/styles_authored.css, and the sibling
+# gh-pages stylesheets). An <em> gloss was the earlier form here, but it was never semantic:
+# we are not emphasizing these words, only marking them as transliterated. (Genuine emphasis
+# in the prose still uses <em> directly.)
 #
 # ASCII keys spell the letter khet as x (repo convention, cf. author.py's $tarxa / $patax);
 # the displayed value spells it as precomposed h-with-dot-below = U+1E25 (NFC, issue #187).
 # The keys are exactly the {placeholder} names used in _BODY_TEMPLATE and the table templates.
 def _romanized(term):
-    return f"<em>{term}</em>"
+    return f'<span class="romanized">{term}</span>'
 
 
 _ROMANIZED = {
