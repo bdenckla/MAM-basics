@@ -71,7 +71,7 @@ _PBP_FOI_URL = (
 # we are not emphasizing these words, only marking them as transliterated. (Genuine emphasis
 # in the prose still uses <em> directly.)
 #
-# ASCII keys spell the letter khet as x (repo convention, cf. author.py's $tarxa / $patax);
+# ASCII keys spell the letter xet (ח) as x (repo convention, cf. author.py's $tarxa / $patax);
 # the displayed value spells it as precomposed h-with-dot-below = U+1E25 (NFC, issue #187).
 # The keys are exactly the {placeholder} names used in _BODY_TEMPLATE and the table templates.
 def _romanized(term):
