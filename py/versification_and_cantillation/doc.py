@@ -269,16 +269,6 @@ in any of our versifications.
 which is considered a weaker break than the {petuxah} form.)
 See, for example, Deuteronomy 2:8.</p>
 
-<h2>Summary</h2>
-
-{summary_table}
-
-<p>In the Decalogues, MAM's numbered boundaries coincide with {taxton} chanted-verse
-ends, and BHS's extra boundaries are upper chanted-verse ends. In Numbers 25/26 BHS's
-extra boundary is not a chanted-verse end in <em>any</em> cantillation — it lands on an
-{etnaxta}. That is the whole cantillational story behind these versification
-differences.</p>
-
 <h2 id="appendix-deuteronomy">Appendix: the same points in Deuteronomy</h2>
 
 <p>Every example above is drawn from the <strong>Exodus</strong> Decalogue. The
@@ -474,35 +464,6 @@ _LATE_TABLE = """\
   </tr>
 </table>"""
 
-# The closing summary: one row per passage, contrasting where MAM/BHS number.
-_SUMMARY_TABLE = """\
-<table>
-  <tr>
-    <th>Passage</th>
-    <th>MAM numbers at</th>
-    <th>BHS numbers at</th>
-    <th>Boundary relationship</th>
-  </tr>
-  <tr>
-    <td>Decalogues — early (Exod 20:2, Deut 5:6)</td>
-    <td>{taxton} starts</td>
-    <td>{taxton} <strong>or</strong> upper starts</td>
-    <td>dual cantillation — <strong>overlapping</strong></td>
-  </tr>
-  <tr>
-    <td>Decalogues — late (Exod 20:12, Deut 5:16)</td>
-    <td>{taxton} starts</td>
-    <td>{taxton} <strong>or</strong> upper starts</td>
-    <td>dual cantillation — <strong>nested</strong></td>
-  </tr>
-  <tr>
-    <td>Numbers 25/26</td>
-    <td>chanted-verse starts</td>
-    <td>+ mid-verse break (onto {etnaxta})</td>
-    <td>break at {etnaxta}, not {sof_pasuq}</td>
-  </tr>
-</table>"""
-
 # Appendix — the Deuteronomy Sabbath (5:11–5:14), same shape as _SAB_TABLE but with
 # Deut's own words (shaded agree/differ vs Exodus) and Deut verse numbers.
 _DEUT_SAB_TABLE = """\
@@ -597,7 +558,6 @@ _TABLE_TEMPLATES = {
     "sab_table": _SAB_TABLE,
     "early_strand_table": _EARLY_STRAND_TABLE,
     "late_table": _LATE_TABLE,
-    "summary_table": _SUMMARY_TABLE,
     "deut_sab_table": _DEUT_SAB_TABLE,
     "deut_late_table": _DEUT_LATE_TABLE,
 }
