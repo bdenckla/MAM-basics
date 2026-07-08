@@ -81,14 +81,6 @@ def _first_word(text):
     return text.split()[0]
 
 
-def _green(word):  # first word of a chanted verse — "start"
-    return f'<span style="color:green">{word}</span>'
-
-
-def _red(word):  # last word of a chanted verse — "stop"
-    return f'<span style="color:red">{word}</span>'
-
-
 # Diacritic-stripping for the early-split ("taxton / elyon / MAM / BHS") table cells.
 # The table is about *where each cantillation ends its verse*, so it keeps only the
 # marks that carry that signal — the cantillation accents (te'amim) and the
@@ -104,16 +96,26 @@ def _strip_pointing(word):
     return has.strip_to_accents(word, keep_meteg=keep_meteg)
 
 
-# Deuteronomy-appendix coloring. The document's main tables are Exodus-only; the appendix
-# re-shows the Sabbath and late-split points with Deuteronomy's own words, "anti-
-# highlighting" every word that is identical to its Exodus counterpart (a washed-out CSS
-# variant) so the eye lands on the words that differ. Hue still encodes chanted-verse role
-# (start=green, stop=red, interior=neutral); the .vc-* rules live in the stylesheet.
+# The one chanted-verse coloring primitive: wrap a word in the CSS class for its role
+# (start=green, stop=red, mid=neutral interior), all three defined once in the stylesheet
+# so they adapt to light/dark mode. The optional ``agree`` modifier adds vc-agree, which
+# washes the word out — used only by the Deuteronomy appendix's "anti-highlighting", where
+# a Deut word identical to its Exodus counterpart is dimmed so the eye lands on the words
+# that differ. The Exodus tables and prose need only the plain (agree=False) roles, which
+# _green/_red below name; both paths share this palette, so there is no second, inline set.
 def _shade(word, role, agree):
     cls = {"start": "vc-start", "stop": "vc-stop", "mid": "vc-mid"}[role]
     if agree:
         cls += " vc-agree"
     return f'<span class="{cls}">{word}</span>'
+
+
+def _green(word):  # first word of a chanted verse — "start"
+    return _shade(word, "start", agree=False)
+
+
+def _red(word):  # last word of a chanted verse — "stop"
+    return _shade(word, "stop", agree=False)
 
 
 def _paint_range(first_words, last_words, *, start, stop):
@@ -433,8 +435,14 @@ def gather_examples(books_mpu):
         out[c["key_e"]] = e_cell
 
     # Prose-caption boundary words — single words spliced into the running text, not T/E
-    # column pairs, so they are not balanced. The two dual-trope units' end-words, the two
-    # MAM verse ends, and the long elyon verse's plain (uncolored) first…last label.
+    # column pairs, so they are not balanced: the two dual-trope units' end-words and the
+    # two MAM verse ends. Then three colored "first…last" verse abbreviations for the "not
+    # contained nicely" list — the elyon's short first verse (anokhi…avadim), the taxton
+    # verse it splits (anokhi…al-panai), and the elyon's long verse spanning 20:2b-20:5
+    # (lo yihyeh-lkha…mitsvotai) — each rendered through _paint_range exactly like the table
+    # cells, so the prose echoes the table byte-for-byte and cannot drift from the source.
+    # The long verse passes its first two words: only the verse-initial lo is colored (green
+    # start), the second word riding along uncolored as recognizable context.
     tax_202 = _cells(_verse(exo, tbn.BK_EXODUS, 20, 2), _TAXTON)
     ely_202 = _cells(_verse(exo, tbn.BK_EXODUS, 20, 2), _ELYON)
     tax_203 = _cells(_verse(exo, tbn.BK_EXODUS, 20, 3), _TAXTON)
@@ -448,8 +456,14 @@ def gather_examples(books_mpu):
             "early_elyon_panai": _last_word(ely_202[1]),  # …עַל־פָּנַ֗י (revia, runs on)
             "early_taxton_laarets": _last_word(tax_203[-1]),  # …לָאָֽרֶץ׃ (end of MAM 20:3)
             "early_mitsvotai": _last_word(tax_205[-1]),  # …מִצְוֺתָֽי׃ (end of MAM 20:5)
-            "early_elyrow_long": _paint_range(
-                [_first_word(ely_202[1])], [ely_205_last], start=False, stop=False
+            "early_elyon_short_verse": _paint_range(
+                [_first_word(ely_202[0])], [_last_word(ely_202[0])], start=True, stop=True
+            ),
+            "early_taxton_split_verse": _paint_range(
+                [_first_word(tax_202[0])], [_last_word(tax_202[1])], start=True, stop=True
+            ),
+            "early_elyon_long_verse": _paint_range(
+                ely_202[1].split()[:2], [ely_205_last], start=True, stop=True
             ),
         }
     )

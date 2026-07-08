@@ -180,9 +180,9 @@ two {elyon} verses contain four {taxton} verses in their entirety,
 but they are not contained "nicely".
 They are not contained "nicely" because:
 <ul>
-<li>The {elyon} verse אנכ֖י…עבדֽים׃ contains only the first "half" of the {taxton} verse אנכי֙……על־פנֽי׃.</li>
-<li>The {elyon} verse ל֣א יהיה־לך֩…מצותֽי׃ contains "three and a half" {taxton} verses:
-it contains the second "half" of the {taxton} verse אנכי֙……על־פנֽי׃ followed by three whole {taxton} verses.</li>
+<li>The {elyon} verse {early_elyon_short_verse} contains only the first "half" of the {taxton} verse {early_taxton_split_verse}.</li>
+<li>The {elyon} verse {early_elyon_long_verse} contains "three and a half" {taxton} verses:
+it contains the second "half" of the {taxton} verse {early_taxton_split_verse} followed by three whole {taxton} verses.</li>
 </ul>
 </p>
 
