@@ -8,6 +8,8 @@ cantillations agree (e.g. the 4th short commandment), the text is a plain string
 not a מ:כפול. See MAM-basics/py/author_misc/mp_dualcant_common.py.
 """
 
+from functools import partial
+
 from mb_cmn import bib_locales as tbn
 from mb_cmn import hebrew_accent_strip as has
 from mb_cmn import hebrew_punctuation as hpunc
@@ -114,231 +116,353 @@ def _shade(word, role, agree):
     return f'<span class="{cls}">{word}</span>'
 
 
-def _deut_range(ex_ends, de_ends, *, start, stop):
-    """A shaded 'first…last' range of a Deuteronomy chanted verse, laid against its Exodus
-    counterpart's endpoints (ex_ends) so each end can be marked agree/differ. Endpoints are
-    stripped exactly as the Exodus tables strip them (see _strip_pointing), so "agree" means
-    the two Decalogues' *displayed* forms are byte-identical — vowel-only differences, being
-    invisible after stripping, correctly read as agreement, while an accent difference (which
-    the strip keeps, because these tables are about accents) reads as a difference."""
-    (ex_first, ex_last), (de_first, de_last) = ex_ends, de_ends
+def _paint_range(first_words, last_words, *, start, stop):
+    """A 'firstword(s)…lastword(s)' range label for a transposed strand table, each word
+    stripped to consonants + accents + accent-coupled punctuation (see _strip_pointing).
+
+    ``first_words``/``last_words`` are the (already letter-balanced, see balanced_pair)
+    word lists shown at the range's two ends — normally one word each, but two or more when
+    a boundary was pulled inward to letter-match the paired strand (issue #201). Only the
+    genuine chanted-verse edges carry color: the verse-initial word (``first_words[0]``)
+    green when ``start``, the verse-final word (``last_words[-1]``) red when ``stop``; any
+    word pulled in purely for letter-alignment renders plain."""
+    fw = [_strip_pointing(w) for w in first_words]
+    lw = [_strip_pointing(w) for w in last_words]
+    if start:
+        fw[0] = _green(fw[0])
+    if stop:
+        lw[-1] = _red(lw[-1])
+    return f"{' '.join(fw)}…{' '.join(lw)}"
+
+
+def _paint_deut_range(ex_first, ex_last, de_first_words, de_last_words, *, start, stop):
+    """The Deuteronomy-appendix counterpart of _paint_range: a shaded 'first…last' range of a
+    Deuteronomy chanted verse, laid against its Exodus counterpart's endpoints (ex_first,
+    ex_last) so each end is marked agree/differ. Endpoints are stripped exactly as the Exodus
+    tables strip them (see _strip_pointing), so "agree" means the two Decalogues' *displayed*
+    forms are byte-identical — vowel-only differences, being invisible after stripping,
+    correctly read as agreement, while an accent difference (which the strip keeps, because
+    these tables are about accents) reads as a difference. The Deuteronomy columns are already
+    letter-equal at every boundary, so ``de_*_words`` are single-word lists today; they are
+    joined for symmetry with _paint_range should a future divergence ever pull a word in."""
+    df = " ".join(_strip_pointing(w) for w in de_first_words)
+    dl = " ".join(_strip_pointing(w) for w in de_last_words)
     ef, el = _strip_pointing(ex_first), _strip_pointing(ex_last)
-    df, dl = _strip_pointing(de_first), _strip_pointing(de_last)
     first = _shade(df, "start" if start else "mid", df == ef)
     last = _shade(dl, "stop" if stop else "mid", dl == el)
     return f"{first}…{last}"
 
 
+# ── Letter-equalizing the paired taxton/elyon boundary cells (issue #201) ──────────────
+# Each transposed table column shows one underlying text span read by both cantillation
+# strands, so the two cells *should* share a consonant skeleton at each boundary. They can
+# still tokenize a boundary word differently — most visibly the leading לֹא of a negative
+# commandment, which the taxton maqaf-joins to the next word (one token לֹא־תַעֲשֶׂה) while
+# the elyon leaves free (לֹא as its own word). balanced_pair pulls extra boundary words
+# inward, word by word, until the two sides' consonant skeletons match, then *asserts* they
+# do — a document-wide guard that fires loudly on any column it cannot reconcile (a
+# reintroduced #200, a brand-new divergence, or a Numbers/Deuteronomy data change).
+
+
+def _skel(word):
+    """The consonant skeleton of a word (or several words joined): only the Hebrew letters
+    U+05D0–U+05EA, dropping points, accents, maqaf, sof pasuq and legarmeh. This — *not*
+    has.strip_to_accents, which keeps maqaf and accents — is the letter-equality key of
+    issue #201: a maqaf-joined לֹא־תַעֲשֶׂה and a space-separated לֹא תַעֲשֶׂה must compare
+    equal. Bounds come from the hebrew_accent_strip kernel (private today; see #198)."""
+    return "".join(ch for ch in word if has._LETTER_LO <= ord(ch) <= has._LETTER_HI)
+
+
+def _balance_boundary(t_words, e_words, *, grow_backward, label):
+    """How many boundary words each strand must show so their consonant skeletons match at
+    one end of a column. Compares the taxton's and elyon's leading (or, with ``grow_backward``,
+    trailing) run of words; grows the shorter-skeleton side inward one word at a time while it
+    stays a prefix/suffix of the longer. Returns ``(t_take, e_take)``. Raises loudly — with the
+    column ``label`` and both word lists — the moment the skeletons diverge irreconcilably or a
+    side runs out of words, which is the whole point of the guard."""
+
+    def seg(words, take):
+        chosen = words[-take:] if grow_backward else words[:take]
+        return "".join(_skel(w) for w in chosen)
+
+    t_take = e_take = 1
+    while True:
+        ts, es = seg(t_words, t_take), seg(e_words, e_take)
+        if ts == es:
+            return t_take, e_take
+        short, long_ = (ts, es) if len(ts) < len(es) else (es, ts)
+        aligned = long_.endswith(short) if grow_backward else long_.startswith(short)
+        grow_t = len(ts) < len(es)
+        room = (t_take < len(t_words)) if grow_t else (e_take < len(e_words))
+        if not aligned or not room:
+            raise AssertionError(
+                f"balanced_pair: cannot letter-equalize the {label} boundary — "
+                f"taxton skeleton {ts!r} vs elyon skeleton {es!r}; "
+                f"taxton words={t_words!r}, elyon words={e_words!r}"
+            )
+        if grow_t:
+            t_take += 1
+        else:
+            e_take += 1
+
+
+def _balanced_sides(t_words, e_words, *, label):
+    """Letter-balance both ends of a column. Returns the four displayed word lists
+    ``(t_first, t_last, e_first, e_last)`` — each the boundary word(s) whose consonant
+    skeletons the taxton and elyon share, after any pulling."""
+    t_first_n, e_first_n = _balance_boundary(
+        t_words, e_words, grow_backward=False, label=f"{label} first-word"
+    )
+    t_last_n, e_last_n = _balance_boundary(
+        t_words, e_words, grow_backward=True, label=f"{label} last-word"
+    )
+    return (
+        t_words[:t_first_n],
+        t_words[-t_last_n:],
+        e_words[:e_first_n],
+        e_words[-e_last_n:],
+    )
+
+
+def balanced_pair(t_words, e_words, *, label, t_render, e_render):
+    """Build a column's taxton and elyon cells from their whole-span word lists, having first
+    pulled each boundary inward until the two strands are consonant-equal there (or raised).
+    ``t_render``/``e_render`` map ``(first_words, last_words)`` to the strand's cell string —
+    _paint_range for an Exodus column, _paint_deut_range (bound to its Exodus twin) for a
+    Deuteronomy-appendix column. Balancing and the equality assert are inseparable: no caller
+    can emit a T/E column pair without the check having passed."""
+    t_first, t_last, e_first, e_last = _balanced_sides(t_words, e_words, label=label)
+    return t_render(t_first, t_last), e_render(e_first, e_last)
+
+
+def _verse(vp, bk, chnu, vrnu):
+    return vp[tbn.mk_bcvtmam(bk, chnu, vrnu)]
+
+
+def _strand_words(vp, bk, chnu, vrnu, param):
+    """The flat whole-verse word list of one cantillation strand (see _strand_word_text)."""
+    return _strand_word_text(_verse(vp, bk, chnu, vrnu), param).split()
+
+
+def build_columns(books_mpu):
+    """Every transposed-table taxton/elyon column, as a spec the balancer drives: a ``label``
+    (for guard messages), the doc placeholder names ``key_t``/``key_e``, the two strands'
+    whole-span word lists, and each side's cell renderer. gather_examples routes all of these
+    through balanced_pair, making the letter-equality assert a document-wide guard; the
+    umbrella test walks this same list. Also asserts the structural invariants (cell counts,
+    Sabbath-merge span) the columns rely on."""
+    exo = books_mpu[tbn.BK_EXODUS]["verses_plus"]
+    deu = books_mpu[tbn.BK_DEUTER]["verses_plus"]  # for the Deuteronomy appendix
+    ex, de = tbn.BK_EXODUS, tbn.BK_DEUTER
+
+    # Early split's verse (Exod 20:2) has exactly two dual-trope units:
+    # unit 0 = "I am the LORD … house of bondage"; unit 1 = "no other gods … before Me".
+    tax_202 = _cells(_verse(exo, ex, 20, 2), _TAXTON)
+    ely_202 = _cells(_verse(exo, ex, 20, 2), _ELYON)
+    assert len(tax_202) == 2 and len(ely_202) == 2, (len(tax_202), len(ely_202))
+    # The late split (Exod 20:12) and its Deut twin (5:16) each read as four cells per
+    # cantillation; _cells and _strand_word_text agree for their clean single-string מ:כפול
+    # units. Assert taxton/elyon stay cell-aligned so a future nested template silently
+    # dropping a cell fails loudly here instead of misaligning the columns.
+    tax_2012 = _cells(_verse(exo, ex, 20, 12), _TAXTON)
+    ely_2012 = _cells(_verse(exo, ex, 20, 12), _ELYON)
+    tax_516 = _cells(_verse(deu, de, 5, 16), _TAXTON)
+    ely_516 = _cells(_verse(deu, de, 5, 16), _ELYON)
+    assert len(tax_2012) == len(ely_2012) == 4, (len(tax_2012), len(ely_2012))
+    assert len(tax_516) == len(ely_516) == 4, (len(tax_516), len(ely_516))
+    n_late = len(tax_2012)  # 4 short commandments
+    # Sabbath merge: the elyon runs unbroken (no sof pasuq) across Exod 20:7-20:9 / Deut
+    # 5:11-5:13 and closes only at 20:10 / 5:14, so what each taxton reads as four verses is
+    # one elyon verse. This validates the doc's merge claim (balanced_pair checks the strands'
+    # letters, not the elyon span itself), and that Deut keeps Exodus's verse structure.
+    for vr in (7, 8, 9):
+        assert hpunc.SOPA not in _strand_word_text(_verse(exo, ex, 20, vr), _ELYON), vr
+    assert hpunc.SOPA in _strand_word_text(_verse(exo, ex, 20, 10), _ELYON)
+    for vr in (11, 12, 13):
+        assert hpunc.SOPA not in _strand_word_text(_verse(deu, de, 5, vr), _ELYON), vr
+    assert hpunc.SOPA in _strand_word_text(_verse(deu, de, 5, 14), _ELYON)
+
+    cols = []
+
+    def col(key_t, key_e, label, t_words, e_words, t_render, e_render):
+        cols.append(
+            {
+                "label": label,
+                "key_t": key_t,
+                "key_e": key_e,
+                "t_words": t_words,
+                "e_words": e_words,
+                "t_render": t_render,
+                "e_render": e_render,
+            }
+        )
+
+    R = _paint_range  # Exodus renderer: (first_words, last_words) -> cell, bound to flags
+    D = _paint_deut_range  # Deut renderer: also bound to its Exodus twin's endpoints
+
+    # Early split (Exod 20:2-20:5), five columns. The taxton reads 20:2 as one verse spanning
+    # columns 202a+202b (green start on 202a, red stop on 202b); the elyon breaks after avadim,
+    # so its long verse spans 202b-205 (green start on 202b's לא, red stop on 205's מצותי,
+    # 203/204 wholly interior). Columns 202b and 203 are where the leading לֹא of a negative
+    # commandment tokenizes differently — taxton maqaf-joins it, elyon leaves it free — so
+    # balanced_pair pulls one word inward on each side there; the rest already letter-match.
+    col(
+        "early_taxrow_202a",
+        "early_elyrow_202a",
+        "early 20:2a",
+        tax_202[0].split(),
+        ely_202[0].split(),
+        partial(R, start=True, stop=False),
+        partial(R, start=True, stop=True),
+    )
+    col(
+        "early_taxrow_202b",
+        "early_elyrow_202b",
+        "early 20:2b",
+        tax_202[1].split(),
+        ely_202[1].split(),
+        partial(R, start=False, stop=True),
+        partial(R, start=True, stop=False),
+    )
+    # 203/204/205 draw the whole-verse word list via _strand_word_text, not _cells[0]/[-1]:
+    # _cells silently drops a מ:כפול unit whose strand isn't a single plain string (e.g. MAM
+    # 20:4's opening clause, whose qamats-qatan carries a nested מ:קמץ template), which once
+    # made 20:4's taxton cell start at כי instead of its true initial לא־תשתחוה. See #200 —
+    # now guarded, since balanced_pair asserts each column's taxton/elyon are consonant-equal.
+    for vr, e_start, e_stop in ((3, False, False), (4, False, False), (5, False, True)):
+        col(
+            f"early_taxrow_20{vr}",
+            f"early_elyrow_20{vr}",
+            f"early 20:{vr}",
+            _strand_words(exo, ex, 20, vr, _TAXTON),
+            _strand_words(exo, ex, 20, vr, _ELYON),
+            partial(R, start=True, stop=True),
+            partial(R, start=e_start, stop=e_stop),
+        )
+
+    # Sabbath merge (Exod 20:7-20:10), transposed like the early split: each taxton cell is a
+    # whole verse (green start / red stop); the elyon is one verse spanning all four — green on
+    # 20:7's start, red on 20:10's end, 20:8/20:9 wholly plain. Words use _strand_word_text
+    # (not _cells): 20:9's taxton strand is all nested markup, so _cells would yield nothing.
+    sab_ely_flags = {7: (True, False), 8: (False, False), 9: (False, False), 10: (False, True)}
+    for vr, (e_start, e_stop) in sab_ely_flags.items():
+        col(
+            f"sab_taxrow_{vr}",
+            f"sab_elyrow_{vr}",
+            f"sab 20:{vr}",
+            _strand_words(exo, ex, 20, vr, _TAXTON),
+            _strand_words(exo, ex, 20, vr, _ELYON),
+            partial(R, start=True, stop=True),
+            partial(R, start=e_start, stop=e_stop),
+        )
+
+    # Late split (Exod 20:12), transposed but mirrored: here the taxton is the single verse
+    # spanning all four columns (green on the first commandment's start, red on שקר, its two
+    # interior cells plain) and each of the four elyon commandments is its own verse (green
+    # start / red stop). tax_2012[i]/ely_2012[i] are the two strands' readings of commandment i.
+    for i in range(n_late):
+        col(
+            f"late_taxrow_{i}",
+            f"late_elyrow_{i}",
+            f"late 20:12 cell {i}",
+            tax_2012[i].split(),
+            ely_2012[i].split(),
+            partial(R, start=(i == 0), stop=(i == n_late - 1)),
+            partial(R, start=True, stop=True),
+        )
+
+    # Deuteronomy appendix — Sabbath (Deut 5:11-5:14 mirrors Exod 20:7-20:10). Each Deut
+    # endpoint is shaded against its Exodus twin (see _paint_deut_range): identical words wash
+    # out, differing words stay full-strength, so זכור→שמור and Deut's longer text stand out
+    # while ששת ימים… (5:12), which matches Exodus end-to-end, is all pale. The Deut Sabbath
+    # keeps Exodus's elyon-spans-four-taxton-verses structure, so it reuses sab_ely_flags.
+    for dvr in (11, 12, 13, 14):
+        evr = dvr - 4  # Deut 5:v mirrors Exod 20:(v-4)
+        ex_t = _strand_words(exo, ex, 20, evr, _TAXTON)
+        ex_e = _strand_words(exo, ex, 20, evr, _ELYON)
+        e_start, e_stop = sab_ely_flags[evr]
+        col(
+            f"deut_sab_taxrow_{dvr}",
+            f"deut_sab_elyrow_{dvr}",
+            f"deut-sab 5:{dvr}",
+            _strand_words(deu, de, 5, dvr, _TAXTON),
+            _strand_words(deu, de, 5, dvr, _ELYON),
+            partial(D, ex_t[0], ex_t[-1], start=True, stop=True),
+            partial(D, ex_e[0], ex_e[-1], start=e_start, stop=e_stop),
+        )
+
+    # Deuteronomy appendix — the same late split (Deut 5:16), shaded against its Exodus twin.
+    # Deut differs in two ways here — a connective וְ on the 2nd-4th commandments (וְלֹא vs
+    # Exodus's asyndetic לֹא) and the ninth's end-word (שָׁוְא vs שָׁקֶר) — so those are the
+    # only forms left at full strength. (These are non-letter differences, so the columns are
+    # still consonant-equal taxton-to-elyon within Deut, and the pass is a no-op here.)
+    for i in range(n_late):
+        ex_t = tax_2012[i].split()
+        ex_e = ely_2012[i].split()
+        col(
+            f"deut_late_taxrow_{i}",
+            f"deut_late_elyrow_{i}",
+            f"deut-late 5:16 cell {i}",
+            tax_516[i].split(),
+            ely_516[i].split(),
+            partial(D, ex_t[0], ex_t[-1], start=(i == 0), stop=(i == n_late - 1)),
+            partial(D, ex_e[0], ex_e[-1], start=True, stop=True),
+        )
+
+    return cols
+
+
 def gather_examples(books_mpu):
-    """Return the dict of byte-faithful Hebrew example strings the doc splices in."""
+    """Return the dict of byte-faithful Hebrew example strings the doc splices in. Every
+    taxton/elyon table column is built through balanced_pair (see build_columns), so its
+    consonant-skeleton equality assert guards the whole document; the remaining keys are
+    single boundary words spliced into prose captions and the Numbers table."""
     exo = books_mpu[tbn.BK_EXODUS]["verses_plus"]
     num = books_mpu[tbn.BK_NUMBERS]["verses_plus"]
-    deu = books_mpu[tbn.BK_DEUTER]["verses_plus"]  # for the Deuteronomy appendix
 
-    def verse(vp, bk, chnu, vrnu):
-        return vp[tbn.mk_bcvtmam(bk, chnu, vrnu)]
-
-    tax_202 = _cells(verse(exo, tbn.BK_EXODUS, 20, 2), _TAXTON)
-    ely_202 = _cells(verse(exo, tbn.BK_EXODUS, 20, 2), _ELYON)
-    tax_203 = _cells(verse(exo, tbn.BK_EXODUS, 20, 3), _TAXTON)
-    tax_205 = _cells(verse(exo, tbn.BK_EXODUS, 20, 5), _TAXTON)
-
-    # The elyon reading of the three interior verses. Unlike the taxton strand, the
-    # elyon strand of these verses carries nested paseq/legarmeh/qamats templates, so
-    # _cells can't grab it as a plain cell; _strand_word_text flattens the whole verse's
-    # elyon strand to read off its first and last *word*. The long elyon verse runs
-    # mid-verse through 20:3–20:4 (no sof pasuq) and ends only at 20:5's מצותי.
-    def strand_ends(vrnu, param):
-        words = _strand_word_text(verse(exo, tbn.BK_EXODUS, 20, vrnu), param).split()
-        return words[0], words[-1]
-
-    def ely_ends(vrnu):
-        return strand_ends(vrnu, _ELYON)
-
-    def tax_ends(vrnu):
-        return strand_ends(vrnu, _TAXTON)
-
-    def deut_strand_ends(vrnu, param):
-        """strand_ends for the Deuteronomy Decalogue (chapter 5). The Deut counterpart of
-        Exodus 20:v is Deut 5:(v+4), but the appendix's Sabbath verses are addressed by
-        their own Deut numbers (5:11–5:14), so this takes the concrete Deut verse."""
-        words = _strand_word_text(verse(deu, tbn.BK_DEUTER, 5, vrnu), param).split()
-        return words[0], words[-1]
-
-    ely_203_first, ely_203_last = ely_ends(3)
-    ely_204_first, ely_204_last = ely_ends(4)
-    ely_205_first, ely_205_last = ely_ends(5)
-    ely_2012 = _cells(verse(exo, tbn.BK_EXODUS, 20, 12), _ELYON)
-    tax_2012 = _cells(verse(exo, tbn.BK_EXODUS, 20, 12), _TAXTON)
-    num_261 = _cells(verse(num, tbn.BK_NUMBERS, 26, 1), _TAXTON)
-    # Deuteronomy appendix, late split: Deut 5:16 mirrors Exod 20:12.
-    ely_516_deut = _cells(verse(deu, tbn.BK_DEUTER, 5, 16), _ELYON)
-    tax_516_deut = _cells(verse(deu, tbn.BK_DEUTER, 5, 16), _TAXTON)
-
-    # The early split's verse (Exod 20:2) has exactly two dual-trope units:
-    # unit 0 = "I am the LORD … house of bondage"; unit 1 = "no other gods … before Me".
-    assert len(tax_202) == 2 and len(ely_202) == 2, (len(tax_202), len(ely_202))
-    # #200 regression: the taxton and elyon rows of column 20:4 cover the same text span,
-    # so their chanted-verse-initial *word* must share consonants (both לא־תשתחוה). Before
-    # the fix, _cells dropped 20:4's opening clause and the taxton row started at כי.
-    def _consonants(word):
-        return "".join(ch for ch in word if 0x05D0 <= ord(ch) <= 0x05EA)
-
-    assert _consonants(tax_ends(4)[0]) == _consonants(ely_ends(4)[0]), (
-        tax_ends(4)[0],
-        ely_ends(4)[0],
-    )
-    # The late split (Exod 20:12) reads as four cells in each cantillation. Unlike the
-    # early split (see #200), _cells and _strand_word_text agree for 20:12's taxton (its
-    # four cells are clean single-string מ:כפול units), so it keeps using _cells — but
-    # assert taxton/elyon stay cell-aligned, so a future nested template silently dropping
-    # a taxton cell fails loudly here instead of misaligning the late-split columns.
-    assert len(tax_2012) == len(ely_2012) == 4, (len(tax_2012), len(ely_2012))
-    # The Deuteronomy late split (5:16) shares that structure — four upper cells.
-    assert len(ely_516_deut) == 4, len(ely_516_deut)
-    # Numbers 26:1 is a single chanted verse split by a mid-verse petuxah into two runs.
-    assert len(num_261) == 2, len(num_261)
-    # Sabbath merge: the elyon runs unbroken across 20:7-20:9 (no sof pasuq) and closes
-    # only at 20:10, so what the taxton reads as four verses is one elyon verse.
-    for _sab in (7, 8, 9):
-        assert hpunc.SOPA not in _strand_word_text(
-            verse(exo, tbn.BK_EXODUS, 20, _sab), _ELYON
-        ), _sab
-    assert hpunc.SOPA in _strand_word_text(verse(exo, tbn.BK_EXODUS, 20, 10), _ELYON)
-    # The Deuteronomy Sabbath merges the same way: the elyon runs unbroken across
-    # 5:11-5:13 (no sof pasuq) and closes only at 5:14. This validates the appendix's
-    # claim that Deut's much longer Sabbath keeps Exodus's taxton/elyon verse structure.
-    for _sabd in (11, 12, 13):
-        assert hpunc.SOPA not in _strand_word_text(
-            verse(deu, tbn.BK_DEUTER, 5, _sabd), _ELYON
-        ), _sabd
-    assert hpunc.SOPA in _strand_word_text(verse(deu, tbn.BK_DEUTER, 5, 14), _ELYON)
-
-    def _range(first_word, last_word, *, start, stop):
-        """A 'firstword…lastword' range label for the early-split table, each word
-        stripped to consonants + accents + accent-coupled punctuation (see
-        _strip_pointing). It feeds only that table (and its prose caption), so stripping
-        here leaves the surrounding byte-faithful prose untouched.
-
-        ``start``/``stop`` color the range's endpoints as a chanted verse's first
-        (green) and last (red) word. Suppress an endpoint (start=False / stop=False)
-        when the range is only part of a chanted verse, or wholly interior to one."""
-        first = _strip_pointing(first_word)
-        last = _strip_pointing(last_word)
-        if start:
-            first = _green(first)
-        if stop:
-            last = _red(last)
-        return f"{first}…{last}"
-
-    def rng(first_cell, last_cell, *, start=True, stop=True):
-        """`_range` over a first cell's first word and a last cell's last word."""
-        return _range(_first_word(first_cell), _last_word(last_cell), start=start, stop=stop)
-
-    def cell_ends(cell):
-        return _first_word(cell), _last_word(cell)
-
-    # Late split (Exod 20:12), transposed like the Sabbath table but with the roles
-    # mirrored. There, the taxton read four verses and the elyon was the one spanning
-    # verse; here the taxton is the single spanning verse (green on the first
-    # commandment's start, red on שקר, its two interior cells plain) and each of the
-    # four elyon commandments is its own verse (green start / red stop). The four
-    # columns are those commandments in scripture order; tax_2012[i]/ely_2012[i] are the
-    # two strands' readings of commandment i, so each column shows both. The four upper
-    # verses all close in sof pasuq; the last shares its שקר with the taxton's outer end.
-    n_late = len(ely_2012)  # 4 short commandments
-    late_taxrows = {
-        f"late_taxrow_{i}": rng(c, c, start=(i == 0), stop=(i == n_late - 1))
-        for i, c in enumerate(tax_2012)
-    }
-    late_elyrows = {f"late_elyrow_{i}": rng(c, c) for i, c in enumerate(ely_2012)}
-    # Deuteronomy appendix — the same late split (Deut 5:16), shaded against its Exodus
-    # twin like the appendix Sabbath (see _deut_range): words matching Exodus wash out,
-    # words that differ stay full strength. Deut differs in two ways here — a connective
-    # וְ on the 2nd–4th commandments (וְלֹא vs Exodus's asyndetic לֹא) and the ninth's
-    # end-word (שָׁוְא vs שָׁקֶר) — so those are the only forms left at full strength.
-    deut_late_taxrows = {
-        f"deut_late_taxrow_{i}": _deut_range(
-            cell_ends(ex), cell_ends(de), start=(i == 0), stop=(i == n_late - 1)
+    out = {}
+    for c in build_columns(books_mpu):
+        t_cell, e_cell = balanced_pair(
+            c["t_words"],
+            c["e_words"],
+            label=c["label"],
+            t_render=c["t_render"],
+            e_render=c["e_render"],
         )
-        for i, (ex, de) in enumerate(zip(tax_2012, tax_516_deut))
-    }
-    deut_late_elyrows = {
-        f"deut_late_elyrow_{i}": _deut_range(cell_ends(ex), cell_ends(de), start=True, stop=True)
-        for i, (ex, de) in enumerate(zip(ely_2012, ely_516_deut))
-    }
+        out[c["key_t"]] = t_cell
+        out[c["key_e"]] = e_cell
 
-    return {
-        # early split — boundary words of the two dual-trope units
-        "early_taxton_avadim": _last_word(tax_202[0]),   # …עֲבָדִ֑ים  (etnachta, mid-verse)
-        "early_taxton_panai": _last_word(tax_202[1]),    # …עַל־פָּנָֽי׃ (sof pasuq)
-        "early_elyon_avadim": _last_word(ely_202[0]),    # …עֲבָדִֽים׃  (sof pasuq)
-        "early_elyon_panai": _last_word(ely_202[1]),     # …עַל־פָּנַ֗י (revia, runs on)
-        "early_taxton_laarets": _last_word(tax_203[-1]),  # …לָאָֽרֶץ׃ (end of MAM 20:3)
-        "early_mitsvotai": _last_word(tax_205[-1]),      # …מִצְוֺתָֽי׃ (end of MAM 20:5)
-        # early split — assembled first…last ranges for the overlapping-boundaries
-        # table. Each end-word carries its own strand's mark, and the first/last word
-        # of a chanted verse is colored green (start) / red (stop). A verse that spans
-        # multiple table rows colors only its outer endpoints (interior rows plain):
-        #  - taxton 20:2 spans rows 202a+202b: green on 202a's start, red on 202b's end.
-        #  - the long elyon verse spans rows 202b–205: green on 202b's start (לא), red on
-        #    205's end (מצותי); rows 203/204 are wholly interior, so entirely plain.
-        "early_taxrow_202a": rng(tax_202[0], tax_202[0], stop=False),
-        "early_elyrow_202a": rng(ely_202[0], ely_202[0]),
-        "early_taxrow_202b": rng(tax_202[1], tax_202[1], start=False),
-        "early_elyrow_202b": rng(ely_202[1], ely_202[1], stop=False),
-        "early_elyrow_203": _range(ely_203_first, ely_203_last, start=False, stop=False),
-        "early_elyrow_204": _range(ely_204_first, ely_204_last, start=False, stop=False),
-        "early_elyrow_205": _range(ely_205_first, ely_205_last, start=False, stop=True),
-        # plain (uncolored) label spliced into the prose caption for the long elyon verse
-        "early_elyrow_long": _range(
-            _first_word(ely_202[1]), ely_205_last, start=False, stop=False
-        ),
-        # These read the whole-verse taxton first/last *word* via _strand_word_text
-        # (tax_ends), not via _cells[0]/_cells[-1], exactly as the elyon rows and the
-        # Sabbath table do. _cells silently drops a מ:כפול unit whose strand isn't a
-        # single plain string (e.g. MAM 20:4's opening clause, whose qamats-qatan carries
-        # a nested מ:קמץ template), which made 20:4's taxton cell start at כי instead of
-        # its true chanted-verse-initial לא־תשתחוה. See issue #200.
-        "early_taxrow_203": _range(*tax_ends(3), start=True, stop=True),
-        "early_taxrow_204": _range(*tax_ends(4), start=True, stop=True),
-        "early_taxrow_205": _range(*tax_ends(5), start=True, stop=True),
-        # Sabbath merge, transposed like the early-split table: the taxton row's four
-        # cells are each a whole verse (green start / red stop); the elyon row is one
-        # verse spanning all four — green on 20:7's start, red on 20:10's end, the two
-        # interior cells (20:8, 20:9) wholly plain. Words use _strand_word_text (not
-        # _cells): 20:9's taxton strand is all nested markup, so _cells yields nothing.
-        "sab_taxrow_7": _range(*strand_ends(7, _TAXTON), start=True, stop=True),
-        "sab_taxrow_8": _range(*strand_ends(8, _TAXTON), start=True, stop=True),
-        "sab_taxrow_9": _range(*strand_ends(9, _TAXTON), start=True, stop=True),
-        "sab_taxrow_10": _range(*strand_ends(10, _TAXTON), start=True, stop=True),
-        "sab_elyrow_7": _range(*strand_ends(7, _ELYON), start=True, stop=False),
-        "sab_elyrow_8": _range(*strand_ends(8, _ELYON), start=False, stop=False),
-        "sab_elyrow_9": _range(*strand_ends(9, _ELYON), start=False, stop=False),
-        "sab_elyrow_10": _range(*strand_ends(10, _ELYON), start=False, stop=True),
-        # (The Sabbath table's MAM/BHS number rows — MAM 20:7–20:10, BHS 20:8–20:11 — are
-        # static Exodus verse numbers, so they are hardcoded in the table template.)
-        # late split — the taxton spanning verse and the four upper commandments (built above)
-        **late_taxrows,
-        **late_elyrows,
-        # Deuteronomy appendix — Sabbath (Deut 5:11-5:14 mirrors Exod 20:7-20:10), each
-        # Deut endpoint shaded against its Exodus twin (see _deut_range): identical words
-        # wash out, differing words stay full-strength, so זכור→שמור and Deut's longer text
-        # stand out while ששת ימים… (5:12), which matches Exodus end-to-end, is all pale.
-        "deut_sab_taxrow_11": _deut_range(strand_ends(7, _TAXTON), deut_strand_ends(11, _TAXTON), start=True, stop=True),
-        "deut_sab_taxrow_12": _deut_range(strand_ends(8, _TAXTON), deut_strand_ends(12, _TAXTON), start=True, stop=True),
-        "deut_sab_taxrow_13": _deut_range(strand_ends(9, _TAXTON), deut_strand_ends(13, _TAXTON), start=True, stop=True),
-        "deut_sab_taxrow_14": _deut_range(strand_ends(10, _TAXTON), deut_strand_ends(14, _TAXTON), start=True, stop=True),
-        "deut_sab_elyrow_11": _deut_range(strand_ends(7, _ELYON), deut_strand_ends(11, _ELYON), start=True, stop=False),
-        "deut_sab_elyrow_12": _deut_range(strand_ends(8, _ELYON), deut_strand_ends(12, _ELYON), start=False, stop=False),
-        "deut_sab_elyrow_13": _deut_range(strand_ends(9, _ELYON), deut_strand_ends(13, _ELYON), start=False, stop=False),
-        "deut_sab_elyrow_14": _deut_range(strand_ends(10, _ELYON), deut_strand_ends(14, _ELYON), start=False, stop=True),
-        # Deuteronomy appendix — late split (Deut 5:16), taxton and elyon rows (built above)
-        **deut_late_taxrows,
-        **deut_late_elyrows,
-        # Numbers 25/26
-        "num_seg0": num_261[0],                          # וַיְהִ֖י אַחֲרֵ֣י הַמַּגֵּפָ֑ה
-        "num_seg0_last": _last_word(num_261[0]),         # הַמַּגֵּפָ֑ה (etnachta)
-        "num_seg1_first": _first_word(num_261[1]),       # וַיֹּ֤אמֶר
-        "num_seg1_last": _last_word(num_261[1]),         # לֵאמֹֽר׃ (sof pasuq)
-    }
+    # Prose-caption boundary words — single words spliced into the running text, not T/E
+    # column pairs, so they are not balanced. The two dual-trope units' end-words, the two
+    # MAM verse ends, and the long elyon verse's plain (uncolored) first…last label.
+    tax_202 = _cells(_verse(exo, tbn.BK_EXODUS, 20, 2), _TAXTON)
+    ely_202 = _cells(_verse(exo, tbn.BK_EXODUS, 20, 2), _ELYON)
+    tax_203 = _cells(_verse(exo, tbn.BK_EXODUS, 20, 3), _TAXTON)
+    tax_205 = _cells(_verse(exo, tbn.BK_EXODUS, 20, 5), _TAXTON)
+    ely_205_last = _strand_words(exo, tbn.BK_EXODUS, 20, 5, _ELYON)[-1]
+    out.update(
+        {
+            "early_taxton_avadim": _last_word(tax_202[0]),  # …עֲבָדִ֑ים (etnachta, mid-verse)
+            "early_taxton_panai": _last_word(tax_202[1]),  # …עַל־פָּנָֽי׃ (sof pasuq)
+            "early_elyon_avadim": _last_word(ely_202[0]),  # …עֲבָדִֽים׃ (sof pasuq)
+            "early_elyon_panai": _last_word(ely_202[1]),  # …עַל־פָּנַ֗י (revia, runs on)
+            "early_taxton_laarets": _last_word(tax_203[-1]),  # …לָאָֽרֶץ׃ (end of MAM 20:3)
+            "early_mitsvotai": _last_word(tax_205[-1]),  # …מִצְוֺתָֽי׃ (end of MAM 20:5)
+            "early_elyrow_long": _paint_range(
+                [_first_word(ely_202[1])], [ely_205_last], start=False, stop=False
+            ),
+        }
+    )
+
+    # Numbers 25/26 — a single chanted verse split by a mid-verse petuxah into two runs.
+    num_261 = _cells(_verse(num, tbn.BK_NUMBERS, 26, 1), _TAXTON)
+    assert len(num_261) == 2, len(num_261)
+    out.update(
+        {
+            "num_seg0": num_261[0],  # וַיְהִ֖י אַחֲרֵ֣י הַמַּגֵּפָ֑ה
+            "num_seg0_last": _last_word(num_261[0]),  # הַמַּגֵּפָ֑ה (etnachta)
+            "num_seg1_first": _first_word(num_261[1]),  # וַיֹּ֤אמֶר
+            "num_seg1_last": _last_word(num_261[1]),  # לֵאמֹֽר׃ (sof pasuq)
+        }
+    )
+    return out

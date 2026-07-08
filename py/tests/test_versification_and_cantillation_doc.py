@@ -5,10 +5,15 @@ from mb_cmn import paths
 from mb_cmn import read_books_from_mam_parsed_plus as plus
 from versification_and_cantillation import doc as vc_doc
 from versification_and_cantillation import generate_doc as vc_generate_doc
+from versification_and_cantillation import strands as vc_strands
 
 _CURRENT_DOC_PATH = (
     paths.sibling_repo("MAM-simple") / "gh-pages" / "versification-and-cantillation.html"
 )
+
+
+def _joined_skel(words):
+    return "".join(vc_strands._skel(w) for w in words)
 
 
 class TestVersificationAndCantillationDoc(unittest.TestCase):
@@ -16,15 +21,69 @@ class TestVersificationAndCantillationDoc(unittest.TestCase):
 
     def test_full_generated_doc_matches_current_doc(self):
         expected = _CURRENT_DOC_PATH.read_text(encoding="utf-8")
-        books_mpu = plus.read_parsed_plus_bk39s(
-            (tbn.BK_EXODUS, tbn.BK_NUMBERS, tbn.BK_DEUTER)
-        )
+        books_mpu = plus.read_parsed_plus_bk39s((tbn.BK_EXODUS, tbn.BK_NUMBERS, tbn.BK_DEUTER))
 
         self.assertEqual(vc_doc.render_full_html(books_mpu), expected)
 
     def test_generate_doc_reports_up_to_date(self):
         # The checked-in file must already match what the generator produces.
         self.assertTrue(vc_generate_doc.check_output_matches())
+
+
+class TestStrandBalancer(unittest.TestCase):
+    """The letter-equalizing pass of issue #201: every taxton/elyon column the doc emits
+    must be consonant-equal at both boundaries after balancing, and the balancer must fail
+    loudly on an input it cannot reconcile."""
+
+    maxDiff = None
+
+    @classmethod
+    def setUpClass(cls):
+        cls.books = plus.read_parsed_plus_bk39s((tbn.BK_EXODUS, tbn.BK_NUMBERS, tbn.BK_DEUTER))
+
+    def test_every_column_pair_is_consonant_equal(self):
+        # The umbrella guard: walk *every* T/E column pair (early, late, Sabbath, and both
+        # Deuteronomy-appendix tables), balance its boundaries, and assert the displayed
+        # taxton and elyon sides share a consonant skeleton at each end. This is the same
+        # check gather_examples' balanced_pair enforces inline; running it here over the whole
+        # column list makes any future silent letter-inequality a test failure.
+        columns = vc_strands.build_columns(self.books)
+        # early 5 + Sabbath 4 + late 4 + Deut-Sabbath 4 + Deut-late 4 = 21 columns.
+        self.assertEqual(len(columns), 21)
+        for col in columns:
+            with self.subTest(column=col["label"]):
+                t_first, t_last, e_first, e_last = vc_strands._balanced_sides(
+                    col["t_words"], col["e_words"], label=col["label"]
+                )
+                self.assertEqual(_joined_skel(t_first), _joined_skel(e_first))
+                self.assertEqual(_joined_skel(t_last), _joined_skel(e_last))
+
+    def test_balancer_pulls_the_leading_lo_columns(self):
+        # The two columns that actually diverge (MAM Exod 20:2b and 20:3): each pulls one word
+        # inward on both sides so the taxton's maqaf-joined לֹא and the elyon's free לֹא align.
+        columns = {c["label"]: c for c in vc_strands.build_columns(self.books)}
+        for label in ("early 20:2b", "early 20:3"):
+            with self.subTest(column=label):
+                col = columns[label]
+                t_first, _, e_first, _ = vc_strands._balanced_sides(
+                    col["t_words"], col["e_words"], label=label
+                )
+                self.assertEqual(len(t_first), 2)
+                self.assertEqual(len(e_first), 2)
+                self.assertEqual(_joined_skel(t_first), _joined_skel(e_first))
+
+    def test_balancer_raises_loudly_on_irreconcilable_input(self):
+        # Two strands that share no consonant prefix cannot be letter-equalized by pulling;
+        # the balancer must raise (not silently emit an unequal pair), naming the column.
+        with self.assertRaises(AssertionError) as ctx:
+            vc_strands.balanced_pair(
+                ["אָב"],
+                ["גָּד"],
+                label="stub column",
+                t_render=lambda first, last: "",
+                e_render=lambda first, last: "",
+            )
+        self.assertIn("stub column", str(ctx.exception))
 
 
 if __name__ == "__main__":
