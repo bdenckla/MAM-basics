@@ -55,11 +55,40 @@ _PBP_FOI_URL = (
     "https://bdenckla.github.io/MAM-with-doc/foi/foi-rare-tmpls.html#intro-col-e-sampe"
 )
 
-# The two Decalogue cantillation strands, named inline throughout the body. Each
-# is styled the same way at every mention (an <em> gloss of the Hebrew term), so
-# the styling lives here in one place rather than being repeated at each mention.
-_TAXTON = "<em>taḥton</em>"
-_ELYON = "<em>elyon</em>"
+# Romanized (transliterated) Hebrew terms named throughout the body and tables. Each is
+# styled the same way at every mention, so — like the two cantillation strands, which are
+# just two more such terms — the markup lives here in one place, abstracted behind {curly}
+# placeholders filled from _ROMANIZED, rather than being hand-written at each mention. This
+# mirrors mb_author/author.py's $-substituted _ROMANIZED dict (a different substitution
+# syntax, same idea); here we stay with str.format's {curly} placeholders, the scheme the
+# rest of this template already uses.
+#
+# Centralizing the wrapper also makes the markup *choice* a one-line change. Today it is an
+# <em> gloss; but <em> is not semantic here (we are not emphasizing these words), and the
+# repo's other generated docs mark romanized Hebrew as <span class="romanized"> (styled
+# italic via span.romanized in the CSS — see mb_author/author.py, mb_misc/styles_authored.css,
+# and the sibling gh-pages stylesheets). Switching _romanized to emit that span — and adding
+# the matching CSS rule — is left to a follow-up, so this commit is a pure abstraction whose
+# only output change is that {petuxah}/{setumah} now resolve at all.
+#
+# ASCII keys spell the letter khet as x (repo convention, cf. author.py's $tarxa / $patax);
+# the displayed value spells it as precomposed h-with-dot-below = U+1E25 (NFC, issue #187).
+# The keys are exactly the {placeholder} names used in _BODY_TEMPLATE and the table templates.
+def _romanized(term):
+    return f"<em>{term}</em>"
+
+
+_ROMANIZED = {
+    key: _romanized(term)
+    for key, term in {
+        "taxton": "taḥton",
+        "elyon": "elyon",
+        "etnaxta": "etnaḥta",
+        "sof_pasuq": "sof pasuq",
+        "petuxah": "petuḥah",
+        "setumah": "setumah",
+    }.items()
+}
 
 # The external stylesheet, linked from the <head> and deployed next to the HTML
 # (same basename, sibling file in gh-pages/) by generate_doc.py. The CSS lives in
@@ -85,7 +114,7 @@ a <strong>numbered verse</strong> in this document.
 In this document, we will not ignore cantillation,
 and it will be important to make a distinction
 between a numbered verse and a <strong>chanted verse</strong>.
-We define a chanted verse as a span of text between two sof pasuq marks,
+We define a chanted verse as a span of text between two {sof_pasuq} marks,
 where that span's accents obey the rules of cantillation.</p>
 
 <p>In cases that are rare, but central to this document,
@@ -114,7 +143,7 @@ This case has little in common with the cases in the Decalogues.
 BHS splits the chanted verse that MAM calls Numbers 26:1 into
 a 25:19 span (a cv-label that does not exist in MAM)
 and a 26:1 span.
-BHS 26:1 starts right after an <em>etnaḥta</em>.</p>
+BHS 26:1 starts right after an {etnaxta}.</p>
 
 <h2>The Decalogues: background</h2>
 
@@ -196,17 +225,17 @@ four {elyon} verses each containing only a "quarter" of a {taxton} verse.
 
 {late_table}
 
-<h2>Numbers 25/26: a break at an <em>etnaḥta</em>, not a <em>sof pasuq</em></h2>
+<h2>Numbers 25/26: a break at an {etnaxta}, not a {sof_pasuq}</h2>
 
 <p>Here there is only one cantillation,
 and BHS starts a numbered verse in the middle of a chanted verse,
-right after an <em>etnaḥta</em>.</p>
+right after an {etnaxta}.</p>
 
 <p>MAM keeps Numbers 26:1 as a single chanted verse with a
-mid-verse paragraph break inside it —
-a פסקא באמצע פסוק (here a <em>petuḥah</em>).
+mid-verse paragraph break inside it
+— a פסקא באמצע פסוק (in its {petuxah} form).
 The break is shown below as a line break,
-which is what a <em>petuḥah</em> ("open" section) in fact is
+which is what a {petuxah} ("open" section) in fact is
 (with some qualifications we won't get into).
 Both lines are part of a single chanted verse.</p>
 
@@ -215,21 +244,21 @@ Both lines are part of a single chanted verse.</p>
 {num_seg1_first} … {num_seg1_last}
 </blockquote>
 
-<p>The chanted verse ends, as always, at <em>sof pasuq</em> ({num_seg1_last}).
-The word before the break, {num_seg0_last}, has only <em>etnaḥta</em> —
+<p>The chanted verse ends, as always, at {sof_pasuq} ({num_seg1_last}).
+The word before the break, {num_seg0_last}, has only {etnaxta} —
 the strongest mid-verse disjunctive, but not a verse-ending accent.
 BHS promotes that break to a verse (and chapter!) boundary,
 making its 25:19 end at {num_seg0_last} —
-on an <em>etnaḥta</em>, <strong>not</strong> a <em>sof pasuq</em>.
+on an {etnaxta}, <strong>not</strong> a {sof_pasuq}.
 So BHS's 25:19 is not a chanted verse.</p>
 
 <p>Why did BHS choose to start a numbered verse (and a chapter!) here?
-The <em>etnaḥta</em> and its accompanying פסקא באמצע פסוק already signal a strong break here;
+The {etnaxta} and its accompanying פסקא באמצע פסוק already signal a strong break here;
 perhaps someone nonetheless felt that a chapter break was needed
 to communicate an even stronger break at this point.
 Or perhaps this chapter break has its origin in a non-cantillated
 (perhaps even non-Hebrew) version of the text,
-where cantillation-location of a chapter break is irrelevant
+where the cantillation-location of a chapter break is irrelevant
 (or at least invisible).</p>
 
 <p>Note that the פסקא באמצע פסוק does not explain the chapter break.
@@ -247,7 +276,7 @@ See, for example, Deuteronomy 2:8.</p>
 <p>In the Decalogues, MAM's numbered boundaries coincide with {taxton} chanted-verse
 ends, and BHS's extra boundaries are upper chanted-verse ends. In Numbers 25/26 BHS's
 extra boundary is not a chanted-verse end in <em>any</em> cantillation — it lands on an
-<em>etnaḥta</em>. That is the whole cantillational story behind these versification
+{etnaxta}. That is the whole cantillational story behind these versification
 differences.</p>
 
 <h2 id="appendix-deuteronomy">Appendix: the same points in Deuteronomy</h2>
@@ -469,8 +498,8 @@ _SUMMARY_TABLE = """\
   <tr>
     <td>Numbers 25/26</td>
     <td>chanted-verse starts</td>
-    <td>+ mid-verse break (onto <em>etnaḥta</em>)</td>
-    <td>break at <em>etnaḥta</em>, not <em>sof pasuq</em></td>
+    <td>+ mid-verse break (onto {etnaxta})</td>
+    <td>break at {etnaxta}, not {sof_pasuq}</td>
   </tr>
 </table>"""
 
@@ -579,8 +608,7 @@ def render_full_html(books_mpu):
     fields = {
         "vdiff_url": _VDIFF_URL,
         "pbp_foi_url": _PBP_FOI_URL,
-        "taxton": _TAXTON,
-        "elyon": _ELYON,
+        **_ROMANIZED,
         **examples,
     }
     comment = provenance.generated_html_comment(_GENERATOR_FILE)
