@@ -79,10 +79,10 @@ _BODY_TEMPLATE = """\
 
 <p>This document is a companion to <a href="{vdiff_url}">versification-differences.md</a>.
 That document deliberately ignores cantillation,
-treating a verse as nothing more than a span of text between two cv-labels.
+defining a verse as nothing more than a span of text between two cv-labels.
 That definition of a verse is what we will call
-a <strong>numbered verse</strong> in this document,
-where we will not ignore cantillation,
+a <strong>numbered verse</strong> in this document.
+In this document, we will not ignore cantillation,
 and it will be important to make a distinction
 between a numbered verse and a <strong>chanted verse</strong>.
 We define a chanted verse as a span of text between two sof pasuq marks,
@@ -118,12 +118,11 @@ BHS 26:1 starts right after an <em>etnaḥta</em>.</p>
 
 <h2>The Decalogues: background</h2>
 
-<p>Each of the Decalogues has <strong>two</strong> parallel strands of cantillation.
+<p>Each of the Decalogues has two parallel strands of cantillation.
 The <strong>{taxton}</strong> (תחתון) (lower) strand
 divides the passage into twelve chanted verses.
 The <strong>{elyon}</strong> (עליון) (upper) strand
-divides the passage into ten chanted verses,
-each traditionally taken to be one of the Ten Commandments.
+divides the passage into ten chanted verses: the Ten Commandments.
 Relative to the {taxton}, the lengths of the {elyon} verses are uneven.
 There are two {elyon} verses that are quite long, containing, respectively "three and a half" and four {taxton} verses.
 (That "half" will be explained below.)
@@ -149,63 +148,49 @@ nothing of interest, since it is merely a hybrid of the two. The Sefaria details
 can be found in the <a href="{vdiff_url}">parent document</a>, which treats
 versification without reference to cantillation.</p>
 
-<p>Because BHS honors a superset of MAM's boundaries, every MAM Decalogue verse maps
-to <em>one or more</em> whole BHS verses, never the reverse.</p>
-
-<p>The whole story is then how the two cantillations' boundaries sit relative to each
-other — and this differs between the two splits. At the early split they
-<strong>overlap</strong> (the splits interleave); at the late split the {elyon} is
-<strong>strictly contained within</strong> a single {taxton} verse.</p>
-
-<h3>The early split — overlapping boundaries</h3>
-
-<p>When an {elyon} verse contains multiple {taxton} verses in their entirety,
-there is no numbering drift between MAM and BHS.
-This is the case with the four consecutive {taxton} verses in the table below,
-although unfortunately the point is somewhat muddied
-by a drift that has already happened, earlier in the Decalogues:</p>
-
-{sab_table}
-
-<p>(In the table above, each chanted verse's first word is shown in green
-and its last word in red. A sort of schematic of each chanted verse is shown
-at the bottom of the table, as a color gradient. All examples in this document are from the <strong>Exodus</strong>
-Decalogue; the <a href="#appendix-deuteronomy">appendix</a> revisits these points in the
-Deuteronomy Decalogue, which shares the same structure but differs in its text.)</p>
+<h3>The early drift</h3>
 
 <p>When an {elyon} verse contains only part of a {taxton} verse,
-the numbering drifts between MAM and BHS.
-The table below shows the source of the drift encountered above:
-two {elyon} verses contain four {taxton} verses in their entirety,
+the BHS numbering drifts forward relative to MAM.
+The table below shows the first of two such drifts in the Decalogues.
+Two {elyon} verses contain four {taxton} verses in their entirety,
 but they are not contained "nicely".
 They are not contained "nicely" because:
 <ul>
 <li>The {elyon} verse {early_elyon_short_verse} contains only the first "half" of the {taxton} verse {early_taxton_split_verse}.</li>
-<li>The {elyon} verse {early_elyon_long_verse} contains "three and a half" {taxton} verses:
-it contains the second "half" of the {taxton} verse {early_taxton_split_verse} followed by three whole {taxton} verses.</li>
+<li>The {elyon} verse {early_elyon_long_verse} contains "three and a half" {taxton} verses. The {elyon} contains:
+<ul>
+<li>The second "half" of the {taxton} verse {early_taxton_split_verse}.</li>
+<li>Three whole {taxton} verses.</li>
 </ul>
 </p>
 
 {early_strand_table}
 
-<h3>The late split — nested boundaries</h3>
+<p>(In the table above, each chanted verse's first word is shown in green
+and its last word in red.
+In addition, a schematic version of each chanted verse is shown at the bottom of the table, as a green-to-red color gradient.
+All examples in this document are from the <strong>Exodus</strong> Decalogue;
+the <a href="#appendix-deuteronomy">appendix</a> revisits these points in the
+Deuteronomy Decalogue, which shares the same structure but differs in its details.)</p>
 
-<p>Here the two cantillations <strong>share</strong> the outer boundary and the {elyon} merely
-subdivides the interior. In MAM Exodus 20:12 the {taxton} cantillation runs the four
-short commandments as a <strong>single</strong> verse; the {elyon} gives each its own verse — all
-four strictly contained within the one {taxton} verse, both ending together at שקר:</p>
+<p>When an {elyon} verse contains multiple {taxton} verses in their entirety,
+there is no numbering drift between MAM and BHS.
+This is the case with the four consecutive {taxton} verses in the table below,
+although unfortunately the point is somewhat muddied
+by a drift that has already happened, which we described above:</p>
+
+{sab_table}
+
+<h3>The late drift</h3>
+
+<p>When an {elyon} verse contains only part of a {taxton} verse,
+the numbering drifts between MAM and BHS.
+The table below shows a drift due to
+four {elyon} verses each containing only a "quarter" of a {taxton} verse.
+</p>
 
 {late_table}
-
-<p>(This table mirrors the early-split one, with the roles reversed. The four columns are
-the four short commandments in scripture order. The {taxton} (<abbr title="taḥton">T</abbr>)
-row is now the single verse spanning all four — green on its first word, red on שקר, its
-interior plain — while each {elyon} (<abbr title="elyon">E</abbr>) commandment is its own
-verse. The number rows show that MAM numbers once for the one {taxton} verse (the spanning
-cells), whereas BHS numbers each {elyon} start.)</p>
-
-<p>So BHS gives <strong>four verses where MAM has one</strong>. Deuteronomy 5:16 works
-identically.</p>
 
 <h2>Numbers 25/26: a break at an <em>etnaḥta</em>, not a <em>sof pasuq</em></h2>
 
