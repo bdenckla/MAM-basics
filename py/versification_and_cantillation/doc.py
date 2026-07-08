@@ -168,8 +168,8 @@ by a drift that has already happened, earlier in the Decalogues:</p>
 {sab_table}
 
 <p>(In the table above, each chanted verse's first word is shown in green
-and its last word in red. The bottom two rows give each {taxton} verse's
-MAM and BHS number. All examples in this document are from the <strong>Exodus</strong>
+and its last word in red. A sort of schematic of each chanted verse is shown
+at the bottom of the table, as a color gradient. All examples in this document are from the <strong>Exodus</strong>
 Decalogue; the <a href="#appendix-deuteronomy">appendix</a> revisits these points in the
 Deuteronomy Decalogue, which shares the same structure but differs in its text.)</p>
 
@@ -178,6 +178,12 @@ the numbering drifts between MAM and BHS.
 The table below shows the source of the drift encountered above:
 two {elyon} verses contain four {taxton} verses in their entirety,
 but they are not contained "nicely".
+They are not contained "nicely" because:
+<ul>
+<li>The {elyon} verse אנכ֖י…עבדֽים׃ contains only the first "half" of the {taxton} verse אנכי֙……על־פנֽי׃.</li>
+<li>The {elyon} verse ל֣א יהיה־לך֩…מצותֽי׃ contains "three and a half" {taxton} verses:
+it contains the second "half" of the {taxton} verse אנכי֙……על־פנֽי׃ followed by three whole {taxton} verses.</li>
+</ul>
 </p>
 
 {early_strand_table}
@@ -312,18 +318,18 @@ everything matching Exodus washes out:</p>
 _SAB_TABLE = """\
 <table dir="rtl">
   <tr>
-    <th><abbr title="taḥton (lower cantillation strand)">T</abbr></th>
-    <td>{sab_taxrow_7}</td>
-    <td>{sab_taxrow_8}</td>
-    <td>{sab_taxrow_9}</td>
-    <td>{sab_taxrow_10}</td>
-  </tr>
-  <tr>
     <th><abbr title="elyon (upper cantillation strand)">E</abbr></th>
     <td>{sab_elyrow_7}</td>
     <td>{sab_elyrow_8}</td>
     <td>{sab_elyrow_9}</td>
     <td>{sab_elyrow_10}</td>
+  </tr>
+  <tr>
+    <th><abbr title="taḥton (lower cantillation strand)">T</abbr></th>
+    <td>{sab_taxrow_7}</td>
+    <td>{sab_taxrow_8}</td>
+    <td>{sab_taxrow_9}</td>
+    <td>{sab_taxrow_10}</td>
   </tr>
   <tr class="cv">
     <th><abbr title="MAM verse number">M</abbr></th>
@@ -340,15 +346,15 @@ _SAB_TABLE = """\
     <td>20:11</td>
   </tr>
   <tr>
-    <th>t</th>
-    <td class="vc-grad"></td>
-    <td class="vc-grad"></td>
-    <td class="vc-grad"></td>
-    <td class="vc-grad"></td>
+    <th><abbr title="schematic color gradient for the elyon verse">e</abbr></th>
+    <td class="vc-grad" colspan="4"></td>
   </tr>
   <tr>
-    <th>e</th>
-    <td class="vc-grad" colspan="4"></td>
+    <th><abbr title="schematic color gradient for the taḥton verse(s)">t</abbr></th>
+    <td class="vc-grad"></td>
+    <td class="vc-grad"></td>
+    <td class="vc-grad"></td>
+    <td class="vc-grad"></td>
   </tr>
 </table>"""
 
@@ -360,20 +366,20 @@ _SAB_TABLE = """\
 _EARLY_STRAND_TABLE = """\
 <table dir="rtl">
   <tr>
-    <th><abbr title="taḥton (lower cantillation strand)">T</abbr></th>
-    <td>{early_taxrow_202a}</td>
-    <td>{early_taxrow_202b}</td>
-    <td>{early_taxrow_203}</td>
-    <td>{early_taxrow_204}</td>
-    <td>{early_taxrow_205}</td>
-  </tr>
-  <tr>
     <th><abbr title="elyon (upper cantillation strand)">E</abbr></th>
     <td>{early_elyrow_202a}</td>
     <td>{early_elyrow_202b}</td>
     <td>{early_elyrow_203}</td>
     <td>{early_elyrow_204}</td>
     <td>{early_elyrow_205}</td>
+  </tr>
+  <tr>
+    <th><abbr title="taḥton (lower cantillation strand)">T</abbr></th>
+    <td>{early_taxrow_202a}</td>
+    <td>{early_taxrow_202b}</td>
+    <td>{early_taxrow_203}</td>
+    <td>{early_taxrow_204}</td>
+    <td>{early_taxrow_205}</td>
   </tr>
   <tr class="cv">
     <th><abbr title="MAM verse number">M</abbr></th>
@@ -391,16 +397,16 @@ _EARLY_STRAND_TABLE = """\
     <td>20:6</td>
   </tr>
   <tr>
-    <th>t</th>
+    <th><abbr title="schematic color gradient for the elyon verse">e</abbr></th>
+    <td class="vc-grad"></td>
+    <td class="vc-grad" colspan="4"></td>
+  </tr>
+  <tr>
+    <th><abbr title="schematic color gradient for the taḥton verse(s)">t</abbr></th>
     <td class="vc-grad" colspan="2"></td>
     <td class="vc-grad"></td>
     <td class="vc-grad"></td>
     <td class="vc-grad"></td>
-  </tr>
-  <tr>
-    <th>e</th>
-    <td class="vc-grad"></td>
-    <td class="vc-grad" colspan="4"></td>
   </tr>
 </table>"""
 
@@ -412,18 +418,18 @@ _EARLY_STRAND_TABLE = """\
 _LATE_TABLE = """\
 <table dir="rtl">
   <tr>
-    <th><abbr title="taḥton (lower cantillation strand)">T</abbr></th>
-    <td>{late_taxrow_0}</td>
-    <td>{late_taxrow_1}</td>
-    <td>{late_taxrow_2}</td>
-    <td>{late_taxrow_3}</td>
-  </tr>
-  <tr>
     <th><abbr title="elyon (upper cantillation strand)">E</abbr></th>
     <td>{late_elyrow_0}</td>
     <td>{late_elyrow_1}</td>
     <td>{late_elyrow_2}</td>
     <td>{late_elyrow_3}</td>
+  </tr>
+  <tr>
+    <th><abbr title="taḥton (lower cantillation strand)">T</abbr></th>
+    <td>{late_taxrow_0}</td>
+    <td>{late_taxrow_1}</td>
+    <td>{late_taxrow_2}</td>
+    <td>{late_taxrow_3}</td>
   </tr>
   <tr class="cv">
     <th><abbr title="MAM verse number">M</abbr></th>
@@ -437,15 +443,15 @@ _LATE_TABLE = """\
     <td>20:16</td>
   </tr>
   <tr>
-    <th>t</th>
-    <td class="vc-grad" colspan="4"></td>
+    <th><abbr title="schematic color gradient for the elyon verse">e</abbr></th>
+    <td class="vc-grad"></td>
+    <td class="vc-grad"></td>
+    <td class="vc-grad"></td>
+    <td class="vc-grad"></td>
   </tr>
   <tr>
-    <th>e</th>
-    <td class="vc-grad"></td>
-    <td class="vc-grad"></td>
-    <td class="vc-grad"></td>
-    <td class="vc-grad"></td>
+    <th><abbr title="schematic color gradient for the taḥton verse(s)">t</abbr></th>
+    <td class="vc-grad" colspan="4"></td>
   </tr>
 </table>"""
 
@@ -483,18 +489,18 @@ _SUMMARY_TABLE = """\
 _DEUT_SAB_TABLE = """\
 <table dir="rtl">
   <tr>
-    <th><abbr title="taḥton (lower cantillation strand)">T</abbr></th>
-    <td>{deut_sab_taxrow_11}</td>
-    <td>{deut_sab_taxrow_12}</td>
-    <td>{deut_sab_taxrow_13}</td>
-    <td>{deut_sab_taxrow_14}</td>
-  </tr>
-  <tr>
     <th><abbr title="elyon (upper cantillation strand)">E</abbr></th>
     <td>{deut_sab_elyrow_11}</td>
     <td>{deut_sab_elyrow_12}</td>
     <td>{deut_sab_elyrow_13}</td>
     <td>{deut_sab_elyrow_14}</td>
+  </tr>
+  <tr>
+    <th><abbr title="taḥton (lower cantillation strand)">T</abbr></th>
+    <td>{deut_sab_taxrow_11}</td>
+    <td>{deut_sab_taxrow_12}</td>
+    <td>{deut_sab_taxrow_13}</td>
+    <td>{deut_sab_taxrow_14}</td>
   </tr>
   <tr class="cv">
     <th><abbr title="MAM verse number">M</abbr></th>
@@ -511,15 +517,15 @@ _DEUT_SAB_TABLE = """\
     <td>5:15</td>
   </tr>
   <tr>
-    <th>t</th>
-    <td class="vc-grad"></td>
-    <td class="vc-grad"></td>
-    <td class="vc-grad"></td>
-    <td class="vc-grad"></td>
+    <th><abbr title="schematic color gradient for the elyon verse">e</abbr></th>
+    <td class="vc-grad" colspan="4"></td>
   </tr>
   <tr>
-    <th>e</th>
-    <td class="vc-grad" colspan="4"></td>
+    <th><abbr title="schematic color gradient for the taḥton verse(s)">t</abbr></th>
+    <td class="vc-grad"></td>
+    <td class="vc-grad"></td>
+    <td class="vc-grad"></td>
+    <td class="vc-grad"></td>
   </tr>
 </table>"""
 
@@ -530,18 +536,18 @@ _DEUT_SAB_TABLE = """\
 _DEUT_LATE_TABLE = """\
 <table dir="rtl">
   <tr>
-    <th><abbr title="taḥton (lower cantillation strand)">T</abbr></th>
-    <td>{deut_late_taxrow_0}</td>
-    <td>{deut_late_taxrow_1}</td>
-    <td>{deut_late_taxrow_2}</td>
-    <td>{deut_late_taxrow_3}</td>
-  </tr>
-  <tr>
     <th><abbr title="elyon (upper cantillation strand)">E</abbr></th>
     <td>{deut_late_elyrow_0}</td>
     <td>{deut_late_elyrow_1}</td>
     <td>{deut_late_elyrow_2}</td>
     <td>{deut_late_elyrow_3}</td>
+  </tr>
+  <tr>
+    <th><abbr title="taḥton (lower cantillation strand)">T</abbr></th>
+    <td>{deut_late_taxrow_0}</td>
+    <td>{deut_late_taxrow_1}</td>
+    <td>{deut_late_taxrow_2}</td>
+    <td>{deut_late_taxrow_3}</td>
   </tr>
   <tr class="cv">
     <th><abbr title="MAM verse number">M</abbr></th>
@@ -555,15 +561,15 @@ _DEUT_LATE_TABLE = """\
     <td>5:20</td>
   </tr>
   <tr>
-    <th>t</th>
-    <td class="vc-grad" colspan="4"></td>
+    <th><abbr title="schematic color gradient for the elyon verse">e</abbr></th>
+    <td class="vc-grad"></td>
+    <td class="vc-grad"></td>
+    <td class="vc-grad"></td>
+    <td class="vc-grad"></td>
   </tr>
   <tr>
-    <th>e</th>
-    <td class="vc-grad"></td>
-    <td class="vc-grad"></td>
-    <td class="vc-grad"></td>
-    <td class="vc-grad"></td>
+    <th><abbr title="schematic color gradient for the taḥton verse(s)">t</abbr></th>
+    <td class="vc-grad" colspan="4"></td>
   </tr>
 </table>"""
 
