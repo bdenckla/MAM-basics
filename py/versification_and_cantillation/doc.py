@@ -55,6 +55,11 @@ _PBP_FOI_URL = (
     "https://bdenckla.github.io/MAM-with-doc/foi/foi-rare-tmpls.html#intro-col-e-sampe"
 )
 
+# The MAM-with-doc rendering of 1 Samuel 16:12, the {petuxah}-form פסקא באמצע פסוק
+# cited in the body as a plainer counterpart to the Numbers case. Per-verse anchors
+# on those book pages are "c{chapter}v{verse}".
+_1SAM_16_12_URL = "https://bdenckla.github.io/MAM-with-doc/BA-1Samuel.html#c16v12"
+
 # Romanized (transliterated) Hebrew terms named throughout the body and tables. Each is
 # styled the same way at every mention, so — like the two cantillation strands, which are
 # just two more such terms — the markup lives here in one place, abstracted behind {curly}
@@ -263,11 +268,15 @@ where the cantillation-location of a chapter break is irrelevant
 
 <p>Note that the פסקא באמצע פסוק does not explain the chapter break.
 Even in the {petuxah} form it takes here,
-it never causes a numbered verse break, much less a chapter break,
+this Numbers case is the only place in which פסקא באמצע פסוק causes a numbered verse break,
+much less a chapter break,
 in any of our versifications.
 (The פסקא באמצע פסוק phenomenon also has a {setumah} form,
 which is considered a weaker break than the {petuxah} form.)
-See, for example, Deuteronomy 2:8 — one of <a href="{pbp_foi_url}">many such verses</a>.</p>
+See, for example, <a href="{sam_16_12_url}">1 Samuel 16:12</a> — one of <a href="{pbp_foi_url}">many such verses</a>.
+(This is just one of nine cases of {petuxah}-form פסקא באמצע פסוק in the book of Samuel,
+out of twenty-four such cases in all of Tanakh.
+For some reason, this rare type of break is overrepresented in this book.)</p>
 
 <h2 id="appendix-deuteronomy">Appendix: the same points in Deuteronomy</h2>
 
@@ -568,6 +577,7 @@ def render_full_html(books_mpu):
     fields = {
         "vdiff_url": _VDIFF_URL,
         "pbp_foi_url": _PBP_FOI_URL,
+        "sam_16_12_url": _1SAM_16_12_URL,
         **_ROMANIZED,
         **examples,
     }
