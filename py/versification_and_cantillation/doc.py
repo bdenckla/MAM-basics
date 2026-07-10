@@ -131,21 +131,21 @@ in at least one of the two strands of cantillation.
 Different trade-offs in the face of this "impossible" situation
 give rise to different versifications of the Decalogues.</p>
 
-<p>(Aside: like many numbered verses of the Decalogues,
-Genesis 35:22 has two strands of cantillation
+<p>Aside: like many numbered verses of the Decalogues,
+Gen. 35:22 has two strands of cantillation
 and is only a chanted verse in one of those two strands.
 (In the other strand, it contains two chanted verses in their entirety.)
-Unlike in the Decalogues, at Genesis 35:22
+Unlike in the Decalogues, at Gen. 35:22
 all versifications discussed here (MAM, BHS, and Sefaria)
 make the same trade-off in the face of this "impossible" situation:
-they all agree to label Genesis 35:22 as a single numbered verse.)</p>
+they all agree to label Gen. 35:22 as a single numbered verse.</p>
 
 <p>Other than the cases in the Decalogues,
 the one other case in our versifications
 where a numbered verse is not a chanted verse
-is the Numbers 25/26 boundary in BHS versification.
+is the Num. 25/26 break in BHS versification.
 This case has little in common with the cases in the Decalogues.
-BHS splits the chanted verse that MAM calls Numbers 26:1 into
+BHS splits the chanted verse that MAM calls Num. 26:1 into
 a 25:19 span (a cv-label that does not exist in MAM)
 and a 26:1 span.
 BHS 26:1 starts right after an {etnaxta}.</p>
@@ -153,9 +153,9 @@ BHS 26:1 starts right after an {etnaxta}.</p>
 <h2>The Decalogues: background</h2>
 
 <p>Each of the Decalogues has two parallel strands of cantillation.
-The <strong>{taxton}</strong> (תחתון) (lower) strand
+The <strong>{taxton}</strong> (תחתון) strand
 divides the passage into twelve chanted verses.
-The <strong>{elyon}</strong> (עליון) (upper) strand
+The <strong>{elyon}</strong> (עליון) strand
 divides the passage into ten chanted verses: the Ten Commandments.
 Relative to the {taxton}, the lengths of the {elyon} verses are uneven.
 There are two {elyon} verses that are quite long, containing, respectively "three and a half" and four {taxton} verses.
@@ -207,8 +207,9 @@ is shown in green and red respectively.
 Also, a schematic version of each chanted verse is shown at the bottom of the table,
 as a green-to-red color gradient.
 All examples in the body of this document are from the <strong>Exodus</strong> Decalogue;
-the <a href="#appendix-deuteronomy">appendix</a> revisits these points in the
-Deuteronomy Decalogue, which shares the same structure but differs in its details.</p>
+the <a href="#appendix-deuteronomy">appendix</a> revisits these points in the Deuteronomy Decalogue,
+whose chanted verses are numbered in the same way
+despite some differences in the details of its text that are unimportant to our basic points here.</p>
 
 <h3>The middle no-drift case</h3>
 
@@ -230,13 +231,13 @@ four {elyon} verses each containing only a "quarter" of a {taxton} verse.
 
 {late_table}
 
-<h2>Numbers 25/26: a break at an {etnaxta}, not a {sof_pasuq}</h2>
+<h2>Num. 25/26: a break at an {etnaxta}, not a {sof_pasuq}</h2>
 
 <p>Here there is only one cantillation,
 and BHS starts a numbered verse in the middle of a chanted verse,
 right after an {etnaxta}.</p>
 
-<p>MAM keeps Numbers 26:1 as a single chanted verse with a
+<p>MAM keeps Num. 26:1 as a single chanted verse with a
 mid-verse paragraph break inside it
 — a פסקא באמצע פסוק (in its {petuxah} form).
 The break is shown below as a line break,
@@ -252,7 +253,7 @@ Both lines are part of a single chanted verse.</p>
 <p>The chanted verse ends, as always, at {sof_pasuq} ({num_seg1_last}).
 The word before the break, {num_seg0_last}, has only {etnaxta} —
 the strongest mid-verse disjunctive, but not a verse-ending accent.
-BHS promotes that break to a verse (and chapter!) boundary,
+BHS further emphasizes that break by
 making its 25:19 end at {num_seg0_last} —
 on an {etnaxta}, <strong>not</strong> a {sof_pasuq}.
 So BHS's 25:19 is not a chanted verse.</p>
@@ -260,7 +261,7 @@ So BHS's 25:19 is not a chanted verse.</p>
 <p>Why did BHS choose to start a numbered verse (and a chapter!) here?
 The {etnaxta} and its accompanying פסקא באמצע פסוק already signal a strong break here;
 perhaps someone nonetheless felt that a chapter break was needed
-to communicate an even stronger break at this point.
+to emphasize the break at this point.
 Or perhaps this chapter break has its origin in a non-cantillated
 (perhaps even non-Hebrew) version of the text,
 where the cantillation-location of a chapter break is irrelevant
@@ -276,32 +277,39 @@ which is considered a weaker break than the {petuxah} form.)
 See, for example, <a href="{sam_16_12_url}">1 Samuel 16:12</a> — one of <a href="{pbp_foi_url}">many such verses</a>.
 (This is just one of nine cases of {petuxah}-form פסקא באמצע פסוק in the book of Samuel,
 out of twenty-four such cases in all of Tanakh.
-For some reason, this rare type of break is overrepresented in this book.)</p>
+For some reason, this rare type of break is overrepresented in the book of Samuel.)</p>
 
 <h2 id="appendix-deuteronomy">Appendix: the same points in Deuteronomy</h2>
 
 <p>Every example above is drawn from the <strong>Exodus</strong> Decalogue. The
-Deuteronomy Decalogue (Deuteronomy 5:6–5:17) carries the same two strands of cantillation
-with the same verse structure — the code that builds this document asserts as much
-against the Deuteronomy source — so the same points hold there. What differs are aspects
-of the wording (substituted words, added phrases) that leave those cantillation and
-versification points intact: the boundaries still fall in the same structural places, only
-on different words. This appendix re-shows the two points where that wording difference is
-visible, in Deuteronomy's own words. In the tables below a word is
-<span class="vc-mid vc-agree">washed out</span> when it is identical to its Exodus
-counterpart and shown at <span class="vc-mid">full strength</span> when it differs, so the
-eye lands on the differences; first/last words keep their green/red hue, paled when they
-match Exodus.</p>
+Deuteronomy Decalogue (5:6–5:17) carries the same two strands of cantillation
+with the same chanted verse structure, so the same points hold there.
+What differs are aspects of the wording
+(substituted words, added phrases)
+that leave those cantillation and versification points intact.
+The numbered verse boundaries still fall at the same places in the chanted verse structure.
+This appendix shows the two places where that wording difference is visible.
+In the tables below a word is
+<span class="vc-mid vc-agree">washed out</span>
+when it is identical to its Exodus counterpart and shown at
+<span class="vc-mid">full strength</span>
+when it differs, so the eye lands on the differences;
+first/last words keep their green/red hue,
+paled when they match Exodus.</p>
 
-<p>The <strong>early split</strong> is not re-tabulated: through Deuteronomy 5:6–5:9 the
-text is word-for-word the Exodus text (bar vowel-pointing), so its table would be
-uniformly washed out. The differences live almost entirely in the <em>Sabbath</em>
-commandment, with only a connective וְ and one substituted word in the <em>late split</em>.</p>
+<p>The <strong>early split</strong> is not shown again here: through Deut. 5:9 the
+first and last words of the chanted verses are the same as those in Exodus,
+so its table would be uniformly washed out.
+(Words other than those first and last ones do differ — a dropped and an added
+connective vav, one plene spelling — but those words never reach this
+boundary-only table.)
+The differences live almost entirely in the <em>Sabbath</em> commandment,
+with only a connective vav and one substituted word in the <em>late split</em>.</p>
 
 <h3>The Sabbath — a different, longer text</h3>
 
 <p>Deuteronomy's Sabbath commandment opens with שמור (not Exodus's זכור) and is
-considerably longer, so although the {taxton}/{elyon} verse structure is unchanged — one
+considerably longer, so although the {taxton}/{elyon} chanted verse structure is unchanged — one
 {elyon} verse spanning four {taxton} verses, exactly as in Exodus — most of the boundary
 words differ:</p>
 
@@ -314,9 +322,9 @@ last word — Deuteronomy runs on past Exodus's בשעריך to כמוך.</p>
 <h3>The late split — nearly identical</h3>
 
 <p>Here the two Decalogues read very nearly alike. Deuteronomy joins the commandments with
-a connective וְ (וְלֹא, "and you shall not") where Exodus sets them without it, and its
+a connective vav (וְלֹא, "and you shall not") where Exodus sets them without it, and its
 ninth commandment ends עֵד שָׁוְא where Exodus has עֵד שָׁקֶר. Those wording differences
-aside, the {taxton}/{elyon} structure — four {elyon} verses nested in one {taxton} verse,
+aside, the {taxton}/{elyon} chanted verse structure — four {elyon} verses nested in one {taxton} verse,
 all ending together — is unchanged, so only וְלֹא and שָׁוְא stand at full strength while
 everything matching Exodus washes out:</p>
 
@@ -336,14 +344,14 @@ everything matching Exodus washes out:</p>
 _SAB_TABLE = """\
 <table dir="rtl">
   <tr>
-    <th><abbr title="elyon (upper cantillation strand)">E</abbr></th>
+    <th><abbr title="elyon cantillation strand">E</abbr></th>
     <td>{sab_elyrow_7}</td>
     <td>{sab_elyrow_8}</td>
     <td>{sab_elyrow_9}</td>
     <td>{sab_elyrow_10}</td>
   </tr>
   <tr>
-    <th><abbr title="taḥton (lower cantillation strand)">T</abbr></th>
+    <th><abbr title="taḥton cantillation strand">T</abbr></th>
     <td>{sab_taxrow_7}</td>
     <td>{sab_taxrow_8}</td>
     <td>{sab_taxrow_9}</td>
@@ -384,7 +392,7 @@ _SAB_TABLE = """\
 _EARLY_STRAND_TABLE = """\
 <table dir="rtl">
   <tr>
-    <th><abbr title="elyon (upper cantillation strand)">E</abbr></th>
+    <th><abbr title="elyon cantillation strand">E</abbr></th>
     <td>{early_elyrow_202a}</td>
     <td>{early_elyrow_202b}</td>
     <td>{early_elyrow_203}</td>
@@ -392,7 +400,7 @@ _EARLY_STRAND_TABLE = """\
     <td>{early_elyrow_205}</td>
   </tr>
   <tr>
-    <th><abbr title="taḥton (lower cantillation strand)">T</abbr></th>
+    <th><abbr title="taḥton cantillation strand">T</abbr></th>
     <td>{early_taxrow_202a}</td>
     <td>{early_taxrow_202b}</td>
     <td>{early_taxrow_203}</td>
@@ -436,14 +444,14 @@ _EARLY_STRAND_TABLE = """\
 _LATE_TABLE = """\
 <table dir="rtl">
   <tr>
-    <th><abbr title="elyon (upper cantillation strand)">E</abbr></th>
+    <th><abbr title="elyon cantillation strand">E</abbr></th>
     <td>{late_elyrow_0}</td>
     <td>{late_elyrow_1}</td>
     <td>{late_elyrow_2}</td>
     <td>{late_elyrow_3}</td>
   </tr>
   <tr>
-    <th><abbr title="taḥton (lower cantillation strand)">T</abbr></th>
+    <th><abbr title="taḥton cantillation strand">T</abbr></th>
     <td>{late_taxrow_0}</td>
     <td>{late_taxrow_1}</td>
     <td>{late_taxrow_2}</td>
@@ -478,14 +486,14 @@ _LATE_TABLE = """\
 _DEUT_SAB_TABLE = """\
 <table dir="rtl">
   <tr>
-    <th><abbr title="elyon (upper cantillation strand)">E</abbr></th>
+    <th><abbr title="elyon cantillation strand">E</abbr></th>
     <td>{deut_sab_elyrow_11}</td>
     <td>{deut_sab_elyrow_12}</td>
     <td>{deut_sab_elyrow_13}</td>
     <td>{deut_sab_elyrow_14}</td>
   </tr>
   <tr>
-    <th><abbr title="taḥton (lower cantillation strand)">T</abbr></th>
+    <th><abbr title="taḥton cantillation strand">T</abbr></th>
     <td>{deut_sab_taxrow_11}</td>
     <td>{deut_sab_taxrow_12}</td>
     <td>{deut_sab_taxrow_13}</td>
@@ -525,14 +533,14 @@ _DEUT_SAB_TABLE = """\
 _DEUT_LATE_TABLE = """\
 <table dir="rtl">
   <tr>
-    <th><abbr title="elyon (upper cantillation strand)">E</abbr></th>
+    <th><abbr title="elyon cantillation strand">E</abbr></th>
     <td>{deut_late_elyrow_0}</td>
     <td>{deut_late_elyrow_1}</td>
     <td>{deut_late_elyrow_2}</td>
     <td>{deut_late_elyrow_3}</td>
   </tr>
   <tr>
-    <th><abbr title="taḥton (lower cantillation strand)">T</abbr></th>
+    <th><abbr title="taḥton cantillation strand">T</abbr></th>
     <td>{deut_late_taxrow_0}</td>
     <td>{deut_late_taxrow_1}</td>
     <td>{deut_late_taxrow_2}</td>
