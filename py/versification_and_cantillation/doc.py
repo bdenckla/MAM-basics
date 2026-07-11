@@ -60,6 +60,13 @@ _PBP_FOI_URL = (
 # on those book pages are "c{chapter}v{verse}".
 _1SAM_16_12_URL = "https://bdenckla.github.io/MAM-with-doc/BA-1Samuel.html#c16v12"
 
+# The sibling wlc-utils gh-pages report on whether the printed tradition's Decalogue
+# cantillation is grammatical. Cross-repo, so an absolute Pages URL (the gh-pages/
+# segment is dropped in the served URL). Linked from the Decalogue-background aside.
+_PRINTED_DECALOGUE_URL = (
+    "https://bdenckla.github.io/wlc-utils/accgram/printed-decalogue.html"
+)
+
 # Romanized (transliterated) Hebrew terms named throughout the body and tables. Each is
 # styled the same way at every mention, so — like the two cantillation strands, which are
 # just two more such terms — the markup lives here in one place, abstracted behind {curly}
@@ -162,6 +169,13 @@ There are two {elyon} verses that are quite long, containing, respectively "thre
 (That "half" will be explained below.)
 In contrast, there are four consecutive {elyon} verses that are very short:
 all four are contained within a single {taxton} verse.</p>
+
+<p>Aside: this document is only concerned with the cantillation of the Decalogues
+in the manuscript tradition;
+whether the cantillation of the Decalogues in the <em>printed</em> tradition is even
+grammatical is examined in a separate report,
+<a href="{printed_decalogue_url}">In the printed tradition, are the accents of the
+Decalogue grammatical?</a></p>
 
 <h2>The Decalogues: two versification policies</h2>
 
@@ -586,6 +600,7 @@ def render_full_html(books_mpu):
         "vdiff_url": _VDIFF_URL,
         "pbp_foi_url": _PBP_FOI_URL,
         "sam_16_12_url": _1SAM_16_12_URL,
+        "printed_decalogue_url": _PRINTED_DECALOGUE_URL,
         **_ROMANIZED,
         **examples,
     }
