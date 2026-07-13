@@ -9,7 +9,6 @@ for use in MAM-parsed-plus diff reports.  Produces human-readable descriptions l
 
 import unicodedata
 from collections import Counter
-from difflib import SequenceMatcher
 
 from mb_cmn import hebrew_accents as ha
 from mb_cmn import retired_kq_special_templates as rkqst
