@@ -182,7 +182,8 @@ CASES = (
         renderer_kind=RENDERER_KIND_COMPLEX_BOUNDARY,
         split_part_suffixes=("a", "b"),
         note_lines=(
-            "> **Note:** This split is present in BHS but **not** in Sefaria.",
+            "> **Note:** This split is present in BHS but **not** in Sefaria. See the",
+            "> [combined table](#combined-table-all-differences) below.",
         ),
     ),
     VersificationCaseRec(
@@ -220,7 +221,7 @@ CASES = (
         last_shifted_vrnu=29,
         note_lines=(
             "> **Note:** This second Decalogue split is present in BHS but **not** in",
-            "> Sefaria.",
+            "> Sefaria. See the [combined table](#combined-table-all-differences) below.",
         ),
     ),
     VersificationCaseRec(
