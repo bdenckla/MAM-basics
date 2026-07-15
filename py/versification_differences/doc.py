@@ -133,7 +133,7 @@ def render_how_mam_simple_records_these_differences_markdown():
         "The tables above treat the Hebrew span as primary. Internally, however, the",
         "`vtrad-bhs` and `vtrad-sef` output files (XML and JSON) still record these",
         "differences relative to MAM, because MAM is the underlying source text. Every",
-        "non-MAM verse whose label diverges from its MAM source carries two attributes:",
+        "non-MAM verse whose label diverges from its MAM source has two attributes:",
         "",
         "- **`contents-corresponds-to`** — one of:",
         '  - `"a full verse in MAM"` — shifted verse; the content is identical to a',
