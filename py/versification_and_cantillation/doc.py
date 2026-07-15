@@ -212,11 +212,11 @@ but they are not contained "nicely", for the reasons listed below.
 </p>
 <ul>
   <li>
-    The {elyon} verse {early_elyon_short_verse} contains only the first "half" of the {taxton} verse {early_taxton_split_verse}.
+    The {elyon} verse <span lang="hbo">{early_elyon_short_verse}</span> contains only the first "half" of the {taxton} verse <span lang="hbo">{early_taxton_split_verse}</span>.
   </li>
-  <li>The {elyon} verse {early_elyon_long_verse} contains "three and a half" {taxton} verses. The {elyon} contains:
+  <li>The {elyon} verse <span lang="hbo">{early_elyon_long_verse}</span> contains "three and a half" {taxton} verses. The {elyon} contains:
     <ul>
-      <li>The second "half" of the {taxton} verse {early_taxton_split_verse}.</li>
+      <li>The second "half" of the {taxton} verse <span lang="hbo">{early_taxton_split_verse}</span>.</li>
       <li>Three whole {taxton} verses.</li>
     </ul>
   </li>
@@ -268,16 +268,16 @@ which is what a {petuxah} ("open" section) in fact is
 (with some qualifications we won't get into).
 Both lines are part of a single chanted verse.</p>
 
-<blockquote class="verse">
+<blockquote class="verse" lang="hbo">
 {num_seg0}<br>
 {num_seg1_first} … {num_seg1_last}
 </blockquote>
 
-<p>The chanted verse ends, as always, at {sof_pasuq} ({num_seg1_last}).
-The word before the break, {num_seg0_last}, has only {etnaxta} —
+<p>The chanted verse ends, as always, at {sof_pasuq} (<span lang="hbo">{num_seg1_last}</span>).
+The word before the break, <span lang="hbo">{num_seg0_last}</span>, has only {etnaxta} —
 the strongest mid-verse disjunctive, but not a verse-ending accent.
 BHS further emphasizes that break by
-making its 25:19 end at {num_seg0_last} —
+making its 25:19 end at <span lang="hbo">{num_seg0_last}</span> —
 on an {etnaxta}, <strong>not</strong> a {sof_pasuq}.
 So BHS's 25:19 is not a chanted verse.</p>
 
@@ -357,10 +357,10 @@ last word — Deuteronomy runs on past Exodus's בשעריך to כמוך.</p>
 <h3>The late split — nearly identical</h3>
 
 <p>Here the two Decalogues read very nearly alike. Deuteronomy joins the commandments with
-a connective vav (וְלֹא, "and you shall not") where Exodus sets them without it, and its
-ninth commandment ends עֵד שָׁוְא where Exodus has עֵד שָׁקֶר. Those wording differences
+a connective vav (<span lang="hbo">וְלֹא</span>, "and you shall not") where Exodus sets them without it, and its
+ninth commandment ends <span lang="hbo">עֵד שָׁוְא</span> where Exodus has <span lang="hbo">עֵד שָׁקֶר</span>. Those wording differences
 aside, the {taxton}/{elyon} chanted verse structure — four {elyon} verses nested in one {taxton} verse,
-all ending together — is unchanged, so only וְלֹא and שָׁוְא stand at full strength while
+all ending together — is unchanged, so only <span lang="hbo">וְלֹא</span> and <span lang="hbo">שָׁוְא</span> stand at full strength while
 everything matching Exodus washes out:</p>
 
 {deut_late_table}
@@ -380,17 +380,17 @@ _SAB_TABLE = """\
 <table dir="rtl">
   <tr>
     <th><abbr title="elyon cantillation strand">E</abbr></th>
-    <td>{sab_elyrow_7}</td>
-    <td>{sab_elyrow_8}</td>
-    <td>{sab_elyrow_9}</td>
-    <td>{sab_elyrow_10}</td>
+    <td lang="hbo">{sab_elyrow_7}</td>
+    <td lang="hbo">{sab_elyrow_8}</td>
+    <td lang="hbo">{sab_elyrow_9}</td>
+    <td lang="hbo">{sab_elyrow_10}</td>
   </tr>
   <tr>
     <th><abbr title="taḥton cantillation strand">T</abbr></th>
-    <td>{sab_taxrow_7}</td>
-    <td>{sab_taxrow_8}</td>
-    <td>{sab_taxrow_9}</td>
-    <td>{sab_taxrow_10}</td>
+    <td lang="hbo">{sab_taxrow_7}</td>
+    <td lang="hbo">{sab_taxrow_8}</td>
+    <td lang="hbo">{sab_taxrow_9}</td>
+    <td lang="hbo">{sab_taxrow_10}</td>
   </tr>
   <tr class="cv">
     <th><abbr title="MAM verse number">M</abbr></th>
@@ -428,19 +428,19 @@ _EARLY_STRAND_TABLE = """\
 <table dir="rtl">
   <tr>
     <th><abbr title="elyon cantillation strand">E</abbr></th>
-    <td>{early_elyrow_202a}</td>
-    <td>{early_elyrow_202b}</td>
-    <td>{early_elyrow_203}</td>
-    <td>{early_elyrow_204}</td>
-    <td>{early_elyrow_205}</td>
+    <td lang="hbo">{early_elyrow_202a}</td>
+    <td lang="hbo">{early_elyrow_202b}</td>
+    <td lang="hbo">{early_elyrow_203}</td>
+    <td lang="hbo">{early_elyrow_204}</td>
+    <td lang="hbo">{early_elyrow_205}</td>
   </tr>
   <tr>
     <th><abbr title="taḥton cantillation strand">T</abbr></th>
-    <td>{early_taxrow_202a}</td>
-    <td>{early_taxrow_202b}</td>
-    <td>{early_taxrow_203}</td>
-    <td>{early_taxrow_204}</td>
-    <td>{early_taxrow_205}</td>
+    <td lang="hbo">{early_taxrow_202a}</td>
+    <td lang="hbo">{early_taxrow_202b}</td>
+    <td lang="hbo">{early_taxrow_203}</td>
+    <td lang="hbo">{early_taxrow_204}</td>
+    <td lang="hbo">{early_taxrow_205}</td>
   </tr>
   <tr class="cv">
     <th><abbr title="MAM verse number">M</abbr></th>
@@ -480,17 +480,17 @@ _LATE_TABLE = """\
 <table dir="rtl">
   <tr>
     <th><abbr title="elyon cantillation strand">E</abbr></th>
-    <td>{late_elyrow_0}</td>
-    <td>{late_elyrow_1}</td>
-    <td>{late_elyrow_2}</td>
-    <td>{late_elyrow_3}</td>
+    <td lang="hbo">{late_elyrow_0}</td>
+    <td lang="hbo">{late_elyrow_1}</td>
+    <td lang="hbo">{late_elyrow_2}</td>
+    <td lang="hbo">{late_elyrow_3}</td>
   </tr>
   <tr>
     <th><abbr title="taḥton cantillation strand">T</abbr></th>
-    <td>{late_taxrow_0}</td>
-    <td>{late_taxrow_1}</td>
-    <td>{late_taxrow_2}</td>
-    <td>{late_taxrow_3}</td>
+    <td lang="hbo">{late_taxrow_0}</td>
+    <td lang="hbo">{late_taxrow_1}</td>
+    <td lang="hbo">{late_taxrow_2}</td>
+    <td lang="hbo">{late_taxrow_3}</td>
   </tr>
   <tr class="cv">
     <th><abbr title="MAM verse number">M</abbr></th>
@@ -522,17 +522,17 @@ _DEUT_SAB_TABLE = """\
 <table dir="rtl">
   <tr>
     <th><abbr title="elyon cantillation strand">E</abbr></th>
-    <td>{deut_sab_elyrow_11}</td>
-    <td>{deut_sab_elyrow_12}</td>
-    <td>{deut_sab_elyrow_13}</td>
-    <td>{deut_sab_elyrow_14}</td>
+    <td lang="hbo">{deut_sab_elyrow_11}</td>
+    <td lang="hbo">{deut_sab_elyrow_12}</td>
+    <td lang="hbo">{deut_sab_elyrow_13}</td>
+    <td lang="hbo">{deut_sab_elyrow_14}</td>
   </tr>
   <tr>
     <th><abbr title="taḥton cantillation strand">T</abbr></th>
-    <td>{deut_sab_taxrow_11}</td>
-    <td>{deut_sab_taxrow_12}</td>
-    <td>{deut_sab_taxrow_13}</td>
-    <td>{deut_sab_taxrow_14}</td>
+    <td lang="hbo">{deut_sab_taxrow_11}</td>
+    <td lang="hbo">{deut_sab_taxrow_12}</td>
+    <td lang="hbo">{deut_sab_taxrow_13}</td>
+    <td lang="hbo">{deut_sab_taxrow_14}</td>
   </tr>
   <tr class="cv">
     <th><abbr title="MAM verse number">M</abbr></th>
@@ -569,17 +569,17 @@ _DEUT_LATE_TABLE = """\
 <table dir="rtl">
   <tr>
     <th><abbr title="elyon cantillation strand">E</abbr></th>
-    <td>{deut_late_elyrow_0}</td>
-    <td>{deut_late_elyrow_1}</td>
-    <td>{deut_late_elyrow_2}</td>
-    <td>{deut_late_elyrow_3}</td>
+    <td lang="hbo">{deut_late_elyrow_0}</td>
+    <td lang="hbo">{deut_late_elyrow_1}</td>
+    <td lang="hbo">{deut_late_elyrow_2}</td>
+    <td lang="hbo">{deut_late_elyrow_3}</td>
   </tr>
   <tr>
     <th><abbr title="taḥton cantillation strand">T</abbr></th>
-    <td>{deut_late_taxrow_0}</td>
-    <td>{deut_late_taxrow_1}</td>
-    <td>{deut_late_taxrow_2}</td>
-    <td>{deut_late_taxrow_3}</td>
+    <td lang="hbo">{deut_late_taxrow_0}</td>
+    <td lang="hbo">{deut_late_taxrow_1}</td>
+    <td lang="hbo">{deut_late_taxrow_2}</td>
+    <td lang="hbo">{deut_late_taxrow_3}</td>
   </tr>
   <tr class="cv">
     <th><abbr title="MAM verse number">M</abbr></th>
