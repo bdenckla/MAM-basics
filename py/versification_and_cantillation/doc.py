@@ -128,9 +128,10 @@ and it will be important to make a distinction
 between a numbered verse and a <strong>chanted verse</strong>.
 We define a chanted verse as a span of text between two {sof_pasuq} marks,
 whose accents are intended to obey the rules of cantillation.
-(By this definition, a dually-cantillated span is not a chanted verse,
+(By this definition,
+a dually-cantillated span between two {sof_pasuq} marks is not a chanted verse,
 although at least one of its strands is,
-if both {sof_pasuq} marks in question belong to that strand.)</p>
+if both {sof_pasuq} marks belong to that strand.)</p>
 
 <p>In cases that are rare, but central to this document,
 a numbered verse is not a chanted verse.
