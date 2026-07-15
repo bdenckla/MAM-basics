@@ -101,7 +101,8 @@ def _strand_word_text(minirow, param):
     nested strand templates (see _el_text). Unlike _cells (which yields verse-internal
     'cells' and can only take a strand that is a single plain string), this tolerates the
     nested paseq/legarmeh/qamats markup the elyon strand carries — it is used only to read
-    a verse's first and last *word*, so word breaks, not exact punctuation, are what matter."""
+    a verse's first and last *word*, so word breaks, not exact punctuation, are what matter.
+    """
     parts = []
     for wtel in minirow.EP:
         if wtp.is_template_with_name(wtel, _DUALCANT):
@@ -191,7 +192,8 @@ def _paint_deut_range(ex_first, ex_last, de_first_words, de_last_words, *, start
     correctly read as agreement, while an accent difference (which the strip keeps, because
     these tables are about accents) reads as a difference. The Deuteronomy columns are already
     letter-equal at every boundary, so ``de_*_words`` are single-word lists today; they are
-    joined for symmetry with _paint_range should a future divergence ever pull a word in."""
+    joined for symmetry with _paint_range should a future divergence ever pull a word in.
+    """
     df = " ".join(_strip_pointing(w) for w in de_first_words)
     dl = " ".join(_strip_pointing(w) for w in de_last_words)
     ef, el = _strip_pointing(ex_first), _strip_pointing(ex_last)
@@ -391,7 +393,12 @@ def build_columns(books_mpu):
     # whole verse (green start / red stop); the elyon is one verse spanning all four — green on
     # 20:7's start, red on 20:10's end, 20:8/20:9 wholly plain. Words use _strand_word_text
     # (not _cells): 20:9's taxton strand is all nested markup, so _cells would yield nothing.
-    sab_ely_flags = {7: (True, False), 8: (False, False), 9: (False, False), 10: (False, True)}
+    sab_ely_flags = {
+        7: (True, False),
+        8: (False, False),
+        9: (False, False),
+        10: (False, True),
+    }
     for vr, (e_start, e_stop) in sab_ely_flags.items():
         col(
             f"sab_taxrow_{vr}",
@@ -495,17 +502,31 @@ def gather_examples(books_mpu):
     ely_205_last = _strand_words(exo, tbn.BK_EXODUS, 20, 5, _ELYON)[-1]
     out.update(
         {
-            "early_taxton_avadim": _last_word(tax_202[0]),  # …עֲבָדִ֑ים (etnachta, mid-verse)
+            "early_taxton_avadim": _last_word(
+                tax_202[0]
+            ),  # …עֲבָדִ֑ים (etnachta, mid-verse)
             "early_taxton_panai": _last_word(tax_202[1]),  # …עַל־פָּנָֽי׃ (sof pasuq)
             "early_elyon_avadim": _last_word(ely_202[0]),  # …עֲבָדִֽים׃ (sof pasuq)
-            "early_elyon_panai": _last_word(ely_202[1]),  # …עַל־פָּנַ֗י (revia, runs on)
-            "early_taxton_laarets": _last_word(tax_203[-1]),  # …לָאָֽרֶץ׃ (end of MAM 20:3)
-            "early_mitsvotai": _last_word(tax_205[-1]),  # …מִצְוֺתָֽי׃ (end of MAM 20:5)
+            "early_elyon_panai": _last_word(
+                ely_202[1]
+            ),  # …עַל־פָּנַ֗י (revia, runs on)
+            "early_taxton_laarets": _last_word(
+                tax_203[-1]
+            ),  # …לָאָֽרֶץ׃ (end of MAM 20:3)
+            "early_mitsvotai": _last_word(
+                tax_205[-1]
+            ),  # …מִצְוֺתָֽי׃ (end of MAM 20:5)
             "early_elyon_short_verse": _paint_range(
-                [_first_word(ely_202[0])], [_last_word(ely_202[0])], start=True, stop=True
+                [_first_word(ely_202[0])],
+                [_last_word(ely_202[0])],
+                start=True,
+                stop=True,
             ),
             "early_taxton_split_verse": _paint_range(
-                [_first_word(tax_202[0])], [_last_word(tax_202[1])], start=True, stop=True
+                [_first_word(tax_202[0])],
+                [_last_word(tax_202[1])],
+                start=True,
+                stop=True,
             ),
             "early_elyon_long_verse": _paint_range(
                 ely_202[1].split()[:2], [ely_205_last], start=True, stop=True
@@ -527,10 +548,16 @@ def gather_examples(books_mpu):
 
     out.update(
         {
-            "num_seg0": _strip_seg(num_261[0]),  # וַיְהִ֖י אַחֲרֵ֣י הַמַּגֵּפָ֑ה (three words)
-            "num_seg0_last": _strip_pointing(_last_word(num_261[0])),  # הַמַּגֵּפָ֑ה (etnachta)
+            "num_seg0": _strip_seg(
+                num_261[0]
+            ),  # וַיְהִ֖י אַחֲרֵ֣י הַמַּגֵּפָ֑ה (three words)
+            "num_seg0_last": _strip_pointing(
+                _last_word(num_261[0])
+            ),  # הַמַּגֵּפָ֑ה (etnachta)
             "num_seg1_first": _strip_pointing(_first_word(num_261[1])),  # וַיֹּ֤אמֶר
-            "num_seg1_last": _strip_pointing(_last_word(num_261[1])),  # לֵאמֹֽר׃ (silluq + sof pasuq)
+            "num_seg1_last": _strip_pointing(
+                _last_word(num_261[1])
+            ),  # לֵאמֹֽר׃ (silluq + sof pasuq)
         }
     )
     return out

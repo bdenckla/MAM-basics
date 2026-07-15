@@ -67,6 +67,7 @@ _PRINTED_DECALOGUE_URL = (
     "https://bdenckla.github.io/wlc-utils/accgram/printed-decalogue.html"
 )
 
+
 # Romanized (transliterated) Hebrew terms named throughout the body and tables. Each is
 # styled the same way at every mention, so — like the two cantillation strands, which are
 # just two more such terms — the markup lives here in one place, abstracted behind {curly}

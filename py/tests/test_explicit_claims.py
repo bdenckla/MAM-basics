@@ -57,7 +57,9 @@ class TestExplicitClaims(unittest.TestCase):
         )
 
         self.assertEqual(len(claims.records_by_id), 1)
-        self.assertEqual(claims.records_by_id[claim_id].defined_in, "author_misc.mp_cmn")
+        self.assertEqual(
+            claims.records_by_id[claim_id].defined_in, "author_misc.mp_cmn"
+        )
         self.assertEqual(len(claims.emissions), 2)
         self.assertEqual(claims.emissions[0].record.defined_in, "author_misc.mp_cmn")
         self.assertEqual(claims.emissions[1].record.defined_in, "author_misc.mp_cmn")
@@ -317,7 +319,9 @@ class TestExplicitClaims(unittest.TestCase):
         self.assertIn("mp.plain.template.stmpl-format-example", claims.records_by_id)
 
     def test_mpplus_plain_only_templates_build_body_can_emit_explicit_claims(self):
-        plain_only_doc = importlib.import_module("author_misc.mpplus_plain_only_templates")
+        plain_only_doc = importlib.import_module(
+            "author_misc.mpplus_plain_only_templates"
+        )
         claims = claim_mod.ClaimCollection()
 
         plain_only_doc._build_body(claims=claims)

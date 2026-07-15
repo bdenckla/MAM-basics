@@ -18,7 +18,9 @@ from versification_and_cantillation import doc
 # path: gh-pages). So the live URL is
 # https://bdenckla.github.io/MAM-simple/versification-and-cantillation.html.
 _OUTPUT_PATH = (
-    paths.sibling_repo("MAM-simple") / "gh-pages" / "versification-and-cantillation.html"
+    paths.sibling_repo("MAM-simple")
+    / "gh-pages"
+    / "versification-and-cantillation.html"
 )
 # The stylesheet is linked (not inlined), so it is a second deployed file sitting
 # next to the HTML in gh-pages/. Its source of truth is a hand-authored .css beside

@@ -8,7 +8,9 @@ from versification_and_cantillation import generate_doc as vc_generate_doc
 from versification_and_cantillation import strands as vc_strands
 
 _CURRENT_DOC_PATH = (
-    paths.sibling_repo("MAM-simple") / "gh-pages" / "versification-and-cantillation.html"
+    paths.sibling_repo("MAM-simple")
+    / "gh-pages"
+    / "versification-and-cantillation.html"
 )
 
 
@@ -21,7 +23,9 @@ class TestVersificationAndCantillationDoc(unittest.TestCase):
 
     def test_full_generated_doc_matches_current_doc(self):
         expected = _CURRENT_DOC_PATH.read_text(encoding="utf-8")
-        books_mpu = plus.read_parsed_plus_bk39s((tbn.BK_EXODUS, tbn.BK_NUMBERS, tbn.BK_DEUTER))
+        books_mpu = plus.read_parsed_plus_bk39s(
+            (tbn.BK_EXODUS, tbn.BK_NUMBERS, tbn.BK_DEUTER)
+        )
 
         self.assertEqual(vc_doc.render_full_html(books_mpu), expected)
 
@@ -33,7 +37,8 @@ class TestVersificationAndCantillationDoc(unittest.TestCase):
 class TestStrandWordExtraction(unittest.TestCase):
     """Issue #199: _strand_word_text must not drop a top-level non-מ:כפול template (e.g. a
     ketiv/qere) from the flat strand — Deut 5:9 carries its last word inside a top-level כו״ק,
-    and dropping it made first/last-word extraction return the bare sof pasuq that follows."""
+    and dropping it made first/last-word extraction return the bare sof pasuq that follows.
+    """
 
     maxDiff = None
 
@@ -53,7 +58,9 @@ class TestStrandWordExtraction(unittest.TestCase):
         expected = "מִצְוֺתָֽי׃"  # qere מִצְוֺתָֽי + the trailing sof pasuq
         for param in (vc_strands._TAXTON, vc_strands._ELYON):
             with self.subTest(param=param):
-                self.assertEqual(self._last(self.deu, tbn.BK_DEUTER, 5, 9, param), expected)
+                self.assertEqual(
+                    self._last(self.deu, tbn.BK_DEUTER, 5, 9, param), expected
+                )
 
     def test_exodus_20_5_and_deut_5_9_agree_at_the_verse_end(self):
         # The whole point of the bug report: the two Decalogues in fact agree at this endpoint
@@ -65,7 +72,8 @@ class TestStrandWordExtraction(unittest.TestCase):
                 de_last = self._last(self.deu, tbn.BK_DEUTER, 5, 9, param)
                 self.assertEqual(de_last, ex_last)
                 self.assertEqual(
-                    vc_strands._strip_pointing(de_last), vc_strands._strip_pointing(ex_last)
+                    vc_strands._strip_pointing(de_last),
+                    vc_strands._strip_pointing(ex_last),
                 )
 
 
@@ -78,7 +86,9 @@ class TestStrandBalancer(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        cls.books = plus.read_parsed_plus_bk39s((tbn.BK_EXODUS, tbn.BK_NUMBERS, tbn.BK_DEUTER))
+        cls.books = plus.read_parsed_plus_bk39s(
+            (tbn.BK_EXODUS, tbn.BK_NUMBERS, tbn.BK_DEUTER)
+        )
 
     def test_every_column_pair_is_consonant_equal(self):
         # The umbrella guard: walk *every* T/E column pair (early, late, Sabbath, and both

@@ -150,9 +150,7 @@ def _extract_bhs_split_one_vs_many_section(case_rec, books_mpu):
 
 def _extract_bhs_complex_boundary_section(case_rec, books_mpu):
     verses = books_mpu[case_rec.book_id]["verses_plus"]
-    rows = [
-        _mk_context_row(_preceding_bcvt(verses, case_rec.mam_anchor_bcvt), verses)
-    ]
+    rows = [_mk_context_row(_preceding_bcvt(verses, case_rec.mam_anchor_bcvt), verses)]
     rows.extend(_split_anchor_rows(case_rec, verses[case_rec.mam_anchor_bcvt]))
     return SimpleShiftSectionRec(
         heading=case_rec.bhs_heading,

@@ -4,9 +4,7 @@ from mb_cmn import read_books_from_mam_parsed_plus as plus
 from versification_differences import case_data
 from versification_differences import doc
 
-_OUTPUT_PATH = (
-    paths.sibling_repo("MAM-simple") / "doc" / "versification-differences.md"
-)
+_OUTPUT_PATH = paths.sibling_repo("MAM-simple") / "doc" / "versification-differences.md"
 
 
 def render_full_markdown():

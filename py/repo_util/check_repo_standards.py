@@ -50,6 +50,7 @@ These file-scan checks are heuristic text scans (matching this repo's existing
 style, e.g. tests/test_h_dot_below_nfc.py, and book-of-job's
 check_escape_sequences.py), not a full tokenizer/AST parse.
 """
+
 from __future__ import annotations
 
 import re
@@ -179,7 +180,9 @@ def _tracked_py_files(repo_dir: Path) -> list[str]:
     return [line for line in result.stdout.splitlines() if line.strip()]
 
 
-def _is_excluded_from_scan(rel_path: str, *, exclude_novc: bool, exclude_dot_venv: bool) -> bool:
+def _is_excluded_from_scan(
+    rel_path: str, *, exclude_novc: bool, exclude_dot_venv: bool
+) -> bool:
     normalized = rel_path.replace("\\", "/")
     if normalized == _SELF_RELATIVE_PATH:
         return True
@@ -377,11 +380,7 @@ def _find_decomposed_latin_clusters(text: str) -> list[int]:
     n = len(text)
     while i < n:
         ch = text[i]
-        if (
-            _is_latin_base(ch)
-            and i + 1 < n
-            and unicodedata.combining(text[i + 1]) != 0
-        ):
+        if _is_latin_base(ch) and i + 1 < n and unicodedata.combining(text[i + 1]) != 0:
             j = i + 1
             while (
                 j < n
