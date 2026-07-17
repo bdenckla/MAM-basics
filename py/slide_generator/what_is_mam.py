@@ -35,11 +35,9 @@ def render_title_card(**kwargs):
     lines = [
         ("What is MAM?", font_bold, (255, 255, 255)),
         ("Miqra According to the Masorah", font_reg, (200, 232, 228)),
-        # מקרא על פי המסורה — bidi-reordered so Pillow renders RTL correctly
+        # bidi-reordered so Pillow renders RTL correctly
         (
-            get_display(
-                "\u05de\u05e7\u05e8\u05d0 \u05e2\u05dc \u05e4\u05d9 \u05d4\u05de\u05e1\u05d5\u05e8\u05d4"
-            ),
+            get_display("מקרא על פי המסורה"),
             font_reg,
             (200, 232, 228),
         ),

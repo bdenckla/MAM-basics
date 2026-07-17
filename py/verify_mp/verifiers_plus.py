@@ -530,7 +530,7 @@ def _has_chapter_count(header: dict, sub_book_name, chapter_count: int) -> bool:
     return False
 
 
-_MAQAF = "\u05be"  # HEBREW PUNCTUATION MAQAF — appears literally in dot-masks
+_MAQAF = "\N{HEBREW PUNCTUATION MAQAF}"  # appears literally in dot-masks
 
 
 def _derive_aot_arg5(dot_mask: str, type_code: str) -> str:
