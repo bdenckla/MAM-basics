@@ -11,8 +11,6 @@ Repo-level (single file each):
   - path_utility: does the repo have a __file__-relative repo-root path
     utility (see MAM-basics issue #75), instead of scattered
     Path(__file__).resolve().parents[N] chains or cwd-relative literals?
-  - black_pin: is `black` version-pinned in requirements.txt (unpinned
-    installs can silently drift `--run-black` formatting across repos)?
 
 File-scan (over tracked *.py files):
   - hex_escape_style: `\\uXXXX`/`\\UXXXXXXXX` escapes in a *non-raw* string,
@@ -22,7 +20,10 @@ File-scan (over tracked *.py files):
     `r"\\u0591-\\u05ae\\u05bd"`, since `\\N{...}` can't express a range --
     confirmed as the standing convention in sibling repos (e.g.
     holman-ketiv-qere's hebrew_accents.py). Flagging those would be noise,
-    not signal.
+    not signal. Also exempt for the same "not a style choice" reason:
+    range endpoints written as comparisons (`"\\uXXXX" <= ch <= "\\uYYYY"`),
+    and escapes inside a `#` comment, where Python never decodes them so the
+    bytes are already plain ASCII naming a codepoint.
   - orphan_combining_mark: a bare Unicode combining mark (category Mn/Mc)
     immediately following a quote character in source -- it has no base
     character to attach to, so it renders as a floating/invisible diacritic
@@ -42,18 +43,32 @@ File-scan (over tracked *.py files):
     repos' intentional non-Unicode Hebrew mark order is preserved. Mirrors the
     detection logic of tests/test_h_dot_below_nfc.py
     (the authoritative per-repo guard, which carries each repo's full out/ +
-    external-in/ exclusion set); this cross-repo scan excludes only generated
-    out/ (the main noise source) and vcs/build dirs, so external in/ snapshots
-    may still surface here -- treat the vendored guard test as authoritative.
+    external-in/ exclusion set); this cross-repo scan excludes generated output
+    trees (_GENERATED_DIRS -- the main noise source) and vcs/build dirs, so
+    external in/ snapshots may still surface here -- treat the vendored guard
+    test as authoritative.
 
 These file-scan checks are heuristic text scans (matching this repo's existing
 style, e.g. tests/test_h_dot_below_nfc.py, and book-of-job's
-check_escape_sequences.py), not a full tokenizer/AST parse.
+check_escape_sequences.py), not a full AST parse. The one exception is
+hex_escape_style's comment exemption, which does tokenize: a `#` is otherwise
+indistinguishable from one inside a string literal.
+
+Deliberately NOT checked -- black version-pinning. `black` is intentionally left
+unpinned in these repos, and a version bump's reformatting is wanted, not a
+hazard to be prevented: when a new black wants to touch files you didn't edit,
+that drift is meant to land as its own deliberate repo-wide reformat commit
+(user-level CLAUDE.md; `main_repo_util.py --run-black`). A `black_pin` check
+lived here until 2026-07-17 and reported BLACK_PINNED=False on every repo, every
+run -- pure noise against a settled decision, so it was removed. Please don't
+reintroduce it.
 """
 
 from __future__ import annotations
 
+import io
 import re
+import tokenize
 import unicodedata
 from pathlib import Path
 
@@ -74,8 +89,6 @@ _PATH_UTILITY_CANDIDATES = (
 
 _GITATTRIBUTES_LF_PATTERN = re.compile(r"^\*\s+text=auto\s+eol=lf\s*$", re.MULTILINE)
 
-_BLACK_PIN_PATTERN = re.compile(r"^black\s*(==|~=|>=)", re.IGNORECASE)
-
 _HEX_ESCAPE_PATTERN = re.compile(r"\\[uU][0-9A-Fa-f]{4,8}")
 
 _RAW_STRING_SPAN_PATTERN = re.compile(
@@ -84,6 +97,16 @@ _RAW_STRING_SPAN_PATTERN = re.compile(
 )
 
 _RANGE_PATTERN = re.compile(r"\\[uU][0-9A-Fa-f]{4,8}-\\[uU][0-9A-Fa-f]{4,8}")
+
+# The comparison spelling of the same range idea, e.g.
+# `any("<esc>05d0" <= ch <= "<esc>05ea" for ch in text)` in mb_author/json_block.py.
+# Semantically identical to a character-class range and exempt for the same
+# reason, but written as Python comparisons, so _RANGE_PATTERN's literal-hyphen
+# form never matches it.
+_COMPARISON_RANGE_PATTERN = re.compile(
+    r"""(?P<q1>['"])\\[uU][0-9A-Fa-f]{4,8}(?P=q1)\s*<=\s*\w+\s*<=\s*"""
+    r"""(?P<q2>['"])\\[uU][0-9A-Fa-f]{4,8}(?P=q2)"""
+)
 
 _QUOTE_CHARS = ("'", '"')
 
@@ -114,6 +137,13 @@ _BINARY_EXTENSIONS = {
     ".exe",
     ".dll",
 }
+
+# Repo-root-relative generated-output trees, excluded from the NFC scan. "out"
+# and "gh-pages" cover most repos; MAM-parsed instead writes its generated JSON
+# to "plain" and "plus" (see MAM-parsed/README.md), which are just as generated
+# and were previously scanned -- surfacing decomposed Latin text that had merely
+# flowed through from an external in/ snapshot upstream.
+_GENERATED_DIRS = ("out", "gh-pages", "plain", "plus")
 
 # This checker's own source mentions the escape/quote patterns it looks for
 # only inside regex literals, which do not themselves match (see docstring),
@@ -148,27 +178,6 @@ def _check_gitattributes_lf(repo_dir: Path) -> dict:
 def _check_path_utility(repo_dir: Path) -> dict:
     found = _has_any(repo_dir, _PATH_UTILITY_CANDIDATES)
     return {"present": found is not None, "path": found}
-
-
-def _check_black_pin(repo_dir: Path) -> dict:
-    requirements = repo_dir / "requirements.txt"
-    if not requirements.is_file():
-        return {
-            "requirements_txt_present": False,
-            "has_black_line": False,
-            "black_pinned": False,
-        }
-    lines = [
-        line.strip()
-        for line in requirements.read_text(encoding="utf-8").splitlines()
-        if line.strip()
-    ]
-    black_lines = [line for line in lines if line.casefold().startswith("black")]
-    return {
-        "requirements_txt_present": True,
-        "has_black_line": bool(black_lines),
-        "black_pinned": any(_BLACK_PIN_PATTERN.match(line) for line in black_lines),
-    }
 
 
 def _tracked_py_files(repo_dir: Path) -> list[str]:
@@ -212,6 +221,41 @@ def _range_spans(text: str) -> list[tuple[int, int]]:
     return [match.span() for match in _RANGE_PATTERN.finditer(text)]
 
 
+def _comparison_range_spans(text: str) -> list[tuple[int, int]]:
+    """Return spans of the comparison spelling of a range,
+    ``"\\uXXXX" <= ch <= "\\uYYYY"``. Same rationale as ``_range_spans``: the
+    escapes are range endpoints, and \\N{...} can express a single named
+    character, never a range. Each span covers both endpoints, so both are
+    exempted."""
+    return [match.span() for match in _COMPARISON_RANGE_PATTERN.finditer(text)]
+
+
+def _comment_spans(text: str) -> list[tuple[int, int]]:
+    """Return spans of ``#`` comments.
+
+    Python never decodes escapes inside a comment, so a \\uXXXX written there
+    is already plain ASCII in the file's bytes: it *names* a codepoint without
+    typing the raw character, which is the recommended form rather than a
+    violation (see mb_author/dollar_sub_g.py, which describes a combining mark
+    that way). Uses ``tokenize`` -- not a ``#`` text search -- so a ``#`` inside
+    a string literal is never mistaken for a comment; falls back to no spans for
+    a file that does not tokenize.
+    """
+    line_starts = [0]
+    for line in text.splitlines(keepends=True):
+        line_starts.append(line_starts[-1] + len(line))
+    spans = []
+    try:
+        for token in tokenize.generate_tokens(io.StringIO(text).readline):
+            if token.type != tokenize.COMMENT:
+                continue
+            (srow, scol), (erow, ecol) = token.start, token.end
+            spans.append((line_starts[srow - 1] + scol, line_starts[erow - 1] + ecol))
+    except (tokenize.TokenError, IndentationError, SyntaxError):
+        return []
+    return spans
+
+
 def _in_any_span(index: int, spans: list[tuple[int, int]]) -> bool:
     return any(start <= index < end for start, end in spans)
 
@@ -231,16 +275,19 @@ def _has_unicode_name(hex_digits: str) -> bool:
 def _find_hex_escapes(text: str) -> list[int]:
     """Return 1-indexed line numbers with a \\uXXXX/\\UXXXXXXXX escape that
     could have been the self-documenting \\N{UNICODE NAME} form instead.
-    Exempts raw strings, \\uXXXX-\\uYYYY range pairs, and codepoints with no
-    assigned Unicode name -- none of those are a \\uXXXX-vs-\\N{} style
+    Exempts raw strings, range endpoints (both the \\uXXXX-\\uYYYY and the
+    ``"\\uXXXX" <= ch <= "\\uYYYY"`` spellings), ``#`` comments, and codepoints
+    with no assigned Unicode name -- none of those are a \\uXXXX-vs-\\N{} style
     choice, they're the only option available."""
-    raw_spans = _raw_string_spans(text)
-    range_spans = _range_spans(text)
+    exempt_spans = (
+        _raw_string_spans(text)
+        + _range_spans(text)
+        + _comparison_range_spans(text)
+        + _comment_spans(text)
+    )
     line_numbers = []
     for match in _HEX_ESCAPE_PATTERN.finditer(text):
-        if _in_any_span(match.start(), raw_spans):
-            continue
-        if _in_any_span(match.start(), range_spans):
+        if _in_any_span(match.start(), exempt_spans):
             continue
         if not _has_unicode_name(match.group(0)[2:]):
             continue
@@ -308,9 +355,9 @@ def _tracked_files(repo_dir: Path) -> list[str]:
 def _is_excluded_from_nfc_scan(
     rel_path: str, *, exclude_novc: bool, exclude_dot_venv: bool
 ) -> bool:
-    """Exclude vcs/build dirs and generated output trees (out/, gh-pages/) from
-    the NFC scan. Generated output is deliberately excluded here (and in the
-    guard tests) -- regenerating it in non-NFC form is a separate concern.
+    """Exclude vcs/build dirs and generated output trees (see _GENERATED_DIRS)
+    from the NFC scan. Generated output is deliberately excluded here (and in
+    the guard tests) -- regenerating it in non-NFC form is a separate concern.
     External in/ snapshots are NOT excluded at this cross-repo layer; the
     per-repo guard test's own exclusion set is authoritative for those."""
     normalized = rel_path.replace("\\", "/")
@@ -318,7 +365,7 @@ def _is_excluded_from_nfc_scan(
         rel_path, exclude_novc=exclude_novc, exclude_dot_venv=exclude_dot_venv
     ):
         return True
-    for gen in ("out", "gh-pages"):
+    for gen in _GENERATED_DIRS:
         if normalized == gen or normalized.startswith(f"{gen}/"):
             return True
     return False
@@ -476,7 +523,6 @@ def _render_txt_report(results: list[dict]) -> str:
         lines.append(f"maintenance_script: {repo['maintenance_script']}")
         lines.append(f"gitattributes_lf: {repo['gitattributes_lf']}")
         lines.append(f"path_utility: {repo['path_utility']}")
-        lines.append(f"black_pin: {repo['black_pin']}")
         lines.append(f"py_file_count_scanned: {repo['py_file_count_scanned']}")
         if repo["hex_escape_findings"]:
             lines.append("hex_escape_findings:")
@@ -528,7 +574,6 @@ def run_check_repo_standards_across_repos(
                 "maintenance_script": _check_maintenance_script(repo_dir),
                 "gitattributes_lf": _check_gitattributes_lf(repo_dir),
                 "path_utility": _check_path_utility(repo_dir),
-                "black_pin": _check_black_pin(repo_dir),
                 **scan,
                 "nfc_h_dot_below": nfc_scan,
             }
@@ -544,13 +589,12 @@ def run_check_repo_standards_across_repos(
         nfc = repo["nfc_h_dot_below"]
         print(
             "REPO={0}; MAINTENANCE_SCRIPT={1}; GITATTRIBUTES_LF={2}; "
-            "PATH_UTILITY={3}; BLACK_PINNED={4}; HEX_ESCAPES={5}; "
-            "ORPHAN_MARKS={6}; NFC_H_DOT={7}; NFC_LATIN={8}".format(
+            "PATH_UTILITY={3}; HEX_ESCAPES={4}; "
+            "ORPHAN_MARKS={5}; NFC_H_DOT={6}; NFC_LATIN={7}".format(
                 repo["repo"],
                 repo["maintenance_script"]["present"],
                 repo["gitattributes_lf"]["has_eol_lf_rule"],
                 repo["path_utility"]["present"],
-                repo["black_pin"]["black_pinned"],
                 len(repo["hex_escape_findings"]),
                 len(repo["orphan_combining_mark_findings"]),
                 len(nfc["decomposed_findings"]) + len(nfc["comment_findings"]),
