@@ -91,9 +91,9 @@ def _get_char_diffs(old_text, new_text):
 
 
 def _has_reuveni(text):
-    """Check if text contains the consonant skeleton ראובני."""
-    consonants = "".join(c for c in text if 0x05D0 <= ord(c) <= 0x05EA)
-    return "ראובני" in consonants
+    """Check if text contains the letter skeleton ראובני."""
+    letters = "".join(c for c in text if 0x05D0 <= ord(c) <= 0x05EA)
+    return "ראובני" in letters
 
 
 def _maqaf_afor_changed(diff):

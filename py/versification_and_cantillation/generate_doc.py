@@ -35,7 +35,7 @@ _OUTPUT_PATH = (
 _CSS_SOURCE_PATH = Path(doc.__file__).with_name(doc.CSS_FILENAME)
 _CSS_OUTPUT_PATH = _OUTPUT_PATH.with_name(doc.CSS_FILENAME)
 # A third deployed file: the Hebrew font the CSS's @font-face names (issue #203, C1). The page's
-# payload is boundary words stripped to consonants + accents, so it needs a font that renders those
+# payload is boundary words stripped to letters + accents, so it needs a font that renders those
 # accents — hence a self-hosted woff2, as our other Pages-served pages do, rather than a
 # system-font stack most visitors would not resolve. Deployed at the sibling path the CSS's
 # url("woff2/Taamey_D.woff2") resolves to; MAM-simple's gh-pages/ had no binary asset before this.

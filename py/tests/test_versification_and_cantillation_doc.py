@@ -79,7 +79,7 @@ class TestStrandWordExtraction(unittest.TestCase):
 
 class TestStrandBalancer(unittest.TestCase):
     """The letter-equalizing pass of issue #201: every taxton/elyon column the doc emits
-    must be consonant-equal at both boundaries after balancing, and the balancer must fail
+    must be letter-equal at both boundaries after balancing, and the balancer must fail
     loudly on an input it cannot reconcile."""
 
     maxDiff = None
@@ -90,10 +90,10 @@ class TestStrandBalancer(unittest.TestCase):
             (tbn.BK_EXODUS, tbn.BK_NUMBERS, tbn.BK_DEUTER)
         )
 
-    def test_every_column_pair_is_consonant_equal(self):
+    def test_every_column_pair_is_letter_equal(self):
         # The umbrella guard: walk *every* T/E column pair (early, late, Sabbath, and both
         # Deuteronomy-appendix tables), balance its boundaries, and assert the displayed
-        # taxton and elyon sides share a consonant skeleton at each end. This is the same
+        # taxton and elyon sides share a letter skeleton at each end. This is the same
         # check gather_examples' balanced_pair enforces inline; running it here over the whole
         # column list makes any future silent letter-inequality a test failure.
         columns = vc_strands.build_columns(self.books)
@@ -122,7 +122,7 @@ class TestStrandBalancer(unittest.TestCase):
                 self.assertEqual(_joined_skel(t_first), _joined_skel(e_first))
 
     def test_balancer_raises_loudly_on_irreconcilable_input(self):
-        # Two strands that share no consonant prefix cannot be letter-equalized by pulling;
+        # Two strands that share no letter prefix cannot be letter-equalized by pulling;
         # the balancer must raise (not silently emit an unequal pair), naming the column.
         with self.assertRaises(AssertionError) as ctx:
             vc_strands.balanced_pair(

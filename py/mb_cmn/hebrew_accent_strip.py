@@ -1,4 +1,4 @@
-"""Strip a Hebrew token down to consonants, cantillation accents, and the
+"""Strip a Hebrew token down to letters, cantillation accents, and the
 accent-coupled punctuation (maqaf, sof pasuq, legarmeh) — dropping vowel points,
 dagesh, shin/sin dots, rafe, and (per policy) meteg.
 
@@ -13,7 +13,7 @@ the vendorable ``mb_cmn`` namespace and depends only on sibling ``mb_cmn`` const
 from mb_cmn import hebrew_points as hp
 from mb_cmn import hebrew_punctuation as hpunc
 
-# Hebrew consonants block: ALEF (U+05D0) .. TAV (U+05EA), including the final forms.
+# Hebrew letters block: ALEF (U+05D0) .. TAV (U+05EA), including the final forms.
 _LETTER_LO, _LETTER_HI = 0x05D0, 0x05EA
 # Cantillation accents (te'amim): ETNAHTA (U+0591) .. the last accent (U+05AE).
 # The block ends at U+05AE on purpose: U+05AF (MASORA CIRCLE) is an editorial mark,
@@ -37,7 +37,7 @@ _METEG_POLICIES = frozenset({METEG_DROP, METEG_SILLUQ, METEG_ALL})
 
 
 def strip_to_accents(token, *, keep_meteg=METEG_SILLUQ):
-    """Return ``token`` reduced to consonants + accents + accent-coupled punctuation.
+    """Return ``token`` reduced to letters + accents + accent-coupled punctuation.
 
     ``keep_meteg`` governs U+05BD (see the policy constants above). The default,
     ``METEG_SILLUQ``, keeps only the last U+05BD: correct for a verse-final token,
@@ -53,7 +53,7 @@ def strip_to_accents(token, *, keep_meteg=METEG_SILLUQ):
     for idx, ch in enumerate(token):
         codepoint = ord(ch)
         if _LETTER_LO <= codepoint <= _LETTER_HI:
-            kept.append(ch)  # consonant (incl. final form)
+            kept.append(ch)  # letter (incl. final form)
         elif _ACCENT_LO <= codepoint <= _ACCENT_HI:
             kept.append(ch)  # cantillation accent (te'amim)
         elif ch in _KEEP_PUNCT:

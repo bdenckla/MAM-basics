@@ -134,7 +134,7 @@ def _first_word(text):
 # points, dagesh, shin/sin dots, rafe, and ordinary meteg). The keep-sets and the
 # silluq-vs-meteg rule live in the vendorable mb_cmn.hebrew_accent_strip kernel.
 def _strip_pointing(word):
-    """Reduce a byte-faithful Hebrew word to consonants + accents + accent-coupled
+    """Reduce a byte-faithful Hebrew word to letters + accents + accent-coupled
     punctuation. A word's U+05BD is *silluq* (an accent, kept) only when the word is
     verse-final, i.e. carries sof pasuq; otherwise every U+05BD is an ordinary meteg
     (a ga'ya, e.g. on אָנֹכִי here) and is dropped."""
@@ -166,7 +166,7 @@ def _red(word):  # last word of a chanted verse — "stop"
 
 def _paint_range(first_words, last_words, *, start, stop):
     """A 'firstword(s)…lastword(s)' range label for a transposed strand table, each word
-    stripped to consonants + accents + accent-coupled punctuation (see _strip_pointing).
+    stripped to letters + accents + accent-coupled punctuation (see _strip_pointing).
 
     ``first_words``/``last_words`` are the (already letter-balanced, see balanced_pair)
     word lists shown at the range's two ends — normally one word each, but two or more when
@@ -204,17 +204,17 @@ def _paint_deut_range(ex_first, ex_last, de_first_words, de_last_words, *, start
 
 # ── Letter-equalizing the paired taxton/elyon boundary cells (issue #201) ──────────────
 # Each transposed table column shows one underlying text span read by both cantillation
-# strands, so the two cells *should* share a consonant skeleton at each boundary. They can
+# strands, so the two cells *should* share a letter skeleton at each boundary. They can
 # still tokenize a boundary word differently — most visibly the leading לֹא of a negative
 # commandment, which the taxton maqaf-joins to the next word (one token לֹא־תַעֲשֶׂה) while
 # the elyon leaves free (לֹא as its own word). balanced_pair pulls extra boundary words
-# inward, word by word, until the two sides' consonant skeletons match, then *asserts* they
+# inward, word by word, until the two sides' letter skeletons match, then *asserts* they
 # do — a document-wide guard that fires loudly on any column it cannot reconcile (a
 # reintroduced #200, a brand-new divergence, or a Numbers/Deuteronomy data change).
 
 
 def _skel(word):
-    """The consonant skeleton of a word (or several words joined): only the Hebrew letters
+    """The letter skeleton of a word (or several words joined): only the Hebrew letters
     U+05D0–U+05EA, dropping points, accents, maqaf, sof pasuq and legarmeh. This — *not*
     has.strip_to_accents, which keeps maqaf and accents — is the letter-equality key of
     issue #201: a maqaf-joined לֹא־תַעֲשֶׂה and a space-separated לֹא תַעֲשֶׂה must compare
@@ -223,7 +223,7 @@ def _skel(word):
 
 
 def _balance_boundary(t_words, e_words, *, grow_backward, label):
-    """How many boundary words each strand must show so their consonant skeletons match at
+    """How many boundary words each strand must show so their letter skeletons match at
     one end of a column. Compares the taxton's and elyon's leading (or, with ``grow_backward``,
     trailing) run of words; grows the shorter-skeleton side inward one word at a time while it
     stays a prefix/suffix of the longer. Returns ``(t_take, e_take)``. Raises loudly — with the
@@ -257,7 +257,7 @@ def _balance_boundary(t_words, e_words, *, grow_backward, label):
 
 def _balanced_sides(t_words, e_words, *, label):
     """Letter-balance both ends of a column. Returns the four displayed word lists
-    ``(t_first, t_last, e_first, e_last)`` — each the boundary word(s) whose consonant
+    ``(t_first, t_last, e_first, e_last)`` — each the boundary word(s) whose letter
     skeletons the taxton and elyon share, after any pulling."""
     t_first_n, e_first_n = _balance_boundary(
         t_words, e_words, grow_backward=False, label=f"{label} first-word"
@@ -275,7 +275,7 @@ def _balanced_sides(t_words, e_words, *, label):
 
 def balanced_pair(t_words, e_words, *, label, t_render, e_render):
     """Build a column's taxton and elyon cells from their whole-span word lists, having first
-    pulled each boundary inward until the two strands are consonant-equal there (or raised).
+    pulled each boundary inward until the two strands are letter-equal there (or raised).
     ``t_render``/``e_render`` map ``(first_words, last_words)`` to the strand's cell string —
     _paint_range for an Exodus column, _paint_deut_range (bound to its Exodus twin) for a
     Deuteronomy-appendix column. Balancing and the equality assert are inseparable: no caller
@@ -377,7 +377,7 @@ def build_columns(books_mpu):
     # _cells silently drops a מ:כפול unit whose strand isn't a single plain string (e.g. MAM
     # 20:4's opening clause, whose qamats-qatan carries a nested מ:קמץ template), which once
     # made 20:4's taxton cell start at כי instead of its true initial לא־תשתחוה. See #200 —
-    # now guarded, since balanced_pair asserts each column's taxton/elyon are consonant-equal.
+    # now guarded, since balanced_pair asserts each column's taxton/elyon are letter-equal.
     for vr, e_start, e_stop in ((3, False, False), (4, False, False), (5, False, True)):
         col(
             f"early_taxrow_20{vr}",
@@ -449,7 +449,7 @@ def build_columns(books_mpu):
     # Deut differs in two ways here — a connective וְ on the 2nd-4th commandments (וְלֹא vs
     # Exodus's asyndetic לֹא) and the ninth's end-word (שָׁוְא vs שָׁקֶר) — so those are the
     # only forms left at full strength. (These are non-letter differences, so the columns are
-    # still consonant-equal taxton-to-elyon within Deut, and the pass is a no-op here.)
+    # still letter-equal taxton-to-elyon within Deut, and the pass is a no-op here.)
     for i in range(n_late):
         ex_t = tax_2012[i].split()
         ex_e = ely_2012[i].split()
@@ -469,7 +469,7 @@ def build_columns(books_mpu):
 def gather_examples(books_mpu):
     """Return the dict of byte-faithful Hebrew example strings the doc splices in. Every
     taxton/elyon table column is built through balanced_pair (see build_columns), so its
-    consonant-skeleton equality assert guards the whole document; the remaining keys are
+    letter-skeleton equality assert guards the whole document; the remaining keys are
     single boundary words spliced into prose captions and the Numbers table."""
     exo = books_mpu[tbn.BK_EXODUS]["verses_plus"]
     num = books_mpu[tbn.BK_NUMBERS]["verses_plus"]
@@ -536,7 +536,7 @@ def gather_examples(books_mpu):
 
     # Numbers 25/26 — a single chanted verse split by a mid-verse petuxah into two runs.
     # Like the Exodus tables, this section is about *where each cantillation ends*, so the
-    # words are shown stripped to their accent signal (consonants + accents + accent-coupled
+    # words are shown stripped to their accent signal (letters + accents + accent-coupled
     # punctuation; see _strip_pointing) rather than fully pointed. None of these words but the
     # sof-pasuq one carries SOPA, so _strip_pointing correctly reads a U+05BD as silluq only in
     # the verse-final לֵאמֹֽר׃ and as an ordinary (dropped) meteg elsewhere.
