@@ -25,6 +25,12 @@
 			"path": "../diffable-pointed-hebrew"
 		},
 		{
+			"path": "../document-index"
+		},
+		{
+			"path": "../github-misc"
+		},
+		{
 			"path": "../hbofonts"
 		},
 		{
@@ -77,6 +83,9 @@
 		},
 		{
 			"path": "../wlc-utils-io"
+		},
+		{
+			"path": "../wlc-utils-private"
 		},
 		{
 			"path": "../yeivin-itm"

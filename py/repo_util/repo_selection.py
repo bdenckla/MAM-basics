@@ -12,6 +12,42 @@ from repo_util.common import (
     today_local_date,
 )
 
+# Workspace folders that are NOT a plain `bdenckla/<folder name>` GitHub repo, and
+# so cannot be re-cloned by guessing a URL from the name. Keep this in step with the
+# workspace files; a folder absent from here gets the guessed URL, which is right
+# for every ordinary repo.
+#
+# ArtScroll is a GIST, not a first-class repo -- which is why `gh repo view
+# bdenckla/ArtScroll` 404s (as does the REST endpoint, the one that DOES follow
+# rename redirects), and so why a missing ArtScroll folder reads as a dead
+# workspace entry rather than a merely un-cloned one. Its real name is the hash
+# below; "ArtScroll" is just the directory name a human chose at clone time.
+# document-index's README links the same gist, as a review.
+#
+# A comment like this cannot live in the .code-workspace file itself, which would
+# be the obvious home for it: VS Code tolerates JSONC, but `common.read_json` is a
+# plain `json.load`, so a comment there would break the very tooling that reads it.
+_NON_REPO_WORKSPACE_FOLDERS = {
+    "ArtScroll": (
+        "https://gist.github.com/bdenckla/f04699f2a9c4eccd3220751fdb233722.git",
+        "gist: A Review of the ArtScroll Transliterated Linear Siddur (Ashkenaz)",
+    ),
+}
+
+
+def _how_to_obtain(folder_name: str) -> str:
+    """The clone command that would fix a missing workspace folder.
+
+    A bare "not found" is a dead end for exactly the folders that are hardest to
+    restore, so the message carries its own fix -- the same principle as
+    wlc-utils' ``repo_paths.require_sibling``.
+    """
+    known = _NON_REPO_WORKSPACE_FOLDERS.get(folder_name)
+    if known is not None:
+        url, note = known
+        return f"git clone {url} {folder_name}\n  ({note})"
+    return f"git clone https://github.com/bdenckla/{folder_name}.git {folder_name}"
+
 
 @dataclass(frozen=True)
 class RepoInfo:
@@ -48,7 +84,11 @@ def load_workspace_repo_dirs(workspace_file: Path, repos_root: Path) -> list[Pat
     for folder in workspace["folders"]:
         repo_dir = _resolve_repo_path(folder["path"], workspace_dir, repos_root)
         if not repo_dir.is_dir():
-            raise FileNotFoundError(f"Workspace folder not found: {repo_dir}")
+            raise FileNotFoundError(
+                f"Workspace folder not found: {repo_dir}\n"
+                f"Listed in {workspace_file}. To restore it:\n"
+                f"  {_how_to_obtain(repo_dir.name)}"
+            )
         repo_dirs.append(repo_dir)
 
     return repo_dirs
