@@ -7,10 +7,48 @@ a hard error. Checks fall into two groups:
 
 Repo-level (single file each):
   - maintenance_script: does the repo have a repo-maintenance entrypoint?
+  - worktree_hygiene: see "The worktree-cleanup standard" below.
   - gitattributes_lf: does .gitattributes force LF (`eol=lf`)?
   - path_utility: does the repo have a __file__-relative repo-root path
     utility (see MAM-basics issue #75), instead of scattered
     Path(__file__).resolve().parents[N] chains or cwd-relative literals?
+
+The worktree-cleanup standard
+-----------------------------
+EVERY REPO'S MAINTENANCE SCRIPT SHOULD REMOVE FINISHED AGENT WORKTREES AND THE
+BRANCHES THEY LEAVE BEHIND. An agent session run in isolation creates a worktree
+plus, usually, a `claude/<name>` branch, and cleans up neither when it ends.
+Both therefore accumulate silently: the first scan to include this check found
+wlc-utils holding two orphaned worktrees and three orphaned branches, every one
+of them clean and already merged. That is not cosmetic -- a worktree is a second
+full checkout, so a stale one is a live trap where a later session can do real
+work in the wrong tree.
+
+Cover BOTH places they land. The harness default is `<repo>/.claude/worktrees/`,
+whose nesting puts it two levels deeper than the sibling repos its code expects
+at `../<sibling>` (see wlc-utils' `repo_paths` docstring, which exists because of
+exactly this). The workaround is to place the worktree as a SIBLING of the repo
+instead, `GitRepos/<repo>-<topic>`, where those lookups resolve -- deliberate
+practice, and the variety that litters the more annoying directory. Driving
+removal off `git worktree list` covers both without special-casing either.
+
+The reference implementation is wlc-utils `py/cmn/git_worktree_cleanup.py`,
+wired as a step in its `py/main_repo_maintenance.py`. Copy its conservatism
+along with its code: never `--force`; spare and REPORT any worktree that is
+dirty (untracked files included), unmerged, or currently running the code;
+restrict branch deletion to the `claude/` prefix so a hand-made topic branch is
+never a candidate; and remove worktrees before branches, since a branch held by
+a worktree cannot be deleted while that worktree exists.
+
+`worktree_hygiene` reports both halves of the picture per repo: whether the
+maintenance script mentions worktrees at all (a text scan of the script found
+by `maintenance_script` -- crude on purpose, in keeping with the rest of this
+file), and how much is actually lying around right now (`linked_worktrees`,
+the `git worktree list` count minus the main worktree, and `agent_branches`,
+the count of local `claude/*` refs). Nonzero counts with SCRIPT_COVERS=False is
+the case this check exists to surface. Do not read nonzero counts as leftovers
+on their own, though: a session running RIGHT NOW shows up identically, which is
+what wlc-utils' LINKED_WORKTREES=1 meant on the first all-repos run.
 
 File-scan (over tracked *.py files):
   - hex_escape_style: `\\uXXXX`/`\\UXXXXXXXX` escapes in a *non-raw* string,
@@ -162,6 +200,54 @@ def _has_any(repo_dir: Path, candidates: tuple[str, ...]) -> str | None:
 def _check_maintenance_script(repo_dir: Path) -> dict:
     found = _has_any(repo_dir, _MAINTENANCE_SCRIPT_CANDIDATES)
     return {"present": found is not None, "path": found}
+
+
+def _check_worktree_hygiene(repo_dir: Path) -> dict:
+    """Does the maintenance script clean up agent worktrees, and is anything left?
+
+    See "The worktree-cleanup standard" in this module's docstring. `script_covers`
+    is a text scan of whatever `maintenance_script` found, so it answers "has this
+    repo adopted the step", not "does the step work". The two counts answer the
+    complementary question of what is sitting there right now, and are read
+    straight from git rather than inferred from the filesystem, so a worktree whose
+    directory was deleted by hand still shows up until someone prunes it.
+    """
+    script_rel = _has_any(repo_dir, _MAINTENANCE_SCRIPT_CANDIDATES)
+    script_covers = False
+    if script_rel is not None:
+        try:
+            text = (repo_dir / script_rel).read_text(encoding="utf-8")
+            script_covers = "worktree" in text.lower()
+        except (UnicodeDecodeError, OSError):
+            script_covers = False
+
+    worktree_list = run_cmd(["git", "-C", str(repo_dir), "worktree", "list"])
+    linked = None
+    if worktree_list.returncode == 0:
+        lines = [line for line in worktree_list.stdout.splitlines() if line.strip()]
+        linked = max(len(lines) - 1, 0)  # the first entry is the main worktree
+
+    branch_list = run_cmd(
+        [
+            "git",
+            "-C",
+            str(repo_dir),
+            "for-each-ref",
+            "--format=%(refname:short)",
+            "refs/heads/claude/",
+        ]
+    )
+    agent_branches = None
+    if branch_list.returncode == 0:
+        agent_branches = len(
+            [line for line in branch_list.stdout.splitlines() if line.strip()]
+        )
+
+    return {
+        "script_covers": script_covers,
+        "linked_worktrees": linked,
+        "agent_branches": agent_branches,
+    }
 
 
 def _check_gitattributes_lf(repo_dir: Path) -> dict:
@@ -521,6 +607,7 @@ def _render_txt_report(results: list[dict]) -> str:
     for repo in results:
         lines.append(f"=== {repo['repo']} ===")
         lines.append(f"maintenance_script: {repo['maintenance_script']}")
+        lines.append(f"worktree_hygiene: {repo['worktree_hygiene']}")
         lines.append(f"gitattributes_lf: {repo['gitattributes_lf']}")
         lines.append(f"path_utility: {repo['path_utility']}")
         lines.append(f"py_file_count_scanned: {repo['py_file_count_scanned']}")
@@ -572,6 +659,7 @@ def run_check_repo_standards_across_repos(
             {
                 "repo": repo_info.name,
                 "maintenance_script": _check_maintenance_script(repo_dir),
+                "worktree_hygiene": _check_worktree_hygiene(repo_dir),
                 "gitattributes_lf": _check_gitattributes_lf(repo_dir),
                 "path_utility": _check_path_utility(repo_dir),
                 **scan,
@@ -587,12 +675,17 @@ def run_check_repo_standards_across_repos(
     print(f"REPO_COUNT={len(results)}")
     for repo in results:
         nfc = repo["nfc_h_dot_below"]
+        wt = repo["worktree_hygiene"]
         print(
-            "REPO={0}; MAINTENANCE_SCRIPT={1}; GITATTRIBUTES_LF={2}; "
-            "PATH_UTILITY={3}; HEX_ESCAPES={4}; "
-            "ORPHAN_MARKS={5}; NFC_H_DOT={6}; NFC_LATIN={7}".format(
+            "REPO={0}; MAINTENANCE_SCRIPT={1}; WORKTREE_STEP={2}; "
+            "LINKED_WORKTREES={3}; AGENT_BRANCHES={4}; GITATTRIBUTES_LF={5}; "
+            "PATH_UTILITY={6}; HEX_ESCAPES={7}; "
+            "ORPHAN_MARKS={8}; NFC_H_DOT={9}; NFC_LATIN={10}".format(
                 repo["repo"],
                 repo["maintenance_script"]["present"],
+                wt["script_covers"],
+                wt["linked_worktrees"],
+                wt["agent_branches"],
                 repo["gitattributes_lf"]["has_eol_lf_rule"],
                 repo["path_utility"]["present"],
                 len(repo["hex_escape_findings"]),
