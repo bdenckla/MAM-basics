@@ -4,22 +4,27 @@ from __future__ import annotations
 from pathlib import Path
 import shutil
 import subprocess
+from typing import Sequence
 
+from repo_util import maintenance_policy
 from repo_util.common import format_command, run_cmd, write_json, write_text
 from repo_util.repo_selection import RepoInfo
 
 
-def _select_black_command(repo_dir: Path, target: str) -> list[str] | None:
+def _select_black_command(
+    repo_dir: Path, target: str, extra_args: Sequence[str]
+) -> list[str] | None:
     black_exe = repo_dir / ".venv" / "Scripts" / "black.exe"
     venv_python = repo_dir / ".venv" / "Scripts" / "python.exe"
+    tail = [*extra_args, target]
 
     if black_exe.is_file():
-        return [str(black_exe), target]
+        return [str(black_exe), *tail]
     if venv_python.is_file():
-        return [str(venv_python), "-m", "black", target]
+        return [str(venv_python), "-m", "black", *tail]
     path_black = shutil.which("black")
     if path_black is not None:
-        return [path_black, target]
+        return [path_black, *tail]
     return None
 
 
@@ -85,13 +90,16 @@ def run_black_across_repos(
     *,
     black_target: str,
     black_timeout_sec: float | None,
+    frozen_repos: dict[str, dict],
+    vendored_package_names: list[str],
+    vendored_overrides: dict[str, list[str]],
+    source_repo: Path,
     report_json: Path | None,
     report_txt: Path | None,
 ) -> list[dict]:
     results: list[dict] = []
 
     for repo_info in repo_infos:
-        command = _select_black_command(repo_info.path, black_target)
         black_result = {
             "attempted": False,
             "success": False,
@@ -102,7 +110,31 @@ def run_black_across_repos(
             "problem": "",
         }
 
-        if command is None:
+        # A vendored copy is maintained in its source repo, so leave it as it
+        # arrives. MAM-basics is that source, and formats its own originals.
+        extra_args: list[str] = []
+        if repo_info.path != source_repo:
+            extra_args = [
+                "--extend-exclude",
+                maintenance_policy.vendored_exclude_regex(
+                    vendored_package_names,
+                    vendored_overrides.get(repo_info.name),
+                ),
+            ]
+
+        frozen = frozen_repos.get(repo_info.name)
+        command = (
+            None
+            if frozen is not None
+            else _select_black_command(repo_info.path, black_target, extra_args)
+        )
+
+        if frozen is not None:
+            black_result["note"] = (
+                f"Skipped: frozen ({frozen['comment']}"
+                f" last commit when frozen {frozen['last_commit_when_frozen']})"
+            )
+        elif command is None:
             if _has_tracked_py_files(repo_info.path):
                 black_result["problem"] = (
                     "black unavailable, but this repo has tracked .py files: no"

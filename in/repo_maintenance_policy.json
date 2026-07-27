@@ -1,0 +1,30 @@
+{
+  "comment": "What repo-maintenance sweeps (py/main_repo_util.py) must leave alone. Kept here, in MAM-basics, rather than as a marker file inside each frozen repo: writing such a marker would itself change the repo and destroy the very last-changed date the freeze exists to preserve. Deliberately separate from in/vendoring_policy.json, whose per-repo 'ignore' flag means 'do not scan this repo for vendoring' -- a different question from 'do not touch this repo at all'. The lists are not the same one: CCAR-Psalms is frozen here and is not ignored there, so neither may be derived from the other.",
+  "frozen_repos": {
+    "CCAR-Psalms": {
+      "comment": "Paused client project. Not among the repos in/vendoring_policy.json ignores, which is why that flag cannot stand in for this list.",
+      "frozen_on": "2026-07-27",
+      "last_commit_when_frozen": "2024-05-17"
+    },
+    "MAM-for-Acc": {
+      "comment": "Paused client project.",
+      "frozen_on": "2026-07-27",
+      "last_commit_when_frozen": "2023-10-13"
+    },
+    "MAM-for-CCAR": {
+      "comment": "Paused client project. Note this one was six months rather than years old when frozen, so its last-changed date only starts testifying to the pause from here.",
+      "frozen_on": "2026-07-27",
+      "last_commit_when_frozen": "2026-01-22"
+    },
+    "MAM-for-JPS": {
+      "comment": "Paused client project.",
+      "frozen_on": "2026-07-27",
+      "last_commit_when_frozen": "2024-04-04"
+    },
+    "TMC": {
+      "comment": "Paused project, frozen alongside the MAM-for-* client repos.",
+      "frozen_on": "2026-07-27",
+      "last_commit_when_frozen": "2024-10-25"
+    }
+  }
+}

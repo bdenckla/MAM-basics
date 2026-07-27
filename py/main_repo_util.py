@@ -18,6 +18,7 @@ from mb_cmn import paths
 from repo_util.audit_line_terms import run_audit_line_terms_across_repos
 from repo_util.check_repo_standards import run_check_repo_standards_across_repos
 from repo_util.commit_across_repos import run_commit_across_repos
+from repo_util import maintenance_policy
 from repo_util.repo_selection import select_repo_infos
 from repo_util.run_black import problem_repos, run_black_across_repos
 
@@ -63,6 +64,16 @@ def build_parser() -> argparse.ArgumentParser:
         "--black-timeout-sec",
         type=float,
         help="Optional timeout in seconds for each repo black run",
+    )
+    parser.add_argument(
+        "--include-frozen",
+        action="store_true",
+        help=(
+            "Run on repos marked frozen in in/repo_maintenance_policy.json."
+            " Naming one with --repos is not enough: a freeze exists to keep a"
+            " paused project's last-changed date meaningful, so overriding it"
+            " has to be said out loud"
+        ),
     )
 
     parser.add_argument(
@@ -145,6 +156,9 @@ def build_parser() -> argparse.ArgumentParser:
 def _validate_action_specific_args(
     parser: argparse.ArgumentParser, args: argparse.Namespace
 ) -> None:
+    if args.include_frozen and not args.run_black:
+        parser.error("--include-frozen only applies to --run-black")
+
     if args.commit_across_repos:
         if args.message is None and args.message_file is None:
             parser.error(
@@ -186,10 +200,15 @@ def main(argv: Sequence[str] | None = None) -> int:
     report_txt = Path(args.report_txt).resolve() if args.report_txt else None
 
     if args.run_black:
+        frozen = {} if args.include_frozen else maintenance_policy.frozen_repos()
         results = run_black_across_repos(
             repo_infos,
             black_target=args.black_target,
             black_timeout_sec=args.black_timeout_sec,
+            frozen_repos=frozen,
+            vendored_package_names=maintenance_policy.vendored_package_names(),
+            vendored_overrides=maintenance_policy.vendored_overrides(),
+            source_repo=REPO_ROOT,
             report_json=report_json,
             report_txt=report_txt,
         )
