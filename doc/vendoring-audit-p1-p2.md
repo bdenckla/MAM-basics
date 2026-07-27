@@ -93,7 +93,7 @@ codebase and inventory until the corresponding rename work is finished.
 ### 5. Private repos (al-hatorah, ArtScroll/Gist-ArtScroll, book-of-job,
    CCAR-Psalms, MAM-for-Acc, MAM-for-CCAR, MAM-for-JPS, MAM-OSIS,
    MAM-with-doc, mamgo-auto-edits, mgketer, phonetic-hbo, TMC,
-   UXLC-utils, wlc-utils, wlc-utils-io, wlc-utils-io, yeivin-itm)
+   UXLC-utils, wlc-utils, wlc-utils-private, yeivin-itm)
 - Unknown vendored content. Requires local search.
 
 ---
