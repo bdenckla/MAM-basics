@@ -19,7 +19,7 @@ from repo_util.audit_line_terms import run_audit_line_terms_across_repos
 from repo_util.check_repo_standards import run_check_repo_standards_across_repos
 from repo_util.commit_across_repos import run_commit_across_repos
 from repo_util.repo_selection import select_repo_infos
-from repo_util.run_black import run_black_across_repos
+from repo_util.run_black import problem_repos, run_black_across_repos
 
 REPO_ROOT = paths.repo_root()
 DEFAULT_WORKSPACE_FILE = REPO_ROOT / "MAM-basics.code-workspace"
@@ -186,14 +186,17 @@ def main(argv: Sequence[str] | None = None) -> int:
     report_txt = Path(args.report_txt).resolve() if args.report_txt else None
 
     if args.run_black:
-        run_black_across_repos(
+        results = run_black_across_repos(
             repo_infos,
             black_target=args.black_target,
             black_timeout_sec=args.black_timeout_sec,
             report_json=report_json,
             report_txt=report_txt,
         )
-        return 0
+        # Every repo the sweep could format has been formatted by now: a repo it
+        # could not is reported and then fails the run, rather than being passed
+        # over in silence. A repo with no tracked .py files is not a problem.
+        return 1 if problem_repos(results) else 0
 
     if args.audit_line_terms:
         run_audit_line_terms_across_repos(

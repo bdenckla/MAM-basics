@@ -23,6 +23,22 @@ def _select_black_command(repo_dir: Path, target: str) -> list[str] | None:
     return None
 
 
+def _has_tracked_py_files(repo_dir: Path) -> bool:
+    """Whether the repo has any tracked .py file.
+
+    Decides whether an unrunnable black is a legitimate skip or a problem.
+    Several repos here are data or output repos with no Python at all, and for
+    those there is nothing to format; a repo with Python and no black is a repo
+    the sweep is quietly passing by.
+    """
+    result = run_cmd(["git", "-C", str(repo_dir), "ls-files", "*.py"])
+    if result.returncode != 0:
+        raise RuntimeError(
+            result.stderr.strip() or f"Failed to list tracked .py files in {repo_dir}"
+        )
+    return any(line.strip() for line in result.stdout.splitlines())
+
+
 def _to_lines(stdout: str | None, stderr: str | None) -> list[str]:
     merged = ""
     if stdout:
@@ -53,8 +69,15 @@ def _render_txt_report(results: list[dict]) -> str:
             lines.append(
                 "black: " f"attempted={black['attempted']} " f"note={black['note']}"
             )
+        if black["problem"]:
+            lines.append(f"black_problem: {black['problem']}")
         lines.append("")
     return "\n".join(lines) + "\n"
+
+
+def problem_repos(results: list[dict]) -> list[str]:
+    """Names of repos the sweep failed to format, in report order."""
+    return [item["repo"] for item in results if item["black"]["problem"]]
 
 
 def run_black_across_repos(
@@ -76,12 +99,18 @@ def run_black_across_repos(
             "command": "",
             "output": [],
             "note": "",
+            "problem": "",
         }
 
         if command is None:
-            black_result["note"] = (
-                "Skipped: black command unavailable (.venv/Scripts/black.exe and .venv/Scripts/python.exe are missing)"
-            )
+            if _has_tracked_py_files(repo_info.path):
+                black_result["problem"] = (
+                    "black unavailable, but this repo has tracked .py files: no"
+                    " .venv/Scripts/black.exe, no .venv/Scripts/python.exe, and no"
+                    " black on PATH. Create the repo's .venv so the sweep covers it."
+                )
+            else:
+                black_result["note"] = "Skipped: no tracked .py files in this repo"
         else:
             black_result["attempted"] = True
             black_result["command"] = format_command(command)
@@ -92,10 +121,15 @@ def run_black_across_repos(
                 black_result["exit_code"] = result.returncode
                 black_result["success"] = result.returncode == 0
                 black_result["output"] = _to_lines(result.stdout, result.stderr)
+                if not black_result["success"]:
+                    black_result["problem"] = f"black exited {result.returncode}"
             except subprocess.TimeoutExpired as exc:
                 black_result["success"] = False
                 black_result["note"] = (
                     f"Timed out after {black_timeout_sec} seconds while running black"
+                )
+                black_result["problem"] = (
+                    f"black timed out after {black_timeout_sec} seconds"
                 )
                 stdout = exc.stdout if isinstance(exc.stdout, str) else ""
                 stderr = exc.stderr if isinstance(exc.stderr, str) else ""
@@ -119,12 +153,19 @@ def run_black_across_repos(
     print(f"REPO_COUNT={len(results)}")
     for result in results:
         black_result = result["black"]
-        print(
-            "REPO={0}; BLACK_ATTEMPTED={1}; BLACK_OK={2}".format(
-                result["repo"],
-                black_result["attempted"],
-                black_result["success"],
-            )
+        line = "REPO={0}; BLACK_ATTEMPTED={1}; BLACK_OK={2}".format(
+            result["repo"],
+            black_result["attempted"],
+            black_result["success"],
         )
+        if black_result["problem"]:
+            line += f"; PROBLEM={black_result['problem']}"
+        elif black_result["note"]:
+            line += f"; {black_result['note']}"
+        print(line)
+
+    problems = problem_repos(results)
+    if problems:
+        print(f"BLACK_PROBLEM_COUNT={len(problems)}; REPOS={', '.join(problems)}")
 
     return results
