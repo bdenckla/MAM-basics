@@ -35,6 +35,10 @@ from author_misc import rocc_1_on_the_provenance_of_ctr
 from author_misc import rocc_2_pre_vowel_accents_in_ctr
 from author_misc import rocc_3_where_other_sources_stand
 from author_misc import rocc_4_mid_word_ga3ya_with_shewa
+from author_misc import urwotm_1_tale_of_the_qadma as urwotm_1
+from author_misc import urwotm_2_saying_the_quiet_part_out_loud as urwotm_2
+from author_misc import urwotm_3_extra_verses as urwotm_3
+from author_misc import urwotm_4_atnax_hafukh as urwotm_4
 from author_misc import he_ws_intro_to_mam_gray_maqaf_1 as gray_maqaf
 from author_misc import he_ws_intro_to_mam_pasleg as pasleg
 from author_misc import mam_parsed_docs_build
@@ -82,6 +86,10 @@ def almost_main():
         rocc_2_pre_vowel_accents_in_ctr.gen_html_file(tdm_ch),
         rocc_3_where_other_sources_stand.gen_html_file(tdm_ch),
         rocc_4_mid_word_ga3ya_with_shewa.gen_html_file(tdm_ch),
+        urwotm_1.gen_html_file(tdm_ch),
+        urwotm_2.gen_html_file(tdm_ch),
+        urwotm_3.gen_html_file(tdm_ch),
+        urwotm_4.gen_html_file(tdm_ch),
         gray_maqaf.gen_html_file(tdm_ch, body_class="wide"),
         pasleg.gen_html_file(tdm_ch, body_class="wide"),
     ]
