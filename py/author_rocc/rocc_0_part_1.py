@@ -37,7 +37,7 @@ _X112_CONT_PARA = """In its Psalm 32 (and perhaps in its entire Tanakh),
 $CTR is restricted to the code points in Unicode 2.0.
 There are three code points that were introduced later
 that are used in some editions of Psalm 32:""".replace("\n", " ")
-_X112_LIST_ITEMS_QQ_AH_XXFV = ["$QQ", "$AH", "$HHFV"]
+_X112_LIST_ITEMS_QQ_AH_XXFV = ["$QQ", "$ATNAH_HAFUKH", "$HHFV"]
 _X113_CONT_PARA = """In the first two of the three cases,
 the fact that $CTR does not use the newer code point
 causes no problems.
@@ -45,7 +45,7 @@ Indeed many editions, even quite recent ones,
 are like $CTR in that they do not make the following distinctions:""".replace("\n", " ")
 _X113_LIST_ITEMS_Q_VS_QQ_ETC = ["$qamats vs. $qq", "$yby vs. $ah"]
 _X114_CONT_PARA = """Both distinctions were introduced in Unicode 4.1,
-although $AH was introduced in a way
+although $ATNAH_HAFUKH was introduced in a way
 that makes its adoption difficult, even to this day.
 See my $anc_proposal_alt_yby to the Unicode $SEWG.""".replace("\n", " ")
 _X115_CONT_PARA = """The third post-2.0 code point that $CTR might have used

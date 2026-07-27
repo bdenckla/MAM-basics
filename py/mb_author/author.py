@@ -161,9 +161,19 @@ def hbo_big_es(contents, attr=None):
     return hbo(contents, _awc(attr, "big extra-letter-spacing"))
 
 
-def para_for_img(img_path, widthclass=None):
+def para_for_img(img_path, widthclass=None, width_em=None):
+    """An image on its own centered line.
+
+    widthclass picks one of the stylesheet's fixed width classes. width_em
+    instead states this image's own width, which is what an import from a
+    source with its own page geometry needs: styles_authored.css caps width
+    at 100% but never sets it, so without this an image renders at whatever
+    intrinsic size it happens to have been downloaded at.
+    """
+    assert not (widthclass and width_em), (img_path, widthclass, width_em)
     img_class = {"class": widthclass} if widthclass is not None else {}
-    img_element = mb_html.img({"src": f"img/{img_path}", **img_class})
+    img_style = {"style": f"width: {width_em}em"} if width_em is not None else {}
+    img_element = mb_html.img({"src": f"img/{img_path}", **img_class, **img_style})
     return mb_html.para(img_element, {"class": "center"})
 
 
@@ -232,8 +242,13 @@ def anc_h(contents, href_val):
     return anchor_h(contents, href_val)
 
 
-def span_color(text, color):
-    return mb_html.span(text, {"style": f"color: {color}"})
+def span_color(contents, color):
+    """Colored text. Like every other wrapper here, dollar-substituted.
+
+    It was the one exception, which meant a "$Galgal" handed to it reached
+    the reader as the literal characters "$Galgal".
+    """
+    return mb_html.span(dollar_sub(contents), {"style": f"color: {color}"})
 
 
 # def pasoleg_pas(string: str):
@@ -427,7 +442,10 @@ _ANCHORS = {
     "$anc_Jud_Press_Nakh": _anc_h("Prophets and Writings", _URL_JUD_PRESS_NAKH),
 }
 _UNICODE_NAME_SC = {
-    "$AH": "ATNAH HAFUKH",
+    # Spelled out, in the long form of "$HOLAM_HASER_FOR_VAV" below, so that
+    # the short "$AH" is free to be the abbreviation "AH" that Part 4 of the
+    # urwotm series uses throughout its own prose.
+    "$ATNAH_HAFUKH": "ATNAH HAFUKH",
     "$GERESH": "GERESH",
     "$GERMUQ": "GERESH MUQDAM",
     "$HHFV": "HOLAM HASER FOR VAV",
@@ -450,6 +468,15 @@ _UNICODE_NAME_SC = {
 _ABBR_SC = {
     "$CD_ROM": "CD-ROM",
     "$BHS": "BHS",
+    # The urwotm series names these beside $BHS constantly, and a small-caps
+    # "BHS" next to a full-size "WLC" in the same sentence reads as an error.
+    "$WLC": "WLC",
+    "$UXLC": "UXLC",
+    "$BHQ": "BHQ",
+    "$JPS": "JPS",
+    # Part 4's own abbreviation for atnax hafukh. Distinct from "$ah", the
+    # romanized full name, and from "$ATNAH_HAFUKH", the Unicode name.
+    "$AH": "AH",
     "$CTR": "CTR",
     "$CTR_A": "CTR-A",
     "$CTR_B": "CTR-B",
@@ -481,8 +508,25 @@ _ROMANIZED = {
     "$maftir": "maftir",
     "$alef": "alef",
     "$tsere": "tsere",
-    # "$gaya_with_half_ring_for_ayin": "gaʿya",
+    "$gaya_with_half_ring_for_ayin": "gaʿya",
     "$germuq": "geresh muqdam",
+    "$meteg": "meteg",
+    "$rafeh": "rafeh",
+    "$xumash": "ḥumash",
+    "$masorah": "masorah",
+    "$masorah_qetanah": "masorah qetanah",
+    "$masorah_gedolah": "masorah gedolah",
+    "$ketiv_velo_qere": "ketiv velo qere",
+    "$ketiv_veqere": "ketiv veqere",
+    "$naqdan": "naqdan",
+    "$tsade": "tsade",
+    "$bet": "bet",
+    "$samekh": "samekh",
+    "$sof_pasuq": "sof pasuq",
+    "$atnax": "atnaḥ",
+    "$ben_yomo": "ben yomo",
+    "$pazer_gadol": "pazer gadol",
+    "$qarney_parah": "qarney parah",
     "$germuq_gm": "g. m.",
     "$mahapakh_metsunneret": "mahapakh metsunneret",
     "$mem": "mem",
@@ -494,11 +538,9 @@ _ROMANIZED = {
     "$shalshelet_gedolah": "shalshelet gedolah",
     "$shalshelet_qetanah": "shalshelet qetanah",
     "$revmug": "revia mugrash",
-    "$qadma": "qadma",
     "$telisha": "telisha",
     "$tevir": "tevir",
     "$vav": "vav",
-    "$ah": "atnaḥ hafukh",
     "$qq": "qamats qatan",
     "$qg": "qamats gadol",
     "$zarqa": "zarqa",
@@ -583,6 +625,13 @@ _DOLLAR_SUB_DISPATCH = {
     **_rom_with_cap("$parashah", "parashah"),
     **_rom_with_cap("$petuxah", "petuḥah"),
     **_rom_with_cap("$setumah", "setumah"),
+    # Moved here from _ROMANIZED for the cap key: Part 1 opens a sentence
+    # with "Qadma is still an error".
+    **_rom_with_cap("$qadma", "qadma"),
+    # "$icap_Ah" is the one Part 4 wants where a sentence opens with
+    # "Atnax hafukh"; "$Ah" capitalizes both words.
+    **_rom_with_cap("$ah", "atnaḥ hafukh"),
+    **_rom_with_cap("$galfukh", "galfukh"),
     **_rom_with_cap("$galgal", "galgal"),
     **_rom_with_cap("$yby", "yeraḥ ben yomo"),
     **_ROMANIZED,

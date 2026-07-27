@@ -63,7 +63,7 @@ OTHER_ROWS = [
     _good_ending_row(_GOOD_ENDING_TMPL_DOC),
     [
         author.hbo("מ:טעם ומתג באות אחת"),
-        "Normalization-robust meteg for 10 cases where a below-accent and meteg share one letter.",
+        "Normalization-robust $meteg for 10 cases where a below-accent and $meteg share one letter.",
     ],
     [
         author.hbo("מ:גרש ותלישא גדולה"),
