@@ -5,6 +5,7 @@ Usage examples:
     .venv/Scripts/python.exe py/main_repo_util.py --run-black
     .venv/Scripts/python.exe py/main_repo_util.py --audit-line-terms --today-only
     .venv/Scripts/python.exe py/main_repo_util.py --check-repo-standards --repos MAM-basics
+    .venv/Scripts/python.exe py/main_repo_util.py --check-memory-health --workspace-file all-repos.code-workspace
     .venv/Scripts/python.exe py/main_repo_util.py --commit-across-repos --message-file .novc/commit_msg_shared.txt --dry-run
 """
 
@@ -16,6 +17,7 @@ from typing import Sequence
 
 from mb_cmn import paths
 from repo_util.audit_line_terms import run_audit_line_terms_across_repos
+from repo_util.check_memory_health import run_check_memory_health_across_repos
 from repo_util.check_repo_standards import run_check_repo_standards_across_repos
 from repo_util.commit_across_repos import run_commit_across_repos
 from repo_util import maintenance_policy
@@ -33,6 +35,7 @@ def build_parser() -> argparse.ArgumentParser:
     action_group.add_argument("--run-black", action="store_true")
     action_group.add_argument("--audit-line-terms", action="store_true")
     action_group.add_argument("--check-repo-standards", action="store_true")
+    action_group.add_argument("--check-memory-health", action="store_true")
     action_group.add_argument("--commit-across-repos", action="store_true")
 
     parser.add_argument(
@@ -234,6 +237,14 @@ def main(argv: Sequence[str] | None = None) -> int:
             repo_infos,
             exclude_novc=args.exclude_novc,
             exclude_dot_venv=args.exclude_dot_venv,
+            report_json=report_json,
+            report_txt=report_txt,
+        )
+        return 0
+
+    if args.check_memory_health:
+        run_check_memory_health_across_repos(
+            repo_infos,
             report_json=report_json,
             report_txt=report_txt,
         )
