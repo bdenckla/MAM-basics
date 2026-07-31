@@ -12,6 +12,9 @@ Repo-level (single file each):
   - path_utility: does the repo have a __file__-relative repo-root path
     utility (see MAM-basics issue #75), instead of scattered
     Path(__file__).resolve().parents[N] chains or cwd-relative literals?
+  - path_shim_config: a root conftest.py, pytest.ini, tox.ini, setup.cfg or
+    pyproject.toml -- each a way of putting py/ on sys.path without writing
+    sys.path.insert. See "The sys.path surgery standard" below.
 
 The worktree-cleanup standard
 -----------------------------
@@ -62,6 +65,11 @@ on their own, though: a session running RIGHT NOW shows up identically, which is
 what wlc-utils' LINKED_WORKTREES=1 meant on the first all-repos run.
 
 File-scan (over tracked *.py files):
+  - sys_path_mutation: a `sys.path.insert(...)`/`sys.path.append(...)` call
+    starting its own line, ANYWHERE, root conftest.py included. Mutations in
+    non-test code are reported apart from those in test files, because keeping
+    this out of non-test code is the higher priority of the two. See "The
+    sys.path surgery standard" below.
   - hex_escape_style: `\\uXXXX`/`\\UXXXXXXXX` escapes in a *non-raw* string,
     which should generally be the self-documenting `\\N{UNICODE NAME}` form
     instead. Escapes inside raw strings (`r"..."`) are exempted: that's the
@@ -96,6 +104,56 @@ File-scan (over tracked *.py files):
     trees (_GENERATED_DIRS -- the main noise source) and vcs/build dirs, so
     external in/ snapshots may still surface here -- treat the vendored guard
     test as authoritative.
+
+The sys.path surgery standard
+-----------------------------
+NO sys.path.insert, AND NO MECHANISM THAT STANDS IN FOR ONE -- not a root
+conftest.py, not a pytest.ini `pythonpath`, not a .pth file, not PYTHONPATH.
+There is nothing to trade off here, because a way to run the tests that needs
+none of them already exists and is proven: MAM-basics' and holman-ketiv-qere's
+`py/main_test.py`, run from the repo root as `python py/main_test.py`. CPython
+puts the script's own directory at sys.path[0], so py/ is importable for free
+and no configuration exists to drift. MAM-basics `fd2241a` is the deliberate
+migration commit; MAM-basics and holman-ketiv-qere both report zero findings and
+no config, so this is a demonstrated state, not an aspiration.
+
+A bare `pytest` therefore failing to collect is the designed state, not a defect
+to patch. Note this REVERSES a reading of user-level CLAUDE.md's "No `sys.path`
+surgery" section, whose "the root conftest.py puts py/ on the path ... that one
+line is the whole sanctioned use" was settled on 2026-07-30 to mean no such line
+at all where `py/main_test.py` is available.
+
+Non-test code and test code are reported apart because they are not equally
+urgent: keeping this out of NON-TEST code matters most, and a shim in test code
+is unwanted rather than tolerated. That ordering is deliberate -- these repos'
+tests are held to be of little value in the first place (see "Writing tests --
+differential and lint-shaped only" in MAM-basics' CLAUDE.md), so a test-only
+shim is a small problem, and one reaching into shipped modules is not.
+
+A blame crawl on 2026-07-30 over the three repos carrying mutations found 18: 14
+sit in commits with a `Co-Authored-By: Claude`/Copilot trailer, and the other 4
+are the same one-line idiom with no positive evidence of a human author. None
+was ever a human decision. Two are inert in the plainest way -- wlc-utils'
+py/main_uxlc_grammar_test.py and py/main_find_uxlc_accent_changes.py each insert
+their own parent, the very directory CPython had already put on sys.path.
+
+A blame crawl on 2026-07-30 over the three repos carrying mutations found 18: 14
+sit in commits with a `Co-Authored-By: Claude`/Copilot trailer, and the other 4
+are the same one-line idiom with no positive evidence of a human author. Two are
+inert in the plainest way -- wlc-utils' py/main_uxlc_grammar_test.py and
+py/main_find_uxlc_accent_changes.py each insert their own parent, the very
+directory CPython had already put on sys.path for them.
+
+Why a check rather than only the written rule: the rule is written, and agents
+added shims anyway -- one buried as bullet five of an unrelated commit
+(wlc-utils `51e2748`). A finding in a report survives a model that skips its
+instructions; a paragraph does not.
+
+Findings are reported, never auto-fixed. Some mutations are load-bearing as
+things stand -- a module under py/accgram/ run directly does need py/ on the
+path -- so removing one is a real edit that has to move that command behind a
+`py/main_<x>.py` subcommand, in the `add_args(parser, ...)` / `run(args)` shape
+the rule prescribes.
 
 These file-scan checks are heuristic text scans (matching this repo's existing
 style, e.g. tests/test_h_dot_below_nfc.py, and book-of-job's
@@ -134,6 +192,29 @@ _PATH_UTILITY_CANDIDATES = (
     "py/mb_cmn/paths.py",
     "py/repo_paths.py",
     "repo_paths.py",
+)
+
+# A root conftest.py exists in these repos for one reason -- putting py/ on
+# sys.path -- so its presence is itself a finding (see "The sys.path surgery
+# standard"). It is NOT exempt from sys_path_mutation either.
+_ROOT_CONFTEST = "conftest.py"
+
+# The config-file spellings of the same shim: pytest.ini/tox.ini/setup.cfg carry
+# a `pythonpath`, and there is no pyproject.toml anywhere in these repos. Their
+# presence is reported without being judged, since a setup.cfg can be there for
+# packaging reasons that have nothing to do with imports.
+_PATH_SHIM_CONFIG = (
+    "pytest.ini",
+    "tox.ini",
+    "setup.cfg",
+    "pyproject.toml",
+)
+
+# Anchored at line start so prose describing the antipattern -- a '#' comment or
+# a docstring sentence -- is not itself a finding. A real call always begins its
+# own line, black's wrapped form `sys.path.insert(\n    0, ...)` included.
+_SYS_PATH_MUTATION_PATTERN = re.compile(
+    r"^\s*sys\.path\.(?:insert|append)\s*\(", re.MULTILINE
 )
 
 _GITATTRIBUTES_LF_PATTERN = re.compile(r"^\*\s+text=auto\s+eol=lf\s*$", re.MULTILINE)
@@ -277,6 +358,44 @@ def _check_path_utility(repo_dir: Path) -> dict:
     return {"present": found is not None, "path": found}
 
 
+def _check_path_shim_config(repo_dir: Path) -> dict:
+    """Which config-file routes onto sys.path the repo carries.
+
+    See "The sys.path surgery standard" in this module's docstring. ROOT_CONFTEST
+    is a finding when True: `python py/main_test.py` needs no such file, so one
+    being there means a second entry path exists to drift against. The clean
+    state is False with an empty shim_config, which MAM-basics and
+    holman-ketiv-qere both demonstrate.
+    """
+    return {
+        "root_conftest": (repo_dir / _ROOT_CONFTEST).is_file(),
+        "shim_config": [rel for rel in _PATH_SHIM_CONFIG if (repo_dir / rel).is_file()],
+    }
+
+
+def _is_test_file(normalized_rel_path: str) -> bool:
+    """Both of pytest's default `python_files` spellings, `test_*.py` and
+    `*_test.py` -- UXLC-utils uses the suffix form (py/clc/clc_kq_test.py),
+    MAM-basics and wlc-utils the prefix form. A `py/main_<x>.py` entry point is
+    never one, however it is named: wlc-utils' py/main_uxlc_grammar_test.py
+    runs a grammar test but is a command, so its insert is the ordinary
+    unnecessary kind rather than the no-op-under-pytest kind."""
+    name = Path(normalized_rel_path).name
+    if name.startswith("main_"):
+        return False
+    return name.startswith("test_") or name.endswith("_test.py")
+
+
+def _find_sys_path_mutations(text: str) -> list[int]:
+    """Return 1-indexed line numbers of sys.path.insert/append calls."""
+    line_numbers: list[int] = []
+    for match in _SYS_PATH_MUTATION_PATTERN.finditer(text):
+        line_no = text.count("\n", 0, match.start()) + 1
+        if line_no not in line_numbers:
+            line_numbers.append(line_no)
+    return line_numbers
+
+
 def _tracked_py_files(repo_dir: Path) -> list[str]:
     result = run_cmd(["git", "-C", str(repo_dir), "ls-files", "*.py"])
     if result.returncode != 0:
@@ -416,6 +535,8 @@ def _scan_py_files(
 ) -> dict:
     hex_escape_findings = []
     orphan_mark_findings = []
+    sys_path_findings = []
+    sys_path_in_test_findings = []
     scanned = 0
     for rel_path in _tracked_py_files(repo_dir):
         if _is_excluded_from_scan(
@@ -433,10 +554,23 @@ def _scan_py_files(
         orphan_mark_findings.extend(
             f"{rel_path}:{line_no}" for line_no in _find_orphan_combining_marks(text)
         )
+        # Every site is a finding, the root conftest.py included. The split is by
+        # urgency, not by permission: non-test code first (see the standard).
+        normalized = rel_path.replace("\\", "/")
+        target = (
+            sys_path_in_test_findings
+            if _is_test_file(normalized)
+            else sys_path_findings
+        )
+        target.extend(
+            f"{rel_path}:{line_no}" for line_no in _find_sys_path_mutations(text)
+        )
     return {
         "py_file_count_scanned": scanned,
         "hex_escape_findings": hex_escape_findings,
         "orphan_combining_mark_findings": orphan_mark_findings,
+        "sys_path_mutation_findings": sys_path_findings,
+        "sys_path_in_test_findings": sys_path_in_test_findings,
     }
 
 
@@ -621,7 +755,16 @@ def _render_txt_report(results: list[dict]) -> str:
         lines.append(f"worktree_hygiene: {repo['worktree_hygiene']}")
         lines.append(f"gitattributes_lf: {repo['gitattributes_lf']}")
         lines.append(f"path_utility: {repo['path_utility']}")
+        lines.append(f"path_shim_config: {repo['path_shim_config']}")
         lines.append(f"py_file_count_scanned: {repo['py_file_count_scanned']}")
+        if repo["sys_path_mutation_findings"]:
+            lines.append("sys_path_mutation_findings:")
+            for finding in repo["sys_path_mutation_findings"]:
+                lines.append(f"  - {finding}")
+        if repo["sys_path_in_test_findings"]:
+            lines.append("sys_path_in_test_findings (lower priority than non-test):")
+            for finding in repo["sys_path_in_test_findings"]:
+                lines.append(f"  - {finding}")
         if repo["hex_escape_findings"]:
             lines.append("hex_escape_findings:")
             for finding in repo["hex_escape_findings"]:
@@ -673,6 +816,7 @@ def run_check_repo_standards_across_repos(
                 "worktree_hygiene": _check_worktree_hygiene(repo_dir),
                 "gitattributes_lf": _check_gitattributes_lf(repo_dir),
                 "path_utility": _check_path_utility(repo_dir),
+                "path_shim_config": _check_path_shim_config(repo_dir),
                 **scan,
                 "nfc_h_dot_below": nfc_scan,
             }
@@ -690,8 +834,9 @@ def run_check_repo_standards_across_repos(
         print(
             "REPO={0}; MAINTENANCE_SCRIPT={1}; WORKTREE_STEP={2}; "
             "LINKED_WORKTREES={3}; AGENT_BRANCHES={4}; GITATTRIBUTES_LF={5}; "
-            "PATH_UTILITY={6}; HEX_ESCAPES={7}; "
-            "ORPHAN_MARKS={8}; NFC_H_DOT={9}; NFC_LATIN={10}".format(
+            "PATH_UTILITY={6}; ROOT_CONFTEST={7}; SHIM_CONFIG={8}; "
+            "SYS_PATH_MUTATIONS={9}; SYS_PATH_IN_TESTS={10}; HEX_ESCAPES={11}; "
+            "ORPHAN_MARKS={12}; NFC_H_DOT={13}; NFC_LATIN={14}".format(
                 repo["repo"],
                 repo["maintenance_script"]["present"],
                 wt["script_covers"],
@@ -699,6 +844,10 @@ def run_check_repo_standards_across_repos(
                 wt["agent_branches"],
                 repo["gitattributes_lf"]["has_eol_lf_rule"],
                 repo["path_utility"]["present"],
+                repo["path_shim_config"]["root_conftest"],
+                ",".join(repo["path_shim_config"]["shim_config"]) or "None",
+                len(repo["sys_path_mutation_findings"]),
+                len(repo["sys_path_in_test_findings"]),
                 len(repo["hex_escape_findings"]),
                 len(repo["orphan_combining_mark_findings"]),
                 len(nfc["decomposed_findings"]) + len(nfc["comment_findings"]),

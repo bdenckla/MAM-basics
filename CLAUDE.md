@@ -30,6 +30,29 @@ If a shell has already `cd`'d into `py/` from an earlier command, explicitly `cd
 the repo root before running tests — a persistent-cwd shell keeps resolving
 repo-root-relative paths wrong otherwise.
 
+**`py/main_test.py` is the only runner — a bare `pytest` is not supported from anywhere,
+including the repo root.** `fd2241a` migrated this repo onto that single entrypoint on
+purpose. It needs no path configuration because CPython prepends a script's own directory
+to `sys.path`, which is exactly why the entrypoint lives in `py/` and not at the root. So
+`pytest py/tests` failing with ~34 `ModuleNotFoundError` collection errors (`No module
+named 'mb_author'`, ...) is the designed state, not a defect: **do not "fix" it** with a
+`pytest.ini` `pythonpath`, a root `conftest.py`, a `.pth`, or `PYTHONPATH`. Each re-creates
+the second entrypoint the migration removed. This was reported as a bug on 2026-07-30 and
+the report was wrong. The cross-repo rule is user-level CLAUDE.md's "No `sys.path` surgery"
+section, which this repo is the worked example for — it is what settled the standard at zero
+inserts per repo rather than one. `py/versification_and_cantillation/doc.py`'s module
+docstring says the same thing.
+
+**Every `py/tests/test_*.py` must be registered in `main_test.py`'s `TEST_MODULE_SPECS`**,
+or it silently never runs — there is no auto-discovery. Two files went unrun this way from
+the 2026-05-03 migration until 2026-07-30, one of them edited four times meanwhile. That is
+worse than the silent-green skip the global rules warn about: an unregistered test reports
+nothing at all. After adding a test file, check the count:
+
+```bash
+.venv/Scripts/python.exe py/main_test.py --list
+```
+
 ## Writing tests — differential and lint-shaped only
 
 An audit of git history, comments, and issues across all of Ben's repos (2026-07-25) found
