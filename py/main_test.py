@@ -45,6 +45,11 @@ TEST_MODULE_SPECS = (
         help_text="Run author.std_table generic caller-attrs tests.",
     ),
     TestModuleSpec(
+        flag="author-json-block",
+        module_name="tests.test_author_json_block",
+        help_text="Run authored JSON snippet wildcard-masking tests.",
+    ),
+    TestModuleSpec(
         flag="verify-mp-payload-examples",
         module_name="tests.test_verify_mp_payload_examples",
         help_text="Run strict JSON payload-example matcher tests.",
@@ -63,6 +68,11 @@ TEST_MODULE_SPECS = (
         flag="mb-cmn-url-percent",
         module_name="tests.test_mb_cmn_url_percent",
         help_text="Run URL percent-encoding helper tests.",
+    ),
+    TestModuleSpec(
+        flag="mb-cmn-he-wikisource-url",
+        module_name="tests.test_mb_cmn_he_wikisource_url",
+        help_text="Run Hebrew Wikisource page/taamim/diff URL builder tests.",
     ),
     TestModuleSpec(
         flag="mb-cmn-provenance",
