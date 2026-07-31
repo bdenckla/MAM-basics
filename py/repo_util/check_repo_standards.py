@@ -183,10 +183,26 @@ stage is merely unstarted. So the screen yields a list to hand-check, never a
 delete list. The question it cannot answer -- is the end result in the tree
 yet? -- is the whole question.
 
-MAM-basics' own doc/ has seven files nothing else references, among them
-doc/test_harness_migration_2026-05-03.md, whose old-path -> new-path table
-records a move that git records too, and whose standing result is `py/tests/`
-plus `py/main_test.py`.
+MAM-basics' own doc/ was swept on 2026-07-31: ten files, 1126 lines plus a
+rendered SVG, out of the thirteen the screen raised. Two test-harness
+migration notes, whose standing result is `py/tests/` plus `py/main_test.py`
+and the instruction text those notes record adding; a symbol-ownership map
+that `py/author_misc/mp_cmn.py` already is, line for line; a claims-flow
+walkthrough plus its .mmd and .svg, superseded by `py/verify_mp/` and the
+generated doc/mp-claims.md; a nesting normal-form spec that
+`py/tmpl_survey/nesting_normal_form.py` states in its own docstrings down to
+the three coverage buckets; and three issue-#60 vendoring handoffs whose end
+state is `in/vendoring_policy.json` plus `py/vendoring/discover.py` and the
+generated doc/vendoring-inventory.md. Four of the ten had drifted into
+falsehood by the time they were cut -- the clearest being a guardrail about
+import order that no longer had a mechanism behind it.
+
+The three the screen raised and hand-checking kept are the shape to expect:
+doc/sigil-decoding.md, which calls itself the current decoder authority and
+carries an open backlog; doc/mpplus-navigation.md, a reader's guide to an
+external JSON format; and doc/process-documentation/auto-edits-process.md,
+a runbook whose middle steps happen in a Google Sheet, so its result is not
+in this tree and cannot be.
 
 NOT CHECKED HERE, for now, and this is why. The screen is a few lines of `git
 grep` and would sit comfortably in this file's crude-on-purpose style, but
