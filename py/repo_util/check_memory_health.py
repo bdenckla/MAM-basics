@@ -84,11 +84,19 @@ is visible rather than silently passing.
 The slug is case-inconsistent, so match case-insensitively
 ----------------------------------------------------------
 The project directory is the repo's absolute path with ':' and the separators
-replaced by '-'. But the drive letter's case is NOT stable: as of 2026-07-30
+replaced by '-'. But the drive letter's case is NOT stable: as of 2026-07-31
 al-hatorah, MAM-basics, UXLC-utils and wlc-utils sit under a lowercase
-'c--Users-...' while breuer-cos, holman-ketiv-qere, MAM-simple and yeivin-itm
-sit under an uppercase 'C--Users-...'. Both spellings are live at once, so
-computing the slug and doing an exact lookup finds roughly half of them.
+'c--Users-...' while breuer-cos, holman-ketiv-qere, MAM-simple and
+masorah-books sit under an uppercase 'C--Users-...'. Both spellings are live at
+once, so computing the slug and doing an exact lookup finds roughly half of them.
+
+Keying on the absolute path also means a RENAMED repo orphans its memory. When
+yeivin-itm became masorah-books on 2026-07-31, its four memory files stayed at
+'C--Users-BenDe-GitRepos-yeivin-itm' under a name nothing now looks up, while
+the new 'C--Users-BenDe-GitRepos-masorah-books' started empty. The same is true
+of 'C--Users-BenDe-GitRepos-breuer-cos', whose repo still exists but whose work
+moved. Unlike the worktree litter below, these hold memories worth keeping, so
+they want carrying over rather than deleting.
 
 Two neighbours in that directory are deliberately NOT repo memory and are
 skipped: 'C--Users-BenDe-GitRepos' itself (sessions started from the GitRepos
