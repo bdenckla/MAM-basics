@@ -135,14 +135,8 @@ sit in commits with a `Co-Authored-By: Claude`/Copilot trailer, and the other 4
 are the same one-line idiom with no positive evidence of a human author. None
 was ever a human decision. Two are inert in the plainest way -- wlc-utils'
 py/main_uxlc_grammar_test.py and py/main_find_uxlc_accent_changes.py each insert
-their own parent, the very directory CPython had already put on sys.path.
-
-A blame crawl on 2026-07-30 over the three repos carrying mutations found 18: 14
-sit in commits with a `Co-Authored-By: Claude`/Copilot trailer, and the other 4
-are the same one-line idiom with no positive evidence of a human author. Two are
-inert in the plainest way -- wlc-utils' py/main_uxlc_grammar_test.py and
-py/main_find_uxlc_accent_changes.py each insert their own parent, the very
-directory CPython had already put on sys.path for them.
+their own parent, the very directory CPython had already put on sys.path for
+them.
 
 Why a check rather than only the written rule: the rule is written, and agents
 added shims anyway -- one buried as bullet five of an unrelated commit
@@ -160,6 +154,47 @@ style, e.g. tests/test_h_dot_below_nfc.py, and book-of-job's
 check_escape_sequences.py), not a full AST parse. The one exception is
 hex_escape_style's comment exemption, which does tokenize: a `#` is otherwise
 indistinguishable from one inside a string literal.
+
+The doc/ directory standard
+---------------------------
+A DOC FILE THAT ONLY RECORDS FINISHED WORK IS DELETED, NOT ARCHIVED. Git
+history keeps it; the tree should carry only what a reader needs now. The
+shape to look for is a plan, a migration note or a decisions log whose end
+result is already in the code -- in the modules it produced, or in their
+docstrings and comments. Once the work has landed, the doc restates it worse
+and then drifts, and the next reader has to consult both to learn which one
+is current.
+
+wlc-utils `bf2bc1d` is the worked example: three files, 530 lines. A
+docstring-cleanup decisions log, every cut of which was in place in the
+modules; an issue's adjudicated-decisions record, every decision of which had
+migrated into the page modules tagged with its own decision number; and a
+sketch of a table layout that `ob_tree_table.py` implements and every rendered
+tree page shows.
+
+The cheap screen is inbound references: for each tracked file under doc/, does
+any other tracked file name it? In wlc-utils that produced exactly four
+candidates out of nine, and the five it passed over were the five worth
+keeping -- among them doc/review-findings-2026-07-29.md, which a dozen code
+comments cite by item number, the clearest way a doc earns its place. But
+unreferenced is not the same as spent: of the four, three were deleted and the
+fourth, doc/PLAN-overall-port-to-python.md, is a live intention whose next
+stage is merely unstarted. So the screen yields a list to hand-check, never a
+delete list. The question it cannot answer -- is the end result in the tree
+yet? -- is the whole question.
+
+MAM-basics' own doc/ has seven files nothing else references, among them
+doc/test_harness_migration_2026-05-03.md, whose old-path -> new-path table
+records a move that git records too, and whose standing result is `py/tests/`
+plus `py/main_test.py`.
+
+NOT CHECKED HERE, for now, and this is why. The screen is a few lines of `git
+grep` and would sit comfortably in this file's crude-on-purpose style, but
+"is this doc spent?" is not decidable, so the only finding it could raise per
+repo is a list somebody then reads by hand -- the same reasoning as "Don't
+enforce this rule mechanically" in the testing rule. If it is ever written,
+have it report the unreferenced filenames and nothing else, never a count,
+which would read as a defect tally against repos that have earned their docs.
 
 Deliberately NOT checked -- black version-pinning. `black` is intentionally left
 unpinned in these repos, and a version bump's reformatting is wanted, not a
