@@ -1,5 +1,84 @@
 # CLAUDE.md
 
+## Invoke the `hebrew-prose` skill before writing or editing prose about accentuation
+
+That user-level skill (`~/.claude/skills/hebrew-prose/`, tracked in `github-misc` at
+`dot-claude/skills/`) is the canonical, single home for the rules the sections below and
+`printed_decalogue_strands.py`'s docstring state — atom vs chanted word, the one-scale maqaf rule,
+which corpus a claim takes, the banned verbs and framings, where Yeivin and Breuer live, how to
+verify a page's numbers. It loads on demand rather than every session, so it can hold the full
+statement; the sections here stay as pointers, and **a rule change goes into the skill first**.
+
+## Rendered-prose conventions: `py/accgram/printed_decalogue_strands.py`'s module docstring
+
+That docstring is where the editorial conventions for accgram's **rendered prose** are recorded
+— strand names in Hebrew letters and never transliterated, the two signal-word sets, atom vs
+chanted word, the single-sourced `ROM_*` romanizations and their italic wrapper, "the Simanim
+Tiqqun" and never a bare "Simanim", real em dashes, no English sentence opening on a Hebrew word.
+It lives in the printed-Decalogue trio because that is where each rule was settled, but the rules
+are not all trio-specific — its SCOPE paragraph says which are which: read it before writing or
+editing prose on **any** accgram page. Nothing referenced it for a long time, so it was
+discoverable only by already editing the file it governs.
+
+**A table cell holding Hebrew is declared `dir="rtl"`.** Every such cell of every table on a page,
+unless the whole table already is, and without waiting to be asked — right-justification then
+follows from having said what the cell holds, which is why the declaration beats a literal
+`text-align`. Blank cells in the column included; the English heading left alone; no class and no
+stylesheet rule. `maqaf_nonfinal_accents_page`'s `_HEBREW_CELL`, spliced through each table's one
+`*_CELL_ATTRS` tuple, is the pattern. This is here as well as in the skill because Ben has had to
+say it repeatedly (2026-07-29: "something I find myself telling you about frequently … this should
+just be sort of obvious"), and `CLAUDE.md` loads whether or not the skill fires. The fuller
+statement, with the companion rule about abbreviating a long accent name in a cell, is the
+`hebrew-prose` skill's `references/rendered-prose.md`.
+
+Two of those conventions are claims about Hebrew accentuation rather than about this repo:
+
+**Never a loose "word"** (wlc-utils#81). An **atom** is one written word, between spaces or maqafs
+— the thing a maqaf joins to the next. A **chanted word** is a lone atom *or* a whole maqaf
+compound: the unit cantillation operates on, normally bearing one accent. Say which you mean, and
+name a compound whole (על־פני, לא־תעשה), never a bare half of one. Plain "word" survives for an
+ordinary English word, inside quoted or translated source material (which keeps whatever it says),
+**and wherever the context already settles which sense is meant** — what wlc-utils#81 bans is a
+loose "word" the reader must resolve from nothing, so the qualifier is owed where the sense is in
+doubt and is noise where it is not. A table heading is read with its column, so `Word` over a
+column of Hebrew forms is right whether they are simple, compound or mixed (Ben, 2026-07-29); the
+sense can still go in the heading's hover text, as the one-letter appendix's does.
+`MAQAF_IS_THE_LAST_RUNG` is where "atom" is glossed for the reader; that gloss is what licenses
+the bare term on the pages. Note that the two senses come apart exactly where the rung below
+matters, so the two rules are best read together.
+
+**Maqaf is the last rung of one scale.** Disjunctives, then conjunctives, then maqaf — a maqaf
+separates the atom it sits on from the next even less than a conjunctive does, so it carries the
+weakest *separating* force on the scale. (Never write a bare "weakest": a maqaf *binds* tightest,
+so unqualified it reads as backwards.) There is no second ledger for "word division". A maqaf
+difference is counted **once**, at the atom whose marking changed, never as a regrouping plus an
+accent; and it is stated as an **exchange with both marks named** — "a maqaf where its Wikisource
+strand has a merkha" — never as the absent maqaf alone. Do not define a maqaf as "the atom left
+blank of an accent": that is only the normal case, and `koren_dt_elyon`'s `mun-mun` on לא־תעשה is
+a maqaf compound whose joined atom keeps its munaḥ — as are the Simanim Tiqqun's two munaḥ-on-לא.
+But do not swing the other way either: in the **prose** system a second accent on a compound is
+rare, and is largely just a consequence of the compound being one chanted word — the accents found
+there are the ones that can be the first of two on an atomic word, which is also Yeivin's short
+list of prose "secondary accents" (munaḥ-zaqef, metigah-zaqef, rare merkha/mehuppakh on a tevir
+word). The separate case is a maqaf written after a word that keeps its own conjunctive: a
+manuscript habit, and one **L is specifically named for** (Yeivin ITM §293). The **poetic** system
+is far more willing to put two accents on one chanted word; that asymmetry is a major difference
+between the systems, not a detail. `edition_transcription`'s "HOW RARE THAT IS IN PROSE" paragraph
+has it with its Yeivin and Breuer citations.
+
+**Yeivin lives in two places and they are not the same.** `../al-hatorah/py/itm/` is Ben's
+*adaptation* — partial, with sections still untranscribed.
+`../masorah-books/books/itm/md-export-of-docx/` is
+the *full* OCR of the book. That repo was `yeivin-itm` until 2026-07-31, when it was renamed and
+Breuer's *Cantillation of Scripture* was merged into it from `breuer-cos`; CoS is the sibling
+`../masorah-books/books/cos/md-export-of-docx/`, so both books are now one clone away.
+Search the full OCR before concluding Yeivin is silent on something;
+a first pass at wlc-utils#76 searched only the adaptation and wrongly reported the maqaf material
+absent. The verbatim reader-facing statement is
+`MAQAF_IS_THE_LAST_RUNG`; its guardrail comment records the convention it replaced (a 2026-07-25
+audit fix that made maqaf differences non-differences) and why that one was wrong, so it does not
+get reinstated. Issue wlc-utils#76.
+
 ## Running tests — always from the repo root
 
 Run tests via the canonical entrypoint, from the repo root (`~/GitRepos/MAM-basics`), never from `py/`:
@@ -70,10 +149,13 @@ pre-existing example-based unit test failing later and thereby catching a regres
 four have one of two shapes. Do not add a test unless it is one of them, or Ben asks.
 
 - **A differential check against an independent oracle** — regenerate the corpus and compare
-  against a frozen reference or a second derivation of the same fact.
+  against a frozen reference or a second derivation of the same fact. The accgram code that
+  arrived from wlc-utils on 2026-08-01 brought two of the four: the PLY parity comparator against
+  the frozen C `accents` checker, and the printed-Decalogue transcriptions against their vendored
+  strands.
 - **A mechanical lint over the tree** — a decidable property of the *source text* rather than
-  of behavior (`py/tests/test_h_dot_below_nfc.py` and the `check_repo_standards.py` scans are
-  this shape).
+  of behavior (`py/tests/test_h_dot_below_nfc.py`, `py/tests/test_transliterations.py`
+  (wlc-utils#26), and the `check_repo_standards.py` scans are this shape).
 
 Otherwise the generated, git-tracked artifact is the test: regenerate it with the real command
 and read the diff. Unexplained diffs are failures until explained. This is how the real bugs
@@ -83,6 +165,13 @@ strand) surfaced as wrong text in generated output, not as a red test.
 Do not write an example-based unit test that pins one hand-picked case, a string, or a name.
 Nothing in the record shows one catching anything, and they have to be dragged through every
 terminology rename.
+
+**A missing input must FAIL, never skip.** wlc-utils' `25a7800` removed twenty-one skip guards
+that reported green having verified nothing. Skips are a *semantic* channel in the accgram tests
+(a skip reports that a page diverges from its strand), so an environment skip mixed in corrupts
+the signal. An empty `@parametrize` list also reports as a skip — hence the
+`or ["(none committed)"]` fallbacks, which are the failure mechanism and must stay. Reach for
+`require_sibling` rather than a "sibling repo not present" skip.
 
 **The `ws_bot` tests are a deliberate exception.** A Wikisource edit is an irreversible,
 outward-facing action against a live wiki, and there is no regeneratable artifact to diff

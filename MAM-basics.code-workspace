@@ -17,6 +17,12 @@
 		},
 		{
 			"path": "../MAM-parsed"
+		},
+		{
+			"path": "../wlc-utils"
+		},
+		{
+			"path": "../wlc-utils-private"
 		}
 	],
 	"settings": {
