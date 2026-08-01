@@ -17,7 +17,7 @@ from pathlib import Path
 import wlc_paths
 from accgram import rtms_report
 from wlc_cmn.utf8_io import force_utf8_io
-import wlc_provenance as provenance
+from mb_cmn import provenance
 from py_html import wlc_utils_html as H
 
 _WIDTH_CLASS = "goerwitz-tms-width-limited"

@@ -6,7 +6,7 @@ from accgram import dual_cant_readings
 from accgram import rtms_meteg_witness
 from accgram import rtmsr_overview
 from mb_cmn import file_io
-import wlc_provenance as provenance
+from mb_cmn import provenance
 
 
 def write_ungrammatical_payload(
@@ -89,6 +89,7 @@ def _write_json(path: Path, payload: dict[str, object]) -> None:
     # (indexer/AV), taking the whole generate-html run with it; the same command
     # succeeded on the next try. file_io's own dump is byte-for-byte what this
     # used to write: ensure_ascii=False, indent=2, trailing "\n", newline
-    # untranslated. Provenance is already on the payload (wlc_provenance, which
-    # names the repo), so do not pass generator_file.
+    # untranslated. Provenance is already on the payload, injected by the caller
+    # above off its own __file__, so do not pass generator_file: file_io would
+    # only re-derive the same string.
     file_io.json_dump_to_file_path(payload, str(path))

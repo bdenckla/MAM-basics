@@ -39,12 +39,6 @@ from pathlib import Path
 
 from mb_cmn import paths
 
-# wlc-utils' stable logical name -- the top-level segment in generated-artifact
-# provenance breadcrumbs, so they read "wlc-utils/..." rather than naming the repo
-# the generator now lives in.  Supplied to mb_cmn.provenance by the wlc_provenance
-# wrapper.
-REPO_NAME = "wlc-utils"
-
 
 def wlc_data_root() -> Path:
     """Path to the wlc-utils clone: the corpus this code reads and writes.

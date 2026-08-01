@@ -40,7 +40,7 @@ from accgram.poetic_scanner import scan_book
 from accgram.tree import TN, tree_to_obj
 from accgram.poetic_reconcile import reconcile_tokens
 from mb_cmn import file_io
-import wlc_provenance as provenance
+from mb_cmn import provenance
 
 import wlc_paths
 

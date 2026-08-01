@@ -61,7 +61,7 @@ from accgram.uni_to_marks import is_base_letter
 from wlc_cmn.utf8_io import force_utf8_io
 from wlc_cmn.wlc_book_codes import wlc_bb_to_bk39id
 from mb_misc import osis_book_abbrevs as oba
-import wlc_provenance as provenance
+from mb_cmn import provenance
 from py_html import my_html_for_img as mhi
 from py_html import wlc_utils_html as H
 

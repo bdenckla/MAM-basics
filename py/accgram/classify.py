@@ -20,7 +20,7 @@ from pathlib import Path
 from accgram import prose_oddballs
 from accgram import rtms_data
 from mb_cmn import file_io
-import wlc_provenance as provenance
+from mb_cmn import provenance
 
 _OUTPUT_FILE_BB_RE = re.compile(r"^wlc_422_ps_([A-Za-z0-9]+)_ag\.json$")
 
@@ -89,7 +89,7 @@ def write_ungrammatical(
 
 def _write_json(path: Path, payload: dict[str, object]) -> None:
     # Through file_io for the temp-file write and the PermissionError retry; it
-    # makes the directory too. Provenance is already on the payload, from
-    # wlc_provenance, which names the repo where file_io's generator_file= would
-    # not -- so do not pass that.
+    # makes the directory too. Provenance is already on the payload, injected by
+    # the caller above off its own __file__, so do not pass generator_file= as
+    # well: file_io would only re-derive the same string.
     file_io.json_dump_to_file_path(payload, str(path))

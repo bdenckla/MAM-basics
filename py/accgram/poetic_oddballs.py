@@ -90,7 +90,7 @@ from accgram.poetic_oddball_summary import derive_tentative_summary
 from accgram.tree import print_tree
 from accgram.poetic_run import has_error_leaf, no_parse_line
 from mb_cmn import file_io
-import wlc_provenance as provenance
+from mb_cmn import provenance
 from py_html import wlc_utils_html
 from py_wlc import my_wlc_bcv_str
 

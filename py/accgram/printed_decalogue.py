@@ -60,6 +60,7 @@ from accgram.prose_ply_grammar import LOCATION_ONLY, build_parser, parse_tokens
 from accgram.prose_scanner import HasLegarmeh, Token, scan_accents
 from accgram.tree import tree_to_obj
 from mb_cmn import file_io
+from mb_cmn import provenance
 
 import wlc_paths
 
@@ -281,12 +282,9 @@ def add_args(parser, repo_root: Path) -> None:
 
 
 def run(args) -> None:
-    # Both imports are deferred, for different reasons: wlc_provenance to keep this module's
-    # import graph light, and transcription_parse because it imports THIS module (for the shared
-    # parse path above), so importing it at the top would be a cycle.
+    # Deferred because transcription_parse imports THIS module (for the shared parse path
+    # above), so importing it at the top would be a cycle.
     from accgram import transcription_parse
-
-    import wlc_provenance as provenance
 
     source = load_source(args.source)
     parser = build_parser()

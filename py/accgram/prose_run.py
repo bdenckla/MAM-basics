@@ -33,7 +33,7 @@ from accgram.prose_ply_grammar import LOCATION_ONLY, build_parser, parse_tokens
 from accgram.prose_scanner import scan_book
 from accgram.tree import TN, add_leaves, tree_to_obj
 from mb_cmn import file_io
-import wlc_provenance as provenance
+from mb_cmn import provenance
 
 import wlc_paths
 

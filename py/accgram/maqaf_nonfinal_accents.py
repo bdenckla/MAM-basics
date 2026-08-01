@@ -126,13 +126,13 @@ from accgram import final_stress as fs
 from accgram import poetic_filter, prose_filter, rtms_data
 from wlc_cmn.wlc_book_codes import wlc_bb_codes
 from mb_cmn import file_io
+from mb_cmn import provenance
 from mb_cmn.hebrew_accents import ATN_H
 from mb_cmn.hebrew_punctuation import NU_GMAQ
 from mb_cmn.str_defs import DOUB_VERT_LINE
 from mb_diff_mpu.mpplus_flatten import flatten_ep_for_diff
 
 import wlc_paths
-import wlc_provenance as provenance
 
 MAQAF = "\N{HEBREW PUNCTUATION MAQAF}"
 METEG = "\N{HEBREW POINT METEG}"

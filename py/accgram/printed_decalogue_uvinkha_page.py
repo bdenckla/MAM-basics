@@ -42,7 +42,7 @@ from accgram.uni_to_marks import is_accent
 from wlc_cmn.utf8_io import force_utf8_io
 from mb_cmn import hebrew_accent_strip as has
 from mb_cmn import hebrew_punctuation as hpunc
-import wlc_provenance as provenance
+from mb_cmn import provenance
 from py_html import wlc_utils_html as H
 from py_html.my_html_span_romanized import rmn
 

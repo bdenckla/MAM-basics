@@ -79,9 +79,9 @@ from accgram.almost_errors_html_shared import accents_and_letters
 from accgram.prose_scanner import HasLegarmeh, Token, scan_accents
 from wlc_cmn.wlc_book_codes import wlc_bb_codes
 from mb_cmn import file_io
+from mb_cmn import provenance
 
 import wlc_paths
-import wlc_provenance as provenance
 
 UNI_MAQAF = "\N{HEBREW PUNCTUATION MAQAF}"
 

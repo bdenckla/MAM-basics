@@ -52,7 +52,7 @@ from accgram.prose_scanner import HasLegarmeh, Token, scan_accents
 from accgram.tree import TN
 from accgram.prose_ob_notes import get_structured_text
 from mb_cmn import file_io
-import wlc_provenance as provenance
+from mb_cmn import provenance
 
 import wlc_paths
 

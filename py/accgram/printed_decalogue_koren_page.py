@@ -117,7 +117,7 @@ from accgram import transcription_parse as tp
 from accgram import transcription_verdict_column as tvc
 from accgram.almost_errors_html_shared import accents_and_letters, hbo, link
 from wlc_cmn.utf8_io import force_utf8_io
-import wlc_provenance as provenance
+from mb_cmn import provenance
 
 from py_html import my_html_for_img as mhi
 from py_html import wlc_utils_html as H

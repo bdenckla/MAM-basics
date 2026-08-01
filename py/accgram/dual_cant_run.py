@@ -28,7 +28,7 @@ from accgram.mam_simple_verse import default_mam_simple_dir, load_mam_simple_for
 from accgram.prose_ply_grammar import build_parser
 from wlc_cmn.utf8_io import force_utf8_io
 from mb_cmn import file_io
-import wlc_provenance as provenance
+from mb_cmn import provenance
 
 import wlc_paths
 
