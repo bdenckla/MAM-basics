@@ -1,0 +1,26 @@
+# Ruff configuration for MAM-basics.
+#
+# Wired into the repo-maintenance script's lint step (py/main_repo_maintenance.py) and
+# runnable directly from the repo root:
+#
+#     .venv/Scripts/python.exe -m ruff check py
+#     .venv/Scripts/python.exe -m ruff check py --fix
+#
+# The lint rule set is pyflakes `F` plus pycodestyle `E4`/`E7`/`E9`: unused imports and
+# locals, undefined names, f-strings without placeholders, and the like.  Line length
+# (E501) is deliberately NOT enforced -- prose-heavy generator modules wrap by hand near
+# this width, not by rule.  `line-length` below only takes effect if you ever run
+# `ruff format`.
+#
+# `select` is written out rather than left to Ruff's default, EVEN THOUGH those four
+# were Ruff's default when this file was written.  Ruff 0.16 widened the default to
+# roughly forty rule families: with an implicit selection, upgrading Ruff turned a
+# clean tree into 776 findings in wlc-utils and 996 here, none of them a change to any
+# source file.  An explicit list makes the rule set a property of this repo rather than
+# of whichever Ruff the venv last resolved.
+
+line-length = 100
+target-version = "py311"
+
+[lint]
+select = ["E4", "E7", "E9", "F"]

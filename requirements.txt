@@ -8,3 +8,5 @@ pywikibot
 requests
 lxml
 pytest
+ply
+ruff
