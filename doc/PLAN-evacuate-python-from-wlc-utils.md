@@ -8,7 +8,7 @@
 | 1 — wlc-utils: two roots, no cwd | **done** 2026-08-01, commits `5ae429d` and `e5be610` (both in wlc-utils) |
 | 2 — `mb_cmn/paths.py` absorbs the override chain | **done** 2026-08-01, commit `d01f2c1` |
 | 3 — copy the Python in (dual residency) | **done** 2026-08-01, commits `36a6ea8`, `7e8ee0f`, `a647e93`, `646bf2d`; plus `788e06c` in wlc-utils and `0e8c80c` in MAM-with-doc |
-| 4 — empty wlc-utils | not started |
+| 4 — empty wlc-utils | **done** 2026-08-01, commit `6180f8d` in wlc-utils; plus `57895b5` here |
 | 5 — flip the provenance breadcrumbs | not started |
 | 6 — disambiguate issue citations | not started |
 | 7 — cross-repo bookkeeping | not started |
@@ -704,7 +704,72 @@ that may have been written by either copy.
 
 ---
 
-## Phase 4 — Empty wlc-utils
+## Phase 4 — Empty wlc-utils — DONE 2026-08-01
+
+**Landed as `6180f8d` in wlc-utils (278 files changed, 82 insertions, 60,294 deletions), plus
+`57895b5` here for the `CLAUDE.md` sections that came across and the workspace entries.**
+Every baseline was re-measured first and every one matched: 267 tracked `.py` in wlc-utils, 193
+under `out/`, 283 under `gh-pages/`, 61 breadcrumb files, 504 passed / 5 skipped there, and 693
+tracked `.py` / 69 test modules here. The 26 vendored files in `py/mb_cmn/`, `py/mb_misc/` and
+`py/mb_diff_mpu/` were re-confirmed byte-identical immediately before deletion — 26 identical, 0
+differing, the only wlc-only files the three `_provenance.md` breadcrumbs — so §Scale's "pure
+deletions" held to the end.
+
+**The tracked deletion is 274 files, not 267:** the 267 `.py`, those three `_provenance.md`, and
+the four config files. `.vscode/` and `.githooks/` had no other tracked contents, so both
+directories went whole.
+
+**The oracle ran wider than the phase asked and passed.** From
+`C:\Users\BenDe\GitRepos\MAM-basics` as the working directory, with wlc-utils holding no Python
+at all: `py\main_0_mega.py`, then all seven accgram subcommands outside it (run-dual-cant,
+run-printed-decalogue, survey-chanted-word-accents, xcheck-poetic, servi-xcheck, test-fixes,
+grammaticality), then `main_uxlc_grammar_test.py`, `main_find_uxlc_accent_changes.py` and
+`main_edition_transcription.py build --check` (12/12 committed `.txt` bodies re-derived). **Not
+one of the 476 tracked artifacts, nor `in/accgram/uxlc_accent_changes.json`, came back
+modified.** `git status --porcelain` afterwards showed only the four rewritten files in
+wlc-utils, was empty in MAM-basics apart from this repo's own two, and was empty in all five MAM
+siblings. `py\main_test.py` here is unchanged at **832 passed, 5 skipped**.
+
+Six things went differently from what is written underneath:
+
+- **`doc/PLAN-sys-path-insert.md` does not exist and never did.** The rewrite list below asks for
+  a closing note appended to it; `git log --all --` on the path returns nothing in wlc-utils, and
+  it is absent from that repo's working tree, from `doc/` here, and from `~/.claude/plans/`. The
+  Preconditions section cites it by name and its two commits (`3083859`, `36d7693`) are real, so
+  the *work* was done — only the plan file was never tracked anywhere. Nothing to append to, so
+  that bullet is void. **One dangling citation survives it, and is now Phase 7's:**
+  `py/accgram/gen_highlight_picker.py:29` names ``doc/PLAN-sys-path-insert.md`` from inside
+  MAM-basics, where no such file exists either.
+- **The pre-commit hook was never enabled in wlc-utils**, so the `git config --unset
+  core.hooksPath` warning below cost nothing: `git config --get core.hooksPath` exits 1 there.
+  Worth still telling Ben in case another clone has it set.
+- **`.venv/` self-ignores, so dropping its `.gitignore` line did not have to mean deleting the
+  venv.** Python's `venv` writes a `.venv/.gitignore` containing `*`, which keeps `git status`
+  quiet on its own. wlc-utils' 80 MB venv is therefore left on disk for Ben to remove whenever
+  he likes; nothing depends on it, and `requirements.txt` is gone, so it cannot be rebuilt from
+  this repo.
+- **Dropping `__pycache__/` exposed stale residue, which is the line earning its removal.** A
+  root `__pycache__/` held three `conftest.cpython-*-pytest-*.pyc` files — bytecode for the
+  `conftest.py` retired on 2026-07-30, last written 2026-07-09. Deleted; nothing writes a
+  `__pycache__` at that root any more.
+- **The issue citations in the moved `CLAUDE.md` prose were prefixed now rather than at Phase
+  6.** Read from MAM-basics, the `#81`, `#76` and `#26` in that text would name MAM-basics
+  issues rather than the wlc-utils ones meant, so they went across as `wlc-utils#81`,
+  `wlc-utils#76` and `wlc-utils#26`. This does not encroach on Phase 6, which is about the moved
+  *code*; it avoids committing a citation that is wrong on arrival. Phase 6's instruction to
+  leave wlc-utils' own `CLAUDE.md` references alone still holds for what stayed behind — which,
+  after this phase, is none of them.
+- **The suite here is 832/5, not the 824/5 the Phase 3 headline names.** `81556f7` had already
+  taken it there, exactly as the third bullet of Phase 3's own record predicted (824 → 832).
+  Phase 4 changed no Python at all, so black and ruff had nothing to run on.
+
+Two things the record should carry into Phase 7 beyond what item 4 already says: nothing was
+checked here about how `check_repo_standards.py` now reads an emptied wlc-utils — it is not run
+by `main_test.py`, so this phase's green suite says nothing about it — and
+`MAM-basics.code-workspace` now lists `../wlc-utils` and `../wlc-utils-private`, the latter moved
+off `wlc-utils.code-workspace`, whose whole `settings` block is gone.
+
+---
 
 *In wlc-utils.* Zero tracked `.py` afterward.
 
