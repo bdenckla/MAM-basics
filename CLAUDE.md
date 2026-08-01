@@ -43,15 +43,24 @@ section, which this repo is the worked example for — it is what settled the st
 inserts per repo rather than one. `py/versification_and_cantillation/doc.py`'s module
 docstring says the same thing.
 
-**Every `py/tests/test_*.py` must be registered in `main_test.py`'s `TEST_MODULE_SPECS`**,
-or it silently never runs — there is no auto-discovery. Two files went unrun this way from
-the 2026-05-03 migration until 2026-07-30, one of them edited four times meanwhile. That is
-worse than the silent-green skip the global rules warn about: an unregistered test reports
-nothing at all. After adding a test file, check the count:
+**There is no test registry any more, and no file to add a new test to.** `main_test.py`
+was a hand-maintained `TEST_MODULE_SPECS` tuple plus a `unittest` loader until 2026-08-01;
+it is now a `pytest.main()` wrapper, so pytest discovers `py/tests/test_*.py` itself. Drop
+a new test file in and it runs. The registry is gone because of the failure mode it had:
+an unregistered file does not skip, it reports nothing at all — worse than the silent-green
+skip the global rules warn about — and two files went unrun that way here from the
+2026-05-03 migration until 2026-07-30, one of them edited four times meanwhile.
+
+Arguments pass straight through to pytest, so `-k`, `-x`, `-q`, `--lf` and `--collect-only`
+all work; naming a file replaces the default target of the whole `py/tests` tree:
 
 ```bash
-.venv/Scripts/python.exe py/main_test.py --list
+.venv/Scripts/python.exe py/main_test.py --collect-only -q
 ```
+
+Both test styles collect natively — this repo's `unittest.TestCase` classes and the
+module-level `def test_` functions that arrived with the wlc-utils code — so no test file
+was rewritten in either direction.
 
 ## Writing tests — differential and lint-shaped only
 

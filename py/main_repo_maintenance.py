@@ -24,7 +24,7 @@ Five independent steps, in order:
    black, lint failures set the overall exit status but do not block the
    later steps.
 4. Run ``py/main_test.py``, this repo's canonical test entrypoint (see
-   CLAUDE.md) -- the full TEST_MODULE_SPECS suite.
+   CLAUDE.md) -- a ``pytest.main()`` wrapper over the whole ``py/tests`` tree.
 5. Run ``py/main_0_mega.py``, the routine downstream rebuild -- every
    parameterless, non-download rebuild step (parse, mam-with-doc,
    tmpl-survey, mam-simple, mam4sef/ajf, mam-osis, letter-small-job,
