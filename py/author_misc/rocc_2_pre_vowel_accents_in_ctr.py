@@ -325,8 +325,8 @@ _CONT_06_UL = [
     [
         ["The $TIPEHA code point is used for both bare $dexi and bare $tarxa."],
         [" This results in an ambiguity."],
-        [" E.g. $CTR codes the bare $dexi in ", hbo("כִּי־ה֭וּא"), " (Psalm 24:2)"],
-        [" as $TIPEHA."],
+        [" E.g. in ", hbo("כִּי־ה֭וּא"), " (Psalm 24:2) the bare $dexi"],
+        [" has $TIPEHA in $CTR."],
         [" In this document’s context, that $TIPEHA will look like this:"],
         [" ", hbo("ה֖וּא"), "$thinsp, i.e. it will look like a $tarxa."],
         [" This makes it indistinguishable, for example,"],

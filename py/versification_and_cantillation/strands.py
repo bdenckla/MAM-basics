@@ -129,7 +129,7 @@ def _first_word(text):
 
 # Diacritic-stripping for the early-split ("taxton / elyon / MAM / BHS") table cells.
 # The table is about *where each cantillation ends its verse*, so it keeps only the
-# marks that carry that signal — the cantillation accents (te'amim) and the
+# marks that carry that signal — the accents (te'amim) and the
 # accent-coupled punctuation (maqaf, sof pasuq, legarmeh) — and drops the rest (vowel
 # points, dagesh, shin/sin dots, rafe, and ordinary meteg). The keep-sets and the
 # silluq-vs-meteg rule live in the vendorable mb_cmn.hebrew_accent_strip kernel.
@@ -504,7 +504,7 @@ def gather_examples(books_mpu):
         {
             "early_taxton_avadim": _last_word(
                 tax_202[0]
-            ),  # …עֲבָדִ֑ים (etnachta, mid-verse)
+            ),  # …עֲבָדִ֑ים (atnax, mid-verse)
             "early_taxton_panai": _last_word(tax_202[1]),  # …עַל־פָּנָֽי׃ (sof pasuq)
             "early_elyon_avadim": _last_word(ely_202[0]),  # …עֲבָדִֽים׃ (sof pasuq)
             "early_elyon_panai": _last_word(
@@ -553,7 +553,7 @@ def gather_examples(books_mpu):
             ),  # וַיְהִ֖י אַחֲרֵ֣י הַמַּגֵּפָ֑ה (three words)
             "num_seg0_last": _strip_pointing(
                 _last_word(num_261[0])
-            ),  # הַמַּגֵּפָ֑ה (etnachta)
+            ),  # הַמַּגֵּפָ֑ה (atnax)
             "num_seg1_first": _strip_pointing(_first_word(num_261[1])),  # וַיֹּ֤אמֶר
             "num_seg1_last": _strip_pointing(
                 _last_word(num_261[1])

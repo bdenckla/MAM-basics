@@ -1,4 +1,4 @@
-"""Strip a Hebrew token down to letters, cantillation accents, and the
+"""Strip a Hebrew token down to letters, accents, and the
 accent-coupled punctuation (maqaf, sof pasuq, legarmeh) — dropping vowel points,
 dagesh, shin/sin dots, rafe, and (per policy) meteg.
 
@@ -15,7 +15,7 @@ from mb_cmn import hebrew_punctuation as hpunc
 
 # Hebrew letters block: ALEF (U+05D0) .. TAV (U+05EA), including the final forms.
 _LETTER_LO, _LETTER_HI = 0x05D0, 0x05EA
-# Cantillation accents (te'amim): ETNAHTA (U+0591) .. the last accent (U+05AE).
+# Accents (te'amim): ETNAHTA (U+0591) .. the last accent (U+05AE).
 # The block ends at U+05AE on purpose: U+05AF (MASORA CIRCLE) is an editorial mark,
 # not an accent, so it is *not* kept. (U+05BD / meteg-or-silluq sits just past this
 # range and is handled separately by the keep_meteg policy below.)
@@ -55,7 +55,7 @@ def strip_to_accents(token, *, keep_meteg=METEG_SILLUQ):
         if _LETTER_LO <= codepoint <= _LETTER_HI:
             kept.append(ch)  # letter (incl. final form)
         elif _ACCENT_LO <= codepoint <= _ACCENT_HI:
-            kept.append(ch)  # cantillation accent (te'amim)
+            kept.append(ch)  # accent (te'amim)
         elif ch in _KEEP_PUNCT:
             kept.append(ch)  # maqaf / sof pasuq / legarmeh
         elif ch == hp.MTGOSLQ and (keep_meteg == METEG_ALL or idx == silluq_idx):

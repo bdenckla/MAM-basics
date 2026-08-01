@@ -55,9 +55,11 @@ What this file checks, then, is only the decidable residue:
         absence CONFIRMS that memory rather than dating it.
       * NAMED IN ORDER TO BE REJECTED -- UXLC-utils' py/sitecustomize.py, which Ben
         refused and which therefore never existed. This is the same distinction Ben
-        drew about wlc-utils issue #13's `munah`/`tarha` spellings: a naive scan
-        cannot tell a neutral mention from one that promotes a thing from one that
-        names it to reject it.
+        drew about wlc-utils issue #13's `munah`/`tarha` spellings  # translit-ok
+        -- a naive scan cannot tell a neutral mention from one that promotes a
+        thing from one that names it to reject it.  (That trailing pragma is the
+        same point in miniature: this line names the retired spellings in order
+        to reject them, and test_transliterations cannot tell that either.)
       * GENERATED ON DEMAND -- wlc-utils' out/accgram/poetic/_bang_legality.txt,
         written by bang_legality.py when run and absent otherwise.
     The two genuine finds were both renames: breuer-cos' scripts/check_ch9_claims.py
