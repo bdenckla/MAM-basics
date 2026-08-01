@@ -8,7 +8,6 @@ from foi import foi_wikitext_helpers as fwh
 from foi import foi_struct as fct
 from mb_cmn.my_utils import intersperse
 from mb_cmn.my_utils import sum_of_tuples
-from mb_cmn.my_utils import first_and_only
 from mb_cmn.my_utils import first_and_only_and_str
 
 

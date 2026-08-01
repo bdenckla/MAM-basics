@@ -3,7 +3,6 @@ from mb_cmn import uni_heb as uh
 from mb_cmn import uni_heb_2 as u2
 from mb_cmn import hebrew_accents as ha
 from mb_cmn import hebrew_punctuation as hpu
-from mb_cmn import hebrew_points as hpo
 from mb_cmn.my_utils import sl_map
 from mb_cmn.my_utils import sum_of_map
 from py_misc import wt_qere

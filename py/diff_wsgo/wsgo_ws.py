@@ -5,7 +5,6 @@ from mb_cmn import hebrew_accents as ha
 from mb_cmn.my_utils import dv_dispatch
 from mb_cmn.my_utils import dv_map
 from mb_cmn.my_utils import sl_map
-from mb_cmn.my_utils import first_and_only
 from mb_cmn.shrink import shrink
 
 

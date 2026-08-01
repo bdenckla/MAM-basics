@@ -83,7 +83,6 @@ def _diff_one_file(old_json, new_json, canonical_stem):
     diffs = []
     book39_ids = book39_ids_for_stem(canonical_stem)
     he_to_int_old = get_he_to_int(old_json)
-    he_to_int_new = get_he_to_int(new_json)
     old_book39s = old_json["book39s"]
     new_book39s = new_json["book39s"]
     for b39_idx, (old_b39, new_b39) in enumerate(zip(old_book39s, new_book39s)):

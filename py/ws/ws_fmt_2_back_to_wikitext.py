@@ -1,6 +1,5 @@
 """Exports big_str"""
 
-import re
 from functools import partial
 from ws import ws_unparse
 from mb_cmn.my_utils import dkv_map

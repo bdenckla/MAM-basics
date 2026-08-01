@@ -1,6 +1,5 @@
 """Exports main"""
 
-from mb_misc import mb_html
 from mb_author import author
 
 

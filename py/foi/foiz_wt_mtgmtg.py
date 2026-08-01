@@ -2,7 +2,6 @@ from mb_cmn import hebrew_points as hpo
 from mb_cmn import hebrew_punctuation as hpu
 from py_misc import wt_qere
 from mb_cmn.my_utils import sum_of_map
-from mb_cmn.my_utils import first_and_only_and_str
 
 
 def find_fois_wt(mroge):

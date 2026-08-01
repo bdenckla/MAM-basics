@@ -37,7 +37,6 @@ from mb_diff_mpu.describe_diff import (
     letter_name,
     letter_ref,
     mark_name,
-    ordinal,
 )
 
 # ── Helpers ──────────────────────────────────────────────────
@@ -86,12 +85,12 @@ def _render_one(op, poetic, old_letter_counts=None, new_letter_counts=None):
 
     if isinstance(op, ComplexReplace):
         old_parts = ", ".join(
-            f"{_name_for(m, poetic)} on {letter_name(l)}"
-            for m, l, _occ in op.old_qualified
+            f"{_name_for(m, poetic)} on {letter_name(ltr)}"
+            for m, ltr, _occ in op.old_qualified
         )
         new_parts = ", ".join(
-            f"{_name_for(m, poetic)} on {letter_name(l)}"
-            for m, l, _occ in op.new_qualified
+            f"{_name_for(m, poetic)} on {letter_name(ltr)}"
+            for m, ltr, _occ in op.new_qualified
         )
         return f"old has {old_parts}; new has {new_parts}"
 

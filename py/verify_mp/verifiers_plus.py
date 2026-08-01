@@ -2,7 +2,6 @@
 """Verifiers for mp.plus.* and mp.plain.example.* claims."""
 
 from collections import Counter
-from pathlib import Path
 from typing import Callable
 
 from mb_author.claim import ClaimRecord

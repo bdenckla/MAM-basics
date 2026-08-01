@@ -30,7 +30,7 @@ def _greg_to_heb(date_str):
 def render_subtitle_table(old_rev, new_rev, old_date, new_date, total):
     """Render the commit/date range as an HTML table."""
     rows = [
-        f'<table class="subtitle">',
+        '<table class="subtitle">',
         "<thead><tr><th>Start</th><th>End</th></tr></thead>",
         "<tbody>",
         f"<tr><td>{_esc(old_rev)}</td><td>{_esc(new_rev)}</td></tr>",

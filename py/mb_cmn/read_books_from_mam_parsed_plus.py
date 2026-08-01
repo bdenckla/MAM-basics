@@ -11,7 +11,10 @@ from mb_cmn.my_utils import init_at_key
 def read_parsed_plus_bk39s(bk39ids=None, mam_parsed_path="../MAM-parsed"):
     """Read all bk24s covering bk39ids"""
     real_bk39ids = bk39ids or tbn.ALL_BK39_IDS
-    mapfunc = lambda bk24id: read_parsed_plus_bk24(bk24id, mam_parsed_path)
+
+    def mapfunc(bk24id):
+        return read_parsed_plus_bk24(bk24id, mam_parsed_path)
+
     lis_books_out_dics = sl_map(mapfunc, _bk24ids(real_bk39ids))
     return sum_of_dics(lis_books_out_dics)
 

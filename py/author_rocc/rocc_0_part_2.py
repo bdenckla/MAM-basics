@@ -6,7 +6,6 @@ from author_misc import rocc_1_on_the_provenance_of_ctr as prov
 from author_rocc import rocc_util as ru
 from author_rocc import rocc_212_pj3 as pj3
 from author_rocc import rocc_213_ajry as ajry
-from author_rocc import rocc_213_ajry as ajry
 from author_rocc import rocc_214_la as la
 from author_rocc import rocc_216_yvmm as yvmm
 from author_rocc import rocc_217_vlylh as vlylh

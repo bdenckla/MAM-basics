@@ -9,7 +9,6 @@ To regenerate the output HTML, run from the repo root::
 Output goes to ../MAM-parsed/gh-pages/mpplus_aot.html.
 """
 
-from mb_misc import mb_html
 from mb_author import author
 from mb_author import json_block
 from mb_author.claim import ClaimCollection

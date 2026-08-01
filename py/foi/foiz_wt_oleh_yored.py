@@ -167,7 +167,6 @@ _RUN_TO_FEATURE = {
     (u2.OLE, u2.MER): (0, 0),
     (u2.OLE, u2.MER, u2.MER): (0, -1),
     (u2.OLE, u2.MER, _AM_E_MER): (0, -1),
-    (u2.MER, u2.OLE, u2.MER): (1, 0),
     #
     (u2.MER,): None,
     (_AM_E_MER,): None,

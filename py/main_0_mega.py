@@ -11,8 +11,6 @@ from typing import Callable
 
 from mb_cmn import paths
 
-_REPOS = paths.repos_root()
-
 import main_explicit_xataf
 
 # main_download_mam_fr_google.py
@@ -35,6 +33,8 @@ from subcommands import diff_wsgo
 from subcommands import parse_go
 from subcommands import parse_ws
 from subcommands import ws_bot_proto
+
+_REPOS = paths.repos_root()
 
 
 @dataclass(frozen=True)

@@ -2,7 +2,6 @@ from functools import partial
 import re
 from mb_cmn import ws_tmpl1 as wtp1
 from mb_cmn import hebrew_accents as ha
-from mb_cmn import ws_tmpl1 as wtp1
 from ws import ws_get_bk_in_both_fmts as wsin
 from ws import ws_fmt_2_back_to_wikitext as btw
 from mb_cmn.my_utils import sum_of_map

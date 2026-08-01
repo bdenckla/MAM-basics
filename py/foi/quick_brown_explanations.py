@@ -53,7 +53,7 @@ def _many_lett_explanation(path_parts):
         return " ".join(
             (
                 f"that the verse contains {lett_count} distinct Hebrew letters, i.e. all",
-                f"27 letters when final-form letters are counted separately, and that it",
+                "27 letters when final-form letters are counted separately, and that it",
                 f"also contains {vowp_count}",
                 f"distinct vowel points, missing only {missing_vowps}",
             )
@@ -61,7 +61,7 @@ def _many_lett_explanation(path_parts):
     return " ".join(
         (
             f"that the verse contains {lett_count} distinct Hebrew letters, i.e. all 27",
-            f"letters when final-form letters are counted separately, and that it also",
+            "letters when final-form letters are counted separately, and that it also",
             f"contains {vowp_count}",
             "distinct vowel points",
         )

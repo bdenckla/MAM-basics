@@ -1,6 +1,5 @@
 """Exports main"""
 
-from mb_misc import mb_html
 from mb_cmn import my_utils
 from mb_cmn import hebrew_punctuation as hpu
 from mb_author import author

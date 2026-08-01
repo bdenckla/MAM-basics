@@ -1,5 +1,4 @@
 from mb_cmn import ws_tmpl2 as wtp
-from mb_cmn.my_utils import szip
 from mb_cmn.my_utils import sum_of_map
 
 

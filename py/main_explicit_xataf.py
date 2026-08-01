@@ -141,7 +141,7 @@ def almost_main():
         all_failures.extend(failures)
         all_extras.extend(extra_list)
     all_failures = _apply_manual_overrides(all_mappings, all_failures)
-    n_ni = _flag_non_inferrable(all_mappings)
+    _flag_non_inferrable(all_mappings)  # mutates all_mappings; its count is unused
     counts = _compute_counts(all_mappings)
     result = {
         "header": {

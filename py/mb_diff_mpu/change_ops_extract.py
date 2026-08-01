@@ -39,7 +39,6 @@ from mb_diff_mpu.describe_diff import (
     is_accent,
     is_letter,
     is_mark,
-    is_poetic,
     qualify,
 )
 from mb_diff_mpu.mpplus_structure import template_name_multiset_delta
@@ -74,7 +73,7 @@ def _extract_mark_ops(old_text, new_text, pred):
         while old_qualified[end] == new_qualified[end]:
             end -= 1
         region = old_qualified[start : end + 1]
-        letters = {l for _, l, _ in region}
+        letters = {ltr for _, ltr, _ in region}
         if len(letters) == 1:
             chars = tuple(a for a, _, _ in region)
             _, letter, occ = region[0]
@@ -343,8 +342,6 @@ def extract_change_ops(
     - rendered to English via change_ops_render.render_english()
     - mechanically applied via change_ops_apply.apply_text_ops()
     """
-    poetic = is_poetic(book, chapter, verse)
-
     if category == "maqaf-afor":
         ops = _extract_maqaf_ops(old_text, new_text)
         # Check if gray maqaf ops fully explain the change

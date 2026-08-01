@@ -2,7 +2,6 @@ from mb_cmn import str_defs as sd
 from mb_cmn import bib_locales as tbn
 from mb_cmn import uni_heb as uh
 from mb_cmn import uni_heb_2 as u2
-from mb_cmn import hebrew_accents as ha
 from mb_cmn import hebrew_punctuation as hpu
 from py_misc import wt_qere
 from foi import pasoleg_1_labels
@@ -142,7 +141,7 @@ def _get_run_el_from_word(last, wordstr):
         assert len(ans) == 1 and ans[0] == u2.SHA
         tweaked_ans = ("sh-leg",)  # shalshelet
         return _run_el_mk_final(tweaked_ans)
-    if last != None and not _run_el_is_final(last):
+    if last is not None and not _run_el_is_final(last):
         return _misc_run_el(last, ans)
     return None
 

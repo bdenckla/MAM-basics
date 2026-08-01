@@ -1,6 +1,5 @@
 from mb_cmn import bib_locales as tbn
 from py_misc import wt_qere
-from mb_cmn.my_utils import first_and_only_and_str
 
 
 def find_fois_wt(mroge):
