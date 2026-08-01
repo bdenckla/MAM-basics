@@ -7,7 +7,7 @@
 | 0 — MAM-basics lint and dependency baseline | **done** 2026-08-01, commits `daebad0` and `83766c3` |
 | 1 — wlc-utils: two roots, no cwd | **done** 2026-08-01, commits `5ae429d` and `e5be610` (both in wlc-utils) |
 | 2 — `mb_cmn/paths.py` absorbs the override chain | **done** 2026-08-01, commit `d01f2c1` |
-| 3 — copy the Python in (dual residency) | not started |
+| 3 — copy the Python in (dual residency) | **done** 2026-08-01, commits `36a6ea8`, `7e8ee0f`, `a647e93`, `646bf2d`; plus `788e06c` in wlc-utils and `0e8c80c` in MAM-with-doc |
 | 4 — empty wlc-utils | not started |
 | 5 — flip the provenance breadcrumbs | not started |
 | 6 — disambiguate issue citations | not started |
@@ -440,7 +440,88 @@ the oracle proving the override chain moved intact — treat it as a deliverable
 
 ---
 
-## Phase 3 — Copy the Python into MAM-basics (dual residency)
+## Phase 3 — Copy the Python into MAM-basics (dual residency) — DONE 2026-08-01
+
+**Landed as four MAM-basics commits — `36a6ea8` (the `main_test.py` flip, deliberately
+first and alone), `7e8ee0f` (the copy), `a647e93` (MAM-basics' own newly-linted prose) and
+`646bf2d` (one generator ordering fix) — plus `788e06c` in wlc-utils and `0e8c80c` in
+MAM-with-doc.** Every baseline was re-measured first and every one matched: 267 tracked
+`.py` in wlc-utils, 193 under `out/`, 283 under `gh-pages/`, 61 breadcrumb files, 504
+passed / 5 skipped, and 333 tests in MAM-basics. black is 26.5.1 in both venvs, so the
+black-skew risk was still not live.
+
+**The oracle ran as specified and passed.** From `C:\Users\BenDe\GitRepos\MAM-basics` as
+the working directory: wlc's own mega first for a clean baseline, then `out/accgram/` and
+`gh-pages/accgram/` deleted, then MAM-basics' merged `py\main_0_mega.py`, then the seven
+accgram subcommands the mega does not run (run-dual-cant, run-printed-decalogue,
+survey-chanted-word-accents, xcheck-poetic, servi-xcheck, test-fixes, grammaticality),
+`main_uxlc_grammar_test.py`, `main_find_uxlc_accent_changes.py`, and
+`main_edition_transcription.py build --check` (12/12 committed `.txt` bodies re-derived).
+**Not one artifact came back modified.** After restoring the 111 files nothing
+regenerates (73 static assets under `gh-pages/accgram` — three `.js` and seventy
+`.png`/`.jpg` — and 38 under `out/accgram/goerwitz-stderr/`, captured stderr from the
+original C checker that no Python here writes), `git status --porcelain` was empty in
+wlc-utils, MAM-basics, and all five MAM siblings.
+
+Final measurements: **824 passed, 5 skipped** in MAM-basics (**69 test modules**, exactly
+as predicted); **504 passed, 5 skipped** still in wlc-utils; **693** tracked `.py` in
+MAM-basics (457 + 236); `ruff check py` and `black --check py` (692 files) both clean.
+
+The test arithmetic closes exactly: 333 + 504 = 837, less 16 for `test_repo_paths.py`
+(Phase 2 had already ported it to `test_mb_cmn_paths.py`, so it was not copied) and 6 for
+the collapsed `test_h_dot_below_nfc.py`, plus 1 new `wlc_issue_edit` test and 8 new
+entry-point-exemption tests = 824.
+
+Seven things went differently from what is written underneath. The first three bear on
+Phase 4 and beyond:
+
+- **`generate-html` could not run against a deleted `out/accgram`, and this is
+  pre-existing.** `printed_decalogue_koren_page` reads
+  `out/accgram/maqaf-nonfinal-accents.json` — the only place one HTML generator consumes
+  another's output — but sat three entries ahead of its writer in `_HTML_GENERATORS`. It
+  never surfaced because the file was always left over from a previous run; step 2's
+  perturbation is precisely what exposes it. **Confirmed pre-existing before anything was
+  touched, by running wlc-utils' own unmodified `py/main_accgram.py generate-html`
+  against the same deleted tree: identical traceback, identical missing path.** Fixed in
+  MAM-basics only (`646bf2d`), since wlc's copy is the oracle and Phase 4 deletes it.
+- **Two source lints now scan MAM-basics' own tree and found 13 things there.**
+  `test_transliterations` (8, in 4 files) and `test_prose_conventions` (5, in 3 files) —
+  more than the 6-in-3 the plan predicted, because `repo_util/check_memory_health.py` did
+  not exist when it was written. All were genuine; `a647e93` resolves them per decision 4,
+  in its own commit rather than folded into the move. Of the eight transliteration hits
+  only one took a `# translit-ok` pragma; `uni_heb.py`'s three became "Note on ZINOR",
+  matching what that note's own body already said, and two were plain uses fixed outright
+  (`mehuppak`→`mahapakh`, `etnachta`→`atnax`). **The copy commit `7e8ee0f` is therefore
+  red on three tests; the tree is green from `a647e93`.**
+- **`test_entry_point_subcommands` newly discovers MAM-basics' mains, and eight of them
+  fail its convention.** They register subcommands with the parser still inside `main()`,
+  so it cannot be read without running the program; two (`main_mam_simple`,
+  `main_slide_generator`) also have no `Subcommands:` docstring block at all. Extracting
+  eight `build_parser()`s and authoring two docstring blocks is its own commit, so they
+  sit in an explicit `_PARSER_NOT_YET_EXTRACTED` list. **That list is not a silent skip:**
+  a new test asserts each name is still discovered and still genuinely unconverted, so
+  converting one without deleting its line fails, and so does a stale line. A stem not on
+  the list that lacks `build_parser()` fails exactly as before.
+- **wlc-utils' own vendoring step re-synced the three `mb_cmn` files `a647e93` touched**,
+  which is the dual-residency window working as designed rather than a surprise. Committed
+  in wlc-utils as `788e06c` so the oracle's "empty `git status`" stayed meaningful.
+  Comments only; no artifact changed.
+- **`wlc_issue_edit`'s byproduct path had to change too, not just its `gh` invocation.**
+  Making the repo an explicit argument fixes the `gh` call, but one
+  `issue-69-outgoing.md` for two trackers reintroduces the same ambiguity in the scratch
+  directory, so the path carries the repo. It also moved to MAM-basics' `.novc/`: what it
+  is a byproduct of is an issue edit, not the wlc-utils corpus.
+- **`main_accgram` needed `almost_main(argv)`, not a bare `almost_main()`**, since three
+  mega steps come from it and the mega blanks `sys.argv` before running its steps.
+- **MAM-simple's four dirty `py-examples/` files were not dirty.** The plan and the
+  Phase 0 record both warn not to read them as move damage; in the event all five MAM
+  siblings were clean throughout, so there was nothing to misread.
+
+Also worth carrying forward: `mb_cmn/`, `mb_misc/` and `mb_diff_mpu/` were re-confirmed
+byte-identical before the copy — 26 `.py` identical, 0 differing, the only wlc-only files
+being the three `_provenance.md` breadcrumbs. §3a's "pure deletions" holds for Phase 4.
+
+---
 
 **The key structural decision: copy, do not move.** Get MAM-basics fully green while wlc-utils
 stays untouched. Both copies then write into the *same* `out/` and `gh-pages/`, which makes the
