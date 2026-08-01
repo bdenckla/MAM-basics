@@ -6,19 +6,32 @@ truth, the emitter half of this is deleted (see the plan's Phase 8); only the
 differential verifier and the vendored source text survive.
 
 Subcommands:
-    fetch      Download the four /pub documents into .novc/urwotm_cache/.
-    inventory  Write the class / link / $-candidate reports.
-    images     Download the images, write the manifest and contact sheets.
+    fetch
+                Download the four /pub documents into .novc/urwotm_cache/.
+    inventory
+                Write the class / link / $-candidate reports.
+    images
+                Download the images, write the manifest and contact sheets.
     install-images
-               Copy the cached images into MAM-with-doc under the descriptive
-               names in urwotm_import/img_names.py.
-    emit       Write py/author_misc/urwotm_N_*.py and the per-part report.
+                Copy the cached images into MAM-with-doc under the descriptive
+                names in urwotm_import/img_names.py.
+    emit
+                Write py/author_misc/urwotm_N_*.py and the per-part report.
+    difftext
+                Diff each generated page against its source document word by
+                word, write .novc's difftext_pN.md report, and exit non-zero on
+                an unexpected difference.  This is the differential verifier
+                that outlives the emitter half of this tooling.
+
+Every subcommand takes a repeatable --part to restrict it to one part; the
+default is all four.
 
 Examples:
     .venv/Scripts/python.exe py/main_urwotm_import.py fetch
     .venv/Scripts/python.exe py/main_urwotm_import.py inventory
     .venv/Scripts/python.exe py/main_urwotm_import.py images
     .venv/Scripts/python.exe py/main_urwotm_import.py emit --part 1
+    .venv/Scripts/python.exe py/main_urwotm_import.py difftext
 """
 
 import argparse
@@ -35,9 +48,8 @@ from urwotm_import import inventory as inventory_mod
 from urwotm_import import parts
 
 
-def main() -> None:
-    sys.stdout.reconfigure(encoding="utf-8")
-    sys.stderr.reconfigure(encoding="utf-8")
+def build_parser() -> argparse.ArgumentParser:
+    """The fully-configured parser, so a test can read the subcommands off it."""
     parser = argparse.ArgumentParser(
         description=__doc__,
         formatter_class=argparse.RawDescriptionHelpFormatter,
@@ -45,7 +57,13 @@ def main() -> None:
     subparsers = parser.add_subparsers(dest="subcommand", metavar="SUBCOMMAND")
     subparsers.required = True
     _add_subcommands(subparsers)
-    args = parser.parse_args()
+    return parser
+
+
+def main() -> None:
+    sys.stdout.reconfigure(encoding="utf-8")
+    sys.stderr.reconfigure(encoding="utf-8")
+    args = build_parser().parse_args()
     args.func(args)
 
 

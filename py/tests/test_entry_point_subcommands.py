@@ -64,30 +64,6 @@ _ENTRY_LINE = re.compile(r" {4}(\S+)")
 # import below dies on it.
 _NOTHING_DISCOVERED = "(no py/main_*.py registers subcommands -- discovery is broken)"
 
-# Entry points that register subcommands but keep their parser inside main(), so it
-# cannot be read without running the program.  They predate this guard: it arrived in
-# 2026-08-01's evacuation of wlc-utils' Python, written for the entry points that came
-# with it, and these eight are MAM-basics' own.  Converting them is its own commit --
-# each needs build_parser() extracted, and two (main_mam_simple, main_slide_generator)
-# need a `Subcommands:` block written before the docstring half can be checked at all.
-#
-# This list is the opposite of a silent skip.  A stem on it is still asserted to be
-# unconverted, so converting one WITHOUT deleting its line here fails; and a stem NOT on
-# it that lacks build_parser() fails as it always did, which is what keeps the guard real
-# for the entry points it was written for.  The list only shrinks.
-_PARSER_NOT_YET_EXTRACTED = frozenset(
-    {
-        "main_authored",
-        "main_diff",
-        "main_download",
-        "main_mam_simple",
-        "main_parse",
-        "main_slide_generator",
-        "main_urwotm_import",
-        "main_ws_bot",
-    }
-)
-
 
 def _entry_points_with_subcommands() -> list[str]:
     """Module stems of the ``py/main_*.py`` that register subcommands.
@@ -103,10 +79,7 @@ def _entry_points_with_subcommands() -> list[str]:
     )
 
 
-_ALL_ENTRY_POINTS = _entry_points_with_subcommands() or [_NOTHING_DISCOVERED]
-_ENTRY_POINTS = [
-    stem for stem in _ALL_ENTRY_POINTS if stem not in _PARSER_NOT_YET_EXTRACTED
-] or [_NOTHING_DISCOVERED]
+_ENTRY_POINTS = _entry_points_with_subcommands() or [_NOTHING_DISCOVERED]
 
 
 def _parser_of(stem: str) -> argparse.ArgumentParser:
@@ -227,27 +200,4 @@ def test_a_pattern_entry_spells_out_every_family_member(stem: str) -> None:
     assert not problems, (
         f"py/{stem}.py's `{_HEADING}` block has a pattern entry whose spelled-out list"
         " of its members has drifted from the parser:\n  " + "\n  ".join(problems)
-    )
-
-
-@pytest.mark.parametrize("stem", sorted(_PARSER_NOT_YET_EXTRACTED))
-def test_the_unconverted_list_still_names_only_unconverted_entry_points(
-    stem: str,
-) -> None:
-    """A stem exempted above must still be both discovered and genuinely unconverted.
-
-    Without this the exemption list would rot in two directions at once: an entry point
-    that got a ``build_parser()`` would go on being exempted from the checks it now
-    passes, and one that was renamed or deleted would leave a line naming nothing.  Both
-    are the silent-drift failure this whole module exists to refuse.
-    """
-    assert stem in _ALL_ENTRY_POINTS, (
-        f"py/{stem}.py is exempted from the subcommand checks but discovery does not"
-        " find it registering subcommands -- it was renamed, deleted, or stopped"
-        " calling add_subparsers(); delete its line from _PARSER_NOT_YET_EXTRACTED"
-    )
-    module = importlib.import_module(stem)
-    assert getattr(module, "build_parser", None) is None, (
-        f"py/{stem}.py now exposes build_parser(), so it is converted -- delete its line"
-        " from _PARSER_NOT_YET_EXTRACTED so the docstring/parser agreement is checked"
     )

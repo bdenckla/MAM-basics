@@ -2,8 +2,10 @@
 """Dispatch parse tools.
 
 Subcommands:
-    go   Parse downloaded Google Sheets data into ../MAM-parsed outputs.
-    ws   Parse downloaded Wikisource data into local parsed JSON outputs.
+    go
+                Parse downloaded Google Sheets data into ../MAM-parsed outputs.
+    ws
+                Parse downloaded Wikisource data into local parsed JSON outputs.
 
 Examples:
     .venv/Scripts/python.exe py/main_parse.py go
@@ -19,7 +21,8 @@ from subcommands import parse_go
 from subcommands import parse_ws
 
 
-def main() -> None:
+def build_parser() -> argparse.ArgumentParser:
+    """The fully-configured parser, so a test can read the subcommands off it."""
     parser = argparse.ArgumentParser(
         description=__doc__,
         formatter_class=argparse.RawDescriptionHelpFormatter,
@@ -27,7 +30,11 @@ def main() -> None:
     subparsers = parser.add_subparsers(dest="subcommand", metavar="SUBCOMMAND")
     subparsers.required = True
     _add_subcommands(subparsers)
-    args = parser.parse_args()
+    return parser
+
+
+def main() -> None:
+    args = build_parser().parse_args()
     args.func(args)
 
 

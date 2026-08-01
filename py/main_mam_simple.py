@@ -1,5 +1,34 @@
 """Make a simple but incomplete extract of MAM in XML and JSON formats.
 
+The XML format is not OSIS, but is informed by OSIS; the JSON format mirrors
+the XML structure.  Both are written for each of the three versification
+variants (BHS, Sefaria, MAM's own).
+
+Subcommands:
+    all
+                Run the core MAM-simple export and then regenerate the
+                versification docs.  This is what runs when no subcommand is
+                given at all, so the bare command line is the whole job.
+    core-only
+    core
+                Run only the core MAM-simple export, leaving the versification
+                docs alone.  `core` is an alias for `core-only`.
+    doc-only
+    doc
+                Regenerate only the versification docs -- the versification
+                differences doc and the versification-and-cantillation doc --
+                each rewritten only if its content changed.  `doc` is an alias
+                for `doc-only`.
+    copy-support-files
+    copy
+                Copy the support files into the MAM-simple repo, without
+                exporting anything.  `copy` is an alias for
+                `copy-support-files`; the `all` and `core-only` exports finish
+                by doing this themselves.
+
+`all`, `core-only` and `core` accept --book39 or --section6 to restrict the
+export to one book or one section; the default is all 39 books.
+
 Usage (run from repo root):
     .venv/Scripts/python.exe py/main_mam_simple.py
     .venv/Scripts/python.exe py/main_mam_simple.py --book39 Ruth
@@ -133,8 +162,12 @@ def _write_versification_doc():
         print(f"{status}: {gen.output_path()}")
 
 
-def _build_parser():
-    parser = argparse.ArgumentParser(description=__doc__)
+def build_parser():
+    """The fully-configured parser, so a test can read the subcommands off it."""
+    parser = argparse.ArgumentParser(
+        description=__doc__,
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+    )
     subparsers = parser.add_subparsers(dest="command")
 
     _add_core_args(
@@ -170,10 +203,8 @@ def _add_core_args(parser):
     return parser
 
 
-def _parse_args(argv=None):
-    if argv is None:
-        argv = sys.argv[1:]
-    if not argv or argv[0] not in {
+_SUBCOMMAND_NAMES = frozenset(
+    {
         "all",
         "core-only",
         "core",
@@ -181,9 +212,23 @@ def _parse_args(argv=None):
         "doc",
         "copy-support-files",
         "copy",
-    }:
+    }
+)
+
+
+def _parse_args(argv=None):
+    if argv is None:
+        argv = sys.argv[1:]
+    # A command line that does not open with a subcommand name means `all`, so that the
+    # bare command line is the whole job.  A help flag is the exception: prepending
+    # `all` to it answers with the `all` subparser's own help, and the module docstring
+    # -- the only place the subcommands are listed -- would then have no spelling that
+    # displays it at all.
+    if not argv or (
+        argv[0] not in _SUBCOMMAND_NAMES and argv[0] not in ("-h", "--help")
+    ):
         argv = ["all", *argv]
-    return _build_parser().parse_args(argv)
+    return build_parser().parse_args(argv)
 
 
 def _bkids_from_args(args):

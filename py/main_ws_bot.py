@@ -1,8 +1,12 @@
 """Dispatch Wikisource bot tools.
 
 Subcommands:
-    real   Edit Hebrew Wikisource pages via pywikibot.
-    proto  Run the same edit flow against local files instead of the live site.
+    real
+                Edit Hebrew Wikisource pages via pywikibot.  Unrecognized
+                arguments are passed through to pywikibot (e.g. -dir:...).
+    proto
+                Run the same edit flow against local files instead of the live
+                site.
 
 Examples:
     .venv/Scripts/python.exe py/main_ws_bot.py proto --edits path.json
@@ -20,7 +24,7 @@ from ws import ws_download_selector as wsds
 
 
 def main() -> None:
-    parser = _build_parser()
+    parser = build_parser()
     args, extra_args = parser.parse_known_args()
     if extra_args and not getattr(args, "allow_extra_args", False):
         parser.error(f"unrecognized arguments: {' '.join(extra_args)}")
@@ -28,7 +32,8 @@ def main() -> None:
     args.func(args, extra_args)
 
 
-def _build_parser() -> argparse.ArgumentParser:
+def build_parser() -> argparse.ArgumentParser:
+    """The fully-configured parser, so a test can read the subcommands off it."""
     parser = argparse.ArgumentParser(
         description=__doc__,
         formatter_class=argparse.RawDescriptionHelpFormatter,

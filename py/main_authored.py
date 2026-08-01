@@ -3,20 +3,28 @@ Generate miscellaneous authored HTML documents (notes, reviews, analyses)
 that are written by the repo owner and rendered from Python source data.
 
 Subcommands:
-  gen-misc             (default) Write misc authored HTML docs to
-                       MAM-with-doc/gh-pages/misc/.
-  gen-mam-parsed-docs  Write index.html to MAM-parsed/gh-pages,
-                       plain docs to MAM-parsed/gh-pages/plain/html,
-                       and plus docs to MAM-parsed/gh-pages/plus/html.
-  verify-mp            Run MAM-parsed claim verification without
-                       rewriting MAM-parsed authored HTML/CSS outputs.
-  gen-mp-claims-index  Write doc/mp-claims.md from explicit claims and
-                       available verifier functions without rewriting
-                       MAM-parsed authored HTML/CSS outputs.
-                       Run this after editing py/author_misc/mpplain.py,
-                       py/author_misc/mpplain_body.py,
-                       py/author_misc/mpplus.py, or
-                       py/author_misc/mpplus_body.py.
+    gen-misc
+                (default) Write misc authored HTML docs to
+                MAM-with-doc/gh-pages/misc/.
+    gen-mam-parsed-docs
+                Write index.html to MAM-parsed/gh-pages, plain docs to
+                MAM-parsed/gh-pages/plain/html, and plus docs to
+                MAM-parsed/gh-pages/plus/html.  Runs the claim verification
+                afterwards unless --skip-verify-mp says not to.
+    verify-mp
+                Run MAM-parsed claim verification without rewriting
+                MAM-parsed authored HTML/CSS outputs.
+    gen-mp-claims-index
+                Write doc/mp-claims.md from explicit claims and available
+                verifier functions without rewriting MAM-parsed authored
+                HTML/CSS outputs.  Run this after editing
+                py/author_misc/mpplain.py, py/author_misc/mpplain_body.py,
+                py/author_misc/mpplus.py, or py/author_misc/mpplus_body.py.
+
+Examples:
+    .venv/Scripts/python.exe py/main_authored.py
+    .venv/Scripts/python.exe py/main_authored.py gen-mam-parsed-docs
+    .venv/Scripts/python.exe py/main_authored.py verify-mp
 """
 
 import argparse
@@ -140,8 +148,12 @@ def cmd_verify_mp(_args):
     _run_verify_mp(claims=claims)
 
 
-def main():
-    parser = argparse.ArgumentParser(description=__doc__)
+def build_parser():
+    """The fully-configured parser, so a test can read the subcommands off it."""
+    parser = argparse.ArgumentParser(
+        description=__doc__,
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+    )
     sub = parser.add_subparsers(dest="subcommand")
     sub.add_parser("gen-misc", help="Generate miscellaneous authored HTML documents")
     sub.add_parser(
@@ -166,7 +178,11 @@ def main():
         "verify-mp",
         help="Run MAM-parsed claim verification without regenerating docs/CSS.",
     )
-    args = parser.parse_args()
+    return parser
+
+
+def main():
+    args = build_parser().parse_args()
     if args.subcommand == "gen-mam-parsed-docs":
         cmd_gen_mam_parsed_docs(args)
     elif args.subcommand == "gen-mp-claims-index":

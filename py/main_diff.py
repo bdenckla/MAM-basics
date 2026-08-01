@@ -2,9 +2,12 @@
 """Dispatch diff and comparison tools.
 
 Subcommands:
-    ctr-vs-mam   Compare CTR verse data against MAM verse data.
-    mpp          Compare MAM-parsed-plus revisions and generate HTML reports.
-    wsgo         Diff Wikisource against Google Sheets and emit auto-edits output.
+    ctr-vs-mam
+                Compare CTR verse data against MAM verse data.
+    mpp
+                Compare MAM-parsed-plus revisions and generate HTML reports.
+    wsgo
+                Diff Wikisource against Google Sheets and emit auto-edits output.
 
 Examples:
     .venv/Scripts/python.exe py/main_diff.py ctr-vs-mam
@@ -19,7 +22,8 @@ from subcommands import diff_mpp
 from subcommands import diff_wsgo
 
 
-def main() -> None:
+def build_parser() -> argparse.ArgumentParser:
+    """The fully-configured parser, so a test can read the subcommands off it."""
     parser = argparse.ArgumentParser(
         description=__doc__,
         formatter_class=argparse.RawDescriptionHelpFormatter,
@@ -27,7 +31,11 @@ def main() -> None:
     subparsers = parser.add_subparsers(dest="subcommand", metavar="SUBCOMMAND")
     subparsers.required = True
     _add_subcommands(subparsers)
-    args = parser.parse_args()
+    return parser
+
+
+def main() -> None:
+    args = build_parser().parse_args()
     args.func(args)
 
 
