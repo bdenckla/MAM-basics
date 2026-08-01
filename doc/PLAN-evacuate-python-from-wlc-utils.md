@@ -140,11 +140,14 @@ Two facts worth carrying forward, both bearing on later phases:
 **This file is the orchestrator. No live session needs to stay open**, and no session needs to
 remember anything from the one before it.
 
-Each session: read this file, do exactly one phase, verify it, then **append a line to the
-Progress ledger below** — phase number, commit sha, and the numbers actually measured. A phase
-whose result is not written back cannot be judged by the next session, which is the whole point
-of `agent-planning-principles.md` §"Write State Back Before Continuing". Then spawn a task chip
-for the next phase, quoting this file's absolute path.
+Each session: read this file, do exactly one phase, verify it, then **write the result back into
+the Status table at the top** — state, date, and the commit shas — and mark that phase's own
+heading `— DONE <date>`, recording under it the numbers actually measured and anything found
+that the plan did not predict. A phase whose result is not written back cannot be judged by the
+next session, which is the whole point of `agent-planning-principles.md` §"Write State Back
+Before Continuing". Then spawn a task chip for the next phase, quoting this file's absolute path.
+
+Phase 0 is the worked example of that shape — copy it.
 
 Phases are strictly sequential — **do not run two in parallel, including Phases 0 and 1.** They
 touch different repos and look independent, but Phase 1's verification asserts that MAM-basics'
@@ -162,14 +165,6 @@ touch different repos and look independent, but Phase 1's verification asserts t
   can see.
 
 Phases 1, 2, 5 and 6 are safe to chain automatically once their verification passes.
-
-### Progress ledger
-
-Append one line per completed phase. Nothing else in this file changes as work proceeds.
-
-| Phase | Commit(s) | Measured | Date |
-|---|---|---|---|
-| _(none yet)_ | | | |
 
 ---
 
