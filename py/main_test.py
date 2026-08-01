@@ -75,6 +75,11 @@ TEST_MODULE_SPECS = (
         help_text="Run Hebrew Wikisource page/taamim/diff URL builder tests.",
     ),
     TestModuleSpec(
+        flag="mb-cmn-paths",
+        module_name="tests.test_mb_cmn_paths",
+        help_text="Run sibling-repo path resolver precedence and override tests.",
+    ),
+    TestModuleSpec(
         flag="mb-cmn-provenance",
         module_name="tests.test_mb_cmn_provenance",
         help_text="Run provenance generated-by path formatting tests.",
