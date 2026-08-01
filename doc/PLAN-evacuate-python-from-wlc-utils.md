@@ -493,15 +493,24 @@ Phase 4 and beyond:
   matching what that note's own body already said, and two were plain uses fixed outright
   (`mehuppak`→`mahapakh`, `etnachta`→`atnax`). **The copy commit `7e8ee0f` is therefore
   red on three tests; the tree is green from `a647e93`.**
-- **`test_entry_point_subcommands` newly discovers MAM-basics' mains, and eight of them
-  fail its convention.** They register subcommands with the parser still inside `main()`,
-  so it cannot be read without running the program; two (`main_mam_simple`,
-  `main_slide_generator`) also have no `Subcommands:` docstring block at all. Extracting
-  eight `build_parser()`s and authoring two docstring blocks is its own commit, so they
-  sit in an explicit `_PARSER_NOT_YET_EXTRACTED` list. **That list is not a silent skip:**
-  a new test asserts each name is still discovered and still genuinely unconverted, so
-  converting one without deleting its line fails, and so does a stale line. A stem not on
-  the list that lacks `build_parser()` fails exactly as before.
+- **`test_entry_point_subcommands` newly discovered MAM-basics' mains, and eight of them
+  failed its convention.** They registered subcommands with the parser still inside
+  `main()`, so it could not be read without running the program; two (`main_mam_simple`,
+  `main_slide_generator`) also had no `Subcommands:` docstring block at all. Extracting
+  eight `build_parser()`s and authoring two docstring blocks was its own commit, so they
+  sat meanwhile in an explicit `_PARSER_NOT_YET_EXTRACTED` list, itself guarded by a test
+  asserting each name was still discovered and still genuinely unconverted — so
+  converting one without deleting its line failed, and so did a stale line. `81556f7`
+  resolves all eight per decision 4 and deletes the list, that guard test, and the
+  `_ALL_ENTRY_POINTS`/`_ENTRY_POINTS` split along with it. Two things it turned up that
+  the paragraph above did not predict: the six entry points credited with already having
+  a `Subcommands:` block all wrote name and description on **one** line, which the lint's
+  four-spaces-then-a-bare-name `fullmatch` reads as an empty block, so all six needed
+  reformatting before the docstring half ran at all; and once it ran it caught the drift
+  it exists for, `main_urwotm_import`'s registered-but-unlisted `difftext`. The suite goes
+  824 → 832, not 824 → 816: the eight exemption tests counted in the arithmetic above go
+  away, but the two parametrized checks pick up the eight entry points those tests stood
+  in for.
 - **wlc-utils' own vendoring step re-synced the three `mb_cmn` files `a647e93` touched**,
   which is the dual-residency window working as designed rather than a surprise. Committed
   in wlc-utils as `788e06c` so the oracle's "empty `git status`" stayed meaningful.
