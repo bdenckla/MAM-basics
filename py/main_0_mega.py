@@ -1,6 +1,12 @@
 """
 Meta-orchestrator that runs all (or a selected subset of) processing jobs in
 sequence. Useful for a full rebuild from scratch.
+
+Covers both halves of the pipeline: this repo's own steps, which write into
+MAM-parsed, MAM-with-doc, MAM-simple, MAM-OSIS and MAM-for-Sefaria, and the
+wlc-utils steps at the end, which write into wlc-utils' out/ and gh-pages/.
+wlc-utils had its own mega until 2026-08-01; the two are one list now so that
+accgram cannot read a MAM-simple that mam-simple has not yet regenerated.
 """
 
 import argparse
@@ -28,11 +34,21 @@ import main_mam4sef
 import main_mam_osis
 import main_letter_small_job
 import main_tmpl_survey_toy
+
+# The wlc-utils half of the pipeline.  Its code lives here; the corpus it reads and
+# writes stayed in wlc-utils (see wlc_paths, and
+# doc/PLAN-evacuate-python-from-wlc-utils.md).
+import main_accgram
+import main_wlc_a_notes
+import main_wlc_diffs_420422
+import main_wlc_json_and_unicode
+import main_wlc_vendor_uxlc
 from subcommands import diff_mpp
 from subcommands import diff_wsgo
 from subcommands import parse_go
 from subcommands import parse_ws
 from subcommands import ws_bot_proto
+from wlc_cmn.utf8_io import force_utf8_io
 
 _REPOS = paths.repos_root()
 
@@ -74,6 +90,18 @@ def _run_vendored_mam_osis():
         cwd=_REPOS / "MAM-simple",
         check=True,
     )
+
+
+def _run_accgram_prose():
+    main_accgram.almost_main(["run-prose"])
+
+
+def _run_accgram_poetic():
+    main_accgram.almost_main(["run-poetic"])
+
+
+def _run_accgram_generate_html():
+    main_accgram.almost_main(["generate-html"])
 
 
 _STEPS = [
@@ -176,6 +204,38 @@ _STEPS = [
         main_authored.almost_main,
         None,
     ),
+    # The wlc-utils steps, in the order wlc-utils' own mega ran them until it was
+    # absorbed here on 2026-08-01.  They are LAST rather than free-standing because
+    # accgram reads MAM-simple's json-vtrad-bhs, which mam-simple above regenerates:
+    # while the two megas were separate, nothing ordered them, and an accgram run could
+    # silently consume a stale MAM-simple.
+    StepRecord(
+        "wlc-vendor-uxlc",
+        main_wlc_vendor_uxlc.almost_main,
+        "refreshes wlc-utils' in/UXLC-39 and in/UXLC-misc from UXLC-utils",
+    ),
+    StepRecord(
+        "wlc-json-and-unicode",
+        main_wlc_json_and_unicode.almost_main,
+        "must come before accgram, which reads out/wlc422-kq-u",
+    ),
+    StepRecord(
+        "accgram-run-prose",
+        _run_accgram_prose,
+        "must come after mam-simple and wlc-json-and-unicode",
+    ),
+    StepRecord(
+        "accgram-run-poetic",
+        _run_accgram_poetic,
+        "must come after mam-simple and wlc-json-and-unicode",
+    ),
+    StepRecord(
+        "accgram-generate-html",
+        _run_accgram_generate_html,
+        "must come after accgram-run-prose and accgram-run-poetic",
+    ),
+    StepRecord("wlc-diffs-420422", main_wlc_diffs_420422.almost_main, None),
+    StepRecord("wlc-a-notes", main_wlc_a_notes.almost_main, None),
 ]
 
 _STEP_NAMES = [step.step_id for step in _STEPS]
@@ -183,6 +243,11 @@ _STEP_NAMES = [step.step_id for step in _STEPS]
 
 def main():
     """Run various mains"""
+    # The wlc steps emit Hebrew.  Their own `if __name__ == "__main__"` blocks called
+    # this and no longer run now that they are in-process steps, and on Windows a
+    # redirected stdout encodes with cp1252, so without this the first Hebrew print
+    # raises UnicodeEncodeError whenever the mega is run into a file or a pipe.
+    force_utf8_io()
     parser = argparse.ArgumentParser(description="Run the mega pipeline")
     parser.add_argument(
         "--resume-from",
