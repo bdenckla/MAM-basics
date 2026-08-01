@@ -233,10 +233,16 @@ _HTML_GENERATORS = (
     ("supplied-marks", supplied_marks),
     ("printed-decalogue", printed_decalogue_page),
     ("printed-decalogue-simanim", printed_decalogue_simanim_page),
+    # BEFORE printed-decalogue-koren, which reads the out/accgram JSON this one writes
+    # alongside its page -- the sole read of one generator's output by another.  It sat
+    # after koren until 2026-08-01, which nothing noticed because the JSON was always
+    # left over from a previous run: `generate-html` could not run against a deleted
+    # out/accgram, and deleting out/accgram is exactly how you prove the rebuild is not
+    # silently no-opping.
+    ("maqaf-nonfinal-accents", maqaf_nonfinal_accents_page),
     ("printed-decalogue-koren", printed_decalogue_koren_page),
     ("printed-decalogue-uvinkha", printed_decalogue_uvinkha_page),
     ("dual-under-bars-in-leningrad-decalogues", dual_under_bars_page),
-    ("maqaf-nonfinal-accents", maqaf_nonfinal_accents_page),
     ("telg-doc-notes", telg_doc_notes),
     ("ps17v14-mam-doc-notes", ps17v14_doc_notes),
     ("ps17v14-double-tsinnor", ps17v14_double_tsinnor),
