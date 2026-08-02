@@ -243,7 +243,8 @@
       "scanned_dirs": [
         ".",
         "py",
-        "py/mb_cmn"
+        "py/mb_cmn",
+        "py/mb_diff_mpu"
       ],
       "found_provenance_docs": [],
       "copy_scripts": [
