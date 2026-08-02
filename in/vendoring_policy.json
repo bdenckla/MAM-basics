@@ -1,5 +1,5 @@
 {
-  "comment": "Vendoring policy manifest. Derived file relationships are discovered from repo scans plus explicit overrides.",
+  "comment": "Vendoring policy manifest. Derived file relationships are discovered from repo scans plus explicit overrides. Mechanism is declared here, never detected: gen_inventory used to promote unknown to copy_script when the provenance scan found a copy script in an active or generated repo, which withheld the fact for the three copy-script repos categorized stale, and would have asserted it wrongly for codex-index-leningrad, whose script copies from UXLC-utils rather than from here. Removed 2026-08-02; unknown now means only that nobody has said (#60).",
   "global": {
     "comment": null,
     "source_pkg_dirs": {
@@ -36,11 +36,11 @@
       }
     },
     "holman-ketiv-qere": {
-      "comment": "Active vendored copies.",
+      "comment": "Active vendored copies. py/main_update_vendored_files.py copies MAM-basics/py/mb_cmn and py/mb_diff_mpu by intersection; declared here like the other three such repos, rather than left for gen_inventory to derive from the provenance scan.",
       "ignore": false,
       "scan_provenance": true,
       "default_category": "active",
-      "default_mechanism": "unknown",
+      "default_mechanism": "copy_script",
       "default_provenance_doc": "no",
       "pkg_scan_roots": {
         "mb_cmn": [
@@ -52,11 +52,11 @@
       }
     },
     "al-hatorah": {
-      "comment": null,
+      "comment": "py/main_update_vendored_files.py copies MAM-basics/py/mb_cmn by intersection, so the mechanism is declared rather than derived: gen_inventory only derives copy_script for an active or generated repo, which left this one reading unknown for as long as it read stale (2026-08-02, #60).",
       "ignore": false,
       "scan_provenance": true,
       "default_category": "stale",
-      "default_mechanism": "unknown",
+      "default_mechanism": "copy_script",
       "default_provenance_doc": "no",
       "pkg_scan_roots": {
         "mb_cmn": [
@@ -104,7 +104,7 @@
       }
     },
     "codex-index-leningrad": {
-      "comment": null,
+      "comment": "The main_update_vendored_files.py the provenance scan finds here is not a MAM-basics one: it refreshes UXLC-utils-sparse from the sibling UXLC-utils, and never touches lenin-wiki/py/. So unknown is the true mechanism for the four rows below, and the detected copy script must not be read as covering them (2026-08-02, #60).",
       "ignore": false,
       "scan_provenance": true,
       "default_category": "stale",
@@ -126,11 +126,11 @@
       }
     },
     "mgketer": {
-      "comment": null,
+      "comment": "py/main_update_vendored_files.py copies MAM-basics/py/mb_cmn and py/mb_diff_mpu by intersection. It covers only those two directories, so the two py/python_modules/ overrides below re-declare unknown rather than inherit this default.",
       "ignore": false,
       "scan_provenance": true,
       "default_category": "stale",
-      "default_mechanism": "unknown",
+      "default_mechanism": "copy_script",
       "default_provenance_doc": "no",
       "pkg_scan_roots": {
         "mb_cmn": [
@@ -142,15 +142,18 @@
       }
     },
     "UXLC-utils": {
-      "comment": null,
+      "comment": "py/main_update_vendored_files.py copies MAM-basics/py/mb_cmn and py/mb_diff_mpu by intersection, and its mb_diff_mpu half went untracked here until 2026-08-02: three files clc.clc_dual_cant needs to name accents canonically, sitting in the destination and being refreshed, while the inventory said nothing about them.",
       "ignore": false,
       "scan_provenance": true,
       "default_category": "stale",
-      "default_mechanism": "unknown",
+      "default_mechanism": "copy_script",
       "default_provenance_doc": "no",
       "pkg_scan_roots": {
         "mb_cmn": [
           "py/mb_cmn"
+        ],
+        "mb_diff_mpu": [
+          "py/mb_diff_mpu"
         ]
       }
     },
@@ -278,7 +281,7 @@
       "dest_path": "py/python_modules/my_diffs.py",
       "src_pkg": "mb_cmn",
       "category": null,
-      "mechanism": null,
+      "mechanism": "unknown",
       "provenance_doc": null,
       "notes": "placed in python_modules/ not mb_cmn/"
     },
@@ -288,7 +291,7 @@
       "dest_path": "py/python_modules/uni_denorm.py",
       "src_pkg": "mb_cmn",
       "category": null,
-      "mechanism": null,
+      "mechanism": "unknown",
       "provenance_doc": null,
       "notes": "placed in python_modules/ not mb_cmn/"
     }

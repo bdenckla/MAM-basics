@@ -74,7 +74,6 @@ def _parse_compare_rows() -> dict[tuple[str, str, str], dict[str, str]]:
         rows[key] = {
             "identity": parsed["identity"],
             "last_synced": parsed["last_synced"],
-            "hint_notes": (parsed.get("hint_notes") or "").strip(),
         }
     return rows
 
@@ -128,18 +127,7 @@ def _parse_provenance_rows_from_json() -> dict[str, dict[str, object]]:
             )
         docs = sorted({_normalize_provenance_doc_path(repo, doc) for doc in raw_docs})
 
-        raw_copy_scripts = item.get("copy_scripts", [])
-        if not isinstance(raw_copy_scripts, list) or not all(
-            isinstance(script, str) for script in raw_copy_scripts
-        ):
-            raise ValueError(
-                f"Invalid copy_scripts for repo {repo}: {raw_copy_scripts!r}"
-            )
-
-        rows[repo] = {
-            "found_provenance_docs": docs,
-            "has_copy_scripts": bool(raw_copy_scripts),
-        }
+        rows[repo] = {"found_provenance_docs": docs}
     return rows
 
 
@@ -153,10 +141,7 @@ def _parse_provenance_rows_from_txt() -> dict[str, dict[str, object]]:
         line = raw_line.rstrip()
         if line.startswith("=== ") and line.endswith(" ==="):
             current_repo = line[4:-4].strip()
-            rows[current_repo] = {
-                "found_provenance_docs": [],
-                "has_copy_scripts": False,
-            }
+            rows[current_repo] = {"found_provenance_docs": []}
             continue
         if not current_repo:
             continue
@@ -169,10 +154,6 @@ def _parse_provenance_rows_from_txt() -> dict[str, dict[str, object]]:
             )
         elif "provenance docs: none" in line:
             rows[current_repo]["found_provenance_docs"] = []
-        elif "COPY SCRIPTS:" in line:
-            rows[current_repo]["has_copy_scripts"] = True
-        elif "copy scripts: none found" in line:
-            rows[current_repo]["has_copy_scripts"] = False
 
     return rows
 
@@ -220,21 +201,6 @@ def _merge_identity_into_notes(static_notes: str, identity: str) -> str:
     return f"{identity}; {static_notes}"
 
 
-def _derive_mechanism(
-    static_mechanism: str,
-    category: str,
-    compare_hint_notes: str,
-    has_copy_scripts: bool,
-) -> str:
-    if static_mechanism != "unknown":
-        return static_mechanism
-    if compare_hint_notes == "generated":
-        return "copy_script"
-    if category in {"active", "generated"} and has_copy_scripts:
-        return "copy_script"
-    return static_mechanism
-
-
 def _merged_rows() -> list[dict[str, str]]:
     compare_rows = _parse_compare_rows()
     provenance_rows = _parse_provenance_rows()
@@ -244,19 +210,12 @@ def _merged_rows() -> list[dict[str, str]]:
         compare_key = (data["file"], data["dest_repo"], data["dest_path"])
         compare_row = compare_rows.get(compare_key)
         provenance_row = provenance_rows.get(data["dest_repo"], {})
-        has_copy_scripts = bool(provenance_row.get("has_copy_scripts", False))
         found_provenance_docs = list(provenance_row.get("found_provenance_docs", []))
 
         if compare_row is not None:
             data["last_synced"] = compare_row["last_synced"]
             data["notes"] = _merge_identity_into_notes(
                 data["notes"], compare_row["identity"]
-            )
-            data["mechanism"] = _derive_mechanism(
-                data["mechanism"],
-                data["category"],
-                compare_row["hint_notes"],
-                has_copy_scripts,
             )
         data["provenance_doc"] = _provenance_status_for_row(
             data["dest_repo"], data["dest_path"], found_provenance_docs
