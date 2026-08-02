@@ -38,6 +38,15 @@ COPY_SCRIPT_PATTERNS = [
     "*update_mb_cmn*",
 ]
 
+# Path fragments the rglob below must not descend into. An agent worktree under
+# .claude/worktrees/ is a SECOND FULL CHECKOUT of the repo, so without this every
+# copy script is found twice -- once at its real path and once at a worktree path
+# that will stop existing the moment the worktree is cleaned up, in a file that is
+# committed. Found on 2026-08-02 with holman-ketiv-qere's festive-shamir-dad9ec.
+# .git is here for the same reason and __pycache__/.venv were already: what the
+# repo TRACKS is the question, and rglob answers a different one.
+_SCAN_EXCLUDED_FRAGMENTS = ("__pycache__", ".venv", ".claude", ".git")
+
 
 def _to_repo_relative_posix(path: Path, repo_path: Path) -> str:
     return str(path.relative_to(repo_path)).replace("\\", "/")
@@ -83,7 +92,8 @@ def _find_copy_scripts(repo_path: Path) -> list[str]:
         for hit in repo_path.rglob(pat):
             if not hit.is_file():
                 continue
-            if "__pycache__" in str(hit) or ".venv" in str(hit):
+            rel_parts = hit.relative_to(repo_path).parts
+            if any(fragment in rel_parts for fragment in _SCAN_EXCLUDED_FRAGMENTS):
                 continue
             copy_scripts.add(_to_repo_relative_posix(hit, repo_path))
     return sorted(copy_scripts)
