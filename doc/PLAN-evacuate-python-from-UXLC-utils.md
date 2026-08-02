@@ -15,7 +15,7 @@ the recipe does not transfer here it will not transfer anywhere.
 | Phase | State |
 |---|---|
 | 1 — two roots, no cwd | **done** 2026-08-02, commit `fe73d07` in UXLC-utils; plus `d5a5052` here |
-| 2 — sibling accessor | **not needed** — see below |
+| 2 — sibling accessor | **not needed as its own phase**, but not free either — the one piece owed here was done inside Phase 1; see below |
 | 3 — copy the Python in (dual residency) | **not started** |
 | 4 — empty UXLC-utils | **not started** |
 | 5 — repoint codex-index-leningrad's sparse copy | **not started** |
