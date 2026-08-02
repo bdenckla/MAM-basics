@@ -1108,14 +1108,20 @@ The rest:
   matched per repo-relative path *component* rather than as a substring of the absolute path.
   Both defects are one mistake — a filesystem walk answering "what `.py` files are lying here"
   where the question is "what does this repo track".
-- **Item 6's new `--clean-worktrees` works, and cannot clear the three worktrees it was added
-  for.** Run against wlc-utils it found all three and spared all three, each reporting
-  `holds gitignored content (.claude/, .pytest_cache/, __pycache__/, and 13 more)`. That guard is
-  deliberate and right in general, but `__pycache__` never expires, so these three are spared
-  permanently. All three are detached-HEAD, fully merged into `main`, and their only ignored
-  content is build residue — so they are safe to remove, but only by a `--force` decision that is
-  Ben's, not this tool's. **Until they go, wlc-utils keeps 789 untracked `.py` on disk**, which is
-  what makes the `run_black` gate load-bearing rather than belt-and-braces.
+- **Item 6's new `--clean-worktrees` works, and at first could not clear the three worktrees it
+  was added for — since fixed, and they are gone.** Run against wlc-utils it found all three and
+  spared all three, each reporting
+  `holds gitignored content (.claude/, .pytest_cache/, __pycache__/, and 13 more)`. The guard is
+  right in general but was testing something weaker than what it claims: its own docstring says
+  it exists for content "that exists nowhere else", and `__pycache__` never expires, so a
+  worktree that had merely been RUN once was spared permanently rather than conservatively.
+  Ben proposed a `--force`; that would have reached nothing, because every condition is decided
+  in Python and skips the worktree before `git worktree remove` is invoked, and git removes
+  ignored files without complaint anyway. `84e272e` narrows the guard instead: tool caches and
+  content byte-identical to the main worktree's copy no longer count. All three then collected on
+  an ordinary run, **taking 789 untracked pre-evacuation `.py` files with them** — so the
+  `run_black` gate above is now defence in depth rather than the only thing standing between the
+  sweep and those files.
 - **`check_repo_standards.py` on an emptied wlc-utils reports no false findings** — the check
   Phase 4 recorded as never having been run. Beyond the three now reading `n/a`:
   `GITATTRIBUTES_LF=True`, `ROOT_CONFTEST=False`, `SHIM_CONFIG=None`, 145 text files scanned, and
