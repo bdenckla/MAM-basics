@@ -50,9 +50,9 @@ Six independent steps, in order:
 6. Run ``py/main_0_mega.py``, the routine downstream rebuild -- every
    parameterless, non-download rebuild step (parse, mam-with-doc,
    tmpl-survey, mam-simple, mam4sef/ajf, mam-osis, letter-small-job,
-   decnreub, multimark, wordlist, explicit-xataf, the authored docs, and the
-   wlc-utils steps: vendor-uxlc, WLC JSON/Unicode, accgram, the 4.20/4.22
-   diffs and the a-notes build).
+   decnreub, multimark, wordlist, explicit-xataf, the authored docs, the
+   wlc-utils steps -- vendor-uxlc, WLC JSON/Unicode, accgram, the 4.20/4.22
+   diffs and the a-notes build -- and the closing vendoring audit).
 
 The rebuild step is skipped if the test step failed, unless
 ``--continue-on-test-failure`` is given.

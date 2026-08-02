@@ -6,6 +6,27 @@ Usage (from repo root):
     .venv\\Scripts\\python.exe py\\main_vendoring.py --compare
     .venv\\Scripts\\python.exe py\\main_vendoring.py --provenance
     .venv\\Scripts\\python.exe py\\main_vendoring.py --gen-inventory
+
+WHY ``almost_main`` EXISTS, AND WHY THE MEGA CALLS IT
+
+Nothing routine ran this program until 2026-08-02, and both things that can go wrong
+here went wrong unnoticed while that was true.  Phase 4 of
+``doc/PLAN-evacuate-python-from-wlc-utils.md`` deleted wlc-utils' ``py/`` tree on
+2026-08-01, which left ``in/vendoring_policy.json`` naming a scan root that no longer
+existed; from that moment ``--all`` died with ``ValueError: Configured scan root does
+not exist``, and it took a day and a hand-run to notice.  Meanwhile
+``doc/vendoring-inventory.md`` had not been regenerated since April and had drifted to
+26 rows/189 files against an actual 24/174.
+
+So the audit is now a step of ``py/main_0_mega.py``, which is what makes the drift
+visible: the three artifacts it writes are git-tracked, and in this repo the tracked
+generated artifact IS the test (CLAUDE.md).  A stale inventory shows up as an ordinary
+unexplained diff after a rebuild.  It costs about 15 seconds -- it hashes ~174 vendored
+copies and runs one ``git log`` per copy -- which is noise beside the rest of the mega.
+
+The crash half is caught earlier and more cheaply by
+``py/tests/test_vendoring_policy_paths.py``, a lint over the same policy file that
+fails the moment a configured path stops resolving, without waiting for a rebuild.
 """
 
 import argparse
@@ -13,7 +34,18 @@ import argparse
 from vendoring import compare, gen_inventory, provenance
 
 
-def main() -> None:
+def almost_main() -> None:
+    """The whole audit, callable in-process -- ``main_0_mega.py`` runs it as a step.
+
+    Compare first, then provenance, then the inventory generator, which reads what
+    those two wrote (hence ``refresh_live_inputs=False``: they have just run).
+    """
+    compare.main()
+    provenance.main()
+    gen_inventory.main(refresh_live_inputs=False)
+
+
+def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Vendoring audit tools.")
     group = parser.add_mutually_exclusive_group(required=True)
     group.add_argument(
@@ -36,12 +68,14 @@ def main() -> None:
         action="store_true",
         help="Scan dest repos for provenance docs -> out/vendoring_provenance_out.txt",
     )
-    args = parser.parse_args()
+    return parser
+
+
+def main() -> None:
+    args = build_parser().parse_args()
 
     if args.all:
-        compare.main()
-        provenance.main()
-        gen_inventory.main(refresh_live_inputs=False)
+        almost_main()
     elif args.gen_inventory:
         gen_inventory.main()
     elif args.compare:
@@ -50,4 +84,5 @@ def main() -> None:
         provenance.main()
 
 
-main()
+if __name__ == "__main__":
+    main()

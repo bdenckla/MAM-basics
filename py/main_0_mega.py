@@ -27,6 +27,7 @@ import main_decnreub
 import main_foi_features_of_interest
 import main_multimark
 import main_tmpl_survey
+import main_vendoring
 import main_wordlist
 import main_mam_with_doc
 import main_mam_simple
@@ -236,6 +237,18 @@ _STEPS = [
     ),
     StepRecord("wlc-diffs-420422", main_wlc_diffs_420422.almost_main, None),
     StepRecord("wlc-a-notes", main_wlc_a_notes.almost_main, None),
+    # Last, and not because anything above it feeds it: this one AUDITS rather than
+    # builds, reading the vendored .py copies as they sit in the sibling repos, and a
+    # report reads most naturally as the closing act.  It is here at all because until
+    # 2026-08-02 nothing routine ran py/main_vendoring.py, which let it stay outright
+    # broken for a day (a deleted wlc-utils scan root) and let its inventory drift
+    # since April.  Its three artifacts are git-tracked, so drift now surfaces the way
+    # everything else here does -- as an unexplained diff after a rebuild.  ~15s.
+    StepRecord(
+        "vendoring-audit",
+        main_vendoring.almost_main,
+        "scans every sibling repo on disk; writes doc/vendoring-inventory.md and out/vendoring_*_out.*",
+    ),
 ]
 
 _STEP_NAMES = [step.step_id for step in _STEPS]
