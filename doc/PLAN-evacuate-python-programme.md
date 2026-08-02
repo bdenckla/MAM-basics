@@ -10,16 +10,17 @@ plan can own: the scope, the order, and the work that must happen **before** any
 | Repo | Plan | State |
 |---|---|---|
 | Programme Phase 0 — reconcile the three drifted `check_*`/`fix_*` forks | this file | **not started** |
-| UXLC-utils | [PLAN-evacuate-python-from-UXLC-utils.md](PLAN-evacuate-python-from-UXLC-utils.md) | **not started** |
+| UXLC-utils | [PLAN-evacuate-python-from-UXLC-utils.md](PLAN-evacuate-python-from-UXLC-utils.md) | **Phase 1 done** 2026-08-02 (`fe73d07` there, `d5a5052` here); Phase 3 next, and it needs Ben's go-ahead |
 | holman-ketiv-qere | [PLAN-evacuate-python-from-holman-ketiv-qere.md](PLAN-evacuate-python-from-holman-ketiv-qere.md) | **not started** |
 | book-of-job | [PLAN-evacuate-python-from-book-of-job.md](PLAN-evacuate-python-from-book-of-job.md) | **not started** |
 | codex-index-aleppo, -leningrad, -cam1753 | [PLAN-evacuate-python-from-codex-index-trio.md](PLAN-evacuate-python-from-codex-index-trio.md) | **not started** — all three, cam1753 included |
 | MAM-simple | Appendix A below — **out of scope, nothing to evacuate** | closed, no work |
 | diffable-pointed-hebrew | Appendix B below — **out of scope, left alone** | one loose end, see B |
 
-Nothing here has been started. **Every number below was measured on 2026-08-02** with the command
-given beside it; re-measure before relying on any of them, and treat a mismatch as a finding
-rather than as noise.
+**Every number below was measured on 2026-08-02** with the command given beside it; re-measure
+before relying on any of them, and treat a mismatch as a finding rather than as noise. UXLC-utils'
+Phase 1 has since moved that repo's own figures — 102 tracked `.py`, 17,932 lines, 22 vendored
+`mb_cmn/` — and its plan records why.
 
 ---
 
@@ -209,6 +210,22 @@ a path that resolves correctly only while the process runs from that repo's root
 what stops being true. **`repo_root()` splitting into a CODE root and a DATA root is the organizing
 idea of every plan here, as it was of the wlc-utils one** — read that plan's section of that name
 before starting any of these.
+
+Three things UXLC-utils' Phase 1 learned about this, all likely to recur:
+
+- **A grep for leading `"in/` and friends undercounts badly.** Six known offenders there turned
+  out to be 26 modules, because the same path also arrives as an f-string, as a module constant
+  another module imports, as a `Path("...")` binding, and as a
+  `Path(__file__).resolve().parent.parent` walk that is cwd-independent already but still
+  conflates the two roots. Grep for the directory *names* anywhere in the line, not for a leading
+  quote.
+- **`PurePosixPath(...).name` breaks the moment a path goes absolute on Windows** — it sees no
+  separator in a backslashed path and returns the whole string. Three modules used it to derive a
+  link's `href` from an output path, so the failure is a wrong artifact rather than a crash.
+  `git grep -n PurePosixPath` in each repo before starting.
+- **`mb_cmn/paths.py` may not be in the destination repo's vendored subset**, in which case the
+  accessor Phase 2 is said to have already provided is not reachable from the code that needs it.
+  Finding 3 above assumes it is; check.
 
 **4. book-of-job has no `py/`, so its modules land at MAM-basics' `py/` top level.** Sixteen
 scripts sit at its repo root and seven more in a `py/` that is a package of page-rendering helpers

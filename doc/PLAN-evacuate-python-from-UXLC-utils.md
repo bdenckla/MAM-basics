@@ -14,7 +14,7 @@ the recipe does not transfer here it will not transfer anywhere.
 
 | Phase | State |
 |---|---|
-| 1 — two roots, no cwd | **not started** |
+| 1 — two roots, no cwd | **done** 2026-08-02, commit `fe73d07` in UXLC-utils; plus `d5a5052` here |
 | 2 — sibling accessor | **not needed** — see below |
 | 3 — copy the Python in (dual residency) | **not started** |
 | 4 — empty UXLC-utils | **not started** |
@@ -28,14 +28,21 @@ them. `sibling_repo(name)` and `require_sibling(name, path)` at `py/mb_cmn/paths
 are generic over the sibling's name, so `sibling_repo("UXLC-utils")` works today with nothing
 added. Confirm by reading those two functions; do not rebuild them.
 
+**But "MAM-basics has it" is not the same as "the repo being evacuated can reach it," and Phase 1
+found the difference.** UXLC-utils vendored 21 `mb_cmn` files and `paths.py` was not among them,
+so the accessor existed nowhere its code could import it. Vendoring it in was the fix (see Phase
+1's write-up). **Check each remaining repo's own `py/mb_cmn/` for `paths.py` before assuming this
+row costs nothing**; four of the five have `unknown`-mechanism, `DIFFERS` copies, where dropping a
+file in is not enough because nothing refreshes them.
+
 ---
 
 ## Baselines — measured 2026-08-02
 
 | Measure | Command (from the repo root) | Value |
 |---|---|---|
-| tracked `.py` | `git ls-files "*.py" \| wc -l` | **100** |
-| lines | `git ls-files "*.py" -z \| xargs -0 wc -l` | **17,651** |
+| tracked `.py` | `git ls-files "*.py" \| wc -l` | **100** (**102** after Phase 1) |
+| lines | `git ls-files "*.py" -z \| xargs -0 wc -l` | **17,651** (**17,932** after Phase 1) |
 | tracked `gh-pages` | `git ls-files gh-pages \| wc -l` | **184** |
 | tracked `out` | `git ls-files out \| wc -l` | **27** |
 | tracked `in` | `git ls-files in \| wc -l` | **556** |
@@ -43,12 +50,27 @@ added. Confirm by reading those two functions; do not rebuild them.
 | test modules | `git ls-files "*_test.py"` | **8**, plus `py/main_test.py` |
 | entry points | `git ls-files "py/main_*.py"` | **15** |
 
-The **oracle is the 213 tracked artifacts** — 184 under `gh-pages/`, 27 under `out/` — plus
-whatever under `in/` a program writes rather than a download. `in/` is 556 files and mostly the
-UXLC-39 XML snapshot, but **do not assume all of `in/` is input**: wlc-utils had a tracked
-`in/accgram/uxlc_accent_changes.json` that a program wrote, and it was an extra oracle rather than
-a violation. Establish which `in/` files this repo's own programs write **before Phase 1**, and
-record the answer here; it is the difference between an oracle of 213 files and one of rather more.
+**The oracle is 216 tracked artifacts, not 213** — settled in Phase 1, and the count above was
+wrong twice over:
+
+- **`data/`'s two files are generated and the table above did not count them.**
+  `main_write_page_break_info.py` writes `data/lci_augrecs.json` and copies
+  `in/UXLC-misc/lci_recs.json` to `data/lci_recs.json`. The name misleads; both are output.
+- **Exactly one tracked file under `in/` is written by this repo's own programs from local
+  inputs**: `in/UXLC-misc/2026.04.01-map-to-book-of-job.json`, by
+  `main_map_changes_to_book_of_job.py`, which reads book-of-job's `out/enriched-quirkrecs.json`
+  and `gh-pages/jobn-details/`. It is the exact analogue of wlc-utils'
+  `in/accgram/uxlc_accent_changes.json`, and it does regenerate byte-identically.
+
+So `in/` adds **1**, not 555. The other 555 are **downloaded** — `in/UXLC-39` (39) and
+`in/UXLC-rest` (7) extracted from tanach.us' `Tanach.xml.zip`, the 19 `in/UXLC-misc/*.xml` change
+logs, and `in/UXLC-notes` (477) — or **hand-curated**: `BHL Appendix A Psalms.csv`, the four
+Holman JSON/TXT, the four `LC ...csv`, the three `LCIndex.*`, `lci_recs.json`, and the two
+`in/UXLC-misc-fixed/` overrides. A download is not a regeneration, so none of them is an oracle:
+re-running the downloaders proves the network works, not that the code does.
+
+**Which makes the artifact table above the oracle: 184 `gh-pages/` + 27 `out/` + 2 `data/` +
+1 `in/`.**
 
 **Capture before starting, and re-capture at each phase**, per `agent-planning-principles.md`
 §"Write State Back Before Continuing":
@@ -59,7 +81,8 @@ record the answer here; it is the difference between an oracle of 213 files and 
 
 ## What moves, and what is a pure deletion
 
-The 100 files break down as:
+**Phase 1 added two files, so the count is 102, not 100** — `py/uxlc_paths.py` and a vendored
+`py/mb_cmn/paths.py`. They break down as:
 
 | Directory | Files | Disposition |
 |---|---|---|
@@ -71,16 +94,17 @@ The 100 files break down as:
 | `py/uxlc_lci/` | 5 | moves as-is |
 | `py/repo_hygiene/` | 3 | moves, **but see the note below** |
 | `py/main_*.py` | 15 | moves, with two renames — below |
-| `py/mb_cmn/` | 21 | **pure deletion** |
+| `py/uxlc_paths.py` | 1 | moves; its `uxlc_data_root()` is Phase 3b's one-line retarget |
+| `py/mb_cmn/` | 22 | **pure deletion** |
 | `py/mb_diff_mpu/` | 3 | **pure deletion** |
 | `tools/repo_maintenance.py` | 1 | retires — below |
 
-**The 24 vendored files are recorded `identical` in `doc/vendoring-inventory.md`, and that is the
+**The 25 vendored files are recorded `identical` in `doc/vendoring-inventory.md`, and that is the
 claim to re-confirm rather than trust.** Run `cmp` over `py/mb_cmn` and `py/mb_diff_mpu` against
 MAM-basics' `py/mb_cmn` and `py/mb_diff_mpu` immediately before deleting. **If any file now
 differs, that difference is a finding to resolve first** — the inventory is regenerated, not live,
-and the programme's other five repos show what happens when a copy drifts unwatched. With the 24
-gone, **76 files actually move.**
+and the programme's other five repos show what happens when a copy drifts unwatched. With the 25
+gone, **77 files actually move.**
 
 Three name questions, all decided here so no phase has to stop for them:
 
@@ -123,7 +147,108 @@ which is what `check_registry()` was compensating for.
 
 ---
 
-## Phase 1 — two roots, no cwd
+## Phase 1 — two roots, no cwd — DONE 2026-08-02
+
+**Landed as `fe73d07` in UXLC-utils (31 files, +401/−119) and `d5a5052` here.** Every baseline in
+the table above was re-measured first and every one matched: 100 tracked `.py` (102 after the
+commit adds `py/uxlc_paths.py` and the vendored `py/mb_cmn/paths.py`), 184 `gh-pages/`, 27 `out/`,
+556 `in/`, 2 `data/`, 15 entry points, 8 test modules plus the runner. `py/main_test.py` reported
+**8/8 modules passed** before and after, from the repo root and from a foreign cwd alike.
+
+**The verification ran as specified and passed.** From `C:\Users\BenDe\GitRepos\MAM-basics` as the
+working directory, each entry point by absolute path, individually: `main_uxlc_check_changes`,
+`main_fois`, `main_write_page_break_info`, `main_amb_early_mtg`, `main_uxlc_word_list`,
+`main_clc`, `main_map_changes_to_book_of_job`, and `main_test`. Afterwards
+`git status --porcelain` was **empty in MAM-basics** and, apart from the `.py` files themselves,
+**empty in UXLC-utils** — all 216 artifacts came back byte-identical from a foreign cwd, and
+their mtimes confirm they were actually rewritten rather than skipped.
+
+Eight things went differently from what is written underneath. The first three bear on later
+phases:
+
+- **`main_0_mega.py` does NOT mask cwd bugs here, unlike wlc-utils'.** wlc-utils' mega passed
+  `cwd=repo_root` to each child *process*, so its Phase 1 had to bypass it or verify nothing.
+  UXLC-utils' imports its five steps as modules and calls `mod.main()` in-process, inheriting
+  whatever cwd it was given. Running the steps individually was still the right proof, but the
+  reason the wlc plan gives for it does not apply.
+- **`main_map_changes_to_book_of_job.py` is a second cross-repo consumer, alongside
+  codex-index-leningrad.** It reads book-of-job's `out/enriched-quirkrecs.json` and
+  `gh-pages/jobn-details/`, and it writes the one tracked `in/` artifact. It now locates that
+  sibling with `require_sibling("book-of-job", ...)` instead of `REPO.parent / "book-of-job"`,
+  checked at the top of `main()` rather than at import so the module stays importable without the
+  sibling. Phase 7 item 5's grep for `UXLC-utils/py` will not find it; a grep for `book-of-job`
+  would have.
+- **Phase 6's blast radius is essentially nil, and its stated grep returns zero.**
+  `git grep -lI "generated by UXLC-utils" -- out gh-pages in data` matches **0 files** — nothing
+  in this repo passes `generator_file` to `mb_cmn.file_io`, so no artifact carries a
+  `mb_cmn.provenance` breadcrumb at all. There are exactly two repo-relative strings inside
+  artifacts, both left untouched: `gh-pages/fois/index.html`'s prose "generated by
+  py/main_fois.py" (unqualified by repo — from `fois_html._write_index`), and
+  `main_map_changes_to_book_of_job.py:164`'s `"xml_source": "in/UXLC-misc/2026.04.01 -
+  Changes.xml"`, which is written *into* the tracked JSON and which Phase 6's grep would not find
+  either. Phase 6 is two edits, not a sweep.
+- **Six known offenders was a large undercount: 26 modules needed a path change, spread over five
+  shapes the plan's grep would not all have caught.** Plain literals (`"in/UXLC-misc"`,
+  `"out/UXLC-misc/sanity_problems.json"`); f-strings (`f"gh-pages/clc/{label}-notes.json"`);
+  module constants read by *other* modules (`my_uxlc.UXLC_CANONICAL_DIR`, consumed by
+  `clc_attribution` and `main_uxlc_download_changes` as well as by its own `read`);
+  `Path("in/UXLC-rest")` and `Path(".novc")` bindings; and `Path(__file__).resolve().parent.parent`
+  walks that were cwd-independent already but conflated the two roots
+  (`main_verify_notes_zip.py`, `main_map_changes_to_book_of_job.py`, and three test modules).
+- **`PurePosixPath(...).name` was a live bug waiting for absolute paths.** All three FOI HTML
+  modules derived a JSON catalog's link text and `href` that way. On Windows a `PurePosixPath`
+  sees no separator in a backslashed absolute path and returns the whole string as the "name", so
+  the pages would have shipped an absolute local path in an `href` — a wrong artifact, not a
+  crash. Changed to `Path(...).name`. **Expect the same idiom in the other five repos.**
+- **Three test modules were already compensating, and all three are retired.**
+  `clc_attribution_test.main()` did `os.chdir(_REPO_ROOT)` before calling the library;
+  `clc_kq_test` and `clc_dual_cant_test` each walked `__file__` up to the repo root to build
+  `in/UXLC-39` paths. All now use `uxlc_paths.uxlc_39_dir()`, and the suite passes from a foreign
+  cwd.
+- **`WriteCtx.path` needed no signature change but did need its annotation corrected.** It is
+  typed and flows through `mb_cmn.file_io.with_tmp_openw` to `open()`, so a `Path` works
+  throughout (`_openw`'s `os.path.dirname` and `_tmp_path`'s `pathlib` both accept one). The one
+  place a `str` is still passed deliberately is `polite_download.CacheConfig(dir_path=...)`, whose
+  field is declared `str` in a vendored module this repo must not edit.
+- **The accessor is deliberately more than five root functions.** `py/uxlc_paths.py` also has
+  `uxlc_39_dir`, `uxlc_rest_dir`, `uxlc_misc_dir`, `uxlc_misc_fixed_dir`, `uxlc_notes_dir`,
+  `out_uxlc_misc_dir`, `clc_pages_dir`, `fois_pages_dir`, `amb_early_mtg_pages_dir` and
+  `tanach_us_http_cache_dir`, because `in/UXLC-misc` alone appeared in six modules and
+  `out/UXLC-misc` in three. The point of the phase is that each such string appears once.
+
+### The accessor, and how `mb_cmn/paths.py` got here
+
+**This repo did not vendor `mb_cmn/paths.py`, and now does.** The plan above says Phase 2 does not
+recur because `sibling_repo`/`require_sibling` already exist — true of MAM-basics, but they were
+not *reachable* from UXLC-utils, whose `py/mb_cmn/` held 21 files and not that one. **Check this
+per repo in the remaining plans rather than inheriting the Phase-2-not-needed conclusion.**
+
+The fix is the sanctioned one and it is durable: `main_update_vendored_files.py` syncs by
+`vendoring_sync.copy_by_intersection`, which iterates the files **already present in the
+destination**, so dropping `paths.py` into `py/mb_cmn/` once enrolls it permanently — the next
+refresh copies it rather than dropping it. Confirmed by re-running the script (it reported 21
+copied files, up from 20) and again with `--force-provenance` to record it in
+`py/mb_cmn/_provenance.md`. `doc/vendoring-inventory.md` here was regenerated in the same breath
+(`d5a5052`): the UXLC-utils `mb_cmn` row goes 20 → 21 files, still `identical` / `copy_script`,
+tree total 177 → 178.
+
+`py/uxlc_paths.py` is then the UXLC analogue of `py/wlc_paths.py` here, and deliberately the same
+shape. `uxlc_data_root()` is `paths.repo_root()` today; **after the move it becomes
+`paths.require_sibling("UXLC-utils", paths.sibling_repo("UXLC-utils"))` and that is the whole of
+Phase 3b** — one line, because nothing else composes a data path off anything but that function.
+
+### Not exercised, and why
+
+Three entry points' path edits are inspection-only. `main_uxlc_download_changes.py` and
+`main_clc_download_notes.py` hit tanach.us and would rewrite `in/`; `main_verify_notes_zip.py`
+needs a `Notes.zip` in `~/Downloads`. **Phase 3e should run at least one of the downloaders once
+from MAM-basics**, since a downloader writing into the wrong repo's `in/` is precisely the failure
+this phase exists to prevent and is the one class of it still unproven.
+
+---
+
+The rest of this section is the plan as written before the phase ran; the six offenders it names
+were the starting point, not the total.
 
 The repo's code addresses its own data by cwd-relative literals, which resolve correctly only
 while the process runs from this repo's root. Known offenders, found with
@@ -157,16 +282,23 @@ wlc-utils' Phase 3 did. **This phase must complete within a single session**: an
 dual-residency window leaves a tree in which neither repo is authoritative and the oracle cannot
 tell you which.
 
-- **3a — land the files** under `py/`, with the renames above.
-- **3b — retarget the data root** so the moved code writes into `../UXLC-utils`.
+- **3a — land the files** under `py/`, with the renames above. `py/uxlc_paths.py` lands beside
+  `py/wlc_paths.py`, which it is modelled on; the names do not collide.
+- **3b — retarget the data root** so the moved code writes into `../UXLC-utils`. Phase 1 reduced
+  this to **one line**: `uxlc_paths.uxlc_data_root()` becomes
+  `paths.require_sibling("UXLC-utils", paths.sibling_repo("UXLC-utils"))`, and its module
+  docstring says so. Delete the vendored `py/mb_cmn/paths.py` with the rest of `py/mb_cmn/`; the
+  moved `uxlc_paths` then imports MAM-basics' own.
 - **3c — fold the tests** into `py/tests/`, and check the collection count.
 - **3d — `force_utf8_io()`.** Every `py/main_*.py` here reconfigures stdout/stderr to UTF-8 as the
   first lines of `main()`, per this repo's own `CLAUDE.md`. When a former entry point becomes a
   library module called by another entry point, **that reconfiguration silently disappears** —
   the wlc-utils plan lists this as a standing risk and it is live here, because
   `main_uxlc_mega.py` calls five other mains as modules.
-- **3e — the oracle run.** From MAM-basics, regenerate all 213 tracked artifacts into
-  `../UXLC-utils` and require `git status --porcelain` empty there **and** in MAM-basics.
+- **3e — the oracle run.** From MAM-basics, regenerate all 216 tracked artifacts into
+  `../UXLC-utils` and require `git status --porcelain` empty there **and** in MAM-basics. Phase 1
+  already did exactly this run with the code still in UXLC-utils, so a diff here is a move bug and
+  nothing else. Add one downloader run, which Phase 1 could not do.
 
 **Stop and ask Ben before starting Phase 3.** It is the largest phase and the one whose failure is
 expensive to unpick.
@@ -215,16 +347,28 @@ it first decides it and writes the answer into both files.
 
 ## Phase 6 — breadcrumbs and issue citations
 
-Flip the `generated by UXLC-utils` provenance breadcrumbs to MAM-basics, in a **dedicated commit
-near the end**. Establish the blast radius first:
+**Phase 1 established the blast radius, and it is two strings in two files, not a sweep.** The
+grep this section prescribed —
 
 ```powershell
 git grep -lI "generated by UXLC-utils" -- out gh-pages in data
 ```
 
-**The provenance override is load-bearing on ordering.** Do not "fix the now-wrong path" mid-move:
-doing so destroys the oracle for every artifact carrying a breadcrumb, which is how the regeneration
-stops being able to prove anything. The wlc-utils plan restates this as its first standing risk.
+— matches **zero** files: nothing in this repo passes `generator_file` to `mb_cmn.file_io`, so no
+artifact carries an `mb_cmn.provenance` breadcrumb at all. What does exist is two repo-relative
+strings that a grep for the breadcrumb phrasing misses:
+
+1. `gh-pages/fois/index.html` — the prose "This is an HTML view of the FOI catalog generated by
+   py/main_fois.py", written by `fois_html._write_index`. Unqualified by repo, so it needs the
+   repo name added rather than one name swapped for another.
+2. `in/UXLC-misc/2026.04.01-map-to-book-of-job.json` — its `"xml_source"` field, the literal
+   `"in/UXLC-misc/2026.04.01 - Changes.xml"` at `main_map_changes_to_book_of_job.py:164`. A
+   repo-relative path *inside* an artifact, and it stays correct as long as it is read as relative
+   to UXLC-utils, which is where the file lives.
+
+**The ordering rule still holds even at this size.** Do not "fix the now-wrong path" mid-move:
+touching either of these before the move destroys the oracle for the artifact carrying it. The
+wlc-utils plan restates this as its first standing risk. Phase 1 left both alone.
 
 Then prefix the moved code's bare `#NN` issue citations with `UXLC-utils#` where they name a
 UXLC-utils issue. That tracker keeps its issues and its numbers; `#56`, cited in `py/main_test.py`
@@ -248,7 +392,11 @@ and in `CLAUDE.md`, is one of them.
    them inside a leftover venv and three stale worktrees. `py\main_repo_util.py --clean-worktrees`
    is the tool that now exists for this.
 5. **Grep the other repos for `UXLC-utils/py`.** codex-index-leningrad is the known consumer;
-   run the grep anyway, because it is what would have revealed that one.
+   run the grep anyway, because it is what would have revealed that one. **Grep for
+   `book-of-job` too**: Phase 1 found that `main_map_changes_to_book_of_job.py` reads that
+   sibling's `out/` and `gh-pages/`, a cross-repo dependency running in the other direction that
+   a `UXLC-utils/py` grep cannot see. It now goes through `require_sibling`, so a missing
+   book-of-job fails naming both environment overrides instead of composing a path into nothing.
 6. **Outside both repos:** check `C:\Users\BenDe\.claude\skills\` and its tracked copy in
    `github-misc/dot-claude/skills/` for citations of UXLC-utils Python. The `hebrew-prose` skill
    names UXLC-utils among the repos it governs and cites `py/clc/clc_dual_cant.py` for the
