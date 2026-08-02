@@ -3,7 +3,7 @@ accent-coupled punctuation (maqaf, sof pasuq, legarmeh) — dropping vowel point
 dagesh, shin/sin dots, rafe, and (per policy) meteg.
 
 This is the reusable kernel for "keep only what carries the cantillation signal"
-displays. wlc-utils has a near-identical private ``_sanitize_hebrew_token`` in
+displays. MAM-basics has a near-identical private ``_sanitize_hebrew_token`` in
 ``accgram/hebrew_verse_sanitize.py`` (same keep-sets, same silluq-vs-meteg rule)
 plus a JSON-payload walker and a MAM stress-helper dedup around it; this module is
 the vendorable common core that that code could eventually delegate to. It lives in

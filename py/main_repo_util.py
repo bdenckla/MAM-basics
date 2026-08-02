@@ -6,7 +6,13 @@ Usage examples:
     .venv/Scripts/python.exe py/main_repo_util.py --audit-line-terms --today-only
     .venv/Scripts/python.exe py/main_repo_util.py --check-repo-standards --repos MAM-basics
     .venv/Scripts/python.exe py/main_repo_util.py --check-memory-health --workspace-file all-repos.code-workspace
+    .venv/Scripts/python.exe py/main_repo_util.py --clean-worktrees --workspace-file all-repos.code-workspace
     .venv/Scripts/python.exe py/main_repo_util.py --commit-across-repos --message-file .novc/commit_msg_shared.txt --dry-run
+
+``--workspace-file all-repos.code-workspace`` is what widens any of these past the
+handful of repos ``MAM-basics.code-workspace`` lists, and is worth spelling out for
+``--clean-worktrees``: the repos most in need of it are the ones with no Python and
+so no maintenance script of their own (see ``repo_util/clean_worktrees.py``).
 """
 
 from __future__ import annotations
@@ -19,6 +25,10 @@ from mb_cmn import paths
 from repo_util.audit_line_terms import run_audit_line_terms_across_repos
 from repo_util.check_memory_health import run_check_memory_health_across_repos
 from repo_util.check_repo_standards import run_check_repo_standards_across_repos
+from repo_util.clean_worktrees import (
+    problem_repos as worktree_problem_repos,
+    run_clean_worktrees_across_repos,
+)
 from repo_util.commit_across_repos import run_commit_across_repos
 from repo_util import maintenance_policy
 from repo_util.repo_selection import select_repo_infos
@@ -36,6 +46,7 @@ def build_parser() -> argparse.ArgumentParser:
     action_group.add_argument("--audit-line-terms", action="store_true")
     action_group.add_argument("--check-repo-standards", action="store_true")
     action_group.add_argument("--check-memory-health", action="store_true")
+    action_group.add_argument("--clean-worktrees", action="store_true")
     action_group.add_argument("--commit-across-repos", action="store_true")
 
     parser.add_argument(
@@ -249,6 +260,13 @@ def main(argv: Sequence[str] | None = None) -> int:
             report_txt=report_txt,
         )
         return 0
+
+    if args.clean_worktrees:
+        # Same contract as --run-black: a repo the sweep could not clean fails
+        # the run rather than being passed over. A worktree deliberately spared
+        # is not a failure -- see repo_util/clean_worktrees.py.
+        reports = run_clean_worktrees_across_repos(repo_infos)
+        return 1 if worktree_problem_repos(reports) else 0
 
     run_commit_across_repos(
         repo_infos,

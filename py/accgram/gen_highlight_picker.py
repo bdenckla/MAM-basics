@@ -25,9 +25,11 @@ The .png suffix is optional. The image is resolved under gh-pages/accgram/img/.
 Add --serve to run a local http server (then Ctrl+C to stop it) instead of the
 default file:// open. Add --no-open to print the URL without launching anything.
 This module is not independently runnable, and had its own hand-rolled ``sys.argv``
-scanning and ``main()`` until 2026-08-01 -- the last of the six such modules
-``doc/PLAN-sys-path-insert.md`` retired, which escaped that pass only because it never
-had a ``sys.path`` prelude to find it by.
+scanning and ``main()`` until 2026-08-01 -- the last of the six such modules retired
+by wlc-utils' ``3083859`` and ``36d7693`` (2026-07-30), which escaped that pass only
+because it never had a ``sys.path`` prelude to find it by. Cite those two commits and
+not the plan they worked from: ``doc/PLAN-sys-path-insert.md`` was never tracked in
+any repo, so a reader sent looking for it finds nothing.
 
 Priming (start from existing boxes instead of blank): pass ``--boxes-file <path>``,
 a JSON file holding either a bare list of px boxes ``[{"x":..,"y":..,"w":..,"h":..}]``

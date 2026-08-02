@@ -40,7 +40,8 @@ def _how_to_obtain(folder_name: str) -> str:
 
     A bare "not found" is a dead end for exactly the folders that are hardest to
     restore, so the message carries its own fix -- the same principle as
-    wlc-utils' ``repo_paths.require_sibling``.
+    ``mb_cmn.paths.require_sibling`` one directory away, which names both
+    overrides that would point this repo at a missing sibling.
     """
     known = _NON_REPO_WORKSPACE_FOLDERS.get(folder_name)
     if known is not None:

@@ -31,10 +31,22 @@ def _select_black_command(
 def _has_tracked_py_files(repo_dir: Path) -> bool:
     """Whether the repo has any tracked .py file.
 
-    Decides whether an unrunnable black is a legitimate skip or a problem.
-    Several repos here are data or output repos with no Python at all, and for
-    those there is nothing to format; a repo with Python and no black is a repo
-    the sweep is quietly passing by.
+    Decides both whether black is RUN at all and whether an unrunnable black is a
+    legitimate skip or a problem. Several repos here are data or output repos with
+    no Python at all, and for those there is nothing to format; a repo with Python
+    and no black is a repo the sweep is quietly passing by.
+
+    ASKED BEFORE BLACK IS EVEN LOOKED FOR, which is not where it started. Until
+    2026-08-02 the sweep consulted this only after failing to find a black to run,
+    so a Python-less repo that still had a ``.venv`` lying around got the full
+    ``black .`` treatment over whatever untracked Python happened to be on disk.
+    That is not hypothetical: wlc-utils, emptied of Python on 2026-08-01, kept its
+    venv and three orphaned agent worktrees, and the sweep reformatted the 789
+    pre-evacuation ``.py`` files inside those worktrees -- files tracked in no
+    repo's index. Nothing changed that day because they were already black-clean,
+    but the next black version bump would have rewritten every one of them, in a
+    checkout nobody was going to commit. ``git ls-files`` is the right question
+    precisely because it ignores what is merely lying in the directory.
     """
     result = run_cmd(["git", "-C", str(repo_dir), "ls-files", "*.py"])
     if result.returncode != 0:
@@ -123,9 +135,10 @@ def run_black_across_repos(
             ]
 
         frozen = frozen_repos.get(repo_info.name)
+        has_tracked_py = _has_tracked_py_files(repo_info.path)
         command = (
             None
-            if frozen is not None
+            if frozen is not None or not has_tracked_py
             else _select_black_command(repo_info.path, black_target, extra_args)
         )
 
@@ -134,15 +147,14 @@ def run_black_across_repos(
                 f"Skipped: frozen ({frozen['comment']}"
                 f" last commit when frozen {frozen['last_commit_when_frozen']})"
             )
+        elif not has_tracked_py:
+            black_result["note"] = "Skipped: no tracked .py files in this repo"
         elif command is None:
-            if _has_tracked_py_files(repo_info.path):
-                black_result["problem"] = (
-                    "black unavailable, but this repo has tracked .py files: no"
-                    " .venv/Scripts/black.exe, no .venv/Scripts/python.exe, and no"
-                    " black on PATH. Create the repo's .venv so the sweep covers it."
-                )
-            else:
-                black_result["note"] = "Skipped: no tracked .py files in this repo"
+            black_result["problem"] = (
+                "black unavailable, but this repo has tracked .py files: no"
+                " .venv/Scripts/black.exe, no .venv/Scripts/python.exe, and no"
+                " black on PATH. Create the repo's .venv so the sweep covers it."
+            )
         else:
             black_result["attempted"] = True
             black_result["command"] = format_command(command)

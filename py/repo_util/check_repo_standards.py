@@ -16,6 +16,20 @@ Repo-level (single file each):
     pyproject.toml -- each a way of putting py/ on sys.path without writing
     sys.path.insert. See "The sys.path surgery standard" below.
 
+A REPO WITH NO TRACKED .py FILES IS NOT MEASURED ON THE PYTHON STANDARDS. Two of
+the checks above -- maintenance_script and path_utility -- and the script_covers
+half of worktree_hygiene each ask for a Python file, so against a data-and-docs
+repo they would report a missing convention that repo cannot have, permanently
+and every run. `has_tracked_py` is reported per repo and those three read `n/a`
+when it is False, the same gate `run_black.py` uses to tell a legitimate skip
+from a repo the sweep is quietly passing by. wlc-utils is the case that made this
+necessary: its Python was evacuated into MAM-basics on 2026-08-01, leaving in/,
+out/, gh-pages/, data/ and doc/ and nothing to format, lint or maintain. The two
+worktree COUNTS are not gated, because they stay true and still matter -- such a
+repo goes on accruing worktrees from agents editing its data, which is what
+`py/main_repo_util.py --clean-worktrees` exists to sweep now that no maintenance
+script of its own can.
+
 The worktree-cleanup standard
 -----------------------------
 EVERY REPO'S MAINTENANCE SCRIPT SHOULD REMOVE FINISHED AGENT WORKTREES AND THE
@@ -29,14 +43,15 @@ work in the wrong tree.
 
 Cover BOTH places they land. The harness default is `<repo>/.claude/worktrees/`,
 whose nesting puts it two levels deeper than the sibling repos its code expects
-at `../<sibling>` (see wlc-utils' `repo_paths` docstring, which exists because of
+at `../<sibling>` (see `mb_cmn/paths.py`'s docstring, which exists because of
 exactly this). The workaround is to place the worktree as a SIBLING of the repo
 instead, `GitRepos/<repo>-<topic>`, where those lookups resolve -- deliberate
 practice, and the variety that litters the more annoying directory. Driving
 removal off `git worktree list` covers both without special-casing either.
 
-The reference implementation is wlc-utils `py/cmn/git_worktree_cleanup.py`,
-wired as a step in its `py/main_repo_maintenance.py`. Copy its conservatism
+The reference implementation is `repo_util/git_worktree_cleanup.py`, wired as a
+step in this repo's `py/main_repo_maintenance.py` and, across every repo in a
+workspace file, as `py/main_repo_util.py --clean-worktrees`. Copy its conservatism
 along with its code: never `--force`; spare and REPORT any worktree that is
 dirty (untracked files included), unmerged, locked, recently active, or
 currently running the code; restrict branch deletion to the `claude/` prefix so
@@ -136,7 +151,10 @@ are the same one-line idiom with no positive evidence of a human author. None
 was ever a human decision. Two are inert in the plainest way -- wlc-utils'
 py/main_uxlc_grammar_test.py and py/main_find_uxlc_accent_changes.py each insert
 their own parent, the very directory CPython had already put on sys.path for
-them.
+them. (Dated record, left as it was measured. Both of those mains have since
+moved: all of wlc-utils' Python was evacuated into MAM-basics on 2026-08-01, so
+they are this repo's py/main_uxlc_grammar_test.py and
+py/main_find_uxlc_accent_changes.py now, and wlc-utils has no tracked .py at all.)
 
 Why a check rather than only the written rule: the rule is written, and agents
 added shims anyway -- one buried as bullet five of an unrelated commit
@@ -340,29 +358,35 @@ def _has_any(repo_dir: Path, candidates: tuple[str, ...]) -> str | None:
     return None
 
 
-def _check_maintenance_script(repo_dir: Path) -> dict:
+def _check_maintenance_script(repo_dir: Path, *, has_tracked_py: bool) -> dict:
+    if not has_tracked_py:
+        return {"applicable": False, "present": None, "path": None}
     found = _has_any(repo_dir, _MAINTENANCE_SCRIPT_CANDIDATES)
-    return {"present": found is not None, "path": found}
+    return {"applicable": True, "present": found is not None, "path": found}
 
 
-def _check_worktree_hygiene(repo_dir: Path) -> dict:
+def _check_worktree_hygiene(repo_dir: Path, *, has_tracked_py: bool) -> dict:
     """Does the maintenance script clean up agent worktrees, and is anything left?
 
     See "The worktree-cleanup standard" in this module's docstring. `script_covers`
     is a text scan of whatever `maintenance_script` found, so it answers "has this
-    repo adopted the step", not "does the step work". The two counts answer the
-    complementary question of what is sitting there right now, and are read
-    straight from git rather than inferred from the filesystem, so a worktree whose
-    directory was deleted by hand still shows up until someone prunes it.
+    repo adopted the step", not "does the step work". It is None for a repo with no
+    tracked .py, which can hold no such script; the two counts answer the
+    complementary question of what is sitting there right now, apply to every repo
+    Python or not, and are read straight from git rather than inferred from the
+    filesystem, so a worktree whose directory was deleted by hand still shows up
+    until someone prunes it.
     """
-    script_rel = _has_any(repo_dir, _MAINTENANCE_SCRIPT_CANDIDATES)
-    script_covers = False
-    if script_rel is not None:
-        try:
-            text = (repo_dir / script_rel).read_text(encoding="utf-8")
-            script_covers = "worktree" in text.lower()
-        except (UnicodeDecodeError, OSError):
-            script_covers = False
+    script_covers = None
+    if has_tracked_py:
+        script_rel = _has_any(repo_dir, _MAINTENANCE_SCRIPT_CANDIDATES)
+        script_covers = False
+        if script_rel is not None:
+            try:
+                text = (repo_dir / script_rel).read_text(encoding="utf-8")
+                script_covers = "worktree" in text.lower()
+            except (UnicodeDecodeError, OSError):
+                script_covers = False
 
     worktree_list = run_cmd(["git", "-C", str(repo_dir), "worktree", "list"])
     linked = None
@@ -404,9 +428,11 @@ def _check_gitattributes_lf(repo_dir: Path) -> dict:
     }
 
 
-def _check_path_utility(repo_dir: Path) -> dict:
+def _check_path_utility(repo_dir: Path, *, has_tracked_py: bool) -> dict:
+    if not has_tracked_py:
+        return {"applicable": False, "present": None, "path": None}
     found = _has_any(repo_dir, _PATH_UTILITY_CANDIDATES)
-    return {"present": found is not None, "path": found}
+    return {"applicable": True, "present": found is not None, "path": found}
 
 
 def _check_path_shim_config(repo_dir: Path) -> dict:
@@ -430,7 +456,11 @@ def _is_test_file(normalized_rel_path: str) -> bool:
     MAM-basics and wlc-utils the prefix form. A `py/main_<x>.py` entry point is
     never one, however it is named: wlc-utils' py/main_uxlc_grammar_test.py
     runs a grammar test but is a command, so its insert is the ordinary
-    unnecessary kind rather than the no-op-under-pytest kind."""
+    unnecessary kind rather than the no-op-under-pytest kind. (Dated example,
+    left as it was written. That main is this repo's py/main_uxlc_grammar_test.py
+    since the 2026-08-01 evacuation; wlc-utils now has no tracked .py, so it is
+    MAM-basics that uses the prefix form and a scan of wlc-utils reaches no file
+    at all.)"""
     name = Path(normalized_rel_path).name
     if name.startswith("main_"):
         return False
@@ -798,10 +828,16 @@ def _scan_nfc_h_dot_below(
     }
 
 
+def _na(value: object) -> object:
+    """``n/a`` for a check a repo with no tracked .py was not asked."""
+    return "n/a" if value is None else value
+
+
 def _render_txt_report(results: list[dict]) -> str:
     lines: list[str] = []
     for repo in results:
         lines.append(f"=== {repo['repo']} ===")
+        lines.append(f"has_tracked_py: {repo['has_tracked_py']}")
         lines.append(f"maintenance_script: {repo['maintenance_script']}")
         lines.append(f"worktree_hygiene: {repo['worktree_hygiene']}")
         lines.append(f"gitattributes_lf: {repo['gitattributes_lf']}")
@@ -854,6 +890,9 @@ def run_check_repo_standards_across_repos(
 
     for repo_info in repo_infos:
         repo_dir = repo_info.path
+        # Decides whether the three Python-dependent checks are asked at all --
+        # see "A REPO WITH NO TRACKED .py FILES" in this module's docstring.
+        has_tracked_py = bool(_tracked_py_files(repo_dir))
         scan = _scan_py_files(
             repo_dir, exclude_novc=exclude_novc, exclude_dot_venv=exclude_dot_venv
         )
@@ -863,10 +902,17 @@ def run_check_repo_standards_across_repos(
         results.append(
             {
                 "repo": repo_info.name,
-                "maintenance_script": _check_maintenance_script(repo_dir),
-                "worktree_hygiene": _check_worktree_hygiene(repo_dir),
+                "has_tracked_py": has_tracked_py,
+                "maintenance_script": _check_maintenance_script(
+                    repo_dir, has_tracked_py=has_tracked_py
+                ),
+                "worktree_hygiene": _check_worktree_hygiene(
+                    repo_dir, has_tracked_py=has_tracked_py
+                ),
                 "gitattributes_lf": _check_gitattributes_lf(repo_dir),
-                "path_utility": _check_path_utility(repo_dir),
+                "path_utility": _check_path_utility(
+                    repo_dir, has_tracked_py=has_tracked_py
+                ),
                 "path_shim_config": _check_path_shim_config(repo_dir),
                 **scan,
                 "nfc_h_dot_below": nfc_scan,
@@ -889,12 +935,12 @@ def run_check_repo_standards_across_repos(
             "SYS_PATH_MUTATIONS={9}; SYS_PATH_IN_TESTS={10}; HEX_ESCAPES={11}; "
             "ORPHAN_MARKS={12}; NFC_H_DOT={13}; NFC_LATIN={14}".format(
                 repo["repo"],
-                repo["maintenance_script"]["present"],
-                wt["script_covers"],
+                _na(repo["maintenance_script"]["present"]),
+                _na(wt["script_covers"]),
                 wt["linked_worktrees"],
                 wt["agent_branches"],
                 repo["gitattributes_lf"]["has_eol_lf_rule"],
-                repo["path_utility"]["present"],
+                _na(repo["path_utility"]["present"]),
                 repo["path_shim_config"]["root_conftest"],
                 ",".join(repo["path_shim_config"]["shim_config"]) or "None",
                 len(repo["sys_path_mutation_findings"]),

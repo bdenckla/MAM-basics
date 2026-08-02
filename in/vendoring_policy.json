@@ -154,19 +154,6 @@
         ]
       }
     },
-    "wlc-utils": {
-      "comment": null,
-      "ignore": false,
-      "scan_provenance": true,
-      "default_category": "stale",
-      "default_mechanism": "unknown",
-      "default_provenance_doc": "no",
-      "pkg_scan_roots": {
-        "mb_cmn": [
-          "py/mb_cmn"
-        ]
-      }
-    },
     "MAM-for-Acc": {
       "comment": "Ignored entirely.",
       "ignore": true,
