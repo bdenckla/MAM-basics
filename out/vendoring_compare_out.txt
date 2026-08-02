@@ -2,14 +2,14 @@ FILE                                       DEST_REPO                  DEST_PATH 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 bib_locales.py                             MAM-simple                 py-examples/mb_cmn/bib_locales.py                       identical      2026-05-01   generated
 cantsys.py                                 MAM-simple                 py-examples/mb_cmn/cantsys.py                           identical      2026-05-01   generated
-file_io.py                                 MAM-simple                 py-examples/mb_cmn/file_io.py                           DIFFERS        2026-08-01   generated
+file_io.py                                 MAM-simple                 py-examples/mb_cmn/file_io.py                           identical      2026-08-02   generated
 he_wikisource_url.py                       MAM-simple                 py-examples/mb_cmn/he_wikisource_url.py                 identical      2026-05-03   generated
 hebrew_accents.py                          MAM-simple                 py-examples/mb_cmn/hebrew_accents.py                    identical      2026-08-01   generated
 hebrew_letters.py                          MAM-simple                 py-examples/mb_cmn/hebrew_letters.py                    identical      2026-05-01   generated
 hebrew_points.py                           MAM-simple                 py-examples/mb_cmn/hebrew_points.py                     identical      2026-05-01   generated
 hebrew_punctuation.py                      MAM-simple                 py-examples/mb_cmn/hebrew_punctuation.py                identical      2026-05-01   generated
 my_utils.py                                MAM-simple                 py-examples/mb_cmn/my_utils.py                          identical      2026-07-15   generated
-provenance.py                              MAM-simple                 py-examples/mb_cmn/provenance.py                        DIFFERS        2026-07-06   generated
+provenance.py                              MAM-simple                 py-examples/mb_cmn/provenance.py                        identical      2026-08-02   generated
 shrink.py                                  MAM-simple                 py-examples/mb_cmn/shrink.py                            identical      2026-05-01   generated
 str_defs.py                                MAM-simple                 py-examples/mb_cmn/str_defs.py                          identical      2026-05-01   generated
 template_names.py                          MAM-simple                 py-examples/mb_cmn/template_names.py                    identical      2026-05-09   generated
@@ -46,7 +46,7 @@ osis_runner.py                             MAM-simple                 py-example
 bib_locales.py                             holman-ketiv-qere          py/mb_cmn/bib_locales.py                                identical      2026-04-27   
 cantsys.py                                 holman-ketiv-qere          py/mb_cmn/cantsys.py                                    identical      2026-04-27   
 he_wikisource_url.py                       holman-ketiv-qere          py/mb_cmn/he_wikisource_url.py                          identical      2026-05-10   
-hebrew_accents.py                          holman-ketiv-qere          py/mb_cmn/hebrew_accents.py                             DIFFERS        2026-07-06   
+hebrew_accents.py                          holman-ketiv-qere          py/mb_cmn/hebrew_accents.py                             identical      2026-08-02   
 hebrew_letters.py                          holman-ketiv-qere          py/mb_cmn/hebrew_letters.py                             identical      2026-04-27   
 hebrew_points.py                           holman-ketiv-qere          py/mb_cmn/hebrew_points.py                              identical      2026-04-27   
 hebrew_punctuation.py                      holman-ketiv-qere          py/mb_cmn/hebrew_punctuation.py                         identical      2026-04-27   
@@ -62,9 +62,9 @@ url_percent.py                             holman-ketiv-qere          py/mb_cmn/
 vendoring_sync.py                          holman-ketiv-qere          py/mb_cmn/vendoring_sync.py                             identical      2026-07-06   
 change_ops.py                              holman-ketiv-qere          py/mb_diff_mpu/change_ops.py                            identical      2026-04-27   
 change_ops_apply.py                        holman-ketiv-qere          py/mb_diff_mpu/change_ops_apply.py                      identical      2026-04-27   
-change_ops_extract.py                      holman-ketiv-qere          py/mb_diff_mpu/change_ops_extract.py                    DIFFERS        2026-07-06   
-change_ops_render.py                       holman-ketiv-qere          py/mb_diff_mpu/change_ops_render.py                     DIFFERS        2026-04-27   
-describe_diff.py                           holman-ketiv-qere          py/mb_diff_mpu/describe_diff.py                         DIFFERS        2026-07-06   
+change_ops_extract.py                      holman-ketiv-qere          py/mb_diff_mpu/change_ops_extract.py                    identical      2026-08-02   
+change_ops_render.py                       holman-ketiv-qere          py/mb_diff_mpu/change_ops_render.py                     identical      2026-08-02   
+describe_diff.py                           holman-ketiv-qere          py/mb_diff_mpu/describe_diff.py                         identical      2026-08-02   
 grapheme_diff.py                           holman-ketiv-qere          py/mb_diff_mpu/grapheme_diff.py                         identical      2026-04-27   
 mpplus_flatten.py                          holman-ketiv-qere          py/mb_diff_mpu/mpplus_flatten.py                        identical      2026-05-27   
 mpplus_param_access.py                     holman-ketiv-qere          py/mb_diff_mpu/mpplus_param_access.py                   identical      2026-04-27   
