@@ -18,6 +18,12 @@ wlc-utils tracks 0 `.py` and still regenerates byte-identically, the breadcrumbs
 citations name the right repo, and Phase 7's item 8 — the `hebrew-prose` skill, the one piece
 outside both repos — is done in both of its unsynced copies. Nothing is outstanding.
 
+**A successor programme covers the seven public repos that still hold Python** —
+[PLAN-evacuate-python-programme.md](PLAN-evacuate-python-programme.md), written 2026-08-02. This
+plan is its model and its precedent, and two of the decisions settled here do **not** carry over
+to it: the package names do collide across those repos, and their vendored copies are not all
+pure deletions. That file says which and why.
+
 This file is the tracked copy and the one to update. It was copied on 2026-08-01 from
 `C:\Users\BenDe\.claude\plans\plan-the-evacuation-of-glistening-rocket.md`, which is not
 under version control anywhere; that copy now carries a pointer here and should not be
