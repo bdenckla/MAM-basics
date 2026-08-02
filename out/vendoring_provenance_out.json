@@ -66,6 +66,7 @@
             "mam_bknas.py",
             "mam_bknas_and_std_bknas.py",
             "minirow.py",
+            "mpplus_schema_guard.py",
             "my_diffs.py",
             "my_utils.py",
             "provenance.py",
@@ -245,7 +246,10 @@
         "py/mb_cmn"
       ],
       "found_provenance_docs": [],
-      "copy_scripts": [],
+      "copy_scripts": [
+        "py/main_update_vendored_files.py",
+        "py/mb_cmn/vendoring_sync.py"
+      ],
       "mb_cmn_dirs": [
         {
           "path": "py/mb_cmn",
@@ -261,42 +265,6 @@
             "my_diffs.py",
             "my_utils.py",
             "polite_download.py",
-            "provenance.py",
-            "str_defs.py",
-            "uni_heb.py",
-            "uni_norm_fragile.py",
-            "url_percent.py",
-            "uxlc_change_url.py"
-          ]
-        }
-      ]
-    },
-    {
-      "repo": "wlc-utils",
-      "scanned_dirs": [
-        ".",
-        "py",
-        "py/mb_cmn"
-      ],
-      "found_provenance_docs": [],
-      "copy_scripts": [
-        "py/main_update_vendored_files.py",
-        "py/mb_cmn/vendoring_sync.py"
-      ],
-      "mb_cmn_dirs": [
-        {
-          "path": "py/mb_cmn",
-          "files": [
-            "bib_locales.py",
-            "cantsys.py",
-            "file_io.py",
-            "hebrew_accents.py",
-            "hebrew_letters.py",
-            "hebrew_points.py",
-            "hebrew_punctuation.py",
-            "kq_special_templates.py",
-            "my_diffs.py",
-            "my_utils.py",
             "provenance.py",
             "retired_kq_special_templates.py",
             "retired_template_names.py",
