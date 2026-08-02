@@ -11,12 +11,12 @@
 | 4 — empty wlc-utils | **done** 2026-08-01, commit `6180f8d` in wlc-utils; plus `57895b5` here |
 | 5 — flip the provenance breadcrumbs | **done** 2026-08-01, commit `ce7bf96` here; plus `fcbf7b1` in wlc-utils |
 | 6 — disambiguate issue citations | **done** 2026-08-02, commit `06986c2` here; plus `3494646` in wlc-utils |
-| 7 — cross-repo bookkeeping | **done** 2026-08-02, commits `a7d1373`, `1086805` and `ea9f199`; plus `137c0a9` in MAM-simple and `ec2344b` in MAM-with-doc. Item 8, in `github-misc`, is left with Ben |
+| 7 — cross-repo bookkeeping | **done** 2026-08-02, commits `a7d1373`, `1086805`, `ea9f199` and `8fd5ed8`; plus `137c0a9` in MAM-simple, `ec2344b` in MAM-with-doc, and `6c1532b` in `github-misc` for item 8 |
 
-**No row is unstarted, so the plan is finished.** All of wlc-utils' Python lives in
-MAM-basics, wlc-utils tracks 0 `.py` and still regenerates byte-identically, and the only
-thing outstanding is Phase 7's item 8 — the `hebrew-prose` skill in a third repo, which the
-plan itself designates a stop-and-ask.
+**No row is unstarted, so the plan is finished.** All of wlc-utils' Python lives in MAM-basics,
+wlc-utils tracks 0 `.py` and still regenerates byte-identically, the breadcrumbs and issue
+citations name the right repo, and Phase 7's item 8 — the `hebrew-prose` skill, the one piece
+outside both repos — is done in both of its unsynced copies. Nothing is outstanding.
 
 This file is the tracked copy and the one to update. It was copied on 2026-08-01 from
 `C:\Users\BenDe\.claude\plans\plan-the-evacuation-of-glistening-rocket.md`, which is not
@@ -1016,23 +1016,32 @@ call here produces a plausible-looking lie, which is the only failure mode that 
 
 ---
 
-## Phase 7 — Cross-repo bookkeeping — DONE 2026-08-02 (items 1-7)
+## Phase 7 — Cross-repo bookkeeping — DONE 2026-08-02
 
-**Landed as three commits here — `a7d1373` (items 1 and 3-7, plus the three findings earlier
-phases banked and two more found in passing), `1086805` (a defect item 2 exposed) and `ea9f199`
-(item 2's regenerated artifacts) — plus `137c0a9` in MAM-simple and `ec2344b` in MAM-with-doc.
-Item 8 is deliberately NOT done:** it commits to `github-misc`, which this plan's own
-"stop and ask Ben" list names, so it is left with him. It is bigger than the item reads —
-**29 `wlc-utils` mentions across the skill's five files**, of which only about half move.
+**Landed as four commits here — `a7d1373` (items 1 and 3-7, plus the three findings earlier
+phases banked and two more found in passing), `1086805` (a defect item 2 exposed), `ea9f199`
+(item 2's regenerated artifacts) and `8fd5ed8` (this record) — plus `137c0a9` in MAM-simple and
+`ec2344b` in MAM-with-doc.**
+
+**Item 8 was put to Ben as the plan's "stop and ask" list requires, and he said do it; it is
+`6c1532b` in `github-misc`.** It is bigger than the item reads: **29 `wlc-utils` mentions across
+the skill's five files, of which 11 stay and are correct** —
 `doc/agent-planning-principles.md`, `doc/review-findings-2026-07-29.md`,
-`doc/edition-transcription-workflow.md`, `gh-pages/accgram/maqaf-nonfinal-accents.html` and the
-`wlc-utils #NN` issue citations are all still correct where they stand; what moves is the
-`py/accgram/...` citations, `py/tests`, "wlc-utils' venv", the pointer to `wlc-utils/CLAUDE.md`'s
-rendered-prose section (which Phase 4 moved here), and `SKILL.md`'s description, which names
-wlc-utils first among the repos it governs. The live copy at
+`doc/edition-transcription-workflow.md`, the `gh-pages/accgram/` `file://` link,
+`out/accgram/maqaf-nonfinal-accents.json`, the orphaned venv, the "807 commits" dated record, and
+the `wlc-utils#NN` issue citations, that tracker keeping its 88. What moved is the code:
+`printed_decalogue_strands.py`, `edition_transcription.py`, `maqaf_nonfinal_accents.py` and its
+page module, `meteg_silluq_context.py`, `py/tests/`, and the pointer to `wlc-utils/CLAUDE.md`'s
+rendered-prose section, which Phase 4 brought here. Where a sentence was about the CODE rather
+than a repo — "ITM romanizes several accent names differently from wlc-utils", "in wlc-utils say
+meteg", "in wlc-utils the scanners already fuse a helper into its accent" — it now says
+**accgram**, which stays true wherever accgram is checked out. Two things beyond the rename would
+each have sent a reader somewhere useless: `verifying.md`'s Commands section said "From `py/`
+(wlc-utils)" and gave a bare `pytest.exe py/tests`, and `terminology.md` said `pypdf` "is in
+wlc-utils' venv", which is an orphan. The live copy at
 `C:\Users\BenDe\.claude\skills\hebrew-prose\` and the tracked one at
-`github-misc/dot-claude/skills/hebrew-prose/` were verified byte-identical on 2026-08-02, so
-whoever does it must edit both.
+`github-misc/dot-claude/skills/hebrew-prose/` were verified byte-identical before and after —
+nothing syncs them, so both were edited.
 
 Every baseline was re-measured first and every one matched: **691** tracked `.py` here and **68**
 test modules, **830 passed / 5 skipped**, `ruff check py` and `black --check py` clean; and in
