@@ -9,7 +9,7 @@ with a question rather than a phase.
 
 | Phase | State |
 |---|---|
-| **D — the quirk-record decision** | **awaiting Ben — blocks everything below** |
+| D — the quirk-record question | **decided 2026-08-02: all 267 move, records included** |
 | 0 — reconcile the three fork families | **not started** |
 | 1 — two roots, no cwd | **not started** |
 | 3 — copy the Python in (dual residency) | **not started** |
@@ -37,49 +37,56 @@ does not currently name it anywhere.
 
 ---
 
-## Decision D — 160 of the 267 files are content, not code
+## Decision D — the quirk records move with everything else — DECIDED 2026-08-02
 
 `pyauthor_qr/` holds **160 modules, 3,205 lines**, one per quirk record, each a single dict
 literal. `pyauthor_qr/qr_0119.py` in full is `RECORD_0119 = {...}` with ten keys: the verse, the
 consensus reading, the proposed Leningrad reading, what is odd about it, a comment, and page and
-column coordinates in two manuscripts.
+column coordinates in two manuscripts. So 160 of this repo's 267 `.py` are the content of the Job
+review expressed in Python syntax rather than tooling.
 
-**That is the content of the Job review, expressed in Python syntax.** It is not tooling, it is
-not shared with anything, and moving it to MAM-basics would move the substance of one project's
-scholarship into a repo about a different thing. So "evacuate all Python from book-of-job" cannot
-mean what it meant for wlc-utils, and the plan has to say which of three things it means:
+**They move as they are, along with the other 107. Ben, 2026-08-02.** This plan's first draft
+recommended converting them to JSON instead and called moving them "wrong"; both halves of that
+were mistaken, and the record of why is worth keeping, because the same reasoning would misfire
+again on `author_rocc` or on any future authored corpus.
 
-- **D1 — convert the 160 to data and leave them here.** Each module is already a JSON-shaped dict,
-  and the repo already emits `out/enriched-quirkrecs.json`, so the target format is one this repo
-  understands. The code moves to MAM-basics and reads the records from `../book-of-job` as data.
-  Outcome: book-of-job becomes a data-and-docs repo like wlc-utils, with **0** tracked `.py`.
-  Cost: a real conversion, whose oracle is that all 701 artifacts regenerate byte-identically.
-  **This is the recommendation** — it is the only option under which the programme's stated
-  outcome is actually reached for this repo.
-- **D2 — move all 267, records included.** Literal, cheapest, and wrong: MAM-basics acquires 160
-  files it has no reason to hold, and every future edit to a quirk record — an ordinary act of
-  authorship — becomes a commit in the tooling repo.
-- **D3 — move the 107 code files and leave the 160 records as Python.** Honest about what they
-  are, and cheapest to execute correctly. But book-of-job keeps 160 tracked `.py`, so the black
-  sweep, `check_repo_standards.py` and the vendoring audit all keep treating it as a Python repo,
-  and the maintenance tax this programme exists to reduce is not reduced here.
+- **"Converting is the only option that actually empties the repo" was simply false.** The goal is
+  a repo with no Python in it. Moving a `.py` to MAM-basics empties book-of-job of it exactly as
+  much as rewriting it into JSON does. Both routes end at **0 tracked `.py`** here; they differ
+  only in where the content comes to rest, which is a different question and was being smuggled in
+  under the first one.
+- **"MAM-basics has no reason to hold authored content" is refuted by MAM-basics itself.** It
+  already tracks **91 such modules**: `py/author_misc/` (64, including the bilingual
+  paseq-and-legarmeh and gray-maqaf essays), `py/author_rocc/` (23) and `py/mb_author/` (4).
+  `author_rocc/` is **one module per section of a review** — structurally the same thing as one
+  module per quirk record. Editing authored prose in MAM-basics is not an anomaly to be avoided
+  here; it is the established practice, at a scale over half again what book-of-job would add.
 
-**Stop and ask Ben. Nothing below can be scoped until this is answered**, because D changes the
-file count, the oracle, and whether Phase 4 empties the repo or merely thins it. The phases below
-are written for **D1**; under D3, drop the conversion step from Phase 3 and read Phase 4 as
-deleting 107 files rather than 267.
+**Rejected, and why it stays rejected:** converting the 160 to JSON is a real conversion whose
+oracle is that all 701 artifacts regenerate byte-identically. It buys nothing this plan needs —
+the repo reaches 0 tracked `.py` without it — and it would land as a content rewrite riding along
+inside a move, which is the one thing that makes a move's failures ambiguous. If the records
+should become data, that is its own change, on its own oracle, at a time of its own choosing.
+
+**One thing follows from the decision.** `pyauthor_qr/` lands beside the modules it now resembles,
+as **`author_qr/`**, matching `author_misc/` and `author_rocc/` rather than keeping a `py`-prefixed
+name that means nothing in a tree where everything is under `py/`. The same reading applies to
+`pyauthor/` (10 files) and `pyauthor_util/` (33), which become `author_boj/` and `author_boj_util/`
+or similar — decide the three names together, in Phase 3, so the review's code and its content
+stay legible as one thing.
 
 ---
 
-## What moves — the 107 non-record files
+## What moves — all 267, of which 16 are a deletion
 
 | Directory | Files | Disposition |
 |---|---|---|
-| `pyauthor_util/` | 33 | moves as-is |
+| `pyauthor_qr/` | 160 | moves, **renamed `author_qr/`** — Decision D |
+| `pyauthor_util/` | 33 | moves, renamed with the other two `pyauthor*` directories |
 | repo root | 16 | **6 are a fork family — programme Phase 0**; the rest move |
 | `mb_cmn/` | 16 | **diverged — must be reconciled, not deleted** |
 | `py_uxlc_loc/` | 10 | **a second fork family — see below** |
-| `pyauthor/` | 10 | moves as-is |
+| `pyauthor/` | 10 | moves, renamed with the other two `pyauthor*` directories |
 | `py/` | 7 | moves, **but two names are traps** — see below |
 | `py_ac_word_image_helper/` | 6 | **a third fork family — programme Phase 0** |
 | `pydiff_mm/` | 5 | moves as-is; distinct from MAM-basics' `mb_diff_mpu` |
@@ -166,10 +173,9 @@ Do this phase inside book-of-job, and prove it by regenerating all 701 artifacts
 
 ## Phase 3 — copy the Python in (dual residency)
 
-Under **D1** this phase carries the record conversion, which makes it the largest single phase in
-the programme. Consider splitting it: **3-record** (convert `pyauthor_qr/` to data and prove the
-701 artifacts unchanged, entirely inside book-of-job) then **3-code** (the move proper). Two
-provable steps beat one step whose failure has two candidate causes.
+251 files land, which makes this the largest single phase in the programme — but **160 of them are
+one-dict modules that nothing imports except by name**, so the risk is concentrated in the other
+91. Do the three `pyauthor*` renames here, together, having decided the three names first.
 
 Otherwise as in the other plans: land the files, retarget the data root to `../book-of-job`, fold
 the one test module in, watch `force_utf8_io()` where an entry point becomes a library module, and
@@ -180,13 +186,14 @@ finish with the oracle run from MAM-basics writing into `../book-of-job` with
 
 ## Phase 4 — empty book-of-job
 
-Under D1 this deletes 267 tracked `.py`. **Stop and ask Ben first.**
+This deletes all 267 tracked `.py`. **Stop and ask Ben first.**
 
 **The conventions live in ten `.github/copilot-instructions*.md` files, not a `CLAUDE.md`**, and
 they are the substance of this phase's documentation work. Read all ten before splitting: they
 cover image-crop reproducibility, image metadata, three manuscripts' crop conventions,
-quirk-record comment style, and how to open generated HTML. Roughly, the crop and image ones
-follow the code to MAM-basics; the quirk-record ones stay, because under D1 the records stay.
+quirk-record comment style, and how to open generated HTML. **Under Decision D nearly all of them
+follow the code to MAM-basics**, the quirk-record comment conventions included, since the records
+go there too. What stays is whatever describes the *published site* rather than how it is made.
 **Write a `CLAUDE.md` here in the same phase**, stating that there is no Python left, that the code
 generating `gh-pages/` and `out/` is `../MAM-basics/py/`, and which entry point writes what. The
 README is two lines and needs replacing outright.
@@ -212,7 +219,6 @@ Flip in a dedicated commit near the end; do not fix the now-wrong path mid-move.
    rather than a source path, so it survives the move — **but it survives only if the site keeps
    its shape**, which is a reason not to reorganize `gh-pages/` in the same programme.
 3. `all-repos.code-workspace` — leave book-of-job listed.
-4. Confirm `run_black.py` and `check_repo_standards.py` skip it once it tracks no `.py` — under
-   D3 they will not, and should not.
+4. Confirm `run_black.py` and `check_repo_standards.py` skip it once it tracks no `.py`.
 5. **Delete its `.venv` and any orphaned agent worktrees.**
 6. Grep the other repos for `book-of-job/` paths that name Python rather than pages.

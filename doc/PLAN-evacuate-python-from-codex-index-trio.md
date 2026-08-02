@@ -9,7 +9,6 @@ three times and risk answering it three different ways.
 
 | Phase | State |
 |---|---|
-| **D — is this worth doing for cam1753?** | **awaiting Ben** |
 | 0 — reconcile the fork families (programme Phase 0, plus the wiki family below) | **not started** |
 | 1 — two roots, no cwd (per repo) | **not started** |
 | 3 — copy the Python in (per repo, dual residency) | **not started** |
@@ -35,24 +34,20 @@ each repo's `download_*.py` before relying on it.
 
 ---
 
-## Decision D — cam1753, and how much of this is worth doing
+## All three move, and dormancy is not a reason to treat one differently
 
-codex-index-cam1753 has not been committed to since **2026-04-27**, has no Pages workflow, and
-holds 22 `.py` of which 3 are vendored. codex-index-leningrad last moved 2026-07-27 and also has
-no Pages workflow. Only codex-index-aleppo is unambiguously live.
+codex-index-cam1753 has not been committed to since **2026-04-27** and has no Pages workflow;
+codex-index-leningrad last moved 2026-07-27 and also has no Pages workflow; only codex-index-aleppo
+is unambiguously live. **This plan's first draft proposed asking whether cam1753 was worth doing at
+all. Ben, 2026-08-02: it is low cost and symmetric with the other two, so it is in.**
 
-The programme exists to reduce the tax of maintaining Python across repos. A dormant repo levies
-that tax only when a sweep touches it — which is real (the black sweep, `check_repo_standards.py`
-and the vendoring audit all visit it) but small. **Against that, the fork families below are a
-genuine liability that does not care whether a repo is dormant**: three drifted copies of one
-script are three chances to fix a bug once and leave it broken twice, and the dormant copy is the
-one that stays broken.
-
-So the recommendation is: **do Phase 0 for all three regardless — it is the part that pays — and
-then decide per repo whether the move itself is worth it.** Reconciling the forks is worth doing
-even if not one line ever moves to MAM-basics.
-
-**Stop and ask Ben.** The phases below are written for all three moving.
+That is the right reading, and the draft's was not. cam1753 is 22 `.py` of which 3 are vendored,
+so the move proper is 19 files — the smallest in the programme. The expensive part for that repo
+is reconciling the fork families, and **that has to happen whether or not a line ever moves**:
+three drifted copies of one script are three chances to fix a bug once and leave it broken twice,
+and the dormant copy is precisely the one that stays broken. Having paid that, stopping short of
+the move would leave the repo tracking Python for no gain, and would make it the one exception a
+future session has to rediscover the reason for.
 
 ---
 
