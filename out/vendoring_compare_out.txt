@@ -163,6 +163,7 @@ hebrew_points.py                           UXLC-utils                 py/mb_cmn/
 hebrew_punctuation.py                      UXLC-utils                 py/mb_cmn/hebrew_punctuation.py                         identical      2026-04-27   
 my_diffs.py                                UXLC-utils                 py/mb_cmn/my_diffs.py                                   identical      2026-06-30   
 my_utils.py                                UXLC-utils                 py/mb_cmn/my_utils.py                                   identical      2026-07-17   
+paths.py                                   UXLC-utils                 py/mb_cmn/paths.py                                      identical      no-commits   
 polite_download.py                         UXLC-utils                 py/mb_cmn/polite_download.py                            identical      2026-07-01   
 provenance.py                              UXLC-utils                 py/mb_cmn/provenance.py                                 identical      2026-08-02   
 retired_kq_special_templates.py            UXLC-utils                 py/mb_cmn/retired_kq_special_templates.py               identical      2026-06-30   

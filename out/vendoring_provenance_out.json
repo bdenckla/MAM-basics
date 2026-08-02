@@ -265,6 +265,7 @@
             "mb_cmn_bib_locales.py",
             "my_diffs.py",
             "my_utils.py",
+            "paths.py",
             "polite_download.py",
             "provenance.py",
             "retired_kq_special_templates.py",

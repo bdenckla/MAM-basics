@@ -41,4 +41,4 @@
 === UXLC-utils ===
   provenance docs: none
   COPY SCRIPTS: ['py/main_update_vendored_files.py', 'py/mb_cmn/vendoring_sync.py']
-  mb_cmn dir (py/mb_cmn): ['cantsys.py', 'file_io.py', 'he_wikisource_url.py', 'hebrew_accents.py', 'hebrew_letters.py', 'hebrew_points.py', 'hebrew_punctuation.py', 'mb_cmn_bib_locales.py', 'my_diffs.py', 'my_utils.py', 'polite_download.py', 'provenance.py', 'retired_kq_special_templates.py', 'retired_template_names.py', 'str_defs.py', 'template_names.py', 'uni_heb.py', 'uni_norm_fragile.py', 'url_percent.py', 'uxlc_change_url.py', 'vendoring_sync.py']
+  mb_cmn dir (py/mb_cmn): ['cantsys.py', 'file_io.py', 'he_wikisource_url.py', 'hebrew_accents.py', 'hebrew_letters.py', 'hebrew_points.py', 'hebrew_punctuation.py', 'mb_cmn_bib_locales.py', 'my_diffs.py', 'my_utils.py', 'paths.py', 'polite_download.py', 'provenance.py', 'retired_kq_special_templates.py', 'retired_template_names.py', 'str_defs.py', 'template_names.py', 'uni_heb.py', 'uni_norm_fragile.py', 'url_percent.py', 'uxlc_change_url.py', 'vendoring_sync.py']
