@@ -20,7 +20,7 @@ naming the thing.
 
 WHAT IS SCANNED.  Every non-vendored ``py/**/*.py``, plus the committed
 renderings the page modules generate: ``gh-pages/accgram/*.html`` and
-``out/accgram/**/*.json``, scanned as plain text (#87 item 19 -- the #80 sweep
+``out/accgram/**/*.json``, scanned as plain text (wlc-utils#87 item 19 -- the wlc-utils#80 sweep
 of 2026-07-27 fixed the module sources but left
 ``out/accgram/dual-cant/_dual_cant.json`` holding the swept wording for two
 days, because nothing linted the artifacts).  A hit in an artifact never means
@@ -30,7 +30,7 @@ clears on its own).  ``doc/*.md`` is deliberately NOT scanned: the
 review-findings and plan docs quote banned phrasings in order to discuss and
 reject them, so linting them would flag the quotations.
 
-KNOWN, DELIBERATE LIMITATIONS (#87 item 20), recorded here so they are a
+KNOWN, DELIBERATE LIMITATIONS (wlc-utils#87 item 20), recorded here so they are a
 choice and not an unknown:
 
 * ``_SUBJECTS`` hardcodes the edition names, so a rename (as the
@@ -43,7 +43,7 @@ choice and not an unknown:
   renames an edition must update ``_SUBJECTS`` by hand.
 * The subject-anchored agentive pattern requires the verb to follow its
   subject directly and in the singular.  A plural subject with an interposed
-  phrase -- "the seven chanted words before those marks carry ..." (#87 item
+  phrase -- "the seven chanted words before those marks carry ..." (wlc-utils#87 item
   6) -- escapes, and loosening the anchor enough to catch it would flag the
   honest uses the anchor exists to spare.  (Item 6's OTHER escape, subject
   and verb split across two source lines, IS caught: every scan below runs
@@ -165,7 +165,7 @@ _DENYLIST: list[tuple[re.Pattern[str], str, str]] = [
 # and whitespace-normalized text: a phrase splits across two source lines
 # inside an implicitly concatenated string literal (`no cantillation\n"
 # "accent`), and a subject parts from its verb at a line break ("There too
-# Koren\nshows ..." -- #87 item 6), so a line-based grep misses both, and that
+# Koren\nshows ..." -- wlc-utils#87 item 6), so a line-based grep misses both, and that
 # is exactly how each has hidden before.  Pairing (rather than scanning the
 # whole file as one string) keeps a real line number in the message and keeps
 # the `# prose-ok` pragma usable.

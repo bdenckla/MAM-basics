@@ -24,7 +24,7 @@ THREE THINGS IT REPORTS, AND WHY EACH IS SEPARATE:
   a silsof.  A bare count would miss one boundary moving while another appeared.
 * Pasoleg positions AND kinds.  The folded ``chanted_verses`` collapses legarmeh and
   narrow-sense paseq onto the same U+05C0 glyph, but ``faithful_chanted_verses`` keeps them
-  apart (issue #74), so the reference now says both WHERE a stroke stands and WHICH kind it is
+  apart (issue wlc-utils#74), so the reference now says both WHERE a stroke stands and WHICH kind it is
   -- and the transcription's own legarmeh/paseq claim is checked against it, not only against
   glyph shape.  Comparing the placements doubles as an alignment check: these are independent
   anchors, so several landing on their exact indices rules out a drifting diff.  The two sides
@@ -191,7 +191,7 @@ def report(pages: list[dict], key: tuple[str, str, str]) -> None:
     spots = [i for i, w in enumerate(words) if et.PASEQ in w and ref[i] == "mun"]
     marked = _pasolegs(pages)
     mapped = [_to_reference(j, opcodes) for j, _ in marked]
-    # The reference kind of each stroke, now that faithful_chanted_verses keeps it (issue #74).
+    # The reference kind of each stroke, now that faithful_chanted_verses keeps it (issue wlc-utils#74).
     # Aligned with ``spots`` in reading order, so spot_kind maps a reference index to its kind.
     ref_kinds = et.reference_pasoleg_kinds(source, key)
     spot_kind = dict(zip(spots, ref_kinds))

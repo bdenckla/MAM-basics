@@ -1,4 +1,4 @@
-r"""The Unicode mark alphabet the scanners consume (issue #9, Phase 2).
+r"""The Unicode mark alphabet the scanners consume (issue wlc-utils#9, Phase 2).
 
 Phase 1 transcoded each ``-kq-u`` Unicode verse into a Michigan-Claremont (M-C)
 2-digit-accent *body* and fed it to scanners written against that legacy code
@@ -16,7 +16,7 @@ A "mark body" is a string of single-character marks, one per structural element:
 * **maqaf** is ``-`` and the gaps between atoms are a space, the two ATOM boundaries the
   ``TEXT`` class and the lexical layer key on.  (An *atom* is one written word, between
   spaces or maqafs; a maqaf joins two of them into one CHANTED WORD, which is the unit an
-  accent marks.  This module's alphabet sees only atoms -- issue #81.)
+  accent marks.  This module's alphabet sees only atoms -- issue wlc-utils#81.)
 * ketiv ``*``/``**`` markers and ``]N`` note markers are kept verbatim.
 
 The five M-C codepoint conflations (pashta ``33``/``03``, telisha qetana ``24``/
@@ -92,7 +92,7 @@ LOWER_DOT = hpu.LODOT  # lower punctum       (53)
 MAQAF = "-"  # the boundary inside a chanted word (joins two atoms into one)
 # Placeholder base letter (opaque scanner filler).  Alef -- a real Hebrew base, so a
 # combining accent sits on it legibly and the scan body needs no re-basing for display.
-# (It was a Latin "X" through issue #9; nothing keys on its identity -- every rule treats
+# (It was a Latin "X" through issue wlc-utils#9; nothing keys on its identity -- every rule treats
 # it as filler consumed by the catch-all -- so the mark bodies now read as Hebrew throughout.)
 LETTER = "א"
 

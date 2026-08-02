@@ -4,7 +4,7 @@ Pin the pure-function semantics of `unpaired_stress_helpers`: a prose tsinnorit
 (M-C ``82``) is an alphabet error unless it is fused with a later tsinnor (M-C ``02``)
 in the *same* maqaf/space-delimited atom.  These guard the fuse-vs-unpaired and
 atom-boundary logic so a regression fails here rather than silently shifting the
-ungrammatical corpus.  Bodies are written over the Unicode mark alphabet (issue #9, Phase
+ungrammatical corpus.  Bodies are written over the Unicode mark alphabet (issue wlc-utils#9, Phase
 2); arbitrary capital letters stand in for consonant filler.
 
 Run:

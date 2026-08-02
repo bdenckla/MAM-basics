@@ -21,12 +21,12 @@ Subcommands:
                 trees, the supplied-mark inventory, and candidate-WLC-error
                 anomalies).  The oddity chanted verses are separately folded into
                 the prose ungrammatical-verse report by run-prose; supplied-marks.html is
-                rendered by generate-html.  Run after run-prose (issue #36).
+                rendered by generate-html.  Run after run-prose (issue wlc-utils#36).
     run-printed-decalogue
                 Grammar-check the printed-tradition (דפוסים) Decalogue
                 accentuations against the manuscript baseline -- both books,
                 taxton and elyon -- and write
-                out/accgram/printed-decalogue/_printed_decalogue.json (issue #52).
+                out/accgram/printed-decalogue/_printed_decalogue.json (issue wlc-utils#52).
                 Reads the vendored in/accgram/printed_decalogue_teamim.json that
                 vendor-printed-decalogue refreshes, plus the committed hand
                 transcriptions under in/accgram/edition_transcriptions, whose own
@@ -67,7 +67,7 @@ Subcommands:
                     and the non-charity ek20:31 mahapakh!qadma, with live parse
                     trees regenerated from the grammar at build time.
                   * gh-pages/accgram/supplied-marks.html -- the dual-cantillation
-                    "Supplied and suppressed marks" page (issue #36): the supplied-mark
+                    "Supplied and suppressed marks" page (issue wlc-utils#36): the supplied-mark
                     inventory plus the per-strand punctuation (maqaf/sof-pasuq/legarmeh)
                     restructuring, generated live from the detangling run and linked
                     from almost-errors.html.
@@ -79,7 +79,7 @@ Subcommands:
                     ps17v14-double-tsinnor.html -- the Psalms 17:14 deep dives,
                     generated from their committed htel bodies.
                   * gh-pages/accgram/maqaf-nonfinal-accents.html -- the Tanakh-wide
-                    survey of accents on a maqaf-joined atom (issue #76), which
+                    survey of accents on a maqaf-joined atom (issue wlc-utils#76), which
                     also writes out/accgram/maqaf-nonfinal-accents.json.  Splits the
                     hits into Yeivin's grammatical secondary accents and the scribal
                     habit of §293, and settles whether Koren's Deuteronomy mun-mun on
@@ -104,7 +104,7 @@ Subcommands:
                 Estimate a PCFG over the committed prose + poetic parse trees
                 (one production per tree node) and score each verse's
                 log-likelihood -- a continuous companion to the binary
-                clean/ungrammatical verdict (issue #11).  Reports the learned grammar,
+                clean/ungrammatical verdict (issue wlc-utils#11).  Reports the learned grammar,
                 the rarest-but-legal verses (per-accent log-likelihood, with the
                 least-probable production drilled out), and a validation that the
                 flagged ungrammatical score at the bottom; an n-gram baseline is kept
@@ -124,13 +124,13 @@ Subcommands:
                 עשרת הדברות בסיס/טעמים, and overwrite
                 in/accgram/printed_decalogue_teamim.json.  Each version is stored twice:
                 the folded scanner-ready chanted verses, and the faithful ones that keep
-                the legarmeh/paseq, ketiv/qere and setumah/petuxah templates (issue #74).
+                the legarmeh/paseq, ketiv/qere and setumah/petuxah templates (issue wlc-utils#74).
                 --oldid pins a revision; the committed snapshot is 3025606.
     vendor-ctr-decalogue
                 NETWORK AUTHOR TOOL, run by hand.  Refresh the vendored snapshot of CTR's
                 two Decalogues -- Exodus 20:2-14 and Deuteronomy 5:6-18 of the Complete
                 Tanach with Rashi at chabad.org -- and overwrite
-                in/accgram/ctr_decalogue.json (issue #73).  The verse text is kept
+                in/accgram/ctr_decalogue.json (issue wlc-utils#73).  The verse text is kept
                 accent-exact, with CTR's own encoding intact; normalizing it is
                 ctr_decalogue.py's job, not the vendoring's.  --cache reads pre-fetched
                 chapter HTML from a directory instead of hitting the server.
@@ -317,7 +317,7 @@ def build_parser() -> argparse.ArgumentParser:
         help=(
             "Grammar-check the printed-tradition (דפוסים) Decalogue accentuations "
             "against the manuscript baseline -- both books, taxton and elyon -- and write "
-            "out/accgram/printed-decalogue/_printed_decalogue.json (issue #52). Reads the "
+            "out/accgram/printed-decalogue/_printed_decalogue.json (issue wlc-utils#52). Reads the "
             "vendored in/accgram/printed_decalogue_teamim.json, plus the committed hand "
             "transcriptions under in/accgram/edition_transcriptions, whose own verdicts "
             "against the strand each follows go in the file's transcriptions section."
@@ -375,7 +375,7 @@ def build_parser() -> argparse.ArgumentParser:
         help=(
             "Estimate a PCFG over the committed prose + poetic parse trees and "
             "score every verse's log-likelihood -- a continuous companion to the "
-            "binary clean/ungrammatical verdict (issue #11). Writes "
+            "binary clean/ungrammatical verdict (issue wlc-utils#11). Writes "
             "out/accgram/_grammaticality.txt. Run run-prose + run-poetic first."
         ),
     )
@@ -427,7 +427,7 @@ def build_parser() -> argparse.ArgumentParser:
         help=(
             "NETWORK AUTHOR TOOL, run by hand: re-fetch CTR's two Decalogues (Exodus "
             "20:2-14 and Deuteronomy 5:6-18 from chabad.org) accent-exact and overwrite "
-            "the vendored in/accgram/ctr_decalogue.json (issue #73). --cache reads "
+            "the vendored in/accgram/ctr_decalogue.json (issue wlc-utils#73). --cache reads "
             "pre-fetched chapter HTML instead of hitting the server."
         ),
     )

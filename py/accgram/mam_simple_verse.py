@@ -11,7 +11,7 @@ from wlc_cmn.wlc_book_codes import wlc_bb_codes, wlc_bb_to_bk39id
 
 import wlc_paths
 
-# The three single-cantillation projections of a dually-cantillated span (issue #36).
+# The three single-cantillation projections of a dually-cantillated span (issue wlc-utils#36).
 # A ``cant-all-three`` node carries one child of each type: ``cant-combined`` (the
 # dual/merged form, analogous to what WLC stores) and the two detangled strands
 # ``cant-alef`` / ``cant-bet``.  ``_normalize_mam_simple_node`` is parameterized by which
@@ -39,7 +39,7 @@ def load_mam_simple_for_refs(
 ) -> dict[str, dict[str, object]]:
     """Load the requested MAM-simple verses, keyed by compact bcv.
 
-    ``include_strands`` (issue #36) additionally exposes each dually-cantillated span's
+    ``include_strands`` (issue wlc-utils#36) additionally exposes each dually-cantillated span's
     two detangled strands as ``vels_cant_alef`` / ``vels_cant_bet`` streams (for the
     dual-cantillation detangler).  It is off by default so existing consumers keep
     receiving the plain ``{"vels": ...}`` shape unchanged."""
@@ -183,7 +183,7 @@ def _normalize_mam_simple_verse(
     ``vels`` uses the ``cant-combined`` projection of any dual span (the single,
     WLC-analogous representation) -- so the default shape is unchanged for every
     consumer.  With ``include_strands`` it also carries ``vels_cant_alef`` /
-    ``vels_cant_bet``, the ``cant-alef`` / ``cant-bet`` strands (issue #36).  In a verse
+    ``vels_cant_bet``, the ``cant-alef`` / ``cant-bet`` strands (issue wlc-utils#36).  In a verse
     with no dual span all three are identical, so a single-cantillation verse in a
     Decalogue range yields a shared stream automatically.
     """
@@ -248,7 +248,7 @@ def _mam_simple_fragments(
     """One node's subtree as text fragments and ``_BOUNDARY`` separators.
 
     Tokenizing each node's text separately would be simpler, and is what this loader did
-    until issue #91.  It cannot be right, because several of MAM-simple's node types sit
+    until issue wlc-utils#91.  It cannot be right, because several of MAM-simple's node types sit
     INSIDE an atom rather than between atoms, and per-node tokenization splits the atom
     at each of them:
 

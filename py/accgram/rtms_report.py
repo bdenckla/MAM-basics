@@ -114,7 +114,7 @@ def render_dual_cant_section(
     structured_text_lookup: StructuredTextLookup,
 ) -> tuple[object, ...]:
     """The whole goerwitz section for a dually-cantillated ungrammatical (dt 5:8), laid out by
-    reading (issue #36): heading + links, then a taxton block and an elyon block (each its
+    reading (issue wlc-utils#36): heading + links, then a taxton block and an elyon block (each its
     own labelled verse line, per-strand focus/diff table, and parse tree), then the shared
     images and commentary.  The elyon's tree spans 5:7-10; its non-5:8 columns are grayed
     to spotlight the overlap.  Replaces the generic single-table / single-tree flow for
@@ -369,7 +369,7 @@ def _render_verse_paragraphs(
     *,
     structured_text_lookup: StructuredTextLookup,
 ) -> tuple[object, ...]:
-    # Dually-cantillated verses (issue #36) show one labelled line per reading
+    # Dually-cantillated verses (issue wlc-utils#36) show one labelled line per reading
     # (e.g. taxton + elyon) in place of the single combined WLC verse line.
     # The row's own numbered verse is the focus, so an elyon line's words from neighbouring
     # verses are grayed as context.

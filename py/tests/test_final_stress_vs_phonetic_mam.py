@@ -5,7 +5,7 @@ counting nuclei and locating one syllable, the last.  al-hatorah's ``py/aht_phon
 thing with a real stress model -- full syllabification plus a hand-built table saying which accent
 of a vector bears the stress -- and has already run it over the whole Tanakh.  So the two are
 independent derivations of one fact, which is the shape of test this repo keeps
-(``doc/agent-planning-principles.md`` §"Generated Outputs Are the Tests").  Issue #48 calls
+(``doc/agent-planning-principles.md`` §"Generated Outputs Are the Tests").  Issue wlc-utils#48 calls
 consuming Phonetic MAM's outputs its second path; this is that path, and it is why the rule in
 ``final_stress`` is measured against the engine rather than standing in for it.
 
@@ -16,7 +16,7 @@ so says nothing about stress.  MAM, because Phonetic MAM is MAM; prose, because 
 measurement is for is about prose verses and because a poetic chanted word's atoms really are
 grouped differently on the two sides -- MAM has a gray maqaf in 113 places where Phonetic MAM keeps
 two chanted words, and those 113 are nearly the whole of what will not join anywhere in MAM's
-Tanakh.  The rest of it, 11 more (issue #91), is outside this test's reach for reasons of its own:
+Tanakh.  The rest of it, 11 more (issue wlc-utils#91), is outside this test's reach for reasons of its own:
 8 dually-cantillated chanted words in the two Decalogues, whose ``cant-combined`` projection is
 neither strand; Deuteronomy 32:6, where MAM's large ה stands apart from לְיְהֹוָה֙ and Phonetic MAM
 has one entry for the two atoms; and 2 Chronicles 25:17, where Phonetic MAM has לְךָ֖ against the
@@ -37,7 +37,7 @@ lo-yihye is stressed differently in each -- so a verdict matching either strand 
 survey reads one strand of MAM-simple, and which one is not a fact this test is about.
 
 A word Phonetic MAM has no entry for FAILS, and none does: the join over the prose measured set is
-exceptionless since issue #91, whose fix is why -- see the test's own docstring for the one word
+exceptionless since issue wlc-utils#91, whose fix is why -- see the test's own docstring for the one word
 that used to be pinned here.  A skip is this suite's semantic channel and an environment skip mixed
 into it reports green having verified nothing; the same is why the sibling clone is required rather
 than skipped around.
@@ -193,7 +193,7 @@ def _cases() -> tuple[tuple[str, str, bool], ...]:
 def test_every_measured_chanted_word_has_a_phonetic_mam_entry():
     """The join itself, checked before the verdicts, so a text mismatch reads as one.
 
-    EXCEPTIONLESS, and it took issue #91 to make it so.  One chanted word was pinned here
+    EXCEPTIONLESS, and it took issue wlc-utils#91 to make it so.  One chanted word was pinned here
     until then -- Exodus 17:16's one-atom כֵּ֣סְיָ֔הּ, read as the two texts dividing two atoms
     differently.  They do not.  MAM's running text there is the two-atom כֵּ֣ס יָ֔הּ that
     Phonetic MAM and WLC 4.22 and UXLC all have, and the one-atom form is a SPECIMEN QUOTED

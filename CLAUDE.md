@@ -79,6 +79,35 @@ absent. The verbatim reader-facing statement is
 audit fix that made maqaf differences non-differences) and why that one was wrong, so it does not
 get reinstated. Issue wlc-utils#76.
 
+## Two issue trackers: a bare `#NN` here means MAM-basics
+
+wlc-utils' 88 issues were **not** transferred when its Python moved here on 2026-08-01. They keep
+their numbers and stay in `bdenckla/wlc-utils`, which is still where they are read, commented on
+and closed. The trackers unify *going forward* only: **every new issue, including new work on the
+moved code, is filed in MAM-basics.**
+
+So in this repo a bare `#NN` names a MAM-basics issue, and a citation of a wlc-utils issue is
+written **`wlc-utils#NN`**. The prefix is not decoration: both trackers have issues in the 1-88
+range, and several numbers name quite unrelated things in each — wlc-utils#52 is the printed
+Decalogue where MAM-basics #52 asks about a meteg in Ezekiel, wlc-utils#69 the hand transcriptions
+where MAM-basics #69 is a CSS URL, wlc-utils#75 making maqaf a token of its own where MAM-basics
+#75 is the `mb_cmn/paths.py` convention. The moved code's 326 bare citations were prefixed on
+2026-08-02.
+
+Two things a blind sweep gets wrong, so read the surrounding sentence before adding a prefix:
+
+- **Not every `#NN` is an issue.** Yeivin's *ITM* is cited by section number in exactly the same
+  shape (`#194`, `#221`, `#246`, and the `#325`–`#391` poetic run), CSS carries hex colours, and
+  `poetic_ply_grammar.py` numbers the accents of Ps 17:14 as `#7`–`#10`. None of those take a
+  prefix.
+- **`wlc_issue_edit.py` is what keeps the split safe, and its own `#69` is deliberate.** `gh`
+  resolves which tracker `issue <number>` names from the checkout it runs in, so `repo` is a
+  required argument there rather than an inherited cwd; the bare `#69` in its docstring is the
+  worked example of the ambiguity and must stay bare.
+
+wlc-utils' own `doc/`, `in/` and `CLAUDE.md` were left alone — a bare `#NN` read there still means
+a wlc-utils issue, and qualifying those would imply they were ambiguous.
+
 ## Running tests — always from the repo root
 
 Run tests via the canonical entrypoint, from the repo root (`~/GitRepos/MAM-basics`), never from `py/`:

@@ -68,7 +68,7 @@ _XOLAM_REPL2 = r"\1WO"
 # be precomposed because it is used as a str.maketrans() key, and maketrans keys
 # must be length 1 (a decomposed h+U+0323 would raise ValueError at import).
 # This is simply the repo's standard NFC form used deliberately as a sentinel --
-# not an exception to it (issue #49).
+# not an exception to it (issue wlc-utils#49).
 _XOLAM_PATT3 = "W" + _paren(_NON_LETT_STAR) + "o"
 _XOLAM_REPL3 = r"W\1ḥ"
 _FINAL_PATT = r"[KMNPC]" + _NON_LETT_STAR_DOLL

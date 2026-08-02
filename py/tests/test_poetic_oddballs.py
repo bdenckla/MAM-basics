@@ -1,4 +1,4 @@
-"""Unit tests for the poetic ungrammatical-verse report's NO_PARSE tree synthesis (issue #10).
+"""Unit tests for the poetic ungrammatical-verse report's NO_PARSE tree synthesis (issue wlc-utils#10).
 
 NO_PARSE verses have no valid parse, so poetic_oddballs synthesizes a flat
 best-effort "tree" (``_no_parse_tree_text``) that must round-trip through the

@@ -2,7 +2,7 @@
 pages/accgram/ps17v14-mam-doc-notes.html. Consumed by accgram/ps17v14_doc_notes.py; edit
 the generator/this data, not the generated HTML.
 
-Migrated from the former hand-authored JSON sidecar ps17v14_mam_doc_notes_body.json (issue #33):
+Migrated from the former hand-authored JSON sidecar ps17v14_mam_doc_notes_body.json (issue wlc-utils#33):
 read via import, not a file open.  Edit this module / the generator, not the
 generated HTML.
 

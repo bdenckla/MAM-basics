@@ -1,4 +1,4 @@
-"""Genuine SAT focus-word table for the poetic ungrammatical-verse report (issue #10).
+"""Genuine SAT focus-word table for the poetic ungrammatical-verse report (issue wlc-utils#10).
 
 The "SAT" table is goerwitz.html's per-witness focus-word table: the WLC focus
 word against its UXLC and MAM-simple readings, with inline WLC bracket-notes and

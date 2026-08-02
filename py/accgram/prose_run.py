@@ -4,7 +4,7 @@ Reads the canonical `-kq-u` Unicode source `out/wlc422-kq-u/`, transcodes
 each verse into per-book scanner-ready mark text (uni_to_marks, applying the genre
 filter so poetic books never reach the prose grammar), scans each verse into a token
 stream (prose_scanner), parses it into a tree (prose_ply_grammar), and writes one
-JSON record per verse to out/accgram/prose/wlc_422_ps_<bb>_ag.json (issue #20,
+JSON record per verse to out/accgram/prose/wlc_422_ps_<bb>_ag.json (issue wlc-utils#20,
 replacing the legacy bespoke indented-tree text).  Each record pairs the verse's
 ``input`` (pointed-Hebrew unicode + raw mark body + token stream) with the full parse
 ``tree`` -- so "how the input parses" is shown for every verse, not just the handful
@@ -296,7 +296,7 @@ def _load_dual_cant_mam() -> dict[str, dict] | None:
 def _fold_dual_cant_oddities(
     bb: str, wlc_index: dict[str, dict], mam_by_bcv: dict[str, dict] | None, parser
 ) -> list[dict[str, object]]:
-    """Detangled dual-cantillation oddity records to fold into book ``bb`` (issue #36).
+    """Detangled dual-cantillation oddity records to fold into book ``bb`` (issue wlc-utils#36).
 
     A dual-cant book's WLC dual verses are excluded from the normal scan; the detangler
     parses each strand's chanted verses and a genuine WLC dual-cant bug surfaces as an

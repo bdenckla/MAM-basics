@@ -1,9 +1,9 @@
 r"""Is a chanted word stressed on its last syllable?
 
-ONE QUESTION, NOT A PHONOLOGY LAYER.  Issue #48 wants syllabification, open-versus-closed
+ONE QUESTION, NOT A PHONOLOGY LAYER.  Issue wlc-utils#48 wants syllabification, open-versus-closed
 syllables and a short-versus-long vowel determination derived from the pointing, and it says
 plainly: do not build that from scratch, reuse ``../al-hatorah/py/aht_phon``.  This module does not
-build it.  It answers one question that needs none of what #48 is hard about -- no open/closed, no
+build it.  It answers one question that needs none of what wlc-utils#48 is hard about -- no open/closed, no
 short/long, no qamats gadol against qamats qatan: does the accent fall at or after the point where
 the chanted word's LAST syllable begins?  An impositive accent is written on the stressed syllable,
 so that question and "is this chanted word stressed on its last syllable" are the same question
@@ -14,7 +14,7 @@ the word, and a geresh is on it, we can assume that the word is finally stressed
 
 WHY NOT ``aht_phon`` ITSELF.  It cannot be imported here: a cross-repo import would need
 ``sys.path`` surgery, which this repo forbids outright, and al-hatorah is private besides.  What is
-importable is its OUTPUT, which is #48's second path -- and that is what
+importable is its OUTPUT, which is wlc-utils#48's second path -- and that is what
 ``py/tests/test_final_stress_vs_phonetic_mam.py`` does, checking every verdict this module reaches
 against Phonetic MAM's real stress model.  So the rule here is measured against the engine rather
 than standing in for it.

@@ -1,4 +1,4 @@
-r"""Extract the Unicode **mark sequence** the scanners consume (issue #9, Phase 2).
+r"""Extract the Unicode **mark sequence** the scanners consume (issue wlc-utils#9, Phase 2).
 
 The prose/poetic scanners (`prose_scanner` / `poetic_scanner`) read each verse
 as a stream of single-character *marks* -- one Unicode codepoint per accent
@@ -33,7 +33,7 @@ and `lexical_validation` actually read:
   key on).
 
 Parity with the Phase-1 outputs is verified by a zero-diff of the git-tracked
-``*_ag`` outputs (issue #9, Phase 2; prose became per-verse JSON in #20).
+``*_ag`` outputs (issue wlc-utils#9, Phase 2; prose became per-verse JSON in wlc-utils#20).
 """
 
 from __future__ import annotations

@@ -2,7 +2,7 @@
 
 Pins the exact byte output for Obadiah 1:2 — the simplest multi-level tree
 in the oracle — so any change to indentation, label format, leaf trailing-
-space (print_tree), or the JSON node shape (tree_to_obj, issue #20) is caught
+space (print_tree), or the JSON node shape (tree_to_obj, issue wlc-utils#20) is caught
 immediately.
 
 Run:
@@ -94,7 +94,7 @@ _OB_1_2_EXPECTED_OBJ = {
 
 
 def test_tree_to_obj_ob_1_2():
-    """tree_to_obj() nested-binary JSON image matches the pinned shape (issue #20)."""
+    """tree_to_obj() nested-binary JSON image matches the pinned shape (issue wlc-utils#20)."""
     assert tree_to_obj(_ob_1_2_tree()) == _OB_1_2_EXPECTED_OBJ
 
 

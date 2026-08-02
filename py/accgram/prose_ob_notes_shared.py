@@ -8,7 +8,7 @@ from py_html import wlc_utils_html
 # the repo writes precomposed (U+1E25).  Defining each term once here lets
 # the ob_notes_* modules interpolate the glyph (e.g. f"...{TIPEXA}...") instead
 # of embedding it inline.  The X in each name is the repo's ASCII stand-in for
-# het (TIPEXA -> "tipeXa" -> "tipe" + het + "a").  Issue #36 review follow-up.
+# het (TIPEXA -> "tipeXa" -> "tipe" + het + "a").  Issue wlc-utils#36 review follow-up.
 _XET = "ḥ"
 TAXTON = "ta" + _XET + "ton"
 TIPEXA = "tipe" + _XET + "a"

@@ -10,7 +10,7 @@ truth) and puts unreadable bare combining marks in quotes.  Two checks:
 
 This only guards `accent_marks.py`; textual fixtures elsewhere (note bodies,
 diff corpora) legitimately contain real Hebrew text and are out of scope. The
-tree-wide NFC/precomposed guard (#49) covers this file too, via
+tree-wide NFC/precomposed guard (wlc-utils#49) covers this file too, via
 `test_transliterations.py::test_no_decomposed_composites_tree_wide`.
 
 Run:

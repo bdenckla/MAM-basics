@@ -9,7 +9,7 @@ both zero matches and several matches raise, and that the one good case rewrites
 No network: ``replace_once`` is pure, which is why the safety check lives in it and not in the
 ``gh`` wrappers around it.
 
-BLESSED EXAMPLE-BASED BAND (issue #88).  Every test here pins a hand-picked string, which
+BLESSED EXAMPLE-BASED BAND (issue wlc-utils#88).  Every test here pins a hand-picked string, which
 ``doc/agent-planning-principles.md`` otherwise forbids.  Kept, because ``replace_once`` has no
 oracle to differ against and no decidable tree-wide property to sweep for: what it must refuse
 is three concrete situations, and naming them concretely is the only way to check that it still

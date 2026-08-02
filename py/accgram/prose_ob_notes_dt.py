@@ -15,7 +15,7 @@ from accgram.prose_ob_notes_shared import (
 
 BY_REF: dict[str, dict[str, object]] = {
     "dt 5:8": {
-        # Dual-cantillation detangling (issue #36). dt 5:8 is one of the two-reading
+        # Dual-cantillation detangling (issue wlc-utils#36). dt 5:8 is one of the two-reading
         # Decalogue verses excluded from the normal scan. WLC's "tangled" form for
         # תעשה carries only a merkha on the ש; a better LC transcription reads that
         # vertical bar as a meteg (belonging to the elyon) and supplies a qadma
@@ -88,7 +88,7 @@ BY_REF: dict[str, dict[str, object]] = {
             " unlikely original to WLC, but we have not confirmed that.",
         ],
         # The detangled focus word תעשה in each reading, across the three transcriptions
-        # (issue #36). One per-strand table replaces the old combined focus/diff table:
+        # (issue wlc-utils#36). One per-strand table replaces the old combined focus/diff table:
         # the merkha breaks both readings, but the two readings disagree on what is due
         # (taxton: a qadma; elyon: no accent, just a meteg), so splitting clarifies that
         # the elyon correction (merkha→meteg) is agreed by MAM and UXLC while only the

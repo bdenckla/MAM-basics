@@ -24,7 +24,7 @@ def _parse_one(bb: str, verse_line: str) -> tuple[list[str], str]:
     """Scan + parse a single verse; return (token types, rendered tree).
 
     The verse bodies are written in the legacy M-C encoding for readability and
-    converted to the Phase-2 mark alphabet here (issue #9).  `bb` is the WLC 2-char
+    converted to the Phase-2 mark alphabet here (issue wlc-utils#9).  `bb` is the WLC 2-char
     book code; here it only spells the human-readable reference (none of these
     verses is a has_legarmeh passage).
     """

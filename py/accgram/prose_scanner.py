@@ -3,7 +3,7 @@ r"""Hand-written scanner: reproduces the GG-state token stream of tnk2acc.l.
 Stage 1 / Phase D (full scanner including the four trailing-context rules).
 Handles the new-format verse structure (bookname -> chapter -> verse -> accent
 scan) and the complete GG-state accent table, including the four lex
-*trailing-context* rules that a generated lexer cannot express.  Phase 2 of issue #9
+*trailing-context* rules that a generated lexer cannot express.  Phase 2 of issue wlc-utils#9
 retired the Michigan-Claremont 2-digit-code alphabet: the rule table now matches
 directly over the Unicode mark alphabet (`accent_marks`), and the trailing-context
 digit classes are rebuilt onto it by `am.negated_class`.  The original M-C-code
@@ -80,7 +80,7 @@ _VERSE_RE = re.compile(r"^([1-9][0-9]*):([1-9][0-9]*)[ \t](.*)$")
 # Each entry: (compiled regex anchored at the scan position, token type or None).
 # token type None == "swallow" (consume, emit nothing).  The sentinel
 # "_LEGARMEH_OR_MUNAX" is resolved at emit time via has_legarmeh(location).
-# Trailing context is a lookahead so it is not consumed.  Phase 2 (issue #9) matches
+# Trailing context is a lookahead so it is not consumed.  Phase 2 (issue wlc-utils#9) matches
 # over the Unicode mark alphabet (accent_marks); the four trailing-context digit
 # classes are rebuilt onto it by `am.negated_class` (see that function).  TEXT keeps
 # a match within one maqaf/space-delimited atom.

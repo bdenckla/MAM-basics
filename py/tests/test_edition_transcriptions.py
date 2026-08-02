@@ -13,7 +13,7 @@ cases skip on a clean run, all of them that.  Nothing here skips on missing data
 strand JSON and all twelve transcriptions and their exports are committed under ``in/accgram``,
 so an absent one is a deleted tracked file and fails.  See ``wlc_paths.require_sibling``.
 
-TWO BLESSED EXAMPLE-BASED BANDS (issue #88).  Everything above is differential, but two bands
+TWO BLESSED EXAMPLE-BASED BANDS (issue wlc-utils#88).  Everything above is differential, but two bands
 are not, and ``doc/agent-planning-principles.md`` otherwise forbids the shape: the shorthand
 adapter (``hebrew_token``, ``aside_kind``, ``txt_lines``) and the chunk splitter
 (``written_accents``, ``editor_accents``, ``rejoin_editor_chunks``, ``_to_reference``).  Kept,
@@ -244,7 +244,7 @@ _EXPECTED_DIVERGENCES = {
     # plus the whole Sabbath stretch.  This transcription takes the m-trad side of every one it
     # reaches, so what is pinned below is the single place it agrees with NEITHER.
     #
-    # This comment said EIGHT until the 2026-07-25 claim audit, glossed as "issue #69 Result 6's
+    # This comment said EIGHT until the 2026-07-25 claim audit, glossed as "issue wlc-utils#69 Result 6's
     # five, plus the maqaf at לא תעשה, plus the stroke count" -- which is seven, and
     # double-counts, the stroke on אתה being one of the five.  Both counts are superseded: the
     # criterion and the decomposition are single-sourced in
@@ -290,8 +290,8 @@ _EXPECTED_DIVERGENCES = {
     # the repo: the identical 2-and-2 split, at these same positions, is already on record in the
     # sibling Tiqqun's simtiq_ex_elyon, the same reading in the other Feldheim edition.
     "simtan_ex_elyon": [],
-    # SimTan's Deuteronomy APPENDIX Decalogue (elyon, p. 351) -- the LAST of issue #69's
-    # fourteen, closing issue #72, and the fourth m-trad pin here.  It diverges NOWHERE: 164
+    # SimTan's Deuteronomy APPENDIX Decalogue (elyon, p. 351) -- the LAST of issue wlc-utils#69's
+    # fourteen, closing issue wlc-utils#72, and the fourth m-trad pin here.  It diverges NOWHERE: 164
     # reference tokens vs 164, agreeing at every accent, with all SEVEN pasoleg strokes on their
     # exact reference positions (16 פסל, 19 בשמים, 25 במים, 69 צוך, 79 שבת, 101 היית, 126 למען).
     #
@@ -877,8 +877,8 @@ def test_deuteronomy_taxton_pasoleg_is_transcribed_128_reference_127() -> None:
 
 
 # The kind of each U+05C0 stroke in each vendored strand, in reading order -- the distinction
-# the folded chanted_verses cannot express and the #74 re-vendor preserves in
-# faithful_chanted_verses.  These are the numbers issue #69's results turned on, now readable
+# the folded chanted_verses cannot express and the wlc-utils#74 re-vendor preserves in
+# faithful_chanted_verses.  These are the numbers issue wlc-utils#69's results turned on, now readable
 # from the strand's OWN reference rather than only cross-tradition from MAM-parsed-plus: the
 # elyon strands split 2 narrow paseq (פסל, בשמים) + N legarmeh (Deuteronomy adds צוך, היית,
 # למען to Exodus's במים, שבת), and each taxton has only legarmeh (ex one on אתה; ws/dt/taxton/printed
@@ -918,7 +918,7 @@ def test_vendored_reference_preserves_the_pasoleg_kinds(key: tuple) -> None:
     """The re-vendor kept legarmeh vs narrow-sense paseq, and it round-trips out of the file.
 
     ``reference_pasoleg_kinds`` reads the kind of each stroke from ``faithful_chanted_verses``;
-    pinning its result per strand is the direct check that the #74 re-vendoring vendored the
+    pinning its result per strand is the direct check that the wlc-utils#74 re-vendoring vendored the
     distinction faithfully.  It also proves the alignment the accessor asserts -- a stroke count
     that disagreed with the folded ``chanted_verses`` would raise before reaching this compare.
     """
@@ -941,7 +941,7 @@ def test_faithful_verses_fold_to_the_folded_chanted_verses() -> None:
         key = (version["book"], version["reading"], version["tradition"])
         assert faithful is not None, (
             f"{et.strand_name(key)}: no faithful_chanted_verses"
-            " -- re-vendor via printed_decalogue_fetch.py (issue #74)"
+            " -- re-vendor via printed_decalogue_fetch.py (issue wlc-utils#74)"
         )
         refolded = [pdf._fold_verse(fv) for fv in faithful]
         assert refolded == version["chanted_verses"], et.strand_name(key)
@@ -952,7 +952,7 @@ def test_faithful_verses_fold_to_the_folded_chanted_verses() -> None:
 # against the strand's own reference.  Koren does not distinguish the two (every stroke is
 # "unspecified"), so nothing is compared and the count is 0; the Simanim editions do, and every
 # one of their claims agrees with the reference (the mismatch list is empty for all).  This is
-# the concrete payoff of issue #74: the p-trad legarmeh/paseq is checkable against the p-trad's
+# the concrete payoff of issue wlc-utils#74: the p-trad legarmeh/paseq is checkable against the p-trad's
 # OWN reference, no longer only against glyph shape and a cross-tradition nod to MAM.
 _PASOLEG_KIND_ROUNDTRIP = {
     "koren_dt_elyon": 0,
@@ -1110,7 +1110,7 @@ def test_a_trailing_empty_band_is_dropped_per_page_and_an_interior_one_kept() ->
 
 
 # --------------------------------------------------------------------------- #
-# Through the prose grammar checker (issue #52)
+# Through the prose grammar checker (issue wlc-utils#52)
 # --------------------------------------------------------------------------- #
 # Everything above is a token-IDENTITY claim: which accents a page prints, whether they match
 # the strand, and whether a divergence leaves the disjunctive skeleton intact.  None of it says
@@ -1326,13 +1326,13 @@ def test_the_scanner_determines_every_stroke_kind_and_agrees_with_the_reference(
     """The scanner's POSITIONAL legarmeh call, stroke by stroke, against the vendored kind.
 
     Two independent determinations of the same fact: Wikisource's own ``{{מ:לגרמיה}}`` /
-    ``{{מ:פסק}}`` templates, vendored by #74, and the scanner's rule that a munax + stroke
+    ``{{מ:פסק}}`` templates, vendored by wlc-utils#74, and the scanner's rule that a munax + stroke
     before a revia is a legarmeh.  They agree at every stroke of every transcription.
 
     The agreement is expected rather than surprising -- legarmeh almost always precedes revia,
     and neither Decalogue holds an exception -- so what this pins is not a discovery but a
     capability: the determination exists for strokes whose EDITION states no kind, which is
-    what the four Koren stems are made of (see the test below).  It is #17's "distinguish by
+    what the four Koren stems are made of (see the test below).  It is wlc-utils#17's "distinguish by
     algorithm, encode only exceptions" as it applies to prose.
     """
     source = pd.load_source()
@@ -1356,7 +1356,7 @@ def test_the_scanner_determines_every_stroke_kind_and_agrees_with_the_reference(
 def test_the_scanner_supplies_the_stroke_kinds_koren_declines_to_state(
     stem: str,
 ) -> None:
-    """What the parser adds that #74 could not: a kind for a kind-agnostic edition.
+    """What the parser adds that wlc-utils#74 could not: a kind for a kind-agnostic edition.
 
     Koren has the vertical without saying which kind it is, so every one of its strokes is
     transcribed ``[pasoleg]`` -- kind unspecified, asserting nothing the book does not -- and

@@ -1,4 +1,4 @@
-"""Pin CTR's two Decalogues against the reference strands (issue #73).
+"""Pin CTR's two Decalogues against the reference strands (issue wlc-utils#73).
 
 CTR (The Complete Tanach with Rashi, chabad.org) is a VENDORED STRAND, not a hand
 transcription: digital, accent-exact Hebrew, compared at the GLYPH level because its encoding
@@ -14,7 +14,7 @@ against a re-fetch or a re-vendoring that would quietly change it:
 * CTR's Deuteronomy 5 is the taxton, division and all: thirteen spans, all with a silluq.
 
 Every residual difference from the followed strand is CONJUNCTIVE -- the disjunctive skeleton,
-which is what #69 claims survives, is intact in both books.
+which is what wlc-utils#69 claims survives, is intact in both books.
 
 Both vendored JSONs are committed here under ``in/accgram``, so these FAIL rather than skip if
 one is absent: the fetch scripts are how the file is regenerated, not a dependency a runner may
@@ -22,7 +22,7 @@ be missing, and a tracked file having been deleted is the last moment to go quie
 and ``load_source`` already raise naming the file, which is the whole of what a guard could say.
 See ``wlc_paths.require_sibling`` for the argument.
 
-ONE BLESSED EXAMPLE-BASED TEST (issue #88): ``clean_verse`` against a hand-built HTML string,
+ONE BLESSED EXAMPLE-BASED TEST (issue wlc-utils#88): ``clean_verse`` against a hand-built HTML string,
 the shape ``doc/agent-planning-principles.md`` otherwise forbids.  Kept, because the vendored
 JSON is already cleaned, so every differential check above runs downstream of the stripper and
 none of them would notice it regressing on markup that a re-fetch reintroduced -- the raw HTML

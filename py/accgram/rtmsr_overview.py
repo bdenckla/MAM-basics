@@ -188,7 +188,7 @@ def _build_body_contents(entries: list[_Entry]) -> tuple[object, ...]:
 def _render_verse_section(entry: _Entry, *, is_first: bool) -> object:
     # A dually-cantillated ungrammatical (dt 5:8) is laid out by reading -- its own section
     # builder emits both readings' verse lines, per-strand focus/diff tables, and parse
-    # trees -- so it bypasses the generic single-table / single-tree flow (issue #36).
+    # trees -- so it bypasses the generic single-table / single-tree flow (issue wlc-utils#36).
     if entry.row.get("dual_cant_readings"):
         items = list(
             rtms_report.render_dual_cant_section(

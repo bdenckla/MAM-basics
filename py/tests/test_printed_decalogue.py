@@ -1,4 +1,4 @@
-"""Issue #52: grammar-check the printed-tradition Decalogue accentuations.
+"""Issue wlc-utils#52: grammar-check the printed-tradition Decalogue accentuations.
 
 Feeds the eight vendored Decalogue readings ({Exodus, Deuteronomy} x {taxton, elyon} x
 {manuscript, printed}) through the prose grammar and pins the verdict, and then pins the
@@ -105,7 +105,7 @@ def test_total_ungrammatical_is_two() -> None:
 
 
 # --------------------------------------------------------------------------- #
-# The output file's transcriptions section (issue #52)
+# The output file's transcriptions section (issue wlc-utils#52)
 # --------------------------------------------------------------------------- #
 def test_the_transcriptions_section_records_every_page_against_its_strand() -> None:
     """The recorded verdict for the REAL editions, which is this issue's definition of done.

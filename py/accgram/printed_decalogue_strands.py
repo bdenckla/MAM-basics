@@ -4,9 +4,9 @@ of the Exodus Decalogue's opening אנכי...מצותי span, resolved live from
 This module is pure computation -- no HTML, no display/editorial vocabulary in its *return
 values* -- so both companion pages can depend on it without either depending on the other:
 
-  * ``printed_decalogue_page`` (issue #52) grammar-checks the printed vs manuscript Decalogue
+  * ``printed_decalogue_page`` (issue wlc-utils#52) grammar-checks the printed vs manuscript Decalogue
     accentuations and now also lays out the four strands as a styled range table.
-  * ``printed_decalogue_simanim_page`` (issue #62) documents Simanim's Tiqqun as an independent
+  * ``printed_decalogue_simanim_page`` (issue wlc-utils#62) documents Simanim's Tiqqun as an independent
     printed-tradition edition and links back to the four-strands table on the main page.
 
 Each of the four Exodus readings (m-trad / p-trad x taḥton / elyon) is read from
@@ -41,7 +41,7 @@ English sentence with a Hebrew word.
   Verbatim quoted source Hebrew (e.g. ``בלא טעם עליון``) keeps whatever it says.  This is a
   cross-repo rule (cf. MAM-basics ``py/versification_and_cantillation/doc.py``).
 * Prefer "**cantillation**" to "accentuation".
-* **Never a loose "word": say "atom" or "chanted word" where one of them is meant** (issue #81).
+* **Never a loose "word": say "atom" or "chanted word" where one of them is meant** (issue wlc-utils#81).
   An ATOM is one written word, the thing a maqaf joins to the next; a CHANTED WORD is either a
   lone atom or a whole maqaf compound -- the unit cantillation operates on, normally bearing one
   accent.  Two of the Shabbat commandment's three signal words are compounds, and על־פני is one,
@@ -82,7 +82,7 @@ English sentence with a Hebrew word.
   compound the two sides emit the same two tokens, so a zero-divergence result is not evidence of
   no difference.  (That blindness is a gap
   now that the scale above counts such a difference; making maqaf a token of its own is issue
-  #75.)  And the POINTING: the two תחתון strands part at תרצח in a vowel and nothing
+  wlc-utils#75.)  And the POINTING: the two תחתון strands part at תרצח in a vowel and nothing
   else, qamats m-trad against patax p-trad on the same tipexa, which the diff cannot see in either
   book.  The scoped phrasing costs one word and is true; the bare one was already false once (the
   Koren Deuteronomy appendix row, 2026-07-25 claim audit finding 3).  Where a vowel or a maqaf HAS
@@ -102,7 +102,7 @@ English sentence with a Hebrew word.
   (``gh-pages/style.css``; matching the MAM-simple island, which italicizes every such term).
   The pages do the wrapping, not this module -- each aliases the ``ROM_*`` strings through
   ``py_html.my_html_span_romanized.rmn`` ONCE at module level, so every prose site is styled
-  without a per-site call (settled as issue #65, finding C2).  This is why the wrapped aliases
+  without a per-site call (settled as issue wlc-utils#65, finding C2).  This is why the wrapped aliases
   are HTML nodes, not strings, and so cannot be interpolated into an f-string -- splice them
   into a contents tuple instead.  Book/apparatus terms (Tiqqun, ḥumash, Keter, qere/ketiv,
   pisqa) are NOT accent names and stay unwrapped; so does the ``pashta_phrase`` code identifier,
@@ -146,7 +146,7 @@ English sentence with a Hebrew word.
   contexts, where ASCII romanization survives and a bidirectional Hebrew run does not; and an
   attribute is no place to mix alphabets.  So the trio's hover/screen-reader text being romanized
   while its prose is Hebrew-lettered is a deliberate asymmetry, NOT an inconsistency to clean up
-  (settled as issue #65, finding T1).  Recorded here because it keeps getting re-litigated.
+  (settled as issue wlc-utils#65, finding T1).  Recorded here because it keeps getting re-litigated.
 
   **There are exactly TWO exempt registers: attributes and internal keys.**  Compact *notation*
   in visible prose is NOT a third one -- an axis gloss like ``(two books x TAHTON/ELYON x
@@ -184,7 +184,7 @@ ROM_MAQAF = "maqaf"
 ROM_LEGARMEH = "legarmeh"
 ROM_PASEQ = "paseq"
 # The Shabbat-commandment accents: these fall outside the אנכי…עבדים span _ACCENT_NAMES derives,
-# and are named only in the Koren page's Deuteronomy prose (issue #66) and the Simanim page's
+# and are named only in the Koren page's Deuteronomy prose (issue wlc-utils#66) and the Simanim page's
 # Shabbat scope note, where the p-trad/m-trad also diverge -- on the three signal words, p-trad
 # geresh/revia/zaqef qatan against m-trad pazer/telisha gedolah/revia.
 ROM_GERESH = "geresh"
@@ -205,11 +205,11 @@ ROM_GERSHAYIM = "gershayim"
 # syllable.  Named only where that page explains the abbreviated cell; the trio never needs it,
 # and it is NOT a synonym to reach for -- see that explanation for why.
 ROM_AZLA = "azla"
-# Named only in the Simanim page's Simanim *Tanakh* verdict table (issue #69, Result 8), for the
+# Named only in the Simanim page's Simanim *Tanakh* verdict table (issue wlc-utils#69, Result 8), for the
 # one divergence that agrees with neither תחתון strand: a qadma on ויום where every תחתון strand
 # has a pashta.
 ROM_QADMA = "qadma"
-# Named in the Simanim page's grammaticality prose (issue #52): p. 246 has accents on both atoms
+# Named in the Simanim page's grammaticality prose (issue wlc-utils#52): p. 246 has accents on both atoms
 # of לא־תעשה, and its munax on the joined לא -- where every taxton strand has a meteg and no
 # accent, and every elyon strand has לא as a free chanted word with a munax of its own -- makes
 # one conjunctive too many before the pashta.  The same munax one chanted verse earlier, before a
@@ -222,7 +222,7 @@ ROM_TEVIR = "tevir"
 # Named only on the maqaf-nonfinal-accents page: the secondary mahapakh of ITM §241 is the last
 # entry of Yeivin's prose closed list, which that page prints in full.  A ``ROM_OLEH_WEYORED``
 # stood beside it for that page's poetic section and went when the section was cut back to a
-# single paragraph (issue #83) -- add it back if the oleh-we-yored is ever named in prose again.
+# single paragraph (issue wlc-utils#83) -- add it back if the oleh-we-yored is ever named in prose again.
 ROM_MAHAPAKH = "mahapakh"
 # Named in the verdict cells that state a maqaf difference from both sides: where an edition binds
 # an atom its Wikisource strand leaves free, the accent the strand has on that free atom is a
@@ -369,7 +369,7 @@ SHABBAT_SIGNAL_SHORTHAND = (
 # accent -- and the honest fix is that those were never two facts.  One atom's marking changed.
 # So: one scale, maqaf at the bottom of it, each difference counted once at the atom it sits on.
 #
-# WHY IT NAMES ATOMS AND CHANTED WORDS (issue #81).  A maqaf sits on an ATOM and joins it to the
+# WHY IT NAMES ATOMS AND CHANTED WORDS (issue wlc-utils#81).  A maqaf sits on an ATOM and joins it to the
 # next; what the two of them become is one CHANTED WORD.  An earlier wording called both of those
 # "the word", so the one sentence that exists to draw the distinction used a single noun for both
 # sides of it.  This is also the trio's introduction of "atom" to the reader -- the appositive

@@ -1,8 +1,8 @@
-r"""The grammaticality column both satellite verdict tables carry (issue #52).
+r"""The grammaticality column both satellite verdict tables carry (issue wlc-utils#52).
 
 ``printed_decalogue_simanim_page`` and ``printed_decalogue_koren_page`` each render a
 per-Decalogue verdict table saying how far a printed Decalogue follows the Wikisource strand it
-was diffed against (issue #69).  That is a token-IDENTITY claim.  This module supplies those
+was diffed against (issue wlc-utils#69).  That is a token-IDENTITY claim.  This module supplies those
 tables' last column, which asks the different question this repo's printed-Decalogue work started
 from: fed through accgram's prose checker, is what the page prints GRAMMATICAL -- and is it as
 grammatical as the Wikisource strand it follows?  ``transcription_parse`` computes the verdicts;
@@ -27,7 +27,7 @@ the pages say that without qualification: it is a fact about the accent sequence
 artifact of this checker, and one an internal study of the edition would reach on its own, since
 the rest of that edition's accentuation is grammatical.  It does NOT say the edition is in
 error, or that the passage should not be chanted as printed; the pages must not say either.  A
-clean rate is not the objective (issue #52).
+clean rate is not the objective (issue wlc-utils#52).
 """
 
 from __future__ import annotations

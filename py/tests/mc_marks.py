@@ -1,5 +1,5 @@
 """Test helper: convert a legacy Michigan-Claremont accent body into the Unicode
-mark body the Phase-2 scanners consume (issue #9).
+mark body the Phase-2 scanners consume (issue wlc-utils#9).
 
 Several scanner/grammar regression tests pin behaviour with real verse bodies that
 were originally written in the M-C 2-digit-code encoding.  Rather than hand-rewrite
@@ -64,5 +64,5 @@ _CODE_RE = re.compile(r"\d\d")
 
 
 def mc_to_marks(mc: str) -> str:
-    """Substitute every 2-digit M-C code in ``mc`` with its mark (issue #9, Phase 2)."""
+    """Substitute every 2-digit M-C code in ``mc`` with its mark (issue wlc-utils#9, Phase 2)."""
     return _CODE_RE.sub(lambda m: _MAP[m.group()], mc)

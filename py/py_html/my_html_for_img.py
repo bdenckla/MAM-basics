@@ -110,12 +110,12 @@ def scan_figure(
 
     Every ``alt`` passed here names the strands in ROMANIZED form ("taxton"/"elyon")
     while the figcaption beside it uses Hebrew letters. That is deliberate, not
-    drift: attribute contexts are exempt by design (issue #65, finding T1) -- see
+    drift: attribute contexts are exempt by design (issue wlc-utils#65, finding T1) -- see
     printed_decalogue_strands' module docstring.
     """
     # No inline style here: gh-pages/style.css already declares `img { max-width: 100% }` and
     # `figure img { height: auto }`, so an inline copy only duplicated the stylesheet and
-    # outranked it (issue #65, finding C4b). Don't reintroduce it.
+    # outranked it (issue wlc-utils#65, finding C4b). Don't reintroduce it.
     img_attr = {"src": src, "alt": alt, "class": img_class}
     if width:
         img_attr["width"] = width

@@ -1,5 +1,5 @@
 """Map each dually-cantillated passage verse to its detangled per-strand readings,
-for the goerwitz verse display (issue #36).
+for the goerwitz verse display (issue wlc-utils#36).
 
 For a verse in one of the three dually-cantillated prose loci (Gen 35:22 and the two
 Decalogues), the goerwitz report replaces the single combined WLC verse line with one
@@ -19,7 +19,7 @@ material is de-emphasized, spotlighting the 5:8 part where the ungrammatical liv
 ASCII label, which spells it "x"), per the repo transliteration standard.
 
 The heavy ``tree`` / ``word_leaf_counts`` fields are dropped from serialized research
-artifacts via :func:`without_heavy_reading_fields` (issue #44): they live canonically in
+artifacts via :func:`without_heavy_reading_fields` (issue wlc-utils#44): they live canonically in
 ``out/accgram/dual-cant/_dual_cant.json``, and the goerwitz HTML renders from the in-memory
 rows, which keep them.
 """
@@ -38,7 +38,7 @@ _BCV_RE = re.compile(r"(\d+):(\d+)$")
 
 # The heavy parse tree + its per-word leaf counts live canonically in
 # out/accgram/dual-cant/_dual_cant.json; drop them from serialized research artifacts
-# (the goerwitz HTML renders from the in-memory rows, which keep these). Issue #44.
+# (the goerwitz HTML renders from the in-memory rows, which keep these). Issue wlc-utils#44.
 _HEAVY_READING_FIELDS = ("tree", "word_leaf_counts")
 
 

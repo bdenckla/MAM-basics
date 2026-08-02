@@ -1,4 +1,4 @@
-r"""Detangle WLC's dually-cantillated prose passages into two single-cant streams (#36).
+r"""Detangle WLC's dually-cantillated prose passages into two single-cant streams (wlc-utils#36).
 
 WLC 4.22 has three prose loci where each chanted word can have *two* accents
 -- the two readings (תחתון / עליון in the Decalogues, פשוטה / מדרשית in Gen 35:22) merged
@@ -8,7 +8,7 @@ guided by MAM-simple's already-separated ``cant-alef`` / ``cant-bet`` strands, i
 WLC's accents into a ``wlc-alef`` and a ``wlc-bet`` stream, each ordinary single
 cantillation that the existing prose checker parses.
 
-A NOTE ON "WORD" IN THIS MODULE (issue #81).  Below the docstring, ``word`` always means one
+A NOTE ON "WORD" IN THIS MODULE (issue wlc-utils#81).  Below the docstring, ``word`` always means one
 WLC vel -- that is, one ATOM, since WLC tokenizes a maqaf compound as two vels.  The alignment,
 the accent assignment and the ``SuppliedMark`` / ``Anomaly`` records are all per atom.  Where a
 claim is really about the CHANTED word (an atom or a whole maqaf compound, the unit an accent
@@ -20,7 +20,7 @@ reading carves the text into its own chanted verses that span or subdivide the n
 verses (the elyon reading chants Exod 20:8-11 as one chanted verse; the taxton reading
 makes each its own).  We segment strictly by each strand's own sof pasuq.
 
-Design (all four points verified against the data, see issue #36):
+Design (all four points verified against the data, see issue wlc-utils#36):
 
 * **Accents come from WLC; MAM is only the oracle** for which accent belongs to which
   strand and where each strand's chanted verses break.  The emitted accent on a word is WLC's

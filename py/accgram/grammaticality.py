@@ -1,7 +1,7 @@
-r"""A continuous notion of "grammaticality": a PCFG over the parse trees (issue #11).
+r"""A continuous notion of "grammaticality": a PCFG over the parse trees (issue wlc-utils#11).
 
 The checkers give a *binary* verdict -- a verse parses (clean), parses with an
-ERROR-leaf recovery (ungrammatical), or dead-ends (no_parse).  Issue #11 asks for a
+ERROR-leaf recovery (ungrammatical), or dead-ends (no_parse).  Issue wlc-utils#11 asks for a
 *continuous* companion: among the grammatical verses, which configurations are
 common and which are rare-but-legal?  That is exactly the log-likelihood of a
 verse under a probabilistic grammar estimated from the corpus.

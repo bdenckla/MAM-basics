@@ -67,7 +67,7 @@ def parse_verse_tree(
 
 
 def error_tree_from_obj(tree_obj: dict | None) -> ErrorTree | None:
-    """Build an ``ErrorTree`` from a ``tree.tree_to_obj`` nested dict (issue #20).
+    """Build an ``ErrorTree`` from a ``tree.tree_to_obj`` nested dict (issue wlc-utils#20).
 
     Each node dict carries a ``label``; an internal node has ``children`` (a
     nested ``tree_to_obj`` image), a leaf node has ``leaves`` (a list of

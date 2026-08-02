@@ -92,7 +92,7 @@ _TEXT = am.TEXT  # within one maqqef/space-delimited atom (as in prose)
 _TSINNORIT_ATOM_TAIL = r"[^ \r\n֑-֮-]*"
 
 # silluq right context (as in prose prose_scanner): meteg/silluq immediately before
-# sof pasuq, rebuilt over the mark alphabet (issue #9, Phase 2).
+# sof pasuq, rebuilt over the mark alphabet (issue wlc-utils#9, Phase 2).
 _SILLUQ_LA = r"(?=" + am.negated_class(" \r\n-?~", "379") + r"*" + am.SOF_PASUQ + r")"
 
 # Verse-structure line pattern, as in accgram.prose_scanner.scan_book: a verse line
@@ -192,7 +192,7 @@ _POETIC_GG_RULES: list[tuple[re.Pattern[str], str | None]] = [
     # Both shapes fuse to the one OLEH_WEYORED disjunctive -- the merkha is the yored, not a
     # servus.  Without the same-letter rule MAM's merkha+ole would fall through to the bang
     # guard and be flagged merkha!ole -> NO_PARSE; this keeps the checker faithful to a wider
-    # range of texts (issue #42) while leaving WLC 4.22 output unchanged (the rule never fires
+    # range of texts (issue wlc-utils#42) while leaving WLC 4.22 output unchanged (the rule never fires
     # there).  The MERKHA+OLE rule must precede both the bare MERKHA servus rule and the bang
     # guard, which it does (longest-match ties to the bang guard but wins by earlier order).
     (re.compile(am.OLE + _TEXT + am.MERKHA), pan.OLEH_WEYORED),

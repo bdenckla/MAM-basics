@@ -13,10 +13,10 @@ WLC's legarmeh and MAM's oleh-we-yored sit on different chanted words).  The dis
 skeleton remains the persisted datum and the table on the page; only the human-
 readable summary uses the chanted-word alignment.
 
-CHANTED WORD, NOT ATOM (issue #81).  The unit here is the maqaf compound where there is one
+CHANTED WORD, NOT ATOM (issue wlc-utils#81).  The unit here is the maqaf compound where there is one
 -- Job 31:15's clause names הלא־בבטן whole, never a bare בבטן -- because that is the unit a
 divider sits on.  ``_wlc_chanted_words`` builds it by joining each maqaf-terminated atom to
-the atom after it; this module said "accent-word" for the same thing before #81.
+the atom after it; this module said "accent-word" for the same thing before wlc-utils#81.
 
 The WLC side pairs the wlc422 Unicode letters (the shared alignment key, grouped
 into chanted words) with the M-C scanner's resolved disjunctives; the MAM side comes

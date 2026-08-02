@@ -1,4 +1,4 @@
-"""Place CTR's two Decalogues among the idealized strands -- the #69 question, for a DIGITAL
+"""Place CTR's two Decalogues among the idealized strands -- the wlc-utils#69 question, for a DIGITAL
 edition rather than a hand transcription.
 
 CTR (``ctr_decalogue_fetch.py``) is a VENDORED STRAND: digital, accent-exact Hebrew, so its
@@ -36,11 +36,11 @@ pasuq at every numbered verse".  That is both off-subject and false.  Off-subjec
 pages and this comparison are about chanted verse structure only, numbering being a different
 concept (Ben, 2026-07-24).  False because Exodus 20:13 holds FOUR sof pasuqs, which is exactly
 where three of the sixteen come from -- ``sof_pasuq_spans`` below says so, and the file
-contradicted itself for as long as both texts stood.  Issue #69's Result 11 carried the same
+contradicted itself for as long as both texts stood.  Issue wlc-utils#69's Result 11 carried the same
 phrasing and was corrected with this.
 
 WHY THE COMPARISON IS AT THE GLYPH LEVEL, NOT THE ACCENT LEVEL.  The eight paper Decalogues of
-#69 were HAND transcriptions: a reader resolved each mark to an accent, distinguishing a qadma
+wlc-utils#69 were HAND transcriptions: a reader resolved each mark to an accent, distinguishing a qadma
 from a pashta or a yetiv from a mahapakh by grammar and position -- a distinction the two
 members of each pair do NOT draw graphically.  CTR gives no such reading.  Worse, its encoding
 is nonstandard (see MAM-basics' review of CTR, ``rocc_2_pre_vowel_accents_in_ctr``): it reuses
@@ -56,7 +56,7 @@ chanted-verse boundaries) are not lookalike pairs, so folding the pairs leaves e
 discriminator intact.  What the fold gives up is exactly the azla-vs-pashta and
 mahapakh-vs-yetiv distinction CTR could not have expressed anyway.
 
-WHAT THE VERDICT CLAIMS.  Only what #69 says survives every transcription -- the chanted-verse
+WHAT THE VERDICT CLAIMS.  Only what wlc-utils#69 says survives every transcription -- the chanted-verse
 boundaries plus the disjunctive skeleton -- read at the glyph level.  CTR's marks agree with
 ex/elyon (Exodus) and dt/taxton (Deuteronomy) at all but a few words, and every disagreement is
 CONJUNCTIVE: a munax CTR has on a non-final atom of a maqaf compound where the strand has a
@@ -64,7 +64,7 @@ meteg, or a munax/merkha swap.  None touches a disjunctive.  The cross-strand re
 comparison against the OTHER tradition -- is where the evidence is: agreement collapses, which is
 what rules out the clean match being an artifact of the fold.
 
-ONE SCALE HERE TOO, AND THE MAQAFS AGREE (issue #76).  A maqaf sits at the bottom of the same
+ONE SCALE HERE TOO, AND THE MAQAFS AGREE (issue wlc-utils#76).  A maqaf sits at the bottom of the same
 scale as the accents rather than in a ledger of its own -- it has the weakest SEPARATING force
 there is, which is the opposite of being loose, since a maqaf binds its two atoms tightest.
 (``printed_decalogue_strands``' ``MAQAF_IS_THE_LAST_RUNG`` states this to the reader, and its
@@ -174,7 +174,7 @@ def sof_pasuq_spans(ctr: dict, book: str) -> list[str]:
 def word_glyphs(word: str) -> tuple[str, ...]:
     """One pointed CHANTED word -> its accent GLYPHS in order, lookalike pairs folded, repeats
     collapsed.  (Chanted word, not atom: ``_flat`` splits on whitespace, so a maqaf compound
-    arrives whole and both its atoms' accents are counted here -- issue #81.)
+    arrives whole and both its atoms' accents are counted here -- issue wlc-utils#81.)
 
     A doubled postpositive (the accent written at the chanted word's edge and again on the stressed
     syllable) is one glyph, as in ``_accent_tokens``.  A meteg/silluq (U+05BD) is not an accent
@@ -249,7 +249,7 @@ def _flat(verses: list[str]) -> list[tuple[str, tuple[str, ...]]]:
     """(consonant skeleton, glyph tuple) per chanted word across a reading's spans.
 
     Splitting on whitespace really does give CHANTED words, not atoms: a maqaf compound has
-    no space in it, so it comes through whole (issue #81)."""
+    no space in it, so it comes through whole (issue wlc-utils#81)."""
     return [(pds.base_skeleton(w), word_glyphs(w)) for v in verses for w in v.split()]
 
 

@@ -1,4 +1,4 @@
-"""Issue #62: the Simanim-Decalogue page (printed-decalogue-simanim.html).
+"""Issue wlc-utils#62: the Simanim-Decalogue page (printed-decalogue-simanim.html).
 
 The four cantillation strands of the opening אנכי…מצותי span are derived live from the vendored
 ``in/accgram/printed_decalogue_teamim.json`` by the shared ``printed_decalogue_strands`` module:
@@ -70,7 +70,7 @@ def test_body_renders() -> None:
 
     It needs the grammar-check results again, and for a different reason than it once did: not to
     tabulate the strands (that moved to the companion page) but because each verdict table's last
-    column states a transcription's verdict against its Wikisource strand's (issue #52). A row
+    column states a transcription's verdict against its Wikisource strand's (issue wlc-utils#52). A row
     naming a stem
     with no committed transcription fails here, on the lookup.
     """

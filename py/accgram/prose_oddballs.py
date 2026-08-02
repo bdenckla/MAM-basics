@@ -12,7 +12,7 @@ _REF_TAIL_RE = re.compile(r"(\d+):(\d+)\s*$")
 def _collect_ungrammatical_refs(output_path: Path) -> set[tuple[int, int]]:
     """The (chapter, verse) of every ungrammatical verse in one book's JSON output.
 
-    Reads the ``wlc_422_ps_<bb>_ag.json`` record set (issue #20) and selects the
+    Reads the ``wlc_422_ps_<bb>_ag.json`` record set (issue wlc-utils#20) and selects the
     verses flagged as ungrammatical by their ``status`` -- replacing the prior scan
     for an ERROR token in the bespoke indented-tree text.
     """

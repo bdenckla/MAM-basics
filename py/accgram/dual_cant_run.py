@@ -1,4 +1,4 @@
-r"""Driver for the dual-cantillation detangler (issue #36).
+r"""Driver for the dual-cantillation detangler (issue wlc-utils#36).
 
 Runs the detangler over the three dually-cantillated prose loci (Gen 35:22 and the two
 Decalogues) and writes the full detangled readings to

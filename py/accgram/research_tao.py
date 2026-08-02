@@ -150,7 +150,7 @@ def run(args: argparse.Namespace) -> None:
     )
 
     # Dually-cantillated ungrammatical (only dt 5:8 today) show their detangled per-strand
-    # readings in place of the combined verse line (issue #36).
+    # readings in place of the combined verse line (issue wlc-utils#36).
     dual_cant_readings_by_bcv = dual_cant_readings.load_readings_by_bcv(
         args.wlc422_kq_u_dir, args.mam_simple_dir
     )

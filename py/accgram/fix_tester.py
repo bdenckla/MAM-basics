@@ -298,7 +298,7 @@ def _test_one(
         )
 
     wlc422_by_bcv, uxlc_by_bcv, mam_simple_by_bcv = source_indexes
-    # The scanned body is transcoded from the canonical -kq-u verse (issue #9: M-C
+    # The scanned body is transcoded from the canonical -kq-u verse (issue wlc-utils#9: M-C
     # dropped as an input), not read from the ungrammatical row's stored content.
     raw_verse = wlc422_by_bcv.get(bcv)
     body = uni_to_marks.verse_to_marks(raw_verse) if isinstance(raw_verse, dict) else ""

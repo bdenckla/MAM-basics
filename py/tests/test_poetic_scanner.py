@@ -21,7 +21,7 @@ from accgram.poetic_scanner import scan_verse
 from tests.mc_marks import mc_to_marks
 
 # The fixtures are written in the legacy M-C encoding (checked by hand against the
-# accent table) and converted to the Phase-2 mark alphabet here (issue #9).
+# accent table) and converted to the Phase-2 mark alphabet here (issue wlc-utils#9).
 
 
 def _types(body):
@@ -272,7 +272,7 @@ def test_whitelisted_pairs_not_flagged():
 
 
 def test_same_letter_oleh_weyored_fuses_not_banged():
-    # Issue #42: MAM stacks oleh-we-yored on ONE base letter (stress word-initial), stored
+    # Issue wlc-utils#42: MAM stacks oleh-we-yored on ONE base letter (stress word-initial), stored
     # merkha-THEN-ole (e.g. Ps 30:12 לִ֥֫י), where WLC 4.22 writes it cross-letter (ole on
     # the pre-stress letter, yored merkha on the stress letter -- 0 same-letter in WLC).
     # The same-letter merkha+ole must fuse to the one OLEH_WEYORED disjunctive, not fall

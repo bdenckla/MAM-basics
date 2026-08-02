@@ -17,7 +17,7 @@ class WriteCtx:
     add_wbr: bool = False
     html_comment: Union[str, None] = None
     # When set, the <body> gets class="centered-page": the content column is centered on the
-    # page and wide tables break out of the text measure but stay centered (issue #57).
+    # page and wide tables break out of the text measure but stay centered (issue wlc-utils#57).
     centered: bool = False
 
 

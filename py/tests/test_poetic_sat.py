@@ -1,4 +1,4 @@
-"""Unit tests for the poetic SAT focus-word table logic (issue #10).
+"""Unit tests for the poetic SAT focus-word table logic (issue wlc-utils#10).
 
 poetic_sat builds the genuine goerwitz SAT table for the poetic page. These pin
 the two pieces that decide what it shows: the verse-final focus guard

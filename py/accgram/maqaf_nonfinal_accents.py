@@ -33,7 +33,7 @@ matters, so every hit is sorted into one of two routes:
   there, so the pair reads as a kind of tipexa rather than as the accent's own name.  Mayela is
   to tipexa as metigah is to qadma, and nobody writes "metigah qadma".)
   ``_NAMED_CONFIGURATIONS`` is that list, plus one pair no section of his names --
-  ``(MERKHA, SILLUQ)``, whose own label records that (issue #86).
+  ``(MERKHA, SILLUQ)``, whose own label records that (issue wlc-utils#86).
   ``chanted_word_accents`` transcribes the same sections
   in full, with Yeivin's own wording and his closed verse lists, and checks them against a wider
   measurement that counts atomic chanted words too; the table here is the subset this survey's
@@ -73,7 +73,7 @@ route-(b) hit for §293's claim to be tested on either way.
 WHERE THE STRESS FALLS is a second measurement, and a narrow one.  The ``*_final_stress_by_pair``
 fields say, of each pair whose accent written last is written on the stress, how many of its
 chanted words are stressed on their last syllable.  ``final_stress`` is the rule, and its docstring
-says why counting nuclei answers this without any of the phonology issue #48 is about.
+says why counting nuclei answers this without any of the phonology issue wlc-utils#48 is about.
 
 WHAT THE SURVEY IS A SURVEY OF, which bounds every number it produces.  ``out/wlc422-kq-u`` is the
 Westminster transcription of L.  ``in/UXLC-39`` is NOT a second manuscript -- its own header
@@ -90,7 +90,7 @@ and in poetic verses the maqaf after a secondary mark is customarily left unwrit
 still counts as joined -- so a scan of written maqafs alone reaches only part of the poetic
 phenomenon.  MAM's answer to that is the gray maqaf (מקף אפור), its mark for a maqaf the
 manuscript leaves unwritten where the chanted word needs one, and MAM-simple has all 116 of them
-as ``implicit-maqaf`` nodes, which ``mam_simple_verse`` puts on the atom before (issue #91).  Ben,
+as ``implicit-maqaf`` nodes, which ``mam_simple_verse`` puts on the atom before (issue wlc-utils#91).  Ben,
 2026-07-31, on what the survey then counts: a gray maqaf is a maqaf.  That took MAM's poetic hits
 from 17 to 130, while WLC's and UXLC's, those texts having no such mark, stay floors -- so MAM's
 poetic figure is incomparable with theirs on top of no poetic figure being comparable with a prose
@@ -100,9 +100,9 @@ one.
 NOT because MAM-simple lacks it: the two agree exactly, 116 occurrences in the same verses, none
 outside Psalms, Proverbs and Job, and MAM-basics maps the ``מ:מקף אפור`` template to the
 ``implicit-maqaf`` node (``../MAM-basics/py/foi/foiz_wt_rare_tmpls.py``).  Two wrong claims fell at
-issue #91 and neither should come back.  This docstring and the tracked JSON's ``source`` string
+issue wlc-utils#91 and neither should come back.  This docstring and the tracked JSON's ``source`` string
 both said MAM-simple DROPS the mark, which is what sent the survey to a second corpus for it.  And
-the replacement #91 itself proposed -- that what MAM-simple drops is a seven-way kind distinction
+the replacement wlc-utils#91 itself proposed -- that what MAM-simple drops is a seven-way kind distinction
 MAM-parsed-plus keeps -- is wrong the same way: the ``מ:מקף אפור`` template carries no parameters
 at all, so the doctrine's seven types (Breuer, Chapter 9 §§18-36, set out in MAM's Wikisource
 introduction, authored at ``../MAM-basics/py/author_misc/
@@ -159,15 +159,15 @@ _STRIPPED_FOR_KEY = frozenset((METEG, PASEQ, SOF_PASUQ, NUN_HAFUKHA))
 #
 # Two citations were wrong until 2026-07-28, both settled by reading the full OCR at
 # ``../masorah-books/books/itm/md-export-of-docx/`` -- that repo was ``yeivin-itm`` until it was
-# renamed on 2026-07-31 (issue #86, which holds the Yeivin-inventory questions;
-# #82, cited here at first, is about his two Deuteronomy 33 maqaf readings instead).
+# renamed on 2026-07-31 (issue wlc-utils#86, which holds the Yeivin-inventory questions;
+# wlc-utils#82, cited here at first, is about his two Deuteronomy 33 maqaf readings instead).
 # Merkha-tevir is §253, ``Merka-tevir and the
 # Servi of Tevir``, not §§233/241.  And §241 pairs a secondary mahapakh with PASHTA, not with
 # tevir -- which is why the ``(MAHAPAKH, TEVIR)`` entry it licensed had never fired in any corpus,
 # in either genre, since the survey was written.  A third citation fell on 2026-07-30:
 # ``(MERKHA, SILLUQ)`` borrowed §233 too, and §233 is tipexa-only -- no section of ITM names a
 # secondary merkha in the silluq's chanted word (§209 gives the silluq one conjunctive and no
-# secondary), so that entry's label now says so rather than citing a section (issue #86 again).
+# secondary), so that entry's label now says so rather than citing a section (issue wlc-utils#86 again).
 _NAMED_CONFIGURATIONS: dict[tuple[str, str], str] = {
     (am.QADMA, am.ZAQEF_QATAN): "metigah-zaqef (ITM §224)",
     (am.MUNAX, am.ZAQEF_QATAN): "munax-zaqef (ITM §221)",
@@ -177,7 +177,7 @@ _NAMED_CONFIGURATIONS: dict[tuple[str, str], str] = {
     (
         am.MERKHA,
         SILLUQ,
-    ): "secondary merkha in the silluq's chanted word (no ITM section names it; issue #86)",
+    ): "secondary merkha in the silluq's chanted word (no ITM section names it; issue wlc-utils#86)",
     (am.MERKHA, am.TEVIR): "secondary merkha in the tevir's chanted word (ITM §253)",
     (
         am.MAHAPAKH,
@@ -219,7 +219,7 @@ SIMPLE_EXCL_STRESS_HELPER = "a stress-helper pair: one accent written twice"
 # ``accent_marks`` spells these two constants after the poetic sense, where the tsinnorit and
 # the tsinnor are distinct accents; ``mb_cmn`` has the honest names, ZSH_OR_TSIT and Z_OR_TSOR.
 # Renaming them in ``accent_marks`` would reach the poetic scanner and its tests, so it is left
-# to issue #85 and aliased here, at the one place in this module that reads them as prose.  The
+# to issue wlc-utils#85 and aliased here, at the one place in this module that reads them as prose.  The
 # ``_ACCENT_SHORTHAND`` table below deliberately does NOT follow: its "tsit" and "tsor" label
 # poetic rows too, where the poetic names are the right ones.
 _ZARQA_HELPER = am.TSINNORIT  # U+0598
@@ -303,7 +303,7 @@ def _join_on_maqaf(atoms: list[str]) -> list[str]:
     Mirrors ``uni_to_marks.verse_to_marks``' boundary logic, which is what makes a maqaf
     compound one chanted word here as it is there.  Every ``words``-named local and every
     ``[word, ...]`` value in this module is a list of chanted words in this sense; the
-    identifiers keep the shorter name, as the #81 sweep left the repo's others.
+    identifiers keep the shorter name, as the wlc-utils#81 sweep left the repo's others.
     """
     words: list[str] = []
     pending = ""
@@ -699,7 +699,7 @@ def classify(hit: dict, oracle: dict[str, Counter], *, routed: bool) -> dict:
     The returned record is what lands in the tracked JSON, so its keys are read by people, not
     only by code: ``word`` is the whole CHANTED WORD (the maqaf compound, joined atoms and all),
     ``shape`` its per-atom accents, and the oracle fields count base letters, not syllables.
-    The key keeps the short name, as #81 left the repo's other ``word``-named identifiers.
+    The key keeps the short name, as wlc-utils#81 left the repo's other ``word``-named identifiers.
 
     ``routed`` is false for the poetic corpus, where the route split is NOT attempted: both
     halves of it are prose doctrine.  ``_NAMED_CONFIGURATIONS`` is Yeivin's PROSE inventory,
@@ -940,7 +940,7 @@ def _genre_survey(words_by_bcv, keep, oracle, *, routed: bool, prose: bool) -> d
         # alone: whether the geresh of a qadma-geresh chanted word is one some traditions would
         # call an azla turns on it, azla being the name a geresh takes on a chanted word stressed
         # on its last syllable.  ``final_stress`` is the rule, and its docstring is why the rule
-        # is a narrow one rather than issue #48's phonology.
+        # is a narrow one rather than issue wlc-utils#48's phonology.
         #
         # COUNTS AND NOT THE WORDS, unlike ``simple_excluded_words`` below.  Listing every chanted
         # word that is NOT stressed on its last syllable ran to 2423 records across the three
@@ -1077,7 +1077,7 @@ def write_json(survey: dict, path: Path) -> None:
     payload = provenance.with_json_provenance(survey, __file__)
     # Through file_io for the temp-file write and the PermissionError retry; it makes
     # the directory too. LF survives the move: the repo's line-ending policy is LF in
-    # the workdir as well as in git (.gitattributes, issue #50), and a plain text-mode
+    # the workdir as well as in git (.gitattributes, issue wlc-utils#50), and a plain text-mode
     # write would translate to CRLF on Windows and leave every regeneration looking
     # like a whole-file diff. file_io's default newline="" translates nothing, so it
     # holds the line the old explicit newline="\n" held.

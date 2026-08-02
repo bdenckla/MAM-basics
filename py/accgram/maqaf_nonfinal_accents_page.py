@@ -8,8 +8,8 @@ and data cannot drift.
 
 The survey is wider than the page: three corpora, both genres, and a route (a)/(b) split telling
 an inherited secondary accent from a maqaf written after an atom that keeps its own conjunctive.
-The page rendered all of that until 2026-07-27 and now renders MAM's prose alone -- see issue #83
-for what was cut and why, and #82 for the Yeivin citations that must be settled before the
+The page rendered all of that until 2026-07-27 and now renders MAM's prose alone -- see issue wlc-utils#83
+for what was cut and why, and wlc-utils#82 for the Yeivin citations that must be settled before the
 route-(b) material is rendered anywhere again.
 
 Rendered-prose conventions are ``printed_decalogue_strands``' module docstring; the romanizations
@@ -72,7 +72,7 @@ import wlc_paths
 # its own conjunctive, so it is proclitic by position only.  And a lone atom is never "maqaf-joined"  # prose-ok: names the rejected term
 # full stop: it is joined TO the next one, or else the two of them are joined to each other.
 # Naming the atom by its POSITION in the compound says what the scan measures and nothing more,
-# and it matches the module basenames.  (#81's sweep settled "atom" as a reader-facing term,
+# and it matches the module basenames.  (wlc-utils#81's sweep settled "atom" as a reader-facing term,
 # which is what lets it stand bare in the body.)
 #
 # THE TITLE NAMES THE QUESTION, NOT THE SCAN (Ben, 2026-07-30).  It was "Accents on a Non-Final
@@ -1241,7 +1241,7 @@ def pin_claims(survey: dict) -> None:
     # placing any case in a category.  The survey still computes the routes; nothing on the page
     # depends on them, so nothing here defends them.
 
-    # The oleh-we-yored assertions that stood here went with the poetic section's detail (#83).
+    # The oleh-we-yored assertions that stood here went with the poetic section's detail (wlc-utils#83).
     # They defended a sentence counting how many poetic hits were one oleh-we-yored spread across
     # a compound rather than two accents; the section now says only that the poetic system is a
     # different matter, and pins nothing beyond the spliced hit count.
@@ -1882,7 +1882,7 @@ def _prose_section(survey: dict, rows: list[dict]) -> tuple[object, ...]:
     # remark about things being more complicated in L, as Yeivin points out").  Both were built
     # around route (b), the maqaf written after an atom that keeps its own conjunctive -- a
     # habit of a particular naqdan, which MAM, not being a manuscript, has no instance of.  The
-    # material they carried is issue #83, which links to #82.
+    # material they carried is issue wlc-utils#83, which links to wlc-utils#82.
     #
     # What survives of them here: the closed-list sentence, because "Koren's shape is not in the
     # list" is only worth saying of a list that is closed; the passing L remark; and ONE worked
@@ -1942,7 +1942,7 @@ def _prose_section(survey: dict, rows: list[dict]) -> tuple[object, ...]:
         # manuscripts that have a maqaf after an atom keeping its own conjunctive, and MAM
         # having no case of it.  That paragraph WAS the optional-maqaf question, stated as an
         # aside; with the classification gone the page can no longer support its "no case of
-        # it", which was a route count.  Issue #83 holds the material.
+        # it", which was a route count.  Issue wlc-utils#83 holds the material.
         #
         # The sentence says "on a compound" since 2026-07-29, the pairs no compound has having
         # gone to the appendix.  It used to say "the pairs that occur", full stop, which the
@@ -1973,7 +1973,7 @@ def _prose_section(survey: dict, rows: list[dict]) -> tuple[object, ...]:
         # sentence Ben has cut from these pages before, and an appendix heading announces itself.
         #
         # "Simple chanted word", where Ben's sketch has "simple word": the bullets contrast
-        # three kinds of chanted word, and #81 asks for the qualifier exactly where the sense is
+        # three kinds of chanted word, and wlc-utils#81 asks for the qualifier exactly where the sense is
         # in doubt.  Beside two bullets that are compounds, a bare "word" invites the atom
         # reading.
         H.para(
@@ -1996,7 +1996,7 @@ def _prose_section(survey: dict, rows: list[dict]) -> tuple[object, ...]:
         # metigah-zaqef, §233 the merkha before a tipexa, §241 the mahapakh before a pashta.
         # The two rows left over, merkha before pashta and merkha before silluq, are on no list
         # of his: §233 is tipexa-only, and §209 gives the silluq one conjunctive and no
-        # secondary (issue #86).  Until 2026-07-30 this comment leaned on the wrong
+        # secondary (issue wlc-utils#86).  Until 2026-07-30 this comment leaned on the wrong
         # §233-names-the-silluq-row citation and counted "every one but merkha before pashta";
         # six of eight still holds "Most" up, so the sentence itself stands (item 3 of
         # ``doc/review-findings-2026-07-29.md``).
@@ -2028,7 +2028,7 @@ def _prose_section(survey: dict, rows: list[dict]) -> tuple[object, ...]:
         # books and the second sentence is worth its space: ch. 3 §20 gives the pashta's same-word
         # servant as a mahapakh only, and ch. 3 §39 gives the silluq's servant as a merkha across
         # two words with no same-word section for it, §40 being the mayela's.  So Breuer is silent
-        # exactly where Yeivin is, which is a second book agreeing with issue #86's suspicion
+        # exactly where Yeivin is, which is a second book agreeing with issue wlc-utils#86's suspicion
         # rather than a failed search -- and the negative is guarded in ``check_cos_claims.py`` by
         # pinning what those two sections DO say.
         #
@@ -2036,7 +2036,7 @@ def _prose_section(survey: dict, rows: list[dict]) -> tuple[object, ...]:
         # etnaxta's chanted word (8 spreaders + 3 simple), five for the mayela in the silluq's
         # (1 + 4) -- and one does not: his eight for the merkha in the tipexa's against this
         # survey's twelve, and his ch. 3 §30 examples of munax-zaqef are all concentrators where
-        # this survey has one spreader.  NONE of that is on the page; it is comment on issue #86,
+        # this survey has one spreader.  NONE of that is on the page; it is comment on issue wlc-utils#86,
         # where the same kind of Yeivin question already lives.  A count of Breuer's that the
         # survey cannot re-derive is not a claim a generated page may make.
         H.para(
@@ -2127,7 +2127,7 @@ def _poetic_section(survey: dict) -> tuple[object, ...]:
     # one.  Gone with the details: the table, Breuer's short list of poetic verses where the
     # maqaf IS written (Job 6:10, Proverbs 25:20), the oleh-we-yored overshoot with Psalms 70:6,
     # and the note that the route split was never run over poetic verses -- the last of which
-    # went with the routes themselves.  All of it is issue #83.
+    # went with the routes themselves.  All of it is issue wlc-utils#83.
     #
     # The two facts that survive are the two that make the count meaningless here rather than
     # merely different, so neither is a detail: the unwritten maqaf (which puts most of the
@@ -2136,12 +2136,12 @@ def _poetic_section(survey: dict) -> tuple[object, ...]:
     #
     # The gray maqaf closes the first of those with a figure instead of a hedge (2026-07-27):
     # the sentence used to call the poetic count "a floor" and stop, which told a reader the
-    # number was wrong without telling them by how much.  It stays inside the one paragraph #83
+    # number was wrong without telling them by how much.  It stays inside the one paragraph wlc-utils#83
     # cut this section down to, and it names no accent -- spelling out what the spread ones are
     # would want oleh-we-yored and tsinnorit in prose, which is the detail that was cut.
     #
     # The two figures are no longer two disjoint parts, and the sentence that made them so had
-    # to go (issue #91): MAM-simple has every gray maqaf as an ``implicit-maqaf`` node, the
+    # to go (issue wlc-utils#91): MAM-simple has every gray maqaf as an ``implicit-maqaf`` node, the
     # loader puts each on the atom before it, and Ben settled on 2026-07-31 that the survey
     # counts one as a maqaf.  So the hits figure ALREADY includes the gray-maqaf compounds, and
     # a paragraph offering the gray total as "the other part of the measure" would count them
@@ -2395,7 +2395,7 @@ def _one_letter_appendix_section(survey: dict) -> tuple[object, ...]:
     mahapakh with a qadma is on no list.  See ``_ONE_LETTER_TYPE_GERSTAR_TG`` and its
     neighbours.  The rows are sorted by it, so the five stand together and the odd one last.
 
-    "WORD", NOT "CHANTED WORD", IS RIGHT IN THIS HEADING, and is not the loose "word" #81 bans.
+    "WORD", NOT "CHANTED WORD", IS RIGHT IN THIS HEADING, and is not the loose "word" wlc-utils#81 bans.
     Ben, 2026-07-29: it "can just say 'word' since there are no compounds so by any/either
     definition of 'word', these are words".  Not one of the six is a maqaf compound, so atom and
     chanted word name the same six things and the reader has nothing to disambiguate.
@@ -2406,7 +2406,7 @@ def _one_letter_appendix_section(survey: dict) -> tuple[object, ...]:
     labelled word since what definition of 'word' is active is clear from the contents of the
     column!  Also in many contexts it is unnecessary to qualify a word as chanted because it is
     clear from context."  So a column of compounds may say "word" too -- the forms in it show
-    which sense is meant, and a heading is read with its column, not alone.  What #81 bans is a
+    which sense is meant, and a heading is read with its column, not alone.  What wlc-utils#81 bans is a
     loose "word" the reader must resolve from nothing; the qualifier is owed where the sense is
     genuinely in doubt, and is noise where the context settles it.  The hover text here says
     "chanted word" anyway, which costs nothing.
@@ -2451,7 +2451,7 @@ def _one_letter_appendix_section(survey: dict) -> tuple[object, ...]:
         # "marks" and "words" where it said "chanted words" -- both fine here, and neither a
         # slip: the two marks of one of these words ARE accents (that they may belong to one
         # syllable is the paragraph's point, not a doubt about what they are), and the context
-        # settles the sense of "words", which is exactly when #81 leaves plain "word" standing.
+        # settles the sense of "words", which is exactly when wlc-utils#81 leaves plain "word" standing.
         H.heading_level_2(
             "Appendix: words with two accents on the same letter",
             {"id": _ONE_LETTER_ID},
@@ -2482,7 +2482,7 @@ def _one_letter_appendix_section(survey: dict) -> tuple[object, ...]:
         # paragraph's "in none of the tables above", each of a different table, he chose verbatim
         # over naming the referent: this paragraph sits directly under the table it means.
         #
-        # "ALL WORDS" AND "OF THEM" ARE THE WIDE READING OF #81 the docstring's `"WORD", NOT
+        # "ALL WORDS" AND "OF THEM" ARE THE WIDE READING OF wlc-utils#81 the docstring's `"WORD", NOT
         # "CHANTED WORD"` paragraph already argues -- the column's own forms settle the sense, and
         # not one of these six is a maqaf compound anyway.  Not a slip to be tightened later.
         #

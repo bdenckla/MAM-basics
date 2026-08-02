@@ -1,4 +1,4 @@
-r"""Generate gh-pages/accgram/supplied-marks.html -- the supplied-mark inventory (#36).
+r"""Generate gh-pages/accgram/supplied-marks.html -- the supplied-mark inventory (wlc-utils#36).
 
 A *supplied mark* is a third kind of editorial charity, distinct from the two on the
 almost-errors page.  Those *reinterpret* a mark the manuscript already has (a prose

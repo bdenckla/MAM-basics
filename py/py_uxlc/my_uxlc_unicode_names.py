@@ -23,7 +23,7 @@ def name(string_len_1):
     my_un = legacy_names.legacy_name(string_len_1)
     # ndb: no dot below.  legacy_name draws accent names from the vendored
     # mb_diff_mpu.describe_diff, which now spells het PRECOMPOSED (a single
-    # codepoint, U+1E25) -- matching the rest of this repo (issue #49).  The
+    # codepoint, U+1E25) -- matching the rest of this repo (issue wlc-utils#49).  The
     # UXLC names we resolve against are plain ASCII, so strip the precomposed
     # het to ASCII 'h' (and its capital to 'H').  E.g. etnaxta (vendored form,
     # with a precomposed het) becomes just etnahta.  # translit-ok: illustrates UXLC output

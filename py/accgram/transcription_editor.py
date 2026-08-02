@@ -30,12 +30,12 @@ tell it apart from the line above's below-marks.  So the crop is set to just the
 and the old "reach the middle of the neighbouring line" dead zone -- a bound between the two
 good placements that clipped a line or let ``_absorb_slivers`` swallow a sliver of the next --
 is unreachable, because the region detected over is no longer the reader's to choose.  See
-issue #71.
+issue wlc-utils#71.
 
 THAT SPLIT IS ALSO AN EXPORT-FORMAT CHANGE, and the two shapes are distinguished by presence
 alone: ``render.crop`` used to mean the region rendered and now means the lines requested,
 with ``render.detect_crop`` -- written only when the crop grew -- holding the region.  Every
-transcription committed before #71 is of the older shape and was deliberately left alone --
+transcription committed before wlc-utils#71 is of the older shape and was deliberately left alone --
 today that is ALL of them, so the first export with a ``detect_crop`` will be the first reader
 of one, and there will be no re-vendoring to flush the old shape out.  ``rendered_region`` is the
 one place that rule is written down as code; read an export through it rather than reaching
@@ -85,7 +85,7 @@ SLIVER_FRACTION = 0.5
 # tail run is a smudge, not a word.
 TRAIL_INK_FRACTION = 0.03
 # How far past the requested lines to grow the detection region, in line pitches each way (see
-# the module docstring and issue #71).  One whole pitch puts each neighbour fully in view, so it
+# the module docstring and issue wlc-utils#71).  One whole pitch puts each neighbour fully in view, so it
 # detects as a complete band whose centre lies clearly outside the requested range -- context,
 # not a line to type into -- while the requested boundary line sits fully interior and so is
 # never clipped nor sliver-absorbed.
@@ -122,9 +122,9 @@ def rendered_region(render: dict) -> list[float] | None:
     """The page region an export's PNG and line coordinates actually cover, or ``None`` if whole.
 
     READ AN EXPORT'S REGION THROUGH THIS, never off ``render["crop"]``, which does not mean the
-    same thing in every export.  Issue #71 gave ``crop`` the narrower job of naming the LINES
+    same thing in every export.  Issue wlc-utils#71 gave ``crop`` the narrower job of naming the LINES
     REQUESTED and put the region grown around them in ``detect_crop``, written only when the
-    grow happened.  A pre-#71 export has no ``detect_crop`` and its ``crop`` IS the region
+    grow happened.  A pre-wlc-utils#71 export has no ``detect_crop`` and its ``crop`` IS the region
     rendered, so the fallback here is not a default standing in for a missing value -- it is the
     older format's own answer, which is why the two formats need no version field to tell apart.
 
@@ -791,7 +791,7 @@ def run(args: argparse.Namespace) -> None:
 
     # Enough to redo the exact rendering the line coordinates refer to.  ``crop`` names the lines
     # requested; ``detect_crop``, present only when the crop grew, is the region detection and
-    # the PNG actually cover.  Its absence marks a pre-#71 export, whose ``crop`` instead means
+    # the PNG actually cover.  Its absence marks a pre-wlc-utils#71 export, whose ``crop`` instead means
     # "the region rendered".
     # ``rendered_region`` below is the reading half of this rule; keep the two together.
     render = {"crop": crop, "width": width, "size": [img.width, img.height]}

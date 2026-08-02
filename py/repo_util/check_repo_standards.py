@@ -86,7 +86,7 @@ File-scan (over tracked *.py files):
     character to attach to, so it renders as a floating/invisible diacritic
     on the opening quote itself. See user-level CLAUDE.md's "no orphan
     combining marks" rule.
-  - nfc_h_dot_below: cross-repo signal for the issue #187 / #49 convention --
+  - nfc_h_dot_below: cross-repo signal for the issue #187 / wlc-utils#49 convention --
     Latin transliteration of Hebrew het must use precomposed U+1E25/U+1E24,
     never the decomposed "h"/"H" + COMBINING DOT BELOW (U+0323); and a '#'
     comment must use neither Unicode form (plain ASCII "x"/"X" instead, since

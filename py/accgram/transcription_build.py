@@ -225,7 +225,7 @@ def wrap(
 def _write(path: Path, text: str) -> None:
     """Write a committed file as LF.
 
-    ``newline="\\n"`` is not optional: .gitattributes pins LF in the WORKDIR too (#50), and
+    ``newline="\\n"`` is not optional: .gitattributes pins LF in the WORKDIR too (wlc-utils#50), and
     Path.write_text in text mode would translate to CRLF on Windows.
     """
     path.write_text(text, encoding="utf-8", newline="\n")

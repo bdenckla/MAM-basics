@@ -1,12 +1,12 @@
 r"""Generate gh-pages/accgram/printed-decalogue-simanim.html -- does Simanim's Tiqqun follow
-the printed or the manuscript Decalogue tradition?  Answer: the printed tradition (issue #62) --
+the printed or the manuscript Decalogue tradition?  Answer: the printed tradition (issue wlc-utils#62) --
 precisely, it follows the p-trad's chanted verse boundaries, but not its every cantillation
 detail: the Shabbat commandment of its Deuteronomy taḥton (appendix) Decalogue has the m-trad
 accents, an accents-only divergence that moves no chanted verse boundary (see ``_conclusion``).
 
-Companion to ``printed_decalogue_page`` (issue #52, which grammar-checks the printed vs
+Companion to ``printed_decalogue_page`` (issue wlc-utils#52, which grammar-checks the printed vs
 manuscript Decalogue accentuations and lays out the four cantillation strands).  This page ports
-two research notes -- formerly issue #56 comments -- into a versioned, reviewable document:
+two research notes -- formerly issue wlc-utils#56 comments -- into a versioned, reviewable document:
 
   * **p. 83** (main Decalogue, *elyon*): SimTiq's side-margin note on the Exodus (Yitro)
     Decalogue first span אנכי...עבדים.  Its default (בפנים) elyon reading ends that span on a
@@ -22,7 +22,7 @@ Wikisource records as the printed tradition, and they match.  That body text is 
 not reproduced.  The two notes are secondary -- kept for the more-for-fun question of
 how aware SimTiq is of having made the older, printed-tradition choice.
 
-Since issue #69 the finding rests on more than that comparison.  All EIGHT Decalogues on this page
+Since issue wlc-utils#69 the finding rests on more than that comparison.  All EIGHT Decalogues on this page
 -- the Tiqqun's four and the Simanim *Tanakh*'s four -- have a committed hand transcription of
 every printed accent (``in/accgram/edition_transcriptions/simtiq_*.txt`` and ``simtan_*.txt``),
 diffed against the vendored strand and pinned by
@@ -30,7 +30,7 @@ diffed against the vendored strand and pinned by
 and ``_tanakh_verdict_table`` render them, one row per Decalogue -- never one per edition, since
 p. 247's Shabbat departure and pp. 208-209's exact agreement cannot share a sentence.
 
-Each table's LAST column is issue #52's question asked of these eight: fed through accgram's
+Each table's LAST column is issue wlc-utils#52's question asked of these eight: fed through accgram's
 prose checker, is what the page prints grammatical, and as grammatical as the Wikisource strand
 it follows?  The cells come live from ``transcription_verdict_column`` (shared with the Koren
 page) so no row can claim a verdict the checker does not give.  Seven of the eight give their
@@ -42,7 +42,7 @@ by this checker, and that much would be visible from the edition alone, whose ac
 otherwise grammatical throughout.  Do NOT write the converse either -- that the edition is in error, or that the
 passage should not be chanted as printed.  Ungrammatical is not the same as wrong.
 
-TWO SENSES OF "TRANSCRIPTION", KEPT APART (issue #69 decision 3a).  This page had the word first
+TWO SENSES OF "TRANSCRIPTION", KEPT APART (issue wlc-utils#69 decision 3a).  This page had the word first
 for the two *note* transcriptions -- the hand-set pointed Hebrew of the p. 83 and p. 246 notes,
 double-checked against the committed scans, and still the only hand-set Hebrew in this module.
 The accent transcriptions above are the other sense: a token per printed accent, machine-diffed,
@@ -127,13 +127,13 @@ REPORT_TITLE = (
 # _ISSUE_52 = "https://github.com/bdenckla/wlc-utils/issues/52"
 # _ISSUE_56 = "https://github.com/bdenckla/wlc-utils/issues/56"
 _PRINTED_DECALOGUE_PAGE = "printed-decalogue.html"
-# The Koren companion. Until issue #69's prose pass the cross-reference ran only Koren -> Simanim,
+# The Koren companion. Until issue wlc-utils#69's prose pass the cross-reference ran only Koren -> Simanim,
 # and on this side existed only in code comments -- so a reader of the rendered page had no way to
 # reach the sibling edition's document. Both links below are the return half of a link Koren
 # already makes: its p. A38 note section links to this page's p. 83 note, and its conclusion's
 # scope note links here for the Shabbat departure.
 _KOREN_PAGE = "printed-decalogue-koren.html"
-# The four-strands table now lives on the companion page (issue #52); cross-references whose link
+# The four-strands table now lives on the companion page (issue wlc-utils#52); cross-references whose link
 # text names the table land on its heading anchor there rather than on a local table.
 _FOUR_STRANDS_HREF = f"{_PRINTED_DECALOGUE_PAGE}#four-strands"
 # Link text that names the page, not the table, gets the page itself: an anchor would drop the
@@ -144,7 +144,7 @@ _COMPANION_PAGE_HREF = _PRINTED_DECALOGUE_PAGE
 _TAHTON_DETAILS_HREF = f"{_PRINTED_DECALOGUE_PAGE}#tahton-details"
 _P83_IMG = "img/Simanim-Tiqqun-p-083-Ex-Dec-elyon-sidenote.png"
 _P246_IMG = "img/Simanim-Tiqqun-p-246-Ex-Dec-p-trad-taxton-footnote.png"
-# Body-text scans (issue #62): the SimTiq Decalogues whose cantillation establishes the p-trad
+# Body-text scans (issue wlc-utils#62): the SimTiq Decalogues whose cantillation establishes the p-trad
 # finding -- distinct from the two note scans above (the constant names encode strand + page).
 _P83_BODY_IMG = "img/Simanim-Tiqqun-p-083-Ex-Dec-elyon.png"
 _P246_BODY_IMG = "img/Simanim-Tiqqun-p-246-Ex-Dec-p-trad-taxton.png"
@@ -188,14 +188,14 @@ _P350_BOXES: tuple[mhi.Box, ...] = (
     mhi.Box(x=5, y=6, w=132, h=60),
     mhi.Box(x=348, y=64, w=128, h=66),
 )
-# Simanim *Tanakh*, a different edition from the Tiqqun though Feldheim publishes both (issue #62
+# Simanim *Tanakh*, a different edition from the Tiqqun though Feldheim publishes both (issue wlc-utils#62
 # scope note): both its Exodus Decalogue strands are m-trad, unlike the Tiqqun's p-trad -- the
 # main-Decalogue taxton (p. 119) and the elyon in the Torah section's appendix (p. 350).
 _TANAKH_EX_TAHTON_IMG = "img/Simanim-Tanakh-p-119-Ex-Dec-start-m-trad-taxton.png"
 _TANAKH_EX_ELYON_IMG = "img/Simanim-Tanakh-p-350-Ex-Dec-elyon-m-trad.png"
 # The Deuteronomy (Vaetxanan) appendix taxton Decalogue's Shabbat commandment (p. 247): the one
 # place Simanim's Tiqqun follows the m-trad, not the p-trad (the conclusion's Shabbat scope note;
-# the Koren page documents the mirror-image p-trad choice at this same commandment, issue #66). A
+# the Koren page documents the mirror-image p-trad choice at this same commandment, issue wlc-utils#66). A
 # grayscale, reduced-resolution crop of the pointed (taxton) column, cropped to just the stretch
 # the two traditions accent differently.
 _P247_DT_IMG = "img/Simanim-Tiqqun-p-247-Deut-Dec-m-trad-taxton-Shabbat.png"
@@ -219,7 +219,7 @@ _P247_BOXES: tuple[mhi.Box, ...] = (
 _TAHTON = pds.TAHTON
 _ELYON = pds.ELYON
 # Each _ROM_* accent name is pre-wrapped ONCE in <span class="romanized"> (italic), so every prose
-# site below is styled without a per-site rmn() call -- issue #65, finding C2; the rule and its
+# site below is styled without a per-site rmn() call -- issue wlc-utils#65, finding C2; the rule and its
 # exclusions are documented in printed_decalogue_strands' module docstring. These are HTML nodes,
 # not strings: splice them into a contents tuple, never into an f-string.
 _ROM_PASHTA = rmn(pds.ROM_PASHTA)
@@ -237,9 +237,9 @@ _ROM_SILLUQ_SOF_PASUQ = rmn(pds.ROM_SILLUQ_SOF_PASUQ)
 # already defined above.
 _ROM_PAZER = rmn(pds.ROM_PAZER)
 _ROM_TELISHA_GEDOLAH = rmn(pds.ROM_TELISHA_GEDOLAH)
-# Named only in the Simanim Tanakh verdict table, for its one divergence (issue #69, Result 8).
+# Named only in the Simanim Tanakh verdict table, for its one divergence (issue wlc-utils#69, Result 8).
 _ROM_QADMA = rmn(pds.ROM_QADMA)
-# Named only in the conclusion's grammaticality prose (issue #52), for the p. 246 chanted verse
+# Named only in the conclusion's grammaticality prose (issue wlc-utils#52), for the p. 246 chanted verse
 # the prose checker rejects: the munax on the joined לא of לא־תעשה makes a third conjunctive
 # before the pashta, where a tevir would have allowed it.  Every taxton strand has a meteg and no
 # accent on that joined לא, and every elyon strand has לא as a free chanted word with a munax --
@@ -272,7 +272,7 @@ def _wikisource_ptrad_href(source: dict) -> str:
 # Rendering
 # --------------------------------------------------------------------------- #
 # This page used to open with the companion page's whole four-strands intro paragraph, duplicated
-# verbatim (issue #65, finding V5). It now opens with ONE sentence that cues the reiteration and
+# verbatim (issue wlc-utils#65, finding V5). It now opens with ONE sentence that cues the reiteration and
 # links to the companion, which alone states the four strands in full, plus the shared
 # pds.MOST_STRIKING sentence (single-sourced there, verbatim on all three pages of the trio).
 # Keep it that way: a reader arriving here from the companion should be able to see at a glance
@@ -298,7 +298,7 @@ _PARA_2 = (
 
 
 def _body_scans() -> tuple[object, ...]:
-    """The two body-text scans that are the finding's actual evidence (issue #62): the body text
+    """The two body-text scans that are the finding's actual evidence (issue wlc-utils#62): the body text
     the page used to only assert -- showing them is what replaced the old apology.
     """
     return (
@@ -414,11 +414,11 @@ _P83_STANDALONE_VERSE = (
 
 
 def _p83_scan_and_transcription() -> object:
-    """Scan and transcription side by side, as in the original issue-#56 comment: a two-column
+    """Scan and transcription side by side, as in the original wlc-utils#56 comment: a two-column
     table with the source scan on the left and the RTL transcription (following the scan's own
     line breaks) on the right."""
     # As in _figure: no inline style, since gh-pages/style.css's `img { max-width: 100% }` already
-    # covers it (issue #65, finding C4b). This img sits in a table cell rather than a <figure>, so
+    # covers it (issue wlc-utils#65, finding C4b). This img sits in a table cell rather than a <figure>, so
     # it never picked up `figure img { height: auto }` -- but height:auto is the CSS initial value
     # for a replaced element anyway, so the inline copy bought nothing here either.
     # class="ink-on-white" as in _figure -- this scan is outside a <figure>, so it takes the
@@ -579,7 +579,7 @@ def _p246_mapping_table() -> object:
     )
     # Its own class, not the companion page's "printed-decalogue-verdict": this table maps the
     # note's labels onto strands, it renders no grammaticality verdict, and it never used that
-    # class's td.clean / td.ungrammatical rules (issue #65, finding C4d).
+    # class's td.clean / td.ungrammatical rules (issue wlc-utils#65, finding C4d).
     return H.table(
         (header, ragil, keter), {"class": "printed-decalogue-strand-mapping"}
     )
@@ -705,7 +705,7 @@ def _p246_section() -> tuple[object, ...]:
 
 
 # --------------------------------------------------------------------------- #
-# The per-Decalogue verdict tables (issue #69)
+# The per-Decalogue verdict tables (issue wlc-utils#69)
 # --------------------------------------------------------------------------- #
 # One row per Decalogue, never one per edition: p. 247's Shabbat departure and pp. 208-209's exact
 # agreement cannot share a sentence, which is what killed the older per-edition wording. Each
@@ -713,10 +713,10 @@ def _p246_section() -> tuple[object, ...]:
 # claim the signal words alone cannot reach.
 #
 # The class turns OFF the shared odd-row zebra, as its three sibling printed-Decalogue tables do
-# (issue #65, finding C3): the four rows alternate main / appendix, so the stripe would tint
+# (issue wlc-utils#65, finding C3): the four rows alternate main / appendix, so the stripe would tint
 # exactly the two appendix rows and read as if it ENCODED that rather than merely counting rows.
 #
-# The last column (issue #52) is the grammaticality verdict, and it is NOT written out per row:
+# The last column (issue wlc-utils#52) is the grammaticality verdict, and it is NOT written out per row:
 # each cell is derived from the checker's own result for that transcription, looked up by the
 # stem each row names, so the column cannot claim a verdict the checker does not give. The prose
 # is shared with the Koren page's table -- see transcription_verdict_column.
@@ -951,7 +951,7 @@ def _conclusion(
                 " (p. 246).",
             )
         ),
-        # The transcription verdicts (issue #69). This is what the signal words alone could not
+        # The transcription verdicts (issue wlc-utils#69). This is what the signal words alone could not
         # reach: they place a Decalogue among the four strands, and only an accent-by-accent
         # comparison says how far it then follows the Wikisource strand it was placed in.
         H.para(
@@ -972,7 +972,7 @@ def _conclusion(
         # Splice the constant; don't paraphrase it, and don't scope it to one of the two tables.
         H.para((pds.MAQAF_IS_THE_LAST_RUNG,)),
         _tiqqun_verdict_table(verdicts),
-        # The grammaticality column's two findings on this page (issue #52). The four p-trad
+        # The grammaticality column's two findings on this page (issue wlc-utils#52). The four p-trad
         # elyon Decalogues across this page and the Koren page print their Wikisource strand's
         # ungrammatical merged opening verse, and p. 246 departs from its Wikisource strand. Both
         # paragraphs below have to
@@ -1051,7 +1051,7 @@ def _conclusion(
         # The p. 247 crop below -- a reduced-resolution, grayscale crop of the pointed taxton
         # column -- is the evidence for this scope note's Shabbat caveat: it shows the m-trad
         # accents on the three signal words _P247_BOXES highlights (see its comment).
-        # (This crop was once committed but deliberately unlinked "private evidence"; issue #66 --
+        # (This crop was once committed but deliberately unlinked "private evidence"; issue wlc-utils#66 --
         # the Koren page's mirror finding at this same commandment -- is why it now earns a place.)
         H.para(
             (
@@ -1262,7 +1262,7 @@ def add_args(parser: argparse.ArgumentParser, repo_root: Path) -> None:
 def run(args: argparse.Namespace) -> None:
     # The four-strands table lives on the companion page, so this page tabulates none of the
     # strands' own verdicts -- but it does need them, since the verdict tables' last column
-    # states each transcription's verdict AGAINST its Wikisource strand's (issue #52). Both checks
+    # states each transcription's verdict AGAINST its Wikisource strand's (issue wlc-utils#52). Both checks
     # together are a fraction of a second, so nothing here is worth skipping for regeneration
     # speed.
     source = pd.load_source(args.source)

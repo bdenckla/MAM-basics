@@ -1,4 +1,4 @@
-r"""Feed a hand transcription's accents to the prose grammar checker (issue #52).
+r"""Feed a hand transcription's accents to the prose grammar checker (issue wlc-utils#52).
 
 ``printed_decalogue`` grammar-checks the eight IDEALIZED Wikisource strands: fed through
 accgram's prose checker, are the printed- and manuscript-tradition Decalogue accentuations
@@ -39,7 +39,7 @@ in error, and a clean rate is not the objective.
 
 WHAT IT DOES NOT ADD is the legarmeh-vs-paseq distinction, which was once the reason to want
 it.  The scanner's LEGARMEH call is purely POSITIONAL -- a munax + U+05C0 before a revia --
-so it is blind to which kind an edition prints, exactly as the pre-#74 vendored data was.
+so it is blind to which kind an edition prints, exactly as the pre-wlc-utils#74 vendored data was.
 The converse is what is worth having: BECAUSE the call is positional, the scanner supplies a
 kind where an edition withholds one, which is the whole stroke inventory of the four Koren
 transcriptions (Koren has the bar without saying which it is, so every one of its strokes
@@ -202,7 +202,7 @@ def check(transcription: et.Transcription, parser=None) -> list[pd.ChantedVerseR
 
 
 # --------------------------------------------------------------------------- #
-# One transcription's verdicts, beside its Wikisource strand's (issue #52)
+# One transcription's verdicts, beside its Wikisource strand's (issue wlc-utils#52)
 # --------------------------------------------------------------------------- #
 @dataclasses.dataclass(frozen=True)
 class TranscriptionResult:

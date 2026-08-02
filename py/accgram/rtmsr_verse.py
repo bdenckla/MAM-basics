@@ -19,7 +19,7 @@ def render_dual_cant_reading_paragraphs(
     *,
     focus_bcv: str | None = None,
 ) -> tuple[object, ...]:
-    """For a dually-cantillated verse, one labelled Hebrew line per reading (issue #36),
+    """For a dually-cantillated verse, one labelled Hebrew line per reading (issue wlc-utils#36),
     replacing the combined WLC verse line (e.g. taxton + elyon)."""
     paragraphs: list[object] = []
     for reading in readings:
@@ -58,7 +58,7 @@ def _dual_cant_verse_contents(
     """The verse-line contents for one reading: a plain space-joined string, or — when a
     focus verse and a parallel per-word bcv list are available — a sequence in which each
     run of words from a numbered verse other than ``focus_bcv`` is wrapped in a gray
-    context span (issue #36).
+    context span (issue wlc-utils#36).
 
     An elyon chanted verse groups several numbered verses, so on the dt 5:8 row its 5:7 /
     5:9 / 5:10 words become context and only the 5:8 part stays in normal color.  Runs of

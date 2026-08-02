@@ -1,10 +1,10 @@
-"""Stage-1 of issue #36: the MAM-simple loader exposes the two detangled strands.
+"""Stage-1 of issue wlc-utils#36: the MAM-simple loader exposes the two detangled strands.
 
 A ``cant-all-three`` span carries three single-cantillation projections
 (``cant-combined`` / ``cant-alef`` / ``cant-bet``).  The loader must surface
 ``cant-alef`` and ``cant-bet`` as their own position-correct token streams,
 interleaved with the single-cant ``text`` around the span -- not naively concatenate
-all three (the pre-#36 behaviour, which tripled the dual span).
+all three (the pre-wlc-utils#36 behaviour, which tripled the dual span).
 
 Gen 35:22 is the canonical mid-verse span: a single-cant prefix, the dual span, then a
 single-cant suffix.  Its alef strand closes a chanted verse mid–numbered-verse (silluq +
@@ -50,7 +50,7 @@ def test_strands_exposed_separately_and_differ_on_dual_word():
     alef = verse["vels_cant_alef"]
     bet = verse["vels_cant_bet"]
 
-    # No longer the pre-#36 triple-concatenation: each strand is one word sequence
+    # No longer the pre-wlc-utils#36 triple-concatenation: each strand is one word sequence
     # (single-cant prefix + its span words + single-cant suffix), 19 tokens for Gen 35:22.
     assert all(isinstance(tok, str) for tok in alef)
     assert all(isinstance(tok, str) for tok in bet)

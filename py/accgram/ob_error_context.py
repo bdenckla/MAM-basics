@@ -21,7 +21,7 @@ def collect_error_trees_by_ref(
     """Map each ungrammatical row's ref to its ERROR tree, read from the JSON outputs.
 
     Each row carries an ``output_file`` (a ``wlc_422_ps_<bb>_ag.json`` under
-    ``base_dir``, issue #20); the per-verse ``tree`` field is the nested image
+    ``base_dir``, issue wlc-utils#20); the per-verse ``tree`` field is the nested image
     written by ``tree.tree_to_obj``, converted here to an ``ErrorTree`` (or None
     when the verse has no ERROR leaf -- e.g. a row that is no longer an ungrammatical verse).
     """

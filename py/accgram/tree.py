@@ -54,7 +54,7 @@ def print_tree(tree: TN | None, indent_level: int = 0) -> str:
 
 
 def tree_to_obj(tree: TN | None) -> dict | None:
-    """Serialize a TN into a JSON-ready nested dict (issue #20).
+    """Serialize a TN into a JSON-ready nested dict (issue wlc-utils#20).
 
     Internal node -> ``{"label", "children": [left, right]}``; leaf node ->
     ``{"label", "leaves": [name, ...]}``.  Mirrors print_tree's internal/leaf

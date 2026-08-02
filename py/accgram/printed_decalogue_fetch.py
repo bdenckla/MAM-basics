@@ -1,4 +1,4 @@
-r"""Author tool: vendor the eight Decalogue accentuations from he.wikisource (issue #52).
+r"""Author tool: vendor the eight Decalogue accentuations from he.wikisource (issue wlc-utils#52).
 
 Fetches ``עשרת הדברות בסיס/טעמים`` -- the base page every printed-vs-manuscript
 comparison table on Wikisource transcludes -- and writes the readings to
@@ -11,7 +11,7 @@ The base page spells out, fully accented, all eight versions:
     = {Exodus, Deuteronomy} × {taxton (lower), elyon (upper)} × {manuscript, printed}
 
 TWO REPRESENTATIONS PER VERSION, and the distinction between them is the whole point of the
-issue-#74 re-vendoring:
+wlc-utils#74 re-vendoring:
 
   * ``chanted_verses`` -- the FOLDED, scanner-ready form.  Every wiki template is resolved to
     plain pointed text (see ``_resolve_templates``), so what a consumer reads is exactly what
@@ -28,8 +28,8 @@ The three distinctions the fold discards and the faithful field keeps:
     preceding word (WLC's attached convention; a munax+paseq is then read as legarmeh by the
     scanner), so the folded form cannot say WHICH kind of vertical stroke stands there.  The
     faithful form can, which is what lets a printed-tradition transcription's legarmeh/paseq
-    claims be checked against the p-trad strand's OWN reference (issue #74).  For the m-trad
-    half, issue #68 checked this field against MAM-parsed-plus -- which carries the same
+    claims be checked against the p-trad strand's OWN reference (issue wlc-utils#74).  For the m-trad
+    half, issue wlc-utils#68 checked this field against MAM-parsed-plus -- which carries the same
     distinction in its own ``מ:לגרמיה-2``/``מ:פסק`` templates -- and found the two agree on
     every stroke, so either may be used; ``decalogue_m_trad`` is the comparison.
     ``edition_transcription.reference_pasoleg_kinds`` reads them back out.
@@ -46,7 +46,7 @@ The three distinctions the fold discards and the faithful field keeps:
 
 This is a network tool run by hand to refresh the vendored snapshot; the committed JSON
 records the source page's revision id and retrieval date for provenance.  ``--oldid`` pins a
-specific revision -- the issue-#74 re-vendoring pins 3025606, the revision already vendored, so
+specific revision -- the wlc-utils#74 re-vendoring pins 3025606, the revision already vendored, so
 that this contract change carries no upstream content drift and stays independently reviewable
 from any later content refresh.  Run from the repo root (pinned):
 
@@ -239,7 +239,7 @@ def build_payload(wikitext: str, provenance: dict[str, object]) -> dict[str, obj
         '{{מ:קמץ|ד=X|ס=Y}} -> X; {{כו"ק|ketiv|qere}} -> qere; paragraph/pisqa markers dropped; '
         "inner <קטע> tags stripped. faithful_chanted_verses strips ONLY the <קטע> tags, "
         "keeping those templates in place, so legarmeh vs narrow-sense paseq, ketiv/qere and "
-        "the setumah/petuxah breaks are preserved (issue #74); chanted_verses is derived from "
+        "the setumah/petuxah breaks are preserved (issue wlc-utils#74); chanted_verses is derived from "
         "it by folding. Both split into chanted verses at sof pasuq."
     )
     return {"provenance": provenance, "versions": versions}
@@ -255,7 +255,7 @@ def add_args(parser: argparse.ArgumentParser, repo_root: Path) -> None:
         "--oldid",
         type=int,
         default=None,
-        help="pin a specific Wikisource revision (the #74 re-vendoring uses 3025606); "
+        help="pin a specific Wikisource revision (the wlc-utils#74 re-vendoring uses 3025606); "
         "omit to fetch the latest",
     )
 

@@ -201,7 +201,7 @@ def _emit_word_events(text: str, events: list[_Event]) -> None:
     """Append a ('WORD', marker, servus, self_servus) event per whitespace-delimited word.
 
     Whitespace-delimited means CHANTED word: a maqaf compound has no space in it, so it
-    comes through whole (issue #81).
+    comes through whole (issue wlc-utils#81).
 
     The verse's last chanted word carries SOF PASUQ; its meteg is silluq, so it is
     emitted as a ('SOFPASUQ', None, None, None) sentinel the second pass turns into

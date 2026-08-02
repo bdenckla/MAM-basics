@@ -24,7 +24,7 @@ reads). It writes a git-tracked ``_oddballs.json`` next to the corpus outputs an
 Each ungrammatical is one ``dict[str, object]`` row -- the single representation that
 flows from collection through render to JSON serialization, sharing the prose
 front-end's row shape so the shared leaf renderers consume it directly (issues
-#40, #41). It carries the shared prose-shaped keys the shared renderers read
+wlc-utils#40, wlc-utils#41). It carries the shared prose-shaped keys the shared renderers read
 (``ref``/``output_file``/``wlc422_kq_u_verse``/``wlc_focus``, plus the SAT
 ``enriched_row`` payload) alongside the poetic-only keys (``kind``/``token_types``/
 ``wlc_disjunctives``/``mam_disjunctives``/``mam_words``/``tree_text``/``error``).
@@ -34,10 +34,10 @@ The HTML deliberately shares the prose ``goerwitz.html`` shell -- the same
 verse list (``poetic-filter.js``), per-verse permalinks + Mwd/UXLC links, the
 parse tree rendered as an HTML table via ``ob_tree_table``, and the SAT
 focus-word table via ``poetic_sat`` (which reuses the prose ``rtmsr_sat``
-renderer). With issue #22 the two reports now share one page-assembly core,
+renderer). With issue wlc-utils#22 the two reports now share one page-assembly core,
 ``ob_page`` (the filter controls, the per-verse ``<section>`` wrapper, and the
 page shell), each front-end supplying a ``CorpusDescriptor`` (see also issue
-#10). It keeps one poetic-only display the prose
+wlc-utils#10). It keeps one poetic-only display the prose
 page has no analogue for: the WLC-vs-MAM disjunctive compare. The verse-final NO_PARSE cases,
 having no valid parse, render a flat best-effort tree (each token a cell, capped
 by an ERROR leaf) so they too display through the shared error-tree table.
@@ -104,7 +104,7 @@ KIND_NO_PARSE = "no_parse"
 # ungrammatical's hand-authored poetic_ob_notes entry (see _structured_text_lookup).
 StructuredTextLookup = Callable[[dict[str, object], str], object]
 
-# Each poetic ungrammatical is one dict[str, object] row (issue #41), carrying:
+# Each poetic ungrammatical is one dict[str, object] row (issue wlc-utils#41), carrying:
 #   ref               clean book-name reference, e.g. "Psalms 31:21"
 #   bb                two-letter book code
 #   kind              KIND_MISSING_SILLUQ | KIND_NO_PARSE
@@ -346,9 +346,9 @@ def build_payload(
 # The poetic page shares goerwitz.html's stylesheet + width-limited shell and
 # the same single flat, client-side-filterable verse list (see
 # gh-pages/accgram/poetic-filter.js); the shared page-assembly now lives in
-# ob_page (issue #22). It keeps one poetic-only data display the prose page has no
+# ob_page (issue wlc-utils#22). It keeps one poetic-only data display the prose page has no
 # analogue for: the WLC-vs-MAM disjunctive compare (the relevant oracle for
-# accent-structure ungrammatical verses). The verse text is shown as pointed Hebrew (issue #9
+# accent-structure ungrammatical verses). The verse text is shown as pointed Hebrew (issue wlc-utils#9
 # retired the Michigan-Claremont body from the reports).
 _REPORT_TITLE = "Poetic checker run on WLC"
 _REPORT_HEADING = "Poetic checker run on WLC"
@@ -609,7 +609,7 @@ def _render_hebrew_verse(row: dict[str, object]) -> object | None:
 
 def _unicode_text(row: dict[str, object]) -> str:
     """The verse's normalized pointed-Hebrew text (qere interpolated), from the
-    ``-kq-u`` verse; "" if the verse is absent from the index.  Issue #9 replaced the
+    ``-kq-u`` verse; "" if the verse is absent from the index.  Issue wlc-utils#9 replaced the
     Michigan-Claremont source body with this in the report display and ``content``."""
     return rtms_focus_diff_expand.normalized_wlc_verse_text_from_payload(
         row["wlc422_kq_u_verse"]

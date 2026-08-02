@@ -7,7 +7,7 @@ filter ``<script>``. They differ only in their *acquisition* (prose reads classi
 rows from disk; poetic re-scans live) and in each verse section's content/shape -- which
 stay in the two front-ends (``rtmsr_overview``, ``poetic_oddballs``). This module owns
 the parts they share: the filter-control builder (driven by a declarative facet list),
-the per-verse ``<section>`` wrapper, and the page-body shell. See issue #22.
+the per-verse ``<section>`` wrapper, and the page-body shell. See issue wlc-utils#22.
 """
 
 from __future__ import annotations

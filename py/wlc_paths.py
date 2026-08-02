@@ -161,7 +161,7 @@ def al_hatorah_phonetic_dir() -> Path:
 
     Each chanted word has a ``jta`` field whose ``!`` immediately precedes the stressed
     syllable, which is what makes this an independent oracle for ``accgram.final_stress``.  The
-    engine behind it is al-hatorah's ``py/aht_phon``, which cannot be imported here -- issue #48
+    engine behind it is al-hatorah's ``py/aht_phon``, which cannot be imported here -- issue wlc-utils#48
     calls consuming these outputs its second path, and this is that path.
     """
     return sibling("al-hatorah") / "io" / "a01-phonetic-std-set"

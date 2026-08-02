@@ -4,7 +4,7 @@
 overlay draws a plausible band for a clipped line and for a merged one alike.  The numbers
 below are the real ones from Koren A5-D-281, where both mistakes were made in one sitting.
 
-BLESSED EXAMPLE-BASED FILE (issue #88).  The hand-picked band geometries, the synthesized row
+BLESSED EXAMPLE-BASED FILE (issue wlc-utils#88).  The hand-picked band geometries, the synthesized row
 profiles and the drawn pages are all the shape ``doc/agent-planning-principles.md`` otherwise
 forbids.  Kept, because these diagnostics have no oracle to differ against and produce no
 tracked output to diff: the input is a scan, the failure is silent by construction, and the only
@@ -166,7 +166,7 @@ def test_a_line_clipped_to_a_stub_at_the_crop_bottom_is_not_recovered():
 
 
 # ---------------------------------------------------------------------------
-# Crop split (issue #71).  --crop's top/bottom name the lines to transcribe; detection runs over
+# Crop split (issue wlc-utils#71).  --crop's top/bottom name the lines to transcribe; detection runs over
 # a region grown about a line past them, and the neighbours it pulls in are classified as context
 # by where their centres fall.  So the reader crops to just the wanted lines and the old dead zone
 # -- a vertical bound between the two good placements that clipped a line or absorbed a sliver --
@@ -299,7 +299,7 @@ def test_a_crop_at_the_top_grows_only_downward():
 
 
 # --------------------------------------------------------------------------- #
-# The export-format rule #71 introduced (see ``rendered_region``)
+# The export-format rule wlc-utils#71 introduced (see ``rendered_region``)
 # --------------------------------------------------------------------------- #
 def test_rendered_region_reads_a_post_71_export_off_detect_crop():
     """With a grow, ``crop`` is the lines requested and ``detect_crop`` the region rendered."""

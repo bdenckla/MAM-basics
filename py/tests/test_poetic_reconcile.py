@@ -23,7 +23,7 @@ from accgram.poetic_scanner import scan_verse
 from tests.mc_marks import mc_to_marks
 
 # Bodies are written in the legacy M-C encoding for readability and converted to the
-# Phase-2 mark alphabet (issue #9) at each use.
+# Phase-2 mark alphabet (issue wlc-utils#9) at each use.
 
 
 def _types(tokens):

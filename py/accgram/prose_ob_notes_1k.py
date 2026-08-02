@@ -36,7 +36,7 @@ BY_REF: dict[str, dict[str, object]] = {
     "1k 20:29": {
         "st-source": "bhs",
         # One change to how this atom is marked, not two: reading the stroke as a merkha
-        # is what costs the maqaf, so it is stated as the exchange it is (issue #76).
+        # is what costs the maqaf, so it is stated as the exchange it is (issue wlc-utils#76).
         "st-summary": "BHS transcribes a meteg as a merkha, dropping the maqaf that went with it.",
         "wlc_focus": "נ֥כח",
         "uxlc_change": "2022.12.07/2022.08.31-32",

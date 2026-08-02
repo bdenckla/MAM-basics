@@ -31,7 +31,7 @@ Maintainer overrides of describe_diff:
 
 NOTE: the prose grammar (a port of the Goerwitz C oracle acc2tre.y) now adopts the
 shared spellings ATNAX / MUNAX / MERKHA / MAHAPAKH, so there is one transliteration
-per use case across prose and poetic; see issue #13.  (Byte-for-byte parity with the
+per use case across prose and poetic; see issue wlc-utils#13.  (Byte-for-byte parity with the
 Goerwitz C output is no longer a goal.)  TARXA stays poetic-only: the tifcha-shaped
 sign is a *distinct accent* in each system -- prose tipexa (TIPEXA, with mayela as
 its variant) vs poetic tarxa (TARXA) -- that merely shares one Unicode code point, so

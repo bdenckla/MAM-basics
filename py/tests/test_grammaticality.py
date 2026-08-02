@@ -1,4 +1,4 @@
-"""Unit tests for the continuous-grammaticality PCFG core (issue #11).
+"""Unit tests for the continuous-grammaticality PCFG core (issue wlc-utils#11).
 
 Hermetic: builds tiny trees by hand (no committed corpus needed) and pins the
 production extraction, add-lambda smoothing, and tree scoring.

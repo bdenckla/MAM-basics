@@ -1,4 +1,4 @@
-"""Issue #52: the printed-Decalogue grammaticality page (printed-decalogue.html).
+"""Issue wlc-utils#52: the printed-Decalogue grammaticality page (printed-decalogue.html).
 
 Covers the page-1-specific machinery the Simanim test does not: that the whole body builds
 (exercising the ``printed_decalogue_strands`` drift assertions AND the four-strands table's
@@ -42,7 +42,7 @@ def test_body_renders() -> None:
     check all fire here) and _four_strands_table (whose per-cell assert pins each word's sof pasuq
     against whether its strand ends a chanted verse there), so a data drift fails this test loudly.
 
-    It also runs the transcription paragraph's own guard (issue #52): the editions said to print
+    It also runs the transcription paragraph's own guard (issue wlc-utils#52): the editions said to print
     the p-trad elyon's ungrammatical opening verse must really be the ones following it.
     """
     source = _source()

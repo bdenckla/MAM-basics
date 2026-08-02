@@ -2,7 +2,7 @@
 transcribed verbatim from MAM-with-doc (https://bdenckla.github.io/MAM-with-doc/).
 Consumed by accgram/telg_doc_notes.py; the English rendering lives there.
 
-Migrated from the former hand-authored JSON sidecar telg_mam_doc_notes.json (issue #33):
+Migrated from the former hand-authored JSON sidecar telg_mam_doc_notes.json (issue wlc-utils#33):
 read via import, not a file open.  Edit this module / the generator, not the
 generated HTML.
 """

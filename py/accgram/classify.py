@@ -8,7 +8,7 @@ binary emitted no output for), every such ERROR verse lives in
 
 The resulting ``_oddballs.json`` uses the same schema ``rtms_rows`` parses: one
 row per ungrammatical verse with ``ref``, ``content`` (the verse's pointed-Hebrew text, drawn
-from the canonical ``-kq-u`` Unicode source -- issue #9 retired the M-C body as an
+from the canonical ``-kq-u`` Unicode source -- issue wlc-utils#9 retired the M-C body as an
 input), and ``output_file`` (the ``*_ag.json`` holding its parse tree).
 """
 

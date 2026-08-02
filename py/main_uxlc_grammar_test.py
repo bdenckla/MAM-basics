@@ -17,7 +17,7 @@ For each grammar-relevant accent change that lies in the PROSE corpus the checke
 can evaluate, we:
 
   1. Transcode the real WLC 4.22 verse to its scanner-ready mark body from the
-     canonical `-kq-u` Unicode source (issue #9 retired the old wlc422_ps.txt
+     canonical `-kq-u` Unicode source (issue wlc-utils#9 retired the old wlc422_ps.txt
      text input; the body is now built straight from the `-kq-u` JSON).
   2. Locate the changed word (by the citation's word index).
   3. VALIDATE: synthesize the WLC reading of that word from `refuni` (Unicode token
@@ -212,7 +212,7 @@ def _transcoded_bodies(
     keys,
 ) -> dict[tuple[str, int, int], str]:
     """The scanner-ready mark body for each ``(bb, ch, vs)``, transcoded from the
-    canonical ``-kq-u`` Unicode source (issue #9 retired ``wlc422_ps.txt``)."""
+    canonical ``-kq-u`` Unicode source (issue wlc-utils#9 retired ``wlc422_ps.txt``)."""
     index = rtms_data.load_wlc422_index(WLC_KQ_U)
     bodies: dict[tuple[str, int, int], str] = {}
     for bb, ch, vs in keys:

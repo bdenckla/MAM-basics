@@ -1,6 +1,6 @@
 """Unit tests for the fix-tester's Unicode substitution (accgram.fix_apply).
 
-Issue #9 retired the M-C splice: ``apply_mam_fix`` now substitutes the MAM Unicode
+Issue wlc-utils#9 retired the M-C splice: ``apply_mam_fix`` now substitutes the MAM Unicode
 word into a copy of the ``-kq-u`` verse and re-transcodes it (``uni_to_marks``) to
 a Unicode mark body to re-scan.  These tests pin that behavior -- a 1->1 accent swap, an
 accent deletion, the missing-sof-pasuq add, the verse-final silluq, ketiv-qere

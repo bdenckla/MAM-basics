@@ -32,7 +32,7 @@ WHAT COUNTS AS ONE TOKEN (the conventions the transcriptions are written to):
   stream the two are folded together: a munax + U+05C0 is normalized to a plain munax on both
   sides (see ``_LEGARMEH_TOKENS``), so a legarmeh-vs-paseq difference is neither agreement nor
   disagreement THERE.  The kind is checked separately, off to the side of the token diff.  The
-  #74 re-vendoring added ``faithful_chanted_verses`` to the source, which keeps the two
+  wlc-utils#74 re-vendoring added ``faithful_chanted_verses`` to the source, which keeps the two
   Wikisource templates distinct where the folded ``chanted_verses`` collapses both to U+05C0;
   ``reference_pasoleg_kinds`` reads the reference kind of each stroke back out, so a
   transcription's own legarmeh/paseq claims can be checked against the strand's OWN reference
@@ -150,11 +150,11 @@ own, so a maqaf difference registers only through the accent count it changes.  
 edition joins two atoms and accents BOTH of them in the resulting compound -- ``koren_dt_elyon``'s
 mun-mun on לא־תעשה -- the two sides emit identical tokens and the diff sees nothing.  Such a
 difference is recorded by hand in the transcription's ``.txt`` and stated in the page's verdict
-cell.  Making maqaf a token of its own would close the gap; that is issue #75, left undone here
+cell.  Making maqaf a token of its own would close the gap; that is issue wlc-utils#75, left undone here
 because it touches every transcription and the reference derivation alike.
 
 That claim is true and NOT the whole story, which is why ``transcription_parse`` exists
-(issue #52).  An intact skeleton is a token-identity fact and says nothing about whether the
+(issue wlc-utils#52).  An intact skeleton is a token-identity fact and says nothing about whether the
 resulting sequence parses: the munax on the joined לא of לא־תעשה makes three servi before the
 pashta where the grammar takes two, so that chanted verse is ungrammatical under the prose
 checker even though every one of the page's divergences is conjunctive.
@@ -446,7 +446,7 @@ def strand_name(key: tuple[str, str, str]) -> str:
 
     DISPLAY ONLY.  The data keys -- the triple itself, and the ``book``/``reading``/
     ``tradition`` fields in the vendored JSON -- keep the bare form.  CTR is a separately
-    vendored strand (issue #73) and is never named this way.
+    vendored strand (issue wlc-utils#73) and is never named this way.
     """
     return "/".join(("ws",) + tuple(key))
 
@@ -706,7 +706,7 @@ def reference_pasoleg_kinds(source: dict, key: tuple[str, str, str]) -> list[str
     """The kind of each U+05C0 stroke in a strand's reference, in reading order.
 
     ``legarmeh`` or ``paseq``, read from the version's ``faithful_chanted_verses`` -- the
-    distinction the folded ``chanted_verses`` cannot express, vendored by the #74 re-vendor.
+    distinction the folded ``chanted_verses`` cannot express, vendored by the wlc-utils#74 re-vendor.
     Aligned with the reference pasoleg positions ``_accent_tokens`` finds in the folded text:
     the k-th kind is the k-th pasoleg in reading order, which is what lets ``transcription_check``
     map a transcribed stroke to a reference kind.  A count mismatch means the faithful and
@@ -717,7 +717,7 @@ def reference_pasoleg_kinds(source: dict, key: tuple[str, str, str]) -> list[str
     if faithful is None:
         raise ValueError(
             f"{strand_name(key)}: vendored source has no faithful_chanted_verses -- re-vendor "
-            "via printed_decalogue_fetch.py (issue #74)"
+            "via printed_decalogue_fetch.py (issue wlc-utils#74)"
         )
     kinds = [kind for fv in faithful for kind in _faithful_pasoleg_kinds(fv)]
     _, _, pasoleg = _accent_tokens(version["chanted_verses"])

@@ -17,7 +17,7 @@ from accgram import fix_tester
 from tests.mc_marks import mc_to_marks
 
 # The two real verse bodies (M-C source, converted to the Phase-2 mark alphabet,
-# issue #9).  nu 25:19 ends on an atnax (92) plus a ]1 note marker and a P petuhah --
+# issue wlc-utils#9).  nu 25:19 ends on an atnax (92) plus a ]1 note marker and a P petuhah --
 # no silluq, no sof-pasuq (00).
 _NU_2519 = mc_to_marks('WA/Y:HI73Y )AX:AR"74Y HA/M.AG."PF92H]1 P')
 # nu 26:1 ends in silluq (75) + sof-pasuq (00) -- the verse's true second half.

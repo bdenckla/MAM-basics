@@ -1,7 +1,7 @@
 r"""Generate gh-pages/accgram/printed-decalogue.html -- the printed-tradition Decalogue
-grammaticality report (issue #52).
+grammaticality report (issue wlc-utils#52).
 
-Companion to the dual-cantillation work of issue #36 (which grammar-checks the *manuscript*
+Companion to the dual-cantillation work of issue wlc-utils#36 (which grammar-checks the *manuscript*
 taxton/elyon strands by detangling WLC): this page reports whether the *printed tradition*'s
 (דפוסים) taxton and elyon accentuations of the two Decalogues parse under the same prose
 grammar checker.  It renders live from ``printed_decalogue.check_all`` over the vendored
@@ -13,7 +13,7 @@ shared ``printed_decalogue_strands`` module.  The Simanim and Koren companion pa
 (``printed_decalogue_simanim_page``, ``printed_decalogue_koren_page``) link back to that table
 rather than duplicating it.
 
-The strands are IDEALIZED, and since issue #52's transcription work the page also says, in one
+The strands are IDEALIZED, and since issue wlc-utils#52's transcription work the page also says, in one
 paragraph, how the twelve hand-transcribed real Decalogues fare under the same checker: eleven
 give their Wikisource strand's verdicts at every chanted verse -- four of them by printing the
 p-trad elyon's ungrammatical merged opening verse, which is what stops that finding being an
@@ -103,14 +103,14 @@ _TRANSCRIPTIONS_ID = "real-editions"
 # Strand names are single-sourced in printed_decalogue_strands (see its module docstring). These
 # thin local aliases let the Hebrew strand words drop straight into the prose -- bare in a string
 # or as {_TAHTON} / {_ELYON} inside an f-string -- rather than through a lang="he" <span> (issue
-# #58), matching the Simanim companion page. Genuinely *pointed* Hebrew still goes through hbo()
+# wlc-utils#58), matching the Simanim companion page. Genuinely *pointed* Hebrew still goes through hbo()
 # (lang="hbo" -> the Taamey pointed-text font); only bare unpointed terms are inlined this way.
 _TAHTON = pds.TAHTON
 _ELYON = pds.ELYON
 
 
 # Romanized accent/mark names, each pre-wrapped ONCE in <span class="romanized"> (italic) so every
-# prose site below is styled without a per-site rmn() call -- issue #65, finding C2; the rule and
+# prose site below is styled without a per-site rmn() call -- issue wlc-utils#65, finding C2; the rule and
 # its exclusions are documented in printed_decalogue_strands' module docstring. These are HTML
 # nodes, not strings: splice them into a contents tuple, never into an f-string. The underlying
 # spellings stay single-sourced in pds -- don't retype them inline.
@@ -175,7 +175,7 @@ def _by_key(
 
 
 def _intro() -> tuple[object, ...]:
-    # This is the ONE full statement of the four strands in the page trio (issue #65, finding V5).
+    # This is the ONE full statement of the four strands in the page trio (issue wlc-utils#65, finding V5).
     # The two satellite pages (printed_decalogue_simanim_page, printed_decalogue_koren_page) used to
     # duplicate this paragraph verbatim; each now opens with a single "As the companion page
     # explains..." sentence linking here instead, so a reader arriving from a satellite can tell
@@ -395,7 +395,8 @@ def _range_cell(first_words, last_words, *, start: bool, stop: bool) -> object:
     """A ``first … last`` range cell: the (already letter-balanced) boundary word(s) at each end,
     stripped to letters + accents and joined by an ellipsis. The verse-initial chanted word is green
     when ``start`` and the verse-final chanted word red when ``stop``; any word pulled in only for
-    letter-alignment renders plain. ``lang="hbo"`` → Taamey font (issue #58)."""
+    letter-alignment renders plain. ``lang="hbo"`` → Taamey font (issue wlc-utils#58).
+    """
     fw = [_strip_pointing(w) for w in first_words]
     lw = [_strip_pointing(w) for w in last_words]
     fw[0] = H.span_c(fw[0], "vc-start") if start else fw[0]
@@ -415,7 +416,7 @@ def _range_cell(first_words, last_words, *, start: bool, stop: bool) -> object:
 
 
 # --------------------------------------------------------------------------- #
-# The four-strands table (issue #52)
+# The four-strands table (issue wlc-utils#52)
 # --------------------------------------------------------------------------- #
 # Two-char row-header abbreviations for the four strands, coherent with the nesting tables'
 # single E/T letters below; the dotted-underline title spells each out (the romanized form is
@@ -539,7 +540,7 @@ _UL_ITEM_3 = (
 
 
 # --------------------------------------------------------------------------- #
-# What the twelve real editions do under the checker (issue #52)
+# What the twelve real editions do under the checker (issue wlc-utils#52)
 # --------------------------------------------------------------------------- #
 # The hub states only the TOTALS; the per-Decalogue verdicts are the satellite pages', which is
 # where they are documented. Every number below is counted from the checker's own results rather
@@ -652,7 +653,7 @@ def _four_strands_section(
                 " real edition can stray from its nominal tradition.",
             )
         ),
-        # The transcription basis (issue #69). The hub states only what is a fact about the
+        # The transcription basis (issue wlc-utils#69). The hub states only what is a fact about the
         # STRANDS; the per-Decalogue verdicts live on the two satellite pages, and this page must
         # not assert what they do not document. The ובנך־ובתך sentence is here rather than there
         # precisely because neither satellite can tell it alone: it takes both editions.
@@ -695,7 +696,7 @@ def _four_strands_section(
 
 
 # --------------------------------------------------------------------------- #
-# The nesting tables (issues #59, #62)
+# The nesting tables (issues wlc-utils#59, wlc-utils#62)
 # --------------------------------------------------------------------------- #
 # Two transposed strand tables over the SAME opening region (commandments 1-2, the 51 words
 # אנכי...מצותי): one for the printed tradition (pE/pT), one for the manuscript tradition (mE/mT),
@@ -710,7 +711,7 @@ def _four_strands_section(
 # edge of the other strand (the m-trad taxton's אנכי...על־פני crossing the elyon's break after
 # עבדים) the cell shows a start with no matching stop, or vice versa — the "straddling" that makes
 # the m-trad nesting less tidy than the p-trad's clean five-in-one. (M/B numbering is dropped because the two traditions
-# split this region differently, so no single verse-number row aligns with the columns; issue #59.)
+# split this region differently, so no single verse-number row aligns with the columns; issue wlc-utils#59.)
 
 
 def _leading_verses(
@@ -1104,7 +1105,7 @@ def _sabbath_diff_table(results: list[pd.VersionResult]) -> object:
     on a shared disjunctive; the head and tail the two strands share verbatim are omitted. The table
     picks up the shared centered layout and the lang="hbo" font; its lone class turns OFF the shared
     odd-row zebra, which -- the rows alternating m-trad/p-trad -- tinted exactly the three m-trad
-    rows and so read as if the stripe meant "m-trad" (issue #65, finding C3). Span, breaks, and the
+    rows and so read as if the stripe meant "m-trad" (issue wlc-utils#65, finding C3). Span, breaks, and the
     disjunctive check are all derived live from the data, so nothing here can drift from the
     grammar-checked text."""
     m_span, p_span = _differing_span(
@@ -1376,12 +1377,12 @@ def _appendix_section(results: list[pd.VersionResult]) -> tuple[object, ...]:
                 " split as in Exodus.",
             )
         ),
-        # An aside (issue #52 follow-up, corrected by issue #66): the p-trad תחתון Sabbath
+        # An aside (issue wlc-utils#52 follow-up, corrected by issue wlc-utils#66): the p-trad תחתון Sabbath
         # cantillation dissected just above also turns up in CTR, the web edition my CTR review
         # judges the weirdest, and possibly worst, on the web. The aside exists for that quip.
         # Its "on the web" scoping is load-bearing, not incidental: it deliberately makes no claim
         # about which PRINT editions have the cantillation. Koren has it too, in its own
-        # Deuteronomy (issue #66); an earlier draft asserted a "gap in Koren and Simanim" that was
+        # Deuteronomy (issue wlc-utils#66); an earlier draft asserted a "gap in Koren and Simanim" that was
         # simply false for Koren. Keep any rewrite of the aside scoped to the web.
         *_chabad_aside(),
     )
@@ -1411,7 +1412,7 @@ def _chabad_aside() -> tuple[object, ...]:
                 " defines it, down to all but one conjunctive accent.",
             )
         ),
-        # CTR's Exodus (issue #69, Result 11). It stays an aside, deliberately: CTR is a curiosity
+        # CTR's Exodus (issue wlc-utils#69, Result 11). It stays an aside, deliberately: CTR is a curiosity
         # beside the twelve hand-transcribed Decalogues, not a thirteenth, and no claim on this
         # page or its satellites rests on it. Say the division in CHANTED VERSES only -- an earlier
         # draft called it "the ordinary numbered-verse division", which is both off-subject (these

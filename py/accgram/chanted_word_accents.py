@@ -11,7 +11,7 @@ Pure computation and a JSON writer -- no HTML, and DELIBERATELY none.  Run via
 dropped (2026-07-29): ``maqaf-nonfinal-accents.html`` had meanwhile widened to ask the same
 question of all three printed compounds, and the plan's own thrust is a chanted-word rule in the
 checker rather than a page.  The Yeivin cross-check is recorded here, in the JSON, which is the
-form it wanted.  Issue #86 holds the questions the survey raises and does not settle.
+form it wanted.  Issue wlc-utils#86 holds the questions the survey raises and does not settle.
 
 THE SURVEY AND THE FLAGGING PATH are both here.  ``build_survey`` measures the three corpora and
 sets Yeivin's inventory beside MAM; ``classify_verse`` asks the same question of one verse at a
@@ -34,7 +34,7 @@ neither is a metigah-zaqef.  One confound survives and is handled here: a geresh
 written twice on one chanted word is ONE accent written twice, and the scanner does not fuse it.
 ``_fold_repeated_geresh`` folds such a repeat, and ``geresh_folds`` names every place it fired.
 
-ATOM AND CHANTED WORD (issue #81).  An atom is one written word, between spaces or maqafs; a
+ATOM AND CHANTED WORD (issue wlc-utils#81).  An atom is one written word, between spaces or maqafs; a
 chanted word is a lone atom or a whole maqaf compound, and is the unit an accent marks.  Yeivin
 states outright that the two take the same rules -- ITM §302, quoted in ``YEIVIN_ENTRIES`` -- so
 this survey counts both together and records which kind each hit is, rather than treating the
@@ -1030,8 +1030,8 @@ def merkha_tipexa_discrepancy(mam: dict) -> dict:
             " not settled here, and the two surveys currently answer differently:"
             " ``maqaf_nonfinal_accents._NAMED_CONFIGURATIONS`` labels a merkha on a"
             " non-final atom with a tipexa on the compound as §233's secondary merkha,"
-            " which is precisely these four. Issue #86 holds the citation question."
-            " (Phase 1 filed it under #82, whose subject is instead Yeivin's two"
+            " which is precisely these four. Issue wlc-utils#86 holds the citation question."
+            " (Phase 1 filed it under wlc-utils#82, whose subject is instead Yeivin's two"
             " Deuteronomy 33 maqaf readings for the LC.)"
         ),
     }

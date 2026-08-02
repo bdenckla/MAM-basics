@@ -8,20 +8,20 @@ native here, they are the SOURCE the other repos vendor FROM, and the exclusion 
 hiding half the hits, so it is gone.  The two checks:
 
 1. ``test_no_undesirable_transliterations`` -- a denylist of spelling variants
-   that the #13 standardization retired: ``zinor``->``tsinnor`` (#30),
+   that the wlc-utils#13 standardization retired: ``zinor``->``tsinnor`` (wlc-utils#30),
    ``merka``->``merkha``, ``atnach``->``atnax``, ``sinnor``->``tsinnor``, the
    het-as-plain-``h`` forms, and a few Goerwitz/legacy capitalizations.  No
    lookahead is needed to shield the good form: the preferred spellings are
    precomposed ``ḥ`` (U+1E25), which shares no ASCII substring with a pattern
    like ``munah``, so the good spelling can never trip it.
 
-2. ``test_no_decomposed_composites_tree_wide`` -- #49 inverts the polarity
-   #27 established: the repo standard is now NFC (precomposed), so any
+2. ``test_no_decomposed_composites_tree_wide`` -- wlc-utils#49 inverts the polarity
+   wlc-utils#27 established: the repo standard is now NFC (precomposed), so any
    decomposed base+combining-mark pair with a single-codepoint NFC
    composition (e.g. ``h`` + U+0323) is flagged.
 
 Legitimate exemptions (external vocabularies / verbatim citations), each tagged
-``# translit-ok`` in the source and enumerated in issue #26:
+``# translit-ok`` in the source and enumerated in issue wlc-utils#26:
 
 * UXLC external vocab -- the readers that match UXLC's own spellings
   ``etnahta`` / ``etnachta`` / ``zinor`` (``main_uxlc_grammar_test.py``,
@@ -51,7 +51,7 @@ _PRAGMA = re.compile(r"#\s*translit-ok")
 
 # (compiled pattern, preferred spelling, short label).  Patterns are anchored so the
 # good precomposed forms and the genuine Unicode names never match; see the per-row
-# notes in issue #26's research comment.
+# notes in issue wlc-utils#26's research comment.
 _DENYLIST: list[tuple[re.Pattern[str], str, str]] = [
     (re.compile(r"\b[Zz]inor\b"), "tsinnor", "zinor"),
     (re.compile(r"(?<![tT])\b[sS]innor"), "tsinnor(it)", "sinnor"),
@@ -114,7 +114,7 @@ def test_no_undesirable_transliterations() -> None:
     )
 
 
-# --- decomposed-composite guard (#49 inverts the polarity #27 folded in here) --
+# --- decomposed-composite guard (wlc-utils#49 inverts the polarity wlc-utils#27 folded in here) --
 
 
 def _decomposed_composites(text: str):

@@ -1,4 +1,4 @@
-"""Read the two Decalogues' m-trad strands from BOTH of the repo's sources (issue #68).
+"""Read the two Decalogues' m-trad strands from BOTH of the repo's sources (issue wlc-utils#68).
 
 The repo holds MAM's manuscript-tradition taxton and elyon Decalogue readings twice over,
 and the printed-Decalogue page trio takes the m-trad as its authoritative baseline, so the
@@ -27,7 +27,7 @@ THE VERTICAL STROKE IS TEMPLATE-BORNE ON BOTH SIDES, NOT LITERAL.  Neither Decal
 a literal U+05C0 anywhere in cell E: every stroke is a ``מ:לגרמיה-2`` (legarmeh) or a
 ``מ:פסק`` (narrow-sense paseq) template, so the distinction the glyph cannot express is
 carried by template identity.  The vendored ``faithful_chanted_verses`` keeps the same
-distinction with its own ``{{מ:לגרמיה}}`` / ``{{מ:פסק}}`` (issue #74), where the folded
+distinction with its own ``{{מ:לגרמיה}}`` / ``{{מ:פסק}}`` (issue wlc-utils#74), where the folded
 ``chanted_verses`` collapses both to U+05C0.  So the two sources can be checked against
 each other at full precision rather than folded together, which is why this module reads
 the faithful field and not the folded one.
@@ -367,7 +367,7 @@ def from_vendored(source: dict, book: str, reading: str) -> Strand:
     if faithful is None:
         raise ValueError(
             f"{book}/{reading}: the vendored source has no faithful_chanted_verses -- "
-            "re-vendor via printed_decalogue_fetch.py (issue #74)"
+            "re-vendor via printed_decalogue_fetch.py (issue wlc-utils#74)"
         )
     kinds: list[str] = []
     verses: list[tuple[str, ...]] = []

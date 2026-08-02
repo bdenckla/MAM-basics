@@ -56,7 +56,7 @@ def verse_unicode_text(
 
     The single source for the pointed-Hebrew rendering of a verse: the ungrammatical
     ``content`` field (classify) and the per-verse ``input.unicode`` field of the
-    prose JSON outputs (prose_run, issue #20) both draw from it.
+    prose JSON outputs (prose_run, issue wlc-utils#20) both draw from it.
     """
     bcv = rtms_rows.to_compact_bcv(bb, chnu, vrnu)
     verse = wlc_index.get(bcv)

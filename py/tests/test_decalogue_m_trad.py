@@ -1,4 +1,4 @@
-"""Issue #68: the m-trad Decalogue strands agree between the repo's two copies of them.
+"""Issue wlc-utils#68: the m-trad Decalogue strands agree between the repo's two copies of them.
 
 The printed-Decalogue page trio (``printed_decalogue_page`` and its Koren and Simanim
 satellites, via ``printed_decalogue_strands``) takes MAM's manuscript tradition as its

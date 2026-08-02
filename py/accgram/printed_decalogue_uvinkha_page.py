@@ -3,7 +3,7 @@ r"""Generate gh-pages/accgram/printed-decalogue-uvinkha.html -- the editions cit
 A record page, not an argument page.  MAM-basics issue #208 asks whether Hebrew Wikisource's
 p-trad עליון is right to have a meteg and a maqaf on ובנך in the Exodus Decalogue's Shabbat
 commandment, where Koren's Classic Tanakh and the Simanim Tiqqun each have a munax instead --
-the two editions transcribed for issue #69, whose verdicts the trio's satellite pages carry.
+the two editions transcribed for issue wlc-utils#69, whose verdicts the trio's satellite pages carry.
 A reply in that thread answers it by citing eight printed editions plus Minxat Shai, each by an
 archive.org or Al-Hatorah link.  This page holds those links, with a crop of each cited page, so
 a reader can check a citation without opening nine scans.

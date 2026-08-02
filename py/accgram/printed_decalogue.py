@@ -1,16 +1,16 @@
-r"""Grammar-check the printed-tradition Decalogue accentuations (issue #52).
+r"""Grammar-check the printed-tradition Decalogue accentuations (issue wlc-utils#52).
 
-Issue #36 grammar-checks the *manuscript* (Tiberian, WLC/MAM) taxton/elyon threads of the
+Issue wlc-utils#36 grammar-checks the *manuscript* (Tiberian, WLC/MAM) taxton/elyon threads of the
 two Decalogues by detangling WLC's dual cantillation.  This module answers the companion
 question for the *printed* tradition (דפוסים / Koren / Simanim's Tiqqun): fed through the same
 prose grammar checker, are the printed editions' taxton and elyon accentuations grammatical
 too, for both Exodus 20 and Deuteronomy 5?
 
-Unlike #36 -- which must *detangle* WLC's two-accents-per-word source -- the printed and
+Unlike wlc-utils#36 -- which must *detangle* WLC's two-accents-per-word source -- the printed and
 manuscript readings are already single-cantillation, spelled out word-for-word on
 he.wikisource ``עשרת הדברות בסיס/טעמים`` (vendored by ``printed_decalogue_fetch.py`` to
 ``in/accgram/printed_decalogue_teamim.json``).  So this module simply feeds each chanted
-verse through the shared pipeline #36 uses -- ``uni_to_marks.verse_to_marks`` -> a leading
+verse through the shared pipeline wlc-utils#36 uses -- ``uni_to_marks.verse_to_marks`` -> a leading
 ``TILDE`` + ``prose_scanner.scan_accents`` -> ``prose_ply_grammar.parse_tokens`` -- and
 records clean / ungrammatical per chanted verse.
 
@@ -18,7 +18,7 @@ Both manuscript versions serve as the baseline (MAM's own authoritative text: ex
 clean); the printed versions are the object of study.  That baseline is not taken on trust:
 ``decalogue_m_trad`` checks all four m-trad strands, word for word and stroke for stroke,
 against MAM's own parse of its own text in the sibling repo MAM-parsed's ``plus`` tree, and
-they agree exactly (issue #68).  The verdict is stable and stark:
+they agree exactly (issue wlc-utils#68).  The verdict is stable and stark:
 
   * **taxton** parses clean in both books and both traditions;
   * **elyon** parses clean in the manuscript, but in the *printed* editions of *both*
@@ -128,7 +128,7 @@ class VersionResult:
 # --------------------------------------------------------------------------- #
 def _to_vels(chanted_verse: str) -> list[str]:
     """Whitespace-split into vels, folding a standalone paseq onto the previous word
-    (matching WLC's attached convention and #36's ``_emit_stream``)."""
+    (matching WLC's attached convention and wlc-utils#36's ``_emit_stream``)."""
     vels: list[str] = []
     for tok in chanted_verse.split():
         if tok == _PASEQ and vels:
@@ -244,7 +244,7 @@ def _version_obj(vr: VersionResult) -> dict[str, object]:
 def _payload(
     results: list[VersionResult], source: dict, transcriptions: list[dict]
 ) -> dict[str, object]:
-    """The output file: the strands' verdicts, then the real editions' (issue #52).
+    """The output file: the strands' verdicts, then the real editions' (issue wlc-utils#52).
 
     ``transcriptions`` is already-serialized (``transcription_parse.payload_objs``), which is
     what keeps this module free of any import of that one -- the dependency runs the other way,

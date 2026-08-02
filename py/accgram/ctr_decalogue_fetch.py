@@ -1,8 +1,8 @@
-r"""Author tool: vendor CTR's two Decalogues from chabad.org (issue #73).
+r"""Author tool: vendor CTR's two Decalogues from chabad.org (issue wlc-utils#73).
 
 CTR is the "Complete Tanach with Rashi", the Chabad.org web edition of the Hebrew Bible
 (``https://www.chabad.org/library/bible_cdo/aid/<aid>``).  Unlike the eight paper
-Decalogues of #69 -- each a HAND TRANSCRIPTION, primary observation read off a printed
+Decalogues of wlc-utils#69 -- each a HAND TRANSCRIPTION, primary observation read off a printed
 page -- CTR is DIGITAL: its accents are already Unicode, so it is fetched and diffed
 rather than read and typed.  It is therefore a VENDORED STRAND, not a transcription; this
 tool is the network author-tool that refreshes the vendored snapshot, exactly as

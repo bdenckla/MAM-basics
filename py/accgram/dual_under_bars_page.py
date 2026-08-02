@@ -1,4 +1,4 @@
-r"""Generate gh-pages/accgram/dual-under-bars-in-leningrad-decalogues.html (issue #53).
+r"""Generate gh-pages/accgram/dual-under-bars-in-leningrad-decalogues.html (issue wlc-utils#53).
 
 An evidence page backing the "Supplied accents" Asides on supplied-marks.html (Exodus 20:3,
 Deuteronomy 5:17), which speculate that the Leningrad naqdan may have meant one vertical

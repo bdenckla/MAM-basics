@@ -6,8 +6,8 @@ the poetic verses (Psalms and Proverbs wholesale plus poetically-cantillated Job
 poetic_filter), scans each verse with poetic_scanner, reconciles the tokens against MAM
 (poetic_reconcile: the legarmeh-vs-paseq and unmarked-oleh corrections the M-C source
 cannot express), parses the result with poetic_ply_grammar, then writes one JSON record per
-verse to out/accgram/poetic/wlc_422_ps_<bb>_ag.json (issue #39, the poetic analogue of the
-prose #20 cutover, replacing the legacy bespoke indented-tree text).  Each record pairs the
+verse to out/accgram/poetic/wlc_422_ps_<bb>_ag.json (issue wlc-utils#39, the poetic analogue of the
+prose wlc-utils#20 cutover, replacing the legacy bespoke indented-tree text).  Each record pairs the
 verse's ``input`` (pointed-Hebrew unicode + raw mark body + reconciled token stream) with
 the full parse ``tree`` -- so "how the input parses" is shown for every verse, not just the
 handful of ungrammatical cases the old text format named.
@@ -68,7 +68,7 @@ def no_parse_line(
 
     The TILDE/SOFPASUQ structural bookends are dropped; only the accent token types
     between them are listed, so the failing accent sequence is visible at a glance
-    (e.g. ``NO_PARSE: PAZER SILLUQ``).  No longer written by this driver (issue #39
+    (e.g. ``NO_PARSE: PAZER SILLUQ``).  No longer written by this driver (issue wlc-utils#39
     replaced the bespoke text output with per-verse JSON) -- poetic_oddballs reuses it
     to render the NO_PARSE line for the HTML report.
 

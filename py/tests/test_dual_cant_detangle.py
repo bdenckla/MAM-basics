@@ -1,4 +1,4 @@
-"""Stage-2 of issue #36: the dual-cantillation detangler.
+"""Stage-2 of issue wlc-utils#36: the dual-cantillation detangler.
 
 Drives all three loci (Gen 35:22 + the two Decalogues) through the detangler and the
 *existing* prose grammar.  The corpus-backed assertions FAIL, rather than skipping, when the
