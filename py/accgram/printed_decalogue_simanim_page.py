@@ -1254,8 +1254,8 @@ def _conclusion(
                 itm(),
                 " §223, “the word bearing zaqef”, and Breuer's ",
                 cos(),
-                " ch. 5 §4, “a [metigah] will appear in the word of the small [zaqef]”, the"
-                " bracketed names being this page's spellings for the translator's.",
+                " ch. 5 §4, “a [metigah] will appear in the word of the [zaqef qatan]”, the"
+                " bracketed names being this page's, in place of the translator's.",
             )
         ),
         H.para(
