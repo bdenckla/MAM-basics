@@ -93,6 +93,15 @@ _TELISHA_GERESH_PAIRS = frozenset(
     )
 )
 
+# How many of the inventory's configurations the opening sentence names before it counts the
+# rest ("a munax before a zaqef, a mahapakh before a pashta, an azla before a geresh, and N
+# more").  Spliced rather than written into the prose, because ITM §256 joined the inventory on
+# 2026-08-03 and the sentence went on saying ten.
+_NAMED_SPELLED_OUT = 3
+
+# WLC's book code for Job, for the rows that are in its prose frame.
+_JOB_BB = "jb"
+
 # ``run-prose``'s statuses that mean the verse carries an ERROR leaf, as ``prose_oddballs``
 # spells them, and how each reads on a page written for Hebrew-Bible readers.  The raw status
 # is the hover text, since it is what a reader would grep the JSON for and nothing else here
@@ -280,6 +289,12 @@ def pin_claims(survey: dict, rows: list[dict]) -> None:
     assert all(
         r["status"] == "clean" for r in telisha
     ), "a whitelisted telisha gedolah word is no longer clean"
+    # The opening sentence names three configurations and then counts the rest, so it has to
+    # be able to name three.  Everything past that is spliced.
+    assert len(named) > _NAMED_SPELLED_OUT, (
+        f"the inventory is down to {len(named)} sequences, and the opening sentence names"
+        f" {_NAMED_SPELLED_OUT} of them before counting the remainder"
+    )
 
 
 # --- the page -----------------------------------------------------------------
@@ -298,6 +313,17 @@ _NUMBER_WORDS = (
     "seven",
     "eight",
     "nine",
+    "ten",
+    "eleven",
+    "twelve",
+    "thirteen",
+    "fourteen",
+    "fifteen",
+    "sixteen",
+    "seventeen",
+    "eighteen",
+    "nineteen",
+    "twenty",
 )
 
 
@@ -316,12 +342,43 @@ def _counts(survey: dict, rows: list[dict]) -> dict[str, int]:
         "residue": len(rows),
         "sequences": len({r["sequence"] for r in rows}),
         "named": len(cwa.NAMED_TOKEN_SEQUENCES),
+        "named_unspelled": len(cwa.NAMED_TOKEN_SEQUENCES) - _NAMED_SPELLED_OUT,
         "mam_residue": survey["mam_residue"]["total"],
         "flagged": sum(1 for r in rows if r["status"] in _ERROR_STATUSES),
         "clean": sum(1 for r in rows if r["status"] not in _ERROR_STATUSES),
         "telisha": sum(1 for r in rows if r["sequence"] in _TELISHA_GERESH_PAIRS),
+        "job_frame": sum(1 for r in rows if r["bcv"].startswith(_JOB_BB)),
         "shared_with_mam": sum(1 for r in rows if r["mam_sequence"] is not None),
     }
+
+
+def _accounted_for(counts: dict[str, int]) -> str:
+    """The paragraph naming the groups of rows that are accounted for elsewhere already.
+
+    Built rather than written out, because both of its groups have already gone stale once: the
+    Job sentence stood after ITM §256 named ``qadma darga`` and took every Job row out of the
+    table with it, and nothing raised, the claim having been prose with no assertion under it.
+    A group with no rows now drops out of the sentence instead.
+    """
+    groups = [
+        f"the {_number_word(counts['telisha'])} words on which a telisha gedolah and a geresh"
+        " or gershayim share a base letter — a legitimate pair, whitelisted by the checker's"
+        " alphabet layer and set out in the telisha gedolah exhibit of the almost-errors page"
+        " — where the two marks count as two accents here because the scanner does not fuse"
+        " them"
+    ]
+    if counts["job_frame"]:
+        groups.append(
+            f"the {_number_word(counts['job_frame'])} Job rows, which are in Job's prose frame:"
+            " poetically booked and prose cantillated, so they belong in a prose survey however"
+            " the reference reads"
+        )
+    if len(groups) == 1:
+        return f"One group of rows is accounted for elsewhere already: {groups[0]}."
+    return (
+        f"{_number_word(len(groups)).capitalize()} groups of rows are accounted for elsewhere"
+        f" already. The first is {groups[0]}. The second is {groups[1]}."
+    )
 
 
 def _intro(counts: dict[str, int]) -> tuple[object, ...]:
@@ -331,7 +388,8 @@ def _intro(counts: dict[str, int]) -> tuple[object, ...]:
             "A chanted word — an atom, or a whole maqaf compound — normally has one accent."
             " A few dozen in the Tanakh have two, and for most of those Yeivin's Introduction"
             " to the Tiberian Masorah names the pair: a munaḥ before a zaqef, a mahapakh before"
-            " a pashta, an azla before a geresh, and ten more configurations besides."
+            " a pashta, an azla before a geresh, and"
+            f" {_number_word(counts['named_unspelled'])} more configurations besides."
             f" This page is the remainder. In WLC's {counts['verses']:,} prose verses there are"
             f" {counts['chanted_words']:,} chanted words, of which {counts['hits']:,} have two"
             f" accents; {counts['residue']} of those have a pair that no section of his"
@@ -360,16 +418,7 @@ def _intro(counts: dict[str, int]) -> tuple[object, ...]:
                 " page nor the survey behind it answers it.",
             )
         ),
-        text_para(
-            "Two groups of rows are accounted for elsewhere already. The first is the"
-            f" {_number_word(counts['telisha'])} words on which a telisha gedolah and a geresh"
-            " or gershayim share a base letter — a legitimate pair, whitelisted by the"
-            " checker's alphabet layer and set out in the telisha gedolah exhibit of the"
-            " almost-errors page — where the two marks count as two accents here because the"
-            " scanner does not fuse them. The second is the four Job rows, which are in Job's"
-            " prose frame: poetically booked and prose cantillated, so they belong in a prose"
-            " survey however the reference reads."
-        ),
+        text_para(_accounted_for(counts)),
     )
 
 
