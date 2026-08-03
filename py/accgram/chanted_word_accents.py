@@ -30,7 +30,11 @@ helper with its zarqa, the same-letter ``mahapakh!qadma`` cluster, munax + U+05C
 qadma...zaqef as ``METHIGAZAQEF``.  It also swallows meteg, emitting ``SILLUQ`` only for a
 verse-final U+05BD before sof pasuq.  Counting tokens therefore disposes of every confound that
 would otherwise have to be special-cased -- a stress helper written twice is not two accents, and
-neither is a metigah-zaqef.  One confound survives and is handled here: a geresh or gershayim
+neither is a metigah-zaqef.  The METHIGAZAQEF fuse crosses a maqaf and stops at a space, so a fused
+pair is always one chanted word and the survey never counts one token for two: ITM §223's leading
+example is the compound Ex 35:9 ואבני־שהם, while both that section and CoS Ch. 5 §§4-6 restrict
+the metigah to the chanted word of the zaqef.  ``_methigazaqef_crossings`` is the
+lint that holds the scanner to it.  One confound survives and is handled here: a geresh or gershayim
 written twice on one chanted word is ONE accent written twice, and the scanner does not fuse it.
 ``_fold_repeated_geresh`` folds such a repeat, and ``geresh_folds`` names every place it fired.
 
@@ -416,10 +420,13 @@ def _methigazaqef_crossings(
 ) -> list[dict]:
     """Every METHIGAZAQEF token whose qadma and zaqef sit in different chanted words.
 
-    The fuse is deliberate (``prose_scanner``'s rule crosses a maqaf so that ITM §223's
-    metigah-zaqef on a compound is one token), but it also crosses a space, and where it does the
-    survey counts one token for two chanted words.  The design leans on the fuse, so the places it
-    reaches across a boundary are named rather than assumed away.
+    A MECHANICAL LINT, and it must read 0 in all three corpora.  ``prose_scanner``'s rule crosses
+    a maqaf, so that ITM §223's metigah-zaqef on the compound Ex 35:9 ואבני־שהם is one token, and
+    stops at a space, because §223 and CoS Ch. 5 §§4-6 restrict the metigah to the chanted word of
+    the zaqef.  A non-zero count therefore means the fuse has reached across a
+    chanted-word boundary again -- the regression this function exists to catch -- so the places
+    it reaches are named rather than assumed away.  It read 5 in WLC and 3 in UXLC until the space
+    went into ``_METHIGA_MID``; the counts themselves live in the JSON, not in this docstring.
     """
     out: list[dict] = []
     for token in tokens:
@@ -771,7 +778,12 @@ YEIVIN_ENTRIES: tuple[YeivinEntry, ...] = (
         note=(
             "Invisible to this survey by construction: the scanner fuses qadma...zaqef into"
             " one METHIGAZAQEF token, so a metigah-zaqef chanted word has one accent token,"
-            " not two. The token count and the boundary-crossing cases are under"
+            " not two. The fuse crosses a maqaf, as this section's leading example Ex 35:9"
+            " ואבני־שהם requires, and stops at a space, on this section's 'the word bearing"
+            " zaqef' and CoS Ch. 5 §4's 'A methiga will appear in the word of the small"
+            " zakef'. So a fused pair is always one chanted word, and"
+            " ``crossing_a_chanted_word_boundary`` is 0 in all three corpora -- a lint on the"
+            " scanner rather than a measurement of the corpus. The token count is under"
             " ``methigazaqef`` in each corpus."
         ),
     ),

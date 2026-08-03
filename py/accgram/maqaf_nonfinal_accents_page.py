@@ -31,6 +31,7 @@ from accgram import printed_decalogue as pd
 from accgram import rtms_report
 from accgram.almost_errors_html_shared import (
     accents_and_letters,
+    cos,
     hbo,
     itm,
     link,
@@ -2087,10 +2088,9 @@ def _prose_section(survey: dict, rows: list[dict]) -> tuple[object, ...]:
 
 # Breuer's book, written short with the full title on hover (Ben, 2026-07-28: "'Breuer, Chapter
 # 9' doesn't say what breuer book ... use CoS and ITM respectively, and make these hover-reveal
-# the full title").  Single-sourced here, so the two sections cannot come to cite it differently.
-# Yeivin's, which that instruction covered in the same breath, moved to
-# ``almost_errors_html_shared`` when ``wlc_chanted_word_residue_page`` wanted the same spelling.
-_COS_TITLE = "The Cantillation of Scripture"
+# the full title").  Both books' titles now live in ``almost_errors_html_shared``: Yeivin's moved
+# there when ``wlc_chanted_word_residue_page`` wanted the same spelling, Breuer's when
+# ``printed_decalogue_simanim_page`` did, so no two pages can come to cite either differently.
 # The third book, cited once, for the one distinction on this page that neither of the other two
 # makes: the geresh/azla naming.  Ben, 2026-07-29, having read all three: "I'm comfortable
 # resting on Jacobson's terminology; to me it doesn't contradict Yeivin or Breuer; it just adds a
@@ -2109,7 +2109,11 @@ def _itm() -> object:
 
 
 def _cos() -> object:
-    return H.abbr("CoS", _COS_TITLE)
+    """Breuer's CoS, spelled as ``almost_errors_html_shared`` spells it for both pages.
+
+    A thin wrapper for the same reason ``_itm`` is one: the call sites keep this page's name.
+    """
+    return cos()
 
 
 def _chb() -> object:

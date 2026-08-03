@@ -14,10 +14,11 @@ shared ``printed_decalogue_strands`` module.  The Simanim and Koren companion pa
 rather than duplicating it.
 
 The strands are IDEALIZED, and since issue wlc-utils#52's transcription work the page also says, in one
-paragraph, how the twelve hand-transcribed real Decalogues fare under the same checker: eleven
+paragraph, how the twelve hand-transcribed real Decalogues fare under the same checker: ten
 give their Wikisource strand's verdicts at every chanted verse -- four of them by printing the
 p-trad elyon's ungrammatical merged opening verse, which is what stops that finding being an
-artifact of the idealization -- and one departs.  Those counts come live from
+artifact of the idealization -- and two depart, the Simanim Tiqqun's Exodus appendix Decalogue
+(p. 246) and the Simanim Tanakh's Deuteronomy main Decalogue (p. 298).  Those counts come live from
 ``transcription_parse.check_all``,
 and the per-Decalogue verdicts stay on the two satellite pages, which is where they are
 documented; the hub must not assert what a satellite does not.
@@ -118,6 +119,8 @@ _ROM_ETNAHTA = rmn(pds.ROM_ETNAHTA)
 _ROM_GERESH = rmn(pds.ROM_GERESH)
 _ROM_LEGARMEH = rmn(pds.ROM_LEGARMEH)
 _ROM_PASHTA = rmn(pds.ROM_PASHTA)
+# Named only in the transcription paragraph, for the Simanim Tanakh's p. 298 divergence.
+_ROM_QADMA = rmn(pds.ROM_QADMA)
 _ROM_PASEQ = rmn(pds.ROM_PASEQ)
 _ROM_REVIA = rmn(pds.ROM_REVIA)
 _ROM_SEGOLTA = rmn(pds.ROM_SEGOLTA)
@@ -581,12 +584,18 @@ def _transcription_grammar_para(verdicts: list[tp.TranscriptionResult]) -> objec
             f" of them that follow a p-trad {_ELYON} means printing that ungrammatical opening"
             " verse. Simanim's Tiqqun does, in both of its main Decalogues, and Koren in both of"
             " its appendix ones: the merged first two commandments are in books in print, not only"
-            " in an idealized strand. The remaining"
-            " one is the Simanim Tiqqun's Exodus appendix Decalogue, which is ungrammatical at a"
-            " chanted verse where its Wikisource strand is clean, over a single added"
-            " conjunctive; the ",
+            " in an idealized strand. The remaining ",
+            H.bold(str(len(departing))),
+            " are both Simanim's, and each is ungrammatical at a chanted verse where its"
+            " Wikisource strand is clean, over a single mark. The Simanim Tiqqun's Exodus appendix"
+            " Decalogue has a conjunctive its Wikisource strand does not; the Simanim Tanakh's"
+            " Deuteronomy main Decalogue has a ",
+            _ROM_QADMA,
+            " where its Wikisource strand has a ",
+            _ROM_PASHTA,
+            ". The ",
             link("Simanim page", _SIMANIM_PAGE),
-            " has it.",
+            " has both.",
         ),
         {"id": _TRANSCRIPTIONS_ID},
     )

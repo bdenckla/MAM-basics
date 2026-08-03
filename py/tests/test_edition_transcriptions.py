@@ -255,9 +255,13 @@ _EXPECTED_DIVERGENCES = {
     # pashta.  Confirmed off the page rather than corrected: Ben flagged it while typing as a
     # probable error in the edition and re-read it against a zoom.  All four ELYON strands do
     # have qadma there, but the elyon pairs it with geresh on השביעי where this page keeps the
-    # taxton's zaqef qatan, so the page prints an elyon-shaped accent inside a taxton phrase
-    # rather than an elyon phrase.  The pair it makes, qadma before zaqef qatan, is the one the
-    # prose scanner reads as methiga-zaqef, so this is one attested zaqef phrase for another.
+    # taxton's zaqef qatan, so what the page prints is one elyon accent inside an otherwise
+    # taxton-conforming Decalogue.  The pair it makes, qadma before zaqef qatan, is NOT a
+    # metigah-zaqef: ויום and השביעי are two chanted words, with a space and not a maqaf between
+    # them, and ITM §223 and CoS Ch. 5 §4 both restrict the metigah to the chanted word of the zaqef.
+    # The prose scanner fused the pair across the space and read the chanted verse clean until
+    # 2026-08-03; it no longer does, so this stem is now a pinned grammaticality departure --
+    # see _GRAMMATICALITY_DEPARTURES below.
     #
     # It REMOVES a disjunctive, which is why this stem is absent from _SKELETON_UNTOUCHED -- the
     # second transcription of the ten whose divergence touches the skeleton, after
@@ -1176,15 +1180,27 @@ def test_the_synthesized_mark_body_reproduces_the_scanner_on_an_agreeing_page(
 
 # Where a transcription's grammaticality verdict departs from its Wikisource strand's, chanted
 # verse by chanted verse: stem -> [(1-based index, the strand's status, the page's status)].
-# Every stem not listed matches its Wikisource strand at every chanted verse, which eleven of the
+# Every stem not listed matches its Wikisource strand at every chanted verse, which ten of the
 # twelve do.
 #
-# The one departure is the point of doing this at all.  simtiq_ex_taxton's divergences are
+# The two departures are the point of doing this at all, and they are different findings.
+#
+# simtiq_ex_taxton (the Simanim Tiqqun's Exodus appendix, p. 246) has divergences that are
 # CONJUNCTIVE-ONLY -- the stem is in _SKELETON_UNTOUCHED above, correctly -- and its third
 # chanted verse is ungrammatical anyway, so the skeleton test and this one are not two spellings
-# of one claim.  The mechanism is pinned separately below.
+# of one claim.  The mechanism is pinned separately below: an extra munax on the joined atom of
+# לא־תעשה makes three servi where the grammar takes two.
+#
+# simtan_dt_taxton (the Simanim Tanakh's Deuteronomy main Decalogue, p. 298) has its one
+# divergence on the disjunctive skeleton instead: a qadma on ויום where every taxton strand has
+# a pashta.  It became a departure on 2026-08-03, when prose_scanner's METHIGAZAQEF fuse was
+# stopped at a space.  The pair used to fuse into one metigah-zaqef token across the space and
+# the chanted verse read clean; ויום and השביעי are two chanted words, and ITM §223 and CoS
+# Ch. 5 §4 both restrict the metigah to the chanted word of the zaqef, so the fuse was wrong to reach
+# there and the chanted verse is ungrammatical.
 _GRAMMATICALITY_DEPARTURES = {
     "simtiq_ex_taxton": [(3, "clean", "ungrammatical")],
+    "simtan_dt_taxton": [(8, "clean", "ungrammatical")],
 }
 
 

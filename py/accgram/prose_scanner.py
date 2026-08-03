@@ -28,6 +28,15 @@ Faithfulness notes (flex semantics reproduced):
     maqqef/space-delimited atom; Python `re` greediness reproduces the longest
     match (backtracking to the rightmost terminator).
 
+Divergence from the goerwitz C oracle (metigah-zaqef): the C lexer's methiga-zaqef body class
+`[^01234680]*` excludes no literal space, so its qadma...zaqef span runs across a space as
+readily as across a maqaf.  `_METHIGA_MID` adds the space, stopping the fuse at a chanted-word
+boundary while it still crosses a maqaf.  ITM §223 and CoS Ch. 5 §§4-6 both restrict the metigah
+to the chanted word of the zaqef, so a qadma one chanted word earlier is not a metigah under either
+book; see the comment at `_METHIGA_MID` for the citations and for the 1k19:11 control.  The
+divergence moves five WLC verses and three UXLC verses out of METHIGAZAQEF and leaves MAM
+untouched -- the counts live in `chanted_word_accents`' survey, not here.
+
 Divergence from the goerwitz C oracle (`has_legarmeh`): the C `passages[]` list
 keys on book *abbreviations* ("Gen 28:9", "Lev 10:6", "Dan 3:2"), but in the new
 format the C lexer's `location` carries the **full** bookname header ("Genesis",
@@ -110,8 +119,21 @@ _LEGARMEH_LA = (
     + am.REVIA
     + r")"
 )
-# methiga-zaqef body:  63 [^01234680]* 80
-_METHIGA_MID = am.negated_class("", "0123468")
+# methiga-zaqef body:  63 [^01234680]* 80, plus a space added to the excluded literals.
+# The span CROSSES A MAQAF, deliberately: ITM §223's leading example is Ex 35:9 ואבני־שהם, a
+# maqaf compound with the metigah on the non-final atom, and CoS Ch. 5 §5 allows the metigah at
+# the start of the word "provided there is there a hyphenated tiny word" -- so a metigah-zaqef
+# written across a maqaf is one token, as it is one chanted word.
+# It STOPS AT A SPACE, which is the divergence from tnk2acc.l recorded in the module docstring.
+# Both books restrict the metigah to the chanted word of the zaqef: ITM §223 has "the
+# word bearing zaqef", and CoS Ch. 5 §4 "A methiga will appear in the word of the small zakef",
+# restated at Ch. 5 §6.  Two atoms with a space between them are two chanted words, so a qadma
+# before the space cannot be the zaqef's metigah, whatever it is instead.
+# The control is WLC's 1k19:11, where a ``]1`` note marker between הרוח and רעש already blocks the
+# fuse and the grammar already reports the zaqef phrase an error -- while 1k19:12's parallel
+# mahapakh-pashta-zaqef parses clean.  Before the space went in, the same configuration was clean
+# at gn18:18 and an error at 1k19:11, on nothing but an unrelated note marker.
+_METHIGA_MID = am.negated_class(" ", "0123468")
 # qadma-before-geresh lookahead: U+05A8 is named AZLA when a geresh is the *next
 # accent token* (cross-letter), QADMA otherwise.  Like METHIGAZAQEF, the span is the
 # cross-letter run between the two -- NOT a literal ``LETTER`` separator -- so a

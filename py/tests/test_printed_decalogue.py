@@ -112,10 +112,11 @@ def test_the_transcriptions_section_records_every_page_against_its_strand() -> N
 
     The strands' verdicts have been in this file all along; the twelve hand-transcribed printed
     Decalogues' were only ever pinned in ``test_edition_transcriptions``. So pin the section that
-    records them: one entry per transcription, its Wikisource strand named, and both counts. The
-    single departure is pinned exactly -- Simanim's Tiqqun Exodus appendix taḥton, chanted verse
-    3, ungrammatical where its Wikisource strand is clean -- and the other eleven must show none,
-    which is the
+    records them: one entry per transcription, its Wikisource strand named, and both counts. Both
+    departures are pinned exactly -- the Simanim Tiqqun's Exodus appendix taḥton, chanted verse 3,
+    and the Simanim Tanakh's Deuteronomy main Decalogue taḥton, chanted verse 8, each
+    ungrammatical where its Wikisource strand is clean -- and the other ten must show none, which
+    is the
     half that would fail if a re-vendoring quietly made some other page depart.
     """
     results = _results()
@@ -125,7 +126,13 @@ def test_the_transcriptions_section_records_every_page_against_its_strand() -> N
     assert by_stem["simtiq_ex_taxton"]["departures"] == [
         {"index": 3, "strand_status": "clean", "status": "ungrammatical"}
     ]
-    assert [s for s, e in by_stem.items() if e["departures"]] == ["simtiq_ex_taxton"]
+    assert by_stem["simtan_dt_taxton"]["departures"] == [
+        {"index": 8, "strand_status": "clean", "status": "ungrammatical"}
+    ]
+    assert sorted(s for s, e in by_stem.items() if e["departures"]) == [
+        "simtan_dt_taxton",
+        "simtiq_ex_taxton",
+    ]
     # Every entry names the Wikisource strand it was checked against, and carries one chanted
     # verse record
     # per chanted verse, each with the strand's own status beside its own.
@@ -141,7 +148,7 @@ def test_the_transcriptions_section_records_every_page_against_its_strand() -> N
 
 
 def test_the_four_ungrammatical_pages_are_the_ones_printing_the_merged_verse() -> None:
-    """Five ungrammatical chanted verses across the twelve, and only one is an edition's own.
+    """Six ungrammatical chanted verses across the twelve, and two of them are an edition's own.
 
     The other four are the p-trad עליון's merged opening verse, printed as the strand has it --
     which is what makes "ungrammatical somewhere" the wrong summary and ``departures`` the right

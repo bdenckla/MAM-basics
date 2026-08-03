@@ -33,14 +33,28 @@ p. 247's Shabbat departure and pp. 208-209's exact agreement cannot share a sent
 Each table's LAST column is issue wlc-utils#52's question asked of these eight: fed through accgram's
 prose checker, is what the page prints grammatical, and as grammatical as the Wikisource strand
 it follows?  The cells come live from ``transcription_verdict_column`` (shared with the Koren
-page) so no row can claim a verdict the checker does not give.  Seven of the eight give their
-Wikisource strand's verdicts exactly.  p. 246 does not, and the prose after that table has to
-hold two true things together: no divergence of its reaches a disjunctive, so its skeleton is
-intact, AND one of its chanted verses is ungrammatical where its Wikisource strand is clean.
+page) so no row can claim a verdict the checker does not give.  Six of the eight give their
+Wikisource strand's verdicts exactly.  Two do not, and the two want different prose.
+
+p. 246 is the primary case, and the prose after the Tiqqun table has to hold two true things
+together: no divergence of its reaches a disjunctive, so its skeleton is intact, AND one of its
+chanted verses is ungrammatical where its Wikisource strand is clean.
 Say the second without qualification: the accent sequence is ungrammatical, not merely rejected
 by this checker, and that much would be visible from the edition alone, whose accentuation is
-otherwise grammatical throughout.  Do NOT write the converse either -- that the edition is in error, or that the
-passage should not be chanted as printed.  Ungrammatical is not the same as wrong.
+otherwise grammatical throughout.  Do NOT write the converse THERE -- that the edition is in error, or that the
+passage should not be chanted as printed.  Ungrammatical is not the same as wrong, and p. 246's
+extra munaḥ on the joined atom of לא־תעשה is a well-formed accent in a chain the grammar finds
+too long: three servi before the pashta where it takes two.  A tradition that chants it is not
+ruled out by anything on the page.
+
+p. 298 is the second case, and it is the one where the evidence does reach that far: Ben's
+decision, 2026-08-03, is that the page says the qadma there is very likely the edition's error.
+What separates it from p. 246 is that neither primary has any configuration that would put that
+mark there.  ITM §223 and CoS Ch. 5 §4 both restrict the metigah to the chanted word of the zaqef, and
+ויום is one chanted word and השביעי another, with a space and not a maqaf between them -- so the
+qadma is no metigah, and every תחתון strand has a pashta in its place.  p. 246's mark is a legal
+accent in a chain that runs too long; p. 298's is a mark neither book's rules reach.  So the ban
+above is scoped to p. 246 and does not travel to p. 298.
 
 TWO SENSES OF "TRANSCRIPTION", KEPT APART (issue wlc-utils#69 decision 3a).  This page had the word first
 for the two *note* transcriptions -- the hand-set pointed Hebrew of the p. 83 and p. 246 notes,
@@ -104,7 +118,7 @@ from accgram import printed_decalogue_strands as pds
 from accgram import rtms_report
 from accgram import transcription_parse as tp
 from accgram import transcription_verdict_column as tvc
-from accgram.almost_errors_html_shared import hbo, link
+from accgram.almost_errors_html_shared import accents_and_letters, cos, hbo, itm, link
 from accgram.uni_to_marks import is_accent, is_base_letter
 from wlc_cmn.utf8_io import force_utf8_io
 from mb_cmn import provenance
@@ -237,8 +251,14 @@ _ROM_SILLUQ_SOF_PASUQ = rmn(pds.ROM_SILLUQ_SOF_PASUQ)
 # already defined above.
 _ROM_PAZER = rmn(pds.ROM_PAZER)
 _ROM_TELISHA_GEDOLAH = rmn(pds.ROM_TELISHA_GEDOLAH)
-# Named only in the Simanim Tanakh verdict table, for its one divergence (issue wlc-utils#69, Result 8).
+# Named in the Simanim Tanakh verdict table for its one divergence (issue wlc-utils#69, Result 8),
+# and in the p. 298 paragraphs that say why that divergence costs the page a parse.
 _ROM_QADMA = rmn(pds.ROM_QADMA)
+# The other two accents of the p. 298 paragraphs: the zaqef qatan p. 298 keeps from the taxton,
+# and the geresh the elyon strands pair their qadma with and p. 298 does not have.  ROM_ZAQEF_QATAN
+# romanizes as a bare "zaqef" (Ben, 2026-07-29 -- see that constant), which is what the prose says.
+_ROM_ZAQEF_QATAN = rmn(pds.ROM_ZAQEF_QATAN)
+_ROM_GERESH = rmn(pds.ROM_GERESH)
 # Named only in the conclusion's grammaticality prose (issue wlc-utils#52), for the p. 246 chanted verse
 # the prose checker rejects: the munax on the joined לא of לא־תעשה makes a third conjunctive
 # before the pashta, where a tevir would have allowed it.  Every taxton strand has a meteg and no
@@ -810,7 +830,10 @@ def _tiqqun_verdict_table(verdicts: dict[str, tp.TranscriptionResult]) -> object
     )
 
 
-def _tanakh_verdict_table(verdicts: dict[str, tp.TranscriptionResult]) -> object:
+def _tanakh_verdict_table(
+    verdicts: dict[str, tp.TranscriptionResult], vayom_forms: tuple[str, str]
+) -> object:
+    strand_pair, page_pair = vayom_forms
     return _verdict_table(
         (
             (
@@ -835,10 +858,13 @@ def _tanakh_verdict_table(verdicts: dict[str, tp.TranscriptionResult]) -> object
                     _TAHTON,
                     " strand has a ",
                     _ROM_PASHTA,
-                    ". It agrees with neither ",
+                    f" — all four have {strand_pair}, this page {page_pair}. It agrees with"
+                    " neither ",
                     _TAHTON,
                     " strand there, so it is this edition's own departure rather than the other"
-                    " tradition's.",
+                    " tradition's, and it is the one place among these four where the departure"
+                    " costs a parse: the eighth chanted verse is ungrammatical where its"
+                    " Wikisource strand is clean.",
                 ),
             ),
             (
@@ -880,8 +906,8 @@ def _atom_letters(chanted_word: str) -> tuple[str, ...]:
     )
 
 
-def _lo_at(version: dict, pattern: tuple[tuple[str, ...], ...]) -> str:
-    """The pointed לא of the one run of chanted words in a strand whose atoms are ``pattern``.
+def _run_at(version: dict, pattern: tuple[tuple[str, ...], ...]) -> list[str]:
+    """The one run of chanted words in a strand whose atom letters are ``pattern``.
 
     Raising on anything but one match is the point: the pattern is how the pin knows it is
     still looking at the place the prose talks about.  Matches go into a list, never a set
@@ -893,9 +919,14 @@ def _lo_at(version: dict, pattern: tuple[tuple[str, ...], ...]) -> str:
         for start in range(len(words) - len(pattern) + 1):
             run = words[start : start + len(pattern)]
             if tuple(_atom_letters(word) for word in run) == pattern:
-                hits.append(run[0].split(_MAQAF)[0])
+                hits.append(run)
     assert len(hits) == 1, (version["reading"], version["tradition"], pattern, hits)
     return hits[0]
+
+
+def _lo_at(version: dict, pattern: tuple[tuple[str, ...], ...]) -> str:
+    """The pointed לא of the one run of chanted words in a strand whose atoms are ``pattern``."""
+    return _run_at(version, pattern)[0].split(_MAQAF)[0]
 
 
 def _pin_lo_taase_strand_facts(source: dict) -> None:
@@ -924,10 +955,60 @@ def _pin_lo_taase_strand_facts(source: dict) -> None:
         assert accents == [am.MUNAX], (version["section"], free_lo)
 
 
+# --------------------------------------------------------------------------- #
+# The strand facts behind the p. 298 grammaticality paragraph
+# --------------------------------------------------------------------------- #
+# The two chanted words p. 298's one divergence falls on, found by their bare letters for the
+# same reason the לא־תעשה patterns above are: the marks are what must not be retyped.  One tuple
+# per chanted word, which also fixes the grouping -- these two are never joined by a maqaf, and
+# that is the whole point of the paragraph, so a pattern that could match a compound would be
+# assuming what it displays.
+_VAYOM_HASHEVII = (("ויום",), ("השביעי",))
+
+
+def _vayom_forms(source: dict) -> tuple[str, str]:
+    """The two pairs the p. 298 paragraph shows: the תחתון strands' ויום השביעי, and p. 298's.
+
+    Both are lifted from ``in/accgram/printed_decalogue_teamim.json`` and rendered through
+    ``accents_and_letters``, which drops the vowels; a hand-typed accent would be a claim with no
+    oracle behind it.  p. 298 has no pointed Hebrew of its own -- its transcription is a token
+    per printed accent -- so its pair is assembled from the two strands that supply its two
+    marks: the ויום of an עליון strand, which has the qadma, beside the השביעי of a תחתון strand,
+    which has the zaqef qatan.  That assembly IS the finding the row states, that p. 298 has one
+    עליון accent inside an otherwise תחתון-conforming Decalogue, so the asserts below check every
+    strand rather than the two the forms come from.
+    """
+    taxton = [v for v in source["versions"] if v["reading"] == "taxton"]
+    elyon = [v for v in source["versions"] if v["reading"] == "elyon"]
+    assert (len(taxton), len(elyon)) == (4, 4)
+    taxton_runs = [_run_at(version, _VAYOM_HASHEVII) for version in taxton]
+    elyon_runs = [_run_at(version, _VAYOM_HASHEVII) for version in elyon]
+    for vayom, hashevii in taxton_runs:
+        assert [ch for ch in vayom if is_accent(ch)] == [am.PASHTA], vayom
+        assert [ch for ch in hashevii if is_accent(ch)] == [am.ZAQEF_QATAN], hashevii
+    for vayom, _ in elyon_runs:
+        assert [ch for ch in vayom if is_accent(ch)] == [am.QADMA], vayom
+    # "the תחתון strands'" is a claim about all four, so the rendered forms must agree across
+    # them before one of them is shown as theirs; likewise the four עליון ויום.
+    rendered_taxton = {
+        " ".join(accents_and_letters(word) for word in run) for run in taxton_runs
+    }
+    rendered_elyon_vayom = {accents_and_letters(run[0]) for run in elyon_runs}
+    assert len(rendered_taxton) == 1, rendered_taxton
+    assert len(rendered_elyon_vayom) == 1, rendered_elyon_vayom
+    strand_pair = rendered_taxton.pop()
+    page_pair = (
+        rendered_elyon_vayom.pop() + " " + accents_and_letters(taxton_runs[0][1])
+    )
+    return strand_pair, page_pair
+
+
 def _conclusion(
     source: dict, verdicts: dict[str, tp.TranscriptionResult]
 ) -> tuple[object, ...]:
     _pin_lo_taase_strand_facts(source)
+    vayom_forms = _vayom_forms(source)
+    strand_pair, page_pair = vayom_forms
     return (
         H.heading_level_2("Conclusion", {"id": "simanim-conclusion"}),
         H.para(
@@ -1127,16 +1208,74 @@ def _conclusion(
                 "All four of the Tanakh's Decalogues have been transcribed accent by accent too,"
                 " against their m-trad strands, so the split between the two editions is checked"
                 " at the same grain as the Tiqqun's p-trad allegiance above and not merely read"
-                " off the signal words. Under the checker all four are grammatical throughout — the"
-                " m-trad strands have no counterpart to the p-trad ",
+                " off the signal words. Three of the four are grammatical throughout, and none of"
+                " the four meets the objection the Tiqqun's two ",
                 _ELYON,
-                "'s merged opening chanted verse, so nothing here meets the objection the"
-                " Tiqqun's two ",
+                " Decalogues do — the m-trad strands have no counterpart to the p-trad ",
                 _ELYON,
-                " Decalogues do.",
+                "'s merged opening chanted verse. The fourth, the Deuteronomy main Decalogue"
+                " (pp. 297–298), does not parse, and its one divergence is why.",
             )
         ),
-        _tanakh_verdict_table(verdicts),
+        H.para(
+            (
+                "That divergence is a ",
+                _ROM_QADMA,
+                " on ויום, where every ",
+                _TAHTON,
+                " strand has a ",
+                _ROM_PASHTA,
+                f": all four have {strand_pair}, and p. 298 has {page_pair}. All four ",
+                _ELYON,
+                " strands do have a ",
+                _ROM_QADMA,
+                " on ויום, but they pair it with a ",
+                _ROM_GERESH,
+                " on השביעי, where p. 298 keeps the ",
+                _TAHTON,
+                "'s ",
+                _ROM_ZAQEF_QATAN,
+                " — so what p. 298 has is one ",
+                _ELYON,
+                " accent inside an otherwise ",
+                _TAHTON,
+                "-conforming Decalogue. A ",
+                _ROM_QADMA,
+                " immediately before a ",
+                _ROM_ZAQEF_QATAN,
+                " is a familiar pair when the two stand on one chanted word: that is the",
+                " metigah of a metigah-zaqef. Here the ",
+                _ROM_QADMA,
+                " and the ",
+                _ROM_ZAQEF_QATAN,
+                " do not stand on one chanted word. ויום and השביעי are two chanted"
+                " words, with a space between them and no maqaf, and both Yeivin and Breuer"
+                " restrict the metigah to the chanted word of the zaqef — Yeivin's ",
+                itm(),
+                " §223, “the word bearing zaqef”, and Breuer's ",
+                cos(),
+                " ch. 5 §4, “a [metigah] will appear in the word of the small [zaqef]”, the"
+                " bracketed names being this page's spellings for the translator's.",
+            )
+        ),
+        H.para(
+            (
+                "So that ",
+                _ROM_QADMA,
+                " on ויום is very likely the edition's error. That is a stronger thing to say"
+                " than anything said about p. 246 above, and the difference is in what the two"
+                " marks are. The extra ",
+                _ROM_MUNAX,
+                " on p. 246 is a well-formed accent in a chain the grammar finds one too long; a"
+                " tradition that chants it is not ruled out by anything here. The ",
+                _ROM_QADMA,
+                " on p. 298 fits no configuration either book allows, and it stands alone against"
+                " all four ",
+                _TAHTON,
+                " strands.",
+            )
+        ),
+        _tanakh_verdict_table(verdicts, vayom_forms),
         mhi.scan_figure(
             _TANAKH_EX_TAHTON_IMG,
             "Simanim Tanakh p. 119: the Exodus main Decalogue, in the m-trad taḥton",

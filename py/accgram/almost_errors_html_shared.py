@@ -151,11 +151,20 @@ def link(text: str, href: str) -> object:
 # only it cites; this one moved here when ``wlc_chanted_word_residue_page`` wanted the same
 # spelling, so the two pages cannot come to cite it differently.
 ITM_TITLE = "Introduction to the Tiberian Masorah"
+# Breuer's book, under the same instruction and by the same route: it lived in
+# ``maqaf_nonfinal_accents_page`` until ``printed_decalogue_simanim_page`` wanted it too for its
+# p. 298 paragraphs, and a third citing page is what this module is for.
+COS_TITLE = "The Cantillation of Scripture"
 
 
 def itm() -> object:
     """Yeivin's ITM as a page names it: the abbreviation, the full title on hover."""
     return H.abbr("ITM", ITM_TITLE)
+
+
+def cos() -> object:
+    """Breuer's CoS as a page names it: the abbreviation, the full title on hover."""
+    return H.abbr("CoS", COS_TITLE)
 
 
 def uxlc_change_link(compact: str) -> object:
