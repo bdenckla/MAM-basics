@@ -425,6 +425,19 @@ literal `"MAM-basics"` is what turns them into assertions; that file is never ve
 literal is safe. `test_repo_name_omitted_uses_directory_name` states the very behaviour being
 removed and wants renaming with it.
 
+**al-hatorah's wrapper can then retire — a separate repo, a separate commit, and only after that
+repo has pulled the new vendored copy.** That repo works around this very bug today:
+`py/aht_provenance.py` is three one-line wrappers that pass `repo_paths.REPO_NAME` to the vendored
+`provenance` functions, and its two call sites —
+`py/override_diff_viewer/generator.py:11` and `py/override_diff_viewer/view_model.py:13` — import
+it as `provenance`. Once the derivation lands there, all three swap back to
+`from mb_cmn import provenance` and the wrapper file goes. Do **not** delete
+`repo_paths.REPO_NAME` in the same breath: `view_model.py:102-105` uses it directly, outside
+`provenance`, to format its own paths. That line has the same worktree bug and the same available
+fix, but it is al-hatorah's business and a third commit at most; `repo_paths.py:31`'s comment
+*"Supplied to mb_cmn.provenance by the aht_provenance wrapper"* goes stale with the wrapper and
+needs a line. Verified present in al-hatorah on 2026-08-03; re-check before acting.
+
 **Verify:** (a) the full circuit from the **main checkout** gives a zero artifact diff, proving
 the fallback path is untouched — with `git status --short` recorded in all seven repos first,
 since they share a data root with no isolation and a concurrent session was seen writing it on
