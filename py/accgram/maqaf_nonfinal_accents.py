@@ -25,15 +25,15 @@ matters, so every hit is sorted into one of two routes:
 
 * **(a) A secondary accent the compound inherits.**  Yeivin's own term, and his prose inventory
   is a CLOSED LIST of configurations -- which accent sits on the non-final atom and which the
-  compound has: metigah-zaqef (ITM §224), munax-zaqef (§221), a secondary merkha in the chanted word of a
+  compound has: metigah-zaqef (ITM §223), munax-zaqef (§221), a secondary merkha in the chanted word of a
   tipexa (§233) or of a tevir (§253), a secondary azla in that of a geresh (§268), a secondary
   munax in that of an etnaxta (§215), a revia (§236) or a pazer (§276), a secondary mahapakh in
   that of a pashta (§241), and the mayela before an etnaxta (§216) or a silluq (§210).  ("The
   mayela", never "the mayela tipexa": mayela is the name for what would otherwise be a tipexa
   there, so the pair reads as a kind of tipexa rather than as the accent's own name.  Mayela is
   to tipexa as metigah is to qadma, and nobody writes "metigah qadma".)
-  ``_NAMED_CONFIGURATIONS`` is that list, plus one pair no section of his names --
-  ``(MERKHA, SILLUQ)``, whose own label records that (issue wlc-utils#86).
+  ``_NAMED_CONFIGURATIONS`` is that list, plus ``(MERKHA, SILLUQ)``, which is here for ITM §357's
+  sake rather than for any section of the inventory's.
   ``chanted_word_accents`` transcribes the same sections
   in full, with Yeivin's own wording and his closed verse lists, and checks them against a wider
   measurement that counts atomic chanted words too; the table here is the subset this survey's
@@ -41,6 +41,18 @@ matters, so every hit is sorted into one of two routes:
 * **(b) A maqaf written after an atom that keeps its own conjunctive.**  ITM §293: a manuscript
   habit with no grammatical trigger, "most common where the word has penultimate stress", and L
   -- WLC's own base -- is named for it (§21, §293).
+
+A THIRD THING IS IN ROUTE (a) THAT DOES NOT BELONG TO EITHER, and this survey's shape cannot yet
+put it anywhere else.  ITM §357 and Breuer CoS Ch. 1 §43 describe a maqaf written after an atom
+that has its own accent and a gaʿya AFTER that accent, to say that the slowed syllable makes no
+break; it is not the maqaf that joins two atoms into one chanted word.
+``chanted_word_accents.maqaf_after_gaya`` measures it -- thirteen of MAM's twenty-two compounds
+with their accents split across atoms, one of WLC's forty-five -- and settles that MAM's four
+merkha-with-tipexa, three mahapakh-with-pashta, four merkha-with-silluq, one merkha-with-pashta and
+one munax-with-zaqef are all of that one kind.  A CONFIGURATION cannot tell them apart, because
+WLC's hits with the same pairs are not of that kind, so the labels above say what the pair can and
+cannot settle and the routing is left alone.  Giving §357 a route of its own would move counts
+that no other change here moves, so it is Ben's call, not a tidy-up.  Issue wlc-utils#86.
 
 POSITION IS EVIDENCE, NOT THE CRITERION.  Whether a non-final atom's accent sits where that atom's
 own accent sits is answered exactly, with no phonology, by an in-corpus oracle: the same spelling
@@ -52,9 +64,11 @@ stripped, and compare base letters after the accent.
   the free ואחרי usually put theirs one from the end, so it cannot be that atom's own accent.
 * A **yes is not decisive**, which is the trap.  A secondary accent can land on the atom's own
   stress anyway: MAM's שלף־חרב has its merkha where the free שלף usually have theirs, because
-  nasog axor has retracted the stress before חרב, and it is still routed as a secondary merkha
-  by its ``(MERKHA, SILLUQ)`` configuration.  So the CONFIGURATION decides the route and the
-  oracle corroborates -- never the other way round.  Neither example states a figure here: the
+  nasog axor has retracted the stress before חרב, and it is still routed by its
+  ``(MERKHA, SILLUQ)`` configuration.  So the CONFIGURATION decides the route and the
+  oracle corroborates -- never the other way round.  (What the oracle sees at שלף־חרב is now
+  read the other way as well: the merkha IS that atom's own accent, and the maqaf after it is
+  ITM §357's -- see the third-thing paragraph above.)  Neither example states a figure here: the
   counts live in each occurrence's own ``oracle`` fields in the tracked JSON
   (``joined_letters_after_accent``, ``free_letters_after_accent``, ``free_occurrences``), and
   they regenerate with the survey.
@@ -167,22 +181,33 @@ _STRIPPED_FOR_KEY = frozenset((METEG, PASEQ, SOF_PASUQ, NUN_HAFUKHA))
 # in either genre, since the survey was written.  A third citation fell on 2026-07-30:
 # ``(MERKHA, SILLUQ)`` borrowed §233 too, and §233 is tipexa-only -- no section of ITM names a
 # secondary merkha in the silluq's chanted word (§209 gives the silluq one conjunctive and no
-# secondary), so that entry's label now says so rather than citing a section (issue wlc-utils#86 again).
+# secondary), so that entry's label stopped citing a section on 2026-07-30.  Two more fell on
+# 2026-08-03, both settled in ``chanted_word_accents.maqaf_after_gaya``.  Metigah-zaqef is DEFINED
+# at §223; §224 is the retraction of metigah, which discusses the combination without being where
+# it is given.  And the four MAM compounds ``(MERKHA, SILLUQ)`` covers are all שלף־חרב, where the
+# merkha is that atom's own accent with a gaʿya after it and then ITM §357's maqaf -- so the label
+# now names §357 rather than reporting that no section covers it.  The four MAM ``(MERKHA,
+# TIPEXA)`` compounds and the three ``(MAHAPAKH, PASHTA)`` ones are §357's too, but WLC's are not,
+# so those two labels stay as the pair-level statements they are and say what the pair can and
+# cannot settle.
 _NAMED_CONFIGURATIONS: dict[tuple[str, str], str] = {
-    (am.QADMA, am.ZAQEF_QATAN): "metigah-zaqef (ITM §224)",
+    (am.QADMA, am.ZAQEF_QATAN): "metigah-zaqef (ITM §223)",
     (am.MUNAX, am.ZAQEF_QATAN): "munax-zaqef (ITM §221)",
     (am.TIPEXA, am.ATNAX): "mayela before an etnaxta (ITM §216)",
     (am.TIPEXA, SILLUQ): "mayela before a silluq (ITM §210)",
-    (am.MERKHA, am.TIPEXA): "secondary merkha in the tipexa's chanted word (ITM §233)",
+    (
+        am.MERKHA,
+        am.TIPEXA,
+    ): "secondary merkha in the tipexa's chanted word (ITM §233), or ITM §357's maqaf after gaʿya",
     (
         am.MERKHA,
         SILLUQ,
-    ): "secondary merkha in the silluq's chanted word (no ITM section names it; issue wlc-utils#86)",
+    ): "ITM §357's maqaf after gaʿya (no section names a secondary merkha with silluq)",
     (am.MERKHA, am.TEVIR): "secondary merkha in the tevir's chanted word (ITM §253)",
     (
         am.MAHAPAKH,
         am.PASHTA,
-    ): "secondary mahapakh in the pashta's chanted word (ITM §241)",
+    ): "secondary mahapakh in the pashta's chanted word (ITM §241), or ITM §357's maqaf after gaʿya",
     (am.QADMA, am.GERESH): "secondary azla in the geresh's chanted word (ITM §268)",
     (am.MUNAX, am.ATNAX): "secondary munax in the etnaxta's chanted word (ITM §215)",
     (am.MUNAX, am.REVIA): "secondary munax in the revia's chanted word (ITM §236)",

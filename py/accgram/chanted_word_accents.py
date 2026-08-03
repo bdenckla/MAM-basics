@@ -60,6 +60,15 @@ DOES therefore takes MAM, and the Yeivin cross-check below is run against MAM al
 UXLC's counts are here so the divergence between a manuscript and a consensus text can be read
 off, not so that three columns can be averaged.
 
+NOT EVERY MAQAF HERE IS THE JOINING MAQAF, and that is what ``maqaf_after_gaya`` is about.
+Both books describe a maqaf written after a word that already has an accent, where a ga'ya falls
+after that accent: Yeivin ITM §357 ("Maqqef after Gaʿya"), Breuer CoS Ch. 1 §43.  Its purpose is to
+say that the slowed syllable makes no break, not to join two atoms into one chanted word -- so the
+two atoms keep an accent apiece, and this survey's mechanical criterion counts the pair as one
+compound with two accents.  Thirteen of MAM's twenty-two compounds with their accents split across
+atoms are of that kind, across five different accent pairs, and the signature is checkable: the
+accented non-final atom also has a meteg after its accent.  Issue wlc-utils#86.
+
 Prose verses only, routed by ``prose_filter.should_keep_line``.  Yeivin's inventory below is his
 prose inventory; the poetic system puts two accents on one chanted word far more readily and
 systematically (Breuer, Chapter 9 §§20-26), so a merged count would say nothing about either.
@@ -356,6 +365,25 @@ def _atom_index(unit: Unit, offset: int) -> int:
     return unit.marks.count(am.MAQAF, 0, offset - unit.start)
 
 
+def _gaya_after_accent(unit: Unit, tokens: list[Token]) -> bool:
+    """Does a non-final atom of ``unit`` have a meteg after the accent it carries?
+
+    The signature of ITM §357's maqqef after gaʿya, and of the maqaf Breuer CoS Ch. 1 §43
+    describes: an atom that has its own accent, a gaʿya after that accent, and then a maqaf.
+    Read off the mark body, since ``uni_to_marks`` keeps meteg there even though the scanner
+    emits no token for it.
+    """
+    last = unit.marks.count(am.MAQAF)
+    for token in tokens:
+        if _atom_index(unit, token.start) == last:
+            continue
+        after_accent = token.start - unit.start + 1
+        atom_end = unit.marks.index(am.MAQAF, after_accent - 1)
+        if am.METEG in unit.marks[after_accent:atom_end]:
+            return True
+    return False
+
+
 def _kind_of(unit: Unit, atom_indices: list[int]) -> str:
     if not unit.is_compound:
         return KIND_ATOMIC
@@ -544,14 +572,18 @@ def scan_corpus(frags_by_bcv: dict[str, list[Frag]]) -> dict:
             if len(folded) < 2:
                 continue
             atom_indices = [_atom_index(unit, t.start) for t in folded]
-            hits.append(
-                {
-                    "bcv": bcv,
-                    "chanted_word": _display(unit),
-                    "sequence": " ".join(t.leaf for t in folded),
-                    "kind": _kind_of(unit, atom_indices),
-                }
-            )
+            kind = _kind_of(unit, atom_indices)
+            hit = {
+                "bcv": bcv,
+                "chanted_word": _display(unit),
+                "sequence": " ".join(t.leaf for t in folded),
+                "kind": kind,
+            }
+            if kind == KIND_COMPOUND_SPLIT:
+                # Only where the accents are split does the question arise, and recording the
+                # flag on every hit would put a field on 1,600 of them to say nothing.
+                hit["gaya_after_the_nonfinal_accent"] = _gaya_after_accent(unit, folded)
+            hits.append(hit)
     hits.sort(key=lambda h: (h["sequence"], _sort_key(h["bcv"])))
     return {
         "verses": n_verses,
@@ -719,11 +751,12 @@ YEIVIN_ENTRIES: tuple[YeivinEntry, ...] = (
             "1c15:13",
         ),
         note=(
-            "Yeivin's eight are the cases where the merkha is a SECONDARY accent. The"
-            " measurement is wider, because it counts any chanted word with both marks --"
-            " including a compound whose non-final atom keeps a merkha of its own, which is"
-            " ITM §293's scribal habit rather than a secondary accent. See"
-            " ``merkha_tipexa_discrepancy``."
+            "Yeivin's eight are the cases where the merkha is a SECONDARY accent, and all"
+            " eight have both marks on ONE atom. The measurement is wider, because it"
+            " counts any chanted word with both marks -- including four compounds whose"
+            " non-final atom has a merkha of its own, a gaʿya after it and then §357's"
+            " maqaf. Those four are not §233 cases and are not §293's habit either; see"
+            " ``maqaf_after_gaya``."
         ),
     ),
     YeivinEntry(
@@ -754,6 +787,9 @@ YEIVIN_ENTRIES: tuple[YeivinEntry, ...] = (
             " entry never fired in any corpus. The three MAM chanted words beyond Yeivin's"
             " five all have the mahapakh on a non-final atom and the pashta on the last --"
             " the same shape as §233's surplus, and not the prefixed ־ש his five are about."
+            " All three have a gaʿya after that mahapakh and then §357's maqaf, and Yeivin"
+            " names one of them, Isaiah 59:16, at §357 itself; Breuer names another,"
+            " Isaiah 63:5, at CoS Ch. 1 §43. See ``maqaf_after_gaya``."
         ),
     ),
     YeivinEntry(
@@ -808,6 +844,28 @@ YEIVIN_ENTRIES: tuple[YeivinEntry, ...] = (
         ),
     ),
     YeivinEntry(
+        section="§256",
+        names="both servi of tevir on one chanted word",
+        stated_count="in eight cases",
+        quote=(
+            "In eight cases the two servi of tevir are marked on the same word, with the"
+            " azla on an open syllable suitable for gaʿya."
+        ),
+        sequences=("qadma darga",),
+        verses=("jb1:15", "jb1:16", "jb1:17", "jb1:19", "ne11:7", "2c17:8"),
+        exact=True,
+        note=(
+            "The tevir's counterpart of §244, and the section that names Job's four"
+            " prose-frame ואמלטה -- his own example, cited as 'Job 1:15, 16, 17, 19'."
+            " Six of his eight are listed here. The other two, Isaiah 30:16 ותאמרו and"
+            " Isaiah 32:15 יערה, have a merkha as the second servus rather than a darga,"
+            " so they measure as ``qadma merkha``, a sequence §244 already claims; a"
+            " token sequence is claimed by one section only, so they are recorded in this"
+            " note instead of in the list. The six listed are the whole of MAM's"
+            " ``qadma darga``."
+        ),
+    ),
+    YeivinEntry(
         section="§268",
         names="azla-geresh on one chanted word",
         stated_count="often",
@@ -849,7 +907,150 @@ YEIVIN_ENTRIES: tuple[YeivinEntry, ...] = (
             " munax-zaqef precisely because the maqaf makes the two atoms one unit."
         ),
     ),
+    YeivinEntry(
+        section="§354",
+        names="gaʿya after the accent, on a word with penultimate stress",
+        stated_count="(a rule, not a count)",
+        quote=(
+            "Gaʿya is similarly sometimes used on the last syllable of a word with"
+            " penultimate stress if it ends with a guttural and the following word begins"
+            " with lamed or nun."
+        ),
+        note=(
+            "Yeivin's three examples are Ruth 1:21, 1 Kings 2:8 and Ezekiel 1:4 ונגה לו,"
+            " and he writes all three with a SPACE. MAM has a maqaf after the gaʿya at"
+            " Ezekiel 1:4, which is the only reason that compound reaches this survey."
+            " See ``maqaf_after_gaya``."
+        ),
+    ),
+    YeivinEntry(
+        section="§357",
+        names="maqqef after gaʿya",
+        stated_count="(a rule, not a count)",
+        quote=(
+            "In some MSS maqqef is marked -- sometimes consistently, sometimes"
+            " sporadically -- after a word marked with gaʿya after the accent. ... The"
+            " purpose of this maqqef is to indicate that, even though gaʿya is marked"
+            " after the accent, so that the reading of that syllable must be slowed down,"
+            " the word must be joined to the following word, and no break should be made"
+            " between them."
+        ),
+        note=(
+            "The section that says what thirteen of MAM's twenty-two compounds with their"
+            " accents split across atoms are. Yeivin's four examples carry a manuscript"
+            " apiece -- Jeremiah 49:23 in C, Numbers 24:22 in S, Isaiah 59:16 in A and C,"
+            " Lamentations 5:6 in L3 -- and Isaiah 59:16 is one of the thirteen. This maqaf"
+            " is not the maqaf that joins two atoms into one chanted word, so a hit of that"
+            " kind is not a chanted word with two accents in the sense §§233 and 241 are"
+            " about. See ``maqaf_after_gaya``."
+        ),
+    ),
 )
+
+
+# --- Breuer, where he covers the same ground -----------------------------------
+#
+# Read off the full markdown export at ``../masorah-books/books/cos/md-export-of-docx/``, and
+# pinned there by ``py/main_ocr.py cos-check-claims``.  Only three sections, because only three
+# are load-bearing for what this survey cannot otherwise say: the one that defines the maqaf of
+# ``maqaf_after_gaya``, the one that gives the tipexa's same-word servant, and the one that says
+# a secondary mark leaves a maqaf standing.  Each ``quote`` keeps Breuer's romanizations, which
+# differ from this repo's for most of the accent names; the spellings themselves stay in the
+# quote strings, which are values and not comments.  His English names the maqaf as a hyphen far
+# more often than by any transliteration of it, and never by either spelling this repo uses --
+# so grep the translator's spelling and the Hebrew as well, or the topic looks absent.
+
+_COS = "Breuer, The Cantillation of Scripture"
+
+
+@dataclass(frozen=True)
+class BreuerEntry:
+    section: str
+    names: str
+    quote: str
+    note: str = ""
+
+
+BREUER_ENTRIES: tuple[BreuerEntry, ...] = (
+    BreuerEntry(
+        section="Ch. 1 §43",
+        names="the maqaf written after a servant that has a gaʿya on its last syllable",
+        quote=(
+            "In ancient manuscripts there sometimes appears a makaf in other"  # translit-ok
+            " circumstances. A makaf of this type appears sometimes after a word"  # translit-ok
+            " cantillated with a mesharet, which is accentuated mile'eil, and a ga'aya"  # translit-ok
+            " usually appears on its last syllable; e.g.: ותושע־לי (Isa. 63:5). About the"
+            " significance of this makaf different views have been expressed. But since"  # translit-ok
+            " this makaf does not appear in a regular manner in most of the manuscripts,"  # translit-ok
+            " and it is apparently left to the discretion of every nakdan, and since there"
+            " is no trace of it in the accepted editions of Scripture, we shall not discuss"
+            " it in this book."
+        ),
+        note=(
+            "Breuer defines the configuration exactly as the measurement finds it -- an"
+            " ordinary SERVANT, a word accented on its penultimate syllable, a gaʿya on"
+            " its last -- names Isaiah 63:5, which is one of the thirteen, and then puts"
+            " the whole class outside his book. Yeivin's ITM §357 is the same maqaf. Two"
+            " things follow: neither book's inventory of secondary accents is where these"
+            " belong, and Breuer's 'no trace of it in the accepted editions' is a"
+            " divergence from MAM, which has thirteen of them."
+        ),
+    ),
+    BreuerEntry(
+        section="Ch. 3 §28",
+        names="the tipexa's servant in its own chanted word",
+        quote=(
+            "In eight places, the servant of tipekha appears with it in its word. ... The"  # translit-ok
+            " servant is merkha - according to the ordinary order of the cantillation"
+            " marks (above, §26); and it appears in a syllable fit for a light ga'aya or"  # translit-ok
+            " in a syllable fit for the ga'aya of the big vowel."  # translit-ok
+        ),
+        note=(
+            "Breuer's eight are Yeivin's eight at ITM §233, and his criterion says why the"
+            " four beyond them are not of this kind: his servant stands on a syllable fit"
+            " for a gaʿya, where each of the four instead has its accent on the atom's own"
+            " stress with the gaʿya after it."
+        ),
+    ),
+    BreuerEntry(
+        section="Ch. 9 §37",
+        names="a secondary mark does not cancel the maqaf; an ordinary one does",
+        quote=(
+            "A cantillation mark, which follows the regular order of the cantillation"
+            " marks, cannot appear in a word joined by hyphen to the next one; therefore,"
+            " if a hyphenated word receives a cantillation mark, the hyphenation is"
+            " immediately cancelled. ... Therefore, we find that all the secondary"
+            " cantillation marks in the 21 books appear even in a hyphenated word, and the"
+            " hyphen is never cancelled after them. So with the me'ayla that serves before"  # translit-ok
+            " a siluk or ethnakhta; e.g.: וקויתי־לו (Isa. 8:17), ויצא־נח (Gen. 8:18); and"  # translit-ok
+            " so, too, with the methiga that appears in the word of the small zakef."  # translit-ok
+        ),
+        note=(
+            "The rule that partitions the split compounds, and the two examples Breuer"
+            " gives are two of the nine MAM compounds that have no gaʿya after the"
+            " non-final accent. His rule and Ch. 1 §43 do not collide at the other"
+            " thirteen: the maqaf there is Ch. 1 §43's, not the joining maqaf this rule"
+            " is about."
+        ),
+    ),
+)
+
+
+def breuer_notes() -> list[dict]:
+    return [
+        {
+            k: v
+            for k, v in (
+                ("section", e.section),
+                ("names", e.names),
+                ("quote", e.quote),
+                ("source", _COS),
+                ("note", e.note),
+            )
+            if v
+        }
+        for e in BREUER_ENTRIES
+    ]
 
 
 def _measured(hits: list[dict], sequences: tuple[str, ...]) -> list[dict]:
@@ -914,6 +1115,9 @@ def mam_residue(mam: dict) -> dict:
     """
     named = {seq for entry in YEIVIN_ENTRIES for seq in entry.sequences}
     left = [h for h in mam["occurrences"] if h["sequence"] not in named]
+    gaya = [h for h in left if h.get("gaya_after_the_nonfinal_accent")]
+    telisha = [h for h in left if "telishagedola" in h["sequence"]]
+    rest = [h for h in left if h not in gaya and h not in telisha]
     return {
         "what": (
             "MAM prose chanted words with two accent tokens whose token sequence is named"
@@ -928,6 +1132,25 @@ def mam_residue(mam: dict) -> dict:
             " gh-pages/accgram/almost-errors.html. A geresh or gershayim written twice on"
             " one of them is folded above, so each counts as two accents, not three."
         ),
+        "accounted_for_by_maqaf_after_gaya": {
+            "what": (
+                "These are compounds found by ITM §357's maqaf after gaʿya rather than by"
+                " the maqaf that joins two atoms, so each atom has an accent of its own"
+                " and the pair is not a chanted word with two accents. See"
+                " ``maqaf_after_gaya``."
+            ),
+            "total": len(gaya),
+            "occurrences": gaya,
+        },
+        "left_over_after_both": {
+            "what": (
+                "What is left when the telisha gedola words and the maqaf-after-gaʿya"
+                " compounds are set aside: the atomic chanted words of MAM's prose verses"
+                " that have two accents no section of either book names."
+            ),
+            "total": len(rest),
+            "occurrences": rest,
+        },
         "occurrences": left,
     }
 
@@ -987,52 +1210,120 @@ def classify_verse(body: str, tokens: list[Token]) -> list[dict]:
     return hits
 
 
-def merkha_tipexa_discrepancy(mam: dict) -> dict:
-    """Why §233's eight and MAM's measured merkha-with-tipexa do not agree.
+def _split_hits(corpus: dict) -> list[dict]:
+    return [h for h in corpus["occurrences"] if h["kind"] == KIND_COMPOUND_SPLIT]
 
-    Yeivin counts a SECONDARY merkha; this survey counts any chanted word with both marks.  The
-    surplus is set out by kind, since a compound whose non-final atom keeps a merkha of its own is
-    ITM §293's scribal habit rather than a secondary accent -- which is the shape the numbers
-    take if that is the explanation, and which the reader can check here instead of taking on
-    trust.
+
+def maqaf_after_gaya(scanned: dict[str, dict]) -> dict:
+    """The compounds whose accents are split across atoms, partitioned by ITM §357's signature.
+
+    A compound reaches this survey because a maqaf stands inside it, and not every maqaf is the
+    one that joins two atoms into a single chanted word.  Yeivin ITM §357 and Breuer CoS Ch. 1
+    §43 both describe a maqaf written after a word that has its own accent and a gaʿya after
+    that accent, whose purpose is to say the slowed syllable makes no break.  The signature is
+    mechanical -- ``_gaya_after_accent`` -- so the partition is a measurement rather than a
+    reading, and each side of it is set out for the reader to check.
+
+    This replaces the narrower ``merkha_tipexa_discrepancy`` block, whose open question this
+    answers: the four MAM chanted words beyond §233's eight are neither §233 cases Yeivin left
+    out nor §293's scribal habit.  The §233 and §241 arithmetic is kept below, since it is what
+    put the question, and both surpluses turn out to be of the one kind.
     """
-    entry = next(e for e in YEIVIN_ENTRIES if e.section == "§233")
-    listed = set(entry.verses)
-    measured = _measured(mam["occurrences"], entry.sequences)
-    beyond = [h for h in measured if h["bcv"] not in listed]
+    mam = scanned["mam_simple"]
+    per_corpus: dict[str, dict] = {}
+    for name, corpus in scanned.items():
+        split = _split_hits(corpus)
+        with_gaya = [h for h in split if h["gaya_after_the_nonfinal_accent"]]
+        per_corpus[name] = {
+            "accents_split_across_atoms": len(split),
+            "of_them_with_a_gaya_after_the_nonfinal_accent": len(with_gaya),
+            "with_a_gaya_by_sequence": dict(
+                Counter(h["sequence"] for h in with_gaya).most_common()
+            ),
+            "without_a_gaya_by_sequence": dict(
+                Counter(
+                    h["sequence"]
+                    for h in split
+                    if not h["gaya_after_the_nonfinal_accent"]
+                ).most_common()
+            ),
+            "with_a_gaya": with_gaya,
+        }
+
+    def _arithmetic(section: str) -> dict:
+        entry = next(e for e in YEIVIN_ENTRIES if e.section == section)
+        listed = set(entry.verses)
+        measured = _measured(mam["occurrences"], entry.sequences)
+        beyond = [h for h in measured if h["bcv"] not in listed]
+        return {
+            "yeivin_stated": entry.stated_count,
+            "yeivin_listed": len(listed),
+            "mam_measured": len(measured),
+            "yeivin_verses_by_kind": dict(
+                Counter(h["kind"] for h in measured if h["bcv"] in listed).most_common()
+            ),
+            "beyond_yeivin": beyond,
+            "beyond_yeivin_all_have_a_gaya_after_the_nonfinal_accent": all(
+                h.get("gaya_after_the_nonfinal_accent") for h in beyond
+            ),
+        }
+
     return {
-        "question": (
-            "ITM §233 states eight cases of merkha with tipexa on one chanted word; MAM"
-            f" measures {len(measured)}."
+        "what": (
+            "A maqaf written after a word that has its own accent and a gaʿya after that"
+            " accent. ITM §357 gives its purpose -- the slowed syllable makes no break --"
+            " and CoS Ch. 1 §43 gives its conditions: after a servant, on a word accented"
+            " on its penultimate syllable, with the gaʿya on its last. It is not the maqaf"
+            " that joins two atoms into one chanted word, so a compound found by it has an"
+            " accent on each atom rather than two accents on one chanted word."
         ),
-        "yeivin_listed": len(listed),
-        "mam_measured": len(measured),
-        "yeivin_verses_all_measured": not (listed - {h["bcv"] for h in measured}),
-        "yeivin_verses_by_kind": dict(
-            Counter(h["kind"] for h in measured if h["bcv"] in listed).most_common()
+        "how_it_is_told_apart": (
+            "Mechanically, off the mark body: the accented non-final atom also has a meteg"
+            " between that accent and the maqaf. Nothing here reads a verse reference. On"
+            " MAM the signature partitions the compounds exactly, the nine without it"
+            " being the mayela ones and nothing else. It is a signature and not a"
+            " definition, though, and Isaiah 8:17 וקויתי־לו is where that shows: WLC and"
+            " UXLC have a meteg after the mayela there and MAM has none, so the same"
+            " compound answers differently by corpus while staying the mayela case CoS"
+            " Ch. 9 §37 names by verse."
         ),
-        "beyond_yeivin_by_kind": dict(Counter(h["kind"] for h in beyond).most_common()),
-        "beyond_yeivin": beyond,
+        "verses_the_books_name_that_this_survey_measures": {
+            "ITM §354": ["ek1:4"],
+            "ITM §357": ["is59:16"],
+            "CoS Ch. 1 §43": ["is63:5"],
+        },
+        "which_corpus_has_it": (
+            "MAM's, and hardly L's -- which is what both books' manuscript labels predict."
+            " Yeivin's §357 examples are in C, in S, in A and C, and in L3; Breuer's is"
+            " ancient manuscripts generally. The counts below are the check on that."
+        ),
+        "by_corpus": per_corpus,
+        "what_the_others_are": (
+            "The compounds with no gaʿya after the non-final accent are the mayela ones,"
+            " which both books name outright: ITM §§210 and 216, and CoS Ch. 9 §37, whose"
+            " two examples -- Isaiah 8:17 וקויתי־לו and Genesis 8:18 ויצא־נח -- are two of"
+            " MAM's nine. There a secondary mark stands in a hyphenated atom and the maqaf"
+            " is the joining one, which is Breuer's rule for why it is not cancelled."
+        ),
+        "itm_233_arithmetic": _arithmetic("§233"),
+        "itm_241_arithmetic": _arithmetic("§241"),
         "answer": (
-            "The two counts do not measure the same thing, and the kinds say so exactly."
-            " Every one of Yeivin's eight has both marks on ONE atom -- four of them"
-            " atomic chanted words, four of them maqaf compounds with the merkha on the"
-            " same atom as the tipexa. Every one of the four beyond his list instead has"
-            " the merkha on a non-final atom and the tipexa on the last. Yeivin is"
-            " counting a secondary accent, a mark the chanted word acquires because it is"
-            " long enough to carry one; this survey's criterion is mechanical and wider,"
-            " two accent tokens on one chanted word however they got there, and it"
-            " therefore also catches a merkha standing where an atom's own conjunctive"
-            " stands with a maqaf written after it (ITM §293)."
+            "The four chanted words beyond ITM §233's eight, and the three beyond §241's"
+            " five, are neither cases those sections left out nor ITM §293's habit of a"
+            " maqaf written after an atom that keeps its own conjunctive. They are §357's"
+            " maqaf after gaʿya, and so are the four merkha-with-silluq שלף־חרב and the"
+            " one munax-with-zaqef Isaiah 40:7 נבל־ציץ. Both books put the class outside"
+            " their inventories of secondary accents -- Yeivin under gaʿya, Breuer by"
+            " declining to discuss it -- and between them they name three of the thirteen"
+            " by verse. §233's own eight and §241's own five all have both marks on ONE"
+            " atom, on a syllable fit for a gaʿya, which is Breuer's stated criterion for"
+            " a same-word servant at Ch. 3 §28."
         ),
-        "open_question": (
-            "Whether those four are §233 cases Yeivin left out or §293's scribal habit is"
-            " not settled here, and the two surveys currently answer differently:"
-            " ``maqaf_nonfinal_accents._NAMED_CONFIGURATIONS`` labels a merkha on a"
-            " non-final atom with a tipexa on the compound as §233's secondary merkha,"
-            " which is precisely these four. Issue wlc-utils#86 holds the citation question."
-            " (Phase 1 filed it under wlc-utils#82, whose subject is instead Yeivin's two"
-            " Deuteronomy 33 maqaf readings for the LC.)"
+        "recorded_not_flagged": (
+            "Breuer says of this maqaf that 'there is no trace of it in the accepted"
+            " editions of Scripture', and MAM has thirteen. That divergence is recorded"
+            " here for future research and is not a verdict; nothing in this survey"
+            " promotes it to a finding about MAM's accentuation. Issue wlc-utils#86."
         ),
     }
 
@@ -1081,7 +1372,8 @@ def build_survey() -> dict:
             " read against MAM rather than averaged with it."
         ),
         "yeivin_inventory": yeivin_inventory(scanned["mam_simple"]),
-        "merkha_tipexa_discrepancy": merkha_tipexa_discrepancy(scanned["mam_simple"]),
+        "breuer_notes": breuer_notes(),
+        "maqaf_after_gaya": maqaf_after_gaya(scanned),
         "mam_residue": mam_residue(scanned["mam_simple"]),
         "corpora": scanned,
     }
