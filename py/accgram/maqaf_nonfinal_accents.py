@@ -98,8 +98,7 @@ stripped, and compare base letters after the accent.
   agreement is what §357 predicts rather than a trap, (c) being the reading on which the atom
   keeps the accent it has.  So the MARK decides (c) and the CONFIGURATION decides between (a)
   and (b), with the oracle corroborating -- never the other way round.  Neither example states
-  a figure here: the
-  counts live in each occurrence's own ``oracle`` fields in the tracked JSON
+  a figure here: the counts live in each occurrence's own ``oracle`` fields in the tracked JSON
   (``joined_letters_after_accent``, ``free_letters_after_accent``, ``free_occurrences``), and
   they regenerate with the survey.
 
