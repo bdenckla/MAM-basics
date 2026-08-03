@@ -45,7 +45,10 @@ matters, so every hit is sorted into one of two routes:
 A THIRD THING IS IN ROUTE (a) THAT DOES NOT BELONG TO EITHER, and this survey's shape cannot yet
 put it anywhere else.  ITM §357 and Breuer CoS Ch. 1 §43 describe a maqaf written after an atom
 that has its own accent and a gaʿya AFTER that accent, to say that the slowed syllable makes no
-break; it is not the maqaf that joins two atoms into one chanted word.
+break.  That maqaf joins, which is the whole point of writing it -- §357's wording is that the
+word "must be joined to the following word, and no break should be made between them" -- so a
+compound of this kind is a chanted word like any other.  What sets it apart is only that its
+non-final atom keeps the accent it has.
 ``chanted_word_accents.maqaf_after_gaya`` measures it -- thirteen of MAM's twenty-two compounds
 with their accents split across atoms, one of WLC's forty-five -- and settles that MAM's four
 merkha-with-tipexa, three mahapakh-with-pashta, four merkha-with-silluq, one merkha-with-pashta and

@@ -940,9 +940,14 @@ YEIVIN_ENTRIES: tuple[YeivinEntry, ...] = (
             " accents split across atoms are. Yeivin's four examples carry a manuscript"
             " apiece -- Jeremiah 49:23 in C, Numbers 24:22 in S, Isaiah 59:16 in A and C,"
             " Lamentations 5:6 in L3 -- and Isaiah 59:16 is one of the thirteen. This maqaf"
-            " is not the maqaf that joins two atoms into one chanted word, so a hit of that"
-            " kind is not a chanted word with two accents in the sense §§233 and 241 are"
-            " about. See ``maqaf_after_gaya``."
+            " JOINS, as the quote above says outright: its purpose is that the word 'must"
+            " be joined to the following word, and no break should be made between them'"
+            " despite the slowed syllable. So a hit of this kind IS a chanted word and does"
+            " have two accent tokens, and it is counted as one here. What §357 settles is"
+            " where the second token comes from: the non-final atom keeps the accent it"
+            " has, the gaʿya written after that accent having had to be marked. That is not"
+            " a secondary accent of the kind §§233 and 241 are about. See"
+            " ``maqaf_after_gaya``."
         ),
     ),
 )
@@ -1134,10 +1139,12 @@ def mam_residue(mam: dict) -> dict:
         ),
         "accounted_for_by_maqaf_after_gaya": {
             "what": (
-                "These are compounds found by ITM §357's maqaf after gaʿya rather than by"
-                " the maqaf that joins two atoms, so each atom has an accent of its own"
-                " and the pair is not a chanted word with two accents. See"
-                " ``maqaf_after_gaya``."
+                "These are chanted words whose maqaf is the one ITM §357 describes, written"
+                " after an atom that has its own accent and a gaʿya after that accent. That"
+                " maqaf joins, as §357 says outright, so each of these IS a chanted word and"
+                " does have two accent tokens. What §357 settles is that the second token is"
+                " the non-final atom's retained accent rather than a secondary accent of the"
+                " kind §§233 and 241 describe. See ``maqaf_after_gaya``."
             ),
             "total": len(gaya),
             "occurrences": gaya,
