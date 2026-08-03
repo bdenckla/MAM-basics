@@ -615,8 +615,26 @@ establishing the facts first collapsed one side of it.** Four findings, in the o
 **After the fix the script runs to completion**: `Synced 41 files`, exit 0, `UXLC-utils commit:
 ad52001`. Its 41 tracked data artifacts came back **byte-identical** — `git status --porcelain`
 in codex-index-leningrad showed no `M` on any of them — and `provenance.md` changed by exactly
-the 17 removed lines plus the commit sha and the date. That file is the one tracked artifact a
-re-run cannot reproduce byte-identically on a later day, because it stamps `Date copied`.
+the 17 removed lines plus the commit sha and the date. That file was then the one tracked
+artifact a re-run could not reproduce byte-identically on a later day, because it stamps
+`Date copied`.
+
+**That last sentence stopped being true on 2026-08-03, hours after this phase**, and the
+correction belongs here because the sentence reads as a standing property of `provenance.md`
+rather than as an observation of the day. `7d88185` in codex-index-leningrad gave that repo's
+`main_update_vendored_files.py` the guard the two sibling instances of the same tool already
+had — MAM-basics' `py/main_wlc_vendor_uxlc.py`, and UXLC-utils' own copy before `ad52001`
+deleted it — so a sync that copies no new bytes and removes no legacy path leaves
+`provenance.md` untouched, and `--force-provenance` is what rewrites it. An unchanged re-run on
+a later day now leaves that repo's `git status` empty across all 42 tracked files rather than
+41 of them, which is what this phase's own re-stamp commit (`ffcf7b0` in UXLC-utils) had cost.
+The same commit gave codex-index-leningrad's forked `vendoring_sync.py` the `newline=""`
+argument MAM-basics' `mb_cmn/vendoring_sync.py` passes to `write_text`; without it `write_text`
+translated to CRLF on Windows, so git warned about `provenance.md` on every commit there. **Two
+of the three drifted lines between those two copies of `vendoring_sync.py` are therefore gone**,
+leaving only the `provenance.md` / `_provenance.md` filename convention — which matters to
+`PLAN-evacuate-python-from-codex-index-trio.md`, whose Phase 3 resolves that fork by diffing the
+two files.
 
 Four things the plan did not predict:
 
