@@ -286,7 +286,7 @@ _ACCENT_SHORTHAND = {
 
 def is_accent(ch: str) -> bool:
     """An accent (U+0591..U+05AE); U+05BD (meteg/silluq) excluded."""
-    return "֑" <= ch <= "֮"
+    return "\N{HEBREW ACCENT ETNAHTA}" <= ch <= "\N{HEBREW ACCENT ZINOR}"
 
 
 def is_base_letter(ch: str) -> bool:

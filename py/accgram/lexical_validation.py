@@ -83,7 +83,8 @@ _STRESS_HELPER_PARTNER: dict[str, tuple[str, str]] = {am.TSINNORIT: (am.TSINNOR,
 
 # Accents occupy U+0591..U+05AE; meteg/silluq (U+05BD), paseq, sof pasuq
 # and the puncta are NOT accents and so never count toward a same-letter accent pair.
-_ACCENT_LO, _ACCENT_HI = "֑", "֮"  # U+0591, U+05AE
+_ACCENT_LO = "\N{HEBREW ACCENT ETNAHTA}"  # U+0591
+_ACCENT_HI = "\N{HEBREW ACCENT ZINOR}"  # U+05AE
 
 
 def _is_accent(ch: str) -> bool:

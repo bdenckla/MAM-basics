@@ -55,8 +55,9 @@ def test_unpaired_zarshit_swapped_to_zarqa():
     # U+0598) with no fusion partner is the WLC error; MAM has a proper zarqa
     # (zarnor, U+05AE).  Substituting the whole MAM word clears the unpaired mark and
     # the word now scans as a real ZARQA.
-    wlc = "ישרא" + "֘" + "ל"  # medial zarqa stress-helper (zarshit)
-    mam = "ישראל" + "֮"  # postpositive zarqa (zarnor)
+    # medial zarqa stress-helper (zarshit), then postpositive zarqa (zarnor)
+    wlc = "ישרא" + "\N{HEBREW ACCENT ZARQA}" + "ל"
+    mam = "ישראל" + "\N{HEBREW ACCENT ZINOR}"
     result = apply_mam_fix(
         {"vels": [wlc, "׃"]},
         [wlc],

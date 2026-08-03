@@ -78,7 +78,7 @@ def is_base_letter(ch: str) -> bool:
 
 def is_accent(ch: str) -> bool:
     """A real accent (U+0591..U+05AE) -- meteg (U+05BD) excluded."""
-    return "֑" <= ch <= "֮"
+    return "\N{HEBREW ACCENT ETNAHTA}" <= ch <= "\N{HEBREW ACCENT ZINOR}"
 
 
 # --- word transcoding ---------------------------------------------------------
