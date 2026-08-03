@@ -141,22 +141,6 @@
         ]
       }
     },
-    "UXLC-utils": {
-      "comment": "py/main_update_vendored_files.py copies MAM-basics/py/mb_cmn and py/mb_diff_mpu by intersection, and its mb_diff_mpu half went untracked here until 2026-08-02: three files clc.clc_dual_cant needs to name accents canonically, sitting in the destination and being refreshed, while the inventory said nothing about them.",
-      "ignore": false,
-      "scan_provenance": true,
-      "default_category": "stale",
-      "default_mechanism": "copy_script",
-      "default_provenance_doc": "no",
-      "pkg_scan_roots": {
-        "mb_cmn": [
-          "py/mb_cmn"
-        ],
-        "mb_diff_mpu": [
-          "py/mb_diff_mpu"
-        ]
-      }
-    },
     "MAM-for-Acc": {
       "comment": "Ignored entirely.",
       "ignore": true,

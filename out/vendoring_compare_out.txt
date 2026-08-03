@@ -154,27 +154,3 @@ vendoring_sync.py                          mgketer                    py/mb_cmn/
 grapheme_diff.py                           mgketer                    py/mb_diff_mpu/grapheme_diff.py                         identical      2026-04-27   
 my_diffs.py                                mgketer                    py/python_modules/my_diffs.py                           DIFFERS        2026-04-27   placed in python_modules/ not mb_cmn/
 uni_denorm.py                              mgketer                    py/python_modules/uni_denorm.py                         DIFFERS        2026-04-27   placed in python_modules/ not mb_cmn/
-cantsys.py                                 UXLC-utils                 py/mb_cmn/cantsys.py                                    identical      2026-04-27   
-file_io.py                                 UXLC-utils                 py/mb_cmn/file_io.py                                    identical      2026-08-02   
-he_wikisource_url.py                       UXLC-utils                 py/mb_cmn/he_wikisource_url.py                          identical      2026-05-03   
-hebrew_accents.py                          UXLC-utils                 py/mb_cmn/hebrew_accents.py                             identical      2026-08-02   
-hebrew_letters.py                          UXLC-utils                 py/mb_cmn/hebrew_letters.py                             identical      2026-04-27   
-hebrew_points.py                           UXLC-utils                 py/mb_cmn/hebrew_points.py                              identical      2026-04-27   
-hebrew_punctuation.py                      UXLC-utils                 py/mb_cmn/hebrew_punctuation.py                         identical      2026-04-27   
-my_diffs.py                                UXLC-utils                 py/mb_cmn/my_diffs.py                                   identical      2026-06-30   
-my_utils.py                                UXLC-utils                 py/mb_cmn/my_utils.py                                   identical      2026-07-17   
-paths.py                                   UXLC-utils                 py/mb_cmn/paths.py                                      identical      no-commits   
-polite_download.py                         UXLC-utils                 py/mb_cmn/polite_download.py                            identical      2026-07-01   
-provenance.py                              UXLC-utils                 py/mb_cmn/provenance.py                                 identical      2026-08-02   
-retired_kq_special_templates.py            UXLC-utils                 py/mb_cmn/retired_kq_special_templates.py               identical      2026-06-30   
-retired_template_names.py                  UXLC-utils                 py/mb_cmn/retired_template_names.py                     identical      2026-06-30   
-str_defs.py                                UXLC-utils                 py/mb_cmn/str_defs.py                                   identical      2026-06-30   
-template_names.py                          UXLC-utils                 py/mb_cmn/template_names.py                             identical      2026-06-30   
-uni_heb.py                                 UXLC-utils                 py/mb_cmn/uni_heb.py                                    identical      2026-08-02   
-uni_norm_fragile.py                        UXLC-utils                 py/mb_cmn/uni_norm_fragile.py                           identical      2026-07-06   
-url_percent.py                             UXLC-utils                 py/mb_cmn/url_percent.py                                identical      2026-05-03   
-uxlc_change_url.py                         UXLC-utils                 py/mb_cmn/uxlc_change_url.py                            identical      2026-05-03   
-vendoring_sync.py                          UXLC-utils                 py/mb_cmn/vendoring_sync.py                             identical      2026-07-01   
-describe_diff.py                           UXLC-utils                 py/mb_diff_mpu/describe_diff.py                         identical      2026-07-17   
-mpplus_flatten.py                          UXLC-utils                 py/mb_diff_mpu/mpplus_flatten.py                        identical      2026-06-30   
-mpplus_param_access.py                     UXLC-utils                 py/mb_diff_mpu/mpplus_param_access.py                   identical      2026-06-30   

@@ -12,7 +12,7 @@ named apart:
     ``gh-pages/``, ``data/`` and gitignored ``.novc/``.
 
 The two were named apart *before* the move, while the code still ran in
-UXLC-utils and that repo's 216 tracked artifacts were an oracle that could prove
+UXLC-utils and that repo's 214 tracked artifacts were an oracle that could prove
 a path change harmless (Phase 1 of
 ``doc/PLAN-evacuate-python-from-UXLC-utils.md``).  The move itself then changed
 exactly one line, the body of ``uxlc_data_root()``, because no other module
