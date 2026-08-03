@@ -637,6 +637,35 @@ class YeivinEntry:
 
 YEIVIN_ENTRIES: tuple[YeivinEntry, ...] = (
     YeivinEntry(
+        section="§209",
+        names="silluq takes one conjunctive, and no secondary accent",
+        stated_count="(a rule, not a count)",
+        quote=(
+            "Silluq can only be preceded by one conjunctive, and this is merka."  # translit-ok
+        ),
+        note=(
+            "Here so that a silence is checkable rather than assumed. Nothing in this"
+            " inventory names a secondary merkha in a silluq's chanted word, and §209 with"
+            " §210 is the pair that makes that evidence: §209 is the whole statement of"
+            " silluq's conjunctives and adds no secondary, and §210 is the only section"
+            " that gives silluq a second mark, which is the mayela. §210's stated"
+            " condition excludes the one MAM chanted word at issue on its own terms --"
+            " 'In these cases silluq has neither tipexa nor a conjunctive before it' --"
+            " where Song 8:6 has the tipexa on אש, one chanted word earlier. Searched over"
+            " the full OCR on 2026-08-03, section by section: of the thirteen that name a"
+            " secondary accent with a given disjunctive, silluq is in one. Two near misses"
+            " are not it, §212's exceptional Micah 6:3, where a merkha is the only accent"
+            " between etnaxta and silluq but stands on a chanted word of its own, and"
+            " §373's poetic metigah, where the metigah is the secondary mark and the merkha"
+            " an ordinary servus. Breuer is silent in the same place: CoS Ch. 3 §39 gives"
+            " the silluq's servant across two separate words and §40, the same-word"
+            " section, is the mayela's alone, both pinned in masorah-books'"
+            " check_cos_claims.py. So ca8:6 שלהבתיה stands in ``mam_residue`` unnamed by"
+            " either book -- and it is the one atomic merkha-with-silluq chanted word in"
+            " any of the three corpora, which all three have. Issue wlc-utils#86."
+        ),
+    ),
+    YeivinEntry(
         section="§210",
         # "The mayela", never "the mayela tipexa" -- mayela is the name for what would otherwise
         # be a tipexa there, as ``maqaf_nonfinal_accents``' route-(a) bullet sets out.  Yeivin's
