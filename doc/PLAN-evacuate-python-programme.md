@@ -10,7 +10,7 @@ plan can own: the scope, the order, and the work that must happen **before** any
 | Repo | Plan | State |
 |---|---|---|
 | Programme Phase 0 — reconcile the three drifted `check_*`/`fix_*` forks | this file | **not started** |
-| UXLC-utils | [PLAN-evacuate-python-from-UXLC-utils.md](PLAN-evacuate-python-from-UXLC-utils.md) | **Phase 1 done** 2026-08-02 (`fe73d07` there, `d5a5052` here); Phase 3 next, and it needs Ben's go-ahead |
+| UXLC-utils | [PLAN-evacuate-python-from-UXLC-utils.md](PLAN-evacuate-python-from-UXLC-utils.md) | **Phases 1 and 3 done** 2026-08-02 (Phase 1: `fe73d07` there, `d5a5052` here; Phase 3: `662db55` and `f202d21` here, nothing there). **Both repos now hold a working copy** — Phase 4 empties UXLC-utils and needs Ben's go-ahead |
 | holman-ketiv-qere | [PLAN-evacuate-python-from-holman-ketiv-qere.md](PLAN-evacuate-python-from-holman-ketiv-qere.md) | **not started** |
 | book-of-job | [PLAN-evacuate-python-from-book-of-job.md](PLAN-evacuate-python-from-book-of-job.md) | **not started** |
 | codex-index-aleppo, -leningrad, -cam1753 | [PLAN-evacuate-python-from-codex-index-trio.md](PLAN-evacuate-python-from-codex-index-trio.md) | **not started** — all three, cam1753 included |
@@ -226,6 +226,36 @@ Three things UXLC-utils' Phase 1 learned about this, all likely to recur:
 - **`mb_cmn/paths.py` may not be in the destination repo's vendored subset**, in which case the
   accessor Phase 2 is said to have already provided is not reachable from the code that needs it.
   Finding 3 above assumes it is; check.
+
+Five more from UXLC-utils' **Phase 3**, all of which will recur:
+
+- **A file inside a vendored `mb_*/` directory need not be a vendored copy.** UXLC-utils'
+  `py/mb_cmn/mb_cmn_bib_locales.py` is MAM-basics' `bib_locales.py` plus six local aliases,
+  absent from the inventory's row for that repo and excluded from its own sync script by name.
+  Copied in as-is it would have put a 636-line near-duplicate of a native module inside
+  `py/mb_cmn/` — the two-module-objects failure the global `CLAUDE.md` describes, reached without
+  any `sys.path` line. **`cmp` every file in a vendored directory against MAM-basics' own and
+  treat "no counterpart here" as a finding, not as a new file to copy.**
+- **Grep for cross-references to a renamed entry point by MODULE NAME, not by path.**
+  UXLC-utils' `main_uxlc_download_changes.py` ended with `import main_0_mega; main_0_mega.main()`,
+  a name that exists in both repos — so after the move it silently ran MAM-basics' tree-wide
+  pipeline instead of the UXLC one. It succeeds; nothing fails. Any repo whose mega gets renamed
+  has this.
+- **A repo's copy of `nfc_h_dot_below_test.py` must merge, not move.** It finds its repo root by
+  `git rev-parse` from its own file's location, so under MAM-basics' `py/tests/` it scans
+  MAM-basics — a second, weaker pass over this tree, and a failing one. Add a `_Scope` to
+  `py/tests/test_h_dot_below_nfc.py` instead; it now carries three.
+- **Budget for this repo's lints scanning the arrived code.** UXLC-utils' 77 files produced 68
+  genuine findings — 15 prose-convention and 53 transliteration — of which roughly half were our
+  own wording to fix and half external vocabulary needing a `# translit-ok` pragma. Plus two
+  ruff findings, in a repo that runs no linter. This was the largest single piece of Phase 3's
+  work, larger than the copy itself. **And the traffic runs both ways**: UXLC-utils' arriving
+  `source_hygiene` checker found eight orphan combining marks in *MAM-basics'* own tree.
+- **Count what a run actually rewrites, not what it leaves clean.** An empty `git status` across
+  an artifact tree proves nothing about files no program writes. Snapshot mtimes before the run:
+  of UXLC-utils' 214 tracked artifacts only **127** were rewritten, the other 87 being static
+  assets and one hand-authored report filed under `out/`. Phase 1's write-up had claimed all of
+  them regenerated.
 
 **4. book-of-job has no `py/`, so its modules land at MAM-basics' `py/` top level.** Sixteen
 scripts sit at its repo root and seven more in a `py/` that is a package of page-rendering helpers

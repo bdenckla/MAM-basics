@@ -16,7 +16,7 @@ the recipe does not transfer here it will not transfer anywhere.
 |---|---|
 | 1 — two roots, no cwd | **done** 2026-08-02, commit `fe73d07` in UXLC-utils; plus `d5a5052` here |
 | 2 — sibling accessor | **not needed as its own phase**, but not free either — the one piece owed here was done inside Phase 1; see below |
-| 3 — copy the Python in (dual residency) | **not started** |
+| 3 — copy the Python in (dual residency) | **done** 2026-08-02, commits `662db55` and `f202d21` here; nothing in UXLC-utils, which is what dual residency means |
 | 4 — empty UXLC-utils | **not started** |
 | 5 — repoint codex-index-leningrad's sparse copy | **not started** |
 | 6 — flip the provenance breadcrumbs and disambiguate issue citations | **not started** |
@@ -50,8 +50,10 @@ file in is not enough because nothing refreshes them.
 | test modules | `git ls-files "*_test.py"` | **8**, plus `py/main_test.py` |
 | entry points | `git ls-files "py/main_*.py"` | **15** |
 
-**The oracle is 216 tracked artifacts, not 213** — settled in Phase 1, and the count above was
-wrong twice over:
+**The oracle is 214 tracked artifacts** — not the 213 this table first said, and not the 216
+Phase 1 replaced it with. **214 is measured, and it is what the four components below have summed
+to all along**; 216 was an arithmetic slip in Phase 1's write-up, corrected in Phase 3. Phase 1
+was right about *which* trees count, and wrong twice over about the total:
 
 - **`data/`'s two files are generated and the table above did not count them.**
   `main_write_page_break_info.py` writes `data/lci_augrecs.json` and copies
@@ -70,7 +72,15 @@ Holman JSON/TXT, the four `LC ...csv`, the three `LCIndex.*`, `lci_recs.json`, a
 re-running the downloaders proves the network works, not that the code does.
 
 **Which makes the artifact table above the oracle: 184 `gh-pages/` + 27 `out/` + 2 `data/` +
-1 `in/`.**
+1 `in/` = 214.**
+
+**But only 127 of the 214 are regenerated at all** — measured in Phase 3 by snapshotting mtimes
+across the four trees immediately before a full run. The other **87** are 86 static assets (81
+`gh-pages/amb-early-mtg/img/`, 2 `gh-pages/img/`, `gh-pages/index.html`, `gh-pages/style.css`,
+`gh-pages/woff2/Taamey_D.woff2`) plus `out/UXLC-misc/map-changes-to-book-of-job.md`, a
+hand-authored prose report that happens to live under `out/`. An empty `git status` across all
+214 is therefore 127 files proven byte-identical and 87 proven untouched, which is a weaker claim
+than "216 regenerated" and the honest one. **The 87 are what Phase 4 must name.**
 
 **Capture before starting, and re-capture at each phase**, per `agent-planning-principles.md`
 §"Write State Back Before Continuing":
@@ -95,16 +105,30 @@ re-running the downloaders proves the network works, not that the code does.
 | `py/repo_hygiene/` | 3 | moves, **but see the note below** |
 | `py/main_*.py` | 15 | moves, with two renames — below |
 | `py/uxlc_paths.py` | 1 | moves; its `uxlc_data_root()` is Phase 3b's one-line retarget |
-| `py/mb_cmn/` | 22 | **pure deletion** |
+| `py/mb_cmn/` | 22 | **21 pure deletions, plus one that is not vendored at all — see below** |
 | `py/mb_diff_mpu/` | 3 | **pure deletion** |
 | `tools/repo_maintenance.py` | 1 | retires — below |
 
-**The 25 vendored files are recorded `identical` in `doc/vendoring-inventory.md`, and that is the
-claim to re-confirm rather than trust.** Run `cmp` over `py/mb_cmn` and `py/mb_diff_mpu` against
-MAM-basics' `py/mb_cmn` and `py/mb_diff_mpu` immediately before deleting. **If any file now
-differs, that difference is a finding to resolve first** — the inventory is regenerated, not live,
-and the programme's other five repos show what happens when a copy drifts unwatched. With the 25
-gone, **77 files actually move.**
+**The vendored files are recorded `identical` in `doc/vendoring-inventory.md`, and that is the
+claim to re-confirm rather than trust.** Phase 3 ran `cmp` over `py/mb_cmn` and `py/mb_diff_mpu`
+against MAM-basics' own immediately before the copy: **24 identical, and one file with no
+counterpart here at all.** Do it again before Phase 4 deletes them — the inventory is
+regenerated, not live, and the programme's other five repos show what happens when a copy drifts
+unwatched.
+
+**The odd file is `py/mb_cmn/mb_cmn_bib_locales.py`, and it is UXLC-local code wearing a vendored
+directory's name.** It is MAM-basics' `bib_locales.py` plus six back-compat aliases for prior
+UXLC-local naming; it is absent from the inventory's 21-file `mb_cmn` row; and
+`main_update_vendored_files.py` excludes it from the sync by name. Phase 3 did **not** copy it —
+its ten importers now use `mb_cmn.bib_locales` directly, with the three aliases that had callers
+spelled out. Phase 4 still deletes it, but as UXLC-local code rather than as a vendored copy, and
+the inventory row stays at 21.
+
+**76 files move, and 74 land.** The rows above sum to 76 (18+11+8+8+7+5+3+15+1); this line
+previously said 77, which counted `tools/repo_maintenance.py` as moving when the same table says
+it retires. Two of the 15 entry points then disappear by design (below), so 73 new files landed
+in Phase 3, plus one test module that merged into an existing file rather than arriving as its
+own.
 
 Three name questions, all decided here so no phase has to stop for them:
 
@@ -275,7 +299,117 @@ indistinguishable from a move bug.
 **Verify:** `.venv\Scripts\python.exe py\main_0_mega.py` plus `py\main_clc.py`, then
 `git status --porcelain` empty; `py\main_test.py` at its captured baseline.
 
-## Phase 3 — copy the Python in (dual residency)
+## Phase 3 — copy the Python in (dual residency) — DONE 2026-08-02
+
+**Landed as two MAM-basics commits — `662db55` (this repo's own eight orphan combining marks,
+deliberately first and alone so no commit is red) and `f202d21` (the copy, 74 files). Nothing
+was committed in UXLC-utils, which is what dual residency means.** Every baseline was
+re-measured first and every one matched: 102 tracked `.py` there, 184 `gh-pages/`, 27 `out/`,
+556 `in/`, 2 `data/`, 15 entry points, 8 test modules plus the runner, and `py/main_test.py`
+reporting **8/8 modules passed**. This repo went 693 → 766 tracked `.py`.
+
+**The oracle ran as specified and passed.** From `C:\Users\BenDe\GitRepos\MAM-basics` as the
+working directory, main checkout: `main_uxlc_mega.py`, then `main_clc.py`, then
+`main_map_changes_to_book_of_job.py`. Afterwards `git status --porcelain` was **empty in
+UXLC-utils** and held nothing outside `py/` here. Run twice, before and after the lint fixes
+below, with the same result both times.
+
+Final measurements: **916 passed / 5 skipped** here, up from **862 / 5** by exactly the 54 the
+moved tests collect; `ruff check py` and `black --check py` (765 files) both clean;
+`py/main_source_hygiene.py` clean over this tree.
+
+Nine things went differently from what is written underneath. The first four bear on Phase 4:
+
+- **The oracle is 214 artifacts, not 216, and only 127 of them are regenerated at all.** The
+  count is the plan's own arithmetic slip: its four components are 184 `gh-pages/` + 27 `out/` +
+  2 `data/` + 1 `in/`, which sum to **214**, re-measured and confirmed. Worse, an mtime snapshot
+  taken immediately before the run shows **127 rewritten and 87 untouched** — 86 static assets
+  (81 `gh-pages/amb-early-mtg/img/`, 2 `gh-pages/img/`, `gh-pages/index.html`,
+  `gh-pages/style.css`, `gh-pages/woff2/Taamey_D.woff2`) plus **`out/UXLC-misc/map-changes-to-book-of-job.md`,
+  a hand-authored prose report sitting in a generated tree** (`e4edbc5` "Move mapping report out
+  of gh-pages"; nothing in `py/` writes that path). **Phase 1's write-up is wrong on this point**
+  — it claims "all 216 artifacts came back byte-identical … their mtimes confirm they were
+  actually rewritten rather than skipped," which cannot have been true of the 87. **These 87 are
+  the list Phase 4 must name**, the way wlc-utils' Phase 4 named its 111.
+- **76 files move and 74 land, not 77 and 76.** The disposition table's own rows sum to 76 moving
+  (18+11+8+8+7+5+3+15+1); the headline 77 additionally counts `tools/repo_maintenance.py`, which
+  the same table says *retires*. Of the 76, `main_test.py` and `main_update_vendored_files.py`
+  disappear by design, so **73 new files landed** plus one merged away (below) = 74.
+- **`py/mb_cmn/mb_cmn_bib_locales.py` is NOT a vendored copy, so the pure deletions are 24, not
+  25.** `cmp` against this repo's originals found 24 identical and one with no counterpart at
+  all: that file is MAM-basics' `bib_locales.py` plus a tail of six back-compat aliases for prior
+  UXLC-local naming, it is absent from `doc/vendoring-inventory.md`'s 21-file row, and
+  `main_update_vendored_files.py` excludes it from the sync **by name** (`_PYCMN_EXCLUDE`).
+  Landing a 636-line near-duplicate inside this repo's native `py/mb_cmn/` is precisely the
+  two-module-objects hazard the global `CLAUDE.md` describes, so instead its **ten importers now
+  use `mb_cmn.bib_locales`** and the three aliases with callers are spelled out at the call site:
+  `ALL_BOOK_IDS`→`ALL_BK39_IDS` (8 sites), `ordered_short_dash_full`→`_39` (1), `section`→
+  `get_secid` (1). The other three aliases had no callers. **Phase 4 still deletes the file** —
+  but as UXLC-local code, not as a vendored copy, and the inventory row stays at 21.
+- **The downloader run could not be completed, and not for any reason this move introduced:
+  tanach.us' `robots.txt` now disallows both paths.** `main_uxlc_download_changes.py` raises
+  `RobotsDisallowedError` on `https://tanach.us/Books/Tanach.xml.zip`, and
+  `main_clc_download_notes.py` raises it on `https://tanach.us/Notes/...`;
+  `polite_download` is configured `obey_robots_txt=True` and that was **not** worked around.
+  What the check exists to prove is nevertheless established, from three directions: the live
+  `main_uxlc_download_changes.py` run printed its target as
+  `C:\Users\BenDe\GitRepos\UXLC-utils\.novc\Tanach.xml.zip` *before* the refusal; a live
+  `main_clc_download_notes.py Obadiah` from this repo found and skipped UXLC-utils' committed
+  copy of that note page, so it reads the right tree; and every write target composed offline
+  (`in/UXLC-39`, `in/UXLC-rest`, `in/UXLC-misc/<date> - Changes.xml`, `in/UXLC-notes/...`, the
+  HTTP cache) resolves under `C:\Users\BenDe\GitRepos\UXLC-utils`. `git status` was empty in
+  **both** repos afterwards. **A downloader actually writing has still never been observed from
+  here**, and cannot be until tanach.us' robots.txt changes or Ben decides otherwise.
+- **3d's live risk did not materialize, and this repo's convention is why.** All 13 moved entry
+  points call `sys.stdout.reconfigure` as the **first lines of `main()`**, not from
+  `if __name__ == "__main__"`, so a step invoked as a module by `main_uxlc_mega` reconfigures
+  exactly as it would standalone. The wlc-utils hazard was five mains that reconfigured only in
+  the `__main__` guard; UXLC-utils' own `CLAUDE.md` requires the `main()` placement, and that
+  rule is what made this a non-event.
+- **There WAS one move bug, of exactly the class this exercise targets — it succeeds rather than
+  crashing.** `main_uxlc_download_changes.py` ended with `import main_0_mega` /
+  `main_0_mega.main()`. In UXLC-utils that named the UXLC pipeline; here it names **this repo's
+  tree-wide mega**, so a routine input refresh would have rebuilt all of MAM-basics instead.
+  Fixed to `main_uxlc_mega`. **Grep each remaining repo for cross-references to a renamed entry
+  point by module name** — an `import` of a name that exists in both repos is invisible to a
+  grep for paths.
+- **`nfc_h_dot_below_test.py` merged instead of moving, and copying it would have been wrong
+  rather than merely redundant.** It located its repo root by `git rev-parse` **from its own
+  file's directory**, so under `py/tests/` here it would have scanned MAM-basics — a second,
+  weaker pass over this tree (naive `line.find("#")` comment detection where this repo's
+  `test_h_dot_below_nfc.py` uses `tokenize`, and none of this repo's exclusions), and it would
+  have failed. Its scope is now a **third `_Scope`** in `test_h_dot_below_nfc.py`, beside
+  MAM-basics and wlc-utils, so UXLC-utils' `doc/`, `CLAUDE.md` and `README.md` stay covered after
+  Phase 4. The plan did not anticipate this; **expect the same collision in every remaining repo
+  that carries a copy of this guard.**
+- **This repo's two source lints found 68 things in the arrived code, all genuine**, plus the 8
+  in this repo's own tree that the *arriving* lint found (commit `662db55`). `test_prose_conventions`:
+  15 — agentive verbs (`UXLC reads`, `UXLC writes`, `the LC wrote`, `the atom carries`,
+  `MAM shows`) become `has`; three `word-division` become `punctuation`; three `MAM reads
+  through` become `runs through`, which leaves the established `reads on` / `reads through`
+  idiom alone where its subject is a strand rather than a corpus. `test_transliterations`: 53 —
+  **30 were our own identifiers and comments** and take the house spellings (`etnahta`→`etnaxta`,
+  `tipeha`→`tipexa`, `atnach`→`atnax`, including a local variable in three test functions),
+  while **23 legitimately quote an external vocabulary** and take a `# translit-ok` pragma naming
+  which: UXLC's own `refuni` names, verbatim tanach.us note prose, book-of-job's mark names, and
+  anchor-id slugs frozen in the tracked artifacts. Two of the pragmas had to be re-placed after
+  black split the lines they had lengthened. **Budget for this in the remaining plans** — it was
+  the single largest piece of Phase 3's work.
+- **Ruff, which UXLC-utils does not run, found two:** an ambiguous `l` comprehension variable
+  (`E741`) and an unused import (`F401`). Neither is a move consequence; both are what a repo
+  with no linter accumulates. Expect a similar small crop per repo.
+
+Also worth carrying forward: `check_registry()` and `TEST_MODULE_SPECS` went away with
+`main_test.py`, as planned — but so did each moved test module's **`main()`**, which was a
+hand-maintained list of that module's own test functions and had nothing calling it once the
+registry runner stopped moving. Leaving eight of those in `py/tests/` would have re-imported, at
+module scale, the drift hazard `fd2241a` removed at tree scale. The seven collect **54** tests
+(16, 9, 9, 6, 6, 6, 2 — none zero), and 54 + the 6 merged into `test_h_dot_below_nfc.py` = **60**,
+which is exactly what UXLC-utils' eight modules run there.
+
+---
+
+The rest of this section is the plan as written before the phase ran.
 
 Land the 76 moving files in MAM-basics with both repos holding a working copy, exactly as
 wlc-utils' Phase 3 did. **This phase must complete within a single session**: an interrupted
@@ -305,9 +439,9 @@ expensive to unpick.
 
 ## Phase 4 — empty UXLC-utils
 
-Pure subtraction, made safe by Phase 3's dual residency: delete all 100 tracked `.py`, `tools/`,
-`py/uxlc_misc/requirements.txt`, and the `py/` tree. **Stop and ask Ben first** — it deletes 100
-files.
+Pure subtraction, made safe by Phase 3's dual residency: delete all **102** tracked `.py` (100
+before Phase 1 added two), `tools/`, `py/uxlc_misc/requirements.txt`, and the `py/` tree. **Stop
+and ask Ben first** — it deletes over a hundred files.
 
 `CLAUDE.md` keeps only what is about this repo and gains what a reader arriving afterwards has no
 other way to learn: that there is no Python here, that the code generating `out/` and `gh-pages/`
@@ -318,6 +452,19 @@ edition, not about the code.
 
 **Name the tracked artifacts that no program generates**, the way wlc-utils' Phase 4 named its
 111, so that deleting them in the belief they will come back stays a mistake nobody makes twice.
+**Phase 3 measured them: 87 of the 214** — 81 `gh-pages/amb-early-mtg/img/`, 2 `gh-pages/img/`,
+`gh-pages/index.html`, `gh-pages/style.css`, `gh-pages/woff2/Taamey_D.woff2`, and
+`out/UXLC-misc/map-changes-to-book-of-job.md`, the last being a hand-authored prose report living
+under a generated tree. Re-derive the list rather than copying it (snapshot mtimes across the
+four trees, run every generator, and list what did not move), but expect these.
+
+**Re-attaching source hygiene needs no work beyond deleting `tools/`.** Phase 3 landed
+`py/repo_hygiene/source_hygiene.py` and `py/main_source_hygiene.py` here, where the CLI scans
+*this* repo's tree and `py/tests/source_hygiene_test.py` is the guard; both are clean. What is
+lost with `tools/git-hooks/pre-commit` is the per-commit enforcement in UXLC-utils, which after
+Phase 4 has no Python to enforce it over. If Ben wants the check running per commit on
+**MAM-basics**, that is a new hook in this repo and a decision to put to him, not a
+re-attachment.
 
 ## Phase 5 — repoint codex-index-leningrad's sparse copy
 
