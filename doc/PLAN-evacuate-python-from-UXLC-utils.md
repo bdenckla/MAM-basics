@@ -269,6 +269,11 @@ needs a `Notes.zip` in `~/Downloads`. **Phase 3e should run at least one of the 
 from MAM-basics**, since a downloader writing into the wrong repo's `in/` is precisely the failure
 this phase exists to prevent and is the one class of it still unproven.
 
+**Phase 3 could not do that, and it is now deferred rather than owed.** tanach.us' `robots.txt`
+disallows both paths, and Ben decided on 2026-08-02 that live-download testing does not block the
+programme; see Phase 3's record for the block and the three indirect checks done instead, and
+MAM-basics **#214** for what stays untested. **No later phase of this plan owes a downloader run.**
+
 ---
 
 The rest of this section is the plan as written before the phase ran; the six offenders it names
@@ -360,6 +365,11 @@ Nine things went differently from what is written underneath. The first four bea
   HTTP cache) resolves under `C:\Users\BenDe\GitRepos\UXLC-utils`. `git status` was empty in
   **both** repos afterwards. **A downloader actually writing has still never been observed from
   here**, and cannot be until tanach.us' robots.txt changes or Ben decides otherwise.
+  **Ben's decision, 2026-08-02: testing anything that requires a live download is deferred, and
+  does not block completion of this plan or of the programme.** This is settled, not an open loose
+  end — the loop closes at MAM-basics **#214**, which names what stays untested and notes that the
+  thing it waits on is a separate task drafting an email to Chris Kimball, tanach.us' maintainer,
+  about the robots.txt policy and about an authenticated mode of access.
 - **3d's live risk did not materialize, and this repo's convention is why.** All 13 moved entry
   points call `sys.stdout.reconfigure` as the **first lines of `main()`**, not from
   `if __name__ == "__main__"`, so a step invoked as a module by `main_uxlc_mega` reconfigures
@@ -442,6 +452,11 @@ expensive to unpick.
 Pure subtraction, made safe by Phase 3's dual residency: delete all **102** tracked `.py` (100
 before Phase 1 added two), `tools/`, `py/uxlc_misc/requirements.txt`, and the `py/` tree. **Stop
 and ask Ben first** — it deletes over a hundred files.
+
+**Two of those 102 are the downloaders, and no run of them is owed before deleting them.**
+`main_uxlc_download_changes.py` and `main_clc_download_notes.py` both raise
+`RobotsDisallowedError` against tanach.us as of 2026-08-02, and Ben deferred live-download testing
+that day (Phase 3's record; MAM-basics **#214**). Delete them with the rest.
 
 `CLAUDE.md` keeps only what is about this repo and gains what a reader arriving afterwards has no
 other way to learn: that there is no Python here, that the code generating `out/` and `gh-pages/`

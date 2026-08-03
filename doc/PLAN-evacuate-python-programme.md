@@ -257,6 +257,34 @@ Five more from UXLC-utils' **Phase 3**, all of which will recur:
   assets and one hand-authored report filed under `out/`. Phase 1's write-up had claimed all of
   them regenerated.
 
+**3a. Live downloads are untestable and that is deferred, not owed.** tanach.us' `robots.txt`
+disallows both paths UXLC-utils' two downloaders need, so Phase 3 there could not run either;
+`polite_download` is configured `obey_robots_txt=True` and that was not worked around. **Ben's
+decision, 2026-08-02: testing anything that requires a live download is deferred, and does not
+block completion of this programme.** The loop closes at MAM-basics **#214**, which waits on a
+separate task drafting an email to Chris Kimball, tanach.us' maintainer. The account is in
+UXLC-utils' plan, Phase 3.
+
+Whether the same exposure recurs was checked on 2026-08-03, by grepping the other four repos in
+scope for `polite_download`, `robots`, `requests`, `urlopen` and `urllib`. **It does not — the
+robots block is specific to `polite_download` against tanach.us, and `polite_download` is used
+only in MAM-basics and UXLC-utils.** What the other repos do have, so nobody re-checks:
+
+| Repo | Downloader | Shape |
+|---|---|---|
+| book-of-job | **none for source data** | its one network path is `check_html_syntax_and_sanity.py --w3c`, which POSTs generated HTML to `validator.w3.org/nu` behind an opt-in flag. `mb_cmn/uxlc_change_url.py` composes a tanach.us href for a link and downloads nothing. |
+| codex-index-aleppo | `py/download_aleppo_pages.py` | page images from archive.org by raw `urlopen`; run by hand, and three modules only print "Run download_aleppo_pages.py" when the images are absent |
+| codex-index-cam1753 | `download_cam1753_spreads.py` | the same shape against archive.org, and **nothing in that repo calls it** |
+| codex-index-leningrad | **none** | `lenin-wiki/py/image_urls.py` composes sefaria and archive.org hrefs for links |
+| holman-ketiv-qere | **none** | |
+
+So the two archive.org downloaders cannot raise `RobotsDisallowedError` — they consult no
+`robots.txt` at all. **They are nevertheless as unexercised as the tanach.us pair**, and the
+finding that matters transfers unchanged: a downloader writing into the wrong repo's `in/` is the
+failure the two-roots work exists to prevent, and composing the right path is not the same as
+writing to it. Each affected plan should say plainly which of its downloaders it has and has not
+run, rather than letting an empty `git status` stand in for the claim.
+
 **4. book-of-job has no `py/`, so its modules land at MAM-basics' `py/` top level.** Sixteen
 scripts sit at its repo root and seven more in a `py/` that is a package of page-rendering helpers
 rather than a source root. Two of those seven are `hebrew_letter_words.py` and
