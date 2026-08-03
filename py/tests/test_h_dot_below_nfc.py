@@ -5,10 +5,19 @@ the precomposed U+1E25 / U+1E24 forms, never the decomposed "h"/"H" + COMBINING 
 BELOW (U+0323) sequence. Comments must not use either Unicode form at all -- plain
 ASCII "x"/"X" is used instead, since comments don't flow to output.
 
-TWO REPOS ARE SCANNED, each with its own exclusions and its own floor. This repo holds
-the code; wlc-utils holds the corpus the ``accgram`` code generates into, and its
-``doc/`` and ``CLAUDE.md`` still carry hand-authored transliterations after the Python
-moved out of it. ``_SCOPES`` below is the whole of the per-repo difference.
+THREE REPOS ARE SCANNED, each with its own exclusions and its own floor. This repo
+holds the code; wlc-utils and UXLC-utils hold corpora the code here generates into, and
+both still carry hand-authored transliterations in ``doc/``, ``CLAUDE.md`` and
+``README.md`` after their Python moved out. ``_scopes()`` below is the whole of the
+per-repo difference.
+
+The UXLC-utils scope arrived with that repo's Python (Phase 3 of
+``doc/PLAN-evacuate-python-from-UXLC-utils.md``) and replaces its
+``py/repo_hygiene/nfc_h_dot_below_test.py``, which was a near-copy of this file
+scanning its own repo root. Copied across unchanged it would have found that root by
+``git rev-parse`` from its own location and so scanned MAM-basics -- a second, weaker
+pass over this tree (naive ``line.find("#")`` comment detection, and none of the
+exclusions below) rather than the UXLC-utils pass it was written to be.
 
 Comment detection uses Python's ``tokenize`` module (real COMMENT tokens) rather than a
 naive ``line.find("#")``. The wlc code uses "#" as a delimiter inside string literals
@@ -37,6 +46,7 @@ from pathlib import Path
 
 from mb_cmn import paths
 
+import uxlc_paths
 import wlc_paths
 
 _COMBINING_DOT_BELOW = chr(0x0323)
@@ -107,6 +117,12 @@ _EXCLUDE_DIR_PREFIXES = (
 # source, WLC release notes, manuals), all left as-is for fidelity to source.
 _WLC_EXCLUDE_DIR_PREFIXES = ("out/", "gh-pages/", "in/")
 
+# UXLC-utils' generated trees -- out/, gh-pages/ and data/ (generated despite the name:
+# main_write_page_break_info writes one of its two files and copies the other in from
+# in/UXLC-misc/) -- plus in/, which is external tanach.us / UXLC download snapshots and
+# hand-curated CSV/JSON kept verbatim for fidelity to source.
+_UXLC_EXCLUDE_DIR_PREFIXES = ("out/", "gh-pages/", "data/", "in/")
+
 # The one comment allowed to keep showing a precomposed h-with-dot-below
 # glyph, because the comment is genuinely about the character itself... In
 # practice, after #187's cleanup, there are no such exceptions: every
@@ -147,6 +163,18 @@ def _scopes() -> tuple[_Scope, ...]:
             # handful of dotfiles. That is a small set by design and gets smaller when
             # the Python leaves, so the floor is low on purpose -- it is here to catch an
             # exclusion filter that swallowed EVERYTHING, not to assert a tree size.
+            floor=10,
+        ),
+        _Scope(
+            label="UXLC-utils",
+            root=uxlc_paths.uxlc_data_root(),
+            exclude_dir_prefixes=_UXLC_EXCLUDE_DIR_PREFIXES,
+            exclude_files=frozenset(),
+            # Low for the same reason wlc-utils' is: what survives those exclusions is
+            # doc/, CLAUDE.md, README.md and dotfiles, and it shrinks again once that
+            # repo's Python is deleted. The retired UXLC-utils-side copy asserted a
+            # floor of 80 over its whole tree, which counted the 102 .py this scope
+            # will not have.
             floor=10,
         ),
     )
