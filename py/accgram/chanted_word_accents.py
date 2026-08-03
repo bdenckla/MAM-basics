@@ -668,7 +668,7 @@ YEIVIN_ENTRIES: tuple[YeivinEntry, ...] = (
     YeivinEntry(
         section="§210",
         # "The mayela", never "the mayela tipexa" -- mayela is the name for what would otherwise
-        # be a tipexa there, as ``maqaf_nonfinal_accents``' route-(a) bullet sets out.  Yeivin's
+        # be a tipexa there, as ``maqaf_nonfinal_accents``' ANFA-reason-(a) bullet sets out.  Yeivin's
         # own quote below is where the reader learns the sign's shape.
         names="the mayela with silluq",
         stated_count="in five places",

@@ -20,8 +20,10 @@ and manufacture hits.
 Prose and poetic are routed by ``prose_filter`` / ``poetic_filter`` and counted separately, since
 the two systems differ here and a merged count would say nothing about either.
 
-THE TWO ROUTES.  A single bucket of "compounds with two accents" hides the distinction that
-matters, so every hit is sorted into one of two routes:
+THE TWO ANFA-REASONS.  **ANFA** is this module's subject in an acronym -- an Accent on a Non-Final
+Atom -- and a hit's ``anfa_reason`` is the survey's answer to why that hit has one.  A single
+bucket of "compounds with two accents" hides the distinction that matters, so every hit is sorted
+into one of two ANFA-reasons:
 
 * **(a) A secondary accent the compound inherits.**  Yeivin's own term, and his prose inventory
   is a CLOSED LIST of configurations -- which accent sits on the non-final atom and which the
@@ -42,7 +44,7 @@ matters, so every hit is sorted into one of two routes:
   habit with no grammatical trigger, "most common where the word has penultimate stress", and L
   -- WLC's own base -- is named for it (§21, §293).
 
-A THIRD THING IS IN ROUTE (a) THAT DOES NOT BELONG TO EITHER, and this survey's shape cannot yet
+A THIRD THING IS UNDER ANFA-REASON (a) THAT DOES NOT BELONG TO EITHER, and this survey's shape cannot yet
 put it anywhere else.  ITM §357 and Breuer CoS Ch. 1 §43 describe a maqaf written after an atom
 that has its own accent and a gaʿya AFTER that accent, to say that the slowed syllable makes no
 break.  A compound of this kind is a chanted word like any other, on the only test there is --
@@ -57,7 +59,7 @@ with their accents split across atoms, one of WLC's forty-five -- and settles th
 merkha-with-tipexa, three mahapakh-with-pashta, four merkha-with-silluq, one merkha-with-pashta and
 one munax-with-zaqef are all of that one kind.  A CONFIGURATION cannot tell them apart, because
 WLC's hits with the same pairs are not of that kind, so the labels above say what the pair can and
-cannot settle and the routing is left alone.  Giving §357 a route of its own would move counts
+cannot settle and the ANFA-reasons are left alone.  Giving §357 an ANFA-reason of its own would move counts
 that no other change here moves, so it is Ben's call, not a tidy-up.  Issue wlc-utils#86.
 
 POSITION IS EVIDENCE, NOT THE CRITERION.  Whether a non-final atom's accent sits where that atom's
@@ -70,8 +72,8 @@ stripped, and compare base letters after the accent.
   the free ואחרי usually put theirs one from the end, so it cannot be that atom's own accent.
 * A **yes is not decisive**, which is the trap.  A secondary accent can land on the atom's own
   stress anyway: MAM's שלף־חרב has its merkha where the free שלף usually have theirs, because
-  nasog axor has retracted the stress before חרב, and it is still routed by its
-  ``(MERKHA, SILLUQ)`` configuration.  So the CONFIGURATION decides the route and the
+  nasog axor has retracted the stress before חרב, and its ANFA-reason still comes from its
+  ``(MERKHA, SILLUQ)`` configuration.  So the CONFIGURATION decides the ANFA-reason and the
   oracle corroborates -- never the other way round.  (What the oracle sees at שלף־חרב is now
   read the other way as well: the merkha IS that atom's own accent, and the maqaf after it is
   ITM §357's -- see the third-thing paragraph above.)  Neither example states a figure here: the
@@ -88,7 +90,7 @@ chanted word's edge rather than about any atom's stress.
 §293's further claim -- that the habit correlates with penultimate stress -- is NOT tested here.
 That needs a real stress model; ``../al-hatorah/py/aht_phon/stress.py`` is the prior art.  Nothing
 below changes that: ``final_stress`` answers one question about one syllable, and MAM has no
-route-(b) hit for §293's claim to be tested on either way.
+ANFA-reason-(b) hit for §293's claim to be tested on either way.
 
 WHERE THE STRESS FALLS is a second measurement, and a narrow one.  The ``*_final_stress_by_pair``
 fields say, of each pair whose accent written last is written on the stress, how many of its
@@ -258,11 +260,11 @@ _ZARQA = am.TSINNOR  # U+05AE
 
 _ONE_ACCENT_WRITTEN_TWICE = frozenset((frozenset((_ZARQA_HELPER, _ZARQA)),))
 
-ROUTE_SECONDARY = "a: a secondary accent the compound inherits"
-ROUTE_HABIT = "b: a maqaf after an atom that keeps its own conjunctive (ITM §293)"
-ROUTE_UNDECIDED = "?: undecided -- the non-final atom never stands free"
-# The poetic corpus is deliberately left unrouted; see ``classify``.
-ROUTE_NOT_ATTEMPTED = "(not attempted -- the route split is prose doctrine)"
+ANFA_REASON_SECONDARY = "a: a secondary accent the compound inherits"
+ANFA_REASON_HABIT = "b: a maqaf after an atom that keeps its own conjunctive (ITM §293)"
+ANFA_REASON_UNDECIDED = "?: undecided -- the non-final atom never stands free"
+# The poetic corpus deliberately gets no ANFA-reason; see ``classify``.
+ANFA_REASON_NOT_ATTEMPTED = "(not attempted -- the ANFA-reason split is prose doctrine)"
 
 # Each corpus's standing, which the page must state and must not overstate.
 CORPUS_KIND = {
@@ -724,7 +726,9 @@ def _single(accents: list[str]) -> str | None:
     return accents[0] if len(accents) == 1 else None
 
 
-def classify(hit: dict, oracle: dict[str, Counter], *, routed: bool) -> dict:
+def classify(
+    hit: dict, oracle: dict[str, Counter], *, attempt_anfa_reason: bool
+) -> dict:
     """Route, configuration and oracle evidence for one hit.
 
     The returned record is what lands in the tracked JSON, so its keys are read by people, not
@@ -732,7 +736,7 @@ def classify(hit: dict, oracle: dict[str, Counter], *, routed: bool) -> dict:
     ``shape`` its per-atom accents, and the oracle fields count base letters, not syllables.
     The key keeps the short name, as wlc-utils#81 left the repo's other ``word``-named identifiers.
 
-    ``routed`` is false for the poetic corpus, where the route split is NOT attempted: both
+    ``attempt_anfa_reason`` is false for the poetic corpus, where the split is NOT made: both
     halves of it are prose doctrine.  ``_NAMED_CONFIGURATIONS`` is Yeivin's PROSE inventory,
     and the poetic counterpart is a different list (his §372 tsinnorit -- ITM spells it with
     an s, this repo with ts; Breuer's Chapter 9 §§23-26 secondary mahapakh/merkha, the span he
@@ -753,29 +757,29 @@ def classify(hit: dict, oracle: dict[str, Counter], *, routed: bool) -> dict:
         "free_occurrences": sum(free.values()) if free else 0,
     }
 
-    if not routed:
-        route, named = ROUTE_NOT_ATTEMPTED, None
+    if not attempt_anfa_reason:
+        anfa_reason, named = ANFA_REASON_NOT_ATTEMPTED, None
     else:
         nonfinal_accent = _single([a for atom_ in per_atom[:-1] for a in atom_])
         compound_accent = _single(per_atom[-1])
         named = _NAMED_CONFIGURATIONS.get((nonfinal_accent, compound_accent))
         if named is not None:
-            route = ROUTE_SECONDARY
+            anfa_reason = ANFA_REASON_SECONDARY
         elif free_usual is None:
-            route = ROUTE_UNDECIDED
+            anfa_reason = ANFA_REASON_UNDECIDED
         elif joined != free_usual:
-            route, named = (
-                ROUTE_SECONDARY,
+            anfa_reason, named = (
+                ANFA_REASON_SECONDARY,
                 "unnamed -- not at the atom's own accent position",
             )
         else:
-            route, named = ROUTE_HABIT, "unnamed"
+            anfa_reason, named = ANFA_REASON_HABIT, "unnamed"
 
     return {
         "bcv": hit["bcv"],
         "word": hit["word"],
         "shape": shape_of(per_atom),
-        "route": route,
+        "anfa_reason": anfa_reason,
         "configuration": named,
         "oracle": evidence,
     }
@@ -939,13 +943,17 @@ def _final_stress_counts(records: list[dict]) -> dict[str, int]:
     return dict(counts.most_common())
 
 
-def _genre_survey(words_by_bcv, keep, oracle, *, routed: bool, prose: bool) -> dict:
+def _genre_survey(
+    words_by_bcv, keep, oracle, *, attempt_anfa_reason: bool, prose: bool
+) -> dict:
     hits, n_verses, n_compounds, simple, concentrators = scan(
         words_by_bcv, keep, prose=prose
     )
     counted = [s for s in simple if s["excluded"] is None]
     conc_counted = [c for c in concentrators if c["excluded"] is None]
-    classified = [classify(h, oracle, routed=routed) for h in hits]
+    classified = [
+        classify(h, oracle, attempt_anfa_reason=attempt_anfa_reason) for h in hits
+    ]
     return {
         "verses": n_verses,
         "maqaf_compounds": n_compounds,
@@ -1035,13 +1043,15 @@ def _genre_survey(words_by_bcv, keep, oracle, *, routed: bool, prose: bool) -> d
                 {c["excluded"] for c in concentrators if c["excluded"]}
             )
         },
-        "by_route": dict(Counter(c["route"] for c in classified).most_common()),
+        "by_anfa_reason": dict(
+            Counter(c["anfa_reason"] for c in classified).most_common()
+        ),
         "by_configuration": dict(
             Counter(c["configuration"] for c in classified).most_common()
         ),
         "by_shape": dict(Counter(c["shape"] for c in classified).most_common()),
         "occurrences": sorted(
-            classified, key=lambda c: (c["route"], c["shape"], c["bcv"])
+            classified, key=lambda c: (c["anfa_reason"], c["shape"], c["bcv"])
         ),
     }
 
@@ -1082,7 +1092,7 @@ def build_survey() -> dict:
             " and the counts here read those as maqafs -- so MAM's poetic hits below count"
             " gray-maqaf compounds alongside written-maqaf ones, while WLC and UXLC, having no"
             " such mark, keep poetic counts that are floors. ``gray_maqaf`` counts the mark on"
-            " its own and splits it by kind. The routes are not attempted here either; see"
+            " its own and splits it by kind. No ANFA-reason is assigned here either; see"
             " ``classify``."
         ),
         "gray_maqaf": gray_maqaf_survey(),
@@ -1090,11 +1100,15 @@ def build_survey() -> dict:
     }
     for name, words_by_bcv in corpora.items():
         per_genre = {}
-        for genre, module, routed in genres:
+        for genre, module, attempt_anfa_reason in genres:
             keep = module.should_keep_line
             oracle = build_oracle(words_by_bcv, keep)
             per_genre[genre] = _genre_survey(
-                words_by_bcv, keep, oracle, routed=routed, prose=genre == "prose"
+                words_by_bcv,
+                keep,
+                oracle,
+                attempt_anfa_reason=attempt_anfa_reason,
+                prose=genre == "prose",
             )
         survey["corpora"][name] = {"kind": CORPUS_KIND[name], **per_genre}
     return survey

@@ -6,11 +6,11 @@ non-final atom of a compound has an accent of its own in MAM, and what that mean
 this run computes, and the same run writes ``out/accgram/maqaf-nonfinal-accents.json``, so page
 and data cannot drift.
 
-The survey is wider than the page: three corpora, both genres, and a route (a)/(b) split telling
+The survey is wider than the page: three corpora, both genres, and a ANFA-reason (a)/(b) split telling
 an inherited secondary accent from a maqaf written after an atom that keeps its own conjunctive.
 The page rendered all of that until 2026-07-27 and now renders MAM's prose alone -- see issue wlc-utils#83
 for what was cut and why, and wlc-utils#82 for the Yeivin citations that must be settled before the
-route-(b) material is rendered anywhere again.
+ANFA-reason-(b) material is rendered anywhere again.
 
 Rendered-prose conventions are ``printed_decalogue_strands``' module docstring; the romanizations
 come from its ``ROM_*`` constants and are never retyped here.
@@ -67,7 +67,7 @@ from py_html import wlc_utils_html as H
 import wlc_paths
 
 # "Non-final atom of a compound", not "proclitic" and not "maqaf-joined atom".  "Proclitic"  # prose-ok: names the rejected term
-# asserted a grammatical role the scan never checks -- route (b) is precisely an atom that keeps
+# asserted a grammatical role the scan never checks -- ANFA-reason (b) is precisely an atom that keeps
 # its own conjunctive, so it is proclitic by position only.  And a lone atom is never "maqaf-joined"  # prose-ok: names the rejected term
 # full stop: it is joined TO the next one, or else the two of them are joined to each other.
 # Naming the atom by its POSITION in the compound says what the scan measures and nothing more,
@@ -316,16 +316,16 @@ _SMALL_NUMBERS = (
 
 
 # Route (b) is the RESIDUE left when no named configuration fits, so nothing in the classifier
-# guarantees its mark is the conjunctive the route is named for.  The page used to disclose that
+# guarantees its mark is the conjunctive the ANFA-reason is named for.  The page used to disclose that
 # in the bullet, with a ``_HABIT_MARKS`` tuple and a ``pin_claims`` assertion keeping the
 # disclosure honest -- but every counterexample was WLC's or UXLC's (WLC's Jeremiah 48:12, UXLC's
 # Jeremiah 48:12 and Ezekiel 16:37, a tipexa on the non-final atom in each), and MAM has no
-# route-(b) hit at all.  With those two corpora off the page there is nothing left to disclose,
+# ANFA-reason-(b) hit at all.  With those two corpora off the page there is nothing left to disclose,
 # so the sentence, the tuple and the assertion all went (2026-07-27).  Should a corpus bump ever
-# give MAM a route-(b) hit, the disclosure has to come back with it.
+# give MAM a ANFA-reason-(b) hit, the disclosure has to come back with it.
 #
 # The half-sentence that had led into the disclosure -- "it is named for what it mostly holds
-# rather than for what it is sifted by" -- went too, on the same reasoning: with route (b) empty
+# rather than for what it is sifted by" -- went too, on the same reasoning: with ANFA-reason (b) empty
 # on the page, it was a methodological remark about a bucket the reader cannot see into.
 
 
@@ -346,8 +346,8 @@ def _gray(survey: dict, kind: str | None = None) -> int:
     return gray["total"] if kind is None else gray["by_kind"][kind]
 
 
-def _route_count(survey: dict, corpus: str, genre: str, route: str) -> int:
-    return survey["corpora"][corpus][genre]["by_route"].get(route, 0)
+def _anfa_reason_count(survey: dict, corpus: str, genre: str, anfa_reason: str) -> int:
+    return survey["corpora"][corpus][genre]["by_anfa_reason"].get(anfa_reason, 0)
 
 
 def _occurrences(survey: dict, corpus: str, genre: str) -> list[dict]:
@@ -1230,10 +1230,10 @@ def pin_claims(survey: dict) -> None:
     a generator's output is a warning nobody reads.
     """
     # GONE with the classification (2026-07-28): two assertions that pinned sentences the page
-    # no longer makes -- that MAM's prose has no bare-habit (route (b)) case, and that exactly
-    # one route-(a) case falls under no named configuration.  Both were about which of Yeivin's
+    # no longer makes -- that MAM's prose has no bare-habit (ANFA-reason (b)) case, and that exactly
+    # one ANFA-reason-(a) case falls under no named configuration.  Both were about which of Yeivin's
     # categories a case belongs to, and the page now reports the pairs that occur without
-    # placing any case in a category.  The survey still computes the routes; nothing on the page
+    # placing any case in a category.  The survey still computes the ANFA-reasons; nothing on the page
     # depends on them, so nothing here defends them.
 
     # The oleh-we-yored assertions that stood here went with the poetic section's detail (wlc-utils#83).
@@ -1871,11 +1871,11 @@ def _spreaders_by_pair(survey: dict) -> Counter:
 
 
 def _prose_section(survey: dict, rows: list[dict]) -> tuple[object, ...]:
-    # This section absorbed two that used to precede it, "Two routes, and why they must be
-    # counted apart" and "How a hit is assigned to a route" (Ben, 2026-07-27: keep the page to
+    # This section absorbed two that used to precede it, "Two ANFA-reasons, and why they must be
+    # counted apart" and "How a hit is assigned an ANFA-reason" (Ben, 2026-07-27: keep the page to
     # one weird thing in Koren and whether it ever happens in MAM, "with at most one passing
     # remark about things being more complicated in L, as Yeivin points out").  Both were built
-    # around route (b), the maqaf written after an atom that keeps its own conjunctive -- a
+    # around ANFA-reason (b), the maqaf written after an atom that keeps its own conjunctive -- a
     # habit of a particular naqdan, which MAM, not being a manuscript, has no instance of.  The
     # material they carried is issue wlc-utils#83, which links to wlc-utils#82.
     #
@@ -1885,14 +1885,14 @@ def _prose_section(survey: dict, rows: list[dict]) -> tuple[object, ...]:
     # names and never show one being decided -- Judges 7:13, because metigah-zaqef is the
     # category the overwhelming majority of the hits fall into.  Judges 8:10 שלף־חרב went with
     # the section: it made the subtler point that a mark AT the atom's own stress can still be
-    # secondary, which needs the route machinery to be worth making.
+    # secondary, which needs the ANFA-reason machinery to be worth making.
     #
     # "usual place", not "all N": the survey records only the MODE of letters-after-accent per
     # atom, so the mode is the whole of what a spliced number can defend.  The unanimity that in
     # fact holds here is not in the JSON, and prose must not claim more than the build re-derives.
     #
     # The one-row table went too.  Its two surviving columns restated the intro's own sentence,
-    # and the other three were route counts.
+    # and the other three were ANFA-reason counts.
     hits = _n(survey, _CORPUS, "prose", "hits")
     spreaders = _spreaders_by_pair(survey)
     maqaf_surviving = sum(spreaders[pair] for pair in _BREUER_MAQAF_SURVIVING)
@@ -1916,7 +1916,7 @@ def _prose_section(survey: dict, rows: list[dict]) -> tuple[object, ...]:
         #   * "landed short of its last atom" pictured a mark that missed.  A secondary accent
         #     has its own position, in front of the main accent; nothing aimed at the last atom
         #     and fell short.  Transformative framing of exactly the banned kind.
-        #   * It asserted of all 233 what holds of the 230 routed ones; the three undecided are
+        #   * It asserted of all 233 what holds of the 230 that have an ANFA-reason; the three undecided are
         #     undecided precisely because this cannot be checked for them.
         # What replaces it is the point MAQAF_IS_THE_LAST_RUNG stands for: these marks are not a
         # phenomenon of compounds.  The list is Yeivin's list of accents that can come first of
@@ -1937,7 +1937,7 @@ def _prose_section(survey: dict, rows: list[dict]) -> tuple[object, ...]:
         # manuscripts that have a maqaf after an atom keeping its own conjunctive, and MAM
         # having no case of it.  That paragraph WAS the optional-maqaf question, stated as an
         # aside; with the classification gone the page can no longer support its "no case of
-        # it", which was a route count.  Issue wlc-utils#83 holds the material.
+        # it", which was an ANFA-reason count.  Issue wlc-utils#83 holds the material.
         #
         # The sentence says "on a compound" since 2026-07-29, the pairs no compound has having
         # gone to the appendix.  It used to say "the pairs that occur", full stop, which the
@@ -2121,8 +2121,8 @@ def _poetic_section(survey: dict) -> tuple[object, ...]:
     # and this section is here only so a reader is not left wondering what happens in the other
     # one.  Gone with the details: the table, Breuer's short list of poetic verses where the
     # maqaf IS written (Job 6:10, Proverbs 25:20), the oleh-we-yored overshoot with Psalms 70:6,
-    # and the note that the route split was never run over poetic verses -- the last of which
-    # went with the routes themselves.  All of it is issue wlc-utils#83.
+    # and the note that the ANFA-reason split was never run over poetic verses -- the last of which
+    # went with the ANFA-reasons themselves.  All of it is issue wlc-utils#83.
     #
     # The two facts that survive are the two that make the count meaningless here rather than
     # merely different, so neither is a detail: the unwritten maqaf (which puts most of the
