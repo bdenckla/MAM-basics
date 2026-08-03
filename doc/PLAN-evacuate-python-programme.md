@@ -10,7 +10,7 @@ plan can own: the scope, the order, and the work that must happen **before** any
 | Repo | Plan | State |
 |---|---|---|
 | Programme Phase 0 — reconcile the three drifted `check_*`/`fix_*` forks | this file | **not started** |
-| UXLC-utils | [PLAN-evacuate-python-from-UXLC-utils.md](PLAN-evacuate-python-from-UXLC-utils.md) | **Phases 1, 3 and 4 done**, plus Phase 7 item 1 (Phase 1 2026-08-02: `fe73d07` there, `d5a5052` here; Phase 3 2026-08-02: `662db55` and `f202d21` here, nothing there; Phase 4 2026-08-03: `ad52001` there, `2b5c87c` here). **UXLC-utils now holds zero Python** and its 214 artifacts still regenerate byte-identically from here. Phases 5 and 6 remain — 5 is the shared decision with the codex-index trio |
+| UXLC-utils | [PLAN-evacuate-python-from-UXLC-utils.md](PLAN-evacuate-python-from-UXLC-utils.md) | **Phases 1, 3, 4 and 5 done**, plus Phase 7 item 1 (Phase 1 2026-08-02: `fe73d07` there, `d5a5052` here; Phase 3 2026-08-02: `662db55` and `f202d21` here, nothing there; Phase 4 2026-08-03: `ad52001` there, `2b5c87c` here; Phase 5 2026-08-03: `d5195e3` in codex-index-leningrad, `748ee2f` there, nothing in this repo's `py/`). **UXLC-utils now holds zero Python** and its 214 artifacts still regenerate byte-identically from here. **Phase 5 dropped codex-index-leningrad's sparse `py/` half rather than repointing it** — the shared decision with the codex-index trio, now written into that plan too. **Only Phase 6 remains**, and Phase 1 measured it at two strings in two files |
 | holman-ketiv-qere | [PLAN-evacuate-python-from-holman-ketiv-qere.md](PLAN-evacuate-python-from-holman-ketiv-qere.md) | **not started** |
 | book-of-job | [PLAN-evacuate-python-from-book-of-job.md](PLAN-evacuate-python-from-book-of-job.md) | **not started** |
 | codex-index-aleppo, -leningrad, -cam1753 | [PLAN-evacuate-python-from-codex-index-trio.md](PLAN-evacuate-python-from-codex-index-trio.md) | **not started** — all three, cam1753 included |
@@ -199,6 +199,23 @@ not record this**: it lists only `mb_cmn` rows for that repo, because the scan l
 MAM-basics packages. Evacuating UXLC-utils' Python breaks that script's source. Handled in
 UXLC-utils' plan; flagged here because the inventory alone will not reveal it, and because it is
 evidence that a second such relation may exist somewhere the scan cannot see.
+
+**Resolved 2026-08-03 in UXLC-utils' Phase 5: the `py/` half was dropped, not repointed**
+(`d5195e3` in codex-index-leningrad, `748ee2f` in UXLC-utils). What settled it is worth carrying:
+**nothing in the consumer imported the seventeen**, and their one entry point could not run there
+anyway — the sparse copy never carried `mb_cmn`, so it raised `ModuleNotFoundError` long before
+Phase 4. Three findings that will recur at the next downstream consumer:
+
+- **A vendored copy can be dead without anyone noticing, and "it works today" is worth
+  checking rather than assuming.** Both plans described this one as working, on the strength of a
+  sync script that refreshed it. Run the consumer's entry point before deciding what its copy is
+  worth.
+- **The broken script failed loudly but partially.** `copy_by_intersection(strict=True)` raises on
+  the first missing source file, and it iterates in sorted order — so `data/` and `in/` were
+  copied and `provenance.md` was never written. Expect a half-sync, not a no-op.
+- **The consumer's prose named the moved code in four files, none of which imported it** —
+  `README.md`, `.github/copilot-instructions.md`, `.vscode/launch.json` and a test module's scope
+  docstring. **Grep a consumer for the vendored directory's name**, not for the module names.
 
 **3. Every repo in scope uses cwd-relative repo-internal paths**, which is the same problem
 wlc-utils' Phase 1 solved. Representative hits: UXLC-utils `py/clc/clc_render.py:26`

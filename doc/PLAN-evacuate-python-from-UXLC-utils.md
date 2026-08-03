@@ -18,7 +18,7 @@ the recipe does not transfer here it will not transfer anywhere.
 | 2 — sibling accessor | **not needed as its own phase**, but not free either — the one piece owed here was done inside Phase 1; see below |
 | 3 — copy the Python in (dual residency) | **done** 2026-08-02, commits `662db55` and `f202d21` here; nothing in UXLC-utils, which is what dual residency means |
 | 4 — empty UXLC-utils | **done** 2026-08-03, commit `ad52001` in UXLC-utils (110 tracked files deleted) and `2b5c87c` here; **Phase 7 item 1 came with it**, see below |
-| 5 — repoint codex-index-leningrad's sparse copy | **not started** |
+| 5 — repoint codex-index-leningrad's sparse copy | **done** 2026-08-03 — **the sparse `py/` half was dropped, not repointed**; commit `d5195e3` in codex-index-leningrad, `748ee2f` in UXLC-utils, and this record here. Nothing changed in MAM-basics' `py/` |
 | 6 — flip the provenance breadcrumbs and disambiguate issue citations | **not started** |
 | 7 — cross-repo bookkeeping | **not started** |
 
@@ -569,7 +569,95 @@ Phase 4 has no Python to enforce it over. If Ben wants the check running per com
 **MAM-basics**, that is a new hook in this repo and a decision to put to him, not a
 re-attachment.
 
-## Phase 5 — repoint codex-index-leningrad's sparse copy
+## Phase 5 — repoint codex-index-leningrad's sparse copy — DONE 2026-08-03
+
+**Ben's decision: drop the `py/` half. Landed as `d5195e3` in codex-index-leningrad (17 files
+deleted, 4 more edited) and `748ee2f` in UXLC-utils (one doc). MAM-basics' `py/` was not touched
+at all** — the suite stayed at **913 passed, 5 skipped**, `ruff check py` clean, `black --check py`
+clean at 765 files, and `git status --porcelain` empty here throughout. **The 39 XML and 2 JSON of
+the data half stay**, which was the second half of the decision and is why this is not a deletion
+of the sparse copy.
+
+**The decision as put to Ben was not the two-way choice this section describes, because
+establishing the facts first collapsed one side of it.** Four findings, in the order they landed:
+
+- **Nothing in codex-index-leningrad imports the seventeen.** `git grep` for `uxlc_lci`,
+  `uxlc_misc`, `my_uxlc` and `uxlc_utils_html` outside the sparse tree returns **zero** hits.
+  `lenin-wiki/main_make_wikisource_page.py` reads `UXLC-utils-sparse/data/lci_augrecs.json` — the
+  **data** half. The only consumer of the `py/` half was its own entry point,
+  `main_uxlc_estimate_atom_loc.py`, run by hand per that repo's
+  `.github/copilot-instructions.md` and a `.vscode/launch.json` debugpy config.
+- **And that entry point had been dead for some time, independently of Phase 4.** The sparse copy
+  never carried `mb_cmn`, which the modules import, so running it gives
+  `ModuleNotFoundError: No module named 'mb_cmn'` — reproduced on 2026-08-03, at
+  `import mb_cmn.mb_cmn_bib_locales`, naming the very module Phase 3 found was UXLC-local and
+  Phase 4 deleted. The launch config was stale in a second way too: it named
+  `main_uxlc_estimate_atom_loc.py` with cwd `UXLC-utils-sparse`, when the file sat at
+  `py/main_uxlc_estimate_atom_loc.py`. **So "keeps codex-index-leningrad working exactly as now"
+  was false of the repointing option** — there was no working behaviour to keep.
+- **Repointing was also not the one-line change this section implies.** Two of the seventeen —
+  `my_uxlc.py` and `my_uxlc_page_break_info.py` — now import `uxlc_paths` in their MAM-basics
+  form, and `uxlc_paths.uxlc_data_root()` resolves `sibling_repo("UXLC-utils")`, so a copy landed
+  in codex-index-leningrad would read `../UXLC-utils` directly and **bypass the sparse `in/` and
+  `data/` entirely**. Making the copy actually run would have meant vendoring `uxlc_paths` plus
+  `mb_cmn`'s `paths`, `bib_locales`, `file_io`, `str_defs`, `my_utils`, `hebrew_accents`,
+  `hebrew_letters`, `hebrew_points` and `hebrew_punctuation` and their transitive imports —
+  roughly 17 files becoming 30 — and `copy_by_intersection` takes a single `_SOURCE_REPO`, so
+  `in/`+`data/` from UXLC-utils and `py/` from MAM-basics could not both be expressed without
+  restructuring the script.
+- **The broken script fails loudly, but partially.** `main_update_vendored_files.py` exits 1 with
+  `FileNotFoundError: py/main_uxlc_estimate_atom_loc.py exists locally but not in source
+  C:\Users\BenDe\GitRepos\UXLC-utils`, raised by `vendoring_sync.copy_by_intersection`'s
+  `strict=True`. But `_iter_local_files` sorts by POSIX path, so `data/` and `in/` are copied
+  **before** it reaches `py/` and raises, and `write_provenance` never runs. A half-sync with no
+  provenance record, not a no-op — which is worse than a clean crash and better than silence.
+
+**After the fix the script runs to completion**: `Synced 41 files`, exit 0, `UXLC-utils commit:
+ad52001`. Its 41 tracked data artifacts came back **byte-identical** — `git status --porcelain`
+in codex-index-leningrad showed no `M` on any of them — and `provenance.md` changed by exactly
+the 17 removed lines plus the commit sha and the date. That file is the one tracked artifact a
+re-run cannot reproduce byte-identically on a later day, because it stamps `Date copied`.
+
+Four things the plan did not predict:
+
+- **The data half was already current, and the working tree lied about it.** `diff -rq` reported
+  all 41 files differing, which read as a stale copy; they are identical modulo CRLF. The sparse
+  worktree files were checked out CRLF at clone time (2026-06-28) and `.gitattributes` gained
+  `* text=auto eol=lf` afterwards (`ee5629b`, 2026-07-06), so git normalized them away and
+  reported clean. **After the sync rewrote them LF, `git status` reported all 41 ` M` with an
+  empty `git diff`** — a stale stat cache that neither `git update-index --refresh` nor
+  `--really-refresh` would clear, though `cmp` proved each file byte-identical to its blob. A
+  `git checkout -- UXLC-utils-sparse/` cleared it, discarding nothing. **This is the same tell
+  Phase 4 recorded for a different cause** (there, a second session mid-write), so the tell is
+  ambiguous: an empty `git diff` under a ` M` status means "believe the diff", whatever produced
+  the mismatch.
+- **codex-index-leningrad has a `.venv`, with `black`, despite its `copilot-instructions.md`
+  section headed "No Venv in This Repo".** That section is gone with the rest of the stale prose.
+  **It has no `pytest`**, so its one test module, `py/tests/test_h_dot_below_nfc.py`, was not run
+  — it excludes the whole `UXLC-utils-sparse/` subtree by prefix, so this phase cannot have
+  changed its result either way. Its scope note described the subtree as carrying "vendored py/
+  code" and now says data only; black left the edited file unchanged.
+- **A downstream repo's own prose names the moved code in four places, not one.** Beyond the sync
+  script itself: `README.md`, `.github/copilot-instructions.md` (two sections, one of them a full
+  usage recipe), `.vscode/launch.json`, and a test module's scope docstring. **Expect a
+  four-to-five-file edit per downstream consumer**, and grep the consumer for the *vendored
+  directory's name* rather than for the module names — the module names appear only in the files
+  that import them, which here was none of them.
+- **UXLC-utils' `shared-with-codex-index-leningrad.md` needed updating either way**, and the
+  question in the prompt was worth asking: it declares this repo the canonical source of the whole
+  subset, which is now true only of the data. It also implied a refresh could be driven from here,
+  which a repo with no Python cannot do; it now names the MAM-basics entry points instead. **This
+  file is not in `doc/`**, so Phase 4's "every `py/…` path in `doc/` means `../MAM-basics/py/…`"
+  sentence in `CLAUDE.md` did not cover it.
+
+**Written into `PLAN-evacuate-python-from-codex-index-trio.md` as well**, per the shared-decision
+rule below. book-of-job's `py_uxlc_loc/` is the third instance and is **not** decided by this —
+that copy has its own importers to check, and the reasoning here turns entirely on there being
+none.
+
+---
+
+The rest of this section is the plan as written before the phase ran.
 
 **codex-index-leningrad vendors seventeen of this repo's `.py`** into `UXLC-utils-sparse/py/` —
 `main_uxlc_estimate_atom_loc.py`, five `uxlc_lci/` modules and eleven `uxlc_misc/` modules —

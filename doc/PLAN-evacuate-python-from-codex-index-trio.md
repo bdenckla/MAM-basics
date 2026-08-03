@@ -103,18 +103,44 @@ against different input formats. They are part of the same classification.
 
 ---
 
-## The third UXLC fork, and why this plan does not decide it
+## The third UXLC fork — DECIDED 2026-08-03, in UXLC-utils' Phase 5
 
-`codex-index-leningrad/UXLC-utils-sparse/py/` holds **17 of UXLC-utils' own `.py`** —
+`codex-index-leningrad/UXLC-utils-sparse/py/` held **17 of UXLC-utils' own `.py`** —
 `main_uxlc_estimate_atom_loc.py`, five `uxlc_lci/` modules and eleven `uxlc_misc/` modules —
 refreshed from `../UXLC-utils` by codex-index-leningrad's root `main_update_vendored_files.py`.
-The data half of that sparse copy (`in/UXLC-39/*.xml`, `data/lci_*.json`, 42 files) is unaffected,
-since `in/` and `data/` stay in UXLC-utils.
+The data half of that sparse copy (`in/UXLC-39/*.xml` 39, `data/lci_*.json` 2) is unaffected,
+since `in/` and `data/` stayed in UXLC-utils.
 
-**This is decided in [PLAN-evacuate-python-from-UXLC-utils.md](PLAN-evacuate-python-from-UXLC-utils.md)
-Phase 5, which runs first**, and book-of-job's `py_uxlc_loc/` is a third instance of the same
-question. Whichever plan reaches it first writes the answer into all three files. Do not decide it
-here and discover later that UXLC-utils decided it differently.
+**Ben's decision: the `py/` half was dropped, not repointed at `../MAM-basics`.** Landed as
+`d5195e3` in codex-index-leningrad and `748ee2f` in UXLC-utils; the full account is
+[PLAN-evacuate-python-from-UXLC-utils.md](PLAN-evacuate-python-from-UXLC-utils.md) Phase 5. **The
+data half stays**, and `main_update_vendored_files.py` now runs to completion over those 41 files
+rather than dying on the first `.py`. Do not vendor the seventeen back, and do not add a
+`_SOURCE_REPO` pointing at MAM-basics.
+
+**So one repo of this trio is already partly settled, and its remaining Python is `lenin-wiki/`
+plus the root `main_update_vendored_files.py` / `vendoring_sync.py` pair.** Phase 7 item 2 below
+still holds: that script now refreshes a data-only subtree, so the inventory's comment about it
+wants rewording rather than deleting when the script itself goes.
+
+**Three things from that phase bear directly on this plan:**
+
+- **What decided it was that nothing in codex-index-leningrad imported the seventeen**, and that
+  their one entry point could not run there anyway — the sparse copy never carried `mb_cmn`, so it
+  raised `ModuleNotFoundError`. **Check the same before assuming this answer transfers.**
+  book-of-job's `py_uxlc_loc/` is the third instance of the question and is **not** decided by
+  this: it has its own importers to check, and the reasoning here turns entirely on there being
+  none.
+- **A downstream consumer's prose names the moved code in more places than the sync script.**
+  Here it was `README.md`, two sections of `.github/copilot-instructions.md`, a
+  `.vscode/launch.json` debugpy config, and a test module's scope docstring — five edits across
+  four files. Grep a consumer for the **vendored directory's name**, not for the module names: the
+  module names appeared in none of them.
+- **codex-index-leningrad has a `.venv` with `black` but no `pytest`**, despite a
+  `copilot-instructions.md` section headed "No Venv in This Repo" (now removed). Its one test
+  module could not be run. **Check each of the three repos' venvs before quoting a verification
+  command in this plan**, rather than inheriting MAM-basics' `.venv\Scripts\python.exe
+  py\main_test.py` shape.
 
 ---
 
