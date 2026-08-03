@@ -1,8 +1,18 @@
 # Evacuate the rest of wlc-utils into MAM-basics
 
-This file is the tracked copy and the one to update. It was copied on 2026-08-03 from
-`C:\Users\BenDe\.claude\plans\sparkling-chasing-puzzle.md`, which is not under version
-control anywhere; that copy should not be edited.
+**This file is the plan. There is no other copy.** It was drafted on 2026-08-03 in
+`~/.claude/plans/`, as plan mode requires, and **that copy was deleted once this became the
+tracked one** — deliberately, and departing from what
+`doc/PLAN-evacuate-python-from-wlc-utils.md` did. That plan left its draft in place under a
+`SUPERSEDED — do not edit or work from this copy` banner; five days on, the banner is doing its
+job and the file is still 651 lines against the tracked 1228, a near-half-stale document sitting
+where a session looking for "the plan" might plausibly find it. Ben, 2026-08-03: *"why not just
+delete that stale plan to make it impossible to be confused for 'the real plan'?"* A banner has
+to be read; a deleted file cannot be worked from. Nothing was lost — the draft was byte-identical
+to this file's first commit apart from its header, so `git show` recovers it.
+
+**So do not re-create one.** If a future session drafts in `~/.claude/plans/` again, fold it in
+here and delete it, as `8daef35` did with two such scratch plans.
 
 **Nothing has been executed.** Every phase below is unstarted: no file has moved, no GitHub
 setting has been touched, and wlc-utils is exactly as it was.
