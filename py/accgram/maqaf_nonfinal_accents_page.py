@@ -346,10 +346,6 @@ def _gray(survey: dict, kind: str | None = None) -> int:
     return gray["total"] if kind is None else gray["by_kind"][kind]
 
 
-def _anfa_reason_count(survey: dict, corpus: str, genre: str, anfa_reason: str) -> int:
-    return survey["corpora"][corpus][genre]["by_anfa_reason"].get(anfa_reason, 0)
-
-
 def _occurrences(survey: dict, corpus: str, genre: str) -> list[dict]:
     return survey["corpora"][corpus][genre]["occurrences"]
 
