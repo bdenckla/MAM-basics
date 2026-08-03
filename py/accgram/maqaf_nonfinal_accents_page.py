@@ -32,6 +32,7 @@ from accgram import rtms_report
 from accgram.almost_errors_html_shared import (
     accents_and_letters,
     hbo,
+    itm,
     link,
     ref_abbrev,
     text_para,
@@ -2084,11 +2085,11 @@ def _prose_section(survey: dict, rows: list[dict]) -> tuple[object, ...]:
     )
 
 
-# The two books this page cites, each written short with the full title on hover (Ben,
-# 2026-07-28: "'Breuer, Chapter 9' doesn't say what breuer book ... use CoS and ITM
-# respectively, and make these hover-reveal the full title").  Single-sourced here, so the two
-# sections cannot come to cite them differently.
-_ITM_TITLE = "Introduction to the Tiberian Masorah"
+# Breuer's book, written short with the full title on hover (Ben, 2026-07-28: "'Breuer, Chapter
+# 9' doesn't say what breuer book ... use CoS and ITM respectively, and make these hover-reveal
+# the full title").  Single-sourced here, so the two sections cannot come to cite it differently.
+# Yeivin's, which that instruction covered in the same breath, moved to
+# ``almost_errors_html_shared`` when ``wlc_chanted_word_residue_page`` wanted the same spelling.
 _COS_TITLE = "The Cantillation of Scripture"
 # The third book, cited once, for the one distinction on this page that neither of the other two
 # makes: the geresh/azla naming.  Ben, 2026-07-29, having read all three: "I'm comfortable
@@ -2100,7 +2101,11 @@ _CHB_TITLE = "Chanting the Hebrew Bible"
 
 
 def _itm() -> object:
-    return H.abbr("ITM", _ITM_TITLE)
+    """Yeivin's ITM, spelled as ``almost_errors_html_shared`` spells it for both pages.
+
+    The name stays as this page's call sites have it, the way ``_ref_abbrev`` did when it
+    moved."""
+    return itm()
 
 
 def _cos() -> object:

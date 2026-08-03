@@ -145,6 +145,19 @@ def link(text: str, href: str) -> object:
     return H.anchor(text, {"href": href})
 
 
+# Yeivin's book, written short with the full title on hover (Ben, 2026-07-28: "'Breuer, Chapter
+# 9' doesn't say what breuer book ... use CoS and ITM respectively, and make these hover-reveal
+# the full title").  Written for ``maqaf_nonfinal_accents_page``, which still holds the two books
+# only it cites; this one moved here when ``wlc_chanted_word_residue_page`` wanted the same
+# spelling, so the two pages cannot come to cite it differently.
+ITM_TITLE = "Introduction to the Tiberian Masorah"
+
+
+def itm() -> object:
+    """Yeivin's ITM as a page names it: the abbreviation, the full title on hover."""
+    return H.abbr("ITM", ITM_TITLE)
+
+
 def uxlc_change_link(compact: str) -> object:
     """Anchor to a tanach.us changeset, labelled by its ``changeset-n`` id.
 

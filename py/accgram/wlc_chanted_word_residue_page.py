@@ -51,6 +51,7 @@ from accgram import chanted_word_accents as cwa
 from accgram import rtms_report
 from accgram.almost_errors_html_shared import (
     hbo,
+    itm,
     link,
     ref_abbrev,
     text_para,
@@ -296,28 +297,28 @@ def pin_claims(survey: dict, rows: list[dict]) -> None:
     assert all(
         r["status"] == "clean" for r in telisha
     ), "a whitelisted telisha gedolah word is no longer clean"
-    # The opening sentence names three configurations and then counts the rest, so it has to
-    # be able to name three.  Everything past that is spliced.
+    # The opening list names three configurations and then counts the rest, so it has to be able
+    # to name three.  Everything past that is spliced.
     assert len(named) > _NAMED_SPELLED_OUT, (
-        f"the inventory is down to {len(named)} sequences, and the opening sentence names"
+        f"the inventory is down to {len(named)} sequences, and the opening list names"
         f" {_NAMED_SPELLED_OUT} of them before counting the remainder"
     )
-    # The rest of that sentence states three magnitudes in words, and a word does not splice.
-    # The clause these three replace said "a few dozen in the Tanakh", false from the page's
-    # first commit and with nothing under it -- prose with no oracle is how that survives.
+    # The opening states three magnitudes in words, and a word does not splice.  The clause
+    # these three replace said "a few dozen in the Tanakh", false from the page's first commit
+    # and with nothing under it -- prose with no oracle is how that survives.
     wlc = survey["corpora"]["wlc422"]
     munax_zaqef = wlc["by_sequence"].get("munax zaqef", 0)
     assert wlc["hits"] * 20 < wlc["chanted_words"], (
-        "the opening sentence says a small minority of a prose verse's chanted words have two"
-        f" accents; the survey now has {wlc['hits']} of {wlc['chanted_words']}"
+        "the opening says a chanted word has two accents in a small minority of cases;"
+        f" the survey now has {wlc['hits']} of {wlc['chanted_words']}"
     )
     assert len(rows) * 10 < wlc["hits"], (
-        "the opening sentence says Yeivin's inventory names the pair for nearly all of the"
-        f" two-accent chanted words; it now leaves {len(rows)} of {wlc['hits']} unnamed"
+        "the opening says Yeivin's inventory names the pair for nearly all of the two-accent"
+        f" chanted words; it now leaves {len(rows)} of {wlc['hits']} unnamed"
     )
     assert munax_zaqef * 2 > wlc["hits"], (
-        "the opening sentence says a munaḥ before a zaqef is most of the two-accent chanted"
-        f" words by itself; it is now {munax_zaqef} of {wlc['hits']}"
+        "the opening says a munaḥ before a zaqef is most of the two-accent chanted words by"
+        f" itself; it is now {munax_zaqef} of {wlc['hits']}"
     )
 
 
@@ -408,17 +409,45 @@ def _accounted_for(counts: dict[str, int]) -> str:
 def _intro(counts: dict[str, int]) -> tuple[object, ...]:
     return (
         H.heading_level_1(PAGE_TITLE),
+        # THE OPENING IS THE MAQAF-NONFINAL-ACCENTS PAGE'S, WORD FOR WORD WHERE IT CAN BE (Ben,
+        # 2026-08-03: "the introductory material should be phrased similarly to (perhaps in some
+        # cases exactly the same as in) maqaf-nonfinal-accents.html").  Its first three sentences
+        # are a claim about the prose system rather than about a corpus, so they transfer intact;
+        # what cannot is the counting sentence below, MAM being that page's corpus and WLC this
+        # one's.  Its statement of how many accents a chanted word has is also the better one --
+        # it says never zero and never more than two, which a bare "normally has one" left out --
+        # and it leaves a chanted word undefined rather than glossing it as an atom or a whole
+        # maqaf compound, which is what Ben asked for here: "better to leave it somewhat
+        # undefined".
+        H.para(
+            (
+                "In the prose system a chanted word always has at least one accent,"
+                " and usually only one."
+                " In a small minority of cases, a chanted word has two accents,"
+                " but never more than two."
+                " Some of the two-accent words are simple and some are compounds."
+                " For nearly all of the two-accent words, Yeivin's ",
+                itm(),
+                " names the pair:",
+            )
+        ),
+        # A LIST, NOT A SENTENCE (Ben, same day, of the three named pairs and the count of the
+        # rest: "better as a bulleted list").  The last item is the remainder rather than a
+        # fourth pair, which is how he wrote it out.
+        H.unordered_list(
+            (
+                "a munaḥ before a zaqef",
+                "a mahapakh before a pashta",
+                "an azla before a geresh",
+                f"{_number_word(counts['named_unspelled'])} more configurations besides",
+            )
+        ),
         text_para(
-            "A chanted word — an atom, or a whole maqaf compound — normally has one accent."
-            " In a prose verse a small minority of chanted words have two, and for nearly all"
-            " of those Yeivin's Introduction to the Tiberian Masorah names the pair: a munaḥ"
-            " before a zaqef, a mahapakh before a pashta, an azla before a geresh, and"
-            f" {_number_word(counts['named_unspelled'])} more configurations besides. The first"
-            " of those, a munaḥ before a zaqef, is most of the two-accent chanted words by"
-            " itself."
+            "The first of those, a munaḥ before a zaqef, is most of the two-accent chanted"
+            " words by itself."
             f" This page is the remainder. In WLC's {counts['verses']:,} prose verses there are"
             f" {counts['chanted_words']:,} chanted words, of which {counts['hits']:,} have two"
-            f" accents; {counts['residue']} of those have a pair that no section of his"
+            f" accents; {counts['residue']} of those have a pair that no section of Yeivin's"
             f" inventory names, in {counts['sequences']} distinct combinations."
         ),
         text_para(
