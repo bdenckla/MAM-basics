@@ -20,10 +20,10 @@ and manufacture hits.
 Prose and poetic are routed by ``prose_filter`` / ``poetic_filter`` and counted separately, since
 the two systems differ here and a merged count would say nothing about either.
 
-THE TWO ANFA-REASONS.  **ANFA** is this module's subject in an acronym -- an Accent on a Non-Final
-Atom -- and a hit's ``anfa_reason`` is the survey's answer to why that hit has one.  A single
-bucket of "compounds with two accents" hides the distinction that matters, so every hit is sorted
-into one of two ANFA-reasons:
+THE THREE ANFA-REASONS.  **ANFA** is this module's subject in an acronym -- an Accent on a
+Non-Final Atom -- and a hit's ``anfa_reason`` is the survey's answer to why that hit has one.  A
+single bucket of "compounds with two accents" hides the distinctions that matter, so every hit is
+sorted into one of three ANFA-reasons:
 
 * **(a) A secondary accent the compound inherits.**  Yeivin's own term, and his prose inventory
   is a CLOSED LIST of configurations -- which accent sits on the non-final atom and which the
@@ -34,8 +34,7 @@ into one of two ANFA-reasons:
   mayela", never "the mayela tipexa": mayela is the name for what would otherwise be a tipexa
   there, so the pair reads as a kind of tipexa rather than as the accent's own name.  Mayela is
   to tipexa as metigah is to qadma, and nobody writes "metigah qadma".)
-  ``_NAMED_CONFIGURATIONS`` is that list, plus ``(MERKHA, SILLUQ)``, which is here for ITM §357's
-  sake rather than for any section of the inventory's.
+  ``_NAMED_CONFIGURATIONS`` is that list.
   ``chanted_word_accents`` transcribes the same sections
   in full, with Yeivin's own wording and his closed verse lists, and checks them against a wider
   measurement that counts atomic chanted words too; the table here is the subset this survey's
@@ -43,24 +42,46 @@ into one of two ANFA-reasons:
 * **(b) A maqaf written after an atom that keeps its own conjunctive.**  ITM §293: a manuscript
   habit with no grammatical trigger, "most common where the word has penultimate stress", and L
   -- WLC's own base -- is named for it (§21, §293).
+* **(c) A maqaf written after a gaʿya that follows the atom's accent.**  ITM §357, "Maqqef after
+  Gaʿya", and Breuer CoS Ch. 1 §43 describe the same mark: an atom that has an accent, a gaʿya
+  written AFTER that accent, and then a maqaf.  §357 gives the purpose -- the slowed syllable is
+  not to be read as a break -- and Ch. 1 §43 gives the conditions, after a servant, on a word
+  accented mile'eil, with the gaʿya on its last syllable.  A compound of this kind is a chanted
+  word like any other, on the only test there is for one: a maqaf is written in it.  What (c)
+  answers is where the non-final atom's accent comes from -- the atom keeps the accent it has,
+  the gaʿya written after that accent having had to be marked -- and NOT what the maqaf
+  signifies, which neither book settles.  Yeivin's "must be joined to the following word" reads
+  as denying a pause rather than as making one accented unit, since he writes these very
+  compounds with a space at §354; Breuer CoS Ch. 1 §43 records that "different views have been
+  expressed" and leaves the maqaf out of the book, while Ch. 9 §37 points the other way.
+  Between them the two books name three of MAM's thirteen by verse -- Ezekiel 1:4 at ITM §354,
+  Isaiah 59:16 at ITM §357, Isaiah 63:5 at CoS Ch. 1 §43.
 
-A THIRD THING IS UNDER ANFA-REASON (a) THAT DOES NOT BELONG TO EITHER, and this survey's shape cannot yet
-put it anywhere else.  ITM §357 and Breuer CoS Ch. 1 §43 describe a maqaf written after an atom
-that has its own accent and a gaʿya AFTER that accent, to say that the slowed syllable makes no
-break.  A compound of this kind is a chanted word like any other, on the only test there is --
-a maqaf is written in it -- and what sets it apart is only that its non-final atom keeps the
-accent it has.  What the maqaf SIGNIFIES is unsettled in both books and nothing here turns on
-it: Yeivin's "must be joined to the following word" reads as denying a pause rather than as
-making one accented unit, since he writes these very compounds with a space at §354; Breuer CoS
-Ch. 1 §43 records that "different views have been expressed" and leaves the maqaf out of the
-book, while Ch. 9 §37 points the other way.
-``chanted_word_accents.maqaf_after_gaya`` measures it -- thirteen of MAM's twenty-two compounds
-with their accents split across atoms, one of WLC's forty-five -- and settles that MAM's four
-merkha-with-tipexa, three mahapakh-with-pashta, four merkha-with-silluq, one merkha-with-pashta and
-one munax-with-zaqef are all of that one kind.  A CONFIGURATION cannot tell them apart, because
-WLC's hits with the same pairs are not of that kind, so the labels above say what the pair can and
-cannot settle and the ANFA-reasons are left alone.  Giving §357 an ANFA-reason of its own would move counts
-that no other change here moves, so it is Ben's call, not a tidy-up.  Issue wlc-utils#86.
+(c) IS THE ONE ANFA-REASON A CONFIGURATION CANNOT DECIDE, which is why it arrived after the other
+two rather than with them.  (a) is read off ``_NAMED_CONFIGURATIONS`` and (b) off the oracle, and
+a pair settles neither question here: WLC has merkha-with-tipexa and mahapakh-with-pashta
+compounds that are not of this kind, on the same two pairs as MAM's, so the MARK has to be read.
+``gaya_after_the_nonfinal_accent`` reads it, mechanically -- a meteg between the non-final atom's
+accent and the maqaf -- and is tried before ``_NAMED_CONFIGURATIONS``, so a pair Yeivin's
+inventory names does not hide a §357 hit.  ``chanted_word_accents._gaya_after_accent`` asks the
+same question of the same compounds off the mark bodies rather than off the Unicode, and that
+module's ``scan_corpus`` asserts on every split compound that the two answer alike, so the two
+surveys cannot come to different answers about one compound.
+``chanted_word_accents.maqaf_after_gaya`` is where the finding itself is set out, with both
+books' quotes and the per-corpus counts.
+
+TWO MARKS ARE EXEMPT FROM (c), and both are named for the secondary role.  §357's first condition
+is an atom that HAS an accent for the gaʿya to follow, and where the non-final atom's mark is a
+mayela or a metigah there is none: mayela is the name for what would otherwise be a tipexa there
+and metigah the name for what would otherwise be a qadma, each naming the mark only in that use.
+Breuer CoS Ch. 9 §37 names the two together as the marks a maqaf survives -- "all the secondary
+cantillation marks in the 21 books appear even in a hyphenated word, and the hyphen is never
+cancelled after them" -- with Isaiah 8:17 וקויתי־לו and Genesis 8:18 ויצא־נח as his two mayela
+examples.  Isaiah 8:17 is what the exemption is FOR: WLC and UXLC have a meteg after that mayela
+where MAM has none, so the signature alone would answer one compound differently by corpus, and
+it is the compound CoS Ch. 9 §37 names by verse.  The signature is a signature and not a
+definition, and ``_SECONDARY_BY_NAME`` -- the three configurations those two marks make -- is
+where this module says so.
 
 POSITION IS EVIDENCE, NOT THE CRITERION.  Whether a non-final atom's accent sits where that atom's
 own accent sits is answered exactly, with no phonology, by an in-corpus oracle: the same spelling
@@ -70,13 +91,14 @@ stripped, and compare base letters after the accent.
 
 * A **no** is decisive.  WLC's Nu 9:17 ואחרי־כן has its munax three letters from the end where
   the free ואחרי usually put theirs one from the end, so it cannot be that atom's own accent.
-* A **yes is not decisive**, which is the trap.  A secondary accent can land on the atom's own
-  stress anyway: MAM's שלף־חרב has its merkha where the free שלף usually have theirs, because
-  nasog axor has retracted the stress before חרב, and its ANFA-reason still comes from its
-  ``(MERKHA, SILLUQ)`` configuration.  So the CONFIGURATION decides the ANFA-reason and the
-  oracle corroborates -- never the other way round.  (What the oracle sees at שלף־חרב is now
-  read the other way as well: the merkha IS that atom's own accent, and the maqaf after it is
-  ITM §357's -- see the third-thing paragraph above.)  Neither example states a figure here: the
+* A **yes is not decisive**, which is the trap.  A secondary accent can land where the atom's
+  own accent falls anyway, so a yes leaves (a) and (b) both open and the configuration is what
+  decides between them.  MAM's שלף־חרב was the example here until 2026-08-03, its merkha
+  standing where the free שלף have theirs; it is an ANFA-reason (c) hit now, and there the
+  agreement is what §357 predicts rather than a trap, (c) being the reading on which the atom
+  keeps the accent it has.  So the MARK decides (c) and the CONFIGURATION decides between (a)
+  and (b), with the oracle corroborating -- never the other way round.  Neither example states
+  a figure here: the
   counts live in each occurrence's own ``oracle`` fields in the tracked JSON
   (``joined_letters_after_accent``, ``free_letters_after_accent``, ``free_occurrences``), and
   they regenerate with the survey.
@@ -192,35 +214,55 @@ _STRIPPED_FOR_KEY = frozenset((METEG, PASEQ, SOF_PASUQ, NUN_HAFUKHA))
 # secondary), so that entry's label stopped citing a section on 2026-07-30.  Two more fell on
 # 2026-08-03, both settled in ``chanted_word_accents.maqaf_after_gaya``.  Metigah-zaqef is DEFINED
 # at §223; §224 is the retraction of metigah, which discusses the combination without being where
-# it is given.  And the four MAM compounds ``(MERKHA, SILLUQ)`` covers are all שלף־חרב, where the
-# merkha is that atom's own accent with a gaʿya after it and then ITM §357's maqaf -- so the label
-# now names §357 rather than reporting that no section covers it.  The four MAM ``(MERKHA,
-# TIPEXA)`` compounds and the three ``(MAHAPAKH, PASHTA)`` ones are §357's too, but WLC's are not,
-# so those two labels stay as the pair-level statements they are and say what the pair can and
-# cannot settle.
+# it is given.  And ``(MERKHA, SILLUQ)`` was here for ITM §357's sake rather than for any section
+# of the inventory's -- the four MAM compounds it covered are all שלף־חרב, where the merkha is
+# that atom's own accent with a gaʿya after it and then §357's maqaf.
+#
+# THE TABLE IS BACK TO THE INVENTORY ALONE, 2026-08-03, ANFA-reason (c) having taken §357 off it.
+# ``(MERKHA, SILLUQ)`` is gone: no section of Yeivin's inventory names a secondary merkha with a
+# silluq (§209 gives the silluq one conjunctive and no secondary), the four MAM compounds it stood
+# for are (c) hits now, and the four WLC and two UXLC ones it also covered have no gaʿya at all,
+# so a §357 label was wrong for them twice over.  They fall to the oracle, which is where a maqaf
+# after an atom that keeps its own conjunctive belongs.  ``(MERKHA, TIPEXA)`` and
+# ``(MAHAPAKH, PASHTA)`` name §233 and §241 alone again: their labels carried "or ITM §357's maqaf
+# after gaʿya" only because no per-hit test was available, and ``gaya_after_the_nonfinal_accent``
+# runs before this table, so what reaches a label here is what the gaʿya test has already let past.
 _NAMED_CONFIGURATIONS: dict[tuple[str, str], str] = {
     (am.QADMA, am.ZAQEF_QATAN): "metigah-zaqef (ITM §223)",
     (am.MUNAX, am.ZAQEF_QATAN): "munax-zaqef (ITM §221)",
     (am.TIPEXA, am.ATNAX): "mayela before an etnaxta (ITM §216)",
     (am.TIPEXA, SILLUQ): "mayela before a silluq (ITM §210)",
-    (
-        am.MERKHA,
-        am.TIPEXA,
-    ): "secondary merkha in the tipexa's chanted word (ITM §233), or ITM §357's maqaf after gaʿya",
-    (
-        am.MERKHA,
-        SILLUQ,
-    ): "ITM §357's maqaf after gaʿya (no section names a secondary merkha with silluq)",
+    (am.MERKHA, am.TIPEXA): "secondary merkha in the tipexa's chanted word (ITM §233)",
     (am.MERKHA, am.TEVIR): "secondary merkha in the tevir's chanted word (ITM §253)",
     (
         am.MAHAPAKH,
         am.PASHTA,
-    ): "secondary mahapakh in the pashta's chanted word (ITM §241), or ITM §357's maqaf after gaʿya",
+    ): "secondary mahapakh in the pashta's chanted word (ITM §241)",
     (am.QADMA, am.GERESH): "secondary azla in the geresh's chanted word (ITM §268)",
     (am.MUNAX, am.ATNAX): "secondary munax in the etnaxta's chanted word (ITM §215)",
     (am.MUNAX, am.REVIA): "secondary munax in the revia's chanted word (ITM §236)",
     (am.MUNAX, am.PAZER): "secondary munax in the pazer's chanted word (ITM §276)",
 }
+
+# The configurations ANFA-reason (c) may not take, whatever the marks say: the three the mayela
+# and the metigah make.  §357's and CoS Ch. 1 §43's first condition is a non-final atom that HAS
+# an accent for the gaʿya to follow, and neither of those marks is one -- each is the name a mark
+# takes only in the secondary use, so where one stands the atom has no accent of its own.  Breuer
+# CoS Ch. 9 §37 names the two together as the marks a maqaf survives, and gives Isaiah 8:17
+# וקויתי־לו as a mayela example -- which is the compound this exemption is for, WLC and UXLC
+# having a meteg after that mayela where MAM has none.  See the docstring's "TWO MARKS ARE EXEMPT
+# FROM (c)" paragraph.
+_SECONDARY_BY_NAME = frozenset(
+    (
+        (am.TIPEXA, am.ATNAX),
+        (am.TIPEXA, SILLUQ),
+        (am.QADMA, am.ZAQEF_QATAN),
+    )
+)
+
+assert (
+    _SECONDARY_BY_NAME <= _NAMED_CONFIGURATIONS.keys()
+), "an exempt configuration that Yeivin's inventory does not name"
 
 # TWO MARKS ARE NOT ALWAYS TWO ACCENTS, and on a SIMPLE chanted word the difference has to be
 # made mechanically, this scan having no accent tokenization to lean on.  Two kinds of pair are
@@ -262,9 +304,16 @@ _ONE_ACCENT_WRITTEN_TWICE = frozenset((frozenset((_ZARQA_HELPER, _ZARQA)),))
 
 ANFA_REASON_SECONDARY = "a: a secondary accent the compound inherits"
 ANFA_REASON_HABIT = "b: a maqaf after an atom that keeps its own conjunctive (ITM §293)"
+ANFA_REASON_MAQAF_AFTER_GAYA = (
+    "c: a maqaf after a gaʿya that follows the atom's accent (ITM §357)"
+)
 ANFA_REASON_UNDECIDED = "?: undecided -- the non-final atom never stands free"
 # The poetic corpus deliberately gets no ANFA-reason; see ``classify``.
 ANFA_REASON_NOT_ATTEMPTED = "(not attempted -- the ANFA-reason split is prose doctrine)"
+
+# What lands in ``configuration`` for an ANFA-reason (c) hit.  The ANFA-reason is the bucket and
+# this is the thing named, as "unnamed" is what an ANFA-reason (b) hit gets.
+CONFIG_MAQAF_AFTER_GAYA = "ITM §357's maqaf after gaʿya (Breuer CoS Ch. 1 §43)"
 
 # Each corpus's standing, which the page must state and must not overstate.
 CORPUS_KIND = {
@@ -494,6 +543,34 @@ def _last_atom_has_silluq(atom: str) -> bool:
         elif is_accent(ch):
             last_mark_is_u05bd = False
     return last_mark_is_u05bd
+
+
+def gaya_after_the_nonfinal_accent(word: str) -> bool:
+    """Whether a non-final atom of this chanted word has a meteg written AFTER its accent.
+
+    The signature of the maqaf ITM §357 ("Maqqef after Gaʿya") and Breuer CoS Ch. 1 §43 both
+    describe: an atom that has an accent, a gaʿya after that accent, and then a maqaf.  It is
+    what ANFA-reason (c) is decided by, and the one thing here a configuration cannot answer --
+    see the docstring's "(c) IS THE ONE ANFA-REASON A CONFIGURATION CANNOT DECIDE".
+
+    Read off the Unicode, one atom at a time, so a meteg on a LATER atom cannot answer for an
+    earlier one's accent.  The final atom is skipped: what is asked about is the mark before a
+    maqaf, and the final atom has none after it.  A U+05BD on a non-final atom is a meteg by
+    definition -- silluq is verse-final, and a maqaf-joined atom never is (see CLAUDE.md on
+    meteg-vs-silluq) -- which is what makes a bare containment test safe here.
+
+    ``chanted_word_accents._gaya_after_accent`` answers the same question off the mark bodies,
+    and that module's ``scan_corpus`` asserts on every split compound of all three corpora that
+    the two agree, so the two surveys cannot part company over one compound.
+    """
+    for atom in word.split(MAQAF)[:-1]:
+        seen_accent = False
+        for char in atom:
+            if is_accent(char):
+                seen_accent = True
+            elif char == METEG and seen_accent:
+                return True
+    return False
 
 
 def stress_mark_letter(word: str, verse_final: bool) -> int | None:
@@ -729,22 +806,31 @@ def _single(accents: list[str]) -> str | None:
 def classify(
     hit: dict, oracle: dict[str, Counter], *, attempt_anfa_reason: bool
 ) -> dict:
-    """Route, configuration and oracle evidence for one hit.
+    """ANFA-reason, configuration and oracle evidence for one hit.
 
     The returned record is what lands in the tracked JSON, so its keys are read by people, not
     only by code: ``word`` is the whole CHANTED WORD (the maqaf compound, joined atoms and all),
     ``shape`` its per-atom accents, and the oracle fields count base letters, not syllables.
     The key keeps the short name, as wlc-utils#81 left the repo's other ``word``-named identifiers.
 
-    ``attempt_anfa_reason`` is false for the poetic corpus, where the split is NOT made: both
-    halves of it are prose doctrine.  ``_NAMED_CONFIGURATIONS`` is Yeivin's PROSE inventory,
-    and the poetic counterpart is a different list (his §372 tsinnorit -- ITM spells it with
-    an s, this repo with ts; Breuer's Chapter 9 §§23-26 secondary mahapakh/merkha, the span he
-    cites for it himself in §27, checkable in
+    ``attempt_anfa_reason`` is false for the poetic corpus, where the split is NOT made: all
+    three of its ANFA-reasons are prose doctrine.  ``_NAMED_CONFIGURATIONS`` is Yeivin's PROSE
+    inventory, and the poetic counterpart is a different list (his §372 tsinnorit -- ITM spells
+    it with an s, this repo with ts; Breuer's Chapter 9 §§23-26 secondary mahapakh/merkha, the
+    span he cites for it himself in §27, checkable in
     ``../masorah-books/books/cos/md-export-of-docx/C09-S021.md``),
     which is not encoded here.  Running the prose list
     over poetic verses would label a poetic secondary as unnamed and read it as §293's habit,
     which is why the poetic side reports shapes and counts only.
+
+    ANFA-REASON (c) IS NOT ATTEMPTED THERE EITHER, though its test is mechanical and would run.
+    It fires on 28 of MAM's 130 poetic hits, on 6 of UXLC's 29 and on 4 of WLC's 30, and neither
+    book's account of that maqaf is set in the poetic system: ITM §357 and CoS Ch. 1 §43 both
+    take an ordinary servant with a gaʿya after its accent, and what a poetic compound with two
+    marks is has to be tried against Breuer's Chapter 9 §§20-26 first, which is the poetic
+    system's own doctrine for two marks in one chanted word.  Giving the poetic side one
+    ANFA-reason of three would also be a partial attempt where the whole point of
+    ``ANFA_REASON_NOT_ATTEMPTED`` is that no attempt is made.  Issue wlc-utils#86.
     """
     per_atom = hit["atoms"]
     atom = _accented_nonfinal_atom(hit)
@@ -762,8 +848,22 @@ def classify(
     else:
         nonfinal_accent = _single([a for atom_ in per_atom[:-1] for a in atom_])
         compound_accent = _single(per_atom[-1])
-        named = _NAMED_CONFIGURATIONS.get((nonfinal_accent, compound_accent))
-        if named is not None:
+        configuration = (nonfinal_accent, compound_accent)
+        named = _NAMED_CONFIGURATIONS.get(configuration)
+        # ANFA-reason (c) is tried FIRST, since a configuration cannot decide it and several of
+        # the configurations named below would otherwise hide one: MAM's four merkha-with-tipexa,
+        # three mahapakh-with-pashta and one munax-with-zaqef split compounds are all §357's, and
+        # a pair-level label would report every one of them as a secondary accent.  The
+        # configurations that are exempt take their exemption ahead of it; see
+        # ``_SECONDARY_BY_NAME``.
+        if configuration in _SECONDARY_BY_NAME:
+            anfa_reason = ANFA_REASON_SECONDARY
+        elif gaya_after_the_nonfinal_accent(hit["word"]):
+            anfa_reason, named = (
+                ANFA_REASON_MAQAF_AFTER_GAYA,
+                CONFIG_MAQAF_AFTER_GAYA,
+            )
+        elif named is not None:
             anfa_reason = ANFA_REASON_SECONDARY
         elif free_usual is None:
             anfa_reason = ANFA_REASON_UNDECIDED

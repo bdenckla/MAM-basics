@@ -372,6 +372,12 @@ def _gaya_after_accent(unit: Unit, tokens: list[Token]) -> bool:
     describes: an atom that has its own accent, a gaʿya after that accent, and then a maqaf.
     Read off the mark body, since ``uni_to_marks`` keeps meteg there even though the scanner
     emits no token for it.
+
+    ``maqaf_nonfinal_accents.gaya_after_the_nonfinal_accent`` asks the same question of the same
+    compound off the Unicode instead, which is what that survey has and this one does not, and
+    ANFA-reason (c) there is decided by it.  ``scan_corpus`` asserts that the two agree on every
+    split compound of all three corpora, so the mark body and the Unicode cannot answer
+    differently and the two surveys cannot part company over one compound.
     """
     last = unit.marks.count(am.MAQAF)
     for token in tokens:
@@ -582,7 +588,16 @@ def scan_corpus(frags_by_bcv: dict[str, list[Frag]]) -> dict:
             if kind == KIND_COMPOUND_SPLIT:
                 # Only where the accents are split does the question arise, and recording the
                 # flag on every hit would put a field on 1,600 of them to say nothing.
-                hit["gaya_after_the_nonfinal_accent"] = _gaya_after_accent(unit, folded)
+                gaya = _gaya_after_accent(unit, folded)
+                # The two surveys must not answer one compound differently, ANFA-reason (c) in
+                # ``maqaf_nonfinal_accents`` being decided by the same signature read off the
+                # Unicode rather than off the mark body.  Asserted rather than assumed: the two
+                # derivations have nothing in common but the corpus.
+                assert gaya == mna.gaya_after_the_nonfinal_accent(unit.text), (
+                    bcv,
+                    unit.text,
+                )
+                hit["gaya_after_the_nonfinal_accent"] = gaya
             hits.append(hit)
     hits.sort(key=lambda h: (h["sequence"], _sort_key(h["bcv"])))
     return {
