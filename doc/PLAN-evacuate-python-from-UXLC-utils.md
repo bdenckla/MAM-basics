@@ -17,7 +17,7 @@ the recipe does not transfer here it will not transfer anywhere.
 | 1 — two roots, no cwd | **done** 2026-08-02, commit `fe73d07` in UXLC-utils; plus `d5a5052` here |
 | 2 — sibling accessor | **not needed as its own phase**, but not free either — the one piece owed here was done inside Phase 1; see below |
 | 3 — copy the Python in (dual residency) | **done** 2026-08-02, commits `662db55` and `f202d21` here; nothing in UXLC-utils, which is what dual residency means |
-| 4 — empty UXLC-utils | **not started** |
+| 4 — empty UXLC-utils | **done** 2026-08-03, commit `ad52001` in UXLC-utils (110 tracked files deleted) and `2b5c87c` here; **Phase 7 item 1 came with it**, see below |
 | 5 — repoint codex-index-leningrad's sparse copy | **not started** |
 | 6 — flip the provenance breadcrumbs and disambiguate issue citations | **not started** |
 | 7 — cross-repo bookkeeping | **not started** |
@@ -447,7 +447,95 @@ tell you which.
 **Stop and ask Ben before starting Phase 3.** It is the largest phase and the one whose failure is
 expensive to unpick.
 
-## Phase 4 — empty UXLC-utils
+## Phase 4 — empty UXLC-utils — DONE 2026-08-03
+
+**Landed as `ad52001` in UXLC-utils (113 files changed, 148 insertions, 18,402 deletions) and
+`2b5c87c` here.**
+Every baseline was re-measured first and every one matched: 102 tracked `.py` / 17,932 lines,
+184 `gh-pages/`, 27 `out/`, 556 `in/`, 2 `data/`, 15 entry points, 8 test modules plus the runner,
+and **916 passed / 5 skipped** here. `diff -rq` over `py/mb_cmn` and `py/mb_diff_mpu` against this
+repo's own, run immediately before deleting them, gave **24 identical** (21 + 3) and one file with
+no counterpart — exactly what Phase 3 found, so §"What moves" 's pure-deletion claim held to the
+end.
+
+**The tracked deletion is 110 files, not 102**, and the extra eight were all agreed with Ben
+before anything was removed: the 102 `.py`, `py/uxlc_misc/requirements.txt`, the two `_provenance.md`
+vendoring breadcrumbs inside `py/mb_cmn/` and `py/mb_diff_mpu/`, `tools/` (3 files), `.vscode/`
+(`launch.json`, nine debugpy launches; `settings.json`, which auto-approves only that repo's venv
+python) and `.github/copilot-instructions.md`. That last is the Copilot twin of `CLAUDE.md` and was
+~95% Python conventions; wlc-utils tracks no such file after its own evacuation. `py/`, `tools/`
+and `.vscode/` had no other tracked contents, so all three directories went whole. A further 217
+**untracked** files were left behind by `git rm` — `__pycache__` bytecode plus a
+`py/.pytest_cache/` — and `py/` was deleted outright afterwards, since bytecode for code that no
+longer exists makes the repo look like it still has Python.
+
+**The oracle ran as specified and passed.** From `C:\Users\BenDe\GitRepos\MAM-basics` as the
+working directory, main checkout, with UXLC-utils holding no Python at all: `main_uxlc_mega.py`,
+`main_clc.py`, `main_map_changes_to_book_of_job.py`. **Not one of the 214 tracked artifacts came
+back modified** — `git status --porcelain -- in out gh-pages data` empty in UXLC-utils, and this
+repo's own status holding nothing but the edits below.
+
+**The 87 were re-derived rather than copied, and the list is exactly what Phase 3 predicted.**
+An mtime snapshot immediately before the run, compared after it: **127/214 rewritten, 87 not** —
+81 `gh-pages/amb-early-mtg/img/`, 2 `gh-pages/img/`, `gh-pages/index.html`, `gh-pages/style.css`,
+`gh-pages/woff2/Taamey_D.woff2`, `out/UXLC-misc/map-changes-to-book-of-job.md`. The reusable script
+is `.novc/oracle_mtimes.py` (`snapshot` / `compare`); its docstring said 216 and now says 214.
+
+Final measurements here: **913 passed, 5 skipped**; `ruff check py` clean; `black --check py`
+clean at 765 files.
+
+Six things went differently from what is written underneath:
+
+- **The suite's baseline moves from 916 to 913, and the three lost tests are a consequence of the
+  phase rather than a regression.** `py/tests/test_vendoring_policy_paths.py` derives its
+  parametrize lists from `in/vendoring_policy.json`, whose `UXLC-utils` entry contributed one
+  dest-repo case and two `pkg_scan_roots` cases. Dropping the entry (below) drops those three:
+  32 collected in that file before, 29 after, and 916 − 3 = 913.
+- **Phase 7 item 1 is now Phase 4's, and the lint installed after wlc-utils' Phase 4 is what
+  forced it.** Deleting `py/mb_cmn/` and `py/mb_diff_mpu/` turned both of that entry's scan roots
+  into missing directories, so `test_every_pkg_scan_root_exists[UXLC-utils-…]` failed **in this
+  phase's own verification run** — the first red suite of the whole programme. That test exists
+  precisely because the same breakage went a day unnoticed on 2026-08-01, and its failure message
+  names the fix: remove the entry, as `ea9f199` did for wlc-utils. Done here, with
+  `py/main_vendoring.py --all` regenerating `doc/vendoring-inventory.md` and the three
+  `out/vendoring_*` artifacts in the same commit. The diff is **only** the two UXLC-utils rows:
+  19 rows / 178 files → **17 rows / 154 files**, the 24 being the 21 `mb_cmn` plus 3 `mb_diff_mpu`
+  confirmed identical minutes earlier. No pre-existing drift came with it, unlike `ea9f199`, whose
+  audit had not run since April. **Item 1 of Phase 7 is therefore already done; its remaining
+  items are untouched.** Expect this in every remaining plan: the deleting phase now owns the
+  policy edit, because the guard fires the moment the directory goes.
+- **`doc/clc-design.md` stays, as the plan says, but 35 of its markdown links point at `py/…`
+  paths this phase deleted** (19 distinct targets; `doc/clc-skeleton-plan.md` cites 9 more lines).
+  The plan did not anticipate this. Ben's call: leave the 35 links and state the substitution
+  once, so `CLAUDE.md` there now says every `py/…` path in `doc/` means `../MAM-basics/py/…`. The
+  one link that substitution does **not** fix is `py/mb_cmn/mb_cmn_bib_locales.py`, cited in
+  §"Vendored common code", which did not move at all — `CLAUDE.md` names that exception. Rewriting
+  the links is available as follow-on work; it was kept out of a deletion commit deliberately.
+  **Expect the same in every remaining repo whose `doc/` describes its own code.**
+- **The MAM-reading conventions did NOT move to MAM-basics' `CLAUDE.md`, and should not have.**
+  The instruction below says they do, but they are already that repo's own practice rather than a
+  rule it lacks: `mb_cmn/read_books_from_mam_parsed_plus.py` is how thirteen modules there read
+  MAM, and `mb_diff_mpu` is native code there, not a vendored copy. Restating it would have been
+  exactly the wholesale `CLAUDE.md` restoration Ben's standing note warns against. The rule stays
+  in UXLC-utils' `CLAUDE.md`, where `doc/clc-design.md` assumes it, with a sentence saying why it
+  is not repeated. The vendoring rules and entry-point rules likewise had no destination —
+  MAM-basics is the vendoring *source*, and its `CLAUDE.md` already carries the entry-point and
+  `sys.path` rules.
+- **Source hygiene was never actually lost, which is more than "no work beyond deleting
+  `tools/`".** `py/tests/source_hygiene_test.py::test_live_tree_is_clean` calls `sh.scan()` on
+  MAM-basics' repo root, so the check runs on **every** suite run here. What ended is per-commit
+  timing, not enforcement. Ben was asked about a MAM-basics pre-commit hook and declined for now.
+- **A second session committed to this repo mid-phase, and nothing was lost — but only because it
+  committed rather than leaving the tree dirty.** `9a8d4d6` landed while this phase's generators
+  were running, editing these same two plan files (43 insertions, 0 deletions, in regions this
+  phase had not touched). The programme's "one phase at a time" rule is aimed at exactly this. The
+  tell was a `git status` reporting both plan files ` M` with an **empty** `git diff` — a stat
+  cache caught mid-write, not a real modification. **Re-read a plan file before writing a phase
+  result into it**; this phase's read predated `9a8d4d6` by an hour.
+
+---
+
+The rest of this section is the plan as written before the phase ran.
 
 Pure subtraction, made safe by Phase 3's dual residency: delete all **102** tracked `.py` (100
 before Phase 1 added two), `tools/`, `py/uxlc_misc/requirements.txt`, and the `py/` tree. **Stop
@@ -538,11 +626,12 @@ and in `CLAUDE.md`, is one of them.
 
 ## Phase 7 — cross-repo bookkeeping
 
-1. `in/vendoring_policy.json` — delete the `UXLC-utils` entry; its `pkg_scan_roots` will name
-   directories Phase 4 deleted. **`py/main_vendoring.py --all` raises rather than degrading** when
-   a configured scan root is missing, and the wlc-utils plan found that this had broken the
-   vendoring audit for a full day with nothing noticing, because neither `main_test.py` nor
-   `main_0_mega.py` runs it. Regenerate `doc/vendoring-inventory.md` in the same commit.
+1. `in/vendoring_policy.json` — **DONE inside Phase 4, `2b5c87c`.** It could not wait: the lint
+   added after wlc-utils' Phase 4 (`py/tests/test_vendoring_policy_paths.py`) failed the moment
+   the two scan roots vanished, so Phase 4's own verification run was red until the entry came
+   out. `doc/vendoring-inventory.md` and the three `out/vendoring_*` artifacts were regenerated in
+   the same commit — 19 rows / 178 files → 17 / 154, and nothing but the two UXLC-utils rows
+   changed. Nothing is owed here.
 2. `all-repos.code-workspace` — leave UXLC-utils listed; it keeps hundreds of tracked non-Python
    files. `in/repo_maintenance_policy.json` needs no change, since UXLC-utils is not frozen.
 3. `py/repo_util/run_black.py` and `py/repo_util/check_repo_standards.py` — both already gate on

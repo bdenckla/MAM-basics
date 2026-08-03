@@ -10,7 +10,7 @@ plan can own: the scope, the order, and the work that must happen **before** any
 | Repo | Plan | State |
 |---|---|---|
 | Programme Phase 0 — reconcile the three drifted `check_*`/`fix_*` forks | this file | **not started** |
-| UXLC-utils | [PLAN-evacuate-python-from-UXLC-utils.md](PLAN-evacuate-python-from-UXLC-utils.md) | **Phases 1 and 3 done** 2026-08-02 (Phase 1: `fe73d07` there, `d5a5052` here; Phase 3: `662db55` and `f202d21` here, nothing there). **Both repos now hold a working copy** — Phase 4 empties UXLC-utils and needs Ben's go-ahead |
+| UXLC-utils | [PLAN-evacuate-python-from-UXLC-utils.md](PLAN-evacuate-python-from-UXLC-utils.md) | **Phases 1, 3 and 4 done**, plus Phase 7 item 1 (Phase 1 2026-08-02: `fe73d07` there, `d5a5052` here; Phase 3 2026-08-02: `662db55` and `f202d21` here, nothing there; Phase 4 2026-08-03: `ad52001` there, `2b5c87c` here). **UXLC-utils now holds zero Python** and its 214 artifacts still regenerate byte-identically from here. Phases 5 and 6 remain — 5 is the shared decision with the codex-index trio |
 | holman-ketiv-qere | [PLAN-evacuate-python-from-holman-ketiv-qere.md](PLAN-evacuate-python-from-holman-ketiv-qere.md) | **not started** |
 | book-of-job | [PLAN-evacuate-python-from-book-of-job.md](PLAN-evacuate-python-from-book-of-job.md) | **not started** |
 | codex-index-aleppo, -leningrad, -cam1753 | [PLAN-evacuate-python-from-codex-index-trio.md](PLAN-evacuate-python-from-codex-index-trio.md) | **not started** — all three, cam1753 included |
@@ -284,6 +284,39 @@ finding that matters transfers unchanged: a downloader writing into the wrong re
 failure the two-roots work exists to prevent, and composing the right path is not the same as
 writing to it. Each affected plan should say plainly which of its downloaders it has and has not
 run, rather than letting an empty `git status` stand in for the claim.
+
+Four more from UXLC-utils' **Phase 4**, all of which will recur:
+
+- **The `in/vendoring_policy.json` edit belongs to the DELETING phase, not to bookkeeping.** Every
+  plan here files it under its own Phase 7, on the wlc-utils precedent — but wlc-utils' Phase 7
+  also added `py/tests/test_vendoring_policy_paths.py`, whose whole job is to fire the moment a
+  configured `pkg_scan_roots` directory vanishes. It duly failed inside UXLC-utils' Phase 4
+  verification run, the first red suite of the programme, and the entry had to come out before the
+  phase could pass. **Move the item into each remaining plan's deleting phase**, and regenerate
+  `doc/vendoring-inventory.md` and the three `out/vendoring_*` artifacts in the same commit.
+  Expect the suite's pass count to drop by exactly the number of parametrize cases that repo's
+  entry contributed — three for UXLC-utils, so 916 → 913.
+- **The tracked deletion is bigger than the `.py` count, and the surplus is repo-specific.**
+  UXLC-utils' 102 `.py` came to 110 tracked files: plus `requirements.txt`, the two
+  `_provenance.md` vendoring breadcrumbs sitting *inside* the vendored packages, `.vscode/`
+  (debugpy launches and a venv auto-approve), and `.github/copilot-instructions.md`, the Copilot
+  twin of `CLAUDE.md` and ~95% Python conventions. **Inventory each repo's non-`.py` Python
+  scaffolding before quoting a deletion count to Ben.** And `git rm` leaves the untracked half
+  behind — 217 `__pycache__`/`.pytest_cache` files here — so delete the source root outright
+  afterwards, or the repo still looks like it has Python.
+- **A repo's own `doc/` links at its own `py/`, and those links go dangling.** `doc/clc-design.md`
+  stays in UXLC-utils by design, and 35 of its markdown links name 19 `py/…` paths this phase
+  deleted. Ben's call was one sentence in `CLAUDE.md` — every `py/…` path in `doc/` now means
+  `../MAM-basics/py/…` — rather than 35 edits riding along on a deletion commit, with the one file
+  that did *not* move called out by name. **Grep each repo's `doc/` for `](py/` before the
+  deleting phase**, decide which way, and say so in the plan rather than discovering it mid-commit.
+- **Do not move a convention into MAM-basics' `CLAUDE.md` that MAM-basics already practices.**
+  Each plan says the evacuated repo's conventions "move to MAM-basics' `CLAUDE.md` with the code
+  they govern". For UXLC-utils that was true of none of them: the MAM-reading rule is already how
+  thirteen modules here read MAM, the vendoring rules have no meaning in the vendoring *source*,
+  and the entry-point and `sys.path` rules are already in this repo's `CLAUDE.md`. **Check what is
+  already there and already practised before copying prose across**; a wholesale restoration is
+  the failure mode Ben's standing note on this file's minimality warns about.
 
 **4. book-of-job has no `py/`, so its modules land at MAM-basics' `py/` top level.** Sixteen
 scripts sit at its repo root and seven more in a `py/` that is a package of page-rendering helpers
