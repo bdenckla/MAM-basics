@@ -1,4 +1,4 @@
-r"""Generate gh-pages/accgram/wlc-chanted-word-residue.html -- WLC's 34 unnamed accent pairs.
+r"""Generate gh-pages/accgram/wlc-chanted-word-residue.html -- WLC's unnamed accent pairs.
 
 A SNEAK PEEK, AND DELIBERATELY UNLINKED.  Ben asked for this on 2026-08-03: the residue that
 ``chanted_word_accents`` measures for WLC, on a page of its own, reachable only by its URL.
@@ -10,19 +10,26 @@ what it is at the top, so a reader who has the URL cannot mistake it for a verdi
 
 WHAT IT SHOWS.  ``chanted_word_accents`` counts every chanted word -- an atom, or a whole maqaf
 compound -- with two or more accent TOKENS, and names each pair with the section of Yeivin's ITM
-prose inventory that covers it.  ``NAMED_TOKEN_SEQUENCES`` is that inventory reduced to the 13
-token sequences the checker's whitelist is keyed on.  The residue is what is left: the pairs no
-section names.  MAM's residue of 18 is in the survey JSON as ``mam_residue`` and is a claim about
-the accentuation.  WLC's residue of 34 is a claim about the Westminster transcription of the
-Leningrad Codex, which is a different and smaller thing, and saying which is which is most of
-what the prose here does.
+prose inventory that covers it.  ``NAMED_TOKEN_SEQUENCES`` is that inventory reduced to the token
+sequences the checker's whitelist is keyed on.  The residue is what is left: the pairs no section
+names.  MAM's residue is in the survey JSON as ``mam_residue`` and is a claim about the
+accentuation.  WLC's residue is a claim about the Westminster transcription of the Leningrad
+Codex, which is a different and smaller thing, and saying which is which is most of what the
+prose here does.
+
+NO COUNT IS WRITTEN DOWN HERE.  Every figure the page prints is spliced from the survey by
+``_counts``, and both residues shrink whenever a section joins the inventory -- ITM §256 took
+the qadma darga rows out on 2026-08-03, and this docstring went on quoting the sizes from before
+it, silently, because a number in a docstring has nothing under it.  Read the sizes off the
+regenerated page, or off out/accgram/chanted-word-accents.json.
 
 NOTHING HERE IS A VERDICT, and the page has no way to make one.  ``classify_verse`` already
 writes an additive ``chanted_word_accents`` field beside each verse's ``status`` and ``tree``,
 and Ben ruled on 2026-08-03 that MAM's divergences from Yeivin and Breuer keep being recorded
 and stay grammatical.  The ``Verdict today`` column reads the verdict ``run-prose`` has already
-written, so a reader can see that 30 of the 34 are clean and 4 are not, and that the 4 are
-ungrammatical for reasons that have nothing to do with having two accents.
+written, so a reader can see which rows stand in verses it calls clean and which stand in verses
+it already calls ungrammatical -- and that the ungrammatical ones are ungrammatical for reasons
+that have nothing to do with having two accents.
 
 THE JSON IS NOT WRITTEN HERE.  ``survey-chanted-word-accents`` is the only writer of
 ``out/accgram/chanted-word-accents.json``, restored to that role when the earlier
@@ -295,6 +302,23 @@ def pin_claims(survey: dict, rows: list[dict]) -> None:
         f"the inventory is down to {len(named)} sequences, and the opening sentence names"
         f" {_NAMED_SPELLED_OUT} of them before counting the remainder"
     )
+    # The rest of that sentence states three magnitudes in words, and a word does not splice.
+    # The clause these three replace said "a few dozen in the Tanakh", false from the page's
+    # first commit and with nothing under it -- prose with no oracle is how that survives.
+    wlc = survey["corpora"]["wlc422"]
+    munax_zaqef = wlc["by_sequence"].get("munax zaqef", 0)
+    assert wlc["hits"] * 20 < wlc["chanted_words"], (
+        "the opening sentence says a small minority of a prose verse's chanted words have two"
+        f" accents; the survey now has {wlc['hits']} of {wlc['chanted_words']}"
+    )
+    assert len(rows) * 10 < wlc["hits"], (
+        "the opening sentence says Yeivin's inventory names the pair for nearly all of the"
+        f" two-accent chanted words; it now leaves {len(rows)} of {wlc['hits']} unnamed"
+    )
+    assert munax_zaqef * 2 > wlc["hits"], (
+        "the opening sentence says a munaḥ before a zaqef is most of the two-accent chanted"
+        f" words by itself; it is now {munax_zaqef} of {wlc['hits']}"
+    )
 
 
 # --- the page -----------------------------------------------------------------
@@ -386,10 +410,12 @@ def _intro(counts: dict[str, int]) -> tuple[object, ...]:
         H.heading_level_1(PAGE_TITLE),
         text_para(
             "A chanted word — an atom, or a whole maqaf compound — normally has one accent."
-            " A few dozen in the Tanakh have two, and for most of those Yeivin's Introduction"
-            " to the Tiberian Masorah names the pair: a munaḥ before a zaqef, a mahapakh before"
-            " a pashta, an azla before a geresh, and"
-            f" {_number_word(counts['named_unspelled'])} more configurations besides."
+            " In a prose verse a small minority of chanted words have two, and for nearly all"
+            " of those Yeivin's Introduction to the Tiberian Masorah names the pair: a munaḥ"
+            " before a zaqef, a mahapakh before a pashta, an azla before a geresh, and"
+            f" {_number_word(counts['named_unspelled'])} more configurations besides. The first"
+            " of those, a munaḥ before a zaqef, is most of the two-accent chanted words by"
+            " itself."
             f" This page is the remainder. In WLC's {counts['verses']:,} prose verses there are"
             f" {counts['chanted_words']:,} chanted words, of which {counts['hits']:,} have two"
             f" accents; {counts['residue']} of those have a pair that no section of his"
