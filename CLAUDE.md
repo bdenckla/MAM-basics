@@ -210,5 +210,8 @@ grounds, not because the general rule has an escape hatch.
 The fullest statement of this rule, with the evidence behind it, is in the sibling repo:
 `wlc-utils/doc/agent-planning-principles.md` §"Generated Outputs Are the Tests".
 
-Note that this belongs in **`CLAUDE.md`**, the file you are reading — not in the *disabled*
-`CLAUDE-disabled.md` / `.github/copilot-instructions-disabled.md`, which do not load.
+**This file is the only instruction file this repo has.** `CLAUDE-disabled.md` and
+`.github/copilot-instructions-disabled.md` were deleted on 2026-08-03, when GitHub Copilot
+stopped being used; nothing in either was moved here, because it was stale or already said
+better in `~/.claude/CLAUDE.md`, in `doc/`, or in the docstring of the module it described.
+Both are in git history if a claim in them ever needs checking.
