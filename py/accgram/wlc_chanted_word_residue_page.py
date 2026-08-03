@@ -1,0 +1,481 @@
+r"""Generate gh-pages/accgram/wlc-chanted-word-residue.html -- WLC's 34 unnamed accent pairs.
+
+A SNEAK PEEK, AND DELIBERATELY UNLINKED.  Ben asked for this on 2026-08-03: the residue that
+``chanted_word_accents`` measures for WLC, on a page of its own, reachable only by its URL.
+Nothing links to it -- not ``gh-pages/index.html``, which is hand-written and lists seven pages,
+and not ``goerwitz.html``, whose ungrammatical-verse report is where a WLC accent problem is
+read today.  Folding it into that report is a decision nobody has made and may never make;
+linking to it from there is the smaller step that may come first.  Until then the page says
+what it is at the top, so a reader who has the URL cannot mistake it for a verdict.
+
+WHAT IT SHOWS.  ``chanted_word_accents`` counts every chanted word -- an atom, or a whole maqaf
+compound -- with two or more accent TOKENS, and names each pair with the section of Yeivin's ITM
+prose inventory that covers it.  ``NAMED_TOKEN_SEQUENCES`` is that inventory reduced to the 13
+token sequences the checker's whitelist is keyed on.  The residue is what is left: the pairs no
+section names.  MAM's residue of 18 is in the survey JSON as ``mam_residue`` and is a claim about
+the accentuation.  WLC's residue of 34 is a claim about the Westminster transcription of the
+Leningrad Codex, which is a different and smaller thing, and saying which is which is most of
+what the prose here does.
+
+NOTHING HERE IS A VERDICT, and the page has no way to make one.  ``classify_verse`` already
+writes an additive ``chanted_word_accents`` field beside each verse's ``status`` and ``tree``,
+and Ben ruled on 2026-08-03 that MAM's divergences from Yeivin and Breuer keep being recorded
+and stay grammatical.  The ``Verdict today`` column reads the verdict ``run-prose`` has already
+written, so a reader can see that 30 of the 34 are clean and 4 are not, and that the 4 are
+ungrammatical for reasons that have nothing to do with having two accents.
+
+THE JSON IS NOT WRITTEN HERE.  ``survey-chanted-word-accents`` is the only writer of
+``out/accgram/chanted-word-accents.json``, restored to that role when the earlier
+chanted-word-accents page was withdrawn on 2026-07-29.  This page calls ``build_survey`` and
+renders it, so page and data are derived from one function and cannot disagree; what it must not
+do is give that file a second writer.
+
+Run via ``main_accgram.py generate-html-wlc-chanted-word-residue``, or as part of
+``generate-html``.  ``run-prose`` must have run first, for the verdict column.
+"""
+
+from __future__ import annotations
+
+import argparse
+import json
+from pathlib import Path
+
+from accgram import chanted_word_accents as cwa
+from accgram import rtms_report
+from accgram.almost_errors_html_shared import (
+    hbo,
+    link,
+    ref_abbrev,
+    text_para,
+)
+from accgram.printed_decalogue_strands import (
+    ROM_DARGA,
+    ROM_ETNAHTA,
+    ROM_GERESH,
+    ROM_GERSHAYIM,
+    ROM_LEGARMEH,
+    ROM_MAHAPAKH,
+    ROM_MERKHA,
+    ROM_MUNAX,
+    ROM_PASHTA,
+    ROM_QADMA,
+    ROM_REVIA,
+    ROM_SILLUQ,
+    ROM_TELISHA_GEDOLAH,
+    ROM_TEVIR,
+    ROM_TIPEHA,
+    ROM_ZAQEF_QATAN,
+)
+from accgram.uni_to_marks import is_accent
+from wlc_cmn.utf8_io import force_utf8_io
+from mb_cmn import provenance
+from py_html import wlc_utils_html as H
+
+import wlc_paths
+
+PAGE_TITLE = "Two Accents on One Chanted Word: What WLC Has Left Over"
+_WIDTH_CLASS = "goerwitz-tms-width-limited"
+_TABLE_CLASS = "centered-table accent-pair-table"
+
+# A cell holding Hebrew says so, and right-justifies as a consequence of having said it.
+_HEBREW_CELL = {"dir": "rtl"}
+
+# The four token sequences that pair a telisha gedolah with a geresh-family mark, in either
+# order.  Derived from the pair rather than listed by verse, so the count below is measured.
+# These are the five words ``lexical_validation`` already whitelists as a legitimate same-letter
+# pair, set out in the telisha gedolah exhibit of almost-errors.html.
+_TELISHA_GERESH_PAIRS = frozenset(
+    (
+        "geresh telishagedola",
+        "telishagedola geresh",
+        "gershayim telishagedola",
+        "telishagedola gershayim",
+    )
+)
+
+# ``run-prose``'s statuses that mean the verse carries an ERROR leaf, as ``prose_oddballs``
+# spells them, and how each reads on a page written for Hebrew-Bible readers.  The raw status
+# is the hover text, since it is what a reader would grep the JSON for and nothing else here
+# says it.
+_ERROR_STATUSES = frozenset(("error", "illegal_mark"))
+_STATUS_DISPLAY = {
+    "clean": "clean",
+    "error": "ungrammatical",
+    "illegal_mark": "ungrammatical",
+}
+
+# The prose scanner's leaf names, which are ASCII and internal, against the single-sourced
+# romanizations the rendered pages share.  Only the leaves a residue row can have are here; an
+# unmapped leaf raises rather than printing its ASCII, which is the drift this would otherwise
+# hide.  ``atnax`` takes ROM_ETNAHTA: the leaf name and the accent's name differ, and the page
+# says the accent's.
+_ROM_BY_LEAF = {
+    "atnax": ROM_ETNAHTA,
+    "darga": ROM_DARGA,
+    "geresh": ROM_GERESH,
+    "gershayim": ROM_GERSHAYIM,
+    "legarmeh": ROM_LEGARMEH,
+    "mahapakh": ROM_MAHAPAKH,
+    "merkha": ROM_MERKHA,
+    "munax": ROM_MUNAX,
+    "pashta": ROM_PASHTA,
+    "qadma": ROM_QADMA,
+    "revia": ROM_REVIA,
+    "silluq": ROM_SILLUQ,
+    "telishagedola": ROM_TELISHA_GEDOLAH,
+    "tevir": ROM_TEVIR,
+    "tipexa": ROM_TIPEHA,
+    "zaqef": ROM_ZAQEF_QATAN,
+}
+
+
+def rom_sequence(sequence: str) -> str:
+    """A token sequence as the page prints it -- "merkha, silluq" for ``merkha silluq``."""
+    leaves = sequence.split(" ")
+    missing = [leaf for leaf in leaves if leaf not in _ROM_BY_LEAF]
+    if missing:
+        raise AssertionError(
+            f"no romanization for the prose leaf {missing}; add it to _ROM_BY_LEAF"
+            " rather than letting the page print the scanner's ASCII"
+        )
+    return ", ".join(_ROM_BY_LEAF[leaf] for leaf in leaves)
+
+
+def default_html_out_path(repo_root: Path) -> Path:
+    del repo_root
+    return wlc_paths.gh_pages_dir() / "accgram" / "wlc-chanted-word-residue.html"
+
+
+def default_prose_dir() -> Path:
+    return wlc_paths.out_dir() / "accgram" / "prose"
+
+
+def add_args(parser: argparse.ArgumentParser, repo_root: Path) -> None:
+    parser.add_argument(
+        "--html-out",
+        type=Path,
+        default=default_html_out_path(repo_root),
+        help="Output HTML path for the WLC chanted-word residue page.",
+    )
+    parser.add_argument(
+        "--prose-dir",
+        type=Path,
+        default=default_prose_dir(),
+        help="Directory of run-prose *_ag.json outputs, for the verdict column.",
+    )
+
+
+# --- the data -----------------------------------------------------------------
+
+
+def residue(corpus: dict) -> list[dict]:
+    """One corpus's chanted words whose token sequence no section of the inventory names.
+
+    Keyed on ``NAMED_TOKEN_SEQUENCES``, the same whitelist ``classify_verse`` consults, so this
+    page and the flagging path can never disagree about what counts as named.
+    """
+    return [
+        h
+        for h in corpus["occurrences"]
+        if h["sequence"] not in cwa.NAMED_TOKEN_SEQUENCES
+    ]
+
+
+def _skeleton(chanted_word: str) -> str:
+    """A chanted word's letters and maqafs, with the accents dropped.
+
+    The maqafs stay in, so two corpora match here only when they also group the atoms the same
+    way.  That is the strict reading and the one the MAM column wants: a compound MAM splits
+    into two chanted words is not the same chanted word, and should not be reported as one.
+    """
+    return "".join(ch for ch in chanted_word if not is_accent(ch))
+
+
+def _mam_index(mam: dict) -> dict[tuple[str, str], str]:
+    """(bcv, letters-and-maqafs) -> MAM's token sequence, for every MAM chanted word with two."""
+    return {
+        (h["bcv"], _skeleton(h["chanted_word"])): h["sequence"]
+        for h in mam["occurrences"]
+    }
+
+
+def verse_statuses(prose_dir: Path, wanted: set[str]) -> dict[str, str]:
+    """The ``run-prose`` verdict of each wanted verse, read off the committed ``*_ag.json``.
+
+    Raises if a verse is missing rather than showing a blank: an absent record means the prose
+    run has not been made or does not cover the book, and a column that quietly reads empty
+    there would say "clean" to every reader.
+    """
+    found: dict[str, str] = {}
+    for path in sorted(prose_dir.glob("wlc_422_ps_*_ag.json")):
+        payload = json.loads(path.read_text(encoding="utf-8"))
+        for verse in payload.get("verses", []):
+            bcv = verse.get("bcv")
+            if bcv in wanted:
+                found[bcv] = str(verse.get("status"))
+    missing = sorted(wanted - set(found))
+    if missing:
+        raise AssertionError(
+            f"no run-prose record for {missing} under {prose_dir};"
+            " run `main_accgram.py run-prose` before this page"
+        )
+    return found
+
+
+def build_rows(survey: dict, prose_dir: Path) -> list[dict]:
+    """One row per WLC residue occurrence, grouped by token sequence, canonical order within.
+
+    ``scan_corpus`` walks the corpus in canonical order, so an occurrence's position in the
+    survey's list already is its place in the Tanakh; sorting on that index keeps canonical
+    order inside each group without a second book-order table to fall out of step with the one
+    ``chanted_word_accents`` has.
+    """
+    wlc_left = residue(survey["corpora"]["wlc422"])
+    mam_by_word = _mam_index(survey["corpora"]["mam_simple"])
+    statuses = verse_statuses(prose_dir, {h["bcv"] for h in wlc_left})
+    rows = [
+        {
+            **hit,
+            "status": statuses[hit["bcv"]],
+            "mam_sequence": mam_by_word.get(
+                (hit["bcv"], _skeleton(hit["chanted_word"]))
+            ),
+            "order": index,
+        }
+        for index, hit in enumerate(wlc_left)
+    ]
+    return sorted(rows, key=lambda r: (r["sequence"], r["order"]))
+
+
+def pin_claims(survey: dict, rows: list[dict]) -> None:
+    """Fail the build if the data stops supporting a sentence the prose states in words.
+
+    Every count the page prints is spliced from the survey, so those cannot drift.  What can
+    drift is the shape of the argument: that the whitelist is the checker's and not this page's,
+    that MAM's residue is the smaller set, and that the telisha gedolah words are already
+    accounted for elsewhere.  Raise rather than warn -- a warning in a generator's output is a
+    warning nobody reads.
+    """
+    named = set(cwa.NAMED_TOKEN_SEQUENCES)
+    assert named == {
+        seq for entry in cwa.YEIVIN_ENTRIES for seq in entry.sequences
+    }, "the whitelist has parted company with Yeivin's inventory"
+    assert not (
+        named & {r["sequence"] for r in rows}
+    ), "a residue row has a sequence the inventory names"
+    mam_left = residue(survey["corpora"]["mam_simple"])
+    assert len(mam_left) == survey["mam_residue"]["total"], (
+        "this page and the survey compute MAM's residue differently:"
+        f" {len(mam_left)} against {survey['mam_residue']['total']}"
+    )
+    assert len(mam_left) < len(rows), (
+        "the page says MAM's residue is the smaller set, and it is no longer:"
+        f" MAM {len(mam_left)}, WLC {len(rows)}"
+    )
+    telisha = [r for r in rows if r["sequence"] in _TELISHA_GERESH_PAIRS]
+    assert len(telisha) == 5, (
+        "the page says five of the rows are the already-whitelisted telisha gedolah words;"
+        f" the data now has {len(telisha)}"
+    )
+    assert all(
+        r["status"] == "clean" for r in telisha
+    ), "a whitelisted telisha gedolah word is no longer clean"
+
+
+# --- the page -----------------------------------------------------------------
+
+
+# Small counts read better spelled out, and a sentence never opens on a numeral.  Only the
+# range the page actually needs; anything else raises rather than printing a digit mid-word.
+_NUMBER_WORDS = (
+    "zero",
+    "one",
+    "two",
+    "three",
+    "four",
+    "five",
+    "six",
+    "seven",
+    "eight",
+    "nine",
+)
+
+
+def _number_word(count: int) -> str:
+    if not 0 <= count < len(_NUMBER_WORDS):
+        raise AssertionError(f"no spelled-out form for {count}; widen _NUMBER_WORDS")
+    return _NUMBER_WORDS[count]
+
+
+def _counts(survey: dict, rows: list[dict]) -> dict[str, int]:
+    wlc = survey["corpora"]["wlc422"]
+    return {
+        "verses": wlc["verses"],
+        "chanted_words": wlc["chanted_words"],
+        "hits": wlc["hits"],
+        "residue": len(rows),
+        "sequences": len({r["sequence"] for r in rows}),
+        "named": len(cwa.NAMED_TOKEN_SEQUENCES),
+        "mam_residue": survey["mam_residue"]["total"],
+        "flagged": sum(1 for r in rows if r["status"] in _ERROR_STATUSES),
+        "clean": sum(1 for r in rows if r["status"] not in _ERROR_STATUSES),
+        "telisha": sum(1 for r in rows if r["sequence"] in _TELISHA_GERESH_PAIRS),
+        "shared_with_mam": sum(1 for r in rows if r["mam_sequence"] is not None),
+    }
+
+
+def _intro(counts: dict[str, int]) -> tuple[object, ...]:
+    return (
+        H.heading_level_1(PAGE_TITLE),
+        text_para(
+            "A chanted word — an atom, or a whole maqaf compound — normally has one accent."
+            " A few dozen in the Tanakh have two, and for most of those Yeivin's Introduction"
+            " to the Tiberian Masorah names the pair: a munaḥ before a zaqef, a mahapakh before"
+            " a pashta, an azla before a geresh, and ten more configurations besides."
+            f" This page is the remainder. In WLC's {counts['verses']:,} prose verses there are"
+            f" {counts['chanted_words']:,} chanted words, of which {counts['hits']:,} have two"
+            f" accents; {counts['residue']} of those have a pair that no section of his"
+            f" inventory names, in {counts['sequences']} distinct combinations."
+        ),
+        text_para(
+            "WLC is the Westminster transcription of the Leningrad Codex, so what is below is a"
+            " fact about that transcription of that manuscript. It is not a claim about what"
+            " the accentuation does, which takes MAM, a consensus text: MAM has a remainder of"
+            f" {counts['mam_residue']}, a different and smaller set, and the survey's JSON keeps"
+            " it separately for that reason. Where a row's chanted word is in MAM's remainder as"
+            " well, the last column says what MAM has there."
+        ),
+        H.para(
+            (
+                "Nothing here is a verdict, and this page has no way to make one. The",
+                *[
+                    " ",
+                    link("ungrammatical-verse report", "goerwitz.html"),
+                    " is where WLC's accent problems are read;",
+                ],
+                f" of these {counts['residue']} chanted words, {counts['clean']} stand in verses"
+                f" it calls clean, and the other {counts['flagged']} in verses it already calls"
+                " ungrammatical for reasons that have nothing to do with two accents. Whether an"
+                " unnamed pair should be an error at all is an open question, and neither this"
+                " page nor the survey behind it answers it.",
+            )
+        ),
+        text_para(
+            "Two groups of rows are accounted for elsewhere already. The first is the"
+            f" {_number_word(counts['telisha'])} words on which a telisha gedolah and a geresh"
+            " or gershayim share a base letter — a legitimate pair, whitelisted by the"
+            " checker's alphabet layer and set out in the telisha gedolah exhibit of the"
+            " almost-errors page — where the two marks count as two accents here because the"
+            " scanner does not fuse them. The second is the four Job rows, which are in Job's"
+            " prose frame: poetically booked and prose cantillated, so they belong in a prose"
+            " survey however the reference reads."
+        ),
+    )
+
+
+def _headers() -> object:
+    return H.table_row(
+        (
+            H.table_header("Verse"),
+            H.table_header("Chanted word"),
+            H.table_header("Accents"),
+            H.table_header("Atom or compound"),
+            H.table_header(
+                H.abbr("Verdict today", "The status run-prose gives the verse")
+            ),
+            H.table_header(H.abbr("MAM", "What MAM has on the same chanted word")),
+        )
+    )
+
+
+_KIND_SHORT = {
+    "an atomic chanted word": "atom",
+    "a maqaf compound, its accents split across atoms": "compound, split",
+    "a maqaf compound, its accents all on the final atom": "compound, last atom",
+}
+
+_CELL_ATTRS = (None, _HEBREW_CELL, None, None, None, None)
+
+
+def _row(row: dict) -> object:
+    return H.table_row_of_data(
+        (
+            ref_abbrev(row["bcv"]),
+            hbo(row["chanted_word"]),
+            rom_sequence(row["sequence"]),
+            H.abbr(_KIND_SHORT[row["kind"]], row["kind"]),
+            H.abbr(
+                _STATUS_DISPLAY[row["status"]], f"run-prose status: {row['status']}"
+            ),
+            rom_sequence(row["mam_sequence"]) if row["mam_sequence"] else "—",
+        ),
+        _CELL_ATTRS,
+    )
+
+
+def _table(rows: list[dict]) -> object:
+    return H.table(
+        (_headers(), *[_row(row) for row in rows]),
+        {"class": _TABLE_CLASS},
+    )
+
+
+def _closing(counts: dict[str, int]) -> tuple[object, ...]:
+    return (
+        text_para(
+            "A dash in the MAM column means MAM has no chanted word of those letters, grouped"
+            " that way, with two accents at that verse — which covers both MAM having one accent"
+            " there and MAM setting the atoms as two chanted words rather than as one maqaf"
+            f" compound. Of the {counts['residue']} rows, {counts['shared_with_mam']} have a"
+            " counterpart in MAM; the rest are WLC's alone, and are where the transcription and"
+            " the consensus text part company."
+        ),
+        text_para(
+            "The pairs the inventory does name, and which therefore do not appear above, are"
+            f" the {counts['named']} the checker's whitelist is keyed on, read straight off the"
+            " sections transcribed in the survey: they are in"
+            " out/accgram/chanted-word-accents.json, each beside Yeivin's wording, his verse"
+            " list where he gives a closed one, and what MAM measures against it."
+        ),
+    )
+
+
+def render_body_contents(survey: dict, rows: list[dict]) -> tuple[object, ...]:
+    counts = _counts(survey, rows)
+    wrapper = H.div(
+        (*_intro(counts), _table(rows), *_closing(counts)),
+        {"class": _WIDTH_CLASS},
+    )
+    return (wrapper,)
+
+
+def run(args: argparse.Namespace) -> None:
+    survey = cwa.build_survey()
+    prose_dir: Path = getattr(args, "prose_dir", None) or default_prose_dir()
+    rows = build_rows(survey, prose_dir)
+    pin_claims(survey, rows)
+
+    html_out: Path = args.html_out
+    html_out.parent.mkdir(parents=True, exist_ok=True)
+    H.write_html_to_file(
+        body_contents=render_body_contents(survey, rows),
+        write_ctx=H.WriteCtx(
+            title=PAGE_TITLE,
+            path=str(html_out),
+            html_comment=provenance.generated_html_comment(__file__),
+        ),
+        path_to_style=rtms_report.path_to_gh_pages_style(html_out),
+    )
+    print(f"HTML: {html_out} (WLC residue: {len(rows)})")
+
+
+def main() -> None:
+    force_utf8_io()
+    repo_root = wlc_paths.wlc_data_root()
+    parser = argparse.ArgumentParser(description=__doc__)
+    add_args(parser, repo_root=repo_root)
+    run(parser.parse_args())
+
+
+if __name__ == "__main__":
+    main()

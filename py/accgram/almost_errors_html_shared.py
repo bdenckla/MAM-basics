@@ -16,6 +16,7 @@ from accgram import rtms_report
 from accgram.uni_to_marks import is_accent, is_base_letter
 from wlc_cmn.wlc_book_codes import wlc_bb_to_bk39id
 from mb_cmn import bib_locales as bl
+from mb_misc import osis_book_abbrevs as oba
 from py_html import wlc_utils_html as H
 from py_wlc import my_wlc_bcv_str
 
@@ -24,6 +25,24 @@ def ref_display(bcv: str) -> str:
     bb = bcv[:2]
     chv = bcv[2:]
     return f"{wlc_bb_to_bk39id(bb)} {chv}"
+
+
+def ref_abbrev(bcv: str) -> str:
+    """The bcv as visible prose names a verse -- "Gen. 2:7", "1 Chr. 15:17".
+
+    The book is its OSIS abbreviation, with a period when the abbreviation truncates the
+    book's name (so Job, Ruth, Ezra, Joel, Amos and Jonah take none) and a space after a
+    leading numeral ("1Chr" being fine in a filename and jarring as prose).
+
+    Written for ``maqaf_nonfinal_accents_page``, which still holds the only other spelling of
+    a reference this repo renders (``ref_display``'s bare bk39id, and ``ref_short``'s compact
+    ``G5:29``).  It moved here when a second page wanted it.
+    """
+    bk39 = wlc_bb_to_bk39id(bcv[:2])
+    abbrev = oba.BOOK_ABBREVS[bk39]
+    dot = "" if abbrev == bk39 else "."
+    spaced = f"{abbrev[0]} {abbrev[1:]}" if abbrev[0].isdigit() else abbrev
+    return f"{spaced}{dot} {bcv[2:]}"
 
 
 def ref_short(bcv: str) -> str:

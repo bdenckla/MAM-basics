@@ -87,6 +87,11 @@ Subcommands:
                   * gh-pages/accgram/printed-decalogue-uvinkha.html -- the printed
                     editions cited at ובנך in MAM-basics issue #208, each with its
                     link and, where one has been taken, a crop of its page.
+                  * gh-pages/accgram/wlc-chanted-word-residue.html -- WLC's chanted
+                    words whose two accents are a pair no section of Yeivin's prose
+                    inventory names. Deliberately linked from nothing; it is in the
+                    batch so it cannot go stale. Needs run-prose first, for its
+                    verdict column.
 
                 Each report runs with its default paths.
     generate-html-<name>
@@ -99,7 +104,7 @@ Subcommands:
                 -printed-decalogue-uvinkha,
                 -dual-under-bars-in-leningrad-decalogues, -telg-doc-notes,
                 -ps17v14-mam-doc-notes, -ps17v14-double-tsinnor,
-                -maqaf-nonfinal-accents.
+                -maqaf-nonfinal-accents, -wlc-chanted-word-residue.
     grammaticality
                 Estimate a PCFG over the committed prose + poetic parse trees
                 (one production per tree node) and score each verse's
@@ -169,6 +174,7 @@ from accgram import printed_decalogue_uvinkha_page
 from accgram import supplied_marks
 from accgram import servi_xcheck
 from accgram import telg_doc_notes
+from accgram import wlc_chanted_word_residue_page
 from accgram import poetic_xcheck
 from wlc_cmn.utf8_io import force_utf8_io
 
@@ -246,6 +252,9 @@ _HTML_GENERATORS = (
     ("telg-doc-notes", telg_doc_notes),
     ("ps17v14-mam-doc-notes", ps17v14_doc_notes),
     ("ps17v14-double-tsinnor", ps17v14_double_tsinnor),
+    # Built by the batch, linked from nothing -- see that module's docstring.  Membership here
+    # is what keeps it from going stale; it is not a decision to surface it anywhere.
+    ("wlc-chanted-word-residue", wlc_chanted_word_residue_page),
 )
 
 

@@ -33,6 +33,7 @@ from accgram.almost_errors_html_shared import (
     accents_and_letters,
     hbo,
     link,
+    ref_abbrev,
     text_para,
 )
 from accgram.printed_decalogue_strands import (
@@ -59,8 +60,6 @@ from accgram.printed_decalogue_strands import (
 )
 from accgram.uni_to_marks import is_base_letter
 from wlc_cmn.utf8_io import force_utf8_io
-from wlc_cmn.wlc_book_codes import wlc_bb_to_bk39id
-from mb_misc import osis_book_abbrevs as oba
 from mb_cmn import provenance
 from py_html import my_html_for_img as mhi
 from py_html import wlc_utils_html as H
@@ -904,14 +903,10 @@ def _specimen(example: dict, *, silluq_second: bool = False) -> object:
 def _ref_abbrev(bcv: str) -> str:
     """The bcv as visible prose names a verse -- "Gen. 2:7", "1 Chr. 15:17".
 
-    The book is its OSIS abbreviation, with a period when the abbreviation truncates the
-    book's name (so Job, Ruth, Ezra, Joel, Amos and Jonah take none) and a space after a
-    leading numeral ("1Chr" being fine in a filename and jarring as prose)."""
-    bk39 = wlc_bb_to_bk39id(bcv[:2])
-    abbrev = oba.BOOK_ABBREVS[bk39]
-    dot = "" if abbrev == bk39 else "."
-    spaced = f"{abbrev[0]} {abbrev[1:]}" if abbrev[0].isdigit() else abbrev
-    return f"{spaced}{dot} {bcv[2:]}"
+    Written here and moved to ``almost_errors_html_shared`` when
+    ``wlc_chanted_word_residue_page`` wanted the same spelling.  The name stays as this page's
+    call sites have it."""
+    return ref_abbrev(bcv)
 
 
 # The letters the three printed cases are found by -- bare letters, no marks, the marks being
