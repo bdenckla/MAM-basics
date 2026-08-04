@@ -40,11 +40,17 @@ for Cambridge Add. 1753.
 The three together answer a Sefaria correction request of 2026-07-22 that asked for
 אָֽכְלָ֖ה rather than אָכְלָ֖ה. Sassoon 1053 matters here because it is one of the two
 manuscripts MAM leans on throughout Lamentations: of the 38 נוסח notes in the book, ש1
-appears in 16 and Cambridge Add. 1753 (ק-מ) in 24, while the Aleppo Codex is absent —
+appears in 21 and Cambridge Add. 1753 (ק-מ) in 30, while the Aleppo Codex is absent —
 Lamentations is one of the books lost from it entirely, and the four notes that do invoke
 the Keter do so at second hand through Yehoshua Kimḥi's record (`א(ק)`, decoded in
 [sigil-decoding.md](../sigil-decoding.md)). MAM has no note at all on אָכְלָ֖ה, and these
 three crops are why: nothing to report.
+
+Those counts are of the siglum appearing anywhere in a note's `נוסח` documentation, read out
+of `MAM-parsed/plus/E3-Lamentations.json`. That is a wider net than "agrees with MAM": ש1 is
+cited outside the agreement clause in three notes (4:9, 4:15, 4:16) and ק-מ in one (4:16), so
+counting agreement alone gives ש1 18 and ק-מ 29. The figures here read 16 and 24 until
+2026-08-04, and reproduced under no counting rule.
 
 Mikraot Gedolot Haketer has no meteg here either — read out of `mgketer/out/E3-Lamentations/`,
 codepoint-identical to MAM. Metsudah (Lakewood, 2001) has one, which is the printed tradition
