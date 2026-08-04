@@ -23,6 +23,19 @@ the qadma darga rows out on 2026-08-03, and this docstring went on quoting the s
 it, silently, because a number in a docstring has nothing under it.  Read the sizes off the
 regenerated page, or off out/accgram/chanted-word-accents.json.
 
+THE MAM COLUMN HAS ONE CAVEAT, AND IT IS DERIVED RATHER THAN PINNED TO A VERSE.  Where WLC's
+sequence has a legarmeh and its MAM counterpart does not, ``_mam_cell`` marks the MAM cell and
+``_stroke_caveat`` says why below the table: WLC has the Unicode PASEQ on the chanted word, and
+MAM has the same Unicode PASEQ standing apart from it with a space on each side, so the scanner
+reads a legarmeh in the one and not in the other.  That is #215, whose fix Ben sequenced before
+Phase 4 of wlc-utils/doc/PLAN-two-accents-on-one-chanted-word.md; when it lands the marker and
+the paragraph drop out of the page on their own, the way ``_accounted_for``'s groups do.  Hence
+also what ``pin_claims`` asserts here -- the shape of the argument, that the scanner reads no
+legarmeh anywhere in MAM, rather than a count of marked rows that a fix would falsify.  The
+mechanism was checked against MAM-parsed-plus on 2026-08-04: at Nehemiah 8:7 the stroke is a
+``מ:לגרמיה-2`` template, which MAM-simple renders as a vel of its own, and WLC 4.22's vel there
+has the U+05C0 attached to the word.
+
 NOTHING HERE IS A VERDICT, and the page has no way to make one.  ``classify_verse`` already
 writes an additive ``chanted_word_accents`` field beside each verse's ``status`` and ``tree``,
 and Ben ruled on 2026-08-03 that MAM's divergences from Yeivin and Breuer keep being recorded
@@ -99,6 +112,15 @@ _TELISHA_GERESH_PAIRS = frozenset(
         "gershayim telishagedola",
         "telishagedola gershayim",
     )
+)
+
+# THE STROKE MARKER, and the hover that has to stand on its own for a reader who never reaches
+# the note.  A dagger rather than a hover alone: the caveat is what keeps the MAM cell from being
+# read as "MAM has nothing there", which is too much to hang on a mouse.
+_STROKE_MARK = "†"
+_STROKE_HOVER = (
+    "MAM has the same Unicode PASEQ, standing apart from the word rather than on it;"
+    " see the note below the table"
 )
 
 # How many of the inventory's configurations the opening sentence names before it counts the
@@ -216,6 +238,21 @@ def _mam_index(mam: dict) -> dict[tuple[str, str], str]:
     }
 
 
+def mam_reads_no_legarmeh(row: dict) -> bool:
+    """True where WLC's sequence for the row has a legarmeh and its MAM counterpart has none.
+
+    The whole condition for the stroke caveat, kept in one place so the marker in the cell, the
+    paragraph below the table and the assertion in ``pin_claims`` cannot answer it differently.
+    A row with no MAM counterpart takes a dash and is out of scope: what is being caveated is a
+    MAM cell that names accents, not one that names nothing.
+    """
+    mam = row["mam_sequence"]
+    if not mam:
+        return False
+    leaf = "legarmeh"
+    return leaf in row["sequence"].split(" ") and leaf not in mam.split(" ")
+
+
 def verse_statuses(prose_dir: Path, wanted: set[str]) -> dict[str, str]:
     """The ``run-prose`` verdict of each wanted verse, read off the committed ``*_ag.json``.
 
@@ -320,6 +357,21 @@ def pin_claims(survey: dict, rows: list[dict]) -> None:
         "the opening says a munaḥ before a zaqef is most of the two-accent chanted words by"
         f" itself; it is now {munax_zaqef} of {wlc['hits']}"
     )
+    # The stroke caveat's argument, not its size.  It explains a marked row by the scanner
+    # reading no legarmeh anywhere in MAM, so a MAM sequence that has one means the explanation
+    # no longer covers the row and the paragraph has to be rewritten.  Asserting instead that
+    # some row is marked would fail the build on the day #215 is fixed, which is the one day the
+    # page is meant to shed the caveat quietly.
+    if any(mam_reads_no_legarmeh(r) for r in rows):
+        mam_legarmeh = sorted(
+            seq
+            for seq in survey["corpora"]["mam_simple"]["by_sequence"]
+            if "legarmeh" in seq.split(" ")
+        )
+        assert not mam_legarmeh, (
+            "the stroke caveat explains a marked row by the scanner reading no legarmeh in MAM;"
+            f" MAM's survey now has {mam_legarmeh}, so the caveat needs rewriting"
+        )
 
 
 # --- the page -----------------------------------------------------------------
@@ -501,6 +553,15 @@ _KIND_SHORT = {
 _CELL_ATTRS = (None, _HEBREW_CELL, None, None, None, None)
 
 
+def _mam_cell(row: dict) -> object:
+    if not row["mam_sequence"]:
+        return "—"
+    named = rom_sequence(row["mam_sequence"])
+    if not mam_reads_no_legarmeh(row):
+        return named
+    return (named, " ", H.sup(H.abbr(_STROKE_MARK, _STROKE_HOVER)))
+
+
 def _row(row: dict) -> object:
     return H.table_row_of_data(
         (
@@ -511,7 +572,7 @@ def _row(row: dict) -> object:
             H.abbr(
                 _STATUS_DISPLAY[row["status"]], f"run-prose status: {row['status']}"
             ),
-            rom_sequence(row["mam_sequence"]) if row["mam_sequence"] else "—",
+            _mam_cell(row),
         ),
         _CELL_ATTRS,
     )
@@ -521,6 +582,42 @@ def _table(rows: list[dict]) -> object:
     return H.table(
         (_headers(), *[_row(row) for row in rows]),
         {"class": _TABLE_CLASS},
+    )
+
+
+def _stroke_caveat(rows: list[dict]) -> tuple[object, ...]:
+    """The note the marked MAM cells point at, or nothing at all when no row is marked.
+
+    Built the way ``_accounted_for`` builds its groups, and for the same reason: the rows this
+    covers exist because of #215, so the day that is fixed the note has to leave the page without
+    anyone remembering it is here.  Naming the verses by splice rather than in the sentence is
+    what makes that possible.
+    """
+    marked = [row for row in rows if mam_reads_no_legarmeh(row)]
+    if not marked:
+        return ()
+    where = "; ".join(
+        f"{ref_abbrev(row['bcv'])}, where the Accents column says"
+        f" {rom_sequence(row['sequence'])} and the MAM column"
+        f" {rom_sequence(row['mam_sequence'])}"
+        for row in marked
+    )
+    lead = (
+        f"One row is marked {_STROKE_MARK} in the MAM column: {where}."
+        if len(marked) == 1
+        else f"{_number_word(len(marked)).capitalize()} rows are marked {_STROKE_MARK} in the"
+        f" MAM column: {where}."
+    )
+    return (
+        text_para(
+            f"{lead} WLC has a Unicode PASEQ on the chanted word, with nothing between the word"
+            " and the stroke, and the scanner reads that stroke as the legarmeh. MAM has the"
+            " same Unicode PASEQ standing apart from the word, a space on each side, and the"
+            " scanner reads only the marks on the letters. So the MAM column there says what the"
+            " scanner reads of MAM's chanted word, and is not a report that MAM has nothing"
+            " after the word. The Chanted word column prints letters, accents and maqafs, so the"
+            " stroke is in neither text's Hebrew above."
+        ),
     )
 
 
@@ -547,7 +644,7 @@ def _closing(counts: dict[str, int]) -> tuple[object, ...]:
 def render_body_contents(survey: dict, rows: list[dict]) -> tuple[object, ...]:
     counts = _counts(survey, rows)
     wrapper = H.div(
-        (*_intro(counts), _table(rows), *_closing(counts)),
+        (*_intro(counts), _table(rows), *_stroke_caveat(rows), *_closing(counts)),
         {"class": _WIDTH_CLASS},
     )
     return (wrapper,)
