@@ -2129,6 +2129,15 @@ def _prose_section(survey: dict, rows: list[dict]) -> tuple[object, ...]:
         # mark is mid-compound, so it is a meteg and could not be a silluq.  It is also the word
         # ``chanted_word_accents``' own statement of the signature uses.
         #
+        # THE COUNT IS SPLICED, summed from ``_MAQAF_AFTER_GAYA_ROWS``, and it stays a NUMERAL
+        # because of that: "The 5 compounds those two rows hold" (Ben, 2026-08-03, asked whether
+        # it wanted spelling out and answered that it is fine as it stands).  Do not quiet the
+        # numeral by typing "five" -- that would put a count on the page that no build
+        # re-derives, which is the one thing every number here is arranged not to be.  Spelling
+        # it would take a spliced-int-to-word helper, not a literal.  The Breuer sentence below
+        # shows the convention the page already follows: "Those three pairs are 220 of the 233",
+        # the typed count spelled and the spliced ones numerals.
+        #
         # THE LAST SENTENCE IS OWED.  The merkha-before-silluq row visibly has a simple count of
         # 1, so a bare "both books describe that kind" would trade one misreading for another:
         # the one chanted word there that is not a compound is Song 8:6 שלהבתיה, which
