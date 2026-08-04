@@ -153,11 +153,19 @@ docstring says the same thing.
 
 **There is no test registry any more, and no file to add a new test to.** `main_test.py`
 was a hand-maintained `TEST_MODULE_SPECS` tuple plus a `unittest` loader until 2026-08-01;
-it is now a `pytest.main()` wrapper, so pytest discovers `py/tests/test_*.py` itself. Drop
-a new test file in and it runs. The registry is gone because of the failure mode it had:
-an unregistered file does not skip, it reports nothing at all — worse than the silent-green
-skip the global rules warn about — and two files went unrun that way here from the
-2026-05-03 migration until 2026-07-30, one of them edited four times meanwhile.
+it is now a `pytest.main()` wrapper, so pytest discovers `py/tests/` itself. The registry
+is gone because of the failure mode it had: an unregistered file does not skip, it reports
+nothing at all — worse than the silent-green skip the global rules warn about — and two
+files went unrun that way here from the 2026-05-03 migration until 2026-07-30, one of them
+edited four times meanwhile.
+
+**Drop a new test file in and it runs, so long as it is named `test_*.py` or `*_test.py`.**
+Those two patterns are pytest's default `python_files` and both are in use under
+`py/tests/`: this repo's own tests are prefix-named, and the CLC tests that arrived from
+UXLC-utils on 2026-08-01 are suffix-named. A file matching neither is the registry's failure
+mode back again — nothing collects it and nothing says so. `py/tests/mc_marks.py` is the one
+file there matching neither, and rightly so: it is a helper four test modules import
+`mc_to_marks` from, not a test.
 
 Arguments pass straight through to pytest, so `-k`, `-x`, `-q`, `--lf` and `--collect-only`
 all work; naming a file replaces the default target of the whole `py/tests` tree:
