@@ -615,8 +615,8 @@ def _stroke_caveat(rows: list[dict]) -> tuple[object, ...]:
             " same Unicode PASEQ standing apart from the word, a space on each side, and the"
             " scanner reads only the marks on the letters. So the MAM column there says what the"
             " scanner reads of MAM's chanted word, and is not a report that MAM has nothing"
-            " after the word. The Chanted word column prints letters, accents and maqafs, so the"
-            " stroke is in neither text's Hebrew above."
+            " after the word. Neither text's Hebrew above has the stroke: the Chanted word"
+            " column is letters, accents and maqafs."
         ),
     )
 
