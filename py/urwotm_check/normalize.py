@@ -1,10 +1,11 @@
-"""Text normalization shared by the parser, the emitter and the verifier.
+"""Text normalization, so both sides of the differential check compare.
 
 Google Docs prose arrives with NBSPs, zero-width characters, soft hyphens,
 double-space-after-period, and Latin diacritics in whichever composition the
-author's keyboard happened to produce. ``mb_html._do_space_asserts`` forbids
-leading/trailing whitespace and double spaces inside element contents, so
-every one of those has to go before an ``htel_mk`` call ever sees the text.
+author's keyboard happened to produce. None of that carries meaning in Ben's
+prose, and every one of it would otherwise read as a word-level difference
+between the frozen source text and the generated page. Both sides go through
+here, so a difference that survives is a real one.
 
 The Latin composition rule deliberately is *not* a blanket
 ``unicodedata.normalize("NFC", ...)``: a blanket NFC pass reorders Hebrew
@@ -14,12 +15,11 @@ base + diacritic clusters get composed, matching the rule that
 ``py/tests/test_h_dot_below_nfc.py`` enforces over the tree.
 """
 
-import re
 import unicodedata
 
-# Codepoints that carry no meaning in Ben's prose and only break the space
-# asserts or the word diff. Spelled with named escapes rather than pasted:
-# every one of them is invisible in a source file.
+# Codepoints that carry no meaning in Ben's prose and only break the word
+# diff. Spelled with named escapes rather than pasted: every one of them is
+# invisible in a source file.
 _TO_SPACE = (
     "\N{NO-BREAK SPACE}",
     "\N{NARROW NO-BREAK SPACE}",
@@ -31,12 +31,10 @@ _TO_DROP = (
     "\N{WORD JOINER}",
 )
 # Deliberately NOT dropped: ZWJ / ZWNJ (U+200D / U+200C). Those can be
-# authored on purpose in Hebrew (author.py has a $ZWJ key), so the inventory
-# reports them instead of silently deleting them.
+# authored on purpose in Hebrew (author.py has a $ZWJ key), so dropping them
+# here would hide a page that had gained or lost one.
 
 _HEBREW_RANGES = ((0x0590, 0x05FF), (0xFB1D, 0xFB4F))
-_HEBREW_RE = re.compile("[֐-׿יִ-ﭏ]")
-_LATIN_LETTER_RE = re.compile("[A-Za-z]")
 
 _TRANSLATE = {ord(c): " " for c in _TO_SPACE}
 _TRANSLATE.update({ord(c): None for c in _TO_DROP})
@@ -70,8 +68,9 @@ def compose_latin_diacritics(text: str) -> str:
     """NFC-compose Latin base + combining mark clusters only.
 
     Hebrew clusters are left byte-identical. This is the composing twin of
-    ``_find_decomposed_latin_clusters`` in ``py/tests/test_h_dot_below_nfc.py``,
-    which is the lint that would otherwise fail on the emitted modules.
+    ``_find_decomposed_latin_clusters`` in ``py/tests/test_h_dot_below_nfc.py``:
+    the vendored source text is this function's output, which is why that lint
+    passes over ``src/`` though Google supplied the diacritics decomposed.
     """
     out = []
     i = 0
@@ -95,17 +94,6 @@ def compose_latin_diacritics(text: str) -> str:
         out.append(ch)
         i += 1
     return "".join(out)
-
-
-def has_hebrew(text: str) -> bool:
-    return bool(_HEBREW_RE.search(text or ""))
-
-
-def is_all_hebrew(text: str) -> bool:
-    """True if the text has Hebrew and no Latin letters."""
-    if not has_hebrew(text):
-        return False
-    return not _LATIN_LETTER_RE.search(text)
 
 
 def words(text: str):

@@ -88,16 +88,3 @@ def romanized(text: str):
     stylesheet every misc page shares, for no visible difference.
     """
     return mb_html.span_c(text, "romanized")
-
-
-def TODO_ITALIC(text: str):  # noqa: N802  -- shouts, deliberately
-    """An *unresolved* Google italic run, left visible for review.
-
-    Google italic is three ways ambiguous: a romanized accent name (a ``$``
-    key, which supplies its own italic), a book title
-    (``author.book_title``), or genuine stress (``author.emphasis``, which
-    renders bold). The emitter resolves what it can and leaves this behind
-    for the rest, so the page still renders and can be read while the calls
-    are being decided. Phase 5's tree lint fails while any of these survive.
-    """
-    return mb_html.span_c(text, "romanized")
