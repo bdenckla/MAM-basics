@@ -32,8 +32,10 @@ Lamentations 2:3, the word אָכְלָ֖ה, in **Codex Sassoon 1053 (MAM's ש1)
 through the masoretica.org URL above.
 
 **Sassoon 1053 has no meteg on this word** — confirmed by Ben from this image on 2026-08-04.
-It agrees with the Leningrad Codex, whose crop and confirmation are at
-`../../../codex-index-leningrad/page-snips/430B-col2-line10-Lam2v3-akhla.png`.
+So do the other two manuscripts, confirmed the same day:
+`../../../codex-index-leningrad/page-snips/430B-col2-line10-Lam2v3-akhla.png` for the
+Leningrad Codex, and `../../../codex-index-cam1753/page-snips/0105B-col2-Lam2v3-akhla.png`
+for Cambridge Add. 1753.
 
 The two together answer a Sefaria correction request of 2026-07-22 that asked for
 אָֽכְלָ֖ה rather than אָכְלָ֖ה. Sassoon 1053 matters here because it is one of the two
@@ -41,6 +43,4 @@ manuscripts MAM leans on throughout Lamentations: of the 38 נוסח notes in th
 appears in 16 and Cambridge Add. 1753 (ק-מ) in 24, while the Aleppo Codex is absent —
 Lamentations is one of the books lost from it entirely, and the four notes that do invoke
 the Keter do so at second hand through Yehoshua Kimḥi's record. MAM has no note at all on
-אָכְלָ֖ה, and these two crops are why: nothing to report.
-
-Cambridge Add. 1753 has not been looked at for this word.
+אָכְלָ֖ה, and these three crops are why: nothing to report.
