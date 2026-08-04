@@ -127,8 +127,44 @@ survey inside the mega, which the flag turns into 1.1 s against a byte-identical
 left outside the mega on purpose: the two network vendoring subcommands, and the
 `generate-html-<name>` singles the batch covers.
 
-The decision items and the standing open ends are untouched, except that minor 14's measurement
-enlarges the first decision item, as recorded there.
+**The three decision items**, later on 2026-08-04, once Ben had answered all three. Each is closed
+out, and two of this doc's own descriptions of them turned out to be wrong.
+
+- **str_defs.py's drift — re-vendored**, rather than recorded as deliberate local variants:
+  codex-index-aleppo e03f7ff, codex-index-cam1753 1486fb3 and book-of-job 8bc2602, each a
+  byte-verbatim copy of MAM-basics' `py/mb_cmn/str_defs.py`, plus MAM-basics 377021d regenerating
+  the inventory. **This doc's "aleppo also has an extra CGJ_RE" understates it**: all three copies
+  had the `#` line and `CGJ_RE`, and all three were byte-identical to each other — the same blob
+  transition `9d4cad6..4c76029` in all three repos is the evidence. What made the re-vendor safe is
+  that it is behavior-neutral: no file in any of the three repos names `LDQM`, `RDQM` or `CGJ_RE`
+  outside `str_defs.py` itself, before or after. Copying bytes rather than text cleared the latent
+  CRLF in aleppo's and book-of-job's working-tree copies (295 bytes on disk against 284 in HEAD) in
+  the same stroke. Verdicts move to 119 identical, 15 eol-only, 20 DIFFERS of 154, from 116/15/23.
+  The row count does *not* move — 22 both sides, because book-of-job's six-file DIFFERS row
+  splitting off a new identical row and cam1753's single-file row merging into its existing
+  identical row cancel exactly, so the row count is no proxy for the verdicts. book-of-job's other
+  five drifted copies stay untouched, being the ones that are not behavior-neutral.
+- **al-hatorah's stale remote branch — deleted**, and nothing else:
+  `origin/feat/override-diff-viewer`, tip 9873fe53. main is untouched at f4ef41e1, nothing was
+  merged, and `git branch -r` now lists `origin/HEAD` and `origin/main` alone. **This doc's "fully
+  merged" was true of the branch's content and false of its ancestry**: `git branch -r --merged
+  main` listed only `origin/main`, because the branch's two commits were replayed rather than
+  merged and sit on main as same-message, same-date twins (ccf44337→d3defafc, 9873fe53→df9544a9,
+  both 2026-04-24). Every file the branch added is on main except
+  `py/a2dmain_make_override_diff_viewer.py`, which main renamed to
+  `py/main_3d_make_override_diff_viewer.py`.
+- **wlc-utils#90 — the twelve transcription headers are provenance and stay untouched**; the old
+  paths are mapped once instead, in wlc-utils 54ea941, which extends the covering note at the top
+  of `doc/edition-transcription-workflow.md` and leaves everything under `in/` alone. wlc-utils#90
+  is closed with the decision recorded. The mapping rests on two facts: every module the headers
+  name that was ever a tracked file — five of them — still exists under `MAM-basics\py\`, so each
+  header's `py/`-relative path is still correct and only the repo moved; and
+  `col_profile.py`/`row_profile.py`, named in `simtiq_ex_elyon.txt`, were untracked `.novc`
+  scratch, tracked in neither repo, so that mention was unfollowable on the day it was written —
+  itself evidence that the headers were never pointers.
+
+The standing open ends are untouched. Minor 14's measurement had enlarged the first decision item
+before it was acted on, as recorded there.
 
 ## Major
 
@@ -247,17 +283,25 @@ skill is what sessions load.
 
 ## Decision items, not defects
 
+**All three were answered by Ben on 2026-08-04 and acted on the same day.** The findings are kept
+here as written, because they are the record of what the review put to him; the commits, the
+numbers and the two corrections to the wording below are in "How the review was acted on".
+
 - str_defs.py's content drift in codex-index-aleppo, codex-index-cam1753 and book-of-job
   (missing the LDQM/RDQM additions; aleppo also has an extra CGJ_RE): re-vendor, or record as
   local variants. **Enlarged 2026-08-04 by minor 14's fix**, which separated the CRLF noise from
   the drift and so measured the drift for the first time: 23 copies genuinely differ, and
   book-of-job alone has six (`bib_locales.py`, `file_io.py`, `hebrew_accents.py`,
   `hebrew_punctuation.py`, `str_defs.py`, `uni_heb.py`). The decision is the same one, over a
-  larger set than it was framed for.
+  larger set than it was framed for. **Decided: re-vendor**, the three str_defs.py copies only.
+  The parenthesis above is one of the two corrections — all three copies have the extra CGJ_RE.
 - al-hatorah has a stale fully-merged remote branch, `origin/feat/override-diff-viewer`
-  (2026-04-24). Deleting it is a branch deletion, so it waits for an explicit ask.
+  (2026-04-24). Deleting it is a branch deletion, so it waits for an explicit ask. **Decided:
+  delete the remote ref, and nothing else** — the ask came. "Fully merged" is the other
+  correction: the branch was replayed onto main rather than merged into it.
 - wlc-utils#90: whether the twelve transcription headers naming old script paths are
-  provenance to keep or pointers to fix — genuinely undecided, no comments yet.
+  provenance to keep or pointers to fix — genuinely undecided, no comments yet. **Decided:
+  provenance**, with the old paths mapped once in wlc-utils' workflow doc; wlc-utils#90 closed.
 
 ## Standing open ends (tracked elsewhere; listed for the at-a-glance)
 
