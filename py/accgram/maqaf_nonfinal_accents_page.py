@@ -160,10 +160,12 @@ _ACCENT_DISPLAY = {
 # the terminology of mayela?", then the same of metigah.  The intro still glosses metigah-zaqef
 # as a qadma before a zaqef qatan, which is what tells a reader which mark the row means.
 #
-# Single-sourced, because the prose under the table names them too, in the sentence that gives
-# Breuer's rule for which pairs a maqaf can stand after: a cell and a sentence spelling the same
-# position differently is the drift the ROM_* constants exist to stop, and these two names are
-# not among them (they are positions a mark takes, not marks).
+# Single-sourced, though ``_PAIR_FIRST_NAME`` is now the only place they are read: the prose
+# under the table named them too until 2026-08-04, in the sentence that gave Breuer's CoS ch. 9
+# §37 rule for which pairs a maqaf can stand after, and a cell and a sentence spelling the same
+# position differently is the drift the ROM_* constants exist to stop.  These two names are not
+# among those constants (they are positions a mark takes, not marks), so the single sourcing is
+# here rather than there, and it is what a second reader of either name will want.
 _MAYELA = "mayela"
 _METIGAH = "metigah"
 _PAIR_FIRST_NAME = {
@@ -1281,20 +1283,12 @@ def pin_claims(survey: dict) -> None:
     # accents in its final field.  The scan's own criterion is merely "more than one", so a
     # compound whose final atom had three different accents would land here and stop the
     # build, as it should: it would falsify both sentences.
-    # THE BREUER SENTENCE under the spreader table (2026-07-31), which says that the three rows
-    # CoS ch. 9 §37 licenses on a compound -- the metigah, and the mayela under each of the two
-    # emperors it serves -- are N of the M spreaders.  Both numbers are spliced, so neither can
-    # drift; what cannot be spliced is that all THREE rows are still there to be summed, and that
-    # the sum is a part rather than the whole.  A corpus bump that emptied one of them would
-    # leave the sentence naming a pair the table no longer has, and one that emptied the other
-    # thirteen would leave "those three pairs are 233 of the 233" reading as a rule with no
-    # exceptions -- which is exactly what Breuer's §37 claims and this page does not.
-    spreaders = _spreaders_by_pair(survey)
-    for pair in _BREUER_MAQAF_SURVIVING:
-        assert spreaders[pair], f"no spreader left with the pair {pair}"
-    maqaf_surviving = sum(spreaders[pair] for pair in _BREUER_MAQAF_SURVIVING)
-    hits = _n(survey, _CORPUS, "prose", "hits")
-    assert 0 < maqaf_surviving < hits, f"{maqaf_surviving} of {hits} is not a part"
+    # GONE with the Breuer paragraph it defended, 2026-08-04: the three assertions behind "Those
+    # three pairs are 220 of the 233 spreaders above" -- that each of ``_BREUER_MAQAF_SURVIVING``
+    # still had a spreader, and that their sum was a part of the hits rather than the whole (a
+    # whole would have read as a rule with no exceptions, which is what CoS ch. 9 §37 claims and
+    # this page did not).  The paragraph and the constant went together; see the ``GONE`` note in
+    # ``_prose_section`` for why the paragraph did.
 
     genre = survey["corpora"][_CORPUS]["prose"]
     for shape in genre["concentrator_by_shape"]:
@@ -1319,43 +1313,32 @@ def pin_claims(survey: dict) -> None:
     ):
         assert len(key.split("-")) == 2, f"not a two-accent pair key: {key!r}"
 
-    # THE TWO PARAGRAPHS UNDER THE SPREADER TABLE (2026-08-03).  Only one of their numbers is
-    # spliced; everything else they say is a stated-in-words claim about the data, so each is
-    # pinned here.
+    # THE TWO PARAGRAPHS UNDER THE SPREADER TABLE (2026-08-03, rewritten 2026-08-04).  One of
+    # their numbers is spliced; everything else they say is a stated-in-words claim about the
+    # data, so each is pinned here.
     #
-    # (1) "Most of these pairs are covered in [six ITM sections and six CoS ones] ... Two pairs
-    # are covered in none of those sections".  Both numbers are the table's rows sorted into the
-    # two constants, so a corpus bump adding a ninth row would leave the paragraph describing a
-    # table that has neither number, and one that emptied a row would leave it naming a pair the
-    # table no longer has.
+    # (1) "Most of these pairs are covered in [six ITM sections and six CoS ones]", against the
+    # second paragraph's two.  Both counts are the table's rows sorted into the two constants, so
+    # a corpus bump adding a ninth row would leave the paragraphs describing a table that has
+    # neither count, and one that emptied a row would leave the second naming a pair the table no
+    # longer has.
+    spreaders = _spreaders_by_pair(survey)
     inventoried, after_gaya = set(_INVENTORIED_PAIRS), set(_MAQAF_AFTER_GAYA_ROWS)
     assert not inventoried & after_gaya, sorted(inventoried & after_gaya)
     assert set(spreaders) == inventoried | after_gaya, sorted(
         set(spreaders).symmetric_difference(inventoried | after_gaya)
     )
 
-    # (2) "are all of one kind, and both books describe that kind in other sections: [ITM] §357
-    # and [CoS] ch. 1 §43".  That kind is the survey's own ANFA-reason (c), so the paragraph
-    # holds exactly while every compound in those two rows carries it.  The reason is imported
-    # from ``maqaf_nonfinal_accents`` rather than retyped, since it is the string the survey
-    # writes.
+    # (2) "are covered in [ITM] §357 and [CoS] ch. 1 §43, because they are quite a different
+    # phenomenon from the other spreaders".  What makes those two the right sections to send a
+    # reader to is that every spreader in those two rows is the survey's own ANFA-reason (c), so
+    # the paragraph holds exactly while every one of them carries it -- and that is the whole of
+    # what the page now says about the class, the sentences describing it having gone on
+    # 2026-08-04.  The reason is imported from ``maqaf_nonfinal_accents`` rather than retyped,
+    # since it is the string the survey writes.
     for o in _occurrences(survey, _CORPUS, "prose"):
         if _pair_of(o["shape"]) in after_gaya:
             assert o["anfa_reason"] == mpa.ANFA_REASON_MAQAF_AFTER_GAYA, o
-
-    # (3) "The N compounds those two rows hold".  N is summed from the SPREADERS, so a
-    # concentrator of either pair would be a compound of that pair the number leaves out.
-    for pair in _MAQAF_AFTER_GAYA_ROWS:
-        assert "-".join(pair) not in genre["concentrator_by_pair"], pair
-
-    # (4) "the one chanted word in those two rows that is not a compound".  One, and in one row:
-    # ``_lone_simple_row`` asserts that exactly one of the two pairs has a simple chanted word at
-    # all, and this asserts that it has exactly one.  Either half failing would leave a sentence
-    # that shows a single form claiming to have named them all.
-    lone_simple_pair, _ = _lone_simple_row(genre)
-    assert genre["simple_by_pair"]["-".join(lone_simple_pair)] == 1, genre[
-        "simple_by_pair"
-    ]
 
     # GONE with the answer's Koren half (Ben, 2026-07-30): the assertion that no compound in
     # MAM's prose verses is accented alike twice.  It pinned a sentence the page no longer makes
@@ -1892,25 +1875,16 @@ def _scans_appendix_section() -> tuple[object, ...]:
 # where the counts are, which is where a reader meets it.
 
 
-# The three rows Breuer's CoS ch. 9 §37 licenses on a compound: the metigah in the chanted word
-# of a small zaqef, and the mayela in that of an etnaxta or of a silluq.  Those are the two marks
-# his §37 names -- the only ones of the 21 books, he says, that a maqaf stands after -- and the
-# table has each of them under whichever mafsik it serves, so the rule reaches three rows and not
-# two.  Keyed by the survey's shape shorthand, so a pair that stopped occurring would drop out
-# of the sum silently; ``pin_claims`` is what stops that.
-_BREUER_MAQAF_SURVIVING = (("qad", "zaq"), ("tip", "etn"), ("tip", "sil"))
-
-
-# The eight spreader pairs, split by whether the sections cited in the sentence after the table
-# cover them.  ``_INVENTORIED_PAIRS`` are the six that are: ITM §210 the mayela before a silluq,
+# The eight spreader pairs, split by which sections cover them.  ``_INVENTORIED_PAIRS`` are the
+# six the first paragraph after the table cites: ITM §210 the mayela before a silluq,
 # §216 the mayela before an etnaxta, §221 munax-zaqef, §224 metigah-zaqef, §233 the merkha before
 # a tipexa, §241 the mahapakh before a pashta -- and CoS ch. 3 §§30, 20, 28, 38 and 40 with
 # ch. 5 §§4-6 over the same ground, per mafsik.  ``_MAQAF_AFTER_GAYA_ROWS`` are the two left
-# over, which both books do cover, in other sections: ITM §357 and CoS ch. 1 §43.
+# over, which both books cover elsewhere -- ITM §357 and CoS ch. 1 §43 -- and that is what the
+# second paragraph says, in the same sentence that names them rather than a paragraph later.
 #
 # The split is a constant rather than a phrase in the paragraph so ``pin_claims`` can defend
-# "Most" and "Two pairs" against a corpus bump that added a ninth row or emptied one -- the same
-# reason ``_BREUER_MAQAF_SURVIVING`` above is one.
+# "Most" and the two named rows against a corpus bump that added a ninth row or emptied one.
 #
 # §224 IS THIS PAGE'S CITATION AND THE SIBLING SURVEY'S IS §223, which is a discrepancy this
 # comment reports rather than settles.  ``maqaf_nonfinal_accents``' ``_NAMED_CONFIGURATIONS``
@@ -1931,19 +1905,12 @@ _INVENTORIED_PAIRS = (
 _MAQAF_AFTER_GAYA_ROWS = (("mer", "pash"), ("mer", "sil"))
 
 
-def _lone_simple_row(genre: dict) -> tuple[tuple[str, str], dict]:
-    """The one pair of ``_MAQAF_AFTER_GAYA_ROWS`` that has a simple chanted word, and its example.
-
-    Derived, never written as ``mer-sil``: which of the two rows holds a chanted word that is not
-    a compound is a fact about the corpus, and a sentence naming one is wrong the moment the
-    other starts having one too.  ``pin_claims`` asserts both halves -- exactly one row, and
-    exactly one chanted word in it.
-    """
-    simple_by_pair = genre["simple_by_pair"]
-    with_simple = [p for p in _MAQAF_AFTER_GAYA_ROWS if "-".join(p) in simple_by_pair]
-    assert len(with_simple) == 1, with_simple
-    pair = with_simple[0]
-    return pair, genre["simple_example_by_pair"]["-".join(pair)]
+# GONE with the sentence it fed, 2026-08-04: ``_lone_simple_row``, which derived which of the two
+# ``_MAQAF_AFTER_GAYA_ROWS`` holds a chanted word that is not a compound (Song 8:6 שלהבתיה, the
+# merkha-before-silluq row's simple count of 1) so a paragraph could say neither book names it.
+# Scoping that paragraph to the SPREADERS took the question away rather than answering it, and
+# ``pin_claims``' two assertions for it -- exactly one such row, exactly one chanted word in it --
+# went too.  A helper kept past its sentence is a trap for a later reader, same as an assertion is.
 
 
 def _spreaders_by_pair(survey: dict) -> Counter:
@@ -1976,10 +1943,7 @@ def _prose_section(survey: dict, rows: list[dict]) -> tuple[object, ...]:
     # and the other three were ANFA-reason counts.
     hits = _n(survey, _CORPUS, "prose", "hits")
     spreaders = _spreaders_by_pair(survey)
-    maqaf_surviving = sum(spreaders[pair] for pair in _BREUER_MAQAF_SURVIVING)
-    genre = survey["corpora"][_CORPUS]["prose"]
     maqaf_after_gaya = sum(spreaders[pair] for pair in _MAQAF_AFTER_GAYA_ROWS)
-    lone_simple_pair, lone_simple_example = _lone_simple_row(genre)
     return (
         # "Spreader-pair prevalence", Ben's own wording, 2026-07-30 ("These headings are all
         # poor").  "The prose verses" named the section's SCOPE and left its subject to the
@@ -2120,87 +2084,76 @@ def _prose_section(survey: dict, rows: list[dict]) -> tuple[object, ...]:
         # survey cannot re-derive is not a claim a generated page may make.
         #
         # "SO BREUER IS SILENT EXACTLY WHERE YEIVIN IS" is true of the cited sections and of
-        # nothing wider, and the sentence under the table used to lose that scope: "The two that
-        # neither of them covers" reads as "neither BOOK covers", when both books cover the class
-        # squarely -- ITM §357 and CoS ch. 1 §43 (Ben, 2026-08-03).  So the sentence now says
-        # "covered in none of those sections", which kills that reading without having to
-        # characterize what the sections are, and a second paragraph says what the other sections
-        # do hold.  What made the scope worth stating out loud is d72534b, which gave this very
+        # nothing wider, and the sentence under the table has twice lost that scope.  "The two
+        # that neither of them covers" read as "neither BOOK covers", when both books cover the
+        # class squarely -- ITM §357 and CoS ch. 1 §43 (Ben, 2026-08-03).  Its replacement,
+        # "covered in none of those sections", killed that reading and bought a worse fault: it
+        # withheld where the two pairs ARE covered until the paragraph after it.  Ben, 2026-08-04,
+        # having had to read on to find out: "I see no reason to be coy about it, and I think you
+        # were coy about it to say they are not covered in that section and only later say where
+        # they are covered."  So the two paragraphs are now one statement and its exception -- the
+        # first says what the six cited sections cover and stops, the second names the two rows
+        # left over and sends the reader to §357 and ch. 1 §43 in the same sentence.  What made
+        # the scope worth stating out loud in the first place is d72534b, which gave this very
         # class its own ANFA-reason: the survey now names it, so a page that seemed to report it
         # unaccounted for was contradicting the data it is generated from.
+        #
+        # SCOPED TO SPREADERS, Ben's own qualification (2026-08-04), and it does real work: the
+        # merkha-before-silluq row visibly has a simple count of 1, and that chanted word -- Song
+        # 8:6 שלהבתיה -- is named by neither book, on ``chanted_word_accents``' §209 Yeivin entry.
+        # A sentence about the two PAIRS would therefore be false of it, where one about the
+        # spreaders is not, and the scoping costs the page nothing, the compounds being what §357
+        # and ch. 1 §43 are about.  It replaced a trailing sentence that had said as much
+        # outright, naming שלהבתיה through ``_example_cell``: "the limitation to spreaders ...
+        # avoids having to get into the שלהבתיה case".
+        #
+        # AND IT ENDS AT "quite a different phenomenon from the other spreaders", Ben's words and
+        # his verdict on them -- "admittedly-vague" (2026-08-04).  Two sentences went with that:
+        # what §357 and ch. 1 §43 describe (a maqaf written after an atom that has its own accent,
+        # with a meteg after that accent), and that what the maqaf signifies is unsettled in both
+        # books.  Both are set out in full in ``chanted_word_accents.maqaf_after_gaya``, which is
+        # where a reader who wants them goes.  The vagueness is chosen: do not fill it back in.
         #
         # NO "SECONDARY" IN EITHER PARAGRAPH, for the reason the block above ``_MAYELA`` gives.
         # That is also why the first paragraph cannot be scoped by calling the cited sections
         # "the inventories of secondary accents", which is what they are: pointing at the
         # sections themselves says the same thing in words the page is allowed.
         #
-        # "meteg", not "gaʿya", which is the accgram spelling of U+05BD throughout -- and this
-        # mark is mid-compound, so it is a meteg and could not be a silluq.  It is also the word
-        # ``chanted_word_accents``' own statement of the signature uses.
-        #
         # THE COUNT IS SPLICED, summed from ``_MAQAF_AFTER_GAYA_ROWS``, and it stays a NUMERAL
-        # because of that: "The 5 compounds those two rows hold" (Ben, 2026-08-03, asked whether
-        # it wanted spelling out and answered that it is fine as it stands).  Do not quiet the
-        # numeral by typing "five" -- that would put a count on the page that no build
-        # re-derives, which is the one thing every number here is arranged not to be.  Spelling
-        # it would take a spliced-int-to-word helper, not a literal.  The Breuer sentence below
-        # shows the convention the page already follows: "Those three pairs are 220 of the 233",
-        # the typed count spelled and the spliced ones numerals.
+        # because of that (Ben, 2026-08-03, asked whether it wanted spelling out and answered
+        # that it is fine as it stands).  Do not quiet the numeral by typing "five" -- that would
+        # put a count on the page that no build re-derives, which is the one thing every number
+        # here is arranged not to be.  Spelling it would take a spliced-int-to-word helper, not a
+        # literal.
         #
-        # THE LAST SENTENCE IS OWED.  The merkha-before-silluq row visibly has a simple count of
-        # 1, so a bare "both books describe that kind" would trade one misreading for another:
-        # the one chanted word there that is not a compound is Song 8:6 שלהבתיה, which
-        # ``chanted_word_accents``' §209 Yeivin entry establishes is named by neither book, off a
-        # section-by-section search of the full ITM OCR plus the CoS ch. 3 §§39-40 pinned in
-        # ``masorah-books``' ``check_cos_claims.py``.  The form is LIFTED through the same
-        # ``_example_cell`` the table cell above it uses, so it carries the same hover and the
-        # same one-U+05BD rule, and never retyped.
+        # GONE, 2026-08-04 (Ben: "just delete this paragraph"): a third paragraph giving Breuer's
+        # CoS ch. 9 §37 rule for which of these pairs a maqaf can stand after at all -- after the
+        # metigah and after the mayela, a mark of the ordinary order "cancelling" it -- and
+        # counting the three rows it licenses as 220 of the 233 spreaders.  Before reinstating it,
+        # note that §37 and ch. 1 §43 point different ways about the very maqaf the paragraph
+        # above cites §43 for, a dispute ``chanted_word_accents.maqaf_after_gaya`` reports as
+        # unsettled: §37's rule is not a settled fact this page may state flatly beside a
+        # paragraph resting on §43.  ``masorah-books``' ``check_cos_claims.py`` still pins §37's
+        # text, for that module rather than for this page.
         H.para(
             (
                 "Most of these pairs are covered in Yeivin's ",
                 _itm(),
                 " §§210, 216, 221, 224, 233 and 241, and in Breuer's ",
                 _cos(),
-                " ch. 3 §§20, 28, 30, 38 and 40 and ch. 5 §§4–6. Two pairs are covered in"
-                " none of those sections, and they are the same two in each book: a"
-                f" {ROM_MERKHA} before a {ROM_PASHTA}, and a {ROM_MERKHA} before a"
-                f" {ROM_SILLUQ}.",
+                " ch. 3 §§20, 28, 30, 38 and 40 and ch. 5 §§4–6.",
             )
         ),
         H.para(
             (
-                f"The {maqaf_after_gaya} compounds those two rows hold are all of one kind,"
-                " and both books describe that kind in other sections: Yeivin's ",
+                f"The {maqaf_after_gaya} spreaders that have a {ROM_MERKHA} before a"
+                f" {ROM_PASHTA}, or a {ROM_MERKHA} before a {ROM_SILLUQ}, are covered in"
+                " Yeivin's ",
                 _itm(),
                 " §357 and Breuer's ",
                 _cos(),
-                " ch. 1 §43 give a maqaf written after an atom that has its own accent,"
-                " with a meteg after that accent. What that maqaf signifies neither book"
-                " settles. Neither book names the one chanted word in those two rows that"
-                " is not a compound, ",
-                _example_cell(lone_simple_example, lone_simple_pair),
-                ".",
-            )
-        ),
-        # The rule, in the section the poetic appendix below already cites for the other half of
-        # it: ch. 9 §37 states the 21 books' side before turning to the Three Books, and it names
-        # the same two marks whichever mafsik they serve.  Its two examples are this page's
-        # material -- Isaiah 8:17 וקויתי־לו is the mayela-silluq spreader in the table above.
-        # No "secondary" in the rendered sentence, for the reason the labels above give: the page
-        # never says what a secondary accent is, and Yeivin and Breuer do not mean the same thing
-        # by it.  Naming the two positions says what §37 says without taking either view.
-        # "Cancels" is Breuer's term and is marked as his, transformative framing being
-        # otherwise banned; the quotation marks are the page's usual curly ones.
-        # The two numbers are spliced, never typed -- ``pin_claims`` defends the three rows they
-        # are summed from.
-        H.para(
-            (
-                "Breuer's ",
-                _cos(),
-                " ch. 9 §37 says which of these pairs a maqaf can stand after at"
-                f" all: after the {_METIGAH} and after the {_MAYELA}, while a mark of"
-                " the ordinary order “cancels” it — Breuer's word. Those three pairs"
-                f" are {maqaf_surviving} of the {hits} spreaders above.",
+                " ch. 1 §43, because they are quite a different phenomenon from the other"
+                " spreaders.",
             )
         ),
         # Ben's own lists, in his own voice (2026-07-30) -- they are generated in MAM-basics and
