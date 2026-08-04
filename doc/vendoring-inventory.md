@@ -18,14 +18,14 @@ Related issue: bdenckla/MAM-basics#60
 | mam4ajf_handlers.py, mam4sef_handlers.py, mam4sef_or_ajf.py, mam4sef_runners.py, sef_cmn.py, sef_header.py, write_utils_sef_or_ajf.py | mb_sefaria | MAM-simple | py-examples/mb_sefaria | copy_script | mixed | no | generated | identical |
 | osis_handlers.py, osis_index_html.py, osis_namespace.py, osis_runner.py | osis | MAM-simple | py-examples/osis | copy_script | mixed | no | generated | identical |
 | bib_locales.py, cantsys.py, file_io.py, he_wikisource_url.py, hebrew_accents.py, hebrew_letters.py, hebrew_points.py, hebrew_punctuation.py, hebrew_verse_numerals.py, mam_bknas.py, mam_bknas_and_std_bknas.py, minirow.py, mpplus_schema_guard.py, my_diffs.py, my_utils.py, provenance.py, read_books_from_mam_parsed_plus.py, shrink.py, str_defs.py, template_names.py, uni_denorm.py, uni_heb.py, uni_norm_fragile.py, url_percent.py, vendoring_sync.py, ws_tmpl1.py, ws_tmpl2.py, ws_tmpl_named_params.py | mb_cmn | al-hatorah | py/mb_cmn | copy_script | mixed | no | stale | identical |
-| bib_locales.py, file_io.py, hebrew_accents.py, hebrew_punctuation.py, str_defs.py, uni_heb.py | mb_cmn | book-of-job | mb_cmn | unknown | mixed | no | stale | DIFFERS |
+| bib_locales.py, file_io.py, hebrew_accents.py, hebrew_punctuation.py, uni_heb.py | mb_cmn | book-of-job | mb_cmn | unknown | mixed | no | stale | DIFFERS |
 | cantsys.py, hebrew_letters.py, hebrew_points.py, mam_bknas.py, my_diffs.py, my_utils.py, shrink.py, uni_denorm.py, url_percent.py, uxlc_change_url.py | mb_cmn | book-of-job | mb_cmn | unknown | mixed | no | stale | eol-only |
+| str_defs.py | mb_cmn | book-of-job | mb_cmn/str_defs.py | unknown | 2026-08-04 | no | stale | identical |
 | hebrew_points.py, uni_denorm.py, url_percent.py | mb_cmn | codex-index-aleppo | py/mb_cmn | unknown | mixed | no | stale | eol-only |
-| str_defs.py | mb_cmn | codex-index-aleppo | py/mb_cmn/str_defs.py | unknown | 2026-04-27 | no | stale | DIFFERS |
+| str_defs.py | mb_cmn | codex-index-aleppo | py/mb_cmn/str_defs.py | unknown | 2026-08-04 | no | stale | identical |
 | hebrew_letters.py | mb_cmn | codex-index-aleppo | aleppo-wiki/py/hebrew_letters.py | unknown | 2026-04-27 | yes | stale | eol-only; placed in aleppo-wiki/py/ not mb_cmn/ |
 | hebrew_punctuation.py, hebrew_verse_numerals.py, my_utils.py | mb_cmn | codex-index-aleppo | aleppo-wiki/py | unknown | mixed | yes | stale | DIFFERS; placed in aleppo-wiki/py/ not mb_cmn/ |
-| hebrew_points.py, uni_denorm.py | mb_cmn | codex-index-cam1753 | mb_cmn | unknown | 2026-04-27 | no | stale | identical |
-| str_defs.py | mb_cmn | codex-index-cam1753 | mb_cmn/str_defs.py | unknown | 2026-04-27 | no | stale | DIFFERS |
+| hebrew_points.py, str_defs.py, uni_denorm.py | mb_cmn | codex-index-cam1753 | mb_cmn | unknown | mixed | no | stale | identical |
 | hebrew_letters.py | mb_cmn | codex-index-leningrad | lenin-wiki/py/hebrew_letters.py | unknown | 2026-08-03 | no | stale | identical; placed in lenin-wiki/py/ not mb_cmn/ |
 | hebrew_punctuation.py, hebrew_verse_numerals.py, my_utils.py | mb_cmn | codex-index-leningrad | lenin-wiki/py | unknown | mixed | no | stale | DIFFERS; placed in lenin-wiki/py/ not mb_cmn/ |
 | cantsys.py | mb_cmn | diffable-pointed-hebrew | mb_cmn/cantsys.py | unknown | 2026-04-27 | no | stale | eol-only |
