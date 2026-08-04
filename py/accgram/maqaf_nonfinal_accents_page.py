@@ -1911,6 +1911,15 @@ _BREUER_MAQAF_SURVIVING = (("qad", "zaq"), ("tip", "etn"), ("tip", "sil"))
 # The split is a constant rather than a phrase in the paragraph so ``pin_claims`` can defend
 # "Most" and "Two pairs" against a corpus bump that added a ninth row or emptied one -- the same
 # reason ``_BREUER_MAQAF_SURVIVING`` above is one.
+#
+# §224 IS THIS PAGE'S CITATION AND THE SIBLING SURVEY'S IS §223, which is a discrepancy this
+# comment reports rather than settles.  ``maqaf_nonfinal_accents``' ``_NAMED_CONFIGURATIONS``
+# has "metigah-zaqef (ITM §223)", and the block above it says metigah-zaqef is DEFINED at §223
+# while §224 is the retraction of metigah, which discusses the combination without being where
+# it is given.  The rendered paragraph below and the comment above ``H.para`` still cite §224.
+# Both are left as they stand: repointing a citation the page shows a reader is an editorial
+# call, and it is booked as finding 6 of ``doc/review-findings-2026-08-03.md`` (MAM-basics
+# #219).  Change all three together or none.
 _INVENTORIED_PAIRS = (
     ("qad", "zaq"),
     ("mun", "zaq"),
