@@ -68,7 +68,7 @@ distinguishes the two qamats codepoints:
 | Gen 1:29, "for food" | לְאׇכְלָֽה׃ | U+05C7 HEBREW POINT QAMATS QATAN |
 
 Both are base text in `MAM-parsed/plus/`, not a `מ:קמץ` template alternative — that template
-is for places MAM is making a call worth flagging, as at בׇּֽחֳרִי־אַ֗ף in this very verse.
+is for places MAM is making a call worth flagging, as at בׇּֽחֳרִי־אַ֗ף in this very verse.
 So no edit to MAM's text would convey anything the text does not already convey.
 
 What MAM's text does not speak to is the shewa. Phonetic MAM does, and agrees it is na:
@@ -77,3 +77,38 @@ against `le·’okh·la` for Gen 1:29.
 
 Nor is this verse's pointing simply sparing with meteg: the Leningrad Codex has one on
 בָּֽחֳרִי and another on לֶֽהָבָ֔ה, plus the silluq on the verse-final סָבִֽיב׃.
+
+### The correction request quotes UXLC, not MAM
+
+Checked 2026-08-04 against `UXLC-utils/in/UXLC-39/Lamentations.xml`: the verse as quoted in
+the request is byte-identical to UXLC — Sefaria's "Tanach with Ta'amei Hamikra" — across all
+17 word atoms, and differs from MAM at exactly two points. UXLC has בָּֽחֳרִי and אַ֗ף
+as two atoms separated by a space where MAM has the maqaf compound בׇּֽחֳרִי־אַ֗ף, and UXLC has
+plain U+05B8 where MAM has U+05C7. **UXLC uses U+05C7 zero times in all 39 books**, so the
+edition the request quotes cannot express the qamats distinction the request argues for,
+which is a likely reason it argues from a meteg instead. The section above answers a
+question about MAM that was probably asked of a different text.
+
+The space is not UXLC's doing. MAM's note on the verse is `ל!=<בָּֽחֳרִי אַ֗ף> (חסר מקף)`, and a missing maqaf in
+the Leningrad Codex recurs rather than being a one-off: MAM notes `חסר מקף` in 31 places
+corpus-wide, 23 of them naming the Leningrad Codex — among them Gen 18:18, Ex 38:20,
+Lev 8:16, Num 4:49, Deut 1:38, Jer 32:13, Esther 5:14 and Lam 5:5. Deut 1:38 adds that the
+atoms are written touching even so. That count is a floor, since MAM has a note only where
+it has something to report.
+
+### The Metsudah digital edition confuses deḥi and tipeḥa
+
+The Metsudah Five Megillot (Lakewood, 2001) text quoted into the correction thread on
+2026-08-04 has U+05AD HEBREW ACCENT DEHI on both of the verse's tipḥas — יְמִינ֭וֹ and
+אָֽכְלָ֭ה — where MAM has U+0596 HEBREW ACCENT TIPEHA on יְמִינ֖וֹ and אָכְלָ֖ה.
+Deḥi belongs to the poetic system and Eikhah takes the prose accents, so neither atom can
+have one, and two of two is not a stray character. The same quotation has no accent on
+כֹּל where MAM has U+059A YETIV (כֹּ֚ל), and ends with an ASCII colon rather than
+U+05C3 SOF PASUQ.
+
+Deḥi and tipeḥa are the same lookalike pair that
+`py/author_misc/rocc_2_pre_vowel_accents_in_ctr.py` documents for Chabad's CTR, which abuses
+them in the opposite direction: CTR has the TIPEHA codepoint where a deḥi is meant and tells
+the two apart by whether the accent is encoded before or after the vowel, which leaves a bare
+deḥi indistinguishable from a bare tarḥa. Rendered at
+<https://bdenckla.github.io/MAM-with-doc/misc/rocc_2_pre_vowel_accents_in_ctr.html>.
