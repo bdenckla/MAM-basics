@@ -97,6 +97,10 @@ def _run_accgram_prose():
     main_accgram.almost_main(["run-prose"])
 
 
+def _run_accgram_test_fixes():
+    main_accgram.almost_main(["test-fixes"])
+
+
 def _run_accgram_poetic():
     main_accgram.almost_main(["run-poetic"])
 
@@ -224,6 +228,15 @@ _STEPS = [
         "accgram-run-prose",
         _run_accgram_prose,
         "must come after mam-simple and wlc-json-and-unicode",
+    ),
+    # Not a step wlc-utils' own mega ever had.  Added 2026-08-04 (#219 major 5) after its
+    # artifact, wlc-utils' tracked out/accgram/fix-tester/, went stale twice in one window
+    # through exactly this gap -- wlc-utils 97c695e's message named the channel and
+    # predicted the recurrence.  ~3s.
+    StepRecord(
+        "accgram-test-fixes",
+        _run_accgram_test_fixes,
+        "must come after accgram-run-prose; also reads out/wlc422-kq-u, in/UXLC-39 and MAM-simple",
     ),
     StepRecord(
         "accgram-run-poetic",

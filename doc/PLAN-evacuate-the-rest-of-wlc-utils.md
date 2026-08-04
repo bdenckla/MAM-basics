@@ -263,12 +263,12 @@ layer 2 therefore says nothing about. Exactly two path deltas are expected: the 
 a differing eol rule changes the blob.
 
 **Layer 2 — zero regeneration diff, which proves the repoint.** After Phase 5, run the full
-circuit from `C:\Users\BenDe\GitRepos\MAM-basics`: `py\main_0_mega.py` (whose last seven steps are
-the wlc half — `wlc-vendor-uxlc`, `wlc-json-and-unicode`, `accgram-run-prose`,
-`accgram-run-poetic`, `accgram-generate-html`, `wlc-diffs-420422`, `wlc-a-notes`,
-`main_0_mega.py:214-239`), then the seven accgram subcommands outside it (`run-dual-cant`,
-`run-printed-decalogue`, `survey-chanted-word-accents`, `xcheck-poetic`, `servi-xcheck`,
-`test-fixes`, `grammaticality`), then `main_uxlc_grammar_test.py`,
+circuit from `C:\Users\BenDe\GitRepos\MAM-basics`: `py\main_0_mega.py` (whose wlc half is the
+`_STEPS` run from `wlc-vendor-uxlc` through `wlc-a-notes`: `wlc-vendor-uxlc`,
+`wlc-json-and-unicode`, `accgram-run-prose`, `accgram-test-fixes`, `accgram-run-poetic`,
+`accgram-generate-html`, `wlc-diffs-420422`, `wlc-a-notes`), then the six accgram subcommands
+outside it (`run-dual-cant`, `run-printed-decalogue`, `survey-chanted-word-accents`,
+`xcheck-poetic`, `servi-xcheck`, `grammaticality`), then `main_uxlc_grammar_test.py`,
 `main_find_uxlc_accent_changes.py`, and `main_edition_transcription.py build --check`.
 `git status --porcelain` then shows **only the phase's source edits**.
 
