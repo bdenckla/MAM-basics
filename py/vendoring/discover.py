@@ -13,7 +13,13 @@ from vendoring.repo_policy import OverridePolicy, RepoPolicy, load_policy
 _MAM = paths.repo_root()
 _REPOS = paths.repos_root()
 
-IDENTITY_VALUES = {"identical", "DIFFERS", "MISSING-DEST", "MISSING-SRC"}
+# The verdict ``vendoring/compare.py`` reaches when a copy's bytes differ from its
+# MAM-basics source but its newline-normalized bytes do not: same content, different
+# line endings on disk.  Spelled once here because both that program and
+# ``gen_inventory``'s notes-merging have to agree on it.
+EOL_ONLY = "eol-only"
+
+IDENTITY_VALUES = {"identical", EOL_ONLY, "DIFFERS", "MISSING-DEST", "MISSING-SRC"}
 
 
 @dataclass(frozen=True)

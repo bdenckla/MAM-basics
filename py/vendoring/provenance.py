@@ -130,7 +130,8 @@ def main() -> None:
     sys.stdout.reconfigure(encoding="utf-8")
     repo_summaries = [_scan_repo(repo) for repo in provenance_dest_repos()]
 
-    with _OUT_TXT.open("w", encoding="utf-8") as f:
+    # newline="\n": see the same note in vendoring/compare.py's writer.
+    with _OUT_TXT.open("w", encoding="utf-8", newline="\n") as f:
         for summary in repo_summaries:
             repo = str(summary["repo"])
             f.write(f"\n=== {repo} ===\n")
@@ -154,7 +155,7 @@ def main() -> None:
                 f.write(f"  mb_cmn dir ({mb_cmn_dir['path']}): {mb_cmn_dir['files']}\n")
 
     json_payload = {"repos": repo_summaries}
-    with _OUT_JSON.open("w", encoding="utf-8") as f:
+    with _OUT_JSON.open("w", encoding="utf-8", newline="\n") as f:
         json.dump(json_payload, f, indent=2, ensure_ascii=False)
         f.write("\n")
 

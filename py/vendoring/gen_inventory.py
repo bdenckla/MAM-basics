@@ -268,6 +268,10 @@ def main(refresh_live_inputs: bool = True) -> None:
         "**Naming direction (2026-04-27):** Prefer `mb_cmn` (a directory) or an `mb_` prefix",
         "(for example `mb_diff_mpu`) at both source and destination. Legacy names may still appear below until migrations complete.",
         "",
+        "**The `notes` column opens with the comparison verdict:** `identical` is byte-identical to the MAM-basics source;",
+        "`eol-only` is the same content with different line endings on disk (the latent-CRLF condition, not drift);",
+        "`DIFFERS` is content drift; `MISSING-DEST` is a copy the policy names that is no longer there.",
+        "",
         "| file(s) | src_pkg | dest_repo | dest_path | mechanism | last_synced | provenance_doc | category | notes |",
         "|---|---|---|---|---|---|---|---|---|",
     ]
@@ -322,7 +326,8 @@ def main(refresh_live_inputs: bool = True) -> None:
     lines.append("")
 
     out_path = _REPO_ROOT / "doc" / "vendoring-inventory.md"
-    out_path.write_text("\n".join(lines), encoding="utf-8")
+    # newline="\n": see the same note in vendoring/compare.py's writer.
+    out_path.write_text("\n".join(lines), encoding="utf-8", newline="\n")
     print(
         f"Wrote {row_count} rows ({file_count} files, {ignored_file_count} ignored for {ignored_repos_sorted}) to {out_path}"
     )

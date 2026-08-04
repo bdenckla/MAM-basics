@@ -98,37 +98,37 @@ ws_tmpl1.py                                al-hatorah                 py/mb_cmn/
 ws_tmpl2.py                                al-hatorah                 py/mb_cmn/ws_tmpl2.py                                   identical      2026-08-02   
 ws_tmpl_named_params.py                    al-hatorah                 py/mb_cmn/ws_tmpl_named_params.py                       identical      2026-04-27   
 bib_locales.py                             book-of-job                mb_cmn/bib_locales.py                                   DIFFERS        2026-04-27   
-cantsys.py                                 book-of-job                mb_cmn/cantsys.py                                       DIFFERS        2026-04-27   
+cantsys.py                                 book-of-job                mb_cmn/cantsys.py                                       eol-only       2026-04-27   
 file_io.py                                 book-of-job                mb_cmn/file_io.py                                       DIFFERS        2026-07-06   
 hebrew_accents.py                          book-of-job                mb_cmn/hebrew_accents.py                                DIFFERS        2026-07-06   
-hebrew_letters.py                          book-of-job                mb_cmn/hebrew_letters.py                                DIFFERS        2026-04-27   
-hebrew_points.py                           book-of-job                mb_cmn/hebrew_points.py                                 DIFFERS        2026-04-27   
+hebrew_letters.py                          book-of-job                mb_cmn/hebrew_letters.py                                eol-only       2026-04-27   
+hebrew_points.py                           book-of-job                mb_cmn/hebrew_points.py                                 eol-only       2026-04-27   
 hebrew_punctuation.py                      book-of-job                mb_cmn/hebrew_punctuation.py                            DIFFERS        2026-04-27   
-mam_bknas.py                               book-of-job                mb_cmn/mam_bknas.py                                     DIFFERS        2026-04-27   
-my_diffs.py                                book-of-job                mb_cmn/my_diffs.py                                      DIFFERS        2026-04-27   
-my_utils.py                                book-of-job                mb_cmn/my_utils.py                                      DIFFERS        2026-04-27   
-shrink.py                                  book-of-job                mb_cmn/shrink.py                                        DIFFERS        2026-04-27   
+mam_bknas.py                               book-of-job                mb_cmn/mam_bknas.py                                     eol-only       2026-04-27   
+my_diffs.py                                book-of-job                mb_cmn/my_diffs.py                                      eol-only       2026-04-27   
+my_utils.py                                book-of-job                mb_cmn/my_utils.py                                      eol-only       2026-04-27   
+shrink.py                                  book-of-job                mb_cmn/shrink.py                                        eol-only       2026-04-27   
 str_defs.py                                book-of-job                mb_cmn/str_defs.py                                      DIFFERS        2026-04-27   
-uni_denorm.py                              book-of-job                mb_cmn/uni_denorm.py                                    DIFFERS        2026-04-27   
+uni_denorm.py                              book-of-job                mb_cmn/uni_denorm.py                                    eol-only       2026-04-27   
 uni_heb.py                                 book-of-job                mb_cmn/uni_heb.py                                       DIFFERS        2026-04-27   
-url_percent.py                             book-of-job                mb_cmn/url_percent.py                                   DIFFERS        2026-05-03   
-uxlc_change_url.py                         book-of-job                mb_cmn/uxlc_change_url.py                               DIFFERS        2026-05-03   
-hebrew_points.py                           codex-index-aleppo         py/mb_cmn/hebrew_points.py                              DIFFERS        2026-04-27   
+url_percent.py                             book-of-job                mb_cmn/url_percent.py                                   eol-only       2026-05-03   
+uxlc_change_url.py                         book-of-job                mb_cmn/uxlc_change_url.py                               eol-only       2026-05-03   
+hebrew_points.py                           codex-index-aleppo         py/mb_cmn/hebrew_points.py                              eol-only       2026-04-27   
 str_defs.py                                codex-index-aleppo         py/mb_cmn/str_defs.py                                   DIFFERS        2026-04-27   
-uni_denorm.py                              codex-index-aleppo         py/mb_cmn/uni_denorm.py                                 DIFFERS        2026-04-27   
-url_percent.py                             codex-index-aleppo         py/mb_cmn/url_percent.py                                DIFFERS        2026-05-03   
-hebrew_letters.py                          codex-index-aleppo         aleppo-wiki/py/hebrew_letters.py                        DIFFERS        2026-04-27   placed in aleppo-wiki/py/ not mb_cmn/
+uni_denorm.py                              codex-index-aleppo         py/mb_cmn/uni_denorm.py                                 eol-only       2026-04-27   
+url_percent.py                             codex-index-aleppo         py/mb_cmn/url_percent.py                                eol-only       2026-05-03   
+hebrew_letters.py                          codex-index-aleppo         aleppo-wiki/py/hebrew_letters.py                        eol-only       2026-04-27   placed in aleppo-wiki/py/ not mb_cmn/
 hebrew_punctuation.py                      codex-index-aleppo         aleppo-wiki/py/hebrew_punctuation.py                    DIFFERS        2026-03-28   placed in aleppo-wiki/py/ not mb_cmn/
 hebrew_verse_numerals.py                   codex-index-aleppo         aleppo-wiki/py/hebrew_verse_numerals.py                 DIFFERS        2026-03-28   placed in aleppo-wiki/py/ not mb_cmn/
 my_utils.py                                codex-index-aleppo         aleppo-wiki/py/my_utils.py                              DIFFERS        2026-04-27   placed in aleppo-wiki/py/ not mb_cmn/
 hebrew_points.py                           codex-index-cam1753        mb_cmn/hebrew_points.py                                 identical      2026-04-27   
 str_defs.py                                codex-index-cam1753        mb_cmn/str_defs.py                                      DIFFERS        2026-04-27   
 uni_denorm.py                              codex-index-cam1753        mb_cmn/uni_denorm.py                                    identical      2026-04-27   
-hebrew_letters.py                          codex-index-leningrad      lenin-wiki/py/hebrew_letters.py                         DIFFERS        2025-02-19   placed in lenin-wiki/py/ not mb_cmn/
+hebrew_letters.py                          codex-index-leningrad      lenin-wiki/py/hebrew_letters.py                         identical      2026-08-03   placed in lenin-wiki/py/ not mb_cmn/
 hebrew_punctuation.py                      codex-index-leningrad      lenin-wiki/py/hebrew_punctuation.py                     DIFFERS        2025-02-19   placed in lenin-wiki/py/ not mb_cmn/
 hebrew_verse_numerals.py                   codex-index-leningrad      lenin-wiki/py/hebrew_verse_numerals.py                  DIFFERS        2025-02-19   placed in lenin-wiki/py/ not mb_cmn/
-my_utils.py                                codex-index-leningrad      lenin-wiki/py/my_utils.py                               DIFFERS        2026-01-18   placed in lenin-wiki/py/ not mb_cmn/
-cantsys.py                                 diffable-pointed-hebrew    mb_cmn/cantsys.py                                       DIFFERS        2026-04-27   
+my_utils.py                                codex-index-leningrad      lenin-wiki/py/my_utils.py                               DIFFERS        2026-08-03   placed in lenin-wiki/py/ not mb_cmn/
+cantsys.py                                 diffable-pointed-hebrew    mb_cmn/cantsys.py                                       eol-only       2026-04-27   
 file_io.py                                 diffable-pointed-hebrew    mb_cmn/file_io.py                                       DIFFERS        2026-04-27   
 hebrew_accents.py                          diffable-pointed-hebrew    mb_cmn/hebrew_accents.py                                DIFFERS        2026-04-27   
 hebrew_letters.py                          diffable-pointed-hebrew    mb_cmn/hebrew_letters.py                                DIFFERS        2026-04-27   
