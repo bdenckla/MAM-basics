@@ -38,8 +38,9 @@ failure mode: three commits (9415017, 1e989ee, 007e708) exist specifically to pu
 under prose counts, and everything pinned was right. What lagged instead was **write-back into
 plans and docs** — every major below is a plan or doc contradicting the tree it describes.
 
-## How the majors were acted on (2026-08-04, four passes, Ben's ask of 2026-08-03)
+## How the review was acted on (2026-08-04)
 
+**The majors and minor 6**, in four passes, Ben's ask of 2026-08-03.
 Majors 1 and 2: wlc-utils 51113cf and a275830. Major 3: a concurrent masorah-books session
 had already drafted the full fix in its working tree — verified correct against the trackers,
 one improvement included (#16 closed the same night, so it gets no open-table row) — and the
@@ -49,8 +50,63 @@ caught this doc's hash error (corrected in the entry below). Major 5: MAM-basics
 exclusion was ever deliberate, runtime 2.8 s) and wlc-utils 505d88e (artifact regenerated:
 je49:19's and mi2:7's ERROR node moves tipexa_phrase → zaqef_phrase, verdict counts
 unchanged). Minor 6 was independently fixed by the concurrent session's ef3334b, which notes
-the §223/§224 disagreement on the page rather than asserting either side. The remaining
-minors, the decision items, and the standing open ends are untouched.
+the §223/§224 disagreement on the page rather than asserting either side.
+
+**Minors 7 through 15**, later the same day, in four passes batched by kind, Ben's ask of
+2026-08-04. All nine are closed out; only minor 9 is closed as a dismissal.
+
+- **7**, the ne8:7 caveat: MAM-basics 9d78b20 and cdaeac4, wlc-utils e0abcc5 and 4fad32d. The
+  marker and the note are derived rather than pinned to the verse — `mam_reads_no_legarmeh` asks
+  whether WLC's sequence has a legarmeh where its MAM counterpart has none — so both leave the
+  page on their own the day #215 is fixed, and `pin_claims` asserts the shape of that argument
+  rather than a count the fix would falsify. The mechanism was checked against MAM-parsed-plus
+  first: at Nehemiah 8:7 MAM's stroke is a `מ:לגרמיה-2` template, which MAM-simple renders as a
+  vel of its own, where WLC 4.22 has the U+05C0 attached to the word.
+- **8**: recorded on wlc-utils#86 as a follow-up comment. §357's ANFA-reason is the **third**, not
+  the fourth — the module had two routes before d72534b.
+- **9**: dismissed, as anticipated. Amending a commit message needs Ben's explicit ask and is not
+  worth it; the bare hash is in no tracked file of any repo (checked 2026-08-04), so there is
+  nothing to prefix. The lesson stays in this repo's CLAUDE.md.
+- **10**: MAM-basics ff22f96, naming both of pytest's default `python_files` patterns and
+  `mc_marks.py` as the one file under `py/tests/` matching neither. **This doc's "eight copied-in
+  files are suffix-named" was wrong and is corrected to seven below** — the doc's own parenthesis
+  listed six `clc_*` plus `source_hygiene_test.py` and so disagreed with its prose. Measured at
+  HEAD: 69 + 7 + 1 = 77 tracked files under `py/tests/`.
+- **11**: masorah-books 94a162a. `QUOTED_IN_ISSUE_7` re-counted at HEAD by an AST walk rather
+  than by eye: 29, so CLAUDE.md was the only file wrong — README and the decision queue already
+  said 29, and the three sibling counts in the same bullet (24, 36, 28) re-derive unchanged. A
+  session was live in that repo and edited CLAUDE.md itself mid-pass, so only the one hunk was
+  staged, by patch, leaving that session's prose in the working tree.
+- **12**: codex-index-cam1753 ca29f9e, repointed at the user-level CLAUDE.md, the repo's own
+  never having carried the rule. That was the repo's last `copilot` reference of any kind.
+- **13**: UXLC-utils 47c3e97. The deleted co-citation is dropped rather than repointed, since
+  `shared-with-codex-index-leningrad.md` states the canonicity alone; and the not-checked-out
+  premise turned out to be load-bearing in **three** places, not the one the finding named, so
+  all three were corrected together. The genuine `[TBD]` — whether lenin-wiki's index beats the
+  vendored tanach.us LCIndex — survives, minus its blocked-on-a-clone framing. A broken relative
+  link in the same sentence was fixed in passing.
+- **14**: MAM-basics effb057. `compare.py` now hashes raw bytes and, when those differ,
+  newline-normalized bytes, emitting `eol-only` as a third verdict — one whitespace-free token,
+  because `gen_inventory` parses that column on runs of two or more spaces. A trailing-newline
+  difference deliberately stays `DIFFERS`. **The finding understated the condition five times
+  over**: 15 rows move `DIFFERS` → `eol-only`, not 3 — ten in book-of-job, four in
+  codex-index-aleppo (one of them `aleppo-wiki/py/hebrew_letters.py`, outside the row the finding
+  named), one in diffable-pointed-hebrew. A sixteenth row, codex-index-leningrad's
+  `lenin-wiki/py/hebrew_letters.py`, moves `DIFFERS` → `identical` for an unrelated reason: that
+  repo's 6ccd856 made it match on 2026-08-03 and the inventory had not been regenerated since.
+  Verdicts now stand at 116 identical, 15 eol-only, 23 DIFFERS of 154. Beyond the ask, the four
+  writers under `py/vendoring/` were themselves writing CRLF into this repo's `out/` and `doc/`
+  against `.gitattributes`, and now pass `newline="\n"`.
+- **15**: github-misc 722a1dc and fc21d72, both copies of the skill. The rule had never been in
+  the skill **at all** — its only traces were a sibling mention in `references/rendered-prose.md`
+  and one example in `SKILL.md` — so this was a missing rule rather than a stale one. Ben,
+  2026-08-04, asked for the rule without a sweep, and asked that it not read as absolute: *"I'm
+  sure there are exceptions where 'the strand' or 'the strands' is clear from context … some
+  degree of implicitness (e.g. mention earlier in a sentence!) is always acceptable."*
+  wlc-utils#77's open items 1 and 2, the sweep itself, stay open.
+
+The decision items and the standing open ends are untouched, except that minor 14's measurement
+enlarges the first decision item, as recorded there.
 
 ## Major
 
@@ -134,7 +190,7 @@ twin.)
 
 **10. MAM-basics CLAUDE.md's test-discovery sentence is incomplete since the UXLC-utils
 copy-in.** "pytest discovers `py/tests/test_*.py` itself. Drop a new test file in and it
-runs" — eight copied-in files are suffix-named (`clc_attribution_test.py` and siblings,
+runs" — seven copied-in files are suffix-named (`clc_attribution_test.py` and its five siblings,
 `source_hygiene_test.py`) and collect only because pytest's default also matches `*_test.py`;
 a file matching neither pattern still reports nothing at all. One sentence naming both
 patterns fixes it.
@@ -157,7 +213,9 @@ as a sibling" (the clone exists). ad52001's substitution rule covers only `py/` 
 Three of the four `py/mb_cmn` files it marks DIFFERS are blob-identical to MAM-basics
 (`hebrew_points.py`, `uni_denorm.py`, `url_percent.py` — the difference is CRLF-on-disk, the
 known latent-CRLF condition extended to a third repo); only `str_defs.py` genuinely differs,
-there and in cam1753 and book-of-job.
+there and in cam1753 and book-of-job. (Both halves of that last clause were measured when the
+fix ran: the condition reaches 15 copies in four repos, not 3 in one, and book-of-job has six
+genuinely drifted copies rather than only `str_defs.py`. See the acting entry above.)
 
 **15. The hebrew-prose skill and wlc-utils#77's amended plural rule are unreconciled.** The
 2026-08-03 comment narrows the plural carve-out (a plural needs a quantifier, not just
@@ -169,7 +227,11 @@ skill is what sessions load.
 
 - str_defs.py's content drift in codex-index-aleppo, codex-index-cam1753 and book-of-job
   (missing the LDQM/RDQM additions; aleppo also has an extra CGJ_RE): re-vendor, or record as
-  local variants.
+  local variants. **Enlarged 2026-08-04 by minor 14's fix**, which separated the CRLF noise from
+  the drift and so measured the drift for the first time: 23 copies genuinely differ, and
+  book-of-job alone has six (`bib_locales.py`, `file_io.py`, `hebrew_accents.py`,
+  `hebrew_punctuation.py`, `str_defs.py`, `uni_heb.py`). The decision is the same one, over a
+  larger set than it was framed for.
 - al-hatorah has a stale fully-merged remote branch, `origin/feat/override-diff-viewer`
   (2026-04-24). Deleting it is a branch deletion, so it waits for an explicit ask.
 - wlc-utils#90: whether the twelve transcription headers naming old script paths are
