@@ -1,5 +1,42 @@
 # CLAUDE.md
 
+## Hebrew marks go in MAM-normal order, not Unicode-normal order — never run NFC over them
+
+Two orders exist for the combining marks of one base-letter cluster, and they differ on where the
+dagesh sits:
+
+- **MAM-normal order**, the one this repo uses. Shin dot, sin dot, dagesh/mapiq, rafe, then every
+  other mark in the relative order it already had. Spelled out and implemented in
+  `py/mb_cmn/uni_denorm.py` — `give_std_mark_order` is the authority, `has_std_mark_order` the
+  predicate. The code calls it "(our) standard mark order" and its combining-class table "SBL2",
+  after the appendix to the SBL Hebrew Font manual, so grep for **std mark order** and **SBL2** as
+  well as for this section's heading.
+- **Unicode-normal order**, what `unicodedata.normalize` produces from the canonical combining
+  classes (qamats 18, holam 19, dagesh 21, meteg 22). It puts the dagesh **after** the vowel.
+
+**Never call `unicodedata.normalize` (NFC, NFD, any form) on Hebrew.** When two strings that should
+match do not, put both through `give_std_mark_order`; do not paper over it by normalizing. The two
+orders render identically, so nothing looks wrong on the page and the defect surfaces only where
+something compares bytes.
+
+MAM's shipped data is entirely in MAM-normal order — checked 2026-08-04, `has_std_mark_order` true
+for all 87 files of `MAM-parsed/plus/`, `MAM-parsed/plain/` and `MAM-for-Sefaria/csv/`. So a cluster
+in the other order is always something hand-authored, and **the way in is a paste through anything
+that normalizes, a browser above all**. Hebrew you did not lift from the data is the thing to
+suspect. There is no lint over hand-authored source here — `py/py_misc/uni_check.py` and
+`py/py_misc/check_mpplus.py` check data, and `py/foi/foiz_wt_unicode.py` reports
+`NON_STANDARD_MARK_ORDER` as a feature of interest — so the check is yours to run.
+
+Scope: only those four marks have a declared place. A vowel and an accent pass in either order, so
+`has_std_mark_order` says nothing about which of them comes first.
+
+**This section is back, not new.** It stood in `CLAUDE.md` and `.github/copilot-instructions.md`
+until both were disabled on 2026-05-19 and deleted in `b1fa115` on 2026-08-03. `codex-index-aleppo`
+and `codex-index-cam1753` carry near-verbatim copies of the deleted wording, both pointing back at
+`uni_denorm.py` in this repo — so the rule survived everywhere except the repo that hosts its
+implementation. On 2026-08-04, one day after the deletion, three NFC-ordered clusters were found in
+a hand-authored file here. That is why it is worth the tokens.
+
 ## Invoke the `hebrew-prose` skill before writing or editing prose about accentuation
 
 That user-level skill (`~/.claude/skills/hebrew-prose/`, tracked in `github-misc` at
