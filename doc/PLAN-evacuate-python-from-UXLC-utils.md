@@ -20,7 +20,7 @@ the recipe does not transfer here it will not transfer anywhere.
 | 4 — empty UXLC-utils | **done** 2026-08-03, commit `ad52001` in UXLC-utils (110 tracked files deleted) and `2b5c87c` here; **Phase 7 item 1 came with it**, see below |
 | 5 — repoint codex-index-leningrad's sparse copy | **done** 2026-08-03 — **the sparse `py/` half was dropped, not repointed**; commit `d5195e3` in codex-index-leningrad, `748ee2f` in UXLC-utils, and this record here. Nothing changed in MAM-basics' `py/` |
 | 6 — flip the provenance breadcrumbs and disambiguate issue citations | **not started** |
-| 7 — cross-repo bookkeeping | **not started** |
+| 7 — cross-repo bookkeeping | **item 1 done** inside Phase 4 (2026-08-03, `2b5c87c` here — see §Phase 7 item 1); **items 2–6 not started**, item 6 (the hebrew-prose skill edit) flagged stop-and-ask-Ben. This row said a flat "not started" until the 2026-08-03 review (MAM-basics [#219](https://github.com/bdenckla/MAM-basics/issues/219), major 4) reconciled it with the Phase 4 row and §Phase 7 |
 
 **Phase 2 of the wlc-utils plan does not recur, for this repo or any other in the programme.**
 That phase existed to give `mb_cmn/paths.py` an override chain and a sibling accessor; it has
