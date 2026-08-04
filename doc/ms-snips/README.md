@@ -37,10 +37,37 @@ So do the other two manuscripts, confirmed the same day:
 Leningrad Codex, and `../../../codex-index-cam1753/page-snips/0105B-col2-Lam2v3-akhla.png`
 for Cambridge Add. 1753.
 
-The two together answer a Sefaria correction request of 2026-07-22 that asked for
+The three together answer a Sefaria correction request of 2026-07-22 that asked for
 אָֽכְלָ֖ה rather than אָכְלָ֖ה. Sassoon 1053 matters here because it is one of the two
 manuscripts MAM leans on throughout Lamentations: of the 38 נוסח notes in the book, ש1
 appears in 16 and Cambridge Add. 1753 (ק-מ) in 24, while the Aleppo Codex is absent —
 Lamentations is one of the books lost from it entirely, and the four notes that do invoke
-the Keter do so at second hand through Yehoshua Kimḥi's record. MAM has no note at all on
-אָכְלָ֖ה, and these three crops are why: nothing to report.
+the Keter do so at second hand through Yehoshua Kimḥi's record (`א(ק)`, decoded in
+[sigil-decoding.md](../sigil-decoding.md)). MAM has no note at all on אָכְלָ֖ה, and these
+three crops are why: nothing to report.
+
+Mikraot Gedolot Haketer has no meteg here either — read out of `mgketer/out/E3-Lamentations/`,
+codepoint-identical to MAM. Metsudah (Lakewood, 2001) has one, which is the printed tradition
+doing what it does.
+
+### MAM answers the qamats question without a meteg
+
+The request asked for the meteg and reasoned from it that "both קמץ are קמץ גדול". MAM says
+that second part outright, in the text rather than through a helper mark, because it
+distinguishes the two qamats codepoints:
+
+| | form | first qamats |
+| --- | --- | --- |
+| Lam 2:3, "consuming" | אָכְלָ֖ה | U+05B8 HEBREW POINT QAMATS |
+| Gen 1:29, "for food" | לְאׇכְלָֽה׃ | U+05C7 HEBREW POINT QAMATS QATAN |
+
+Both are base text in `MAM-parsed/plus/`, not a `מ:קמץ` template alternative — that template
+is for places MAM is making a call worth flagging, as at בׇּֽחֳרִי־אַ֗ף in this very verse.
+So no edit to MAM's text would convey anything the text does not already convey.
+
+What MAM's text does not speak to is the shewa. Phonetic MAM does, and agrees it is na:
+`’a·kh(e)·la` at <https://bdenckla.github.io/phonetic-hbo/tnkh/E3-Lamentations/02.html>,
+against `le·’okh·la` for Gen 1:29.
+
+Nor is this verse's pointing simply sparing with meteg: the Leningrad Codex has one on
+בָּֽחֳרִי and another on לֶֽהָבָ֔ה, plus the silluq on the verse-final סָבִֽיב׃.
