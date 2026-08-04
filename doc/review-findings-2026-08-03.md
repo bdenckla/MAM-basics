@@ -38,6 +38,20 @@ failure mode: three commits (9415017, 1e989ee, 007e708) exist specifically to pu
 under prose counts, and everything pinned was right. What lagged instead was **write-back into
 plans and docs** — every major below is a plan or doc contradicting the tree it describes.
 
+## How the majors were acted on (2026-08-04, four passes, Ben's ask of 2026-08-03)
+
+Majors 1 and 2: wlc-utils 51113cf and a275830. Major 3: a concurrent masorah-books session
+had already drafted the full fix in its working tree — verified correct against the trackers,
+one improvement included (#16 closed the same night, so it gets no open-table row) — and the
+draft was left for that session to land. Major 4: MAM-basics faa8b3f, whose verification also
+caught this doc's hash error (corrected in the entry below). Major 5: MAM-basics 80c8a42
+(`accgram-test-fixes` joins the mega directly after `accgram-run-prose`; no evidence the
+exclusion was ever deliberate, runtime 2.8 s) and wlc-utils 505d88e (artifact regenerated:
+je49:19's and mi2:7's ERROR node moves tipexa_phrase → zaqef_phrase, verdict counts
+unchanged). Minor 6 was independently fixed by the concurrent session's ef3334b, which notes
+the §223/§224 disagreement on the page rather than asserting either side. The remaining
+minors, the decision items, and the standing open ends are untouched.
+
 ## Major
 
 **1. wlc-utils' two-accents plan contradicts itself about ca8:6 and Phase 5.**
@@ -80,7 +94,9 @@ booked after the table was composed (ce05e36). Fix: the two sentences and four t
 2–6 outstanding, item 6 being the edit to the hebrew-prose skill's citations of UXLC-utils
 Python (flagged stop-and-ask-Ben, committing to a third repo, both unsynced copies). Smaller,
 same file: the UXLC plan's status table says Phase 7 "not started" while its Phase 4 row and
-§Phase 7 record item 1 as done inside 2b44958 — the two claims cannot both be read as written.
+§Phase 7 record item 1 as done inside MAM-basics 2b5c87c — the two claims cannot both be read
+as written. (This doc first cited item 1's commit as UXLC-utils 2b44958, an unrelated sys.path
+commit; corrected 2026-08-04, when the acting pass followed the plan file's record.)
 Fix: correct the programme row to name Phases 6 and 7's remainder; reconcile the Phase 7 row.
 
 **5. wlc-utils' fix-tester artifact went stale again, through the channel 97c695e named.**
