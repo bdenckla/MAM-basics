@@ -105,6 +105,28 @@ the §223/§224 disagreement on the page rather than asserting either side.
   degree of implicitness (e.g. mention earlier in a sentence!) is always acceptable."*
   wlc-utils#77's open items 1 and 2, the sweep itself, stay open.
 
+**Major 5's channel, closed the rest of the way**, later on 2026-08-04. Major 5 fixed the one
+artifact it caught; the channel it named — a tracked artifact with nothing routinely regenerating
+it — stayed open for every other by-hand generator that writes one. MAM-basics f162d7f makes
+steps of all eight: the accgram subcommands `run-dual-cant`, `xcheck-poetic`, `servi-xcheck`,
+`grammaticality`, `run-printed-decalogue` and `survey-chanted-word-accents`, plus
+`main_find_uxlc_accent_changes.py` and `main_uxlc_grammar_test.py`, the two wlc-utils' CLAUDE.md
+itself flagged as "not in the mega". **Two of the eight were already stale**, so the channel had
+taken more than the artifact major 5 found: `out/accgram/_grammaticality.txt` since 2026-06-29
+(93 → 96 ungrammatical, the METHIGAZAQEF change of #218) and `out/accgram/uxlc_grammar_test.txt`
+since 2026-08-01 (ne 9:20 crosses WLC-ungram → UXLC-gram, #218 item 1's third verse). wlc-utils
+505cbfc regenerates both. The second **falsified a claim the report had pinned in prose while
+splicing its counts live** — "No fix leaks into OUT and no degradation leaks into IN", printed
+three lines under a count of one fix that had crossed — so that paragraph is derived now and
+cannot outlive its numbers again; the leak is #218 item 1 unwritten rather than a defect, and ne
+9:20 rejoins the IN set when its research note names its `uxlc_change`. Cost: 12.4 s for seven of
+the eight. The eighth, `survey-chanted-word-accents`, measures 68.6 s, and Ben's decision that day
+was neither to pay it nor to skip the step but to run the survey once and give `generate-html` a
+`--trust-survey` flag — the residue page having already been spending 60.1 s rebuilding the same
+survey inside the mega, which the flag turns into 1.1 s against a byte-identical page. What is
+left outside the mega on purpose: the two network vendoring subcommands, and the
+`generate-html-<name>` singles the batch covers.
+
 The decision items and the standing open ends are untouched, except that minor 14's measurement
 enlarges the first decision item, as recorded there.
 
