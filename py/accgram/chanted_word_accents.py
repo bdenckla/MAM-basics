@@ -64,14 +64,19 @@ DOES therefore takes MAM, and the Yeivin cross-check below is run against MAM al
 UXLC's counts are here so the divergence between a manuscript and a consensus text can be read
 off, not so that three columns can be averaged.
 
-NOT EVERY MAQAF HERE IS THE JOINING MAQAF, and that is what ``maqaf_after_gaya`` is about.
-Both books describe a maqaf written after a word that already has an accent, where a ga'ya falls
-after that accent: Yeivin ITM §357 ("Maqqef after Gaʿya"), Breuer CoS Ch. 1 §43.  Its purpose is to
-say that the slowed syllable makes no break, not to join two atoms into one chanted word -- so the
-two atoms keep an accent apiece, and this survey's mechanical criterion counts the pair as one
-compound with two accents.  Thirteen of MAM's twenty-two compounds with their accents split across
-atoms are of that kind, across five different accent pairs, and the signature is checkable: the
-accented non-final atom also has a meteg after its accent.  Issue wlc-utils#86.
+NOT EVERY MAQAF HERE IS THERE FOR THE SAME REASON, and that is what ``maqaf_after_gaya`` is
+about.  Both books describe a maqaf written after a word that already has an accent, where a
+gaʿya falls after that accent: Yeivin ITM §357 ("Maqqef after Gaʿya"), Breuer CoS Ch. 1 §43.
+What §357 settles is where the non-final atom's accent comes from -- the atom keeps the accent
+it has, the gaʿya written after that accent having had to be marked -- and not what the maqaf
+signifies, which neither book settles: Yeivin writes these very compounds with a SPACE at §354,
+Breuer's Ch. 1 §43 records that "different views have been expressed" and leaves the maqaf out
+of the book, and his Ch. 9 §37 points the other way.  Nothing here turns on that.  A compound of
+this kind IS a chanted word, on the only test there is for one -- a maqaf is written in it -- so
+this survey's mechanical criterion counts it as one compound with two accents.  Thirteen of
+MAM's twenty-two compounds with their accents split across atoms are of that kind, across five
+different accent pairs, and the signature is checkable: the accented non-final atom also has a
+meteg after its accent.  Issue wlc-utils#86.
 
 Prose verses only, routed by ``prose_filter.should_keep_line``.  Yeivin's inventory below is his
 prose inventory; the poetic system puts two accents on one chanted word far more readily and
@@ -1099,9 +1104,12 @@ BREUER_ENTRIES: tuple[BreuerEntry, ...] = (
         note=(
             "The rule that partitions the split compounds, and the two examples Breuer"
             " gives are two of the nine MAM compounds that have no gaʿya after the"
-            " non-final accent. His rule and Ch. 1 §43 do not collide at the other"
-            " thirteen: the maqaf there is Ch. 1 §43's, not the joining maqaf this rule"
-            " is about."
+            " non-final accent. At the other thirteen this rule and Ch. 1 §43 pull against"
+            " each other, and Breuer does not square them: §37 would make the mark"
+            " secondary and the compound one chanted word, where §43 declines to say what"
+            " the mark is. ``maqaf_after_gaya`` reports that as a dispute and settles"
+            " nothing by it -- the partition there is by the writing, a gaʿya between the"
+            " non-final atom's accent and the maqaf."
         ),
     ),
 )
@@ -1294,12 +1302,13 @@ def _split_hits(corpus: dict) -> list[dict]:
 def maqaf_after_gaya(scanned: dict[str, dict]) -> dict:
     """The compounds whose accents are split across atoms, partitioned by ITM §357's signature.
 
-    A compound reaches this survey because a maqaf stands inside it, and not every maqaf is the
-    one that joins two atoms into a single chanted word.  Yeivin ITM §357 and Breuer CoS Ch. 1
-    §43 both describe a maqaf written after a word that has its own accent and a gaʿya after
-    that accent, whose purpose is to say the slowed syllable makes no break.  The signature is
-    mechanical -- ``_gaya_after_accent`` -- so the partition is a measurement rather than a
-    reading, and each side of it is set out for the reader to check.
+    A compound reaches this survey because a maqaf stands inside it, and the maqafs it finds
+    are not all written for the same reason.  Yeivin ITM §357 and Breuer CoS Ch. 1 §43 both
+    describe a maqaf written after a word that has its own accent and a gaʿya after that
+    accent; §357 gives its purpose as saying the slowed syllable makes no break, and what it
+    signifies beyond that is disputed in both books.  The partition here does not depend on
+    that: the signature is mechanical -- ``_gaya_after_accent`` -- so it is a measurement
+    rather than a reading, and each side of it is set out for the reader to check.
 
     This replaces the narrower ``merkha_tipexa_discrepancy`` block, whose open question this
     answers: the four MAM chanted words beyond §233's eight are neither §233 cases Yeivin left
@@ -1350,9 +1359,15 @@ def maqaf_after_gaya(scanned: dict[str, dict]) -> dict:
             "A maqaf written after a word that has its own accent and a gaʿya after that"
             " accent. ITM §357 gives its purpose -- the slowed syllable makes no break --"
             " and CoS Ch. 1 §43 gives its conditions: after a servant, on a word accented"
-            " on its penultimate syllable, with the gaʿya on its last. It is not the maqaf"
-            " that joins two atoms into one chanted word, so a compound found by it has an"
-            " accent on each atom rather than two accents on one chanted word."
+            " on its penultimate syllable, with the gaʿya on its last. A compound found by"
+            " it IS a chanted word, on the only test there is for one -- a maqaf is written"
+            " in it -- and it does have two accent tokens. What §357 settles is that the"
+            " second token is the non-final atom's retained accent rather than a secondary"
+            " accent of the kind §§233 and 241 describe. What the maqaf SIGNIFIES is"
+            " unsettled in both books and nothing here turns on it: Yeivin writes the same"
+            " compounds with a space at §354, CoS Ch. 1 §43 records that 'different views"
+            " have been expressed' and leaves it out of the book, and Ch. 9 §37 points the"
+            " other way."
         ),
         "how_it_is_told_apart": (
             "Mechanically, off the mark body: the accented non-final atom also has a meteg"
@@ -1379,8 +1394,8 @@ def maqaf_after_gaya(scanned: dict[str, dict]) -> dict:
             "The compounds with no gaʿya after the non-final accent are the mayela ones,"
             " which both books name outright: ITM §§210 and 216, and CoS Ch. 9 §37, whose"
             " two examples -- Isaiah 8:17 וקויתי־לו and Genesis 8:18 ויצא־נח -- are two of"
-            " MAM's nine. There a secondary mark stands in a hyphenated atom and the maqaf"
-            " is the joining one, which is Breuer's rule for why it is not cancelled."
+            " MAM's nine. There a secondary mark stands in a hyphenated atom, and Breuer's"
+            " rule at Ch. 9 §37 is that the hyphenation is not cancelled after such a mark."
         ),
         "itm_233_arithmetic": _arithmetic("§233"),
         "itm_241_arithmetic": _arithmetic("§241"),
