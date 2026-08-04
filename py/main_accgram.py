@@ -93,7 +93,10 @@ Subcommands:
                     batch so it cannot go stale. Needs run-prose first, for its
                     verdict column.
 
-                Each report runs with its default paths.
+                Each report runs with its default paths.  --trust-survey lets the
+                wlc-chanted-word-residue report read out/accgram/chanted-word-accents.json
+                instead of spending another minute rebuilding the survey; pass it only
+                after survey-chanted-word-accents, as main_0_mega.py does.
     generate-html-<name>
                 Generate a single report instead of the whole batch, where <name>
                 is the output file's basename (e.g. generate-html-printed-decalogue-simanim
@@ -258,11 +261,26 @@ _HTML_GENERATORS = (
 )
 
 
-def _generate_one_html(module) -> None:
-    """Run a single HTML generator module with its default arguments."""
+# The one report whose generator can be told to read a JSON another subcommand writes rather
+# than recompute it; see `_run_generate_html`.
+_SURVEY_READING_REPORT = "wlc-chanted-word-residue"
+
+
+assert _SURVEY_READING_REPORT in dict(_HTML_GENERATORS), (
+    f"{_SURVEY_READING_REPORT} names no report in _HTML_GENERATORS; a rename here fails"
+    " silently otherwise -- the mega would simply pay the survey twice again"
+)
+
+
+def _generate_one_html(module, argv: tuple[str, ...] = ()) -> None:
+    """Run a single HTML generator module with its default arguments, plus ``argv``.
+
+    ``argv`` goes through the module's own parser rather than being set on the namespace by
+    hand, so a flag the batch passes is spelled and validated by the module that declares it.
+    """
     sub = argparse.ArgumentParser()
     module.add_args(sub, repo_root=_repo_root())
-    module.run(sub.parse_args([]))
+    module.run(sub.parse_args(list(argv)))
 
 
 def _generate_one_html_from_args(module, args: argparse.Namespace) -> None:
@@ -270,10 +288,16 @@ def _generate_one_html_from_args(module, args: argparse.Namespace) -> None:
     module.run(args)
 
 
-def _run_generate_html(_args: argparse.Namespace) -> None:
+def _run_generate_html(args: argparse.Namespace) -> None:
     """Run every HTML generator, each with its own default arguments."""
-    for _name, module in _HTML_GENERATORS:
-        _generate_one_html(module)
+    trust_survey = getattr(args, "trust_survey", False)
+    for name, module in _HTML_GENERATORS:
+        argv = (
+            ("--trust-survey",)
+            if trust_survey and name == _SURVEY_READING_REPORT
+            else ()
+        )
+        _generate_one_html(module, argv)
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -399,6 +423,19 @@ def build_parser() -> argparse.ArgumentParser:
             "goerwitz.html, almost-errors.html, and telg-doc-notes.html. Each "
             "runs with its default paths; live trees are regenerated from the "
             "grammar."
+        ),
+    )
+    # Passed by main_0_mega.py, whose survey-chanted-word-accents step runs directly above
+    # generate-html and has therefore just written the JSON the residue page would otherwise
+    # spend another minute recomputing.  Off by hand, so a batch run on its own still derives
+    # every page from the code rather than from a file (#219).
+    generate_html_parser.add_argument(
+        "--trust-survey",
+        action="store_true",
+        help=(
+            "Let the wlc-chanted-word-residue report read "
+            "out/accgram/chanted-word-accents.json instead of rebuilding the survey. Only "
+            "for a caller that has just run survey-chanted-word-accents."
         ),
     )
     generate_html_parser.set_defaults(func=_run_generate_html)

@@ -8,10 +8,13 @@ The change records (uxlc_accent_changes.json) partition on `prose_st_ref`:
     notes flagged and the UXLC then adopted).
 
 Both sets are evaluated by the same `evaluate()` and reported in two sections of
-the same output file.  The interesting result is the directional asymmetry: in
-the OUT set only degradation crosses the boundary (WLC-gram -> UXLC-ungram, never
-the reverse); in the IN set only fixes cross it (WLC-ungram -> UXLC-gram, never
-the reverse).
+the same output file.  The interesting result was a directional asymmetry: in the
+OUT set only degradation crossed the boundary (WLC-gram -> UXLC-ungram, never the
+reverse); in the IN set only fixes crossed it (WLC-ungram -> UXLC-gram, never the
+reverse).  Whether it still holds is now DERIVED, by `_asymmetry_verdict`, rather
+than asserted here or in the report -- the sentence used to be pinned, and on
+2026-08-04 the file printed "only DEGRADATION crosses" three lines under its own
+count of one fix that crossed (#219).
 
 For each grammar-relevant accent change that lies in the PROSE corpus the checker
 can evaluate, we:
@@ -451,6 +454,34 @@ def report_section(res: dict, title: str, p) -> None:
         )
 
 
+def _asymmetry_verdict(out_res: dict, in_res: dict) -> list[str]:
+    """The closing paragraph, derived from the two sets rather than written down.
+
+    A leak is a crossing in the direction its set is not supposed to produce: a fix in the
+    OUT set, a degradation in the IN set.  With none of either the original finding stands
+    and is stated; with any, the file names them instead of asserting a universal its own
+    counts contradict.  It reports rather than raises, because a leak can be a note that has
+    not been written yet -- ne 9:20 became one on 2026-08-04 (#218 item 1), and
+    will leave the OUT set for the IN set when its research note names its `uxlc_change`.
+    """
+    leaks = (
+        ("OUT", "WLC-ungram->UXLC-gram, a fix", out_res["fixed"]),
+        ("IN ", "WLC-gram->UXLC-ungram, a degradation", in_res["broke"]),
+    )
+    if not any(verses for _, _, verses in leaks):
+        return [
+            "  The changes the prose ungrammatical notes flagged (IN set) only ever repair",
+            "  ungrammaticality; the changes they did not flag (OUT set) only ever",
+            "  introduce it.  No fix leaks into OUT and no degradation leaks into IN.",
+        ]
+    lines = ["  The asymmetry does NOT hold as stated. Crossing the wrong way:"]
+    for label, direction, verses in leaks:
+        for (bb, ch, vs), descs in sorted(verses):
+            for cit, _reason, _kind, _desc in descs:
+                lines.append(f"    {label} set: {bb} {ch}:{vs} ({cit}) -- {direction}")
+    return lines
+
+
 def main() -> None:
     data = json.load(open(SRC, encoding="utf-8"))
     out_set = [r for r in data if not r["prose_st_ref"]]
@@ -485,19 +516,16 @@ def main() -> None:
     p("=== Directional asymmetry across the grammaticality boundary ===")
     p()
     p(
-        "  OUT set: only DEGRADATION crosses the boundary "
-        f"(WLC-gram->UXLC-ungram {len(out_res['broke'])}, "
-        f"WLC-ungram->UXLC-gram {len(out_res['fixed'])})."
+        f"  OUT set: WLC-gram->UXLC-ungram {len(out_res['broke'])}, "
+        f"WLC-ungram->UXLC-gram {len(out_res['fixed'])}."
     )
     p(
-        "  IN  set: only FIXES crosses the boundary "
-        f"(WLC-ungram->UXLC-gram {len(in_res['fixed'])}, "
-        f"WLC-gram->UXLC-ungram {len(in_res['broke'])})."
+        f"  IN  set: WLC-ungram->UXLC-gram {len(in_res['fixed'])}, "
+        f"WLC-gram->UXLC-ungram {len(in_res['broke'])}."
     )
     p()
-    p("  The changes the prose ungrammatical notes flagged (IN set) only ever repair")
-    p("  ungrammaticality; the changes they did not flag (OUT set) only ever")
-    p("  introduce it.  No fix leaks into OUT and no degradation leaks into IN.")
+    for line in _asymmetry_verdict(out_res, in_res):
+        p(line)
 
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text("\n".join(lines) + "\n", encoding="utf-8", newline="\n")

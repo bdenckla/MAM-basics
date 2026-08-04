@@ -50,6 +50,15 @@ chanted-word-accents page was withdrawn on 2026-07-29.  This page calls ``build_
 renders it, so page and data are derived from one function and cannot disagree; what it must not
 do is give that file a second writer.
 
+READING THAT JSON INSTEAD IS WHAT ``--trust-survey`` IS FOR, AND ONLY THE MEGA PASSES IT.
+``build_survey`` walks three corpora and takes about a minute, and this page is its only reader
+under ``generate-html``, so a mega that ran ``survey-chanted-word-accents`` and then
+``generate-html`` measured the same three corpora twice (#219, 2026-08-04).  With the
+flag the page reads the file that step has just written.  By hand the flag is off and the survey
+is rebuilt, so a page generated on its own keeps the property the paragraph above states.  An
+absent file raises rather than falling back to a rebuild: a fallback would make "the mega
+freshened it first" unfalsifiable, which is the missing-input-must-FAIL rule exactly.
+
 Run via ``main_accgram.py generate-html-wlc-chanted-word-residue``, or as part of
 ``generate-html``.  ``run-prose`` must have run first, for the verdict column.
 """
@@ -201,6 +210,15 @@ def add_args(parser: argparse.ArgumentParser, repo_root: Path) -> None:
         type=Path,
         default=default_prose_dir(),
         help="Directory of run-prose *_ag.json outputs, for the verdict column.",
+    )
+    parser.add_argument(
+        "--trust-survey",
+        action="store_true",
+        help=(
+            "Read out/accgram/chanted-word-accents.json instead of rebuilding the survey."
+            " For a caller that has just run survey-chanted-word-accents; raises if the"
+            " file is absent."
+        ),
     )
 
 
@@ -650,8 +668,21 @@ def render_body_contents(survey: dict, rows: list[dict]) -> tuple[object, ...]:
     return (wrapper,)
 
 
+def _survey(trust: bool) -> dict:
+    """The survey, rebuilt unless the caller has just written it -- see ``--trust-survey``."""
+    if not trust:
+        return cwa.build_survey()
+    path = cwa.default_json_out_path()
+    if not path.exists():
+        raise AssertionError(
+            f"--trust-survey given but {path} is absent; run"
+            " `main_accgram.py survey-chanted-word-accents` first, or drop the flag"
+        )
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
 def run(args: argparse.Namespace) -> None:
-    survey = cwa.build_survey()
+    survey = _survey(getattr(args, "trust_survey", False))
     prose_dir: Path = getattr(args, "prose_dir", None) or default_prose_dir()
     rows = build_rows(survey, prose_dir)
     pin_claims(survey, rows)

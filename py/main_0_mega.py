@@ -40,6 +40,8 @@ import main_tmpl_survey_toy
 # writes stayed in wlc-utils (see wlc_paths, and
 # doc/PLAN-evacuate-python-from-wlc-utils.md).
 import main_accgram
+import main_find_uxlc_accent_changes
+import main_uxlc_grammar_test
 import main_wlc_a_notes
 import main_wlc_diffs_420422
 import main_wlc_json_and_unicode
@@ -101,12 +103,40 @@ def _run_accgram_test_fixes():
     main_accgram.almost_main(["test-fixes"])
 
 
+def _run_accgram_dual_cant():
+    main_accgram.almost_main(["run-dual-cant"])
+
+
+def _run_accgram_printed_decalogue():
+    main_accgram.almost_main(["run-printed-decalogue"])
+
+
 def _run_accgram_poetic():
     main_accgram.almost_main(["run-poetic"])
 
 
+def _run_accgram_xcheck_poetic():
+    main_accgram.almost_main(["xcheck-poetic"])
+
+
+def _run_accgram_servi_xcheck():
+    main_accgram.almost_main(["servi-xcheck"])
+
+
+def _run_accgram_grammaticality():
+    main_accgram.almost_main(["grammaticality"])
+
+
+def _run_accgram_survey_chanted_word_accents():
+    main_accgram.almost_main(["survey-chanted-word-accents"])
+
+
 def _run_accgram_generate_html():
-    main_accgram.almost_main(["generate-html"])
+    # --trust-survey because accgram-survey-chanted-word-accents ran directly above and wrote
+    # out/accgram/chanted-word-accents.json.  Without it the residue page rebuilds that survey,
+    # and the mega walks all three corpora twice for a minute it has already spent (#219; Ben's
+    # decision, 2026-08-04, over paying the minute twice or leaving the survey out).
+    main_accgram.almost_main(["generate-html", "--trust-survey"])
 
 
 _STEPS = [
@@ -238,15 +268,67 @@ _STEPS = [
         _run_accgram_test_fixes,
         "must come after accgram-run-prose; also reads out/wlc422-kq-u, in/UXLC-39 and MAM-simple",
     ),
+    # The six steps below, and the two entry points after generate-html, joined the mega on
+    # 2026-08-04 for the reason accgram-test-fixes did the same morning (#219): each writes a
+    # git-tracked artifact, and until now nothing routine rewrote any of them.  Two were already
+    # stale when the wiring was done -- out/accgram/_grammaticality.txt since 2026-06-29 and
+    # out/accgram/uxlc_grammar_test.txt since the METHIGAZAQEF change of #218 -- which is the
+    # channel doing exactly what it did to fix-tester.  ~12 s for all eight together.
+    StepRecord(
+        "accgram-run-dual-cant",
+        _run_accgram_dual_cant,
+        "reads out/wlc422-kq-u and MAM-simple; run after accgram-run-prose (wlc-utils#36)",
+    ),
     StepRecord(
         "accgram-run-poetic",
         _run_accgram_poetic,
         "must come after mam-simple and wlc-json-and-unicode",
     ),
     StepRecord(
+        "accgram-xcheck-poetic",
+        _run_accgram_xcheck_poetic,
+        "cross-checks the poetic scanner against MAM-simple; reads out/wlc422-kq-u, not the poetic run",
+    ),
+    StepRecord(
+        "accgram-servi-xcheck",
+        _run_accgram_servi_xcheck,
+        "same inputs as accgram-xcheck-poetic, per-disjunctive servant instead of segmentation",
+    ),
+    StepRecord(
+        "accgram-grammaticality",
+        _run_accgram_grammaticality,
+        "must come after BOTH accgram-run-prose and accgram-run-poetic: it estimates its PCFG"
+        " over the *_ag.json those two write",
+    ),
+    StepRecord(
+        "accgram-run-printed-decalogue",
+        _run_accgram_printed_decalogue,
+        "reads only committed inputs (the vendored in/accgram/printed_decalogue_teamim.json"
+        " and in/accgram/edition_transcriptions), so nothing above it feeds it",
+    ),
+    StepRecord(
+        "accgram-survey-chanted-word-accents",
+        _run_accgram_survey_chanted_word_accents,
+        "must come after mam-simple, wlc-vendor-uxlc and wlc-json-and-unicode -- and BEFORE"
+        " accgram-generate-html, which is passed --trust-survey on the strength of it",
+    ),
+    StepRecord(
         "accgram-generate-html",
         _run_accgram_generate_html,
-        "must come after accgram-run-prose and accgram-run-poetic",
+        "must come after accgram-run-prose, accgram-run-poetic and"
+        " accgram-survey-chanted-word-accents",
+    ),
+    StepRecord(
+        "find-uxlc-accent-changes",
+        main_find_uxlc_accent_changes.main,
+        "must come after wlc-vendor-uxlc, whose in/UXLC-misc/all_changes.json it filters;"
+        " writes the tracked in/accgram/uxlc_accent_changes.json",
+    ),
+    StepRecord(
+        "uxlc-grammar-test",
+        main_uxlc_grammar_test.main,
+        "must come after find-uxlc-accent-changes, whose JSON it reads, and after"
+        " wlc-json-and-unicode",
     ),
     StepRecord("wlc-diffs-420422", main_wlc_diffs_420422.almost_main, None),
     StepRecord("wlc-a-notes", main_wlc_a_notes.almost_main, None),
