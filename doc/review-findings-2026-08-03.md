@@ -145,8 +145,11 @@ out, and two of this doc's own descriptions of them turned out to be wrong.
   identical row cancel exactly, so the row count is no proxy for the verdicts. book-of-job's other
   five drifted copies stay untouched, being the ones that are not behavior-neutral.
 - **al-hatorah's stale remote branch — deleted**, and nothing else:
-  `origin/feat/override-diff-viewer`, tip 9873fe53. main is untouched at f4ef41e1, nothing was
-  merged, and `git branch -r` now lists `origin/HEAD` and `origin/main` alone. **This doc's "fully
+  `origin/feat/override-diff-viewer`, tip 9873fe53. The deletion left main untouched at f4ef41e1
+  and merged nothing, and `git branch -r` now lists `origin/HEAD` and `origin/main` alone. (A
+  concurrent session in that repo has since advanced main to fb1af0d0 on unrelated ITM work, so
+  f4ef41e1 is where main stood at the moment of the deletion rather than where it stands now.)
+  **This doc's "fully
   merged" was true of the branch's content and false of its ancestry**: `git branch -r --merged
   main` listed only `origin/main`, because the branch's two commits were replayed rather than
   merged and sit on main as same-message, same-date twins (ccf44337→d3defafc, 9873fe53→df9544a9,
