@@ -9,6 +9,11 @@ this comparison answers: **is Sefaria's Metsudah Hebrew text a deterministic tra
 CTR (or of a shared Judaica Press/Davka ancestor — see `rocc_1_on_the_provenance_of_ctr.py`),
 and what exactly is the transform?**
 
+**Answered, 2026-08-05: it is not a transform.** Neither text is a deterministic function of
+the other's bytes; both are independent conversions of one shared digital ancestor. The
+rules that do hold, their exception counts, and the mutual-loss argument that settles the
+direction question are in "Phase 2 results" below.
+
 This file is the single plan-and-findings document for the undertaking (per Ben's
 one-tracked-plan rule). Findings replace plan text here as phases complete.
 
@@ -30,6 +35,13 @@ one-tracked-plan rule). Findings replace plan text here as phases complete.
   and in `.novc\metsudah-vs-ctr\out\` (`phase2_report.txt`, `phase2_followup.txt`,
   `phase2_verdict.txt`, `phase2_encoding.json`, behind `phase2_encoding.py` and
   `phase2_followup.py`). Phase 3, the tracked write-up, awaits Ben.
+- 2026-08-05, session 4 (the Phase 3 chip session): Phase 3 run — the findings written up
+  below, the plan's Phase 2–3 specs replaced with done-pointers, the cross-link added to
+  `doc/ms-snips/README.md`, and no CTR verse vendored into `in/chabad-ctr/` (nothing in the
+  findings needs a tracked byte copy beyond the chanted words quoted here). One figure of
+  the `phase2_verdict.txt` draft was corrected on re-derivation (`phase3_check_figures.py`):
+  Metsudah has 17 marks logically before a ḥolam, not the draft's 21, against CTR's 507,
+  not the draft's ~450.
 
 ## Decisions already made (all Ben, 2026-08-04)
 
@@ -231,6 +243,111 @@ in `out/phase1_report.txt`):
 - Sof pasuq bookkeeping: CTR lacks the final colon of Esther 8:7 (Metsudah has it), and
   CTR's stray orphan ḥolam after Esther 3:1's colon was dropped and catalogued.
 
+## Phase 2 results (2026-08-05, session 3)
+
+Every number below was read out of the generated artifacts or re-derived from them by
+`phase3_check_figures.py`, which prints each derived sum alongside the raw counts behind it.
+To re-derive any number (a mismatch is a finding), run from the repo root:
+
+```
+.venv\Scripts\python.exe .novc\metsudah-vs-ctr\phase2_encoding.py
+.venv\Scripts\python.exe .novc\metsudah-vs-ctr\phase2_followup.py
+.venv\Scripts\python.exe .novc\metsudah-vs-ctr\phase3_check_figures.py
+```
+
+`phase2_encoding.py` writes `out/phase2_report.txt` and `out/phase2_encoding.json`: the
+accent-by-order-class censuses of both sides, the lookalike mapping tables in both
+directions, the pashta/qadma and telisha cross-tabs, and the meteg and ḥolam order counts.
+An accent's **order class** is where the accent sits, logically, among its letter's marks:
+after the vowel (post-vowel, the normal order), before it (pre-vowel, or pre-ḥolam when the
+vowel is a ḥolam), bare (the letter has no vowel), or word-initial (the accent stands as
+the first character of its chanted word). `phase2_followup.py` writes
+`out/phase2_followup.txt`: the residual tokens with byte-identity flags, the CTR yetiv list
+with Metsudah's answer at each, and the telisha and Jerusalem details.
+`out/phase2_verdict.txt` is session 3's draft of this section; session 4's re-derivation
+corrected its mark-order figures (see Status) and confirmed the rest.
+
+### Verdict — one shared digital ancestor, two independent conversions
+
+Neither text is a deterministic function of the other's bytes. The decisive shape is
+**mutual loss**, clearest at yetiv: CTR has a yetiv on 29 chanted words, Metsudah on 14,
+and only 5 chanted words have it in both — 24 are CTR-only, 9 Metsudah-only. Neither side
+can have recovered from the other the yetivs the other lost, so neither text is the other's
+child; both descend from a text that had all 38. The same shape at tipḥa — Metsudah lacks
+any accent in 14 slots where CTR has TIPEHA, while CTR's Esther 8:13 close is unaccented
+(לְהִנָּקֵם) where Metsudah has DEHI (לְהִנָּקֵ֭ם) — and at the telishas, where CTR has 96
+edge-position copies Metsudah lacks and Metsudah has 2 CTR lacks.
+
+The ancestor is a shared **digital** text, not merely a shared print exemplar — these are
+encoding-level facts no print carries. Of Metsudah's 24 residual tokens (R7 below), 20 are
+byte-identical to CTR. Of the 21 aligned Jerusalem qere-perpetuum instances, 10 are
+byte-equal in nonstandard encodings — both sides have יְרֽוּשָׁלָֽםִ at Lam 2:10, the
+qere-perpetuum ḥiriq logically after the final mem — while the other 11 are resolved
+differently per instance, each side nonstandard in different ways: at Lam 2:15 Metsudah has
+יְרֽוּשָׁלִָ֑ם where CTR has יְרֽוּשָׁלָ֑םִ. Of the sporadic pre-vowel anomalies, 7 slots
+are shared byte-exactly (all of them Jerusalem chanted words), while Metsudah has 4 CTR
+lacks and CTR has 5 Metsudah lacks. And the two sides agree on an ASCII colon for sof
+pasuq, a spaced ASCII pipe for the pasoleg, U+0598 (never U+05AE ZINOR) for the zarqa, no
+U+05C7 QAMATS QATAN, no U+05BA HOLAM HASER FOR VAV, and the same rare vav+ZWJ+ḥolam device
+(Metsudah 3 occurrences, CTR 5, on different chanted words). All of this is consistent with
+the shared Judaica Press / Davka ancestry that `rocc_1_on_the_provenance_of_ctr.py` argues
+for CTR.
+
+### The rules, with exception counts (Metsudah stated against CTR as proxy for the ancestor)
+
+- **R1 — TIPEHA→DEHI, a blanket recode.** 1314 of the 1335 aligned slots where CTR has
+  TIPEHA have DEHI in Metsudah, regardless of CTR's order class (1035 CTR post-vowel, 216
+  bare, 63 pre-ḥolam). Metsudah has its DEHI in the normal post-vowel order (census: 1100
+  post-vowel, 220 bare, one pre-ḥolam); the one pre-ḥolam residual is Esther 8:10, where
+  Metsudah has וַיַּחְתֹּ֭ם against CTR's וַיַּחְתֹּ֖ם — the recode fired and the reorder
+  did not. Exceptions: 6 TIPEHA survivors in Metsudah (Eccl 7:9, 7:21, 9:10, 10:4, 11:1,
+  Esther 2:4 — five of the six byte-identical whole tokens to CTR, and all six chanted
+  words end in a final kaf), 14 slots where Metsudah lacks any accent, one MERKHA. Note
+  that CTR's TIPEHA is never logically before a below-the-letter vowel in these five
+  books — its deḥi order appears only as pre-ḥolam (63) — so the order-class-conditioned
+  converter the Phase 2 plan imagined had nothing to condition on; the exchange is a
+  blanket recode of the codepoint.
+- **R2 — GERESH→GERESH MUQDAM, likewise blanket.** 128 of 130 aligned slots; the
+  exceptions are one GERESH survivor (Lam 2:17, byte-identical to CTR) and one slot where
+  Metsudah lacks the accent.
+- **R3 — mahapakh.** Both sides have the MAHAPAKH codepoint: 507 agreeing slots, 7 where
+  Metsudah lacks the accent. CTR never has post-vowel YETIV for a mahapakh in these five
+  books, so the YETIV convention `rocc_2_pre_vowel_accents_in_ctr.py` documents has no
+  Megillot instances to test.
+- **R4 — yetiv, the near-disjoint pair.** No mapping in either direction; the counts are
+  the mutual-loss argument above. CTR's 29 are 23 pre-vowel, 3 pre-ḥolam, 3 bare — the
+  pre-vowel convention, here on a genuine prose yetiv. Metsudah's 14 all have the yetiv as
+  the first character of the chanted word, the same placement as 10 of Metsudah's telisha
+  gedolas. Lam 2:3 is one of the 24 CTR-only instances: CTR has כֹּ֚ל — the yetiv
+  logically before the ḥolam — where Metsudah has כֹּל with no accent, matching the
+  quotation in the ms-snips correction thread.
+- **R5 — pashta/qadma, per-instance nondeterminism.** At the atom-final letter, where CTR
+  is near-uniform PASHTA, Metsudah has PASHTA 723 times and QADMA 143, with no discernible
+  conditioning: the same atom goes both ways — Metsudah has נָֽעֳמִי֙ at Ruth 1:8 and
+  נָֽעֳמִי֨ at Ruth 1:11, both against CTR's נָֽעֳמִי֙. (The other direction is marginal:
+  2 atom-final slots where Metsudah has PASHTA against CTR's QADMA.) On non-final letters
+  — a stress helper or a genuine qadma — both sides have QADMA, 438 slots. Variation per
+  instance of one shared atom cannot be a function of CTR's bytes.
+- **R6 — telishas.** CTR nearly always has the telisha in its edge position — postpositive
+  on the last letter for TELISHA QETANA, prepositive on the first letter for TELISHA
+  GEDOLA: 71 and 45 edge copies — plus a stress-helper copy at the stressed letter where
+  the stress is not at the edge. Metsudah usually keeps the stress copy and lacks the edge
+  copy (9 of the 71 and 11 of the 45 kept), leaving 49 qetana and 8 gedola chanted words
+  with no telisha at all in Metsudah. Ruth 3:15 shows the gedola shape — Metsudah has
+  הָבִ֠י where CTR has הָ֠בִ֠י — and Ruth 2:2 the qetana shape: Metsudah has וַתֹּ֩אמֶר
+  where CTR has וַתֹּ֩אמֶר֩. So the answer to Phase 1's question runs the other way
+  around: CTR's extra copies are not stress helpers but the accent in its edge position —
+  the copy Metsudah lost — while the copy Metsudah kept is, at a non-edge letter, the
+  stress helper.
+- **R7 — mark order.** Metsudah is normalized to vowel-before-mark nearly everywhere: 17
+  marks logically before a ḥolam remain (15 accents and 2 metegs, in 17 tokens, all in
+  Esther), against CTR's 507 marks before a ḥolam, of which 63 are the deḥi-order TIPEHAs
+  of R1 and 100 are metegs. The meteg censuses: Metsudah has 1883 metegs after the vowel
+  and 2 before a ḥolam; CTR has 1827 after, 100 before a ḥolam, and 4 before a
+  below-the-letter vowel. Metsudah's residual tokens — the 7 accent survivors of R1–R2
+  plus the 17 before-ḥolam tokens — number 24, and 20 of them are byte-identical to CTR:
+  unnormalized shared residue, with Esther 8:10's וַיַּחְתֹּ֭ם among the 4 that differ.
+
 ## Phases (each ends with a chat report; pause after Phase 1 for Ben)
 
 **Phase 0 — done 2026-08-04.** Results in "Phase 0–1 results" above.
@@ -241,22 +358,17 @@ plain `zip_longest` smears a grouping difference across the rest of its verse, s
 words are paired by letters-only similarity (difflib blocks, `zip` within a block) and
 `zip_longest` runs only inside unaligned blocks. **Paused for Ben before Phase 2.**
 
-**Phase 2 — encoding-signature analysis (the provenance verdict).** For every Metsudah
-occurrence of U+05AD DEHI, U+059D GERESH MUQDAM, U+05AE ZINOR (if any), and U+05A4 MAHAPAKH
-vs U+059A YETIV: tabulate the CTR counterpart codepoint **and its order class**
-(pre-vowel / post-vowel / bare / pre-ḥolam), and vice versa for every CTR pre-vowel
-accent. Also compare: qamats-qatan (U+05C7) usage (CTR count expected 0 — confirm both
-sides), meteg order relative to its vowel, ketiv/qere presentation, the orphan-vowel
-hacks, letters-only divergences from Phase 1. Verdict: deterministic transform of CTR /
-shared ancestor with independent conversion / unrelated. State the rule(s) and the
-exception count for each.
+**Phase 2 — done 2026-08-05.** Results in "Phase 2 results" above; the artifacts are
+`out/phase2_report.txt`, `out/phase2_encoding.json` and `out/phase2_followup.txt`, behind
+`phase2_encoding.py` and `phase2_followup.py`, with session 3's draft verdict in
+`out/phase2_verdict.txt`. Beyond the tabulations the plan named, Phase 2 added the
+pashta/qadma and telisha cross-tabs, for the two patterns Phase 1 surfaced.
 
-**Phase 3 — findings write-up.** Replace the plan sections of this doc with dated
-findings (hebrew-prose skill loaded first); add the Lam 2:3 outcome to
-`doc/ms-snips/README.md` §"The Metsudah digital edition confuses deḥi and tipeḥa" as a
-cross-link, not a restatement. Commit and push (commit-at-will stands). If any CTR verse
-deserves a permanent vendored copy, follow the `in/chabad-ctr/` spot-sample pattern
-(`D1-Psalms.json` shape) rather than inventing a new one.
+**Phase 3 — done 2026-08-05.** The findings sections above replaced the plan text
+(hebrew-prose skill loaded first), and `doc/ms-snips/README.md` §"The Metsudah digital
+edition confuses deḥi and tipeḥa" now cross-links here for the Lam 2:3 outcome. No CTR
+verse was vendored into `in/chabad-ctr/`: nothing in the findings needs a tracked byte
+copy beyond the chanted words quoted above, and chabad.org grants no license for more.
 
 ## What session 1 left behind that should NOT be used
 
