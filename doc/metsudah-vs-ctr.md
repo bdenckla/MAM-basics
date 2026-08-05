@@ -24,6 +24,12 @@ one-tracked-plan rule). Findings replace plan text here as phases complete.
   `https://www.sefaria.org/api/texts/versions/Ruth` and `.../Esther`; the CSV downloads
   lack the field), so the Metsudah side is doubly covered; chabad.org grants no license
   for CTR, so CTR quotation stays at the scale of chanted words.
+- 2026-08-05, session 3 (the Phase 2 chip session): Phase 2 run; verdict — shared
+  ancestor with independent conversions, neither text a deterministic transform of the
+  other — with the order-class tabulations and exception counts in the session report
+  and in `.novc\metsudah-vs-ctr\out\` (`phase2_report.txt`, `phase2_followup.txt`,
+  `phase2_verdict.txt`, `phase2_encoding.json`, behind `phase2_encoding.py` and
+  `phase2_followup.py`). Phase 3, the tracked write-up, awaits Ben.
 
 ## Decisions already made (all Ben, 2026-08-04)
 
