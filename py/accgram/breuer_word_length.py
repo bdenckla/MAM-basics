@@ -91,6 +91,7 @@ from accgram.prose_scanner import HasLegarmeh, Token, scan_accents
 from accgram.tree import tree_to_obj
 from mb_cmn import bib_locales as tbn
 from mb_cmn import file_io
+from mb_cmn import hebrew_punctuation as hpunc
 from mb_cmn import provenance
 from wlc_cmn.wlc_book_codes import wlc_bb_to_bk39id
 
@@ -724,6 +725,36 @@ def realms_of_verse(
             }
         )
     return rows
+
+
+def mam_atoms(vels: list) -> list[str]:
+    """MAM-simple's atoms, with the paseq/legarmeh mark folded onto the atom before it.
+
+    MAM-simple emits ``lp-paseq`` and ``lp-legarmeih`` as a lone PASOLEG token standing between
+    two atoms, and ``chanted_word_accents._atom_frags`` then makes it a unit of its own -- a
+    space-delimited run of the mark body carrying no accent.  WLC's side does not: the paseq is
+    part of the word it follows, so ``uni_to_marks`` puts it into that word's marks with NO
+    space.  The difference is not cosmetic.  ``prose_scanner`` fuses munaḥ with a following
+    U+05C0 into LEGARMEH only within one unit, so a space in between costs the verse its
+    legarmeh: Genesis 19:14 lost two, and the grammar then had no parse for what was left.
+    That was 79 of the 85 verses this survey first called ungrammatical in MAM, and nearly all
+    of them are clean in WLC -- which is the tell, since MAM and WLC agree about those accents.
+    Six MAM verses stay ungrammatical, and those are a different thing entirely: places where
+    MAM's accentuation itself is one the prose grammar has no rule for.
+
+    Folding it onto the previous atom puts MAM's body in the shape the scanner reads.  A
+    PASOLEG with no atom before it would be a verse opening on a paseq, which does not occur;
+    it is kept as its own atom rather than dropped, so such a verse would fail loudly.
+    """
+    atoms: list[str] = []
+    for vel in vels:
+        if not isinstance(vel, str) or not vel:
+            continue
+        if vel == hpunc.PASOLEG and atoms:
+            atoms[-1] += vel
+        else:
+            atoms.append(vel)
+    return atoms
 
 
 def scan_mam_units(stats: Counter, notes: dict) -> list[dict]:
