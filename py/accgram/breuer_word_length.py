@@ -56,6 +56,19 @@ Phonetic MAM through this repo's BHS-to-MAM verse map (``py_misc/vtrad_data``'s 
 A unit that will not align, and a verse the grammar will not parse, are COUNTED AND NAMED in
 either corpus, never dropped quietly.
 
+THE VERSE THIS SURVEY CAME FROM is Gen 40:17, which is also a worked example of why the two
+corpora are kept apart.  MAM has a munaḥ and a revia there, ובס֣ל הֽעלי֗ון; the Leningrad Codex,
+and so WLC, has a zaqef qatan instead, ובס֣ל העלי֔ון, and MAM's apparatus records the split and
+tags the entry הערת ברויאר.  The argument against the zaqef is §7's rule applied to one verse: a
+zaqef there would have taken a pashta on the first chanted word rather than the munaḥ written.
+This survey is what can weigh that; the grammar cannot.  ``prose_ply_grammar`` consumes accent
+types alone and sees no chanted-word boundary, let alone a syllable, so it parses the WLC verse
+clean and parses all four combinations legal -- a munaḥ or a pashta on the first chanted word,
+against a zaqef or a revia on the second.  The survey classifies הֽעלי֗ון long on the two-syllable
+criterion under every count computed, so on the WLC side the unit sits in the long-yet-a-servant
+residue §8 calls rare, and is named in ``different_accents_units``; on the MAM side the revia
+leaves no zaqef realm there to measure at all.
+
 WRITES TO ``.novc/``, not to ``out/``.  This is a measurement, not a generated artifact of the
 corpus, and nothing here regenerates anything committed.  Run via
 ``main_accgram.py survey-breuer-zaqef-units``.
@@ -765,16 +778,13 @@ def scan_mam_units(stats: Counter, notes: dict) -> list[dict]:
                 notes["mam_verse_missing"].append(bcv)
                 continue
             verse = payload["mam_simple_verse"]
-            vels = verse["vels"]
-            if verse["vels_cant_alef"] != vels:
+            if verse["vels_cant_alef"] != verse["vels"]:
                 # A merged dual cantillation.  Held back BEFORE the grammar, which does not
                 # terminate on one -- see this function's docstring.
                 stats["verses dually cantillated, held back from the grammar"] += 1
                 notes["dually_cantillated"].append(bcv)
                 continue
-            body, units = cwa._verse_units(
-                cwa._atom_frags([v for v in vels if isinstance(v, str)])
-            )
+            body, units = cwa._verse_units(cwa._atom_frags(mam_atoms(verse["vels"])))
             stats["verses"] += 1
             tokens = [Token("TILDE", "")] + scan_accents(
                 body, bb, chnu, vrnu, has_legarmeh
