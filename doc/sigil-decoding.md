@@ -94,6 +94,14 @@ The main sources currently identified are:
 
 1. Wikisource appendices:
    https://he.wikisource.org/wiki/ויקיטקסט:מבוא_למקרא_על_פי_המסורה/נספחים
+
+   **No copy of this page is mirrored anywhere in the local repos** — `in/mam-ws/` holds the
+   books, not the introduction — so it has to be fetched, and a summarizing fetch is not good
+   enough for it. On 2026-08-06 one such fetch reported `ו` as "Leningrad Codex, Washington
+   Pentateuch", having merged `ו` with the neighbouring `ל` entry. Pull the wikitext verbatim
+   instead, with `action=raw` on the same title, and read it:
+   `https://he.wikisource.org/w/index.php?title=<url-encoded title>&action=raw` — about 144,000
+   characters, of which the Torah manuscript roster is the first hundred lines.
 2. JC3 sigil list in the holman-ketiv-qere material:
    `../holman-ketiv-qere/docs/JC3 The Biblical Text in the JC Edition #19-ז - English.html`
    `../holman-ketiv-qere/docs/JC3 The Biblical Text in the JC Edition #19-ז.html`
@@ -143,7 +151,11 @@ translation-policy glossary.)
 | א(ס) | Aleppo Codex according to Jacob Sapir's notes in Me'orot Nathan | Confirmed | Wikisource, Accordance header | Both sources tie this specifically to Jacob Sapir and Me'orot Nathan. |
 | ב | Ms Or 4445 in the British Library (Torah) | Confirmed | Accordance header, Wikisource | Also appears as כתי״ב in prose contexts. |
 | ב1 | British Library Or. 2375 | Confirmed | JC3 sigil list, MAM-with-doc corpus evidence | Frequently cited in Ketuvim contexts; often described in prose as a Yemenite manuscript. |
+| ג | Ms Gaster 1, British Library Or. 9879 (fragments of Ketuvim; Egypt, 10th century) | Confirmed | Wikisource | The appendix writes this `כתי"ג` and bolds the ג of גסטר to explain the letter. The corpus spells the same manuscript `גסטר1`, which has its own row below; the two are one manuscript, not two. A bare `ג` in a note is more often a chapter number than this sigil — see "Not every frequent token is a sigil" below. |
+| ה | Codex Hilleli, Ms New York JTS 401 (= L44a); Toledo, Spain, 1241 | Confirmed | Wikisource | `ה` in Breuer, and `כתי"ה` in the appendix. A Sephardic manuscript, so it normally stands beside ש2, פריז 25 and תנ"ך ליסבון. 41 authority-expression occurrences. |
+| ו | The Washington Pentateuch, Museum of the Bible, Washington DC, Ms. 882 (Torah; Eastern script, 11th century) | Confirmed | Wikisource | `כתי"ו` in the appendix, `WP` at IHBMR. One of the seven manuscripts MAM checked through most of the Torah, and the highest-frequency sigil in the whole inventory — 586 authority-expression occurrences, plus 22 of `ו?` — yet it had no entry here until 2026-08-06. |
 | ותיקן-448 | Vatican Ms 448 | Confirmed | MAM-with-doc corpus evidence | The shelfmark is already explicit in the corpus form; prose notes also cite the same manuscript as `vat448`. |
+| ט3 | Ms Tbilisi 3, the "Keter Lailashi" / "Ḥumash Lailashi" (Torah; Eastern script, 10th or 11th century) | Confirmed | Wikisource | The appendix says MAM did not use it in preparing the edition, and cites it to enrich the documentation of the text. One authority-expression occurrence, at Genesis 45:14. |
 | ק | Cairo Codex of the Prophets | Confirmed | Accordance header, Wikisource | Also appears as כתי״ק in prose contexts. |
 | ק3 | Cairo 18 manuscript (Torah) | Confirmed | Wikisource | Listed there explicitly as כתי״ק3. |
 | ל | Leningrad Codex | Confirmed | Accordance header, Wikisource | Also appears as כתי״ל in prose contexts. |
@@ -161,6 +173,7 @@ translation-policy glossary.)
 | ש1 | Ms Sassoon 1053 | Confirmed | Accordance header, Wikisource | |
 | ש2 | Ms Sassoon 82 ("Keter Shem Tov") | Confirmed | JC3 sigil list, MAM-with-doc corpus evidence | Often a Sephardic manuscript in prose explanations. |
 | ת | Ms Cambridge Add. 1753, cited as Y in Accordance | Confirmed | Accordance header | The Hebrew sigil is confirmed in the Accordance header, but see the note below about preferred display form. |
+| ת451 | Yemenite Ketuvim manuscript by Joseph ben Benaya, 1484–85; formerly Meir Benayahu Ms T 451, present location unknown | Confirmed | Wikisource | `כתי"ת451` in the appendix. Cited in Daniel beside ק-מ and ב1. This bears on the ב2 question below: the appendix has an entry for ת451 and none at all for ב2. |
 | ל-א | Ms Petersburg EVR-II-B-55 / B 247 | Confirmed | Wikisource | Newer than the Accordance list. |
 | ק13 | Ms Cambridge T-S 13 | Confirmed | Wikisource | |
 | גסטר1 | Ms Gaster 1 | Confirmed | Wikisource | |
@@ -181,6 +194,8 @@ translation-policy glossary.)
 | דותן | Dotan editions and writings | Confirmed | Accordance header, Wikisource | |
 | רמ"ה | Rabbi Meir Halevi Abulafia / Masoret Seyag la-Torah | Confirmed | Accordance header, translation code | |
 | תיגאן | Yemenite manuscripts / Taj tradition | Confirmed | Accordance header, Wikisource | Sometimes English explanation should say Yemenite manuscripts or Taj depending on context. |
+| תאג' חבשוש | The Ḥabshush Taj — National Library of Israel Ms Heb. 5840=34, Torah with Haftarot and Targum, written by David ben Benaya ben Saadia ben Zechariah the scribe, 1485 | Confirmed | Wikisource | A manuscript Taj, as against the printed one in the row below. |
+| תאג' דפוס ראשון | The first printed Taj — *Keter Torah*, Jerusalem 1894–1901, Torah with Targum and Tafsir in the Yemenite tradition, set from manuscripts | Confirmed | Wikisource | The appendix attaches a caveat that a translation should not drop: the Targum and Tafsir there are generally accurate, but in the Torah text itself the attempt to conform it to the Yemenite version left the standard printed reading standing in many places, so where a manuscript Taj differs the manuscript is to be preferred and this printing is a first attempt only. Genesis 40:17 is a note where both Tajes are cited and they disagree. |
 | המקליד | Westminster / UXLC transcript of Leningrad | Confirmed | Accordance header | Often better translated as transcript or transcriber depending on sentence role. |
 
 ### Masora-Specific Qualifiers
@@ -291,7 +306,43 @@ Based on the current inventory pass, plus the first follow-up decoding pass, the
 
 | Form | Priority | Why it belongs in the target set | Current state |
 |---|---|---|---|
-| ב2 | High | Recurrent manuscript sigil with 27 current inventory-tracked authority-expression occurrences in Daniel, alongside ב1 and ק-מ, including explicit `כתבי־היד התימנים (ק-מ,ב1,ב2)` prose. | Provisionally classified as a Yemenite Ketuvim manuscript; exact manuscript identifier still unknown, and current local evidence leans against identifying it with `ת451`. |
+| ב2 | High | Recurrent manuscript sigil with 27 current inventory-tracked authority-expression occurrences in Daniel, alongside ב1 and ק-מ, including explicit `כתבי־היד התימנים (ק-מ,ב1,ב2)` prose. | Provisionally classified as a Yemenite Ketuvim manuscript; exact manuscript identifier still unknown, and current local evidence leans against identifying it with `ת451`. The Wikisource appendix, read in full on 2026-08-06, has no entry for ב2 at all, so the best source available cannot settle it. |
+
+### That table was wrong for months, and how the gap was found
+
+Until 2026-08-06 the table above listed ב2 alone, which read as "one sigil left to decode."
+The real backlog was larger, and `ו` was in it: 586 authority-expression occurrences, the most
+frequent sigil in the entire inventory, with no entry in this file. `ה` (41 occurrences, Codex
+Hilleli) and `ת451` were missing too, as were both Taj entries. All five are in the tables above
+now, from the Wikisource appendix.
+
+The gap surfaced by accident, from a request to translate the Genesis 40:17 note, which cites
+`ו` and both Tajes. What it shows is that the curation step this section describes was never
+actually run against the confirmed tables — the raw survey happened, and the comparison did not.
+The comparison is mechanical: parse the first column out of the tables above, parse
+`expression_tokens` out of `out/sigil-inventory.json`, and subtract. Run it after any pass that
+adds entries here; a scratch script in `.novc/` is the right home for it, per the throwaway-script
+rules in `~/.claude/CLAUDE.md`.
+
+### Not every frequent token is a sigil
+
+The subtraction above surfaces noise as well as sigils, because the inventory tokenizer splits on
+punctuation and keeps whatever looks sigil-shaped. Confirmed non-sigils, so that no later pass
+tries to decode them:
+
+- **`ח`** (34 occurrences) — the chapter number in `ובספר טעמי המקרא פרק ח`, a citation of chapter
+  8 of Breuer's *Ṭaʿamei ha-Miqra*. Not a manuscript.
+- **A bare `ג`** (3 occurrences) — a chapter number in verse references such as `לעיל ג,יז`. The
+  manuscript sigil `ג` is always written `כתי"ג` in the appendix and `גסטר1` in the corpus.
+- **Ordinary Hebrew words** — `כן`, `וכמו`, `וכך`, `ראו`, `אצל`, `לפי`, `יש`, `את`, `של` and the
+  like all clear a count of 20.
+- **Run-together tokens** such as `ובדפוסיםל` (46 occurrences), where a note part ends and the
+  next begins with no separator between them. That one is an inventory defect rather than a
+  decoding question.
+
+This is the same hazard `CLAUDE.md` records for issue citations, where `#NN` sometimes names a
+Yeivin section and sometimes a colour: read the surrounding sentence before deciding what a token
+is.
 
 The same pass also showed that some high-frequency raw candidates are not really new sigils to decode, but rather prose aliases or prefixed forms that should be normalized against existing entries. Important examples include:
 
