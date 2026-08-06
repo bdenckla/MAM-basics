@@ -18,20 +18,20 @@ zaqef node governs part of that zaqef's realm rather than the whole of it.
 
 TWO CHANTED WORDS, NOT TWO LEAVES, and the difference is not small.  A tree leaf is an accent
 TOKEN, and a chanted word can carry two of them -- munaḥ-zaqef above all, ITM §219's fourth
-variant of the zaqef melody.  Counting leaves puts 299 realms in the set whose two accents
-stand on ONE chanted word, and leaves out 342 whose two chanted words carry three or more
-tokens between them.  Both counts are in the JSON, because 5,948-by-leaf-count is the figure
-this survey was first sized against and the two must not be confused.
+variant of the zaqef melody.  Counting leaves instead puts a few hundred realms in the set
+whose two accents stand on ONE chanted word, and leaves out a few hundred more whose two
+chanted words carry three or more tokens between them.  Both counts are in each corpus's
+``counts`` block, because a leaf count is what this survey was first sized against and the two
+must not be confused.
 
-SYLLABLES ARE BREUER'S, WHICH ARE THE FAT ONES, and he says so outright rather than leaving it
-to be inferred: "A consonant vocalized with a *sheva na'* does not form a syllable, but rather
-joins the syllable that follows it; therefore לְהַבְדִּיל, שָׁרְצוּ, וּמָלְאוּ, לְמַאֲכָל -- all these are words
-consisting of two syllables" (Instructions for the Reader, ``C00-S000.md``, page [xvi] of the
-scan).  His *sheva na'* covers a simple mobile shewa, every ḥataf, AND a connective vav pointed
-with shuruq that is not itself followed by a shewa.  The thin count -- one syllable per vowel
-however short -- is computed beside it, and reported, because the two answer differently: on
-the thin count four of Breuer's six SHORT examples come out long and three of his six TINY
-examples come out short.
+SYLLABLES ARE BREUER'S, and he defines them, so which count to use is a matter of reading him
+and not an open question: "A consonant vocalized with a *sheva na'* does not form a syllable,
+but rather joins the syllable that follows it" (Instructions for the Reader, ``C00-S000.md``,
+page [xv] of the scan), his *sheva na'* covering a simple mobile shewa, every ḥataf, and a
+connective vav pointed with shuruq that no shewa follows.  A count of one syllable per vowel is
+computed beside it only as a check that the classifier reads that definition rather than a
+naive one -- it puts four of his six SHORT examples in the long class -- and is reported as one
+figure under ``syllable_count``, not as a rival cross-tabulation.
 
 THE ORACLE IS PHONETIC MAM, al-hatorah's ``io/a01-phonetic-std-set``, whose ``jta`` field marks
 the syllable boundaries and the stress.  Issue wlc-utils#48 asks for syllabification, open and
@@ -42,15 +42,19 @@ and small vowels -- it writes both patax and qamats gadol ``a``, and both qubuts
 nucleus.  The alphabets are read off al-hatorah's ``py/aht_phon/jtech_ascii.py`` and
 ``deep_latin.py``.
 
-THE CORPUS MISMATCH is the design hazard and is reported rather than smoothed over.  The parse
-trees are over WLC 4.22, a transcription of the Leningrad Codex; Phonetic MAM is MAM.  Verses
-are aligned by reference through MAM-basics' own BHS-to-MAM verse map (``py_misc/vtrad_data``'s
-declared spans), chanted words by index with the letters checked and a by-letters fallback, and
-a unit that will not align is COUNTED AND NAMED, never dropped quietly.  Where the two texts
-have different accents on either chanted word the unit is flagged, and the cross-tabulation is
-given twice: over everything, and over the units where MAM has the same accents.  The second is
-the one a claim about the accentuation takes, MAM being the consensus text and WLC a
-transcription of one manuscript.
+THE CORPUS IS MAM, because a claim about what the accentuation DOES takes a consensus text.
+There is no committed tree corpus over MAM and there need not be one: a tree is what
+``prose_scanner`` and ``prose_ply_grammar`` make of a mark body, and
+``printed_decalogue.parse_marks_body`` already runs that pipeline over bodies built somewhere
+other than the WLC reader.  ``scan_mam_units`` does the same off MAM-simple's
+``json-vtrad-mam``, which is the versification Phonetic MAM numbers its verses in too, so the
+join needs no verse map.  WLC 4.22 is measured beside it, off the committed trees, and is there
+to be read AGAINST the MAM figures rather than averaged with them: it is the Westminster
+transcription of the Leningrad Codex, so what it answers is how one manuscript as transcribed
+scores against a rule stated for the Masoretic accentuation.  Its refs are BHS's, so they reach
+Phonetic MAM through this repo's BHS-to-MAM verse map (``py_misc/vtrad_data``'s declared spans).
+A unit that will not align, and a verse the grammar will not parse, are COUNTED AND NAMED in
+either corpus, never dropped quietly.
 
 WRITES TO ``.novc/``, not to ``out/``.  This is a measurement, not a generated artifact of the
 corpus, and nothing here regenerates anything committed.  Run via
@@ -66,8 +70,12 @@ from collections import Counter, defaultdict
 from pathlib import Path
 
 from accgram import chanted_word_accents as cwa
+from accgram import mam_simple_verse
 from accgram import maqaf_nonfinal_accents as mna
-from accgram.prose_scanner import HasLegarmeh, scan_accents
+from accgram import prose_filter
+from accgram.prose_ply_grammar import LOCATION_ONLY, build_parser, parse_tokens
+from accgram.prose_scanner import HasLegarmeh, Token, scan_accents
+from accgram.tree import tree_to_obj
 from mb_cmn import bib_locales as tbn
 from mb_cmn import file_io
 from mb_cmn import provenance
@@ -337,22 +345,24 @@ def classify(
     return "short", criteria, head_vowel
 
 
-# The three syllable counts, and what each is.  ``thin`` is Phonetic MAM's own, one syllable
-# per vowel however short; ``fat`` is the task's formulation of Breuer's, every shewa or ḥataf
-# syllable merged forward; ``fat_breuer_vav`` is Breuer's in full, with the connective vav of
-# C00-S000.md:281 merged forward as well.
-CONVENTIONS = ("thin", "fat", "fat_breuer_vav")
+# BREUER is the syllable count, his own (C00-S000.md:281, :289).  The other two are here as a
+# check on it rather than as alternatives: NO_CONNECTIVE_VAV_CLAUSE drops the last third of his
+# sheva na' definition, and PER_VOWEL is the naive count of one syllable per vowel however
+# short, which is what a classifier that had not read him would produce.
+BREUER = "breuer"
+NO_CONNECTIVE_VAV_CLAUSE = "breuer_without_the_connective_vav_clause"
+PER_VOWEL = "one_syllable_per_vowel"
+CONVENTIONS = (BREUER, NO_CONNECTIVE_VAV_CLAUSE, PER_VOWEL)
 
 
 def analyse(jta: str, udl: str) -> dict:
     """Every count and every verdict for one chanted word."""
     syllables = syllabify(jta, udl)
-    out: dict = {"jta": jta, "syllables_thin": len(syllables)}
-    out["before_stress_thin"] = next(i for i, s in enumerate(syllables) if s.stressed)
+    out: dict = {"jta": jta}
     for name, groups in (
-        ("thin", [[s] for s in syllables]),
-        ("fat", fat_groups(syllables, breuer_vav=False)),
-        ("fat_breuer_vav", fat_groups(syllables, breuer_vav=True)),
+        (BREUER, fat_groups(syllables, breuer_vav=True)),
+        (NO_CONNECTIVE_VAV_CLAUSE, fat_groups(syllables, breuer_vav=False)),
+        (PER_VOWEL, [[s] for s in syllables]),
     ):
         verdict, criteria, head = classify(syllables, groups)
         out[name] = {
@@ -635,8 +645,164 @@ def pin_breuer_s8(residue: list[dict]) -> list[dict]:
     ]
 
 
-def scan_units(stats: Counter, notes: dict) -> list[dict]:
-    """Every zaqef realm of the committed prose trees that spans exactly two chanted words."""
+def realms_of_verse(
+    bcv: str,
+    status: str,
+    tree: dict,
+    units: list,
+    tokens: list,
+    mam_ref: tuple[int, int],
+    stats: Counter,
+) -> list[dict]:
+    """One verse's zaqef realms that span exactly two chanted words.
+
+    The shared core of both corpora, so MAM and WLC cannot come to different answers about the
+    same tree.  ``mam_ref`` is the Phonetic MAM (chapter, verse) this verse joins to, carried
+    here because it is the caller that knows which versification its refs are in.
+    """
+    rows: list[dict] = []
+    accents = [t for t in tokens if t.type not in cwa._NOT_AN_ACCENT_TOKEN]
+    of_leaf = leaf_to_token(tree_leaves(tree), [t.leaf for t in accents])
+    unit_of_token = [cwa._unit_at(units, t.start) for t in accents]
+    starts = [u.start for u in units if u.is_word]
+    for label, lo, hi in zaqef_realms(tree):
+        stats["zaqef realms"] += 1
+        two_leaves = hi - lo == 2
+        stats["realms with exactly 2 leaves"] += two_leaves
+        span: list = []
+        has_error = False
+        for leaf_index in range(lo, hi):
+            token_index = of_leaf[leaf_index]
+            if token_index is None:
+                has_error = True
+                continue
+            unit = unit_of_token[token_index]
+            if unit is not None and (not span or span[-1] is not unit):
+                span.append(unit)
+        if has_error:
+            stats["realms holding an ERROR leaf"] += 1
+            stats["  ... of them with exactly 2 leaves"] += two_leaves
+            continue
+        stats[f"realms spanning {min(len(span), 9)} chanted words"] += 1
+        if len(span) != 2:
+            stats["2-leaf realms spanning other than 2 chanted words"] += two_leaves
+            continue
+        stats["2-chanted-word realms with more than 2 leaves"] += not two_leaves
+        first, zaqef = span
+        rows.append(
+            {
+                "bcv": bcv,
+                "mam_ref": list(mam_ref),
+                "label": label,
+                "status": status,
+                "verse_initial": starts.index(first.start) == 0,
+                "first_word": cwa._display(first),
+                "first_word_pointed": first.text,
+                "first_accents": [
+                    t.leaf for t, u in zip(accents, unit_of_token) if u is first
+                ],
+                "zaqef_word": cwa._display(zaqef),
+                "zaqef_word_pointed": zaqef.text,
+                "zaqef_accents": [
+                    t.leaf for t, u in zip(accents, unit_of_token) if u is zaqef
+                ],
+                "index_first": starts.index(first.start),
+                "index_zaqef": starts.index(zaqef.start),
+            }
+        )
+    return rows
+
+
+def scan_mam_units(stats: Counter, notes: dict) -> list[dict]:
+    """The measured set over MAM -- the corpus a claim about the accentuation takes.
+
+    There is no committed tree corpus over MAM, and there does not need to be one: a tree is
+    what ``prose_scanner`` and ``prose_ply_grammar`` make of a mark body, and
+    ``printed_decalogue.parse_marks_body`` already runs that pipeline over bodies built
+    somewhere other than the WLC reader.  This does the same, atom by atom off MAM-simple, so
+    the grammar, the scanner and the leaf names are the ones ``prose_run`` uses and the two
+    corpora are measured by one instrument.
+
+    MAM'S NATIVE VERSIFICATION, ``json-vtrad-mam``, which is what Phonetic MAM numbers its
+    verses in too, so the join needs no verse map at all and Joshua 21, 1 Samuel 24 and
+    Jeremiah 31 stop looking like a difference between two texts.
+
+    A DUALLY CANTILLATED VERSE IS HELD BACK BEFORE THE GRAMMAR SEES IT, and that is not
+    fastidiousness: ``parse_tokens`` DOES NOT TERMINATE on one.  In the two Decalogues and at
+    Genesis 35:22 MAM has both cantillations at once, and the merged body is not a prose token
+    stream -- Exodus 20:7 is ten tokens long and the parser was still in it after ten minutes.
+    Nothing in this repo had fed the grammar a merged body before: ``prose_run`` routes those
+    loci through ``dual_cant_detangle`` first, and ``printed_decalogue`` parses the strands.
+    MAM-simple says which verses they are, its ``cant-alef`` stream differing from the
+    ``cant-combined`` one exactly there, so they are found from the data and not from a list of
+    references.  They are counted and named under ``dually_cantillated``.
+
+    Detangling them here instead, and measuring each strand, is a real option and a separate
+    piece of work: the Decalogue has its own machinery in ``dual_cant_run`` and
+    ``printed_decalogue``, and a zaqef realm read off one strand is a different measured object
+    from one read off a single-cantillation verse.
+
+    A verse the grammar rejects outright is likewise counted and named, under ``mam_no_parse``.
+    """
+    mam_dir = wlc_paths.require_mam_simple_vtrad_mam_dir()
+    refs_by_book = mam_simple_verse.mam_simple_refs(mam_dir)
+    parser = build_parser()
+    rows: list[dict] = []
+    for bb, refs in refs_by_book.items():
+        loaded = mam_simple_verse.load_mam_simple_for_refs(
+            mam_dir, {bb: refs}, include_strands=True
+        )
+        # One HasLegarmeh per book, as prose_scanner.scan_book holds one: its 17-passage list
+        # is walked monotonically and its 1 Samuel 14:47 counter resets per book.
+        has_legarmeh = HasLegarmeh()
+        for chnu, vrnu in sorted(refs):
+            if not prose_filter.should_keep_line(bb, chnu, vrnu):
+                continue
+            bcv = f"{bb}{chnu}:{vrnu}"
+            payload = loaded.get(bcv)
+            if payload is None:
+                stats["verses MAM-simple has no record for"] += 1
+                notes["mam_verse_missing"].append(bcv)
+                continue
+            verse = payload["mam_simple_verse"]
+            vels = verse["vels"]
+            if verse["vels_cant_alef"] != vels:
+                # A merged dual cantillation.  Held back BEFORE the grammar, which does not
+                # terminate on one -- see this function's docstring.
+                stats["verses dually cantillated, held back from the grammar"] += 1
+                notes["dually_cantillated"].append(bcv)
+                continue
+            body, units = cwa._verse_units(
+                cwa._atom_frags([v for v in vels if isinstance(v, str)])
+            )
+            stats["verses"] += 1
+            tokens = [Token("TILDE", "")] + scan_accents(
+                body, bb, chnu, vrnu, has_legarmeh
+            )
+            tree = parse_tokens(parser, tokens)
+            if tree is None or tree is LOCATION_ONLY:
+                stats["verses the prose grammar will not parse"] += 1
+                notes["mam_no_parse"].append(bcv)
+                continue
+            tree_obj = tree_to_obj(tree)
+            status = "error" if "ERROR" in tree_leaves(tree_obj) else "clean"
+            stats[f"verses {status}"] += 1
+            rows.extend(
+                realms_of_verse(
+                    bcv, status, tree_obj, units, tokens, (chnu, vrnu), stats
+                )
+            )
+    return rows
+
+
+def scan_wlc_units(stats: Counter, notes: dict) -> list[dict]:
+    """The same measured set over WLC 4.22, off the committed trees.
+
+    Here to be read AGAINST the MAM figures rather than averaged with them: WLC is the
+    Westminster transcription of the Leningrad Codex, so what it answers is how one manuscript
+    as transcribed scores against a rule stated for the Masoretic accentuation.  Its refs are
+    BHS's, so they go through ``mam_verse_ref`` to reach Phonetic MAM.
+    """
     prose = wlc_paths.out_dir() / "accgram" / "prose"
     # Private names of a sibling module in this package, deliberately: ``_verse_units`` is the
     # unit derivation ``chanted_word_accents`` asserts equal to ``uni_to_marks.verse_to_marks``
@@ -646,8 +812,6 @@ def scan_units(stats: Counter, notes: dict) -> list[dict]:
     rows: list[dict] = []
     for path in sorted(prose.glob("wlc_422_ps_*_ag.json")):
         data = json.loads(path.read_text(encoding="utf-8"))
-        # One HasLegarmeh per book, as prose_scanner.scan_book holds one: its 17-passage list
-        # is walked monotonically and its 1 Samuel 14:47 counter resets per book.
         has_legarmeh = HasLegarmeh()
         for rec in data["verses"]:
             bcv = rec["bcv"]
@@ -664,57 +828,17 @@ def scan_units(stats: Counter, notes: dict) -> list[dict]:
                 notes["token_stream_differs"].append(bcv)
                 stats["zaqef realms"] += len(zaqef_realms(rec["tree"]))
                 continue
-            accents = [t for t in tokens if t.type not in cwa._NOT_AN_ACCENT_TOKEN]
-            of_leaf = leaf_to_token(tree_leaves(rec["tree"]), [t.leaf for t in accents])
-            unit_of_token = [cwa._unit_at(units, t.start) for t in accents]
-            word_units = [u for u in units if u.is_word]
-            starts = [u.start for u in word_units]
-            for label, lo, hi in zaqef_realms(rec["tree"]):
-                stats["zaqef realms"] += 1
-                two_leaves = hi - lo == 2
-                stats["realms with exactly 2 leaves"] += two_leaves
-                span: list = []
-                has_error = False
-                for leaf_index in range(lo, hi):
-                    token_index = of_leaf[leaf_index]
-                    if token_index is None:
-                        has_error = True
-                        continue
-                    unit = unit_of_token[token_index]
-                    if unit is not None and (not span or span[-1] is not unit):
-                        span.append(unit)
-                if has_error:
-                    stats["realms holding an ERROR leaf"] += 1
-                    stats["  ... of them with exactly 2 leaves"] += two_leaves
-                    continue
-                stats[f"realms spanning {min(len(span), 9)} chanted words"] += 1
-                if len(span) != 2:
-                    stats[
-                        "2-leaf realms spanning other than 2 chanted words"
-                    ] += two_leaves
-                    continue
-                stats["2-chanted-word realms with more than 2 leaves"] += not two_leaves
-                first, zaqef = span
-                rows.append(
-                    {
-                        "bcv": bcv,
-                        "label": label,
-                        "status": rec["status"],
-                        "verse_initial": starts.index(first.start) == 0,
-                        "first_word": cwa._display(first),
-                        "first_word_pointed": first.text,
-                        "first_accents": [
-                            t.leaf for t, u in zip(accents, unit_of_token) if u is first
-                        ],
-                        "zaqef_word": cwa._display(zaqef),
-                        "zaqef_word_pointed": zaqef.text,
-                        "zaqef_accents": [
-                            t.leaf for t, u in zip(accents, unit_of_token) if u is zaqef
-                        ],
-                        "index_first": starts.index(first.start),
-                        "index_zaqef": starts.index(zaqef.start),
-                    }
+            rows.extend(
+                realms_of_verse(
+                    bcv,
+                    rec["status"],
+                    rec["tree"],
+                    units,
+                    tokens,
+                    mam_verse_ref(bb, chnu, vrnu),
+                    stats,
                 )
+            )
     return rows
 
 
@@ -730,8 +854,8 @@ def join_phonetic_mam(rows: list[dict], stats: Counter) -> list[dict]:
     cache: dict = {}
     unaligned: list[dict] = []
     for row in rows:
-        bb, chnu, vrnu = mna.split_bcv(row["bcv"])
-        words = load_phonetic_book(bb, cache).get(mam_verse_ref(bb, chnu, vrnu))
+        bb, _chnu, _vrnu = mna.split_bcv(row["bcv"])
+        words = load_phonetic_book(bb, cache).get(tuple(row["mam_ref"]))
         if words is None:
             row["mam"] = "Phonetic MAM has no such verse"
             unaligned.append(row)
@@ -801,48 +925,52 @@ def cross_tabulate(rows: list[dict], convention: str) -> dict:
     return out
 
 
-def build_survey() -> dict:
-    stats: Counter = Counter()
-    notes: dict[str, list] = defaultdict(list)
-    rows = scan_units(stats, notes)
-    unaligned = join_phonetic_mam(rows, stats)
-    joined = [r for r in rows if "analysis" in r]
-    agreeing = [r for r in joined if r["mam_agrees"]]
-    residue: dict[str, list] = {}
+def residues(measured: list[dict]) -> dict[str, list]:
+    out: dict[str, list] = {}
     for name, wanted, divided in (
         ("long_but_servant", "long", False),
         ("short_but_mafsik", "short", True),
         ("tiny_but_mafsik", "tiny", True),
     ):
-        residue[name] = [
+        out[name] = [
             {
                 "bcv": r["bcv"],
                 "first_word": r["first_word"],
                 "first_accents": r["first_accents"],
                 "zaqef_word": r["zaqef_word"],
                 "zaqef_word_jta": r["analysis"]["jta"],
-                "syllables_before_the_stress": r["analysis"]["fat"]["before_stress"],
-                "first_word_is": r["first_analysis"]["fat"]["verdict"],
+                "syllables_before_the_stress": r["analysis"][BREUER]["before_stress"],
+                "first_word_is": r["first_analysis"][BREUER]["verdict"],
             }
-            for r in agreeing
-            if r["analysis"]["fat"]["verdict"] == wanted and is_divided(r) == divided
+            for r in measured
+            if r["analysis"][BREUER]["verdict"] == wanted and is_divided(r) == divided
         ]
+    return out
+
+
+def measure(corpus: str, scan) -> dict:
+    """One corpus's whole measurement, from its verses to its residue."""
+    stats: Counter = Counter()
+    notes: dict[str, list] = defaultdict(list)
+    rows = scan(stats, notes)
+    unaligned = join_phonetic_mam(rows, stats)
+    joined = [r for r in rows if "analysis" in r]
+    # The syllabification is Phonetic MAM's for both corpora, so what "same accents" reports
+    # differs by corpus: for MAM it is two renderings of one text agreeing, and for WLC it is
+    # a manuscript's transcription agreeing with the consensus text.  Either way the second
+    # cross-tabulation is over the units where the accents measured and the syllables counted
+    # come from a text that has the same accents.
+    agreeing = [r for r in joined if r["mam_agrees"]]
+    residue = residues(agreeing)
     return {
-        "the_rule": (
-            "Breuer, The Cantillation of Scripture, Ch. 4 §7: a simple unit comprising the"
-            " whole realm of a zaqef has a mafsik on its first chanted word if the zaqef's"
-            " chanted word is long, and a servant if it is short. §8: the exceptions are few,"
-            " and commoner when the first chanted word is tiny; in the opposite direction"
-            " there are hardly any. Yeivin ITM §226 states the same rule and calls the"
-            " exceptions many."
-        ),
+        "corpus": corpus,
         "counts": dict(sorted(stats.items())),
-        "corpus_mismatch": {
+        "alignment": {
             "units": len(rows),
             "joined_to_phonetic_mam": len(joined),
             "not_joinable": len(unaligned),
-            "where_mam_has_the_same_accents": len(agreeing),
-            "where_mam_has_different_accents": len(joined) - len(agreeing),
+            "where_phonetic_mam_has_the_same_accents": len(agreeing),
+            "where_phonetic_mam_has_different_accents": len(joined) - len(agreeing),
             "not_joinable_units": [
                 {
                     "bcv": r["bcv"],
@@ -855,8 +983,8 @@ def build_survey() -> dict:
             "different_accents_units": [
                 {
                     "bcv": r["bcv"],
-                    "wlc": f"{r['first_word']} {r['zaqef_word']}",
-                    "mam": f"{r['mam_first']} {r['mam_zaqef']}",
+                    "measured": f"{r['first_word']} {r['zaqef_word']}",
+                    "phonetic_mam": f"{r['mam_first']} {r['mam_zaqef']}",
                 }
                 for r in joined
                 if not r["mam_agrees"]
@@ -872,12 +1000,74 @@ def build_survey() -> dict:
             ).most_common()
         ),
         "cross_tabulation": {
-            convention: {
-                "all_joined_units": cross_tabulate(joined, convention),
-                "where_mam_has_the_same_accents": cross_tabulate(agreeing, convention),
-            }
-            for convention in CONVENTIONS
+            "syllables_counted": "Breuer's, C00-S000.md:281 and :289",
+            "all_joined_units": cross_tabulate(joined, BREUER),
+            "where_phonetic_mam_has_the_same_accents": cross_tabulate(agreeing, BREUER),
         },
+        "syllable_count": {
+            "note": (
+                "Breuer defines the syllable, so this is not an open question and the"
+                " cross-tabulation above is on his count alone. The two figures here are a"
+                " check that the classifier reads his definition rather than a naive one: how"
+                " much of the rule survives when part or all of that definition is dropped."
+            ),
+            "share_of_long_units_with_a_mafsik": {
+                convention: cross_tabulate(agreeing, convention)["long"][
+                    "share_as_predicted"
+                ]
+                for convention in CONVENTIONS
+            },
+        },
+        "residue": {
+            "measured_on": (
+                "the fat count, over the units where Phonetic MAM has the same accents"
+            ),
+            "first_chanted_word_of_the_long_but_servant_units": dict(
+                Counter(r["first_word_is"] for r in residue["long_but_servant"])
+            ),
+            "first_chanted_word_of_every_unit": dict(
+                Counter(r["first_analysis"][BREUER]["verdict"] for r in agreeing)
+            ),
+            **residue,
+        },
+        "sensitivity": {
+            "criterion_3_without_the_same_type_restriction": sum(
+                1
+                for r in agreeing
+                if r["analysis"][BREUER]["verdict"] == "short"
+                and r["analysis"][BREUER]["criteria"][CRITERION_3_ANY_TYPE]
+            ),
+            "criterion_2_widened_to_any_big_vowel": sum(
+                1
+                for r in agreeing
+                if r["analysis"][BREUER]["verdict"] == "short"
+                and r["analysis"][BREUER]["criteria"][CRITERION_2_ANY_SYLLABLE]
+            ),
+        },
+        "units": rows,
+    }
+
+
+def build_survey() -> dict:
+    mam = measure("MAM", scan_mam_units)
+    wlc = measure("WLC 4.22", scan_wlc_units)
+    return {
+        "the_rule": (
+            "Breuer, The Cantillation of Scripture, Ch. 4 §7: a simple unit comprising the"
+            " whole realm of a zaqef has a mafsik on its first chanted word if the zaqef's"
+            " chanted word is long, and a servant if it is short. §8: the exceptions are few,"
+            " and commoner when the first chanted word is tiny; in the opposite direction"
+            " there are hardly any. Yeivin ITM §226 states the same rule and calls the"
+            " exceptions many."
+        ),
+        "which_corpus_answers_what": (
+            "A claim about what the accentuation DOES takes MAM, a consensus text, so the MAM"
+            " figures are the answer and Breuer's own §8 exceptions are pinned against them."
+            " WLC 4.22 is the Westminster transcription of the Leningrad Codex, so what it"
+            " measures is how one manuscript as transcribed scores against a rule stated for"
+            " the Masoretic accentuation. Its figures are here to be read against MAM's, not"
+            " averaged with them."
+        ),
         "breuer_s8_exceptions": {
             "quote": (
                 "This rule has not many exceptions. ... An exception of this type is more"
@@ -887,35 +1077,12 @@ def build_survey() -> dict:
                 " that precedes it is almost always cantillated with a servant."
             ),
             "source": "Breuer, The Cantillation of Scripture, Ch. 4 §8",
-            "all_sixteen_are_in_the_measured_residue": pin_breuer_s8(
-                residue["long_but_servant"]
+            "all_sixteen_are_in_MAM's_measured_residue": pin_breuer_s8(
+                mam["residue"]["long_but_servant"]
             ),
         },
-        "residue": {
-            "measured_on": "the fat count, over the units where MAM has the same accents",
-            "first_chanted_word_of_the_long_but_servant_units": dict(
-                Counter(r["first_word_is"] for r in residue["long_but_servant"])
-            ),
-            "first_chanted_word_of_every_unit": dict(
-                Counter(r["first_analysis"]["fat"]["verdict"] for r in agreeing)
-            ),
-            **{k: v for k, v in residue.items()},
-        },
-        "sensitivity": {
-            "criterion_3_without_the_same_type_restriction": sum(
-                1
-                for r in agreeing
-                if r["analysis"]["fat"]["verdict"] == "short"
-                and r["analysis"]["fat"]["criteria"][CRITERION_3_ANY_TYPE]
-            ),
-            "criterion_2_widened_to_any_big_vowel": sum(
-                1
-                for r in agreeing
-                if r["analysis"]["fat"]["verdict"] == "short"
-                and r["analysis"]["fat"]["criteria"][CRITERION_2_ANY_SYLLABLE]
-            ),
-        },
-        "units": rows,
+        "mam": mam,
+        "wlc_422": wlc,
     }
 
 
