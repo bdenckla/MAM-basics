@@ -38,6 +38,12 @@ Subcommands:
                 out/accgram/chanted-word-accents.json.  Transcribes Yeivin's prose
                 inventory of the phenomenon beside the measurement and raises where
                 one of his closed verse lists and the data disagree.
+    survey-breuer-zaqef-units
+                Measure how well Breuer's long/short/tiny (CoS Instructions for the
+                Reader) predicts whether a two-chanted-word zaqef realm is divided by
+                a mafsik, over the committed WLC 4.22 prose trees, with Phonetic MAM
+                as the syllable oracle, and write .novc/breuer-zaqef-units.json.  A
+                measurement, so it writes nothing under out/ or gh-pages/.
     xcheck-poetic
                 Cross-check the poetic scanner's disjunctive segmentation against
                 MAM-simple and write out/accgram/poetic/_mam_xcheck.txt (a
@@ -155,6 +161,7 @@ import argparse
 from pathlib import Path
 
 from accgram import almost_errors
+from accgram import breuer_word_length
 from accgram import chanted_word_accents
 from accgram import ctr_decalogue_fetch
 from accgram import dual_cant_run
@@ -206,6 +213,10 @@ def _run_run_printed_decalogue(args: argparse.Namespace) -> None:
 
 def _run_survey_chanted_word_accents(args: argparse.Namespace) -> None:
     chanted_word_accents.run(args)
+
+
+def _run_survey_breuer_zaqef_units(args: argparse.Namespace) -> None:
+    breuer_word_length.run(args)
 
 
 def _run_xcheck_poetic(args: argparse.Namespace) -> None:
@@ -369,6 +380,17 @@ def build_parser() -> argparse.ArgumentParser:
     )
     chanted_word_accents.add_args(chanted_word_parser, repo_root=_repo_root())
     chanted_word_parser.set_defaults(func=_run_survey_chanted_word_accents)
+
+    breuer_zaqef_parser = subparsers.add_parser(
+        "survey-breuer-zaqef-units",
+        help=(
+            "Measure how well Breuer's long/short/tiny predicts the accentuation of the "
+            "zaqef realms spanning exactly two chanted words, and write "
+            ".novc/breuer-zaqef-units.json. Needs run-prose first, for its trees."
+        ),
+    )
+    breuer_word_length.add_args(breuer_zaqef_parser, repo_root=_repo_root())
+    breuer_zaqef_parser.set_defaults(func=_run_survey_breuer_zaqef_units)
 
     xcheck_poetic_parser = subparsers.add_parser(
         "xcheck-poetic",
