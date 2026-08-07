@@ -96,8 +96,14 @@ for a fresh session that has no other context.
 - **Records are captured from page-edge phrases, located in MAM's text.** The Leningrad
   records were derived from an existing index (tanach.us' LCIndex); no such index exists
   for these five printed editions, so each record here gets read off the scan: the
-  phrase at each edge of the page — its first and its last few atoms — stored verbatim
-  as `start_phrase` / `stop_phrase` evidence. The `census` tooling locates each phrase in MAM-parsed text and derives the
+  phrase at each edge of the page — its first and its last few atoms — stored as
+  `start_phrase` / `stop_phrase` evidence. **Phrases are stored letters-only** (no
+  vowels, no accents): a phrase read off a scan is typed by the model reading it, and
+  model transcription of pointed Hebrew silently reorders marks (proven in the Metsudah
+  comparison, `doc/metsudah-vs-ctr.md` — all 39 chapter hashes mismatched — and warned
+  about in this repo's `CLAUDE.md` mark-order section), while letters survive
+  transcription. Letters-only also makes locating a phrase in MAM-parsed text a plain
+  search over accent-and-vowel-stripped text. The `census` tooling locates each phrase in MAM-parsed text and derives the
   atom numbers from it — no hand-counting of atoms, no reading of printed verse numbers —
   and demands a longer phrase whenever the current one fails to pin a unique position in
   the candidate neighborhood (Ben's "verse-unique phrase" requirement). The stored phrase
