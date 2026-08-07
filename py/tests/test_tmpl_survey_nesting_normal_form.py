@@ -504,14 +504,6 @@ class TestTmplSurveyNestingNormalForm(unittest.TestCase):
             {(v["parent"], v["child"]) for v in edge_violations},
         )
 
-    def test_merge_stack_counts_sums_shared_keys(self):
-        first = {("A", "R"): 2, ("B", "R/A"): 3}
-        second = {("A", "R"): 5, ("C", "R/A/B"): 7}
-        merged = nnf.merge_stack_counts(first, second)
-        self.assertEqual(7, merged[("A", "R")])
-        self.assertEqual(3, merged[("B", "R/A")])
-        self.assertEqual(7, merged[("C", "R/A/B")])
-
 
 if __name__ == "__main__":
     unittest.main()

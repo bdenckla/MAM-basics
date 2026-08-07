@@ -20,11 +20,11 @@ from accgram import almost_errors_html_shared as aes
 from accgram import almost_errors_oddities as aeo
 from accgram import almost_errors_trees as aet
 from accgram import ob_error_context
-from accgram import ob_tree_parse
 from accgram import rtms_data
 from accgram.prose_ply_grammar import build_parser
 from accgram.prose_scanner import HasLegarmeh
 from py_html import wlc_utils_html as H
+from tests.ob_tree_leaves import iter_leaf_texts
 
 import wlc_paths
 
@@ -91,7 +91,7 @@ def test_parse_tree_from_text_renders_clean_tree() -> None:
     tree = ob_error_context.parse_tree_from_text(clean)
     assert tree is not None
     assert not tree.has_error_leaf
-    assert ob_tree_parse.iter_leaf_texts(tree) == ["tipexa", "silluq"]
+    assert iter_leaf_texts(tree) == ["tipexa", "silluq"]
     assert ob_error_context.parse_error_tree_from_text(clean) is None
     # The shared table renderer accepts the error-free tree.
     assert H.is_htel(aes.render_tree(clean))

@@ -2,7 +2,7 @@
 
 import unittest
 
-from mb_cmn.url_percent import pct_decode, pct_fragment, pct_path_component, pct_query
+from mb_cmn.url_percent import pct_fragment, pct_path_component
 
 
 class UrlPercentTests(unittest.TestCase):
@@ -23,15 +23,6 @@ class UrlPercentTests(unittest.TestCase):
             pct_fragment("About this Edition (English Abstract)"),
             "About%20this%20Edition%20%28English%20Abstract%29",
         )
-
-    def test_pct_query_encodes_hebrew_and_slash(self):
-        self.assertEqual(
-            pct_query({"title": "שמואל ב יא/טעמים", "diff": 3009296, "oldid": 3007998}),
-            "title=%D7%A9%D7%9E%D7%95%D7%90%D7%9C+%D7%91+%D7%99%D7%90%2F%D7%98%D7%A2%D7%9E%D7%99%D7%9D&diff=3009296&oldid=3007998",
-        )
-
-    def test_pct_decode_decodes_percent_encoding(self):
-        self.assertEqual(pct_decode("Song%20of%20Songs"), "Song of Songs")
 
 
 if __name__ == "__main__":

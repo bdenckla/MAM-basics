@@ -68,7 +68,7 @@ def _validate_special_kq_if_needed(tmpl):
 
 
 def _collect_paseq_types(obj, types):
-    """Recursively collect paseq template types, mirroring flatten_ep."""
+    """Recursively collect paseq template types, mirroring flatten_element."""
     if isinstance(obj, str):
         return
     if isinstance(obj, dict):

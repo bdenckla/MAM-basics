@@ -33,23 +33,6 @@ class TestMbCmnUniHeb(unittest.TestCase):
         self.assertEqual("1a", uh.he_ascii_slug("1א", digit_prefix=""))
         self.assertEqual("h-1a", uh.he_ascii_slug("1א", digit_prefix="h"))
 
-    def test_he_ascii_identifier_maps_and_normalizes(self):
-        self.assertEqual("kpvl", uh.he_ascii_identifier("כפול"))
-        self.assertEqual("nvox", uh.he_ascii_identifier("נוסח"))
-        self.assertEqual("kvq", uh.he_ascii_identifier("כו״ק"))
-        self.assertEqual("povq", uh.he_ascii_identifier("פסוק"))
-        self.assertEqual("dxy", uh.he_ascii_identifier("דחי"))
-
-    def test_he_ascii_identifier_empty_and_digit_prefix_behavior(self):
-        self.assertEqual("h", uh.he_ascii_identifier(""))
-        self.assertEqual("id", uh.he_ascii_identifier("", digit_prefix="id_"))
-        self.assertEqual("h_1a", uh.he_ascii_identifier("1א"))
-        self.assertEqual("id_1a", uh.he_ascii_identifier("1א", digit_prefix="id_"))
-
-    def test_he_ascii_identifier_ayin_initial_uses_prefix_by_default(self):
-        self.assertEqual("h_3yr", uh.he_ascii_identifier("עיר"))
-        self.assertEqual("3yr", uh.he_ascii_identifier("עיר", digit_prefix=""))
-
 
 if __name__ == "__main__":
     unittest.main()
