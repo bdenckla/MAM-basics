@@ -771,15 +771,28 @@ def scan_mam_units(stats: Counter, notes: dict) -> list[dict]:
     verses in too, so the join needs no verse map at all and Joshua 21, 1 Samuel 24 and
     Jeremiah 31 stop looking like a difference between two texts.
 
-    A DUALLY CANTILLATED VERSE IS HELD BACK BEFORE THE GRAMMAR SEES IT, and that is not
-    fastidiousness: ``parse_tokens`` DOES NOT TERMINATE on one.  In the two Decalogues and at
-    Genesis 35:22 MAM has both cantillations at once, and the merged body is not a prose token
-    stream -- Exodus 20:7 is ten tokens long and the parser was still in it after ten minutes.
-    Nothing in this repo had fed the grammar a merged body before: ``prose_run`` routes those
-    loci through ``dual_cant_detangle`` first, and ``printed_decalogue`` parses the strands.
-    MAM-simple says which verses they are, its ``cant-alef`` stream differing from the
-    ``cant-combined`` one exactly there, so they are found from the data and not from a list of
-    references.  They are counted and named under ``dually_cantillated``.
+    A DUALLY CANTILLATED VERSE IS HELD BACK BEFORE THE GRAMMAR SEES IT, and the reason is what
+    the merged body is: in the two Decalogues and at Genesis 35:22 MAM has both cantillations
+    at once, so one body carries the marks of two and is not a prose token stream at all.  A
+    tree off it would be a tree of neither cantillation.  Nothing in this repo had fed the
+    grammar a merged body before: ``prose_run`` routes those loci through
+    ``dual_cant_detangle`` first, and ``printed_decalogue`` parses the strands.  MAM-simple
+    says which verses they are, its ``cant-alef`` stream differing from the ``cant-combined``
+    one exactly there, so they are found from the data and not from a list of references.  They
+    are counted and named under ``dually_cantillated``.
+
+    THE REASON THIS PARAGRAPH GAVE UNTIL 2026-08-07 -- that ``parse_tokens`` does not terminate
+    on a merged body -- WAS WRONG, and #221 is where the correction is worked out.  Measured
+    that day: MAM-simple's ``json-vtrad-mam`` has 18 merged verses, and ``prose_filter`` drops
+    14 of them -- Genesis 35:22 by name, the rest of the two Decalogues by range -- before the
+    holdback here is reached, so the four counted under ``dually_cantillated`` are Exodus 20:7,
+    Exodus 20:12, Deuteronomy 5:11 and Deuteronomy 5:16.  Of those four only Exodus 20:7 and
+    Deuteronomy 5:11 ever hung; Exodus 20:12 and Deuteronomy 5:16 returned trees all along, and
+    so did Genesis 35:22, which never reaches here.  What hung was not dual cantillation but
+    the bare ``pasuq : error`` production of ``prose_ply_grammar``, which reduced without
+    consuming a token whenever one was left over once ``pasuq`` had reduced.  That production
+    is gone, so all 18 merged bodies now terminate in milliseconds: 11 return a tree and 7
+    return None.
 
     Detangling them here instead, and measuring each strand, is a real option and a separate
     piece of work: the Decalogue has its own machinery in ``dual_cant_run`` and
@@ -810,8 +823,8 @@ def scan_mam_units(stats: Counter, notes: dict) -> list[dict]:
                 continue
             verse = payload["mam_simple_verse"]
             if verse["vels_cant_alef"] != verse["vels"]:
-                # A merged dual cantillation.  Held back BEFORE the grammar, which does not
-                # terminate on one -- see this function's docstring.
+                # A merged dual cantillation: one body carrying the marks of two, so a tree
+                # off it would be a tree of neither -- see this function's docstring.
                 stats["verses dually cantillated, held back from the grammar"] += 1
                 notes["dually_cantillated"].append(bcv)
                 continue
