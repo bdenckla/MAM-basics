@@ -139,9 +139,15 @@ def _build_row(
         provenance_doc=(override.provenance_doc if override else None)
         or repo_policy.default_provenance_doc
         or "no",
+        # No ``or "unknown"`` third fallback here, unlike mechanism and provenance_doc
+        # above: ``repo_policy`` rejects a non-ignored repo that omits default_category
+        # and rejects any value outside ``CATEGORY_VALUES``, and the caller skips the
+        # ignored repos, so every row's category is a declared word.  The fallback that
+        # stood here could only ever have fired on a policy the loader now refuses to
+        # load, which made "unknown" a fifth category no repo could produce -- the same
+        # half of the vocabulary problem as ``deferred``, at the other end (#60).
         category=(override.category if override else None)
-        or repo_policy.default_category
-        or "unknown",
+        or repo_policy.default_category,
         notes=_notes_text(override.notes if override else None),
     )
 
@@ -191,8 +197,8 @@ def iter_inventory_seed_rows() -> list[dict[str, str]]:
 def _compare_hint_from_inventory_row(data: dict[str, str]) -> str:
     if data["category"] == "generated":
         return "generated"
-    if data["category"] == "deferred":
-        return "deferred"
+    if data["category"] == "unmeasured":
+        return "unmeasured"
 
     first_clause, sep, remainder = data["notes"].partition(";")
     if first_clause in IDENTITY_VALUES:

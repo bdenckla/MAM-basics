@@ -1,5 +1,5 @@
 {
-  "comment": "Vendoring policy manifest. Derived file relationships are discovered from repo scans plus explicit overrides. Mechanism is declared here, never detected: gen_inventory used to promote unknown to copy_script when the provenance scan found a copy script in an active or generated repo, which withheld the fact for the three copy-script repos categorized stale, and would have asserted it wrongly for codex-index-leningrad, whose script copies from UXLC-utils rather than from here. Removed 2026-08-02; unknown now means only that nobody has said (#60).",
+  "comment": "Vendoring policy manifest. Derived file relationships are discovered from repo scans plus explicit overrides. Mechanism is declared here, never detected: gen_inventory used to promote unknown to copy_script when the provenance scan found a copy script in an active or generated repo, which withheld the fact for the three copy-script repos categorized stale, and would have asserted it wrongly for codex-index-leningrad, whose script copies from UXLC-utils rather than from here. Removed 2026-08-02; unknown now means only that nobody has said (#60). Category answers 'is this copy being kept up?' and mechanism answers 'by what?' (5fc4a77). Category's four values -- active, generated, stale, unmeasured -- are a closed set, checked by vendoring/repo_policy.py's CATEGORY_VALUES, where each one is glossed; unmeasured replaced the retired deferred on 2026-08-07 (#60). Category is not read off last_synced and cannot be: compare.py derives last_synced from the date of the last commit touching each file in the destination repo, so a file that a re-vendor run leaves byte-identical keeps its old date, and a repo whose copies are all up to date still shows mixed.",
   "global": {
     "comment": null,
     "source_pkg_dirs": {
@@ -52,10 +52,10 @@
       }
     },
     "al-hatorah": {
-      "comment": "py/main_update_vendored_files.py copies MAM-basics/py/mb_cmn by intersection, so the mechanism is declared rather than derived: gen_inventory only derives copy_script for an active or generated repo, which left this one reading unknown for as long as it read stale (2026-08-02, #60).",
+      "comment": "Active since 2026-08-07: py/main_update_vendored_files.py copies MAM-basics/py/mb_cmn by intersection, al-hatorah c4f0e48a ran it, and all 28 files read identical -- kept up on the same footing as holman-ketiv-qere. It read stale until then, which is also why the mechanism is declared here rather than derived: gen_inventory only derives copy_script for an active or generated repo, so this repo's script went unreported for as long as the category said stale (2026-08-02, #60).",
       "ignore": false,
       "scan_provenance": true,
-      "default_category": "stale",
+      "default_category": "active",
       "default_mechanism": "copy_script",
       "default_provenance_doc": "no",
       "pkg_scan_roots": {
@@ -113,10 +113,10 @@
       "pkg_scan_roots": {}
     },
     "diffable-pointed-hebrew": {
-      "comment": null,
+      "comment": "Unmeasured rather than stale, and the only repo in that category: nobody has looked at how far these eight files have drifted. doc/PLAN-evacuate-python-programme.md's Appendix B is the statement -- seven read DIFFERS and one eol-only, no copy script has ever refreshed them, and it calls that a bug of unknown size rather than an abandoned copy, with the fix being to give the repo a main_update_vendored_files.py and get the rows to identical/copy_script. Changed from stale on 2026-08-07 (#60).",
       "ignore": false,
       "scan_provenance": true,
-      "default_category": "stale",
+      "default_category": "unmeasured",
       "default_mechanism": "unknown",
       "default_provenance_doc": "no",
       "pkg_scan_roots": {
@@ -126,10 +126,10 @@
       }
     },
     "mgketer": {
-      "comment": "py/main_update_vendored_files.py copies MAM-basics/py/mb_cmn and py/mb_diff_mpu by intersection. It covers only those two directories, so the two py/python_modules/ overrides below re-declare unknown rather than inherit this default.",
+      "comment": "Active since 2026-08-07 for the two directories py/main_update_vendored_files.py covers: it copies MAM-basics/py/mb_cmn and py/mb_diff_mpu by intersection, mgketer 72be9724 ran it, and all 16 files in those two read identical. It covers only those two directories, so the two py/python_modules/ overrides below re-declare mechanism unknown AND category stale rather than inherit copy_script and active -- no script reaches that directory and both files read DIFFERS, which is what stale says and active would deny.",
       "ignore": false,
       "scan_provenance": true,
-      "default_category": "stale",
+      "default_category": "active",
       "default_mechanism": "copy_script",
       "default_provenance_doc": "no",
       "pkg_scan_roots": {
@@ -264,7 +264,7 @@
       "dest_repo": "mgketer",
       "dest_path": "py/python_modules/my_diffs.py",
       "src_pkg": "mb_cmn",
-      "category": null,
+      "category": "stale",
       "mechanism": "unknown",
       "provenance_doc": null,
       "notes": "placed in python_modules/ not mb_cmn/"
@@ -274,7 +274,7 @@
       "dest_repo": "mgketer",
       "dest_path": "py/python_modules/uni_denorm.py",
       "src_pkg": "mb_cmn",
-      "category": null,
+      "category": "stale",
       "mechanism": "unknown",
       "provenance_doc": null,
       "notes": "placed in python_modules/ not mb_cmn/"

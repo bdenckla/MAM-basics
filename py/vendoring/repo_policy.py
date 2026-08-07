@@ -9,6 +9,24 @@ from functools import lru_cache
 
 from mb_cmn import paths
 
+# The category column answers "is this copy being kept up?", and mechanism answers "by
+# what?" (``5fc4a77``).  A closed set, checked here, because the two halves of the
+# vocabulary drifted apart in both directions before #60: ``deferred`` went on being read
+# by ``discover._compare_hint_from_inventory_row`` for over three months after ``16eaa69``
+# and ``7434016`` retired the last repo that declared it, and nothing would have caught a
+# repo declaring a word no reader knew.  Checking membership here shuts the second door
+# and makes the first visible, since a word dropped from this set is a word every
+# declaration of which the loader then rejects by name.
+#
+# * ``active``     -- kept up, and known to be up to date.
+# * ``generated``  -- written by a generator here, not maintained in the destination.
+# * ``stale``      -- measured, and behind.
+# * ``unmeasured`` -- nobody has looked at how far it has drifted.  Named for what is
+#   missing rather than for why, so it says nothing that can go out of date, and it has
+#   one exit: measure it.  ``doc/PLAN-evacuate-python-programme.md``'s Appendix B is the
+#   statement of the one repo in it, diffable-pointed-hebrew.
+CATEGORY_VALUES = frozenset({"active", "generated", "stale", "unmeasured"})
+
 
 @dataclass(frozen=True)
 class RepoPolicy:
@@ -61,6 +79,15 @@ def _expect_str_or_none(value: object, label: str) -> str | None:
     if value is None or isinstance(value, str):
         return value
     raise ValueError(f"{label} must be a string or null")
+
+
+def _expect_category_or_none(value: object, label: str) -> str | None:
+    category = _expect_str_or_none(value, label)
+    if category is not None and category not in CATEGORY_VALUES:
+        raise ValueError(
+            f"{label} must be one of {sorted(CATEGORY_VALUES)}, not {category!r}"
+        )
+    return category
 
 
 def _expect_rel_path(value: object, label: str) -> str:
@@ -122,7 +149,7 @@ def _load_repo(
     scan_provenance = _expect_bool(
         raw_repo.get("scan_provenance"), f"repos.{repo_name}.scan_provenance"
     )
-    default_category = _expect_str_or_none(
+    default_category = _expect_category_or_none(
         raw_repo.get("default_category"), f"repos.{repo_name}.default_category"
     )
     default_mechanism = _expect_str_or_none(
@@ -189,7 +216,9 @@ def _load_override(
         dest_repo=dest_repo,
         dest_path=_expect_rel_path(raw_override.get("dest_path"), f"{label}.dest_path"),
         src_pkg=src_pkg,
-        category=_expect_str_or_none(raw_override.get("category"), f"{label}.category"),
+        category=_expect_category_or_none(
+            raw_override.get("category"), f"{label}.category"
+        ),
         mechanism=_expect_str_or_none(
             raw_override.get("mechanism"), f"{label}.mechanism"
         ),

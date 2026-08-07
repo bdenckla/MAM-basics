@@ -272,6 +272,10 @@ def main(refresh_live_inputs: bool = True) -> None:
         "`eol-only` is the same content with different line endings on disk (the latent-CRLF condition, not drift);",
         "`DIFFERS` is content drift; `MISSING-DEST` is a copy the policy names that is no longer there.",
         "",
+        '**The `category` column answers "is this copy being kept up?"** and `mechanism` answers "by what?":',
+        "`active` is kept up and known to be up to date; `generated` is written by a generator here rather than maintained",
+        "in the destination; `stale` is measured and behind; `unmeasured` is a copy nobody has looked at, whose one exit is to measure it.",
+        "",
         "| file(s) | src_pkg | dest_repo | dest_path | mechanism | last_synced | provenance_doc | category | notes |",
         "|---|---|---|---|---|---|---|---|---|",
     ]

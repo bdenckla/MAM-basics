@@ -11,13 +11,17 @@ Related issue: bdenckla/MAM-basics#60
 `eol-only` is the same content with different line endings on disk (the latent-CRLF condition, not drift);
 `DIFFERS` is content drift; `MISSING-DEST` is a copy the policy names that is no longer there.
 
+**The `category` column answers "is this copy being kept up?"** and `mechanism` answers "by what?":
+`active` is kept up and known to be up to date; `generated` is written by a generator here rather than maintained
+in the destination; `stale` is measured and behind; `unmeasured` is a copy nobody has looked at, whose one exit is to measure it.
+
 | file(s) | src_pkg | dest_repo | dest_path | mechanism | last_synced | provenance_doc | category | notes |
 |---|---|---|---|---|---|---|---|---|
 | bib_locales.py, cantsys.py, file_io.py, he_wikisource_url.py, hebrew_accents.py, hebrew_letters.py, hebrew_points.py, hebrew_punctuation.py, my_utils.py, provenance.py, shrink.py, str_defs.py, template_names.py, uni_heb.py, url_percent.py, ws_tmpl1.py, ws_tmpl2.py, ws_tmpl_named_params.py | mb_cmn | MAM-simple | py-examples/mb_cmn | copy_script | mixed | no | generated | identical |
 | hebrew_letter_names.py, hebrew_letter_words.py, letter_small_job.py, mb_html.py, mb_html_get_lines.py, my_utils_for_mainish.py, osis_book_abbrevs.py, slh_description.py, styles_authored.py, styles_mam_parsed.py, styles_mam_with_doc.py, verse_and_friends.py, write_utils.py, ws_urls.py | mb_misc | MAM-simple | py-examples/mb_misc | copy_script | mixed | no | generated | identical |
 | mam4ajf_handlers.py, mam4sef_handlers.py, mam4sef_or_ajf.py, mam4sef_runners.py, sef_cmn.py, sef_header.py, write_utils_sef_or_ajf.py | mb_sefaria | MAM-simple | py-examples/mb_sefaria | copy_script | mixed | no | generated | identical |
 | osis_handlers.py, osis_index_html.py, osis_namespace.py, osis_runner.py | osis | MAM-simple | py-examples/osis | copy_script | mixed | no | generated | identical |
-| bib_locales.py, cantsys.py, file_io.py, he_wikisource_url.py, hebrew_accents.py, hebrew_letters.py, hebrew_points.py, hebrew_punctuation.py, hebrew_verse_numerals.py, mam_bknas.py, mam_bknas_and_std_bknas.py, minirow.py, mpplus_schema_guard.py, my_diffs.py, my_utils.py, provenance.py, read_books_from_mam_parsed_plus.py, shrink.py, str_defs.py, template_names.py, uni_denorm.py, uni_heb.py, uni_norm_fragile.py, url_percent.py, vendoring_sync.py, ws_tmpl1.py, ws_tmpl2.py, ws_tmpl_named_params.py | mb_cmn | al-hatorah | py/mb_cmn | copy_script | mixed | no | stale | identical |
+| bib_locales.py, cantsys.py, file_io.py, he_wikisource_url.py, hebrew_accents.py, hebrew_letters.py, hebrew_points.py, hebrew_punctuation.py, hebrew_verse_numerals.py, mam_bknas.py, mam_bknas_and_std_bknas.py, minirow.py, mpplus_schema_guard.py, my_diffs.py, my_utils.py, provenance.py, read_books_from_mam_parsed_plus.py, shrink.py, str_defs.py, template_names.py, uni_denorm.py, uni_heb.py, uni_norm_fragile.py, url_percent.py, vendoring_sync.py, ws_tmpl1.py, ws_tmpl2.py, ws_tmpl_named_params.py | mb_cmn | al-hatorah | py/mb_cmn | copy_script | mixed | no | active | identical |
 | bib_locales.py, file_io.py, hebrew_accents.py, hebrew_punctuation.py, uni_heb.py | mb_cmn | book-of-job | mb_cmn | unknown | mixed | no | stale | DIFFERS |
 | cantsys.py, hebrew_letters.py, hebrew_points.py, mam_bknas.py, my_diffs.py, my_utils.py, shrink.py, uni_denorm.py, url_percent.py, uxlc_change_url.py | mb_cmn | book-of-job | mb_cmn | unknown | mixed | no | stale | eol-only |
 | str_defs.py | mb_cmn | book-of-job | mb_cmn/str_defs.py | unknown | 2026-08-04 | no | stale | identical |
@@ -28,12 +32,12 @@ Related issue: bdenckla/MAM-basics#60
 | hebrew_points.py, str_defs.py, uni_denorm.py | mb_cmn | codex-index-cam1753 | mb_cmn | unknown | mixed | no | stale | identical |
 | hebrew_letters.py | mb_cmn | codex-index-leningrad | lenin-wiki/py/hebrew_letters.py | unknown | 2026-08-03 | no | stale | identical; placed in lenin-wiki/py/ not mb_cmn/ |
 | hebrew_punctuation.py, hebrew_verse_numerals.py, my_utils.py | mb_cmn | codex-index-leningrad | lenin-wiki/py | unknown | mixed | no | stale | DIFFERS; placed in lenin-wiki/py/ not mb_cmn/ |
-| cantsys.py | mb_cmn | diffable-pointed-hebrew | mb_cmn/cantsys.py | unknown | 2026-04-27 | no | stale | eol-only |
-| file_io.py, hebrew_accents.py, hebrew_letters.py, hebrew_points.py, hebrew_punctuation.py, str_defs.py, uni_heb.py | mb_cmn | diffable-pointed-hebrew | mb_cmn | unknown | 2026-04-27 | no | stale | DIFFERS |
+| cantsys.py | mb_cmn | diffable-pointed-hebrew | mb_cmn/cantsys.py | unknown | 2026-04-27 | no | unmeasured | eol-only |
+| file_io.py, hebrew_accents.py, hebrew_letters.py, hebrew_points.py, hebrew_punctuation.py, str_defs.py, uni_heb.py | mb_cmn | diffable-pointed-hebrew | mb_cmn | unknown | 2026-04-27 | no | unmeasured | DIFFERS |
 | bib_locales.py, cantsys.py, he_wikisource_url.py, hebrew_accents.py, hebrew_letters.py, hebrew_points.py, hebrew_punctuation.py, hebrew_verse_numerals.py, mam_bknas.py, mam_bknas_and_std_bknas.py, retired_kq_special_templates.py, retired_template_names.py, str_defs.py, template_names.py, uni_denorm.py, url_percent.py, vendoring_sync.py | mb_cmn | holman-ketiv-qere | py/mb_cmn | copy_script | mixed | no | active | identical |
 | change_ops.py, change_ops_apply.py, change_ops_extract.py, change_ops_render.py, describe_diff.py, grapheme_diff.py, mpplus_flatten.py, mpplus_param_access.py, mpplus_structure.py | mb_diff_mpu | holman-ketiv-qere | py/mb_diff_mpu | copy_script | mixed | no | active | identical |
-| bib_locales.py, cantsys.py, he_wikisource_url.py, hebrew_accents.py, hebrew_letters.py, hebrew_points.py, hebrew_punctuation.py, mam_bknas.py, mam_bknas_and_std_bknas.py, polite_download.py, str_defs.py, template_names.py, url_percent.py, uxlc_change_url.py, vendoring_sync.py | mb_cmn | mgketer | py/mb_cmn | copy_script | mixed | no | stale | identical |
-| grapheme_diff.py | mb_diff_mpu | mgketer | py/mb_diff_mpu/grapheme_diff.py | copy_script | 2026-04-27 | no | stale | identical |
+| bib_locales.py, cantsys.py, he_wikisource_url.py, hebrew_accents.py, hebrew_letters.py, hebrew_points.py, hebrew_punctuation.py, mam_bknas.py, mam_bknas_and_std_bknas.py, polite_download.py, str_defs.py, template_names.py, url_percent.py, uxlc_change_url.py, vendoring_sync.py | mb_cmn | mgketer | py/mb_cmn | copy_script | mixed | no | active | identical |
+| grapheme_diff.py | mb_diff_mpu | mgketer | py/mb_diff_mpu/grapheme_diff.py | copy_script | 2026-04-27 | no | active | identical |
 | my_diffs.py, uni_denorm.py | mb_cmn | mgketer | py/python_modules | unknown | 2026-04-27 | no | stale | DIFFERS; placed in python_modules/ not mb_cmn/ |
 
 *22 rows, 154 files. 0 files ignored (dest_repos: MAM-for-Acc, MAM-for-CCAR, MAM-for-JPS, TMC).*

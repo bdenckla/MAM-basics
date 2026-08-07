@@ -128,14 +128,14 @@ hebrew_letters.py                          codex-index-leningrad      lenin-wiki
 hebrew_punctuation.py                      codex-index-leningrad      lenin-wiki/py/hebrew_punctuation.py                     DIFFERS        2025-02-19   placed in lenin-wiki/py/ not mb_cmn/
 hebrew_verse_numerals.py                   codex-index-leningrad      lenin-wiki/py/hebrew_verse_numerals.py                  DIFFERS        2025-02-19   placed in lenin-wiki/py/ not mb_cmn/
 my_utils.py                                codex-index-leningrad      lenin-wiki/py/my_utils.py                               DIFFERS        2026-08-03   placed in lenin-wiki/py/ not mb_cmn/
-cantsys.py                                 diffable-pointed-hebrew    mb_cmn/cantsys.py                                       eol-only       2026-04-27   
-file_io.py                                 diffable-pointed-hebrew    mb_cmn/file_io.py                                       DIFFERS        2026-04-27   
-hebrew_accents.py                          diffable-pointed-hebrew    mb_cmn/hebrew_accents.py                                DIFFERS        2026-04-27   
-hebrew_letters.py                          diffable-pointed-hebrew    mb_cmn/hebrew_letters.py                                DIFFERS        2026-04-27   
-hebrew_points.py                           diffable-pointed-hebrew    mb_cmn/hebrew_points.py                                 DIFFERS        2026-04-27   
-hebrew_punctuation.py                      diffable-pointed-hebrew    mb_cmn/hebrew_punctuation.py                            DIFFERS        2026-04-27   
-str_defs.py                                diffable-pointed-hebrew    mb_cmn/str_defs.py                                      DIFFERS        2026-04-27   
-uni_heb.py                                 diffable-pointed-hebrew    mb_cmn/uni_heb.py                                       DIFFERS        2026-04-27   
+cantsys.py                                 diffable-pointed-hebrew    mb_cmn/cantsys.py                                       eol-only       2026-04-27   unmeasured
+file_io.py                                 diffable-pointed-hebrew    mb_cmn/file_io.py                                       DIFFERS        2026-04-27   unmeasured
+hebrew_accents.py                          diffable-pointed-hebrew    mb_cmn/hebrew_accents.py                                DIFFERS        2026-04-27   unmeasured
+hebrew_letters.py                          diffable-pointed-hebrew    mb_cmn/hebrew_letters.py                                DIFFERS        2026-04-27   unmeasured
+hebrew_points.py                           diffable-pointed-hebrew    mb_cmn/hebrew_points.py                                 DIFFERS        2026-04-27   unmeasured
+hebrew_punctuation.py                      diffable-pointed-hebrew    mb_cmn/hebrew_punctuation.py                            DIFFERS        2026-04-27   unmeasured
+str_defs.py                                diffable-pointed-hebrew    mb_cmn/str_defs.py                                      DIFFERS        2026-04-27   unmeasured
+uni_heb.py                                 diffable-pointed-hebrew    mb_cmn/uni_heb.py                                       DIFFERS        2026-04-27   unmeasured
 bib_locales.py                             mgketer                    py/mb_cmn/bib_locales.py                                identical      2026-04-27   
 cantsys.py                                 mgketer                    py/mb_cmn/cantsys.py                                    identical      2026-05-10   
 he_wikisource_url.py                       mgketer                    py/mb_cmn/he_wikisource_url.py                          identical      2026-05-03   
