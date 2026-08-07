@@ -15,7 +15,7 @@ Non-error productions (Phases B–D) cover all clean verses:
 Error productions (Phase E) reproduce yacc's recovery (see the error-recovery
 section below): every `error`-token rule builds the same ERROR leaf / ERROR
 clause the C action builds and calls p.parser.errok() to mirror yacc's
-`yyerrok`.  The three pasuq-level `error` rules (no tree, location line only)
+`yyerrok`.  The two pasuq-level `error` rules (no tree, location line only)
 return the LOCATION_ONLY sentinel; they do not fire on the parity corpus (all 51
 ungrammatical reduce via `TILDE silluq_clause SOFPASUQ` with ERROR leaves inside).
 
@@ -28,6 +28,11 @@ actions for `MAHAPAKH MAHAPAKH PASHTA` and `MAHAPAKH MERKHA PASHTA` call add_lea
 with count 2 (only $1,$2), an off-by-one that drops the trailing PASHTA leaf -- the
 phrase's own disjunctive head.  Every sibling servus+pashta rule keeps all leaves,
 so these now pass p[1],p[2],p[3] too (affects Judg 15:13, 1Sam 30:9, Exod 10:13).
+
+Deliberate omission, the third such divergence (#221): acc2tre.y's bare `pasuq : error`
+alternative -- no TILDE, no sof pasuq, one `error` symbol and nothing else -- is not ported.
+See p_pasuq_error below for the cycle it drives PLY into and for the measurements that say
+it has no other reachable effect.
 """
 
 from __future__ import annotations
@@ -1022,7 +1027,7 @@ def p_legarmeh_phrase_munax_munax(p):
 # clean verses reduce via the normal rules unchanged; on the 51 ungrammatical they
 # reproduce the C binary's ERROR-node trees byte-for-byte.
 #
-# The three pasuq-level rules build no tree (the C actions print the location and
+# The two pasuq-level rules build no tree (the C actions print the location and
 # call free_nodes without print_tree); they return LOCATION_ONLY so the driver
 # emits the reference line only.  They do not fire on the parity corpus.
 
@@ -1031,8 +1036,27 @@ LOCATION_ONLY = object()
 
 
 def p_pasuq_error(p):
-    """pasuq : error
-    | TILDE error UNKNOWN_ACCENT SOFPASUQ
+    # acc2tre.y has a third alternative here, the bare `pasuq : error`, and it is
+    # deliberately NOT ported -- the module docstring lists this with MISSING_SOFPASUQ
+    # and the two add_leaves off-by-ones as a divergence from the C oracle (#221).
+    #
+    # In PLY it does not reject a bad stream, it hangs on one.  With pasuq on the stack
+    # (state 1) and a live lookahead, PLY pops pasuq, shifts an error symbol in state 0,
+    # and reduces this alternative WITHOUT consuming a token, which puts pasuq back in
+    # state 1 with the same lookahead waiting: the state that just errored.  So any
+    # stream with a token left over once pasuq has reduced never terminates, and four
+    # tokens are enough -- TILDE SILLUQ SOFPASUQ REVIA, whose first three reduce by the
+    # ordinary p_pasuq rule.  Measured 2026-08-07 over every token stream of length 1-3
+    # and every TILDE-prefixed stream of length 4, 79,798 in all: with the bare
+    # alternative in place 7,253 of them never terminate.
+    #
+    # Dropping it costs no reachable behavior.  PLY returns (yacc.py:1242) before ever
+    # making an error symbol out of an end-of-input lookahead, so a real token is always
+    # waiting when this reduction finishes, and a real token in state 1 is the cycle.
+    # Over those same 79,798 streams the bare alternative fired on 0 parses that
+    # returned, and the grammar with it and the grammar without it return the same thing
+    # on every stream that terminates at all.
+    """pasuq : TILDE error UNKNOWN_ACCENT SOFPASUQ
     | TILDE silluq_clause error"""
     p[0] = LOCATION_ONLY
 
