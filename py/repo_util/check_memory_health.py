@@ -95,10 +95,22 @@ once, so computing the slug and doing an exact lookup finds roughly half of them
 Keying on the absolute path also means a RENAMED repo orphans its memory. When
 yeivin-itm became masorah-books on 2026-07-31, its four memory files stayed at
 'C--Users-BenDe-GitRepos-yeivin-itm' under a name nothing now looks up, while
-the new 'C--Users-BenDe-GitRepos-masorah-books' started empty. The same is true
-of 'C--Users-BenDe-GitRepos-breuer-cos', whose repo still exists but whose work
-moved. Unlike the worktree litter below, these hold memories worth keeping, so
-they want carrying over rather than deleting.
+the new 'C--Users-BenDe-GitRepos-masorah-books' started empty. That example has
+since resolved and this paragraph used to claim otherwise: checked 2026-08-07,
+'C--Users-BenDe-GitRepos-yeivin-itm' holds four session transcripts and NO
+memory subdirectory at all, and masorah-books carries 23 memory files of its
+own.
+
+'C--Users-BenDe-GitRepos-breuer-cos' -- whose repo still exists but whose work
+moved to masorah-books on 2026-07-31 -- is the surviving example, and it is why
+an orphaned memory directory is a QUESTION rather than an instruction to move
+the files. It holds one memory file, 'wlc-koren-12th-is-a-worktree.md', which is
+about wlc-utils rather than about Breuer, and which wlc-utils' own
+'no-wlc-koren-12th-repo.md' supersedes: that one was written 21 minutes later on
+2026-07-27, records that the directory was deleted, and corrects this one by
+name. So read an orphaned memory before moving it. Carrying that file into
+masorah-books, as the obvious reading of "the repo's work moved there" suggests,
+would plant a superseded memory in a repo it was never about.
 
 Two neighbours in that directory are deliberately NOT repo memory and are
 skipped: 'C--Users-BenDe-GitRepos' itself (sessions started from the GitRepos
