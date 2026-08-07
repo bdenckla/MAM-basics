@@ -20,6 +20,11 @@ for a fresh session that has no other context.
   with it, were replaced by the exact page-record model of `codex-index-leningrad`. Also
   settled by Ben the same day: the Simanim Tiqqun's unpointed D section stays out of
   lookup ("don't worry about unpointed").
+- 2026-08-07, session 2 (a worktree): **Phase 0 ran and is done** — findings below, in
+  place of what that phase's plan text said. The `survey` and `check` subcommands, the
+  `py/scan_pages/` library and the pytest lint exist; all 5,720 files are classified and
+  the five indexes are tracked. Three of Phase 0's claims were refuted by measuring
+  them, one of them by Ben mid-session; each correction is recorded where the claim was.
 - 2026-08-07, still session 1, three more decisions from Ben: the Decalogues get
   strand-aware lookup (a bare bcv → the body Decalogue, whichever strand the edition's
   body has; a `t`/`e` suffix names the strand wanted); lookup is by phrase-qualified or
@@ -144,6 +149,15 @@ zero-availability file rather than index it silently.
 **Four editions share one book-code family in their filenames** (Koren-style: Torah
 `G E L N D`; Former Prophets `Js Ju 1S 2S 1K 2K`; Latter Prophets `I Je Ee` + twelve
 `Ho Jl A O Jn Mi Na Hb Ts Hg Zc Ma`; Writings `Ps Pr Jb S R La Ec Es Da Er Ne 1C 2C`).
+
+**Phase 0 found that family is this repo's, exactly, so no table was written for it.** A
+book token is `bib_locales.short(bk39id)` and a koren-family section token is
+`bib_locales.ordered_short(bk39id)`, both verbatim; `py/scan_pages/book_codes.py` inverts
+those two functions instead of restating them, and so cannot drift from the convention the
+rest of the repo uses. It also means a koren-family body filename names its book twice,
+once per code, and the parser rejects any filename where the two disagree. Only bhl needed
+tables written by hand, for its longforms.
+
 The body-page filename shapes:
 
 - **jc1**: `NNN-<bk>.jpg` (e.g. `220-Js.jpg`) — NNN is the scan sequence and likely the
@@ -153,22 +167,70 @@ The body-page filename shapes:
   001 (`A1-G-001.jpg`), but `<secletter><sub>-<bk>-NNN.jpg` with *continuous* printed page
   numbers for the books scanned later (`BA-1S-087.jpg` … `CL-Ma-589.jpg`,
   `FA-Er-229.jpg` … `FD-2C-374.jpg`). Sections: A Torah, B Former Prophets, C Latter
-  Prophets, D Ps/Pr/Jb, E Megillot, F Da/Er/Ne/Chronicles, then `V` ×55 (unidentified —
-  Phase 0 eyeballs one), `W`, `X-back-cover`, `Y` spine. Printed-number gaps exist (e.g.
-  `BC-1K-187` then `BC-1K-189`); harmless, since lookup works on the sorted pages list,
-  never on printed numbers.
-- **simanim-tanakh**: `<sec>-<bk>-NNNN.jpg` with continuous numbering (`B1-Js-0360.jpg`,
-  `D2-Pr-1150.jpg`); front matter `1-*` and `2-*` (includes `2-03-ToC.jpg`); oddball
-  singletons `A9-A2-*`, `A9-A5-*` to classify in Phase 0. The 2026-08-06 quick tally
-  matched only dash-terminated prefixes, so Samuel/Kings/minor-prophets/Chronicles files
-  (presumably `BA-`/`CA-`-style, as in koren) were not tallied — Phase 0 must classify
-  **every** file and fail on any it cannot, precisely so nothing drops out that way.
+  Prophets, D Ps/Pr/Jb, E Megillot, F Da/Er/Ne/Chronicles, then `V` ×55, `W`,
+  `X-back-cover`, `Y` spine. **`V` is Koren's back matter**, 58 separately numbered pages
+  whose printed contents page is `V-001.jpg` (read 2026-08-07): 3 ספר התנ״ך שבהוצאת קורן,
+  9 דברי ברכה, 13 חילופי נוסחאות, 17 and 33 the Hebrew renderings of the Aramaic in Daniel
+  and in Ezra, 38 עשרת הדיברות בטעם העליון, 40–42 the Torah readings, 46 ברכות ההפטרה,
+  47 סדר ההפטרות, 58 שמות הטעמים. Only printed 38 and 39 hold biblical text, and both were
+  read: they are the Decalogue in the עליון, `V-038.jpg` headed
+  עשרת הדיברות שבפרשת יתרו and `V-039.jpg` עשרת הדיברות שבפרשת ואתחנן. `W-001.jpg` is the
+  edition's colophon. Printed-number gaps exist (e.g. `BC-1K-187` then `BC-1K-189`); see
+  the divider-leaf finding below, which is what most of them are.
+- **simanim-tanakh**: `<sec>-<bk>-NNNN.jpg` (`B1-Js-0360.jpg`, `D2-Pr-1150.jpg`); front
+  matter in **three** separately numbered runs, `1-*`, `2-*` (including `2-03-ToC.jpg`) and
+  `3-*`. The `3-` run was missed by the 2026-08-06 tally and by Phase 0's first pass at the
+  filename shapes, and `survey` refusing to classify it is how it surfaced — the two files
+  are the Torah divider, `3-1.jpg` the title page תורה and `3-2.jpg` its contents page.
+  The `A9-*` singletons are **an עליון Decalogue appendix**: `A9-0349.jpg` is its section
+  title page, reading עשרת הדברות בטעם עליון, and `10C` in `A9-A2-10C-0350.jpg` and
+  `A9-A5-10C-0351.jpg` is the Ten Commandments, qualified by the section code of the book
+  each is drawn from. `V` ×83 is the מאורעות התנ״ך supplement, כולל סדר ההפטרות — apparatus,
+  not biblical text, so out of lookup (`V-1463.jpg` its title page, `V-1500.jpg` a topical
+  index under the running head נושאי המאורעות בכתובים).
 - **bhl**: `NNNN-<bk>.jpg` with continuous scan numbering (`0296-D.jpg`,
   `0620-Isaiah.jpg`) — but the book token is *mixed-convention*: mostly the short family
   (`G`, `Js`, `Ps`) with longform outliers (`Isaiah` ×62, `Ruth` ×5, `Song` ×5, and
   singleton `Deut`/`Exod` section-title pages), plus service tokens `blank` ×40, `title`
   ×27, `Appendix` ×5, `ToC` (in `#08-v-ToC.jpg`-style front matter), `back-cover`,
   `spine`. The book-code table in `py/scan_pages/` gets the longforms as extra rows.
+  bhl's five `Appendix` files are the appendices' title pages (A Manuscript Variants,
+  B Petuhot and Setumot, C The Shape of the Songs, D Deviation in Gemination, E Scripture
+  Readings), and its 28 bare-numbered `NNNN.jpg` files are their continuation pages. Its
+  second-strand Decalogue is not there but named outright: `1227-Exod-Decalogue-Upper.jpg`
+  and `1228-Deut-Decalogue-Upper.jpg`.
+
+**A filename number is a PRINTED page number, in every edition — and a book's first file is
+usually not its first page of text.** Ben established the first half on 2026-08-07, against
+a Phase 0 claim that simanim-tanakh's numbers counted scans: he had worked to name the files
+by printed page, and the apparent 2-page discrepancy that prompted the claim had another
+cause entirely. `BB-2S-0505.jpg` settles it directly — the page has `505` printed at its
+foot. What the discrepancy really shows is the second half: **each book opens with a divider
+leaf, named with the book's codes and so indistinguishable by name from a page of its text.**
+simanim-tanakh's `A2-E-0085.jpg` is the Torah contents with שמות 87 picked out, koren's
+`A2-E-081.jpg` is a bare שמות, and simanim-tanakh's Torah contents page independently gives
+שמות as starting at printed 87 — so the text of Exodus begins at `A2-E-0087.jpg`, two leaves
+after the book's first file. This matters because the plan assumed a book's first body page
+came free from the filename codes; it does not.
+
+**The divider leaves are found from the listing, and the pass is built to miss rather than
+invent.** A divider's blank verso was generally not scanned, so a missing number straight
+after a book's first file betrays it; that signal caught 21 of them in koren and 22 in
+simanim-tanakh, and every case checked against an image was indeed a divider. It has false
+negatives, though — simanim-tanakh gives the כתובים section its divider under Psalms' codes
+as `D1-Ps-0993.jpg`, whose verso *was* scanned, so nothing in the listing marks it and only
+reading it did (Psalms' text begins at `D1-Ps-0994.jpg`). The pass is therefore deliberately
+one-sided: a miss costs a seeded record one leaf early, which the census corrects, whereas a
+false positive would move a book's start off a page that really does hold text. `survey`
+reports every book whose divider it did not find — 18 in koren, 17 in simanim-tanakh, mostly
+the books that continue a book24 and genuinely have none — so the census reads those first.
+
+**A koren-family book's first text page generally also holds the end of the previous book,
+and the filename does not say so.** `BB-2S-0505.jpg` is named for 2Samuel and has the whole
+of 1Samuel 31 before 2Samuel 1 begins near its foot. jc1 and bhl name both books in such a
+case (`544-A-O.jpg`, `0825-A-O.jpg`) and the parser reads both; the koren family names only
+the later one. So a `bkids` list from a koren-family filename is the book that *starts*
+there, not the complete contents, and the census puts two records on such a page.
 
 **simanim-tiqqun is the special one.** Five filename sections, meanings established by
 reading sample pages (`B10.jpg`, `B60.jpg`, `C012.jpg`, `C400.jpg`, `D10.jpg`,
@@ -221,7 +283,14 @@ Tracked index, one JSON per edition at `in\scan-pages\<edition-id>.json`:
 {
   "edition": "jc1",
   "folder": "JC1 Jerusalem Crown",
-  "pages": ["#01-front-cover.jpg", "...", "220-Js.jpg", "..."],
+  "pages": [
+    {"file": "#01-front-cover.jpg", "kind": "cover"},
+    {"file": "220-Js.jpg", "kind": "body", "bkids": ["Joshua"]},
+    {"file": "876-02-Exod-Decalogue.jpg", "kind": "decalogue",
+     "bkids": ["Exodus"], "strands": ["taxton", "elyon"],
+     "note": "both strands, side by side on the one page"}
+  ],
+  "segments": [],
   "recs": [
     {"page": "013-G.jpg",
      "bkid": "Genesis", "startc": 1, "startv": 1, "startp": 1,
@@ -232,14 +301,35 @@ Tracked index, one JSON per edition at `in\scan-pages\<edition-id>.json`:
 ```
 
 - `pages` is the complete sorted listing (front and back matter included, classified), so
-  the index is meaningful — and lintable — on a clone with no scans folder at all.
+  the index is meaningful — and lintable — on a clone with no scans folder at all. Phase 0
+  made each entry an object rather than the bare filename this sample first drew, because
+  the classification has to live somewhere and not all of it is derivable from a filename:
+  koren's `V-038.jpg` is a Decalogue page and nothing in that name says so. Storing it does
+  not create a drift risk — `check` re-derives every classification from the listing and
+  compares, which makes the stored copy a differential check rather than a second truth.
+  The kinds are defined in `py/scan_pages/page_kinds.py`, and exactly two of them,
+  `body` and `decalogue`, hold text a lookup may return.
 - `recs` reuse `lci_recs.json`'s column dictionary at page level (its line/column fields
   simply don't exist here), plus the two phrase-evidence fields. Recording *both* ends of
   every page is deliberate redundancy: each record is verifiable against its own page
   image alone, and the contiguity lint then cross-checks every adjacent pair.
 - `survey` seeds each book's first body page with its start half — `startc/startv/startp`
-  of 1:1 atom 1 comes free from the filename book codes, `start_phrase` null because no
-  page was read for it. The census fills everything else.
+  of 1:1 atom 1, `start_phrase` null because no page was read for it. The census fills
+  everything else. That "comes free from the filename book codes" as first written, but
+  only after the divider-leaf pass above; the null `start_phrase` is what marks a seed as
+  unread, and for the 35 books whose divider was not found it is doing real work.
+- **All four full-Tanakh editions have a separate עליון Decalogue, and jc1's page has both
+  strands on it.** The inventory, all read on 2026-08-07: jc1's supplements have
+  `876-02-Exod-Decalogue.jpg` and `877-03-Deut-Decalogue.jpg`, each printing the two
+  strands side by side, the right column headed בטעם התחתון and with verse numbers, the
+  left בטעם העליון and without; koren's `V-038.jpg` and `V-039.jpg` have the עליון alone;
+  simanim-tanakh's `A9-A2-10C-0350.jpg` and `A9-A5-10C-0351.jpg` sit under a section title
+  page reading עשרת הדברות בטעם עליון; bhl's `1227-Exod-Decalogue-Upper.jpg` and
+  `1228-Deut-Decalogue-Upper.jpg` are headed "The Decalogue with Upper Cantillation
+  (טעם עליון)", the Exodus one naming its range as 20:2–13. **So a page can belong to two
+  strand-tagged segments at once**, and the tiling lint below exempts strand-tagged
+  segments from disjointness for exactly that reason. Which strand each edition's *body*
+  Decalogue has is still an open edition fact, established during its census.
 - Every edition's JSON has a `segments` list: maximal runs of body pages over which the
   text advances contiguously. A full-Tanakh edition's whole body is one segment; a
   separate Decalogue section is a small strand-tagged segment; in simanim-tiqqun the
@@ -253,15 +343,25 @@ Tracked index, one JSON per edition at `in\scan-pages\<edition-id>.json`:
 **Lint, not example tests.** `check` (also run as a pytest lint, one new file
 `py/tests/test_scan_pages_index.py`) verifies over the tracked JSONs:
 
-- every rec's page is in `pages`; every position parses against MAM verse counts (FAIL,
-  never skip, when MAM-parsed is absent — per the repo's missing-input rule);
+- every rec's page is in `pages`, is of a kind a rec may sit on, and names a book that
+  page holds; every position parses against MAM verse counts (FAIL, never skip, when
+  MAM-parsed is absent — per the repo's missing-input rule);
+- every stored classification is re-derived from the listing and compared — a differential
+  check of all 5,720 pages against an independent derivation of the same fact, and the one
+  lint that already does full-scale work at Phase 0;
 - within a segment, recs in page order have strictly advancing text positions and
   consecutive recs meet at adjacent atoms in text order — no gap, no overlap, no page
   silently skipped — and segments' page ranges tile the classified body pages without
-  overlap;
+  overlap, **except that strand-tagged segments may share pages**, since jc1 prints the
+  תחתון and the עליון on one sheet;
 - each stored phrase, re-located in MAM-parsed text, lands exactly at its rec's recorded
   atoms — a differential check of every record against an independent derivation;
 - atoms-per-page stays within a sane band, flagging the outliers a misread produces.
+
+The last two arrive with Phase 1: both need the phrase locator and the atom splitter that
+the census builds, and neither has data to run on until stop halves exist. Phase 0 built
+the rest, and `check` prints how much it verified so a green run that checked nothing would
+be visible.
 
 The model cannot express a page error; these lints are what catch wrong *data*. A
 boundary placed at the wrong atom has to lie about two adjacent pages consistently to
@@ -290,10 +390,22 @@ keeps refusing rather than guessing, so partial progress is always safe to use.
   through `mb_cmn.paths.sibling_repo` + `require_sibling`, never a `../MAM-parsed`
   literal. A worktree runs the primary clone's venv by absolute path, per the global
   rules.
-- Baseline: 320 tests pass via `.venv/Scripts/python.exe py/main_test.py` (320 measured
-  2026-08-04 per `doc/metsudah-vs-ctr.md`; re-measure before starting — a different
-  count is a finding). After each phase the suite still passes; Phase 0 raises the count
-  by exactly one file's worth (the new lint).
+- Baseline: **915 passed, 5 skipped**, measured 2026-08-07 at `fc23077` from the repo root
+  of the primary clone. The 320 this bullet used to cite, from `doc/metsudah-vs-ctr.md`, is
+  stale by a wide margin — that figure predates the accgram and CLC code arriving on
+  2026-08-01 — so treat the count here as the baseline and `doc/metsudah-vs-ctr.md`'s as
+  a historical note. Phase 0 took it to **919**: two tests in the new lint file, and two
+  more because `test_entry_point_subcommands.py` parametrizes over the entry points and
+  there is now one more.
+- **A worktree cannot run the suite green, and this is not a defect to fix.**
+  `py/mb_cmn/read_books_from_mam_parsed_plus.py` is on the repo `CLAUDE.md`'s vendored-file
+  exception list and so keeps a cwd-relative `"../MAM-parsed"` default that neither
+  `REPOS_ROOT` nor `REPO_MAM_PARSED_DIR` reaches; from a worktree that resolves inside
+  `.claude\worktrees\` and 12 tests fail with 5 collection errors, all of them
+  MAM-parsed-shaped. Measured 2026-08-07, before Phase 0 wrote anything, so it is the
+  worktree's baseline rather than anything a phase did. Run the full suite in the primary
+  clone after merging; new code takes the sibling path from `mb_cmn.paths` and so is
+  unaffected either way.
 - Tracked files this undertaking may touch: this doc, `py/main_scan_pages.py`,
   `py/scan_pages/*`, `in/scan-pages/*`, `py/tests/test_scan_pages_index.py`. **Nothing
   else is expected to change** — no MAM data, no generated artifacts, no sibling repos; an
@@ -307,15 +419,57 @@ keeps refusing rather than guessing, so partial progress is always safe to use.
 
 ## Phases (each ends with a chat report and a commit; pause for Ben where marked)
 
-**Phase 0 — survey and tracked inventory.** No image reads. Implement `survey`: walk the
-five folders, classify every filename (edition-specific parsers + the shared book-code
-table), fail loudly listing any file it cannot classify (the `A9-*` singletons and koren's
-`V` run will surface here; if a classification needs eyes, read that one page and record
-what it is in this doc). Emit the five JSONs with `pages` and the seeded start halves;
-implement `check` + the pytest lint; report per-edition/per-book page counts and
-anomalies here. Expected result: 39 seeded book-first pages in each of jc1, koren,
-simanim-tanakh, bhl (fewer only if a book genuinely shares its opening page), none yet
-for simanim-tiqqun.
+**Phase 0 — survey and tracked inventory. DONE, 2026-08-07.** The code is
+`py/main_scan_pages.py` (`survey`, `check`) over `py/scan_pages/`, with the lint at
+`py/tests/test_scan_pages_index.py`. Re-derive everything below with:
+
+```
+C:\Users\BenDe\GitRepos\MAM-basics\.venv\Scripts\python.exe py/main_scan_pages.py survey
+```
+
+All **5,720** files classify, and the per-edition file counts match the ones this doc
+recorded on 2026-08-06 exactly. Pages by kind, and the seeded records:
+
+| edition | files | body | text out of lookup | seeded recs |
+| --- | --- | --- | --- | --- |
+| `jc1` | 927 | 861 | — | 39 |
+| `koren` | 1332 | 1240 | — | 39 |
+| `simanim-tanakh` | 1552 | 1401 | — | 39 |
+| `simanim-tiqqun` | 614 | 0 | 444 unassigned, 60 unpointed | 0 |
+| `bhl` | 1295 | 1162 | — | 39 |
+
+Each of the four full-Tanakh editions has all 39 books present with body pages, and 39
+seeded records on 39 distinct pages — the outcome the plan predicted. The rest of each
+edition is front and back matter, covers, blanks, title pages and, in simanim-tiqqun,
+apparatus; the full breakdown is in the survey's output and in the tracked JSONs.
+simanim-tiqqun's 444 C pages are classified `body-unassigned`, awaiting Phase 3 to say
+which is Torah, which a haftarah and which one of the three full-text megillot.
+
+`check` re-classifies all 5,720 pages and validates all 156 records against MAM-parsed:
+
+```
+C:\Users\BenDe\GitRepos\MAM-basics\.venv\Scripts\python.exe py/main_scan_pages.py check
+```
+
+**What Phase 0 got wrong, and how.** Three claims failed when measured, which is the point
+of measuring: the plan's book-code table turned out to be this repo's two functions
+(above); simanim-tanakh's filename numbers are printed page numbers after all, Ben's
+correction, and chasing why they had looked otherwise is what found the divider leaves; and
+the first pass at the filename shapes missed simanim-tanakh's `3-*` run entirely — `survey`
+refusing to classify those two files is the only reason they were not silently dropped,
+which is the whole argument for making it refuse.
+
+**Anomalies worth carrying forward.** Obadiah has a single body page in koren
+(`CD-O-553.jpg`) and in simanim-tanakh (`CD-O-0952.jpg`), and none to itself in jc1 or bhl,
+where it shares `544-A-O.jpg`/`545-O-Jn.jpg` and `0825-A-O.jpg`/`0826-O-Jn.jpg` — correct,
+being 21 verses, but it makes Obadiah the sharpest test of the record model and a good
+first census subject. And 18 books in koren and 17 in simanim-tanakh have no divider leaf
+found, so their opening page is recorded as text unconfirmed; `survey` lists them by name
+and the census reads those first.
+
+**Phase 0 read 15 page images**, all with the `Read` tool and no viewer, to settle what
+filenames do not say. They are cited individually at the findings above and in the tables
+that encode them in `py/scan_pages/classify.py`.
 
 **Phase 1 — tooling, proven on one small book.** Implement
 `lookup <bk39> <ch>:<v>[t|e] [<phrase>]` (exact-or-refuse) → HTML bring-up, and `census` (page-edge phrases in, atoms out,
