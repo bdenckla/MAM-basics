@@ -60,11 +60,6 @@ def render_intro_overview_summary_markdown():
     return "\n".join(lines)
 
 
-def render_bhs_simple_shift_sections_markdown(books_mpu):
-    sections = extract.extract_bhs_simple_shift_sections(books_mpu)
-    return _render_bhs_sections_markdown(sections, include_bhs_heading=True)
-
-
 def render_bhs_generated_sections_markdown(books_mpu):
     sections = (
         extract.extract_bhs_simple_shift_sections(books_mpu)
@@ -74,29 +69,7 @@ def render_bhs_generated_sections_markdown(books_mpu):
         + extract.extract_bhs_present_vs_absent_sections(books_mpu)
     )
     sections = tuple(sorted(sections, key=lambda section: section.heading))
-    return _render_bhs_sections_markdown(sections, include_bhs_heading=True) + "\n---\n"
-
-
-def render_bhs_early_one_vs_many_sections_markdown(books_mpu):
-    sections = extract.extract_bhs_early_one_vs_many_sections(books_mpu)
-    return _render_bhs_sections_markdown(sections, include_bhs_heading=False)
-
-
-def render_bhs_late_one_vs_many_sections_markdown(books_mpu):
-    sections = extract.extract_bhs_late_one_vs_many_sections(books_mpu)
-    return _render_bhs_sections_markdown(sections, include_bhs_heading=False)
-
-
-def render_bhs_complex_boundary_sections_markdown(books_mpu):
-    sections = extract.extract_bhs_complex_boundary_sections(books_mpu)
-    return _render_bhs_sections_markdown(sections, include_bhs_heading=False)
-
-
-def render_bhs_present_vs_absent_sections_markdown(books_mpu):
-    sections = extract.extract_bhs_present_vs_absent_sections(books_mpu)
-    return (
-        _render_bhs_sections_markdown(sections, include_bhs_heading=False) + "\n---\n"
-    )
+    return _render_bhs_sections_markdown(sections) + "\n---\n"
 
 
 def render_sef_generated_sections_markdown(books_mpu):
@@ -202,10 +175,8 @@ def _render_summary_rows():
     return rows
 
 
-def _render_bhs_sections_markdown(sections, include_bhs_heading):
-    lines = []
-    if include_bhs_heading:
-        lines.extend(("## BHS Versification", ""))
+def _render_bhs_sections_markdown(sections):
+    lines = ["## BHS Versification", ""]
     for section in sections:
         lines.extend(_render_vtrad_section_lines(section))
     return "\n".join(lines).rstrip() + "\n"
