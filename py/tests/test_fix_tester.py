@@ -14,6 +14,7 @@ Run:
 from __future__ import annotations
 
 from accgram import fix_tester
+from accgram.prose_ply_grammar import build_parser
 from tests.mc_marks import mc_to_marks
 
 # The two real verse bodies (M-C source, converted to the Phase-2 mark alphabet,
@@ -38,8 +39,7 @@ def test_merge_next_extracted_from_note():
 def test_nu_2519_alone_is_ungrammatical():
     # Standalone, the BHS "verse" ends on an atnax with nothing after it, so both
     # the silluq and the sof-pasuq phrases are missing.
-    guard = fix_tester._ParseGuard()
-    before = fix_tester._evaluate(_NU_2519, "nu", 25, 19, guard)
+    before = fix_tester._evaluate(_NU_2519, "nu", 25, 19, build_parser())
     assert before.status == "ERROR"
     assert before.labels == frozenset({"silluq_phrase", "sof_pasuq_phrase"})
     assert before.token_types[-2:] == ("ATNAX", "MISSING_SOFPASUQ")
@@ -48,10 +48,10 @@ def test_nu_2519_alone_is_ungrammatical():
 def test_merge_next_concatenation_parses_clean():
     # Append nu 26:1: the atnax now bisects a complete verse that ends in
     # silluq + sof-pasuq, and the mid-verse ]1 note / P petuhah are inert.
-    guard = fix_tester._ParseGuard()
-    # Evaluate the pre-concatenation verse first (shares the guard); result unused here.
-    fix_tester._evaluate(_NU_2519, "nu", 25, 19, guard)
-    after = fix_tester._evaluate(f"{_NU_2519} {_NU_2601}", "nu", 25, 19, guard)
+    parser = build_parser()
+    # Evaluate the pre-concatenation verse first (shares the parser); result unused here.
+    fix_tester._evaluate(_NU_2519, "nu", 25, 19, parser)
+    after = fix_tester._evaluate(f"{_NU_2519} {_NU_2601}", "nu", 25, 19, parser)
     assert after.status == "CLEAN"
     assert not after.labels
     assert "ATNAX" in after.token_types

@@ -34,7 +34,6 @@ Depends on ``out/accgram/prose/`` -- run ``run-prose`` first.
 from __future__ import annotations
 
 import argparse
-import threading
 from dataclasses import asdict, dataclass
 from pathlib import Path
 
@@ -86,46 +85,21 @@ class _Eval:
     token_types: tuple[str, ...]
 
 
-_PARSE_TIMEOUT_SECONDS = 8.0
-
-
-class _ParseGuard:
-    """Parse with a wall-clock watchdog so a pathological modified stream cannot
-    hang the run.  The fix-tester feeds the grammar synthetic token streams it
-    never sees in the corpus; a few can drive the parser's error recovery into an
-    internal (not read-driven) loop.  On timeout we abandon the zombie thread
-    (daemon) and rebuild the parser so the next verse uses a clean one.
-    """
-
-    def __init__(self) -> None:
-        self.parser = build_parser()
-
-    def parse(self, tokens):
-        box: dict[str, object] = {}
-
-        def work() -> None:
-            try:
-                box["tree"] = parse_tokens(self.parser, tokens)
-            except (
-                BaseException
-            ) as exc:  # noqa: BLE001 - re-raised on the caller thread
-                box["exc"] = exc
-
-        thread = threading.Thread(target=work, daemon=True)
-        thread.start()
-        thread.join(_PARSE_TIMEOUT_SECONDS)
-        if thread.is_alive():
-            self.parser = build_parser()  # the old parser is held by the zombie
-            return "timeout", None
-        if "exc" in box:
-            raise box["exc"]  # type: ignore[misc]
-        return "ok", box.get("tree")
-
-
 # --- per-verse evaluation (mirrors prose_run.render_book) -----------------------
 
 
-def _evaluate(body: str, bb: str, chnu: int, vrnu: int, guard: _ParseGuard) -> _Eval:
+# THE PARSE HERE IS PLAIN, AND THE WATCHDOG THAT USED TO WRAP IT IS RETIRED (#221).
+# ``_ParseGuard`` ran every parse on a daemon thread with an 8-second wall clock and a
+# PARSE_TIMEOUT status (wlc-utils 2fae1be, 2026-06-16), because a synthetic stream --
+# which is all this tool feeds the grammar -- could drive PLY's error recovery into a
+# loop that reads no further input.  #221 found that loop and removed its cause, the bare
+# ``pasuq : error`` production; a sweep of 79,798 token streams then found no stream that
+# fails to terminate.  The guard is not kept as insurance because it costs more than it
+# insures: an 8-second wall clock is a nondeterministic verdict, so a loaded machine could
+# turn a real result into an UNTESTABLE row, and each timeout abandoned a live thread
+# holding a parser.  A future non-termination would hang this run outright, which is a
+# louder signal than a plausible-looking report with a row silently reclassified.
+def _evaluate(body: str, bb: str, chnu: int, vrnu: int, parser) -> _Eval:
     tokens = [Token("TILDE", "")] + scan_accents(body, bb, chnu, vrnu, HasLegarmeh())
     token_types = tuple(tok.type for tok in tokens if tok.type != "TILDE")
 
@@ -137,9 +111,7 @@ def _evaluate(body: str, bb: str, chnu: int, vrnu: int, guard: _ParseGuard) -> _
         labels = frozenset(f"illegal_mark:{mark.code}" for mark in ungrammatical)
         return _Eval("ERROR", labels, token_types)
 
-    status, tree = guard.parse(tokens)
-    if status == "timeout":
-        return _Eval("PARSE_TIMEOUT", frozenset({"PARSE_TIMEOUT"}), token_types)
+    tree = parse_tokens(parser, tokens)
     if tree is None:
         return _Eval("NO_PARSE", frozenset({"NO_PARSE"}), token_types)
     if tree is LOCATION_ONLY:
@@ -258,7 +230,7 @@ def _test_one(
     wlc_focus: str | None,
     source_indexes: tuple[dict, dict, dict],
     args: argparse.Namespace,
-    guard: _ParseGuard,
+    parser,
 ) -> FixTestResult:
     speculative = fix_claim.is_speculative(structured_text)
     claimed = fix_claim.claimed_outcome(structured_text)
@@ -323,7 +295,7 @@ def _test_one(
 
     diff = enriched_row.get("diff_wlc_mam")
     wlc_words = fix_apply.verse_words(enriched_row.get("wlc422_kq_u_verse"))
-    before = _evaluate(body, bb, chnu, vrnu, guard)
+    before = _evaluate(body, bb, chnu, vrnu, parser)
 
     synth_fix = _synth_fix(structured_text)
     diff_entry = _select_diff_entry(diff, wlc_focus)
@@ -339,7 +311,7 @@ def _test_one(
                 vrnu=vrnu,
                 before=before,
                 wlc422_by_bcv=wlc422_by_bcv,
-                guard=guard,
+                parser=parser,
                 result=result,
             )
         if synth_fix is None or not wlc_focus:
@@ -374,16 +346,7 @@ def _test_one(
             synthesized=synthesized,
         )
 
-    after = _evaluate(applied.new_body, bb, chnu, vrnu, guard)
-    if after.status == "PARSE_TIMEOUT":
-        return result(
-            "UNTESTABLE",
-            reason="parse_timeout",
-            before=before,
-            transformation=applied.transformation(),
-            fix_description=fix_description,
-            synthesized=synthesized,
-        )
+    after = _evaluate(applied.new_body, bb, chnu, vrnu, parser)
     if after.status == "CLEAN":
         classification = "CONFIRMED"
     elif (after.status, after.labels) == (before.status, before.labels):
@@ -409,7 +372,7 @@ def _test_merge_next(
     vrnu: int,
     before: _Eval,
     wlc422_by_bcv: dict[str, dict[str, object]],
-    guard: _ParseGuard,
+    parser,
     result,
 ) -> FixTestResult:
     """The lone *verse*-level splice: append the named next verse's M-C body.
@@ -441,16 +404,8 @@ def _test_merge_next(
         )
 
     combined = f"{body} {next_body}"
-    after = _evaluate(combined, bb, chnu, vrnu, guard)
+    after = _evaluate(combined, bb, chnu, vrnu, parser)
     transformation = f"appended {merge_ref} M-C body"
-    if after.status == "PARSE_TIMEOUT":
-        return result(
-            "UNTESTABLE",
-            reason="parse_timeout",
-            before=before,
-            transformation=transformation,
-            fix_description=fix_description,
-        )
     if after.status == "CLEAN":
         classification = "CONFIRMED"
     elif (after.status, after.labels) == (before.status, before.labels):
@@ -517,7 +472,7 @@ def run_tests(args: argparse.Namespace) -> list[FixTestResult]:
         refs_by_book=refs_by_book,
     )
 
-    guard = _ParseGuard()
+    parser = build_parser()
     results: list[FixTestResult] = []
     for row, bcv, ref in parsed_rows:
         structured_text = structured_text_by_ref.get(ref)
@@ -533,7 +488,7 @@ def run_tests(args: argparse.Namespace) -> list[FixTestResult]:
                 wlc_focus=wlc_focus,
                 source_indexes=source_indexes,
                 args=args,
-                guard=guard,
+                parser=parser,
             )
         )
     results.sort(key=lambda r: _ref_sort_key(r.ref))
