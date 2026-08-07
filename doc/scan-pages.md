@@ -33,8 +33,15 @@ for a fresh session that has no other context.
 - **Verse counts come from the MAM-parsed sibling at runtime** (via
   `mb_cmn/read_books_from_mam_parsed_plus.py`), not from a second tracked copy — no
   duplicated artifact to drift. Versification: MAM's. The editions' own versification
-  differs from MAM's in scattered verses, but a whole page absorbs an off-by-one-verse
-  difference, so at page granularity the differences are irrelevant.
+  differs from MAM's at scattered loci, by one or two verses within a chapter. This plan
+  first claimed a whole page absorbs such a difference; Ben's correction, 2026-08-07: it
+  does not — a verse that is first or last on its page (about 2 in 23) spills to the
+  neighboring page when the numberings disagree about it, and a verse can genuinely
+  straddle two pages regardless of numbering. What absorbs both is a **floor on the
+  bring-up window: never narrower than ±1 page, however dense the anchors get.** The same
+  floor covers a `recorded` anchor that is itself off by one verse because Ben read the
+  edition's printed verse number at a discrepancy locus — a slip the monotonicity lint
+  cannot catch, since a one-verse slip is still monotonic.
 - **Anchor semantics: "this bcv appears on this page."** Containment, not page-start —
   containment is what a human looking at a page can record without checking whether the
   page's first verse began on the previous page. Anchor kinds: `book-start` (derived from
