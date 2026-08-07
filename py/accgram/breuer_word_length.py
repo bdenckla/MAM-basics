@@ -68,7 +68,10 @@ clean and parses all four combinations legal -- a munaḥ or a pashta on the fir
 against a zaqef or a revia on the second.  The survey classifies הֽעלי֗ון long on the two-syllable
 criterion under every count computed, so on the WLC side the unit sits in the long-yet-a-servant
 residue §8 calls rare, and is named in ``different_accents_units``; on the MAM side the revia
-leaves no zaqef realm there to measure at all.
+leaves no zaqef realm there to measure at all.  wlc-utils#11's flat PCFG over the committed
+trees (``grammaticality.py``) can weigh the split little better: this survey is a hand-built
+conditional likelihood model for one production family, supplying the phonetic conditioning the
+flat PCFG lacks, and #222 is where the directions for wiring the two together live.
 
 WRITES TO ``.novc/``, not to ``out/``.  This is a measurement, not a generated artifact of the
 corpus, and nothing here regenerates anything committed.  Run via

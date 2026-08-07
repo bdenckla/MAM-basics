@@ -44,8 +44,13 @@ The two motivating applications both reduce to ``score_obj`` on a candidate tree
     (e.g. ``bang_legality``'s four bang interpretations), parse each, and rank the
     grammatical survivors by tree score (prefer the most probable repair);
   * **tradition comparison** -- score a WLC reading against a reconstructed MAM reading
-    and report the difference (poetic-only, honest at the disjunctive-skeleton level,
-    since MAM exposes no full conjunctive token stream).
+    and report the difference.  When wlc-utils#11 closed, the comparison was scoped
+    poetic-only, the prose pipeline then having no MAM token stream; that caveat has
+    dissolved -- ``breuer_word_length.scan_mam_units`` (the Breuer zaqef-unit survey)
+    parses MAM prose through the same scanner and grammar, off MAM-simple's
+    ``json-vtrad-mam``, a full prose MAM token stream rather than a reconstructed
+    disjunctive skeleton -- and #222 is where the directions for wiring the survey and
+    this PCFG together live.
 
 This is a *research diagnostic*, not a pipeline product: it writes
 out/accgram/_grammaticality.txt and touches no corpus output -- regenerate and diff
