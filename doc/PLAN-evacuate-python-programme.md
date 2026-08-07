@@ -53,6 +53,15 @@ maintaining Python across repos is what motivates this programme, al-hatorah is 
 single instance of that tax and this programme does not touch it. Say so when reporting progress,
 so "all the Python is consolidated" is never claimed.
 
+**The different answer now exists — `bdenckla/MAM-private`, created 2026-08-07.** Ben's decision
+of that date: a new private repo is the destination for the full contents — not Python-only — of
+masorah-books, al-hatorah, wlc-utils-private and mgketer, one top-level directory per source
+repo. Its plan is `MAM-private/doc/PLAN-evacuate-private-repos.md`, kept there rather than beside
+this file because MAM-basics is public and that plan discusses private repos' internals. Nothing
+about this programme changes: private Python still does not move into MAM-basics, and the
+al-hatorah paragraph above stands — al-hatorah's evacuation is whole-tree, into MAM-private,
+under that plan.
+
 ## Scale — measured 2026-08-02
 
 `git ls-files "*.py" | wc -l` and `git ls-files "*.py" -z | xargs -0 wc -l` in each repo:

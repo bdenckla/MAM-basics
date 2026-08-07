@@ -58,6 +58,9 @@
 			"path": "../MAM-parsed"
 		},
 		{
+			"path": "../MAM-private"
+		},
+		{
 			"path": "../MAM-simple"
 		},
 		{
