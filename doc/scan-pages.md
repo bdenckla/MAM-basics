@@ -172,7 +172,9 @@ The body-page filename shapes:
   whose printed contents page is `V-001.jpg` (read 2026-08-07): 3 ספר התנ״ך שבהוצאת קורן,
   9 דברי ברכה, 13 חילופי נוסחאות, 17 and 33 the Hebrew renderings of the Aramaic in Daniel
   and in Ezra, 38 עשרת הדיברות בטעם העליון, 40–42 the Torah readings, 46 ברכות ההפטרה,
-  47 סדר ההפטרות, 58 שמות הטעמים. Only printed 38 and 39 hold biblical text, and both were
+  47 סדר ההפטרות, 58 שמות הטעמים. In `V` the scan number equals the printed page number,
+  which `V-030.jpg` confirms: it has printed page 30, inside the Daniel rendering the
+  contents page places at 17–33. Only printed 38 and 39 hold biblical text, and both were
   read: they are the Decalogue in the עליון, `V-038.jpg` headed
   עשרת הדיברות שבפרשת יתרו and `V-039.jpg` עשרת הדיברות שבפרשת ואתחנן. `W-001.jpg` is the
   edition's colophon. Printed-number gaps exist (e.g. `BC-1K-187` then `BC-1K-189`); see
@@ -187,7 +189,9 @@ The body-page filename shapes:
   `A9-A5-10C-0351.jpg` is the Ten Commandments, qualified by the section code of the book
   each is drawn from. `V` ×83 is the מאורעות התנ״ך supplement, כולל סדר ההפטרות — apparatus,
   not biblical text, so out of lookup (`V-1463.jpg` its title page, `V-1500.jpg` a topical
-  index under the running head נושאי המאורעות בכתובים).
+  index under the running head נושאי המאורעות בכתובים). `W-1552.jpg`, the last numbered
+  leaf, has the publisher's back-cover artwork over וְעַתָּה כִּתְבוּ לָכֶם אֶת־הַשִּׁירָה הַזֹּאת, with the
+  scanned back cover proper filed separately as `X-back-cover.jpg`.
 - **bhl**: `NNNN-<bk>.jpg` with continuous scan numbering (`0296-D.jpg`,
   `0620-Isaiah.jpg`) — but the book token is *mixed-convention*: mostly the short family
   (`G`, `Js`, `Ps`) with longform outliers (`Isaiah` ×62, `Ruth` ×5, `Song` ×5, and
@@ -467,17 +471,40 @@ first census subject. And 18 books in koren and 17 in simanim-tanakh have no div
 found, so their opening page is recorded as text unconfirmed; `survey` lists them by name
 and the census reads those first.
 
-**Phase 0 read 15 page images**, all with the `Read` tool and no viewer, to settle what
-filenames do not say. They are cited individually at the findings above and in the tables
-that encode them in `py/scan_pages/classify.py`.
+**Phase 0 read 17 page images**, all with the `Read` tool and no viewer, to settle what
+filenames do not say, and every one of them is cited at the finding it settles above and in
+the tables that encode it in `py/scan_pages/classify.py`. In edition order: jc1
+`876-02-Exod-Decalogue.jpg`; koren `V-001.jpg`, `V-030.jpg`, `V-038.jpg`, `V-039.jpg`,
+`W-001.jpg`, `A2-E-081.jpg`; simanim-tanakh `3-1.jpg`, `3-2.jpg`, `A9-0349.jpg`,
+`A2-E-0085.jpg`, `BB-2S-0505.jpg`, `D1-Ps-0993.jpg`, `V-1463.jpg`, `V-1500.jpg`,
+`W-1552.jpg`; bhl `1227-Exod-Decalogue-Upper.jpg`. The list is here so a later phase can
+see at a glance what has been looked at and what has only been inferred.
 
 **Phase 1 — tooling, proven on one small book.** Implement
 `lookup <bk39> <ch>:<v>[t|e] [<phrase>]` (exact-or-refuse) → HTML bring-up, and `census` (page-edge phrases in, atoms out,
 contiguity checked against the previous record as each new one lands). Then census one
-small book end to end in one edition — Ruth in jc1, say — and verify: `check` clean, and
+small book end to end in one edition and verify: `check` clean, and
 spot-read several lookups against the page images, straddling verses included, confirming
 the verse is really on the returned page(s). Record the spot results here. **Pause for
 Ben:** he tries it and confirms the record shape before ~5100 pages get read into it.
+
+Three things Phase 0 established that bear on how Phase 1 starts:
+
+- **Census Obadiah, not Ruth.** Phase 0 wrote "Ruth in jc1, say" before knowing the shape of
+  the data. Obadiah is the better first subject because it exercises every hard case at
+  minimum cost: one body page in koren (`CD-O-553.jpg`) and in simanim-tanakh
+  (`CD-O-0952.jpg`), and in jc1 and bhl no page to itself at all — it starts mid-page on
+  `544-A-O.jpg` / `0825-A-O.jpg` and ends mid-page on `545-O-Jn.jpg` / `0826-O-Jn.jpg`. So it
+  forces two records on one page, and a book whose every page is shared, before any of it is
+  built at scale. Ruth in jc1 is four clean pages and would prove much less.
+- **Verify a book's opening page before recording it.** A koren-family book opens with a
+  divider leaf indistinguishable by filename from its text, and `survey` names the 18 books in
+  koren and 17 in simanim-tanakh whose divider it could not find. Those seeded start records
+  are the ones most likely to be a leaf early, and reading the page is what settles it.
+- **A koren-family page can hold two books without saying so.** `BB-2S-0505.jpg` is named for
+  2Samuel and has the whole of 1Samuel 31 first. So `census` must not assume the page's
+  `bkids` is its complete contents, and the contiguity lint must tolerate two records on one
+  page — which `check` already does, keying records by book rather than by page.
 
 **Phase 2 — the censuses, edition by edition.** For each of jc1, bhl, koren,
 simanim-tanakh: read every body page's edges, one book-sized chunk at a time — lints, a
