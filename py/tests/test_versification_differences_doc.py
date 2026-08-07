@@ -61,7 +61,9 @@ class TestVersificationDifferencesDoc(unittest.TestCase):
             _THIRD_BHS_SECTION_MARKER, 1
         )
         expected = _FIRST_BHS_SECTION_MARKER + bhs_simple_shift_body
-        books_mpu = plus.read_parsed_plus_bk39s((tbn.BK_FST_SAM, tbn.BK_JEREM))
+        books_mpu = plus.read_parsed_plus_bk39s(
+            (tbn.BK_FST_SAM, tbn.BK_JEREM), paths.mam_parsed_path()
+        )
 
         self.assertEqual(
             versification_differences_doc.render_bhs_simple_shift_sections_markdown(
@@ -85,7 +87,8 @@ class TestVersificationDifferencesDoc(unittest.TestCase):
                 tbn.BK_NUMBERS,
                 tbn.BK_DEUTER,
                 tbn.BK_JOSHUA,
-            )
+            ),
+            paths.mam_parsed_path(),
         )
 
         self.assertEqual(
@@ -107,7 +110,9 @@ class TestVersificationDifferencesDoc(unittest.TestCase):
             + _SIXTH_BHS_SECTION_MARKER
             + sixth_body
         )
-        books_mpu = plus.read_parsed_plus_bk39s((tbn.BK_EXODUS, tbn.BK_DEUTER))
+        books_mpu = plus.read_parsed_plus_bk39s(
+            (tbn.BK_EXODUS, tbn.BK_DEUTER), paths.mam_parsed_path()
+        )
 
         self.assertEqual(
             versification_differences_doc.render_bhs_early_one_vs_many_sections_markdown(
@@ -134,7 +139,9 @@ class TestVersificationDifferencesDoc(unittest.TestCase):
             + _SEVENTH_BHS_SECTION_MARKER
             + seventh_body
         )
-        books_mpu = plus.read_parsed_plus_bk39s((tbn.BK_EXODUS, tbn.BK_DEUTER))
+        books_mpu = plus.read_parsed_plus_bk39s(
+            (tbn.BK_EXODUS, tbn.BK_DEUTER), paths.mam_parsed_path()
+        )
 
         self.assertEqual(
             versification_differences_doc.render_bhs_late_one_vs_many_sections_markdown(
@@ -148,7 +155,9 @@ class TestVersificationDifferencesDoc(unittest.TestCase):
         _before_fifth, fifth_and_after = full_doc.split(_FIFTH_BHS_SECTION_MARKER, 1)
         fifth_body, _after_fifth = fifth_and_after.split(_SIXTH_BHS_SECTION_MARKER, 1)
         expected = _FIFTH_BHS_SECTION_MARKER.lstrip("\n") + fifth_body
-        books_mpu = plus.read_parsed_plus_bk39s((tbn.BK_NUMBERS,))
+        books_mpu = plus.read_parsed_plus_bk39s(
+            (tbn.BK_NUMBERS,), paths.mam_parsed_path()
+        )
 
         self.assertEqual(
             versification_differences_doc.render_bhs_complex_boundary_sections_markdown(
@@ -162,7 +171,9 @@ class TestVersificationDifferencesDoc(unittest.TestCase):
         _before_eighth, eighth_and_after = full_doc.split(_EIGHTH_BHS_SECTION_MARKER, 1)
         eighth_body, _after_eighth = eighth_and_after.split(_SEFARIA_SECTION_MARKER, 1)
         expected = _EIGHTH_BHS_SECTION_MARKER.lstrip("\n") + eighth_body
-        books_mpu = plus.read_parsed_plus_bk39s((tbn.BK_JOSHUA,))
+        books_mpu = plus.read_parsed_plus_bk39s(
+            (tbn.BK_JOSHUA,), paths.mam_parsed_path()
+        )
 
         self.assertEqual(
             versification_differences_doc.render_bhs_present_vs_absent_sections_markdown(
@@ -177,7 +188,8 @@ class TestVersificationDifferencesDoc(unittest.TestCase):
         sef_body, _after_sef = sef_and_after.split(_COMBINED_TABLE_MARKER, 1)
         expected = _SEFARIA_SECTION_MARKER.lstrip("\n") + sef_body
         books_mpu = plus.read_parsed_plus_bk39s(
-            (tbn.BK_FST_SAM, tbn.BK_JEREM, tbn.BK_EXODUS, tbn.BK_DEUTER, tbn.BK_JOSHUA)
+            (tbn.BK_FST_SAM, tbn.BK_JEREM, tbn.BK_EXODUS, tbn.BK_DEUTER, tbn.BK_JOSHUA),
+            paths.mam_parsed_path(),
         )
 
         self.assertEqual(
@@ -202,7 +214,8 @@ class TestVersificationDifferencesDoc(unittest.TestCase):
                 tbn.BK_NUMBERS,
                 tbn.BK_DEUTER,
                 tbn.BK_JOSHUA,
-            )
+            ),
+            paths.mam_parsed_path(),
         )
 
         self.assertEqual(
@@ -220,7 +233,8 @@ class TestVersificationDifferencesDoc(unittest.TestCase):
                 tbn.BK_NUMBERS,
                 tbn.BK_DEUTER,
                 tbn.BK_JOSHUA,
-            )
+            ),
+            paths.mam_parsed_path(),
         )
 
         self.assertEqual(

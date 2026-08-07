@@ -36,6 +36,7 @@ from foi import foiz_wt_slh_word as foi_slh_word
 from foi import foiz_wt_mtgmtg as foi_mtgmtg
 from foi import foiz_wt_unicode as foi_unicode
 
+from mb_cmn import paths
 from mb_cmn import read_books_from_mam_parsed_plus as plus
 from mb_cmn import bib_locales as tbn
 
@@ -94,7 +95,7 @@ _WIKITEXT_FOIS_FNS = list(_WIKITEXT_FOIS_FUN_FOR_CLARG.values())
 
 def almost_main(foi=None, single_threaded=False):
     """Collect features of interest from MAM."""
-    books_mpu = plus.read_parsed_plus_bk39s()
+    books_mpu = plus.read_parsed_plus_bk39s(mam_parsed_path=paths.mam_parsed_path())
     all_fois = _make_intermediates(foi, single_threaded, books_mpu)
     foi_finals.write(foi, all_fois)
 

@@ -8,6 +8,7 @@ dual-cantillation information.
 from decnreub.decnreub import do_one_book
 from decnreub.decnreub import flatrow_for_jsondump
 from mb_cmn import file_io
+from mb_cmn import paths
 from mb_cmn import read_books_from_mam_parsed_plus as plus
 from mb_cmn import bib_locales as tbn
 from mb_cmn.my_utils import sl_map
@@ -26,7 +27,9 @@ def almost_main():
     #    * the Exodus decalogue
     #    * the Deuteronomy decalogue
     #    * the Saga of Reuben
-    books_mpu = plus.read_parsed_plus_bk39s(tbn.BK39IDS_OF_BOOKS_WITH_DUALCANT)
+    books_mpu = plus.read_parsed_plus_bk39s(
+        tbn.BK39IDS_OF_BOOKS_WITH_DUALCANT, paths.mam_parsed_path()
+    )
     #
     out_rows = sum_of_map(do_one_book, books_mpu.values())
     flatrows = sl_map(flatrow_for_jsondump, out_rows)

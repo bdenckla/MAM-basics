@@ -46,7 +46,7 @@ def almost_main(bkids=None):
     MAM-with-doc public GitHub repo"""
     if bkids is None:
         bkids = tbn.ALL_BK39_IDS
-    books_mpu = plus.read_parsed_plus_bk39s(bkids)
+    books_mpu = plus.read_parsed_plus_bk39s(bkids, paths.mam_parsed_path())
     edition = "MAM with doc"
     css_href = "two_col_style.css"
     styles_mam_with_doc.make_css_file_for_mwd(_out_path(css_href))
