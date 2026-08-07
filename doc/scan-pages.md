@@ -274,6 +274,16 @@ keeps refusing rather than guessing, so partial progress is always safe to use.
 - Repos: `C:\Users\BenDe\GitRepos\MAM-basics` (venv at `.venv\Scripts\python.exe`);
   sibling `C:\Users\BenDe\GitRepos\MAM-parsed` present (verse counts). Scans at
   `C:\Users\BenDe\OneDrive\Documents\ScansOfBooks` with the five folders named above.
+- Worktree-isolable (Ben asked 2026-08-07). Every tracked write is in MAM-basics, so a
+  worktree isolates the undertaking fully; the spill is read-only. The scans path is
+  absolute and checkout-independent. The MAM-parsed sibling must be named explicitly
+  from a worktree — `REPOS_ROOT=C:\Users\BenDe\GitRepos` (or `REPO_MAM_PARSED_DIR`) —
+  because the default `repo_root().parent` lands in `.claude\worktrees\`;
+  `mb_cmn/paths.py` documents the chain, and its `require_sibling` fails loudly naming
+  both overrides when the sibling is absent. All new sibling-path construction goes
+  through `mb_cmn.paths.sibling_repo` + `require_sibling`, never a `../MAM-parsed`
+  literal. A worktree runs the primary clone's venv by absolute path, per the global
+  rules.
 - Baseline: 320 tests pass via `.venv/Scripts/python.exe py/main_test.py` (320 measured
   2026-08-04 per `doc/metsudah-vs-ctr.md`; re-measure before starting — a different
   count is a finding). After each phase the suite still passes; Phase 0 raises the count
