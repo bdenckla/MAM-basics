@@ -30,8 +30,9 @@ but rather joins the syllable that follows it" (Instructions for the Reader, ``C
 page [xv] of the scan), his *sheva na'* covering a simple mobile shewa, every ḥataf, and a
 connective vav pointed with shuruq that no shewa follows.  A count of one syllable per vowel is
 computed beside it only as a check that the classifier reads that definition rather than a
-naive one -- it puts four of his six SHORT examples in the long class -- and is reported as one
-figure under ``syllable_count``, not as a rival cross-tabulation.
+naive one, and is reported as one figure under ``syllable_count`` rather than as a rival
+cross-tabulation.  How badly the naive count reads his own SHORT list is re-derived by
+``pin_breuer_examples`` and reported there, not stated here.
 
 THE ORACLE IS PHONETIC MAM, al-hatorah's ``io/a01-phonetic-std-set``, whose ``jta`` field marks
 the syllable boundaries and the stress.  Issue wlc-utils#48 asks for syllabification, open and
@@ -80,6 +81,7 @@ import argparse
 import json
 import re
 from collections import Counter, defaultdict
+from dataclasses import dataclass
 from pathlib import Path
 
 from accgram import chanted_word_accents as cwa
@@ -727,6 +729,168 @@ def realms_of_verse(
     return rows
 
 
+# Breuer's own worked examples for Long, Short and Tiny Word, and for the syllable itself, read
+# off page [xvi] and page [xv] of the scan at
+# ``~/OneDrive/Documents/ScansOfBooks/The Cantillation of Scripture - English/B16.jpg`` and
+# ``B15.jpg``.  THE SCAN AND NOT THE OCR: ``C00-S000.md``'s markdown export interleaves the two
+# right-to-left columns of that page, and three of these words are garbled in it -- what it
+# writes ולכו is יֵלְכוּ, what it writes עלין is עָלָיו, and what it writes כדם is סְדֹם.  A reader
+# working from the OCR alone gets a different rule.
+#
+# Each is pinned to the verse it is LOOKED UP in, so the syllabification is Phonetic MAM's and
+# not this file's, and ``verdict`` is what this classifier answers.  Where that is not what
+# Breuer's own list says, ``breuer_says`` differs and ``note`` records why -- those three are
+# the open readings the survey reports as sensitivities rather than resolving.
+_TWO_SYLLABLES = "a word of two syllables"
+
+
+@dataclass(frozen=True)
+class BreuerExample:
+    bcv: str
+    letters: str
+    breuer_says: str
+    verdict: str
+    note: str = ""
+
+
+BREUER_EXAMPLES: tuple[BreuerExample, ...] = (
+    # C00-S000.md:289 -- the syllable itself.  "A consonant vocalized with a sheva na' does not
+    # form a syllable, but rather joins the syllable that follows it; therefore ... all these
+    # are words consisting of two syllables."
+    BreuerExample("gn1:14", "להבדיל", _TWO_SYLLABLES, _TWO_SYLLABLES),
+    BreuerExample("gn1:21", "שרצו", _TWO_SYLLABLES, _TWO_SYLLABLES),
+    BreuerExample("gn2:9", "למאכל", _TWO_SYLLABLES, _TWO_SYLLABLES),
+    # :313 long, criterion 1 -- accentuated after at least two syllables.
+    BreuerExample("gn2:3", "ויקדש", "long", "long"),
+    # :313 long, criterion 2 -- after a big vowel in a closed syllable or before a sheva.
+    BreuerExample("ps19:2", "כבוד־אל", "long", "long"),
+    BreuerExample("gn12:8", "בית־אל", "long", "long"),
+    BreuerExample("ex5:7", "ילכו", "long", "long"),
+    BreuerExample("ps35:6", "רדפם", "long", "long"),
+    BreuerExample("dt32:26", "מאנוש", "long", "long"),
+    BreuerExample(
+        "gn12:20",
+        "עליו",
+        "long",
+        "short",
+        note=(
+            "Criterion 2 wants the big vowel in a closed syllable or before a sheva, and"
+            " Phonetic MAM has `a.!lav -- a qamats gadol in an OPEN syllable that no sheva"
+            " follows. Widening the criterion to any big vowel is ruled out by Breuer's own"
+            " short list, which has אֲחֵרִים, a tsere in an open syllable in the same position."
+        ),
+    ),
+    BreuerExample(
+        "is63:9",
+        "גאלם",
+        "long",
+        "short",
+        note="The same shape as עָלָיו: g^.'a.!lam, a qamats gadol in an open syllable.",
+    ),
+    # :313 long, criterion 3 -- after a small vowel in an open syllable before a hataf not of
+    # the same type as the vowel that precedes it.
+    BreuerExample("lv13:6", "וטהרו", "long", "long"),
+    BreuerExample("dt31:20", "ונאצוני", "long", "long"),
+    BreuerExample(
+        "gn14:13",
+        "בעלי",
+        "long",
+        "short",
+        note=(
+            "ba.`8.!lE -- a patax before a hataf patax, which IS of the same type, so the"
+            " criterion as printed excludes it. Dropping that restriction is the sensitivity"
+            " reported as criterion_3_without_the_same_type_restriction."
+        ),
+    ),
+    # :313 short -- not long, accentuated at its second syllable.
+    BreuerExample("gn3:18", "ודרדר", "short", "short"),
+    BreuerExample("gn8:10", "אחרים", "short", "short"),
+    BreuerExample("gn9:14", "ונראתה", "short", "short"),
+    BreuerExample("gn11:4", "ומגדל", "short", "short"),
+    BreuerExample("gn3:18", "את־עשב", "short", "short"),
+    BreuerExample("gn14:15", "לדמשק", "short", "short"),
+    # :313 tiny -- accentuated at its first syllable.
+    BreuerExample("gn12:19", "קח", "tiny", "tiny"),
+    BreuerExample("gn13:13", "סדם", "tiny", "tiny"),
+    BreuerExample("gn1:11", "עשב", "tiny", "tiny"),
+    BreuerExample("gn10:24", "ושלח", "tiny", "tiny"),
+    BreuerExample("gn19:23", "צערה", "tiny", "tiny"),
+    BreuerExample("js5:13", "הלנו", "tiny", "tiny"),
+    # :325 note 2 -- a tiny word may begin with a sheva nakh; e.g. שְׁתַּיִם.
+    BreuerExample("gn5:8", "שתים", "tiny", "tiny"),
+)
+
+
+def _example_entry(example: BreuerExample, cache: dict) -> dict:
+    bb, chnu, vrnu = mna.split_bcv(example.bcv)
+    words = load_phonetic_book(bb, cache).get((chnu, vrnu)) or []
+    for entry in words:
+        if letters_and_maqaf(entry["fva"].split(" ")[0]) == example.letters:
+            return entry
+    raise AssertionError(f"{example.bcv} has no {example.letters} in Phonetic MAM")
+
+
+def pin_breuer_examples() -> dict:
+    """Breuer's worked examples through this classifier, RAISING where the answer has moved.
+
+    The docstring's claim about what a per-vowel count does to his short list is re-derived
+    here rather than asserted, and his example words are the only outside check there is on the
+    long/short/tiny classifier itself -- ``pin_breuer_s8`` checks the measured RESIDUE, which is
+    a different thing.  Three examples come out short where his list says long; those are
+    recorded on the entry with the reason, so the pin fires on drift rather than on the three
+    disagreements already known.
+    """
+    cache: dict = {}
+    rows: list[dict] = []
+    wrong: list[str] = []
+    per_vowel_calls_long = 0
+    for example in BREUER_EXAMPLES:
+        entry = _example_entry(example, cache)
+        analysis = analyse(entry["jta"], entry["udl"])
+        breuer = analysis[BREUER]
+        got = (
+            _TWO_SYLLABLES
+            if example.breuer_says == _TWO_SYLLABLES
+            else breuer["verdict"]
+        )
+        if example.breuer_says == _TWO_SYLLABLES and breuer["syllables"] != 2:
+            got = f"a word of {breuer['syllables']} syllables"
+        if got != example.verdict:
+            wrong.append(
+                f"{example.bcv} {example.letters}: {got}, expected {example.verdict}"
+            )
+        if example.breuer_says == "short" and analysis[PER_VOWEL]["verdict"] == "long":
+            per_vowel_calls_long += 1
+        rows.append(
+            {
+                "bcv": example.bcv,
+                "jta": analysis["jta"],
+                "breuer_says": example.breuer_says,
+                "measured": got,
+                "breuer_syllables": breuer["syllables"],
+                "syllables_before_the_stress": breuer["before_stress"],
+                **({"note": example.note} if example.note else {}),
+            }
+        )
+    assert not wrong, "Breuer's examples no longer classify as recorded: " + "; ".join(
+        wrong
+    )
+    shorts = sum(1 for e in BREUER_EXAMPLES if e.breuer_says == "short")
+    return {
+        "source": "Breuer, The Cantillation of Scripture, Instructions for the Reader",
+        "read_off": (
+            "the scan, pages [xv] and [xvi]. The markdown export C00-S000.md interleaves that"
+            " page's two right-to-left columns and garbles three of these words: what it"
+            " writes ולכו is יֵלְכוּ, what it writes עלין is עָלָיו, what it writes כדם is סְדֹם."
+        ),
+        "disagreements": [r for r in rows if r["breuer_says"] != r["measured"]],
+        "short_examples_a_per_vowel_count_calls_long": (
+            f"{per_vowel_calls_long} of {shorts}"
+        ),
+        "examples": rows,
+    }
+
+
 def mam_atoms(vels: list) -> list[str]:
     """MAM-simple's atoms, with the paseq/legarmeh mark folded onto the atom before it.
 
@@ -1135,6 +1299,7 @@ def build_survey() -> dict:
                 mam["residue"]["long_but_servant"]
             ),
         },
+        "breuer_worked_examples": pin_breuer_examples(),
         "mam": mam,
         "wlc_422": wlc,
     }
