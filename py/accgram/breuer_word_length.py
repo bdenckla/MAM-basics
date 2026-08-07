@@ -732,15 +732,28 @@ def realms_of_verse(
 # Breuer's own worked examples for Long, Short and Tiny Word, and for the syllable itself, read
 # off page [xvi] and page [xv] of the scan at
 # ``~/OneDrive/Documents/ScansOfBooks/The Cantillation of Scripture - English/B16.jpg`` and
-# ``B15.jpg``.  THE SCAN AND NOT THE OCR: ``C00-S000.md``'s markdown export interleaves the two
-# right-to-left columns of that page, and three of these words are garbled in it -- what it
-# writes ולכו is יֵלְכוּ, what it writes עלין is עָלָיו, and what it writes כדם is סְדֹם.  A reader
-# working from the OCR alone gets a different rule.
+# ``B15.jpg``.  THE SCAN AND NOT THE OCR: the ABBYY docx has that page's Hebrew wrong twice
+# over.  Its RUNS are in visual rather than logical order, so a line that begins with Hebrew
+# comes out back to front (masorah-books #19); and five of its LETTERS are damaged -- what it
+# wrote ולכו is יֵלְכוּ, what it wrote כדם is סְדֹם, and there are three more.  Those five are
+# repaired in the export as of masorah-books 588019b, off this same scan, and
+# ``py/cos/fix_diacritics.py``'s SCAN_REPAIRS is the table.  A reader working from the OCR
+# alone gets a different rule: ולכו is a connective vav with shuruk before a sheva, which page
+# [xv] declares a SMALL vowel, so criterion 2 would exclude the very word chosen to show it.
+#
+# Two entries here were read wrong in the same pass, on 2026-08-06, and both were re-read
+# letter by letter on 2026-08-07 off crops cut from B16.jpg.  Each was "corrected" to a much
+# commoner word that the criterion then failed to fit, and the failure was recorded as a
+# sensitivity -- which is the tell, since these are Breuer's own examples OF the criterion.
+# The export's עלין is not damage for עָלָיו: the gimel-sized dagesh in its lamed and the hiriq
+# under it make it עָלִּין, Dan. 4:4 and 5:8, whose qamats sits in a syllable the doubled lamed
+# closes.  And גאלם is not גְאָלָם: the scan has a dagesh AND a holam on the gimel and a hataf
+# patax under the alef, so it is גֹּאֲלָם, whose holam stands before a hataf.  A closed syllable
+# and a sheva are the two halves of criterion 2, and one word now shows each.
 #
 # Each is pinned to the verse it is LOOKED UP in, so the syllabification is Phonetic MAM's and
 # not this file's, and ``verdict`` is what this classifier answers.  Where that is not what
-# Breuer's own list says, ``breuer_says`` differs and ``note`` records why -- those three are
-# the open readings the survey reports as sensitivities rather than resolving.
+# Breuer's own list says, ``breuer_says`` differs and ``note`` records why.
 _TWO_SYLLABLES = "a word of two syllables"
 
 
@@ -768,25 +781,15 @@ BREUER_EXAMPLES: tuple[BreuerExample, ...] = (
     BreuerExample("ex5:7", "ילכו", "long", "long"),
     BreuerExample("ps35:6", "רדפם", "long", "long"),
     BreuerExample("dt32:26", "מאנוש", "long", "long"),
-    BreuerExample(
-        "gn12:20",
-        "עליו",
-        "long",
-        "short",
-        note=(
-            "Criterion 2 wants the big vowel in a closed syllable or before a sheva, and"
-            " Phonetic MAM has `a.!lav -- a qamats gadol in an OPEN syllable that no sheva"
-            " follows. Widening the criterion to any big vowel is ruled out by Breuer's own"
-            " short list, which has אֲחֵרִים, a tsere in an open syllable in the same position."
-        ),
-    ),
-    BreuerExample(
-        "is63:9",
-        "גאלם",
-        "long",
-        "short",
-        note="The same shape as עָלָיו: g^.'a.!lam, a qamats gadol in an open syllable.",
-    ),
+    # Dan. 5:8's עָלִּין and not Dan. 4:4's, the two differing at the one mark that decides the
+    # criterion: 5:8 has a meteg, so its qamats is gadol, where 4:4's is a qamats qatan and so
+    # a small vowel. Breuer prints neither the meteg nor an accent on any word of this list --
+    # מֵאֱנוֹשׁ loses its tipexa and גֹּאֲלָם its munax -- so the missing mark is no evidence for
+    # 4:4, and only the gadol reading makes the word an example of the criterion at all.
+    BreuerExample("da5:8", "עלין", "long", "long"),
+    # Jer. 50:34's גֹּאֲלָם. Ps. 78:35 is pointed identically and would read the same; Jer. is
+    # the prose verse, which is this survey's subject matter.
+    BreuerExample("je50:34", "גאלם", "long", "long"),
     # :313 long, criterion 3 -- after a small vowel in an open syllable before a hataf not of
     # the same type as the vowel that precedes it.
     BreuerExample("lv13:6", "וטהרו", "long", "long"),
@@ -836,9 +839,14 @@ def pin_breuer_examples() -> dict:
     The docstring's claim about what a per-vowel count does to his short list is re-derived
     here rather than asserted, and his example words are the only outside check there is on the
     long/short/tiny classifier itself -- ``pin_breuer_s8`` checks the measured RESIDUE, which is
-    a different thing.  Three examples come out short where his list says long; those are
-    recorded on the entry with the reason, so the pin fires on drift rather than on the three
-    disagreements already known.
+    a different thing.  One example comes out short where his list says long, בַּעֲלֵי, and it is
+    recorded on the entry with the reason, so the pin fires on drift rather than on the
+    disagreement already known.
+
+    It was three until 2026-08-07, and the other two were this table's own misreadings of the
+    scan rather than anything about the classifier -- see the comment on ``BREUER_EXAMPLES``.
+    That is worth keeping in view when the remaining one is read: a criterion failing to fit
+    the word Breuer chose to illustrate it is evidence about the word first.
     """
     cache: dict = {}
     rows: list[dict] = []
@@ -879,9 +887,14 @@ def pin_breuer_examples() -> dict:
     return {
         "source": "Breuer, The Cantillation of Scripture, Instructions for the Reader",
         "read_off": (
-            "the scan, pages [xv] and [xvi]. The markdown export C00-S000.md interleaves that"
-            " page's two right-to-left columns and garbles three of these words: what it"
-            " writes ולכו is יֵלְכוּ, what it writes עלין is עָלָיו, what it writes כדם is סְדֹם."
+            "the scan, pages [xv] and [xvi]. The ABBYY docx has that page's runs in visual"
+            " rather than logical order (masorah-books #19) and damaged five of its letters,"
+            " among them the ילכו it wrote as ולכו and the סדם it wrote as כדם; the five are"
+            " repaired in the export as masorah-books' fix_diacritics.SCAN_REPAIRS, off this"
+            " same scan. Two words read wrong here on 2026-08-06 were re-read on 2026-08-07:"
+            " the export's עלין is Dan. 5:8's עָלִּין and not עָלָיו, and גאלם is Jer. 50:34's"
+            " גֹּאֲלָם and not Isa. 63:9's גְאָלָם. Both fit criterion 2, which neither of the"
+            " commoner words it had been read as does."
         ),
         "disagreements": [r for r in rows if r["breuer_says"] != r["measured"]],
         "short_examples_a_per_vowel_count_calls_long": (
