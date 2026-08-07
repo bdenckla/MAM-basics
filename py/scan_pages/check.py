@@ -12,8 +12,8 @@ Phase 0, before a single page has been censused:
 
 MAM-PARSED ABSENT IS A FAILURE, NEVER A SKIP.  No CI runs this, so a check that
 quietly passes when it cannot reach its input reports green having verified nothing.
-``require_sibling`` fails instead, naming both environment overrides -- which is the
-answer a worktree needs, since its ``repo_root().parent`` is inside ``.claude``.
+``paths.mam_parsed_path`` fails instead, naming both environment overrides -- which is
+the answer a worktree needs, since its ``repo_root().parent`` is inside ``.claude``.
 
 Two checks the Design section lists are not here yet, because both need machinery
 Phase 1 builds and neither has any data to run on: re-locating a stored phrase in
@@ -32,13 +32,6 @@ from scan_pages import page_kinds as pk
 
 class CheckError(Exception):
     """The tracked index data failed a lint."""
-
-
-def mam_parsed_path():
-    """Return the MAM-parsed clone, failing loudly and helpfully when it is absent."""
-    clone = paths.sibling_repo("MAM-parsed")
-    paths.require_sibling("MAM-parsed", clone / "plus")
-    return str(clone)
 
 
 def _check_pages(edition_id, pages, problems):
@@ -168,7 +161,7 @@ def _check_segments(edition_id, pages, segments, problems):
 
 def check_all():
     """Lint every tracked index. Return a counts dict; raise CheckError on any problem."""
-    books = plus.read_parsed_plus_bk39s(mam_parsed_path=mam_parsed_path())
+    books = plus.read_parsed_plus_bk39s(mam_parsed_path=paths.mam_parsed_path())
     problems = []
     counts = {"pages": 0, "recs": 0, "segments": 0, "editions": 0}
     for edition_id in editions.ALL_EDITION_IDS:
