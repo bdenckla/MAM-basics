@@ -166,7 +166,8 @@ The body-page filename shapes:
 
 **simanim-tiqqun is the special one.** Five filename sections, meanings established by
 reading sample pages (`B10.jpg`, `B60.jpg`, `C012.jpg`, `C400.jpg`, `D10.jpg`,
-`E10-06.jpg` on 2026-08-06; `C300.jpg` on 2026-08-07):
+`E10-06.jpg` on 2026-08-06; `C300.jpg`, `C395.jpg`, `C408.jpg`, `C415.jpg`, `C420.jpg`,
+`C440.jpg` on 2026-08-07):
 
 - `A01`–`A04`: covers/endpapers.
 - `B01`–`B74`: separately page-numbered front matter — introductory essays and
@@ -180,7 +181,18 @@ reading sample pages (`B10.jpg`, `B60.jpg`, `C012.jpg`, `C400.jpg`, `D10.jpg`,
   heading הפטרת בהר with the source line בירמיה פרק לב introduces Jeremiah 32 — the same
   pointed-and-unpointed dual layout as the Torah pages. So the haftarot are in C, in
   parasha order, each under a heading naming it and its source book and chapter (a gift
-  to the census). **Megillot**: `C400.jpg` is מגילת רות chapter 3, further on in C.
+  to the census). **Megillot — three of the five, not all.** Ben suspected on 2026-08-07
+  that far from all of the Five Scrolls would be here, and the reads confirm it: a
+  מגילות section in festival-calendar order — `C395.jpg` is מגילת שיר השירים, `C400.jpg`
+  is מגילת רות chapter 3, `C408.jpg` is מגילת איכה chapters 4–5 — and then the full text
+  stops. Ecclesiastes and Esther have no full text anywhere in C. (The other half of the
+  suspicion, Ruth as a haftarah-like reading, is not what the book does: Ruth sits under
+  the מגילות running head, not among the haftarot.) **The tail, ~C410–C444, is a notes
+  apparatus, not full text**: masorah/diqduq notes per parasha (`C415.jpg` is ספר
+  בראשית notes, `C420.jpg` is ספר שמות notes), and by `C440.jpg` the running head is חמש
+  מגילות, with Esther's notes ending and notes on שיר השירים beginning mid-page — so the
+  notes treat all five megillot though only three have their full text. The notes tail is
+  out of lookup, like B and E.
   Exact segment boundaries inside C are still unknown; finding them is Phase 3, and the
   cheap route is the printed ToC (in B or A), since C scan numbers equal printed numbers —
   a ToC page read gives the whole haftarah/megillot map in a handful of image reads.
@@ -304,8 +316,9 @@ haftarah/megillot start pages straight off it (C scan numbers equal printed numb
 the ToC maps the whole C body in a handful of image reads); fall back to bisection sweeps
 of C only if the ToC disappoints. Fill `segments`, then census the C body — Torah, the
 haftarot (each with the name and bcv range the book has for it, in the haftarah table),
-the megillot — and extend `lookup` so a Nakh bcv inside a printed haftarah yields the
-simanim-tiqqun
+and the three full-text megillot (שיר השירים, רות, איכה; Ecclesiastes and Esther have
+notes only, so no census there, and the ~C410–C444 notes tail is not censused at all) —
+and extend `lookup` so a Nakh bcv inside a printed haftarah yields the simanim-tiqqun
 hit(s). The unpointed D section is out (Ben, 2026-08-07). Report the haftarah inventory
 here. Independent of Phase 2, so the two can interleave.
 
