@@ -184,8 +184,10 @@ reading sample pages (`B10.jpg`, `B60.jpg`, `C012.jpg`, `C400.jpg`, `D10.jpg`,
   to the census). **Megillot — three of the five, not all.** Ben suspected on 2026-08-07
   that far from all of the Five Scrolls would be here, and the reads confirm it: a
   מגילות section in festival-calendar order — `C395.jpg` is מגילת שיר השירים, `C400.jpg`
-  is מגילת רות chapter 3, `C408.jpg` is מגילת איכה chapters 4–5 — and then the full text
-  stops. Ecclesiastes and Esther have no full text anywhere in C. (The other half of the
+  is מגילת רות chapter 3, `C408.jpg` is מגילת איכה chapters 4–5, all three in the same
+  dual layout as the Torah pages: one column with full pointing and accents, the facing
+  column unpointed (Ben asked on 2026-08-07; unpointed megillot would have been useless
+  here) — and then the full text stops. Ecclesiastes and Esther have no full text anywhere in C. (The other half of the
   suspicion, Ruth as a haftarah-like reading, is not what the book does: Ruth sits under
   the מגילות running head, not among the haftarot.) **The tail, ~C410–C444, is a notes
   apparatus, not full text**: masorah/diqduq notes per parasha (`C415.jpg` is ספר
