@@ -87,9 +87,13 @@ same-origin `fetch()` from page context, walking `link[rel="next"]`.
   spot checks — MAM is not a primary in this comparison).
 - Scratch scripts live in `.novc\metsudah-vs-ctr\` (gitignored), stdlib-only, run from the
   repo root with the venv python. No `sys.path` surgery; run black on any `.py` written.
-- Baseline: 320 tests pass via `.venv/Scripts/python.exe py/main_test.py`; **nothing in
-  this undertaking should change that**, and no tracked file changes except this doc (and,
-  at the end, possibly a cross-link in `doc/ms-snips/README.md`).
+- Baseline: **919 tests pass, 5 skipped**, via `.venv/Scripts/python.exe py/main_test.py`,
+  measured 2026-08-07 at `d2e0353` from the repo root of the primary clone. Re-measure
+  rather than trusting this figure: it read 320 until 2026-08-07, measured 2026-08-04 and
+  gone stale as the accgram and CLC code arrived and again as scan-pages Phase 0 landed —
+  and a scan-pages session took that 320 for the live baseline before checking it.
+  **Nothing in this undertaking should change the count**, and no tracked file changes
+  except this doc (and, at the end, possibly a cross-link in `doc/ms-snips/README.md`).
 - Load the **hebrew-prose** skill before writing any findings prose (accentuation
   vocabulary rules: atom vs chanted word, named referents, no "witness", etc.).
 
