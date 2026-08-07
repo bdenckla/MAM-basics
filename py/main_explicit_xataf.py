@@ -9,6 +9,7 @@ import json
 import sys
 
 from mb_cmn import bib_locales as tbn
+from mb_cmn import paths
 from mb_cmn import read_books_from_mam_parsed_plus as plus
 from mb_cmn import ws_tmpl2 as wtp
 from mb_cmn import file_io
@@ -129,7 +130,7 @@ def _compute_counts(mappings):
 
 def almost_main():
     sys.stdout.reconfigure(encoding="utf-8")
-    books_mpu = plus.read_parsed_plus_bk39s()
+    books_mpu = plus.read_parsed_plus_bk39s(mam_parsed_path=paths.mam_parsed_path())
     all_mappings = []
     all_failures = []
     all_extras = []

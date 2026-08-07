@@ -98,3 +98,33 @@ def require_sibling(name: str, path: Path) -> Path:
         f"  {_env_name(name)}=<path to the {name} clone>\n"
         f"  REPOS_ROOT=<directory holding all the sibling clones>"
     )
+
+
+def mam_parsed_path() -> str:
+    """Return the MAM-parsed clone, as the string ``read_parsed_plus_bk39s`` wants.
+
+    THE CALLER SUPPLIES THIS PATH BECAUSE THE READER CANNOT.
+    ``mb_cmn/read_books_from_mam_parsed_plus.py`` defaults its ``mam_parsed_path``
+    argument to the cwd-relative literal ``"../MAM-parsed"``, and that default has to
+    stay: the file is vendored verbatim into al-hatorah's ``py/mb_cmn/``, which has no
+    ``paths.py`` for it to import, so consulting this module there would be an
+    ImportError rather than a policy violation.  The literal is right whenever the repo
+    root sits beside its siblings and is the cwd, and wrong in a git worktree, whose
+    root is ``.../.claude/worktrees/<name>`` -- so ``"../MAM-parsed"`` resolves to
+    ``.claude/worktrees/MAM-parsed``, a directory that has never existed.  Passing the
+    path in is what the reader's argument is for, and it puts the override chain this
+    module documents back in front of every caller.
+
+    Returned as a ``str`` rather than a ``Path`` because the reader interpolates it into
+    ``f"{mam_parsed_path}/plus/{...}.json"``.
+
+    ``scan_pages/check.py`` has its own copy of these three lines, deliberately left
+    alone when the seventeen call sites that had been taking the default were converted
+    on 2026-08-07.
+    """
+    clone = sibling_repo("MAM-parsed")
+    # Require the subtree the plus reader actually opens, not merely the clone: an
+    # empty or half-cloned MAM-parsed should fail here, naming the overrides, rather
+    # than as a bare FileNotFoundError on the first book.
+    require_sibling("MAM-parsed", clone / "plus")
+    return str(clone)

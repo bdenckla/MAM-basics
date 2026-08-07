@@ -53,7 +53,7 @@ _SOURCE_BK39IDS = (tbn.BK_EXODUS, tbn.BK_NUMBERS, tbn.BK_DEUTER)
 
 
 def render_full_html():
-    books_mpu = plus.read_parsed_plus_bk39s(_SOURCE_BK39IDS)
+    books_mpu = plus.read_parsed_plus_bk39s(_SOURCE_BK39IDS, paths.mam_parsed_path())
     return doc.render_full_html(books_mpu)
 
 

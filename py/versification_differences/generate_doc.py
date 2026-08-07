@@ -8,7 +8,9 @@ _OUTPUT_PATH = paths.sibling_repo("MAM-simple") / "doc" / "versification-differe
 
 
 def render_full_markdown():
-    books_mpu = plus.read_parsed_plus_bk39s(_all_case_book_ids())
+    books_mpu = plus.read_parsed_plus_bk39s(
+        _all_case_book_ids(), paths.mam_parsed_path()
+    )
     return doc.render_full_markdown(books_mpu)
 
 

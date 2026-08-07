@@ -24,7 +24,8 @@ class TestVersificationAndCantillationDoc(unittest.TestCase):
     def test_full_generated_doc_matches_current_doc(self):
         expected = _CURRENT_DOC_PATH.read_text(encoding="utf-8")
         books_mpu = plus.read_parsed_plus_bk39s(
-            (tbn.BK_EXODUS, tbn.BK_NUMBERS, tbn.BK_DEUTER)
+            (tbn.BK_EXODUS, tbn.BK_NUMBERS, tbn.BK_DEUTER),
+            paths.mam_parsed_path(),
         )
 
         self.assertEqual(vc_doc.render_full_html(books_mpu), expected)
@@ -44,7 +45,9 @@ class TestStrandWordExtraction(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        books = plus.read_parsed_plus_bk39s((tbn.BK_EXODUS, tbn.BK_DEUTER))
+        books = plus.read_parsed_plus_bk39s(
+            (tbn.BK_EXODUS, tbn.BK_DEUTER), paths.mam_parsed_path()
+        )
         cls.exo = books[tbn.BK_EXODUS]["verses_plus"]
         cls.deu = books[tbn.BK_DEUTER]["verses_plus"]
 
@@ -87,7 +90,8 @@ class TestStrandBalancer(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.books = plus.read_parsed_plus_bk39s(
-            (tbn.BK_EXODUS, tbn.BK_NUMBERS, tbn.BK_DEUTER)
+            (tbn.BK_EXODUS, tbn.BK_NUMBERS, tbn.BK_DEUTER),
+            paths.mam_parsed_path(),
         )
 
     def test_every_column_pair_is_letter_equal(self):

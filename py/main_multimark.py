@@ -2,6 +2,7 @@
 
 from mb_cmn import read_books_from_mam_parsed_plus as plus
 from mb_cmn import file_io
+from mb_cmn import paths
 from multimark import multimark_1 as mm1
 from multimark import multimark_2 as mm2
 
@@ -11,7 +12,7 @@ FIOI_PATH_TO_MULTIMARKS_RAW_JSON = "out/mam-multimarks-raw.json"
 
 def almost_main():
     """Record info about letters with multiple marks on them."""
-    books_mpu = plus.read_parsed_plus_bk39s()
+    books_mpu = plus.read_parsed_plus_bk39s(mam_parsed_path=paths.mam_parsed_path())
     raw_data_wt = mm1.get_raw_data_wt(books_mpu)
     file_io.json_dump_to_file_path(raw_data_wt, FIOI_PATH_TO_MULTIMARKS_RAW_JSON)
     mm2.phase_2(FIOI_PATH_TO_MULTIMARKS_RAW_JSON)

@@ -42,6 +42,7 @@ import sys
 
 from mb_misc import my_utils_for_mainish as my_utils_fm
 from py_misc import mam_simple_copy_py_files
+from mb_cmn import paths
 from mb_cmn import read_books_from_mam_parsed_plus as plus
 from py_misc import write_utils_xml
 from py_misc import write_utils_json
@@ -143,7 +144,7 @@ def almost_main(bkids=None):
     """
     if bkids is None:
         bkids = tbn.ALL_BK39_IDS
-    books_mpu = plus.read_parsed_plus_bk39s(bkids)
+    books_mpu = plus.read_parsed_plus_bk39s(bkids, paths.mam_parsed_path())
     bkgs = osis_book_abbrevs.bk24_bkgs(bkids)
     survey_for_all_bkgs = rts.make()
     for variant in _VARIANTS:

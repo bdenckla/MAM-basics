@@ -14,6 +14,7 @@ from diff_ctr_vs_mam.massage_mpu_verse import massage_mpu_verse
 from mb_cmn import bib_locales as tbn
 from mb_cmn import file_io
 from mb_cmn import my_diffs
+from mb_cmn import paths
 from mb_cmn import read_books_from_mam_parsed_plus as plus
 from mb_cmn import uni_heb as uh
 
@@ -91,7 +92,7 @@ def _do_one_section_of_tanakh(secid):
     if secid != tbn.SEC_SIF_EM:
         return sec_diffs
     books_of_sec = tbn.bk39s_of_sec(secid)
-    books_mpu = plus.read_parsed_plus_bk39s(books_of_sec)
+    books_mpu = plus.read_parsed_plus_bk39s(books_of_sec, paths.mam_parsed_path())
     books_ctr = _read_ctr_bk39s(books_of_sec)
     for bkid in books_of_sec:
         if bkid not in _CTR_BOOKS:
