@@ -165,8 +165,8 @@ The body-page filename shapes:
   `spine`. The book-code table in `py/scan_pages/` gets the longforms as extra rows.
 
 **simanim-tiqqun is the special one.** Five filename sections, meanings established by
-reading sample pages on 2026-08-06 (`B10.jpg`, `B60.jpg`, `C012.jpg`, `C400.jpg`,
-`D10.jpg`, `E10-06.jpg`):
+reading sample pages (`B10.jpg`, `B60.jpg`, `C012.jpg`, `C400.jpg`, `D10.jpg`,
+`E10-06.jpg` on 2026-08-06; `C300.jpg` on 2026-08-07):
 
 - `A01`–`A04`: covers/endpapers.
 - `B01`–`B74`: separately page-numbered front matter — introductory essays and
@@ -174,9 +174,14 @@ reading sample pages on 2026-08-06 (`B10.jpg`, `B60.jpg`, `C012.jpg`, `C400.jpg`
 - `C001`–`C444`: the main body. **Scan number = printed page number** (`C012.jpg` is
   printed page 12). The running head has book · chapter range · parasha (e.g.
   `בראשית · יא יב · לך לך`), and the text appears twice per page (pointed and unpointed
-  columns). The C range holds more than Torah: `C400.jpg` is מגילת רות chapter 3 — so
-  megillot, and presumably the haftarot Ben's ask names, live in C between the Torah's end
-  and the back. Segment boundaries inside C are unknown; finding them is Phase 3, and the
+  columns). The C range holds more than Torah, and both further contents are observed,
+  not presumed. **Haftarot**: `C300.jpg`'s running head is הפטרת בהר; the top of the page
+  is the end of the previous haftarah (Ezekiel 44, haftarat Emor), and mid-page the
+  heading הפטרת בהר with the source line בירמיה פרק לב introduces Jeremiah 32 — the same
+  pointed-and-unpointed dual layout as the Torah pages. So the haftarot are in C, in
+  parasha order, each under a heading naming it and its source book and chapter (a gift
+  to the census). **Megillot**: `C400.jpg` is מגילת רות chapter 3, further on in C.
+  Exact segment boundaries inside C are still unknown; finding them is Phase 3, and the
   cheap route is the printed ToC (in B or A), since C scan numbers equal printed numbers —
   a ToC page read gives the whole haftarah/megillot map in a handful of image reads.
 - `D01`–`D60`: a compact, *unpointed-only* Torah, scanned rotated 90° (`D10.jpg` is
