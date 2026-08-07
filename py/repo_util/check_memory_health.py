@@ -92,34 +92,31 @@ al-hatorah, MAM-basics, UXLC-utils and wlc-utils sit under a lowercase
 masorah-books sit under an uppercase 'C--Users-...'. Both spellings are live at
 once, so computing the slug and doing an exact lookup finds roughly half of them.
 
-Keying on the absolute path also means a RENAMED repo orphans its memory. When
-yeivin-itm became masorah-books on 2026-07-31, its four memory files stayed at
-'C--Users-BenDe-GitRepos-yeivin-itm' under a name nothing now looks up, while
-the new 'C--Users-BenDe-GitRepos-masorah-books' started empty. That example has
-since resolved and this paragraph used to claim otherwise: checked 2026-08-07,
-'C--Users-BenDe-GitRepos-yeivin-itm' holds four session transcripts and NO
-memory subdirectory at all, and masorah-books carries 23 memory files of its
-own.
+Keying on the absolute path also means a repo that is RENAMED, or whose clone is
+DELETED, orphans its memory: the project directory keeps the old path's slug,
+which nothing looks up any more. Both cases had an example here, and as of
+2026-08-07 both are resolved, so what follows is the standing lesson rather than
+a live finding. Ben cleared both project directories that day --
+'C--Users-BenDe-GitRepos-yeivin-itm' (renamed to masorah-books on 2026-07-31)
+and 'C--Users-BenDe-GitRepos-breuer-cos' (clone deleted 2026-08-07) -- so a scan
+now should find no orphaned project directory at all. That is the expected
+state; one turning up is a finding.
 
-'C--Users-BenDe-GitRepos-breuer-cos' is the worked example of why an orphaned
-memory directory is a QUESTION rather than an instruction to move the files. It
-holds one memory file, 'wlc-koren-12th-is-a-worktree.md', which is about
-wlc-utils rather than about Breuer, and which wlc-utils' own
-'no-wlc-koren-12th-repo.md' supersedes: that one was written 21 minutes later on
-2026-07-27, records that the directory it names was deleted, and corrects this
-one by name. Carrying that file into masorah-books, as the obvious reading of
-"the repo's work moved there" suggests, would plant a superseded memory in a
-repo it was never about. So read an orphaned memory before moving it.
+THE LESSON, from the breuer-cos case: an orphaned memory directory is a QUESTION
+rather than an instruction to move the files. Its one memory,
+'wlc-koren-12th-is-a-worktree.md', was about wlc-utils rather than about Breuer,
+and wlc-utils' own 'no-wlc-koren-12th-repo.md' already superseded it -- written
+21 minutes later on 2026-07-27, recording that the directory it names was
+deleted, and correcting it by name. Carrying that file into masorah-books, as
+the obvious reading of "the repo's work moved there" suggests, would have
+planted a superseded memory in a repo it was never about. So READ an orphaned
+memory before moving it; it may deserve deleting instead.
 
-That directory is now beyond this check's reach, and that is the part worth
-knowing. Ben's decision, 2026-08-07: the breuer-cos CLONE was deleted from
-~/GitRepos, and breuer-cos was dropped from all-repos.code-workspace and from
-in/repo_maintenance_policy.json's frozen_repos, its content having lived in
-masorah-books since 2026-07-31. This check only walks the repos a workspace file
-lists, so 'C--Users-BenDe-GitRepos-breuer-cos\\memory' still sits on disk while
-nothing reports it any more. Deleting a repo, or dropping one from a workspace
-file, is therefore the one way to orphan a memory directory SILENTLY -- look at
-the memory before doing either.
+AND THE ORPHANING CAN BE SILENT, which is the part worth guarding. This check
+walks only the repos a workspace file lists, so deleting a clone, or dropping a
+repo from all-repos.code-workspace, removes the very thing that would have
+reported that repo's memory. Look at the memory before doing either -- once the
+repo is gone from the list, nothing will raise it again.
 
 Two neighbours in that directory are deliberately NOT repo memory and are
 skipped: 'C--Users-BenDe-GitRepos' itself (sessions started from the GitRepos
