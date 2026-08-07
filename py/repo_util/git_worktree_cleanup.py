@@ -436,7 +436,53 @@ def _self_worktree(worktrees: list[_Worktree]) -> Path | None:
     return None
 
 
-def _sweep_empty_dirs(checkout_root: Path, report: CleanupReport) -> None:
+def _holds_no_file(directory: Path) -> bool:
+    """True if ``directory`` contains no file at any depth, only directories.
+
+    A symlink or junction counts as a file here, deliberately: it is content
+    this sweep must not follow, still less delete.
+    """
+    try:
+        for path in directory.rglob("*"):
+            if path.is_symlink() or not path.is_dir():
+                return False
+    except OSError:
+        return False
+    return True
+
+
+def _newest_mtime(directory: Path) -> float:
+    """The most recent mtime anywhere in ``directory``, itself included."""
+    newest = directory.stat().st_mtime
+    for path in directory.rglob("*"):
+        try:
+            newest = max(newest, path.stat().st_mtime)
+        except OSError:
+            continue
+    return newest
+
+
+def _rmdir_tree(directory: Path) -> None:
+    """Remove ``directory`` and every directory under it, deepest first.
+
+    Every removal is ``rmdir``, which REFUSES a non-empty directory, so this
+    cannot delete a file even if one appears between the check and the removal.
+    That is why there is no ``shutil.rmtree`` here.
+    """
+    deepest_first = sorted(
+        directory.rglob("*"), key=lambda path: len(path.parts), reverse=True
+    )
+    for path in deepest_first:
+        path.rmdir()
+    directory.rmdir()
+
+
+def _sweep_empty_dirs(
+    checkout_root: Path,
+    report: CleanupReport,
+    *,
+    activity_grace_seconds: float = _ACTIVITY_GRACE_SECONDS,
+) -> None:
     """Delete empty directories left under ``.claude/worktrees/``, then the parent.
 
     ``checkout_root`` is the root of a checkout whose ``.claude/worktrees/`` is
@@ -453,9 +499,28 @@ def _sweep_empty_dirs(checkout_root: Path, report: CleanupReport) -> None:
     held file handle can empty the directory and still fail to unlink it
     ("Permission denied"), leaving a husk that no later pass would ever revisit.
 
-    Only a LITERALLY empty directory is removed, which is what makes this safe
-    against a session concurrently setting one up: a live worktree holds a
-    checkout within moments of being created.
+    EMPTY OF FILES, not merely literally empty.  A husk holding nothing but
+    empty subdirectories holds no work and no git state either, and until
+    2026-08-07 it was neither removed NOR reported: the test was
+    ``any(child.iterdir())``, so such a husk fell out of the report entirely.
+    masorah-books held one -- ``distracted-dhawan-754350`` wrapping an empty
+    ``py/cos/`` -- and only a hand check of ``.claude/worktrees/`` turned it up,
+    on a run where UXLC-utils' flat-empty husk was removed and named.  A sweep
+    whose whole value is that it names what it spares must not go silent.
+
+    The literal-emptiness test was there for a reason, and that reason is kept:
+    it made this safe against a session CONCURRENTLY setting a worktree up,
+    since a live worktree holds a checkout within moments of being created.
+    "No file at any depth" widens the window to include a checkout whose
+    directories exist but whose files are not yet written, so the WIDER CASE
+    ALONE is gated on ``activity_grace_seconds`` -- the same hour the linked
+    worktree loop uses, and overridable the same way.  A literally empty
+    directory is still removed on sight, exactly as before.
+
+    A husk that does hold a file is left alone and unreported, deliberately: it
+    is either a live worktree that ``clean_worktrees``' own loop has already
+    reported on, or something with real content this sweep has no business
+    touching.
 
     A husk that will not unlink is noted, not counted as an error.  It holds no
     work and no git state, and the handle pinning it belongs to some process
@@ -468,10 +533,22 @@ def _sweep_empty_dirs(checkout_root: Path, report: CleanupReport) -> None:
     if not parent.is_dir():
         return
     for child in sorted(parent.iterdir()):
-        if not child.is_dir() or any(child.iterdir()):
+        if not child.is_dir() or child.is_symlink() or not _holds_no_file(child):
             continue
+        if any(child.iterdir()):
+            idle = time.time() - _newest_mtime(child)
+            if idle < activity_grace_seconds:
+                report.kept_worktrees.append(
+                    (
+                        str(child),
+                        f"holds only empty directories, but was touched "
+                        f"{int(idle // 60)} min ago; may be a worktree "
+                        f"being created",
+                    )
+                )
+                continue
         try:
-            child.rmdir()
+            _rmdir_tree(child)
             report.removed_worktrees.append(f"{child} (empty leftover directory)")
         except OSError as exc:
             report.kept_worktrees.append((str(child), f"empty but unremovable: {exc}"))
@@ -550,9 +627,13 @@ def clean_worktrees(
     # Sweep the MAIN worktree's husks (worktrees[0] -- see _list_worktrees),
     # wherever the tool is running from; keep sweeping the running checkout's
     # own .claude/worktrees/ too when that is a different place.
-    _sweep_empty_dirs(worktrees[0].path, report)
+    _sweep_empty_dirs(
+        worktrees[0].path, report, activity_grace_seconds=activity_grace_seconds
+    )
     if repo_dir.resolve() != worktrees[0].path.resolve():
-        _sweep_empty_dirs(repo_dir, report)
+        _sweep_empty_dirs(
+            repo_dir, report, activity_grace_seconds=activity_grace_seconds
+        )
 
     # Re-list: a branch held by a worktree removed above is only now deletable.
     still_checked_out = {
