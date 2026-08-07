@@ -3,12 +3,12 @@
 from __future__ import annotations
 
 from accgram.prose_ob_notes_shared import (
-    ATNAX,
     BHS_TRANSCRIBES,
     MUNAX,
     TIPEXA,
     TIP_LIKE_INCL,
     ambiguous_mark_context_comment,
+    metigah_zaqef_across_a_space_comment,
 )
 from py_html import wlc_utils_html
 
@@ -146,6 +146,29 @@ BY_REF: dict[str, dict[str, object]] = {
         "uxlc_change": "2023.04.01/2022.12.10-41",
         "comment": "See the image in the UXLC change to which we link above.",
     },
+    "je 37:10": {
+        "st-source": "lc",
+        "st-summary": "The LC has no maqaf after ונשארו.",
+        "wlc_focus": "ונ֨שארו",
+        "uxlc_note_page": "https://tanach.us/Notes/Jeremiah/Jeremiah.37.10.9-t.html",
+        "comment": (
+            metigah_zaqef_across_a_space_comment("ונ֨שארו־ב֔ם", "ונ֨שארו ב֔ם"),
+            (
+                "UXLC has read the manuscript here, and its note — to which we link above —"
+                " reports that no maqaf occurs at the end of ונשארו, and that the gap between"
+                " that atom’s final vav and the bet of בם is very small. The very small gap is"
+                " why UXLC files a “t” note, a transcription it records as uncertain, rather"
+                " than a change: the maqaf is absent, and the spacing does not read as an"
+                " ordinary space either."
+            ),
+            [
+                "Compare ",
+                wlc_utils_html.anchor("gn 18:18", {"href": "#obgn18v18"}),
+                ", the same shape, where nobody has read the manuscript and the source"
+                " therefore stays open.",
+            ],
+        ),
+    },
     "je 48:12": {
         "st-source": "bhs",
         "st-summary": f"BHS transcribes a meteg as a {TIPEXA}.",
@@ -167,10 +190,15 @@ BY_REF: dict[str, dict[str, object]] = {
             "See the image in the UXLC change to which we link above."
             " BHS transcribes only the pashta stress helper, not the pashta itself."
             " So, understandably, WLC transcribes this mark as a qadma."
-            " The missing pashta is the cause, but the ERROR lands one phrase to the"
-            f" left: with no zaqef clause forming, the {TIPEXA} phrase over"
-            " אל־נוה איתן כי־ארגיעה fails and אריצנו is absorbed as the"
-            f" {MUNAX} of the following {ATNAX} phrase."
+            " The ERROR lands on the zaqef phrase over כי־ארגיעה אריצנו מעליה, which is"
+            " where that mark is: with a qadma rather than a pashta on אריצנו, the phrase"
+            " never forms."
+            " The ERROR has not always landed there. While the checker’s metigah-zaqef fuse"
+            " ran across a space, the qadma on אריצנו and the zaqef on מעליה — two chanted"
+            " words — fused into one metigah-zaqef token, and the failure surfaced a phrase"
+            f" to the left instead, on the {TIPEXA} phrase over אל־נוה איתן כי־ארגיעה. The"
+            " fuse now stops at a space, as ITM §223 and CoS Ch. 5 §§4–6 require of a"
+            " metigah, so the ERROR and the defect are in one place."
         ),
     },
     "je 26:5": {

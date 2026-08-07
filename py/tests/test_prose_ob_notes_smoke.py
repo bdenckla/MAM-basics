@@ -23,7 +23,10 @@ _CONSUMERS = (
 
 
 def test_ob_notes_dataset_is_populated() -> None:
-    assert len(prose_ob_notes.get_structured_text()) == 93
+    # One note per ungrammatical verse: rtmsr_overview._source raises on any ungrammatical
+    # with no "st-source", so this count tracks the ungrammatical count (93 -> 96 when the
+    # METHIGAZAQEF fuse stopped at a space -- issue #218).
+    assert len(prose_ob_notes.get_structured_text()) == 96
 
 
 def test_consumers_import() -> None:

@@ -31,6 +31,24 @@ def ambiguous_mark_context_comment(marked_word: str) -> str:
 TIP_LIKE_INCL = f"The slightly northwest-to-southeast ({TIPEXA}-like) inclination of the mark in question is, while not irrelevant, hardly definitive."
 
 
+def metigah_zaqef_across_a_space_comment(mam_compound: str, wlc_atoms: str) -> str:
+    """The opening paragraph gn 18:18 and je 37:10 share.
+
+    One shape, twice: MAM has a maqaf compound with the qadma on its first atom and the
+    zaqef on its second, and WLC has those same two accents with a space between the
+    atoms instead of the maqaf.  Only where the space came from tells the two verses
+    apart, which is what each entry's remaining paragraphs are about.
+    """
+    return (
+        f"MAM has {mam_compound}, one chanted word, with a qadma on its first atom and the"
+        " zaqef on its second. That is a metigah-zaqef, which ITM §223 and CoS Ch. 5 §§4–6"
+        " alike confine to the chanted word of the zaqef."
+        f" WLC has {wlc_atoms}: the same two accents, with a space between the atoms rather"
+        " than a maqaf, so they fall in two chanted words and the qadma cannot be the"
+        " zaqef’s metigah. The zaqef phrase then fails, and that is where the ERROR lands."
+    )
+
+
 MISSING_SOF_PASUQ_SUMMARY = (
     "A sof pasuq is missing somewhere in the LC-BHS-WLC pipeline."
 )

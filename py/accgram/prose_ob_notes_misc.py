@@ -12,6 +12,7 @@ from accgram.prose_ob_notes_shared import (
     TIPEXA,
     TIP_LIKE_INCL,
 )
+from py_html import wlc_utils_html
 
 _LM_0505_01 = (
     "The consensus pointing of the last two atoms in this verse is הֽוּנַֽח־לָֽנוּ׃."
@@ -89,15 +90,17 @@ BY_REF: dict[str, dict[str, object]] = {
         "uxlc_change": "2023.04.01/2022.12.12-10",
         "comment": (
             "See the image in the UXLC change to which we link above."
-            " The qadma (rather than pashta) on דברי is the cause, but the ERROR does not"
-            " land there: with no pashta to head it, the zaqef clause over"
-            " הלוא דברי ייטיבו never forms, so the failure surfaces later, on the"
-            f" enclosing {TIPEXA} phrase over הלוא דברי ייטיבו עם."
-            " The defect itself, though, is fundamentally a pashta-vs-qadma confusion on"
-            f" the single mark on דברי; the malformed {TIPEXA} phrase"
-            " (tipexa_phrase → ERROR) is only a surface artifact of how the LALR parse"
-            f" fails, not a problem with the {TIPEXA} or the chanted words that phrase spans"
-            " — flipping that one mark (qadma → pashta) clears the error entirely."
+            " The qadma (rather than pashta) on דברי is the cause, and the ERROR lands on"
+            " the zaqef phrase over הלוא דברי ייטיבו, which is where that mark is: with a"
+            " qadma rather than a pashta to head it, the phrase never forms. Flipping that"
+            " one mark (qadma → pashta) clears the error entirely."
+            " The ERROR has not always landed there. While the checker’s metigah-zaqef fuse"
+            " ran across a space, the qadma on דברי and the zaqef on ייטיבו — two chanted"
+            " words — fused into one metigah-zaqef token, and the failure surfaced instead"
+            f" on the enclosing {TIPEXA} phrase over הלוא דברי ייטיבו עם, a phrase with"
+            " nothing wrong with it. The fuse now stops at a space, as ITM §223 and CoS"
+            " Ch. 5 §§4–6 require of a metigah, so the ERROR and the defect are in one"
+            " place."
         ),
     },
     "lm 5:5": {
@@ -127,6 +130,30 @@ BY_REF: dict[str, dict[str, object]] = {
         "wlc_focus": "ב֥א",
         "st-summary": BHS_TRANSCRIBES,
         "uxlc_change": "2024.04.01/2023.09.14-3",
+    },
+    "ne 9:20": {
+        "st-source": "bhs",
+        "st-summary": "BHS transcribes a syllable as having qadma rather than pashta.",
+        "wlc_focus": "ורוחך֨",
+        "uxlc_change": "2024.04.01/2023.09.14-11",
+        "comment": (
+            [
+                "See the image in the UXLC change to which we link above. This is the same"
+                " shape as ",
+                wlc_utils_html.anchor("mi 2:7", {"href": "#obmi2v7"}),
+                " and ",
+                wlc_utils_html.anchor("je 26:5", {"href": "#obje26v5"}),
+                ", and subtler than either: in those two the mark sits on a non-final letter"
+                " and the correction moves it to the final one, while here the mark is"
+                " already on the kaf, the final letter of ורוחך, so nothing but its lateral"
+                " placement tells a qadma from a pashta. UXLC reports it on the left of the"
+                " consonant, which is the postpositive position, and BHL has a pashta there.",
+            ],
+            (
+                "With a qadma rather than a pashta on ורוחך, the zaqef phrase over"
+                " ורוחך הטובה never forms, and the ERROR lands on that phrase."
+            ),
+        ),
     },
     "1c 1:53": {
         "st-source": "lc",
