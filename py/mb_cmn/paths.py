@@ -118,9 +118,9 @@ def mam_parsed_path() -> str:
     Returned as a ``str`` rather than a ``Path`` because the reader interpolates it into
     ``f"{mam_parsed_path}/plus/{...}.json"``.
 
-    ``scan_pages/check.py`` has its own copy of these three lines, deliberately left
-    alone when the seventeen call sites that had been taking the default were converted
-    on 2026-08-07.
+    These three lines started as ``scan_pages/check.py``'s own ``mam_parsed_path``, the
+    one caller already worktree-correct when the other seventeen were converted on
+    2026-08-07; check.py now calls this instead, so there is one copy again.
     """
     clone = sibling_repo("MAM-parsed")
     # Require the subtree the plus reader actually opens, not merely the clone: an
