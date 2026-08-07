@@ -1046,7 +1046,10 @@ def p_pasuq_error(p):
     # state 1 with the same lookahead waiting: the state that just errored.  So any
     # stream with a token left over once pasuq has reduced never terminates, and four
     # tokens are enough -- TILDE SILLUQ SOFPASUQ REVIA, whose first three reduce by the
-    # ordinary p_pasuq rule.  Measured 2026-08-07 over every token stream of length 1-3
+    # ordinary p_pasuq rule.  That pasuq need not come from a good parse: this alternative
+    # reduces one off a leading error too, which is how TILDE UNKNOWN_ACCENT MERKHA SILLUQ
+    # SOFPASUQ hangs, with everything after its first token left over.
+    # Measured 2026-08-07 over every token stream of length 1-3
     # and every TILDE-prefixed stream of length 4, 79,798 in all: with the bare
     # alternative in place 7,253 of them never terminate.
     #
