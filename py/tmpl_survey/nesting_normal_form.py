@@ -400,16 +400,6 @@ def assert_stack_counts_in_normal_form_by_case(
         )
 
 
-def merge_stack_counts(*stack_counts_maps: StackCounts) -> Dict[Tuple[str, str], int]:
-    """Merge one or more stack-count maps by summing duplicate keys."""
-    merged: Dict[Tuple[str, str], int] = defaultdict(int)
-    for stack_counts in stack_counts_maps:
-        for key, count in stack_counts.items():
-            if count > 0:
-                merged[key] += count
-    return dict(merged)
-
-
 def _iter_weighted_stacks(stack_counts: StackCounts):
     for (stack_top, stack_rest), count in stack_counts.items():
         if count <= 0:

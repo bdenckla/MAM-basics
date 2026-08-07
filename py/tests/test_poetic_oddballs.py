@@ -12,8 +12,8 @@ Run:
 from __future__ import annotations
 
 from accgram import ob_error_context
-from accgram import ob_tree_parse
 from accgram import poetic_oddballs as po
+from tests.ob_tree_leaves import iter_leaf_texts
 
 
 def test_no_parse_tree_text_round_trips_to_error_tree() -> None:
@@ -26,13 +26,11 @@ def test_no_parse_tree_text_round_trips_to_error_tree() -> None:
     assert tree.has_error_leaf
     assert len(tree.roots) == 1
     assert tree.roots[0].label == "no_parse"
-    leaves = ob_tree_parse.iter_leaf_texts(tree)
+    leaves = iter_leaf_texts(tree)
     assert leaves == ["MERKHA", "ATNAX", "SILLUQ", "ERROR"]
 
 
 def test_no_parse_tree_text_drops_only_bookends() -> None:
     text = po._no_parse_tree_text(("MERKHA", "SOFPASUQ", "TILDE", "ATNAX"))
-    leaves = ob_tree_parse.iter_leaf_texts(
-        ob_error_context.parse_error_tree_from_text(text)
-    )
+    leaves = iter_leaf_texts(ob_error_context.parse_error_tree_from_text(text))
     assert leaves == ["MERKHA", "ATNAX", "ERROR"]

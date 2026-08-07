@@ -105,18 +105,3 @@ def _branch_has_error(branch: TreeBranch) -> bool:
         child.has_error if isinstance(child, TreeLeaf) else _branch_has_error(child)
         for child in branch.children
     )
-
-
-def iter_leaf_texts(tree: ErrorTree) -> list[str]:
-    out: list[str] = []
-
-    def _visit_branch(branch: TreeBranch) -> None:
-        for child in branch.children:
-            if isinstance(child, TreeLeaf):
-                out.append(child.text)
-            else:
-                _visit_branch(child)
-
-    for root in tree.roots:
-        _visit_branch(root)
-    return out

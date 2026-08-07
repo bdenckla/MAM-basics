@@ -1,7 +1,6 @@
 """Flatten MAM-parsed-plus EP structures to body text and track נוסח overlaps.
 
 Exports:
-    flatten_ep                      — flatten EP body text
     flatten_ep_for_diff             — flatten EP body text for diff tokenization
     flatten_ep_words_only_for_diff  — same but omits positional-punctuation templates
     flatten_element                 — flatten a nested EP element
@@ -52,22 +51,12 @@ def is_ketiv_velo_qere_template(name):
     return name == "כתיב ולא קרי"
 
 
-def flatten_ep(ep):
-    """Flatten an EP column array to a body text string.
-
-    Includes plain text and the body-text contribution of templates
-    (e.g. נוסח param 1, קו״כ params, מ:קמץ dalet variant).
-    Excludes נוסח param 2 (manuscript annotations).
-    """
-    return "".join(flatten_element(el) for el in ep)
-
-
 def flatten_ep_for_diff(ep):
     """Flatten an EP column to diff-friendly body text.
 
-    Unlike flatten_ep(), this keeps qere-only body text in its own token slot
-    and normalizes old single-arg קרי ולא כתיב templates by synthesizing the
-    visible qere from arg 1 with square brackets stripped.
+    Unlike a plain ``flatten_element`` join, this keeps qere-only body text in
+    its own token slot and normalizes old single-arg קרי ולא כתיב templates by
+    synthesizing the visible qere from arg 1 with square brackets stripped.
     """
     buf = _new_diff_buffer()
     for el in ep:

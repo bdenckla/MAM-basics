@@ -11,7 +11,6 @@ from mb_diff_mpu import (
     mpplus_structure,
 )
 from mb_diff_mpu.mpplus_book_urls import mam_with_doc_url, ref_str, wikisource_url
-from mb_diff_mpu.mpplus_flatten import flatten_ep
 
 
 def _ezek_40_26_old_ep():
@@ -345,9 +344,6 @@ def _qvq_oldstyle_changed_new_ep():
 
 
 class TemplateMultiplicityDiffTests(unittest.TestCase):
-    def test_flatten_ep_uses_visible_qere_for_standard_kq(self):
-        self.assertEqual(flatten_ep(_lam_4_3_old_ep()), "כַּיְעֵינִ֖ים")
-
     def test_json_serialization_does_not_concatenate_standard_kq_args(self):
         diff = mpplus_extract._diff_ep(
             _lam_4_3_old_ep(), _lam_4_3_new_ep(), tbn.BK_LAMENT, 4, 3
@@ -724,13 +720,6 @@ class KqTrivial2Tests(unittest.TestCase):
         split = mpplus_expand.split_structural_diff(diff)
 
         self.assertEqual(split, [])
-
-    def test_flatten_ep_is_identical_for_old_and_new_format(self):
-        """flatten_ep returns the same body text for קו״כ-אם and מ:קו״כ-אם-2."""
-        old_text = flatten_ep(_kq_triv_rename_old_ep())
-        new_text = flatten_ep(_kq_triv_rename_new_ep())
-
-        self.assertEqual(old_text, new_text)
 
 
 class SpecialKqUnifiedDiffEquivalenceTests(unittest.TestCase):
