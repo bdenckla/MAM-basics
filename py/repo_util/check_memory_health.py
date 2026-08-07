@@ -101,16 +101,25 @@ since resolved and this paragraph used to claim otherwise: checked 2026-08-07,
 memory subdirectory at all, and masorah-books carries 23 memory files of its
 own.
 
-'C--Users-BenDe-GitRepos-breuer-cos' -- whose repo still exists but whose work
-moved to masorah-books on 2026-07-31 -- is the surviving example, and it is why
-an orphaned memory directory is a QUESTION rather than an instruction to move
-the files. It holds one memory file, 'wlc-koren-12th-is-a-worktree.md', which is
-about wlc-utils rather than about Breuer, and which wlc-utils' own
+'C--Users-BenDe-GitRepos-breuer-cos' is the worked example of why an orphaned
+memory directory is a QUESTION rather than an instruction to move the files. It
+holds one memory file, 'wlc-koren-12th-is-a-worktree.md', which is about
+wlc-utils rather than about Breuer, and which wlc-utils' own
 'no-wlc-koren-12th-repo.md' supersedes: that one was written 21 minutes later on
-2026-07-27, records that the directory was deleted, and corrects this one by
-name. So read an orphaned memory before moving it. Carrying that file into
-masorah-books, as the obvious reading of "the repo's work moved there" suggests,
-would plant a superseded memory in a repo it was never about.
+2026-07-27, records that the directory it names was deleted, and corrects this
+one by name. Carrying that file into masorah-books, as the obvious reading of
+"the repo's work moved there" suggests, would plant a superseded memory in a
+repo it was never about. So read an orphaned memory before moving it.
+
+That directory is now beyond this check's reach, and that is the part worth
+knowing. Ben's decision, 2026-08-07: the breuer-cos CLONE was deleted from
+~/GitRepos, and breuer-cos was dropped from all-repos.code-workspace and from
+in/repo_maintenance_policy.json's frozen_repos, its content having lived in
+masorah-books since 2026-07-31. This check only walks the repos a workspace file
+lists, so 'C--Users-BenDe-GitRepos-breuer-cos\\memory' still sits on disk while
+nothing reports it any more. Deleting a repo, or dropping one from a workspace
+file, is therefore the one way to orphan a memory directory SILENTLY -- look at
+the memory before doing either.
 
 Two neighbours in that directory are deliberately NOT repo memory and are
 skipped: 'C--Users-BenDe-GitRepos' itself (sessions started from the GitRepos
