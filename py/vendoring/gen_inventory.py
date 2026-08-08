@@ -313,10 +313,18 @@ def main(refresh_live_inputs: bool = True) -> None:
             f"| {files_str} | {src_pkg_display} | {dest_repo} | {dest_path_display} | {mechanism} | {last_synced_display} | {provenance_doc} | {category} | {notes} |"
         )
     ignored_repos_sorted = ", ".join(sorted(ignored_repo_names))
+    # The parenthetical names WHICH repos were ignored, so with none ignored it has
+    # nothing to say and would render as a dangling "(dest_repos: )". Empty became
+    # reachable on 2026-08-07, when the four ignored repos -- MAM-for-Acc,
+    # MAM-for-CCAR, MAM-for-JPS and TMC -- were dropped from in/vendoring_policy.json
+    # on being moved out of GitRepos into FrozenRepos.
+    ignored_suffix = (
+        f" (dest_repos: {ignored_repos_sorted})" if ignored_repos_sorted else ""
+    )
     file_count = sum(len(v) for v in groups.values())
     lines += [
         "",
-        f"*{row_count} rows, {file_count} files. {ignored_file_count} files ignored (dest_repos: {ignored_repos_sorted}).*",
+        f"*{row_count} rows, {file_count} files. {ignored_file_count} files ignored{ignored_suffix}.*",
         "",
         "## Intentionally non-vendored",
         "",
@@ -333,5 +341,6 @@ def main(refresh_live_inputs: bool = True) -> None:
     # newline="\n": see the same note in vendoring/compare.py's writer.
     out_path.write_text("\n".join(lines), encoding="utf-8", newline="\n")
     print(
-        f"Wrote {row_count} rows ({file_count} files, {ignored_file_count} ignored for {ignored_repos_sorted}) to {out_path}"
+        f"Wrote {row_count} rows ({file_count} files,"
+        f" {ignored_file_count} ignored{ignored_suffix}) to {out_path}"
     )

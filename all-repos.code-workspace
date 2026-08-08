@@ -10,9 +10,6 @@
 			"path": "../book-of-job"
 		},
 		{
-			"path": "../CCAR-Psalms"
-		},
-		{
 			"path": "../codex-index-aleppo"
 		},
 		{
@@ -40,15 +37,6 @@
 			"path": "."
 		},
 		{
-			"path": "../MAM-for-Acc"
-		},
-		{
-			"path": "../MAM-for-CCAR"
-		},
-		{
-			"path": "../MAM-for-JPS"
-		},
-		{
 			"path": "../MAM-for-Sefaria"
 		},
 		{
@@ -67,9 +55,6 @@
 			"path": "../MAM-with-doc"
 		},
 		{
-			"path": "../mamgo-auto-edits"
-		},
-		{
 			"path": "../masorah-books"
 		},
 		{
@@ -77,9 +62,6 @@
 		},
 		{
 			"path": "../phonetic-hbo"
-		},
-		{
-			"path": "../TMC"
 		},
 		{
 			"path": "../UXLC-utils"

@@ -140,42 +140,6 @@
           "py/mb_diff_mpu"
         ]
       }
-    },
-    "MAM-for-Acc": {
-      "comment": "Ignored entirely.",
-      "ignore": true,
-      "scan_provenance": false,
-      "default_category": null,
-      "default_mechanism": null,
-      "default_provenance_doc": null,
-      "pkg_scan_roots": {}
-    },
-    "MAM-for-CCAR": {
-      "comment": "Ignored entirely.",
-      "ignore": true,
-      "scan_provenance": false,
-      "default_category": null,
-      "default_mechanism": null,
-      "default_provenance_doc": null,
-      "pkg_scan_roots": {}
-    },
-    "MAM-for-JPS": {
-      "comment": "Ignored entirely.",
-      "ignore": true,
-      "scan_provenance": false,
-      "default_category": null,
-      "default_mechanism": null,
-      "default_provenance_doc": null,
-      "pkg_scan_roots": {}
-    },
-    "TMC": {
-      "comment": "Ignored entirely.",
-      "ignore": true,
-      "scan_provenance": false,
-      "default_category": null,
-      "default_mechanism": null,
-      "default_provenance_doc": null,
-      "pkg_scan_roots": {}
     }
   },
   "overrides": [

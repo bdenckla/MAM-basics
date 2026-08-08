@@ -40,7 +40,7 @@ in the destination; `stale` is measured and behind; `unmeasured` is a copy nobod
 | grapheme_diff.py | mb_diff_mpu | mgketer | py/mb_diff_mpu/grapheme_diff.py | copy_script | 2026-04-27 | no | active | identical |
 | my_diffs.py, uni_denorm.py | mb_cmn | mgketer | py/python_modules | unknown | 2026-04-27 | no | stale | DIFFERS; placed in python_modules/ not mb_cmn/ |
 
-*22 rows, 154 files. 0 files ignored (dest_repos: MAM-for-Acc, MAM-for-CCAR, MAM-for-JPS, TMC).*
+*22 rows, 154 files. 0 files ignored.*
 
 ## Intentionally non-vendored
 
