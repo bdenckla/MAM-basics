@@ -21,6 +21,11 @@
       "frozen_on": "2026-07-27",
       "last_commit_when_frozen": "2024-04-04"
     },
+    "mamgo-auto-edits": {
+      "comment": "Archived on GitHub, so the remote is READ-ONLY and no maintenance commit can ever land: a push returns 403, 'This repository was archived so it is read-only'. Found 2026-08-07 the hard way, by a .gitattributes standardization commit that had to be dropped again because it could not be pushed. Archived-on-GitHub and frozen-here nearly coincide -- the five repos above are all archived too -- but neither list may be derived from the other, and 2026-08-07 showed both edges at once: this repo was archived and not frozen, while breuer-cos was frozen and deliberately NOT archived, so that its issues stay writable.",
+      "frozen_on": "2026-08-07",
+      "last_commit_when_frozen": "2026-05-11"
+    },
     "TMC": {
       "comment": "Paused project, frozen alongside the MAM-for-* client repos.",
       "frozen_on": "2026-07-27",
