@@ -229,48 +229,79 @@ moves under this plan exactly as the Python plan's own final session found.
 
 `C:\Users\BenDe\GitRepos\MAM-private\doc\PLAN-evacuate-private-repos.md`, written 2026-08-07,
 evacuates masorah-books, al-hatorah, wlc-utils-private and mgketer into `bdenckla/MAM-private`.
-It carries a section titled "Interactions with the wlc-rest plan — recorded on both sides", whose
-closing bullet says this file needs the corresponding note. **This is that note**, added
-2026-08-08. Until then the interlock was recorded on that plan's side alone, and this file
-mentioned that plan zero times — so a session executing a phase from here had no way to learn of
-it.
+It carries a section titled "Interactions with the wlc-rest plan — recorded on both sides"; this
+is the corresponding note on this side. First written 2026-08-08 against that plan's original
+blanket rule ("never interleaved with the wlc-rest plan's phases"); rewritten later the same
+day, after that plan's `57fb4a3` replaced the blanket rule with a traced three-tier one and
+corrected a provenance claim this note had copied from its first draft.
 
-**No phase of this plan may run concurrently with any phase of that plan, Phase 0 included.**
-That plan states the rule in its Sequencing section: both programmes assert a clean
-`git status --porcelain` in MAM-basics, so the one-repo-one-phase-at-a-time discipline holds
-*across* the two programmes and not only within each. Two sharper reasons apply to Phase 0 in
-particular, which is otherwise read-only and might therefore look exempt:
+**The overlap rule, mirrored from that plan's Sequencing section — three tiers, by which of its
+four repos is in play:**
 
-- **That plan's very first oracle is a step of this plan's circuit.** wlc-utils-private is
-  sequenced first there, and its layer-2 oracle is `py\main_wlc_json_and_unicode.py` run from
-  MAM-basics — which is `wlc-json-and-unicode`, the second of the eight `_STEPS` this plan's full
-  circuit runs (`main_0_mega.py:253`). Run concurrently, the two write the same artifacts under
-  `wlc-utils\out\` and `wlc-utils-private\`, and each one's zero-diff requirement is measuring a
-  tree the other is rewriting.
-- **Both preflights demand a clean MAM-basics, and each dirties it.** This plan's Phase 0 commits
-  to this file; that plan's R.0 requires MAM-basics clean before it starts.
+- **wlc-utils-private: never overlap with any phase of this plan.** The tie is
+  `py\main_wlc_json_and_unicode.py`, which splits its output between two roots (`:57`, `:65`):
+  `_PRIVATE` is wlc-utils-private, `_PUBLIC` is public wlc-utils today — this repo after Phase
+  5. That one generator is both wlc-utils-private's layer-2 oracle and the
+  `wlc-json-and-unicode` step of this plan's circuit (`main_0_mega.py:253`), so each programme's
+  zero-diff and zero-mtime verifications measure trees the other's oracle rewrites. That plan's
+  hard tier names Phases 3, 5 and 10 here as the sharpest cases — dual residency's frozen
+  reference, the zero-mtime snapshot over wlc-utils, the emptying — but from this side the
+  honest statement is broader: Phases 0, 1 and 10 run the circuit too, and Phases 9 and 10 edit
+  wlc-utils, which that oracle requires clean as its fourth precondition. Only Phases 2, 4, 7
+  and 8 are genuinely inert toward that repo, and scheduling around so fine a distinction buys
+  nothing. **Treat it as repo-level: while wlc-utils-private is mid-evacuation there, no phase
+  runs here, and vice versa.**
+- **al-hatorah: its R.2 must not overlap Phase 5.** Both edit the same block of sibling
+  accessors in `py\wlc_paths.py`, and both run this repo's suite and read its pass count.
+  Sequence them, either way around.
+- **mgketer and masorah-books: free to interleave, under one scheduling rule.** The only
+  coupling is that both programmes assert a clean `git status --porcelain` in MAM-basics — and
+  mgketer's and al-hatorah's R.3 commit MAM-basics-side vendoring-policy edits — so two sessions
+  must not hold uncommitted MAM-basics work at the same time. That is scheduling, not
+  correctness: those repos' oracles touch their own trees and read MAM-parsed, never wlc-utils.
 
-Three entanglements outlive the contention, and no amount of scheduling removes them:
+**The scheduling question that plan puts to Ben, restated so both plans carry it.**
+wlc-utils-private is sequenced first there because it is smallest — and it is also the one repo
+that locks this plan out entirely, so "smallest first" and "unblock this plan soonest" pull
+opposite ways. Either wlc-utils-private runs R.0–R.4 straight through before this plan advances
+past Phase 0, or it moves to last in that programme's order and this plan runs now, with mgketer
+and masorah-books free to interleave meanwhile. There is also a case for this plan going first
+outright: after Phase 5 the shared generator's `_PUBLIC` half writes into this repo, and after
+Phase 10 public wlc-utils holds only stubs — so wlc-utils-private's oracle loses its
+fourth-precondition write target and its move gets simpler. **Ben's call, owed before that
+repo's R.1 or this plan's Phase 3, whichever comes first.**
+
+Two entanglements outlive the contention, and no amount of scheduling removes them:
 
 1. **Phase 5 moves two accessors that plan repoints.** `wlc_utils_private_dir`
    (`py\wlc_paths.py:146`) and `al_hatorah_phonetic_dir` (`:159`, with
    `require_al_hatorah_phonetic_dir` at `:170`) leave `py\wlc_paths.py` for `mb_cmn\paths.py`
    here, and that plan's R.2 for wlc-utils-private and for al-hatorah rewrites exactly those.
-   **Whichever programme executes second finds them in the other file — locate them by function
-   name, never by path.**
-2. **Phase 1's expectation that al-hatorah's `aht_provenance.py` wrapper can retire is void if
-   al-hatorah moves.** Phase 1 argues the wrapper becomes unnecessary once the
-   `remote.origin.url` basename step lands. Nested at `MAM-private\al-hatorah\`, that repo's
-   origin basename becomes `MAM-private`, not `al-hatorah`, so the explicit `repo_name` override
-   must survive and the wrapper with it. Read Phase 1's al-hatorah paragraph as conditional on
-   al-hatorah still sitting at `C:\Users\BenDe\GitRepos\al-hatorah`.
-3. **Phase 11 and that plan's R.4 edit the same two unsynced pairs of files** — the live
+   Both sit inside the "14 live sibling accessors" range Phase 5's table moves verbatim —
+   verified 2026-08-08, between `mam_simple_dir` at `:109` and `require_uxlc_utils_dir` at
+   `:179`, checked because the table elided the fourteen names behind an ellipsis; the table now
+   names these two. **Whichever programme executes second finds them in the other file — locate
+   them by function name, never by path.**
+2. **Phase 11 and that plan's R.4 edit the same two unsynced pairs of files** — the live
    `~\.claude\CLAUDE.md` with its tracked twin at `github-misc\dot-claude\CLAUDE.md`, and the
    live `~\.claude\skills\hebrew-prose\` with its tracked twin at
    `github-misc\dot-claude\skills\hebrew-prose\`. Neither pair syncs, both programmes flag their
    edits stop-and-ask-Ben, and two sessions editing one unsynced pair is precisely how a copy
    goes stale unnoticed. Whichever runs second re-verifies both pairs byte-identical before
    adding to them.
+
+**A third entanglement was recorded here on 2026-08-08 and withdrawn the same day.** This note's
+first version claimed that Phase 1's expectation of retiring al-hatorah's `aht_provenance.py`
+wrapper is void once al-hatorah nests under MAM-private, "whose origin basename is
+`MAM-private`". That plan's `57fb4a3` corrected the claim by reading the code:
+`mb_cmn\provenance.py`'s `_display_path` walks a fixed `parents[2]`, so a vendored copy at
+`MAM-private\al-hatorah\py\mb_cmn\` lands on a directory still named `al-hatorah`, and the
+breadcrumb stays right with no override. Nor does Phase 1's step 2 change that when it lands:
+the derivation chain reads `repo_root/.git`, which for a tree nested inside MAM-private does not
+exist, so the chain degrades to `repo_root.name` — `al-hatorah`, the right answer. The exposure
+would need a derivation that walks *up* to MAM-private's `.git`, which Phase 1's chain
+deliberately does not do. What the correctness actually depends on — the vendored copy sitting
+exactly two levels below its tree root — is verified at that plan's R.2 rather than assumed.
 
 One thing this plan hands that plan rather than owes it: **`wlc-utils\doc\` moves into
 `MAM-basics\doc\` at Phase 3**, and that plan's prose table cites
@@ -613,7 +644,7 @@ the generators writing to the sibling and half writing home, which is worse than
 | `novc_dir()`, `scans_dir()` | `paths.novc_dir()`, `paths.scans_dir()` — **one** scratch dir now, not two | 2, 1 |
 | `siblings_root`, `sibling`, `require_sibling` | delete — pure delegation to `mb_cmn.paths` since the Python plan's Phase 2 | — |
 | `mam_basics_dir`, `require_mam_basics_dir` | delete — already dead | — |
-| the 14 live sibling accessors (`mam_simple_dir` … `require_uxlc_utils_dir`) | move verbatim into `mb_cmn/paths.py`, which already owns `sibling_repo` | names unchanged |
+| the 14 live sibling accessors (`mam_simple_dir` … `require_uxlc_utils_dir` — among them `wlc_utils_private_dir` and `al_hatorah_phonetic_dir`, which the MAM-private programme repoints; see "Interactions with the MAM-private programme") | move verbatim into `mb_cmn/paths.py`, which already owns `sibling_repo` | names unchanged |
 
 **Two accessors for the pages tree, not one.** `gh_pages_dir()` means the deploy root;
 `wlc_pages_dir()` means `gh-pages/wlc/`. All 26 wlc call sites take the second, which leaves
@@ -935,8 +966,10 @@ zero diff. Check for untracked residue — `git rm` leaves it behind — though 
 **This file is the orchestrator; no live session needs to stay open**, and no session needs to
 remember anything from the one before it.
 
-**And no phase runs while a phase of the MAM-private programme is running** — see "Interactions
-with the MAM-private programme" above, which applies to Phase 0 as much as to the rest.
+**Check the MAM-private interlock before scheduling any phase** — "Interactions with the
+MAM-private programme" above. In brief: wlc-utils-private's phases there lock this plan out
+entirely; al-hatorah's R.2 must not overlap Phase 5; mgketer's and masorah-books' phases
+interleave freely so long as only one session holds uncommitted MAM-basics work.
 
 Each session reads this file, does exactly **one** phase, verifies it, then writes the result back
 into the Status table — state, date, commit shas — and marks that phase's heading `— DONE <date>`,
