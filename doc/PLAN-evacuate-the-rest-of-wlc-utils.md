@@ -183,7 +183,16 @@ contradict each other.
 
 ---
 
-## Preconditions — all three blocking
+## Preconditions — all four blocking
+
+**0. The whole MAM-private programme must finish first — every phase of all four repos.** Ben's
+decision, 2026-08-08: all private work before any public work, and this plan is the first public
+work after it. The programme is
+`C:\Users\BenDe\GitRepos\MAM-private\doc\PLAN-evacuate-private-repos.md`; its Status table is the
+check, and **this precondition is met when al-hatorah's R.4 is written back there**, not when
+wlc-utils-private finishes. Numbered 0 rather than 4 so the three below keep the numbers the rest
+of this file cites. The reasoning behind it, including what could safely have overlapped and why
+that licence goes unused, is under "Interactions with the MAM-private programme".
 
 **1. `wlc-utils/doc/PLAN-two-accents-on-one-chanted-word.md` must land or freeze first.** It is
 live — 1134 lines, §9 is the current state, Phase 4 next — and it generates accgram pages, which
@@ -289,8 +298,14 @@ inference from the morning's unblock-wlc-rest rationale that Ben corrected the s
 slotting this plan in mid-programme is itself the interleaving being declined.) No mgketer or
 masorah-books phase runs as filler during this plan's manual gates. The three-tier analysis
 above stands as the record of what *could* overlap safely — it is reasoning, not schedule.
-(MAM-private's plan file was held by the live wlc-utils-private session when this was recorded,
-so its mirror of this decision goes in at or after that session's write-back, not concurrently.)
+
+**Owed to the other side, and not yet paid: MAM-private's plan does not carry this
+serialization.** Its file was held by the live wlc-utils-private session when the decision was
+made on 2026-08-08, so it still reads as though the tiers govern and as though this plan resumes
+after wlc-utils-private. **The first MAM-private session that finds the file free should add
+the mirror**: the two programmes run as whole blocks; the whole of that programme precedes any
+phase of this one; and the chip its last repo's R.4 spawns is this plan's Phase 0. Until that
+lands, the two plans disagree about the order, and **this file is the one Ben stated it to.**
 
 **One consequence for this plan's own verifications, visible from Phase 0 onward:** once that
 move lands, `wlc-json-and-unicode` writes its `_PRIVATE` half into
@@ -1016,6 +1031,14 @@ next phase quoting this file's absolute path.
 
 Phases 0, 1, 2, 4, 7, 8 and 10 are safe to chain automatically once their verification passes.
 
-**Run the test suite and every generator from the main checkout, never from a worktree** — until
-Phase 1 lands, after which a worktree becomes safe for generators and still gives 12 unreal
-failures for the suite.
+**Run the test suite and every generator from the main checkout, never from a worktree** — with
+one qualification added 2026-08-08. The half of this sentence that read "until Phase 1 lands,
+after which a worktree becomes safe for generators and still gives 12 unreal failures for the
+suite" is stale in both its halves: `38a3bc7` landed the worktree half of Phase 1 on 2026-08-07
+and the same commit repointed seventeen callers of `read_books_from_mam_parsed_plus` off their
+cwd-relative `"../MAM-parsed"` default, so the suite is *reported* green from a worktree with
+`REPOS_ROOT=C:\Users\BenDe\GitRepos` set — 919 passed, 5 skipped. **Reported, not measured here;
+re-measure at Phase 0 and rewrite this paragraph with the figure you get.** The instruction
+itself stands regardless of that number, on a ground the provenance fix does not touch: this
+plan's verifications are zero-diff and zero-mtime assertions over wlc-utils, MAM-private and the
+other siblings, none of which any MAM-basics worktree isolates.
