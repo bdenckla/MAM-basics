@@ -276,6 +276,16 @@ one-unit run as the single exception to its one-phase-per-session discipline, an
 of its gates so the run cannot stall midway. The paragraph above stands as the record of the
 alternatives not taken.
 
+**Ben, 2026-08-08, later the same day: the two programmes run strictly serially, as whole
+blocks — the interleaving the tiers above license goes deliberately unused.** The coordination
+that interleaving would need was judged delicate and error-prone on both sides. The order:
+wlc-utils-private (its R.0–R.4 run was already live when this was recorded), then this plan
+complete, Phases 0 through 11, then the remaining three MAM-private repos. No mgketer or
+masorah-books phase runs as filler during this plan's manual gates. The three-tier analysis
+above stands as the record of what *could* overlap safely — it is reasoning, not schedule.
+(MAM-private's plan file was held by the live wlc-utils-private session when this was recorded,
+so its mirror of this decision goes in at or after that session's write-back, not concurrently.)
+
 **One consequence for this plan's own verifications, visible from Phase 0 onward:** once that
 move lands, `wlc-json-and-unicode` writes its `_PRIVATE` half into
 `MAM-private\wlc-utils-private\`, so every "zero diff in both repos" assertion here extends to
@@ -978,9 +988,10 @@ zero diff. Check for untracked residue — `git rm` leaves it behind — though 
 remember anything from the one before it.
 
 **Check the MAM-private interlock before scheduling any phase** — "Interactions with the
-MAM-private programme" above. In brief: wlc-utils-private's phases there lock this plan out
-entirely; al-hatorah's R.2 must not overlap Phase 5; mgketer's and masorah-books' phases
-interleave freely so long as only one session holds uncommitted MAM-basics work.
+MAM-private programme" above. The operative rule is Ben's 2026-08-08 serialization decision
+recorded there: the two programmes run as whole blocks, never interleaved, so while any
+MAM-private phase is live, nothing runs here. The three tiers in that section are the analysis
+of what could have overlapped, kept as reasoning only.
 
 Each session reads this file, does exactly **one** phase, verifies it, then writes the result back
 into the Status table — state, date, commit shas — and marks that phase's heading `— DONE <date>`,
