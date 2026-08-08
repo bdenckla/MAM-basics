@@ -270,17 +270,23 @@ outright: after Phase 5 the shared generator's `_PUBLIC` half writes into this r
 Phase 10 public wlc-utils holds only stubs — so wlc-utils-private's oracle loses its
 fourth-precondition write target and its move gets simpler. **Settled by Ben, 2026-08-08:
 wlc-utils-private runs R.0–R.4 straight through, first, by itself — as one unit, with nothing
-in parallel, not even a phase of this plan. This plan waits, and resumes at Phase 0 once that
-repo's R.4 write-back lands.** That plan's `22e7e7f` records the same settlement, scopes the
+in parallel, not even a phase of this plan. This plan waits.** (This paragraph first ended
+"and resumes at Phase 0 once that repo's R.4 write-back lands"; Ben superseded that the same
+day with the whole-programme ordering two paragraphs down — the wait is longer than one
+repo.) That plan's `22e7e7f` records the same settlement, scopes the
 one-unit run as the single exception to its one-phase-per-session discipline, and closes three
 of its gates so the run cannot stall midway. The paragraph above stands as the record of the
 alternatives not taken.
 
 **Ben, 2026-08-08, later the same day: the two programmes run strictly serially, as whole
 blocks — the interleaving the tiers above license goes deliberately unused.** The coordination
-that interleaving would need was judged delicate and error-prone on both sides. The order:
-wlc-utils-private (its R.0–R.4 run was already live when this was recorded), then this plan
-complete, Phases 0 through 11, then the remaining three MAM-private repos. No mgketer or
+that interleaving would need was judged delicate and error-prone on both sides. The order,
+stated by Ben in full: **all private work first — the whole MAM-private programme, all four
+repos — before any public work, and the first public work is this plan.** So this plan's Phase
+0 waits for al-hatorah's R.4, not for wlc-utils-private's. (This paragraph first read
+"wlc-utils-private, then this plan complete, then the remaining three MAM-private repos" — an
+inference from the morning's unblock-wlc-rest rationale that Ben corrected the same day:
+slotting this plan in mid-programme is itself the interleaving being declined.) No mgketer or
 masorah-books phase runs as filler during this plan's manual gates. The three-tier analysis
 above stands as the record of what *could* overlap safely — it is reasoning, not schedule.
 (MAM-private's plan file was held by the live wlc-utils-private session when this was recorded,
