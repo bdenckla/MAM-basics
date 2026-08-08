@@ -225,6 +225,61 @@ moves under this plan exactly as the Python plan's own final session found.
 
 ---
 
+## Interactions with the MAM-private programme — recorded on both sides
+
+`C:\Users\BenDe\GitRepos\MAM-private\doc\PLAN-evacuate-private-repos.md`, written 2026-08-07,
+evacuates masorah-books, al-hatorah, wlc-utils-private and mgketer into `bdenckla/MAM-private`.
+It carries a section titled "Interactions with the wlc-rest plan — recorded on both sides", whose
+closing bullet says this file needs the corresponding note. **This is that note**, added
+2026-08-08. Until then the interlock was recorded on that plan's side alone, and this file
+mentioned that plan zero times — so a session executing a phase from here had no way to learn of
+it.
+
+**No phase of this plan may run concurrently with any phase of that plan, Phase 0 included.**
+That plan states the rule in its Sequencing section: both programmes assert a clean
+`git status --porcelain` in MAM-basics, so the one-repo-one-phase-at-a-time discipline holds
+*across* the two programmes and not only within each. Two sharper reasons apply to Phase 0 in
+particular, which is otherwise read-only and might therefore look exempt:
+
+- **That plan's very first oracle is a step of this plan's circuit.** wlc-utils-private is
+  sequenced first there, and its layer-2 oracle is `py\main_wlc_json_and_unicode.py` run from
+  MAM-basics — which is `wlc-json-and-unicode`, the second of the eight `_STEPS` this plan's full
+  circuit runs (`main_0_mega.py:253`). Run concurrently, the two write the same artifacts under
+  `wlc-utils\out\` and `wlc-utils-private\`, and each one's zero-diff requirement is measuring a
+  tree the other is rewriting.
+- **Both preflights demand a clean MAM-basics, and each dirties it.** This plan's Phase 0 commits
+  to this file; that plan's R.0 requires MAM-basics clean before it starts.
+
+Three entanglements outlive the contention, and no amount of scheduling removes them:
+
+1. **Phase 5 moves two accessors that plan repoints.** `wlc_utils_private_dir`
+   (`py\wlc_paths.py:146`) and `al_hatorah_phonetic_dir` (`:159`, with
+   `require_al_hatorah_phonetic_dir` at `:170`) leave `py\wlc_paths.py` for `mb_cmn\paths.py`
+   here, and that plan's R.2 for wlc-utils-private and for al-hatorah rewrites exactly those.
+   **Whichever programme executes second finds them in the other file — locate them by function
+   name, never by path.**
+2. **Phase 1's expectation that al-hatorah's `aht_provenance.py` wrapper can retire is void if
+   al-hatorah moves.** Phase 1 argues the wrapper becomes unnecessary once the
+   `remote.origin.url` basename step lands. Nested at `MAM-private\al-hatorah\`, that repo's
+   origin basename becomes `MAM-private`, not `al-hatorah`, so the explicit `repo_name` override
+   must survive and the wrapper with it. Read Phase 1's al-hatorah paragraph as conditional on
+   al-hatorah still sitting at `C:\Users\BenDe\GitRepos\al-hatorah`.
+3. **Phase 11 and that plan's R.4 edit the same two unsynced pairs of files** — the live
+   `~\.claude\CLAUDE.md` with its tracked twin at `github-misc\dot-claude\CLAUDE.md`, and the
+   live `~\.claude\skills\hebrew-prose\` with its tracked twin at
+   `github-misc\dot-claude\skills\hebrew-prose\`. Neither pair syncs, both programmes flag their
+   edits stop-and-ask-Ben, and two sessions editing one unsynced pair is precisely how a copy
+   goes stale unnoticed. Whichever runs second re-verifies both pairs byte-identical before
+   adding to them.
+
+One thing this plan hands that plan rather than owes it: **`wlc-utils\doc\` moves into
+`MAM-basics\doc\` at Phase 3**, and that plan's prose table cites
+`wlc-utils\doc\PLAN-two-accents-on-one-chanted-word.md` for its masorah-books path references. It
+already says to repoint that file wherever it lives at execution time, so nothing is owed —
+recorded here so a Phase 3 session does not read the moved file as breakage.
+
+---
+
 ## The organizing idea: the two roots rejoin
 
 The Python evacuation split one `repo_root()` into a CODE root and a DATA root, and
@@ -879,6 +934,9 @@ zero diff. Check for untracked residue — `git rm` leaves it behind — though 
 
 **This file is the orchestrator; no live session needs to stay open**, and no session needs to
 remember anything from the one before it.
+
+**And no phase runs while a phase of the MAM-private programme is running** — see "Interactions
+with the MAM-private programme" above, which applies to Phase 0 as much as to the rest.
 
 Each session reads this file, does exactly **one** phase, verifies it, then writes the result back
 into the Status table — state, date, commit shas — and marks that phase's heading `— DONE <date>`,
