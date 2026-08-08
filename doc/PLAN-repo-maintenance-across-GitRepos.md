@@ -10,6 +10,62 @@ mismatch as a finding.
 
 ---
 
+## EXECUTED 2026-08-07 — the outcome, and which predictions failed
+
+Carried out in full the same day it was written. **Read this section before acting on
+anything below: the body is kept as the record of what was planned, and several of its
+figures — and two of its instructions — are now wrong.**
+
+**What changed, by repo.** holman-ketiv-qere: leftover worktree and `claude/*` branch
+removed as predicted, plus two orphan combining marks escaped (`dd082a7`). UXLC-utils and
+masorah-books: an empty worktree husk removed from each. MAM-basics: `check_memory_health.py`
+corrected (`81ee45c`, `519be83`). The other 26 repos: nothing. `--run-black` rewrote no file
+anywhere.
+
+**Predictions that FAILED.**
+
+- *"Leftover worktrees exist in exactly ONE repo."* True of REGISTERED worktrees only. The
+  section 7 baseline used `git worktree list`, which cannot see a leftover DIRECTORY.
+  UXLC-utils held a flat-empty husk, and masorah-books one wrapping an empty `py/cos/`. The
+  second was neither removed nor reported, because `_sweep_empty_dirs` tested
+  `any(child.iterdir())` — fixed in `8cdb22f`, which now treats "no file at any depth" as
+  empty and age-gates the widened case.
+- *"breuer-cos has 2 orphaned memory files that want carrying over into masorah-books."*
+  Wrong on both counts, and obeying it would have done harm. It held ONE memory file, about
+  wlc-utils rather than about Breuer, already superseded by wlc-utils' own
+  `no-wlc-koren-12th-repo.md`. Carrying it over would have planted a superseded memory in a
+  repo it was never about. `check_memory_health.py`'s docstring now carries the lesson.
+- *Section 5's masorah-books item was incomplete.* Five orphaned session directories was
+  right for that repo; there were 22 across four repos, wlc-utils holding 15.
+
+**Decisions Ben took on the questions this plan raised, all 2026-08-07.** All 22 orphaned
+session directories deleted (47 MB), plus the orphaned project directories for breuer-cos and
+yeivin-itm (7.1 MB); none held a `memory/` subdirectory. NO repo gains its own
+`py/main_repo_maintenance.py` — al-hatorah was considered and declined (`e66754e`), so
+`MAINTENANCE_SCRIPT=False` is the settled answer rather than a gap. `* text=auto eol=lf`
+added to the six non-frozen repos lacking it, sparing three upstream Calendrica files in
+github-misc. The breuer-cos CLONE deleted and the repo dropped from the workspace
+(`79df1e9`), its GitHub repository staying unarchived until all five of its issues resolve.
+
+**Sections 1 and 2 are stale on scope.** The frozen clones left GitRepos for the sibling
+`C:\Users\BenDe\FrozenRepos` and left `all-repos.code-workspace` (`bcf88ae`), so the freeze is
+structural: the workspace lists 24 folders, not 30, and no sweep can reach a frozen repo at
+all. `--include-frozen`, named in section 1's table area and in H3, was removed (`9113cb3`).
+
+**Hazards, as they played out.** H1 was avoided by running `--clean-worktrees` first. H3's
+warning against `--commit-across-repos` was honoured — every repo was committed by hand. H5
+held: `--run-black` reported no problems, and since the five py-without-venv repos were all
+frozen and have now MOVED, every repo left in GitRepos with tracked Python has a venv, which
+retires issue #212's cited cases.
+
+**Still open, deliberately.** `HEX_ESCAPES` and the `NFC_*` counts are advisory and were not
+touched. The one substantial finding this sweep raised and did not act on: wlc-utils' and
+UXLC-utils' memory files carry stale path citations left by the 2026-08-01 evacuation of
+their Python into MAM-basics — `--check-memory-health` reports 5 and 8 citations resolving
+nowhere, plus dozens now resolving in MAM-basics instead.
+
+---
+
 ## 0. Preconditions — check all four before doing anything
 
 **All four were verified satisfied at 2026-08-07 13:05**, immediately before this plan was
