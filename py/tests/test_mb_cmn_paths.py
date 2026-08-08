@@ -35,6 +35,7 @@ _ENV_VARS = (
     "REPO_MAM_SIMPLE_DIR",
     "REPO_WLC_UTILS_DIR",
     "REPO_WLC_UTILS_PRIVATE_DIR",
+    "REPO_MAM_PRIVATE_DIR",
 )
 
 
@@ -79,6 +80,17 @@ class TestMbCmnPaths(unittest.TestCase):
         with mock.patch.dict(os.environ, env, clear=True):
             self.assertEqual(paths.sibling_repo("MAM-parsed"), Path("/elsewhere/mp"))
 
+    # THE TWO NAME-MAPPING TESTS BELOW KEEP "wlc-utils-private" AS DATA, NOT AS A CLAIM
+    # THAT SUCH A SIBLING EXISTS.  It stopped being a sibling clone on 2026-08-08, when the
+    # private evacuation programme moved it under MAM-private (see wlc_paths'
+    # wlc_utils_private_dir, which now resolves sibling("MAM-private") / "wlc-utils-private",
+    # so REPO_MAM_PRIVATE_DIR is the override that moves that tree and
+    # REPO_WLC_UTILS_PRIVATE_DIR reaches nothing).  The name is kept here anyway because
+    # what these two tests exercise is the name-mapping function, for which it remains the
+    # sharpest pair of examples in the whole set: the only multi-hyphen repo name, and the
+    # only name that is a strict prefix of another.  Per this file's opening docstring, no
+    # sibling directory has to exist for either.
+
     def test_env_name_mapping_non_alnum_to_underscore(self):
         # wlc-utils-private -> REPO_WLC_UTILS_PRIVATE_DIR: every run of non-alphanumerics
         # collapses to one underscore, so the two hyphens do not become two variables.
@@ -93,6 +105,13 @@ class TestMbCmnPaths(unittest.TestCase):
         with mock.patch.dict(os.environ, env, clear=True):
             self.assertEqual(paths.sibling_repo("wlc-utils"), Path("/pub"))
             self.assertEqual(paths.sibling_repo("wlc-utils-private"), Path("/priv"))
+
+    def test_env_name_mapping_of_the_repo_that_now_holds_the_private_tree(self):
+        # The live override for the private WLC data, standing where
+        # REPO_WLC_UTILS_PRIVATE_DIR stood before the 2026-08-08 move.
+        env = _clean_env(REPO_MAM_PRIVATE_DIR="/mp")
+        with mock.patch.dict(os.environ, env, clear=True):
+            self.assertEqual(paths.sibling_repo("MAM-private"), Path("/mp"))
 
     def test_default_matches_legacy_repo_root_parent_formula(self):
         # Byte-identical to the old `repo_root().parent / "MAM-parsed"`, which is what
