@@ -80,17 +80,6 @@ def build_parser() -> argparse.ArgumentParser:
         help="Optional timeout in seconds for each repo black run",
     )
     parser.add_argument(
-        "--include-frozen",
-        action="store_true",
-        help=(
-            "Run on repos marked frozen in in/repo_maintenance_policy.json."
-            " Naming one with --repos is not enough: a freeze exists to keep a"
-            " paused project's last-changed date meaningful, so overriding it"
-            " has to be said out loud"
-        ),
-    )
-
-    parser.add_argument(
         "--include-pattern",
         default="*.py",
         help="Pattern(s) used by git ls-files for line-term audits (comma-separated)",
@@ -170,9 +159,6 @@ def build_parser() -> argparse.ArgumentParser:
 def _validate_action_specific_args(
     parser: argparse.ArgumentParser, args: argparse.Namespace
 ) -> None:
-    if args.include_frozen and not args.run_black:
-        parser.error("--include-frozen only applies to --run-black")
-
     if args.commit_across_repos:
         if args.message is None and args.message_file is None:
             parser.error(
@@ -214,7 +200,14 @@ def main(argv: Sequence[str] | None = None) -> int:
     report_txt = Path(args.report_txt).resolve() if args.report_txt else None
 
     if args.run_black:
-        frozen = {} if args.include_frozen else maintenance_policy.frozen_repos()
+        # Kept although it normally matches nothing now: the frozen clones left
+        # GitRepos on 2026-08-07 for the sibling FrozenRepos and are in no
+        # workspace file, so the freeze is enforced by their location and this
+        # skip never fires. It stays as the backstop for a frozen repo that does
+        # turn up in a workspace file. There is no override any more --
+        # --include-frozen was removed the same day, having become a way to ask
+        # for repos the sweep could no longer see.
+        frozen = maintenance_policy.frozen_repos()
         results = run_black_across_repos(
             repo_infos,
             black_target=args.black_target,
