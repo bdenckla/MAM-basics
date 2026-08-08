@@ -30,6 +30,24 @@ repo goes on accruing worktrees from agents editing its data, which is what
 `py/main_repo_util.py --clean-worktrees` exists to sweep now that no maintenance
 script of its own can.
 
+MAINTENANCE_SCRIPT=False IS THE SETTLED, EXPECTED ANSWER EVERYWHERE BUT HERE --
+it is informational, not 22 outstanding gaps. Ben's decision, 2026-08-07, after
+the cross-repo maintenance sweep raised the question deliberately rather than
+letting each run re-raise it. `py/main_repo_util.py` IS the maintenance story
+for every other repo, and a per-repo script only earns its keep by orchestrating
+the two things a cross-repo sweep cannot reach: that repo's own test entrypoint
+and its own rebuild.
+
+Measured 2026-08-07 across all 23 repos with tracked .py, exactly one other repo
+has both -- al-hatorah, with `py/main_test.py` and `py/main_0_mega.py`, 271
+tracked .py and its own `py/repo_paths.py`. It was CONSIDERED AND DECLINED:
+black, ruff-equivalent linting and worktree cleanup already reach it through the
+sweep, so a script there would buy one bundled exit status at the cost of a
+second maintenance pipeline to keep from drifting. holman-ketiv-qere has a test
+entrypoint but no rebuild, so its script would wrap a single command. The
+remaining 21 have neither. So do not read a False here as work waiting, and do
+not write a maintenance script for a repo on the strength of this check alone.
+
 The worktree-cleanup standard
 -----------------------------
 EVERY REPO'S MAINTENANCE SCRIPT SHOULD REMOVE FINISHED AGENT WORKTREES AND THE
