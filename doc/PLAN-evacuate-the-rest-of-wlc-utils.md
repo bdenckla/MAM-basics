@@ -32,7 +32,7 @@ stale).
 | Phase | State |
 |---|---|
 | 0 — Preflight: baseline, manifest, collision census | **not started** |
-| 1 — The provenance worktree fix | **not started** |
+| 1 — The provenance worktree fix | **partly landed 2026-08-07, outside this plan**: `38a3bc7` (closing #216) added the worktree `.git`-pointer derivation — steps 1 and 4 of the chain. Remaining: step 2 (the `remote.origin.url` basename, the step that also covers a renamed clone — `grep origin py/mb_cmn/provenance.py` finds nothing), the tautology-test repairs (`test_mb_cmn_provenance.py`'s `_repo_name()` still returns `this_repo_name()`), and the al-hatorah wrapper decision. Re-measure at Phase 0 |
 | 2 — `.gitattributes` merge | **not started** |
 | 3 — Copy the corpus in (dual residency) | **not started** |
 | 4 — Licence scoping | **not started** |
@@ -268,8 +268,19 @@ past Phase 0, or it moves to last in that programme's order and this plan runs n
 and masorah-books free to interleave meanwhile. There is also a case for this plan going first
 outright: after Phase 5 the shared generator's `_PUBLIC` half writes into this repo, and after
 Phase 10 public wlc-utils holds only stubs — so wlc-utils-private's oracle loses its
-fourth-precondition write target and its move gets simpler. **Ben's call, owed before that
-repo's R.1 or this plan's Phase 3, whichever comes first.**
+fourth-precondition write target and its move gets simpler. **Settled by Ben, 2026-08-08:
+wlc-utils-private runs R.0–R.4 straight through, first, by itself — as one unit, with nothing
+in parallel, not even a phase of this plan. This plan waits, and resumes at Phase 0 once that
+repo's R.4 write-back lands.** That plan's `22e7e7f` records the same settlement, scopes the
+one-unit run as the single exception to its one-phase-per-session discipline, and closes three
+of its gates so the run cannot stall midway. The paragraph above stands as the record of the
+alternatives not taken.
+
+**One consequence for this plan's own verifications, visible from Phase 0 onward:** once that
+move lands, `wlc-json-and-unicode` writes its `_PRIVATE` half into
+`MAM-private\wlc-utils-private\`, so every "zero diff in both repos" assertion here extends to
+a third tree — require MAM-private clean before each circuit run and unchanged after it, except
+where a phase's own edits explain the diff.
 
 Two entanglements outlive the contention, and no amount of scheduling removes them:
 
