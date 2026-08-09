@@ -33,7 +33,7 @@
   copy scripts: none found
   mb_cmn dir (mb_cmn): ['cantsys.py', 'file_io.py', 'hebrew_accents.py', 'hebrew_letters.py', 'hebrew_points.py', 'hebrew_punctuation.py', 'str_defs.py', 'uni_heb.py']
 
-=== mgketer ===
+=== MAM-private ===
   provenance docs: none
-  COPY SCRIPTS: ['py/main_update_vendored_files.py', 'py/mb_cmn/vendoring_sync.py']
-  mb_cmn dir (py/mb_cmn): ['bib_locales.py', 'cantsys.py', 'he_wikisource_url.py', 'hebrew_accents.py', 'hebrew_letters.py', 'hebrew_points.py', 'hebrew_punctuation.py', 'mam_bknas.py', 'mam_bknas_and_std_bknas.py', 'polite_download.py', 'str_defs.py', 'template_names.py', 'url_percent.py', 'uxlc_change_url.py', 'vendoring_sync.py']
+  COPY SCRIPTS: ['mgketer/py/main_update_vendored_files.py', 'mgketer/py/mb_cmn/vendoring_sync.py']
+  mb_cmn dir (mgketer/py/mb_cmn): ['bib_locales.py', 'cantsys.py', 'he_wikisource_url.py', 'hebrew_accents.py', 'hebrew_letters.py', 'hebrew_points.py', 'hebrew_punctuation.py', 'mam_bknas.py', 'mam_bknas_and_std_bknas.py', 'polite_download.py', 'str_defs.py', 'template_names.py', 'url_percent.py', 'uxlc_change_url.py', 'vendoring_sync.py']

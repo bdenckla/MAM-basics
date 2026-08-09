@@ -219,6 +219,25 @@ def iter_compare_copies() -> list[tuple[str, str, str, str, str]]:
     ]
 
 
+def mb_cmn_scan_roots(repo_name: str) -> list[str]:
+    """Where ``vendoring/provenance.py`` should look for the repo's ``mb_cmn`` copy.
+
+    Read off the policy rather than guessed, because a dest repo's copy need not sit at
+    either conventional spelling.  MAM-private is the case that forced this: it holds one
+    top-level directory per evacuated private repo, so its copy is at
+    ``mgketer/py/mb_cmn``, and the hardcoded ``mb_cmn``/``py/mb_cmn`` pair simply found
+    nothing there -- the report's ``mb_cmn dir`` line vanished with no other symptom
+    (2026-08-09, mgketer's R.3 in that repo's doc/PLAN-evacuate-private-repos.md).
+
+    The pair survives as the fallback for a repo that declares no ``mb_cmn`` scan root at
+    all, which today is codex-index-leningrad's empty ``pkg_scan_roots``.  Every other
+    repo declares exactly one of the two spellings, so nothing else's output moves.
+    """
+    repo = load_policy().repos.get(repo_name)
+    roots = list(repo.pkg_scan_roots.get("mb_cmn", ())) if repo else []
+    return roots or ["mb_cmn", "py/mb_cmn"]
+
+
 def provenance_dest_repos() -> list[str]:
     policy = load_policy()
     return [

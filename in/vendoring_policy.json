@@ -125,8 +125,8 @@
         ]
       }
     },
-    "mgketer": {
-      "comment": "Active since 2026-08-07 for the two directories py/main_update_vendored_files.py covers: it copies MAM-basics/py/mb_cmn and py/mb_diff_mpu by intersection, mgketer 72be9724 ran it, and all 16 files in those two read identical. It covers only those two directories, so the two py/python_modules/ overrides below re-declare mechanism unknown AND category stale rather than inherit copy_script and active -- no script reaches that directory and both files read DIFFERS, which is what stale says and active would deny.",
+    "MAM-private": {
+      "comment": "One key for every tree MAM-private holds, not one key per tree. That repo's doc/PLAN-evacuate-private-repos.md gives each evacuated private repo a top-level directory of its own, so every dest path here carries a tree prefix and discover.py derives it for free: dest_path is taken relative to repos_root()/MAM-private, so a scan root of mgketer/py/mb_cmn yields mgketer/py/mb_cmn/<file>. Renaming the old mgketer key to MAM-private instead would have worked exactly once and then collided when al-hatorah wanted the same key in this same object; al-hatorah is the last of the four to move, and it adds its scan roots to the lists below rather than a second key (that plan's mgketer R.0 finding 4). mgketer's tree arrived 2026-08-08 and its clone was emptied to a breadcrumb 2026-08-09. Active for the two directories mgketer/py/main_update_vendored_files.py covers: it copies MAM-basics/py/mb_cmn and py/mb_diff_mpu by intersection, mgketer 0a3f1509 ran it, and all 16 files in those two read identical. It covers only those two directories, so the two mgketer/py/python_modules/ overrides below re-declare mechanism unknown AND category stale rather than inherit copy_script and active -- no script reaches that directory and both files read DIFFERS, which is what stale says and active would deny.",
       "ignore": false,
       "scan_provenance": true,
       "default_category": "active",
@@ -134,10 +134,10 @@
       "default_provenance_doc": "no",
       "pkg_scan_roots": {
         "mb_cmn": [
-          "py/mb_cmn"
+          "mgketer/py/mb_cmn"
         ],
         "mb_diff_mpu": [
-          "py/mb_diff_mpu"
+          "mgketer/py/mb_diff_mpu"
         ]
       }
     }
@@ -225,8 +225,8 @@
     },
     {
       "comment": null,
-      "dest_repo": "mgketer",
-      "dest_path": "py/python_modules/my_diffs.py",
+      "dest_repo": "MAM-private",
+      "dest_path": "mgketer/py/python_modules/my_diffs.py",
       "src_pkg": "mb_cmn",
       "category": "stale",
       "mechanism": "unknown",
@@ -235,8 +235,8 @@
     },
     {
       "comment": null,
-      "dest_repo": "mgketer",
-      "dest_path": "py/python_modules/uni_denorm.py",
+      "dest_repo": "MAM-private",
+      "dest_path": "mgketer/py/python_modules/uni_denorm.py",
       "src_pkg": "mb_cmn",
       "category": "stale",
       "mechanism": "unknown",

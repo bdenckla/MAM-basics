@@ -136,21 +136,21 @@ hebrew_points.py                           diffable-pointed-hebrew    mb_cmn/heb
 hebrew_punctuation.py                      diffable-pointed-hebrew    mb_cmn/hebrew_punctuation.py                            DIFFERS        2026-04-27   unmeasured
 str_defs.py                                diffable-pointed-hebrew    mb_cmn/str_defs.py                                      DIFFERS        2026-04-27   unmeasured
 uni_heb.py                                 diffable-pointed-hebrew    mb_cmn/uni_heb.py                                       DIFFERS        2026-04-27   unmeasured
-bib_locales.py                             mgketer                    py/mb_cmn/bib_locales.py                                identical      2026-04-27   
-cantsys.py                                 mgketer                    py/mb_cmn/cantsys.py                                    identical      2026-05-10   
-he_wikisource_url.py                       mgketer                    py/mb_cmn/he_wikisource_url.py                          identical      2026-05-03   
-hebrew_accents.py                          mgketer                    py/mb_cmn/hebrew_accents.py                             identical      2026-08-02   
-hebrew_letters.py                          mgketer                    py/mb_cmn/hebrew_letters.py                             identical      2026-04-27   
-hebrew_points.py                           mgketer                    py/mb_cmn/hebrew_points.py                              identical      2026-05-10   
-hebrew_punctuation.py                      mgketer                    py/mb_cmn/hebrew_punctuation.py                         identical      2026-05-10   
-mam_bknas.py                               mgketer                    py/mb_cmn/mam_bknas.py                                  identical      2026-04-27   
-mam_bknas_and_std_bknas.py                 mgketer                    py/mb_cmn/mam_bknas_and_std_bknas.py                    identical      2026-04-27   
-polite_download.py                         mgketer                    py/mb_cmn/polite_download.py                            identical      2026-07-06   
-str_defs.py                                mgketer                    py/mb_cmn/str_defs.py                                   identical      2026-05-10   
-template_names.py                          mgketer                    py/mb_cmn/template_names.py                             identical      2026-08-08   
-url_percent.py                             mgketer                    py/mb_cmn/url_percent.py                                identical      2026-08-07   
-uxlc_change_url.py                         mgketer                    py/mb_cmn/uxlc_change_url.py                            identical      2026-05-03   
-vendoring_sync.py                          mgketer                    py/mb_cmn/vendoring_sync.py                             identical      2026-07-06   
-grapheme_diff.py                           mgketer                    py/mb_diff_mpu/grapheme_diff.py                         identical      2026-04-27   
-my_diffs.py                                mgketer                    py/python_modules/my_diffs.py                           DIFFERS        2026-04-27   placed in python_modules/ not mb_cmn/
-uni_denorm.py                              mgketer                    py/python_modules/uni_denorm.py                         DIFFERS        2026-04-27   placed in python_modules/ not mb_cmn/
+bib_locales.py                             MAM-private                mgketer/py/mb_cmn/bib_locales.py                        identical      2026-08-08   
+cantsys.py                                 MAM-private                mgketer/py/mb_cmn/cantsys.py                            identical      2026-08-08   
+he_wikisource_url.py                       MAM-private                mgketer/py/mb_cmn/he_wikisource_url.py                  identical      2026-08-08   
+hebrew_accents.py                          MAM-private                mgketer/py/mb_cmn/hebrew_accents.py                     identical      2026-08-08   
+hebrew_letters.py                          MAM-private                mgketer/py/mb_cmn/hebrew_letters.py                     identical      2026-08-08   
+hebrew_points.py                           MAM-private                mgketer/py/mb_cmn/hebrew_points.py                      identical      2026-08-08   
+hebrew_punctuation.py                      MAM-private                mgketer/py/mb_cmn/hebrew_punctuation.py                 identical      2026-08-08   
+mam_bknas.py                               MAM-private                mgketer/py/mb_cmn/mam_bknas.py                          identical      2026-08-08   
+mam_bknas_and_std_bknas.py                 MAM-private                mgketer/py/mb_cmn/mam_bknas_and_std_bknas.py            identical      2026-08-08   
+polite_download.py                         MAM-private                mgketer/py/mb_cmn/polite_download.py                    identical      2026-08-08   
+str_defs.py                                MAM-private                mgketer/py/mb_cmn/str_defs.py                           identical      2026-08-08   
+template_names.py                          MAM-private                mgketer/py/mb_cmn/template_names.py                     identical      2026-08-08   
+url_percent.py                             MAM-private                mgketer/py/mb_cmn/url_percent.py                        identical      2026-08-08   
+uxlc_change_url.py                         MAM-private                mgketer/py/mb_cmn/uxlc_change_url.py                    identical      2026-08-08   
+vendoring_sync.py                          MAM-private                mgketer/py/mb_cmn/vendoring_sync.py                     identical      2026-08-08   
+grapheme_diff.py                           MAM-private                mgketer/py/mb_diff_mpu/grapheme_diff.py                 identical      2026-08-08   
+my_diffs.py                                MAM-private                mgketer/py/python_modules/my_diffs.py                   DIFFERS        2026-08-08   placed in python_modules/ not mb_cmn/
+uni_denorm.py                              MAM-private                mgketer/py/python_modules/uni_denorm.py                 DIFFERS        2026-08-08   placed in python_modules/ not mb_cmn/

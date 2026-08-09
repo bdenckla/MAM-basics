@@ -17,6 +17,9 @@ in the destination; `stale` is measured and behind; `unmeasured` is a copy nobod
 
 | file(s) | src_pkg | dest_repo | dest_path | mechanism | last_synced | provenance_doc | category | notes |
 |---|---|---|---|---|---|---|---|---|
+| bib_locales.py, cantsys.py, he_wikisource_url.py, hebrew_accents.py, hebrew_letters.py, hebrew_points.py, hebrew_punctuation.py, mam_bknas.py, mam_bknas_and_std_bknas.py, polite_download.py, str_defs.py, template_names.py, url_percent.py, uxlc_change_url.py, vendoring_sync.py | mb_cmn | MAM-private | mgketer/py/mb_cmn | copy_script | 2026-08-08 | no | active | identical |
+| grapheme_diff.py | mb_diff_mpu | MAM-private | mgketer/py/mb_diff_mpu/grapheme_diff.py | copy_script | 2026-08-08 | no | active | identical |
+| my_diffs.py, uni_denorm.py | mb_cmn | MAM-private | mgketer/py/python_modules | unknown | 2026-08-08 | no | stale | DIFFERS; placed in python_modules/ not mb_cmn/ |
 | bib_locales.py, cantsys.py, file_io.py, he_wikisource_url.py, hebrew_accents.py, hebrew_letters.py, hebrew_points.py, hebrew_punctuation.py, my_utils.py, provenance.py, shrink.py, str_defs.py, uni_heb.py, url_percent.py, ws_tmpl1.py, ws_tmpl2.py, ws_tmpl_named_params.py | mb_cmn | MAM-simple | py-examples/mb_cmn | copy_script | mixed | no | generated | identical |
 | template_names.py | mb_cmn | MAM-simple | py-examples/mb_cmn/template_names.py | copy_script | 2026-05-09 | no | generated | DIFFERS |
 | hebrew_letter_names.py, hebrew_letter_words.py, letter_small_job.py, mb_html.py, mb_html_get_lines.py, my_utils_for_mainish.py, osis_book_abbrevs.py, slh_description.py, styles_authored.py, styles_mam_parsed.py, styles_mam_with_doc.py, verse_and_friends.py, write_utils.py, ws_urls.py | mb_misc | MAM-simple | py-examples/mb_misc | copy_script | mixed | no | generated | identical |
@@ -39,9 +42,6 @@ in the destination; `stale` is measured and behind; `unmeasured` is a copy nobod
 | bib_locales.py, cantsys.py, he_wikisource_url.py, hebrew_accents.py, hebrew_letters.py, hebrew_points.py, hebrew_punctuation.py, hebrew_verse_numerals.py, mam_bknas.py, mam_bknas_and_std_bknas.py, retired_kq_special_templates.py, retired_template_names.py, str_defs.py, uni_denorm.py, url_percent.py, vendoring_sync.py | mb_cmn | holman-ketiv-qere | py/mb_cmn | copy_script | mixed | no | active | identical |
 | template_names.py | mb_cmn | holman-ketiv-qere | py/mb_cmn/template_names.py | copy_script | 2026-05-10 | no | active | DIFFERS |
 | change_ops.py, change_ops_apply.py, change_ops_extract.py, change_ops_render.py, describe_diff.py, grapheme_diff.py, mpplus_flatten.py, mpplus_param_access.py, mpplus_structure.py | mb_diff_mpu | holman-ketiv-qere | py/mb_diff_mpu | copy_script | mixed | no | active | identical |
-| bib_locales.py, cantsys.py, he_wikisource_url.py, hebrew_accents.py, hebrew_letters.py, hebrew_points.py, hebrew_punctuation.py, mam_bknas.py, mam_bknas_and_std_bknas.py, polite_download.py, str_defs.py, template_names.py, url_percent.py, uxlc_change_url.py, vendoring_sync.py | mb_cmn | mgketer | py/mb_cmn | copy_script | mixed | no | active | identical |
-| grapheme_diff.py | mb_diff_mpu | mgketer | py/mb_diff_mpu/grapheme_diff.py | copy_script | 2026-04-27 | no | active | identical |
-| my_diffs.py, uni_denorm.py | mb_cmn | mgketer | py/python_modules | unknown | 2026-04-27 | no | stale | DIFFERS; placed in python_modules/ not mb_cmn/ |
 
 *25 rows, 154 files. 0 files ignored.*
 

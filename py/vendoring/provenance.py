@@ -10,7 +10,11 @@ import sys
 from pathlib import Path, PurePosixPath
 
 from mb_cmn import paths
-from vendoring.discover import iter_inventory_seed_rows, provenance_dest_repos
+from vendoring.discover import (
+    iter_inventory_seed_rows,
+    mb_cmn_scan_roots,
+    provenance_dest_repos,
+)
 
 _REPOS = paths.repos_root()
 _MAM = paths.repo_root()
@@ -45,7 +49,13 @@ COPY_SCRIPT_PATTERNS = [
 # committed. Found on 2026-08-02 with holman-ketiv-qere's festive-shamir-dad9ec.
 # .git is here for the same reason and __pycache__/.venv were already: what the
 # repo TRACKS is the question, and rglob answers a different one.
-_SCAN_EXCLUDED_FRAGMENTS = ("__pycache__", ".venv", ".claude", ".git")
+# .novc joined them on 2026-08-09 for that same reason, having produced the same
+# symptom in the same tracked file: it is the gitignored scratch directory Ben's
+# repos all use, and MAM-private's held copy_mgketer.py, the throwaway that copied
+# mgketer's tree in at R.1. That matched *copy*py* and was written into
+# out/vendoring_provenance_out.txt as one of MAM-private's COPY SCRIPTS -- a path
+# git does not track, will not keep, and that names no vendoring mechanism at all.
+_SCAN_EXCLUDED_FRAGMENTS = ("__pycache__", ".venv", ".claude", ".git", ".novc")
 
 
 def _to_repo_relative_posix(path: Path, repo_path: Path) -> str:
@@ -106,7 +116,7 @@ def _scan_repo(repo: str) -> dict[str, object]:
     copy_scripts = _find_copy_scripts(repo_path)
     mb_cmn_dirs: list[dict[str, object]] = []
 
-    for mb_cmn_rel in ["mb_cmn", "py/mb_cmn"]:
+    for mb_cmn_rel in mb_cmn_scan_roots(repo):
         mb_cmn_path = repo_path / mb_cmn_rel
         if not mb_cmn_path.exists():
             continue
