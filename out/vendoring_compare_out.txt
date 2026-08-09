@@ -12,7 +12,7 @@ my_utils.py                                MAM-simple                 py-example
 provenance.py                              MAM-simple                 py-examples/mb_cmn/provenance.py                        identical      2026-08-07   generated
 shrink.py                                  MAM-simple                 py-examples/mb_cmn/shrink.py                            identical      2026-05-01   generated
 str_defs.py                                MAM-simple                 py-examples/mb_cmn/str_defs.py                          identical      2026-05-01   generated
-template_names.py                          MAM-simple                 py-examples/mb_cmn/template_names.py                    identical      2026-05-09   generated
+template_names.py                          MAM-simple                 py-examples/mb_cmn/template_names.py                    DIFFERS        2026-05-09   generated
 uni_heb.py                                 MAM-simple                 py-examples/mb_cmn/uni_heb.py                           identical      2026-08-07   generated
 url_percent.py                             MAM-simple                 py-examples/mb_cmn/url_percent.py                       identical      2026-08-07   generated
 ws_tmpl1.py                                MAM-simple                 py-examples/mb_cmn/ws_tmpl1.py                          identical      2026-05-19   generated
@@ -56,7 +56,7 @@ mam_bknas_and_std_bknas.py                 holman-ketiv-qere          py/mb_cmn/
 retired_kq_special_templates.py            holman-ketiv-qere          py/mb_cmn/retired_kq_special_templates.py               identical      2026-05-10   
 retired_template_names.py                  holman-ketiv-qere          py/mb_cmn/retired_template_names.py                     identical      2026-05-10   
 str_defs.py                                holman-ketiv-qere          py/mb_cmn/str_defs.py                                   identical      2026-04-27   
-template_names.py                          holman-ketiv-qere          py/mb_cmn/template_names.py                             identical      2026-05-10   
+template_names.py                          holman-ketiv-qere          py/mb_cmn/template_names.py                             DIFFERS        2026-05-10   
 uni_denorm.py                              holman-ketiv-qere          py/mb_cmn/uni_denorm.py                                 identical      2026-04-27   
 url_percent.py                             holman-ketiv-qere          py/mb_cmn/url_percent.py                                identical      2026-08-07   
 vendoring_sync.py                          holman-ketiv-qere          py/mb_cmn/vendoring_sync.py                             identical      2026-07-06   
@@ -88,7 +88,7 @@ provenance.py                              al-hatorah                 py/mb_cmn/
 read_books_from_mam_parsed_plus.py         al-hatorah                 py/mb_cmn/read_books_from_mam_parsed_plus.py            identical      2026-08-02   
 shrink.py                                  al-hatorah                 py/mb_cmn/shrink.py                                     identical      2026-04-27   
 str_defs.py                                al-hatorah                 py/mb_cmn/str_defs.py                                   identical      2026-04-27   
-template_names.py                          al-hatorah                 py/mb_cmn/template_names.py                             identical      2026-05-09   
+template_names.py                          al-hatorah                 py/mb_cmn/template_names.py                             DIFFERS        2026-05-09   
 uni_denorm.py                              al-hatorah                 py/mb_cmn/uni_denorm.py                                 identical      2026-04-27   
 uni_heb.py                                 al-hatorah                 py/mb_cmn/uni_heb.py                                    identical      2026-08-07   
 uni_norm_fragile.py                        al-hatorah                 py/mb_cmn/uni_norm_fragile.py                           identical      2026-07-06   
@@ -147,7 +147,7 @@ mam_bknas.py                               mgketer                    py/mb_cmn/
 mam_bknas_and_std_bknas.py                 mgketer                    py/mb_cmn/mam_bknas_and_std_bknas.py                    identical      2026-04-27   
 polite_download.py                         mgketer                    py/mb_cmn/polite_download.py                            identical      2026-07-06   
 str_defs.py                                mgketer                    py/mb_cmn/str_defs.py                                   identical      2026-05-10   
-template_names.py                          mgketer                    py/mb_cmn/template_names.py                             identical      2026-05-10   
+template_names.py                          mgketer                    py/mb_cmn/template_names.py                             identical      2026-08-08   
 url_percent.py                             mgketer                    py/mb_cmn/url_percent.py                                identical      2026-08-07   
 uxlc_change_url.py                         mgketer                    py/mb_cmn/uxlc_change_url.py                            identical      2026-05-03   
 vendoring_sync.py                          mgketer                    py/mb_cmn/vendoring_sync.py                             identical      2026-07-06   
