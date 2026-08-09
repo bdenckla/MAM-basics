@@ -358,9 +358,9 @@ last word — Deuteronomy runs on past Exodus's בשעריך to כמוך.</p>
 
 <p>Here the two Decalogues read very nearly alike. Deuteronomy joins the commandments with
 a connective vav (<span lang="hbo">וְלֹא</span>, "and you shall not") where Exodus sets them without it, and its
-ninth commandment ends <span lang="hbo">עֵד שָׁוְא</span> where Exodus has <span lang="hbo">עֵד שָׁקֶר</span>. Those wording differences
+ninth commandment ends <span lang="hbo">עֵד שָׁוְא</span> where Exodus has <span lang="hbo">עֵד שָׁקֶר</span>. Those wording differences
 aside, the {taxton}/{elyon} chanted verse structure — four {elyon} verses nested in one {taxton} verse,
-all ending together — is unchanged, so only <span lang="hbo">וְלֹא</span> and <span lang="hbo">שָׁוְא</span> stand at full strength while
+all ending together — is unchanged, so only <span lang="hbo">וְלֹא</span> and <span lang="hbo">שָׁוְא</span> stand at full strength while
 everything matching Exodus washes out:</p>
 
 {deut_late_table}
@@ -563,7 +563,7 @@ _DEUT_SAB_TABLE = """\
 
 # Appendix — the Deuteronomy late split (5:16), same shape as _LATE_TABLE, its words shaded
 # against their Exodus twins (agree = washed out). Deut differs at the connective וְ on the
-# 2nd–4th commandments (וְלֹא vs Exodus's לֹא) and the ninth's end-word (שָׁוְא vs שָׁקֶר),
+# 2nd–4th commandments (וְלֹא vs Exodus's לֹא) and the ninth's end-word (שָׁוְא vs שָׁקֶר),
 # so only those forms stay full-strength; everything else washes out.
 _DEUT_LATE_TABLE = """\
 <table dir="rtl">
