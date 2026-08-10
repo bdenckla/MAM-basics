@@ -105,10 +105,16 @@ has it with its Yeivin and Breuer citations.
 
 **Yeivin lives in two places and they are not the same.** `../al-hatorah/py/itm/` is Ben's
 *adaptation* — partial, with sections still untranscribed.
-`../masorah-books/books/itm/md-export-of-docx/` is
+`../MAM-private/masorah-books/books/itm/md-export-of-docx/` is
 the *full* OCR of the book. That repo was `yeivin-itm` until 2026-07-31, when it was renamed and
 Breuer's *Cantillation of Scripture* was merged into it from `breuer-cos`; CoS is the sibling
-`../masorah-books/books/cos/md-export-of-docx/`, so both books are now one clone away.
+`../MAM-private/masorah-books/books/cos/md-export-of-docx/`, so both books are still one clone
+away, that clone being MAM-private since 2026-08-10. **The `../masorah-books/…` spellings that
+remain in `py/accgram/` docstrings and comments are stale by exactly that one directory** — eight
+sites in `breuer_word_length.py`, `chanted_word_accents.py`, `edition_transcription.py`,
+`maqaf_nonfinal_accents.py` and `maqaf_nonfinal_accents_page.py`, each naming a path that now
+reads `../MAM-private/masorah-books/…`. Ben chose this sentence over editing the eight, 2026-08-10,
+as he chose the same answer for UXLC.
 Search the full OCR before concluding Yeivin is silent on something;
 a first pass at wlc-utils#76 searched only the adaptation and wrongly reported the maqaf material
 absent. The verbatim reader-facing statement is
