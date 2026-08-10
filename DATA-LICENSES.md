@@ -10,6 +10,16 @@ under `out/` that carry no corpus text.
 reproduced under the terms its preparers set. This file states those terms; it grants nothing of
 its own.
 
+**Two things about the shape of these two declarations, recorded so they are not tidied away.**
+The root [`LICENSE`](LICENSE) holds the GPL-3.0 text itself and must not be replaced by a pointer
+to this file: GitHub reads only a root `LICENSE`, `LICENSE.md` or `COPYING` when it reports a
+repository's license, so a pointer there would leave MAM-basics reading as unlicensed. This file
+is named `DATA-LICENSES.md` rather than `LICENSE-DATA.md` for the mirror-image reason — GitHub's
+detector also matches root filenames beginning `LICENSE-`, and would then find two license files
+and report the repository's license ambiguously. Phase 4 of
+[`doc/PLAN-evacuate-the-rest-of-wlc-utils.md`](doc/PLAN-evacuate-the-rest-of-wlc-utils.md) adds
+the wlc-utils paths as rows in the table below when that plan runs.
+
 ## Which terms cover which paths
 
 | Path | Content | Terms |
