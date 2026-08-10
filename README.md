@@ -119,3 +119,15 @@ packages such as `mb_cmn`, `mb_diff_mpu`, and `mb_author`, the prefix
 also signals vendoring origin. For `mb_xml` and `mb_json`, which are
 not currently vendored, `mb_` is additionally useful to avoid collisions
 with common `xml` and `json` package names.
+
+## License
+
+Two declarations, because this repository holds code and data under different terms.
+
+- **Code: GPL-3.0**, in [`LICENSE`](LICENSE). This covers MAM-basics' own work — everything under
+  `py/`, and the generated indexes and reports under `out/` that carry no corpus text.
+- **Data: each corpus keeps the terms its preparers set**, mapped path by path in
+  [`DATA-LICENSES.md`](DATA-LICENSES.md). MAM itself is CC-BY-SA 4.0, attributed to Hebrew
+  Wikisource; other material here has other terms, and one corpus is reproduced under no grant at
+  all. Read that file before redistributing anything under `in/` or the derived trees under
+  `out/`.

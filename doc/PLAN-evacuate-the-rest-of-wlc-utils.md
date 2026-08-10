@@ -35,7 +35,7 @@ stale).
 | 1 — The provenance worktree fix | **partly landed 2026-08-07, outside this plan**: `38a3bc7` (closing #216) added the worktree `.git`-pointer derivation — steps 1 and 4 of the chain. Remaining: step 2 (the `remote.origin.url` basename, the step that also covers a renamed clone — `grep origin py/mb_cmn/provenance.py` finds nothing), the tautology-test repairs (`test_mb_cmn_provenance.py`'s `_repo_name()` still returns `this_repo_name()`), and the al-hatorah wrapper decision. Re-measure at Phase 0 |
 | 2 — `.gitattributes` merge | **not started** |
 | 3 — Copy the corpus in (dual residency) | **not started** |
-| 4 — Licence scoping | **not started** |
+| 4 — Licence scoping | **partly landed 2026-08-10, outside this plan**: the root-level structure exists — `DATA-LICENSES.md` (path-by-path map plus the MAM CC-BY-SA statement) and `README.md`'s `## License` section — because MAM-basics' own MAM and chabad.org data had the same ambiguity with no wlc-utils involved. Remaining: add the arriving wlc paths as rows, and place CC0 only where Phase 4's "Where CC0 must NOT go" paragraph allows |
 | 5 — Collapse `wlc_paths.py`; repoint every generator | **not started** |
 | 6 — Pages live on MAM-basics — **manual gate** | **not started** |
 | 7 — Repoint the `420422` blob URL | **not started** |
@@ -125,7 +125,10 @@ in a design discussion; that is a citation to repoint in Phase 11, not a depende
 3. **The site nests at `gh-pages/wlc/`**, so `bdenckla.github.io/wlc-utils/X` →
    `bdenckla.github.io/MAM-basics/wlc/X` — a pure prefix rewrite, and MAM-basics' own site root
    stays free.
-4. **CC0 is scoped to the moved trees**, GPL-3.0 stays at the root for code. Phase 4.
+4. **CC0 is scoped to the moved trees**, GPL-3.0 stays at the root for code. Phase 4. (Narrowed
+   on a finding of 2026-08-10, not relitigated: CC0 goes only to the moved trees that hold Ben's
+   own work, since some of them are vendored tanach.us and chabad.org material he cannot dedicate
+   to the public domain. Phase 4's "Where CC0 must NOT go" paragraph names which.)
 
 **What made decision 3 free, and it is the load-bearing fact of the whole `gh-pages/` move:
 there is not one absolute self-link anywhere under `gh-pages/`.** Every internal navigation link,
@@ -653,20 +656,55 @@ rename. Then `py\main_test.py` at its Phase 0 count; `git status --porcelain` em
 
 *In MAM-basics.* Small, and best done while the arriving trees are still obviously separable.
 
-**wlc-utils is CC0 1.0; MAM-basics is GPL-3.0.** They are the only two of Ben's thirty repos with
-a `LICENSE` file at all, and neither README mentions licensing. Moving 626 data files from one to
-the other either silently withdraws a published public-domain dedication or leaves the status
-ambiguous — and the corpus includes third-party material, `in/Tanach-26.0--UXLC-1.0--2020-04-01/
-License.html` being a tracked upstream licence that travels unchanged either way.
+**Half of this phase already landed, on 2026-08-10; Phase 4 is now the other half.** The
+root-level structure was built then, because the same ambiguity already existed in MAM-basics
+without wlc-utils: MAM-basics tracks MAM text in `in/mam-ws/`, `in/mam-go/`,
+`in/mam-from-sefaria/`, `in/mam-from-Sefaria-2021-11-23/` and `in/mam-ws-bot-edits/`, text derived
+from those in `out/mam-ws-parsed-fmt-2/`, `out/mam-ws-bot/`, `out/tmpl-survey-plain/` and
+`out/tmpl-survey-plus/`, and third-party material in `in/chabad-ctr/` — all of it covered by
+nothing but the root GPL-3.0 and silence. Two files now exist in
+`C:\Users\BenDe\GitRepos\MAM-basics`: **`DATA-LICENSES.md`**, a path-by-path table followed by the
+MAM CC-BY-SA 4.0 statement copied verbatim from
+`C:\Users\BenDe\GitRepos\MAM-parsed\LICENSE.md`; and a **`## License` section at the end of
+`README.md`** naming the two declarations. **So this phase extends an existing map rather than
+starting one — add rows to `DATA-LICENSES.md`; do not write a second document, and do not restate
+the map in `README.md`.**
 
-Ben's decision: **keep GPL-3.0 at the root for code, and scope CC0 to the moved data.** Place a
-verbatim copy of wlc-utils' CC0 `LICENSE` at each arriving tree — `gh-pages/wlc/LICENSE`, and one
-covering the wlc portions of `in/` and `out/` — and add a short paragraph to MAM-basics' `README.md`
-saying which licence covers what and that the vendored Tanach text carries its own. Prefer the
+**wlc-utils is CC0 1.0; MAM-basics is GPL-3.0.** Moving 626 data files from one to the other
+either silently withdraws a published public-domain dedication or leaves the status ambiguous.
+(This paragraph read "They are the only two of Ben's thirty repos with a `LICENSE` file at all,
+and neither README mentions licensing" until 2026-08-10. Both halves were wrong:
+`diffable-pointed-hebrew` carries an MIT `LICENSE`, and six repos — MAM-parsed, MAM-simple,
+MAM-with-doc, MAM-OSIS, MAM-for-Sefaria and phonetic-hbo — carry a `LICENSE.md` holding the MAM
+CC-BY-SA statement. Re-establish with `ls C:\Users\BenDe\GitRepos\*\LICENSE*`.)
+
+Ben's decision, 2026-08-03: **keep GPL-3.0 at the root for code, and scope CC0 to the moved data.**
+Place a verbatim copy of wlc-utils' CC0 `LICENSE` at each arriving tree that holds only Ben's own
+work — `gh-pages/wlc/LICENSE`, and one covering the wlc portions of `in/` and `out/`. Prefer the
 fewest declarations that unambiguously cover the moved paths over one per directory.
 
+**Where CC0 must NOT go — checked 2026-08-10, and it narrows the decision above rather than
+reversing it.** Kimball's `in/Tanach-26.0--UXLC-1.0--2020-04-01/License.html` grants two different
+things: the biblical Hebrew text "may be viewed or copied without restriction", but "All other
+files and the look-and-feel of the site are copyrighted by the publisher and require written
+permission for any purpose." Two arriving trees are mostly those other files — `in/wlc420/` and
+`in/wlc422/` hold `WLCmanual420.pdf`, `WLC_Manual422.pdf` and five release-notes HTML pages
+between them, no biblical text among them. A CC0 file placed over the arriving `in/` wholesale
+would dedicate Kimball's copyrighted manual to the public domain, which is not Ben's to do.
+
+**Nor is `in/accgram/` uniformly Ben's**, which is the trap inside the trap: 25 of its 27 files
+are his — `printed_decalogue_teamim.json` and the 24 hand transcriptions under
+`edition_transcriptions/` — but `ctr_decalogue.json` is derived from chabad.org's Complete Tanach
+with Rashi, and `uxlc_accent_changes.json` is derived from Kimball's `in/UXLC-misc/all_changes.json`
+and carries Kimball's and Moshe Greenberg's own change descriptions. Those are the same two files
+Phase 3 already treats as external for the NFC lint, so the two phases should agree about them.
+
+So: scope CC0 to what is Ben's own work, and give every vendored tree a `DATA-LICENSES.md` row
+naming its real terms instead. `License.html` travels unchanged either way.
+
 **Verify:** `git status` clean after the commit; a reader landing on any moved path can reach a
-licence statement that names it. No artifact changes, so no regeneration is owed.
+licence statement that names it, and no path is claimed for CC0 that the paragraphs above exclude.
+No artifact changes, so no regeneration is owed.
 
 ---
 
