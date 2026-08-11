@@ -213,6 +213,8 @@
       ],
       "found_provenance_docs": [],
       "copy_scripts": [
+        "al-hatorah/py/main_update_vendored_files.py",
+        "al-hatorah/py/mb_cmn/vendoring_sync.py",
         "mgketer/py/main_update_vendored_files.py",
         "mgketer/py/mb_cmn/vendoring_sync.py"
       ],
