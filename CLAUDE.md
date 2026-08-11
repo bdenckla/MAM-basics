@@ -103,7 +103,8 @@ is far more willing to put two accents on one chanted word; that asymmetry is a 
 between the systems, not a detail. `edition_transcription`'s "HOW RARE THAT IS IN PROSE" paragraph
 has it with its Yeivin and Breuer citations.
 
-**Yeivin lives in two places and they are not the same.** `../al-hatorah/py/itm/` is Ben's
+**Yeivin lives in two places and they are not the same.**
+`../MAM-private/al-hatorah/py/itm/` is Ben's
 *adaptation* — partial, with sections still untranscribed.
 `../MAM-private/masorah-books/books/itm/md-export-of-docx/` is
 the *full* OCR of the book. That repo was `yeivin-itm` until 2026-07-31, when it was renamed and
@@ -115,6 +116,17 @@ sites in `breuer_word_length.py`, `chanted_word_accents.py`, `edition_transcript
 `maqaf_nonfinal_accents.py` and `maqaf_nonfinal_accents_page.py`, each naming a path that now
 reads `../MAM-private/masorah-books/…`. Ben chose this sentence over editing the eight, 2026-08-10,
 as he chose the same answer for UXLC.
+
+**The `al-hatorah` citations in `py/accgram/` are stale the same way, and Ben chose the same
+answer, 2026-08-11.** That tree moved to `../MAM-private/al-hatorah/` on 2026-08-10 and its clone
+came off the disk on 2026-08-11, so `../al-hatorah/…` names nothing on either count. **Seven
+sites**, named here so nobody re-derives them: `chanted_word_accents.py:638`, `final_stress.py:5`
+and `maqaf_nonfinal_accents.py:112` write `../al-hatorah/py/itm/` and
+`../al-hatorah/py/aht_phon…`, which want `../MAM-private/al-hatorah/…`; `breuer_word_length.py:37`,
+`:43`, `:106` and `py/tests/test_final_stress_vs_phonetic_mam.py:4` write "al-hatorah's
+`io/a01-phonetic-std-set`" and "al-hatorah's `py/aht_phon`", which want `MAM-private/al-hatorah/`
+in front of the in-repo path. Two further mentions name the repo with no path in them —
+`edition_transcription.py:67` and `final_stress.py:16` — and read correctly as written.
 Search the full OCR before concluding Yeivin is silent on something;
 a first pass at wlc-utils#76 searched only the adaptation and wrongly reported the maqaf material
 absent. The verbatim reader-facing statement is
