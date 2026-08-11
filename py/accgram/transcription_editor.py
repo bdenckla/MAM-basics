@@ -174,7 +174,7 @@ def row_profile(img: Image.Image) -> list[float]:
     """
     ink = img.convert("L").point(lambda v: 255 if v < INK_LEVEL else 0)
     column = ink.resize((1, img.height), Image.BOX)
-    return [v / 255 for v in column.getdata()]
+    return [v / 255 for v in column.get_flattened_data()]
 
 
 def smooth(values: list[float], radius: int) -> list[float]:
