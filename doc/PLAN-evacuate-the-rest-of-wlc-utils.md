@@ -243,8 +243,11 @@ contradict each other.
 
 ## Preconditions — all four blocking
 
-**State as of Phase 0, 2026-08-11: 0, 1 and 3 are met; 2 is not, and it gates Phase 6 only. A
-fifth was added by Ben the same day — see "Precondition 4" at the end of this section.**
+**State as of 2026-08-11: ALL FOUR ARE MET.** 0, 1 and 3 were met at Phase 0; 2 was met later the
+same day, when Ben enabled Pages. **A fifth was added by Ben that day and is the only live gate —
+see "Precondition 4" at the end of this section.** Meeting 2 also created a decision this plan did
+not previously have: see Phase 3's "STOP" box, since the workflow that publishes the site arrives
+at Phase 3 rather than at Phase 6.
 
 **0. The whole MAM-private programme must finish first — every phase of all four repos.**
 **MET 2026-08-11.** That programme closed itself — `MAM-private` `b31215a` ("Close the
@@ -276,18 +279,24 @@ must not read that smallness as licence to land it mid-evacuation.**
 **2. Pages enabled on `bdenckla/MAM-basics` — Settings → Pages → Source: GitHub Actions.** Only
 Ben can do this; the plan does not attempt it. It is a hard gate on Phase 6.
 
-**NOT met as of 2026-08-11, and it is the only precondition still open.** The check is one
-command, and it needs no browser:
+**MET 2026-08-11, later the same day, by Ben. All four preconditions numbered here are now met**
+(the fifth, Precondition 4 below, is the live one). The check is one command and needs no browser:
 
 ```bash
 gh api repos/bdenckla/MAM-basics/pages
 ```
 
-It returns `404 Not Found` while Pages is off, and a JSON body with `"build_type": "workflow"`
-once Ben has set it — which is exactly what the same call already returns for
-`bdenckla/wlc-utils`, so that repo is the worked example of what a met precondition looks like.
-It was put to Ben at Phase 0 so that it could be done at leisure; it blocks nothing before Phase
-6.
+It returns `404 Not Found` while Pages is off. It now returns `"build_type": "workflow"`,
+`"source": {"branch": "main", "path": "/"}` — **field for field what the same call returns for
+`bdenckla/wlc-utils`**, which is the worked example of a met precondition. `"status": null` simply
+means no deploy has run yet, which is correct: nothing has been pushed for one to build.
+
+**Ben deliberately did NOT choose a workflow, and that is right — do not add one for him.** When
+the Pages UI is set to "GitHub Actions" it offers starter workflows (Static HTML, Jekyll); taking
+one would commit a file that **Phase 6 would then have to undo**, since Phase 6 copies wlc-utils'
+`pages.yml` verbatim for its specific post-`72ba4ba` action pins. An enabled source with no
+workflow file is exactly the state Phase 6 expects to find. Confirmed at Phase 0: MAM-basics has
+no `.github` directory at all, tracked or on disk.
 
 **3. Clear MAM-basics' worktrees** (two live on 2026-08-03), for the disk reason above:
 
@@ -829,6 +838,41 @@ wlc-utils stays authoritative and frozen, so the copy is provable and revertible
 Land: `out/` 193, `in/` 135, `doc/` 6, `.github/` (MAM-basics has none, so it arrives whole),
 `gh-pages/` 284 **under `gh-pages/wlc/`**. `data/lci_recs.json` → **`in/lci_recs.json`**.
 
+### STOP — `.github/` arriving whole now PUBLISHES THE SITE, at this phase rather than Phase 6
+
+**A decision is owed here before this phase runs, and it did not exist when this plan was
+written.** Raised 2026-08-11, hours after Phase 0, when Ben enabled Pages and met Precondition 2.
+
+wlc-utils' `.github/` is **exactly one file**, `.github/workflows/pages.yml`, and it triggers on
+`push: branches: [main]`. So "`.github/` arrives whole" means this phase's **own landing commit is
+a push to main that fires a Pages deploy** — and with Precondition 2 now met, that deploy is live
+rather than inert. **The site therefore goes public at Phase 3**, not at the Phase 6 the plan
+designates as its manual gate and calls "the one place in this plan where a mistake makes
+something public."
+
+**The publication itself would be benign, and that is exactly why this is easy to miss.** By the
+time this phase commits, `gh-pages/wlc/` holds the real 284 files, so
+`bdenckla.github.io/MAM-basics/wlc/…` would serve correctly on the first deploy. Only
+`gh-pages/index.html` would be absent, Phase 6 being what adds it, so the site **root** would 404
+for as long as the two phases are apart. Nothing breaks; the manual gate just stops existing,
+silently.
+
+Two resolutions, and **Ben picks — do not choose one on your own:**
+
+1. **Defer the one file.** Land 625 files here and leave `.github/workflows/pages.yml` to Phase 6,
+   which already says to put it there. Keeps Phase 6 as the moment of publication and keeps its
+   gate real. Cost: layer 1's assertion at this phase becomes **625 of 626**, with the 626th
+   asserted at Phase 6, so the clean "626 of 626 SHA-1 matches" splits across two phases and both
+   must say so.
+2. **Let it land and accept publication here.** Keeps decision 1's "everything travels" and keeps
+   layer 1 whole at 626. Phase 6 then stops being "copy the workflow" and becomes "confirm the
+   deploy that already happened, add `gh-pages/index.html`, and run the HTTP checks" — which is
+   most of Phase 6's substance anyway. Cost: the site is public from this phase, with a 404 at its
+   root until Phase 6 lands.
+
+**Whichever is chosen, re-read `path: gh-pages` in the workflow before the first deploy.** It is
+already right for the nested layout, and it is the line that decides what becomes public.
+
 **On `data/` — the one rename in the plan, and it is Ben's to veto.** It is a single
 hand-maintained lookup table with a single reader (`py_uxlc/my_uxlc_page_break_info.py:62`).
 Creating a top-level `data/` in MAM-basics for one file inverts this repo's own convention that
@@ -1007,6 +1051,11 @@ Phase 10).
 ## Phase 6 — Pages live on MAM-basics
 
 *In MAM-basics, plus one manual action only Ben can take.*
+
+**This phase may find the workflow already here — see Phase 3's "STOP" box.** Phase 3 lands
+`.github/` whole, which is that one file, so unless Ben chose to defer it there, this phase's job
+is not to copy it but to confirm the deploy it already triggered. The rest of this section stands
+either way: the pins to check, `gh-pages/index.html`, and the whole HTTP verification list.
 
 Copy wlc-utils' `.github/workflows/pages.yml` **verbatim**: `on: push branches:[main]` plus
 `workflow_dispatch`; `permissions: contents:read / pages:write / id-token:write`;
@@ -1290,8 +1339,14 @@ next phase quoting this file's absolute path.
   2026-08-11: Ben chose freeze.** Struck rather than deleted so a later session does not re-ask a
   settled question. See Precondition 1.
 - **Phase 3**, the `data/lci_recs.json` → `in/lci_recs.json` rename, if he disagrees.
+- **Before Phase 3**, and this one is new as of 2026-08-11: **whether `.github/workflows/pages.yml`
+  lands with the rest of `.github/` and publishes the site at Phase 3, or is deferred to Phase 6.**
+  Phase 3's "STOP" box states both options and their costs. It became a question the moment
+  Precondition 2 was met.
 - **Before Phase 5**, the largest phase, which must complete within one session.
-- **Phase 6**, which needs a GitHub settings change only he can make.
+- ~~**Phase 6**, which needs a GitHub settings change only he can make.~~ **Done 2026-08-11: Ben
+  enabled Pages**, and correctly chose no starter workflow. Phase 6 still has manual verification
+  in it — the HTTP list, checked in a browser and not by `curl` — but no longer waits on a setting.
 - **Before Phase 9**, which changes what the public sees.
 - **Phase 11 items 2, 3 and 5** — two untracked-copy edits and one policy decision.
 
