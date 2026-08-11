@@ -126,11 +126,17 @@ def build_parser() -> argparse.ArgumentParser:
 
     parser.add_argument(
         "--report-json",
-        help="Write JSON report for --run-black or --audit-line-terms",
+        help=(
+            "Write JSON report for --run-black, --audit-line-terms,"
+            " --check-repo-standards or --check-memory-health"
+        ),
     )
     parser.add_argument(
         "--report-txt",
-        help="Write text report for --run-black or --audit-line-terms",
+        help=(
+            "Write text report for --run-black, --audit-line-terms,"
+            " --check-repo-standards or --check-memory-health"
+        ),
     )
 
     message_group = parser.add_mutually_exclusive_group(required=False)

@@ -136,7 +136,10 @@ File-scan (over tracked *.py files):
     external-in/ exclusion set); this cross-repo scan excludes generated output
     trees (_GENERATED_DIRS -- the main noise source) and vcs/build dirs, so
     external in/ snapshots may still surface here -- treat the vendored guard
-    test as authoritative.
+    test as authoritative. That generated-output exclusion is matched
+    REPO-ROOT-RELATIVE and so does nothing at all in a repo that holds several
+    project trees -- read _GENERATED_DIRS before quoting this bullet at
+    MAM-private.
 
 The sys.path surgery standard
 -----------------------------
@@ -360,6 +363,32 @@ _BINARY_EXTENSIONS = {
 # to "plain" and "plus" (see MAM-parsed/README.md), which are just as generated
 # and were previously scanned -- surfacing decomposed Latin text that had merely
 # flowed through from an external in/ snapshot upstream.
+#
+# REPO-ROOT-RELATIVE IS MEANT LITERALLY, AND IT MAKES THIS EXCLUSION INERT IN
+# MAM-PRIVATE. _is_excluded_from_nfc_scan matches "out" and "out/..." but never
+# "<tree>/out/...", so a repo holding several project trees is not covered:
+# MAM-private keeps one top-level directory per evacuated repo, and its
+# mgketer/out (3,991 tracked files), al-hatorah/out (148) and
+# wlc-utils-private/out (78) are all scanned here though each was excluded while
+# its tree was still a repo of its own. Measured 2026-08-11, with those 4,217
+# files reconciling text_file_count_scanned of 7,002 here against 2,780 for the
+# four source repos in their own clones.
+#
+# LEFT AS IS, DELIBERATELY -- Ben's decision, 2026-08-11, on the same grounds he
+# declined teaching run_black.py to find per-tree venvs: matching at any depth
+# would change shared cross-repo tooling for one repo's shape. It costs wall
+# clock and nothing else. The 4,217 files produce zero findings (every finding
+# in MAM-private's report was matched, set-wise and count-wise, against this
+# repo's pre-evacuation sweep of the four source repos), and the scan they slow
+# down duplicates MAM-private's own py/tests/test_h_dot_below_nfc.py, which
+# carries one scope per tree with each tree's exclusions and runs in about 2.5
+# seconds. Measured the same day, the depth rule is also a smaller lever than it
+# looks: those 4,217 files are 60% of the scanned file count but only 39% of the
+# scanned bytes, and the single largest thing the scan reads anywhere is
+# mgketer/out-scrape (929 files, 232 MB), which no depth rule would reach
+# because "out-scrape" is not "out" -- it was scanned in mgketer's own clone
+# too. The cure for the wall clock was the per-character scanning below, not
+# this tuple.
 _GENERATED_DIRS = ("out", "gh-pages", "plain", "plus")
 
 # This checker's own source mentions the escape/quote patterns it looks for
@@ -701,31 +730,58 @@ def _is_excluded_from_nfc_scan(
     return False
 
 
+# Built at import from the constant above rather than typed, because a
+# combining mark written into a pattern literal would be an orphan mark in
+# source (user-level CLAUDE.md's "no orphan combining marks" rule).
+_DECOMPOSED_H_DOT_RE = re.compile(f"[hH]{re.escape(_COMBINING_DOT_BELOW)}")
+
+
 def _find_decomposed_h_dot_below(text: str) -> list[int]:
     """Return 1-indexed line numbers containing a decomposed het-dot-below
     ("h"/"H" immediately followed by U+0323). Ignores U+0323 on other base
-    letters, which is a different, in-scope-elsewhere combination."""
+    letters, which is a different, in-scope-elsewhere combination.
+
+    Driven by a regex rather than by a per-character Python loop, which is what
+    this was until 2026-08-11 and what made the sweep slow: the loop ran over
+    every character of every scanned file, so MAM-private's 541 million
+    characters cost 42.5 seconds here to report 3 findings. The two spellings
+    visit the same positions -- U+0323 is not "h"/"H", so no match can begin
+    inside another and non-overlapping finditer cannot skip one the loop found.
+    Measured after the change over that same corpus: 2.25 seconds, same 3
+    findings.
+    """
     line_numbers: list[int] = []
-    for i, ch in enumerate(text):
-        if (
-            ch in ("h", "H")
-            and i + 1 < len(text)
-            and text[i + 1] == _COMBINING_DOT_BELOW
-        ):
-            line_no = text.count("\n", 0, i) + 1
-            if line_no not in line_numbers:
-                line_numbers.append(line_no)
+    for match in _DECOMPOSED_H_DOT_RE.finditer(text):
+        line_no = text.count("\n", 0, match.start()) + 1
+        if line_no not in line_numbers:
+            line_numbers.append(line_no)
     return line_numbers
 
 
 _HEBREW_RANGES_NFC = ((0x0590, 0x05FF), (0xFB1D, 0xFB4F))
 
-# Fast gate: NFC composition onto a Latin base only draws from the Combining
-# Diacritical Marks block (U+0300-U+036F). Files with none of those can skip the
-# expensive per-char scan (Hebrew marks live at U+0591-U+05C7, outside this
-# range). Raw-string range escape -- the accepted \uXXXX-range convention here
-# (see the hex_escape_style docstring); no literal combining mark is typed.
-_LATIN_MARK_GATE = re.compile(r"[\u0300-\u036f]")
+# NFC composition onto a Latin base only draws from the Combining Diacritical
+# Marks block (U+0300-U+036F), so every cluster worth examining has one of these
+# as its first mark (Hebrew marks live at U+0591-U+05C7, outside this range).
+# Raw-string range escape -- the accepted \uXXXX-range convention here (see the
+# hex_escape_style docstring); no literal combining mark is typed.
+#
+# THIS DRIVES THE SCAN; IT USED TO ONLY GATE IT, WHICH IS NOT THE SAME THING.
+# Until 2026-08-11 it decided per FILE whether to run a per-character Python
+# loop over the whole file, so one stray combining mark in a multi-megabyte JSON
+# sent every character of it through the loop. Measured that day across
+# MAM-private: 901 files passed the gate holding 92.9 million characters, which
+# between them carried 20,115 combining marks -- the loop visited about 4,600
+# characters for every position that could possibly matter, and cost 50.2
+# seconds to report 10 findings. Iterating the matches instead visits only those
+# 20,115 positions, and costs 2.0 seconds for the same 10 findings.
+#
+# Both rewrites were checked against the algorithms they replaced rather than
+# argued for: the two spellings of each pass were run side by side over every
+# tracked text file in all 20 workspace repos with NO exclusions -- 13,857
+# files, 1.125 billion characters, 345,022 findings -- and agreed on every file.
+# The old pair took 316.6 seconds over that corpus and the new pair 16.2.
+_LATIN_MARK_RE = re.compile(r"[\u0300-\u036f]")
 
 
 def _is_hebrew_cp(ch: str) -> bool:
@@ -749,31 +805,37 @@ def _find_decomposed_latin_clusters(text: str) -> list[int]:
     convention (generalizes nfc_h_dot_below beyond het to t/s + dot-below,
     a + breve, i + acute, etc.). Composes conceptually only Latin-script
     clusters; every Hebrew codepoint is left untouched, so Hebrew mark order is
-    never disturbed."""
-    if not _LATIN_MARK_GATE.search(text):
-        return []
+    never disturbed.
+
+    Each candidate cluster is reached from its FIRST MARK rather than by walking
+    every character (see _LATIN_MARK_RE for what that cost). The two spellings
+    accept the same clusters. A cluster can only shorten under NFC if its first
+    mark composes onto the base, and on a Latin base only U+0300-U+036F does, so
+    a cluster this reaches by its first mark is a cluster the per-character walk
+    would have examined. A later mark of a cluster already examined is never a
+    second candidate, because the character before it is itself a combining mark
+    and _is_latin_base rejects those -- which is the same work the walk's `i = j`
+    jump did. And a Latin base followed first by a Hebrew mark yielded no
+    finding either way: the walk stopped its inner loop at that mark and got a
+    bare base back, and this reaches no candidate there at all.
+    """
     line_numbers: list[int] = []
-    i = 0
     n = len(text)
-    while i < n:
-        ch = text[i]
-        if _is_latin_base(ch) and i + 1 < n and unicodedata.combining(text[i + 1]) != 0:
-            j = i + 1
-            while (
-                j < n
-                and unicodedata.combining(text[j]) != 0
-                and not _is_hebrew_cp(text[j])
-            ):
-                j += 1
-            cluster = text[i:j]
-            nfc = unicodedata.normalize("NFC", cluster)
-            if len(nfc) < len(cluster) and not any(_is_hebrew_cp(c) for c in nfc):
-                line_no = text.count("\n", 0, i) + 1
-                if line_no not in line_numbers:
-                    line_numbers.append(line_no)
-            i = j
+    for match in _LATIN_MARK_RE.finditer(text):
+        i = match.start() - 1
+        if i < 0 or not _is_latin_base(text[i]):
             continue
-        i += 1
+        j = i + 1
+        while (
+            j < n and unicodedata.combining(text[j]) != 0 and not _is_hebrew_cp(text[j])
+        ):
+            j += 1
+        cluster = text[i:j]
+        nfc = unicodedata.normalize("NFC", cluster)
+        if len(nfc) < len(cluster) and not any(_is_hebrew_cp(c) for c in nfc):
+            line_no = text.count("\n", 0, i) + 1
+            if line_no not in line_numbers:
+                line_numbers.append(line_no)
     return line_numbers
 
 
@@ -907,6 +969,10 @@ def run_check_repo_standards_across_repos(
     results: list[dict] = []
 
     for repo_info in repo_infos:
+        # Progress, in clean_worktrees.py's shape and for the reason given in
+        # its own copy of this line: a sweep that prints nothing until it
+        # finishes is indistinguishable from a hung one.
+        print(f"=== {repo_info.name} ===", flush=True)
         repo_dir = repo_info.path
         # Decides whether the three Python-dependent checks are asked at all --
         # see "A REPO WITH NO TRACKED .py FILES" in this module's docstring.

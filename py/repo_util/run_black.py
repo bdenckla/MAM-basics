@@ -112,6 +112,9 @@ def run_black_across_repos(
     results: list[dict] = []
 
     for repo_info in repo_infos:
+        # Progress, in clean_worktrees.py's shape -- see its own copy of this
+        # line for why every sweep prints one.
+        print(f"=== {repo_info.name} ===", flush=True)
         black_result = {
             "attempted": False,
             "success": False,

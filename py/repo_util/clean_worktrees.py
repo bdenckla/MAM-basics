@@ -34,7 +34,24 @@ def run_clean_worktrees_across_repos(
     reports: list[tuple[str, list[str]]] = []
 
     for repo_info in repo_infos:
-        print(f"=== {repo_info.name} ===")
+        # EVERY SWEEP PRINTS THIS LINE, AND THIS IS THE COPY THE OTHERS CITE.
+        # Until 2026-08-11 this sweep was the only one of the five that did, and
+        # the silence of the other four cost a real session: on that day a phase
+        # of the private-repo evacuation read --check-repo-standards' five
+        # minutes of no output as a hang and stopped the run, which was neither
+        # hung nor unusually slow. A sweep that prints nothing until it finishes
+        # is indistinguishable from a hung one from outside.
+        #
+        # flush=True is not decoration. Python block-buffers stdout whenever it
+        # is redirected to a file or captured by a tool, which is exactly the
+        # case that misread the silence, so without the flush these lines would
+        # sit in the buffer and arrive with the summary at the end -- present in
+        # the transcript, useless as progress.
+        #
+        # The KEY=value summary lines below are unaffected: "=== <repo> ===" is
+        # not a KEY=value pair, and this sweep has printed it alongside
+        # REPO_COUNT= since long before the other four followed.
+        print(f"=== {repo_info.name} ===", flush=True)
         try:
             report = git_worktree_cleanup.clean_worktrees(repo_info.path)
         except (RuntimeError, OSError) as exc:
