@@ -271,10 +271,24 @@ changes mean this plan cannot tell a move bug from a page edit.
 
 **MET 2026-08-11: Ben chose freeze**, put to him at Phase 0 with the alternatives measured. The
 freeze notice is at the top of that file with a pointer from its §0, wlc-utils `c501dc0`, and it
-says the freeze lifts at this plan's Phase 11. **Its Phase 4 turned out to be small** — two
-chanted words, ca8:6 ready to write and ne8:7 held on MAM-basics#215 — which is why "land it
-first" was a live option rather than a formality, and Ben chose freeze anyway. **A later session
-must not read that smallness as licence to land it mid-evacuation.**
+says the freeze lifts at this plan's Phase 11. **A later session must not land that plan
+mid-evacuation.**
+
+**READ THIS BEFORE DOING ANYTHING ABOUT THAT PLAN — it is not a task, and this precondition
+generates no work.** What is dangerous is that plan being **executed** while this one runs,
+because executing it regenerates accgram pages and this plan cannot then tell a move bug from a
+page edit. **A plan parked in a `doc\*.md` is already harmless**, and so is an open GitHub issue:
+neither runs by itself. So freezing it, closing it, or simply nobody running it all satisfy this
+precondition **identically**, and the freeze is a written record of the choice rather than the
+mechanism that makes it safe.
+
+**Do not turn this into an investigation.** On 2026-08-11 a session read "land or freeze" as
+licence to work out what that plan still owed, went down through its Phase 4 to MAM-basics#215,
+and reported the findings as though something were owed here. Ben, the same day: *"I have no idea
+why any of this holds up the evacuation plan as long as it is parked in a `doc/foo.md` and/or
+GitHub issue in some repo."* He is right, and this paragraph exists so the next session does not
+repeat it. **The only question this precondition ever asks is "is anyone running that plan right
+now?" If no, it is met. Move on to the phase.**
 
 **2. Pages enabled on `bdenckla/MAM-basics` — Settings → Pages → Source: GitHub Actions.** Only
 Ben can do this; the plan does not attempt it. It is a hard gate on Phase 6.
