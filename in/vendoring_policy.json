@@ -51,19 +51,6 @@
         ]
       }
     },
-    "al-hatorah": {
-      "comment": "Active since 2026-08-07: py/main_update_vendored_files.py copies MAM-basics/py/mb_cmn by intersection, al-hatorah c4f0e48a ran it, and all 28 files read identical -- kept up on the same footing as holman-ketiv-qere. It read stale until then, which is also why the mechanism is declared here rather than derived: gen_inventory only derives copy_script for an active or generated repo, so this repo's script went unreported for as long as the category said stale (2026-08-02, #60).",
-      "ignore": false,
-      "scan_provenance": true,
-      "default_category": "active",
-      "default_mechanism": "copy_script",
-      "default_provenance_doc": "no",
-      "pkg_scan_roots": {
-        "mb_cmn": [
-          "py/mb_cmn"
-        ]
-      }
-    },
     "book-of-job": {
       "comment": null,
       "ignore": false,
@@ -126,7 +113,7 @@
       }
     },
     "MAM-private": {
-      "comment": "One key for every tree MAM-private holds, not one key per tree. That repo's doc/PLAN-evacuate-private-repos.md gives each evacuated private repo a top-level directory of its own, so every dest path here carries a tree prefix and discover.py derives it for free: dest_path is taken relative to repos_root()/MAM-private, so a scan root of mgketer/py/mb_cmn yields mgketer/py/mb_cmn/<file>. Renaming the old mgketer key to MAM-private instead would have worked exactly once and then collided when al-hatorah wanted the same key in this same object; al-hatorah is the last of the four to move, and it adds its scan roots to the lists below rather than a second key (that plan's mgketer R.0 finding 4). mgketer's tree arrived 2026-08-08 and its clone was emptied to a breadcrumb 2026-08-09. Active for the two directories mgketer/py/main_update_vendored_files.py covers: it copies MAM-basics/py/mb_cmn and py/mb_diff_mpu by intersection, mgketer 0a3f1509 ran it, and all 16 files in those two read identical. It covers only those two directories, so the two mgketer/py/python_modules/ overrides below re-declare mechanism unknown AND category stale rather than inherit copy_script and active -- no script reaches that directory and both files read DIFFERS, which is what stale says and active would deny.",
+      "comment": "One key for every tree MAM-private holds, not one key per tree. That repo's doc/PLAN-evacuate-private-repos.md gives each evacuated private repo a top-level directory of its own, so every dest path here carries a tree prefix and discover.py derives it for free: dest_path is taken relative to repos_root()/MAM-private, so a scan root of mgketer/py/mb_cmn yields mgketer/py/mb_cmn/<file>. Renaming the old mgketer key to MAM-private instead would have worked exactly once and then collided when al-hatorah wanted the same key in this same object; al-hatorah was the last of the four to move, on 2026-08-10, and it duly added its scan root to the mb_cmn list below rather than a second key (that plan's mgketer R.0 finding 4). mgketer's tree arrived 2026-08-08 and its clone was emptied to a breadcrumb 2026-08-09; al-hatorah's tree arrived 2026-08-10 and its clone was emptied to a breadcrumb the same day, which is the commit that folded the old al-hatorah key into this one. Active for the three directories the two trees' copy scripts cover. mgketer/py/main_update_vendored_files.py copies MAM-basics/py/mb_cmn and py/mb_diff_mpu by intersection, mgketer 0a3f1509 ran it, and all 16 files in those two read identical. al-hatorah/py/main_update_vendored_files.py copies MAM-basics/py/mb_cmn by intersection, al-hatorah 62d6f3e3 ran it, and all 28 files read identical -- that repo read stale until 2026-08-07, which is why its mechanism was declared rather than derived, gen_inventory deriving copy_script only for an active or generated repo (2026-08-02, #60). The two copy scripts cover only those three directories, so the two mgketer/py/python_modules/ overrides below re-declare mechanism unknown AND category stale rather than inherit copy_script and active -- no script reaches that directory and both files read DIFFERS, which is what stale says and active would deny.",
       "ignore": false,
       "scan_provenance": true,
       "default_category": "active",
@@ -134,7 +121,8 @@
       "default_provenance_doc": "no",
       "pkg_scan_roots": {
         "mb_cmn": [
-          "mgketer/py/mb_cmn"
+          "mgketer/py/mb_cmn",
+          "al-hatorah/py/mb_cmn"
         ],
         "mb_diff_mpu": [
           "mgketer/py/mb_diff_mpu"

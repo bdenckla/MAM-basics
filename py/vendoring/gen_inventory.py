@@ -54,13 +54,22 @@ def _parse_compare_rows() -> dict[tuple[str, str, str], dict[str, str]]:
     if not _COMPARE_OUT.exists():
         return rows
 
+    # One space, not two.  compare.py writes fixed-width columns with a single
+    # literal space between them, so a value that exactly fills its column is
+    # separated from the next by that one space and nothing more.  Requiring two
+    # made every such row unparseable, which is a crash rather than a wrong
+    # answer: MAM-private's al-hatorah/py/mb_cmn/read_books_from_mam_parsed_plus.py
+    # is 55 characters against a DEST_PATH column of 55 (compare.py:123,128).
+    # Widening the column would only move the threshold.  One space is
+    # unambiguous here because every field but the trailing notes is written
+    # from a value that holds no whitespace.
     pattern = re.compile(
-        r"^(?P<file>\S+)\s{2,}"
-        r"(?P<dest_repo>\S+)\s{2,}"
-        r"(?P<dest_path>\S+)\s{2,}"
-        r"(?P<identity>\S+)\s{2,}"
+        r"^(?P<file>\S+)\s+"
+        r"(?P<dest_repo>\S+)\s+"
+        r"(?P<dest_path>\S+)\s+"
+        r"(?P<identity>\S+)\s+"
         r"(?P<last_synced>\S+)"
-        r"(?:\s{2,}(?P<hint_notes>.*))?$"
+        r"(?:\s+(?P<hint_notes>.*))?$"
     )
 
     for line in _COMPARE_OUT.read_text(encoding="utf-8").splitlines()[2:]:
@@ -246,9 +255,18 @@ def main(refresh_live_inputs: bool = True) -> None:
             ignored_file_count += 1
             continue
         src_path = _make_source_path(d["src_pkg"])
+        # The destination DIRECTORY is part of the key, not merely of the display.
+        # A dest repo can hold the same source package in more than one directory,
+        # and then those copies are two rows rather than one: MAM-private carries a
+        # top-level directory per evacuated private repo, so mgketer/py/mb_cmn and
+        # al-hatorah/py/mb_cmn are both mb_cmn copies of that one repo, arriving
+        # 2026-08-08 and 2026-08-10. Keying without the directory grouped them
+        # together and the row could then name only one of the two directories.
+        dest_dir = d["dest_path"].rsplit("/", 1)[0]
         key = (
             src_path,
             dest_repo,
+            dest_dir,
             d["mechanism"],
             d["provenance_doc"],
             d["category"],
@@ -256,7 +274,7 @@ def main(refresh_live_inputs: bool = True) -> None:
         )
         groups.setdefault(key, []).append(d)
 
-    sorted_groups = sorted(groups.items(), key=lambda kv: kv[0][1])
+    sorted_groups = sorted(groups.items(), key=lambda kv: (kv[0][1], kv[0][2]))
 
     lines = [
         f"<!-- {mb_provenance.generated_html_comment(_GENERATOR_FILE)} -->",
@@ -283,6 +301,7 @@ def main(refresh_live_inputs: bool = True) -> None:
     for (
         src_path,
         dest_repo,
+        dest_dir,
         mechanism,
         provenance_doc,
         category,
@@ -292,19 +311,12 @@ def main(refresh_live_inputs: bool = True) -> None:
         files = [row["file"] for row in group_rows]
         files_str = ", ".join(sorted(files))
         src_pkg_display = src_path if src_path else "mb_cmn"
-        path_displays = {
-            (
-                row["dest_path"].rsplit("/", 1)[0]
-                if len(group_rows) > 1
-                else row["dest_path"]
-            )
-            for row in group_rows
-        }
-        if len(path_displays) != 1:
-            raise ValueError(
-                f"Grouped rows disagree on destination path display for {dest_repo}: {sorted(path_displays)}"
-            )
-        dest_path_display = next(iter(path_displays))
+        # A one-file row names the file's whole path; a several-file row names the
+        # directory they share, which the key now guarantees they do. The guard that
+        # used to check that agreement here is gone with the reason for it.
+        dest_path_display = (
+            dest_dir if len(group_rows) > 1 else group_rows[0]["dest_path"]
+        )
         last_synced_values = {row["last_synced"] for row in group_rows}
         last_synced_display = (
             next(iter(last_synced_values)) if len(last_synced_values) == 1 else "mixed"
