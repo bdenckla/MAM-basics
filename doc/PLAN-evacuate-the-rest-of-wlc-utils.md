@@ -14,8 +14,11 @@ to this file's first commit apart from its header, so `git show` recovers it.
 **So do not re-create one.** If a future session drafts in `~/.claude/plans/` again, fold it in
 here and delete it, as `8daef35` did with two such scratch plans.
 
-**Nothing has been executed.** Every phase below is unstarted: no file has moved, no GitHub
-setting has been touched, and wlc-utils is exactly as it was.
+**Phase 0 is done, 2026-08-11. No file has moved yet**, no GitHub setting has been touched, and
+wlc-utils holds the same 626 tracked files it always did. Phase 0 is a preflight, so the only
+thing it changed in that repo is the freeze notice it was asked to land there — see Precondition
+1. Phases 1 through 11 are unstarted. (This paragraph read "Nothing has been executed. Every
+phase below is unstarted" until Phase 0 ran.)
 
 Written 2026-08-03, on the model of `doc/PLAN-evacuate-python-from-wlc-utils.md`, which is its
 precedent in shape and in discipline. Every number below is stated with the command that
@@ -31,8 +34,8 @@ stale).
 
 | Phase | State |
 |---|---|
-| 0 — Preflight: baseline, manifest, collision census | **not started** |
-| 1 — The provenance worktree fix | **partly landed 2026-08-07, outside this plan**: `38a3bc7` (closing #216) added the worktree `.git`-pointer derivation — steps 1 and 4 of the chain. Remaining: step 2 (the `remote.origin.url` basename, the step that also covers a renamed clone — `grep origin py/mb_cmn/provenance.py` finds nothing), the tautology-test repairs (`test_mb_cmn_provenance.py`'s `_repo_name()` still returns `this_repo_name()`), and the al-hatorah wrapper decision. Re-measure at Phase 0 |
+| 0 — Preflight: baseline, manifest, collision census | **DONE 2026-08-11**, MAM-basics `5344a74` + this write-back, plus three baseline commits in three other repos and one freeze commit in wlc-utils (`c501dc0`). Every census claim re-measured and every one reproduces, the load-bearing zero-self-links figure included. The circuit ran green and **wlc-utils came through it with zero files changed**. **The baseline was NOT clean at first look — 17 files across three repos, from three unrelated causes**, all now committed. Suite is **903 passed / 5 skipped**, not the 913 this plan carried. Three findings this plan did not predict, the sharpest being that **a sibling repo's vendoring drifts this repo's own tracked tree**. Findings under Phase 0 below |
+| 1 — The provenance worktree fix | **partly landed 2026-08-07, outside this plan**: `38a3bc7` (closing #216) added the worktree `.git`-pointer derivation — steps 1 and 4 of the chain. Remaining: step 2 (the `remote.origin.url` basename, the step that also covers a renamed clone — `grep origin py/mb_cmn/provenance.py` finds nothing), the tautology-test repairs (`test_mb_cmn_provenance.py`'s `_repo_name()` still returns `this_repo_name()`), and the al-hatorah wrapper decision. Re-measure at Phase 0 — **done 2026-08-11, and all three are still outstanding, measured not assumed.** `grep -c origin py/mb_cmn/provenance.py` is **0**, so step 2 is absent while the `gitdir:`/`commondir` chain of steps 1 and 4 is present; `test_mb_cmn_provenance.py:13`'s `_repo_name()` still returns `provenance.this_repo_name()`, so the tautology stands, though `38a3bc7` renamed the test the plan calls `test_repo_name_omitted_uses_directory_name` to `test_repo_name_omitted_uses_this_repos_name` — **find it by shape, not by that name**. **The al-hatorah wrapper has MOVED and the plan's path for it is dead**: it is `C:\Users\BenDe\GitRepos\MAM-private\al-hatorah\py\aht_provenance.py` now, that repo's clone having come off the disk on 2026-08-11, so Phase 1's "a separate repo, a separate commit" is a commit in **MAM-private**, and its refresh mechanism needs re-checking there before acting |
 | 2 — `.gitattributes` merge | **not started** |
 | 3 — Copy the corpus in (dual residency) | **not started** |
 | 4 — Licence scoping | **partly landed 2026-08-10, outside this plan**: the root-level structure exists — `DATA-LICENSES.md` (path-by-path map plus the MAM CC-BY-SA statement) and `README.md`'s `## License` section — because MAM-basics' own MAM and chabad.org data had the same ambiguity with no wlc-utils involved. Remaining: add the arriving wlc paths as rows, and place CC0 only where Phase 4's "Where CC0 must NOT go" paragraph allows |
@@ -96,6 +99,23 @@ across a full regeneration and requiring **zero files touched**.
 | Working tree | 463 MB | 616 MB | ~800 MB |
 
 `git ls-files | wc -l`, `git rev-list --count HEAD`, `git count-objects -vH`, `du -sh`.
+
+**Re-measured at Phase 0, 2026-08-11**, at wlc-utils `79404fa` and MAM-basics `d100480`. The one
+figure this plan actually depends on is unmoved — **626 tracked files in wlc-utils** — and the
+rest have drifted, the disk figures downward:
+
+| | wlc-utils | MAM-basics |
+|---|---|---|
+| Tracked files | **626** (unmoved) | **1286** (was 1263) |
+| Commits | **957** (was 940) | **1152** (was 1037) |
+| `.git` | **101 MB** (was 99) | **68 MB** (was 64) |
+| Whole clone, `.git` included | **316 MB** (was 463) | **429 MB** (was 616) |
+
+**Do not read the shrunken clones as files having gone missing.** Both figures above are `du -sh .`
+over the whole clone, which counts untracked scratch — the `.novc/` trees and, in MAM-basics, the
+`.venv` — so what shrank is scratch that has since been cleared, not corpus. The tracked-file
+counts, which are what layer 1 asserts over, went **up** in MAM-basics and stood still in
+wlc-utils. The projected "after" row is therefore a little low and nothing turns on it.
 
 wlc-utils by top-level directory: `gh-pages` 284, `out` 193, `in` 135, `doc` 6, `data` 1,
 `.github` 1, plus six loose root files. Disk: `out/` 98 MB, `gh-pages/` 51 MB, `in/` 34 MB,
@@ -172,6 +192,41 @@ tests assert that URL appears in generated CLC HTML, so repointing it is a sourc
 test consequence, not a find-and-replace — deliberately left out of this plan's scope, since the
 stubs keep the old URL working.
 
+**Re-swept at Phase 0, 2026-08-11, and the table above undercounts. The sweep to run is a count,
+not a file list** — the table was built from `grep -l`, which is why it reads as fewer citations
+than exist:
+
+```bash
+for r in MAM-basics MAM-simple UXLC-utils document-index wlc-utils; do git -C "../$r" grep -hIo "bdenckla\.github\.io/wlc-utils[A-Za-z0-9/._#-]*" -- . ; done | sort | uniq -c | sort -rn
+```
+
+**The Phase 6 check list is 12 distinct URLs**, and three things about them are worth having
+before Phase 6 rather than during it:
+
+- **`document-index/README.md` cites four specific deep paths, not "the site"** as the table says:
+  `/420422/`, `/420422/full-record/420422-54.html`, `/wlc-a-notes/` and
+  `/accgram/goerwitz.html`. Two of those are **directory** URLs, so Phase 8's stub set has to
+  cover `index.html` at a directory a citation names without naming the file. All four resolve to
+  a file that exists today, checked.
+- **UXLC-utils is 7 files, not 3 — but that is one fact counted four times, not new exposure.**
+  The tanach.us change list is vendored there four times over (`in/UXLC-misc/`,
+  `in/UXLC-misc-fixed/`, `out/UXLC-misc/…txt`, `out/UXLC-misc/all_changes.json`), each copy
+  carrying the same 5 `goerwitz.html` citations, and `doc/clc-design.md` adds 1 in prose. The four
+  fragment deep links reconcile exactly: `Deuter-5-long-notes.html` has 3 and
+  `Exodus-20-long-notes.html` 1.
+- **The bare `/accgram/` citation is wlc-utils' `README.md:42`, and needs no external
+  coordination**, Phase 10 rewriting that file anyway. Confirmed alongside it:
+  `gh-pages/accgram/index.html` does not exist, so Phase 6's "that URL 404s today and that is
+  correct" is measured rather than predicted.
+
+**Nothing outside MAM-basics opens a wlc-utils data file — re-established at Phase 0 and it still
+holds.** Sweeping every clone for `wlc-utils/{in,out,data,gh-pages}` paths leaves exactly two
+hits, both prose in a `doc/` tree: `UXLC-utils/doc/clc-design.md` and the `hebrew-prose` skill's
+tracked copy in `github-misc`. **One of them needs more than Phase 11 item 9's one sentence**,
+though: `clc-design.md:300` cites `wlc-utils/data/lci_recs.json`, and Phase 3 does not merely move
+that file to another repo, it **renames** it to `in/lci_recs.json` — so "every `wlc-utils/…` path
+in `doc/` now means `../MAM-basics/…`" is true of `:238` and `:322` and false of `:300`.
+
 Four decisions carried over unchanged from the Python plan: plain copy with no history graft;
 regenerating the tracked artifact byte-identically is the test, with no new example-based unit
 tests; issues unify going forward only; and one phase per session, written back before the next.
@@ -188,7 +243,14 @@ contradict each other.
 
 ## Preconditions — all four blocking
 
-**0. The whole MAM-private programme must finish first — every phase of all four repos.** Ben's
+**State as of Phase 0, 2026-08-11: 0, 1 and 3 are met; 2 is not, and it gates Phase 6 only. A
+fifth was added by Ben the same day — see "Precondition 4" at the end of this section.**
+
+**0. The whole MAM-private programme must finish first — every phase of all four repos.**
+**MET 2026-08-11.** That programme closed itself — `MAM-private` `b31215a` ("Close the
+private-repo evacuation programme: the last row is done") and `5ff6a40` — and its Status table
+reads DONE on every row, al-hatorah's R.4 included, which is the row this precondition names.
+Checked at MAM-private head `5ff6a40`. Ben's
 decision, 2026-08-08: all private work before any public work, and this plan is the first public
 work after it. The programme is
 `C:\Users\BenDe\GitRepos\MAM-private\doc\PLAN-evacuate-private-repos.md`; its Status table is the
@@ -197,15 +259,35 @@ wlc-utils-private finishes. Numbered 0 rather than 4 so the three below keep the
 of this file cites. The reasoning behind it, including what could safely have overlapped and why
 that licence goes unused, is under "Interactions with the MAM-private programme".
 
-**1. `wlc-utils/doc/PLAN-two-accents-on-one-chanted-word.md` must land or freeze first.** It is
-live — 1134 lines, §9 is the current state, Phase 4 next — and it generates accgram pages, which
-are members of the 154-page set this plan proves itself against by zero diff. This is the same
-contention the Python plan's Precondition 2 named between itself and the maqaf-scans plan, and it
-was decisive there: concurrent artifact changes mean this plan cannot tell a move bug from a page
-edit. **Ben's call, needed before Phase 3.**
+**1. `wlc-utils/doc/PLAN-two-accents-on-one-chanted-word.md` must land or freeze first.** It was
+live — 1209 lines by Phase 0, not the 1134 this plan first measured, §9 the current state and
+Phase 4 next — and it generates accgram pages, which are members of the 154-page set this plan
+proves itself against by zero diff. This is the same contention the Python plan's Precondition 2
+named between itself and the maqaf-scans plan, and it was decisive there: concurrent artifact
+changes mean this plan cannot tell a move bug from a page edit.
+
+**MET 2026-08-11: Ben chose freeze**, put to him at Phase 0 with the alternatives measured. The
+freeze notice is at the top of that file with a pointer from its §0, wlc-utils `c501dc0`, and it
+says the freeze lifts at this plan's Phase 11. **Its Phase 4 turned out to be small** — two
+chanted words, ca8:6 ready to write and ne8:7 held on MAM-basics#215 — which is why "land it
+first" was a live option rather than a formality, and Ben chose freeze anyway. **A later session
+must not read that smallness as licence to land it mid-evacuation.**
 
 **2. Pages enabled on `bdenckla/MAM-basics` — Settings → Pages → Source: GitHub Actions.** Only
 Ben can do this; the plan does not attempt it. It is a hard gate on Phase 6.
+
+**NOT met as of 2026-08-11, and it is the only precondition still open.** The check is one
+command, and it needs no browser:
+
+```bash
+gh api repos/bdenckla/MAM-basics/pages
+```
+
+It returns `404 Not Found` while Pages is off, and a JSON body with `"build_type": "workflow"`
+once Ben has set it — which is exactly what the same call already returns for
+`bdenckla/wlc-utils`, so that repo is the worked example of what a met precondition looks like.
+It was put to Ben at Phase 0 so that it could be done at leisure; it blocks nothing before Phase
+6.
 
 **3. Clear MAM-basics' worktrees** (two live on 2026-08-03), for the disk reason above:
 
@@ -231,9 +313,27 @@ expect this condition to have recurred by the time a session reads this, rather 
 one named above is still the one present. The same `--clean-worktrees` sweep above reaches it,
 wlc-utils being listed in `all-repos.code-workspace`.
 
+**MET 2026-08-11 and it cost nothing: neither repo had a worktree to clear.** `git worktree list`
+gave exactly one line in each — `MAM-basics d100480 [main]` and `wlc-utils 79404fa [main]` — so
+the recurrence `check_repo_standards.py` predicts had not in fact recurred, and no
+`--clean-worktrees` sweep was needed. Re-check rather than assuming this holds; the prediction is
+still sound, it simply had not come true on the day.
+
+**4. No other session may hold uncommitted MAM-basics work, and while holman-ketiv-qere's current
+work is live, no phase of this plan runs. Ben's decision, 2026-08-11**, taken at Phase 0 on a
+measurement rather than a worry — Phase 0 finding 1 below is the mechanism, and it is not the
+obvious one. Nothing in holman-ketiv-qere edits MAM-basics; the mega's `vendoring-audit` step
+reads **every** sibling repo, so a sibling merely *gaining a vendored file* drifts four tracked
+MAM-basics artifacts on the next run. That defeats the "git status shows only this phase's source
+edits" assertion Phases 3, 5 and 10 each rest on. Ben was offered the cheaper option — let it run,
+and re-audit-and-commit at each phase — and chose the strict serialization the MAM-private
+programme used instead: **finish holman-ketiv-qere first.** Check with `git -C
+../holman-ketiv-qere status --porcelain` and its recent log before starting any phase.
+
 **Re-measure wlc-utils' baseline rather than trusting this file's figures.** Its HEAD was
-`5783062` when the counts under Scale were taken and `3760b2f` a few hours later, so that repo
-moves under this plan exactly as the Python plan's own final session found.
+`5783062` when the counts under Scale were taken, `3760b2f` a few hours later, and `79404fa` when
+Phase 0 began on 2026-08-11 — so that repo moves under this plan exactly as the Python plan's own
+final session found.
 
 ---
 
@@ -394,14 +494,40 @@ layer 2 therefore says nothing about. Exactly two path deltas are expected: the 
 a differing eol rule changes the blob.
 
 **Layer 2 — zero regeneration diff, which proves the repoint.** After Phase 5, run the full
-circuit from `C:\Users\BenDe\GitRepos\MAM-basics`: `py\main_0_mega.py` (whose wlc half is the
-`_STEPS` run from `wlc-vendor-uxlc` through `wlc-a-notes`: `wlc-vendor-uxlc`,
-`wlc-json-and-unicode`, `accgram-run-prose`, `accgram-test-fixes`, `accgram-run-poetic`,
-`accgram-generate-html`, `wlc-diffs-420422`, `wlc-a-notes`), then the six accgram subcommands
-outside it (`run-dual-cant`, `run-printed-decalogue`, `survey-chanted-word-accents`,
-`xcheck-poetic`, `servi-xcheck`, `grammaticality`), then `main_uxlc_grammar_test.py`,
-`main_find_uxlc_accent_changes.py`, and `main_edition_transcription.py build --check`.
-`git status --porcelain` then shows **only the phase's source edits**.
+circuit from `C:\Users\BenDe\GitRepos\MAM-basics`. **THE CIRCUIT IS NOW TWO COMMANDS, NOT ELEVEN
+— re-measured at Phase 0, 2026-08-11, and this correction governs Phases 3, 5 and 10, each of
+which cites the old list.**
+
+```bash
+.venv/Scripts/python.exe py/main_0_mega.py
+```
+
+```bash
+.venv/Scripts/python.exe py/main_edition_transcription.py build --check
+```
+
+The mega's wlc half is the `_STEPS` run from `wlc-vendor-uxlc` through `wlc-a-notes`, and it has
+**absorbed all eight of the steps this plan listed as sitting outside it** — the six accgram
+subcommands (`accgram-run-dual-cant`, `accgram-xcheck-poetic`, `accgram-servi-xcheck`,
+`accgram-grammaticality`, `accgram-run-printed-decalogue`, `accgram-survey-chanted-word-accents`)
+plus `find-uxlc-accent-changes` and `uxlc-grammar-test`. wlc-utils `505cbfc`, "Wake two artifacts
+the mega now rebuilds, and record the eight new steps", is where that happened.
+`main_edition_transcription.py build --check` is the only thing still outside, and
+`--resume-from`'s own choices list is the authority — read it rather than this paragraph if the
+two ever disagree:
+
+```bash
+.venv/Scripts/python.exe py/main_0_mega.py --help
+```
+
+**This retires, rather than merely simplifying, the specific staleness this plan warned about.**
+Phase 0's text says `main_find_uxlc_accent_changes.py` and `main_uxlc_grammar_test.py` "sit
+outside the mega, so nothing rewrites them routinely — which is exactly how
+`out/accgram/uxlc_grammar_test.txt` was found two days stale during the Python plan's Phase 1."
+Both are mega steps now, so that particular trap is closed.
+
+`git status --porcelain` then shows **only the phase's source edits** — in MAM-basics, wlc-utils,
+and the seven other repos the circuit writes.
 
 **Layer 3 — mtime counter-checks, in both directions.** The UXLC-utils Phase 3 record's lesson —
 *"count what a run actually rewrites, not what it leaves clean"* — does double duty here.
@@ -422,9 +548,13 @@ on demand at any point in Phases 3–9.
 
 ---
 
-## Phase 0 — Preflight: baseline, manifest, collision census
+## Phase 0 — Preflight: baseline, manifest, collision census — DONE 2026-08-11
 
 *Read-only, plus one commit to this plan file.* No tracked artifact changes.
+
+**That description held for the reading and did not survive the baseline.** Phase 0 turned out to
+need **five** commits across five repos, because the circuit it runs to establish a clean baseline
+found the baseline dirty. The execution record at the end of this section says which and why.
 
 **Re-measure and record** the table under Scale, plus: `py\main_test.py` — **913 passed, 5
 skipped, 57 subtests** on 2026-08-03; `ruff check py`; `black --check py`.
@@ -470,6 +600,97 @@ Two census findings already in hand, neither a blocker:
 
 **Verify:** every count recorded; the circuit gives a zero diff in both repos; the census produces
 a written collision list.
+
+### Execution record — Phase 0, 2026-08-11
+
+Began at wlc-utils `79404fa`, MAM-basics `d100480`, with all nine repos the circuit touches at
+`git status --porcelain` empty. Preconditions 0, 1 and 3 met (see that section); 2 open and
+gating Phase 6 only.
+
+**The manifest — layer 1's before-image — was taken twice, and the second one is the live one.**
+`.novc\wlc-rest-phase0\wlc-manifest-c501dc0.txt`, **626 rows**, sha256
+`28c94cde461849fbffd53ac16de12a6d9f4eb1804a9ce95e1baa212ea51c1ade`. The first was taken at
+`79404fa` (sha256 `b4169ae8a82ebb62fa87fd71b98f31fb4f82e231efcc091f89b4d37ab7583ae5`) and was
+invalidated within the hour by this phase's **own** freeze commit, `doc/PLAN-two-accents-…md`
+being one of the 626. The two differ in **exactly one row**, that file's blob, proved by `diff`
+and kept in `.novc\` beside it. **The lesson for a later phase is that "no second chance to take
+it" is about the corpus moving, not about the head moving** — while wlc-utils is untouched by any
+copy, the manifest can simply be re-taken, and a phase that edits that repo at all must re-take it
+rather than reason about the delta.
+
+**The circuit ran green: exit 0, and `main_edition_transcription.py build --check` passes 12/12.**
+The assertion this plan cares most about held on the first run — **wlc-utils came through with
+zero files changed**.
+
+**But the baseline was NOT clean: 17 files across three repos, from three unrelated causes**, all
+committed before this phase was written back. Ben chose "three separate commits" from three
+options put to him.
+
+| Repo | Files | Cause | Commit |
+|---|---|---|---|
+| MAM-parsed | 12 SVGs | **Graphviz 14.1.2 → 15.1.1** | `95f64d7` |
+| MAM-basics | 4 | the vendoring audit, finding 1 below | `5344a74` |
+| MAM-with-doc | 1 | `unpinned-latest.html`, drifting by design | `518b08d` |
+
+The Graphviz bump is a **real layout change and not just the version stamp** — `plain-call-graph-c`
+goes 201pt wide to 215pt, and every polygon and path coordinate moves. It is nonetheless
+output-neutral in the sense that matters, proved rather than assumed: all twelve have an
+**identical set of `<title>` elements before and after**, so the same nodes and the same edges are
+drawn, and every diff is balanced, the same number of lines out as in. `unpinned-latest.html` still
+reports "0 changes found"; only its dates moved, 2026-08-02 to 2026-08-09, tracking MAM-parsed's
+head rather than the calendar.
+
+#### Findings
+
+**1. A sibling repo's vendoring drifts THIS repo's tracked tree, with no session here touching
+anything. This is the finding that changed the plan** — it is why Precondition 4 exists.
+holman-ketiv-qere `e2d1f17` vendored `mb_cmn/paths.py` into itself; the mega's **`vendoring-audit`
+step reads every sibling repo**, so MAM-basics' `doc\vendoring-inventory.md` and its three
+`out\vendoring_*` artifacts went stale, 154 files to 155. **The direction is the counter-intuitive
+part**: the danger is not another session writing into MAM-basics, which no
+holman-ketiv-qere session does, but this repo's own audit reaching out and noticing. Any phase
+asserting "git status shows only my source edits" can be defeated by a sibling repo it never
+mentions.
+
+**2. The circuit collapsed from eleven commands to two**, retiring a staleness trap this plan
+names. Recorded in full under layer 2 above, since that is where the step list a later phase reads
+actually lives.
+
+**3. The suite is 903 passed / 5 skipped, not the 913 / 5 / 57 subtests this plan carried.**
+Independently corroborated: MAM-private's programme measured 903 at al-hatorah's R.3 and R.4 and
+accounted for the missing test exactly. `ruff check py` clean; `black --check py` clean at 771
+files. **903 is the baseline every later phase compares against.**
+
+**Everything the census claimed reproduces, with no exceptions.** The load-bearing figure is
+intact — **zero** absolute `bdenckla.github.io/wlc-utils` self-links anywhere under `gh-pages/`,
+so the 284-file subtree still moves with no HTML edits at either layout. Also re-confirmed: zero
+directory-level collisions across `in/`, `out/` and `doc/`, by `comm` over both flat listings, so
+a flat merge still needs zero renames; MAM-basics has neither a `gh-pages/` nor a `.github/`, so
+both arrive whole; wlc-utils has no loose file at `in/` top level and exactly the two named at
+`out/`; wlc-utils has **0** `.csv`, so MAM-basics' `*.csv text eol=crlf` rule cannot bite; and the
+two `Taamey_D.woff2` copies really are byte-identical, sha256 `5cc8df8a…`, so the repo will hold
+one font twice — still out of scope, still an issue to file rather than a deduplication to fold
+into a move.
+
+**The six root files check out as the disposition table says, with one trivial correction.**
+`.gitignore` in wlc-utils is the single line `.novc/`, which MAM-basics already ignores, so no
+edit; the two `LICENSE` files differ as stated, wlc-utils' opening "Creative Commons Legal Code"
+against MAM-basics' GPL-3.0; wlc-utils' `CLAUDE.md` has five sections, of which the two the table
+predicts as residue are present. The correction: **`wlc-utils.code-workspace` is 7 lines, not
+4** — the same `{"folders":[{"path":"."}]}` content, pretty-printed. It is still the one file to
+delete rather than move.
+
+**Two things banked for Phase 11 while they were cheap to check.** Both unsynced live-plus-tracked
+pairs are **byte-identical right now** — `~\.claude\CLAUDE.md` against
+`github-misc\dot-claude\CLAUDE.md`, and `~\.claude\skills\hebrew-prose\` against
+`github-misc\dot-claude\skills\hebrew-prose\` — which is the state Phase 11 item 3 requires
+verifying before it adds to either. And **Phase 11 item 2 understates its own work**: the global
+`CLAUDE.md` has **19** wlc-utils references, not the two `agent-planning-principles.md` citations
+the item names. Two more go stale from *this* plan — the `file:///…/wlc-utils/gh-pages/accgram/`
+link at `:711` and `wlc-utils/doc/edition-transcription-workflow.md` at `:741` — and **six are
+already stale today**, naming `wlc-utils/py/...` paths that the 2026-08-01 Python evacuation moved
+and nobody has repointed since. Those six are not this plan's to fix and are flagged, not folded
+in.
 
 ---
 
@@ -1046,11 +1267,16 @@ zero diff. Check for untracked residue — `git rm` leaves it behind — though 
 **This file is the orchestrator; no live session needs to stay open**, and no session needs to
 remember anything from the one before it.
 
-**Check the MAM-private interlock before scheduling any phase** — "Interactions with the
-MAM-private programme" above. The operative rule is Ben's 2026-08-08 serialization decision
-recorded there: the two programmes run as whole blocks, never interleaved, so while any
-MAM-private phase is live, nothing runs here. The three tiers in that section are the analysis
-of what could have overlapped, kept as reasoning only.
+**The MAM-private interlock is SPENT — that programme completed on 2026-08-11, and there is
+nothing left there to schedule around.** What "Interactions with the MAM-private programme" above
+still holds is history plus two live entanglements, which no completion removes: Phase 5 moving
+the two accessors that programme repointed (find them **by function name**, since that programme
+ran second and they are in `mb_cmn\paths.py` now, not `py\wlc_paths.py`), and Phase 11 sharing two
+unsynced live-plus-tracked file pairs with that programme's R.4. The paragraph this replaces told
+a scheduler to check whether a MAM-private phase was live; none can be.
+
+**The scheduling constraint that replaced it is Precondition 4** — holman-ketiv-qere, Ben's
+decision of 2026-08-11. Check that before scheduling any phase.
 
 Each session reads this file, does exactly **one** phase, verifies it, then writes the result back
 into the Status table — state, date, commit shas — and marks that phase's heading `— DONE <date>`,
@@ -1060,7 +1286,9 @@ next phase quoting this file's absolute path.
 
 **Stop and ask Ben rather than chaining on** at these five points:
 
-- **Precondition 1**, the two-accents plan — land it or freeze it.
+- ~~**Precondition 1**, the two-accents plan — land it or freeze it.~~ **Asked and answered
+  2026-08-11: Ben chose freeze.** Struck rather than deleted so a later session does not re-ask a
+  settled question. See Precondition 1.
 - **Phase 3**, the `data/lci_recs.json` → `in/lci_recs.json` rename, if he disagrees.
 - **Before Phase 5**, the largest phase, which must complete within one session.
 - **Phase 6**, which needs a GitHub settings change only he can make.
@@ -1076,7 +1304,16 @@ suite" is stale in both its halves: `38a3bc7` landed the worktree half of Phase 
 and the same commit repointed seventeen callers of `read_books_from_mam_parsed_plus` off their
 cwd-relative `"../MAM-parsed"` default, so the suite is *reported* green from a worktree with
 `REPOS_ROOT=C:\Users\BenDe\GitRepos` set — 919 passed, 5 skipped. **Reported, not measured here;
-re-measure at Phase 0 and rewrite this paragraph with the figure you get.** The instruction
-itself stands regardless of that number, on a ground the provenance fix does not touch: this
+re-measure at Phase 0 and rewrite this paragraph with the figure you get.**
+
+**Phase 0 did not settle that number, and says so rather than implying it did.** What Phase 0
+measured is **903 passed / 5 skipped from the MAIN checkout**, a different quantity from the
+worktree figure above: neither repo had a worktree to run in, so producing the worktree number
+would have meant creating one for a measurement Phase 0 was not asked to take. **So 919 remains
+unverified, and is now doubly suspect**, being a worktree reading of a suite whose main-checkout
+count has itself moved from 913 to 903. Whichever session first has a worktree in hand should
+take it.
+
+The instruction itself stands regardless of that number, on a ground the provenance fix does not touch: this
 plan's verifications are zero-diff and zero-mtime assertions over wlc-utils, MAM-private and the
 other siblings, none of which any MAM-basics worktree isolates.
