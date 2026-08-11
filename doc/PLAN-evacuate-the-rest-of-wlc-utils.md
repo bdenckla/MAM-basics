@@ -14,11 +14,13 @@ to this file's first commit apart from its header, so `git show` recovers it.
 **So do not re-create one.** If a future session drafts in `~/.claude/plans/` again, fold it in
 here and delete it, as `8daef35` did with two such scratch plans.
 
-**Phase 0 is done, 2026-08-11. No file has moved yet**, no GitHub setting has been touched, and
-wlc-utils holds the same 626 tracked files it always did. Phase 0 is a preflight, so the only
-thing it changed in that repo is the freeze notice it was asked to land there — see Precondition
-1. Phases 1 through 11 are unstarted. (This paragraph read "Nothing has been executed. Every
-phase below is unstarted" until Phase 0 ran.)
+**Phases 0 and 1 are done, both on 2026-08-11. No file has moved yet**, no GitHub setting has been
+touched, and wlc-utils holds the same 626 tracked files it always did, still at `c501dc0`. Phase 0
+is a preflight and Phase 1 edits only `py/mb_cmn/provenance.py` and its test, so the only thing
+either changed in that repo is the freeze notice Phase 0 was asked to land there — see
+Precondition 1. Phases 2 through 11 are unstarted. (This paragraph read "Nothing has been
+executed. Every phase below is unstarted" until Phase 0 ran, and named Phase 0 alone until Phase 1
+ran.)
 
 Written 2026-08-03, on the model of `doc/PLAN-evacuate-python-from-wlc-utils.md`, which is its
 precedent in shape and in discipline. Every number below is stated with the command that
@@ -35,7 +37,7 @@ stale).
 | Phase | State |
 |---|---|
 | 0 — Preflight: baseline, manifest, collision census | **DONE 2026-08-11**, MAM-basics `5344a74` + this write-back, plus three baseline commits in three other repos and one freeze commit in wlc-utils (`c501dc0`). Every census claim re-measured and every one reproduces, the load-bearing zero-self-links figure included. The circuit ran green and **wlc-utils came through it with zero files changed**. **The baseline was NOT clean at first look — 17 files across three repos, from three unrelated causes**, all now committed. Suite is **903 passed / 5 skipped**, not the 913 this plan carried. Three findings this plan did not predict, the sharpest being that **a sibling repo's vendoring drifts this repo's own tracked tree**. Findings under Phase 0 below |
-| 1 — The provenance worktree fix | **partly landed 2026-08-07, outside this plan**: `38a3bc7` (closing #216) added the worktree `.git`-pointer derivation — steps 1 and 4 of the chain. Remaining: step 2 (the `remote.origin.url` basename, the step that also covers a renamed clone — `grep origin py/mb_cmn/provenance.py` finds nothing), the tautology-test repairs (`test_mb_cmn_provenance.py`'s `_repo_name()` still returns `this_repo_name()`), and the al-hatorah wrapper decision. Re-measure at Phase 0 — **done 2026-08-11, and all three are still outstanding, measured not assumed.** `grep -c origin py/mb_cmn/provenance.py` is **0**, so step 2 is absent while the `gitdir:`/`commondir` chain of steps 1 and 4 is present; `test_mb_cmn_provenance.py:13`'s `_repo_name()` still returns `provenance.this_repo_name()`, so the tautology stands, though `38a3bc7` renamed the test the plan calls `test_repo_name_omitted_uses_directory_name` to `test_repo_name_omitted_uses_this_repos_name` — **find it by shape, not by that name**. **The al-hatorah wrapper has MOVED and the plan's path for it is dead**: it is `C:\Users\BenDe\GitRepos\MAM-private\al-hatorah\py\aht_provenance.py` now, that repo's clone having come off the disk on 2026-08-11, so Phase 1's "a separate repo, a separate commit" is a commit in **MAM-private**, and its refresh mechanism needs re-checking there before acting |
+| 1 — The provenance worktree fix | **DONE 2026-08-11.** All three remaining pieces landed: step 2 in MAM-basics `0008eb8`, the tautology-test repairs in the same commit, and the al-hatorah wrapper **retired** in MAM-private `20dfb63` after `c0540e5` pulled the new vendored copy. The re-vendor ripple cost three more commits in three repos — MAM-simple `bae0bff`, MAM-basics `1097530` and `57b83cf` — and MAM-with-doc `d2dc6e5` for a by-design drift the circuit surfaced. Baseline reproduced exactly: **903 passed / 5 skipped**, ruff and black clean at 771 files, wlc-utils' manifest byte-identical and **wlc-utils unmoved at `c501dc0` throughout**. Seven findings, the sharpest being that **this phase's own verification (b) was stale and tested the wrong thing** — `38a3bc7` had already made a worktree run come out right, and the generator the plan names writes no breadcrumb at all. Findings under Phase 1 below |
 | 2 — `.gitattributes` merge | **not started** |
 | 3 — Copy the corpus in (dual residency) | **not started** |
 | 4 — Licence scoping | **partly landed 2026-08-10, outside this plan**: the root-level structure exists — `DATA-LICENSES.md` (path-by-path map plus the MAM CC-BY-SA statement) and `README.md`'s `## License` section — because MAM-basics' own MAM and chabad.org data had the same ambiguity with no wlc-utils involved. Remaining: add the arriving wlc paths as rows, and place CC0 only where Phase 4's "Where CC0 must NOT go" paragraph allows |
@@ -717,7 +719,7 @@ in.
 
 ---
 
-## Phase 1 — The provenance worktree fix
+## Phase 1 — The provenance worktree fix — DONE 2026-08-11
 
 *In MAM-basics, plus a re-vendor ripple.* Independently valuable, and **a precondition of the
 oracle** rather than bookkeeping.
@@ -821,6 +823,122 @@ worktree with `REPOS_ROOT` set, and the breadcrumb reads `MAM-basics/py/…`, wh
 today. Do **not** attempt the whole suite from a worktree: **13** failures there are not real, and
 they are the `../MAM-parsed` half only (MAM-basics#216) — the other four are the doc tests this
 phase fixes, and their going green is the sharpest signal that it worked.
+
+**Verification (b) above is stale in both of its halves — see finding 1 below.** It is left as
+written because the execution record has to be readable against what it was checking.
+
+### Execution record — Phase 1, 2026-08-11
+
+Began at MAM-basics `1619de2`, wlc-utils `c501dc0`, with all ten repos the circuit touches at
+`git status --porcelain` empty and `git worktree list` one line in each. **Precondition 4, the
+only live gate, was clear**: holman-ketiv-qere clean, fully pushed at `278f478`, no worktree, its
+last commit `278f478` at 10:08 that morning and nothing since — about nine hours idle when this
+phase began at 19:06.
+
+**Every Phase 0 figure reproduced, re-measured rather than trusted.** The suite is **903 passed /
+5 skipped** (plus 57 subtests) before and after; `ruff check py` clean; `black --check py` clean
+at 771 files; and wlc-utils' manifest re-taken at 626 rows with sha256
+`28c94cde461849fbffd53ac16de12a6d9f4eb1804a9ce95e1baa212ea51c1ade`, byte-identical to Phase 0's,
+so no re-take was owed. **wlc-utils ends this phase where it began, at `c501dc0`.**
+
+**The circuit ran green from the main checkout**: `main_0_mega.py` exit 0 and
+`main_edition_transcription.py build --check` 12/12. **wlc-utils came through with zero files
+changed** — checked again after the worktree probe below, which writes into it.
+
+Seven commits across four repos, in this order:
+
+| Repo | Commit | What |
+|---|---|---|
+| MAM-basics | `0008eb8` | step 2 of the chain, and the tautology-test repairs |
+| MAM-private | `c0540e5` | al-hatorah pulls the new vendored `provenance.py` |
+| MAM-private | `20dfb63` | `aht_provenance.py` retired, `REPO_NAME` kept |
+| MAM-simple | `bae0bff` | takes the copy the mega re-vendored |
+| MAM-basics | `1097530` | re-audit vendoring |
+| MAM-basics | `57b83cf` | audit tail, after MAM-simple's commit moved a date |
+| MAM-with-doc | `d2dc6e5` | `unpinned-latest.html`, drifting by design |
+
+#### Findings
+
+**1. Verification (b) was stale and tested the wrong thing, in both of its halves.** It says the
+breadcrumb reading `MAM-basics/py/…` from a worktree is "impossible today". That stopped being
+true on 2026-08-07: `38a3bc7`'s `_main_clone_name` walks the `gitdir:` pointer's parents for a
+`.git` component and already returned `MAM-basics` for a worktree, so **the worktree probe passes
+identically before and after this phase** and demonstrates no regression rather than the new
+behaviour. And the generator it names, **`py\main_wlc_a_notes.py`, writes no provenance breadcrumb
+at all** — `grep` for "generated by" across `gh-pages/wlc-a-notes/` finds nothing, so there was
+never anything there for a worktree name to poison. The probe was re-run with a generator that
+does write one: `py\main_accgram.py survey-chanted-word-accents`, whose
+`out/accgram/chanted-word-accents.json` carries `MAM-basics/py/accgram/chanted_word_accents.py`.
+Run from a worktree named `phase1-probe`, it rewrote that file (mtime moved) and the breadcrumb
+was unchanged, wlc-utils staying clean. **All 62 breadcrumbs wlc-utils holds come from
+`py/accgram/` generators** — 37 of them from `prose_run` alone — so an accgram subcommand is what
+a later phase should reach for, not `main_wlc_a_notes.py`.
+
+**2. So step 2 needed a probe of its own, and what it needs is a checkout whose DIRECTORY NAME
+differs from the repo's** — which no checkout on this machine has, since a worktree is covered by
+steps 1 and 3. The shapes were built instead, in the throwaway
+`.novc\phase1_probe_origin_basename.py`, which copies `provenance.py` into fabricated trees and
+asks each one its name. **9 of 9 pass**: a renamed clone with an origin answers `MAM-basics` (step
+2, the new behaviour); the same with the `.git` suffix absent, and with an scp-style
+`git@github.com:` URL, both answer `MAM-basics`; a renamed clone whose only remote is named
+`upstream` answers with its directory (step 3, and the section-header scan does not mistake
+`upstream` for `origin`); a junk `.git/config` and a tree with no `.git` at all both degrade to
+the directory name without raising; a worktree of a renamed clone answers `MAM-basics` (steps 1
+and 2 together); a worktree whose clone has no origin answers with the clone's directory, never
+the worktree's; and a submodule-shaped `.git` file answers with the submodule's directory rather
+than `modules`.
+
+**3. The origin basename equals the directory name in every clone that matters, and in one it
+does not: `ArtScroll`.** Its origin is a **gist**, so the chain would derive
+`f04699f2a9c4eccd3220751fdb233722`. Nothing is exposed — it holds two tracked files, no Python and
+no breadcrumb, and `provenance.py` is vendored only into MAM-simple and al-hatorah — but the
+plan's "origin basename equals the directory name in all nine repos checked" is true of the nine
+and not of the twenty. `repo_name` stays the override if a gist clone ever generates anything. The
+breadcrumb census otherwise reproduces: `MAM-basics/` ×462, `MAM-simple/` ×2, `al-hatorah/` ×3,
+plus the one `logical-name/` test fixture.
+
+**4. The al-hatorah wrapper's retirement rests on the NESTING, not on step 2 — and it had
+therefore been redundant since 2026-08-10.** `mb_cmn\provenance.py` walks a fixed `parents[2]`, so
+in `MAM-private\al-hatorah\py\mb_cmn\` it lands on a directory named `al-hatorah` **that has no
+`.git` of its own**; the chain reaches its last step and answers `al-hatorah`, which is the right
+answer. The old code did the same, for the same reason. The same holds inside a MAM-private
+worktree, whose copy of that tree is `<worktree>\al-hatorah`, so the worktree hazard the wrapper
+existed for cannot arise there at all. This confirms the prediction of the withdrawn third
+entanglement under "Interactions with the MAM-private programme" and sharpens it: nesting, not the
+derivation, is what makes the name stable. The pull was still owed, to keep the vendored copy in
+sync. `repo_paths.REPO_NAME` was **kept**, as this phase says: `view_model.py`'s
+`_generated_by_path` still formats an `al-hatorah/...` path itself. Output-neutral, checked rather
+than argued — `py\main_3d_make_override_diff_viewer.py` regenerated with **no artifact change at
+all** and its breadcrumbs still read `al-hatorah/py/main_3d_make_override_diff_viewer.py`;
+al-hatorah's `py\main_test.py` passes 3 tests.
+
+**5. The re-vendor ripple has an ordering, and this session got it wrong and paid one extra
+commit.** `vendoring/compare.py` derives `last_synced` from the date of the last commit touching
+each file in the **destination** repo, so committing a re-vendored copy anywhere is itself a
+change the next audit reports. **Commit the destination repos first, then run the audit, then
+commit the audit.** Done the other way round it takes a second audit commit, which is what
+`57b83cf` is. It does converge — `doc\vendoring-inventory.md` and `out\vendoring_*` live here and
+are vendored nowhere, so nothing reads them back. Two further things the audit showed: the
+al-hatorah group briefly split into a 23rd row reading `provenance.py … DIFFERS` while this repo's
+source was ahead of the vendored copy, and merged back to 22 rows and 155 files once
+MAM-private `c0540e5` landed, its `last_synced` now `mixed` (27 files at 2026-08-10,
+`provenance.py` at 2026-08-11); and holman-ketiv-qere's vendored `paths.py` went `no-commits` →
+`2026-08-11`, which is **Precondition 4's own mechanism in its benign form** — that repo's
+`e2d1f17` committed a file Phase 0 had already seen vendored, so a date cell that had nothing to
+name now names a commit.
+
+**6. MAM-with-doc's `unpinned-latest.html` was one head out of date, from Phase 0's own commit
+ordering.** Phase 0 regenerated it while MAM-parsed's head was still the 2026-08-09 commit and
+landed MAM-parsed's Graphviz commit `95f64d7` afterwards, so the page has read 2026-08-09 since.
+It now reads 2026-08-11, still "0 changes found". Nothing is wrong with the page; the lesson is
+that a phase committing several repos should regenerate **after** the repo a generated page reads
+has been committed, not before.
+
+**7. The worktree suite count went unmeasured though a worktree was in hand.** "How to run this
+plan across sessions" asks whichever session first has one to settle the 919 figure. This session
+had one and did not take it, because this phase's own verification forbids running the suite from
+a worktree and the instruction it was executed under repeated that. **The two instructions are in
+tension and a later session should not read the silence as an answer** — 919 remains unverified.
 
 ---
 
@@ -1411,6 +1529,14 @@ would have meant creating one for a measurement Phase 0 was not asked to take. *
 unverified, and is now doubly suspect**, being a worktree reading of a suite whose main-checkout
 count has itself moved from 913 to 903. Whichever session first has a worktree in hand should
 take it.
+
+**Phase 1 had one in hand on 2026-08-11 and did not take it, so read that as an unanswered
+question rather than an answer** — see its finding 7. This sentence and Phase 1's own "do not
+attempt the whole suite from a worktree" are in tension, and the tension is unresolved: that
+phase's ban is about not being misled by unreal failures during its verification, while this
+paragraph wants the number for its own sake. A session that wants to settle it should do so as a
+deliberate measurement, outside a phase's verification, and rewrite both paragraphs with what it
+gets.
 
 The instruction itself stands regardless of that number, on a ground the provenance fix does not touch: this
 plan's verifications are zero-diff and zero-mtime assertions over wlc-utils, MAM-private and the
