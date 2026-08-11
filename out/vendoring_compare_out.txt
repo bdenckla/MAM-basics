@@ -9,7 +9,7 @@ hebrew_letters.py                          MAM-simple                 py-example
 hebrew_points.py                           MAM-simple                 py-examples/mb_cmn/hebrew_points.py                     identical      2026-05-01   generated
 hebrew_punctuation.py                      MAM-simple                 py-examples/mb_cmn/hebrew_punctuation.py                identical      2026-05-01   generated
 my_utils.py                                MAM-simple                 py-examples/mb_cmn/my_utils.py                          identical      2026-07-15   generated
-provenance.py                              MAM-simple                 py-examples/mb_cmn/provenance.py                        identical      2026-08-07   generated
+provenance.py                              MAM-simple                 py-examples/mb_cmn/provenance.py                        identical      2026-08-11   generated
 shrink.py                                  MAM-simple                 py-examples/mb_cmn/shrink.py                            identical      2026-05-01   generated
 str_defs.py                                MAM-simple                 py-examples/mb_cmn/str_defs.py                          identical      2026-05-01   generated
 template_names.py                          MAM-simple                 py-examples/mb_cmn/template_names.py                    identical      2026-08-09   generated
