@@ -53,6 +53,7 @@ hebrew_punctuation.py                      holman-ketiv-qere          py/mb_cmn/
 hebrew_verse_numerals.py                   holman-ketiv-qere          py/mb_cmn/hebrew_verse_numerals.py                      identical      2026-04-27   
 mam_bknas.py                               holman-ketiv-qere          py/mb_cmn/mam_bknas.py                                  identical      2026-04-27   
 mam_bknas_and_std_bknas.py                 holman-ketiv-qere          py/mb_cmn/mam_bknas_and_std_bknas.py                    identical      2026-04-27   
+paths.py                                   holman-ketiv-qere          py/mb_cmn/paths.py                                      identical      no-commits   
 retired_kq_special_templates.py            holman-ketiv-qere          py/mb_cmn/retired_kq_special_templates.py               identical      2026-05-10   
 retired_template_names.py                  holman-ketiv-qere          py/mb_cmn/retired_template_names.py                     identical      2026-05-10   
 str_defs.py                                holman-ketiv-qere          py/mb_cmn/str_defs.py                                   identical      2026-04-27   
