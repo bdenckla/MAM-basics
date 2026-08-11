@@ -53,7 +53,7 @@ hebrew_punctuation.py                      holman-ketiv-qere          py/mb_cmn/
 hebrew_verse_numerals.py                   holman-ketiv-qere          py/mb_cmn/hebrew_verse_numerals.py                      identical      2026-04-27   
 mam_bknas.py                               holman-ketiv-qere          py/mb_cmn/mam_bknas.py                                  identical      2026-04-27   
 mam_bknas_and_std_bknas.py                 holman-ketiv-qere          py/mb_cmn/mam_bknas_and_std_bknas.py                    identical      2026-04-27   
-paths.py                                   holman-ketiv-qere          py/mb_cmn/paths.py                                      identical      no-commits   
+paths.py                                   holman-ketiv-qere          py/mb_cmn/paths.py                                      identical      2026-08-11   
 retired_kq_special_templates.py            holman-ketiv-qere          py/mb_cmn/retired_kq_special_templates.py               identical      2026-05-10   
 retired_template_names.py                  holman-ketiv-qere          py/mb_cmn/retired_template_names.py                     identical      2026-05-10   
 str_defs.py                                holman-ketiv-qere          py/mb_cmn/str_defs.py                                   identical      2026-04-27   
@@ -139,7 +139,7 @@ minirow.py                                 MAM-private                al-hatorah
 mpplus_schema_guard.py                     MAM-private                al-hatorah/py/mb_cmn/mpplus_schema_guard.py             identical      2026-08-10   
 my_diffs.py                                MAM-private                al-hatorah/py/mb_cmn/my_diffs.py                        identical      2026-08-10   
 my_utils.py                                MAM-private                al-hatorah/py/mb_cmn/my_utils.py                        identical      2026-08-10   
-provenance.py                              MAM-private                al-hatorah/py/mb_cmn/provenance.py                      identical      2026-08-10   
+provenance.py                              MAM-private                al-hatorah/py/mb_cmn/provenance.py                      identical      2026-08-11   
 read_books_from_mam_parsed_plus.py         MAM-private                al-hatorah/py/mb_cmn/read_books_from_mam_parsed_plus.py identical      2026-08-10   
 shrink.py                                  MAM-private                al-hatorah/py/mb_cmn/shrink.py                          identical      2026-08-10   
 str_defs.py                                MAM-private                al-hatorah/py/mb_cmn/str_defs.py                        identical      2026-08-10   
