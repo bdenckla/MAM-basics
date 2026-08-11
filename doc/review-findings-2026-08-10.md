@@ -129,6 +129,23 @@ found **no wrong code, no wrong data and no broken artifact** in the window.
    writes that file emits CRLF, the next regeneration shows line-ending churn.
    codex-index-aleppo's `*.csv eol=crlf` exception is the fix shape if it recurs.
 
+## How the review was acted on (2026-08-10, the same evening)
+
+All three actionables closed the day the review was filed, each verified rather than trusted:
+
+- **Finding 1** (#219 open with nothing left): closed on Ben's instruction, with a comment
+  citing this doc.
+- **Finding 2** (the stale test count): Ben ran the task chip; github-misc `5e6234d` and
+  `47dcfdb`. The live `~/.claude/CLAUDE.md` now says "~900 tests (as of 2026-08-10)", the
+  tracked copy is byte-identical (`fc /b`), both commits pushed. The chip also scoped the
+  registry-check paragraph to holman-ketiv-qere, MAM-basics no longer having a registry.
+- **Finding 6** (the Pillow deprecation): Ben ran the task chip; MAM-basics `7033f94`, the
+  one-line `getdata` → `get_flattened_data` change in `row_profile`. The 23
+  transcription-editor tests pass with the deprecation warnings gone.
+
+Findings 3, 4, 5 and 7 recommend no work (practices going forward, immutable messages, cosmetic
+records); finding 8 stays a watch item for cam1753's next page-index regeneration.
+
 ## Open ends the window itself declares (not findings)
 
 The al-hatorah evacuation's R.3/R.4, running or queued as this doc is written. MAM-basics #225,
