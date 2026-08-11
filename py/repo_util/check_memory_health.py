@@ -102,6 +102,20 @@ and 'C--Users-BenDe-GitRepos-breuer-cos' (clone deleted 2026-08-07) -- so a scan
 now should find no orphaned project directory at all. That is the expected
 state; one turning up is a finding.
 
+THREE MORE WERE CLEARED ON 2026-08-11, so the tally of clearings is five rather
+than two and the expected state above is restored rather than merely asserted.
+The private-repo evacuation deleted the mgketer, masorah-books and al-hatorah
+clones on 2026-08-09 and 2026-08-10, orphaning
+'C--Users-BenDe-GitRepos-mgketer', 'C--Users-BenDe-GitRepos-masorah-books' and
+the lowercase 'c--Users-BenDe-GitRepos-al-hatorah': 92 files, 81.2 MB, 48
+session transcripts and 25 memories. Each of those three phases had already
+copied its memories into 'C--Users-BenDe-GitRepos-MAM-private/memory' and left
+the source directory in place. Ben's decision at that programme's closing pass
+was to delete all three, taken once 24 of the 25 memories were verified present
+in MAM-private; the 25th was deliberately not carried, for the reason recorded
+in MAM-private's doc/PLAN-evacuate-private-repos.md. Every remaining project
+directory now names a live repo in GitRepos.
+
 THE LESSON, from the breuer-cos case: an orphaned memory directory is a QUESTION
 rather than an instruction to move the files. Its one memory,
 'wlc-koren-12th-is-a-worktree.md', was about wlc-utils rather than about Breuer,
@@ -116,7 +130,10 @@ AND THE ORPHANING CAN BE SILENT, which is the part worth guarding. This check
 walks only the repos a workspace file lists, so deleting a clone, or dropping a
 repo from all-repos.code-workspace, removes the very thing that would have
 reported that repo's memory. Look at the memory before doing either -- once the
-repo is gone from the list, nothing will raise it again.
+repo is gone from the list, nothing will raise it again. That is not a warning
+about a hypothetical: all three directories cleared on 2026-08-11 had been
+sitting there unreported for a day or two, and each of the three phases that
+created one measured the silence deliberately rather than discovering it.
 
 Two neighbours in that directory are deliberately NOT repo memory and are
 skipped: 'C--Users-BenDe-GitRepos' itself (sessions started from the GitRepos
