@@ -173,13 +173,25 @@ def al_hatorah_phonetic_dir() -> Path:
     syllable, which is what makes this an independent oracle for ``accgram.final_stress``.  The
     engine behind it is al-hatorah's ``py/aht_phon``, which cannot be imported here -- issue wlc-utils#48
     calls consuming these outputs its second path, and this is that path.
+
+    A subdirectory of MAM-private since 2026-08-10, not a sibling clone of its own: the
+    private evacuation programme moved every tracked file of ``bdenckla/al-hatorah``
+    under ``MAM-private\\al-hatorah\\`` and empties that repo to a breadcrumb README
+    (``MAM-private\\doc\\PLAN-evacuate-private-repos.md``, phases R.0-R.4).  So the env
+    override that moves this tree is now ``REPO_MAM_PRIVATE_DIR``; ``REPO_AL_HATORAH_DIR``
+    no longer reaches it, there being no sibling by that name to resolve.  Same shape as
+    ``wlc_utils_private_dir`` above, which that programme repointed two days earlier.
     """
-    return sibling("al-hatorah") / "io" / "a01-phonetic-std-set"
+    return sibling("MAM-private") / "al-hatorah" / "io" / "a01-phonetic-std-set"
 
 
 def require_al_hatorah_phonetic_dir() -> Path:
-    """``al_hatorah_phonetic_dir``, checked -- see ``require_sibling`` for why this is not a skip."""
-    return require_sibling("al-hatorah", al_hatorah_phonetic_dir())
+    """``al_hatorah_phonetic_dir``, checked -- see ``require_sibling`` for why this is not a skip.
+
+    The clone named is MAM-private, not al-hatorah, so the failure advertises
+    ``REPO_MAM_PRIVATE_DIR`` -- the override that actually moves this tree.
+    """
+    return require_sibling("MAM-private", al_hatorah_phonetic_dir())
 
 
 def uxlc_utils_dir() -> Path:
