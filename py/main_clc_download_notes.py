@@ -1,4 +1,4 @@
-"""Exports main: download tanach.us note pages into committed files.
+"""Exports main: download UXLC note pages into committed files.
 
 This is the *network* half of CLC notes, kept separate from the build on purpose
 (like py/main_uxlc_download_changes.py downloads the core UXLC XML): the CLC build
@@ -9,19 +9,25 @@ Usage (run from the repo root, network required, NOT part of the default build):
 
     python py/main_clc_download_notes.py            # all 39 books
     python py/main_clc_download_notes.py BookId      # just one book (dev/testing)
-    python py/main_clc_download_notes.py --host <h>  # fetch from h, not tanach.us
+    python py/main_clc_download_notes.py --host <h>  # fetch from h
+
+Fetches from my_uxlc.UXLC_DOWNLOAD_HOST -- hcanat.us, not tanach.us.  READ THAT
+CONSTANT BEFORE RUNNING THIS: hcanat.us' /Books/ and /Changes/ match tanach.us byte
+for byte, but its note pages come from a NEWER TEMPLATE than the 477 already
+committed here, so a run against the default mixes two templates under in/UXLC-notes/
+for clc_note_pages to parse.  Whether to accept that is undecided as of 2026-08-12.
 
 For every atom carrying a UXLC ``<x>`` code -- every code, not just the note-
 surfacing seed the build reads (clc_collect.NOTED_CODES); issue #25 wants the
 complete note dataset on hand, including the codes (numeric / "X") that turn out
 to have no page at all -- fetch
-``https://tanach.us/Notes/<name>/<name>.<ch>.<v>.<position>-<code>.html`` -- where
+``https://<host>/Notes/<name>/<name>.<ch>.<v>.<position>-<code>.html`` -- where
 ``<name>`` is the canonical UXLC book name (my_uxlc.book_basename; e.g. id
 "2Samuel" -> "Samuel_2"), the part that the build path historically got wrong --
 and write the HTML to the committed
 ``in/UXLC-notes/<book_id>/<book_id>.<ch>.<v>.<position>-<code>.html``. A page
 already present locally is left alone and not re-fetched -- this run is resumable
-and re-runnable without re-hitting tanach.us for pages already on hand.
+and re-runnable without re-hitting the host for pages already on hand.
 
 (The pages reference detail images, e.g. ``.../images/.../2-Detail.jpg``; pulling
 those down can be added here later -- see the note in the loop.)
@@ -42,12 +48,14 @@ import clc.clc_read as clc_read
 import uxlc_paths
 
 
-def _download_one(session, book_id, ch, v, position, code, host=my_uxlc.UXLC_HOST):
+def _download_one(
+    session, book_id, ch, v, position, code, host=my_uxlc.UXLC_DOWNLOAD_HOST
+):
     """Fetch one note page and write it locally; return True if now present.
 
     Returns True without touching the network if the page is already committed.
     Returns False if the page is missing (404 -- the note predates the change log,
-    or tanach.us has none) or the request fails after retries.
+    or the host has none) or the request fails after retries.
     """
     out_path = clc_note_pages.local_page_path(book_id, ch, v, position, code)
     if out_path.exists():
@@ -121,8 +129,8 @@ def _parse_args():
     )
     parser.add_argument(
         "--host",
-        default=my_uxlc.UXLC_HOST,
-        help=f"host to fetch from (default {my_uxlc.UXLC_HOST})",
+        default=my_uxlc.UXLC_DOWNLOAD_HOST,
+        help=f"host to fetch from (default {my_uxlc.UXLC_DOWNLOAD_HOST})",
     )
     return parser.parse_args()
 

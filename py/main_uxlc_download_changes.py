@@ -2,8 +2,9 @@
 Base Usage:
 .venv/Scripts/python.exe py/main_uxlc_download_changes.py
 
-``--host`` fetches from somewhere other than tanach.us -- see my_uxlc.UXLC_HOST. A
-run with it does NOT go on to rebuild: see main().
+Fetches from my_uxlc.UXLC_DOWNLOAD_HOST -- hcanat.us, not tanach.us, and see that
+constant for why.  ``--host`` fetches from somewhere else again, and a run with it
+does NOT go on to rebuild: see main().
 """
 
 import argparse
@@ -37,7 +38,7 @@ def _uxlc_zip_url(host):
     return f"https://{host}/Books/Tanach.xml.zip"
 
 
-def _do_one_download(session, date, host=my_uxlc.UXLC_HOST):
+def _do_one_download(session, date, host=my_uxlc.UXLC_DOWNLOAD_HOST):
     filename = uxlc_release_xml_filename(date)
     url = uxlc_release_xml_url(date, host)
     out_path = uxlc_paths.uxlc_misc_dir() / filename
@@ -50,7 +51,7 @@ def _write_callback(text, out_fp):
     out_fp.write(text)
 
 
-def _download_latest_uxlc(session, host=my_uxlc.UXLC_HOST):
+def _download_latest_uxlc(session, host=my_uxlc.UXLC_DOWNLOAD_HOST):
     uxlc_paths.uxlc_39_dir().mkdir(parents=True, exist_ok=True)
     uxlc_paths.uxlc_rest_dir().mkdir(parents=True, exist_ok=True)
     uxlc_paths.novc_dir().mkdir(parents=True, exist_ok=True)
@@ -89,10 +90,15 @@ def _show_progress(path):
 def main():
     """Download UXLC inputs, then rebuild downstream derived outputs.
 
-    A ``--host`` run stops after downloading and does NOT rebuild. What another
-    host serves under ``/Books/`` and ``/Changes/`` is that host's, and the tracked
-    outputs are built from UXLC as tanach.us publishes it; rebuilding from a
-    ``--host`` fetch would put another host's bytes into them silently.
+    The default run fetches from my_uxlc.UXLC_DOWNLOAD_HOST and DOES rebuild.  A
+    ``--host`` run naming any other host stops after downloading and does not:
+    what a third host serves under ``/Books/`` and ``/Changes/`` is that host's,
+    and rebuilding from it would put those bytes into the tracked outputs
+    silently.
+
+    Until 2026-08-12 this guard read ``!= UXLC_HOST``, and the rebuilding host was
+    the publishing host, tanach.us.  Those are two hosts now -- see
+    UXLC_DOWNLOAD_HOST -- and it is the DOWNLOAD host a default run rebuilds from.
     """
     sys.stdout.reconfigure(encoding="utf-8")
     sys.stderr.reconfigure(encoding="utf-8")
@@ -104,7 +110,7 @@ def main():
                 continue
             date = filename[:10]
             _do_one_download(session, date, args.host)
-    if args.host != my_uxlc.UXLC_HOST:
+    if args.host != my_uxlc.UXLC_DOWNLOAD_HOST:
         print(f"--host {args.host}: downloaded only, not rebuilding")
         return
     main_uxlc_mega.main()
@@ -114,8 +120,8 @@ def _parse_args():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
         "--host",
-        default=my_uxlc.UXLC_HOST,
-        help=f"host to fetch from (default {my_uxlc.UXLC_HOST})",
+        default=my_uxlc.UXLC_DOWNLOAD_HOST,
+        help=f"host to fetch from (default {my_uxlc.UXLC_DOWNLOAD_HOST})",
     )
     return parser.parse_args()
 
