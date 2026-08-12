@@ -15,3 +15,13 @@
 #       for them in the working dir.
 #
 *.csv text eol=crlf
+
+# Binary assets: never convert. Copied verbatim from wlc-utils' .gitattributes
+# (wlc-utils#50) ahead of that repo's corpus arriving, because git applies
+# .gitattributes at `git add` time: were these rules to differ between the two
+# repos, the incoming blob would differ too, and byte-identity with the original
+# is the evidence that the copy is exact.
+*.png  binary
+*.jpg  binary
+*.pdf  binary
+*.woff2 binary
