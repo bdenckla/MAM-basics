@@ -14,14 +14,20 @@ to this file's first commit apart from its header, so `git show` recovers it.
 **So do not re-create one.** If a future session drafts in `~/.claude/plans/` again, fold it in
 here and delete it, as `8daef35` did with two such scratch plans.
 
-**Phases 0, 1 and 2 are done — 0 and 1 on 2026-08-11, 2 on 2026-08-12. No file has moved yet**, no
-GitHub setting has been touched, and wlc-utils holds the same 626 tracked files it always did, still
-at `c501dc0`. Phase 0 is a preflight, Phase 1 edits only `py/mb_cmn/provenance.py` and its test, and
-Phase 2 edits only MAM-basics' own `.gitattributes`, so the only thing any of the three changed in
-wlc-utils is the freeze notice Phase 0 was asked to land there — see Precondition 1. Phases 3
+**Phases 0 through 3 are done — 0 and 1 on 2026-08-11, 2 and 3 on 2026-08-12. Nothing has been
+deleted from wlc-utils: it holds the same 626 tracked files it always did, still at `c501dc0`.**
+Phase 3 **copied** 620 of them into MAM-basics rather than moving them — that is the dual-residency
+window — and the six loose root files stayed behind. **The site is live**, which is new as of Phase
+3: Ben enabled Pages on 2026-08-11, `.github/workflows/pages.yml` arrived with the corpus, and Phase
+3's push fired the first deploy, so `https://bdenckla.github.io/MAM-basics/wlc/` serves.
+`https://bdenckla.github.io/MAM-basics/` itself 404s until Phase 6 adds `gh-pages/index.html`, by
+design. Phase 0 is a preflight, Phase 1 edits only `py/mb_cmn/provenance.py` and its test, and Phase
+2 edits only MAM-basics' own `.gitattributes`, so the only thing any of the four phases changed in
+wlc-utils is the freeze notice Phase 0 was asked to land there — see Precondition 1. Phases 4
 through 11 are unstarted. (This paragraph read "Nothing has been executed. Every phase below is
-unstarted" until Phase 0 ran, named Phase 0 alone until Phase 1 ran, and named Phases 0 and 1 until
-Phase 2 ran.)
+unstarted" until Phase 0 ran, and has been rewritten at each phase since. Until Phase 3 it also said
+"No file has moved yet" and "no GitHub setting has been touched"; both are now false, which is why
+they are replaced here rather than softened.)
 
 Written 2026-08-03, on the model of `doc/PLAN-evacuate-python-from-wlc-utils.md`, which is its
 precedent in shape and in discipline. Every number below is stated with the command that
@@ -40,7 +46,7 @@ stale).
 | 0 — Preflight: baseline, manifest, collision census | **DONE 2026-08-11**, MAM-basics `5344a74` + this write-back, plus three baseline commits in three other repos and one freeze commit in wlc-utils (`c501dc0`). Every census claim re-measured and every one reproduces, the load-bearing zero-self-links figure included. The circuit ran green and **wlc-utils came through it with zero files changed**. **The baseline was NOT clean at first look — 17 files across three repos, from three unrelated causes**, all now committed. Suite is **903 passed / 5 skipped**, not the 913 this plan carried. Three findings this plan did not predict, the sharpest being that **a sibling repo's vendoring drifts this repo's own tracked tree**. Findings under Phase 0 below |
 | 1 — The provenance worktree fix | **DONE 2026-08-11.** All three remaining pieces landed: step 2 in MAM-basics `0008eb8`, the tautology-test repairs in the same commit, and the al-hatorah wrapper **retired** in MAM-private `20dfb63` after `c0540e5` pulled the new vendored copy. The re-vendor ripple cost three more commits in three repos — MAM-simple `bae0bff`, MAM-basics `1097530` and `57b83cf` — and MAM-with-doc `d2dc6e5` for a by-design drift the circuit surfaced. Baseline reproduced exactly: **903 passed / 5 skipped**, ruff and black clean at 771 files, wlc-utils' manifest byte-identical and **wlc-utils unmoved at `c501dc0` throughout**. Seven findings, the sharpest being that **this phase's own verification (b) was stale and tested the wrong thing** — `38a3bc7` had already made a worktree run come out right, and the generator the plan names writes no breadcrumb at all. Finding 7 also **settles the long-unverified worktree suite count**: 903 / 5 from a worktree with `REPOS_ROOT` set, identical to the main checkout, zero unreal failures, 919 dead. Findings under Phase 1 below |
 | 2 — `.gitattributes` merge | **DONE 2026-08-12**, MAM-basics `30f985b` + this write-back. The four binary declarations landed verbatim, `*.csv text eol=crlf` kept, `* text=auto eol=lf` untouched — and **`git check-attr -a` resolves identically in the two repos** for both paths this phase names, which is the property layer 1 actually needs: agreement between the repos, not any particular attribute value. `GITATTRIBUTES_LF=True`, tree clean, no circuit run and none needed. Three findings, the sharpest being that **this plan's baseline had already moved when the phase began** — MAM-basics was at `e4d7997`, three commits past Phase 1's `9194265`, all three landed the same day. Findings under Phase 2 below |
-| 3 — Copy the corpus in (dual residency) | **not started** |
+| 3 — Copy the corpus in (dual residency) | **DONE 2026-08-12**, MAM-basics `f99996f` + this write-back. **620 files land, not the 626 this phase's own verify line claims** — the six loose root files do not travel, exactly as Phase 0's disposition table says — so layer 1 reads **620 of 620 SHA-1 matches**, zero missing, zero mode mismatches, path deltas exactly the 284 `gh-pages/wlc/` prefixes and the one `lci_recs.json` rename. Suite **903 passed / 5 skipped**, ruff clean, black clean at 771 files, all unchanged; **wlc-utils untouched at `c501dc0`**, so Phase 0's manifest stands. **The site is live and the deploy went green**: 8 of 8 HTTP checks as expected, every page byte-identical to what was committed, and the site root 404s by design until Phase 6. Four findings, the sharpest being that **the NFC lint's first failure was a crash on an extensionless GIF, not the offender report this phase predicts**. Findings under Phase 3 below |
 | 4 — Licence scoping | **partly landed 2026-08-10, outside this plan**: the root-level structure exists — `DATA-LICENSES.md` (path-by-path map plus the MAM CC-BY-SA statement) and `README.md`'s `## License` section — because MAM-basics' own MAM and chabad.org data had the same ambiguity with no wlc-utils involved. Remaining: add the arriving wlc paths as rows, and place CC0 only where Phase 4's "Where CC0 must NOT go" paragraph allows |
 | 5 — Collapse `wlc_paths.py`; repoint every generator | **not started** |
 | 6 — Pages live on MAM-basics — ~~**manual gate**~~ **no gate left** | **not started**, and **narrowed 2026-08-11**: its manual gate was Ben enabling Pages, done that day, and its "copy the workflow" step moved to Phase 3, which now publishes the site (Ben: "Let it land"). What remains here is `gh-pages/index.html`, checking the pins against the file Phase 3 landed, and the HTTP list |
@@ -1047,7 +1053,7 @@ is why this commit's diff really is ten lines of `.gitattributes` and nothing mo
 
 ---
 
-## Phase 3 — Copy the corpus in (dual residency)
+## Phase 3 — Copy the corpus in (dual residency) — DONE 2026-08-12
 
 *In MAM-basics. wlc-utils is not touched at all.* Nothing here reads the new files yet; the
 generators still write into the sibling. **That is the dual-residency window and it is safe** —
@@ -1102,6 +1108,11 @@ holds without an exception, and **layer 1 stays whole at 626 of 626 in a single 
 splitting 625-plus-1 across two, which would have made this plan's sharpest assertion the one thing
 in it needing a footnote.
 
+**Those two figures are wrong and the argument they serve is not — the real pair is 620-of-620
+against 619-plus-1.** Six of the 626 are loose root files that do not travel, per Phase 0's
+disposition table, so this phase lands 620. Measured at execution, 2026-08-12; finding 1 below.
+Nothing about the decision changes, only its arithmetic.
+
 **The alternative Ben turned down, recorded so it is not re-proposed:** defer
 `.github/workflows/pages.yml` to Phase 6, landing 625 files here. It would have kept Phase 6 as the
 moment of publication and kept that phase's manual gate real. It was rejected because splitting
@@ -1149,6 +1160,99 @@ covered for free.
 626 SHA-1 matches**, path deltas exactly the `gh-pages/wlc/` prefix and the one `lci_recs.json`
 rename. Then `py\main_test.py` at its Phase 0 count; `git status --porcelain` empty in wlc-utils
 (nothing was touched) and clean here after the commit.
+
+**The count in that paragraph is 620, not 626, for the reason two paragraphs above** — the six loose
+root files do not travel. Everything else in it was run as written and passed. The wrong figure is
+left standing so the execution record below reads against what it was checking.
+
+### Execution record — Phase 3, 2026-08-12
+
+Began at MAM-basics `93b9b90`, wlc-utils `c501dc0`, both clean, both pushed, neither holding a
+worktree. Landed as `f99996f`, one commit, pushed fast-forward with no force. **wlc-utils ends this
+phase exactly where it began** — `c501dc0`, `git status --porcelain` empty — so Phase 0's manifest
+stands unchanged and needed no re-take.
+
+**Precondition 4 was checked on both logs, as Phase 2's finding 2 requires, and it was clear.**
+holman-ketiv-qere clean, no worktree, its last commit `69b13f0` at 12:06:32; MAM-basics' own log
+holds nothing from that undertaking after `e4d7997` at 13:35:11, everything later being Phase 2's
+own `30f985b` and `93b9b90` at 15:59 and 16:02. This phase began at 16:06. Ben's statement of
+2026-08-12 that the work is finished therefore held, on the evidence of both logs rather than one —
+which is the check Phase 2 asked for, run.
+
+**No generator, no mega and no circuit ran, and none was needed.** Nothing here reads the new files
+and no generator was repointed, so there is no artifact to regenerate; a circuit run could only have
+introduced drift into the frozen reference this phase's whole method depends on. Layer 2 arrives at
+Phase 5, as the plan says.
+
+**The baseline reproduced before anything was copied.** Suite **903 passed / 5 skipped**, the figure
+Phases 0, 1 and 2 all measured. The manifest `.novc\wlc-rest-phase0\wlc-manifest-c501dc0.txt`
+re-hashed to sha256 `28c94cde461849fbffd53ac16de12a6d9f4eb1804a9ce95e1baa212ea51c1ade` at 626 rows,
+byte-identical to Phase 0's. After the one Python edit, `ruff check py` clean and `black --check py`
+clean at 771 files — Phase 1's figure exactly.
+
+**Layer 1 passed on the first run: 620 of 620 SHA-1 matches**, zero missing, zero SHA-1 mismatches,
+zero mode mismatches, and the path deltas exactly the 285 the plan predicts — 284 `gh-pages/wlc/`
+prefixes plus `data/lci_recs.json` → `in/lci_recs.json`. Staged additions by top-level directory:
+`gh-pages` 284, `out` 193, `in` 136 (135 plus the renamed `lci_recs.json`), `doc` 6, `.github` 1.
+**No Python arrived**, wlc-utils having had none since the 2026-08-01 evacuation, which is why `ruff`
+and `black` are unmoved. The scripts are in `.novc\wlc-rest-phase3\`.
+
+**The site is live and the deploy went green.** Run `31636754716` on `f99996f`, conclusion `success`
+— the first Pages run this repo has ever had, its only prior workflow run being a 2026-05-14 Copilot
+agent. **8 of 8 HTTP checks came out as expected, and each served page is byte-identical to the
+committed file**, sha256-compared rather than eyeballed: `/wlc/index.html` and `/wlc/style.css` at
+depth 1, `/wlc/accgram/almost-errors.html` at depth 2, `/wlc/420422/` resolving to its `index.html`,
+`/wlc/420422/full-record/420422-01.html` at depth 3, the 296 KB
+`/wlc/accgram/goerwitz.html` that tanach.us cites five times, and the `woff2` as a binary case.
+**`https://bdenckla.github.io/MAM-basics/` itself returns 404, which is obligation 4 satisfied
+rather than damage** — `gh-pages/index.html` is Phase 6's to add, and until it does, the site root
+404s while everything under `/wlc/` serves. Do not chase it.
+
+#### Findings
+
+**1. Layer 1's figure is 620, not 626 — this phase contradicted Phase 0, and Phase 0 is the side
+that is right.** Phase 3's verify line asks for "626 of 626 SHA-1 matches" and its publish box argues
+from "626 of 626 ... rather than splitting 625-plus-1". Phase 0's disposition table says the
+opposite in as many words: `.gitattributes`, `.gitignore`, `CLAUDE.md`, `LICENSE`, `README.md` and
+`wlc-utils.code-workspace` do not travel, "so 'everything travels' means ~620 files, not 626". 620
+is what landed. **The publish box's argument survives with its arithmetic corrected** — landing
+`.github/workflows/pages.yml` here keeps layer 1 whole at 620 of 620 rather than splitting it
+619-plus-1 across two phases — so nothing about Ben's "Let it land" decision is disturbed. Both
+figures are corrected in place above, at the box and at the verify line.
+
+**2. The NFC lint's first failure was a CRASH on an extensionless GIF, not the offender report this
+phase predicts — and it is the very file Phase 2 told Phase 3 not to add a glob for.** With the
+corpus staged and the scoping edit not yet made, both scanning tests died with `UnicodeDecodeError:
+'utf-8' codec can't decode byte 0xb3 in position 10` on
+`in/Tanach-26.0--UXLC-1.0--2020-04-01/Images/Background`, whose first bytes are `GIF89a`.
+`_is_binary` tests the file *extension* and that file has none, so `read_text` raises before a single
+offender is reached; it is the one file in the whole MAM-basics scope that git calls binary
+(`i/-text`) while the lint calls it text. **The exclusion this phase prescribes for a different
+reason — external tanach.us snapshot — is what keeps it out**, so the prescribed edit was sufficient
+as written and needed no widening. But a session that had trimmed the exclusion list to just the
+three files carrying the seven sequences would have left the crash in place. **Phase 2 remains right
+that no `.gitattributes` glob is wanted for that file**: that is git's content detection, this is the
+lint's scope, and they are different mechanisms with different answers.
+
+**3. The seven offending sequences reproduce exactly, and the scoping edit lands where it was aimed.**
+One at `in/UXLC-39/Psalms.xml:758`, four at `in/UXLC-misc/all_changes.json:21749,21757,33951,33982`,
+two at `in/accgram/uxlc_accent_changes.json:8489,8497` — the same three files and the same
+distribution the phase names, measured rather than assumed. After the edit, incoming files inside the
+MAM-basics NFC scope fall from **294 to 34**, and the 34 are the right ones: **24 of them are the
+edition transcriptions under `in/accgram/edition_transcriptions/`**, the exact count this phase
+insists must stay in scope, plus the six `doc/` files, three other hand-authored `in/accgram/` JSONs,
+`.github/workflows/pages.yml`, and `in/lci_recs.json` — whose staying in scope is part of what the
+rename out of `data/` was for. Zero undecodable files and zero cluster hits remain.
+
+**4. One file drew a CRLF warning at `git add` time and it is not a defect — it is layer 1 earning
+its keep.** `in/accgram/edition_transcriptions/koren_dt_elyon.txt` warned that "CRLF will be replaced
+by LF the next time Git touches it". Both repos report `i/lf w/crlf attr/text=auto eol=lf` for it:
+the working-tree copy carries 129 CRs and the index blob is LF, and that was already true in
+wlc-utils. The on-disk bytes are identical in the two repos (8392 each) and the blob matched, because
+`text=auto` normalized on add exactly as it had in wlc-utils. **The lesson for Phases 9 and 10 is
+that the working tree and the blob can legitimately disagree, so a copy must be verified at the blob
+level** — comparing working-tree bytes would have been the wrong instrument here even though it
+happens to agree.
 
 ---
 
