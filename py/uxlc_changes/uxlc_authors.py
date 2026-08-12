@@ -19,7 +19,10 @@ MAIL_AND_CONFIRMED = {
     "CVK": ((None, None), ("mail@cvkimball.com", "true")),
     "Dotan BHLA: CVK": (None, "false"),
     #
-    "Daniel Holman": ("daniel.holman@mail.com", "true"),
+    "Daniel Holman": (
+        ("daniel.holman@mail.com", "true"),
+        ("daniel.holman@usa.com", "true"),
+    ),
     "Ben Denckla": ("bdenckla@alum.mit.edu", "true"),
     "Allan Johnson": ("allan_johnson@wycliffe.org", "true"),
     "Gary Luhovey": ("gluho@timbarabooks.org", "true"),
