@@ -14,7 +14,7 @@ to this file's first commit apart from its header, so `git show` recovers it.
 **So do not re-create one.** If a future session drafts in `~/.claude/plans/` again, fold it in
 here and delete it, as `8daef35` did with two such scratch plans.
 
-**Phases 0 through 3 are done — 0 and 1 on 2026-08-11, 2 and 3 on 2026-08-12. Nothing has been
+**Phases 0 through 4 are done — 0 and 1 on 2026-08-11, 2 through 4 on 2026-08-12. Nothing has been
 deleted from wlc-utils: it holds the same 626 tracked files it always did, still at `c501dc0`.**
 Phase 3 **copied** 620 of them into MAM-basics rather than moving them — that is the dual-residency
 window — and the six loose root files stayed behind. **The site is live**, which is new as of Phase
@@ -22,8 +22,9 @@ window — and the six loose root files stayed behind. **The site is live**, whi
 3's push fired the first deploy, so `https://bdenckla.github.io/MAM-basics/wlc/` serves.
 `https://bdenckla.github.io/MAM-basics/` itself 404s until Phase 6 adds `gh-pages/index.html`, by
 design. Phase 0 is a preflight, Phase 1 edits only `py/mb_cmn/provenance.py` and its test, and Phase
-2 edits only MAM-basics' own `.gitattributes`, so the only thing any of the four phases changed in
-wlc-utils is the freeze notice Phase 0 was asked to land there — see Precondition 1. Phases 4
+2 edits only MAM-basics' own `.gitattributes`, and Phase 4 edits only MAM-basics' two root licence
+files, so the only thing any of the five phases changed in
+wlc-utils is the freeze notice Phase 0 was asked to land there — see Precondition 1. Phases 5
 through 11 are unstarted. (This paragraph read "Nothing has been executed. Every phase below is
 unstarted" until Phase 0 ran, and has been rewritten at each phase since. Until Phase 3 it also said
 "No file has moved yet" and "no GitHub setting has been touched"; both are now false, which is why
@@ -47,7 +48,7 @@ stale).
 | 1 — The provenance worktree fix | **DONE 2026-08-11.** All three remaining pieces landed: step 2 in MAM-basics `0008eb8`, the tautology-test repairs in the same commit, and the al-hatorah wrapper **retired** in MAM-private `20dfb63` after `c0540e5` pulled the new vendored copy. The re-vendor ripple cost three more commits in three repos — MAM-simple `bae0bff`, MAM-basics `1097530` and `57b83cf` — and MAM-with-doc `d2dc6e5` for a by-design drift the circuit surfaced. Baseline reproduced exactly: **903 passed / 5 skipped**, ruff and black clean at 771 files, wlc-utils' manifest byte-identical and **wlc-utils unmoved at `c501dc0` throughout**. Seven findings, the sharpest being that **this phase's own verification (b) was stale and tested the wrong thing** — `38a3bc7` had already made a worktree run come out right, and the generator the plan names writes no breadcrumb at all. Finding 7 also **settles the long-unverified worktree suite count**: 903 / 5 from a worktree with `REPOS_ROOT` set, identical to the main checkout, zero unreal failures, 919 dead. Findings under Phase 1 below |
 | 2 — `.gitattributes` merge | **DONE 2026-08-12**, MAM-basics `30f985b` + this write-back. The four binary declarations landed verbatim, `*.csv text eol=crlf` kept, `* text=auto eol=lf` untouched — and **`git check-attr -a` resolves identically in the two repos** for both paths this phase names, which is the property layer 1 actually needs: agreement between the repos, not any particular attribute value. `GITATTRIBUTES_LF=True`, tree clean, no circuit run and none needed. Three findings, the sharpest being that **this plan's baseline had already moved when the phase began** — MAM-basics was at `e4d7997`, three commits past Phase 1's `9194265`, all three landed the same day. Findings under Phase 2 below |
 | 3 — Copy the corpus in (dual residency) | **DONE 2026-08-12**, MAM-basics `f99996f` + this write-back. **620 files land, not the 626 this phase's own verify line claims** — the six loose root files do not travel, exactly as Phase 0's disposition table says — so layer 1 reads **620 of 620 SHA-1 matches**, zero missing, zero mode mismatches, path deltas exactly the 284 `gh-pages/wlc/` prefixes and the one `lci_recs.json` rename. Suite **903 passed / 5 skipped**, ruff clean, black clean at 771 files, all unchanged; **wlc-utils untouched at `c501dc0`**, so Phase 0's manifest stands. **The site is live and the deploy went green**: 8 of 8 HTTP checks as expected, every page byte-identical to what was committed, and the site root 404s by design until Phase 6. Four findings, the sharpest being that **the NFC lint's first failure was a crash on an extensionless GIF, not the offender report this phase predicts**. Findings under Phase 3 below |
-| 4 — Licence scoping | **partly landed 2026-08-10, outside this plan**: the root-level structure exists — `DATA-LICENSES.md` (path-by-path map plus the MAM CC-BY-SA statement) and `README.md`'s `## License` section — because MAM-basics' own MAM and chabad.org data had the same ambiguity with no wlc-utils involved. Remaining: add the arriving wlc paths as rows, and place CC0 only where Phase 4's "Where CC0 must NOT go" paragraph allows |
+| 4 — Licence scoping | **DONE 2026-08-12**, MAM-basics `20bb89e` + this write-back. Thirteen rows added to `DATA-LICENSES.md` and the CC0 1.0 text repeated verbatim at the end of it, beside the MAM statement — **but no CC0 `LICENSE` file was placed in any subtree**, because not one of the three trees this phase names holds only Ben's own work. Coverage checked mechanically rather than by eye: **620 of 620** moved paths are named by a licence statement, **276** are claimed for CC0, and **zero** of those 276 fall in the excluded set. Suite **903 passed / 5 skipped**, no Python touched, no generator or circuit run. Four findings, the sharpest being that **`gh-pages/wlc/` holds 124 scan crops of manuscripts and printed editions** — so this phase's own instruction to place a CC0 file there would have dedicated Koren's and the Leningrad Codex's photography to the public domain. Findings under Phase 4 below |
 | 5 — Collapse `wlc_paths.py`; repoint every generator | **not started** |
 | 6 — Pages live on MAM-basics — ~~**manual gate**~~ **no gate left** | **not started**, and **narrowed 2026-08-11**: its manual gate was Ben enabling Pages, done that day, and its "copy the workflow" step moved to Phase 3, which now publishes the site (Ben: "Let it land"). What remains here is `gh-pages/index.html`, checking the pins against the file Phase 3 landed, and the HTTP list |
 | 7 — Repoint the `420422` blob URL | **not started** |
@@ -1256,7 +1257,7 @@ happens to agree.
 
 ---
 
-## Phase 4 — Licence scoping
+## Phase 4 — Licence scoping — DONE 2026-08-12
 
 *In MAM-basics.* Small, and best done while the arriving trees are still obviously separable.
 
@@ -1287,6 +1288,15 @@ Place a verbatim copy of wlc-utils' CC0 `LICENSE` at each arriving tree that hol
 work — `gh-pages/wlc/LICENSE`, and one covering the wlc portions of `in/` and `out/`. Prefer the
 fewest declarations that unambiguously cover the moved paths over one per directory.
 
+**No such tree exists, so no CC0 file was placed anywhere — measured at execution, 2026-08-12,
+finding 1 below.** `gh-pages/wlc/` fails the test as squarely as `in/` does: 124 of its 284 files
+are crops of manuscript and printed-edition photography. Ben's decision is unchanged and was
+executed; what is dropped is the prediction that the CC0-able material would fall on directory
+boundaries a `LICENSE` file could sit at. The dedication is made in `DATA-LICENSES.md`'s table
+instead, path by path, with the CC0 text repeated verbatim at the end of that file beside the MAM
+statement — which is the "fewest declarations that unambiguously cover the moved paths" this
+paragraph asks for, since the CC0 boundary is not a directory in any of the three trees.
+
 **Where CC0 must NOT go — checked 2026-08-10, and it narrows the decision above rather than
 reversing it.** Kimball's `in/Tanach-26.0--UXLC-1.0--2020-04-01/License.html` grants two different
 things: the biblical Hebrew text "may be viewed or copied without restriction", but "All other
@@ -1295,6 +1305,15 @@ permission for any purpose." Two arriving trees are mostly those other files —
 `in/wlc422/` hold `WLCmanual420.pdf`, `WLC_Manual422.pdf` and five release-notes HTML pages
 between them, no biblical text among them. A CC0 file placed over the arriving `in/` wholesale
 would dedicate Kimball's copyrighted manual to the public domain, which is not Ben's to do.
+
+**"No biblical text among them" is wrong, and the error runs the safe way — measured 2026-08-12,
+finding 2 below.** Those two trees hold sixteen files, and `wlc420_ps.txt` and `wlc422_ps.txt` are
+3.46 MB each of the Westminster Leningrad Codex in Michigan-Claremont transliteration, each opening
+with the J. Alan Groves Center's own header: "This file may be redistributed only with permission."
+So the trees carry the **strictest** terms in the repository rather than merely Kimball's reserved
+files, and this paragraph's conclusion is strengthened, not disturbed. The header reaches the 102
+files of `out/wlc420*/`, `out/wlc422*/` and the two loose `out/diff_*.json` as well, that being the
+same text restructured.
 
 **Nor is `in/accgram/` uniformly Ben's**, which is the trap inside the trap: 25 of its 27 files
 are his — `printed_decalogue_teamim.json` and the 24 hand transcriptions under
@@ -1309,6 +1328,105 @@ naming its real terms instead. `License.html` travels unchanged either way.
 **Verify:** `git status` clean after the commit; a reader landing on any moved path can reach a
 licence statement that names it, and no path is claimed for CC0 that the paragraphs above exclude.
 No artifact changes, so no regeneration is owed.
+
+### Execution record — Phase 4, 2026-08-12
+
+Began at MAM-basics `e6c3141`, wlc-utils `c501dc0`, both clean, both pushed, neither holding a
+worktree — Phase 3's closing baseline, reproduced exactly, with MAM-basics at **1906** tracked
+files and wlc-utils at **626**. Landed as `20bb89e`, one commit. **wlc-utils was read for its
+`LICENSE` and its file list and for nothing else, and ends this phase at `c501dc0` with
+`git status --porcelain` empty.**
+
+**Precondition 4 was checked on both logs, as Phase 2's finding 2 requires, and it was clear.**
+holman-ketiv-qere clean, no worktree, its last commit `69b13f0` at 12:06:32; MAM-basics' own log
+holds nothing from that undertaking after `e4d7997` at 13:35:11, everything later being Phases 2
+and 3 from 15:59 to 16:19. Ben's statement of 2026-08-12 that the work is finished held on the
+evidence of both logs rather than one.
+
+**No generator, no mega, no circuit and no regeneration — as this phase says, and none was
+wanted.** Two files changed, `DATA-LICENSES.md` and `README.md`, neither of them Python, so `ruff`
+and `black` had nothing to run over. The suite was run anyway, because the NFC lint scans
+hand-authored files and this phase wrote 190 lines of them: **903 passed / 5 skipped**, the figure
+Phases 0 through 3 all measured.
+
+**What landed.** Thirteen rows in `DATA-LICENSES.md`, covering every arriving tree; the GPL-3.0
+paragraph widened to name `.github/` and the prose under `doc/`, with `doc/woff2/` excepted; a
+third "shape of these declarations" item recording why no CC0 file sits in a subtree; and the CC0
+1.0 text repeated verbatim in a fenced block at the end of the file, mirroring how the MAM
+CC-BY-SA statement is already carried there. In `README.md`, two clauses of the `## License`
+section that the arriving corpus had made false — "each corpus keeps the terms its preparers set"
+and "one corpus is reproduced under no grant at all". **No second document was written and the map
+is not restated in `README.md`.**
+
+**Verification was mechanical rather than by eye.** `.novc\wlc-rest-phase4\check_coverage.py`
+derives the 620 moved paths from wlc-utils' own `git ls-files` minus Phase 0's six stay-behind root
+files, applies the two path deltas, and assigns each path to exactly one licence statement:
+
+| | |
+|---|---|
+| moved paths, all present in MAM-basics | **620** |
+| named by a licence statement | **620** — none uncovered |
+| claimed for CC0 | **276** |
+| CC0 claims the exclusions forbid | **0** |
+
+The 276 are the 159 generated pages, scripts and stylesheet under `gh-pages/wlc/`, the 91 files of
+`out/accgram/`, the 25 hand-authored files of `in/accgram/`, and `in/lci_recs.json`.
+
+#### Findings
+
+**1. `gh-pages/wlc/` does not hold only Ben's own work, so no CC0 file was placed there — and this
+is the correction Ben already made on 2026-08-10 for Kimball's manual, applied to a tree this phase
+had not measured.** 124 of its 284 files are image crops, and they are photography of manuscripts
+and printed editions: the filenames name the Aleppo Codex (`AC-1K-20v25.png`), the Leningrad Codex
+(`LC-043A-Exod-20v13-lo.png`), Koren (`Koren-p-113-Ex-Dec-p-trad-taxton.png`), Ginsburg,
+Heidenheim, Hahn, Da'at Miqra and a Venice edition. Two were opened and looked at rather than
+inferred from their names. With the font that is **125 of 284**. The instruction "Place a verbatim
+copy of wlc-utils' CC0 `LICENSE` at ... `gh-pages/wlc/LICENSE`" would have dedicated all of it to
+the public domain, which is not Ben's to do — word for word the reasoning the "Where CC0 must NOT
+go" paragraph already applies to `in/`. What was executed is that paragraph's governing sentence,
+"scope CC0 to what is Ben's own work, and give every vendored tree a `DATA-LICENSES.md` row naming
+its real terms instead". **The boundary is not a directory, which is why no file could express
+it**: all 124 crops sit under three `img/` directories, but the 159 CC0 files sit beside those
+directories at every level, so "everything under `gh-pages/wlc/` except the three `img/`
+directories and `woff2/`" can be a row in a table and nothing else. Recorded in
+`DATA-LICENSES.md`'s own shape paragraph as well as here, so it does not get reinstated by someone
+reading only the plan.
+
+**2. `in/wlc420/` and `in/wlc422/` DO hold biblical text, and it carries the strictest terms in the
+repository — so this phase's conclusion is right and its stated reason understates itself.**
+Corrected in place above. The two `_ps.txt` files are the Westminster Leningrad Codex, 3.46 MB
+each, headed "This file may be redistributed only with permission" by the J. Alan Groves Center.
+Also present, and also not Kimball's: `michigan.man`, H. Van Dyke Parunak's 1982 code manual for
+the Michigan Old Testament, and `supplmt.wts`, the Groves Center's supplement to it. **This reaches
+`out/` as well** — the 102 files of `out/wlc420*/`, `out/wlc422*/` and the two loose `diff_*.json`
+are that same text restructured, so they are not claimed for CC0 either, and their row says why.
+
+**3. The Taamey D font's terms are recorded nowhere, and the file cannot supply them.**
+`gh-pages/wlc/woff2/Taamey_D.woff2` arrived byte-identical to the `doc/woff2/Taamey_D.woff2` that
+has stood here since `d86e577`, 2026-03-09 — the pair Phase 0's census noticed and left as an issue
+to file. No repository of Ben's names the font's licence: swept across seven clones for "Culmus",
+"OFL" and "Taamey ... licen", the only hits are inside PNG binaries. The woff2 itself reports
+`metaLen` 0, so it carries no metadata block to read either. Its row names both copies, says the
+terms are not recorded, and makes no grant. **A pre-existing gap this phase surfaced rather than
+created**, and it is Ben's to settle — establishing the font's terms would let that row say
+something.
+
+**4. `DATA-LICENSES.md` carried a sentence Phase 3 had already made false.** "Scans of printed
+editions are **not** in this repository, and the indexes under `in/scan-pages/` are not a
+substitute for them" was written on 2026-08-10 and was true then; the 124 crops landed on
+2026-08-12. It now says that **whole** scans are still absent and names the crops as the exception,
+with the change and its date recorded in the paragraph itself. **The lesson for Phases 5 through
+11: a claim this repo makes about itself can be falsified by a phase that edits no prose at all,
+and nothing in this plan's verification list would have caught it.**
+
+**Two things left alone deliberately, flagged rather than folded in.** `DATA-LICENSES.md`'s
+pre-existing row for `in/Psalms 120-134 -- wlcubs420.txt` calls that WLC sample copyable "without
+restriction" on tanach.us's authority, and it now sits eight rows above a statement quoting the
+Groves Center's "only with permission" over the same corpus. Both statements are in the repository
+and the tension is real; reconciling them is Ben's call, and that file is not a moved path this
+phase may edit. Second, the map still names no terms for `misc/`, `py-examples-out/`, `.vscode/`,
+`.claude-disabled/` or the three loose root scripts — the root GPL-3.0 is the default that covers
+them, and widening the map to trees this plan never touched is scope this phase does not have.
 
 ---
 
