@@ -1,0 +1,147 @@
+# Koren Classic Tanakh -- Exodus appendix Decalogue (elyon), p. 38 (scan V-038).
+#
+# Hand transcription of the printed accents, by Ben Denckla, 2026-07-21, read directly from
+# the book, via the per-line editor (accgram/transcription_editor.py).  Primary observation:
+# not derivable from anything else in the repo.  The editor's export is committed beside this
+# file as koren_ex_elyon.json, and a test checks the two agree.
+#
+# One .txt line per PRINTED line, so a token can be checked against the line it was read off.
+# Bracketed asides carry no accent.  ONE PAGE: the Koren appendix prints the whole elyon
+# Decalogue on p. 38 (the appendix is its own scan sequence, V-038, not the Torah's A{n}-...).
+#
+# This is the FIRST Koren page to diverge from its vendored strand.  Both Koren taxton pages
+# (Exodus main pp. 113-114, Deuteronomy main pp. 280-281) matched ws/ex/taxton/printed and
+# ws/dt/taxton/printed in every accent; this elyon page does not match ws/ex/elyon/printed in
+# every accent.
+#
+# The strand starts at אנכי, and the elyon has no preceding לאמר to skip: p. 38's first line
+# opens the Decalogue at אָנֹכִי.
+#
+# RESULT: 142 reference tokens vs 144 transcribed, 9 chanted verses vs 9, and TWO divergences.
+# All four pasolegs land on their exact reference positions (tokens 16 פסל, 19 בשמים, 25 במים,
+# 75 שבת).
+#
+# THE TWO DIVERGENCES ARE WORD-DIVISION differences, not tradition differences: at two maqaf
+# compounds the vendored ws/ex/elyon/printed strand writes as a single chanted word, Koren prints
+# the two atoms as SEPARATE chanted words, each accented.  Both inserted accents are a munax, a
+# conjunctive, so the disjunctive skeleton is untouched (see the skeleton test) -- this is the
+# same KIND of divergence as SimTiq's Exodus elyon ובנך ובתך, not the accent-swap SimTiq's
+# Deuteronomy taxton makes at the Shabbat commandment.
+#
+#   * לֹא יִהְיֶה לְךָ (20:3): Koren accents לא(munax), יהיה(munax), לך(telisha qetana) as three
+#     words.  The reference joins the last two as one compound יהיה־לך (telisha qetana), so
+#     יהיה carries only a meteg there and no accent.  The insertion is the munax on יהיה.
+#     Ben confirmed munax (not meteg) and NO maqaf on a boxed zoom of יהיה.
+#   * אַתָּה וּבִנְךָ וּבִתֶּךָ (Shabbat commandment): Koren accents ובנך(munax) and ובתך(telisha
+#     gedola) as two words.  The reference joins them as one compound ובנך־ובתך (telisha
+#     gedola).  The insertion is the munax on ובנך.  Ben confirmed munax (not meteg) and NO
+#     maqaf on a boxed zoom of ובנך.
+#
+# HOW MUCH EACH IS WORTH, from the eight-strand --site check, which the review loop had no
+# stake in:
+#   * ובנך is CORROBORATED.  The two ex/taxton strands also separate ובנך as its own word with
+#     a munax (וּבִנְךָ֣); only the ex/elyon strands join it.  So Koren's elyon takes the taxton
+#     maqaf placement here.  And it is the SAME divergence, token for token, that
+#     simtiq_ex_elyon already pins -- ("", "mun", "ובנךובתך") -- so two independently
+#     transcribed elyon editions separate ובנך where the vendored elyon strand joins it.  That
+#     points at the vendored elyon strand as the outlier, not at Koren.
+#   * יהיה is KOREN-ALONE.  No vendored strand -- taxton or elyon, manuscript or printed --
+#     separates יהיה־לך; all eight join it, and simtiq_ex_elyon agrees with the join (it has
+#     no divergence there).  Koren is the only witness on this page that splits it.  Recorded
+#     on Ben's confirmed reading, with its uniqueness stated so the claim's strength is plain.
+#
+# base_skeleton drops the maqaf along with the points, so the reference's JOINING of the atoms
+# -- the very thing at issue -- is not visible in the pinned skeleton: region 1 pins as "לא"
+# (the reference word the insertion anchors to) and region 2 as "ובנךובתך".  This is the same
+# limitation noted for simtiq_ex_elyon.
+#
+# WHAT THE PAGE DOES NOT DISCRIMINATE.  The one thing this Decalogue was expected to reach is
+# the CHANTED VERSE BOUNDARY at עבדים: ws/ex/elyon/manuscript closes its own verse there (10
+# chanted verses) but ws/ex/elyon/printed runs on through the second commandment (9).  This
+# transcription has 9, the printed side, with אנכי..עבדים all inside the first chanted verse.
+# The four pasolegs do NOT discriminate: ex/elyon has exactly these four, on פסל, בשמים, במים
+# and שבת, in BOTH traditions, so they are strong ALIGNMENT anchors and no evidence of
+# tradition (unlike Deuteronomy taxton, where the pasoleg count itself discriminated).
+#
+# TWO READINGS were corrected after export, each a transcription slip re-read off a boxed zoom
+# and agreeing with the reference once added -- NOT edition divergences:
+#   * line 5, כי: skipped between תעבדם and אנכי; it has a munax.
+#   * line 7, the free-standing לא that opens לא תשא: skipped.  Koren hangs it far to the left
+#     after a wide gap, and it is not maqaf-joined, so it takes an accent (a merkha) -- the
+#     same trap, on the same word, as koren_ex_taxton p. 113 line 7.  Whether a hanging word
+#     takes an accent turns on its maqaf, so check for one.
+# The committed JSON carries both corrections with the superseded reading in corrected_from.
+#
+# LINE 22 was recovered.  The Decalogue's closing word לרעך sits alone on its own line, and the
+# editor's band detector -- which finds a line by its ink fraction per row -- dropped it: a
+# lone short word clears the cutoff for too few rows to survive the min-height filter.  So the
+# editor never offered a field: line 22's reading (a verse-final silluq, structurally required
+# on the verse's last word) was read off the page by Ben and entered by hand rather than typed
+# into a field.  The detector was fixed immediately after (c61e1fb) and now finds all 22 bands
+# with lines 1-21 byte-identical, so line 22's coordinates in the JSON are the detector's own,
+# not a hand guess.
+#
+# NO reading here is flagged uncertain: both divergences were confirmed by Ben against boxed
+# zooms, distinguishing munax from meteg and confirming the absent maqaf at each.
+#
+# And the usual caution about the agreeing majority: the harness flags only positions where
+# the two already disagree, so only those were re-read.  What carries weight for ובנך is the
+# cross-strand corroboration above; for יהיה it is Ben's confirmed reading, and its uniqueness
+# is stated rather than hidden.
+#
+# Koren does NOT distinguish narrow-sense paseq from legarmeh (Ben, primary observation about
+# the physical book, recorded nowhere else -- hence the pasoleg_kinds header field).  So all
+# four vertical strokes here, on פסל, בשמים, במים and שבת, are written "[pasoleg]": a pasoleg
+# stands here, this edition does not say which kind.  Writing "mun_leg" or "[paseq]" would
+# assert something the book does not.  This is more strokes than any Koren page so far.
+#
+# Conventions in force for this file:
+#   * One token per ACCENT.  Normally that is one per chanted word, a maqaf compound being one
+#     chanted word; the exception is a word bearing more than one accent.  None occurs here.
+#   * "-" is a maqaf binding two ACCENTS into one chanted word ("mun-mer"), "+" its simple-word
+#     counterpart, "_" binds two MARKS into ONE accent ("mun_leg").  None of the three occurs
+#     here -- the two divergences are the OPPOSITE, a compound the reference joins printed as
+#     two separate words, so each atom is its own token with no joiner between them.
+#   * A postpositive/prepositive accent written twice on one word -- once at its fixed edge and
+#     once as a stress helper -- is ONE accent, so ONE token.
+#   * meteg is NOT transcribed: it is not a first-class mark of the accent system.
+#   * A pasoleg is not an accent and is not a token; it is recorded as the aside "[pasoleg]"
+#     after the token it follows.  The parser drops bracketed asides.
+#
+# Shorthand: etn etnaxta / zaq zaqef qatan / tip tipexa / rev revia / zar zarqa / pash pashta /
+# yet yetiv / tev tevir / ger geresh / ger2 gershayim / tg telisha gedola / tq telisha qetana /
+# paz pazer / seg segolta / mun munax / mah mahapakh / mer merkha / dar darga / qad qadma /
+# silsof silluq + sof pasuq.
+
+edition: Koren Classic Tanakh
+book: ex
+reading: elyon
+tradition: printed
+pages: 38
+pasoleg_kinds: not distinguished
+uncertain_readings: 0
+transcriber: Ben Denckla
+date: 2026-07-21
+
+pash mun zaq mun tq
+qad ger mun rev mun mun tq qad ger
+rev mun mun mun [pasoleg] paz mun mun [pasoleg] paz
+tq qad ger mer mun [pasoleg] mun rev
+mun zar mun seg mun ger2 mah pash mun zaq
+tg qad dar tev mer tip etn
+mah pash zaq tip mer silsof mer
+tev mer tip etn mun mah pash zaq tev
+mer tip silsof
+tq qad ger rev mun mun zar mun
+seg qad ger mun [pasoleg] mun rev mun mun
+paz mun mun tg qad ger rev pash mun
+zaq mun tq qad ger mun rev
+pash zaq tip mun etn rev dar
+tev mer tip silsof mer tip
+etn pash mun zaq yet zaq mer tip
+mer silsof tip silsof tip
+silsof tip silsof
+mer tip mer silsof mer
+tip mun etn
+ger2 mun rev mah pash mun zaq tip mer
+silsof

@@ -1,0 +1,377 @@
+:root {
+    color-scheme: light dark;
+}
+body {
+    font-size: 14pt;
+    color: light-dark(black, white);
+    background-color: light-dark(white, black);
+}
+/* Centered page layout (issue #57): center the content column on the page, but let wide
+   tables break out of the text measure and be as wide as they want, still centered. Opt-in
+   via <body class="centered-page"> (WriteCtx.centered) — used by printed-decalogue,
+   wlc-a-notes, and 420422 and their sub-pages. The body content box is centered
+   (margin-inline:auto) at the text measure; a table then puts its left edge at that box's
+   center (margin-left:50%) and translateX(-50%) pulls it back by half its own width, so it
+   re-centers on the page however wide it grows (width:max-content, no cap). */
+body.centered-page {
+    max-width: 40em;
+    margin-inline: auto;
+}
+body.centered-page table {
+    width: max-content;
+    max-width: none;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+*[lang="hbo"] {
+    font-family: "Taamey D WOFF2";
+    font-size: 140%;
+    font-feature-settings: 'ss01'; /* ss01 = xataf qamats qatan */
+    font-style: normal; /* never italicize Hebrew, even inside italic context */
+}
+@font-face {
+    font-family: "Taamey D WOFF2";
+    src: url("woff2/Taamey_D.woff2");
+}
+span.romanized { font-style: italic; }
+/* Emphasis in running prose, where accgram pages used to shout in ALL CAPS.  Bold rather than
+   the browser's default italic: italic is already spoken for by span.romanized above and by the
+   plain <em> that ps17v14-double-tsinnor.html uses for book titles and for terms like mafsik, so
+   an unclassed <em> must keep its italic and only this one turns bold. */
+em.emphasis { font-style: normal; font-weight: bold; }
+p { max-width: 40em; text-align: justify}
+blockquote { max-width: 40em; }
+td.big-for-amb-early-mtg { font-size: 250%; letter-spacing: 0.1em; text-align: left;}
+td.big { font-size: 250%; }
+table.limited-width { max-width: 40em; }
+/* Counts and other numbers: right-justified, so digits line up on the units column. */
+th.numeric, td.numeric { text-align: right; }
+/* Short labels under a row label rather than in a column of prose -- an edition name, a book
+   name, a strand name, a "+maqaf". Centered so the three cells of a transposed table read as
+   three parallel answers to the row's question rather than as a ragged line of text. Same shape
+   as the numeric rule above: a class on the cell, no per-table selector. */
+th.centered, td.centered { text-align: center; }
+table.centered-table { margin-left: auto; margin-right: auto; }
+/* maqaf-nonfinal-accents.html: the accent-pair table's headings are abbreviated so five columns
+   fit without the counts drifting apart, with the full wording on hover.  Same affordance as
+   table.strand-table's abbr headings below. */
+table.accent-pair-table th abbr[title] { text-decoration: underline dotted; cursor: help; }
+table.accent-pair-table td, table.accent-pair-table th { padding: 0 0.5em; }
+/* ... and a gap under the header row, which the 0 vertical padding above had left tight against
+   the first data row.  Ben, 2026-07-29: "particularly when there are above-accents in the first
+   data row, things can get a little tight."  An above-accent rises past the letter's own top, so
+   the first row asks for more headroom than a row of English does; padding-bottom on the header
+   cells gives it to every one of the page's three tables at once, none of them having any other
+   header row to push away from. */
+table.accent-pair-table th { padding-bottom: 0.4em; }
+div.goerwitz-tms-width-limited {
+    max-width: 40em;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+p.goerwitz-tms-comment {
+    margin-top: 0.4em;
+}
+div.goerwitz-filter {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1em;
+    margin: 1em 0;
+    padding: 0.5em 0.7em;
+    background-color: light-dark(white, black);
+    border: 1px solid light-dark(#ccc, #444);
+    border-radius: 6px;
+}
+div.goerwitz-filter fieldset {
+    margin: 0;
+    border: 1px solid light-dark(#ccc, #444);
+    border-radius: 4px;
+}
+div.goerwitz-filter label {
+    display: block;
+    white-space: nowrap;
+}
+p.gf-count {
+    margin: 0;
+    font-size: 90%;
+    font-style: italic;
+}
+section.goerwitz-verse hr {
+    margin-top: 1.2em;
+}
+p.goerwitz-tms-verse {
+    margin-top: 0.4em;
+    margin-bottom: 0.6em;
+    text-align: right;
+}
+p.goerwitz-tms-reading-label {
+    margin-top: 0.6em;
+    margin-bottom: 0;
+    font-weight: bold;
+}
+span.goerwitz-tms-focus-highlight {
+    color: light-dark(#0b57d0, #7bb4ff);
+}
+span.goerwitz-tms-context {
+    color: light-dark(#999, #777);
+}
+p.goerwitz-tms-image {
+    text-align: center;
+}
+figure.goerwitz-tms-figure {
+    margin: 0;
+}
+figcaption.goerwitz-tms-image-caption {
+    text-align: center;
+    font-size: 90%;
+}
+table.border-collapse { border-collapse: collapse; }
+table.goerwitz-tms-sat {
+    margin-left: auto;
+    margin-right: auto;
+}
+table.goerwitz-obs-error-table {
+    border-collapse: collapse;
+    table-layout: auto;
+    white-space: nowrap;
+    font-size: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+div.goerwitz-obs-tree-wrap {
+    margin-top: 0.7em;
+    width: 100%;
+    overflow-x: auto;
+}
+table.goerwitz-obs-error-table th,
+table.goerwitz-obs-error-table td {
+    text-align: right;
+    vertical-align: top;
+}
+td.goerwitz-obs-error-cell {
+    font-weight: 700;
+    color: light-dark(#8b0000, #ff9b9b);
+}
+td.goerwitz-obs-context-cell {
+    color: light-dark(#999, #777);
+}
+table.goerwitz-obs-error-table td.goerwitz-obs-depth-cell {
+    text-align: center;
+    font-weight: 700;
+}
+table.goerwitz-obs-tree-table th.goerwitz-tms-sortable { cursor: pointer; user-select: none; }
+/* Inactive sortable column: a faded up/down pair hinting that it can be clicked to sort. */
+table.goerwitz-obs-tree-table th.goerwitz-tms-sortable::after { content: " \25B4\25BE"; color: light-dark(#bbb, #666); }
+/* Active sort column: a single arrow in the normal text colour for the current direction. */
+table.goerwitz-obs-tree-table th.goerwitz-tms-sortable[aria-sort="ascending"]::after  { content: " \25B2"; color: inherit; }
+table.goerwitz-obs-tree-table th.goerwitz-tms-sortable[aria-sort="descending"]::after { content: " \25BC"; color: inherit; }
+p.goerwitz-obs-error-note {
+    margin-top: 0.35em;
+    margin-bottom: 0.35em;
+}
+/* Poetic ungrammatical-verse report (poetic.html). It shares the goerwitz-* shell above
+   but renders the Michigan-Claremont source body and the WLC-vs-MAM
+   disjunctive compare, which the prose page has no analogue for. */
+p.poetic-src {
+    font-family: ui-monospace, monospace;
+    background-color: light-dark(#f6f6f6, #1c1c1c);
+    padding: 0.3em 0.5em;
+    border-radius: 4px;
+    word-break: break-all;
+    direction: ltr;
+    unicode-bidi: plaintext;
+}
+p.poetic-meta {
+    font-size: 85%;
+    color: light-dark(#555, #aaa);
+    margin: 0.3em 0;
+}
+table.poetic-disj td {
+    font-family: ui-monospace, monospace;
+}
+span.poetic-agree { color: light-dark(#178017, #6fcf6f); }
+span.poetic-differ { color: light-dark(#b00000, #ff9b9b); }
+span.goerwitz-tms-supplied   { color: light-dark(#178017, #6fcf6f); }
+span.goerwitz-tms-suppressed { color: light-dark(#b00000, #ff9b9b); }
+p.poetic-auto-summary {
+    margin: 0.3em 0;
+    font-style: italic;
+}
+span.poetic-auto-summary-label {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 90%;
+    color: light-dark(#555, #aaa);
+}
+th, td {
+    padding-right: 0.4em;
+    padding-left: 0.4em;
+}
+tr:nth-of-type(odd) td {
+    background-color: light-dark(#eee, #2b2b2b);
+}
+img {
+    max-width: 100%;
+}
+/* Psalms 17:14 deep-dive pages (ps17v14-mam-doc-notes.html,
+   ps17v14-double-tsinnor.html), generated from their former hand-authored
+   bodies.  These reuse the shared shell above; the few classes below preserve
+   the lead/lemma/source styling those pages carried inline. */
+/* The five printed-Decalogue tables below each neutralize the shared odd-row zebra
+   (tr:nth-of-type(odd) td above), the same way table.strand-table does (issue #65, finding C3).
+   The tint is a row-tracking aid for long tables, but each of these is short AND has rows that
+   alternate by category, so the stripe lands on every other category row and reads as if it
+   ENCODED that category rather than merely counting rows:
+     - the verdict matrix: odd rows are its two עליון rows (rows 3 and 5), so the tint looks like
+       it marks the עליון strand;
+     - the Simanim strand-mapping table: its one tinted row (row 3) is the m-trad row;
+     - the Sabbath m/p-diff table: odd rows are exactly its three m-trad rows;
+     - the vocalization-diff table: two rows, so the tint lands on the m-trad one alone;
+     - the pausal table: four rows alternating תחתון/עליון, so the tint lands on exactly the two
+       תחתון rows.
+   (The Simanim scan/transcription table needs no opt-out: its only odd row is the all-<th> header,
+   and the zebra rule targets td, so nothing there is tinted.) */
+
+/* Printed-Decalogue grammaticality report (printed-decalogue.html): the verdict matrix. */
+table.printed-decalogue-verdict td.clean { color: light-dark(#1a7f37, #4ac26b); }
+table.printed-decalogue-verdict td.ungrammatical { color: light-dark(#b3261e, #ff7b72); font-weight: bold; }
+table.printed-decalogue-verdict tr td { background-color: transparent; }
+
+/* printed-decalogue-simanim.html: the table mapping the p. 246 note's own labels (בטעם רגיל /
+   כתר אר״ץ) onto two of the companion page's four strands. It long reused the verdict matrix's
+   class, which styles a grammaticality verdict it never renders -- a misnomer that bought it
+   nothing (issue #65, finding C4d). */
+table.printed-decalogue-strand-mapping tr td { background-color: transparent; }
+
+/* printed-decalogue.html appendix: the three m-trad/p-trad line-pairs of the Deuteronomy תחתון
+   Sabbath verse. Otherwise unstyled -- it takes the shared centered layout and lang="hbo" font. */
+table.printed-decalogue-sabbath-diff tr td { background-color: transparent; }
+
+/* printed-decalogue.html appendix: the two-row m-trad/p-trad table of the strands' one difference
+   of vocalization. Unlike the Sabbath table just above it keeps the full pointing, the vowel being
+   the whole of the difference; the Hebrew cell is dir=rtl so the two forms stack flush-right and
+   the vowel under the tsadi lines up. */
+table.printed-decalogue-vowel-diff tr td { background-color: transparent; }
+
+/* printed-decalogue.html appendix: the pausal alternation at על־פני and מתחת -- four rows, a
+   תחתון row above its עליון row for each word, each showing the pointed form with the vowel and
+   accent on its accented letter. Like the vowel-diff table above it keeps the full pointing (the
+   vowel is the point) and sets the Hebrew cell dir=rtl; the vowel and accent names beside it are
+   ordinary LTR prose cells. */
+table.printed-decalogue-pausal tr td { background-color: transparent; }
+
+/* printed-decalogue-simanim.html and printed-decalogue-koren.html: the per-Decalogue transcription
+   verdict tables (issue #69), one row per Decalogue. Same zebra opt-out as the four above, for
+   the same reason: the four rows alternate main / appendix, so the stripe would tint exactly the
+   two appendix rows and read as if it encoded that rather than merely counting rows. The last two
+   columns are prose, so both are left-aligned against the shared centering.
+   The max-width is what keeps those prose columns readable: body.centered-page above gives every
+   table width:max-content and max-width:none, which for a prose cell means the whole sentence on
+   ONE line -- these tables came out ~2000px wide, so at any ordinary window the left columns fell
+   off the page entirely and could not be scrolled back to. Capping the table lets the prose wrap
+   instead. Needs the body.centered-page prefix to outrank that rule. */
+table.printed-decalogue-transcription-verdict tr td { background-color: transparent; }
+table.printed-decalogue-transcription-verdict td:nth-child(n+4) { text-align: left; }
+body.centered-page table.printed-decalogue-transcription-verdict { max-width: 52em; }
+
+/* maqaf-nonfinal-accents.html: a pointed Hebrew form set on a line of its own, between the
+   sentences that lead into and out of it. The page's question is the difference between two such
+   forms -- one maqaf -- which the reader can see for themselves at this size, and which no
+   sentence describing it can show. Centered, and text-align must be set explicitly to beat the
+   global justify on p above; the lang="hbo" rule supplies the font and the 140%. */
+p.hebrew-specimen { text-align: center; margin: 0.6em 0; }
+
+/* The strand tables (printed-decalogue.html, issues #59 / #52): range-divided views of a
+   cantillation strand, ported from MAM-simple's TEMBte tables. Two of them share this style:
+   the four-strands table (one row per strand, first…last range cells) and the merged-verse
+   table (transposed: rows = strands + gradient bars; columns = the taḥton verse ranges). Each
+   grows as wide as its cells want, re-centered on the page: margin-left:50% + translateX(-50%).
+   Colors/gradient/abbr match MAM-simple byte-for-byte; the zebra-neutralization is a wlc-utils
+   extra (MAM-simple's page has no global odd-row striping to undo). */
+table.strand-table {
+    border-collapse: collapse;
+    width: max-content;
+    max-width: none;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+table.strand-table th,
+table.strand-table td {
+    border: 1px solid light-dark(#ccc, #444);
+    padding: 0.3rem 0.6rem;
+    text-align: start;
+}
+table.strand-table th {
+    text-align: center;
+    background-color: light-dark(#f5f5f5, #242424);
+}
+table.strand-table th abbr[title] { text-decoration: underline dotted; cursor: help; }
+/* Neutralize the shared odd-row zebra-striping (see tr:nth-of-type(odd) td above) so it does
+   not tint the range-label cells; the gradient cells re-assert their own fill below. */
+table.strand-table tr td { background-color: transparent; }
+table.strand-table .vc-start { color: light-dark(#0a7a0a, #57c957); }
+table.strand-table .vc-stop  { color: light-dark(#c11414, #ff7a7a); }
+/* Neutral interior word of a three-part first…mid…last range (MAM-simple's vc-mid): no hue,
+   just the body text color, so the eye reads the structure-deciding mid word plainly. */
+table.strand-table .vc-mid   { color: inherit; }
+/* Schematic gradient bars (rtl: green start at right → red stop at left). */
+table.strand-table td.vc-grad {
+    height: 1.2rem;
+    background: linear-gradient(to left, light-dark(#0a7a0a, #1f6b1f), light-dark(#c11414, #8a2020));
+}
+/* The range cells now carry cantillation accents (lang="hbo" → Taamey D). The global
+   lang="hbo" rule is 140%, too tall inside these bordered range cells; tune down here. */
+table.strand-table td[lang="hbo"] { font-size: 120%; }
+
+.lemma { font-weight: bold; }
+/* SimTiq p. 246 lemma (printed-decalogue-simanim.html): coloured instead of bold, since
+   bold renders many Hebrew fonts' points/accents hard to read. light-dark() gives dark blue
+   on a light background, light blue on a dark one. */
+span.simanim-lemma { color: light-dark(#0b57d0, #7bb4ff); }
+p.note-lead { color: light-dark(#555, #aaa); }
+.src { font-size: 0.9em; color: light-dark(#555, #aaa); }
+figure { margin: 1.2em 0; text-align: center; }
+figure img { height: auto; border: 1px solid light-dark(#ccc, #555); }
+figcaption { font-size: 0.9em; color: light-dark(#555, #aaa); margin-top: 0.4em; }
+
+/* Scans of black ink on white paper (the printed-Tanakh pages: Koren, Simanim),
+   which otherwise sit on a dark page as a glaring white slab. Inverting in CSS keeps ONE
+   committed scan per figure -- no hand-inverted twin to keep in sync, and the light-mode
+   page still serves the file as scanned.
+   Opt-in per image, deliberately NOT a blanket `img` rule: the manuscript photos
+   (Leningrad, Aleppo) are brown ink on cream parchment, and inverting a photograph of
+   vellum yields a blue-black page that misrepresents the source rather than adapting it.
+   Apply only where the paper really is white and the ink really is black -- in these both
+   are neutral (paper #fff, ink ~#000), so a plain invert() stays neutral and needs no
+   hue-rotate() to undo a color cast.
+   filter applies to the element's border too, hence the pre-inverted border color: #aaa
+   inverts back to the #555 that `figure img` above asks for in dark mode. That border is
+   load-bearing here -- an inverted scan's background is black, same as the page's. */
+@media (prefers-color-scheme: dark) {
+    img.ink-on-white {
+        filter: invert(1);
+        border-color: #aaa;
+    }
+}
+
+/* Word-highlight overlay for scans (issue #62 follow-up): a filled "highlighter"
+   drawn as an inline <svg> laid over the <img>, generated from rectangle data in
+   Python -- nothing is burned into the pixels. The wrapper is position:relative so
+   the absolutely-positioned overlay tracks the responsively-sized img; the overlay
+   uses a viewBox in the scan's pixel space, so its rects scale with the image.
+   The overlay is a SIBLING of the img, so the img's dark-mode `filter: invert(1)`
+   (img.ink-on-white above) never reaches it -- which is the whole point: the fill
+   is a color we CHOOSE per mode via light-dark(), not an inverted accident. */
+.scan-annot { position: relative; display: inline-block; line-height: 0; }
+.scan-annot-overlay {
+    position: absolute; inset: 0; width: 100%; height: 100%;
+    pointer-events: none;
+}
+/* ~1/3 alpha so the ink stays legible through it: black ink on white in light mode,
+   white ink on black in dark mode (the img is inverted, the overlay is not). Not
+   mix-blend-mode: multiply -- that reads as a truer marker pen but inverts badly. */
+.scan-annot-overlay rect {
+    fill: light-dark(rgba(255, 213, 0, 0.35), rgba(120, 180, 255, 0.32));
+}

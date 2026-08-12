@@ -1,0 +1,160 @@
+# Feldheim Simanim Tanakh -- Deuteronomy appendix Decalogue (elyon), p. 351 (scan A9-A5-10C-0351).
+#
+# Hand transcription of the printed accents, by Ben Denckla, 2026-07-24, read directly from the
+# book, via the per-line editor (accgram/transcription_editor.py).  Primary observation: not
+# derivable from anything else in the repo.  The editor's export is committed beside this file
+# as simtan_dt_elyon.json, and a test checks the two agree.
+#
+# One .txt line per PRINTED line, so a token can be checked against the line it was read off.
+# Bracketed asides carry no accent.  ONE PAGE, so there is no page marker: the whole Decalogue
+# is on p. 351, and unlike the two-page main-text Decalogues (pp. 119-120, 297-298) no accent
+# crosses a page boundary.
+#
+# THE LAST OF THE FOURTEEN.  It closes issue #72's checklist and the whole 14-Decalogue scope of
+# issue #69: the Deuteronomy half of the Simanim Tanakh's back-of-book appendix elyon pair, whose
+# Exodus counterpart is simtan_ex_elyon (p. 350).  The edition's two main-text Decalogues
+# (Exodus pp. 119-120, Deuteronomy pp. 297-298) are both taxton; the appendix carries the elyon
+# pair, the Koren layout -- running text taxton, appendix elyon -- and band 1 (context, left
+# blank) is the running head naming the elyon reading.  Diffed against a MANUSCRIPT-tradition
+# strand, as all four Simanim Tanakh pages are.
+#
+# RESULT: 164 reference tokens vs 164 transcribed, 10 chanted verses vs 10, and NO divergence
+# anywhere.  All SEVEN pasoleg strokes land on their exact reference positions (tokens 16, 19,
+# 25, 69, 79, 101 and 126).  So "follows ws/dt/elyon/manuscript with respect to every accent" is
+# true of this Decalogue -- after the two corrections below, both transcription slips a first
+# pass made and neither an edition divergence.
+#
+# THE CROSS-STRAND RE-RUN, and it carries more weight here than the clean result does.  Against
+# ws/dt/elyon/printed this transcription is 164 tokens against 164 but 10 chanted verses against 9,
+# with exactly TWO difference regions, both inside the first commandment:
+#   * אנכי                 -- tipexa here, pashta in the p-trad
+#   * אלהיך ... מבית עבדים  -- etnaxta/darga/tevir/merkha/tipexa/merkha/silluq here, closing the
+#                             chanted verse at עבדים, against the p-trad's zaqef qatan/munax/
+#                             telisha qetana/qadma/geresh/munax/revia, which runs straight on into
+#                             לא־יהיה.  This region IS the whole 10-vs-9 verse-count difference.
+# The transcription takes the m-trad side of both, over a contiguous run nothing had flagged.
+# It is the Exodus appendix elyon's own signature repeated, and the taxton pages' mirrored: on the
+# taxton pages the m-trad ran ON at עבדים (etnaxta, closing only at על־פני), here as on p. 350 the
+# m-trad CLOSES at עבדים with silluq + sof pasuq -- the elyon's ten chanted verses against the
+# printed elyon's nine.
+#
+# HOW NARROW THAT VERDICT IS.  The two dt/elyon strands differ in EXACTLY those two regions and
+# nowhere else in 164 tokens -- taken before any transcription existed, so with no stake in the
+# outcome.  The other ~155 tokens are identical in both traditions, so the whole stretch from
+# לא־יהיה to לרעך is evidence that this page follows dt/elyon and no evidence at all about which
+# tradition.  The elyon identity itself rests on the independent evidence at לא תרצח, which this
+# Decalogue makes a chanted verse of its own (silluq + sof pasuq), as all four elyon strands do
+# and no taxton strand does -- the taxton runs לא תרצח ולא תנאף ולא תגנב together into one verse.
+#
+# THE TWO CORRECTIONS, both recorded in the JSON with what they replaced, both slips and neither
+# an edition divergence:
+#   * band 2 (5:6, the first commandment): a darga on אשר, dropped between the etnaxta of אלהיך
+#     and the tevir of הוצאתיך.  Ben re-read the printed line against a zoom (zoom_line) and
+#     confirmed the darga is on the page and had been missed: מונ את תביר -> מונ את דר תביר.  Every
+#     manuscript strand has a darga on אשר -- all four, plus the printed taxton -- and only the two
+#     printed-elyon strands read munax there instead, so the darga is squarely on-strand and its
+#     absence was the anomaly; Ben's own ex/elyon transcription (p. 350 band 2) has it too.
+#   * band 23 (5:18, the tenth commandment): a geresh on שדהו, first typed as a qadma.  Ben
+#     re-read it and confirmed geresh -- the second and final geresh of the printed line, before
+#     ועבדו: רביע קד מה -> רביע גר מה.  This is the slip that carries the clearer signature,
+#     surviving against BOTH dt/elyon strands (qadma against geresh in each): all four Deuteronomy
+#     strands, both traditions and both readings, have geresh on שדהו and none a qadma, so no
+#     site could support the qadma and the difference could only be a mis-read.
+#
+# NO BAND CLEARED, and none needed clearing.  The editor was built over the whole page (see
+# below); band 1 is the running head and band 25 the ornament rule and the page number 351, both
+# left blank, so the export holds only bands 2-24 -- the Decalogue entire, אנכי through לרעך: --
+# and nothing out of span was typed.  This is unlike the two-page taxton Decalogues, whose
+# whole-page editors ran past the Decalogue's end and left out-of-span bands to clear.
+#
+# NO UNCERTAIN READING: nothing here was supplied from context or expectation.  The usual caution
+# applies: the harness flags only positions where the two already disagree, so on the m-trad run
+# only the two slips above were ever re-read and the other 162 positions were not re-examined by
+# anyone.  What carries weight is the cross-strand run above -- agreement over a contiguous run
+# with a strand nothing had flagged -- not the empty difference list.
+#
+# PASOLEG KINDS: "distinguished" on the edition's own authority -- the sixteenth ma'ala of its
+# introduction (p. כז) prints the narrow-sense paseq as a HOLLOW bar throughout the Tanakh and
+# reserves the SOLID bar for munax-legarmeh, so the kind is read off the glyph (see
+# simtan_ex_taxton's header for the fuller account).
+#
+# SEVEN STROKES, the most of any Simanim Tanakh page so far -- the two taxton pages carried one
+# each and the Exodus appendix elyon (p. 350) four.  They split TWO HOLLOW and FIVE SOLID:
+#   * פסל   (token 16, band 3)  -- HOLLOW, narrow-sense paseq, before וכל־תמונה (pazer)
+#   * בשמים (token 19, band 4)  -- HOLLOW, narrow-sense paseq, before ממעל (pazer)
+#   * במים  (token 25, band 5)  -- SOLID, munax legarmeh; mun_leg mun rev (מתחת, then לארץ)
+#   * צוך   (token 69, band 11) -- SOLID, munax legarmeh; mun_leg mun rev
+#   * שבת   (token 79, band 12) -- SOLID, munax legarmeh; mun_leg mun rev
+#   * היית  (token 101, band 15) -- SOLID, munax legarmeh; mun_leg mun rev
+#   * למען  (token 126, band 18) -- SOLID, munax legarmeh; mun_leg mun rev (across the band 18/19 break)
+# The contrast is NOT new to the repo, and this exact 2-and-5 split, at these same seven positions,
+# is already on record in the sibling Simanim TIQQUN's Deuteronomy elyon (simtiq_dt_elyon) -- the
+# same Decalogue reading in the other Feldheim edition, whose header also carries pasoleg_kinds:
+# distinguished.  What is new is the count in the Tanakh, whose earlier pages reached at most four.
+# The split is also grammatically coherent, which is evidence the review loop had no stake in:
+# legarmeh is a light disjunctive that all but always precedes revia, and each SOLID stroke does
+# (mun_leg mun rev), while neither HOLLOW stroke does (each precedes a pazer).  So the glyph-shape
+# reading and the grammar agree, independently of the introduction's rule.
+#
+# THE SMALL WAVY MARK ABOVE SOME WORDS IS THE RAFE, not an accent, and is not transcribed -- see
+# simtan_ex_taxton's header, which identifies it documentarily from the ninth ma'ala of
+# the introduction (p. כב).  It occurs on this page as well.
+#
+# THE RENDER IN THE JSON TAKES THE WHOLE PAGE, no crop, the workflow doc's default.  Measuring a
+# crop is worth it only to exclude a foreign column, which is the Simanim Tiqqun's two-column
+# setting and nothing else; this edition sets one column, and its marginal verse numbers and
+# sidenotes fall inside their own line's band and make no spurious ones.  The page gives one band
+# per printed line.  Band numbers are read off the --debug overlay: bands 2-24 carry the Decalogue
+# (band 2 = אנכי, band 24 = לרעך:), band 1 the running head and band 25 the ornament rule and the
+# page number.
+#
+# Conventions in force for this file:
+#   * One token per ACCENT.  Normally that is one per chanted word, a maqaf compound being one
+#     chanted word; the exception is a word bearing more than one accent.  None occurs here.
+#   * "-" is a maqaf binding two ACCENTS into one chanted word ("mun-mer"), "+" its simple-word
+#     counterpart, "_" binds two MARKS into ONE accent ("mun_leg").  Only "_" occurs here.
+#   * A postpositive/prepositive accent written twice on one word -- once at its fixed edge and
+#     once as a stress helper -- is ONE accent, so ONE token.
+#   * meteg is NOT transcribed: it is not a first-class mark of the accent system.
+#   * A narrow-sense paseq is not an accent and is not a token; it is recorded as the aside
+#     "[paseq]" after the token it follows.  Two occur here (פסל, בשמים).  Legarmeh IS an accent,
+#     written "mun_leg" -- one token, not an aside; five occur here (במים, צוך, שבת, היית, למען).
+#
+# Shorthand: etn etnaxta / zaq zaqef qatan / tip tipexa / rev revia / zar zarqa / pash pashta /
+# yet yetiv / tev tevir / ger geresh / ger2 gershayim / tg telisha gedola / tq telisha qetana /
+# paz pazer / seg segolta / mun munax / mun_leg munax legarmeh / mah mahapakh / mer merkha /
+# dar darga / qad qadma / silsof silluq + sof pasuq.
+
+edition: Simanim Tanakh
+book: dt
+reading: elyon
+tradition: manuscript
+pages: 351
+pasoleg_kinds: distinguished
+uncertain_readings: 0
+transcriber: Ben Denckla
+date: 2026-07-24
+
+tip mun etn dar tev mer tip mer silsof
+mun tq qad ger rev mun mun mun [paseq]
+paz mun mun [paseq] paz tq qad ger mer
+mun_leg mun rev mun zar mun seg mun ger2
+mah pash mun zaq tg qad dar tev mer
+tip etn mah pash zaq tip mer
+silsof mer tev
+mer tip etn mun mah pash zaq tev mer
+tip silsof mun tq
+qad ger mer mun_leg mun rev mun mun zar
+mun seg qad ger mun_leg mun rev mun
+mun paz mun mun tg qad
+ger rev pash mun zaq rev tev mer
+tip etn ger2 mer mun_leg mun rev tq qad
+mah pash mah pash mun zaq rev pash mun zaq
+tip mer silsof mah
+pash zaq mer tip mun etn mun_leg mun
+rev pash mun zaq yet zaq mer tip mer
+silsof tip silsof tip
+silsof tip silsof
+mer tip mer silsof mer
+tip mun etn qad ger mun rev ger mah
+pash mun zaq tip mer silsof

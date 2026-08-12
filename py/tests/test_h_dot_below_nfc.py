@@ -84,10 +84,16 @@ _EXCLUDE_189_FILES = {
 
 # Loose external Bible-text files directly under in/, and a named external
 # source file under misc/.
+#
+# in/accgram/uxlc_accent_changes.json is derived from in/UXLC-misc/all_changes.json
+# and inherits two of that file's decomposed clusters. It is excluded as the one
+# file rather than in/accgram/ wholesale, because the 24 edition transcriptions
+# under in/accgram/edition_transcriptions/ are hand-authored and belong in scope.
 _EXCLUDE_FILES = {
     "in/Psalms 120-134 -- MAM for Sefaria.csv",
     "in/Psalms 120-134 -- wlcubs420.txt",
     "misc/zarqa-table-diff/zarqa-table-from-open-siddur-project.txt",
+    "in/accgram/uxlc_accent_changes.json",
 }
 
 # Within in/mam-go/, only the raw Bible-text CSVs are external; the
@@ -104,6 +110,17 @@ _EXCLUDE_MAM_GO_FILES = {
 # External/generated directory prefixes: out/ (generated) and external
 # Bible-text import snapshots under in/ (Sefaria, Mechon Mamre CSV exports,
 # Chabad.org, Wikisource-derived edit specs).
+#
+# The six entries after in/chabad-ctr/ arrived with wlc-utils' corpus on
+# 2026-08-12 (Phase 3 of doc/PLAN-evacuate-the-rest-of-wlc-utils.md). The five
+# in/ ones are external Tanach/UXLC/WLC snapshots that main_wlc_vendor_uxlc.py
+# copies verbatim from tanach.us: composing a decomposed cluster in one of them
+# would break byte-identity with upstream and be undone on the next vendor run.
+# in/Tanach-26.0--UXLC-1.0--2020-04-01/ also carries Images/Background, a GIF
+# with no file extension, so _is_binary's extension test does not catch it and
+# read_text raises UnicodeDecodeError on it; this prefix is what keeps it out.
+# gh-pages/ goes in on the principle out/ is already on: generated, not
+# hand-authored.
 _EXCLUDE_DIR_PREFIXES = (
     "out/",
     "in/mam-from-Sefaria-2021-11-23/",
@@ -111,6 +128,12 @@ _EXCLUDE_DIR_PREFIXES = (
     "in/mam-ws/",
     "in/mam-ws-bot-edits/",
     "in/chabad-ctr/",
+    "in/UXLC-39/",
+    "in/UXLC-misc/",
+    "in/Tanach-26.0--UXLC-1.0--2020-04-01/",
+    "in/wlc420/",
+    "in/wlc422/",
+    "gh-pages/",
 )
 
 # wlc-utils' generated trees plus every imported text snapshot under in/ (Tanach/UXLC/WLC

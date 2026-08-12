@@ -1,0 +1,91 @@
+# Simanim Tiqqun -- Deuteronomy main Decalogue (elyon), pp. 208-209.
+#
+# Hand transcription of the printed accents, by Ben Denckla, 2026-07-20, read directly from
+# the book, via the per-line editor (accgram/transcription_editor.py).  Primary observation:
+# not derivable from anything else in the repo.  The editor's exports for both pages are
+# committed beside this file as simtiq_dt_elyon.json, and a test checks the two agree.
+#
+# One .txt line per PRINTED line, so a token can be checked against the line it was read off.
+# "[p. 209]" marks where the second page begins; bracketed asides carry no accent.
+#
+# Three lines were corrected after the export, each against a re-cropped zoom of the printed
+# line; the committed JSON carries the corrections and records what each replaced.
+#   * p. 208 line 1, אלהיך: read as revia, corrected to zaqef qatan.  The first crop offered
+#     for checking was cut too close above the line and had clipped the zaqef's upper dot,
+#     which leaves it looking exactly like a revia -- the crop, not the book, was ambiguous.
+#   * p. 208 line 12, השבת: read as pashta, corrected to qadma.
+#   * p. 209 line 12, רעך: an abbreviation typed with its letters transposed, corrected to
+#     etnaxta.
+#
+# RESULT: 164 reference tokens vs 164 transcribed, and NO divergence -- this Decalogue does
+# follow the Wikisource p-trad elyon in every accent.  It is the first transcription for which
+# that holds; both SimTiq Exodus Decalogues falsified it.  Read that against how it was
+# reached: the harness only ever flags positions where the two already disagree, so only those
+# were re-read, and the ~161 agreeing positions were never re-examined by anyone.  A
+# compensating pair of errors would be invisible to this procedure, and the Exodus elyon's two
+# cancelling divergences show that shape of error is not hypothetical here.
+#
+# One check does NOT have that weakness, because nothing in the harness prompted it.  The
+# transcription marks each vertical stroke as either munax legarmeh ("mun_leg") or narrow-sense
+# paseq ("[paseq]"), a distinction the vendored data cannot express -- its fetch folds both
+# Wikisource templates onto U+05C0.  All seven positions match the reference's placement, and
+# all seven match the rule that legarmeh precedes revia: the two read as paseq stand before a
+# pazer, and the five read as legarmeh each stand before a revia with one munax between.
+#
+# Conventions in force for this file:
+#   * One token per ACCENT.  Normally that is one per chanted word, a maqaf compound being
+#     one chanted word; the exception is a compound whose atoms are separately accented,
+#     written with a dash for the maqaf ("mun-mer").  None occurs on these pages.
+#   * "_" binds two marks into ONE accent: mun_leg is munax legarmeh, one token.
+#   * A postpositive/prepositive accent written twice on one word -- once at its fixed edge
+#     and once as a stress helper -- is ONE accent, so ONE token.
+#   * meteg is NOT transcribed: it is not a first-class mark of the accent system.
+#   * narrow-sense paseq is likewise not transcribed as an accent, but IS recorded as the
+#     aside "[paseq]" after the token it follows, so that a future legarmeh-vs-paseq check has
+#     something to check.  The parser drops bracketed asides.
+#
+# Shorthand: etn etnaxta / zaq zaqef qatan / tip tipexa / rev revia / zar zarqa / pash pashta /
+# yet yetiv / tev tevir / ger geresh / ger2 gershayim / tg telisha gedola / tq telisha qetana /
+# paz pazer / seg segolta / mun munax / mun_leg munax legarmeh / mah mahapakh / mer merkha /
+# dar darga / qad qadma / silsof silluq + sof pasuq.
+
+edition: Simanim Tiqqun
+book: dt
+reading: elyon
+tradition: printed
+pages: 208-209
+pasoleg_kinds: distinguished
+uncertain_readings: 0
+transcriber: Ben Denckla
+date: 2026-07-20
+
+pash mun zaq mun
+tq qad ger mun rev mun
+tq qad ger rev mun mun mun [paseq]
+paz mun mun [paseq] paz tq qad
+ger mer mun_leg mun rev mun
+zar mun seg mun ger2 mah pash mun zaq
+tg qad dar tev mer tip
+etn mah pash zaq tip mer
+silsof mer tev mer
+tip etn mun mah pash zaq tev mer
+tip silsof mun tq
+qad ger mer mun_leg mun rev mun
+mun zar mun seg qad ger
+mun_leg mun rev mun mun paz
+mun mun tg qad ger
+
+[p. 209]
+rev pash mun zaq rev tev
+mer tip etn ger2 mer mun_leg mun
+rev tq qad mah pash mah pash mun
+zaq rev pash mun zaq tip mer
+silsof mah pash
+zaq mer tip mun etn mun_leg mun rev
+pash mun zaq yet zaq mer tip mer
+silsof tip silsof tip
+silsof tip silsof
+mer tip mer silsof mer tip
+mun etn qad ger mun
+rev ger mah pash mun zaq tip mer
+silsof

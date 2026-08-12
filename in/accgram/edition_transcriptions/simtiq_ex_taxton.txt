@@ -1,0 +1,75 @@
+# Simanim Tiqqun -- Exodus appendix Decalogue (taxton), p. 246.
+#
+# Hand transcription of the printed accents, by Ben Denckla, 2026-07-20, read directly from
+# the book, via the per-line editor (accgram/transcription_editor.py).  Primary observation:
+# not derivable from anything else in the repo.  The editor's export is committed beside this
+# file as simtiq_ex_taxton.json, and a test checks the two agree through HEBREW_ABBREV.
+#
+# One .txt line per PRINTED line of the page, so a token can be checked against the line it
+# was read off.  A maqaf compound that straddles a printed line break is written whole on the
+# line where it starts.
+#
+# Printed line 31 (the editor's numbering, as in the .json) was corrected after the export: a
+# dropped zaqef on ימיך in למען יאריכון ימיך על האדמה.  The committed JSON carries the
+# correction, so the two still agree.
+#
+# Pasoleg re-read (2026-07-24): the page's one vertical stroke, on אתה, is SOLID -- munax
+# legarmeh, written mun_leg, not a narrow-sense paseq -- and the page has no other stroke.
+# So the accent stream stands as first typed, matching ws/ex/taxton/printed's reference, which
+# has this same single stroke of kind legarmeh.  The file predates both the [paseq] aside and
+# the header fields below; it needs no [paseq], and now declares that it distinguishes the two
+# kinds (pasoleg_kinds), as its sibling SimTiq files do.
+#
+# Conventions in force for this file:
+#   * One token per ACCENT.  Normally that is one per chanted word, a maqaf compound being
+#     one chanted word; the exception is a compound whose atoms are separately accented,
+#     written with a dash for the maqaf ("mun-mer").  Two occur on this page.
+#   * "_" binds two marks into ONE accent: mun_leg is munax legarmeh, one token.
+#   * A postpositive/prepositive accent written twice on one word -- once at its fixed edge
+#     and once as a stress helper -- is ONE accent, so ONE token.
+#   * meteg is NOT transcribed: it is not a first-class mark of the accent system.
+#   * narrow-sense paseq is likewise not transcribed as an accent, but IS recorded as the
+#     aside "[paseq]" after the token it follows, so that a future legarmeh-vs-paseq check has
+#     something to check.  The parser drops bracketed asides.
+#
+# Shorthand: etn etnaxta / zaq zaqef qatan / tip tipexa / rev revia / pash pashta / yet yetiv /
+# tev tevir / ger geresh / ger2 gershayim / tg telisha gedola / tq telisha qetana / mun munax /
+# mun_leg munax legarmeh / mah mahapakh / mer merkha / dar darga / qad qadma /
+# silsof silluq + sof pasuq.
+
+edition: Simanim Tiqqun
+book: ex
+reading: taxton
+tradition: printed
+pages: 246
+pasoleg_kinds: distinguished
+uncertain_readings: 0
+transcriber: Ben Denckla
+date: 2026-07-20
+
+tip
+mun etn dar tev mer tip mer
+silsof mun-mer tev mer tip silsof mun-qad
+mer pash zaq mah pash zaq
+mer tip etn mer tip mer silsof
+mer tip mun etn mun ger2 mah
+pash mun zaq tg qad dar tev mer
+tip silsof mer tip etn tip
+mer silsof mer tev mer
+tip etn mun mah pash zaq tev mer
+tip silsof
+tev mer tip silsof mah pash zaq
+tip silsof pash zaq tip mun
+etn qad ger mun_leg mun rev
+mah pash zaq tip mer silsof
+mun tq qad ger mun
+rev pash zaq tip mun
+etn rev dar tev mer tip
+silsof mer tip etn
+pash mun zaq yet zaq mer tip
+mer silsof mer tip mun
+etn mun zaq
+mer tip mer silsof
+tip mun etn
+ger2 mun rev mah pash mun zaq
+tip mer silsof

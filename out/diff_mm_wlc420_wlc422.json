@@ -1,0 +1,2469 @@
+{
+  "ids": [
+    "wlc420",
+    "wlc422"
+  ],
+  "verses_of_different_length": [
+    [
+      "gn14:17",
+      19,
+      20
+    ],
+    [
+      "da2:39",
+      16,
+      17
+    ]
+  ],
+  "side_a_edits": [
+    {
+      "bcv": "gn14:17",
+      "edit type": "split word",
+      "original word": {
+        "word": "K.:DFRLF(O80MER",
+        "notes": [
+          "]n",
+          "]p"
+        ]
+      },
+      "split word": [
+        "K.:DFR→",
+        {
+          "word": "←LF(O80MER",
+          "notes": [
+            "]n",
+            "]p"
+          ]
+        }
+      ]
+    },
+    {
+      "bcv": "da2:39",
+      "edit type": "added null word",
+      "word before null word": ")FX:FRI73Y",
+      "word after null word": {
+        "word": "):ARA74()",
+        "notes": [
+          "]1"
+        ]
+      }
+    }
+  ],
+  "type changes": [
+    {
+      "bcv": "da2:39",
+      "vela_type": "vyltype-∅",
+      "vela_0": "",
+      "vela_1": "",
+      "velb_type": "vyltype-wn",
+      "velb_0": "*)R()",
+      "velb_1": ""
+    }
+  ],
+  "notes differences": [
+    {
+      "bcv": "gn1:11",
+      "diff_type": "notes changed and word changed",
+      "ab_word": "D.E80$E)\nD.E81$E)",
+      "ab_notes": "\n]Q]c",
+      "change": "∅ → ]Q]c",
+      "change_category": "other ∅ → ]Q]c",
+      "b-a": "]Q]c",
+      "a-b": ""
+    },
+    {
+      "bcv": "gn1:12",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "P.:RI91Y\nP.:RI91Y",
+      "ab_notes": "]c]p\n]C]P]c]p",
+      "change": "]c]p → ]C]P]c]p",
+      "change_category": "other ]c]p → ]C]P]c]p",
+      "b-a": "]C]P",
+      "a-b": ""
+    },
+    {
+      "bcv": "gn2:10",
+      "diff_type": "notes changed and word changed",
+      "ab_word": "W:/NFHFR.03\nW:/NFHFR03",
+      "ab_notes": "]p\n",
+      "change": "]p → ∅",
+      "change_category": "other ]p → ∅",
+      "b-a": "",
+      "a-b": "]p"
+    },
+    {
+      "bcv": "gn2:18",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "L./O71W\nL./O71W",
+      "ab_notes": "]1\n]C]U",
+      "change": "]1 → ]C]U",
+      "change_category": "nc .*]1.* → .*]U.*",
+      "b-a": "]C]U",
+      "a-b": "]1"
+    },
+    {
+      "bcv": "gn3:17",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "$FMA(:T.F02\n$FMA(:T.F02",
+      "ab_notes": "]c\n]C]P]c",
+      "change": "]c → ]C]P]c",
+      "change_category": "other ]c → ]C]P]c",
+      "b-a": "]C]P",
+      "a-b": ""
+    },
+    {
+      "bcv": "gn4:18",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "W./M:XIY.YF)\"81L\nW./M:XIY.YF)\"81L",
+      "ab_notes": "\n]U",
+      "change": "∅ → ]U",
+      "change_category": "nc + ]U",
+      "b-a": "]U",
+      "a-b": ""
+    },
+    {
+      "bcv": "gn6:16",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "T.:KAL/E74N.FH\nT.:KAL/E74N.FH",
+      "ab_notes": "]1\n]U",
+      "change": "]1 → ]U",
+      "change_category": "nc .*]1.* → .*]U.*",
+      "b-a": "]U",
+      "a-b": "]1"
+    },
+    {
+      "bcv": "gn7:23",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "WA/YI$.F94)ER\nWA/YI$.F94)ER",
+      "ab_notes": "]1\n]U",
+      "change": "]1 → ]U",
+      "change_category": "nc .*]1.* → .*]U.*",
+      "b-a": "]U",
+      "a-b": "]1"
+    },
+    {
+      "bcv": "gn9:21",
+      "diff_type": "notes changed but word did not",
+      "ab_word": ")FH:FL/O75H00\n)FH:FL/O75H00",
+      "ab_notes": "]q\n]Q]n]q",
+      "change": "]q → ]Q]n]q",
+      "change_category": "other ]q → ]Q]n]q",
+      "b-a": "]Q]n",
+      "a-b": ""
+    },
+    {
+      "bcv": "gn12:8",
+      "diff_type": "notes changed but word did not",
+      "ab_word": ")FH:FL/O92H\n)FH:FL/O92H",
+      "ab_notes": "]q\n]Q]n]q",
+      "change": "]q → ]Q]n]q",
+      "change_category": "other ]q → ]Q]n]q",
+      "b-a": "]Q]n",
+      "a-b": ""
+    },
+    {
+      "bcv": "gn14:2",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "**C:BOWYI80YM\n**C:BOWYI80YM",
+      "ab_notes": "]k\n]Q]k",
+      "change": "]k → ]Q]k",
+      "change_category": "other ]k → ]Q]k",
+      "b-a": "]Q",
+      "a-b": ""
+    },
+    {
+      "bcv": "gn14:10",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "HA/&ID.I81YM\nHA/&ID.I81YM",
+      "ab_notes": "]1\n]U",
+      "change": "]1 → ]U",
+      "change_category": "nc .*]1.* → .*]U.*",
+      "b-a": "]U",
+      "a-b": "]1"
+    },
+    {
+      "bcv": "gn14:17",
+      "diff_type": "notes changed and word changed",
+      "ab_word": ")AX:AR\"74Y\n)AXAR\"74Y",
+      "ab_notes": "\n]Q]n]v",
+      "change": "∅ → ]Q]n]v",
+      "change_category": "other ∅ → ]Q]n]v",
+      "b-a": "]Q]n]v",
+      "a-b": ""
+    },
+    {
+      "bcv": "gn14:17",
+      "diff_type": "notes changed and word changed",
+      "ab_word": "←LF(O80MER\nLF(O80MER",
+      "ab_notes": "]n]p\n",
+      "change": "]n]p → ∅",
+      "change_category": "other ]n]p → ∅",
+      "b-a": "",
+      "a-b": "]n]p"
+    },
+    {
+      "bcv": "gn15:10",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "HA/CIP.O73R\nHA/CIP.O73R",
+      "ab_notes": "]1\n]U",
+      "change": "]1 → ]U",
+      "change_category": "nc .*]1.* → .*]U.*",
+      "b-a": "]U",
+      "a-b": "]1"
+    },
+    {
+      "bcv": "gn16:2",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "MIM./E92N.FH\nMIM.E92/N.FH",
+      "ab_notes": "]v\n]Q]v",
+      "change": "]v → ]Q]v",
+      "change_category": "other ]v → ]Q]v",
+      "b-a": "]Q",
+      "a-b": ""
+    },
+    {
+      "bcv": "gn17:20",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "W.75/L:/YI$:MF(\"82)L\nW.75/L:/YI$:MF(\"82)L",
+      "ab_notes": "]1\n]S]s",
+      "change": "]1 → ]S]s",
+      "change_category": "nc ]1/]U → ]s/]S]s",
+      "b-a": "]S]s",
+      "a-b": "]1"
+    },
+    {
+      "bcv": "gn18:18",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "W:/NI63B:R:KW.\nW:/NI63B:R:KW.",
+      "ab_notes": "\n]U",
+      "change": "∅ → ]U",
+      "change_category": "nc + ]U",
+      "b-a": "]U",
+      "a-b": ""
+    },
+    {
+      "bcv": "gn18:25",
+      "diff_type": "notes changed and word changed",
+      "ab_word": "KA/C.AD.I73YQ\nKA/CAD.I73YQ",
+      "ab_notes": "\n]Q]n]p",
+      "change": "∅ → ]Q]n]p",
+      "change_category": "nc + ]p",
+      "b-a": "]Q]n]p",
+      "a-b": ""
+    },
+    {
+      "bcv": "gn19:2",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "WA/H:ALAK:T.E74M\nWA/H:ALAK:T.E74M",
+      "ab_notes": "]v\n]Q]v",
+      "change": "]v → ]Q]v",
+      "change_category": "other ]v → ]Q]v",
+      "b-a": "]Q",
+      "a-b": ""
+    },
+    {
+      "bcv": "gn22:2",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "B.IN/:KF63\nB.IN/:KF63",
+      "ab_notes": "]c\n]C]c",
+      "change": "]c → ]C]c",
+      "change_category": "other ]c → ]C]c",
+      "b-a": "]C",
+      "a-b": ""
+    },
+    {
+      "bcv": "gn22:12",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "M:)92W.M.FH\nM:)92W.M.FH",
+      "ab_notes": "]1\n]U",
+      "change": "]1 → ]U",
+      "change_category": "nc .*]1.* → .*]U.*",
+      "b-a": "]U",
+      "a-b": "]1"
+    },
+    {
+      "bcv": "gn24:14",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "HA75/N.A(:ARF81\nHA75/N.A(:ARF81",
+      "ab_notes": "\n]U",
+      "change": "∅ → ]U",
+      "change_category": "nc + ]U",
+      "b-a": "]U",
+      "a-b": ""
+    },
+    {
+      "bcv": "gn24:16",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "W:/HA75/N.A(:ARF81\nW:/HA75/N.A(:ARF81",
+      "ab_notes": "\n]U",
+      "change": "∅ → ]U",
+      "change_category": "nc + ]U",
+      "b-a": "]U",
+      "a-b": ""
+    },
+    {
+      "bcv": "gn24:28",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "HA75/N.A(:ARF80\nHA75/N.A(:ARF80",
+      "ab_notes": "\n]U",
+      "change": "∅ → ]U",
+      "change_category": "nc + ]U",
+      "b-a": "]U",
+      "a-b": ""
+    },
+    {
+      "bcv": "gn24:36",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "L./O73W\nL./O73W",
+      "ab_notes": "]1\n]U",
+      "change": "]1 → ]U",
+      "change_category": "nc .*]1.* → .*]U.*",
+      "b-a": "]U",
+      "a-b": "]1"
+    },
+    {
+      "bcv": "gn24:53",
+      "diff_type": "notes changed and word changed",
+      "ab_word": "WA/Y.IT.\"73N\nWA/YIT.\"73N",
+      "ab_notes": "\n]Q]n]p",
+      "change": "∅ → ]Q]n]p",
+      "change_category": "nc + ]p",
+      "b-a": "]Q]n]p",
+      "a-b": ""
+    },
+    {
+      "bcv": "gn24:55",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "HA/N.A(:ARF71\nHA/N.A(:ARF71",
+      "ab_notes": "\n]U",
+      "change": "∅ → ]U",
+      "change_category": "nc + ]U",
+      "b-a": "]U",
+      "a-b": ""
+    },
+    {
+      "bcv": "gn24:57",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "LA75/N.A(:ARF92\nLA75/N.A(:ARF92",
+      "ab_notes": "\n]U",
+      "change": "∅ → ]U",
+      "change_category": "nc + ]U",
+      "b-a": "]U",
+      "a-b": ""
+    },
+    {
+      "bcv": "gn25:6",
+      "diff_type": "notes changed and word changed",
+      "ab_word": "B.:N/OW03\nB.N/OW03",
+      "ab_notes": "\n]Q]n]v",
+      "change": "∅ → ]Q]n]v",
+      "change_category": "other ∅ → ]Q]n]v",
+      "b-a": "]Q]n]v",
+      "a-b": ""
+    },
+    {
+      "bcv": "gn26:1",
+      "diff_type": "notes changed and word changed",
+      "ab_word": "):ABIYM.E71LEK:\n):ABIYME71LEK:",
+      "ab_notes": "]1\n]Q]p",
+      "change": "]1 → ]Q]p",
+      "change_category": "other ]1 → ]Q]p",
+      "b-a": "]Q]p",
+      "a-b": "]1"
+    },
+    {
+      "bcv": "gn26:29",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "T.A(:A&\"63H\nT.A(:A&\"63H",
+      "ab_notes": "]1\n]U",
+      "change": "]1 → ]U",
+      "change_category": "nc .*]1.* → .*]U.*",
+      "b-a": "]U",
+      "a-b": "]1"
+    },
+    {
+      "bcv": "gn27:29",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "W:/YI$:T.AX:AW.71W.\nW:/YI$:T.AX:AW.71W.",
+      "ab_notes": "]1\n]U",
+      "change": "]1 → ]U",
+      "change_category": "nc .*]1.* → .*]U.*",
+      "b-a": "]U",
+      "a-b": "]1"
+    },
+    {
+      "bcv": "gn29:19",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "10+OWB\n10+OWB",
+      "ab_notes": "]c\n",
+      "change": "]c → ∅",
+      "change_category": "other ]c → ∅",
+      "b-a": "",
+      "a-b": "]c"
+    },
+    {
+      "bcv": "gn30:19",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "L.:/YA(:AQO75B00\nL.:/YA(:AQO75B00",
+      "ab_notes": "]1\n]U",
+      "change": "]1 → ]U",
+      "change_category": "nc .*]1.* → .*]U.*",
+      "b-a": "]U",
+      "a-b": "]1"
+    },
+    {
+      "bcv": "gn30:37",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "W:/(ER:MO92WN\nW:/(ER:MO92WN",
+      "ab_notes": "]1\n]U",
+      "change": "]1 → ]U",
+      "change_category": "nc .*]1.* → .*]U.*",
+      "b-a": "]U",
+      "a-b": "]1"
+    },
+    {
+      "bcv": "gn31:42",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "Y:GI94Y(A\nY:GI94Y(A",
+      "ab_notes": "]v\n",
+      "change": "]v → ∅",
+      "change_category": "other ]v → ∅",
+      "b-a": "",
+      "a-b": "]v"
+    },
+    {
+      "bcv": "gn31:48",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "$:M/O73W\n$:M/O73W",
+      "ab_notes": "]c\n]C]c",
+      "change": "]c → ]C]c",
+      "change_category": "other ]c → ]C]c",
+      "b-a": "]C",
+      "a-b": ""
+    },
+    {
+      "bcv": "gn31:51",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "HA/MAC.\"BF80H\nHA/MAC.\"BF80H",
+      "ab_notes": "]1\n]U",
+      "change": "]1 → ]U",
+      "change_category": "nc .*]1.* → .*]U.*",
+      "b-a": "]U",
+      "a-b": "]1"
+    },
+    {
+      "bcv": "gn32:16",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "WA/(:YFRI73M\nWA/(:YFRI73M",
+      "ab_notes": "]1\n]U",
+      "change": "]1 → ]U",
+      "change_category": "nc .*]1.* → .*]U.*",
+      "b-a": "]U",
+      "a-b": "]1"
+    },
+    {
+      "bcv": "gn32:18",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "YI75P:G.F$/:KF62\nYI75P:G.F$/:KF62",
+      "ab_notes": "]1\n]U",
+      "change": "]1 → ]U",
+      "change_category": "nc .*]1.* → .*]U.*",
+      "b-a": "]U",
+      "a-b": "]1"
+    },
+    {
+      "bcv": "gn32:18",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "WI/$:)\"75L/:KF03\nWI/$:)\"75L/:KF03",
+      "ab_notes": "]1\n]U",
+      "change": "]1 → ]U",
+      "change_category": "nc .*]1.* → .*]U.*",
+      "b-a": "]U",
+      "a-b": "]1"
+    },
+    {
+      "bcv": "gn32:24",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "L/OW00\nL/OW00",
+      "ab_notes": "]1\n]U",
+      "change": "]1 → ]U",
+      "change_category": "nc .*]1.* → .*]U.*",
+      "b-a": "]U",
+      "a-b": "]1"
+    },
+    {
+      "bcv": "gn33:4",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "CAW.F)R/F73W\nCAW.F)R/F73W",
+      "ab_notes": "]q\n]Q]q",
+      "change": "]q → ]Q]q",
+      "change_category": "other ]q → ]Q]q",
+      "b-a": "]Q",
+      "a-b": ""
+    },
+    {
+      "bcv": "gn33:14",
+      "diff_type": "notes changed but word did not",
+      "ab_word": ")E75T:NFH:ALF74H\n)E75T:NFH:ALF74H",
+      "ab_notes": "]c\n]C]c",
+      "change": "]c → ]C]c",
+      "change_category": "other ]c → ]C]c",
+      "b-a": "]C",
+      "a-b": ""
+    },
+    {
+      "bcv": "gn34:3",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "HA75/N.A(:ARF80\nHA75/N.A(:ARF80",
+      "ab_notes": "\n]U",
+      "change": "∅ → ]U",
+      "change_category": "nc + ]U",
+      "b-a": "]U",
+      "a-b": ""
+    },
+    {
+      "bcv": "gn34:3",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "HA75/N.A(:ARF7500\nHA75/N.A(:ARF7500",
+      "ab_notes": "\n]U",
+      "change": "∅ → ]U",
+      "change_category": "nc + ]U",
+      "b-a": "]U",
+      "a-b": ""
+    },
+    {
+      "bcv": "gn34:11",
+      "diff_type": "notes changed but word did not",
+      "ab_word": ")FBI74Y/H\n)FBI74Y/H",
+      "ab_notes": "]1\n]U",
+      "change": "]1 → ]U",
+      "change_category": "nc .*]1.* → .*]U.*",
+      "b-a": "]U",
+      "a-b": "]1"
+    },
+    {
+      "bcv": "gn34:12",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "HA75/N.A(:ARF73\nHA75/N.A(:ARF73",
+      "ab_notes": "\n]U",
+      "change": "∅ → ]U",
+      "change_category": "nc + ]U",
+      "b-a": "]U",
+      "a-b": ""
+    },
+    {
+      "bcv": "gn34:28",
+      "diff_type": "notes changed and word changed",
+      "ab_word": "X:AMOR\"Y/H.E92M\nX:AMOR\"Y/HE92M",
+      "ab_notes": "]1\n]Q]p",
+      "change": "]1 → ]Q]p",
+      "change_category": "other ]1 → ]Q]p",
+      "b-a": "]Q]p",
+      "a-b": "]1"
+    },
+    {
+      "bcv": "gn35:1",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "B.:/BFR:X/:AKF80\nB.:/BFR:X/:AKF80",
+      "ab_notes": "]1\n]U",
+      "change": "]1 → ]U",
+      "change_category": "nc .*]1.* → .*]U.*",
+      "b-a": "]U",
+      "a-b": "]1"
+    },
+    {
+      "bcv": "gn35:10",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "$IM/:KF63\n$IM/:KF63",
+      "ab_notes": "]c\n]C]c",
+      "change": "]c → ]C]c",
+      "change_category": "other ]c → ]C]c",
+      "b-a": "]C",
+      "a-b": ""
+    },
+    {
+      "bcv": "gn35:21",
+      "diff_type": "notes changed but word did not",
+      "ab_word": ")F75H:FL/O80H\n)F75H:FL/O80H",
+      "ab_notes": "]q\n]Q]n]q",
+      "change": "]q → ]Q]n]q",
+      "change_category": "other ]q → ]Q]n]q",
+      "b-a": "]Q]n",
+      "a-b": ""
+    },
+    {
+      "bcv": "gn35:22",
+      "diff_type": "notes changed and word changed",
+      "ab_word": "R:)W.B\"80N\nR:)W.B\"8081N",
+      "ab_notes": "\n]C]c",
+      "change": "∅ → ]C]c",
+      "change_category": "other ∅ → ]C]c",
+      "b-a": "]C]c",
+      "a-b": ""
+    },
+    {
+      "bcv": "gn35:22",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "YI&:RF)\"9275L\nYI&:RF)\"9275L",
+      "ab_notes": "\n]U",
+      "change": "∅ → ]U",
+      "change_category": "nc + ]U",
+      "b-a": "]U",
+      "a-b": ""
+    },
+    {
+      "bcv": "gn36:13",
+      "diff_type": "notes changed but word did not",
+      "ab_word": ")\"74L.E74H\n)\"74L.E74H",
+      "ab_notes": "]1\n]U",
+      "change": "]1 → ]U",
+      "change_category": "nc .*]1.* → .*]U.*",
+      "b-a": "]U",
+      "a-b": "]1"
+    },
+    {
+      "bcv": "gn38:9",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "L.O71)\nL.O71)",
+      "ab_notes": "]1\n]U",
+      "change": "]1 → ]U",
+      "change_category": "nc .*]1.* → .*]U.*",
+      "b-a": "]U",
+      "a-b": "]1"
+    },
+    {
+      "bcv": "gn38:11",
+      "diff_type": "notes changed and word changed",
+      "ab_word": "B:N/I80Y\nB:N/:80Y",
+      "ab_notes": "\n]Q]n]v",
+      "change": "∅ → ]Q]n]v",
+      "change_category": "other ∅ → ]Q]n]v",
+      "b-a": "]Q]n]v",
+      "a-b": ""
+    },
+    {
+      "bcv": "gn38:16",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "L./I80Y\nL./I80Y",
+      "ab_notes": "]1\n]U",
+      "change": "]1 → ]U",
+      "change_category": "nc .*]1.* → .*]U.*",
+      "b-a": "]U",
+      "a-b": "]1"
+    },
+    {
+      "bcv": "gn38:18",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "L./FK:01\nL./FK:01",
+      "ab_notes": "\n]U",
+      "change": "∅ → ]U",
+      "change_category": "nc + ]U",
+      "b-a": "]U",
+      "a-b": ""
+    },
+    {
+      "bcv": "gn38:18",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "L./F91H.\nL./F91H.",
+      "ab_notes": "\n]U",
+      "change": "∅ → ]U",
+      "change_category": "nc + ]U",
+      "b-a": "]U",
+      "a-b": ""
+    },
+    {
+      "bcv": "gn38:26",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "L:/DA(:T./F75H00\nL:/DA(:T./F75H00",
+      "ab_notes": "]1\n]U",
+      "change": "]1 → ]U",
+      "change_category": "nc .*]1.* → .*]U.*",
+      "b-a": "]U",
+      "a-b": "]1"
+    },
+    {
+      "bcv": "gn39:2",
+      "diff_type": "notes changed and word changed",
+      "ab_word": "B.:/B\"71YT\nB.:/B\"73YT",
+      "ab_notes": "\n]C]c",
+      "change": "∅ → ]C]c",
+      "change_category": "other ∅ → ]C]c",
+      "b-a": "]C]c",
+      "a-b": ""
+    },
+    {
+      "bcv": "gn39:2",
+      "diff_type": "notes changed and word changed",
+      "ab_word": "):ADONF73Y/W\n):ADONF71Y/W",
+      "ab_notes": "\n]C]c",
+      "change": "∅ → ]C]c",
+      "change_category": "other ∅ → ]C]c",
+      "b-a": "]C]c",
+      "a-b": ""
+    },
+    {
+      "bcv": "gn39:19",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "(F71&FH.\n(F71&FH.",
+      "ab_notes": "]1\n]U",
+      "change": "]1 → ]U",
+      "change_category": "nc .*]1.* → .*]U.*",
+      "b-a": "]U",
+      "a-b": "]1"
+    },
+    {
+      "bcv": "gn39:23",
+      "diff_type": "notes changed and word changed",
+      "ab_word": "HA/S.O81HAR\nHA/S.OHA81R",
+      "ab_notes": "\n]Q]c]n",
+      "change": "∅ → ]Q]c]n",
+      "change_category": "other ∅ → ]Q]c]n",
+      "b-a": "]Q]c]n",
+      "a-b": ""
+    },
+    {
+      "bcv": "gn40:3",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "HA/+AB.FXI73YM\nHA/+AB.FXI73YM",
+      "ab_notes": "]1\n]U",
+      "change": "]1 → ]U",
+      "change_category": "nc .*]1.* → .*]U.*",
+      "b-a": "]U",
+      "a-b": "]1"
+    },
+    {
+      "bcv": "gn40:20",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "10YOWM\n10YOWM",
+      "ab_notes": "]c\n",
+      "change": "]c → ∅",
+      "change_category": "other ]c → ∅",
+      "b-a": "",
+      "a-b": "]c"
+    },
+    {
+      "bcv": "gn41:7",
+      "diff_type": "notes changed and word changed",
+      "ab_word": "HA75/$.IB.:FLI80YM\nHA75/$IB.:FLI80YM",
+      "ab_notes": "\n]Q]n]p",
+      "change": "∅ → ]Q]n]p",
+      "change_category": "nc + ]p",
+      "b-a": "]Q]n]p",
+      "a-b": ""
+    },
+    {
+      "bcv": "gn41:12",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "L/O80W\nL/O80W",
+      "ab_notes": "]1\n]U",
+      "change": "]1 → ]U",
+      "change_category": "nc .*]1.* → .*]U.*",
+      "b-a": "]U",
+      "a-b": "]1"
+    },
+    {
+      "bcv": "gn41:24",
+      "diff_type": "notes changed and word changed",
+      "ab_word": "HF/$IB.:FLI74YM\nHA/$IB.:FLI74YM",
+      "ab_notes": "]1\n]Q]U]v",
+      "change": "]1 → ]Q]U]v",
+      "change_category": "other ]1 → ]Q]U]v",
+      "b-a": "]Q]U]v",
+      "a-b": "]1"
+    },
+    {
+      "bcv": "gn41:24",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "HA75/$IB.:FLI73YM\nHA75/$IB.:FLI73YM",
+      "ab_notes": "\n]Q]n]p",
+      "change": "∅ → ]Q]n]p",
+      "change_category": "nc + ]p",
+      "b-a": "]Q]n]p",
+      "a-b": ""
+    },
+    {
+      "bcv": "gn41:27",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "HA75/$IB.:FLIYM03\nHA75/$IB.:FLIYM03",
+      "ab_notes": "\n]Q]n]p",
+      "change": "∅ → ]Q]n]p",
+      "change_category": "nc + ]p",
+      "b-a": "]Q]n]p",
+      "a-b": ""
+    },
+    {
+      "bcv": "gn41:30",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "$E61BA(\n$E61BA(",
+      "ab_notes": "]c\n]C]c",
+      "change": "]c → ]C]c",
+      "change_category": "other ]c → ]C]c",
+      "b-a": "]C",
+      "a-b": ""
+    },
+    {
+      "bcv": "gn41:46",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "WA75/Y.A(:BO73R\nWA75/Y.A(:BO73R",
+      "ab_notes": "]1\n]U",
+      "change": "]1 → ]U",
+      "change_category": "nc .*]1.* → .*]U.*",
+      "b-a": "]U",
+      "a-b": "]1"
+    },
+    {
+      "bcv": "gn43:7",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "L/O80W\nL/O80W",
+      "ab_notes": "]1\n]U",
+      "change": "]1 → ]U",
+      "change_category": "nc .*]1.* → .*]U.*",
+      "b-a": "]U",
+      "a-b": "]1"
+    },
+    {
+      "bcv": "gn43:26",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "WA/Y.FBI71Y).W.\nWA/Y.FBI71Y).W.",
+      "ab_notes": "\n]U",
+      "change": "∅ → ]U",
+      "change_category": "nc + ]U",
+      "b-a": "]U",
+      "a-b": ""
+    },
+    {
+      "bcv": "gn43:28",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "*W/Y#TXW\n*W/Y#TXW",
+      "ab_notes": "\n]U",
+      "change": "∅ → ]U",
+      "change_category": "nc + ]U",
+      "b-a": "]U",
+      "a-b": ""
+    },
+    {
+      "bcv": "gn43:28",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "**WA/Y.I75$:T.AX:AW.75W.00\n**WA/Y.I75$:T.AX:AW.75W.00",
+      "ab_notes": "]1]a\n]U]a",
+      "change": "]1]a → ]U]a",
+      "change_category": "nc .*]1.* → .*]U.*",
+      "b-a": "]U",
+      "a-b": "]1"
+    },
+    {
+      "bcv": "gn45:6",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "W:/QFC.I75YR00\nW:/QFC.I75YR00",
+      "ab_notes": "]1\n]U",
+      "change": "]1 → ]U",
+      "change_category": "nc .*]1.* → .*]U.*",
+      "b-a": "]U",
+      "a-b": "]1"
+    },
+    {
+      "bcv": "gn46:13",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "YI&F#KF92R\nYI&F#KF92R",
+      "ab_notes": "\n]U",
+      "change": "∅ → ]U",
+      "change_category": "nc + ]U",
+      "b-a": "]U",
+      "a-b": ""
+    },
+    {
+      "bcv": "gn47:29",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "YI&:RF)\"82L\nYI&:RF)\"82L",
+      "ab_notes": "]1\n]S]s",
+      "change": "]1 → ]S]s",
+      "change_category": "nc ]1/]U → ]s/]S]s",
+      "b-a": "]S]s",
+      "a-b": "]1"
+    },
+    {
+      "bcv": "gn49:8",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "YI$:T.AX:AW.71W.\nYI$:T.AX:AW.71W.",
+      "ab_notes": "]1\n]U",
+      "change": "]1 → ]U",
+      "change_category": "nc .*]1.* → .*]U.*",
+      "b-a": "]U",
+      "a-b": "]1"
+    },
+    {
+      "bcv": "gn49:26",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "T.I75H:YE33YN03\nT.I75H:YE33YN03",
+      "ab_notes": "]1\n]U",
+      "change": "]1 → ]U",
+      "change_category": "nc .*]1.* → .*]U.*",
+      "b-a": "]U",
+      "a-b": "]1"
+    },
+    {
+      "bcv": "gn50:1",
+      "diff_type": "notes changed and word changed",
+      "ab_word": "WA/Y.IP.O71L\nWA/YIP.O71L",
+      "ab_notes": "\n]Q]n]p",
+      "change": "∅ → ]Q]n]p",
+      "change_category": "nc + ]p",
+      "b-a": "]Q]n]p",
+      "a-b": ""
+    },
+    {
+      "bcv": "ex6:6",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "YI&:RF)\"82L\nYI&:RF)\"82L",
+      "ab_notes": "]1\n]s",
+      "change": "]1 → ]s",
+      "change_category": "nc ]1/]U → ]s/]S]s",
+      "b-a": "]s",
+      "a-b": "]1"
+    },
+    {
+      "bcv": "ex10:13",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "QFDIYM03\nQFDIYM03",
+      "ab_notes": "\n]c]p",
+      "change": "∅ → ]c]p",
+      "change_category": "nc + ]p",
+      "b-a": "]c]p",
+      "a-b": ""
+    },
+    {
+      "bcv": "ex10:28",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "T.O33SEP03\nT.O33SEP03",
+      "ab_notes": "\n]1",
+      "change": "∅ → ]1",
+      "change_category": "nc + ]1",
+      "b-a": "]1",
+      "a-b": ""
+    },
+    {
+      "bcv": "ex12:27",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "WA/Y.I75$:T.AX:AW.75W.00\nWA/Y.I75$:T.AX:AW.75W.00",
+      "ab_notes": "\n]1",
+      "change": "∅ → ]1",
+      "change_category": "nc + ]1",
+      "b-a": "]1",
+      "a-b": ""
+    },
+    {
+      "bcv": "ex20:4",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "PE7433SEL0305\nPE7433SEL0305",
+      "ab_notes": "]1\n",
+      "change": "]1 → ∅",
+      "change_category": "other ]1 → ∅",
+      "b-a": "",
+      "a-b": "]1"
+    },
+    {
+      "bcv": "ex22:28",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "L./I75Y00\nL./I75Y00",
+      "ab_notes": "\n]1",
+      "change": "∅ → ]1",
+      "change_category": "nc + ]1",
+      "b-a": "]1",
+      "a-b": ""
+    },
+    {
+      "bcv": "ex30:12",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "YI&:RF)\"82L\nYI&:RF)\"82L",
+      "ab_notes": "]1\n]s",
+      "change": "]1 → ]s",
+      "change_category": "nc ]1/]U → ]s/]S]s",
+      "b-a": "]s",
+      "a-b": "]1"
+    },
+    {
+      "bcv": "ex36:2",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "B.:CAL:)\"82L\nB.:CAL:)\"82L",
+      "ab_notes": "]1\n]s",
+      "change": "]1 → ]s",
+      "change_category": "nc ]1/]U → ]s/]S]s",
+      "b-a": "]s",
+      "a-b": "]1"
+    },
+    {
+      "bcv": "lv4:2",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "YI&:RF)\"82L\nYI&:RF)\"82L",
+      "ab_notes": "]1\n]s",
+      "change": "]1 → ]s",
+      "change_category": "nc ]1/]U → ]s/]S]s",
+      "b-a": "]s",
+      "a-b": "]1"
+    },
+    {
+      "bcv": "lv13:3",
+      "diff_type": "notes changed and word changed",
+      "ab_word": "HA/N.E33GA(03\nHA/N.E33GE(03",
+      "ab_notes": "\n]v",
+      "change": "∅ → ]v",
+      "change_category": "other ∅ → ]v",
+      "b-a": "]v",
+      "a-b": ""
+    },
+    {
+      "bcv": "lv13:26",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "B.A/B.EHE33RET03\nB.A/B.EHE33RET03",
+      "ab_notes": "\n]1",
+      "change": "∅ → ]1",
+      "change_category": "nc + ]1",
+      "b-a": "]1",
+      "a-b": ""
+    },
+    {
+      "bcv": "lv20:2",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "YI&:RF)\"82L\nYI&:RF)\"82L",
+      "ab_notes": "]1\n]s",
+      "change": "]1 → ]s",
+      "change_category": "nc ]1/]U → ]s/]S]s",
+      "b-a": "]s",
+      "a-b": "]1"
+    },
+    {
+      "bcv": "lv23:17",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "T.FBI74Y).W.05\nT.FBI74Y).W.05",
+      "ab_notes": "\n]1",
+      "change": "∅ → ]1",
+      "change_category": "nc + ]1",
+      "b-a": "]1",
+      "a-b": ""
+    },
+    {
+      "bcv": "lv26:34",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "H:F$AM./F80H\nH:F$AM./F80H",
+      "ab_notes": "\n]p",
+      "change": "∅ → ]p",
+      "change_category": "nc + ]p",
+      "b-a": "]p",
+      "a-b": ""
+    },
+    {
+      "bcv": "lv26:35",
+      "diff_type": "notes changed and word changed",
+      "ab_word": "HF$.AM./F73H\nHF$AM./F73H",
+      "ab_notes": "\n]p",
+      "change": "∅ → ]p",
+      "change_category": "nc + ]p",
+      "b-a": "]p",
+      "a-b": ""
+    },
+    {
+      "bcv": "nu10:15",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "YI&F#KF92R\nYI&F#KF92R",
+      "ab_notes": "\n]1",
+      "change": "∅ → ]1",
+      "change_category": "nc + ]1",
+      "b-a": "]1",
+      "a-b": ""
+    },
+    {
+      "bcv": "nu11:24",
+      "diff_type": "notes changed and word changed",
+      "ab_word": "MO$E81H\nMO$E80H",
+      "ab_notes": "\n]c",
+      "change": "∅ → ]c",
+      "change_category": "other ∅ → ]c",
+      "b-a": "]c",
+      "a-b": ""
+    },
+    {
+      "bcv": "nu16:7",
+      "diff_type": "notes changed and word changed",
+      "ab_word": "(:AL\"Y/HE63N\n(:AL\"Y/HE63N05",
+      "ab_notes": "\n]c",
+      "change": "∅ → ]c",
+      "change_category": "other ∅ → ]c",
+      "b-a": "]c",
+      "a-b": ""
+    },
+    {
+      "bcv": "nu20:19",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "YI&:RF)\"82L\nYI&:RF)\"82L",
+      "ab_notes": "]1\n]s",
+      "change": "]1 → ]s",
+      "change_category": "nc ]1/]U → ]s/]S]s",
+      "b-a": "]s",
+      "a-b": "]1"
+    },
+    {
+      "bcv": "nu24:13",
+      "diff_type": "notes changed and word changed",
+      "ab_word": "MI/L.IB./I92Y\nMI/LIB./I92Y",
+      "ab_notes": "\n]p",
+      "change": "∅ → ]p",
+      "change_category": "nc + ]p",
+      "b-a": "]p",
+      "a-b": ""
+    },
+    {
+      "bcv": "nu32:42",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "L/F72H\nL/F72H",
+      "ab_notes": "\n]1",
+      "change": "∅ → ]1",
+      "change_category": "nc + ]1",
+      "b-a": "]1",
+      "a-b": ""
+    },
+    {
+      "bcv": "nu34:26",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "YI&F#KF73R\nYI&F#KF73R",
+      "ab_notes": "\n]1",
+      "change": "∅ → ]1",
+      "change_category": "nc + ]1",
+      "b-a": "]1",
+      "a-b": ""
+    },
+    {
+      "bcv": "dt7:8",
+      "diff_type": "notes changed and word changed",
+      "ab_word": "W./MI/$.FM:R/70W.\nW./MI/$.FM:R/70W",
+      "ab_notes": "]P]p]v\n]Q]n]v",
+      "change": "]P]p]v → ]Q]n]v",
+      "change_category": "other ]P]p]v → ]Q]n]v",
+      "b-a": "]Q]n",
+      "a-b": "]P]p"
+    },
+    {
+      "bcv": "dt12:30",
+      "diff_type": "notes changed and word changed",
+      "ab_word": "L\"/)MO63R\nL\"/)MO81R",
+      "ab_notes": "\n]P]p",
+      "change": "∅ → ]P]p",
+      "change_category": "other ∅ → ]P]p",
+      "b-a": "]P]p",
+      "a-b": ""
+    },
+    {
+      "bcv": "dt14:24",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "TW.KA82L\nTW.KA82L",
+      "ab_notes": "]U\n]S]s",
+      "change": "]U → ]S]s",
+      "change_category": "nc ]1/]U → ]s/]S]s",
+      "b-a": "]S]s",
+      "a-b": "]U"
+    },
+    {
+      "bcv": "dt18:4",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "L./O75W00\nL./O75W00",
+      "ab_notes": "\n]1]P",
+      "change": "∅ → ]1]P",
+      "change_category": "nc + ]1",
+      "b-a": "]1]P",
+      "a-b": ""
+    },
+    {
+      "bcv": "dt22:15",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "**HA75/N.A(:ARF91H\n**HA75/N.A(:ARF91H",
+      "ab_notes": "\n]e",
+      "change": "∅ → ]e",
+      "change_category": "nc + ]e",
+      "b-a": "]e",
+      "a-b": ""
+    },
+    {
+      "bcv": "dt22:20",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "**LA75/N.A(:ARF75H00\n**LA75/N.A(:ARF75H00",
+      "ab_notes": "\n]e",
+      "change": "∅ → ]e",
+      "change_category": "nc + ]e",
+      "b-a": "]e",
+      "a-b": ""
+    },
+    {
+      "bcv": "dt22:21",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "**HA75/N.A(:ARF61H\n**HA75/N.A(:ARF61H",
+      "ab_notes": "\n]e",
+      "change": "∅ → ]e",
+      "change_category": "nc + ]e",
+      "b-a": "]e",
+      "a-b": ""
+    },
+    {
+      "bcv": "dt22:23",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "**NA(:ARF74H\n**NA(:ARF74H",
+      "ab_notes": "\n]e",
+      "change": "∅ → ]e",
+      "change_category": "nc + ]e",
+      "b-a": "]e",
+      "a-b": ""
+    },
+    {
+      "bcv": "dt22:24",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "**HA75/N.A(:ARF81H\n**HA75/N.A(:ARF81H",
+      "ab_notes": "\n]e",
+      "change": "∅ → ]e",
+      "change_category": "nc + ]e",
+      "b-a": "]e",
+      "a-b": ""
+    },
+    {
+      "bcv": "dt22:25",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "**HA75/N.A(:ARFH03\n**HA75/N.A(:ARFH03",
+      "ab_notes": "\n]e",
+      "change": "∅ → ]e",
+      "change_category": "nc + ]e",
+      "b-a": "]e",
+      "a-b": ""
+    },
+    {
+      "bcv": "dt22:26",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "**W:/LA75/N.A(:ARFH03\n**W:/LA75/N.A(:ARFH03",
+      "ab_notes": "]Q]c\n]Q]c]e",
+      "change": "]Q]c → ]Q]c]e",
+      "change_category": "nc + ]e",
+      "b-a": "]e",
+      "a-b": ""
+    },
+    {
+      "bcv": "dt22:26",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "**LA75/N.A(:ARF73H\n**LA75/N.A(:ARF73H",
+      "ab_notes": "\n]e",
+      "change": "∅ → ]e",
+      "change_category": "nc + ]e",
+      "b-a": "]e",
+      "a-b": ""
+    },
+    {
+      "bcv": "dt22:27",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "**HA75/N.A(:ARFH03\n**HA75/N.A(:ARFH03",
+      "ab_notes": "\n]e",
+      "change": "∅ → ]e",
+      "change_category": "nc + ]e",
+      "b-a": "]e",
+      "a-b": ""
+    },
+    {
+      "bcv": "dt22:28",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "**NA(:ARF70H\n**NA(:ARF70H",
+      "ab_notes": "\n]e",
+      "change": "∅ → ]e",
+      "change_category": "nc + ]e",
+      "b-a": "]e",
+      "a-b": ""
+    },
+    {
+      "bcv": "dt22:29",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "**HA75/N.A(:ARF73H\n**HA75/N.A(:ARF73H",
+      "ab_notes": "\n]e",
+      "change": "∅ → ]e",
+      "change_category": "nc + ]e",
+      "b-a": "]e",
+      "a-b": ""
+    },
+    {
+      "bcv": "dt31:7",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "YI&:RF)\"82L\nYI&:RF)\"82L",
+      "ab_notes": "]U\n]S]s",
+      "change": "]U → ]S]s",
+      "change_category": "nc ]1/]U → ]s/]S]s",
+      "b-a": "]S]s",
+      "a-b": "]U"
+    },
+    {
+      "bcv": "js4:8",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "YI&:RF)\"82L\nYI&:RF)\"82L",
+      "ab_notes": "]1\n]s",
+      "change": "]1 → ]s",
+      "change_category": "nc ]1/]U → ]s/]S]s",
+      "b-a": "]s",
+      "a-b": "]1"
+    },
+    {
+      "bcv": "js10:30",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "YI&:RF)\"82L\nYI&:RF)\"82L",
+      "ab_notes": "]1\n]s",
+      "change": "]1 → ]s",
+      "change_category": "nc ]1/]U → ]s/]S]s",
+      "b-a": "]s",
+      "a-b": "]1"
+    },
+    {
+      "bcv": "js19:30",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "W:/(UMF71H\nW:/(UMF71H",
+      "ab_notes": "\n]1",
+      "change": "∅ → ]1",
+      "change_category": "nc + ]1",
+      "b-a": "]1",
+      "a-b": ""
+    },
+    {
+      "bcv": "js22:19",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "T.IM:RO80DW.\nT.IM:RO80DW.",
+      "ab_notes": "\n]1",
+      "change": "∅ → ]1",
+      "change_category": "nc + ]1",
+      "b-a": "]1",
+      "a-b": ""
+    },
+    {
+      "bcv": "ju21:3",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "Z.O73)T\nZ.O73)T",
+      "ab_notes": "\n]p",
+      "change": "∅ → ]p",
+      "change_category": "nc + ]p",
+      "b-a": "]p",
+      "a-b": ""
+    },
+    {
+      "bcv": "1s1:6",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "HAR.:(IM/F92H.\nHAR.:(IM/F92H.",
+      "ab_notes": "\n]1",
+      "change": "∅ → ]1",
+      "change_category": "nc + ]1",
+      "b-a": "]1",
+      "a-b": ""
+    },
+    {
+      "bcv": "1s10:24",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "HA/R.:)IYTEM03\nHA/R.:)IYTEM03",
+      "ab_notes": "\n]w",
+      "change": "∅ → ]w",
+      "change_category": "nc + ]w",
+      "b-a": "]w",
+      "a-b": ""
+    },
+    {
+      "bcv": "1s11:10",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "L./F80NW.\nL./F80NW.",
+      "ab_notes": "\n]1",
+      "change": "∅ → ]1",
+      "change_category": "nc + ]1",
+      "b-a": "]1",
+      "a-b": ""
+    },
+    {
+      "bcv": "1s15:22",
+      "diff_type": "notes changed but word did not",
+      "ab_word": ")\"YLI95YM00\n)\"YLI95YM00",
+      "ab_notes": "\n]1",
+      "change": "∅ → ]1",
+      "change_category": "nc + ]1",
+      "b-a": "]1",
+      "a-b": ""
+    },
+    {
+      "bcv": "1s17:25",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "HA/R.:)IYTEM03\nHA/R.:)IYTEM03",
+      "ab_notes": "\n]w",
+      "change": "∅ → ]w",
+      "change_category": "nc + ]w",
+      "b-a": "]w",
+      "a-b": ""
+    },
+    {
+      "bcv": "1s27:10",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "HA/Y.AR:X:M:)\"LI80Y\nHA/Y.AR:X:M:)\"LI80Y",
+      "ab_notes": "\n]1",
+      "change": "∅ → ]1",
+      "change_category": "nc + ]1",
+      "b-a": "]1",
+      "a-b": ""
+    },
+    {
+      "bcv": "2s3:27",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "L:/DAB.\"71R\nL:/DAB.\"71R",
+      "ab_notes": "\n]p",
+      "change": "∅ → ]p",
+      "change_category": "nc + ]p",
+      "b-a": "]p",
+      "a-b": ""
+    },
+    {
+      "bcv": "2s19:33",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "B.:/$IYBFT/O74W\nB.:/$IYBFT/O74W",
+      "ab_notes": "\n]p",
+      "change": "∅ → ]p",
+      "change_category": "nc + ]p",
+      "b-a": "]p",
+      "a-b": ""
+    },
+    {
+      "bcv": "2s20:8",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "L:BU$/81W.\nL:BU$/81W.",
+      "ab_notes": "\n]1",
+      "change": "∅ → ]1",
+      "change_category": "nc + ]1",
+      "b-a": "]1",
+      "a-b": ""
+    },
+    {
+      "bcv": "2s20:12",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "HA75/M:S.IL.F92H\nHA75/M:S.IL.F92H",
+      "ab_notes": "]p\n]n]p",
+      "change": "]p → ]n]p",
+      "change_category": "other ]p → ]n]p",
+      "b-a": "]n",
+      "a-b": ""
+    },
+    {
+      "bcv": "1k4:17",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "B.:/YI&F#KF75R00\nB.:/YI&F#KF75R00",
+      "ab_notes": "\n]1",
+      "change": "∅ → ]1",
+      "change_category": "nc + ]1",
+      "b-a": "]1",
+      "a-b": ""
+    },
+    {
+      "bcv": "1k9:9",
+      "diff_type": "notes changed and word changed",
+      "ab_word": "WA/Y.A(AB:DU92/M\nWA/Y.A(:AB:DU92/M",
+      "ab_notes": "\n]v",
+      "change": "∅ → ]v",
+      "change_category": "other ∅ → ]v",
+      "b-a": "]v",
+      "a-b": ""
+    },
+    {
+      "bcv": "1k10:2",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "Y:RW.$FLA81:M/FH\nY:RW.$FLA81:M/FH",
+      "ab_notes": "\n]1",
+      "change": "∅ → ]1",
+      "change_category": "nc + ]1",
+      "b-a": "]1",
+      "a-b": ""
+    },
+    {
+      "bcv": "2k6:32",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "HA/R.:)IYTEM03\nHA/R.:)IYTEM03",
+      "ab_notes": "\n]w",
+      "change": "∅ → ]w",
+      "change_category": "nc + ]w",
+      "b-a": "]w",
+      "a-b": ""
+    },
+    {
+      "bcv": "2k9:28",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "Y:RW.$FLF92:M/FH\nY:RW.$FLF92:M/FH",
+      "ab_notes": "\n]1",
+      "change": "∅ → ]1",
+      "change_category": "nc + ]1",
+      "b-a": "]1",
+      "a-b": ""
+    },
+    {
+      "bcv": "is14:11",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "G.:)OWN/E73KF\nG.:)OWN/E73KF",
+      "ab_notes": "\n]p",
+      "change": "∅ → ]p",
+      "change_category": "nc + ]p",
+      "b-a": "]p",
+      "a-b": ""
+    },
+    {
+      "bcv": "is27:8",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "B.:/S.A)S.:)F73H\nB.:/S.A)S.:)F73H",
+      "ab_notes": "]p\n]n]p",
+      "change": "]p → ]n]p",
+      "change_category": "other ]p → ]n]p",
+      "b-a": "]n",
+      "a-b": ""
+    },
+    {
+      "bcv": "is33:15",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "B.:/RF95(00\nB.:/RF95(00",
+      "ab_notes": "\n]1",
+      "change": "∅ → ]1",
+      "change_category": "nc + ]1",
+      "b-a": "]1",
+      "a-b": ""
+    },
+    {
+      "bcv": "is36:2",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "Y:RW.$FLA91:M/FH\nY:RW.$FLA91:M/FH",
+      "ab_notes": "\n]1",
+      "change": "∅ → ]1",
+      "change_category": "nc + ]1",
+      "b-a": "]1",
+      "a-b": ""
+    },
+    {
+      "bcv": "is45:6",
+      "diff_type": "notes changed and word changed",
+      "ab_word": "W./MI/M.A74(:ARFB/F80H.\nW./MI/M.A74(:ARFB/F80H",
+      "ab_notes": "]p\n]1",
+      "change": "]p → ]1",
+      "change_category": "other ]p → ]1",
+      "b-a": "]1",
+      "a-b": "]p"
+    },
+    {
+      "bcv": "je3:17",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "W:/NIQ:W.63W.\nW:/NIQ:W.63W.",
+      "ab_notes": "\n]1",
+      "change": "∅ → ]1",
+      "change_category": "nc + ]1",
+      "b-a": "]1",
+      "a-b": ""
+    },
+    {
+      "bcv": "je3:21",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "HE(:EW.W.03\nHE(:EW.W.03",
+      "ab_notes": "\n]1",
+      "change": "∅ → ]1",
+      "change_category": "nc + ]1",
+      "b-a": "]1",
+      "a-b": ""
+    },
+    {
+      "bcv": "je15:18",
+      "diff_type": "notes changed and word changed",
+      "ab_word": "):ANW.$F92H03\n):ANW.$F92H",
+      "ab_notes": "\n]c",
+      "change": "∅ → ]c",
+      "change_category": "other ∅ → ]c",
+      "b-a": "]c",
+      "a-b": ""
+    },
+    {
+      "bcv": "je27:13",
+      "diff_type": "notes changed and word changed",
+      "ab_word": "W./BA/D.F92BER03\nW./BA/D.F92BER",
+      "ab_notes": "\n]c",
+      "change": "∅ → ]c",
+      "change_category": "other ∅ → ]c",
+      "b-a": "]c",
+      "a-b": ""
+    },
+    {
+      "bcv": "je39:12",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "R.F92(\nR.F92(",
+      "ab_notes": "\n]w",
+      "change": "∅ → ]w",
+      "change_category": "nc + ]w",
+      "b-a": "]w",
+      "a-b": ""
+    },
+    {
+      "bcv": "je44:19",
+      "diff_type": "notes changed and word changed",
+      "ab_word": "L:/HA74(:ACIB/F80H\nL:/HA74(:ACIB/F80H.",
+      "ab_notes": "\n]p",
+      "change": "∅ → ]p",
+      "change_category": "nc + ]p",
+      "b-a": "]p",
+      "a-b": ""
+    },
+    {
+      "bcv": "je47:6",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "T.A(:R/\"80K:\nT.A(:R/\"80K:",
+      "ab_notes": "\n]1",
+      "change": "∅ → ]1",
+      "change_category": "nc + ]1",
+      "b-a": "]1",
+      "a-b": ""
+    },
+    {
+      "bcv": "je48:27",
+      "diff_type": "notes changed and word changed",
+      "ab_word": "D:BFRE71Y/KF\nD:BFRE91Y/KF",
+      "ab_notes": "\n]c",
+      "change": "∅ → ]c",
+      "change_category": "other ∅ → ]c",
+      "b-a": "]c",
+      "a-b": ""
+    },
+    {
+      "bcv": "ek8:3",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "Y:RW.$FLA61:M/FH\nY:RW.$FLA61:M/FH",
+      "ab_notes": "\n]1",
+      "change": "∅ → ]1",
+      "change_category": "nc + ]1",
+      "b-a": "]1",
+      "a-b": ""
+    },
+    {
+      "bcv": "ek16:4",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "KFR.A74T\nKFR.A74T",
+      "ab_notes": "\n]w",
+      "change": "∅ → ]w",
+      "change_category": "nc + ]w",
+      "b-a": "]w",
+      "a-b": ""
+    },
+    {
+      "bcv": "ek16:4",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "$FR./\"80K:\n$FR./\"80K:",
+      "ab_notes": "\n]w",
+      "change": "∅ → ]w",
+      "change_category": "nc + ]w",
+      "b-a": "]w",
+      "a-b": ""
+    },
+    {
+      "bcv": "ek32:31",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "**H:AMOWN/O92W\n**H:AMOWN/O92W",
+      "ab_notes": "\n]e",
+      "change": "∅ → ]e",
+      "change_category": "nc + ]e",
+      "b-a": "]e",
+      "a-b": ""
+    },
+    {
+      "bcv": "ek48:25",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "YI&F#KF71R\nYI&F#KF71R",
+      "ab_notes": "\n]1",
+      "change": "∅ → ]1",
+      "change_category": "nc + ]1",
+      "b-a": "]1",
+      "a-b": ""
+    },
+    {
+      "bcv": "ek48:26",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "YI&F#KF81R\nYI&F#KF81R",
+      "ab_notes": "\n]1",
+      "change": "∅ → ]1",
+      "change_category": "nc + ]1",
+      "b-a": "]1",
+      "a-b": ""
+    },
+    {
+      "bcv": "hb1:6",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "L/O75W00\nL/O75W00",
+      "ab_notes": "\n]U",
+      "change": "∅ → ]U",
+      "change_category": "nc + ]U",
+      "b-a": "]U",
+      "a-b": ""
+    },
+    {
+      "bcv": "hb3:13",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "R.O)$03\nR.O)$03",
+      "ab_notes": "\n]w",
+      "change": "∅ → ]w",
+      "change_category": "nc + ]w",
+      "b-a": "]w",
+      "a-b": ""
+    },
+    {
+      "bcv": "zc5:11",
+      "diff_type": "notes changed and word changed",
+      "ab_word": "L/F71H,\nL/F71H",
+      "ab_notes": "\n]U",
+      "change": "∅ → ]U",
+      "change_category": "nc + ]U",
+      "b-a": "]U",
+      "a-b": ""
+    },
+    {
+      "bcv": "1c2:1",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "YI&F#KF73R\nYI&F#KF73R",
+      "ab_notes": "\n]1",
+      "change": "∅ → ]1",
+      "change_category": "nc + ]1",
+      "b-a": "]1",
+      "a-b": ""
+    },
+    {
+      "bcv": "1c6:47",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "14YI&F#KFR\n14YI&F#KFR",
+      "ab_notes": "\n]1",
+      "change": "∅ → ]1",
+      "change_category": "nc + ]1",
+      "b-a": "]1",
+      "a-b": ""
+    },
+    {
+      "bcv": "1c6:57",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "YI&F#KF80R\nYI&F#KF80R",
+      "ab_notes": "\n]1",
+      "change": "∅ → ]1",
+      "change_category": "nc + ]1",
+      "b-a": "]1",
+      "a-b": ""
+    },
+    {
+      "bcv": "1c7:1",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "YI&F#KF81R\nYI&F#KF81R",
+      "ab_notes": "\n]1",
+      "change": "∅ → ]1",
+      "change_category": "nc + ]1",
+      "b-a": "]1",
+      "a-b": ""
+    },
+    {
+      "bcv": "1c7:5",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "YI&F#KF80R\nYI&F#KF80R",
+      "ab_notes": "\n]1",
+      "change": "∅ → ]1",
+      "change_category": "nc + ]1",
+      "b-a": "]1",
+      "a-b": ""
+    },
+    {
+      "bcv": "1c12:41",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "YI&F#KF63R\nYI&F#KF63R",
+      "ab_notes": "\n]1",
+      "change": "∅ → ]1",
+      "change_category": "nc + ]1",
+      "b-a": "]1",
+      "a-b": ""
+    },
+    {
+      "bcv": "1c22:12",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "L./:KF70\nL./:KF70",
+      "ab_notes": "\n]1",
+      "change": "∅ → ]1",
+      "change_category": "nc + ]1",
+      "b-a": "]1",
+      "a-b": ""
+    },
+    {
+      "bcv": "1c26:5",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "YI&F#KF74R\nYI&F#KF74R",
+      "ab_notes": "\n]1",
+      "change": "∅ → ]1",
+      "change_category": "nc + ]1",
+      "b-a": "]1",
+      "a-b": ""
+    },
+    {
+      "bcv": "2c26:10",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "R.AB03\nR.AB03",
+      "ab_notes": "\n]w",
+      "change": "∅ → ]w",
+      "change_category": "nc + ]w",
+      "b-a": "]w",
+      "a-b": ""
+    },
+    {
+      "bcv": "2c32:30",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "WA75/Y.AY$.:R/\"71M\nWA75/Y.AY$.:R/\"71M",
+      "ab_notes": "\n]1",
+      "change": "∅ → ]1",
+      "change_category": "nc + ]1",
+      "b-a": "]1",
+      "a-b": ""
+    },
+    {
+      "bcv": "ps21:14",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "B.:/(UZ./E92KF\nB.:/(UZ./E92KF",
+      "ab_notes": "\n]p",
+      "change": "∅ → ]p",
+      "change_category": "nc + ]p",
+      "b-a": "]p",
+      "a-b": ""
+    },
+    {
+      "bcv": "ps52:5",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "R.F74(\nR.F74(",
+      "ab_notes": "\n]w",
+      "change": "∅ → ]w",
+      "change_category": "nc + ]w",
+      "b-a": "]w",
+      "a-b": ""
+    },
+    {
+      "bcv": "ps55:7",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "L./I74Y\nL./I74Y",
+      "ab_notes": "\n]1",
+      "change": "∅ → ]1",
+      "change_category": "nc + ]1",
+      "b-a": "]1",
+      "a-b": ""
+    },
+    {
+      "bcv": "ps105:20",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "WA/Y.AT.IYR/\"92HW.\nWA/Y.AT.IYR/\"92HW.",
+      "ab_notes": "\n]p",
+      "change": "∅ → ]p",
+      "change_category": "nc + ]p",
+      "b-a": "]p",
+      "a-b": ""
+    },
+    {
+      "bcv": "jb33:21",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "RU).75W.00\nRU).75W.00",
+      "ab_notes": "\n]1",
+      "change": "∅ → ]1",
+      "change_category": "nc + ]1",
+      "b-a": "]1",
+      "a-b": ""
+    },
+    {
+      "bcv": "pr3:8",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "L:/$FR./E92KF\nL:/$FR./E92KF",
+      "ab_notes": "\n]w",
+      "change": "∅ → ]w",
+      "change_category": "nc + ]w",
+      "b-a": "]w",
+      "a-b": ""
+    },
+    {
+      "bcv": "pr11:21",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "R.F92(\nR.F92(",
+      "ab_notes": "\n]w",
+      "change": "∅ → ]w",
+      "change_category": "nc + ]w",
+      "b-a": "]w",
+      "a-b": ""
+    },
+    {
+      "bcv": "pr13:19",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "T.E(:ERA74B\nT.E(:ERA74B",
+      "ab_notes": "\n]p",
+      "change": "∅ → ]p",
+      "change_category": "nc + ]p",
+      "b-a": "]p",
+      "a-b": ""
+    },
+    {
+      "bcv": "pr14:10",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "MFR.A74T\nMFR.A74T",
+      "ab_notes": "\n]U",
+      "change": "∅ → ]U",
+      "change_category": "nc + ]U",
+      "b-a": "]U",
+      "a-b": ""
+    },
+    {
+      "bcv": "pr15:1",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "13R.AK:\n13R.AK:",
+      "ab_notes": "\n]w",
+      "change": "∅ → ]w",
+      "change_category": "nc + ]w",
+      "b-a": "]w",
+      "a-b": ""
+    },
+    {
+      "bcv": "pr26:17",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "L/O75W00\nL/O75W00",
+      "ab_notes": "\n]U",
+      "change": "∅ → ]U",
+      "change_category": "nc + ]U",
+      "b-a": "]U",
+      "a-b": ""
+    },
+    {
+      "bcv": "ru2:14",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "L/F63H\nL/F63H",
+      "ab_notes": "\n]U",
+      "change": "∅ → ]U",
+      "change_category": "nc + ]U",
+      "b-a": "]U",
+      "a-b": ""
+    },
+    {
+      "bcv": "ca4:3",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "W./MID:B.FR\"73Y/K:\nW./MID:B.FR\"73Y/K:",
+      "ab_notes": "\n]U",
+      "change": "∅ → ]U",
+      "change_category": "nc + ]U",
+      "b-a": "]U",
+      "a-b": ""
+    },
+    {
+      "bcv": "ca5:2",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "$E/R.O)$/IY03\n$E/R.O)$/IY03",
+      "ab_notes": "\n]w",
+      "change": "∅ → ]w",
+      "change_category": "nc + ]w",
+      "b-a": "]w",
+      "a-b": ""
+    },
+    {
+      "bcv": "es7:8",
+      "diff_type": "notes changed and word changed",
+      "ab_word": "NOP\"80L\nNOP\"81L",
+      "ab_notes": "\n]C]c",
+      "change": "∅ → ]C]c",
+      "change_category": "other ∅ → ]C]c",
+      "b-a": "]C]c",
+      "a-b": ""
+    },
+    {
+      "bcv": "da2:10",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "XAR:+.O73M\nXAR:+.O73M",
+      "ab_notes": "\n]1",
+      "change": "∅ → ]1",
+      "change_category": "nc + ]1",
+      "b-a": "]1",
+      "a-b": ""
+    },
+    {
+      "bcv": "da2:39",
+      "diff_type": "notes changed and word changed",
+      "ab_word": "):ARA74()\n**):ARA74(",
+      "ab_notes": "]1\n",
+      "change": "]1 → ∅",
+      "change_category": "other ]1 → ∅",
+      "b-a": "",
+      "a-b": "]1"
+    },
+    {
+      "bcv": "er4:7",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "**)AR:T.AX:$A73&:T.:\n**)AR:T.AX:$A73&:T.:",
+      "ab_notes": "\n]e",
+      "change": "∅ → ]e",
+      "change_category": "nc + ]e",
+      "b-a": "]e",
+      "a-b": ""
+    },
+    {
+      "bcv": "er8:18",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "WA/Y.FBI63Y).W.\nWA/Y.FBI63Y).W.",
+      "ab_notes": "\n]U",
+      "change": "∅ → ]U",
+      "change_category": "nc + ]U",
+      "b-a": "]U",
+      "a-b": ""
+    },
+    {
+      "bcv": "er9:6",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "R.O80)$\nR.O80)$",
+      "ab_notes": "\n]w",
+      "change": "∅ → ]w",
+      "change_category": "nc + ]w",
+      "b-a": "]w",
+      "a-b": ""
+    },
+    {
+      "bcv": "ne8:6",
+      "diff_type": "notes changed but word did not",
+      "ab_word": "WA/Y.I$:T.AX:AW.U91\nWA/Y.I$:T.AX:AW.U91",
+      "ab_notes": "\n]U",
+      "change": "∅ → ]U",
+      "change_category": "nc + ]U",
+      "b-a": "]U",
+      "a-b": ""
+    }
+  ],
+  "word differences": [
+    {
+      "bcv": "gn1:11",
+      "diff_type": "word changed and notes changed",
+      "ab_word": "D.E80$E)\nD.E81$E)",
+      "ab_uword": "דֶּ֔שֶׁא\nדֶּ֗שֶׁא",
+      "ab_notes": "\n]Q]c"
+    },
+    {
+      "bcv": "gn2:8",
+      "diff_type": "word changed but notes did not",
+      "ab_word": "B:/(\"73DEN\nB.:/(\"73DEN",
+      "ab_uword": "בְעֵ֖דֶן\nבְּעֵ֖דֶן",
+      "ab_notes": "\n"
+    },
+    {
+      "bcv": "gn2:10",
+      "diff_type": "word changed and notes changed",
+      "ab_word": "W:/NFHFR.03\nW:/NFHFR03",
+      "ab_uword": "וְנָהָרּ֙\nוְנָהָר֙",
+      "ab_notes": "]p\n"
+    },
+    {
+      "bcv": "gn14:17",
+      "diff_type": "word changed and notes changed",
+      "ab_word": ")AX:AR\"74Y\n)AXAR\"74Y",
+      "ab_uword": "אַחֲרֵ֣י\nאַחַרֵ֣י",
+      "ab_notes": "\n]Q]n]v"
+    },
+    {
+      "bcv": "gn14:17",
+      "diff_type": "word changed but notes did not",
+      "ab_word": "K.:DFR→\nK.:DFR-",
+      "ab_uword": "כְּדָר→\nכְּדָר־",
+      "ab_notes": "\n"
+    },
+    {
+      "bcv": "gn14:17",
+      "diff_type": "word changed and notes changed",
+      "ab_word": "←LF(O80MER\nLF(O80MER",
+      "ab_uword": "←לָעֹ֔מֶר\nלָעֹ֔מֶר",
+      "ab_notes": "]n]p\n"
+    },
+    {
+      "bcv": "gn18:25",
+      "diff_type": "word changed and notes changed",
+      "ab_word": "KA/C.AD.I73YQ\nKA/CAD.I73YQ",
+      "ab_uword": "כַצַּדִּ֖יק\nכַצַדִּ֖יק",
+      "ab_notes": "\n]Q]n]p"
+    },
+    {
+      "bcv": "gn24:53",
+      "diff_type": "word changed and notes changed",
+      "ab_word": "WA/Y.IT.\"73N\nWA/YIT.\"73N",
+      "ab_uword": "וַיִּתֵּ֖ן\nוַיִתֵּ֖ן",
+      "ab_notes": "\n]Q]n]p"
+    },
+    {
+      "bcv": "gn25:6",
+      "diff_type": "word changed and notes changed",
+      "ab_word": "B.:N/OW03\nB.N/OW03",
+      "ab_uword": "בְּנוֹ֙\nבּנוֹ֙",
+      "ab_notes": "\n]Q]n]v"
+    },
+    {
+      "bcv": "gn26:1",
+      "diff_type": "word changed and notes changed",
+      "ab_word": "):ABIYM.E71LEK:\n):ABIYME71LEK:",
+      "ab_uword": "אֲבִימֶּ֥לֶךְ\nאֲבִימֶ֥לֶךְ",
+      "ab_notes": "]1\n]Q]p"
+    },
+    {
+      "bcv": "gn34:28",
+      "diff_type": "word changed and notes changed",
+      "ab_word": "X:AMOR\"Y/H.E92M\nX:AMOR\"Y/HE92M",
+      "ab_uword": "חֲמֹרֵיהֶּ֑ם\nחֲמֹרֵיהֶ֑ם",
+      "ab_notes": "]1\n]Q]p"
+    },
+    {
+      "bcv": "gn35:22",
+      "diff_type": "word changed and notes changed",
+      "ab_word": "R:)W.B\"80N\nR:)W.B\"8081N",
+      "ab_uword": "רְאוּבֵ֔ן\nרְאוּבֵ֔֗ן",
+      "ab_notes": "\n]C]c"
+    },
+    {
+      "bcv": "gn38:11",
+      "diff_type": "word changed and notes changed",
+      "ab_word": "B:N/I80Y\nB:N/:80Y",
+      "ab_uword": "בְנִ֔י\nבְנְ֔י",
+      "ab_notes": "\n]Q]n]v"
+    },
+    {
+      "bcv": "gn39:2",
+      "diff_type": "word changed and notes changed",
+      "ab_word": "B.:/B\"71YT\nB.:/B\"73YT",
+      "ab_uword": "בְּבֵ֥ית\nבְּבֵ֖ית",
+      "ab_notes": "\n]C]c"
+    },
+    {
+      "bcv": "gn39:2",
+      "diff_type": "word changed and notes changed",
+      "ab_word": "):ADONF73Y/W\n):ADONF71Y/W",
+      "ab_uword": "אֲדֹנָ֖יו\nאֲדֹנָ֥יו",
+      "ab_notes": "\n]C]c"
+    },
+    {
+      "bcv": "gn39:23",
+      "diff_type": "word changed and notes changed",
+      "ab_word": "HA/S.O81HAR\nHA/S.OHA81R",
+      "ab_uword": "הַסֹּ֗הַר\nהַסֹּהַ֗ר",
+      "ab_notes": "\n]Q]c]n"
+    },
+    {
+      "bcv": "gn41:7",
+      "diff_type": "word changed and notes changed",
+      "ab_word": "HA75/$.IB.:FLI80YM\nHA75/$IB.:FLI80YM",
+      "ab_uword": "הַֽשִּׁבֳּלִ֔ים\nהַֽשִׁבֳּלִ֔ים",
+      "ab_notes": "\n]Q]n]p"
+    },
+    {
+      "bcv": "gn41:24",
+      "diff_type": "word changed and notes changed",
+      "ab_word": "HF/$IB.:FLI74YM\nHA/$IB.:FLI74YM",
+      "ab_uword": "הָשִׁבֳּלִ֣ים\nהַשִׁבֳּלִ֣ים",
+      "ab_notes": "]1\n]Q]U]v"
+    },
+    {
+      "bcv": "gn50:1",
+      "diff_type": "word changed and notes changed",
+      "ab_word": "WA/Y.IP.O71L\nWA/YIP.O71L",
+      "ab_uword": "וַיִּפֹּ֥ל\nוַיִפֹּ֥ל",
+      "ab_notes": "\n]Q]n]p"
+    },
+    {
+      "bcv": "ex10:13",
+      "diff_type": "word changed but notes did not",
+      "ab_word": "R71W.XA\nR71W.XA-",
+      "ab_uword": "ר֥וּחַ\nר֥וּחַ־",
+      "ab_notes": "\n"
+    },
+    {
+      "bcv": "ex20:3",
+      "diff_type": "word changed but notes did not",
+      "ab_word": "P.FN/F8175YA\nP.FN/F75A81Y",
+      "ab_uword": "פָּנָֽ֗יַ\nפָּנַָֽ֗י",
+      "ab_notes": "]1\n]1"
+    },
+    {
+      "bcv": "ex20:4",
+      "diff_type": "word changed but notes did not",
+      "ab_word": "MI/T.F9261AXAT\nMI/T.F92A61XAT",
+      "ab_uword": "מִתַָּ֑֜חַת\nמִתַָּ֑֜חַת",
+      "ab_notes": "]1\n]1"
+    },
+    {
+      "bcv": "ex20:10",
+      "diff_type": "word changed but notes did not",
+      "ab_word": "W:/YO33WM03\nW:/YO63WM03",
+      "ab_uword": "וְי֙וֹם֙\nוְי֨וֹם֙",
+      "ab_notes": "\n"
+    },
+    {
+      "bcv": "ex20:13",
+      "diff_type": "word changed but notes did not",
+      "ab_word": "T.,IR:CF7375X00\nT.IR:CF7375X00",
+      "ab_uword": "תִּֿרְצָֽ֖ח׃\nתִּרְצָֽ֖ח׃",
+      "ab_notes": "\n"
+    },
+    {
+      "bcv": "ex20:14",
+      "diff_type": "word changed but notes did not",
+      "ab_word": "T.,IN:)F9275P00\nT.IN:)F9275P00",
+      "ab_uword": "תִּֿנְאָֽ֑ף׃\nתִּנְאָֽ֑ף׃",
+      "ab_notes": "\n"
+    },
+    {
+      "bcv": "ex20:15",
+      "diff_type": "word changed but notes did not",
+      "ab_word": "T.,IG:NO8075B00\nT.IG:NO8075B00",
+      "ab_uword": "תִּֿגְנֹֽ֔ב׃\nתִּגְנֹֽ֔ב׃",
+      "ab_notes": "\n"
+    },
+    {
+      "bcv": "lv13:3",
+      "diff_type": "word changed and notes changed",
+      "ab_word": "HA/N.E33GA(03\nHA/N.E33GE(03",
+      "ab_uword": "הַנֶּ֙גַע֙\nהַנֶּ֙גֶע֙",
+      "ab_notes": "\n]v"
+    },
+    {
+      "bcv": "lv23:38",
+      "diff_type": "word changed but notes did not",
+      "ab_word": "Y.:HWF92H\nY:HWF92H",
+      "ab_uword": "יְּהוָ֑ה\nיְהוָ֑ה",
+      "ab_notes": "\n"
+    },
+    {
+      "bcv": "lv26:35",
+      "diff_type": "word changed and notes changed",
+      "ab_word": "HF$.AM./F73H\nHF$AM./F73H",
+      "ab_uword": "הָשַּׁמָּ֖ה\nהָשַׁמָּ֖ה",
+      "ab_notes": "\n]p"
+    },
+    {
+      "bcv": "nu11:24",
+      "diff_type": "word changed and notes changed",
+      "ab_word": "MO$E81H\nMO$E80H",
+      "ab_uword": "מֹשֶׁ֗ה\nמֹשֶׁ֔ה",
+      "ab_notes": "\n]c"
+    },
+    {
+      "bcv": "nu16:7",
+      "diff_type": "word changed and notes changed",
+      "ab_word": "(:AL\"Y/HE63N\n(:AL\"Y/HE63N05",
+      "ab_uword": "עֲלֵיהֶ֨ן\nעֲלֵיהֶ֨ן׀",
+      "ab_notes": "\n]c"
+    },
+    {
+      "bcv": "nu24:13",
+      "diff_type": "word changed and notes changed",
+      "ab_word": "MI/L.IB./I92Y\nMI/LIB./I92Y",
+      "ab_uword": "מִלִּבִּ֑י\nמִלִבִּ֑י",
+      "ab_notes": "\n]p"
+    },
+    {
+      "bcv": "dt5:13",
+      "diff_type": "word changed but notes did not",
+      "ab_word": "K.,FL-\nK.FL-",
+      "ab_uword": "כָּֿל־\nכָּל־",
+      "ab_notes": "\n"
+    },
+    {
+      "bcv": "dt5:14",
+      "diff_type": "word changed but notes did not",
+      "ab_word": "W:/YO33WM03\nW:/YO63WM03",
+      "ab_uword": "וְי֙וֹם֙\nוְי֨וֹם֙",
+      "ab_notes": "\n"
+    },
+    {
+      "bcv": "dt5:17",
+      "diff_type": "word changed but notes did not",
+      "ab_word": "T.,IR:CF75X00\nT.IR:CF75X00",
+      "ab_uword": "תִּֿרְצָֽח׃\nתִּרְצָֽח׃",
+      "ab_notes": "\n"
+    },
+    {
+      "bcv": "dt5:18",
+      "diff_type": "word changed but notes did not",
+      "ab_word": "T.,IN:)F7592P00\nT.IN:)F7592P00",
+      "ab_uword": "תִּֿנְאָֽ֑ף׃\nתִּנְאָֽ֑ף׃",
+      "ab_notes": "\n"
+    },
+    {
+      "bcv": "dt5:19",
+      "diff_type": "word changed but notes did not",
+      "ab_word": "T.,IG:NO7580B00\nT.IG:NO7580B00",
+      "ab_uword": "תִּֿגְנֹֽ֔ב׃\nתִּגְנֹֽ֔ב׃",
+      "ab_notes": "\n"
+    },
+    {
+      "bcv": "dt7:8",
+      "diff_type": "word changed and notes changed",
+      "ab_word": "W./MI/$.FM:R/70W.\nW./MI/$.FM:R/70W",
+      "ab_uword": "וּמִשָּׁמְר֤וּ\nוּמִשָּׁמְר֤ו",
+      "ab_notes": "]P]p]v\n]Q]n]v"
+    },
+    {
+      "bcv": "dt12:30",
+      "diff_type": "word changed and notes changed",
+      "ab_word": "L\"/)MO63R\nL\"/)MO81R",
+      "ab_uword": "לֵאמֹ֨ר\nלֵאמֹ֗ר",
+      "ab_notes": "\n]P]p"
+    },
+    {
+      "bcv": "2s11:1",
+      "diff_type": "word changed but notes did not",
+      "ab_word": "HA/M.AL:),KI81YM\nHA/M.AL:)KI81YM",
+      "ab_uword": "הַמַּלְאֿכִ֗ים\nהַמַּלְאכִ֗ים",
+      "ab_notes": "]1\n]1"
+    },
+    {
+      "bcv": "1k9:9",
+      "diff_type": "word changed and notes changed",
+      "ab_word": "WA/Y.A(AB:DU92/M\nWA/Y.A(:AB:DU92/M",
+      "ab_uword": "וַיַּעַבְדֻ֑ם\nוַיַּעֲבְדֻ֑ם",
+      "ab_notes": "\n]v"
+    },
+    {
+      "bcv": "is22:10",
+      "diff_type": "word changed but notes did not",
+      "ab_word": "WA/T.IT,:CW.03\nWA/T.IT:CW.03",
+      "ab_uword": "וַתִּתְֿצוּ֙\nוַתִּתְצוּ֙",
+      "ab_notes": "\n"
+    },
+    {
+      "bcv": "is45:6",
+      "diff_type": "word changed and notes changed",
+      "ab_word": "W./MI/M.A74(:ARFB/F80H.\nW./MI/M.A74(:ARFB/F80H",
+      "ab_uword": "וּמִמַּ֣עֲרָבָ֔הּ\nוּמִמַּ֣עֲרָבָ֔ה",
+      "ab_notes": "]p\n]1"
+    },
+    {
+      "bcv": "je15:18",
+      "diff_type": "word changed and notes changed",
+      "ab_word": "):ANW.$F92H03\n):ANW.$F92H",
+      "ab_uword": "אֲנוּשָׁ֑ה֙\nאֲנוּשָׁ֑ה",
+      "ab_notes": "\n]c"
+    },
+    {
+      "bcv": "je20:17",
+      "diff_type": "word changed but notes did not",
+      "ab_word": "W:/RAX:M/F73H,\nW:/RAX:M/F73H",
+      "ab_uword": "וְרַחְמָ֖הֿ\nוְרַחְמָ֖ה",
+      "ab_notes": "\n"
+    },
+    {
+      "bcv": "je27:13",
+      "diff_type": "word changed and notes changed",
+      "ab_word": "W./BA/D.F92BER03\nW./BA/D.F92BER",
+      "ab_uword": "וּבַדָּ֑בֶר֙\nוּבַדָּ֑בֶר",
+      "ab_notes": "\n]c"
+    },
+    {
+      "bcv": "je44:19",
+      "diff_type": "word changed and notes changed",
+      "ab_word": "L:/HA74(:ACIB/F80H\nL:/HA74(:ACIB/F80H.",
+      "ab_uword": "לְהַ֣עֲצִבָ֔ה\nלְהַ֣עֲצִבָ֔הּ",
+      "ab_notes": "\n]p"
+    },
+    {
+      "bcv": "je48:27",
+      "diff_type": "word changed and notes changed",
+      "ab_word": "D:BFRE71Y/KF\nD:BFRE91Y/KF",
+      "ab_uword": "דְבָרֶ֥יךָ\nדְבָרֶ֛יךָ",
+      "ab_notes": "\n]c"
+    },
+    {
+      "bcv": "zc5:11",
+      "diff_type": "word changed and notes changed",
+      "ab_word": "L/F71H,\nL/F71H",
+      "ab_uword": "לָ֥הֿ\nלָ֥ה",
+      "ab_notes": "\n]U"
+    },
+    {
+      "bcv": "1c10:1",
+      "diff_type": "word changed but notes did not",
+      "ab_word": "WA/Y.F92NFS\nWA/Y.F70NFS",
+      "ab_uword": "וַיָּ֑נָס\nוַיָּ֤נָס",
+      "ab_notes": "\n"
+    },
+    {
+      "bcv": "ps119:99",
+      "diff_type": "word changed but notes did not",
+      "ab_word": "L,/I75Y00\nL/I75Y00",
+      "ab_uword": "לִֽֿי׃\nלִֽי׃",
+      "ab_notes": "\n"
+    },
+    {
+      "bcv": "es7:8",
+      "diff_type": "word changed and notes changed",
+      "ab_word": "NOP\"80L\nNOP\"81L",
+      "ab_uword": "נֹפֵ֔ל\nנֹפֵ֗ל",
+      "ab_notes": "\n]C]c"
+    },
+    {
+      "bcv": "da2:39",
+      "diff_type": "word changed and notes changed",
+      "ab_word": "):ARA74()\n**):ARA74(",
+      "ab_uword": "אֲרַ֣עא\n**אֲרַ֣ע",
+      "ab_notes": "]1\n"
+    },
+    {
+      "bcv": "er4:12",
+      "diff_type": "word changed but notes did not",
+      "ab_word": "**W:/$W.RAY./F74)\n*)#KLLW",
+      "ab_uword": "**וְשׁוּרַיָּ֣א\n*אשכללו",
+      "ab_notes": "\n"
+    },
+    {
+      "bcv": "er4:12",
+      "diff_type": "word changed but notes did not",
+      "ab_word": "*)#KLLW\n**W:/$W.RAY./F74)",
+      "ab_uword": "*אשכללו\n**וְשׁוּרַיָּ֣א",
+      "ab_notes": "\n"
+    }
+  ],
+  "word positions of word differences": {
+    "gn1:11!D.E80$E)": 5,
+    "gn2:8!B:/(\"73DEN": 5,
+    "gn2:10!W:/NFHFR.03": 1,
+    "gn14:17!)AX:AR\"74Y": 5,
+    "gn14:17!K.:DFR→": 9,
+    "gn14:17!←LF(O80MER": 10,
+    "gn18:25!KA/C.AD.I73YQ": 11,
+    "gn24:53!WA/Y.IT.\"73N": 8,
+    "gn25:6!B.:N/OW03": 11,
+    "gn26:1!):ABIYM.E71LEK:": 14,
+    "gn34:28!X:AMOR\"Y/H.E92M": 6,
+    "gn35:22!R:)W.B\"80N": 7,
+    "gn38:11!B:N/I80Y": 12,
+    "gn39:2!B.:/B\"71YT": 9,
+    "gn39:2!):ADONF73Y/W": 10,
+    "gn39:23!HA/S.O81HAR": 4,
+    "gn41:7!HA75/$.IB.:FLI80YM": 6,
+    "gn41:24!HF/$IB.:FLI74YM": 2,
+    "gn50:1!WA/Y.IP.O71L": 1,
+    "ex10:13!R71W.XA": 10,
+    "ex20:3!P.FN/F8175YA": 7,
+    "ex20:4!MI/T.F9261AXAT": 12,
+    "ex20:10!W:/YO33WM03": 1,
+    "ex20:13!T.,IR:CF7375X00": 2,
+    "ex20:14!T.,IN:)F9275P00": 2,
+    "ex20:15!T.,IG:NO8075B00": 2,
+    "lv13:3!HA/N.E33GA(03": 12,
+    "lv23:38!Y.:HWF92H": 3,
+    "lv26:35!HF$.AM./F73H": 3,
+    "nu11:24!MO$E81H": 2,
+    "nu16:7!(:AL\"Y/HE63N": 5,
+    "nu24:13!MI/L.IB./I92Y": 19,
+    "dt5:13!K.,FL-": 5,
+    "dt5:14!W:/YO33WM03": 1,
+    "dt5:17!T.,IR:CF75X00": 2,
+    "dt5:18!T.,IN:)F7592P00": 2,
+    "dt5:19!T.,IG:NO7580B00": 2,
+    "dt7:8!W./MI/$.FM:R/70W.": 5,
+    "dt12:30!L\"/)MO63R": 12,
+    "2s11:1!HA/M.AL:),KI81YM": 6,
+    "1k9:9!WA/Y.A(AB:DU92/M": 20,
+    "is22:10!WA/T.IT,:CW.03": 5,
+    "is45:6!W./MI/M.A74(:ARFB/F80H.": 5,
+    "je15:18!):ANW.$F92H03": 6,
+    "je20:17!W:/RAX:M/F73H,": 9,
+    "je27:13!W./BA/D.F92BER03": 7,
+    "je44:19!L:/HA74(:ACIB/F80H": 14,
+    "je48:27!D:BFRE71Y/KF": 13,
+    "zc5:11!L/F71H,": 4,
+    "1c10:1!WA/Y.F92NFS": 4,
+    "ps119:99!L,/I75Y00": 7,
+    "es7:8!NOP\"80L": 10,
+    "da2:39!):ARA74()": 6,
+    "er4:12!**W:/$W.RAY./F74)": 19,
+    "er4:12!*)#KLLW": 20
+  }
+}

@@ -1,0 +1,71 @@
+# Poetic servant-adjacency cross-check: WLC scanner vs MAM-simple
+
+## SILLUQ
+  L adjacent servant: MUNAX:1785, MERKHA:1523, ILLUY:43, TARXA:1
+  vs MAM (length-matched verses): both-served 3332 (agree 3331, type-conflict 1); one-sided 22; verse-count-mismatch 13
+  verdict: 1 servant-type conflict(s) with MAM -- investigate
+  servant-type conflicts (ref: L -> MAM):
+    Psalms 60:3: MERKHA -> MUNAX
+
+## OLEH_WEYORED
+  L adjacent servant: GALGAL:198, MAHAPAKH:15, MERKHA:5
+  vs MAM (length-matched verses): both-served 200 (agree 197, type-conflict 3); one-sided 18; verse-count-mismatch 7
+  verdict: 3 servant-type conflict(s) with MAM -- investigate
+  servant-type conflicts (ref: L -> MAM):
+    Psalms 51:19: GALGAL -> MAHAPAKH
+    Psalms 68:14: GALGAL -> MAHAPAKH
+    Proverbs 23:31: GALGAL -> MAHAPAKH
+
+## ATNAX
+  L adjacent servant: MUNAX:2812, MERKHA:789, MAHAPAKH:4, ILLUY:2, TARXA:1
+  vs MAM (length-matched verses): both-served 3600 (agree 3597, type-conflict 3); one-sided 15; verse-count-mismatch 1
+  verdict: 3 servant-type conflict(s) with MAM -- investigate
+  servant-type conflicts (ref: L -> MAM):
+    Proverbs 3:4: TARXA -> MERKHA
+    Proverbs 25:11: MERKHA -> MUNAX
+    Proverbs 31:6: MUNAX -> MERKHA
+
+## REVIA_GADOL
+  L adjacent servant: MAHAPAKH:108, ILLUY:65, MERKHA:32, AZLA:3
+  vs MAM (length-matched verses): both-served 201 (agree 201, type-conflict 0); one-sided 6; verse-count-mismatch 10
+  verdict: varied in L; no servant-type conflict with MAM (rule candidate -- may flag nothing if L is already uniform)
+
+## REVIA_MUGRASH
+  L adjacent servant: MERKHA:1185, MAHAPAKH:9, ILLUY:1
+  vs MAM (length-matched verses): both-served 1188 (agree 1188, type-conflict 0); one-sided 18; verse-count-mismatch 3
+  verdict: varied in L; no servant-type conflict with MAM (rule candidate -- may flag nothing if L is already uniform)
+
+## REVIA_QATAN
+  L adjacent servant: MERKHA:125
+  vs MAM (length-matched verses): both-served 125 (agree 125, type-conflict 0); one-sided 2; verse-count-mismatch 5
+  verdict: UNIFORM in L; no servant-type conflict with MAM (rule candidate -- may flag nothing if L is already uniform)
+
+## DEXI
+  L adjacent servant: MUNAX:1372, MERKHA:16, MAHAPAKH:3
+  vs MAM (length-matched verses): both-served 1380 (agree 1380, type-conflict 0); one-sided 8; verse-count-mismatch 25
+  verdict: varied in L; no servant-type conflict with MAM (rule candidate -- may flag nothing if L is already uniform)
+
+## TSINNOR
+  L adjacent servant: MUNAX:70, MERKHA:51, MAHAPAKH:1, AZLA:1
+  vs MAM (length-matched verses): both-served 121 (agree 121, type-conflict 0); one-sided 5; verse-count-mismatch 0
+  verdict: varied in L; no servant-type conflict with MAM (rule candidate -- may flag nothing if L is already uniform)
+
+## PAZER
+  L adjacent servant: GALGAL:38, MERKHA:4, MAHAPAKH:1
+  vs MAM (length-matched verses): both-served 43 (agree 42, type-conflict 1); one-sided 2; verse-count-mismatch 0
+  verdict: 1 servant-type conflict(s) with MAM -- investigate
+  servant-type conflicts (ref: L -> MAM):
+    Psalms 28:5: MAHAPAKH -> GALGAL
+
+## LEGARMEH
+  L adjacent servant: MAHAPAKH:211, ILLUY:32, MERKHA:26, MUNAX:1
+  vs MAM (length-matched verses): both-served 253 (agree 252, type-conflict 1); one-sided 13; verse-count-mismatch 22
+  verdict: 1 servant-type conflict(s) with MAM -- investigate
+  servant-type conflicts (ref: L -> MAM):
+    Psalms 40:13: MERKHA -> MAHAPAKH
+
+## SHALSHELET_GEDOLAH
+  L adjacent servant: MERKHA:3
+  vs MAM (length-matched verses): both-served 3 (agree 3, type-conflict 0); one-sided 0; verse-count-mismatch 0
+  verdict: UNIFORM in L; no servant-type conflict with MAM (rule candidate -- may flag nothing if L is already uniform)
+

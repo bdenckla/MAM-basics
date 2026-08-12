@@ -1,0 +1,702 @@
+# Continuous grammaticality -- prose checker
+
+18725 treed verses (18629 clean estimate the grammar, 96 ungrammatical scored against it).
+Clean per-accent log-likelihood: mean -1.271, sd 0.261, range [-3.878, -0.672] (less negative = more typical).
+
+## Estimated grammar (productions by descending probability)
+
+25 nonterminals, 168 distinct productions.
+
+silluq_clause  (total 47851, 9 rule(s))
+      17150  p=0.3584  -> atnax_clause silluq_clause
+      14657  p=0.3063  -> tipexa_phrase silluq_phrase
+       8945  p=0.1869  -> zaqef_clause silluq_clause
+       3919  p=0.0819  -> tipexa_clause silluq_phrase
+       3079  p=0.0643  -> zaqef_phrase silluq_clause
+         51  p=0.0011  -> atnax_clause silluq_phrase
+         47  p=0.0010  -> atnax_phrase silluq_clause
+          2  p=0.0001  -> zaqef_phrase silluq_phrase
+          1  p=0.0000  -> segolta_clause silluq_clause
+
+tipexa_phrase  (total 35775, 6 rule(s))
+      18017  p=0.5036  -> (merkha tipexa)
+      17730  p=0.4956  -> (tipexa)
+         13  p=0.0004  -> (darga merkhakefula tipexa)
+         12  p=0.0003  -> (mayela)
+          2  p=0.0001  -> (qadma mayela)
+          1  p=0.0000  -> (merkha mayela)
+
+atnax_clause  (total 33184, 7 rule(s))
+      13358  p=0.4025  -> tipexa_phrase atnax_phrase
+      11895  p=0.3584  -> zaqef_clause atnax_clause
+       3841  p=0.1157  -> tipexa_clause atnax_phrase
+       3149  p=0.0949  -> zaqef_phrase atnax_clause
+        932  p=0.0281  -> segolta_clause atnax_clause
+          7  p=0.0002  -> segolta_phrase atnax_clause
+          2  p=0.0001  -> zaqef_clause atnax_phrase
+
+zaqef_clause  (total 28561, 6 rule(s))
+      18904  p=0.6618  -> pashta_phrase zaqef_phrase
+       3669  p=0.1285  -> revia_phrase zaqef_clause
+       3248  p=0.1137  -> revia_clause zaqef_clause
+       1938  p=0.0679  -> pashta_clause zaqef_phrase
+        704  p=0.0247  -> pashta_phrase zaqef_clause
+         98  p=0.0034  -> pashta_clause zaqef_clause
+
+zaqef_phrase  (total 27072, 5 rule(s))
+      15790  p=0.5832  -> (munax zaqef)
+       9057  p=0.3345  -> (zaqef)
+       1650  p=0.0610  -> (zaqefgadol)
+        317  p=0.0117  -> (methiga-zaqef)
+        258  p=0.0095  -> (munax munax zaqef)
+
+pashta_phrase  (total 21689, 18 rule(s))
+       9404  p=0.4334  -> (mahapakh pashta)
+       8417  p=0.3879  -> (pashta)
+       1524  p=0.0703  -> (qadma mahapakh pashta)
+       1171  p=0.0540  -> (yetiv)
+        430  p=0.0198  -> (munax mahapakh pashta)
+        330  p=0.0152  -> (merkha pashta)
+        217  p=0.0100  -> (telishaqetanna qadma mahapakh pashta)
+        107  p=0.0050  -> (qadma merkha pashta)
+         31  p=0.0015  -> (munax telishaqetanna qadma mahapakh pashta)
+         24  p=0.0011  -> (munax merkha pashta)
+         24  p=0.0011  -> (telishaqetanna qadma merkha pashta)
+          3  p=0.0002  -> (munax munax telishaqetanna qadma mahapakh pashta)
+          2  p=0.0001  -> (munax telishaqetanna qadma merkha pashta)
+          1  p=0.0001  -> (mahapakh mahapakh pashta)
+          1  p=0.0001  -> (munax munax munax telishaqetanna qadma mahapakh pashta)
+          1  p=0.0001  -> (telishaqetanna mahapakh!qadma pashta)
+          1  p=0.0001  -> (mahapakh merkha pashta)
+          1  p=0.0001  -> (munax telishaqetanna pashta)
+
+START  (total 18629, 1 rule(s))
+      18629  p=1.0000  -> silluq_clause
+
+silluq_phrase  (total 18629, 2 rule(s))
+      10418  p=0.5592  -> (silluq)
+       8211  p=0.4408  -> (merkha silluq)
+
+atnax_phrase  (total 17248, 3 rule(s))
+       9563  p=0.5544  -> (atnax)
+       7654  p=0.4437  -> (munax atnax)
+         31  p=0.0018  -> (munax munax atnax)
+
+tipexa_clause  (total 9383, 9 rule(s))
+       6847  p=0.7294  -> tevir_phrase tipexa_phrase
+        988  p=0.1053  -> revia_phrase tipexa_clause
+        912  p=0.0972  -> tevir_clause tipexa_phrase
+        554  p=0.0591  -> revia_clause tipexa_clause
+         40  p=0.0043  -> tevir_phrase tipexa_clause
+         26  p=0.0028  -> pashta_phrase tipexa_clause
+         11  p=0.0012  -> pashta_clause tipexa_clause
+          4  p=0.0005  -> tevir_clause tipexa_clause
+          1  p=0.0002  -> revia_phrase tipexa_phrase
+
+revia_phrase  (total 8857, 5 rule(s))
+       4941  p=0.5577  -> (munax revia)
+       3648  p=0.4118  -> (revia)
+        258  p=0.0292  -> (darga munax revia)
+          8  p=0.0010  -> (munax darga munax revia)
+          2  p=0.0003  -> (munax munax revia)
+
+tevir_phrase  (total 7803, 11 rule(s))
+       2952  p=0.3781  -> (tevir)
+       2210  p=0.2831  -> (darga tevir)
+       1465  p=0.1877  -> (merkha tevir)
+        548  p=0.0702  -> (qadma darga tevir)
+        278  p=0.0357  -> (qadma merkha tevir)
+        118  p=0.0152  -> (munax darga tevir)
+        110  p=0.0142  -> (munax merkha tevir)
+         66  p=0.0085  -> (telishaqetanna qadma darga tevir)
+         31  p=0.0040  -> (telishaqetanna qadma merkha tevir)
+         16  p=0.0021  -> (munax telishaqetanna qadma darga tevir)
+          9  p=0.0012  -> (munax telishaqetanna qadma merkha tevir)
+
+geresh_phrase  (total 5838, 9 rule(s))
+       2312  p=0.3958  -> (azla geresh)
+       1563  p=0.2676  -> (gershayim)
+       1105  p=0.1892  -> (telishaqetanna azla geresh)
+        363  p=0.0622  -> (geresh)
+        294  p=0.0504  -> (munax telishaqetanna azla geresh)
+        141  p=0.0242  -> (munax gershayim)
+         27  p=0.0047  -> (munax geresh)
+         25  p=0.0044  -> (munax munax telishaqetanna azla geresh)
+          8  p=0.0015  -> (munax munax munax telishaqetanna azla geresh)
+
+revia_clause  (total 5281, 9 rule(s))
+       2915  p=0.5516  -> geresh_phrase revia_phrase
+       1126  p=0.2131  -> legarmeh_phrase revia_phrase
+        501  p=0.0949  -> geresh_phrase revia_clause
+        483  p=0.0915  -> pazer_phrase revia_clause
+        234  p=0.0444  -> big_telisha_phrase revia_clause
+         16  p=0.0031  -> legarmeh_phrase revia_clause
+          4  p=0.0009  -> geresh_clause revia_phrase
+          1  p=0.0003  -> geresh_clause revia_clause
+          1  p=0.0003  -> big_telisha_phrase revia_phrase
+
+pashta_clause  (total 2407, 9 rule(s))
+       1606  p=0.6660  -> geresh_phrase pashta_phrase
+        367  p=0.1524  -> big_telisha_phrase pashta_phrase
+        191  p=0.0794  -> big_telisha_phrase pashta_clause
+        145  p=0.0603  -> pazer_phrase pashta_clause
+         70  p=0.0292  -> pazer_phrase pashta_phrase
+         20  p=0.0085  -> geresh_phrase pashta_clause
+          3  p=0.0015  -> pazer_clause pashta_clause
+          3  p=0.0015  -> legarmeh_phrase pashta_phrase
+          2  p=0.0010  -> geresh_clause pashta_phrase
+
+segolta_clause  (total 1367, 8 rule(s))
+        765  p=0.5581  -> zarqa_phrase segolta_phrase
+        244  p=0.1783  -> revia_clause segolta_clause
+        168  p=0.1229  -> zarqa_clause segolta_phrase
+        153  p=0.1119  -> revia_phrase segolta_clause
+         26  p=0.0193  -> zarqa_phrase segolta_clause
+          7  p=0.0055  -> pashta_phrase segolta_clause
+          3  p=0.0026  -> zarqa_clause segolta_clause
+          1  p=0.0011  -> pashta_clause segolta_clause
+
+big_telisha_phrase  (total 1190, 6 rule(s))
+        782  p=0.6556  -> (telishagedola)
+        299  p=0.2509  -> (munax telishagedola)
+         87  p=0.0733  -> (munax munax telishagedola)
+         18  p=0.0155  -> (munax munax munax telishagedola)
+          2  p=0.0021  -> (munax munax munax munax telishagedola)
+          2  p=0.0021  -> (munax munax munax munax munax telishagedola)
+
+legarmeh_phrase  (total 1159, 4 rule(s))
+       1105  p=0.9518  -> (legarmeh)
+         50  p=0.0435  -> (merkha legarmeh)
+          3  p=0.0030  -> (qadma merkha legarmeh)
+          1  p=0.0013  -> (munax merkha legarmeh)
+
+tevir_clause  (total 1153, 7 rule(s))
+        663  p=0.5735  -> geresh_phrase tevir_phrase
+        221  p=0.1914  -> big_telisha_phrase tevir_phrase
+        132  p=0.1145  -> pazer_phrase tevir_clause
+         98  p=0.0851  -> big_telisha_phrase tevir_clause
+         28  p=0.0246  -> pazer_phrase tevir_phrase
+          7  p=0.0065  -> geresh_phrase tevir_clause
+          4  p=0.0039  -> geresh_clause tevir_phrase
+
+zarqa_phrase  (total 962, 10 rule(s))
+        461  p=0.4770  -> (munax zarqa)
+        292  p=0.3023  -> (zarqa)
+         93  p=0.0966  -> (qadma munax zarqa)
+         65  p=0.0677  -> (qadma merkha zarqa)
+         25  p=0.0264  -> (munax munax zarqa)
+         11  p=0.0119  -> (telishaqetanna qadma merkha zarqa)
+          9  p=0.0098  -> (merkha zarqa)
+          3  p=0.0036  -> (munax telishaqetanna qadma merkha zarqa)
+          2  p=0.0026  -> (merkha munax zarqa)
+          1  p=0.0016  -> (telishaqetanna qadma munax zarqa)
+
+segolta_phrase  (total 940, 4 rule(s))
+        502  p=0.5332  -> (munax segolta)
+        370  p=0.3931  -> (segolta)
+         61  p=0.0653  -> (munax munax segolta)
+          7  p=0.0080  -> (shalshelet)
+
+pazer_phrase  (total 870, 12 rule(s))
+        443  p=0.5060  -> (pazer)
+        235  p=0.2687  -> (munax pazer)
+        112  p=0.1284  -> (munax munax pazer)
+         48  p=0.0553  -> (munax munax munax pazer)
+         13  p=0.0154  -> (munax munax munax munax pazer)
+          5  p=0.0063  -> (munax munax galgal pazergadol)
+          4  p=0.0051  -> (munax galgal pazergadol)
+          3  p=0.0040  -> (munax munax munax galgal pazergadol)
+          2  p=0.0029  -> (munax munax munax munax galgal pazergadol)
+          2  p=0.0029  -> (munax munax munax munax munax pazer)
+          2  p=0.0029  -> (munax munax munax munax munax galgal pazergadol)
+          1  p=0.0017  -> (munax munax munax munax munax munax pazer)
+
+zarqa_clause  (total 202, 6 rule(s))
+        114  p=0.5572  -> geresh_phrase zarqa_phrase
+         56  p=0.2749  -> big_telisha_phrase zarqa_phrase
+         22  p=0.1095  -> big_telisha_phrase zarqa_clause
+          8  p=0.0414  -> pazer_phrase zarqa_clause
+          1  p=0.0073  -> pazer_phrase zarqa_phrase
+          1  p=0.0073  -> geresh_phrase zarqa_clause
+
+geresh_clause  (total 11, 1 rule(s))
+         11  p=0.9583  -> legarmeh_phrase geresh_phrase
+
+pazer_clause  (total 3, 1 rule(s))
+          3  p=0.8750  -> legarmeh_phrase pazer_phrase
+
+## Validation: flagged ungrammatical scored against the clean grammar
+All 96 ungrammatical land at percentile <= 13.5 among same-length clean verses; 82 sit at <= 1st percentile, 91 at <= 5th. The score recovers the binary verdict from the bottom up. Showing the 30 rarest:
+
+  Deuter 14:24           acc= 1  logL=  -11.22  /acc=-11.22  pct=  0.0  bg/tok= -1.38
+      rarest: START -> illegal_mark 82 in תוּכַ֘ל  (logp -10.53)
+  Deuter 31:7            acc= 1  logL=  -11.22  /acc=-11.22  pct=  0.0  bg/tok= -1.67
+      rarest: START -> illegal_mark 82 in יִשְׂרָאֵ֘ל  (logp -10.53)
+  Exodus 6:6             acc= 1  logL=  -11.22  /acc=-11.22  pct=  0.0  bg/tok= -1.70
+      rarest: START -> illegal_mark 82 in יִשְׂרָאֵ֘ל  (logp -10.53)
+  Exodus 30:12           acc= 1  logL=  -11.22  /acc=-11.22  pct=  0.0  bg/tok= -2.27
+      rarest: START -> illegal_mark 82 in יִשְׂרָאֵ֘ל  (logp -10.53)
+  Exodus 36:2            acc= 1  logL=  -11.22  /acc=-11.22  pct=  0.0  bg/tok= -1.85
+      rarest: START -> illegal_mark 82 in בְּצַלְאֵ֘ל  (logp -10.53)
+  Genesis 17:20          acc= 1  logL=  -11.22  /acc=-11.22  pct=  0.0  bg/tok= -1.80
+      rarest: START -> illegal_mark 82 in וּֽלְיִשְׁמָעֵ֘אל  (logp -10.53)
+  Genesis 47:29          acc= 1  logL=  -11.22  /acc=-11.22  pct=  0.0  bg/tok= -1.29
+      rarest: START -> illegal_mark 82 in יִשְׂרָאֵ֘ל  (logp -10.53)
+  Jeremiah 44:17         acc= 1  logL=  -11.22  /acc=-11.22  pct=  0.0  bg/tok= -1.39
+      rarest: START -> illegal_mark medial telisha qetanna in כִּ֩י  (logp -10.53)
+  Joshua 4:8             acc= 1  logL=  -11.22  /acc=-11.22  pct=  0.0  bg/tok= -1.62
+      rarest: START -> illegal_mark 82 in יִשְׂרָאֵ֘ל  (logp -10.53)
+  Joshua 10:30           acc= 1  logL=  -11.22  /acc=-11.22  pct=  0.0  bg/tok= -1.21
+      rarest: START -> illegal_mark 82 in יִשְׂרָאֵ֘ל  (logp -10.53)
+  Levit 4:2              acc= 1  logL=  -11.22  /acc=-11.22  pct=  0.0  bg/tok= -1.58
+      rarest: START -> illegal_mark 82 in יִשְׂרָאֵ֘ל  (logp -10.53)
+  Levit 20:2             acc= 1  logL=  -11.22  /acc=-11.22  pct=  0.0  bg/tok= -1.41
+      rarest: START -> illegal_mark 82 in יִשְׂרָאֵ֘ל  (logp -10.53)
+  Levit 25:20            acc= 1  logL=  -11.22  /acc=-11.22  pct=  0.0  bg/tok= -1.93
+      rarest: START -> illegal_mark mahapakh!tipexa in נֹּאכַ֤֖ל  (logp -10.53)
+  Numbers 20:19          acc= 1  logL=  -11.22  /acc=-11.22  pct=  0.0  bg/tok= -1.80
+      rarest: START -> illegal_mark 82 in יִשְׂרָאֵ֘ל  (logp -10.53)
+  Numbers 25:19          acc= 5  logL=  -31.95  /acc= -6.39  pct=  0.0  bg/tok= -3.97
+      rarest: silluq_clause -> silluq_clause sof_pasuq_phrase  (logp -11.47)
+  Jeremiah 48:12         acc= 6  logL=  -29.31  /acc= -4.89  pct=  0.0  bg/tok= -2.23
+      rarest: tipexa_phrase -> (ERROR)  (logp -11.18)
+  Deuter 24:10           acc= 5  logL=  -20.05  /acc= -4.01  pct=  0.0  bg/tok= -1.97
+      rarest: atnax_phrase -> (ERROR)  (logp -10.45)
+  Genesis 32:24          acc= 5  logL=  -19.09  /acc= -3.82  pct=  0.0  bg/tok= -3.56
+      rarest: silluq_phrase -> (ERROR)  (logp -10.53)
+  Numbers 7:40           acc= 4  logL=  -14.61  /acc= -3.65  pct=  0.3  bg/tok= -3.55
+      rarest: silluq_clause -> silluq_clause sof_pasuq_phrase  (logp -11.47)
+  Ecclesiastes 9:18      acc= 7  logL=  -24.36  /acc= -3.48  pct=  0.0  bg/tok= -1.95
+      rarest: silluq_phrase -> (ERROR)  (logp -10.53)
+  Joshua 15:47           acc= 9  logL=  -29.96  /acc= -3.33  pct=  0.0  bg/tok= -2.12
+      rarest: tipexa_phrase -> (ERROR)  (logp -11.18)
+  Lamentations 5:5       acc= 5  logL=  -16.43  /acc= -3.29  pct=  0.0  bg/tok= -0.77
+      rarest: silluq_phrase -> (ERROR)  (logp -10.53)
+  1Chronicles 1:53       acc= 5  logL=  -15.70  /acc= -3.14  pct=  0.2  bg/tok= -2.28
+      rarest: silluq_phrase -> (ERROR)  (logp -10.53)
+  2Samuel 23:9           acc=11  logL=  -34.39  /acc= -3.13  pct=  0.0  bg/tok= -1.75
+      rarest: zaqef_clause -> revia_clause zaqef_phrase  (logp -10.95)
+  Hosea 4:19             acc= 7  logL=  -21.09  /acc= -3.01  pct=  0.0  bg/tok= -3.06
+      rarest: silluq_clause -> silluq_clause sof_pasuq_phrase  (logp -11.47)
+  Jeremiah 26:5          acc=10  logL=  -29.89  /acc= -2.99  pct=  0.0  bg/tok= -1.38
+      rarest: zaqef_clause -> revia_phrase zaqef_phrase  (logp -10.95)
+  Levit 26:7             acc= 6  logL=  -17.84  /acc= -2.97  pct=  0.6  bg/tok= -3.10
+      rarest: silluq_clause -> silluq_clause sof_pasuq_phrase  (logp -11.47)
+  Levit 19:1             acc= 5  logL=  -14.85  /acc= -2.97  pct=  0.2  bg/tok= -3.21
+      rarest: silluq_clause -> silluq_clause sof_pasuq_phrase  (logp -11.47)
+  Judges 13:18           acc=10  logL=  -29.22  /acc= -2.92  pct=  0.0  bg/tok= -1.90
+      rarest: silluq_clause -> tevir_phrase silluq_phrase  (logp -11.47)
+  Genesis 18:18          acc=10  logL=  -29.18  /acc= -2.92  pct=  0.0  bg/tok= -2.19
+      rarest: zaqef_phrase -> (ERROR)  (logp -10.90)
+
+## Rarest CLEAN verses -- legal but atypical (lowest per-accent log-likelihood, top 30)
+  Genesis 34:31          acc= 4  logL=  -15.51  /acc= -3.88  pct=  0.3  bg/tok= -1.94
+      rarest: silluq_clause -> atnax_phrase silluq_clause  (logp -6.92)
+  Ezekiel 11:18          acc= 6  logL=  -20.91  /acc= -3.48  pct=  0.1  bg/tok= -2.90
+      rarest: tipexa_phrase -> (mayela)  (logp -7.96)
+  Levit 11:14            acc= 3  logL=   -9.66  /acc= -3.22  pct=  2.2  bg/tok= -1.47
+      rarest: zaqef_phrase -> (methiga-zaqef)  (logp -4.45)
+  Numbers 1:8            acc= 3  logL=   -9.66  /acc= -3.22  pct=  2.2  bg/tok= -1.47
+      rarest: zaqef_phrase -> (methiga-zaqef)  (logp -4.45)
+  Numbers 1:11           acc= 3  logL=   -9.66  /acc= -3.22  pct=  2.2  bg/tok= -1.47
+      rarest: zaqef_phrase -> (methiga-zaqef)  (logp -4.45)
+  Numbers 1:15           acc= 3  logL=   -9.66  /acc= -3.22  pct=  2.2  bg/tok= -1.47
+      rarest: zaqef_phrase -> (methiga-zaqef)  (logp -4.45)
+  Joshua 15:61           acc= 5  logL=  -16.08  /acc= -3.22  pct=  0.2  bg/tok= -2.04
+      rarest: silluq_clause -> atnax_phrase silluq_clause  (logp -6.92)
+  Levit 22:19            acc= 6  logL=  -18.80  /acc= -3.13  pct=  0.2  bg/tok= -1.78
+      rarest: silluq_clause -> atnax_phrase silluq_clause  (logp -6.92)
+  1Chronicles 27:19      acc= 6  logL=  -18.04  /acc= -3.01  pct=  0.6  bg/tok= -1.63
+      rarest: zaqef_phrase -> (methiga-zaqef)  (logp -4.45)
+  Numbers 26:17          acc= 6  logL=  -18.04  /acc= -3.01  pct=  0.6  bg/tok= -1.63
+      rarest: zaqef_phrase -> (methiga-zaqef)  (logp -4.45)
+  Numbers 26:31          acc= 6  logL=  -18.04  /acc= -3.01  pct=  0.6  bg/tok= -1.64
+      rarest: zaqef_phrase -> (methiga-zaqef)  (logp -4.45)
+  Levit 13:18            acc= 5  logL=  -14.75  /acc= -2.95  pct=  0.4  bg/tok= -1.76
+      rarest: silluq_clause -> atnax_clause silluq_phrase  (logp -6.83)
+  Nehemiah 10:10         acc= 7  logL=  -19.63  /acc= -2.80  pct=  0.1  bg/tok= -1.69
+      rarest: silluq_clause -> atnax_phrase silluq_clause  (logp -6.92)
+  Exodus 35:11           acc= 8  logL=  -22.17  /acc= -2.77  pct=  0.1  bg/tok= -1.61
+      rarest: zaqef_phrase -> (methiga-zaqef)  (logp -4.45)
+  Isaiah 63:18           acc= 6  logL=  -16.39  /acc= -2.73  pct=  1.4  bg/tok= -1.45
+      rarest: zaqef_phrase -> (zaqefgadol)  (logp -2.80)
+  Numbers 26:6           acc= 6  logL=  -16.39  /acc= -2.73  pct=  1.4  bg/tok= -1.45
+      rarest: zaqef_phrase -> (zaqefgadol)  (logp -2.80)
+  Numbers 26:13          acc= 6  logL=  -16.39  /acc= -2.73  pct=  1.4  bg/tok= -1.45
+      rarest: zaqef_phrase -> (zaqefgadol)  (logp -2.80)
+  Numbers 26:16          acc= 6  logL=  -16.39  /acc= -2.73  pct=  1.4  bg/tok= -1.45
+      rarest: zaqef_phrase -> (zaqefgadol)  (logp -2.80)
+  Numbers 26:24          acc= 6  logL=  -16.39  /acc= -2.73  pct=  1.4  bg/tok= -1.45
+      rarest: zaqef_phrase -> (zaqefgadol)  (logp -2.80)
+  Numbers 26:32          acc= 6  logL=  -16.39  /acc= -2.73  pct=  1.4  bg/tok= -1.45
+      rarest: zaqef_phrase -> (zaqefgadol)  (logp -2.80)
+  Numbers 26:39          acc= 6  logL=  -16.39  /acc= -2.73  pct=  1.4  bg/tok= -1.45
+      rarest: zaqef_phrase -> (zaqefgadol)  (logp -2.80)
+  Numbers 26:49          acc= 6  logL=  -16.39  /acc= -2.73  pct=  1.4  bg/tok= -1.45
+      rarest: zaqef_phrase -> (zaqefgadol)  (logp -2.80)
+  Numbers 1:6            acc= 3  logL=   -8.01  /acc= -2.67  pct=  5.6  bg/tok= -1.18
+      rarest: zaqef_phrase -> (zaqefgadol)  (logp -2.80)
+  Numbers 1:7            acc= 3  logL=   -8.01  /acc= -2.67  pct=  5.6  bg/tok= -1.18
+      rarest: zaqef_phrase -> (zaqefgadol)  (logp -2.80)
+  Numbers 1:9            acc= 3  logL=   -8.01  /acc= -2.67  pct=  5.6  bg/tok= -1.18
+      rarest: zaqef_phrase -> (zaqefgadol)  (logp -2.80)
+  Numbers 1:12           acc= 3  logL=   -8.01  /acc= -2.67  pct=  5.6  bg/tok= -1.18
+      rarest: zaqef_phrase -> (zaqefgadol)  (logp -2.80)
+  Numbers 1:13           acc= 3  logL=   -8.01  /acc= -2.67  pct=  5.6  bg/tok= -1.18
+      rarest: zaqef_phrase -> (zaqefgadol)  (logp -2.80)
+  Numbers 1:14           acc= 3  logL=   -8.01  /acc= -2.67  pct=  5.6  bg/tok= -1.18
+      rarest: zaqef_phrase -> (zaqefgadol)  (logp -2.80)
+  1Chronicles 6:33       acc= 7  logL=  -18.66  /acc= -2.67  pct=  0.2  bg/tok= -1.97
+      rarest: zaqef_phrase -> (methiga-zaqef)  (logp -4.45)
+  1Chronicles 24:21      acc= 5  logL=  -13.25  /acc= -2.65  pct=  0.8  bg/tok= -1.52
+      rarest: silluq_clause -> atnax_phrase silluq_clause  (logp -6.92)
+
+## n-gram baseline (sanity check, not the model)
+Ungrammatical vs clean separation (clean-mean minus ungrammatical-mean, in clean sd):
+  PCFG  per-accent:  clean -1.271+-0.261  ungrammatical -3.718  ->  9.4 sd
+  bigram per-token:  clean -1.168+-0.218  ungrammatical -1.992  ->  3.8 sd
+Structure (PCFG) separates anomalies far more sharply than sequence (bigram), confirming the PCFG as the primary measure.
+Among CLEAN verses the two rankings are largely orthogonal: only 2/30 of the rarest-by-PCFG verses are also rarest-by-bigram -- structure-rare and sequence-rare are different questions.
+
+================================================================================
+
+# Continuous grammaticality -- poetic checker
+
+4463 treed verses (4450 clean estimate the grammar, 13 ungrammatical scored against it).
+Clean per-accent log-likelihood: mean -1.249, sd 0.370, range [-4.074, -0.740] (less negative = more typical).
+
+## Estimated grammar (productions by descending probability)
+
+21 nonterminals, 191 distinct productions.
+
+silluq_clause  (total 7873, 14 rule(s))
+       3024  p=0.3838  -> revia_mugrash_phrase silluq_phrase
+       2019  p=0.2563  -> atnax_clause silluq_clause
+        970  p=0.1232  -> atnax_phrase silluq_clause
+        810  p=0.1028  -> atnax_clause silluq_phrase
+        416  p=0.0529  -> oleh_weyored_clause silluq_clause
+        401  p=0.0509  -> atnax_phrase silluq_phrase
+        127  p=0.0162  -> revia_mugrash_clause silluq_phrase
+         31  p=0.0040  -> shalshelet_gedolah_phrase silluq_phrase
+         29  p=0.0037  -> revia_mugrash_phrase silluq_clause
+         28  p=0.0036  -> legarmeh_phrase silluq_phrase
+         12  p=0.0016  -> dexi_phrase silluq_phrase
+          3  p=0.0004  -> pazer_phrase silluq_phrase
+          2  p=0.0003  -> dexi_clause silluq_phrase
+          1  p=0.0002  -> oleh_weyored_clause silluq_phrase
+
+START  (total 4450, 2 rule(s))
+       4439  p=0.9973  -> silluq_clause
+         11  p=0.0026  -> silluq_phrase
+
+silluq_phrase  (total 4450, 25 rule(s))
+       1507  p=0.3378  -> (merkha silluq)
+       1100  p=0.2466  -> (silluq)
+        976  p=0.2188  -> (tarxa munax silluq)
+        736  p=0.1650  -> (munax silluq)
+         38  p=0.0086  -> (mahapakh tarxa munax silluq)
+         28  p=0.0064  -> (illuy silluq)
+         16  p=0.0037  -> (azla tarxa munax silluq)
+         11  p=0.0026  -> (merkha metsunnar silluq)
+          8  p=0.0019  -> (illuy illuy silluq)
+          6  p=0.0015  -> (mahapakh metsunnar tarxa munax silluq)
+          4  p=0.0010  -> (mahapakh merkha tarxa munax silluq)
+          4  p=0.0010  -> (illuy tarxa munax silluq)
+          3  p=0.0008  -> (azla illuy silluq)
+          2  p=0.0006  -> (mahapakh azla tarxa munax silluq)
+          1  p=0.0003  -> (tarxa silluq)
+          1  p=0.0003  -> (merkha merkha silluq)
+          1  p=0.0003  -> (mahapakh shalshelet qetannah illuy illuy silluq)
+          1  p=0.0003  -> (azla mahapakh metsunnar tarxa munax silluq)
+          1  p=0.0003  -> (merkha azla tarxa munax silluq)
+          1  p=0.0003  -> (munax merkha silluq)
+          1  p=0.0003  -> (merkha tarxa munax silluq)
+          1  p=0.0003  -> (mahapakh illuy silluq)
+          1  p=0.0003  -> (mahapakh metsunnar illuy silluq)
+          1  p=0.0003  -> (tarxa azla illuy silluq)
+          1  p=0.0003  -> (mahapakh merkha silluq)
+
+atnax_phrase  (total 4200, 28 rule(s))
+       1932  p=0.4585  -> (munax atnax)
+        749  p=0.1778  -> (munax munax atnax)
+        744  p=0.1767  -> (merkha atnax)
+        603  p=0.1432  -> (atnax)
+         74  p=0.0177  -> (mahapakh munax munax atnax)
+         22  p=0.0053  -> (tarxa merkha atnax)
+         16  p=0.0039  -> (illuy munax munax atnax)
+         15  p=0.0037  -> (merkha merkha atnax)
+         13  p=0.0032  -> (mahapakh metsunnar munax munax atnax)
+          8  p=0.0020  -> (merkha munax munax atnax)
+          5  p=0.0013  -> (mahapakh atnax)
+          2  p=0.0006  -> (mahapakh shalshelet qetannah illuy atnax)
+          2  p=0.0006  -> (merkha munax atnax)
+          1  p=0.0004  -> (munax tarxa munax atnax)
+          1  p=0.0004  -> (tarxa atnax)
+          1  p=0.0004  -> (mahapakh merkha munax munax munax atnax)
+          1  p=0.0004  -> (mahapakh metsunnar atnax)
+          1  p=0.0004  -> (merkha metsunnar merkha atnax)
+          1  p=0.0004  -> (mahapakh merkha metsunnar atnax)
+          1  p=0.0004  -> (merkha mahapakh munax munax atnax)
+          1  p=0.0004  -> (mahapakh illuy shalshelet qetannah merkha metsunnar atnax)
+          1  p=0.0004  -> (mahapakh shalshelet qetannah merkha metsunnar atnax)
+          1  p=0.0004  -> (mahapakh tarxa merkha atnax)
+          1  p=0.0004  -> (merkha mahapakh metsunnar munax munax atnax)
+          1  p=0.0004  -> (tarxa munax atnax)
+          1  p=0.0004  -> (merkha metsunnar atnax)
+          1  p=0.0004  -> (illuy merkha atnax)
+          1  p=0.0004  -> (munax mahapakh atnax)
+
+revia_mugrash_phrase  (total 3180, 16 rule(s))
+       1988  p=0.6236  -> (revia mugrash)
+       1098  p=0.3445  -> (merkha revia mugrash)
+         37  p=0.0118  -> (merkha merkha revia mugrash)
+         35  p=0.0111  -> (tarxa merkha revia mugrash)
+          5  p=0.0017  -> (mahapakh metsunnar revia mugrash)
+          3  p=0.0011  -> (merkha tarxa merkha revia mugrash)
+          3  p=0.0011  -> (mahapakh tarxa merkha revia mugrash)
+          2  p=0.0008  -> (mahapakh revia mugrash)
+          2  p=0.0008  -> (merkha merkha metsunnar revia mugrash)
+          1  p=0.0005  -> (munax merkha revia mugrash)
+          1  p=0.0005  -> (mahapakh merkha metsunnar merkha revia mugrash)
+          1  p=0.0005  -> (mahapakh shalshelet qetannah mahapakh metsunnar revia mugrash)
+          1  p=0.0005  -> (mahapakh metsunnar shalshelet qetannah mahapakh metsunnar revia mugrash)
+          1  p=0.0005  -> (mahapakh azla tarxa merkha revia mugrash)
+          1  p=0.0005  -> (mahapakh metsunnar tarxa merkha revia mugrash)
+          1  p=0.0005  -> (shalshelet qetannah illuy revia mugrash)
+
+atnax_clause  (total 3109, 8 rule(s))
+       2501  p=0.8034  -> dexi_phrase atnax_phrase
+        146  p=0.0471  -> revia_gadol_clause atnax_clause
+        134  p=0.0432  -> revia_gadol_phrase atnax_clause
+        129  p=0.0416  -> revia_gadol_clause atnax_phrase
+         95  p=0.0307  -> revia_gadol_phrase atnax_phrase
+         62  p=0.0201  -> dexi_clause atnax_phrase
+         41  p=0.0133  -> legarmeh_phrase atnax_phrase
+          1  p=0.0005  -> pazer_clause atnax_phrase
+
+dexi_phrase  (total 2681, 11 rule(s))
+       1295  p=0.4821  -> (dexi)
+       1261  p=0.4695  -> (munax dexi)
+         67  p=0.0251  -> (mahapakh munax dexi)
+         19  p=0.0073  -> (mahapakh metsunnar munax dexi)
+         16  p=0.0061  -> (merkha dexi)
+          9  p=0.0035  -> (merkha munax dexi)
+          8  p=0.0032  -> (illuy munax dexi)
+          3  p=0.0013  -> (mahapakh dexi)
+          1  p=0.0006  -> (merkha mahapakh metsunnar munax dexi)
+          1  p=0.0006  -> (tarxa munax dexi)
+          1  p=0.0006  -> (munax munax dexi)
+
+revia_gadol_phrase  (total 583, 10 rule(s))
+        376  p=0.6398  -> (revia gadol)
+         67  p=0.1147  -> (mahapakh metsunnar revia gadol)
+         63  p=0.1079  -> (illuy revia gadol)
+         41  p=0.0705  -> (mahapakh revia gadol)
+         30  p=0.0518  -> (merkha revia gadol)
+          2  p=0.0042  -> (mahapakh azla revia gadol)
+          1  p=0.0025  -> (illuy azla revia gadol)
+          1  p=0.0025  -> (mahapakh illuy revia gadol)
+          1  p=0.0025  -> (mahapakh merkha revia gadol)
+          1  p=0.0025  -> (illuy illuy revia gadol)
+
+legarmeh_phrase  (total 566, 9 rule(s))
+        299  p=0.5245  -> (legarmeh)
+        150  p=0.2636  -> (mahapakh legarmeh)
+         54  p=0.0954  -> (mahapakh metsunnar legarmeh)
+         32  p=0.0569  -> (illuy legarmeh)
+         24  p=0.0429  -> (merkha legarmeh)
+          4  p=0.0079  -> (merkha mahapakh metsunnar legarmeh)
+          1  p=0.0026  -> (azla mahapakh metsunnar legarmeh)
+          1  p=0.0026  -> (merkha mahapakh legarmeh)
+          1  p=0.0026  -> (mahapakh merkha legarmeh)
+
+oleh_weyored_clause  (total 459, 6 rule(s))
+        140  p=0.3038  -> revia_qatan_phrase oleh_weyored_phrase
+        131  p=0.2843  -> tsinnor_phrase oleh_weyored_phrase
+         95  p=0.2065  -> tsinnor_clause oleh_weyored_phrase
+         51  p=0.1114  -> revia_qatan_clause oleh_weyored_phrase
+         22  p=0.0486  -> revia_gadol_phrase oleh_weyored_clause
+         20  p=0.0443  -> revia_gadol_clause oleh_weyored_clause
+
+oleh_weyored_phrase  (total 417, 4 rule(s))
+        198  p=0.4732  -> (oleh we-yored)
+        197  p=0.4708  -> (galgal oleh we-yored)
+         17  p=0.0417  -> (mahapakh oleh we-yored)
+          5  p=0.0131  -> (merkha oleh we-yored)
+
+revia_gadol_clause  (total 332, 8 rule(s))
+        268  p=0.7979  -> legarmeh_phrase revia_gadol_phrase
+         32  p=0.0966  -> pazer_phrase revia_gadol_phrase
+         11  p=0.0342  -> pazer_clause revia_gadol_phrase
+         10  p=0.0312  -> pazer_phrase revia_gadol_clause
+          4  p=0.0134  -> legarmeh_phrase revia_gadol_clause
+          3  p=0.0104  -> dexi_phrase revia_gadol_phrase
+          3  p=0.0104  -> pazer_clause revia_gadol_clause
+          1  p=0.0045  -> tsinnor_clause revia_gadol_phrase
+
+tsinnor_phrase  (total 249, 8 rule(s))
+        126  p=0.4990  -> (tsinnor)
+         62  p=0.2465  -> (munax tsinnor)
+         51  p=0.2032  -> (merkha tsinnor)
+          4  p=0.0178  -> (merkha munax tsinnor)
+          3  p=0.0138  -> (mahapakh munax tsinnor)
+          1  p=0.0059  -> (munax munax tsinnor)
+          1  p=0.0059  -> (mahapakh tsinnor)
+          1  p=0.0059  -> (mahapakh azla tsinnor)
+
+revia_qatan_phrase  (total 191, 6 rule(s))
+         99  p=0.5116  -> (merkha revia qatan)
+         66  p=0.3419  -> (revia qatan)
+         23  p=0.1208  -> (mahapakh merkha revia qatan)
+          1  p=0.0077  -> (tarxa merkha revia qatan)
+          1  p=0.0077  -> (merkha merkha revia qatan)
+          1  p=0.0077  -> (mahapakh merkha merkha revia qatan)
+
+revia_mugrash_clause  (total 148, 8 rule(s))
+         94  p=0.6197  -> dexi_phrase revia_mugrash_phrase
+         12  p=0.0820  -> revia_gadol_phrase revia_mugrash_clause
+         11  p=0.0754  -> revia_gadol_clause revia_mugrash_phrase
+          9  p=0.0623  -> revia_gadol_clause revia_mugrash_clause
+          7  p=0.0492  -> dexi_clause revia_mugrash_phrase
+          5  p=0.0361  -> legarmeh_phrase revia_mugrash_phrase
+          5  p=0.0361  -> pazer_phrase revia_mugrash_phrase
+          5  p=0.0361  -> revia_gadol_phrase revia_mugrash_phrase
+
+tsinnor_clause  (total 124, 6 rule(s))
+        110  p=0.8667  -> legarmeh_phrase tsinnor_phrase
+          6  p=0.0510  -> pazer_phrase tsinnor_clause
+          4  p=0.0353  -> pazer_phrase tsinnor_phrase
+          2  p=0.0196  -> legarmeh_phrase tsinnor_clause
+          1  p=0.0118  -> pazer_clause tsinnor_clause
+          1  p=0.0118  -> pazer_clause tsinnor_phrase
+
+pazer_phrase  (total 91, 10 rule(s))
+         47  p=0.4922  -> (pazer)
+         16  p=0.1710  -> (mahapakh galgal pazer)
+         13  p=0.1399  -> (azla galgal pazer)
+          5  p=0.0570  -> (mahapakh azla galgal pazer)
+          3  p=0.0363  -> (azla merkha galgal pazer)
+          2  p=0.0259  -> (merkha pazer)
+          2  p=0.0259  -> (mahapakh merkha pazer)
+          1  p=0.0155  -> (mahapakh mahapakh pazer)
+          1  p=0.0155  -> (mahapakh pazer)
+          1  p=0.0155  -> (merkha azla galgal pazer)
+
+dexi_clause  (total 73, 5 rule(s))
+         58  p=0.7697  -> legarmeh_phrase dexi_phrase
+         10  p=0.1382  -> pazer_phrase dexi_phrase
+          3  p=0.0461  -> pazer_clause dexi_phrase
+          1  p=0.0197  -> legarmeh_phrase dexi_clause
+          1  p=0.0197  -> pazer_phrase dexi_clause
+
+revia_qatan_clause  (total 51, 3 rule(s))
+         29  p=0.5566  -> legarmeh_phrase revia_qatan_phrase
+         19  p=0.3679  -> tsinnor_clause revia_qatan_phrase
+          3  p=0.0660  -> tsinnor_phrase revia_qatan_phrase
+
+shalshelet_gedolah_phrase  (total 31, 3 rule(s))
+         28  p=0.8636  -> (shalshelet gedolah)
+          2  p=0.0758  -> (tarxa merkha shalshelet gedolah)
+          1  p=0.0455  -> (merkha shalshelet gedolah)
+
+pazer_clause  (total 20, 1 rule(s))
+         20  p=0.9762  -> legarmeh_phrase pazer_phrase
+
+## Validation: flagged ungrammatical scored against the clean grammar
+All 13 ungrammatical land at percentile <= 3.4 among same-length clean verses; 11 sit at <= 1st percentile, 13 at <= 5th. The score recovers the binary verdict from the bottom up. Showing the 13 rarest:
+
+  Psalms 89:41           acc= 3  logL=  -13.81  /acc= -4.60  pct=  0.0  bg/tok= -2.44
+      rarest: silluq_phrase -> (ERROR)  (logp -9.10)
+  Psalms 37:31           acc= 4  logL=  -13.80  /acc= -3.45  pct=  0.0  bg/tok= -2.15
+      rarest: silluq_phrase -> (ERROR)  (logp -9.10)
+  Psalms 78:41           acc= 4  logL=  -13.80  /acc= -3.45  pct=  0.0  bg/tok= -2.15
+      rarest: silluq_phrase -> (ERROR)  (logp -9.10)
+  Psalms 32:2            acc= 8  logL=  -26.86  /acc= -3.36  pct=  0.0  bg/tok= -2.85
+      rarest: silluq_phrase -> (ERROR)  (logp -9.10)
+  Psalms 71:4            acc= 5  logL=  -16.69  /acc= -3.34  pct=  0.1  bg/tok= -2.08
+      rarest: silluq_phrase -> (ERROR)  (logp -9.10)
+  Psalms 59:5            acc= 4  logL=  -13.10  /acc= -3.28  pct=  0.0  bg/tok= -1.97
+      rarest: silluq_phrase -> (ERROR)  (logp -9.10)
+  Psalms 37:32           acc= 5  logL=  -14.81  /acc= -2.96  pct=  0.1  bg/tok= -2.27
+      rarest: silluq_phrase -> (ERROR)  (logp -9.10)
+  Proverbs 8:28          acc= 5  logL=  -14.35  /acc= -2.87  pct=  0.2  bg/tok= -2.08
+      rarest: silluq_phrase -> (ERROR)  (logp -9.10)
+  Psalms 60:13           acc= 5  logL=  -14.35  /acc= -2.87  pct=  0.2  bg/tok= -2.08
+      rarest: silluq_phrase -> (ERROR)  (logp -9.10)
+  Psalms 31:20           acc= 9  logL=  -23.70  /acc= -2.63  pct=  0.5  bg/tok= -2.15
+      rarest: silluq_phrase -> (ERROR)  (logp -9.10)
+  Proverbs 24:15         acc= 5  logL=  -13.13  /acc= -2.63  pct=  0.4  bg/tok= -2.01
+      rarest: silluq_phrase -> (ERROR)  (logp -9.10)
+  Psalms 89:7            acc= 8  logL=  -17.17  /acc= -2.15  pct=  3.4  bg/tok= -1.90
+      rarest: silluq_phrase -> (ERROR)  (logp -9.10)
+  Psalms 74:17           acc= 7  logL=  -14.24  /acc= -2.03  pct=  2.2  bg/tok= -1.79
+      rarest: silluq_phrase -> (ERROR)  (logp -9.10)
+
+## Rarest CLEAN verses -- legal but atypical (lowest per-accent log-likelihood, top 30)
+  Psalms 36:1            acc= 3  logL=  -12.22  /acc= -4.07  pct= 21.1  bg/tok= -1.76
+      rarest: silluq_phrase -> (illuy illuy silluq)  (logp -6.26)
+  Psalms 44:1            acc= 3  logL=  -12.22  /acc= -4.07  pct= 21.1  bg/tok= -1.76
+      rarest: silluq_phrase -> (illuy illuy silluq)  (logp -6.26)
+  Psalms 47:1            acc= 3  logL=  -12.22  /acc= -4.07  pct= 21.1  bg/tok= -1.76
+      rarest: silluq_phrase -> (illuy illuy silluq)  (logp -6.26)
+  Psalms 49:1            acc= 3  logL=  -12.22  /acc= -4.07  pct= 21.1  bg/tok= -1.76
+      rarest: silluq_phrase -> (illuy illuy silluq)  (logp -6.26)
+  Psalms 61:1            acc= 3  logL=  -12.22  /acc= -4.07  pct= 21.1  bg/tok= -1.76
+      rarest: silluq_phrase -> (illuy illuy silluq)  (logp -6.26)
+  Psalms 69:1            acc= 3  logL=  -12.22  /acc= -4.07  pct= 21.1  bg/tok= -1.76
+      rarest: silluq_phrase -> (illuy illuy silluq)  (logp -6.26)
+  Psalms 81:1            acc= 3  logL=  -12.22  /acc= -4.07  pct= 21.1  bg/tok= -1.76
+      rarest: silluq_phrase -> (illuy illuy silluq)  (logp -6.26)
+  Psalms 85:1            acc= 3  logL=  -12.22  /acc= -4.07  pct= 21.1  bg/tok= -1.76
+      rarest: silluq_phrase -> (illuy illuy silluq)  (logp -6.26)
+  Job 36:28              acc= 6  logL=  -21.21  /acc= -3.54  pct=  0.4  bg/tok= -1.55
+      rarest: silluq_clause -> legarmeh_phrase silluq_phrase  (logp -5.62)
+  Psalms 3:1             acc= 6  logL=  -21.21  /acc= -3.54  pct=  0.4  bg/tok= -1.55
+      rarest: silluq_clause -> legarmeh_phrase silluq_phrase  (logp -5.62)
+  Psalms 56:8            acc= 6  logL=  -21.21  /acc= -3.54  pct=  0.4  bg/tok= -1.55
+      rarest: silluq_clause -> legarmeh_phrase silluq_phrase  (logp -5.62)
+  Psalms 73:20           acc= 6  logL=  -21.21  /acc= -3.54  pct=  0.4  bg/tok= -1.55
+      rarest: silluq_clause -> legarmeh_phrase silluq_phrase  (logp -5.62)
+  Psalms 88:11           acc= 6  logL=  -21.21  /acc= -3.54  pct=  0.4  bg/tok= -1.55
+      rarest: silluq_clause -> legarmeh_phrase silluq_phrase  (logp -5.62)
+  Psalms 119:104         acc= 6  logL=  -21.21  /acc= -3.54  pct=  0.4  bg/tok= -1.55
+      rarest: silluq_clause -> legarmeh_phrase silluq_phrase  (logp -5.62)
+  Psalms 137:9           acc= 5  logL=  -17.16  /acc= -3.43  pct=  0.1  bg/tok= -2.33
+      rarest: revia_mugrash_phrase -> (shalshelet qetannah illuy revia mugrash)  (logp -7.66)
+  Job 21:28              acc= 8  logL=  -26.62  /acc= -3.33  pct=  0.2  bg/tok= -1.69
+      rarest: silluq_clause -> legarmeh_phrase silluq_phrase  (logp -5.62)
+  Proverbs 21:29         acc= 8  logL=  -25.02  /acc= -3.13  pct=  0.7  bg/tok= -1.83
+      rarest: silluq_clause -> legarmeh_phrase silluq_phrase  (logp -5.62)
+  Psalms 119:69          acc= 8  logL=  -25.02  /acc= -3.13  pct=  0.7  bg/tok= -1.83
+      rarest: silluq_clause -> legarmeh_phrase silluq_phrase  (logp -5.62)
+  Psalms 47:9            acc= 7  logL=  -21.66  /acc= -3.09  pct=  0.1  bg/tok= -1.45
+      rarest: silluq_clause -> legarmeh_phrase silluq_phrase  (logp -5.62)
+  Proverbs 7:7           acc= 6  logL=  -18.27  /acc= -3.04  pct=  0.5  bg/tok= -1.96
+      rarest: revia_mugrash_phrase -> (mahapakh metsunnar revia mugrash)  (logp -6.36)
+  Job 37:14              acc= 7  logL=  -21.21  /acc= -3.03  pct=  0.3  bg/tok= -1.43
+      rarest: silluq_clause -> legarmeh_phrase silluq_phrase  (logp -5.62)
+  Proverbs 19:10         acc= 7  logL=  -21.21  /acc= -3.03  pct=  0.3  bg/tok= -1.43
+      rarest: silluq_clause -> legarmeh_phrase silluq_phrase  (logp -5.62)
+  Psalms 116:19          acc= 6  logL=  -18.00  /acc= -3.00  pct=  0.5  bg/tok= -2.23
+      rarest: revia_mugrash_phrase -> (mahapakh metsunnar revia mugrash)  (logp -6.36)
+  Job 3:13               acc= 7  logL=  -20.47  /acc= -2.92  pct=  0.9  bg/tok= -1.29
+      rarest: silluq_clause -> legarmeh_phrase silluq_phrase  (logp -5.62)
+  Job 15:24              acc= 7  logL=  -20.47  /acc= -2.92  pct=  0.9  bg/tok= -1.29
+      rarest: silluq_clause -> legarmeh_phrase silluq_phrase  (logp -5.62)
+  Psalms 102:20          acc= 7  logL=  -20.47  /acc= -2.92  pct=  0.9  bg/tok= -1.29
+      rarest: silluq_clause -> legarmeh_phrase silluq_phrase  (logp -5.62)
+  Psalms 105:3           acc= 7  logL=  -20.47  /acc= -2.92  pct=  0.9  bg/tok= -1.29
+      rarest: silluq_clause -> legarmeh_phrase silluq_phrase  (logp -5.62)
+  Psalms 148:4           acc= 7  logL=  -20.47  /acc= -2.92  pct=  0.9  bg/tok= -1.29
+      rarest: silluq_clause -> legarmeh_phrase silluq_phrase  (logp -5.62)
+  Psalms 146:3           acc= 6  logL=  -17.50  /acc= -2.92  pct=  0.6  bg/tok= -1.94
+      rarest: silluq_phrase -> (mahapakh merkha silluq)  (logp -8.00)
+  Psalms 135:21          acc= 6  logL=  -17.50  /acc= -2.92  pct=  0.7  bg/tok= -1.93
+      rarest: revia_mugrash_phrase -> (mahapakh metsunnar revia mugrash)  (logp -6.36)
+
+## n-gram baseline (sanity check, not the model)
+Ungrammatical vs clean separation (clean-mean minus ungrammatical-mean, in clean sd):
+  PCFG  per-accent:  clean -1.249+-0.370  ungrammatical -3.047  ->  4.9 sd
+  bigram per-token:  clean -0.983+-0.290  ungrammatical -2.149  ->  4.0 sd
+Structure (PCFG) separates anomalies far more sharply than sequence (bigram), confirming the PCFG as the primary measure.
+Among CLEAN verses the two rankings are largely orthogonal: only 2/30 of the rarest-by-PCFG verses are also rarest-by-bigram -- structure-rare and sequence-rare are different questions.

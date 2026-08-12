@@ -1,0 +1,158 @@
+# Koren Classic Tanakh -- Deuteronomy main Decalogue (taxton), pp. 280-281.
+#
+# Hand transcription of the printed accents, by Ben Denckla, 2026-07-21, read directly from
+# the book, via the per-line editor (accgram/transcription_editor.py).  Primary observation:
+# not derivable from anything else in the repo.  The editor's exports for both pages are
+# committed beside this file as koren_dt_taxton.json, and a test checks the two agree.
+#
+# One .txt line per PRINTED line, so a token can be checked against the line it was read off.
+# "[p. 281]" marks where the second page begins; bracketed asides carry no accent.
+#
+# Two pages, and here printed_decalogue_koren_page's prose is RIGHT -- "starts on p. 280 and
+# runs onto p. 281".  (Its Exodus sentence, "p. 113", is not; see koren_ex_taxton.txt.)
+#
+# The strand starts at אנכי, so 5:5 is not transcribed: p. 280's first line opens with
+# ולא־עליתם בהר לאמר, the tail of that verse, and the transcription begins at the word after
+# it -- Koren hangs אנכי far to the left after a wide gap, which is where the Decalogue starts.
+#
+# RESULT: 165 reference tokens vs 165 transcribed, 13 chanted verses vs 13, and NO divergence.
+# Both pasolegs land on their exact reference positions (tokens 84 אתה and 127 למען).
+#
+# THIS PAGE DISCRIMINATES, WHICH THE EXODUS ONE DID NOT.  koren_ex_taxton could test only a
+# chanted verse boundary: at the Shabbat commandment ws/ex/taxton/printed and
+# ws/ex/taxton/manuscript are identical, so a clean result there said nothing about the p-trad at
+# that commandment. The two dt/taxton strands part at TWELVE chanted words, and this transcription
+# takes the p-trad side of every one it can reach.  TAKE THAT NUMBER, AND ITS DECOMPOSITION INTO
+# 4 boundary + 7 Sabbath + 1 vocalization, FROM accgram/printed_decalogue_taxton_diff.py, which
+# derives them from the vendored words on every page generation -- never from a fresh count here.
+# This note said "FIVE independent ways" until the 2026-07-25 claim audit: a number with no stated
+# criterion, and unreconcilable with the hub's "three" and test_edition_transcriptions.py's own
+# "eight" for the same set.  Five of the twelve are the ones this page reads most directly:
+#   * כל־מלאכה           geresh p-trad / pazer m-trad
+#   * ועבדך־ואמתך        revia p-trad / telisha gedola m-trad
+#   * וכל־בהמתך          zaqef p-trad / revia m-trad -- ws/dt/taxton/printed is the ONLY one of
+#                        the eight strands to depart here, which makes it the sharpest of the
+#                        four listed here that fall in the Shabbat commandment
+#   * אתה                a pasoleg in the p-trad, none in the m-trad; hence two pasolegs
+#                        against the m-trad's one, so the COUNT itself discriminates
+#   * עבדים              closes its own chanted verse in the p-trad (13 verses) but takes
+#                        etnaxta in the m-trad (12)
+# The first four sit inside the Shabbat commandment (which holds seven of the twelve in all) --
+# exactly where Simanim's Tiqqun departs to the m-trad (p. 247).  Koren does not: it is the p-trad
+# at that commandment too.  The fifth, עבדים, is one of the four boundary words.
+#
+# ONE DISCRIMINATOR MORE, WHICH THIS FILE CANNOT CARRY BECAUSE IT IS A VOWEL (read 2026-07-25,
+# off this same scan; not part of the transcription).  The two dt/taxton strands also part at
+# תרצח: ws/dt/taxton/manuscript has qamats (תִרְצָ֖ח), ws/dt/taxton/printed patax (תִרְצַ֖ח), on the
+# same tipexa either way.  Accents are all this file records, so the divergence harness is blind
+# to it and it is not one of the five listed above.  Read off the page instead: p. 281 printed
+# line 12 -- the "silsof mer tip mun" line, לך׃ לא תרצח ולא -- has PATAX, the p-trad vowel.
+# Decidable rather than a judgement call, and both controls are on the line above it: this type's
+# qamats is a bar with a blob attached below the bar's centre (line 11, the final kaf of אלהיך)
+# and its patax a bare bar (the same line's xataf patax under the alef of אשר).  Under the tsadi
+# here there is a bare bar plus, lower and to its left, the detached hook this type uses for
+# tipexa -- the same hook that sits under the he of that line's own אלהיך.  No blob.
+# So Koren takes the p-trad side of every site at which the two dt/taxton strands part, vowel
+# included, not only of the accent sites.  printed_decalogue_koren_page's verdict table says
+# exactly that, and this note is the whole of its evidence for the vowel.
+#
+# THE CROSS-STRAND RE-RUN, which the review loop had no stake in.  Against ws/dt/taxton/manuscript
+# this transcription is 165 tokens against 166 with SIX difference regions, and they partition
+# with nothing left over: three in the first chanted verse (אנכי pashta vs tipexa, אלהיך zaqef
+# vs etnaxta, מבית־עבדים munax+etnaxta vs merkha+silluq -- the re-accentuation the moved
+# boundary forces) and three at the Shabbat commandment (the accent sites above).  The pasoleg
+# placements disagree there too: the m-trad reference has one, this transcription has two.
+# Agreement over the whole run with a strand nothing flagged is the positive evidence here; a
+# flagged position surviving a re-read would not have been.
+#
+# ONE READING IS NOT FULLY READ OFF THE PAGE, and the JSON records it per line as well:
+# p. 281 line 2, the tipexa on את־שמו.  An artifact overlies the mark -- possibly from the
+# scan, possibly from the original printing -- so the reading is partly from context and
+# expectation.  TO BE CHECKED AGAINST THE PHYSICAL BOOK, which Ben does not have access to
+# until about 2026-09-08.  Ben raised the doubt DURING transcription, with a provisional "?"
+# suffix on the token; that is not supported notation, so it was moved into the uncertain
+# mechanism and the "?" kept in corrected_from rather than dropped.
+#
+# What bounds the risk there is what the word discriminates: NOTHING.  All eight strands have
+# tipexa on את־שמו.  So whatever the book turns out to say, it cannot touch the finding above;
+# at worst it is a lone accent standing against every strand.  (Weaker stakes even than
+# koren_ex_taxton's לא תרצח, #70, which is at least a taxton/elyon discriminator.)
+#
+# One further post-export edit, on p. 281 line 17: the transcription ran four tokens past the
+# end of the Decalogue into 5:19 (את־הדברים האלה דבר יהוה), and was trimmed to the silluq on
+# לרעך.  Not a correction of a reading -- the tokens were right, they were just out of scope.
+#
+# Koren does NOT distinguish narrow-sense paseq from legarmeh (Ben, primary observation about
+# the physical book, recorded nowhere else -- hence the pasoleg_kinds header field).  So both
+# vertical strokes here, on אתה and on למען, are written "[pasoleg]": a pasoleg stands here,
+# this edition does not say which kind.  Writing "mun_leg" or "[paseq]" would assert something
+# the book does not.  Note this is NOT the same limit as the vendored data's -- that folds both
+# Wikisource templates onto U+05C0 -- so the position stays kind-blind on both sides,
+# independently, and would stay so even after a re-vendoring.
+#
+# And the usual caution about the agreeing majority: the harness flags only positions where the
+# two already disagree, so only those were re-read.  "No divergences" means no divergence
+# survived a procedure that never inspects the rest.  What carries weight here is the
+# cross-strand run above, not the absence of flags.
+#
+# The render crops in the JSON reach the MIDDLE of the neighbouring printed line -- half the
+# line above on p. 280, half the line below on p. 281 -- rather than stopping tight at the
+# transcribed text.  A half-line's own above-marks are what let them be told apart from the
+# last full line's below-marks.  Both were widened after transcription; px_source is absolute
+# in the scan and never moved, and p. 280's px was recomputed arithmetically from it rather
+# than re-detected, so the bands remain the ones read against.
+#
+# Conventions in force for this file:
+#   * One token per ACCENT.  Normally that is one per chanted word, a maqaf compound being
+#     one chanted word; the exception is a word bearing more than one accent.
+#   * "-" is a maqaf binding two ACCENTS into one chanted word ("mun-mer"), "+" its simple-word
+#     counterpart, "_" binds two MARKS into ONE accent ("mun_leg").  Only "+" occurs here,
+#     once: "qad+ger" on ויצאך (p. 281 line 8), whose first accent is called metigah rather
+#     than qadma by convention.  Every maqaf compound on these pages bears a single accent.
+#   * A postpositive/prepositive accent written twice on one word -- once at its fixed edge
+#     and once as a stress helper -- is ONE accent, so ONE token.
+#   * meteg is NOT transcribed: it is not a first-class mark of the accent system.
+#   * A pasoleg is not an accent and is not a token; it is recorded as the aside "[pasoleg]"
+#     after the token it follows.  The parser drops bracketed asides.
+#
+# Shorthand: etn etnaxta / zaq zaqef qatan / tip tipexa / rev revia / zar zarqa / pash pashta /
+# yet yetiv / tev tevir / ger geresh / ger2 gershayim / tg telisha gedola / tq telisha qetana /
+# paz pazer / seg segolta / mun munax / mah mahapakh / mer merkha / dar darga / qad qadma /
+# silsof silluq + sof pasuq.
+
+edition: Koren Classic Tanakh
+book: dt
+reading: taxton
+tradition: printed
+pages: 280-281
+pasoleg_kinds: not distinguished
+uncertain_readings: 1
+transcriber: Ben Denckla
+date: 2026-07-21
+
+tip mun etn
+dar tev mer tip mer silsof mer tev
+mer tip silsof qad mer pash zaq
+mah pash zaq mer tip etn mer tip
+mer silsof mer tip mun etn mun ger2 mah
+pash mun zaq tg qad dar tev mer
+tip silsof mer tip etn tip mer
+
+[p. 281]
+silsof mer tev mer tip etn mun mah
+pash zaq tev mer tip silsof tev
+mer tip etn mer tip mer silsof mah pash
+zaq tip silsof pash zaq tip mun
+etn qad ger mun [pasoleg] mun
+rev mah pash zaq pash mun zaq rev
+tev mer tip silsof rev mun mah pash mun zaq
+qad+ger mah pash zaq mer tip mun etn rev pash
+mun zaq tip mer silsof mah
+pash zaq mer tip mun etn mun [pasoleg] mun
+rev pash mun zaq yet zaq mer tip mer
+silsof mer tip mun
+etn mun zaq
+mer tip mer silsof mer
+tip mun etn qad
+ger mun rev ger mah pash mun zaq tip mer
+silsof

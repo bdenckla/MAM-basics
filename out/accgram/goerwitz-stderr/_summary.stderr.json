@@ -1,0 +1,241 @@
+{
+  "run_metadata": {
+    "summary_version": 3,
+    "stderr_dir": "C:\\Users\\BenDe\\GitRepos\\wlc-utils\\out\\accgram\\goerwitz-stderr",
+    "summary_path": "C:\\Users\\BenDe\\GitRepos\\wlc-utils\\out\\accgram\\goerwitz-stderr\\_summary.stderr.json",
+    "source_glob": "*_ag.stderr.txt"
+  },
+  "file_counters": {
+    "files_scanned": 37,
+    "files_with_nonempty_stderr": 0,
+    "total_stderr_lines": 0,
+    "total_unique_verse_messages": 0,
+    "total_unique_non_verse_messages": 0
+  },
+  "verse_message_aggregates": [],
+  "non_verse_message_aggregates": [],
+  "per_file_counters": [
+    {
+      "file": "wlc_422_ps_1c_ag.stderr.txt",
+      "stderr_lines": 0,
+      "unique_verse_messages": 0,
+      "unique_non_verse_messages": 0
+    },
+    {
+      "file": "wlc_422_ps_1k_ag.stderr.txt",
+      "stderr_lines": 0,
+      "unique_verse_messages": 0,
+      "unique_non_verse_messages": 0
+    },
+    {
+      "file": "wlc_422_ps_1s_ag.stderr.txt",
+      "stderr_lines": 0,
+      "unique_verse_messages": 0,
+      "unique_non_verse_messages": 0
+    },
+    {
+      "file": "wlc_422_ps_2c_ag.stderr.txt",
+      "stderr_lines": 0,
+      "unique_verse_messages": 0,
+      "unique_non_verse_messages": 0
+    },
+    {
+      "file": "wlc_422_ps_2k_ag.stderr.txt",
+      "stderr_lines": 0,
+      "unique_verse_messages": 0,
+      "unique_non_verse_messages": 0
+    },
+    {
+      "file": "wlc_422_ps_2s_ag.stderr.txt",
+      "stderr_lines": 0,
+      "unique_verse_messages": 0,
+      "unique_non_verse_messages": 0
+    },
+    {
+      "file": "wlc_422_ps_am_ag.stderr.txt",
+      "stderr_lines": 0,
+      "unique_verse_messages": 0,
+      "unique_non_verse_messages": 0
+    },
+    {
+      "file": "wlc_422_ps_ca_ag.stderr.txt",
+      "stderr_lines": 0,
+      "unique_verse_messages": 0,
+      "unique_non_verse_messages": 0
+    },
+    {
+      "file": "wlc_422_ps_da_ag.stderr.txt",
+      "stderr_lines": 0,
+      "unique_verse_messages": 0,
+      "unique_non_verse_messages": 0
+    },
+    {
+      "file": "wlc_422_ps_dt_ag.stderr.txt",
+      "stderr_lines": 0,
+      "unique_verse_messages": 0,
+      "unique_non_verse_messages": 0
+    },
+    {
+      "file": "wlc_422_ps_ec_ag.stderr.txt",
+      "stderr_lines": 0,
+      "unique_verse_messages": 0,
+      "unique_non_verse_messages": 0
+    },
+    {
+      "file": "wlc_422_ps_ek_ag.stderr.txt",
+      "stderr_lines": 0,
+      "unique_verse_messages": 0,
+      "unique_non_verse_messages": 0
+    },
+    {
+      "file": "wlc_422_ps_er_ag.stderr.txt",
+      "stderr_lines": 0,
+      "unique_verse_messages": 0,
+      "unique_non_verse_messages": 0
+    },
+    {
+      "file": "wlc_422_ps_es_ag.stderr.txt",
+      "stderr_lines": 0,
+      "unique_verse_messages": 0,
+      "unique_non_verse_messages": 0
+    },
+    {
+      "file": "wlc_422_ps_ex_ag.stderr.txt",
+      "stderr_lines": 0,
+      "unique_verse_messages": 0,
+      "unique_non_verse_messages": 0
+    },
+    {
+      "file": "wlc_422_ps_gn_ag.stderr.txt",
+      "stderr_lines": 0,
+      "unique_verse_messages": 0,
+      "unique_non_verse_messages": 0
+    },
+    {
+      "file": "wlc_422_ps_hb_ag.stderr.txt",
+      "stderr_lines": 0,
+      "unique_verse_messages": 0,
+      "unique_non_verse_messages": 0
+    },
+    {
+      "file": "wlc_422_ps_hg_ag.stderr.txt",
+      "stderr_lines": 0,
+      "unique_verse_messages": 0,
+      "unique_non_verse_messages": 0
+    },
+    {
+      "file": "wlc_422_ps_ho_ag.stderr.txt",
+      "stderr_lines": 0,
+      "unique_verse_messages": 0,
+      "unique_non_verse_messages": 0
+    },
+    {
+      "file": "wlc_422_ps_is_ag.stderr.txt",
+      "stderr_lines": 0,
+      "unique_verse_messages": 0,
+      "unique_non_verse_messages": 0
+    },
+    {
+      "file": "wlc_422_ps_jb_ag.stderr.txt",
+      "stderr_lines": 0,
+      "unique_verse_messages": 0,
+      "unique_non_verse_messages": 0
+    },
+    {
+      "file": "wlc_422_ps_je_ag.stderr.txt",
+      "stderr_lines": 0,
+      "unique_verse_messages": 0,
+      "unique_non_verse_messages": 0
+    },
+    {
+      "file": "wlc_422_ps_jl_ag.stderr.txt",
+      "stderr_lines": 0,
+      "unique_verse_messages": 0,
+      "unique_non_verse_messages": 0
+    },
+    {
+      "file": "wlc_422_ps_jn_ag.stderr.txt",
+      "stderr_lines": 0,
+      "unique_verse_messages": 0,
+      "unique_non_verse_messages": 0
+    },
+    {
+      "file": "wlc_422_ps_js_ag.stderr.txt",
+      "stderr_lines": 0,
+      "unique_verse_messages": 0,
+      "unique_non_verse_messages": 0
+    },
+    {
+      "file": "wlc_422_ps_ju_ag.stderr.txt",
+      "stderr_lines": 0,
+      "unique_verse_messages": 0,
+      "unique_non_verse_messages": 0
+    },
+    {
+      "file": "wlc_422_ps_lm_ag.stderr.txt",
+      "stderr_lines": 0,
+      "unique_verse_messages": 0,
+      "unique_non_verse_messages": 0
+    },
+    {
+      "file": "wlc_422_ps_lv_ag.stderr.txt",
+      "stderr_lines": 0,
+      "unique_verse_messages": 0,
+      "unique_non_verse_messages": 0
+    },
+    {
+      "file": "wlc_422_ps_ma_ag.stderr.txt",
+      "stderr_lines": 0,
+      "unique_verse_messages": 0,
+      "unique_non_verse_messages": 0
+    },
+    {
+      "file": "wlc_422_ps_mi_ag.stderr.txt",
+      "stderr_lines": 0,
+      "unique_verse_messages": 0,
+      "unique_non_verse_messages": 0
+    },
+    {
+      "file": "wlc_422_ps_na_ag.stderr.txt",
+      "stderr_lines": 0,
+      "unique_verse_messages": 0,
+      "unique_non_verse_messages": 0
+    },
+    {
+      "file": "wlc_422_ps_ne_ag.stderr.txt",
+      "stderr_lines": 0,
+      "unique_verse_messages": 0,
+      "unique_non_verse_messages": 0
+    },
+    {
+      "file": "wlc_422_ps_nu_ag.stderr.txt",
+      "stderr_lines": 0,
+      "unique_verse_messages": 0,
+      "unique_non_verse_messages": 0
+    },
+    {
+      "file": "wlc_422_ps_ob_ag.stderr.txt",
+      "stderr_lines": 0,
+      "unique_verse_messages": 0,
+      "unique_non_verse_messages": 0
+    },
+    {
+      "file": "wlc_422_ps_ru_ag.stderr.txt",
+      "stderr_lines": 0,
+      "unique_verse_messages": 0,
+      "unique_non_verse_messages": 0
+    },
+    {
+      "file": "wlc_422_ps_zc_ag.stderr.txt",
+      "stderr_lines": 0,
+      "unique_verse_messages": 0,
+      "unique_non_verse_messages": 0
+    },
+    {
+      "file": "wlc_422_ps_zp_ag.stderr.txt",
+      "stderr_lines": 0,
+      "unique_verse_messages": 0,
+      "unique_non_verse_messages": 0
+    }
+  ]
+}

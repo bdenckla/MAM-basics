@@ -1,0 +1,113 @@
+# Simanim Tiqqun -- Deuteronomy appendix Decalogue (taxton), p. 247.
+#
+# Hand transcription of the printed accents, by Ben Denckla, 2026-07-20, read directly from
+# the book, via the per-line editor (accgram/transcription_editor.py).  Primary observation:
+# not derivable from anything else in the repo.  The editor's export is committed beside this
+# file as simtiq_dt_taxton.json, and a test checks the two agree.
+#
+# One .txt line per PRINTED line, so a token can be checked against the line it was read off.
+# Bracketed asides carry no accent.
+#
+# Two lines were corrected after the export, each against a re-cropped zoom of the printed
+# line; the committed JSON carries the corrections and records what each replaced.  Both are
+# transcription slips, not edition divergences -- every one of the eight strands has the
+# corrected reading at both sites.
+#   * line 13, ממעל: read as revia, corrected to zaqef qatan.
+#   * line 31, ייטב: its munax was skipped, leaving 7 accents for the line's 8 words.
+#
+# The first zoom offered for line 31 was itself unusable: the page crop had been set ~0.006 of
+# the page width inside the column's true right edge, clipping the first letter of every line
+# -- which in RTL is where a line STARTS.  zoom_line.py now pads sideways past the crop it is
+# given, so a too-tight transcription crop can no longer bound the zoom made to check it.
+# Nothing was lost from the transcription itself: only PREPOSITIVE accents sit at a word's
+# right edge, and every one of the 28 transcribed lines agrees with the reference at its
+# line-initial word, so a clipped-away prepositive would have surfaced as a difference.
+#
+# Lines 1-9 of the page are blank here on purpose: they carry Deut 5:1-5, the preamble before
+# the Decalogue proper, which starts at line 10 with אנכי.
+#
+# RESULT: this Decalogue follows the p-trad taxton THROUGHOUT EXCEPT THE SHABBAT COMMANDMENT,
+# where it follows the m-trad.  165 p-trad reference tokens vs 166 transcribed, with three
+# difference regions, ALL of them inside the Shabbat commandment.  Against the m-trad taxton
+# the count is 166 vs 166 with three difference regions, ALL of them inside the FIRST
+# commandment.  The two strands partition the differences with nothing left over.
+#
+# This is the edition's known m-trad departure (printed_decalogue_simanim_page's Shabbat scope
+# note), and the transcription both confirms it and narrows it:
+#   * The three Shabbat SIGNAL WORDS read m-trad -- כל־מלאכה pazer (not the p-trad geresh),
+#     ועבדך־ואמתך telisha gedola (not revia), וכל־בהמתך revia (not zaqef qatan).
+#   * So does the surrounding stretch, token for token, and so does the WORD DIVISION: לא and
+#     תעשה are separately accented here, where the p-trad joins them by maqaf.
+#   * But the CHANTED VERSE DIVISION stays p-trad -- 13 verses, matching the p-trad's 13 and
+#     not the m-trad's 12, and no p-trad difference touches a verse boundary while the m-trad
+#     comparison has one that does.  The departure is in the accents only.
+#   * The vertical strokes corroborate it independently, and nothing in the harness prompted
+#     them: the p-trad has two (on אתה and on למען), the m-trad one (on למען).  This
+#     transcription has one, on למען.  The absent one is the p-trad's, inside the Shabbat
+#     commandment, exactly where the m-trad predicts its absence.
+#
+# Read the agreeing majority with the usual caution: the harness flags only positions where
+# the two already disagree, so only those were re-read.  The Shabbat finding does NOT rest on
+# that asymmetry, though -- it rests on a contiguous run agreeing with a DIFFERENT strand, one
+# the review loop had no stake in, which is positive evidence rather than survival of a flag.
+#
+# Conventions in force for this file:
+#   * One token per ACCENT.  Normally that is one per chanted word, a maqaf compound being
+#     one chanted word; the exception is a word bearing more than one accent.
+#   * "-" is a maqaf binding two ACCENTS into one chanted word ("mun-mer"): two tokens.  None
+#     occurs on this page.
+#   * "+" is its SIMPLE-word counterpart: two accents on a word that is not a compound at all.
+#     This page has one, qad+ger on ויצאך, where the qadma is by convention called metigah
+#     rather than qadma.  Two tokens, as for a maqaf compound; the notation stays distinct so
+#     the file still records which of the two was seen.
+#   * "_" binds two marks into ONE accent: mun_leg is munax legarmeh, one token.
+#   * A postpositive/prepositive accent written twice on one word -- once at its fixed edge
+#     and once as a stress helper -- is ONE accent, so ONE token.
+#   * meteg is NOT transcribed: it is not a first-class mark of the accent system.
+#   * narrow-sense paseq is likewise not transcribed as an accent, but IS recorded as the
+#     aside "[paseq]" after the token it follows, so that a future legarmeh-vs-paseq check has
+#     something to check.  The parser drops bracketed asides.
+#
+# Shorthand: etn etnaxta / zaq zaqef qatan / tip tipexa / rev revia / zar zarqa / pash pashta /
+# yet yetiv / tev tevir / ger geresh / ger2 gershayim / tg telisha gedola / tq telisha qetana /
+# paz pazer / seg segolta / mun munax / mun_leg munax legarmeh / mah mahapakh / mer merkha /
+# dar darga / qad qadma / silsof silluq + sof pasuq.
+
+edition: Simanim Tiqqun
+book: dt
+reading: taxton
+tradition: printed
+pages: 247
+pasoleg_kinds: distinguished
+uncertain_readings: 0
+transcriber: Ben Denckla
+date: 2026-07-20
+
+tip mun etn dar
+tev mer tip mer silsof mer
+tev mer tip silsof qad mer pash
+zaq mah pash zaq mer tip
+etn mer tip mer silsof mer
+tip mun etn mun ger2 mah pash mun zaq
+tg qad dar tev mer tip
+silsof mer tip etn tip mer
+silsof mer tev mer
+tip etn mun mah pash zaq tev mer
+tip silsof tev mer
+tip etn mer tip mer silsof mah
+pash zaq tip silsof pash zaq
+tip mun etn mun mun paz
+mun mun tg qad ger
+rev pash mun zaq rev tev
+mer tip silsof rev mun mah pash mun
+zaq qad+ger mah pash zaq mer tip mun
+etn rev pash mun zaq tip mer
+silsof mah pash
+zaq mer tip mun etn mun_leg mun rev
+pash mun zaq yet zaq mer tip mer
+silsof mer tip mun
+etn mun zaq
+mer tip mer silsof mer tip
+mun etn qad ger mun
+rev ger mah pash mun zaq tip mer
+silsof

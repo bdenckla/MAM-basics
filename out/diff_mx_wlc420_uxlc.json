@@ -1,0 +1,92 @@
+[
+  {
+    "bcv": "gn18:9",
+    "wlc_str": ")\"52LF8052Y52/W52",
+    "wlc_str_t": ")\"52LF8052Y52/W52",
+    "wu": "α,‥,HMA UPPER DOT,l,a,(zaq_q),HMA UPPER DOT,y,HMA UPPER DOT,v,HMA UPPER DOT\nα,‥,HMA UPPER DOT,l,a,HMA UPPER DOT,(zaq_q),y,HMA UPPER DOT,v,HMA UPPER DOT"
+  },
+  {
+    "bcv": "gn39:2",
+    "wlc_str": "B.:/B\"71YT",
+    "wlc_str_t": "B.:/B\"71YT",
+    "wu": "b,·,:,b,‥,(mer),y,τ\nb,·,:,b,‥,(tip),y,τ"
+  },
+  {
+    "bcv": "gn39:2",
+    "wlc_str": "):ADONF73Y/W",
+    "wlc_str_t": ")aDoNF73Y/W",
+    "wu": "α,:_,d,o,n,a,(tip),y,v\nα,:_,d,o,n,a,(mer),y,v"
+  },
+  {
+    "bcv": "dt5:10",
+    "wlc_str": "W:/(O7071&EH",
+    "wlc_str_t": "W:/(o7071&EH",
+    "wu": "v,:,3,o,(mah),(mer),$,·si,∵,h\nv,:,3,o,(mer),(mah),$,·si,∵,h"
+  },
+  {
+    "bcv": "dt5:14",
+    "wlc_str": "HA/$.:BIY(I6180Y",
+    "wlc_str_t": "HA/$.:BIY(I6180Y",
+    "wu": "h,_,$,·sh,·,:,b,i,y,3,i,(ger),(zaq_q),y\nh,_,$,·sh,·,:,b,i,y,3,i,(zaq_q),(ger),y"
+  },
+  {
+    "bcv": "dt5:15",
+    "wlc_str": "W:/ZFKAR:T.F6281",
+    "wlc_str_t": "W:/ZFKAR:T.F6281",
+    "wu": "v,:,z,a,k,_,r,:,τ,·,a,(ger_2),(rev)\nv,:,z,a,k,_,r,:,τ,·,a,(rev),(ger_2)"
+  },
+  {
+    "bcv": "dt5:15",
+    "wlc_str": "B.:/YF7071D",
+    "wlc_str_t": "B.:/YF7071D",
+    "wu": "b,·,:,y,a,(mah),(mer),d\nb,·,:,y,a,(mer),(mah),d"
+  },
+  {
+    "bcv": "dt5:18",
+    "wlc_str": "W:/LO7374)",
+    "wlc_str_t": "W:/Lo7374)",
+    "wu": "v,:,l,o,(tip),(mun),α\nv,:,l,o,(mun),(tip),α"
+  },
+  {
+    "bcv": "dt5:19",
+    "wlc_str": "W:/LO7374)",
+    "wlc_str_t": "W:/Lo7374)",
+    "wu": "v,:,l,o,(tip),(mun),α\nv,:,l,o,(mun),(tip),α"
+  },
+  {
+    "bcv": "dt12:30",
+    "wlc_str": "L\"/)MO63R",
+    "wlc_str_t": "L\"/)Mo63R",
+    "wu": "l,‥,α,m,o,(qom),r\nl,‥,α,m,o,(rev),r"
+  },
+  {
+    "bcv": "dt29:28",
+    "wlc_str": "W.52/L:52/BF52N\"3352Y52/N52W.0352",
+    "wlc_str_t": "W.52/L:52/BF52N\"3352Y52/N52W.0352",
+    "wu": "v,·,HMA UPPER DOT,l,:,HMA UPPER DOT,b,a,HMA UPPER DOT,n,‥,(pash),HMA UPPER DOT,y,HMA UPPER DOT,n,HMA UPPER DOT,v,·,(pash),HMA UPPER DOT\nv,·,HMA UPPER DOT,l,:,HMA UPPER DOT,b,a,HMA UPPER DOT,n,‥,HMA UPPER DOT,(pash),y,HMA UPPER DOT,n,HMA UPPER DOT,v,·,HMA UPPER DOT,(pash)"
+  },
+  {
+    "bcv": "is44:9",
+    "wlc_str": "H\"8152M.F52H52",
+    "wlc_str_t": "H\"8152M.F52H52",
+    "wu": "h,‥,(rev),HMA UPPER DOT,m,·,a,HMA UPPER DOT,h,HMA UPPER DOT\nh,‥,HMA UPPER DOT,(rev),m,·,a,HMA UPPER DOT,h,HMA UPPER DOT"
+  },
+  {
+    "bcv": "je44:19",
+    "wlc_str": "L:/HA74(:ACIB/F80H",
+    "wlc_str_t": "L:/HA74(aCIB/F80H",
+    "wu": "l,:,h,_,(mun),3,:_,c,i,b,a,(zaq_q),h\nl,:,h,_,(mun),3,:_,c,i,b,a,(zaq_q),h,·"
+  },
+  {
+    "bcv": "je48:27",
+    "wlc_str": "D:BFRE71Y/KF",
+    "wlc_str_t": "D:BFRE71Y/kF",
+    "wu": "d,:,b,a,r,∵,(mer),y,k.,a\nd,:,b,a,r,∵,(tev),y,k.,a"
+  },
+  {
+    "bcv": "ps27:13",
+    "wlc_str": "L5253W.L\"815253)5253",
+    "wlc_str_t": "L5253W.L\"815253)5253",
+    "wu": "l,HMA UPPER DOT,HMA LOWER DOT,v,·,l,‥,(rev),HMA UPPER DOT,HMA LOWER DOT,α,HMA UPPER DOT,HMA LOWER DOT\nl,HMA UPPER DOT,HMA LOWER DOT,v,·,l,‥,HMA UPPER DOT,(rev),HMA LOWER DOT,α,HMA UPPER DOT,HMA LOWER DOT"
+  }
+]

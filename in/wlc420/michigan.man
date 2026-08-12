@@ -1,0 +1,573 @@
+
+
+
+
+                         CODE MANUAL FOR
+                   THE MICHIGAN OLD TESTAMENT
+
+                   Research Memorandum UM82-1
+                          19 March 1982
+
+                     Dr. H. Van Dyke Parunak
+                        1027 Ferdon Road
+                      Ann Arbor, MI  48104
+
+
+
+                            ABSTRACT
+
+       This document describes the transcription code used in
+encoding the Massoretic Text of the Old Testament at the
+University of Michigan.  The project was made possible by grants
+from the Packard Foundation and the University of Michigan
+Computing Center, and by the gracious release granted by the
+Deutsche Bibelstiftung, Stuttgart, publishers of Biblia Hebraica
+Stuttgartensia.
+
+       This document renders obsolete RMUM8 1-11  (the original
+coding manual) and RMUM8 1-22  (addendum 1 to the original
+manual).  The code defined here differs from that in those two
+memos in six details.
+
+1.   We now distinguish holem waw (`OW') from waw followed by
+holem.
+2.   Meteg with hatep vowels now has three variants, as defined
+in 3.6.1. below.
+3.   Telisa qaton, usually postpositive (04), has a distinct code
+(24) when it is internal to a word.
+4.   Telisa gadol, usually prepositive (14), has a distinct code
+(44) when it is internal to a word.
+5.   Galgal (formerly 55) is now 93.
+6.   Darga (formerly 66) is now 94.
+
+All texts released by the Michigan Project for Computer Assisted
+Biblical Studies on or after 1 March 1982 conform to these
+modifications.
+
+
+                                   1. BASIC PRINCIPLES
+
+       The code described in this paper was developed with
+several basic principles in view.
+
+       1.1.  This text is the first complete machine-readable Old
+Testament text in the public domain.  Because of this, its coding
+scheme will probably become the de facto standard transliteration
+of biblical Hebrew for computers.  It should be capable of entry
+on a wide variety of input devices, including card punches,
+optical character recognition (OCR) typewriter elements, and
+ASCII and EBCDIC terminal keyboards, and should be printable on
+the most limited output devices.  Not all of these devices offer
+the same character sets.  For instance, keypunches and some line
+printers do not have lower case letters, and some OCR systems do
+not have symbol `%'.  In order to allow our code to be used by as
+many workers as possible, we have restricted the character set
+severely.
+
+       1.2.  Except for the accents, one Hebrew character has one
+non-numeric transcription character.  The accents are all coded
+with two characters, both of which are digits.  These conventions
+greatly simplify automatic processing of the text.  But they rule
+out the use of occasional digits as alphabetic characters; the
+transcription of some consonants with double characters (for
+example, sin with `SH'); or the use of explicit diacritics to
+indicate the difference among short, long, and historically long
+vowels.
+
+       1.3.  This text is a complete transcription of the
+graphical form of the Massoretic Text, as recorded in Biblia
+Hebraica Stuttgartensia, with as little analysis as possible.
+Thus, for instance, qames has the same transcription (`F')
+whether it represents a short `o' vowel or a long `a' vowel.
+Similarly, both sureq and double waw are written as `W' plus
+dages.  Experience indicates that if graphical details are
+leveled out by recording only analysis, inevitably those very
+details will be needed later.  We have recorded as much as
+possible at the outset.  Our overriding rule has been,
+
+           "Code what is WRITTEN, not what is MEANT."
+
+
+                                   2. RECORD FORMAT
+
+2.1. GENERAL PRINCIPLES
+
+       2.1.1.  The basic units of our text are graphical words
+(or words for short), verses, lines, logical records (records for
+short), and files.  A  graphical word is a string of characters
+which is separated from other characters in Biblia Hebraica
+Stuttgartensia by blank space, the end of a line, or a maqqep (a
+dash).  A verse is a series of graphical words which is delimited
+in the Hebrew text by the end of a book; occurrences of the
+accent sop pasuq, which resembles a large colon (`:'); or a verse
+number.  A line is a line on a page of Biblia Hebraica
+Stuttgartensia.  One line may contain parts of two different
+verses, and one verse may require several lines.  A logical
+record is the amount of text keyed at a terminal between carriage
+returns or line feeds.  Each logical record of our text contains
+80 characters or less.  A file is a series of logical records
+which are stored together for the computer's use, and contains
+the text of one book of the Old Testament.
+
+       2.1.2.  Every new verse begins on a new logical record.
+Apart from this restriction, each logical record contains as many
+whole graphical words as will fit in 80 spaces.  We code the
+space between successive words as a space, and maqqep as a minus
+sign.  The maqqep is considered part of the word before it, and
+so is not separated from that word.  It may be separated,
+however, from the following word, if there is not room on the
+current record for the following word.  If there is not enough
+room on a record for a complete graphical word, we do not code
+any of that word on the record.  Instead, we leave the rest of
+the record blank, and place the whole word on the next record.
+We record the location of line endings, by placing a question
+mark (`?') after the last word in each line of Biblia Hebraica
+Stuttgartensia.  This question mark is a legitimate separator for
+graphical words, and need not be preceded or followed by a blank
+space.  It may appear with a space, though, since extra spaces
+between words do not violate the code.
+
+       2.1.3.  The first three logical records of each file
+contain, not text, but special header information.  The first of
+these records contains the name of the book which that file
+contains, in the Latin spelling used in Biblia Hebraica
+Stuttgartensia.  The second record contains the following string
+of characters:
+
+       )BGDHWZX+YKLMNS(PCQR&$TI"EAFOU:.,-/?#!;*1234567890
+
+The third record contains this same string, in reverse order:
+
+       0987654321*;!#?/-,.:UOFAE"IT$&RQCP(SNMLKY+XZWHDGB)
+
+These records can be used by programs that read the text to
+adjust for any idiosyncratic differences between the character
+codes in use on different equipment.  The character list occurs
+twice so that if it itself contains an error, decoding programs
+can detect it and alert the user of the text instead of uncoding
+the entire text with a defective key.
+
+       2.1.4.  Lines which begin a chapter have as their first
+characters the chapter number, followed by a colon, followed by
+the verse number (`1'), followed by a blank space, followed by
+the text.  Lines which begin the second and later verses of each
+chapter begin with the verse number, followed by a blank space,
+followed by the text.  The specimens of coded text for Ruth 4 and
+Ps 1 in the Appendix illustrate the record format.
+
+
+                                   3. CODING WORDS
+
+3.1. OVERVIEW
+
+       Six details of Biblia Hebraica Stuttgartensia are encoded
+in this text:  the open and closed paragraph marks; the
+consonantal skeleton of the inflected forms of words; the vowels;
+the accentuation signs; ketib-qere variants; and morphological
+divisions for certain morphemes.  The codes for these different
+details are interspersed with one another.  For instance, the
+first word of the Bible is coded `B.:/R")$I73YT'.  The
+consonantal skeleton of this word is represented by the letters
+`BR)$YT', while the signs `:"I' are the vowels.  The number `73'
+represents the tipha accent on the word, the period after `B' is
+the dages, and the slash before `R' indicates that the symbols
+before it are a separate morpheme from those after it.  We will
+discuss each category of symbol separately.  However, in coding,
+all are used at once.  Within each syllable, the consonant is
+coded first, followed by the sign for dages or rape, followed by
+the vowel, followed by the accentual code, followed by a closing
+consonant or mater lectionis.  This order is rigidly followed,
+except in the exceptions noted below.
+
+       The Appendix contains photocopies of Ruth 4:4-6 and Ps
+1:1-3 from BHS.  We will illustrate the coding principles from
+these passages.  We refer to these texts in the form `Ruth
+4:4.12', where `12' refers to the twelfth graphical word of the
+verse.  Usually, in presenting an example, we will only code the
+features which we have already discussed.  Examples illustrating
+the consonantal code will not be vocalized or accented, because
+the vocalization and accentuation codes are discussed after the
+consonantal code.   The Appendix contains completely coded forms
+of the two specimen passages, in correct record format, so that
+the full effect of the code may be seen.  These specimens should
+be studied in detail after the entire description of the code has
+been read.
+
+3.2. PARAGRAPH INDICATORS
+
+       Biblia Hebraica Stuttgartensia uses the characters pe and
+samek between words (usually between verses) to mark two levels
+of paragraphs, commonly referred to as "open" and "closed,"
+respectively.  We code these symbols as `P' and `S',
+respectively, set off from their surrounding words by blanks,
+line markers (`?'), or the end of a logical record.  The
+specimens in the Appendix contain no examples of these paragraph
+markers.
+
+3.3 CONSONANTS
+
+       3.3.1.  The Hebrew alphabet in traditional order is
+transcribed
+
+                     )BGDHWZX+YKLMNS(PCQR&$T
+
+We do not distinguish medial and final forms of letters, since we
+wish to keep our character set small and since these are
+completely predictable from their position in a word.  Some OCR
+type faces do not have parentheses, but do have left and right
+curly brackets (`{' and `}'), which may be used for the `ayin and
+'alep, respectively.  We relax our strictly graphical stance a
+bit in distinguishing sin (`$') and sin (`&') as separate
+characters, because in this case the alternatives complicate
+further processing too much.  In the rare cases when the sin/sin
+character occurs without a point (as in the name `Issachar' in
+Judges 5:15.2), we code it with the character `#'.
+
+       3.3.2.  A consonant with a dages, whether strong or weak,
+is followed immediately, before any vowels or other consonants,
+by a period to represent the dages.  Ignoring vowels, accents,
+and morphological divisions, Ruth 4:4.8 is coded `HY.$BYM', not
+`HYY$BYM'.  The interpretation of the dages as representing
+doubling of the consonant belongs to the analysis of our text.
+We record here simply the graphic image on the page, which in
+this case consists of consonant and dages.  We do not distinguish
+dages indicating consonantal doubling from dages indicating the
+hardening of a `BGDKPT' letter or mappiq (the dot in a final `H'
+indicating that it is a real consonant and not a mater
+lectionis).  All are coded simply as a period after the
+consonant.  The rule is,
+           "Code what is WRITTEN, not what is MEANT."
+
+       3.3.3.  In keeping with this philosophy, a waw with a dot
+in it is coded as `W.' whether it represents a doubled consonant
+or a historically long `u' vowel.  Thus the imperative "turn!" is
+`$W.B' (where `W.' registers a historical long `u') while "he
+will hope" is `Y:QAW.EH'  (where `W.' is the doubled second
+radical of the pi`el).  Both uses occur in the pi`el third person
+plural suffix conjugation form `QIW.W.'  "they hoped"  (Ps
+56:7.7).  The two uses of `W.' are readily distinguished in later
+processing because doubled consonantal waw always follows a
+vowel, while sureq never does.
+
+       3.3.4.  One of the uses of the dages is to indicate the
+plosive pronunciation of the six consonants `BGDKPT', which have
+alternative fricative pronunciations.  The rule is that if one of
+these consonants has a dages, it is pronounced hard, and
+otherwise soft.  To emphasize the soft nature of these consonants
+in some contexts, the Massoretes used the rape, a horizontal
+stroke over the consonant, which simply repeats the information
+conveyed by the lack of the dages.  When rape occurs over a
+consonant, we code it as a comma (`,') immediately following the
+consonant.  Rarely  (Exod 20:13,15) a consonant contains both
+dages and rape!  In such cases, we code the consonant, then
+dages, then rape, and finally any vowel.
+
+3.4. VOWELS
+
+       3.4.1.  The vowels are coded as indicated in the Appendix.
+In keeping with the graphical nature of our undertaking, we make
+no distinction between vocal, silent, and medium sewa.  Thus both
+Ruth 4:4.2   `)FMAR:T.IY' and 4:4.4  `)FZ:N:KF' use the same sign
+for sewa.  We also do not distinguish between the `o' and `a'
+pronunciations of qames.  Both of the last examples illustrate
+the use of `F' for qames.  The same sign is used to code qames
+hatup in the qere of Ruth 4:6.5, `LIG:)FL-'.
+
+       3.4.2.  We have already noted that the sureq, the long `u'
+vowel written with a waw, is coded as `W.', just like a doubled
+waw.  Other vowels written with matres lectionis are coded as the
+simple vowel followed by the appropriate consonant.  Thus hireq
+yod is coded as `IY', holem waw is `OW'; sere yod is `"Y', and so
+forth.  Holem waw  (`OW') is distinguished from waw followed by
+holem  (`WO'), since Biblia Hebraica Stuttgartensia makes a
+graphical distinction between these two forms.  Quiescent 'alep
+follows the vowel, as in Ruth 4:5.1 `WAY.O)MER'.
+
+       3.4.3.  Hatep vowels are coded as sewa followed by the
+appropriate simple vowel.  Thus hatep qames is `:F', hatep segol
+is `:E', and hatep patah is `:A'.  The relative pronoun in Ps
+1:1.3 is coded `):A$ER'.
+
+       3.4.4.  When the letter sin is followed, or sin preceded,
+by holem, the single dot over one horn of the consonant often
+serves to mark both the consonant and the vowel.  Because this
+text is a graphical transcription, no vowel is coded in these
+cases.  However, when the holem is represented in the text by a
+separate dot, it is coded separately, as in Ruth 4:4.8:
+`HAY.O$:BIYM'.
+
+       3.4.5.  Furtive patah is coded AFTER the guttural. Ps
+1:3.17  (the last word in the verse) is `YAC:LIYXA'.  Though this
+convention conflicts with the traditional pronunciation, it is
+less ambiguous for automatic processing than the alternatives.
+
+3.5. ACCENTS
+
+       3.5.1.  The accent code which we use was devised by Robert
+Eckert, and is highly mnemonic.  It is our only violation of the
+"one character for one sign" rule in transliteration.  We use two
+digits to code each accent.  The first digit for each accent
+records the POSITION of the accent with respect to the consonant,
+while the second digit records the SHAPE of the accentual sign.
+The accents are summarized in the table at the back of this memo.
+
+       The first digit is zero for postponed accents and one for
+preposed accents.  Other initial digits are even for accents that
+appear above consonants, and odd for those that appear below.
+The first digit is six for superposed marks which also occur
+under letters, eight for superposed marks which never occur under
+letters, seven for subposed marks which can also occur over
+letters, and nine for subposed marks which never occur over
+letters.  Codes beginning with two, three, four, and five are
+used for miscellaneous special characters, following the pattern
+"even above, odd below."
+
+       The second digit (the rows of the table) records the
+graphic appearance of the accent.  To remember the graphic digit,
+associate the numbers 0-5 with sewa, 'alep, bet, gimel, dalet,
+and he.  Then remember the mnemonic line, "sewa means pass
+quickly left, 'alep likes to take segol, bet means house, gimel
+has a wrong-way tittle, dalet has Jachin and Boaz, he has a
+detached bar."
+
+(0)  Accents with second digit 0 either resemble sewa, or are a
+left arrow.  Sewa hastens the pronunciation of a syllable, moving
+the reader over it more rapidly than if a full vowel were given.
+Since one reads Hebrew from right to left, sewa moves the reader
+to the left rapidly.
+
+(1)  'alep as a verbal prefix frequently takes the vowel segol
+rather than hireq.  Some of the accents in this row resemble
+segol and hireq.  The others are (or include) a single slash
+upward to the right, which is the side of a verb to which 'alep
+is joined.
+
+(2)  A house (bet) has a peaked roof, at least in the western
+European tradition.   The accents in this row are either the peak
+of the roof, or two slanted lines which could be rearranged to
+make a roof.
+
+(3)  The tittle on most tittled letters (bet, dalet, zayin) is
+more or less horizontal.  On gimel, it slopes sharply down to the
+right, like most of the accents in this row.  The two exceptions
+may also be considered "wrong-way" characters.  Pazer (83) is a
+"wrong-way" qames, and galgal (93) is a "wrong-way" 'atnah.
+
+(4)  The pillars at the doorway (dalet) of Solomon's temple were
+decorated with square checkerboard patterns and circular chains
+(1 Kings 7:17), corresponding to the circles with links, the "s"
+curve, and the square corners of the accents in this row.
+
+(5)  All the accents in this row have a vertical detached bar,
+just as does the character he.  Accent 75 serves both for silluq
+and for meteg when meteg occurs (as it does most often) to the
+left of its vowel.  Accent 95 is reserved for meteg when it
+occurs to the right of its vowel, and 35 codes a meteg which
+falls between the components of a hatep vowel as at Judges 9:27.
+We cheat a bit to include salselet in the fifth row.  Its
+predominant shape is that of a vertical line, though it does have
+some squiggles in it.
+
+3.5.2.  The accents in column 0 are coded at the very end of a
+word, after all other characters (except maqqep).  Those in
+column 1 come at the very beginning, before all other characters
+(except *).  Otherwise, the accent comes in the order, consonant,
+dages, vowel, accent.  For example, in Ruth 4:5.7, the digits
+`92' indicate the accent in the coded form `NF(:FMI92Y'.  Note
+that the 92 PRECEDES the consonantal `Y'.  To code `NF(:FMIY92'
+would imply that the accent was under the yod rather than (as is
+the case here) the mem.  Accents are placed after the first
+vocalic code of a syllable.  Accents thus precede matres
+lectionis and quiescent consonants.  With accent, Ruth 4:5.1 is
+`WAY.O74)MER'.  The accentual symbol `74' follows the vowel of
+its syllable immediately, and precedes the quiescent 'alep.
+Because of our strictly graphical encoding of sureq, the accent
+on a syllable vocalized with this vowel comes immediately after
+the consonant (and dages or rape, if any), and before the `W.'.
+Ruth 4:5.9, the proper name "Ruth," appears `R74W.T', not
+`RW.74T'.  Ps 1:3.3 is `$FT93W.L'.
+
+       3.5.3.  Following our graphical philosophy, we have not in
+general adopted different codes for two accents which have the
+same form but appear in different contexts.  For instance, both
+'azla and qadma have the code `63', and that whether they occur
+in poetic or prose books.  Because tipha and mayela have the same
+form in our text, both are coded as `73', even though one is a
+disjunctive accent and the other is conjunctive.  The two can be
+distinguished automatically because mayela occurs only in words
+which either have 'atnah (92) or silluq (75), or which are joined
+by maqqep to such words.  The code for silluq, `75', is also used
+for meteg.  Meteg always precedes another accent in the same word
+(or pair of words joined with maqqep), while silluq is the major
+accent on the last word of each verse.
+
+       3.5.4.  Some accents are compounded of pieces which
+resemble other individual accents.  Rather than add further codes
+for these compound accents, we code each of the parts separately
+as if it were a separate accent.  Thus the rebia` mugras on Ps
+1:1.13 appears in two parts, as though two separate accents
+rebia` (81) and mugras (11) were used, `11L"CI81YM'.  Note the
+positioning of `11' before the first consonant of the form,
+reflecting its prepositive position in the text.  The common
+poetic disjunctive `ole weyored is coded as in Ps 1:1.7,
+`R:$F60(I71YM'.  Paseq (05) and sop pasuq (00) are part of the
+preceding word, which will also have another accentual sign.
+Examples are Ps 1:1.3  `):A$E70R05' and Ps 1:1.15  `YF$F75B00'.
+
+       3.5.5.  There are, however, seven pairs of accents whose
+members have the same graphic form but which we have coded
+separately.  These are yetib (10) and mahpak (70); mugras (11)
+and geres, dehi (13) and tipha (73); zarqa (02) and sinnorit
+(82); pasta (03) and 'azla (63); and two forms each of telisa
+qaton (04,24) and telisa gadol (14,44).  In each of these pairs,
+the first member does not fall on the consonant which begins the
+accented syllable, as does the second, but comes either before
+(yetib, mugras, dehi, and telisa gadol) or after (zarqa, pasta,
+and telisa qaton) the entire word.  To guard against mislocating
+these accents, we have established separate numerical codes for
+each member of these pairs.
+
+3.6. KETIB-QERE
+
+       A word which is marked as ketib in the text is immediately
+preceded by an asterisk.  The corresponding qere entry is coded
+immediately following, preceded by two asterisks.  The accent in
+the text belongs to the qere.  None is coded for the ketib.  Ruth
+4:4.20 appears `*W:)"DA( **W:)"75D:(FH03'.  If the ketib is
+lacking, the corresponding single asterisk appears, followed by a
+blank.  If Ruth 4:4.20 had a qere with no ketib, we would code,
+`* **W:)"75D:(FH03'.  Sometimes a ketib has two words and the
+qere only one, or vice versa.  In such a case, the * (or **)
+precedes EACH of the words involved.
+
+       3.6.1.  The ketib is vocalized according to the editorial
+footnote, if one is supplied.  Otherwise we have supplied the
+vocalization.  The qere receives the vowels and accents that are
+written in the text with the ketib.
+
+       3.6.2.  Sometimes one of two words joined by a maqqep has
+a ketib/qere variant.  If it is the second word that is thus
+varied, the code is `WORD1-*WORD2  **WORD2QERE'.  On the other
+hand, if the first word is varied, the code is `*WORD1
+**WORD1QERE-WORD2'.  Ruth 4:6.5,6 is coded `*LIG:)OWL  **LIG:)FL-
+LI80Y'.  The gere to the first word intervenes between the two
+words, so as to come directly after its ketib.  The maqqep
+belongs to the qere, not the ketib, and is only written once.
+
+       3.6.3.  Perpetual ketib/gere readings are coded just as
+they occur in the text.  Thus the Tetragrammaton appears as
+`Y:HWFH' (Ps 1:2.4) or `Y:EHOWAH' (with appropriate accent).
+Jerusalem appears as `Y:RW.$FLAIM' (with the accent between the
+`A' and the `I'!), and the third feminine singular independent
+pronoun in the Pentateuch is `HIW)'.  No asterisks mark any of
+these forms.
+
+3.7. MORPHOLOGICAL DIVISION
+
+       3.7.1.  The only analysis in this text marks some basic
+morphemes to assist in lemmatization.  The slash (`/') marks the
+division of inseparable prepositions (`K', `B', `L', and
+contracted `MN', and others with pronouns); the article (only
+when marked with a consonant); the interrogative prefix `H' and
+its vocalization; the locative suffix `FH'; the conjunctive waw;
+and pronominal genitive or accusative suffixes.  Nominative
+verbal affixes are not separated from the verb stem.
+
+       3.7.2.  The article is NOT marked when the `H' is absent,
+even if it is represented by an `a' vowel or doubling of the
+first radical of a word.  Ruth 4:5.5. is `HA/&.FDE73H'.  But "to
+the field" would be `LA/&.FDE73H', not `L/A/&.FDE73H'.
+
+       3.7.3.  The separating slash comes after the vowels and
+accents of a prefix, but before the first consonant of the base.
+In Ruth 4:5.5, just cited, the sin is doubled by the article, and
+its dages thus might be thought to belong to the article.  But
+for our purposes the dividing slash comes before the sin.  In Ps
+1:3.1, the prefix vowel is accented, and the slash comes just
+after the accent: `W:75/HFYF81H'.
+
+       3.7.4.  Unless a pronominal suffix is entirely vocalic, it
+is joined to the base by a vowel, whose quantity may range from
+silent sewa to a long vowel represented with the mater lectionis
+yod.  When the joining vowel is written with yod, the slash
+dividing the suffix from the base comes between the yod and the
+suffix.  Ruth 4:4.26 is `)AX:ARE92Y/KF'.  In all other cases, the
+slash comes just before the joining vowel, even if that vowel is
+a silent sewa.  In many cases, the slash will divide the initial
+consonant of a syllable from its vowel.  Ruth 4:4.4. is
+`)FZ:N/:KF74', and 4:4.11 is `(AM./IY01'.   This is no cause for
+alarm, since the slash carries morphological, not phonetic or
+graphemic, information.  Even more bizarre cases arise when the
+last consonant of a third-weak form disappears before a
+pronominal suffix   Ps 1:3.11 is coded `W:/(FL/"71HW.'.
+
+       3.7.5.  The last two paragraphs conflict when a pronominal
+suffix is attached directly to a preposition.  In this case, the
+joining vowel is reckoned with the pronominal suffix.  Ruth
+4:6.6,12 are coded `L/I80Y' and `L/:KF70', respectively.  When a
+preposition is lengthened with `MO' or `MOW', the division falls
+after the entire syllable:`K.:MOW/HW.', `K.:MO/HW.'.  But when
+the `MO' is the suffix, rather than an extension of the
+preposition, we code `L/FMOW' (Isa 26:14.13).  Prepositions are
+also lengthened at times with `AD,' as in I Sam 20:14.7, where we
+also leave the extension as part of the preposition,
+`(IM.FD/I91Y'.  The reduplication of the preposition is
+separated, though, in `MI/M.EN./IY'.
+
+       3.7.6.  No dividing slash is needed between words which
+are separated by maqqep, since in these cases the hyphen shows
+the morphological boundary.
+
+        4. DEVIATIONS FROM BIBLIA HEBRAICA STUTTGARTENSIA
+
+4.1. DEVIATIONS IN VERSIFICATION
+
+       We record the versification which Biblia Hebraica
+Stuttgartensia gives in unparenthesized Arabic numerals.  Biblia
+Hebraica Stuttgartensia gives alternative verse numbers in Deut
+5:21-33 (18-30), and the numeration of the Psalms in the
+Leningrad Codex is irregular.  Neither of these variations is
+recorded in our text.
+
+4.2. OTHER DEVIATIONS
+
+       The character `!' immediately follows any word which we
+have coded at variance with Biblia Hebraica Stuttgartensia.  A
+printed introduction to the text, now in preparation, will list
+all such deviations.  They arise for two reasons.
+
+       4.2.1.  First, Biblia Hebraica Stuttgartensia has some
+singular features at isolated, well-known passages, which we have
+not incorporated into our code.  The extraordinary points at Gen
+33:4.9 and the inverted nuns at Num 10:34.7 are examples.  Since
+computer analysis in general deals with repeated phenomena, we do
+not complicate the code to include these singularities, but
+instead flag the forms to which they are attached.
+
+       4.2.2.  Second, Biblia Hebraica Stuttgartensia contains
+many forms that are anomalous from the point of view of
+"standard" Hebrew grammar.  These may arise because of an error
+in our understanding of Hebrew grammar, an error by the scribe of
+the Leningrad codex, or an error by the editors of Biblia
+Hebraica Stuttgartensia.  When we judge that an anomalous form
+arises because of an error in the preparation of Biblia Hebraica
+Stuttgartensia, we correct the form, usually by the Kittel Bible,
+and mark it with `!' to show our intervention.  We do not correct
+anomalous forms which are attested by several editions, or errors
+in the Leningrad codex which the editors of Biblia Hebraica
+Stuttgartensia have noted as such.
+
+
+                       5. ACKNOWLEDGEMENTS
+
+       The design of this code and production of the manual were
+supported by the Computing Center, the Project for Computer-
+Assisted Biblical Studies, and the Society of Fellows, all of the
+University of Michigan.  A preliminary version of this manual was
+presented to the Workshop on Computers and the Bible of the
+College of Wooster, Wooster, OH, 21-27 June 1981.  The present
+scheme owes much to simplifications and modifications suggested
+there, as well as to the suggestions and improvements supplied by
+the coders who worked with an interim version.  The coding of the
+text itself was supported by generous grants from the Packard
+Foundation and the University of Michigan.

@@ -1,0 +1,360 @@
+                           SUPPLEMENT
+                             TO THE
+           CODE MANUAL FOR THE MICHIGAN OLD TESTAMENT
+                               by
+    The J. Alan Groves Center for Advanced Biblical Research
+      (formerly known as the Westminster Hebrew Institute)
+                Westminster Theological Seminary
+                     Post Office Box 27009
+                Philadelphia, Pennsylvania 19118
+                    United States of America
+
+                      Last Revised 6/7/89
+(Minor spelling fix & mailing address revised on Monday 28 August 2006)
+(Update organization name & add a new entry to the accent table on Tuesday 7 April 2009)
+(Add two new entries to and make an edit of the accent table on Thursday 9 April 2009)
+
+PLEASE RETURN ALL CORRECTIONS TO THE WESTMINSTER HEBREW INSTITUTE
+AT THE ABOVE ADDRESS.
+
+  THANK YOU.
+
+1. Introduction
+   This document is a supplement to "Code Manual for the
+   Michigan Old Testament".  Knowledge of that document is
+   presupposed at all points which follow.  "MCMOT" will be used
+   to indicate references to the Michigan manual in the
+   following material.
+1.1 This supplement is a result of our work to verify the Michigan
+    text of BHS.  This verification work was done by a team
+    at Westminster Seminary under the direction of Alan Groves and
+    Emanuel Tov (Hebrew University).  The text, as it now exists,
+    is no longer precisely the text of BHS (1983 edition).
+    We have suggested readings of L that differ from those
+    made by the editors of BHS.  (See 2.5 and the final explanation
+    below for a discussion of how we have done this.)
+1.2 The present machine-readable text of the Michigan-Claremont
+    version of the text of BHS has been verified by means of a
+    computer aided comparison with an the following machine-
+    readable texts:
+1.2.1 An independently encoded text from the Abbaye de Maredsous
+1.2.2 An independently proofread version of the M-C text from Bar
+      Ilan University.
+1.3 Moreover, verification of certain features (e.g. position of
+    cantillation within each word) was done automatically by
+    means of software written for that purpose.
+1.4 For suspected problems with the printed text of BHS (1983
+    edition), we appealed to the two other published versions of
+    the Codex Leningradensis:
+1.4.1 "The Holy Scriptures" edited by Aron Dotan (Adi, Tel Aviv,
+      1974)
+1.4.2 BHK (Third edition)
+1.5 At all points of variance between Dotan and BHS or BHS and
+    BHK, we also examined the photo facsimiles of the codex
+    (Codex Leningradensis b19A, D.S. Loewinger, Makor, Jerusalem,
+    1971.)
+1.6 Two notes are important for further understanding our work:
+1.6.1 The United Bible Society did not work from the Makor
+      photo-facsimiles in producing BHS.  Rather, they worked
+      from a separate set of microfilm.  Having now seen both
+      photographic reproductions, we are convinced that Makor is
+      clearer at almost all points of dispute.  Certain features
+      of the codex that are invisible on the microfilm show up in
+      the Makor photographs.  We hope to publish an article
+      concerning this.
+1.6.2 Because some typographical errors in the 1977 edition have
+      already been corrected in the 1983 edition, we used the
+      latter as the basis of our proofreading.  (The 1977 edition
+      was the basis for the input).  As a result, several of the
+      ']' flags that were in earlier versions of the
+      machine-readable text have been removed.
+1.7 The results of our work therefore, are as follows:
+1.7.1 A text that, we believe, improves on BHS in terms of
+      reflecting the codex (Makor photofacsimile)
+1.7.2 A text which is more accurate than other currently
+      available machine-readable texts.
+
+
+2.  The current version of the text differs from the description
+    given in the MCMOT as follows:
+
+2.1 The logical record length is now variable (up to 80
+    characters).  See MCMOT 2.1.2.
+
+2.2 Unlike earlier versions of the database, each verse has the
+    chapter number listed in its citation.  (This is an exception
+    to MCMOT 2.1.4.)  The format conforms, however, to the CCAT
+    format of ~x = chapter, ~y = verse etc.  A "convbhs.com"
+    has been included on the first diskette to present the text
+    with clearer citations.  See the "convbhs.doc" on the first
+    diskette.
+
+2.3 The second and third records of each file have been removed.
+    These records listed the various ASCII characters used in the
+    transliteration of the text.  (This is an exception to MCMOT
+    2.1.3.)
+
+2.4 The Ketib-Qere is as described in MCMOT 3.6 with the
+    following exceptions:
+2.4.1 Contrary to MCMOT 3.6.2, KQ involving only the first word
+      of a compound joined by a maqqef will be done differently
+      than is indicated in the manual.  (The second example in
+      MCMOT 3.6.2 is the issue here.)  The maqqef always belongs
+      to the Ketib, never the Qere.  This will facilitate
+      printing.
+2.4.1.1 Ruth 4:6 becomes  *LIG:)FWL-LI80Y  **LIG:)FL
+2.4.1.2 Also, note that Exodus 21:8 is ):A$ER-?*LO)
+          (See Supplement 2.6 on '?')
+2.4.2 The Ketib wela Qere is indicated by the unvocalized Ketib
+      followed by **zz.  The Qere wela Ketib is *zz followed by
+      the Qere.  (This represents a change to the statements at
+      the end of the first paragraph of MCMOT 3.6.)
+2.4.3 The user should note that we have not thoroughly verified the
+      accuracy of the vocalization and cantillation of the KQ.
+
+2.5 MCMOT 4.2 is no longer accurate.  ']', and not '!', is used
+    to mark deviations from BHS or to note other special
+    features.  In particular, we have expanded the coding to make
+    the flagging procedure more precise by adding a single
+    character or numeral following the bracket to indicate
+    something special about the text.  (For all the details, see
+    the end of this supplement document entitled "Explanation of
+    the Right-Hand Bracket".)  The user should note that most of
+    these notes have been stripped from this version.
+2.5.1 The user should remember that we based our corrections on
+      the 1983 edition of BHS.  (See Supplement 1.6.2.)  We do
+      not retain a bracket where the 1983 edition has already
+      made a correction to the 1977 edition.
+
+2.6 The cantillation coding varies from that which is described
+    in MCMOT 3.5 as follows:
+2.6.1 Referring to the Tabula Accentuum which accompanies BHS,
+      #10 in the Accentus Communes lists a second case for the
+      occurrence of the pasta in tandem.  Originally, the first
+      mark was encoded as an 'azla ('63' in the Michigan format)
+      and the second as a pasta ('03' in the Michigan format).
+      We have made the first mark a '33'.  Note that it is
+      written after the letter not over it (unlike the 'azla).
+      The coding of the pasta remains '03'.
+
+2.7 A '?' is used to mark the physical end of the line as it
+    appears in BHS.
+2.7.1 A space will follow a '?' except where a maqqef ('-') ends
+      a line in BHS.
+          (e.g. Gn 1:2 W:HF)F81REC)? HFY:TF71H)
+2.7.2 In that case, the '-?' will be followed by the next word
+      without intervening space.  (e.g. Gn 1:4 )ET-?HF)O71WR)
+2.7.3 The '?' has not been verified systematically at this point.
+
+
+2.8 We have adapted the premorphological encoding ('/') to
+    reflect the citations in Even Shoshan's concordance.  (We
+    recognize that the concordance is based on the Koren edition
+    of the Bible.  However, the differences between the Koren
+    text and BHS have no impact on this issue.)
+2.8.1 One result is that there is a standard against which our
+      work can be evaluated and that there is only one standard
+      used.
+2.8.2 This means that any supposed compound form that is listed
+      as a separate entitiy under its compound form (as opposed
+      to being listed solely under one or both components of the
+      compound) is treated as a unit.  In such cases no
+      premorphological divider has been used.  Listed below are
+      the 6 exceptions to this rule.  In each case the
+      premorphological divider has been kept to indicate a prefix
+      (a caret marks the place where the accent would most likely
+      occur).
+2.8.2.1 K.F/M.F^H
+2.8.2.2 LF/K"^N
+2.8.2.3 L:/PI^Y
+2.8.2.4 LF^/M.FH
+2.8.2.5 LI/P:N"^Y
+2.8.2.6 MI/P:N"^Y
+
+3.  SPECIAL NOTE #1   The following items have not been verified
+    as thoroughly as other items in the text:
+3.1 The premorphological indicator '/' will be more
+    comprehensively verified in the morphological verification
+    yet to come.
+3.2 The '?' which marks the physical end of the line in BHS has
+    not been verified consistently.
+3.3 The accuracy of the right-hand and left-hand cantillation
+    markings require checking against the codex (i.e. 75 and 95
+    in the text.)
+3.4 The vocalization of the ketiv-qere entries needs work.
+
+4.  SPECIAL NOTE #2    No matter how careful we have been, we
+    have certainly left some errors.  For example, any time that
+    the encoding of Maredsous text was wrong in the same way as
+    the M-C encoding, we are not likely to have picked up the
+    error.  (The probability of making the same error at the same
+    place is not high.  We know of only one case.  The one case
+    was uncovered by a scribe doing spot checks on a printed
+    version of our proofread text (printed in Hebrew, fully
+    vocalized and cantillated).  In this way about 12% of the
+    text was checked and only this one coincidence of error was
+    observed.)  While we believe remaining errors are minimal,
+    some still exist.
+***********************************************************
+***********************************************************
+          EXPLANATION OF THE RIGHT-HAND BRACKET   ']*'
+
+  (All bracketing has been done on the basis of the 1983 edition,
+   not the 1977 edition.  Moreover, the Makor edition of the
+   codex was checked at all relevant points in determining the
+   need for a flag.)
+
+]1 BHS has been faithful to the Leningrad Codex where there might
+   be a question of the validity of the form and we keep the same
+   form as BHS.
+
+   e.g.  Deuteronomy 23:18  YI&RF)"L00]1  (missing silluq)
+
+]2 We have added a sop pasuq where L and BHS omit it.
+
+                          **********
+   (Special note: Formerly this category had a much broader range
+   and read as follows: "BHS has been faithful to the Codex where
+   there might be a question of the validity of the form and we
+   have abandoned BHS in order to code it differently." All
+   situations other than missing sop pasuqs have now been made to
+   conform to L and then labeled as ]1.
+                           **********
+
+]3 We read or understand L differently than BHS (1983 Edition).
+   Often this notation indicates a typographical error in BHS.
+
+   e.g.  Genesis 6:22  ):ELOHI73YM]3
+
+]4 Puncta Extraordaria -- a 52 is used to mark such marks in the
+   text when they are above the line and 53 when they are below
+   the line.
+
+   e.g.  Genesis 18:9    )"52LF8052Y52W52]4
+
+]5 Large letter(s)
+
+]6 Small letter(s)
+
+]7 Suspended letter(s)
+
+]8 Inverted Nun     (N]8 in the text)
+
+]9 BHS has abandoned L and we concur. All of these occurrences
+   are ketib/qere problems.
+
+]q We have abandoned or added a ketib/qere relative to BHS.  In
+   doing this we agree with L against BHS.
+
+   e.g. Exodus 32:17  B.:/R:(O92H]q
+
+]a Adaptations to a Qere which L and BHS, by their design, do not
+   indicate.
+
+   e.g. Exodus 4:2  **-Z.E74H]a
+
+]y Yathir readings in L which we have designated as Qeres when
+   both Dothan and BHS list a Qere.
+
+]m Miscellaneous notes to the text and occasions where more than
+   one bracket category applies.
+
+                            Guide to Transliteration
+
+     Consonants                              Vowels
+
+Hebrew   Michigan                     Hebrew      Michigan
+
+Alef        )                           Patah        A
+Bet         B                           Qamets       F
+Gimel       G                           Segol        E
+Dalet       D                           Tsere        "
+Heh         H                           Hireq        I
+Waw         W                           Holem        OW
+Zayin       Z                           Qamets
+Het         X                            Hatuf       F
+Tet         +                           Qibbuts      U
+Yod         Y                           Shureq       W.
+Kaf         K                           Shewa        :
+Lamed       L                           Hatef
+Mem         M                            Patah       :A
+Nun         N                           Hatef
+Samek       S                            Segol       :E
+Peh         P                           Hatef
+Ayin        (                            Qamets      :F
+Tsade       C
+Qof         Q                               Miscellaneous
+Resh        R
+Sin         &                           Ketiv       *
+Shin        $                           Qere       **
+Tav         T                           Dagesh      .
+                                        Maqqef      -
+
+
+                       HEBREW ACCENTS/CANTILLATION CODING
+(named and cross referenced as in the TABULA ACCENTUUM insert card
+in BHS)
+
+  Westminster Text                  TABULA ACCENTUUM (BHS)
+
+At END (to left) of word and ABOVE
+     00 ; --- sop pasuq [end of verse]
+     01 .:--- segolta                     I.3
+     02  )--- zarqa, sinnor             I.9,II.7
+     03  \--- pashta, azla legarmeh   I.10a,II.12
+     04  &--- telisha parvum              I.25
+     05  |--- paseq [separator]          "Nota"
+      - |-,-- legarmeh (74 + 05)          I.18
+
+At START (to right) of word and BELOW
+     10   ---< yetib (yetiv)              I.11
+     13   ---\ dehi or tipha             II.9
+
+At START (to right) of word and ABOVE
+     11   ---/ (81 + ) mugrash           II.5
+     12   ---" garshajim (preposed)        -
+     14   ---% telisha magnum             I.17
+
+ABOVE word
+     24  -&-- telisha parvum (med)         -
+     33  --\- (with 03, left of letter)   I.10(b)
+     44  -%-- telisha magnum (med)         -
+     52  --.- puncta extraordinaria        -
+     60  --<- ole or mahpakatum         (II.2)
+     61  -/-- geresh or teres             I.13
+     62  -"-- garshajim                   I.14
+     63  -\-- azla, azla or qadma      I.24,II.19
+     64  -,-- illuj                      II.15
+     65  -#-- shalshelet (magn,parv)    I.4,II.6+20
+     80  -:-- zaqep parvum                I.5
+     81  -.-- rebia (magnum=parvum)     I.7,II.4=8
+     82  --)- sinnorit                   II.21
+     83  -+-- pazer                    I.15,II.10
+     84 -&%-- pazer mag. or qarne para    I.16
+     85 -|:-- zaqep magnum                I.6
+
+BELOW word
+     35 -F|:-- meteg (med)                  -
+     53  --.- puncta extraordinaria         -
+     70  -<-- mahpak or mehuppak       I.20,II.11+18
+     71  -/-- mereka                    I.21,II.14
+     72 -//-- mereka kepulah (duplex)      I.22
+     73  -\-- tipha, tarha               I.8,II.16
+      - --\-- majela [= 73]                I.27
+     74  -,-- munah                  I.18-19,II.13
+     75  -|-- silluq [meteg (left)]      I.1,II.1
+     91 -./-- tebir                        I.12
+     92  -^-- atnah                      I.2,II.3
+     93  -v-- galgal or jerah           I.26,II.17
+     94  -s-- darga                        I.23
+     95  -|-- meteg (right) [cf 35,75]      -
+
+********
+
+Notes:
+
+Accent <12> was added to this table on Tuesday 7 April 2009.
+
+Accents <52> and <53> were added to this table on Thursday 9 April 2009,
+at which time (for the sake of consistency) "qetannah" was replaced with
+"parvum" in the name of accent <24> (medial telisha qetannah/parvum).

@@ -1,0 +1,164 @@
+# Feldheim Simanim Tanakh -- Exodus main Decalogue (taxton), pp. 119-120 (scans A2-E-0119,
+# A2-E-0120).
+#
+# Hand transcription of the printed accents, by Ben Denckla, 2026-07-23, read directly from the
+# book, via the per-line editor (accgram/transcription_editor.py).  Primary observation: not
+# derivable from anything else in the repo.  The editor's exports for both pages are committed
+# beside this file as simtan_ex_taxton.json, and a test checks the two agree.
+#
+# One .txt line per PRINTED line, so a token can be checked against the line it was read off.
+# "[p. 120]" marks where the second page begins; bracketed asides carry no accent.
+#
+# THE FIRST TRANSCRIPTION DIFFED AGAINST A MANUSCRIPT-TRADITION STRAND.  The eight before it --
+# Simanim Tiqqun's four and Koren's four -- are all against a printed-tradition strand.  This is
+# a different edition from the Tiqqun though Feldheim publishes both, and its Decalogues are
+# m-trad; printed_decalogue_simanim_page.py had already recorded that for Exodus, naming this
+# very page, with a committed crop (gh-pages/accgram/img/Simanim-Tanakh-p-119-*) highlighting
+# עבדים and על־פני.  This transcription is the accent-by-accent check of that reading.
+#
+# RESULT: 142 reference tokens vs 142 transcribed, 12 chanted verses vs 12, and NO divergence
+# anywhere.  The single pasoleg stroke, on אתה in the Shabbat commandment, lands on its exact
+# reference position (token 80).  So "follows ws/ex/taxton/manuscript with respect to every accent"
+# is true of this Decalogue -- the third transcription for which the strong claim holds.
+#
+# THE CROSS-STRAND RE-RUN, and it carries more weight here than the clean result does.  Against
+# ws/ex/taxton/printed this transcription is 142 tokens against 142 but 13 chanted verses against
+# 12, with THREE difference regions, all inside the first commandment:
+#   * אנכי       -- pashta here, tipexa in the p-trad
+#   * אלהיך      -- zaqef qatan here, etnaxta in the p-trad
+#   * מבית עבדים -- munax + etnaxta here, merkha + silluq/sof pasuq in the p-trad, so the p-trad
+#                   closes a chanted verse at עבדים and this page runs on into לא־יהיה לך,
+#                   closing only at על־פני
+# The transcription takes the m-trad side of all three, over a contiguous run nothing had
+# flagged.  The edition's OWN printed verse numbers corroborate it mark-free: the Decalogue is
+# numbered ב-יג, twelve verses, matching the m-trad's twelve and not the p-trad's thirteen.
+#
+# HOW NARROW THAT VERDICT IS, stated because the clean result invites overreading it.  The two
+# ex/taxton strands differ in EXACTLY those three regions and nowhere else in 142 tokens -- taken
+# before any transcription existed, so with no stake in the outcome.  Tokens 9-141, the other
+# 133, are identical in both traditions, so the whole stretch from לא־יהיה to לרעך is evidence
+# that this page follows ex/taxton, and no evidence at all about which tradition.  The Exodus
+# taxton is as weak a discriminator here as it was for Koren (issue #69 Result 5), only mirrored.
+# Worse, at all three sites ws/ex/taxton/manuscript agrees with ws/ex/elyon/printed and vice
+# versa, so the sites separate tradition only GIVEN the strand; the taxton identity itself rests
+# on the independent evidence at לא תרצח, which this Decalogue runs into one chanted verse with לא
+# תנאף and לא תגנב, as all four taxton strands do and no elyon strand does.
+#
+# TWO PAGES, and the break is not where issue #72's step-0 comment puts it.  That comment has
+# p. 120 opening at לך: and carrying לא תרצח onward.  It does not: p. 119 runs through
+# לך: לא תרצח לא תנאף לא תגנב and ends on the bare לא־ of לא־תענה, and p. 120 opens at תענה.  So
+# the break falls INSIDE a maqaf compound -- reference token 124, לֹֽא־תַעֲנֶ֥ה -- which is why
+# p. 119's last band ends on the zaqef qatan of תגנב rather than on a silluq: that chanted verse
+# closes on p. 120, at שקר.  The compound bears one accent, on its second atom, so nothing was
+# typed for the לא־ and no cross-page rejoin was needed; had the edition accented the לא־
+# too, as the Tiqqun does at לא־יהיה and לא־תעשה (p. 246), rejoin_editor_chunks would have had
+# to carry it across the page boundary.
+#
+# ONE CORRECTION, made after export against a re-cropped zoom and recorded in the JSON with what
+# it replaced: p. 119 line 6, a skipped munax on אל (20:5), between the pashta of אלהיך and the
+# zaqef qatan of קנא.  A transcription slip, not an edition divergence -- all EIGHT strands have
+# munax there, so the site discriminates nothing, and it was the only difference that survived
+# against BOTH ex/taxton strands, which is what marked it out as a slip rather than a finding.
+#
+# ONE BAND CLEARED, also recorded with what it replaced: p. 120 line 4.  The crop carries a
+# context line below the Decalogue -- printed line 4, וכל־העם ראים … קול השפר (20:14) -- which
+# was typed by mistake.  It is outside this transcription's span, which ends at לרעך:.  The
+# export keeps the reading in corrected_from rather than discarding it.
+#
+# NO UNCERTAIN READING: nothing here was supplied from context or expectation.  The usual caution
+# still applies and applies especially to a zero-divergence result: the harness flags only
+# positions where the two already disagree, so on the m-trad run only the אל slip was ever
+# re-read and the other 141 positions were not re-examined by anyone.  What carries weight is the
+# cross-strand run above -- agreement over a contiguous run with a strand nothing had flagged --
+# not the empty difference list.
+#
+# PASOLEG KINDS: THE EDITION SAYS SO ITSELF, so "distinguished" is not an inference from the
+# sibling Tiqqun and does not wait on a second stroke to contrast with.  The sixteenth ma'ala of
+# its introduction (p. כז) is titled מונח־לגרמיה and sets out the two things the one glyph can be:
+# the ACCENT munax-legarmeh, which is in the list of accents, one of the light disjunctives; and
+# its non-accent fellow, which is not in that list but is a reading aid like maqaf, meaning only a
+# slight pause between two words, with no melody of its own.  Because the Masoretic פסיקתא lists
+# that record the second are not available to every reader, the edition prints THAT one -- the
+# narrow-sense paseq -- as a HOLLOW bar throughout the Tanakh, leaving the solid bar to legarmeh.
+# The page states the rule with the two glyphs set side by side, and its worked examples are
+# 1 Kings 7:25.  So this is a fact about the edition recorded in the edition, not a reading of any
+# one stroke.
+#
+# THE ONE STROKE HERE IS SOLID.  ex/taxton has exactly one in its whole span, on אתה in the
+# Shabbat commandment, and it is filled, not outlined -- so mun_leg is what the page says, and
+# the Deuteronomy main-text Decalogue (pp. 297-298, issue #72's next box), with TWO stroke
+# positions, is now a check on that reading rather than the first test of the assumption.
+#
+# The render crops in the JSON take the pointed text column only, measured from ink profiles
+# rather than eyeballed and then verified band by band with the editor's --debug.  Both margins
+# needed measuring on this edition: it sets ONE column, but the verse numbers sit in one margin
+# and the sidenotes in the other (and which side is which flips with the leaf, both being the
+# OUTER margin).  Each crop carries a context line the transcription does not use -- p. 119's
+# first band (וידבר אלהים, 20:1, before the strand's own span begins at אנכי) and p. 120's
+# fourth -- so that the outermost transcribed line's marks cannot be clipped.
+#
+# THE SMALL WAVY MARK ABOVE SOME WORDS IS THE RAFE.  It is NOT an accent and is NOT transcribed;
+# it is recorded here so a later reader does not take it for one.  The edition prints a short
+# zigzag stroke over a letter, sitting higher than any accent does, on words such as
+# וכל־תמונה, לא־תעשה, לא־תשתחוה, כל־מלאכה, עבדך and לא תגנב.  It is this edition's own form of
+# the rafe sign (סימן הרפה), the ninth ma'ala of its introduction (p. כב), which says the sign
+# was dropped from all existing Tanakhs and is restored here "partially", in four situations:
+# a word-initial bet/gimel/dalet/kaf/pe/tav after a word ending in alef, he, vav or yod; the same
+# after a shva na; after the he of a question; and wherever a misreading is likely.  Every
+# occurrence on these two pages falls under one of those.
+#
+# THE IDENTIFICATION IS DOCUMENTARY, NOT A GUESS FROM THE SHAPE, which matters because the
+# introduction draws the sign as a solid horizontal bar in its display font while the body font
+# draws it as the zigzag.  The introduction's own example is Joshua 1:2 וכל־העם, bar over the
+# kaf; the main text at Joshua 1:2 (p. 357) has the zigzag over that same kaf of that same word.
+#
+# Conventions in force for this file:
+#   * One token per ACCENT.  Normally that is one per chanted word, a maqaf compound being one
+#     chanted word; the exception is a word bearing more than one accent.  None occurs here.
+#   * "-" is a maqaf binding two ACCENTS into one chanted word ("mun-mer"), "+" its simple-word
+#     counterpart, "_" binds two MARKS into ONE accent ("mun_leg").  Only "_" occurs here.
+#   * A postpositive/prepositive accent written twice on one word -- once at its fixed edge and
+#     once as a stress helper -- is ONE accent, so ONE token.
+#   * meteg is NOT transcribed: it is not a first-class mark of the accent system.
+#   * A narrow-sense paseq is not an accent and is not a token; it would be recorded as the aside
+#     "[paseq]" after the token it follows.  None occurs here.  Legarmeh IS an accent, written
+#     "mun_leg" -- one token, not an aside.
+#
+# Shorthand: etn etnaxta / zaq zaqef qatan / tip tipexa / rev revia / zar zarqa / pash pashta /
+# yet yetiv / tev tevir / ger geresh / ger2 gershayim / tg telisha gedola / tq telisha qetana /
+# paz pazer / seg segolta / mun munax / mun_leg munax legarmeh / mah mahapakh / mer merkha /
+# dar darga / qad qadma / silsof silluq + sof pasuq.
+
+edition: Simanim Tanakh
+book: ex
+reading: taxton
+tradition: manuscript
+pages: 119-120
+pasoleg_kinds: distinguished
+uncertain_readings: 0
+transcriber: Ben Denckla
+date: 2026-07-23
+
+pash mun zaq dar
+tev mer tip mun etn mer tev mer
+tip silsof qad mer pash zaq mah pash
+zaq mer tip etn mer tip mer silsof
+mer tip mun etn mun ger2 mah pash mun zaq
+tg qad dar tev mer tip silsof
+mer tip etn tip mer silsof mer
+tev mer tip etn mun mah pash zaq tev
+mer tip silsof
+tev mer tip silsof mah pash zaq tip
+silsof pash zaq tip mun etn qad
+ger mun_leg mun rev mah pash zaq tip
+mer silsof mun tq qad ger mun
+rev pash zaq tip mun etn
+rev dar tev mer tip silsof mer tip
+etn pash mun zaq yet zaq mer tip mer
+silsof mer tip mun
+etn mun zaq
+
+[p. 120]
+mer tip mer silsof mer
+tip mun etn ger2 mun rev mah
+pash mun zaq tip mer silsof

@@ -1,0 +1,382 @@
+{
+  "kq_foi": {
+    "kq-counts": {
+      "k1q1": 1214,
+      "k0q1": 10,
+      "k1q0": 6,
+      "k2q1": 7,
+      "k1q2": 15,
+      "k2q2": 8
+    },
+    "kq-cases": [
+      {
+        "knqm": "k1q2",
+        "bcv": "gn30:11",
+        "k1": "B/GD",
+        "k2": null,
+        "q1": "B.F74)",
+        "q2": "GF92D"
+      },
+      {
+        "knqm": "k1q2",
+        "bcv": "ex4:2",
+        "k1": "M/ZH",
+        "k2": null,
+        "q1": "MAH-",
+        "q2": "Z.E74H"
+      },
+      {
+        "knqm": "k1q2",
+        "bcv": "dt33:2",
+        "k1": ")#DT",
+        "k2": null,
+        "q1": ")\"71$",
+        "q2": "D.F73T"
+      },
+      {
+        "knqm": "k2q1",
+        "bcv": "ju16:25",
+        "k1": "KY",
+        "k2": "+WB",
+        "q1": "K.:/+O74WB",
+        "q2": null
+      },
+      {
+        "knqm": "k0q1",
+        "bcv": "ju20:13",
+        "k1": null,
+        "k2": null,
+        "q1": "B.:N\"74Y",
+        "q2": null
+      },
+      {
+        "knqm": "k2q1",
+        "bcv": "1s9:1",
+        "k1": "M/BN-",
+        "k2": "YMYN",
+        "q1": "MI/B.IN:YFMI81YN",
+        "q2": null
+      },
+      {
+        "knqm": "k2q2",
+        "bcv": "1s20:2",
+        "k1": "L/W-",
+        "k2": "(#H",
+        "q1": "LO75)-",
+        "q2": "YA(:A&E63H"
+      },
+      {
+        "knqm": "k2q1",
+        "bcv": "1s24:9",
+        "k1": "MN-",
+        "k2": "H/M(RH",
+        "q1": "M\"75/HA/M.:(FRF80H",
+        "q2": null
+      },
+      {
+        "knqm": "k0q1",
+        "bcv": "2s8:3",
+        "k1": null,
+        "k2": null,
+        "q1": "P.:RF75T00",
+        "q2": null
+      },
+      {
+        "knqm": "k0q1",
+        "bcv": "2s16:23",
+        "k1": null,
+        "k2": null,
+        "q1": ")I73Y$",
+        "q2": null
+      },
+      {
+        "knqm": "k0q1",
+        "bcv": "2s18:20",
+        "k1": null,
+        "k2": null,
+        "q1": "K.\"71N",
+        "q2": null
+      },
+      {
+        "knqm": "k2q2",
+        "bcv": "2s21:12",
+        "k1": "#M",
+        "k2": "H/PL#TYM",
+        "q1": "$F33M./FH03",
+        "q2": "P.:LI$:T.I80YM"
+      },
+      {
+        "knqm": "k2q2",
+        "bcv": "1k17:15",
+        "k1": "HW)-",
+        "k2": "W/HY)",
+        "q1": "HI75Y)-",
+        "q2": "WF/H91W.)"
+      },
+      {
+        "knqm": "k1q0",
+        "bcv": "2k5:18",
+        "k1": "N)",
+        "k2": null,
+        "q1": null,
+        "q2": null
+      },
+      {
+        "knqm": "k1q2",
+        "bcv": "2k18:27",
+        "k1": "#YNY/HM",
+        "k2": null,
+        "q1": "MYM\"71Y",
+        "q2": "RAG:L\"Y/HE73M"
+      },
+      {
+        "knqm": "k0q1",
+        "bcv": "2k19:31",
+        "k1": null,
+        "k2": null,
+        "q1": "C:BF)O73WT",
+        "q2": null
+      },
+      {
+        "knqm": "k0q1",
+        "bcv": "2k19:37",
+        "k1": null,
+        "k2": null,
+        "q1": "B.FNFY/W03",
+        "q2": null
+      },
+      {
+        "knqm": "k1q2",
+        "bcv": "is3:15",
+        "k1": "M/L/KM",
+        "k2": null,
+        "q1": "MAH-",
+        "q2": "L./FKEM03"
+      },
+      {
+        "knqm": "k1q2",
+        "bcv": "is36:12",
+        "k1": "#YNY/HM",
+        "k2": null,
+        "q1": "M\"YM\"71Y",
+        "q2": "RAG:L\"Y/HE73M"
+      },
+      {
+        "knqm": "k2q1",
+        "bcv": "is44:24",
+        "k1": "MY",
+        "k2": ")T/Y",
+        "q1": "M\"/)IT./I75Y00",
+        "q2": null
+      },
+      {
+        "knqm": "k2q2",
+        "bcv": "is52:5",
+        "k1": "MY-",
+        "k2": "L/Y-",
+        "q1": "MAH-",
+        "q2": "L./IY-"
+      },
+      {
+        "knqm": "k1q2",
+        "bcv": "je6:29",
+        "k1": "M/)#T/M",
+        "k2": null,
+        "q1": "M\"/)\"73$",
+        "q2": "T.A74M"
+      },
+      {
+        "knqm": "k1q2",
+        "bcv": "je18:3",
+        "k1": "W/HN/HW",
+        "k2": null,
+        "q1": "W:/HIN.\"H-",
+        "q2": "H91W.)"
+      },
+      {
+        "knqm": "k0q1",
+        "bcv": "je31:38",
+        "k1": null,
+        "k2": null,
+        "q1": "B.F)I73YM",
+        "q2": null
+      },
+      {
+        "knqm": "k1q0",
+        "bcv": "je38:16",
+        "k1": ")T",
+        "k2": null,
+        "q1": null,
+        "q2": null
+      },
+      {
+        "knqm": "k1q0",
+        "bcv": "je39:12",
+        "k1": ")M",
+        "k2": null,
+        "q1": null,
+        "q2": null
+      },
+      {
+        "knqm": "k0q1",
+        "bcv": "je50:29",
+        "k1": null,
+        "k2": null,
+        "q1": "L/FH.03",
+        "q2": null
+      },
+      {
+        "knqm": "k1q0",
+        "bcv": "je51:3",
+        "k1": "YDRK",
+        "k2": null,
+        "q1": null,
+        "q2": null
+      },
+      {
+        "knqm": "k1q2",
+        "bcv": "ek8:6",
+        "k1": "M/HM",
+        "k2": null,
+        "q1": "MF74H",
+        "q2": "H\"74M"
+      },
+      {
+        "knqm": "k1q2",
+        "bcv": "ek9:11",
+        "k1": "K/)#R",
+        "k2": null,
+        "q1": "K.:/KO73L",
+        "q2": "):A$E71R"
+      },
+      {
+        "knqm": "k2q2",
+        "bcv": "ek42:9",
+        "k1": "W/M/TXT/H",
+        "k2": "L#KWT",
+        "q1": "W./MI/T.A73XAT",
+        "q2": "HA/L.:$FKO74WT"
+      },
+      {
+        "knqm": "k1q0",
+        "bcv": "ek48:16",
+        "k1": "XM#",
+        "k2": null,
+        "q1": null,
+        "q2": null
+      },
+      {
+        "knqm": "k1q2",
+        "bcv": "1c9:4",
+        "k1": "BNY/MN-",
+        "k2": null,
+        "q1": "B.FNI80Y",
+        "q2": "MIN-"
+      },
+      {
+        "knqm": "k1q2",
+        "bcv": "1c27:12",
+        "k1": "L/BNYMYNY",
+        "k2": null,
+        "q1": "LA/B.\"74N05",
+        "q2": "Y:MIYNI92Y"
+      },
+      {
+        "knqm": "k2q1",
+        "bcv": "2c34:6",
+        "k1": "B/HR",
+        "k2": "BTY/HM",
+        "q1": "B.:/XAR:BOT\"Y/HE73M",
+        "q2": null
+      },
+      {
+        "knqm": "k1q2",
+        "bcv": "ps10:10",
+        "k1": "XLK)YM",
+        "k2": null,
+        "q1": "X\"74YL",
+        "q2": "K.F)I75YM00"
+      },
+      {
+        "knqm": "k1q2",
+        "bcv": "ps55:16",
+        "k1": "Y#YMWT",
+        "k2": null,
+        "q1": "YA$.I70Y",
+        "q2": "MF63WET05"
+      },
+      {
+        "knqm": "k2q2",
+        "bcv": "jb38:1",
+        "k1": "MN",
+        "k2": "H/S(RH",
+        "q1": "MI71N05",
+        "q2": "HA/S.:(FRF81H"
+      },
+      {
+        "knqm": "k2q2",
+        "bcv": "jb38:12",
+        "k1": "YD(TH",
+        "k2": "#XR",
+        "q1": "YID.A73(:T.FH",
+        "q2": "HA/$.A74XAR"
+      },
+      {
+        "knqm": "k2q2",
+        "bcv": "jb40:6",
+        "k1": "MN",
+        "k2": "S(RH",
+        "q1": "MI71N05",
+        "q2": "S:(FRF81H"
+      },
+      {
+        "knqm": "k0q1",
+        "bcv": "ru3:5",
+        "k1": null,
+        "k2": null,
+        "q1": ")\"L/A73Y",
+        "q2": null
+      },
+      {
+        "knqm": "k1q0",
+        "bcv": "ru3:12",
+        "k1": ")M",
+        "k2": null,
+        "q1": null,
+        "q2": null
+      },
+      {
+        "knqm": "k0q1",
+        "bcv": "ru3:17",
+        "k1": null,
+        "k2": null,
+        "q1": ")\"L/A80Y",
+        "q2": null
+      },
+      {
+        "knqm": "k2q1",
+        "bcv": "lm1:6",
+        "k1": "MN-",
+        "k2": "BT-",
+        "q1": "MI/B.AT-",
+        "q2": null
+      },
+      {
+        "knqm": "k2q1",
+        "bcv": "lm4:3",
+        "k1": "KY",
+        "k2": "(NYM",
+        "q1": "K.A/Y:(\"NI73YM",
+        "q2": null
+      },
+      {
+        "knqm": "k1q2",
+        "bcv": "ne2:13",
+        "k1": "H/MPRWCYM",
+        "k2": null,
+        "q1": "H\"74M05",
+        "q2": "P.:RW.CI80YM"
+      }
+    ]
+  }
+}

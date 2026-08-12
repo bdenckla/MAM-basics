@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>WLC 4.20 to 4.22 diff 21</title>
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body class="centered-page">
+<p><a href="420422-16.html">Prev</a> <a href="420422-22.html">Next</a></p>
+<table class="limited-width">
+<tr><td>bcv (tanach.us)</td><td><a href="https://tanach.us/Tanach.xml?Ex20:3">Ex20:3</a></td></tr>
+<tr><td>bcv
+(Mwd)</td><td><a href="https://bdenckla.github.io/MAM-with-doc/A2-Exodus.html#c20v3">Ex20:3</a></td></tr>
+<tr><td>ab-uword</td><td lang="hbo" dir="rtl" class="big">פָּנָ+נ֗+נֽיַ<br>פָּנָ+נֽ+נַ+נ֗י</td></tr>
+<tr><td>ab-word</td><td>P.FN/F8175YA<br>P.FN/F75A81Y</td></tr>
+<tr><td>UCP 
+1</td><td><a href="https://tanach.us/Changes/2020.10.19%20-%20Changes/2020.10.19%20-%20Changes.xml?2020.06.07-1">2020.06.07-1</a></td></tr>
+<tr><td>UCP desc 1</td><td>Move patah to preceding nun.</td></tr>
+<tr><td>UCP 
+2</td><td><a href="https://tanach.us/Changes/2021.10.19%20-%20Changes/2021.10.19%20-%20Changes.xml?2021.05.19-8">2021.05.19-8</a></td></tr>
+<tr><td>UCP desc 2</td><td>Add CGJ to better position accents on the nun.</td></tr>
+<tr><td>UCP 
+3</td><td><a href="https://tanach.us/Changes/2022.04.01%20-%20Changes/2022.04.01%20-%20Changes.xml?2021.10.26-1">2021.10.26-1</a></td></tr>
+<tr><td>UCP desc 3</td><td>Remove zero-width-joiner (ZWJ).</td></tr>
+<tr><td>diff type</td><td>miscellaneous</td></tr>
+<tr><td>page</td><td><a href="https://manuscripts.sefaria.org/leningrad-color/BIB_LENCDX_F043A.jpg">043A</a></td></tr>
+<tr><td>col-guess-and-line-guess</td><td>2 20.3</td></tr>
+</table>
+<p>UXLC somehow already had part of this change.</p>
+<p>Both WLC &amp; UXLC needed to move the <span class="romanized">pataḥ</span> back from the
+<span class="romanized">yod</span> to the <span class="romanized">nun</span>. WLC also needed to
+change the relative order of the accents (<span class="romanized">silluq</span> and
+<span class="romanized">revia</span>). UXLC somehow already had the relative order of the accents
+correct: UO, under-accent and then over-accent, which in this case means
+<span class="romanized">silluq</span> and then <span class="romanized">revia</span>.</p>
+<p>All UXLC was doing in its 2021.05.19-8 change was making its mark order robust. By “robust” I
+mean robust to Unicode normalization.</p>
+<p>All UXLC was doing in its 2021.10.26-1 change was removing a ZWJ hack that became irrelevant once
+CGJ was added.</p>
+</body>
+</html>

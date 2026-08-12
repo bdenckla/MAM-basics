@@ -1,0 +1,124 @@
+# Simanim Tiqqun -- Exodus main Decalogue (elyon), pp. 83-84 (scans C083, C084).
+#
+# Hand transcription of the printed accents, by Ben Denckla, read directly from the book.
+# Primary observation: not derivable from anything else in the repo.  RE-TRANSCRIBED 2026-07-22
+# via the per-line editor (accgram/transcription_editor.py), replacing the first transcription
+# of these pages (2026-07-19), which predated both the editor and the JSON export and so was
+# the one committed transcription with no audit trail.  The editor's exports for both pages are
+# committed beside this file as simtiq_ex_elyon.json, and a test checks the two agree.
+#
+# One .txt line per PRINTED line, so a token can be checked against the line it was read off.
+# "[p. 84]" marks where the second page begins; bracketed asides carry no accent.
+#
+# RESULT: 142 reference tokens vs 142 transcribed, 9 chanted verses vs 9, and TWO divergences,
+# both of them at the maqaf rather than in an accent.  All four pasoleg strokes
+# land on their exact reference positions (tokens 16 פסל, 19 בשמים, 25 במים, 75 שבת).
+#
+# THE TWO DIVERGENCES, each adjudicated by re-reading the page:
+#   * אַתָּה וּבִנְךָ וּבִתֶּךָ (Shabbat, p. 84 line 6): SimTiq prints NO maqaf after ובנך and accents
+#     it munax, so it sets as two chanted words what ws/ex/elyon/printed joins under the single
+#     telisha gedola of ובנך־ובתך (where ובנך takes a meteg and no accent).  Corroborated twice
+#     over: the two ex/taxton strands separate ובנך with a munax too, and koren_ex_elyon -- an
+#     independently transcribed elyon edition -- splits the identical compound.
+#   * לֹא־תַחְמֹד (tenth commandment; the word ends p. 84 line 15, though transcription_check
+#     anchors the region on the following line): SimTiq prints לא־ with a maqaf and NO accent,
+#     so the compound is one chanted word carrying the tipexa on תחמד,
+#     where the reference sets לא free with its own merkha.  All four Exodus strands agree with
+#     the reference here, so it is SimTiq that diverges -- and simtiq_ex_taxton, transcribed
+#     separately, diverges the same way at the same words.
+# The two cancel in the token count (+1 munax, -1 merkha), which is why the totals match at 142
+# despite two real divergences.  Equal totals are not agreement.
+#
+# THE CROSS-STRAND RE-RUN, taken before either position was adjudicated and so with no stake in
+# the outcome.  Against ws/ex/elyon/manuscript this transcription is 142 tokens against 142 but
+# 10 chanted verses against 9, with FOUR difference regions: אנכי (tipexa in the m-trad, pashta
+# here) and a seven-token run at אלהיך where the m-trad closes a chanted verse and this
+# transcription runs on.  The transcription takes the p-trad side of both, over a contiguous run
+# nothing had flagged.  The two divergences above depart from BOTH strands identically, so no
+# strand supports them: they are SimTiq's own maqaf placement, not a tradition.
+#
+# SimTiq DOES distinguish narrow-sense paseq from legarmeh (Ben, primary observation about the
+# physical book, recorded nowhere else -- hence the pasoleg_kinds header field, and the contrast
+# with Koren, which does not).  The four strokes here split 2 and 2, as MAM's Exodus elyon does:
+# "[paseq]" on פסל and on בשמים, "mun_leg" on במים and on שבת.
+#
+# WHAT THE REDO CHANGED THERE was not a wrong claim but a dropped one.  The 2026-07-19 file's
+# conventions did not transcribe narrow-sense paseq at all -- it was dropped like meteg -- so
+# פסל and בשמים carried a bare munax with no stroke recorded, and only the two legarmehs were
+# written.  Those two are confirmed unchanged; the other two strokes are newly captured.  Since
+# an aside is not a token, nothing in either token stream moves: the two "[paseq]" chunks are
+# additions to the BODY only, and the derived accent stream is identical to the old file's,
+# token for token, all 142 of them.  The only other body change is that the old file's
+# "[page break]" aside is now the "[p. 84]" marker the pages wrapper carries.
+#
+# NO CORRECTION AND NO UNCERTAIN READING.  Both positions the review loop flagged are the two
+# divergences above, both were re-read off the page, and both stand as typed -- so the export
+# carries no corrected_from and nothing supplied from context or expectation.  The usual caution
+# still applies: the harness flags only positions where the two already disagree, so the ~140
+# agreeing positions were not re-examined.  What carries weight here is the cross-strand run
+# above, not the absence of further flags.
+#
+# The render crops in the JSON take the POINTED-TEXT COLUMN ONLY -- these are two-column pages,
+# unlike the Koren appendix's single column -- and were measured with col_profile.py and
+# row_profile.py rather than eyeballed, then verified band by band with the editor's --debug.
+# p. 84's bottom is 0.3775 rather than the 0.3835 first tried: this page's inter-line troughs
+# stay above the ink cutoff, so a crop reaching into the following line made _split_tall shave
+# descender fragments off three bands (22 bands for 19 lines); 0.3775 clears that line and
+# segments cleanly at 18.
+#
+# Conventions in force for this file:
+#   * One token per ACCENT.  Normally that is one per chanted word, a maqaf compound being one
+#     chanted word; the exception is a word bearing more than one accent.  None occurs here --
+#     unlike simtiq_ex_taxton (p. 246), where two maqaf compounds bear two accents each.
+#   * "-" is a maqaf binding two ACCENTS into one chanted word ("mun-mer"), "+" its simple-word
+#     counterpart, "_" binds two MARKS into ONE accent ("mun_leg").  Only "_" occurs here.
+#   * A postpositive/prepositive accent written twice on one word -- once at its fixed edge and
+#     once as a stress helper -- is ONE accent, so ONE token.
+#   * meteg is NOT transcribed: it is not a first-class mark of the accent system.
+#   * A narrow-sense paseq is not an accent and is not a token; it is recorded as the aside
+#     "[paseq]" after the token it follows.  The parser drops bracketed asides.  Legarmeh IS an
+#     accent, written "mun_leg" -- one token, not an aside.
+#
+# Shorthand: etn etnaxta / zaq zaqef qatan / tip tipexa / rev revia / zar zarqa / pash pashta /
+# yet yetiv / tev tevir / ger geresh / ger2 gershayim / tg telisha gedola / tq telisha qetana /
+# paz pazer / seg segolta / mun munax / mun_leg munax legarmeh / mah mahapakh / mer merkha /
+# dar darga / qad qadma / silsof silluq + sof pasuq.
+
+edition: Simanim Tiqqun
+book: ex
+reading: elyon
+tradition: printed
+pages: 83-84
+pasoleg_kinds: distinguished
+uncertain_readings: 0
+transcriber: Ben Denckla
+date: 2026-07-22
+
+pash
+mun zaq mun tq qad ger mun
+rev mun tq qad ger rev mun
+mun mun [paseq] paz mun mun [paseq] paz
+tq qad ger mer mun_leg mun rev
+mun zar mun seg mun ger2 mah
+pash mun zaq tg qad dar tev mer
+tip etn mah pash zaq tip
+
+[p. 84]
+mer silsof mer tev
+mer tip etn mun mah pash zaq tev
+mer tip silsof
+tq qad ger rev mun mun zar
+mun seg qad ger mun_leg mun
+rev mun mun paz mun mun tg
+qad ger rev pash mun zaq
+mun tq qad ger mun
+rev pash zaq tip mun
+etn rev dar tev mer tip
+silsof mer tip etn
+pash mun zaq yet zaq mer tip
+mer silsof tip silsof tip
+silsof tip silsof
+mer tip mer silsof
+tip mun etn
+ger2 mun rev mah pash mun zaq
+tip mer silsof

@@ -1,0 +1,1579 @@
+<date>
+  <date>2024.02.09</date>
+  <change>
+    <n>1</n>
+    <citation>
+      <book>Gen</book>
+      <c>27</c>
+      <v>29</v>
+      <position>3</position>
+    </citation>
+    <author>
+      <name>Ben Denckla</name>
+      <mail>bdenckla@alum.mit.edu</mail>
+      <confirmed>true</confirmed>
+    </author>
+    <description>Note that while creating the pointed qere, the transcriber changed a qubuts to a shuruq</description>
+    <lc>
+      <folio>Folio_016A</folio>
+      <column>2</column>
+      <line>4</line>
+      <credit>Credit: Sefaria.org.</credit>
+    </lc>
+    <reftext>וְיִֽשְׁתַּחֲו֤וּ</reftext>
+    <refuni>vav shewa yod hiriq meteg shin shin-dot shewa tav dagesh patah het hataf-patah vav mahapakh vav dagesh</refuni>
+    <changetext>וְיִֽשְׁתַּחֲו֤וּ</changetext>
+    <changeuni>vav shewa yod hiriq meteg shin shin-dot shewa tav dagesh patah het hataf-patah vav mahapakh vav dagesh</changeuni>
+    <notes>
+      <note>The manuscript’s pointed ketiv (MPK) is וְיִֽשְׁתַּחֲוֻ֤.</note>
+      <note>The qubuts in the MPK becomes a shuruq dot in the qere.</note>
+      <note>Although Dotan does not note this word, he notes a later version of this word in this verse, וְיִשְׁתַּחֲוּ֥וּ. Presumably he notes this later word for the unexpected dagesh in its next-to-last vav. This later word is a normal (non-qere) word.</note>
+    </notes>
+    <analysistags>
+      <aBHL />
+    </analysistags>
+    <transnotes>
+      <transnote>
+        <action>Add</action>
+        <type>a</type>
+        <beforetext>וְיִֽשְׁתַּחֲו֤וּ</beforetext>
+      </transnote>
+    </transnotes>
+    <status>Pending</status>
+    <type>NoTextChange</type>
+  </change>
+  <change>
+    <n>2</n>
+    <citation>
+      <book>Gen</book>
+      <c>43</c>
+      <v>28</v>
+      <position>8</position>
+    </citation>
+    <author>
+      <name>Ben Denckla</name>
+      <mail>bdenckla@alum.mit.edu</mail>
+      <confirmed>true</confirmed>
+    </author>
+    <description>Note that while creating the pointed qere, the transcriber changed a qubuts to a shuruq</description>
+    <lc>
+      <folio>Folio_027A</folio>
+      <column>3</column>
+      <line>15</line>
+      <credit>Credit: Sefaria.org.</credit>
+    </lc>
+    <reftext>וַיִּֽשְׁתַּחֲוּֽוּ׃</reftext>
+    <refuni>vav patah yod dagesh hiriq meteg shin shin-dot shewa tav dagesh patah het hataf-patah vav dagesh meteg vav dagesh sof-pasuq</refuni>
+    <changetext>וַיִּֽשְׁתַּחֲוּֽוּ׃</changetext>
+    <changeuni>vav patah yod dagesh hiriq meteg shin shin-dot shewa tav dagesh patah het hataf-patah vav dagesh meteg vav dagesh sof-pasuq</changeuni>
+    <notes>
+      <note>The manuscript’s pointed ketiv (MPK) is וַיִּֽשְׁתַּחֲוֻּֽ׃.</note>
+      <note>The qubuts in the MPK becomes a shuruq dot in the qere.</note>
+      <note>In WLC, this word has not only an a-note but also a 1-note, presumably because of the unexpected dagesh in the qere’s next-to-last vav.</note>
+      <note>As a reminder, a WLC 1-note (bracket-1 note) is defined as follows:</note>
+      <note>«BHS has been faithful to ל [...] where there might be a question of the validity of the form and we keep the same form as BHS. (This is similar to the note “]U”, but the latter refers to cases where BHQ has been published and we keep the same form as both BHS and BHQ.)»</note>
+      <note>Although Dotan has a note about this ketiv/qere, I do not take him to have noted it for the issue at hand: the qubuts-to-shuruq issue. I take him to have noted this ketiv/qere only for the unexpected dagesh in the last vav of the MPK. (This implies a dagesh in the qere’s next-to-last vav.)</note>
+      <note>I do not think Dotan finds the qubuts-to-shuruq issue notable because he does not note the similar ketiv/qere in gn27:29 words 3 and 4, וישתחו/וְיִֽשְׁתַּחֲו֤וּ. That gn27:29 ketiv/qere has the same qubuts-to-shuruq pattern as this one except the next-to-last vav of its qere is free of a dagesh, as expected, and therefore Dotan finds nothing notable about it.</note>
+      <note>We know that Dotan finds the dagesh notable because he notes gn27:29 word 10, וְיִשְׁתַּחֲוּ֥וּ, a normal (non-qere) word that is analogous to this qere, including having an unexpected dagesh in its next-to-last vav.</note>
+    </notes>
+    <analysistags>
+      <aBHL />
+    </analysistags>
+    <transnotes>
+      <transnote>
+        <action>Add</action>
+        <type>a</type>
+        <beforetext>וַיִּֽשְׁתַּחֲוּֽ</beforetext>
+      </transnote>
+    </transnotes>
+    <status>Pending</status>
+    <type>NoTextChange</type>
+  </change>
+  <change>
+    <n>3</n>
+    <citation>
+      <book>Judg</book>
+      <c>21</c>
+      <v>20</v>
+      <position>1</position>
+    </citation>
+    <author>
+      <name>Ben Denckla</name>
+      <mail>bdenckla@alum.mit.edu</mail>
+      <confirmed>true</confirmed>
+    </author>
+    <description>Note that while creating the pointed qere, the transcriber changed a qubuts to a shuruq</description>
+    <lc>
+      <folio>Folio_150A</folio>
+      <column>2</column>
+      <line>8</line>
+      <credit>Credit: Sefaria.org.</credit>
+    </lc>
+    <reftext>וַיְצַוּ֕וּ</reftext>
+    <refuni>vav patah yod shewa tsadi patah vav dagesh zaqef-gadol vav dagesh</refuni>
+    <changetext>וַיְצַוּ֕וּ</changetext>
+    <changeuni>vav patah yod shewa tsadi patah vav dagesh zaqef-gadol vav dagesh</changeuni>
+    <notes>
+      <note>The manuscript’s pointed ketiv (MPK) is וַיְצַוֻּ֕.</note>
+      <note>The qubuts in the MPK becomes a shuruq dot in the qere.</note>
+    </notes>
+    <analysistags>
+      <aBHL />
+    </analysistags>
+    <transnotes>
+      <transnote>
+        <action>Add</action>
+        <type>a</type>
+        <beforetext>וַיְצַוּ֕</beforetext>
+      </transnote>
+    </transnotes>
+    <status>Pending</status>
+    <type>NoTextChange</type>
+  </change>
+  <change>
+    <n>4</n>
+    <citation>
+      <book>1Sam</book>
+      <c>12</c>
+      <v>10</v>
+      <position>4</position>
+    </citation>
+    <author>
+      <name>Ben Denckla</name>
+      <mail>bdenckla@alum.mit.edu</mail>
+      <confirmed>true</confirmed>
+    </author>
+    <description>Note that while creating the pointed qere, the transcriber changed a qubuts to a shuruq</description>
+    <lc>
+      <folio>Folio_156A</folio>
+      <column>1</column>
+      <line>5</line>
+      <credit>Credit: Sefaria.org.</credit>
+    </lc>
+    <reftext>וַיֹּאמְר֣וּ</reftext>
+    <refuni>vav patah yod dagesh holam alef mem shewa resh munah vav dagesh</refuni>
+    <changetext>וַיֹּאמְר֣וּ</changetext>
+    <changeuni>vav patah yod dagesh holam alef mem shewa resh munah vav dagesh</changeuni>
+    <notes>
+      <note>The manuscript’s pointed ketiv (MPK) is וַיֹּאמְרֻ֣.</note>
+      <note>The qubuts in the MPK becomes a shuruq dot in the qere.</note>
+    </notes>
+    <analysistags>
+      <aBHL />
+    </analysistags>
+    <transnotes>
+      <transnote>
+        <action>Add</action>
+        <type>a</type>
+        <beforetext>וַיֹּאמְר֣וּ</beforetext>
+      </transnote>
+    </transnotes>
+    <status>Pending</status>
+    <type>NoTextChange</type>
+  </change>
+  <change>
+    <n>5</n>
+    <citation>
+      <book>1Sam</book>
+      <c>13</c>
+      <v>19</v>
+      <position>8</position>
+    </citation>
+    <author>
+      <name>Ben Denckla</name>
+      <mail>bdenckla@alum.mit.edu</mail>
+      <confirmed>true</confirmed>
+    </author>
+    <description>Note that while creating the pointed qere, the transcriber changed a qubuts to a shuruq</description>
+    <lc>
+      <folio>Folio_156B</folio>
+      <column>2</column>
+      <line>22</line>
+      <credit>Credit: Sefaria.org.</credit>
+    </lc>
+    <reftext>אָמְר֣וּ</reftext>
+    <refuni>alef qamats mem shewa resh munah vav dagesh</refuni>
+    <changetext>אָמְר֣וּ</changetext>
+    <changeuni>alef qamats mem shewa resh munah vav dagesh</changeuni>
+    <notes>
+      <note>The manuscript’s pointed ketiv (MPK) is אָמְרֻ֣.</note>
+      <note>The qubuts in the MPK becomes a shuruq dot in the qere.</note>
+      <note>There’s a large, clear dot above the ר; I don’t know what it is supposed to mean, if anything. Surely not a revia!</note>
+    </notes>
+    <analysistags>
+      <aBHL />
+    </analysistags>
+    <transnotes>
+      <transnote>
+        <action>Add</action>
+        <type>a</type>
+        <beforetext>אָמְר֣וּ</beforetext>
+      </transnote>
+    </transnotes>
+    <status>Pending</status>
+    <type>NoTextChange</type>
+  </change>
+  <change>
+    <n>6</n>
+    <citation>
+      <book>1Kings</book>
+      <c>12</c>
+      <v>7</v>
+      <position>1</position>
+    </citation>
+    <author>
+      <name>Ben Denckla</name>
+      <mail>bdenckla@alum.mit.edu</mail>
+      <confirmed>true</confirmed>
+    </author>
+    <description>Note that while creating the pointed qere, the transcriber changed a qubuts to a shuruq</description>
+    <lc>
+      <folio>Folio_194A</folio>
+      <column>1</column>
+      <line>3</line>
+      <credit>Credit: Sefaria.org.</credit>
+    </lc>
+    <reftext>וַיְדַבְּר֨וּ</reftext>
+    <refuni>vav patah yod shewa dalet patah bet dagesh shewa resh qadma vav dagesh</refuni>
+    <changetext>וַיְדַבְּר֨וּ</changetext>
+    <changeuni>vav patah yod shewa dalet patah bet dagesh shewa resh qadma vav dagesh</changeuni>
+    <notes>
+      <note>The manuscript’s pointed ketiv (MPK) is וַיְדַבְּרֻ֨.</note>
+      <note>The qubuts in the MPK becomes a shuruq dot in the qere.</note>
+      <note>In WLC, this word has not only an a-note but also a c-note, presumably because WLC has qadma where BHS (in error) has pashta.</note>
+      <note>As a reminder, a WLC c-note (bracket-c note) is defined as follows:</note>
+      <note>«We read an accent in ל differently from BHS. (This is similar to the note “]C”, but the latter refers to accent differences against BHQ.)»</note>
+    </notes>
+    <analysistags>
+      <aBHL />
+    </analysistags>
+    <transnotes>
+      <transnote>
+        <action>Add</action>
+        <type>a</type>
+        <beforetext>וַיְדַבְּר֨וּ</beforetext>
+      </transnote>
+    </transnotes>
+    <status>Pending</status>
+    <type>NoTextChange</type>
+  </change>
+  <change>
+    <n>7</n>
+    <citation>
+      <book>2Kings</book>
+      <c>20</c>
+      <v>18</v>
+      <position>7</position>
+    </citation>
+    <author>
+      <name>Ben Denckla</name>
+      <mail>bdenckla@alum.mit.edu</mail>
+      <confirmed>true</confirmed>
+    </author>
+    <description>Note that while creating the pointed qere, the transcriber changed a qubuts to a shuruq</description>
+    <lc>
+      <folio>Folio_217A</folio>
+      <column>1</column>
+      <line>10</line>
+      <credit>Credit: Sefaria.org.</credit>
+    </lc>
+    <reftext>יִקָּ֑חוּ</reftext>
+    <refuni>yod hiriq qof dagesh qamats etnahta het vav dagesh</refuni>
+    <changetext>יִקָּ֑חוּ</changetext>
+    <changeuni>yod hiriq qof dagesh qamats etnahta het vav dagesh</changeuni>
+    <notes>
+      <note>The manuscript’s pointed ketiv (MPK) is יִקָּ֑חֻ.</note>
+      <note>The qubuts in the MPK becomes a shuruq dot in the qere.</note>
+      <note>The dagesh in the qof is way off center, but still legit IMO.</note>
+    </notes>
+    <analysistags>
+      <aBHL />
+    </analysistags>
+    <transnotes>
+      <transnote>
+        <action>Add</action>
+        <type>a</type>
+        <beforetext>יִקָּ֑חוּ</beforetext>
+      </transnote>
+    </transnotes>
+    <status>Pending</status>
+    <type>NoTextChange</type>
+  </change>
+  <change>
+    <n>8</n>
+    <citation>
+      <book>Esth</book>
+      <c>9</c>
+      <v>27</v>
+      <position>2</position>
+    </citation>
+    <author>
+      <name>Ben Denckla</name>
+      <mail>bdenckla@alum.mit.edu</mail>
+      <confirmed>true</confirmed>
+    </author>
+    <description>Note that while creating the pointed qere, the transcriber changed a qubuts to a shuruq</description>
+    <lc>
+      <folio>Folio_437B</folio>
+      <column>1</column>
+      <line>14</line>
+      <credit>Credit: Sefaria.org.</credit>
+    </lc>
+    <reftext>וְקִבְּל֣וּ</reftext>
+    <refuni>vav shewa qof hiriq bet dagesh shewa lamed munah vav dagesh</refuni>
+    <changetext>וְקִבְּל֣וּ</changetext>
+    <changeuni>vav shewa qof hiriq bet dagesh shewa lamed munah vav dagesh</changeuni>
+    <notes>
+      <note>The manuscript’s pointed ketiv (MPK) is וְקִבְּלֻ֣.</note>
+      <note>The qubuts in the MPK becomes a shuruq dot in the qere.</note>
+    </notes>
+    <analysistags>
+      <aBHL />
+    </analysistags>
+    <transnotes>
+      <transnote>
+        <action>Add</action>
+        <type>a</type>
+        <beforetext>וְקִבְּל֣וּ</beforetext>
+      </transnote>
+    </transnotes>
+    <status>Pending</status>
+    <type>NoTextChange</type>
+  </change>
+  <change>
+    <n>9</n>
+    <citation>
+      <book>Ezra</book>
+      <c>3</c>
+      <v>3</v>
+      <position>10</position>
+    </citation>
+    <author>
+      <name>Ben Denckla</name>
+      <mail>bdenckla@alum.mit.edu</mail>
+      <confirmed>true</confirmed>
+    </author>
+    <description>Note that while creating the pointed qere, the transcriber changed a qubuts to a shuruq</description>
+    <lc>
+      <folio>Folio_449A</folio>
+      <column>1</column>
+      <line>21</line>
+      <credit>Credit: Sefaria.org.</credit>
+    </lc>
+    <reftext>וַיַּעֲל֨וּ</reftext>
+    <refuni>vav patah yod dagesh patah ayin hataf-patah lamed qadma vav dagesh</refuni>
+    <changetext>וַיַּעֲל֨וּ</changetext>
+    <changeuni>vav patah yod dagesh patah ayin hataf-patah lamed qadma vav dagesh</changeuni>
+    <notes>
+      <note>The manuscript’s pointed ketiv (MPK) is וַיַּעֲלֻ֨.</note>
+      <note>The qubuts in the MPK becomes a shuruq dot in the qere.</note>
+    </notes>
+    <analysistags>
+      <aBHL />
+    </analysistags>
+    <transnotes>
+      <transnote>
+        <action>Add</action>
+        <type>a</type>
+        <beforetext>וַיַּעֲל֨וּ</beforetext>
+      </transnote>
+    </transnotes>
+    <status>Pending</status>
+    <type>NoTextChange</type>
+  </change>
+  <change>
+    <n>10</n>
+    <citation>
+      <book>Ex</book>
+      <c>4</c>
+      <v>2</v>
+      <position>4</position>
+    </citation>
+    <author>
+      <name>Ben Denckla</name>
+      <mail>bdenckla@alum.mit.edu</mail>
+      <confirmed>true</confirmed>
+    </author>
+    <description>Note that while creating the pointed qere, the transcriber added a maqaf</description>
+    <lc>
+      <folio>Folio_033A</folio>
+      <column>1</column>
+      <line>27</line>
+      <credit>Credit: Sefaria.org.</credit>
+    </lc>
+    <reftext>מַה־</reftext>
+    <refuni>mem patah he maqaf</refuni>
+    <changetext>מַה־</changetext>
+    <changeuni>mem patah he maqaf</changeuni>
+    <notes>
+      <note>The qere atom at issue is part of the qere compound מַה־זֶּ֣ה.</note>
+      <note>The manuscript’s pointed ketiv (MPK) is מַזֶּ֣ה.</note>
+    </notes>
+    <analysistags>
+      <aBHL />
+    </analysistags>
+    <transnotes>
+      <transnote>
+        <action>Add</action>
+        <type>a</type>
+        <beforetext>מַה־</beforetext>
+      </transnote>
+    </transnotes>
+    <status>Pending</status>
+    <type>NoTextChange</type>
+  </change>
+  <change>
+    <n>11</n>
+    <citation>
+      <book>Isa</book>
+      <c>3</c>
+      <v>15</v>
+      <position>1</position>
+    </citation>
+    <author>
+      <name>Ben Denckla</name>
+      <mail>bdenckla@alum.mit.edu</mail>
+      <confirmed>true</confirmed>
+    </author>
+    <description>Note that while creating the pointed qere, the transcriber added a maqaf</description>
+    <lc>
+      <folio>Folio_221B</folio>
+      <column>2</column>
+      <line>10</line>
+      <credit>Credit: Sefaria.org.</credit>
+    </lc>
+    <reftext>מַה־</reftext>
+    <refuni>mem patah he maqaf</refuni>
+    <changetext>מַה־</changetext>
+    <changeuni>mem patah he maqaf</changeuni>
+    <notes>
+      <note>The qere atom at issue is part of the qere compound מַה־לָּכֶם֙.</note>
+      <note>The manuscript’s pointed ketiv (MPK) is מַלָּכֶם֙.</note>
+    </notes>
+    <analysistags>
+      <aBHL />
+    </analysistags>
+    <transnotes>
+      <transnote>
+        <action>Add</action>
+        <type>a</type>
+        <beforetext>מַה־</beforetext>
+      </transnote>
+    </transnotes>
+    <status>Pending</status>
+    <type>NoTextChange</type>
+  </change>
+  <change>
+    <n>12</n>
+    <citation>
+      <book>Jer</book>
+      <c>18</c>
+      <v>3</v>
+      <position>4</position>
+    </citation>
+    <author>
+      <name>Ben Denckla</name>
+      <mail>bdenckla@alum.mit.edu</mail>
+      <confirmed>true</confirmed>
+    </author>
+    <description>Note that while creating the pointed qere, the transcriber added a maqaf</description>
+    <lc>
+      <folio>Folio_255A</folio>
+      <column>3</column>
+      <line>5</line>
+      <credit>Credit: Sefaria.org.</credit>
+    </lc>
+    <reftext>וְהִנֵּה־</reftext>
+    <refuni>vav shewa he hiriq nun dagesh tsere he maqaf</refuni>
+    <changetext>וְהִנֵּה־</changetext>
+    <changeuni>vav shewa he hiriq nun dagesh tsere he maqaf</changeuni>
+    <notes>
+      <note>The qere atom at issue is part of the qere compound וְהִנֵּה־ה֛וּא.</note>
+      <note>The manuscript’s pointed ketiv (MPK) is וְהִנֵּה֛וּ.</note>
+    </notes>
+    <analysistags>
+      <aBHL />
+    </analysistags>
+    <transnotes>
+      <transnote>
+        <action>Add</action>
+        <type>a</type>
+        <beforetext>וְהִנֵּה־</beforetext>
+      </transnote>
+    </transnotes>
+    <status>Pending</status>
+    <type>NoTextChange</type>
+  </change>
+  <change>
+    <n>13</n>
+    <citation>
+      <book>Josh</book>
+      <c>22</c>
+      <v>7</v>
+      <position>12</position>
+    </citation>
+    <author>
+      <name>Ben Denckla</name>
+      <mail>bdenckla@alum.mit.edu</mail>
+      <confirmed>true</confirmed>
+    </author>
+    <description>Note that while creating the pointed qere, the transcriber added a dagesh to bet</description>
+    <lc>
+      <folio>Folio_133B</folio>
+      <column>3</column>
+      <line>10</line>
+      <credit>Credit: Sefaria.org.</credit>
+    </lc>
+    <reftext>בְּעֵ֥בֶר</reftext>
+    <refuni>bet dagesh shewa ayin tsere merkha bet segol resh</refuni>
+    <changetext>בְּעֵ֥בֶר</changetext>
+    <changeuni>bet dagesh shewa ayin tsere merkha bet segol resh</changeuni>
+    <notes>
+      <note>The manuscript’s pointed ketiv (MPK) is מְעֵ֥בֶר.</note>
+      <note>The MPK’s מ does not carry a dagesh for the qere’s ב, for some reason.</note>
+      <note>This is the dual of js24:15.</note>
+      <note>Dotan notes that strictly speaking, the implied qere is בְעֵ֥בֶר, which leaves the ב unexpectedly free of a dagesh.</note>
+    </notes>
+    <analysistags>
+      <aBHL />
+    </analysistags>
+    <transnotes>
+      <transnote>
+        <action>Add</action>
+        <type>a</type>
+        <beforetext>בְּ</beforetext>
+      </transnote>
+    </transnotes>
+    <status>Pending</status>
+    <type>NoTextChange</type>
+  </change>
+  <change>
+    <n>14</n>
+    <citation>
+      <book>Josh</book>
+      <c>24</c>
+      <v>15</v>
+      <position>20</position>
+    </citation>
+    <author>
+      <name>Ben Denckla</name>
+      <mail>bdenckla@alum.mit.edu</mail>
+      <confirmed>true</confirmed>
+    </author>
+    <description>Note that while creating the pointed qere, the transcriber removed a dagesh from mem</description>
+    <lc>
+      <folio>Folio_135B</folio>
+      <column>1</column>
+      <line>2</line>
+      <credit>Credit: Sefaria.org.</credit>
+    </lc>
+    <reftext>מֵעֵ֣בֶר</reftext>
+    <refuni>mem tsere ayin tsere munah bet segol resh</refuni>
+    <changetext>מֵעֵ֣בֶר</changetext>
+    <changeuni>mem tsere ayin tsere munah bet segol resh</changeuni>
+    <notes>
+      <note>The manuscript’s pointed ketiv (MPK) is בְּעֵ֥בֶר.</note>
+      <note>The MPK’s בּ seems to carry a dagesh for the qere’s מ but it is rejected.</note>
+      <note>This is the dual of js22:7.</note>
+      <note>Dotan notes that strictly speaking, the implied qere is מֵּעֵ֣בֶר, which gives the מ an unexpected dagesh.</note>
+    </notes>
+    <analysistags>
+      <aBHL />
+    </analysistags>
+    <transnotes>
+      <transnote>
+        <action>Add</action>
+        <type>a</type>
+        <beforetext>מֵ</beforetext>
+      </transnote>
+    </transnotes>
+    <status>Pending</status>
+    <type>NoTextChange</type>
+  </change>
+  <change>
+    <n>15</n>
+    <citation>
+      <book>2Kings</book>
+      <c>23</c>
+      <v>33</v>
+      <position>7</position>
+    </citation>
+    <author>
+      <name>Ben Denckla</name>
+      <mail>bdenckla@alum.mit.edu</mail>
+      <confirmed>true</confirmed>
+    </author>
+    <description>Note that while creating the pointed qere, the transcriber removed a dagesh from mem</description>
+    <lc>
+      <folio>Folio_219A</folio>
+      <column>2</column>
+      <line>12</line>
+      <credit>Credit: Sefaria.org.</credit>
+    </lc>
+    <reftext>מִמְּלֹ֖ךְ</reftext>
+    <refuni>mem hiriq mem dagesh shewa lamed holam tipeha final-kaf shewa</refuni>
+    <changetext>מִמְּלֹ֖ךְ</changetext>
+    <changeuni>mem hiriq mem dagesh shewa lamed holam tipeha final-kaf shewa</changeuni>
+    <notes>
+      <note>The manuscript’s pointed ketiv (MPK) is בִּמְּלֹ֖ךְ.</note>
+      <note>The MPK’s בּ seems to carry a dagesh for the qere’s מ but it is rejected.</note>
+      <note>See js24:15, which is similar.</note>
+      <note>Dotan does not note this case, though he does note js24:15.</note>
+    </notes>
+    <analysistags>
+      <aBHL />
+    </analysistags>
+    <transnotes>
+      <transnote>
+        <action>Add</action>
+        <type>a</type>
+        <beforetext>מִ</beforetext>
+      </transnote>
+    </transnotes>
+    <status>Pending</status>
+    <type>NoTextChange</type>
+  </change>
+  <change>
+    <n>16</n>
+    <citation>
+      <book>Judg</book>
+      <c>20</c>
+      <v>13</v>
+      <position>15</position>
+    </citation>
+    <author>
+      <name>Ben Denckla</name>
+      <mail>bdenckla@alum.mit.edu</mail>
+      <confirmed>true</confirmed>
+    </author>
+    <description>Note that while creating the pointed qere, the transcriber added a dagesh to bet</description>
+    <lc>
+      <folio>Folio_149A</folio>
+      <column>1</column>
+      <line>8</line>
+      <credit>Credit: Sefaria.org.</credit>
+    </lc>
+    <reftext>בְּנֵ֣י</reftext>
+    <refuni>bet dagesh shewa nun tsere munah yod</refuni>
+    <changetext>בְּנֵ֣י</changetext>
+    <changeuni>bet dagesh shewa nun tsere munah yod</changeuni>
+    <notes>
+      <note>The manuscript’s pointed ketiv (MPK) is אְׄאֵ֣ׄאׄ. (We use אׄ (א with an extraordinary upper dot) to hold marks not associated with a parent letter.)</note>
+      <note>The MPK has no letter to carry a dagesh for the qere’s ב. The MPK (points on no letters) is sheva, tsere, and munaḥ.</note>
+      <note>Why in the margin does it say not only «בני קר ולא כת» but also «בני ק»?</note>
+      <note>Although Dotan does not note this word, he notes that the next word has an unexpected dagesh in its ב. I.e., it unexpectedly starts with בּ not ב. i.e. בִנְיָמִ֔ן (Vinyamin) would be expected.</note>
+    </notes>
+    <analysistags>
+      <aBHL />
+    </analysistags>
+    <transnotes>
+      <transnote>
+        <action>Add</action>
+        <type>a</type>
+        <beforetext>בְּ</beforetext>
+      </transnote>
+    </transnotes>
+    <status>Pending</status>
+    <type>NoTextChange</type>
+  </change>
+  <change>
+    <n>17</n>
+    <citation>
+      <book>2Sam</book>
+      <c>8</c>
+      <v>3</v>
+      <position>13</position>
+    </citation>
+    <author>
+      <name>Ben Denckla</name>
+      <mail>bdenckla@alum.mit.edu</mail>
+      <confirmed>true</confirmed>
+    </author>
+    <description>Note that while creating the pointed qere, the transcriber added a dagesh to pe</description>
+    <lc>
+      <folio>Folio_172B</folio>
+      <column>2</column>
+      <line>20</line>
+      <credit>Credit: Sefaria.org.</credit>
+    </lc>
+    <reftext>פְּרָֽת׃</reftext>
+    <refuni>pe dagesh shewa resh qamats meteg tav sof-pasuq</refuni>
+    <changetext>פְּרָֽת׃</changetext>
+    <changeuni>pe dagesh shewa resh qamats meteg tav sof-pasuq</changeuni>
+    <notes>
+      <note>The manuscript’s pointed ketiv (MPK) is אְׄאָֽׄאׄ׃. (We use אׄ (א with an extraordinary upper dot) to hold marks not associated with a parent letter.)</note>
+      <note>The MPK has no letter to carry a dagesh for the qere’s פ. The MPK (points on no letters) is sheva, qamats, and siluq.</note>
+    </notes>
+    <analysistags>
+      <aBHL />
+    </analysistags>
+    <transnotes>
+      <transnote>
+        <action>Add</action>
+        <type>a</type>
+        <beforetext>פְּ</beforetext>
+      </transnote>
+    </transnotes>
+    <status>Pending</status>
+    <type>NoTextChange</type>
+  </change>
+  <change>
+    <n>18</n>
+    <citation>
+      <book>2Kings</book>
+      <c>19</c>
+      <v>37</v>
+      <position>9</position>
+    </citation>
+    <author>
+      <name>Ben Denckla</name>
+      <mail>bdenckla@alum.mit.edu</mail>
+      <confirmed>true</confirmed>
+    </author>
+    <description>Note that while creating the pointed qere, the transcriber added a dagesh to bet</description>
+    <lc>
+      <folio>Folio_216B</folio>
+      <column>1</column>
+      <line>14</line>
+      <credit>Credit: Sefaria.org.</credit>
+    </lc>
+    <reftext>בָּנָיו֙</reftext>
+    <refuni>bet dagesh qamats nun qamats yod vav pashta</refuni>
+    <changetext>בָּנָיו֙</changetext>
+    <changeuni>bet dagesh qamats nun qamats yod vav pashta</changeuni>
+    <notes>
+      <note>The manuscript’s pointed ketiv (MPK) is אָׄאָׄאׄאׄ֙. (We use אׄ (א with an extraordinary upper dot) to hold marks not associated with a parent letter.)</note>
+      <note>The MPK has no letter to carry a dagesh for the qere’s ב. The MPK (points on no letters) is two qamats marks and pashta.</note>
+      <note>There is also a dot near the pashta, which we ignore. I.e. we assume it is not ink, or in any case not intentional.</note>
+    </notes>
+    <analysistags>
+      <aBHL />
+    </analysistags>
+    <transnotes>
+      <transnote>
+        <action>Add</action>
+        <type>a</type>
+        <beforetext>בָּ</beforetext>
+      </transnote>
+    </transnotes>
+    <status>Pending</status>
+    <type>NoTextChange</type>
+  </change>
+  <change>
+    <n>19</n>
+    <citation>
+      <book>Jer</book>
+      <c>31</c>
+      <v>38</v>
+      <position>3</position>
+    </citation>
+    <author>
+      <name>Ben Denckla</name>
+      <mail>bdenckla@alum.mit.edu</mail>
+      <confirmed>true</confirmed>
+    </author>
+    <description>Note that while creating the pointed qere, the transcriber added a dagesh to bet</description>
+    <lc>
+      <folio>Folio_263A</folio>
+      <column>3</column>
+      <line>7</line>
+      <credit>Credit: Sefaria.org.</credit>
+    </lc>
+    <reftext>בָּאִ֖ים</reftext>
+    <refuni>bet dagesh qamats alef hiriq tipeha yod final-mem</refuni>
+    <changetext>בָּאִ֖ים</changetext>
+    <changeuni>bet dagesh qamats alef hiriq tipeha yod final-mem</changeuni>
+    <notes>
+      <note>The manuscript’s pointed ketiv (MPK) is אָׄאִ֖ׄאׄאׄ. (We use אׄ (א with an extraordinary upper dot) to hold marks not associated with a parent letter.)</note>
+      <note>The MPK has no letter to carry a dagesh for the qere’s ב. The MPK (points on no letters) is qamats, ḥiriq, and tipeḥa.</note>
+    </notes>
+    <analysistags>
+      <aBHL />
+    </analysistags>
+    <transnotes>
+      <transnote>
+        <action>Add</action>
+        <type>a</type>
+        <beforetext>בָּ</beforetext>
+      </transnote>
+    </transnotes>
+    <status>Pending</status>
+    <type>NoTextChange</type>
+  </change>
+  <change>
+    <n>20</n>
+    <citation>
+      <book>2Sam</book>
+      <c>18</c>
+      <v>20</v>
+      <position>19</position>
+    </citation>
+    <author>
+      <name>Ben Denckla</name>
+      <mail>bdenckla@alum.mit.edu</mail>
+      <confirmed>true</confirmed>
+    </author>
+    <description>Note that while creating the pointed qere, the transcriber added a dagesh to kaf</description>
+    <lc>
+      <folio>Folio_179A</folio>
+      <column>3</column>
+      <line>10</line>
+      <credit>Credit: Sefaria.org.</credit>
+    </lc>
+    <reftext>כֵּ֥ן</reftext>
+    <refuni>kaf dagesh tsere merkha final-nun</refuni>
+    <changetext>כֵּ֥ן</changetext>
+    <changeuni>kaf dagesh tsere merkha final-nun</changeuni>
+    <notes>
+      <note>The qere at issue is part of the compound כִּֽי־עַל־כֵּ֥ן. The other parts of this compound are not part of this qere.</note>
+      <note>The manuscript’s pointed ketiv (MPK) is אֵ֣ׄאׄ. (We use אׄ (א with an extraordinary upper dot) to hold marks not associated with a parent letter.)</note>
+      <note>The MPK has no letter to carry a dagesh for the qere’s כ. The MPK (points on no letters) is tsere and merkha.</note>
+      <note>Dotan notes that strictly speaking, the implied qere and the atom preceding it form the phrase עַל כֵ֥ן. (This implies the more complete phrase כִּֽי־עַל כֵ֥ן.) I do not take him to find עַל כֵ֥ן notable for the issue at hand: the lack of a dagesh in the כ of the implied qere כֵ֥ן. I take him to find the phrase עַל כֵ֥ן notable only because its atoms are, unexpectedly, separated merely by a space rather than a maqaf.</note>
+      <note>Note that, contrary to UXLC, עַל is a normal atom, i.e. it is not part of a ketiv/qere. It is abnormal only in that it precedes a qere velo ketiv. I.e. UXLC has &lt;k&gt;על&lt;/k&gt;&lt;q&gt;עַל־&lt;/q&gt; where I think it should merely have &lt;w&gt;עַל־&lt;/w&gt;.</note>
+      <note>The manuscript’s lack of a trailing maqaf on עַל is the subject of a currently-pending change proposal, 2024.04.01/2024.01.18-2.</note>
+    </notes>
+    <analysistags>
+      <aBHL />
+    </analysistags>
+    <transnotes>
+      <transnote>
+        <action>Add</action>
+        <type>a</type>
+        <beforetext>כֵּ֥</beforetext>
+      </transnote>
+    </transnotes>
+    <status>Pending</status>
+    <type>NoTextChange</type>
+  </change>
+  <change>
+    <n>21</n>
+    <citation>
+      <book>2Kings</book>
+      <c>19</c>
+      <v>31</v>
+      <position>10</position>
+    </citation>
+    <author>
+      <name>Ben Denckla</name>
+      <mail>bdenckla@alum.mit.edu</mail>
+      <confirmed>true</confirmed>
+    </author>
+    <description>Note that while creating the pointed qere, the transcriber added a ḥolam malei dot to vav</description>
+    <lc>
+      <folio>Folio_216A</folio>
+      <column>3</column>
+      <line>22</line>
+      <credit>Credit: Sefaria.org.</credit>
+    </lc>
+    <reftext>צְבָא֖וֹת</reftext>
+    <refuni>tsadi shewa bet qamats alef tipeha vav holam tav</refuni>
+    <changetext>צְבָא֖וֹת</changetext>
+    <changeuni>tsadi shewa bet qamats alef tipeha vav holam tav</changeuni>
+    <notes>
+      <note>The manuscript’s pointed ketiv (MPK) is אְׄאָׄא֖ׄאׄאׄ. (We use אׄ (א with an extraordinary upper dot) to hold marks not associated with a parent letter.)</note>
+      <note>The MPK has no letter to carry a ḥolam dot for the qere’s vav. The MPK (points on no letters) is sheva, qamats, and tipeḥa.</note>
+    </notes>
+    <analysistags>
+      <aBHL />
+    </analysistags>
+    <transnotes>
+      <transnote>
+        <action>Add</action>
+        <type>a</type>
+        <beforetext>צְבָא֖וֹ</beforetext>
+      </transnote>
+    </transnotes>
+    <status>Pending</status>
+    <type>NoTextChange</type>
+  </change>
+  <change>
+    <n>22</n>
+    <citation>
+      <book>Jer</book>
+      <c>50</c>
+      <v>29</v>
+      <position>13</position>
+    </citation>
+    <author>
+      <name>Ben Denckla</name>
+      <mail>bdenckla@alum.mit.edu</mail>
+      <confirmed>true</confirmed>
+    </author>
+    <description>Note that while creating the pointed qere, the transcriber added a mapiq to he</description>
+    <lc>
+      <folio>Folio_274A</folio>
+      <column>2</column>
+      <line>24</line>
+      <credit>Credit: Sefaria.org.</credit>
+    </lc>
+    <reftext>לָהּ֙</reftext>
+    <refuni>lamed qamats he dagesh pashta</refuni>
+    <changetext>לָהּ֙</changetext>
+    <changeuni>lamed qamats he dagesh pashta</changeuni>
+    <notes>
+      <note>The qere at issue is part of the compound אַל־יְהִי־לָהּ֙. The other parts of this compound are not part of this qere.</note>
+      <note>The manuscript’s pointed ketiv (MPK) is אָׄאׄ֙. (We use אׄ (א with an extraordinary upper dot) to hold marks not associated with a parent letter.)</note>
+      <note>The MPK has no letter to carry a mapiq for the qere’s ה. The MPK (points on no letters) is qamats and pashta.</note>
+    </notes>
+    <analysistags>
+      <aBHL />
+    </analysistags>
+    <transnotes>
+      <transnote>
+        <action>Add</action>
+        <type>a</type>
+        <beforetext>לָהּ֙</beforetext>
+      </transnote>
+    </transnotes>
+    <status>Pending</status>
+    <type>NoTextChange</type>
+  </change>
+  <change>
+    <n>23</n>
+    <citation>
+      <book>2Sam</book>
+      <c>3</c>
+      <v>2</v>
+      <position>1</position>
+    </citation>
+    <author>
+      <name>Ben Denckla</name>
+      <mail>bdenckla@alum.mit.edu</mail>
+      <confirmed>true</confirmed>
+    </author>
+    <description>Note that while creating the pointed qere, the transcriber added a dagesh to vav-qamats</description>
+    <lc>
+      <folio>Folio_169B</folio>
+      <column>3</column>
+      <line>11</line>
+      <credit>Credit: Sefaria.org.</credit>
+    </lc>
+    <reftext>וַיִּוָּלְד֧וּ</reftext>
+    <refuni>vav patah yod dagesh hiriq vav dagesh qamats lamed shewa dalet darga vav dagesh</refuni>
+    <changetext>וַיִּוָּלְד֧וּ</changetext>
+    <changeuni>vav patah yod dagesh hiriq vav dagesh qamats lamed shewa dalet darga vav dagesh</changeuni>
+    <notes>
+      <note>The manuscript’s pointed ketiv (MPK) is וַיִּאָׄלְד֧וּ. (We use אׄ (א with an extraordinary upper dot) to hold marks not associated with a parent letter.)</note>
+      <note>The MPK has no letter to carry a dagesh for the qere’s וָּ.</note>
+      <note>Unlike the dagesh, the qamats does not need a letter to carry it; it is allowed to be an orphan. It appears between the ḥiriq and the sheva (of the yod and ל respectively). Unlike the manuscript, our MPK shows that orphan qamats on a אׄ (א with an extraordinary upper dot).</note>
+    </notes>
+    <analysistags>
+      <aBHL />
+    </analysistags>
+    <transnotes>
+      <transnote>
+        <action>Add</action>
+        <type>a</type>
+        <beforetext>וַיִּוָּ</beforetext>
+      </transnote>
+    </transnotes>
+    <status>Pending</status>
+    <type>NoTextChange</type>
+  </change>
+  <change>
+    <n>24</n>
+    <citation>
+      <book>2Sam</book>
+      <c>21</c>
+      <v>9</v>
+      <position>16</position>
+    </citation>
+    <author>
+      <name>Ben Denckla</name>
+      <mail>bdenckla@alum.mit.edu</mail>
+      <confirmed>true</confirmed>
+    </author>
+    <description>Note that while creating the pointed qere, the transcriber added a dagesh to bet</description>
+    <lc>
+      <folio>Folio_181B</folio>
+      <column>1</column>
+      <line>26</line>
+      <credit>Credit: Sefaria.org.</credit>
+    </lc>
+    <reftext>בִּתְחִלַּ֖ת</reftext>
+    <refuni>bet dagesh hiriq tav shewa het hiriq lamed dagesh patah tipeha tav</refuni>
+    <changetext>בִּתְחִלַּ֖ת</changetext>
+    <changeuni>bet dagesh hiriq tav shewa het hiriq lamed dagesh patah tipeha tav</changeuni>
+    <notes>
+      <note>The manuscript’s pointed ketiv (MPK) is אִׄתְחִלַּ֖ת. (We use אׄ (א with an extraordinary upper dot) to hold marks not associated with a parent letter.)</note>
+      <note>The MPK has no letter to carry a dagesh for the qere’s ב.</note>
+      <note>Unlike the dagesh, the ḥiriq does not need a letter to carry it; it is allowed to be an orphan. It appears before the sheva of the initial ת. Unlike the manuscript, our MPK shows that orphan ḥiriq on a אׄ (א with an extraordinary upper dot).</note>
+    </notes>
+    <analysistags>
+      <aBHL />
+    </analysistags>
+    <transnotes>
+      <transnote>
+        <action>Add</action>
+        <type>a</type>
+        <beforetext>בִּ</beforetext>
+      </transnote>
+    </transnotes>
+    <status>Pending</status>
+    <type>NoTextChange</type>
+  </change>
+  <change>
+    <n>25</n>
+    <citation>
+      <book>2Sam</book>
+      <c>22</c>
+      <v>8</v>
+      <position>1</position>
+    </citation>
+    <author>
+      <name>Ben Denckla</name>
+      <mail>bdenckla@alum.mit.edu</mail>
+      <confirmed>true</confirmed>
+    </author>
+    <description>Note that while creating the pointed qere, the transcriber added a dagesh to yod</description>
+    <lc>
+      <folio>Folio_182A</folio>
+      <column>1</column>
+      <line>11</line>
+      <credit>Credit: Sefaria.org.</credit>
+    </lc>
+    <reftext>וַיִּתְגָּעַ֤שׁ</reftext>
+    <refuni>vav patah yod dagesh hiriq tav shewa gimel dagesh qamats ayin patah mahapakh shin shin-dot</refuni>
+    <changetext>וַיִּתְגָּעַ֤שׁ</changetext>
+    <changeuni>vav patah yod dagesh hiriq tav shewa gimel dagesh qamats ayin patah mahapakh shin shin-dot</changeuni>
+    <notes>
+      <note>The manuscript’s pointed ketiv (MPK) is וַאִׄתְגָּעַ֤שׁ. (We use אׄ (א with an extraordinary upper dot) to hold marks not associated with a parent letter.)</note>
+      <note>The MPK has no letter to carry a dagesh for the qere’s yod.</note>
+      <note>Unlike the dagesh, the ḥiriq does not need a letter to carry it; it is allowed to be an orphan. It appears between the pataḥ and the sheva (of the vav and ת respectively). Unlike the manuscript, our MPK shows that orphan ḥiriq on a אׄ (א with an extraordinary upper dot).</note>
+    </notes>
+    <analysistags>
+      <aBHL />
+    </analysistags>
+    <transnotes>
+      <transnote>
+        <action>Add</action>
+        <type>a</type>
+        <beforetext>וַיִּ</beforetext>
+      </transnote>
+    </transnotes>
+    <status>Pending</status>
+    <type>NoTextChange</type>
+  </change>
+  <change>
+    <n>26</n>
+    <citation>
+      <book>Ezek</book>
+      <c>14</c>
+      <v>14</v>
+      <position>7</position>
+    </citation>
+    <author>
+      <name>Ben Denckla</name>
+      <mail>bdenckla@alum.mit.edu</mail>
+      <confirmed>true</confirmed>
+    </author>
+    <description>Note that while creating the pointed qere, the transcriber added a dagesh to yod</description>
+    <lc>
+      <folio>Folio_282B</folio>
+      <column>2</column>
+      <line>13</line>
+      <credit>Credit: Sefaria.org.</credit>
+    </lc>
+    <reftext>דָּנִיֵּ֣אל</reftext>
+    <refuni>dalet dagesh qamats nun hiriq yod dagesh tsere munah alef lamed</refuni>
+    <changetext>דָּנִיֵּ֣אל</changetext>
+    <changeuni>dalet dagesh qamats nun hiriq yod dagesh tsere munah alef lamed</changeuni>
+    <notes>
+      <note>The manuscript’s pointed ketiv (MPK) is דָּנִאֵ֣ׄאל. (We use אׄ (א with an extraordinary upper dot) to hold marks not associated with a parent letter.)</note>
+      <note>The MPK has no letter to carry a dagesh for the qere’s yod.</note>
+    </notes>
+    <analysistags>
+      <aBHL />
+    </analysistags>
+    <transnotes>
+      <transnote>
+        <action>Add</action>
+        <type>a</type>
+        <beforetext>דָּנִיֵּ֣</beforetext>
+      </transnote>
+    </transnotes>
+    <status>Pending</status>
+    <type>NoTextChange</type>
+  </change>
+  <change>
+    <n>27</n>
+    <citation>
+      <book>Ezek</book>
+      <c>14</c>
+      <v>20</v>
+      <position>2</position>
+    </citation>
+    <author>
+      <name>Ben Denckla</name>
+      <mail>bdenckla@alum.mit.edu</mail>
+      <confirmed>true</confirmed>
+    </author>
+    <description>Note that while creating the pointed qere, the transcriber added a dagesh to yod</description>
+    <lc>
+      <folio>Folio_282B</folio>
+      <column>3</column>
+      <line>6</line>
+      <credit>Credit: Sefaria.org.</credit>
+    </lc>
+    <reftext>דָּנִיֵּ֣אל</reftext>
+    <refuni>dalet dagesh qamats nun hiriq yod dagesh tsere munah alef lamed</refuni>
+    <changetext>דָּנִיֵּ֣אל</changetext>
+    <changeuni>dalet dagesh qamats nun hiriq yod dagesh tsere munah alef lamed</changeuni>
+    <notes>
+      <note>The manuscript’s pointed ketiv (MPK) is דָּנִאֵ֣ׄאל. (We use אׄ (א with an extraordinary upper dot) to hold marks not associated with a parent letter.)</note>
+      <note>The MPK has no letter to carry a dagesh for the qere’s yod.</note>
+    </notes>
+    <analysistags>
+      <aBHL />
+    </analysistags>
+    <transnotes>
+      <transnote>
+        <action>Add</action>
+        <type>a</type>
+        <beforetext>דָּנִיֵּ֣</beforetext>
+      </transnote>
+    </transnotes>
+    <status>Pending</status>
+    <type>NoTextChange</type>
+  </change>
+  <change>
+    <n>28</n>
+    <citation>
+      <book>Ezek</book>
+      <c>28</c>
+      <v>3</v>
+      <position>4</position>
+    </citation>
+    <author>
+      <name>Ben Denckla</name>
+      <mail>bdenckla@alum.mit.edu</mail>
+      <confirmed>true</confirmed>
+    </author>
+    <description>Note that while creating the pointed qere, the transcriber added a dagesh to yod</description>
+    <lc>
+      <folio>Folio_291A</folio>
+      <column>1</column>
+      <line>11</line>
+      <credit>Credit: Sefaria.org.</credit>
+    </lc>
+    <reftext>מִדָּֽנִיֵּ֑אל</reftext>
+    <refuni>mem hiriq dalet dagesh qamats meteg nun hiriq yod dagesh tsere etnahta alef lamed</refuni>
+    <changetext>מִדָּֽנִיֵּ֑אל</changetext>
+    <changeuni>mem hiriq dalet dagesh qamats meteg nun hiriq yod dagesh tsere etnahta alef lamed</changeuni>
+    <notes>
+      <note>The manuscript’s pointed ketiv (MPK) is מִדָּֽנִאֵ֑ׄאֿל. (We use אׄ (א with an extraordinary upper dot) to hold marks not associated with a parent letter.)</note>
+      <note>The MPK has no letter to carry a dagesh for the qere’s yod.</note>
+      <note>The rafeh on the א makes it clear that the qere’s yod functions as a consonant not a vowel, i.e. the qere’s syllables are מִ דָּֽ נִ יֵּ֑אל.</note>
+    </notes>
+    <analysistags>
+      <aBHL />
+    </analysistags>
+    <transnotes>
+      <transnote>
+        <action>Add</action>
+        <type>a</type>
+        <beforetext>מִדָּֽנִיֵּ֑</beforetext>
+      </transnote>
+    </transnotes>
+    <status>Pending</status>
+    <type>NoTextChange</type>
+  </change>
+  <change>
+    <n>29</n>
+    <citation>
+      <book>Lam</book>
+      <c>4</c>
+      <v>16</v>
+      <position>11</position>
+    </citation>
+    <author>
+      <name>Ben Denckla</name>
+      <mail>bdenckla@alum.mit.edu</mail>
+      <confirmed>true</confirmed>
+    </author>
+    <description>Note that while creating the pointed qere, the transcriber added a shuruq dot to the initial vav</description>
+    <lc>
+      <folio>Folio_432A</folio>
+      <column>2</column>
+      <line>13</line>
+      <credit>Credit: Sefaria.org.</credit>
+    </lc>
+    <reftext>וּזְקֵנִ֖ים</reftext>
+    <refuni>vav dagesh zayin shewa qof tsere nun hiriq tipeha yod final-mem</refuni>
+    <changetext>וּזְקֵנִ֖ים</changetext>
+    <changeuni>vav dagesh zayin shewa qof tsere nun hiriq tipeha yod final-mem</changeuni>
+    <notes>
+      <note>The manuscript’s pointed ketiv (MPK) is זְקֵנִ֖ים.</note>
+      <note>The MPK has no letter to carry a shuruq dot for the qere’s vav.</note>
+    </notes>
+    <analysistags>
+      <aBHL />
+    </analysistags>
+    <transnotes>
+      <transnote>
+        <action>Add</action>
+        <type>a</type>
+        <beforetext>וּ</beforetext>
+      </transnote>
+    </transnotes>
+    <status>Pending</status>
+    <type>NoTextChange</type>
+  </change>
+  <change>
+    <n>30</n>
+    <citation>
+      <book>Dan</book>
+      <c>2</c>
+      <v>9</v>
+      <position>12</position>
+    </citation>
+    <author>
+      <name>Ben Denckla</name>
+      <mail>bdenckla@alum.mit.edu</mail>
+      <confirmed>true</confirmed>
+    </author>
+    <description>Note that while creating the pointed qere, the transcriber added a dagesh to dalet</description>
+    <lc>
+      <folio>Folio_438B</folio>
+      <column>1</column>
+      <line>18</line>
+      <credit>Credit: Sefaria.org.</credit>
+    </lc>
+    <reftext>הִזְדְּמִנְתּוּן֙</reftext>
+    <refuni>he hiriq zayin shewa dalet dagesh shewa mem hiriq nun shewa tav dagesh vav dagesh final-nun pashta</refuni>
+    <changetext>הִזְדְּמִנְתּוּן֙</changetext>
+    <changeuni>he hiriq zayin shewa dalet dagesh shewa mem hiriq nun shewa tav dagesh vav dagesh final-nun pashta</changeuni>
+    <notes>
+      <note>The manuscript’s pointed ketiv (MPK) is הִזְאְׄמִנְתּוּן֙. (We use אׄ (א with an extraordinary upper dot) to hold marks not associated with a parent letter.)</note>
+      <note>The MPK has no letter to carry a dagesh for the qere’s ד.</note>
+      <note>Unlike the dagesh, the sheva does not need a letter to carry it; it is allowed to be an orphan. It appears between the sheva and the ḥiriq (of the ז and מ respectively). Unlike the manuscript, our MPK shows that orphan sheva on a אׄ (א with an extraordinary upper dot).</note>
+    </notes>
+    <analysistags>
+      <aBHL />
+    </analysistags>
+    <transnotes>
+      <transnote>
+        <action>Add</action>
+        <type>a</type>
+        <beforetext>הִזְדְּ</beforetext>
+      </transnote>
+    </transnotes>
+    <status>Pending</status>
+    <type>NoTextChange</type>
+  </change>
+  <change>
+    <n>31</n>
+    <citation>
+      <book>1Sam</book>
+      <c>5</c>
+      <v>6</v>
+      <position>9</position>
+    </citation>
+    <author>
+      <name>Ben Denckla</name>
+      <mail>bdenckla@alum.mit.edu</mail>
+      <confirmed>true</confirmed>
+    </author>
+    <description>Note that while creating the pointed qere, the transcriber added a dagesh to tet</description>
+    <lc>
+      <folio>Folio_152B</folio>
+      <column>1</column>
+      <line>26</line>
+      <credit>Credit: Sefaria.org.</credit>
+    </lc>
+    <reftext>בַּטְּחֹרִ֔ים</reftext>
+    <refuni>bet dagesh patah tet dagesh shewa het holam resh hiriq zaqef-qatan yod final-mem</refuni>
+    <changetext>בַּטְּחֹרִ֔ים</changetext>
+    <changeuni>bet dagesh patah tet dagesh shewa het holam resh hiriq zaqef-qatan yod final-mem</changeuni>
+    <notes>
+      <note>The manuscript’s pointed ketiv (MPK) is בַּעְפֹלִ֔ים.</note>
+      <note>The MPK’s ע does not carry a dagesh for the qere’s ט, perhaps because that would be illegal.</note>
+      <note>Same issue, indeed same word modulo accent, six verses later, in 5:12.</note>
+      <note>Dotan remarks, in his Foreword to BHL (page xx):</note>
+      <note>«Another example [of a point created ex nihilo] is an ʿayin of the ketiv that cannot carry a dagesh that is due in the qere, as in the manuscript in Deut. 28:27 in the [body] text וּבַעְפֹלִים and in the margin ק̇ ובטחרים; in the printed edition a dagesh was added[, yielding] וּבַטְּחֹרִים.»</note>
+      <note>(In this quote, Dotan omits the accent (zaqef qatan) on the ל of וּבַעְפֹלִים and on the ר of וּבַטְּחֹרִים, perhaps because it is not germane to the topic at hand.)</note>
+      <note>Dotan’s example from dt28:27 is not a-noted in WLC, which has merely the following:</note>
+      <note>«*W/B/(PLYM **W./BA/+.:XORI80YM»</note>
+    </notes>
+    <analysistags>
+      <aBHL />
+    </analysistags>
+    <transnotes>
+      <transnote>
+        <action>Add</action>
+        <type>a</type>
+        <beforetext>בַּטְּ</beforetext>
+      </transnote>
+    </transnotes>
+    <status>Pending</status>
+    <type>NoTextChange</type>
+  </change>
+  <change>
+    <n>32</n>
+    <citation>
+      <book>1Sam</book>
+      <c>5</c>
+      <v>12</v>
+      <position>6</position>
+    </citation>
+    <author>
+      <name>Ben Denckla</name>
+      <mail>bdenckla@alum.mit.edu</mail>
+      <confirmed>true</confirmed>
+    </author>
+    <description>Note that while creating the pointed qere, the transcriber added a dagesh to tet</description>
+    <lc>
+      <folio>Folio_152B</folio>
+      <column>2</column>
+      <line>27</line>
+      <credit>Credit: Sefaria.org.</credit>
+    </lc>
+    <reftext>בַּטְּחֹרִ֑ים</reftext>
+    <refuni>bet dagesh patah tet dagesh shewa het holam resh hiriq etnahta yod final-mem</refuni>
+    <changetext>בַּטְּחֹרִ֑ים</changetext>
+    <changeuni>bet dagesh patah tet dagesh shewa het holam resh hiriq etnahta yod final-mem</changeuni>
+    <notes>
+      <note>The manuscript’s pointed ketiv (MPK) is בַּעְפֹלִ֑ים.</note>
+      <note>The MPK’s ע does not carry a dagesh for the qere’s ט, perhaps because that would be illegal.</note>
+      <note>Same issue, indeed same word modulo accent, six verses before, in 5:6.</note>
+      <note>Dotan remarks, in his Foreword to BHL (page xx):</note>
+      <note>«Another example [of a point created ex nihilo] is an ʿayin of the ketiv that cannot carry a dagesh that is due in the qere, as in the manuscript in Deut. 28:27 in the [body] text וּבַעְפֹלִים and in the margin ק̇ ובטחרים; in the printed edition a dagesh was added[, yielding] וּבַטְּחֹרִים.»</note>
+      <note>(In this quote, Dotan omits the accent (zaqef qatan) on the ל of וּבַעְפֹלִים and on the ר of וּבַטְּחֹרִים, perhaps because it is not germane to the topic at hand.)</note>
+      <note>Dotan’s example from dt28:27 is not a-noted in WLC, which has merely the following:</note>
+      <note>«*W/B/(PLYM **W./BA/+.:XORI80YM»</note>
+    </notes>
+    <analysistags>
+      <aBHL />
+    </analysistags>
+    <transnotes>
+      <transnote>
+        <action>Add</action>
+        <type>a</type>
+        <beforetext>בַּטְּ</beforetext>
+      </transnote>
+    </transnotes>
+    <status>Pending</status>
+    <type>NoTextChange</type>
+  </change>
+  <change>
+    <n>33</n>
+    <citation>
+      <book>1Kings</book>
+      <c>7</c>
+      <v>45</v>
+      <position>10</position>
+    </citation>
+    <author>
+      <name>Ben Denckla</name>
+      <mail>bdenckla@alum.mit.edu</mail>
+      <confirmed>true</confirmed>
+    </author>
+    <description>Note that while creating the pointed qere, the transcriber added a dagesh to lamed</description>
+    <lc>
+      <folio>Folio_189B</folio>
+      <column>3</column>
+      <line>15</line>
+      <credit>Credit: Sefaria.org.</credit>
+    </lc>
+    <reftext>הָאֵ֔לֶּה</reftext>
+    <refuni>he qamats alef tsere zaqef-qatan lamed dagesh segol he</refuni>
+    <changetext>הָאֵ֔לֶּה</changetext>
+    <changeuni>he qamats alef tsere zaqef-qatan lamed dagesh segol he</changeuni>
+    <notes>
+      <note>The manuscript’s pointed ketiv (MPK) is הָאֵ֔הֶה.</note>
+      <note>The MPK’s ה does not carry a dagesh for the qere’s ל, perhaps because that would be illegal.</note>
+    </notes>
+    <analysistags>
+      <aBHL />
+    </analysistags>
+    <transnotes>
+      <transnote>
+        <action>Add</action>
+        <type>a</type>
+        <beforetext>הָאֵ֔לֶּ</beforetext>
+      </transnote>
+    </transnotes>
+    <status>Pending</status>
+    <type>NoTextChange</type>
+  </change>
+  <change>
+    <n>34</n>
+    <citation>
+      <book>2Kings</book>
+      <c>4</c>
+      <v>3</v>
+      <position>10</position>
+    </citation>
+    <author>
+      <name>Ben Denckla</name>
+      <mail>bdenckla@alum.mit.edu</mail>
+      <confirmed>true</confirmed>
+    </author>
+    <description>Note that while creating the pointed qere, the transcriber added a sheva to kaf sofit</description>
+    <lc>
+      <folio>Folio_204A</folio>
+      <column>3</column>
+      <line>20</line>
+      <credit>Credit: Sefaria.org.</credit>
+    </lc>
+    <reftext>שְׁכֵנָ֑יִךְ</reftext>
+    <refuni>shin shin-dot shewa kaf tsere nun qamats etnahta yod hiriq final-kaf shewa</refuni>
+    <changetext>שְׁכֵנָ֑יִךְ</changetext>
+    <changeuni>shin shin-dot shewa kaf tsere nun qamats etnahta yod hiriq final-kaf shewa</changeuni>
+    <notes>
+      <note>The qere at issue is part of the compound כָּל־שְׁכֵנָ֑יִךְ. The other parts of this compound are not part of this qere.</note>
+      <note>The manuscript’s pointed ketiv (MPK) is שְׁכֵנָ֑כִי.</note>
+      <note>The MPK’s yod does not carry a sheva for the qere’s ך, perhaps because that would be illegal.</note>
+    </notes>
+    <analysistags>
+      <aBHL />
+    </analysistags>
+    <transnotes>
+      <transnote>
+        <action>Add</action>
+        <type>a</type>
+        <beforetext>שְׁכֵנָ֑יִךְ</beforetext>
+      </transnote>
+    </transnotes>
+    <status>Pending</status>
+    <type>NoTextChange</type>
+  </change>
+  <change>
+    <n>35</n>
+    <citation>
+      <book>2Kings</book>
+      <c>6</c>
+      <v>25</v>
+      <position>16</position>
+    </citation>
+    <author>
+      <name>Ben Denckla</name>
+      <mail>bdenckla@alum.mit.edu</mail>
+      <confirmed>true</confirmed>
+    </author>
+    <description>Note that while creating the pointed qere, the transcriber added a dagesh to dalet</description>
+    <lc>
+      <folio>Folio_206B</folio>
+      <column>1</column>
+      <line>11</line>
+      <credit>Credit: Sefaria.org.</credit>
+    </lc>
+    <reftext>דִּבְיוֹנִ֖ים</reftext>
+    <refuni>dalet dagesh hiriq bet shewa yod vav holam nun hiriq tipeha yod final-mem</refuni>
+    <changetext>דִּבְיוֹנִ֖ים</changetext>
+    <changeuni>dalet dagesh hiriq bet shewa yod vav holam nun hiriq tipeha yod final-mem</changeuni>
+    <notes>
+      <note>The manuscript’s pointed ketiv (MPK) is חִרְייֹונִ֖ים.</note>
+      <note>The MPK’s ח does not carry a dagesh for the qere’s ד, perhaps because that would be illegal.</note>
+      <note>The ḥolam malei dot on the qere’s vav comes from the (illegal) ḥolam (ḥaser?) dot on the second yod of the MPK!</note>
+      <note>Instead of being on the second yod of the MPK, why isn’t this dot on the vav of the MPK?</note>
+      <note>In other words, instead of חִ רְ י יֹ ו נִ֖ י ם, why isn’t the MPK חִ רְ י י וֹ נִ֖ י ם? (I have spaced out the letters for clarity.)</note>
+      <note>More regarding the odd placement of this dot: the last five letters of ketiv and qere, יונים, are in common between ketiv and qere. So why not point them in the MPK as they are in the (implied) qere?</note>
+      <note>Yet another way of stating this question: I see the ketiv/qere variation in this word as restricted to the prefixes חרי and דב respectively. So in the common suffix יונים, i.e. after that variation, why should the MPK be any different than the (implied) qere?</note>
+    </notes>
+    <analysistags>
+      <aBHL />
+    </analysistags>
+    <transnotes>
+      <transnote>
+        <action>Add</action>
+        <type>a</type>
+        <beforetext>דִּ</beforetext>
+      </transnote>
+    </transnotes>
+    <status>Pending</status>
+    <type>NoTextChange</type>
+  </change>
+  <change>
+    <n>36</n>
+    <citation>
+      <book>Prov</book>
+      <c>23</c>
+      <v>26</v>
+      <position>7</position>
+    </citation>
+    <author>
+      <name>Ben Denckla</name>
+      <mail>bdenckla@alum.mit.edu</mail>
+      <confirmed>true</confirmed>
+    </author>
+    <description>Note that while creating the pointed qere, the transcriber added a dagesh to tsadi</description>
+    <lc>
+      <folio>Folio_417B</folio>
+      <column>2</column>
+      <line>9</line>
+      <credit>Credit: Sefaria.org.</credit>
+    </lc>
+    <reftext>תִּצֹּֽרְנָה׃</reftext>
+    <refuni>tav dagesh hiriq tsadi dagesh holam meteg resh shewa nun qamats he sof-pasuq</refuni>
+    <changetext>תִּצֹּֽרְנָה׃</changetext>
+    <changeuni>tav dagesh hiriq tsadi dagesh holam meteg resh shewa nun qamats he sof-pasuq</changeuni>
+    <notes>
+      <note>The manuscript’s pointed ketiv (MPK) is תִּרֽצְֹנָהֿ׃.</note>
+      <note>The MPK’s ר does not carry a dagesh for the qere’s צ, perhaps because that would be illegal.</note>
+      <note>Nor does the MPK’s צ carry a dagesh for the qere’s צ.</note>
+      <note>More generally, the MPK is a mess, both in terms of neatness and in terms of what marks ended up on what letters.</note>
+      <note>The below-marks make sense, though one has to sort of squint to see what one expects to see. I.e. the below marks follow the expected order, i.e. the qere order: ḥiriq, siluq, sheva, qamats.</note>
+      <note>The above-marks is where it gets weird, since the qere צ’s ḥolam ḥaser dot is already present on the צ of the MPK. I would expect the ḥolam ḥaser dot to be on the ר of the MPK, i.e. I would expect it to be in its qere POSITION, not on its qere LETTER. I.e. I would expect תִּרֹֽצְנָה׃.</note>
+      <note>Avi, in the MAM documentation, reports that the MPK of א follows this pattern more completely: for the two letters at issue in this ketiv/qere, i.e. for the two transposed letters, the pointing is already present on the LETTER it will “land on” in the qere, not in the POSITION it will land on in the qere. That is to say, א-כתיב is תִּרְצֹּֽנָה׃. I.e. to form the pointed qere from the pointed ketiv, all that needs to be done is to transpose the ר and the צ ALONG with their marks!</note>
+      <note>Dotan’s Appendix A notes, as I have noted above, that the ḥolam ḥaser dot would be expected on (the left side of) the ר of the MPK, whereas it is on (the left side of) the צ. Dotan does not note anything about the creation ex nihilo of the dagesh on the qere’s צ.</note>
+      <note>A final, unimportant remark is that I’ve put a rafeh above the ה of the MPK but I’m not sure about this; it might belong above the נ.</note>
+    </notes>
+    <analysistags>
+      <aBHL />
+    </analysistags>
+    <transnotes>
+      <transnote>
+        <action>Add</action>
+        <type>a</type>
+        <beforetext>תִּצֹּֽ</beforetext>
+      </transnote>
+    </transnotes>
+    <status>Pending</status>
+    <type>NoTextChange</type>
+  </change>
+  <change>
+    <n>37</n>
+    <citation>
+      <book>1Sam</book>
+      <c>17</c>
+      <v>23</v>
+      <position>12</position>
+    </citation>
+    <author>
+      <name>Ben Denckla</name>
+      <mail>bdenckla@alum.mit.edu</mail>
+      <confirmed>true</confirmed>
+    </author>
+    <description>Note that while creating the pointed qere, the transcriber changed a ḥataf pataḥ to a pataḥ under ayin</description>
+    <lc>
+      <folio>Folio_159B</folio>
+      <column>2</column>
+      <line>11</line>
+      <credit>Credit: Sefaria.org.</credit>
+    </lc>
+    <reftext>מִמַּעַרְכ֣וֹת</reftext>
+    <refuni>mem hiriq mem dagesh patah ayin patah resh shewa kaf munah vav holam tav</refuni>
+    <changetext>מִמַּעַרְכ֣וֹת</changetext>
+    <changeuni>mem hiriq mem dagesh patah ayin patah resh shewa kaf munah vav holam tav</changeuni>
+    <notes>
+      <note>The manuscript’s pointed ketiv (MPK) is מִמַּעֲרְ֣וֹת.</note>
+      <note>The MPK’s ע has a ḥataf pataḥ where the qere has a pataḥ.</note>
+      <note>Unexpected ḥataf vowels are a known feature (bug?) of ל. I.e. this is rare but hardly unique. This unexpected ḥataf may well be unrelated to the ketiv/qere differences in this word. If it is unrelated, this should have been a bracket-1 or bracket-U note in WLC, not a bracket-a note.</note>
+      <note>Breuer notes that א and ק have the expected pataḥ under ע. (א is the Aleppo Codex and ק is the Cairo Codex of The Prophets.)</note>
+      <note>Dotan notes that strictly speaking, the implied qere is מִמַּעֲרְכ֣וֹת (ḥataf pataḥ under ע).</note>
+    </notes>
+    <analysistags>
+      <aBHL />
+    </analysistags>
+    <transnotes>
+      <transnote>
+        <action>Add</action>
+        <type>a</type>
+        <beforetext>מִמַּעַ</beforetext>
+      </transnote>
+    </transnotes>
+    <status>Pending</status>
+    <type>NoTextChange</type>
+  </change>
+</date>
