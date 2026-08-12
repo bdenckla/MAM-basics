@@ -14,13 +14,14 @@ to this file's first commit apart from its header, so `git show` recovers it.
 **So do not re-create one.** If a future session drafts in `~/.claude/plans/` again, fold it in
 here and delete it, as `8daef35` did with two such scratch plans.
 
-**Phases 0 and 1 are done, both on 2026-08-11. No file has moved yet**, no GitHub setting has been
-touched, and wlc-utils holds the same 626 tracked files it always did, still at `c501dc0`. Phase 0
-is a preflight and Phase 1 edits only `py/mb_cmn/provenance.py` and its test, so the only thing
-either changed in that repo is the freeze notice Phase 0 was asked to land there — see
-Precondition 1. Phases 2 through 11 are unstarted. (This paragraph read "Nothing has been
-executed. Every phase below is unstarted" until Phase 0 ran, and named Phase 0 alone until Phase 1
-ran.)
+**Phases 0, 1 and 2 are done — 0 and 1 on 2026-08-11, 2 on 2026-08-12. No file has moved yet**, no
+GitHub setting has been touched, and wlc-utils holds the same 626 tracked files it always did, still
+at `c501dc0`. Phase 0 is a preflight, Phase 1 edits only `py/mb_cmn/provenance.py` and its test, and
+Phase 2 edits only MAM-basics' own `.gitattributes`, so the only thing any of the three changed in
+wlc-utils is the freeze notice Phase 0 was asked to land there — see Precondition 1. Phases 3
+through 11 are unstarted. (This paragraph read "Nothing has been executed. Every phase below is
+unstarted" until Phase 0 ran, named Phase 0 alone until Phase 1 ran, and named Phases 0 and 1 until
+Phase 2 ran.)
 
 Written 2026-08-03, on the model of `doc/PLAN-evacuate-python-from-wlc-utils.md`, which is its
 precedent in shape and in discipline. Every number below is stated with the command that
@@ -38,7 +39,7 @@ stale).
 |---|---|
 | 0 — Preflight: baseline, manifest, collision census | **DONE 2026-08-11**, MAM-basics `5344a74` + this write-back, plus three baseline commits in three other repos and one freeze commit in wlc-utils (`c501dc0`). Every census claim re-measured and every one reproduces, the load-bearing zero-self-links figure included. The circuit ran green and **wlc-utils came through it with zero files changed**. **The baseline was NOT clean at first look — 17 files across three repos, from three unrelated causes**, all now committed. Suite is **903 passed / 5 skipped**, not the 913 this plan carried. Three findings this plan did not predict, the sharpest being that **a sibling repo's vendoring drifts this repo's own tracked tree**. Findings under Phase 0 below |
 | 1 — The provenance worktree fix | **DONE 2026-08-11.** All three remaining pieces landed: step 2 in MAM-basics `0008eb8`, the tautology-test repairs in the same commit, and the al-hatorah wrapper **retired** in MAM-private `20dfb63` after `c0540e5` pulled the new vendored copy. The re-vendor ripple cost three more commits in three repos — MAM-simple `bae0bff`, MAM-basics `1097530` and `57b83cf` — and MAM-with-doc `d2dc6e5` for a by-design drift the circuit surfaced. Baseline reproduced exactly: **903 passed / 5 skipped**, ruff and black clean at 771 files, wlc-utils' manifest byte-identical and **wlc-utils unmoved at `c501dc0` throughout**. Seven findings, the sharpest being that **this phase's own verification (b) was stale and tested the wrong thing** — `38a3bc7` had already made a worktree run come out right, and the generator the plan names writes no breadcrumb at all. Finding 7 also **settles the long-unverified worktree suite count**: 903 / 5 from a worktree with `REPOS_ROOT` set, identical to the main checkout, zero unreal failures, 919 dead. Findings under Phase 1 below |
-| 2 — `.gitattributes` merge | **not started** |
+| 2 — `.gitattributes` merge | **DONE 2026-08-12**, MAM-basics `30f985b` + this write-back. The four binary declarations landed verbatim, `*.csv text eol=crlf` kept, `* text=auto eol=lf` untouched — and **`git check-attr -a` resolves identically in the two repos** for both paths this phase names, which is the property layer 1 actually needs: agreement between the repos, not any particular attribute value. `GITATTRIBUTES_LF=True`, tree clean, no circuit run and none needed. Three findings, the sharpest being that **this plan's baseline had already moved when the phase began** — MAM-basics was at `e4d7997`, three commits past Phase 1's `9194265`, all three landed the same day. Findings under Phase 2 below |
 | 3 — Copy the corpus in (dual residency) | **not started** |
 | 4 — Licence scoping | **partly landed 2026-08-10, outside this plan**: the root-level structure exists — `DATA-LICENSES.md` (path-by-path map plus the MAM CC-BY-SA statement) and `README.md`'s `## License` section — because MAM-basics' own MAM and chabad.org data had the same ambiguity with no wlc-utils involved. Remaining: add the arriving wlc paths as rows, and place CC0 only where Phase 4's "Where CC0 must NOT go" paragraph allows |
 | 5 — Collapse `wlc_paths.py`; repoint every generator | **not started** |
@@ -354,6 +355,13 @@ edits" assertion Phases 3, 5 and 10 each rest on. Ben was offered the cheaper op
 and re-audit-and-commit at each phase — and chose the strict serialization the MAM-private
 programme used instead: **finish holman-ketiv-qere first.** Check with `git -C
 ../holman-ketiv-qere status --porcelain` and its recent log before starting any phase.
+
+**Check MAM-basics' own log too — the sibling's is not the whole picture.** Phase 2 found on
+2026-08-12 that the holman-ketiv-qere work commits into *this* repo as well, interleaved with that
+repo's commits to the minute, and that its latest activity was here rather than there. The two
+checks together are the gate; the sibling's log alone read an hour and a half stale. Phase 2's
+finding 2 has the timestamps. **Ben answers the question either way** — whether the work is
+finished is his to say, not something the logs settle.
 
 **Re-measure wlc-utils' baseline rather than trusting this file's figures.** Its HEAD was
 `5783062` when the counts under Scale were taken, `3760b2f` a few hours later, and `79404fa` when
@@ -952,7 +960,7 @@ worktree for a separate measurement was available all along.)
 
 ---
 
-## Phase 2 — `.gitattributes` merge
+## Phase 2 — `.gitattributes` merge — DONE 2026-08-12
 
 *In MAM-basics. Its own commit, touching nothing else, before any file arrives.*
 
@@ -968,6 +976,74 @@ wrote the rules down deliberately, and a mangled blob discovered at layer 1 is a
 `gh-pages/wlc/accgram/img/x.png` and `in/Tanach-26.0--UXLC-1.0--2020-04-01/Images/Background`.
 Then `check_repo_standards.py` still reports `GITATTRIBUTES_LF=True`, and `git status --porcelain`
 is empty.
+
+### Execution record — Phase 2, 2026-08-12
+
+Began at MAM-basics `e4d7997` — **not** the `9194265` Phase 1 left behind, see finding 1 — with
+wlc-utils unmoved at `c501dc0` and clean, MAM-basics clean and pushed, and neither repo holding a
+worktree. Landed as `30f985b` and pushed fast-forward, no force. **No generator, no mega and no
+circuit ran, and none was needed**: this phase changes no Python and no data, so `git check-attr` is
+its whole oracle. wlc-utils was not touched at all, so **Phase 0's manifest stands unchanged** —
+`.novc\wlc-rest-phase0\wlc-manifest-c501dc0.txt`, 626 rows, sha256 `28c94cde…` — and did not need
+re-taking.
+
+The commit is the four declarations copied verbatim from wlc-utils plus a comment saying why they
+arrive before the files they govern, and nothing else.
+
+**All three verifications pass, and the first one passes in the form that matters.** `git check-attr
+-a` resolves **identically in the two repos** for both paths — which is the real property, since
+layer 1 needs the two repos to agree rather than needing any particular attribute value:
+
+| Path | Resolves to | wlc-utils at its own spelling |
+|---|---|---|
+| a `.png` (`gh-pages/wlc/accgram/img/x.png` here, `gh-pages/accgram/img/x.png` there) | `binary: set`; `diff`, `merge`, `text` all `unset`; `eol: lf` | identical |
+| `in/Tanach-26.0--UXLC-1.0--2020-04-01/Images/Background` | `text: auto`, `eol: lf` | identical |
+
+**The extensionless `Images/Background` matches none of the four globs, and that is right rather
+than an omission a later phase should fix.** wlc-utils does not cover it either, so both repos hand
+it to the same `* text=auto eol=lf` rule and git decides by content at `git add` time — the same
+decision from the same rule in both repos, which is the whole of what byte-identity needs. **Phase 3
+must not add a glob for it.** `check_repo_standards.py` then reports `GITATTRIBUTES_LF=True`, along
+with `LINKED_WORKTREES=0`, `AGENT_BRANCHES=0` and `SYS_PATH_MUTATIONS=0`; and `git status
+--porcelain` is empty after the commit.
+
+#### Findings
+
+**1. The baseline had already moved when this phase began — MAM-basics `9194265` → `e4d7997` — but
+the suite count had not.** Three commits landed on 2026-08-12 at 11:25, 12:04 and 13:35, touching
+five Python files: `py/main_clc_download_notes.py`, `py/main_uxlc_download_changes.py`,
+`py/mb_cmn/uxlc_change_url.py`, `py/uxlc_changes/uxlc_authors.py` and `py/uxlc_misc/my_uxlc.py`.
+That is UXLC download work, unrelated to this plan. Nothing in Phase 2 depends on the suite, so this
+phase is unaffected — **Phase 3 is not**, since it asserts `py\main_test.py` "at its Phase 0 count"
+and would read any change those three commits caused as a move bug. Re-measured here to spare Phase
+3 the ambiguity: **903 passed, 5 skipped, 57 subtests** at `e4d7997`, which is Phase 0's and Phase
+1's figure exactly. **903 still stands as the number Phase 3 compares against.**
+
+**2. Precondition 4's gate check should read MAM-basics' OWN log, not only holman-ketiv-qere's.**
+The precondition names `git -C ../holman-ketiv-qere status --porcelain` and that repo's recent log
+as the check, and on 2026-08-12 both looked reassuring — clean, fully pushed, no worktree, last
+commit some hours back. Both missed the sharper fact: **the holman-ketiv-qere work was committing
+into MAM-basics itself**, interleaved with that repo's commits to the minute. MAM-basics `aa5322c`
+(12:04:54) sits between holman-ketiv-qere `a0a722a` (11:38:08) and `11ff82a` (12:05:34), and the
+last activity of the whole undertaking was MAM-basics `e4d7997` at 13:35 — later than anything in
+holman-ketiv-qere. A session checking only the sibling repo would have judged the gate on evidence
+an hour and a half staler than what its own repo's log held. **Ben settled it the same day: that
+work is finished, run Phase 2.** A later phase re-checking this gate should look at both logs.
+
+Worth recording alongside it: **the mechanism Precondition 4 actually names had not fired.** None of
+holman-ketiv-qere's seven commits that day touched `py/mb_cmn/` — they are `gh-pages/uxlc_img/`
+PNGs, `py/py_render/` and `py/python_modules/` — and its `paths.py` was last vendored at `e2d1f17`
+(2026-08-11 09:45), which is the very commit Phase 0's finding 1 named and which MAM-basics
+`5344a74` already absorbed. So the vendoring drift was quiet; what was not quiet was the work.
+
+**3. The new declarations shift no existing blob, and two of the four globs match nothing in this
+repo today.** 54 tracked MAM-basics files match the four globs: 53 `.png` and one `.woff2`,
+`doc/woff2/Taamey_D.woff2` — the copy Phase 0 found byte-identical to wlc-utils'. **Zero `.jpg` and
+zero `.pdf`**, so those two globs are purely forward-looking, governing files that do not arrive
+until Phase 3. All 54 report `git ls-files --eol` as `i/-text w/-text attr/-text`: index, worktree
+and attribute agree that no text conversion applies, so every one of them was binary by
+auto-detection before this commit and is binary by declaration after it. Nothing renormalized, which
+is why this commit's diff really is ten lines of `.gitattributes` and nothing more.
 
 ---
 
