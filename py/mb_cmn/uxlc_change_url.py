@@ -14,10 +14,14 @@ def uxlc_release_xml_filename(release_date: str) -> str:
     return f"{uxlc_release_label(release_date)}.xml"
 
 
-def uxlc_release_xml_url(release_date: str) -> str:
-    """Return the URL of the release XML file."""
+def uxlc_release_xml_url(release_date: str, host: str = "tanach.us") -> str:
+    """Return the URL of the release XML file.
+
+    ``host`` exists for ``main_uxlc_download_changes --host``; ``uxlc_change_url``
+    below, which builds the links that go onto rendered pages, leaves it alone.
+    """
     release_label_enc = pct_path_component(uxlc_release_label(release_date))
-    return f"https://tanach.us/Changes/{release_label_enc}/{release_label_enc}.xml"
+    return f"https://{host}/Changes/{release_label_enc}/{release_label_enc}.xml"
 
 
 def uxlc_change_url(release_date: str, change_id: str) -> str:

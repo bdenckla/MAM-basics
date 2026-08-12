@@ -1,8 +1,12 @@
 """
 Base Usage:
 .venv/Scripts/python.exe py/main_uxlc_download_changes.py
+
+``--host`` fetches from somewhere other than tanach.us -- see my_uxlc.UXLC_HOST. A
+run with it does NOT go on to rebuild: see main().
 """
 
+import argparse
 import sys
 from pathlib import Path
 import zipfile
@@ -15,7 +19,6 @@ import uxlc_misc.my_uxlc as my_uxlc
 import uxlc_misc.my_uxlc_changes as my_uxlc_changes
 import uxlc_paths
 
-_UXLC_ZIP_URL = "https://tanach.us/Books/Tanach.xml.zip"
 _DELAY_MIN = 1.5
 _DELAY_MEAN = 3.0
 _REQUEST_HEADERS = {
@@ -30,9 +33,13 @@ _REQUEST_HEADERS = {
 }
 
 
-def _do_one_download(session, date):
+def _uxlc_zip_url(host):
+    return f"https://{host}/Books/Tanach.xml.zip"
+
+
+def _do_one_download(session, date, host=my_uxlc.UXLC_HOST):
     filename = uxlc_release_xml_filename(date)
-    url = uxlc_release_xml_url(date)
+    url = uxlc_release_xml_url(date, host)
     out_path = uxlc_paths.uxlc_misc_dir() / filename
     _show_progress(out_path)
     text = session.get_text(url, timeout=10, encoding="utf-8")
@@ -43,14 +50,14 @@ def _write_callback(text, out_fp):
     out_fp.write(text)
 
 
-def _download_latest_uxlc(session):
+def _download_latest_uxlc(session, host=my_uxlc.UXLC_HOST):
     uxlc_paths.uxlc_39_dir().mkdir(parents=True, exist_ok=True)
     uxlc_paths.uxlc_rest_dir().mkdir(parents=True, exist_ok=True)
     uxlc_paths.novc_dir().mkdir(parents=True, exist_ok=True)
     zip_path = uxlc_paths.novc_dir() / "Tanach.xml.zip"
     _show_progress(zip_path)
     with open(zip_path, "wb") as out_fp:
-        out_fp.write(session.get_bytes(_UXLC_ZIP_URL, timeout=30))
+        out_fp.write(session.get_bytes(_uxlc_zip_url(host), timeout=30))
     _extract_uxlc_zip(zip_path)
 
 
@@ -80,17 +87,37 @@ def _show_progress(path):
 
 
 def main():
-    """Download UXLC inputs, then rebuild downstream derived outputs."""
+    """Download UXLC inputs, then rebuild downstream derived outputs.
+
+    A ``--host`` run stops after downloading and does NOT rebuild. What another
+    host serves under ``/Books/`` and ``/Changes/`` is that host's, and the tracked
+    outputs are built from UXLC as tanach.us publishes it; rebuilding from a
+    ``--host`` fetch would put another host's bytes into them silently.
+    """
     sys.stdout.reconfigure(encoding="utf-8")
     sys.stderr.reconfigure(encoding="utf-8")
+    args = _parse_args()
     with polite_download.PoliteDownloader(_UXLC_DOWNLOAD_CONFIG) as session:
-        _download_latest_uxlc(session)
+        _download_latest_uxlc(session, args.host)
         for filename in my_uxlc_changes.FILENAMES:
             if "fake" in filename:
                 continue
             date = filename[:10]
-            _do_one_download(session, date)
+            _do_one_download(session, date, args.host)
+    if args.host != my_uxlc.UXLC_HOST:
+        print(f"--host {args.host}: downloaded only, not rebuilding")
+        return
     main_uxlc_mega.main()
+
+
+def _parse_args():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "--host",
+        default=my_uxlc.UXLC_HOST,
+        help=f"host to fetch from (default {my_uxlc.UXLC_HOST})",
+    )
+    return parser.parse_args()
 
 
 _UXLC_DOWNLOAD_CONFIG = polite_download.PoliteDownloadConfig(

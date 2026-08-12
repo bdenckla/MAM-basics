@@ -5,6 +5,15 @@ import xml.etree.ElementTree
 import mb_cmn.bib_locales as tbn
 import uxlc_paths
 
+UXLC_HOST = "tanach.us"
+"""The host UXLC is published on, and the default everything here builds URLs against.
+
+The two downloaders take a ``--host`` that overrides it, because tanach.us is not the
+only host serving the tree: hcanat.us, on the same address, serves ``/Books/`` as well.
+An override is a download-time argument only -- a URL that goes onto a rendered page
+names tanach.us, whatever host a run happened to fetch from.
+"""
+
 
 def canonical_xml_path(book_id):
     """Absolute path to book_id's canonical UXLC core-XML file.
@@ -31,10 +40,14 @@ def book_basename(book_id):
     return _UXLC_BOOK_FILE_NAMES[book_id]
 
 
-def note_page_url(book_id, ch, v, position, code):
-    """The tanach.us note-page URL for one (atom, code), by canonical book name."""
+def note_page_url(book_id, ch, v, position, code, host=UXLC_HOST):
+    """The tanach.us note-page URL for one (atom, code), by canonical book name.
+
+    ``host`` exists for ``main_clc_download_notes --host``; see UXLC_HOST. Every
+    caller that puts a URL on a rendered page leaves it at its default.
+    """
     name = book_basename(book_id)
-    return f"https://tanach.us/Notes/{name}/{name}.{ch}.{v}.{position}-{code}.html"
+    return f"https://{host}/Notes/{name}/{name}.{ch}.{v}.{position}-{code}.html"
 
 
 def read(book_id, handlers=None):

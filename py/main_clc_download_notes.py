@@ -9,6 +9,7 @@ Usage (run from the repo root, network required, NOT part of the default build):
 
     python py/main_clc_download_notes.py            # all 39 books
     python py/main_clc_download_notes.py BookId      # just one book (dev/testing)
+    python py/main_clc_download_notes.py --host <h>  # fetch from h, not tanach.us
 
 For every atom carrying a UXLC ``<x>`` code -- every code, not just the note-
 surfacing seed the build reads (clc_collect.NOTED_CODES); issue #25 wants the
@@ -26,6 +27,7 @@ and re-runnable without re-hitting tanach.us for pages already on hand.
 those down can be added here later -- see the note in the loop.)
 """
 
+import argparse
 import sys
 
 import requests
@@ -40,7 +42,7 @@ import clc.clc_read as clc_read
 import uxlc_paths
 
 
-def _download_one(session, book_id, ch, v, position, code):
+def _download_one(session, book_id, ch, v, position, code, host=my_uxlc.UXLC_HOST):
     """Fetch one note page and write it locally; return True if now present.
 
     Returns True without touching the network if the page is already committed.
@@ -50,7 +52,7 @@ def _download_one(session, book_id, ch, v, position, code):
     out_path = clc_note_pages.local_page_path(book_id, ch, v, position, code)
     if out_path.exists():
         return True
-    url = my_uxlc.note_page_url(book_id, ch, v, position, code)
+    url = my_uxlc.note_page_url(book_id, ch, v, position, code, host)
     try:
         text = session.get_text(url, timeout=20, encoding="utf-8")
     except requests.RequestException:
@@ -78,10 +80,10 @@ def main():
     """
     sys.stdout.reconfigure(encoding="utf-8")
     sys.stderr.reconfigure(encoding="utf-8")
-    if len(sys.argv) > 1:
-        book_id = sys.argv[1]
-        assert book_id in tbn.ALL_BK39_IDS, f"unknown book id: {book_id!r}"
-        book_ids = [book_id]
+    args = _parse_args()
+    if args.book_id is not None:
+        assert args.book_id in tbn.ALL_BK39_IDS, f"unknown book id: {args.book_id!r}"
+        book_ids = [args.book_id]
     else:
         book_ids = tbn.ALL_BK39_IDS
     total_found = total_missing = 0
@@ -92,7 +94,7 @@ def main():
             for ch, v, position, _atom, code in clc_collect.iter_noted_atoms(
                 book, codes=None
             ):
-                if _download_one(session, book_id, ch, v, position, code):
+                if _download_one(session, book_id, ch, v, position, code, args.host):
                     found += 1
                 else:
                     missing += 1
@@ -107,6 +109,22 @@ def main():
             f"CLC note pages overall: {total_found} downloaded, "
             f"{total_missing} missing (404 / no page)"
         )
+
+
+def _parse_args():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "book_id",
+        nargs="?",
+        default=None,
+        help="restrict to one book (dev/testing); default is all 39",
+    )
+    parser.add_argument(
+        "--host",
+        default=my_uxlc.UXLC_HOST,
+        help=f"host to fetch from (default {my_uxlc.UXLC_HOST})",
+    )
+    return parser.parse_args()
 
 
 _NOTES_CONFIG = polite_download.PoliteDownloadConfig(
