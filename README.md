@@ -124,10 +124,11 @@ with common `xml` and `json` package names.
 
 Two declarations, because this repository holds code and data under different terms.
 
-- **Code: GPL-3.0**, in [`LICENSE`](LICENSE). This covers MAM-basics' own work — everything under
-  `py/`, and the generated indexes and reports under `out/` that carry no corpus text.
-- **Data: each corpus keeps the terms its preparers set**, mapped path by path in
-  [`DATA-LICENSES.md`](DATA-LICENSES.md). MAM itself is CC-BY-SA 4.0, attributed to Hebrew
-  Wikisource; other material here has other terms, and one corpus is reproduced under no grant at
-  all. Read that file before redistributing anything under `in/` or the derived trees under
-  `out/`.
+- **Code: GPL-3.0**, in [`LICENSE`](LICENSE). This covers MAM-basics' own work in code and prose —
+  everything under `py/`, `.github/` and `doc/`, and the generated indexes and reports under
+  `out/` that carry no corpus text.
+- **Data: mapped path by path** in [`DATA-LICENSES.md`](DATA-LICENSES.md). Most corpora keep the
+  terms their preparers set: MAM is CC-BY-SA 4.0, attributed to Hebrew Wikisource, and several
+  other corpora are reproduced under no grant at all. The accent-grammar material that is this
+  repository's own work is CC0 1.0, dedicated in that file. Read it before redistributing
+  anything under `in/`, `gh-pages/wlc/` or the derived trees under `out/`.
