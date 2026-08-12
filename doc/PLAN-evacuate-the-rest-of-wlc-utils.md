@@ -37,7 +37,7 @@ stale).
 | Phase | State |
 |---|---|
 | 0 — Preflight: baseline, manifest, collision census | **DONE 2026-08-11**, MAM-basics `5344a74` + this write-back, plus three baseline commits in three other repos and one freeze commit in wlc-utils (`c501dc0`). Every census claim re-measured and every one reproduces, the load-bearing zero-self-links figure included. The circuit ran green and **wlc-utils came through it with zero files changed**. **The baseline was NOT clean at first look — 17 files across three repos, from three unrelated causes**, all now committed. Suite is **903 passed / 5 skipped**, not the 913 this plan carried. Three findings this plan did not predict, the sharpest being that **a sibling repo's vendoring drifts this repo's own tracked tree**. Findings under Phase 0 below |
-| 1 — The provenance worktree fix | **DONE 2026-08-11.** All three remaining pieces landed: step 2 in MAM-basics `0008eb8`, the tautology-test repairs in the same commit, and the al-hatorah wrapper **retired** in MAM-private `20dfb63` after `c0540e5` pulled the new vendored copy. The re-vendor ripple cost three more commits in three repos — MAM-simple `bae0bff`, MAM-basics `1097530` and `57b83cf` — and MAM-with-doc `d2dc6e5` for a by-design drift the circuit surfaced. Baseline reproduced exactly: **903 passed / 5 skipped**, ruff and black clean at 771 files, wlc-utils' manifest byte-identical and **wlc-utils unmoved at `c501dc0` throughout**. Seven findings, the sharpest being that **this phase's own verification (b) was stale and tested the wrong thing** — `38a3bc7` had already made a worktree run come out right, and the generator the plan names writes no breadcrumb at all. Findings under Phase 1 below |
+| 1 — The provenance worktree fix | **DONE 2026-08-11.** All three remaining pieces landed: step 2 in MAM-basics `0008eb8`, the tautology-test repairs in the same commit, and the al-hatorah wrapper **retired** in MAM-private `20dfb63` after `c0540e5` pulled the new vendored copy. The re-vendor ripple cost three more commits in three repos — MAM-simple `bae0bff`, MAM-basics `1097530` and `57b83cf` — and MAM-with-doc `d2dc6e5` for a by-design drift the circuit surfaced. Baseline reproduced exactly: **903 passed / 5 skipped**, ruff and black clean at 771 files, wlc-utils' manifest byte-identical and **wlc-utils unmoved at `c501dc0` throughout**. Seven findings, the sharpest being that **this phase's own verification (b) was stale and tested the wrong thing** — `38a3bc7` had already made a worktree run come out right, and the generator the plan names writes no breadcrumb at all. Finding 7 also **settles the long-unverified worktree suite count**: 903 / 5 from a worktree with `REPOS_ROOT` set, identical to the main checkout, zero unreal failures, 919 dead. Findings under Phase 1 below |
 | 2 — `.gitattributes` merge | **not started** |
 | 3 — Copy the corpus in (dual residency) | **not started** |
 | 4 — Licence scoping | **partly landed 2026-08-10, outside this plan**: the root-level structure exists — `DATA-LICENSES.md` (path-by-path map plus the MAM CC-BY-SA statement) and `README.md`'s `## License` section — because MAM-basics' own MAM and chabad.org data had the same ambiguity with no wlc-utils involved. Remaining: add the arriving wlc paths as rows, and place CC0 only where Phase 4's "Where CC0 must NOT go" paragraph allows |
@@ -824,8 +824,12 @@ today. Do **not** attempt the whole suite from a worktree: **13** failures there
 they are the `../MAM-parsed` half only (MAM-basics#216) — the other four are the doc tests this
 phase fixes, and their going green is the sharpest signal that it worked.
 
-**Verification (b) above is stale in both of its halves — see finding 1 below.** It is left as
-written because the execution record has to be readable against what it was checking.
+**Verification (b) above is stale in both of its halves — see finding 1 below — and its "13
+failures there are not real" is measured false: a worktree run gives ZERO failures, see finding
+7.** The paragraph is left as written because the execution record has to be readable against what
+it was checking. What survives of it is the narrow instruction not to spend this phase's
+verification on a worktree suite run, which is sound and is not the same claim as any of the three
+just contradicted.
 
 ### Execution record — Phase 1, 2026-08-11
 
@@ -934,11 +938,17 @@ It now reads 2026-08-11, still "0 changes found". Nothing is wrong with the page
 that a phase committing several repos should regenerate **after** the repo a generated page reads
 has been committed, not before.
 
-**7. The worktree suite count went unmeasured though a worktree was in hand.** "How to run this
-plan across sessions" asks whichever session first has one to settle the 919 figure. This session
-had one and did not take it, because this phase's own verification forbids running the suite from
-a worktree and the instruction it was executed under repeated that. **The two instructions are in
-tension and a later session should not read the silence as an answer** — 919 remains unverified.
+**7. The worktree suite count is settled: 903 passed / 5 skipped from a worktree, identical to the
+main checkout, with `REPOS_ROOT` set.** Taken later the same day, at Ben's instruction, after this
+phase's other work was committed — so it is a deliberate measurement outside any phase's
+verification, which is what it should always have been. **919 is dead and so are the "unreal
+failures"**: there are none. Without `REPOS_ROOT` the same worktree gives **18 collection errors**,
+loudly, so there is no silent-green hazard either. The full statement, including what the old
+"never from a worktree" instruction now covers and what it no longer covers, is under "How to run
+this plan across sessions". (This finding first recorded the measurement as *not* taken, on the
+grounds that this phase's verification forbids running the suite from a worktree. That reading was
+too broad — the ban is on doing it *inside this phase's verification*, and creating a throwaway
+worktree for a separate measurement was available all along.)
 
 ---
 
@@ -1513,31 +1523,36 @@ next phase quoting this file's absolute path.
 
 Phases 0, 1, 2, 4, 7, 8 and 10 are safe to chain automatically once their verification passes.
 
-**Run the test suite and every generator from the main checkout, never from a worktree** — with
-one qualification added 2026-08-08. The half of this sentence that read "until Phase 1 lands,
-after which a worktree becomes safe for generators and still gives 12 unreal failures for the
-suite" is stale in both its halves: `38a3bc7` landed the worktree half of Phase 1 on 2026-08-07
-and the same commit repointed seventeen callers of `read_books_from_mam_parsed_plus` off their
-cwd-relative `"../MAM-parsed"` default, so the suite is *reported* green from a worktree with
-`REPOS_ROOT=C:\Users\BenDe\GitRepos` set — 919 passed, 5 skipped. **Reported, not measured here;
-re-measure at Phase 0 and rewrite this paragraph with the figure you get.**
+**SETTLED 2026-08-11, by measurement, at MAM-basics `73f8ea3`: a worktree run of the suite is
+IDENTICAL to a main-checkout run — 903 passed, 5 skipped, 57 subtests, zero failures — provided
+`REPOS_ROOT=C:\Users\BenDe\GitRepos` is set.** Taken in a throwaway `git worktree add --detach`
+created for the purpose, on the main clone's venv by absolute path, and removed after; it dirtied
+nothing in any of the ten repos. **919 is dead**, and so is the "12 unreal failures" / "13 unreal
+failures" the two paragraphs this replaces argued over: there are no unreal failures any more,
+because `38a3bc7` repointed seventeen callers of `read_books_from_mam_parsed_plus` off their
+cwd-relative `"../MAM-parsed"` default on 2026-08-07, and Phase 1's `0008eb8` fixed the provenance
+half on 2026-08-11. Re-measure rather than trusting this paragraph, but expect the main-checkout
+count, whatever that has become.
 
-**Phase 0 did not settle that number, and says so rather than implying it did.** What Phase 0
-measured is **903 passed / 5 skipped from the MAIN checkout**, a different quantity from the
-worktree figure above: neither repo had a worktree to run in, so producing the worktree number
-would have meant creating one for a measurement Phase 0 was not asked to take. **So 919 remains
-unverified, and is now doubly suspect**, being a worktree reading of a suite whose main-checkout
-count has itself moved from 913 to 903. Whichever session first has a worktree in hand should
-take it.
+**`REPOS_ROOT` is load-bearing, and it fails loudly rather than silently** — measured in the same
+worktree without it: **18 collection errors**, every one a `FileNotFoundError: sibling repo <name>
+not found` naming both environment overrides, so pytest stops at collection and reports nothing as
+passing. That is `require_sibling` working as designed, and it is the reason no session has ever
+been misled into a green worktree run that verified nothing.
 
-**Phase 1 had one in hand on 2026-08-11 and did not take it, so read that as an unanswered
-question rather than an answer** — see its finding 7. This sentence and Phase 1's own "do not
-attempt the whole suite from a worktree" are in tension, and the tension is unresolved: that
-phase's ban is about not being misled by unreal failures during its verification, while this
-paragraph wants the number for its own sake. A session that wants to settle it should do so as a
-deliberate measurement, outside a phase's verification, and rewrite both paragraphs with what it
-gets.
+**So the old instruction — "run the test suite and every generator from the main checkout, never
+from a worktree" — is withdrawn for the SUITE and stands for the GENERATORS.** The suite reads
+sibling repos and writes none, so a worktree run of it is now a first-class way to run it. The
+generators are a different matter and the ban on them is untouched: this plan's verifications are
+zero-diff and zero-mtime assertions over wlc-utils, MAM-private and the other siblings, none of
+which any MAM-basics worktree isolates — which is the whole reason the evacuation exists. Phase
+1's own verification still says not to run the suite from a worktree *as part of that phase's
+checking*, and that is a narrower and still-sound instruction: it is about not spending a
+verification budget on a second variable.
 
-The instruction itself stands regardless of that number, on a ground the provenance fix does not touch: this
-plan's verifications are zero-diff and zero-mtime assertions over wlc-utils, MAM-private and the
-other siblings, none of which any MAM-basics worktree isolates.
+(A fourth paragraph stood here until 2026-08-11, saying the instruction stands regardless of the
+number, on the ground that this plan's verifications are zero-diff and zero-mtime assertions over
+siblings a worktree does not isolate. That ground is right and is now the third paragraph above,
+where it says what it actually governs — the generators. It was deleted rather than left, because
+after the split it would have read as re-banning the suite runs the first paragraph just
+permitted.)
