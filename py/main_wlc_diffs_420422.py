@@ -8,7 +8,7 @@ import py_wlc_diffs_420422.my_word_diffs_420422_full as my_word_diffs_420422_ful
 import py_wlc_diffs_420422.my_word_diffs_420422_summary as my_word_diffs_420422_summary
 
 _NOTE_DIFFS_JSON_URL = (
-    "https://github.com/bdenckla/wlc-utils/blob/main/out/" "diff_mm_wlc420_wlc422.json"
+    "https://github.com/bdenckla/MAM-basics/blob/main/out/" "diff_mm_wlc420_wlc422.json"
 )
 
 
