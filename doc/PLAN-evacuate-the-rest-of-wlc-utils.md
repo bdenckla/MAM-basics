@@ -14,9 +14,9 @@ to this file's first commit apart from its header, so `git show` recovers it.
 **So do not re-create one.** If a future session drafts in `~/.claude/plans/` again, fold it in
 here and delete it, as `8daef35` did with two such scratch plans.
 
-**Phases 0 through 6 are done — 0 and 1 on 2026-08-11, 2 through 5 on 2026-08-12, 6 on 2026-08-13.
-Nothing has been deleted from wlc-utils: it holds the same 626 tracked files it always did, still at
-`c501dc0`.**
+**Phases 0 through 7 are done — 0 and 1 on 2026-08-11, 2 through 5 on 2026-08-12, 6 and 7 on
+2026-08-13. Nothing has been deleted from wlc-utils: it holds the same 626 tracked files it always
+did, still at `c501dc0`.**
 Phase 3 **copied** 620 of them into MAM-basics rather than moving them — that is the dual-residency
 window — and the six loose root files stayed behind. **The site is live and complete**: Ben enabled
 Pages on 2026-08-11, `.github/workflows/pages.yml` arrived with the corpus at Phase 3, whose push
@@ -24,9 +24,12 @@ fired the first deploy, and Phase 6 added `gh-pages/index.html` on 2026-08-13, s
 `https://bdenckla.github.io/MAM-basics/` and everything under `/wlc/` both serve. **Every URL any
 other repository cites has been fetched and checked** — Phase 6's execution record has the table.
 Phase 0 is a preflight, Phase 1 edits only `py/mb_cmn/provenance.py` and its test, and Phase
-2 edits only MAM-basics' own `.gitattributes`, and Phases 4 and 6 edit only MAM-basics' own licence
-and site files, so the only thing any of the seven phases changed in
-wlc-utils is the freeze notice Phase 0 was asked to land there — see Precondition 1. Phases 7
+2 edits only MAM-basics' own `.gitattributes`, and Phases 4, 6 and 7 edit only MAM-basics' own
+licence, site and generator files, so the only thing any of the eight phases changed in
+wlc-utils is the freeze notice Phase 0 was asked to land there — see Precondition 1. **Phase 7 is
+the one intentional artifact change in the plan and it has landed**: one `href` on
+`gh-pages/wlc/420422/index.html`, in its own commit so that no later phase's zero-diff oracle
+carries a real diff inside it. Phases 8
 through 11 are unstarted. (This paragraph read "Nothing has been executed. Every phase below is
 unstarted" until Phase 0 ran, and has been rewritten at each phase since. Until Phase 3 it also said
 "No file has moved yet" and "no GitHub setting has been touched"; until Phase 6 it said the site
@@ -61,8 +64,8 @@ stale).
 | 4 — Licence scoping | **DONE 2026-08-12**, MAM-basics `20bb89e` + this write-back. Thirteen rows added to `DATA-LICENSES.md` and the CC0 1.0 text repeated verbatim at the end of it, beside the MAM statement — **but no CC0 `LICENSE` file was placed in any subtree**, because not one of the three trees this phase names holds only Ben's own work. Coverage checked mechanically rather than by eye: **620 of 620** moved paths are named by a licence statement, **276** are claimed for CC0, and **zero** of those 276 fall in the excluded set. Suite **903 passed / 5 skipped**, no Python touched, no generator or circuit run. Four findings, the sharpest being that **`gh-pages/wlc/` holds 124 scan crops of manuscripts and printed editions** — so this phase's own instruction to place a CC0 file there would have dedicated Koren's and the Leningrad Codex's photography to the public domain. Findings under Phase 4 below |
 | 5 — Collapse `wlc_paths.py`; repoint every generator | **DONE 2026-08-12**, MAM-basics `5ed6bb4` + `3edbc5b` + `6fd9a9c` + this write-back, plus one re-vendor commit in holman-ketiv-qere (`637237b`). **The plan's sharpest assertion holds: wlc-utils came through a full circuit run with ZERO files touched**, by mtime and not merely by `git status`, and zero across the whole session. Against wlc-utils as the frozen reference, **614 of the 620 moved paths are byte-identical** — every one of the 284 `gh-pages/wlc/` files included — and the six that differ have two named causes, neither of them a move bug. Suite **903 passed / 5 skipped / 57 subtests**, `ruff` clean, `black` clean at **770** files, one fewer than the baseline 771 because `wlc_paths.py` is gone. **Eight findings, the sharpest being that the plan missed a relative-link computation that would have rewritten the stylesheet href on all 154 pages at once.** Findings under Phase 5 below |
 | 6 — Pages live on MAM-basics — ~~**manual gate**~~ **no gate left** | **DONE 2026-08-13**, MAM-basics `c50745a` + this write-back. `gh-pages/index.html` closes the root 404 that had stood since Phase 3, and its deploy went green — run `31710845632`. **The workflow Phase 3 landed is byte-identical to wlc-utils' own**, so the "Copy … verbatim" paragraph reproduces clause for clause with zero differences. **The check list ran 12 of 12 as expected**: 11 URLs at 200 with the served bytes sha256-identical to the committed file, and `/wlc/accgram/` at 404 by design — filed as #230. The stylesheet and the font both resolve and serve at both depths that reference one, and all four fragment anchors are present in the served HTML. Suite **903 passed / 5 skipped**, `ruff` clean, `black` clean at **770** files; no Python touched, no generator and no circuit run. Five findings, the sharpest being that **this phase's own verify list calls `wlc/index.html` a depth-1 page exercising `../style.css`, and it is the one page on the site that references no stylesheet at all**. Findings under Phase 6 below |
-| 7 — Repoint the `420422` blob URL | **not started** |
-| 8 — The redirect-stub generator | **not started** |
+| 7 — Repoint the `420422` blob URL | **DONE 2026-08-13**, MAM-basics `a8a9875` + this write-back. The regenerated diff is **exactly what this phase predicts — one source line and one `href`**, in two files and no others. The new blob URL returns **200**, and so does the old one, wlc-utils holding the file until Phase 10; the two are **the same blob, `57439cd` in either repo**, so the destination content does not change, only the repository serving it. `git grep "bdenckla/wlc-utils" -- py gh-pages` is down to three hits and **not one is a link to content**: two commented-out `issues/NN` citations and one prose mention of `bdenckla/wlc-utils-**private**`, a different repository the pattern matches as a prefix. Suite **903 passed / 5 skipped**, `ruff` clean, `black` clean at **770** files. **No circuit run, and the judgement not to run one is recorded below** — the generator is a leaf. Four findings, the sharpest being that **this phase's own instruction to find the constant by the URL string rather than by line number does not work as written**: black split the URL across two adjacent string literals, so the URL the page carries appears nowhere in the source. Findings under Phase 7 below |
+| 8 — The redirect-stub generator | **not started — and it is next.** It writes only to a scratch directory and publishes nothing, so it is inert toward both repos' trees; Phase 9 depends on it |
 | 9 — Flip wlc-utils' `gh-pages/` to stubs — ~~**gated on 6**~~ **gate met** | **not started**, but its gate is no longer open: Phase 6 was deployed and HTTP-verified on 2026-08-13, which is what that phase's heading requires. Phase 8 still has to build the stubs first |
 | 10 — Empty the rest of wlc-utils | **not started** |
 | 11 — Cross-repo bookkeeping | **not started** |
@@ -1883,15 +1886,9 @@ exists for. So it is not a URL to add: it is prose, and `X` is not a path. **The
 this plan carries would have missed it, and a vendored copy of a file citing a real URL would have
 been missed the same way.
 
-**Next is Phase 7, and it is two lines.** It repoints the `420422` blob URL from
-`bdenckla/wlc-utils` to `bdenckla/MAM-basics`, **must land before Phase 10** empties `out/` and
-kills the old one, and takes **its own commit** — it is the single intentional artifact change in
-the whole plan, so folding it into a neighbouring phase would put a real diff inside a zero-diff
-oracle.
-
 ---
 
-## Phase 7 — Repoint the `420422` blob URL
+## Phase 7 — Repoint the `420422` blob URL — DONE 2026-08-13
 
 *In MAM-basics. Two lines.* Must land **before** Phase 10.
 
@@ -1909,6 +1906,93 @@ Phase 5 would put a real diff inside a zero-diff oracle.
 **Verify:** regenerate; the diff is one source line and one `href`. Fetch the new blob URL: 200.
 Then `git grep -n "bdenckla/wlc-utils" -- py gh-pages` finds nothing that is a link to *content*
 rather than a citation of the repo.
+
+### Execution record — Phase 7, 2026-08-13
+
+Began at MAM-basics `56ac9f4`, wlc-utils `c501dc0`, holman-ketiv-qere `637237b`, with **the whole
+Phase 6 baseline reproducing exactly** — MAM-parsed `95f64d7`, MAM-simple `bae0bff`, MAM-with-doc
+`d2dc6e5`, MAM-OSIS `a037a76`, MAM-for-Sefaria `5f41c16`, UXLC-utils `4d70cf4`, MAM-private
+`20dfb63`, every one of the ten clean, and `git worktree list` one line in each of MAM-basics and
+wlc-utils. Precondition 4 checked on both logs as instructed: holman-ketiv-qere clean and last
+committed 2026-08-12 23:05, and MAM-basics' own log showing nothing since but this plan's Phases 5
+and 6. No mismatch anywhere, so this record has no baseline drift to report — the first phase of
+which that is true.
+
+**The change is one line, and the regeneration is exactly what the phase predicts.**
+`_NOTE_DIFFS_JSON_URL` in `py/main_wlc_diffs_420422.py` now names `bdenckla/MAM-basics`;
+`.venv\Scripts\python.exe py\main_wlc_diffs_420422.py` rewrote the page, and `git status` held
+**two files and no others** — the source and `gh-pages/wlc/420422/index.html`, one insertion and
+one deletion in each. Committed as `a8a9875`, alone, per this phase's own instruction. Suite **903
+passed / 5 skipped**, unchanged from Phase 0's baseline; `ruff check py` clean; `black --check py`
+clean at **770** files. Pages deploy run `31727592763`, green in 29 seconds, and the change was
+verified **on the deployed site** to the standard Phase 6 set: `https://bdenckla.github.io/MAM-basics/wlc/420422/index.html`
+serves the `bdenckla/MAM-basics` URL and its served bytes are sha256-identical
+(`1d4e76f7edc78688…`) to the committed file.
+
+The verification the phase asks for, in its own order: the diff is one source line and one `href`;
+the new blob URL returns **200**; and `git grep -n "bdenckla/wlc-utils" -- py gh-pages` leaves
+three hits, **none of them a link to content** — `printed_decalogue_simanim_page.py:140` and `:141`
+are commented-out `issues/52` and `issues/56` citations, which belong in `bdenckla/wlc-utils`
+because that tracker keeps its own 88 issues, and `mb_cmn/paths.py:246` is prose naming
+`bdenckla/wlc-utils-private`, a **different repository** that the pattern catches as a prefix.
+Zero hits under `gh-pages`.
+
+#### Findings
+
+**1. This phase's instruction to find the constant by the URL string rather than by line number
+does not work as written, and the line number was right all along.** The plan says "`:11` — line
+numbers drift, so find it by the URL string" — sound advice that fails here, because **the URL the
+page carries appears nowhere in the source.** black split it across two adjacent string literals to
+fit 88 columns:
+`"https://github.com/bdenckla/wlc-utils/blob/main/out/" "diff_mm_wlc420_wlc422.json"`. So grepping
+for the URL as the page spells it finds the page and not the generator that emits it. What does
+find it is a distinctive *fragment* — `diff_mm_wlc420_wlc422.json`, or the constant name
+`_NOTE_DIFFS_JSON_URL`. **The general lesson for the remaining phases is that a searchable anchor
+has to survive the formatter**, and black's implicit concatenation is a formatter that silently
+breaks long string literals in the middle. Prefer the identifier.
+
+**2. The one-source-line diff was contingent on the destination name's length, with one character
+to spare.** `MAM-basics` is one character longer than `wlc-utils`, so that line went from 87
+columns to **exactly 88** — black's default limit, and black leaves it alone at 88. One more
+character in the repository name and black would have re-wrapped the constant, making the diff two
+or three source lines and quietly falsifying this phase's own "one source line" criterion. Nothing
+was at risk here, because the criterion is a description of the change rather than a gate on it,
+but a phase elsewhere that asserted a line count over a formatted file would have been.
+
+**3. No circuit run, and that is the judgement this phase called for rather than an omission.**
+`main_wlc_diffs_420422.py` is a **leaf**: it reads `py_wlc_diffs_420422/my_word_diffs_420422.py`, a
+Python data module, and writes only under `gh-pages/wlc/420422/`; nothing downstream reads what it
+writes. It is a mega step (`wlc-diffs-420422`, `main_0_mega.py:337`), so a full circuit would have
+run it too — and would have rewritten the rest of the corpus around it, burying a two-line diff in
+whatever else moved. **Running the one generator is not the cheap substitute for the circuit here,
+it is the better evidence**, because the assertion this phase makes is about which files change and
+a narrower run makes that assertion narrower. Phases 8 through 11 should ask the same question
+before reaching for the two-command circuit: the circuit is the right tool when the claim is
+"nothing else moved", and the wrong one when the claim is "exactly this moved".
+
+**4. The repoint is unobservable from the response, and the page carries a second anchor to the
+same file that nothing checks.** Both URLs return 200 today, and the two blobs are **the same
+object** — `57439cd1843001b2381d3329b21c51783065ce8e` in MAM-basics and in wlc-utils alike — so
+fetching either one cannot tell you which repository served it. **A later phase must therefore
+verify this repoint by reading the URL string in the page, never by fetching it**; the fetch stops
+being a distinguishing test only at Phase 10, when the wlc-utils copy goes and the old URL starts
+404ing, which is the whole reason this phase comes first. The second anchor is the sentence the
+link sits in: it states "196 note (bracket-note) changes", and the comment above it
+(`main_wlc_diffs_420422.py`, in `_path_and_title_and_intro_for_main`) says the number is taken from
+that JSON's "notes differences" array by hand and must be updated if the file is regenerated.
+Checked while here, since the link and the number make one claim between them: the array holds
+**196** entries, so page and file agree today. Nothing enforces it, and this phase deliberately did
+not add a test for it — a count pinned in a test is the example-based shape `CLAUDE.md` rules out,
+and the honest fix if it ever matters is to derive the number rather than assert it.
+
+**Next is Phase 8, the redirect-stub generator.** It is the largest of the remaining phases and the
+safest: it adds `py/main_wlc_redirect_stubs.py` and `py/wlc_redirect/`, writes its 155 stubs to a
+**scratch directory**, and publishes nothing — so it changes no tracked artifact in either repo and
+has no oracle to disturb. Phase 9 cannot run until it exists, and Phase 9's own gate is already met.
+(This paragraph replaces the "Next is Phase 7" pointer that stood at the end of Phase 6's execution
+record. It was a forward pointer rather than a record of what Phase 6 did, and two of them in one
+file, naming different phases, is precisely what misleads the fresh session this plan is written
+for — so the convention is one such paragraph, at the end of the latest record.)
 
 ---
 
