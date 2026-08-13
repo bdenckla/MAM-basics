@@ -18,15 +18,16 @@ in the destination; `stale` is measured and behind; `unmeasured` is a copy nobod
 | file(s) | src_pkg | dest_repo | dest_path | mechanism | last_synced | provenance_doc | category | notes |
 |---|---|---|---|---|---|---|---|---|
 | bib_locales.py, cantsys.py, file_io.py, he_wikisource_url.py, hebrew_accents.py, hebrew_letters.py, hebrew_points.py, hebrew_punctuation.py, hebrew_verse_numerals.py, mam_bknas.py, mam_bknas_and_std_bknas.py, minirow.py, mpplus_schema_guard.py, my_diffs.py, my_utils.py, provenance.py, read_books_from_mam_parsed_plus.py, shrink.py, str_defs.py, template_names.py, uni_denorm.py, uni_heb.py, uni_norm_fragile.py, url_percent.py, vendoring_sync.py, ws_tmpl1.py, ws_tmpl2.py, ws_tmpl_named_params.py | mb_cmn | MAM-private | al-hatorah/py/mb_cmn | copy_script | mixed | no | active | identical |
-| bib_locales.py, cantsys.py, he_wikisource_url.py, hebrew_accents.py, hebrew_letters.py, hebrew_points.py, hebrew_punctuation.py, mam_bknas.py, mam_bknas_and_std_bknas.py, polite_download.py, str_defs.py, template_names.py, url_percent.py, uxlc_change_url.py, vendoring_sync.py | mb_cmn | MAM-private | mgketer/py/mb_cmn | copy_script | 2026-08-08 | no | active | identical |
+| bib_locales.py, cantsys.py, he_wikisource_url.py, hebrew_accents.py, hebrew_letters.py, hebrew_points.py, hebrew_punctuation.py, mam_bknas.py, mam_bknas_and_std_bknas.py, polite_download.py, str_defs.py, template_names.py, url_percent.py, vendoring_sync.py | mb_cmn | MAM-private | mgketer/py/mb_cmn | copy_script | 2026-08-08 | no | active | identical |
+| uxlc_change_url.py | mb_cmn | MAM-private | mgketer/py/mb_cmn/uxlc_change_url.py | copy_script | 2026-08-08 | no | active | DIFFERS |
 | grapheme_diff.py | mb_diff_mpu | MAM-private | mgketer/py/mb_diff_mpu/grapheme_diff.py | copy_script | 2026-08-08 | no | active | identical |
 | my_diffs.py, uni_denorm.py | mb_cmn | MAM-private | mgketer/py/python_modules | unknown | 2026-08-08 | no | stale | DIFFERS; placed in python_modules/ not mb_cmn/ |
 | bib_locales.py, cantsys.py, file_io.py, he_wikisource_url.py, hebrew_accents.py, hebrew_letters.py, hebrew_points.py, hebrew_punctuation.py, my_utils.py, provenance.py, shrink.py, str_defs.py, template_names.py, uni_heb.py, url_percent.py, ws_tmpl1.py, ws_tmpl2.py, ws_tmpl_named_params.py | mb_cmn | MAM-simple | py-examples/mb_cmn | copy_script | mixed | no | generated | identical |
 | hebrew_letter_names.py, hebrew_letter_words.py, letter_small_job.py, mb_html.py, mb_html_get_lines.py, my_utils_for_mainish.py, osis_book_abbrevs.py, slh_description.py, styles_authored.py, styles_mam_parsed.py, styles_mam_with_doc.py, verse_and_friends.py, write_utils.py, ws_urls.py | mb_misc | MAM-simple | py-examples/mb_misc | copy_script | mixed | no | generated | identical |
 | mam4ajf_handlers.py, mam4sef_handlers.py, mam4sef_or_ajf.py, mam4sef_runners.py, sef_cmn.py, sef_header.py, write_utils_sef_or_ajf.py | mb_sefaria | MAM-simple | py-examples/mb_sefaria | copy_script | mixed | no | generated | identical |
 | osis_handlers.py, osis_index_html.py, osis_namespace.py, osis_runner.py | osis | MAM-simple | py-examples/osis | copy_script | mixed | no | generated | identical |
-| bib_locales.py, file_io.py, hebrew_accents.py, hebrew_punctuation.py, uni_heb.py | mb_cmn | book-of-job | mb_cmn | unknown | mixed | no | stale | DIFFERS |
-| cantsys.py, hebrew_letters.py, hebrew_points.py, mam_bknas.py, my_diffs.py, my_utils.py, shrink.py, uni_denorm.py, url_percent.py, uxlc_change_url.py | mb_cmn | book-of-job | mb_cmn | unknown | mixed | no | stale | eol-only |
+| bib_locales.py, file_io.py, hebrew_accents.py, hebrew_punctuation.py, uni_heb.py, uxlc_change_url.py | mb_cmn | book-of-job | mb_cmn | unknown | mixed | no | stale | DIFFERS |
+| cantsys.py, hebrew_letters.py, hebrew_points.py, mam_bknas.py, my_diffs.py, my_utils.py, shrink.py, uni_denorm.py, url_percent.py | mb_cmn | book-of-job | mb_cmn | unknown | mixed | no | stale | eol-only |
 | str_defs.py | mb_cmn | book-of-job | mb_cmn/str_defs.py | unknown | 2026-08-04 | no | stale | identical |
 | hebrew_letters.py | mb_cmn | codex-index-aleppo | aleppo-wiki/py/hebrew_letters.py | unknown | 2026-04-27 | yes | stale | eol-only; placed in aleppo-wiki/py/ not mb_cmn/ |
 | hebrew_punctuation.py, hebrew_verse_numerals.py, my_utils.py | mb_cmn | codex-index-aleppo | aleppo-wiki/py | unknown | mixed | yes | stale | DIFFERS; placed in aleppo-wiki/py/ not mb_cmn/ |
@@ -40,7 +41,7 @@ in the destination; `stale` is measured and behind; `unmeasured` is a copy nobod
 | bib_locales.py, cantsys.py, he_wikisource_url.py, hebrew_accents.py, hebrew_letters.py, hebrew_points.py, hebrew_punctuation.py, hebrew_verse_numerals.py, mam_bknas.py, mam_bknas_and_std_bknas.py, paths.py, retired_kq_special_templates.py, retired_template_names.py, str_defs.py, template_names.py, uni_denorm.py, url_percent.py, vendoring_sync.py | mb_cmn | holman-ketiv-qere | py/mb_cmn | copy_script | mixed | no | active | identical |
 | change_ops.py, change_ops_apply.py, change_ops_extract.py, change_ops_render.py, describe_diff.py, grapheme_diff.py, mpplus_flatten.py, mpplus_param_access.py, mpplus_structure.py | mb_diff_mpu | holman-ketiv-qere | py/mb_diff_mpu | copy_script | mixed | no | active | identical |
 
-*22 rows, 155 files. 0 files ignored.*
+*23 rows, 155 files. 0 files ignored.*
 
 ## Intentionally non-vendored
 
