@@ -180,13 +180,20 @@ def _scopes() -> tuple[_Scope, ...]:
         ),
         _Scope(
             label="wlc-utils",
-            # THE ONE PATH IN py/ THAT STILL LEAVES THIS CHECKOUT, and it is a read.
-            # Every generator was repointed home on 2026-08-12 (Phase 5 of
+            # THE ONE PATH IN py/ THAT LEAVES THIS CHECKOUT IN A ROUTINE RUN, and it is
+            # a read. Every generator was repointed home on 2026-08-12 (Phase 5 of
             # doc/PLAN-evacuate-the-rest-of-wlc-utils.md), which is what makes a
             # MAM-basics worktree isolate the generated artifacts. This scope stays
             # because wlc-utils still holds the 626 files it always did -- the copy
             # made at Phase 3 is a copy -- and Phase 10 is what empties that repo and
             # deletes this scope with it.
+            # Not the only such path any more, which is why "routine" now qualifies it:
+            # wlc_redirect/stubs.py's wlc_utils_pages_dir() reaches the same sibling
+            # (Phase 8, 2026-08-13). That one is asked for rather than incidental --
+            # nothing runs it but `main_wlc_redirect_stubs.py check` with no --dir, and
+            # `build --publish`, which is Phase 9 landing the stubs. No mega step and no
+            # test reaches it, so a suite run and a circuit run still leave wlc-utils
+            # alone, which is the property Phase 5 measured.
             root=paths.require_sibling("wlc-utils", paths.sibling_repo("wlc-utils")),
             exclude_dir_prefixes=_WLC_EXCLUDE_DIR_PREFIXES,
             exclude_files=frozenset(),
