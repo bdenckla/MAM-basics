@@ -14,7 +14,7 @@ to this file's first commit apart from its header, so `git show` recovers it.
 **So do not re-create one.** If a future session drafts in `~/.claude/plans/` again, fold it in
 here and delete it, as `8daef35` did with two such scratch plans.
 
-**Phases 0 through 4 are done — 0 and 1 on 2026-08-11, 2 through 4 on 2026-08-12. Nothing has been
+**Phases 0 through 5 are done — 0 and 1 on 2026-08-11, 2 through 5 on 2026-08-12. Nothing has been
 deleted from wlc-utils: it holds the same 626 tracked files it always did, still at `c501dc0`.**
 Phase 3 **copied** 620 of them into MAM-basics rather than moving them — that is the dual-residency
 window — and the six loose root files stayed behind. **The site is live**, which is new as of Phase
@@ -23,12 +23,19 @@ window — and the six loose root files stayed behind. **The site is live**, whi
 `https://bdenckla.github.io/MAM-basics/` itself 404s until Phase 6 adds `gh-pages/index.html`, by
 design. Phase 0 is a preflight, Phase 1 edits only `py/mb_cmn/provenance.py` and its test, and Phase
 2 edits only MAM-basics' own `.gitattributes`, and Phase 4 edits only MAM-basics' two root licence
-files, so the only thing any of the five phases changed in
-wlc-utils is the freeze notice Phase 0 was asked to land there — see Precondition 1. Phases 5
+files, so the only thing any of the six phases changed in
+wlc-utils is the freeze notice Phase 0 was asked to land there — see Precondition 1. Phases 6
 through 11 are unstarted. (This paragraph read "Nothing has been executed. Every phase below is
 unstarted" until Phase 0 ran, and has been rewritten at each phase since. Until Phase 3 it also said
 "No file has moved yet" and "no GitHub setting has been touched"; both are now false, which is why
 they are replaced here rather than softened.)
+
+**AS OF PHASE 5, NO PROGRAM WRITES INTO wlc-utils, AND THAT IS THE THING THE WHOLE PLAN WAS FOR.**
+`py/wlc_paths.py` is deleted and every generator resolves its corpus under `paths.repo_root()`, so a
+MAM-basics worktree now isolates the generated artifacts as well as the source. Measured, not
+asserted: a full circuit run left wlc-utils with zero files touched by mtime. What still reaches
+that repo from `py/` is one **read** — `test_h_dot_below_nfc.py`'s wlc-utils NFC scope, which Phase
+5 was told to leave and Phase 10 deletes.
 
 Written 2026-08-03, on the model of `doc/PLAN-evacuate-python-from-wlc-utils.md`, which is its
 precedent in shape and in discipline. Every number below is stated with the command that
@@ -49,7 +56,7 @@ stale).
 | 2 — `.gitattributes` merge | **DONE 2026-08-12**, MAM-basics `30f985b` + this write-back. The four binary declarations landed verbatim, `*.csv text eol=crlf` kept, `* text=auto eol=lf` untouched — and **`git check-attr -a` resolves identically in the two repos** for both paths this phase names, which is the property layer 1 actually needs: agreement between the repos, not any particular attribute value. `GITATTRIBUTES_LF=True`, tree clean, no circuit run and none needed. Three findings, the sharpest being that **this plan's baseline had already moved when the phase began** — MAM-basics was at `e4d7997`, three commits past Phase 1's `9194265`, all three landed the same day. Findings under Phase 2 below |
 | 3 — Copy the corpus in (dual residency) | **DONE 2026-08-12**, MAM-basics `f99996f` + this write-back. **620 files land, not the 626 this phase's own verify line claims** — the six loose root files do not travel, exactly as Phase 0's disposition table says — so layer 1 reads **620 of 620 SHA-1 matches**, zero missing, zero mode mismatches, path deltas exactly the 284 `gh-pages/wlc/` prefixes and the one `lci_recs.json` rename. Suite **903 passed / 5 skipped**, ruff clean, black clean at 771 files, all unchanged; **wlc-utils untouched at `c501dc0`**, so Phase 0's manifest stands. **The site is live and the deploy went green**: 8 of 8 HTTP checks as expected, every page byte-identical to what was committed, and the site root 404s by design until Phase 6. Four findings, the sharpest being that **the NFC lint's first failure was a crash on an extensionless GIF, not the offender report this phase predicts**. Findings under Phase 3 below |
 | 4 — Licence scoping | **DONE 2026-08-12**, MAM-basics `20bb89e` + this write-back. Thirteen rows added to `DATA-LICENSES.md` and the CC0 1.0 text repeated verbatim at the end of it, beside the MAM statement — **but no CC0 `LICENSE` file was placed in any subtree**, because not one of the three trees this phase names holds only Ben's own work. Coverage checked mechanically rather than by eye: **620 of 620** moved paths are named by a licence statement, **276** are claimed for CC0, and **zero** of those 276 fall in the excluded set. Suite **903 passed / 5 skipped**, no Python touched, no generator or circuit run. Four findings, the sharpest being that **`gh-pages/wlc/` holds 124 scan crops of manuscripts and printed editions** — so this phase's own instruction to place a CC0 file there would have dedicated Koren's and the Leningrad Codex's photography to the public domain. Findings under Phase 4 below |
-| 5 — Collapse `wlc_paths.py`; repoint every generator | **not started** |
+| 5 — Collapse `wlc_paths.py`; repoint every generator | **DONE 2026-08-12**, MAM-basics `5ed6bb4` + `3edbc5b` + `6fd9a9c` + this write-back, plus one re-vendor commit in holman-ketiv-qere (`637237b`). **The plan's sharpest assertion holds: wlc-utils came through a full circuit run with ZERO files touched**, by mtime and not merely by `git status`, and zero across the whole session. Against wlc-utils as the frozen reference, **614 of the 620 moved paths are byte-identical** — every one of the 284 `gh-pages/wlc/` files included — and the six that differ have two named causes, neither of them a move bug. Suite **903 passed / 5 skipped / 57 subtests**, `ruff` clean, `black` clean at **770** files, one fewer than the baseline 771 because `wlc_paths.py` is gone. **Eight findings, the sharpest being that the plan missed a relative-link computation that would have rewritten the stylesheet href on all 154 pages at once.** Findings under Phase 5 below |
 | 6 — Pages live on MAM-basics — ~~**manual gate**~~ **no gate left** | **not started**, and **narrowed 2026-08-11**: its manual gate was Ben enabling Pages, done that day, and its "copy the workflow" step moved to Phase 3, which now publishes the site (Ben: "Let it land"). What remains here is `gh-pages/index.html`, checking the pins against the file Phase 3 landed, and the HTTP list |
 | 7 — Repoint the `420422` blob URL | **not started** |
 | 8 — The redirect-stub generator | **not started** |
@@ -512,6 +519,14 @@ dir, and the seven test modules that reach into a sibling. `mb_cmn/paths.py`'s `
 `REPO_<NAME>_DIR` override chain stays — it still serves MAM-parsed, MAM-simple, MAM-with-doc,
 MAM-OSIS, UXLC-utils and al-hatorah — but it stops being load-bearing for wlc-utils, which is the
 sibling a worktree session actually contended over.
+
+**DONE 2026-08-12, and every clause of it held except one.** `py/wlc_paths.py` is deleted, its
+docstring's two-rooted statement with it, and the four awkward things above dissolved as predicted.
+The exception is the test modules: **eight, not seven** — the list further down under Phase 5 names
+eight and this paragraph says seven — and one of them, `test_h_dot_below_nfc.py`'s wlc-utils NFC
+scope, still reaches into the sibling by Phase 5's own instruction to leave it for Phase 10. It is a
+read, and the assertion this section exists to make was tested directly and held: a full circuit run
+touched **zero** files in wlc-utils.
 
 ---
 
@@ -1430,7 +1445,7 @@ them, and widening the map to trees this plan never touched is scope this phase 
 
 ---
 
-## Phase 5 — Collapse `wlc_paths.py`; repoint every generator
+## Phase 5 — Collapse `wlc_paths.py`; repoint every generator — DONE 2026-08-12
 
 *In MAM-basics.* The large phase. **Keep it to one session** — an interrupted repoint leaves half
 the generators writing to the sibling and half writing home, which is worse than either.
@@ -1502,6 +1517,176 @@ Phase 10).
 5. `py\main_edition_transcription.py build --check` — 12/12 committed `.txt` bodies re-derived.
 6. **The claim under Context, tested directly:** `git grep -n "wlc_paths\|wlc-utils" -- py` finds
    no path construction, only prose and issue citations.
+
+**Verification 6 cannot be literally true until Phase 10, and it is this phase's own instructions
+that make it so — see finding 6 below.** Leaving `test_h_dot_below_nfc.py`'s wlc-utils NFC scope for
+Phase 10, which the paragraph on the eight test modules requires, means leaving a scope that must
+resolve a root. The claim it was reaching for does hold in the form that matters: **no generator
+constructs a wlc-utils path, and nothing writes there.**
+
+### Execution record — Phase 5, 2026-08-12
+
+Began at MAM-basics `2250c1c`, wlc-utils `c501dc0`, both clean, both pushed, neither holding a
+worktree — Phase 4's closing baseline, reproduced exactly, with MAM-basics at **1906** tracked files
+and wlc-utils at **626**. Run from the **main checkout**, not a worktree, so this phase's zero-mtime
+assertion is measured where the generators actually run. Four commits here — `5ed6bb4` the repoint,
+`3edbc5b` the UXLC refresh, `6fd9a9c` the vendoring re-audit, and this write-back — plus one in
+holman-ketiv-qere, `637237b`. All pushed fast-forward, no force; three Pages deploys, all green
+(runs `31662766682`, `31662795524`, `31662898211`).
+
+**Precondition 4 was checked on both logs, as Phase 2's finding 2 requires, and it was clear.**
+holman-ketiv-qere clean, no worktree, its last commit `69b13f0` at 12:06:32; MAM-basics' own log
+holds nothing from that undertaking after `e4d7997` at 13:35:11, everything later being Phases 2, 3
+and 4 from 15:59 to 16:43. Ben's statement of 2026-08-12 that the work is finished held on the
+evidence of both logs. **That gate is about the WORK being live, and it was not — but the work had
+left two loose ends this phase then had to walk into anyway; see findings 5 and 8.**
+
+**This phase's own scale reproduces**: `py/wlc_paths.py` **203 lines, 23 `def`s**, and **72 files
+under `py/` mentioning `wlc_paths`** — of which **64** carried `import wlc_paths` and 8 named it in
+prose only.
+
+**wlc-utils ends this phase exactly where it began** — `c501dc0`, `git status --porcelain` empty —
+so Phase 0's manifest stands unchanged and needed no re-take.
+
+**Layer 3, and it is the whole point of the plan: ZERO files touched in wlc-utils.** Snapshotted by
+`st_mtime_ns` over all 627 files on disk there (626 tracked plus one under the ignored `.claude/`),
+three times: at session start, after every source edit, and after the full circuit. Zero mtime
+changes, zero size changes, zero added, zero removed, at every comparison. **The circuit is the two
+commands Phase 0's finding 2 named** — `main_0_mega.py` exit 0, then `main_edition_transcription.py
+build --check` 12/12 — and eleven was never tried.
+
+**Layer 2, cross-checked against the frozen reference rather than only against `git status`.**
+wlc-utils still holds 620 files no program writes any more, so a byte comparison re-derives layer 1
+on demand, which is what the plan offers for exactly this moment:
+
+| | |
+|---|---|
+| moved paths compared | **620** |
+| byte-identical to wlc-utils' copy | **614** |
+| missing here | **0** |
+| differing | **6** |
+
+**All 284 `gh-pages/wlc/` files are in the 614** — every one of the 154 pages, the stylesheet, the
+scripts and the images — which is the sharpest single piece of evidence that the repoint is
+content-neutral, and the thing finding 1 nearly broke. The six that differ have two causes and
+neither is a move bug: `out/accgram/chanted-word-accents.json` and `out/accgram/research-oddballs.json`
+are this phase working (findings 2 and 7), and `in/UXLC-misc/_provenance.md`,
+`in/UXLC-misc/all_changes.json`, `in/accgram/uxlc_accent_changes.json` and
+`out/accgram/uxlc_grammar_test.txt` are the UXLC refresh (finding 5).
+
+**Every other verification passed as written.** Suite **903 passed / 5 skipped / 57 subtests** —
+measured before the edits, again after them and before the circuit, and again at the end, the same
+figure all three times and the figure Phases 0 through 4 all measured. `ruff check py` clean.
+`black --check py` clean at **770** files, one fewer than the standing 771 because `wlc_paths.py` is
+gone. The tree is clean and nothing is unpushed.
+
+**What the rewrite actually was.** `mb_cmn/paths.py` gains six layout accessors (`in_dir`, `out_dir`,
+`gh_pages_dir`, `wlc_pages_dir`, `novc_dir`, `scans_dir`) and the eleven live sibling accessors,
+moved by name; `data_dir`, `siblings_root`, `sibling`, the `require_sibling` re-export and the two
+dead `mam_basics_dir` names are deleted with the module. 72 files took the two mechanical
+substitutions; 49 further prose occurrences naming a wlc site path gained the `wlc/` segment, gated
+on the named directory existing under `gh-pages/wlc/` so that `py/clc/`'s references to UXLC-utils'
+pages and `py/versification_and_cantillation/`'s to MAM-simple's were left alone. Two call sites
+that composed `repo_root() / ".novc"` by hand now ask `novc_dir()`, so that string appears once.
+
+**Phase 7's `420422` blob URL was deliberately left alone**, that phase's own instruction being that
+folding it in would put a real diff inside a zero-diff oracle.
+
+#### Findings
+
+**1. The plan missed a relative-link computation, and it would have rewritten the stylesheet href on
+all 154 pages at once. This is the finding of the phase.**
+`rtms_report._path_to_gh_pages_style`, which 13 page modules call for their `path_to_style`, derives
+each page's `../` prefix by finding a path part named `gh-pages` and counting the depth below it.
+**`style.css` sits at the WLC SITE ROOT, `gh-pages/wlc/`, one level below the deploy root** — so
+counting from `gh-pages` emits `../../style.css` where every published page says `../style.css`. It
+now anchors on `gh-pages/wlc` when that segment is present and falls back to `gh-pages` when it is
+not, so a `--html-out` pointing at a bare `gh-pages/` behaves as before;
+`_derive_html_out_from_out_path` needed the same segment. **The plan's "Churn control" paragraph is
+what obscured it**: "two mechanical substitutions per module … the whole diff should be import lines
+and qualified names" is true of 72 files and false of this one, because this computation never
+mentions `wlc_paths` and so appears in no census of it. **The lesson for Phase 8, which builds the
+redirect stubs by prefix rewrite: a path computed from a path PART is invisible to a search for the
+accessor that produced it.** Verified live afterwards, not merely by diff —
+`https://bdenckla.github.io/MAM-basics/wlc/accgram/goerwitz.html` serves `href="../style.css"`.
+
+**2. `out/accgram/chanted-word-accents.json` changed, and a generated artifact carrying a path in its
+PROSE is why.** `chanted_word_accents.py:1210` writes an `already_documented_elsewhere` sentence that
+cites `gh-pages/accgram/almost-errors.html` by name, and that sentence is emitted into the JSON. So
+the prose sweep moved a tracked artifact. Nothing in this plan's verification list distinguishes
+"the artifact changed because the code moved" from "the artifact changed because a docstring did";
+the frozen-reference comparison is what made it cheap to tell.
+
+**3. The plan's accessor arithmetic is wrong in both directions, and neither error costs anything.**
+Its table says "the 14 live sibling accessors (`mam_simple_dir` … `require_uxlc_utils_dir`)". Between
+those two names there are **13**, of which the same table separately deletes two as already dead
+(`mam_basics_dir`, `require_mam_basics_dir`), so **11 moved**. The same table calls the layout
+additions "four layout accessors" while listing six. Measured 2026-08-12. Both figures are
+descriptions of work the table also spells out by name, and the names were followed.
+
+**4. All nine `wlc_paths.require_sibling` "call sites" are prose.** Not one is a call: they are
+docstring and comment citations, eight of them in `py/tests/` explaining why a missing sibling FAILS
+rather than skips. The per-accessor counts in this plan's table come from a text search, so they
+count sentences alongside code — worth knowing before a later phase sizes work from one.
+
+**5. The circuit pulled five weeks of UXLC change log, and that is Phase 0's finding 1 from the
+other direction.** `wlc-vendor-uxlc` copies UXLC-utils' `out/UXLC-misc/all_changes.json` in, and the
+copy that arrived at Phase 3 had been vendored at UXLC-utils `52de493` on **2026-07-06**. That repo's
+`3435fc8` — "Refresh the change logs from hcanat.us, and override its four defects" — landed at
+**12:05 on 2026-08-12**, and no circuit had run here since Phase 1 on 2026-08-11, so the first
+circuit run after it pulled the lot: `all_changes.json` +996 lines, `uxlc_accent_changes.json` +444,
+and `out/accgram/uxlc_grammar_test.txt` moving from 201 prose-corpus verses to 211. **The report's
+directional-asymmetry claim now has two counterexamples**, Ex 38:12.6 and Judg 11:24.7, both crossing
+WLC-ungram → UXLC-gram where the OUT set had none; the report checks the claim rather than asserting
+it, so it says so itself. Committed apart from the repoint, as `3edbc5b`. **Phase 0's finding 1 was a
+SIBLING gaining a vendored file and drifting artifacts here; this is this repo's own vendored INPUT
+going stale against a sibling that moved. Phase 10 should expect the class, not the instance.**
+
+**6. Verification 6 is unsatisfiable as written, and this phase's own instructions are why.** It asks
+that `git grep -n "wlc_paths\|wlc-utils" -- py` find "no path construction". Two survive.
+`test_h_dot_below_nfc.py:190` is the wlc-utils NFC scope's root, now
+`paths.require_sibling("wlc-utils", paths.sibling_repo("wlc-utils"))` — a **read**, and the plan's own
+list of the eight test modules says to leave that scope for Phase 10, which cannot be done without
+leaving it a root to resolve. `test_mb_cmn_paths.py:106` passes the string `"wlc-utils"` to
+`sibling_repo` under a mocked environment as test DATA, asserting the name-mapping function, and
+touches no filesystem. The claim that does hold, and is what the Context section actually argues, is
+that **no generator constructs a wlc-utils path**. Phase 8 will add one more read —
+the redirect-stub generator's own — which that phase already calls "the last remaining reference to
+the sibling in the whole tree"; after Phase 10 removes the NFC scope, it will be.
+
+**7. `out/accgram/research-oddballs.json` is the phase's own receipt, and it is the one artifact that
+prints where the generators read from.** Its header records the absolute directories of its inputs,
+which went from `C:\Users\BenDe\GitRepos\wlc-utils\out\accgram\prose\_oddballs.json`,
+`...\wlc-utils\out\wlc422-kq-u` and `...\wlc-utils\in\UXLC-39` to the MAM-basics spellings of all
+three. **Note for Phase 10 and for anyone reading that file: it commits a machine-specific absolute
+path into a tracked artifact.** That predates this plan and is not this phase's to change, but it is
+now this repo's own path rather than a sibling's, which makes it more visible rather than less.
+
+**8. Phase 10's instruction to delete `test_h_dot_below_nfc.py`'s `import wlc_paths` at `:50` is
+stale, and one more re-vendor was owed than this phase expected.** That import is already gone —
+this phase changed it, as its own list of the eight test modules says. What Phase 10 will find there
+is the `_Scope` and `_WLC_EXCLUDE_DIR_PREFIXES`, and a `from mb_cmn import paths` that must stay
+because the MAM-basics and UXLC-utils scopes use it. Separately, `mb_cmn/paths.py` is vendored into
+holman-ketiv-qere, so editing it drifted this repo's own audit — Precondition 4's mechanism firing
+even though the work it names is finished. Phase 1's finding 5 ordering was applied rather than
+rediscovered and cost the predicted one commit each side: destination first (`637237b`, whose pull
+also carried `uxlc_misc/my_uxlc.py` forward from `e4d7997`, a second thing nothing had re-vendored
+since 13:35 that day; holman-ketiv-qere's own suite passes, 51 tests), then the audit, then the audit
+commit. **What is left differing is NOT this phase's and was recorded rather than fixed**:
+`mb_cmn/uxlc_change_url.py` against mgketer and book-of-job, both stale since `e4d7997`. book-of-job's
+copies have mechanism `unknown` and category `stale`, so nothing syncs that repo by script; mgketer's
+are an active `copy_script` destination, but whether mgketer wants the hcanat.us default is a question
+for whoever made that change.
+
+**One prediction of this plan's that came out exactly wrong, and it is worth a line because a later
+phase may reuse the reasoning.** Verify step 3 expects "roughly 509" of the 620 rewritten and "~111"
+not. Measured: **351 rewritten, 269 not.** The two groups the plan names reproduce to the file — 73
+static assets under `gh-pages/wlc/accgram/` and 38 under `out/accgram/goerwitz-stderr/`, 111 exactly
+— but the estimate counted only those, and **forgot that the whole of `in/` is committed INPUT that
+nothing regenerates**: 94 files there, plus 54 images under `gh-pages/wlc/wlc-a-notes/img/` and
+`gh-pages/wlc/420422/img/`, plus `doc/` 6 and `.github/` 1. The plan's own instruction is the right
+one and was followed — say which files are proved by layer 2 and which only by layer 1 — but the
+number attached to it was built from the output trees alone.
 
 ---
 
@@ -1769,7 +1954,10 @@ zero diff. Check for untracked residue — `git rm` leaves it behind — though 
 - **A stale `wlc_paths` call site is invisible to `git status`**, because it rewrites a file to
   identical bytes. Phase 5's mtime snapshot is the only thing that catches it, and if Phase 10
   lands before it is caught the generator starts failing on a directory that no longer exists —
-  loud, but a phase late.
+  loud, but a phase late. **Retired 2026-08-12: the snapshot was taken and found zero touched
+  files, so there is no stale call site to find. A DIFFERENT invisibility bit this phase instead,
+  and Phase 8 should carry it forward — a path computed from a path PART rather than from an
+  accessor is invisible to any search for the accessor. Phase 5's finding 1.**
 - **Concurrent page work destroys the oracle.** `PLAN-two-accents-on-one-chanted-word.md` is live
   and generates accgram pages. Precondition 1, and Ben's call.
 - **Enabling Pages publishes `gh-pages/` and only `gh-pages/`** on a repo that has published
