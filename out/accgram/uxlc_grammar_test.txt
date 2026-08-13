@@ -1,21 +1,21 @@
 === OUT set: WLC-4.22 vs UXLC grammaticality (changes NOT in prose output) ===
 
-prose-corpus verses          : 201  (218 changes)
-  validated                  : 187 verses (203 changes)
-  excluded                   : 14 verses (15 changes)
+prose-corpus verses          : 211  (228 changes)
+  validated                  : 196 verses (212 changes)
+  excluded                   : 15 verses (16 changes)
 
-  of validated: scanner-VISIBLE change 99, no-op 88
+  of validated: scanner-VISIBLE change 105, no-op 91
 
 2x2 over validated VERSES (all):
-  WLC-gram    -> UXLC-gram   : 176
+  WLC-gram    -> UXLC-gram   : 183
   WLC-gram    -> UXLC-ungram : 10
-  WLC-ungram  -> UXLC-gram   : 0
+  WLC-ungram  -> UXLC-gram   : 2
   WLC-ungram  -> UXLC-ungram : 1
 
 2x2 over scanner-VISIBLE verses (the meaningful denominator):
-  WLC-gram    -> UXLC-gram   : 88
+  WLC-gram    -> UXLC-gram   : 92
   WLC-gram    -> UXLC-ungram : 10
-  WLC-ungram  -> UXLC-gram   : 0
+  WLC-ungram  -> UXLC-gram   : 2
   WLC-ungram  -> UXLC-ungram : 1
 
 WLC-gram -> UXLC-ungram (degradation): 10 verses
@@ -30,7 +30,9 @@ WLC-gram -> UXLC-ungram (degradation): 10 verses
     Jer 52:18.10     [accent/substitution] Change revia on pe to zaqef qatan.
     Josh 14:10.4     [accent/substitution] Change munah under vav to meteg. Add note 'm'.
 
-WLC-ungram -> UXLC-gram (fix): 0 verses
+WLC-ungram -> UXLC-gram (fix): 2 verses
+    Ex 38:12.6       [accent/substitution] Change merkha under he to meteg. Add note 'm'.
+    Judg 11:24.7     [accent/substitution] Change mercha under tav to munah.
 
 Excluded verses (synth could not be validated):
     1Chr 10:1.4                  ref-mismatch: synth WLC word != real M-C word
@@ -46,12 +48,13 @@ Excluded verses (synth could not be validated):
     Jer 27:13.7                  ref-mismatch: synth WLC word != real M-C word
     Jer 48:27.13                 ref-mismatch: synth WLC word != real M-C word
     Josh 2:3.7                   UXLC-39 cross-check: doubled stress-helper accent
+    Lev 25:20.3                  ref-mismatch: synth WLC word != real M-C word
     Num 11:24.2                  ref-mismatch: synth WLC word != real M-C word
 
 By-kind breakdown of solo-change verses (confidence buckets):
   add_accent        : WLC-gram->[g  13 / u   2]   WLC-ungram->[g   0 / u   0]
   remove_terminator : WLC-gram->[g   0 / u   2]   WLC-ungram->[g   0 / u   0]
-  substitution      : WLC-gram->[g 148 / u   6]   WLC-ungram->[g   0 / u   1]
+  substitution      : WLC-gram->[g 155 / u   6]   WLC-ungram->[g   2 / u   1]
 
 
 === IN set: WLC-4.22 vs UXLC grammaticality (changes IN prose output) ===
@@ -129,9 +132,9 @@ By-kind breakdown of solo-change verses (confidence buckets):
 
 === Directional asymmetry across the grammaticality boundary ===
 
-  OUT set: WLC-gram->UXLC-ungram 10, WLC-ungram->UXLC-gram 0.
+  OUT set: WLC-gram->UXLC-ungram 10, WLC-ungram->UXLC-gram 2.
   IN  set: WLC-ungram->UXLC-gram 29, WLC-gram->UXLC-ungram 0.
 
-  The changes the prose ungrammatical notes flagged (IN set) only ever repair
-  ungrammaticality; the changes they did not flag (OUT set) only ever
-  introduce it.  No fix leaks into OUT and no degradation leaks into IN.
+  The asymmetry does NOT hold as stated. Crossing the wrong way:
+    OUT set: ex 38:12 (Ex 38:12.6) -- WLC-ungram->UXLC-gram, a fix
+    OUT set: ju 11:24 (Judg 11:24.7) -- WLC-ungram->UXLC-gram, a fix
