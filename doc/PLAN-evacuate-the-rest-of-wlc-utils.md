@@ -14,7 +14,7 @@ to this file's first commit apart from its header, so `git show` recovers it.
 **So do not re-create one.** If a future session drafts in `~/.claude/plans/` again, fold it in
 here and delete it, as `8daef35` did with two such scratch plans.
 
-**Phases 0 through 7 are done — 0 and 1 on 2026-08-11, 2 through 5 on 2026-08-12, 6 and 7 on
+**Phases 0 through 8 are done — 0 and 1 on 2026-08-11, 2 through 5 on 2026-08-12, 6 through 8 on
 2026-08-13. Nothing has been deleted from wlc-utils: it holds the same 626 tracked files it always
 did, still at `c501dc0`.**
 Phase 3 **copied** 620 of them into MAM-basics rather than moving them — that is the dual-residency
@@ -24,12 +24,14 @@ fired the first deploy, and Phase 6 added `gh-pages/index.html` on 2026-08-13, s
 `https://bdenckla.github.io/MAM-basics/` and everything under `/wlc/` both serve. **Every URL any
 other repository cites has been fetched and checked** — Phase 6's execution record has the table.
 Phase 0 is a preflight, Phase 1 edits only `py/mb_cmn/provenance.py` and its test, and Phase
-2 edits only MAM-basics' own `.gitattributes`, and Phases 4, 6 and 7 edit only MAM-basics' own
-licence, site and generator files, so the only thing any of the eight phases changed in
+2 edits only MAM-basics' own `.gitattributes`, and Phases 4, 6, 7 and 8 edit only MAM-basics' own
+licence, site, generator and source files, so the only thing any of the nine phases changed in
 wlc-utils is the freeze notice Phase 0 was asked to land there — see Precondition 1. **Phase 7 is
 the one intentional artifact change in the plan and it has landed**: one `href` on
 `gh-pages/wlc/420422/index.html`, in its own commit so that no later phase's zero-diff oracle
-carries a real diff inside it. Phases 8
+carries a real diff inside it. **Phase 8 changed no artifact at all**: the 155 redirect stubs it
+builds go to a gitignored scratch directory, and `build --publish` is what Phase 9 uses to land
+them in wlc-utils. Phases 9
 through 11 are unstarted. (This paragraph read "Nothing has been executed. Every phase below is
 unstarted" until Phase 0 ran, and has been rewritten at each phase since. Until Phase 3 it also said
 "No file has moved yet" and "no GitHub setting has been touched"; until Phase 6 it said the site
@@ -40,8 +42,12 @@ why they are replaced here rather than softened.)
 `py/wlc_paths.py` is deleted and every generator resolves its corpus under `paths.repo_root()`, so a
 MAM-basics worktree now isolates the generated artifacts as well as the source. Measured, not
 asserted: a full circuit run left wlc-utils with zero files touched by mtime. What still reaches
-that repo from `py/` is one **read** — `test_h_dot_below_nfc.py`'s wlc-utils NFC scope, which Phase
-5 was told to leave and Phase 10 deletes.
+that repo **in a routine run** is one **read** — `test_h_dot_below_nfc.py`'s wlc-utils NFC scope,
+which Phase 5 was told to leave and Phase 10 deletes. **Phase 8 added a second path, and "routine"
+is what keeps this paragraph true**: `py/wlc_redirect/stubs.py`'s `wlc_utils_pages_dir` reaches the
+same sibling, but nothing runs it except `main_wlc_redirect_stubs.py check` with no `--dir` and
+`build --publish` — no mega step, no test — so a suite run and a circuit run still leave wlc-utils
+alone. Phase 8's finding 1 has the full disposition of all three sites that name that sibling.
 
 Written 2026-08-03, on the model of `doc/PLAN-evacuate-python-from-wlc-utils.md`, which is its
 precedent in shape and in discipline. Every number below is stated with the command that
@@ -65,8 +71,8 @@ stale).
 | 5 — Collapse `wlc_paths.py`; repoint every generator | **DONE 2026-08-12**, MAM-basics `5ed6bb4` + `3edbc5b` + `6fd9a9c` + this write-back, plus one re-vendor commit in holman-ketiv-qere (`637237b`). **The plan's sharpest assertion holds: wlc-utils came through a full circuit run with ZERO files touched**, by mtime and not merely by `git status`, and zero across the whole session. Against wlc-utils as the frozen reference, **614 of the 620 moved paths are byte-identical** — every one of the 284 `gh-pages/wlc/` files included — and the six that differ have two named causes, neither of them a move bug. Suite **903 passed / 5 skipped / 57 subtests**, `ruff` clean, `black` clean at **770** files, one fewer than the baseline 771 because `wlc_paths.py` is gone. **Eight findings, the sharpest being that the plan missed a relative-link computation that would have rewritten the stylesheet href on all 154 pages at once.** Findings under Phase 5 below |
 | 6 — Pages live on MAM-basics — ~~**manual gate**~~ **no gate left** | **DONE 2026-08-13**, MAM-basics `c50745a` + this write-back. `gh-pages/index.html` closes the root 404 that had stood since Phase 3, and its deploy went green — run `31710845632`. **The workflow Phase 3 landed is byte-identical to wlc-utils' own**, so the "Copy … verbatim" paragraph reproduces clause for clause with zero differences. **The check list ran 12 of 12 as expected**: 11 URLs at 200 with the served bytes sha256-identical to the committed file, and `/wlc/accgram/` at 404 by design — filed as #230. The stylesheet and the font both resolve and serve at both depths that reference one, and all four fragment anchors are present in the served HTML. Suite **903 passed / 5 skipped**, `ruff` clean, `black` clean at **770** files; no Python touched, no generator and no circuit run. Five findings, the sharpest being that **this phase's own verify list calls `wlc/index.html` a depth-1 page exercising `../style.css`, and it is the one page on the site that references no stylesheet at all**. Findings under Phase 6 below |
 | 7 — Repoint the `420422` blob URL | **DONE 2026-08-13**, MAM-basics `a8a9875` + this write-back. The regenerated diff is **exactly what this phase predicts — one source line and one `href`**, in two files and no others. The new blob URL returns **200**, and so does the old one, wlc-utils holding the file until Phase 10; the two are **the same blob, `57439cd` in either repo**, so the destination content does not change, only the repository serving it. `git grep "bdenckla/wlc-utils" -- py gh-pages` is down to three hits and **not one is a link to content**: two commented-out `issues/NN` citations and one prose mention of `bdenckla/wlc-utils-**private**`, a different repository the pattern matches as a prefix. Suite **903 passed / 5 skipped**, `ruff` clean, `black` clean at **770** files. **No circuit run, and the judgement not to run one is recorded below** — the generator is a leaf. Four findings, the sharpest being that **this phase's own instruction to find the constant by the URL string rather than by line number does not work as written**: black split the URL across two adjacent string literals, so the URL the page carries appears nowhere in the source. Findings under Phase 7 below |
-| 8 — The redirect-stub generator | **not started — and it is next.** It writes only to a scratch directory and publishes nothing, so it is inert toward both repos' trees; Phase 9 depends on it |
-| 9 — Flip wlc-utils' `gh-pages/` to stubs — ~~**gated on 6**~~ **gate met** | **not started**, but its gate is no longer open: Phase 6 was deployed and HTTP-verified on 2026-08-13, which is what that phase's heading requires. Phase 8 still has to build the stubs first |
+| 8 — The redirect-stub generator | **DONE 2026-08-13**, MAM-basics `6a7347d` + `520dc27` + this write-back. `build --out <scratch>` writes **155 files** — 154 page stubs and `404.html` — and `check` over them passes; the three spot-reads at depths 0, 1 and 2 each name their own path's prefix rewrite in all four carriers. **`git status --porcelain` held only the four new source files**, so no tracked artifact moved in either repo and no circuit was run or needed. Suite **905 passed / 5 skipped**, up 2 from 903, and the delta is exactly the new entry point's two parametrized tests in `test_entry_point_subcommands.py`; `ruff` clean, `black` clean at **774** files, up 4 for the four new modules. Phase 6's finding 4 checked rather than assumed: `420422/` and `wlc-a-notes/` get stubs and `accgram/` correctly gets none, all three falling out of the derivation with no special case. Five findings, the sharpest being that **"the last remaining reference to the sibling" describes the state after Phase 10, not this one** — three sites name wlc-utils now and they need three different dispositions. Findings under Phase 8 below |
+| 9 — Flip wlc-utils' `gh-pages/` to stubs — ~~**gated on 6**~~ **gate met** — and it is next | **not started**, but nothing gates it any more: Phase 6 was deployed and HTTP-verified on 2026-08-13, and Phase 8's generator landed the same day. Run `build --publish`, which writes into wlc-utils' `gh-pages/` without a sibling path having to be spelled, then `check` with no `--dir`. **The first phase since Phase 0 to commit inside wlc-utils**, and the first to change what the public web serves |
 | 10 — Empty the rest of wlc-utils | **not started** |
 | 11 — Cross-repo bookkeeping | **not started** |
 
@@ -533,6 +539,14 @@ eight and this paragraph says seven — and one of them, `test_h_dot_below_nfc.p
 scope, still reaches into the sibling by Phase 5's own instruction to leave it for Phase 10. It is a
 read, and the assertion this section exists to make was tested directly and held: a full circuit run
 touched **zero** files in wlc-utils.
+
+**The one call this section predicts was built on 2026-08-13** — `py/wlc_redirect/stubs.py`'s
+`wlc_utils_pages_dir`, which is `paths.require_sibling("wlc-utils", paths.sibling_repo("wlc-utils"))`
+plus `/ "gh-pages"`, and is the only place in the tree that resolves the real clone for any purpose
+but a test. It is reached by `main_wlc_redirect_stubs.py check` with no `--dir` and by
+`build --publish`, and by nothing else, so it does not disturb the zero-files-touched result above.
+Phase 8's finding 1 disposes of all three sites naming that sibling, one of which is not a
+resolution and must survive Phase 10.
 
 ---
 
@@ -1985,18 +1999,16 @@ Checked while here, since the link and the number make one claim between them: t
 not add a test for it — a count pinned in a test is the example-based shape `CLAUDE.md` rules out,
 and the honest fix if it ever matters is to derive the number rather than assert it.
 
-**Next is Phase 8, the redirect-stub generator.** It is the largest of the remaining phases and the
-safest: it adds `py/main_wlc_redirect_stubs.py` and `py/wlc_redirect/`, writes its 155 stubs to a
-**scratch directory**, and publishes nothing — so it changes no tracked artifact in either repo and
-has no oracle to disturb. Phase 9 cannot run until it exists, and Phase 9's own gate is already met.
-(This paragraph replaces the "Next is Phase 7" pointer that stood at the end of Phase 6's execution
-record. It was a forward pointer rather than a record of what Phase 6 did, and two of them in one
-file, naming different phases, is precisely what misleads the fresh session this plan is written
-for — so the convention is one such paragraph, at the end of the latest record.)
+(A "Next is Phase 8" paragraph stood here until Phase 8 ran on 2026-08-13, and was deleted rather
+than left, by the convention it stated: **one forward pointer per file, at the end of the latest
+execution record.** It replaced a "Next is Phase 7" pointer at the end of Phase 6's record for the
+same reason — a forward pointer is not a record of what the phase did, and two of them naming
+different phases is precisely what misleads the fresh session this plan is written for. The live
+one is at the end of Phase 8's record below.)
 
 ---
 
-## Phase 8 — The redirect-stub generator
+## Phase 8 — The redirect-stub generator — DONE 2026-08-13
 
 *In MAM-basics only.* Nothing is published; it writes to a scratch directory.
 
@@ -2036,6 +2048,124 @@ allowed test shapes — not an example-based unit test.
 three depths; and confirm the generator resolves wlc-utils through
 `paths.require_sibling("wlc-utils", paths.sibling_repo("wlc-utils"))` — **the last remaining
 reference to the sibling in the whole tree.**
+
+### Execution record — Phase 8, 2026-08-13
+
+Began at MAM-basics `104d5db`, wlc-utils `c501dc0`, holman-ketiv-qere `637237b`, with **the whole
+Phase 7 baseline reproducing exactly** — MAM-parsed `95f64d7`, MAM-simple `bae0bff`, MAM-with-doc
+`d2dc6e5`, MAM-OSIS `a037a76`, MAM-for-Sefaria `5f41c16`, UXLC-utils `4d70cf4`, MAM-private
+`20dfb63`, every one of the ten clean, `git worktree list` one line in each of MAM-basics and
+wlc-utils, and the tracked counts at **1906** here and **626** there. Precondition 4 checked on
+both logs as instructed: holman-ketiv-qere clean and last committed 2026-08-12 23:05, and
+MAM-basics' own log showing nothing since but this plan's Phases 5 through 7. No mismatch anywhere,
+so this record, like Phase 7's, has no baseline drift to report.
+
+**Landed as two commits.** `6a7347d` is the generator and nothing else — `py/main_wlc_redirect_stubs.py`
+plus `py/wlc_redirect/{stubs,build,check}.py`, 517 lines across four new files. `520dc27` is a
+comment this phase made false, kept separate so the first commit's diff stays exactly the new
+source files, which is this phase's verification (finding 1).
+
+**The verification the phase asks for, in its own order.** `build --out .novc/wlc-rest-phase8/stubs`
+writes **155 files** — 154 page stubs and `404.html` — and `check --dir` over them passes with exit
+0. Three stubs read at three depths, and each names its own path's prefix rewrite in all four
+carriers: `index.html` at depth 0, `accgram/supplied-marks.html` at depth 1 (the page UXLC-utils'
+four fragment links point into), and `420422/full-record/420422-54.html` at depth 2 (one of
+`document-index/README.md`'s four cited paths). The sibling resolution is
+`py/wlc_redirect/stubs.py`'s `wlc_utils_pages_dir`, one call, spelled exactly as the phase
+requires — but "the last remaining reference in the whole tree" is not true today and finding 1
+says what is.
+
+**`git status --porcelain` held only the four new source files, so no tracked artifact moved in
+either repo**, which is this phase's whole claim and is why no circuit ran — Phase 7's finding 3
+applied as written. wlc-utils came through at `c501dc0` with an empty status even after `check`
+read all 154 of its pages; the eight other sibling repos were clean before and after.
+
+**Phase 6's finding 4 checked rather than assumed, and the derivation gets all three cases right on
+its own.** `420422/` and `wlc-a-notes/` — the two directory URLs `document-index/README.md` cites
+without naming a file — each hold an `index.html`, so each gets a stub that a bare directory URL
+reaches. `accgram/` holds none, so it gets none and falls to the `404.html` catch-all, which is
+faithful: that URL 404s today and always did (#230). Nothing in the generator special-cases a
+directory; the three outcomes fall out of filtering the page listing to `*.html`.
+
+Suite **905 passed / 5 skipped / 57 subtests**, up 2 from the 903 that had held since Phase 0, and
+**the delta is fully accounted for**: `test_entry_point_subcommands.py` discovers entry points by
+scanning `py/main_*.py` for `add_subparsers(`, that count went 10 to 11, and it has two
+parametrized tests, so the new entry point brings exactly two. No new test file was added, for the
+reason under finding 3. `ruff check py` clean; `black --check py` clean at **774** files, up 4 from
+Phase 7's 770 — the four new modules, one each.
+
+#### Findings
+
+**1. "The last remaining reference to the sibling in the whole tree" describes the state after
+Phase 10, not the state this phase leaves.** Three sites in `py/` name wlc-utils as a sibling once
+this phase lands, and they need three different dispositions, so Phase 10 should not read the
+phrase as "delete the one that is left":
+
+- `py/wlc_redirect/stubs.py`'s `wlc_utils_pages_dir` — the new one, and the one that stays. It is
+  what Phase 9 writes through and what Phase 9's own verification lints with.
+- `py/tests/test_h_dot_below_nfc.py:190` — the NFC scope. **This plan's own head paragraph already
+  says Phase 10 deletes it**, and Phase 10's text names the lines, so the two statements were
+  already in tension before this phase; the count was one because that head paragraph is about
+  *routine* runs and this phase's verify line is about the tree.
+- `py/tests/test_mb_cmn_paths.py:106` — **not a resolution at all, and it must stay.** It is the
+  unit test proving `REPO_WLC_UTILS_DIR` and `REPO_WLC_UTILS_PRIVATE_DIR` are distinct environment
+  variables rather than one shadowing the other; it resolves a fake `/pub` under a mocked
+  environment and never looks at a clone. A Phase 10 sweep for the string `sibling_repo("wlc-utils")`
+  would catch it, and deleting it would delete a test of the override chain that has nothing to do
+  with wlc-utils existing.
+
+The NFC scope's comment additionally read *"THE ONE PATH IN py/ THAT STILL LEAVES THIS CHECKOUT"*,
+which this phase falsified. `520dc27` qualifies it to "in a routine run" and names the other one,
+rather than bumping a count: the generator's path is **asked for** — nothing reaches it but
+`check` with no `--dir`, and `build --publish` — so no mega step and no test reaches wlc-utils, and
+a suite run and a circuit run still leave that repo alone, which is the property Phase 5 measured.
+
+**2. A lint that has only ever passed is not known to work, and proving `check` can fail meant
+pointing it at the real pages.** At Phase 8 there is no committed stub tree anywhere, so `check`'s
+default target — wlc-utils' own `gh-pages/` — still holds the 154 real pages. That is the negative
+test, and it is a good one: **654 problems, exit 1**, each page reported for naming the target in
+no canonical link, no meta refresh and no script, and `404.html` reported absent. Three more
+failure modes were exercised by hand on a copy of the scratch tree: a deleted stub (reported as a
+published page with no stub), an added one (a stub standing in for no page), a target edited to
+the wrong path (reported with both URLs it names), and a `--dir` that does not exist (reported as
+a problem, **not** a skip, per `CLAUDE.md`'s missing-input rule). All four messages name the fix.
+
+**3. The JavaScript is the one part this phase cannot execute, and Phase 9 is where it gets
+exercised — do not let that slip.** The stubs sit in a scratch directory that nothing serves, and
+there is no `node` on this machine, so the fragment-carrying `location.replace` and `404.html`'s
+prefix strip are verified **by reading, not by running**. Phase 9 already names the right test —
+*"The four fragment links are the acceptance test for the JS half specifically — check in a
+browser that it lands on the anchor, not merely on the page"* — and this finding is here so that
+line is read as load-bearing rather than as belt-and-braces. No pytest module was added for the
+same reason it would have been circular: until Phase 9 lands there is no committed stub tree to
+lint, and a test that built one to a temp directory first would be checking the generator against
+itself. `check` is the lint, run by hand, which is what this phase's own text asks for.
+
+**4. Where `build` writes by default was left open, and the answer is a safety decision Phase 9
+needs to know about.** The phase says "writes them to a scratch directory and publishes nothing",
+which describes this phase's run rather than the program's default. So `--out` defaults to the
+gitignored `.novc/wlc-redirect-stubs/` and **`--publish` is what targets wlc-utils** — the safe
+destination is the one you get by saying nothing, and writing into another repository takes saying
+so. **Phase 9 runs `build --publish`**, and does not have to spell a sibling path. The two are a
+mutually exclusive group, so neither can be given twice over. `build` deletes nothing: Phase 9's
+removal of the 130 non-HTML assets is a `git rm` that phase does, and a stub whose page has since
+gone is reported by `check` rather than silently cleaned up.
+
+**5. `404.html` carries three of the four things a page stub carries, and the missing two are
+missing for a reason.** It has no `<link rel="canonical">`, because it answers many paths and each
+has its own current copy, and no `<meta http-equiv="refresh">`, because a meta refresh takes a
+fixed URL and the URL here is derived from the path that was asked for. So it is the one file in
+the tree with **no fixed target to compare**, and `check` gives it its own three requirements —
+the script, the visible link, and the `/wlc-utils/` prefix it strips — rather than exempting it
+from checking. Worth stating because the obvious implementation checks every `.html` the same way
+and then either fails on `404.html` forever or skips it entirely.
+
+**Next is Phase 9, the flip of wlc-utils' `gh-pages/` to stubs.** Its hard gate on Phase 6 was met
+on 2026-08-13, and its dependency on this phase is now met too: `build --publish` writes the 155
+files into that repo's tree, and `check` with no `--dir` lints them where they land. It is **the
+first phase since Phase 0 to commit inside wlc-utils**, and the first to change what the public
+web serves — so its own verification, the browser check of the four fragment links above all, is
+the real gate rather than a formality.
 
 ---
 
@@ -2100,7 +2230,18 @@ moved to `MAM-basics/doc/`**. Keep the "a bare `#NN` here means a wlc-utils issu
 repoints its readers.
 
 **In MAM-basics, same session:** delete the wlc-utils `_Scope` at `test_h_dot_below_nfc.py:157-167`,
-`_WLC_EXCLUDE_DIR_PREFIXES` at `:118`, and the `import wlc_paths` at `:50`. What survives in
+`_WLC_EXCLUDE_DIR_PREFIXES` at `:118`, and the `import wlc_paths` at `:50`. **Two of those three
+anchors have moved or gone — locate them by name, per Phase 7's finding 1.** Checked 2026-08-13:
+`_WLC_EXCLUDE_DIR_PREFIXES` is at `:142` and the `_Scope` around `:180-210`, both found by
+identifier; and **there is no `import wlc_paths` left to delete**, Phase 5 having deleted that
+module outright on 2026-08-12, so that third item is already done rather than pending.
+
+**And do not sweep for the string `sibling_repo("wlc-utils")` — one of its three sites must
+survive.** `py/wlc_redirect/stubs.py`'s `wlc_utils_pages_dir` is the redirect generator's own
+resolution and is what keeps working after this phase; `py/tests/test_mb_cmn_paths.py:106` is not a
+resolution at all but the unit test proving `REPO_WLC_UTILS_DIR` and `REPO_WLC_UTILS_PRIVATE_DIR`
+are distinct environment variables, resolving a fake `/pub` under a mocked environment. Only the
+NFC scope above goes. Phase 8's finding 1 has the reasoning. What survives in
 wlc-utils is a README, a CLAUDE.md and 155 generated stubs; the scope's own comment says its floor
 of 10 exists *"to catch an exclusion filter that swallowed EVERYTHING, not to assert a tree
 size"*, and scanning 154 generated files is not what it was written for. Deleting a `_Scope`
