@@ -14,21 +14,24 @@ to this file's first commit apart from its header, so `git show` recovers it.
 **So do not re-create one.** If a future session drafts in `~/.claude/plans/` again, fold it in
 here and delete it, as `8daef35` did with two such scratch plans.
 
-**Phases 0 through 5 are done — 0 and 1 on 2026-08-11, 2 through 5 on 2026-08-12. Nothing has been
-deleted from wlc-utils: it holds the same 626 tracked files it always did, still at `c501dc0`.**
+**Phases 0 through 6 are done — 0 and 1 on 2026-08-11, 2 through 5 on 2026-08-12, 6 on 2026-08-13.
+Nothing has been deleted from wlc-utils: it holds the same 626 tracked files it always did, still at
+`c501dc0`.**
 Phase 3 **copied** 620 of them into MAM-basics rather than moving them — that is the dual-residency
-window — and the six loose root files stayed behind. **The site is live**, which is new as of Phase
-3: Ben enabled Pages on 2026-08-11, `.github/workflows/pages.yml` arrived with the corpus, and Phase
-3's push fired the first deploy, so `https://bdenckla.github.io/MAM-basics/wlc/` serves.
-`https://bdenckla.github.io/MAM-basics/` itself 404s until Phase 6 adds `gh-pages/index.html`, by
-design. Phase 0 is a preflight, Phase 1 edits only `py/mb_cmn/provenance.py` and its test, and Phase
-2 edits only MAM-basics' own `.gitattributes`, and Phase 4 edits only MAM-basics' two root licence
-files, so the only thing any of the six phases changed in
-wlc-utils is the freeze notice Phase 0 was asked to land there — see Precondition 1. Phases 6
+window — and the six loose root files stayed behind. **The site is live and complete**: Ben enabled
+Pages on 2026-08-11, `.github/workflows/pages.yml` arrived with the corpus at Phase 3, whose push
+fired the first deploy, and Phase 6 added `gh-pages/index.html` on 2026-08-13, so
+`https://bdenckla.github.io/MAM-basics/` and everything under `/wlc/` both serve. **Every URL any
+other repository cites has been fetched and checked** — Phase 6's execution record has the table.
+Phase 0 is a preflight, Phase 1 edits only `py/mb_cmn/provenance.py` and its test, and Phase
+2 edits only MAM-basics' own `.gitattributes`, and Phases 4 and 6 edit only MAM-basics' own licence
+and site files, so the only thing any of the seven phases changed in
+wlc-utils is the freeze notice Phase 0 was asked to land there — see Precondition 1. Phases 7
 through 11 are unstarted. (This paragraph read "Nothing has been executed. Every phase below is
 unstarted" until Phase 0 ran, and has been rewritten at each phase since. Until Phase 3 it also said
-"No file has moved yet" and "no GitHub setting has been touched"; both are now false, which is why
-they are replaced here rather than softened.)
+"No file has moved yet" and "no GitHub setting has been touched"; until Phase 6 it said the site
+root "404s until Phase 6 adds `gh-pages/index.html`, by design". All three are now false, which is
+why they are replaced here rather than softened.)
 
 **AS OF PHASE 5, NO PROGRAM WRITES INTO wlc-utils, AND THAT IS THE THING THE WHOLE PLAN WAS FOR.**
 `py/wlc_paths.py` is deleted and every generator resolves its corpus under `paths.repo_root()`, so a
@@ -57,10 +60,10 @@ stale).
 | 3 — Copy the corpus in (dual residency) | **DONE 2026-08-12**, MAM-basics `f99996f` + this write-back. **620 files land, not the 626 this phase's own verify line claims** — the six loose root files do not travel, exactly as Phase 0's disposition table says — so layer 1 reads **620 of 620 SHA-1 matches**, zero missing, zero mode mismatches, path deltas exactly the 284 `gh-pages/wlc/` prefixes and the one `lci_recs.json` rename. Suite **903 passed / 5 skipped**, ruff clean, black clean at 771 files, all unchanged; **wlc-utils untouched at `c501dc0`**, so Phase 0's manifest stands. **The site is live and the deploy went green**: 8 of 8 HTTP checks as expected, every page byte-identical to what was committed, and the site root 404s by design until Phase 6. Four findings, the sharpest being that **the NFC lint's first failure was a crash on an extensionless GIF, not the offender report this phase predicts**. Findings under Phase 3 below |
 | 4 — Licence scoping | **DONE 2026-08-12**, MAM-basics `20bb89e` + this write-back. Thirteen rows added to `DATA-LICENSES.md` and the CC0 1.0 text repeated verbatim at the end of it, beside the MAM statement — **but no CC0 `LICENSE` file was placed in any subtree**, because not one of the three trees this phase names holds only Ben's own work. Coverage checked mechanically rather than by eye: **620 of 620** moved paths are named by a licence statement, **276** are claimed for CC0, and **zero** of those 276 fall in the excluded set. Suite **903 passed / 5 skipped**, no Python touched, no generator or circuit run. Four findings, the sharpest being that **`gh-pages/wlc/` holds 124 scan crops of manuscripts and printed editions** — so this phase's own instruction to place a CC0 file there would have dedicated Koren's and the Leningrad Codex's photography to the public domain. Findings under Phase 4 below |
 | 5 — Collapse `wlc_paths.py`; repoint every generator | **DONE 2026-08-12**, MAM-basics `5ed6bb4` + `3edbc5b` + `6fd9a9c` + this write-back, plus one re-vendor commit in holman-ketiv-qere (`637237b`). **The plan's sharpest assertion holds: wlc-utils came through a full circuit run with ZERO files touched**, by mtime and not merely by `git status`, and zero across the whole session. Against wlc-utils as the frozen reference, **614 of the 620 moved paths are byte-identical** — every one of the 284 `gh-pages/wlc/` files included — and the six that differ have two named causes, neither of them a move bug. Suite **903 passed / 5 skipped / 57 subtests**, `ruff` clean, `black` clean at **770** files, one fewer than the baseline 771 because `wlc_paths.py` is gone. **Eight findings, the sharpest being that the plan missed a relative-link computation that would have rewritten the stylesheet href on all 154 pages at once.** Findings under Phase 5 below |
-| 6 — Pages live on MAM-basics — ~~**manual gate**~~ **no gate left** | **not started**, and **narrowed 2026-08-11**: its manual gate was Ben enabling Pages, done that day, and its "copy the workflow" step moved to Phase 3, which now publishes the site (Ben: "Let it land"). What remains here is `gh-pages/index.html`, checking the pins against the file Phase 3 landed, and the HTTP list |
+| 6 — Pages live on MAM-basics — ~~**manual gate**~~ **no gate left** | **DONE 2026-08-13**, MAM-basics `c50745a` + this write-back. `gh-pages/index.html` closes the root 404 that had stood since Phase 3, and its deploy went green — run `31710845632`. **The workflow Phase 3 landed is byte-identical to wlc-utils' own**, so the "Copy … verbatim" paragraph reproduces clause for clause with zero differences. **The check list ran 12 of 12 as expected**: 11 URLs at 200 with the served bytes sha256-identical to the committed file, and `/wlc/accgram/` at 404 by design — filed as #230. The stylesheet and the font both resolve and serve at both depths that reference one, and all four fragment anchors are present in the served HTML. Suite **903 passed / 5 skipped**, `ruff` clean, `black` clean at **770** files; no Python touched, no generator and no circuit run. Five findings, the sharpest being that **this phase's own verify list calls `wlc/index.html` a depth-1 page exercising `../style.css`, and it is the one page on the site that references no stylesheet at all**. Findings under Phase 6 below |
 | 7 — Repoint the `420422` blob URL | **not started** |
 | 8 — The redirect-stub generator | **not started** |
-| 9 — Flip wlc-utils' `gh-pages/` to stubs — **gated on 6** | **not started** |
+| 9 — Flip wlc-utils' `gh-pages/` to stubs — ~~**gated on 6**~~ **gate met** | **not started**, but its gate is no longer open: Phase 6 was deployed and HTTP-verified on 2026-08-13, which is what that phase's heading requires. Phase 8 still has to build the stubs first |
 | 10 — Empty the rest of wlc-utils | **not started** |
 | 11 — Cross-repo bookkeeping | **not started** |
 
@@ -1690,7 +1693,7 @@ number attached to it was built from the output trees alone.
 
 ---
 
-## Phase 6 — Pages live on MAM-basics
+## Phase 6 — Pages live on MAM-basics — DONE 2026-08-13
 
 *In MAM-basics, plus one manual action only Ben can take.*
 
@@ -1747,6 +1750,144 @@ it still bites: **the workflow triggers on push to `main` only**, so a branch pu
   after. **Record this explicitly**, because after Phase 9 a redirect landing on a 404 looks
   exactly like evacuation damage. File it as its own issue; fixing it is page work, and page work
   contends with this plan's oracle.
+
+### Execution record — Phase 6, 2026-08-13
+
+Began at MAM-basics `89b9b1d`, wlc-utils `c501dc0`, both clean, both pushed, neither holding a
+worktree — `git worktree list` gave exactly one line in each. MAM-basics holds **1905** tracked
+files, wlc-utils its unchanged **626**. Landed as `c50745a`, one commit, two files, pushed
+fast-forward with no force. **wlc-utils was not touched at all**, so Phase 0's manifest still
+stands.
+
+**Precondition 4 was checked on both logs and was clear.** holman-ketiv-qere clean, no worktree,
+its last commit `637237b` at 2026-08-12 23:05:35 — which is Phase 5's own re-vendor commit in that
+repo, not that undertaking's work. MAM-basics' own log holds nothing from it either: its last four
+commits are Phase 5's `5ed6bb4`, `3edbc5b`, `6fd9a9c` and `89b9b1d`, at 23:04 through 23:11 the
+same evening. So Ben's statement of 2026-08-12 that the work is finished held for a fourth phase
+running, on the evidence of both logs rather than one.
+
+**No generator, no mega and no circuit ran, and none was needed** — this phase adds a hand-written
+page and changes no generator, so there is no artifact to regenerate. `git status --porcelain`
+showed only `gh-pages/index.html` and `DATA-LICENSES.md` before the commit, and nothing after it.
+The baseline reproduced unchanged: suite **903 passed / 5 skipped**, the figure every phase from 0
+onward has measured; `ruff check py` clean; `black --check py` clean at **770** files, Phase 5's
+figure exactly. No Python was touched, so black had nothing to format.
+
+**The workflow reproduces the "Copy … verbatim" paragraph clause for clause, with zero
+differences.** `diff .github/workflows/pages.yml ../wlc-utils/.github/workflows/pages.yml` is
+empty — the file Phase 3 landed is byte-identical to the file this phase describes. Every clause
+checks out individually too: `on: push branches: [main]` plus `workflow_dispatch`; `contents:
+read` / `pages: write` / `id-token: write`; `concurrency: {group: github-pages,
+cancel-in-progress: true}`; `actions/checkout@v7`, `actions/configure-pages@v6`,
+`actions/upload-pages-artifact@v5` with `path: gh-pages`, `actions/deploy-pages@v5`. And no
+`CNAME`, `.nojekyll` or `_config.yml` exists anywhere in the tree, tracked — `git ls-files` finds
+none of the three.
+
+**`gh-pages/index.html` is hand-written, and it says so in a comment.** The three sibling repos
+whose `gh-pages/index.html` is generated — MAM-parsed, MAM-with-doc, MAM-OSIS — all open with a
+"Do not edit by hand" comment naming their generator in `MAM-basics/py/`, so an index page here
+carrying no marker either way would read as one whose generator had gone missing. It references no
+stylesheet, matching the two hand-written index pages in these repos: wlc-utils' own, which is
+`gh-pages/wlc/index.html` here, and UXLC-utils'.
+
+**The deploy went green: run `31710845632` on `c50745a`, conclusion `success`, 5 seconds of
+queue.** The four runs before it — `31663135208` on `89b9b1d` and the three Phase 5 commits before
+that — were all green too, so no red deploy has ever been left behind for a later phase to
+diagnose.
+
+**The check list ran 12 of 12 as expected, and every 200 was byte-checked rather than counted.**
+The script is `.novc\wlc-rest-phase6\phase6_http_check.py`; for each URL mapping to a committed
+file it sha256-compares the served bytes against that file, so a stub answering 200 would fail.
+
+| URL, under `https://bdenckla.github.io/MAM-basics/` | Result |
+|---|---|
+| `wlc/accgram/goerwitz.html` — the five tanach.us citations, all of this one URL | 200, bytes match |
+| `wlc/accgram/supplied-marks.html` — the two MAM-basics CLC tests' corroboration URL | 200, bytes match |
+| the same page with each of the four `#supplied-…` fragments UXLC-utils cites | 200, bytes match, and all four anchor targets present |
+| `wlc/accgram/printed-decalogue.html` — MAM-simple's link target | 200, bytes match |
+| `wlc/420422/`, `wlc/420422/full-record/420422-54.html`, `wlc/wlc-a-notes/` — three of `document-index`'s four deep paths | 200, bytes match; both directory URLs resolve to their `index.html` |
+| `wlc/accgram/` — `document-index`'s fourth, and wlc-utils' `README.md:42` | **404, and that is correct** — see finding 4 |
+| `wlc/` and the site root `/` | 200, bytes match; **the root is what this phase adds** |
+
+**The stylesheet and the font both load — the two things a 200 on the HTML does not prove.** Each
+page's `href` was resolved the way a browser resolves it, then fetched; then the stylesheet's own
+`@font-face` `src: url("woff2/Taamey_D.woff2")` was resolved against the stylesheet's location and
+fetched, and its first four bytes checked to be `wOF2`. Both two-deep pages tried
+(`wlc/420422/index.html`, `wlc/accgram/supplied-marks.html`) emit `../style.css`, both three-deep
+pages (`wlc/420422/full-record/420422-54.html`, `wlc/wlc-a-notes/ucp/uxlc_change_proposal_01.html`)
+emit `../../style.css`, and all four resolve to the single
+`…/MAM-basics/wlc/style.css`, which serves 200, whose font resolves to `…/MAM-basics/wlc/woff2/Taamey_D.woff2`,
+which serves 200 as a real woff2. **So Phase 5's finding 1 is confirmed live at both depths**: the
+relative-link computation it repaired is emitting the right prefix on the deployed site, not merely
+in the tree. One `img/` PNG was fetched as the binary case —
+`wlc/420422/img/1Kings17v15.png`, 433,717 bytes, PNG magic intact, sha256 matching the committed
+file.
+
+**The inbound sweep was re-run across every clone and the distinct URL set is unchanged at 12.**
+Raw occurrence counts have grown since Phase 0 and none of the growth is a new citation: MAM-basics
+now contributes 18 hits of its own, 9 of them its dual-resident copies of
+`in/UXLC-misc/all_changes.json` and `in/accgram/uxlc_accent_changes.json` and 5 of them this plan
+file's own prose. There are **20 clones now, not the thirty this plan swept on 2026-08-03**, the
+MAM-private programme having consolidated four of them. Six repos cite the old site: MAM-basics 18,
+UXLC-utils 25, wlc-utils 13, document-index 4, MAM-simple 1, and **holman-ketiv-qere 1, which
+Phase 0's five-repo sweep would not have reached** — see finding 5.
+
+**`https://bdenckla.github.io/MAM-basics/wlc/accgram/` 404s, and it is recorded rather than
+fixed**, as this phase requires: [#230](https://github.com/bdenckla/MAM-basics/issues/230), filed
+in MAM-basics per this repo's "Two issue trackers" section. That issue states outright that the
+404 is not evacuation damage, so that a Phase 9 redirect landing on it is not read as breakage.
+
+#### Findings
+
+**1. This phase's own verify list calls `wlc/index.html` a depth-1 page exercising `../style.css`,
+and it is the one page on the site that references no stylesheet at all.** The list says "`style.css`
+is referenced as `../style.css` from depth-1 pages and `../../style.css` from depth-2" and then
+names four pages. Measured 2026-08-13: `gh-pages/wlc/index.html` sits *beside* `gh-pages/wlc/style.css`
+and carries no `<link>` element whatever — it is a bare `<ul>` of seven links; the `../style.css`
+pages are one directory below that, and the `../../style.css` pages two. So the four named pages
+exercise three behaviours rather than two, and the unstyled one is the site's own wlc index.
+**Nothing is broken, and that is exactly the risk**: a session reading the verify list would expect
+a `../style.css` on `wlc/index.html`, and could read its absence as a Phase 5 regression in the very
+computation Phase 5's finding 1 repaired. The check was run on both remaining depths instead, two
+pages each, which is what the list was reaching for.
+
+**2. The workflow needed no correction, so the "treat any difference as a finding" instruction
+found nothing — and the byte comparison is what makes that worth saying.** Reading the six clauses
+off the file and ticking them against the paragraph would have proved only that the clauses named
+are right. `diff` against wlc-utils' copy proves there is nothing in the file the paragraph fails
+to name, which is the stronger claim and the cheaper check.
+
+**3. The licence map did not cover the new page, and the gap was between two statements rather
+than inside either.** `DATA-LICENSES.md`'s GPL-3.0 paragraph enumerates `py/`, the Pages workflow
+under `.github/`, `doc/` and `out/`; its table's three `gh-pages` rows are all under
+`gh-pages/wlc/`. A file at `gh-pages/index.html` falls between the two and was named by neither.
+It went in as a **table row** rather than a clause in the paragraph, so that a path lookup finds it
+beside the other `gh-pages` rows, and the row says outright that it is not one of the pages the row
+below dedicates to CC0 — the distinction Phase 4 was careful about, kept careful. It is GPL-3.0 as
+MAM-basics' own work: written here, holding no corpus text, and never in `bdenckla/wlc-utils`.
+
+**4. `/wlc/accgram/` 404s and always did, in both repos — measured on both sides, not inferred
+from one.** `gh-pages/wlc/accgram/` holds 14 HTML pages and no `index.html`, and
+`git -C ../wlc-utils ls-files gh-pages/accgram/index.html` returns nothing at `c501dc0`, so the
+section served nothing before the copy and serves nothing after it. `wlc-utils/README.md:42`
+advertises the directory regardless, which is what makes the 404 reachable. #230 carries the
+detail, including that `gh-pages/wlc/index.html` links only 5 of the 14 pages individually, so the
+other 9 are reachable only from inside the section or by citation.
+
+**5. The sweep this plan prescribes reads five named repos, and a sixth now has a hit — which is
+Phase 0's finding 1 surfacing in a new place.** holman-ketiv-qere's `py/mb_cmn/paths.py:83` carries
+`bdenckla.github.io/wlc-utils/X`, this plan's own prefix-rewrite placeholder, because that file is
+a **vendored copy** of MAM-basics' `py/mb_cmn/paths.py` — the very vendoring that Precondition 4
+exists for. So it is not a URL to add: it is prose, and `X` is not a path. **The lesson for Phase
+11's re-sweep is that the repo list must be derived rather than typed** — the five-repo command
+this plan carries would have missed it, and a vendored copy of a file citing a real URL would have
+been missed the same way.
+
+**Next is Phase 7, and it is two lines.** It repoints the `420422` blob URL from
+`bdenckla/wlc-utils` to `bdenckla/MAM-basics`, **must land before Phase 10** empties `out/` and
+kills the old one, and takes **its own commit** — it is the single intentional artifact change in
+the whole plan, so folding it into a neighbouring phase would put a real diff inside a zero-diff
+oracle.
 
 ---
 
