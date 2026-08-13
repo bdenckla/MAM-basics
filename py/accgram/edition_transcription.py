@@ -133,7 +133,7 @@ times across nine files (2026-07-31), so grep "hyphen", "makaf" and מקף rathe
 HOW OFTEN IT ACTUALLY HAPPENS is measured, not asserted, and the measurement is NOT here.  The
 Tanakh-wide survey lives in ``maqaf_nonfinal_accents`` (+ ``_page``), which writes
 ``out/accgram/maqaf-nonfinal-accents.json`` and
-``gh-pages/accgram/maqaf-nonfinal-accents.html`` from one run, and is where this note's claims
+``gh-pages/wlc/accgram/maqaf-nonfinal-accents.html`` from one run, and is where this note's claims
 about rarity get their numbers.  Deliberately NO counts here: a number restated in a second file
 is a number nothing keeps in step, which is the whole reason the survey was moved out of this
 docstring.  What the page settles, qualitatively, is that an accent on a non-final atom happens in
@@ -167,7 +167,7 @@ import difflib
 import re
 from pathlib import Path
 
-import wlc_paths
+from mb_cmn import paths
 
 PASEQ = "\N{HEBREW PUNCTUATION PASEQ}"
 SOF_PASUQ = "\N{HEBREW PUNCTUATION SOF PASUQ}"
@@ -432,7 +432,7 @@ def transcriptions_dir() -> Path:
     Filenames are ``<edition>_<book>_<reading>``: the same Decalogue exists in more than one
     edition, so the edition has to be in the stem for the stems to stay distinct.
     """
-    return wlc_paths.in_dir() / "accgram" / "edition_transcriptions"
+    return paths.in_dir() / "accgram" / "edition_transcriptions"
 
 
 def strand_name(key: tuple[str, str, str]) -> str:

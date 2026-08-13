@@ -33,9 +33,8 @@ from accgram.prose_ply_grammar import LOCATION_ONLY, build_parser, parse_tokens
 from accgram.prose_scanner import scan_book
 from accgram.tree import TN, add_leaves, tree_to_obj
 from mb_cmn import file_io
+from mb_cmn import paths
 from mb_cmn import provenance
-
-import wlc_paths
 
 
 def _illegal_mark_tree(
@@ -214,11 +213,11 @@ def render_book(
 
 
 def default_input_path(repo_root: Path) -> Path:
-    return wlc_paths.out_dir() / "wlc422-kq-u"
+    return paths.out_dir() / "wlc422-kq-u"
 
 
 def default_out_dir(repo_root: Path) -> Path:
-    return wlc_paths.out_dir() / "accgram" / "prose"
+    return paths.out_dir() / "accgram" / "prose"
 
 
 def add_args(parser: argparse.ArgumentParser, repo_root: Path) -> None:
@@ -285,7 +284,7 @@ def _load_dual_cant_mam() -> dict[str, dict] | None:
     """Load the MAM-simple strands for the dual-cantillation loci, or None if the
     sibling MAM-simple corpus is absent (the normal prose run does not require it; the
     detangled dual-cant fold-in is then simply skipped)."""
-    mam_dir = mam_simple_verse.default_mam_simple_dir(wlc_paths.wlc_data_root())
+    mam_dir = mam_simple_verse.default_mam_simple_dir(paths.repo_root())
     if not mam_dir.is_dir():
         return None
     return mam_simple_verse.load_mam_simple_for_refs(

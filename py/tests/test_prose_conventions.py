@@ -19,7 +19,7 @@ replaced convention are exactly that, and there is no way to write one without
 naming the thing.
 
 WHAT IS SCANNED.  Every non-vendored ``py/**/*.py``, plus the committed
-renderings the page modules generate: ``gh-pages/accgram/*.html`` and
+renderings the page modules generate: ``gh-pages/wlc/accgram/*.html`` and
 ``out/accgram/**/*.json``, scanned as plain text (wlc-utils#87 item 19 -- the wlc-utils#80 sweep
 of 2026-07-27 fixed the module sources but left
 ``out/accgram/dual-cant/_dual_cant.json`` holding the swept wording for two
@@ -90,7 +90,6 @@ from __future__ import annotations
 import pathlib
 import re
 
-import wlc_paths
 from mb_cmn import paths
 
 # Lines bearing this pragma are exempt.
@@ -176,30 +175,31 @@ _NOISE = re.compile(r"[\"'\s]+")
 def _scan_targets():
     """Yield (root, path) pairs; offender paths are shown relative to root.
 
-    TWO ROOTS.  The sources are under this repo (the CODE root); the committed
-    renderings they generate stayed in wlc-utils (the DATA root) when the Python
-    moved out of it.  Each pair carries the root its own path is relative to, so
-    an offender still reads as a repo-relative path rather than an absolute one.
+    ONE ROOT SINCE 2026-08-12.  The sources and the committed renderings they generate
+    are both under this repo now.  They were two roots until then -- the renderings
+    stayed in wlc-utils when the Python moved out of it, and came home at Phase 3 of
+    ``doc/PLAN-evacuate-the-rest-of-wlc-utils.md``.  Each pair still carries a root, so
+    an offender reads as a repo-relative path rather than an absolute one, and so the
+    shape survives if a second tree is ever scanned again.
     """
-    code_root = paths.repo_root()
-    py_root = code_root / "py"
+    repo_root = paths.repo_root()
+    py_root = repo_root / "py"
     this_file = pathlib.Path(__file__).resolve()
     for path in sorted(py_root.rglob("*.py")):
         if "__pycache__" in path.relative_to(py_root).parts:
             continue
         if path.resolve() == this_file:  # names every banned phrase by necessity
             continue
-        yield code_root, path
+        yield repo_root, path
     # The committed artifacts (module docstring, WHAT IS SCANNED).  Missing
     # inputs FAIL rather than silently narrowing the scan (cf. the skip
     # policy: a missing input must never report green).
-    data_root = wlc_paths.wlc_data_root()
-    html = sorted((data_root / "gh-pages" / "accgram").glob("*.html"))
-    json_files = sorted((data_root / "out" / "accgram").rglob("*.json"))
-    assert html, "no gh-pages/accgram/*.html found -- artifact scan would be empty"
+    html = sorted((paths.wlc_pages_dir() / "accgram").glob("*.html"))
+    json_files = sorted((paths.out_dir() / "accgram").rglob("*.json"))
+    assert html, "no gh-pages/wlc/accgram/*.html found -- artifact scan would be empty"
     assert json_files, "no out/accgram/**/*.json found -- artifact scan would be empty"
     for path in html + json_files:
-        yield data_root, path
+        yield repo_root, path
 
 
 def test_no_banned_prose_wording() -> None:

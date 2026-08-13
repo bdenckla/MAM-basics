@@ -4,7 +4,7 @@ import mb_cmn.my_utils as my_utils
 import py_html.wlc_utils_html as wlc_utils_html
 import py_wlc.my_wlc_bcv_str as my_wlc_bcv_str
 import py_wlc_a_notes.my_wlc_a_notes_intro as my_wlc_a_notes_intro
-import wlc_paths
+from mb_cmn import paths
 
 
 def write(records, xml_out_path, no_ucp=False):
@@ -77,7 +77,7 @@ def _write2(records, intro, title, path, no_ucp=False):
     table = wlc_utils_html.table(rows)
     body_contents = [*intro, table]
     write_ctx = wlc_utils_html.WriteCtx(
-        title, str(wlc_paths.gh_pages_dir() / "wlc-a-notes" / path), centered=True
+        title, str(paths.wlc_pages_dir() / "wlc-a-notes" / path), centered=True
     )
     wlc_utils_html.write_html_to_file(body_contents, write_ctx, "../")
 

@@ -37,7 +37,7 @@ import sys
 
 from accgram import prose_ob_notes
 
-import wlc_paths
+from mb_cmn import paths
 
 ACC = {
     "etnachta",  # translit-ok: UXLC accent names
@@ -202,8 +202,8 @@ def prose_st_uxlc_change_keys():
 
 
 def main():
-    src = wlc_paths.in_dir() / "UXLC-misc" / "all_changes.json"
-    out = wlc_paths.in_dir() / "accgram" / "uxlc_accent_changes.json"
+    src = paths.in_dir() / "UXLC-misc" / "all_changes.json"
+    out = paths.in_dir() / "accgram" / "uxlc_accent_changes.json"
     data = json.load(open(src, encoding="utf-8"))
     prose_st_keys = prose_st_uxlc_change_keys()
     result = []

@@ -4,7 +4,7 @@ import py_html.wlc_utils_html as wlc_utils_html
 import py_html.my_html_for_img as img
 import py_wlc.my_url_generator as urlg
 import py_wlc_diffs_420422.my_word_diffs_420422_utils as wd_utils
-import wlc_paths
+from mb_cmn import paths
 
 
 def write(io_records):
@@ -46,7 +46,7 @@ def _write_record(record):
     filename = _filename(orord)
     path = f"full-record/{filename}"
     write_ctx = wlc_utils_html.WriteCtx(
-        title, str(wlc_paths.gh_pages_dir() / "420422" / path), centered=True
+        title, str(paths.wlc_pages_dir() / "420422" / path), centered=True
     )
     wlc_utils_html.write_html_to_file(body_contents, write_ctx, "../../")
     return path

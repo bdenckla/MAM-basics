@@ -34,7 +34,7 @@ from accgram import printed_decalogue as pd
 # clone is a hard dependency of the check, not an optional enrichment -- so an absent one is
 # a misconfiguration.  Skipping would report green having compared nothing, in the very
 # channel this suite reserves for SEMANTIC skips (see test_edition_transcriptions' "diverges
-# from its Wikisource strand; the control needs an agreeing page").  ``wlc_paths.require_sibling``
+# from its Wikisource strand; the control needs an agreeing page").  ``paths.require_sibling``
 # turns the sibling's absence into a failure that names the two overrides that fix it.
 
 # Per strand: chanted verses, chanted words, and the kind of every vertical stroke in

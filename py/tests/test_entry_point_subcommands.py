@@ -68,7 +68,7 @@ _NOTHING_DISCOVERED = "(no py/main_*.py registers subcommands -- discovery is br
 def _entry_points_with_subcommands() -> list[str]:
     """Module stems of the ``py/main_*.py`` that register subcommands.
 
-    The CODE root, not wlc-utils' data root: this scans the tree the entry points
+    The repo root: this scans the tree the entry points
     now live in.
     """
     py_root = paths.repo_root() / "py"

@@ -9,7 +9,7 @@ import py_wlc.my_wlc_bcv_str as my_wlc_bcv_str
 import py_wlc_diffs_420422.my_dd_diffs_description as diffs_desc
 import py_wlc_diffs_420422.my_word_diffs_420422 as my_word_diffs_420422
 import py_wlc_diffs_420422.my_word_diffs_420422_utils as wd_utils
-import wlc_paths
+from mb_cmn import paths
 
 
 def add(io_records):
@@ -63,7 +63,7 @@ def _diff_detail(record):
 
 def _read_in_all_ucps():
     """Read in lci_recs.json, raw"""
-    path = wlc_paths.in_dir() / "UXLC-misc" / "all_changes.json"
+    path = paths.in_dir() / "UXLC-misc" / "all_changes.json"
     with open(path, encoding="utf-8") as in_fp:
         raw_ucps = json.load(in_fp)
     by_rai = {_release_and_id(raw_ucp): raw_ucp for raw_ucp in raw_ucps}

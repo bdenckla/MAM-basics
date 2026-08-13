@@ -14,9 +14,9 @@ from __future__ import annotations
 import argparse
 from pathlib import Path
 
-import wlc_paths
 from accgram import rtms_report
 from wlc_cmn.utf8_io import force_utf8_io
+from mb_cmn import paths
 from mb_cmn import provenance
 from py_html import wlc_utils_html as H
 
@@ -53,7 +53,7 @@ def main_for(
     *, body_module, out_name: str, generator_file: str, description: str
 ) -> None:
     force_utf8_io()
-    default_out = wlc_paths.gh_pages_dir() / "accgram" / out_name
+    default_out = paths.wlc_pages_dir() / "accgram" / out_name
     parser = argparse.ArgumentParser(description=description)
     add_html_out_arg(parser, default_out)
     args = parser.parse_args()

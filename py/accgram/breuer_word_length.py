@@ -97,10 +97,9 @@ from accgram.tree import tree_to_obj
 from mb_cmn import bib_locales as tbn
 from mb_cmn import file_io
 from mb_cmn import hebrew_punctuation as hpunc
+from mb_cmn import paths
 from mb_cmn import provenance
 from wlc_cmn.wlc_book_codes import wlc_bb_to_bk39id
-
-import wlc_paths
 
 # ---------------------------------------------------------------------------
 # The two phonetic alphabets, read off al-hatorah's py/aht_phon.
@@ -442,7 +441,7 @@ def _flatten(node: object, out: list[dict]) -> None:
 def load_phonetic_book(bb: str, cache: dict) -> dict:
     if bb not in cache:
         osdf = tbn.ordered_short_dash_full_39(wlc_bb_to_bk39id(bb))
-        path = wlc_paths.require_al_hatorah_phonetic_dir() / f"{osdf}.json"
+        path = paths.require_al_hatorah_phonetic_dir() / f"{osdf}.json"
         data = json.loads(path.read_text(encoding="utf-8"))
         per_verse: dict[tuple[int, int], list[dict]] = {}
         for key, verse in data.items():
@@ -981,7 +980,7 @@ def scan_mam_units(stats: Counter, notes: dict) -> list[dict]:
 
     A verse the grammar rejects outright is likewise counted and named, under ``mam_no_parse``.
     """
-    mam_dir = wlc_paths.require_mam_simple_vtrad_mam_dir()
+    mam_dir = paths.require_mam_simple_vtrad_mam_dir()
     refs_by_book = mam_simple_verse.mam_simple_refs(mam_dir)
     parser = build_parser()
     rows: list[dict] = []
@@ -1037,12 +1036,12 @@ def scan_wlc_units(stats: Counter, notes: dict) -> list[dict]:
     as transcribed scores against a rule stated for the Masoretic accentuation.  Its refs are
     BHS's, so they go through ``mam_verse_ref`` to reach Phonetic MAM.
     """
-    prose = wlc_paths.out_dir() / "accgram" / "prose"
+    prose = paths.out_dir() / "accgram" / "prose"
     # Private names of a sibling module in this package, deliberately: ``_verse_units`` is the
     # unit derivation ``chanted_word_accents`` asserts equal to ``uni_to_marks.verse_to_marks``
     # on every verse of three corpora, and a second copy here could answer differently about
     # which chanted word an accent stands on.
-    frags_by_bcv = cwa.wlc_frags(wlc_paths.out_dir() / "wlc422-kq-u")
+    frags_by_bcv = cwa.wlc_frags(paths.out_dir() / "wlc422-kq-u")
     rows: list[dict] = []
     for path in sorted(prose.glob("wlc_422_ps_*_ag.json")):
         data = json.loads(path.read_text(encoding="utf-8"))
@@ -1322,16 +1321,16 @@ def build_survey() -> dict:
 
 
 def default_json_out_path() -> Path:
-    return wlc_paths.novc_dir() / "breuer-zaqef-units.json"
+    return paths.novc_dir() / "breuer-zaqef-units.json"
 
 
 def add_args(parser: argparse.ArgumentParser, *, repo_root: Path) -> None:
-    del repo_root  # the default composes off wlc_paths, as chanted_word_accents' does
+    del repo_root  # the default composes off mb_cmn.paths, as chanted_word_accents' does
     parser.add_argument(
         "--json-out",
         type=Path,
         default=default_json_out_path(),
-        help="Where to write the survey JSON (default: wlc-utils/.novc/).",
+        help="Where to write the survey JSON (default: .novc/).",
     )
 
 

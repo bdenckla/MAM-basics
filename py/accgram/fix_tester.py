@@ -51,9 +51,8 @@ from accgram.prose_scanner import HasLegarmeh, Token, scan_accents
 from accgram.tree import TN
 from accgram.prose_ob_notes import get_structured_text
 from mb_cmn import file_io
+from mb_cmn import paths
 from mb_cmn import provenance
-
-import wlc_paths
 
 
 @dataclass(frozen=True)
@@ -641,15 +640,15 @@ def build_json_report(results: list[FixTestResult]) -> dict:
 
 
 def _repo_root() -> Path:
-    return wlc_paths.wlc_data_root()
+    return paths.repo_root()
 
 
 def default_report_txt_path(repo_root: Path) -> Path:
-    return wlc_paths.out_dir() / "accgram" / "fix-tester" / "_fix_tester.txt"
+    return paths.out_dir() / "accgram" / "fix-tester" / "_fix_tester.txt"
 
 
 def default_report_json_path(repo_root: Path) -> Path:
-    return wlc_paths.out_dir() / "accgram" / "fix-tester" / "_fix_tester.json"
+    return paths.out_dir() / "accgram" / "fix-tester" / "_fix_tester.json"
 
 
 def add_args(parser: argparse.ArgumentParser, repo_root: Path) -> None:

@@ -42,7 +42,7 @@ _JOB_31_15_NOTE_URL = "https://tanach.us/Notes/Job/Job.31.15.1-t.html"
 # collapses the repeated divider), so it no longer surfaces as a poetic ungrammatical and
 # this layer can no longer render notes for it.  Its manuscript / MAM / Breuer
 # discussion, plus the LC and S1 images, now live on the hand-authored page
-# gh-pages/accgram/ps17v14-double-tsinnor.html.
+# gh-pages/wlc/accgram/ps17v14-double-tsinnor.html.
 BY_REF: dict[str, dict[str, object]] = {
     "ps 56:10": {
         "st-summary": (

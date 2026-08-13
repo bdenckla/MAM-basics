@@ -1,8 +1,8 @@
-r"""Generate gh-pages/accgram/wlc-chanted-word-residue.html -- WLC's unnamed accent pairs.
+r"""Generate gh-pages/wlc/accgram/wlc-chanted-word-residue.html -- WLC's unnamed accent pairs.
 
 A SNEAK PEEK, AND DELIBERATELY UNLINKED.  Ben asked for this on 2026-08-03: the residue that
 ``chanted_word_accents`` measures for WLC, on a page of its own, reachable only by its URL.
-Nothing links to it -- not ``gh-pages/index.html``, which is hand-written and lists seven pages,
+Nothing links to it -- not ``gh-pages/wlc/index.html``, which is hand-written and lists seven pages,
 and not ``goerwitz.html``, whose ungrammatical-verse report is where a WLC accent problem is
 read today.  Folding it into that report is a decision nobody has made and may never make;
 linking to it from there is the smaller step that may come first.  Until then the page says
@@ -98,10 +98,9 @@ from accgram.printed_decalogue_strands import (
 )
 from accgram.uni_to_marks import is_accent
 from wlc_cmn.utf8_io import force_utf8_io
+from mb_cmn import paths
 from mb_cmn import provenance
 from py_html import wlc_utils_html as H
-
-import wlc_paths
 
 PAGE_TITLE = "Two Accents on One Chanted Word: What WLC Has Left Over"
 _WIDTH_CLASS = "goerwitz-tms-width-limited"
@@ -191,11 +190,11 @@ def rom_sequence(sequence: str) -> str:
 
 def default_html_out_path(repo_root: Path) -> Path:
     del repo_root
-    return wlc_paths.gh_pages_dir() / "accgram" / "wlc-chanted-word-residue.html"
+    return paths.wlc_pages_dir() / "accgram" / "wlc-chanted-word-residue.html"
 
 
 def default_prose_dir() -> Path:
-    return wlc_paths.out_dir() / "accgram" / "prose"
+    return paths.out_dir() / "accgram" / "prose"
 
 
 def add_args(parser: argparse.ArgumentParser, repo_root: Path) -> None:
@@ -703,7 +702,7 @@ def run(args: argparse.Namespace) -> None:
 
 def main() -> None:
     force_utf8_io()
-    repo_root = wlc_paths.wlc_data_root()
+    repo_root = paths.repo_root()
     parser = argparse.ArgumentParser(description=__doc__)
     add_args(parser, repo_root=repo_root)
     run(parser.parse_args())

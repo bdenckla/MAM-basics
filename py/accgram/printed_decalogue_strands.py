@@ -99,7 +99,7 @@ English sentence with a Hebrew word.
   forms.)  They stay PLAIN ``str`` here on purpose: ``_accent_of`` returns them and
   ``READING_SPECS`` compares them, so they must never become HTML.
 * **Every romanized accent/mark name renders italic, inside ``<span class="romanized">``**
-  (``gh-pages/style.css``; matching the MAM-simple island, which italicizes every such term).
+  (``gh-pages/wlc/style.css``; matching the MAM-simple island, which italicizes every such term).
   The pages do the wrapping, not this module -- each aliases the ``ROM_*`` strings through
   ``py_html.my_html_span_romanized.rmn`` ONCE at module level, so every prose site is styled
   without a per-site call (settled as issue wlc-utils#65, finding C2).  This is why the wrapped aliases

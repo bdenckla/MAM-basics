@@ -63,8 +63,7 @@ import urllib.request
 from pathlib import Path
 
 from mb_cmn import file_io
-
-import wlc_paths
+from mb_cmn import paths
 
 PASEQ = "\N{HEBREW PUNCTUATION PASEQ}"
 SOF_PASUQ = "\N{HEBREW PUNCTUATION SOF PASUQ}"
@@ -86,7 +85,7 @@ _SECTIONS: tuple[tuple[str, str, str, str], ...] = (
 
 
 def default_out_path() -> Path:
-    return wlc_paths.in_dir() / "accgram" / "printed_decalogue_teamim.json"
+    return paths.in_dir() / "accgram" / "printed_decalogue_teamim.json"
 
 
 def _fetch(url: str) -> str:
@@ -247,7 +246,7 @@ def build_payload(wikitext: str, provenance: dict[str, object]) -> dict[str, obj
 
 def add_args(parser: argparse.ArgumentParser, repo_root: Path) -> None:
     # repo_root is unused: the vendored snapshot's location comes from
-    # ``default_out_path``, which asks ``wlc_paths`` itself.  The parameter is here so the
+    # ``default_out_path``, which asks ``mb_cmn.paths`` itself.  The parameter is here so the
     # entry point wires every subcommand the same way.
     del repo_root
     parser.add_argument("--out", type=Path, default=default_out_path())

@@ -14,7 +14,7 @@ interpreter -- the system Python has neither pytest nor PLY.
 WHY THIS FILE EXISTS, AND WHY A BARE ``pytest`` FAILS TO COLLECT
 
 ``.venv/Scripts/pytest.exe py/tests`` does not collect: every test imports
-``mb_cmn.*``, ``accgram.*``, ``wlc_paths`` or the like, and collection dies on the
+``mb_cmn.*``, ``accgram.*``, ``uxlc_paths`` or the like, and collection dies on the
 first of them with ``ModuleNotFoundError``.  That is the designed state, not a defect
 to repair.  Import path here is decided by how a program is entered: CPython puts a
 script's own directory at ``sys.path[0]``, so running ``py/main_<x>.py`` -- this file

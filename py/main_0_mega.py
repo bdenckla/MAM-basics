@@ -3,10 +3,14 @@ Meta-orchestrator that runs all (or a selected subset of) processing jobs in
 sequence. Useful for a full rebuild from scratch.
 
 Covers both halves of the pipeline: this repo's own steps, which write into
-MAM-parsed, MAM-with-doc, MAM-simple, MAM-OSIS and MAM-for-Sefaria, and the
-wlc-utils steps at the end, which write into wlc-utils' out/ and gh-pages/.
+MAM-parsed, MAM-with-doc, MAM-simple, MAM-OSIS and MAM-for-Sefaria, and the wlc
+steps at the end, which write into this repo's own out/ and gh-pages/wlc/.
 wlc-utils had its own mega until 2026-08-01; the two are one list now so that
-accgram cannot read a MAM-simple that mam-simple has not yet regenerated.
+accgram cannot read a MAM-simple that mam-simple has not yet regenerated.  The wlc
+steps wrote into the wlc-utils clone until 2026-08-12, when the corpus came home
+(doc/PLAN-evacuate-the-rest-of-wlc-utils.md, Phases 3 and 5) -- so this mega no
+longer writes outside the checkout it runs in, which is what makes a worktree run
+of it isolated.
 """
 
 import argparse
@@ -36,9 +40,9 @@ import main_mam_osis
 import main_letter_small_job
 import main_tmpl_survey_toy
 
-# The wlc-utils half of the pipeline.  Its code lives here; the corpus it reads and
-# writes stayed in wlc-utils (see wlc_paths, and
-# doc/PLAN-evacuate-python-from-wlc-utils.md).
+# The wlc half of the pipeline.  Its code moved here on 2026-08-01
+# (doc/PLAN-evacuate-python-from-wlc-utils.md) and the corpus it reads and writes
+# followed on 2026-08-12 (doc/PLAN-evacuate-the-rest-of-wlc-utils.md).
 import main_accgram
 import main_find_uxlc_accent_changes
 import main_uxlc_grammar_test
@@ -239,7 +243,7 @@ _STEPS = [
         main_authored.almost_main,
         None,
     ),
-    # The wlc-utils steps, in the order wlc-utils' own mega ran them until it was
+    # The wlc steps, in the order wlc-utils' own mega ran them until it was
     # absorbed here on 2026-08-01.  They are LAST rather than free-standing because
     # accgram reads MAM-simple's json-vtrad-bhs, which mam-simple above regenerates:
     # while the two megas were separate, nothing ordered them, and an accgram run could
@@ -247,7 +251,7 @@ _STEPS = [
     StepRecord(
         "wlc-vendor-uxlc",
         main_wlc_vendor_uxlc.almost_main,
-        "refreshes wlc-utils' in/UXLC-39 and in/UXLC-misc from UXLC-utils",
+        "refreshes this repo's in/UXLC-39 and in/UXLC-misc from UXLC-utils",
     ),
     StepRecord(
         "wlc-json-and-unicode",

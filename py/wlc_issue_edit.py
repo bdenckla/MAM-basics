@@ -52,7 +52,7 @@ from pathlib import Path
 from mb_cmn import paths
 
 _OWNER = "bdenckla"
-_OUT_DIR = paths.repo_root() / ".novc"
+_OUT_DIR = paths.novc_dir()
 
 
 class IssueEditError(RuntimeError):

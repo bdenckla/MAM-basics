@@ -10,7 +10,7 @@ import mb_cmn.my_utils as my_utils
 Box = namedtuple("Box", ["x", "y", "w", "h", "rx"], defaults=[6])
 
 # Default location of images relative to the page being generated.  Pages that sit
-# one level below their sub-folder root (e.g. gh-pages/420422/full-record/*, the
+# one level below their sub-folder root (e.g. gh-pages/wlc/420422/full-record/*, the
 # wlc-a-notes pages) resolve this to their own sub-folder's img/ dir and so keep the
 # default.  Pages that sit directly in their sub-folder (the accgram pages) pass
 # img_base="img/" so they reference their own accgram/img/ dir rather than escaping
@@ -113,7 +113,7 @@ def scan_figure(
     drift: attribute contexts are exempt by design (issue wlc-utils#65, finding T1) -- see
     printed_decalogue_strands' module docstring.
     """
-    # No inline style here: gh-pages/style.css already declares `img { max-width: 100% }` and
+    # No inline style here: gh-pages/wlc/style.css already declares `img { max-width: 100% }` and
     # `figure img { height: auto }`, so an inline copy only duplicated the stylesheet and
     # outranked it (issue wlc-utils#65, finding C4b). Don't reintroduce it.
     img_attr = {"src": src, "alt": alt, "class": img_class}

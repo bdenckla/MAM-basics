@@ -11,7 +11,7 @@ cleanly; the residual splits into two documented ungrammatical kinds:
     Psalms 56:10; emitted as a ``NO_PARSE`` token line by the driver.  (Ps
     17:14's double tsinnor was another such case until the parser began accepting
     a repeated divider as one; see poetic_ply_grammar.parse_tokens_accepting_repeats
-    and gh-pages/accgram/ps17v14-double-tsinnor.html.)
+    and gh-pages/wlc/accgram/ps17v14-double-tsinnor.html.)
 
 This module re-scans + re-parses the poetic corpus (the same source of truth the
 driver writes from), collects every ungrammatical verse, and enriches each with: the
@@ -19,7 +19,7 @@ verse's pointed-Hebrew text, the full scanned token sequence, the rendered ERROR
 tree or NO_PARSE line, and -- the key review datum for accent ungrammatical verses -- the WLC vs
 MAM-simple disjunctive sequences (what L's accents say versus what the MAM oracle
 reads). It writes a git-tracked ``_oddballs.json`` next to the corpus outputs and
-``gh-pages/accgram/poetic.html`` for review.
+``gh-pages/wlc/accgram/poetic.html`` for review.
 
 Each ungrammatical is one ``dict[str, object]`` row -- the single representation that
 flows from collection through render to JSON serialization, sharing the prose
@@ -90,11 +90,10 @@ from accgram.poetic_oddball_summary import derive_tentative_summary
 from accgram.tree import print_tree
 from accgram.poetic_run import has_error_leaf, no_parse_line
 from mb_cmn import file_io
+from mb_cmn import paths
 from mb_cmn import provenance
 from py_html import wlc_utils_html
 from py_wlc import my_wlc_bcv_str
-
-import wlc_paths
 
 KIND_MISSING_SILLUQ = "missing_silluq"
 KIND_NO_PARSE = "no_parse"
@@ -345,7 +344,7 @@ def build_payload(
 
 # The poetic page shares goerwitz.html's stylesheet + width-limited shell and
 # the same single flat, client-side-filterable verse list (see
-# gh-pages/accgram/poetic-filter.js); the shared page-assembly now lives in
+# gh-pages/wlc/accgram/poetic-filter.js); the shared page-assembly now lives in
 # ob_page (issue wlc-utils#22). It keeps one poetic-only data display the prose page has no
 # analogue for: the WLC-vs-MAM disjunctive compare (the relevant oracle for
 # accent-structure ungrammatical verses). The verse text is shown as pointed Hebrew (issue wlc-utils#9
@@ -744,11 +743,11 @@ def _counts(ungrammatical: list[dict[str, object]]) -> dict[str, int]:
 
 
 def default_ungrammatical_out_path(repo_root: Path) -> Path:
-    return wlc_paths.out_dir() / "accgram" / "poetic" / "_oddballs.json"
+    return paths.out_dir() / "accgram" / "poetic" / "_oddballs.json"
 
 
 def default_html_out_path(repo_root: Path) -> Path:
-    return wlc_paths.gh_pages_dir() / "accgram" / "poetic.html"
+    return paths.wlc_pages_dir() / "accgram" / "poetic.html"
 
 
 def add_args(parser: argparse.ArgumentParser, repo_root: Path) -> None:

@@ -5,7 +5,7 @@ rendering) run anywhere; the end-to-end generation tests need the WLC 4.22 kq-u
 corpus, which is committed in this repo under ``out/wlc422-kq-u`` -- not, as this said
 before, a sibling repo.  Being tracked here is why its absence FAILS rather than skipping:
 it can only be missing if someone deleted tracked files, and going quiet about that is going
-quiet at the worst moment.  See ``wlc_paths.require_sibling`` for the argument.
+quiet at the worst moment.  See ``paths.require_sibling`` for the argument.
 
 Run:
     .venv/Scripts/python.exe -m pytest py/tests/test_almost_errors.py -v
@@ -26,7 +26,7 @@ from accgram.prose_scanner import HasLegarmeh
 from py_html import wlc_utils_html as H
 from tests.ob_tree_leaves import iter_leaf_texts
 
-import wlc_paths
+from mb_cmn import paths
 
 # A synthetic same-letter word: one base letter carrying BOTH a telisha gedola and a
 # plain geresh -- the shape the companion-drop charity concerns.
@@ -104,7 +104,7 @@ def test_parse_tree_from_text_empty_is_none() -> None:
 # --------------------------------------------------------------------------- #
 # Corpus-backed end-to-end generation.
 # --------------------------------------------------------------------------- #
-_REPO_ROOT = wlc_paths.wlc_data_root()
+_REPO_ROOT = paths.repo_root()
 
 
 def _load_index():

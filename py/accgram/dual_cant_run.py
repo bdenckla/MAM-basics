@@ -11,7 +11,7 @@ This is the complete record of the detangled trees (the analogue of prose_run's
 
   * the oddity chanted verses are folded into the prose ungrammatical-verse report (goerwitz.html)
     by prose_run, keyed by their numbered verse; and
-  * the supplied-mark inventory is rendered to gh-pages/accgram/supplied-marks.html by
+  * the supplied-mark inventory is rendered to gh-pages/wlc/accgram/supplied-marks.html by
     accgram.supplied_marks.
 
 Run via ``main_accgram.py run-dual-cant`` (after run-prose).
@@ -28,13 +28,12 @@ from accgram.mam_simple_verse import default_mam_simple_dir, load_mam_simple_for
 from accgram.prose_ply_grammar import build_parser
 from wlc_cmn.utf8_io import force_utf8_io
 from mb_cmn import file_io
+from mb_cmn import paths
 from mb_cmn import provenance
-
-import wlc_paths
 
 
 def default_out_path(repo_root: Path) -> Path:
-    return wlc_paths.out_dir() / "accgram" / "dual-cant" / "_dual_cant.json"
+    return paths.out_dir() / "accgram" / "dual-cant" / "_dual_cant.json"
 
 
 def add_args(parser: argparse.ArgumentParser, repo_root: Path) -> None:
@@ -184,7 +183,7 @@ def _anomaly_obj(a: dcd.Anomaly) -> dict[str, object]:
 
 def main() -> None:
     force_utf8_io()
-    repo_root = wlc_paths.wlc_data_root()
+    repo_root = paths.repo_root()
     parser = argparse.ArgumentParser(description=__doc__)
     add_args(parser, repo_root=repo_root)
     run(parser.parse_args())

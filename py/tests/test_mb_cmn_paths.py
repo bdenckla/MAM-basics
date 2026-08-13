@@ -82,8 +82,8 @@ class TestMbCmnPaths(unittest.TestCase):
 
     # THE TWO NAME-MAPPING TESTS BELOW KEEP "wlc-utils-private" AS DATA, NOT AS A CLAIM
     # THAT SUCH A SIBLING EXISTS.  It stopped being a sibling clone on 2026-08-08, when the
-    # private evacuation programme moved it under MAM-private (see wlc_paths'
-    # wlc_utils_private_dir, which now resolves sibling("MAM-private") / "wlc-utils-private",
+    # private evacuation programme moved it under MAM-private (see this module's own
+    # wlc_utils_private_dir, which resolves sibling_repo("MAM-private") / "wlc-utils-private",
     # so REPO_MAM_PRIVATE_DIR is the override that moves that tree and
     # REPO_WLC_UTILS_PRIVATE_DIR reaches nothing).  The name is kept here anyway because
     # what these two tests exercise is the name-mapping function, for which it remains the

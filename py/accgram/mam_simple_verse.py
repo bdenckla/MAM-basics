@@ -9,7 +9,7 @@ from mb_misc import osis_book_abbrevs as oba
 
 from wlc_cmn.wlc_book_codes import wlc_bb_codes, wlc_bb_to_bk39id
 
-import wlc_paths
+from mb_cmn import paths
 
 # The three single-cantillation projections of a dually-cantillated span (issue wlc-utils#36).
 # A ``cant-all-three`` node carries one child of each type: ``cant-combined`` (the
@@ -28,7 +28,7 @@ def default_mam_simple_dir(repo_root: Path) -> Path:
     # signature; the sibling lookup is delegated to the env-overridable resolver,
     # which anchors itself and so equals ``repo_root.parent / "MAM-simple" / ...``
     # by default.
-    return wlc_paths.mam_simple_dir()
+    return paths.mam_simple_dir()
 
 
 def load_mam_simple_for_refs(

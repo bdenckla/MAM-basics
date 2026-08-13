@@ -15,7 +15,7 @@ from py_uxlc import my_uxlc
 
 from accgram import rtms_rows
 
-import wlc_paths
+from mb_cmn import paths
 
 _DIFF_NOTE_KEYS = {"note", "notes"}
 _IGNORED_WLC_MAM_DIFF_TOKEN_PAIRS: set[tuple[tuple[str, ...], tuple[str, ...]]] = {
@@ -26,7 +26,7 @@ _IGNORED_WLC_MAM_DIFF_TOKEN_PAIRS: set[tuple[tuple[str, ...], tuple[str, ...]]] 
 
 def default_wlc422_kq_u_dir(repo_root: Path) -> Path:
     """Directory of the WLC 4.22 ketiv/qere Unicode ``1verses_*.json`` files."""
-    return wlc_paths.out_dir() / "wlc422-kq-u"
+    return paths.out_dir() / "wlc422-kq-u"
 
 
 def load_wlc422_index(wlc422_kq_u_dir: Path) -> dict[str, dict[str, object]]:

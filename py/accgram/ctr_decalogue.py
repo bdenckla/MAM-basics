@@ -94,7 +94,7 @@ import difflib
 import json
 from pathlib import Path
 
-import wlc_paths
+from mb_cmn import paths
 
 from accgram import edition_transcription as et
 from accgram import printed_decalogue as pd
@@ -125,7 +125,7 @@ _CONJUNCTIVE_GLYPHS = {"mun", "mer", "mer2", "dar", "tq"}
 
 
 def default_ctr_path() -> Path:
-    return wlc_paths.in_dir() / "accgram" / "ctr_decalogue.json"
+    return paths.in_dir() / "accgram" / "ctr_decalogue.json"
 
 
 def load_ctr(path: Path | None = None) -> dict:

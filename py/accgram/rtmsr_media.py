@@ -10,7 +10,7 @@ _GOERWITZ_TMS_IMAGE_CLASS = "goerwitz-tms-image"
 _GOERWITZ_TMS_FIGURE_CLASS = "goerwitz-tms-figure"
 _GOERWITZ_TMS_IMAGE_CAPTION_CLASS = "goerwitz-tms-image-caption"
 
-# accgram pages sit directly in gh-pages/accgram/, so images resolve to that folder's
+# accgram pages sit directly in gh-pages/wlc/accgram/, so images resolve to that folder's
 # own img/ dir rather than the top-level gh-pages/img/ (see my_html_for_img).
 _IMG_BASE = "img/"
 

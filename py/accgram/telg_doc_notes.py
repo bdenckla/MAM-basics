@@ -1,4 +1,4 @@
-"""Generate gh-pages/accgram/telg-doc-notes.html -- a deep-dive translation of
+"""Generate gh-pages/wlc/accgram/telg-doc-notes.html -- a deep-dive translation of
 MAM's documentation (נוסח) notes on the five telisha-gedola + geresh/gershayim
 words: Genesis 5:29, Zephaniah 2:15, 2 Kings 17:13, Leviticus 10:4, and
 Ezekiel 48:10.
@@ -25,10 +25,9 @@ from accgram import rtms_report
 from accgram import telg_mam_doc_notes
 from accgram.almost_errors_html_shared import hbo, link, ref_display, verse_links
 from wlc_cmn.utf8_io import force_utf8_io
+from mb_cmn import paths
 from mb_cmn import provenance
 from py_html import wlc_utils_html as H
-
-import wlc_paths
 
 REPORT_TITLE = "MAM documentation notes on the telg + geresh/gershayim words"
 
@@ -386,7 +385,7 @@ def render_body_contents() -> tuple[object, ...]:
 # CLI
 # --------------------------------------------------------------------------- #
 def default_html_out_path(repo_root: Path) -> Path:
-    return wlc_paths.gh_pages_dir() / "accgram" / "telg-doc-notes.html"
+    return paths.wlc_pages_dir() / "accgram" / "telg-doc-notes.html"
 
 
 def add_args(parser: argparse.ArgumentParser, repo_root: Path) -> None:
@@ -415,7 +414,7 @@ def run(args: argparse.Namespace) -> None:
 
 def main() -> None:
     force_utf8_io()
-    repo_root = wlc_paths.wlc_data_root()
+    repo_root = paths.repo_root()
     parser = argparse.ArgumentParser(description=__doc__)
     add_args(parser, repo_root=repo_root)
     run(parser.parse_args())

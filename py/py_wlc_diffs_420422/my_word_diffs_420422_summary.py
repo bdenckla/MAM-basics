@@ -4,7 +4,7 @@ import mb_cmn.my_utils as my_utils
 import py_html.wlc_utils_html as wlc_utils_html
 import py_wlc.my_url_generator as urlg
 import py_wlc_diffs_420422.my_word_diffs_420422_utils as wd_utils
-import wlc_paths
+from mb_cmn import paths
 
 
 def write(records, path, title, intro=None):
@@ -19,7 +19,7 @@ def write(records, path, title, intro=None):
     table_of_records = wlc_utils_html.table(rows)
     body_contents = [*intro, link_to_toa, table_of_records, table_of_abbrev]
     write_ctx = wlc_utils_html.WriteCtx(
-        title, str(wlc_paths.gh_pages_dir() / "420422" / path), centered=True
+        title, str(paths.wlc_pages_dir() / "420422" / path), centered=True
     )
     wlc_utils_html.write_html_to_file(body_contents, write_ctx, "../")
 

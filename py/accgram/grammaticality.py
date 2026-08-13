@@ -67,7 +67,7 @@ from collections import Counter, defaultdict
 from dataclasses import dataclass, field
 from pathlib import Path
 
-import wlc_paths
+from mb_cmn import paths
 
 LAMBDA = 0.5  # add-lambda smoothing constant
 
@@ -187,7 +187,7 @@ class VerseScore:
 
 
 def _checker_files(checker: str) -> list[Path]:
-    folder = wlc_paths.out_dir() / "accgram" / checker
+    folder = paths.out_dir() / "accgram" / checker
     return sorted(folder.glob("wlc_422_ps_*_ag.json"))
 
 
@@ -383,7 +383,7 @@ def render_report(per_checker: list[tuple[str, Pcfg, list[VerseScore]]]) -> str:
 
 
 def default_report_path(repo_root: Path) -> Path:
-    return wlc_paths.out_dir() / "accgram" / "_grammaticality.txt"
+    return paths.out_dir() / "accgram" / "_grammaticality.txt"
 
 
 def add_args(parser: argparse.ArgumentParser, repo_root: Path) -> None:

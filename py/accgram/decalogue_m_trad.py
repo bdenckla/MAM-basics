@@ -79,7 +79,7 @@ from mb_diff_mpu.mpplus_flatten import (
 )
 from mb_diff_mpu.mpplus_param_access import MISSING, get_param
 
-import wlc_paths
+from mb_cmn import paths
 
 SOF_PASUQ = "\N{HEBREW PUNCTUATION SOF PASUQ}"
 GERSHAYIM = "\N{HEBREW PUNCTUATION GERSHAYIM}"
@@ -296,12 +296,12 @@ def from_mam_plus(book: str, reading: str, plus_dir: Path | None = None) -> Stra
     """One m-trad Decalogue strand, read from the MAM-parsed-plus tree.
 
     ``plus_dir`` is the explicit path argument; defaulted, it resolves through
-    ``wlc_paths`` and is CHECKED there, so an absent sibling clone fails with the two
+    ``mb_cmn.paths`` and is CHECKED there, so an absent sibling clone fails with the two
     overrides spelled out instead of a bare ``FileNotFoundError`` from ``_load_plus_book``.
     An explicitly passed path is not second-guessed -- the caller named it, and the advice
     ``require_sibling`` gives would be beside the point.
     """
-    plus_dir = plus_dir or wlc_paths.require_mam_parsed_plus_dir()
+    plus_dir = plus_dir or paths.require_mam_parsed_plus_dir()
     parts: list[str] = []
     kinds: list[str] = []
     for i, cell in enumerate(_decalogue_cells(book, plus_dir)):

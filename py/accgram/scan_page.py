@@ -48,15 +48,15 @@ from pathlib import Path
 
 from PIL import Image
 
-import wlc_paths
+from mb_cmn import paths
 
 # The scans are a personal archive outside any repo, so this is the one machine-specific path
-# here; WLC_SCANS_DIR overrides it, in the style of wlc_paths' sibling-repo overrides.
+# here; WLC_SCANS_DIR overrides it, in the style of mb_cmn.paths' sibling-repo overrides.
 SCANS = Path(
     os.environ.get("WLC_SCANS_DIR", Path.home() / "OneDrive/Documents/ScansOfBooks")
 )
 # Renderings are disposable and can be large, so they go to gitignored scratch, not out/.
-OUT = wlc_paths.scans_dir()
+OUT = paths.scans_dir()
 
 
 def render_page(

@@ -1,4 +1,4 @@
-r"""Generate gh-pages/accgram/printed-decalogue-simanim.html -- does Simanim's Tiqqun follow
+r"""Generate gh-pages/wlc/accgram/printed-decalogue-simanim.html -- does Simanim's Tiqqun follow
 the printed or the manuscript Decalogue tradition?  Answer: the printed tradition (issue wlc-utils#62) --
 precisely, it follows the p-trad's chanted verse boundaries, but not its every cantillation
 detail: the Shabbat commandment of its Deuteronomy taḥton (appendix) Decalogue has the m-trad
@@ -121,13 +121,12 @@ from accgram import transcription_verdict_column as tvc
 from accgram.almost_errors_html_shared import accents_and_letters, cos, hbo, itm, link
 from accgram.uni_to_marks import is_accent, is_base_letter
 from wlc_cmn.utf8_io import force_utf8_io
+from mb_cmn import paths
 from mb_cmn import provenance
 
 from py_html import wlc_utils_html as H
 from py_html import my_html_for_img as mhi
 from py_html.my_html_span_romanized import rmn
-
-import wlc_paths
 
 # "chanted verse boundaries", not a bare "the printed tradition": the Tiqqun's p-trad allegiance
 # is exceptionless for chanted verse boundaries but not for every cantillation detail -- its
@@ -437,7 +436,7 @@ def _p83_scan_and_transcription() -> object:
     """Scan and transcription side by side, as in the original wlc-utils#56 comment: a two-column
     table with the source scan on the left and the RTL transcription (following the scan's own
     line breaks) on the right."""
-    # As in _figure: no inline style, since gh-pages/style.css's `img { max-width: 100% }` already
+    # As in _figure: no inline style, since gh-pages/wlc/style.css's `img { max-width: 100% }` already
     # covers it (issue wlc-utils#65, finding C4b). This img sits in a table cell rather than a <figure>, so
     # it never picked up `figure img { height: auto }` -- but height:auto is the CSS initial value
     # for a replaced element anyway, so the inline copy bought nothing here either.
@@ -1388,7 +1387,7 @@ def render_body_contents(
 
 
 def default_html_out_path(repo_root: Path) -> Path:
-    return wlc_paths.gh_pages_dir() / "accgram" / "printed-decalogue-simanim.html"
+    return paths.wlc_pages_dir() / "accgram" / "printed-decalogue-simanim.html"
 
 
 def add_args(parser: argparse.ArgumentParser, repo_root: Path) -> None:
@@ -1424,7 +1423,7 @@ def run(args: argparse.Namespace) -> None:
 
 def main() -> None:
     force_utf8_io()
-    repo_root = wlc_paths.wlc_data_root()
+    repo_root = paths.repo_root()
     parser = argparse.ArgumentParser(description=__doc__)
     add_args(parser, repo_root=repo_root)
     run(parser.parse_args())

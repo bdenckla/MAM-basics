@@ -15,15 +15,17 @@ Run from the repo root (each step resolves paths via ``mb_cmn.paths.repo_root()`
 
 Six independent steps, in order:
 
-1. Wipe the gitignored ``.novc/`` scratch dirs -- this repo's AND wlc-utils',
-   since the code that writes into wlc-utils' one lives here now and wlc-utils
-   has no maintenance script of its own. Everything in them is MEANT to be a
+1. Wipe the gitignored ``.novc/`` scratch dir. There is ONE since 2026-08-12:
+   this step wiped wlc-utils' as well while the code that wrote into it lived
+   here and the corpus lived there, and that corpus came home
+   (``doc/PLAN-evacuate-the-rest-of-wlc-utils.md``, Phases 3 and 5).
+   Everything in it is MEANT to be a
    regenerable download cache or tool output, never a durable result -- but
    that is a rule about how to use the directory, not a fact about what is in
    it, and this step cannot tell the difference. It has already destroyed one
    durable result: a dual-cantillation survey that ``accgram.prose_filter``
    and ``tests/test_dual_cant_detangle`` both cited as their provenance.
-   Before wiping, check that nothing in either ``.novc/`` is the sole home of
+   Before wiping, check that nothing in ``.novc/`` is the sole home of
    a decision or a pending item, and promote anything that is -- to an issue,
    to ``doc/``, or into the docstring of the code it explains.
    ``grep -rn '\.novc' py/ doc/`` finds the citations worth honouring.
@@ -51,7 +53,7 @@ Six independent steps, in order:
    parameterless, non-download rebuild step (parse, mam-with-doc,
    tmpl-survey, mam-simple, mam4sef/ajf, mam-osis, letter-small-job,
    decnreub, multimark, wordlist, explicit-xataf, the authored docs, the
-   wlc-utils steps -- vendor-uxlc, WLC JSON/Unicode, accgram, the 4.20/4.22
+   wlc steps -- vendor-uxlc, WLC JSON/Unicode, accgram, the 4.20/4.22
    diffs and the a-notes build -- and the closing vendoring audit).
 
 The rebuild step is skipped if the test step failed, unless
@@ -66,10 +68,8 @@ import sys
 from mb_cmn import paths
 from repo_util import git_worktree_cleanup
 
-import wlc_paths
-
 _REPO = paths.repo_root()
-_NOVC = _REPO / ".novc"
+_NOVC = paths.novc_dir()
 
 
 def _parse_args() -> argparse.Namespace:
@@ -99,15 +99,17 @@ def _parse_args() -> argparse.Namespace:
 
 
 def clean_novc() -> None:
-    """Wipe both scratch dirs: this repo's, and the one in wlc-utils.
+    """Wipe the scratch dir.
 
-    wlc-utils' ``.novc/`` still receives ``accgram.gen_highlight_picker`` pages and
-    ``accgram.scan_page``'s renderings -- they are relative to that repo's own
-    ``gh-pages/`` and so could not follow the code here -- and wlc-utils no longer has
-    a maintenance script to wipe them.  Nothing else would.
+    ONE, not two.  This wiped wlc-utils' ``.novc/`` as well until 2026-08-12: the
+    ``accgram.gen_highlight_picker`` pages and ``accgram.scan_page`` renderings that land
+    there are positioned relative to ``gh-pages/``, so they could not follow the code
+    here in 2026-08-01's Python evacuation, and wlc-utils had no maintenance script of
+    its own to wipe them.  ``gh-pages/`` came home at Phase 3 of
+    ``doc/PLAN-evacuate-the-rest-of-wlc-utils.md`` and the writers were repointed at
+    Phase 5, so the foreign wipe has nothing left to wipe.
     """
     _clean_one_novc(_NOVC, "MAM-basics")
-    _clean_one_novc(wlc_paths.novc_dir(), "wlc-utils")
 
 
 def _clean_one_novc(novc, label: str) -> None:

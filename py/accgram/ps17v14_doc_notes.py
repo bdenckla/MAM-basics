@@ -1,4 +1,4 @@
-"""Generate gh-pages/accgram/ps17v14-mam-doc-notes.html -- an English rendering of
+"""Generate gh-pages/wlc/accgram/ps17v14-mam-doc-notes.html -- an English rendering of
 MAM's four documentation notes on Psalms 17:14 (one per chanted word -- one of the four
 lemmas, מִ֥מְתִֽים־יָדְךָ֨, is a maqaf compound).
 
@@ -17,13 +17,13 @@ from pathlib import Path
 from accgram import ps17v14_mam_doc_notes_body as _body
 from accgram import ps17v14_replay
 
-import wlc_paths
+from mb_cmn import paths
 
 _OUT_NAME = "ps17v14-mam-doc-notes.html"
 
 
 def default_html_out_path(repo_root: Path) -> Path:
-    return wlc_paths.gh_pages_dir() / "accgram" / _OUT_NAME
+    return paths.wlc_pages_dir() / "accgram" / _OUT_NAME
 
 
 def add_args(parser: argparse.ArgumentParser, repo_root: Path) -> None:

@@ -3,13 +3,13 @@
 import xml.etree.ElementTree
 
 import mb_cmn.bib_locales as tbn
-import wlc_paths
+from mb_cmn import paths
 
 # Absolute, off the repo, never the cwd: this was "in/UXLC-39" until 2026-08-01, which
 # ``main_uxlc_grammar_test`` had to overwrite at import time to make the module usable
 # from anywhere but the repo root.  Still a module-level name so that override remains
 # available to anyone pointing this at another UXLC checkout.
-UXLC_CANONICAL_DIR = str(wlc_paths.in_dir() / "UXLC-39")
+UXLC_CANONICAL_DIR = str(paths.in_dir() / "UXLC-39")
 
 
 def read_all_books(handlers=None):

@@ -115,7 +115,7 @@ def word_to_marks(word: str) -> str:
     manuscript has, where dropping either would discard one.  Preserving the Unicode order
     (rather than floating the prepositive telg to the front) keeps the checker's reading
     faithful to the manuscript, which has the same-letter pairs gerstar-first.  See the
-    telisha gedola section of gh-pages/accgram/almost-errors.html (generator:
+    telisha gedola section of gh-pages/wlc/accgram/almost-errors.html (generator:
     accgram/almost_errors.py).
     """
     # Build the ordered mark sequence and the skeleton of letters/maqaf, marking where

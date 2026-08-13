@@ -7,7 +7,7 @@ word) and עבדים.  These tests pin that derivation (which now lives on the s
 this page) and confirm the Simanim page body renders.
 
 The vendored source JSON is committed here, so these FAIL rather than skip if it is absent --
-see ``test_printed_decalogue``'s docstring and ``wlc_paths.require_sibling``.
+see ``test_printed_decalogue``'s docstring and ``paths.require_sibling``.
 
 Run:
     .venv/Scripts/python.exe -m pytest py/tests/test_printed_decalogue_simanim.py -v
@@ -22,7 +22,7 @@ from accgram import printed_decalogue_strands as pds
 from accgram import transcription_parse as tp
 from accgram import transcription_verdict_column as tvc
 
-import wlc_paths
+from mb_cmn import paths
 
 
 def _results() -> list[pd.VersionResult]:
@@ -83,7 +83,7 @@ def test_body_renders() -> None:
 def test_scan_images_committed() -> None:
     """Both SimTiq note scans are committed locally (the page references them by relative path,
     not the issue CDN)."""
-    img_dir = wlc_paths.gh_pages_dir() / "accgram" / "img"
+    img_dir = paths.wlc_pages_dir() / "accgram" / "img"
     for name in (
         "Simanim-Tiqqun-p-083-Ex-Dec-elyon-sidenote.png",
         "Simanim-Tiqqun-p-246-Ex-Dec-p-trad-taxton-footnote.png",

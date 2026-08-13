@@ -97,9 +97,8 @@ from accgram.almost_errors_html_shared import accents_and_letters
 from accgram.prose_scanner import HasLegarmeh, Token, scan_accents
 from wlc_cmn.wlc_book_codes import wlc_bb_codes
 from mb_cmn import file_io
+from mb_cmn import paths
 from mb_cmn import provenance
-
-import wlc_paths
 
 UNI_MAQAF = "\N{HEBREW PUNCTUATION MAQAF}"
 
@@ -278,7 +277,7 @@ def mam_frags(refs_by_book: dict[str, set[tuple[int, int]]]) -> dict[str, list[F
     from accgram import mam_simple_verse
 
     loaded = mam_simple_verse.load_mam_simple_for_refs(
-        wlc_paths.require_mam_simple_dir(), refs_by_book
+        paths.require_mam_simple_dir(), refs_by_book
     )
     return {
         bcv: _atom_frags(
@@ -1208,7 +1207,7 @@ def mam_residue(mam: dict) -> dict:
             "The geresh-family-with-telisha-gedola words are not unaccounted for: they are"
             " the five words ``uni_to_marks.word_to_marks`` keeps both marks on, whitelisted"
             " by ``lexical_validation`` and set out in the telisha gedola exhibit of"
-            " gh-pages/accgram/almost-errors.html. A geresh or gershayim written twice on"
+            " gh-pages/wlc/accgram/almost-errors.html. A geresh or gershayim written twice on"
             " one of them is folded above, so each counts as two accents, not three."
         ),
         "accounted_for_by_maqaf_after_gaya": {
@@ -1425,7 +1424,7 @@ def maqaf_after_gaya(scanned: dict[str, dict]) -> dict:
 
 def build_survey() -> dict:
     """The whole survey: three corpora, prose verses only, plus Yeivin's inventory beside MAM."""
-    wlc = wlc_frags(wlc_paths.out_dir() / "wlc422-kq-u")
+    wlc = wlc_frags(paths.out_dir() / "wlc422-kq-u")
     refs: dict[str, set[tuple[int, int]]] = defaultdict(set)
     for bcv in wlc:
         bb, chnu, vrnu = mna.split_bcv(bcv)
@@ -1433,7 +1432,7 @@ def build_survey() -> dict:
 
     corpora = {
         "wlc422": wlc,
-        "uxlc": uxlc_frags(wlc_paths.in_dir() / "UXLC-39"),
+        "uxlc": uxlc_frags(paths.in_dir() / "UXLC-39"),
         "mam_simple": mam_frags(dict(refs)),
     }
     scanned = {
@@ -1472,7 +1471,7 @@ def build_survey() -> dict:
 
 
 def default_json_out_path() -> Path:
-    return wlc_paths.out_dir() / "accgram" / "chanted-word-accents.json"
+    return paths.out_dir() / "accgram" / "chanted-word-accents.json"
 
 
 def write_json(survey: dict, path: Path) -> None:
@@ -1488,7 +1487,7 @@ def write_json(survey: dict, path: Path) -> None:
 
 def add_args(parser, *, repo_root: Path) -> None:
     # repo_root is unused: the default comes from ``default_json_out_path``, which composes
-    # off ``wlc_paths.out_dir()`` -- the same value ``run`` falls back to, so the flag's
+    # off ``paths.out_dir()`` -- the same value ``run`` falls back to, so the flag's
     # default and its absence can no longer answer differently.  The parameter is kept
     # because the entry point wires every subcommand the same way.
     del repo_root

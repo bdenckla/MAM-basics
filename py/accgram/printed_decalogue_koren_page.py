@@ -1,4 +1,4 @@
-r"""Generate gh-pages/accgram/printed-decalogue-koren.html -- does the Koren Tanakh follow the
+r"""Generate gh-pages/wlc/accgram/printed-decalogue-koren.html -- does the Koren Tanakh follow the
 printed or the manuscript Decalogue tradition?  Answer: the printed tradition.
 
 Companion to ``printed_decalogue_simanim_page``: the same question, asked of Koren instead of
@@ -117,13 +117,12 @@ from accgram import transcription_parse as tp
 from accgram import transcription_verdict_column as tvc
 from accgram.almost_errors_html_shared import accents_and_letters, hbo, link
 from wlc_cmn.utf8_io import force_utf8_io
+from mb_cmn import paths
 from mb_cmn import provenance
 
 from py_html import my_html_for_img as mhi
 from py_html import wlc_utils_html as H
 from py_html.my_html_span_romanized import rmn
-
-import wlc_paths
 
 # Plural "Decalogues" since issue wlc-utils#66: the claim now genuinely covers Exodus and Deuteronomy both,
 # so the Simanim page's plural policy (claims about both Decalogues take the plural) applies here
@@ -833,7 +832,7 @@ def render_body_contents(
 
 
 def default_html_out_path(repo_root: Path) -> Path:
-    return wlc_paths.gh_pages_dir() / "accgram" / "printed-decalogue-koren.html"
+    return paths.wlc_pages_dir() / "accgram" / "printed-decalogue-koren.html"
 
 
 def add_args(parser: argparse.ArgumentParser, repo_root: Path) -> None:
@@ -870,7 +869,7 @@ def run(args: argparse.Namespace) -> None:
 
 def main() -> None:
     force_utf8_io()
-    repo_root = wlc_paths.wlc_data_root()
+    repo_root = paths.repo_root()
     parser = argparse.ArgumentParser(description=__doc__)
     add_args(parser, repo_root=repo_root)
     run(parser.parse_args())

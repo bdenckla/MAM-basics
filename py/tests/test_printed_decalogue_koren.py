@@ -5,7 +5,7 @@ that test and by ``printed_decalogue_strands``; here we only confirm the Koren p
 and that its scans are committed.
 
 The vendored source JSON is committed here, so these FAIL rather than skip if it is absent --
-see ``test_printed_decalogue``'s docstring and ``wlc_paths.require_sibling``.
+see ``test_printed_decalogue``'s docstring and ``paths.require_sibling``.
 
 Run:
     .venv/Scripts/python.exe -m pytest py/tests/test_printed_decalogue_koren.py -v
@@ -18,7 +18,7 @@ from accgram import printed_decalogue_koren_page as kor
 from accgram import transcription_parse as tp
 from accgram import transcription_verdict_column as tvc
 
-import wlc_paths
+from mb_cmn import paths
 
 
 def test_body_renders() -> None:
@@ -42,7 +42,7 @@ def test_body_renders() -> None:
 
 def test_scan_images_committed() -> None:
     """The four Koren scans are committed locally (the page references them by relative path)."""
-    img_dir = wlc_paths.gh_pages_dir() / "accgram" / "img"
+    img_dir = paths.wlc_pages_dir() / "accgram" / "img"
     for name in (
         "Koren-p-113-Ex-Dec-p-trad-taxton.png",
         "Koren-appendix-p-38-Ex-Dec-p-trad-elyon.png",

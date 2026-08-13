@@ -169,13 +169,12 @@ from accgram import final_stress as fs
 from accgram import poetic_filter, prose_filter, rtms_data
 from wlc_cmn.wlc_book_codes import wlc_bb_codes
 from mb_cmn import file_io
+from mb_cmn import paths
 from mb_cmn import provenance
 from mb_cmn.hebrew_accents import ATN_H
 from mb_cmn.hebrew_punctuation import NU_GMAQ
 from mb_cmn.str_defs import DOUB_VERT_LINE
 from mb_diff_mpu.mpplus_flatten import flatten_ep_for_diff
-
-import wlc_paths
 
 MAQAF = "\N{HEBREW PUNCTUATION MAQAF}"
 METEG = "\N{HEBREW POINT METEG}"
@@ -442,7 +441,7 @@ def mam_words(
     from accgram import mam_simple_verse
 
     loaded = mam_simple_verse.load_mam_simple_for_refs(
-        mam_simple_dir or wlc_paths.require_mam_simple_dir(), refs_by_book
+        mam_simple_dir or paths.require_mam_simple_dir(), refs_by_book
     )
     return {
         bcv: _join_on_maqaf(
@@ -968,7 +967,7 @@ def gray_maqaf_survey() -> dict:
     phenomenon the maqaf scan cannot reach.  See the module docstring on why it has to be, and
     on why it alone reads MAM-parsed-plus.
     """
-    hits = _gray_maqaf_hits(wlc_paths.require_mam_parsed_plus_dir())
+    hits = _gray_maqaf_hits(paths.require_mam_parsed_plus_dir())
     # The claims the prose rests on, pinned where the data is rather than in the page: that the
     # mark is confined to poetic verses, so it can be described as belonging to that system; that
     # the joined atom always has exactly one accent, which is what makes it worth a gray maqaf at
@@ -1157,7 +1156,7 @@ def _genre_survey(
 
 def build_survey() -> dict:
     """The whole survey: three corpora x two genres, every hit classified."""
-    wlc = wlc_words(wlc_paths.out_dir() / "wlc422-kq-u")
+    wlc = wlc_words(paths.out_dir() / "wlc422-kq-u")
     refs: dict[str, set[tuple[int, int]]] = defaultdict(set)
     for bcv in wlc:
         bb, chnu, vrnu = split_bcv(bcv)
@@ -1165,7 +1164,7 @@ def build_survey() -> dict:
 
     corpora = {
         "wlc422": wlc,
-        "uxlc": uxlc_words(wlc_paths.in_dir() / "UXLC-39"),
+        "uxlc": uxlc_words(paths.in_dir() / "UXLC-39"),
         "mam_simple": mam_words(dict(refs)),
     }
     genres = (("prose", prose_filter, True), ("poetic", poetic_filter, False))
@@ -1214,7 +1213,7 @@ def build_survey() -> dict:
 
 
 def default_json_out_path() -> Path:
-    return wlc_paths.out_dir() / "accgram" / "maqaf-nonfinal-accents.json"
+    return paths.out_dir() / "accgram" / "maqaf-nonfinal-accents.json"
 
 
 def write_json(survey: dict, path: Path) -> None:

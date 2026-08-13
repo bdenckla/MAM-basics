@@ -20,7 +20,7 @@ Both vendored JSONs are committed here under ``in/accgram``, so these FAIL rathe
 one is absent: the fetch scripts are how the file is regenerated, not a dependency a runner may
 be missing, and a tracked file having been deleted is the last moment to go quiet.  ``load_ctr``
 and ``load_source`` already raise naming the file, which is the whole of what a guard could say.
-See ``wlc_paths.require_sibling`` for the argument.
+See ``paths.require_sibling`` for the argument.
 
 ONE BLESSED EXAMPLE-BASED TEST (issue wlc-utils#88): ``clean_verse`` against a hand-built HTML string,
 the shape ``doc/agent-planning-principles.md`` otherwise forbids.  Kept, because the vendored

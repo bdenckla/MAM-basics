@@ -40,7 +40,7 @@ from typing import NamedTuple
 import pytest
 from PIL import Image
 
-import wlc_paths
+from mb_cmn import paths
 
 # The two class names ``my_html_for_img.annotated_img`` emits.  A rename there without a
 # rename here NARROWS this lint to nothing rather than breaking it, which is why the
@@ -113,7 +113,7 @@ def _viewbox_size(viewbox: str | None) -> tuple[int, int] | None:
 
 def _annotated_figures() -> list[Figure]:
     """Every annotated figure in the published tree, in page then document order."""
-    gh_pages = wlc_paths.gh_pages_dir()
+    gh_pages = paths.wlc_pages_dir()
     figures = []
     for page in sorted(gh_pages.rglob("*.html")):
         parser = _OverlayParser()
@@ -122,9 +122,7 @@ def _annotated_figures() -> list[Figure]:
         for src, viewbox in parser.found:
             figures.append(
                 Figure(
-                    page=str(page.relative_to(wlc_paths.wlc_data_root())).replace(
-                        "\\", "/"
-                    ),
+                    page=str(page.relative_to(paths.repo_root())).replace("\\", "/"),
                     src=src or "(no <img> in the wrapper)",
                     img=(page.parent / src).resolve() if src else None,
                     viewbox=_viewbox_size(viewbox),

@@ -4,8 +4,8 @@ Drives all three loci (Gen 35:22 + the two Decalogues) through the detangler and
 *existing* prose grammar.  The corpus-backed assertions FAIL, rather than skipping, when the
 WLC 4.22 kq-u corpus or MAM-simple is missing: the corpus is committed in this repo's ``out/``,
 so its absence means a tracked file was deleted, and MAM-simple's absence is a
-misconfiguration ``wlc_paths.require_mam_simple_dir`` answers with both env overrides.  See
-``wlc_paths.require_sibling`` for the argument.
+misconfiguration ``paths.require_mam_simple_dir`` answers with both env overrides.  See
+``paths.require_sibling`` for the argument.
 
 The fixed expectations were originally derived from a one-off corpus survey run in gitignored
 scratch, which no longer exists; this test is now their record, and the assertions below are
@@ -34,14 +34,14 @@ from accgram import supplied_marks
 from accgram.mam_simple_verse import load_mam_simple_for_refs
 from accgram.prose_ply_grammar import build_parser
 
-import wlc_paths
+from mb_cmn import paths
 
 
 def _detangle() -> list[dcd.PassageResult]:
-    kq_u_dir = rtms_data.default_wlc422_kq_u_dir(wlc_paths.wlc_data_root())
+    kq_u_dir = rtms_data.default_wlc422_kq_u_dir(paths.repo_root())
     wlc_index = rtms_data.load_wlc422_index(kq_u_dir)
     mam = load_mam_simple_for_refs(
-        wlc_paths.require_mam_simple_dir(),
+        paths.require_mam_simple_dir(),
         dcd.all_refs_by_book(),
         include_strands=True,
     )
@@ -146,7 +146,7 @@ def test_every_chanted_verse_parses_or_is_attributed_only_dt58_is_an_oddity() ->
 # --------------------------------------------------------------------------- #
 def _mam_with_strands() -> dict[str, dict]:
     return load_mam_simple_for_refs(
-        wlc_paths.require_mam_simple_dir(),
+        paths.require_mam_simple_dir(),
         dcd.all_refs_by_book(),
         include_strands=True,
     )
@@ -181,7 +181,7 @@ def test_prose_filter_single_cant_exceptions_match_mam_and_routing() -> None:
 
 
 def test_fold_in_yields_one_dt58_ungrammatical_record() -> None:
-    kq_u_dir = rtms_data.default_wlc422_kq_u_dir(wlc_paths.wlc_data_root())
+    kq_u_dir = rtms_data.default_wlc422_kq_u_dir(paths.repo_root())
     wlc_index = rtms_data.load_wlc422_index(kq_u_dir)
     mam = _mam_with_strands()
     parser = build_parser()

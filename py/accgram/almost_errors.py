@@ -1,4 +1,4 @@
-"""Generate gh-pages/accgram/almost-errors.html -- the "almost errors" page.
+"""Generate gh-pages/wlc/accgram/almost-errors.html -- the "almost errors" page.
 
 It documents, in one place, both
 
@@ -44,17 +44,16 @@ from accgram.almost_errors_html import REPORT_TITLE, render_body_contents
 from accgram.prose_ply_grammar import build_parser
 from accgram.prose_scanner import HasLegarmeh
 from wlc_cmn.utf8_io import force_utf8_io
+from mb_cmn import paths
 from mb_cmn import provenance
 from py_html import wlc_utils_html as H
-
-import wlc_paths
 
 
 # --------------------------------------------------------------------------- #
 # CLI
 # --------------------------------------------------------------------------- #
 def default_html_out_path(repo_root: Path) -> Path:
-    return wlc_paths.gh_pages_dir() / "accgram" / "almost-errors.html"
+    return paths.wlc_pages_dir() / "accgram" / "almost-errors.html"
 
 
 def add_args(parser: argparse.ArgumentParser, repo_root: Path) -> None:
@@ -93,7 +92,7 @@ def run(args: argparse.Namespace) -> None:
 
 def main() -> None:
     force_utf8_io()
-    repo_root = wlc_paths.wlc_data_root()
+    repo_root = paths.repo_root()
     parser = argparse.ArgumentParser(description=__doc__)
     add_args(parser, repo_root=repo_root)
     run(parser.parse_args())

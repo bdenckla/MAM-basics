@@ -60,24 +60,18 @@ from accgram.prose_ply_grammar import LOCATION_ONLY, build_parser, parse_tokens
 from accgram.prose_scanner import HasLegarmeh, Token, scan_accents
 from accgram.tree import tree_to_obj
 from mb_cmn import file_io
+from mb_cmn import paths
 from mb_cmn import provenance
-
-import wlc_paths
 
 _PASEQ = "\N{HEBREW PUNCTUATION PASEQ}"
 
 
 def default_source_path() -> Path:
-    return wlc_paths.in_dir() / "accgram" / "printed_decalogue_teamim.json"
+    return paths.in_dir() / "accgram" / "printed_decalogue_teamim.json"
 
 
 def default_out_path() -> Path:
-    return (
-        wlc_paths.out_dir()
-        / "accgram"
-        / "printed-decalogue"
-        / "_printed_decalogue.json"
-    )
+    return paths.out_dir() / "accgram" / "printed-decalogue" / "_printed_decalogue.json"
 
 
 # --------------------------------------------------------------------------- #
@@ -317,7 +311,7 @@ def main() -> None:
 
     force_utf8_io()
     parser = argparse.ArgumentParser(description=__doc__)
-    add_args(parser, repo_root=wlc_paths.wlc_data_root())
+    add_args(parser, repo_root=paths.repo_root())
     run(parser.parse_args())
 
 

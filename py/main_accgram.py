@@ -58,42 +58,42 @@ Subcommands:
     generate-html
                 Generate the accgram HTML reports in one pass:
 
-                  * gh-pages/accgram/poetic.html -- the residual poetic ungrammatical
+                  * gh-pages/wlc/accgram/poetic.html -- the residual poetic ungrammatical
                     (missing-silluq ERROR-leaf trees and NO_PARSE anomalies),
                     each enriched with its pointed-Hebrew text, scanned token
                     sequence, rendered tree, and WLC-vs-MAM-simple disjunctive
                     comparison (plus out/accgram/poetic/_oddballs.json).
                     Run run-poetic first.
-                  * gh-pages/accgram/goerwitz.html -- the prose ungrammatical
+                  * gh-pages/wlc/accgram/goerwitz.html -- the prose ungrammatical
                     set (from out/accgram/prose), enriched with its matching
                     wlc422-kq-u verse object and structured XML-ish UXLC verse
                     node (plus out/accgram/research-oddballs.json).
-                  * gh-pages/accgram/almost-errors.html -- the "almost errors"
+                  * gh-pages/wlc/accgram/almost-errors.html -- the "almost errors"
                     page documenting the editorial charities the checker applies
                     and the non-charity ek20:31 mahapakh!qadma, with live parse
                     trees regenerated from the grammar at build time.
-                  * gh-pages/accgram/supplied-marks.html -- the dual-cantillation
+                  * gh-pages/wlc/accgram/supplied-marks.html -- the dual-cantillation
                     "Supplied and suppressed marks" page (issue wlc-utils#36): the supplied-mark
                     inventory plus the per-strand punctuation (maqaf/sof-pasuq/legarmeh)
                     restructuring, generated live from the detangling run and linked
                     from almost-errors.html.
-                  * gh-pages/accgram/telg-doc-notes.html -- a deep-dive
+                  * gh-pages/wlc/accgram/telg-doc-notes.html -- a deep-dive
                     translation of MAM's documentation notes on the five
                     telisha-gedola + geresh/gershayim words (companion to the
                     telg exhibit on the almost-errors page).
-                  * gh-pages/accgram/ps17v14-mam-doc-notes.html and
+                  * gh-pages/wlc/accgram/ps17v14-mam-doc-notes.html and
                     ps17v14-double-tsinnor.html -- the Psalms 17:14 deep dives,
                     generated from their committed htel bodies.
-                  * gh-pages/accgram/maqaf-nonfinal-accents.html -- the Tanakh-wide
+                  * gh-pages/wlc/accgram/maqaf-nonfinal-accents.html -- the Tanakh-wide
                     survey of accents on a maqaf-joined atom (issue wlc-utils#76), which
                     also writes out/accgram/maqaf-nonfinal-accents.json.  Splits the
                     hits into Yeivin's grammatical secondary accents and the scribal
                     habit of §293, and settles whether Koren's Deuteronomy mun-mun on
                     לא־תעשה has a precedent.
-                  * gh-pages/accgram/printed-decalogue-uvinkha.html -- the printed
+                  * gh-pages/wlc/accgram/printed-decalogue-uvinkha.html -- the printed
                     editions cited at ובנך in MAM-basics issue #208, each with its
                     link and, where one has been taken, a crop of its page.
-                  * gh-pages/accgram/wlc-chanted-word-residue.html -- WLC's chanted
+                  * gh-pages/wlc/accgram/wlc-chanted-word-residue.html -- WLC's chanted
                     words whose two accents are a pair no section of Yeivin's prose
                     inventory names. Deliberately linked from nothing; it is in the
                     batch so it cannot go stale. Needs run-prose first, for its
@@ -106,7 +106,7 @@ Subcommands:
     generate-html-<name>
                 Generate a single report instead of the whole batch, where <name>
                 is the output file's basename (e.g. generate-html-printed-decalogue-simanim
-                writes gh-pages/accgram/printed-decalogue-simanim.html). Each accepts
+                writes gh-pages/wlc/accgram/printed-decalogue-simanim.html). Each accepts
                 the same options as its generator (e.g. --html-out). The full set:
                 generate-html-poetic, -goerwitz, -almost-errors, -supplied-marks,
                 -printed-decalogue, -printed-decalogue-simanim, -printed-decalogue-koren,
@@ -188,11 +188,11 @@ from accgram import wlc_chanted_word_residue_page
 from accgram import poetic_xcheck
 from wlc_cmn.utf8_io import force_utf8_io
 
-import wlc_paths
+from mb_cmn import paths
 
 
 def _repo_root() -> Path:
-    return wlc_paths.wlc_data_root()
+    return paths.repo_root()
 
 
 def _run_run_prose(args: argparse.Namespace) -> None:
@@ -244,7 +244,7 @@ def _run_vendor_ctr_decalogue(args: argparse.Namespace) -> None:
 
 
 # HTML report generators, as (name, module) pairs.  Each name is the basename of the file the
-# module generates (gh-pages/accgram/<name>.html), so the derived subcommands are named
+# module generates (gh-pages/wlc/accgram/<name>.html), so the derived subcommands are named
 # accordingly: `generate-html` runs the whole list, `generate-html-<name>` runs just one.
 _HTML_GENERATORS = (
     ("poetic", poetic_oddballs),
@@ -441,7 +441,7 @@ def build_parser() -> argparse.ArgumentParser:
         "generate-html",
         help=(
             "Generate the accgram HTML reports in one pass: "
-            "gh-pages/accgram/poetic.html (run run-poetic first), "
+            "gh-pages/wlc/accgram/poetic.html (run run-poetic first), "
             "goerwitz.html, almost-errors.html, and telg-doc-notes.html. Each "
             "runs with its default paths; live trees are regenerated from the "
             "grammar."
@@ -467,7 +467,7 @@ def build_parser() -> argparse.ArgumentParser:
     for name, module in _HTML_GENERATORS:
         one_parser = subparsers.add_parser(
             f"generate-html-{name}",
-            help=f"Generate gh-pages/accgram/{name}.html only.",
+            help=f"Generate gh-pages/wlc/accgram/{name}.html only.",
         )
         module.add_args(one_parser, repo_root=_repo_root())
         one_parser.set_defaults(

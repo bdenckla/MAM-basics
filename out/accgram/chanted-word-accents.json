@@ -665,7 +665,7 @@
    "merkha munax": 1,
    "merkha pashta": 1
   },
-  "already_documented_elsewhere": "The geresh-family-with-telisha-gedola words are not unaccounted for: they are the five words ``uni_to_marks.word_to_marks`` keeps both marks on, whitelisted by ``lexical_validation`` and set out in the telisha gedola exhibit of gh-pages/accgram/almost-errors.html. A geresh or gershayim written twice on one of them is folded above, so each counts as two accents, not three.",
+  "already_documented_elsewhere": "The geresh-family-with-telisha-gedola words are not unaccounted for: they are the five words ``uni_to_marks.word_to_marks`` keeps both marks on, whitelisted by ``lexical_validation`` and set out in the telisha gedola exhibit of gh-pages/wlc/accgram/almost-errors.html. A geresh or gershayim written twice on one of them is folded above, so each counts as two accents, not three.",
   "accounted_for_by_maqaf_after_gaya": {
    "what": "These are chanted words whose maqaf is the one ITM §357 describes, written after an atom that has its own accent and a gaʿya after that accent. Each IS a chanted word -- a maqaf is written in it, which is the whole test -- and each does have two accent tokens. What §357 settles is that the second token is the non-final atom's retained accent rather than a secondary accent of the kind §§233 and 241 describe. What that maqaf SIGNIFIES is unsettled in both books, and nothing here turns on it: Yeivin writes the same compounds with a space at §354, Breuer CoS Ch. 1 §43 records that 'different views have been expressed' and leaves it out, and Ch. 9 §37 points the other way. See ``maqaf_after_gaya``.",
    "total": 5,

@@ -5,7 +5,7 @@ import py_html.my_html_for_img as img
 import py_wlc.my_wlc_bcv_str as my_wlc_bcv_str
 import py_wlc_a_notes.my_wlc_a_notes_utils as my_wlc_a_notes_utils
 import py_wlc_a_notes.my_wlc_a_notes_full_nav as nav
-import wlc_paths
+from mb_cmn import paths
 
 
 def write(io_records):
@@ -49,7 +49,7 @@ def _write_record(record):
     title = f"WLC a-note {wlc_index}"
     path = f"full-record/wlc_a_note_{wlc_index:02}.html"
     write_ctx = wlc_utils_html.WriteCtx(
-        title, str(wlc_paths.gh_pages_dir() / "wlc-a-notes" / path), centered=True
+        title, str(paths.wlc_pages_dir() / "wlc-a-notes" / path), centered=True
     )
     wlc_utils_html.write_html_to_file(body_contents, write_ctx, "../../")
     return path

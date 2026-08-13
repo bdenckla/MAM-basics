@@ -1,4 +1,4 @@
-r"""Generate gh-pages/accgram/supplied-marks.html -- the supplied-mark inventory (wlc-utils#36).
+r"""Generate gh-pages/wlc/accgram/supplied-marks.html -- the supplied-mark inventory (wlc-utils#36).
 
 A *supplied mark* is a third kind of editorial charity, distinct from the two on the
 almost-errors page.  Those *reinterpret* a mark the manuscript already has (a prose
@@ -46,11 +46,10 @@ from accgram.almost_errors_html_shared import (
 from accgram.mam_simple_verse import default_mam_simple_dir
 from accgram import rtms_data
 from wlc_cmn.utf8_io import force_utf8_io
+from mb_cmn import paths
 from mb_cmn import provenance
 from py_html import my_html_for_img
 from py_html import wlc_utils_html as H
-
-import wlc_paths
 
 REPORT_TITLE = "Supplied and suppressed marks"
 _WIDTH_CLASS = "goerwitz-tms-width-limited"
@@ -98,7 +97,7 @@ _DEFAULT_SORT_COL = "Verse"
 
 
 def default_html_out_path(repo_root: Path) -> Path:
-    return wlc_paths.gh_pages_dir() / "accgram" / "supplied-marks.html"
+    return paths.wlc_pages_dir() / "accgram" / "supplied-marks.html"
 
 
 def add_args(parser: argparse.ArgumentParser, repo_root: Path) -> None:
@@ -455,7 +454,7 @@ def run(args: argparse.Namespace) -> None:
 
 def main() -> None:
     force_utf8_io()
-    repo_root = wlc_paths.wlc_data_root()
+    repo_root = paths.repo_root()
     parser = argparse.ArgumentParser(description=__doc__)
     add_args(parser, repo_root=repo_root)
     run(parser.parse_args())

@@ -16,15 +16,15 @@ from accgram import tm_descriptor
 from accgram.prose_ob_notes import get_structured_text
 from accgram.tm_sanity import sanity_check_structured_text
 
-import wlc_paths
+from mb_cmn import paths
 
 
 def default_ungrammatical_in(repo_root: Path) -> Path:
-    return wlc_paths.out_dir() / "accgram" / "prose" / "_oddballs.json"
+    return paths.out_dir() / "accgram" / "prose" / "_oddballs.json"
 
 
 def default_prose_dir(repo_root: Path) -> Path:
-    return wlc_paths.out_dir() / "accgram" / "prose"
+    return paths.out_dir() / "accgram" / "prose"
 
 
 def default_wlc422_kq_u_dir(repo_root: Path) -> Path:
@@ -32,7 +32,7 @@ def default_wlc422_kq_u_dir(repo_root: Path) -> Path:
 
 
 def default_uxlc_dir(repo_root: Path) -> Path:
-    return wlc_paths.in_dir() / "UXLC-39"
+    return paths.in_dir() / "UXLC-39"
 
 
 def default_mam_simple_dir(repo_root: Path) -> Path:
@@ -40,11 +40,11 @@ def default_mam_simple_dir(repo_root: Path) -> Path:
 
 
 def default_all_changes_path(repo_root: Path) -> Path:
-    return wlc_paths.in_dir() / "UXLC-misc" / "all_changes.json"
+    return paths.in_dir() / "UXLC-misc" / "all_changes.json"
 
 
 def default_ungrammatical_out_path(repo_root: Path) -> Path:
-    return wlc_paths.out_dir() / "accgram" / "research-oddballs.json"
+    return paths.out_dir() / "accgram" / "research-oddballs.json"
 
 
 def add_args(parser: argparse.ArgumentParser, repo_root: Path) -> None:
@@ -99,7 +99,7 @@ def add_args(parser: argparse.ArgumentParser, repo_root: Path) -> None:
 
 
 def run(args: argparse.Namespace) -> None:
-    repo_root = wlc_paths.wlc_data_root()
+    repo_root = paths.repo_root()
 
     all_changes_path = getattr(args, "all_changes", None)
     if not isinstance(all_changes_path, Path):

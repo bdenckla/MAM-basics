@@ -48,7 +48,7 @@ from accgram.poetic_scanner import scan_verse
 from accgram.tree import print_tree
 from wlc_cmn.wlc_book_codes import wlc_bb_to_bk39id
 
-import wlc_paths
+from mb_cmn import paths
 
 # Each bang token -> the two co-equal accents it fuses, in storage order: a
 # (token, leaf) pair for x and for y, plus the (mark_x, mark_y) codepoints used to
@@ -221,7 +221,7 @@ def default_input_path(repo_root: Path) -> Path:
 
 
 def default_report_path(repo_root: Path) -> Path:
-    return wlc_paths.out_dir() / "accgram" / "poetic" / "_bang_legality.txt"
+    return paths.out_dir() / "accgram" / "poetic" / "_bang_legality.txt"
 
 
 def add_args(parser: argparse.ArgumentParser, repo_root: Path) -> None:

@@ -1,4 +1,4 @@
-r"""Generate gh-pages/accgram/printed-decalogue-uvinkha.html -- the editions cited at ובנך.
+r"""Generate gh-pages/wlc/accgram/printed-decalogue-uvinkha.html -- the editions cited at ובנך.
 
 A record page, not an argument page.  MAM-basics issue #208 asks whether Hebrew Wikisource's
 p-trad עליון is right to have a meteg and a maqaf on ובנך in the Exodus Decalogue's Shabbat
@@ -17,7 +17,7 @@ Do not grow them into readings of the marks; the crops are low-resolution and th
 a reading belongs.
 
 Every cited edition has a crop as of 2026-07-27.  An edition with none renders "No crop recorded
-yet" rather than being silently omitted; to add one, drop the PNG in gh-pages/accgram/img/ under
+yet" rather than being silently omitted; to add one, drop the PNG in gh-pages/wlc/accgram/img/ under
 the same ``<Edition>-Ex-Dec-Shabbat-uvinkha`` naming and add a ``_Crop`` to that edition's tuple.
 
 No edition is identified by chapter and verse (Ben, 2026-07-27): the page had got that far
@@ -42,11 +42,10 @@ from accgram.uni_to_marks import is_accent
 from wlc_cmn.utf8_io import force_utf8_io
 from mb_cmn import hebrew_accent_strip as has
 from mb_cmn import hebrew_punctuation as hpunc
+from mb_cmn import paths
 from mb_cmn import provenance
 from py_html import wlc_utils_html as H
 from py_html.my_html_span_romanized import rmn
-
-import wlc_paths
 
 PAGE_TITLE = "What printed editions have at ובנך"
 
@@ -309,7 +308,7 @@ def _lap_table(rows: tuple[_LapRow, ...]) -> object:
 
 
 class _Crop(NamedTuple):
-    """One scan crop: the file in gh-pages/accgram/img/, plus its alt text and caption.
+    """One scan crop: the file in gh-pages/wlc/accgram/img/, plus its alt text and caption.
 
     ``caption`` is a str for the ordinary case and a contents tuple where a crop needs more --
     the MG Netter composite, which has to account for its own seam.
@@ -608,7 +607,7 @@ def _groups() -> tuple[_Group, ...]:
 
 
 def default_html_out_path(repo_root: Path) -> Path:
-    return wlc_paths.gh_pages_dir() / "accgram" / "printed-decalogue-uvinkha.html"
+    return paths.wlc_pages_dir() / "accgram" / "printed-decalogue-uvinkha.html"
 
 
 def add_args(parser: argparse.ArgumentParser, repo_root: Path) -> None:
@@ -748,7 +747,7 @@ def run(args: argparse.Namespace) -> None:
 
 def main() -> None:
     force_utf8_io()
-    repo_root = wlc_paths.wlc_data_root()
+    repo_root = paths.repo_root()
     parser = argparse.ArgumentParser(description=__doc__)
     add_args(parser, repo_root=repo_root)
     run(parser.parse_args())

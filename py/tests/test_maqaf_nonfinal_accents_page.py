@@ -1,7 +1,7 @@
 """The non-final-atom page (maqaf-nonfinal-accents.html) -- its committed scans.
 
 A tree lint, one of the two test shapes this repo blesses: the page references its two figures by
-relative path, so a scan that never reached ``gh-pages/accgram/img/`` gives a broken image on a
+relative path, so a scan that never reached ``gh-pages/wlc/accgram/img/`` gives a broken image on a
 page that says nothing is wrong. Same shape as ``test_printed_decalogue_koren``'s
 ``test_scan_images_committed`` and its Simanim twin, down to naming the files outright.
 
@@ -15,12 +15,12 @@ Run:
 
 from __future__ import annotations
 
-import wlc_paths
+from mb_cmn import paths
 
 
 def test_scan_images_committed() -> None:
     """Both printed-page scans the intro's figures reference are committed locally."""
-    img_dir = wlc_paths.gh_pages_dir() / "accgram" / "img"
+    img_dir = paths.wlc_pages_dir() / "accgram" / "img"
     for name in (
         # Koren's Deuteronomy appendix p. 39, the לא־תעשה line of its עליון.
         "Koren-appendix-p-39-Dt-Dec-p-trad-elyon-lo-taase.png",

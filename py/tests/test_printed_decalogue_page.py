@@ -7,7 +7,7 @@ there), that the two signal words identify the strands, and that ``_strip_pointi
 cantillation signal (accents + sof pasuq) while dropping vowels, MAM-simple style.
 
 The vendored source JSON is committed here, so these FAIL rather than skip if it is absent --
-see ``test_printed_decalogue``'s docstring and ``wlc_paths.require_sibling``.
+see ``test_printed_decalogue``'s docstring and ``paths.require_sibling``.
 
 Run:
     .venv/Scripts/python.exe -m pytest py/tests/test_printed_decalogue_page.py -v

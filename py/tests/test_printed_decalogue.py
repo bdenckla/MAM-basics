@@ -15,7 +15,7 @@ hand-transcribed real editions:
 The vendored source JSON is committed here as ``in/accgram/printed_decalogue_teamim.json``, so
 these FAIL rather than skip if it is absent -- printed_decalogue_fetch.py regenerates it, but a
 tracked file being gone is a deletion to shout about, not an optional dependency.  See
-``wlc_paths.require_sibling`` for the argument.
+``paths.require_sibling`` for the argument.
 
 Run:
     .venv/Scripts/python.exe -m pytest py/tests/test_printed_decalogue.py -v

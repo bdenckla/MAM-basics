@@ -1,4 +1,4 @@
-r"""Generate gh-pages/accgram/printed-decalogue.html -- the printed-tradition Decalogue
+r"""Generate gh-pages/wlc/accgram/printed-decalogue.html -- the printed-tradition Decalogue
 grammaticality report (issue wlc-utils#52).
 
 Companion to the dual-cantillation work of issue wlc-utils#36 (which grammar-checks the *manuscript*
@@ -59,12 +59,11 @@ from wlc_cmn.utf8_io import force_utf8_io
 from mb_cmn import hebrew_accent_strip as has
 from mb_cmn import hebrew_accents as ha
 from mb_cmn import hebrew_punctuation as hpunc
+from mb_cmn import paths
 from mb_cmn import provenance
 
 from py_html import wlc_utils_html as H
 from py_html.my_html_span_romanized import rmn
-
-import wlc_paths
 
 REPORT_TITLE = "In the printed tradition, are the accents of the Decalogue grammatical?"
 
@@ -150,7 +149,7 @@ _PATAX = pds.ROM_PATAX
 
 
 def default_html_out_path(repo_root: Path) -> Path:
-    return wlc_paths.gh_pages_dir() / "accgram" / "printed-decalogue.html"
+    return paths.wlc_pages_dir() / "accgram" / "printed-decalogue.html"
 
 
 def add_args(parser: argparse.ArgumentParser, repo_root: Path) -> None:
@@ -1531,7 +1530,7 @@ def run(args: argparse.Namespace) -> None:
 
 def main() -> None:
     force_utf8_io()
-    repo_root = wlc_paths.wlc_data_root()
+    repo_root = paths.repo_root()
     parser = argparse.ArgumentParser(description=__doc__)
     add_args(parser, repo_root=repo_root)
     run(parser.parse_args())

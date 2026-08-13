@@ -50,7 +50,7 @@ import json
 import re
 from pathlib import Path
 
-import wlc_paths
+from mb_cmn import paths
 from accgram import edition_transcription as et
 
 # A page label is the export stem's last underscore-separated part -- "p298" for
@@ -229,7 +229,7 @@ def _write(path: Path, text: str) -> None:
     Path.write_text in text mode would translate to CRLF on Windows.
     """
     path.write_text(text, encoding="utf-8", newline="\n")
-    print(f"wrote {path.relative_to(wlc_paths.wlc_data_root())}")
+    print(f"wrote {path.relative_to(paths.repo_root())}")
 
 
 def _warn_dropped_keys(path: Path, record: dict) -> None:

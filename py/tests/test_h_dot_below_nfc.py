@@ -6,10 +6,12 @@ BELOW (U+0323) sequence. Comments must not use either Unicode form at all -- pla
 ASCII "x"/"X" is used instead, since comments don't flow to output.
 
 THREE REPOS ARE SCANNED, each with its own exclusions and its own floor. This repo
-holds the code; wlc-utils and UXLC-utils hold corpora the code here generates into, and
-both still carry hand-authored transliterations in ``doc/``, ``CLAUDE.md`` and
-``README.md`` after their Python moved out. ``_scopes()`` below is the whole of the
-per-repo difference.
+holds the code, and since 2026-08-12 the wlc corpus the code generates as well; UXLC-utils
+still holds the corpus its half generates into. Both siblings carry hand-authored
+transliterations in ``doc/``, ``CLAUDE.md`` and ``README.md`` after their Python moved
+out. ``_scopes()`` below is the whole of the per-repo difference. The wlc-utils scope
+outlives the generators that once wrote there, and Phase 10 of
+``doc/PLAN-evacuate-the-rest-of-wlc-utils.md`` is what removes it.
 
 The UXLC-utils scope arrived with that repo's Python (Phase 3 of
 ``doc/PLAN-evacuate-python-from-UXLC-utils.md``) and replaces its
@@ -47,7 +49,6 @@ from pathlib import Path
 from mb_cmn import paths
 
 import uxlc_paths
-import wlc_paths
 
 _COMBINING_DOT_BELOW = chr(0x0323)
 _H_WITH_DOT_BELOW = chr(0x1E25)
@@ -179,7 +180,14 @@ def _scopes() -> tuple[_Scope, ...]:
         ),
         _Scope(
             label="wlc-utils",
-            root=wlc_paths.wlc_data_root(),
+            # THE ONE PATH IN py/ THAT STILL LEAVES THIS CHECKOUT, and it is a read.
+            # Every generator was repointed home on 2026-08-12 (Phase 5 of
+            # doc/PLAN-evacuate-the-rest-of-wlc-utils.md), which is what makes a
+            # MAM-basics worktree isolate the generated artifacts. This scope stays
+            # because wlc-utils still holds the 626 files it always did -- the copy
+            # made at Phase 3 is a copy -- and Phase 10 is what empties that repo and
+            # deletes this scope with it.
+            root=paths.require_sibling("wlc-utils", paths.sibling_repo("wlc-utils")),
             exclude_dir_prefixes=_WLC_EXCLUDE_DIR_PREFIXES,
             exclude_files=frozenset(),
             # Excluding in/, out/ and gh-pages/ leaves doc/, CLAUDE.md, README.md and a

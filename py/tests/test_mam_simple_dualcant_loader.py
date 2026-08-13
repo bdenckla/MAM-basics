@@ -22,13 +22,13 @@ import pytest
 
 from accgram import accent_marks as am
 from accgram.mam_simple_verse import load_mam_simple_for_refs
-import wlc_paths
+from mb_cmn import paths
 
 
 def _verse(bb: str, chnu: int, vrnu: int) -> dict[str, object]:
     refs = {bb: {(chnu, vrnu)}}
     loaded = load_mam_simple_for_refs(
-        wlc_paths.mam_simple_dir(), refs, include_strands=True
+        paths.mam_simple_dir(), refs, include_strands=True
     )
     bcv = f"{bb}{chnu}:{vrnu}"
     assert bcv in loaded, f"{bcv} not loaded"

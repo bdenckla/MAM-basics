@@ -63,11 +63,11 @@ from accgram import prose_filter
 from wlc_cmn.wlc_book_codes import bk39id_to_wlc_bb
 from py_uxlc import my_uxlc
 from py_uxlc.my_uxlc_book_abbreviations import expand_citation
-import wlc_paths
+from mb_cmn import paths
 
-WLC_KQ_U = wlc_paths.out_dir() / "wlc422-kq-u"
-SRC = wlc_paths.in_dir() / "accgram" / "uxlc_accent_changes.json"
-OUT = wlc_paths.out_dir() / "accgram" / "uxlc_grammar_test.txt"
+WLC_KQ_U = paths.out_dir() / "wlc422-kq-u"
+SRC = paths.in_dir() / "accgram" / "uxlc_accent_changes.json"
+OUT = paths.out_dir() / "accgram" / "uxlc_grammar_test.txt"
 
 MAQAF_CP = "־"  # HEBREW PUNCTUATION MAQAF
 PASEQ_CP = "׀"  # HEBREW PUNCTUATION PASEQ

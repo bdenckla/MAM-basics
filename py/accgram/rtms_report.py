@@ -15,7 +15,7 @@ from mb_cmn import bib_locales as tbn
 from py_html import wlc_utils_html
 from py_wlc import my_wlc_bcv_str
 
-import wlc_paths
+from mb_cmn import paths
 
 _SELF_LINK_SYMBOL = "🔗"
 
@@ -42,7 +42,7 @@ def expand_uxlc_change_ref(compact: object) -> object:
 
 
 def default_html_out_path(repo_root: Path) -> Path:
-    return wlc_paths.gh_pages_dir() / "accgram" / "goerwitz.html"
+    return paths.wlc_pages_dir() / "accgram" / "goerwitz.html"
 
 
 def resolve_html_out_path(args: object, repo_root: Path) -> Path:
@@ -438,23 +438,36 @@ def _mam_with_doc_url(bb: str, chnu: int, vrnu: int) -> str:
 def _derive_html_out_from_out_path(out_path: Path) -> Path | None:
     for ancestor in out_path.parents:
         if ancestor.name == "out":
-            return ancestor.parent / "gh-pages" / "accgram" / "goerwitz.html"
+            return ancestor.parent / "gh-pages" / "wlc" / "accgram" / "goerwitz.html"
 
     parent = out_path.parent
     if parent != out_path:
-        return parent / "gh-pages" / "accgram" / "goerwitz.html"
+        return parent / "gh-pages" / "wlc" / "accgram" / "goerwitz.html"
 
     return None
 
 
 def _path_to_gh_pages_style(html_out_path: Path) -> str:
+    """Return the ``../`` prefix that reaches ``style.css`` from a page's own location.
+
+    THE ANCHOR IS THE WLC SITE ROOT, ``gh-pages/wlc/``, NOT THE DEPLOY ROOT.  The
+    stylesheet sits beside ``index.html`` at the site root, and this corpus nests one
+    level under the deploy root so MAM-basics' own site root stays free (Phase 3 of
+    ``doc/PLAN-evacuate-the-rest-of-wlc-utils.md``).  Counting from ``gh-pages`` instead
+    would emit ``../../style.css`` where every published page says ``../style.css``, on
+    all 154 of them at once.  A ``--html-out`` pointing at a bare ``gh-pages/`` with no
+    ``wlc`` under it -- a scratch copy, or the layout as it stood in wlc-utils -- still
+    counts from ``gh-pages``, which is what such a tree wants.
+    """
     path_parts = list(html_out_path.parent.parts)
     if "gh-pages" not in path_parts:
         return "../"
 
-    gh_pages_index = path_parts.index("gh-pages")
-    depth_from_gh_pages = len(path_parts) - gh_pages_index - 1
-    if depth_from_gh_pages <= 0:
+    site_root_index = path_parts.index("gh-pages")
+    if path_parts[site_root_index + 1 : site_root_index + 2] == ["wlc"]:
+        site_root_index += 1
+    depth_from_site_root = len(path_parts) - site_root_index - 1
+    if depth_from_site_root <= 0:
         return ""
 
-    return "../" * depth_from_gh_pages
+    return "../" * depth_from_site_root

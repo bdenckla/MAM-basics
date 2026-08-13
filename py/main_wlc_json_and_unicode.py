@@ -1,7 +1,7 @@
 """WLC JSON and Unicode generation entrypoint."""
 
 from wlc_cmn.utf8_io import force_utf8_io
-import wlc_paths
+from mb_cmn import paths
 import py_wlc_json_and_unicode.wlc_write_to_json as wlc_write_to_json
 import py_wlc_json_and_unicode.wlc_compare_mdc_with_uxlc as mx
 import py_wlc_json_and_unicode.wlc_compare_mdc_with_mdc as mm
@@ -54,11 +54,11 @@ def almost_main():
 # BOTH roots are absolute, and neither is the cwd.  _PUBLIC was "." until 2026-08-01,
 # which made every path below relative to wherever the process happened to be started;
 # run from another repo that also has in/ and out/, it wrote there instead of failing.
-_PUBLIC = str(wlc_paths.wlc_data_root())
+_PUBLIC = str(paths.repo_root())
 # The private repo is a cross-repo sibling; route it through the repo-anchored,
 # env-overridable resolver (fixes worktree breakage and the old cwd-relative
 # fragility).
-_PRIVATE = str(wlc_paths.wlc_utils_private_dir())
+_PRIVATE = str(paths.wlc_utils_private_dir())
 
 
 def _root_for(name):

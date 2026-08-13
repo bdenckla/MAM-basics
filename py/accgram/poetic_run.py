@@ -40,9 +40,8 @@ from accgram.poetic_scanner import scan_book
 from accgram.tree import TN, tree_to_obj
 from accgram.poetic_reconcile import reconcile_tokens
 from mb_cmn import file_io
+from mb_cmn import paths
 from mb_cmn import provenance
-
-import wlc_paths
 
 
 @dataclass(frozen=True)
@@ -195,11 +194,11 @@ def render_book(
 
 
 def default_input_path(repo_root: Path) -> Path:
-    return wlc_paths.out_dir() / "wlc422-kq-u"
+    return paths.out_dir() / "wlc422-kq-u"
 
 
 def default_out_dir(repo_root: Path) -> Path:
-    return wlc_paths.out_dir() / "accgram" / "poetic"
+    return paths.out_dir() / "accgram" / "poetic"
 
 
 def add_args(parser: argparse.ArgumentParser, repo_root: Path) -> None:

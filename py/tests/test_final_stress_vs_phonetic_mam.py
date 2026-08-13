@@ -60,7 +60,7 @@ from accgram import prose_filter
 from wlc_cmn.wlc_book_codes import wlc_bb_to_bk39id
 from mb_cmn import bib_locales as tbn
 
-import wlc_paths
+from mb_cmn import paths
 
 # What a join key drops: the accents (U+0591..U+05AE), the masora circle (U+05AF) Phonetic MAM
 # writes to mark a sheva or dagesh it has resolved, meteg (U+05BD), rafe (U+05BF), the punctuation
@@ -128,7 +128,7 @@ def _book(bb: str) -> dict[tuple[int, int], dict[str, frozenset]]:
     MAM-simple has.  The ketiv ירושלם is the common case.
     """
     osdf = tbn.ordered_short_dash_full_39(wlc_bb_to_bk39id(bb))
-    path = wlc_paths.require_al_hatorah_phonetic_dir() / f"{osdf}.json"
+    path = paths.require_al_hatorah_phonetic_dir() / f"{osdf}.json"
     data = json.loads(path.read_text(encoding="utf-8"))
     per_verse: dict[tuple[int, int], dict[str, frozenset]] = {}
     for key, verse in data.items():
@@ -170,7 +170,7 @@ def _measured() -> list[dict]:
     verse's last, and so where a U+05BD is the silluq.  MAM's own numbering is the right answer to
     that for a MAM text.
     """
-    mam_dir = wlc_paths.require_mam_simple_vtrad_mam_dir()
+    mam_dir = paths.require_mam_simple_vtrad_mam_dir()
     words = mpa.mam_words(mam_simple_verse.mam_simple_refs(mam_dir), mam_dir)
     _hits, _verses, _compounds, simple, concentrators = mpa.scan(
         words, prose_filter.should_keep_line, prose=True

@@ -45,7 +45,7 @@ from accgram.poetic_ply_grammar import build_parser, parse_tokens
 from accgram.poetic_scanner import scan_book
 from accgram.poetic_reconcile import reconcile_tokens
 
-import wlc_paths
+from mb_cmn import paths
 
 
 @dataclass(frozen=True)
@@ -170,7 +170,7 @@ def default_input_path(repo_root: Path) -> Path:
 
 
 def default_report_path(repo_root: Path) -> Path:
-    return wlc_paths.out_dir() / "accgram" / "poetic" / "_mam_xcheck.txt"
+    return paths.out_dir() / "accgram" / "poetic" / "_mam_xcheck.txt"
 
 
 def add_args(parser: argparse.ArgumentParser, repo_root: Path) -> None:

@@ -21,7 +21,7 @@ maps 1:1 onto the scan-pixel-space overlay used at render time and onto
 Run via ``main_edition_transcription.py highlight-picker`` (from the repo root; PowerShell):
     .venv\\Scripts\\python.exe py\\main_edition_transcription.py highlight-picker \\
         Simanim-Tiqqun-p-083-Ex-Dec-elyon.png
-The .png suffix is optional. The image is resolved under gh-pages/accgram/img/.
+The .png suffix is optional. The image is resolved under gh-pages/wlc/accgram/img/.
 Add --serve to run a local http server (then Ctrl+C to stop it) instead of the
 default file:// open. Add --no-open to print the URL without launching anything.
 This module is not independently runnable, and had its own hand-rolled ``sys.argv``
@@ -50,13 +50,13 @@ import threading
 import webbrowser
 from pathlib import Path
 
-import wlc_paths
+from mb_cmn import paths
 
-# Off wlc_paths like every other module here, never the cwd.  This file computed its own
+# Off ``mb_cmn.paths`` like every other module here, never the cwd.  This file computed its own
 # ``Path(__file__).resolve().parents[2]`` until 2026-08-01 -- the one module in the tree that
-# bypassed wlc_paths entirely, so a change to how the repo locates itself would have missed it.
-_IMG_DIR = wlc_paths.gh_pages_dir() / "accgram" / "img"
-_OUT_DIR = wlc_paths.novc_dir()
+# resolved the repo for itself, so a change to how the repo locates itself would have missed it.
+_IMG_DIR = paths.wlc_pages_dir() / "accgram" / "img"
+_OUT_DIR = paths.novc_dir()
 
 
 def serve_and_open(directory: Path, rel_url: str, *, open_browser: bool = True) -> None:
@@ -118,16 +118,22 @@ def _px_boxes_from_arg(data: object) -> list[dict]:
 def _build_html(img_name: str, init_boxes_px: list[dict] | None = None) -> str:
     """Return the self-contained picker HTML for the given scan.
 
-    The <img> uses a RELATIVE path (../gh-pages/accgram/img/<name>) from the
+    The <img> uses a RELATIVE path (../gh-pages/wlc/accgram/img/<name>) from the
     picker's own .novc/ location, so it resolves identically whether the page is
     opened as a file:// URL (no server) or served over http://.
+
+    The geometry survived the corpus coming home on 2026-08-12: ``.novc/`` and
+    ``gh-pages/`` were siblings one level under wlc-utils' root and are siblings one
+    level under this repo's root, so only the ``wlc/`` nesting segment was added.  That
+    geometry is why ``.novc/`` could not follow the code here in 2026-08-01's Python
+    evacuation, and ``py/wlc_paths.py``'s docstring existed largely to say so.
 
     ``init_boxes_px`` (px ``{x, y, w, h}`` dicts in the scan's own pixel space) seeds
     the editor so it opens with boxes to tweak rather than blank. They are injected as
     px and converted to the editor's normalized 0-1 form in-browser on image load
     (using naturalWidth/Height), so this stays Pillow-free like the rest of the tool.
     """
-    img_url = f"../gh-pages/accgram/img/{img_name}"
+    img_url = f"../gh-pages/wlc/accgram/img/{img_name}"
     init_json = json.dumps(init_boxes_px or [])
     return (
         _HTML_TEMPLATE.replace("__IMG_NAME__", img_name)
@@ -150,9 +156,9 @@ def generate(
     out_path.write_text(html, encoding="utf-8", newline="")
     print(f"Picker written to: {out_path}")
     if serve:
-        # Serve from the repo root so both .novc/ HTML and gh-pages/accgram/img/ resolve.
+        # Serve from the repo root so both .novc/ HTML and gh-pages/wlc/accgram/img/ resolve.
         serve_and_open(
-            wlc_paths.wlc_data_root(),
+            paths.repo_root(),
             f".novc/{out_path.name}",
             open_browser=open_browser,
         )
@@ -582,12 +588,12 @@ updateStatus();
 
 
 def add_args(parser: argparse.ArgumentParser, repo_root: Path) -> None:
-    # repo_root is unused: _IMG_DIR and _OUT_DIR are module constants off wlc_paths.  The
+    # repo_root is unused: _IMG_DIR and _OUT_DIR are module constants off paths.  The
     # parameter is here so the entry point wires every subcommand the same way.
     del repo_root
     parser.add_argument(
         "image",
-        help="scan filename under gh-pages/accgram/img/, with or without the .png",
+        help="scan filename under gh-pages/wlc/accgram/img/, with or without the .png",
     )
     parser.add_argument(
         "--serve",

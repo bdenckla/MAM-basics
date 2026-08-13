@@ -45,7 +45,7 @@ Subcommands:
                 exits non-zero if any .txt is not its own derived body.
     highlight-picker
                 Build a page for dragging highlight rectangles over a committed scan
-                under gh-pages/accgram/img/, to .novc/highlight-picker-<image>.html, and
+                under gh-pages/wlc/accgram/img/, to .novc/highlight-picker-<image>.html, and
                 export their coordinates for pasting into a page generator.  Authoring
                 only: nothing it makes ships, and the page generators hold its output as
                 ``mhi.Box`` px boxes.  --boxes-file seeds it with boxes to tweak.
@@ -80,11 +80,11 @@ from accgram import transcription_editor
 from accgram import zoom_line
 from wlc_cmn.utf8_io import force_utf8_io
 
-import wlc_paths
+from mb_cmn import paths
 
 
 def _repo_root() -> Path:
-    return wlc_paths.wlc_data_root()
+    return paths.repo_root()
 
 
 def _run_scan_page(args: argparse.Namespace) -> None:
@@ -183,7 +183,7 @@ def build_parser() -> argparse.ArgumentParser:
     highlight_picker_parser = subparsers.add_parser(
         "highlight-picker",
         help=(
-            "Build a box-dragging page over a committed scan under gh-pages/accgram/img/, "
+            "Build a box-dragging page over a committed scan under gh-pages/wlc/accgram/img/, "
             "to .novc/highlight-picker-<image>.html, and export the boxes' coordinates. "
             "--serve runs a local http server; --no-open prints the URL and launches "
             "nothing; --boxes-file seeds the editor with boxes to tweak."

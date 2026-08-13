@@ -1,4 +1,4 @@
-r"""Generate gh-pages/accgram/dual-under-bars-in-leningrad-decalogues.html (issue wlc-utils#53).
+r"""Generate gh-pages/wlc/accgram/dual-under-bars-in-leningrad-decalogues.html (issue wlc-utils#53).
 
 An evidence page backing the "Supplied accents" Asides on supplied-marks.html (Exodus 20:3,
 Deuteronomy 5:17), which speculate that the Leningrad naqdan may have meant one vertical
@@ -18,11 +18,10 @@ from pathlib import Path
 from accgram import rtms_report
 from accgram.almost_errors_html_shared import link, text_para
 from wlc_cmn.utf8_io import force_utf8_io
+from mb_cmn import paths
 from mb_cmn import provenance
 from py_html import my_html_for_img
 from py_html import wlc_utils_html as H
-
-import wlc_paths
 
 PAGE_TITLE = "Dual Under-Bars in the Leningrad Decalogues"
 _WIDTH_CLASS = "goerwitz-tms-width-limited"
@@ -52,7 +51,7 @@ _IMAGES: tuple[tuple[str, str, str], ...] = (
 
 def default_html_out_path(repo_root: Path) -> Path:
     return (
-        wlc_paths.gh_pages_dir()
+        paths.wlc_pages_dir()
         / "accgram"
         / "dual-under-bars-in-leningrad-decalogues.html"
     )
@@ -132,7 +131,7 @@ def run(args: argparse.Namespace) -> None:
 
 def main() -> None:
     force_utf8_io()
-    repo_root = wlc_paths.wlc_data_root()
+    repo_root = paths.repo_root()
     parser = argparse.ArgumentParser(description=__doc__)
     add_args(parser, repo_root=repo_root)
     run(parser.parse_args())

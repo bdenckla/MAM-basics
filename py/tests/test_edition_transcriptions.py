@@ -11,7 +11,7 @@ diverges from its Wikisource strand, for which the token-stream control below ha
 answer.  Five
 cases skip on a clean run, all of them that.  Nothing here skips on missing data -- the vendored
 strand JSON and all twelve transcriptions and their exports are committed under ``in/accgram``,
-so an absent one is a deleted tracked file and fails.  See ``wlc_paths.require_sibling``.
+so an absent one is a deleted tracked file and fails.  See ``paths.require_sibling``.
 
 TWO BLESSED EXAMPLE-BASED BANDS (issue wlc-utils#88).  Everything above is differential, but two bands
 are not, and ``doc/agent-planning-principles.md`` otherwise forbids the shape: the shorthand
