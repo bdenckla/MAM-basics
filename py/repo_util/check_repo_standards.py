@@ -24,7 +24,12 @@ and every run. `has_tracked_py` is reported per repo and those three read `n/a`
 when it is False, the same gate `run_black.py` uses to tell a legitimate skip
 from a repo the sweep is quietly passing by. wlc-utils is the case that made this
 necessary: its Python was evacuated into MAM-basics on 2026-08-01, leaving in/,
-out/, gh-pages/, data/ and doc/ and nothing to format, lint or maintain. The two
+out/, gh-pages/, data/ and doc/ and nothing to format, lint or maintain. (Dated
+record; the rest followed. The 2026-08 evacuation, finished 2026-08-17, emptied
+wlc-utils to a redirect host -- 155 generated stubs under gh-pages/ plus six
+root files, rebuilt by this repo's py/main_wlc_redirect_stubs.py -- so the gate
+still reads n/a there, and the repo no longer holds data for an agent session
+to edit, so its ungated worktree counts should normally read 0 now.) The two
 worktree COUNTS are not gated, because they stay true and still matter -- such a
 repo goes on accruing worktrees from agents editing its data, which is what
 `py/main_repo_util.py --clean-worktrees` exists to sweep now that no maintenance
@@ -220,7 +225,11 @@ unreferenced is not the same as spent: of the four, three were deleted and the
 fourth, doc/PLAN-overall-port-to-python.md, is a live intention whose next
 stage is merely unstarted. So the screen yields a list to hand-check, never a
 delete list. The question it cannot answer -- is the end result in the tree
-yet? -- is the whole question.
+yet? -- is the whole question. (The six doc/ files that screen kept are THIS
+repo's doc/ files now: the 2026-08 rest-of-wlc-utils evacuation copied them
+here on 2026-08-12 and deleted wlc-utils' doc/ outright on 2026-08-17, so the
+paths above read against MAM-basics, doc/PLAN-overall-port-to-python.md
+included.)
 
 MAM-basics' own doc/ was swept on 2026-07-31: ten files, 1126 lines plus a
 rendered SVG, out of the thirteen the screen raised. Two test-harness

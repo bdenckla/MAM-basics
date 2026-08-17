@@ -161,8 +161,17 @@ Two things a blind sweep gets wrong, so read the surrounding sentence before add
   required argument there rather than an inherited cwd; the bare `#69` in its docstring is the
   worked example of the ambiguity and must stay bare.
 
-wlc-utils' own `doc/`, `in/` and `CLAUDE.md` were left alone — a bare `#NN` read there still means
-a wlc-utils issue, and qualifying those would imply they were ambiguous.
+wlc-utils' own `doc/`, `in/` and `CLAUDE.md` were left alone — a bare `#NN` read there still meant
+a wlc-utils issue, and qualifying those would imply they were ambiguous. Phase 10 of
+`doc/PLAN-evacuate-the-rest-of-wlc-utils.md` then deleted that repo's `doc/` and `in/` outright
+(2026-08-17), and their byte-identical copies live in **this** repo's `doc/` and `in/` — the six
+`doc/` files that arrived 2026-08-12 (`agent-planning-principles.md`,
+`edition-transcription-workflow.md`, `review-findings-2026-07-29.md`, `simanim-tanakh-signs.md`,
+`PLAN-overall-port-to-python.md`, `PLAN-two-accents-on-one-chanted-word.md`) and the wlc trees
+under `in/` (`in/accgram/edition_transcriptions/` above all) — still carrying bare `#NN` issue
+citations that mean wlc-utils issues. Those files are the one standing exception to "a bare `#NN`
+here means MAM-basics". wlc-utils' own rewritten `CLAUDE.md` keeps its bare-`#NN`-means-wlc-utils
+note for the redirect host itself.
 
 ## There is no `wlc-koren-12th` repo
 
@@ -293,8 +302,10 @@ outward-facing action against a live wiki, and there is no regeneratable artifac
 after the fact — so pinning an edit payload before it is sent is worth its cost on those
 grounds, not because the general rule has an escape hatch.
 
-The fullest statement of this rule, with the evidence behind it, is in the sibling repo:
-`wlc-utils/doc/agent-planning-principles.md` §"Generated Outputs Are the Tests".
+The fullest statement of this rule, with the evidence behind it, is in this repo:
+`doc/agent-planning-principles.md` §"Generated Outputs Are the Tests". (This sentence said "in the
+sibling repo: `wlc-utils/doc/…`" until 2026-08-17 — the file came home with the rest of wlc-utils'
+`doc/` in the 2026-08 evacuation, which then deleted wlc-utils' copy.)
 
 **This file is the only instruction file this repo has.** `CLAUDE-disabled.md` and
 `.github/copilot-instructions-disabled.md` were deleted on 2026-08-03, when GitHub Copilot

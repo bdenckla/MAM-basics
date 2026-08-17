@@ -1,12 +1,14 @@
 # PLAN — two accents on one chanted word (prose)
 
-**FROZEN 2026-08-11 by Ben's decision, with Phase 4 unstarted. Execute no phase of this plan until
-the freeze lifts.** The reason is outside this plan rather than in it: this plan generates accgram
-pages, and `MAM-basics\doc\PLAN-evacuate-the-rest-of-wlc-utils.md` proves each of its own phases by
-regenerating those same pages and requiring a zero diff — so a page edit landing mid-evacuation is
-indistinguishable from a bug in the move. That plan names this one as its Precondition 1, "land or
-freeze", and Ben chose freeze on 2026-08-11 while its Phase 0 was running. **The freeze lifts when
-wlc-utils is fully evacuated**, at that plan's Phase 11.
+**FROZEN 2026-08-11 by Ben's decision, with Phase 4 unstarted — and the freeze LIFTED 2026-08-17,
+at `MAM-basics\doc\PLAN-evacuate-the-rest-of-wlc-utils.md`'s Phase 11, exactly where its own terms
+said it would. This plan may be executed again; Phase 4 is still the next phase, parked until
+someone runs it.** The reason for the freeze was outside this plan rather than in it: this plan
+generates accgram pages, and the evacuation plan proved each of its own phases by regenerating
+those same pages and requiring a zero diff — so a page edit landing mid-evacuation was
+indistinguishable from a bug in the move. That plan named this one as its Precondition 1, "land or
+freeze", and Ben chose freeze on 2026-08-11 while its Phase 0 was running; wlc-utils was fully
+evacuated, and the whole evacuation plan closed, on 2026-08-17.
 
 **Nothing is abandoned, and nothing needs re-deciding when this resumes.** Phase 4 is down to two
 chanted words, and §10 settled how the exception for each is spelled:
@@ -19,7 +21,7 @@ chanted words, and §10 settled how the exception for each is spelled:
   no legarmeh token anywhere. Still held, and the freeze changes nothing about it.
 
 Read the rest of this file as it stands. §0 is still the right resume point and its instructions
-are still correct; they simply do not run yet.
+are still correct.
 
 ---
 
