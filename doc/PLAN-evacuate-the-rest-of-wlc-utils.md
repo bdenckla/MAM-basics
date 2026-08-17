@@ -14,13 +14,15 @@ to this file's first commit apart from its header, so `git show` recovers it.
 **So do not re-create one.** If a future session drafts in `~/.claude/plans/` again, fold it in
 here and delete it, as `8daef35` did with two such scratch plans.
 
-**Phases 0 through 9 are done — 0 and 1 on 2026-08-11, 2 through 5 on 2026-08-12, 6 through 8 on
-2026-08-13, 9 on 2026-08-17. Phase 9 is the first deletion this plan has made: wlc-utils is down
+**Phases 0 through 10 are done — 0 and 1 on 2026-08-11, 2 through 5 on 2026-08-12, 6 through 8 on
+2026-08-13, 9 and 10 on 2026-08-17. Phase 9 was the first deletion this plan made: wlc-utils went
 from 626 tracked files to 497, at `f10f405`, its 154 published pages replaced in place by redirect
-stubs, a `404.html` added, and the 130 non-HTML assets removed.**
-Phase 3 **copied** 620 of the original 626 into MAM-basics rather than moving them — that is the
-dual-residency window, whose `gh-pages/` half Phase 9 has now closed — and the six loose root files
-stayed behind. **The site is live and complete**: Ben enabled
+stubs, a `404.html` added, and the 130 non-HTML assets removed. Phase 10 finished the emptying the
+same day: wlc-utils now tracks 161 files — the 155 stubs plus six root files — at `8250b69`, its
+`README.md` and `CLAUDE.md` rewritten as a redirect host's.**
+Phase 3 **copied** 620 of the original 626 into MAM-basics rather than moving them — that was the
+dual-residency window, which Phase 9 closed for `gh-pages/` and Phase 10 closed outright — and the
+six loose root files stayed behind. **The site is live and complete**: Ben enabled
 Pages on 2026-08-11, `.github/workflows/pages.yml` arrived with the corpus at Phase 3, whose push
 fired the first deploy, and Phase 6 added `gh-pages/index.html` on 2026-08-13, so
 `https://bdenckla.github.io/MAM-basics/` and everything under `/wlc/` both serve. **Every URL any
@@ -37,8 +39,8 @@ the one intentional artifact change in the plan and it has landed**: one `href` 
 `gh-pages/wlc/420422/index.html`, in its own commit so that no later phase's zero-diff oracle
 carries a real diff inside it. **Phase 8 changed no artifact at all**: the 155 redirect stubs it
 builds go to a gitignored scratch directory, and `build --publish` is what Phase 9 used to land
-them in wlc-utils. Phases 10 and 11
-are unstarted. (This paragraph read "Nothing has been executed. Every phase below is
+them in wlc-utils. Phase 11
+is unstarted. (This paragraph read "Nothing has been executed. Every phase below is
 unstarted" until Phase 0 ran, and has been rewritten at each phase since. Until Phase 3 it also said
 "No file has moved yet" and "no GitHub setting has been touched"; until Phase 6 it said the site
 root "404s until Phase 6 adds `gh-pages/index.html`, by design"; and until Phase 9 it opened
@@ -48,9 +50,10 @@ four are now false, which is why they are replaced here rather than softened.)
 **AS OF PHASE 5, NO PROGRAM WRITES INTO wlc-utils, AND THAT IS THE THING THE WHOLE PLAN WAS FOR.**
 `py/wlc_paths.py` is deleted and every generator resolves its corpus under `paths.repo_root()`, so a
 MAM-basics worktree now isolates the generated artifacts as well as the source. Measured, not
-asserted: a full circuit run left wlc-utils with zero files touched by mtime. What still reaches
-that repo **in a routine run** is one **read** — `test_h_dot_below_nfc.py`'s wlc-utils NFC scope,
-which Phase 5 was told to leave and Phase 10 deletes. **Phase 8 added a second path, and "routine"
+asserted: a full circuit run left wlc-utils with zero files touched by mtime. What still reached
+that repo **in a routine run** was one **read** — `test_h_dot_below_nfc.py`'s wlc-utils NFC scope,
+which Phase 5 was told to leave and Phase 10 deleted on 2026-08-17, so a routine run now reaches
+wlc-utils not at all. **Phase 8 added a second path, and "routine"
 is what keeps this paragraph true**: `py/wlc_redirect/stubs.py`'s `wlc_utils_pages_dir` reaches the
 same sibling, but nothing runs it except `main_wlc_redirect_stubs.py check` with no `--dir` and
 `build --publish` — no mega step, no test — so a suite run and a circuit run still leave wlc-utils
@@ -80,7 +83,7 @@ stale).
 | 7 — Repoint the `420422` blob URL | **DONE 2026-08-13**, MAM-basics `a8a9875` + this write-back. The regenerated diff is **exactly what this phase predicts — one source line and one `href`**, in two files and no others. The new blob URL returns **200**, and so does the old one, wlc-utils holding the file until Phase 10; the two are **the same blob, `57439cd` in either repo**, so the destination content does not change, only the repository serving it. `git grep "bdenckla/wlc-utils" -- py gh-pages` is down to three hits and **not one is a link to content**: two commented-out `issues/NN` citations and one prose mention of `bdenckla/wlc-utils-**private**`, a different repository the pattern matches as a prefix. Suite **903 passed / 5 skipped**, `ruff` clean, `black` clean at **770** files. **No circuit run, and the judgement not to run one is recorded below** — the generator is a leaf. Four findings, the sharpest being that **this phase's own instruction to find the constant by the URL string rather than by line number does not work as written**: black split the URL across two adjacent string literals, so the URL the page carries appears nowhere in the source. Findings under Phase 7 below |
 | 8 — The redirect-stub generator | **DONE 2026-08-13**, MAM-basics `6a7347d` + `520dc27` + this write-back. `build --out <scratch>` writes **155 files** — 154 page stubs and `404.html` — and `check` over them passes; the three spot-reads at depths 0, 1 and 2 each name their own path's prefix rewrite in all four carriers. **`git status --porcelain` held only the four new source files**, so no tracked artifact moved in either repo and no circuit was run or needed. Suite **905 passed / 5 skipped**, up 2 from 903, and the delta is exactly the new entry point's two parametrized tests in `test_entry_point_subcommands.py`; `ruff` clean, `black` clean at **774** files, up 4 for the four new modules. Phase 6's finding 4 checked rather than assumed: `420422/` and `wlc-a-notes/` get stubs and `accgram/` correctly gets none, all three falling out of the derivation with no special case. Five findings, the sharpest being that **"the last remaining reference to the sibling" describes the state after Phase 10, not this one** — three sites name wlc-utils now and they need three different dispositions. Findings under Phase 8 below |
 | 9 — Flip wlc-utils' `gh-pages/` to stubs — ~~**gated on 6**~~ **gate met** | **DONE 2026-08-17**, wlc-utils `f10f405` + this write-back. One commit there, exactly the shape this phase specifies: **154 `M`, 130 `D`, 1 `A`** — the pages modified in place rather than deleted and re-added, `404.html` the only addition, nothing staged outside `gh-pages/`, and no empty directory left behind. wlc-utils goes from 626 tracked files to **497**, of which 155 are the stubs and **zero** are non-HTML. The deploy went green — run `32076961634`, 21 seconds — and **every URL on the Phase 6 list now serves a stub naming its MAM-basics equivalent**, byte-identical to the committed file, with that equivalent itself fetched at 200 so a redirect to a 404 could not pass; the four unstubbed paths tried each answer **404 with the forwarding script**, as designed. Suite **905 passed / 5 skipped**, `ruff` clean, `black` clean at **774** files, MAM-basics otherwise untouched at `2951a01` — **the baseline reproduced with zero drift**, every figure, the re-taken manifest included. Four findings, the sharpest being that **the JavaScript did get executed after all: Phase 8's "there is no `node` on this machine" overlooked `cscript.exe`**, so all four published fragment links were run against the committed bytes rather than read. Findings under Phase 9 below |
-| 10 — Empty the rest of wlc-utils | **not started, and it is next** |
+| 10 — Empty the rest of wlc-utils | **DONE 2026-08-17**, wlc-utils `cd668e3` + `8250b69`, MAM-basics `aa7f269` + this write-back. The 336 deletions are exactly the five items this phase names, staged as **336 `D` and nothing else**, leaving **161** tracked — the count Phase 9 measured against the verify line's since-corrected 160 — with no untracked residue. **Layer 1 was re-derived one last time in the minutes before the delete**: 335 moved-and-deleted files plus the surviving workflow compared by blob SHA-1, **330 byte-identical, zero missing, and the 6 differing exactly Phase 5's six**; then the frozen reference ended. Both deploys green and **every Phase 9 URL check passes unchanged**; `check` still lints the stubs green. Suite **905 / 5**, `ruff` clean, `black` clean at **774**, and the circuit gave a **zero diff in all ten repos with zero wlc-utils files touched by mtime**. Five findings, the sharpest being that **the "88 issues" this plan and both repos' instruction files repeat is five short, and was on the day it was first written** — the tracker holds 93, #89–#93 filed 2026-07-31. Findings under Phase 10 below |
 | 11 — Cross-repo bookkeeping | **not started** |
 
 ---
@@ -633,7 +636,11 @@ assets, so a `diff --no-index` over that subtree now reports 154 differences whi
 rather than move damage. (This paragraph read "wlc-utils holds 626 files no program writes any more,
 so `git diff --no-index` between the trees re-derives layer 1 on demand at any point in Phases 3–9"
 — right for Phases 3 through 8, and falsified by Phase 9, which is the phase it named last. Phase
-9's finding 2.)
+9's finding 2.) **Phase 10 spent what remained on 2026-08-17**: layer 1 was re-derived over all 336
+comparable files in the minutes before the delete — 330 byte-identical, the 6 differing exactly
+Phase 5's six — and then the 335 moved ones among them were deleted, so nothing original is left to
+compare against. The Pages workflow is the one comparable file that survives, still byte-identical
+to the copy here.
 
 ---
 
@@ -2349,27 +2356,15 @@ Phase 8's derivation, where a stub's target is the prefix rewrite of its own **p
 case for directories could be added without the generator learning which paths a server resolves to
 an index, which is the server's fact rather than the tree's.
 
-**Next is Phase 10, emptying the rest of wlc-utils** — `out/` 193, `in/` 135, `doc/` 6, `data/` 1
-and `wlc-utils.code-workspace`, with `README.md` and `CLAUDE.md` rewritten there and the NFC scope
-deleted here. Pure subtraction with no published effect, and **its own text says it is worth an
-explicit look before running**, as the Python plan's Phase 4 was. Three things this phase hands it:
-
-- **Its verify line's figure is one too low. `git ls-files` in wlc-utils will print 161, not 160**,
-  and the phase should re-measure rather than read a 161 as an overlooked file. Measured
-  2026-08-17 at `f10f405`: the repo tracks 497, the five deletions above account for exactly **336**
-  of them, and 497 − 336 = **161** — the 155 stubs plus six root files, `.gitattributes`,
-  `.github/workflows/pages.yml`, `.gitignore`, `CLAUDE.md`, `LICENSE` and `README.md`, each of
-  which that phase's own text says to keep. So the arithmetic and the prose disagree by one and the
-  prose is right; the count is what needs correcting when Phase 10 writes itself back.
-- **The frozen reference is down to the 336 files finding 2 names**, so Phase 10's zero-diff
-  assertions have that much less to lean on — and those 336 are precisely the files it deletes, so
-  it ends the reference outright.
-- **The three sites naming the wlc-utils sibling still want the three different dispositions Phase
-  8's finding 1 sets out**, one of which must survive the phase.
+(A "Next is Phase 10" paragraph and its three hand-off bullets stood here until Phase 10 ran on
+2026-08-17, and were deleted rather than left, by the convention Phase 7's record states: one
+forward pointer per file, at the end of the latest execution record. All three hand-offs were
+taken — the 161, the last use of the frozen reference, the three dispositions — and Phase 10's
+record accounts for each. The live pointer is at the end of that record below.)
 
 ---
 
-## Phase 10 — Empty the rest of wlc-utils
+## Phase 10 — Empty the rest of wlc-utils — DONE 2026-08-17
 
 *In wlc-utils, plus one commit here.* Pure subtraction with no published effect. Worth an explicit
 look before running, as the Python plan's Phase 4 was.
@@ -2411,10 +2406,150 @@ size"*, and scanning 154 generated files is not what it was written for. Deletin
 changes no test count — the four scanning tests simply cover fewer files. Update the module
 docstring's "THREE REPOS ARE SCANNED" at `:8`.
 
-**Verify:** `git ls-files` in wlc-utils prints 160 paths and nothing else; the Phase 9 URL checks
+**Verify:** `git ls-files` in wlc-utils prints **161** paths and nothing else (this line said 160
+until Phase 10 ran — one too low, exactly as Phase 9's record predicted: 497 − 336 = 161, the 155
+stubs plus the six root files this phase's own prose keeps); the Phase 9 URL checks
 still pass after the deploy; `py\main_test.py` here unchanged; the full circuit here still gives a
 zero diff. Check for untracked residue — `git rm` leaves it behind — though wlc-utils has no
 `.venv` as of 2026-08-03.
+
+### Execution record — Phase 10, 2026-08-17
+
+Began at MAM-basics `69931be`, wlc-utils `f10f405`, holman-ketiv-qere `637237b`, and **the whole
+Phase 9 baseline reproduced with zero drift** — MAM-parsed `95f64d7`, MAM-simple `bae0bff`,
+MAM-with-doc `d2dc6e5`, MAM-OSIS `a037a76`, MAM-for-Sefaria `5f41c16`, UXLC-utils `4d70cf4`,
+MAM-private `20dfb63`, every one of the ten clean and pushed, `git worktree list` one line in each.
+MAM-basics held **1910** tracked files and wlc-utils its post-flip **497** — `gh-pages` 155, `out`
+193, `in` 135, `doc` 6, `data` 1, `.github` 1, six loose root files. Suite **905 passed / 5
+skipped**, `ruff` clean, `black` clean at **774** files.
+
+**Precondition 4 was checked on both logs and was clear** for a seventh phase running:
+holman-ketiv-qere clean at `637237b`, last committed 2026-08-12 23:05 — still Phase 5's own
+re-vendor commit — and MAM-basics' own log holding nothing but this plan's Phases 5 through 9.
+
+**The explicit look happened before the delete, as this phase's own text asks.** The list was
+derived by `git ls-files out in doc data wlc-utils.code-workspace` — **336 rows** — then screened
+for spaces and non-ASCII under `LC_ALL=C` with a POSIX class and **no `|| echo` fallback**, Phase
+9's finding 3 applied as written (all 336 plain ASCII, screen exit 1 = no matches); then read in
+full. Zero `gh-pages/` paths in it; the nine `.html` it does hold are `in/` WLC release notes and
+UXLC licence pages, deletable; nothing outside the five named items.
+
+**Layer 1 was re-derived one final time immediately before the delete, because afterwards there is
+no original left to compare.** The 335 moved files being deleted plus the surviving Pages workflow,
+compared by blob SHA-1 against this repo's copies: **330 byte-identical, zero missing, zero mode
+mismatches, and the 6 differing exactly the six Phase 5's record names** — the two survey JSONs
+Phase 5 itself was working, and the four files of the UXLC refresh. `wlc-utils.code-workspace` is
+the 336th deletion and was never copied, by Phase 0's disposition.
+
+**Landed as wlc-utils `cd668e3`**: staged exactly **336 `D` plus 2 `M`** — the two rewritten
+instruction files — and nothing else. `README.md` is one screen saying the repo is a redirect
+host, why it stays alive, and that its issues and history stay; `CLAUDE.md` holds the two agent
+facts this phase calls its most valuable lines, plus the `#NN` convention. The repo now tracks
+**161** files — the count Phase 9 measured, against this phase's own since-corrected 160 — and
+`git status --porcelain --ignored` shows **no untracked residue**: only the pre-existing ignored
+`.claude/` and `.novc/`, and no `.venv`, as expected since 2026-08-03. The four deleted trees are
+gone from disk with no empty directories left. **A second commit `8250b69` followed within the
+hour** — finding 3 — and the koren note moved here rather than dying (finding 3 again). Both
+deploys went green: runs `32079069852` and `32079886541`.
+
+**In MAM-basics, `aa7f269`.** The wlc-utils `_Scope` and `_WLC_EXCLUDE_DIR_PREFIXES` are deleted —
+located by identifier, per Phase 7's finding 1 — and there was indeed **no `import wlc_paths` to
+delete**, exactly as the 2026-08-13 check predicted. The module docstring's "THREE REPOS ARE
+SCANNED" reads TWO, and the floor-guard rationale the deleted scope's comment carried ("to catch an
+exclusion filter that swallowed EVERYTHING, not to assert a tree size") moved into the UXLC-utils
+scope's comment, which had leaned on it by reference ("for the same reason wlc-utils' is").
+`sibling_repo("wlc-utils")` is down to **exactly the two sites Phase 8's finding 1 says survive**:
+the redirect generator's own resolution, and `test_mb_cmn_paths.py`'s override unit test. No sweep
+was run; the two survivors were checked by name. `CLAUDE.md` received the koren note per Phase 0's
+disposition and the 93-issue correction (finding 1), and one docstring
+(`wlc_chanted_word_residue_page.py`) had its live forward reference to the two-accents plan
+repointed at this repo's `doc/` copy, the wlc-utils path it cited having been deleted this phase.
+
+**The verification, in this phase's own order.**
+
+1. **`git ls-files` in wlc-utils prints 161 paths and nothing else** — 155 under `gh-pages/`, six
+   at the root — re-measured at `8250b69` after both commits.
+2. **Every Phase 9 URL check passes unchanged after the deploy** — `phase9_http_check.py` re-run in
+   full: seven stubbed paths at 200 with served bytes sha256-identical to the committed stubs and
+   every named target itself fetched at 200; the served stub re-appends `location.hash` and all
+   four fragment anchors are present at their destinations; all four catch-all paths 404 carrying
+   the forwarding script. **Nothing this phase deleted was served, and the checks confirm it.**
+3. **Suite 905 passed / 5 skipped**, the Phase 8 figure exactly — deleting a scope changes no test
+   count, the four scanning tests just cover fewer files. `ruff` clean; `black --check` clean at
+   **774** files, unchanged, no file having been added or removed.
+4. **The full circuit gives a zero diff in all ten repos.** `main_0_mega.py` exit 0,
+   `main_edition_transcription.py build --check` 12/12; afterwards nine repos read `git status
+   --porcelain` empty and MAM-basics held exactly this phase's three source edits. The vendoring
+   audit rewrote its four artifacts to identical bytes — finding 5 predicted it would, wlc-utils
+   having held no Python since 2026-08-01 and no policy entry. And layer 3 directly: an mtime
+   snapshot over wlc-utils' whole working tree before the mega, compared after — **zero touched,
+   zero appeared, zero vanished** across 165 files. `check` with no `--dir` still lints the
+   committed stub tree green.
+
+#### Findings
+
+**1. The "88 issues" the plan and both repos' instruction files repeat is five short, and was on
+the day it was first written.** The tracker holds **93** issues (27 open, measured 2026-08-17), and
+#89–#93 were filed **2026-07-31** — before the 2026-08-01 Python move that every statement of "88"
+is dated to. So the figure was never a count that later drifted; it was five short from the start,
+and it propagated from file to file unre-measured for seventeen days. The rewritten `README.md` and
+`CLAUDE.md` in wlc-utils say 93 with the measurement date; this repo's `CLAUDE.md` sentence was
+corrected in `aa7f269`; the plan's own historical "88"s above stand as history. The general lesson
+is the plan's own re-measure rule applied to a figure nobody thought of as a measurement: an issue
+count is one.
+
+**2. The scope's floor guard made the edit order inside this phase mandatory, which "deleting a
+`_Scope` changes no test count" is true of only at the end state.** With wlc-utils emptied, the
+wlc scope's in-scope set is the six root files minus nothing — **6 files, under its floor of 10**
+— so a suite run between the `git rm` and the scope deletion errors `setUpClass` for all four
+scanning tests. That is the floor doing precisely what its comment says it is for: an emptied tree
+is indistinguishable from an exclusion filter that swallowed everything, and it refuses to pass
+over a hollow scan. The suite was accordingly run only after the scope deletion, and the guardrail
+sentence now lives in the UXLC scope's comment with this episode cited.
+
+**3. The rewrite of wlc-utils' instruction files needed a correcting commit within the hour, and
+all three corrected sentences were inherited from the file being replaced.** `8250b69` fixed:
+the claim that `main_repo_maintenance.py` wipes wlc-utils' `.novc/` — it stopped on 2026-08-12,
+when Phase 5 repointed the writers, so the old `CLAUDE.md` had itself been stale for five days and
+the rewrite copied the staleness forward; the claim that no mega step reaches the repo — the
+closing vendoring audit *reads* every sibling on disk, so the true claim is about writes and is
+now stated as such; and a "generates all of it" whose antecedent covered `doc/`, which no program
+generates. The koren note also moved to this repo's `CLAUDE.md` in the same pair of commits,
+executing the disposition Phase 0's table recorded rather than quietly keeping the note where the
+shrink instruction would have deleted it. The lesson: a rewrite-from-scratch re-asserts every
+sentence it keeps, so each inherited sentence needs re-verifying against today, not against the
+file it came from.
+
+**4. Two different sets in this plan are both called "336", and they differ by one file each
+way.** The five deletions total 336 — the 335 moved files plus `wlc-utils.code-workspace`, which
+never moved. The comparable remainder of the frozen reference was also 336 — the same 335 plus
+`.github/workflows/pages.yml`, which survives this phase and was never deleted. They overlap in
+335. Nothing was miscounted anywhere; the coincidence is just primed to read as an off-by-one to
+anyone re-deriving one figure from the other, so the pre-delete comparison above names its set
+explicitly.
+
+**5. `in/vendoring_policy.json` has no wlc-utils entry, so Phase 11 item 6's justification is
+stale while its conclusion holds.** The item says "no change; the wlc-utils entry went in
+`ea9f199`" — but the policy today names repos only for vendored *Python package* copies, and
+wlc-utils has held no Python since 2026-08-01; whatever `ea9f199` added is gone. "No change" is
+still the right answer, on the simpler ground that there is nothing there to change. Two more
+hand-offs for Phase 11's item 1 while it edits this repo's `CLAUDE.md`: the "Two issue trackers"
+section's closing paragraph still says a bare `#NN` read in wlc-utils' `doc/` and `in/` means a
+wlc-utils issue — directories this phase deleted, whose byte-identical copies now sit in *this*
+repo's `doc/` and `in/` still carrying those bare wlc-utils citations, which deserves the saying;
+and the section's opening can now cite 93 rather than nothing, `aa7f269` having already made that
+correction.
+
+**Next is Phase 11, cross-repo bookkeeping — the last phase, and the one where the freeze on
+`doc\PLAN-two-accents-on-one-chanted-word.md` lifts.** Eleven numbered items, three of which stop
+and ask Ben rather than chaining on: items 2 and 3 edit the two unsynced live-plus-tracked pairs
+(`~\.claude\CLAUDE.md` with its `github-misc` twin, and the `hebrew-prose` skill with its twin —
+re-verify each pair byte-identical before adding, per the entanglement note above), and item 5 is
+the `frozen_repos` decision, which is Ben's. Three things this phase hands it: **item 6's
+justification is stale though its "no change" conclusion holds** (finding 5); **item 1's
+`CLAUDE.md` edit should also qualify the "Two issue trackers" closing paragraph and can cite the
+corrected 93** (finding 5 again); and **item 10's commit-message note about the tracker split can
+now point at instruction files that already say 93 with a measurement date** (finding 1).
 
 ---
 
