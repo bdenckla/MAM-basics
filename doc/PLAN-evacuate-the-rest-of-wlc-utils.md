@@ -14,29 +14,36 @@ to this file's first commit apart from its header, so `git show` recovers it.
 **So do not re-create one.** If a future session drafts in `~/.claude/plans/` again, fold it in
 here and delete it, as `8daef35` did with two such scratch plans.
 
-**Phases 0 through 8 are done — 0 and 1 on 2026-08-11, 2 through 5 on 2026-08-12, 6 through 8 on
-2026-08-13. Nothing has been deleted from wlc-utils: it holds the same 626 tracked files it always
-did, still at `c501dc0`.**
-Phase 3 **copied** 620 of them into MAM-basics rather than moving them — that is the dual-residency
-window — and the six loose root files stayed behind. **The site is live and complete**: Ben enabled
+**Phases 0 through 9 are done — 0 and 1 on 2026-08-11, 2 through 5 on 2026-08-12, 6 through 8 on
+2026-08-13, 9 on 2026-08-17. Phase 9 is the first deletion this plan has made: wlc-utils is down
+from 626 tracked files to 497, at `f10f405`, its 154 published pages replaced in place by redirect
+stubs, a `404.html` added, and the 130 non-HTML assets removed.**
+Phase 3 **copied** 620 of the original 626 into MAM-basics rather than moving them — that is the
+dual-residency window, whose `gh-pages/` half Phase 9 has now closed — and the six loose root files
+stayed behind. **The site is live and complete**: Ben enabled
 Pages on 2026-08-11, `.github/workflows/pages.yml` arrived with the corpus at Phase 3, whose push
 fired the first deploy, and Phase 6 added `gh-pages/index.html` on 2026-08-13, so
 `https://bdenckla.github.io/MAM-basics/` and everything under `/wlc/` both serve. **Every URL any
-other repository cites has been fetched and checked** — Phase 6's execution record has the table.
+other repository cites has been fetched and checked** — Phase 6's execution record has the table,
+and Phase 9 re-ran that same list against the old site, where each now serves a stub naming its
+MAM-basics equivalent.
 Phase 0 is a preflight, Phase 1 edits only `py/mb_cmn/provenance.py` and its test, and Phase
 2 edits only MAM-basics' own `.gitattributes`, and Phases 4, 6, 7 and 8 edit only MAM-basics' own
-licence, site, generator and source files, so the only thing any of the nine phases changed in
-wlc-utils is the freeze notice Phase 0 was asked to land there — see Precondition 1. **Phase 7 is
+licence, site, generator and source files, so until 2026-08-17 the only thing any phase had changed
+in wlc-utils was the freeze notice Phase 0 was asked to land there — see Precondition 1. **Phase 9
+ended that**, being both the first phase since Phase 0 to commit inside wlc-utils and the first to
+change what the public web serves. **Phase 7 is
 the one intentional artifact change in the plan and it has landed**: one `href` on
 `gh-pages/wlc/420422/index.html`, in its own commit so that no later phase's zero-diff oracle
 carries a real diff inside it. **Phase 8 changed no artifact at all**: the 155 redirect stubs it
-builds go to a gitignored scratch directory, and `build --publish` is what Phase 9 uses to land
-them in wlc-utils. Phases 9
-through 11 are unstarted. (This paragraph read "Nothing has been executed. Every phase below is
+builds go to a gitignored scratch directory, and `build --publish` is what Phase 9 used to land
+them in wlc-utils. Phases 10 and 11
+are unstarted. (This paragraph read "Nothing has been executed. Every phase below is
 unstarted" until Phase 0 ran, and has been rewritten at each phase since. Until Phase 3 it also said
 "No file has moved yet" and "no GitHub setting has been touched"; until Phase 6 it said the site
-root "404s until Phase 6 adds `gh-pages/index.html`, by design". All three are now false, which is
-why they are replaced here rather than softened.)
+root "404s until Phase 6 adds `gh-pages/index.html`, by design"; and until Phase 9 it opened
+"Nothing has been deleted from wlc-utils: it holds the same 626 tracked files it always did". All
+four are now false, which is why they are replaced here rather than softened.)
 
 **AS OF PHASE 5, NO PROGRAM WRITES INTO wlc-utils, AND THAT IS THE THING THE WHOLE PLAN WAS FOR.**
 `py/wlc_paths.py` is deleted and every generator resolves its corpus under `paths.repo_root()`, so a
@@ -72,8 +79,8 @@ stale).
 | 6 — Pages live on MAM-basics — ~~**manual gate**~~ **no gate left** | **DONE 2026-08-13**, MAM-basics `c50745a` + this write-back. `gh-pages/index.html` closes the root 404 that had stood since Phase 3, and its deploy went green — run `31710845632`. **The workflow Phase 3 landed is byte-identical to wlc-utils' own**, so the "Copy … verbatim" paragraph reproduces clause for clause with zero differences. **The check list ran 12 of 12 as expected**: 11 URLs at 200 with the served bytes sha256-identical to the committed file, and `/wlc/accgram/` at 404 by design — filed as #230. The stylesheet and the font both resolve and serve at both depths that reference one, and all four fragment anchors are present in the served HTML. Suite **903 passed / 5 skipped**, `ruff` clean, `black` clean at **770** files; no Python touched, no generator and no circuit run. Five findings, the sharpest being that **this phase's own verify list calls `wlc/index.html` a depth-1 page exercising `../style.css`, and it is the one page on the site that references no stylesheet at all**. Findings under Phase 6 below |
 | 7 — Repoint the `420422` blob URL | **DONE 2026-08-13**, MAM-basics `a8a9875` + this write-back. The regenerated diff is **exactly what this phase predicts — one source line and one `href`**, in two files and no others. The new blob URL returns **200**, and so does the old one, wlc-utils holding the file until Phase 10; the two are **the same blob, `57439cd` in either repo**, so the destination content does not change, only the repository serving it. `git grep "bdenckla/wlc-utils" -- py gh-pages` is down to three hits and **not one is a link to content**: two commented-out `issues/NN` citations and one prose mention of `bdenckla/wlc-utils-**private**`, a different repository the pattern matches as a prefix. Suite **903 passed / 5 skipped**, `ruff` clean, `black` clean at **770** files. **No circuit run, and the judgement not to run one is recorded below** — the generator is a leaf. Four findings, the sharpest being that **this phase's own instruction to find the constant by the URL string rather than by line number does not work as written**: black split the URL across two adjacent string literals, so the URL the page carries appears nowhere in the source. Findings under Phase 7 below |
 | 8 — The redirect-stub generator | **DONE 2026-08-13**, MAM-basics `6a7347d` + `520dc27` + this write-back. `build --out <scratch>` writes **155 files** — 154 page stubs and `404.html` — and `check` over them passes; the three spot-reads at depths 0, 1 and 2 each name their own path's prefix rewrite in all four carriers. **`git status --porcelain` held only the four new source files**, so no tracked artifact moved in either repo and no circuit was run or needed. Suite **905 passed / 5 skipped**, up 2 from 903, and the delta is exactly the new entry point's two parametrized tests in `test_entry_point_subcommands.py`; `ruff` clean, `black` clean at **774** files, up 4 for the four new modules. Phase 6's finding 4 checked rather than assumed: `420422/` and `wlc-a-notes/` get stubs and `accgram/` correctly gets none, all three falling out of the derivation with no special case. Five findings, the sharpest being that **"the last remaining reference to the sibling" describes the state after Phase 10, not this one** — three sites name wlc-utils now and they need three different dispositions. Findings under Phase 8 below |
-| 9 — Flip wlc-utils' `gh-pages/` to stubs — ~~**gated on 6**~~ **gate met** — and it is next | **not started**, but nothing gates it any more: Phase 6 was deployed and HTTP-verified on 2026-08-13, and Phase 8's generator landed the same day. Run `build --publish`, which writes into wlc-utils' `gh-pages/` without a sibling path having to be spelled, then `check` with no `--dir`. **The first phase since Phase 0 to commit inside wlc-utils**, and the first to change what the public web serves |
-| 10 — Empty the rest of wlc-utils | **not started** |
+| 9 — Flip wlc-utils' `gh-pages/` to stubs — ~~**gated on 6**~~ **gate met** | **DONE 2026-08-17**, wlc-utils `f10f405` + this write-back. One commit there, exactly the shape this phase specifies: **154 `M`, 130 `D`, 1 `A`** — the pages modified in place rather than deleted and re-added, `404.html` the only addition, nothing staged outside `gh-pages/`, and no empty directory left behind. wlc-utils goes from 626 tracked files to **497**, of which 155 are the stubs and **zero** are non-HTML. The deploy went green — run `32076961634`, 21 seconds — and **every URL on the Phase 6 list now serves a stub naming its MAM-basics equivalent**, byte-identical to the committed file, with that equivalent itself fetched at 200 so a redirect to a 404 could not pass; the four unstubbed paths tried each answer **404 with the forwarding script**, as designed. Suite **905 passed / 5 skipped**, `ruff` clean, `black` clean at **774** files, MAM-basics otherwise untouched at `2951a01` — **the baseline reproduced with zero drift**, every figure, the re-taken manifest included. Four findings, the sharpest being that **the JavaScript did get executed after all: Phase 8's "there is no `node` on this machine" overlooked `cscript.exe`**, so all four published fragment links were run against the committed bytes rather than read. Findings under Phase 9 below |
+| 10 — Empty the rest of wlc-utils | **not started, and it is next** |
 | 11 — Cross-repo bookkeeping | **not started** |
 
 ---
@@ -617,9 +624,16 @@ and the seven other repos the circuit writes.
   there proves nothing — a call site that still points at wlc-utils rewrites a file to *identical*
   bytes, which git cannot see and mtime can.
 
-**And the frozen reference is the original tree.** Until Phase 10 deletes it, wlc-utils holds 626
-files no program writes any more, so `git diff --no-index` between the trees re-derives layer 1
-on demand at any point in Phases 3–9.
+**And the frozen reference is the original tree — but only the part of it Phase 9 did not
+overwrite.** `out/` 193, `in/` 135, `doc/` 6, `data/` 1 and the Pages workflow are files no program
+writes any more, so `git diff --no-index` between the trees re-derives layer 1 over those **336** of
+the 620 moved files, on demand, until Phase 10 deletes them. **`gh-pages/` stopped being a reference
+on 2026-08-17**: Phase 9 replaced all 154 pages there with redirect stubs and deleted the 130
+assets, so a `diff --no-index` over that subtree now reports 154 differences which are the flip
+rather than move damage. (This paragraph read "wlc-utils holds 626 files no program writes any more,
+so `git diff --no-index` between the trees re-derives layer 1 on demand at any point in Phases 3–9"
+— right for Phases 3 through 8, and falsified by Phase 9, which is the phase it named last. Phase
+9's finding 2.)
 
 ---
 
@@ -2160,16 +2174,13 @@ the script, the visible link, and the `/wlc-utils/` prefix it strips — rather 
 from checking. Worth stating because the obvious implementation checks every `.html` the same way
 and then either fails on `404.html` forever or skips it entirely.
 
-**Next is Phase 9, the flip of wlc-utils' `gh-pages/` to stubs.** Its hard gate on Phase 6 was met
-on 2026-08-13, and its dependency on this phase is now met too: `build --publish` writes the 155
-files into that repo's tree, and `check` with no `--dir` lints them where they land. It is **the
-first phase since Phase 0 to commit inside wlc-utils**, and the first to change what the public
-web serves — so its own verification, the browser check of the four fragment links above all, is
-the real gate rather than a formality.
+(A "Next is Phase 9" paragraph stood here until Phase 9 ran on 2026-08-17, and was deleted rather
+than left, by the convention Phase 7's record states: one forward pointer per file, at the end of
+the latest execution record. The live one is at the end of Phase 9's record below.)
 
 ---
 
-## Phase 9 — Flip wlc-utils' `gh-pages/` to stubs
+## Phase 9 — Flip wlc-utils' `gh-pages/` to stubs — DONE 2026-08-17
 
 *In wlc-utils.* **Hard-gated on Phase 6 being deployed and HTTP-verified.**
 
@@ -2203,6 +2214,148 @@ confirm each redirects to its MAM-basics equivalent. **The four fragment links a
 test for the JS half specifically — check in a browser that it lands on the anchor, not merely on
 the page.** Then a path with no stub (`/wlc-utils/out/anything`) exercises `404.html`. Then
 `main_wlc_redirect_stubs.py check` passes against the committed tree.
+
+### Execution record — Phase 9, 2026-08-17
+
+Began at MAM-basics `2951a01`, wlc-utils `c501dc0`, holman-ketiv-qere `637237b`, and **the whole
+Phase 8 baseline reproduced with zero drift** — MAM-parsed `95f64d7`, MAM-simple `bae0bff`,
+MAM-with-doc `d2dc6e5`, MAM-OSIS `a037a76`, MAM-for-Sefaria `5f41c16`, UXLC-utils `4d70cf4`,
+MAM-private `20dfb63`, every one of the ten clean and pushed, `git worktree list` one line in each.
+MAM-basics held **1910** tracked files and wlc-utils its unchanged **626**, of which `gh-pages/` was
+**284**: 154 `.html` and 130 non-HTML, breaking down as 122 png, 3 js, 2 jpg, 1 xml, 1 woff2 and 1
+css, exactly as this phase's brief states. Suite **905 passed / 5 skipped**, `ruff` clean, `black`
+clean at **774** files. The manifest was re-taken before wlc-utils was touched, per Phase 0's
+lesson, and is **byte-identical to Phase 0's** — 626 rows, sha256 `28c94cde4618…`.
+
+**Precondition 4 was checked on both logs and was clear.** holman-ketiv-qere clean, no worktree,
+last committed 2026-08-12 23:05 — still Phase 5's own re-vendor commit there rather than that
+undertaking's work. MAM-basics' own log holds nothing from it either: everything since is this
+plan's Phases 5 through 8. So Ben's statement of 2026-08-12 that the work is finished held for a
+sixth phase running, on the evidence of both logs rather than one.
+
+**Landed as one commit in wlc-utils, `f10f405`, in exactly the shape this phase specifies.**
+`git status` before staging read **154 `M`, 130 `D` and one `??`**, and the staged diff **1 `A`,
+130 `D`, 154 `M`**, with nothing outside `gh-pages/`. The 154 modifications in place are what keeps
+the diff readable, and they were established rather than hoped for: the two page-path sets were
+compared first and are identical, 154 for 154, so every stub landed on an existing page at its own
+path. `404.html` is the one addition, wlc-utils having had none. The repo now tracks **497** files
+— 626 − 130 + 1 — of which `gh-pages/` holds **155**, and **not one non-HTML file is left there**.
+
+**`build --publish` wrote all 155 and deleted nothing, as Phase 8's finding 4 says it would.** The
+130 removals are the `git rm` this phase does by hand: the list was derived from `git ls-files
+gh-pages` filtered to non-`.html`, screened for odd characters and for stray `.html` rows before
+use, and passed to `git rm --pathspec-from-file`. It left **no empty directories** — the three
+`img/` trees and `woff2/` are gone from disk, and the seven directories remaining under `gh-pages/`
+all hold HTML.
+
+**The verification, in this phase's own order.**
+
+1. **The deploy went green** — run `32076961634` on `f10f405`, conclusion `success`, 21 seconds.
+   That workflow triggers on push to `main` only, and the push was a fast-forward with no force.
+2. **The whole Phase 6 URL list was re-run against `bdenckla.github.io/wlc-utils/…`, and each
+   serves a stub naming its MAM-basics equivalent.** The script is
+   `.novc\wlc-rest-phase9\phase9_http_check.py`, and for each old URL it checks three things rather
+   than one: HTTP 200; the served bytes sha256-identical to the committed stub, so a stale deploy
+   fails; and the target the stub names, **which it then fetches and requires 200 of**, so a
+   redirect to a 404 could not pass. Nothing is followed — **the redirect is client-side and never
+   an HTTP 3xx** — so what is read is the served text.
+
+| Old URL, under `https://bdenckla.github.io/wlc-utils/` | Result |
+|---|---|
+| `accgram/goerwitz.html` — the five tanach.us citations | 200, bytes match, names `…/MAM-basics/wlc/accgram/goerwitz.html`, which serves 200 |
+| `accgram/supplied-marks.html` — the two MAM-basics CLC tests' corroboration URL, and the page the four deep links point into | 200, bytes match, target serves 200 |
+| `accgram/printed-decalogue.html` — MAM-simple's link target | 200, bytes match, target serves 200 |
+| `420422/`, `420422/full-record/420422-54.html`, `wlc-a-notes/` — three of `document-index`'s four deep paths | 200, bytes match, targets serve 200; both directory URLs resolve to their own stub |
+| the old site root, `/wlc-utils/` | 200, bytes match, names `…/wlc/index.html`, which serves 200 |
+| `accgram/` — `document-index`'s fourth, and wlc-utils' `README.md:42` | **404 carrying the forwarding script** — #230 behaving as designed, and it 404ed before this phase too |
+| `out/anything`, `style.css`, `420422/img/1Kings17v15.png` — a path nobody ever published, and two assets this phase deleted | **404 carrying the forwarding script**, all three |
+
+3. **The four fragment links were executed rather than read** — finding 1. A browser check is still
+   owed, and it is Ben's to make; the four links went to him with this write-back.
+4. **A path with no stub answers 404 *and* redirects**, which is what item 4 of the brief asks for:
+   `/wlc-utils/out/anything` returns HTTP 404 and serves `404.html`, whose script forwards to
+   `…/MAM-basics/wlc/out/anything`. GitHub Pages sets that status whatever the file then does.
+5. **`check` with no `--dir` passes against the committed tree** — "154 stubs and 404.html, all
+   correct", exit 0, with the working tree equal to `HEAD`. **And it is not the evidence that the
+   assets went**: it globs `*.html`, so it would print that same line with all 130 still in place.
+   The separate count is what proves that half — `git ls-files gh-pages | grep -vc '\.html$'` is
+   **0**.
+
+**MAM-basics was left alone, which this phase asserts rather than assumes.** Its suite is **905
+passed / 5 skipped**, the Phase 8 figure exactly, and that is the cheapest evidence that a phase
+operating in another repo touched nothing here; `ruff` clean; `black` clean at **774** files. No
+Python was written, so black had nothing to format, and nothing under `gh-pages/` was regenerated.
+At the end MAM-basics is at `2951a01` plus this write-back, and the other eight repos are each at
+the commit they began at, all clean and all pushed.
+
+#### Findings
+
+**1. The JavaScript did get executed, and Phase 8's "there is no `node` on this machine" was true
+without being the whole story: `cscript.exe` is a JavaScript engine, and every Windows install has
+one.** Phase 8's finding 3 records the fragment-carrying `location.replace` and `404.html`'s prefix
+strip as verified by reading rather than by running, and names this phase as where they would first
+run — meaning in a browser, which only Ben can drive. They ran here first instead. Windows Script
+Host's JScript (`C:\Windows\System32\cscript.exe`) executes the stubs' ES3-simple code verbatim, so
+`.novc\wlc-rest-phase9\run_stub_js.js` reads the committed bytes out of wlc-utils' tree, extracts
+each `<script>` body, `eval`s it against a fake `location` that records the URL instead of
+navigating, and compares against the expected target. **Eleven cases, all correct.** All four
+published deep links land on `…/wlc/accgram/supplied-marks.html#supplied-…` with the fragment
+intact. `404.html`'s prefix strip — an `indexOf`/`slice` pair, and the only real logic anywhere in
+the stubs — is right on a deleted asset, a deep deleted image, the `accgram/` directory, a
+query-plus-fragment, and the else branch a path outside `/wlc-utils/` takes, which sends the reader
+to the new site root rather than concatenating nonsense.
+
+**What it proves and what it does not.** It proves the string arithmetic, which is the part that
+could have been wrong and the part nothing had ever run. It does not prove that a browser honors
+`location.replace`, nor that a browser scrolls to the anchor on arrival — those are properties of
+the browser rather than of this code, so the browser check stays owed. **What has changed is that
+the browser check now confirms a mechanism instead of discovering one**, which is a materially
+different risk to be carrying into Phase 10. The general lesson is that "there is no JavaScript
+runtime on this machine" is worth one command to re-check rather than inheriting from an earlier
+phase: the runtime that is always present on Windows is the one nobody lists.
+
+**2. The frozen reference described under "The oracle question" dies at this phase — one phase
+earlier than the sentence saying so.** That section ended: *"Until Phase 10 deletes it, wlc-utils
+holds 626 files no program writes any more, so `git diff --no-index` between the trees re-derives
+layer 1 on demand at any point in Phases 3–9."* Phase 9 is the last phase it names and is the phase
+that falsifies it. For `gh-pages/` the reference is gone: all 154 pages were overwritten and the 130
+assets deleted, so 284 of the 620 moved files have no original left to compare against — **and 154
+of those 284 still exist at the same path holding entirely different bytes**, which is worse than
+their being absent, because a `diff --no-index` run in ignorance reports 154 differences that look
+like catastrophic move damage. What survives is worth naming precisely: **336 of the 620** — `out/`
+193, `in/` 135, `doc/` 6, `data/` 1 and the Pages workflow — are untouched and stay comparable until
+Phase 10. The sentence was corrected in place rather than left to mislead, this file being the
+authority a fresh session works from.
+
+**3. A `grep -P` that fails on this machine's locale reads exactly like a check that found
+nothing.** While the removal list was being built, its paths were screened for spaces and non-ASCII
+with `grep -nP '[^\x21-\x7e]' || echo "(none)"`. Git Bash here answers **`grep: -P supports only
+unibyte and UTF-8 locales`** and exits non-zero, so the `||` fired and printed the reassuring
+"(none: all plain ASCII, no spaces)" **having examined nothing**. The screen was redone with a POSIX
+class under `LC_ALL=C` and did then pass — 130 plain-ASCII paths, no spaces — so nothing was at
+risk. The shape is what is worth recording: a check whose failure is indistinguishable from its
+success, which is the silent-green failure this repo's `CLAUDE.md` rules against in tests, arriving
+in a shell command instead. **An `|| echo "(none)"` fallback converts any error into a pass.** A
+`git rm` of 130 files is precisely where a silently-skipped path screen would have cost something.
+
+**4. A directory URL's stub sends the reader to the explicit `index.html` rather than to the
+directory, and that is correct — recorded so it is not later read as a defect.**
+`document-index/README.md` cites `/420422/` and `/wlc-a-notes/` without naming a file, and GitHub
+Pages serves each from that directory's `index.html`; the stub lives in that file, so the target it
+names, and its `<link rel="canonical">`, are `…/wlc/420422/index.html` rather than `…/wlc/420422/`.
+Both forms serve the page at the new site — the target was fetched at 200 — so nothing is broken,
+and naming one of two equivalent URLs is exactly what a canonical link is for. It falls out of
+Phase 8's derivation, where a stub's target is the prefix rewrite of its own **path**; no special
+case for directories could be added without the generator learning which paths a server resolves to
+an index, which is the server's fact rather than the tree's.
+
+**Next is Phase 10, emptying the rest of wlc-utils** — `out/` 193, `in/` 135, `doc/` 6, `data/` 1
+and `wlc-utils.code-workspace`, with `README.md` and `CLAUDE.md` rewritten there and the NFC scope
+deleted here. Pure subtraction with no published effect, and **its own text says it is worth an
+explicit look before running**, as the Python plan's Phase 4 was. Two things this phase hands it:
+the frozen reference is down to the 336 files finding 2 names, so its zero-diff assertions have that
+much less to lean on; and the three sites naming the wlc-utils sibling still want the three
+different dispositions Phase 8's finding 1 sets out, one of which must survive the phase.
 
 ---
 
