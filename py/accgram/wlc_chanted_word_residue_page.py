@@ -28,7 +28,8 @@ sequence has a legarmeh and its MAM counterpart does not, ``_mam_cell`` marks th
 ``_stroke_caveat`` says why below the table: WLC has the Unicode PASEQ on the chanted word, and
 MAM has the same Unicode PASEQ standing apart from it with a space on each side, so the scanner
 reads a legarmeh in the one and not in the other.  That is #215, whose fix Ben sequenced before
-Phase 4 of wlc-utils/doc/PLAN-two-accents-on-one-chanted-word.md; when it lands the marker and
+Phase 4 of doc/PLAN-two-accents-on-one-chanted-word.md (this repo's copy is the only one since
+2026-08-17, wlc-utils' having been deleted at the evacuation plan's Phase 10); when it lands the marker and
 the paragraph drop out of the page on their own, the way ``_accounted_for``'s groups do.  Hence
 also what ``pin_claims`` asserts here -- the shape of the argument, that the scanner reads no
 legarmeh anywhere in MAM, rather than a count of marked rows that a fix would falsify.  The

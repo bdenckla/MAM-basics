@@ -5,13 +5,15 @@ the precomposed U+1E25 / U+1E24 forms, never the decomposed "h"/"H" + COMBINING 
 BELOW (U+0323) sequence. Comments must not use either Unicode form at all -- plain
 ASCII "x"/"X" is used instead, since comments don't flow to output.
 
-THREE REPOS ARE SCANNED, each with its own exclusions and its own floor. This repo
-holds the code, and since 2026-08-12 the wlc corpus the code generates as well; UXLC-utils
-still holds the corpus its half generates into. Both siblings carry hand-authored
-transliterations in ``doc/``, ``CLAUDE.md`` and ``README.md`` after their Python moved
-out. ``_scopes()`` below is the whole of the per-repo difference. The wlc-utils scope
-outlives the generators that once wrote there, and Phase 10 of
-``doc/PLAN-evacuate-the-rest-of-wlc-utils.md`` is what removes it.
+TWO REPOS ARE SCANNED, each with its own exclusions and its own floor. This repo holds
+the code, and since 2026-08-12 the wlc corpus the code generates as well; UXLC-utils
+still holds the corpus its half generates into, and carries hand-authored
+transliterations in ``doc/``, ``CLAUDE.md`` and ``README.md`` after its Python moved
+out. ``_scopes()`` below is the whole of the per-repo difference. A wlc-utils scope was
+the third until 2026-08-17, when Phase 10 of
+``doc/PLAN-evacuate-the-rest-of-wlc-utils.md`` emptied that repo down to 155 generated
+redirect stubs: nothing hand-authored is left there to scan, and the 6 files that do
+remain sit under the floor of 10 that the scope carried.
 
 The UXLC-utils scope arrived with that repo's Python (Phase 3 of
 ``doc/PLAN-evacuate-python-from-UXLC-utils.md``) and replaces its
@@ -137,10 +139,6 @@ _EXCLUDE_DIR_PREFIXES = (
     "gh-pages/",
 )
 
-# wlc-utils' generated trees plus every imported text snapshot under in/ (Tanach/UXLC/WLC
-# source, WLC release notes, manuals), all left as-is for fidelity to source.
-_WLC_EXCLUDE_DIR_PREFIXES = ("out/", "gh-pages/", "in/")
-
 # UXLC-utils' generated trees -- out/, gh-pages/ and data/ (generated despite the name:
 # main_write_page_break_info writes one of its two files and copies the other in from
 # in/UXLC-misc/) -- plus in/, which is external tanach.us / UXLC download snapshots and
@@ -179,40 +177,20 @@ def _scopes() -> tuple[_Scope, ...]:
             floor=100,
         ),
         _Scope(
-            label="wlc-utils",
-            # THE ONE PATH IN py/ THAT LEAVES THIS CHECKOUT IN A ROUTINE RUN, and it is
-            # a read. Every generator was repointed home on 2026-08-12 (Phase 5 of
-            # doc/PLAN-evacuate-the-rest-of-wlc-utils.md), which is what makes a
-            # MAM-basics worktree isolate the generated artifacts. This scope stays
-            # because wlc-utils still holds the 626 files it always did -- the copy
-            # made at Phase 3 is a copy -- and Phase 10 is what empties that repo and
-            # deletes this scope with it.
-            # Not the only such path any more, which is why "routine" now qualifies it:
-            # wlc_redirect/stubs.py's wlc_utils_pages_dir() reaches the same sibling
-            # (Phase 8, 2026-08-13). That one is asked for rather than incidental --
-            # nothing runs it but `main_wlc_redirect_stubs.py check` with no --dir, and
-            # `build --publish`, which is Phase 9 landing the stubs. No mega step and no
-            # test reaches it, so a suite run and a circuit run still leave wlc-utils
-            # alone, which is the property Phase 5 measured.
-            root=paths.require_sibling("wlc-utils", paths.sibling_repo("wlc-utils")),
-            exclude_dir_prefixes=_WLC_EXCLUDE_DIR_PREFIXES,
-            exclude_files=frozenset(),
-            # Excluding in/, out/ and gh-pages/ leaves doc/, CLAUDE.md, README.md and a
-            # handful of dotfiles. That is a small set by design and gets smaller when
-            # the Python leaves, so the floor is low on purpose -- it is here to catch an
-            # exclusion filter that swallowed EVERYTHING, not to assert a tree size.
-            floor=10,
-        ),
-        _Scope(
             label="UXLC-utils",
             root=uxlc_paths.uxlc_data_root(),
             exclude_dir_prefixes=_UXLC_EXCLUDE_DIR_PREFIXES,
             exclude_files=frozenset(),
-            # Low for the same reason wlc-utils' is: what survives those exclusions is
-            # doc/, CLAUDE.md, README.md and dotfiles, and it shrinks again once that
-            # repo's Python is deleted. The retired UXLC-utils-side copy asserted a
-            # floor of 80 over its whole tree, which counted the 102 .py this scope
-            # will not have.
+            # What survives those exclusions is doc/, CLAUDE.md, README.md and dotfiles,
+            # and it shrinks again once that repo's Python is deleted -- so the floor is
+            # low on purpose: it is here to catch an exclusion filter that swallowed
+            # EVERYTHING, not to assert a tree size. The retired UXLC-utils-side copy
+            # asserted a floor of 80 over its whole tree, which counted the 102 .py
+            # this scope will not have. A wlc-utils scope carried the same floor for
+            # the same reason until Phase 10 deleted it (see the module docstring) --
+            # and the floor is also what would have caught that scope outliving its
+            # tree: the emptied repo leaves 6 files in scope, and 6 <= 10 errors
+            # setUpClass rather than passing over a hollow scan.
             floor=10,
         ),
     )

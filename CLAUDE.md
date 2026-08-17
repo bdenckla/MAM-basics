@@ -136,9 +136,10 @@ get reinstated. Issue wlc-utils#76.
 
 ## Two issue trackers: a bare `#NN` here means MAM-basics
 
-wlc-utils' 88 issues were **not** transferred when its Python moved here on 2026-08-01. They keep
+wlc-utils' issues were **not** transferred when its Python moved here on 2026-08-01. They keep
 their numbers and stay in `bdenckla/wlc-utils`, which is still where they are read, commented on
-and closed. The trackers unify *going forward* only: **every new issue, including new work on the
+and closed — 93 of them as of 2026-08-17 (this paragraph long said 88, a count that was already
+five short when it was written: #89–#93 were filed 2026-07-31). The trackers unify *going forward* only: **every new issue, including new work on the
 moved code, is filed in MAM-basics.**
 
 So in this repo a bare `#NN` names a MAM-basics issue, and a citation of a wlc-utils issue is
@@ -162,6 +163,28 @@ Two things a blind sweep gets wrong, so read the surrounding sentence before add
 
 wlc-utils' own `doc/`, `in/` and `CLAUDE.md` were left alone — a bare `#NN` read there still means
 a wlc-utils issue, and qualifying those would imply they were ambiguous.
+
+## There is no `wlc-koren-12th` repo
+
+`~/GitRepos/wlc-koren-12th` was never a repo of its own. It was a **worktree of wlc-utils** on
+branch `claude/koren-12th-site`, which is why it sat flat among the siblings and answered
+`git remote -v` with `bdenckla/wlc-utils`; its copies of files such as
+`py/accgram/poetic_ply_grammar.py` were the same files on an older branch, never duplicates to
+reconcile or keep in sync. Repeated sessions read it as a twin repo and burned a turn
+"reconciling" it — that is the whole reason for this note. Deleted 2026-07-27, along with the
+fully-merged leftover branches `claude/koren-12th-site` and `claude/festive-napier-38d58d`, both
+accepted by `git branch -d` (never `-D`), which is the record that nothing was lost. The only
+place the name survives is old session transcripts under `~/.claude/projects/`, which is exactly
+where the wrong conclusion kept being copied from.
+
+**General lesson:** a directory sitting flat under `~/GitRepos` is not necessarily a repo. Run
+`git -C <dir> rev-parse --git-common-dir` (or `git worktree list` from the repo you suspect)
+before treating one as a peer whose files need syncing.
+
+(Moved here from wlc-utils' `CLAUDE.md` on 2026-08-17, when Phase 10 of
+`doc/PLAN-evacuate-the-rest-of-wlc-utils.md` shrank that file to redirect-host facts — the
+disposition that plan's Phase 0 recorded for it. The note lives on because the transcripts do,
+and because all wlc work now happens in this repo.)
 
 ## Running tests — always from the repo root
 
