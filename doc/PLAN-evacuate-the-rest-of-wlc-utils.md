@@ -2352,10 +2352,20 @@ an index, which is the server's fact rather than the tree's.
 **Next is Phase 10, emptying the rest of wlc-utils** — `out/` 193, `in/` 135, `doc/` 6, `data/` 1
 and `wlc-utils.code-workspace`, with `README.md` and `CLAUDE.md` rewritten there and the NFC scope
 deleted here. Pure subtraction with no published effect, and **its own text says it is worth an
-explicit look before running**, as the Python plan's Phase 4 was. Two things this phase hands it:
-the frozen reference is down to the 336 files finding 2 names, so its zero-diff assertions have that
-much less to lean on; and the three sites naming the wlc-utils sibling still want the three
-different dispositions Phase 8's finding 1 sets out, one of which must survive the phase.
+explicit look before running**, as the Python plan's Phase 4 was. Three things this phase hands it:
+
+- **Its verify line's figure is one too low. `git ls-files` in wlc-utils will print 161, not 160**,
+  and the phase should re-measure rather than read a 161 as an overlooked file. Measured
+  2026-08-17 at `f10f405`: the repo tracks 497, the five deletions above account for exactly **336**
+  of them, and 497 − 336 = **161** — the 155 stubs plus six root files, `.gitattributes`,
+  `.github/workflows/pages.yml`, `.gitignore`, `CLAUDE.md`, `LICENSE` and `README.md`, each of
+  which that phase's own text says to keep. So the arithmetic and the prose disagree by one and the
+  prose is right; the count is what needs correcting when Phase 10 writes itself back.
+- **The frozen reference is down to the 336 files finding 2 names**, so Phase 10's zero-diff
+  assertions have that much less to lean on — and those 336 are precisely the files it deletes, so
+  it ends the reference outright.
+- **The three sites naming the wlc-utils sibling still want the three different dispositions Phase
+  8's finding 1 sets out**, one of which must survive the phase.
 
 ---
 
