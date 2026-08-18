@@ -11,7 +11,7 @@ where the two agree, that file carries the reasoning and this one does not repea
 | Phase | State |
 |---|---|
 | 1 — two roots, no cwd | **DONE 2026-08-18** — `6b10259` in holman-ketiv-qere (12 files, +275/−51), preceded by `50b2eaa` there; nothing owed in this repo's `py/` |
-| 3 — copy the Python in (dual residency) | **not started** |
+| 3 — copy the Python in (dual residency) | **DONE 2026-08-18** — `1be01b5` here (60 new files, 1 modified); in holman-ketiv-qere `9e290ce` before it and `15824d4` after, both deliberate exceptions to dual residency. Suite 905/5 → **950/5**; 175 of 335 artifacts rewritten, 160 untouched, row count 77 |
 | 4 — empty holman-ketiv-qere | **not started** |
 | 6 — breadcrumbs and issue citations | **not started** |
 | 7 — cross-repo bookkeeping | **not started** |
@@ -301,7 +301,88 @@ before the move, `sibling_repo("holman-ketiv-qere")` after. **Do this phase insi
 holman-ketiv-qere, while the code still runs there**, and prove it by regenerating the 163
 artifacts to a zero diff.
 
-## Phase 3 — copy the Python in (dual residency)
+## Phase 3 — copy the Python in (dual residency) — DONE 2026-08-18
+
+**Landed as `1be01b5` in this repo — 60 new files under `py/` plus one modified,
+`py/tests/test_h_dot_below_nfc.py`.** Two commits bracket it in holman-ketiv-qere, both
+deliberate exceptions to "nothing is committed there": `9e290ce` before, clearing the 13 ruff
+findings and the missing UTF-8 stdio, and `15824d4` after, regenerating the single artifact whose
+bytes the package rename reaches. Ben's decision, 2026-08-18, put the preconditions in holman
+rather than in a commit here straight after the copy, so that neither could make the copy look
+like its cause.
+
+**Every baseline was re-measured first and every one matched**, except two that are Phase 1's own
+effect rather than drift: 455 tracked files against the table's 454 and 16,640 lines against
+16,416, both being `py/hkq_paths.py` and Phase 1's net `+275/−51` measured at `637237b`, before
+Phase 1. 100 tracked `.py`, 335 artifacts across the six trees, 8 test modules plus the runner, 9
+entry points, suite 51 OK, `table.row_count` 77, 13 ruff findings in the same four files, and all
+37 vendored `.py` byte-identical by `cmp`. This repo: 905 passed / 5 skipped / 57 subtests, ruff
+clean, black clean, `source_hygiene` OK.
+
+**The oracle ran as specified and passed.** All six generators from
+`C:\Users\BenDe\GitRepos\MAM-basics` as the working directory, on this repo's interpreter. An
+mtime snapshot around the run shows **175 rewritten and 160 untouched**, the same split and the
+same list Phase 1 measured. `git status --porcelain` held nothing outside `py/` here, UXLC-utils
+and MAM-parsed stayed clean, and `row_count` is still 77.
+
+Seven things went differently from what is written underneath. The first four bear on later phases:
+
+- **61 files move but only 60 LAND.** `py/tests/test_h_dot_below_nfc.py` becomes a scope edit to
+  an existing file rather than a copy, so it is not among the new files. UXLC-utils' Phase 3
+  recorded the same shape as "76 move and 74 land". State the two numbers apart in book-of-job's
+  and the trio's plans, or a copy commit's file count reads as a shortfall.
+- **The third `_Scope` needed one thing beyond the scope itself: `.docx` in
+  `_BINARY_EXTENSIONS`.** holman's own copy of the test listed it and this repo's did not, so the
+  merged scope read that repo's tracked review docx as text and died decoding a zip —
+  `UnicodeDecodeError` in two of the six tests. **Diff the two files' binary-extension sets, not
+  only their exclusions and floors, at every remaining repo that carries a copy of this guard.**
+  The floor needed nothing: 40, the one holman's copy carried, still fits, with 154 files in scope
+  today and about 48 surviving Phase 4.
+- **The source-lint crop was 3, not the 68 UXLC-utils' Phase 3 called its largest piece of work.**
+  holman's prose is about ketiv/qere rather than accentuation, which is the whole of the
+  difference. One transliteration, `mahpakh` for the house `mahapakh` in
+  `hkq_cmn/uxlc_change_records`; and one agentive "reads" that takes a `# prose-ok` pragma rather
+  than a rewording, because it sits inside `"Job 14.19 where UXLC reads as Merekha.png"`, which is
+  Holman's filename on disk. **Budget by subject matter rather than by file count** — book-of-job
+  and the codex-index trio are accentuation repos and should be expected to behave like
+  UXLC-utils, not like this one. The pragma goes on the dict entry itself: the scan exempts a line
+  only via that line or the one after it, so a pragma on the line above leaves the entry flagged.
+- **The rename reaches a tracked artifact, and that is not the breadcrumb flip Phase 6 defers.**
+  `data/uxlc_standard_atoms.json`'s `note` field embeds the package name, so
+  `python_modules/uxlc_standard_atoms` became `hkq_cmn/uxlc_standard_atoms` there. Committed in
+  holman as `15824d4` rather than held back: holding it would put that repo's tracked copy
+  permanently at odds with the code that writes it, and every later regeneration would show the
+  file dirty — which is the oracle damage Phase 6's rule exists to prevent, not an instance of it.
+  **Phase 6 still owes two paths their repo name**, neither touched here: that note's
+  `hkq_cmn/uxlc_standard_atoms`, and `docs-not-served/table_data_fields.md` line 35, which is
+  hand-authored and still says `py/python_modules/verify_table_words_in_mam_plus.py`. Phase 6's
+  own grep, `git grep -lI "generated by holman-ketiv-qere" -- gh-pages out docs-not-served`,
+  matches **nothing** in this repo — so that grep is not the one that finds this work.
+
+- **Three of the seven moving entry points had no `sys.stdout.reconfigure` at all** —
+  `main_extract_docx_and_render_table`, `main_just_render_table`, `main_search_holam_he_qere` —
+  and `main_search_final_hiriq_verse_text` reconfigured stdout but not stderr. Two of the three
+  print `json.dumps(..., ensure_ascii=False)`, so non-ASCII can reach a stdout that Windows
+  encodes cp1252 whenever it is redirected. Nothing had crashed because those summaries happen to
+  hold no non-ASCII. UXLC-utils' Phase 3 recorded this hazard as one that "did not materialize",
+  every entry point there having reconfigured; **that was a fact about UXLC-utils' `CLAUDE.md`,
+  not about the recipe**, so check it per repo. Fixed in `9e290ce`, all four now reconfiguring
+  both streams as the first lines of `main()`.
+- **The rename touched 77 occurrences in 34 of the 60 files, and two of them were
+  `unittest.mock.patch` target strings.** `"python_modules.verify_table_words_in_mam_plus.EXPECTED_ROW_COUNT"`
+  resolves by name at run time, so a missed one fails as a patch that finds nothing rather than as
+  an import error. `py/repo_util/maintenance_policy.py` says `python_modules` too and was left
+  alone, naming mgketer's package; **check every match against what it actually names before a
+  bulk rewrite.**
+- **A number in `15824d4`'s commit message is wrong.** It says "all 396 entries of standard_atoms
+  are byte-identical"; the real count is **124**, read out of the regenerated file afterwards. The
+  substance holds — the whole diff is the one `note` sentence — but 396 was written without being
+  read, which is what `doc/agent-planning-principles.md` forbids. Recorded here rather than
+  amended, a push having already landed.
+
+---
+
+The rest of this section is the plan as written before the phase ran.
 
 **61 moving files** land under `py/` (not 42 — see the re-counted disposition table), with
 `python_modules/` → `hkq_cmn/` and the two disappearing entry points. Retarget the data root to
