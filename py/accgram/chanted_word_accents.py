@@ -21,8 +21,17 @@ and all twelve hand transcriptions.  It reads its whitelist straight off the ent
 checks, keyed on the TOKEN SEQUENCE and never on a verse reference: Yeivin's closed lists are the
 differential check the survey runs against him, and a checker that consulted them would name a
 chanted word by where it stands rather than by what it has.  What ``classify_verse`` feeds is an
-additive field; ``status`` and ``tree`` are left alone, and whether a chanted word no section of
-his inventory names should be ungrammatical is a later, separate decision.
+additive field; ``status`` and ``tree`` are left alone.
+
+WHETHER A CHANTED WORD NEITHER BOOK NAMES IS UNGRAMMATICAL WAS ANSWERED ON 2026-08-03, and the
+answer for MAM is no, for the time being: such a chanted word is recorded and grammatical (§6
+decision 5 of ``doc/PLAN-two-accents-on-one-chanted-word.md``).  ``MAM_ALLOWANCES`` is that
+ruling as the flagging path reads it -- the second half of the whitelist, keyed on the chanted
+word's MARK RUN with its token sequence, which is what a per-verse allowance takes so that it
+cannot spread to a chanted word that merely shares the pair.  The ruling decides verdicts and
+retires no measurement: ``mam_residue`` is closed against ``YEIVIN_ENTRIES`` alone, so every
+divergence stays in it, and the ruling covers MAM alone, so ``wlc_chanted_word_residue_page`` is
+closed the same way.
 
 TOKENS, NOT MARKS, and that choice is the design.  The prose scanner already fuses several
 written pairs into one token: a doubled stress helper (pashta, telisha qetana), the zarqa's own
@@ -548,6 +557,12 @@ def scan_corpus(frags_by_bcv: dict[str, list[Frag]]) -> dict:
     hits: list[dict] = []
     geresh_folds: list[dict] = []
     crossings: list[dict] = []
+    # Index-aligned with ``MAM_ALLOWANCES``: the verses this corpus has whose chanted word an
+    # allowance's key matches.  Collected here because the key is the MARK RUN, which a hit does
+    # not carry -- and must not start carrying, ``mam_residue``'s occurrences being an artifact
+    # the plan's Phase 4 requires to come out unchanged.  ``build_survey`` takes these out of the
+    # corpus result and hands them to ``mam_allowances``, so no corpus record grows a field.
+    allowance_matches: list[list[str]] = [[] for _ in MAM_ALLOWANCES]
     n_verses = n_atomic = n_compound = 0
     n_methigazaqef = 0
     has_legarmeh: HasLegarmeh | None = None
@@ -590,10 +605,14 @@ def scan_corpus(frags_by_bcv: dict[str, list[Frag]]) -> dict:
                 continue
             atom_indices = [_atom_index(unit, t.start) for t in folded]
             kind = _kind_of(unit, atom_indices)
+            sequence = " ".join(t.leaf for t in folded)
+            allowance = _ALLOWANCE_INDEX.get((unit.marks, sequence))
+            if allowance is not None:
+                allowance_matches[allowance].append(bcv)
             hit = {
                 "bcv": bcv,
                 "chanted_word": _display(unit),
-                "sequence": " ".join(t.leaf for t in folded),
+                "sequence": sequence,
                 "kind": kind,
             }
             if kind == KIND_COMPOUND_SPLIT:
@@ -626,6 +645,7 @@ def scan_corpus(frags_by_bcv: dict[str, list[Frag]]) -> dict:
             "crossings": crossings,
         },
         "occurrences": hits,
+        "allowance_matches": allowance_matches,
     }
 
 
@@ -1131,6 +1151,157 @@ def breuer_notes() -> list[dict]:
     ]
 
 
+# --- Ben's ruling, where neither book names what MAM has ----------------------
+#
+# §6 decision 5 of ``doc/PLAN-two-accents-on-one-chanted-word.md``, settled with Ben on
+# 2026-08-03: MAM's divergences from Yeivin's and Breuer's rules are recorded, and are
+# grammatical for the time being.  A chanted word below is therefore named by a RULING and not
+# by a section, and the two are deliberately not fed from one table, so that a reader can see
+# which entries are transcribed from Yeivin and which are Ben's.
+#
+# THE RULING DECIDES VERDICTS AND RETIRES NO MEASUREMENT.  "All divergences ... should continue
+# to be recorded, for possible future return to (for further research)" is the other half of it.
+# So ``mam_residue`` is computed off ``YEIVIN_ENTRIES`` alone and this table does not reach it:
+# ca8:6 stays in the residue, under ``left_over_after_both``, exactly where it stood before the
+# ruling.  ``wlc_chanted_word_residue_page`` keys on ``NAMED_TOKEN_SEQUENCES`` alone for the same
+# reason -- the ruling covers MAM, and WLC's residue is a different set.
+#
+# CALL THESE ALLOWANCES.  The plan's phrase is "per-verse exception"; ``MamAllowance`` is that
+# same thing under a name no reader can take for a Python exception.
+#
+# KEYED ON THE MARK RUN PLUS THE TOKEN SEQUENCE, NEVER ON A VERSE REFERENCE -- the mechanism the
+# plan's §10 settled (Ben, 2026-08-03), and the shape ``lexical_validation``'s
+# ``_WHITELISTED_SAME_LETTER`` already has, with its verses in a comment.
+# ``classify_verse(body, tokens)`` has no verse reference and does not grow one: a mark run says
+# what the chanted word HAS, which is what decision 1 asked a whitelist to name it by, and it is
+# far tighter than the token sequence alone.  ``verses`` is the survey's differential check and
+# nothing else -- ``mam_allowances`` asserts that MAM has each allowance in exactly those places
+# and raises on drift, the shape Yeivin's closed lists already have -- and no flagging path
+# reads it.
+#
+# THE MARK RUN IS BUILT FROM NAMED CONSTANTS, not typed as Hebrew: a key that has to be read
+# mark by mark is one a reader can check, and a mistyped one would match nothing at all.
+#
+# THE FIVE TELISHA-GEDOLA WORDS ARE DELIBERATELY NOT NAMED HERE.  Phase 4 of the plan asked
+# whether they should be, "so that the whole whitelist reads out of one place", and settled it no
+# on 2026-08-17.  They are the words ``lexical_validation``'s ``_WHITELISTED_SAME_LETTER`` spares
+# -- a telisha gedola and a geresh-family mark on ONE letter -- and an entry here would put one
+# rule in two places rather than the whole whitelist in one.  Four measurements say so, each
+# taken 2026-08-17 and each re-derivable by running ``survey-chanted-word-accents`` and reading
+# the three corpora's occurrences:
+#
+#   * That whitelist is ORDER-LESS by design, a frozenset of frozensets, on the stated ground
+#     that the order of two accents stacked on one letter is not meaningful.  A key here is a
+#     token SEQUENCE, which is ordered, so an entry would have to spell each pair twice and would
+#     restate in an ordered form a legality that was decided without order.
+#   * The corpora do write them in both orders.  MAM has ``geresh telishagedola`` at ek48:10 and
+#     ``gershayim telishagedola`` at lv10:4, where WLC and UXLC have ``telishagedola geresh`` and
+#     ``telishagedola gershayim``.  An entry taken from MAM would therefore not describe what the
+#     flagging path meets, that path reading WLC and the printed-Decalogue strands.
+#   * A mark run does not travel either, which is the sharper half of the same point: WLC's
+#     zp2:15 run has the ``]C]c`` note markers MAM's lacks, and WLC's 2k17:13 has the geresh
+#     muqdam codepoint where MAM and UXLC have a plain geresh.  ca8:6 is the case where the mark
+#     run IS the same in all three corpora, which is why §10 of the plan could settle the
+#     mechanism on it.
+#   * WLC's telisha-containing hits are not the same set.  je36:11 ``telishagedola revia`` and
+#     js2:1 ``munax telishagedola`` have no same-letter pair in them at all, so an entry keyed on
+#     the token sequence would sweep in two chanted words ``lexical_validation`` does not
+#     whitelist and nothing has ruled on.
+#
+# What a reader is owed instead is a pointer, and there are two: this paragraph, and
+# ``mam_residue``'s ``already_documented_elsewhere``, which says where the five are accounted
+# for.
+
+_RULING = (
+    "Ben's ruling of 2026-08-03, recorded at §6 decision 5 of"
+    " doc/PLAN-two-accents-on-one-chanted-word.md"
+)
+
+
+@dataclass(frozen=True)
+class MamAllowance:
+    marks: str
+    sequence: str
+    names: str
+    verses: tuple[str, ...]
+    note: str = ""
+
+
+MAM_ALLOWANCES: tuple[MamAllowance, ...] = (
+    MamAllowance(
+        # Song of Songs 8:6 שַׁלְהֶ֥בֶתְיָֽה׃ -- a merkha on the open הֶ, and a U+05BD on the
+        # stressed יָ immediately before sof pasuq, so that U+05BD is a silluq and not a meteg.
+        # ``am.METEG`` is the codepoint's constant, named for the pair of readings it carries
+        # (its underlying spelling is ``MTGOSLQ``); which of the two it is here is settled by the
+        # sof pasuq that follows, and the scanner settles it the same way in emitting SILLUQ.
+        marks=(
+            am.LETTER * 3
+            + am.MERKHA
+            + am.LETTER * 3
+            + am.METEG
+            + am.LETTER
+            + am.SOF_PASUQ
+        ),
+        sequence="merkha silluq",
+        names=(
+            "a secondary merkha in a silluq's chanted word, which neither Yeivin nor Breuer"
+            " names; grammatical by Ben's ruling of 2026-08-03. The mam_allowances section of"
+            " out/accgram/chanted-word-accents.json has the search behind that silence."
+        ),
+        verses=("ca8:6",),
+        note=(
+            "The silence is a measured one, not an assumed one: the §209 entry of"
+            " YEIVIN_ENTRIES above carries the search, run on 2026-08-03 over the full ITM OCR"
+            " and the CoS export, section by section. This is also the one atomic"
+            " merkha-with-silluq chanted word in any of the three corpora, and all three have"
+            " it with the same mark run, so the allowance rests on an accentuation a diplomatic"
+            " transcription and a consensus text agree on rather than on a MAM-only one. MAM's"
+            " four other chanted words with this token sequence are the שלף־חרב compounds ITM"
+            " §357 accounts for, and the mark run is what keeps them out: each of them has a"
+            " maqaf, and this key has none."
+        ),
+    ),
+)
+
+
+def mam_allowances(matches: dict[str, list[list[str]]]) -> list[dict]:
+    """Ben's ruling beside what each corpus measures for it, asserting MAM on the way through.
+
+    ``matches`` is what ``scan_corpus`` collected per corpus: for each entry of
+    ``MAM_ALLOWANCES``, in that order, the verses whose chanted word the entry's key matched.
+    MAM's list must equal the entry's ``verses`` exactly, and this RAISES where it does not --
+    the same treatment ``yeivin_inventory`` gives a closed list, and for the same reason, that a
+    warning in a generator's output is a warning nobody reads.
+
+    WLC's and UXLC's lists are reported and not asserted. They are here because §10 of the plan
+    rests ca8:6's allowance on all three corpora having the chanted word alike, so a divergence
+    is a finding worth seeing; but the ruling covers MAM, and a diplomatic transcription is not
+    the corpus a grammatical claim takes.
+    """
+    rows: list[dict] = []
+    for index, entry in enumerate(MAM_ALLOWANCES):
+        measured = {name: found[index] for name, found in matches.items()}
+        if measured["mam_simple"] != list(entry.verses):
+            raise AssertionError(
+                f"MAM allowance for {entry.sequence!r}: written for"
+                f" {list(entry.verses)}, and MAM measures {measured['mam_simple']}"
+            )
+        row = {
+            "names": entry.names,
+            "token_sequence": entry.sequence,
+            "source": _RULING,
+            "mam_verses": list(entry.verses),
+            "mam_matches_exactly": True,
+            "same_key_in_the_other_corpora": {
+                name: found for name, found in measured.items() if name != "mam_simple"
+            },
+        }
+        if entry.note:
+            row["note"] = entry.note
+        rows.append(row)
+    return rows
+
+
 def _measured(hits: list[dict], sequences: tuple[str, ...]) -> list[dict]:
     wanted = frozenset(sequences)
     return [h for h in hits if h["sequence"] in wanted]
@@ -1188,8 +1359,14 @@ def mam_residue(mam: dict) -> dict:
     """MAM prose chanted words whose token sequence no entry above names.
 
     The point of the survey stated as a finding: after Yeivin's whole prose inventory, this is
-    what the consensus text has left over.  Phase 2's whitelist is keyed on the token pair, so
-    this is also the list it will have to either name or flag.
+    what the consensus text has left over.
+
+    CLOSED AGAINST ``YEIVIN_ENTRIES`` ALONE, and it stays that way now that Ben has ruled these
+    chanted words grammatical (2026-08-03).  "All divergences ... should continue to be
+    recorded, for possible future return to (for further research)" is half of that ruling, so
+    an allowance written under it must not take its chanted word out of this list: ca8:6 is
+    named by ``MAM_ALLOWANCES`` and is still here, under ``left_over_after_both``.  A residue
+    that shrank as the whitelist grew would be the measurement following the verdict.
     """
     named = {seq for entry in YEIVIN_ENTRIES for seq in entry.sequences}
     left = [h for h in mam["occurrences"] if h["sequence"] not in named]
@@ -1208,7 +1385,12 @@ def mam_residue(mam: dict) -> dict:
             " the five words ``uni_to_marks.word_to_marks`` keeps both marks on, whitelisted"
             " by ``lexical_validation`` and set out in the telisha gedola exhibit of"
             " gh-pages/wlc/accgram/almost-errors.html. A geresh or gershayim written twice on"
-            " one of them is folded above, so each counts as two accents, not three."
+            " one of them is folded above, so each counts as two accents, not three. They are"
+            " deliberately not named in mam_allowances, and the comment above MAM_ALLOWANCES"
+            " carries the four measurements that settled it on 2026-08-17: that whitelist is"
+            " over one chanted word's tokens, in order, where lexical_validation's is over two"
+            " accents on one letter, order-lessly, and the three corpora do not write these"
+            " five alike."
         ),
         "accounted_for_by_maqaf_after_gaya": {
             "what": (
@@ -1263,15 +1445,54 @@ def _build_named_token_sequences() -> dict[str, str]:
 NAMED_TOKEN_SEQUENCES: dict[str, str] = _build_named_token_sequences()
 
 
+def _build_allowance_index() -> dict[tuple[str, str], int]:
+    """(mark run, token sequence) -> the index of the allowance it keys, checked for conflicts.
+
+    Built here rather than beside ``MAM_ALLOWANCES`` so that the ITM check below has
+    ``NAMED_TOKEN_SEQUENCES`` to run against: an allowance for a sequence Yeivin already names
+    would be a ruling about a chanted word that needs none, and is a contradiction rather than a
+    redundancy.
+    """
+    out: dict[tuple[str, str], int] = {}
+    for index, entry in enumerate(MAM_ALLOWANCES):
+        if entry.sequence in NAMED_TOKEN_SEQUENCES:
+            raise AssertionError(
+                f"the allowance for {entry.sequence!r} names a token sequence ITM"
+                f" {NAMED_TOKEN_SEQUENCES[entry.sequence]} already names"
+            )
+        key = (entry.marks, entry.sequence)
+        if key in out:
+            raise AssertionError(
+                f"two allowances claim one mark run with {entry.sequence!r}"
+            )
+        out[key] = index
+    return out
+
+
+# The second half of the whitelist, and the half that is Ben's rather than Yeivin's: a chanted
+# word MAM has that no section of either book names, ruled grammatical for the time being.  Keyed
+# on the mark run WITH the token sequence, so a per-verse allowance cannot spread to a chanted
+# word that merely shares the pair -- MAM's four שלף־חרב compounds share ``merkha silluq`` with
+# ca8:6 and match no key here.  ``scan_corpus`` reads it to pin each allowance against MAM, and
+# ``classify_verse`` reads it to name a hit; nothing else does, ``mam_residue`` and
+# ``wlc_chanted_word_residue_page`` both being closed against ``NAMED_TOKEN_SEQUENCES`` alone.
+_ALLOWANCE_INDEX: dict[tuple[str, str], int] = _build_allowance_index()
+
+
 def classify_verse(body: str, tokens: list[Token]) -> list[dict]:
     """One verse's chanted words with two or more accent tokens, each named or left unnamed.
 
     ``body`` is the mark body the scanner read and ``tokens`` the stream it emitted, so a caller
-    passes what it already has.  Each hit carries the chanted word's own run of the body, its
-    token sequence, whether it is an atom or a maqaf compound, and the ITM section that names
-    the sequence -- ``None`` where no section of Yeivin's prose inventory does.  A ``None`` is
-    the finding: it is the pair for which the inventory, closed against MAM in the survey above,
+    passes what it already has.  Each hit carries the chanted word's run of the body, its token
+    sequence, whether it is an atom or a maqaf compound, and the ITM section that names the
+    sequence -- ``None`` where no section of Yeivin's prose inventory does.  A ``None`` is the
+    finding: it is the pair for which the inventory, closed against MAM in the survey above,
     offers no precedent.
+
+    A hit that an entry of ``MAM_ALLOWANCES`` matches carries ``mam_allowance`` as well, and its
+    ``itm_section`` stays ``None``, which is the honest reading: Yeivin does not name the pair,
+    and what names the chanted word is Ben's ruling of 2026-08-03.  The two keys are kept apart
+    so that a reader can tell a section transcribed from Yeivin from a ruling about MAM.
 
     Nothing here reads a verdict or writes one.  The caller records the result beside
     ``status`` and ``tree``, which stay as the grammar left them.
@@ -1283,14 +1504,16 @@ def classify_verse(body: str, tokens: list[Token]) -> list[dict]:
             continue
         sequence = " ".join(t.leaf for t in folded)
         atom_indices = [_atom_index(unit, t.start) for t in folded]
-        hits.append(
-            {
-                "marks": unit.marks,
-                "sequence": sequence,
-                "kind": _kind_of(unit, atom_indices),
-                "itm_section": NAMED_TOKEN_SEQUENCES.get(sequence),
-            }
-        )
+        hit = {
+            "marks": unit.marks,
+            "sequence": sequence,
+            "kind": _kind_of(unit, atom_indices),
+            "itm_section": NAMED_TOKEN_SEQUENCES.get(sequence),
+        }
+        allowance = _ALLOWANCE_INDEX.get((unit.marks, sequence))
+        if allowance is not None:
+            hit["mam_allowance"] = MAM_ALLOWANCES[allowance].names
+        hits.append(hit)
     return hits
 
 
@@ -1435,10 +1658,15 @@ def build_survey() -> dict:
         "uxlc": uxlc_frags(paths.in_dir() / "UXLC-39"),
         "mam_simple": mam_frags(dict(refs)),
     }
-    scanned = {
-        name: {"kind": CORPUS_KIND[name], **scan_corpus(frags)}
-        for name, frags in corpora.items()
-    }
+    scanned: dict[str, dict] = {}
+    # Taken out of each corpus result rather than published with it: what the allowance keys
+    # matched belongs beside the ruling, in one place a reader can read the whole of it, and a
+    # corpus record that grew a field would move an artifact this phase promised not to move.
+    allowance_matches: dict[str, list[list[str]]] = {}
+    for name, frags in corpora.items():
+        result = scan_corpus(frags)
+        allowance_matches[name] = result.pop("allowance_matches")
+        scanned[name] = {"kind": CORPUS_KIND[name], **result}
     return {
         "criterion": (
             "A chanted word -- an atom, or a whole maqaf compound -- carrying two or more"
@@ -1464,6 +1692,7 @@ def build_survey() -> dict:
         ),
         "yeivin_inventory": yeivin_inventory(scanned["mam_simple"]),
         "breuer_notes": breuer_notes(),
+        "mam_allowances": mam_allowances(allowance_matches),
         "maqaf_after_gaya": maqaf_after_gaya(scanned),
         "mam_residue": mam_residue(scanned["mam_simple"]),
         "corpora": scanned,

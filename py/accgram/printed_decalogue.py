@@ -88,9 +88,10 @@ class ChantedVerseResult:
     status: str  # clean / ungrammatical / no_parse / location_only
     tree: dict | None
     # This chanted verse's chanted words with two or more accent tokens, each with the ITM
-    # section that names its token sequence or a null where none does.  A diagnostic channel
-    # beside the verdict, never part of it: ``status`` and ``tree`` are as the grammar left
-    # them.  See ``accgram.chanted_word_accents``.
+    # section that names its token sequence or a null where none does, and a ``mam_allowance``
+    # where Ben's ruling of 2026-08-03 names one no section does.  A diagnostic channel beside
+    # the verdict, never part of it: ``status`` and ``tree`` are as the grammar left them.  See
+    # ``accgram.chanted_word_accents``.
     chanted_word_accents: tuple[dict, ...] = ()
 
     def chanted_word_accents_obj(self) -> dict[str, object]:

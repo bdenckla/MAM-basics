@@ -10341,7 +10341,8 @@
 "marks": "אאא֥אאאֽא׃",
 "sequence": "merkha silluq",
 "kind": "an atomic chanted word",
-"itm_section": null
+"itm_section": null,
+"mam_allowance": "a secondary merkha in a silluq's chanted word, which neither Yeivin nor Breuer names; grammatical by Ben's ruling of 2026-08-03. The mam_allowances section of out/accgram/chanted-word-accents.json has the search behind that silence."
 }
 ],
 "status": "clean",

@@ -1,27 +1,42 @@
 # PLAN — two accents on one chanted word (prose)
 
-**FROZEN 2026-08-11 by Ben's decision, with Phase 4 unstarted — and the freeze LIFTED 2026-08-17,
-at `MAM-basics\doc\PLAN-evacuate-the-rest-of-wlc-utils.md`'s Phase 11, exactly where its own terms
-said it would. This plan may be executed again; Phase 4 is still the next phase, parked until
-someone runs it.** The reason for the freeze was outside this plan rather than in it: this plan
+**EVERY PHASE IS EXECUTED OR WITHDRAWN. Phase 4 ran 2026-08-17 and this plan has no next phase —
+one item is parked, and it is parked on a defect rather than on this plan.** Phases 1, 2, 4 and 5
+are executed, Phase 3 was built and withdrawn, and each has its record: §7, §8 and §9 for Phases
+1–3, and the execution records inside §5's Phase 4 and Phase 5 entries.
+
+**What Phase 4 wrote, and what it deliberately did not.** §10 had taken its list of thirteen
+chanted words down to two:
+
+- **ca8:6 שלה֥בתיה — WRITTEN, 2026-08-17.** A merkha and a silluq on one atomic chanted word, the
+  silluq being a silluq because the chanted word is the verse's last and stands immediately before
+  sof pasuq. It is the sole entry of `MAM_ALLOWANCES` in
+  `MAM-basics/py/accgram/chanted_word_accents.py`, keyed on the chanted word's mark run with its
+  token sequence, which is the mechanism §10 settled. The search §10 waited on ran 2026-08-03 and
+  found both Yeivin's ITM and Breuer's CoS silent, so the entry rests on a measured silence rather
+  than on an assumed one.
+- **ne8:7 ושר֥בי֣ה — STILL HELD.** A merkha and a munaḥ, held on MAM-basics#215, a defect that
+  leaves MAM with no legarmeh token anywhere. Phase 4 did not write it and did not work around
+  #215. **This is the plan's one unfinished item**: when #215 is fixed, ne8:7's allowance is
+  written against the token sequence MAM then has, by the same mechanism, and that is the whole of
+  what is left.
+
+**A second question Phase 4 was asked to settle, and did: no.** The five telisha-gedolah words
+`lexical_validation` whitelists are **not** named in `MAM_ALLOWANCES`. §5's Phase 4 execution
+record has the four measurements that decided it, all taken 2026-08-17; the short of it is that
+the two whitelists describe different things — one is over two accents on one letter, order-lessly,
+the other over one chanted word's tokens, in order — and that the three corpora do not write those
+five alike, so an entry taken from MAM would not describe what the flagging path meets.
+
+**The freeze this file used to open with is spent, and is kept here only as history.** Frozen
+2026-08-11 by Ben's decision with Phase 4 unstarted; lifted 2026-08-17 at
+`MAM-basics\doc\PLAN-evacuate-the-rest-of-wlc-utils.md`'s Phase 11, exactly where its own terms
+said it would. The reason for the freeze was outside this plan rather than in it: this plan
 generates accgram pages, and the evacuation plan proved each of its own phases by regenerating
 those same pages and requiring a zero diff — so a page edit landing mid-evacuation was
 indistinguishable from a bug in the move. That plan named this one as its Precondition 1, "land or
 freeze", and Ben chose freeze on 2026-08-11 while its Phase 0 was running; wlc-utils was fully
 evacuated, and the whole evacuation plan closed, on 2026-08-17.
-
-**Nothing is abandoned, and nothing needs re-deciding when this resumes.** Phase 4 is down to two
-chanted words, and §10 settled how the exception for each is spelled:
-
-- **ca8:6 שלה֥בתיה** — a merkha and a silluq on one atomic chanted word, the silluq being a silluq
-  because the chanted word is the verse's last and stands immediately before sof pasuq. Ready to
-  write: the search §10 waited on ran 2026-08-03 and found both Yeivin's ITM and Breuer's CoS
-  silent, so the entry rests on a measured silence rather than on an assumed one.
-- **ne8:7 ושר֥בי֣ה** — a merkha and a munaḥ, held on MAM-basics#215, a defect that leaves MAM with
-  no legarmeh token anywhere. Still held, and the freeze changes nothing about it.
-
-Read the rest of this file as it stands. §0 is still the right resume point and its instructions
-are still correct.
 
 ---
 
@@ -68,15 +83,18 @@ alone on purpose.
 
 ---
 
-## 0. Where to resume (updated 2026-08-03; before that 2026-07-29, after Phase 3's withdrawal)
+## 0. Where to resume (updated 2026-08-17, when Phase 4 ran; before that 2026-08-03, and 2026-07-29 after Phase 3's withdrawal)
 
-**The freeze notice at the top of this file records a freeze that LIFTED 2026-08-17 — so this
-section is accurate and runs again.** Everything below says what Phase 4 does; nothing now says
-wait. (This paragraph read "this section is accurate but does not run yet" while the freeze
-stood, and was rewritten with the lift rather than left to contradict the notice above it.)
+**THERE IS NO NEXT PHASE. Phase 4 ran 2026-08-17 and everything below is now history rather than
+instruction.** Read this section to learn what was decided and why; do not action it. The one
+thing still owed is ne8:7's allowance, which waits on **MAM-basics#215** and not on this plan —
+the notice at the top of this file says what writing it will take. `§5`'s Phase 4 entry has the
+execution record: what moved, what deliberately did not, and the two things the plan did not
+predict. (This paragraph tracked the freeze while it stood, and then said the section "is accurate
+and runs again" after the 2026-08-17 lift; Phase 4 having since run, neither reading is right any
+more.)
 
-**Next phase: Phase 4**, as `§9`'s closing "The exact next phase" states it — but **Phase 4 is no
-longer promotion.** Ben settled the promotion question on 2026-08-03 (`§6` decision 5): MAM's
+**Phase 4 was the last phase, and it was not promotion.** Ben settled the promotion question on 2026-08-03 (`§6` decision 5): MAM's
 divergences from Yeivin's and Breuer's rules keep being recorded, and are grammatical for the time
 being, so the 13 chanted words a promotion would have flagged become whitelist entries instead.
 `§5`'s Phase 4 entry and `§9`'s closing section are both rewritten to that. **A Phase 5 was added
@@ -87,14 +105,14 @@ file was first written with: ITM §256 joined the inventory later that morning (
 `007e708`, regenerated in `d3d656e` and `2302605`) and took the six `qadma darga` rows out. `§5`'s
 Phase 5 entry has the execution record. Nothing else in this file is a pending instruction.
 
-**`§10` was added later the same day and Phase 4 must not be started without it.** It settles how a
+**`§10` was added later the same day, and it is what Phase 4 was built on.** It settles how a
 per-verse exception is spelled — on the chanted word's mark run plus its token sequence, never on a
 verse reference — and it takes Phase 4's list of 13 down to **two chanted words, both taking a
 per-verse exception**: ne8:7 ושר֥בי֣ה is held on MAM-basics#215, a defect
 that leaves MAM with no legarmeh token anywhere and 1,610 lone bars counted as chanted words, and
 ca8:6 שלה֥בתיה was held on a search of Yeivin's ITM and Breuer's CoS for a secondary merkha with
-silluq — **run 2026-08-03 (`521e8dc`), and both books are silent, so Phase 4 may write ca8:6's
-entry**; `§10` carries the search itself. (Until 2026-08-03 this paragraph called the search one
+silluq — **run 2026-08-03 (`521e8dc`), and both books are silent, so Phase 4 wrote ca8:6's entry
+on 2026-08-17**; `§10` carries the search itself. (Until 2026-08-03 this paragraph called the search one
 nobody had yet run; `521e8dc` updated `§10` and left this sentence behind, which the same day's
 review, MAM-basics#219, caught.) `§5`'s Phase 4 entry and `§6` decision 1 both carry
 the correction; the lists they were first written with are superseded, not merely narrowed, and
@@ -455,7 +473,7 @@ one when it was written — the survey had no reader-facing form at all — and 
 on a neighbouring page. Check the neighbours before writing a page, and prefer folding a finding
 into an existing page over standing up a new one.
 
-### Phase 4 — Whitelist MAM's residue, and go on recording it — REWRITTEN 2026-08-03
+### Phase 4 — Whitelist MAM's residue, and go on recording it — REWRITTEN 2026-08-03, EXECUTED 2026-08-17
 
 **What this entry said until then, under the title "Promotion (gated on the answers in §6)".** If
 the flag became an ERROR, `classify.py` and the goerwitz page
@@ -512,6 +530,103 @@ changes is the `chanted_word_accents` field's null `itm_section`s, into whatever
 records. Regenerate `out/accgram/chanted-word-accents.json` too, and check that `mam_residue` and
 its WLC counterpart are **unchanged**: a residue that shrank as the whitelist grew would be the
 measurement quietly following the verdict, which is the one thing Ben's ruling forbids.
+
+#### Execution record (2026-08-17)
+
+Run in `C:\Users\BenDe\GitRepos\MAM-basics`, one repo now, against `b860840` — the baseline the
+phase was handed, re-measured at the start and matching: clean tree, 1,910 tracked files, suite
+905 passed / 5 skipped, `ruff` clean, `black --check py` clean at 774 files. No second worktree in
+this repo, and nothing else was live in it while the phase ran.
+
+**What was written: one allowance, `MAM_ALLOWANCES` in `py/accgram/chanted_word_accents.py`.**
+ca8:6 שלה֥בתיה, keyed on the mark run **with** the token sequence `merkha silluq`, exactly the
+mechanism §10 settled. The mark run is built from named constants —
+`am.LETTER * 3 + am.MERKHA + am.LETTER * 3 + am.METEG + am.LETTER + am.SOF_PASUQ` — rather than
+typed as Hebrew, so a reader can check it mark by mark; the U+05BD is a silluq there because the
+chanted word is the verse's last and the sof pasuq follows it immediately, which is also how the
+scanner settles it in emitting `SILLUQ`. The key excludes the four שלף־חרב compounds that share
+`merkha silluq`, each of them having a maqaf where the key has none — measured, not assumed.
+
+**ne8:7 ושר֥בי֣ה was not written, and MAM-basics#215 was not worked around.** It stands exactly as
+§10 leaves it.
+
+**The five telisha-gedolah words are NOT named the same way, and that question is settled no.**
+The plan asked it so that "the whole whitelist reads out of one place"; naming them would instead
+have put one rule in two places. Four measurements, taken 2026-08-17 and recorded in the comment
+above `MAM_ALLOWANCES`: `lexical_validation`'s `_WHITELISTED_SAME_LETTER` is **order-less** by
+design, on the stated ground that the order of two accents stacked on one letter is not
+meaningful, where a key here is an ordered token sequence; **the three corpora do not write these
+five alike** — MAM has `geresh telishagedola` at ek48:10 and `gershayim telishagedola` at lv10:4
+where WLC and UXLC have `telishagedola geresh` and `telishagedola gershayim`, so an entry taken
+from MAM would not describe what the flagging path meets, that path reading WLC; **a mark run does
+not travel either** — WLC's zp2:15 run has the `]C]c` note markers MAM's lacks, and WLC's 2k17:13
+has the geresh muqdam codepoint where MAM and UXLC have a plain geresh, ca8:6 being the case where
+the mark run **is** the same in all three, which is why §10 could settle the mechanism on it; and
+**WLC's telisha-containing hits are not the same set**, je36:11 `telishagedola revia` and js2:1
+`munax telishagedola` having no same-letter pair in them at all, so a sequence-keyed entry would
+sweep in two chanted words `lexical_validation` does not whitelist and nothing has ruled on. None
+of those four was available to the plan when it posed the question; they are what answered it.
+
+**The diff, and it is the "almost nothing moves" the phase asked for.** Two artifacts, 23
+insertions and 2 deletions between them:
+
+| file | moved? |
+| --- | --- |
+| `out/accgram/chanted-word-accents.json` | yes — the new `mam_allowances` section, plus one sentence added to `mam_residue.already_documented_elsewhere` |
+| `out/accgram/prose/wlc_422_ps_ca_ag.json` | yes — **one line**, ca8:6's hit gaining `mam_allowance` |
+| `out/accgram/printed-decalogue/_printed_decalogue.json` | **no**, byte-identical |
+| every other `out/accgram/prose/*_ag.json` | **no** |
+| everything under `gh-pages/wlc/` | **no** — the whole `generate-html` batch is byte-identical |
+
+**No `status` moved, in any corpus.** The one prose line that changed sits directly above an
+unchanged `"status": "clean"`.
+
+**`mam_residue` is byte-unchanged**, and so is its WLC counterpart: `total` 12, `by_sequence`
+unchanged, `left_over_after_both` still the two chanted words ne8:7 and ca8:6, and
+`generate-html` still reports **WLC residue: 28**. ca8:6 is named by the whitelist and is still in
+the residue, which is the whole of decision 5 rather than half of it.
+
+**Two things the plan did not predict.**
+
+1. **`itm_section` does not change value; a second key appears beside it.** The Verification
+   paragraph above says the null `itm_section`s change "into whatever the whitelist records", and
+   they do not: ca8:6's `itm_section` stays `null` and the hit gains `mam_allowance`. Writing a
+   section number there would have been false — ITM names no `merkha silluq`, and §209 is the
+   record of Yeivin's **silence**, not a naming. Decision 5's own bullet, that an entry be "marked
+   as MAM-attested rather than ITM-named so that a reader can see which entries are transcribed
+   from Yeivin and which are Ben's ruling", is what settles it this way, so the two keys are kept
+   apart on the plan's own instruction.
+2. **The expected-places assertion needed somewhere to live that was not a hit.** §10 asks the
+   survey to assert each allowance against MAM and raise on drift, and the key is the mark run,
+   which `scan_corpus`'s occurrences do not carry — and must not start carrying, since
+   `mam_residue.occurrences` is one of the artifacts required to come out unchanged. So
+   `scan_corpus` collects the matches alongside its hits and `build_survey` takes them out of the
+   corpus result and hands them to `mam_allowances`; no corpus record grows a field, and the
+   assertion is live. Checked by perturbation, not by inspection: it raises when MAM measures
+   nothing for a key and when MAM measures a place the entry does not list, and the two
+   `_build_allowance_index` checks raise on an allowance for a sequence ITM already names and on
+   two allowances claiming one key.
+
+**One thing worth having that the plan did not ask for.** The survey's `mam_allowances` section
+reports `same_key_in_the_other_corpora`, which comes out `{"wlc422": ["ca8:6"], "uxlc": ["ca8:6"]}`
+— §10's "the same in all three corpora, byte for byte" as a regenerated measurement rather than a
+sentence. WLC's and UXLC's lists are reported and not asserted: a divergence there is a finding
+worth seeing, but the ruling covers MAM and a diplomatic transcription is not the corpus a
+grammatical claim takes.
+
+**Docstrings brought up to date, since three of them stated the superseded position.**
+`chanted_word_accents`' module docstring said whether such a chanted word should be ungrammatical
+"is a later, separate decision" — answered 2026-08-03; `mam_residue`'s said the residue "is also
+the list [the whitelist] will have to either name or flag" — it is now closed against
+`YEIVIN_ENTRIES` alone, deliberately; and `wlc_chanted_word_residue_page.residue`'s said it is
+keyed on "the same whitelist `classify_verse` consults", which stopped being true the moment
+`classify_verse` gained a second table. That page consults `NAMED_TOKEN_SEQUENCES` alone, on
+purpose, because the ruling covers MAM and not WLC's different set.
+
+**Verified.** Suite 905 passed / 5 skipped, unchanged from the baseline; `ruff check py` clean;
+`black --check py` clean at 774 files. No test was added, and none should be: the survey's
+assertion of the allowance against MAM already is the differential check against an oracle
+outside the whitelist.
 
 ### Phase 5 — WLC's residue as an unlinked page (added 2026-08-03; executed the same day)
 
@@ -1038,6 +1153,9 @@ After the revert, and this is what stands:
 
 ### The exact next phase
 
+**SPENT — Phase 4 ran on 2026-08-17, and this section must not be actioned.** It is kept for the
+figures it stands on, which did not move. `§5`'s Phase 4 entry has the execution record.
+
 **Rewritten 2026-08-03.** Until then this section put the promotion question — should a chanted
 word whose accent pair no section of Yeivin's prose inventory names be **ungrammatical**? — and
 made the 13 newly-ungrammatical MAM chanted words listed below into the argument for settling #86
@@ -1196,6 +1314,11 @@ lists already have.
 MAM's unexplained residue is **two atomic chanted words**: ne8:7 ושר֥בי֣ה (`merkha munax`, held on
 MAM-basics#215) and ca8:6 שלה֥בתיה (`merkha silluq`). Both take a per-verse exception, by the
 mechanism above.
+
+**Of those two, ca8:6's exception was written on 2026-08-17 by Phase 4, and ne8:7's is still
+held.** Both chanted words remain in `mam_residue` either way — the ruling decides verdicts and
+retires no measurement — so this section's count of two is the residue and stays true. `§5`'s
+Phase 4 entry has the execution record.
 
 **ca8:6 is the same in all three corpora, byte for byte** — שַׁלְהֶ֥בֶתְיָֽה׃, one atomic chanted
 word, a merkha on the open הֶ֥ and a U+05BD on יָֽ immediately before sof pasuq, so that one is

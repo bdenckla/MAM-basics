@@ -383,6 +383,26 @@
    "note": "The rule that partitions the split compounds, and the two examples Breuer gives are two of the nine MAM compounds that have no gaʿya after the non-final accent. At the other thirteen this rule and Ch. 1 §43 pull against each other, and Breuer does not square them: §37 would make the mark secondary and the compound one chanted word, where §43 declines to say what the mark is. ``maqaf_after_gaya`` reports that as a dispute and settles nothing by it -- the partition there is by the writing, a gaʿya between the non-final atom's accent and the maqaf."
   }
  ],
+ "mam_allowances": [
+  {
+   "names": "a secondary merkha in a silluq's chanted word, which neither Yeivin nor Breuer names; grammatical by Ben's ruling of 2026-08-03. The mam_allowances section of out/accgram/chanted-word-accents.json has the search behind that silence.",
+   "token_sequence": "merkha silluq",
+   "source": "Ben's ruling of 2026-08-03, recorded at §6 decision 5 of doc/PLAN-two-accents-on-one-chanted-word.md",
+   "mam_verses": [
+    "ca8:6"
+   ],
+   "mam_matches_exactly": true,
+   "same_key_in_the_other_corpora": {
+    "wlc422": [
+     "ca8:6"
+    ],
+    "uxlc": [
+     "ca8:6"
+    ]
+   },
+   "note": "The silence is a measured one, not an assumed one: the §209 entry of YEIVIN_ENTRIES above carries the search, run on 2026-08-03 over the full ITM OCR and the CoS export, section by section. This is also the one atomic merkha-with-silluq chanted word in any of the three corpora, and all three have it with the same mark run, so the allowance rests on an accentuation a diplomatic transcription and a consensus text agree on rather than on a MAM-only one. MAM's four other chanted words with this token sequence are the שלף־חרב compounds ITM §357 accounts for, and the mark run is what keeps them out: each of them has a maqaf, and this key has none."
+  }
+ ],
  "maqaf_after_gaya": {
   "what": "A maqaf written after a word that has its own accent and a gaʿya after that accent. ITM §357 gives its purpose -- the slowed syllable makes no break -- and CoS Ch. 1 §43 gives its conditions: after a servant, on a word accented on its penultimate syllable, with the gaʿya on its last. A compound found by it IS a chanted word, on the only test there is for one -- a maqaf is written in it -- and it does have two accent tokens. What §357 settles is that the second token is the non-final atom's retained accent rather than a secondary accent of the kind §§233 and 241 describe. What the maqaf SIGNIFIES is unsettled in both books and nothing here turns on it: Yeivin writes the same compounds with a space at §354, CoS Ch. 1 §43 records that 'different views have been expressed' and leaves it out of the book, and Ch. 9 §37 points the other way.",
   "how_it_is_told_apart": "Mechanically, off the mark body: the accented non-final atom also has a meteg between that accent and the maqaf. Nothing here reads a verse reference. On MAM the signature partitions the compounds exactly, the nine without it being the mayela ones and nothing else. It is a signature and not a definition, though, and Isaiah 8:17 וקויתי־לו is where that shows: WLC and UXLC have a meteg after the mayela there and MAM has none, so the same compound answers differently by corpus while staying the mayela case CoS Ch. 9 §37 names by verse.",
@@ -665,7 +685,7 @@
    "merkha munax": 1,
    "merkha pashta": 1
   },
-  "already_documented_elsewhere": "The geresh-family-with-telisha-gedola words are not unaccounted for: they are the five words ``uni_to_marks.word_to_marks`` keeps both marks on, whitelisted by ``lexical_validation`` and set out in the telisha gedola exhibit of gh-pages/wlc/accgram/almost-errors.html. A geresh or gershayim written twice on one of them is folded above, so each counts as two accents, not three.",
+  "already_documented_elsewhere": "The geresh-family-with-telisha-gedola words are not unaccounted for: they are the five words ``uni_to_marks.word_to_marks`` keeps both marks on, whitelisted by ``lexical_validation`` and set out in the telisha gedola exhibit of gh-pages/wlc/accgram/almost-errors.html. A geresh or gershayim written twice on one of them is folded above, so each counts as two accents, not three. They are deliberately not named in mam_allowances, and the comment above MAM_ALLOWANCES carries the four measurements that settled it on 2026-08-17: that whitelist is over one chanted word's tokens, in order, where lexical_validation's is over two accents on one letter, order-lessly, and the three corpora do not write these five alike.",
   "accounted_for_by_maqaf_after_gaya": {
    "what": "These are chanted words whose maqaf is the one ITM §357 describes, written after an atom that has its own accent and a gaʿya after that accent. Each IS a chanted word -- a maqaf is written in it, which is the whole test -- and each does have two accent tokens. What §357 settles is that the second token is the non-final atom's retained accent rather than a secondary accent of the kind §§233 and 241 describe. What that maqaf SIGNIFIES is unsettled in both books, and nothing here turns on it: Yeivin writes the same compounds with a space at §354, Breuer CoS Ch. 1 §43 records that 'different views have been expressed' and leaves it out, and Ch. 9 §37 points the other way. See ``maqaf_after_gaya``.",
    "total": 5,

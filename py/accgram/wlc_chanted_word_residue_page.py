@@ -228,8 +228,15 @@ def add_args(parser: argparse.ArgumentParser, repo_root: Path) -> None:
 def residue(corpus: dict) -> list[dict]:
     """One corpus's chanted words whose token sequence no section of the inventory names.
 
-    Keyed on ``NAMED_TOKEN_SEQUENCES``, the same whitelist ``classify_verse`` consults, so this
-    page and the flagging path can never disagree about what counts as named.
+    Keyed on ``NAMED_TOKEN_SEQUENCES``, which is Yeivin's inventory and nothing else, so this
+    page and the survey's ``mam_residue`` cannot disagree about what a section names.
+
+    ``classify_verse`` reads a second table besides that one -- ``MAM_ALLOWANCES``, Ben's ruling
+    of 2026-08-03 that MAM's divergences from Yeivin and Breuer are grammatical for the time
+    being -- and this page deliberately does not.  The ruling covers MAM, and WLC's residue is a
+    different set that neither contains it nor is contained by it (§6 decision 5 of
+    ``doc/PLAN-two-accents-on-one-chanted-word.md``: "Do not read this decision onto WLC"). So
+    ca8:6, which Ben's ruling names in MAM, stands in this page's residue as it always did.
     """
     return [
         h
