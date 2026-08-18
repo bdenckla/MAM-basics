@@ -65,7 +65,7 @@ was right about *which* trees count, and wrong twice over about the total:
   `in/accgram/uxlc_accent_changes.json`, and it does regenerate byte-identically.
 
 So `in/` adds **1**, not 555. The other 555 are **downloaded** — `in/UXLC-39` (39) and
-`in/UXLC-rest` (7) extracted from tanach.us' `Tanach.xml.zip`, the 19 `in/UXLC-misc/*.xml` change
+`in/UXLC-rest` (7) extracted from tanach.us' `Tanach.xml.zip`, the 17 `in/UXLC-misc/*.xml` change
 logs, and `in/UXLC-notes` (477) — or **hand-curated**: `BHL Appendix A Psalms.csv`, the four
 Holman JSON/TXT, the four `LC ...csv`, the three `LCIndex.*`, `lci_recs.json`, and the two
 `in/UXLC-misc-fixed/` overrides. A download is not a regeneration, so none of them is an oracle:
