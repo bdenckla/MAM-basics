@@ -14,12 +14,16 @@ to this file's first commit apart from its header, so `git show` recovers it.
 **So do not re-create one.** If a future session drafts in `~/.claude/plans/` again, fold it in
 here and delete it, as `8daef35` did with two such scratch plans.
 
-**Phases 0 through 10 are done — 0 and 1 on 2026-08-11, 2 through 5 on 2026-08-12, 6 through 8 on
-2026-08-13, 9 and 10 on 2026-08-17. Phase 9 was the first deletion this plan made: wlc-utils went
+**ALL ELEVEN PHASES ARE DONE — 0 and 1 on 2026-08-11, 2 through 5 on 2026-08-12, 6 through 8 on
+2026-08-13, 9 through 11 on 2026-08-17 — AND THE PLAN IS COMPLETE. Phase 9 was the first deletion
+this plan made: wlc-utils went
 from 626 tracked files to 497, at `f10f405`, its 154 published pages replaced in place by redirect
 stubs, a `404.html` added, and the 130 non-HTML assets removed. Phase 10 finished the emptying the
 same day: wlc-utils now tracks 161 files — the 155 stubs plus six root files — at `8250b69`, its
-`README.md` and `CLAUDE.md` rewritten as a redirect host's.**
+`README.md` and `CLAUDE.md` rewritten as a redirect host's. Phase 11 closed the cross-repo
+bookkeeping — every pointer repointed, the freeze on `doc/PLAN-two-accents-on-one-chanted-word.md`
+lifted, the three stop-and-ask items answered by Ben — and this plan now records finished work
+only.**
 Phase 3 **copied** 620 of the original 626 into MAM-basics rather than moving them — that was the
 dual-residency window, which Phase 9 closed for `gh-pages/` and Phase 10 closed outright — and the
 six loose root files stayed behind. **The site is live and complete**: Ben enabled
@@ -39,9 +43,10 @@ the one intentional artifact change in the plan and it has landed**: one `href` 
 `gh-pages/wlc/420422/index.html`, in its own commit so that no later phase's zero-diff oracle
 carries a real diff inside it. **Phase 8 changed no artifact at all**: the 155 redirect stubs it
 builds go to a gitignored scratch directory, and `build --publish` is what Phase 9 used to land
-them in wlc-utils. Phase 11
-is unstarted. (This paragraph read "Nothing has been executed. Every phase below is
-unstarted" until Phase 0 ran, and has been rewritten at each phase since. Until Phase 3 it also said
+them in wlc-utils. Phase 11 ran on 2026-08-17 and was the last: **the plan is complete**. (This
+paragraph read "Nothing has been executed. Every phase below is
+unstarted" until Phase 0 ran, and was rewritten at each phase since — "Phase 11 is unstarted" was
+the last clause of the original to go. Until Phase 3 it also said
 "No file has moved yet" and "no GitHub setting has been touched"; until Phase 6 it said the site
 root "404s until Phase 6 adds `gh-pages/index.html`, by design"; and until Phase 9 it opened
 "Nothing has been deleted from wlc-utils: it holds the same 626 tracked files it always did". All
@@ -84,7 +89,7 @@ stale).
 | 8 — The redirect-stub generator | **DONE 2026-08-13**, MAM-basics `6a7347d` + `520dc27` + this write-back. `build --out <scratch>` writes **155 files** — 154 page stubs and `404.html` — and `check` over them passes; the three spot-reads at depths 0, 1 and 2 each name their own path's prefix rewrite in all four carriers. **`git status --porcelain` held only the four new source files**, so no tracked artifact moved in either repo and no circuit was run or needed. Suite **905 passed / 5 skipped**, up 2 from 903, and the delta is exactly the new entry point's two parametrized tests in `test_entry_point_subcommands.py`; `ruff` clean, `black` clean at **774** files, up 4 for the four new modules. Phase 6's finding 4 checked rather than assumed: `420422/` and `wlc-a-notes/` get stubs and `accgram/` correctly gets none, all three falling out of the derivation with no special case. Five findings, the sharpest being that **"the last remaining reference to the sibling" describes the state after Phase 10, not this one** — three sites name wlc-utils now and they need three different dispositions. Findings under Phase 8 below |
 | 9 — Flip wlc-utils' `gh-pages/` to stubs — ~~**gated on 6**~~ **gate met** | **DONE 2026-08-17**, wlc-utils `f10f405` + this write-back. One commit there, exactly the shape this phase specifies: **154 `M`, 130 `D`, 1 `A`** — the pages modified in place rather than deleted and re-added, `404.html` the only addition, nothing staged outside `gh-pages/`, and no empty directory left behind. wlc-utils goes from 626 tracked files to **497**, of which 155 are the stubs and **zero** are non-HTML. The deploy went green — run `32076961634`, 21 seconds — and **every URL on the Phase 6 list now serves a stub naming its MAM-basics equivalent**, byte-identical to the committed file, with that equivalent itself fetched at 200 so a redirect to a 404 could not pass; the four unstubbed paths tried each answer **404 with the forwarding script**, as designed. Suite **905 passed / 5 skipped**, `ruff` clean, `black` clean at **774** files, MAM-basics otherwise untouched at `2951a01` — **the baseline reproduced with zero drift**, every figure, the re-taken manifest included. Four findings, the sharpest being that **the JavaScript did get executed after all: Phase 8's "there is no `node` on this machine" overlooked `cscript.exe`**, so all four published fragment links were run against the committed bytes rather than read. Findings under Phase 9 below |
 | 10 — Empty the rest of wlc-utils | **DONE 2026-08-17**, wlc-utils `cd668e3` + `8250b69`, MAM-basics `aa7f269` + this write-back. The 336 deletions are exactly the five items this phase names, staged as **336 `D` and nothing else**, leaving **161** tracked — the count Phase 9 measured against the verify line's since-corrected 160 — with no untracked residue. **Layer 1 was re-derived one last time in the minutes before the delete**: 335 moved-and-deleted files plus the surviving workflow compared by blob SHA-1, **330 byte-identical, zero missing, and the 6 differing exactly Phase 5's six**; then the frozen reference ended. Both deploys green and **every Phase 9 URL check passes unchanged**; `check` still lints the stubs green. Suite **905 / 5**, `ruff` clean, `black` clean at **774**, and the circuit gave a **zero diff in all ten repos with zero wlc-utils files touched by mtime**. Five findings, the sharpest being that **the "88 issues" this plan and both repos' instruction files repeat is five short, and was on the day it was first written** — the tracker holds 93, #89–#93 filed 2026-07-31. Findings under Phase 10 below |
-| 11 — Cross-repo bookkeeping | **not started** |
+| 11 — Cross-repo bookkeeping | **DONE 2026-08-17**, MAM-basics `1026778` + this write-back, UXLC-utils `f99610a` (item 9), github-misc `5801305` (items 2 and 3); **wlc-utils untouched at `8250b69`, and the plan is COMPLETE**. All eleven items executed or verified as the no-ops they claim to be, and the freeze on the two-accents plan lifted, dated, in its own notice. Ben answered the three stop-and-ask items the same day: item 2 at the plan's scope — **five** evacuation-stale sites fixed, not the banked four, the six `py/`-path sites stale since 2026-08-01 left flagged; item 3 at full scope — **ten** sites, the plan's six plus two paragraphs Phases 9–10 falsified plus two touch-ups; item 5 decided **no entry**, the freeze register being structural since 2026-08-07 and wrong for a repo still in both workspace files receiving stub-generator commits. Both unsynced pairs verified byte-identical before AND after their edits. Item 4's prediction confirmed by re-running the scan: the NFC findings left wlc-utils' report (`NFC_H_DOT=0; NFC_LATIN=0`) and sit under MAM-basics at Phase 3's exact seven sequences. Suite **905 / 5**, `ruff` clean, `black` clean at **774**, every repo clean and pushed. Five findings, the sharpest being that **both stop-and-ask scopes were undercounts for the same reason: Phase 10's instruction-file rewrite falsified pointer clauses no bank had predicted**. Findings under Phase 11 below |
 
 ---
 
@@ -2540,20 +2545,16 @@ repo's `doc/` and `in/` still carrying those bare wlc-utils citations, which des
 and the section's opening can now cite 93 rather than nothing, `aa7f269` having already made that
 correction.
 
-**Next is Phase 11, cross-repo bookkeeping — the last phase, and the one where the freeze on
-`doc\PLAN-two-accents-on-one-chanted-word.md` lifts.** Eleven numbered items, three of which stop
-and ask Ben rather than chaining on: items 2 and 3 edit the two unsynced live-plus-tracked pairs
-(`~\.claude\CLAUDE.md` with its `github-misc` twin, and the `hebrew-prose` skill with its twin —
-re-verify each pair byte-identical before adding, per the entanglement note above), and item 5 is
-the `frozen_repos` decision, which is Ben's. Three things this phase hands it: **item 6's
-justification is stale though its "no change" conclusion holds** (finding 5); **item 1's
-`CLAUDE.md` edit should also qualify the "Two issue trackers" closing paragraph and can cite the
-corrected 93** (finding 5 again); and **item 10's commit-message note about the tracker split can
-now point at instruction files that already say 93 with a measurement date** (finding 1).
+(A "Next is Phase 11" paragraph and its three hand-offs stood here until Phase 11 ran on
+2026-08-17, and were deleted rather than left, by the convention Phase 7's record states: one
+forward pointer per file, at the end of the latest execution record. All three hand-offs were
+taken — item 6's stale-but-right justification, the two additions to item 1's `CLAUDE.md` edit,
+and the 93-with-a-date for item 10's commit message — and Phase 11's record accounts for each.
+Phase 11 was the last phase, so no live pointer replaces this one anywhere: the plan is complete.)
 
 ---
 
-## Phase 11 — Cross-repo bookkeeping
+## Phase 11 — Cross-repo bookkeeping — DONE 2026-08-17
 
 *In MAM-basics, plus two places neither repo's tooling can see.* One commit here.
 
@@ -2602,6 +2603,131 @@ now point at instruction files that already say 93 with a measurement date** (fi
     `PLAN-evacuate-python-programme.md` recording that its carried decision 2 — "`gh-pages/` stays
     put indefinitely" — **has now been broken once, deliberately, and how**. Five of the six repos
     still in that programme have a `gh-pages/`, and they will cite this as precedent.
+
+### Execution record — Phase 11, 2026-08-17
+
+Began at MAM-basics `2658c02`, wlc-utils `8250b69`, holman-ketiv-qere `637237b`, and **the whole
+Phase 10 baseline reproduced with zero drift** — MAM-parsed `95f64d7`, MAM-simple `bae0bff`,
+MAM-with-doc `d2dc6e5`, MAM-OSIS `a037a76`, MAM-for-Sefaria `5f41c16`, UXLC-utils `4d70cf4`,
+MAM-private `20dfb63`, github-misc `81fdcec`, every one of the eleven clean and pushed,
+`git worktree list` one line in each of MAM-basics and wlc-utils, tracked counts **1910** here and
+**161** there. Suite **905 passed / 5 skipped / 57 subtests**, `ruff` clean, `black` clean at
+**774** files — measured before the phase and again after it, unchanged both times.
+
+**Precondition 4 was checked on both logs and was clear** for an eighth phase running:
+holman-ketiv-qere clean at `637237b`, last committed 2026-08-12 23:05 — still Phase 5's own
+re-vendor commit there — and MAM-basics' own log holding nothing but this plan's Phases 5
+through 10.
+
+**Landed as four commits across three repos, wlc-utils touched by none of them**: MAM-basics
+`1026778` (items 1 and 4, the freeze lift, and item 11's paragraph, with item 10 said in its
+message) plus this write-back; UXLC-utils `f99610a` (item 9); github-misc `5801305` (items 2 and
+3). All pushed fast-forward, no force. The one Pages deploy the MAM-basics push fired went green
+(run `32082549902`, 28 s) and republished identical content, nothing under `gh-pages/` having
+changed.
+
+**The items, in order.**
+
+1. **`CLAUDE.md`** — the tests-rule sentence reads "in this repo: `doc/agent-planning-principles.md`"
+   now, dated; and the "Two issue trackers" closing paragraph carries what Phase 10's finding 5
+   handed this item: the six `doc/` files that arrived 2026-08-12 are named one by one, and they
+   and the wlc trees under `in/` still carry bare `#NN` citations that mean wlc-utils issues —
+   the one standing exception to "a bare `#NN` here means MAM-basics". The 93 was already in
+   place from `aa7f269` and needed nothing.
+2. **`~\.claude\CLAUDE.md` + `github-misc\dot-claude\CLAUDE.md`** — asked first, per the plan,
+   and Ben chose the plan's scope. **Five sites fixed, not the banked four** (finding 1): the
+   `agent-planning-principles.md` and `edition-transcription-workflow.md` citations, the
+   `file:///` example link (now `MAM-basics/gh-pages/wlc/accgram/`), and the two "short pointer
+   in wlc-utils' `CLAUDE.md`" clauses — Tests section and maqaf section — which Phase 10's
+   rewrite had orphaned and which now name MAM-basics' `CLAUDE.md`. The six `wlc-utils/py/...`
+   sites stale since 2026-08-01 stay flagged, per the plan and per Ben. Pair byte-identical
+   before and after.
+3. **The `hebrew-prose` skill, both copies** — Ben chose the widest offered scope, **ten sites**
+   (finding 2): the plan's six (`agent-planning-principles.md` in `SKILL.md` and `verifying.md`,
+   `review-findings-2026-07-29.md` in `SKILL.md`, `edition-transcription-workflow.md` and the
+   `file:///` link in `rendered-prose.md`, the survey's JSON-and-page pair in
+   `sources-and-corpora.md`, with `gh-pages/` nesting as `gh-pages/wlc/`); the two paragraphs
+   Phases 9–10 falsified — `SKILL.md`'s closer, which called wlc-utils "a data-and-docs repo"
+   with "88 issues" and now says redirect host and 93 measured 2026-08-17, and `verifying.md`'s
+   "writes into wlc-utils' `out/` and `gh-pages/` as a sibling — the corpus did not [move]",
+   which now names MAM-basics' own trees; and two touch-ups — `terminology.md`'s "venv was left
+   on disk" (removed by 2026-08-03) and `SKILL.md`'s description line, which no longer lists
+   wlc-utils as a place prose gets written. Pair byte-identical before and after.
+4. **`check_repo_standards.py`** — two dated appends in the file's own convention: the
+   `has_tracked_py` gate's wlc-utils example records the 2026-08-17 emptying, and the
+   doc/-standard paragraph says its six surviving doc files are this repo's now. **The scan was
+   re-run rather than assumed, and the prediction confirmed exactly** (finding 4): wlc-utils'
+   report reads `NFC_H_DOT=0; NFC_LATIN=0`, and MAM-basics' carries Phase 3's seven sequences at
+   the very same line numbers, beside two pre-existing MAM-basics-native findings.
+5. **`frozen_repos` — Ben decided NO ENTRY** (finding 3), with the mechanics in front of him:
+   the freeze has been structural since 2026-08-07, the register documents paused client
+   projects with a thaw procedure that cannot even be stated for wlc-utils, wlc-utils stays in
+   both workspace files receiving stub-generator commits — and `run_black.py:140` still consults
+   the register, so an entry would have made it load-bearing again for exactly this one repo.
+6. **`in/vendoring_policy.json`** — verified: no wlc-utils key anywhere in the file (its `repos`
+   object names eight repos), so "no change" holds on Phase 10 finding 5's simpler ground.
+7. **Both workspace files keep `../wlc-utils`** — verified at `all-repos.code-workspace:61` (the
+   plan's `:88` drifted) and `MAM-basics.code-workspace:25`.
+8. **`run_black.py`** — confirmed on a sweep scoped to wlc-utils: `REPO=wlc-utils;
+   BLACK_ATTEMPTED=False; BLACK_OK=False; Skipped: no tracked .py files in this repo`.
+9. **UXLC-utils' `CLAUDE.md`** — one paragraph beside its existing `py/`-paths substitution
+   rule: every `wlc-utils/...` path in `doc/` means `../MAM-basics/...`, except
+   `wlc-utils/data/lci_recs.json` (cited in `clc-design.md` §6), which the move also renamed to
+   `in/lci_recs.json` — the carve-out this plan's inbound-links section requires.
+10. **Said in `1026778`'s commit message**: the issue split stands, `wlc_issue_edit.py` keeps its
+    required `repo` argument and its deliberately bare `#69` example, and both repos' instruction
+    files now say 93 with a measurement date.
+11. **This plan's Status table row and this record are the write-back**; the programme plan got
+    the decision-2 break paragraph, placed inside decision 2 itself. **Its Status table holds no
+    row about this plan, so "both PLAN files' Status tables" resolves to one table plus that
+    paragraph** (finding 5).
+
+**The freeze lift is executed, not just noted**: `doc/PLAN-two-accents-on-one-chanted-word.md`'s
+notice now opens "FROZEN 2026-08-11 … and the freeze LIFTED 2026-08-17, at
+`MAM-basics\doc\PLAN-evacuate-the-rest-of-wlc-utils.md`'s Phase 11, exactly where its own terms
+said it would", and the one clause the freeze had left false-in-waiting ("they simply do not run
+yet") is gone. That plan is parked, not resumed: lifting the freeze starts nothing.
+
+#### Findings
+
+**1. Item 2's banked scope was an undercount and its own "twice" an overcount — the same file
+measured differently at three dates.** The item (2026-08-03) says the global `CLAUDE.md` cites
+`agent-planning-principles.md` twice; today it cites it **once**, the file having moved on since.
+Phase 0 (2026-08-11) banked 19 wlc-utils references with **four** to fix; today `grep` matches 21
+lines with **five** to fix, because **Phase 10's rewrite of wlc-utils' `CLAUDE.md` falsified the
+two "short pointer in wlc-utils' `CLAUDE.md`" clauses** — a consequence no bank predicted, since
+Phase 0's sweep ran six days before the shrink was executed. The general lesson is the plan's
+own re-measure rule applied to its own banks: a banked measurement of a live file is a
+prediction, and the re-measure is the deliverable.
+
+**2. Item 3 grew the same way and for the same reason.** The six named sites reproduce — at
+drifted line numbers (`rendered-prose.md:147`→`:192`, `sources-and-corpora.md:189`→`:223`) — and
+two whole paragraphs had been falsified since the item was written: `SKILL.md`'s closer and
+`verifying.md`'s Commands intro, both describing the pre-evacuation division of labour between
+the two repos, both carrying the "88 issues" figure Phase 10's finding 1 corrected. Ben took all
+ten fixes, the two touch-ups included.
+
+**3. Item 5's premise aged out from under it, and the answer followed the mechanics rather than
+the premise.** The item (2026-08-03) predates the 2026-08-07 structural freeze; by execution day
+the register was documentation of clones moved out of `GitRepos`, with a thaw procedure that
+cannot be stated for wlc-utils. The live wrinkle put to Ben: `run_black.py:140` still consults
+the register, so an entry for a repo still in the workspace would flip its sweep note to
+"Skipped: frozen" — the register becoming load-bearing again for exactly one repo, against the
+policy file's own "it is documentation" sentence. Ben chose no entry.
+
+**4. Item 4's NFC prediction confirmed to the line number, which is more than it promised.** The
+seven moved sequences appear in MAM-basics' report at **exactly** Phase 3's positions —
+`Psalms.xml:758`, `all_changes.json:21749,21757,33951,33982`, `uxlc_accent_changes.json:8489,8497`
+— despite Phase 5's UXLC refresh having added 996 lines to `all_changes.json`, all of them
+evidently past `:33982`. The report also holds two findings that did NOT move in — the
+`#`-comment hit at `py/py_wlc_a_notes/my_wlc_a_notes.py:360` and `in/mam-go/B-NevRish.csv:2900`,
+both MAM-basics-native and pre-existing — named here so nobody reads them as evacuation residue.
+
+**5. Item 11's "both PLAN files' Status tables" names a second table with nothing to update.**
+`PLAN-evacuate-python-programme.md`'s Status table tracks that programme's own six repos and
+never carried a row about this plan, so the item resolves to: this plan's table, plus the
+decision-2 break paragraph that file did get. Recorded so nobody re-derives a missing obligation
+from the word "both".
 
 ---
 
@@ -2669,7 +2795,9 @@ next phase quoting this file's absolute path.
   enabled Pages**, and correctly chose no starter workflow. Phase 6 still has manual verification
   in it — the HTTP list, checked in a browser and not by `curl` — but no longer waits on a setting.
 - **Before Phase 9**, which changes what the public sees.
-- **Phase 11 items 2, 3 and 5** — two untracked-copy edits and one policy decision.
+- ~~**Phase 11 items 2, 3 and 5** — two untracked-copy edits and one policy decision.~~ **Asked
+  and answered 2026-08-17**: items 2 and 3 executed at the scopes Ben chose, item 5 decided as
+  no entry. Phase 11's record has all three.
 
 Phases 0, 1, 2, 4, 7, 8 and 10 are safe to chain automatically once their verification passes.
 
