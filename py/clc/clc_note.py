@@ -2,7 +2,7 @@
 
 The skeleton only sources UXLC's own ``<x>`` self-flags (the under-bar codes m/d
 plus the general transcription-uncertainty catch-all t — see design doc §2, issue
-#18), but the schema is deliberately source-agnostic: bracket notes, change
+UXLC-utils#18), but the schema is deliberately source-agnostic: bracket notes, change
 records, FOIs,
 dagesh restorations, etc. all feed this same record (design doc §8, "one
 renderer, many sources"). Records are plain data (JSON-serializable) so the same
@@ -30,7 +30,7 @@ SOURCE_DUAL_CANT_OMITTED_VOWEL = "dual-cant-omitted-vowel"
 # --- difference types (the "diff_type" field, for the §7.9 index) ---
 DIFF_UNDER_BAR = "under-bar"  # a vertical bar below the letter: m (prose), d (poetic)
 # UXLC's catch-all t <x> flag: general transcription uncertainty (damaged/indistinct;
-# any mark or letter — NOT inherently under-bar, design doc §2, issue #18). Surfaced
+# any mark or letter — NOT inherently under-bar, design doc §2, issue UXLC-utils#18). Surfaced
 # as a note but distinct from the genuinely under-bar m/d.
 DIFF_TRANSCRIPTION_UNCERTAINTY = "transcription-uncertainty"
 # UXLC's own change log already proposes this exact correction (a pending, not-yet-
@@ -81,7 +81,7 @@ class ClcNote:
     # is_uxlc_departure/diff_type (those describe CLC's own charitable-reading
     # decision; this describes UXLC's own change-log state). When set, clc_render
     # links to the change record instead of showing note_text -- the real prose
-    # stays in note_text/source_url for provenance (issue #19 is about never
+    # stays in note_text/source_url for provenance (issue UXLC-utils#19 is about never
     # fabricating note text, not about what gets displayed).
     superseding_uxlc_change: tuple = ()
 

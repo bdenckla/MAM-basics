@@ -134,7 +134,7 @@ absent. The verbatim reader-facing statement is
 audit fix that made maqaf differences non-differences) and why that one was wrong, so it does not
 get reinstated. Issue wlc-utils#76.
 
-## Two issue trackers: a bare `#NN` here means MAM-basics
+## Three issue trackers: a bare `#NN` here means MAM-basics
 
 wlc-utils' issues were **not** transferred when its Python moved here on 2026-08-01. They keep
 their numbers and stay in `bdenckla/wlc-utils`, which is still where they are read, commented on
@@ -150,12 +150,34 @@ where MAM-basics #69 is a CSS URL, wlc-utils#75 making maqaf a token of its own 
 #75 is the `mb_cmn/paths.py` convention. The moved code's 326 bare citations were prefixed on
 2026-08-02.
 
+**UXLC-utils is the third tracker and works the same way.** Its issues were not transferred when
+its Python moved here on 2026-08-03 either — 56 of them as of 2026-08-18, numbered 1–56, still
+read, commented on and closed in `bdenckla/UXLC-utils`. So a citation of a UXLC-utils issue is
+written **`UXLC-utils#NN`**, and here the whole numbered range collides: UXLC-utils#19 removes the
+CLC note fallbacks where MAM-basics #19 asks for a no-args mode in `main_diff_mpp`, UXLC-utils#29
+encodes the pasoleg-tokenization verses where MAM-basics #29 wants mgketer links, UXLC-utils#48
+lets the editor simplify a reiterated note-target word where MAM-basics #48 is a space before sof
+pasuq in Isaiah 44:24. The moved code's 50 bare citations were prefixed on 2026-08-18, across
+eight `py/clc/` modules and `py/main_clc_download_notes.py`.
+
+**This section was "Two issue trackers" until 2026-08-18**, and four sentences in
+`doc/PLAN-evacuate-the-rest-of-wlc-utils.md` still cite it under that name. They are that plan's
+execution record, describing the section as it stood when each phase ran, so they are left as
+written rather than re-pointed.
+
 Two things a blind sweep gets wrong, so read the surrounding sentence before adding a prefix:
 
 - **Not every `#NN` is an issue.** Yeivin's *ITM* is cited by section number in exactly the same
   shape (`#194`, `#221`, `#246`, and the `#325`–`#391` poetic run), CSS carries hex colours, and
   `poetic_ply_grammar.py` numbers the accents of Ps 17:14 as `#7`–`#10`. None of those take a
-  prefix.
+  prefix. **The CLC code has seven such sites, and each has a real UXLC-utils issue of that
+  number waiting to be mistaken for it**: `doc/clc-design.md` numbers its §9 open questions in
+  the identical shape, so `clc_collect.py`'s "design doc §9 #2" and `clc_render.py`'s "design doc
+  §9 #6" name that list rather than issues #2 and #6; three sites name a UXLC **change** number,
+  the 2026.10.19 release's tenth change, written "change #10" and "pending change #10"; and
+  `main_uxlc_grammar_test.py`'s #218 and #219 are MAM-basics' own, so they are already right
+  bare. `clc_render.py`'s site read "issue #6" until 2026-08-18 and now says "design doc §9 #6,
+  not an issue", which is what the `clc_collect.py` site had said all along.
 - **`wlc_issue_edit.py` is what keeps the split safe, and its own `#69` is deliberate.** `gh`
   resolves which tracker `issue <number>` names from the checkout it runs in, so `repo` is a
   required argument there rather than an inherited cwd; the bare `#69` in its docstring is the
@@ -172,6 +194,12 @@ under `in/` (`in/accgram/edition_transcriptions/` above all) — still carrying 
 citations that mean wlc-utils issues. Those files are the one standing exception to "a bare `#NN`
 here means MAM-basics". wlc-utils' own rewritten `CLAUDE.md` keeps its bare-`#NN`-means-wlc-utils
 note for the redirect host itself.
+
+**UXLC-utils' `doc/` is the same exception, still live.** Only that repo's Python left; it keeps
+its `doc/` (2 files), `in/` (556), `out/` (27), `gh-pages/` (184) and `data/` (2), measured
+2026-08-18. So a bare `#NN` read in its `doc/clc-design.md` still means a UXLC-utils issue, and
+nothing there was qualified — for the same reason wlc-utils' `doc/` was left alone, that
+qualifying them would imply they were ambiguous.
 
 ## There is no `wlc-koren-12th` repo
 

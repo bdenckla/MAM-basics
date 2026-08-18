@@ -29,10 +29,11 @@ lives in ``.novc/mam_decalogue_versemap.json``'s ``mam_to_sef`` block if ever wa
 taḥton strand, and §7.7 renders both strands side by side for every diverging Decalogue
 verse, the vtrad-MAM boundary overlay is already visible — every place MAM merges is an
 atom where §7.7 shows the elyon strand ending a verse (silluq + sof-pasuq) that the taḥton
-strand (= MAM) reads through. So #45 adds **no new rendered surface** (Ben's call): §7.8 is
-**validation-only**, the same shape as the MAM cross-checks of §7.7 (issues #42/#43/#44).
-``clc_versification_test`` asserts the two accounts agree 1:1 (the taḥton reads-through
-points from this module's merge groups == the elyon-ends atoms of ``clc_dual_cant._ORACLE``).
+strand (= MAM) reads through. So UXLC-utils#45 adds **no new rendered surface** (Ben's
+call): §7.8 is **validation-only**, the same shape as the MAM cross-checks of §7.7
+(issues UXLC-utils#42/UXLC-utils#43/UXLC-utils#44). ``clc_versification_test`` asserts
+the two accounts agree 1:1 (the taḥton reads-through points from this module's merge
+groups == the elyon-ends atoms of ``clc_dual_cant._ORACLE``).
 
 **Source-path (why hand-encoded).** The authoritative converter lives in MAM-basics'
 ``py_misc.vtrad_data`` / ``versification_differences`` — a **non-``mb_`` dir**, so neither
@@ -44,9 +45,9 @@ against that dump, with **nothing of MAM-basics imported at runtime**
 the Unit A/B cross-checks. Moving the general converter upstream into an ``mb_*`` entry point
 was the alternative; not worth it for four facts fully known here.
 
-**Reuse.** The ``clc_to_mam`` map is the CLC-verse → MAM-verse helper issue #38 also needs
-(to link a CLC verse to its MAM-with-doc doc-note anchor) — built once here, not a #45-only
-hack.
+**Reuse.** The ``clc_to_mam`` map is the CLC-verse → MAM-verse helper issue
+UXLC-utils#38 also needs (to link a CLC verse to its MAM-with-doc doc-note anchor) —
+built once here, not a UXLC-utils#45-only hack.
 """
 
 # The Decalogue BHS verse runs MAM collapses into a single MAM verse, by (book_id, chapter).

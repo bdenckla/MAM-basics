@@ -2,13 +2,13 @@
 
 UXLC's ``<x>`` code points at a per-(atom, code) note page on tanach.us, e.g.
 ``https://tanach.us/Notes/Proverbs/Proverbs.5.19.4-m.html``. Its reader-facing
-*note* prose is the manuscript note we want to render, plus (issue #30) the
+*note* prose is the manuscript note we want to render, plus (issue UXLC-utils#30) the
 page's own ``<h2>`` change-summary line, included verbatim as the note's opening
 sentence -- however imperative-sounding, it is real content of this same
 downloaded page, same trust boundary as the ``<p>`` prose. This is unrelated to
 the *separately-ingested* local UXLC changes XML (``in/UXLC-misc/*.xml``, parsed
 by ``py/uxlc_changes/``), whose ``<correction><description>`` is an imperative
-instruction to the editor and is never used as note prose (issue #19) -- it
+instruction to the editor and is never used as note prose (issue UXLC-utils#19) -- it
 survives only as the atom-letter consistency guard
 (``clc_collect._check_atom_consistency``).
 
@@ -59,7 +59,7 @@ def local_note_prose(book_id, ch, v, position, code):
     None means no usable local page -- it was never downloaded (not yet fetched,
     or tanach.us has none), or the page carries no plain-text prose. The build
     then shows a bare ``[note not yet downloaded]`` placeholder, never a
-    fabricated substitute (clc_collect; issue #19).
+    fabricated substitute (clc_collect; issue UXLC-utils#19).
     """
     path = local_page_path(book_id, ch, v, position, code)
     if not path.exists():

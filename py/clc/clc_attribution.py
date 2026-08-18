@@ -75,7 +75,7 @@ def note_cite(source_url):
     Links to the specific tanach.us note page the prose came from. Every m/d/t
     note has such a page, so clc_collect always supplies its URL — even for a
     not-yet-downloaded note whose prose is still a ``[note not yet downloaded]``
-    placeholder (issue #19): the link points at where that prose lives. There is
+    placeholder (issue UXLC-utils#19): the link points at where that prose lives. There is
     no home-page fallback.
     """
     return H.span(

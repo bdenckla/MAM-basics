@@ -18,7 +18,7 @@ committed here, so a run against the default mixes two templates under in/UXLC-n
 for clc_note_pages to parse.  Whether to accept that is undecided as of 2026-08-12.
 
 For every atom carrying a UXLC ``<x>`` code -- every code, not just the note-
-surfacing seed the build reads (clc_collect.NOTED_CODES); issue #25 wants the
+surfacing seed the build reads (clc_collect.NOTED_CODES); issue UXLC-utils#25 wants the
 complete note dataset on hand, including the codes (numeric / "X") that turn out
 to have no page at all -- fetch
 ``https://<host>/Notes/<name>/<name>.<ch>.<v>.<position>-<code>.html`` -- where

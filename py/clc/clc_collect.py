@@ -4,14 +4,14 @@ This is the skeleton's note source (build-order step 3). It surfaces UXLC's own
 ``<x>`` self-flags but does NOT yet resolve them: the genuinely under-bar codes
 m/d (a vertical bar below the letter) plus the general transcription-uncertainty
 catch-all t (damaged/indistinct; any mark or letter — *not* inherently under-bar,
-design doc §2, issue #18). There is no accent grammar and no charitable departure
+design doc §2, issue UXLC-utils#18). There is no accent grammar and no charitable departure
 here, so every note has ``is_uxlc_departure=False`` and ``clc_reading ==
 uxlc_reading``. Charity layers on later (design doc §3, §7.1).
 
 Each note's prose is the *actual* tanach.us note page, read offline from the
 committed local copy (clc_note_pages; downloaded by main_clc_download_notes). The
 build never touches the network, so its output is deterministic. There is no
-fabricated substitute for a missing page (issue #19): an atom whose note page has
+fabricated substitute for a missing page (issue UXLC-utils#19): an atom whose note page has
 not been downloaded yet shows a bare ``[note not yet downloaded]`` placeholder --
 never the imperative change-log description (an instruction to the editor, not a
 note) and never an invented per-code gloss. clc_changes is kept only for the
@@ -32,7 +32,7 @@ import uxlc_misc.my_uxlc as my_uxlc
 # qualifying note ("examine mark below … as possible merkha"), t is a general
 # transcription-uncertainty flag (233×, the largest code) that mostly has
 # nothing to do with a sub-letter mark, so selecting every t atom over-includes
-# as under-bar (issue #18). A per-note prose filter could later promote the
+# as under-bar (issue UXLC-utils#18). A per-note prose filter could later promote the
 # genuinely under-bar subset of t.
 UNDER_BAR_CODES = ("m", "d")
 
@@ -45,7 +45,7 @@ NOTED_CODES = UNDER_BAR_CODES + ("t",)
 
 # Placeholder shown for an atom whose tanach.us note page has not been downloaded
 # yet (design doc §9 #2). Deliberately NOT a description of the note: the prose
-# must come from the real page (issue #19), so this only marks where that prose
+# must come from the real page (issue UXLC-utils#19), so this only marks where that prose
 # will appear once main_clc_download_notes has fetched the page. No invented text.
 _NOT_YET_DOWNLOADED = "[note not yet downloaded]"
 
@@ -213,7 +213,7 @@ def _make_note(
         atom_text=atom_text,
         note_code=code,
         # The real tanach.us prose, or a bare placeholder if the page is not yet
-        # downloaded -- never an invented per-code gloss (issue #19).
+        # downloaded -- never an invented per-code gloss (issue UXLC-utils#19).
         note_text=page_prose or _NOT_YET_DOWNLOADED,
         source=clc_note.SOURCE_UXLC_X_NOTE,
         diff_type=(
@@ -238,7 +238,7 @@ def _diff_type_for(code):
 
     Only the genuinely under-bar codes (m/d) are ``under-bar``; the catch-all t is
     general transcription-uncertainty, not a sub-letter mark (design doc §2, issue
-    #18). All notes are still ``is_uxlc_departure=False`` in the skeleton.
+    UXLC-utils#18). All notes are still ``is_uxlc_departure=False`` in the skeleton.
     """
     if code in UNDER_BAR_CODES:
         return clc_note.DIFF_UNDER_BAR

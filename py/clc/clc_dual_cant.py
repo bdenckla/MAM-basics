@@ -21,7 +21,7 @@ strand wants an accent UXLC omitted, a note in lieu of inventing one**:
     resolution, 1)``), so a mark that recurs elsewhere in the word as a *shared*
     mark is never touched. The two *one-letter* divergences — **rafe/dagesh** and
     the **QUPO vowel split**, where the two strands differ on a single shared
-    letter — are no longer resolved silently (issue #47): each emits ONE lightweight
+    letter — are no longer resolved silently (issue UXLC-utils#47): each emits ONE lightweight
     note on the **combined (``-C``) row** naming both strands and the letter
     (``_combined_divergence_notes`` → ``_rafe_dagesh_note`` / ``_vowel_split_note``),
     detected straight from the two resolutions (``_cluster_extras``) — no redundant
@@ -94,7 +94,7 @@ _SUPPLIABLE = {hpu.MAQ, hpu.SOPA}
 # Display names for a supplied mark, used in the synthesized doc-column note.
 _ADDED_NAME = {hpu.MAQ: "maqaf", hpu.SOPA: "sof pasuq"}
 
-# Omitted-accent notes for which independent manuscript grounding exists (issue #36):
+# Omitted-accent notes for which independent manuscript grounding exists (issue UXLC-utils#36):
 # Ben's own editorial judgment, landed as prose in wlc-utils's supplied-marks.html
 # (py/accgram/dual_cant_detangle.py's _supply_reason), that WLC's differing reading at
 # this (book, chapter, verse, strand, wanted-accent) is a *reasonable transcription* of
@@ -303,13 +303,13 @@ _ORACLE = {
     # supplied (Ben's policy — see the "omit" field and _omitted_note); the QUPO vowel-split
     # verses (ex 20:3, dt 5:7) where the two strands have DIFFERENT vowels (patax vs. qamats) on
     # one letter — the same position-safe subtraction bucket as rafe/dagesh (see ex 20:3's own
-    # comment below); and the pasoleg-tokenization verses (ex 20:4,10; dt 5:8,12,14,15, #29) —
+    # comment below); and the pasoleg-tokenization verses (ex 20:4,10; dt 5:8,12,14,15, UXLC-utils#29) —
     # MAM-simple tokenizes a standalone pasoleg (see the module docstring's terminology note)
     # as its own word where UXLC embeds it directly in the preceding word's atom, which looked
     # like a real word-count divergence until a throwaway harvest script (since retired) folded it
     # UXLC does; once folded, the pasoleg is an ordinary divergent mark (present in one strand's
     # atom text, absent from the other) and flows through the same position-safe subtraction
-    # path as every other mark class — no new runtime mechanism. (#29 also closed #28's open
+    # path as every other mark class — no new runtime mechanism. (UXLC-utils#29 also closed UXLC-utils#28's open
     # מתחת question: the count mismatch in ex 20:4 / dt 5:8 comes from a pasoleg elsewhere in
     # the verse — atoms 4, 8, 14 — not from מתחת; ex 20:4's first מתחת occurrence, atom 12, IS a
     # third QUPO vowel-split case, same shape as פני; its second occurrence, atom 15, is a plain
@@ -320,7 +320,7 @@ _ORACLE = {
     # (both keep the same lone pasoleg), so it correctly carries no oracle entry — is_dual_cant()
     # is False for it, unlike its 6 siblings above.
     #
-    # MAM cross-check (issues #43/#44) — VALIDATION ONLY: MAM was consulted as an independent
+    # MAM cross-check (issues UXLC-utils#43/UXLC-utils#44) — VALIDATION ONLY: MAM was consulted as an independent
     # signal (harvested by hand via a throwaway script, since retired, from
     # MAM-parsed/plus), the oracle needed no change, and NOTHING of MAM is rendered inline or
     # embedded at runtime. MAM's per-witness sof-pasuq collation confirms L is among the
@@ -334,7 +334,7 @@ _ORACLE = {
     # corroborating this oracle's NON-QUPO treatment there. (dt 5:7/5:12's supplied sof-pasuqs
     # carry no per-witness MAM note in the harvest, so they stay uncorroborated.) See §7.7.
     #
-    # MAM cross-check (issue #42) — VALIDATION ONLY, legarmeh-vs-paseq (§7.16) + pisqah (§7.7):
+    # MAM cross-check (issue UXLC-utils#42) — VALIDATION ONLY, legarmeh-vs-paseq (§7.16) + pisqah (§7.7):
     # the raw pasoleg (U+05C0) bars this oracle subtracts positionally (the "Unicode-PASEQ
     # tokenization" atoms — ex 20:4 atoms 4/8/14, ex 20:10 atoms 3/10; dt 5:8 atoms 4/8/14,
     # dt 5:12 atom 7, dt 5:14 atom 3, dt 5:15 atom 4) each carry a legarmeh-vs-paseq grammatical
@@ -351,7 +351,7 @@ _ORACLE = {
     # independent on the ORDINARY prose run; in the dual-cant loci its detangler takes strand
     # punctuation FROM MAM, so there it concurs rather than witnesses. Three more legarmeh
     # (dt 5:4 פנים, 5:25 יספים, 5:27 ואת) sit on ordinary single-cant rows, not strands — the
-    # natural surface for a future rendered §7.16 note (deferred to #37, legarmeh visual
+    # natural surface for a future rendered §7.16 note (deferred to UXLC-utils#37, legarmeh visual
     # representation); a fourth, dt 5:16 למען, sits on the folded byte-identical verse (both strands
     # keep the bar — the reason it correctly carries no _ORACLE entry). MAM's pisqah-be'emtsa-pasuq
     # markings (×8, strand-tagged) corroborate the taxton verse-internal breaks this oracle already
@@ -403,7 +403,7 @@ _ORACLE = {
                 "add": {_STRAND_ALEF: [hpu.SOPA]},
             },
         },
-        # ex 20:4 — the first pasoleg-tokenization verse (#29). Atoms 4/8/14 (פסל/בשמים/במים)
+        # ex 20:4 — the first pasoleg-tokenization verse (UXLC-utils#29). Atoms 4/8/14 (פסל/בשמים/במים)
         # each end in a pasoleg that ONE strand keeps and the other drops (elyon keeps all
         # three here; taxton drops all three) — the cluster spans from the nearest divergent
         # accent through the trailing space to the pasoleg itself, so the space is shared
@@ -412,7 +412,7 @@ _ORACLE = {
         # SUPPLIES the verse-end sof-pasuq (taxton ends the verse here; elyon reads on, like
         # ex 20:8's atom 5). Atom 12 (מתחת, occurrence 1) IS a third QUPO vowel-split case —
         # same patax/qamats-on-one-letter shape as ex 20:3's פני; atom 15 (מתחת, occurrence 2)
-        # is a plain two-accent divergence (#28's open מתחת question, resolved — see the
+        # is a plain two-accent divergence (UXLC-utils#28's open מתחת question, resolved — see the
         # module comment above).
         (20, 4): {
             1: {
@@ -620,7 +620,7 @@ _ORACLE = {
             },
         },
         # ex 20:10 (the Sabbath verse's back half, ...לא תעשה כל מלאכה): the second
-        # pasoleg-tokenization verse (#29). Atom 3 שבת ends in a pasoleg that elyon (bet) keeps
+        # pasoleg-tokenization verse (UXLC-utils#29). Atom 3 שבת ends in a pasoleg that elyon (bet) keeps
         # and taxton (alef) drops — the mirror of ex 20:4's atoms 4/8/14, where taxton kept
         # the pasoleg and elyon dropped it. Atom 10 אתה ׀ is the sharpest pasoleg case: this word
         # carries no accent of its own at all, so the divergence cluster is the
@@ -864,7 +864,7 @@ _ORACLE = {
                 "add": {_STRAND_ALEF: [hpu.SOPA]},
             },
         },
-        # dt 5:8 — the Deuteronomy twin of ex 20:4 (#29's other pasoleg-tokenization verse),
+        # dt 5:8 — the Deuteronomy twin of ex 20:4 (UXLC-utils#29's other pasoleg-tokenization verse),
         # same three pasoleg atoms (4/8/14, פסל/בשמים/במים — elyon keeps, taxton drops) and the
         # same מתחת pair at atoms 12/15 — but here NEITHER מתחת occurrence is QUPO: atom 12's
         # cluster has no patax/CGJ (only qamats + two accents), an ordinary cross-book
@@ -1014,7 +1014,7 @@ _ORACLE = {
             3: {"cluster": acc.ATN + acc.ZAQ_Q, "alef": acc.ATN, "bet": acc.ZAQ_Q},
         },
         # dt 5:12 (שמור...): the Deuteronomy twin of ex 20:8 — same shape (taxton's verse-end
-        # SUPPLIES a sof-pasuq UXLC omits, atom 9) plus a third pasoleg-tokenization atom (#29):
+        # SUPPLIES a sof-pasuq UXLC omits, atom 9) plus a third pasoleg-tokenization atom (UXLC-utils#29):
         # atom 7 צוך ׀ ends in a pasoleg that elyon keeps and taxton drops, the same direction as
         # ex 20:4/dt 5:8's atoms.
         (5, 12): {
@@ -1073,7 +1073,7 @@ _ORACLE = {
         # ...יום השביעי שבת... opening), so atoms 1/2/3/5 repeat that pattern verbatim
         # (atom 3's pasoleg: elyon keeps, taxton drops). dt 5:14 runs on to v.14's own ending
         # (atom 26) instead of ex 20:10's continuation — pure accent divergence there, no
-        # pasoleg/QUPO/rafe. (Its own count mismatch (#29) was the same atom-3 pasoleg.)
+        # pasoleg/QUPO/rafe. (Its own count mismatch (UXLC-utils#29) was the same atom-3 pasoleg.)
         (5, 14): {
             1: {
                 "cluster": acc.QOM + hl.VAV + hpo.XOLAM + hl.FMEM + acc.PASH,
@@ -1105,7 +1105,7 @@ _ORACLE = {
             },
         },
         # dt 5:15 (וזכרת...): the "remember you were a slave" clause unique to Deuteronomy's
-        # Decalogue (no Exodus twin) — its own pasoleg-tokenization mismatch (#29) is atom 4
+        # Decalogue (no Exodus twin) — its own pasoleg-tokenization mismatch (UXLC-utils#29) is atom 4
         # היית ׀ (elyon keeps the pasoleg, taxton drops — same direction as every other pasoleg
         # atom above). Otherwise pure-accent divergence throughout.
         (5, 15): {
@@ -1174,7 +1174,7 @@ _ORACLE = {
             },
             14: {"cluster": acc.ATN + acc.ZAQ_Q, "alef": acc.ATN, "bet": acc.ZAQ_Q},
         },
-        # dt 5:16 (כבד את אביך...): the seventh pasoleg-tokenization verse (#29) — and the one
+        # dt 5:16 (כבד את אביך...): the seventh pasoleg-tokenization verse (UXLC-utils#29) — and the one
         # that turns out to carry NO divergence at all. Its atom 10 (למען ׀) has a lone pasoleg,
         # but MAM's taxton AND elyon both keep it (fold to the same word), so once the fold
         # fixes the count mismatch, every one of its 22 words is byte-identical between the
@@ -1467,7 +1467,7 @@ def _combined_divergence_notes(
 ):
     """The verse's **both-strands** divergence notes, for the combined (``-C``) row: one per
     rafe/dagesh atom and one per QUPO vowel-split atom, each stated ONCE naming both strands and
-    the shared letter they differ on (design doc §7.7, issue #47) — rather than the same fact
+    the shared letter they differ on (design doc §7.7, issue UXLC-utils#47) — rather than the same fact
     duplicated (polarity-flipped) as a per-strand note on each of alef and bet.
 
     Built from the two split-strand atom lists, whose ``rafe_dagesh`` / ``qupo_vowel`` /
@@ -1638,7 +1638,7 @@ def _omitted_note(
     fails it — the word is maqaf-joined, not verse-final — so it never wants a silluq).
 
     ``verse_loc`` is this verse's ``(book_id, ch, v)`` — looked up in ``_LC_CORROBORATED``
-    (issue #36) and ``_HAS_LONG_NOTE`` (design doc §7.3) to flag, respectively, whether
+    (issue UXLC-utils#36) and ``_HAS_LONG_NOTE`` (design doc §7.3) to flag, respectively, whether
     independent manuscript grounding exists for this note and whether an editor has
     attached a long note on the separate long-notes page; also carried through as-is
     (``verse_loc``) so clc_render can build that long note's anchor without re-deriving

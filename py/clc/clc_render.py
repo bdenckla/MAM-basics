@@ -113,7 +113,7 @@ def _dual_cant_rows(book_id, ch, v, verse, notes_by_atom, page_label):
         ref_attr = _strand_ref_attr(view.tooltip, pos, len(views))
         ref_text = f"{ch}:{v}-{view.suffix}"
         if view.suffix == clc_dual_cant.SUFFIX_COMBINED:
-            # The single per-verse anchor lands on the combined row (issue #55); the
+            # The single per-verse anchor lands on the combined row (issue UXLC-utils#55); the
             # strand rows carry no id, so #c20v2 stays unique per page. That row's ref
             # is also the verse self-link, like a plain verse's (_verse_row).
             anchor = f"c{ch}v{v}"
@@ -177,7 +177,7 @@ def _group_strand_notes(notes):
 
 
 def _stripped_heading(word):
-    # The target word as a note's heading, DEMOTED to bare letters (issue #48,
+    # The target word as a note's heading, DEMOTED to bare letters (issue UXLC-utils#48,
     # clc_strip.strip_to_bare_letters): every point and accent dropped, keeping only the
     # word-level punctuation maqaf/sof-pasuq/legarmeh. Default font — NO lang="hbo" wrapper
     # (that exists only to font-and-size *pointed* Hebrew in Taamey; bare letters don't need
@@ -268,7 +268,7 @@ def _omitted_note_core(note):
     # <present accent>" — the front clause is passive ("is expected"), dropping the explicit
     # naming of the strand that wants the accent (it's recoverable: the *other* strand from the
     # one the LC actually has) and the verb "calls for"; the possessive sheds "strand" too
-    # (issue #54). NO bracketed mark (nothing is added to the
+    # (issue UXLC-utils#54). NO bracketed mark (nothing is added to the
     # strand; cf. _added_note_body). The target word is NOT named inline: it is repeated as
     # this note's own header instead (_strand_note_header), making the note a first-class
     # targeted note like a normal verse's (§7.7). The accent UXLC *does* have is named, not
@@ -276,7 +276,7 @@ def _omitted_note_core(note):
     #
     # "the LC has only..." (crediting the manuscript, not just UXLC's own transcription of it)
     # replaces "UXLC's combined text carries" whenever this note is grounded beyond CLC's own
-    # synthesis: either wlc-utils's grammar-checker corroboration (issue #36,
+    # synthesis: either wlc-utils's grammar-checker corroboration (issue UXLC-utils#36,
     # clc_dual_cant._LC_CORROBORATED) or an editor-attached long note making its own independent
     # case (clc_dual_cant._HAS_LONG_NOTE) — e.g. Deut 5:13's taxton pashta, whose long note cites
     # UXLC's own note citing BHL Appendix A. A long note attached here is expected to itself
@@ -395,12 +395,12 @@ def _added_note_body(note):
 
 
 def _combined_divergence_block(note):
-    # A both-strands one-letter divergence (§7.7, issue #47) — rafe/dagesh or the QUPO vowel split
+    # A both-strands one-letter divergence (§7.7, issue UXLC-utils#47) — rafe/dagesh or the QUPO vowel split
     # — rendered ONCE on the combined (-C) row's doc column, naming both strands and the shared
     # letter. Now a first-class TARGET-AS-HEADING note like the omitted-accent/supplied-mark strand
     # notes beside it (_strand_note_block / _note_block): the target word is the note's HEADING and
     # the body no longer names it inline (§7.7). The heading is STRIPPED to its bare letters (issue
-    # #48, clc_strip.strip_to_bare_letters) — e.g. פָּנָֽ͏ַ֗י → פני, כָּל־ → כל־ — while the -C text
+    # UXLC-utils#48, clc_strip.strip_to_bare_letters) — e.g. פָּנָֽ͏ַ֗י → פני, כָּל־ → כל־ — while the -C text
     # column still shows the real fully-pointed word (that highlight is untouched). The body still
     # names the specific letter (the header word has several) and gives just the bare visual fact —
     # which mark each strand has on that letter — with plain "has": no phonetics (hard/soft), no
@@ -531,10 +531,11 @@ def _plain_text_contents(strand_atoms, other_atoms, noted_indices=()):
     # clc-doc-target highlight, exactly like a noted word in a normal verse (_noted_word) — so
     # the reader can see which strand words are annotated, not just which diverge. It is a plain
     # span, not a link: a strand note always keeps an inline block in the same row's doc cell, so
-    # there is nothing to jump to (design doc §7.3/§7.7). Dropping same-page note anchors — issue
-    # #6 — is what removed the id-collision constraint that previously kept these strand words
-    # unhighlighted. Which atoms qualify is decided by the caller (_strand_noted_indices): only
-    # omitted-accent notes, NOT supplied-mark notes, whose green bracketed mark is its own flag.
+    # there is nothing to jump to (design doc §7.3/§7.7). Dropping same-page note anchors
+    # — design doc §9 #6, not an issue — is what removed the id-collision constraint that
+    # previously kept these strand words unhighlighted. Which atoms qualify is decided by the
+    # caller (_strand_noted_indices): only omitted-accent notes, NOT supplied-mark notes, whose
+    # green bracketed mark is its own flag.
     pieces = []
     for index, (strand_atom, other_atom) in enumerate(
         zip(strand_atoms, other_atoms), start=1
@@ -822,7 +823,7 @@ class _LongNoteSpec:
 
 def _lc_corroborated_extra(spec, _book, _notes):
     # Shared by all four _LC_CORROBORATED cases below (Exod 20:3, Deut 5:6 ×2, Deut 5:17):
-    # the same wlc-utils grammar-checker citation (issue #36) grounds every one of them
+    # the same wlc-utils grammar-checker citation (issue UXLC-utils#36) grounds every one of them
     # identically, so one boilerplate paragraph serves all four rather than bespoke
     # per-verse prose like 5:13's/5:7's. This citation used to be an inline "— see the
     # grammar checker's supplied accents page" link on the main page; it now lives here
