@@ -369,6 +369,20 @@
    "note": "Breuer defines the configuration exactly as the measurement finds it -- an ordinary SERVANT, a word accented on its penultimate syllable, a gaʿya on its last -- names Isaiah 63:5, which is one of the thirteen, and then puts the whole class outside his book. Yeivin's ITM §357 is the same maqaf. Two things follow: neither book's inventory of secondary accents is where these belong, and Breuer's 'no trace of it in the accepted editions' is a divergence from MAM, which has thirteen of them."
   },
   {
+   "section": "Ch. 3 §2",
+   "names": "the legarmeh's servant in its own chanted word",
+   "quote": "In one place, the servant of the legarmeih appears with it in its word - in a syllable fit for a light ga'aya: ... (Nehem. 8:7) ... The servant is a merkha according to the rule explained above, § 1.",
+   "source": "Breuer, The Cantillation of Scripture",
+   "note": "Breuer's closed list of one is MAM's one, and ``breuer_notes`` asserts it rather than reporting it: MAM has exactly ne8:7 for this pair, and the build raises otherwise. ITM has nothing of the kind. Yeivin cites Ne 8:7 at §279.4 only as one of the two places a legarmeh stands before a pazer; his §§281-282 give legarmeh one or two servi and put them on PRECEDING chanted words; and his inventory of secondary accents -- §§221, 223, 233, 241, 253, 268, and §276's lone munax with a pazer at Gen 50:17 -- has no legarmeh entry at all. So this pair is named by Breuer alone, and that is why ne8:7 takes no entry in MAM_ALLOWANCES: that table is for what neither book names, and §2 names this. Ben's decision, 2026-08-18, on the ground §10 of doc/PLAN-two-accents-on-one-chanted-word.md dissolved ek16:12 on. ISSUE #215 IS WHY THE SECTION WENT UNREAD until then. MAM tokenized no legarmeh anywhere until that fix landed, so ne8:7 measured as merkha munax and there was no merkha-legarmeh to look up; the search of Chapter 3 run on 2026-08-03 read §20, §28, §39 and §40 -- the four masorah-books' cos-check-claims pins -- and stopped short of §2, which opens the chapter. Breuer also answers what #185 asks of the mark, calling it the servant merkha in a syllable fit for a light gaʿya rather than a gaʿya itself. #185 stays open, weighing manuscripts against printed editions, and this is one voice in that; if it ever settles on a meteg this entry's list empties and the assertion above fires, which is the intended way to be told.",
+   "token_sequences": [
+    "merkha legarmeh"
+   ],
+   "breuer_verses": [
+    "ne8:7"
+   ],
+   "breuer_list_is_closed_and_matches_exactly": true
+  },
+  {
    "section": "Ch. 3 §28",
    "names": "the tipexa's servant in its own chanted word",
    "quote": "In eight places, the servant of tipekha appears with it in its word. ... The servant is merkha - according to the ordinary order of the cantillation marks (above, §26); and it appears in a syllable fit for a light ga'aya or in a syllable fit for the ga'aya of the big vowel.",
@@ -727,16 +741,22 @@
     }
    ]
   },
-  "left_over_after_both": {
-   "what": "What is left when the telisha gedola words and the maqaf-after-gaʿya compounds are set aside: the atomic chanted words of MAM's prose verses that have two accents no section of either book names.",
-   "total": 2,
+  "accounted_for_by_breuer_ch3_s2": {
+   "what": "A legarmeh and its servant in one chanted word. Breuer CoS Ch. 3 §2 names this by verse -- 'In one place, the servant of the legarmeih appears with it in its word' -- and gives the servant as a merkha, on a syllable fit for a light gaʿya, by Ch. 3 §1's rule that the servant next to a legarmeh is a merkha. Yeivin does not name the pair anywhere: ITM cites Ne 8:7 at §279.4 only as one of two places a legarmeh stands before a pazer, and §§281-282 put legarmeh's servi on preceding chanted words. So a section of one book accounts for this and no allowance is owed -- the disposition §10 of doc/PLAN-two-accents-on-one-chanted-word.md gave ek16:12 when ITM §357 turned out to account for it (Ben's decision, 2026-08-18). The pair reached this survey only when issue #215 was fixed the same day: until then MAM tokenized no legarmeh at all and this chanted word measured as merkha munax. See ``breuer_notes``, which asserts Breuer's closed list of one against MAM and raises on drift.",
+   "total": 1,
    "occurrences": [
     {
      "bcv": "ne8:7",
      "chanted_word": "ושר֥בי֣ה",
      "sequence": "merkha legarmeh",
      "kind": "an atomic chanted word"
-    },
+    }
+   ]
+  },
+  "left_over_after_all_three": {
+   "what": "What is left when the telisha gedola words, the maqaf-after-gaʿya compounds and Breuer's Ch. 3 §2 chanted word are set aside: the atomic chanted words of MAM's prose verses that have two accents no section of either book names.",
+   "total": 1,
+   "occurrences": [
     {
      "bcv": "ca8:6",
      "chanted_word": "שלה֥בתיה",

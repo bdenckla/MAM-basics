@@ -1,9 +1,10 @@
 # PLAN — two accents on one chanted word (prose)
 
-**EVERY PHASE IS EXECUTED OR WITHDRAWN. Phase 4 ran 2026-08-17 and this plan has no next phase —
-one item is parked, and it is parked on a defect rather than on this plan.** Phases 1, 2, 4 and 5
-are executed, Phase 3 was built and withdrawn, and each has its record: §7, §8 and §9 for Phases
-1–3, and the execution records inside §5's Phase 4 and Phase 5 entries.
+**THIS PLAN IS COMPLETE. Every phase is executed or withdrawn, and the one item Phase 4 left
+parked was settled on 2026-08-18.** Phases 1, 2, 4 and 5 are executed, Phase 3 was built and
+withdrawn, and each has its record: §7, §8 and §9 for Phases 1–3, and the execution records
+inside §5's Phase 4 and Phase 5 entries. Phase 4's entry has two records, the second of them
+2026-08-18's, which is the last thing that happened here.
 
 **What Phase 4 wrote, and what it deliberately did not.** §10 had taken its list of thirteen
 chanted words down to two:
@@ -15,11 +16,19 @@ chanted words down to two:
   token sequence, which is the mechanism §10 settled. The search §10 waited on ran 2026-08-03 and
   found both Yeivin's ITM and Breuer's CoS silent, so the entry rests on a measured silence rather
   than on an assumed one.
-- **ne8:7 ושר֥בי֣ה — STILL HELD.** A merkha and a munaḥ, held on MAM-basics#215, a defect that
-  leaves MAM with no legarmeh token anywhere. Phase 4 did not write it and did not work around
-  #215. **This is the plan's one unfinished item**: when #215 is fixed, ne8:7's allowance is
-  written against the token sequence MAM then has, by the same mechanism, and that is the whole of
-  what is left.
+- **ne8:7 ושר֥בי֣ה — SETTLED 2026-08-18, and NOT as an allowance.** Phase 4 left it held on
+  MAM-basics#215, a defect that left MAM with no legarmeh token anywhere, and said its allowance
+  would be written against whatever token sequence MAM had once that was fixed. #215 was fixed on
+  2026-08-18 (`2716e90`), and the sequence turned out to be `merkha legarmeh` — which **Breuer's
+  *Cantillation of Scripture* Ch. 3 §2 names by verse**, as the one place a legarmeh's servant
+  appears in its own chanted word, the servant a merkha on a syllable fit for a light gaʿya. So no
+  allowance is owed and none was written: `MAM_ALLOWANCES` is the table for what **neither** book
+  names, and §2 names this. Ben's decision, 2026-08-18, on the ground §10 itself dissolved ek16:12
+  on when ITM §357 turned out to account for that one. The naming is recorded instead in
+  `BREUER_ENTRIES`, with a closed list of one that `breuer_notes` asserts against MAM and raises
+  on drift, and `mam_residue` sets the chanted word aside under `accounted_for_by_breuer_ch3_s2`
+  while still counting it. §5's Phase 4 entry has the 2026-08-18 execution record; §10 has the
+  sources and what was searched.
 
 **A second question Phase 4 was asked to settle, and did: no.** The five telisha-gedolah words
 `lexical_validation` whitelists are **not** named in `MAM_ALLOWANCES`. §5's Phase 4 execution
@@ -85,14 +94,15 @@ alone on purpose.
 
 ## 0. Where to resume (updated 2026-08-17, when Phase 4 ran; before that 2026-08-03, and 2026-07-29 after Phase 3's withdrawal)
 
-**THERE IS NO NEXT PHASE. Phase 4 ran 2026-08-17 and everything below is now history rather than
-instruction.** Read this section to learn what was decided and why; do not action it. The one
-thing still owed is ne8:7's allowance, which waits on **MAM-basics#215** and not on this plan —
-the notice at the top of this file says what writing it will take. `§5`'s Phase 4 entry has the
-execution record: what moved, what deliberately did not, and the two things the plan did not
-predict. (This paragraph tracked the freeze while it stood, and then said the section "is accurate
-and runs again" after the 2026-08-17 lift; Phase 4 having since run, neither reading is right any
-more.)
+**THERE IS NO NEXT PHASE, AND NOTHING IS OWED. Phase 4 ran 2026-08-17, its one held item was
+settled 2026-08-18, and everything below is now history rather than instruction.** Read this
+section to learn what was decided and why; do not action it. `§5`'s Phase 4 entry has both
+execution records: 2026-08-17's — what moved, what deliberately did not, and the two things the
+plan did not predict — and 2026-08-18's, which fixed **MAM-basics#215** and then dissolved ne8:7
+rather than writing its allowance, Breuer's CoS Ch. 3 §2 having turned out to name the pair. The
+notice at the top of this file has that in short. (This paragraph tracked the freeze while it
+stood, then said the section "is accurate and runs again" after the 2026-08-17 lift, then named
+ne8:7's allowance as still owed; none of the three readings is right any more.)
 
 **Phase 4 was the last phase, and it was not promotion.** Ben settled the promotion question on 2026-08-03 (`§6` decision 5): MAM's
 divergences from Yeivin's and Breuer's rules keep being recorded, and are grammatical for the time
@@ -107,12 +117,15 @@ Phase 5 entry has the execution record. Nothing else in this file is a pending i
 
 **`§10` was added later the same day, and it is what Phase 4 was built on.** It settles how a
 per-verse exception is spelled — on the chanted word's mark run plus its token sequence, never on a
-verse reference — and it takes Phase 4's list of 13 down to **two chanted words, both taking a
-per-verse exception**: ne8:7 ושר֥בי֣ה is held on MAM-basics#215, a defect
-that leaves MAM with no legarmeh token anywhere and 1,610 lone bars counted as chanted words, and
-ca8:6 שלה֥בתיה was held on a search of Yeivin's ITM and Breuer's CoS for a secondary merkha with
-silluq — **run 2026-08-03 (`521e8dc`), and both books are silent, so Phase 4 wrote ca8:6's entry
-on 2026-08-17**; `§10` carries the search itself. (Until 2026-08-03 this paragraph called the search one
+verse reference — and it takes Phase 4's list of 13 down to **two chanted words**, which `§10`
+expected would both take a per-verse exception and in the end did not: ne8:7 ושר֥בי֣ה was held on
+MAM-basics#215, a defect that left MAM with no legarmeh token anywhere and 1,610 lone bars counted
+as chanted words, and ca8:6 שלה֥בתיה was held on a search of Yeivin's ITM and Breuer's CoS for a
+secondary merkha with silluq — **run 2026-08-03 (`521e8dc`), and both books are silent, so Phase 4
+wrote ca8:6's entry on 2026-08-17**; `§10` carries the search itself. **Only ca8:6 ended as an
+allowance.** #215 was fixed on 2026-08-18 (`2716e90`), and with MAM tokenizing legarmeh at last,
+ne8:7's pair read `merkha legarmeh` — which Breuer's CoS Ch. 3 §2 names by verse, so it was
+dissolved rather than written, the way `§10` dissolved ek16:12. (Until 2026-08-03 this paragraph called the search one
 nobody had yet run; `521e8dc` updated `§10` and left this sentence behind, which the same day's
 review, MAM-basics#219, caught.) `§5`'s Phase 4 entry and `§6` decision 1 both carry
 the correction; the lists they were first written with are superseded, not merely narrowed, and
@@ -547,8 +560,9 @@ chanted word is the verse's last and the sof pasuq follows it immediately, which
 scanner settles it in emitting `SILLUQ`. The key excludes the four שלף־חרב compounds that share
 `merkha silluq`, each of them having a maqaf where the key has none — measured, not assumed.
 
-**ne8:7 ושר֥בי֣ה was not written, and MAM-basics#215 was not worked around.** It stands exactly as
-§10 leaves it.
+**ne8:7 ושר֥בי֣ה was not written, and MAM-basics#215 was not worked around.** It stood exactly as
+§10 left it until 2026-08-18, when #215 was fixed and ne8:7 was **dissolved rather than written** —
+the second execution record below has it.
 
 **The five telisha-gedolah words are NOT named the same way, and that question is settled no.**
 The plan asked it so that "the whole whitelist reads out of one place"; naming them would instead
@@ -627,6 +641,119 @@ purpose, because the ruling covers MAM and not WLC's different set.
 `black --check py` clean at 774 files. No test was added, and none should be: the survey's
 assertion of the allowance against MAM already is the differential check against an oracle
 outside the whitelist.
+
+#### Execution record (2026-08-18) — MAM-basics#215 fixed, and ne8:7 dissolved rather than written
+
+Run in `C:\Users\BenDe\GitRepos\MAM-basics`, against `8eef618` — the baseline the 2026-08-17
+record leaves, re-measured at the start and matching: clean tree, 1,910 tracked files, suite 905
+passed / 5 skipped, `ruff` clean, `black --check py` clean at 774 files. Two commits, `2716e90`
+for the fix and the one carrying this record for ne8:7, plus MAM-private `a1b489e` for the CoS
+pin. Nothing else was live in either repo while it ran.
+
+**§10's defect figures were re-measured before anything was touched, and all of them matched** —
+WLC 4.22 1,167 LEGARMEH tokens and 0 lone bars, UXLC 1,169 and 0, MAM-simple 0 and 1,610 in 1,461
+prose verses, MAM's `chanted_words` 234,676 and `atomic_chanted_words` 197,890. Three further
+measurements were taken before writing the fix, none of them in §10: every MAM-simple `vel` is a
+string; over all 23,213 verses the loader returns, no lone bar starts a verse, follows another
+bar, or follows an element that transcodes to nothing; and no other element has a U+05C0 in it at
+all. Those three are what make folding the bar backwards always well defined.
+
+**The fix: `_fold_lone_bars` in `chanted_word_accents.py`, inside `mam_frags` and nowhere else.**
+Each lone U+05C0 element is joined onto the atom before it, which is where WLC writes it and where
+UXLC keeps it inside the word's element after a space. The space is kept in the joined atom's
+Unicode; `word_to_marks` drops it, so the mark run is WLC's either way. A bar that could not be
+folded raises rather than being passed on.
+
+**MAM's counts moved and no other corpus's did, which is the whole point of the fix.** Measured
+over the code path `scan_corpus` uses, prose verses only:
+
+| corpus | LEGARMEH | lone bars as chanted words | `chanted_words` | `atomic_chanted_words` |
+| --- | --- | --- | --- | --- |
+| WLC 4.22 | 1,167 → 1,167 | 0 → 0 | 233,232 → 233,232 | 196,412 → 196,412 |
+| UXLC | 1,169 → 1,169 | 0 → 0 | 233,115 → 233,115 | 196,342 → 196,342 |
+| MAM-simple | **0 → 1,172** | **1,610 → 0** | **234,676 → 233,066** | **197,890 → 196,280** |
+
+MAM's MUNAX went 34,371 → 33,199, down by the same 1,172, so every new legarmeh token is a munaḥ
+that was one before. Both count drops are exactly the 1,610 lone bars, and both land on the
+figures MAM-basics#215 predicted.
+
+**No `status` moved in any corpus.** `out/accgram/prose/*_ag.json` and
+`out/accgram/printed-decalogue/_printed_decalogue.json` are byte-identical across both commits.
+`out/accgram/chanted-word-accents.json` changed seven values for the fix, all of them MAM's — the
+four counts above and ne8:7's sequence in `mam_residue.by_sequence`, in
+`mam_residue.left_over_after_both`, in `mam_residue.occurrences` and in the corpus record.
+`mam_residue.total` stays 12, `hits` stays 1,643, `maqaf_compounds` and `by_kind` stay.
+
+**One page moved, and it moved by shedding a caveat about this very defect.**
+`gh-pages/wlc/accgram/wlc-chanted-word-residue.html` dropped the `†` on its Ne 8:7 row and the
+paragraph explaining it — exactly what `wlc_chanted_word_residue_page`'s docstring said would
+happen when #215 landed, "the way `_accounted_for`'s groups do". WLC's figures on that page did
+not move: 28 rows, 7 with a counterpart in MAM, and `generate-html` still reports **WLC residue:
+28**. That docstring is brought up to date, and now says what the caveat machinery guards instead:
+the test is on the data rather than on a verse, so a future marked row would mean a real
+divergence, and `pin_claims` fails the build for it rather than letting the old explanation print.
+
+**Then ne8:7's sequence turned out to be one Breuer names, so no allowance was written.** With
+MAM tokenizing legarmeh at last, `mam_residue` reported ne8:7 ושר֥בי֣ה as `merkha legarmeh` — its
+mark run now byte-identical to UXLC's, WLC's differing only by its `]C]c` note markers. **Breuer,
+*The Cantillation of Scripture* Ch. 3 §2** names it:
+
+> In one place, the servant of the *legarmeih* appears with it in its word — in a syllable fit for
+> a light *ga'aya*: … (Nehem. 8:7) … The servant is a *merkha* according to the rule explained
+> above, §1.
+
+Chapter 3 sets out the servants mafsik by mafsik, each with a "Two cantillation marks in the same
+word" subsection, and §2 is the legarmeh's — a closed list of one place, which MAM matches
+exactly. **Yeivin has nothing of the kind**: ITM cites Ne 8:7 at §279.4 only as one of the two
+places a legarmeh stands before a pazer, §§281–282 give legarmeh one or two servi and put them on
+*preceding* chanted words, and his inventory of secondary accents — §§221, 223, 233, 241, 253,
+268, and §276's lone munaḥ with a pazer at Gen 50:17 — has no legarmeh entry at all.
+
+So `MAM_ALLOWANCES` has one entry and not two. **Ben's decision, 2026-08-18**: dissolve it, on the
+ground §10 dissolved ek16:12 on when ITM §357 turned out to account for that one — "No exception
+is owed, and none should be written." What was written instead:
+
+- **`BREUER_ENTRIES` gains Ch. 3 §2**, the fourth entry there and the first with a measurement
+  behind it. `BreuerEntry` grows `sequences` and `verses`, and `breuer_notes` — which now takes
+  MAM — asserts the closed list and raises on drift, the treatment `yeivin_inventory` gives one.
+  Checked by perturbation, not by inspection: it raises when MAM measures nothing for the pair,
+  when MAM measures a second place, and when the entry lists a verse MAM does not have.
+- **`mam_residue` gains a third set-aside group**, `accounted_for_by_breuer_ch3_s2`, predicated on
+  `BREUER_NAMED_SEQUENCES` so the group and the entry cannot part company. Setting aside is not
+  removing: `total` stays 12, and the residue stays closed against `YEIVIN_ENTRIES` alone, since a
+  Breuer section grouping the residue is a different act from a Yeivin section shrinking it and
+  only the second reaches `NAMED_TOKEN_SEQUENCES` and the checker.
+- **`left_over_after_both` is renamed `left_over_after_all_three`**, there being three groups now.
+  Its sentence, "the atomic chanted words of MAM's prose verses that have two accents no section
+  of either book names", is **true again** with ca8:6 alone under it — which is what happened when
+  ek16:12 moved out, and is the test that the group is the right shape.
+- **`MAM_ALLOWANCES`' comment block says outright that ne8:7 is not there**, because §10 sends a
+  reader to that table for it. Two more docstrings are brought up to date the same way,
+  `mam_residue`'s and `BreuerEntry`'s.
+
+**MAM-private `a1b489e` pins the quote**, `cos-check-claims` being what holds `BREUER_ENTRIES`
+honest. Four phrases: §2's three, and §1's rule that §2 defers to, without which "a merkha
+according to the rule explained above, §1" rests on a cross-reference the export need not still
+contain. 21 claims now, all confirmed. The export's Hebrew lemma in §2 is OCR-damaged, so the
+English and the verse reference are pinned and the Hebrew is not.
+
+**MAM-basics#215 is why nobody had read §2, and that is worth keeping.** While MAM tokenized no
+legarmeh anywhere, ne8:7 measured as `merkha munax` and there was no `merkha legarmeh` to look up;
+the 2026-08-03 sweep of Chapter 3's same-word sections pinned §20, §28, §39 and §40 and stopped
+short of §2, which opens the chapter. The defect did not merely misname the pair — it hid the
+section that names it.
+
+**MAM-basics#185 is untouched and stays open.** Breuer answers what it asks of the mark, calling
+it the servant merkha on a syllable fit for a light gaʿya rather than a gaʿya itself, and that is
+one voice in a question weighing manuscripts against printed editions. §10's note that a meteg
+would make this residue entry disappear still holds, and the shape has improved: a meteg emits no
+token, so Ch. 3 §2's closed list would empty and `breuer_notes` would raise, which is the intended
+way to be told.
+
+**Verified.** Suite 905 passed / 5 skipped, unchanged from the baseline; `ruff check py` clean;
+`black --check py` clean at 774 files; 1,910 tracked files, unchanged. No test was added, and none
+should be: the survey's assertion of Breuer's closed list against MAM is the differential check
+against an oracle outside this repo, and the regenerated artifacts are the rest of it.
 
 ### Phase 5 — WLC's residue as an unlinked page (added 2026-08-03; executed the same day)
 
@@ -1266,7 +1393,28 @@ Westminster reading that both the correction of WLC and the consensus text rejec
 wants the WLC flag to keep exactly that visible. A whitelist keyed on the bare token pair cannot
 tell the two apart.
 
-### ne8:7 is held on MAM-basics#215, because MAM does not have the pair the survey names
+### ne8:7 was held on MAM-basics#215, because MAM did not have the pair the survey names — RESOLVED 2026-08-18
+
+**THE OUTCOME, ADDED 2026-08-18; everything below this paragraph is the 2026-08-03 record and is
+left as it was written.** #215 was fixed that day (`2716e90`), MAM's sequence for ne8:7 came out
+`merkha legarmeh` as this subsection expected — and **Breuer's CoS Ch. 3 §2 names exactly that, at
+exactly that verse**, as the one place a legarmeh's servant appears in its own chanted word. So
+ne8:7 took **no allowance**: `MAM_ALLOWANCES` is the table for what neither book names, and the
+disposition owed was the one this section gave ek16:12, "No exception is owed, and none should be
+written" (Ben's decision, 2026-08-18). §5's Phase 4 entry has the second execution record, with
+the sources searched and the measurements. Two things below are superseded as written: the key
+`mam_residue.left_over_after_both` is `left_over_after_all_three` now, three groups being set
+aside inside the residue rather than two, and ne8:7 sits in the third of them,
+`accounted_for_by_breuer_ch3_s2`.
+
+**And the lesson this section already states is the one it did not apply to ne8:7.** "What is
+left" below demands a search of both books before ca8:6's entry may be written, on the ground that
+"a silence found by searching is worth recording; the silence assumed here is not yet one" — and
+required no such search for ne8:7, whose pair the section took to be unnamed on the strength of
+#185's remark that Breuer does not comment on the merkha *at Ch. 4 §19*. Ch. 3 §2 is where he
+comments on it, and nobody looked, because while #215 stood MAM tokenized no legarmeh anywhere and
+there was no `merkha legarmeh` to look up. The defect did not merely misname the pair; it hid the
+section that names it.
 
 `mam_residue.left_over_after_both` reports ne8:7 ושר֥בי֣ה as `merkha munax`. **WLC and UXLC report
 the same chanted word as `merkha legarmeh`**, and the disagreement is an artifact, not a reading:
@@ -1297,6 +1445,14 @@ WLC, the Jerusalem Crown, the Simanim Tiqqun and BHL have a merkha; skadish1's S
 EVR-II-B-92 and S2 support the merkha. The two meet at one point — if #185 settles on a meteg, this
 residue entry disappears on its own, a meteg emitting no token.
 
+**Added 2026-08-18: Breuer answers #185's question, and this paragraph's account of the merkha was
+right.** CoS Ch. 3 §2 calls the mark the legarmeh's servant, a merkha, on a syllable fit for a
+light gaʿya — which is the reading above, sourced. #185 stays open all the same, weighing
+manuscripts against printed editions, and Breuer is one voice in that rather than the end of it.
+The "meets at one point" clause holds and has improved: if #185 ever settles on a meteg, Ch. 3
+§2's closed list of one empties and `breuer_notes` raises, so the survey says so rather than the
+entry quietly going away.
+
 ### The mechanism, for whoever writes the exception
 
 **Key it on the chanted word's mark run plus the token sequence, and leave the verse reference in a
@@ -1319,6 +1475,17 @@ mechanism above.
 held.** Both chanted words remain in `mam_residue` either way — the ruling decides verdicts and
 retires no measurement — so this section's count of two is the residue and stays true. `§5`'s
 Phase 4 entry has the execution record.
+
+**Added 2026-08-18: only one of the two ended as an exception, and this section's "both" is
+superseded.** ca8:6's stands. ne8:7's was not written, #215's fix having shown its pair to be
+`merkha legarmeh`, which Breuer's CoS Ch. 3 §2 names by verse — so the disposition it took is the
+one this section gave ek16:12, not the one this paragraph predicted. **The count of two is still
+the residue**, and stays true for the reason given above: ne8:7 is set aside inside
+`mam_residue` under `accounted_for_by_breuer_ch3_s2` and is still counted, exactly as ek16:12 is
+set aside under `accounted_for_by_maqaf_after_gaya` and still counted. What did change is which
+sections do the accounting — Yeivin's for four of the five maqaf-after-gaʿya compounds and for the
+telisha gedolah words, and now Breuer's for ne8:7, the first group here a section of *his*
+accounts for. `§5`'s Phase 4 entry has the second execution record.
 
 **ca8:6 is the same in all three corpora, byte for byte** — שַׁלְהֶ֥בֶתְיָֽה׃, one atomic chanted
 word, a merkha on the open הֶ֥ and a U+05BD on יָֽ immediately before sof pasuq, so that one is

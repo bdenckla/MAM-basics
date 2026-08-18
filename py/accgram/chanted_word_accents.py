@@ -1085,10 +1085,12 @@ YEIVIN_ENTRIES: tuple[YeivinEntry, ...] = (
 # --- Breuer, where he covers the same ground -----------------------------------
 #
 # Read off the full markdown export at ``../masorah-books/books/cos/md-export-of-docx/``, and
-# pinned there by ``py/main_ocr.py cos-check-claims``.  Only three sections, because only three
+# pinned there by ``py/main_ocr.py cos-check-claims``.  Only four sections, because only four
 # are load-bearing for what this survey cannot otherwise say: the one that defines the maqaf of
-# ``maqaf_after_gaya``, the one that gives the tipexa's same-word servant, and the one that says
-# a secondary mark leaves a maqaf standing.  Each ``quote`` keeps Breuer's romanizations, which
+# ``maqaf_after_gaya``, the one that gives the tipexa's same-word servant, the one that says
+# a secondary mark leaves a maqaf standing, and -- added 2026-08-18 -- Ch. 3 §2, which names
+# ne8:7 by verse and is the only entry here that reaches a measurement.  Each ``quote`` keeps
+# Breuer's romanizations, which
 # differ from this repo's for most of the accent names; the spellings themselves stay in the
 # quote strings, which are values and not comments.  His English names the maqaf as a hyphen far
 # more often than by any transliteration of it, and never by either spelling this repo uses --
@@ -1099,10 +1101,23 @@ _COS = "Breuer, The Cantillation of Scripture"
 
 @dataclass(frozen=True)
 class BreuerEntry:
+    """One section of Breuer's, and -- where it gives a closed list -- what MAM must measure.
+
+    ``sequences`` and ``verses`` are set only where the section NAMES a token sequence and lists
+    every place it occurs, which of the four entries is true of Ch. 3 §2 alone.  Where they are
+    set, ``breuer_notes`` asserts MAM against them and ``mam_residue`` sets the section's chanted
+    words aside, so the group and the entry cannot part company.  The other three stay
+    record-only, and for two different reasons: Ch. 1 §43 and Ch. 9 §37 describe a maqaf rather
+    than a pair of accents, and Ch. 3 §28's eight are already ITM §233's eight, so that pair
+    reaches ``NAMED_TOKEN_SEQUENCES`` through Yeivin and needs nothing here.
+    """
+
     section: str
     names: str
     quote: str
     note: str = ""
+    sequences: tuple[str, ...] = ()
+    verses: tuple[str, ...] = ()
 
 
 BREUER_ENTRIES: tuple[BreuerEntry, ...] = (
@@ -1129,6 +1144,40 @@ BREUER_ENTRIES: tuple[BreuerEntry, ...] = (
             " belong, and Breuer's 'no trace of it in the accepted editions' is a"
             " divergence from MAM, which has thirteen of them."
         ),
+    ),
+    BreuerEntry(
+        section="Ch. 3 §2",
+        names="the legarmeh's servant in its own chanted word",
+        quote=(
+            "In one place, the servant of the legarmeih appears with it in its word - in"
+            " a syllable fit for a light ga'aya: ... (Nehem. 8:7) ... The servant is a"
+            " merkha according to the rule explained above, § 1."
+        ),
+        note=(
+            "Breuer's closed list of one is MAM's one, and ``breuer_notes`` asserts it"
+            " rather than reporting it: MAM has exactly ne8:7 for this pair, and the"
+            " build raises otherwise. ITM has nothing of the kind. Yeivin cites Ne 8:7 at"
+            " §279.4 only as one of the two places a legarmeh stands before a pazer; his"
+            " §§281-282 give legarmeh one or two servi and put them on PRECEDING chanted"
+            " words; and his inventory of secondary accents -- §§221, 223, 233, 241, 253,"
+            " 268, and §276's lone munax with a pazer at Gen 50:17 -- has no legarmeh"
+            " entry at all. So this pair is named by Breuer alone, and that is why ne8:7"
+            " takes no entry in MAM_ALLOWANCES: that table is for what neither book"
+            " names, and §2 names this. Ben's decision, 2026-08-18, on the ground §10 of"
+            " doc/PLAN-two-accents-on-one-chanted-word.md dissolved ek16:12 on."
+            " ISSUE #215 IS WHY THE SECTION WENT UNREAD until then. MAM tokenized no"
+            " legarmeh anywhere until that fix landed, so ne8:7 measured as merkha munax"
+            " and there was no merkha-legarmeh to look up; the search of Chapter 3 run on"
+            " 2026-08-03 read §20, §28, §39 and §40 -- the four masorah-books'"
+            " cos-check-claims pins -- and stopped short of §2, which opens the chapter."
+            " Breuer also answers what #185 asks of the mark, calling it the servant"
+            " merkha in a syllable fit for a light gaʿya rather than a gaʿya itself."
+            " #185 stays open, weighing manuscripts against printed editions, and this is"
+            " one voice in that; if it ever settles on a meteg this entry's list empties"
+            " and the assertion above fires, which is the intended way to be told."
+        ),
+        sequences=("merkha legarmeh",),
+        verses=("ne8:7",),
     ),
     BreuerEntry(
         section="Ch. 3 §28",
@@ -1173,21 +1222,57 @@ BREUER_ENTRIES: tuple[BreuerEntry, ...] = (
 )
 
 
-def breuer_notes() -> list[dict]:
-    return [
-        {
+def breuer_notes(mam: dict) -> list[dict]:
+    """Breuer's sections, and -- where one gives a closed list -- MAM asserted against it.
+
+    Ch. 3 §2 is the only entry with a list, and it RAISES on drift rather than warning: the
+    treatment ``yeivin_inventory`` gives a closed list, for the reason it gives it, that a
+    warning in a generator's output is a warning nobody reads.  Here it is load-bearing twice
+    over.  ``mam_residue`` sets that section's chanted words aside, so a second MAM chanted word
+    with the pair would be set aside under a list of one that does not name it; and ne8:7 takes
+    no allowance precisely because §2 names it, which is a claim about what MAM has as much as
+    about what Breuer wrote.
+    """
+    rows: list[dict] = []
+    for entry in BREUER_ENTRIES:
+        row = {
             k: v
             for k, v in (
-                ("section", e.section),
-                ("names", e.names),
-                ("quote", e.quote),
+                ("section", entry.section),
+                ("names", entry.names),
+                ("quote", entry.quote),
                 ("source", _COS),
-                ("note", e.note),
+                ("note", entry.note),
             )
             if v
         }
-        for e in BREUER_ENTRIES
-    ]
+        if entry.sequences:
+            measured = sorted(
+                {h["bcv"] for h in _measured(mam["occurrences"], entry.sequences)},
+                key=_sort_key,
+            )
+            if measured != list(entry.verses):
+                raise AssertionError(
+                    f"CoS {entry.section}: Breuer's list is closed at"
+                    f" {list(entry.verses)}, and MAM measures {measured} for"
+                    f" {list(entry.sequences)}"
+                )
+            row["token_sequences"] = list(entry.sequences)
+            row["breuer_verses"] = list(entry.verses)
+            row["breuer_list_is_closed_and_matches_exactly"] = True
+        rows.append(row)
+    return rows
+
+
+# Every token sequence a section of Breuer's names outright, read straight off the entries above
+# so the residue group below and the entry that licenses it cannot part company.  Yeivin's
+# sections reach the checker through ``NAMED_TOKEN_SEQUENCES``; Breuer's do not, and this is
+# deliberately not that table -- ``mam_residue`` is closed against ``YEIVIN_ENTRIES`` alone and
+# stays so, and what this does is set a group aside INSIDE the residue, the way ITM §357's
+# maqaf-after-gaʿya compounds are set aside, without taking anything out of the total.
+BREUER_NAMED_SEQUENCES: frozenset[str] = frozenset(
+    seq for e in BREUER_ENTRIES for seq in e.sequences
+)
 
 
 # --- Ben's ruling, where neither book names what MAM has ----------------------
@@ -1201,7 +1286,7 @@ def breuer_notes() -> list[dict]:
 # THE RULING DECIDES VERDICTS AND RETIRES NO MEASUREMENT.  "All divergences ... should continue
 # to be recorded, for possible future return to (for further research)" is the other half of it.
 # So ``mam_residue`` is computed off ``YEIVIN_ENTRIES`` alone and this table does not reach it:
-# ca8:6 stays in the residue, under ``left_over_after_both``, exactly where it stood before the
+# ca8:6 stays in the residue, under ``left_over_after_all_three``, exactly where it stood before the
 # ruling.  ``wlc_chanted_word_residue_page`` keys on ``NAMED_TOKEN_SEQUENCES`` alone for the same
 # reason -- the ruling covers MAM, and WLC's residue is a different set.
 #
@@ -1250,6 +1335,23 @@ def breuer_notes() -> list[dict]:
 # What a reader is owed instead is a pointer, and there are two: this paragraph, and
 # ``mam_residue``'s ``already_documented_elsewhere``, which says where the five are accounted
 # for.
+#
+# NE8:7 IS NOT NAMED HERE EITHER, THOUGH THE PLAN SAYS IT WOULD BE.  §10 of
+# ``doc/PLAN-two-accents-on-one-chanted-word.md`` held ne8:7 ושר֥בי֣ה on issue #215 and said its
+# allowance would be written here against whatever sequence MAM had once that was fixed.  #215
+# was fixed on 2026-08-18 and MAM's sequence turned out to be ``merkha legarmeh`` -- and Breuer
+# CoS Ch. 3 §2 names exactly that, at exactly that verse, as the one place a legarmeh's servant
+# appears in its own chanted word.  So no allowance is owed and none is written: this table is
+# for what NEITHER book names, and §2 names this.  Ben's decision, 2026-08-18, on the ground §10
+# itself dissolved ek16:12 on when ITM §357 turned out to account for that one.  The entry lives
+# in ``BREUER_ENTRIES`` instead, with a closed list of one that ``breuer_notes`` asserts against
+# MAM, and ``mam_residue`` sets the chanted word aside under
+# ``accounted_for_by_breuer_ch3_s2`` while still counting it.  #215 is also why nobody had read
+# §2: while MAM tokenized no legarmeh anywhere, ne8:7 measured as ``merkha munax`` and there was
+# no ``merkha legarmeh`` to look up.
+#
+# So ``MAM_ALLOWANCES`` has one entry and not two, and that is the finished state of the plan
+# rather than a phase left half-done.
 
 _RULING = (
     "Ben's ruling of 2026-08-03, recorded at §6 decision 5 of"
@@ -1404,14 +1506,30 @@ def mam_residue(mam: dict) -> dict:
     chanted words grammatical (2026-08-03).  "All divergences ... should continue to be
     recorded, for possible future return to (for further research)" is half of that ruling, so
     an allowance written under it must not take its chanted word out of this list: ca8:6 is
-    named by ``MAM_ALLOWANCES`` and is still here, under ``left_over_after_both``.  A residue
+    named by ``MAM_ALLOWANCES`` and is still here, under ``left_over_after_all_three``.  A residue
     that shrank as the whitelist grew would be the measurement following the verdict.
+
+    THREE GROUPS ARE SET ASIDE INSIDE IT, AND SETTING ASIDE IS NOT REMOVING: ``total`` counts
+    every chanted word all the same, and each group says which section or which other page
+    accounts for its members.  The third arrived on 2026-08-18 --
+    ``accounted_for_by_breuer_ch3_s2``, ne8:7's legarmeh with its servant in one chanted word --
+    and it is the first group a section of BREUER's accounts for rather than one of Yeivin's.
+    That is why this list stays closed against ``YEIVIN_ENTRIES`` even so: a Breuer section
+    grouping the residue is a different act from a Yeivin section shrinking it, and only the
+    second reaches ``NAMED_TOKEN_SEQUENCES`` and the checker.
     """
     named = {seq for entry in YEIVIN_ENTRIES for seq in entry.sequences}
     left = [h for h in mam["occurrences"] if h["sequence"] not in named]
     gaya = [h for h in left if h.get("gaya_after_the_nonfinal_accent")]
     telisha = [h for h in left if "telishagedola" in h["sequence"]]
-    rest = [h for h in left if h not in gaya and h not in telisha]
+    breuer = [
+        h
+        for h in left
+        if h["sequence"] in BREUER_NAMED_SEQUENCES
+        and h not in gaya
+        and h not in telisha
+    ]
+    rest = [h for h in left if h not in gaya and h not in telisha and h not in breuer]
     return {
         "what": (
             "MAM prose chanted words with two accent tokens whose token sequence is named"
@@ -1447,11 +1565,32 @@ def mam_residue(mam: dict) -> dict:
             "total": len(gaya),
             "occurrences": gaya,
         },
-        "left_over_after_both": {
+        "accounted_for_by_breuer_ch3_s2": {
             "what": (
-                "What is left when the telisha gedola words and the maqaf-after-gaʿya"
-                " compounds are set aside: the atomic chanted words of MAM's prose verses"
-                " that have two accents no section of either book names."
+                "A legarmeh and its servant in one chanted word. Breuer CoS Ch. 3 §2 names"
+                " this by verse -- 'In one place, the servant of the legarmeih appears"
+                " with it in its word' -- and gives the servant as a merkha, on a syllable"
+                " fit for a light gaʿya, by Ch. 3 §1's rule that the servant next to a"
+                " legarmeh is a merkha. Yeivin does not name the pair anywhere: ITM cites"
+                " Ne 8:7 at §279.4 only as one of two places a legarmeh stands before a"
+                " pazer, and §§281-282 put legarmeh's servi on preceding chanted words."
+                " So a section of one book accounts for this and no allowance is owed --"
+                " the disposition §10 of doc/PLAN-two-accents-on-one-chanted-word.md gave"
+                " ek16:12 when ITM §357 turned out to account for it (Ben's decision,"
+                " 2026-08-18). The pair reached this survey only when issue #215 was fixed"
+                " the same day: until then MAM tokenized no legarmeh at all and this"
+                " chanted word measured as merkha munax. See ``breuer_notes``, which"
+                " asserts Breuer's closed list of one against MAM and raises on drift."
+            ),
+            "total": len(breuer),
+            "occurrences": breuer,
+        },
+        "left_over_after_all_three": {
+            "what": (
+                "What is left when the telisha gedola words, the maqaf-after-gaʿya"
+                " compounds and Breuer's Ch. 3 §2 chanted word are set aside: the atomic"
+                " chanted words of MAM's prose verses that have two accents no section of"
+                " either book names."
             ),
             "total": len(rest),
             "occurrences": rest,
@@ -1730,7 +1869,7 @@ def build_survey() -> dict:
             " read against MAM rather than averaged with it."
         ),
         "yeivin_inventory": yeivin_inventory(scanned["mam_simple"]),
-        "breuer_notes": breuer_notes(),
+        "breuer_notes": breuer_notes(scanned["mam_simple"]),
         "mam_allowances": mam_allowances(allowance_matches),
         "maqaf_after_gaya": maqaf_after_gaya(scanned),
         "mam_residue": mam_residue(scanned["mam_simple"]),
