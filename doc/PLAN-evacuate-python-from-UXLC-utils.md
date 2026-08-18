@@ -761,3 +761,14 @@ and in `CLAUDE.md`, is one of them.
    both.** The wlc-utils plan calls its equivalent item the one most likely to be forgotten,
    because neither repo's tooling can see it. **Stop and ask Ben**, as that plan did: it commits
    to a third repo.
+
+   **DONE 2026-08-17, github-misc `549224e`.** Asked and answered: Ben approved the edit while
+   the rest-of-wlc-utils plan's Phase 11 was doing the same pair for its own citations, three
+   commits earlier (`5801305`). **The work was one line, not the sweep this item braces for.**
+   `references/terminology.md` named two silluq-vs-meteg implementations, the second as
+   "UXLC-utils `clc_dual_cant._accent_name`"; both are MAM-basics' now, so it reads
+   `py/clc/clc_dual_cant.py`'s `_accent_name` with the 2026-08-03 move dated in the sentence.
+   Two other UXLC-utils mentions were checked and left: `doc/clc-design.md` §7.16 (that `doc/`
+   never moved) and `SKILL.md`'s description listing UXLC-utils among the repos the skill
+   governs, which still holds rendered pages and prose. Both copies verified byte-identical
+   before and after, per the entanglement both plans carry.
