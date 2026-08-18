@@ -129,17 +129,27 @@ not record that track's state in this file.** A round of it was written into `§
 to `829d1f6..7aeeeb0` for its account. Both are that track's to keep, and both survive in that
 commit for whoever moves them to where they belong.
 
-### Before starting: two primaries, and the current commands
+### Before starting: one primary now, and the current commands
 
-**A phase here touches two repos, so check both.** The code primary is
-`C:\Users\BenDe\GitRepos\MAM-basics` (`py/accgram/...`, `py/tests/`) and the artifact primary is
-`C:\Users\BenDe\GitRepos\wlc-utils` (`out/`, `gh-pages/`). Run `git log --oneline -3` and
-`git status` in **both** before starting, not only at the end. `§9` states that guardrail against a
-single primary because on 2026-07-29 there was only one, and a parallel edit in it is what killed
-Phase 3.
+**ONE repo now, not two — and that changed while this plan sat frozen.** Code and artifacts are
+both `C:\Users\BenDe\GitRepos\MAM-basics`: `py/accgram/...` and `py/tests/` as always, and since
+2026-08-12 `out/` and `gh-pages/wlc/` as well. **wlc-utils was the artifact primary until then**,
+and `doc/PLAN-evacuate-the-rest-of-wlc-utils.md` moved the whole corpus here and emptied that repo
+to a redirect host — it has no `out/` at all now, and its `gh-pages/` holds 155 generated stubs.
+Do not go looking there for a file this plan names. **The two path shapes below fare
+differently, so read them differently**, measured 2026-08-17: the **35** bare `out/accgram/...`
+citations are right exactly as written, MAM-basics keeping that layout unchanged, while the **10**
+bare `gh-pages/accgram/...` citations each want a `wlc/` inserted — the site nests at
+`gh-pages/wlc/`, so the residue page is `gh-pages/wlc/accgram/wlc-chanted-word-residue.html`. None
+was rewritten, on the same ground `CLAUDE.md` gives for the wlc paths it left standing: they are
+accurate about which file, and wrong only about one segment. Run
+`git log --oneline -3` and `git status` before starting, not only at the end. `§9` states that
+guardrail as one about two primaries, and its reason survives the repos becoming one: on
+2026-07-29 a parallel edit in the single primary of the day is what killed Phase 3, so the hazard
+is the parallel edit rather than the count of repos.
 
-Regenerate from the MAM-basics root, with MAM-basics' interpreter — whatever `.venv` is left in
-wlc-utils has nothing to run:
+Regenerate from the MAM-basics root, with MAM-basics' interpreter — which is the only one there
+is, wlc-utils' having been removed by 2026-08-03:
 
 ```powershell
 C:\Users\BenDe\GitRepos\MAM-basics\.venv\Scripts\python.exe C:\Users\BenDe\GitRepos\MAM-basics\py\main_accgram.py --help
