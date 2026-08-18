@@ -682,7 +682,7 @@
    "merkha silluq": 5,
    "gershayim telishagedola": 3,
    "geresh telishagedola": 2,
-   "merkha munax": 1,
+   "merkha legarmeh": 1,
    "merkha pashta": 1
   },
   "already_documented_elsewhere": "The geresh-family-with-telisha-gedola words are not unaccounted for: they are the five words ``uni_to_marks.word_to_marks`` keeps both marks on, whitelisted by ``lexical_validation`` and set out in the telisha gedola exhibit of gh-pages/wlc/accgram/almost-errors.html. A geresh or gershayim written twice on one of them is folded above, so each counts as two accents, not three. They are deliberately not named in mam_allowances, and the comment above MAM_ALLOWANCES carries the four measurements that settled it on 2026-08-17: that whitelist is over one chanted word's tokens, in order, where lexical_validation's is over two accents on one letter, order-lessly, and the three corpora do not write these five alike.",
@@ -734,7 +734,7 @@
     {
      "bcv": "ne8:7",
      "chanted_word": "ושר֥בי֣ה",
-     "sequence": "merkha munax",
+     "sequence": "merkha legarmeh",
      "kind": "an atomic chanted word"
     },
     {
@@ -779,7 +779,7 @@
    {
     "bcv": "ne8:7",
     "chanted_word": "ושר֥בי֣ה",
-    "sequence": "merkha munax",
+    "sequence": "merkha legarmeh",
     "kind": "an atomic chanted word"
    },
    {
@@ -20163,8 +20163,8 @@
   "mam_simple": {
    "kind": "consensus, not diplomatic; largely follows Breuer, but not an edition of his",
    "verses": 18724,
-   "chanted_words": 234676,
-   "atomic_chanted_words": 197890,
+   "chanted_words": 233066,
+   "atomic_chanted_words": 196280,
    "maqaf_compounds": 36786,
    "hits": 1643,
    "by_kind": {
@@ -20188,7 +20188,7 @@
     "gershayim telishagedola": 3,
     "geresh telishagedola": 2,
     "munax atnax": 2,
-    "merkha munax": 1,
+    "merkha legarmeh": 1,
     "merkha pashta": 1,
     "munax mahapakh": 1,
     "munax pazer": 1
@@ -21158,7 +21158,7 @@
     {
      "bcv": "ne8:7",
      "chanted_word": "ושר֥בי֣ה",
-     "sequence": "merkha munax",
+     "sequence": "merkha legarmeh",
      "kind": "an atomic chanted word"
     },
     {

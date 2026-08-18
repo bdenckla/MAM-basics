@@ -25,17 +25,29 @@ regenerated page, or off out/accgram/chanted-word-accents.json.
 
 THE MAM COLUMN HAS ONE CAVEAT, AND IT IS DERIVED RATHER THAN PINNED TO A VERSE.  Where WLC's
 sequence has a legarmeh and its MAM counterpart does not, ``_mam_cell`` marks the MAM cell and
-``_stroke_caveat`` says why below the table: WLC has the Unicode PASEQ on the chanted word, and
-MAM has the same Unicode PASEQ standing apart from it with a space on each side, so the scanner
-reads a legarmeh in the one and not in the other.  That is #215, whose fix Ben sequenced before
+``_stroke_caveat`` says why below the table.  That was #215, whose fix Ben sequenced before
 Phase 4 of doc/PLAN-two-accents-on-one-chanted-word.md (this repo's copy is the only one since
-2026-08-17, wlc-utils' having been deleted at the evacuation plan's Phase 10); when it lands the marker and
-the paragraph drop out of the page on their own, the way ``_accounted_for``'s groups do.  Hence
-also what ``pin_claims`` asserts here -- the shape of the argument, that the scanner reads no
-legarmeh anywhere in MAM, rather than a count of marked rows that a fix would falsify.  The
-mechanism was checked against MAM-parsed-plus on 2026-08-04: at Nehemiah 8:7 the stroke is a
-``מ:לגרמיה-2`` template, which MAM-simple renders as a vel of its own, and WLC 4.22's vel there
-has the U+05C0 attached to the word.
+2026-08-17, wlc-utils' having been deleted at the evacuation plan's Phase 10): MAM-simple had the
+Unicode PASEQ standing apart from the chanted word with a space on each side, where WLC has it on
+the word, and ``prose_scanner``'s legarmeh rules cannot cross a space, so the scanner read a
+legarmeh in the one and not in the other.  THE FIX LANDED ON 2026-08-18, in
+``chanted_word_accents._fold_lone_bars``, and the marker and the paragraph dropped out of the page
+on their own, the way ``_accounted_for``'s groups do -- no row is marked now, and neither the
+caveat's ``†`` nor its paragraph is rendered.  The mechanism had been checked against
+MAM-parsed-plus on 2026-08-04: at Nehemiah 8:7 the stroke is a ``מ:לגרמיה-2`` template, which
+MAM-simple rendered as a vel of its own, and WLC 4.22's vel there has the U+05C0 attached to the
+word.
+
+THE CAVEAT MACHINERY STAYS, BECAUSE IT IS DERIVED AND WHAT IT NOW CATCHES IS A DIFFERENT THING.
+``_mam_cell``'s test is on the data, not on a verse, so with #215 fixed a marked row could only
+mean MAM genuinely has no legarmeh where WLC has one -- a divergence between a manuscript
+transcription and a consensus text, which is worth seeing and is not what ``_stroke_caveat``'s
+paragraph explains.  ``pin_claims`` is what keeps the page honest about that: it asserts the SHAPE
+of the argument, that the caveat's explanation holds only while the scanner reads no legarmeh
+anywhere in MAM, and MAM's survey now has ``merkha legarmeh``.  So a future marked row fails the
+build with "the caveat needs rewriting" rather than printing a paragraph that no longer describes
+it.  Asserting instead that some row is marked would have failed the build on the day #215 was
+fixed, which is the one day the page was meant to shed the caveat quietly.
 
 NOTHING HERE IS A VERDICT, and the page has no way to make one.  ``classify_verse`` already
 writes an additive ``chanted_word_accents`` field beside each verse's ``status`` and ``tree``,

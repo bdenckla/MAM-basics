@@ -278,6 +278,42 @@ def wlc_frags(kq_u_dir: Path) -> dict[str, list[Frag]]:
     return out
 
 
+def _fold_lone_bars(vels: list[str], bcv: str) -> list[str]:
+    r"""MAM-simple's lone U+05C0 elements, each joined onto the atom it follows.
+
+    MAM-simple sets the bar as an element of its own, where WLC attaches it to the word before it
+    and UXLC keeps it inside that word's element after a space.  Taken as it stands the bar
+    reaches the mark body as a space-delimited run of its own, and two things follow, both of them
+    MAM-only (issue #215).  ``prose_scanner``'s two legarmeh rules are ``munax {TEXT} paseq`` with
+    ``{TEXT}`` = ``[^ \r\n-]*``, which cannot cross a space, so the munax and the bar are never in
+    one match: MAM had 0 LEGARMEH tokens over the prose verses where WLC 4.22 has 1,167 and UXLC
+    1,169.  And ``_run_is_a_chanted_word`` is true of a bare bar, so each one was itself counted
+    as a chanted word -- 1,610 of them, in 1,461 prose verses, which is the amount MAM's
+    ``chanted_words`` and ``atomic_chanted_words`` were high by.  Both figures were measured
+    2026-08-03 and re-measured 2026-08-18; issue #215 has them.
+
+    Backwards is the only direction a bar can fold, a paseq being written after the atom it
+    follows, and MAM has no bar that cannot be folded: none starts a verse, follows another bar,
+    or follows an element that transcodes to nothing, measured over all 23,213 verses
+    ``load_mam_simple_for_refs`` returns, where no other element has a U+05C0 in it either.  One
+    that did would leave a lone-bar run behind, so this raises rather than passing one on.
+
+    The space between the two elements is kept in the joined atom's Unicode -- it is what
+    MAM-simple has there, and what UXLC's single element has inside it -- and ``word_to_marks``
+    drops it, so the mark run is WLC's either way.
+    """
+    atoms: list[str] = []
+    for vel in vels:
+        if vel != am.PASEQ:
+            atoms.append(vel)
+            continue
+        before = uni_to_marks.word_to_marks(atoms[-1]) if atoms else ""
+        if not before or before.endswith(am.PASEQ):
+            raise ValueError(f"{bcv}: a lone U+05C0 with no atom before it to join to")
+        atoms[-1] += " " + vel
+    return atoms
+
+
 def _atom_frags(atoms: list[str]) -> list[Frag]:
     return [_plain_frag(a) for a in atoms if a]
 
@@ -290,7 +326,10 @@ def mam_frags(refs_by_book: dict[str, set[tuple[int, int]]]) -> dict[str, list[F
     )
     return {
         bcv: _atom_frags(
-            [v for v in payload["mam_simple_verse"]["vels"] if isinstance(v, str)]
+            _fold_lone_bars(
+                [v for v in payload["mam_simple_verse"]["vels"] if isinstance(v, str)],
+                bcv,
+            )
         )
         for bcv, payload in loaded.items()
     }
