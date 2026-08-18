@@ -5,12 +5,12 @@ the precomposed U+1E25 / U+1E24 forms, never the decomposed "h"/"H" + COMBINING 
 BELOW (U+0323) sequence. Comments must not use either Unicode form at all -- plain
 ASCII "x"/"X" is used instead, since comments don't flow to output.
 
-TWO REPOS ARE SCANNED, each with its own exclusions and its own floor. This repo holds
-the code, and since 2026-08-12 the wlc corpus the code generates as well; UXLC-utils
-still holds the corpus its half generates into, and carries hand-authored
-transliterations in ``doc/``, ``CLAUDE.md`` and ``README.md`` after its Python moved
-out. ``_scopes()`` below is the whole of the per-repo difference. A wlc-utils scope was
-the third until 2026-08-17, when Phase 10 of
+THREE REPOS ARE SCANNED, each with its own exclusions and its own floor. This repo
+holds the code, and since 2026-08-12 the wlc corpus the code generates as well;
+UXLC-utils and holman-ketiv-qere still hold the corpora their halves generate into, and
+each carries hand-authored transliterations that would otherwise go unscanned once its
+Python has moved out. ``_scopes()`` below is the whole of the per-repo difference. A
+wlc-utils scope was one of them until 2026-08-17, when Phase 10 of
 ``doc/PLAN-evacuate-the-rest-of-wlc-utils.md`` emptied that repo down to 155 generated
 redirect stubs: nothing hand-authored is left there to scan, and the 6 files that do
 remain sit under the floor of 10 that the scope carried.
@@ -22,6 +22,14 @@ scanning its own repo root. Copied across unchanged it would have found that roo
 ``git rev-parse`` from its own location and so scanned MAM-basics -- a second, weaker
 pass over this tree (naive ``line.find("#")`` comment detection, and none of the
 exclusions below) rather than the UXLC-utils pass it was written to be.
+
+The holman-ketiv-qere scope arrived the same way and for the same reason (Phase 3 of
+``doc/PLAN-evacuate-python-from-holman-ketiv-qere.md``), replacing that repo's own
+``py/tests/test_h_dot_below_nfc.py`` -- 304 lines against this file's 433, and locating
+its root by ``git rev-parse`` from its own directory, so copying it here would have
+aimed it at MAM-basics too. Dropping it without adding this scope would have quietly
+ended NFC linting over that repo's hand-authored files: ``doc/`` (2), ``README.md``,
+``CLAUDE.md``, ``docs-not-served/table_data_fields.md`` and the 26 under ``emails/``.
 
 Comment detection uses Python's ``tokenize`` module (real COMMENT tokens) rather than a
 naive ``line.find("#")``. The wlc code uses "#" as a delimiter inside string literals
@@ -50,6 +58,7 @@ from pathlib import Path
 
 from mb_cmn import paths
 
+import hkq_paths
 import uxlc_paths
 
 _COMBINING_DOT_BELOW = chr(0x0323)
@@ -76,6 +85,10 @@ _BINARY_EXTENSIONS = {
     ".man",
     ".wts",
     ".md5sum",
+    # holman-ketiv-qere's tracked review source, a zip container like any other
+    # Office file. It is the one extension that repo's own copy of this test
+    # listed and this one did not, and the merged scope reads it as text without it.
+    ".docx",
 }
 
 # Files owned by the concurrent, unrelated #189 effort -- not in scope here.
@@ -145,6 +158,12 @@ _EXCLUDE_DIR_PREFIXES = (
 # hand-curated CSV/JSON kept verbatim for fidelity to source.
 _UXLC_EXCLUDE_DIR_PREFIXES = ("out/", "gh-pages/", "data/", "in/")
 
+# What holman-ketiv-qere's own copy of this test excluded, carried over verbatim:
+# its two generated trees.  Its docs-not-served/ is deliberately NOT excluded --
+# table_data_fields.md there is hand-authored, and table_data.json beside it is
+# generated but harmless to scan.
+_HKQ_EXCLUDE_DIR_PREFIXES = ("out/", "gh-pages/")
+
 # The one comment allowed to keep showing a precomposed h-with-dot-below
 # glyph, because the comment is genuinely about the character itself... In
 # practice, after #187's cleanup, there are no such exceptions: every
@@ -192,6 +211,19 @@ def _scopes() -> tuple[_Scope, ...]:
             # tree: the emptied repo leaves 6 files in scope, and 6 <= 10 errors
             # setUpClass rather than passing over a hollow scan.
             floor=10,
+        ),
+        _Scope(
+            label="holman-ketiv-qere",
+            root=hkq_paths.hkq_data_root(),
+            exclude_dir_prefixes=_HKQ_EXCLUDE_DIR_PREFIXES,
+            exclude_files=frozenset(),
+            # 40 is the floor that repo's own copy of this test carried, and it still
+            # fits after Phase 4 deletes its py/ tree: 154 files are in scope today
+            # and about 48 survive that deletion -- doc/ (2), README.md, CLAUDE.md,
+            # docs-not-served/ (4), emails/ (26), data/ (2), io/ (1), assets/ (4) and
+            # the dotfiles. Comfortably above 40, so the floor keeps meaning "an
+            # exclusion filter swallowed everything" rather than asserting a size.
+            floor=40,
         ),
     )
 
