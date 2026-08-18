@@ -70,8 +70,10 @@ alone on purpose.
 
 ## 0. Where to resume (updated 2026-08-03; before that 2026-07-29, after Phase 3's withdrawal)
 
-**Read the freeze notice at the top of this file first — this section is accurate but does not run
-yet.** Everything below says what Phase 4 does; the freeze of 2026-08-11 says when.
+**The freeze notice at the top of this file records a freeze that LIFTED 2026-08-17 — so this
+section is accurate and runs again.** Everything below says what Phase 4 does; nothing now says
+wait. (This paragraph read "this section is accurate but does not run yet" while the freeze
+stood, and was rewritten with the lift rather than left to contradict the notice above it.)
 
 **Next phase: Phase 4**, as `§9`'s closing "The exact next phase" states it — but **Phase 4 is no
 longer promotion.** Ben settled the promotion question on 2026-08-03 (`§6` decision 5): MAM's
