@@ -211,16 +211,27 @@ Nine things went differently from what is written underneath. The first four bea
   silently reading the wrong tracker is not a risk here**, and the constants stay as they are after
   the move, the issues being about the review holman holds.
 - **Exercising that refresh found a live defect, and it is the one write the artifact oracle never
-  covers.** `main_just_render_table --update-issue-metadata` is broken by a Unicode form mismatch:
-  the GitHub label spells its ḥet **decomposed**, `U+0068 U+0323`, where `ISSUE_LABEL_TO_TAG` has
-  the precomposed `U+1E25` that this repo's NFC convention requires, so the lookup misses and the
-  refresh drops the `holam-he` tag from 8 of the 77 rows (issues 40, 27, 41, 42, 63, 71, 72).
-  Nothing wrong ships: `py_render/rt_html.py`'s `_validate_issue_tag_definitions` then raises. The
-  tracked `io/table_row_github_issues.json` is correct and only a refresh corrupts it, so the run
-  was reverted. A second label, `ḥolam vav`, is spelled **precomposed** on the same tracker, and has
-  no `ISSUE_LABEL_TO_TAG` entry — its two issues' rows have empty tags in the tracked JSON, so that
-  part is consistent and is not a defect. **Left unfixed on purpose**: one option is an
-  outward-facing label rename, so the choice is Ben's. Spawned as a task chip 2026-08-18.
+  covers — RESOLVED 2026-08-18, no commit owed here.** `main_just_render_table --update-issue-metadata`
+  was broken by a Unicode form mismatch: the GitHub label spelled its ḥet **decomposed**,
+  `U+0068 U+0323`, where `ISSUE_LABEL_TO_TAG` has the precomposed `U+1E25` that this repo's NFC
+  convention requires, so the lookup missed and the refresh dropped the `holam-he` tag from 8 of the
+  77 rows (issues 40, 27, 41, 42, 63, 71, 72). Nothing wrong shipped: `py_render/rt_html.py`'s
+  `_validate_issue_tag_definitions` then raised. The tracked `io/table_row_github_issues.json` was
+  correct throughout — only a refresh corrupted it on disk, and that run was reverted rather than
+  committed. A second label, `ḥolam vav`, is spelled **precomposed** on the same tracker and has no
+  `ISSUE_LABEL_TO_TAG` entry — its two issues' rows have empty tags in the tracked JSON, so that part
+  was always consistent and never a defect. **Left unfixed on purpose, spawned as a task chip
+  2026-08-18**: the chip's session put three fixes to Ben — normalize on read, rename the live label,
+  or accept both spellings as keys — and he chose the rename, over normalizing (which would have
+  added a `unicodedata.normalize` call to a repo family with a strong "never NFC over Hebrew"
+  convention) and over accepting both spellings (which would have left the inconsistency permanently
+  documented rather than removed). `gh label edit` renamed the live label from decomposed to
+  precomposed; the label ID (`LA_kwDOR5Dbpc8AAAACekXYaQ`) matched on issues 40 and 72 before and
+  after, confirming a true rename rather than a delete-and-recreate. That alone fixed the lookup —
+  `ISSUE_LABEL_TO_TAG`'s key was already precomposed, so **no `py/` file changed**. Re-running
+  `--update-issue-metadata` then produced an empty `git diff` on `io/table_row_github_issues.json`
+  and completed without raising; suite still 51 tests, OK. holman-ketiv-qere's tree stayed clean at
+  `6b10259` — nothing to commit or push. Ben declined to also file a holman-ketiv-qere issue for it.
 - **13 ruff findings under this repo's `ruff.toml`, and holman has never been linted.** That repo
   has no ruff in its venv and no rule set of its own, so the findings were measured by running this
   repo's ruff against its `py/`. **None of the 13 is in a file Phase 1 touched.** Nine are in
