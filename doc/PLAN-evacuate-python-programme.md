@@ -11,7 +11,7 @@ plan can own: the scope, the order, and the work that must happen **before** any
 |---|---|---|
 | Programme Phase 0 — reconcile the three drifted `check_*`/`fix_*` forks | this file | **not started** |
 | UXLC-utils | [PLAN-evacuate-python-from-UXLC-utils.md](PLAN-evacuate-python-from-UXLC-utils.md) | **DONE 2026-08-18 — all seven phases.** Phase 1 2026-08-02: `fe73d07` there, `d5a5052` here; Phase 3 2026-08-02: `662db55` and `f202d21` here, nothing there; Phase 4 2026-08-03: `ad52001` there, `2b5c87c` here; Phase 5 2026-08-03: `d5195e3` in codex-index-leningrad, `748ee2f` there, nothing in this repo's `py/`; Phase 6 2026-08-18: `30cdfd2` here, `9be1431` there; Phase 7 items 2–5 2026-08-18, no commit owed. **UXLC-utils holds zero Python** and its 214 artifacts still regenerate byte-identically from here — 213 of them untouched by Phase 6, the one that moved being `gh-pages/fois/index.html`'s breadcrumb, which now names MAM-basics. **Phase 5 dropped codex-index-leningrad's sparse `py/` half rather than repointing it** — the shared decision with the codex-index trio, written into that plan too. Phase 6 prefixed **50 of 57** bare `#NN` citations with `UXLC-utils#` and left 7 bare, so `CLAUDE.md`'s section is now "Three issue trackers"; Phase 7 item 4 deleted a 33 MB orphaned venv holding **832 `.py`**, the shape wlc-utils' Phase 7 warned of at 789. **Item 6 was done earlier, 2026-08-17, github-misc `549224e`.** This row said "Only Phase 6 remains" until the 2026-08-03 review ([#219](https://github.com/bdenckla/MAM-basics/issues/219), major 4) caught the overstatement; corrected 2026-08-04 |
-| holman-ketiv-qere | [PLAN-evacuate-python-from-holman-ketiv-qere.md](PLAN-evacuate-python-from-holman-ketiv-qere.md) | **not started — and NEXT in the Order** as of 2026-08-18, UXLC-utils being done. One hand-off from UXLC-utils' Phase 7 item 5: that repo's `py/uxlc_paths.py` is **byte-identical to MAM-basics'**, is actively imported by its `uxlc_misc/my_uxlc.py` and `uxlc_misc/my_uxlc_page_break_info.py`, and is **absent from `doc/vendoring-inventory.md`**, whose scan looks for `mb_*` packages and cannot see a loose file at the top of `py/`. Its own `main_update_vendored_files.py` names it in `_VENDORED_FILES` and syncs it from `../MAM-basics`, so it is already pointed at the right repo — this is cross-cutting finding 2 recurring, not a break |
+| holman-ketiv-qere | [PLAN-evacuate-python-from-holman-ketiv-qere.md](PLAN-evacuate-python-from-holman-ketiv-qere.md) | **Phase 1 DONE 2026-08-18** — `6b10259` there, preceded by `50b2eaa` there (a nine-day-stale artifact, committed first and alone); nothing owed in this repo's `py/`, `mb_cmn/paths.py` already being vendored there and identical, so Phase 2 genuinely does not recur. Phases 3, 4, 6, 7 not started. **Every baseline had moved** — 99 tracked `.py` not 68, 16,416 lines not 11,159, 300 `gh-pages` not 161, 9 entry points not 6, and the oracle is **335 artifacts, not 163**, of which only 175 are rewritten by a full regeneration. A whole second body of work had arrived: Holman's suggested UXLC corrections, extracted from his emails. **The hand-off from UXLC-utils' Phase 7 item 5 was wider than reported** — `py/uxlc_paths.py` is byte-identical and inventory-invisible as described, but so are the packages `py/uxlc_lci/` (4 files) and `py/uxlc_misc/` (5), all five trees named in that repo's `_VENDORED_PACKAGES`/`_VENDORED_FILES`: the pure deletions are **37, not 26**. Four corrections to the plan's own premises, all in its Phase 1 record: the fault was root **conflation** (six `parents[1]` walks) rather than cwd-relative literals, which is the shape to expect in the remaining repos; holman **has** a tracked `CLAUDE.md`, so Phase 4 edits rather than writes one; `py/tests/test_h_dot_below_nfc.py` collides here and differs, wanting a third `_Scope` rather than a copy; and holman brings **13 ruff findings**, a Phase 3 precondition this plan has no Phase 0 for. Phase 3's GitHub question is answered — `gh --repo` is named outright — and exercising that path found a live decomposed-ḥet label defect, left for Ben |
 | book-of-job | [PLAN-evacuate-python-from-book-of-job.md](PLAN-evacuate-python-from-book-of-job.md) | **not started** |
 | codex-index-aleppo, -leningrad, -cam1753 | [PLAN-evacuate-python-from-codex-index-trio.md](PLAN-evacuate-python-from-codex-index-trio.md) | **not started** — all three, cam1753 included |
 | MAM-simple | Appendix A below — **out of scope, nothing to evacuate** | closed, no work |
@@ -21,6 +21,17 @@ plan can own: the scope, the order, and the work that must happen **before** any
 before relying on any of them, and treat a mismatch as a finding rather than as noise. UXLC-utils'
 Phase 1 has since moved that repo's own figures — 102 tracked `.py`, 17,932 lines, 22 vendored
 `mb_cmn/` — and its plan records why.
+
+**That instruction has now paid twice, and the second time it moved every figure for a repo.**
+holman-ketiv-qere re-measured on 2026-08-18, at its `637237b`: **99** tracked `.py` against 68,
+**16,416** lines against 11,159, **300** tracked `gh-pages` against 161, **9** entry points against
+6, and **37** vendored files against 26 — the extra ten being `uxlc_lci/` (4), `uxlc_misc/` (5) and
+`uxlc_paths.py`, all byte-identical and all invisible to `doc/vendoring-inventory.md`. A second body
+of work had arrived in the sixteen days between: Holman's suggested UXLC corrections, extracted from
+his emails. Its plan's re-measured baselines table carries the detail. **Treat the two repos not yet
+measured as stale by a comparable margin**, and note that where holman's copies were merely
+miscounted, book-of-job's and the trio's have **diverged**, so a copy the inventory cannot see is
+lost work there rather than an accounting error.
 
 ---
 
@@ -182,7 +193,12 @@ differently-named modules rather than one reconciliation. That is a design call,
    command. It also has a **downstream consumer** (see finding 2), so doing it first is what
    teaches the trio's plan what a downstream repoint costs.
 2. **holman-ketiv-qere** — the same shape, smaller, vendored copies identical. Confirms the recipe
-   on a second repo before the expensive one.
+   on a second repo before the expensive one. **Phase 1 done 2026-08-18; Phases 3, 4, 6 and 7
+   remain.** "Smaller" held at planning time and holds less well now: the repo had grown from 68
+   tracked `.py` to 99 and from one body of work to two. It still confirmed the recipe, and the
+   correction it contributed is the one most worth carrying to steps 4 and 5 — that the thing to
+   grep for is a `Path(__file__).resolve().parents[N]` walk conflating the two roots, not a
+   cwd-relative string literal.
 3. **Programme Phase 0** — must precede both remaining plans.
 4. **book-of-job** — the largest, and the one whose Python is not under a `py/` at all.
 5. **codex-index trio** — last, and as one plan, because the three share a shape, share the
@@ -219,6 +235,21 @@ not record this**: it lists only `mb_cmn` rows for that repo, because the scan l
 MAM-basics packages. Evacuating UXLC-utils' Python breaks that script's source. Handled in
 UXLC-utils' plan; flagged here because the inventory alone will not reveal it, and because it is
 evidence that a second such relation may exist somewhere the scan cannot see.
+
+**That last clause came true twice, and the blind spot is bigger than "a loose file at the top of
+`py/`."** UXLC-utils' Phase 7 item 5 found holman-ketiv-qere's `py/uxlc_paths.py` byte-identical to
+this repo's and absent from the inventory, and reported it as the loose-file case: a scan looking for
+`mb_*` packages cannot see a single file. holman's Phase 1 then found, 2026-08-18, that **two whole
+packages are invisible on the same tracker for the same reason** — `py/uxlc_lci/` (4 files) and
+`py/uxlc_misc/` (5), both named in that repo's `_VENDORED_PACKAGES` and both synced from
+`../MAM-basics`. So the mechanism is not "loose files escape" but **`in/vendoring_policy.json`'s
+`pkg_scan_roots` is a hand-maintained list with no cross-check against what the destination repo's
+own sync script names**, exactly the failure mode a hand-maintained test registry has. **The check
+worth running per repo before its Phase 4 is to read that repo's `main_update_vendored_files.py` and
+compare its `_VENDORED_PACKAGES` and `_VENDORED_FILES` against the inventory's rows** — not to trust
+the inventory, and not to grep for `mb_*`. For holman it cost only an undercount, 26 against 37, all
+37 identical; in book-of-job and the trio the copies have **diverged**, so there the same blind spot
+would destroy a local edit.
 
 **Resolved 2026-08-03 in UXLC-utils' Phase 5: the `py/` half was dropped, not repointed**
 (`d5195e3` in codex-index-leningrad, `748ee2f` in UXLC-utils). What settled it is worth carrying:

@@ -10,52 +10,110 @@ where the two agree, that file carries the reasoning and this one does not repea
 
 | Phase | State |
 |---|---|
-| 1 — two roots, no cwd | **not started** |
+| 1 — two roots, no cwd | **DONE 2026-08-18** — `6b10259` in holman-ketiv-qere (12 files, +275/−51), preceded by `50b2eaa` there; nothing owed in this repo's `py/` |
 | 3 — copy the Python in (dual residency) | **not started** |
 | 4 — empty holman-ketiv-qere | **not started** |
 | 6 — breadcrumbs and issue citations | **not started** |
 | 7 — cross-repo bookkeeping | **not started** |
 
-Phase 2 does not recur — `mb_cmn/paths.py` already has `sibling_repo()` and `require_sibling()`.
+Phase 2 does not recur — **and confirmed 2026-08-18 for the right reason, which is not the one this
+line first gave.** That `mb_cmn/paths.py` has `sibling_repo()` and `require_sibling()` is a fact
+about MAM-basics and settles nothing: UXLC-utils' Phase 1 discovered that those functions were not
+*reachable* from the source repo, whose vendored `py/mb_cmn/` held 21 files and not that one, so its
+Phase 1 had to vendor `paths.py` in first. holman **does** already vendor it, byte-identical, and
+its two consumers here import it directly. Check reachability rather than existence in the remaining
+plans.
+
 Phase 5 has no analogue here: nothing vendors this repo's Python.
 
-## Baselines — measured 2026-08-02
+## Baselines — RE-MEASURED 2026-08-18, and every figure had moved
 
-| Measure | Value |
-|---|---|
-| tracked `.py` | **68** |
-| lines | **11,159** |
-| tracked `gh-pages` | **161** |
-| tracked `out` | **2** |
-| test modules under `py/tests/` | **8**, plus `py/main_test.py` |
-| entry points | **6** `py/main_*.py` |
+**Do not use the 2026-08-02 column.** Phase 1 re-measured at holman-ketiv-qere `637237b`
+(2026-08-12), clean tree, and a whole second body of work had arrived meanwhile: Holman's
+suggested UXLC corrections, extracted from his emails and rendered to
+`gh-pages/uxlc_corrections.html`. The README describes both halves.
 
-The oracle is the **163 tracked artifacts**. The README fixes the scope in a way that makes the
-oracle unusually sharp: exactly **77 rows** are expected in `docs-not-served/table_data.json`, and
-the dataset is not expected to grow. A regeneration that changes the row count is a failure, not a
-finding.
+Every 2026-08-18 figure is the state **before** Phase 1, at `637237b`, so that it is a baseline
+rather than a result. Phase 1 then added one file, `py/hkq_paths.py`: **Phase 3 and Phase 4 face 100
+tracked `.py`, not 99.**
 
-The regenerate-everything command is the README's own:
+| Measure | 2026-08-02 | 2026-08-18 | |
+|---|---|---|---|
+| tracked `.py` | 68 | **99** | +31 |
+| lines | 11,159 | **16,416** | +5,257 |
+| tracked `gh-pages` | 161 | **300** | +139 |
+| tracked `out` | 2 | **2** | matches |
+| tracked `docs-not-served` | (not counted) | **4** | |
+| test modules under `py/tests/` | 8 + `py/main_test.py` | **8** + `py/main_test.py` | matches |
+| entry points | 6 `py/main_*.py` | **9** `py/main_*.py` | +3 |
+| tracked total | (not counted) | **454** | |
+
+Three packages that did not exist at planning time — `py/uxlc_misc/` (5), `py/uxlc_lci/` (4),
+`py/uxlc_comments/` (3) — plus the loose `py/uxlc_paths.py`. Three new entry points:
+`main_estimate_uxlc_locations`, `main_ingest_uxlc_emails`, `main_render_uxlc_corrections`.
+
+**The oracle is 335 tracked artifacts, not 163**, across six trees: `gh-pages` 300, `emails` 26,
+`docs-not-served` 4, `out` 2, `data` 2, `io` 1. Of those, **175 are actually rewritten** by a full
+regeneration and **160 are untouched** — see Phase 1's record for that list, which is what Phase 4
+must name. The README still fixes the ketiv/qere scope sharply: exactly **77 rows** are expected in
+`docs-not-served/table_data.json`, and a regeneration that changes the row count is a failure, not
+a finding. Confirmed at 77 on 2026-08-18.
+
+Regenerating everything is **six commands, not one**. The README's own command covers the
+ketiv/qere half only:
 
 ```powershell
 .venv\Scripts\python.exe py/main_extract_docx_and_render_table.py
+.venv\Scripts\python.exe py/main_ingest_uxlc_emails.py
+.venv\Scripts\python.exe py/main_estimate_uxlc_locations.py
+.venv\Scripts\python.exe py/main_render_uxlc_corrections.py
+.venv\Scripts\python.exe py/main_search_holam_he_qere.py
+.venv\Scripts\python.exe py/main_search_final_hiriq_verse_text.py
 ```
+
+`main_ingest_uxlc_emails` needs the untracked mailbox at `.novc/eml/` (13 messages, present
+2026-08-18) and `main_estimate_uxlc_locations` needs the sibling UXLC-utils clone;
+`main_just_render_table` re-renders a subset of the first command's output and is not needed for a
+full pass.
+
+**This repo's venv has black but NO pytest**, checked 2026-08-18 — `py/main_test.py` is a
+`unittest` loader, so nothing there needs it. That makes a fourth repo in that shape, alongside
+mgketer, book-of-job and codex-index-aleppo. Its ruff comes from **this** repo's venv, holman
+having none.
 
 ## What moves, and what is a pure deletion
 
-| Directory | Files | Disposition |
-|---|---|---|
-| `py/py_render/` | 14 | moves as-is — no collision with MAM-basics' `render_wt` |
-| `py/python_modules/` | 14 | moves, **renamed** — below |
-| `py/tests/` | 8 | folds into MAM-basics' `py/tests/` |
-| `py/main_*.py` | 6 | moves, less two that disappear |
-| `py/mb_cmn/` | 17 | **pure deletion** |
-| `py/mb_diff_mpu/` | 9 | **pure deletion** |
+**Re-counted 2026-08-18 by Phase 1.** Every row below had grown, and the pure deletions were
+undercounted by ten because the inventory cannot see three of the five vendored trees.
 
-The 26 vendored files are recorded `identical` / `copy_script` / **`active`** in
-`doc/vendoring-inventory.md` — the only repo in the whole programme whose copies the inventory
-calls active rather than stale. **Re-confirm with `cmp` immediately before deleting anyway.** With
-them gone, **42 files actually move**.
+| Directory | 2026-08-02 | 2026-08-18 | Disposition |
+|---|---|---|---|
+| `py/py_render/` | 14 | **19** | moves as-is — name confirmed free in this repo's `py/` |
+| `py/python_modules/` | 14 | **23** | moves, **renamed** to `hkq_cmn/` — below |
+| `py/uxlc_comments/` | (did not exist) | **3** | moves as-is — name confirmed free |
+| `py/tests/` | 8 | **8** | folds in, but **one of the eight collides and differs** — below |
+| `py/main_*.py` | 6 | **9** | moves, less two that disappear |
+| `py/hkq_paths.py` | (did not exist) | **1** | moves — Phase 1 wrote it; one line changes at the move |
+| `py/mb_cmn/` | 17 | **18** | **pure deletion** |
+| `py/mb_diff_mpu/` | 9 | **9** | **pure deletion** |
+| `py/uxlc_lci/` | (not listed) | **4** | **pure deletion** |
+| `py/uxlc_misc/` | (not listed) | **5** | **pure deletion** |
+| `py/uxlc_paths.py` | (not listed) | **1** | **pure deletion** |
+
+**The pure deletions are 37, not 26, and all 37 are byte-identical** to this repo's originals by
+`cmp`, checked 2026-08-18. `doc/vendoring-inventory.md` records only two of the five trees —
+`mb_cmn` (18 files) and `mb_diff_mpu` (9) — because `in/vendoring_policy.json`'s `pkg_scan_roots`
+for this repo declares only those two. `uxlc_lci`, `uxlc_misc` and `uxlc_paths.py` appear **nowhere**
+in the inventory, though holman's own `py/main_update_vendored_files.py` names all five: the first
+four in `_VENDORED_PACKAGES` and `uxlc_paths.py` in `_VENDORED_FILES`, synced from `../MAM-basics`.
+This is the programme's cross-cutting finding 2 recurring, and it is wider than the hand-off from
+UXLC-utils' Phase 7 item 5 described — that hand-off named the one loose file, and the two packages
+are invisible for the same reason. **Re-confirm with `cmp` immediately before deleting anyway.**
+
+The arithmetic, against the 100 tracked `.py` holman has after Phase 1 added `hkq_paths.py`: 37 are
+pure deletions, leaving 63; `main_test.py` and `main_update_vendored_files.py` disappear, for the
+reasons UXLC-utils' plan gives; so **61 files land here**. Eight of those 61 are tests folding into
+this repo's existing `py/tests/`, and one of the eight needs a decision rather than a copy — below.
 
 - **`python_modules/` is a bad name to import into a shared tree** — it says nothing about what is
   inside, and it is a name a second repo already uses (mgketer's `py/python_modules/`, which is
@@ -83,7 +141,138 @@ this one has no `check_registry()` walk of the kind UXLC-utils added.
 Confirm the merge by **collection count**, not by reading: a module that collects zero tests is
 the silent-green failure the testing policy warns about, and it fails the phase.
 
-## Phase 1 — two roots, no cwd
+## Phase 1 — two roots, no cwd — DONE 2026-08-18
+
+**Landed as `6b10259` in holman-ketiv-qere (12 files, +275/−51). Nothing was owed in this repo's
+`py/`** — unlike UXLC-utils' Phase 1, which had to vendor `mb_cmn/paths.py` in first. It is already
+there in holman and byte-identical, so the Phase-2-does-not-recur conclusion **does** hold for this
+repo. Check it per repo in the remaining plans regardless; UXLC-utils' Phase 1 record says why.
+
+**One commit came first, deliberately alone: `50b2eaa`, regenerating
+`out/holam_he_qere_report.json`.** That tracked artifact was nine days stale. `27294af` (2026-08-09)
+re-vendored `py/mb_cmn/template_names.py` from this repo, where the ketiv/qere template names had
+been respelled with U+05F4 HEBREW PUNCTUATION GERSHAYIM in place of an ASCII double quote, and
+nothing regenerated the report afterwards; it was last written 2026-04-27. The whole diff is that
+one substitution in two names, `כו״ק` and `מ:קו״כ-אם-2`, 62 lines each way, with every hit count and
+every vowel-only form identical. Committing it before touching a path is what gave Phase 1 a clean
+oracle — the same move UXLC-utils' Phase 3 made with `662db55`.
+
+**The verification passed as specified.** From `C:\Users\BenDe\GitRepos\MAM-basics` as the working
+directory, each entry point by absolute path on holman's own interpreter: all six generators, then
+`main_just_render_table`, then `main_test`. Afterwards holman held nothing but the twelve `.py`
+files, and **MAM-basics, UXLC-utils and MAM-parsed were all clean** — so the 335 artifacts came back
+byte-identical from a foreign cwd and nothing was written into the wrong tree. Suite **51 tests,
+OK**, unchanged from the pre-change baseline. `black` clean on all twelve files.
+
+Nine things went differently from what is written underneath. The first four bear on later phases:
+
+- **The fault was root CONFLATION, not cwd-relativity, and the plan's grep could not have found
+  most of it.** `main_just_render_table`'s two argparse defaults were the only genuinely
+  cwd-relative literals in the repo. What actually broke the move was that each of the six
+  generators had its own `Path(__file__).resolve().parents[1]`, spelled `REPO_ROOT`, and composed
+  **both** data paths (`REPO_ROOT / "gh-pages"`) and sibling-repo paths (`REPO_ROOT.parent /
+  "MAM-parsed"`) off that one value. Those are cwd-independent already — which is exactly why a
+  grep for a leading quote misses them — and after the move the data ones resolve silently into
+  MAM-basics' tree. Two library modules had the same shape at `parents[2]`
+  (`python_modules/qere_ending_search.py`, `python_modules/table_row_github_issues.py`) and a third
+  at `parents[2] / "assets"` (`py_render/rt_assets.py`). **Expect this shape rather than string
+  literals in book-of-job and the codex-index trio**, and grep for `parents[` as well.
+- **`py/tests/test_h_dot_below_nfc.py` collides with this repo's file of the same name and the two
+  DIFFER** — 304 lines there against 433 here. Do not merge them and do not copy holman's over.
+  This repo's version already scans **two repos** through a `_scopes()` function, one `_Scope` per
+  tree with its own exclusions and floor, and the UXLC-utils scope is rooted at
+  `uxlc_paths.uxlc_data_root()`. **Phase 3's move is therefore to add a third `_Scope` rooted at
+  `hkq_paths.hkq_data_root()`, and delete holman's copy** — which is what UXLC-utils' Phase 3 did
+  with its own near-copy, `py/repo_hygiene/nfc_h_dot_below_test.py`. Simply dropping holman's copy
+  without adding the scope would silently end NFC linting over that repo's hand-authored
+  non-Python files: `doc/` (2), `README.md`, `CLAUDE.md`, `docs-not-served/table_data_fields.md`
+  and the 26 files under `emails/`. Pick the floor the way the UXLC-utils scope's comment explains.
+- **Phase 4's premise is wrong: holman-ketiv-qere HAS a tracked `CLAUDE.md`.** It has five
+  sections, and one of them is load-bearing — the public-repo boundary that keeps every email
+  address out of a tracked file, `.eml` files living untracked in `.novc/eml/` while
+  `main_ingest_uxlc_emails.py` writes an address-free derivative under `emails/`. Phase 4 does not
+  write that file from nothing; it **edits** it, and the address boundary and the `light-dark()`
+  CSS convention must survive intact. Its "Vendor whole files" section is the one that goes.
+- **The oracle is 335 artifacts and only 175 of them are regenerated at all.** An mtime snapshot
+  immediately around a full six-command run, taken from both working directories with the same
+  result, shows **175 rewritten and 160 untouched**. The 160 are the list Phase 4 must name: **154
+  `gh-pages/img/`**, `gh-pages/index.html`, the two `gh-pages/JC3 ...` pages,
+  `gh-pages/woff2/Taamey_D.woff2`, `docs-not-served/table_data_fields.md` and
+  `io/table_row_github_issues.json`. The 154 are untouched **by design** —
+  `extract_docx_xml_utils.export_images` is write-once and raises rather than overwrite an image
+  whose bytes differ, with three Aleppo crops named in `PRESERVED_EXTRACTED_IMAGE_PATHS` exempted
+  as manual replacements. So for that tree the oracle's proof is indirect and stronger than a diff:
+  a wrong root produces 154 files where nothing tracks them, and MAM-basics' working tree stayed
+  empty.
+- **Phase 3's GitHub question is answered, positively.**
+  `python_modules/refresh_table_row_github_issues.py` passes `--repo bdenckla/holman-ketiv-qere` to
+  `gh issue list` from constants in `table_row_github_issues.py`, so the tracker is named outright
+  and no working directory picks it. Nothing authenticates through anything cwd-dependent. **A tool
+  silently reading the wrong tracker is not a risk here**, and the constants stay as they are after
+  the move, the issues being about the review holman holds.
+- **Exercising that refresh found a live defect, and it is the one write the artifact oracle never
+  covers.** `main_just_render_table --update-issue-metadata` is broken by a Unicode form mismatch:
+  the GitHub label spells its ḥet **decomposed**, `U+0068 U+0323`, where `ISSUE_LABEL_TO_TAG` has
+  the precomposed `U+1E25` that this repo's NFC convention requires, so the lookup misses and the
+  refresh drops the `holam-he` tag from 8 of the 77 rows (issues 40, 27, 41, 42, 63, 71, 72).
+  Nothing wrong ships: `py_render/rt_html.py`'s `_validate_issue_tag_definitions` then raises. The
+  tracked `io/table_row_github_issues.json` is correct and only a refresh corrupts it, so the run
+  was reverted. A second label, `ḥolam vav`, is spelled **precomposed** on the same tracker, and has
+  no `ISSUE_LABEL_TO_TAG` entry — its two issues' rows have empty tags in the tracked JSON, so that
+  part is consistent and is not a defect. **Left unfixed on purpose**: one option is an
+  outward-facing label rename, so the choice is Ben's. Spawned as a task chip 2026-08-18.
+- **13 ruff findings under this repo's `ruff.toml`, and holman has never been linted.** That repo
+  has no ruff in its venv and no rule set of its own, so the findings were measured by running this
+  repo's ruff against its `py/`. **None of the 13 is in a file Phase 1 touched.** Nine are in
+  `main_search_holam_he_qere.py`, whose module docstring sits *after* `from __future__ import
+  annotations`, making every later import an E402; the rest are two F841 unused bindings
+  (`rt_html.py`, `verify_table_words_in_mam_plus.py` — the latter checked and merely dead, not a
+  wrong-variable bug) and two F401 unused imports in `rt_record_card.py`. **This is a Phase 3
+  precondition**, that phase requiring `ruff check py` to exit 0 here; it is the analogue of the
+  wlc-utils plan's Phase 0 step 4, which this plan has no counterpart to.
+- **The test registry gap is still closed.** All eight `module_name=` entries in
+  `TEST_MODULE_SPECS` match the eight files under `py/tests/` exactly, re-checked 2026-08-18. The
+  merge still inherits no silently-dead tests. `py/main_test.py` remains a `unittest` loader with a
+  hand-maintained tuple and no `check_registry()` walk, so re-check again before Phase 3.
+- **Two parameters were renamed to say what they already were.** `export_images`' and the docx
+  pipeline's `repo_root` parameter is now `data_root`, that being the root each extracted image
+  path is measured against by `relative_to` — a data-root use throughout, and one that raises
+  loudly rather than silently misfiling if the wrong root reaches it.
+  `PRESERVED_EXTRACTED_IMAGE_PATHS`' comment now says the paths are spelled relative to the data
+  root, and says "three" crops where it had said "two" of three since 2026-04.
+
+### The accessor
+
+`py/hkq_paths.py`, deliberately the same shape as `py/uxlc_paths.py`. `hkq_data_root()` is
+`paths.repo_root()` today and becomes
+`paths.require_sibling("holman-ketiv-qere", paths.sibling_repo("holman-ketiv-qere"))` after the
+move; **that body is the whole of the Phase 3 retarget**, because nothing else composes a data path
+off anything but that function. Twelve accessors, one per tree or file that appeared in more than
+one module: `gh_pages_dir`, `email_img_dir`, `out_dir`, `docs_not_served_dir`, `emails_dir`,
+`data_dir`, `io_dir`, `assets_dir`, `novc_dir`, `eml_dir`, plus named paths for the review docx, the
+77-row table, the findings HTML, the corrections HTML and JSON, and the row-issues JSON.
+
+Two things about it worth carrying forward:
+
+- **`assets/` is DATA, not code**, though it is authored CSS and JS rather than generated output. It
+  is input to a generator whose published copies sit under `gh-pages/`, and it stays with the site.
+  A reader who classifies it by "is it hand-written source?" gets it backwards.
+- **`mam_qere_words_path()` is the one path whose KIND flips at the move.** It names this repo's
+  `out/mam-qere-words.json`, the sanity check the holam-he search compares its hit set against.
+  Today that is `paths.sibling_repo("MAM-basics") / "out" / ...`; after the move it is
+  `paths.out_dir()` — the CODE root's tree, where every other accessor in the module wants the DATA
+  root's. It has an accessor of its own so that the flip is one line and is documented where it
+  happens.
+
+Sibling lookups now go through `mb_cmn.paths` — `sibling_repo("MAM-parsed")`,
+`mam_parsed_plus_dir()`, `uxlc_utils_dir()` — which brings the `REPO_<NAME>_DIR` / `REPOS_ROOT`
+override chain with them, so they also stop resolving wrongly in a worktree.
+
+---
+
+The rest of this section is the plan as written before the phase ran. Its three named sites were the
+starting point and not the total, and its framing — cwd-relative string literals — was the wrong
+diagnosis, as the first bullet above records.
 
 Known cwd-relative repo-internal literals, from
 `git grep -nI '"gh-pages/\|"out/\|"in/\|"docs-not-served/' -- '*.py'`:
@@ -103,32 +292,67 @@ artifacts to a zero diff.
 
 ## Phase 3 — copy the Python in (dual residency)
 
-The 42 moving files land under `py/`, with `python_modules/` → `hkq_cmn/` and the two
-disappearing entry points. Retarget the data root to `../holman-ketiv-qere`; fold the tests;
-watch `force_utf8_io()` where a former entry point becomes a library module. **Must complete in a
-single session**, and **stop and ask Ben first**.
+**61 moving files** land under `py/` (not 42 — see the re-counted disposition table), with
+`python_modules/` → `hkq_cmn/` and the two disappearing entry points. Retarget the data root to
+`../holman-ketiv-qere`; fold the tests; watch `force_utf8_io()` where a former entry point becomes a
+library module. **Must complete in a single session**, and **stop and ask Ben first**.
 
-The oracle run is `main_extract_docx_and_render_table` from MAM-basics, writing into
-`../holman-ketiv-qere`, then `git status --porcelain` empty in both repos — and the row count
-still 77.
+**The retarget is one line**, the body of `hkq_paths.hkq_data_root()` — Phase 1 built the accessor
+for exactly this, and its record says what the new body is.
 
-**One thing to check that the other plans do not have:** `py/python_modules/table_row_github_issues.py`
-and `refresh_table_row_github_issues.py` reach GitHub. Establish which repo's issue tracker they
-name before the move, and whether they authenticate through anything that assumes the process's
-working directory. A tool that silently starts reading the wrong tracker is a failure the artifact
-oracle cannot see.
+The oracle run is **six commands, not one**, listed under the re-measured baselines above, all from
+MAM-basics writing into `../holman-ketiv-qere`, then `git status --porcelain` empty in both repos —
+and the row count still 77. Expect **175 of the 335 artifacts to be rewritten**; the other 160 are
+named in Phase 1's record, and a wrong root shows up there as untracked files appearing in
+MAM-basics rather than as a diff, so check for those too.
+
+**Two preconditions Phase 1 established, neither of which this section originally anticipated:**
+
+- **`ruff check py` must exit 0 here afterwards, and holman brings 13 findings with it**, in files
+  Phase 1 did not touch. Fix them — in holman, before the copy, or here in a commit of their own
+  immediately after — but do not let them ride along in the copy commit, or the copy looks like it
+  caused them. Phase 1's record enumerates them.
+- **`py/tests/test_h_dot_below_nfc.py` must NOT be copied.** It collides with this repo's file of
+  the same name, the two differ, and the right move is a third `_Scope` in this repo's `_scopes()`
+  rooted at `hkq_paths.hkq_data_root()`, then deleting holman's copy. Phase 1's record has the
+  reasoning and the trap in getting it wrong.
+
+**One thing to check that the other plans do not have — ANSWERED 2026-08-18, no work owed.**
+`py/python_modules/table_row_github_issues.py` and `refresh_table_row_github_issues.py` reach
+GitHub, and they name `bdenckla/holman-ketiv-qere` outright, as `REPO_OWNER`/`REPO_NAME` constants
+passed to `gh issue list --repo`. No working directory picks the tracker and nothing authenticates
+cwd-dependently, so a tool silently reading the wrong tracker is not a risk here and the constants
+stay as they are. What that path *does* have is a live Unicode-form defect, unrelated to the move
+and recorded in Phase 1's findings.
 
 ## Phase 4 — empty holman-ketiv-qere
 
-Delete all 68 tracked `.py` and the `py/` tree. **Stop and ask Ben first.**
+Delete all **100** tracked `.py` (not 68 — see the re-measured baselines) and the `py/` tree.
+**Stop and ask Ben first.**
 
-**This repo has no tracked `CLAUDE.md`**, so unlike UXLC-utils there is no conventions file to
-split — but that cuts the wrong way: a reader arriving afterwards has *nothing* telling them where
-the code went. **Write one in this phase**, saying that there is no Python here, that the code
-generating `gh-pages/`, `out/` and `docs-not-served/` is `../MAM-basics/py/`, which entry point
-writes what, and that the 77-row expectation is a fixed scope rather than a current count. The
-README already carries the workflow commands and must be updated in the same commit, since every
-one of them names a path this phase deletes.
+**CORRECTED 2026-08-18 by Phase 1: this repo DOES have a tracked `CLAUDE.md`.** The sentence below
+saying it does not was wrong, and acting on it would have overwritten a live conventions file. It
+has five sections, and two must survive this phase intact:
+
+- **the public-repo address boundary**, which is the important one. A `.eml` file's headers have
+  Holman's address, Chris Kimball's and Ben's; those files are untracked in `.novc/eml/`, and
+  `main_ingest_uxlc_emails.py` writes an address-free derivative under `emails/` that everything
+  downstream reads, with `uxlc_email_extract.redact_addresses` running over each body and
+  `_sender_display_name` raising rather than passing a bare From header through. Nothing about the
+  Python moving changes that boundary, and the section must not be casualty to a rewrite.
+- **the `light-dark()` CSS convention**, which governs `assets/` — a tree that stays here.
+
+What that file needs *added* is what the retired sentence wanted written: that there is no Python
+here any more, that the code generating `gh-pages/`, `out/`, `docs-not-served/`, `emails/`, `data/`
+and `io/` is `../MAM-basics/py/`, which entry point writes what, and that the 77-row expectation is
+a fixed scope rather than a current count. Its "Vendor whole files" section is the one that goes,
+`py/main_update_vendored_files.py` being deleted. Its two sections on locating a word in the
+manuscripts already point at sibling repos and need no change. The README carries the workflow
+commands and must be updated in the same commit, since every one of them names a path this phase
+deletes — and there are **six** such commands, not the one the README leads with.
+
+**Name the 160 artifacts a full regeneration does NOT rewrite**, the way wlc-utils' Phase 4 named
+its 111 and UXLC-utils' Phase 3 its 87. Phase 1's record lists them.
 
 ## Phase 6 — breadcrumbs and issue citations
 
@@ -150,6 +374,16 @@ repo's own tracker, and must not be rewritten.** Distinguish the two before touc
    `py/mb_cmn` and `py/mb_diff_mpu`; `py/main_vendoring.py --all` **raises** on a missing scan root
    rather than degrading. Regenerate `doc/vendoring-inventory.md` in the same commit. This repo is
    two of the inventory's 19 rows.
+
+   **Note what those two rows do NOT cover, measured 2026-08-18: `py/uxlc_lci/` (4 files),
+   `py/uxlc_misc/` (5) and `py/uxlc_paths.py` are vendored from this repo too — named in holman's
+   `_VENDORED_PACKAGES` and `_VENDORED_FILES` — and appear nowhere in the inventory,** the scan
+   roots declaring only the two `mb_*` packages. Deleting the entry disposes of the undercount
+   along with the rest, so **no fix is owed here**; it is recorded because Phase 4's pure-deletion
+   accounting depends on it (37 files, not 26) and because the same blind spot may hide copies in
+   book-of-job and the codex-index trio, where the copies have **diverged** and a missed one is
+   lost work rather than a miscount. This is the programme's cross-cutting finding 2, wider than
+   the UXLC-utils hand-off that named only the one loose file.
 2. `all-repos.code-workspace` — leave it listed; it keeps its tracked non-Python files.
 3. Confirm `run_black.py` and `check_repo_standards.py` skip it cleanly on the next sweep.
 4. **Delete its `.venv` and any orphaned agent worktrees**, per the 789-stray-file finding in the
