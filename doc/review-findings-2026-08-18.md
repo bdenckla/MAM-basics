@@ -187,9 +187,10 @@ wrong code, no wrong data and no broken artifact** in the window.
 ## How the review was acted on (2026-08-18, during the review)
 
 Finding 2 was the only actionable a session could take without a decision from Ben, and it was
-fixed before this doc was filed (`52cb1c6`). Finding 1's action is Ben's: close #228, or record
-in it what is deliberately held open. Findings 3–5 recommend no work (immutable messages,
-practices going forward, dated figures behaving as designed).
+fixed before this doc was filed (`52cb1c6`). Finding 1 closed the same day: Ben instructed
+"close #228" within the hour of this doc's filing, and it was closed with a comment citing this
+doc. Findings 3–5 recommend no work (immutable messages, practices going forward, dated figures
+behaving as designed).
 
 ## Open ends the window itself declares (not findings)
 
