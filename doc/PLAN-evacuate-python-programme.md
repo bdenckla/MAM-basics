@@ -9,7 +9,7 @@ plan can own: the scope, the order, and the work that must happen **before** any
 
 | Repo | Plan | State |
 |---|---|---|
-| Programme Phase 0 — reconcile the three drifted `check_*`/`fix_*` forks | this file | **not started** |
+| Programme Phase 0 — reconcile the three drifted `check_*`/`fix_*` forks | this file | **0a DONE 2026-08-19; 0b and 0c STOPPED AT THE GATE — awaiting Ben's design call.** 0a classified all sixteen files and found category (iii) differences in two of the six scripts, which this plan's own gate makes a stop-and-ask: `check_all.py` is three different registers of which checks a repo runs (seven in book-of-job against four in each codex-index repo, over three different sets of checkers), and `check_word_finding.py` is two programs against two manuscripts, differing in word-image package, quirkrec field, API and maqaf-compound tolerance. **Four of the sixteen are not forked at all** — the four `py_cam1753_word_image/` files are the same committed blob in book-of-job and codex-index-cam1753, and the table's "all four differ" was `cmp` reading book-of-job's stale CRLF working tree, so **compare committed blobs, not working trees, at book-of-job and the trio**; eight files diverge, not twelve. Three further findings, each with its re-measure command in the section below: codex-index-cam1753's two `fix_*` scripts lack the `newline=""` that reached book-of-job and codex-index-aleppo on 2026-07-06, so they write CRLF against that repo's `.gitattributes`; codex-index-aleppo's `check_mark_order.py` reads **none** of that repo's 84 tracked `.json`, because `root = Path(__file__).resolve().parent` is byte-identical in all three copies and resolves to `py/` there — holman-ketiv-qere's Phase 1 root conflation in a shape no diff shows; and two of codex-index-aleppo's four checks already fail at `3fd07be`, so 0b has no zero-diff oracle in that repo. **Nothing was committed in any of the three repos** |
 | UXLC-utils | [PLAN-evacuate-python-from-UXLC-utils.md](PLAN-evacuate-python-from-UXLC-utils.md) | **DONE 2026-08-18 — all seven phases.** Phase 1 2026-08-02: `fe73d07` there, `d5a5052` here; Phase 3 2026-08-02: `662db55` and `f202d21` here, nothing there; Phase 4 2026-08-03: `ad52001` there, `2b5c87c` here; Phase 5 2026-08-03: `d5195e3` in codex-index-leningrad, `748ee2f` there, nothing in this repo's `py/`; Phase 6 2026-08-18: `30cdfd2` here, `9be1431` there; Phase 7 items 2–5 2026-08-18, no commit owed. **UXLC-utils holds zero Python** and its 214 artifacts still regenerate byte-identically from here — 213 of them untouched by Phase 6, the one that moved being `gh-pages/fois/index.html`'s breadcrumb, which now names MAM-basics. **Phase 5 dropped codex-index-leningrad's sparse `py/` half rather than repointing it** — the shared decision with the codex-index trio, written into that plan too. Phase 6 prefixed **50 of 57** bare `#NN` citations with `UXLC-utils#` and left 7 bare, so `CLAUDE.md`'s section is now "Three issue trackers"; Phase 7 item 4 deleted a 33 MB orphaned venv holding **832 `.py`**, the shape wlc-utils' Phase 7 warned of at 789. **Item 6 was done earlier, 2026-08-17, github-misc `549224e`.** This row said "Only Phase 6 remains" until the 2026-08-03 review ([#219](https://github.com/bdenckla/MAM-basics/issues/219), major 4) caught the overstatement; corrected 2026-08-04 |
 | holman-ketiv-qere | [PLAN-evacuate-python-from-holman-ketiv-qere.md](PLAN-evacuate-python-from-holman-ketiv-qere.md) | **DONE 2026-08-19 — every phase.** Phases 1, 3, 4 and 6 plus Phase 7 item 1 all landed 2026-08-18; Phase 7 items 2–5 on 2026-08-19. Phase 2 does not recur here and Phase 5 has no analogue, so the plan is complete at five phases. **holman-ketiv-qere holds zero Python** and its 335 artifacts still regenerate from here, 175 rewritten and 160 untouched, `row_count` 77. Phase 7: items 2 and 3 confirmed, item 3's two strings coming back verbatim as UXLC-utils' had; item 4 deleted a **22 MB** venv — black and no pytest, smaller than wlc-utils' 789-`.py` and UXLC-utils' 832-`.py`/33 MB shapes — after `--clean-worktrees` ran first and found nothing, and after a junction check that reported a plain `Directory`. **Three findings, and unlike UXLC-utils' Phase 7 this one needed a commit** — a one-line commit in holman-ketiv-qere, `6b0bb63` there. **Finding 1: item 4's safety check failed on one tracked site.** `doc/holman-manuscript-citations.md`'s closing line named holman-ketiv-qere's **own** venv by absolute path, an instruction pointing at the directory the phase was about to delete; Phase 4 had rewritten all three `py/…` module paths in that very file, so it was missed rather than spared, and the reason is that **a `.venv` path carries no `py/` prefix and so is invisible to the `py/[A-Za-z_./]*` grep Phases 4 and 6 both swept with** — the same blind spot Phase 6 recorded for `hkq_cmn/uxlc_standard_atoms`. **Grep for the interpreter as well as for the code paths** at book-of-job and the trio. Two descriptive `.venv` sentences in holman-ketiv-qere's `CLAUDE.md` were left, UXLC-utils' `CLAUDE.md` carrying the identical one and its Phase 7 having left that. **Finding 2, left for Ben: a stale cross-reference in a third repo, which no repo's tooling can see.** MAM-private's `mgketer/documentation/mpu-parsing.md` (lines 9–10) and its generated `mgketer/out-reports/mpu-parsing.html` (lines 21–22) cite `holman-ketiv-qere/py/python_modules/mam_plus_verse_data.py` and `…/qere_projection.py` under an explicit "check for matching logic to propagate" heading — **stale twice over**, holman-ketiv-qere holding no Python and `python_modules/` having been renamed `hkq_cmn/`; the live targets are `MAM-basics/py/hkq_cmn/`. Not fixed, on the item-6 precedent that a commit to a third repo stops and asks. **This is cross-cutting finding 2 in a new shape** — a documentation cross-reference rather than a vendored copy — so **run item 5's grep against MAM-private** at the remaining repos, which the earlier plans had no reason to. **Finding 3 corrects a figure these plans have been carrying**: the `59 subtests` recorded by holman-ketiv-qere's Phases 3, 4 and 6 does **not** reproduce — `pytest-subtests` is not installed in `.venv`, so pytest cannot report it and the word appears nowhere in the output. The passed and skipped counts match exactly, so **drop the third figure** and record the suite as **947 passed / 5 skipped**; re-measure rather than copying a figure whose instrument is not in the venv. Phase 6: `4e9d809` here (the generator), `ce6dd7d` there (three artifacts), plus a `CLAUDE.md` commit. The five stale `py/…` paths flipped in **two shapes, which the artifacts themselves settled** — a bare `MAM-basics/py/…` in the two generated `note` fields, matching the one pre-existing `MAM-basics'` in the very file being edited, and `../MAM-basics/py/…` in the hand-authored `table_data_fields.md`, matching the README and `CLAUDE.md` Phase 4 had rewritten that way the same day; **ask which neighbourhood a breadcrumb sits in rather than picking one shape per repo.** **Not one bare `#NN` needed prefixing** — every `#NN` holman-ketiv-qere's Python ever carried is a CSS hex colour, a UXLC change anchor, a Yeivin *ITM* section number, or an issue of **MAM-basics'** own, so 60 files moved and none cited the tracker whose name would have been the prefix: **the citation count is not a function of the file count, so measure it before budgeting for it.** `CLAUDE.md` is now **"Four issue trackers"** — 81 issues, numbered 1–81, 60 open, the **whole** range colliding, and six numbers it already cited are now four-way. holman-ketiv-qere is also the one repo of the four needing **no `doc/` exception**, its two `doc/` files carrying no bare `#NN` at all. The `22` bare citations named in that phase's task prompt have **no source in either plan** and match no measurement. Phase 4: `0890cb8` there (111 files, +121/−16,838) and `b72f785` here — **holman-ketiv-qere holds zero Python**, and its 335 artifacts still regenerate byte-identically from here, 175 rewritten and 160 untouched on both the before and after runs, row count still 77. **The tracked deletion was 107 files, not 104**: five `_provenance.md` rather than four, the fifth being `py/_provenance.md` for the loose `py/uxlc_paths.py` and invisible to the inventory for the same reason that file is; plus `py/.gitignore`, plus `.vscode/settings.json`, which Ben agreed as an extra. **`git ls-files py \| grep -v '\.py$'` before quoting a deletion size** in book-of-job and the trio. **Phase 7 item 1 landed inside Phase 4**, the scan-root guard failing twice in the phase's own verification run — UXLC-utils' Phase 4 predicted exactly that for every remaining plan, and it now has two instances. The suite moves 950 → **947**, three tests not two: `test_vendoring_policy_paths.py` derives every parametrize list from the policy, so a dropped entry costs a dest-repo case besides its scan-root cases, the same 3 UXLC-utils lost — **predict three per repo**. The README's commands were **nine, not six**, the extra three being `main_test.py`, an entry point that disappears rather than moving, so its Tests section could not be repointed by prefix. **Ben chose to rewrite every `py/…` path** in that README and in holman's `doc/`, against the state-one-substitution answer he gave for UXLC-utils' `doc/` — not a reversal, since here the package was renamed to `hkq_cmn/` and two more trees were pure deletions, so no single stated rule covers the cases; **ask per repo**. One baseline had moved again and it was Phase 3's own effect: 16,637 lines rather than 16,640, `9e290ce` having netted −3 after the figure was taken. Phases 1 and 3, for the record: Phase 1: `6b10259` there, preceded by `50b2eaa` there (a nine-day-stale artifact, committed first and alone); nothing owed in this repo's `py/`, `mb_cmn/paths.py` already being vendored there and identical, so Phase 2 genuinely does not recur. Phase 3: `1be01b5` here, 60 new files under `py/` plus a modified `py/tests/test_h_dot_below_nfc.py`, with `9e290ce` and `15824d4` in holman-ketiv-qere either side of it — the ruff and UTF-8 preconditions before, the one artifact the `python_modules`→`hkq_cmn` rename reaches after, both deliberate exceptions to "nothing is committed there". **61 files move and only 60 land**, the NFC guard being a third `_Scope` rather than a copy; that scope also needed `.docx` added to `_BINARY_EXTENSIONS`, which holman's copy listed and this repo's did not, so **diff the binary-extension sets as well as the exclusions at every remaining repo carrying that guard**. Suite 905/5 → **950/5**, up by the 45 the seven copied modules collect; 175 of the 335 artifacts rewritten and 160 untouched, matching Phase 1 exactly; row count still 77. **The source-lint crop was 3, not UXLC-utils' 68** — holman's prose is about ketiv/qere rather than accentuation, so budget that cost by subject matter and expect book-of-job and the trio to behave like UXLC-utils instead. **Three of the seven moving entry points had no `sys.stdout.reconfigure` at all**, so UXLC-utils' "the hazard did not materialize" was a fact about that repo's `CLAUDE.md` rather than about the recipe. **Every baseline had moved** — 99 tracked `.py` not 68, 16,416 lines not 11,159, 300 `gh-pages` not 161, 9 entry points not 6, and the oracle is **335 artifacts, not 163**, of which only 175 are rewritten by a full regeneration. A whole second body of work had arrived: Holman's suggested UXLC corrections, extracted from his emails. **The hand-off from UXLC-utils' Phase 7 item 5 was wider than reported** — `py/uxlc_paths.py` is byte-identical and inventory-invisible as described, but so are the packages `py/uxlc_lci/` (4 files) and `py/uxlc_misc/` (5), all five trees named in that repo's `_VENDORED_PACKAGES`/`_VENDORED_FILES`: the pure deletions are **37, not 26**. Four corrections to the plan's own premises, all in its Phase 1 record: the fault was root **conflation** (six `parents[1]` walks) rather than cwd-relative literals, which is the shape to expect in the remaining repos; holman **has** a tracked `CLAUDE.md`, so Phase 4 edits rather than writes one; `py/tests/test_h_dot_below_nfc.py` collides here and differs, wanting a third `_Scope` rather than a copy; and holman brings **13 ruff findings**, a Phase 3 precondition this plan has no Phase 0 for. Phase 3's GitHub question is answered — `gh --repo` is named outright — and exercising that path found a live decomposed-ḥet label defect, left for Ben |
 | book-of-job | [PLAN-evacuate-python-from-book-of-job.md](PLAN-evacuate-python-from-book-of-job.md) | **not started** |
@@ -141,7 +141,201 @@ the fastest way to lose code silently.
 
 ---
 
-## Programme Phase 0 — reconcile the drifted `check_*`/`fix_*` family — BLOCKING
+## Programme Phase 0 — reconcile the drifted `check_*`/`fix_*` family — BLOCKING — **0a DONE 2026-08-19; 0b and 0c STOPPED AT THE GATE**
+
+**0a is done, and it reached the gate the prescription below sets. Category (iii) differences
+exist, in two of the six scripts, so 0b and 0c were not started and not one of the sixteen files
+was touched.** Nothing was committed in book-of-job, codex-index-aleppo or codex-index-cam1753;
+all three stand where 0a found them, at `60db958`, `3fd07be` and `e5b2ae4` respectively, each last
+committed 2026-08-07 and each clean. The only commit this phase owes is the one carrying this
+record into MAM-basics.
+
+Absolute paths, since a fresh session executes this: `C:\Users\BenDe\GitRepos\book-of-job` (the
+forked files at the repo root), `C:\Users\BenDe\GitRepos\codex-index-aleppo` (under `py/`),
+`C:\Users\BenDe\GitRepos\codex-index-cam1753` (repo root). Each has a `.venv` with black 26.5.1
+and **no pytest**, measured 2026-08-19, so there is no suite to run in any of the three.
+
+### The gate, and what it decides
+
+The prescription says to stop and ask Ben if 0a finds a category (iii) difference — a genuine
+behavioural difference the repos need — because that makes the family three tools with a shared
+ancestor rather than one tool with drift. Two of the six scripts are category (iii):
+
+- **`check_all.py` is each repo's register of which checks that repo runs, and the three registers
+  name three different sets of checkers.** book-of-job runs seven — spell check, function
+  ordering, qr filename/record consistency, cross-record relation validity, mark order, escape
+  sequences, HTML output lint — and takes `--w3c` and `--w3c-strict`, forwarded to
+  `check_html_syntax_and_sanity`. codex-index-aleppo and codex-index-cam1753 run four — word
+  finding, escape sequences, mark order, line-break JSON consistency — and take no arguments at
+  all. Five of book-of-job's seven checkers exist in neither codex-index repo
+  (`check_function_ordering.py`, `check_html_syntax_and_sanity.py`, `check_qr_consistency.py`,
+  `check_qr_relations.py`, `check_spelling_in_html.py`), and `check_word_finding.py` and
+  `check_line_breaks.py` exist in neither book-of-job nor at the same location as each other:
+  codex-index-aleppo has `py/py_ac_loc/check_line_breaks.py` and imports it as
+  `from py_ac_loc import check_line_breaks`, codex-index-cam1753 has `check_line_breaks.py` at its
+  repo root and imports it as `import check_line_breaks`. Re-establish with
+  `git -C <repo> ls-files | grep -E '(^|/)(check|fix)_[a-z_]*\.py$'`.
+- **`check_word_finding.py` is two programs against two manuscripts.** It is absent from
+  book-of-job. codex-index-aleppo's copy imports `py_ac_word_image_helper`, reads the `qr-ac-loc`
+  field of the quirkrec, and calls `load_index("Job")` before `find_pages_for_verse(pages, ch, v)`;
+  codex-index-cam1753's copy imports `py_cam1753_word_image`, reads `qr-cam1753-loc`, and calls
+  `find_pages_for_verse("Job", ch, v)` with no index at all — so the two word-image packages do not
+  share a signature either. The substantive difference is the tolerance each check allows a **maqaf
+  compound**, one chanted word written as two atoms joined by a maqaf. codex-index-aleppo accepts an
+  alternative **word** index, `word2`, for a compound occupying more than one token position on a
+  line. codex-index-cam1753 accepts an alternative **line**, `line2`, and additionally accepts the
+  found line number itself matching `line2` — its line-break data has maqaf compounds split across a
+  line break, and the Aleppo Codex data as indexed here does not. Two manuscripts, two layouts, two
+  JSON schemas.
+
+**The answer is therefore a three-way design call rather than the two-way one the prescription
+anticipated, because the split runs per file and not per repo.** Of the eight files that genuinely
+diverge, four are one tool with drift and reconcile cleanly, two reconcile with one added parameter
+or by running a command the repo already has, and two do not reconcile at all. Awaiting Ben's
+decision; nothing in the three repos was changed.
+
+### The counts were measured with the wrong instrument, and four of the sixteen are not forked
+
+**`cmp` on the working tree measures line endings, not content.** Measured 2026-08-19 with
+`git -C <repo> ls-files --eol -- '*.py' | awk '{print $2}' | sort | uniq -c`: book-of-job holds
+**258 of its 267** tracked `.py` as CRLF in the working tree, codex-index-aleppo **42 of 44**, and
+codex-index-cam1753 **all 22 as LF**. Every one of the three has an LF index and a `.gitattributes`
+declaring `* text=auto eol=lf`, so the CRLF is a stale checkout in the working tree and never
+reaches a commit. The consequence for the prescription's table: **every `cmp` against
+codex-index-cam1753 was guaranteed to report `differ` whatever the content was.**
+
+Re-run against the committed blob instead — `git -C <repo> rev-parse HEAD:<path>` — and **all four
+`py_cam1753_word_image/` files are the same blob in book-of-job and codex-index-cam1753**:
+`crop.py` `48c3a3e6`, `hebrew_metrics.py` `81a9f188`, `linebreak_search.py` `6a41edaa`, `page.py`
+`73b3d80d`. They are not forked. The prescription's "**All four differ**" is an artifact of
+book-of-job's working-tree line endings and nothing else.
+
+**So of the sixteen files the prescription reviews, eight diverge and eight are byte-identical in
+committed content**, not the twelve its table implies. The eight that diverge are the six scripts
+plus `py_ac_word_image_helper/alef_bet_to_ascii.py` and `py_ac_word_image_helper/codex_page.py`.
+The four `py_ac_word_image_helper/` files the table already called identical (`crop.py`,
+`flat_index.py`, `hebrew_metrics.py`, `linebreak_search.py`) still are.
+
+**Compare committed blobs, not working trees, at book-of-job and at the codex-index trio.** That is
+the instrument correction to carry into steps 4 and 5 of the Order section; it is cheap, and here it
+changed a quarter of the table's verdicts.
+
+### The classification, file by file
+
+| File | Divergence | Category |
+|---|---|---|
+| `check_all.py` | three different check registers; `--w3c` flags in book-of-job only | **(iii)** |
+| `check_word_finding.py` | two manuscripts, two packages, two JSON schemas, two maqaf tolerances | **(iii)** |
+| `check_escape_sequences.py` | `_KEEP_AS_ESCAPE` entries dropped; `mb_cmn` skip; a dead range exemption | **(ii)** + **(i)** |
+| `check_mark_order.py` | function order, docstring wording, ruler padding, quotation marks | **(ii)**, cosmetic |
+| `fix_mark_order.py` | `newline=""` missing in codex-index-cam1753 | **(ii)**, live defect |
+| `fix_escape_sequences.py` | `newline=""` missing in codex-index-cam1753; function order | **(ii)**, live defect |
+| `py_ac_word_image_helper/alef_bet_to_ascii.py` | escapes not yet converted to literals in codex-index-aleppo | **(ii)** |
+| `py_ac_word_image_helper/codex_page.py` | `ROOT` depth; function order | **(i)** + pure move |
+
+**`check_escape_sequences.py` — one part of it is load-bearing and must survive any
+reconciliation.** book-of-job keeps U+2002 EN SPACE and U+2003 EM SPACE in `_KEEP_AS_ESCAPE`; both
+codex-index copies dropped those two lines. book-of-job needs them:
+`pyauthor/job1_full_list_details.py:41` has `" \u2003 "`, and under the codex-index copies' set that
+line becomes a violation demanding an invisible em space be written literally into source — the
+thing `_KEEP_AS_ESCAPE` exists to prevent, and what the user-level `CLAUDE.md` Unicode section
+forbids. Neither codex-index repo has any U+2002 or U+2003 site, so the reconciliation is the
+**union**, keeping book-of-job's two entries; re-establish with
+`grep -rn --include='*.py' -E '\\u200[23]' <repo> --exclude-dir=.venv`. The second difference is
+category (i): `_SKIP_PREFIXES = {"mb_cmn"}` in both codex-index copies and absent in book-of-job,
+because `mb_cmn/` is vendored **from** book-of-job, which has nothing to skip — a per-repo constant
+whose value in book-of-job is the empty set. The third is dead either way: book-of-job alone has
+`_RANGE_RE` and `_range_endpoint_positions`, exempting `\uXXXX-\uYYYY` character-class ranges, and
+`grep -rn --include='*.py' -E '\\u[0-9A-Fa-f]{4}-\\u[0-9A-Fa-f]{4}' book-of-job --exclude-dir=.venv`
+returns nothing at all.
+
+**`check_mark_order.py` — no behavioural difference in the three copies' text.** book-of-job against
+codex-index-aleppo is a pure function move, `main()` before the private helpers rather than after,
+plus docstring wording and ruler-comment padding; codex-index-aleppo against codex-index-cam1753 is
+ruler-comment padding plus curly-against-straight quotation marks. Verified pure with
+`diff <(sort A) <(sort B)`, which shows those lines and nothing else.
+
+**`fix_mark_order.py` and `fix_escape_sequences.py` — one line each, and it is a live defect in
+codex-index-cam1753.** book-of-job and codex-index-aleppo have
+`p.write_text(new_text, encoding="utf-8", newline="")`; codex-index-cam1753 omits `newline=""`. The
+argument entered the other two repos on 2026-07-06 in the commit "Adopt LF + NFC het-dot-below
+standards" — `3c4d590` in book-of-job, `c1caebb` in codex-index-aleppo — and never reached
+codex-index-cam1753; re-establish with `git -C <repo> log -S 'newline=""' -- <path>`. Measured on
+this machine 2026-08-19: with the text built by `"\n".join(...)`, as both scripts build it,
+`write_text(text, encoding="utf-8")` emits CRLF and `write_text(text, encoding="utf-8", newline="")`
+emits LF. **So codex-index-cam1753's two `fix_*` scripts write CRLF into every file they rewrite**,
+against that repo's `.gitattributes`, which `e5b2ae4` (2026-08-07) added declaring
+`* text=auto eol=lf` while normalizing `cam1753-page-index.json` from CRLF to LF. The next run of
+`fix_mark_order.py` there puts the CRLF back.
+
+**One tempting explanation was checked and refused.** The CRLF that `e5b2ae4` normalized was **not**
+written by `261434f` (2026-08-04, "Run fix_mark_order.py over the two pre-existing Ps 18 entries").
+`cam1753-page-index.json` was already CRLF at `261434f^`, 66 CRLF lines of 66, so that run preserved
+CRLF rather than introducing it. The defect is forward-looking, not historical, and the neat story
+that the 2026-08-04 run caused the 2026-08-07 cleanup is false.
+
+**`py_ac_word_image_helper/alef_bet_to_ascii.py` — codex-index-aleppo's checker reports this one
+itself.** book-of-job has the Hebrew letters as literals with ASCII comments; codex-index-aleppo has
+them as `\uXXXX` escapes with Hebrew comments. Running codex-index-aleppo's `py/check_escape_sequences.py`
+exits 1 with **32 violations, every one of them in `py_ac_word_image_helper/alef_bet_to_ascii.py`**.
+book-of-job's copy passes at zero. The remedy is `fix_escape_sequences.py --apply`, which
+codex-index-aleppo has and has not run.
+
+**`py_ac_word_image_helper/codex_page.py` — one constant, and no behavioural difference.** The only
+content change is `ROOT = Path(__file__).resolve().parent.parent` in book-of-job against
+`.parent.parent.parent` in codex-index-aleppo, which is the `py/` level.
+`diff <(grep -v '^ROOT = ' A | sort) <(grep -v '^ROOT = ' B | sort)` is empty, so every other line is
+a move of the six private helpers.
+
+### The divergence that matters most is in no diff at all
+
+`check_mark_order.py` and `check_escape_sequences.py` compute `root = Path(__file__).resolve().parent`
+— **byte-identical in all three copies** — and that line means "the repo root" in book-of-job and in
+codex-index-cam1753, where the script sits at the repo root, and "`py/`" in codex-index-aleppo, where
+it does not. `check_mark_order.py` scans `.py` **and `.json`**. Measured 2026-08-19 with
+`git -C codex-index-aleppo ls-files '*.json'` against `ls-files 'py/*.json'`: codex-index-aleppo has
+**84 tracked `.json` and not one of them under `py/`**, so its Hebrew mark-order check, whose subject
+is the Hebrew in the index data, reads **none** of that repo's index data. It also misses the 11
+tracked `.py` outside `py/`. book-of-job scans 325 files and codex-index-cam1753 94, both passing;
+codex-index-aleppo scans 29 `.py` and 0 `.json`.
+
+This is holman-ketiv-qere's Phase 1 finding — root conflation through a `Path(__file__)` walk —
+arriving in a family whose three copies agree textually and disagree in effect, which is a shape
+neither that plan nor this one predicted. **book-of-job and codex-index-aleppo have already fixed
+exactly this in `codex_page.py`** and in neither checker, so the correction exists in the family and
+was applied to one file of the three that need it.
+
+### codex-index-aleppo has no zero-diff oracle to reconcile against
+
+Two of codex-index-aleppo's four checks fail today, at `3fd07be`, before anything in this phase is
+touched: `py/check_escape_sequences.py` exits 1 with 32 violations, and `py/check_mark_order.py`
+exits 1 with **12 words of non-standard mark order, all twelve in `py/gen_index_flat_annotated.py`**.
+book-of-job and codex-index-cam1753 pass both of their corresponding checks, at 0 violations each.
+**0b's "regenerate and require a zero diff" therefore has no baseline in codex-index-aleppo** until
+those two failures are dealt with — a precondition the prescription does not mention, and one that
+has to be settled before 0b can pick that repo as the place the reconciled copy lands.
+
+### A fifth copy axis the table does not cover
+
+Within book-of-job alone, `py_ac_word_image_helper/crop.py` and `py_cam1753_word_image/crop.py` are
+the same blob (`48c3a3e6`), as are the two `hebrew_metrics.py` (`81a9f188`); the two
+`linebreak_search.py` differ. The two word-image packages are therefore partly forked from **each
+other inside a single repo**, which puts two more copies of those files in play than the table
+counts. Out of scope as the prescription is written — say so before 0b chooses a target, rather than
+discovering it during the move.
+
+### Activity re-measured — no repo is dormant, so "most active" does not pick a winner
+
+The prescription says codex-index-cam1753 "last moved 2026-04-27". Measured 2026-08-19 with
+`git -C <repo> log --format='%cs %h %s' --since=2026-02-01`, **all three last committed 2026-08-07**
+— book-of-job `60db958`, codex-index-aleppo `3fd07be`, codex-index-cam1753 `e5b2ae4` — and
+codex-index-cam1753 had eleven commits on 2026-08-04 alone, indexing Lamentations. Lifetime commit
+counts are close as well: book-of-job 861, codex-index-aleppo 824, codex-index-cam1753 829.
+**0b's stated tie-break does not decide anything**, and needs replacing with a reason that does.
+
+---
+
+### The prescription, as written 2026-08-02 and left unchanged
 
 **Three repos carry three forks of the same six scripts, and only one of the six pairs is still
 identical.** Measured with `cmp` on 2026-08-02:
@@ -200,7 +394,10 @@ differently-named modules rather than one reconciliation. That is a design call,
    correction it contributed is the one most worth carrying to steps 4 and 5 — that the thing to
    grep for is a `Path(__file__).resolve().parents[N]` walk conflating the two roots, not a
    cwd-relative string literal.
-3. **Programme Phase 0** — must precede both remaining plans.
+3. **Programme Phase 0** — must precede both remaining plans. **0a DONE 2026-08-19; 0b and 0c
+   stopped at this plan's own gate, awaiting Ben's design call** — the Phase 0 section carries the
+   classification of all sixteen files and four findings, the largest being that four of the
+   sixteen were never forked. Steps 4 and 5 stay blocked until that call is made.
 4. **book-of-job** — the largest, and the one whose Python is not under a `py/` at all.
 5. **codex-index trio** — last, and as one plan, because the three share a shape, share the
    reconciled family, and share a vendoring problem.
