@@ -14,7 +14,7 @@ where the two agree, that file carries the reasoning and this one does not repea
 | 3 — copy the Python in (dual residency) | **DONE 2026-08-18** — `1be01b5` here (60 new files, 1 modified); in holman-ketiv-qere `9e290ce` before it and `15824d4` after, both deliberate exceptions to dual residency. Suite 905/5 → **950/5**; 175 of 335 artifacts rewritten, 160 untouched, row count 77 |
 | 4 — empty holman-ketiv-qere | **DONE 2026-08-18** — `0890cb8` in holman-ketiv-qere (111 files, +121/−16,838) and `b72f785` here. **holman-ketiv-qere holds zero Python.** 107 tracked files deleted, not 104: the 100 `.py`, **five** `_provenance.md`, `py/.gitignore` and `.vscode/settings.json`. Oracle run twice, before and after the deletion, 175/160 both times; row count still 77. Suite 950 → **947**, three tests and not two. **Phase 7 item 1 is done inside this phase**, the scan-root guard having fired the moment the directories went |
 | 6 — breadcrumbs and issue citations | **DONE 2026-08-18** — `4e9d809` here (the generator), `ce6dd7d` in holman-ketiv-qere (three artifacts), and a `CLAUDE.md` commit after them. The five stale paths flipped, exactly the five Phase 4 named, in two shapes the artifacts themselves settled. **Not one bare `#NN` needed prefixing**: holman-ketiv-qere's Python never cited its own tracker, so no citation was rewritten in either repo. `CLAUDE.md` is now **"Four issue trackers"** — 81 issues, 1–81, 60 open, the whole range colliding. 175/160 and `row_count` 77 unchanged; suite still 947/5 |
-| 7 — cross-repo bookkeeping | **item 1 DONE 2026-08-18** in `b72f785`, with Phase 4; items 2–5 not started |
+| 7 — cross-repo bookkeeping | **DONE — item 1 2026-08-18** in `b72f785`, with Phase 4; **items 2–5 2026-08-19**. Item 2 and item 3 confirmed, both of item 3's strings verbatim as UXLC-utils returned them. Item 4 deleted a 22 MB venv after a clean junction check, `--clean-worktrees` having run first and found nothing. **Two findings.** Finding 1: `doc/holman-manuscript-citations.md`'s closing line named holman-ketiv-qere's **own** venv, the one tracked site item 4's safety check said would not exist — Phase 4 had rewritten all three `py/…` paths in that same file but a `.venv` path carries no `py/` prefix, so it was invisible to the grep Phases 4 and 6 both swept with. Fixed in `6b0bb63` there, one line, and **the plan's only holman-ketiv-qere commit of this phase**, where UXLC-utils' Phase 7 needed none. Finding 2, **left for Ben**: MAM-private's `mgketer/documentation/mpu-parsing.md` and its generated `out-reports/mpu-parsing.html` carry four live cross-references to `holman-ketiv-qere/py/python_modules/…`, stale twice over. **Finding 3**, about this plan's own bookkeeping: the `59 subtests` figure Phases 3, 4 and 6 all record does **not** reproduce — `pytest-subtests` is not installed, so pytest cannot report it; the two substantive counts match exactly, so **drop the third figure** and record the suite as 947 passed / 5 skipped. 175/335 and `row_count` 77 unchanged; suite still 947/5 |
 
 Phase 2 does not recur — **and confirmed 2026-08-18 for the right reason, which is not the one this
 line first gave.** That `mb_cmn/paths.py` has `sibling_repo()` and `require_sibling()` is a fact
@@ -676,7 +676,148 @@ already *renders* issue references into its table, via `rt_issue_tags.py` and
 `table_row_github_issues.py`: **those are data about the Holman review, not citations of this
 repo's own tracker, and must not be rewritten.** Distinguish the two before touching either.
 
-## Phase 7 — cross-repo bookkeeping
+## Phase 7 — cross-repo bookkeeping — DONE 2026-08-19 (items 2–5; item 1 landed inside Phase 4)
+
+**Items 2, 3 and 5 were run rather than assumed. Item 4 deleted a 22 MB venv and found no
+orphaned worktrees. Three findings came out of it, and the second is left for Ben.** Unlike
+UXLC-utils' Phase 7, which needed no commit in either repo, this one needed a one-line commit in
+holman-ketiv-qere — `6b0bb63` there, see finding 1.
+
+**Every baseline was re-measured first and every one matched**, as Phase 6's did and for the same
+reason: Phase 6 measured them the day before and nothing ran in between. holman-ketiv-qere at
+`ce6dd7d`, clean, **0 tracked `.py`**, 348 tracked files, 335 artifacts across the six trees
+(`gh-pages` 300, `emails` 26, `docs-not-served` 4, `out` 2, `data` 2, `io` 1), `table.row_count`
+77, one 22 MB `.venv`, and `git worktree list` showing only the main checkout. MAM-basics at
+`35903bc`, clean, suite **947 passed / 5 skipped**, ruff clean, `source_hygiene` OK.
+
+**Item 2 — confirmed, no change.** `all-repos.code-workspace` lists `../holman-ketiv-qere` at
+line 31 and it stays: that repo still tracks 348 non-Python files.
+`in/repo_maintenance_policy.json`'s `frozen_repos` names six repos — CCAR-Psalms, MAM-for-Acc,
+MAM-for-CCAR, MAM-for-JPS, mamgo-auto-edits and TMC — and holman-ketiv-qere is not among them and
+does not need to be. That register is for paused client projects whose last-changed dates are the
+point; holman-ketiv-qere is live work whose generators simply live elsewhere now.
+
+**Item 3 — confirmed, and both predicted strings came back verbatim.** The three subcommand names
+were checked against `py/main_repo_util.py` before running, as the task required, and all three
+are spelled as the task gave them. `--run-black --workspace-file all-repos.code-workspace --repos
+holman-ketiv-qere` reports `REPO=holman-ketiv-qere; BLACK_ATTEMPTED=False; BLACK_OK=False;
+Skipped: no tracked .py files in this repo`, the same string UXLC-utils returned.
+`--check-repo-standards` on the same repo degrades just as gracefully:
+`MAINTENANCE_SCRIPT=n/a; WORKTREE_STEP=n/a; PATH_UTILITY=n/a`, with `LINKED_WORKTREES=0`,
+`AGENT_BRANCHES=0`, `SYS_PATH_MUTATIONS=0` and `GITATTRIBUTES_LF=True`. Both runs were scoped with
+`--repos`, since dropping it **reformats every repo in the workspace**.
+
+**Item 4 — a 22 MB venv deleted, no orphaned worktrees.** Smaller than the shapes wlc-utils (789
+`.py`) and UXLC-utils (832 `.py`, 33 MB) found, holman's venv having held black and no pytest.
+Done in the order this plan requires:
+
+- **`--clean-worktrees` ran first**, before anything else touched a worktree, and reported
+  `worktrees: nothing to clean`, agreeing with the `git worktree list` baseline. Hand-running
+  `git status` inside a worktree refreshes the index mtime that
+  `repo_util/git_worktree_cleanup.py` reads as recent activity, and the sweep then spares the
+  worktree, so the sweep goes before the poking and not after.
+- **Then the checks the deletion was conditional on** — and this is where finding 1 came out. Zero
+  tracked files under `.venv`, which is self-ignoring via the `.venv/.gitignore` that
+  `python -m venv` writes.
+- **And the junction check, which a sibling rule makes mandatory**, because a junction here would
+  have taken MAM-basics' venv with it: `Get-Item -Force` reported `Attributes: Directory`, no
+  `ReparsePoint`, empty `LinkType` and empty `Target`, and holman's own `pyvenv.cfg` naming
+  `C:\Users\BenDe\GitRepos\holman-ketiv-qere\.venv` as what `python -m venv` was pointed at,
+  distinct from MAM-basics' `pyvenv.cfg` naming its own. A real directory, so
+  `Remove-Item -Recurse -Force` was safe. Afterwards
+  `C:\Users\BenDe\GitRepos\MAM-basics\.venv\Scripts\python.exe` was confirmed present **and
+  confirmed to run**, reporting 3.13.14, and the full oracle was re-run clean.
+
+**Finding 1 — the safety check failed on one tracked site, and Phase 4's own sweep is why.** Item
+4's check predicted that every remaining `.venv` mention in holman-ketiv-qere's tracked files
+names **MAM-basics'** venv by absolute path. One did not:
+`doc/holman-manuscript-citations.md`'s closing line named **holman-ketiv-qere's own** venv by
+absolute path — "Run anything written for this from the repo root with
+`C:\Users\BenDe\GitRepos\holman-ketiv-qere\.venv\Scripts\python.exe`" — an actionable instruction
+pointing at the very directory this phase deletes. **Phase 4 (`0890cb8`) rewrote all three `py/…`
+module paths inside that same file** to `../MAM-basics/py/hkq_cmn/…` and
+`../MAM-basics/py/py_render/…`, so the file was in that phase's hands and the interpreter line
+was missed rather than spared. The reason it was missed is the blind spot Phase 6 already
+recorded: **a `.venv` path carries no `py/` prefix**, so it is invisible to the
+`py/[A-Za-z_./]*` grep both Phase 4 and Phase 6 swept with — exactly how
+`hkq_cmn/uxlc_standard_atoms` escaped Phase 6's own grep. **Grep for the interpreter as well as
+for the code paths at every remaining repo**, since the two sweeps miss the same shape.
+
+The fix is one line: the interpreter now reads
+`C:\Users\BenDe\GitRepos\MAM-basics\.venv\Scripts\python.exe`. **"from the repo root" was left
+alone and is still correct** — holman-ketiv-qere's root is where `emails/`, `data/` and
+`gh-pages/` live, which is what the re-establishment steps above that line read, and the
+interpreter's location decides nothing about the working directory.
+
+Two further `.venv` mentions were examined and **deliberately left**, both in
+holman-ketiv-qere's `CLAUDE.md`, both descriptive rather than actionable: line 17's "the `.venv`
+left here has nothing to run" and lines 91–92's "the Aleppo one needs Pillow, which this repo's
+venv lacks". Each describes a venv this phase has now removed. **UXLC-utils' `CLAUDE.md` carries
+the identical sentence and its own Phase 7 left it**, quoting it as evidence the deletion was
+safe without revisiting it afterwards, so the two repos are consistent as they stand. Whether
+both repos' sentences should be trued up is one question for Ben rather than two, and it changes
+no behaviour either way. A third mention, `CLAUDE.md` line 104's relative
+`.venv/Scripts/python.exe`, **is not a mismatch**: it follows a `cd` to
+`C:\Users\BenDe\GitRepos\codex-index-aleppo` and names that repo's venv, which is what the
+surrounding prose tells the reader to do.
+
+**Item 5 — the grep run across all nineteen sibling repos, and it found a live consumer.** In
+MAM-basics itself the only hits are two lines of the plan files describing the grep, one in this
+file and one in `PLAN-evacuate-python-from-UXLC-utils.md`. The known loose end needed no chasing
+and is recorded as moot: UXLC-utils' Phase 7 item 5 handed this plan the finding that
+holman-ketiv-qere vendored a loose `py/uxlc_paths.py` invisible to `doc/vendoring-inventory.md`,
+and Phase 4 deleted all of holman-ketiv-qere's Python, so nothing was owed.
+
+**Finding 2 — four stale citations in a third repo, left for Ben.** `MAM-private` carries live
+cross-references to holman-ketiv-qere's Python:
+
+- `mgketer/documentation/mpu-parsing.md` lines 9–10
+- `mgketer/out-reports/mpu-parsing.html` lines 21–22, the generated rendering of those two lines
+
+They cite `holman-ketiv-qere/py/python_modules/mam_plus_verse_data.py` (`_collect_text_fragments`)
+and `holman-ketiv-qere/py/python_modules/qere_projection.py` (`project_qere_atoms`) under a
+"**Cross-references:** … When updating rules here, check for matching logic to propagate" heading,
+so they are pointers meant to be followed rather than history. They are **stale twice over**:
+holman-ketiv-qere has held zero Python since Phase 4, and `python_modules/` was renamed to
+`hkq_cmn/` in Phase 3. The correct targets are `MAM-basics/py/hkq_cmn/mam_plus_verse_data.py` and
+`MAM-basics/py/hkq_cmn/qere_projection.py`, both confirmed present here. **Not fixed**, on
+UXLC-utils' Phase 7 item 6 precedent that a commit to a third repo stops and asks: MAM-private is
+neither of this plan's two repos, `mgketer` is a directory inside it rather than a repo of its own
+(`git -C mgketer rev-parse --git-common-dir` answers `../.git`), MAM-private was clean at
+`a1b489e`, and the `.html` is generated, so the fix is an edit to the markdown plus whatever
+regenerates the report. **This is the programme's cross-cutting finding 2 in a new shape**: not a
+vendored copy the inventory cannot see, but a *documentation* cross-reference no repo's tooling
+can see, and it was found only because item 5 greps the siblings. **Run item 5's grep against
+MAM-private at book-of-job and the codex-index trio**, which the earlier plans had no reason to.
+
+**Verification.** The full six-command regeneration ran from `C:\Users\BenDe\GitRepos\MAM-basics`
+on this repo's interpreter, after the venv deletion, with an mtime snapshot around it via
+`.novc/hkq_oracle_mtimes.py`: **175 of 335 rewritten, 160 untouched**, the same split Phases 1, 3,
+4 and 6 measured, and `table.row_count` still **77**. All six generators exited 0; the mailbox
+held its 13 messages and the UXLC-utils sibling was present at `9be1431`.
+holman-ketiv-qere's `git status --porcelain` then held exactly one file, the
+`doc/holman-manuscript-citations.md` of finding 1, and its tracked total was still 348.
+MAM-basics' tree was **clean** — `gh-pages/`, `out/` and `in/` untouched, as this phase expected,
+since none of its own artifacts depend on holman-ketiv-qere. Suite **947 passed / 5 skipped**,
+unchanged; `ruff check py` exit 0; `source_hygiene` OK. No Python was edited in either repo, so
+black had nothing to run on.
+
+**Finding 3, small and about the plan's own bookkeeping rather than about either repo: the
+`59 subtests` figure does not reproduce.** Phases 3, 4 and 6 each record the suite as
+"947 passed / 5 skipped / 59 subtests" (Phase 3's as 950/5/59), and the task prompt for this phase
+repeated it. Measured 2026-08-19, the suite's summary line reads `947 passed, 5 skipped` and
+nothing more, and the word "subtest" appears **zero** times in the full output.
+`pytest-subtests` is **not installed** in `.venv` — `pip list` shows `pytest 9.1.0` and no
+subtests plugin — so pytest has no way to report the figure, and a third count cannot be produced
+on demand. **The two substantive counts match exactly**, so nothing about the suite has changed
+and this costs the verification nothing; what it costs is the third figure, which should be
+dropped from the triple rather than carried forward. Record the suite as **947 passed / 5
+skipped** in the remaining plans, and re-measure rather than copying a figure whose instrument is
+not in the venv.
+
+---
+
+The rest of this section is the plan as written before the phase ran.
 
 1. **DONE 2026-08-18, inside Phase 4, as `b72f785`.** Deleting `py/mb_cmn/` and `py/mb_diff_mpu/`
    turned both scan roots into missing directories and
