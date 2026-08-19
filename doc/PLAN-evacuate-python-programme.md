@@ -193,8 +193,9 @@ differently-named modules rather than one reconciliation. That is a design call,
    command. It also has a **downstream consumer** (see finding 2), so doing it first is what
    teaches the trio's plan what a downstream repoint costs.
 2. **holman-ketiv-qere** — the same shape, smaller, vendored copies identical. Confirms the recipe
-   on a second repo before the expensive one. **Phases 1 and 3 done 2026-08-18; Phases 4, 6 and 7
-   remain.** "Smaller" held at planning time and holds less well now: the repo had grown from 68
+   on a second repo before the expensive one. **DONE 2026-08-19 — every phase**, Phases 1, 3, 4
+   and 6 on 2026-08-18 and Phase 7 on 2026-08-19; the Status table above carries the record.
+   "Smaller" held at planning time and holds less well now: the repo had grown from 68
    tracked `.py` to 99 and from one body of work to two. It still confirmed the recipe, and the
    correction it contributed is the one most worth carrying to steps 4 and 5 — that the thing to
    grep for is a `Path(__file__).resolve().parents[N]` walk conflating the two roots, not a
