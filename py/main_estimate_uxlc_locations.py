@@ -58,10 +58,10 @@ NOTE = (
     "Estimated column and line for each atom Holman's emails raise, from"
     " MAM-basics' uxlc_misc.my_uxlc_location over the UXLC core XML and LC"
     " page index in the sibling UXLC-utils. Written by"
-    " py/main_estimate_uxlc_locations.py and read by the render step; folio is"
-    " the LC leaf in the DDDA form the manuscript image URLs use, line counts"
-    " down from the top of the named column, and flat_line counts down the"
-    " whole page across all three columns."
+    " MAM-basics/py/main_estimate_uxlc_locations.py and read by the render"
+    " step; folio is the LC leaf in the DDDA form the manuscript image URLs"
+    " use, line counts down from the top of the named column, and flat_line"
+    " counts down the whole page across all three columns."
 )
 
 STANDARD_ATOMS_NOTE = (
@@ -71,8 +71,9 @@ STANDARD_ATOMS_NOTE = (
     " mid-verse samekh is one; Holman counts a ketiv/qere pair once and does"
     " not count a samekh, so the key here, which is his, disagrees with the"
     " value on the few cases where the verse has either before the atom."
-    " Written by py/main_estimate_uxlc_locations.py and read by the render"
-    " step; hkq_cmn/uxlc_standard_atoms sets out the evidence."
+    " Written by MAM-basics/py/main_estimate_uxlc_locations.py and read by the"
+    " render step; MAM-basics/py/hkq_cmn/uxlc_standard_atoms.py sets out the"
+    " evidence."
 )
 
 # Every tag the UXLC core XML puts directly under <v>. Passed to my_uxlc.read so
