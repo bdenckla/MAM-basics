@@ -12,9 +12,9 @@ where the two agree, that file carries the reasoning and this one does not repea
 |---|---|
 | 1 — two roots, no cwd | **DONE 2026-08-18** — `6b10259` in holman-ketiv-qere (12 files, +275/−51), preceded by `50b2eaa` there; nothing owed in this repo's `py/` |
 | 3 — copy the Python in (dual residency) | **DONE 2026-08-18** — `1be01b5` here (60 new files, 1 modified); in holman-ketiv-qere `9e290ce` before it and `15824d4` after, both deliberate exceptions to dual residency. Suite 905/5 → **950/5**; 175 of 335 artifacts rewritten, 160 untouched, row count 77 |
-| 4 — empty holman-ketiv-qere | **not started** |
-| 6 — breadcrumbs and issue citations | **not started** |
-| 7 — cross-repo bookkeeping | **not started** |
+| 4 — empty holman-ketiv-qere | **DONE 2026-08-18** — `0890cb8` in holman-ketiv-qere (111 files, +121/−16,838) and `b72f785` here. **holman-ketiv-qere holds zero Python.** 107 tracked files deleted, not 104: the 100 `.py`, **five** `_provenance.md`, `py/.gitignore` and `.vscode/settings.json`. Oracle run twice, before and after the deletion, 175/160 both times; row count still 77. Suite 950 → **947**, three tests and not two. **Phase 7 item 1 is done inside this phase**, the scan-root guard having fired the moment the directories went |
+| 6 — breadcrumbs and issue citations | **not started** — and its inventory is **at least five sites, not the two** Phase 3 named; see Phase 4's record |
+| 7 — cross-repo bookkeeping | **item 1 DONE 2026-08-18** in `b72f785`, with Phase 4; items 2–5 not started |
 
 Phase 2 does not recur — **and confirmed 2026-08-18 for the right reason, which is not the one this
 line first gave.** That `mb_cmn/paths.py` has `sibling_repo()` and `require_sibling()` is a fact
@@ -417,7 +417,108 @@ cwd-dependently, so a tool silently reading the wrong tracker is not a risk here
 stay as they are. What that path *does* have is a live Unicode-form defect, unrelated to the move
 and recorded in Phase 1's findings.
 
-## Phase 4 — empty holman-ketiv-qere
+## Phase 4 — empty holman-ketiv-qere — DONE 2026-08-18
+
+**Landed as `0890cb8` in holman-ketiv-qere (111 files changed, 121 insertions, 16,838 deletions)
+and `b72f785` here.** Ben was asked first, as this section and the prompt both require, and
+approved three things: the deletion, `.vscode/settings.json` as an extra beyond the plan's list,
+and rewriting every `py/…` path in the README rather than stating one substitution.
+
+**Every baseline was re-measured first and every one matched but one**, which is Phase 3's own
+effect rather than drift. 100 tracked `.py`, 455 tracked files, 335 artifacts across the six trees,
+8 test modules plus the runner, 9 entry points, suite 51 OK, `table.row_count` 77, all 37 vendored
+`.py` byte-identical by `cmp`, the 13-message mailbox present and the UXLC-utils sibling present.
+Here: 950 passed / 5 skipped / 59 subtests, ruff clean, black clean at 834 files,
+`source_hygiene` OK.
+
+**The one mismatch: 16,637 lines, not 16,640.** Measured across the three commits —
+`6b10259` 16,640, `9e290ce` **16,637**, `15824d4` 16,637 — so the figure in Phase 3's record was
+taken before Phase 3's own precondition commit `9e290ce`, which cleared the 13 ruff findings and
+added the UTF-8 reconfigures at +12/−15. The same shape as the two Phase 3 itself recorded, one
+phase further on: **a plan's freshest figure is still the previous phase's, and the previous
+phase's own commits move it.**
+
+**The oracle ran twice, once before the deletion and once after**, both times all six generators
+from `C:\Users\BenDe\GitRepos\MAM-basics` on this repo's interpreter, with an mtime snapshot
+around each. Both runs: **175 rewritten, 160 untouched**, the same split and the same list Phase 1
+and Phase 3 measured. Both times `git status --porcelain` in holman held nothing but this phase's
+own edits, MAM-basics' tree stayed clean, and `row_count` was still 77. The pre-deletion run is
+worth keeping in the recipe — it proves the generators reach the sibling correctly at the current
+HEAD, so anything that breaks afterwards is the deletion's doing and not a pre-existing fault.
+
+**The 160, named here as the section below asks:** **154 `gh-pages/img/`**, `gh-pages/index.html`,
+the two `gh-pages/JC3 The Biblical Text in the JC Edition #19-ז` pages,
+`gh-pages/woff2/Taamey_D.woff2`, `docs-not-served/table_data_fields.md` and
+`io/table_row_github_issues.json`. They are named in holman's `CLAUDE.md` too, where a reader of
+that repo will meet them, as UXLC-utils' Phase 4 put its 87 in that repo's `CLAUDE.md`. The
+reusable script is `.novc/hkq_oracle_mtimes.py` (`snapshot` / `compare`), a holman twin of
+`.novc/oracle_mtimes.py`, which is hardwired to UXLC-utils and its four trees.
+
+Six things went differently from what is written underneath. The first four bear on later phases:
+
+- **The tracked deletion is 107 files, not the 104 this section implies.** Beyond the 100 `.py`
+  there are **five** `_provenance.md`, not four: the four package breadcrumbs plus
+  **`py/_provenance.md`**, which is the breadcrumb for the loose vendored `py/uxlc_paths.py` and is
+  invisible to `doc/vendoring-inventory.md` for exactly the reason Phase 7 item 1 gives about
+  `uxlc_paths.py` itself. Also **`py/.gitignore`** (one line, `novc_*.py`) and, by Ben's decision,
+  **`.vscode/settings.json`**, whose fifteen auto-approve rules name nothing but that repo's
+  interpreter and its `py/` scripts — one of them `py/extract_docx.py`, already gone before this
+  phase. Neither `py/` nor `.vscode/` had other tracked contents, so both went whole. **Count the
+  non-`.py` tracked files under `py/` in book-of-job and the codex-index trio before quoting a
+  deletion size**: `git ls-files py | grep -v '\.py$'` is the command, and here it found six.
+- **Phase 7 item 1 is Phase 4's, exactly as UXLC-utils' Phase 4 predicted it would be in every
+  remaining plan.** Deleting `py/mb_cmn/` and `py/mb_diff_mpu/` turned both of holman's
+  `pkg_scan_roots` into missing directories, and
+  `py/tests/test_vendoring_policy_paths.py::test_every_pkg_scan_root_exists` failed twice in this
+  phase's own verification run, once per scan root. Removing the entry and regenerating with
+  `py/main_vendoring.py --all` is in `b72f785`. The inventory diff is **only** the two
+  holman-ketiv-qere rows, 23 rows / 155 files → **21 rows / 128 files**, the 27 being the 18
+  `mb_cmn` plus 9 `mb_diff_mpu` that `cmp` had confirmed identical minutes earlier; no pre-existing
+  drift came with it. **Phase 7's remaining items are untouched.**
+- **The suite's baseline moves 950 → 947, three tests and not the two that failed.** The third is
+  a dest-repo case: `test_vendoring_policy_paths.py` derives *every* parametrize list in it from
+  the policy, so the entry was contributing one of those besides its two scan-root cases. 28
+  collected in that file before, 25 after — the identical arithmetic to UXLC-utils' 916 → 913 and
+  32 → 29. **Predict three per repo, not two**, in book-of-job and the trio.
+- **The README's commands were nine, not six.** The extra three are `py/main_test.py`, at lines
+  303, 312 and 316, and that runner is one of the two entry points that **disappears** rather than
+  moving — so the "## Tests" section could not be repointed by substituting a prefix. It now names
+  MAM-basics' runner and a `-k` selection, this repo's `--verify-table-words-in-mam-plus` and
+  `--h-dot-below-nfc` having no counterpart here; the replacement command was run before being
+  written down (16 passed, 939 deselected). **A README's command count is not its
+  generator count** — count `main_test` and any other disappearing entry point separately.
+- **The NFC floor holds at 47, one below the 48 the scope's comment predicted**, the difference
+  being `.vscode/settings.json`, which was not in the prediction because Ben added it to the
+  deletion. 154 files were in scope before and 47 after, against a floor of 40 tested strictly, and
+  the guard runs green. Two of the 47 are the `gh-pages/JC3 …` pages, which reach the count only
+  because `git ls-files` quotes their non-ASCII names and the leading quote carries them past the
+  `gh-pages/` prefix filter — the test uses `git ls-files` without `-z`, so this replicates exactly.
+  The comment now states the measured figure instead of the prediction (`b72f785`).
+- **The `doc/` question this section does not raise: holman's `doc/` had four `py/…` paths**, in
+  its two files, the same shape as the README's. Rewritten with it, on Ben's "rewrite every one".
+  UXLC-utils' Phase 4 met a much larger version of this — 35 links in `doc/clc-design.md` — and Ben
+  chose to leave those and state the substitution once. **The two answers are not in conflict**: a
+  stated substitution works where only the repo prefix changed, and here `python_modules` →
+  `hkq_cmn` changed as well, while `py/uxlc_lci/` and `py/uxlc_misc/` were pure deletions rather
+  than moves, so no single stated rule covers all three cases. **Ask per repo, and let the size of
+  the rewrite and whether a package was renamed decide it.**
+
+**Two things this phase deliberately did not do, both Phase 6's.**
+`docs-not-served/table_data_fields.md` has **two** wrong paths, not the one Phase 3's record names:
+line 35's `py/python_modules/verify_table_words_in_mam_plus.py` and **line 3's
+`py/main_extract_docx.py`**, which is stale twice over — the entry point is
+`main_extract_docx_and_render_table.py` and has been for longer than the move. That file is
+hand-authored and one of the 160, so editing it damages no oracle; it was left alone only because
+Phase 3 assigned it to Phase 6. And `data/uxlc_atom_locations.json` **also** carries
+`py/main_estimate_uxlc_locations.py` in its `note`, as does `data/uxlc_standard_atoms.json`
+alongside the `hkq_cmn/uxlc_standard_atoms` Phase 3 named — so that file owes **two**
+qualifications in one sentence. Those two `note` fields are generated, which is precisely what
+Phase 6's do-not-fix-mid-move rule protects. **Phase 6's inventory is at least five sites, not
+two**, and `git grep -nIo 'py/[A-Za-z_./]*' -- data docs-not-served io` is what finds them.
+
+---
+
+The rest of this section is the plan as written before the phase ran.
 
 Delete all **100** tracked `.py` (not 68 — see the re-measured baselines) and the `py/` tree.
 **Stop and ask Ben first.**
@@ -452,6 +553,30 @@ its 111 and UXLC-utils' Phase 3 its 87. Phase 1's record lists them.
 git grep -lI "generated by holman-ketiv-qere" -- gh-pages out docs-not-served
 ```
 
+**That grep matches nothing, in either repo — it is not what finds this phase's work.** Phase 3
+established that and Phase 4 re-confirmed it. Use this instead, from
+`C:\Users\BenDe\GitRepos\holman-ketiv-qere`:
+
+```powershell
+git grep -nIo "py/[A-Za-z_./]*" -- data docs-not-served io
+```
+
+**Phase 4 measured five sites, not the two Phase 3's record names.** Two are generated `note`
+fields, which is exactly what the do-not-fix-mid-move rule below protects, so they want a
+generator edit here plus a regeneration rather than an edit to the artifact:
+
+- `data/uxlc_standard_atoms.json`'s `note` — **two** qualifications in one sentence, not one:
+  `hkq_cmn/uxlc_standard_atoms`, which Phase 3 named, and `py/main_estimate_uxlc_locations.py`,
+  which it did not.
+- `data/uxlc_atom_locations.json`'s `note` — `py/main_estimate_uxlc_locations.py`, the same
+  "Written by" sentence.
+- `docs-not-served/table_data_fields.md` — **two** wrong paths, not the one Phase 3 named: line
+  35's `py/python_modules/verify_table_words_in_mam_plus.py`, and line 3's
+  `py/main_extract_docx.py`, which is stale twice over, the entry point having been
+  `main_extract_docx_and_render_table.py` since well before the move. This file is hand-authored
+  and one of the 160 no run rewrites, so editing it damages no oracle; Phase 4 left it alone only
+  because Phase 3 had assigned it here.
+
 Flip them in a **dedicated commit near the end**, and do not "fix the now-wrong path" mid-move —
 that destroys the oracle for every artifact carrying a breadcrumb.
 
@@ -462,10 +587,16 @@ repo's own tracker, and must not be rewritten.** Distinguish the two before touc
 
 ## Phase 7 — cross-repo bookkeeping
 
-1. `in/vendoring_policy.json` — delete the `holman-ketiv-qere` entry, whose `pkg_scan_roots` names
-   `py/mb_cmn` and `py/mb_diff_mpu`; `py/main_vendoring.py --all` **raises** on a missing scan root
-   rather than degrading. Regenerate `doc/vendoring-inventory.md` in the same commit. This repo is
-   two of the inventory's 19 rows.
+1. **DONE 2026-08-18, inside Phase 4, as `b72f785`.** Deleting `py/mb_cmn/` and `py/mb_diff_mpu/`
+   turned both scan roots into missing directories and
+   `test_every_pkg_scan_root_exists[holman-ketiv-qere-…]` failed twice in Phase 4's own
+   verification run — which is what UXLC-utils' Phase 4 said to expect in every remaining plan.
+   The inventory went 23 rows / 155 files → 21 rows / 128 files, the diff being only the two
+   holman-ketiv-qere rows. The original instruction, which said this repo is "two of the
+   inventory's 19 rows" and was measured before the wlc-utils and UXLC-utils entries came out:
+   delete the `holman-ketiv-qere` entry, whose `pkg_scan_roots` names `py/mb_cmn` and
+   `py/mb_diff_mpu`; `py/main_vendoring.py --all` **raises** on a missing scan root rather than
+   degrading. Regenerate `doc/vendoring-inventory.md` in the same commit.
 
    **Note what those two rows do NOT cover, measured 2026-08-18: `py/uxlc_lci/` (4 files),
    `py/uxlc_misc/` (5) and `py/uxlc_paths.py` are vendored from this repo too — named in holman's
