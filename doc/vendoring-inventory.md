@@ -38,10 +38,8 @@ in the destination; `stale` is measured and behind; `unmeasured` is a copy nobod
 | hebrew_punctuation.py, hebrew_verse_numerals.py, my_utils.py | mb_cmn | codex-index-leningrad | lenin-wiki/py | unknown | mixed | no | stale | DIFFERS; placed in lenin-wiki/py/ not mb_cmn/ |
 | cantsys.py | mb_cmn | diffable-pointed-hebrew | mb_cmn/cantsys.py | unknown | 2026-04-27 | no | unmeasured | eol-only |
 | file_io.py, hebrew_accents.py, hebrew_letters.py, hebrew_points.py, hebrew_punctuation.py, str_defs.py, uni_heb.py | mb_cmn | diffable-pointed-hebrew | mb_cmn | unknown | 2026-04-27 | no | unmeasured | DIFFERS |
-| bib_locales.py, cantsys.py, he_wikisource_url.py, hebrew_accents.py, hebrew_letters.py, hebrew_points.py, hebrew_punctuation.py, hebrew_verse_numerals.py, mam_bknas.py, mam_bknas_and_std_bknas.py, paths.py, retired_kq_special_templates.py, retired_template_names.py, str_defs.py, template_names.py, uni_denorm.py, url_percent.py, vendoring_sync.py | mb_cmn | holman-ketiv-qere | py/mb_cmn | copy_script | mixed | no | active | identical |
-| change_ops.py, change_ops_apply.py, change_ops_extract.py, change_ops_render.py, describe_diff.py, grapheme_diff.py, mpplus_flatten.py, mpplus_param_access.py, mpplus_structure.py | mb_diff_mpu | holman-ketiv-qere | py/mb_diff_mpu | copy_script | mixed | no | active | identical |
 
-*23 rows, 155 files. 0 files ignored.*
+*21 rows, 128 files. 0 files ignored.*
 
 ## Intentionally non-vendored
 

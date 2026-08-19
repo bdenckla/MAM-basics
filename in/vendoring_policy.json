@@ -35,22 +35,6 @@
         ]
       }
     },
-    "holman-ketiv-qere": {
-      "comment": "Active vendored copies. py/main_update_vendored_files.py copies MAM-basics/py/mb_cmn and py/mb_diff_mpu by intersection; declared here like the other three such repos, rather than left for gen_inventory to derive from the provenance scan.",
-      "ignore": false,
-      "scan_provenance": true,
-      "default_category": "active",
-      "default_mechanism": "copy_script",
-      "default_provenance_doc": "no",
-      "pkg_scan_roots": {
-        "mb_cmn": [
-          "py/mb_cmn"
-        ],
-        "mb_diff_mpu": [
-          "py/mb_diff_mpu"
-        ]
-      }
-    },
     "book-of-job": {
       "comment": null,
       "ignore": false,

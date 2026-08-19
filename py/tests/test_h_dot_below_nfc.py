@@ -218,10 +218,16 @@ def _scopes() -> tuple[_Scope, ...]:
             exclude_dir_prefixes=_HKQ_EXCLUDE_DIR_PREFIXES,
             exclude_files=frozenset(),
             # 40 is the floor that repo's own copy of this test carried, and it still
-            # fits after Phase 4 deletes its py/ tree: 154 files are in scope today
-            # and about 48 survive that deletion -- doc/ (2), README.md, CLAUDE.md,
-            # docs-not-served/ (4), emails/ (26), data/ (2), io/ (1), assets/ (4) and
-            # the dotfiles. Comfortably above 40, so the floor keeps meaning "an
+            # fits now that Phase 4 has deleted its py/ tree: 154 files were in scope
+            # before that deletion and 47 are after it, measured 2026-08-18 -- doc/
+            # (2), README.md, CLAUDE.md, docs-not-served/ (4), emails/ (26), data/
+            # (2), io/ (1), assets/ (4), four dotfiles, and the two "JC3 ..." pages,
+            # whose non-ASCII names git ls-files returns quoted, so the leading quote
+            # keeps them past the gh-pages/ prefix filter. This comment predicted 48
+            # before the phase ran; the one file between that and the 47 measured
+            # after is .vscode/settings.json, which Phase 4 deleted as well, its
+            # auto-approve rules naming nothing but that repo's deleted interpreter
+            # and scripts. Comfortably above 40, so the floor keeps meaning "an
             # exclusion filter swallowed everything" rather than asserting a size.
             floor=40,
         ),

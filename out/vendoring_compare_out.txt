@@ -43,33 +43,6 @@ osis_handlers.py                           MAM-simple                 py-example
 osis_index_html.py                         MAM-simple                 py-examples/osis/osis_index_html.py                     identical      2026-07-06   generated
 osis_namespace.py                          MAM-simple                 py-examples/osis/osis_namespace.py                      identical      2026-05-01   generated
 osis_runner.py                             MAM-simple                 py-examples/osis/osis_runner.py                         identical      2026-05-07   generated
-bib_locales.py                             holman-ketiv-qere          py/mb_cmn/bib_locales.py                                identical      2026-04-27   
-cantsys.py                                 holman-ketiv-qere          py/mb_cmn/cantsys.py                                    identical      2026-04-27   
-he_wikisource_url.py                       holman-ketiv-qere          py/mb_cmn/he_wikisource_url.py                          identical      2026-05-10   
-hebrew_accents.py                          holman-ketiv-qere          py/mb_cmn/hebrew_accents.py                             identical      2026-08-02   
-hebrew_letters.py                          holman-ketiv-qere          py/mb_cmn/hebrew_letters.py                             identical      2026-04-27   
-hebrew_points.py                           holman-ketiv-qere          py/mb_cmn/hebrew_points.py                              identical      2026-04-27   
-hebrew_punctuation.py                      holman-ketiv-qere          py/mb_cmn/hebrew_punctuation.py                         identical      2026-04-27   
-hebrew_verse_numerals.py                   holman-ketiv-qere          py/mb_cmn/hebrew_verse_numerals.py                      identical      2026-04-27   
-mam_bknas.py                               holman-ketiv-qere          py/mb_cmn/mam_bknas.py                                  identical      2026-04-27   
-mam_bknas_and_std_bknas.py                 holman-ketiv-qere          py/mb_cmn/mam_bknas_and_std_bknas.py                    identical      2026-04-27   
-paths.py                                   holman-ketiv-qere          py/mb_cmn/paths.py                                      identical      2026-08-12   
-retired_kq_special_templates.py            holman-ketiv-qere          py/mb_cmn/retired_kq_special_templates.py               identical      2026-05-10   
-retired_template_names.py                  holman-ketiv-qere          py/mb_cmn/retired_template_names.py                     identical      2026-05-10   
-str_defs.py                                holman-ketiv-qere          py/mb_cmn/str_defs.py                                   identical      2026-04-27   
-template_names.py                          holman-ketiv-qere          py/mb_cmn/template_names.py                             identical      2026-08-09   
-uni_denorm.py                              holman-ketiv-qere          py/mb_cmn/uni_denorm.py                                 identical      2026-04-27   
-url_percent.py                             holman-ketiv-qere          py/mb_cmn/url_percent.py                                identical      2026-08-07   
-vendoring_sync.py                          holman-ketiv-qere          py/mb_cmn/vendoring_sync.py                             identical      2026-07-06   
-change_ops.py                              holman-ketiv-qere          py/mb_diff_mpu/change_ops.py                            identical      2026-04-27   
-change_ops_apply.py                        holman-ketiv-qere          py/mb_diff_mpu/change_ops_apply.py                      identical      2026-04-27   
-change_ops_extract.py                      holman-ketiv-qere          py/mb_diff_mpu/change_ops_extract.py                    identical      2026-08-02   
-change_ops_render.py                       holman-ketiv-qere          py/mb_diff_mpu/change_ops_render.py                     identical      2026-08-02   
-describe_diff.py                           holman-ketiv-qere          py/mb_diff_mpu/describe_diff.py                         identical      2026-08-02   
-grapheme_diff.py                           holman-ketiv-qere          py/mb_diff_mpu/grapheme_diff.py                         identical      2026-04-27   
-mpplus_flatten.py                          holman-ketiv-qere          py/mb_diff_mpu/mpplus_flatten.py                        identical      2026-08-07   
-mpplus_param_access.py                     holman-ketiv-qere          py/mb_diff_mpu/mpplus_param_access.py                   identical      2026-04-27   
-mpplus_structure.py                        holman-ketiv-qere          py/mb_diff_mpu/mpplus_structure.py                      identical      2026-05-10   
 bib_locales.py                             book-of-job                mb_cmn/bib_locales.py                                   DIFFERS        2026-04-27   
 cantsys.py                                 book-of-job                mb_cmn/cantsys.py                                       eol-only       2026-04-27   
 file_io.py                                 book-of-job                mb_cmn/file_io.py                                       DIFFERS        2026-07-06   
