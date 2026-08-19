@@ -436,7 +436,13 @@ tools doing their own job, the same move codex-index-cam1753 made at `261434f`.
 its three `mb_cmn/` files, still at zero violations, because the restored `_RANGE_RE` covers the one
 line that had needed suppressing.
 
-### Three findings from 0b, all of them preconditions for steps 4 and 5
+### Three findings from 0b for steps 4 and 5 — one to know before verifying, two to decide during
+
+**None of the three blocks either step, and this heading said "all of them preconditions" until it
+was corrected the same day.** A precondition is something that must be true before you start;
+these are things that must be read before you conclude. Finding 1 changes how a verification run
+is read, and findings 2 and 3 are decisions each step makes as it goes. **Nothing here is owed in
+advance** — Phase 0 was the only gate in front of steps 4 and 5, and it is down.
 
 - **No repo's `check_all.py` can run in its own venv, and that was true before this phase.** All
   three fail at import: book-of-job on `pyspellchecker`, codex-index-aleppo and codex-index-cam1753
@@ -527,10 +533,12 @@ differently-named modules rather than one reconciliation. That is a design call,
    steps**: `33b3ee2` in book-of-job, `98021de` in codex-index-aleppo, `f56831c` in
    codex-index-cam1753. Fourteen of the sixteen files are one committed blob; `check_all.py` and
    `check_word_finding.py` stay per-repo permanently, on Ben's decision that day. **Steps 4 and 5
-   are unblocked.** Read the Phase 0 section's three 0b findings first — they are preconditions
-   for both: no repo's `check_all.py` runs in its own venv, book-of-job's two word-image packages
-   have none of the data they need there, and those two packages are partly forked from each other
-   inside book-of-job.
+   are unblocked, and nothing is owed in advance** — Phase 0 was the only gate in front of them.
+   Read the Phase 0 section's three 0b findings anyway: **one changes how a verification run is
+   read** (no repo's `check_all.py` runs in its own venv, so a failure there is the baseline rather
+   than the move), and **two are decisions each step has to make** (book-of-job has none of the
+   data its two word-image packages need, and those two packages are partly forked from each other
+   inside book-of-job).
 4. **book-of-job** — the largest, and the one whose Python is not under a `py/` at all.
 5. **codex-index trio** — last, and as one plan, because the three share a shape, share the
    reconciled family, and share a vendoring problem.
