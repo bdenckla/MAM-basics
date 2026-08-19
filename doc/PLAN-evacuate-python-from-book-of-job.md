@@ -11,7 +11,7 @@ with a question rather than a phase.
 |---|---|
 | D — the quirk-record question | **decided 2026-08-02: all 267 move, records included** |
 | 0 — reconcile the fork families | **DONE 2026-08-19, all five families.** Three were closed by the programme's blocking Phase 0 (`33b3ee2` here, `98021de` in codex-index-aleppo, `f56831c` in codex-index-cam1753). The two this repo owed were classified the same day, and `py_uxlc_loc/` hit the gate; **Ben's decisions, 2026-08-19, were to move book-of-job from UXLC 2.1 to 2.5, put its finer LC index records for pages 397A and 406A upstream and into BOTH copies of `lci_recs.json`, and target MAM-basics' `uxlc_misc`/`uxlc_lci` lineage rather than its `py_uxlc/` one.** Landed as `4d1ad89` in UXLC-utils and `2979507` here (the records), `6fb8c06` in book-of-job (`mb_cmn/`, seven files) and `7ca99f7` in book-of-job (the UXLC move, 44 files). **All 701 artifacts are byte-identical after every step, and the final run is silent** — no `fline mismatch`, which the coarse records had produced. See "Phase 0 — the execution record" below |
-| 1 — two roots, no cwd | **not started** |
+| 1 — two roots, no cwd | **DONE 2026-08-19.** Landed as `45f8853` in book-of-job (18 files, +305/−100), adding `boj_paths.py`; nothing owed in MAM-basics. The oracle now runs from a foreign working directory with all **701 artifacts byte-identical** and MAM-basics' tree untouched, `check_all.py` 7 of 7, the NFC suite 6 tests OK. Tracked `.py` is now **268** and lines **17,064**. **This repo does not vendor `mb_cmn/paths.py` and must not** — `parents[2]` is wrong at a root-level `mb_cmn/` — so `code_root()` walks to `.git` instead. **The prescribed grep undercounted by six and two of its seven hits are false positives.** Two root walks were left alone on purpose, `py_ac_word_image_helper/flat_index.py` and `py_cam1753_word_image/page.py`, both being blobs shared with a codex-index repo. **One question is open and is Ben's: `mb_cmn/provenance.py`'s `parents[2]`.** See "Phase 1 — two roots, no cwd" below |
 | 3 — copy the Python in (dual residency) | **not started** |
 | 4 — empty book-of-job | **not started** |
 | 6 — breadcrumbs and issue citations | **not started** |
@@ -21,8 +21,8 @@ with a question rather than a phase.
 
 | Measure | Value |
 |---|---|
-| tracked `.py` | **267**, still, after Phase 0 — `mb_cmn/provenance.py` arrived and `py_uxlc_loc/my_tanakh_book_names.py` went, so `mb_cmn/` is **17** and `py_uxlc_loc/` **9** |
-| lines | **16,859**, re-measured 2026-08-19 after Phase 0 (17,105 before it, 17,060 before the programme's Phase 0). The net −246 is `my_tanakh_book_names.py`'s 566 out against `provenance.py`'s 223 and the six re-vendored `mb_cmn` files' growth in |
+| tracked `.py` | **268** after Phase 1, which added `boj_paths.py`. It was **267** through Phase 0 — `mb_cmn/provenance.py` arrived and `py_uxlc_loc/my_tanakh_book_names.py` went, so `mb_cmn/` is **17** and `py_uxlc_loc/` **9**. **Phases 3 and 4 face 268** |
+| lines | **17,064** after Phase 1, whose net +205 is `boj_paths.py`. It was **16,859** after Phase 0, re-measured 2026-08-19 (17,105 before it, 17,060 before the programme's Phase 0); that phase's net −246 is `my_tanakh_book_names.py`'s 566 out against `provenance.py`'s 223 and the six re-vendored `mb_cmn` files' growth in |
 | tracked `gh-pages` | **694** (`jobn` 531, `jobn-details` 160, plus `index.html`, `style.css`, `woff2`) |
 | tracked `out` | **7** JSON |
 | test modules | **1** (`test_h_dot_below_nfc.py`, at the repo root) |
@@ -326,6 +326,11 @@ nothing to check and had been carried in the plan for seventeen days.
 
 ### One correction owed to a neighbouring plan: the `59 subtests` figure does reproduce
 
+**SUPERSEDED 2026-08-19 by Phase 1, which re-measured and found no subtests line at all — see
+"The `59 subtests` figure does not reproduce" in that phase's record below.** This subsection is
+left as Phase 0 wrote it, being that phase's record, but **do not act on it**: the instruction it
+issues is the wrong one, and holman-ketiv-qere's Finding 3 was right after all.
+
 MAM-basics' suite, run as this phase's verification at `ebc9669`, reports **947 passed, 5 skipped,
 59 subtests passed** in 114s. The programme plan's holman-ketiv-qere row carries a "Finding 3"
 saying that third figure does **not** reproduce, that `pytest-subtests` is not installed so pytest
@@ -601,7 +606,229 @@ it is a question about what the UXLC change data's line numbers count, and it is
 
 ---
 
-## Phase 1 — two roots, no cwd
+## Phase 1 — two roots, no cwd — **DONE 2026-08-19**
+
+**Landed as `45f8853` in book-of-job (18 files, +305/−100), which adds `boj_paths.py`. Nothing
+was owed in MAM-basics.** The prescription this record answers is the section below it, left as
+written.
+
+**Every baseline was re-measured first and every one matched**: 267 tracked `.py` (`mb_cmn/` 17,
+`py_uxlc_loc/` 9), 16,859 lines, 701 tracked artifacts, all at `7ca99f7`. After the commit,
+**268** and **17,064** — both of them `boj_paths.py` and the net of the edits. **Phase 3 and
+Phase 4 therefore face 268 files, not 267.**
+
+**The verification ran from `C:\Users\BenDe\GitRepos\MAM-basics` as the working directory**, on
+book-of-job's own interpreter by absolute path, and passed: the oracle **silent**, all **701
+artifacts byte-identical** against their HEAD blobs, **MAM-basics' tree untouched** before and
+after, `check_all.py` **7 of 7**, the NFC suite **6 tests, OK**, and every one of the five entry
+points importing and resolving each of its roots into book-of-job. black clean on all 18 files.
+The two checks that count files report **326** for mark order and **268** `.py` for escapes,
+against Phase 0's 325 and 267 — one more file each, which is `boj_paths.py` and nothing else.
+
+### The `59 subtests` figure does not reproduce, and Phase 0's correction of it was wrong
+
+MAM-basics' suite, run as this phase's verification at `7bf4e00`, reports **947 passed, 5 skipped**
+in 90.5s — **no subtests line at all**. Run twice, identically. 952 collected, which is 947 + 5.
+
+Phase 0's record says that figure "does reproduce", reports **947 passed, 5 skipped, 59 subtests
+passed**, and instructs later phases not to drop it, on the explanation that "pytest 9.1.0 counts
+`unittest` subtests natively and needs no plugin for it". **It does not.** Measured here:
+`self.subTest` is used in **25** of this repo's test files, `pytest-subtests` is absent
+(`pip show` → "Package(s) not found", the same answer Phase 0 got), pytest is 9.1.0, `main_test.py`
+passes no plugin flags and the repo has no pytest config — and the summary line carries no subtests
+count. The subtests still *run*, inside each `TestCase` through unittest's own machinery; what
+requires the plugin is **counting them in the summary**.
+
+**So holman-ketiv-qere's "Finding 3" was right on the substance** — the figure does not reproduce,
+and a baseline that carries it will not be matched — **and it was Phase 0's correction that was
+wrong, not the finding.** Phase 0 was right that the reason given for dropping it ("pytest cannot
+report it") deserved checking, and right to say "re-measure it like any other"; re-measuring is
+what produced this. **The standing baseline for MAM-basics' suite in this programme is
+`947 passed, 5 skipped`**, and the third figure should be dropped after all — from this plan, from
+the programme plan, and from the codex-index trio's, none of which should now go looking for it.
+
+### `boj_paths.py`, and why it does NOT vendor `mb_cmn/paths.py`
+
+**This repo does not vendor `mb_cmn/paths.py` and must not start.** UXLC-utils' Phase 1 hit the
+same absence and answered it by vendoring the file in; that answer is wrong here, and the reason
+is the shape of this repo rather than a preference. `paths.repo_root()` is
+`Path(__file__).resolve().parents[2]` — correct for a `py/mb_cmn/` two levels down, and wrong
+here, where `mb_cmn/` sits at the **repo root** and that walk lands on `GitRepos`. Vendoring it
+verbatim would import a broken root; editing the vendored copy is the drift Phase 0 exists to
+end. So `boj_paths.code_root()` walks up to the nearest ancestor holding `.git` instead — the
+identical idiom the programme's Phase 0 put into `check_escape_sequences.py`, `check_mark_order.py`,
+`fix_mark_order.py` and `py_ac_word_image_helper/codex_page.py` in this same repo, and
+depth-independent for exactly the reason that phase gives.
+
+**So the Phase-2-does-not-recur conclusion holds here, but by a different route than at
+holman-ketiv-qere**, which had `paths.py` already and byte-identical. Three repos, three answers:
+holman inherited it, UXLC-utils vendored it, book-of-job cannot and does not. **Check it per repo
+at the codex-index trio, and check the depth of `mb_cmn/` as well as its presence** — that is what
+decides which of the three answers applies.
+
+At the move, **two lines change**: `boj_data_root()` becomes
+`paths.require_sibling("book-of-job", paths.sibling_repo("book-of-job"))`, and `code_root()` may
+become `paths.repo_root()` or stay as it is, the `.git` walk resolving to MAM-basics' root once
+the code lives there. Nothing else composes a data path off anything but `boj_data_root()`.
+
+### The prescribed grep undercounted by six, and two of the seven it found are false positives
+
+Re-run at `7ca99f7`, `git grep -nI '"gh-pages/\|"out/\|f"gh-pages/' -- '*.py'` returns the seven
+sites the section below names. **Six more needed changing that it cannot see**, and one of them is
+the one that actually broke a foreign-cwd run:
+
+- **`pyauthor_util/job_ov_and_de.py:35,36`** — `paths_dict`'s `"py_uxlc_loc/UXLC"` and
+  `"py_uxlc_loc/UXLC-misc/lci_recs.json"`. **The grep never looked for that prefix.** These are
+  the first paths the oracle touches after the CSS files, so a run from MAM-basics dies here with
+  `FileNotFoundError: 'py_uxlc_loc/UXLC/Genesis.xml'` — which is also the proof that the phase
+  had something real to fix. Note what the directory name hides: `py_uxlc_loc/` is **data** as
+  well as code, the trap the "Two directory names are traps" subsection above already names.
+- **`pyauthor_util/author.py:134`** — `_Path("gh-pages") / "jobn" / img_prefix / img_path`, inside
+  `para_for_img`. No slash inside the quotes, so no leading-quote search finds it.
+- **`check_html_syntax_and_sanity.py:48`** — an argparse `default="gh-pages"`, which `check_all.py`
+  always took, having passed no `pages_dir`. The same shape as holman's `main_just_render_table`
+  defaults, and the same reason a grep misses it.
+- **`check_spelling_in_html.py:308`** — `out_dir = project_root / "out"`, a **third** site in a
+  file the prescription gave two of.
+- **`check_qr_consistency.py:121`** — `Path("pyauthor_qr")`, and **`check_function_ordering.py:67`**
+  — `Path(".")`. Both cwd-relative scans of **source**, so they take `code_root()` rather than the
+  data root. Neither is in the shared `check_*`/`fix_*` family: book-of-job alone has these two
+  files, checked against both codex-index repos.
+
+**And `test_h_dot_below_nfc.py:78,79` are not path construction at all.** `"out/"` and
+`"gh-pages/"` there are entries of `_EXCLUDE_DIR_PREFIXES`, repo-relative prefixes matched against
+each scanned file's path — nothing builds a path from them, and rewriting either would be a bug.
+Left alone, with a docstring note added so nobody "fixes" them later. That module's `_repo_root()`
+shells out to `git rev-parse --show-toplevel` and is already cwd-independent, so it does not take
+`code_root()` either. **Two of seven grep hits wrong in the same direction is worth carrying to
+the trio**: read what a hit *does* before counting it an offender.
+
+### The fault named in one sentence, and the one file where both roots met
+
+Holman-ketiv-qere's Phase 1 concluded that the fault is root **conflation** rather than
+cwd-relativity, and the programme's Order item 2 promoted that to the thing to grep for. **Here it
+is both, in roughly equal measure**, and `check_spelling_in_html.main()` is the miniature of the
+whole phase: one `Path(__file__).parent`, bound once as `project_root`, composed the `gh-pages`
+tree it reads — DATA, which stays in book-of-job — *and* the custom dictionary that sits beside
+its own module — CODE, which follows the Python. **One expression standing for two roots**, which
+no grep for a string literal can find and which a move silently resolves into the wrong tree. The
+two now say which root they mean, and the dictionary keeps `Path(__file__).parent` deliberately,
+that being right at whatever depth the module comes to rest.
+
+### The foreign-cwd verification convention would have clobbered a tracked MAM-basics file
+
+UXLC-utils' and holman-ketiv-qere's Phase 1 records both verify by running from
+`C:\Users\BenDe\GitRepos\MAM-basics`. **Run that way *before* the fix, book-of-job's oracle writes
+`gh-pages/index.html` and `gh-pages/style.css` cwd-relatively, and MAM-basics has a tracked
+`gh-pages/index.html` of its own.** It would not have failed; it would have overwritten that file
+and reported success. Neither of the other two repos had the collision — neither writes a bare
+`gh-pages/index.html` — so the convention had never been tested against a repo that did.
+
+The failure was demonstrated instead from an empty scratch directory, where it dies loudly on
+`FileNotFoundError: 'gh-pages/style.css'` for want of a `gh-pages/` to write into. **That loudness
+is an accident of the empty directory, not a property of the bug.** At the codex-index trio, check
+what the entry points write to a bare relative path before running one from MAM-basics; two of the
+three write a `gh-pages/` tree.
+
+### Two root walks left deliberately untouched, both because Phase 0 made them shared blobs
+
+The programme's Order item 4 hands this phase `py_ac_word_image_helper/flat_index.py:7`, whose
+`Path(__file__).resolve().parent.parent.parent` resolves to `C:\Users\BenDe\GitRepos` because the
+package sits at this repo's root. **It is wrong, and it is not this phase's to fix.** Verified
+2026-08-19 on committed blobs: all six files of `py_ac_word_image_helper/` are **one blob** with
+codex-index-aleppo's `py/py_ac_word_image_helper/`, and all four of `py_cam1753_word_image/` are
+one blob with codex-index-cam1753's — `flat_index.py` at `af610508` and `page.py` at `73b3d80d`
+in both repos of each pair. Editing either in book-of-job alone re-forks the family that Phase 0
+had just reconciled, for a module nothing runs.
+
+**How the wrongness got past Phase 0 is the transferable part.** That phase reviewed *sixteen
+files that had diverged*, and replaced the `parents[N]` walk with the `.git` walk in the four of
+them that carried one — `codex_page.py` among them, its `ROOT` depth being the whole of its diff.
+`flat_index.py` was **already byte-identical** and so never entered the review. It is identical
+and therefore wrong in one of the two repos: `parent.parent.parent` is the repo root in
+codex-index-aleppo, where the package sits under a `py/`, and `GitRepos` in book-of-job, where it
+does not. **A file being one blob across two repos is not evidence that the blob is right in
+both** — it is evidence that a depth-counting walk in it is right in at most one. Step 5 should
+sweep the reconciled packages for `parents[`/`.parent.parent` outright rather than only the files
+that differed.
+
+Two facts bound how much this costs. **Nothing imports `flat_index.py`** — not the four modules
+`main_gen_aleppo_crop_editor` pulls from its package, not anything in either repo; and
+`index-flat-annotated.json`, the file it names, exists in codex-index-aleppo and at **neither**
+`GitRepos\index-flat-annotated.json` nor book-of-job's root, so both the wrong root and the right
+one raise. It is unreachable code inside a package the programme's Phase 0 already established is
+dead here, book-of-job having none of the six data directories the two word-image packages need.
+
+**`py_cam1753_word_image/page.py:10` is a different case and needs saying separately**, because
+the Order item groups the two. Its `Path(__file__).resolve().parent.parent` is the repo root in
+book-of-job **and** in codex-index-cam1753, both of which hold that package at the root — so it is
+**correct in both today** and is not a defect at all. It becomes wrong only when book-of-job's copy
+lands under MAM-basics' `py/`, which makes it **a Phase 3 item**, and one that has to be settled
+in both repos at once or not at all.
+
+### `mb_cmn/provenance.py`'s `parents[2]` — the facts, and the question that is Ben's
+
+Phase 0's record left this as a Phase 1 item and the Order item repeats it. **Phase 1 did not pick,
+and the question stands.** What is now established:
+
+- **Four copies exist**, swept across `GitRepos` and `MAM-private` on 2026-08-19: MAM-basics
+  `py/mb_cmn/`, MAM-private `al-hatorah/py/mb_cmn/`, MAM-simple `py-examples/mb_cmn/`, and
+  book-of-job `mb_cmn/`. **`_repo_root()`'s `parents[2]` is right in three of the four** — each of
+  those sits two levels below its repo root — and wrong only in book-of-job, whose `mb_cmn/` is one
+  level below. So "re-vendor everywhere" is really "re-vendor into one repo"; the other two need no
+  new bytes whatever is decided.
+- **The wrongness is latent, and stays latent.** Nothing in book-of-job passes `generator_file` to
+  `mb_cmn.file_io`, so `this_repo_name()` and `_display_path()` never run and no artifact here
+  carries a breadcrumb. `git grep -lI "generated by book-of-job" -- gh-pages out` returns **0**,
+  which also means **Phase 6's blast radius in this repo is nil**, the same finding UXLC-utils'
+  Phase 1 recorded for its own. Were it to fire, the breadcrumb would read
+  `GitRepos/book-of-job/...`: `_common_git_dir(GitRepos)` finds no `.git`, so the chain degrades to
+  step 4 and names the directory `GitRepos`.
+- **Phase 4 deletes book-of-job's `mb_cmn/` outright**, all 17 files, so the wrong walk disappears
+  without anyone touching it.
+- **The file already contains the machinery for the depth-independent answer.** `_common_git_dir`
+  reads git's own files and handles a worktree's `.git` file; a `_repo_root()` that walked to `.git`
+  would be self-consistent with it and correct at every depth.
+
+**The question for Ben: leave it, with these facts recorded, or change MAM-basics'
+`py/mb_cmn/provenance.py` to walk to `.git` and re-vendor into book-of-job?** The first costs
+nothing and expires at Phase 4. The second is a cross-repo change to a file four repos share, for a
+defect that never fires — but it is also the one that stops the next repo hitting it. Put to him
+2026-08-19; **do not let a later phase pick this silently.**
+
+### Five things Phase 3 now owes, three of them new
+
+- **MAM-basics' `py/uxlc_misc/my_uxlc.py` has no `path_to_uxlc` parameter.** Its `read()` calls a
+  hardcoded `canonical_xml_path(book_id)` where book-of-job's takes the path as an argument — the
+  hardcoded data root Phase 0's gate found, still hardcoded. book-of-job's nine `py_uxlc_loc/`
+  modules are a pure deletion, so **Phase 3 must give MAM-basics' copy the parameter, or point
+  book-of-job's data at `in/UXLC-39/`**, and that is a real code change rather than a repoint.
+  Phase 1 needed no edit there: `job_ov_and_de.py` now hands `prep()` a `Path`, and every module
+  under `py_uxlc_loc/` takes it as an argument and passes it to `open()` or
+  `ElementTree.parse()`, both of which accept one. **Not one file under `py_uxlc_loc/` was
+  touched**, which is what keeps that deletion clean.
+- **`py_cam1753_word_image/page.py`'s depth**, above — settle it in book-of-job and
+  codex-index-cam1753 together.
+- **`test_h_dot_below_nfc.py` folds into this repo's file of the same name**, as holman's did:
+  add a `_Scope` rooted at book-of-job's data root and delete book-of-job's copy. Its
+  `_EXCLUDE_DIR_PREFIXES` are repo-relative and will need re-rooting with it.
+- **MAM-basics' venv has no `pyspellchecker`** and `check_spelling_in_html.py` imports it at module
+  level — carried forward from Phase 0's record, still true, still Phase 3's to fix.
+- **`py/boj_html.py`'s `WriteCtx.path` is now annotated `Path`**, not `str`. It flows to the
+  vendored `mb_cmn.file_io.with_tmp_openw`, whose `os.path.dirname` and `pathlib` arithmetic both
+  take one, so **the vendored file needed no change** — the same finding UXLC-utils' Phase 1
+  recorded for its own `WriteCtx`.
+
+One behavioural change worth naming because it is invisible in the diff: `_delete_files` in the
+oracle went from `glob.glob(f"{directory}/{pattern}")` to `directory.glob(pattern)`, and
+`Path.glob` matches leading-dot names where `glob.glob` does not. There are no dotfiles under
+`gh-pages/jobn/` or `gh-pages/jobn-details/`, so the two agree; the artifact comparison would have
+shown it either way, as a missing file or an untracked one, and showed neither.
+
+---
+
+The rest of this section is the plan as written 2026-08-02, before the phase ran. The seven
+offenders it names were the starting point, not the total — see the undercount above.
 
 This repo's Python runs with the **repo root** as `sys.path[0]`, not a `py/`, and addresses its
 data by cwd-relative literals. Known offenders from
