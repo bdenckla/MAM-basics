@@ -51,8 +51,8 @@ def get_book_order(pbi):
     """
     Get the map from book ID to book number, where
     book number reflects the order of books as they appear
-    in the LC. I particular, the two books of Chronicles
-     are  in a somewhat expected place (they are not final).
+    in the LC. In particular, the two books of Chronicles
+    are in a somewhat expected place (they are not final).
     """
     return pbi["_pbi_book_order"]
 

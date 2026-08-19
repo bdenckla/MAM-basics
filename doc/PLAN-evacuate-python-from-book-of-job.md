@@ -10,7 +10,7 @@ with a question rather than a phase.
 | Phase | State |
 |---|---|
 | D — the quirk-record question | **decided 2026-08-02: all 267 move, records included** |
-| 0 — reconcile the fork families | **classified 2026-08-19, all five families; the last two split.** Three were done by the programme's blocking Phase 0 (`33b3ee2` here, `98021de` in codex-index-aleppo, `f56831c` in codex-index-cam1753). Of the two this repo owed: **`mb_cmn/` reconciles** — every one of the six differences is droppable drift, MAM-basics' copy being the later text in five of them and a strict superset in three. **`py_uxlc_loc/` hits the gate** — book-of-job's fork is parameterized on its data root and reads a **UXLC 2.1** snapshot, MAM-basics' fork is hardcoded to **UXLC 2.5**, and the two corpora differ in the text of Job. **Awaiting Ben's decision; nothing in either repo was changed.** See "Phase 0 — the execution record" below |
+| 0 — reconcile the fork families | **DONE 2026-08-19, all five families.** Three were closed by the programme's blocking Phase 0 (`33b3ee2` here, `98021de` in codex-index-aleppo, `f56831c` in codex-index-cam1753). The two this repo owed were classified the same day, and `py_uxlc_loc/` hit the gate; **Ben's decisions, 2026-08-19, were to move book-of-job from UXLC 2.1 to 2.5, put its finer LC index records for pages 397A and 406A upstream and into BOTH copies of `lci_recs.json`, and target MAM-basics' `uxlc_misc`/`uxlc_lci` lineage rather than its `py_uxlc/` one.** Landed as `4d1ad89` in UXLC-utils and `2979507` here (the records), `6fb8c06` in book-of-job (`mb_cmn/`, seven files) and `7ca99f7` in book-of-job (the UXLC move, 44 files). **All 701 artifacts are byte-identical after every step, and the final run is silent** — no `fline mismatch`, which the coarse records had produced. See "Phase 0 — the execution record" below |
 | 1 — two roots, no cwd | **not started** |
 | 3 — copy the Python in (dual residency) | **not started** |
 | 4 — empty book-of-job | **not started** |
@@ -21,8 +21,8 @@ with a question rather than a phase.
 
 | Measure | Value |
 |---|---|
-| tracked `.py` | **267** |
-| lines | **17,105**, re-measured 2026-08-19 (was 17,060; the programme's Phase 0 added 45) |
+| tracked `.py` | **267**, still, after Phase 0 — `mb_cmn/provenance.py` arrived and `py_uxlc_loc/my_tanakh_book_names.py` went, so `mb_cmn/` is **17** and `py_uxlc_loc/` **9** |
+| lines | **16,859**, re-measured 2026-08-19 after Phase 0 (17,105 before it, 17,060 before the programme's Phase 0). The net −246 is `my_tanakh_book_names.py`'s 566 out against `provenance.py`'s 223 and the six re-vendored `mb_cmn` files' growth in |
 | tracked `gh-pages` | **694** (`jobn` 531, `jobn-details` 160, plus `index.html`, `style.css`, `woff2`) |
 | tracked `out` | **7** JSON |
 | test modules | **1** (`test_h_dot_below_nfc.py`, at the repo root) |
@@ -95,8 +95,8 @@ stay legible as one thing.
 | `pyauthor_qr/` | 160 | moves, **renamed `author_qr/`** — Decision D |
 | `pyauthor_util/` | 33 | moves, renamed with the other two `pyauthor*` directories |
 | repo root | 16 | **6 are a fork family — programme Phase 0**; the rest move |
-| `mb_cmn/` | 16 | **diverged — must be reconciled, not deleted** |
-| `py_uxlc_loc/` | 10 | **a second fork family — see below** |
+| `mb_cmn/` | 16 → **17** | **reconciled by Phase 0, and now a plain deletion.** All 17 are one blob with MAM-basics' `py/mb_cmn/`; the 17th is `provenance.py`, which `file_io.py` drags in |
+| `py_uxlc_loc/` | 10 → **9** | **reconciled by Phase 0**, and a plain deletion too: Ben chose MAM-basics' `uxlc_misc`/`uxlc_lci`, which already holds this code. `my_tanakh_book_names.py` is gone, it having been a second copy of `mb_cmn/bib_locales.py` |
 | `pyauthor/` | 10 | moves, renamed with the other two `pyauthor*` directories |
 | `py/` | 7 | moves, **but two names are traps** — see below |
 | `py_ac_word_image_helper/` | 6 | **a third fork family — programme Phase 0** |
@@ -213,12 +213,14 @@ one the repo was already reaching for.
 
 ---
 
-## Phase 0 — the execution record — **2026-08-19: `mb_cmn/` reconciles, `py_uxlc_loc/` hits the gate**
+## Phase 0 — the execution record — **DONE 2026-08-19, both families reconciled**
 
-Run 2026-08-19 at book-of-job `33b3ee2` and MAM-basics `ebc9669`, both content-clean, after the
-programme's blocking Phase 0 had closed the other three fork families. **Nothing in either repo
-was changed**, because the gate below is down. The prescription this record answers is the two
-`###` subsections above, left as written.
+Classified 2026-08-19 at book-of-job `33b3ee2` and MAM-basics `ebc9669`, both content-clean, after
+the programme's blocking Phase 0 had closed the other three fork families. `mb_cmn/` reconciled
+outright; `py_uxlc_loc/` hit the gate, **Ben answered the same day**, and both were then
+reconciled. The prescription this record answers is the two `###` subsections above, left as
+written. **What Ben decided, and what landed, is in the closing section "The gate, and how it was
+answered".**
 
 **Every figure here was taken on committed blobs** — `git -C <repo> rev-parse HEAD:<path>`, and
 `diff` of `git show HEAD:<a>` against `git show HEAD:<b>` — never `cmp` or `diff` on a checked-out
@@ -497,31 +499,105 @@ onto MAM-basics' copies available, because that would silently swap a two-years-
 **coarser** Job index into a published review. It is **one tool with drift whose reconciliation
 requires three decisions that are Ben's**, listed at the gate below.
 
-### THE GATE — down, and this is the ask
+### The gate, and how it was answered
 
-The prescription's gate: stop if 0a finds a genuine behavioural difference the repos need. It has,
+The prescription's gate: stop if 0a finds a genuine behavioural difference the repos need. It did,
 in family 2 — MAM-basics' hardcoded data root **cannot be pointed at book-of-job's data at all**
 (`read_lci_recs_dot_json()` takes no argument and has no override hook), and the two datasets
-differ in the text of Job. **Nothing was renamed, deleted or reconciled.** Three questions:
+differ in the text of Job. Three questions went to Ben, and **all three were answered 2026-08-19**:
 
-1. **Does book-of-job's UXLC snapshot stay at 2.1, or move to MAM-basics' 2.5?** Moving it needs
-   the `_stripped_text` guard, changes Job's word count by 5, and is a change to the corpus a
-   published review was derived against — even though the 701 artifacts happen not to move.
-2. **What happens to book-of-job's finer `lci_recs.json` records for Leningrad pages 397A and
-   406A?** They exist nowhere else. Merging them upstream into MAM-basics' `in/lci_recs.json`
-   would let one file serve both, and is the only route by which reconciliation loses nothing.
-3. **Which of MAM-basics' two forks is the target — `py/py_uxlc/` or `py/uxlc_misc/` plus
-   `py/uxlc_lci/`?** They differ from each other by up to 78 lines, and MAM-basics reconciling its
-   own two is arguably the step that has to come first, since book-of-job's would be a third.
+1. **Does book-of-job's UXLC snapshot stay at 2.1, or move to 2.5?** — **Move to 2.5.**
+2. **What happens to its finer `lci_recs.json` records for Leningrad pages 397A and 406A, which
+   exist nowhere else?** — **Upstream, and into BOTH copies of the file.**
+3. **Which of MAM-basics' two forks is the target?** — **`py/uxlc_misc/` plus `py/uxlc_lci/`.**
 
-**Family 1 is not blocked by any of this** and can be reconciled the moment its own small question
-is answered: whether to vendor `provenance.py` into book-of-job as a seventeenth `mb_cmn` file,
-carrying a `parents[2]` that is wrong at that depth and never fires, in a repo Phase 4 empties
-anyway. The evidence that the reconciliation is safe is already gathered.
+**One fact narrowed question 1 before it was asked.** `MAM-basics/in/UXLC-39/Job.xml` and
+`UXLC-utils/in/UXLC-39/Job.xml` are the **same blob**, `c710a1c4`, both UXLC 2.5 — so the snapshot
+choice never depended on the fork choice.
 
-**The precedent for what happens next is the programme's own Phase 0**, whose 0a hit this same gate
-and got Ben's answer the same day: reconcile the subset that is one tool with drift, and leave what
-is genuinely per-repo alone.
+### What landed
+
+Four commits, in three repos.
+
+| Commit | Repo | What |
+|---|---|---|
+| `4d1ad89` | UXLC-utils | the five records into `in/UXLC-misc/lci_recs.json`, plus the four derivatives `main_uxlc_mega.py` rewrites |
+| `2979507` | MAM-basics | the same five records into `in/lci_recs.json` |
+| `6fb8c06` | book-of-job | `mb_cmn/`: the six re-vendored, plus `provenance.py` |
+| `7ca99f7` | book-of-job | UXLC 2.1 → 2.5 across 39 XML, four code edits, and `my_tanakh_book_names.py` deleted |
+
+**The records merge lost nothing, and `page_counts.json` is the independent check that says so.**
+397A keeps its span and gains coordinates 1,1 → 3,27. 406A's single null-coordinate record
+(31:35p8 → 33:11p2) becomes book-of-job's four, which subdivide **exactly** that span — same
+start, same end — so the page length does not move and that file does not change. 979 records
+become 982 in both copies, and each merged body is now equal, list for list, to book-of-job's.
+
+**Only the header still differs between the two copies**, in one string of
+`column-dictionary.bkid`: UXLC-utils' names `mb_cmn_bib_locales.py` where MAM-basics' and
+book-of-job's still name `my_tanakh_book_names.py`. Left alone — it is the evidence of which
+lineage each file belongs to.
+
+**Family 1 needed no further decision.** All six took MAM-basics' text verbatim, `provenance.py`
+came in as the seventeenth file, and the sixteen shared names are now one blob with
+`py/mb_cmn/`. The `parents[2]` in the vendored `provenance.py` still lands on `GitRepos` rather
+than on book-of-job; it never fires, and editing a vendored copy would be the drift this phase
+exists to end, so it stands as a Phase 1 item.
+
+**Family 2 was reconciled semantically rather than textually.** book-of-job's copies are a pure
+deletion in Phase 4 — MAM-basics already holds the code Ben chose — so what Phase 0 owed was proof
+that MAM-basics' modules produce book-of-job's artifacts, not a byte-for-byte merge. The four code
+edits are each a difference MAM-basics' copies already carry: the `_stripped_text` None-guard,
+`mb_cmn.bib_locales` as `tbn` in place of `my_tanakh_book_names`, `ALL_BOOK_IDS` → `ALL_BK39_IDS`,
+`section` → `get_secid`, and `ordered_short_dash_full` → `ordered_short_dash_full_39`. The
+docstring-and-`__all__` style in which six of the nine modules are MAM-basics' **only** difference
+was deliberately left, being cosmetic churn in files about to be deleted.
+
+**`my_tanakh_book_names.py` is gone, and with it book-of-job's second live copy of
+`bib_locales`.** The swap was checked rather than assumed: all 39 `BK_*` constants agree in value,
+`ALL_BOOK_IDS` equals `ALL_BK39_IDS`, `SEC_SIF_EM` is unchanged, and `ordered_short_dash_full`
+agrees with `ordered_short_dash_full_39` on all 39 books. `section` and `get_secid` **disagree on
+25 of the 39** — but only in the transliteration of the section-id strings, `NevAḥ` against
+`NevAx`, `ḤamMeg` against `XamMeg`, `KetAḥ` against `KetAx` — and the one predicate book-of-job
+asks, `section(bkid) == SEC_SIF_EM`, agrees on all 39. **Check the predicate a caller uses, not
+the function's whole range**: 25 of 39 disagreeing looks fatal and is not.
+
+**The one difference that belonged upstream went upstream.** `get_book_order`'s docstring reads
+"In particular, the two books of Chronicles are in" in book-of-job and read "I particular, … are
+in" in **both** MAM-basics forks; book-of-job's is now in both.
+
+### What the oracle says, at each step
+
+Every run is `main_gen_misc_authored_english_documents.py`, compared by reading each HEAD blob
+with `git cat-file` rather than by `git status`:
+
+| After | Artifacts | Generator output |
+|---|---|---|
+| nothing (baseline at `33b3ee2`) | 700 identical, 1 line-ending-only, **0 content differences** | silent |
+| `mb_cmn/` re-vendored | same | silent |
+| UXLC 2.5 and the four code edits | same | **silent** |
+
+**That the last run is silent is the result worth having.** The same code on MAM-basics' *coarse*
+`lci_recs.json` prints two `fline mismatch` lines, at rows 0119 and 3210 — the two quirk records
+sitting on pages 397A and 406A. book-of-job's copy already held those coordinates, which is why it
+is the copy that went upstream, and with it the location cross-check is as quiet on UXLC 2.5 as it
+was on 2.1. **The corpus moved two years and the review's 160 recorded Leningrad locations still
+check out.**
+
+`check_all.py` passes all 7 checks after each step — the first time it has run in book-of-job at
+all, the venv having held one of the five packages `requirements.txt` names. black leaves every
+edited file unchanged. MAM-basics' suite stays at 947 passed, 5 skipped, 59 subtests passed.
+
+**Two findings for the codex-index trio.** `main_write_page_break_info.main()` reads
+`data/lci_recs.json` and only **then** copies `in/UXLC-misc/lci_recs.json` over it, so a change to
+the hand-maintained source needs **two runs** to reach the derivatives; the first run here left
+`lci_augrecs.json` at 979 while `lci_recs.json` had already become 982. And
+`out/UXLC-misc/all_changes_loc_checks.json` moved: 9 of its 1399 entries changed, 5 better and 4
+worse, total absolute `fline_diff` over those 9 falling **33.03 → 12.38**. The win is the worst
+case, 397A column 3 line 21 going from **23.69 lines out to 1.47**. The 4 that worsen are all on
+406A column 1 and all by about 2.3 lines, which is systematic rather than random: the subdivision
+leaves lines 11 and 20 of that column blank, and `fline` arithmetic assumes 27 contiguous lines
+per column, so the recorded line and the estimate now count differently. **Left as it stands** —
+it is a question about what the UXLC change data's line numbers count, and it is Ben's.
 
 ---
 
