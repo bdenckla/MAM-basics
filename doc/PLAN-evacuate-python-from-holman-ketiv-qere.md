@@ -13,7 +13,7 @@ where the two agree, that file carries the reasoning and this one does not repea
 | 1 — two roots, no cwd | **DONE 2026-08-18** — `6b10259` in holman-ketiv-qere (12 files, +275/−51), preceded by `50b2eaa` there; nothing owed in this repo's `py/` |
 | 3 — copy the Python in (dual residency) | **DONE 2026-08-18** — `1be01b5` here (60 new files, 1 modified); in holman-ketiv-qere `9e290ce` before it and `15824d4` after, both deliberate exceptions to dual residency. Suite 905/5 → **950/5**; 175 of 335 artifacts rewritten, 160 untouched, row count 77 |
 | 4 — empty holman-ketiv-qere | **DONE 2026-08-18** — `0890cb8` in holman-ketiv-qere (111 files, +121/−16,838) and `b72f785` here. **holman-ketiv-qere holds zero Python.** 107 tracked files deleted, not 104: the 100 `.py`, **five** `_provenance.md`, `py/.gitignore` and `.vscode/settings.json`. Oracle run twice, before and after the deletion, 175/160 both times; row count still 77. Suite 950 → **947**, three tests and not two. **Phase 7 item 1 is done inside this phase**, the scan-root guard having fired the moment the directories went |
-| 6 — breadcrumbs and issue citations | **not started** — and its inventory is **at least five sites, not the two** Phase 3 named; see Phase 4's record |
+| 6 — breadcrumbs and issue citations | **DONE 2026-08-18** — `4e9d809` here (the generator), `ce6dd7d` in holman-ketiv-qere (three artifacts), and a `CLAUDE.md` commit after them. The five stale paths flipped, exactly the five Phase 4 named, in two shapes the artifacts themselves settled. **Not one bare `#NN` needed prefixing**: holman-ketiv-qere's Python never cited its own tracker, so no citation was rewritten in either repo. `CLAUDE.md` is now **"Four issue trackers"** — 81 issues, 1–81, 60 open, the whole range colliding. 175/160 and `row_count` 77 unchanged; suite still 947/5 |
 | 7 — cross-repo bookkeeping | **item 1 DONE 2026-08-18** in `b72f785`, with Phase 4; items 2–5 not started |
 
 Phase 2 does not recur — **and confirmed 2026-08-18 for the right reason, which is not the one this
@@ -547,7 +547,98 @@ deletes — and there are **six** such commands, not the one the README leads wi
 **Name the 160 artifacts a full regeneration does NOT rewrite**, the way wlc-utils' Phase 4 named
 its 111 and UXLC-utils' Phase 3 its 87. Phase 1's record lists them.
 
-## Phase 6 — breadcrumbs and issue citations
+## Phase 6 — breadcrumbs and issue citations — DONE 2026-08-18
+
+**Landed as `4e9d809` here (the generator), `ce6dd7d` in holman-ketiv-qere (three artifacts), and
+a `CLAUDE.md` commit after them.** The breadcrumb flip is its own commit in each repo, as this
+section asks.
+
+**Every baseline was re-measured first and, for the first time in this plan, every one matched.**
+holman-ketiv-qere at `0890cb8`, clean, **0 tracked `.py`**, 348 tracked files, 335 artifacts across
+the six trees (`gh-pages` 300, `emails` 26, `docs-not-served` 4, `out` 2, `data` 2, `io` 1),
+`table.row_count` 77, the 13-message mailbox present, the UXLC-utils sibling present. MAM-basics at
+`e823a79`, clean, suite **947 passed / 5 skipped / 59 subtests**, ruff clean, `source_hygiene` OK.
+Phases 1, 3 and 4 each found a figure that had moved; this phase found none, and the reason is
+worth keeping: **Phase 4 measured them all hours earlier and nothing ran in between.** Freshness,
+not luck — the re-measure is still what establishes that.
+
+**Part 1 — the five stale paths, exactly the five Phase 4 named.** The grep below is the one that
+finds them, and it found four `py/…` hits; the fifth, `hkq_cmn/uxlc_standard_atoms`, carries no
+`py/` prefix and so is invisible to it. **Read the matched sentences, not only the matched paths.**
+
+The two generated `note` fields were fixed at the generator here —
+`main_estimate_uxlc_locations.py`'s `NOTE` and `STANDARD_ATOMS_NOTE` module constants — and the
+artifacts regenerated, never edited. `docs-not-served/table_data_fields.md` was edited directly,
+being hand-authored and one of the 160 no run rewrites.
+
+**Two shapes, not one, and the artifacts themselves settled which goes where.** The generated
+notes take a bare `MAM-basics/py/…`, matching UXLC-utils' Phase 6 and — decisively —
+`data/uxlc_atom_locations.json`'s own first sentence, which has said `MAM-basics'` with no `../`
+since before the move; a grep of all 335 artifacts for the repo name returns that one site, so
+there was exactly one precedent and it is in the very file being edited. The hand-authored
+markdown takes `../MAM-basics/py/…`, matching this repo's README.md and CLAUDE.md, which Phase 4
+rewrote that way on Ben's "rewrite every one". `hkq_cmn/uxlc_standard_atoms` also gained the `.py`
+it lacked, so that it reads as a file rather than a directory; holman's README.md already spelled
+that module `../MAM-basics/py/hkq_cmn/uxlc_standard_atoms.py`. Both note paragraphs were re-wrapped
+to hold every line inside black's 88 with the word sequence preserved.
+
+Afterwards `git grep -nIoE '(^|[^-a-zA-Z0-9/])py/[A-Za-z_./]*' -- data docs-not-served io` returns
+**nothing**: no unqualified `py/` path survives anywhere in holman-ketiv-qere's data or prose.
+
+**Part 2 — there was nothing to prefix, and that is this phase's real finding.** Not one bare
+`#NN` in the moved code names a holman-ketiv-qere issue, so no citation was rewritten in either
+repo. The full inventory, measured rather than assumed:
+
+- **In the 60 files Phase 3 moved:** 20 `#`-plus-digit sites, all disposed of. **19 are CSS hex
+  colours** in `py/py_render/rt_assets.py`; the twentieth is the **`#2026.08.05-6` UXLC change
+  anchor** in `py/hkq_cmn/uxlc_change_records.py`, which is not an issue and correctly stays bare.
+- **In the rest of holman-ketiv-qere's pre-move `py/`:** eight more sites, at `6b10259`. Six sat
+  in `py/mb_cmn/`, a pure deletion — four lines of `hebrew_accents.py` citing Yeivin *ITM* as
+  `#194`, `#358` and `#361`, and two of `paths.py`, a `#75` naming **MAM-basics'** paths convention
+  and an already-prefixed `wlc-utils#48`. The other two are both `#187`, naming **MAM-basics'** NFC
+  convention: one in `main_test.py`, which disappeared at the move, one in
+  `test_h_dot_below_nfc.py`, which collided with this repo's copy.
+
+So **every `#NN` holman-ketiv-qere's Python ever carried was either not an issue at all or an
+issue of MAM-basics' own**, and the repo whose name would have been the prefix was cited by its
+Python not once. `rt_issue_tags.py` and `table_row_github_issues.py` were checked and left alone as
+this section requires, their `REPO_OWNER`/`REPO_NAME` constants included.
+
+**The `22` in the task prompt has no source in either plan.** `git grep` finds no such figure in
+this file or in `PLAN-evacuate-python-programme.md`; this section, as written below, names no count
+at all. Treated as the mismatch this plan says to treat it as, and recorded here so the next
+session does not go looking for 22 citations that were never measured.
+
+**`CLAUDE.md`'s section is now "Four issue trackers".** holman-ketiv-qere keeps **81 issues,
+numbered 1–81, 60 of them open**, measured 2026-08-18 with
+`gh issue list --repo bdenckla/holman-ketiv-qere`. The whole numbered range collides with
+MAM-basics', all 81 — sharper even than UXLC-utils' 1–56 — and three worked collisions are given
+(#4, #48, #75). **Six numbers the section already used as wlc-utils or UXLC-utils collisions are
+now four-way**: #19, #29, #48, #52, #69, #75. A third bullet joins "two things a blind sweep gets
+wrong", for the two modules that render issue references as data. The rename strands one more
+pointer, `PLAN-evacuate-python-from-UXLC-utils.md`'s Phase 6 record calling the section "Three
+issue trackers"; it is left as written, the answer that plan chose for its own four strandings.
+
+**holman-ketiv-qere needs no `doc/` exception, the one way it differs from wlc-utils and
+UXLC-utils.** Its `doc/` has two files and neither carries a bare `#NN`. The only `#NN` in any of
+its tracked prose is the `#19` its `CLAUDE.md` quotes twice from the filenames
+`gh-pages/JC3 The Biblical Text in the JC Edition #19-ז` — a JC Edition article number, not an
+issue, and so an instance of the trap rather than an exception to the rule.
+
+**Verification.** The full six-command regeneration ran from
+`C:\Users\BenDe\GitRepos\MAM-basics` on this repo's interpreter, with an mtime snapshot around it
+via `.novc/hkq_oracle_mtimes.py`: **175 of 335 rewritten, 160 untouched**, the same split and the
+same list Phases 1, 3 and 4 measured, and `table.row_count` still **77**. holman-ketiv-qere's
+`git status --porcelain` held exactly the three intended files and nothing else —
+`docs-not-served/table_data_fields.md` and `io/table_row_github_issues.json`, both among the 160,
+stayed byte-identical apart from this phase's own edit to the first. MAM-basics' tree held only
+`py/main_estimate_uxlc_locations.py`, then only `CLAUDE.md`; `gh-pages/`, `out/` and `in/`
+untouched. Suite **947 passed / 5 skipped / 59 subtests**, unchanged; `ruff check py` clean; black
+left the one touched file unchanged; `source_hygiene` OK.
+
+---
+
+The rest of this section is the plan as written before the phase ran.
 
 ```powershell
 git grep -lI "generated by holman-ketiv-qere" -- gh-pages out docs-not-served
