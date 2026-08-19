@@ -134,7 +134,7 @@ absent. The verbatim reader-facing statement is
 audit fix that made maqaf differences non-differences) and why that one was wrong, so it does not
 get reinstated. Issue wlc-utils#76.
 
-## Three issue trackers: a bare `#NN` here means MAM-basics
+## Four issue trackers: a bare `#NN` here means MAM-basics
 
 wlc-utils' issues were **not** transferred when its Python moved here on 2026-08-01. They keep
 their numbers and stay in `bdenckla/wlc-utils`, which is still where they are read, commented on
@@ -160,12 +160,38 @@ lets the editor simplify a reiterated note-target word where MAM-basics #48 is a
 pasuq in Isaiah 44:24. The moved code's 50 bare citations were prefixed on 2026-08-18, across
 eight `py/clc/` modules and `py/main_clc_download_notes.py`.
 
-**This section was "Two issue trackers" until 2026-08-18**, and four sentences in
-`doc/PLAN-evacuate-the-rest-of-wlc-utils.md` still cite it under that name. They are that plan's
-execution record, describing the section as it stood when each phase ran, so they are left as
-written rather than re-pointed.
+**holman-ketiv-qere is the fourth tracker.** Its Python moved here on 2026-08-18 and its issues
+were not transferred either — **81 of them, numbered 1–81, 60 open**, measured 2026-08-18, still
+read, commented on and closed in `bdenckla/holman-ketiv-qere`. So a citation of one is written
+**`holman-ketiv-qere#NN`**, and the whole numbered range collides, all 81:
+holman-ketiv-qere#4 is row 13's 2 Samuel 11:24 ויראו where MAM-basics #4 produces MIDI of a trope
+realization, holman-ketiv-qere#48 is row 41's Jeremiah 17:11 ימו where MAM-basics #48 is a space
+before sof pasuq in Isaiah 44:24, holman-ketiv-qere#75 is row 65's Ezekiel 40:34 ואלמו where
+MAM-basics #75 is the `mb_cmn/paths.py` convention. Most of holman-ketiv-qere's issues are one per
+review row, titled "row NN Book C:V FORM MAM qere", and `io/table_row_github_issues.json` holds
+that mapping. **Six numbers are now four-way collisions** — #19, #29, #48, #52, #69 and #75, each
+already cited above as a wlc-utils or a UXLC-utils collision.
 
-Two things a blind sweep gets wrong, so read the surrounding sentence before adding a prefix:
+**Unlike the other three moves, this one had nothing to prefix**, which is worth stating because
+the arithmetic that predicts otherwise is so easy to do. Phase 6 read every `#`-plus-digit site in
+the 60 files that moved and found no citation of any tracker among them: 19 CSS hex colours in
+`py/py_render/rt_assets.py`, and the `#2026.08.05-6` UXLC **change** anchor in
+`py/hkq_cmn/uxlc_change_records.py`. The rest of holman-ketiv-qere's pre-move `py/` carried eight
+more sites, and every one is disposed of rather than moved. Six sat in `py/mb_cmn/`, which was a
+pure deletion: four lines of `hebrew_accents.py` citing Yeivin *ITM* as `#194`, `#358` and `#361`,
+and two of `paths.py`, a `#75` naming MAM-basics' paths convention and an already-prefixed
+`wlc-utils#48`. The other two are both `#187`, naming MAM-basics' NFC convention — one in
+`main_test.py`, which disappeared, one in `test_h_dot_below_nfc.py`, which collided with this
+repo's copy. **A repo can move its whole
+Python and still owe this section nothing but a clause** — count the citations, never the files.
+
+**This section was "Two issue trackers" until 2026-08-18 and "Three issue trackers" for the rest
+of that same day**, and four sentences in `doc/PLAN-evacuate-the-rest-of-wlc-utils.md` still cite
+it under the first of those names, as does `doc/PLAN-evacuate-python-from-UXLC-utils.md`'s Phase 6
+record under the second. They are those plans' execution records, describing the section as it
+stood when each phase ran, so they are left as written rather than re-pointed.
+
+Three things a blind sweep gets wrong, so read the surrounding sentence before adding a prefix:
 
 - **Not every `#NN` is an issue.** Yeivin's *ITM* is cited by section number in exactly the same
   shape (`#194`, `#221`, `#246`, and the `#325`–`#391` poetic run), CSS carries hex colours, and
@@ -178,6 +204,14 @@ Two things a blind sweep gets wrong, so read the surrounding sentence before add
   `main_uxlc_grammar_test.py`'s #218 and #219 are MAM-basics' own, so they are already right
   bare. `clc_render.py`'s site read "issue #6" until 2026-08-18 and now says "design doc §9 #6,
   not an issue", which is what the `clc_collect.py` site had said all along.
+- **Two modules render issue references as DATA about the Holman review, not as citations of a
+  tracker, and prefixing them corrupts the rendered table.** `py/py_render/rt_issue_tags.py` and
+  `py/hkq_cmn/table_row_github_issues.py` turn `io/table_row_github_issues.json` into the per-row
+  issue links, state and tags on holman-ketiv-qere's report pages. Those numbers are
+  holman-ketiv-qere issue numbers already, resolved through the `REPO_OWNER` and `REPO_NAME`
+  constants that name `bdenckla/holman-ketiv-qere` and are passed to `gh issue list --repo`;
+  leave the constants and the rendering alone. Phase 6 of
+  `doc/PLAN-evacuate-python-from-holman-ketiv-qere.md` names this as the trap to check for first.
 - **`wlc_issue_edit.py` is what keeps the split safe, and its own `#69` is deliberate.** `gh`
   resolves which tracker `issue <number>` names from the checkout it runs in, so `repo` is a
   required argument there rather than an inherited cwd; the bare `#69` in its docstring is the
@@ -200,6 +234,13 @@ its `doc/` (2 files), `in/` (556), `out/` (27), `gh-pages/` (184) and `data/` (2
 2026-08-18. So a bare `#NN` read in its `doc/clc-design.md` still means a UXLC-utils issue, and
 nothing there was qualified — for the same reason wlc-utils' `doc/` was left alone, that
 qualifying them would imply they were ambiguous.
+
+**holman-ketiv-qere needs no such exception, and that is the one place it differs from the other
+three.** Its `doc/` has two files and neither carries a bare `#NN`. Measured 2026-08-18, the only
+`#NN` in any of its tracked prose is the `#19` its `CLAUDE.md` quotes twice from the filenames
+`gh-pages/JC3 The Biblical Text in the JC Edition #19-ז`, and that is a JC Edition article number
+rather than an issue — one more instance of the bullet above, met in the repo whose tracker had
+just been added.
 
 ## There is no `wlc-koren-12th` repo
 
