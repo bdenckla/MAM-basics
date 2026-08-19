@@ -10,7 +10,7 @@ with a question rather than a phase.
 | Phase | State |
 |---|---|
 | D — the quirk-record question | **decided 2026-08-02: all 267 move, records included** |
-| 0 — reconcile the three fork families | **not started** |
+| 0 — reconcile the fork families | **three of the five done 2026-08-19**, by the programme's blocking Phase 0 (`33b3ee2` here, `98021de` in codex-index-aleppo, `f56831c` in codex-index-cam1753). `mb_cmn/` and `py_uxlc_loc/` remain, and both shrank on re-measure — see the two sections below |
 | 1 — two roots, no cwd | **not started** |
 | 3 — copy the Python in (dual residency) | **not started** |
 | 4 — empty book-of-job | **not started** |
@@ -22,12 +22,12 @@ with a question rather than a phase.
 | Measure | Value |
 |---|---|
 | tracked `.py` | **267** |
-| lines | **17,060** |
+| lines | **17,105**, re-measured 2026-08-19 (was 17,060; the programme's Phase 0 added 45) |
 | tracked `gh-pages` | **694** (`jobn` 531, `jobn-details` 160, plus `index.html`, `style.css`, `woff2`) |
 | tracked `out` | **7** JSON |
 | test modules | **1** (`test_h_dot_below_nfc.py`, at the repo root) |
 | entry points | **5** `main_*.py`, all at the repo root |
-| conventions docs | **10** `.github/copilot-instructions*.md` — there is **no** `CLAUDE.md` |
+| conventions docs | **1** `CLAUDE.md`, re-measured 2026-08-19. The row said **10** `.github/copilot-instructions*.md` and **no** `CLAUDE.md`; `69162e4` deleted the Copilot file and `991a1c4` moved the nine procedure docs out of `.github/` and added a `CLAUDE.md`, both on 2026-08-03, the day after this plan was written. **Phase 4 edits a `CLAUDE.md` here rather than writing one**, as it did at holman-ketiv-qere |
 
 The oracle is the **701 tracked artifacts**. `check_all.py` runs seven checks over them and is the
 nearest thing this repo has to a gate; `main_gen_misc_authored_english_documents.py` is the nearest
@@ -97,42 +97,78 @@ stay legible as one thing.
 holds 40 UXLC XML files *and* 10 `.py`. Do not infer a directory's contents from its name in this
 repo.
 
-### The `mb_cmn` copy has diverged
+### The `mb_cmn` copy has diverged — **6 files, not 16, re-measured 2026-08-19**
 
 `doc/vendoring-inventory.md` records book-of-job's 16 `mb_cmn` files as **`DIFFERS`**, with
-mechanism `unknown` — no copy script has ever refreshed them. **Deleting them the way wlc-utils'
-26 were deleted would destroy whatever those differences are.** Diff all 16 against MAM-basics'
-originals and classify each difference before Phase 3: a fix that belongs upstream, a local
-adaptation that belongs in the moving code, or drift that can simply be dropped. **Write the
-classification into this file.** Only after that are they a deletion.
+mechanism `unknown` — no copy script has ever refreshed them. **That is now stale**: compared as
+committed blobs against MAM-basics' `py/mb_cmn/`, **10 of the 16 are identical and 6 differ** —
+`bib_locales.py`, `file_io.py`, `hebrew_accents.py`, `hebrew_punctuation.py`, `uni_heb.py` and
+`uxlc_change_url.py`. Two re-vendoring commits closed most of the gap after this plan was written,
+`8bc2602` (2026-08-04, `str_defs.py`) and `60db958` (2026-08-07, `url_percent.py`), and others had
+converged earlier. Re-establish with
+`git -C book-of-job rev-parse HEAD:mb_cmn/<f>` against `git -C MAM-basics rev-parse HEAD:py/mb_cmn/<f>`,
+**never `cmp` on the working trees** — see the note under `py_uxlc_loc/` for what that instrument
+does here.
 
-### `py_uxlc_loc/` is a diverged fork of UXLC-utils' Python
+**Deleting the 6 the way wlc-utils' 26 were deleted would destroy whatever those differences
+are.** Diff those 6 against MAM-basics' originals and classify each difference before Phase 3: a
+fix that belongs upstream, a local adaptation that belongs in the moving code, or drift that can
+simply be dropped. **Write the classification into this file.** Only after that are they a
+deletion. The other 10 are a plain deletion, being byte-identical to what MAM-basics already has.
 
-Ten modules whose names map one-to-one onto UXLC-utils' `py/uxlc_misc/` and `py/uxlc_lci/`. All
-eight with a direct counterpart differ, measured 2026-08-02 with `cmp` and `diff`:
+### `py_uxlc_loc/` is a diverged fork of the UXLC location code
 
-| book-of-job | UXLC-utils counterpart | Differing lines |
-|---|---|---|
-| `my_uxlc_location.py` | `uxlc_misc/my_uxlc_location.py` | 372 |
-| `my_uxlc_lci_rec.py` | `uxlc_lci/uxlc_lci_rec.py` | 308 |
-| `my_uxlc_lci_augrec.py` | `uxlc_lci/uxlc_lci_augrec.py` | 302 |
-| `my_uxlc.py` | `uxlc_misc/my_uxlc.py` | 240 |
-| `my_uxlc_bibdist.py` | `uxlc_misc/my_uxlc_bibdist.py` | 185 |
-| `my_uxlc_page_break_info.py` | `uxlc_misc/my_uxlc_page_break_info.py` | 162 |
-| `my_uxlc_cvp.py` | `uxlc_misc/my_uxlc_cvp.py` | 116 |
-| `my_uxlc_verlen.py` | `uxlc_lci/uxlc_lci_verlen.py` | 14 |
+Ten modules whose names map one-to-one onto what is now MAM-basics' `py/uxlc_misc/` and
+`py/uxlc_lci/`; eight have a direct counterpart and two do not. **The counterpart moved after this
+plan was written**: UXLC-utils' Python was evacuated into MAM-basics on 2026-08-03, so
+`../UXLC-utils/py/` names nothing and MAM-basics is what to diff against.
+
+**The 2026-08-02 figures were a line-ending artifact.** They read 372, 308, 302, 240, 185, 162, 116
+and 14 differing lines, and **seven of those eight are exactly twice the file's total line count** —
+`my_uxlc_lci_rec.py` is 154 lines and was reported at 308, `my_uxlc_lci_augrec.py` 151 and 302,
+`my_uxlc_page_break_info.py` 81 and 162, `my_uxlc_verlen.py` 7 and 14. That is what a diff reports
+when *every* line differs, each counted once as removed and once as added. book-of-job's working
+tree holds 258 of its 267 tracked `.py` as CRLF while its index holds LF, so a working-tree `diff`
+against an LF checkout reports the whole file every time. The programme plan's Phase 0 record
+carries the full account of that instrument; there it cost a quarter of its own table's verdicts.
+
+Re-measured 2026-08-19 against committed blobs:
+
+| book-of-job `py_uxlc_loc/` | MAM-basics counterpart | Differing lines | Was reported |
+|---|---|---|---|
+| `my_uxlc.py` | `uxlc_misc/my_uxlc.py` | **97** | 240 |
+| `my_uxlc_page_break_info.py` | `uxlc_misc/my_uxlc_page_break_info.py` | **41** | 162 |
+| `my_uxlc_location.py` | `uxlc_misc/my_uxlc_location.py` | **30** | 372 |
+| `my_uxlc_bibdist.py` | `uxlc_misc/my_uxlc_bibdist.py` | **23** | 185 |
+| `my_uxlc_lci_augrec.py` | `uxlc_lci/uxlc_lci_augrec.py` | **8** | 302 |
+| `my_uxlc_cvp.py` | `uxlc_misc/my_uxlc_cvp.py` | **4** | 116 |
+| `my_uxlc_lci_rec.py` | `uxlc_lci/uxlc_lci_rec.py` | **2** | 308 |
+| `my_uxlc_verlen.py` | `uxlc_lci/uxlc_lci_verlen.py` | **2** | 14 |
+
+Re-establish a row with `diff` of `git -C book-of-job show HEAD:py_uxlc_loc/<f>` against
+`git -C MAM-basics show HEAD:py/<counterpart>`, counting lines matching `^[<>]`.
 
 **None of this is in `doc/vendoring-inventory.md`**, which records only `mb_cmn` rows for
 book-of-job — the scan looks for MAM-basics packages, and these are UXLC-utils ones. It is the
 same blind spot that hides codex-index-leningrad's `UXLC-utils-sparse/py/`, and it means **the
 UXLC location code exists in three public repos**: UXLC-utils, codex-index-leningrad and here.
 
-**Do not assume these are stale copies of UXLC-utils' files.** At 372 differing lines the more
-likely reading is independent evolution on both sides, in which case they are two tools with a
-common ancestor and both belong in MAM-basics under distinct names. Classify before deciding, and
-**decide it in coordination with UXLC-utils' Phase 5**, which faces the same question for
-codex-index-leningrad's copy. Whichever plan reaches the question first answers it and writes the
-answer into both files.
+**The conclusion this section drew does not survive the re-measure.** It read: "At 372 differing
+lines the more likely reading is independent evolution on both sides, in which case they are two
+tools with a common ancestor and both belong in MAM-basics under distinct names." At 2 to 97 lines
+**that reading is no longer the likely one — ordinary drift is**, and what these eight probably
+want is reconciliation onto MAM-basics' copies rather than a second set of names in the same repo.
+`my_uxlc.py` at 97 and `my_uxlc_page_break_info.py` at 41 are the only two big enough to hide a
+real behavioural difference, so look there first; the four at 8 lines or fewer are almost certainly
+drift. **Classify before deciding either way** — the point of the correction is that the design
+call is now open rather than settled against reconciliation.
+
+**Decide it in coordination with UXLC-utils' Phase 5**, which faced the same question for
+codex-index-leningrad's copy and **dropped that repo's sparse `py/` half rather than repointing
+it** (2026-08-03, `d5195e3` in codex-index-leningrad) — a precedent for dropping a diverged fork
+rather than renaming it, and one that reads very differently now the divergence here is measured in
+tens of lines. Whichever plan reaches the question first answers it and writes the answer into both
+files.
 
 ### Two names in `py/` collide by meaning, not by path
 
