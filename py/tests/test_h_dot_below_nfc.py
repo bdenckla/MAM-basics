@@ -5,11 +5,12 @@ the precomposed U+1E25 / U+1E24 forms, never the decomposed "h"/"H" + COMBINING 
 BELOW (U+0323) sequence. Comments must not use either Unicode form at all -- plain
 ASCII "x"/"X" is used instead, since comments don't flow to output.
 
-THREE REPOS ARE SCANNED, each with its own exclusions and its own floor. This repo
+FOUR REPOS ARE SCANNED, each with its own exclusions and its own floor. This repo
 holds the code, and since 2026-08-12 the wlc corpus the code generates as well;
-UXLC-utils and holman-ketiv-qere still hold the corpora their halves generate into, and
-each carries hand-authored transliterations that would otherwise go unscanned once its
-Python has moved out. ``_scopes()`` below is the whole of the per-repo difference. A
+UXLC-utils, holman-ketiv-qere and book-of-job still hold the corpora their halves
+generate into, and each carries hand-authored transliterations that would otherwise go
+unscanned once its Python has moved out. ``_scopes()`` below is the whole of the
+per-repo difference. A
 wlc-utils scope was one of them until 2026-08-17, when Phase 10 of
 ``doc/PLAN-evacuate-the-rest-of-wlc-utils.md`` emptied that repo down to 155 generated
 redirect stubs: nothing hand-authored is left there to scan, and the 6 files that do
@@ -30,6 +31,16 @@ its root by ``git rev-parse`` from its own directory, so copying it here would h
 aimed it at MAM-basics too. Dropping it without adding this scope would have quietly
 ended NFC linting over that repo's hand-authored files: ``doc/`` (2), ``README.md``,
 ``CLAUDE.md``, ``docs-not-served/table_data_fields.md`` and the 26 under ``emails/``.
+
+The book-of-job scope arrived the same way and for the same reason (Phase 3 of
+``doc/PLAN-evacuate-python-from-book-of-job.md``), replacing that repo's own root-level
+``test_h_dot_below_nfc.py`` -- 331 lines, again locating its root by ``git rev-parse``
+from its own directory, so copying it here would have aimed it at MAM-basics too. Its
+``_BINARY_EXTENSIONS`` were compared against this file's before it was dropped, as
+holman-ketiv-qere's were: that comparison found the missing ``.docx`` noted below,
+and book-of-job's set turned out to be a strict subset of this one, so nothing was
+owed. What its scope keeps alive is ``doc/`` (9), the 24 hand-made line-break JSON
+under ``py_ac_loc/``, and that repo's own ``README.md`` and ``CLAUDE.md``.
 
 Comment detection uses Python's ``tokenize`` module (real COMMENT tokens) rather than a
 naive ``line.find("#")``. The wlc code uses "#" as a delimiter inside string literals
@@ -58,6 +69,7 @@ from pathlib import Path
 
 from mb_cmn import paths
 
+import boj_paths
 import hkq_paths
 import uxlc_paths
 
@@ -164,6 +176,24 @@ _UXLC_EXCLUDE_DIR_PREFIXES = ("out/", "gh-pages/", "data/", "in/")
 # generated but harmless to scan.
 _HKQ_EXCLUDE_DIR_PREFIXES = ("out/", "gh-pages/")
 
+# What book-of-job's own copy of this test excluded, carried over verbatim and
+# re-rooted: its two generated trees, its UXLC snapshot and derived JSON, and the
+# three external/derived trees under py_ac_loc/.  Two of those prefixes name
+# directories whose py_ prefix promises Python and delivers data -- py_uxlc_loc/
+# holds 40 data files beside its 9 .py, and py_ac_loc/ holds 76 tracked files and
+# no .py at all -- which is why they are spelled to the subdirectory rather than to
+# the py_-prefixed parent.  py_ac_loc/line-breaks/ is deliberately NOT excluded: 24
+# hand-made JSON, in scope like any other hand-authored file.
+_BOJ_EXCLUDE_DIR_PREFIXES = (
+    "out/",
+    "gh-pages/",
+    "py_uxlc_loc/UXLC/",
+    "py_uxlc_loc/UXLC-misc/",
+    "py_ac_loc/MAM-XML/",
+    "py_ac_loc/codex-index/",
+    "py_ac_loc/column-coordinates/",
+)
+
 # The one comment allowed to keep showing a precomposed h-with-dot-below
 # glyph, because the comment is genuinely about the character itself... In
 # practice, after #187's cleanup, there are no such exceptions: every
@@ -230,6 +260,24 @@ def _scopes() -> tuple[_Scope, ...]:
             # and scripts. Comfortably above 40, so the floor keeps meaning "an
             # exclusion filter swallowed everything" rather than asserting a size.
             floor=40,
+        ),
+        _Scope(
+            label="book-of-job",
+            root=boj_paths.boj_data_root(),
+            exclude_dir_prefixes=_BOJ_EXCLUDE_DIR_PREFIXES,
+            exclude_files=frozenset(),
+            # book-of-job's own copy asserted a floor of 200 over its whole tree, which
+            # counted the 268 .py that Phase 3 has now copied here and Phase 4 will
+            # delete there. Measured 2026-08-19: 312 files in scope today, 42 once those
+            # .py go, since two of the 44 non-.py in scope -- quirks-BHQ.txt and
+            # check_spelling_in_html.custom-dict.json -- came here with the code. What
+            # is left is doc/ (9), py_ac_loc/line-breaks/ (24) and two .md beside them,
+            # README.md, CLAUDE.md, requirements.txt, the workspace file and four
+            # dotfiles. 30 sits clear of 42 in both directions, so the floor keeps
+            # meaning "an exclusion filter swallowed everything" rather than asserting a
+            # tree size -- and, as with the UXLC-utils scope, it is what would catch this
+            # scope outliving its tree.
+            floor=30,
         ),
     )
 

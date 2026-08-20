@@ -1,0 +1,22 @@
+RECORD_4019_H3JV = {
+    "qr-noted-by": "nDM",
+    "qr-cv": "40:19",
+    "qr-word-id": "H3JV",
+    "qr-consensus": "הָ֝עֹשׂ֗וֹ",
+    "qr-lc-proposed": "הָ֝עֹשׂוֹ",
+    "qr-what-is-weird": "רביע of רביע מוגרש is absent",
+    "qr-highlight": 3,
+    "qr-lc-loc": {"page": "408B", "column": 2, "line": 27},
+    "qr-ac-loc": {"page": "281r", "column": 1, "line": 16, "word": 5},
+    "qr-generic-comment": [
+        "There is a confusing constellation of three dots surrounding the ש in μL,",
+        " but only one of those dots, a $sin dot, belongs to the ש.",
+        " Working backwards (to the right) from that $sin dot,",
+        " the next dot is a “קמץ dot” belonging to the מ of %גרמיו on the line above.",
+        " The next dot is a חולם חסר dot belonging to the ע.",
+        " (Or, if you prefer an alternative interpretation of חולם חסר dots in general,",
+        " the חולם חסר dot belongs to an implicit $vav between the ע and ש.)",
+        " The issue at hand is there is no fourth dot",
+        " that could be interpreted as a רביע above the ש.",
+    ],
+}

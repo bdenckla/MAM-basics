@@ -1,0 +1,65 @@
+# Below "All good" means:
+#    As expected, BHL main (both ketiv and qere, if relevant) matches ML above.
+#    As expected, BHLA has no entry for this.
+#    As expected, UXLC matches ML above.
+#    As expected, MAM matches MA above.
+
+# 1:21 יָצָ֜תִי MA MY | יצתי ML(ket) | יָצָ֜אתִי ML(qere) (differ-orth)
+# All good.
+# We might call this a "trivial qere" in ML that MA & MY found so trivial as to not merit a qere.
+# Surprisingly, not noted in Da-at Miqra.
+
+# 2:7 ְעַ֥ד MA MY | עד Mket | וְעַד Mqere
+# I am not sure what BHQ is getting at here. Is BHQ just trying to explicitly say that MA & MY agree with ML?
+# https://manuscripts.sefaria.org/leningrad-color/BIB_LENCDX_F397B.jpg
+# LC column 1 line -9 including 1 blank line
+# AC column 2 line 7
+# gh-pages\jobn\img\0207.png
+# gh-pages\jobn\img\Aleppo-0207.png
+
+# 2:8 לְהִתְגָּרֵ֖ר ML (err) | לְהִתְגָּרֵ֖ד MA MY (resh/dalet)
+# Come on, the letter in question (the last) has a רפה and even has a little serif that might make it ד.
+# BHL main ends in ד, and BHLA has no entry for this.
+# UXLC ends in ד.
+# MAM ends in ד.
+# https://manuscripts.sefaria.org/leningrad-color/BIB_LENCDX_F397B.jpg
+# column 1 line -8 including 1 blank line
+# gh-pages\jobn\img\0208.png
+
+# 5:12 תּוּשִׁיָּֽה׃ ML (differ-orth) | תֻּשִׁיָּֽה׃ MA MY
+# All good.
+# As expected, noted in Da-at Miqra.
+
+# 6:21 לֹ֑א MA MY (T) | לא ML(ket) | ל֑וֹ ML(qere) (err-lex)
+# All good.
+# We might call this a "trivial qere" in ML that MA & MY found so trivial as to not merit a qere.
+# Note that it is only trivial in that it makes no phonetic difference; it seems like it would make a pretty big semantic difference.
+# As expected, noted in Da-at Miqra.
+
+# 10:22 עֵיפָ֨תָה ML (differ-orth) | עֵפָ֨תָה MA MY
+# All good.
+# As expected, noted in Da-at Miqra.
+
+# 14:5 חֻקָּ֥ו MA | חקו ML(ket) MY(ket) | חֻקָּיו ML(qere) MY(qere) (differ-orth)
+# All good.
+# Surprisingly, not noted in Da-at Miqra.
+
+# 15:31 בַּשָּׁ֣ו MA MY | בשו ML(ket) | בַּשָּׁ֣יו ML(qere) (differ-orth)
+# All good.
+# As expected, noted in Da-at Miqra, although only in a footnote (footnote 24).
+
+# 16:13 יַחְמ֑וֹל ML (err) | יַחְמֹ֑ל MA MY (xaser/malei)
+# All good.
+# As expected, noted in Da-at Miqra.
+
+# 18:15 מִבְּלִיל֑וֹ ML MY | מִבְּלִי־ל֑וֹ MA (differ-orth)
+# BHL main has a simple word here, which is expected if we think ML has that, i.e. if we think ML is as above.
+# BHLA has no entry for this, which is expected if we think a simple word is either the consensus, or there is no consensus on this issue.
+# UXLC has a compound word here, disagreeing with ML above but agreeing with MAM regarding the contents of μL.
+# MAM matches MY above, i.e. has a simple word here, and MAM notes that it is explicitly going against MA here.
+# BHQ claims that ML has a simple word, not a compound word, but MAM says the opposite.
+# Da-at Miqra says both MA and ML have a simple word here.
+
+# 26:3 וְ֝תוּשִׁיָּ֗ה ML (differ-orth) | וְ֝תֻשִׁיָּ֗ה MA MY(qere)
+# All good.
+# As expected, noted in Da-at Miqra.
