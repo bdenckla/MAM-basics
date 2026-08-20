@@ -43,22 +43,23 @@ osis_handlers.py                           MAM-simple                 py-example
 osis_index_html.py                         MAM-simple                 py-examples/osis/osis_index_html.py                     identical      2026-07-06   generated
 osis_namespace.py                          MAM-simple                 py-examples/osis/osis_namespace.py                      identical      2026-05-01   generated
 osis_runner.py                             MAM-simple                 py-examples/osis/osis_runner.py                         identical      2026-05-07   generated
-bib_locales.py                             book-of-job                mb_cmn/bib_locales.py                                   DIFFERS        2026-04-27   
+bib_locales.py                             book-of-job                mb_cmn/bib_locales.py                                   identical      2026-08-19   
 cantsys.py                                 book-of-job                mb_cmn/cantsys.py                                       eol-only       2026-04-27   
-file_io.py                                 book-of-job                mb_cmn/file_io.py                                       DIFFERS        2026-07-06   
-hebrew_accents.py                          book-of-job                mb_cmn/hebrew_accents.py                                DIFFERS        2026-07-06   
+file_io.py                                 book-of-job                mb_cmn/file_io.py                                       identical      2026-08-19   
+hebrew_accents.py                          book-of-job                mb_cmn/hebrew_accents.py                                identical      2026-08-19   
 hebrew_letters.py                          book-of-job                mb_cmn/hebrew_letters.py                                eol-only       2026-04-27   
 hebrew_points.py                           book-of-job                mb_cmn/hebrew_points.py                                 eol-only       2026-04-27   
-hebrew_punctuation.py                      book-of-job                mb_cmn/hebrew_punctuation.py                            DIFFERS        2026-04-27   
+hebrew_punctuation.py                      book-of-job                mb_cmn/hebrew_punctuation.py                            identical      2026-08-19   
 mam_bknas.py                               book-of-job                mb_cmn/mam_bknas.py                                     eol-only       2026-04-27   
 my_diffs.py                                book-of-job                mb_cmn/my_diffs.py                                      eol-only       2026-04-27   
 my_utils.py                                book-of-job                mb_cmn/my_utils.py                                      eol-only       2026-04-27   
+provenance.py                              book-of-job                mb_cmn/provenance.py                                    identical      2026-08-19   
 shrink.py                                  book-of-job                mb_cmn/shrink.py                                        eol-only       2026-04-27   
 str_defs.py                                book-of-job                mb_cmn/str_defs.py                                      identical      2026-08-04   
 uni_denorm.py                              book-of-job                mb_cmn/uni_denorm.py                                    eol-only       2026-04-27   
-uni_heb.py                                 book-of-job                mb_cmn/uni_heb.py                                       DIFFERS        2026-04-27   
+uni_heb.py                                 book-of-job                mb_cmn/uni_heb.py                                       identical      2026-08-19   
 url_percent.py                             book-of-job                mb_cmn/url_percent.py                                   eol-only       2026-08-07   
-uxlc_change_url.py                         book-of-job                mb_cmn/uxlc_change_url.py                               DIFFERS        2026-05-03   
+uxlc_change_url.py                         book-of-job                mb_cmn/uxlc_change_url.py                               identical      2026-08-19   
 hebrew_points.py                           codex-index-aleppo         py/mb_cmn/hebrew_points.py                              eol-only       2026-04-27   
 str_defs.py                                codex-index-aleppo         py/mb_cmn/str_defs.py                                   identical      2026-08-04   
 uni_denorm.py                              codex-index-aleppo         py/mb_cmn/uni_denorm.py                                 eol-only       2026-04-27   

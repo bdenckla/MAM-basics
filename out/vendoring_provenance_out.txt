@@ -2,7 +2,7 @@
 === book-of-job ===
   provenance docs: none
   copy scripts: none found
-  mb_cmn dir (mb_cmn): ['bib_locales.py', 'cantsys.py', 'file_io.py', 'hebrew_accents.py', 'hebrew_letters.py', 'hebrew_points.py', 'hebrew_punctuation.py', 'mam_bknas.py', 'my_diffs.py', 'my_utils.py', 'shrink.py', 'str_defs.py', 'uni_denorm.py', 'uni_heb.py', 'url_percent.py', 'uxlc_change_url.py']
+  mb_cmn dir (mb_cmn): ['bib_locales.py', 'cantsys.py', 'file_io.py', 'hebrew_accents.py', 'hebrew_letters.py', 'hebrew_points.py', 'hebrew_punctuation.py', 'mam_bknas.py', 'my_diffs.py', 'my_utils.py', 'provenance.py', 'shrink.py', 'str_defs.py', 'uni_denorm.py', 'uni_heb.py', 'url_percent.py', 'uxlc_change_url.py']
 
 === codex-index-aleppo ===
   PROVENANCE DOCS: ['aleppo-wiki/PROVENANCE.md', 'aleppo-wiki/provenance.md']

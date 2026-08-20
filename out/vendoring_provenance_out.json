@@ -22,6 +22,7 @@
             "mam_bknas.py",
             "my_diffs.py",
             "my_utils.py",
+            "provenance.py",
             "shrink.py",
             "str_defs.py",
             "uni_denorm.py",
