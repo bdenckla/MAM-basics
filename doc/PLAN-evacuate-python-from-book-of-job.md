@@ -12,7 +12,7 @@ with a question rather than a phase.
 | D — the quirk-record question | **decided 2026-08-02: all 267 move, records included** |
 | 0 — reconcile the fork families | **DONE 2026-08-19, all five families.** Three were closed by the programme's blocking Phase 0 (`33b3ee2` here, `98021de` in codex-index-aleppo, `f56831c` in codex-index-cam1753). The two this repo owed were classified the same day, and `py_uxlc_loc/` hit the gate; **Ben's decisions, 2026-08-19, were to move book-of-job from UXLC 2.1 to 2.5, put its finer LC index records for pages 397A and 406A upstream and into BOTH copies of `lci_recs.json`, and target MAM-basics' `uxlc_misc`/`uxlc_lci` lineage rather than its `py_uxlc/` one.** Landed as `4d1ad89` in UXLC-utils and `2979507` here (the records), `6fb8c06` in book-of-job (`mb_cmn/`, seven files) and `7ca99f7` in book-of-job (the UXLC move, 44 files). **All 701 artifacts are byte-identical after every step, and the final run is silent** — no `fline mismatch`, which the coarse records had produced. See "Phase 0 — the execution record" below |
 | 1 — two roots, no cwd | **DONE 2026-08-19.** Landed as `45f8853` in book-of-job (18 files, +305/−100), adding `boj_paths.py`; nothing owed in MAM-basics. The oracle now runs from a foreign working directory with all **701 artifacts byte-identical** and MAM-basics' tree untouched, `check_all.py` 7 of 7, the NFC suite 6 tests OK. Tracked `.py` is now **268** and lines **17,064**. **This repo does not vendor `mb_cmn/paths.py` and must not** — `parents[2]` is wrong at a root-level `mb_cmn/` — so `code_root()` walks to `.git` instead. **The prescribed grep undercounted by six and two of its seven hits are false positives.** Two root walks were left alone on purpose, `py_ac_word_image_helper/flat_index.py` and `py_cam1753_word_image/page.py`, both being blobs shared with a codex-index repo. **One question is open and is Ben's: `mb_cmn/provenance.py`'s `parents[2]`.** See "Phase 1 — two roots, no cwd" below |
-| 3 — copy the Python in (dual residency) | **not started** |
+| 3 — copy the Python in (dual residency) | **DONE 2026-08-19.** Landed as `ef8e384` in MAM-basics (243 files: 241 `.py` under the four names Ben settled that day — `author_boj_qr/`, `author_boj_util/`, `author_boj/`, `boj_render/` — plus `quirks-BHQ.txt` and the spelling dictionary); nothing owed in book-of-job, whose HEAD is `45f8853` before and after. `a585cb6` precedes it and is not the move: it regenerates `doc/vendoring-inventory.md`, which Phase 0 left stale. **The oracle passed on the first run from MAM-basics and on every run since** — silent, all **701 artifacts byte-identical**, from this repo's root, from `GitRepos`, and from book-of-job's own copy. Suite unchanged at 947 passed, 5 skipped; `check_all.py` 7 of 7 from both repos. **The `path_to_uxlc` parameter Phase 1 demanded is not needed**: all 39 UXLC XML are one blob across the three repos and `lci_recs.json` differs from UXLC-utils' in one header line, so `prep()` takes no arguments and `uxlc_misc`/`uxlc_lci` were not touched. **The one fork the move forced is four source lints**, which scanned a repo root that now holds all of MAM-basics; `fix_mark_order.py` would have rewritten this repo on sight. Two of this repo's own lints fired on the arriving code and both were right. See "Phase 3 — copy the Python in (dual residency)" below |
 | 4 — empty book-of-job | **not started** |
 | 6 — breadcrumbs and issue citations | **not started** |
 | 7 — cross-repo bookkeeping | **not started** |
@@ -850,7 +850,282 @@ site silently, since the artifacts still regenerate and only a browser notices.
 
 Do this phase inside book-of-job, and prove it by regenerating all 701 artifacts to a zero diff.
 
-## Phase 3 — copy the Python in (dual residency)
+## Phase 3 — copy the Python in (dual residency) — **DONE 2026-08-19**
+
+**Landed as `ef8e384` in MAM-basics (243 files added, 1 modified). Nothing was owed in
+book-of-job, whose HEAD is `45f8853` before and after and whose tree is content-clean.**
+A second commit, `a585cb6`, precedes it and is not part of the move — see "One tracked
+artifact was stale, and Phase 0 is what made it so" below. The prescription this record
+answers is the section below it, left as written.
+
+**Every baseline was re-measured first and every one matched**: 268 tracked `.py` in
+book-of-job (`mb_cmn/` 17, `py_uxlc_loc/` 9), 17,064 lines, 701 tracked artifacts, all at
+`45f8853`; MAM-basics clean at `634e5b6` with **947 passed, 5 skipped**. The baseline
+oracle run was silent and gave 700 byte-identical, 1 line-ending-only, 0 content
+differences, and `check_all.py` 7 of 7 over 326 files and 268 `.py`. **No figure this
+phase inherited was wrong**, which is worth saying because the two phases before it each
+found several that were.
+
+### The oracle passed on the first run from MAM-basics, and on every run since
+
+Silent, exit 0, and all **701 tracked artifacts byte-identical** to their HEAD blobs.
+Measured by reading each blob with `git cat-file --batch` and comparing bytes, never by
+`git status --porcelain`, which cannot be used in book-of-job — Phase 0's instrument note
+holds, and the 183 files a clean run rewrites still report as modified there.
+
+| Run | Artifacts | Generator output |
+|---|---|---|
+| baseline, book-of-job's copy from its own root | 700 identical, 1 line-ending-only, **0 content differences** | silent |
+| MAM-basics' copy, cwd = MAM-basics | same | silent |
+| MAM-basics' copy, cwd = `C:\Users\BenDe\GitRepos` | same | silent |
+| book-of-job's copy again, after the move | same | silent |
+
+The one line-ending-only file is `out/cam1753-crops.json`, which the oracle does not
+write and whose checkout is still CRLF — the same one Phase 0 and Phase 1 each found.
+**No `fline mismatch` line in any run**, so the location cross-check still has the 397A
+and 406A coordinates Phase 0 sent upstream. `check_all.py` passes 7 of 7 from MAM-basics
+and, unchanged, 7 of 7 from book-of-job. MAM-basics' suite is **947 passed, 5 skipped**,
+the baseline exactly.
+
+**Both residencies produce the same bytes**, which is what "dual residency" has to mean
+and was cheap to check: book-of-job's own interpreter running book-of-job's own copy, and
+MAM-basics' interpreter running MAM-basics' copy, give the same 701.
+
+### The four names, and why the fourth was not optional
+
+Ben settled all four together, 2026-08-19, on the recommendation that the quirk records
+carry the `boj` marker rather than the bare `author_qr/` Decision D had proposed:
+
+| book-of-job | MAM-basics | Files |
+|---|---|---|
+| `pyauthor_qr/` | `py/author_boj_qr/` | 160 |
+| `pyauthor_util/` | `py/author_boj_util/` | 33 `.py` + `quirks-BHQ.txt` |
+| `pyauthor/` | `py/author_boj/` | 10 |
+| `py/` | `py/boj_render/` | 7 |
+
+`pydiff_mm/` (5), `py_ac_word_image_helper/` (6) and `py_cam1753_word_image/` (4) kept
+their names, and the sixteen runnable modules plus `boj_paths.py` landed at the top of
+`py/`. **363 import rewrites across 105 files.** The fourth rename is the one that had to
+happen whatever it was called: `py/hebrew_letter_words.py` would otherwise have landed as
+a top-level module beside `mb_misc/hebrew_letter_words.py` — two module objects for one
+name, reached with no `sys.path` line at all.
+
+**243 files landed, not the 251 the prescription names.** That figure was 267 minus the
+16 `mb_cmn` files, and three things have moved since: `mb_cmn/` became 17,
+`py_uxlc_loc/` became 9 and is also a deletion, `boj_paths.py` was added by Phase 1, and
+`test_h_dot_below_nfc.py` folds into this repo's file rather than landing. 268 − 17 − 9 −
+1 = **241 `.py`**, plus `quirks-BHQ.txt` and the spelling dictionary, which is CODE and
+travels beside its module.
+
+### The UXLC parameter the plan demanded is not needed, and that was measured
+
+Item 1 of Phase 1's handover says MAM-basics' `uxlc_misc/my_uxlc.py` has no
+`path_to_uxlc` parameter where book-of-job's fork takes the path as an argument, and that
+Phase 3 must **either** give MAM-basics' copy the parameter **or** point book-of-job's
+data at `in/UXLC-39/`. Neither, as it turns out, and the reason is that Phase 0 already
+did the work:
+
+- **All 39 UXLC XML are one blob** across book-of-job's `py_uxlc_loc/UXLC/`, MAM-basics'
+  `in/UXLC-39/` and UXLC-utils' `in/UXLC-39/`. Verified on committed blobs, 39 of 39 both
+  ways.
+- **`lci_recs.json` differs in one line.** book-of-job's copy and MAM-basics'
+  `in/lci_recs.json` are the *same blob*, `a34c1075`; UXLC-utils' `data/lci_recs.json` and
+  `in/UXLC-misc/lci_recs.json` are `ed3f4d1d`, and `diff` between the two gives exactly
+  one line — the header column dictionary's gloss naming `mb_cmn_bib_locales.py` against
+  `my_tanakh_book_names.py`, which Phase 0 recorded and deliberately left. The `body`,
+  which is all `lci_rec.unflatten_many` reads, is identical.
+
+So `job_ov_and_de.make_ov_and_de` now calls `my_uxlc_location.prep()` with no arguments,
+`boj_paths.uxlc_dir()` and `lci_recs_path()` are deleted, and **nothing was added to
+`uxlc_misc` or `uxlc_lci`**. Declining to add the parameter is the point: those three
+modules' only content difference from book-of-job's fork *was* that parameter, so putting
+it back would have re-imported the drift Phase 0's reconciliation dropped.
+
+**What that costs, stated plainly:** regenerating book-of-job's site now needs UXLC-utils
+checked out as well as MAM-basics and book-of-job. `paths.require_sibling` makes a missing
+sibling a loud failure rather than a silent wrong answer, which is why this is a
+dependency and not a hazard. It also leaves book-of-job's 39 XML and its
+`lci_recs.json` read by nobody — **40 orphaned data files, and a Phase 4 question**, not
+one this phase should answer while the deletion of that repo's Python is still pending.
+
+### Four source lints had to be told what they lint — the one fork the move forced
+
+In book-of-job, `check_function_ordering`, `check_mark_order`, `check_escape_sequences`
+and the two `fix_*` scripts scanned the repo root, which held nothing but this code. Here
+that same root holds all of MAM-basics, and **none of the three checks has a repo-wide
+meaning**. Measured 2026-08-19, before anything was changed:
+
+| Check | Over MAM-basics' `py/` | Over the book-of-job packages |
+|---|---|---|
+| function ordering | **1172 violations** | 0 |
+| mark order | violations in `py/ws/ws_bot_edit_old_joshua_meteg.py` | 0 |
+| unnecessary `\uXXXX` escapes | violations in `py/wlc_cmn/wlc_bracket_note_definitions.py` | 0 |
+
+All five now take their scope from `boj_paths.code_paths()`, which returns the seven
+packages, the sixteen modules and the one data file by name. **`check_escape_sequences.py`,
+`check_mark_order.py`, `fix_escape_sequences.py` and `fix_mark_order.py` were one blob
+with codex-index-cam1753's copies and no longer are.** That is the same trap the plan
+names for `page.py`, and here it could not be avoided: a `.git` walk finds a repo root and
+**cannot find a subtree**, so the shared file's one assumption is false in its new home.
+codex-index-cam1753's copies are untouched, and the trio's own plan will meet this wall
+when its Python moves.
+
+**`fix_mark_order.py` is the one that mattered most.** It has no `main()`, no dry-run and
+no `--apply`: it rewrites every file under the root it finds, at import. Left alone it
+would have reformatted MAM-basics on sight, including the `py/ws/` file the mark-order
+check reports above.
+
+**The price of the scope list, stated where the list lives:** `BOJ_PACKAGES` and
+`BOJ_TOP_LEVEL_MODULES` are hand-maintained, so a book-of-job module added to `py/` and
+not listed goes unlinted. `code_paths()` raises on an entry that no longer exists, so a
+rename or a deletion fails loudly and only an unlisted addition is silent — and
+book-of-job's Python is being evacuated rather than developed.
+
+### Mark order reads BOTH roots, and scoping it to the code alone was a silent loss
+
+Caught by watching the count rather than the verdict. `check_all.py` reported **7 of 7**
+with mark order over **241** files where book-of-job's run reports **326**, and 326 − 241
+is not the 27 files that were deleted or folded: it is those 27 plus **58 `.json` that
+never left book-of-job**. This check reads `.json` as well as `.py`, and the corpus keeps
+24 hand-made line-break files under `py_ac_loc/`, `out/`'s seven, and the rest.
+
+So `_scoped_files()` yields the code paths **and** the `.json` under
+`boj_paths.boj_data_root()`, and the check now scans **300** files — 241 `.py`, the moved
+spelling dictionary, and 58 in the corpus, which becomes 299 when Phase 4 deletes
+book-of-job's copy of that dictionary. Spanning two roots also broke `path.relative_to`,
+which raises on every file under the root it was not given; `_display_path` tries both.
+
+**The transferable part:** a lint that loses its inputs goes on printing OK. Nothing
+failed, no artifact moved, and the only symptom was a number in a success message. When a
+check changes scope, **read what it counted, not whether it passed.**
+
+### Two lints in this repo fired on the arriving code, and both were worth having
+
+**`test_transliterations.py` (wlc-utils#26) failed the suite**, on
+`author_boj_util/author.py:468 tipeha -> tipeḥa (U+1E25)`. The value was already the
+precomposed `tipeḥa`; what the lint saw is the ASCII substitution **key**, `$tipeha`,
+which spells ḥet with `h` where its fifteen neighbours in the same table spell it with `x`
+— `$tarxa`, `$dexi`, `$munax`, `$patax`, `$xataf`. Renamed to `$tipexa`. **Safe to the
+byte, because the key has no user**: that table row is its only occurrence in all 241
+files, so no quirk record ever substituted it and no artifact could move. The `# translit-ok`
+pragma was the wrong answer here — that mechanism is for external vocabularies and
+verbatim citations, and this token is book-of-job's.
+
+**`check_function_ordering` failed on a function this phase wrote**, `display_path`,
+public and placed after a private. Renamed `_display_path`. The check earning its keep on
+the first new code it saw is the argument for keeping it scoped rather than dropping it.
+
+### The NFC test gains a fourth scope
+
+`py/tests/test_h_dot_below_nfc.py` now scans **four** repos, book-of-job joining
+MAM-basics, UXLC-utils and holman-ketiv-qere, and that repo's own 331-line copy is
+superseded — it locates its root by `git rev-parse` from its own directory, so copied here
+it would have scanned MAM-basics, which is exactly what the UXLC-utils and
+holman-ketiv-qere scopes were added to prevent.
+
+- **`_BINARY_EXTENSIONS` were diffed, as the plan asks**, that being how holman's phase
+  found a missing `.docx`. **book-of-job's sixteen extensions are a strict subset of this
+  file's**, so nothing was owed. Recording the negative result because the instruction to
+  check will be given again at the codex-index trio.
+- **Seven exclusion prefixes came over re-rooted**, `out/`, `gh-pages/`,
+  `py_uxlc_loc/UXLC/`, `py_uxlc_loc/UXLC-misc/` and three under `py_ac_loc/`. Two of them
+  name a directory whose `py_` prefix promises Python and delivers data, which is why they
+  are spelled to the subdirectory: `py_ac_loc/line-breaks/` is hand-made JSON and stays in
+  scope.
+- **The floor is 30**, against book-of-job's own 200. 312 files are in scope today and
+  **42** after Phase 4, since two of the 44 non-`.py` in scope came here with the code.
+
+### The venv needed more than the plan's item 4 said
+
+Item 4 names `pyspellchecker`, and it is right that `check_spelling_in_html.py` imports it
+at module level. **`numpy` was missing too**, and without it neither crop editor imports:
+`py_ac_word_image_helper/crop.py` and `py_cam1753_word_image/crop.py` both use it. Both
+packages are installed here now.
+
+**`matplotlib` is not**, and that is a finding about book-of-job rather than about this
+repo: its `requirements.txt` names black, matplotlib, numpy, Pillow and pyspellchecker,
+and `git grep matplotlib -- '*.py'` in that repo returns **nothing**. Phase 0 installed
+that file wholesale to get the oracle running and had no reason to notice. **At the
+codex-index trio, read what the code imports, not only what `requirements.txt` declares.**
+
+### The two word-image packages: one root walk repaired, one broken, neither touched
+
+Phase 1 left `py_ac_word_image_helper/flat_index.py` and `py_cam1753_word_image/page.py`
+alone because each is one blob with a codex-index repo's copy, and handed `page.py` to
+this phase. **Both are still untouched, and both blobs are still shared.** The move
+settles them in opposite directions, which is the part worth recording:
+
+- **`flat_index.py`'s `parent.parent.parent` becomes RIGHT.** It lands on MAM-basics'
+  root, exactly as it does in codex-index-aleppo, where that package also sits under a
+  `py/`. The move repairs it for free — the wrongness Phase 1 recorded was book-of-job's
+  root-level placement, and that placement is what ended.
+- **`page.py`'s `parent.parent` becomes wrong**, naming `py/` where it named a repo root
+  in both book-of-job and codex-index-cam1753.
+
+**It is inert either way, which is why leaving it is not negligence.** The three
+directories it names — `cam1753-line-breaks`, `cam1753-col-quads`, `cam1753-pages` — are
+**absent from book-of-job**, checked 2026-08-19, and absent from MAM-basics; so the walk
+resolved to a real root and named nothing, and now resolves to a wrong root and names
+nothing. The plan's own instruction is to settle it in both repos at once or not at all,
+and "not at all" is what this phase took.
+
+### One tracked artifact was stale, and Phase 0 is what made it so
+
+`doc/vendoring-inventory.md` still reported book-of-job's six `mb_cmn` files as `DIFFERS`.
+They have not differed since `6fb8c06`, which re-vendored them and brought `provenance.py`
+in as a seventeenth; nothing regenerated the inventory afterwards. `py/main_vendoring.py
+--all` now reports them `identical`, and the book-of-job rows collapse from three to two —
+21 rows over 128 files become 20 over 129. Committed separately as **`a585cb6`**, before
+the move, so the move's own diff carries nothing that is not the move. Re-run after the
+move: **unchanged**, the 243 new files sitting under no scan root
+`in/vendoring_policy.json` declares. Phase 7 regenerates it again after deleting that
+repo's entry.
+
+**This is the other half of Phase 0's own lesson.** That phase spent a subsection under
+the heading "Read the artifact before calling it stale" on having wrongly called this
+exact file stale — and it was right about the file as it stood that morning, then made it
+stale by evening. So: **re-read the artifact after changing what it measures, not only
+before.**
+
+### Four corrections to the prescription below
+
+- **"251 files land"** — 243 do, as counted above.
+- **"Do the three `pyauthor*` renames"** — there are **four** renames, the fourth being
+  book-of-job's own `py/` to `boj_render/`, which the plan's "Two names in `py/` collide by
+  meaning" subsection already argues for without counting it among the renames.
+- **"watch `force_utf8_io()` where an entry point becomes a library module"** — there is
+  nothing to watch. **book-of-job has no stdio reconfiguration anywhere**, in any of its
+  268 `.py`: `grep -rn 'reconfigure\|force_utf8\|PYTHONUTF8'` over the moved code returns
+  nothing. No entry point became a library module either; all five stayed entry points.
+  The concern is real in the abstract — the oracle's stdout must stay silent, and does —
+  but it names a mechanism this repo never adopted.
+- **"`git status --porcelain` empty in both"** — empty in MAM-basics, and it is the
+  assertion there. In book-of-job it is the wrong instrument, as Phase 0 established at
+  length in this same document; the byte comparison against HEAD blobs is what this phase
+  used, and `git diff --stat HEAD` empty is the cheap confirmation beside it.
+
+### What Phase 4 now owes, beyond what it already knew
+
+- **40 orphaned data files.** `py_uxlc_loc/UXLC/` (39 XML) and
+  `py_uxlc_loc/UXLC-misc/lci_recs.json` are read by nothing once book-of-job's Python
+  goes, the moved code reading UXLC-utils' copies instead. All 39 XML are one blob with
+  UXLC-utils' and MAM-basics' copies; `lci_recs.json` is one blob with MAM-basics'
+  `in/lci_recs.json`. **Nothing is lost by deleting them and nothing breaks by keeping
+  them**, so it is a question for Ben rather than a mechanical step.
+- **`pyauthor_util/quirks-BHQ.txt` and `check_spelling_in_html.custom-dict.json` are
+  already here**, so Phase 4 deletes them there as well as the `.py`. Otherwise
+  `pyauthor_util/` survives as a one-file directory in a repo declared to have no Python.
+- **The NFC scope's floor of 30 assumes 42 files remain.** If Phase 4 deletes more of the
+  corpus than the `.py` plus those two, re-check it.
+- **`check_all.py` and the four lints run from MAM-basics now**, so book-of-job's
+  `CLAUDE.md` should say so rather than naming its own root-level scripts.
+- **The mark-order count becomes 299** when book-of-job's copy of the spelling dictionary
+  goes, from 300 today.
+
+---
+
+The rest of this section is the plan as written 2026-08-02, before the phase ran.
+
 
 251 files land, which makes this the largest single phase in the programme — but **160 of them are
 one-dict modules that nothing imports except by name**, so the risk is concentrated in the other
