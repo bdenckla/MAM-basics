@@ -367,9 +367,10 @@ def _scopes() -> tuple[_Scope, ...]:
             exclude_dir_prefixes=_AC_EXCLUDE_DIR_PREFIXES,
             exclude_files=_AC_EXCLUDE_FILES,
             # That repo's own copy asserted a floor of 40 over a scope its comment
-            # called "~72" and this file measures at 79, 2026-08-22. 40 will not
-            # survive its Phase 4: 50 of the 79 are the .py this repo's Phase 3 has
-            # now taken, leaving **29** -- doc/ (4), aleppo-wiki/ (13: J David
+            # called "~72" and this file measured at 79 before that repo's Phase 4,
+            # 2026-08-22. 40 did not survive that phase: 50 of the 79 were the .py
+            # this repo's Phase 3 took, and **29** remain, measured after the
+            # deletion rather than predicted -- doc/ (4), aleppo-wiki/ (13: J David
             # Stark's CSV index, three of its four precursors, the LICENSE, the
             # three Wikisource notes, index-flat-corrected.json and the three
             # artifacts), README.md, CLAUDE.md, three provenance files, the
