@@ -1065,6 +1065,34 @@ from this plan.
   `UXLC-utils-sparse/` from the sibling UXLC-utils and is unaffected by anything here; running it
   would have written tracked files for reasons that are not this phase's.
 
+### Verification
+
+- **MAM-basics is untouched by the code half of this phase and was measured anyway**, before and
+  after: suite **945 passed, 5 skipped, 59 subtests** (122s, then 94s), `py\check_all.py` **7 of
+  7**, mark order over **298** files, escapes over **241** `.py`. Identical both times, this
+  phase's only edits here being the two plan files.
+- **codex-index-aleppo `check_all.py` exits 1 on the two pre-existing failures and on nothing
+  else** — `check_word_finding.py` 160 of 160 on `col: found=1of2 expected=1`, and
+  `check_line_breaks` on `ValueError: Unhandled tag <spi-invnun> in verse Ps.107.23`, both
+  characterized by Phase 0. Its other two checks report **escapes over 50 `.py`** and **mark order
+  over 134 files**, against Phase 0's 44 and 128 — **exactly six more each, and the six are
+  `ac_paths.py` plus the five wrappers**. Reading the counts rather than the verdicts is what makes
+  that an accounting rather than a coincidence.
+- **codex-index-cam1753 `check_all.py` passes 4 of 4**, with **escapes over 23 `.py`** and **mark
+  order over 95 files** against 22 and 94 — one more each, that one being `cam1753_paths.py`. And
+  the run now leaves `check_line_breaks.html` byte-identical rather than dirtying the tree.
+- **codex-index-leningrad has no `check_all.py` and no pytest in its venv**, so its check is that
+  every module compiles and that the wiki generator runs silent at exit 0 — both done.
+- **Eleven of codex-index-aleppo's twelve `py/` entry points import cleanly**;
+  `main_kraken_seg_baselines` does not, because **kraken is still absent from that repo's venv**,
+  which is the state Phase 0 left and not something this phase changed.
+- **black clean on all 35 Python files changed or added**, run from MAM-basics' venv so that one
+  black version reaches all three repos.
+- **`git status --porcelain` clean in all four repos at the end**, `HEAD` and `git log` re-read
+  before staging in each, every file staged by explicit path, and all four pushes fast-forward with
+  no `--force`. It was **not** clean in between, in codex-index-aleppo, and the byte comparison is
+  what showed those four entries to be a stat-cache artifact rather than a change.
+
 ### What Phase 3 now owes, beyond what Phase 0 already told it
 
 1. **Two paths modules, two `_DATA_ROOT`s, one line each.** `ac_paths.ac_data_root()`,
