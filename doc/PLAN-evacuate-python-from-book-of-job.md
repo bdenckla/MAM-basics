@@ -13,7 +13,7 @@ with a question rather than a phase.
 | 0 — reconcile the fork families | **DONE 2026-08-19, all five families.** Three were closed by the programme's blocking Phase 0 (`33b3ee2` here, `98021de` in codex-index-aleppo, `f56831c` in codex-index-cam1753). The two this repo owed were classified the same day, and `py_uxlc_loc/` hit the gate; **Ben's decisions, 2026-08-19, were to move book-of-job from UXLC 2.1 to 2.5, put its finer LC index records for pages 397A and 406A upstream and into BOTH copies of `lci_recs.json`, and target MAM-basics' `uxlc_misc`/`uxlc_lci` lineage rather than its `py_uxlc/` one.** Landed as `4d1ad89` in UXLC-utils and `2979507` here (the records), `6fb8c06` in book-of-job (`mb_cmn/`, seven files) and `7ca99f7` in book-of-job (the UXLC move, 44 files). **All 701 artifacts are byte-identical after every step, and the final run is silent** — no `fline mismatch`, which the coarse records had produced. See "Phase 0 — the execution record" below |
 | 1 — two roots, no cwd | **DONE 2026-08-19.** Landed as `45f8853` in book-of-job (18 files, +305/−100), adding `boj_paths.py`; nothing owed in MAM-basics. The oracle now runs from a foreign working directory with all **701 artifacts byte-identical** and MAM-basics' tree untouched, `check_all.py` 7 of 7, the NFC suite 6 tests OK. Tracked `.py` is now **268** and lines **17,064**. **This repo does not vendor `mb_cmn/paths.py` and must not** — `parents[2]` is wrong at a root-level `mb_cmn/` — so `code_root()` walks to `.git` instead. **The prescribed grep undercounted by six and two of its seven hits are false positives.** Two root walks were left alone on purpose, `py_ac_word_image_helper/flat_index.py` and `py_cam1753_word_image/page.py`, both being blobs shared with a codex-index repo. **One question is open and is Ben's: `mb_cmn/provenance.py`'s `parents[2]`.** See "Phase 1 — two roots, no cwd" below |
 | 3 — copy the Python in (dual residency) | **DONE 2026-08-19.** Landed as `ef8e384` in MAM-basics (243 files: 241 `.py` under the four names Ben settled that day — `author_boj_qr/`, `author_boj_util/`, `author_boj/`, `boj_render/` — plus `quirks-BHQ.txt` and the spelling dictionary); nothing owed in book-of-job, whose HEAD is `45f8853` before and after. `a585cb6` precedes it and is not the move: it regenerates `doc/vendoring-inventory.md`, which Phase 0 left stale. **The oracle passed on the first run from MAM-basics and on every run since** — silent, all **701 artifacts byte-identical**, from this repo's root, from `GitRepos`, and from book-of-job's own copy. Suite unchanged at 947 passed, 5 skipped; `check_all.py` 7 of 7 from both repos. **The `path_to_uxlc` parameter Phase 1 demanded is not needed**: all 39 UXLC XML are one blob across the three repos and `lci_recs.json` differs from UXLC-utils' in one header line, so `prep()` takes no arguments and `uxlc_misc`/`uxlc_lci` were not touched. **The one fork the move forced is four source lints**, which scanned a repo root that now holds all of MAM-basics; `fix_mark_order.py` would have rewritten this repo on sight. Two of this repo's own lints fired on the arriving code and both were right. See "Phase 3 — copy the Python in (dual residency)" below |
-| 4 — empty book-of-job | **not started** |
+| 4 — empty book-of-job | **DONE 2026-08-21.** Landed as `a846585` in book-of-job (320 files: 317 deletions, 3 modified) and `cff95f7` here (14 files). **book-of-job holds zero Python**: 268 `.py` deleted, plus `quirks-BHQ.txt`, the spelling dictionary, the **40 UXLC data files Ben chose to delete** rather than keep, and 7 of the 9 procedure docs, which followed the code here as `doc/boj-*.md`. Tracked files 1103 → 786. Nine directories went whole. **All 701 artifacts byte-identical after the deletion and the oracle silent**, run three times; `check_all.py` 7 of 7. **Phase 7 item 1 fired inside this phase for the third repo running** and costs **two** tests, not holman's predicted three — one case per `pkg_scan_root` plus one, and book-of-job had one scan root where holman had two. Suite 947 → **945 passed, 5 skipped, 59 subtests**. **Two forecasts came out one short each, both for the same reason**: mark order scans **298** files rather than 299 (Ben's delete decision took `lci_recs.json` as well as the spelling dictionary) and the NFC scope holds **35** rather than 42 (the seven moved docs). **The `59 subtests` figure DOES reproduce and Phase 1's reason for saying otherwise was wrong** — six modules use `unittest`'s native `self.subTest`, which pytest counts without the absent `pytest-subtests`. `CLAUDE.md` there was edited and the README replaced; both name the **518 artifacts no program writes**. **Two root-level files are open questions for Ben**, `book-of-job.code-workspace` and `requirements.txt`, both orphaned by the deletion and neither a `.py`. `mb_cmn/provenance.py`'s `parents[2]` is **moot for book-of-job now**, that tree being gone. See "Phase 4 — empty book-of-job" below |
 | 6 — breadcrumbs and issue citations | **not started** |
 | 7 — cross-repo bookkeeping | **not started** |
 
@@ -1138,7 +1138,244 @@ finish with the oracle run from MAM-basics writing into `../book-of-job` with
 
 **Must complete in a single session, and stop and ask Ben first.**
 
-## Phase 4 — empty book-of-job
+## Phase 4 — empty book-of-job — **DONE 2026-08-21**
+
+**Landed as `a846585` in book-of-job (320 files: 317 deletions, 3 modified) and `cff95f7`
+here (14 files).** Ben was asked first, as this section and the task prompt both require,
+and answered one question: **delete book-of-job's 40 orphaned UXLC data files** rather than
+keep them. The prescription this record answers is the section below it, left as written.
+
+**Every baseline was re-measured first and every one matched.** book-of-job at `45f8853`,
+clean, 268 tracked `.py` (`mb_cmn/` 17, `py_uxlc_loc/` 9), 17,064 lines, 701 tracked
+artifacts, 1103 tracked files; MAM-basics clean at `f9b6245` with 241 copies of the moved
+code; UXLC-utils clean at `4d1ad89`. The baseline oracle run was silent and gave 700
+byte-identical, 1 line-ending-only, 0 content differences; `check_all.py` 7 of 7 with mark
+order over 300 files and escapes over 241 `.py`. **No figure this phase inherited was
+wrong, and that is now true of Phases 3 and 4 both.**
+
+### Ben's decision: delete the 40, and what that costs
+
+Phase 3 pointed the moved code at UXLC-utils' copies after proving the data equivalent, so
+`py_uxlc_loc/UXLC/` (39 XML) and `py_uxlc_loc/UXLC-misc/lci_recs.json` were read by
+nothing. Confirmed again before asking: in MAM-basics' copy of the code the only two
+mentions of `py_uxlc_loc` are a docstring line in `py/boj_paths.py` and two **exclusion**
+prefixes in `py/tests/test_h_dot_below_nfc.py`; the three real reads were all in
+book-of-job's own `.py`, which this phase deletes.
+
+**Ben, 2026-08-21: delete.** The cost is stated where a reader of that repo will meet it,
+in its `README.md` and `CLAUDE.md`: book-of-job no longer holds the UXLC snapshot its
+published review was built on, the bytes surviving in UXLC-utils and here.
+
+### The deletion is 317 files, and nine directories went whole
+
+268 `.py` + `pyauthor_util/quirks-BHQ.txt` + `check_spelling_in_html.custom-dict.json` +
+the 40 UXLC data files = **310**, plus the **7** procedure docs that moved here. Tracked
+files **1103 → 786**, tracked `.py` **0**.
+
+holman's phase asks for `git ls-files py | grep -v '\.py$'` before quoting a deletion size.
+The equivalent here is per-directory, this repo's code having had no `py/` over it, and it
+is what proved every directory could go whole rather than survive as a one-file stub:
+
+| Directory | Tracked | `.py` | Non-`.py` |
+|---|---|---|---|
+| `pyauthor_qr/` | 160 | 160 | — |
+| `pyauthor_util/` | 34 | 33 | `quirks-BHQ.txt` |
+| `pyauthor/` | 10 | 10 | — |
+| `py/` | 7 | 7 | — |
+| `pydiff_mm/` | 5 | 5 | — |
+| `py_ac_word_image_helper/` | 6 | 6 | — |
+| `py_cam1753_word_image/` | 4 | 4 | — |
+| `mb_cmn/` | 17 | 17 | — |
+| `py_uxlc_loc/` | 49 | 9 | 39 XML + `lci_recs.json` |
+
+The only tracked non-`.py` inside the code was `quirks-BHQ.txt` and the UXLC data. The
+spelling dictionary sat at the repo root beside its module. **There was no `.vscode/`**, so
+holman's extra did not recur; what recurred instead is a `book-of-job.code-workspace` and a
+`requirements.txt` at the root, both orphaned by the deletion and neither one an obvious
+whole-file delete — see "Two root-level files the deletion orphaned" below.
+
+### Nothing moved: the oracle, before and after
+
+Run from `C:\Users\BenDe\GitRepos\MAM-basics` on this repo's interpreter, MAM-basics'
+copy of the code, three times — before the deletion, after it, and after all the prose
+edits. **Silent, exit 0, every time**, and all **701 tracked artifacts** compared against
+their HEAD blobs by `git cat-file --batch` as **700 byte-identical and 1 line-ending-only,
+0 content differences**. The one is `out/cam1753-crops.json`, whose checkout is still CRLF
+— the same file Phases 0, 1 and 3 each found. **No `fline mismatch` line in any run**, so
+the location cross-check still has the 397A and 406A coordinates Phase 0 sent upstream.
+`check_all.py` 7 of 7 after the deletion as before it.
+
+### Two figures the plan forecast, and both are off by the same cause
+
+- **Mark order scans 298 files, not 299.** The forecast assumed only the spelling
+  dictionary would leave book-of-job's corpus. `check_mark_order._corpus_json_files()`
+  yields *every* `.json` under `boj_data_root()`, and
+  `py_uxlc_loc/UXLC-misc/lci_recs.json` is one, so Ben's delete decision took it too.
+  300 − 2 = 298.
+- **The NFC scope holds 35 files, not 42.** The seven procedure docs that moved here are
+  the entire difference: the comment's prediction counted `doc/` at nine and it is two
+  now. The floor of 30 still clears it, and the comment states the measured figure with
+  its accounting. Measured by calling `_scopes()` and `_tracked_files_in_scope()`
+  directly rather than by trusting the guard, which only asserts the floor.
+
+**Both are the same lesson in two places: a forecast made before a decision is a forecast
+about a different phase.** Neither is a defect, and each was a finding only because the
+count was read rather than the verdict — which is the transferable half of Phase 3's
+"a lint that loses its inputs goes on printing OK."
+
+### Phase 7 item 1 fired again, and holman's "three per repo" is one too many here
+
+`test_vendoring_policy_paths.py::test_every_pkg_scan_root_exists[book-of-job-mb_cmn-mb_cmn]`
+failed in this phase's own verification run, exactly as UXLC-utils' Phase 4 predicted it
+would in every remaining plan. The entry is deleted and `py/main_vendoring.py --all`
+regenerated `doc/vendoring-inventory.md`: **20 rows over 129 files → 18 over 112**, the 17
+being book-of-job's `mb_cmn` copies. The three `out/vendoring_*` artifacts are **55 lines
+of pure deletion with no additions**, so no pre-existing drift rode along.
+
+**The suite loses two tests, not three.** That file collected **25** cases before and
+**23** after. holman's record predicts three per repo from its own arithmetic — but holman
+had **two** `pkg_scan_roots` and book-of-job has one. **The rule is one case per scan root
+plus one dest-repo case for the entry**, so the trio's plans should count scan roots rather
+than repeat the number three. Suite **947 → 945 passed, 5 skipped, 59 subtests**.
+
+### The `59 subtests` figure DOES reproduce, and Phase 1's reason for saying otherwise was wrong
+
+Phase 0 of this plan corrected holman's Finding 3, which had dropped the figure; Phase 1
+re-measured, could not reproduce it, and concluded that "Finding 3 was right on the
+substance and Phase 0's correction of it was wrong," setting the standing baseline at
+`947 passed, 5 skipped` with **no third figure**. That is wrong. Measured twice this phase
+with `.venv/Scripts/python.exe py/main_test.py -q` from the repo root, the summary line
+reads **`945 passed, 5 skipped, 59 subtests passed`**.
+
+Phase 1's stated mechanism does not hold either. `pytest-subtests` is indeed absent — `pip
+show` reports "Package(s) not found" — but the figure never came from that plugin. **Six
+modules under `py/tests/` use `unittest`'s native `self.subTest`**, which pytest counts on
+its own: `test_explicit_claims.py`, `test_foi_kq_trivial_types.py`,
+`test_verify_table_words_in_mam_plus.py`, `test_versification_and_cantillation_doc.py`,
+`test_ws_bot_kq_triv_add_type.py` and `test_ws_bot_kuk_special_callsite_migration.py`.
+**The standing baseline is `947 passed, 5 skipped, 59 subtests`** at `f9b6245`, and
+`945 passed, 5 skipped, 59 subtests` after this phase.
+
+**Three phases across two plans have now argued this figure back and forth without anyone
+naming the mechanism.** The transferable rule is the one that would have ended it at the
+first exchange: **when a figure will not reproduce, find what produces it before concluding
+it is spurious** — `grep -rl subTest py/tests` is the whole investigation.
+
+### The nine procedure docs split 7–2, and the criterion is not the plan's
+
+The plan says "nearly all of them follow the code to MAM-basics… What stays is whatever
+describes the *published site* rather than how it is made." That criterion does not decide
+`viewing-image-metadata.md` (reading a PNG's metadata is neither) or `reading-mam-simple.md`
+(which describes a vendored data tree). The one used instead, and the one to reuse at the
+trio: **a doc moves if following it means touching the code or the pipeline the code
+drives; it stays if following it means looking at something the emptied repo holds.**
+
+| Doc | Disposition |
+|---|---|
+| `aleppo-word-crops.md` | → `doc/boj-aleppo-word-crops.md` |
+| `cam1753-word-crops.md` | → `doc/boj-cam1753-word-crops.md` |
+| `leningrad-word-crops.md` | → `doc/boj-leningrad-word-crops.md` |
+| `leningrad-image-scaling.md` | → `doc/boj-leningrad-image-scaling.md` |
+| `image-crop-reproducibility.md` | → `doc/boj-image-crop-reproducibility.md` |
+| `viewing-image-metadata.md` | → `doc/boj-viewing-image-metadata.md` |
+| `quirkrec-comments.md` | → `doc/boj-quirkrec-comments.md` — Decision D names this one explicitly |
+| `opening-html-files.md` | **stays** — it opens `gh-pages/`, which stayed |
+| `reading-mam-simple.md` | **stays** — it describes `py_ac_loc/MAM-XML/`, which stayed |
+
+The `boj-` prefix matches the `author_boj_*` / `boj_render` marker Ben settled in Phase 3;
+MAM-basics' `doc/` is flat, so a prefix rather than a subdirectory. `CLAUDE.md` here gains
+a short section for the seven, since nothing in the code points at them.
+
+**Every path in the seven was repointed and then checked to exist** — all 17 real paths
+resolve, the only unresolved two being the `qr_XXXX.py` placeholders. That check is worth
+running rather than trusting the substitution list, because it caught a double `py/py/`
+prefix in two files. Four things a path rewrite alone would not have caught:
+
+- **Two of the seven told a reader to verify a regeneration with `git status --porcelain`**
+  on book-of-job's `gh-pages/`. That is the instrument this plan spends a Phase 0
+  subsection warning against, and once the file moved it was also **unrunnable**, `git
+  status` refusing a path outside the repo it runs in. Both now use
+  `git -C ../book-of-job diff --stat HEAD`, with the reason inline so it is not reverted
+  as a stylistic preference.
+- **The apply-script template's root walk broke.** `boj-aleppo-word-crops.md` carried a
+  `.novc/` throwaway template computing `ROOT = Path(__file__).resolve().parent.parent`
+  and importing `py_ac_word_image_helper` from it. The script now lives in **this** repo's
+  `.novc/`, reaches `py/` from there, and takes its destination from
+  `boj_paths.aleppo_img_dir()`. The `sys.path` insert is kept and labelled — a gitignored
+  throwaway is the one place the ban does not apply.
+- **`cam1753-word-crops.md` calls the manuscript μC.** The generated site and the code both
+  call it **μY**, 3 and 5 times respectively, and μC appears nowhere else in either repo.
+  Corrected. **A doc that has not been read in two years disagrees with the artifacts
+  about more than paths.**
+- **That same file spells its commands with backslashes**, so a forward-slash substitution
+  pass missed all eleven. **Substitute on both separators, or check afterwards.**
+
+`reading-mam-simple.md` stayed but needed one edit: "the two files that name the directory"
+is one now, and it names `../MAM-basics/py/tests/test_h_dot_below_nfc.py`; the other was a
+gitignored throwaway rather than a tracked file.
+
+### The 518 artifacts, named where a reader of that repo will meet them
+
+Phase 0's table was re-measured before being copied, and every figure matched: 515 PNG,
+175 HTML, 2 CSS, 2 woff2 under `gh-pages/`, 7 JSON under `out/`; 160 each under
+`jobn/img/Aleppo/`, `jobn/img/Lenin/` and `jobn/img/cam1753/`, 30 under `jobn/img-orphans/`
+and 5 loose in `jobn/img/`. The five loose ones are named individually in book-of-job's
+`CLAUDE.md`, since a five-file residue is exactly what a sweep rounds off.
+
+They go in that repo's `CLAUDE.md` as a table, as UXLC-utils' Phase 4 put its 87 in that
+repo's `CLAUDE.md` and holman's its 160. **The README says it too**, in one sentence with
+the number in it, because the README is what a reader meets first.
+
+### `CLAUDE.md` edited, README replaced
+
+Phase 1 corrected this section's "write a `CLAUDE.md` here": the file exists (`991a1c4`,
+2026-08-03) and this was an edit. What survived from the old text is the quirkrec reading
+advice — read `out/enriched-quirkrecs.json`, edit the Python, name the loop variable `eqr`
+— repointed at `py/author_boj_qr/` here. What is new is the no-Python-here statement, the
+five-entry-point table, the 518-artifact table, the lints-run-from-MAM-basics section, and
+the instruction to read a regeneration with `git diff` rather than `git status --porcelain`.
+
+The README was two lines and is replaced outright. It now says what the review argues, what
+the 160 detail pages are, and that each has word-level crops from all three of μA, μL and
+μY — **verified rather than asserted**: the three crop sets are each exactly 1:1 with the
+160 detail-page filenames, checked by `diff` over the sorted SID lists.
+
+### `mb_cmn/provenance.py`'s `parents[2]` is moot for book-of-job now
+
+Phases 1 and 3 both put this to Ben and neither picked. **This phase's deletion of
+book-of-job's `mb_cmn/` has ended it there**: the wrong copy no longer exists, so the
+question is now only whether MAM-basics' copy should walk to `.git` and be re-vendored for
+the *other* repos that hold it. It was not decided silently, and it is not this phase's to
+decide. `git grep -lI "generated by book-of-job" -- gh-pages out` still returns 0, so
+Phase 6's blast radius in that repo remains nil.
+
+### Two root-level files the deletion orphaned
+
+Neither is a `.py` and neither came here with the code, so neither is in this section's
+prescription — and both are now about Python that does not exist:
+
+- **`book-of-job.code-workspace`.** Five of its six launch configurations name deleted
+  scripts, its settings block is `python.analysis` severity overrides plus terminal
+  auto-approve rules for a `.venv` Phase 7 item 5 deletes. This is holman's
+  `.vscode/settings.json` case, which Ben approved deleting. What is *not* about Python is
+  its folder list, which opens book-of-job beside `codex-index-aleppo` and
+  `codex-index-cam1753` — a view that survives either way, MAM-basics'
+  `all-repos.code-workspace` listing all four folders.
+- **`requirements.txt`.** Five packages — black, matplotlib, numpy, Pillow, pyspellchecker
+  — for code that is gone, hydrating a `.venv` Phase 7 item 5 deletes. Phase 3 also found
+  `matplotlib` is imported by nothing in that repo. Neither UXLC-utils nor
+  holman-ketiv-qere has a `requirements.txt`, so there is no precedent either way.
+
+**Both left in place pending Ben's answer**, and both counted in the 35 the NFC scope now
+holds; deleting both would take it to 33, still clear of the floor of 30. **At the trio,
+sweep the repo root for files whose subject is the interpreter rather than the code** —
+a workspace file, a `requirements.txt`, a `.vscode/`, an `.editorconfig` — before quoting
+a deletion size, the way holman's phase says to sweep for non-`.py` under `py/`.
+
+---
+
+The rest of this section is the plan as written 2026-08-02, before the phase ran.
+
 
 This deletes all 267 tracked `.py`. **Stop and ask Ben first.**
 
