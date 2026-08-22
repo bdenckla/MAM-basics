@@ -14,8 +14,8 @@ with a question rather than a phase.
 | 1 — two roots, no cwd | **DONE 2026-08-19.** Landed as `45f8853` in book-of-job (18 files, +305/−100), adding `boj_paths.py`; nothing owed in MAM-basics. The oracle now runs from a foreign working directory with all **701 artifacts byte-identical** and MAM-basics' tree untouched, `check_all.py` 7 of 7, the NFC suite 6 tests OK. Tracked `.py` is now **268** and lines **17,064**. **This repo does not vendor `mb_cmn/paths.py` and must not** — `parents[2]` is wrong at a root-level `mb_cmn/` — so `code_root()` walks to `.git` instead. **The prescribed grep undercounted by six and two of its seven hits are false positives.** Two root walks were left alone on purpose, `py_ac_word_image_helper/flat_index.py` and `py_cam1753_word_image/page.py`, both being blobs shared with a codex-index repo. **One question is open and is Ben's: `mb_cmn/provenance.py`'s `parents[2]`.** See "Phase 1 — two roots, no cwd" below |
 | 3 — copy the Python in (dual residency) | **DONE 2026-08-19.** Landed as `ef8e384` in MAM-basics (243 files: 241 `.py` under the four names Ben settled that day — `author_boj_qr/`, `author_boj_util/`, `author_boj/`, `boj_render/` — plus `quirks-BHQ.txt` and the spelling dictionary); nothing owed in book-of-job, whose HEAD is `45f8853` before and after. `a585cb6` precedes it and is not the move: it regenerates `doc/vendoring-inventory.md`, which Phase 0 left stale. **The oracle passed on the first run from MAM-basics and on every run since** — silent, all **701 artifacts byte-identical**, from this repo's root, from `GitRepos`, and from book-of-job's own copy. Suite unchanged at 947 passed, 5 skipped; `check_all.py` 7 of 7 from both repos. **The `path_to_uxlc` parameter Phase 1 demanded is not needed**: all 39 UXLC XML are one blob across the three repos and `lci_recs.json` differs from UXLC-utils' in one header line, so `prep()` takes no arguments and `uxlc_misc`/`uxlc_lci` were not touched. **The one fork the move forced is four source lints**, which scanned a repo root that now holds all of MAM-basics; `fix_mark_order.py` would have rewritten this repo on sight. Two of this repo's own lints fired on the arriving code and both were right. See "Phase 3 — copy the Python in (dual residency)" below |
 | 4 — empty book-of-job | **DONE 2026-08-21.** Landed as `a846585` in book-of-job (320 files: 317 deletions, 3 modified) and `cff95f7` here (14 files). **book-of-job holds zero Python**: 268 `.py` deleted, plus `quirks-BHQ.txt`, the spelling dictionary, the **40 UXLC data files Ben chose to delete** rather than keep, and 7 of the 9 procedure docs, which followed the code here as `doc/boj-*.md`. Tracked files 1103 → 786. Nine directories went whole. **All 701 artifacts byte-identical after the deletion and the oracle silent**, run three times; `check_all.py` 7 of 7. **Phase 7 item 1 fired inside this phase for the third repo running** and costs **two** tests, not holman's predicted three — one case per `pkg_scan_root` plus one, and book-of-job had one scan root where holman had two. Suite 947 → **945 passed, 5 skipped, 59 subtests**. **Two forecasts came out one short each, both for the same reason**: mark order scans **298** files rather than 299 (Ben's delete decision took `lci_recs.json` as well as the spelling dictionary) and the NFC scope holds **35** rather than 42 (the seven moved docs). **The `59 subtests` figure DOES reproduce and Phase 1's reason for saying otherwise was wrong** — six modules use `unittest`'s native `self.subTest`, which pytest counts without the absent `pytest-subtests`. `CLAUDE.md` there was edited and the README replaced; both name the **518 artifacts no program writes**. **Two root-level files orphaned by the deletion, `book-of-job.code-workspace` and `requirements.txt`, were Ben's decision the same day and he chose to delete both** — a second commit each side, `aa20c61` there and the commit carrying this record here, taking that repo to **784** tracked files and a root of four. `mb_cmn/provenance.py`'s `parents[2]` is **moot for book-of-job now**, that tree being gone. See "Phase 4 — empty book-of-job" below |
-| 6 — breadcrumbs and issue citations | **not started** |
-| 7 — cross-repo bookkeeping | **not started** |
+| 6 — breadcrumbs and issue citations | **DONE 2026-08-22.** Landed as one commit here and **none in book-of-job** — the first of the programme's three Phase 6 runs to owe its data repo nothing. Both halves of the prescription were nil, as Phase 4 predicted: **both breadcrumb greps return 0** (no code here ever passed `generator_file`, so no artifact carries an `mb_cmn.provenance` breadcrumb), and **not one of the 29 `#NN` sites in the 268 pre-move `.py` needed a prefix** — 24 lines of CSS hex colours, 4 Yeivin *ITM* section numbers in the deleted `mb_cmn/hebrew_accents.py`, and one already written out as `bdenckla/wlc-utils#43`. **holman-ketiv-qere's rule has its second confirming case at four times the size**: 241 modules moved and owed one clause. What the phase did owe, and neither plan wrote down: **`CLAUDE.md`'s section is now "Five issue trackers"** — book-of-job keeps **61 issues, 1–61, 19 open**, and **four of the six four-way collisions become five-way** (#19, #29, #48, #52), #69 and #75 staying four-way. **book-of-job needs no `doc/` exception and goes further than holman-ketiv-qere**: `#NN` appears nowhere in any of its 784 tracked files. **The two wider sweeps found nothing stale either** — its 17 `py/…` paths are correct under the working directory Phase 4 declared once at the top (a **third** breadcrumb shape), and no tracked file names its own `.venv`, so **Phase 7 item 5 can delete that 153 MB venv with no documentation edit**. Oracle silent, 700/1/0, suite 945/5/59, `check_all.py` 7 of 7. See "Phase 6 — breadcrumbs and issue citations" below |
+| 7 — cross-repo bookkeeping | **item 1 done inside Phase 4** (2026-08-21: the `book-of-job` entry deleted from `in/vendoring_policy.json` and `doc/vendoring-inventory.md` regenerated, 20 rows/129 files → 18/112). **Items 2–6 not started** |
 
 ## Baselines — measured 2026-08-02
 
@@ -1403,7 +1403,193 @@ README is two lines and needs replacing outright.
 With 694 files under `gh-pages/` this is not optional bookkeeping: it is the only thing standing
 between a future session and deleting hand-made pages in the belief they will come back.
 
-## Phase 6 — breadcrumbs and issue citations
+## Phase 6 — breadcrumbs and issue citations — **DONE 2026-08-22**
+
+**Landed as one commit here and none in book-of-job.** Both halves of the prescription below were
+nil when Phase 4 measured them on 2026-08-21, and re-measuring on 2026-08-22 confirmed both: no
+breadcrumb to flip, no citation to prefix. **This is the first of the programme's three Phase 6
+runs to owe its data repo no commit at all** — UXLC-utils' moved one artifact
+(`gh-pages/fois/index.html`) and holman-ketiv-qere's moved three. What this phase did owe is a
+`CLAUDE.md` section, which neither this plan nor the programme plan wrote down: book-of-job has an
+issue tracker of its own, so **"Four issue trackers" is now "Five issue trackers"**.
+
+**Every baseline was re-measured first and every one matched.** book-of-job at `aa20c61`, clean,
+**784 tracked files, 0 tracked `.py`, 701 tracked artifacts**; MAM-basics at `e6447e2`, clean;
+UXLC-utils at `4d1ad89`, clean. Suite **945 passed, 5 skipped, 59 subtests**; the oracle silent
+with **700 byte-identical, 1 line-ending-only (`out/cam1753-crops.json`), 0 content differences**;
+`check_all.py` 7 of 7, mark order over 298 files, escapes over 241 `.py`. **Phases 4 and 6 have
+now both found every inherited figure right**, for the reason holman-ketiv-qere's Phase 6 record
+gives: the phase before measured them and nothing ran in between.
+
+### Part 1 — nothing to flip, and three checks rather than one say so
+
+Both greps this section prescribes return **0**, run from
+`C:\Users\BenDe\GitRepos\book-of-job`: `git grep -lI "generated by book-of-job" -- gh-pages out`,
+and the bare `git grep -lI "book-of-job" -- gh-pages out` besides. **The structural reason is the
+one UXLC-utils' Phase 1 found in that repo**: no code here ever passed `generator_file` to
+`mb_cmn.file_io`, so no artifact carries an `mb_cmn.provenance` breadcrumb to be wrong. That is
+also why `mb_cmn/provenance.py`'s wrong `parents[2]` was latent here rather than damaging.
+
+**But a zero from the prescribed grep is not the whole answer, and holman-ketiv-qere's Phase 6 is
+the reason to say so** — there the breadcrumb grep matched nothing while five stale `py/…` paths
+sat in the data and the prose. Both of that phase's wider sweeps were run here, plus the
+interpreter sweep the programme's Phase 7 finding 1 added:
+
+- **`git grep -nIoE '(^|[^-a-zA-Z0-9/])py/[A-Za-z_./]*' -- .` returns 17 hits in 2 files** —
+  16 in `CLAUDE.md`, 1 in `README.md` — **and every one of the 17 is correct, not stale.** Phase 4
+  rewrote both files with the working directory declared once at the top — search that `CLAUDE.md`
+  for "Everything below runs from", line 18 as of 2026-08-22 — so a bare `py/main_…` underneath
+  it resolves correctly. **That is a third breadcrumb shape**, alongside the two holman-ketiv-qere's
+  Phase 6 recorded: not a bare `MAM-basics/py/…` and not a `../MAM-basics/py/…`, but a bare `py/…`
+  licensed by a stated root. The lesson holman's phase drew — ask which neighbourhood a path sits
+  in rather than picking one shape per repo — holds, with the neighbourhood here being a whole
+  document rather than a sentence.
+- **`git grep -nI "\.venv" -- .` returns 4 hits and not one names book-of-job's own venv.**
+  `.gitignore:2` is the ignore rule; `CLAUDE.md:19` says outright that there is no `.venv` here to
+  run anything with; the other two are `.venv/Scripts/python.exe py/…` command lines under the
+  same declared MAM-basics root. A search for an absolute path to this repo's interpreter
+  (`GitRepos.book-of-job.*venv` and both separator spellings) returns nothing. **So the trap that
+  bit holman-ketiv-qere's Phase 7 item 4 does not recur**: that repo's `doc/` named its own venv
+  by absolute path, an instruction pointing at the directory Phase 7 was about to delete. Phase 7
+  item 5 can delete book-of-job's `.venv` — **153 MB on disk, the largest of the four**, against
+  UXLC-utils' 33 MB and holman-ketiv-qere's 22 MB — with no documentation edit owed.
+
+### Part 2 — nothing to prefix, and the citation count did not track the file count
+
+**29 `#`-plus-digit sites across the 268 `.py` book-of-job tracked before the move, and every one
+is disposed of without a prefix.** Measured at `45f8853`, that repo's HEAD before Phase 4's
+deletion, so the count covers the code that moved *and* the code that was deleted:
+
+| Where | Sites | Disposition |
+|---|---|---|
+| `main_gen_aleppo_crop_editor.py` | 12 lines | CSS hex colours — moved, stay bare |
+| `main_gen_cam1753_crop_editor.py` | 12 lines | CSS hex colours — moved, stay bare |
+| `mb_cmn/hebrew_accents.py` | 4 lines | Yeivin *ITM* `#194`, `#358`, `#361` — deleted with `mb_cmn/` |
+| `pyauthor_util/qr_relations.py:75` | 1 | already written out in full as `bdenckla/wlc-utils#43` |
+
+The 24 CSS lines carry **46 hex-colour tokens** between them; the table counts lines, because that
+is what a `git grep -n` sweep hands a reader. Restricted to the **241 modules Phase 3 moved**, the
+count is **25** — the 24 CSS lines plus `py/author_boj_util/qr_relations.py:75` — which is
+**holman-ketiv-qere's result almost exactly**, that repo's 60 moved files having yielded 19 CSS
+colours plus one UXLC change anchor.
+
+**book-of-job owes even less than holman-ketiv-qere did, in two places.** Its `mb_cmn/` copy held
+**no `paths.py`** — Phase 1 established that this repo deliberately does not vendor it — so the
+`#75` naming MAM-basics' paths convention and the already-prefixed `wlc-utils#48` that
+holman-ketiv-qere's deletion disposed of have no counterpart here. And its root-level
+`test_h_dot_below_nfc.py` cites nothing at all, where holman-ketiv-qere's carried a `#187` naming
+MAM-basics' NFC convention. **Neither absence is luck**: both are consequences of decisions this
+plan's Phase 1 recorded.
+
+**The second trap the `CLAUDE.md` section names does not recur here, and that was checked rather
+than assumed.** Grepping the 241 moved modules for `REPO_OWNER`, `REPO_NAME`, `gh issue` and
+`github` finds no issue-rendering machinery: the `github` hits are `bdenckla.github.io` published
+URLs, three "Initially generated by GitHub Copilot" provenance comments, and
+`py/boj_paths.py:127`'s `DATA_REPO_NAME = "book-of-job"`, which names a sibling repo to build
+paths from exactly as `py/hkq_paths.py:43` does and has nothing to do with `gh`.
+`py/py_render/rt_issue_tags.py` and `py/hkq_cmn/table_row_github_issues.py` were left untouched,
+their `REPO_OWNER`/`REPO_NAME` constants included.
+
+**So the transferable rule from holman-ketiv-qere's Phase 6 now has its second confirming case,
+at four times the size**: 241 modules moved and owed one clause, where 60 modules owed one clause.
+**How many citations a move owes is a function of what its code talks about, never of how many
+files it is.** book-of-job's Python is a review of one biblical book and its manuscript images; it
+had no reason to cite a tracker, and it did not.
+
+### What Phase 6 actually owed: `CLAUDE.md`'s section becomes five
+
+**book-of-job keeps 61 issues, numbered 1–61 with no gaps, 19 of them open**, measured 2026-08-22
+with `gh issue list --repo bdenckla/book-of-job --state all`. They were not transferred when that
+repo's Python moved here on 2026-08-19, exactly as wlc-utils', UXLC-utils' and holman-ketiv-qere's
+were not. So a citation of one is written **`book-of-job#NN`**.
+
+**All four of the other trackers were re-measured too, and all four matched what the section
+already claimed**: wlc-utils 93 (1–93, 21 open), UXLC-utils 56 (1–56, 27 open),
+holman-ketiv-qere 81 (1–81, 60 open). MAM-basics itself holds 230 issues numbered 1–231, the one
+gap being #129. **The re-measure was worth running rather than trusting**: this section's own
+wlc-utils count stood five short for weeks before anyone checked it.
+
+Eight edits landed in `CLAUDE.md`. Items 3, 4 and 7 below are **corrections** — claims a fifth
+tracker falsifies — rather than extensions of the section:
+
+1. The heading, "Four issue trackers" → **"Five issue trackers"**.
+2. A book-of-job paragraph after holman-ketiv-qere's, with the counts, two fresh low-number
+   collisions (book-of-job#1 studies UXLC changes in Job where MAM-basics #1 syllabifies pointed
+   Hebrew; book-of-job#7 shows only the first five of each group where MAM-basics #7 adds
+   `main_diff_mpp.py`), and the shape of the tracker.
+3. **The collision arithmetic.** Four of the six numbers the section called four-way collisions
+   are now **five-way** — #19, #29, #48 and #52, whose book-of-job titles are "Add Aleppo Codex
+   image for 34:5", "supplement μA images with manuscript locations", "details is getting too big"
+   and "30:18: add prefix; expand Lenin crop". **#69 and #75 stay four-way**, book-of-job's
+   numbering stopping at 61. holman-ketiv-qere's sentence was moved to the past tense ("became
+   four-way collisions when holman-ketiv-qere's tracker was added") so that the promotion of four
+   of them reads as a sequence rather than a contradiction.
+4. **"Unlike the other three moves, this one had nothing to prefix"** was a uniqueness claim that
+   book-of-job falsifies, and it opened with a bare "this one" besides. It now reads "Unlike the
+   two moves that had citations to prefix — wlc-utils' 326 and UXLC-utils' 50 —
+   holman-ketiv-qere's move had nothing to prefix", which names both sides and stays true.
+5. A book-of-job nothing-to-prefix paragraph carrying the 29-site inventory above.
+6. The history sentence, which had recorded two of the section's names. It now records all four
+   — "Two issue trackers" until 2026-08-18, "Three issue trackers" for part of that same day,
+   "Four issue trackers" from later that day until 2026-08-22, "Five issue trackers" since — and
+   counts the **ten** sentences across four plans that still cite it under a retired name, listed
+   by plan and by which name each uses. Counted 2026-08-22 with `git grep -cI "<name>" -- doc`.
+   All ten are left as written, being execution records of the section as it stood.
+7. The `doc/`-exception paragraphs. holman-ketiv-qere's "the one place it differs from the other
+   three" became "the first of the four evacuated repos to need none", a book-of-job paragraph
+   follows it stating that those four now split two and two, and the wlc-utils paragraph's "the
+   one standing exception" became "one of the two standing exceptions" — a claim the UXLC-utils
+   paragraph right below it had already contradicted.
+8. The "Not every `#NN` is an issue" bullet's bare "CSS carries hex colours" now names the two
+   crop-editor generators and the 46 colours they hold between them, so that the largest single
+   block of non-issue `#NN` in this repo is findable from the bullet that warns about it.
+
+**book-of-job needs no `doc/` exception, and it goes further than holman-ketiv-qere does.**
+`git grep -nIE '#[0-9]+'` over its **whole tracked tree** returns nothing at all, measured
+2026-08-22 — not in `CLAUDE.md`, `README.md`, the two `doc/` files or the three `.md` under
+`py_ac_loc/`, and not in any of the 701 artifacts under `gh-pages/` and `out/` either. **All 784
+tracked files are free of `#NN` in every shape**, issue numbers and hex colours alike. **So the
+four evacuated repos split two and two**: wlc-utils' `doc/` and `in/` copies now living here and
+UXLC-utils' own live `doc/` are the two standing exceptions, and holman-ketiv-qere and book-of-job
+need none. Stating this
+is worth the sentence because the arithmetic that predicts otherwise is easy to do — the emptied
+repo is the one whose tracker was just added.
+
+### Verification — confirmation rather than verification, and run anyway
+
+Phase 6 touched no code, so nothing it did could move any of these; running them establishes that
+nothing else did either.
+
+- **The oracle**, `py/main_gen_misc_authored_english_documents.py` from
+  `C:\Users\BenDe\GitRepos\MAM-basics` on this repo's interpreter: **silent, exit 0**, and no
+  `fline mismatch` line, so the location cross-check still holds the 397A and 406A coordinates
+  Phase 0 sent upstream.
+- **All 701 artifacts compared against their HEAD blobs** by `git cat-file --batch`, before the
+  oracle run and after it, with the same verdict both times: **700 byte-identical, 1
+  line-ending-only, 0 genuinely different.** The one is `out/cam1753-crops.json`, whose checkout
+  is still CRLF — the same file Phases 0, 1, 3 and 4 each found. `git status --porcelain` was not
+  used in book-of-job, per this plan's Phase 0 subsection.
+- **Suite 945 passed, 5 skipped, 59 subtests**, unchanged, via
+  `.venv/Scripts/python.exe py/main_test.py -q` from the repo root.
+- **`check_all.py` 7 of 7**, mark order over 298 files, escapes over 241 `.py`.
+- **`git status --porcelain` empty in book-of-job and in UXLC-utils** at the end; in MAM-basics it
+  held only this phase's own three prose files.
+- The NFC guard was re-run on its own after the `CLAUDE.md` edit, **6 passed** — that file being
+  in its scope.
+
+### The open question is still open, and this phase did not touch it
+
+`mb_cmn/provenance.py`'s `_repo_root()` is `parents[2]`. Phase 4's deletion of book-of-job's
+`mb_cmn/` ended the question **for book-of-job**, and Part 1 above records why it was latent even
+before that: nothing here passed `generator_file`, so no breadcrumb was ever written. **What
+remains open is only whether MAM-basics' copy should walk to `.git` and be re-vendored for the
+other repos that still hold it** — the two codex-index repos and diffable-pointed-hebrew. Phases
+1, 3 and 4 each put it to Ben and none picked; this phase did not pick either.
+
+---
+
+The rest of this section is the plan as written 2026-08-02, before the phase ran.
+
 
 ```powershell
 git grep -lI "generated by book-of-job" -- gh-pages out

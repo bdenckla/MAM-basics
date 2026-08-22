@@ -134,7 +134,7 @@ absent. The verbatim reader-facing statement is
 audit fix that made maqaf differences non-differences) and why that one was wrong, so it does not
 get reinstated. Issue wlc-utils#76.
 
-## Four issue trackers: a bare `#NN` here means MAM-basics
+## Five issue trackers: a bare `#NN` here means MAM-basics
 
 wlc-utils' issues were **not** transferred when its Python moved here on 2026-08-01. They keep
 their numbers and stay in `bdenckla/wlc-utils`, which is still where they are read, commented on
@@ -169,11 +169,13 @@ realization, holman-ketiv-qere#48 is row 41's Jeremiah 17:11 ימו where MAM-ba
 before sof pasuq in Isaiah 44:24, holman-ketiv-qere#75 is row 65's Ezekiel 40:34 ואלמו where
 MAM-basics #75 is the `mb_cmn/paths.py` convention. Most of holman-ketiv-qere's issues are one per
 review row, titled "row NN Book C:V FORM MAM qere", and `io/table_row_github_issues.json` holds
-that mapping. **Six numbers are now four-way collisions** — #19, #29, #48, #52, #69 and #75, each
-already cited above as a wlc-utils or a UXLC-utils collision.
+that mapping. **Six numbers became four-way collisions when holman-ketiv-qere's tracker was
+added** — #19, #29, #48, #52, #69 and #75, each already cited above as a wlc-utils or a
+UXLC-utils collision.
 
-**Unlike the other three moves, this one had nothing to prefix**, which is worth stating because
-the arithmetic that predicts otherwise is so easy to do. Phase 6 read every `#`-plus-digit site in
+**Unlike the two moves that had citations to prefix — wlc-utils' 326 and UXLC-utils' 50 —
+holman-ketiv-qere's move had nothing to prefix**, which is worth stating because the arithmetic
+that predicts otherwise is so easy to do. Phase 6 read every `#`-plus-digit site in
 the 60 files that moved and found no citation of any tracker among them: 19 CSS hex colours in
 `py/py_render/rt_assets.py`, and the `#2026.08.05-6` UXLC **change** anchor in
 `py/hkq_cmn/uxlc_change_records.py`. The rest of holman-ketiv-qere's pre-move `py/` carried eight
@@ -185,18 +187,59 @@ and two of `paths.py`, a `#75` naming MAM-basics' paths convention and an alread
 repo's copy. **A repo can move its whole
 Python and still owe this section nothing but a clause** — count the citations, never the files.
 
-**This section was "Two issue trackers" until 2026-08-18 and "Three issue trackers" for the rest
-of that same day**, and four sentences in `doc/PLAN-evacuate-the-rest-of-wlc-utils.md` still cite
-it under the first of those names, as does `doc/PLAN-evacuate-python-from-UXLC-utils.md`'s Phase 6
-record under the second. They are those plans' execution records, describing the section as it
-stood when each phase ran, so they are left as written rather than re-pointed.
+**book-of-job is the fifth tracker.** Its Python moved here on 2026-08-19 and its issues were not
+transferred either — **61 of them, numbered 1–61 with no gaps, 19 open**, measured 2026-08-22,
+still read, commented on and closed in `bdenckla/book-of-job`. So a citation of one is written
+**`book-of-job#NN`**, and the numbered range collides from #1 upward: book-of-job#1 studies UXLC
+changes in Job where MAM-basics #1 syllabifies pointed Hebrew, book-of-job#7 shows only the first
+five of each group where MAM-basics #7 adds `main_diff_mpp.py`. **Its issues take the shape
+holman-ketiv-qere's do rather than wlc-utils'**: 37 of the 61 name a Job verse or a quirk-record
+SID in the title, 11 of those leading with the verse, as "30:18: add prefix; expand Lenin crop"
+does — one issue per quirk record, per manuscript image, or per crop-editor failure. **The bullet
+below about modules that render issue references as data does not apply here**: book-of-job's
+issue numbers live in its tracker and in prose, and no module of its code turns them into links or
+tags, so it has no counterpart to `io/table_row_github_issues.json`. `py/boj_paths.py`'s
+`DATA_REPO_NAME` names a sibling repo to build paths from, exactly as `py/hkq_paths.py`'s does,
+and is nothing to do with `gh`.
+
+**Four of the six numbers named above are now FIVE-way collisions** — #19, #29, #48 and #52, whose
+book-of-job titles are "Add Aleppo Codex image for 34:5", "supplement μA images with manuscript
+locations", "details is getting too big" and "30:18: add prefix; expand Lenin crop". **#69 and #75
+stay four-way**, book-of-job's numbering stopping at 61.
+
+**book-of-job had nothing to prefix either, which makes it twice running.** Its move was the
+programme's largest, 241 modules against holman-ketiv-qere's 60, and it owed this section exactly
+as little. All **29** `#`-plus-digit sites in the 268 `.py` that repo tracked before the move are
+disposed of without a prefix: **24 are lines of CSS hex colours**, 46 colour tokens between them,
+in `py/main_gen_aleppo_crop_editor.py` and `py/main_gen_cam1753_crop_editor.py`; **four are Yeivin
+*ITM* section numbers** — `#194`, `#358` and `#361` — in the `mb_cmn/hebrew_accents.py` copy Phase
+4 deleted, the same four lines holman-ketiv-qere's copy carried; and the twenty-ninth,
+`py/author_boj_util/qr_relations.py:75`, was already written out in full as
+`bdenckla/wlc-utils#43`. book-of-job's copy of `mb_cmn/` held no `paths.py` and its
+`test_h_dot_below_nfc.py` cited nothing, so even the two `#187` sites and the `#75` that
+holman-ketiv-qere's move disposed of have no counterpart here. **Two moves of very different
+sizes have now confirmed the same thing: how many citations a move owes is a function of what its
+code talks about, never of how many files it is.**
+
+**This section has had four names.** It was "Two issue trackers" until 2026-08-18, "Three issue
+trackers" for part of that same day, "Four issue trackers" from later that day until 2026-08-22,
+and "Five issue trackers" since. **Ten sentences across four plans still cite it under one of the
+three retired names**, counted 2026-08-22: four in `doc/PLAN-evacuate-the-rest-of-wlc-utils.md`
+under "Two issue trackers"; three under "Three issue trackers", being
+`doc/PLAN-evacuate-python-from-UXLC-utils.md`'s Status row and its Phase 6 record plus
+`doc/PLAN-evacuate-python-programme.md`'s UXLC-utils row; and three under "Four issue trackers",
+being `doc/PLAN-evacuate-python-from-holman-ketiv-qere.md`'s Status row and its Phase 6 record
+plus `doc/PLAN-evacuate-python-programme.md`'s holman-ketiv-qere row. They are those plans'
+execution records, describing the section as it stood when each phase ran, so they are left as
+written rather than re-pointed.
 
 Three things a blind sweep gets wrong, so read the surrounding sentence before adding a prefix:
 
 - **Not every `#NN` is an issue.** Yeivin's *ITM* is cited by section number in exactly the same
-  shape (`#194`, `#221`, `#246`, and the `#325`–`#391` poetic run), CSS carries hex colours, and
-  `poetic_ply_grammar.py` numbers the accents of Ps 17:14 as `#7`–`#10`. None of those take a
-  prefix. **The CLC code has seven such sites, and each has a real UXLC-utils issue of that
+  shape (`#194`, `#221`, `#246`, and the `#325`–`#391` poetic run), CSS carries hex colours —
+  `py/main_gen_aleppo_crop_editor.py` and `py/main_gen_cam1753_crop_editor.py` hold 46 between
+  them — and `poetic_ply_grammar.py` numbers the accents of Ps 17:14 as `#7`–`#10`. None of those
+  take a prefix. **The CLC code has seven such sites, and each has a real UXLC-utils issue of that
   number waiting to be mistaken for it**: `doc/clc-design.md` numbers its §9 open questions in
   the identical shape, so `clc_collect.py`'s "design doc §9 #2" and `clc_render.py`'s "design doc
   §9 #6" name that list rather than issues #2 and #6; three sites name a UXLC **change** number,
@@ -225,9 +268,9 @@ a wlc-utils issue, and qualifying those would imply they were ambiguous. Phase 1
 `edition-transcription-workflow.md`, `review-findings-2026-07-29.md`, `simanim-tanakh-signs.md`,
 `PLAN-overall-port-to-python.md`, `PLAN-two-accents-on-one-chanted-word.md`) and the wlc trees
 under `in/` (`in/accgram/edition_transcriptions/` above all) — still carrying bare `#NN` issue
-citations that mean wlc-utils issues. Those files are the one standing exception to "a bare `#NN`
-here means MAM-basics". wlc-utils' own rewritten `CLAUDE.md` keeps its bare-`#NN`-means-wlc-utils
-note for the redirect host itself.
+citations that mean wlc-utils issues. Those files are one of the two standing exceptions to "a
+bare `#NN` here means MAM-basics". wlc-utils' own rewritten `CLAUDE.md` keeps its
+bare-`#NN`-means-wlc-utils note for the redirect host itself.
 
 **UXLC-utils' `doc/` is the same exception, still live.** Only that repo's Python left; it keeps
 its `doc/` (2 files), `in/` (556), `out/` (27), `gh-pages/` (184) and `data/` (2), measured
@@ -235,12 +278,21 @@ its `doc/` (2 files), `in/` (556), `out/` (27), `gh-pages/` (184) and `data/` (2
 nothing there was qualified — for the same reason wlc-utils' `doc/` was left alone, that
 qualifying them would imply they were ambiguous.
 
-**holman-ketiv-qere needs no such exception, and that is the one place it differs from the other
-three.** Its `doc/` has two files and neither carries a bare `#NN`. Measured 2026-08-18, the only
+**holman-ketiv-qere needs no such exception, the first of the four evacuated repos to need none.**
+Its `doc/` has two files and neither carries a bare `#NN`. Measured 2026-08-18, the only
 `#NN` in any of its tracked prose is the `#19` its `CLAUDE.md` quotes twice from the filenames
 `gh-pages/JC3 The Biblical Text in the JC Edition #19-ז`, and that is a JC Edition article number
 rather than an issue — one more instance of the bullet above, met in the repo whose tracker had
 just been added.
+
+**book-of-job needs no such exception either, and it goes further than holman-ketiv-qere does.**
+Measured 2026-08-22, `git grep -nIE '#[0-9]+'` over its **whole tracked tree** returns nothing at
+all — not in its `CLAUDE.md`, its `README.md`, its two `doc/` files or the three `.md` under
+`py_ac_loc/`, and not in any of the 701 artifacts under `gh-pages/` and `out/` either. All **784**
+files that repo tracks are free of `#NN` in every shape, issue numbers and hex colours alike, so
+there is nothing there for a reader to have to disambiguate. **So the four evacuated repos split
+two and two**: wlc-utils' `doc/` and `in/` copies now living in this repo and UXLC-utils' own live
+`doc/` are the two standing exceptions, and holman-ketiv-qere and book-of-job need none.
 
 ## `doc/boj-*.md` are book-of-job's procedures, and they were written for Copilot
 
