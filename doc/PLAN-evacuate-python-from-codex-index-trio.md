@@ -545,6 +545,13 @@ settle, and this phase still did not pick — but a future phase should stop re-
 two options were symmetric. book-of-job's Phase 7 session, correcting its own plan the same day,
 went further and **recommends closing it as a no**, with the al-hatorah cost as the reason.
 
+**SETTLED LATER THE SAME DAY: Ben took that recommendation. `_repo_root()` stays `parents[2]`, and
+the question is closed rather than narrowed.** The record is
+[`PLAN-evacuate-python-programme.md`](PLAN-evacuate-python-programme.md)'s section "Decision —
+`mb_cmn/provenance.py`'s `_repo_root()` stays `parents[2]`", which is the one home for it. **No
+phase of this plan should re-put it**, and the sentence above calling it "Ben's to settle" is this
+phase's own record of the state before he settled it.
+
 **A list of repos is a measurement, and this one was never taken.** That is the transferable part,
 and it is not "the list was hard to check". book-of-job's Phase 1 record had the right three repos
 and book-of-job's Phase 6 record had the wrong four, **in the same file, four screens apart, for
