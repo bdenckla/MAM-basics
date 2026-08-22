@@ -150,13 +150,12 @@ the fastest way to lose code silently.
 ## Decision — total evacuation for three repos, Python-only for the codex-index trio — **DECIDED 2026-08-22**
 
 **Ben, 2026-08-22: book-of-job, holman-ketiv-qere and UXLC-utils are to be totally evacuated.** Not
-merely their Python, which is already done in all three: their published pages become forwarding
-stubs pointing at MAM-basics, and their `README.md` points anyone browsing the repo on GitHub at the
-new location of the files. That is wlc-utils' shape, applied to three more repos — **with one
-deliberate difference, that the images stay behind and go on being served**, so what is left is a
-repo alive as a redirect host *and* an image host rather than as a redirect host alone. The
-subsection "The images stay and go on being served where they are" below is where that difference
-is stated.
+merely their Python, which is already done in all three: their whole `gh-pages/` tree moves into
+MAM-basics, each published page is replaced in place by a forwarding stub, and their `README.md`
+points anyone browsing the repo on GitHub at the new location of the files. What is left is a repo
+alive as a redirect host. **That is wlc-utils' shape exactly, applied to three more repos** — see
+the subsection "Everything moves; only stubs stay" below, which records a reversal that got it
+there.
 
 **The codex-index trio is excluded, and its data stays in place.** codex-index-aleppo,
 codex-index-leningrad and codex-index-cam1753 move their Python and nothing else. The manuscript
@@ -175,26 +174,29 @@ content and a great deal of data:
 | codex-index-cam1753 | **none** | **none** | 80.6 MB, of which `cam1753-pages` is 48 and `cam1753-spreads` 24 |
 
 Against that, the three repos to be totally evacuated hold **272 published pages between them,
-inside 1,178 tracked files** under `gh-pages/`. **Those two counts are not interchangeable**: the
-subsection below records Ben's decision that the images stay, so **272 is both the stub count and
-very nearly the whole move**, while 1,178 is the size of the tree only 272 files of which cross to
-MAM-basics.
+inside 1,178 tracked files** under `gh-pages/`, weighing **119 MB**. **Both counts matter and they
+measure different jobs**: 1,178 files is the size of the move into MAM-basics, and 272 is the size
+of the stub set left behind, one stub per HTML page.
 
-| Repo | HTML pages *(stubs, and the move)* | Tracked under `gh-pages/` | Staying put |
+| Repo | Tracked under `gh-pages/` *(the move)* | MB | HTML pages *(the stub set)* |
 |---|---|---|---|
-| book-of-job | **175** | 694 | 515 `.png` |
-| holman-ketiv-qere | **6** | 300 | 289 `.png` |
-| UXLC-utils | **91** | 184 | 80 `.png`, 3 `.jpg` |
-| **total** | **272** | **1,178** | **884 images** |
+| book-of-job | 694 | 65.2 | **175** |
+| holman-ketiv-qere | 300 | 35.5 | **6** |
+| UXLC-utils | 184 | 18.4 | **91** |
+| **total** | **1,178** | **119.1** | **272** |
 
-For scale, wlc-utils' finished stub set is **155**, so the stub job is roughly the same again and
-three-quarters over — but the **move** is far smaller than wlc-utils', which carried the whole tree.
-MAM-basics' own `gh-pages/` is **285** today, 284 of them wlc-utils'.
+**For scale against the precedent and against the destination**: wlc-utils' move carried **284
+files / 50.0 MB** and left **155** stubs, so this is about four times its file count, two and a half
+times its bytes, and one and three-quarter times its stub set. MAM-basics today is **2,220 tracked
+files / 270.7 MB**, of which `gh-pages/` is **285 files / 50.0 MB** — essentially all wlc-utils'. So
+the move roughly **quintuples MAM-basics' published site**, to about 1,463 files and 169 MB, and
+takes the repo to about 3,400 files and 390 MB. Re-measure with
+`git -C <repo> ls-tree -r -l HEAD gh-pages | awk '{s+=$4; c++} END {print c, s/1048576}'`.
 
-**holman-ketiv-qere is the odd one and worth knowing about before planning it**: 6 HTML pages
-against 289 PNGs, so its published site is almost entirely images. Under the decision below that
-makes it the smallest job of the three by a wide margin — six stubs and six pages moved — where
-counting tracked files would have made it the second largest.
+**holman-ketiv-qere is the lopsided one and worth knowing about before planning it**: 300 files but
+only **6** HTML pages, its published site being almost entirely images. So it is the second largest
+*move* of the three and by far the smallest *stub* job — a repo where the two counts point in
+opposite directions, and a reason to keep them apart when budgeting.
 
 Re-establish the page count with
 `git -C <repo> ls-files -z gh-pages | tr '\0' '\n' | grep -ci '\.html\?$'` and the tracked count
@@ -203,49 +205,47 @@ holman-ketiv-qere has two `gh-pages` paths containing spaces that `git ls-files`
 naive `grep '\.html$'` drops. Repo sizes come from
 `git -C <repo> ls-tree -r -l HEAD | awk '{s+=$4} END {print s/1048576}'`.
 
-### The images stay and go on being served where they are — **DECIDED 2026-08-22**
+### Everything moves; only stubs stay — **DECIDED 2026-08-22, reversing a decision made earlier the same day**
 
-**Ben, 2026-08-22: keep serving the images from their current locations.** What is left behind in
-each of the three repos is **HTML stubs and full images** — the stub replacing each published page
-in place, every image staying exactly where it is and going on being served by that repo's own Pages
-site. **The principle he gave is the one to plan by: evacuate anything likely to change, and the
-images are unlikely to change.**
+**Ben, 2026-08-22: move the images, the CSS, the fonts, the JavaScript and the JSON — everything —
+and leave HTML stubs doing the forwarding.** So each repo's entire `gh-pages/` tree crosses into
+MAM-basics, and what remains behind is a stub per published page plus a `404.html` catch-all and
+nothing else. **This is wlc-utils' shape with no departure from it**, which means
+`doc/PLAN-evacuate-the-rest-of-wlc-utils.md`'s Phases 8–10 and `py/main_wlc_redirect_stubs.py` are
+the template to generalize rather than to adapt.
 
-**So this is NOT wlc-utils' whole-tree move, and the difference is the main thing the new plan has
-to get right.** `doc/PLAN-evacuate-the-rest-of-wlc-utils.md` moved every one of wlc-utils' 154
-published files into MAM-basics and left a stub for each. Here the `gh-pages/` tree **splits**: the
-HTML crosses to MAM-basics and is replaced by a stub, the images do not move at all. A reader who
-takes wlc-utils as the template without reading this subsection will move 884 PNGs that Ben decided
-should stay.
+**This reverses a decision recorded earlier the same day, and the reversal is recorded rather than
+overwritten because the rejected version was reasoned and could look attractive again.** That
+version was: keep serving the images from their current locations, leaving HTML stubs *and* full
+images behind, on the principle that what gets evacuated is what is likely to change and the images
+are not. Its premise was sound and was checked — book-of-job's plan records its oracle rewriting
+**183 of 701** artifacts, leaving **518 written by no program**, against **515 PNGs** in its
+`gh-pages/`, so the static half and the image half really are the same set to within three files.
+**The premise was right and the conclusion was still dropped**, for the reason below. **Do not
+reinstate the split on the strength of that measurement.**
 
-**The split matches a measurement book-of-job's own plan already took, which is the evidence that
-"unlikely to change" is right rather than merely plausible.** That plan records the oracle
-rewriting **183 of 701** artifacts, so **518 are written by no program**. Measured 2026-08-22,
-book-of-job's `gh-pages/` holds **515 PNGs** and 179 non-PNG, with 7 more artifacts in `out/`. So
-the set no program writes and the set of images are the same set to within three files. **The
-churning half and the static half were already separated by the data; Ben's rule names the line
-that was there.** Confirm the same for holman-ketiv-qere and UXLC-utils when the plan is written,
-rather than carrying book-of-job's ratio across.
+**What decided it: a whole-tree move keeps every relative reference valid, and a split breaks all of
+them.** Every image reference in these pages is relative — measured 2026-08-22, book-of-job's
+`gh-pages/jobn-details/0119.html` carries `src="../jobn/img/Lenin/Lenin-0119.png"`,
+holman-ketiv-qere's pages a bare `img/…`, UXLC-utils' an `amb-early-mtg/img/…`. Move the whole
+subtree together and every one of those paths still resolves, because the tree's internal shape is
+unchanged and the move is **a pure prefix rewrite of every URL**, which is exactly what
+`main_wlc_redirect_stubs.py`'s docstring says wlc-utils' move was. Move only the HTML and every
+image reference in every page has to be repointed at a cross-repo root-relative URL
+(`/book-of-job/jobn/img/…`), and repointed **in the generators**, since a pass over the emitted
+files would be undone by the next regeneration. **The split cost a generator change per repo and
+bought only disk; moving everything costs disk and buys a mechanism already built and verified.**
 
-**The consequence that makes this more than a smaller move: every image reference in the moved HTML
-is RELATIVE, and the move breaks all of them.** Measured 2026-08-22 in book-of-job's
-`gh-pages/jobn-details/0119.html`: `src="../jobn/img/Lenin/Lenin-0119.png"` and
-`src="../jobn/img/Aleppo/Aleppo-0119.png"`, with holman-ketiv-qere's pages using a bare `img/…` and
-UXLC-utils' an `amb-early-mtg/img/…`. Once that page is published from MAM-basics and the PNG is
-still in book-of-job, the relative path resolves inside MAM-basics' own tree and finds nothing.
+**The disk cost is real but modest, and is stated so nobody rediscovers it as an objection**: 1,178
+files and 119 MB arrive, against MAM-basics' current 2,220 files and 270.7 MB. Its `gh-pages/` goes
+from 285 files / 50.0 MB to roughly 1,463 / 169 MB. Git stores these as ordinary blobs and nothing
+here is near a size limit.
 
-**Both sites are on `bdenckla.github.io`, so a root-relative URL reaches across** —
-`/book-of-job/jobn/img/Lenin/Lenin-0119.png` — and that is the obvious repair. **The repair belongs
-in the MAM-basics generator that emits the HTML, not in a rewriting pass over the emitted files**,
-since those generators are what produce the pages now and a post-hoc pass would be undone by the
-next regeneration.
-
-**Three asset kinds are NOT named by this decision and the plan must settle them explicitly**,
-being neither images nor HTML: book-of-job has 2 `.css` and 2 `.woff2`, holman-ketiv-qere 2 `.css`,
-2 `.js` and 1 `.woff2`, UXLC-utils 1 `.css`, 1 `.woff2` and **8 `.json`**. The fonts and stylesheets
-are small and static and could go either way; **the eight JSON are the ones to look at**, since data
-a page fetches at run time is exactly the kind of thing that changes. Do not let them ride along
-with the images on the strength of not being HTML.
+**One consequence to carry into the plan: the stub set is 272 and the move is 1,178, so the two
+halves of each repo's job are sized very differently** — holman-ketiv-qere most of all, at 300 files
+moved and **6** stubs written. `main_wlc_redirect_stubs.py` already derives its stub set from the
+site rather than from a list, filtering `git ls-files` to `*.html`, so it generalizes to that
+asymmetry without being told about it.
 
 ### The order, and what is forced in it and what is not
 
