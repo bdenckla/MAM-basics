@@ -9,7 +9,7 @@ three times and risk answering it three different ways.
 
 | Phase | State |
 |---|---|
-| 0 — reconcile the fork families (programme Phase 0, plus the wiki family below) | **DONE 2026-08-22.** Programme Phase 0 confirmed rather than re-derived — fourteen of its sixteen files still one committed blob, `check_all.py` and `check_word_finding.py` per-repo permanently on Ben's decision of 2026-08-19. **Family 2 needed no design call**: on committed blobs **two** of the eight shared wiki module names differ, not four, and `mam_book_names.py` — the 230-line "real work" — is **one blob** and was one on 2026-08-02, the "230 lines" being 115 + 115 of whole-file diff caused by codex-index-aleppo's CRLF checkout. The two that do differ, `main_make_wikisource_page.py` and `write_wikitext_file.py`, are **two tools against two input formats**; Phase 3 names them. `hebrew_letters.py` and `my_utils.py` genuinely differed and `6ccd856` (leningrad, 2026-08-03) reconciled both with a black run. **The baselines are stale in eight places** and the inventory was right where this plan was wrong, for the second time in the programme. **Item 2's sweep finds two depth walks and the verdicts are opposite** — `flat_index.py` right in both repos but naming a file absent here, `page.py` right in codex-index-cam1753 and wrong here. **Item 3's wall is already up**: the four shared `check_*`/`fix_*` are two blobs, MAM-basics against the trio, and five top-level names are taken. **Item 4 landed** — `a171dd4` in codex-index-aleppo and `ef5525d` here, both copies byte-identical at md5 `f330012f28fdad782776c08ffbdb7b4b`; mgketer's third copy reported, MAM-private not written to. Two findings the phase turned up and did not fix: **`aleppo-wiki/main_make_wikisource_page.py` has been dead since 2026-03-28**, naming a directory `aleppo/` a rename removed, and **codex-index-aleppo's `check_word_finding.py` fails 160 of 160** comparing a `"1of2"` column identifier against the integer 1, since 2026-03-14. A third: **`codex-index-cam1753/check_line_breaks.py` writes CRLF** where codex-index-aleppo's copy writes LF, one missing `newline=""` — the programme Phase 0 defect in a seventh script, which dirties that repo's tree on any verification run |
+| 0 — reconcile the fork families (programme Phase 0, plus the wiki family below) | **DONE 2026-08-22.** Programme Phase 0 confirmed rather than re-derived — fourteen of its sixteen files still one committed blob, `check_all.py` and `check_word_finding.py` per-repo permanently on Ben's decision of 2026-08-19. **Family 2 needed no design call**: on committed blobs **two** of the eight shared wiki module names differ, not four, and `mam_book_names.py` — the 230-line "real work" — is **one blob** and was one on 2026-08-02, the "230 lines" being 115 + 115 of whole-file diff caused by codex-index-aleppo's CRLF checkout. The two that do differ, `main_make_wikisource_page.py` and `write_wikitext_file.py`, are **two tools against two input formats**; Phase 3 names them. `hebrew_letters.py` and `my_utils.py` genuinely differed and `6ccd856` (leningrad, 2026-08-03) reconciled both with a black run. **The baselines are stale in eight places** and the inventory was right where this plan was wrong, for the second time in the programme. **Item 2's sweep finds two depth walks and the verdicts are opposite** — `flat_index.py` right in both repos but naming a file absent here, `page.py` right in codex-index-cam1753 and wrong here. **Item 3's wall is already up**: the four shared `check_*`/`fix_*` are two blobs, MAM-basics against the trio, and five top-level names are taken. **Item 4 landed** — `a171dd4` in codex-index-aleppo and `ef5525d` here, both copies byte-identical at md5 `f330012f28fdad782776c08ffbdb7b4b`; mgketer's third copy reported, MAM-private not written to. Two findings the phase turned up and did not fix: **`aleppo-wiki/main_make_wikisource_page.py` has been dead since 2026-03-28**, naming a directory `aleppo/` a rename removed, and **codex-index-aleppo's `check_word_finding.py` fails 160 of 160** comparing a `"1of2"` column identifier against the integer 1, since 2026-03-14. A third: **`codex-index-cam1753/check_line_breaks.py` writes CRLF** where codex-index-aleppo's copy writes LF, one missing `newline=""` — the programme Phase 0 defect in a seventh script, which dirties that repo's tree on any verification run. **Corrected 2026-08-22, after the first draft of this record**: the `parents[2]` question does **not** become live here. Only **three** copies of `mb_cmn/provenance.py` exist anywhere — MAM-basics, MAM-simple, MAM-private's `al-hatorah/` — all byte-identical and all with `parents[2]` resolving correctly; **none of the trio and not diffable-pointed-hebrew holds the file at all**, so there is nothing to re-vendor. And the fact that decides the question turned up with it: **walking to `.git` would regress al-hatorah**, a subtree of MAM-private rather than a repo, renaming three tracked breadcrumbs to the wrong tree — this step's own "a `.git` walk cannot find a subtree" lesson arriving at the file the question is about |
 | 1 — two roots, no cwd (per repo) | **not started.** Phase 0 hands it a working oracle for codex-index-leningrad's wiki half and none for codex-index-aleppo's; repoint that repo's four `aleppo/` literals first, so the rest of the phase has something to prove itself against. It also owns the one-argument `newline=""` fix in `codex-index-cam1753/check_line_breaks.py:654` |
 | 3 — copy the Python in (per repo, dual residency) | **not started** |
 | 4 — empty each repo | **not started** |
@@ -486,22 +486,59 @@ independently confirms `98021de` still holds.
    `in/vendoring_policy.json`, being three repo entries, the leningrad comment and eight
    `dest_repo` override rows.
 
-### The open question is still open, and this phase did not touch it
+### The `parents[2]` question does NOT become live here, and the fact that decides it is a cost on the `.git` side
 
-`py/mb_cmn/provenance.py`'s `_repo_root()` is `parents[2]`, right two levels down and wrong at a
-repo root. book-of-job's Phase 4 made it moot for that repo by deleting the copy, and **this step is
-where it becomes live**: the repos that still hold a copy are the two codex-index repos and
-diffable-pointed-hebrew. Re-measured 2026-08-22 — codex-index-aleppo's `mb_cmn/` sits at
-`py/mb_cmn/`, two levels down, so `parents[2]` is right there; **codex-index-cam1753's sits at
-`mb_cmn/`, one level down, so `parents[2]` lands on `GitRepos` and is wrong**, the same shape
-book-of-job had. codex-index-cam1753's copy of `provenance.py` is not among its three `mb_cmn`
-files, so the wrong walk is not actually present in that repo — it has `hebrew_points.py`,
-`str_defs.py` and `uni_denorm.py` and nothing else.
+**This subsection said the opposite when it was first written, 2026-08-22, and both halves of what
+it said were false.** It read "**this step is where it becomes live**: the repos that still hold a
+copy are the two codex-index repos and diffable-pointed-hebrew", and went on to reason about
+whether `parents[2]` is right at codex-index-aleppo's depth. **None of those four repos holds
+`mb_cmn/provenance.py` at all.** The error came in through this phase's task prompt, which took it
+from book-of-job's Phase 6 record, which appears to have derived it from the programme plan's
+correct sentence about which repos have a `DIFFERS` **vendored copy** — a different subject
+entirely. book-of-job's own Phase 1 record had the true facts the whole time. Caught 2026-08-22 by
+the book-of-job Phase 7 session, which measured it across all 26 clones and MAM-private's subtrees
+and sent the correction rather than editing under this plan; **verified here independently before
+this rewrite**, with `git ls-files '*provenance.py'` in each of the six repos and `md5sum` on what
+it found.
 
-**The question for Ben is unchanged: leave it, with these facts recorded, or change MAM-basics'
-`py/mb_cmn/provenance.py` to walk to `.git` and re-vendor into the repos that hold it?** Phases 1,
-3, 4, 6 and 7 of the book-of-job plan each put it to him and none picked. This phase did not pick
-either.
+**There are three copies, not four and not five, and all three are byte-identical** at md5
+`e53232a9782827e9af80669a31452f16`:
+
+| Copy | `parents[2]` resolves to | Right? |
+|---|---|---|
+| `MAM-basics/py/mb_cmn/provenance.py` | MAM-basics' root | yes |
+| `MAM-simple/py-examples/mb_cmn/provenance.py` | MAM-simple's root | yes |
+| `MAM-private/al-hatorah/py/mb_cmn/provenance.py` | `MAM-private/al-hatorah/` | yes |
+
+**codex-index-aleppo, codex-index-cam1753, codex-index-leningrad and diffable-pointed-hebrew hold
+none.** diffable-pointed-hebrew's eight `mb_cmn/` files predate the feature outright: its
+`file_io.py` never mentions provenance, where MAM-basics' imports it at line 8 and calls
+`with_json_provenance` at line 31. **So there is nothing to re-vendor, this step is not where the
+question becomes live, and book-of-job's Phase 4 deletion left the walk right in every copy that
+survives it.**
+
+**And the fact no phase had found: the proposed fix would regress the one live consumer.**
+al-hatorah emits breadcrumbs today — `MAM-private/al-hatorah/out/a2d-override-diff-viewer/data.json`
+and its two neighbours carry `"provenance": "This file was generated by
+al-hatorah/py/main_3d_make_override_diff_viewer.py."` **al-hatorah is a subtree of MAM-private, not
+a repo**: it has no `.git`, and `git -C MAM-private rev-parse --show-toplevel` is MAM-private's
+root. So `parents[2]` lands on `al-hatorah` and names the tree correctly, while a `_repo_root()`
+walking to `.git` would land on `MAM-private` and rewrite those tracked artifacts to name the wrong
+tree.
+
+**That is this step's own lesson arriving at the file the question is about.** The Item 3 subsection
+above states it for the source lints — a `.git` walk finds a repo root and **cannot find a
+subtree** — and it is exactly why `boj_paths.code_paths()` is a hand-maintained list rather than a
+walk. The same wall stands in front of `provenance.py`, and it was invisible for as long as the
+question was asked about repos that do not hold the file.
+
+**So the question is narrowed rather than restated.** Five phases of the book-of-job plan and this
+one put "leave it, or walk to `.git` and re-vendor?" to Ben as an open choice with no cost recorded
+on either side. There is a cost, it is on the `.git` side, and it is measurable: three tracked
+artifacts renamed to the wrong tree, in a repo neither this plan nor book-of-job's is allowed to
+commit to. **Leaving it costs nothing that anyone has been able to find in six attempts.** Ben's to
+settle, and this phase still did not pick — but a future phase should stop re-asking it as if the
+two options were symmetric.
 
 ### Verification
 
