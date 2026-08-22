@@ -17,12 +17,6 @@
 		},
 		{
 			"path": "../MAM-parsed"
-		},
-		{
-			"path": "../UXLC-utils"
-		},
-		{
-			"path": "../wlc-utils"
 		}
 	],
 	"settings": {
