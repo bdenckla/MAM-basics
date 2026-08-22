@@ -1,8 +1,13 @@
 """Convert Hebrew letter text to an ASCII word-identifier.
 
 Strips all niqqud and accents, then transliterates each Hebrew letter
-to a single ASCII character.  Same scheme as mgketer
-``hebrew_word_id.py`` and book-of-job ``author.py``.
+to a single ASCII character.  Same scheme as MAM-basics'
+``py/author_boj_util/author.py`` -- which was book-of-job's
+``pyauthor_util/author.py`` until that repo's Python moved to MAM-basics on
+2026-08-19 -- and mgketer's ``py/python_modules/hebrew_word_id.py``.
+
+This docstring is one blob with codex-index-aleppo's copy of this file, which the
+programme's Phase 0 reconciled on 2026-08-19; edit the two together or not at all.
 
     >>> heb_alef_bet_to_ascii("לֶֽאֱנ֣וֹשׁ")
     'LANVJ'
