@@ -400,15 +400,19 @@ def _scopes() -> tuple[_Scope, ...]:
             # That repo's own copy asserted a floor of 40 over a scope its comment
             # called "~72" and this file measured at 79 before that repo's Phase 4,
             # 2026-08-22. 40 did not survive that phase: 50 of the 79 were the .py
-            # this repo's Phase 3 took, and **28** remain, measured after the
+            # this repo's Phase 3 took, and **26** remain, measured after the
             # deletion rather than predicted -- doc/ (4), aleppo-wiki/ (13: J David
             # Stark's CSV index, three of its four precursors, the LICENSE, the
             # three Wikisource notes, index-flat-corrected.json and the three
-            # artifacts), README.md, CLAUDE.md, three provenance files, the
-            # workspace file, check_line_breaks.html,
-            # test-data-from-book-of-job.json and four dotfiles. The count was 29
-            # for as long as that repo tracked a requirements.txt, which Ben had
-            # deleted as orphaned on 2026-08-22, the same day. So the floor is 20,
+            # artifacts), README.md, CLAUDE.md, three provenance files,
+            # check_line_breaks.html, test-data-from-book-of-job.json and three
+            # dotfiles. The count fell 29 -> 28 -> 27 -> 26 across that phase as Ben
+            # settled its three orphan candidates one at a time on 2026-08-22:
+            # requirements.txt and codex-index-aleppo.code-workspace as orphaned by
+            # the move, and .claude/settings.json for a reason that has nothing to do
+            # with it -- it predates Claude Code's "auto" permission mode. The fourth
+            # dotfile went with that last one, .claude/ having held nothing else. So
+            # the floor is 20,
             # which keeps meaning "an exclusion filter swallowed everything" rather
             # than asserting a tree size, and is what would catch this scope
             # outliving its tree. The fourth precursor is the .xlsx, excluded as
