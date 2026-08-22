@@ -356,6 +356,45 @@ in the finding. Finding 4 is Ben's: both halves are outward-facing comments.
 - The remaining actionables — findings 1, 3, the residue of 5, and the record corrections of
   7, 8, 9 and 10 — were handed to a task chip on 2026-08-22, once the trio session was archived.
 
+**The task chip ran later on 2026-08-22, starting from MAM-basics `fb3b7f3`, holman-ketiv-qere
+`b1e1a2d`, book-of-job `81e036b` and codex-index-aleppo `94b824a`, all clean, and every item it
+was handed landed:**
+
+- **Finding 1 — MAM-basics `de8a28b`.** `ruff check py` prints `All checks passed!`, from 25.
+  Seven by `ruff --fix` (6 F541, 1 F401), the 16 E402 by moving the imports above
+  `OUT_DIR = …novc_dir()` and `serve_and_open` in the three Copilot-era entry points, the F841
+  and E731 by hand. `py\check_ac_word_finding.py` and `py\check_cam1753_word_finding.py`
+  produce byte-identical output before and after, black reports all seven files unchanged, and
+  the three rearranged entry points import cleanly.
+- **Finding 3 — holman-ketiv-qere `36718d6`.** `main_estimate_uxlc_locations` then
+  `main_render_uxlc_corrections` from MAM-basics, UXLC-utils at `292e7a7`; the diff is exactly the
+  four JSON lines and two `<dd>` lines the finding predicted, nothing else in `git status`.
+  (The chip's brief named `py/main_uxlc_estimate_atom_loc.py` as the estimator; that is the
+  word-finding CLI whose docstring `48485f3` repointed, and `py/main_estimate_uxlc_locations.py`
+  is the generator, as the holman plan's line 68 says.)
+- **Finding 5's residue — MAM-basics `d8bec00`.** Dated notes on `7ddd6da` at the wlc-utils plan's
+  Phase 11 item 7 and on `e8fd4ae` at the holman plan's Phase 7 finding 2.
+- **Findings 7, 8 and 9 — MAM-basics `cb3e7b2`**, plus **codex-index-aleppo `1da6b23`** for the
+  `CLAUDE.md` there and **holman-ketiv-qere `5f419ef`** for its `CLAUDE.md:14`. Every figure
+  re-derived first and each correction dated in place with its command: 10 commits (twice) and
+  five files and 58 μY in the trio plan; 7 `holam-he` rows, 19 rules with 9 naming neither
+  interpreter nor script, 152 → 45, `#19` once, and line 240's file named in the holman plan;
+  17,051 and +54 in the book-of-job plan's Baselines row; the 35-page pair in codex-index-aleppo;
+  the `#19` sentence in this repo's `CLAUDE.md`. Finding 8: three dotfiles, and the two dead
+  `py_uxlc_loc/` exclusions gone, book-of-job's scope 33 before and after through
+  `_tracked_files_in_scope`. Finding 9: the docstring names both callers and their book lists.
+- **Finding 10 — holman-ketiv-qere `5f419ef`** (README's "one of three" → seven, with the dates
+  it went 3 → 4 → 7) and **book-of-job `3f096b9`** (`CLAUDE.md:30` names
+  `git status --porcelain`; `.gitignore` loses `__pycache__/` and `.venv/`, neither of which
+  exists on disk there). Holman `CLAUDE.md:17` and `:91–92` left alone as the holman plan
+  records. The three "the latter" are now one, codex-index-aleppo `98021de`'s message, which is
+  immutable.
+- **One figure in the chip's brief was stale and is recorded here rather than acted on:** the
+  suite baseline. The brief said 945 at `fb3b7f3`, from this doc's measurement at `b37bdb4`;
+  re-measured before any edit it is **940 passed, 5 skipped, 59 subtests**, because `87ef5c0`
+  (trio Phases 6 and 7) dropped `test_vendoring_policy_paths.py` from 23 cases to 18 with the
+  trio's policy entries and says so in its message. 940 / 5 / 59 after every commit above.
+
 ## Open ends the window itself declares (not findings)
 
 The codex-index trio evacuation's Phases 6 and 7 — in flight during this review, Phase 4 for all
