@@ -542,7 +542,21 @@ on either side. There is a cost, it is on the `.git` side, and it is measurable:
 artifacts renamed to the wrong tree, in a repo neither this plan nor book-of-job's is allowed to
 commit to. **Leaving it costs nothing that anyone has been able to find in six attempts.** Ben's to
 settle, and this phase still did not pick — but a future phase should stop re-asking it as if the
-two options were symmetric.
+two options were symmetric. book-of-job's Phase 7 session, correcting its own plan the same day,
+went further and **recommends closing it as a no**, with the al-hatorah cost as the reason.
+
+**A list of repos is a measurement, and this one was never taken.** That is the transferable part,
+and it is not "the list was hard to check". book-of-job's Phase 1 record had the right three repos
+and book-of-job's Phase 6 record had the wrong four, **in the same file, four screens apart, for
+three days** — and three successive sessions, that plan's Phase 7, this phase's task prompt and
+this phase's own first draft, copied the wrong one forward without either checking it against the
+right one or running the two-second `git ls-files '*provenance.py'` that settles it. Every other
+figure in these records carries a re-establishing command and an instruction to re-measure; a
+sentence naming which repos hold a file reads like context rather than data, and so gets quoted
+instead of checked. **Treat "the repos that have X" as a figure**: give it its command, and re-run
+the command rather than the sentence. The same applies to "the files that differ", which is how
+this phase's Family 2 table came to be wrong, and to "the packages a repo needs", which is how both
+`requirements.txt` came to be wrong in two directions at once.
 
 ### Verification
 
