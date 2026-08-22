@@ -2667,7 +2667,13 @@ changed.
 6. **`in/vendoring_policy.json`** — verified: no wlc-utils key anywhere in the file (its `repos`
    object names eight repos), so "no change" holds on Phase 10 finding 5's simpler ground.
 7. **Both workspace files keep `../wlc-utils`** — verified at `all-repos.code-workspace:61` (the
-   plan's `:88` drifted) and `MAM-basics.code-workspace:25`.
+   plan's `:88` drifted) and `MAM-basics.code-workspace:25`. **Reversed for one of the two files
+   by Ben's decision, 2026-08-22, `7ddd6da`** ("rm UXLC-utils & wlc-utils from workspace"): that
+   commit removed `../wlc-utils` and `../UXLC-utils` from `MAM-basics.code-workspace`, taking it
+   from 8 folders to 6, and touched nothing else. `all-repos.code-workspace` still lists both
+   (`:58` and `:61`), so the black sweep's reach is unchanged. Recorded here on 2026-08-22 by the
+   follow-up to `doc/review-findings-2026-08-22.md`'s finding 5, which found the decision in no
+   plan.
 8. **`run_black.py`** — confirmed on a sweep scoped to wlc-utils: `REPO=wlc-utils;
    BLACK_ATTEMPTED=False; BLACK_OK=False; Skipped: no tracked .py files in this repo`.
 9. **UXLC-utils' `CLAUDE.md`** — one paragraph beside its existing `py/`-paths substitution

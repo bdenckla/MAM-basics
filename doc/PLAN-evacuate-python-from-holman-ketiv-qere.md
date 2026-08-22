@@ -780,7 +780,12 @@ and `holman-ketiv-qere/py/python_modules/qere_projection.py` (`project_qere_atom
 so they are pointers meant to be followed rather than history. They are **stale twice over**:
 holman-ketiv-qere has held zero Python since Phase 4, and `python_modules/` was renamed to
 `hkq_cmn/` in Phase 3. The correct targets are `MAM-basics/py/hkq_cmn/mam_plus_verse_data.py` and
-`MAM-basics/py/hkq_cmn/qere_projection.py`, both confirmed present here. **Not fixed**, on
+`MAM-basics/py/hkq_cmn/qere_projection.py`, both confirmed present here. **Not fixed** (as of
+this record, `2ce3efb`, 2026-08-19 09:44; **fixed fifteen minutes later by MAM-private `e8fd4ae`**,
+2026-08-19 09:59, "mgketer doc: repoint two cross-references to MAM-basics/py/hkq_cmn/", which
+edited exactly the two files named above, 4 lines each way — noted here 2026-08-22 by the
+follow-up to `doc/review-findings-2026-08-22.md`'s finding 5, until which only the book-of-job
+plan cited `e8fd4ae`), on
 UXLC-utils' Phase 7 item 6 precedent that a commit to a third repo stops and asks: MAM-private is
 neither of this plan's two repos, `mgketer` is a directory inside it rather than a repo of its own
 (`git -C mgketer rev-parse --git-common-dir` answers `../.git`), MAM-private was clean at
