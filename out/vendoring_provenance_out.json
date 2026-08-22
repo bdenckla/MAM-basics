@@ -1,39 +1,6 @@
 {
   "repos": [
     {
-      "repo": "book-of-job",
-      "scanned_dirs": [
-        ".",
-        "mb_cmn"
-      ],
-      "found_provenance_docs": [],
-      "copy_scripts": [],
-      "mb_cmn_dirs": [
-        {
-          "path": "mb_cmn",
-          "files": [
-            "bib_locales.py",
-            "cantsys.py",
-            "file_io.py",
-            "hebrew_accents.py",
-            "hebrew_letters.py",
-            "hebrew_points.py",
-            "hebrew_punctuation.py",
-            "mam_bknas.py",
-            "my_diffs.py",
-            "my_utils.py",
-            "provenance.py",
-            "shrink.py",
-            "str_defs.py",
-            "uni_denorm.py",
-            "uni_heb.py",
-            "url_percent.py",
-            "uxlc_change_url.py"
-          ]
-        }
-      ]
-    },
-    {
       "repo": "codex-index-aleppo",
       "scanned_dirs": [
         ".",

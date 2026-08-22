@@ -242,6 +242,30 @@ three.** Its `doc/` has two files and neither carries a bare `#NN`. Measured 202
 rather than an issue — one more instance of the bullet above, met in the repo whose tracker had
 just been added.
 
+## `doc/boj-*.md` are book-of-job's procedures, and they were written for Copilot
+
+Seven files, arrived 2026-08-21 with Phase 4 of
+[`doc/PLAN-evacuate-python-from-book-of-job.md`](doc/PLAN-evacuate-python-from-book-of-job.md),
+following the code they describe: `boj-aleppo-word-crops.md`, `boj-cam1753-word-crops.md`,
+`boj-leningrad-word-crops.md`, `boj-leningrad-image-scaling.md`,
+`boj-image-crop-reproducibility.md`, `boj-viewing-image-metadata.md` and
+`boj-quirkrec-comments.md`. They cover cropping a word from the three manuscripts μA, μL and μY,
+scaling a μL image to match a μA one, keeping a crop reproducible, reading a PNG's embedded
+metadata, and quirk-record comment style. **Read the relevant one before touching
+`py/author_boj*`, `py/py_ac_word_image_helper/` or `py/py_cam1753_word_image/`** — nothing in
+the code points at them.
+
+Every path in them was repointed on arrival: this repo's code as `py/…`, book-of-job's corpus and
+published site as `../book-of-job/…`. **But the prose is Copilot-era and has not been
+re-verified.** All seven were `.github/copilot-instructions-*.md` in book-of-job until
+2026-08-03. Where one gives a command that conflicts with the global conventions in
+`~/.claude/CLAUDE.md` — a `python -c` one-liner, a bare `python`, `PYTHONIOENCODING`, a
+`Start-Process` that opens a page rather than handing Ben a `file:///` link — the global
+conventions win.
+
+book-of-job keeps two procedures of its own, `doc/opening-html-files.md` and
+`doc/reading-mam-simple.md`, both about reading what that repo holds rather than how it is made.
+
 ## There is no `wlc-koren-12th` repo
 
 `~/GitRepos/wlc-koren-12th` was never a repo of its own. It was a **worktree of wlc-utils** on

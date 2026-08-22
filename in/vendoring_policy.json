@@ -35,19 +35,6 @@
         ]
       }
     },
-    "book-of-job": {
-      "comment": null,
-      "ignore": false,
-      "scan_provenance": true,
-      "default_category": "stale",
-      "default_mechanism": "unknown",
-      "default_provenance_doc": "no",
-      "pkg_scan_roots": {
-        "mb_cmn": [
-          "mb_cmn"
-        ]
-      }
-    },
     "codex-index-aleppo": {
       "comment": null,
       "ignore": false,

@@ -267,16 +267,17 @@ def _scopes() -> tuple[_Scope, ...]:
             exclude_dir_prefixes=_BOJ_EXCLUDE_DIR_PREFIXES,
             exclude_files=frozenset(),
             # book-of-job's own copy asserted a floor of 200 over its whole tree, which
-            # counted the 268 .py that Phase 3 has now copied here and Phase 4 will
-            # delete there. Measured 2026-08-19: 312 files in scope today, 42 once those
-            # .py go, since two of the 44 non-.py in scope -- quirks-BHQ.txt and
-            # check_spelling_in_html.custom-dict.json -- came here with the code. What
-            # is left is doc/ (9), py_ac_loc/line-breaks/ (24) and two .md beside them,
-            # README.md, CLAUDE.md, requirements.txt, the workspace file and four
-            # dotfiles. 30 sits clear of 42 in both directions, so the floor keeps
-            # meaning "an exclusion filter swallowed everything" rather than asserting a
-            # tree size -- and, as with the UXLC-utils scope, it is what would catch this
-            # scope outliving its tree.
+            # counted the 268 .py that Phase 3 copied here and Phase 4 deleted there.
+            # 312 files were in scope before that deletion and **35** are after it,
+            # measured 2026-08-21: py_ac_loc/line-breaks/ (24) and two .md beside them,
+            # doc/ (2), README.md, CLAUDE.md, requirements.txt, the workspace file and
+            # four dotfiles. This comment predicted 42 before the phase ran; the seven
+            # files between that and the 35 measured after are the seven procedure docs
+            # that followed the code here as doc/boj-*.md, leaving doc/ with two rather
+            # than the nine the prediction counted. 30 still sits clear of 35, so the
+            # floor keeps meaning "an exclusion filter swallowed everything" rather than
+            # asserting a tree size -- and, as with the UXLC-utils scope, it is what
+            # would catch this scope outliving its tree.
             floor=30,
         ),
     )
