@@ -1989,7 +1989,7 @@ or the venv it needed:
 
 | File | What the move leaves of it | Why it is not forced |
 |---|---|---|
-| `requirements.txt` | nothing — black, matplotlib, pyspellchecker, and no Python here imports any of them | book-of-job's counterpart was deleted as orphaned on Ben's decision, but that repo has no Pages workflow to reason about |
+| `requirements.txt` | nothing — black, matplotlib, pyspellchecker, and no Python here imports any of them | book-of-job's counterpart was deleted as orphaned on Ben's decision, but that repo has no Pages workflow to reason about — **Ben's answer 2026-08-22: delete it**, landed as `b2b347e` there |
 | `codex-index-aleppo.code-workspace` | the `.venv\Scripts\python.exe` auto-approve entry | it also declares a **three-folder view** opening this repo beside book-of-job and codex-index-cam1753, which is not about Python — the same thing that made book-of-job's a question rather than a step |
 | `.claude/settings.json` | six of its ten permission globs name a `.venv` python that no longer runs here | the other four are still live: `Bash(git *)`, two `gh issue` globs, and a `Read()` glob over the Yeivin scans folder |
 
@@ -2000,6 +2000,15 @@ the one thing distinguishing it from book-of-job, does not need `requirements.tx
 reason to keep it. Whether the file is worth keeping for a human who might want the venv back is
 the actual question, and that is Ben's.
 
+**Ben's answer on `requirements.txt`, 2026-08-22: delete it.** Landed as **`b2b347e`** in
+codex-index-aleppo, which takes that repo to **177** tracked files and its NFC scope to **28**.
+So book-of-job's decision holds here after all, the Pages workflow having turned out not to be
+the difference it looked like. `CLAUDE.md` there records the deletion and says that what the
+moved code needs is declared in MAM-basics' own `requirements.txt` now.
+
+**The other two are still open at the time of writing** and are recorded here so that a session
+picking this up knows they were asked rather than skipped.
+
 ### What no program writes: 154 of 162, and the classification is arithmetic rather than judgment
 
 The plan's item 5 predicts 154 and names six trees adding to 136. The gap is not an error in
@@ -2009,6 +2018,10 @@ all 178 tracked files**: 16 are the repo's own furniture (the four `doc/`, `page
 `README.md`, `CLAUDE.md`, `.gitignore`, `.gitattributes`, and `aleppo-wiki/LICENSE.txt`), which
 leaves **162 artifacts**, of which **8 are generated** and **154 are not**. That reproduces
 Phase 1's "162 artifacts in codex-index-aleppo with 8 generated" exactly.
+
+**Deleting `requirements.txt` takes the furniture to 15 and the tracked total to 177, and moves
+neither artifact figure** — which is the point of counting the two groups separately rather than
+subtracting from the tracked total. The same holds for whatever Ben decides about the other two.
 
 The eight generated are the three under `aleppo-wiki/`, `index-flat-annotated.json`,
 `check_line_breaks.html` and the three PNGs under `plot_col_coords-out/`. The 154 are 37
@@ -2038,7 +2051,8 @@ neighbouring row was visibly wrong. **A phase that measures one figure should pr
 beside it** — this is the cheapest instance of that in the programme so far, and it is the same
 shape as Phase 1's "read what it counted, not whether it passed".
 
-Re-establish with the six-line scratch script this phase used: 1328, 11, 45, 33, 8, 29.
+Re-establish with the six-line scratch script this phase used: 1328, 11, 45, 33, 8, 29 — and
+1328, 11, 45, 33, 8, **28** after Ben's `requirements.txt` decision below.
 
 ### Verification
 
@@ -2058,7 +2072,9 @@ Re-establish with the six-line scratch script this phase used: 1328, 11, 45, 33,
   An unchanged failure is evidence — a deletion that took something the move needed would have
   changed one of these two.
 - **The NFC scope re-counted at 29**, the figure Phase 3 predicted, so unlike
-  codex-index-leningrad's Phase 4 there is no correction owed. Floor 20 against 29, so the floor
+  codex-index-leningrad's Phase 4 there is no correction owed. **It is 28 after Ben's
+  `requirements.txt` decision below**, and the comment in `py/tests/test_h_dot_below_nfc.py`
+  carries both numbers with the reason the count moved. Floor 20 against 29, so the floor
   still means "an exclusion filter swallowed everything" rather than asserting a tree size. The
   comment in `py/tests/test_h_dot_below_nfc.py` is reworded from a prediction to a measurement.
 - **`git ls-files '*.py'` returns 0** in codex-index-aleppo, and the tree is clean at `078b74d`.
