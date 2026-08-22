@@ -5,12 +5,12 @@ the precomposed U+1E25 / U+1E24 forms, never the decomposed "h"/"H" + COMBINING 
 BELOW (U+0323) sequence. Comments must not use either Unicode form at all -- plain
 ASCII "x"/"X" is used instead, since comments don't flow to output.
 
-FOUR REPOS ARE SCANNED, each with its own exclusions and its own floor. This repo
+FIVE REPOS ARE SCANNED, each with its own exclusions and its own floor. This repo
 holds the code, and since 2026-08-12 the wlc corpus the code generates as well;
-UXLC-utils, holman-ketiv-qere and book-of-job still hold the corpora their halves
-generate into, and each carries hand-authored transliterations that would otherwise go
-unscanned once its Python has moved out. ``_scopes()`` below is the whole of the
-per-repo difference. A
+UXLC-utils, holman-ketiv-qere, book-of-job and codex-index-leningrad still hold the
+corpora their halves generate into, and each carries hand-authored transliterations
+that would otherwise go unscanned once its Python has moved out. ``_scopes()`` below
+is the whole of the per-repo difference. A
 wlc-utils scope was one of them until 2026-08-17, when Phase 10 of
 ``doc/PLAN-evacuate-the-rest-of-wlc-utils.md`` emptied that repo down to 155 generated
 redirect stubs: nothing hand-authored is left there to scan, and the 6 files that do
@@ -42,6 +42,18 @@ and book-of-job's set turned out to be a strict subset of this one, so nothing w
 owed. What its scope keeps alive is ``doc/`` (9), the 24 hand-made line-break JSON
 under ``py_ac_loc/``, and that repo's own ``README.md`` and ``CLAUDE.md``.
 
+The codex-index-leningrad scope arrived the same way and for the same reason (Phase 3
+of ``doc/PLAN-evacuate-python-from-codex-index-trio.md``), replacing that repo's own
+``py/tests/test_h_dot_below_nfc.py`` -- 304 lines, again locating its root by
+``git rev-parse`` from its own directory, so copying it here would have aimed it at
+MAM-basics too. Its ``_BINARY_EXTENSIONS`` were compared against this file's before it
+was dropped, as holman-ketiv-qere's and book-of-job's were, and were a strict subset,
+so nothing was owed. That repo is a data host rather than a corpus, so what its scope
+keeps alive is small and mostly prose: ``README.md``, ``CLAUDE.md``,
+``page-snips/README.md`` and the three artifacts under ``lenin-wiki/``.
+codex-index-aleppo has a copy of this test too and codex-index-cam1753 has none; the
+aleppo scope arrives when that repo's Python does.
+
 Comment detection uses Python's ``tokenize`` module (real COMMENT tokens) rather than a
 naive ``line.find("#")``. The wlc code uses "#" as a delimiter inside string literals
 (the "@...#" WLC markup in ``py_wlc_a_notes/*``), where het is a legitimate
@@ -71,6 +83,7 @@ from mb_cmn import paths
 
 import boj_paths
 import hkq_paths
+import lenin_paths
 import uxlc_paths
 
 _COMBINING_DOT_BELOW = chr(0x0323)
@@ -194,6 +207,14 @@ _BOJ_EXCLUDE_DIR_PREFIXES = (
     "py_ac_loc/column-coordinates/",
 )
 
+# What codex-index-leningrad's own copy of this test excluded, carried over
+# verbatim: the one tree it vendors from UXLC-utils, whose files are that repo's
+# business.  Its lenin-wiki/ is deliberately NOT excluded, generated though its
+# three artifacts are -- that repo's copy scanned them and they cost nothing to
+# read, and excluding the directory would leave the scope with no Hebrew in it at
+# all.
+_LENIN_EXCLUDE_DIR_PREFIXES = ("UXLC-utils-sparse/",)
+
 # The one comment allowed to keep showing a precomposed h-with-dot-below
 # glyph, because the comment is genuinely about the character itself... In
 # practice, after #187's cleanup, there are no such exceptions: every
@@ -280,6 +301,23 @@ def _scopes() -> tuple[_Scope, ...]:
             # everything" rather than asserting a tree size -- and, as with the
             # UXLC-utils scope, it is what would catch this scope outliving its tree.
             floor=30,
+        ),
+        _Scope(
+            label="codex-index-leningrad",
+            root=lenin_paths.lenin_data_root(),
+            exclude_dir_prefixes=_LENIN_EXCLUDE_DIR_PREFIXES,
+            exclude_files=frozenset(),
+            # That repo's own copy asserted a floor of 20 over 30 files in scope, and
+            # 20 will not survive its Phase 4: 21 of the 30 are the .py this repo's
+            # Phase 3 has now taken, leaving **9** -- .gitattributes, .gitignore,
+            # .vscode/launch.json, CLAUDE.md, README.md, page-snips/README.md and
+            # lenin-wiki/'s three artifacts, measured 2026-08-22. So the floor is 5,
+            # which is what "an exclusion filter swallowed everything" means for a
+            # scope this small, and is still what would catch the scope outliving its
+            # tree. This is the smallest of the five scopes by an order of magnitude,
+            # and deliberately so: codex-index-leningrad is a data host whose data is
+            # almost entirely the vendored tree this scope excludes.
+            floor=5,
         ),
     )
 

@@ -11,7 +11,7 @@ three times and risk answering it three different ways.
 |---|---|
 | 0 — reconcile the fork families (programme Phase 0, plus the wiki family below) | **DONE 2026-08-22.** Programme Phase 0 confirmed rather than re-derived — fourteen of its sixteen files still one committed blob, `check_all.py` and `check_word_finding.py` per-repo permanently on Ben's decision of 2026-08-19. **Family 2 needed no design call**: on committed blobs **two** of the eight shared wiki module names differ, not four, and `mam_book_names.py` — the 230-line "real work" — is **one blob** and was one on 2026-08-02, the "230 lines" being 115 + 115 of whole-file diff caused by codex-index-aleppo's CRLF checkout. The two that do differ, `main_make_wikisource_page.py` and `write_wikitext_file.py`, are **two tools against two input formats**; Phase 3 names them. `hebrew_letters.py` and `my_utils.py` genuinely differed and `6ccd856` (leningrad, 2026-08-03) reconciled both with a black run. **The baselines are stale in eight places** and the inventory was right where this plan was wrong, for the second time in the programme. **Item 2's sweep finds two depth walks and the verdicts are opposite** — `flat_index.py` right in both repos but naming a file absent here, `page.py` right in codex-index-cam1753 and wrong here. **Item 3's wall is already up**: the four shared `check_*`/`fix_*` are two blobs, MAM-basics against the trio, and five top-level names are taken. **Item 4 landed** — `a171dd4` in codex-index-aleppo and `ef5525d` here, both copies byte-identical at md5 `f330012f28fdad782776c08ffbdb7b4b`; mgketer's third copy reported, MAM-private not written to. Two findings the phase turned up and did not fix: **`aleppo-wiki/main_make_wikisource_page.py` has been dead since 2026-03-28**, naming a directory `aleppo/` a rename removed, and **codex-index-aleppo's `check_word_finding.py` fails 160 of 160** comparing a `"1of2"` column identifier against the integer 1, since 2026-03-14. A third: **`codex-index-cam1753/check_line_breaks.py` writes CRLF** where codex-index-aleppo's copy writes LF, one missing `newline=""` — the programme Phase 0 defect in a seventh script, which dirties that repo's tree on any verification run. **Corrected 2026-08-22, after the first draft of this record**: the `parents[2]` question does **not** become live here. Only **three** copies of `mb_cmn/provenance.py` exist anywhere — MAM-basics, MAM-simple, MAM-private's `al-hatorah/` — all byte-identical and all with `parents[2]` resolving correctly; **none of the trio and not diffable-pointed-hebrew holds the file at all**, so there is nothing to re-vendor. And the fact that decides the question turned up with it: **walking to `.git` would regress al-hatorah**, a subtree of MAM-private rather than a repo, renaming three tracked breadcrumbs to the wrong tree — this step's own "a `.git` walk cannot find a subtree" lesson arriving at the file the question is about |
 | 1 — two roots, no cwd (per repo) | **DONE 2026-08-22.** One commit per repo and one here: **`ee09e67`** in codex-index-aleppo, **`eb7c83c`** in codex-index-leningrad, **`7e5ca23`** in codex-index-cam1753, and **`72a4629`** here carrying this record and nothing else. **Nineteen root walks and thirteen cwd-relative literals become two paths modules** — `codex-index-aleppo/py/ac_paths.py` and `codex-index-cam1753/cam1753_paths.py` — **plus two named `_DATA_ROOT`s** in the two wiki entry points, which is four sites for Phase 3 to repoint rather than thirty-two. **The gating item landed and turned up a twin**: codex-index-aleppo's wiki generator runs again and its three artifacts are byte-identical, and so does `py/gen_index_flat_annotated.py`, **a SECOND generator dead since the same 2026-03-28 rename** and invisible to the prescribed grep because its dead path went through the vanished sibling repo `codex-index` rather than through a cwd-relative string. **The one-argument `newline=""` defect is in SEVEN sites in six scripts, all in codex-index-cam1753 and none in the other two**, three of them writing tracked files; the plan named one. **56 of the trio's 351 tracked artifacts have a generator and 295 do not**, so path-equality — import each module, assert every constant resolves where it did — is the second instrument, and all 36 repointed constants pass it; of the 56, **51 were regenerated and every one is byte-identical**, the other five being one crash Phase 0 already owns and four matplotlib renders. **A repo can have TWO `sys.path` roots**, which no earlier step met and which is why codex-index-aleppo needs both a paths module and a `_DATA_ROOT`. **`git status --porcelain` was wrong in the OTHER direction here**, four false positives where Phase 0 saw a false negative. **And the latent-CRLF claim is off by a repo**: measured whole-repo against HEAD blobs, codex-index-leningrad has **0** of 73 and codex-index-aleppo **152** of 222 |
-| 3 — copy the Python in (per repo, dual residency) | **not started** |
+| 3 — copy the Python in (per repo, dual residency) | **codex-index-leningrad DONE 2026-08-22**; codex-index-aleppo and codex-index-cam1753 not started. The smallest of the three went first: **six own modules land as `py/lenin_wiki/`, eleven vendored copies dissolve**, and the two entry points become `py/main_lenin_wikisource_page.py` and `py/main_lenin_vendor_uxlc.py` beside a new `py/lenin_paths.py`. **The oracle passed on the first run from MAM-basics and from a foreign cwd** — all three tracked artifacts byte-identical, in both residencies. **Phase 0's table has the `vtrad_helpers.py` fork backwards**: codex-index-leningrad holds the `CvveType` Enum and MAM-basics the `CVVE_TYPE_*` integers, not the other way about, and this repo's shape was taken. **The collision table's "disappears" cost a live tool nearly being binned**: `main_update_vendored_files.py` still refreshes `UXLC-utils-sparse/`, whose `lci_augrecs.json` is the pipeline's only input, so it was renamed rather than dropped — and its `vendoring_sync.py` fork, two lines naming `provenance.md` against `_provenance.md`, dissolved into a `basename` parameter of `mb_cmn/vendoring_sync.py`. **That sparse copy is 19 days stale** and was deliberately left so, refreshing it being a regeneration of the three artifacts rather than a data update; the two runs that proved it stale were the check on the port and were reverted. **The four source lints still scope to book-of-job alone**, a gap stated rather than closed, because the union over per-repo lists wants building where the lint copies arrive. The NFC test gains a **fifth** scope, 30 files now and 9 after Phase 4 |
 | 4 — empty each repo | **not started** |
 | 6 — breadcrumbs and issue citations | **not started** |
 | 7 — cross-repo bookkeeping | **not started** |
@@ -1170,7 +1170,277 @@ way to leave a path bug behind in this plan.
 and `py/py_ac_word_image_helper/codex_page.py:34`: those are `src` attributes in generated HTML,
 not filesystem paths, and rewriting one breaks the published editor silently.
 
-## Phase 3 — copy the Python in (dual residency)
+## Phase 3, codex-index-leningrad — the execution record — **DONE 2026-08-22**
+
+**The first of the three, and the smallest.** Landed in MAM-basics as one commit: four files
+added (`py/lenin_paths.py`, `py/lenin_wiki/` with six modules,
+`py/main_lenin_wikisource_page.py`, `py/main_lenin_vendor_uxlc.py`) and two modified
+(`py/mb_cmn/vendoring_sync.py`, `py/tests/test_h_dot_below_nfc.py`). **Nothing was owed in
+codex-index-leningrad**, whose HEAD is `eb7c83c` before and after and whose tree is clean at
+both ends — dual residency, so the twenty-one `.py` there are Phase 4's to delete.
+
+**Every baseline was re-measured first and every one matched**: codex-index-leningrad clean at
+`eb7c83c` with 21 tracked `.py`; MAM-basics clean at `e2903be` with **945 passed, 5 skipped, 59
+subtests**; the wikisource pipeline run from codex-index-leningrad's own root and its three
+tracked artifacts byte-identical to their HEAD blobs.
+
+### The oracle passed on the first run from MAM-basics, and from a foreign cwd
+
+All three tracked artifacts byte-identical to their HEAD blobs, measured with
+`git cat-file blob HEAD:<path>` and `cmp`, and `git status --porcelain` empty in
+codex-index-leningrad after each run:
+
+| Run | `index-s0-annotated.json` | `index-s2-grouped-by-book.json` | `index.wiki` |
+|---|---|---|---|
+| baseline, codex-index-leningrad's copy from its own root | identical | identical | identical |
+| MAM-basics' copy, cwd = MAM-basics | identical | identical | identical |
+| MAM-basics' copy, cwd = `C:\Users\BenDe\GitRepos` | identical | identical | identical |
+
+**Both residencies produce the same bytes**, which is what "dual residency" has to mean and was
+cheap to check. Re-establish with:
+
+```powershell
+C:\Users\BenDe\GitRepos\MAM-basics\.venv\Scripts\python.exe C:\Users\BenDe\GitRepos\MAM-basics\py\main_lenin_wikisource_page.py
+```
+
+`git status --porcelain` **is** the right instrument in codex-index-leningrad, unlike book-of-job
+and unlike this trio's Phase 1, where it was wrong in both directions. That repo's checkout is
+all LF — Phase 1 measured 0 latent CRLF of 73 files — and the pipeline rewrites exactly the three
+files it generates, so an empty porcelain there means what it says. The byte comparison was run
+anyway, and agreed.
+
+### Eleven of eighteen wiki modules were copies of this repo's own, and all eleven dissolved
+
+Phase 0's finding that `lenin-wiki/` is a far bigger vendoring fork than
+`doc/vendoring-inventory.md` can see is what this phase spent its effort on, and the count held:
+of the eighteen `.py` under `lenin-wiki/`, **six are codex-index-leningrad's own**, eleven are
+copies of MAM-basics modules under three kinds of disguise, and the eighteenth is the entry
+point. The six landed as `py/lenin_wiki/`; the eleven are Phase 4 deletions and are imported
+from this repo directly instead:
+
+| `lenin-wiki/py/` | imported from | disguise |
+|---|---|---|
+| `hebrew_letters.py` | `mb_cmn/hebrew_letters.py` | none — and byte-identical already |
+| `hebrew_punctuation.py` | `mb_cmn/hebrew_punctuation.py` | none |
+| `hebrew_verse_numerals.py` | `mb_cmn/hebrew_verse_numerals.py` | none |
+| `my_utils.py` | `mb_cmn/my_utils.py` | none |
+| `my_locales.py` | `mb_cmn/bib_locales.py` | renamed |
+| `my_open.py` | `mb_cmn/file_io.py` | renamed |
+| `mam_book_names.py` | `mb_cmn/mam_bknas.py` | renamed |
+| `mam_book_names_and_std_book_names.py` | `mb_cmn/mam_bknas_and_std_bknas.py` | renamed |
+| `vtrad_data.py` | `py_misc/vtrad_data.py` | out of package |
+| `vtrad_helpers.py` | `py_misc/vtrad_helpers.py` | out of package |
+| `get_cvm_rec_from_bcvt.py` | `py_misc/get_cvm_rec_from_bcvt.py` | out of package |
+
+**Every symbol the six use was checked against this repo's module before the swap, and the
+oracle then checked the swap**: `file_io.with_tmp_openw` and `file_io.json_dump_to_file_path`,
+`my_utils.sum_of_map` / `sl_map` / `my_groupby`, `hebrew_verse_numerals.INT_TO_STR_DIC`,
+`bib_locales.mk_bcvtbhs`, `mam_bknas_and_std_bknas.he_bk39_name`,
+`get_cvm_rec_from_bcvt.get_cvm_rec_from_bcvt` and `cvm_rec_get_parts`, and `vtrad_helpers`'
+three verse-correspondence constants. `mam_bknas.py`, `hebrew_letters.py`,
+`hebrew_punctuation.py` and `vtrad_data.py` are reached only through the others and needed no
+call-site check of their own.
+
+**One adaptation was needed and exactly one**, and the diffs are otherwise import lines and
+comment wording: `file_io.json_dump_to_file_path` has three optional parameters
+codex-index-leningrad's `my_open` did not, all with the defaults that copy's fixed behaviour
+supplied (`newline=""`, `indent=2`, no provenance breadcrumb), so the two positional calls carry
+across as written.
+
+### The fork's direction in `vtrad_helpers.py` is the OPPOSITE of what this plan said
+
+Phase 0's table of the eighteen says `get_cvm_rec_from_bcvt.py` "differs in an enum MAM-basics
+has since made (`CVVE_TYPE_SAME_CONTENTS` → `CvveType.SAME_CONTENTS`)". **It is the other way
+round.** codex-index-leningrad's `vtrad_helpers.py` holds a `CvveType(Enum)` with three members;
+MAM-basics' `py_misc/vtrad_helpers.py` holds three module-level integer constants named
+`CVVE_TYPE_SAME_CONTENTS`, `CVVE_TYPE_NO_CONTENTS` and `CVVE_TYPE_PARTIAL_CONTENTS`. So the
+wiki copy is the newer shape and this repo's is the older one.
+
+**Taken as this repo's, not as the wiki copy's**, so the one site that named the enum —
+`write_wikitext_file.py`'s `_PARTIAL_AND_SAME` — now names the two integer constants. The
+alternative was to upgrade `py_misc/vtrad_helpers.py` to the enum, which would have meant
+editing its six other call sites in `mb_json/json_root_from_bksams.py` and
+`mb_xml/xml_root_from_bksams.py`, and an evacuation's job is to move code rather than to
+modernize the modules it lands beside. **Recorded rather than done, because the upgrade is
+genuinely the better shape and someone should get to choose it deliberately.**
+
+**The transferable part is Phase 0's own lesson, met again.** That phase wrote "treat 'the repos
+that have X' as a figure: give it its command, and re-run the command rather than the sentence."
+A sentence naming which of two copies is newer is the same kind of figure, and this one was
+quoted forward without the two-second `diff` that settles it. Re-establish with:
+
+```powershell
+diff C:\Users\BenDe\GitRepos\codex-index-leningrad\lenin-wiki\py\vtrad_helpers.py C:\Users\BenDe\GitRepos\MAM-basics\py\py_misc\vtrad_helpers.py
+```
+
+### The other half of that repo's Python is a live tool, and it kept its job under a new name
+
+`main_update_vendored_files.py` and the root `vendoring_sync.py` refresh
+`UXLC-utils-sparse/` from the sibling UXLC-utils. Phase 3's collision table above says the first
+"disappears" and the second "resolve with the rest of that repo's `mb_cmn`", and read as a
+disposition rather than as a name collision that would have been wrong: **the refresh is still
+wanted**, since Ben's decision of 2026-08-03 dropped the `py/` half of that sparse copy and kept
+the data half, and one of the two files it keeps is the wikisource pipeline's only input.
+
+- The script landed as **`py/main_lenin_vendor_uxlc.py`**, named for `py/main_wlc_vendor_uxlc.py`
+  beside it, which does the same job for this repo's own vendored UXLC subset. The old name was
+  held by three repos at once and says nothing about which vendored files are meant.
+- **`vendoring_sync.py`'s two-line fork is gone, dissolved into a parameter.** The two lines were
+  a docstring and `dest_dir / "provenance.md"`, against this repo's `dest_dir / "_provenance.md"`;
+  `mb_cmn/vendoring_sync.write_provenance` now takes `basename="_provenance.md"` and the one
+  caller that wants the other spelling passes it. codex-index-leningrad's breadcrumb has no
+  leading underscore because it is a tracked file of that repo's, named that way since before
+  `mb_cmn/vendoring_sync.py` existed.
+- **The two bodies were not merged**, and that is deliberate: `main_wlc_vendor_uxlc` copies two
+  flat directories filtered to one suffix each, and this one copies a whole subtree recursively
+  and suffix-blind. Either walk applied to the other's destination sees no files at all and so
+  reports "unchanged" forever, which is the failure `_content_digest`'s own comment already
+  warns about.
+
+### `UXLC-utils-sparse` is stale, and finding that out is not the same as fixing it
+
+Running the refresh — codex-index-leningrad's copy first, then this repo's — **wrote three
+tracked files** of that repo's: `UXLC-utils-sparse/data/lci_augrecs.json` (+77 lines),
+`data/lci_recs.json` (+61) and `provenance.md`, which stamps UXLC-utils' HEAD moving from
+`748ee2f` to `c8db329`, and the date from 2026-08-03 to 2026-08-22.
+
+**Reverted both times with `git checkout -- UXLC-utils-sparse/`, discarding nothing**: every byte
+of that tree is re-derivable from UXLC-utils by re-running the refresh, which is the whole point
+of a vendored copy, and UXLC-utils' Phase 5 record already names this exact command doing this
+exact thing.
+
+**It is left stale on purpose, and the reason is that refreshing it is not a data update but a
+regeneration.** `lci_augrecs.json` is the wikisource pipeline's only input, so a refresh moves
+the three artifacts under `lenin-wiki/` as well — and the oracle this phase depends on is
+precisely that those three come back byte-identical. Doing both at once would have made a stale
+input and a moved pipeline indistinguishable in the same diff. Phase 1 declined to run the
+script for the same kind of reason and said so. **What this phase adds is that the script's two
+runs were the check on the port**: this repo's copy produced the identical three-file diff that
+codex-index-leningrad's copy did, including `provenance.md` written without the leading
+underscore, which is what proves the `basename` parameter carries the fork.
+
+**Someone should decide about the refresh**, and it is not a phase of this plan: it would land
+five changed files across one repo, three of them artifacts, for reasons that have nothing to do
+with moving Python.
+
+### The four source lints still scope to book-of-job alone — a stated gap, not an oversight
+
+`check_function_ordering`, `check_mark_order`, `check_escape_sequences` and the two `fix_*` take
+their scope from `boj_paths.code_paths()`, so **the eight modules that landed here are not
+linted**. Evidence that this is so rather than silently otherwise: `py/check_all.py` reports 7 of
+7 after the move, over **298 files and 241 `.py`** — the same two figures Phase 0 recorded before
+it.
+
+**Not closed here, because codex-index-leningrad is the wrong repo to close it in.** The union
+over per-repo lists is what the four lints need, and it wants building where the lint copies
+actually arrive — codex-index-aleppo and codex-index-cam1753 each hold four, one committed blob
+between them, which Phase 0's Item 3 table records. Closing it now would mean designing the
+union against one repo and redoing it against three. **`lenin_paths.code_paths()` exists and
+returns the four paths**, so that step is one entry rather than a new list.
+
+**The gap costs nothing today and was measured rather than assumed**: nothing in the eight
+modules carries a combining mark or a `\uXXXX` escape, checked 2026-08-22. It would start costing
+something the moment one did, which is why it is written down here and in `lenin_paths.py`'s
+module docstring rather than left to be noticed.
+
+### The NFC test gains a fifth scope, and it is the smallest by an order of magnitude
+
+`py/tests/test_h_dot_below_nfc.py` had four `_Scope`s and has five. codex-index-leningrad's own
+304-line copy is Phase 4's to delete; copied across unchanged it would have found its root by
+`git rev-parse` from its own directory and so scanned MAM-basics, which is the third time this
+programme has met that exact trap. Its `_BINARY_EXTENSIONS` were compared against this file's
+first, as holman-ketiv-qere's and book-of-job's were, and were a strict subset — this file has
+seven more, `.man`, `.wts`, `.md5sum`, `.docx` and three others — so nothing was owed.
+
+**30 files in scope now, 9 after Phase 4**, measured 2026-08-22 rather than predicted: 21 of the
+30 are the `.py` this phase has copied here. What survives is `.gitattributes`, `.gitignore`,
+`.vscode/launch.json`, `CLAUDE.md`, `README.md`, `page-snips/README.md` and the three artifacts
+under `lenin-wiki/`. **So the floor is 5, not the 20 that repo's own copy asserted**, which would
+not have survived its own Phase 4. `UXLC-utils-sparse/` is excluded, carried over verbatim from
+that copy; `lenin-wiki/` deliberately is not, generated though its three artifacts are, because
+excluding it would leave the scope with no Hebrew in it at all.
+
+Re-establish the count with the scratch shape this phase used: import the module, call
+`_tracked_files_in_scope` on each `_Scope`, print the lengths. It gave 1289, 11, 45, 33, 30.
+
+### The four names
+
+| codex-index-leningrad | MAM-basics | Files |
+|---|---|---|
+| `lenin-wiki/py/` (the six own modules) | `py/lenin_wiki/` | 6 |
+| `lenin-wiki/main_make_wikisource_page.py` | `py/main_lenin_wikisource_page.py` | 1 |
+| `main_update_vendored_files.py` | `py/main_lenin_vendor_uxlc.py` | 1 |
+| — (new at this phase) | `py/lenin_paths.py` | 1 |
+
+**The entry point had to be renamed and the package did not.** codex-index-aleppo holds a
+`main_make_wikisource_page.py` too, and Phase 0 classified the two as different tools against
+different input formats rather than one tool with drift, so both cannot keep the name; `lenin_`
+is the prefix because `lenin-wiki/` is what that repo already calls the tree. `lenin_wiki` as a
+package name collides with nothing, and its six module basenames are reached as
+`lenin_wiki.<name>`, so none of them is a second module object for a name this repo already has.
+
+**`lenin_paths.py` does not vendor `mb_cmn/paths.py`, and now delegates to it.** Phase 1's
+reasoning for the pre-move module — compute the root from `__file__`, vendor nothing — was
+correct while the code sat in a repo whose `mb_cmn/` was absent entirely. Here the depth is the
+one `paths.py` is written for, and `boj_paths.py`, `hkq_paths.py` and `uxlc_paths.py` are three
+worked precedents: `lenin_data_root()` is
+`paths.require_sibling("codex-index-leningrad", paths.sibling_repo("codex-index-leningrad"))`,
+checked rather than merely composed, for the reason `require_sibling` gives.
+
+**Phase 1's `_REPO_ROOT` and `_WIKI_DIR` did not survive**, as Phase 3 item 2 said they should
+not: the wiki pipeline takes accessors like everything else, and there is no fourth spelling of
+the data root in this repo.
+
+### Verification
+
+- Wikisource pipeline, three runs, three artifacts each: **all byte-identical**, table above.
+- Vendoring refresh, this repo's copy against codex-index-leningrad's: **identical three-file
+  diff**, reverted both times, tree clean.
+- MAM-basics suite: **945 passed, 5 skipped, 59 subtests** — the baseline exactly.
+- `py/check_all.py`: **7 of 7**, 298 files and 241 `.py`, both unchanged.
+- black clean on all six files this phase added or edited.
+- `git status --porcelain` empty in codex-index-leningrad at HEAD `eb7c83c`, unchanged
+  throughout.
+
+### What Phase 4 now owes for this repo, beyond what it already knew
+
+1. **Twenty-one `.py` to delete, in three places**: `lenin-wiki/main_make_wikisource_page.py`
+   and its `py/` (18), the root `main_update_vendored_files.py` and `vendoring_sync.py`, and
+   `py/tests/test_h_dot_below_nfc.py`. That empties `lenin-wiki/py/` and `py/tests/` outright.
+2. **`.vscode/launch.json` names the moved scripts** and is one of the nine files that survive
+   in the NFC scope. Grep the repo for the two entry-point filenames, not only for `py/`.
+3. **`README.md` and `CLAUDE.md` are written for a repo that is staying**, per the decision
+   recorded under "This plan moves the Python and nothing else": the code moved to
+   `../MAM-basics/py/` and the data did not.
+4. **Name the artifacts no program generates**, which here is `page-snips/` (2 files) and the
+   whole of `UXLC-utils-sparse/`, that last being vendored rather than generated and refreshed
+   by `../MAM-basics/py/main_lenin_vendor_uxlc.py`.
+5. **The NFC scope's floor of 5 is checked against 9**, so Phase 4 should re-run the scope count
+   after its deletion and confirm 9 rather than assume it.
+
+### What the other two repos' Phase 3 now owes, beyond what Phase 0 already told them
+
+1. **The lint union is theirs to build**, per the stated gap above, and
+   `lenin_paths.code_paths()` is already written to be one entry in it.
+2. **Check the direction of every fork before taking a side**, not only its existence. This
+   phase found one recorded backwards, and Phase 0 found the same class of error in its Family 2
+   table and in both `requirements.txt`.
+3. **A collision table entry saying a name "disappears" is about the NAME.** Read it as a
+   disposition and a live tool goes in the bin: `main_update_vendored_files.py` still had a job,
+   and so may `main_make_wikisource_page.py` in codex-index-aleppo, whose Phase 1 revived it.
+4. **`git status --porcelain` is usable in codex-index-leningrad** and is not in the other two:
+   codex-index-aleppo has 152 latent CRLF of 222 files by Phase 1's measurement, and
+   codex-index-cam1753 is where the seven missing `newline=""` sites were. Compare bytes against
+   HEAD blobs there.
+
+---
+
+## Phase 3 — copy the Python in (dual residency) — the prescription, left as written 2026-08-02
+
+**The codex-index-leningrad record above answers this for one of the three repos.** Two of its
+rows read differently after execution: `main_update_vendored_files.py` does not "disappear", it
+is renamed and keeps its job, and `vendoring_sync.py` resolves into a parameter of
+`mb_cmn/vendoring_sync.py` rather than into that repo's `mb_cmn`, which it never had.
 
 Per repo, one at a time, each within a single session. Name collisions to settle first:
 

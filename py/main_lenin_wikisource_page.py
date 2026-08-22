@@ -1,0 +1,47 @@
+"""Build the Wikisource page indexing the Leningrad Codex, from J David Stark's index.
+
+Reads ``UXLC-utils-sparse/data/lci_augrecs.json`` in the sibling
+codex-index-leningrad and writes three artifacts back into that repo's
+``lenin-wiki/``: the input rows reshaped (``index-s0-annotated.json``), those rows
+collapsed per page and grouped by book (``index-s2-grouped-by-book.json``), and the
+wikitext itself (``index.wiki``).  All four paths come from ``lenin_paths``.
+
+THE COUNTERPART PIPELINE IS A DIFFERENT TOOL, which is why the two do not share a
+name here.  codex-index-aleppo's ``aleppo-wiki/main_make_wikisource_page.py`` reads
+a different input format and builds a different page; the trio plan's Phase 0
+classified the two as Family 2 and found them to be two tools rather than one with
+drift.  This one has run correctly the whole time, which is why that phase could use
+it as an oracle and could not use the other -- the aleppo half had been dead since
+2026-03-28, a rename having left its four path literals naming a directory that no
+longer existed.
+
+This file was ``lenin-wiki/main_make_wikisource_page.py`` in codex-index-leningrad
+until Phase 3 of ``doc/PLAN-evacuate-python-from-codex-index-trio.md``, 2026-08-22.
+"""
+
+from mb_cmn import file_io
+from wlc_cmn.utf8_io import force_utf8_io
+
+import lenin_paths
+from lenin_wiki.read_json_file import read_json_file
+from lenin_wiki.s1_collapse_rows import s1_collapse_rows
+from lenin_wiki.s2_group_by_book import s2_group_by_book
+from lenin_wiki.write_wikitext_file import write_wikitext_file
+
+
+def almost_main() -> None:
+    """The body, callable in-process."""
+    annotated = read_json_file(lenin_paths.lci_augrecs_path())
+    file_io.json_dump_to_file_path(annotated, lenin_paths.index_s0_annotated_path())
+    #
+    s1_collapsed = s1_collapse_rows(annotated["body"])
+    #
+    s2_grouped = s2_group_by_book(s1_collapsed)
+    file_io.json_dump_to_file_path(s2_grouped, lenin_paths.index_s2_grouped_path())
+    #
+    write_wikitext_file(s2_grouped, lenin_paths.index_wikitext_path())
+
+
+if __name__ == "__main__":
+    force_utf8_io()
+    almost_main()

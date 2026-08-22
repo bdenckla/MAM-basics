@@ -74,8 +74,18 @@ def write_provenance(
     title: str | None = None,
     removed_paths: Sequence[str] = (),
     newline: str = "",
+    basename: str = "_provenance.md",
 ) -> None:
-    """Write standardized _provenance.md in dest_dir."""
+    """Write a standardized breadcrumb, ``_provenance.md`` by default, in dest_dir.
+
+    ``basename`` is a parameter because codex-index-leningrad's breadcrumb has no
+    leading underscore: ``UXLC-utils-sparse/provenance.md`` is a tracked file of
+    that repo's, named that way since before this module existed.  Its refresher
+    carried a two-line fork of this module for exactly those two lines -- the
+    docstring above and the filename below -- until Phase 3 of
+    ``doc/PLAN-evacuate-python-from-codex-index-trio.md`` brought that script here
+    as ``main_lenin_vendor_uxlc.py`` and dissolved the fork into this argument.
+    """
     normalized_copied = sorted({p.replace("\\", "/") for p in copied_files})
     normalized_removed = sorted({p.replace("\\", "/") for p in removed_paths})
 
@@ -106,7 +116,7 @@ def write_provenance(
     lines.append(f"Date copied: {date_str}")
     lines.append("")
 
-    provenance_path = dest_dir / "_provenance.md"
+    provenance_path = dest_dir / basename
     provenance_path.write_text("\n".join(lines), encoding="utf-8", newline=newline)
 
 
