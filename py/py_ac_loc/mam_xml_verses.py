@@ -10,6 +10,10 @@ Handles all special MAM-XML elements:
   - <scrdfftar>: scribal difference target — extract word from <sdt-target> child
   - <implicit-maqaf>: no visible text, skip
   - <shirah-space>: visual spacing in song layout, skip
+  - <spi-invnun>: inverted nun (nun hafukha), a scribal mark carrying no text, skip.
+    Seven of them occur in Psalm 107 and two in Numbers 10:35-36; only the Psalm 107
+    seven are reachable from this module, whose callers read Ps, Job and Prov.
+    ``mb_sefaria/mam4ajf_handlers.py`` names both groups and handles them for Sefaria.
   - <spi-pe2>: petuxah (open paragraph) break — emitted as {"parashah": "spi-pe2"}
   - <spi-samekh2>: setumah (closed paragraph) break — emitted as {"parashah": "spi-samekh2"}
 
@@ -110,6 +114,8 @@ def get_verse_words(verse_el):
                 pass  # No visible text
             elif tag == "shirah-space":
                 pass  # Visual spacing in song layout, no text
+            elif tag == "spi-invnun":
+                pass  # Inverted nun (nun hafukha) — a scribal mark, no text
             elif tag in ("spi-pe2", "spi-samekh2", "spi-pe1", "spi-samekh1"):
                 pass  # Parashah markers handled at verse level
             else:
