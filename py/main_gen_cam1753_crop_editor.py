@@ -21,9 +21,6 @@ import webbrowser
 from PIL import Image
 
 import boj_paths
-
-OUT_DIR = boj_paths.novc_dir()
-
 from py_cam1753_word_image.crop import compute_fade_overlay, estimate_word_position
 from py_cam1753_word_image.hebrew_metrics import join_maqaf
 from py_cam1753_word_image.linebreak_search import find_word_in_linebreaks
@@ -33,8 +30,9 @@ from py_cam1753_word_image.page import (
     get_line_bbox,
     load_page_image,
 )
-
 from author_boj_util.short_id_etc import short_id
+
+OUT_DIR = boj_paths.novc_dir()
 
 with open(boj_paths.enriched_quirkrecs_path(), encoding="utf-8") as _f:
     EQRS = json.load(_f)

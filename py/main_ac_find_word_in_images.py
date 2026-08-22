@@ -32,6 +32,19 @@ from PIL import Image, ImageDraw
 from wlc_cmn.utf8_io import force_utf8_io
 
 import ac_paths
+from py_ac_word_image_helper.codex_page import (
+    CC_DIR,
+    LB_DIR,
+    find_pages_for_verse,
+    get_line_bbox,
+    load_index,
+    load_page_image,
+)
+from py_ac_word_image_helper.crop import compute_fade_overlay, estimate_word_position
+from py_ac_word_image_helper.alef_bet_to_ascii import heb_alef_bet_to_ascii
+from py_ac_word_image_helper.flat_index import find_pages_in_flat_index
+from py_ac_word_image_helper.hebrew_metrics import join_maqaf
+from py_ac_word_image_helper.linebreak_search import find_word_in_linebreaks
 
 OUT_DIR = ac_paths.novc_dir()
 
@@ -61,22 +74,6 @@ def serve_and_open(directory, filename):
         server.shutdown()
 
 
-from py_ac_word_image_helper.codex_page import (
-    CC_DIR,
-    LB_DIR,
-    find_page_for_verse,
-    find_pages_for_verse,
-    get_line_bbox,
-    load_index,
-    load_page_image,
-)
-from py_ac_word_image_helper.crop import compute_fade_overlay, estimate_word_position
-from py_ac_word_image_helper.alef_bet_to_ascii import heb_alef_bet_to_ascii
-from py_ac_word_image_helper.flat_index import find_pages_in_flat_index
-from py_ac_word_image_helper.hebrew_metrics import join_maqaf
-from py_ac_word_image_helper.linebreak_search import find_word_in_linebreaks
-
-
 def find_and_preview(word, book, cv, pages, *, wide=False):
     """Find *word* in *book* *cv* on the Aleppo Codex and generate a preview.
 
@@ -104,7 +101,7 @@ def find_and_preview(word, book, cv, pages, *, wide=False):
         LB_DIR, page_ids, book, ch, v, word
     )
     if col is None:
-        print(f"  ERROR: Could not find word in line-break data")
+        print("  ERROR: Could not find word in line-break data")
         return None
     print(f"  Location: col {col}, line {line_num}, word {word_idx + 1}")
     print(f"  Match method: {match_method}")

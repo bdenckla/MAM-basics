@@ -70,7 +70,7 @@ def find_and_preview(word, book, cv, *, wide=False):
         LB_DIR, page_id, book, ch, v, word
     )
     if col is None:
-        print(f"  ERROR: Could not find word in line-break data")
+        print("  ERROR: Could not find word in line-break data")
         return None
     print(f"  Location: col {col}, line {line_num}, word {word_idx + 1}")
     print(f"  Line: {' '.join(line_words)}")
@@ -104,7 +104,7 @@ def find_and_preview(word, book, cv, *, wide=False):
     )
 
     # Red position lines
-    h, w = crop.height, crop.width
+    h = crop.height
     red_overlay = Image.new("RGBA", crop.size, (0, 0, 0, 0))
     draw = ImageDraw.Draw(red_overlay)
     half_ls = ls // 2

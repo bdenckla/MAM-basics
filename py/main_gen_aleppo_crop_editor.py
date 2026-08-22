@@ -20,9 +20,6 @@ import webbrowser
 from PIL import Image
 
 import boj_paths
-
-OUT_DIR = boj_paths.novc_dir()
-
 from py_ac_word_image_helper.codex_page import (
     CC_DIR,
     LB_DIR,
@@ -34,8 +31,9 @@ from py_ac_word_image_helper.codex_page import (
 from py_ac_word_image_helper.crop import compute_fade_overlay, estimate_word_position
 from py_ac_word_image_helper.hebrew_metrics import join_maqaf
 from py_ac_word_image_helper.linebreak_search import find_word_in_linebreaks
-
 from author_boj_util.short_id_etc import short_id
+
+OUT_DIR = boj_paths.novc_dir()
 
 with open(boj_paths.enriched_quirkrecs_path(), encoding="utf-8") as _f:
     EQRS = json.load(_f)

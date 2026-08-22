@@ -334,7 +334,9 @@ def main(*, verbose=False):
     )
 
     # By count (descending), then alphabetical within same count
-    by_count = lambda items: sorted(items, key=lambda x: (-x[1], x[0]))
+    def by_count(items):
+        return sorted(items, key=lambda x: (-x[1], x[0]))
+
     count_path = out_dir / "custom-dict-freqs-ordered-by-count.json"
     count_path.write_text(
         json.dumps(_make_freq_report(by_count), indent=4, ensure_ascii=False) + "\n",

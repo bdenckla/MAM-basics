@@ -131,7 +131,7 @@ def main():
     print(f"FAIL: {fail_count}")
     print(f"TOTAL: {pass_count + fail_count}")
     if method_counts:
-        print(f"\nMatch methods (passing records):")
+        print("\nMatch methods (passing records):")
         for method, count in sorted(method_counts.items()):
             print(f"  {method}: {count}")
     if stripped_records:
@@ -142,7 +142,7 @@ def main():
         for cv, word, method in stripped_records:
             print(f"  {cv} {word!r}  [{method}]")
     if failures:
-        print(f"\nFailures:")
+        print("\nFailures:")
         for f in failures:
             print(f"  {f}")
         return 1
