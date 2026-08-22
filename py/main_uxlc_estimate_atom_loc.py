@@ -1,10 +1,16 @@
 """Exports main
 
-Word-finding behavior here is kept in sync with the "find word"
-utilities in the sibling repos:
+Word-finding behavior here is kept in sync with the two "find word"
+utilities, which are in THIS repo now rather than in sibling repos:
 
-  codex-index-aleppo  — py/py_ac_word_image_helper/linebreak_search.py
-  codex-index-cam1753 — py_cam1753_word_image/linebreak_search.py
+  py/py_ac_word_image_helper/linebreak_search.py   (Aleppo Codex)
+  py/py_cam1753_word_image/linebreak_search.py     (Cambridge Add. 1753)
+
+They were codex-index-aleppo's py/py_ac_word_image_helper/ and
+codex-index-cam1753's py_cam1753_word_image/ until Phase 3 of
+doc/PLAN-evacuate-python-from-codex-index-trio.md, 2026-08-22; both of
+those repos now hold manuscript data and no code at all.  Keeping the
+three in sync is therefore a same-repo job, not a cross-repo one.
 
 Shared conventions:
   - CLI argument order: <book> <c:v> <word>  (c:v colon-separated)
