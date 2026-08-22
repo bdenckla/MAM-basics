@@ -29,12 +29,13 @@ nothing and closes the one gap a reader would otherwise have to be told about.
 
 CORPUS ROOTS ARE A SHORTER LIST THAN CODE PATHS, and the difference is not an
 oversight.  ``check_mark_order`` reads ``.json`` as well as ``.py``, and for
-book-of-job and codex-index-aleppo the hand-made JSON that stayed behind in each
-data repo is a large part of what the check was ever for -- 24 line-break files in
-one and 78 line-break, column-coordinate and flat-stream files in the other.
-codex-index-leningrad's data root holds no such thing: its JSON is two artifacts of
-its own pipeline and two files vendored from UXLC-utils, whose contents are that
-repo's business rather than this one's.
+book-of-job, codex-index-aleppo and codex-index-cam1753 the hand-made JSON that
+stayed behind in each data repo is a large part of what the check was ever for --
+24 line-break files in the first, 78 line-break, column-coordinate and flat-stream
+files in the second, and 27 line-break plus 28 column-quadrilateral files in the
+third.  codex-index-leningrad's data root holds no such thing: its JSON is two
+artifacts of its own pipeline and two files vendored from UXLC-utils, whose contents
+are that repo's business rather than this one's.
 
 ``check_function_ordering`` is NOT a consumer of this module, and that is
 deliberate.  Only book-of-job ever ran it -- it is one of the seven checks in
@@ -49,6 +50,7 @@ from pathlib import Path
 
 import ac_paths
 import boj_paths
+import cam1753_paths
 import lenin_paths
 
 
@@ -62,6 +64,7 @@ def code_paths() -> list[Path]:
         *boj_paths.code_paths(),
         *ac_paths.code_paths(),
         *lenin_paths.code_paths(),
+        *cam1753_paths.code_paths(),
     ]
 
 
@@ -70,7 +73,11 @@ def corpus_roots() -> list[Path]:
 
     See the module docstring for why this is shorter than ``code_paths()``.
     """
-    return [boj_paths.boj_data_root(), ac_paths.ac_data_root()]
+    return [
+        boj_paths.boj_data_root(),
+        ac_paths.ac_data_root(),
+        cam1753_paths.cam1753_data_root(),
+    ]
 
 
 def display_roots() -> list[Path]:

@@ -3,14 +3,29 @@
 
 import json
 import sys
-from pathlib import Path
 
 from PIL import Image
 
-ROOT = Path(__file__).resolve().parent.parent
-LB_DIR = ROOT / "cam1753-line-breaks"
-QUAD_DIR = ROOT / "cam1753-col-quads"
-IMG_DIR = ROOT / "cam1753-pages"
+import cam1753_paths
+
+# THE THREE DIRECTORIES BELOW ARE codex-index-cam1753's, AND THIS FILE IS NOT.
+# A ``ROOT = Path(__file__).resolve().parent.parent`` stood here until Phase 3 of
+# ``doc/PLAN-evacuate-python-from-codex-index-trio.md``, 2026-08-22.  It was right in
+# codex-index-cam1753, where this package sat at the repo root beside the data, and
+# inert here, where it named ``py/`` and none of ``cam1753-line-breaks``,
+# ``cam1753-col-quads`` or ``cam1753-pages`` exists -- so every consumer in
+# MAM-basics composed a correct root with a missing target.  Phase 0 of that plan
+# found this walk and ``py_ac_word_image_helper/codex_page.py``'s and recorded their
+# verdicts as OPPOSITE: that one was wrong here and right there, this one right there
+# and inert here.  Both are settled now, and Phase 0 was right that Phase 3 is where
+# settling them "in both repos at once" became possible.
+#
+# ONE COMMITTED BLOB WITH codex-index-cam1753's COPY UNTIL THIS EDIT, and the fork is
+# deliberate rather than an oversight: that copy is deleted by Phase 4 of the same
+# plan, so what looks like a divergence is the last few days of dual residency.
+LB_DIR = cam1753_paths.line_breaks_dir()
+QUAD_DIR = cam1753_paths.col_quads_dir()
+IMG_DIR = cam1753_paths.pages_dir()
 
 LINES_PER_COL = 26
 

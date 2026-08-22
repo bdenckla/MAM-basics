@@ -5,12 +5,12 @@ the precomposed U+1E25 / U+1E24 forms, never the decomposed "h"/"H" + COMBINING 
 BELOW (U+0323) sequence. Comments must not use either Unicode form at all -- plain
 ASCII "x"/"X" is used instead, since comments don't flow to output.
 
-SIX REPOS ARE SCANNED, each with its own exclusions and its own floor. This repo
+SEVEN REPOS ARE SCANNED, each with its own exclusions and its own floor. This repo
 holds the code, and since 2026-08-12 the wlc corpus the code generates as well;
-UXLC-utils, holman-ketiv-qere, book-of-job, codex-index-leningrad and
-codex-index-aleppo still hold the corpora their halves generate into, and each
-carries hand-authored transliterations that would otherwise go unscanned once its
-Python has moved out. ``_scopes()`` below is the whole of the per-repo difference. A
+UXLC-utils, holman-ketiv-qere, book-of-job, codex-index-leningrad,
+codex-index-aleppo and codex-index-cam1753 still hold the corpora their halves
+generate into, and each carries hand-authored transliterations that would otherwise
+go unscanned once its Python has moved out. ``_scopes()`` below is the whole of the per-repo difference. A
 wlc-utils scope was one of them until 2026-08-17, when Phase 10 of
 ``doc/PLAN-evacuate-the-rest-of-wlc-utils.md`` emptied that repo down to 155 generated
 redirect stubs: nothing hand-authored is left there to scan, and the 6 files that do
@@ -61,8 +61,14 @@ second extension a dropped copy has contributed; the reverse comparison found
 nothing owed. What its scope keeps alive is ``doc/`` (4), the thirteen text files
 under ``aleppo-wiki/`` -- J David Stark's hand-made CSV index, three of its four
 precursors and the three artifacts derived from it among them -- three provenance
-files, and ``test-data-from-book-of-job.json``. codex-index-cam1753 has no copy of
-this test at all, so the sixth scope has no seventh behind it.
+files, and ``test-data-from-book-of-job.json``.
+
+The codex-index-cam1753 scope is the odd one out, and deliberately: that repo has no
+copy of this test and never had one, so unlike the six above nothing was replaced and
+nothing obliged the entry. Phase 3 of the trio's plan added it anyway, on 2026-08-22,
+because after that repo's Phase 4 nothing anywhere would otherwise read its
+hand-authored Hebrew, and because it passed on the first run. Its exclusion list was
+CHOSEN rather than inherited; the ``_Scope`` below says on what principle.
 
 Comment detection uses Python's ``tokenize`` module (real COMMENT tokens) rather than a
 naive ``line.find("#")``. The wlc code uses "#" as a delimiter inside string literals
@@ -93,6 +99,7 @@ from mb_cmn import paths
 
 import ac_paths
 import boj_paths
+import cam1753_paths
 import hkq_paths
 import lenin_paths
 import uxlc_paths
@@ -254,6 +261,30 @@ _AC_EXCLUDE_DIR_PREFIXES = (
 # repo's that sits at the root rather than in a tree the prefixes above cover.
 _AC_EXCLUDE_FILES = frozenset({"index-flat-annotated.json"})
 
+# codex-index-cam1753 is the ONE evacuated repo that never had a copy of this test,
+# so unlike the five above there was nothing to carry over verbatim and this list was
+# CHOSEN rather than inherited.  It applies the principle the other five embody --
+# exclude what is downloaded, vendored or program-written, keep what a human wrote --
+# to that repo's six artifact trees: MAM-XML/ is the vendored MAM-simple snapshot,
+# cam1753-spreads/ the downloaded archive.org scans, cam1753-pages/ and
+# cam1753-spread-splits-doc/ the output of py_cam1753_loc.split_spreads, and
+# cam1753-line-breaks/ and cam1753-col-quads/ the two human-in-the-loop editors'
+# output, excluded because codex-index-aleppo's own copy excluded its counterparts of
+# exactly those two.
+#
+# page-snips/ is deliberately NOT excluded, as codex-index-leningrad's is not: the
+# crops are made by hand and the README beside them records what each one settles.
+# Neither is cam1753-page-index.json, hand-made and read by no program, nor
+# check_line_breaks.html, which codex-index-aleppo's copy also left in scope.
+_CAM_EXCLUDE_DIR_PREFIXES = (
+    "MAM-XML/",
+    "cam1753-col-quads/",
+    "cam1753-line-breaks/",
+    "cam1753-pages/",
+    "cam1753-spread-splits-doc/",
+    "cam1753-spreads/",
+)
+
 # The one comment allowed to keep showing a precomposed h-with-dot-below
 # glyph, because the comment is genuinely about the character itself... In
 # practice, after #187's cleanup, there are no such exceptions: every
@@ -383,6 +414,33 @@ def _scopes() -> tuple[_Scope, ...]:
             # outliving its tree. The fourth precursor is the .xlsx, excluded as
             # binary; the .docx beside it is excluded the same way.
             floor=20,
+        ),
+        _Scope(
+            label="codex-index-cam1753",
+            root=cam1753_paths.cam1753_data_root(),
+            exclude_dir_prefixes=_CAM_EXCLUDE_DIR_PREFIXES,
+            exclude_files=frozenset(),
+            # THE ONE SCOPE HERE THAT IS AN EXPANSION RATHER THAN A RESTORATION, and
+            # it was decided rather than assumed.  The other five evacuated repos each
+            # had a copy of this test that Phase 3 folded in as a scope;
+            # codex-index-cam1753 never had one, so nothing obliged this entry.  It is
+            # here because the alternative was that after that repo's Phase 4 nothing
+            # anywhere would read its hand-authored Hebrew -- things-noticed-in-cam1753.md,
+            # page-snips/README.md, cam1753-page-index.json and its two prose files --
+            # and because adding it surfaced no violation: it passed on the first run.
+            #
+            # That is the opposite call from the one repo_scopes.py records for the
+            # SOURCE lints, where UXLC-utils and holman-ketiv-qere are deliberately
+            # left out as an expansion.  The two differ in what an expansion costs:
+            # widening a source lint over code never held to it surfaces violations
+            # that are nobody's current business, where this check is a decidable
+            # property of hand-authored text that passed as soon as it was asked.
+            #
+            # 39 files in scope during dual residency and 16 after that repo's Phase 4
+            # deletes its 23 .py, measured 2026-08-22.  The floor is 10, which keeps
+            # meaning "an exclusion filter swallowed everything" rather than asserting
+            # a tree size.
+            floor=10,
         ),
     )
 
