@@ -13,7 +13,7 @@ three times and risk answering it three different ways.
 | 1 — two roots, no cwd (per repo) | **DONE 2026-08-22.** One commit per repo and one here: **`ee09e67`** in codex-index-aleppo, **`eb7c83c`** in codex-index-leningrad, **`7e5ca23`** in codex-index-cam1753, and **`72a4629`** here carrying this record and nothing else. **Nineteen root walks and thirteen cwd-relative literals become two paths modules** — `codex-index-aleppo/py/ac_paths.py` and `codex-index-cam1753/cam1753_paths.py` — **plus two named `_DATA_ROOT`s** in the two wiki entry points, which is four sites for Phase 3 to repoint rather than thirty-two. **The gating item landed and turned up a twin**: codex-index-aleppo's wiki generator runs again and its three artifacts are byte-identical, and so does `py/gen_index_flat_annotated.py`, **a SECOND generator dead since the same 2026-03-28 rename** and invisible to the prescribed grep because its dead path went through the vanished sibling repo `codex-index` rather than through a cwd-relative string. **The one-argument `newline=""` defect is in SEVEN sites in six scripts, all in codex-index-cam1753 and none in the other two**, three of them writing tracked files; the plan named one. **56 of the trio's 351 tracked artifacts have a generator and 295 do not**, so path-equality — import each module, assert every constant resolves where it did — is the second instrument, and all 36 repointed constants pass it; of the 56, **51 were regenerated and every one is byte-identical**, the other five being one crash Phase 0 already owns and four matplotlib renders. **A repo can have TWO `sys.path` roots**, which no earlier step met and which is why codex-index-aleppo needs both a paths module and a `_DATA_ROOT`. **`git status --porcelain` was wrong in the OTHER direction here**, four false positives where Phase 0 saw a false negative. **And the latent-CRLF claim is off by a repo**: measured whole-repo against HEAD blobs, codex-index-leningrad has **0** of 73 and codex-index-aleppo **152** of 222 |
 | 3 — copy the Python in (per repo, dual residency) | **codex-index-leningrad and codex-index-aleppo DONE 2026-08-22**; codex-index-cam1753 not started. **codex-index-aleppo, 50 tracked `.py`, is twenty-one deletions and twenty-nine arrivals** — the largest single thing that phase settled being that **the four source lints are deletions**, this repo already holding them, where Phase 0's Item 3 had invited a rename. Names are mechanical: `main_ac_` or `check_ac_` plus the module stem, applied to all fifteen top-level modules and not only the five that collided, because codex-index-cam1753 holds a counterpart of six of them. **All four artifacts byte-identical on the first run** from MAM-basics and from a foreign cwd, one of them proving a private-to-public symbol rewrite in `mam_bknas` that no static check could. **`py/repo_scopes.py` is new** and is what that phase actually owed: the four lints now union the per-repo `code_paths()` lists, taking mark order from 298 files to **419** and the escape check from 241 `.py` to **278**, with book-of-job's `check_all.py` still 7 of 7 — a restoration that imported no violations. `check_function_ordering` was deliberately left un-widened. **`codex_page.py` and `flat_index.py` are repaired at last**, and repairing the first fixes `main_gen_aleppo_crop_editor.py`, book-of-job's tool, broken in this repo since 2026-08-19. **Three module-level side effects**, one of them destructive: `main_ac_find_word_in_images.py` replaced `sys.stdout` at import and so swallowed output any importer had already printed. matplotlib was missing from this repo's venv, exactly as book-of-job's Phase 3 warned; kraken is missing too and deliberately stays so, codex-index-aleppo's own venv never having had it. The NFC test gains a **sixth** scope and a second extension from a dropped copy, `.xlsx`; ten copied files were CRLF and were normalized on arrival. Both pre-existing failures reproduce exactly — `check_word_finding` 0 of 160, `check_line_breaks` still raising on `<spi-invnun>` |
 | 3 — the codex-index-leningrad half, kept for its own findings | The smallest of the three went first: **six own modules land as `py/lenin_wiki/`, eleven vendored copies dissolve**, and the two entry points become `py/main_lenin_wikisource_page.py` and `py/main_lenin_vendor_uxlc.py` beside a new `py/lenin_paths.py`. **The oracle passed on the first run from MAM-basics and from a foreign cwd** — all three tracked artifacts byte-identical, in both residencies. **Phase 0's table has the `vtrad_helpers.py` fork backwards**: codex-index-leningrad holds the `CvveType` Enum and MAM-basics the `CVVE_TYPE_*` integers, not the other way about, and this repo's shape was taken. **The collision table's "disappears" cost a live tool nearly being binned**: `main_update_vendored_files.py` still refreshes `UXLC-utils-sparse/`, whose `lci_augrecs.json` is the pipeline's only input, so it was renamed rather than dropped — and its `vendoring_sync.py` fork, two lines naming `provenance.md` against `_provenance.md`, dissolved into a `basename` parameter of `mb_cmn/vendoring_sync.py`. **That sparse copy is 19 days stale** and was deliberately left so, refreshing it being a regeneration of the three artifacts rather than a data update; the two runs that proved it stale were the check on the port and were reverted. **The four source lints still scope to book-of-job alone**, a gap stated rather than closed, because the union over per-repo lists wants building where the lint copies arrive. The NFC test gains a **fifth** scope, 30 files now and 9 after Phase 4 |
-| 4 — empty each repo | **not started** |
+| 4 — empty each repo | **codex-index-leningrad DONE 2026-08-22** (`824910e` there), codex-index-aleppo and codex-index-cam1753 not started. **Ben lifted this phase's gate the same day**: run Phase 4 for a repo as soon as its Phase 3 is green, rather than asking first. 22 files deleted in codex-index-leningrad, all 21 tracked `.py` plus `.vscode/launch.json`, whose two debugpy configurations named one program the move took and one this repo never had. `README.md` and `CLAUDE.md` rewritten for a repo that is staying. The three `lenin-wiki/` artifacts are byte-identical after a pipeline run made AFTER the deletion, which is the order that proves the deletion took nothing the move needed. NFC scope **8**, not the 9 Phase 3 predicted — the ninth was the deleted `launch.json` |
 | 6 — breadcrumbs and issue citations | **not started** |
 | 7 — cross-repo bookkeeping | **not started** |
 
@@ -1787,7 +1787,105 @@ an entry point becomes a library module; finish with the oracle run from MAM-bas
 
 **Stop and ask Ben before the first Phase 3 of the three.**
 
-## Phase 4 — empty each repo
+## The Phase 4 gate is lifted — **DECIDED 2026-08-22**
+
+The prescription below says "Stop and ask Ben before each." **Ben, 2026-08-22, asked whether to
+keep that gate or run Phase 4 for a repo as soon as its Phase 3 is green: run it as soon as
+Phase 3 is green.** So Phase 4 for a repo is part of the same unit of work as its Phase 3 and
+needs no separate yes. The gate sentence below is left as written, being what the plan said
+before he settled it.
+
+**This does not license the sub-decisions inside Phase 4.** What to do with a file the move
+orphans but does not delete — a workspace file, a `requirements.txt`, a `.vscode/` config — was
+Ben's call at book-of-job's Phase 4 and stays his wherever the answer is not forced. A file whose
+every line names something the move took is forced and needs no asking; one that would still be
+useful to a repo that is staying is not.
+
+---
+
+## Phase 4, codex-index-leningrad — the execution record — **DONE 2026-08-22**
+
+**Landed as `824910e` in codex-index-leningrad — 22 files deleted, 2 modified, and that repo now
+tracks no Python at all.** Nothing was owed in MAM-basics beyond a figure correction, recorded
+under Verification below.
+
+### The deletion is 22 files, and 21 of them are the Python
+
+All twenty-one tracked `.py`: `lenin-wiki/main_make_wikisource_page.py` and the eighteen under
+`lenin-wiki/py/`, the root `main_update_vendored_files.py` and `vendoring_sync.py`, and
+`py/tests/test_h_dot_below_nfc.py`. `lenin-wiki/py/` and `py/tests/` are gone as directories, and
+so is `py/`, which held nothing else.
+
+**The twenty-second is `.vscode/launch.json`, deleted as orphaned**, and it is the one file in
+this phase that needed a judgment rather than a rule. Both of its debugpy configurations named a
+program the move had taken. **One of the two had been wrong for five months on top of that**: it
+named `aleppo/main_make_wikisource_page.py`, a path this repo has never had — `aleppo/` was
+codex-index-aleppo's directory name until `9025037` renamed it to `aleppo-wiki/` on 2026-03-28,
+the same rename that killed that generator's four path literals. So the file was a launcher for
+one program that no longer lives here and one that never did.
+
+**That is the forced case, not a precedent for the unforced one.** Every line of the file named
+something gone; nothing in it would serve a repo that is staying. codex-index-aleppo's
+`requirements.txt`, `.claude/settings.json` and workspace file are the unforced case and are
+Ben's, per the section above.
+
+### The two prose files, written for a repo that is staying
+
+`README.md` and `CLAUDE.md` both now say the Python left and the data did not, and neither reads
+as a wind-down — per Ben's decision of 2026-08-22 recorded in "This plan moves the Python and
+nothing else".
+
+`CLAUDE.md` gained four things a reader of that repo alone could not otherwise find:
+
+1. **Which MAM-basics entry point writes what**, with the absolute-path PowerShell command for
+   each: `main_lenin_wikisource_page.py` for the three files under `lenin-wiki/`,
+   `main_lenin_vendor_uxlc.py` for `UXLC-utils-sparse/`.
+2. **Why each was renamed** — the first because codex-index-aleppo holds a file of that name and
+   the two are different tools; the second because `main_update_vendored_files.py` was held by
+   three repos at once and names no vendored files.
+3. **That `UXLC-utils-sparse/` is behind**, taken at UXLC-utils `748ee2f` on 2026-08-03, and that
+   refreshing it moves the three `lenin-wiki/` artifacts as well, `lci_augrecs.json` being the
+   pipeline's input. So the refresh is a regeneration rather than a data update.
+4. **That MAM-basics still scans this tree for NFC**, through a scope of its own, so deleting
+   `py/tests/test_h_dot_below_nfc.py` did not end the check it ran.
+
+**What no program writes is named**, as this phase requires: `page-snips/` (one PNG crop and the
+README recording what it settles), the two prose files and the two dotfiles.
+`UXLC-utils-sparse/` is called vendored rather than generated, the distinction being that the
+refresh copies it and UXLC-utils' own generators write the originals.
+
+### Verification
+
+- **The three artifacts under `lenin-wiki/` are byte-identical to their HEAD blobs after a run of
+  MAM-basics' pipeline made AFTER the deletion.** That is the check worth doing in this order:
+  running it before the deletion proves the move, running it after proves the deletion took
+  nothing the move needed.
+- `git status --porcelain` clean in codex-index-leningrad at `824910e`; `git ls-files '*.py'`
+  returns **0**.
+- The NFC scope re-counted: **8 files, not the 9 this plan's Phase 3 record predicted.** The
+  ninth was `.vscode/launch.json`, which this phase deleted. `py/tests/test_h_dot_below_nfc.py`'s
+  comment and module docstring in MAM-basics are corrected to 8, with the reason.
+- Floor 5 against 8, so the floor still means "an exclusion filter swallowed everything" rather
+  than asserting a tree size.
+
+### What Phase 6 and Phase 7 now owe for this repo
+
+1. **Phase 7 item 2 wants rewording rather than deleting, and now has its wording.**
+   `in/vendoring_policy.json`'s comment for codex-index-leningrad says the
+   `main_update_vendored_files.py` the provenance scan finds there is not a MAM-basics one. That
+   script is gone from that repo, so the sentence describes something that no longer exists — but
+   the sync it describes still happens, from MAM-basics' `main_lenin_vendor_uxlc.py`. Say that.
+2. **The four `overrides` rows naming codex-index-leningrad paths** are part of Phase 7 item 1's
+   eight, and they name `lenin-wiki/py/` files that no longer exist.
+3. **Phase 7 item 5 — that repo's `.venv`** holds black and no pytest, and now has no Python to
+   run against.
+4. **Phase 6's grep for "generated by codex-index"** has one fewer place to find anything: the
+   provenance breadcrumb `UXLC-utils-sparse/provenance.md` is written by MAM-basics now and names
+   UXLC-utils as its source, not this repo.
+
+---
+
+## Phase 4 — empty each repo — the prescription, left as written 2026-08-02
 
 **None of the three has a `CLAUDE.md`** — codex-index-aleppo does, the other two do not.
 Whichever the repo, write or update one in this phase saying that there is no Python left, that

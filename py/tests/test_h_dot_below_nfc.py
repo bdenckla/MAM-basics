@@ -50,7 +50,8 @@ MAM-basics too. Its ``_BINARY_EXTENSIONS`` were compared against this file's bef
 was dropped, as holman-ketiv-qere's and book-of-job's were, and were a strict subset,
 so nothing was owed. That repo is a data host rather than a corpus, so what its scope
 keeps alive is small and mostly prose: ``README.md``, ``CLAUDE.md``,
-``page-snips/README.md`` and the three artifacts under ``lenin-wiki/``.
+``page-snips/README.md``, the three artifacts under ``lenin-wiki/`` and two dotfiles.
+Eight files, after that repo's Phase 4 emptied it of Python the same day.
 
 The codex-index-aleppo scope arrived with that repo's Python in the same phase,
 replacing its own 319-line ``py/tests/test_h_dot_below_nfc.py``, which located its
@@ -346,10 +347,13 @@ def _scopes() -> tuple[_Scope, ...]:
             exclude_dir_prefixes=_LENIN_EXCLUDE_DIR_PREFIXES,
             exclude_files=frozenset(),
             # That repo's own copy asserted a floor of 20 over 30 files in scope, and
-            # 20 will not survive its Phase 4: 21 of the 30 are the .py this repo's
-            # Phase 3 has now taken, leaving **9** -- .gitattributes, .gitignore,
-            # .vscode/launch.json, CLAUDE.md, README.md, page-snips/README.md and
-            # lenin-wiki/'s three artifacts, measured 2026-08-22. So the floor is 5,
+            # 20 did not survive its Phase 4: 21 of the 30 were the .py this repo's
+            # Phase 3 took, and **8** remain -- .gitattributes, .gitignore,
+            # CLAUDE.md, README.md, page-snips/README.md and lenin-wiki/'s three
+            # artifacts, measured after the deletion on 2026-08-22. This comment
+            # predicted 9 before Phase 4 ran; the ninth was .vscode/launch.json,
+            # which that phase deleted as orphaned, both its debugpy configurations
+            # naming a program the move had taken. So the floor is 5,
             # which is what "an exclusion filter swallowed everything" means for a
             # scope this small, and is still what would catch the scope outliving its
             # tree. This is the smallest of the five scopes by an order of magnitude,
