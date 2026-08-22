@@ -1,18 +1,4 @@
 
-=== codex-index-aleppo ===
-  PROVENANCE DOCS: ['aleppo-wiki/PROVENANCE.md', 'aleppo-wiki/provenance.md']
-  copy scripts: none found
-  mb_cmn dir (py/mb_cmn): ['hebrew_points.py', 'str_defs.py', 'uni_denorm.py', 'url_percent.py']
-
-=== codex-index-cam1753 ===
-  provenance docs: none
-  copy scripts: none found
-  mb_cmn dir (mb_cmn): ['hebrew_points.py', 'str_defs.py', 'uni_denorm.py']
-
-=== codex-index-leningrad ===
-  provenance docs: none
-  COPY SCRIPTS: ['main_update_vendored_files.py', 'vendoring_sync.py']
-
 === diffable-pointed-hebrew ===
   provenance docs: none
   copy scripts: none found

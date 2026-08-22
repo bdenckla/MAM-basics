@@ -43,21 +43,6 @@ osis_handlers.py                           MAM-simple                 py-example
 osis_index_html.py                         MAM-simple                 py-examples/osis/osis_index_html.py                     identical      2026-07-06   generated
 osis_namespace.py                          MAM-simple                 py-examples/osis/osis_namespace.py                      identical      2026-05-01   generated
 osis_runner.py                             MAM-simple                 py-examples/osis/osis_runner.py                         identical      2026-05-07   generated
-hebrew_points.py                           codex-index-aleppo         py/mb_cmn/hebrew_points.py                              eol-only       2026-04-27   
-str_defs.py                                codex-index-aleppo         py/mb_cmn/str_defs.py                                   identical      2026-08-04   
-uni_denorm.py                              codex-index-aleppo         py/mb_cmn/uni_denorm.py                                 eol-only       2026-04-27   
-url_percent.py                             codex-index-aleppo         py/mb_cmn/url_percent.py                                eol-only       2026-08-07   
-hebrew_letters.py                          codex-index-aleppo         aleppo-wiki/py/hebrew_letters.py                        eol-only       2026-04-27   placed in aleppo-wiki/py/ not mb_cmn/
-hebrew_punctuation.py                      codex-index-aleppo         aleppo-wiki/py/hebrew_punctuation.py                    DIFFERS        2026-03-28   placed in aleppo-wiki/py/ not mb_cmn/
-hebrew_verse_numerals.py                   codex-index-aleppo         aleppo-wiki/py/hebrew_verse_numerals.py                 DIFFERS        2026-03-28   placed in aleppo-wiki/py/ not mb_cmn/
-my_utils.py                                codex-index-aleppo         aleppo-wiki/py/my_utils.py                              DIFFERS        2026-04-27   placed in aleppo-wiki/py/ not mb_cmn/
-hebrew_points.py                           codex-index-cam1753        mb_cmn/hebrew_points.py                                 identical      2026-04-27   
-str_defs.py                                codex-index-cam1753        mb_cmn/str_defs.py                                      identical      2026-08-04   
-uni_denorm.py                              codex-index-cam1753        mb_cmn/uni_denorm.py                                    identical      2026-04-27   
-hebrew_letters.py                          codex-index-leningrad      lenin-wiki/py/hebrew_letters.py                         identical      2026-08-03   placed in lenin-wiki/py/ not mb_cmn/
-hebrew_punctuation.py                      codex-index-leningrad      lenin-wiki/py/hebrew_punctuation.py                     DIFFERS        2025-02-19   placed in lenin-wiki/py/ not mb_cmn/
-hebrew_verse_numerals.py                   codex-index-leningrad      lenin-wiki/py/hebrew_verse_numerals.py                  DIFFERS        2025-02-19   placed in lenin-wiki/py/ not mb_cmn/
-my_utils.py                                codex-index-leningrad      lenin-wiki/py/my_utils.py                               DIFFERS        2026-08-03   placed in lenin-wiki/py/ not mb_cmn/
 cantsys.py                                 diffable-pointed-hebrew    mb_cmn/cantsys.py                                       eol-only       2026-04-27   unmeasured
 file_io.py                                 diffable-pointed-hebrew    mb_cmn/file_io.py                                       DIFFERS        2026-04-27   unmeasured
 hebrew_accents.py                          diffable-pointed-hebrew    mb_cmn/hebrew_accents.py                                DIFFERS        2026-04-27   unmeasured
@@ -80,7 +65,7 @@ str_defs.py                                MAM-private                mgketer/py
 template_names.py                          MAM-private                mgketer/py/mb_cmn/template_names.py                     identical      2026-08-08   
 url_percent.py                             MAM-private                mgketer/py/mb_cmn/url_percent.py                        identical      2026-08-08   
 uxlc_change_url.py                         MAM-private                mgketer/py/mb_cmn/uxlc_change_url.py                    DIFFERS        2026-08-08   
-vendoring_sync.py                          MAM-private                mgketer/py/mb_cmn/vendoring_sync.py                     identical      2026-08-08   
+vendoring_sync.py                          MAM-private                mgketer/py/mb_cmn/vendoring_sync.py                     DIFFERS        2026-08-08   
 bib_locales.py                             MAM-private                al-hatorah/py/mb_cmn/bib_locales.py                     identical      2026-08-10   
 cantsys.py                                 MAM-private                al-hatorah/py/mb_cmn/cantsys.py                         identical      2026-08-10   
 file_io.py                                 MAM-private                al-hatorah/py/mb_cmn/file_io.py                         identical      2026-08-10   
@@ -105,7 +90,7 @@ uni_denorm.py                              MAM-private                al-hatorah
 uni_heb.py                                 MAM-private                al-hatorah/py/mb_cmn/uni_heb.py                         identical      2026-08-10   
 uni_norm_fragile.py                        MAM-private                al-hatorah/py/mb_cmn/uni_norm_fragile.py                identical      2026-08-10   
 url_percent.py                             MAM-private                al-hatorah/py/mb_cmn/url_percent.py                     identical      2026-08-10   
-vendoring_sync.py                          MAM-private                al-hatorah/py/mb_cmn/vendoring_sync.py                  identical      2026-08-10   
+vendoring_sync.py                          MAM-private                al-hatorah/py/mb_cmn/vendoring_sync.py                  DIFFERS        2026-08-10   
 ws_tmpl1.py                                MAM-private                al-hatorah/py/mb_cmn/ws_tmpl1.py                        identical      2026-08-10   
 ws_tmpl2.py                                MAM-private                al-hatorah/py/mb_cmn/ws_tmpl2.py                        identical      2026-08-10   
 ws_tmpl_named_params.py                    MAM-private                al-hatorah/py/mb_cmn/ws_tmpl_named_params.py            identical      2026-08-10   

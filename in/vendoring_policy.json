@@ -1,5 +1,5 @@
 {
-  "comment": "Vendoring policy manifest. Derived file relationships are discovered from repo scans plus explicit overrides. Mechanism is declared here, never detected: gen_inventory used to promote unknown to copy_script when the provenance scan found a copy script in an active or generated repo, which withheld the fact for the three copy-script repos categorized stale, and would have asserted it wrongly for codex-index-leningrad, whose script copies from UXLC-utils rather than from here. Removed 2026-08-02; unknown now means only that nobody has said (#60). Category answers 'is this copy being kept up?' and mechanism answers 'by what?' (5fc4a77). Category's four values -- active, generated, stale, unmeasured -- are a closed set, checked by vendoring/repo_policy.py's CATEGORY_VALUES, where each one is glossed; unmeasured replaced the retired deferred on 2026-08-07 (#60). Category is not read off last_synced and cannot be: compare.py derives last_synced from the date of the last commit touching each file in the destination repo, so a file that a re-vendor run leaves byte-identical keeps its old date, and a repo whose copies are all up to date still shows mixed.",
+  "comment": "Vendoring policy manifest. Derived file relationships are discovered from repo scans plus explicit overrides. Mechanism is declared here, never detected: gen_inventory used to promote unknown to copy_script when the provenance scan found a copy script in an active or generated repo, which withheld the fact for the three copy-script repos categorized stale, and would have asserted it wrongly for codex-index-leningrad, whose main_update_vendored_files.py copied from UXLC-utils rather than from here. Removed 2026-08-02; unknown now means only that nobody has said (#60). That script is gone: Phase 4 of doc/PLAN-evacuate-python-from-codex-index-trio.md emptied codex-index-leningrad of Python on 2026-08-22, so no provenance scan finds a copy script there any more. The sync it did still happens -- MAM-basics' py/main_lenin_vendor_uxlc.py refreshes that repo's UXLC-utils-sparse/ from the sibling UXLC-utils -- and it is still not a MAM-basics-to-there vendoring, which is why nothing in this manifest describes it. All three codex-index repos left the repos object and the overrides list on 2026-08-22 (that plan's Phase 7 item 1), holding no vendored copy of any package named here. Category answers 'is this copy being kept up?' and mechanism answers 'by what?' (5fc4a77). Category's four values -- active, generated, stale, unmeasured -- are a closed set, checked by vendoring/repo_policy.py's CATEGORY_VALUES, where each one is glossed; unmeasured replaced the retired deferred on 2026-08-07 (#60). Category is not read off last_synced and cannot be: compare.py derives last_synced from the date of the last commit touching each file in the destination repo, so a file that a re-vendor run leaves byte-identical keeps its old date, and a repo whose copies are all up to date still shows mixed.",
   "global": {
     "comment": null,
     "source_pkg_dirs": {
@@ -35,41 +35,6 @@
         ]
       }
     },
-    "codex-index-aleppo": {
-      "comment": null,
-      "ignore": false,
-      "scan_provenance": true,
-      "default_category": "stale",
-      "default_mechanism": "unknown",
-      "default_provenance_doc": "no",
-      "pkg_scan_roots": {
-        "mb_cmn": [
-          "py/mb_cmn"
-        ]
-      }
-    },
-    "codex-index-cam1753": {
-      "comment": null,
-      "ignore": false,
-      "scan_provenance": true,
-      "default_category": "stale",
-      "default_mechanism": "unknown",
-      "default_provenance_doc": "no",
-      "pkg_scan_roots": {
-        "mb_cmn": [
-          "mb_cmn"
-        ]
-      }
-    },
-    "codex-index-leningrad": {
-      "comment": "The main_update_vendored_files.py the provenance scan finds here is not a MAM-basics one: it refreshes UXLC-utils-sparse from the sibling UXLC-utils, and never touches lenin-wiki/py/. So unknown is the true mechanism for the four rows below, and the detected copy script must not be read as covering them (2026-08-02, #60).",
-      "ignore": false,
-      "scan_provenance": true,
-      "default_category": "stale",
-      "default_mechanism": "unknown",
-      "default_provenance_doc": "no",
-      "pkg_scan_roots": {}
-    },
     "diffable-pointed-hebrew": {
       "comment": "Unmeasured rather than stale, and the only repo in that category: nobody has looked at how far these eight files have drifted. doc/PLAN-evacuate-python-programme.md's Appendix B is the statement -- seven read DIFFERS and one eol-only, no copy script has ever refreshed them, and it calls that a bug of unknown size rather than an abandoned copy, with the fix being to give the repo a main_update_vendored_files.py and get the rows to identical/copy_script. Changed from stale on 2026-08-07 (#60).",
       "ignore": false,
@@ -102,86 +67,6 @@
     }
   },
   "overrides": [
-    {
-      "comment": null,
-      "dest_repo": "codex-index-aleppo",
-      "dest_path": "aleppo-wiki/py/hebrew_letters.py",
-      "src_pkg": "mb_cmn",
-      "category": null,
-      "mechanism": null,
-      "provenance_doc": null,
-      "notes": "placed in aleppo-wiki/py/ not mb_cmn/"
-    },
-    {
-      "comment": null,
-      "dest_repo": "codex-index-aleppo",
-      "dest_path": "aleppo-wiki/py/hebrew_punctuation.py",
-      "src_pkg": "mb_cmn",
-      "category": null,
-      "mechanism": null,
-      "provenance_doc": null,
-      "notes": "placed in aleppo-wiki/py/ not mb_cmn/"
-    },
-    {
-      "comment": null,
-      "dest_repo": "codex-index-aleppo",
-      "dest_path": "aleppo-wiki/py/hebrew_verse_numerals.py",
-      "src_pkg": "mb_cmn",
-      "category": null,
-      "mechanism": null,
-      "provenance_doc": null,
-      "notes": "placed in aleppo-wiki/py/ not mb_cmn/"
-    },
-    {
-      "comment": null,
-      "dest_repo": "codex-index-aleppo",
-      "dest_path": "aleppo-wiki/py/my_utils.py",
-      "src_pkg": "mb_cmn",
-      "category": null,
-      "mechanism": null,
-      "provenance_doc": null,
-      "notes": "placed in aleppo-wiki/py/ not mb_cmn/"
-    },
-    {
-      "comment": null,
-      "dest_repo": "codex-index-leningrad",
-      "dest_path": "lenin-wiki/py/hebrew_letters.py",
-      "src_pkg": "mb_cmn",
-      "category": null,
-      "mechanism": null,
-      "provenance_doc": null,
-      "notes": "placed in lenin-wiki/py/ not mb_cmn/"
-    },
-    {
-      "comment": null,
-      "dest_repo": "codex-index-leningrad",
-      "dest_path": "lenin-wiki/py/hebrew_punctuation.py",
-      "src_pkg": "mb_cmn",
-      "category": null,
-      "mechanism": null,
-      "provenance_doc": null,
-      "notes": "placed in lenin-wiki/py/ not mb_cmn/"
-    },
-    {
-      "comment": null,
-      "dest_repo": "codex-index-leningrad",
-      "dest_path": "lenin-wiki/py/hebrew_verse_numerals.py",
-      "src_pkg": "mb_cmn",
-      "category": null,
-      "mechanism": null,
-      "provenance_doc": null,
-      "notes": "placed in lenin-wiki/py/ not mb_cmn/"
-    },
-    {
-      "comment": null,
-      "dest_repo": "codex-index-leningrad",
-      "dest_path": "lenin-wiki/py/my_utils.py",
-      "src_pkg": "mb_cmn",
-      "category": null,
-      "mechanism": null,
-      "provenance_doc": null,
-      "notes": "placed in lenin-wiki/py/ not mb_cmn/"
-    },
     {
       "comment": null,
       "dest_repo": "MAM-private",
