@@ -10,7 +10,7 @@ three times and risk answering it three different ways.
 | Phase | State |
 |---|---|
 | 0 — reconcile the fork families (programme Phase 0, plus the wiki family below) | **DONE 2026-08-22.** Programme Phase 0 confirmed rather than re-derived — fourteen of its sixteen files still one committed blob, `check_all.py` and `check_word_finding.py` per-repo permanently on Ben's decision of 2026-08-19. **Family 2 needed no design call**: on committed blobs **two** of the eight shared wiki module names differ, not four, and `mam_book_names.py` — the 230-line "real work" — is **one blob** and was one on 2026-08-02, the "230 lines" being 115 + 115 of whole-file diff caused by codex-index-aleppo's CRLF checkout. The two that do differ, `main_make_wikisource_page.py` and `write_wikitext_file.py`, are **two tools against two input formats**; Phase 3 names them. `hebrew_letters.py` and `my_utils.py` genuinely differed and `6ccd856` (leningrad, 2026-08-03) reconciled both with a black run. **The baselines are stale in eight places** and the inventory was right where this plan was wrong, for the second time in the programme. **Item 2's sweep finds two depth walks and the verdicts are opposite** — `flat_index.py` right in both repos but naming a file absent here, `page.py` right in codex-index-cam1753 and wrong here. **Item 3's wall is already up**: the four shared `check_*`/`fix_*` are two blobs, MAM-basics against the trio, and five top-level names are taken. **Item 4 landed** — `a171dd4` in codex-index-aleppo and `ef5525d` here, both copies byte-identical at md5 `f330012f28fdad782776c08ffbdb7b4b`; mgketer's third copy reported, MAM-private not written to. Two findings the phase turned up and did not fix: **`aleppo-wiki/main_make_wikisource_page.py` has been dead since 2026-03-28**, naming a directory `aleppo/` a rename removed, and **codex-index-aleppo's `check_word_finding.py` fails 160 of 160** comparing a `"1of2"` column identifier against the integer 1, since 2026-03-14. A third: **`codex-index-cam1753/check_line_breaks.py` writes CRLF** where codex-index-aleppo's copy writes LF, one missing `newline=""` — the programme Phase 0 defect in a seventh script, which dirties that repo's tree on any verification run. **Corrected 2026-08-22, after the first draft of this record**: the `parents[2]` question does **not** become live here. Only **three** copies of `mb_cmn/provenance.py` exist anywhere — MAM-basics, MAM-simple, MAM-private's `al-hatorah/` — all byte-identical and all with `parents[2]` resolving correctly; **none of the trio and not diffable-pointed-hebrew holds the file at all**, so there is nothing to re-vendor. And the fact that decides the question turned up with it: **walking to `.git` would regress al-hatorah**, a subtree of MAM-private rather than a repo, renaming three tracked breadcrumbs to the wrong tree — this step's own "a `.git` walk cannot find a subtree" lesson arriving at the file the question is about |
-| 1 — two roots, no cwd (per repo) | **not started.** Phase 0 hands it a working oracle for codex-index-leningrad's wiki half and none for codex-index-aleppo's; repoint that repo's four `aleppo/` literals first, so the rest of the phase has something to prove itself against. It also owns the one-argument `newline=""` fix in `codex-index-cam1753/check_line_breaks.py:654` |
+| 1 — two roots, no cwd (per repo) | **DONE 2026-08-22.** One commit per repo, none in MAM-basics beyond the record: **`ee09e67`** in codex-index-aleppo, **`eb7c83c`** in codex-index-leningrad, **`7e5ca23`** in codex-index-cam1753. **Thirteen root walks and nine cwd-relative literals become two paths modules** — `codex-index-aleppo/py/ac_paths.py` and `codex-index-cam1753/cam1753_paths.py` — **plus two named `_DATA_ROOT`s** in the two wiki entry points, which is four sites for Phase 3 to repoint rather than twenty-two. **The gating item landed and turned up a twin**: codex-index-aleppo's wiki generator runs again and its three artifacts are byte-identical, and so does `py/gen_index_flat_annotated.py`, **a SECOND generator dead since the same 2026-03-28 rename** and invisible to the prescribed grep because its dead path went through the vanished sibling repo `codex-index` rather than through a cwd-relative string. **The one-argument `newline=""` defect is in SEVEN sites in six scripts, all in codex-index-cam1753 and none in the other two**, three of them writing tracked files; the plan named one. **56 of the trio's 351 tracked artifacts have a generator and 295 do not**, so path-equality — import each module, assert every constant resolves where it did — is the second instrument, and all 36 repointed constants pass it; of the 56, **51 were regenerated and every one is byte-identical**, the other five being one crash Phase 0 already owns and four matplotlib renders. **A repo can have TWO `sys.path` roots**, which no earlier step met and which is why codex-index-aleppo needs both a paths module and a `_DATA_ROOT`. **`git status --porcelain` was wrong in the OTHER direction here**, four false positives where Phase 0 saw a false negative. **And the latent-CRLF claim is off by a repo**: measured whole-repo against HEAD blobs, codex-index-leningrad has **0** of 73 and codex-index-aleppo **152** of 222 |
 | 3 — copy the Python in (per repo, dual residency) | **not started** |
 | 4 — empty each repo | **not started** |
 | 6 — breadcrumbs and issue citations | **not started** |
@@ -686,7 +686,408 @@ wants rewording rather than deleting when the script itself goes.
 
 ---
 
-## Phase 1 — two roots, no cwd
+## Phase 1 — two roots, no cwd — the execution record — **DONE 2026-08-22**
+
+**One commit per repo and none in MAM-basics beyond this record.** `ee09e67` in
+codex-index-aleppo (21 files: 15 modified, 6 added), `eb7c83c` in codex-index-leningrad (4
+modified), `7e5ca23` in codex-index-cam1753 (9 modified, 1 added). The prescription this record
+answers is the section below it, left as written 2026-08-02.
+
+**The phase in one sentence: the trio's Python addressed its data through thirteen separate
+root walks and nine cwd-relative literals, and it now addresses it through two new paths
+modules and two named `_DATA_ROOT`s, with 51 of the 56 artifacts that have a generator
+regenerated and every one of the 51 byte-identical.** What it turned up beyond that is of three
+kinds: a **second** dead generator in codex-index-aleppo from the same 2026-03-28 rename, **six** more
+instances of the programme's missing-`newline=""` defect in codex-index-cam1753, and a standing
+claim about which repo carries the latent-CRLF condition that is off by a repo and by two orders
+of magnitude.
+
+### Preconditions — every one matched, and MAM-basics is four prose commits further on
+
+MAM-basics at **`60aabf5`**, not the `90487af` Phase 0's record names. The four commits between
+are that phase's own provenance corrections — `1e36d56`, `4682adf`, `6621db4`, `c3a6287`,
+`b594c72`, `f6e7ad2`, `60aabf5` — all prose in `doc/`, none touching anything this phase reads.
+Suite **945 passed, 5 skipped, 59 subtests** in 122s; `py\check_all.py` **7 of 7**, mark order
+over **298** files, escapes over **241** `.py`. codex-index-aleppo `a171dd4`,
+codex-index-leningrad `0904b16`, codex-index-cam1753 `f56831c`, all clean and pushed.
+codex-index-cam1753's `check_all.py` 4 of 4; codex-index-aleppo's exit 1 on the two pre-existing
+failures Phase 0 characterized, `check_word_finding.py` 160 of 160 on `col: found=1of2
+expected=1` and `check_line_breaks` on `ValueError: Unhandled tag <spi-invnun> in verse
+Ps.107.23`.
+
+**The `59 subtests` figure reproduced for the sixth measurement running.** book-of-job's Phase 1
+recommended dropping it, on a run that reported `947 passed, 5 skipped` with no subtests line;
+that recommendation should be dropped rather than the figure. It has reproduced at every
+measurement since.
+
+Baselines after the phase, for Phase 3 to check against:
+
+| | codex-index-aleppo | codex-index-leningrad | codex-index-cam1753 |
+|---|---|---|---|
+| HEAD | **`ee09e67`** | **`eb7c83c`** | **`7e5ca23`** |
+| tracked `.py` | **50** *(was 44)* | 21 *(unchanged)* | **23** *(was 22)* |
+| lines of `.py` | **8,584** *(was 8,284)* | **2,572** *(was 2,524)* | **5,579** *(was 5,443)* |
+| tracked total | **228** *(was 222)* | 73 *(unchanged)* | **177** *(was 176)* |
+
+codex-index-aleppo's six new files are `py/ac_paths.py` and five `py/main_*.py`;
+codex-index-cam1753's one is `cam1753_paths.py`.
+
+### The gating item: codex-index-aleppo's wiki generator, and a SECOND dead generator beside it
+
+The four `"aleppo/..."` literals in `aleppo-wiki/main_make_wikisource_page.py` are repointed and
+**all three of its artifacts came back BYTE-IDENTICAL** against `git cat-file blob HEAD:`.
+Five months dead, and no output drift at all: the code that could not run was still the code
+that made the committed files.
+
+**Then the same fossil turned up a second time, in a different shape, and the plan did not know
+about it.** `py/gen_index_flat_annotated.py:43` read
+`DEFAULT_INPUT = ROOT.parent / "codex-index" / "aleppo" / "index-flat-corrected.json"` — the same
+2026-03-28 rename, `9025037`, reached through the **vanished sibling repo** `codex-index` rather
+than through a cwd-relative string. So it was invisible to the prescribed grep twice over: no
+leading quote, and the directory name it carries is `codex-index`, which is in nobody's list of
+this repo's artifact directories. It is repointed to `aleppo-wiki/index-flat-corrected.json`, it
+runs, and **`index-flat-annotated.json` came back BYTE-IDENTICAL too**.
+
+**Two dead generators, one rename, and only one of them was findable by reading a plan.** The
+transferable part is that a rename fossil survives in as many spellings as the code has ways to
+name a directory: a cwd-relative literal, a `Path(__file__)` walk out of the repo and back in,
+and a docstring. `gen_index_flat_annotated.py` had all three at once — and its **`DEFAULT_OUTPUT`
+was already right**, so its Usage block was simultaneously wrong about a live path and right
+about a dead one. **Grep for the OLD directory name, not only for the current ones.**
+
+### The grep undercounted, and this time by one in each direction
+
+Re-run per repo at the pre-phase heads, the prescribed grep widened with each repo's own artifact
+directory names returns 18 hits in codex-index-aleppo, 5 in codex-index-leningrad and 20 in
+codex-index-cam1753. Against the 30 sites actually changed:
+
+- **It misses `gen_index_flat_annotated.py:43`** outright, for the two reasons above.
+- **It misses nothing else**, once widened with the per-repo directory names as the task
+  prescribed. The narrow form in the plan as written — six directory names, none of them
+  `cam1753-*`, `aleppo*`, `ds-flat-stream/`, `index-*` or `plot_col_coords-out` — finds **two**
+  hits in codex-index-cam1753 against the twenty the widened form finds.
+- **Nine of its hits are false positives**, and they fall into four kinds rather than
+  book-of-job's one:
+  - `py/tests/test_h_dot_below_nfc.py`'s seven `_EXCLUDE_DIR_PREFIXES` in codex-index-aleppo and
+    one in codex-index-leningrad, plus `_EXCLUDE_FILES`' `index-flat-annotated.json` — matched
+    with `str.startswith` against a path `_iter_files` has already produced. book-of-job's Phase 1
+    met exactly this and left it; so did this one, and a comment now says so in both copies.
+  - `gen_col_quad_editor.py:234` (codex-index-aleppo) and `:140` (codex-index-cam1753) — a
+    `source_note` **displayed in the editor's HTML**, telling the user which file the defaults came
+    from. A near-miss for the `src`-attribute case the prescription already names, and a
+    different one: not a URL, just prose that looks like a path.
+  - `gutter_profile.py:40` and `split_cam1753_spreads.py:58` — `fname.replace("cam1753-page-",
+    "")`, filename string surgery.
+  - `download_cam1753_spreads.py:23` — `os.path.join(OUT_DIR, f"cam1753-page-{page:04d}.jpg")`,
+    a leaf name joined to an already-absolute root.
+
+**So book-of-job's "read what a hit does before counting it an offender" holds, and the reason to
+read has broadened.** There, two of seven hits were exclusion prefixes. Here nine of 43 are false
+positives and only four of the nine are that same kind.
+
+### What each repo's Phase 1 actually was, and the three shapes are quite different
+
+**codex-index-aleppo — conflation only, no cwd-relativity under `py/` at all.** Every one of that
+tree's twelve data-addressing modules was already `Path(__file__)`-rooted; what they lacked was
+any statement of which root they meant. `py/ac_paths.py` now holds twelve accessors, and thirteen
+constants across nine modules read from it. The only cwd-relative literals this repo had were the
+four in `aleppo-wiki/` and the uncalled `mam_book_path`.
+
+**codex-index-leningrad — four literals and nothing else.** No paths module: there is one entry
+point with four paths in it, and `main_update_vendored_files.py` was already `_REPO`-rooted with
+its one `Path("in/UXLC")` a relative subpath inside `_SPARSE_ROOT` rather than a cwd-relative
+path. The four are now spelled off `_REPO_ROOT` and `_WIKI_DIR`.
+
+**codex-index-cam1753 — the conflation at its strongest, plus five bare literals.** The Python
+sits AT the repo root beside the data, so `Path(__file__).resolve().parent` was code root and data
+root in the same expression in nine modules — the shape `boj_paths.py`'s docstring calls "one
+expression standing for two roots", here not in one function but repo-wide.
+`gutter_profile.py` and `split_cam1753_spreads.py` went further and were cwd-relative outright,
+five bare strings between them, both module-level scripts with no `main()` so the paths resolved
+at import.
+
+### The two paths modules, and why neither vendors `mb_cmn/paths.py`
+
+book-of-job's Phase 1 asked which of three answers a repo takes — inherit `paths.py`, vendor it,
+or do neither — and said to check the depth of the vendored `mb_cmn/` per repo. Measured here:
+**neither codex-index-aleppo's `py/mb_cmn/` (4 files) nor codex-index-cam1753's `mb_cmn/` (3)
+holds `paths.py`, and codex-index-leningrad has no `mb_cmn/` at all.** Vendoring it in would
+also import the wrong root into codex-index-cam1753, whose `mb_cmn/` sits at the repo root where
+`parents[2]` lands on `GitRepos` — book-of-job's situation exactly. So both new modules compute
+their own root from `__file__`, as `boj_paths.py` did before its move, and **both become a
+`paths.sibling_repo(...)` call at Phase 3**, which is the one line each that changes.
+
+`ac_paths.CODE_DIR` and `cam1753_paths.CODE_DIR` are spelled off `__file__` rather than off the
+data root, for the reason `boj_paths.code_dir()` gives: they must stay right when the code moves
+out from under the data.
+
+**No `code_paths()` list in either, and that is deliberate.** book-of-job needed one because its
+four source lints had to be told what to lint once the code shared a root with all of MAM-basics.
+Here the lints still walk to `.git` and still find only this code, so the list would be
+premature; Phase 3 is where it becomes necessary, and Phase 0's record already says so.
+
+### A repo can have TWO sys.path roots, which no earlier step in this programme met
+
+codex-index-aleppo is entered two ways — `python py/main_*.py`, which puts `py/` on
+`sys.path[0]`, and `python aleppo-wiki/main_make_wikisource_page.py`, which puts `aleppo-wiki/`
+there. **A module in one is not importable from the other**, and closing that with a `sys.path`
+line is banned. So `ac_paths` serves `py/` and the wiki entry point names its own `_DATA_ROOT`.
+codex-index-leningrad has the same split for the same reason.
+
+That is not a defect and it does not survive the move: at Phase 3 both trees land under
+MAM-basics' `py/` and share one root, at which point the wiki pipelines can take an accessor
+like everything else. It is recorded because the obvious tidy — one paths module per repo — is
+**not available** in two of these three repos, and a session that assumes it is will reach for
+`sys.path`.
+
+### Five entry-point wrappers, because `ac_paths` is only importable from `py/`
+
+Three of codex-index-aleppo's nine `py_ac_loc/` modules already had a `py/main_*.py` wrapper, and
+the reason was not documented anywhere: those three import a sibling as `py_ac_loc.<name>`, so
+`python py/py_ac_loc/gen_lb_flat_stream.py` had already been dead for however long — verified by
+running all three, each `ModuleNotFoundError: No module named 'py_ac_loc'`. **`doc/aleppo-line-breaks.md:110`
+documents one of those three as a direct invocation and has been wrong ever since.**
+
+Giving the other five modules `ac_paths` would have taken away a command line each, so they get
+the same wrapper the first three have: `main_gen_col_quad_editor.py`,
+`main_gen_line_break_editor.py`, `main_kraken_seg_baselines.py`, `main_merge_line_markers.py`,
+`main_plot_col_coords.py`. **This is applying a standing rule rather than inventing one** —
+`~/.claude/CLAUDE.md`'s "a library module is not independently runnable ... a `py/main_<x>.py` at
+the top of `py/` adds it as a subcommand" — and the naming is mechanical, `main_` plus the module
+stem, matching the three that existed. Phase 3 may rename any of them freely; a wrapper is three
+lines.
+
+codex-index-cam1753 needed none of this: its Python is at the repo root, so `cam1753_paths` is
+importable from every module without a wrapper.
+
+### The missing `newline=""` is in SIX more sites, all in codex-index-cam1753, and three write tracked files
+
+The plan handed this phase one instance, `check_line_breaks.py:654`. Grepping every text write in
+all three repos for a missing `newline=` found **seven sites in six scripts, every one in
+codex-index-cam1753 and not one in codex-index-aleppo or codex-index-leningrad**. All seven are
+fixed.
+
+| Site | Writes | Fired? |
+|---|---|---|
+| `check_line_breaks.py:653` | `check_line_breaks.html`, tracked | yes — Phase 0 caught it |
+| `split_cam1753_spreads.py:131` | `cam1753-spread-splits-doc/*.json`, 14 tracked | **yes — caught here by running it** |
+| `split_cam1753_spreads.py:142` | `cam1753-spread-splits-doc/_all-splits.json`, tracked | **yes** |
+| `gen_cam1753_flat_stream.py:352` | `cam1753-line-breaks/*.json`, 27 tracked | **latent** |
+| `gen_cam1753_line_break_editor.py:176` | `.novc/`, gitignored | harmless |
+| `gen_col_quad_editor.py:674` | `.novc/`, gitignored | harmless |
+| `main_find_word_in_cam1753_images.py:212` | `.novc/`, gitignored | harmless |
+
+**codex-index-aleppo's counterpart of every one of those seven already had the argument** —
+including the two that write only into `.novc/`. So this is a per-repo split rather than a
+scattering, and closing it whole is what stops the next reader finding three of seven still open.
+
+**The `gen_cam1753_flat_stream.py` one is latent for a reason worth stating, because it is how a
+defect hides in plain sight.** Its 27 output files are LF on disk today, so nothing looks wrong;
+they are LF because the line-break workflow is human-in-the-loop and each file arrives as a
+**browser download** that the editor produces and a human moves into place, not from this writer.
+The writer runs only when a page is generated fresh. So the check that would have caught it —
+"is the tracked output CRLF?" — answers no, and answers no about a file this code did not write.
+
+**And the two that fired were found by running the code from a foreign working directory,
+which is the whole method.** Verifying `split_cam1753_spreads.py`'s repoint meant running it, and
+running it is what produced 15 line-ending-only verdicts that no amount of reading would have
+produced.
+
+### The oracles, per repo, and what has none
+
+**codex-index-aleppo — 4 artifacts, all BYTE-IDENTICAL**: `aleppo-wiki/index-flat.json`,
+`index-grouped-by-book.json`, `index.wiki` from the revived wiki generator, and
+`index-flat-annotated.json` from the revived annotator.
+
+**codex-index-leningrad — 3 artifacts, all BYTE-IDENTICAL**: `lenin-wiki/index-s0-annotated.json`,
+`index-s2-grouped-by-book.json`, `index.wiki`, mtimes bumped and checked.
+
+**codex-index-cam1753 — 45 artifacts, 44 BYTE-IDENTICAL and one excluded with cause.** A full run
+of `split_cam1753_spreads.py` rewrote all 28 `cam1753-pages/*.jpg` and all 15
+`cam1753-spread-splits-doc/*.json`; the 15 were **line-ending-only before the `newline=""` fix and
+byte-identical after it**, so one run proved the repoint and the fix together. A run of
+`check_all.py` — 4 of 4 — now leaves `check_line_breaks.html` byte-identical where before it left
+the tree dirty, which closes Phase 0's finding by demonstration.
+
+**`cam1753-gutter-profiles.png` is not an oracle and was restored rather than committed.**
+`gutter_profile.py` re-renders it **run-to-run byte-identical** under matplotlib 3.11.1 and
+**1,541 bytes larger** than the tracked copy (650,806 against 649,265). So its bytes track the
+matplotlib version, not the code, and the path-equality proof below covers what the phase actually
+changed. Committing a 650 KB re-render inside a paths commit would be the ride-along the black
+section of `~/.claude/CLAUDE.md` forbids for the same reason. **Ben's call whether to re-render
+it deliberately, in its own commit.**
+
+**What has no oracle at all, in any of the three, and why.** `ds-flat-stream/` (8),
+`line-breaks/` (35 aleppo, 27 cam1753) and `column-coordinates/` / `cam1753-col-quads/` (35, 28):
+the flat-stream generators take **explicit per-page verse ranges** as arguments and those
+arguments are recorded nowhere, and the line-break and quad files are the human-in-the-loop
+editors' output. `aleppo-pages/` (37) and `cam1753-spreads/` (14) are downloaded scans.
+`MAM-XML/` (24 in each of two repos) is a vendored snapshot. `gh-pages/` (4) is hand-authored.
+**Counted rather than estimated**, by listing each artifact tree and loose data file per repo
+and asking of each whether a program in that repo writes it: **351 tracked artifacts across the
+three, of which 56 have a generator and 295 have none** — 162 artifacts in codex-index-aleppo
+with 8 generated, 47 in codex-index-leningrad with 3, and 142 in codex-index-cam1753 with 45.
+That is the same split book-of-job's Phase 0 found, 518 against 183, and it is the reason an
+empty `git status` proves nothing here.
+
+**Of the 56, this phase regenerated 51 and proved every one byte-identical.** The five it did
+not are named rather than glossed: codex-index-aleppo's `check_line_breaks.html`, whose
+generator crashes on `<spi-invnun>` before it writes, which is Phase 0's pre-existing failure
+and not this phase's; and four matplotlib renders — codex-index-aleppo's three
+`plot_col_coords-out/` PNGs, not run, and codex-index-cam1753's `cam1753-gutter-profiles.png`,
+run and restored for the reason the `cam1753-gutter-profiles.png` paragraph above gives.
+
+### Path-equality is the proof that covers what regeneration cannot
+
+For the artifacts with no generator there is a second instrument, and it is stronger than a diff
+because it does not depend on anything being rewritten: **import each module and assert that every
+repointed constant is the same absolute path it was before.** Thirty-six constants were checked
+this way, 19 in codex-index-aleppo and 17 in codex-index-cam1753, against the pre-change
+expressions read off the HEAD blobs. **All 36 resolve identically**, and the one path that moved
+moved on purpose: `gen_index_flat_annotated.DEFAULT_INPUT`, from a directory that does not exist
+to one that does.
+
+The cam1753 half of that check was run **from `C:\Users\BenDe\AppData\Local\Temp`**, which is what
+makes it a test of the cwd-relative sites rather than a restatement of them: before this phase
+`gutter_profile.IMG_DIR` was the string `"cam1753-spreads"` and `split_cam1753_spreads.OUT_DIR`
+the string `"cam1753-pages"`, and from that directory the first would have raised and the second
+would have written 28 JPEGs into the system temp directory.
+
+**Recommend this to Phase 3.** A move changes exactly these expressions, and a phase whose only
+evidence is regenerated output can say nothing about the 190 artifacts nothing regenerates.
+
+### `git status --porcelain` is wrong here in the OTHER direction, which is a fourth demonstration
+
+Phase 0 recorded it reporting a **false negative** — a tree that looked clean while
+`check_line_breaks.html` sat CRLF. Here it produced **false positives**: after the wiki generator
+ran, `git status --porcelain` listed `index-flat.json`, `index-grouped-by-book.json`, `index.wiki`
+and `index-flat-annotated.json` as modified while `git diff` was empty and
+`git hash-object` on each equalled `git rev-parse HEAD:<path>` exactly. The cause is the
+stat cache: the working copies had been **CRLF on disk against an LF blob**, the regeneration
+wrote LF, the size changed, and git flagged the size change before re-hashing settled it. A
+`git add` of the four paths — which staged nothing, `git diff --cached --stat` empty — cleared it.
+
+**So the instrument rule needs stating as a positive, not only as a prohibition.** The three
+verdicts come from comparing bytes against `git cat-file blob HEAD:<path>`; `git status` is a
+report about the index's opinion of the filesystem and can be wrong about content in both
+directions.
+
+### The latent-CRLF condition is codex-index-aleppo's, and codex-index-leningrad has none
+
+Every tracked file in all three repos was compared against its HEAD blob, which is a
+measurement no phase of this programme had taken for a whole repo before:
+
+| Repo | tracked | byte-identical | line-ending-only | genuinely different |
+|---|---|---|---|---|
+| codex-index-aleppo | 222 | 55 | **152** | 15 (all files this phase edited) |
+| codex-index-leningrad | 73 | 69 | **0** | 4 (all files this phase edited) |
+| codex-index-cam1753 | 176 | 166 | **1** | 9 (all files this phase edited) |
+
+**Not one tracked artifact is genuinely different in any of the three**, which is the phase's
+verification in one line.
+
+And the standing claim is wrong in the direction that matters. This phase's own task prompt says
+"codex-index-leningrad is one of the three repos known to carry the latent-CRLF condition", and
+Phase 0's verification section repeats it. **codex-index-leningrad carries it in zero files of
+73.** codex-index-aleppo carries it in **152 of 222** — two thirds of the repo, including all 24
+`MAM-XML/`, all 35 `line-breaks/`, all 35 `column-coordinates/`, `CLAUDE.md`, `README.md` and
+every `.py` of `aleppo-wiki/`. `doc/review-findings-2026-08-03.md`'s item 14 had codex-index-aleppo
+right and the trio plan's Phase 0 had leningrad's `lenin-wiki/*.py` measured as LF; what nobody
+did was put the two together. **This is the "a list of repos is a measurement" lesson from Phase 0's
+own record, recurring at the very next phase and about the very same trio** — a sentence naming
+which repos have a property gets quoted rather than re-run.
+
+The condition is harmless while `* text=auto eol=lf` holds, which it does in all three; it matters
+only as the thing that makes `cmp` and `git status` lie, and the byte-against-blob comparison is
+immune to it.
+
+### Two dead functions left in place, and the reason is that there is nowhere to point them
+
+The plan's first named offender, `aleppo-wiki/py/mam_book_names.py:114`'s
+`f"in/mam-ws/{basename}.json"`, is **uncalled** — `git grep mam_book_path` in both repos finds the
+definition and the docstring and no call site — and **`in/mam-ws/` is in neither codex-index repo**;
+it is MAM-basics'. codex-index-leningrad has a second of the same shape,
+`mam_book_names_and_std_book_names.wikisource_book_path_fr_bk39id:30`.
+
+Repointing either would mean inventing a data root for a directory that is not there. Both are
+left with a docstring note saying they are dead and why, on book-of-job's Phase 1 precedent, and
+Phase 3 deletes both modules outright when the code imports MAM-basics' `mb_cmn/mam_bknas.py`
+directly. **`mam_book_names.py` is ONE COMMITTED BLOB across the two repos and the identical note
+went into both**, so it is still one blob — checked by md5 after the edit.
+
+The MAM-basics counterpart is the interesting half: `mb_cmn/mam_bknas_and_std_bknas.py:30` takes
+the directory as a **parameter** and composes `f"{path}/{osdf}.json"`. So the fork is that the
+wiki copies hardcoded what MAM-basics parameterized, and the hardcoded version then went unused.
+
+### Three shared blobs untouched, exactly as Phase 0 ruled
+
+`py_ac_word_image_helper/codex_page.py` and `flat_index.py` in codex-index-aleppo and
+`py_cam1753_word_image/page.py` in codex-index-cam1753 compose data paths off roots of their own
+and were left alone. **All ten files of the two packages re-verified as one committed blob with
+MAM-basics' copies** before the phase started. Both new paths modules' docstrings name these three
+and say why they are excluded, so the exclusion is discoverable from the code rather than only
+from this plan.
+
+### Findings reported and not fixed
+
+- **`py/gen_permission_glob.py:8` in codex-index-aleppo cites `../masorah-books/.claude/test_globs.py`.**
+  That tree moved into MAM-private on 2026-08-10 and the path wants `../MAM-private/masorah-books/`.
+  Ben's decision of 2026-08-10, recorded in MAM-basics' `CLAUDE.md`, was to leave the eight such
+  spellings in `py/accgram/` and cover them with a sentence rather than edit them; this is a ninth
+  of the same kind, in a different repo, and is left on the same terms. **Phase 6's**, if anyone's.
+- **`doc/aleppo-line-breaks.md` in codex-index-aleppo is stale in two ways.** Line 110 gives
+  `python py/py_ac_loc/gen_lb_flat_stream.py 270v`, which has not worked since that module gained
+  an intra-repo import; lines 30 and 113 say the line-break data lives in
+  `py/py_ac_loc/line-breaks/`, where it has never lived — it is at the repo root.
+  `doc/ocr-with-kraken.md:137,140` give a direct invocation of `kraken_seg_baselines.py` under a
+  WSL kraken interpreter, which the new wrapper supersedes. Left because a doc edit riding along
+  on a paths commit is the ride-along this programme keeps warning about, and because the WSL
+  command cannot be tested here — **kraken is still absent from that repo's venv**, so
+  `main_kraken_seg_baselines` is the one entry point of the eleven that does not import.
+- **`py/main_find_word_in_aleppo_images.py:34` rebinds `sys.stdout` at module scope**, with
+  `io.TextIOWrapper(sys.stdout.buffer, ...)`, where `~/.claude/CLAUDE.md` calls for
+  `sys.stdout.reconfigure(encoding="utf-8")` as the first lines of `main()`. It discards whatever
+  was buffered on the original stream, which is how it silently ate a line of an import check run
+  here. Not a path defect; not this phase's.
+- **`py/download_aleppo_pages.py` and codex-index-cam1753's `gutter_profile.py` and
+  `split_cam1753_spreads.py` do their whole job at IMPORT**, having no `main()` and no
+  `if __name__` guard. `download_aleppo_pages` also calls `os.makedirs` at module scope. Importing
+  any of the three runs it. Worth knowing before Phase 3 imports anything to inspect it.
+- **`cam1753-page-index.json` (tracked, at codex-index-cam1753's root) is read by no program** —
+  only cited in `page-snips/README.md` and `things-noticed-in-cam1753.md`. Named in
+  `cam1753_paths.py`'s docstring so Phase 4's inventory of artifacts with no generator does not
+  have to re-derive it.
+- **`main_update_vendored_files.py` in codex-index-leningrad was not run.** It refreshes
+  `UXLC-utils-sparse/` from the sibling UXLC-utils and is unaffected by anything here; running it
+  would have written tracked files for reasons that are not this phase's.
+
+### What Phase 3 now owes, beyond what Phase 0 already told it
+
+1. **Two paths modules, two `_DATA_ROOT`s, one line each.** `ac_paths.ac_data_root()`,
+   `cam1753_paths.cam1753_data_root()`, `aleppo-wiki/main_make_wikisource_page.py`'s `_DATA_ROOT`
+   and `lenin-wiki/main_make_wikisource_page.py`'s `_REPO_ROOT`/`_WIKI_DIR` are the whole surface
+   the move has to repoint. Everything else composes off one of the four.
+2. **The two-sys.path-root split dissolves at the move, and the two wiki pipelines should take an
+   accessor then.** Do not carry `_DATA_ROOT` into MAM-basics as a fourth spelling of the same
+   idea.
+3. **Five new `py/main_*.py` in codex-index-aleppo, eight in total for `py_ac_loc/`.** They are
+   free to rename and they collide with nothing: cam1753's counterparts carry no `main_` prefix.
+4. **`ac_paths.py` and `cam1753_paths.py` collide with nothing at MAM-basics' `py/` top level**
+   — checked against its 74 top-level modules. The five collisions Phase 0 named are unchanged.
+5. **`code_paths()` becomes necessary at the move and does not exist yet**, in either module, for
+   the reason Phase 0 gives: the four source lints walk to `.git` today and that stops being the
+   right scope the moment the code shares a root with MAM-basics.
+6. **Import-and-compare-absolute-paths is the verification for the 190 artifacts nothing
+   regenerates.** The throwaway shape used here is: import each module, read each constant, assert
+   it equals the pre-move expression.
+
+---
+
+## Phase 1 — two roots, no cwd — the prescription, left as written 2026-08-02
+
+**The execution record above answers this.** Its two named offenders both turned out to be things
+to leave rather than fix, and the grep it prescribes misses the one genuinely dead path in the
+trio.
 
 Per repo, and each proved by regenerating that repo's own artifacts to a zero diff before anything
 moves.
