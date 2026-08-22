@@ -13,7 +13,7 @@ three times and risk answering it three different ways.
 | 1 — two roots, no cwd (per repo) | **DONE 2026-08-22.** One commit per repo and one here: **`ee09e67`** in codex-index-aleppo, **`eb7c83c`** in codex-index-leningrad, **`7e5ca23`** in codex-index-cam1753, and **`72a4629`** here carrying this record and nothing else. **Nineteen root walks and thirteen cwd-relative literals become two paths modules** — `codex-index-aleppo/py/ac_paths.py` and `codex-index-cam1753/cam1753_paths.py` — **plus two named `_DATA_ROOT`s** in the two wiki entry points, which is four sites for Phase 3 to repoint rather than thirty-two. **The gating item landed and turned up a twin**: codex-index-aleppo's wiki generator runs again and its three artifacts are byte-identical, and so does `py/gen_index_flat_annotated.py`, **a SECOND generator dead since the same 2026-03-28 rename** and invisible to the prescribed grep because its dead path went through the vanished sibling repo `codex-index` rather than through a cwd-relative string. **The one-argument `newline=""` defect is in SEVEN sites in six scripts, all in codex-index-cam1753 and none in the other two**, three of them writing tracked files; the plan named one. **56 of the trio's 351 tracked artifacts have a generator and 295 do not**, so path-equality — import each module, assert every constant resolves where it did — is the second instrument, and all 36 repointed constants pass it; of the 56, **51 were regenerated and every one is byte-identical**, the other five being one crash Phase 0 already owns and four matplotlib renders. **A repo can have TWO `sys.path` roots**, which no earlier step met and which is why codex-index-aleppo needs both a paths module and a `_DATA_ROOT`. **`git status --porcelain` was wrong in the OTHER direction here**, four false positives where Phase 0 saw a false negative. **And the latent-CRLF claim is off by a repo**: measured whole-repo against HEAD blobs, codex-index-leningrad has **0** of 73 and codex-index-aleppo **152** of 222 |
 | 3 — copy the Python in (per repo, dual residency) | **ALL THREE DONE 2026-08-22.** **codex-index-cam1753, 23 tracked `.py`, is twelve deletions and eleven arrivals**, and the twelfth deletion is the one the prescription got wrong: it lists `py_mam_xml/` as an arrival to "check against MAM-basics' `mb_xml`", a package that shares no function with it, where the real counterpart is `py_ac_loc/mam_xml_verses.py` — **one tool with 43 lines of drift**, which had moved here the day before. **A tag census over the three books both read finds exactly ONE tag treated differently**: `spi-invnun`, 7 occurrences, all in Ps.xml, the inverted nuns of Psalm 107 that `mb_sefaria/mam4ajf_handlers.py` has always counted at seven. codex-index-aleppo's copy **raises** on it and codex-index-cam1753's **silently skips** it, and since `check_cam1753_all` reaches the reader through `check_line_breaks` → `gen_flat_stream`, importing the unfixed shared copy would have taken that repo's 4 of 4 to a crash. **Ben's decision on a measurement rather than an argument: add the one missing skip clause and share one reader** (`b37bdb4`), proved by loading both readers side by side — **4512 verses, 30322 words, 0 mismatches**. Un-masking `check_ac_all`'s crash rewrote a **fossil** report covering 1 page of 35 (`a50f40e` there, 2 issues → 93, 4,771 → 18,377 bytes), of which **70 of the 93 are one known cause**, the N-of-M column migration that also fails `check_ac_word_finding` 160 of 160; the new signal is six pages, including a five-word MAM-XML alignment mismatch on 004r. **The eight runnable modules land as `py_cam1753_loc/` with the `cam1753` infix dropped**, which is what makes `main_cam1753_` plus the stem a rule rather than a list, and **four of the eight now share a module name with their `py_ac_loc` counterpart exactly** — the payoff codex-index-aleppo's phase predicted when it prefixed all fifteen of its own. **Three module-level scripts where Phase 1 named two**, the third being `download_cam1753_spreads.py`, which did `os.makedirs` and fourteen network reads at import — codex-index-aleppo's `download_aleppo_pages.py` exactly, one repo later. `page.py`'s `parent.parent` is repaired, closing Phase 0's pair of opposite verdicts and fixing book-of-job's `main_gen_cam1753_crop_editor.py` as `codex_page.py`'s repair fixed its aleppo twin. Lints widen to **510 files / 297 `.py`** and all still pass, 7 of 7. **The NFC test gains a SEVENTH scope, and it is the one EXPANSION among the seven** — that repo never had a copy of this test, so nothing obliged the entry; it is there because after Phase 4 nothing would otherwise read its hand-authored Hebrew, and because it passed on the first run. **Two contrasts with codex-index-aleppo, both absences**: not one of the 23 copied files was CRLF, and no module rebinds `sys.stdout`. Oracle **44 of 44 byte-identical** in both residencies (the 45th, `cam1753-gutter-profiles.png`, tracks the matplotlib version and is not one), path-equality **11 of 11**, import smoke **23 of 23**. **codex-index-aleppo, 50 tracked `.py`, is twenty-one deletions and twenty-nine arrivals** — the largest single thing that phase settled being that **the four source lints are deletions**, this repo already holding them, where Phase 0's Item 3 had invited a rename. Names are mechanical: `main_ac_` or `check_ac_` plus the module stem, applied to all fifteen top-level modules and not only the five that collided, because codex-index-cam1753 holds a counterpart of six of them. **All four artifacts byte-identical on the first run** from MAM-basics and from a foreign cwd, one of them proving a private-to-public symbol rewrite in `mam_bknas` that no static check could. **`py/repo_scopes.py` is new** and is what that phase actually owed: the four lints now union the per-repo `code_paths()` lists, taking mark order from 298 files to **419** and the escape check from 241 `.py` to **278**, with book-of-job's `check_all.py` still 7 of 7 — a restoration that imported no violations. `check_function_ordering` was deliberately left un-widened. **`codex_page.py` and `flat_index.py` are repaired at last**, and repairing the first fixes `main_gen_aleppo_crop_editor.py`, book-of-job's tool, broken in this repo since 2026-08-19. **Three module-level side effects**, one of them destructive: `main_ac_find_word_in_images.py` replaced `sys.stdout` at import and so swallowed output any importer had already printed. matplotlib was missing from this repo's venv, exactly as book-of-job's Phase 3 warned; kraken is missing too and deliberately stays so, codex-index-aleppo's own venv never having had it. The NFC test gains a **sixth** scope and a second extension from a dropped copy, `.xlsx`; ten copied files were CRLF and were normalized on arrival. Both pre-existing failures reproduce exactly — `check_word_finding` 0 of 160, `check_line_breaks` still raising on `<spi-invnun>` |
 | 3 — the codex-index-leningrad half, kept for its own findings | The smallest of the three went first: **six own modules land as `py/lenin_wiki/`, eleven vendored copies dissolve**, and the two entry points become `py/main_lenin_wikisource_page.py` and `py/main_lenin_vendor_uxlc.py` beside a new `py/lenin_paths.py`. **The oracle passed on the first run from MAM-basics and from a foreign cwd** — all three tracked artifacts byte-identical, in both residencies. **Phase 0's table has the `vtrad_helpers.py` fork backwards**: codex-index-leningrad holds the `CvveType` Enum and MAM-basics the `CVVE_TYPE_*` integers, not the other way about, and this repo's shape was taken. **The collision table's "disappears" cost a live tool nearly being binned**: `main_update_vendored_files.py` still refreshes `UXLC-utils-sparse/`, whose `lci_augrecs.json` is the pipeline's only input, so it was renamed rather than dropped — and its `vendoring_sync.py` fork, two lines naming `provenance.md` against `_provenance.md`, dissolved into a `basename` parameter of `mb_cmn/vendoring_sync.py`. **That sparse copy is 19 days stale** and was deliberately left so, refreshing it being a regeneration of the three artifacts rather than a data update; the two runs that proved it stale were the check on the port and were reverted. **The four source lints still scope to book-of-job alone**, a gap stated rather than closed, because the union over per-repo lists wants building where the lint copies arrive. The NFC test gains a **fifth** scope, 30 files now and 9 after Phase 4 |
-| 4 — empty each repo | **codex-index-leningrad and codex-index-aleppo DONE 2026-08-22** (`824910e` and `078b74d` there); codex-index-cam1753 not started. **codex-index-aleppo is 50 deletions and 5 rewrites**, 228 tracked files → 178, and every one of the 50 is Python — no twenty-second file rode along as codex-index-leningrad's `.vscode/launch.json` did, that repo having none. **The doc repointing is 26 sites in four files where the plan named one**, and **three of the 26 were wrong before this programme began**: line 110's direct invocation, dead since that module gained an intra-repo import, plus a folder-layout block and an OCR doc that between them put `line-breaks/`, `codex-index/`, `MAM-simple/` and `column-coordinates/` under a `py/py_ac_loc/` **none of them has ever been in** — kept as ✗ rows rather than deleted, so a reader who remembers the old shape stops looking. **The artifact classification came out at exactly the predicted 154 of 162**, but only by counting the 16 pieces of repo furniture and subtracting: the plan's own list of trees adds to 136, and `ds-flat-stream/` is the entry that looks regenerable and is not, its generator's per-page verse ranges being recorded nowhere. **A second repo's figure was wrong and this phase's own measurement found it** — codex-index-leningrad's `CLAUDE.md` said "Nine files are in scope" where its Phase 4 had measured 8 and corrected MAM-basics' copy but not its own prose (`2abd7f6` there); **what found it was printing all six NFC scope counts rather than the one this phase needed**. **A sigil disagreement book-of-job's Phase 4 had already settled once**: `README.md` called the Cambridge manuscript μC where the code and site say μY, 57 to 0, and **codex-index-cam1753's own README still does**. `pages.yml` was read rather than assumed and **runs no Python at all**, so the one thing distinguishing this repo from book-of-job does not bear on `requirements.txt`. **Ben lifted this phase's gate the same day**: run Phase 4 for a repo as soon as its Phase 3 is green, rather than asking first. 22 files deleted in codex-index-leningrad, all 21 tracked `.py` plus `.vscode/launch.json`, whose two debugpy configurations named one program the move took and one this repo never had. `README.md` and `CLAUDE.md` rewritten for a repo that is staying. The three `lenin-wiki/` artifacts are byte-identical after a pipeline run made AFTER the deletion, which is the order that proves the deletion took nothing the move needed. NFC scope **8**, not the 9 Phase 3 predicted — the ninth was the deleted `launch.json` |
+| 4 — empty each repo | **ALL THREE DONE 2026-08-22** — `824910e` in codex-index-leningrad, `078b74d` in codex-index-aleppo, `a9c3abd` in codex-index-cam1753, **so all three of the trio hold zero `.py`** and with book-of-job, holman-ketiv-qere and UXLC-utils before them, so do all six repos this programme set out to evacuate. **codex-index-cam1753 is 25 deletions and 5 rewrites**, 177 tracked files → 152, and **Ben settled both of the two beyond the Python**: `requirements.txt` (his codex-index-aleppo answer taken as settling it, that repo having no Pages workflow to distinguish it) and `codex-index-cam1753.code-workspace`, **asked as ONE question covering both repos' workspace files** since each declared a three-folder view of the same cluster from its own vantage point and book-of-job's had already gone — delete both, so nothing opens those three repos together now. **The prose sweep had to go by module BASENAME**, this repo's Python having sat at its root: 26 sites in five files, and the one worth carrying is a code citation inside a tracked **data** file, `cam1753-page-index.json`'s comment naming `download_cam1753_spreads.py` where no path-shaped grep would ever look — **sweep tracked data for module names, not only tracked prose**. `doc/cam1753-line-break-task.md` spells its four commands with **backslashes**, book-of-job's Phase 4 finding recurring in the sibling repo about the same manuscript. **The artifact classification reproduces Phase 1 to the file** — 10 paperwork, 142 artifacts, 45 generated, 97 not — but only 44 of the 45 regenerably, the forty-fifth tracking the matplotlib version. **The NFC scope came out at 14 against a prediction of 16**, the gap being Ben's own two deletions. Oracle **44 of 44 byte-identical after the deletion**, `check_cam1753_all.py` 4 of 4 with word finding 160 of 160, `py/check_all.py` 7 of 7 over 510 files and 297 `.py`. **A second session was live in MAM-basics throughout and did not collide**: `doc/PLAN-evacuate-python-programme.md` was left strictly alone, **including the trio's Status row there, which Phase 6 or 7 still owes**. **codex-index-aleppo is 50 deletions and 5 rewrites**, 228 tracked files → 178, and every one of the 50 is Python — no twenty-second file rode along as codex-index-leningrad's `.vscode/launch.json` did, that repo having none. **The doc repointing is 26 sites in four files where the plan named one**, and **three of the 26 were wrong before this programme began**: line 110's direct invocation, dead since that module gained an intra-repo import, plus a folder-layout block and an OCR doc that between them put `line-breaks/`, `codex-index/`, `MAM-simple/` and `column-coordinates/` under a `py/py_ac_loc/` **none of them has ever been in** — kept as ✗ rows rather than deleted, so a reader who remembers the old shape stops looking. **The artifact classification came out at exactly the predicted 154 of 162**, but only by counting the 16 pieces of repo furniture and subtracting: the plan's own list of trees adds to 136, and `ds-flat-stream/` is the entry that looks regenerable and is not, its generator's per-page verse ranges being recorded nowhere. **A second repo's figure was wrong and this phase's own measurement found it** — codex-index-leningrad's `CLAUDE.md` said "Nine files are in scope" where its Phase 4 had measured 8 and corrected MAM-basics' copy but not its own prose (`2abd7f6` there); **what found it was printing all six NFC scope counts rather than the one this phase needed**. **A sigil disagreement book-of-job's Phase 4 had already settled once**: `README.md` called the Cambridge manuscript μC where the code and site say μY, 57 to 0, and **codex-index-cam1753's own README still does**. `pages.yml` was read rather than assumed and **runs no Python at all**, so the one thing distinguishing this repo from book-of-job does not bear on `requirements.txt`. **Ben lifted this phase's gate the same day**: run Phase 4 for a repo as soon as its Phase 3 is green, rather than asking first. 22 files deleted in codex-index-leningrad, all 21 tracked `.py` plus `.vscode/launch.json`, whose two debugpy configurations named one program the move took and one this repo never had. `README.md` and `CLAUDE.md` rewritten for a repo that is staying. The three `lenin-wiki/` artifacts are byte-identical after a pipeline run made AFTER the deletion, which is the order that proves the deletion took nothing the move needed. NFC scope **8**, not the 9 Phase 3 predicted — the ninth was the deleted `launch.json` |
 | 6 — breadcrumbs and issue citations | **not started** |
 | 7 — cross-repo bookkeeping | **not started** |
 
@@ -2400,7 +2400,143 @@ Re-establish with the six-line scratch script this phase used: 1328, 11, 45, 33,
    154 above came out right only because the furniture was counted and subtracted; the plan's own
    list of trees adds to 136.
 
+## Phase 4, codex-index-cam1753 — the execution record — **DONE 2026-08-22**
+
+**The last repo of the trio, and of the whole evacuation programme, to be emptied.** Landed as
+**`a9c3abd`** in codex-index-cam1753 — 25 files deleted, 5 modified — and that repo now tracks
+no Python at all. Tracked total 177 → **152**. **All three of the trio hold zero `.py`**, and
+with book-of-job, holman-ketiv-qere and UXLC-utils before them, so do all six repos this
+programme set out to evacuate.
+
+### The deletion is 25 files, and Ben settled both of the two beyond the Python
+
+Twenty-three tracked `.py`, emptying `mb_cmn/`, `py_cam1753_word_image/` and `py_mam_xml/`
+outright and taking the fifteen loose modules off the repo root. **The other two were the
+unforced case**, asked one at a time per "The Phase 4 gate is lifted", and both answered the
+same day:
+
+- **`requirements.txt`** — deleted. Ben's answer for codex-index-aleppo's was taken as settling
+  this one too, and said so before acting: the two files name the same three packages, black,
+  matplotlib and pyspellchecker, and this repo has **no Pages workflow**, which was the only
+  thing that made codex-index-aleppo's worth a question of its own.
+- **`codex-index-cam1753.code-workspace`** — deleted, and **this one was asked as a single
+  question covering both repos' workspace files**, the two being near-identical. Each declared a
+  three-folder view of the same cluster from its own vantage point: this repo's opened itself
+  beside book-of-job and codex-index-aleppo, and codex-index-aleppo's opened itself beside
+  book-of-job and this repo. **book-of-job's declared the same cluster and had already gone** on
+  2026-08-21, so the question put to Ben was whether to keep one as the cluster's entry point;
+  his answer was to delete both. Nothing opens those three repos together now, and
+  MAM-basics' `all-repos.code-workspace` is where a sweep still reaches all three.
+
+**codex-index-cam1753 has no `.claude/` at all**, so its unforced set was two files where
+codex-index-aleppo's was three.
+
+### The prose sweep found more than a `py/` grep could, and the plan said it would
+
+**This repo's Python sat at its ROOT**, so `py/` matches almost nothing that moved — book-of-job's
+shape rather than codex-index-aleppo's, and its Phase 6 recorded that a path-shaped grep found
+one of five citations there. Swept instead by **module basename**, over every tracked `.md` and
+`.json`:
+
+| File | Sites | What they were |
+|---|---|---|
+| `README.md` | 8 | the whole pipeline list, plus `LINES_PER_COL`'s home |
+| `CLAUDE.md` | 5 | the editor/server table and the mark-order pointer |
+| `doc/cam1753-line-break-task.md` | 9 | four runnable commands, a checklist and a module table |
+| `doc/reading-mam-simple.md` | 3 | the reader and its caller |
+| **`cam1753-page-index.json`** | **1** | **a code citation inside a tracked DATA file** |
+
+**The last row is the one worth carrying.** `cam1753-page-index.json`'s `comment` field explains
+that its `de_archive_spread` number "equals the jp2 file number `download_cam1753_spreads.py`
+uses" — a bare module filename, in a data artifact, which **no path-shaped grep anywhere would
+have found** and which a sweep of `doc/` and the two prose files would have missed as well. It
+now names `../MAM-basics/py/main_cam1753_download_spreads.py`. Nothing reads that file, so the
+edit is safe; the point is that the citation existed at all. **Sweep tracked DATA for module
+names, not only tracked prose.**
+
+**`doc/cam1753-line-break-task.md` spells its four commands with BACKSLASHES**, so a
+forward-slash pass finds none of them — book-of-job's Phase 4 recorded exactly this about
+`cam1753-word-crops.md`, and it recurs here in the sibling repo about the same manuscript. `sed`
+could not take them either; a throwaway Python script did. That file also carried a standing
+instruction to "always use `.venv\Scripts\python.exe`", which now names an interpreter with none
+of this project's Python left to run, so it says to use MAM-basics' by absolute path instead.
+
+### The sigil is corrected, on the precedent set two days earlier
+
+**`README.md` called the manuscript μC where the code and the generated site say μY**, 57
+occurrences against 0 measured across MAM-basics. book-of-job's Phase 4 made the same correction
+in `boj-cam1753-word-crops.md` on 2026-08-21 and codex-index-aleppo's README was corrected the
+same day as this phase, so **all three of the repos that name this manuscript now agree with the
+code**. `py/author_boj/job6_cam1753_mentions.py` is the proof rather than the count: the module
+that lists Job detail pages mentioning the Cambridge manuscript tests `"μY" in _extract_text(value)`.
+
+### What no program writes: 97 of 142, and the classification reproduces Phase 1 exactly
+
+Measured by classifying all 152 tracked files rather than by adding up the trees a prediction
+names, which is what made codex-index-aleppo's figure come out exact:
+
+- **10 are the repo's own paperwork** — three `doc/`, `README.md`, `CLAUDE.md`, two provenance
+  files, `things-noticed-in-cam1753.md` and two dotfiles — leaving **142 artifacts**.
+- **45 of the 142 are generated**, and **97 are not**.
+
+That reproduces Phase 1's "142 in codex-index-cam1753 with 45 generated" to the file, three
+weeks and two phases later.
+
+**Only 44 of the 45 are regenerable, and the distinction is worth keeping in the prose rather
+than in a plan.** `cam1753-gutter-profiles.png` re-renders byte-identically run-to-run under one
+matplotlib version and 1,541 bytes larger under a newer one, so its bytes track the library
+rather than the code. `CLAUDE.md` says so beside the oracle commands, so that a reader who runs
+everything and finds one file dirty knows which one and why.
+
+### Verification
+
+- **The oracle passed AFTER the deletion**: `main_cam1753_split_spreads.py` and
+  `check_cam1753_all.py` run from MAM-basics, and **all 44 artifacts byte-identical** to their
+  HEAD blobs — 28 `cam1753-pages/*.jpg`, 15 `cam1753-spread-splits-doc/*.json` and
+  `check_line_breaks.html`, compared with `git cat-file blob HEAD:<path>` and `cmp`. Running
+  before the deletion proves the move; running after proves the deletion took nothing the move
+  needed, and this phase did both.
+- **`check_cam1753_all.py` 4 of 4**, with word finding still **160 of 160**.
+- **`py/check_all.py` 7 of 7** over 510 files and 297 `.py`, unchanged by the deletion — checked
+  rather than assumed, `code_paths()` naming MAM-basics' own paths.
+- **The NFC scope re-counted at 14, against a prediction of 16**, and the two-file gap is
+  Ben's two deletions above rather than an error: 39 − 23 `.py` = 16, − `requirements.txt` −
+  the workspace file = 14. The comment in `py/tests/test_h_dot_below_nfc.py` carries the
+  prediction, the measurement and the reason they differ. Floor 10 against 14.
+- **`git ls-files '*.py'` returns 0** in codex-index-cam1753, and the tree is clean.
+- `HEAD` and `git log` re-read before staging, every file staged by explicit path, pushes
+  fast-forward with no `--force`.
+
+### A second session was live in MAM-basics throughout, and did not collide
+
+`doc/PLAN-evacuate-python-programme.md` acquired an uncommitted 81-line addition partway through
+this session — a "the site's landing page becomes generated" decision — and then landed as
+`2d36dbe` on top of this session's `fde301d`. **That file was left strictly alone**, including
+the trio's row in its Status table, which would otherwise have been this phase's to update.
+
+Non-collision was proved rather than assumed, by the three checks `~/.claude/CLAUDE.md`
+prescribes: `HEAD` re-read immediately before each commit, every path staged explicitly and no
+`git add -A`, and every push fast-forward. **Watching transcript byte counts was not the
+instrument and was not reached for.** Whoever picks up Phase 6 or 7 should update that Status
+row, which is one sentence and is all the programme file owes the trio.
+
+### What Phase 6 and Phase 7 now owe for this repo
+
+1. **Phase 7 item 1's `in/vendoring_policy.json` entry for codex-index-cam1753** names
+   `mb_cmn/` paths that no longer exist. Its three trio entries and eight `overrides` rows are
+   now all dead, this being the last of the three to empty.
+2. **Phase 7 item 5 — this repo's `.venv`**, which has black and no pytest, and now has no
+   Python to run against. Its `__pycache__` directories survive the deletion, as
+   codex-index-leningrad's and codex-index-aleppo's do.
+3. **Phase 6's `git grep -lI "generated by codex-index"` has nothing to find here**, checked
+   during this phase. Run it anyway, per book-of-job's Phase 6 lesson that a zero from the
+   breadcrumb grep is not the answer — the module-basename sweep above is what found five files
+   and a data artifact that no breadcrumb grep would have.
+4. **`doc/PLAN-evacuate-python-programme.md`'s trio Status row is unwritten**, deliberately, for
+   the reason the section above gives.
+
 ---
+
 ## Phase 4 — empty each repo — the prescription, left as written 2026-08-02
 
 **None of the three has a `CLAUDE.md`** — codex-index-aleppo does, the other two do not.

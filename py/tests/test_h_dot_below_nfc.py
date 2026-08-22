@@ -436,8 +436,11 @@ def _scopes() -> tuple[_Scope, ...]:
             # that are nobody's current business, where this check is a decidable
             # property of hand-authored text that passed as soon as it was asked.
             #
-            # 39 files in scope during dual residency and 16 after that repo's Phase 4
-            # deletes its 23 .py, measured 2026-08-22.  The floor is 10, which keeps
+            # 39 files in scope during dual residency and **14** after that repo's
+            # Phase 4, both measured 2026-08-22.  The prediction between the two was
+            # 16, being 39 minus the 23 .py; the two further files are
+            # requirements.txt and codex-index-cam1753.code-workspace, which Ben had
+            # that phase delete as orphaned.  The floor is 10, which keeps
             # meaning "an exclusion filter swallowed everything" rather than asserting
             # a tree size.
             floor=10,
