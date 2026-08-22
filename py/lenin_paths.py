@@ -141,19 +141,30 @@ def index_wikitext_path() -> Path:
     return wiki_dir() / "index.wiki"
 
 
-def code_paths() -> tuple[Path, ...]:
-    """This repo's paths holding codex-index-leningrad's code, package first.
+def code_dir() -> Path:
+    """This repo's ``py/`` -- the directory this module and the moved code sit in.
 
-    Checked for existence, so a renamed or deleted entry fails loudly; only an
-    unlisted ADDITION is silent, and this code is being evacuated rather than
-    developed.  See the module docstring for who does not call this yet.
+    Spelled off ``__file__`` rather than off ``paths.repo_root() / "py"`` for the
+    reason ``boj_paths.code_dir()`` gives: it stays right if this module is ever
+    moved again.
     """
-    code_dir = paths.repo_root() / "py"
-    entries = tuple(
-        [code_dir / LENIN_PACKAGE]
-        + [code_dir / name for name in LENIN_TOP_LEVEL_MODULES]
-    )
-    for entry in entries:
-        if not entry.exists():
-            raise FileNotFoundError(f"codex-index-leningrad code path is gone: {entry}")
-    return entries
+    return Path(__file__).resolve().parent
+
+
+def code_paths() -> list[Path]:
+    """Every place codex-index-leningrad's Python lives here, for the source lints.
+
+    Fails loudly on an entry that no longer exists, exactly as
+    ``boj_paths.code_paths()`` does; only an unlisted ADDITION is silent, and this
+    code is being evacuated rather than developed.  ``repo_scopes.code_paths()`` is
+    what unions this with the other evacuated repos' lists.
+    """
+    named = [code_dir() / LENIN_PACKAGE]
+    named += [code_dir() / name for name in LENIN_TOP_LEVEL_MODULES]
+    missing = [p for p in named if not p.exists()]
+    if missing:
+        raise SystemExit(
+            "lenin_paths.code_paths: no longer present: "
+            + ", ".join(str(p) for p in missing)
+        )
+    return named

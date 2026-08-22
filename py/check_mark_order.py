@@ -26,7 +26,7 @@ import sys
 
 from mb_cmn.uni_denorm import give_std_mark_order
 
-import boj_paths
+import repo_scopes
 
 # ── regex definitions ────────────────────────────────────────────────────────────────────
 
@@ -74,20 +74,22 @@ def _tracked_files(root):
 
 
 def _scoped_files():
-    """Yield the .py and .json of book-of-job's code AND of its corpus.
+    """Yield the .py and .json of each in-scope repo's code AND of its corpus.
 
     Scoped rather than repo-wide.  A ``.git`` walk stood here until the code moved
     into MAM-basics, where that walk finds a root holding all of this repo and the
     check has no repo-wide meaning: it reports violations in ``py/ws/`` that are
-    nobody's business here.  See ``boj_paths``' module docstring.
+    nobody's business here.  ``repo_scopes``' module docstring says which repos are
+    in and why the corpus list is the shorter of the two.
 
     BOTH ROOTS, and that is not symmetry for its own sake.  This check reads ``.json``
-    as well as ``.py``, and book-of-job's ``.json`` -- 24 hand-made line-break files
-    under ``py_ac_loc/`` above all -- stayed in the corpus when the Python left.
-    Scanning the code alone would have dropped 57 files from the check while it went
-    on reporting success, which is how a lint stops meaning anything.
+    as well as ``.py``, and the hand-made ``.json`` stayed in each corpus when the
+    Python left -- 24 line-break files under book-of-job's ``py_ac_loc/`` and 78
+    line-break, column-coordinate and flat-stream files in codex-index-aleppo.
+    Scanning the code alone would have dropped those from the check while it went on
+    reporting success, which is how a lint stops meaning anything.
     """
-    for entry in boj_paths.code_paths():
+    for entry in repo_scopes.code_paths():
         if entry.is_file():
             if entry.suffix in (".py", ".json"):
                 yield entry
@@ -97,25 +99,26 @@ def _scoped_files():
 
 
 def _corpus_json_files():
-    """Yield the .json under book-of-job's data root, skipping non-tracked dirs."""
-    for p in sorted(boj_paths.boj_data_root().rglob("*.json")):
-        if any(part in _SKIP_DIRS for part in p.parts):
-            continue
-        if p.is_file():
-            yield p
+    """Yield the .json under each in-scope corpus root, skipping non-tracked dirs."""
+    for root in repo_scopes.corpus_roots():
+        for p in sorted(root.rglob("*.json")):
+            if any(part in _SKIP_DIRS for part in p.parts):
+                continue
+            if p.is_file():
+                yield p
 
 
 # ── checking logic ──────────────────────────────────────────────────────────────────────
 
 
 def _display_path(path):
-    """*path* as a report shows it: relative to whichever of the two roots holds it.
+    """*path* as a report shows it: relative to whichever in-scope root holds it.
 
-    Two roots and not one, because this check now spans both -- the code under this
-    repo's ``py/`` and the corpus in the sibling book-of-job.  A single ``relative_to``
-    raises ValueError on every file under the other one.
+    Several roots and not one, because this check spans them all -- the code under
+    this repo's ``py/`` and the corpus in each sibling data repo.  A single
+    ``relative_to`` raises ValueError on every file under any of the others.
     """
-    for root in (boj_paths.code_dir(), boj_paths.boj_data_root()):
+    for root in repo_scopes.display_roots():
         try:
             return str(path.relative_to(root))
         except ValueError:

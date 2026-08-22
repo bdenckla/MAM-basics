@@ -34,6 +34,7 @@ import sys
 import unicodedata
 
 import boj_paths
+import repo_scopes
 
 # ── the escape pattern ─────────────────────────────────────────────────────────────────
 
@@ -164,14 +165,17 @@ def _tracked_files(root):
 
 
 def _scoped_files():
-    """Yield the .py of book-of-job's code, wherever this repo keeps it.
+    """Yield the .py of each in-scope repo's code, wherever this repo keeps it.
 
     Scoped rather than repo-wide.  A ``.git`` walk stood here until the code moved
     into MAM-basics, where that walk finds a root holding all of this repo and the
     check has no repo-wide meaning: it reports escapes in ``py/wlc_cmn/`` that are
-    nobody's business here.  See ``boj_paths``' module docstring.
+    nobody's business here.  ``repo_scopes``' module docstring says which repos are
+    in.  No corpus half here, unlike the mark-order check: this one reads ``.py``
+    only, and every ``.py`` in scope is under this repo's ``py/``, which is also why
+    ``main`` can still take one display root rather than a list.
     """
-    for entry in boj_paths.code_paths():
+    for entry in repo_scopes.code_paths():
         if entry.is_file():
             if entry.suffix == ".py":
                 yield entry

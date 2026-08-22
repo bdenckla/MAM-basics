@@ -4,28 +4,30 @@
 import json
 import re
 import sys
-from pathlib import Path
 
 from PIL import Image
 
+import ac_paths
 
-def repo_root():
-    """Return the repo root: the nearest ancestor of this file holding .git.
-
-    This file sits at the repo root in some repos and under py/ in others,
-    so anchoring on its own directory would resolve differently in each.
-    """
-    here = Path(__file__).resolve()
-    for candidate in here.parents:
-        if (candidate / ".git").exists():
-            return candidate
-    raise SystemExit(f"{here} is not inside a git repository")
-
-
-ROOT = repo_root()
-LB_DIR = ROOT / "line-breaks"
-CC_DIR = ROOT / "column-coordinates"
-IMG_DIR = ROOT / "aleppo-pages"
+# THE THREE DIRECTORIES BELOW ARE codex-index-aleppo's, AND THIS FILE IS NOT.
+# A ``repo_root()`` walking to the nearest ancestor holding .git stood here until
+# Phase 3 of ``doc/PLAN-evacuate-python-from-codex-index-trio.md``, 2026-08-22, and
+# it was right in codex-index-aleppo and inert here: this repo's root holds no
+# ``line-breaks``, ``column-coordinates`` or ``aleppo-pages``, so every consumer in
+# MAM-basics composed a correct root with a missing target.  That is why
+# ``main_gen_aleppo_crop_editor.py`` -- book-of-job's tool, which imports LB_DIR and
+# CC_DIR from here -- has been broken since book-of-job's own Phase 3 landed this
+# package on 2026-08-19.  Naming the data root is what repairs it.
+#
+# ONE COMMITTED BLOB WITH codex-index-aleppo's COPY UNTIL THIS EDIT, and the fork is
+# deliberate rather than an oversight: that copy is deleted by Phase 4 of the same
+# plan, so what looks like a divergence is the last few days of dual residency.  Its
+# counterpart in the other direction is ``py_cam1753_word_image/page.py``, whose
+# ``parent.parent`` walk is right in codex-index-cam1753 and inert here for the same
+# reason; codex-index-cam1753's Phase 3 settles that one.
+LB_DIR = ac_paths.line_breaks_dir()
+CC_DIR = ac_paths.col_coords_dir()
+IMG_DIR = ac_paths.pages_dir()
 
 LINES_PER_COL = 28
 

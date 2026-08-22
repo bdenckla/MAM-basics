@@ -5,12 +5,12 @@ the precomposed U+1E25 / U+1E24 forms, never the decomposed "h"/"H" + COMBINING 
 BELOW (U+0323) sequence. Comments must not use either Unicode form at all -- plain
 ASCII "x"/"X" is used instead, since comments don't flow to output.
 
-FIVE REPOS ARE SCANNED, each with its own exclusions and its own floor. This repo
+SIX REPOS ARE SCANNED, each with its own exclusions and its own floor. This repo
 holds the code, and since 2026-08-12 the wlc corpus the code generates as well;
-UXLC-utils, holman-ketiv-qere, book-of-job and codex-index-leningrad still hold the
-corpora their halves generate into, and each carries hand-authored transliterations
-that would otherwise go unscanned once its Python has moved out. ``_scopes()`` below
-is the whole of the per-repo difference. A
+UXLC-utils, holman-ketiv-qere, book-of-job, codex-index-leningrad and
+codex-index-aleppo still hold the corpora their halves generate into, and each
+carries hand-authored transliterations that would otherwise go unscanned once its
+Python has moved out. ``_scopes()`` below is the whole of the per-repo difference. A
 wlc-utils scope was one of them until 2026-08-17, when Phase 10 of
 ``doc/PLAN-evacuate-the-rest-of-wlc-utils.md`` emptied that repo down to 155 generated
 redirect stubs: nothing hand-authored is left there to scan, and the 6 files that do
@@ -51,8 +51,17 @@ was dropped, as holman-ketiv-qere's and book-of-job's were, and were a strict su
 so nothing was owed. That repo is a data host rather than a corpus, so what its scope
 keeps alive is small and mostly prose: ``README.md``, ``CLAUDE.md``,
 ``page-snips/README.md`` and the three artifacts under ``lenin-wiki/``.
-codex-index-aleppo has a copy of this test too and codex-index-cam1753 has none; the
-aleppo scope arrives when that repo's Python does.
+
+The codex-index-aleppo scope arrived with that repo's Python in the same phase,
+replacing its own 319-line ``py/tests/test_h_dot_below_nfc.py``, which located its
+root the same way and would have aimed at MAM-basics for the fifth time running.
+Diffing its ``_BINARY_EXTENSIONS`` against this file's is what found ``.xlsx``, the
+second extension a dropped copy has contributed; the reverse comparison found
+nothing owed. What its scope keeps alive is ``doc/`` (4), the thirteen text files
+under ``aleppo-wiki/`` -- J David Stark's hand-made CSV index, three of its four
+precursors and the three artifacts derived from it among them -- three provenance
+files, and ``test-data-from-book-of-job.json``. codex-index-cam1753 has no copy of
+this test at all, so the sixth scope has no seventh behind it.
 
 Comment detection uses Python's ``tokenize`` module (real COMMENT tokens) rather than a
 naive ``line.find("#")``. The wlc code uses "#" as a delimiter inside string literals
@@ -81,6 +90,7 @@ from pathlib import Path
 
 from mb_cmn import paths
 
+import ac_paths
 import boj_paths
 import hkq_paths
 import lenin_paths
@@ -114,6 +124,13 @@ _BINARY_EXTENSIONS = {
     # Office file. It is the one extension that repo's own copy of this test
     # listed and this one did not, and the merged scope reads it as text without it.
     ".docx",
+    # codex-index-aleppo's aleppo-wiki/precursors/E-*.xlsx, the spreadsheet form of
+    # J David Stark's index, beside the .docx form the line above covers. Same story
+    # one repo later: the one extension that repo's copy of this test listed and this
+    # one did not, found by diffing the two sets before dropping that copy, as the
+    # holman-ketiv-qere and book-of-job scopes were. Without it the merged scope
+    # reads a zip container as text and raises UnicodeDecodeError.
+    ".xlsx",
 }
 
 # Files owned by the concurrent, unrelated #189 effort -- not in scope here.
@@ -214,6 +231,27 @@ _BOJ_EXCLUDE_DIR_PREFIXES = (
 # read, and excluding the directory would leave the scope with no Hebrew in it at
 # all.
 _LENIN_EXCLUDE_DIR_PREFIXES = ("UXLC-utils-sparse/",)
+
+# What codex-index-aleppo's own copy of this test excluded, carried over verbatim:
+# its published pages, its vendored MAM-XML snapshot, its downloaded page scans, and
+# the four derived trees.  Its aleppo-wiki/ is deliberately NOT excluded -- the CSV
+# there is J David Stark's hand-made index and the .docx and .xlsx precursors beside
+# it are the same index in Office form, which is why both extensions are in
+# _BINARY_EXTENSIONS above.
+_AC_EXCLUDE_DIR_PREFIXES = (
+    "gh-pages/",
+    "MAM-XML/",
+    "aleppo-pages/",
+    "column-coordinates/",
+    "ds-flat-stream/",
+    "line-breaks/",
+    "plot_col_coords-out/",
+)
+
+# The one loose file codex-index-aleppo's own copy excluded by name: the annotator's
+# output, derived rather than hand-authored, and the only tracked artifact of that
+# repo's that sits at the root rather than in a tree the prefixes above cover.
+_AC_EXCLUDE_FILES = frozenset({"index-flat-annotated.json"})
 
 # The one comment allowed to keep showing a precomposed h-with-dot-below
 # glyph, because the comment is genuinely about the character itself... In
@@ -318,6 +356,26 @@ def _scopes() -> tuple[_Scope, ...]:
             # and deliberately so: codex-index-leningrad is a data host whose data is
             # almost entirely the vendored tree this scope excludes.
             floor=5,
+        ),
+        _Scope(
+            label="codex-index-aleppo",
+            root=ac_paths.ac_data_root(),
+            exclude_dir_prefixes=_AC_EXCLUDE_DIR_PREFIXES,
+            exclude_files=_AC_EXCLUDE_FILES,
+            # That repo's own copy asserted a floor of 40 over a scope its comment
+            # called "~72" and this file measures at 79, 2026-08-22. 40 will not
+            # survive its Phase 4: 50 of the 79 are the .py this repo's Phase 3 has
+            # now taken, leaving **29** -- doc/ (4), aleppo-wiki/ (13: J David
+            # Stark's CSV index, three of its four precursors, the LICENSE, the
+            # three Wikisource notes, index-flat-corrected.json and the three
+            # artifacts), README.md, CLAUDE.md, three provenance files, the
+            # workspace file, requirements.txt, check_line_breaks.html,
+            # test-data-from-book-of-job.json and four dotfiles. So the floor is 20,
+            # which keeps meaning "an exclusion filter swallowed everything" rather
+            # than asserting a tree size, and is what would catch this scope
+            # outliving its tree. The fourth precursor is the .xlsx, excluded as
+            # binary; the .docx beside it is excluded the same way.
+            floor=20,
         ),
     )
 

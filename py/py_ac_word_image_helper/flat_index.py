@@ -2,10 +2,19 @@
 """Look up page IDs from index-flat-annotated.json."""
 
 import json
-from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent.parent.parent
-FLAT_INDEX_PATH = ROOT / "index-flat-annotated.json"
+import ac_paths
+
+# THE FILE BELOW IS codex-index-aleppo's, AND THIS FILE IS NOT.  A
+# ``Path(__file__).resolve().parent.parent.parent`` stood here until Phase 3 of
+# ``doc/PLAN-evacuate-python-from-codex-index-trio.md``, 2026-08-22.  The package
+# sits under a ``py/`` in both repos, so that walk landed on the repo root in both
+# and book-of-job's Phase 3 was right that the move repaired it -- but the right
+# root and a reachable file are two claims, and the move bought only the first:
+# ``index-flat-annotated.json`` is a tracked file of codex-index-aleppo's and is
+# absent here, so this module resolved a correct root to a missing target and raised
+# on first read.  Nothing in MAM-basics imported it, which is why nothing noticed.
+FLAT_INDEX_PATH = ac_paths.flat_index_annotated_path()
 
 
 def find_pages_in_flat_index(book, ch, v):
