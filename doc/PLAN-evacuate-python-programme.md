@@ -118,6 +118,12 @@ These four hold here unchanged. Do not relitigate them per repo.
    `gh-pages/` without a forwarding mechanism — but "indefinitely" is no longer literal, and a
    repo in this programme whose `gh-pages/` is ever to move has that plan's Phases 8–10 as the
    worked, verified shape of the exception.
+
+   **And "once" is no longer literal either, as of 2026-08-22.** Ben decided that day that
+   book-of-job, holman-ketiv-qere and UXLC-utils are all to get wlc-utils' treatment, under a plan
+   of their own. **Read this decision as holding for the codex-index trio and for nothing else**;
+   the section "Decision — total evacuation for three repos, Python-only for the codex-index trio"
+   below is where the scope is stated.
 3. **Regenerating the tracked artifacts byte-identically is the test.** No new example-based unit
    tests. Each plan names its own oracle and the one command that re-establishes it.
 4. **Issues unify going forward only.** Existing issues keep their numbers and stay in their own
@@ -138,6 +144,85 @@ the fastest way to lose code silently.
   deleting one destroys whatever local edit it carries. Each affected plan diffs its copies against
   MAM-basics' originals and resolves the differences as a **findings step of its own**, before any
   deletion.
+
+---
+
+## Decision — total evacuation for three repos, Python-only for the codex-index trio — **DECIDED 2026-08-22**
+
+**Ben, 2026-08-22: book-of-job, holman-ketiv-qere and UXLC-utils are to be totally evacuated.** Not
+merely their Python, which is already done in all three: their published pages become forwarding
+stubs pointing at MAM-basics, their `README.md` points anyone browsing the repo on GitHub at the new
+location of the files, and what is left is a repo alive as a redirect host. That is wlc-utils'
+shape, applied to three more repos.
+
+**The codex-index trio is excluded, and its data stays in place.** codex-index-aleppo,
+codex-index-leningrad and codex-index-cam1753 move their Python and nothing else. The manuscript
+scans and the derived JSON stay where they are, each repo going on as a data host that
+MAM-basics' moved code reads from. The record on that plan's own side is
+[`PLAN-evacuate-python-from-codex-index-trio.md`](PLAN-evacuate-python-from-codex-index-trio.md)'s
+section "This plan moves the Python and nothing else".
+
+**What the trio was measured to hold, 2026-08-22, which is why it was excluded** — almost no served
+content and a great deal of data:
+
+| Repo | Tracked `gh-pages/` | Pages workflow | Tracked total |
+|---|---|---|---|
+| codex-index-aleppo | **4 files, 638 bytes** | `pages.yml` | 38.3 MB, of which `aleppo-pages/` is 28.3 |
+| codex-index-leningrad | **none** | **none** | 12.8 MB |
+| codex-index-cam1753 | **none** | **none** | 80.6 MB, of which `cam1753-pages` is 48 and `cam1753-spreads` 24 |
+
+Against that, the three repos to be totally evacuated hold **272 published pages between them,
+inside 1,178 tracked files** under `gh-pages/`. **Those two counts are not interchangeable and the
+new plan should not conflate them**: a stub stands in for an HTML page, so 272 is the size of the
+stub job, while 1,178 is the size of the move into MAM-basics — the difference being 884 PNGs, plus
+fonts, CSS and JSON that the pages reference.
+
+| Repo | HTML pages *(the stub count)* | Tracked under `gh-pages/` *(the move)* | The gap |
+|---|---|---|---|
+| book-of-job | **175** | 694 | 515 `.png` |
+| holman-ketiv-qere | **6** | 300 | 289 `.png` |
+| UXLC-utils | **91** | 184 | 80 `.png`, 8 `.json` |
+| **total** | **272** | **1,178** | |
+
+For scale, wlc-utils' finished stub set is **155**, so this is roughly the same job again and
+three-quarters over. MAM-basics' own `gh-pages/` is **285** today, 284 of them wlc-utils'.
+
+**holman-ketiv-qere is the odd one and worth knowing about before planning it**: 6 HTML pages
+against 289 PNGs, so its published site is almost entirely images and its stub job is the smallest
+of the three by a wide margin, while its move is the second largest.
+
+Re-establish the page count with
+`git -C <repo> ls-files -z gh-pages | tr '\0' '\n' | grep -ci '\.html\?$'` and the tracked count
+with `git -C <repo> ls-files gh-pages | wc -l`; **use the `-z` form for the page count**, since
+holman-ketiv-qere has two `gh-pages` paths containing spaces that `git ls-files` quotes, which a
+naive `grep '\.html$'` drops. Repo sizes come from
+`git -C <repo> ls-tree -r -l HEAD | awk '{s+=$4} END {print s/1048576}'`.
+
+### The order, and what is forced in it and what is not
+
+**The codex-index trio's remaining Python phases run first, under the existing plan; the new plan is
+written after they finish.** Ben's decision of 2026-08-22. **That order is his sequencing choice
+rather than a technical constraint, and a fresh session should not reason as though a dependency
+compelled it** — the one real dependency is already satisfied for all three repos:
+
+- **Pages must be live on MAM-basics before any repo's pages can be flipped to stubs.** A stub
+  redirects to a page MAM-basics publishes, and MAM-basics does not publish it until the generators
+  live there. `doc/PLAN-evacuate-the-rest-of-wlc-utils.md`'s Phase 9 carries a subsection titled
+  "Why Pages must be live first" and is the worked precedent.
+- **All three repos already satisfy it**, their Python having moved on 2026-08-18, 2026-08-19 and
+  2026-08-22 respectively. So the new plan is technically unblocked the moment it is written, and
+  what it waits on is Ben's attention rather than the trio.
+- **Where the dependency would have bitten is the trio**, had it been included: its generators do
+  not move until that plan's Phase 3, so a trio stub job could not have started before then. That is
+  the reasoning the exclusion above makes moot rather than a reason for the order.
+- **Reopening the three completed plans is the wrong shape.** `PLAN-evacuate-the-rest-of-wlc-utils.md`
+  was a new plan rather than a reopening of the wlc-utils Python plan, and the same holds here: one
+  new plan covering all three repos, with `py/main_wlc_redirect_stubs.py` as the generator to
+  generalize rather than to copy.
+
+**The new plan does not exist yet and should not be started before the trio's Python evacuation
+finishes.** A session picking this file up mid-programme should not read the decision above as
+licence to begin it.
 
 ---
 

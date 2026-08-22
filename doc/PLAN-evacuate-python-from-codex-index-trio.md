@@ -57,6 +57,38 @@ future session has to rediscover the reason for.
 
 ---
 
+## This plan moves the Python and nothing else — **DECIDED 2026-08-22**
+
+**Ben, 2026-08-22: the trio's data stays in place.** The manuscript scans and the derived JSON are
+not evacuated, now or later, and no phase of this plan should propose moving them. When Phase 4
+empties each repo, "empty" means **empty of Python** — every one of these three repos stays alive
+as a data host afterwards, holding the trees its moved code now reads from
+`C:\Users\BenDe\GitRepos\MAM-basics`.
+
+**The decision is not a deferral, and the question should not be re-put.** It was settled against a
+measurement taken the same day, which is that the trio has almost no served content and a great deal
+of data:
+
+| Repo | Tracked `gh-pages/` | Pages workflow | Tracked total | Where the bulk is |
+|---|---|---|---|---|
+| codex-index-aleppo | **4 files, 638 bytes** | `pages.yml` | 38.3 MB | `aleppo-pages/` 28.3 MB, `MAM-XML/` 7.2 MB |
+| codex-index-leningrad | **none** | **none** | 12.8 MB | `UXLC-utils-sparse/` 42 files, `lenin-wiki/` 21 |
+| codex-index-cam1753 | **none** | **none** | 80.6 MB | `cam1753-pages` 48 MB, `cam1753-spreads` 24 MB, `MAM-XML/` 7.2 MB |
+
+Re-establish with `git -C <repo> ls-files gh-pages | wc -l`, `ls <repo>/.github/workflows`, and
+`git -C <repo> ls-tree -r -l HEAD | awk '{s+=$4} END {print s/1048576}'`. codex-index-aleppo's four
+are `index.html`, `missing_sections_nakh.html`, `missing_sections_torah.html` and a `README.md`.
+
+**The wider programme this sits under does not follow the trio here.** Ben decided the same day that
+**book-of-job, holman-ketiv-qere and UXLC-utils are to be totally evacuated** — served pages replaced
+by forwarding stubs, README pointers rewritten to MAM-basics — under a new plan of their own, written
+after this one finishes. The record is
+[`PLAN-evacuate-python-programme.md`](PLAN-evacuate-python-programme.md)'s section "Decision — total
+evacuation for three repos, Python-only for the codex-index trio". **Do not read that decision as
+reaching these three repos**, and do not add a gh-pages phase to this plan on the strength of it.
+
+---
+
 ## Phase 0 — the execution record — **DONE 2026-08-22**
 
 **Family 2 is classified and there is no design call in it.** The prescription below expects
@@ -1166,6 +1198,17 @@ an entry point becomes a library module; finish with the oracle run from MAM-bas
 Whichever the repo, write or update one in this phase saying that there is no Python left, that
 the code is `../MAM-basics/py/`, and which entry point writes what. **Name the tracked artifacts
 no program generates**, which for these repos includes the downloaded scans.
+
+**Phase 0 corrected the first sentence above: all three got a `CLAUDE.md` on 2026-08-03**, one day
+after this plan was written, so this phase updates three files and writes none from nothing.
+
+**Write each repo's `README.md` and `CLAUDE.md` for a repo that is staying, not one being wound
+down.** Per Ben's decision of 2026-08-22, recorded in the section "This plan moves the Python and
+nothing else" above, each of these three repos keeps its data — the manuscript scans, the derived
+line-break and column-coordinate JSON, the `MAM-XML/` trees — and goes on hosting it indefinitely.
+So the prose says the code moved to `../MAM-basics/py/` and the data did not, rather than implying
+the repo is finished with. **codex-index-aleppo also keeps its three published pages and its
+`pages.yml`**, which no phase of this plan touches.
 
 **Stop and ask Ben before each.**
 
