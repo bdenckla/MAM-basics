@@ -9,8 +9,8 @@ three times and risk answering it three different ways.
 
 | Phase | State |
 |---|---|
-| 0 — reconcile the fork families (programme Phase 0, plus the wiki family below) | **DONE 2026-08-22.** Programme Phase 0 confirmed rather than re-derived — fourteen of its sixteen files still one committed blob, `check_all.py` and `check_word_finding.py` per-repo permanently on Ben's decision of 2026-08-19. **Family 2 needed no design call**: on committed blobs **two** of the eight shared wiki module names differ, not four, and `mam_book_names.py` — the 230-line "real work" — is **one blob** and was one on 2026-08-02, the "230 lines" being 115 + 115 of whole-file diff caused by codex-index-aleppo's CRLF checkout. The two that do differ, `main_make_wikisource_page.py` and `write_wikitext_file.py`, are **two tools against two input formats**; Phase 3 names them. `hebrew_letters.py` and `my_utils.py` genuinely differed and `6ccd856` (leningrad, 2026-08-03) reconciled both with a black run. **The baselines are stale in eight places** and the inventory was right where this plan was wrong, for the second time in the programme. **Item 2's sweep finds two depth walks and the verdicts are opposite** — `flat_index.py` right in both repos but naming a file absent here, `page.py` right in codex-index-cam1753 and wrong here. **Item 3's wall is already up**: the four shared `check_*`/`fix_*` are two blobs, MAM-basics against the trio, and five top-level names are taken. **Item 4 landed** — `a171dd4` in codex-index-aleppo and `ef5525d` here, both copies byte-identical at md5 `f330012f28fdad782776c08ffbdb7b4b`; mgketer's third copy reported, MAM-private not written to. Two findings the phase turned up and did not fix: **`aleppo-wiki/main_make_wikisource_page.py` has been dead since 2026-03-28**, naming a directory `aleppo/` a rename removed, and **codex-index-aleppo's `check_word_finding.py` fails 160 of 160** comparing a `"1of2"` column identifier against the integer 1, since 2026-03-14 |
-| 1 — two roots, no cwd (per repo) | **not started.** Phase 0 hands it a working oracle for codex-index-leningrad's wiki half and none for codex-index-aleppo's; repoint that repo's four `aleppo/` literals first, so the rest of the phase has something to prove itself against |
+| 0 — reconcile the fork families (programme Phase 0, plus the wiki family below) | **DONE 2026-08-22.** Programme Phase 0 confirmed rather than re-derived — fourteen of its sixteen files still one committed blob, `check_all.py` and `check_word_finding.py` per-repo permanently on Ben's decision of 2026-08-19. **Family 2 needed no design call**: on committed blobs **two** of the eight shared wiki module names differ, not four, and `mam_book_names.py` — the 230-line "real work" — is **one blob** and was one on 2026-08-02, the "230 lines" being 115 + 115 of whole-file diff caused by codex-index-aleppo's CRLF checkout. The two that do differ, `main_make_wikisource_page.py` and `write_wikitext_file.py`, are **two tools against two input formats**; Phase 3 names them. `hebrew_letters.py` and `my_utils.py` genuinely differed and `6ccd856` (leningrad, 2026-08-03) reconciled both with a black run. **The baselines are stale in eight places** and the inventory was right where this plan was wrong, for the second time in the programme. **Item 2's sweep finds two depth walks and the verdicts are opposite** — `flat_index.py` right in both repos but naming a file absent here, `page.py` right in codex-index-cam1753 and wrong here. **Item 3's wall is already up**: the four shared `check_*`/`fix_*` are two blobs, MAM-basics against the trio, and five top-level names are taken. **Item 4 landed** — `a171dd4` in codex-index-aleppo and `ef5525d` here, both copies byte-identical at md5 `f330012f28fdad782776c08ffbdb7b4b`; mgketer's third copy reported, MAM-private not written to. Two findings the phase turned up and did not fix: **`aleppo-wiki/main_make_wikisource_page.py` has been dead since 2026-03-28**, naming a directory `aleppo/` a rename removed, and **codex-index-aleppo's `check_word_finding.py` fails 160 of 160** comparing a `"1of2"` column identifier against the integer 1, since 2026-03-14. A third: **`codex-index-cam1753/check_line_breaks.py` writes CRLF** where codex-index-aleppo's copy writes LF, one missing `newline=""` — the programme Phase 0 defect in a seventh script, which dirties that repo's tree on any verification run |
+| 1 — two roots, no cwd (per repo) | **not started.** Phase 0 hands it a working oracle for codex-index-leningrad's wiki half and none for codex-index-aleppo's; repoint that repo's four `aleppo/` literals first, so the rest of the phase has something to prove itself against. It also owns the one-argument `newline=""` fix in `codex-index-cam1753/check_line_breaks.py:654` |
 | 3 — copy the Python in (per repo, dual residency) | **not started** |
 | 4 — empty each repo | **not started** |
 | 6 — breadcrumbs and issue citations | **not started** |
@@ -400,6 +400,32 @@ right, and the column encoding is a third axis of it. Ben's decision of 2026-08-
 **Nothing here was fixed.** `check_word_finding.py` is one of the two files Ben settled as per-repo,
 the fix is a change to a live check against live data, and this phase's job was to characterize.
 
+### A third script in codex-index-cam1753 writes CRLF, and running the check is what showed it
+
+**`codex-index-cam1753/check_line_breaks.py:654` is `out_path.write_text(html, encoding="utf-8")`,
+and codex-index-aleppo's copy at `py/py_ac_loc/check_line_breaks.py:629` is the same line with
+`newline=""`.** So the cam1753 copy writes CRLF into `check_line_breaks.html`, against that repo's
+`.gitattributes` declaring `* text=auto eol=lf`, and the aleppo copy writes LF. The two copies are
+not one blob and never were, `95ed146b` against `d27a2b93`.
+
+**This is the programme's Phase 0 finding recurring in a seventh script**, that phase having found
+exactly this one missing argument in codex-index-cam1753's `fix_mark_order.py` and
+`fix_escape_sequences.py` and fixed both. `check_line_breaks.py` was outside the six scripts it
+reviewed, so it kept the defect while its two neighbours lost it.
+
+**It fires on a plain verification run, which is how it turned up here.** Running
+`check_all.py` in codex-index-cam1753 left `git status --porcelain` reporting one modified file;
+compared against `git show HEAD:check_line_breaks.html`, the verdict is **line-ending-only** — 11,014
+bytes against 11,126, the difference being 112 carriage returns and nothing else. Restored with
+`git checkout --`, so nothing was lost and the repo is clean. **The next run puts it back.**
+
+**Not fixed, and the reason is ownership rather than doubt.** The fix is one argument, matching the
+sibling repo's copy verbatim, in a repo whose `.gitattributes` already settles which line ending is
+wanted. But it is a code change in a repo whose Python has not moved, and **Phase 1 is this plan's
+IO-and-paths phase** — the same phase that has to repoint codex-index-aleppo's four dead literals.
+Both belong there, and doing them together keeps the record of why in one place. Put to Ben
+2026-08-22 as a thing he can have sooner if he would rather not wait for Phase 1.
+
 ### The two venvs, and `requirements.txt` wrong in both directions
 
 `codex-index-aleppo` and `codex-index-cam1753` each track a `requirements.txt` naming **black,
@@ -492,7 +518,10 @@ either.
   per this programme's instrument rule. That repo is one of the three named as carrying the
   latent-CRLF condition and the comparison found no line-ending-only verdict in it.
 - **`git status --porcelain` clean** in all four repos at the end; `git log` and `HEAD` re-read
-  before staging in each, and both pushes fast-forward with no `--force`.
+  before staging in each, and both pushes fast-forward with no `--force`. **It was not clean in
+  codex-index-cam1753 in between**: running `check_all.py` there rewrote `check_line_breaks.html`
+  with CRLF, which the byte comparison called **line-ending-only** and `git checkout --` restored.
+  The subsection above says why that happens and who fixes it.
 
 ---
 
