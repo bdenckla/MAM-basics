@@ -12,7 +12,9 @@ Handles all special MAM-XML elements:
   - <shirah-space>: visual spacing in song layout, skip
   - <spi-invnun>: inverted nun (nun hafukha), a scribal mark carrying no text, skip.
     Seven of them occur in Psalm 107 and two in Numbers 10:35-36; only the Psalm 107
-    seven are reachable from this module, whose callers read Ps, Job and Prov.
+    seven are reachable from this module, whose two callers read Deut, Ps, Job and
+    Prov (``py_ac_loc/gen_flat_stream.py``'s BOOK_XML) and Ps, Job and Prov
+    (``py_cam1753_loc/gen_flat_stream.py``'s) -- Deut has no inverted nun.
     ``mb_sefaria/mam4ajf_handlers.py`` names both groups and handles them for Sefaria.
   - <spi-pe2>: petuxah (open paragraph) break — emitted as {"parashah": "spi-pe2"}
   - <spi-samekh2>: setumah (closed paragraph) break — emitted as {"parashah": "spi-samekh2"}

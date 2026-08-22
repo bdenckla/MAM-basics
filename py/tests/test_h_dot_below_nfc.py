@@ -214,19 +214,21 @@ _UXLC_EXCLUDE_DIR_PREFIXES = ("out/", "gh-pages/", "data/", "in/")
 # generated but harmless to scan.
 _HKQ_EXCLUDE_DIR_PREFIXES = ("out/", "gh-pages/")
 
-# What book-of-job's own copy of this test excluded, carried over verbatim and
-# re-rooted: its two generated trees, its UXLC snapshot and derived JSON, and the
-# three external/derived trees under py_ac_loc/.  Two of those prefixes name
-# directories whose py_ prefix promises Python and delivers data -- py_uxlc_loc/
-# holds 40 data files beside its 9 .py, and py_ac_loc/ holds 76 tracked files and
-# no .py at all -- which is why they are spelled to the subdirectory rather than to
-# the py_-prefixed parent.  py_ac_loc/line-breaks/ is deliberately NOT excluded: 24
-# hand-made JSON, in scope like any other hand-authored file.
+# What book-of-job's own copy of this test excluded, carried over and re-rooted:
+# its two generated trees and the three external/derived trees under py_ac_loc/.
+# That prefix names a directory whose py_ prefix promises Python and delivers
+# data -- py_ac_loc/ holds 76 tracked files and no .py at all -- which is why the
+# three are spelled to the subdirectory rather than to the py_-prefixed parent.
+# py_ac_loc/line-breaks/ is deliberately NOT excluded: 24 hand-made JSON, in scope
+# like any other hand-authored file.  Until the 2026-08-22 review's follow-up this
+# tuple also carried py_uxlc_loc/UXLC/ and py_uxlc_loc/UXLC-misc/, book-of-job's
+# UXLC snapshot and derived JSON, with a present-tense comment about the 40 data
+# files beside py_uxlc_loc/'s 9 .py; book-of-job a846585 (Phase 4, 2026-08-21)
+# deleted the whole of py_uxlc_loc/ -- `git ls-files py_uxlc_loc` there is empty
+# -- so both entries were dead, and the scope counts 33 with or without them.
 _BOJ_EXCLUDE_DIR_PREFIXES = (
     "out/",
     "gh-pages/",
-    "py_uxlc_loc/UXLC/",
-    "py_uxlc_loc/UXLC-misc/",
     "py_ac_loc/MAM-XML/",
     "py_ac_loc/codex-index/",
     "py_ac_loc/column-coordinates/",
@@ -339,16 +341,18 @@ def _scopes() -> tuple[_Scope, ...]:
             exclude_dir_prefixes=_HKQ_EXCLUDE_DIR_PREFIXES,
             exclude_files=frozenset(),
             # 40 is the floor that repo's own copy of this test carried, and it still
-            # fits now that Phase 4 has deleted its py/ tree: 154 files were in scope
-            # before that deletion and 47 are after it, measured 2026-08-18 -- doc/
-            # (2), README.md, CLAUDE.md, docs-not-served/ (4), emails/ (26), data/
-            # (2), io/ (1), assets/ (4), four dotfiles, and the two "JC3 ..." pages,
-            # whose non-ASCII names git ls-files returns quoted, so the leading quote
-            # keeps them past the gh-pages/ prefix filter. This comment predicted 48
-            # before the phase ran; the one file between that and the 47 measured
-            # after is .vscode/settings.json, which Phase 4 deleted as well, its
-            # auto-approve rules naming nothing but that repo's deleted interpreter
-            # and scripts. Comfortably above 40, so the floor keeps meaning "an
+            # fits now that Phase 4 has deleted its py/ tree: 152 files were in scope
+            # before that deletion and 45 are after it -- doc/ (2), README.md,
+            # CLAUDE.md, docs-not-served/ (4), emails/ (26), data/ (2), io/ (1),
+            # assets/ (4) and four dotfiles. This comment said 154 and 47 from
+            # 2026-08-18 until the 2026-08-22 review's follow-up, counting in the two
+            # "JC3 ..." pages, whose non-ASCII names git ls-files returns quoted, so
+            # the leading quote keeps them past the gh-pages/ prefix filter -- but
+            # the quoted name is not a path, so _tracked_files_in_scope's is_file()
+            # drops both, and 45 is what it returns, re-measured 2026-08-22. The
+            # comment predicted 48 before the phase ran; the one file between that
+            # and the 47 it then recorded is .vscode/settings.json, which Phase 4
+            # deleted as well. Comfortably above 40, so the floor keeps meaning "an
             # exclusion filter swallowed everything" rather than asserting a size.
             floor=40,
         ),
@@ -361,7 +365,11 @@ def _scopes() -> tuple[_Scope, ...]:
             # counted the 268 .py that Phase 3 copied here and Phase 4 deleted there.
             # 312 files were in scope before that deletion and **33** are after it,
             # measured 2026-08-21: py_ac_loc/line-breaks/ (24) and two .md beside them,
-            # doc/ (2), README.md, CLAUDE.md and four dotfiles. This comment predicted 42
+            # doc/ (2), README.md, CLAUDE.md and three dotfiles (.gitattributes,
+            # .gitignore, .github/workflows/static.yml). That itemization said "four
+            # dotfiles" until the 2026-08-22 review's follow-up, summing to 34 against
+            # the 33 it stated; 33 is right, re-measured through _tracked_files_in_scope
+            # on 2026-08-22. This comment predicted 42
             # before the phase ran, and the nine files between that and the 33 measured
             # after are all deletions the phase made: the seven procedure docs that
             # followed the code here as doc/boj-*.md, leaving doc/ with two rather than

@@ -214,8 +214,11 @@ Nine things went differently from what is written underneath. The first four bea
   covers — RESOLVED 2026-08-18, no commit owed here.** `main_just_render_table --update-issue-metadata`
   was broken by a Unicode form mismatch: the GitHub label spelled its ḥet **decomposed**,
   `U+0068 U+0323`, where `ISSUE_LABEL_TO_TAG` has the precomposed `U+1E25` that this repo's NFC
-  convention requires, so the lookup missed and the refresh dropped the `holam-he` tag from 8 of the
-  77 rows (issues 40, 27, 41, 42, 63, 71, 72). Nothing wrong shipped: `py_render/rt_html.py`'s
+  convention requires, so the lookup missed and the refresh dropped the `holam-he` tag from 7 of the
+  77 rows (rows 21, 22, 34, 36, 49, 75, 76 — issues 40, 27, 41, 42, 63, 71, 72). (This read "8 of
+  the 77 rows", as `6b10259`'s message does, until the 2026-08-22 review's follow-up, while listing
+  these same seven issues; `grep -c holam-he io/table_row_github_issues.json` is 7. The tracker's
+  `ḥolam he` label is on eight issues, the eighth being #81, which maps to no row.) Nothing wrong shipped: `py_render/rt_html.py`'s
   `_validate_issue_tag_definitions` then raised. The tracked `io/table_row_github_issues.json` was
   correct throughout — only a refresh corrupted it on disk, and that run was reverted rather than
   committed. A second label, `ḥolam vav`, is spelled **precomposed** on the same tracker and has no
@@ -237,8 +240,8 @@ Nine things went differently from what is written underneath. The first four bea
   repo's ruff against its `py/`. **None of the 13 is in a file Phase 1 touched.** Nine are in
   `main_search_holam_he_qere.py`, whose module docstring sits *after* `from __future__ import
   annotations`, making every later import an E402; the rest are two F841 unused bindings
-  (`rt_html.py`, `verify_table_words_in_mam_plus.py` — the latter checked and merely dead, not a
-  wrong-variable bug) and two F401 unused imports in `rt_record_card.py`. **This is a Phase 3
+  (`rt_html.py`, `verify_table_words_in_mam_plus.py` — the `verify_table_words_in_mam_plus.py`
+  one checked and merely dead, not a wrong-variable bug) and two F401 unused imports in `rt_record_card.py`. **This is a Phase 3
   precondition**, that phase requiring `ruff check py` to exit 0 here; it is the analogue of the
   wlc-utils plan's Phase 0 step 4, which this plan has no counterpart to.
 - **The test registry gap is still closed.** All eight `module_name=` entries in
@@ -461,9 +464,16 @@ Six things went differently from what is written underneath. The first four bear
   **`py/_provenance.md`**, which is the breadcrumb for the loose vendored `py/uxlc_paths.py` and is
   invisible to `doc/vendoring-inventory.md` for exactly the reason Phase 7 item 1 gives about
   `uxlc_paths.py` itself. Also **`py/.gitignore`** (one line, `novc_*.py`) and, by Ben's decision,
-  **`.vscode/settings.json`**, whose fifteen auto-approve rules name nothing but that repo's
-  interpreter and its `py/` scripts — one of them `py/extract_docx.py`, already gone before this
-  phase. Neither `py/` nor `.vscode/` had other tracked contents, so both went whole. **Count the
+  **`.vscode/settings.json`**, whose nineteen auto-approve rules name that repo's interpreter
+  (four spellings of `.venv/Scripts/python.exe`) and its `py/` scripts (six rules, one of them
+  `py/extract_docx.py`, already gone before this phase) — and also nine that name none of that:
+  seven `git` rules (`--version`, `config --get remote.origin.url`, `rev-parse`, `remote`, `add`,
+  `commit`, `push`), `where.exe` and `.vscode/settings.json` itself. (This read "fifteen
+  auto-approve rules name nothing but that repo's interpreter and its `py/` scripts", as
+  `0890cb8`'s message does, until the 2026-08-22 review's follow-up; the count and the nine are
+  by `git -C ..\holman-ketiv-qere show 15824d4:.vscode/settings.json`. The decision is
+  unaffected: nothing in the file was worth keeping once the interpreter and scripts left.)
+  Neither `py/` nor `.vscode/` had other tracked contents, so both went whole. **Count the
   non-`.py` tracked files under `py/` in book-of-job and the codex-index trio before quoting a
   deletion size**: `git ls-files py | grep -v '\.py$'` is the command, and here it found six.
 - **Phase 7 item 1 is Phase 4's, exactly as UXLC-utils' Phase 4 predicted it would be in every
@@ -494,6 +504,12 @@ Six things went differently from what is written underneath. The first four bear
   because `git ls-files` quotes their non-ASCII names and the leading quote carries them past the
   `gh-pages/` prefix filter — the test uses `git ls-files` without `-z`, so this replicates exactly.
   The comment now states the measured figure instead of the prediction (`b72f785`).
+  **Corrected by the 2026-08-22 review's follow-up: 152 → 45, not 154 → 47.** The two quoted
+  `JC3 …` names pass the prefix filter but are not paths, so the test's own `is_file()` check,
+  three lines further down `_tracked_files_in_scope`, drops both; calling that function on the
+  holman scope returns 45 (re-measured 2026-08-22), and the same two come off the "before"
+  figure. The arithmetic above kept them; the test never did. The floor of 40 is unaffected, and
+  `py/tests/test_h_dot_below_nfc.py`'s holman-scope comment now says 152 and 45.
 - **The `doc/` question this section does not raise: holman's `doc/` had four `py/…` paths**, in
   its two files, the same shape as the README's. Rewritten with it, on Ben's "rewrite every one".
   UXLC-utils' Phase 4 met a much larger version of this — 35 links in `doc/clc-design.md` — and Ben
@@ -621,8 +637,10 @@ issue trackers"; it is left as written, the answer that plan chose for its own f
 
 **holman-ketiv-qere needs no `doc/` exception, the one way it differs from wlc-utils and
 UXLC-utils.** Its `doc/` has two files and neither carries a bare `#NN`. The only `#NN` in any of
-its tracked prose is the `#19` its `CLAUDE.md` quotes twice from the filenames
-`gh-pages/JC3 The Biblical Text in the JC Edition #19-ז` — a JC Edition article number, not an
+its tracked prose is the `#19` its `CLAUDE.md` quotes once, in the one backtick span
+`gh-pages/JC3 The Biblical Text in the JC Edition #19-ז` that names the two pages sharing that
+stem (this said "quotes twice from the filenames" until the 2026-08-22 review's follow-up;
+`git grep -c '#19' -- CLAUDE.md` there is 1) — a JC Edition article number, not an
 issue, and so an instance of the trap rather than an exception to the rule.
 
 **Verification.** The full six-command regeneration ran from

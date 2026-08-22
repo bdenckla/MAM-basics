@@ -22,7 +22,7 @@ with a question rather than a phase.
 | Measure | Value |
 |---|---|
 | tracked `.py` | **268** after Phase 1, which added `boj_paths.py`. It was **267** through Phase 0 — `mb_cmn/provenance.py` arrived and `py_uxlc_loc/my_tanakh_book_names.py` went, so `mb_cmn/` is **17** and `py_uxlc_loc/` **9**. **Phases 3 and 4 face 268** |
-| lines | **17,064** after Phase 1, whose net +205 is `boj_paths.py`. It was **16,859** after Phase 0, re-measured 2026-08-19 (17,105 before it, 17,060 before the programme's Phase 0); that phase's net −246 is `my_tanakh_book_names.py`'s 566 out against `provenance.py`'s 223 and the six re-vendored `mb_cmn` files' growth in |
+| lines | **17,064** after Phase 1, whose net +205 is `boj_paths.py`. It was **16,859** after Phase 0, re-measured 2026-08-19 (17,105 before it, 17,051 before the programme's Phase 0 — `33b3ee2`, which added 54 net, +63/−9 over five files; this row read "17,060" from `ebc9669`, whose message says "the programme's Phase 0 having added 45", until the 2026-08-22 review's follow-up, re-measured by summing `git show 33b3ee2^:<f> | wc -l` over `git ls-tree -r --name-only 33b3ee2^ | grep '\.py$'`); that phase's net −246 is `my_tanakh_book_names.py`'s 566 out against `provenance.py`'s 223 and the six re-vendored `mb_cmn` files' growth in |
 | tracked `gh-pages` | **694** (`jobn` 531, `jobn-details` 160, plus `index.html`, `style.css`, `woff2`) |
 | tracked `out` | **7** JSON |
 | test modules | **1** (`test_h_dot_below_nfc.py`, at the repo root) |

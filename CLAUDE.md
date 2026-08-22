@@ -283,8 +283,10 @@ qualifying them would imply they were ambiguous.
 
 **holman-ketiv-qere needs no such exception, the first of the four evacuated repos to need none.**
 Its `doc/` has two files and neither carries a bare `#NN`. Measured 2026-08-18, the only
-`#NN` in any of its tracked prose is the `#19` its `CLAUDE.md` quotes twice from the filenames
-`gh-pages/JC3 The Biblical Text in the JC Edition #19-ז`, and that is a JC Edition article number
+`#NN` in any of its tracked prose is the `#19` its `CLAUDE.md` quotes once, in the one backtick
+span `gh-pages/JC3 The Biblical Text in the JC Edition #19-ז` that names the two pages sharing
+that stem (this said "quotes twice from the filenames" until the 2026-08-22 review's follow-up;
+`git grep -c '#19' -- CLAUDE.md` there is 1), and that is a JC Edition article number
 rather than an issue — one more instance of the bullet above, met in the repo whose tracker had
 just been added.
 
