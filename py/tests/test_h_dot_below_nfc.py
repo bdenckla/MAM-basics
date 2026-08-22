@@ -268,16 +268,17 @@ def _scopes() -> tuple[_Scope, ...]:
             exclude_files=frozenset(),
             # book-of-job's own copy asserted a floor of 200 over its whole tree, which
             # counted the 268 .py that Phase 3 copied here and Phase 4 deleted there.
-            # 312 files were in scope before that deletion and **35** are after it,
+            # 312 files were in scope before that deletion and **33** are after it,
             # measured 2026-08-21: py_ac_loc/line-breaks/ (24) and two .md beside them,
-            # doc/ (2), README.md, CLAUDE.md, requirements.txt, the workspace file and
-            # four dotfiles. This comment predicted 42 before the phase ran; the seven
-            # files between that and the 35 measured after are the seven procedure docs
-            # that followed the code here as doc/boj-*.md, leaving doc/ with two rather
-            # than the nine the prediction counted. 30 still sits clear of 35, so the
-            # floor keeps meaning "an exclusion filter swallowed everything" rather than
-            # asserting a tree size -- and, as with the UXLC-utils scope, it is what
-            # would catch this scope outliving its tree.
+            # doc/ (2), README.md, CLAUDE.md and four dotfiles. This comment predicted 42
+            # before the phase ran, and the nine files between that and the 33 measured
+            # after are all deletions the phase made: the seven procedure docs that
+            # followed the code here as doc/boj-*.md, leaving doc/ with two rather than
+            # the nine the prediction counted, plus requirements.txt and the workspace
+            # file, which Ben chose to delete as orphaned by the move. 30 still sits
+            # clear of 33, so the floor keeps meaning "an exclusion filter swallowed
+            # everything" rather than asserting a tree size -- and, as with the
+            # UXLC-utils scope, it is what would catch this scope outliving its tree.
             floor=30,
         ),
     )
