@@ -73,7 +73,7 @@ Ben's behalf.
 halves of the one edit item 4 of the programme's Order hands this step, and are the only code
 change this phase made. The other four here are all prose: `eca7f14` backfilled `ef5525d`'s own
 hash, `0ea8d3e` recorded the CRLF defect a verification run turned up in codex-index-cam1753,
-`1e36d56` corrected the provenance claim below, and this one repairs the sentence you are reading,
+`1e36d56` corrected the provenance claim below, and `4682adf` repaired the sentence you are reading,
 which said "one commit in each of two repos" and was true for about an hour.
 
 ### Preconditions — one mismatch, benign
