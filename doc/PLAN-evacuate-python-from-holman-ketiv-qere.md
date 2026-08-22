@@ -815,6 +815,15 @@ dropped from the triple rather than carried forward. Record the suite as **947 p
 skipped** in the remaining plans, and re-measure rather than copying a figure whose instrument is
 not in the venv.
 
+**Correction, 2026-08-22 (the 2026-08-22 review, `doc/review-findings-2026-08-22.md` finding 6):
+Finding 3 above is wrong — the `59 subtests` figure does reproduce.** pytest 9.1.0 reports
+`unittest` subtests natively, with no `pytest-subtests` plugin: the review's full run at `b37bdb4`
+printed `945 passed, 5 skipped, 59 subtests passed`, and `py/main_test.py -q` over the six
+`subTest` modules alone prints `90 passed, 59 subtests passed`. The book-of-job plan's Phase 4
+record had already said so ("that is wrong … measured twice"); this paragraph re-points the plan
+that made the claim. Why the 2026-08-19 measurement above saw no subtests line is not explained by
+anything in the record, and the review did not reproduce it. Keep recording the triple.
+
 ---
 
 The rest of this section is the plan as written before the phase ran.

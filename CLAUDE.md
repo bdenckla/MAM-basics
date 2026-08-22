@@ -210,8 +210,11 @@ stay four-way**, book-of-job's numbering stopping at 61.
 **book-of-job had nothing to prefix either, which makes it twice running.** Its move was the
 programme's largest, 241 modules against holman-ketiv-qere's 60, and it owed this section exactly
 as little. All **29** `#`-plus-digit sites in the 268 `.py` that repo tracked before the move are
-disposed of without a prefix: **24 are lines of CSS hex colours**, 46 colour tokens between them,
-in `py/main_gen_aleppo_crop_editor.py` and `py/main_gen_cam1753_crop_editor.py`; **four are Yeivin
+disposed of without a prefix: **24 are lines of CSS hex colours**, 32 colour tokens on those 24
+lines (the two files hold 46 tokens over 36 such lines, the other 12 lines opening with a letter
+and so not matching `#`-plus-digit; this sentence said "46 colour tokens between them" until the
+2026-08-22 review), in `py/main_gen_aleppo_crop_editor.py` and
+`py/main_gen_cam1753_crop_editor.py`; **four are Yeivin
 *ITM* section numbers** — `#194`, `#358` and `#361` — in the `mb_cmn/hebrew_accents.py` copy Phase
 4 deleted, the same four lines holman-ketiv-qere's copy carried; and the twenty-ninth,
 `py/author_boj_util/qr_relations.py:75`, was already written out in full as
