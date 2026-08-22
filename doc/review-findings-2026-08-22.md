@@ -330,6 +330,32 @@ whose Phase 7 is where the first two belong. Finding 3 is a two-command regenera
 with no live session, left because the series reviews rather than regenerates — the commands are
 in the finding. Finding 4 is Ben's: both halves are outward-facing comments.
 
+**Later the same day, 2026-08-22, after this doc was filed (`ea1f035`):**
+
+- **Finding 4a is done.** On Ben's instruction, corrections were posted to #3 and #4
+  ([#3 comment](https://github.com/bdenckla/MAM-basics/issues/3#issuecomment-5382436360),
+  [#4 comment](https://github.com/bdenckla/MAM-basics/issues/4#issuecomment-5382436416)), each
+  quoting its comment's false parenthesis, giving the measured `TYPE` split with the command that
+  re-establishes it, and explaining why "prose only" still holds.
+- **Findings 2 and 5 were cleared by the trio session's Phases 6 and 7** (`87ef5c0`, 16:46):
+  `in/vendoring_policy.json` holds no `codex-index` entry and `doc/vendoring-inventory.md` no
+  trio row, and the programme's trio row reads "DONE 2026-08-22 — every phase". The two smaller
+  record gaps under finding 5 (`7ddd6da`'s reversal of the wlc-utils plan's Phase 11 item 7,
+  and the holman plan's "Not fixed" at its line 783) remain. Of finding 10's stale-by-later-work
+  items, holman `CLAUDE.md`'s `main_find_word_in_aleppo_images.py` line was rewritten by holman
+  `b1e1a2d` (16:50); holman `README.md:328`'s "one of three" remains.
+- **Finding 1 stands at 25** (`ruff check py`, re-run at `48485f3`), and finding 3's two holman
+  artifacts are still unregenerated — holman `b1e1a2d` is a doc repoint, not a regeneration.
+- **Finding 4b led somewhere else.** Reading #185's thread and the checker to answer Ben's
+  question about it established that the checker never found the Ne 8:7 merkha odd — the
+  June ERROR was the `has_legarmeh` book-name bug, fixed by wlc-utils `306e15f` on 2026-06-12 —
+  but that the checker reads the verse's **second** bar as a legarmeh where MAM, the LC's
+  margin and MGKeter's paseq list read a paseq, because `has_legarmeh` decides per verse.
+  Filed as [#233](https://github.com/bdenckla/MAM-basics/issues/233). A reply to skadish1 on
+  #185 is still Ben's to post.
+- The remaining actionables — findings 1, 3, the residue of 5, and the record corrections of
+  7, 8, 9 and 10 — were handed to a task chip on 2026-08-22, once the trio session was archived.
+
 ## Open ends the window itself declares (not findings)
 
 The codex-index trio evacuation's Phases 6 and 7 — in flight during this review, Phase 4 for all
