@@ -2,13 +2,26 @@
 
 WHAT A STUB IS FOR
 
-``bdenckla.github.io/wlc-utils/<path>`` is cited from places Ben cannot edit -- five
-citations of ``accgram/goerwitz.html`` in the tanach.us change list vendored into
-UXLC-utils, four deep links carrying fragments in UXLC-utils' own published CLC notes,
-and four paths in ``document-index/README.md``.  The pages themselves have moved to
-``bdenckla.github.io/MAM-basics/wlc/<path>``, a pure prefix rewrite, so each old URL is
-answered by a stub at its own old path that sends the reader on.  See
+``bdenckla.github.io/wlc-utils/<path>`` is cited where Ben cannot reach the citation, and
+that is the whole of what a stub is for: tanach.us's published change list, which cites
+``accgram/goerwitz.html`` five times, and the citations nobody can enumerate -- emails
+already sent, other people's pages, bookmarks, search indexes.  The pages themselves have
+moved to ``bdenckla.github.io/MAM-basics/wlc/<path>``, a pure prefix rewrite, so each old
+URL is answered by a stub at its own old path that sends the reader on.  See
 ``doc/PLAN-evacuate-the-rest-of-wlc-utils.md``, Phases 8 and 9.
+
+A CITATION BEN CAN EDIT IS NOT A REASON FOR A STUB; IT IS A URL TO UPDATE.  This docstring
+named three sources as "places Ben cannot edit" until 2026-08-22, and two of the three are
+his own: the four deep links carrying fragments in UXLC-utils' generated CLC notes, whose
+URL is ``py/clc/clc_render.py``'s ``_LC_CORROBORATED_LINK`` in this repo and so is one
+constant and a regeneration away from being right, and the four paths in
+``document-index/README.md``, hand written.  A fifth source the list missed,
+``UXLC-utils/doc/clc-design.md``, is hand written too.  Ben, 2026-08-22: "The stubs are
+for things out of my control."  Those three sources are in his control and want the new
+URL, not a redirect.  What is genuinely beyond it is tanach.us: the five citations there
+are in change proposals Ben submitted and that site publishes, and the copies vendored
+back under ``UXLC-utils/in/UXLC-misc/`` are snapshots of what it publishes, so editing one
+would falsify the snapshot and change nothing about the citation.
 
 THE PAGE LIST IS FROZEN, AND CAN ONLY SHRINK
 
