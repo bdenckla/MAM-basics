@@ -26,6 +26,14 @@ the Job manuscripts into `DATA-LICENSES.md`; that is licensing prose, not accent
 
 ## Status
 
+**PAUSED — Ben, 2026-08-23, after Phase 0 closed at `1410b5d`**: *"I want to pause the evacuation
+work for a while."* The Phase 1 chip was cancelled rather than launched. Nothing is in flight: no
+tree has landed, no repo but MAM-basics has been written to, and the dual-residency window has not
+opened, so this is the first of the safe stopping places under "How to run this plan across
+sessions" and can last indefinitely. **To resume**: re-check the four heads against the ones
+Phase 0's record names, re-run the preconditions, re-measure per the Scale section's standing
+instruction, and then run Phase 1 — which is verification only, per its Status row below.
+
 | Phase | State |
 |---|---|
 | 0 — Preflight: baselines, collision census, and the five decisions | **DONE 2026-08-23** — seven commits to this file, `0decb3f` through the one recording Decision E. Every Scale figure reproduced but the "outside `gh-pages/`" column (48 / 596 / 734, not 50 / 597 / 737); the census reproduced with one refinement (`sanity_problems.json` moves, 40 duplicates drop, not 41); the layer-4 sweep returned the list the plan has; baseline 941 passed / 5 skipped / 59 subtests, ruff and black clean. All five decisions answered, one at a time: A `book-of-job` / `holman` / `uxlc`; B no `LICENSE`, and the docx does not move — the cord to it is cut; C same relative path, `data/` at `data/`; D `py_ac_loc/` dropped; E two files deleted, the meteg-marks pair lands at `out/`. Two questions parked for Phases 3 and 5, written where those phases will find them |
