@@ -396,16 +396,55 @@ cannot see and mtime can. UXLC-utils' Phase 6 record names the reusable script i
 `.novc/oracle_mtimes.py` with `snapshot` and `compare` subcommands; rebuild it if it is gone, since
 `.novc/` is not tracked.
 
-**Layer 4, which wlc-utils did not need — the published-URL check.** wlc-utils' Phase 6 built a
-URL list because five tanach.us citations and four UXLC-utils deep links were published where Ben
-cannot edit them. The same is true here and the list is different; Phase 0 builds it. Known
-inbound links as of 2026-08-22, from a sweep of every clone under `C:\Users\BenDe\GitRepos`:
+**Layer 4 — the published-URL check, and a citation is one of TWO things, never one.** wlc-utils'
+Phase 6 built a URL list, and the list conflated two kinds of citation until Ben separated them on
+2026-08-22. **`py/wlc_redirect/stubs.py`'s docstring, corrected in `f762d2b`, is the statement of
+record — read it before writing any prose here about what a stub is for.** Ben, 2026-08-22:
+*"The stubs are for things out of my control... like references on tanach.us or URLs in emails I've
+already sent. For the two that are under my control, why wouldn't I just update the URL rather than
+rely on the stub."*
+
+- **A citation Ben cannot reach is the REASON a stub exists.** tanach.us's published change list is
+  the one enumerable example for wlc-utils, citing `accgram/goerwitz.html` five times in change
+  proposals Ben submitted and that site publishes. **The copies vendored back under
+  `UXLC-utils/in/UXLC-misc/` are snapshots of what tanach.us publishes, so editing one would
+  falsify the snapshot and change nothing about the citation** — that is the trap this distinction
+  is most likely to spring. Beyond that: emails already sent, other people's pages, bookmarks,
+  search indexes, none of them enumerable.
+- **A citation Ben CAN edit is a URL to update, and is not a reason for anything.** It belongs in
+  that repo's lane as work, not in the argument for keeping a redirect host alive. **Updating beats
+  redirecting**, and for a reason that outlives the preference: a stale link in Ben's own tree is
+  checked by nothing, where a frozen manifest entry is checked by the per-repo manifest test on
+  every suite run.
+
+**Every inbound link this plan's sweep found is of the second kind, and that is a fact about the
+instrument.** Measured 2026-08-22 across every clone under `C:\Users\BenDe\GitRepos` and
+`C:\Users\BenDe\GitRepos\MAM-private` — all of them Ben's:
 
 - `bdenckla.github.io/book-of-job/jobn-details/*.html` — seven sites in
   `MAM-private/mgketer/py/python_modules/diff_crops.py` and seven in that repo's
   `out-reports/by-book/D3-Job/suppressed.html`
 - `bdenckla.github.io/book-of-job/jobn/job2_main_article.html` — `document-index/README.md`
 - UXLC-utils' published CLC pages carry deep links, per `wlc-utils/README.md`
+
+**`git grep` across Ben's clones finds exactly the citations that are work items and, by
+construction, none of the citations that justify stubs.** So the list above is this plan's repoint
+backlog, not its evidence. **An earlier draft of this section presented it as the evidence**, which
+inverted the argument for all three repos at once.
+
+**So one question is open and no sweep of this disk can answer it: is any URL of these three repos
+cited anywhere Ben cannot reach?** wlc-utils had a known one in tanach.us. **Phase 0 must put this
+to Ben rather than infer it**, because he is the one who submitted the change proposals and sent
+the emails. **The answer does not change what gets frozen** — see the freeze rule below — but it
+changes what the emptied repos' `README.md` files can honestly claim, and it is the whole
+justification for keeping three redirect hosts alive.
+
+**And it does NOT license pruning the manifest.** Freeze each repo's whole published set at its
+flip, exactly as Phase 2 says. The citations that matter most are the ones nobody can enumerate, so
+the published set is the only available proxy for "what might be cited out there". **Do not reduce
+the frozen set to the citations you can find** — this correction is about the argument for the
+stubs and about repointing what Ben owns, and about neither the size of the frozen set nor whether
+to have one.
 
 **What the same sweep found NOTHING in, which is what turns an unexpected diff later into a finding
 rather than noise.** Run 2026-08-22 as `git grep -n -I -E "book-of-job|holman-ketiv-qere|UXLC-utils"`
@@ -479,12 +518,27 @@ having been HTTP-verified.** One commit: every HTML page **modified in place** �
 path is a modification, not a delete-plus-add, which keeps the diff readable — `404.html` added,
 and every non-HTML asset deleted. Nothing else changes.
 
-**Capture two things in this same commit, because the flip is the last moment either is knowable:**
-the repo's **frozen manifest** — the old published URL set, per Phase 2 — and **the list of places
-those old URLs are cited from**, drawn from Phase 0's layer-4 sweep and recorded the way
-`py/wlc_redirect/stubs.py`'s docstring records wlc-utils'. The citation list is what makes the
-"drop the URL and its stub" repair a decision later rather than a research task; carried-in
-decision 7 is why that repair matters.
+**Capture the frozen manifest in this same commit**, the flip being the last moment the old
+published URL set is knowable.
+
+**And split the citations two ways rather than listing them once**, per layer 4 above. An earlier
+draft of this step said to capture "the list of places those old URLs are cited from" as one list,
+which is the conflation Ben corrected on 2026-08-22:
+
+- **Citations Ben controls are WORK, done in this same phase.** Repoint each at its new MAM-basics
+  URL. Find them per repo with `git grep -n 'bdenckla.github.io/<repo>'` across every clone under
+  `C:\Users\BenDe\GitRepos` and `C:\Users\BenDe\GitRepos\MAM-private` — the instrument that found
+  wlc-utils' nine. **Prefer the generator to the artifact**: wlc-utils' four CLC deep links were one
+  constant, `py/clc/clc_render.py`'s `_LC_CORROBORATED_LINK`, plus a regeneration. **Expect this to
+  be real work in each of the three lanes rather than a footnote** — these repos cross-cite each
+  other and MAM-basics far more than wlc-utils did.
+- **Citations Ben cannot reach are the RECORD of why the stubs exist**, and go in the manifest's
+  own `comment` field, the way `stubs.py`'s docstring carries wlc-utils'. **Only these belong in
+  the argument for keeping the redirect host alive**, and only these belong in the emptied repo's
+  `README.md`.
+
+The second list is also what makes the "drop the URL and its stub" repair a decision later rather
+than a research task; carried-in decision 7 is why that repair matters.
 
 Verify: the layer-4 URL list against the old host, each redirecting to its MAM-basics equivalent;
 a path with no stub exercises `404.html`; the generalized `check` subcommand passes against the
@@ -498,9 +552,12 @@ files below. Check for untracked residue: `git rm` leaves it behind.
 
 **`README.md`** becomes one screen: this repo is a redirect host; the site is at
 `https://bdenckla.github.io/MAM-basics/<subtree>/`; the mapping is a pure prefix rewrite; it moved
-on `<date>`; the repo still exists because published URLs are cited from places Ben cannot edit;
-its issues are still live and read here; the data and code are in `../MAM-basics`; the
-pre-evacuation history is intact here.
+on `<date>`; **the repo still exists because of the citations Ben cannot reach — name the ones
+Phase 0 established, and if that answer came back empty say so rather than implying a list**; its
+issues are still live and read here; the data and code are in `../MAM-basics`; the pre-evacuation
+history is intact here. **Do not justify it by a citation in one of Ben's own repos**: those were
+repointed in this lane's Step 4, so citing one here would be claiming a reason the lane itself
+removed.
 
 **`CLAUDE.md`** shrinks to those facts plus the two only an agent needs — **`gh-pages/` is
 generated, do not hand-edit it, regenerate with MAM-basics' stub generator**, and **there is no
@@ -653,10 +710,15 @@ staging; and the push landing fast-forward with no `--force`.
 
    then intersect with the source repo's non-`gh-pages` blobs. Measured 2026-08-22: book-of-job 1
    (its Pages workflow), holman-ketiv-qere 0, UXLC-utils 41.
-3. **Build the layer-4 URL list.** Sweep every clone under `C:\Users\BenDe\GitRepos` and
-   `C:\Users\BenDe\GitRepos\MAM-private` for `bdenckla.github.io/<repo>/`. The known sites as of
-   2026-08-22 are listed under "Layer 4" above; **the sweep is what makes the list current**, and a
-   published URL nobody knew about is exactly what a stub exists for.
+3. **Build the layer-4 URL list, in TWO parts.** Sweep every clone under
+   `C:\Users\BenDe\GitRepos` and `C:\Users\BenDe\GitRepos\MAM-private` for
+   `bdenckla.github.io/<repo>/`. **Everything that sweep returns is a citation Ben controls, and so
+   is a repoint work item for that repo's lane, not evidence for a stub** — the sites known as of
+   2026-08-22 are under "Layer 4" above, and the sweep is what makes the list current.
+   **Then ask Ben the part no sweep can answer**: is any URL of these three repos cited anywhere he
+   cannot reach — a tanach.us change proposal, an email already sent, someone else's page? He
+   submitted the proposals and sent the emails, so he is the only source. Both halves are needed:
+   the first is work, the second is the reason the redirect hosts stay alive at all.
 4. **Record the baseline test count and lint state**: `py/main_test.py`'s summary line,
    `ruff check py`, `black --check py`. **The figure has moved twice in four days** — UXLC-utils'
    Phase 6 recorded 913 passed / 5 skipped on 2026-08-18, and the concurrent session measured
@@ -807,16 +869,21 @@ target in the manifest is the whole of what would add it.
 
 **Ben's decision, 2026-08-22: skip it. Recorded as considered and declined, not pending, and it is
 carried-in decision 7 above.** His reasoning applies to this plan's 426 frozen URLs as much as to
-wlc-utils' 154: the known citations are few and are named in `py/wlc_redirect/stubs.py`'s docstring
-— five of `accgram/goerwitz.html` in the tanach.us change list vendored into UXLC-utils, four deep
-links in UXLC-utils' own CLC notes, four paths in `document-index/README.md` — and for a page
-outside that list, dropping the stub costs nothing real. If a cited page is ever renamed, the
-failing test names it, and adding the branch **then** is the same one-line change it is now.
+wlc-utils' 154: the citations Ben cannot reach are few and are named in
+`py/wlc_redirect/stubs.py`'s docstring — for wlc-utils, five of `accgram/goerwitz.html` in
+tanach.us's published change list — and for a page outside that list, dropping the stub costs
+nothing real. If a cited page is ever renamed, the failing test names it, and adding the branch
+**then** is the same one-line change it is now.
 
-**One consequence for the lane, and it is what makes option 2 cheap later:** when Step 4 captures a
-repo's manifest, **capture alongside it the list of places that repo's old URLs are cited from**,
-the way `stubs.py`'s docstring does for wlc-utils. Phase 0's layer-4 sweep is where that list comes
-from. Without it, "drop the URL" is a research task at the worst moment; with it, it is a decision.
+**That list is shorter than an earlier draft of this paragraph said**, which also counted four CLC
+deep links and four `document-index/README.md` paths. Those are Ben's own and were repointed rather
+than redirected on 2026-08-22; see layer 4. **Only the citations he cannot reach bear on this
+decision**, because a citation he can edit is not answered by a stub either way.
+
+**One consequence for the lane, and it is what makes option 2 cheap later:** Step 4 records the
+citations Ben cannot reach in the manifest's own `comment`, the way `stubs.py`'s docstring does for
+wlc-utils. Without that record, "drop the URL" is a research task at the worst moment; with it, it
+is a decision.
 
 **What lowers the stakes generally:** `404.html` already strips the old prefix and prepends the new
 site by script, so **an old path with no stub of its own still forwards**. The per-page stubs buy
@@ -1144,8 +1211,10 @@ ambiguous, and that repo's plan settled the same question the same way.
 ## Risks, and what could go wrong irreversibly
 
 - **A stub pointing at a page that is not there.** A redirect to a 404 turns a working URL into a
-  confidently wrong one, and the citations in mgketer, `document-index` and UXLC-utils' published
-  CLC pages are where Ben cannot edit them, so nobody will report it. **Mitigated twice over**: the
+  confidently wrong one, and a citation Ben cannot reach is one nobody will report — **not the
+  citations in mgketer, `document-index` and UXLC-utils, which are his own and which this plan
+  repoints rather than redirects** (layer 4; an earlier draft of this bullet had them the wrong way
+  round). **Mitigated twice over**: the
   lane's hard gate, Step 4 not running until Step 1's deploy has been HTTP-verified; and, for the
   case that arises *later* — a frozen page renamed or dropped here — the per-repo manifest test of
   Phase 2's consequence 3, which fails the ordinary suite naming the page and needs no clone.
