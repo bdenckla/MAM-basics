@@ -297,6 +297,15 @@ because all three bear on what the tool is called; Decision A itself is still op
 
 ### Decision B — the licence position for the arriving trees
 
+**DECIDED — Ben, 2026-08-23, at Phase 0: leave each of the three emptied repos without a
+`LICENSE`, as it is today.** Taking the recommendation: an emptied repo holds nothing but generated
+stubs and a `404.html`, so there is nothing of substance left in it to license, and adding one
+would be a new statement with no need behind it. Each lane's Step 2 still adds the arriving tree's
+rows to `DATA-LICENSES.md`, the crops and Holman's images getting a row of their own modelled on
+the `gh-pages/wlc/*/img/` row. Re-checked the same day: still no `LICENSE` in any of the three
+(book-of-job `3f096b9`, holman-ketiv-qere `5f419ef`, UXLC-utils `b7b4eb9`). **The docx
+sub-question below was put to him separately**; its answer is recorded beside it.
+
 **None of the three repos has a `LICENSE` file.** Checked 2026-08-22: `ls ../book-of-job | grep -i
 licen` and the same in the other two return nothing, where wlc-utils has a CC0 `LICENSE` at its
 root. That is what made wlc-utils' Phase 4 tractable and it does not transfer.
