@@ -110,8 +110,13 @@ The main sources currently identified are:
 4. MAM-for-Acc translation/support code:
    `../MAM-for-Acc/acc_endoc_find_translation_errors.py`
    `../MAM-for-Acc/acc_markup_cited_sources.py`
-5. Local legacy reference:
-   `.claude/commands/sigil-lookup.md`
+5. Local legacy reference: the sigil table that `.claude/commands/sigil-lookup.md` carried
+   until `c14122a` (2026-04-07) replaced it with a pointer to this document. That table is
+   now only in git history, at `d86e577:.claude/commands/sigil-lookup.md`; the pointer file
+   itself was moved to `.claude-disabled/commands/sigil-lookup.md` by `b43b7ce` (2026-05-19).
+   Its glosses were guesses with no source behind them — its ק13 row read "Ms Cambridge T-S
+   13 (a Cairo Genizah fragment; exact ID may vary by context)" — so it is provenance for
+   where an old gloss came from, never evidence for one.
 
 When Wikisource and Accordance differ in evidentiary strength, this document should weigh Wikisource much more heavily. Accordance remains useful, especially for legacy mappings and internal nomenclature, but it should generally be treated as secondary support rather than the lead authority.
 
@@ -241,7 +246,9 @@ three kinds:
 
 This is a key test case.
 
-- The current legacy file `.claude/commands/sigil-lookup.md` says `ק-מ` means Qere-Masora.
+- The legacy sigil table (item 5 under "Source Hierarchy" above; in git history at
+  `d86e577:.claude/commands/sigil-lookup.md`) said `ק-מ` means Qere-Masora. No live file says
+  so any more.
 - Wikisource and MAM-with-doc prose evidence strongly support `כתי״ק-מ` as the Cambridge Ketuvim manuscript, Cambridge Add. 1753, cited as `קמ` by Breuer.
 - The archive item description for `Ketuvim (Cambridge Ms. Add. 1753)` explicitly says it is cited as `קמ` by Breuer.
 
