@@ -241,6 +241,24 @@ so the answers stay together.
 
 ### Decision A — what each arriving subtree is called under `gh-pages/`
 
+**DECIDED — Ben, 2026-08-23, at Phase 0: `gh-pages/book-of-job/`, `gh-pages/holman/` and
+`gh-pages/uxlc/`.** Neither of the two forms put to him, but one of each plus a third spelling:
+
+| Repo | subtree | published prefix after the move |
+|---|---|---|
+| book-of-job | `book-of-job` | `bdenckla.github.io/MAM-basics/book-of-job/` |
+| holman-ketiv-qere | `holman` | `bdenckla.github.io/MAM-basics/holman/` |
+| UXLC-utils | `uxlc` | `bdenckla.github.io/MAM-basics/uxlc/` |
+
+His reasons, as given: book-of-job keeps its full name because the short `job` "is sometimes
+confusing (particularly when lowercase) because of the English word 'job'"; UXLC-utils becomes
+`uxlc`, which names the edition rather than abbreviating the repo, exactly as `wlc` does; and
+holman-ketiv-qere becomes `holman`, the reviewer's name. **So the redirect is a prefix rewrite
+for all three and a prefix insertion for only the first** — which costs nothing, since Phase 2's
+table row carries the old prefix and the new one per repo in any case, and is what the wlc row
+already does (`bdenckla.github.io/wlc-utils/` → `…/MAM-basics/wlc/`). Nothing else in this
+section is changed by the answer; it stands as the record of what was put to him.
+
 The published URL becomes `bdenckla.github.io/MAM-basics/<subtree>/<path>`, and `<subtree>` is a
 free choice. wlc-utils' tree landed at `gh-pages/wlc/`.
 
@@ -573,8 +591,9 @@ instrument.** Measured 2026-08-22 across every clone under `C:\Users\BenDe\GitRe
   `https://bdenckla.github.io/MAM-basics/wlc/wlc-a-notes/` whatever this plan does. It is Phase
   4's, being book-of-job's generator, and it is the "prefer the generator" case. No stub would
   ever have rescued it: after Phase 5 the UXLC-utils `404.html` would forward it to
-  `MAM-basics/UXLC-utils/wlc-a-notes/`, which does not exist. (Found by the 2026-08-22 review; the
-  sweep recorded above had missed it.)
+  `MAM-basics/uxlc/wlc-a-notes/`, which does not exist. (Found by the 2026-08-22 review; the
+  sweep recorded above had missed it. The forwarded path read `MAM-basics/UXLC-utils/…` until
+  Decision A was answered on 2026-08-23.)
 
 The sweep also returns the three `py/*_paths.py` docstrings, which name each repo's URL and go
 with the modules at Step 3, and book-of-job's and UXLC-utils' own `README.md`, which name their own
