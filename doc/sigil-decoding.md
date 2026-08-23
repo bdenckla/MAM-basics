@@ -113,7 +113,8 @@ The main sources currently identified are:
 5. Local legacy reference: the sigil table that `.claude/commands/sigil-lookup.md` carried
    until `c14122a` (2026-04-07) replaced it with a pointer to this document. That table is
    now only in git history, at `d86e577:.claude/commands/sigil-lookup.md`; the pointer file
-   itself was moved to `.claude-disabled/commands/sigil-lookup.md` by `b43b7ce` (2026-05-19).
+   itself was moved to `.claude-disabled/commands/sigil-lookup.md` by `b43b7ce` (2026-05-19)
+   and deleted with that whole directory on 2026-08-23 (Ben's decision), so no copy is on disk.
    Its glosses were guesses with no source behind them — its ק13 row read "Ms Cambridge T-S
    13 (a Cairo Genizah fragment; exact ID may vary by context)" — so it is provenance for
    where an old gloss came from, never evidence for one.

@@ -443,6 +443,12 @@ to him with it and go with the answer:
 - **`.claude/commands/halve.md` lands under `.claude-disabled/commands/`**, beside the two
   retired commands MAM-basics keeps there, rather than becoming a live slash command at
   `.claude/commands/`. Same relative path for the file, one directory over for the mechanism.
+  **REOPENED 2026-08-23, later the same day:** Ben had `.claude-disabled/` deleted outright
+  (its three files — the two retired commands and a `settings.local.json` — are in history up
+  to `8e78498`), so this destination no longer exists. Phase 5 owes Ben this one particular
+  again before it copies anything: drop `halve.md` without copying, as Decision D does for
+  `py_ac_loc/` (it stays in UXLC-utils' history either way), or name another place for it.
+  Nothing else in Decision C changes.
 
 ### Decision D — book-of-job's `py_ac_loc/`, which nothing reads
 
