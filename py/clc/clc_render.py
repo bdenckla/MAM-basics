@@ -237,7 +237,7 @@ def _strand_note_header(note):
 
 
 _LC_CORROBORATED_LINK = (
-    "https://bdenckla.github.io/wlc-utils/accgram/supplied-marks.html"
+    "https://bdenckla.github.io/MAM-basics/wlc/accgram/supplied-marks.html"
 )
 
 # The exact URL-fragment on that page for each corroborated case's own "Supplied accents"

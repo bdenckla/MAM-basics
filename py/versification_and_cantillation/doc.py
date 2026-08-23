@@ -60,11 +60,15 @@ _PBP_FOI_URL = (
 # on those book pages are "c{chapter}v{verse}".
 _1SAM_16_12_URL = "https://bdenckla.github.io/MAM-with-doc/BA-1Samuel.html#c16v12"
 
-# The sibling wlc-utils gh-pages report on whether the printed tradition's Decalogue
-# cantillation is grammatical. Cross-repo, so an absolute Pages URL (the gh-pages/
-# segment is dropped in the served URL). Linked from the Decalogue-background aside.
+# This repo's own report on whether the printed tradition's Decalogue cantillation is
+# grammatical, under gh-pages/wlc/ since the 2026-08 evacuation. The URL stayed absolute
+# when it was repointed off bdenckla.github.io/wlc-utils on 2026-08-22 (Ben's decision --
+# a citation he can edit gets the new URL rather than leaning on wlc-utils' redirect
+# stub), because THIS page is published on MAM-simple's site, so the link is still
+# cross-repo (the gh-pages/ segment is dropped in the served URL). Linked from the
+# Decalogue-background aside.
 _PRINTED_DECALOGUE_URL = (
-    "https://bdenckla.github.io/wlc-utils/accgram/printed-decalogue.html"
+    "https://bdenckla.github.io/MAM-basics/wlc/accgram/printed-decalogue.html"
 )
 
 
