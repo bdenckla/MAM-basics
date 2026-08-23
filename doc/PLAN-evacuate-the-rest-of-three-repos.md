@@ -399,6 +399,28 @@ inbound links as of 2026-08-22, from a sweep of every clone under `C:\Users\BenD
 - `bdenckla.github.io/book-of-job/jobn/job2_main_article.html` — `document-index/README.md`
 - UXLC-utils' published CLC pages carry deep links, per `wlc-utils/README.md`
 
+**What the same sweep found NOTHING in, which is what turns an unexpected diff later into a finding
+rather than noise.** Run 2026-08-22 as `git grep -n -I -E "book-of-job|holman-ketiv-qere|UXLC-utils"`
+in every clone under `C:\Users\BenDe\GitRepos` and in `C:\Users\BenDe\GitRepos\MAM-private`,
+ignoring `.venv` and `node_modules`:
+
+- **Zero hits of any kind**, so no dependency and no prose to correct: **MAM-parsed, MAM-with-doc,
+  MAM-OSIS, MAM-for-Sefaria, phonetic-hbo, ArtScroll, diffable-pointed-hebrew, hbofonts.** Eight
+  clones, and the four MAM-\* data repos among them are the ones a reader would most expect to be
+  coupled.
+- **Prose or historical mentions only, with no path dependency and nothing to edit**:
+  codex-index-aleppo's and codex-index-cam1753's `CLAUDE.md` and `MAM-simple-provenance.md`,
+  MAM-simple's `py/main_test.py`, `MAM-private/al-hatorah/py/main_test.py`, and
+  `MAM-private/doc/PLAN-evacuate-private-repos.md`. **codex-index-aleppo and codex-index-cam1753
+  are named here deliberately**: the codex-index trio is excluded from this plan, and these two of
+  the three turn out to have no dependency on any evacuated repo either, so nothing about the trio
+  is contingent on this work. **codex-index-leningrad is the exception and is the one trio member
+  this plan does owe a commit** — see Phase 5's trap 4.
+
+So the repos this plan touches at all are: the three being evacuated, MAM-basics,
+codex-index-leningrad, `MAM-private` (two prose files), `document-index`, and `github-misc` (the
+two files that do not auto-sync). **Anything else showing a diff is a finding.**
+
 ---
 
 ## The per-repo lane — the six steps, stated once
