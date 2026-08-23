@@ -171,12 +171,18 @@ These were settled elsewhere and are named here so that a fresh session does not
    renamed page's stub repointable at the content's new home; without it the two repairs are
    republish-at-the-old-path or drop-the-URL-and-its-stub. The reasoning, and the reason the
    decision is cheap to revisit if it ever bites, is under Phase 2's "Renaming a frozen page".
-   **One leg of that reasoning was weakened by decision 8 below and the decision still stands** —
-   said here so nobody finds the two side by side and reads a contradiction. The leg that weakened
-   is "the known citations are few, so dropping a stub costs nothing real", which decision 8
-   answers with an unknowable cited set. The leg that carries it is untouched and is sufficient
-   alone: a rename fails the suite by name, and adding the branch **then** is the same one-line
-   change as adding it now, so nothing is foreclosed by waiting.
+   **Decision 8 below does NOT weaken this, and a draft of this file that said it did was wrong on
+   a point of attribution** — recorded because the mistake is the kind a later reader would make
+   again from the same materials. That draft had Ben deciding on the premise "the known citations
+   are few, so dropping a stub costs nothing real", and then had decision 8's unknowable cited set
+   undercutting him. **That premise was the sessions' rendering of his decision, never his
+   reasoning.** Ben, 2026-08-22, on being shown the supposed tension: *"I stand by that decision.
+   It was made in your ignorance of how widespread the need for stubs is; I was perfectly aware of
+   how widespread the need for stubs is when I made that decision."* So the two decisions were
+   taken by someone holding both facts at once, and there is no tension between them to resolve.
+   **What makes the deferral safe is unchanged and never depended on a citation count**: a rename
+   fails the suite by name, and adding the branch **then** is the same one-line change as adding it
+   now, so nothing is foreclosed by waiting.
 8. **Assume every one of these repos' old URLs is cited where Ben cannot reach it.** Ben,
    2026-08-22, answering the question Phase 0 was going to put to him: *"Assume URLs to all three
    are cited in places I cannot reach (Twitter posts, emails sent, etc.)"* **Non-empty and
@@ -891,12 +897,20 @@ rewrite of the stub's own path, so once the test fires there are exactly two way
 target in the manifest is the whole of what would add it.
 
 **Ben's decision, 2026-08-22: skip it. Recorded as considered and declined, not pending, and it is
-carried-in decision 7 above.** His reasoning applies to this plan's 426 frozen URLs as much as to
-wlc-utils' 154: the citations Ben cannot reach are few and are named in
-`py/wlc_redirect/stubs.py`'s docstring — for wlc-utils, five of `accgram/goerwitz.html` in
-tanach.us's published change list — and for a page outside that list, dropping the stub costs
-nothing real. If a cited page is ever renamed, the failing test names it, and adding the branch
-**then** is the same one-line change it is now.
+carried-in decision 7 above.** **It holds for this plan's 426 frozen URLs as it does for wlc-utils'
+154, and it was made knowing the cited set is unenumerable** — Ben, 2026-08-22: *"I was perfectly
+aware of how widespread the need for stubs is when I made that decision."* **So do not reopen it on
+the strength of decision 8**, which states that same fact and was not new information to him.
+
+**What makes the deferral safe**: if a cited page is ever renamed, the failing test names it, and
+adding the branch **then** is the same one-line change it is now. Nothing is foreclosed by waiting,
+and that holds however many citations exist.
+
+**Do not restate this decision as resting on the citations being few.** Two sessions summarized it
+that way on 2026-08-22 and neither had it from Ben; the enumerable list — for wlc-utils, five
+citations of `accgram/goerwitz.html` in tanach.us's published change list, named in
+`py/wlc_redirect/stubs.py`'s docstring — is the part of the cited set that can be *written down*,
+not an estimate of its size.
 
 **That list is shorter than an earlier draft of this paragraph said**, which also counted four CLC
 deep links and four `document-index/README.md` paths. Those are Ben's own and were repointed rather
