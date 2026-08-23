@@ -1,8 +1,9 @@
-"""``build``: write a redirect stub per published page, plus the ``404.html`` catch-all.
+"""``build``: write a redirect stub per frozen old URL, plus the ``404.html`` catch-all.
 
 The destination defaults to a gitignored scratch directory, so the safe target is the one
 you get by saying nothing and publishing into wlc-utils takes ``--publish``.  What the
-stubs are and why they carry the target three times over is ``stubs.py``'s docstring.
+stubs are, why they carry the target three times over, and why the URL list is frozen
+rather than derived from the live site are all ``stubs.py``'s docstring.
 """
 
 from __future__ import annotations
@@ -15,9 +16,9 @@ from wlc_redirect import stubs
 
 
 def add_args(parser: argparse.ArgumentParser, repo_root: Path) -> None:
-    # repo_root is unused: the page list is read at run time from paths.repo_root(), which
-    # is where the published pages are.  The parameter is here so the entry point wires
-    # both subcommands the same way.
+    # repo_root is unused: the frozen URL list is read at run time from the manifest under
+    # paths.repo_root().  The parameter is here so the entry point wires both subcommands
+    # the same way.
     del repo_root
     destination = parser.add_mutually_exclusive_group()
     destination.add_argument(
@@ -32,8 +33,8 @@ def add_args(parser: argparse.ArgumentParser, repo_root: Path) -> None:
         "--publish",
         action="store_true",
         help=(
-            "write into wlc-utils' own gh-pages/ instead, which is what Phase 9 of"
-            " doc/PLAN-evacuate-the-rest-of-wlc-utils.md commits"
+            "write into wlc-utils' own gh-pages/ instead, which takes a clone of that"
+            " repo, there being none on the disk"
         ),
     )
 

@@ -7,10 +7,13 @@ vendored into UXLC-utils above all -- so wlc-utils stays alive as a redirect hos
 than being archived or deleted, holding one stub per published page plus a ``404.html``
 catch-all.  This program builds that set and lints it.
 
-The stub set is derived from the site rather than from a list: ``git ls-files
-gh-pages/wlc`` filtered to ``*.html``, whose path below that prefix is at once the old
-wlc-utils path and the new MAM-basics suffix.  So the stubs cannot drift from what is
-published, and neither subcommand has a hand-maintained side.
+The stub set is the frozen list ``in/wlc_redirect_pages.json``, the 154 paths wlc-utils
+published at the move.  Each path below that prefix is at once the old wlc-utils path and
+the new MAM-basics suffix, which is what makes the rewrite a prefix rewrite.  The set can
+only shrink: a page added under ``gh-pages/wlc/`` after the move was never a wlc-utils
+URL, is cited as a MAM-basics one, and earns no stub (Ben's decision, 2026-08-22 --
+``py/wlc_redirect/stubs.py``'s docstring has what the derivation from the live site got
+wrong).
 
 WITH JAVASCRIPT OFF, A DEEP LINK LOSES ITS FRAGMENT.  Each stub carries its target three
 times and the three do different work: the canonical link names the current copy for a
@@ -23,20 +26,18 @@ docstring states this and the rest of the design in full.
 
 Subcommands:
     build
-                Write a stub per published page plus the 404.html catch-all.  --out
-                names the destination and defaults to the gitignored
-                .novc/wlc-redirect-stubs/, so the safe target is the one you get by
-                saying nothing; --publish writes into wlc-utils' own gh-pages/ instead,
-                which is what Phase 9 of doc/PLAN-evacuate-the-rest-of-wlc-utils.md
-                commits.  It deletes nothing, wlc-utils' non-HTML assets being a git rm
-                that phase does by hand.
+                Write a stub per frozen old URL plus the 404.html catch-all.  --out names
+                the destination and defaults to the gitignored .novc/wlc-redirect-stubs/,
+                so the safe target is the one you get by saying nothing; --publish writes
+                into wlc-utils' own gh-pages/ instead, which takes a clone of that repo,
+                there being none on the disk.  It deletes nothing.
     check
-                Lint a stub tree against the site it stands in for: every published page
-                has a stub, every stub has a published page, 404.html is present, and
-                each stub names its own path's prefix rewrite and no other target.
-                --dir defaults to wlc-utils' gh-pages/, which is what Phase 9 verifies
-                against; before that flip those files are still the real pages, so point
-                it at the tree build just wrote.  Exits non-zero on any problem.
+                Lint a stub tree against the frozen URLs: every one of them has a stub,
+                every stub answers one of them, every one of them is still published
+                under gh-pages/wlc/, 404.html is present, and each stub names its own
+                path's prefix rewrite and no other target.  --dir names the tree; its
+                default, wlc-utils' gh-pages/, takes a clone.  Exits non-zero on any
+                problem.
 
 Examples:
     .venv/Scripts/python.exe py/main_wlc_redirect_stubs.py build --out .novc/stubs
