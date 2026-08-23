@@ -28,7 +28,7 @@ the Job manuscripts into `DATA-LICENSES.md`; that is licensing prose, not accent
 
 | Phase | State |
 |---|---|
-| 0 — Preflight: baselines, collision census, and the five decisions | not started |
+| 0 — Preflight: baselines, collision census, and the five decisions | **in progress, 2026-08-23** — items 1 to 4 done and written back (three findings; see the execution record); item 5's decisions are being put to Ben one at a time, and each answer lands under "Decisions this plan needs from Ben" as it arrives |
 | 1 — `.gitattributes` merge in MAM-basics | not started |
 | 2 — Generalize the redirect-stub generator to a table of four | not started |
 | 3 — holman-ketiv-qere, the pilot lane; plus the generated landing page | not started |
@@ -91,9 +91,32 @@ and no change to any count in the table.
 | Repo | tracked | MB | `gh-pages/` files | `gh-pages/` MB | HTML pages | outside `gh-pages/` | MB outside |
 |---|---|---|---|---|---|---|---|
 | book-of-job | 784 | 73.4 | 694 | 65.2 | **175** | 90 | 8.1 |
-| holman-ketiv-qere | 348 | 58.1 | 300 | 35.5 | **6** | 50 | 22.6 |
-| UXLC-utils | 780 | 43.1 | 184 | 18.4 | **91** | 597 | 24.9 |
-| **total** | **1,912** | **174.6** | **1,178** | **119.1** | **272** | **737** | **55.6** |
+| holman-ketiv-qere | 348 | 58.1 | 300 | 35.5 | **6** | 48 | 22.6 |
+| UXLC-utils | 780 | 43.1 | 184 | 18.4 | **91** | 596 | 24.7 |
+| **total** | **1,912** | **174.6** | **1,178** | **119.1** | **272** | **734** | **55.4** |
+
+**Phase 0's re-measure, 2026-08-23, at MAM-basics `d095871`, book-of-job `3f096b9`,
+holman-ketiv-qere `5f419ef`, UXLC-utils `b7b4eb9`: every figure in the first six columns
+reproduces exactly, and the last two columns did NOT.** The table read holman-ketiv-qere **50** /
+22.6, UXLC-utils **597** / **24.9** and a total of **737** / **55.6** until that day. The cause is
+the trap the paragraph below this one warns about, sprung on the column it does not mention: the
+"outside `gh-pages/`" counts had been taken with a naive `git ls-files | grep -v '^gh-pages/'`,
+and `git ls-files` quotes a path holding a non-ASCII byte, so the two JC3 pages in
+holman-ketiv-qere and the one Hebrew-named JPG under UXLC-utils' `gh-pages/amb-early-mtg/img/`
+begin with `"` rather than `gh-pages/`, escaped the exclusion, and were counted as outside —
+2 files in holman-ketiv-qere, 1 file and 0.14 MB in UXLC-utils. The corrected figures are
+`tracked − gh-pages files` and `MB − gh-pages MB`, which the first six columns had supplied all
+along, and they are what the per-repo tables in Phases 3 and 5 sum to: holman-ketiv-qere's
+itemized 43 plus its five housekeeping files (`.gitattributes`, `.github/workflows/pages.yml`,
+`.gitignore`, `CLAUDE.md`, `README.md`) is 48, and UXLC-utils' 591 plus the same five is 596.
+Re-establish with the null-delimited form, which is the only safe one for this column:
+
+```bash
+git -C ../holman-ketiv-qere ls-files -z | tr '\0' '\n' | grep -vc '^gh-pages/'
+```
+
+The same miscount had been copied into Decision C, Phase 3 and Phase 5, each corrected in place
+the same day with its old figure noted beside it.
 
 ```bash
 git -C ../book-of-job ls-files | wc -l
@@ -115,12 +138,14 @@ git -C ../book-of-job ls-files -z gh-pages | tr '\0' '\n' | grep -ci '\.html\?$'
 
 **Three counts matter and they size three different jobs**, which is why they are kept apart: the
 **1,178** is the size of the `gh-pages/` move, the **272** is the size of the stub set left behind
-(one stub per HTML page), and the **737** is a third job the programme's tables do not cover at
-all — the data, inputs and prose outside `gh-pages/` that "total evacuation" also carries.
+(one stub per HTML page), and the **734** is a third job the programme's tables do not cover at
+all — the data, inputs and prose outside `gh-pages/` that "total evacuation" also carries. (This
+figure, and the 596 two sentences on, read 737 and 597 until Phase 0's re-measure of 2026-08-23 —
+see the note under the table.)
 
 **holman-ketiv-qere is the lopsided one**: 300 files moved and **6** stubs written, its published
 site being almost entirely images. **UXLC-utils is lopsided the other way**: 184 files under
-`gh-pages/` and **597** outside it.
+`gh-pages/` and **596** outside it.
 
 ### The destination
 
@@ -130,14 +155,23 @@ files / 50.0 MB / 155 HTML pages** — essentially all of it wlc-utils'.
 **The programme's figures for MAM-basics are already stale and this is the re-measure.** It
 records 2,220 files / 270.7 MB, measured earlier on 2026-08-22; the tree has since grown by 59
 files and 0.6 MB. Nothing follows from the drift except the instruction that produced it: measure
-again at Phase 0.
+again at Phase 0. **Phase 0 did, 2026-08-23, at `d095871`: 2,282 files / 271.4 MB, `gh-pages/`
+285 / 50.0 / 155** — the 2026-08-22 review's figures exactly, the three commits since `59142cf`
+having touched only this file.
 
-After all three lanes: roughly **1,463 files / 169 MB** under `gh-pages/`, and about **3,900 files
-/ 380 MB** for the repo. Git stores these as ordinary blobs and nothing here is near a size limit.
+After all three lanes: roughly **1,463 files / 169 MB** under `gh-pages/`, and about **4,100 files
+/ 430 MB** for the repo. Git stores these as ordinary blobs and nothing here is near a size limit.
+(This sentence said "about 3,900 files / 380 MB" until Phase 0, 2026-08-23, and neither figure
+follows from the table: 2,282 + 1,912 is 4,194, less the 15 housekeeping files that collide by
+path and do not travel, the 40 duplicate blobs Phase 5 drops rather than moves (12.2 MB — see
+Phase 0's census record) and `UXLC-utils.code-workspace`, is 4,138 files; 271.4 + 174.6 less the
+same 12.2 MB is 433.8 MB. Decision D's `py_ac_loc/`, 76 files / 7.8 MB, and Decision B's docx,
+20.6 MB, come off those figures only if Ben drops them. The conclusion the figures served — that
+nothing is near a size limit — is unchanged either way.)
 
 **For scale against the precedent:** wlc-utils' move carried 284 files / 50.0 MB and left 154
 stubs plus `404.html`. This is about four times its file count in the `gh-pages/` half alone, and
-the 737 files outside `gh-pages/` have no counterpart in it at all — wlc-utils' `out/` 193, `in/`
+the 734 files outside `gh-pages/` have no counterpart in it at all — wlc-utils' `out/` 193, `in/`
 135, `doc/` 6 and `data/` 1 came to 335, which is less than half of what these three repos hold
 outside their published trees.
 
@@ -272,7 +306,8 @@ dropped.
 
 ### Decision C — where each repo's non-`gh-pages` tree lands
 
-**737 files, and the programme's decision sections do not cover them.** wlc-utils' precedent
+**734 files, and the programme's decision sections do not cover them** (737 until Phase 0's
+re-measure of 2026-08-23 — see the note under the Scale table). wlc-utils' precedent
 merged at the same relative path (`out/`→`out/`, `in/`→`in/`, `doc/`→`doc/`) with one file
 relocated (`data/lci_recs.json`→`in/lci_recs.json`).
 
@@ -304,6 +339,52 @@ Three options: move it into MAM-basics under a name that does not collide; merge
 codex-index-aleppo, which is the repo whose data it duplicates; or drop it. **Recommendation: put
 it to Ben with the three options and the blob comparison**, exactly as book-of-job's Phase 4 put
 the 40 orphaned UXLC data files to him and he chose delete. Do not decide it inside a phase.
+
+**Phase 0's blob comparison, 2026-08-23, book-of-job `3f096b9` against codex-index-aleppo
+`1da6b23` — and it narrows the question.** "Differ" above was true and understated: **every one
+of the 76 files is in codex-index-aleppo's history, and none carries an edit codex-index-aleppo
+lacks.**
+
+- **26 are one blob with codex-index-aleppo today**: the 24 `MAM-XML/*.xml` at the same paths,
+  and `codex-index/index-flat.json`, which is codex-index-aleppo's `aleppo-wiki/index-flat.json`.
+- **48 — the 24 `column-coordinates/` and 24 `line-breaks/`, all Job pages `270r`–`281v` — are
+  one blob with codex-index-aleppo at its `0be4d38` (2026-02-19) and `295829e` (2026-02-24), 48
+  of 48.** book-of-job's own last edit to them is `fa897f4`, 2026-02-19, the same ketiv-word fix
+  made in both repos the same day. After `295829e` codex-index-aleppo alone moved on —
+  `eb4bcaf` (2026-03-14) migrated the column IDs to its NofM format and the Deuteronomy pages
+  `001r`–`006r` followed, which is why it holds 35 of each today against book-of-job's 24. So
+  book-of-job's copy is a **strict older snapshot**, not a divergent one: a one-page diff is
+  68+/33− in `column-coordinates/270r.json` and 112+/112− in `line-breaks/270r.json`, all of it
+  codex-index-aleppo's later work. Re-establish by taking any of the 48 blobs from
+  `git -C ../book-of-job ls-files -s py_ac_loc/line-breaks` and running
+  `git -C ../codex-index-aleppo log --oneline --find-object=<blob>`.
+- **`image-sources.md` was codex-index-aleppo's too, and was removed there on purpose** —
+  `3a50ec1`, "Remove redundant image-sources.md (superseded by aleppo-pages-provenance.md)"; its
+  Internet Archive API and leaf-to-page formula are in that repo's `aleppo-pages-provenance.md`
+  and `doc/aleppo-line-breaks.md`.
+- **The remaining two are provenance breadcrumbs about the copies themselves** —
+  `MAM-simple-provenance.md` (284 bytes; the same path in codex-index-aleppo is a different blob,
+  being that repo's own breadcrumb) and `codex-index/codex-index-provenance.md` (430 bytes, naming
+  the old `codex-index` repo at `88553fe`). Neither says anything a dropped copy would still need.
+
+**So the three options weigh differently than the paragraph above suggests.** "Merge into
+codex-index-aleppo" would add nothing — that repo already holds every byte, 26 of them live and
+48 in history — and "move into MAM-basics" would bring in a snapshot of another repo's data that
+is superseded in the other repo. **That leaves drop as the natural answer, and the
+recommendation becomes: drop it, unless Ben wants the Job-page snapshot of 2026-02-19 kept
+somewhere for its own sake.**
+
+**Two qualifications to "no reader", found the same day.** The claim that nothing in MAM-basics'
+`py/` reads it is true of consumers and false of one lint: `py/check_mark_order.py` scans every
+`.json` under `boj_paths.boj_data_root()` through `repo_scopes.corpus_roots()`, and its own
+docstring names "24 line-break files under book-of-job's `py_ac_loc/`" as the reason it reads the
+data root at all. It reported **509 files** on 2026-08-23; 49 of those are `py_ac_loc/`'s JSON
+(24 + 24 + `index-flat.json`), so dropping the directory takes the check to **460**, and Phase 4's
+"a change in what the lints cover is a finding" should expect exactly that change and no other.
+No coverage is lost by it — the same pages' later versions are scanned under codex-index-aleppo's
+own root, which is also in `corpus_roots()`. And book-of-job's `doc/reading-mam-simple.md`, which
+Phase 4 moves, links to `py_ac_loc/MAM-simple-provenance.md` and describes `py_ac_loc/MAM-XML/`;
+if the directory is dropped, Phase 4 rewrites those sentences rather than moving a dangling link.
 
 ### Decision E — the four loose UXLC-utils files, and one live instruction among them
 
@@ -378,7 +459,9 @@ review; the fixture spellings had been lumped in with the four resolutions.)
   step.** Read its docstring: it copies `UXLC-utils/in/UXLC-39`'s XML and `UXLC-utils/out/UXLC-misc`'s
   JSON into MAM-basics' own `in/`. Once UXLC-utils' `in/` and `out/` are here, source and
   destination are the same tree. **This is measurable today and explains the collision census**:
-  41 of UXLC-utils' non-`gh-pages` blobs are already in MAM-basics, being those 39 XML plus 2 JSON.
+  41 of UXLC-utils' non-`gh-pages` blobs are already in MAM-basics, being those 39 XML plus
+  `all_changes.json` — and one 3-byte `[]`, `sanity_problems.json`, that nothing vendors and that
+  is a coincidence rather than a copy (Phase 0's item 2, 2026-08-23).
   The mega's `wlc-vendor-uxlc` step goes with it, and the `find-uxlc-accent-changes` step's "must
   come after wlc-vendor-uxlc" note has to be rewritten. **This is Phase 5's largest single
   simplification and its largest single risk** — see that phase.
@@ -542,8 +625,13 @@ ignoring `.venv` and `node_modules`:
   coupled.
 - **Prose or historical mentions only, with no path dependency and nothing to edit**:
   codex-index-aleppo's and codex-index-cam1753's `CLAUDE.md` and `MAM-simple-provenance.md`,
-  MAM-simple's `py/main_test.py`, `MAM-private/al-hatorah/py/main_test.py`, and
-  `MAM-private/doc/PLAN-evacuate-private-repos.md`. **codex-index-aleppo and codex-index-cam1753
+  MAM-simple's `py/main_test.py`, `MAM-private/al-hatorah/py/main_test.py`,
+  `MAM-private/doc/PLAN-evacuate-private-repos.md`, and — added by Phase 0's re-sweep,
+  2026-08-23, which found them where the 2026-08-22 sweep had not listed them — three more in
+  `MAM-private/mgketer/`: `documentation/periodic-maintenance.md` (book-of-job "has held zero
+  tracked `.py` since 2026-08-21", which stays true), `py/py_ac_word_image_helper/alef_bet_to_ascii.py`
+  ("which was book-of-job's") and `py/python_modules/hebrew_word_id.py` ("the same scheme as
+  *book-of-job*"). **codex-index-aleppo and codex-index-cam1753
   are named here deliberately**: the codex-index trio is excluded from this plan, and these two of
   the three turn out to have no dependency on any evacuated repo either, so nothing about the trio
   is contingent on this work. **codex-index-leningrad is the exception and is the one trio member
@@ -826,8 +914,18 @@ staging; and the push landing fast-forward with no `--force`.
 
    and the same command with `git -C ../UXLC-utils`, then `diff`. Measured 2026-08-22: all 39
    identical, MAM-basics holding one extra file (`in/UXLC-39/_provenance.md`). **So those 39 are a
-   duplicate to drop rather than a file to move**, and the same holds for the 2 under
-   `out/UXLC-misc/`. Re-derive the blob-level census too, which is what found them:
+   duplicate to drop rather than a file to move**, and the same holds for ONE of the 2 under
+   `out/UXLC-misc/` — `all_changes.json`, vendored here as `in/UXLC-misc/all_changes.json`. **Not
+   for the other: `out/UXLC-misc/sanity_problems.json` is the 3-byte `[]`, and its blob match is
+   a content coincidence with four unrelated empty-list files here** (`out/diff_mamws_mamgo*.json`
+   and two under `out/mam-ws-bot/proto-misc/`) and with UXLC-utils' own
+   `gh-pages/clc/Exodus-20-notes.json`. Nothing vendors it: `main_wlc_vendor_uxlc.py`'s `_sync`
+   goes through `vendoring_sync.copy_by_intersection`, which copies only files already present in
+   the destination, and `in/UXLC-misc/` holds `all_changes.json` alone. **So Phase 5 moves
+   `sanity_problems.json` with the rest of `out/`, and the duplicates to drop are 40, not 41**
+   — 39 XML at 10.8 MB plus `all_changes.json` at 1.4 MB, 12.2 MB in all. (This sentence said
+   "the same holds for the 2" until Phase 0 ran, 2026-08-23.) Re-derive the blob-level census too,
+   which is what found them:
 
    ```bash
    git ls-files -s | awk '{print $2}' | sort -u > .novc/_mbblobs.txt
@@ -855,6 +953,105 @@ staging; and the push landing fast-forward with no `--force`.
 
 **What is NOT expected to change in this phase:** any file in any of the four repos except this
 plan file. If `git status` shows anything else, that is a finding.
+
+### Execution record — Phase 0, 2026-08-23
+
+Began at MAM-basics `d095871`, book-of-job `3f096b9`, holman-ketiv-qere `5f419ef`, UXLC-utils
+`b7b4eb9` — the heads the chip named — with all four at `git status --porcelain` empty, all four
+on `main` with nothing unpushed, and MAM-basics confirmed the main clone rather than a worktree
+(`git rev-parse --git-common-dir` is `.git`). **Nothing was copied, nothing was deleted, and no
+repo but MAM-basics was written to**; every command below is read-only outside `.novc/`. The
+working files are in `.novc\three-repos-phase0\` (gitignored), the flat listings and blob sets the
+census was taken from.
+
+**Items 1 to 4 were done in one sitting and written back first; item 5, the five decisions, was put
+to Ben one at a time afterwards**, each answer recorded under "Decisions this plan needs from Ben"
+as it arrived. The Status row says which state this phase is in.
+
+**Item 1 — the Scale table reproduces in its first six columns and not in its last two.** Every
+tracked-file count, total size, `gh-pages/` count, `gh-pages/` size and HTML-page count came back
+exactly as written, for all three sources and for MAM-basics. The "outside `gh-pages/`" column
+was wrong by 2 files for holman-ketiv-qere, and by 1 file and 0.2 MB for UXLC-utils — the three
+quoted, Hebrew-named `gh-pages/` paths, leaked past a naive `grep -v '^gh-pages/'` into the
+outside count. The corrected table, the cause, and the null-delimited command are under "Scale";
+the same figures were corrected in place in Decision C, Phase 3 and Phase 5. **The after-all-lanes
+projection was also off** — "about 3,900 files / 380 MB" does not follow from the table's own
+figures, which give about 4,100 / 430 before anything is dropped; corrected in place, with the
+derivation. Neither correction changes any decision.
+
+**Item 2 — the collision census reproduces exactly, with one refinement that changes what Phase
+5 does to one file.** Path collisions: book-of-job `.gitattributes`, `.gitignore`, `CLAUDE.md`,
+`README.md` and `gh-pages/index.html`; holman-ketiv-qere and UXLC-utils those plus
+`.github/workflows/pages.yml`; and for UXLC-utils the 39 `in/UXLC-39/*.xml`. **book-of-job's
+workflow does not collide by path because it is `.github/workflows/static.yml`**, a different
+name for the same 687-byte blob as MAM-basics' `pages.yml` — which is why it is the one
+book-of-job blob in the blob census and is absent from the path census. The 39 XML are 39 of 39
+byte-identical, MAM-basics holding `in/UXLC-39/_provenance.md` besides. The blob census: book-of-job
+1, holman-ketiv-qere 0, UXLC-utils 41. **The refinement: the 41st is `out/UXLC-misc/sanity_problems.json`,
+a 3-byte `[]` whose match with MAM-basics is a content coincidence, not a vendored copy** —
+`main_wlc_vendor_uxlc.py` copies by intersection with what `in/UXLC-misc/` already holds, which is
+`all_changes.json` alone. So 40 blobs are duplicates to drop (12.2 MB) and that one file moves
+with `out/`. Written into item 2 above, into "The organizing idea", and into Phase 5's trap 3.
+
+**Item 3 — the layer-4 sweep returns the list the section already has, and nothing of a new
+kind.** Citations of `bdenckla.github.io/{book-of-job,holman-ketiv-qere,UXLC-utils}` across the
+19 clones (MAM-private counted once; its three subtrees are not clones): mgketer's seven in
+`py/python_modules/diff_crops.py` and seven in `out-reports/by-book/D3-Job/suppressed.html`,
+`document-index/README.md`'s one, `_WLCAU` at `py/author_boj/job5_orphan_qere_points.py:81` and
+its two emitted copies in book-of-job's `gh-pages/jobn/job5_orphan_qere_points.html`, the three
+`py/*_paths.py` docstrings, book-of-job's `README.md` (one line, two URLs) and UXLC-utils'
+`README.md` (four URLs, lines 54–57) — plus this plan and
+`doc/PLAN-evacuate-python-from-book-of-job.md`, which describe the URLs. **holman-ketiv-qere's
+URL is cited nowhere but its own path module's docstring.** Over HTTP the same day: the `_WLCAU`
+URL answers 404 and `bdenckla.github.io/MAM-basics/wlc/wlc-a-notes/` answers 200, as layer 4 says;
+all three old sites still answer 200 at their roots. The name sweep confirmed the eight zero-hit
+clones as listed, codex-index-leningrad's four files (Phase 5's trap 4) and github-misc's three
+(Phase 6's items 3 and 4: `SKILL.md`'s description line names book-of-job and UXLC-utils,
+`terminology.md` names UXLC-utils at `:123` and `:144`), and added three prose-only mgketer files to
+the list under layer 4. The second part of this item was not put to Ben — decision 8 stands.
+
+**Item 4 — the baseline is exactly the figure carried.** `py/main_test.py`: **941 passed, 5
+skipped, 59 subtests passed** in 158 s. `ruff check py`: clean. `black --check py`: clean, **1,134
+files**, black 26.5.1. And one figure the plan did not carry, added because Decision D moves it:
+`py/check_mark_order.py` reports **509 files**, 49 of them book-of-job's `py_ac_loc/*.json`.
+
+**Preconditions, re-checked.** 1: the programme's Status table reads DONE on all five rows and
+WRITTEN on this plan's. 2: `gh run list --workflow pages.yml --limit 1 --repo bdenckla/MAM-basics`
+shows success for the `d095871` push, and `bdenckla.github.io/MAM-basics/wlc/index.html` answers
+200. 5: `HEAD` at start `d095871`, equal to `HEAD` before each commit below.
+
+**Banked for later phases, while cheap.** Both unsynced live-plus-tracked pairs are byte-identical
+today — `~\.claude\CLAUDE.md` against `github-misc\dot-claude\CLAUDE.md`, and the
+`hebrew-prose` skill against its tracked copy — the state Phase 6's items 3 and 4 need before they
+add to either. `all-repos.code-workspace` lists **19** folders, the three repos among them and
+`../wlc-utils` not, so Phase 6's item 7 starts from 19 and ends at 16 as written.
+`in/repo_maintenance_policy.json`'s `frozen_repos` holds six entries, none of them wlc-utils or any
+of the three (item 6's premise). `in/vendoring_policy.json` has no entry for any of the three, but
+**its top-level `comment` says `main_lenin_vendor_uxlc.py` refreshes codex-index-leningrad "from the
+sibling UXLC-utils"** — a clause Phase 5's repoint falsifies, so Phase 6's item 5 owes that
+sentence an edit even though no entry changes.
+
+#### Findings
+
+**1. The "outside `gh-pages/`" column had sprung the plan's own quoted-path trap.** The plan warns
+about it for the HTML-page count and had used the naive form for the column beside it. Three
+files, 0.14 MB — nothing turns on it, except that a Phase 5 session counting 596 against a plan
+saying 597 would otherwise have spent a turn on the difference. The `-z` form is now given for
+that column too.
+
+**2. One of the 41 "duplicates" is a file that must move.** `sanity_problems.json` is the
+currently-empty output of a UXLC-utils oracle step; dropping it on the strength of a 3-byte blob
+coincidence would have deleted an artifact. A blob census finds content identity and says nothing
+about provenance; the vendoring script's `copy_by_intersection` is what settled which of the 41
+are copies.
+
+**3. Decision D is narrower than written.** book-of-job's `py_ac_loc/` is, to the byte, a
+snapshot of codex-index-aleppo at 2026-02-19 plus two breadcrumbs: 26 files one blob with that
+repo today, 48 one blob with its `0be4d38`/`295829e`, and `image-sources.md` deliberately retired
+there. "Partly duplicates" was the right description of the trees and the wrong description of the
+history. The recommendation under Decision D changed from "put the three options" to "drop,
+unless Ben wants the snapshot kept", and the one lint that reads it — `check_mark_order.py`, 509
+files → 460 — is named so Phase 4 expects the change.
 
 ---
 
@@ -1139,12 +1336,15 @@ design, under which an un-landed tree yielded an empty `git ls-files`.)
 *The per-repo lane, run for `C:\Users\BenDe\GitRepos\holman-ketiv-qere`.*
 
 **Why this repo goes first.** It has the **smallest stub set of the three by a wide margin — 6
-pages** — and the smallest non-`gh-pages` tail at 50 files, while still being a real move at 300
+pages** — and the smallest non-`gh-pages` tail at 48 files, while still being a real move at 300
 files and 35.5 MB. So it exercises every step of the lane at the lowest cost, which is the same
 reasoning the Python programme used in putting UXLC-utils and then holman-ketiv-qere ahead of
 book-of-job.
 
-**What this repo holds outside `gh-pages/`**, surveyed 2026-08-22 — 50 files, 22.6 MB:
+**What this repo holds outside `gh-pages/`**, surveyed 2026-08-22 — 48 files, 22.6 MB, being the
+43 itemized below plus `.gitattributes`, `.github/workflows/pages.yml`, `.gitignore`, `CLAUDE.md`
+and `README.md` (the heading said 50 until Phase 0's re-measure of 2026-08-23 — see the note under
+the Scale table; the two JC3 pages had been counted as outside):
 
 | path | files | MB | what it holds |
 |---|---|---|---|
@@ -1286,11 +1486,15 @@ partly duplicates codex-index-aleppo — `MAM-XML` one blob with it, `column-coo
 *The per-repo lane, run for `C:\Users\BenDe\GitRepos\UXLC-utils`.*
 
 **Last, because it is the entangled one.** Its published tree is the middle of the three at 184
-files, but it carries **597 files outside `gh-pages/`**, a second resolution path in
+files, but it carries **596 files outside `gh-pages/`**, a second resolution path in
 `mb_cmn/paths.py`, 52 space-containing tracked paths, a downstream sparse copy in another repo, and
 the one mega step this plan dissolves.
 
-**What it holds outside `gh-pages/`**, surveyed 2026-08-22 — 597 files, 24.9 MB:
+**What it holds outside `gh-pages/`**, surveyed 2026-08-22 — 596 files, 24.7 MB, being the 591
+itemized below plus `.gitattributes`, `.github/workflows/pages.yml`, `.gitignore`, `CLAUDE.md` and
+`README.md` (this heading and the sentence above said 597 and 24.9 until Phase 0's re-measure of
+2026-08-23 — see the note under the Scale table; the Hebrew-named JPG under
+`gh-pages/amb-early-mtg/img/` had been counted as outside):
 
 | path | files | MB | what it holds |
 |---|---|---|---|
@@ -1323,7 +1527,9 @@ repoint — see "The organizing idea". **`uxlc_paths.py` also has no `DATA_REPO_
 **Trap 3 — `py/main_wlc_vendor_uxlc.py` becomes a self-copy, and deleting it is the phase's
 largest change.** It copies `UXLC-utils/in/UXLC-39`'s XML and `UXLC-utils/out/UXLC-misc`'s JSON
 into MAM-basics' `in/UXLC-39` and `in/UXLC-misc`; once the source tree is here, both sides are the
-same repo. **This is what the 41 duplicate blobs of Phase 0's census are.** Deleting the entry point
+same repo. **This is what 40 of the 41 duplicate blobs of Phase 0's census are** — the 41st,
+`out/UXLC-misc/sanity_problems.json`, is a 3-byte `[]` that nothing vendors and that moves with
+`out/`; Phase 0's item 2 has it. Deleting the entry point
 means also removing the mega's `wlc-vendor-uxlc` step and rewriting the `find-uxlc-accent-changes`
 step's "must come after wlc-vendor-uxlc" note and the `accgram-survey-chanted-word-accents` step's
 ordering comment, both of which name it. **Decide deliberately whether MAM-basics keeps two copies
