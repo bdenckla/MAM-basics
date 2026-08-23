@@ -23,6 +23,16 @@ are in change proposals Ben submitted and that site publishes, and the copies ve
 back under ``UXLC-utils/in/UXLC-misc/`` are snapshots of what it publishes, so editing one
 would falsify the snapshot and change nothing about the citation.
 
+THE REPOINT IS COMPLETE, WHICH IS WORTH RECORDING AS A NEGATIVE RESULT.  A
+``git grep bdenckla.github.io/wlc-utils`` over every clone in ``GitRepos``, run 2026-08-22
+after the ten links were repointed, returns only two kinds of hit and no third: prose
+*describing* the redirect (this docstring, ``CLAUDE.md``, ``mb_cmn/paths.py``, the plans
+under ``doc/``, the ``hebrew-prose`` skill), and the tanach.us snapshots named above --
+five citations each in ``UXLC-utils/in/UXLC-misc/`` and ``in/UXLC-misc-fixed/``, their
+derived ``out/UXLC-misc/`` copies, and this repo's vendored
+``in/UXLC-misc/all_changes.json`` and ``in/accgram/uxlc_accent_changes.json``.  So a hit
+found later that is neither is a new citation of a dead site, not one this sweep missed.
+
 THE PAGE LIST IS FROZEN, AND CAN ONLY SHRINK
 
 ``redirected_pages`` reads ``in/wlc_redirect_pages.json``, the 154 paths wlc-utils
