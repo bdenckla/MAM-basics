@@ -118,7 +118,7 @@ BODY = [
                 "lb2": "",
                 "contents": ["ק13"],
             },
-            " = Cambridge T-S 13,\n",
+            " = Cairo 13,\n",
             {
                 "_htel_tag": "span",
                 "attr": {"lang": "hbo"},

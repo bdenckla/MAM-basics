@@ -148,8 +148,10 @@ feature the comparison edition has, and MAM lacks, something the *manuscript* ha
 
 - **`ק13` is Cairo 13, not "Cambridge T-S 13".** MAM's appendix defines `כתי"ק13` as a Writings
   manuscript written 1028 by Zechariah ben Anan, and calls him "the scribe of כת"י קהיר 13".
-  `py/accgram/ps17v14_mam_doc_notes_body.py` glosses ק13 as "Cambridge T-S 13" on its rendered
-  page; `doc/sigil-decoding.md` now marks the row Conflicting and says the page wants fixing.
+  `py/accgram/ps17v14_mam_doc_notes_body.py` glossed ק13 as "Cambridge T-S 13" on its rendered
+  page; `doc/sigil-decoding.md` marked the row Conflicting and said the page wanted fixing.
+  Fixed 2026-08-23: the gloss is "Cairo 13" in the module and the regenerated page, and the
+  row is Confirmed.
 - `doc/sigil-decoding.md` was overwritten by mistake in `20ec7f2` and restored with additions in
   `5be1054`; its history is the record.
 
