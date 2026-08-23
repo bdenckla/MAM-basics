@@ -404,6 +404,33 @@ git ls-files | sort > .novc/_mb.txt && git -C ../UXLC-utils ls-files | sort > .n
 **Recommendation:** merge at the same relative path, per precedent, with the four exceptions in
 Decisions D and E below.
 
+**DECIDED — Ben, 2026-08-23, at Phase 0: the same relative path**, taking the recommendation —
+*"I concur with your recommendation to use the same relative path."* Three particulars were put
+to him with it and go with the answer:
+
+- **Five new top-level directories appear in MAM-basics, all holman-ketiv-qere's**: `emails/`
+  (26 files), `docs-not-served/` (4), `assets/` (4), `io/` (1) and `data/` (2, joined by
+  UXLC-utils' 2 — `uxlc_atom_locations.json` and `uxlc_standard_atoms.json` beside
+  `lci_augrecs.json` and `lci_recs.json`, no name shared). book-of-job and UXLC-utils add nothing
+  at top level that MAM-basics lacks, `doc/`, `out/` and `in/` all existing; `py_ac_loc/` is
+  Decision D. The six arriving `doc/` files clash with none of MAM-basics' 45.
+- **`data/` lands at `data/`, NOT at `in/` as wlc-utils' one relocation did.** MAM-basics
+  already holds `in/lci_recs.json`, wlc-utils' copy, and UXLC-utils' `data/lci_recs.json` (one
+  blob with its own `in/UXLC-misc/lci_recs.json`) differs from it by exactly one header comment
+  line — `"(see mb_cmn_bib_locales.py)"` against `"(see my_tanakh_book_names.py)"`, the `body`
+  identical, as `py/boj_paths.py`'s docstring already records. Two parallel readers keep the two
+  copies apart: `py/py_uxlc/my_uxlc_page_break_info.py` reads `paths.in_dir() / "lci_recs.json"`
+  and `py/uxlc_misc/my_uxlc_page_break_info.py` reads `uxlc_paths.data_dir() / "lci_recs.json"`,
+  and `py/main_write_page_break_info.py` writes the `data/` pair. The same-path census could not
+  see this, since it compares equal paths and the precedent's relocation makes two unequal paths
+  equal. **Landing at `data/` collides nothing and defers the collapse of the two copies — and
+  of the two reader lineages — to Phase 5's trap 3**, which already owes Ben the "two copies of
+  the same data" question for `in/UXLC-39/` and `in/UXLC-misc/`; `lci_recs.json` joins that
+  question rather than getting one of its own.
+- **`.claude/commands/halve.md` lands under `.claude-disabled/commands/`**, beside the two
+  retired commands MAM-basics keeps there, rather than becoming a live slash command at
+  `.claude/commands/`. Same relative path for the file, one directory over for the mechanism.
+
 ### Decision D — book-of-job's `py_ac_loc/`, which nothing reads
 
 **76 files, 7.8 MB, 96% of book-of-job's non-`gh-pages` bytes, and it has no accessor in
@@ -1642,7 +1669,11 @@ step's "must come after wlc-vendor-uxlc" note and the `accgram-survey-chanted-wo
 ordering comment, both of which name it. **Decide deliberately whether MAM-basics keeps two copies
 of the same data** — `in/UXLC-39/` alongside the arriving `in/UXLC-39/`, and `in/UXLC-misc/`
 alongside the arriving `out/UXLC-misc/` — **or collapses to one**, and put the collapse to Ben,
-since it changes what several accgram steps read.
+since it changes what several accgram steps read. **`lci_recs.json` is a third pair in that same
+question** (Decision C, 2026-08-23): MAM-basics' `in/lci_recs.json` and the arriving
+`data/lci_recs.json` differ by one header comment line and are read by two parallel modules,
+`py/py_uxlc/my_uxlc_page_break_info.py` and `py/uxlc_misc/my_uxlc_page_break_info.py`; put all
+three pairs to him at once rather than one per session.
 
 **Trap 4 — codex-index-leningrad holds a sparse vendored copy, and it is already stale.**
 `codex-index-leningrad/UXLC-utils-sparse/` is refreshed by MAM-basics'
