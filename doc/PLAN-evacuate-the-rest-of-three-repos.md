@@ -160,9 +160,11 @@ These were settled elsewhere and are named here so that a fresh session does not
    `py/main_wlc_redirect_stubs.py` "is the template to generalize rather than to adapt".
 6. **Each evacuated repo's clone comes off the local disk when its lane finishes.** Ben's
    decision, 2026-08-22. **The repo itself stays alive on GitHub** — this removes a directory under
-   `C:\Users\BenDe\GitRepos`, and nothing else. It departs from the wlc-utils precedent, whose
-   clone is still on the disk, and it follows al-hatorah's, whose came off on 2026-08-11. The lane's
-   Step 6 is where it happens and why it is worth doing.
+   `C:\Users\BenDe\GitRepos`, and nothing else. **wlc-utils is doing the same thing on the same
+   day**, by Ben's instruction in a concurrent session — *"Freeze the manifest, then delete the
+   clone and workspace entry"* — so this is not a departure from that precedent but a continuation
+   of it, and al-hatorah's clone came off on 2026-08-11 the same way. The lane's Step 6 is where it
+   happens, in what order, and why it is worth doing.
 
 ---
 
@@ -518,8 +520,10 @@ identical bytes. Run the **other two repos'** oracles as well, since `holman-ket
 `main_estimate_uxlc_locations` reads the UXLC-utils clone and would break at Phase 5's Step 6
 rather than at its own phase.
 
-**Before deleting, account for everything untracked**, because that is the only content the GitHub
-copy does not hold:
+**Before deleting, prove nothing is lost — four checks, all of which wlc-utils passed on
+2026-08-22:** `HEAD` equals `origin/main`; `git status --porcelain` empty; `git stash list` empty;
+`git worktree list` showing the one working tree only. Then, separately, **account for everything
+untracked**, because that is the only content the GitHub copy does not hold:
 
 ```bash
 git -C ../<repo> status --porcelain --ignored
@@ -530,23 +534,37 @@ that no commit ever moved. Phase 3's Step 3 moves them; **Step 6 is where forget
 become irreversible.** Check for a `.venv`, a `.novc/`, and any unpushed branch (`git -C ../<repo>
 log --branches --not --remotes --oneline`) before removing.
 
-**Three consequences to write into the emptied repo's own `README.md` and `CLAUDE.md` at Step 5,
-because after Step 6 nobody working here can discover them by looking:**
+**The removal is three acts, not one, and the order is forced.** The procedure has a name and two
+precedents — al-hatorah's clone on 2026-08-11, and the frozen repos' move into `FrozenRepos`:
 
-1. **Regenerating the stubs needs a re-clone.** The generator's `build --publish` and its
-   argument-less `check` both resolve the sibling and will fail. That is correct behaviour, not a
-   defect. Say in the emptied `CLAUDE.md` that the working copy is obtained with
-   `git clone git@github.com:bdenckla/<repo>.git` into `C:\Users\BenDe\GitRepos`, and that it may
-   be removed again afterwards.
-2. **`all-repos.code-workspace` must lose its entry**, not merely be allowed to keep it. A
-   workspace folder naming a directory that does not exist is a broken entry rather than a stale
-   one. This decides Phase 6's item 7 against the wlc-utils precedent, and for the same reason:
-   wlc-utils' clone is still there.
-3. **A repo in neither `GitRepos` nor `FrozenRepos` cannot be reached by any sweep**, since
-   `py/main_repo_util.py --run-black` iterates the repos a workspace file lists and resolves them
-   under `--repos-root`. So removal *is* the freeze, structurally, exactly as the move into
-   `FrozenRepos` is for the six repos already there. Phase 6's item 6 should be answered in that
-   light.
+1. **Drop the repo's entry from `all-repos.code-workspace` FIRST, in the same commit as Step 5.**
+   Not housekeeping: `repo_selection.load_workspace_repo_dirs` **raises `FileNotFoundError` on any
+   workspace folder missing from disk, and it runs before every action**, so a clone deleted while
+   its entry stands breaks `--run-black`, `--clean-worktrees` and the standards checks outright —
+   all of them, not just the part that touched the removed repo. **Entry first, clone second, and
+   never the other way round.**
+2. **Delete the clone.**
+3. **Record it in `MAM-basics/CLAUDE.md`, by EXTENDING the section that will already be there.**
+   **The note goes here, not in the emptied repo's own `CLAUDE.md`** — that file is unreachable
+   once the clone is gone, which is the whole point. This repo already carries the pattern in its
+   §"There is no `wlc-koren-12th` repo", written because repeated sessions burned a turn on a
+   directory that was not what it looked like; the concurrent session of 2026-08-22 added a second,
+   §"There is no local `wlc-utils` clone either, and its stub set is frozen", beside it. **Extend
+   that one or sit beside it — do not duplicate it, and state the workspace-entry mechanism in item
+   1 only once**, wherever it already stands. Give the re-clone command per repo, and note that
+   **`git clone --depth 1` is well under a megabyte and is all a stub publish needs** — neither
+   `build --publish` nor `check` reads history.
+
+**Regenerating the stubs needs that re-clone**, `build --publish` and the argument-less `check`
+both resolving the sibling. **The occasion is far rarer than it looks, and knowing why is what
+makes removal cheap**: a page created here *after* the move never had an old URL, so it earns no
+stub and the set never grows. The one genuine occasion left is a page that existed at the flip
+being renamed or deleted here.
+
+**A repo in neither `GitRepos` nor `FrozenRepos` cannot be reached by any sweep** — a sweep
+iterates the repos a workspace file lists and resolves them under `--repos-root`. So removal *is*
+the freeze, structurally, exactly as the move into `FrozenRepos` is for the six repos already
+there. Phase 6's item 6 should be answered in that light.
 
 **Windows will not delete a directory a running process holds open**, so no shell may be `cd`'d
 inside the clone when it goes. If the removal fails for that reason, it is a held handle rather
@@ -627,8 +645,11 @@ staging; and the push landing fast-forward with no `--force`.
    2026-08-22 are listed under "Layer 4" above; **the sweep is what makes the list current**, and a
    published URL nobody knew about is exactly what a stub exists for.
 4. **Record the baseline test count and lint state**: `py/main_test.py`'s summary line,
-   `ruff check py`, `black --check py`. UXLC-utils' Phase 6 recorded 913 passed / 5 skipped;
-   re-measure rather than trusting that.
+   `ruff check py`, `black --check py`. **The figure has moved twice in four days** — UXLC-utils'
+   Phase 6 recorded 913 passed / 5 skipped on 2026-08-18, and the concurrent session measured
+   **941 passed, 5 skipped, 59 subtests** on 2026-08-22 after adding
+   `py/tests/test_wlc_redirect_manifest.py`. Re-measure; the point of the baseline is that Phase 2
+   and each lane's Step 3 can say what they changed.
 5. **Put the five decisions to Ben**, one at a time, in plain prose — not as a batch and not
    through a multiple-choice picker. Write each answer and its date into the Decisions section
    above.
@@ -688,11 +709,86 @@ wlc-specific facts are **four module-level constants in `stubs.py`** — `NEW_SI
 in three docstrings and two `add_args` help strings. Find them by name, not by line number.
 
 **The generalization is a record per evacuated repo, four rows**: the source repo name, the
-`gh-pages/` subtree name under MAM-basics (Decision A), and the old URL prefix. Everything else is
-derived, and **the derivation is the design's whole point and must survive**: `page_paths` filters
-`git ls-files gh-pages/<subtree>` to `*.html` and the path below that prefix is *both* the old path
-and the new suffix, so the stub set cannot drift from the site — a page added later gets a stub on
-the next build, one removed shows up in `check`.
+`gh-pages/` subtree name under MAM-basics (Decision A), the old URL prefix, the manifest path, and
+**the clone URL** — the last because a resolver that fails once the clone is gone should carry its
+own fix, per Step 6.
+
+### The page set is FROZEN, not derived — and this paragraph corrects the rest of this plan
+
+**READ THE COMMITTED `py/wlc_redirect/` BEFORE GENERALIZING ANYTHING. Do not trust this file's
+description of it.** An earlier draft of this phase, written 2026-08-22, said the set was derived
+from the live `git ls-files gh-pages/<subtree>` and called that derivation "the design's whole
+point", which "must survive". **That was wrong, and generalizing it would have propagated a defect
+to four repos.**
+
+**Ben settled it on 2026-08-22**, the same day this plan was written and while it was being
+written: a session working concurrently in this repo replaced the derivation with a frozen manifest
+at `in/wlc_redirect_pages.json`, holding the 154 paths wlc-utils published, captured at the
+2026-08-17 flip. That file's own `comment` field is the statement of record — read it first — and
+what it says is:
+
+**A stub answers an OLD URL. The set can only shrink, never grow.** A page published under
+`gh-pages/wlc/` *after* the move never had a `bdenckla.github.io/wlc-utils/` URL, so it must not
+get a stub; a live derivation gives it one. The defect the derivation actually caused was the
+mirror image and is what surfaced it: **every new page here looked like a missing stub.**
+
+**Four consequences for this plan, which supersede what its other sections say:**
+
+1. **Each repo needs its own frozen manifest, captured at its Step 4** — from the source repo's
+   `gh-pages/` tree as it stands at the flip, which is the last moment the old published set is
+   knowable. Capture it in the same commit as the flip. **After that the manifest is append-never**;
+   removing an entry is the only edit it can take, and only when the page it names stops being
+   published here.
+2. **`check`'s failure modes change shape**, and the concurrent session's rewrite is the model: a
+   frozen URL with no stub (a cited URL that would 404), a stub answering no frozen URL (it stands
+   in for nothing), and a frozen URL whose page is no longer published under the subtree (its stub
+   redirects to a page that is not there). **The third has no counterpart in the derived design**
+   and is the one worth having. A fourth correspondence — a page published here that no stub names
+   — is **deliberately not checked**, that being the never-event this whole section is about;
+   `check_problems`' docstring states all four, including the one it does not enforce.
+
+   **The one function became two, and the generalization should keep both names**:
+   `redirected_pages(repo_root)` reads the frozen manifest, and `published_pages(repo_root)` is the
+   live `git ls-files gh-pages/<subtree>`, used **only** for that third failure mode.
+
+3. **Each repo needs the third failure mode hoisted into the test suite**, as
+   `py/tests/test_wlc_redirect_manifest.py` now does for wlc-utils — or, better here, as one
+   generalized test parametrized over the four rows. **The reason is Step 6**: that check is the
+   only part of the lint needing no stub tree, and therefore **the only part that still runs once
+   the clone is gone.** Everything else in `check` goes dark at Step 6, so without this the frozen
+   manifest silently stops being verified at the exact moment nobody can look.
+4. **What is still derived is the *destination*, not the set.** The path below the manifest entry
+   remains both the old path and the new suffix, so the rewrite stays a pure prefix rewrite and
+   still needs no mapping table. **That much of the old paragraph was right** and is why the four
+   rows above are still the whole of the per-repo configuration.
+
+**Verify the concurrent work landed before starting this phase**: `git log --oneline -- py/wlc_redirect in/wlc_redirect_pages.json`
+should show it committed. If it did not land, this phase inherits it — do not generalize the derived
+design in either case.
+
+### A second anchoring error the frozen manifest does NOT fix — decide what to do about it here
+
+**A stub can only ever point at its own path under MAM-basics**, `target_url` being a pure prefix
+rewrite of the stub's own path. **So renaming a page that existed at the flip silently sends its
+old URL to a MAM-basics 404**, and `check` cannot express the one repair such a URL actually wants
+— "repoint that stub at where the content went". Its offered fix is *"delete it, or restore the
+page"*. Identified in the concurrent session of 2026-08-22 alongside the frozen-manifest defect,
+and **not fixed by freezing the set**: a frozen entry whose page was renamed is exactly the case
+the new third failure mode reports, and reporting it is not repairing it.
+
+**This plan multiplies the exposure by four and should decide rather than inherit it.** 272 more
+frozen URLs join the 154, over trees that are still being worked on. **The cheapest answer is an
+optional per-entry override in the manifest** — an entry may carry an explicit target instead of
+taking the prefix rewrite — which costs one branch in `target_url` and turns the third failure
+mode into an actionable one. **Put it to Ben with Decision A**, since both bear on the manifest's
+shape.
+
+**What lowers the stakes, and is worth knowing before over-engineering this:** `404.html` already
+strips the old prefix and prepends the new site by script, so **an old path with no stub of its own
+still forwards**. The per-page stubs buy the no-JavaScript reader a meta refresh and a search
+engine a canonical link — belt and braces over a catch-all that already works. A missing stub is
+therefore a degradation, not a broken link; a *misdirected* one is the worse failure, which is why
+the rename case is the one worth spending on.
 
 **Requirements the existing design imposes, none of which this phase may quietly drop:**
 
@@ -981,12 +1077,22 @@ ambiguous, and that repo's plan settled the same question the same way.
    `../book-of-job`, `../holman-ketiv-qere` and `../UXLC-utils` at three lines. Both the UXLC-utils
    plan and the book-of-job plan recorded a decision to leave them listed *because each still held
    hundreds of tracked non-Python files*; that reason expired when the trees moved, and the clone
-   removal ends the matter — **a workspace folder naming a directory that does not exist is broken,
-   not merely stale.** **`../wlc-utils` stays**, and the reason is exactly the difference this plan
-   introduces: that clone is still on the disk and still receives commits from the stub generator.
+   removal ends the matter — a workspace folder naming a directory that does not exist is not
+   merely stale but **fatal to every sweep**, per Step 6's ordering rule.
    **Remove each entry in its own repo's lane, in the same commit as that repo's Step 5**, so the
    workspace file never names a directory that has just gone; **this item is then a confirmation
-   here rather than an edit** — all three absent, `../wlc-utils` present.
+   here rather than an edit.** **The arithmetic, measured 2026-08-22 rather than taken from either of
+   the two conflicting figures in circulation that day**: the file listed **20** folders, and **19**
+   once wlc-utils came out, which is where it stood mid-flight when this was checked with
+   `grep -c '"path":' all-repos.code-workspace`. **So this plan takes it to 16.** Re-run that
+   command rather than assuming the starting point.
+
+   **`../wlc-utils` is going too, and this plan does not own that** — Ben's instruction in the
+   concurrent session of 2026-08-22 was *"Freeze the manifest, then delete the clone and workspace
+   entry"*. **So do not expect `../wlc-utils` to be present as a control**, which an earlier draft
+   of this file wrongly said it would be, giving as the reason that its clone "still receives
+   commits from the stub generator" — the frozen manifest is exactly what establishes that it
+   almost never does. Confirm what the file lists rather than assuming either way.
 8. **`py/repo_util/check_repo_standards.py`** discusses these repos in prose. Follow the convention
    already used there: append to the dated blame-crawl paragraphs, rewrite only what is false as
    written.
