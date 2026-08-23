@@ -165,6 +165,12 @@ These were settled elsewhere and are named here so that a fresh session does not
    clone and workspace entry"* — so this is not a departure from that precedent but a continuation
    of it, and al-hatorah's clone came off on 2026-08-11 the same way. The lane's Step 6 is where it
    happens, in what order, and why it is worth doing.
+7. **A manifest entry stays a bare path; it does not gain an optional explicit redirect target.**
+   Ben's decision, 2026-08-22, put to him by the session that froze wlc-utils' set. **Considered
+   and declined, not pending** — do not re-propose it as an improvement. It would have made a
+   renamed page's stub repointable at the content's new home; without it the two repairs are
+   republish-at-the-old-path or drop-the-URL-and-its-stub. The reasoning, and the reason the
+   decision is cheap to revisit if it ever bites, is under Phase 2's "Renaming a frozen page".
 
 ---
 
@@ -473,6 +479,13 @@ having been HTTP-verified.** One commit: every HTML page **modified in place** �
 path is a modification, not a delete-plus-add, which keeps the diff readable — `404.html` added,
 and every non-HTML asset deleted. Nothing else changes.
 
+**Capture two things in this same commit, because the flip is the last moment either is knowable:**
+the repo's **frozen manifest** — the old published URL set, per Phase 2 — and **the list of places
+those old URLs are cited from**, drawn from Phase 0's layer-4 sweep and recorded the way
+`py/wlc_redirect/stubs.py`'s docstring records wlc-utils'. The citation list is what makes the
+"drop the URL and its stub" repair a decision later rather than a research task; carried-in
+decision 7 is why that repair matters.
+
 Verify: the layer-4 URL list against the old host, each redirecting to its MAM-basics equivalent;
 a path with no stub exercises `404.html`; the generalized `check` subcommand passes against the
 committed tree. **Check a fragment-carrying deep link in a browser** — it must land on the anchor,
@@ -766,29 +779,49 @@ mirror image and is what surfaced it: **every new page here looked like a missin
 should show it committed. If it did not land, this phase inherits it — do not generalize the derived
 design in either case.
 
-### A second anchoring error the frozen manifest does NOT fix — decide what to do about it here
+### Renaming a frozen page: DETECTED by the freeze, and repairable two ways of three
 
-**A stub can only ever point at its own path under MAM-basics**, `target_url` being a pure prefix
-rewrite of the stub's own path. **So renaming a page that existed at the flip silently sends its
-old URL to a MAM-basics 404**, and `check` cannot express the one repair such a URL actually wants
-— "repoint that stub at where the content went". Its offered fix is *"delete it, or restore the
-page"*. Identified in the concurrent session of 2026-08-22 alongside the frozen-manifest defect,
-and **not fixed by freezing the set**: a frozen entry whose page was renamed is exactly the case
-the new third failure mode reports, and reporting it is not repairing it.
+**An earlier draft of this section was wrong and the correction is the point of it.** It said a
+rename "silently sends its old URL to a MAM-basics 404". **That was true of the derived design and
+is false as of the freeze**, and the difference is exactly what freezing bought. In the derived
+design the expected set moved with the site, so a rename changed both sides together and nothing
+here could notice; only `check` against a clone could, which nothing scheduled and which no clone
+now exists for. **Frozen, the manifest does not move**, so a rename is a **detected event on every
+ordinary suite run, needing no clone anywhere.**
 
-**This plan multiplies the exposure by four and should decide rather than inherit it.** 272 more
-frozen URLs join the 154, over trees that are still being worked on. **The cheapest answer is an
-optional per-entry override in the manifest** — an entry may carry an explicit target instead of
-taking the prefix rewrite — which costs one branch in `target_url` and turns the third failure
-mode into an actionable one. **Put it to Ben with Decision A**, since both bear on the manifest's
-shape.
+Verified 2026-08-22 by reading `py/tests/test_wlc_redirect_manifest.py`: it compares
+`stubs.redirected_pages` against `set(stubs.published_pages)`, both resolved from
+`paths.repo_root()`, and resolves no sibling at all. The concurrent session demonstrated it with a
+real `git mv` of `gh-pages/wlc/accgram/goerwitz.html`, which fails the suite naming the page, and
+renamed it back.
 
-**What lowers the stakes, and is worth knowing before over-engineering this:** `404.html` already
-strips the old prefix and prepends the new site by script, so **an old path with no stub of its own
-still forwards**. The per-page stubs buy the no-JavaScript reader a meta refresh and a search
-engine a canonical link — belt and braces over a catch-all that already works. A missing stub is
-therefore a degradation, not a broken link; a *misdirected* one is the worse failure, which is why
-the rename case is the one worth spending on.
+**What survives is about repair, not detection**, and it is narrow. `target_url` is a pure prefix
+rewrite of the stub's own path, so once the test fires there are exactly two ways out:
+
+1. **Republish the page at its old path** — rename it back.
+2. **Drop the URL from the manifest and delete its stub**, letting the old citation fall to the
+   `404.html` catch-all.
+
+**There is no third way — no way to say "the old URL X now lives at Y"** — and an optional explicit
+target in the manifest is the whole of what would add it.
+
+**Ben's decision, 2026-08-22: skip it. Recorded as considered and declined, not pending, and it is
+carried-in decision 7 above.** His reasoning applies to this plan's 426 frozen URLs as much as to
+wlc-utils' 154: the known citations are few and are named in `py/wlc_redirect/stubs.py`'s docstring
+— five of `accgram/goerwitz.html` in the tanach.us change list vendored into UXLC-utils, four deep
+links in UXLC-utils' own CLC notes, four paths in `document-index/README.md` — and for a page
+outside that list, dropping the stub costs nothing real. If a cited page is ever renamed, the
+failing test names it, and adding the branch **then** is the same one-line change it is now.
+
+**One consequence for the lane, and it is what makes option 2 cheap later:** when Step 4 captures a
+repo's manifest, **capture alongside it the list of places that repo's old URLs are cited from**,
+the way `stubs.py`'s docstring does for wlc-utils. Phase 0's layer-4 sweep is where that list comes
+from. Without it, "drop the URL" is a research task at the worst moment; with it, it is a decision.
+
+**What lowers the stakes generally:** `404.html` already strips the old prefix and prepends the new
+site by script, so **an old path with no stub of its own still forwards**. The per-page stubs buy
+the no-JavaScript reader a meta refresh and a search engine a canonical link — belt and braces over
+a catch-all that already works.
 
 **Requirements the existing design imposes, none of which this phase may quietly drop:**
 
@@ -1112,8 +1145,12 @@ ambiguous, and that repo's plan settled the same question the same way.
 
 - **A stub pointing at a page that is not there.** A redirect to a 404 turns a working URL into a
   confidently wrong one, and the citations in mgketer, `document-index` and UXLC-utils' published
-  CLC pages are where Ben cannot edit them, so nobody will report it. **Mitigated by the lane's
-  hard gate**: Step 4 does not run until Step 1's deploy has been HTTP-verified.
+  CLC pages are where Ben cannot edit them, so nobody will report it. **Mitigated twice over**: the
+  lane's hard gate, Step 4 not running until Step 1's deploy has been HTTP-verified; and, for the
+  case that arises *later* — a frozen page renamed or dropped here — the per-repo manifest test of
+  Phase 2's consequence 3, which fails the ordinary suite naming the page and needs no clone.
+  **"Nobody will report it" is therefore true of the world and false of the suite**, which is the
+  whole reason that test is worth having per repo.
 - **Deleting a source tree before every reader is repointed.** Step 5 is the only irreversible
   step in the lane, and it is separated from Step 3 by a full oracle run for exactly that reason.
   UXLC-utils is the sharp case, because `codex-index-leningrad` reads it through a vendoring
