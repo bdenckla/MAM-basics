@@ -28,8 +28,8 @@ the Job manuscripts into `DATA-LICENSES.md`; that is licensing prose, not accent
 
 | Phase | State |
 |---|---|
-| 0 — Preflight: baselines, collision census, and the five decisions | **in progress, 2026-08-23** — items 1 to 4 done and written back (three findings; see the execution record); item 5's decisions are being put to Ben one at a time, and each answer lands under "Decisions this plan needs from Ben" as it arrives |
-| 1 — `.gitattributes` merge in MAM-basics | not started |
+| 0 — Preflight: baselines, collision census, and the five decisions | **DONE 2026-08-23** — seven commits to this file, `0decb3f` through the one recording Decision E. Every Scale figure reproduced but the "outside `gh-pages/`" column (48 / 596 / 734, not 50 / 597 / 737); the census reproduced with one refinement (`sanity_problems.json` moves, 40 duplicates drop, not 41); the layer-4 sweep returned the list the plan has; baseline 941 passed / 5 skipped / 59 subtests, ruff and black clean. All five decisions answered, one at a time: A `book-of-job` / `holman` / `uxlc`; B no `LICENSE`, and the docx does not move — the cord to it is cut; C same relative path, `data/` at `data/`; D `py_ac_loc/` dropped; E two files deleted, the meteg-marks pair lands at `out/`. Two questions parked for Phases 3 and 5, written where those phases will find them |
+| 1 — `.gitattributes` merge in MAM-basics | not started — **verification only since 2026-08-23**: its one owed edit, `*.docx binary`, went with Decision B's sub-question, so it proves its two no-ops on one file each and commits nothing but its record |
 | 2 — Generalize the redirect-stub generator to a table of four | not started |
 | 3 — holman-ketiv-qere, the pilot lane; plus the generated landing page | not started |
 | 4 — book-of-job | not started |
@@ -232,7 +232,12 @@ These were settled elsewhere and are named here so that a fresh session does not
 
 ---
 
-## Decisions this plan needs from Ben — five, all at Phase 0
+## Decisions this plan needs from Ben — five, all at Phase 0 — ALL FIVE DECIDED 2026-08-23
+
+**Every decision below is answered, one at a time, at Phase 0 on 2026-08-23; each answer is the
+first paragraph of its section**, dated and in his words where he gave any, with the text that was
+put to him kept beneath it as the record of what he was choosing between. Phase 0's execution
+record has the five in one place.
 
 **Put these to Ben one at a time, in plain prose, before Phase 1.** Each is a genuine choice with
 a cost on both sides; each carries a recommendation so the question is answerable rather than
@@ -506,6 +511,24 @@ Phase 4 moves, links to `py_ac_loc/MAM-simple-provenance.md` and describes `py_a
 if the directory is dropped, Phase 4 rewrites those sentences rather than moving a dangling link.
 
 ### Decision E — the four loose UXLC-utils files, and one live instruction among them
+
+**DECIDED — Ben, 2026-08-23, at Phase 0, taking each recommendation** — *"I concur with your
+recommendation to delete."* The four dispositions, for Phase 5 to carry out:
+
+| file | disposition |
+|---|---|
+| `UXLC-utils.code-workspace` | **delete** at Step 5, never copied — 107 bytes naming `.` and `../codex-index-leningrad`, matching the deletion of book-of-job's equivalent |
+| `Possible false early meteg marks.code-search`, `Possible false early meteg marks.csv` | **move, landing at `out/`**, at Step 1 — a saved VS Code search (66 hits in 21 files over the old `in/UXLC` directory name, which the `# Including:` line still carries and which stays as written) and its result as data. `doc/clc-design.md:203` calls the CSV its seed list through a relative link into `doc/` that has never resolved; fix that link to `../out/…` as the doc moves, and say so in Phase 5's record |
+| `shared-with-codex-index-leningrad.md` | **delete** at Step 5, never copied. Its claim — UXLC-utils is the canonical source for `codex-index-leningrad/UXLC-utils-sparse/` — becomes false with the move; its one live fact, the refresh command, already names and is documented in `py/main_lenin_vendor_uxlc.py`; its history note on `main_update_vendored_files.py` is already in `py/lenin_paths.py`'s docstring. Phase 5's Step 3 makes `main_lenin_vendor_uxlc.py`'s docstring say the source is now MAM-basics' own `in/UXLC-39/` and `data/`, and Step 5's owed codex-index-leningrad commit corrects that repo's `CLAUDE.md`, `README.md` and `UXLC-utils-sparse/provenance.md` the same way — the three homes that remain, where a fourth statement would go stale |
+
+**Parked for Phase 5, noted to Ben and not put to him: whether the sparse copy should exist at
+all afterwards.** Measured 2026-08-23: its only reader is MAM-basics' own
+`py/main_lenin_wikisource_page.py`, through `lenin_paths.lci_augrecs_path()`, and nothing in
+codex-index-leningrad (which has no Python) reads it. So after this plan it is a copy of MAM-basics'
+own `data/lci_augrecs.json` read back through a sibling. Phase 5's trap 4 assumes it survives
+with its refresh repointed; the alternative — read `data/lci_augrecs.json` directly, retire
+`main_lenin_vendor_uxlc.py` and the 41-file `UXLC-utils-sparse/` tree in codex-index-leningrad —
+is Phase 5's to put to Ben, at its Step 3, before the repoint is written either way.
 
 `UXLC-utils.code-workspace` is orphaned by the evacuation, and
 `PLAN-evacuate-python-from-book-of-job.md` records Ben deleting the equivalent file in that repo —
@@ -1028,7 +1051,7 @@ staging; and the push landing fast-forward with no `--force`.
 
 ---
 
-## Phase 0 — Preflight: baselines, collision census, and the five decisions
+## Phase 0 — Preflight: baselines, collision census, and the five decisions — DONE 2026-08-23
 
 *No commit in any repo except this file.* Nothing is copied and nothing is deleted.
 
@@ -1095,9 +1118,35 @@ repo but MAM-basics was written to**; every command below is read-only outside `
 working files are in `.novc\three-repos-phase0\` (gitignored), the flat listings and blob sets the
 census was taken from.
 
-**Items 1 to 4 were done in one sitting and written back first; item 5, the five decisions, was put
-to Ben one at a time afterwards**, each answer recorded under "Decisions this plan needs from Ben"
-as it arrived. The Status row says which state this phase is in.
+**Items 1 to 4 were done in one sitting and written back first (`0decb3f`); item 5, the five
+decisions, was put to Ben one at a time afterwards**, each answer recorded under "Decisions this
+plan needs from Ben" and committed as it arrived: A in `09498cd`, B in `c2d8fb1` and its docx
+sub-question in `5421e49`, C in `3f9eff4`, D in `0a1ccb5`, E in the commit that closed the phase.
+Seven commits in all, every one to this file alone; `HEAD` before each equalled the previous
+commit, `git status` held this file only, and every push was a fast-forward.
+
+**Item 5 — the five answers, in one place.** Subtrees `gh-pages/book-of-job/`, `gh-pages/holman/`
+and `gh-pages/uxlc/` (A). No `LICENSE` for the emptied repos (B); and Holman's docx does not move
+— it is deleted from holman-ketiv-qere at Phase 3's Step 5 and the extracted data becomes source
+data with its origin documented, which retires the extraction half of that repo's first oracle
+command and takes away Phase 1's one owed `.gitattributes` edit (B's sub-question). Same relative
+path for the non-`gh-pages` trees, with `data/` at `data/` and `halve.md` under
+`.claude-disabled/` (C). `py_ac_loc/` dropped, never copied (D). `UXLC-utils.code-workspace` and
+`shared-with-codex-index-leningrad.md` deleted, the two meteg-marks files landing at `out/` (E).
+**Two of the five answers were not among the options put** — A's mixed spelling and B's
+sub-question's fourth option — which is the case for putting a decision rather than recommending
+one and proceeding. **Two questions were parked for later phases rather than asked**, each written
+where its phase will find it: `persist_verify_summary`'s in-place rewrite of `table_data.json` once
+that file is source data (Phase 3's Step 3, under Decision B's sub-question), and whether
+codex-index-leningrad's sparse copy survives at all (Phase 5's Step 3, under Decision E and trap
+4).
+
+**What the next phase now knows that this file did not say on 2026-08-22.** Phase 1 owes no
+edit: it proves its two no-ops on one file each, and commits only its record. Phase 3 moves 47
+files outside `gh-pages/`, not 48, deletes one file it never copied, and rewrites rather than
+regenerates its table. Phase 4 moves 9 files outside `gh-pages/`, not 85, and expects the
+mark-order check to drop from 509 files to 460. Phase 5 moves `sanity_problems.json` with `out/`,
+lands `data/` at `data/`, and carries a third pair into its trap-3 collapse question.
 
 **Item 1 — the Scale table reproduces in its first six columns and not in its last two.** Every
 tracked-file count, total size, `gh-pages/` count, `gh-pages/` size and HTML-page count came back
@@ -1697,7 +1746,12 @@ behind**, taken at UXLC-utils `748ee2f`. Its `README.md` names the same paths, a
 `UXLC-utils-sparse/provenance.md` and `page-snips/README.md`. **Step 3 repoints
 `main_lenin_vendor_uxlc.py` at MAM-basics' own tree and Step 5 owes codex-index-leningrad a commit**
 correcting those statements. This is the strongest external coupling any of the three repos has;
-the three MAM-* data repos, phonetic-hbo and diffable-pointed-hebrew have none.
+the three MAM-* data repos, phonetic-hbo and diffable-pointed-hebrew have none. **Before Step 3
+writes the repoint, put Decision E's parked question to Ben**: the sparse copy's only reader is
+MAM-basics' own `main_lenin_wikisource_page.py`, so the repoint keeps alive a copy of this repo's
+own `data/lci_augrecs.json` read through a sibling, and retiring the copy, the vendoring script and
+`lenin_paths.uxlc_sparse_dir` instead is the alternative. Whichever he chooses, Step 5's
+codex-index-leningrad commit says which.
 
 **Trap 5 — `shared-with-codex-index-leningrad.md` is a live instruction whose claim expires**, per
 Decision E.
