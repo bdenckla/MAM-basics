@@ -558,10 +558,20 @@ which is the conflation Ben corrected on 2026-08-22:
 - **Citations Ben controls are WORK, done in this same phase.** Repoint each at its new MAM-basics
   URL. Find them per repo with `git grep -n 'bdenckla.github.io/<repo>'` across every clone under
   `C:\Users\BenDe\GitRepos` and `C:\Users\BenDe\GitRepos\MAM-private` — the instrument that found
-  wlc-utils' nine. **Prefer the generator to the artifact**: wlc-utils' four CLC deep links were one
-  constant, `py/clc/clc_render.py`'s `_LC_CORROBORATED_LINK`, plus a regeneration. **Expect this to
-  be real work in each of the three lanes rather than a footnote** — these repos cross-cite each
-  other and MAM-basics far more than wlc-utils did.
+  wlc-utils' **ten**, repointed in `d70e14c`. **Prefer the generator to the artifact**: wlc-utils'
+  four CLC deep links were one constant, `py/clc/clc_render.py`'s `_LC_CORROBORATED_LINK`, plus a
+  regeneration. **Expect this to be real work in each of the three lanes rather than a footnote** —
+  these repos cross-cite each other and MAM-basics far more than wlc-utils did.
+
+  **Then re-run the sweep and record that it comes back clean, which is the half most likely to be
+  skipped.** `stubs.py`'s docstring is the model, added in `abf32c2`: after the repoint, a
+  `git grep bdenckla.github.io/wlc-utils` over every clone returns only prose *describing* the
+  redirect and the tanach.us snapshots — **so a hit found later is a new citation of a dead site
+  rather than one the sweep missed**, which is a claim the repoint cannot make without the second
+  sweep. **The snapshots must stay as they are**: five citations each in `UXLC-utils/in/UXLC-misc/`
+  and `in/UXLC-misc-fixed/`, their derived `out/UXLC-misc/` copies, and this repo's vendored
+  `in/UXLC-misc/all_changes.json` and `in/accgram/uxlc_accent_changes.json`. Editing one falsifies
+  the snapshot and changes nothing about the citation.
 - **Citations Ben cannot reach are the RECORD of why the stubs exist**, and go in the manifest's
   own `comment` field, the way `stubs.py`'s docstring carries wlc-utils'. **Only these belong in
   the argument for keeping the redirect host alive**, and only these belong in the emptied repo's
@@ -697,7 +707,9 @@ which is not an arriving subtree.
 
 **4. MAM-private's melody-compiler work may run concurrently, and this is recorded so nobody
 serializes on it needlessly.** Checked 2026-08-22 against
-`MAM-private/al-hatorah/doc/PLAN-melody-compiler.md` at MAM-private `35b6cce`: that work writes
+`MAM-private/al-hatorah/doc/PLAN-melody-compiler.md` at MAM-private `35b6cce`, and **re-checked
+later the same day at `3d2ecf1`, after that work reached Phase 3 planning: still no import of any
+MAM-basics module and no path reaching outside MAM-private.** That work writes
 only `MAM-private/al-hatorah/py/melc/`, `py/main_melc.py`, `out/melc-*` and its own plan file; it
 imports nothing from MAM-basics (`main_melc.py` and `py/melc/*` import only `aht`, `aht_phon`,
 `mb_cmn` and `melc`); it runs on al-hatorah's own venv; and it publishes nothing, the tunes it
