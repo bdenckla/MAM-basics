@@ -433,6 +433,16 @@ to him with it and go with the answer:
 
 ### Decision D — book-of-job's `py_ac_loc/`, which nothing reads
 
+**DECIDED — Ben, 2026-08-23, at Phase 0: drop it.** Taking the recommendation as it stood after
+Phase 0's blob comparison below — *"I concur with your recommendation to drop it."* So Phase 4
+never copies `py_ac_loc/`; its Step 5 deletes it with the rest, and the 2026-02-19 snapshot of the
+Job pages stays where it already is twice over, in `bdenckla/book-of-job`'s history and in
+codex-index-aleppo's. Three consequences for Phase 4, each named below and repeated here so the
+lane sees them together: the mark-order check goes from 509 files to 460 and that is the expected
+change; `doc/reading-mam-simple.md` is reworded where it links to
+`py_ac_loc/MAM-simple-provenance.md` and describes `py_ac_loc/MAM-XML/`; and what Phase 4 moves
+outside `gh-pages/` is 9 files — `out/` 7 and `doc/` 2 — rather than 85.
+
 **76 files, 7.8 MB, 96% of book-of-job's non-`gh-pages` bytes, and it has no accessor in
 `py/boj_paths.py` and no reader anywhere in MAM-basics' `py/`.** Despite the `py_` prefix it holds
 no Python: `MAM-XML/` (24 book XML, a vendored MAM-simple snapshot), `column-coordinates/` (24),
@@ -1563,7 +1573,7 @@ simplest data tail once Decision D is answered.
 
 | path | files | MB | what it holds |
 |---|---|---|---|
-| `py_ac_loc/` | 76 | **7.8** | Aleppo Codex data despite the `py_` prefix — **no Python in it**. **Decision D.** |
+| `py_ac_loc/` | 76 | **7.8** | Aleppo Codex data despite the `py_` prefix — **no Python in it**. **Decision D: DROPPED, Ben, 2026-08-23 — deleted at Step 5, never copied.** |
 | `out/` | 7 | 0.329 | Generated JSON; six regenerate with the site, and `cam1753-crops.json` is hand-made crop coordinates. |
 | `doc/` | 2 | 0.003 | `opening-html-files.md` and `reading-mam-simple.md` — procedures about *reading* what is here. The seven about how it is made already moved, and MAM-basics' `CLAUDE.md` has a section on them. |
 
@@ -1608,10 +1618,13 @@ twice into `gh-pages/jobn/job5_orphan_qere_points.html`, and that URL has 404'd 
 `https://bdenckla.github.io/MAM-basics/wlc/wlc-a-notes/` and regenerate; the page is one of the
 183 the oracle rewrites. Layer 4 has the finding in full.
 
-**Decision D is answered before Step 1, not during it.** `py_ac_loc/` is 96% of this repo's
-non-`gh-pages` bytes, has no reader, collides by name with MAM-basics' `py/py_ac_loc/` package, and
-partly duplicates codex-index-aleppo — `MAM-XML` one blob with it, `column-coordinates` and
-`line-breaks` differing. Landing it "for now" under a made-up name is the outcome to avoid.
+**Decision D is answered before Step 1, not during it — and it IS answered: drop, Ben,
+2026-08-23.** `py_ac_loc/` is 96% of this repo's non-`gh-pages` bytes, has no consumer, collides
+by name with MAM-basics' `py/py_ac_loc/` package, and is a byte-exact 2026-02-19 snapshot of
+codex-index-aleppo's data (Phase 0's blob comparison under Decision D). So Step 1 copies `out/`
+and `doc/` only, 9 files; Step 5 deletes `py_ac_loc/` with the rest; the mark-order check's 509
+files become 460; and `doc/reading-mam-simple.md` is reworded where it names the directory.
+Landing it "for now" under a made-up name was the outcome to avoid, and it is avoided.
 
 ---
 
