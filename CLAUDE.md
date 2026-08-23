@@ -323,6 +323,45 @@ conventions win.
 book-of-job keeps two procedures of its own, `doc/opening-html-files.md` and
 `doc/reading-mam-simple.md`, both about reading what that repo holds rather than how it is made.
 
+## There is no local `wlc-utils` clone either, and its stub set is frozen
+
+`~/GitRepos/wlc-utils` came off the disk on 2026-08-22 (Ben's decision), the way al-hatorah's
+clone did on 2026-08-11. **The repo itself is alive** — `bdenckla/wlc-utils` is the redirect host
+for `bdenckla.github.io/wlc-utils/<path>`, and only the local clone went. Nothing routine wanted
+it: its 93 issues are read and written with `gh --repo bdenckla/wlc-utils`, which needs no
+checkout (`py/wlc_issue_edit.py`); its site deploys from the remote by its own `pages.yml`; and no
+test here resolves that sibling.
+
+**One thing still wants a clone, and its occasion is now rare.**
+`py/main_wlc_redirect_stubs.py build --publish`, and `check` with no `--dir`, reach
+`py/wlc_redirect/stubs.py`'s `wlc_utils_pages_dir`, which is the only site in this tree that
+resolves the clone. It raises with the command that fixes it:
+
+```powershell
+git clone --depth 1 https://github.com/bdenckla/wlc-utils.git C:\Users\BenDe\GitRepos\wlc-utils
+```
+
+**The stub set is frozen at `in/wlc_redirect_pages.json`, the 154 URLs wlc-utils published at the
+2026-08-17 move, and it can only shrink.** Until 2026-08-22 both subcommands derived it from the
+live `git ls-files gh-pages/wlc`, which anchored the lint to the wrong set: a page published
+*here* after the move never had a wlc-utils URL and is cited as a MAM-basics one, so it earns no
+stub — but the derivation would have reported the first such page as an old URL about to 404. The
+two sets coincided only because nothing had been added under `gh-pages/wlc/` since `f99996f`
+(2026-08-12). So a publish is needed only if one of those 154 pages is **renamed or dropped**,
+which breaks its stub; `py/tests/test_wlc_redirect_manifest.py` is the half of that lint needing
+no clone, and it fires here.
+
+**`../wlc-utils` was dropped from `all-repos.code-workspace` in the same commit, 20 folders to
+19** — not tidying: `py/repo_util/repo_selection.py`'s `load_workspace_repo_dirs` raises
+`FileNotFoundError` on any listed folder that is not on disk, and it runs before *every* action,
+so a stale entry would kill `--run-black`, `--clean-worktrees` and the standards checks alike, not
+just the part that names wlc-utils. That is the same three-step the frozen repos took on
+2026-08-07 (move out, drop from the workspace file, record it).
+
+The `../wlc-utils` paths in `doc/`'s plans are execution records of what was true when each phase
+ran, and are left as written — the answer Ben chose for al-hatorah's and masorah-books' stale
+citations too.
+
 ## There is no `wlc-koren-12th` repo
 
 `~/GitRepos/wlc-koren-12th` was never a repo of its own. It was a **worktree of wlc-utils** on
