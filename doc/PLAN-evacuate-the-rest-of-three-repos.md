@@ -443,12 +443,13 @@ to him with it and go with the answer:
 - **`.claude/commands/halve.md` lands under `.claude-disabled/commands/`**, beside the two
   retired commands MAM-basics keeps there, rather than becoming a live slash command at
   `.claude/commands/`. Same relative path for the file, one directory over for the mechanism.
-  **REOPENED 2026-08-23, later the same day:** Ben had `.claude-disabled/` deleted outright
+  **SUPERSEDED 2026-08-23, later the same day:** Ben had `.claude-disabled/` deleted outright
   (its three files — the two retired commands and a `settings.local.json` — are in history up
-  to `8e78498`), so this destination no longer exists. Phase 5 owes Ben this one particular
-  again before it copies anything: drop `halve.md` without copying, as Decision D does for
-  `py_ac_loc/` (it stays in UXLC-utils' history either way), or name another place for it.
-  Nothing else in Decision C changes.
+  to `8e78498`), so this destination no longer exists. **DECIDED — Ben, 2026-08-23: drop
+  `halve.md`, never copied**, as Decision D does for `py_ac_loc/`; it stays in
+  holman-ketiv-qere's history. So Phase 3 copies nothing from holman-ketiv-qere's `.claude/`,
+  and the "48 files outside `gh-pages/`" it lands is one fewer. Nothing else in Decision C
+  changes.
 
 ### Decision D — book-of-job's `py_ac_loc/`, which nothing reads
 
@@ -1554,7 +1555,7 @@ the Scale table; the two JC3 pages had been counted as outside):
 | `data/` | 2 | 0.018 | Written by `main_estimate_uxlc_locations` from the UXLC-utils clone; tracked so a fresh clone can render without ~11 MB of UXLC XML. |
 | `assets/` | 4 | 0.016 | Authored CSS and JavaScript the render steps copy into `gh-pages/`. **Input to a generator, not output** — do not treat as an artifact. |
 | `io/` | 1 | 0.007 | `table_row_github_issues.json`, the per-row issue state and labels. |
-| `.claude/` | 1 | 0.0004 | `.claude/commands/halve.md`, a one-off slash command. **A dot-directory, so a glob that skips the six housekeeping files still misses it.** |
+| `.claude/` | 1 | 0.0004 | `.claude/commands/halve.md`, a one-off slash command. **A dot-directory, so a glob that skips the six housekeeping files still misses it.** **DOES NOT MOVE — Ben, 2026-08-23, superseding Decision C's third particular after `.claude-disabled/` was deleted that day: dropped, never copied; it stays in holman-ketiv-qere's history.** |
 
 **Three traps specific to this repo:**
 
