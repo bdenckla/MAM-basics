@@ -331,6 +331,61 @@ licence statement. It has a reader — `hkq_paths.review_docx_path()`, called by
 `main_extract_docx_and_render_table.py`, which is that repo's oracle — so it cannot simply be
 dropped.
 
+**DECIDED — Ben, 2026-08-23, at Phase 0: the docx does NOT move to MAM-basics, and it is
+removed from holman-ketiv-qere; the extracted data becomes the source data.** His words: *"I'm
+confident in the extractor; let's remove the docx file from the holman-ketiv-qere repo and not
+evacuate it to MAM-basics. Also accordingly of course we need to 'cut the cord' to it, treating
+the data we extract from it as the source data (although of course keeping documented that it
+originally came from a docx)."* Put to him with three options — move it with a
+`DATA-LICENSES.md` row of its own (the recommendation), move it outside `gh-pages/` (the same
+thing), or leave it behind as the one non-stub file the emptied repo keeps — and he chose a fourth.
+**"Cannot simply be dropped" above was true only while the extractor had to run; the decision is
+that it no longer has to.** What follows, each at the phase that owns it:
+
+- **Phase 1 loses its one owed edit.** The `*.docx binary` rule was wanted only ahead of this
+  file arriving, and it is the only `.docx` tracked in any of the three repos (checked 2026-08-23
+  with `git ls-files '*.docx'` in each). MAM-basics' `.gitattributes` already covers everything
+  that still arrives, so Phase 1 is verification only — its two prove-it-on-one-file checks — and
+  commits nothing unless a check fails.
+- **Phase 3's Step 3 cuts the cord, which is the lane's largest change for this repo.**
+  `docs-not-served/table_data.json`, `docs-not-served/introduction.md` and the 154 images under
+  `gh-pages/img/` stop being regenerated and become tracked source data. The `extract()` half of
+  `main_extract_docx_and_render_table.py` — `hkq_cmn/extract_docx_pipeline.py`'s
+  `parse_docx_archive` and `write_extract_files`, `hkq_cmn/extract_docx_xml_utils.py`,
+  `hkq_paths.review_docx_path()` and `REVIEW_DOCX_NAME` — retires; the two verifications
+  (`verify_table_words_in_mam_plus`, `verify_table_notes_in_uxlc`) and
+  `render_table_data_findings_html` stay, reading the now-source JSON, and the script is renamed
+  for what it still does. **`hkq_cmn/extract_docx_notes.py` stays whatever its name says**: the
+  two verifiers and `py_render/rt_mam_uxlc_diff_descriptions.py` import `standard_book_name`,
+  `INVISIBLE_MARK_PATTERN` and `parse_verse_reference` from it. The images were write-once
+  already — `export_images` raises rather than overwrite a differing image, per
+  `hkq_paths.gh_pages_dir`'s docstring — so for them the cord was cut in practice long ago.
+- **One design point for that Step 3, to be put to Ben at Phase 3 if the session cannot settle
+  it from the code: `persist_verify_summary` writes the two verification summaries back INTO
+  `table_data.json`.** While the file was generated that was enrichment of an artifact; once it
+  is source data, it is a program rewriting a tracked source file in place with derived fields
+  (`mam_plus_verify`, `uxlc_verify` and three row lists). Either the in-place rewrite stays, as
+  an idempotent enrichment that `git status` proves clean, or the derived fields move out into a
+  file of their own that the findings page reads alongside the source. The plan does not decide
+  this; Phase 3's record says which was chosen and why.
+- **The provenance stays written down, per the decision's last clause.** `table_data.json`'s
+  own `source_document` field already names the docx and stays as it is;
+  `docs-not-served/table_data_fields.md`, the hand-authored description of the JSON, is rewritten
+  to say the table was extracted once rather than is extracted; and a `_provenance.md` beside the
+  data — the convention `in/UXLC-39/_provenance.md` and `in/UXLC-misc/_provenance.md` already
+  use here — records the document's name, that it is Holman's, the holman-ketiv-qere commit it was
+  extracted from and the extractor's commit, and that **the document itself remains in
+  `bdenckla/holman-ketiv-qere`'s history**, since Step 5 removes it from the tree and not from the
+  repo, which stays alive. Step 2's `DATA-LICENSES.md` row says the same in licence terms: the
+  images and the table text are Holman's, reproduced as the data the review pages derive from,
+  no grant made or implied.
+- **Phase 3's Step 5 deletes the docx alongside everything the earlier steps moved** — the one
+  file in any lane that is deleted without having been copied first — and holman-ketiv-qere's
+  own `*.docx binary` rule may stay in the `.gitattributes` Step 5 keeps.
+- **The figures shrink accordingly**: what Phase 3 moves outside `gh-pages/` is 47 files /
+  2.0 MB rather than 48 / 22.6, and layer 1 no longer has a docx to cover. The Scale table
+  measures what the repos hold and is left as measured.
+
 ### Decision C — where each repo's non-`gh-pages` tree lands
 
 **734 files, and the programme's decision sections do not cover them** (737 until Phase 0's
@@ -514,8 +569,12 @@ first.
 repo yields `<mode> <sha1> 0\t<path>` per file. After the copy, the same command in MAM-basics,
 restricted to the destination paths, must yield the **identical SHA-1s**, differing only in path.
 Git blobs are content-addressed, so this is exact byte-identity — and it is the **only** evidence
-covering the 884 PNGs, 3 JPGs, the 4 woff2 and the 20.6 MB docx across the three repos, which no
-program regenerates and which layer 2 therefore says nothing about.
+covering the 884 PNGs, 3 JPGs and the 4 woff2 across the three repos, which no program
+regenerates and which layer 2 therefore says nothing about. (The 20.6 MB docx was in this list
+until 2026-08-23; Decision B's sub-question took it out of the move. **And once Phase 3's Step 3
+cuts the cord, layer 1 becomes the only evidence for holman-ketiv-qere's `table_data.json`,
+`introduction.md` and the 154 images under `gh-pages/img/` as well**, those having stopped being
+regenerated.)
 
 **This is why Phase 1 must precede every copy**: `git add` applies `.gitattributes` at add time, so
 a differing eol rule changes the blob.
@@ -542,6 +601,13 @@ ten entry points named below were confirmed present in `py/` on 2026-08-22.
 | book-of-job | `py/main_gen_misc_authored_english_documents.py`, alone | **183 of 701** rewritten; **518 written by no program**, being essentially the 515 PNGs | `PLAN-evacuate-python-from-book-of-job.md` §"The oracle: `main_gen_misc_authored_english_documents.py`, alone" |
 | holman-ketiv-qere | **six commands, not one**: `main_extract_docx_and_render_table.py`, `main_ingest_uxlc_emails.py`, `main_estimate_uxlc_locations.py`, `main_render_uxlc_corrections.py`, `main_search_holam_he_qere.py`, `main_search_final_hiriq_verse_text.py` | 335 artifacts, 175 rewritten and 160 untouched at that plan's Phase 3 | `PLAN-evacuate-python-from-holman-ketiv-qere.md`, its "Regenerating everything is six commands, not one" block |
 | UXLC-utils | `py/main_uxlc_mega.py`, `py/main_clc.py`, `py/main_map_changes_to_book_of_job.py` | **214**; at that plan's Phase 6, **127 rewritten and 87 not** | `PLAN-evacuate-python-from-UXLC-utils.md` §"The oracle ran as specified and passed" |
+
+**holman-ketiv-qere's first command changes shape at Phase 3's Step 3**, by Decision B's
+sub-question (Ben, 2026-08-23): the docx does not move, so `main_extract_docx_and_render_table.py`
+loses its extraction half and is renamed for the verifying and rendering it still does, and
+`table_data.json`, `introduction.md` and the 154 images under `gh-pages/img/` pass from "artifacts
+the oracle rewrites" to "source data layer 1 proves". The six commands are still six; one of them
+just writes less. Phase 3's record names the renamed command.
 
 **book-of-job's oracle is the one that is also a mega step** — `gen-misc-authored-english-documents`
 — so a mega run covers book-of-job's 183 and nothing else of these three repos'. Do not read a
@@ -1098,10 +1164,14 @@ The four files as of 2026-08-22 — re-read each rather than trusting this table
 | holman-ketiv-qere | `*.docx`, `*.png`, `*.woff2` binary — **`*.docx` is not in MAM-basics'** |
 | UXLC-utils | none at all |
 
-**The one edit this phase owes is `*.docx binary` in MAM-basics**, ahead of holman-ketiv-qere's
-20.6 MB review document arriving. Copy the comment convention already in MAM-basics'
-`.gitattributes`, which explains why the binary rules were copied from wlc-utils ahead of that
-corpus.
+**The one edit this phase owed was `*.docx binary` in MAM-basics**, ahead of holman-ketiv-qere's
+20.6 MB review document arriving — **and it is no longer owed: Decision B's sub-question was
+answered on 2026-08-23, the docx does not move, and it is the only `.docx` in any of the three
+repos.** So this phase makes no edit at all unless one of the two checks below fails; it is a
+verification phase, and its commit, if any, is this file's record. (Until that day this
+paragraph said to copy the comment convention already in MAM-basics' `.gitattributes`, which
+explains why the binary rules were copied from wlc-utils ahead of that corpus — still the
+convention to follow if a rule ever does turn out to be needed.)
 
 **Two interactions to check rather than assume, and both are expected to be no-ops:**
 
@@ -1376,7 +1446,7 @@ the Scale table; the two JC3 pages had been counted as outside):
 
 | path | files | MB | what it holds |
 |---|---|---|---|
-| `Review of Qere and Kethib readings in the Aleppo and Leningrad.docx` | 1 | **20.6** | Holman's review — the source of the 77-row table and of the 154 images under `gh-pages/img/`. **90% of the bytes.** Decision B's sub-question. |
+| `Review of Qere and Kethib readings in the Aleppo and Leningrad.docx` | 1 | **20.6** | Holman's review — the source of the 77-row table and of the 154 images under `gh-pages/img/`. **90% of the bytes.** **DOES NOT MOVE — Decision B's sub-question, answered 2026-08-23: deleted at Step 5, never copied; the extracted data becomes the source at Step 3.** |
 | `emails/` | 26 | 0.056 | An address-free derivative of Holman's 13 correction emails, a `.txt` body and `.json` metadata per message. The ingest redacts as it reads, because the repo is public; the raw `.eml` stay in the gitignored `.novc/eml/`. |
 | `docs-not-served/` | 4 | 0.272 | `introduction.md`, `table_data.json` (77 rows) and `uxlc_corrections.json`, all generated; `table_data_fields.md` is hand-authored and documents the third. |
 | `out/` | 2 | 1.611 | The two phenomenon searches. |
@@ -1403,6 +1473,15 @@ the Scale table; the two JC3 pages had been counted as outside):
    MAM-basics' `CLAUDE.md` §"Five issue trackers" names this module and `py/py_render/rt_issue_tags.py`
    as the pair that renders issue references as *data* about the review, and says prefixing or
    renaming them corrupts the rendered table.
+
+**The docx is this phase's one deletion without a copy, and cutting the cord to it is this
+phase's largest Step 3 change.** Decision B's sub-question, answered by Ben on 2026-08-23, lists
+what that entails — the extraction half of `main_extract_docx_and_render_table.py` retires and
+the script is renamed, `table_data.json`, `introduction.md` and `gh-pages/img/` become source data
+with a `_provenance.md` beside them, `persist_verify_summary`'s in-place rewrite of the JSON is a
+design point to settle, and Step 5 deletes the document from the tree while
+`bdenckla/holman-ketiv-qere`'s history keeps it. Read that list before starting Step 3; it is kept
+there rather than here so that the decision and its consequences stay together.
 
 **The mailbox is this phase's one untracked move.** `main_ingest_uxlc_emails` reads
 `holman-ketiv-qere/.novc/eml/` through `hkq_paths.eml_dir()`. No commit moves an untracked
@@ -1703,8 +1782,9 @@ ambiguous, and that repo's plan settled the same question the same way.
   UXLC-utils is the sharp case, because `codex-index-leningrad` reads it through a vendoring
   script and `holman-ketiv-qere`'s own oracle reads it too.
 - **A blob that differs because `.gitattributes` differed.** Silent, and it destroys the only
-  evidence covering 884 PNGs, 3 JPGs, 4 woff2 and the 20.6 MB docx. **Mitigated by Phase 1
-  preceding every Land step**, and detected by layer 1 if it happens anyway.
+  evidence covering 884 PNGs, 3 JPGs and 4 woff2 (and, until 2026-08-23, the 20.6 MB docx, which
+  no longer moves). **Mitigated by Phase 1 preceding every Land step**, and detected by layer 1
+  if it happens anyway.
 - **A naive glob dropping a file with a space or a non-ASCII byte in its name.** 52 such paths in
   UXLC-utils, 1 in holman-ketiv-qere plus 2 quoted ones, and the largest single file in the whole
   move is one of them. **Mitigated by `-z` everywhere.**
