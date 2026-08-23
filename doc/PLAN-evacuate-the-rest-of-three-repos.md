@@ -171,6 +171,18 @@ These were settled elsewhere and are named here so that a fresh session does not
    renamed page's stub repointable at the content's new home; without it the two repairs are
    republish-at-the-old-path or drop-the-URL-and-its-stub. The reasoning, and the reason the
    decision is cheap to revisit if it ever bites, is under Phase 2's "Renaming a frozen page".
+   **One leg of that reasoning was weakened by decision 8 below and the decision still stands** —
+   said here so nobody finds the two side by side and reads a contradiction. The leg that weakened
+   is "the known citations are few, so dropping a stub costs nothing real", which decision 8
+   answers with an unknowable cited set. The leg that carries it is untouched and is sufficient
+   alone: a rename fails the suite by name, and adding the branch **then** is the same one-line
+   change as adding it now, so nothing is foreclosed by waiting.
+8. **Assume every one of these repos' old URLs is cited where Ben cannot reach it.** Ben,
+   2026-08-22, answering the question Phase 0 was going to put to him: *"Assume URLs to all three
+   are cited in places I cannot reach (Twitter posts, emails sent, etc.)"* **Non-empty and
+   unknowable — there is no list and there will not be one.** This is what keeps three redirect
+   hosts alive, and what forbids pruning any manifest to the citations that can be found. Layer 4
+   under "The oracle" has the three consequences.
 
 ---
 
@@ -432,12 +444,24 @@ construction, none of the citations that justify stubs.** So the list above is t
 backlog, not its evidence. **An earlier draft of this section presented it as the evidence**, which
 inverted the argument for all three repos at once.
 
-**So one question is open and no sweep of this disk can answer it: is any URL of these three repos
-cited anywhere Ben cannot reach?** wlc-utils had a known one in tanach.us. **Phase 0 must put this
-to Ben rather than infer it**, because he is the one who submitted the change proposals and sent
-the emails. **The answer does not change what gets frozen** — see the freeze rule below — but it
-changes what the emptied repos' `README.md` files can honestly claim, and it is the whole
-justification for keeping three redirect hosts alive.
+**The question no sweep of this disk could answer — is any URL of these three repos cited anywhere
+Ben cannot reach? — is ANSWERED, and the answer is yes for all three.** Ben, 2026-08-22:
+**"Assume URLs to all three are cited in places I cannot reach (Twitter posts, emails sent, etc.)"**
+So this is settled and **Phase 0 must not re-put it**; it is carried-in decision 8.
+
+**The answer's shape matters as much as its content, and it is not the shape wlc-utils' was.**
+wlc-utils had an enumerable citation — tanach.us's five, nameable and checkable. Here there is no
+list and there will not be one: the cited set is **non-empty and unknowable**. Three consequences
+follow, and they run in different directions, which is why they are stated separately:
+
+- **The justification for keeping three redirect hosts alive is settled**, and needs no enumeration
+  to stand on. It is the strongest possible answer for that purpose.
+- **No emptied `README.md` may name a citation list**, because there is none to name. Say that the
+  old URLs are cited in places Ben cannot reach — posts and sent email among them — and stop.
+  **Naming the repointed in-tree citations there would be worse than saying nothing**, per Step 5.
+- **Every published page is potentially cited**, so no page may be dropped from a manifest on the
+  ground that nothing cites it. That was already the rule below; it now rests on something Ben has
+  stated rather than on caution.
 
 **And it does NOT license pruning the manifest.** Freeze each repo's whole published set at its
 flip, exactly as Phase 2 says. The citations that matter most are the ones nobody can enumerate, so
@@ -552,12 +576,12 @@ files below. Check for untracked residue: `git rm` leaves it behind.
 
 **`README.md`** becomes one screen: this repo is a redirect host; the site is at
 `https://bdenckla.github.io/MAM-basics/<subtree>/`; the mapping is a pure prefix rewrite; it moved
-on `<date>`; **the repo still exists because of the citations Ben cannot reach — name the ones
-Phase 0 established, and if that answer came back empty say so rather than implying a list**; its
-issues are still live and read here; the data and code are in `../MAM-basics`; the pre-evacuation
-history is intact here. **Do not justify it by a citation in one of Ben's own repos**: those were
-repointed in this lane's Step 4, so citing one here would be claiming a reason the lane itself
-removed.
+on `<date>`; **the repo still exists because its old URLs are cited in places Ben cannot reach —
+posts and sent email among them — and there is no list of them, so do not write one**; its issues
+are still live and read here; the data and code are in `../MAM-basics`; the pre-evacuation history
+is intact here. **Do not justify it by a citation in one of Ben's own repos**: those were repointed
+in this lane's Step 4, so citing one here would be claiming a reason the lane itself removed. **And
+do not hedge it into "may be cited"** — carried-in decision 8 settles that they are.
 
 **`CLAUDE.md`** shrinks to those facts plus the two only an agent needs — **`gh-pages/` is
 generated, do not hand-edit it, regenerate with MAM-basics' stub generator**, and **there is no
@@ -715,10 +739,9 @@ staging; and the push landing fast-forward with no `--force`.
    `bdenckla.github.io/<repo>/`. **Everything that sweep returns is a citation Ben controls, and so
    is a repoint work item for that repo's lane, not evidence for a stub** — the sites known as of
    2026-08-22 are under "Layer 4" above, and the sweep is what makes the list current.
-   **Then ask Ben the part no sweep can answer**: is any URL of these three repos cited anywhere he
-   cannot reach — a tanach.us change proposal, an email already sent, someone else's page? He
-   submitted the proposals and sent the emails, so he is the only source. Both halves are needed:
-   the first is work, the second is the reason the redirect hosts stay alive at all.
+   **The part no sweep can answer is already answered — do not re-ask it.** Ben, 2026-08-22:
+   assume URLs to all three are cited in places he cannot reach, posts and sent email among them.
+   Carried-in decision 8, and layer 4 above has what follows from it.
 4. **Record the baseline test count and lint state**: `py/main_test.py`'s summary line,
    `ruff check py`, `black --check py`. **The figure has moved twice in four days** — UXLC-utils'
    Phase 6 recorded 913 passed / 5 skipped on 2026-08-18, and the concurrent session measured
