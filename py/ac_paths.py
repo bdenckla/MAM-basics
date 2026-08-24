@@ -97,10 +97,13 @@ same reason ahead of time: codex-index-cam1753 holds a counterpart of six of the
 against the same manuscript problem on a different manuscript, and its Phase 3 lands
 them as ``main_cam1753_`` plus the same stems.
 
-``main_gen_permission_glob.py`` is NOT here, and it moved with this code without
-belonging to it: it generates a Claude Code permission glob from a shell command and
-mentions no manuscript, so it landed unprefixed at the top of ``py/`` as a utility of
-this repo's.  Listing it here would put a general tool inside a per-repo lint scope.
+``main_gen_permission_glob.py`` is not in that list, and was not while it existed: it
+moved with this code without belonging to it, generating a Claude Code permission glob
+from a shell command and mentioning no manuscript, so it landed unprefixed at the top of
+``py/`` as a utility of this repo's rather than inside this per-repo lint scope.  Ben
+deleted it on 2026-08-24, once Claude's Auto mode had made the permission globs it wrote
+pointless.  It is named here because the trio plan counts it among the files that moved,
+so a reader comparing the two would otherwise be a file short.
 """
 
 CODE_DIR = Path(__file__).resolve().parent
