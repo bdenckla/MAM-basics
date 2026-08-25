@@ -2,7 +2,7 @@
 
 | | |
 |---|---|
-| **Status** | Step-through of the massaging inventory in progress: **steps 1–10 of 41 decided** (steps 1–9 on 2026-08-23, step 10 on 2026-08-25). **Step 11 is where the next session resumes**, and it opens tier 1's comparison-edition side. The plan proper (phases, commands, verification) is not written yet; it goes in this file when the step-through ends. |
+| **Status** | Step-through of the massaging inventory in progress: **steps 1–11 of 41 decided** (steps 1–9 on 2026-08-23, steps 10–11 on 2026-08-25). **Step 12 is where the next session resumes**, in tier 1's comparison-edition side. The plan proper (phases, commands, verification) is not written yet; it goes in this file when the step-through ends. |
 | **Deliverable** | `C:\Users\BenDe\GitRepos\MAM-basics\out\near-aleppo\` — a version of MAM-parsed-plus (the JSON under `C:\Users\BenDe\GitRepos\MAM-parsed\plus\`) whose text is nearer to what the Aleppo Codex contains, or to what its lost sections probably contained. Plus HTML documentation of the edition at `gh-pages/near-aleppo/`. |
 | **Owner** | Ben Denckla. Every decision below is Ben's unless marked otherwise. |
 | **Run from** | `C:\Users\BenDe\GitRepos\MAM-basics`, venv `.venv\Scripts\python.exe`. Sibling repos read: `..\MAM-parsed` (measurements below at its commit `95f64d7`, still its head on 2026-08-24) and `..\MAM-private` (read at `cc88ca9`; `7c5bc84` on 2026-08-25). **Both are READ-ONLY here — this work writes only to MAM-basics.** Ben, 2026-08-24: other work is live in MAM-private, so re-check the catalogue and the code against §2's "in sync" note rather than trusting it, and treat a step that has been added, renumbered or reimplemented since 2026-08-23 as a finding to raise. **Re-checked 2026-08-25 over `cc88ca9..7c5bc84`, and the inventory is unaffected**: `git diff --stat cc88ca9..HEAD -- <the comparison project>/documentation/` is empty, and so is the same diff over the five modules §2 names. One module was deleted in that range, `mpu_varika.py`, but it had been unreachable since 2026-03-24 and the live M11 path is `xataf_infer.apply_xataf_inference`, which is untouched — so step 2's disposition stands. |
@@ -73,6 +73,18 @@ near-aleppo and the reasons.
    `שיטת-א` is an inference and `מסורת-א` the margin, not the text. Where Aleppo is lost and
    untestified, **Leningrad (`ל`) is an acceptable proxy** (Ben, on step 2). Full decoding:
    `doc/sigil-decoding.md`.
+5. **A step that only manipulates Unicode details gets IGNORE-STEP.** Ben, 2026-08-25, on
+   step 11: "no step manipulating MAM's or [the comparison edition]'s Unicode details is
+   relevant" (the bracket replaces the edition's name, per §1). No code, and nothing to
+   document. The reason: two encodings of the same marks on the same letters are the same
+   text — a presentation form against base-plus-marks, a CGJ present or absent, one mark
+   order against another — and the codex has no opinion about any of them, so neither does
+   near-aleppo. **The judgment each time is whether the step is really only encoding**, and
+   the phrase to watch for is one that sounds like encoding while naming a mark that is or is
+   not there: "add the holam to the divine name" (step 22) is pointing, not encoding, and
+   rule 5 does not reach it. Where MAM and the comparison edition genuinely differ in
+   encoding, MAM's spelling stands, near-aleppo keeping MAM-parsed-plus's structure (§1) and
+   MAM-normal mark order (`CLAUDE.md`).
 
 ## 4. The inventory, with dispositions
 
@@ -111,7 +123,7 @@ feature the comparison edition has, and MAM lacks, something the *manuscript* ha
 
 | # | Step | Disposition |
 |---|---|---|
-| 11 | M1 decompose presentation forms | PENDING |
+| 11 | M1 decompose presentation forms | **IGNORE-STEP** (Ben, 2026-08-25, and the occasion of rule 5). Direction: the comparison edition only, MAM untouched; lossless, a `recompose_presentation_forms()` reversing the 26-entry table exactly. **Its expectation held** — MAM already has the decomposed encoding. Census of the whole U+FB1D–U+FB4F block over all 24 files of MAM-parsed/plus (`.venv\Scripts\python.exe .novc\presentation_forms_census.py`, MAM-parsed `95f64d7`): exactly **one** codepoint of the block occurs anywhere in MAM, U+FB1E the varika, **685** of them (684 base text, 1 note body), reproducing §6's figure; every letter presentation form the table covers is absent. A presentation form is a legacy encoding of a sequence, not a scribal feature — U+FB2A and shin + shin-dot render identically and are the same text — so the codex has no opinion about which spelling is used, and MAM is already on the side of the step's output. **Two traps for a later reader.** (a) **The varika is untouched by M1 and untouchable by normalisation.** It sits in the presentation-forms block, so "MAM has 685 codepoints from that block" invites the conclusion that MAM needs decomposing after all. It does not: U+FB1E has no decomposition, canonical or compatibility — NFD and NFKD both leave it as itself (`.novc\varika_decomp.py`) — and M1's table has no entry for it. MAM's varika is a mark in its own right, notating a manuscript hataf, which is step 2's. (b) **M1's table is hand-written rather than a call to NFD, and deliberately so.** U+FB2C's canonical decomposition is to *another* presentation form (U+FB49 + U+05C1), and full NFD yields shin + dagesh + shin-dot, which is Unicode-normal order; the table instead yields shin + shin-dot + dagesh, which is MAM-normal mark order (`CLAUDE.md`). So M1 lands in MAM's order by construction and does not lean on step 20. |
 | 12 | M2 omit invariant token text | PENDING |
 | 13 | Strip ketiv-maqaf (a maqaf between ktiv and kri) | PENDING |
 | 14 | Isa 9:6 retype mila as ktiv (לםרבה) | PENDING |
