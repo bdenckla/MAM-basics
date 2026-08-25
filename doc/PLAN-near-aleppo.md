@@ -77,20 +77,23 @@ near-aleppo and the reasons.
 ## 4. The inventory, with dispositions
 
 Disposition codes. The first three name what near-aleppo does with the comparison's **massaging
-step**, so that none of them can be read in the opposite frame (Ben, 2026-08-25, which is why
-`KEEP` was renamed `REJECT-STEP` and `APPLY` `APPLY-STEP`): **APPLY-STEP** (near-aleppo applies
-the step, driven by MAM's own information), **REJECT-STEP** (near-aleppo does not apply it,
-because applying it would move *away* from Aleppo — MAM is already the Aleppo-faithful side, so
-the step's absence is itself a documentation item), **IGNORE** (near-aleppo does not apply it
-either, but for the flatter reason that it is a representation or Unicode matter saying nothing
-about Aleppo in either direction). Then **LIMITATION** (MAM lacks the information; document) and
+step**, and all three say so in the name, so that none of them can be read in the opposite frame
+(Ben, 2026-08-25, which is why `KEEP` became `REJECT-STEP`, `APPLY` `APPLY-STEP` and `IGNORE`
+`IGNORE-STEP`): **APPLY-STEP** (near-aleppo applies the step, driven by MAM's own information),
+**REJECT-STEP** (near-aleppo does not apply it, because applying it would move *away* from
+Aleppo — MAM is already the Aleppo-faithful side, so the step's absence is itself a documentation
+item), **IGNORE-STEP** (near-aleppo does not apply it either, but for the flatter reason that it
+is a representation or Unicode matter saying nothing about Aleppo in either direction). Only
+`KEEP` could actually be read backwards; `IGNORE` was suffixed too because a column of two
+suffixed codes beside one bare one invites the reader to ask what frame the bare one is in, which
+is the doubt the rename is there to remove. Then **LIMITATION** (MAM lacks the information; document) and
 **PENDING** (not yet stepped through).
 
 ### Tier 1 — catalogued massagings, MAM side, in execution order
 
 | # | Step (catalogue name) | Disposition |
 |---|---|---|
-| 1 | Trivial-qere pre-step (the catalogue's M12) — replaces the `קו"כ-אם` token's text by its qere, inferring the pointed qere for the he→vav and vav→yod-vav patterns | **IGNORE** as a massaging (it lines up two token representations of the same apparatus). It raised the pointed-ketiv question, settled as rule 1 above. |
+| 1 | Trivial-qere pre-step (the catalogue's M12) — replaces the `קו"כ-אם` token's text by its qere, inferring the pointed qere for the he→vav and vav→yod-vav patterns | **IGNORE-STEP** as a massaging (it lines up two token representations of the same apparatus). It raised the pointed-ketiv question, settled as rule 1 above. |
 | 2 | M11 varika-shva → hataf — MPU marks a manuscript hataf on a non-guttural with a varika (U+FB1E) on the shva's consonant; the comparison infers the hataf vowel by rule (hataf qamats before guttural+qamats, hiriq before guttural+hiriq, else hataf patah) | **APPLY-STEP, wherever there is a varika**, except where the note says Aleppo does *not* have the hataf — **there are none such**: of the 87 varika notes whose hataf sigla lack `א`, none mentions Aleppo at all (most are in lost sections: Genesis 26, Numbers 16, Daniel 11, Nehemiah 9; about a dozen are in books where Aleppo is extant — Ps 3, Eccl 3, Jer 2, Mic, Zech, Song, Lam, Ezra — and the rule applies there too; say so in the documentation). **Source of the hataf word: the note, not the inference** — `py/main_explicit_xataf.py` → `out/explicit-xataf.json` takes the explicit-hataf word verbatim from the note with its sigla (666 mappings, 579 citing `א`; the inference agrees with all 666 and serves as a cross-check). Hataf hiriq: Aleppo has at least one famous case; representation to decide (probably shva + plain hiriq); it must be noted locally with a נוסח (probably already is) and in the HTML documentation. The 6 `ac-differs` notes in `out/explicit-xataf-extras.json` (hataf on a word *without* varika) belong to step 36. |
 | 3 | M4 qamats qatan → qamats | **APPLY-STEP**: collapse every U+05C7 to U+05B8. `מ:קמץ` (375 templates): after the collapse its `ד` and `ס` parameters are identical in 373; the other two (Ps 35:10, Prov 19:7) differ only by a gray maqaf in `ד` against a space in `ס`, which step 30 makes a non-difference. Ben's rule: flag any remaining `ד`≠`ס` for manual handling unless the Aleppo-ish choice is obvious. Whether the vacuous template is left or collapsed: open, for the plan. |
 | 4 | M7 atnah hafukh → yerah ben yomo (U+05A2 → U+05AA) | **REJECT-STEP**: keep both codepoints as MAM has them. Ben: "MAM's AH vs YBY distinction is preserving something really present in the Aleppo manuscript." See `py/author_misc/urwotm_4_atnax_hafukh.py` (Ps 5:10 in א, ל, ש1). Document as a place where MAM is already nearer Aleppo than the comparison edition. |
