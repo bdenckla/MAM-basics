@@ -9,6 +9,7 @@ import json
 import subprocess
 
 from mb_cmn import paths
+from mb_cmn import ws_tmpl2
 from mb_diff_mpu.mpplus_file_matching import (
     book39_ids_for_stem,
     get_he_to_int,
@@ -43,11 +44,44 @@ def _git_show(rev, path):
     return result.stdout
 
 
+def _canonicalize_template_names(node):
+    """Rewrite every ``tmpl_name`` in place to its canonical gershayim spelling.
+
+    MAM-parsed-plus stores the canonical spelling directly, and can be compared raw
+    -- but only since MAM-parsed 2993dbd of 2026-05-09, "Use g2 not q2 in tmpl
+    names".  This module is the one place that reads plus data from ARBITRARY git
+    revisions, and every range the change log pins predates that rename, so what it
+    loads still carries the ASCII double quote that raw wikitext uses as a shorthand
+    for the gershayim (mb_cmn/template_names.py's QUOTE MARKS note).
+
+    Left unnormalized, a historical name misses every constant it is compared
+    against downstream.  ``mpplus_flatten.is_std_kq_template`` was the expensive
+    one: a ketiv/qere template whose name did not match fell through to the generic
+    tail that emits param 1, so the diff compared the KETIV, and a change confined to
+    the qere was invisible.  That silently dropped four real qere changes from the
+    published change log (1 Samuel 12:10, 2 Kings 22:5, Ezekiel 28:3 and
+    Lamentations 4:3).  The same mismatch hit the retired special-kq names.
+
+    Normalizing here rather than at each of the two dozen comparison sites is
+    deliberate: a name spelled as a bare literal at each site is what let half of
+    this very rename look finished once already (0d23f0e, on the mgketer bug).
+    """
+    if isinstance(node, dict):
+        if isinstance(node.get("tmpl_name"), str):
+            node["tmpl_name"] = ws_tmpl2.template_name(node)
+        for value in node.values():
+            _canonicalize_template_names(value)
+    elif isinstance(node, list):
+        for item in node:
+            _canonicalize_template_names(item)
+    return node
+
+
 def _git_show_json(rev, path):
     text = _git_show(rev, path)
     if text is None:
         return None
-    return json.loads(text)
+    return _canonicalize_template_names(json.loads(text))
 
 
 def _list_plus_files(rev):

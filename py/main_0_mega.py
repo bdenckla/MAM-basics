@@ -159,10 +159,19 @@ _STEPS = [
     # On later "main" functions, such malformed Unicode will cause
     # asserts that provide little information.
     StepRecord("mam-with-doc", main_mam_with_doc.almost_main, None),
+    # run_all, not almost_main, since 2026-08-25.  almost_main is only
+    # run_unpinned_latest, so for four months the mega refreshed unpinned-latest on
+    # every run while the five NAMED release reports and index.html were rewritten by
+    # nobody -- they had gone untouched since 2026-04-21 and were stale by two changes
+    # that had landed here meanwhile (the provenance key of 4f3cc11, the
+    # nusach_notes -> docnote_notes rename of d205dbb).  The tracked generated artifact
+    # is the test in this repo (CLAUDE.md), and that check was simply not running on
+    # these eleven files: the giveaway was a committed index.html advertising "11 body
+    # text changes" for an unpinned-latest.json that said 0.  ~40s.
     StepRecord(
         "diff-mpp",
-        diff_mpp.almost_main,
-        "writes unnamed unreleased diff report if there are changes",
+        diff_mpp.run_all,
+        "every named release from releases.json, plus unpinned-latest and index.html",
     ),
     StepRecord(
         "tmpl-survey",

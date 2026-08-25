@@ -194,11 +194,6 @@ def run_unpinned_latest():
     return {"name": "unpinned-latest", "count": count, "old_date": old_date}
 
 
-def almost_main():
-    """Generate an unreleased-diffs report (if there are any)."""
-    run_unpinned_latest()
-
-
 def add_arguments(parser: argparse.ArgumentParser) -> None:
     parser.add_argument(
         "--all",
