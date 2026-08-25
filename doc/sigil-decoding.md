@@ -227,7 +227,8 @@ translation-policy glossary.)
 
 ### Which sigla count as a reading of the Aleppo Codex
 
-Recorded 2026-08-23 for the near-Aleppo edition (`out/near-aleppo`, planned in MAM-basics), which
+Recorded 2026-08-23 for the near-Aleppo edition (`out/near-aleppo`, whose plan moved to
+MAM-private on 2026-08-25 — see `doc/PLAN-near-aleppo.md` here for the pointer), which
 asks of each note "does this tell us what the Aleppo Codex has here?". The sigla above sort into
 three kinds:
 
