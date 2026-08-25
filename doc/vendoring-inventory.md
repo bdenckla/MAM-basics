@@ -17,10 +17,8 @@ in the destination; `stale` is measured and behind; `unmeasured` is a copy nobod
 
 | file(s) | src_pkg | dest_repo | dest_path | mechanism | last_synced | provenance_doc | category | notes |
 |---|---|---|---|---|---|---|---|---|
-| bib_locales.py, cantsys.py, file_io.py, he_wikisource_url.py, hebrew_accents.py, hebrew_letters.py, hebrew_points.py, hebrew_punctuation.py, hebrew_verse_numerals.py, mam_bknas.py, mam_bknas_and_std_bknas.py, minirow.py, mpplus_schema_guard.py, my_diffs.py, my_utils.py, provenance.py, read_books_from_mam_parsed_plus.py, shrink.py, str_defs.py, template_names.py, uni_denorm.py, uni_heb.py, uni_norm_fragile.py, url_percent.py, ws_tmpl1.py, ws_tmpl2.py, ws_tmpl_named_params.py | mb_cmn | MAM-private | al-hatorah/py/mb_cmn | copy_script | mixed | no | active | identical |
-| vendoring_sync.py | mb_cmn | MAM-private | al-hatorah/py/mb_cmn/vendoring_sync.py | copy_script | 2026-08-10 | no | active | DIFFERS |
-| bib_locales.py, cantsys.py, he_wikisource_url.py, hebrew_accents.py, hebrew_letters.py, hebrew_points.py, hebrew_punctuation.py, mam_bknas.py, mam_bknas_and_std_bknas.py, polite_download.py, str_defs.py, template_names.py, url_percent.py | mb_cmn | MAM-private | mgketer/py/mb_cmn | copy_script | 2026-08-08 | no | active | identical |
-| uxlc_change_url.py, vendoring_sync.py | mb_cmn | MAM-private | mgketer/py/mb_cmn | copy_script | 2026-08-08 | no | active | DIFFERS |
+| bib_locales.py, cantsys.py, file_io.py, he_wikisource_url.py, hebrew_accents.py, hebrew_letters.py, hebrew_points.py, hebrew_punctuation.py, hebrew_verse_numerals.py, mam_bknas.py, mam_bknas_and_std_bknas.py, minirow.py, mpplus_schema_guard.py, my_diffs.py, my_utils.py, provenance.py, read_books_from_mam_parsed_plus.py, shrink.py, str_defs.py, template_names.py, uni_denorm.py, uni_heb.py, uni_norm_fragile.py, url_percent.py, vendoring_sync.py, ws_tmpl1.py, ws_tmpl2.py, ws_tmpl_named_params.py | mb_cmn | MAM-private | al-hatorah/py/mb_cmn | copy_script | mixed | no | active | identical |
+| bib_locales.py, cantsys.py, he_wikisource_url.py, hebrew_accents.py, hebrew_letters.py, hebrew_points.py, hebrew_punctuation.py, mam_bknas.py, mam_bknas_and_std_bknas.py, polite_download.py, str_defs.py, template_names.py, url_percent.py, uxlc_change_url.py, vendoring_sync.py | mb_cmn | MAM-private | mgketer/py/mb_cmn | copy_script | mixed | no | active | identical |
 | grapheme_diff.py | mb_diff_mpu | MAM-private | mgketer/py/mb_diff_mpu/grapheme_diff.py | copy_script | 2026-08-08 | no | active | identical |
 | my_diffs.py, uni_denorm.py | mb_cmn | MAM-private | mgketer/py/python_modules | unknown | 2026-08-08 | no | stale | DIFFERS; placed in python_modules/ not mb_cmn/ |
 | bib_locales.py, cantsys.py, file_io.py, he_wikisource_url.py, hebrew_accents.py, hebrew_letters.py, hebrew_points.py, hebrew_punctuation.py, my_utils.py, provenance.py, shrink.py, str_defs.py, template_names.py, uni_heb.py, url_percent.py, ws_tmpl1.py, ws_tmpl2.py, ws_tmpl_named_params.py | mb_cmn | MAM-simple | py-examples/mb_cmn | copy_script | mixed | no | generated | identical |
@@ -30,7 +28,7 @@ in the destination; `stale` is measured and behind; `unmeasured` is a copy nobod
 | cantsys.py | mb_cmn | diffable-pointed-hebrew | mb_cmn/cantsys.py | unknown | 2026-04-27 | no | unmeasured | eol-only |
 | file_io.py, hebrew_accents.py, hebrew_letters.py, hebrew_points.py, hebrew_punctuation.py, str_defs.py, uni_heb.py | mb_cmn | diffable-pointed-hebrew | mb_cmn | unknown | 2026-04-27 | no | unmeasured | DIFFERS |
 
-*12 rows, 97 files. 0 files ignored.*
+*10 rows, 97 files. 0 files ignored.*
 
 ## Intentionally non-vendored
 
