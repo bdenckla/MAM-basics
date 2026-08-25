@@ -745,8 +745,7 @@ instrument.** Measured 2026-08-22 across every clone under `C:\Users\BenDe\GitRe
 `C:\Users\BenDe\GitRepos\MAM-private` — all of them Ben's:
 
 - `bdenckla.github.io/book-of-job/jobn-details/*.html` — seven sites in
-  `MAM-private/mgketer/py/python_modules/diff_crops.py` and seven in that repo's
-  `out-reports/by-book/D3-Job/suppressed.html`
+  a MAM-private module and seven in a MAM-private report page (private annex §5)
 - `bdenckla.github.io/book-of-job/jobn/job2_main_article.html` — `document-index/README.md`
 - `bdenckla.github.io/UXLC-utils/wlc-a-notes/` — **one generator constant, `_WLCAU` in
   `py/author_boj/job5_orphan_qere_points.py`, emitted twice into book-of-job's

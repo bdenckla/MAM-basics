@@ -1,6 +1,7 @@
 """Render נוסח param 2 (manuscript annotations) as HTML.
 
-Ported from mgketer's mpplus_docnote module, adapted for the MAM-basics
+Ported from a predecessor module in MAM-private (private annex section 4),
+adapted for the MAM-basics
 diff pipeline.  Handles template markup inside note bodies and wraps
 pointed Hebrew (vocalized/cantillated text) in spans for CSS sizing.
 

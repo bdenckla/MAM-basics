@@ -1808,8 +1808,8 @@ exceptions.
 - `MAM-simple-provenance.md:8` in both codex-index repos names the git tag
   `2026-02-14-book-of-job-py-ac-loc`. A tag name, and `py_ac_loc/` is data despite its prefix.
 - `document-index/README.md:18`, the seven `quirkrec-link` anchors in
-  `mgketer/out-reports/by-book/D3-Job/suppressed.html` and the seven `quirkrec_url` values in
-  `mgketer/py/python_modules/diff_crops.py` are published `bdenckla.github.io/book-of-job/…`
+  a MAM-private report page and the seven `quirkrec_url` values in a MAM-private module
+  (private annex §5) are published `bdenckla.github.io/book-of-job/…`
   URLs. The site is intact, so all fifteen resolve.
 - `UXLC-utils/CLAUDE.md:39–41` names `main_map_changes_to_book_of_job.py` and says it reads the
   sibling's `out/enriched-quirkrecs.json` and `gh-pages/jobn-details/`. Both data paths hold, and

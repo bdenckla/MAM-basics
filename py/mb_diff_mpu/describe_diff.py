@@ -1,7 +1,7 @@
 """Describe Hebrew text differences in English.
 
-Adapted from mgketer's describe_accent_diff.py and describe_text_diff.py
-for use in MAM-parsed-plus diff reports.  Produces human-readable descriptions like:
+Adapted from a predecessor implementation in MAM-private (private annex
+section 4) for use in MAM-parsed-plus diff reports.  Produces human-readable descriptions like:
 
     "revia on tav in old, on lamed in new"
     "meteg on mem removed"

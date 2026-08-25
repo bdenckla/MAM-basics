@@ -51,7 +51,7 @@ IN_WORD_RECURSE_TEMPLATE_NAMES = {
 # ---------------------------------------------------------------------------
 # Per-template extraction rules below mirror those in:
 #   MAM-parsed/doc-under-readme/reading-mam-parsed-plus.md (extract_text example)
-#   mgketer/documentation/mpu-parsing.md (Template dispatch section)
+#   MAM-private's mpu-parsing.md (Template dispatch section)
 #   mam_plus_verse_data._collect_text_fragments
 # When changing a rule here, check all four locations.
 PARAM_BOUNDARY_TEMPLATE_NAMES = {

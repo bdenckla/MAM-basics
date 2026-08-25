@@ -79,8 +79,8 @@ infrastructure has changed enough to make them misleading examples:
 
 ### Joshua meteg removal (48 edits)
 - **Purpose:** Removed 48 meteg (U+05BD) marks from specific words in
-  Joshua, aligning Wikisource with mgketer where MAM-parsed-plus previously
-  added a meteg that mgketer does not have.
+  Joshua, aligning Wikisource with another edition where MAM-parsed-plus
+  previously added a meteg that edition does not have (private annex §3).
 - **Edit level:** Raw page text string replacement.
 - **Preserved as:** `ws_bot_edit_old_joshua_meteg.py`
 
@@ -88,7 +88,7 @@ infrastructure has changed enough to make them misleading examples:
 - **Purpose:** Generalized the bot to read edit specifications from a JSON
   file rather than hard-coding them. The JSON file provides the edit summary,
   edit kind (e.g. "meteg-removal"), and per-book/chapter edit entries.
-  First use: remove 7 meteg marks from Deuteronomy (mgketer#80).
+  First use: remove 7 meteg marks from Deuteronomy (private annex §3).
 - **Edit level:** Raw page text string replacement (same as Joshua era).
 - **JSON files:** `in/mam-ws-bot-edits/`
 - **Preserved as:** `ws_bot_edit_old_deuter_meteg.py`

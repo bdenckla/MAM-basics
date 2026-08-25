@@ -64,7 +64,7 @@ def _canonicalize_template_names(node):
 
     Normalizing here rather than at each of the two dozen comparison sites is
     deliberate: a name spelled as a bare literal at each site is what let half of
-    this very rename look finished once already (0d23f0e, on the mgketer bug).
+    this very rename look finished once already (0d23f0e).
     """
     if isinstance(node, dict):
         if isinstance(node.get("tmpl_name"), str):

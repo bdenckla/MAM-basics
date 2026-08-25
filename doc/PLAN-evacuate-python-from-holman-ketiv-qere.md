@@ -789,8 +789,8 @@ and Phase 4 deleted all of holman-ketiv-qere's Python, so nothing was owed.
 **Finding 2 — four stale citations in a third repo, left for Ben.** `MAM-private` carries live
 cross-references to holman-ketiv-qere's Python:
 
-- `mgketer/documentation/mpu-parsing.md` lines 9–10
-- `mgketer/out-reports/mpu-parsing.html` lines 21–22, the generated rendering of those two lines
+- a MAM-private `mpu-parsing.md`, lines 9–10 (private annex §5)
+- its generated rendering, lines 21–22
 
 They cite `holman-ketiv-qere/py/python_modules/mam_plus_verse_data.py` (`_collect_text_fragments`)
 and `holman-ketiv-qere/py/python_modules/qere_projection.py` (`project_qere_atoms`) under a

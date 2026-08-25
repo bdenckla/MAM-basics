@@ -1,5 +1,5 @@
 {
-  "summary": "Remove 7 spurious meteg marks from late Deuteronomy, per mgketer#80",
+  "summary": "Remove 7 spurious meteg marks from late Deuteronomy",
   "edit-kind": "meteg-removal",
   "edits": {
     "Deuter": [

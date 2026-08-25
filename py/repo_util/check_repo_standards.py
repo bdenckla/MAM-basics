@@ -393,10 +393,10 @@ _BINARY_EXTENSIONS = {
 # carries one scope per tree with each tree's exclusions and runs in about 2.5
 # seconds. Measured the same day, the depth rule is also a smaller lever than it
 # looks: those 4,217 files are 60% of the scanned file count but only 39% of the
-# scanned bytes, and the single largest thing the scan reads anywhere is
-# mgketer/out-scrape (929 files, 232 MB), which no depth rule would reach
-# because "out-scrape" is not "out" -- it was scanned in mgketer's own clone
-# too. The cure for the wall clock was the per-character scanning below, not
+# scanned bytes, and the single largest thing the scan reads anywhere is one
+# MAM-private tree's largest output directory (929 files, 232 MB), which no
+# depth rule would reach because its name is not exactly "out" -- it was
+# scanned in that tree's own clone too.  See private annex section 5. The cure for the wall clock was the per-character scanning below, not
 # this tuple.
 _GENERATED_DIRS = ("out", "gh-pages", "plain", "plus")
 

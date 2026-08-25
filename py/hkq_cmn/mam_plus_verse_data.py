@@ -73,7 +73,7 @@ def _iter_plus_verse_payloads(
 # ---------------------------------------------------------------------------
 # Per-template extraction rules below mirror those in:
 #   MAM-parsed/doc-under-readme/reading-mam-parsed-plus.md (extract_text example)
-#   mgketer/documentation/mpu-parsing.md (Template dispatch section)
+#   MAM-private's mpu-parsing.md (Template dispatch section)
 #   qere_projection.py (project_qere_atoms)
 # When changing a rule here, check all four locations.
 def _collect_text_fragments(node: object, out_parts: list[str]) -> None:

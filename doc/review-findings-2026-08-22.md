@@ -350,7 +350,7 @@ in the finding. Finding 4 is Ben's: both halves are outward-facing comments.
   question about it established that the checker never found the Ne 8:7 merkha odd — the
   June ERROR was the `has_legarmeh` book-name bug, fixed by wlc-utils `306e15f` on 2026-06-12 —
   but that the checker reads the verse's **second** bar as a legarmeh where MAM, the LC's
-  margin and MGKeter's paseq list read a paseq, because `has_legarmeh` decides per verse.
+  margin and another edition's paseq list read a paseq, because `has_legarmeh` decides per verse.
   Filed as [#233](https://github.com/bdenckla/MAM-basics/issues/233). A reply to skadish1 on
   #185 is still Ben's to post.
 - The remaining actionables — findings 1, 3, the residue of 5, and the record corrections of

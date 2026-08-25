@@ -1,8 +1,9 @@
 """Bot edit: remove specific meteg marks from Joshua.
 
 Removes 48 meteg (U+05BD) marks from specific words in Joshua on
-Wikisource, aligning Wikisource with mgketer where MAM-parsed-plus
-previously added a meteg that mgketer does not have.
+Wikisource, aligning Wikisource with another edition where MAM-parsed-plus
+previously added a meteg that edition does not have (private annex
+section 3).
 
 Each edit is a (chapter_key, old_string) pair.  The old_string appears
 exactly once in its chapter; the replacement is old_string with the

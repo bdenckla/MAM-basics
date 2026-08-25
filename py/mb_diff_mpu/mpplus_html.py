@@ -1,5 +1,5 @@
 """
-Generate an HTML diff report with mgketer-style category filtering.
+Generate an HTML diff report with category filtering.
 
 Exports:
     write_report  — write the HTML report file

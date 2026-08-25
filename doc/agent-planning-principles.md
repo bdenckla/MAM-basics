@@ -23,7 +23,7 @@ An audit of git history, code comments, and issues across all of Ben's repos (20
 
 - The PLY parity comparator against the frozen Goerwitz C checker (Phases A–F, `51e2748`..`cda21f9`). It did not merely confirm the port; the parity number *was* the completion criterion, climbing 0/18666 → 14/20 Obadiah → 37 books → 18,666/18,666 byte-identical.
 - The Decalogue transcription checks against the vendored strands: `ee21ebb` found a real qadma-for-pashta divergence in the Simanim Tanakh, `80ca0df` found the first Koren page to diverge from its strand.
-- In mgketer, `efa95ccf`: a self-test reconstructing each verse's visible text from the emitted JSON and diffing it against the source HTML caught that paseq was being silently dropped in 8 verses across 5 chapters.
+- In a MAM-private project, `efa95ccf`: a self-test reconstructing each verse's visible text from that project's emitted JSON and comparing it against the project's own input caught that paseq was being silently dropped in 8 verses across 5 chapters (private annex §5).
 
 **2. A mechanical lint over the tree.** A decidable property of the *source text*, not of behavior. `py/tests/test_transliterations.py` (issue #26) is the working example; `9c95cf9` fixed a `tarkha`→`tarxa` and a kh-for-ḥet gap that it exposed.
 
