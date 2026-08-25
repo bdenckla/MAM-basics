@@ -34,6 +34,21 @@ sessions" and can last indefinitely. **To resume**: re-check the four heads agai
 Phase 0's record names, re-run the preconditions, re-measure per the Scale section's standing
 instruction, and then run Phase 1 — which is verification only, per its Status row below.
 
+**Amended 2026-08-24 while paused, in one commit to this file alone, and no phase's state moved.**
+A survey asked whether MAM-basics holds stray `CLAUDE.md` or `.claude` files from the evacuations
+already run, and whether this plan could create any. It holds none — one `CLAUDE.md` at the root
+and no `.claude` directory at all — and this plan creates none either, `CLAUDE.md` being a
+housekeeping file each source repo keeps and holman-ketiv-qere's `.claude/commands/halve.md` being
+dropped by Decision C's superseding note (that file no longer exists in holman-ketiv-qere at all:
+`94cab4a` there deleted it and the directory it emptied). **What the survey did find is that all
+three source `CLAUDE.md` files carry live rules governing trees this plan moves into MAM-basics,
+and that nothing here said where those rules land** — a hole in Step 5, which shrinks each source
+`CLAUDE.md` in a repo whose clone Step 6 then removes. Four edits close it: Step 5 of the per-repo
+lane gained a triage rule, Phases 3, 4 and 5 each gained a list of their own repo's sections with a
+disposition apiece, and Phase 6 gained item 12, which confirms the outcome. Items 1 through 11 of
+Phase 6 are unrenumbered, so the five references elsewhere in this file to its items 3, 4, 5, 6 and
+7 still resolve.
+
 | Phase | State |
 |---|---|
 | 0 — Preflight: baselines, collision census, and the five decisions | **DONE 2026-08-23** — seven commits to this file, `0decb3f` through the one recording Decision E. Every Scale figure reproduced but the "outside `gh-pages/`" column (48 / 596 / 734, not 50 / 597 / 737); the census reproduced with one refinement (`sanity_problems.json` moves, 40 duplicates drop, not 41); the layer-4 sweep returned the list the plan has; baseline 941 passed / 5 skipped / 59 subtests, ruff and black clean. All five decisions answered, one at a time: A `book-of-job` / `holman` / `uxlc`; B no `LICENSE`, and the docx does not move — the cord to it is cut; C same relative path, `data/` at `data/`; D `py_ac_loc/` dropped; E two files deleted, the meteg-marks pair lands at `out/`. Two questions parked for Phases 3 and 5, written where those phases will find them |
@@ -937,6 +952,41 @@ generated, do not hand-edit it, regenerate with MAM-basics' stub generator**, an
 Python and no data here**. Keep that repo's "a bare `#NN` here means a `<repo>` issue" note where
 it has one.
 
+**"Shrinks to" is a deletion, so triage what it deletes — this is Step 5's one piece of judgment,
+and it is owed in every lane.** Added 2026-08-24, after a survey found that all three source
+`CLAUDE.md` files carry live rules governing trees this plan moves into MAM-basics, and that
+nothing in this plan said where those rules land. Each phase names its own repo's sections and
+their dispositions below; the rule for deciding is here.
+
+**The test is one question per section: after this lane, is the thing that section governs in
+MAM-basics?** A tree, a file, a module, a command. If it is not, drop the section — it went with
+the Python already, or it was only ever about the source repo. If it is, the section needs a home
+in MAM-basics **before** Step 5's shrink commit, because Step 6 removes the clone and takes the
+only copy of that wording with it. **The default is drop**, and a section clears the bar only when
+the thing it governs moved here *and* MAM-basics does not already state the rule.
+
+**Rewrite, never copy.** Every one of these sections is written from the source repo's point of
+view — "this repo", "`../MAM-basics/py/`", counts spelled to a tree Decision A is about to prefix —
+and several state a fact this lane falsifies. A verbatim paste lands prose that is wrong on its
+first reading.
+
+**Prefer the narrowest home, in this order**: the docstring of the module or generator the rule
+governs; then a `doc/` file, which is the `doc/boj-*.md` precedent — seven procedures that came
+here on 2026-08-21 with a pointer section in `CLAUDE.md`; and only then a section in MAM-basics'
+own `CLAUDE.md`. That order is not tidiness. MAM-basics' `CLAUDE.md` was **503 lines and 37 KB on
+2026-08-24**, Ben's standing note is to keep it minimal and freshly verified rather than restored
+wholesale, and `PLAN-evacuate-python-from-UXLC-utils.md` records that same warning at the point
+where it declined to move that repo's MAM-reading conventions here.
+
+**Record every disposition in the phase's execution record, the drops included, with the reason.**
+A section dropped on purpose and a section nobody looked at leave the same trace otherwise, and
+after Step 6 the file it was in is not on the disk to check. **Land the carried text in MAM-basics
+first** — this step already allows one commit there — and shrink the source `CLAUDE.md` after, so
+no window exists in which a live rule is stated nowhere.
+
+**Where a disposition needs a decision rather than a judgment, put it to Ben at this step and not
+before**, one question at a time, the way Decision E's parked question is put at Phase 5's Step 3.
+
 **Step 6 — Remove the clone from `C:\Users\BenDe\GitRepos`.** *No commit anywhere.* **Ben's
 decision, 2026-08-22**, given while this plan was being written, and **the wlc-utils precedent is
 the same**: that clone came off the disk the same day, by the concurrent session, per carried-in
@@ -1594,6 +1644,38 @@ the mailbox is untracked, so the GitHub copy does not hold it and removing the c
 only copy. Account for it explicitly with `git -C ../holman-ketiv-qere status --porcelain
 --ignored` before removing anything.
 
+**This phase's `CLAUDE.md` triage — four sections, two of them carried.** Per Step 5's triage rule.
+holman-ketiv-qere's `CLAUDE.md` was 124 lines on 2026-08-24; re-read it rather than trusting this
+list.
+
+1. **§"This repo is public, so no address may reach a tracked file" — CARRY, and it is the
+   highest-stakes disposition in any of the three lanes.** Step 1 lands `emails/` at MAM-basics'
+   `emails/`, and **MAM-basics is public too**, so the rule governs after the move exactly as it
+   does before it: the `.eml` stay untracked, `redact_addresses` runs over each body because one of
+   the 13 messages is a forward quoting the original To and From lines in its body text,
+   `_sender_display_name` raises rather than pass a From header with no display name, and a new
+   field in the derivative is checked against the mail headers before it is added. Both functions
+   are already `py/hkq_cmn/uxlc_email_extract.py` here. **This one belongs in MAM-basics'
+   `CLAUDE.md`** despite the narrowest-home preference: it governs what may be added to a tracked
+   file, not how one module works, and a docstring is not read by someone adding a field somewhere
+   else. It also names this phase's untracked move — the 13 messages land in MAM-basics'
+   `.novc/eml/` — so write it after that move rather than before.
+2. **§"Authored CSS uses `light-dark()`, not a `prefers-color-scheme` block" — CARRY.** Step 1
+   lands `assets/`, the four authored CSS and JavaScript files, at MAM-basics' `assets/`. The
+   operationally sharp half is the closing clause: `write_report_assets` in
+   `py/py_render/rt_assets.py` copies `assets/` into `gh-pages/`, so **an edit made to a
+   `gh-pages/` copy is lost at the next run**. That module's docstring is the narrow home for the
+   copying half; the `light-dark()` rule itself is about authoring CSS and may want a line beside
+   it. `hkq_paths.assets_dir()` is the accessor Step 3 repoints. Check first whether MAM-basics
+   already states either half — as of 2026-08-24 it states neither.
+3. **§"Locating a word in the manuscripts, from MAM-basics" — CHECK FOR REDUNDANCY, then most
+   likely drop.** It is already written from MAM-basics' side, both scripts having been
+   MAM-basics' since 2026-08-22. `doc/boj-aleppo-word-crops.md`, `doc/boj-cam1753-word-crops.md`
+   and `doc/boj-leningrad-word-crops.md` here cover locating a word in the same three manuscripts.
+   Compare them before carrying anything, and record which file already says it.
+4. **§"This repo contains no Python. Its generators live in `../MAM-basics/py/`" — nothing to
+   carry.** Step 5's own prescription for the shrunken file replaces it.
+
 ### The generated landing page rides with this phase's Land step
 
 **Ben's decision, 2026-08-22**, recorded in the programme under "Decision — the site's landing
@@ -1689,6 +1771,53 @@ codex-index-aleppo's data (Phase 0's blob comparison under Decision D). So Step 
 and `doc/` only, 9 files; Step 5 deletes `py_ac_loc/` with the rest; the mark-order check's 509
 files become 460; and `doc/reading-mam-simple.md` is reworded where it names the directory.
 Landing it "for now" under a made-up name was the outcome to avoid, and it is avoided.
+
+**This phase's `CLAUDE.md` triage — six sections, and the largest carry of the three lanes.** Per
+Step 5's triage rule. book-of-job's `CLAUDE.md` was 137 lines on 2026-08-24; re-read it rather than
+trusting this list.
+
+1. **§"518 of the 701 tracked artifacts are written by no program" — CARRY, and this is the
+   disposition that costs the most to get wrong.** After Step 1 those artifacts are MAM-basics':
+   515 PNG, 2 woff2 and `out/cam1753-crops.json`, of which only the 160 under
+   `gh-pages/jobn/img/cam1753/` have even a manual producer.
+   `doc/PLAN-evacuate-python-from-book-of-job.md` both derived that register and gave the reason to
+   keep it — it "is the only thing standing between a future session and deleting hand-made pages
+   in the belief they will come back" — and that same plan's Phase 4 wrote it into the very
+   `CLAUDE.md` this lane shrinks. **Re-derive the counts rather than copying them**: `gh-pages/`
+   gains the `book-of-job/` prefix per Decision A and `out/` merges into MAM-basics' own `out/`, so
+   every path in the table is respelled. A `doc/` file is the right home for a table this size,
+   with at most a pointer in `CLAUDE.md`.
+2. **§"Regenerate, then read the diff — that is the test" — CARRY ONE CLAUSE, drop the rest.** The
+   general statement is already MAM-basics' `CLAUDE.md` §"Writing tests — differential and
+   lint-shaped only". What MAM-basics does **not** state is the instrument: `git status
+   --porcelain` is the wrong one over this tree, having reported 183 files modified after a no-op
+   regeneration whose blobs were unchanged — git's cached stat sizes being the pre-run CRLF ones,
+   and `git update-index --refresh` not clearing them — three separate times during the evacuation.
+   Use `git diff --stat HEAD -- <paths>`, and compare bytes against the HEAD blob with
+   `git cat-file` when it matters to be sure. That clause governs a tree that is MAM-basics' after
+   Step 1.
+3. **§"Which entry point writes what" — CARRY, REWRITTEN.** All five entry points are MAM-basics'
+   already. Two things in the section change: the "what it writes here" column is respelled to
+   MAM-basics' own paths, and the closing paragraph — that regenerating the site needs UXLC-utils
+   checked out beside MAM-basics — **is falsified by Phase 5**, which lands that repo's UXLC
+   snapshot and `lci_recs.json` here. The sequencing fact stays: the last three entry points read
+   `out/enriched-quirkrecs.json` at module import time, and that is the only sequencing there is.
+   `doc/PLAN-evacuate-python-from-book-of-job.md` holds the same table; check whether that record
+   suffices before writing a second copy of it.
+4. **§"The lints run from MAM-basics too" — REWRITE OR DROP.** `py/check_all.py` is MAM-basics'
+   already, so the section's title is spent; what it adds is which trees the seven checks scan, and
+   its "four of them read **both** repos" stops being true once there is one tree. It names
+   `py/boj_paths.py` as the statement of record for which tree holds what, and **Step 3 collapses
+   that module** — so confirm what is left of it before pointing at it.
+5. **§"Quirkrecs: read the enriched JSON, edit the Python" — CARRY.** After this lane both halves
+   are MAM-basics': the 160 records at `py/author_boj_qr/qr_XXYY.py` and the enriched JSON at
+   `out/enriched-quirkrecs.json`. The live rule is to read the enriched form rather than importing
+   `RAW_QUIRKRECS` from `author_boj_util.job_quirkrecs`, because only the enriched form carries
+   `qr-word-id`, which is what distinguishes two quirkrecs in one verse; and to name the loop
+   variable `eqr` rather than `qr` so which form is in hand stays visible.
+   `doc/boj-quirkrec-comments.md` here is the nearest existing home.
+6. **§"Docs" — nothing to carry.** Phase 6's item 2 owns the MAM-basics half of it, and the source
+   half goes with the file.
 
 ---
 
@@ -1791,6 +1920,31 @@ exception stops being about a sibling repo's directory and becomes about two fil
 **do not prefix the citations inside `clc-design.md`**, since qualifying them would imply they were
 ambiguous, and that repo's plan settled the same question the same way.
 
+**This phase's `CLAUDE.md` triage — four sections, and the carry count is ZERO.** Per Step 5's
+triage rule. UXLC-utils' `CLAUDE.md` was 124 lines on 2026-08-24; re-read it rather than trusting
+this list.
+
+1. **§"Reading MAM data — the parsed form, never the raw source" — DROP, and record why, because
+   the obvious reading says carry.** The section opens "Stated here because `doc/clc-design.md`
+   assumes it", and Step 1 moves `doc/clc-design.md` into MAM-basics' `doc/`, which looks as though
+   it leaves the rule homeless. It does not: that section's own closing sentence says it is not
+   repeated in MAM-basics' `CLAUDE.md` **because it is already that repo's practice** —
+   `mb_cmn/read_books_from_mam_parsed_plus.py` is how thirteen modules here read MAM, and
+   `mb_diff_mpu` is native code here rather than a vendored copy. Verify the thirteen with
+   `grep -rln read_books_from_mam_parsed_plus py/` rather than trusting the figure, then drop the
+   section and say in the execution record that it was dropped for that reason. Without the record
+   the deletion reads as a loss.
+2. **§"`doc/clc-design.md` is the CLC design document and stays here" — nothing to carry, and its
+   claim expires at Step 1**, which moves both `doc/` files. Its reason — that `doc/clc-design.md`
+   is about the edition and not about the code, which is why it did not move — is the sentence
+   Phase 6's item 1 has to reconcile with `clc-design.md` living in MAM-basics' `doc/`, and the
+   paragraph above is where that reconciliation is specified.
+3. **§"This repo's issues stay here; new ones are filed in MAM-basics" — nothing to carry.** Step 5
+   keeps that repo's bare-`#NN` note in the shrunken file by its own prescription, and Phase 6's
+   item 1 owns MAM-basics' side of it.
+4. **§"This repo contains no Python. Its generators live in `../MAM-basics/py/`" — nothing to
+   carry.** Step 5's prescription for the shrunken file replaces it.
+
 ---
 
 ## Phase 6 — Cross-repo bookkeeping, and close the second stage
@@ -1874,6 +2028,20 @@ ambiguous, and that repo's plan settled the same question the same way.
     `PLAN-evacuate-python-programme.md` recording that its second stage is complete, and that its
     carried decision 2 — "`gh-pages/` stays put indefinitely" — is now broken four times rather
     than once.
+12. **Confirm the three lanes' `CLAUDE.md` triage landed, and that nothing was carried that the
+    triage did not license.** *Numbered last because it reads three lanes' outcomes at once and so
+    cannot run until all three have run; it confirms work Step 5 already did rather than adding
+    any.* Per Step 5's triage rule and each phase's own list, the carries are holman-ketiv-qere's
+    public-address rule and its `light-dark()` rule, and book-of-job's no-program artifact
+    register, its `git status --porcelain` clause, its entry-point table and its
+    quirkrec-reading rule; **UXLC-utils carries nothing.** Check that each carry landed somewhere
+    reachable — a docstring, a `doc/` file, or `CLAUDE.md` — that all three execution records name
+    every section including the drops and why, and that **MAM-basics' `CLAUDE.md` has not grown
+    past what the triage licensed**: it was 503 lines on 2026-08-24, and `wc -l CLAUDE.md`
+    re-measures it rather than assuming. **The failure mode to look for is a section carried in
+    that no lane's record names**, since that is the wholesale restoration Ben's standing note
+    warns against, and it is the reason this item counts what is here rather than only what is
+    gone.
 
 ---
 
