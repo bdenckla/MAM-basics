@@ -16,6 +16,16 @@
   edition toward each other so they can be diffed. That work is private: **this file and
   everything generated from it must not name that edition or that project**. "MAM-private" may
   be named. Write "the comparison project" and "the comparison edition".
+- **What is private is narrower than that rule makes it look, so do not over-apply it**
+  (Ben, 2026-08-25, correcting a session that had): the thing to keep private is **that the
+  edition's site has been downloaded and an automated comparison is being run against it**.
+  It is **not** private that Ben has consulted that site live and extensively, nor that he
+  has compared by eye. And **MAM's own נוסח notes are public** — "there is no problem quoting
+  back to me what a note says" — including the many notes that cite that edition by name
+  among their other sources. So the rule above is about not identifying the edition **as the
+  thing this work is compared against**; it is not a reason to paraphrase MAM's apparatus,
+  and a note is not a hazard. Where a clause needed from a note happens to contain a name the
+  grep stops, quote the clause and elide that citation — a tidiness, not a rescue.
 - **No information from the comparison edition is used directly.** The massaging steps were
   *inspired* by the comparison, and that is fine. But where MAM does not contain the information
   needed to move toward Aleppo (Ben's example: Aleppo's pointing of the divine name), that is
@@ -207,22 +217,19 @@ feature the comparison edition has, and MAM lacks, something the *manuscript* ha
   is the larger version of the same problem. Yeivin's ITM, full
   OCR: `C:\Users\BenDe\GitRepos\MAM-private\masorah-books\books\itm\md-export-of-docx\N0239.md`
   and siblings, one file per section. `doc/sigil-decoding.md` for sigla.
-- **PRIVACY: quoting a נוסח note verbatim is the main hazard, and it is large** (measured
-  2026-08-25, at step 14, when Isaiah 9:6's note turned out to name the comparison edition).
-  MAM's own note bodies cite that edition **440 times across 414 verses** by its Hebrew
-  abbreviation, and a further **9 times in 9 verses** spelled out in full — far more than
-  ch. 2's 45. Re-establish with
-  `.venv\Scripts\python.exe .novc\privacy_notes_census.py`. Since step 36 is *about* the
-  notes, this will recur constantly: **read a note before quoting it, quote the clause you
-  need rather than the note, and elide the citation** — Isaiah 9:6's row is the worked
-  example, quoting the Leningrad clause while dropping the parenthesis that names the
-  edition. **Two traps in the grep itself.** (1) The Hebrew abbreviation is written with an
-  **ASCII double quote**, not U+05F4 GERSHAYIM; a census run against the gershayim form
-  reported 0 and was wrong by 440. (2) The grep's bare definite-article *Keter* alternative **over-fires**:
-  it occurs 45 times in 42 verses of MAM's notes, and most of those name the **Aleppo Codex**
-  — "the Keter is careful to write a ga'ya" (Gen 18:15), "according to the Keter's method"
-  (Gen 5:29, Gen 18:17) — which §1 expressly permits. So a hit on that alternative is not by
-  itself a violation; read the sentence. `כתר ארם צובה`, which several rows already quote,
-  does not match it, so nothing in the file has had to be softened yet.
+- **The privacy grep is a mechanical guard, not a verdict — read the sentence it stops.**
+  §1 says what is actually private, and it is narrow. Two things about the grep are worth
+  knowing, both found 2026-08-25. (1) Its Hebrew abbreviation alternative is written with an
+  **ASCII double quote**, not U+05F4 GERSHAYIM. The two look identical on the page, and a
+  census run against the gershayim form reported zero where the ASCII form reports hundreds —
+  so a check that finds nothing has to be checked itself. (2) The grep's bare
+  definite-article *Keter* alternative **over-fires**, and often: MAM's notes use that word
+  for the **Aleppo Codex** — "the Keter is careful to write a ga'ya" (Gen 18:15), "according
+  to the Keter's method" (Gen 5:29, Gen 18:17) — which §1 expressly permits. So a hit there
+  is not by itself a violation. `כתר ארם צובה`, which several rows quote, does not match it,
+  so nothing in the file has had to be softened. **Kept as it stands** (Ben was asked,
+  2026-08-25, and answered by narrowing the rule rather than the grep): a false positive
+  costs one glance, and narrowing the pattern risks missing a real hit. The census script is
+  `.venv\Scripts\python.exe .novc\privacy_notes_census.py` if the question ever recurs.
 - **Figures above and the commands that re-establish them** (against MAM-parsed `95f64d7`):
   varika count `(Get-Content C:\Users\BenDe\GitRepos\MAM-parsed\plus\*.json -Raw | Select-String -Pattern ([string][char]0xFB1E) -AllMatches | ForEach-Object { $_.Matches.Count } | Measure-Object -Sum).Sum` gave 685 (the same form with another codepoint gives each of the other codepoint counts here); `out/explicit-xataf.json` 666 mappings / 579 with `א`; `מ:קמץ` 375 templates; `מ:דחי` 2,316; `מ:צינור` 56; U+05A2 196 (Ps 173, Prov 8, Job 15), U+05AA 56; U+0598 and U+05AE per book as in step 6. **Step 7's figures come from one throwaway, `.novc/ole_census.py`** (`.venv\Scripts\python.exe .novc\ole_census.py`), which walks every verse's `EP` column and prints all of them: the ole U+05AB occurs only in Psalms (353), Proverbs (29) and Job (41), 423 in all and one apiece in 423 verses; same-letter ole-and-yored sites 13, matching ch. 5 part א; two-atom ole-veyored verses 55, matching ch. 5 part ב with an empty symmetric difference either way. Re-measure rather than trust; a mismatch is a finding. **Two traps that census records, both worth carrying into the real code**: a separator template must flatten to a **space**, never to the empty string — the line-break family `ר0`–`ר3`, the gray maqaf, the paseq and the legarmeh all separate atoms, and flattening one to the empty string fuses the atoms on either side of it, which lost Ps 31:19 (שִׂפְתֵ֫י + gray maqaf + שָׁ֥קֶר) and gave 54 against ch. 5's 55; and the base text is parameter `1` of a נוסח template, never the note body (rule 2 above). **The separator set, spelled right**, is `ר0`, `ר1`, `ר2`, `ר3`, `מ:מקף אפור`, `מ:פסק` and `מ:לגרמיה-2` — **the legarmeh template's name ends in `-2`**, and a set naming a bare `מ:לגרמיה` matches nothing at all, which is what the step-10 and step-11 censuses did (found 2026-08-25, at step 12). **It changed none of their figures**, and the reason is worth knowing rather than relying on: `מ:לגרמיה-2` takes **no parameters**, so it flattens to the empty string whether or not the set names it, and the spaces around it are already in the neighbouring literal strings — Gen 1:29 has `'…אֶת־כׇּל־עֵ֣שֶׂב'`, then the template, then `' זֹרֵ֣עַ זֶ֗רַע…'`. Step 10's census was re-run under both spellings and gives the same single atom either way. So the legarmeh is safe by accident, the gray maqaf is not, and the blanket rule stands. **The full template inventory** — 33 distinct names with counts, and the verse total — comes from `.venv\Scripts\python.exe .novc\tmpl_names_and_verses.py`; the counts this plan leans on are `נוסח` 3,583, `מ:דחי` 2,316, `מ:לגרמיה-2` 1,828, `מ:פסק` 520, `מ:קמץ` 375, `מ:מקף אפור` 116, `מ:אות-מיוחדת-במילה` 95, `מ:אות-ג` 63, `מ:צינור` 56, `מ:כפול` 34, and **23,202** verses. Unreconciled, and it does not bear on step 7: ch. 2's footnote says **421** verses are divided in their primary division by ole-veyored, where **423** verses have an ole. **Step 8's figures come from `.novc/rafe_census.py`**, which walks every template parameter and reports each rafe as base text, Decalogue dagesh-plus-rafe, or note body: **87**, **8** and **25** respectively, plus **180,542** eligible letters. Its walk is the one to copy for the real code — `ext.flatten_text` raises on `מ:כפול`, so a census that swallows that exception silently drops the whole Decalogue, which is how a first pass reported 0 Decalogue sites. The check scripts were throwaways under `.novc/` (`varika_notes_no_alef.py`, `qamats_tmpl_params.py`, `ole_census.py`, `rafe_census.py`, `dots_census.py`, `dt2928_pashta.py`) and are not tracked; each is a few dozen lines walking the raw JSON and is quicker to rewrite than to recover.
