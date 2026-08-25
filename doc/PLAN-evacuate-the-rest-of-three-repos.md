@@ -1239,8 +1239,8 @@ with `out/`. Written into item 2 above, into "The organizing idea", and into Pha
 
 **Item 3 — the layer-4 sweep returns the list the section already has, and nothing of a new
 kind.** Citations of `bdenckla.github.io/{book-of-job,holman-ketiv-qere,UXLC-utils}` across the
-19 clones (MAM-private counted once; its three subtrees are not clones): mgketer's seven in
-`py/python_modules/diff_crops.py` and seven in `out-reports/by-book/D3-Job/suppressed.html`,
+19 clones (MAM-private counted once; its three subtrees are not clones): seven in a
+MAM-private module and seven in a MAM-private report page (private annex §5),
 `document-index/README.md`'s one, `_WLCAU` at `py/author_boj/job5_orphan_qere_points.py:81` and
 its two emitted copies in book-of-job's `gh-pages/jobn/job5_orphan_qere_points.html`, the three
 `py/*_paths.py` docstrings, book-of-job's `README.md` (one line, two URLs) and UXLC-utils'

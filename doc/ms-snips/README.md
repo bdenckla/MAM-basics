@@ -52,8 +52,8 @@ cited outside the agreement clause in three notes (4:9, 4:15, 4:16) and ק-מ in
 counting agreement alone gives ש1 18 and ק-מ 29. The figures here read 16 and 24 until
 2026-08-04, and reproduced under no counting rule.
 
-Mikraot Gedolot Haketer has no meteg here either — read out of
-`MAM-private/mgketer/out/E3-Lamentations/`, codepoint-identical to MAM. Metsudah
+Mikraot Gedolot Haketer has no meteg here either — checked directly, and it agrees
+with MAM at this word (private annex §5). Metsudah
 (Lakewood, 2001) has one, which is the printed tradition doing what it does.
 
 ### MAM answers the qamats question without a meteg
