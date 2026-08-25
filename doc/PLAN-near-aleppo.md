@@ -26,10 +26,22 @@
   thing this work is compared against**; it is not a reason to paraphrase MAM's apparatus,
   and a note is not a hazard. Where a clause needed from a note happens to contain a name the
   grep stops, quote the clause and elide that citation — a tidiness, not a rescue.
-- **No information from the comparison edition is used directly.** The massaging steps were
-  *inspired* by the comparison, and that is fine. But where MAM does not contain the information
+- **No information from the comparison edition is taken automatically.** Ben's words,
+  2026-08-25: "automatically/systematically/programmatically". The massaging steps were
+  *inspired* by the comparison, and that is fine. Where MAM does not contain the information
   needed to move toward Aleppo (Ben's example: Aleppo's pointing of the divine name), that is
-  **documented as a limitation**, not borrowed. One stated exception, §3 step 1 below.
+  **documented as a limitation**, not borrowed.
+- **But flagging a difference for manual review is allowed, and is the normal workflow** —
+  which is what "automatically" above is doing the work of, and it is *not* an exception to
+  the rule. Ben, 2026-08-25: "We can certainly use automated comparison to flag differences
+  that, upon manual ('eyeball') review might be appropriate for manual inclusion the
+  near-aleppo edition of MAM, in the same way we use automated comparison to flag differences
+  that, upon manual ('eyeball') review might be appropriate for the normal/main edition of
+  MAM." So the shape is: the automated comparison produces a **list of places to look**; Ben
+  looks; Ben decides; and anything that reaches near-aleppo reaches it **by hand**. This is
+  the same loop MAM itself is edited by, not a special licence for this project. **§3 rule
+  1(b)'s pointed-ketiv flags are one instance of it**, and were called "Ben's one stated
+  exception" on 2026-08-23 only because the general permission had not been stated yet.
 - **Every step of the comparison's massaging is stepped through, in both directions**, even the
   ones that are obviously Unicode housekeeping and get an immediate "ignore".
 - **The HTML documentation is part of the plan.** Each limitation and each notable case (hataf
@@ -66,9 +78,10 @@ near-aleppo and the reasons.
    **Decision: infer the pointed ketiv algorithmically** — transplant the qere's **pointing**
    onto the ketiv's letters — and leave the ketiv unpointed when (a) the algorithm does
    not know how; (b) **the inferred pointing disagrees with the comparison edition — flag these
-   in the JSON for Ben's later review against the manuscript** (Ben's one stated exception to
-   the no-borrowing rule: the comparison edition is used *only* to flag words to look up, never
-   as a source of pointing); (c) the word is a ketiv-without-qere (כתיב ולא קרי), which the
+   in the JSON for Ben's later review against the manuscript** (once called the one exception to
+   the no-borrowing rule — restated 2026-08-25 as an instance of §1's general permission
+   rather than an exception to it: the comparison edition is used *only* to flag words to look
+   up, never as a source of pointing); (c) the word is a ketiv-without-qere (כתיב ולא קרי), which the
    manuscripts leave unpointed anyway. **"Pointing" here includes a trailing maqaf**, which
    is why this rule says pointing rather than listing vowels and accents. Ben, 2026-08-25, on
    step 13: "the maqaf is part of the pointing of the qere that must be carried onto the
