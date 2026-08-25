@@ -6,6 +6,8 @@ Exports:
     ref_str          — verse reference like "1Samuel 3:4"
 """
 
+from urllib.parse import quote
+
 from mb_cmn import bib_locales as tbn
 from mb_cmn.he_wikisource_url import he_taamim_url
 from mb_cmn import hebrew_verse_numerals as hvn
@@ -15,7 +17,9 @@ from mb_cmn.mam_bknas_and_std_bknas import he_bk39_name
 def mam_with_doc_url(book, chapter, verse):
     """Build a MAM-with-doc GitHub Pages URL for a canonical bk39 id."""
     osdf = tbn.ordered_short_dash_full_39(book)
-    return f"https://bdenckla.github.io/MAM-with-doc/{osdf}.html#c{chapter}v{verse}"
+    # quote matters for exactly one osdf: "E1-Song of Songs" has a space in it.
+    page = quote(f"{osdf}.html")
+    return f"https://bdenckla.github.io/MAM-with-doc/{page}#c{chapter}v{verse}"
 
 
 def wikisource_url(book, chapter):

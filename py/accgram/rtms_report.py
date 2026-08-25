@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from pathlib import Path
 from collections.abc import Callable
+from urllib.parse import quote
 
 from accgram import ob_tree_parse
 from accgram import ob_tree_table
@@ -432,7 +433,9 @@ def _mam_with_doc_url(bb: str, chnu: int, vrnu: int) -> str:
     bk39id = wlc_bb_to_bk39id(bb)
     osdf = tbn.ordered_short_dash_full_39(bk39id)
     mam_chnu, mam_vrnu = _remap_mam_with_doc_chapter_verse(bb, chnu, vrnu)
-    return f"https://bdenckla.github.io/MAM-with-doc/{osdf}.html#c{mam_chnu}v{mam_vrnu}"
+    # quote matters for exactly one osdf: "E1-Song of Songs" has a space in it.
+    page = quote(f"{osdf}.html")
+    return f"https://bdenckla.github.io/MAM-with-doc/{page}#c{mam_chnu}v{mam_vrnu}"
 
 
 def _derive_html_out_from_out_path(out_path: Path) -> Path | None:

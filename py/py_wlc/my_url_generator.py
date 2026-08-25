@@ -1,3 +1,5 @@
+from urllib.parse import quote
+
 import py_html.wlc_utils_html as wlc_utils_html
 import py_uxlc.my_uxlc_book_abbreviations as u_bk_abbr
 import mb_cmn.bib_locales as tbn
@@ -42,7 +44,9 @@ def _mam_with_doc_url(record):
     osdf = tbn.ordered_short_dash_full_39(std_bkid)  # e.g. A2-Exodus
     chnu, vrnu = std_bcv_triple[1], std_bcv_triple[2]
     # Above, we're ignoring verse numbering differences
-    bcv_part = f"{osdf}.html#c{chnu}v{vrnu}"
+    # quote matters for exactly one osdf: "E1-Song of Songs" has a space in it.
+    page = quote(f"{osdf}.html")
+    bcv_part = f"{page}#c{chnu}v{vrnu}"
     return f"https://bdenckla.github.io/MAM-with-doc/{bcv_part}"
 
 
