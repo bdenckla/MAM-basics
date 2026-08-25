@@ -5,6 +5,12 @@ This document is the shared reference point for decoding sigils, abbreviations, 
 
 It is intended to be a single source in the practical sense that translation work should point here first. It is not intended to present false certainty. When sources disagree, this document should preserve the disagreement and its provenance.
 
+## The Private Annex
+
+Some of the provenance below rests on sources that are not public. This document cites those as **private annex §1**, **private annex §2** and so on, and says nothing further about them. The annex itself is `C:\Users\BenDe\GitRepos\MAM-private\doc\sigil-decoding-annex.md`, and it records what each section number stands for and which entries here rest on it.
+
+The citations were made opaque on 2026-08-25, at Ben's instruction, because this repo is public. No entry was weakened: each row resting on the annex also carries public corroboration, which is why all of them remain Confirmed.
+
 ## Role Of This Document
 
 This file is the live working specification for the sigil-decoding workstream.
@@ -153,7 +159,7 @@ translation-policy glossary.)
 | Sigil | Meaning | Status | Main source | Notes |
 |---|---|---|---|---|
 | א | Aleppo Codex | Confirmed | Accordance header, Wikisource | Also appears as כתי״א in prose contexts. |
-| א(ק) | Aleppo Codex according to Yehoshua Kimhi's testimony | Confirmed | JC3 sigil list, mgketer issue 117 comments | This is not Aleppo corroborated by Cairo. The AI gloss that read it that way was incorrect. |
+| א(ק) | Aleppo Codex according to Yehoshua Kimhi's testimony | Confirmed | JC3 sigil list, private annex §1 | This is not Aleppo corroborated by Cairo. The AI gloss that read it that way was incorrect. |
 | א(ס) | Aleppo Codex according to Jacob Sapir's notes in Me'orot Nathan | Confirmed | Wikisource, Accordance header | Both sources tie this specifically to Jacob Sapir and Me'orot Nathan. The appendix specifies "the second copy, in manuscript" (עותק שני, כתב־היד). In the corpus it appears mostly inside an angle-bracket query, `<א(ס)=חטף פתח? כן>` — "does Sapir record a hataf patah here? yes" — 194 prose occurrences. |
 | א(ו) | Aleppo Codex according to the notes of R. Shmuel Vital in the responsa *Be'er Mayim Ḥayyim* §27 | Confirmed | Wikisource | The appendix lists five "testimonies to the codex's text in its missing parts" (כינויים לעדויות על נוסח כתב־היד בחלקיו החסרים), each a letter in parentheses after א: ו for **ו**יטל, ס for **ס**פיר, ע for **ע**מאדי, ק for **ק**מחי, ר for Cassuto's **ר**שימות. Added 2026-08-23 when the near-Aleppo work needed to know which sigla count as testimony of Aleppo; before that only א(ק) and א(ס) had rows. |
 | א(ע) | Aleppo Codex according to the notes of Yishai Amadi, as published in Yitzhak Penkower, *Nusaḥ ha-Torah be-Keter Aram Tsova: Edut Ḥadasha* (Bar-Ilan, 1993) | Confirmed | Wikisource | Amadi's notes are in a printed Pentateuch; Penkower's book is based on them. |
@@ -179,8 +185,8 @@ translation-policy glossary.)
 | פטרבורג-EVR-II-B-8 | St. Petersburg Ms EVR-II-B-8 | Confirmed | MAM-with-doc corpus evidence | The shelfmark is already explicit in the corpus form; sometimes written without the first hyphen as `פטרבורגEVR-II-B-8`. |
 | פטרבורג-EVR-II-B-80 | St. Petersburg Ms EVR-II-B-80 | Confirmed | MAM-with-doc corpus evidence | The shelfmark is already explicit in the corpus form; sometimes written without the first hyphen as `פטרבורגEVR-II-B-80`, often with folio references such as `(8ב)` and `(16א)`. |
 | פטרבורג-EVR-II-C-1 | St. Petersburg Ms EVR-II-C-1 | Confirmed | MAM-with-doc corpus evidence | The shelfmark is already explicit in the corpus form; sometimes written without the first hyphen as `פטרבורגEVR-II-C-1`, often with folio references such as `(73א)`, `(76ב)`, and `(95א)`. |
-| פטרבורג-EVR-II-B-34 | St. Petersburg Ms EVR-II-B-34 | Confirmed | mgketer test case, MAM-with-doc corpus evidence | Writings manuscript cited in Daniel and related Ketuvim notes. |
-| פטרבורג-EVR-II-B-92 | St. Petersburg Ms EVR-II-B-92 | Confirmed | mgketer test case, MAM-with-doc corpus evidence | Writings manuscript cited in Daniel and related Ketuvim notes. |
+| פטרבורג-EVR-II-B-34 | St. Petersburg Ms EVR-II-B-34 | Confirmed | private annex §2, MAM-with-doc corpus evidence | Writings manuscript cited in Daniel and related Ketuvim notes. |
+| פטרבורג-EVR-II-B-92 | St. Petersburg Ms EVR-II-B-92 | Confirmed | private annex §2, MAM-with-doc corpus evidence | Writings manuscript cited in Daniel and related Ketuvim notes. |
 | ש | Ms Sassoon 507 | Confirmed | Accordance header, Wikisource | Also appears as כתי״ש in prose contexts. |
 | ש1 | Ms Sassoon 1053 | Confirmed | Accordance header, Wikisource | |
 | ש2 | Ms Sassoon 82 ("Keter Shem Tov") | Confirmed | JC3 sigil list, MAM-with-doc corpus evidence | Often a Sephardic manuscript in prose explanations. |
@@ -264,7 +270,7 @@ This remains a useful example of why provenance matters: the earlier contrary gl
 
 ### Recent Doc-Note Test Case Clarifications
 
-The doc-note preserved in mgketer issue 117 comment 4193477476 is useful here because later comments clarified two points that matter directly for decoder work.
+The doc-note recorded in the private annex, §1, is useful here because later discussion there clarified two points that matter directly for decoder work.
 
 - `א(ק)` means Aleppo according to Yehoshua Kimhi's testimony, not Aleppo corroborated by Cairo.
 - `ק-מ` is currently treated in this project the same way as `כתי״ק-מ`, even though an older local gloss differed.
