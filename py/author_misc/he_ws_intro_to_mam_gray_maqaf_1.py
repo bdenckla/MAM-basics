@@ -474,4 +474,4 @@ _CBODY = [
     author.he_en_table_wct(_FTNT_TRIPLES),
 ]
 
-# file:///C:/Users/BenDe/GitRepos/MAM-with-doc/gh-pages/misc/he_ws_intro_to_mam_gray_maqaf_1.html
+# E.g. file:///C:/Users/BenDe/GitRepos/MAM-with-doc/gh-pages/misc/he_ws_intro_to_mam_gray_maqaf_1.html
