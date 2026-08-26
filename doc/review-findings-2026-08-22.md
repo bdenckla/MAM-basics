@@ -410,3 +410,17 @@ untouched for a third window. The hcanat.us /Notes/ template question `e4d7997` 
 The cam1753 line-ending watch item from the 2026-08-10 review's finding 8 was finally exercised —
 `f56831c` and `7e5ca23` fixed eight CRLF-writing sites and `git ls-files --eol` shows no CRLF
 tracked — and is closed.
+
+## Scope change, 2026-08-26: this series covers public repos only from now on
+
+Ben's decision, 2026-08-26. Findings about private repos are no longer recorded in this series or
+filed in this repo's tracker: private-repo reviews have their own series, recorded in
+`bdenckla/MAM-private` at `doc/review-findings-YYYY-MM-DD.md` there, with thin-pointer issues
+there, under the same conventions. The first private review ran 2026-08-26 and took the
+private-side open ends above with it — MAM-private's melody-compiler work among them, on which it
+delivered the verdicts this doc left owed on `a225faa` and `555ed14`. The next review in this
+series covers the public repos only: the scope statement's "every clone directly under
+`~/GitRepos`" narrows to every public clone there, and the public open ends above — the
+codex-index trio Phases 6 and 7 verdict among them, plus the four public commits this doc left
+unverdicted (`fe6cef2`, `09d68c5`, codex-index-aleppo `2bdcfde`, codex-index-cam1753 `a9c3abd`) —
+stay with it.
