@@ -12906,7 +12906,7 @@
       "wtel_type": "tmpl",
       "wtel_subtype": "מ:הערה",
       "pseudoverse_category": "1 (normal verse)",
-      "count_C": 4,
+      "count_C": 5,
       "count_D": 0,
       "count_E": 27
     },
@@ -13084,7 +13084,7 @@
       "pseudoverse_category": "1 (normal verse)",
       "count_C": 0,
       "count_D": 0,
-      "count_E": 520
+      "count_E": 521
     },
     {
       "wtel_type": "tmpl",
@@ -13108,7 +13108,7 @@
       "pseudoverse_category": "1 (normal verse)",
       "count_C": 1,
       "count_D": 0,
-      "count_E": 27
+      "count_E": 28
     },
     {
       "wtel_type": "tmpl",
@@ -13202,9 +13202,9 @@
       "wtel_type": "tmpl",
       "wtel_subtype": "נוסח",
       "pseudoverse_category": "1 (normal verse)",
-      "count_C": 273,
+      "count_C": 274,
       "count_D": 35,
-      "count_E": 3583
+      "count_E": 3589
     },
     {
       "wtel_type": "tmpl",
@@ -13378,9 +13378,9 @@
       "wtel_type": "tmpl",
       "wtel_subtype": "ש",
       "pseudoverse_category": "1 (normal verse)",
-      "count_C": 14,
+      "count_C": 16,
       "count_D": 1,
-      "count_E": 3273
+      "count_E": 3280
     },
     {
       "wtel_type": "tmpl",
@@ -13570,7 +13570,7 @@
     },
     {
       "stack": "C/מ:הערה",
-      "count": 4
+      "count": 5
     },
     {
       "stack": "C/מ:טעמי המקרא",
@@ -13634,7 +13634,7 @@
     },
     {
       "stack": "C/נוסח",
-      "count": 277
+      "count": 278
     },
     {
       "stack": "C/נוסח/מ:אין פרשה בתחילת פרק",
@@ -13678,7 +13678,7 @@
     },
     {
       "stack": "C/נוסח/ש",
-      "count": 14
+      "count": 16
     },
     {
       "stack": "C/ניווט טעמים",
@@ -13934,7 +13934,7 @@
     },
     {
       "stack": "E/נוסח",
-      "count": 3541
+      "count": 3547
     },
     {
       "stack": "E/נוסח/גלגל-2",
@@ -14018,7 +14018,7 @@
     },
     {
       "stack": "E/נוסח/מ:פסק",
-      "count": 22
+      "count": 23
     },
     {
       "stack": "E/נוסח/מ:צינור",
@@ -14034,7 +14034,7 @@
     },
     {
       "stack": "E/נוסח/מ:קישור בהערה",
-      "count": 27
+      "count": 28
     },
     {
       "stack": "E/נוסח/מ:קישור פנימי בהערה",
@@ -14094,7 +14094,7 @@
     },
     {
       "stack": "E/נוסח/ש",
-      "count": 3215
+      "count": 3222
     },
     {
       "stack": "E/סס",
@@ -14493,7 +14493,7 @@
     {
       "wtel_subtype": "מ:הערה",
       "arg_count": 2,
-      "count": 31,
+      "count": 32,
       "variations": 1
     },
     {
@@ -14655,7 +14655,7 @@
     {
       "wtel_subtype": "מ:פסק",
       "arg_count": 0,
-      "count": 520,
+      "count": 521,
       "variations": 1
     },
     {
@@ -14685,7 +14685,7 @@
     {
       "wtel_subtype": "מ:קישור בהערה",
       "arg_count": 2,
-      "count": 28,
+      "count": 29,
       "variations": 1
     },
     {
@@ -14751,7 +14751,7 @@
     {
       "wtel_subtype": "נוסח",
       "arg_count": 2,
-      "count": 3895,
+      "count": 3902,
       "variations": 1
     },
     {
@@ -14883,7 +14883,7 @@
     {
       "wtel_subtype": "ש",
       "arg_count": 0,
-      "count": 3288,
+      "count": 3297,
       "variations": 1
     },
     {
@@ -14895,10 +14895,10 @@
   ],
   "normal_order_cov_counts_by_case": {
     "plain-C": {
-      "fully_checked": 238,
+      "fully_checked": 240,
       "partially_checked": 0,
       "totally_unchecked": 6,
-      "total": 244
+      "total": 246
     },
     "plain-D": {
       "fully_checked": 568,
@@ -14907,10 +14907,10 @@
       "total": 568
     },
     "plain-E": {
-      "fully_checked": 4057,
+      "fully_checked": 4066,
       "partially_checked": 17,
       "totally_unchecked": 46,
-      "total": 4120
+      "total": 4129
     }
   },
   "normal_order_cov_top_paths_by_case": {
@@ -14929,11 +14929,11 @@
           "count": 38
         },
         {
-          "stack": "C/נוסח/ססס",
-          "count": 14
+          "stack": "C/נוסח/ש",
+          "count": 16
         },
         {
-          "stack": "C/נוסח/ש",
+          "stack": "C/נוסח/ססס",
           "count": 14
         },
         {
@@ -14995,7 +14995,7 @@
       "fully_checked": [
         {
           "stack": "E/נוסח/ש",
-          "count": 3215
+          "count": 3222
         },
         {
           "stack": "E/נוסח/כו״ק",
@@ -15031,7 +15031,7 @@
         },
         {
           "stack": "E/נוסח/מ:קישור בהערה",
-          "count": 27
+          "count": 28
         }
       ],
       "partially_checked": [

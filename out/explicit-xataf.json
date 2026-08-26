@@ -2657,6 +2657,20 @@
       "sigla": "א"
     },
     {
+      "ref": "Psalms 14:1",
+      "varika_word": "הִֽשְׁﬞחִ֗יתוּ",
+      "xataf_word": "הִֽשְִׁחִ֗יתוּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "Psalms 14:1",
+      "varika_word": "הִֽתְﬞעִ֥יבוּ",
+      "xataf_word": "הִֽתְִעִ֥יבוּ",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
       "ref": "Psalms 17:14",
       "varika_word": "מִֽמְﬞתִ֬ים",
       "xataf_word": "מִֽמֲתִ֬ים",
@@ -4677,6 +4691,13 @@
       "ref": "2Chronicles 33:18",
       "varika_word": "הַֽמְﬞדַבְּרִ֣ים",
       "xataf_word": "הַֽמֲדַבְּרִ֣ים",
+      "match_kind": "sigla=word",
+      "sigla": "א"
+    },
+    {
+      "ref": "2Chronicles 34:12",
+      "varika_word": "הַקְּﬞהָתִ֖ים",
+      "xataf_word": "הַקֳּהָתִ֖ים",
       "match_kind": "sigla=word",
       "sigla": "א"
     },
