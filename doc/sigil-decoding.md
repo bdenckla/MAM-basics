@@ -495,6 +495,13 @@ that was real:
   `פטרבורג-EVR-II-B-81?` (2) and `פטרבורג-EVR-II-B-26` (1) both occur at Joshua 1:7 and have no
   entry anywhere in this file. All three want the Wikisource appendix, which this pass did not
   fetch.
+- **Two sigla the qualifier table cites that nothing here decodes**, noticed in writing that
+  table and left undecoded rather than guessed at. `ד` takes both `מסורת` and `כתיב`:
+  `ומסורת-ל,ד` at Daniel 3:25, whose own parenthesis quotes
+  `מסורת-ד="כל גוא לגוא בגוא... כלהון כתיב א' בסוף"`, and `ד-כתיב=נַפְשִׁ֑ו` at Psalms 24:4. It
+  is not `דפוסים` shortened: that Psalms note goes on `וכך בדפוסים וקורן`, naming them
+  separately. `לד` takes `מסורת` once, at Isaiah 56:10, and should not be assumed to be the
+  `ל34` documented above without a source saying so. Both want the Wikisource appendix too.
 
 **The inventory's counts are not corpus counts, so do not quote them as such.** It captures
 tokens near `=` rather than every occurrence: it records `מ"ק-א` 9 times where MAM-parsed has 22.
