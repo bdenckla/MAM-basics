@@ -37,7 +37,7 @@ This document covers:
 
 - manuscript sigla and compound sigla
 - bibliographic and edition abbreviations
-- Masora-specific qualifiers attached to sigla
+- qualifiers attached to sigla, masora-specific and otherwise
 - operators that structure נוסח notes (`=`, `!=`, `+`)
 - uncertain, conflicting, or still-undecoded forms
 - translation-display strategy for sigils
@@ -201,7 +201,7 @@ translation-policy glossary.)
 | Sigil | Meaning | Status | Main source | Notes |
 |---|---|---|---|---|
 | מ"ש | Minhat Shay | Confirmed | Accordance header, translation code, Wikisource | |
-| מ"ג | Miqra'ot Gedolot, Venice edition | Confirmed | Accordance header, Wikisource | |
+| מ"ג | Miqra'ot Gedolot, Venice edition | Confirmed | Accordance header, Wikisource | The corpus also uses `מ"ג` for masora gedolah, which is a qualifier rather than an edition, and it distinguishes `מ"ג-ונציה` from `מ"ג-ורשה`. See "Two things are spelled `מ"ג`" under the qualifier section below. |
 | מג"ה | Miqra'ot Gedolot Ha-keter | Confirmed | Accordance header, translation code, Wikisource | |
 | מ"מ | Mechon Mamre | Confirmed | translation code, Accordance header | The translation code marks one mapping with a comment questioning it; the underlying expansion still appears intended. |
 | מכון ממרא | Mechon Mamre | Confirmed | Accordance header, Wikisource | |
@@ -216,20 +216,133 @@ translation-policy glossary.)
 | תאג' דפוס ראשון | The first printed Taj — *Keter Torah*, Jerusalem 1894–1901, Torah with Targum and Tafsir in the Yemenite tradition, set from manuscripts | Confirmed | Wikisource | The appendix attaches a caveat that a translation should not drop: the Targum and Tafsir there are generally accurate, but in the Torah text itself the attempt to conform it to the Yemenite version left the standard printed reading standing in many places, so where a manuscript Taj differs the manuscript is to be preferred and this printing is a first attempt only. Genesis 40:17 is a note where both Tajes are cited and they disagree. |
 | המקליד | Westminster / UXLC transcript of Leningrad | Confirmed | Accordance header | Often better translated as transcript or transcriber depending on sentence role. |
 
-### Masora-Specific Qualifiers
+### Qualifiers Attached To Sigla
 
-| Form | Meaning | Status | Main source | Notes |
+Sigla and abbreviations are the vocabulary of a נוסח note and the operators above are its
+grammar. Qualifiers are its morphology. A **qualifier** is a short Hebrew term naming a part or
+an aspect of a text — its masora qetannah, its ketiv, its list of small letters — and a hyphen
+attaches it to a sigil to name that part of that text. So `מ"ק-ק3` is not itself a sigil: it is
+the qualifier `מ"ק` applied to the sigil `ק3`, "the masora qetannah of ק3".
+
+The compound then stands wherever a bare sigil stands, the left operand of `=` included.
+Deuteronomy 32:13 has `מ"ק-א=<ג' מל'>`, "the masora qetannah of א reads ‹ג׳ מל׳›", the angle
+brackets being MAM's marker for the text of a masoretic note. Isaiah 26:20 uses three qualified
+forms in one note: `=א-כתיב אבל כדרכו אין הערת "קרי" (מ"ק-א=<ז' מל'>) וכן במג"ה; ל-קרי=יעבור`.
+
+A hyphenated form is therefore decoded by decoding its parts, and the parts are what this file
+documents. The table below lists **qualifiers**, not qualifier-plus-sigil pairs.
+
+**This section used to list the pairs, and that is what changed on 2026-08-26.** Until then it
+was a ten-row table of complete pairs — `מסורת-א`, `מסורת-ל`, `א-כתיב`, `ל-כתיב`, `א-קרי`,
+`ל-קרי`, `מ"ס-ל`, `ל-גדולות`, `ל-קטנות`, `שיטת-א` — every one of them on `א` or `ל`, and a
+five-word Notes cell on the `מסורת-א` row ("Pattern extends across multiple manuscripts") was
+the only hint that the forms generalize. They generalize a long way: the corpus attaches the
+eleven qualifiers below to 24 different sigla, `מ"ק` alone to eight of them, so a pair-per-row
+table would need dozens of rows to say what eleven rows say here, and would still be a list to
+append to rather than a rule to apply. Ben's decision, 2026-08-26, on being shown that MAM has `מ"ק-ק3` and that this
+file had no entry for it: "The meaning of מ"ק-ק3 is presumably just 'The מ"ק of ק3', i.e. the
+Masorah qetannah of ק3. I would think/hope that מ"ק is already documented, as a modifier to
+other sigils? That seems a better way to document it than to treat מ"ק-ק3 as a sigil of its own
+(a 'flat' list of sigils not acknowledging their 'grammatical' structure where מ"ק is,
+effectively, an adjective applied to ק3)."
+
+The ten pairs were **absorbed rather than kept**, deliberately: every one of them is a row below
+plus a sigil named in that row's "Attested on" cell, so keeping them as rows would be a second,
+shorter list of the same facts, going stale as the corpus grows — the flat shape the decision
+rejects. Nothing in their Notes cells was dropped; `שיטת-א`'s wording caveat now sits on the
+`שיטת` row. Their Status and Main source are carried over too, which is why several rows below
+cite the Accordance header pattern and the translation code alongside the corpus.
+
+| Qualifier | Meaning | Status | Main source | Attested on, with occurrence counts |
 |---|---|---|---|---|
-| מסורת-א | Masora in Aleppo | Confirmed | translation code, Accordance header pattern | Pattern extends across multiple manuscripts. |
-| מסורת-ל | Masora in Leningrad | Confirmed | translation code, Accordance header pattern | |
-| א-כתיב | ketiv of Aleppo | Confirmed | translation code, Accordance header pattern | |
-| ל-כתיב | ketiv of Leningrad | Confirmed | translation code, Accordance header pattern | |
-| א-קרי | qere of Aleppo | Confirmed | translation code, Accordance header pattern | |
-| ל-קרי | qere of Leningrad | Confirmed | translation code, Accordance header pattern | |
-| מ"ס-ל | Masora finalis in L | Confirmed | Accordance header, translation code | |
-| ל-גדולות | large-letter list in L | Confirmed | Accordance header, translation code | |
-| ל-קטנות | small-letter list in L | Confirmed | Accordance header, translation code | |
-| שיטת-א | general practice of Aleppo | Confirmed | translation code, local legacy reference | Might need context-sensitive wording: practice, custom, or usage. |
+| מ"ק | masora qetannah — the short masoretic note in the margin beside the text | Confirmed | MAM-with-doc corpus evidence | א (24), ל (3), ק3 (2), ש (2), ב (1), ש1 (1), ק-מ (1), ותיקן448 (1). MAM spells the term out in full in the same relation, at Exodus 38:10: `וכן במסורה קטנה בכתי"ל`. Note that the corpus spells the Vatican manuscript `ותיקן448` here, without the hyphen the row above uses. |
+| מ"ג | masora gedolah — the longer masoretic note, in the upper and lower margins | Confirmed | MAM-with-doc corpus evidence | ש1 (4), ק-מ (2), ל (1). **This collides with the edition abbreviation `מ"ג`, Miqra'ot Gedolot, in the table above**; see "Two things are spelled `מ"ג`" below. Written out in full at Zechariah 7:2: `הערת מסורה גדולה בכתי"ש1 שהועתקה מדפי המסורה בכתר`. |
+| מ"ס | masora finalis — המסורה הסופית, the summary masora at the end of a book | Confirmed | Accordance header, translation code, MAM-with-doc corpus evidence | ל (23), and nothing else. Genesis 18:9 gives the long form and the abbreviation together, which is the clearest single piece of evidence for this whole section: `במסורה הסופית בכתי"ל (מ"ס-ל=ל)`. |
+| מסורת | the masoretic apparatus of a text | Confirmed | translation code, Accordance header pattern | ל (135), א (30), ש1 (7), ק (2), ש (1), לד (1), ד (1). |
+| מסורות | the masoretic notes of a text, plural | Confirmed | MAM-with-doc corpus evidence | א (78), ל (3), ש (1), ק (1). This had no row at all before 2026-08-26, and appeared in this file only in the prose of "Which sigla count as a reading of the Aleppo Codex" below. |
+| קונטרסי | קונטרסי המסורה, the masora quires that stood at the beginning of the Keter | Confirmed | MAM-with-doc corpus evidence | א (3), all in Daniel. The corpus cites Yosef Ofer's article "קונטרסי המסורה" p. 160 at each site, and 1 Samuel 14:49 explains the term in prose: `ולפי קונטרסי המסורה שהיו בהתחלת הכתר`. |
+| כתיב | the ketiv — how the text is written, where writing and reading differ | Confirmed | translation code, Accordance header pattern | א (75), ל (23), ל9 (2), ק (2), ש1 (2), מ"ג (2), ש2 (2), ק3 (1), ל3 (1), פטרבורג-EVR-II-B-55 (1), ד (1), ק-מ (1), ק13 (1). |
+| קרי | the qere — how the text is to be read, where writing and reading differ | Confirmed | translation code, Accordance header pattern | א (98), ל (86), קורן (4), ק3 (2), ק (2), ל1 (1), ברויאר (1), ש1 (1), ש2 (1), הקלדה (1), ק13 (1), ב1 (1), מקליד (1). |
+| גדולות | the large letters — a text's list of אותיות גדולות | Confirmed | Accordance header, translation code | ל (7), and nothing else. |
+| קטנות | the small letters — a text's list of אותיות קטנות | Confirmed | Accordance header, translation code | ל (3), מ"ג (1), כתי"ל (1). Leviticus 6:2 has two of the three in one note: `=מ"ג-קטנות (אבל לא בכתי"ל-קטנות) ובדפוסים`. |
+| שיטת | the general practice of a text, as against a reading of it at the place in question | Confirmed | translation code, local legacy reference | א (179), ל (2). On א this is an inference from the codex's practice where the codex is lost, which is why "Which sigla count as a reading of the Aleppo Codex" below classes `שיטת-א` as not a reading of the codex; on ל it is a straight comparison of two practices, as at Psalms 7:1: `בניגוד לשיטת-א אבל בהתאם לשיטת-ל`. Might need context-sensitive English wording: practice, custom, or usage. |
+
+Counts were measured on 2026-08-26 against MAM-parsed `be359a0`; see "Re-deriving these counts"
+below for the method, and for the trap that otherwise returns zero for every one of them.
+
+#### How a qualifier attaches
+
+Five things about the attachment, none of which the pair-per-row table could state:
+
+1. **The qualifier goes on either side, and which side is a property of the qualifier.**
+   `מ"ק`, `מ"ג`, `מ"ס`, `מסורת`, `מסורות`, `קונטרסי` and `שיטת` lead; `כתיב`, `קרי`, `גדולות`
+   and `קטנות` follow. The only crossings measured are the two `א-מ"ק` sites, Jeremiah 14:14 and
+   Proverbs 21:29, against 22 of `מ"ק-א` (21 bare and one behind a ל prefix). Both of the two
+   gloss a qere — `א-מ"ק=ואליל ותרמית קרי`
+   — and nothing in the evidence distinguishes them in meaning from the majority order, so treat
+   `א-מ"ק` and `מ"ק-א` alike until something forces them apart. What decides the order is not
+   known. An observation, offered as no more than that: `מסורת`, `שיטת` and `קונטרסי` are Hebrew
+   construct forms, which already mean "the X of", and those are among the ones that lead.
+2. **The hyphen abbreviates an ordinary Hebrew phrase; it is not a special notation.** The
+   corpus spells the same relation both ways, sometimes in one breath. Genesis 18:9 has
+   `במסורה הסופית בכתי"ל (מ"ס-ל=ל)`, and Jeremiah 49:8 has `וכן במ"ק בכתי"ק (ל' חס')` — a
+   qualifier and a sigil joined by prepositions and no hyphen, saying what `מ"ק-ק` says. Numbers
+   11:18 and Esther 9:9 do the same for an edition named in words, `במ"ק דפוס ונציה`.
+3. **Prefix letters attach to the front of the whole compound, not to the qualifier alone.**
+   `ו`, `ב`, `ל`, `ש` and `כ` all occur: `ומסורת-ל` (129 of the 135 on ל), `במ"ק-ק3`, `למ"ג-ק-מ`,
+   `שבמ"ס-ל`, `כשיטת-א`. Strip the prefix before looking a compound up.
+4. **Qualifiers compose, and the thing qualified need not be a manuscript.** `מ"ג-כתיב` and
+   `מ"ג-קטנות` qualify Miqra'ot Gedolot, an edition with a row above. `ק-מ-כתיב`
+   (Lamentations 4:16) qualifies a sigil that is itself hyphenated, so the compound nests.
+   `בכתי"ל-קטנות` qualifies the prose alias `כתי"ל` rather than the bare sigil `ל`.
+5. **The element the qualifier attaches to is not always a text at all.** `הקלדה-קרי` (Isaiah
+   30:5) is the qere of the typing, and `מקליד-קרי` (Daniel 5:16) the qere of the typist. Do not
+   write a decoding rule that assumes a manuscript or an edition on the other side.
+
+#### Two things are spelled `מ"ג`
+
+Miqra'ot Gedolot has a row in the edition table above; masora gedolah has a row in the qualifier
+table here. The corpus uses both, and the right-hand element separates them:
+
+- **A manuscript sigil on the right gives masora gedolah.** `מ"ג-ש1 על במדבר א'` (Genesis 14:1,
+  1 Samuel 14:49 and Job 18:15, all three quoting one note) is a masora gedolah note in Sassoon
+  1053 keyed to a place in Numbers, and `ומ"ג-ש1 על עזרא ב,מד` at Nehemiah 7:57 is another such
+  note keyed to a place in Ezra. Zechariah 7:2 spells the relation out in full — `הערת מסורה גדולה בכתי"ש1 שהועתקה מדפי המסורה בכתר`, a masora gedolah note in ש1 copied from the masora
+  leaves of the Keter. Exodus 23:22 puts the equation in a parenthesis, `ומסורות-א,ל (מ"ג-ל)`.
+  Daniel 3:25 quotes the note itself: `בהתאם למ"ג-ק-מ: "לגוא א כת בגו חס א"`.
+- **A place of printing on the right gives the edition.** 2 Samuel 15:12 cites `מ"ג-ונציה`
+  beside `א` and `ל` for a reading of the running text, and lists `מ"ג-ורשה` among printed
+  editions: `בדפוסים (לטריס, בער, מ"ג-ורשה)`.
+- **A qualifier on the right gives the edition too.** `מ"ג-כתיב` (2 Kings 4:3, 1 Chronicles
+  27:12) and `מ"ג-קטנות` (Leviticus 6:2) are the ketiv and the small-letter list of Miqra'ot
+  Gedolot, `מ"ג-קטנות` standing beside `בכתי"ל-קטנות` in its note.
+
+The `מ"ג` edition row above says "Venice edition". The corpus does not support reading a bare
+`מ"ג` as Venice specifically, since it distinguishes `מ"ג-ונציה` from `מ"ג-ורשה` and also has
+`מ"ג דפוס ונציה` and `מ"ג נטר` in prose (Genesis 30:16 lists `היידנהיים, ליסר, מ"ג נטר, מ"ג ורשה, בער`
+together as printed editions). Left as a note rather than a change to that row, which is a
+separate question from this section's.
+
+#### Re-deriving these counts
+
+The occurrence figures above are the number of times each qualifier appears inside a hyphenated
+compound, across `../MAM-parsed/plus/*.json`. A qualifier also occurs outside any compound —
+`מ"ק` 40 times in all against 35 inside compounds — so a bare substring count will not match.
+
+**Searching the raw text of those files silently returns zero.** The double quote that MAM uses
+inside a Hebrew abbreviation is stored escaped as `\"` in the JSON, so a plain search for `מ"ק`
+finds nothing — and neither does a search of a `json.dumps` of the loaded document, which
+re-escapes it. Load each file with `json.load`, walk the decoded structure collecting every
+string, and search those. A first pass at this section reported "0 occurrences" of `מ"ק` on
+exactly that mistake, and the mistake is worse than an empty result: three of the eleven
+qualifiers above contain a double quote and eight do not, so a raw-text survey returns correct
+numbers for the eight and zero for `מ"ק`, `מ"ג` and `מ"ס`. That reads as three rare qualifiers,
+not as a broken search.
+
+The scratch scripts this pass used are `.novc/sigil_qualifier_survey.py` (the qualifier counts)
+and `.novc/sigil_table_vs_inventory.py` (the comparison against `out/sigil-inventory.json`).
+`.novc/` is gitignored, so treat those as gone and rebuild from the description above; that is
+the arrangement the section above prescribes for this comparison.
 
 ### Which sigla count as a reading of the Aleppo Codex
 
@@ -360,6 +473,30 @@ The comparison is mechanical: parse the first column out of the tables above, pa
 `expression_tokens` out of `out/sigil-inventory.json`, and subtract. Run it after any pass that
 adds entries here; a scratch script in `.novc/` is the right home for it, per the throwaway-script
 rules in `~/.claude/CLAUDE.md`.
+
+#### The 2026-08-26 run, and one trap in the comparison itself
+
+**Parse the `###` headings as well as the tables, or the comparison's biggest gap is a false
+one.** `ק-מ` is the most frequent hyphenated token in the inventory, 336 occurrences, and it is
+documented here under an "Important Uncertainties And Conflicts" heading and in no table at all;
+so are `ב2` and `ל-מ`. A table-only parse reports all three as undecoded.
+
+Of 2,363 `expression_tokens`, 177 are documented after stripping a prefix letter and a trailing
+`?`. Most of the remainder is the prose noise the next section describes. What the run turned up
+that was real:
+
+- **Acted on in this pass**, all of it now covered by the qualifier section above: `מ"ק-א` (9),
+  `א-מ"ק` (2), `ומסורות-א` (63), `ומסורת-ש1` (4) and `וקונטרסי-א` (3).
+- **Left for a later pass**, three St Petersburg shelfmarks. `פטרבורג-EVR-II-B-55` (8) is the
+  manuscript already documented above as `ל-א`, but that spelling has no row, which is the same
+  alias situation as `ג` and `גסטר1`; Job 23:5 also misspells it `פרטבורג-EVR-II-B-55`.
+  `פטרבורג-EVR-II-B-81?` (2) and `פטרבורג-EVR-II-B-26` (1) both occur at Joshua 1:7 and have no
+  entry anywhere in this file. All three want the Wikisource appendix, which this pass did not
+  fetch.
+
+**The inventory's counts are not corpus counts, so do not quote them as such.** It captures
+tokens near `=` rather than every occurrence: it records `מ"ק-א` 9 times where MAM-parsed has 22.
+Use it to find candidates, and count them against `MAM-parsed/plus/` itself.
 
 ### Not every frequent token is a sigil
 
