@@ -99,6 +99,14 @@ def _run_vendored_mam_osis():
     )
 
 
+def _run_near_aleppo_census():
+    subprocess.run(
+        [sys.executable, "near-aleppo/census/run_all.py", "--write"],
+        cwd=_REPOS / "MAM-private",
+        check=True,
+    )
+
+
 def _run_accgram_prose():
     main_accgram.almost_main(["run-prose"])
 
@@ -345,6 +353,24 @@ _STEPS = [
     ),
     StepRecord("wlc-diffs-420422", main_wlc_diffs_420422.almost_main, None),
     StepRecord("wlc-a-notes", main_wlc_a_notes.almost_main, None),
+    # The near-aleppo censuses read MAM-parsed's plus/ tree, so this belongs after
+    # parse-go and after everything else that writes it.  --write regenerates their
+    # tracked goldens under near-aleppo/census/expected/, which is a build and not an
+    # audit: run_all.py's own default mode diffs instead, and that mode is for a human
+    # asking "what moved?", not for a rebuild.  Without a step here the goldens go
+    # stale silently, and the next session to run run_all.py meets a wall of red it
+    # has to explain from history.  Added 2026-08-26, the day exactly that happened:
+    # a Google Sheet download moved plus/ and 24 of the 82 censuses went red at once.
+    # TEMPORARY, by Ben's decision the same day -- at some point the censuses stop
+    # running here and this step becomes the real generator of the near-aleppo
+    # edition.  MAM-private is a private clone, so a checkout without it beside this
+    # one fails here rather than skipping, which is the choice mb_cmn/paths.py's
+    # require_sibling already makes for the other private trees.
+    StepRecord(
+        "near-aleppo-census",
+        _run_near_aleppo_census,
+        "regenerates near-aleppo/census/expected/ in MAM-private; needs that private sibling",
+    ),
     # Last, and not because anything above it feeds it: this one AUDITS rather than
     # builds, reading the vendored .py copies as they sit in the sibling repos, and a
     # report reads most naturally as the closing act.  It is here at all because until
