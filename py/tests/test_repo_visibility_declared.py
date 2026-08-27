@@ -25,7 +25,9 @@ from repo_util.common import read_json
 from repo_util.report_destination import (
     ReportDestinationError,
     assert_report_destination_ok,
+    containing_repo,
     describe_destination,
+    repo_name,
 )
 
 REPO_ROOT = paths.repo_root()
@@ -88,6 +90,22 @@ class TestReportDestinationGuard(unittest.TestCase):
 
     def setUp(self):
         self.private = maintenance_policy.private_repos()
+
+    def test_guard_names_this_repo_as_the_declaration_does(self):
+        # The classification is a NAME LOOKUP against the visibility declaration, so the
+        # guard reaching the right working tree is not enough -- it has to call that tree
+        # by the name the declaration uses.  describe_destination compared
+        # repo_dir.name until 2026-08-27, which in a linked worktree is the worktree's
+        # directory name and so matches no entry, sending a private repo's worktree down
+        # the "public-tracked" branch.
+        #
+        # Decidable with no fixture, and it is the same check-by-construction that found
+        # the identical bug in this file's own REPO_NAME (b89fe68, the same day): the two
+        # sides start from different roots -- provenance's __file__ on one, the guard's
+        # own walk up from a destination path on the other -- and must agree.
+        repo_dir = containing_repo((REPO_ROOT / "doc" / "some-report.md").resolve())
+        self.assertIsNotNone(repo_dir)
+        self.assertEqual(REPO_NAME, repo_name(repo_dir))
 
     def test_tracked_path_in_this_repo_is_public_tracked(self):
         kind = describe_destination(REPO_ROOT / "doc" / "some-report.md", self.private)

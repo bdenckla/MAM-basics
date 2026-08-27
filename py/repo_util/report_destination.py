@@ -44,6 +44,7 @@ from __future__ import annotations
 from pathlib import Path
 from typing import Iterable, Sequence
 
+from mb_cmn import provenance
 from repo_util.common import run_cmd
 
 
@@ -59,11 +60,40 @@ def containing_repo(path: Path) -> Path | None:
     written -- and `git rev-parse` on a nonexistent path in a nonexistent
     directory answers about the current directory instead, which is the wrong
     repo and the wrong answer.
+
+    ``.exists()`` rather than ``.is_dir()`` ON PURPOSE, so do not "tighten" it: a linked
+    worktree's ``.git`` is a FILE, and a worktree is a working tree that really would
+    track the path.  What this returns is therefore a working-tree root, which in a
+    worktree is not named for the repo -- see ``repo_name`` below, which is where that
+    is resolved.
     """
     for candidate in [path.parent, *path.parent.parents]:
         if (candidate / ".git").exists():
             return candidate
     return None
+
+
+def repo_name(repo_dir: Path) -> str:
+    """The NAME of the repo whose working tree is ``repo_dir``.
+
+    NOT ``repo_dir.name``, which this used at both call sites until 2026-08-27.  In a
+    linked worktree the directory is named for the worktree -- "vibrant-mirzakhani-3e2369"
+    -- and never for the repo, so a destination inside a PRIVATE repo's worktree was
+    matched against the private-repo names under a name that could not be in the list.
+
+    It failed CLOSED, which is why this was a correctness fix rather than an emergency:
+    an unrecognized name skips ``describe_destination``'s "private-repo" branch and falls
+    through to "public-tracked", which raises rather than permits.  The worst case was a
+    false refusal, never a leak, and no private repo had a worktree that day.
+
+    ``provenance.repo_name_of`` is the same derivation ``this_repo_name`` uses, reused
+    rather than reimplemented -- b89fe68 fixed py/tests/test_repo_visibility_declared.py
+    this way earlier the same day, and deliberately left this module for later.  It
+    follows the worktree's ``.git`` file into the main clone's common git dir and prefers
+    the ``remote.origin.url`` basename, so it also survives a renamed clone directory,
+    and it degrades to the directory name rather than raising.
+    """
+    return provenance.repo_name_of(repo_dir)
 
 
 def _git_ignores(repo_dir: Path, path: Path) -> bool:
@@ -78,7 +108,7 @@ def describe_destination(path: Path, private_repo_names: Iterable[str]) -> str:
     repo_dir = containing_repo(resolved)
     if repo_dir is None:
         return "no-repo"
-    if repo_dir.name.casefold() in private:
+    if repo_name(repo_dir).casefold() in private:
         return "private-repo"
     if _git_ignores(repo_dir, resolved):
         return "ignored"
@@ -113,11 +143,13 @@ def assert_report_destination_ok(
         return
 
     repo_dir = containing_repo(path.resolve())
-    repo_name = repo_dir.name if repo_dir is not None else "?"
+    # The repo's name, not the directory's: in a worktree the message would otherwise
+    # name a directory the reader has never heard of as "the PUBLIC repo".
+    named = repo_name(repo_dir) if repo_dir is not None else "?"
     raise ReportDestinationError(
         f"{option_name} would write findings about {len(covered_private)} private"
         f" repo(s) -- {', '.join(covered_private)} -- into {path}, which the PUBLIC"
-        f" repo {repo_name} tracks.\n"
+        f" repo {named} tracks.\n"
         "Two ways to proceed:\n"
         "  1. Split the sweep, which is the intended workflow:\n"
         f"       --visibility public  {option_name} <a path in this repo>\n"
