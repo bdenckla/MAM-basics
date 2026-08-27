@@ -447,6 +447,17 @@ below records for `ח` and `ג`. Ten are the sigil. The eleventh site in the `ד
 search a one-letter sigil in **sigil position** — flanked by a hyphen, a comma or an equals
 sign — read every hit rather than counting them, and expect the total to be a floor.
 
+**A third trap, this one for citations rather than counts: a file name plus a chapter number is
+not a citation.** Five files under `../MAM-parsed/plus/` hold more than one book, under a
+`book39s` list whose entries are named by `header.sub_book_names` — `BA-Samuel.json` (2),
+`BC-Kings.json` (2), `FA-Ezra-Nexemiah.json` (2), `FC-Chronicles.json` (2) and
+`CA-The-12-Minor-Prophets.json` (12). A walk that keys a site by file and chapter alone therefore
+reports one book's chapter under the merged file's name, and the reader supplies the wrong book:
+`BC-Kings.json 18,9` is **2 Kings** 18:9, and `CA-The-12-Minor-Prophets.json 9,15` is Zechariah
+9:15. Resolve the sub-book name before writing any citation down. On 2026-08-27 this caught a
+draft citation of 1 Kings 18:9 one step before it went to Avi Kadish on #262; the Zechariah 9:15
+in the מסורת row above was right, but was right without having been checked.
+
 ### Which sigla count as a reading of the Aleppo Codex
 
 Recorded 2026-08-23 for the near-Aleppo edition (`out/near-aleppo`, whose plan moved to
