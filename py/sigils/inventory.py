@@ -25,7 +25,13 @@ _PROSE_ABBREV_RE = re.compile(
 _TOKEN_SPLIT_RE = re.compile(r"[\s,]+")
 
 
-def build_inventory(mam_parsed_path=str(paths.sibling_repo("MAM-parsed"))):
+def build_inventory(mam_parsed_path=None):
+    # None rather than a default of paths.mam_parsed_path(), because a default argument is
+    # evaluated at IMPORT time and that call raises when the sibling is missing.  Since
+    # main_0_mega.py imports main_sigil_inventory at module top, a checkout without
+    # MAM-parsed would then fail to import the whole mega before running a single step.
+    if mam_parsed_path is None:
+        mam_parsed_path = paths.mam_parsed_path()
     books_mpu = plus.read_parsed_plus_bk39s(mam_parsed_path=mam_parsed_path)
     expression_examples = {}
     token_examples = {}
@@ -119,8 +125,11 @@ def build_inventory(mam_parsed_path=str(paths.sibling_repo("MAM-parsed"))):
 
 def write_inventory(
     out_path="out/sigil-inventory.json",
-    mam_parsed_path=str(paths.sibling_repo("MAM-parsed")),
+    mam_parsed_path=None,
 ):
+    # out_path stays cwd-relative on purpose: every caller runs from the repo root, main_0_mega.py
+    # included.  mam_parsed_path is None for the reason build_inventory's comment gives, and is
+    # passed straight through so that resolution happens in one place.
     inventory = build_inventory(mam_parsed_path)
     file_io.json_dump_to_file_path(inventory, out_path)
     return inventory

@@ -30,6 +30,7 @@ import main_authored
 import main_decnreub
 import main_foi_features_of_interest
 import main_multimark
+import main_sigil_inventory
 import main_tmpl_survey
 import main_vendoring
 import main_wordlist
@@ -353,6 +354,23 @@ _STEPS = [
     ),
     StepRecord("wlc-diffs-420422", main_wlc_diffs_420422.almost_main, None),
     StepRecord("wlc-a-notes", main_wlc_a_notes.almost_main, None),
+    # The sigil inventory reads MAM-parsed's plus/ tree too, so it takes the same placement
+    # argument the near-aleppo comment just below makes: after parse-go and after everything
+    # else that writes MAM-parsed.  Added 2026-08-27, for the reason accgram-test-fixes was
+    # added on 2026-08-04 and near-aleppo-census on 2026-08-26 -- py/main_sigil_inventory.py
+    # was imported by nothing, so nothing routine rewrote its tracked artifact.  This one had
+    # already gone stale, and provably so twice over: out/sigil-inventory.json had exactly one
+    # commit in its history, c14122a of 2026-04-07, and d205dbb changed this generator's own
+    # header description string on 2026-05-21 while the committed JSON kept the old spelling.
+    # So the file was three months stale on a string alone, before any corpus change was
+    # counted.  The rebuild moved every header count -- notes_scanned 3847 -> 3863,
+    # distinct_expressions 1711 -> 1721, distinct_expression_tokens 2363 -> 2371,
+    # distinct_prose_tokens 667 -> 678 -- and 5,536 lines of the 73,847-line file.  ~1.5s.
+    StepRecord(
+        "sigil-inventory",
+        main_sigil_inventory.almost_main,
+        "reads MAM-parsed's plus/ tree; writes the tracked out/sigil-inventory.json",
+    ),
     # The near-aleppo censuses read MAM-parsed's plus/ tree, so this belongs after
     # parse-go and after everything else that writes it.  --write regenerates their
     # tracked goldens under near-aleppo/census/expected/, which is a build and not an
