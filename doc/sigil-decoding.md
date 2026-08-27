@@ -365,7 +365,9 @@ Six things about the attachment, none of which the pair-per-row table could stat
    confirmed before re-deriving nine rows on an abstraction. The stake is why: generalizing
    would credit every sigil of Deuteronomy 28:30's eight-item list `ל,ל1,ש,ש1,ק3,ו,ל3,ל9-כתיב`
    to `כתיב`, where today only the directly attached `ל9` is credited, and the `כתיב` and
-   `קרי` rows would grow the most of the nine. Those examples are the second comment on #262.
+   `קרי` rows would grow the most of the nine. Those examples were posted as the second comment
+   on #262 on 2026-08-27 — five sites with both readings spelled out, two controls, and one
+   anomaly at Genesis 43:28 whose `לו` may be the same missing-comma error as Isaiah 56:10's.
    Until Avi confirms them the nine rows keep their direct-only counts.
 
 #### Two things are spelled `מ"ג`

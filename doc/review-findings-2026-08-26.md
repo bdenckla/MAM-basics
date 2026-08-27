@@ -343,9 +343,11 @@ had asked neither:
 Avi also answered yes to #262's third question, which would generalize the distribution to the
 other nine qualifiers and grow the כתיב and קרי rows considerably. Ben's instruction that day
 was to put worked examples to him before concluding it, since that question named two sites
-without spelling out what either reading would mean at them. Those examples are the second
-comment on #262; the restriction to the two qualifiers stands meanwhile, marked pending rather
-than settled.
+without spelling out what either reading would mean at them. Those examples went up as the
+second comment on #262 on 2026-08-27 — five sites with both readings spelled out, two controls,
+and one anomaly at Genesis 43:28 — posted by Claude from Ben's account and marked as such at the
+top of the comment, Ben's instruction being that it not read as his own writing. The restriction
+to the two qualifiers stands meanwhile, marked pending rather than settled.
 
 ## Open ends the window itself declares (not findings)
 
