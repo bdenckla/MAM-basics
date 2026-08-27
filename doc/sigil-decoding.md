@@ -260,8 +260,8 @@ cite the Accordance header pattern and the translation code alongside the corpus
 | מ"ק | masora qetannah — the short masoretic note in the margin beside the text | Confirmed | MAM-with-doc corpus evidence | א (24), ל (3), ק3 (2), ש (2), ב (1), ש1 (1), ק-מ (1), ותיקן448 (1). MAM spells the term out in full in the same relation, at Exodus 38:10: `וכן במסורה קטנה בכתי"ל`. Note that the corpus spells the Vatican manuscript `ותיקן448` here, without the hyphen the row above uses. |
 | מ"ג | masora gedolah — the longer masoretic note, in the upper and lower margins | Confirmed | MAM-with-doc corpus evidence | ש1 (4), ק-מ (2), ל (1). **This collides with the edition abbreviation `מ"ג`, Miqra'ot Gedolot, in the table above**; see "Two things are spelled `מ"ג`" below. Written out in full at Zechariah 7:2: `הערת מסורה גדולה בכתי"ש1 שהועתקה מדפי המסורה בכתר`. |
 | מ"ס | masora finalis — המסורה הסופית, the summary masora at the end of a book | Confirmed | Accordance header, translation code, MAM-with-doc corpus evidence | ל (23), and nothing else. Genesis 18:9 gives the long form and the abbreviation together, which is the clearest single piece of evidence for this whole section: `במסורה הסופית בכתי"ל (מ"ס-ל=ל)`. |
-| מסורת | the masoretic apparatus of a text | Confirmed | translation code, Accordance header pattern | ל (135), א (30), ש1 (7), ק (2), ש (1), לד (1), ד (1). |
-| מסורות | the masoretic notes of a text, plural | Confirmed | MAM-with-doc corpus evidence | א (78), ל (3), ש (1), ק (1). This had no row at all before 2026-08-26, and appeared in this file only in the prose of "Which sigla count as a reading of the Aleppo Codex" below. |
+| מסורת | the masoretic apparatus of a text | Confirmed | translation code, Accordance header pattern | ל (139), א (30), ש1 (8), ד (5), ש (2), ק (2), מ"ג (1), לד (1), ק-מ (1). Comma lists distribute, per item 6 under "How a qualifier attaches" below. The ד sites are ומסורת-ל,ד at Daniel 3:25, 4:7 and 7:15, מסורת-ש1,ד at Zechariah 9:15, and the quoted מסורת-ד inside Daniel 3:25's note; the מ"ג credit is the edition, its apparatus qualified in Leviticus 25:10's four-sigil list ומסורת-ל,ש,ש1,מ"ג. |
+| מסורות | the masoretic notes of a text, plural | Confirmed | MAM-with-doc corpus evidence | א (78), ל (78), ש1 (6), ק (2), ק-מ (2), ב (1), ש (1), ד (1). Comma lists distribute, per item 6 under "How a qualifier attaches" below — ומסורות-א,ל is the corpus's commonest form of the qualifier, which is why א and ל tie at 78: 75 of ל's 78 credits come second in a list. This had no row at all before 2026-08-26, and appeared in this file only in the prose of "Which sigla count as a reading of the Aleppo Codex" below. |
 | קונטרסי | קונטרסי המסורה, the masora quires that stood at the beginning of the Keter | Confirmed | MAM-with-doc corpus evidence | א (3), all in Daniel. The corpus cites Yosef Ofer's article "קונטרסי המסורה" p. 160 at each site, and 1 Samuel 14:49 explains the term in prose: `ולפי קונטרסי המסורה שהיו בהתחלת הכתר`. |
 | כתיב | the ketiv — how the text is written, where writing and reading differ | Confirmed | translation code, Accordance header pattern | א (75), ל (23), ל9 (2), ק (2), ש1 (2), מ"ג (2), ש2 (2), ק3 (1), ל3 (1), פטרבורג-EVR-II-B-55 (1), ד (1), ק-מ (1), ק13 (1). |
 | קרי | the qere — how the text is to be read, where writing and reading differ | Confirmed | translation code, Accordance header pattern | א (98), ל (86), קורן (4), ק3 (2), ק (2), ל1 (1), ברויאר (1), ש1 (1), ש2 (1), הקלדה (1), ק13 (1), ב1 (1), מקליד (1). |
@@ -270,11 +270,14 @@ cite the Accordance header pattern and the translation code alongside the corpus
 | שיטת | the general practice of a text, as against a reading of it at the place in question | Confirmed | translation code, local legacy reference | א (179), ל (2). On א this is an inference from the codex's practice where the codex is lost, which is why "Which sigla count as a reading of the Aleppo Codex" below classes `שיטת-א` as not a reading of the codex; on ל it is a straight comparison of two practices, as at Psalms 7:1: `בניגוד לשיטת-א אבל בהתאם לשיטת-ל`. Might need context-sensitive English wording: practice, custom, or usage. |
 
 Counts were measured on 2026-08-26 against MAM-parsed `be359a0`; see "Re-deriving these counts"
-below for the method, and for the trap that otherwise returns zero for every one of them.
+below for the method, and for the trap that otherwise returns zero for every one of them. The
+two rows whose comma lists distribute, מסורת and מסורות, were re-measured on 2026-08-27 against
+MAM-parsed `0128e69` under item 6 below (#262); the other nine rows keep their 2026-08-26
+figures.
 
 #### How a qualifier attaches
 
-Five things about the attachment, none of which the pair-per-row table could state:
+Six things about the attachment, none of which the pair-per-row table could state:
 
 1. **The qualifier goes on either side, and which side is a property of the qualifier.**
    `מ"ק`, `מ"ג`, `מ"ס`, `מסורת`, `מסורות`, `קונטרסי` and `שיטת` lead; `כתיב`, `קרי`, `גדולות`
@@ -291,7 +294,7 @@ Five things about the attachment, none of which the pair-per-row table could sta
    qualifier and a sigil joined by prepositions and no hyphen, saying what `מ"ק-ק` says. Numbers
    11:18 and Esther 9:9 do the same for an edition named in words, `במ"ק דפוס ונציה`.
 3. **Prefix letters attach to the front of the whole compound, not to the qualifier alone.**
-   `ו`, `ב`, `ל`, `ש` and `כ` all occur: `ומסורת-ל` (129 of the 135 on ל), `במ"ק-ק3`, `למ"ג-ק-מ`,
+   `ו`, `ב`, `ל`, `ש` and `כ` all occur: `ומסורת-ל` (129 of the 139 on ל), `במ"ק-ק3`, `למ"ג-ק-מ`,
    `שבמ"ס-ל`, `כשיטת-א`. Strip the prefix before looking a compound up.
 4. **Qualifiers compose, and the thing qualified need not be a manuscript.** `מ"ג-כתיב` and
    `מ"ג-קטנות` qualify Miqra'ot Gedolot, an edition with a row above. `ק-מ-כתיב`
@@ -300,6 +303,19 @@ Five things about the attachment, none of which the pair-per-row table could sta
 5. **The element the qualifier attaches to is not always a text at all.** `הקלדה-קרי` (Isaiah
    30:5) is the qere of the typing, and `מקליד-קרי` (Daniel 5:16) the qere of the typist. Do not
    write a decoding rule that assumes a manuscript or an edition on the other side.
+6. **After `מסורת` or `מסורות`, a comma-joined sigil list is plural shorthand, and the qualifier
+   distributes over the list.** Ben's reading, 2026-08-27: when the qualifier is מסורות or a
+   variant of it in spelling (מסורת) or vav-prefixing, `A-B,C` is short for `A1-B` and `A1-C`,
+   where A1 is the singular, מסורה — so `ומסורת-ל,ד` is the masorah of ל and the masorah of ד,
+   one attestation each. Daniel 3:25's note says as much itself, expanding that compound into
+   separate quotations of `מסורת-ל` and `מסורת-ד` in one parenthesis, and the same note has the
+   same pair under both spellings (`ומסורת-ל,ד`, then `מסורות-ל,ד`); the corpus also writes the
+   distribution longhand where the qualifier follows the sigil, as in `א-קרי,ל-קרי`. So the
+   counts in the מסורת and מסורות rows credit every sigil in the list. The reading is
+   deliberately not generalized: comma lists under or before the other qualifiers —
+   `במ"ק-ב,ק13` (Genesis 43:26), the sigil lists in front of `כתיב` and `קרי` — still credit
+   only the directly attached sigil. Filed for Avi Kadish's feedback as #262, which holds the
+   evidence and the open generalization question.
 
 #### Two things are spelled `מ"ג`
 
@@ -328,7 +344,9 @@ separate question from this section's.
 #### Re-deriving these counts
 
 The occurrence figures above are the number of times each qualifier appears inside a hyphenated
-compound, across `../MAM-parsed/plus/*.json`. A qualifier also occurs outside any compound —
+compound, across `../MAM-parsed/plus/*.json`. For מסורת and מסורות a comma-joined sigil list
+credits every sigil in it (item 6 above), so one compound can contribute several credits. A
+qualifier also occurs outside any compound —
 `מ"ק` 40 times in all against 35 inside compounds — so a bare substring count will not match.
 
 **Searching the raw text of those files silently returns zero.** The double quote that MAM uses
@@ -344,7 +362,10 @@ not as a broken search.
 The scratch scripts this pass used are `.novc/sigil_qualifier_survey.py` (the qualifier counts)
 and `.novc/sigil_table_vs_inventory.py` (the comparison against `out/sigil-inventory.json`).
 `.novc/` is gitignored, so treat those as gone and rebuild from the description above; that is
-the arrangement the section above prescribes for this comparison.
+the arrangement the section above prescribes for this comparison. The 2026-08-27 re-measure of
+the מסורת and מסורות rows used `.novc/masorot_count.py`, built to reproduce the two rows'
+direct-only cells exactly before applying the distributive convention — same arrangement, treat
+it as gone too.
 
 ### Which sigla count as a reading of the Aleppo Codex
 
@@ -496,12 +517,18 @@ that was real:
   entry anywhere in this file. All three want the Wikisource appendix, which this pass did not
   fetch.
 - **Two sigla the qualifier table cites that nothing here decodes**, noticed in writing that
-  table and left undecoded rather than guessed at. `ד` takes both `מסורת` and `כתיב`:
-  `ומסורת-ל,ד` at Daniel 3:25, whose own parenthesis quotes
-  `מסורת-ד="כל גוא לגוא בגוא... כלהון כתיב א' בסוף"`, and `ד-כתיב=נַפְשִׁ֑ו` at Psalms 24:4. It
-  is not `דפוסים` shortened: that Psalms note goes on `וכך בדפוסים וקורן`, naming them
-  separately. `לד` takes `מסורת` once, at Isaiah 56:10, and should not be assumed to be the
-  `ל34` documented above without a source saying so. Both want the Wikisource appendix too.
+  table and left undecoded rather than guessed at. `ד` takes `מסורת` at five counted sites: the
+  compound `ומסורת-ל,ד` at Daniel 3:25, 4:7 and 7:15; the pair `מסורת-ש1,ד` at Zechariah 9:15
+  (comma lists distributing per item 6 above); and the parenthesis of Daniel 3:25's note quoting
+  the text of `מסורת-ד` in full, `מסורת-ד="כל גוא לגוא בגוא... כלהון כתיב א' בסוף"`. The same
+  note also has the plural `מסורות-ל,ד`, and `מסורת=ל,ד` with an `=` where every other site has
+  the hyphen, left uncounted. `ד` takes `כתיב` once, `ד-כתיב=נַפְשִׁ֑ו` at Psalms 24:4; and
+  Daniel 3:5 twice lists `ק-מ,ד` among the sources of a reading, so `ד` also occurs as a bare
+  authority. (Until 2026-08-27 this bullet cited one of the three compound sites and knew
+  nothing of the Zechariah site — finding 5 of `doc/review-findings-2026-08-26.md`.)
+  It is not `דפוסים` shortened: that Psalms note goes on `וכך בדפוסים וקורן`, naming them
+  separately. `לד` takes `מסורת` once, at Isaiah 56:10, and should not be assumed to be
+  the `ל34` documented above without a source saying so. Both want the Wikisource appendix too.
 
 **The inventory's counts are not corpus counts, so do not quote them as such.** It captures
 tokens near `=` rather than every occurrence: it records `מ"ק-א` 9 times where MAM-parsed has 22.
