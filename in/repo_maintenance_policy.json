@@ -61,7 +61,7 @@
     },
     "MAM-private": {
       "visibility": "private",
-      "comment": "Holds the six evacuated private trees -- al-hatorah, masorah-books, mechon-mamre, mgketer, near-aleppo, wlc-utils-private -- each as a top-level directory rather than a clone of its own. So a finding naming a path under any of those six is a finding about this repo's content."
+      "comment": "Holds several evacuated private trees, each as a top-level directory rather than a clone of its own, so a finding here names a path two levels deep and is a finding about a tree as much as about this repo. Deliberately not enumerated: the guard needs the visibility, not the inventory, and MAM-private/doc/near-aleppo-privacy.md is the governing statement of what about these trees may reach a public repo. Read it before writing public prose about any of them; its section 4 gives the mechanical backstop grep and the two ways that grep misleads."
     }
   },
   "frozen_repos": {
