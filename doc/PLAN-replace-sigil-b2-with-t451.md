@@ -1,0 +1,409 @@
+# Replace the sigil ב2 with ת451 on Wikisource, and propagate
+
+Written 2026-08-27, at `d7df398`. Closes [#260](https://github.com/bdenckla/MAM-basics/issues/260)
+and one bullet of [#259](https://github.com/bdenckla/MAM-basics/issues/259); their umbrella is
+[#257](https://github.com/bdenckla/MAM-basics/issues/257).
+
+Two of the seven phases can only be run by Ben, and they sit in the middle rather than at the end:
+Phase 3 needs the pywikibot bot password, and Phase 5 happens inside the MAM Google Sheet. So this
+is a chain with two hand-offs built into it, not a plan a single session runs start to finish.
+
+## Status
+
+| Phase | State |
+|---|---|
+| 1 — the bot edit | **NOT STARTED.** New `py/ws/ws_bot_edit_sigil_b2_to_t451.py`, spec JSON, two tests, registration in `ws_bot_edit.py` |
+| 2 — local proto rehearsal | **NOT STARTED.** Tracked diff in `out/mam-ws-bot/proto*/F1-Daniel.json` is the evidence. Commits with Phase 1 |
+| 3 — the live Wikisource edit | **NOT STARTED. BEN'S STEP** — needs `~\.pywikibot\`, which was absent 2026-08-27 |
+| 4 — emit the Google-Sheet auto-edits | **NOT STARTED.** Both wsgo outputs go from `[]` to Daniel entries; must be pushed, not merely committed |
+| 5 — the Sheet round trip, then regenerate | **NOT STARTED. PARTLY BEN'S STEP** — the two Apps Script runs are in the Sheet's own UI |
+| 6 — correct the two sigil documents | **NOT STARTED.** Both currently assert the opposite conclusion |
+| 7 — the trackers | **NOT STARTED** |
+
+## Context
+
+MAM's manuscript sigil ב2 and its sigil ת451 name the **same** manuscript. The MAM editor
+(`skadish1`) said so himself on 2026-04-09, in
+[this #259 comment](https://github.com/bdenckla/MAM-basics/issues/259#issuecomment-5432094840): he
+first chose ב2 for its proximity to ב1, then abandoned it because ב2 is used in the literature for
+other things and the manuscript is not in the British Library, and switched to the number the
+manuscript carried when Meir Benayahu held it — but by then many uses of ב2 were already written
+and he never updated them. On 2026-04-10 he answered Ben's "shall I replace all uses of ב2 with
+ת451?" with *"Yes, please."*
+([this #260 comment](https://github.com/bdenckla/MAM-basics/issues/260#issuecomment-5432095104)),
+and on 2026-08-27 restated it on #259: *"Change all ב2 to ת451."*
+
+The replacement is to be made **in Hebrew Wikisource**, which is the source MAM is edited in, and
+then carried through `doc/process-documentation/auto-edits-process.md`'s chain so that MAM-parsed
+and everything published from it follow. That chain matters more than it looks: `main_0_mega.py`'s
+first step is `parse-go`, so **MAM-parsed derives from the Google Sheet, not from Wikisource**. A
+Wikisource edit on its own changes nothing that is published, and leaves `main_diff.py wsgo`
+non-empty until the Sheet catches up.
+
+Both `doc/sigil-decoding.md` and `MAM-with-doc/gh-pages/sigil-decoding.html` currently assert the
+opposite conclusion — that the local evidence *leans against* ב2 = ת451 — so correcting them is
+part of this work rather than a follow-up to it.
+
+## Baselines — measured 2026-08-27
+
+Repo heads, all working trees clean:
+
+| Repo | HEAD |
+|---|---|
+| `C:\Users\BenDe\GitRepos\MAM-basics` | `d7df398` |
+| `C:\Users\BenDe\GitRepos\MAM-parsed` | `0128e69` |
+| `C:\Users\BenDe\GitRepos\MAM-with-doc` | `4f4c9ab` |
+| `C:\Users\BenDe\GitRepos\MAM-simple` | `b3c7a60` |
+| `C:\Users\BenDe\GitRepos\MAM-OSIS` | `2f783d1` |
+| `C:\Users\BenDe\GitRepos\MAM-for-Sefaria` | `cf19347` |
+| `C:\Users\BenDe\GitRepos\MAM-private` | `580fecc` |
+
+| Measure | Value |
+|---|---|
+| suite | **941 passed, 5 skipped, 59 subtests** — the figure `doc/review-findings-2026-08-26.md` records at `629d73b`. Re-measure; a mismatch is a finding |
+| wsgo outputs | `out/diff_mamws_mamgo.json` and `out/diff_mamws_mamgo-auto-edits.json` both `[]`, so any wsgo output this work produces is its own |
+| ב2 as a sigil | **32 occurrences, all in `in/mam-ws/F1-Daniel.json`** |
+| ב2 not as a sigil | **648 occurrences**, none of them touchable — see the four classes below |
+| ת451 in Daniel | **5 occurrences**, in chapters ג, ה, ו — disjoint from every ב2 chapter |
+| pywikibot config | **`C:\Users\BenDe\.pywikibot\` DOES NOT EXIST** — neither `user-config.py` nor `password.py`, so `main_ws_bot.py real` fails fast |
+
+Run the suite from the repo root, never from `py/`, and keep the `-q` — default verbosity drops the
+subtests count and reads as a mismatch:
+
+```bash
+.venv/Scripts/python.exe py/main_test.py -q
+```
+
+Load before the prose edits of Phase 6: the `hebrew-prose` skill.
+
+## What is actually there — re-measure, do not trust these figures
+
+The sigil occurs in **exactly one book**, over six of Daniel's twelve chapters:
+
+| Chapter | Hebrew | ב2 occurrences |
+|---|---|---|
+| 7 | ז | 17 |
+| 8 | ח | 2 |
+| 9 | ט | 3 |
+| 10 | י | 3 |
+| 11 | יא | 6 |
+| 12 | יב | 1 |
+| — | total | **32** |
+
+Three facts make a plain string replacement exact:
+
+1. **Every one of the 32 is preceded by a comma.** The sigil is never the first member of an
+   authority list, always a later one.
+2. **No occurrence is followed by a digit.** The following characters are `,` (15), space (12),
+   `?` (2), `(` (1), `)` (1), `=` (1). So the sigil is always a whole token; there is no ב20 and
+   no ב21 to guard against.
+3. **The two sigils never share a chapter.** Daniel's five ת451 occurrences are in chapters ג (1),
+   ה (2) and ו (2). So no note can end up naming ת451 twice, and none can end up asserting two
+   different readings for one manuscript.
+
+Re-derive all of that with a throwaway script under `.novc/` — a Python script, not assembled
+shell, per `~/.claude/CLAUDE.md`. Read `in/mam-ws/F1-Daniel.json` (a dict from Hebrew chapter to a
+list of lines), count `"\N{HEBREW LETTER BET}2"` per chapter, and tabulate the character before and
+after each occurrence.
+
+### Four classes of ב2 that are NOT the sigil and must not be touched
+
+This is why a global find-and-replace across the corpus would be a disaster. Outside Daniel the
+string occurs 648 more times and not one of those is a sigil:
+
+1. **The aliyah template's named parameter.** 216 occurrences across the five Torah books of
+   `in/mam-ws`, inside `{{מ:עלייה|א=…|ב0=…|ב1=…|ב2=כהן}}` — Genesis 48, Exodus 44, Leviticus 40,
+   Numbers 40, Deuteronomy 44 — plus the same 216 in `in/mam-go/A-Torah.csv` and again in every
+   parsed serialization of the Torah under `out/` and in MAM-parsed's `plain/` and `plus/`.
+   **Distinguishing feature: the aliyah parameter is always preceded by `|` and followed by `=`,
+   where the sigil is always preceded by `,`.**
+2. **Verse-reference disambiguators in Ben's authored Wikisource intro** — "verse ב, second
+   occurrence" and the like, in `py/author_misc/he_ws_intro_to_mam_pasleg.mediawiki` and
+   `py/author_misc/he_ws_intro_to_mam_pasleg_footnotes.py`. These are preceded by a comma, exactly
+   like the sigil. That page is not a MAM book chapter, so the bot never visits it; the safety
+   here comes from the bot's page selection, not from the search string.
+3. **The same aliyah parameter names as Python string literals**, in
+   `py/tmpl_survey/column_d_0_store_the_mpasuq_call.py` and its `_plus.py` twin, which index
+   `named_params` by `"ב0"`, `"ב1"`, `"ב2"`, `"ב3"`.
+4. **Generated artifacts that merely echo class 1** — `out/mam-ws-bot/proto*/A*.json`,
+   `out/mam-ws-parsed-fmt-2/A*.json`, and MAM-parsed's Torah `plain/` and `plus/`.
+
+## Approach
+
+A new **untargeted global page transform** for the existing JSON-driven Wikisource bot, guarded by
+a per-chapter expected-count table.
+
+Not the bot's existing `explicit-replacement` kind, which a fresh session will otherwise reach for
+first. It asserts each `old` string occurs **exactly once** per chapter, so all 32 entries would
+need enough surrounding pointed Hebrew to be unique — chapter ז alone repeats
+`ש1,ק-מ,ב1,ב2 ובדפוסים` four times — and 32 hand-typed Hebrew context strings is precisely the
+fiddly work that goes wrong silently. A counted transform is also the stronger guard, because it
+checks the total as well as each site.
+
+## Phase 1 — the bot edit, in this repo
+
+Runs in the main clone (`C:\Users\BenDe\GitRepos\MAM-basics`), not a worktree. Files to add:
+
+1. `py/ws/ws_bot_edit_sigil_b2_to_t451.py` — the transform. Follow
+   `py/ws/ws_bot_edit_kq_triv_rename_extra_alef_sug.py`, the shortest existing example of the same
+   shape: `edit_page_text(bk39id, he_chnu, page_text)` plus `get_warnings()`. Write both sigils as
+   named escapes, never as bare literals — `"\N{HEBREW LETTER BET}2"` and
+   `"\N{HEBREW LETTER TAV}451"`. Behavior:
+   - hold `_EXPECTED = {"Daniel": {"ז": 17, "ח": 2, "ט": 3, "י": 3, "יא": 6, "יב": 1}}`;
+   - for a `(bk39id, he_chnu)` pair not in that table, return `page_text` **unchanged**;
+   - for a pair that is, assert the page contains no aliyah parameter `|ב2=` (a page carrying one
+     is not a page this transform may touch), assert `page_text.count(B2)` equals the expected
+     number, then `page_text.replace(B2, T451)`;
+   - append a per-chapter record to the warnings list, so the run's `misc/warnings.json` carries
+     the counts actually applied.
+2. `in/mam-ws-bot-edits/sigil-b2-to-t451.json` — the spec, in the two-line shape of
+   `in/mam-ws-bot-edits/kq-trivial-2-rename-extra-alef-sug.json`:
+   ```json
+   {
+     "summary": "Replace sigil ב2 with ת451 in Daniel doc-notes (one manuscript, two sigils), per MAM-basics#260",
+     "edit-kind": "sigil-b2-to-t451",
+     "edits": {}
+   }
+   ```
+3. `py/tests/test_ws_bot_sigil_b2_to_t451.py` — pin the edit payload before it is sent. This is
+   the `ws_bot` exception `CLAUDE.md` grants to the testing rule: a Wikisource edit is
+   irreversible and outward-facing, with no regeneratable artifact to diff afterwards. Model it on
+   `py/tests/test_ws_bot_kq_triv_rename_extra_alef_sug.py`. Cover a comma-list occurrence; the
+   `ב2?` and `ב2?[…]` uncertainty-marker forms; the one occurrence followed by `=`; a Torah page
+   carrying `|ב2=כהן` passing through untouched; and a wrong count raising.
+4. `py/tests/test_sigil_b2_not_a_sigil_anywhere.py` — a lint over the source tree, the second
+   sanctioned test shape. Assert that in every file under `in/mam-ws/` and `in/mam-go/`, every
+   occurrence of ב2 is preceded by `|` and followed by `=`. That passes all 216 aliyah parameters
+   and fails all 32 sigils, so it is **red until Phase 5 completes** and is this plan's completion
+   criterion. It also guards the real recurrence channel: the Google Sheet holds its own copy of
+   these cells, and finding 1 of `doc/review-findings-2026-08-26.md` is the standing example of
+   Sheet content arriving again on every download.
+
+Files to edit:
+
+5. `py/ws/ws_bot_edit.py` — register the new kind. Add the import and an entry in
+   `_UNTARGETED_EDIT_KINDS` (anchor: the dict literal holding
+   `"kuk-special-callsite-migration"`), and add a paragraph to the module docstring beside the
+   other per-kind paragraphs.
+6. `py/ws/ws_bot_edit_history.md` — append an era entry after "Issue 67: migrate deprecated כו״ק
+   call sites", and move that entry's "— current" marker onto the new one.
+
+Mandatory before committing:
+
+```bash
+.venv/Scripts/python.exe -m black py/ws/ws_bot_edit_sigil_b2_to_t451.py py/ws/ws_bot_edit.py py/tests/test_ws_bot_sigil_b2_to_t451.py py/tests/test_sigil_b2_not_a_sigil_anywhere.py
+```
+
+## Phase 2 — rehearse locally, no live edit
+
+```bash
+.venv/Scripts/python.exe py/main_ws_bot.py proto --edits in/mam-ws-bot-edits/sigil-b2-to-t451.json --book39 Daniel
+```
+
+That rewrites two **git-tracked** artifacts, `out/mam-ws-bot/proto/F1-Daniel.json` and
+`out/mam-ws-bot/proto-fmt-2/F1-Daniel.json`, so the tracked diff is the evidence. Expect exactly 32
+changed sigils and nothing else: the proto roundtrip through fmt-2 is currently faithful for Daniel
+(the sigil line numbers in `out/mam-ws-bot/proto/F1-Daniel.json` match `in/mam-ws/F1-Daniel.json`
+exactly), so any other difference in that diff is a finding.
+
+Pass `--book39 Daniel` and never a bare `proto` — a bare run rewrites all 39 books' proto outputs,
+and a full-corpus diff would bury the 32 lines that matter.
+
+Commit Phases 1 and 2 together, with the proto diff as the demonstration. Push. The new lint test
+is expected red at this point; say so in the commit message rather than letting a later session
+discover it.
+
+## Phase 3 — the live Wikisource edit (Ben's step)
+
+Six pages change, all of them `/טעמים` subpages of Daniel chapters 7 through 12. The other six
+Daniel chapters are visited and pass through unchanged, so nothing is saved for them.
+
+First, if `C:\Users\BenDe\.pywikibot\` is still absent, set it up per `py/ws/pywikibot-setup.md`:
+copy `py/ws/pywikibot-user-config.py` to `user-config.py`, and create `password.py` holding
+`("BDencklaBot", "<password>")`.
+
+The dry run is **expected to fail**, listing exactly those six chapters, because `--no-save` treats
+"a chapter would change" as an error. That failure is the pre-flight result, not a problem:
+
+```bash
+.venv\Scripts\python.exe py\main_ws_bot.py real --edits in/mam-ws-bot-edits/sigil-b2-to-t451.json -dir:$env:USERPROFILE/.pywikibot --book39 Daniel --no-save
+```
+
+The live run:
+
+```bash
+.venv\Scripts\python.exe py\main_ws_bot.py real --edits in/mam-ws-bot-edits/sigil-b2-to-t451.json -dir:$env:USERPROFILE/.pywikibot --book39 Daniel
+```
+
+It writes run artifacts under `.novc/mam-ws-bot-real-runs/<timestamp>/`, including
+`misc/modified-chapter-diffs.md` — the six Wikisource diff links, which Phase 7 wants — and
+`misc/warnings.json`. By default it then re-downloads the six modified chapters into
+`in/mam-ws/F1-Daniel.json` and reparses Daniel; do **not** pass `--no-post-download`.
+
+While on Wikisource, also check whether any non-book page uses ב2 as a sigil. The bot only visits
+book chapters, so an appendix or introduction use would be left dangling. Fetch the appendices
+verbatim, save the file, and grep the saved file — do not use a summarizing fetch, which on
+2026-08-06 merged two neighbouring entries and reported a gloss that was not there. The URL is the
+appendices title with `&action=raw`, about 144,000 characters; `doc/sigil-decoding.md`'s "Source
+Hierarchy" section carries the title and the same warning. That document records that the appendix
+has an entry for ת451 (as `כתי"ת451`) and **none at all** for ב2 as of 2026-08-06, so the expected
+result is that nothing needs adding there. A different result is a finding for #259.
+
+Commit the refreshed `in/mam-ws/F1-Daniel.json` and the regenerated
+`out/mam-ws-parsed-fmt-2/F1-Daniel.json`. Push.
+
+## Phase 4 — emit the Google-Sheet auto-edits
+
+```bash
+.venv/Scripts/python.exe py/main_diff.py wsgo
+```
+
+Wikisource and the Sheet now disagree, so `out/diff_mamws_mamgo.json` and
+`out/diff_mamws_mamgo-auto-edits.json` go from `[]` to Daniel entries. Each auto-edit should be
+column `E` (verse-body), tab `כתובים אחרונים`, its `search_str` naming ב2 and its `replace_str`
+naming ת451.
+
+Read the file rather than trusting the count. `py/diff_wsgo/wsgo_auto_edits.py` merges a search
+string that is not unique within its cell into its neighbour, and falls back to a whole-cell
+replacement — printing "Reverting to whole Wikitext sequence as diff" — when it cannot make the set
+apply cleanly. So an entry count above or below 32 can be legitimate; what must hold is that
+applying the set to the Sheet's text reproduces Wikisource's, which is what that module already
+asserts before returning.
+
+Commit and push both files. The Google Apps Script fetches the auto-edits file from GitHub, so an
+unpushed commit is a broken step, not merely an untidy one.
+
+## Phase 5 — the Sheet round trip (Ben's step) and regeneration
+
+Steps 4 through 6 of `doc/process-documentation/auto-edits-process.md` happen inside the MAM Google
+Sheet and cannot be done from a checkout: open the Sheet, run "Import auto-edits from GitHub", then
+run "Apply imported auto-edits". Then, back in `MAM-basics`:
+
+```bash
+.venv/Scripts/python.exe py/main_download.py fr-google
+```
+
+Expect `in/mam-go/F-KetAx.csv` to lose its 32 sigils, and MAM-parsed's `plain/F1-Daniel.json` and
+`plus/F1-Daniel.json` to follow. Then confirm the loop closes — both wsgo outputs must return to
+`[]`:
+
+```bash
+.venv/Scripts/python.exe py/main_diff.py wsgo
+```
+
+Then rebuild everything downstream of MAM-parsed:
+
+```bash
+.venv/Scripts/python.exe py/main_0_mega.py
+```
+
+and, separately, the one tracked sigil artifact the mega does not regenerate:
+
+```bash
+.venv/Scripts/python.exe py/main_sigil_inventory.py
+```
+
+That second command is needed because `py/main_sigil_inventory.py` is absent from
+`main_0_mega.py`'s `_STEPS` list, so `out/sigil-inventory.json` goes stale unless it is run by
+hand — the same gap the mega's own comments describe having closed for eight other artifacts on
+2026-08-04. A separate task was spawned for that on 2026-08-27 to add the step; if it has landed by
+the time this phase runs, the mega covers it and the second command is a no-op. Run it anyway and
+check.
+
+Then commit in each repo that moved, and push each one.
+
+## Phase 6 — correct the two documents that now assert the opposite
+
+Load the `hebrew-prose` skill first.
+
+In `doc/sigil-decoding.md`, four places. Search for the anchors quoted below rather than for line
+numbers, which will have drifted:
+
+1. The ת451 row of "Manuscript Sigla" (anchor: `formerly Meir Benayahu Ms T 451`). Its Notes cell
+   currently ends *"This bears on the ב2 question below: the appendix has an entry for ת451 and
+   none at all for ב2."* Replace that sentence with the resolution, and with the reason the
+   appendix is silent: ב2 was an abandoned sigil for this same manuscript, so it was never given
+   an entry of its own.
+2. The `### ב2` section. **Keep the heading** — the "2026-08-26 run" subsection further down cites
+   ב2 as one of three sigils documented under a `###` heading rather than in a table, and that
+   citation has to keep resolving. Rewrite the body: `skadish1`'s own account of the two sigils,
+   the dates he gave it, the replacement, and **why this file's earlier inference was wrong**. The
+   negative evidence was that Daniel carries separate `ק-מ,ת451` and `ב1,ק-מ,ת451` expressions,
+   and an incomplete rename explains that exactly as well as two distinct manuscripts would.
+   State that plainly: the file reasoned carefully from local corpus evidence to a conclusion the
+   editor's own testimony overturned, which is a standing lesson about the limits of
+   corpus-internal inference.
+3. The "Current Inventory-Derived Target Set" table (anchor: `| Form | Priority |`). Its single row
+   is ב2, so with ב2 resolved the table has no rows left. Do not leave an empty table and do not
+   silently delete the section: say that the target set is now empty, and note that the
+   neighbouring subsection's "Until 2026-08-06 the table above listed ב2 alone, which read as 'one
+   sigil left to decode'" is a warning against exactly the complacency an empty table invites.
+4. Add a short "Retired sigla" note under "Confirmed Items", recording that ב2 means ת451 in any
+   pre-replacement text. The sigil survives in Wikisource page history, in MAM's Sefaria and
+   Accordance derivatives until those refresh, and in this repo's own git history, so a reader
+   meeting it still needs to be able to decode it. Give the count, the six Daniel chapters, and
+   the date.
+
+In `..\MAM-with-doc\gh-pages\sigil-decoding.html`, one place: the table row whose first cell is
+`<bdi lang="hbo">ב2</bdi>`. Rewrite that row — the meaning becomes ת451, the status becomes
+Confirmed, and the Notes cell records that the corpus was repointed and that the old sigil may
+still be met in older text. **That page is hand-maintained, not generated**: its own workflow note
+at the top says so and asks that edits merge into the current HTML rather than replace it
+wholesale, so edit the row in place and keep the existing `<bdi lang="hbo">` and `class="nowrap"`
+conventions.
+
+Out of scope, recorded so it is not mistaken for an oversight: that HTML page still cites
+MAM-with-doc issues 6 and 8, which the 2026-08-26 transfer turned into MAM-basics #257 and #259.
+Both resolve through GitHub's transfer redirect, and repointing them belongs to #259's
+documentation pass.
+
+## Phase 7 — the trackers
+
+1. Comment on #260 with the six Wikisource diff links from `misc/modified-chapter-diffs.md`, the
+   count, and the corrected reasoning; then close it. Cite repo files as blob/main markdown links,
+   not bare backticked paths.
+2. Comment on #259 that its ב2 bullet is resolved by replacement rather than by documentation, and
+   that the remaining eight sigils of its first candidate batch are untouched by this work.
+3. Leave #257 alone unless the workstream's scope picture changed. `doc/sigil-decoding.md`'s own
+   Maintenance Notes ask that per-sigil changes not be mirrored into the umbrella.
+
+## Verification
+
+1. `.venv/Scripts/python.exe py/main_test.py -q` green, above the 941 baseline by however many test
+   functions the two new files hold. Re-measure rather than predicting the number.
+2. `py/tests/test_sigil_b2_not_a_sigil_anywhere.py` passes — zero sigil-shaped ב2 under
+   `in/mam-ws/` and `in/mam-go/`, with all 216 aliyah parameters still present.
+3. `.venv/Scripts/python.exe py/main_diff.py wsgo` leaves both outputs `[]`.
+4. `out/sigil-inventory.json` has no ב2 entry, and its ת451 count has risen by 32.
+5. Read one repointed note end to end on the published page. Daniel 8:2's prose said
+   `וכמו כן בכתבי־היד התימנים (ק-מ,ב1,ב2)` and should now name ת451 in that list while still
+   reading as a coherent Hebrew sentence. Hand Ben a `file:///` link to
+   `C:/Users/BenDe/GitRepos/MAM-with-doc/gh-pages/F1-Daniel.html` and verify the content with the
+   Read tool; do not open a browser.
+6. `black --check` and `ruff check py` clean on the files touched.
+
+## What is NOT expected to change
+
+Anything in this list moving is a finding, not noise:
+
+1. The 216 aliyah `ב2=` parameters, in `in/mam-ws/A*.json`, `in/mam-go/A-Torah.csv`, MAM-parsed's
+   Torah `plain/` and `plus/`, and every `out/` serialization of the Torah.
+2. `py/author_misc/he_ws_intro_to_mam_pasleg.mediawiki` and its `_footnotes.py` — verse references,
+   not sigils.
+3. `py/tmpl_survey/column_d_0_store_the_mpasuq_call.py` and its `_plus.py` twin.
+4. Any book but Daniel, in any repo. MAM-simple, MAM-OSIS and MAM-for-Sefaria carry no ב2 at all
+   and should stay at zero; if a mega run moves them, it moved them for some other reason.
+5. Daniel chapters 1 through 6, on Wikisource and locally — the five existing ת451 occurrences in
+   chapters ג, ה and ו included.
+
+Two further notes on scope.
+
+**No Unicode normalization is involved and none may be introduced.** Both sigils are a plain Hebrew
+letter followed by ASCII digits, with no combining marks, so nothing here goes near
+`unicodedata.normalize`, which `CLAUDE.md` forbids over Hebrew outright.
+
+**The replacement is strictly in place.** So `ש1,ק-מ,ב1,ב2` becomes `ש1,ק-מ,ב1,ת451`, which leaves
+ת451 mid-list in the 15 cases where another sigil follows, whereas Daniel's five existing ת451
+expressions happen to put it last. MAM's authority lists are not consistently ordered anyway
+(`ש1,ק-מ,…` and `ק-מ,ש1,…` both occur), and repositioning a sigil would be an editorial change
+`skadish1` did not ask for.
