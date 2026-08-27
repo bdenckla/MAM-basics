@@ -23,15 +23,15 @@ Maintain here:
 - the current backlog of unresolved forms
 - workflow notes that directly govern decoder maintenance
 
-MAM-with-doc#6, "Decode sigils", remains useful, but in a different role. It should track why this workstream exists, what broader translation questions it connects to, and what larger milestones or open decisions still need attention.
+#257, "Decode sigils", remains useful, but in a different role. It should track why this workstream exists, what broader translation questions it connects to, and what larger milestones or open decisions still need attention.
 
-**The repo qualifier on that citation is not decoration.** All five references to it in this file said a bare "issue 6" until 2026-08-26, and a bare `#NN` read in this repo means a MAM-basics issue — where #6 is "Try to merge functionality of `main_osis*.py`", created and closed on 2026-03-10, a month before `6d101a1` (2026-04-07) named the umbrella tracker here. So the obvious lookup landed on an unrelated closed issue, which is exactly what happened on 2026-08-26 to a pass that had been told to comment there. The umbrella tracker was three and a half hours old when `6d101a1` cited it: MAM-with-doc#6 was created 2026-04-07 13:24 EDT and the commit is 17:07 EDT the same day.
+**That citation has now had three forms, and the current form is the bare number.** All five references to the umbrella issue in this file said a bare "issue 6" until 2026-08-26, and a bare `#NN` read in this repo means a MAM-basics issue — where #6 is "Try to merge functionality of `main_osis*.py`", created and closed on 2026-03-10. The obvious lookup therefore landed on an unrelated closed issue, which is exactly what happened on 2026-08-26 to a pass that had been told to comment there; `e624139` (18:27 that evening) qualified all five references as `MAM-with-doc#6`. The qualified form was the right one for 34 minutes: at 19:01 the same evening Ben transferred the issue into MAM-basics — part of the consolidation that moved all 27 open issues of five public trackers here as #234–#260, recorded in CLAUDE.md's "Five issue trackers" section — and it is now **#257**, still "Decode sigils" and still open. So the home form is a bare `#257`, which this file's references were repointed onto on 2026-08-27 (Ben's decision). The old `MAM-with-doc#6` form still resolves through GitHub's transfer redirect, so immutable records that say it — `e624139`'s message among them — still land on the issue. The umbrella tracker was three and a half hours old when `6d101a1` (2026-04-07) first cited it here: the issue was created 2026-04-07 13:24 EDT and the commit is 17:07 EDT the same day.
 
 Redundancy is acceptable when it is deliberate:
 
-- MAM-with-doc#6 may repeat the names of important source families and major current conclusions
+- #257 may repeat the names of important source families and major current conclusions
 - this file should hold the detailed and actively maintained version
-- if MAM-with-doc#6 and this file ever drift, treat this file as the current decoder authority and then repair the issue summary
+- if #257 and this file ever drift, treat this file as the current decoder authority and then repair the issue summary
 
 ## Scope
 
@@ -555,6 +555,6 @@ Current inclination recorded for experimentation:
 - Update this file when a new sigil or abbreviation is discovered in the corpus.
 - When adding an item, record the source that supports it.
 - If two sources conflict, add both and mark the item as conflicting.
-- Update MAM-with-doc#6 when the workstream scope, milestone picture, or major source landscape changes.
-- Do not mirror every per-sigil change into MAM-with-doc#6; reserve issue updates for summary-level changes that matter outside this file.
+- Update #257 when the workstream scope, milestone picture, or major source landscape changes.
+- Do not mirror every per-sigil change into #257; reserve issue updates for summary-level changes that matter outside this file.
 - Avoid silently changing a status from provisional to confirmed without adding the supporting source.

@@ -224,6 +224,37 @@ holman-ketiv-qere's move disposed of have no counterpart here. **Two moves of ve
 sizes have now confirmed the same thing: how many citations a move owes is a function of what its
 code talks about, never of how many files it is.**
 
+**Five more public trackers were emptied into this one on 2026-08-26, by transfer, and this
+section keeps its "Five" name anyway.** Between 18:50 and 19:01 local that evening, Ben
+transferred all 27 open issues of five public trackers into MAM-basics, where they are
+**#234–#260**: codex-index-cam1753 2 (#234–#235), MAM-simple 2 (#236–#237), codex-index-aleppo 6
+(#238–#243), MAM-parsed 8 (#244–#251), MAM-with-doc 9 (#252–#260) — re-derived 2026-08-27 from
+the GitHub GraphQL timeline (`TransferredEvent.fromRepository`), all 27 open here that day. A
+transferred issue is a MAM-basics issue: its home citation is a bare `#NN`, and the old qualified
+form still resolves through GitHub's transfer redirect (Ben observed this during the 2026-08-26
+review), so an old-form citation is stale-but-working rather than broken. The first repointing is
+done: `doc/sigil-decoding.md` carried `MAM-with-doc#6` at six sites — five citations of its
+umbrella issue plus the paragraph justifying their qualifier, all six qualified by `e624139` at
+18:27 that same evening, 34 minutes before the transfer — and since 2026-08-27 it cites the issue
+as **#257**, its number here (Ben's decision), the justifying paragraph now carrying the
+citation's three forms instead. `e624139`'s message, "MAM-with-doc becomes the sixth tracker
+cited from this repo", is immutable and stays as the record of those 34 minutes.
+
+**The five source trackers hold closed issues only now** — MAM-with-doc 1, MAM-parsed 12,
+MAM-simple 2, codex-index-aleppo 21, codex-index-cam1753 10, 0 open each, measured 2026-08-27 —
+and no new issue is filed in any of them: a new public-side issue goes to MAM-basics, and the
+private half of that doctrine is recorded at MAM-private `9dfe424` (2026-08-26), new issues to
+MAM-private or MAM-basics and nowhere else. A citation of one of those closed issues takes the
+repo prefix like every cross-tracker citation in this section — `MAM-parsed#NN`,
+`codex-index-aleppo#NN` — and every number in all five closed sets collides with a MAM-basics
+number, so the prefix is as non-decorative there as anywhere. **The count in the section's name
+stays at five** because the five it counts are unchanged — MAM-basics itself, then wlc-utils,
+UXLC-utils, holman-ketiv-qere and book-of-job, whose issues stay put and are still read,
+commented on and closed where they are. The newly emptied five are a consolidation record inside
+the section, not a sixth through tenth count; settled 2026-08-27, Ben having deferred the
+framing, and recorded here so a rename is not re-proposed. Finding 2 of
+`doc/review-findings-2026-08-26.md` is the fuller record of the transfer evening.
+
 **This section has had four names.** It was "Two issue trackers" until 2026-08-18, "Three issue
 trackers" for part of that same day, "Four issue trackers" from later that day until 2026-08-22,
 and "Five issue trackers" since. **Ten sentences across four plans still cite it under one of the
