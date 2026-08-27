@@ -16,7 +16,7 @@ is a chain with two hand-offs built into it, not a plan a single session runs st
 | 2 — local proto rehearsal | **DONE 2026-08-27**, same commit. **FOUR** tracked artifacts moved, not the two predicted; the two book files' diffs are the 32 replacements and nothing else, proven byte for byte |
 | 3 — the live Wikisource edit | **DONE 2026-08-27 12:23–12:24 local**, `a31d0ec`. Six pages saved, the six diff links in the execution record below. The refreshed download matches the Phase 2 rehearsal byte for byte in all twelve chapters. The appendices check found what it expected: no ב2 there at all |
 | 4 — emit the Google-Sheet auto-edits | **DONE 2026-08-27**, `1aa95ff`, pushed. **32 auto-edits**, one per sigil — no neighbour-merge and no whole-cell fallback. Both wsgo outputs went `[]` → 32 Daniel entries |
-| 5 — the Sheet round trip, then regenerate | **NOT STARTED. PARTLY BEN'S STEP** — the two Apps Script runs are in the Sheet's own UI |
+| 5 — the Sheet round trip, then regenerate | **DONE 2026-08-27.** Ben ran the two Apps Script items; `8fe3dff` here, `46209cd` in MAM-parsed, `c4dd986` in MAM-with-doc, all pushed. **The lint is GREEN — this plan's completion criterion is met.** Both wsgo outputs back to `[]` |
 | 6 — correct the two sigil documents | **NOT STARTED.** Both currently assert the opposite conclusion |
 | 7 — the trackers | **NOT STARTED** |
 
@@ -437,6 +437,65 @@ the time this phase runs, the mega covers it and the second command is a no-op. 
 check.
 
 Then commit in each repo that moved, and push each one.
+
+## Phase 5 — execution record, 2026-08-27
+
+Ben ran the Sheet's two Apps Script items; this session ran the four commands and verified.
+Commits: `8fe3dff` here, `46209cd` in MAM-parsed, `c4dd986` in MAM-with-doc, all pushed.
+
+**`py/tests/test_sigil_b2_not_a_sigil_anywhere.py` is GREEN, so this plan's completion criterion
+is met.** ב2 survives nowhere under `in/mam-ws/` or `in/mam-go/` except as the Torah's 216 aliyah
+parameters. Its trajectory across the phases is the clearest summary of what happened: **64** when
+`52aa7b8` committed it red, **32** after the Wikisource edit of `a31d0ec`, **0** now.
+
+**This is the phase where anything published actually moved**, the point the Context section makes
+about `parse-go`. `in/mam-go/F-KetAx.csv` went ב2 32 → 0 and ת451 6 → 38; MAM-parsed's
+`plain/F1-Daniel.json` and `plus/F1-Daniel.json` followed to 0 and 37. `in/mam-go/A-Torah.csv`
+still holds all **216** aliyah `ב2=` parameters, which is the check worth stating rather than
+assuming — it is what a global replace would have destroyed.
+
+Both wsgo outputs return to `[]`, so the loop closes and `1aa95ff`'s 32 auto-edits have done their
+work.
+
+**Two artifacts moved for reasons that are not the replacement, and both are benign.**
+`out/mam-ws-bot/proto-misc/modified-chapters.json` returns to `[]` because `main_0_mega.py` runs
+the proto bot with no edit spec, so its transform is the identity and it records no modified
+chapters; the proto book outputs are unchanged, their input being already repointed, and only the
+run metadata resets. `out/explicit-xataf-extras.json` went ב2 2 → 0 and ת451 0 → 2, the sigil swap
+alone explaining its whole diff.
+
+**`out/sigil-inventory.json` bears on verification item 4 below, which needs one word added.** ב2
+is gone from all three sections — expressions, expression_tokens and prose_tokens, zero items
+containing it anywhere. ת451 rises 6 → 33 in expression_tokens and 10 → 42 in **prose_tokens**, and
+prose_tokens is where the predicted rise of exactly 32 holds. The expression_tokens rise is 27; the
+five sites between the two figures are the ones whose surrounding punctuation keeps them out of the
+expression tokenizer — the parenthesized `ב2(ית' י')`, the bracketed `ב2?[…]`, and the one followed
+by `=`. Header counts move with them: `distinct_expression_tokens` 2371 → 2370 and
+`distinct_prose_tokens` 678 → 677, while `distinct_expressions` holds at 1721, no repointed
+expression having collided with an existing ת451 one.
+
+**`py/main_sigil_inventory.py` is now a no-op, so that instruction can be dropped from future
+runs.** `e37b8ad` wired it into the mega earlier the same day, which this plan anticipated as
+possible; re-running it after the mega leaves the artifact byte-identical, checked by hash rather
+than by eye.
+
+Verification item 5 passed. Daniel 8:2's note on the published page now reads
+`ל,ש1,ק13,פטרבורג-EVR-II-B-92=וַיְהִי֙ (אין געיה) וכמו כן בכתבי־היד התימנים (ק-מ,ב1,ת451).` — the
+sigil replaced in place, mid-list, and the Hebrew sentence intact. Read with the Read tool off
+`../MAM-with-doc/gh-pages/F1-Daniel.html`, no browser opened.
+
+**MAM-simple, MAM-OSIS and MAM-for-Sefaria did not move**, as "What is NOT expected to change"
+requires: they carry no ב2 at all and stayed at zero.
+
+**A second session was live in this clone throughout, and this is the collision case
+`~/.claude/CLAUDE.md` describes.** It was editing `doc/sigil-decoding.md` for issue #262 and
+committed it as `c691af8`, "Act on Avi's #262 answer: decode the siglum dalet, retire the siglum
+lamed-dalet", between this session's staging and its commit. No collision occurred, because the
+remedy is the cheap one that file already prescribes: stage your own paths **by name**, then check
+that nothing else is pending. **Phase 6 must be planned against `c691af8` rather than against what
+this plan saw on 2026-08-27 morning** — its four anchors are quoted rather than numbered so they
+should still resolve, but the ב2 section now sits beside a freshly written account of another
+retired siglum, and the two accounts should be read together before either is edited.
 
 ## Phase 6 — correct the two documents that now assert the opposite
 
