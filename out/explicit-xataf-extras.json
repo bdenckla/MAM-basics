@@ -484,14 +484,14 @@
     {
       "ref": "Daniel 9:19",
       "target_word": "לְמַֽעַנְךָ֣",
-      "docnote_comment": "=ש1,ק-מ,ב1,ב2,ש2 ובדפוסיםל!=לְמַֽעֲנְךָ֣ (חטף פתח בעי\"ן)הערות ברויאר ודותן",
+      "docnote_comment": "=ש1,ק-מ,ב1,ת451,ש2 ובדפוסיםל!=לְמַֽעֲנְךָ֣ (חטף פתח בעי\"ן)הערות ברויאר ודותן",
       "category": "lc-differs",
       "translation": "LC has ḥataf pataḥ in ayin (MAM has plain pataḥ)."
     },
     {
       "ref": "Daniel 12:2",
       "target_word": "מִיְּשֵׁנֵ֥י",
-      "docnote_comment": "=ל?,ק-מ,ב1,ב2,ש2 ובדפוסים, וכן דעתם של דותן והמקליד לגבי כתי\"ל.ל?=מִיֲּשֵׁנֵ֥י (בחטף פתח?); יש קו מטושטש ומוזר מתחת ליו\"ד בצד שמאל, ולכן סימן ברויאר את החטף בספק.",
+      "docnote_comment": "=ל?,ק-מ,ב1,ת451,ש2 ובדפוסים, וכן דעתם של דותן והמקליד לגבי כתי\"ל.ל?=מִיֲּשֵׁנֵ֥י (בחטף פתח?); יש קו מטושטש ומוזר מתחת ליו\"ד בצד שמאל, ולכן סימן ברויאר את החטף בספק.",
       "category": "uncertain-xataf",
       "translation": "LC may have ḥataf pataḥ in yod. Breuer marked with doubt — smudged, odd line under yod."
     },
