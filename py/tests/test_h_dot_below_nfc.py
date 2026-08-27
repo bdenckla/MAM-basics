@@ -162,8 +162,13 @@ _EXCLUDE_FILES = {
     "in/accgram/uxlc_accent_changes.json",
 }
 
-# Within in/mam-go/, only the raw Bible-text CSVs are external; the
-# hand-authored template-documentation-tab.csv stays in scope.
+# Within in/mam-go/, every file is a download of the Google Sheet.  The raw
+# Bible-text CSVs were always excluded as external.  template-documentation-tab.csv
+# stayed in scope until 2026-08-26, when the Sheet refresh (d0328d5) brought in
+# five lines whose "h with dot below" is decomposed (h + U+0323) -- "petuhah",
+# "yerah", "etnah", "mitahat" in the Sheet's own template prose.  Ben's decision,
+# 2026-08-26: the Sheet's choice is an expected exception to the NFC rule, not
+# something to chase upstream, so the tab is excluded like the rest of in/mam-go/.
 _EXCLUDE_MAM_GO_FILES = {
     "in/mam-go/A-Torah.csv",
     "in/mam-go/B-NevRish.csv",
@@ -171,6 +176,7 @@ _EXCLUDE_MAM_GO_FILES = {
     "in/mam-go/D-SifEm.csv",
     "in/mam-go/E-XamMeg.csv",
     "in/mam-go/F-KetAx.csv",
+    "in/mam-go/template-documentation-tab.csv",
 }
 
 # External/generated directory prefixes: out/ (generated) and external
