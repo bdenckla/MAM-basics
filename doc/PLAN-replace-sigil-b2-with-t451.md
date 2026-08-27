@@ -14,7 +14,7 @@ is a chain with two hand-offs built into it, not a plan a single session runs st
 |---|---|
 | 1 — the bot edit | **DONE 2026-08-27**, `52aa7b8`. Six files as specified. Suite **951 passed, 5 skipped, 59 subtests** before, **965 passed, 1 failed, 5 skipped, 65 subtests** after. The one failure is the new lint test, by design; the 15 added test functions are 13 in the payload test and 2 in the lint, and the 6 added subtests are the six real Daniel chapters |
 | 2 — local proto rehearsal | **DONE 2026-08-27**, same commit. **FOUR** tracked artifacts moved, not the two predicted; the two book files' diffs are the 32 replacements and nothing else, proven byte for byte |
-| 3 — the live Wikisource edit | **NOT STARTED. BEN'S STEP** — needs `~\.pywikibot\`, which was absent 2026-08-27 |
+| 3 — the live Wikisource edit | **DONE 2026-08-27 12:23–12:24 local**, `a31d0ec`. Six pages saved, the six diff links in the execution record below. The refreshed download matches the Phase 2 rehearsal byte for byte in all twelve chapters. The appendices check found what it expected: no ב2 there at all |
 | 4 — emit the Google-Sheet auto-edits | **NOT STARTED.** Both wsgo outputs go from `[]` to Daniel entries; must be pushed, not merely committed |
 | 5 — the Sheet round trip, then regenerate | **NOT STARTED. PARTLY BEN'S STEP** — the two Apps Script runs are in the Sheet's own UI |
 | 6 — correct the two sigil documents | **NOT STARTED.** Both currently assert the opposite conclusion |
@@ -300,6 +300,56 @@ result is that nothing needs adding there. A different result is a finding for #
 
 Commit the refreshed `in/mam-ws/F1-Daniel.json` and the regenerated
 `out/mam-ws-parsed-fmt-2/F1-Daniel.json`. Push.
+
+## Phase 3 — execution record, 2026-08-27
+
+Ben ran both commands in his integrated terminal; this session verified the results. Run
+artifacts are under `.novc/mam-ws-bot-real-runs/20260827-121725-669570` (the dry run) and
+`.novc/mam-ws-bot-real-runs/20260827-122332-348995` (the live run).
+
+**The dry run failed exactly as this plan predicted, naming those six chapters and no others.**
+It visited all twelve, so the six that pass through unchanged were exercised too. Its
+`misc/warnings.json` recorded 17, 2, 3, 3, 6 and 1 against text fetched from the live wiki, which
+is the count table confirmed against Wikisource rather than against the local snapshot. Its
+post-transform text was then compared chapter by chapter against
+`out/mam-ws-bot/proto/F1-Daniel.json`: **identical in all twelve**, so the live pages had not
+drifted from the snapshot and the save was known in advance to produce what Phase 2 had already
+committed.
+
+**The six pages, with the diff links Phase 7 wants** (they are `misc/modified-chapter-diffs.md`
+of the live run, kept here because `.novc/` is not tracked):
+
+| Chapter | Page | Diff |
+|---|---|---|
+| 7 | דניאל ז/טעמים | [oldid 2988419](https://he.wikisource.org/w/index.php?title=%D7%93%D7%A0%D7%99%D7%90%D7%9C_%D7%96%2F%D7%98%D7%A2%D7%9E%D7%99%D7%9D&diff=next&oldid=2988419) |
+| 8 | דניאל ח/טעמים | [oldid 2988420](https://he.wikisource.org/w/index.php?title=%D7%93%D7%A0%D7%99%D7%90%D7%9C_%D7%97%2F%D7%98%D7%A2%D7%9E%D7%99%D7%9D&diff=next&oldid=2988420) |
+| 9 | דניאל ט/טעמים | [oldid 2988421](https://he.wikisource.org/w/index.php?title=%D7%93%D7%A0%D7%99%D7%90%D7%9C_%D7%98%2F%D7%98%D7%A2%D7%9E%D7%99%D7%9D&diff=next&oldid=2988421) |
+| 10 | דניאל י/טעמים | [oldid 2988422](https://he.wikisource.org/w/index.php?title=%D7%93%D7%A0%D7%99%D7%90%D7%9C_%D7%99%2F%D7%98%D7%A2%D7%9E%D7%99%D7%9D&diff=next&oldid=2988422) |
+| 11 | דניאל יא/טעמים | [oldid 3008060](https://he.wikisource.org/w/index.php?title=%D7%93%D7%A0%D7%99%D7%90%D7%9C_%D7%99%D7%90%2F%D7%98%D7%A2%D7%9E%D7%99%D7%9D&diff=next&oldid=3008060) |
+| 12 | דניאל יב/טעמים | [oldid 2988424](https://he.wikisource.org/w/index.php?title=%D7%93%D7%A0%D7%99%D7%90%D7%9C_%D7%99%D7%91%2F%D7%98%D7%A2%D7%9E%D7%99%D7%9D&diff=next&oldid=2988424) |
+
+**Page titles use a space, not a slash, between book and chapter** — `דניאל ז/טעמים`, url-encoded
+with an underscore. Recorded because this session twice wrote them as `דניאל/ז/טעמים` before the
+dry run's own output corrected it.
+
+The post-download and reparse ran as intended, since `--no-post-download` was not passed, and moved
+exactly the two files this plan named. The refreshed `in/mam-ws/F1-Daniel.json` matches the Phase 2
+rehearsal in **all twelve chapters**, and both it and the reparsed
+`out/mam-ws-parsed-fmt-2/F1-Daniel.json` now hold **ב2 at 0 and ת451 at 37** — the 5 that were
+already in chapters ג, ה and ו, plus the 32 replaced. So the Wikisource round trip introduced
+nothing of its own.
+
+**The appendices check came out as this plan expected, so there is no finding for #259.** The
+wikitext was fetched verbatim with `action=raw` and saved before being searched, per the warning in
+`doc/sigil-decoding.md` about the 2026-08-06 summarizing fetch — 145,802 characters over 559 lines.
+It holds **no ב2 at all**, so the bot left nothing dangling on a page it does not visit, and **two
+occurrences of ת451**, both spelled `כתי"ת451`, at lines 94 and 163. The second corroborates the
+editor's own account independently: it glosses the manuscript as
+`ספריה לא ידועה, לשעבר כת"י מאיר בניהו T 451` — unknown library, formerly Meir Benayahu Ms. T 451.
+
+**The Google Sheet is untouched, as it must be at this stage**: `in/mam-go/F-KetAx.csv` still holds
+its own 32 occurrences of ב2. That is what Phases 4 and 5 exist to fix, and it is why the Phase 1
+lint stays red — it now reports 32 rather than 64, the Wikisource half having gone.
 
 ## Phase 4 — emit the Google-Sheet auto-edits
 
