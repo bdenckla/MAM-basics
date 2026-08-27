@@ -405,8 +405,29 @@ def run_check_memory_health_across_repos(
     *,
     report_json: Path | None,
     report_txt: Path | None,
+    resolution_repo_dirs: list[Path] | None = None,
 ) -> list[dict]:
-    repo_dirs = [info.path for info in repo_infos]
+    """Check the memory directory of each repo in ``repo_infos``.
+
+    ``resolution_repo_dirs`` is the universe a cited path is resolved against,
+    and it is deliberately a SEPARATE argument from the repos being reported on.
+    Every other sweep here is per-repo, so narrowing the selection narrows only
+    what is reported; this one is not, because ``_check_cited_paths`` calls a
+    citation stale when it resolves in no swept repo. Narrow the selection and
+    the universe narrows with it, so a citation that resolves perfectly well in
+    an unswept repo is reported as resolving nowhere.
+
+    Measured 2026-08-27, when --visibility was added: MAM-private's STALE_PATHS
+    read 14 over all 19 repos and 19 over the 3 private ones, the five extra
+    being citations that resolve in MAM-basics. Both numbers came from the same
+    unchanged memory files. Passing the full workspace here keeps the two runs
+    agreeing, which is what makes a split report comparable to an unsplit one.
+    """
+    repo_dirs = (
+        list(resolution_repo_dirs)
+        if resolution_repo_dirs is not None
+        else [info.path for info in repo_infos]
+    )
     results: list[dict] = []
 
     for repo_info in repo_infos:

@@ -13,6 +13,19 @@ Usage examples:
 handful of repos ``MAM-basics.code-workspace`` lists, and is worth spelling out for
 ``--clean-worktrees``: the repos most in need of it are the ones with no Python and
 so no maintenance script of their own (see ``repo_util/clean_worktrees.py``).
+
+Three of the repos that file lists are private, so a sweep over all of them
+produces findings that must not land in this public repo's tracked tree.
+``--visibility`` splits the sweep, and is the intended shape of a full round of
+maintenance -- two runs of each read-only action rather than one:
+
+    ... --check-repo-standards --visibility public  --report-txt .novc/standards-public.txt
+    ... --check-repo-standards --visibility private --report-txt ^
+        C:\\Users\\BenDe\\GitRepos\\MAM-private\\.novc\\standards-private.txt
+
+The default is ``all``, which still sweeps everything; what the default cannot do
+is write its report into a file this repo tracks. See
+``repo_util/report_destination.py`` for what is refused and why.
 """
 
 from __future__ import annotations
@@ -31,7 +44,8 @@ from repo_util.clean_worktrees import (
 )
 from repo_util.commit_across_repos import run_commit_across_repos
 from repo_util import maintenance_policy
-from repo_util.repo_selection import select_repo_infos
+from repo_util.report_destination import assert_report_destination_ok
+from repo_util.repo_selection import load_workspace_repo_dirs, select_repo_infos
 from repo_util.run_black import problem_repos, run_black_across_repos
 
 REPO_ROOT = paths.repo_root()
@@ -67,6 +81,16 @@ def build_parser() -> argparse.ArgumentParser:
         "--today-only",
         action="store_true",
         help="Keep only repos whose HEAD committer local date is today",
+    )
+    parser.add_argument(
+        "--visibility",
+        choices=("all", "public", "private"),
+        default="all",
+        help=(
+            "Keep only repos of this visibility, per in/repo_maintenance_policy.json."
+            " Use it to split a report in two so the private half never reaches this"
+            " public repo's tree (default: all)"
+        ),
     )
 
     parser.add_argument(
@@ -180,6 +204,28 @@ def _validate_action_specific_args(
         parser.error("--and-push only applies to --commit-across-repos")
 
 
+def _filter_by_visibility(repo_infos, visibility: str):
+    """Keep the repos of the requested visibility, failing loudly on an unclassified one.
+
+    A repo missing from in/repo_maintenance_policy.json's repo_visibility map is
+    an error rather than a default, because both plausible defaults are wrong:
+    treating it as public would let its findings through the guard, and treating
+    it as private would silently drop it from the public half of every report.
+    py/tests/test_repo_visibility_declared.py catches this before a sweep does.
+    """
+    if visibility == "all":
+        return repo_infos
+    declared = maintenance_policy.repo_visibility()
+    unclassified = sorted(info.name for info in repo_infos if info.name not in declared)
+    if unclassified:
+        raise KeyError(
+            "Repo(s) with no visibility declared in in/repo_maintenance_policy.json:"
+            f" {', '.join(unclassified)}. Add an entry for each before using"
+            " --visibility."
+        )
+    return [info for info in repo_infos if declared[info.name] == visibility]
+
+
 def main(argv: Sequence[str] | None = None) -> int:
     parser = build_parser()
     args = parser.parse_args(argv)
@@ -198,12 +244,34 @@ def main(argv: Sequence[str] | None = None) -> int:
         repos=args.repos,
         today_only=args.today_only,
     )
+    # Kept before any filtering, because --check-memory-health resolves a cited
+    # path against the whole workspace rather than against the selection. See
+    # run_check_memory_health_across_repos' docstring for the measured figures.
+    workspace_repo_dirs = load_workspace_repo_dirs(workspace_file, repos_root)
+    repo_infos = _filter_by_visibility(repo_infos, args.visibility)
     if not repo_infos:
-        print("No repos selected after applying workspace/repo/date filters.")
+        print(
+            "No repos selected after applying workspace/repo/date/visibility filters."
+        )
         return 0
 
     report_json = Path(args.report_json).resolve() if args.report_json else None
     report_txt = Path(args.report_txt).resolve() if args.report_txt else None
+
+    # Before any sweep runs, not after: a refusal that arrives once the findings
+    # are already gathered still tempts whoever sees it to paste them somewhere.
+    private = maintenance_policy.private_repos()
+    covered = [info.name for info in repo_infos]
+    for path, option_name in (
+        (report_json, "--report-json"),
+        (report_txt, "--report-txt"),
+    ):
+        assert_report_destination_ok(
+            path,
+            covered_repo_names=covered,
+            private_repo_names=private,
+            option_name=option_name,
+        )
 
     if args.run_black:
         # Kept although it normally matches nothing now: the frozen clones left
@@ -257,6 +325,7 @@ def main(argv: Sequence[str] | None = None) -> int:
             repo_infos,
             report_json=report_json,
             report_txt=report_txt,
+            resolution_repo_dirs=workspace_repo_dirs,
         )
         return 0
 

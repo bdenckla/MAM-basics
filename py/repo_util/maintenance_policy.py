@@ -1,6 +1,6 @@
-"""What repo-maintenance sweeps must leave alone: frozen repos, vendored dirs.
+"""What repo-maintenance sweeps must leave alone, and which repos are private.
 
-Two separate questions, deliberately answered by two separate files:
+Three separate questions, deliberately answered by two separate files:
 
 - Frozen repos come from in/repo_maintenance_policy.json. A frozen repo is a
   paused project whose last-changed date is itself worth preserving, so even a
@@ -11,6 +11,13 @@ Two separate questions, deliberately answered by two separate files:
   source package names. A vendored copy is maintained in its source repo; if it
   arrives non-black-compliant, that is the source's business, and reformatting
   the copy only makes the next vendoring sync noisier.
+
+- Repo visibility comes from in/repo_maintenance_policy.json too, as a second
+  section beside the frozen list. It answers a question the freeze does not:
+  whether a repo's findings may be written into a file this public repo tracks.
+  Frozen and private are unrelated -- MAM-private is private and very much not
+  frozen, and mamgo-auto-edits is frozen and public -- so neither list may be
+  derived from the other, exactly as with the two lists above.
 
 Note that in/vendoring_policy.json also has a per-repo "ignore" flag. That means
 "do not scan this repo for vendoring" and says nothing about whether the repo is
@@ -34,6 +41,32 @@ def frozen_repos(policy_path: Path | None = None) -> dict[str, dict]:
     """Map of repo name to its freeze record."""
     payload = read_json(policy_path or DEFAULT_MAINTENANCE_POLICY)
     return payload["frozen_repos"]
+
+
+def repo_visibility(policy_path: Path | None = None) -> dict[str, str]:
+    """Map of repo name to "public" or "private".
+
+    The "comment" key of the JSON section is prose, not a repo, so it is dropped
+    here rather than left for every caller to remember to skip.
+    """
+    payload = read_json(policy_path or DEFAULT_MAINTENANCE_POLICY)
+    section = payload["repo_visibility"]
+    return {
+        name: record["visibility"]
+        for name, record in section.items()
+        if isinstance(record, dict)
+    }
+
+
+def private_repos(policy_path: Path | None = None) -> list[str]:
+    """Names of the repos whose findings must not reach a public repo's tree."""
+    visibility = repo_visibility(policy_path)
+    return sorted(name for name, kind in visibility.items() if kind == "private")
+
+
+def public_repos(policy_path: Path | None = None) -> list[str]:
+    visibility = repo_visibility(policy_path)
+    return sorted(name for name, kind in visibility.items() if kind == "public")
 
 
 def vendored_package_names(policy_path: Path | None = None) -> list[str]:
