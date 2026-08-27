@@ -18,7 +18,7 @@ is a chain with two hand-offs built into it, not a plan a single session runs st
 | 4 — emit the Google-Sheet auto-edits | **DONE 2026-08-27**, `1aa95ff`, pushed. **32 auto-edits**, one per sigil — no neighbour-merge and no whole-cell fallback. Both wsgo outputs went `[]` → 32 Daniel entries |
 | 5 — the Sheet round trip, then regenerate | **DONE 2026-08-27.** Ben ran the two Apps Script items; `8fe3dff` here, `46209cd` in MAM-parsed, `c4dd986` in MAM-with-doc, all pushed. **The lint is GREEN — this plan's completion criterion is met.** Both wsgo outputs back to `[]` |
 | 6 — correct the two sigil documents | **DONE 2026-08-27**, `f58716e` here and `80f4a3f` in MAM-with-doc. Four places in `doc/sigil-decoding.md` plus one ripple `c691af8` created, and the one hand-maintained row in `MAM-with-doc/gh-pages/sigil-decoding.html` |
-| 7 — the trackers | **NOT STARTED** |
+| 7 — the trackers | **DONE 2026-08-27**, and it has no commit of its own: the work is two issue comments, [#260](https://github.com/bdenckla/MAM-basics/issues/260#issuecomment-5444115880) and [#259](https://github.com/bdenckla/MAM-basics/issues/259#issuecomment-5444122221), both posted 15:20 local, plus the decision to leave #257 alone. #260 had already been closed, as completed, at 11:19 local — four hours before its comment |
 
 ## Context
 
@@ -600,6 +600,66 @@ Worth a separate pass over that page.
    that the remaining eight sigils of its first candidate batch are untouched by this work.
 3. Leave #257 alone unless the workstream's scope picture changed. `doc/sigil-decoding.md`'s own
    Maintenance Notes ask that per-sigil changes not be mirrored into the umbrella.
+
+## Phase 7 — execution record, 2026-08-27
+
+**Items 1 and 2 were carried out at 15:20 local by the session that ran Phases 1 through 6, and
+the one thing it missed was this record.** That session's closing message reported all seven
+phases done "with an execution record in the plan for each", which was true of six of them: the
+status table above still read NOT STARTED for Phase 7 two hours later. This section is therefore
+written by a later session, in the main clone at `93ee8e6`, and item 3 — a decision to do nothing —
+is taken here rather than there.
+
+**Item 1, [#260](https://github.com/bdenckla/MAM-basics/issues/260): the comment is posted and the
+close needed nothing.**
+[issuecomment-5444115880](https://github.com/bdenckla/MAM-basics/issues/260#issuecomment-5444115880)
+carries all six Wikisource diff links, oldid for oldid as the Phase 3 record above gives them; the
+per-chapter counts 17, 2, 3, 3, 6 and 1 with their total of 32; and the corrected reasoning, that
+an incomplete rename explains Daniel's separate `ק-מ,ת451` and `ב1,ק-מ,ת451` exactly as well as two
+distinct manuscripts do. Repo files are cited as blob/main links, as this phase asks. The issue was
+**already closed, as completed, at 11:19 local** — four hours before that comment, and by an action
+the GitHub timeline attributes to `bdenckla` and cannot attribute further, since a `gh` call and a
+click in the web UI produce byte-identical events. So "then close it" had nothing left to do, and
+the comment is what supplied the reason the close itself did not carry. That close is the worked
+case of the "Never change an issue's state without a comment saying why" section added to
+`~/.claude/CLAUDE.md` the same evening.
+
+**Item 2, [#259](https://github.com/bdenckla/MAM-basics/issues/259):**
+[issuecomment-5444122221](https://github.com/bdenckla/MAM-basics/issues/259#issuecomment-5444122221),
+posted 15:20 local. It says the `ב2` bullet is resolved by replacement rather than by
+documentation, so the first candidate batch is eight sigla rather than nine — checked against that
+issue's body, which lists nine with `ב2` last. It also generalizes the appendices result Phase 3
+obtained, and that generalization is the part that matters outside this plan: for a sigil MAM
+abandoned, missing appendix documentation is not a gap to fill on Wikisource but the evidence of
+the abandonment, which cuts against #259's own premise that weak documentation should be improved
+there.
+
+**Item 3, [#257](https://github.com/bdenckla/MAM-basics/issues/257), left alone — the default this
+phase sets, the condition for departing from it not being met.** `doc/sigil-decoding.md`'s
+Maintenance Notes ask that #257 be updated when the workstream scope, milestone picture or major
+source landscape changes, and that per-sigil changes not be mirrored into it; resolving one sigil
+is a per-sigil change. The tempting reading is that the "Current Inventory-Derived Target Set"
+going empty is a milestone-picture change, and that section answers it itself: an empty target set
+is not "nothing left to decode", what would say is the comparison described in the subsection
+below it, and three St Petersburg shelfmarks are named there as still outstanding. #257's comment
+of 2026-08-26 is the summary-level update this workstream has had, and nothing since 2026-08-26
+changes it.
+
+**Neither comment says it is agent-written, and that stands by Ben's decision rather than by
+oversight.** He was offered the two `gh api` PATCH calls that would add the attribution and
+answered *"Just leave them, thanks"* on 2026-08-27, `skadish1` having possibly read them already.
+The `~/.claude/CLAUDE.md` rule applies from there on rather than retroactively.
+
+**State at this record.** All seven repos clean with nothing unpushed: MAM-basics `93ee8e6`,
+MAM-parsed `46209cd`, MAM-with-doc `80f4a3f`, MAM-simple `b3c7a60`, MAM-OSIS `2f783d1`,
+MAM-for-Sefaria `cf19347`, MAM-private `bd71401`. **The last of those is a loose end the Phase 5
+and 6 records could not have carried**: the corpus replacement reached
+`near-aleppo/census/expected/nusach_aleppo_readings.txt` in MAM-private, which was left uncommitted
+when the phases-1-to-6 session ended, then committed and pushed as `bd71401` and verified there by
+re-running `near-aleppo/census/nusach_aleppo_readings.py` and reproducing the file byte for byte.
+No Python is touched by this record, so the suite is not re-run for it — and a second session was
+live in this clone throughout, landing `b4a1211`, `0314c6e` and `93ee8e6` on three unrelated fixes,
+so a suite figure taken now would measure that work rather than this.
 
 ## Verification
 
