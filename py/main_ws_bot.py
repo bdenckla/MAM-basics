@@ -17,6 +17,7 @@ Examples:
 """
 
 import argparse
+import sys
 
 from subcommands import ws_bot_proto
 from subcommands import ws_bot_real
@@ -24,6 +25,12 @@ from ws import ws_download_selector as wsds
 
 
 def main() -> None:
+    # Wikisource page titles are Hebrew, and they reach stderr: a --no-save run
+    # names every chapter that would change. Redirected or piped on Windows,
+    # those streams encode as cp1252 and the report dies of UnicodeEncodeError
+    # instead of being read.
+    sys.stdout.reconfigure(encoding="utf-8")
+    sys.stderr.reconfigure(encoding="utf-8")
     parser = build_parser()
     args, extra_args = parser.parse_known_args()
     if extra_args and not getattr(args, "allow_extra_args", False):
