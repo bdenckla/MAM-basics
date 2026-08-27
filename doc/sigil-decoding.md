@@ -208,10 +208,24 @@ translation-policy glossary.)
 | ש1 | Ms Sassoon 1053 | Confirmed | Accordance header, Wikisource | |
 | ש2 | Ms Sassoon 82 ("Keter Shem Tov") | Confirmed | JC3 sigil list, MAM-with-doc corpus evidence | Often a Sephardic manuscript in prose explanations. |
 | ת | Ms Cambridge Add. 1753, cited as Y in Accordance | Confirmed | Accordance header | The Hebrew sigil is confirmed in the Accordance header, but see the note below about preferred display form. |
-| ת451 | Yemenite Ketuvim manuscript by Joseph ben Benaya, 1484–85; formerly Meir Benayahu Ms T 451, present location unknown | Confirmed | Wikisource | `כתי"ת451` in the appendix. Cited in Daniel beside ק-מ and ב1. This bears on the ב2 question below: the appendix has an entry for ת451 and none at all for ב2. |
+| ת451 | Yemenite Ketuvim manuscript by Joseph ben Benaya, 1484–85; formerly Meir Benayahu Ms T 451, present location unknown | Confirmed | Wikisource | `כתי"ת451` in the appendix. Cited in Daniel beside ק-מ and ב1. **MAM's sigil ב2 named this same manuscript.** Avi Kadish chose ב2 first, for its proximity to ב1, then abandoned it — ב2 is used in the literature for other things, and the manuscript is not in the British Library — and switched to the number the manuscript had when Meir Benayahu held it. So the appendix has an entry for ת451 and none at all for ב2, and could not have had one: it describes the finished edition, and a sigil MAM moved off before publishing does not appear in it. That is the silence item 6 of "Source Hierarchy" above states in general, and `ד` is the other instance of it. The corpus was repointed on 2026-08-27; see "Retired sigla" below and the `ב2` section further down. |
 | ל-א | Ms Petersburg EVR-II-B-55 / B 247 | Confirmed | Wikisource | Newer than the Accordance list. |
 | ק13 | Cairo 13 (Writings), Eastern script, written 1028 by Zechariah ben Anan; complete | Confirmed | Wikisource | The appendix's entry is `כתי"ק13 (כתובים, כתיבה מזרחית מאת זכריה בן ענן, שנת ד' תשפ"ח [1028]); שלם`, and its entry for St Petersburg EVR-II-B-8 calls Zechariah ben Anan "the scribe of כת"י קהיר 13 for the Writings" — so ק13 is a Cairo manuscript, numbered like ק2 (Cairo 27), ק3 (Cairo 18) and ק25 (Cairo 25). Until 2026-08-23 this row said "Ms Cambridge T-S 13", which is also what `py/accgram/ps17v14_mam_doc_notes_body.py` glossed it as on its rendered page `gh-pages/wlc/accgram/ps17v14-mam-doc-notes.html`; that gloss had no source behind it in the appendix, and under this document's weighting Wikisource wins. The page's gloss was changed to "Cairo 13" on 2026-08-23, so the row and the page now agree. |
 | גסטר1 | Ms Gaster 1 | Confirmed | Wikisource | |
+
+### Retired sigla
+
+Sigla MAM has stopped using. The corpus no longer has these, so they are here to be decoded when
+met in older text, rather than to be looked up while reading MAM as it now stands.
+
+| Sigil | Means | Retired | Where it can still be met |
+|---|---|---|---|
+| ב2 | ת451 — the Yemenite Ketuvim manuscript by Joseph ben Benaya, 1484–85, formerly Meir Benayahu Ms T 451 | 2026-08-27, in 32 places over six chapters of Daniel — 17 in chapter 7, 2 in 8, 3 in 9, 3 in 10, 6 in 11, 1 in 12 | Wikisource page history; MAM's Sefaria and Accordance derivatives until each refreshes; this repo's git history before `8fe3dff`; and any prose written against MAM before that date, this file included |
+
+The distinction from `ד` in the edition table below is worth stating, because the two were resolved
+on the same day and look alike. The corpus still has `ד` at eleven sites, so its row there is a
+decoder a reader needs while reading MAM as it stands. The corpus has no ב2 at all any more, so
+this row is a decoder for older text only.
 
 ### Bibliographic And Edition Abbreviations
 
@@ -511,17 +525,39 @@ The key change in judgment is that Wikisource now carries much more weight than 
 
 ### ב2
 
-`ב2` is no longer best treated as wholly undecoded, but it is still not ready for the confirmed table.
+**Resolved 2026-08-27: `ב2` is `ת451`.** They are two sigils for one manuscript, and the corpus
+now has `ת451` alone. It was repointed the same day, 32 occurrences over six chapters of Daniel;
+`doc/PLAN-replace-sigil-b2-with-t451.md` is the record of that work, and "Retired sigla" above is
+the short decoder for text written before it.
 
-- In Daniel, MAM-parsed explicitly groups `ק-מ,ב1,ב2` together as `כתבי־היד התימנים`.
-- Daniel 8:2 is especially useful because the prose note itself says `וכמו כן בכתבי־היד התימנים (ק-מ,ב1,ב2)`.
-- The current inventory output tracks 27 real authority-expression occurrences of `ב2`, and they are Daniel occurrences.
-- Across those Daniel occurrences, `ב2` repeatedly appears beside `ק-מ` and `ב1` as a parallel manuscript.
-- The Daniel notes also preserve manuscript-specific uncertainty markers such as `ב2?` and `ב2?[נכתבה בו א' ונמחקה!]`, which strongly suggests that `ב2` is being treated there as a discrete manuscript rather than as a vague group label.
-- That is strong enough for a provisional classification: `ב2` is a Yemenite Ketuvim manuscript, distinct from `ב1`.
-- Daniel itself also has separate authority expressions such as `ק-מ,ת451` and `ב1,ק-מ,ת451`, while other Ketuvim notes name `ת451` explicitly in Benaiah/Joseph ben Benaiah contexts rather than using the sigil `ב2`.
-- So the current local evidence not only fails to prove that `ב2 = ת451`; it presently leans against that collapse.
-- What is still missing is the decisive catalog-level identification such as a shelfmark or a primary-source sigil glossary entry.
+Avi Kadish, MAM's editor, gave the account on #259 on 2026-04-09. He chose `ב2` first, for its
+proximity to `ב1`; abandoned it, because `ב2` is used in the literature for other things and the
+manuscript is not in the British Library; and switched to the number the manuscript had when Meir
+Benayahu held it. Many uses of `ב2` were written by then and were never updated. Asked on #260 the
+next day whether to replace all of them with `ת451`, he answered "Yes, please." He restated it on
+#259 on 2026-08-27: "Change all ב2 to ת451."
+
+**What stood here until 2026-08-27 reasoned carefully from local corpus evidence to a conclusion
+the editor's testimony overturned, and that is worth keeping rather than quietly replacing.** Most
+of it holds up. `ב2` is a Yemenite Ketuvim manuscript distinct from `ב1`; Daniel groups the three
+of them as `ק-מ,ב1,ב2`, calling them `כתבי־היד התימנים`, and Daniel 8:2 says so in prose, reading
+there `וכמו כן בכתבי־היד התימנים (ק-מ,ב1,ב2)`; and the two uncertainty markers, `ב2?` and its
+bracketed form `ב2?[נכתבה בו א' ונמחקה!]`, do show a discrete manuscript rather than a group
+label. Only the last step failed, and it failed on a real observation: Daniel has the separate
+authority expressions `ק-מ,ת451` and `ב1,ק-מ,ת451`, and other Ketuvim notes name `ת451` rather
+than `ב2`, all of which this entry read as leaning *against* the identification. Yet **an
+incomplete rename explains those separate expressions exactly as well as two distinct manuscripts
+do**, and nothing in the corpus tells the two explanations apart. The evidence was not weak; it
+was consistent with both answers, and this entry picked one.
+
+**A corpus cannot always settle what its editor can**, which is the general form of the failure and
+is why "Source Hierarchy" above now carries item 6. An abandoned sigil leaves no shelfmark, no
+catalogue entry and no appendix line, so "the decisive catalog-level identification" this entry
+waited for was never going to arrive. The appendix's silence about `ב2`, read here as a reason to
+keep the question open, was itself the trace of the retirement. The siglum `ד` failed and was
+resolved the same way on the same day, though on a different issue — #262 rather than #259 and
+#260 — and its row in the edition table below records that. Two abandoned sigla, two carefully
+wrong inferences from corpus silence, and one editor settling both within a few hours.
 
 There is also nearby prose in the Ketuvim corpus about additional books written by Benaiah the scribe and his son Joseph, but I do not yet have a secure enough link to assert that this prose specifically identifies `ב2`; at this point it is safer to treat those prose mentions as contextual evidence about the Yemenite manuscript cluster, not as a firm decoding of `ב2` itself.
 
@@ -568,9 +604,17 @@ The raw survey was already done in practical terms: `out/sigil-inventory.json` e
 
 Based on the current inventory pass, plus the first follow-up decoding pass, the main unresolved targets now look like these:
 
-| Form | Priority | Why it belongs in the target set | Current state |
-|---|---|---|---|
-| ב2 | High | Recurrent manuscript sigil with 27 current inventory-tracked authority-expression occurrences in Daniel, alongside ב1 and ק-מ, including explicit `כתבי־היד התימנים (ק-מ,ב1,ב2)` prose. | Provisionally classified as a Yemenite Ketuvim manuscript; exact manuscript identifier still unknown, and current local evidence leans against identifying it with `ת451`. The Wikisource appendix, read in full on 2026-08-06, has no entry for ב2 at all, so the best source available cannot settle it. |
+**The target set is empty as of 2026-08-27.** It held one row, `ב2`, and that row is gone because
+the question was answered rather than because it was dropped: `ב2` is `ת451`, per the section
+above. There is no table here now, an empty one being harder to read than a sentence.
+
+**An empty target set is not the same as nothing left to decode, and the subsection immediately
+below is the warning against reading it that way.** That subsection records that until 2026-08-06
+this table listed `ב2` alone, which read as "one sigil left to decode" while the real backlog was
+larger and included the most frequent sigil in the whole inventory. The table was empty of
+everything but `ב2` then, and wrong; it is empty now, and the same question applies — the answer
+depends on the comparison that subsection describes having been run since the last pass, not on
+this section looking finished. Three St Petersburg shelfmarks are named as outstanding there.
 
 ### That table was wrong for months, and how the gap was found
 
@@ -593,7 +637,9 @@ rules in `~/.claude/CLAUDE.md`.
 **Parse the `###` headings as well as the tables, or the comparison's biggest gap is a false
 one.** `ק-מ` is the most frequent hyphenated token in the inventory, 336 occurrences, and it is
 documented here under an "Important Uncertainties And Conflicts" heading and in no table at all;
-so are `ב2` and `ל-מ`. A table-only parse reports all three as undecoded.
+so are `ב2` and `ל-מ`. A table-only parse reports all three as undecoded. (`ב2` gained a table row
+on 2026-08-27, in "Retired sigla" above, when it was resolved; it keeps its `###` heading too, and
+the other two are unchanged, so the warning stands as written for `ק-מ` and `ל-מ`.)
 
 Of 2,363 `expression_tokens`, 177 are documented after stripping a prefix letter and a trailing
 `?`. Most of the remainder is the prose noise the next section describes. What the run turned up
