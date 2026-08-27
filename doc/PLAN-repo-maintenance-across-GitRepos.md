@@ -10,6 +10,150 @@ mismatch as a finding.
 
 ---
 
+## EXECUTED 2026-08-27 — the public half, and the process change the private half forced
+
+The second run of this plan. **Read this section and the 2026-08-07 one below it before acting
+on the body**, which is the 2026-08-07 record and is stale on scope in ways this section
+corrects again.
+
+Ben's request, 2026-08-27: perform the periodic maintenance over everything it is scoped over,
+adjust that scope for the evacuations of public repos into MAM-basics and private repos into
+MAM-private, make sure the private half leaks nothing into the public repos, and say which repos
+might now be removed as completely evacuated.
+
+**THE PRIVATE HALF IS NOT IN THIS FILE.** MAM-basics is public and three of the repos swept are
+not, so the private findings are batched into MAM-private at
+`doc/repo-maintenance-2026-08-27.md`, which is where to look for them. This section says nothing
+about their content beyond the fact that they exist, and names no path inside a private repo.
+
+### Scope needed no adjustment, which is itself the finding
+
+`all-repos.code-workspace` lists 19 folders and `~/GitRepos` holds 19 clones, and **the two sets
+are equal in both directions** — no folder listed but absent, none present but unlisted.
+`~/FrozenRepos` holds the same 6. So the evacuations have been keeping the workspace file in
+step as they went, and the 30-then-24 figures in the 2026-08-07 record and in §2 below are both
+superseded rather than wrong: 30 → 24 when the frozen clones moved out on 2026-08-07, then down
+to 19 as al-hatorah, masorah-books, mgketer, breuer-cos and wlc-utils' clones left. §2's advice
+to sweep all folders rather than hand-exclude MAM-basics still holds.
+
+Re-establish with `.novc/`-local scripting, or by comparing `Get-ChildItem -Directory` against
+the workspace file's `folders` array; `py/repo_util/repo_selection.py`'s `load_workspace_repo_dirs`
+raises `FileNotFoundError` on any listed folder not on disk, so a drift in one direction is
+already fatal at every action's start.
+
+### What ran, and what it found
+
+All five sweeps over all 19, in the order §3 prescribes, from the main clone.
+
+1. **`--clean-worktrees`** — "nothing to clean" in all 19. Zero linked worktrees and zero
+   `claude/*` branches everywhere, MAM-basics included. The one-repo job the 2026-08-07 baseline
+   predicted has become a no-repo job.
+2. **`--check-repo-standards`** — `GITATTRIBUTES_LF` true in all 19; `SYS_PATH_MUTATIONS`,
+   `SYS_PATH_IN_TESTS` and `ROOT_CONFTEST` at zero in all 19. Public-side orphan marks: **zero**.
+   Public-side advisory counts, untouched per §8: `HEX_ESCAPES` 79 MAM-basics, 1
+   diffable-pointed-hebrew; `NFC_H_DOT` 18 UXLC-utils, 11 MAM-basics, 1 codex-index-leningrad;
+   `NFC_LATIN` 22 UXLC-utils, 13 MAM-basics, 1 each in codex-index-leningrad and
+   diffable-pointed-hebrew.
+3. **`--check-memory-health`** — no repo has an unindexed memory file, a dead pointer or an
+   orphaned worktree project directory. `STALE_PATHS`: UXLC-utils 9, MAM-basics 2,
+   holman-ketiv-qere 1. UXLC-utils' nine are the residue of its 2026-08-03 evacuation, still
+   open from the 2026-08-07 run's "still open, deliberately" list.
+4. **`--audit-line-terms`** — `MIXED_FILES=0` and `NO_TERM=0` across all 1,789 tracked `.py`.
+5. **`--run-black`** — `BLACK_OK` for all 10 repos with tracked Python, **rewrote no file in any
+   repo**, and every tree was still clean afterwards. The other 9 skip as having no tracked
+   `.py`, which is not a failure. `BLACK_PROBLEM_COUNT` absent, as H5 predicts.
+
+Suite here: **951 passed, 5 skipped, 59 subtests**, at `-q` (which the count needs — the default
+verbosity drops the subtests line).
+
+### The process change: `--visibility`, and a guard that makes the split enforced
+
+Every sweep is RUN from MAM-basics, which is public, and three of the 19 are private. So the path
+of least resistance for `--report-txt` is a file this repo tracks, which is the path that
+publishes a private repo's internals. Ben's framing, 2026-08-27: a repo's **name** is not
+private; its **content** is.
+
+Landed in `6cb65ef` and `b492fd6`:
+
+- `in/repo_maintenance_policy.json` gains a `repo_visibility` map classifying all 19, verified
+  against `gh repo view` and, for the ArtScroll gist, `gh api gists/… --jq .public`. Declared
+  rather than queried, because the sweeps must work offline and because `gh repo view` cannot
+  resolve a gist at all. **Frozen and private are unrelated** and neither list may be derived
+  from the other — MAM-private is private and not frozen, mamgo-auto-edits is frozen and public.
+- `py/repo_util/report_destination.py` refuses a report covering any private repo whose
+  destination is a path a public repo tracks. Three destinations pass: inside a private repo,
+  a path git ignores, or no repo at all.
+- `--visibility {all,public,private}` splits a sweep so each half is written where it belongs.
+  This is the shape a full round of maintenance now takes: two runs of each read-only action.
+- `py/tests/test_repo_visibility_declared.py`, 10 tests, keeps the map complete and pins the
+  guard's decisions on paths built from it.
+
+**A guard rather than a convention, for the same reason the frozen clones were MOVED out of
+GitRepos on 2026-08-07 rather than merely listed**: make the wrong thing unreachable, not merely
+discouraged. The convention already existed and was already being followed — the review series
+split public-here and private-into-MAM-private on 2026-08-26 — and a convention costs nothing
+until the one run that forgets it, by which point the report is written and whatever comes next
+commits it.
+
+**One defect the split exposed, now fixed.** `--check-memory-health` is the only sweep that is
+not purely per-repo: `_check_cited_paths` calls a citation stale when it resolves in no *swept*
+repo, so narrowing the selection narrowed the resolution universe with it. MAM-private read
+`STALE_PATHS=14` over all 19 and 19 over the 3 private ones, from the same unchanged files.
+`run_check_memory_health_across_repos` now takes `resolution_repo_dirs` separately from the repos
+being reported on, and `main_repo_util` passes the whole workspace. Split and unsplit runs agree
+again, and every public repo's numbers above are identical either way. **Worth remembering as the
+general hazard**: before adding a filter to a cross-repo sweep, ask which of its checks read
+across repos rather than within one.
+
+### Whether the write-back had already leaked: audited, and it had not
+
+A sweep for private-repo path markers across all 16 public clones returns hits in MAM-basics only,
+and every one falls into a category that is deliberate rather than accidental: `CLAUDE.md`'s
+pointers to where the primary sources live (Ben's decisions of 2026-08-10 and 2026-08-11),
+machinery that must name a destination to work (`in/vendoring_policy.json`, `py/mb_cmn/paths.py`,
+`py/main_0_mega.py`), generated vendoring artifacts, and the execution records in `doc/PLAN-*.md`.
+**No maintenance report has ever been written into a tracked file here** — the 2026-08-07 run
+wrote its reports to `.novc/`, as §3 instructs, and so did this one.
+
+**The criteria that actually govern this are narrower than "private paths must not travel", and
+are stated in MAM-private at `doc/near-aleppo-privacy.md`.** Read that before writing public prose
+about any private tree; its §4 gives a mechanical backstop grep and, more usefully, the two ways
+that grep misleads. It was run over every line this session added here, in both spellings of the
+abbreviation it looks for, with zero hits.
+
+### Which repos might now be removed: mgketer already is, and no other clone qualifies
+
+- **mgketer, the repo Ben named, is done on both counts already.** There is no
+  `~/GitRepos/mgketer` — its tree lives under MAM-private — and `bdenckla/mgketer` was
+  **archived on GitHub on 2026-08-10**. Nothing left to do.
+- **None of the six public repos whose Python was evacuated is a removal candidate**, because
+  none was completely evacuated: only their Python left. Tracked-file counts today are
+  book-of-job 784, UXLC-utils 780, holman-ketiv-qere 347, codex-index-aleppo 175,
+  codex-index-cam1753 152, codex-index-leningrad 51 — corpora, `in/` trees and `gh-pages/`.
+  **Four publish a live Pages site** (book-of-job, UXLC-utils, holman-ketiv-qere,
+  codex-index-aleppo), and **all six are resolved by this repo's own code**: five as
+  `DATA_REPO_NAME` in `py/ac_paths.py`, `py/boj_paths.py`, `py/cam1753_paths.py`,
+  `py/hkq_paths.py` and `py/lenin_paths.py`, and UXLC-utils through `sibling_repo("UXLC-utils")`
+  at four sites. Removing any of those clones would break a generator.
+- **No GitHub repo is an archiving candidate either**, and the reason is uniform: archiving makes
+  a tracker read-only, and every candidate still has open issues — UXLC-utils 27,
+  holman-ketiv-qere 60, book-of-job 19, wlc-utils 21, and on the private side the four counted in
+  the private record. The three codex-index trackers are at zero open, but their repos hold live
+  data this repo reads, so archiving them would freeze corpora still in use.
+- **The already-removed clones are the pattern to read this against.** wlc-utils went 2026-08-22,
+  al-hatorah 2026-08-11, masorah-books and mgketer with the private evacuation. In every case the
+  clone went when **nothing on disk resolved it any more** — not when its issues closed and not
+  when its remote was archived. That is the test to apply next time, and none of the 19 passes it
+  today.
+
+### Recommendation Ben should decide on
+
+The private record ends with one, because it is a private-side question: the tracker
+consolidation that mirrors the public transfer of 2026-08-26 has not happened. It is stated there
+with its counts, and is deliberately not acted on.
+
+---
+
 ## EXECUTED 2026-08-07 — the outcome, and which predictions failed
 
 Carried out in full the same day it was written. **Read this section before acting on
