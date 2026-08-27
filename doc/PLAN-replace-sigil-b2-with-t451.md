@@ -15,7 +15,7 @@ is a chain with two hand-offs built into it, not a plan a single session runs st
 | 1 — the bot edit | **DONE 2026-08-27**, `52aa7b8`. Six files as specified. Suite **951 passed, 5 skipped, 59 subtests** before, **965 passed, 1 failed, 5 skipped, 65 subtests** after. The one failure is the new lint test, by design; the 15 added test functions are 13 in the payload test and 2 in the lint, and the 6 added subtests are the six real Daniel chapters |
 | 2 — local proto rehearsal | **DONE 2026-08-27**, same commit. **FOUR** tracked artifacts moved, not the two predicted; the two book files' diffs are the 32 replacements and nothing else, proven byte for byte |
 | 3 — the live Wikisource edit | **DONE 2026-08-27 12:23–12:24 local**, `a31d0ec`. Six pages saved, the six diff links in the execution record below. The refreshed download matches the Phase 2 rehearsal byte for byte in all twelve chapters. The appendices check found what it expected: no ב2 there at all |
-| 4 — emit the Google-Sheet auto-edits | **NOT STARTED.** Both wsgo outputs go from `[]` to Daniel entries; must be pushed, not merely committed |
+| 4 — emit the Google-Sheet auto-edits | **DONE 2026-08-27**, `1aa95ff`, pushed. **32 auto-edits**, one per sigil — no neighbour-merge and no whole-cell fallback. Both wsgo outputs went `[]` → 32 Daniel entries |
 | 5 — the Sheet round trip, then regenerate | **NOT STARTED. PARTLY BEN'S STEP** — the two Apps Script runs are in the Sheet's own UI |
 | 6 — correct the two sigil documents | **NOT STARTED.** Both currently assert the opposite conclusion |
 | 7 — the trackers | **NOT STARTED** |
@@ -371,6 +371,33 @@ asserts before returning.
 
 Commit and push both files. The Google Apps Script fetches the auto-edits file from GitHub, so an
 unpushed commit is a broken step, not merely an untidy one.
+
+## Phase 4 — execution record, 2026-08-27
+
+`1aa95ff`, committed **and pushed**. Both outputs went from `[]` to **32 entries** each.
+
+**32 is the happy case rather than the only acceptable one, and it is worth saying which
+happened.** `py/diff_wsgo/wsgo_auto_edits.py` merges a search string that is not unique within its
+cell into its neighbour, and falls back to a whole-cell replacement when it cannot make the set
+apply cleanly. Neither fired: "Reverting to whole Wikitext sequence as diff" was not printed once,
+and the auto-edits stand one per sigil.
+
+Read rather than counted, as this plan asks. All 32 are column `E`; all carry
+`"sena": "כתובים אחרונים"`, which is the field the plan's "tab" means; and every `replace_str` is
+its own `search_str` with the sigil swapped and nothing else touched — zero exceptions, and no
+`replace_str` still holding ב2.
+
+**The 32 entries of `out/diff_mamws_mamgo.json` reproduce the per-chapter counts from the far end
+of the pipeline**, which is worth more than the total agreeing. Their `bcv` values run `Da7:4` to
+`Da12:2` and distribute as 17, 2, 3, 3, 6 and 1 over chapters 7 through 12 — the same figures the
+transform's own table holds, now arrived at by comparing two independently-derived corpora rather
+than by counting one. All 32 are `"field": "verse-body"` and `"sena": "KetAx"`; every `ws-full`
+holds ת451 and every `go-full` holds ב2, so no book but Daniel appears.
+
+One incidental check, since `main_diff.py` has no `sys.stdout.reconfigure` either: its `wsgo`
+progress output is ASCII book names only, so it does not need one and none was added. That is the
+opposite finding from `main_ws_bot.py`'s, and it is why the rule is to look rather than to add the
+two lines everywhere.
 
 ## Phase 5 — the Sheet round trip (Ben's step) and regeneration
 
