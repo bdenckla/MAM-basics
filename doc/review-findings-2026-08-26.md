@@ -304,6 +304,21 @@ shape how CLAUDE.md's Five-trackers section absorbs the consolidation (and wheth
 sigil-decoding's still-resolving `MAM-with-doc#6` citations become bare #257), the second a
 convention choice about comma-joined sigil pairs. Findings 8(b)–(d) and 9 are recorded only.
 
+**Findings 2, 5 and 8(b) were acted on 2026-08-27, in a follow-up session, each on Ben's
+answer to one question.** Finding 2: `97b559b` — the Five-trackers section absorbs the
+consolidation keeping its "Five" name (Ben deferred the framing to the session's judgment),
+and `doc/sigil-decoding.md`'s six `MAM-with-doc#6` sites became bare `#257` ("sure, repoint
+them to MAM-basics #257"). Finding 5: `5da49fd` — Ben's convention: a comma-joined sigil
+list after the qualifier מסורת/מסורות is plural shorthand, the qualifier distributing over
+the list, deliberately not generalized to other qualifiers; both rows were re-derived under
+it against MAM-parsed `0128e69` by a script that first reproduced the old direct-only cells
+exactly, and the question is filed for Avi Kadish's feedback as #262. That re-derivation
+also found the ד evidence understated beyond this finding's statement — `מסורת-ש1,ד` at
+Zechariah 9:15, missed by `5aa036d`'s five-occurrence inventory, plus plural, equals-sign
+and bare-authority variants at Daniel 3:25 and 3:5 — all now in the doc's ד bullet. Finding
+8(b): the runway, Ben's choice ("go with the runway"); every "Attested on" cell opens `On:`
+as of the commit landing this note.
+
 ## Open ends the window itself declares (not findings)
 
 The tracker consolidation's documentation (finding 2) — CLAUDE.md's Five-trackers section, and
