@@ -1,1 +1,44 @@
-[]
+[
+  {
+    "bk39id": "Daniel",
+    "he_chnu": "ז",
+    "chapter": 7,
+    "reason": "sigil-replaced",
+    "count": 17
+  },
+  {
+    "bk39id": "Daniel",
+    "he_chnu": "ח",
+    "chapter": 8,
+    "reason": "sigil-replaced",
+    "count": 2
+  },
+  {
+    "bk39id": "Daniel",
+    "he_chnu": "ט",
+    "chapter": 9,
+    "reason": "sigil-replaced",
+    "count": 3
+  },
+  {
+    "bk39id": "Daniel",
+    "he_chnu": "י",
+    "chapter": 10,
+    "reason": "sigil-replaced",
+    "count": 3
+  },
+  {
+    "bk39id": "Daniel",
+    "he_chnu": "יא",
+    "chapter": 11,
+    "reason": "sigil-replaced",
+    "count": 6
+  },
+  {
+    "bk39id": "Daniel",
+    "he_chnu": "יב",
+    "chapter": 12,
+    "reason": "sigil-replaced",
+    "count": 1
+  }
+]

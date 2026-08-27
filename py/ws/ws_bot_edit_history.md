@@ -125,7 +125,7 @@ infrastructure has changed enough to make them misleading examples:
 - **Edit level:** Chapter-targeted raw page text string replacement.
 - **JSON files:** `in/mam-ws-bot-edits/issue-56-add-rafeh-to-yireu.json`
 
-### Issue 67: migrate deprecated כו"ק call sites to מ:כו"ק מיוחד — current
+### Issue 67: migrate deprecated כו"ק call sites to מ:כו"ק מיוחד
 - **Purpose:** Migrate call sites of nine deprecated issue-67 כו"ק template
   names to `{{מ:כו"ק מיוחד|...|סוג=...}}`, where `סוג` is derived from the old
   template name without the `מ:` prefix.
@@ -133,6 +133,26 @@ infrastructure has changed enough to make them misleading examples:
 - **Edit level:** Full cif2 AST traversal via candlers/vandlers/wandlers.
 - **JSON files:**
   `in/mam-ws-bot-edits/issue-67-kuk-special-callsite-migration.json`
+
+### Issue 260: replace the sigil ב2 with ת451 — current
+- **Purpose:** Replace the manuscript sigil ב2 with ת451 in Daniel's
+  documentation notes. The two are two sigils for one manuscript: the MAM
+  editor chose ב2 first, abandoned it, and switched to the number the
+  manuscript had when Meir Benayahu held it, without updating the uses
+  already written. 32 occurrences over six chapters of Daniel, measured
+  2026-08-27: chapter 7 has 17, chapter 8 has 2, chapter 9 has 3, chapter 10
+  has 3, chapter 11 has 6, and chapter 12 has 1.
+- **Safety rule:** A per-chapter expected-count table doubles as a skip list,
+  so a book or chapter it does not name passes through untouched; a chapter it
+  does name must hold exactly the counted number of occurrences. Separately,
+  a page carrying the aliyah template's `|ב2=` named parameter — the same two
+  characters, 216 of them in the Torah, and never a sigil — is an error rather
+  than a skip.
+- **One-shot:** the count table describes the pre-edit corpus, so re-running
+  after the live edit's re-download raises rather than doing nothing.
+- **Edit level:** Raw page text global replacement, counted per chapter.
+- **JSON files:** `in/mam-ws-bot-edits/sigil-b2-to-t451.json`
+- **Plan:** `doc/PLAN-replace-sigil-b2-with-t451.md`
 
 ## How to look up the original code
 

@@ -35,6 +35,13 @@ For "kuk-special-callsite-migration" (an untargeted kind):
     to {{מ:כו״ק מיוחד|...|סוג=...}}, preserving existing params.
     Hard-preflights for רווח=כן and fails fast for manual handling.
 
+For "sigil-b2-to-t451" (an untargeted kind):
+    Replaces the manuscript sigil ב2 with ת451, the two being two sigils
+    for one manuscript, per MAM-basics#260. Guarded by a per-chapter
+    expected-count table -- 32 occurrences over six chapters of Daniel --
+    so a chapter the table does not name passes through untouched, and
+    by an assertion that the page carries no aliyah |ב2= parameter.
+
 Terminology:
     - chapter-targeted: explicit edit objects keyed by chapter
     - untargeted: no explicit per-chapter edit list; transform runs on each
@@ -56,6 +63,7 @@ from ws import ws_fmt_2_back_to_wikitext as btw
 from ws import ws_bot_edit_kq_triv_rename_extra_alef_sug as kq2_rename
 from ws import ws_bot_edit_kq_triv_to_2 as kq2
 from ws import ws_bot_edit_kuk_special_callsite_migration as kuk67
+from ws import ws_bot_edit_sigil_b2_to_t451 as sigil_b2
 
 
 def _meteg_removal(entry):
@@ -84,6 +92,10 @@ _UNTARGETED_EDIT_KINDS = {
     "kuk-special-callsite-migration": {
         "fn": kuk67.edit_page_text,
         "get_warnings": kuk67.get_warnings,
+    },
+    "sigil-b2-to-t451": {
+        "fn": sigil_b2.edit_page_text,
+        "get_warnings": sigil_b2.get_warnings,
     },
 }
 

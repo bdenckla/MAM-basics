@@ -1,0 +1,5 @@
+{
+  "summary": "Replace sigil ב2 with ת451 in Daniel doc-notes (one manuscript, two sigils), per MAM-basics#260",
+  "edit-kind": "sigil-b2-to-t451",
+  "edits": {}
+}
