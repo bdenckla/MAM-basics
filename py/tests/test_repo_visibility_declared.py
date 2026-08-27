@@ -19,6 +19,7 @@ from pathlib import Path
 import unittest
 
 from mb_cmn import paths
+from mb_cmn import provenance
 from repo_util import maintenance_policy
 from repo_util.common import read_json
 from repo_util.report_destination import (
@@ -29,6 +30,18 @@ from repo_util.report_destination import (
 
 REPO_ROOT = paths.repo_root()
 WORKSPACE_FILE = REPO_ROOT / "all-repos.code-workspace"
+# NOT REPO_ROOT.name.  In a linked worktree that is the WORKTREE's directory name --
+# "vibrant-mirzakhani-3e2369", say -- which has no entry in the repo_visibility map, so
+# test_every_workspace_repo_is_classified and test_this_repo_is_declared_public both
+# failed in EVERY worktree while passing in the main clone.  Found 2026-08-27, the first
+# worktree run of this file, which 6cb65ef had added the same day.  this_repo_name()
+# follows a worktree's .git *file* into the main clone's common git dir and prefers the
+# remote.origin.url basename, so it also survives a renamed clone directory.
+#
+# test_mb_cmn_provenance.py pins the literal "MAM-basics" instead, and that is not an
+# inconsistency: that file TESTS provenance, so calling this_repo_name() there would
+# compare the function under test against its own input.  Nothing here tests provenance.
+REPO_NAME = provenance.this_repo_name()
 
 
 def _workspace_repo_names() -> list[str]:
@@ -36,7 +49,7 @@ def _workspace_repo_names() -> list[str]:
     names = []
     for folder in payload["folders"]:
         raw = folder["path"]
-        names.append(REPO_ROOT.name if raw == "." else Path(raw).name)
+        names.append(REPO_NAME if raw == "." else Path(raw).name)
     return sorted(names)
 
 
@@ -64,7 +77,7 @@ class TestRepoVisibilityDeclared(unittest.TestCase):
     def test_this_repo_is_declared_public(self):
         # The guard's whole premise. If MAM-basics were ever declared private the
         # refusal would stop firing, silently, for every destination inside it.
-        self.assertEqual("public", maintenance_policy.repo_visibility()[REPO_ROOT.name])
+        self.assertEqual("public", maintenance_policy.repo_visibility()[REPO_NAME])
 
     def test_private_repos_are_declared(self):
         self.assertNotEqual([], maintenance_policy.private_repos())
@@ -90,7 +103,7 @@ class TestReportDestinationGuard(unittest.TestCase):
         with self.assertRaises(ReportDestinationError):
             assert_report_destination_ok(
                 REPO_ROOT / "doc" / "some-report.md",
-                covered_repo_names=[REPO_ROOT.name, *self.private],
+                covered_repo_names=[REPO_NAME, *self.private],
                 private_repo_names=self.private,
                 option_name="--report-txt",
             )
