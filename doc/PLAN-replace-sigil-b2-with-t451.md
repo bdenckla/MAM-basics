@@ -17,7 +17,7 @@ is a chain with two hand-offs built into it, not a plan a single session runs st
 | 3 — the live Wikisource edit | **DONE 2026-08-27 12:23–12:24 local**, `a31d0ec`. Six pages saved, the six diff links in the execution record below. The refreshed download matches the Phase 2 rehearsal byte for byte in all twelve chapters. The appendices check found what it expected: no ב2 there at all |
 | 4 — emit the Google-Sheet auto-edits | **DONE 2026-08-27**, `1aa95ff`, pushed. **32 auto-edits**, one per sigil — no neighbour-merge and no whole-cell fallback. Both wsgo outputs went `[]` → 32 Daniel entries |
 | 5 — the Sheet round trip, then regenerate | **DONE 2026-08-27.** Ben ran the two Apps Script items; `8fe3dff` here, `46209cd` in MAM-parsed, `c4dd986` in MAM-with-doc, all pushed. **The lint is GREEN — this plan's completion criterion is met.** Both wsgo outputs back to `[]` |
-| 6 — correct the two sigil documents | **NOT STARTED.** Both currently assert the opposite conclusion |
+| 6 — correct the two sigil documents | **DONE 2026-08-27**, `f58716e` here and `80f4a3f` in MAM-with-doc. Four places in `doc/sigil-decoding.md` plus one ripple `c691af8` created, and the one hand-maintained row in `MAM-with-doc/gh-pages/sigil-decoding.html` |
 | 7 — the trackers | **NOT STARTED** |
 
 ## Context
@@ -541,6 +541,55 @@ Out of scope, recorded so it is not mistaken for an oversight: that HTML page st
 MAM-with-doc issues 6 and 8, which the 2026-08-26 transfer turned into MAM-basics #257 and #259.
 Both resolve through GitHub's transfer redirect, and repointing them belongs to #259's
 documentation pass.
+
+## Phase 6 — execution record, 2026-08-27
+
+The `hebrew-prose` skill was loaded first, as this plan requires. All four anchors this plan gives
+resolved unchanged: `c691af8` had touched nine regions of `doc/sigil-decoding.md` and none of them
+was a Phase 6 target.
+
+**`c691af8` changed what to write, though, in the one way worth recording.** It added item 6 to
+"Source Hierarchy" — Avi Kadish's issue answers as a source that outranks the five documentary
+ones, and that can settle what no document can, "because a sigil MAM used at one stage and later
+abandoned leaves no trace in an appendix that describes the finished edition". That is the ב2 case
+stated in general before this phase reached it, so the four edits **cite item 6 rather than
+re-deriving the lesson**, which would have been its third telling in one file.
+
+The four edits, plus two more the work turned out to need:
+
+1. The ת451 row keeps its observation and reverses its meaning. "The appendix has an entry for
+   ת451 and none at all for ב2" now introduces the reason rather than a doubt.
+2. The `### ב2` section keeps its heading, as this plan requires, and its body is rewritten:
+   Avi Kadish's account with its dates, the replacement, and why the earlier inference failed.
+   **Most of that entry holds up and is said to**; what failed is the last step only, and it
+   failed on a real observation — an incomplete rename explains Daniel's separate `ק-מ,ת451` and
+   `ב1,ק-מ,ת451` exactly as well as two manuscripts do, and the corpus cannot tell the two
+   explanations apart.
+3. The "Current Inventory-Derived Target Set" table is replaced by prose saying the set is empty
+   **because the question was answered, not because the row was dropped**, and pointing at the
+   neighbouring subsection as the warning against reading an empty table as "nothing left".
+4. A `### Retired sigla` subsection under "Confirmed Items", with the count, the six chapters, the
+   date, and where ב2 can still be met. It says why it is not simply another row in the manuscript
+   table beside `ד`'s: the corpus still has `ד` at eleven sites, so that row is a decoder for MAM
+   as it stands, where ב2 is a decoder for older text only.
+5. **A ripple `c691af8` created and this plan could not have known about.** The "2026-08-26 run"
+   subsection warns that `ק-מ`, `ב2` and `ל-מ` are documented under `###` headings and in no table,
+   so a table-only parse reports all three as undecoded. Giving ב2 a Retired-sigla row makes that
+   false for ב2, so the sentence now carries a parenthesis saying so and confirming the warning
+   still stands for the other two.
+6. `MAM-with-doc/gh-pages/sigil-decoding.html`'s one ב2 row, edited in place per that page's own
+   workflow note, keeping its `<bdi lang="hbo">` and `class="nowrap"` conventions. Status goes
+   Provisional → Confirmed.
+
+Checks: the repo's `test_prose_conventions` lint passes; the HTML parses with no unclosed or
+mismatched tags, 28 `<tr>` and 79 `<td>` balanced, one ב2 row; and a scratch check confirmed that
+no added line's first strong character is Hebrew except the two table rows, where a cell of its own
+is the form the `hebrew-prose` skill prescribes.
+
+**One thing seen and deliberately not fixed**: two rows of that HTML page neighbouring ב2's call
+manuscripts "a Yemenite witness" and "a Sephardic witness", and the `hebrew-prose` skill bans
+"witness" outright. They are pre-existing and outside this phase, which is scoped to the one row.
+Worth a separate pass over that page.
 
 ## Phase 7 — the trackers
 
