@@ -8,10 +8,21 @@ from mb_cmn import my_utils
 from mb_cmn.minirow import MinirowExt
 
 
-def read_parsed_plain_bk39s(
-    bk39ids=None, mam_parsed_path=str(paths.sibling_repo("MAM-parsed"))
-):
+def read_parsed_plain_bk39s(bk39ids=None, mam_parsed_path=None):
     """Read all bk24s covering bk39ids"""
+    # None rather than a default of paths.mam_parsed_path(), because a default argument is
+    # evaluated at IMPORT time and that call raises when the sibling is missing.  This
+    # module is imported at the top of subcommands/diff_wsgo.py, so a checkout without
+    # MAM-parsed would fail to import the diff-wsgo step rather than fail while running it.
+    # Same sentinel, and same reason, as sigils/inventory.py's (e37b8ad, 2026-08-27).
+    #
+    # mam_parsed_path() checks MAM-parsed's plus/ subtree while this reader opens plain/.
+    # That is deliberate: the check is that the clone is present and populated, and a
+    # MAM-parsed holding one of the two trees and not the other is not a state that occurs.
+    # The alternative -- a second accessor differing only in which subtree it names --
+    # would be a second spelling of one dependency.
+    if mam_parsed_path is None:
+        mam_parsed_path = paths.mam_parsed_path()
     real_bk39ids = bk39ids or tbn.ALL_BK39_IDS
     books_out = {}
     # Can we get rid of this "for" loop?
