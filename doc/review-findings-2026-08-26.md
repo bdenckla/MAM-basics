@@ -319,6 +319,34 @@ and bare-authority variants at Daniel 3:25 and 3:5 — all now in the doc's ד b
 8(b): the runway, Ben's choice ("go with the runway"); every "Attested on" cell opens `On:`
 as of the commit landing this note.
 
+**Avi Kadish answered #262 later that same day, and finding 5's convention is now partly his
+and partly still pending.** His comment confirms the distribution for the מסורת and מסורות
+qualifiers and settles their morphology on the construct singular of מסורה — the two spellings
+differ over how many sources have the note, not over singular against plural — so
+`doc/sigil-decoding.md`'s item 6 states his answer where it stated Ben's reading, and both rows'
+Meaning cells are rewritten in his terms. Two further things came as asides, to a question that
+had asked neither:
+
+1. **The siglum ד is the Venice Miqra'ot Gedolot**, used as Breuer used it and later replaced in
+   MAM by מ"ג. It now has a row in the doc's edition table, its eleven corpus sites enumerated,
+   and the "Two sigla the qualifier table cites that nothing here decodes" bullet is rewritten
+   as resolved. No appendix could have decoded it: it is a layer of MAM's notation that did not
+   survive into the finished edition, which is why the source hierarchy gains a sixth entry for
+   Avi's testimony as MAM's editor.
+2. **Isaiah 56:10's `מסורת-לד` is `מסורת-ל,ד` with the comma missing**, so there is no siglum
+   `לד` and the speculation that it might be `ל34` is retired. The site becomes a further ד
+   site, taking the מסורת row's ל from 139 to 140 and its ד from 5 to 6. The missing comma is an
+   error in MAM itself — present in MAM-parsed `0128e69` and in the Wikisource-side input at
+   `in/mam-ws/C1-Isaiah.json` alike — and it is Ben's to dispose of: recorded with its evidence
+   in the doc, with no live wiki touched.
+
+Avi also answered yes to #262's third question, which would generalize the distribution to the
+other nine qualifiers and grow the כתיב and קרי rows considerably. Ben's instruction that day
+was to put worked examples to him before concluding it, since that question named two sites
+without spelling out what either reading would mean at them. Those examples are the second
+comment on #262; the restriction to the two qualifiers stands meanwhile, marked pending rather
+than settled.
+
 ## Open ends the window itself declares (not findings)
 
 The tracker consolidation's documentation (finding 2) — CLAUDE.md's Five-trackers section, and
