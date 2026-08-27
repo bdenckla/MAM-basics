@@ -27,7 +27,7 @@ WHAT IS NOT ROUTED THROUGH HERE, and why each is deliberate:
   * ``py_ac_loc/mam_xml_verses.py`` takes the XML path as an argument and composes
     none.  It is codex-index-aleppo's module and ``py_cam1753_loc.gen_flat_stream``
     imports it: codex-index-cam1753's ``py_mam_xml/mam_xml_verses.py`` was the same
-    tool with 43 lines of drift, reconciled onto that one at Phase 3 rather than
+    tool with 32 lines of drift, reconciled onto that one at Phase 3 rather than
     landed as a second copy.  See ``py_cam1753_loc/gen_flat_stream.py`` for what the
     reconciliation turned on.
 

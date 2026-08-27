@@ -116,7 +116,7 @@ and no change to any count in the table.
 | book-of-job | 784 | 73.4 | 694 | 65.2 | **175** | 90 | 8.1 |
 | holman-ketiv-qere | 348 | 58.1 | 300 | 35.5 | **6** | 48 | 22.6 |
 | UXLC-utils | 780 | 43.1 | 184 | 18.4 | **91** | 596 | 24.7 |
-| **total** | **1,912** | **174.6** | **1,178** | **119.1** | **272** | **734** | **55.4** |
+| **total** | **1,912** | **174.6** | **1,178** | **119.1** | **272** | **734** | **55.5** |
 
 **Phase 0's re-measure, 2026-08-23, at MAM-basics `d095871`, book-of-job `3f096b9`,
 holman-ketiv-qere `5f419ef`, UXLC-utils `b7b4eb9`: every figure in the first six columns
@@ -140,6 +140,11 @@ git -C ../holman-ketiv-qere ls-files -z | tr '\0' '\n' | grep -vc '^gh-pages/'
 
 The same miscount had been copied into Decision C, Phase 3 and Phase 5, each corrected in place
 the same day with its old figure noted beside it.
+
+The total "MB outside" cell read **55.4** until the 2026-08-26 review: a sum of the three
+already-rounded cells (8.1 + 22.6 + 24.7) rather than the rounded sum. The exact total is
+58,183,004 bytes = 55.49 MB, so the cell now reads 55.5, which is also what this section's own
+prescription `MB − gh-pages MB` gives (174.6 − 119.1). Every per-repo cell was already right.
 
 ```bash
 git -C ../book-of-job ls-files | wc -l

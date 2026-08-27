@@ -529,7 +529,7 @@ is.
 
 The same pass also showed that some high-frequency raw candidates are not really new sigils to decode, but rather prose aliases or prefixed forms that should be normalized against existing entries. Important examples include:
 
-- `כתי"ל` and prefixed forms such as `בכתי"ל`
+- the alias `כתי"ל` and prefixed forms such as `בכתי"ל`
 - prefixed bibliography forms such as `ומג"ה` and `ומ"ש`
 - prefixed masora forms such as `ומסורת-ל` and `ומסורות-א`
 - uncertainty-marked variants such as `ק-מ?`
