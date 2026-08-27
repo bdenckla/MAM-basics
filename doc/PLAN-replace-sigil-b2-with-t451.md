@@ -12,8 +12,8 @@ is a chain with two hand-offs built into it, not a plan a single session runs st
 
 | Phase | State |
 |---|---|
-| 1 — the bot edit | **NOT STARTED.** New `py/ws/ws_bot_edit_sigil_b2_to_t451.py`, spec JSON, two tests, registration in `ws_bot_edit.py` |
-| 2 — local proto rehearsal | **NOT STARTED.** Tracked diff in `out/mam-ws-bot/proto*/F1-Daniel.json` is the evidence. Commits with Phase 1 |
+| 1 — the bot edit | **DONE 2026-08-27**, `52aa7b8`. Six files as specified. Suite **951 passed, 5 skipped, 59 subtests** before, **965 passed, 1 failed, 5 skipped, 65 subtests** after. The one failure is the new lint test, by design; the 15 added test functions are 13 in the payload test and 2 in the lint, and the 6 added subtests are the six real Daniel chapters |
+| 2 — local proto rehearsal | **DONE 2026-08-27**, same commit. **FOUR** tracked artifacts moved, not the two predicted; the two book files' diffs are the 32 replacements and nothing else, proven byte for byte |
 | 3 — the live Wikisource edit | **NOT STARTED. BEN'S STEP** — needs `~\.pywikibot\`, which was absent 2026-08-27 |
 | 4 — emit the Google-Sheet auto-edits | **NOT STARTED.** Both wsgo outputs go from `[]` to Daniel entries; must be pushed, not merely committed |
 | 5 — the Sheet round trip, then regenerate | **NOT STARTED. PARTLY BEN'S STEP** — the two Apps Script runs are in the Sheet's own UI |
@@ -60,10 +60,10 @@ Repo heads, all working trees clean:
 
 | Measure | Value |
 |---|---|
-| suite | **941 passed, 5 skipped, 59 subtests** — the figure `doc/review-findings-2026-08-26.md` records at `629d73b`. Re-measure; a mismatch is a finding |
+| suite | **941 passed, 5 skipped, 59 subtests** — the figure `doc/review-findings-2026-08-26.md` records at `629d73b`. Re-measure; a mismatch is a finding. **Superseded 2026-08-27: 951/5/59 at `87d37b7`**, the ten being `test_repo_visibility_declared.py`, added by `6cb65ef` after this plan measured |
 | wsgo outputs | `out/diff_mamws_mamgo.json` and `out/diff_mamws_mamgo-auto-edits.json` both `[]`, so any wsgo output this work produces is its own |
-| ב2 as a sigil | **32 occurrences, all in `in/mam-ws/F1-Daniel.json`** |
-| ב2 not as a sigil | **648 occurrences**, none of them touchable — see the four classes below |
+| ב2 as a sigil | **32 occurrences, all in `in/mam-ws/F1-Daniel.json`** — **understated, corrected 2026-08-27: a further 32 stand in `in/mam-go/F-KetAx.csv`**, the Google Sheet's own copy of the same cells, and 32 in each of the three `out/` serializations of Daniel. Phase 5 below already expects the Sheet's 32 to go; it is this row that undercounted. The Phase 1 lint reports **64** across the two `in/` trees it scans |
+| ב2 not as a sigil | **648 occurrences**, none of them touchable — see the four classes below. **Did not reproduce, 2026-08-27**: no whole-tree count yields 648. What did reproduce exactly is class 1's 432 — 216 across the five Torah books of `in/mam-ws/` plus the same 216 in `in/mam-go/A-Torah.csv`. 648 is 216 × 3, which is exactly class 4's three `out/` serializations of the Torah, so the figure appears to count those rather than every non-sigil occurrence. Nothing in the design turns on it: both guards are per-page |
 | ת451 in Daniel | **5 occurrences**, in chapters ג, ה, ו — disjoint from every ב2 chapter |
 | pywikibot config | **`C:\Users\BenDe\.pywikibot\` DOES NOT EXIST** — neither `user-config.py` nor `password.py`, so `main_ws_bot.py real` fails fast |
 
@@ -206,12 +206,61 @@ changed sigils and nothing else: the proto roundtrip through fmt-2 is currently 
 (the sigil line numbers in `out/mam-ws-bot/proto/F1-Daniel.json` match `in/mam-ws/F1-Daniel.json`
 exactly), so any other difference in that diff is a finding.
 
+**Corrected 2026-08-27: it rewrites FOUR tracked artifacts, not two.**
+`out/mam-ws-bot/proto-misc/warnings.json` and `out/mam-ws-bot/proto-misc/modified-chapters.json`
+are tracked too, and both stood at `[]`. The first now carries the six per-chapter records Phase 1
+above asks the transform to append, and the second the six chapters Phase 3 will save — in the
+`{"book39": …, "chapter": …}` shape that `main_download.py fr-wikisource --book-chapters-json`
+takes, so it is worth keeping rather than merely tolerating. Both were a consequence of this plan's
+own Phase 1 design; only the count in the sentence above was wrong.
+
 Pass `--book39 Daniel` and never a bare `proto` — a bare run rewrites all 39 books' proto outputs,
 and a full-corpus diff would bury the 32 lines that matter.
 
 Commit Phases 1 and 2 together, with the proto diff as the demonstration. Push. The new lint test
 is expected red at this point; say so in the commit message rather than letting a later session
 discover it.
+
+## Phases 1 and 2 — execution record, 2026-08-27
+
+Committed as `52aa7b8`, run in the main clone at `87d37b7` — three commits past the `d7df398` this
+plan measured at. A
+second session was co-present in the worktree `.claude/worktrees/vibrant-mirzakhani-3e2369`, on
+`out/sigil-inventory.json`, `py/main_0_mega.py` and `py/sigils/inventory.py`; it merged that work
+into `main` as `d5d9896` partway through this one. The two file sets are disjoint, the working tree
+held only this work's paths throughout, and the push landed fast-forward.
+
+**Every figure this plan gives about the sigil itself re-measured exactly.** 32 occurrences over
+six chapters of Daniel — ז 17, ח 2, ט 3, י 3, יא 6, יב 1 — all 32 preceded by a comma, none
+followed by a digit, the following characters being `,` (15), space (12), `?` (2), `(` (1), `)` (1)
+and `=` (1); ת451 at 5, in chapters ג, ה and ו, disjoint from every ב2 chapter; and no `|ב2=`
+anywhere in Daniel. The three rows of the Baselines table that did **not** re-measure are annotated
+in place above: the suite count, the sigil's whereabouts, and the 648.
+
+Two departures from the letter of Phase 1, both in spelling rather than behaviour:
+
+1. **The count table is keyed by integer chapter and converted through
+   `hebrew_verse_numerals.INT_TO_STR_DIC`**, rather than holding hand-typed Hebrew numerals. Same
+   table, same six chapters; the reason is that the table doubles as a skip list, so a mistyped
+   Hebrew key would not raise — it would silently pass its whole chapter through untouched, which
+   is the one failure mode neither guard catches.
+2. **`py/tests/test_ws_bot_sigil_b2_to_t451.py` asserts across two corpus states.** Its strongest
+   test runs the transform over the real `in/mam-ws/F1-Daniel.json`, and Phase 3 below re-downloads
+   that very file, so a single-state assertion would have gone red the moment Phase 3 landed — a
+   test destroying itself halfway through its own plan. The invariant it asserts instead holds
+   before and after: each table chapter carries either its counted ב2 and no ת451, or no ב2 and its
+   counted ת451.
+
+**The transform is one-shot, which follows from the expected-count table and is worth knowing
+before Phase 3.** Once the live edit's re-download has refreshed `in/mam-ws/F1-Daniel.json`, a
+table chapter holds zero occurrences, so re-running the proto rehearsal raises on the count
+assertion rather than quietly doing nothing. That is the right failure for a bot era that runs
+once; it is recorded here so it is not met as a surprise.
+
+Phase 2's evidence, stronger than reading the diff: for both book artifacts, applying the
+replacement to the `HEAD` blob reproduces the working-tree file **byte for byte**, so the diff
+contains the 32 replacements and nothing else — no normalization noise, no reordering, no
+whitespace drift. ב2 went 32 → 0 and ת451 5 → 37 in each.
 
 ## Phase 3 — the live Wikisource edit (Ben's step)
 
