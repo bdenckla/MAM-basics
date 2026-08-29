@@ -332,8 +332,8 @@ two and two**: wlc-utils' `doc/` and `in/` copies now living in this repo and UX
 
 ## `doc/boj-*.md` are book-of-job's procedures, and they were written for Copilot
 
-Seven files, arrived 2026-08-21 with Phase 4 of
-[`doc/PLAN-evacuate-python-from-book-of-job.md`](doc/PLAN-evacuate-python-from-book-of-job.md),
+Seven files, arrived 2026-08-21 with Phase 4 of `doc/PLAN-evacuate-python-from-book-of-job.md`
+(deleted as spent by the 2026-08-29 `doc/` sweep, and in git history),
 following the code they describe: `boj-aleppo-word-crops.md`, `boj-cam1753-word-crops.md`,
 `boj-leningrad-word-crops.md`, `boj-leningrad-image-scaling.md`,
 `boj-image-crop-reproducibility.md`, `boj-viewing-image-metadata.md` and

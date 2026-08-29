@@ -36,6 +36,17 @@ sessions" and can last indefinitely. **To resume**: re-check the four heads agai
 Phase 0's record names, re-run the preconditions, re-measure per the Scale section's standing
 instruction, and then run Phase 1 — which is verification only, per its Status row below.
 
+**Two executed plans are kept in `doc/` FOR THIS ONE, and go when it closes.** The 2026-08-29
+`doc/` sweep deleted seven finished plans and spared
+[`PLAN-evacuate-the-rest-of-wlc-utils.md`](PLAN-evacuate-the-rest-of-wlc-utils.md) and
+[`PLAN-evacuate-python-programme.md`](PLAN-evacuate-python-programme.md), both of which carry
+`State: executed` and would otherwise have gone with the seven. This file leans on both rather
+than restating them — the first as its model, per the instruction at the top of this file, the
+second for the two sections named under "Context — what this plan does, and the two programme
+decisions it executes" — so
+deleting them would have emptied the parts of this plan that say "settled there, see that
+section". Whoever closes or abandons this plan deletes those two with it.
+
 **Amended 2026-08-24 while paused, in one commit to this file alone, and no phase's state moved.**
 A survey asked whether MAM-basics holds stray `CLAUDE.md` or `.claude` files from the evacuations
 already run, and whether this plan could create any. It holds none — one `CLAUDE.md` at the root
