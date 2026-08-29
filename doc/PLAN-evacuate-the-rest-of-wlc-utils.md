@@ -1,5 +1,7 @@
 # Evacuate the rest of wlc-utils into MAM-basics
 
+State: executed 2026-08-17
+
 **This file is the plan. There is no other copy.** It was drafted on 2026-08-03 in
 `~/.claude/plans/`, as plan mode requires, and **that copy was deleted once this became the
 tracked one** — deliberately, and departing from what

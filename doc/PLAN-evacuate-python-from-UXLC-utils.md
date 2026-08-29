@@ -1,5 +1,7 @@
 # Evacuate all Python from UXLC-utils into MAM-basics
 
+State: executed 2026-08-18
+
 Written 2026-08-02. Governed by [PLAN-evacuate-python-programme.md](PLAN-evacuate-python-programme.md),
 which owns the scope, the order and the decisions shared with the other six repos — **read it
 first**, and read `doc/PLAN-evacuate-python-from-wlc-utils.md` §"The organizing idea: `repo_root()`

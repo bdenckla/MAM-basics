@@ -1,5 +1,7 @@
 # Evacuate all Python from book-of-job into MAM-basics
 
+State: executed 2026-08-22
+
 Written 2026-08-02. Governed by [PLAN-evacuate-python-programme.md](PLAN-evacuate-python-programme.md).
 **Fourth in the order**, after UXLC-utils, holman-ketiv-qere and the programme's blocking Phase 0.
 This is the largest and least regular repo in the programme, and the only one whose plan opens

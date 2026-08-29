@@ -1,5 +1,7 @@
 # PLAN — repo maintenance across GitRepos, every repo except MAM-basics
 
+State: runbook
+
 Written 2026-08-07 by the session that had just done MAM-basics' own maintenance. Ben's
 request, 2026-08-07: *"do repo maintenance across all repos cloned in GitRepos with the
 exception of MAM-basics (since we just did MAM-basics in this session)."*

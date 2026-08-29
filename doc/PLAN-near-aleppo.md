@@ -1,5 +1,7 @@
 # PLAN: near-aleppo — moved to MAM-private
 
+State: pointer
+
 The plan for the near-Aleppo edition is **not in this repo**. It lives at
 
     C:\Users\BenDe\GitRepos\MAM-private\doc\PLAN-near-aleppo.md

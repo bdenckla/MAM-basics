@@ -1,5 +1,7 @@
 # Replace the sigil ב2 with ת451 on Wikisource, and propagate
 
+State: executed 2026-08-27
+
 Written 2026-08-27, at `d7df398`. Closes [#260](https://github.com/bdenckla/MAM-basics/issues/260)
 and one bullet of [#259](https://github.com/bdenckla/MAM-basics/issues/259); their umbrella is
 [#257](https://github.com/bdenckla/MAM-basics/issues/257).

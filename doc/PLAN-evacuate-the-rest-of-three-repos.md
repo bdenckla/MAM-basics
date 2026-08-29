@@ -1,5 +1,7 @@
 # Total evacuation: book-of-job, holman-ketiv-qere and UXLC-utils
 
+State: paused 2026-08-23
+
 Written 2026-08-22, the day
 [`PLAN-evacuate-python-programme.md`](PLAN-evacuate-python-programme.md) closed — its last row,
 the codex-index trio, finished that morning and all six public repos in that programme hold zero

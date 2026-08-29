@@ -1,5 +1,7 @@
 # PLAN — two accents on one chanted word (prose)
 
+State: executed 2026-08-18
+
 **THIS PLAN IS COMPLETE. Every phase is executed or withdrawn, and the one item Phase 4 left
 parked was settled on 2026-08-18.** Phases 1, 2, 4 and 5 are executed, Phase 3 was built and
 withdrawn, and each has its record: §7, §8 and §9 for Phases 1–3, and the execution records

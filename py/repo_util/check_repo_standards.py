@@ -260,6 +260,25 @@ enforce this rule mechanically" in the testing rule. If it is ever written,
 have it report the unreferenced filenames and nothing else, never a count,
 which would read as a defect tally against repos that have earned their docs.
 
+THE `State:` LINE, added 2026-08-29 to all thirteen of this repo's
+doc/PLAN-*.md.  Line 3 of each file, directly under the H1, one of five words
+plus an optional date: `executed <date>`, `paused <date>`, `live`, `runbook`,
+`pointer`.  It exists because the inbound-reference screen above is the WRONG
+instrument for a plan, and inverts on one: PLAN-evacuate-the-rest-of-three-repos
+is cited by nothing outside doc/ and is paused work that must not be deleted,
+while PLAN-evacuate-python-from-codex-index-trio is cited from 31 modules and is
+entirely spent.  The evacuations wrote their plan citations into the code they
+produced, so for plans a high reference count reports that the work LANDED, not
+that the file is still wanted.  Keep the screen for other doc/ files; read the
+State line for plans.
+
+The State line is written by whoever last moves a phase, in the SAME commit as
+the phase work.  `c0d9e21` is why that clause is here: the b2-to-t451 plan's
+Phase 7 was done at 15:20 on 2026-08-27 and its record was not written until
+17:38, and inside that window two sessions read the plan and both reported the
+phase unstarted.  A plan file is not an oracle for its own state unless
+something keeps it one.
+
 Deliberately NOT checked -- black version-pinning. `black` is intentionally left
 unpinned in these repos, and a version bump's reformatting is wanted, not a
 hazard to be prevented: when a new black wants to touch files you didn't edit,

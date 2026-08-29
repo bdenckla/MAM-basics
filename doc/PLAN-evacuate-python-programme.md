@@ -1,5 +1,7 @@
 # Evacuating Python from the remaining public repos — the programme
 
+State: executed 2026-08-22
+
 Written 2026-08-02, immediately after `doc/PLAN-evacuate-python-from-wlc-utils.md` finished. That
 plan is the model and the precedent; this file is the umbrella over the public repos that still
 hold Python — **eight hold it, six are in scope** — and it owns the three things no single repo's

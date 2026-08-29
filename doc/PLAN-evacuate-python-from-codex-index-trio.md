@@ -1,5 +1,7 @@
 # Evacuate all Python from codex-index-aleppo, -leningrad and -cam1753 into MAM-basics
 
+State: executed 2026-08-22
+
 Written 2026-08-02. Governed by [PLAN-evacuate-python-programme.md](PLAN-evacuate-python-programme.md).
 **Last in the order.** One plan for three repos, because they share a shape, share two fork
 families, and share a vendoring problem — doing them separately would answer the same question

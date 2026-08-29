@@ -1,5 +1,7 @@
 # Evacuate all Python from holman-ketiv-qere into MAM-basics
 
+State: executed 2026-08-19
+
 Written 2026-08-02. Governed by [PLAN-evacuate-python-programme.md](PLAN-evacuate-python-programme.md).
 **Second in the order**, after UXLC-utils: the same shape, smaller, and its job is to confirm the
 recipe on a second repo before the expensive ones. Read

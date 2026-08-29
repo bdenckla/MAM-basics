@@ -1,5 +1,7 @@
 # Evacuate all Python from wlc-utils into MAM-basics
 
+State: executed 2026-08-02
+
 ## Status
 
 | Phase | State |

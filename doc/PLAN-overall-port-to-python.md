@@ -1,5 +1,7 @@
 # Overall Plan: Port Accents to Python in Two Stages
 
+State: live
+
 ## Objective
 Create a Python implementation that first matches current Accents behavior, then
 evolves to a cleaner long-term architecture. The work covers **both** accent
