@@ -327,11 +327,44 @@ Read every `kept ... (reason)` line. A spared worktree is not a failure; it is a
 Use `--report-txt`: the one-line-per-repo stdout summary gives counts, and the text report
 gives the actual findings. Write reports into `.novc/`, not into a tracked directory.
 
-**5. `--run-black` LAST**, because it is the only one that rewrites source:
+**5. `--run-black`**, last of the mechanical steps and the only one that rewrites source:
 ```
 .venv\Scripts\python.exe py\main_repo_util.py --run-black --workspace-file all-repos.code-workspace
 ```
 Expect `BLACK_PROBLEM_COUNT` absent/zero — see H5 for why, and what a nonzero one means.
+
+**6. The `doc/` sweep — genuinely last, and the only step that is not mechanical.** It deletes
+tracked files and needs a judgment `main_repo_util.py` deliberately does not make, so it runs
+after everything else, where a wrong call is plainest in the diff. The standard it applies is
+the "The doc/ directory standard" section of `py/repo_util/check_repo_standards.py`: a doc file
+that only records finished work is deleted, not archived; git history keeps it.
+
+**Only two repos have plans at all** — MAM-basics 6 and MAM-private 3, measured 2026-08-29; no
+other folder under `GitRepos` has a `doc/PLAN-*.md`. Only MAM-basics' six carry the `State:`
+line introduced that day. MAM-private's three do not, so giving them one is the next step there
+rather than something this runbook can assume. Raise the candidates:
+
+```
+git -C C:\Users\BenDe\GitRepos\MAM-basics grep -l "^State: executed" -- doc/PLAN-*.md
+```
+
+Then ask the second question of each **by hand**, because the `State:` line does not answer it:
+**does surviving work lean on this plan, and how hard?** *Executed is not the same as spent.* On
+2026-08-29 the still-paused `PLAN-evacuate-the-rest-of-three-repos.md` cited **seven** of the
+nine executed plans, and two of those — `PLAN-evacuate-the-rest-of-wlc-utils.md` and
+`PLAN-evacuate-python-programme.md` — by live markdown link, named as the model it "leans on
+rather than restating" and as the source of two sections declared to be its own. Those two were
+kept and the other seven deleted (`f6173fe`). The line that held: a plan the surviving work
+merely mentions is spent, a plan it tells you to read first is load-bearing.
+
+Report the filenames raised and nothing else — **never a count**, which reads as a defect tally
+against repos that have earned their docs. For doc/ files that are *not* plans, the screen stays
+the inbound-reference one that same section of `check_repo_standards.py` describes; note that
+the screen inverts on plans and must not be used on them.
+
+**This step was added 2026-08-29, so neither of the two runs recorded above included it** — the
+2026-08-07 and 2026-08-27 records describe a sweep of steps 1–5 only, and neither says anything
+about `doc/` either way.
 
 ---
 
