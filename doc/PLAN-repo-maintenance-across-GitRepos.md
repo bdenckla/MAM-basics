@@ -339,14 +339,21 @@ after everything else, where a wrong call is plainest in the diff. The standard 
 the "The doc/ directory standard" section of `py/repo_util/check_repo_standards.py`: a doc file
 that only records finished work is deleted, not archived; git history keeps it.
 
-**Only two repos have plans at all** — MAM-basics 6 and MAM-private 3, measured 2026-08-29; no
-other folder under `GitRepos` has a `doc/PLAN-*.md`. Only MAM-basics' six carry the `State:`
-line introduced that day. MAM-private's three do not, so giving them one is the next step there
-rather than something this runbook can assume. Raise the candidates:
+**Only two folders under `GitRepos` have plans — MAM-basics 6 and MAM-private 4**, and that
+second figure read 3 until 2026-08-29, when running this step against MAM-private turned up a
+fourth: `al-hatorah/doc/PLAN-melody-compiler.md`, live work sitting in one of the evacuated trees
+rather than at that repo's own `doc/`. The measurement that said 3 was a glob of `doc/PLAN-*.md`
+at each repo root, which cannot see a tree's own `doc/`, **so the screen has to cross
+directories** — a git pathspec written without `:(glob)` lets `*` match `/`, and running it
+through git rather than over the filesystem also keeps a leftover agent worktree's copies of the
+same plans out of the count. Raise the candidates:
 
 ```
-git -C C:\Users\BenDe\GitRepos\MAM-basics grep -l "^State: executed" -- doc/PLAN-*.md
+git -C C:\Users\BenDe\GitRepos\MAM-basics grep -l "^State: executed" -- "*PLAN-*.md"
 ```
+
+All ten carry the `State:` line as of 2026-08-29 — MAM-basics' six from the day it was
+introduced, and MAM-private's four the same day, in that repo's `6a60e8b` and `0bdde52`.
 
 Then ask the second question of each **by hand**, because the `State:` line does not answer it:
 **does surviving work lean on this plan, and how hard?** *Executed is not the same as spent.* On
