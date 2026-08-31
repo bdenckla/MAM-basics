@@ -6,6 +6,9 @@ Subcommands:
     gen-misc
                 (default) Write misc authored HTML docs to
                 MAM-with-doc/gh-pages/misc/.
+    gen-site
+                Write this repo's own published pages at the deploy root:
+                gh-pages/index.html and gh-pages/unicode-proposals.html.
     gen-mam-parsed-docs
                 Write index.html to MAM-parsed/gh-pages, plain docs to
                 MAM-parsed/gh-pages/plain/html, and plus docs to
@@ -52,6 +55,8 @@ from author_misc import review_of_artscroll_transliterated_linear_siddur as as_r
 from author_misc import he_ws_intro_to_mam_gray_maqaf_1 as gray_maqaf
 from author_misc import he_ws_intro_to_mam_pasleg as pasleg
 from author_misc import mam_parsed_docs_build
+from author_site import site_index
+from author_site import unicode_proposals
 from verify_mp import claims_doc
 from verify_mp import driver as verify_driver
 from verify_mp import survey_artifact
@@ -112,6 +117,16 @@ def cmd_gen_misc(_args):
     almost_main()
 
 
+def gen_site():
+    """Write this repo's own published pages at the deploy root."""
+    for out_path in (unicode_proposals.gen_html_file(), site_index.gen_html_file()):
+        print(f"Generated {out_path}")
+
+
+def cmd_gen_site(_args):
+    gen_site()
+
+
 def _run_verify_mp(*, claims) -> None:
     """Run MAM-parsed claim verification against corpus + survey artifacts."""
     corpus = load_plus_corpus()
@@ -161,6 +176,10 @@ def build_parser():
     sub = parser.add_subparsers(dest="subcommand")
     sub.add_parser("gen-misc", help="Generate miscellaneous authored HTML documents")
     sub.add_parser(
+        "gen-site",
+        help="Generate this repo's own published pages at the gh-pages deploy root.",
+    )
+    sub.add_parser(
         "gen-mam-parsed-docs",
         help=(
             "Generate authored MAM-parsed docs (index at gh-pages root, "
@@ -187,7 +206,9 @@ def build_parser():
 
 def main():
     args = build_parser().parse_args()
-    if args.subcommand == "gen-mam-parsed-docs":
+    if args.subcommand == "gen-site":
+        cmd_gen_site(args)
+    elif args.subcommand == "gen-mam-parsed-docs":
         cmd_gen_mam_parsed_docs(args)
     elif args.subcommand == "gen-mp-claims-index":
         cmd_gen_mp_claims_index(args)

@@ -464,11 +464,16 @@ _POSTSCRIPT_QUIRKS_IN_MU_A = [
     " To me, it would make sense for $BHQ to note them,",
     [" and therefore I note a few in the ", d4_anchor()],
 ]
-_README = author.anc_h(
-    "README",
-    "https://github.com/bdenckla/document-index/blob/main/README.md",
+# Was document-index/README.md until 2026-08-31, when that repo's index was evacuated into
+# MAM-basics' own published landing page (doc/PLAN-unify-the-document-index.md).  Repointed
+# rather than left to a redirect, per py/wlc_redirect/stubs.py's rule: a citation Ben can
+# edit is a URL to update.  The link text follows the URL -- what it names is now an index,
+# not a README.
+_DOCUMENT_INDEX = author.anc_h(
+    "index of my documents",
+    "https://bdenckla.github.io/MAM-basics/",
 )
 _RELATED_WORKS_BY_ME = [
     "Other works by me about the Masoretic Text can be found in this",
-    [" ", _README, "."],
+    [" ", _DOCUMENT_INDEX, "."],
 ]

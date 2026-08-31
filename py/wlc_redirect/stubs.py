@@ -15,7 +15,10 @@ named three sources as "places Ben cannot edit" until 2026-08-22, and two of the
 his own: the four deep links carrying fragments in UXLC-utils' generated CLC notes, whose
 URL is ``py/clc/clc_render.py``'s ``_LC_CORROBORATED_LINK`` in this repo and so is one
 constant and a regeneration away from being right, and the four paths in
-``document-index/README.md``, hand written.  A fifth source the list missed,
+``document-index/README.md``, hand written -- which since 2026-08-31 are four entries of
+this repo's own ``py/author_site/site_data.py``, checked by
+``py/tests/test_site_index_links.py``, so that source is now not merely editable but
+LINTED.  A fifth source the list missed,
 ``UXLC-utils/doc/clc-design.md``, is hand written too.  Ben, 2026-08-22: "The stubs are
 for things out of my control."  Those three sources are in his control and want the new
 URL, not a redirect.  What is genuinely beyond it is tanach.us: the five citations there
@@ -56,9 +59,11 @@ the one direction the freeze leaves: a frozen page that is no longer published h
 stub now sends a reader to a page that is not there.
 
 A directory URL is covered only where the directory has an ``index.html``, which is the
-right answer rather than an accident: ``document-index/README.md`` cites ``/420422/`` and
+right answer rather than an accident: ``document-index/README.md`` cited ``/420422/`` and
 ``/wlc-a-notes/``, and both hold one, so both get a stub that a bare directory URL
-reaches.  ``/accgram/`` holds no ``index.html`` (issue #230 -- it 404s today, and always
+reaches.  (Its successor, this repo's ``py/author_site/site_data.py``, names the
+``index.html`` explicitly -- ``py/check_html_syntax_and_sanity.py`` does not resolve a
+trailing slash -- but the stubs answer the OLD URLs, which are the ones with the slash.)  ``/accgram/`` holds no ``index.html`` (issue #230 -- it 404s today, and always
 did), so it correctly gets no stub and falls to the ``404.html`` catch-all below.
 
 WITH JAVASCRIPT DISABLED, A FRAGMENT IS LOST -- AND THE JS IS NOT BELT-AND-BRACES
