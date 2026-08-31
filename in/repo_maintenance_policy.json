@@ -96,6 +96,21 @@
       "last_commit_when_frozen": "2024-10-25"
     }
   },
+  "gitrepos_setup_rule": {
+    "comment": "The complete definition of which repos belong under C:\\Users\\BenDe\\GitRepos, so that 'set up GitRepos' on a new machine and 'sync GitRepos' on an existing one are the same reproducible question. Written 2026-08-31, after a sync cloned a discontinued repo back onto the disk. Before this, no list on disk matched the disk: all-repos.code-workspace and repo_visibility hold the same 19 repos as each other, while 27 are present, and neither the gists nor the exclusions were derivable from anything. Apply the clauses in order; the result reproduced the 27 repos present on 2026-08-31 exactly.",
+    "clauses": [
+      "1. START with `gh repo list bdenckla`, keeping only repos that are neither archived nor forks. On 2026-08-31 that was 26 of 48.",
+      "2. SUBTRACT every name in repos_to_keep_absent (see that key for why each is listed).",
+      "3. SUBTRACT every name in frozen_repos. Ben's decision, 2026-08-31: frozen repos are NOT to be cloned on a fresh machine. State this clause explicitly and do not skip it on the grounds that all six frozen repos happen to be archived on GitHub today, which would make clause 1 appear to cover them. That coincidence is exactly what the mamgo-auto-edits comment in frozen_repos warns against: archived-on-GitHub and frozen-here nearly coincide, but neither list may be derived from the other, so a repo un-archived later would silently start being cloned.",
+      "4. ADD the gists listed under `gists` below. Gists are invisible to `gh repo list`, so no enumeration can ever produce them and clause 1 cannot be made to cover them.",
+      "5. The number of clones under GitRepos should then equal the number of directories there; anything left over is either a decision nobody recorded or a repo that should be removed."
+    ],
+    "gists": {
+      "comment": "Cloned like repos but unreachable by `gh repo list`, so their URLs are recorded here or they are unrecoverable. Gist-Hebrew-World is why this key exists: on 2026-08-31 its URL existed nowhere on the machine except inside its own clone's git remote, so deleting that clone would have destroyed the knowledge that it should exist. py/repo_util/repo_selection.py carries a clone URL for Gist-ArtScroll too, for a different purpose -- the message shown when a workspace folder is missing -- and that is not a substitute for this list, since Gist-Hebrew-World is in no workspace file.",
+      "Gist-ArtScroll": "https://gist.github.com/bdenckla/f04699f2a9c4eccd3220751fdb233722.git",
+      "Gist-Hebrew-World": "https://gist.github.com/bdenckla/7e578526559cbbfc2d54a1bc0c827072.git"
+    }
+  },
   "repos_to_keep_absent": {
     "comment": "Repos that must NOT have a clone in C:\\Users\\BenDe\\GitRepos, and why. Ben's decision, 2026-08-31. THIS IS NOT frozen_repos, and neither list may be derived from the other, exactly as the comment at the top of this file says of frozen_repos and in/vendoring_policy.json: a frozen repo's clone is kept, merely left untouched so its last-changed date keeps testifying to the pause, whereas a repo listed here should have no clone on this machine at all. NOTHING READS THIS AT CLONE TIME, and that is not an oversight awaiting a script. There is no sync program on this machine: a 'sync' is a Claude Code session answering a free-text request, which on 2026-08-31 enumerated `gh repo list bdenckla`, diffed the result against `ls` of GitRepos by eye, and typed the missing names into a literal clone loop. So the mechanism that consults this register is the instruction in ~/.claude/CLAUDE.md (canonical copy github-misc/dot-claude/CLAUDE.md) telling such a session to read it before cloning anything. If that instruction is ever dropped, this key goes back to being documentation that governs nothing.",
     "trope": {
