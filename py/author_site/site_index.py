@@ -16,6 +16,19 @@ They are in ``site_data``'s ``_WLC`` now, and ``published_subtrees.py`` was dele
 section it existed for -- so a subtree published from here is named by an authored entry or
 it is named nowhere, exactly as ``gh-pages/unicode-proposals.html`` always was.
 
+``gh-pages/wlc/index.html`` IS LINKED FROM NO PAGE NOW, AND THAT IS SETTLED.  Removing the
+section left it reachable from nothing on this site, and Ben's rule the same day is that a
+page unreadable "by any number of clicks" is the thing he objects to -- placement on this
+page being optional.  He ruled on 2026-08-31 that this one is reachable anyway: it is a
+frozen target in ``in/wlc_redirect_pages.json``, so the stub for
+``bdenckla.github.io/wlc-utils/index.html`` forwards to it, and following an old wlc-utils
+link is a real way to read it.  That is also why the file cannot simply be deleted -- the
+stub would 404 and ``py/tests/test_wlc_redirect_manifest.py`` would fail.  **Do not
+un-strand it by adding an entry here.**  It lists exactly the seven pages ``site_data``'s
+``_WLC`` already names, so such an entry would be redundant as well as a step back toward
+the section Ben had just removed.  A reachability sweep will keep reporting it; this
+paragraph is the answer.
+
 NOT ``author.dollar_sub``.  Every other authored page here runs its text through
 ``mb_author.author``, whose ``_check_no_undollared`` RAISES on an un-``$``-prefixed
 romanization key.  This page's link text is full of them -- tsinnorit, maqaf, qadma,
