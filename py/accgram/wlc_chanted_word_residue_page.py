@@ -1,12 +1,15 @@
 r"""Generate gh-pages/wlc/accgram/wlc-chanted-word-residue.html -- WLC's unnamed accent pairs.
 
-A SNEAK PEEK, AND DELIBERATELY UNLINKED.  Ben asked for this on 2026-08-03: the residue that
-``chanted_word_accents`` measures for WLC, on a page of its own, reachable only by its URL.
-Nothing links to it -- not ``gh-pages/wlc/index.html``, which is hand-written and lists seven pages,
-and not ``goerwitz.html``, whose ungrammatical-verse report is where a WLC accent problem is
-read today.  Folding it into that report is a decision nobody has made and may never make;
-linking to it from there is the smaller step that may come first.  Until then the page says
-what it is at the top, so a reader who has the URL cannot mistake it for a verdict.
+A SNEAK PEEK, UNLINKED UNTIL 2026-08-31, AND LINKED FROM ``goerwitz.html`` SINCE.  Ben asked
+for this on 2026-08-03: the residue that ``chanted_word_accents`` measures for WLC, on a page
+of its own, reachable only by its URL.  This paragraph then said that nothing linked to it,
+and named the fix that might come first -- a link from ``goerwitz.html``, whose
+ungrammatical-verse report is where a WLC accent problem is read today.  That is what
+happened.  Ben ruled on 2026-08-31 that a page no click can reach is what he objects to,
+placement being optional, and asked for the link; it is ``rtmsr_intro``'s
+``chanted_word_residue_text``.  **Folding the residue INTO that report is still a decision
+nobody has made**, and the link is not that decision -- the page goes on saying what it is at
+the top, so a reader arriving from the report cannot mistake it for a verdict.
 
 WHAT IT SHOWS.  ``chanted_word_accents`` counts every chanted word -- an atom, or a whole maqaf
 compound -- with two or more accent TOKENS, and names each pair with the section of Yeivin's ITM

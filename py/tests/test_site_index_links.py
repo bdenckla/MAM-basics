@@ -26,7 +26,7 @@ headed "Pages published from this repository" used to be built by an
 files, so its links named a tracked page BY CONSTRUCTION and this file deliberately let them
 be.  Ben deleted that section on 2026-08-31 and asked for the pages it reached to be
 distributed to the authored sections instead, so the four that moved into ``site_data``'s
-``_WLC`` are typed links now, and are checked here like every other typed link.
+``_WLC`` and ``_MISC`` are typed links now, and are checked here like every other typed link.
 
 TRACKED, NOT MERELY PRESENT.  ``.github/workflows/pages.yml`` deploys what is committed, so
 a link to a generated-but-untracked page would 404 for every reader while resolving fine on
@@ -115,10 +115,16 @@ def test_the_misc_titles_are_the_pages_own_titles():
     """Each Misc entry's link text is still the _TITLE of the module that renders it."""
     modules = site_data.MISC_SOURCE_MODULES
     assert len(modules) == 10, modules
+    # The Misc section is wider than these ten -- it also holds three accgram pages
+    # published from this repo, whose link text copies no module's _TITLE.  Zipping the
+    # whole section against the ten would compare an accgram entry to a MAM-with-doc
+    # module and report drift that is the pairing's fault, so pair with the filtered half.
+    entries = site_data.MISC_MWD_ENTRIES
+    assert len(entries) == len(modules)
     misc = next(one for one in site_data.BY_ME if one.heading == "Misc")
-    assert len(misc.entries) == len(modules)
+    assert set(entries) <= set(misc.entries), "MISC_MWD_ENTRIES left the Misc section"
     drifted = []
-    for entry, module in zip(misc.entries, modules):
+    for entry, module in zip(entries, modules):
         source = (paths.repo_root() / _MISC_MODULE_DIR / f"{module}.py").read_text(
             encoding="utf-8"
         )

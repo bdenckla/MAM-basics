@@ -12,7 +12,7 @@ the 2026-08-22 decision recorded in ``doc/PLAN-evacuate-python-programme.md``.  
 that section on 2026-08-31, having disliked it: its single entry sent a reader to
 ``gh-pages/wlc/index.html`` to find seven pages, four of which this page did not name
 anywhere else, and he asked for those four to be distributed to the sections above instead.
-They are in ``site_data``'s ``_WLC`` now, and ``published_subtrees.py`` was deleted with the
+They are in ``site_data``'s ``_WLC`` and ``_MISC`` now, and ``published_subtrees.py`` was deleted with the
 section it existed for -- so a subtree published from here is named by an authored entry or
 it is named nowhere, exactly as ``gh-pages/unicode-proposals.html`` always was.
 

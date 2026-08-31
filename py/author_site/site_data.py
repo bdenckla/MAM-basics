@@ -11,16 +11,18 @@ visible in the shape of this file:
   docstring pointed at.  Ben deleted that section on 2026-08-31, having disliked it, and
   asked that the pages it reached through ``gh-pages/wlc/index.html`` be distributed to
   the top-level sections instead -- so the four of that page's seven the index did not
-  already name joined ``_WLC``, and the whole file is authored now, with no derived half.
+  already name were added, and the whole file is authored now, with no derived half.  All
+  four went to ``_WLC`` first; the same day Ben moved three of them to ``_MISC``, not
+  being WLC-specific, and that section's own comment has the counts behind it.
 * **Flat.**  Ben, 2026-08-31, asked for "a 'misc' section with links to those 10
   documents" rather than a link to ``MAM-with-doc/misc/index.html``, so that reaching any
   of his documents takes one click from here and not two.  ``_MISC`` is that section.
 
-THE FOUR NEW WLC ENTRIES CARRY ``gh-pages/wlc/index.html``'s OWN LINK TEXT, verbatim, down
-to its em dashes -- that hand-written page is where Ben had already named each of them for
-a reader, so distributing them is a move rather than a rewrite.  Two of the four therefore
-read differently from the page's ``<title>``; that is deliberate, and it is why no lint
-compares them, unlike the ten Misc titles below.
+THE FOUR PAGES DISTRIBUTED ON 2026-08-31 CARRY ``gh-pages/wlc/index.html``'s OWN LINK TEXT,
+verbatim, down to its em dashes -- that hand-written page is where Ben had already named
+each of them for a reader, so distributing them is a move rather than a rewrite.  Two of the
+four therefore read differently from the page's ``<title>``; that is deliberate, and it is
+why no lint compares them, unlike the ten MAM-with-doc titles in ``_MISC``.
 
 THE HEADINGS ARE NOT INVENTED.  document-index's top-level list mixed four category
 bullets with two lone documents.  Rendering categories as ``<h2>`` sections is flatter than
@@ -176,18 +178,6 @@ _WLC = Section(
             f"Almost errors {_EM_DASH} editorial charities the checker applies",
             "wlc/accgram/almost-errors.html",
         ),
-        _entry(
-            "Are the printed Decalogue cantillations grammatical?",
-            "wlc/accgram/printed-decalogue.html",
-        ),
-        _entry(
-            "What printed editions have at ובנך",
-            "wlc/accgram/printed-decalogue-uvinkha.html",
-        ),
-        _entry(
-            f"Psalms 17:14 {_EM_DASH} the double tsinnor",
-            "wlc/accgram/ps17v14-double-tsinnor.html",
-        ),
     ),
 )
 
@@ -217,8 +207,24 @@ _URWOTM = Section(
     ),
 )
 
-# The ten documents under MAM-with-doc/misc/ that document-index did not carry.  Its own
-# seven from that directory are above, under Reviews and Undoing and redoing.
+# The ten documents under MAM-with-doc/misc/ that document-index did not carry, and then
+# three accgram pages published from this repo.  document-index's own seven from that
+# directory are above, under Reviews and Undoing and redoing.
+#
+# THE THREE ACCGRAM PAGES ARE HERE BECAUSE THEY ARE NOT ABOUT WLC.  They joined ``_WLC`` on
+# 2026-08-31, when the manifest section was removed and the pages it reached were
+# distributed; Ben moved them the same day, on the ground that they are not WLC-specific.
+# Counting each page's own mentions bears that out: printed-decalogue has 13 Simanim, 5
+# Koren, 4 MAM and 2 WLC; printed-decalogue-uvinkha has 4 MAM, 3 Koren, 3 Simanim and no WLC
+# at all; ps17v14-double-tsinnor has 5 MAM, 3 Leningrad and 1 WLC.  The two that stayed in
+# ``_WLC`` are the WLC-specific ones -- goerwitz.html is the WLC ungrammatical-verse report,
+# and almost-errors.html is about quirks of WLC by its first paragraph.
+#
+# THE TITLE LINT DOES NOT REACH THEM, and ``MISC_SOURCE_MODULES`` below is what keeps it
+# from trying: it filters this section to the MAM-with-doc entries.  Those ten copy a
+# ``py/author_misc/`` module's ``_TITLE`` and are checked against it; these three carry
+# gh-pages/wlc/index.html's own link text, which for two of them differs from the page's
+# ``<title>`` deliberately.
 _MISC = Section(
     heading="Misc",
     entries=(
@@ -244,6 +250,18 @@ _MISC = Section(
         _mwd_misc("Mid-word געיה with Shewa", "rocc_4_mid_word_ga3ya_with_shewa.html"),
         _mwd_misc("Gray maqaf", "he_ws_intro_to_mam_gray_maqaf_1.html"),
         _mwd_misc("Paseq and legarmeh", "he_ws_intro_to_mam_pasleg.html"),
+        _entry(
+            "Are the printed Decalogue cantillations grammatical?",
+            "wlc/accgram/printed-decalogue.html",
+        ),
+        _entry(
+            "What printed editions have at ובנך",
+            "wlc/accgram/printed-decalogue-uvinkha.html",
+        ),
+        _entry(
+            f"Psalms 17:14 {_EM_DASH} the double tsinnor",
+            "wlc/accgram/ps17v14-double-tsinnor.html",
+        ),
     ),
 )
 
@@ -291,7 +309,14 @@ _EXCERPTS = Section(
 BY_ME = (_UNICODE, _MAM, _REVIEWS, _WLC, _URWOTM, _MISC, _TAAMEY)
 NOT_BY_ME = (_EDITIONS, _EXCERPTS)
 
-# The ten Misc entries copy these modules' _TITLE constants; the lint checks each copy.
+# The MAM-with-doc half of the Misc section, and the modules whose _TITLE each entry copies.
+# Paired rather than derived twice, so the lint cannot zip an entry against another entry's
+# module.  Filtered by href prefix because Misc also holds three accgram pages published from
+# this repo, which copy no module's _TITLE -- see the section's own comment above.
+MISC_MWD_ENTRIES = tuple(
+    entry for entry in _MISC.entries if entry.anchor.href.startswith(_MWD_MISC)
+)
 MISC_SOURCE_MODULES = tuple(
-    entry.anchor.href[len(_MWD_MISC) :].removesuffix(".html") for entry in _MISC.entries
+    entry.anchor.href[len(_MWD_MISC) :].removesuffix(".html")
+    for entry in MISC_MWD_ENTRIES
 )

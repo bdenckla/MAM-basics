@@ -71,6 +71,24 @@ def build_intro_contents(
         wlc_utils_html.anchor("Almost errors", {"href": "almost-errors.html"}),
         " page.",
     )
+    # The one link into wlc-chanted-word-residue.html, which nothing pointed at from
+    # 2026-08-03, when Ben asked for that page as a sneak peek reachable by its URL, until
+    # 2026-08-31, when he ruled that a page no click can reach is the thing he objects to.
+    # Its own docstring had already named this as the fix that might come first.  Here
+    # rather than beside the printed-Decalogue aside below because the two say different
+    # things: that one points at a different corpus, this one at what the checker cannot
+    # see in the corpus this page reports on.
+    chanted_word_residue_text = (
+        "The checker reads a sequence of accents and cannot see where one chanted word"
+        " ends and the next begins, so a verse can parse clean while two of its accents"
+        " land on one chanted word. Which WLC chanted words those are, and which of them"
+        " Yeivin's inventory names, is set out in ",
+        wlc_utils_html.anchor(
+            "Two Accents on One Chanted Word: What WLC Has Left Over",
+            {"href": "wlc-chanted-word-residue.html"},
+        ),
+        ". Nothing on that page is a verdict.",
+    )
     printed_decalogue_text = (
         "Aside: this page runs the checker on WLC (after ",
         wlc_utils_html.anchor(
@@ -95,6 +113,7 @@ def build_intro_contents(
         wlc_utils_html.para(and_text),
         wlc_utils_html.para(bracket_notes_text),
         wlc_utils_html.para(almost_errors_text),
+        wlc_utils_html.para(chanted_word_residue_text),
         wlc_utils_html.para(printed_decalogue_text),
     )
 
