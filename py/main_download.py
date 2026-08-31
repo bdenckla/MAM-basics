@@ -8,12 +8,20 @@ Subcommands:
                 Download MAM CSVs from Sefaria.
     fr-wikisource
                 Download MAM JSON from Hebrew Wikisource.
+    fr-ws-intro
+                Download the MAM introduction from Hebrew Wikisource.
+
+fr-ws-intro is deliberately separate from fr-wikisource rather than a step of it: the
+books and the introduction have unrelated refresh rhythms, nothing downstream reparses
+when the introduction moves, and a chapter-scoped fr-wikisource run should not pay for
+1.8 MB of introduction.  Ben's decision, 2026-08-31.
 
 Examples:
     .venv/Scripts/python.exe py/main_download.py fr-google
     .venv/Scripts/python.exe py/main_download.py fr-google --section Torah
     .venv/Scripts/python.exe py/main_download.py fr-sefaria --book39 1Kings
     .venv/Scripts/python.exe py/main_download.py fr-wikisource --book39 Joshua --chapter 11
+    .venv/Scripts/python.exe py/main_download.py fr-ws-intro
 """
 
 import argparse
@@ -22,6 +30,7 @@ from mb_cmn import bib_locales as tbn
 from subcommands import download_google
 from subcommands import download_sefaria
 from subcommands import download_wikisource
+from subcommands import download_wikisource_intro
 from ws import ws_download_selector as wsds
 
 
@@ -80,6 +89,12 @@ def _add_subcommands(subparsers) -> None:
     wsds.add_selector_opts(ws_parser)
     ws_parser.set_defaults(func=_run_wikisource)
 
+    ws_intro_parser = subparsers.add_parser(
+        "fr-ws-intro",
+        help="Download the MAM introduction from Hebrew Wikisource.",
+    )
+    ws_intro_parser.set_defaults(func=_run_wikisource_intro)
+
 
 def _bkids_from_args(args):
     if getattr(args, "book39", None):
@@ -103,6 +118,10 @@ def _run_sefaria(args: argparse.Namespace) -> None:
 
 def _run_wikisource(args: argparse.Namespace) -> None:
     download_wikisource.run_from_args(args)
+
+
+def _run_wikisource_intro(args: argparse.Namespace) -> None:
+    download_wikisource_intro.run_from_args(args)
 
 
 if __name__ == "__main__":

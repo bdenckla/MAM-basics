@@ -1,0 +1,4137 @@
+{{תבנית:טעמי המקרא באינטרנט (עליון)}}
+==רשימת ההערות בהקלדת וסטמינטר ופירושם==
+המקור [http://tanach.us/Supplements/Notes.xml כאן]. פירושם של כל ההערות בהקלדת וסטמינסטר בגירסה 4.14:
+
+<div dir="ltr">
+Transcription notes in the Westminster Leningrad Codex [4.14]
+Displays verses that have transcription notes attached to them. To speed display, results for a single type of note are shown for each book in usual chapter:verse order. Counts of the notes of each type and the total number of transcription notes are given.
+1034 transcription notes.
+Choose the type of note to display by clicking on the note's link below.
+Value	Note	Count
+
+1	BHS has been faithful to the Leningrad Codex where there might be a question of the validity of the form and we keep the same form as BHS.	263
+
+2	We have added a sop pasuq where L and BHS omit it. (The added sof pasuq often is missing from the text.)	19
+
+3	We read or understand L differently than BHS. Often this notation indicates a typographical error in BHS.	284
+
+4	Puncta extraordinaria -- a \u05c4 is used to mark such marks in the text when they are above the line and a \u05c5 when they are below the line.	16
+
+5	Large letter(s). Shown as large letters without a superscript note number.	4
+
+6	Small letter(s). Shown as small letters without a superscript note number.	3
+
+7	Suspended letter(s). Shown as suspended letters without a superscript note number.	4
+
+8	Inverted nun in the text.	9
+
+9	BHS has abandoned L and we concur. All of these occurrences are ketib/qere problems.	20
+
+a	Adaptations to a Qere which L and BHS, by their design, do not indicate.	28
+
+c	We read one or more accents in L differently than BHS. Often this notation indicates a typographical error in BHS.	160
+
+k	We read one or more consonants in L differently from BHS.	5
+
+m	Miscellaneous notes to the text and occasions where more than one bracket category applies.	7
+
+n	Marks an anomalous form.	2
+
+p	We read punctuation in L differently from BHS.	43
+
+q	We have abandoned or added a ketib/qere relative to BHS. In doing this we agree with L against BHS.	36
+
+v	We read one or more vowels in L differently from BHS.	20
+
+y	Yathir readings in L which we have designated as Qeres when both Dothan and BHS list a Qere.	24
+
+C	We read one or more accents in L differently from BHQ.	21
+
+F	Marks a consonant with an anomalous final form that is word-medial.	1
+
+K	We read one or more consonants in L differently from BHQ. (Currently unused.)	
+
+M	Marks a word with a final consonant that is a medial (not a final) form.	2
+
+P	We read the punctuation in L differently from BHQ.	7
+
+Q	Marks a place where we agree with BHQ against BHS in reading L.	54
+
+V	We read one or more vowels in L differently from BHQ.	2
+</div>
+המקור [http://tanach.us/Supplements/Notes.xml כאן]. פירושם של כל ההערות בהקלדת וסטמינסטר בגירסה 4.14:
+
+<div dir="ltr"> 
+Supplements
+Transcription notes in the Westminster Leningrad Codex [4.16]
+Displays verses that have transcription notes attached to them. To speed display, results for a single type of note are shown for each book in usual chapter:verse order. Counts of the notes of each type and the total number of transcription notes are given.
+945 transcription notes.
+Choose the type of note to display by clicking on the note's link below.
+Value	Note	Count
+1	BHS has been faithful to the Leningrad Codex where there might be a question of the validity of the form and we keep the same form as BHS.	208
+4	Puncta extraordinaria -- a \u05c4 is used to mark such marks in the text when they are above the line and a \u05c5 when they are below the line.	16
+5	Large letter(s). Shown as large letters without a superscript note number.	4
+6	Small letter(s). Shown as small letters without a superscript note number.	3
+7	Suspended letter(s). Shown as suspended letters without a superscript note number.	4
+8	Inverted nun in the text.	9
+a	Adaptations to a Qere which L and BHS, by their design, do not indicate.	29
+c	We read one or more accents in L differently than BHS. Often this notation indicates a typographical error in BHS.	198
+k	We read one or more consonants in L differently from BHS.	27
+n	Marks an anomalous form.	23
+p	We read punctuation in L differently from BHS.	77
+q	We have abandoned or added a ketib/qere relative to BHS. In doing this we agree with L against BHS.	51
+v	We read one or more vowels in L differently from BHS.	31
+y	Yathir readings in L which we have designated as Qeres when both Dothan and BHS list a Qere.	29
+C	We read one or more accents in L differently from BHQ.	44
+F	Marks a consonant with an anomalous final form that is word-medial.	1
+K	We read one or more consonants in L differently from BHQ.	1
+M	Marks a word with a final consonant that is a medial (not a final) form.	2
+P	We read the punctuation in L differently from BHQ.	7
+Q	Marks a place where we agree with BHQ against BHS in reading L.	101
+U	We agree with both BHS 1997 and BHQ on an unexpected reading.	76
+V	We read one or more vowels in L differently from BHQ.	4
+
+	23.0
+</div>
+
+==רשימת השינויים המלאה מגירסה 4.10 ל-4.12==
+המקור [http://tanach.us/Supplements/Differences-410-412.xml כאן]. רשימה זו כוללת את שינויי הקידוד בשביל האות וי"ו בחולם חסר.
+
+<div dir="ltr">
+===תורה===
+Differences in Genesis
+      Back
+WLC versions 4.10 -> 4.12
+
+Font size:	
+Show changes in morph. div.:	
+Book	Differences
+Verses	GOs	Vowels	Accents	Morph.
+Div.	Notes	Note
+values
+Genesis	0	0	7	2	4	1	1
+
+All graphical objects (GOs) are valid in each version.
+Position	Version 4.10	Version 4.12	Change
+Gen 4:13.6	עֲוֹנִ֖י	עֲוֺנִ֖י	Vowels are different.
+Gen 5:29.6	זֶ֞ה֠‪c‬	זֶ֠ה‪14‬	Accents are different. A transcription note has been changed. Note c becomes a note 14.
+Gen 6:16.2	תַּעֲשֶׂ֣ה‪3‬	תַּֽעֲשֶׂ֣ה	Accents are different. Different number of notes. A note, 3, has been removed.
+Gen 15:16.8	עֲוֹ֥ן	עֲוֺ֥ן	Vowels are different.
+Gen 19:15.18	בַּעֲוֹ֥ן	בַּעֲוֺ֥ן	Vowels are different.
+Gen 26:5.8	מִצְוֹתַ֖י	מִצְוֺתַ֖י	Vowels are different.
+Gen 37:10.21	לְהִשְׁתַּחֲוֹ֥ת	לְהִשְׁתַּחֲוֺ֥ת	Vowels are different.
+Gen 44:16.13	עֲוֹ֣ן	עֲוֺ֣ן	Vowels are different.
+Gen 49:33.3	לְצַוֹּ֣ת	לְצַוֺּ֣ת	Vowels are different.
+
+	22.1       Back
+
+Differences in Exodus
+      Back
+WLC versions 4.10 -> 4.12
+
+Font size:	
+Show changes in morph. div.:	
+Book	Differences
+Verses	GOs	Vowels	Accents	Morph.
+Div.	Notes	Note
+values
+Exodus	0	1	11	0	0	1	0
+
+All graphical objects (GOs) are valid in each version.
+Position	Version 4.10	Version 4.12	Change
+Ex 15:26.12	לְמִצְוֹתָ֔יו	לְמִצְוֺתָ֔יו	Vowels are different.
+Ex 16:28.9	מִצְוֹתַ֖י	מִצְוֺתַ֖י	Vowels are different.
+Ex 20:5.13	עֲוֹ֨ן	עֲוֺ֨ן	Vowels are different.
+Ex 20:6.6	מִצְוֹתָֽי׃	מִצְוֺתָֽי׃	Vowels are different.
+Ex 28:38.8	עֲוֹ֣ן	עֲוֺ֣ן	Vowels are different.
+Ex 28:43.18	עָוֹ֖ן	עָוֺ֖ן	Vowels are different.
+Ex 34:6.15	וֶאֱמֶֽת׃	וֶאֱמֶֽת ׀‪14‬	Consonants don't match! Different number of notes. A note, 14, has been added.
+Ex 34:7.5	עָוֹ֛ן	עָוֺ֛ן	Vowels are different.
+Ex 34:7.12	עֲוֹ֣ן	עֲוֺ֣ן	Vowels are different.
+Ex 34:9.18	לַעֲוֹנֵ֥נוּ	לַעֲוֺנֵ֥נוּ	Vowels are different.
+Ex 37:16.14	הַקְּשָׂוֹ֔ת	הַקְּשָׂוֺ֔ת	Vowels are different.
+Ex 38:5.5	הַקְּצָוֹ֖ת	הַקְּצָוֺ֖ת	Vowels are different.
+
+	22.1       Back
+
+Differences in Leviticus
+      Back
+WLC versions 4.10 -> 4.12
+
+Font size:	
+Show changes in morph. div.:	
+Book	Differences
+Verses	GOs	Vowels	Accents	Morph.
+Div.	Notes	Note
+values
+Leviticus	0	0	31	0	0	0	0
+
+All graphical objects (GOs) are valid in each version.
+Position	Version 4.10	Version 4.12	Change
+Lev 4:2.11	מִצְוֹ֣ת	מִצְוֺ֣ת	Vowels are different.
+Lev 4:13.13	מִצְוֹ֧ת	מִצְוֺ֧ת	Vowels are different.
+Lev 4:22.7	מִצְוֹת֩	מִצְוֺת֩	Vowels are different.
+Lev 4:27.10	מִמִּצְוֹ֧ת	מִמִּצְוֺ֧ת	Vowels are different.
+Lev 5:1.17	עֲוֹנֽוֹ׃	עֲוֺנֽוֹ׃	Vowels are different.
+Lev 5:17.8	מִצְוֹ֣ת	מִצְוֺ֣ת	Vowels are different.
+Lev 5:17.17	עֲוֹנֽוֹ׃	עֲוֺנֽוֹ׃	Vowels are different.
+Lev 7:18.21	עֲוֹנָ֥הּ	עֲוֺנָ֥הּ	Vowels are different.
+Lev 7:38.9	צַוֹּת֜וֹ	צַוֺּת֜וֹ	Vowels are different.
+Lev 10:17.17	עֲוֹ֣ן	עֲוֺ֣ן	Vowels are different.
+Lev 12:2.16	דְּוֹתָ֖הּ	דְּוֺתָ֖הּ	Vowels are different.
+Lev 16:21.15	עֲוֹנֹת֙	עֲוֺנֹת֙	Vowels are different.
+Lev 16:22.6	עֲוֹנֹתָ֖ם	עֲוֺנֹתָ֖ם	Vowels are different.
+Lev 17:16.8	עֲוֹנֽוֹ׃	עֲוֺנֽוֹ׃	Vowels are different.
+Lev 18:25.4	עֲוֹנָ֖הּ	עֲוֺנָ֖הּ	Vowels are different.
+Lev 19:8.2	עֲוֹנ֣וֹ	עֲוֺנ֣וֹ	Vowels are different.
+Lev 20:17.27	עֲוֹנ֥וֹ	עֲוֺנ֥וֹ	Vowels are different.
+Lev 20:19.12	עֲוֹנָ֥ם	עֲוֺנָ֥ם	Vowels are different.
+Lev 22:16.3	עֲוֹ֣ן	עֲוֺ֣ן	Vowels are different.
+Lev 22:31.2	מִצְוֹתַ֔י	מִצְוֺתַ֔י	Vowels are different.
+Lev 26:1.15	לְהִֽשְׁתַּחֲוֹ֖ת	לְהִֽשְׁתַּחֲוֺ֖ת	Vowels are different.
+Lev 26:3.5	מִצְוֹתַ֣י	מִצְוֺתַ֣י	Vowels are different.
+Lev 26:14.9	הַמִּצְוֹ֖ת	הַמִּצְוֺ֖ת	Vowels are different.
+Lev 26:15.13	מִצְוֹתַ֔י	מִצְוֺתַ֔י	Vowels are different.
+Lev 26:39.4	בַּֽעֲוֹנָ֔ם	בַּֽעֲוֺנָ֔ם	Vowels are different.
+Lev 26:39.8	בַּעֲוֹנֹ֥ת	בַּעֲוֺנֹ֥ת	Vowels are different.
+Lev 26:40.3	עֲוֹנָם֙	עֲוֺנָם֙	Vowels are different.
+Lev 26:40.5	עֲוֹ֣ן	עֲוֺ֣ן	Vowels are different.
+Lev 26:41.18	עֲוֹנָֽם׃	עֲוֺנָֽם׃	Vowels are different.
+Lev 26:43.12	עֲוֹנָ֑ם	עֲוֺנָ֑ם	Vowels are different.
+Lev 27:34.2	הַמִּצְוֹ֗ת	הַמִּצְוֺ֗ת	Vowels are different.
+
+	22.1       Back
+
+Differences in Numbers
+      Back
+WLC versions 4.10 -> 4.12
+
+Font size:	
+Show changes in morph. div.:	
+Book	Differences
+Verses	GOs	Vowels	Accents	Morph.
+Div.	Notes	Note
+values
+Numbers	0	0	19	0	1	0	0
+
+All graphical objects (GOs) are valid in each version.
+Position	Version 4.10	Version 4.12	Change
+Num 5:15.30	עָוֹֽן׃	עָוֺֽן׃	Vowels are different.
+Num 5:31.3	מֵעָוֹ֑ן	מֵעָוֺ֑ן	Vowels are different.
+Num 5:31.8	עֲוֹנָֽהּ׃	עֲוֺנָֽהּ׃	Vowels are different.
+Num 14:18.7	עָוֹ֖ן	עָוֺ֖ן	Vowels are different.
+Num 14:18.13	עֲוֹ֤ן	עֲוֺ֤ן	Vowels are different.
+Num 14:19.3	לַעֲוֹ֛ן	לַעֲוֺ֛ן	Vowels are different.
+Num 14:34.15	עֲוֹנֹ֣תֵיכֶ֔ם	עֲוֺנֹ֣תֵיכֶ֔ם	Vowels are different.
+Num 15:22.7	הַמִּצְוֹ֖ת	הַמִּצְוֺ֖ת	Vowels are different.
+Num 15:31.12	עֲוֹנָ֥ה	עֲוֺנָ֥ה	Vowels are different.
+Num 15:39.9	מִצְוֹ֣ת	מִצְוֺ֣ת	Vowels are different.
+Num 15:40.6	מִצְוֹתָ֑י	מִצְוֺתָ֑י	Vowels are different.
+Num 17:28.10	לִגְוֹֽעַ׃	לִגְוֺֽעַ׃	Vowels are different.
+Num 18:1.12	עֲוֹ֣ן	עֲוֺ֣ן	Vowels are different.
+Num 18:1.19	עֲוֹ֥ן	עֲוֺ֥ן	Vowels are different.
+Num 18:23.10	עֲוֹנָ֑ם	עֲוֺנָ֑ם	Vowels are different.
+Num 30:16.9	עֲוֹנָֽהּ׃	עֲוֺנָֽהּ׃	Vowels are different.
+Num 32:41.7	חַוֹּתֵיהֶ֑ם	חַוֺּתֵיהֶ֑ם	Vowels are different.
+Num 32:41.10	חַוֹּ֥ת	חַוֺּ֥ת	Vowels are different.
+Num 36:13.2	הַמִּצְוֹ֞ת	הַמִּצְוֺ֞ת	Vowels are different.
+
+	22.1       Back
+
+Differences in Deuteronomy
+      Back
+WLC versions 4.10 -> 4.12
+
+Font size:	
+Show changes in morph. div.:	
+Book	Differences
+Verses	GOs	Vowels	Accents	Morph.
+Div.	Notes	Note
+values
+Deuteronomy	0	0	37	4	5	5	1
+
+All graphical objects (GOs) are valid in each version.
+Position	Version 4.10	Version 4.12	Change
+Deut 1:31.9	יִשָּׂא־	יִשָׂא־	Vowels are different.
+Deut 1:38.2	בִּן־	בִּן‪12,18‬	Accents are different. Different number of notes. 2 notes, 12, 18, have been added.
+Deut 1:39.19	יִירָשֽׁוּהָ׃	יִירָשֽׁוּהָּ׃‪12,18‬	Vowels are different. Different number of notes. 2 notes, 12, 18, have been added.
+Deut 2:9.24	יְרֻשָּׁה׃‪1‬	יְרֻשָּֽׁה׃	Accents are different. Different number of notes. A note, 1, has been removed.
+Deut 3:14.19	חַוֹּ֣ת	חַוֺּ֣ת	Vowels are different.
+Deut 3:22.2	תִּֽירָא֑וּם	תְִּירָא֑וּם‪12,18‬	Accents are different. Vowels are different. Different number of notes. 2 notes, 12, 18, have been added.
+Deut 4:2.14	מִצְוֹת֙	מִצְוֺת֙	Vowels are different.
+Deut 4:7.12	בְּכָל־	בְּכָּל־	Vowels are different.
+Deut 4:40.5	מִצְוֹתָ֗יו	מִצְוֺתָ֗יו	Vowels are different.
+Deut 4:40.19	הָ֣אֲדָמָ֔ה	הַ֣אֲדָמָ֔ה‪12,18‬	Vowels are different. Different number of notes. 2 notes, 12, 18, have been added.
+Deut 5:6.8	מִבֵּ֣י֥ת	מִבֵּ֣֥ית	Accents are different.
+Deut 5:9.13	עֲוֹ֨ן	עֲוֺ֨ן	Vowels are different.
+Deut 5:10.7	מִצְוֹתָֽי׃	מִצְוֺתָֽי׃	Vowels are different.
+Deut 5:29.12	מִצְוֹתַ֖י	מִצְוֺתַ֖י	Vowels are different.
+Deut 6:2.10	וּמִצְוֹתָיו֮	וּמִצְוֺתָיו֮	Vowels are different.
+Deut 6:17.4	מִצְוֹ֖ת	מִצְוֺ֖ת	Vowels are different.
+Deut 7:9.15	מִצְוֹתָ֖יו	מִצְוֺתָ֖יו	Vowels are different.
+Deut 8:2.22	מִצְוֹתָ֖יו	מִצְוֺתָ֖יו	Vowels are different.
+Deut 8:6.3	מִצְוֹ֖ת	מִצְוֺ֖ת	Vowels are different.
+Deut 8:11.10	מִצְוֹתָיו֙	מִצְוֺתָיו֙	Vowels are different.
+Deut 10:13.3	מִצְוֹ֤ת	מִצְוֺ֤ת	Vowels are different.
+Deut 11:1.9	וּמִצְוֹתָ֖יו	וּמִצְוֺתָ֖יו	Vowels are different.
+Deut 11:13.6	מִצְוֹתַ֔י	מִצְוֺתַ֔י	Vowels are different.
+Deut 11:27.6	מִצְוֹת֙	מִצְוֺת֙	Vowels are different.
+Deut 11:28.6	מִצְוֹת֙	מִצְוֺת֙	Vowels are different.
+Deut 13:5.8	מִצְוֹתָ֤יו	מִצְוֺתָ֤יו	Vowels are different.
+Deut 13:19.9	מִצְוֹתָ֔יו	מִצְוֺתָ֔יו	Vowels are different.
+Deut 19:15.7	עָוֹן֙	עָוֺן֙	Vowels are different.
+Deut 26:13.21	מִמִּצְוֹתֶ֖יךָ	מִמִּצְוֺתֶ֖יךָ	Vowels are different.
+Deut 26:17.12	וּמִצְוֹתָ֛יו	וּמִצְוֺתָ֛יו	Vowels are different.
+Deut 26:18.13	מִצְוֹתָֽיו׃	מִצְוֺתָֽיו׃	Vowels are different.
+Deut 27:10.7	מִצְוֹתָו֙‪q‬	מִצְוֺתָו֙‪17‬	Vowels are different. A transcription note has been changed. Note q becomes a note 17.
+Deut 28:1.12	מִצְוֹתָ֔יו	מִצְוֺתָ֔יו	Vowels are different.
+Deut 28:9.12	מִצְוֹת֙	מִצְוֺת֙	Vowels are different.
+Deut 28:13.15	מִצְוֹ֣ת ׀	מִצְוֺ֣ת ׀	Vowels are different.
+Deut 28:15.12	מִצְוֹתָ֣יו	מִצְוֺתָ֣יו	Vowels are different.
+Deut 28:45.17	מִצְוֹתָ֥יו	מִצְוֺתָ֥יו	Vowels are different.
+Deut 30:8.9	מִצְוֹתָ֔יו	מִצְוֺתָ֔יו	Vowels are different.
+Deut 30:10.7	מִצְוֹתָיו֙	מִצְוֺתָיו֙	Vowels are different.
+Deut 30:16.12	מִצְוֹתָ֥יו	מִצְוֺתָ֥יו	Vowels are different.
+
+	22.1       Back
+
+===נביאים ראשונים===
+Differences in Joshua
+      Back
+WLC versions 4.10 -> 4.12
+
+Font size:	
+Show changes in morph. div.:	
+Book	Differences
+Verses	GOs	Vowels	Accents	Morph.
+Div.	Notes	Note
+values
+Joshua	0	0	4	0	0	0	0
+
+All graphical objects (GOs) are valid in each version.
+Position	Version 4.10	Version 4.12	Change
+Josh 13:30.12	חַוֹּ֥ת	חַוֺּ֥ת	Vowels are different.
+Josh 22:5.23	מִצְוֹתָ֖יו	מִצְוֺתָ֖יו	Vowels are different.
+Josh 22:17.4	עֲוֹ֣ן	עֲוֺ֣ן	Vowels are different.
+Josh 22:20.19	בַּעֲוֹנֽוֹ׃	בַּעֲוֺנֽוֹ׃	Vowels are different.
+
+	22.1       Back
+
+Differences in Judges
+      Back
+WLC versions 4.10 -> 4.12
+
+Font size:	
+Show changes in morph. div.:	
+Book	Differences
+Verses	GOs	Vowels	Accents	Morph.
+Div.	Notes	Note
+values
+Judges	0	0	4	0	0	0	0
+
+All graphical objects (GOs) are valid in each version.
+Position	Version 4.10	Version 4.12	Change
+Judg 2:17.21	מִצְוֹת־	מִצְוֺת־	Vowels are different.
+Judg 2:19.12	וּלְהִשְׁתַּחֲוֹ֣ת	וּלְהִשְׁתַּחֲוֺ֣ת	Vowels are different.
+Judg 3:4.9	מִצְוֹ֣ת	מִצְוֺ֣ת	Vowels are different.
+Judg 10:4.14	חַוֹּ֣ת	חַוֺּ֣ת	Vowels are different.
+
+	22.1       Back
+
+Differences in 1 Samuel
+      Back
+WLC versions 4.10 -> 4.12
+
+Font size:	
+Show changes in morph. div.:	
+Book	Differences
+Verses	GOs	Vowels	Accents	Morph.
+Div.	Notes	Note
+values
+1 Samuel	0	0	8	1	0	1	0
+
+All graphical objects (GOs) are valid in each version.
+Position	Version 4.10	Version 4.12	Change
+1 Sam 1:3.7	לְהִֽשְׁתַּחֲוֹ֧ת	לְהִֽשְׁתַּחֲוֺ֧ת	Vowels are different.
+1 Sam 2:36.6	לְהִשְׁתַּחֲוֹ֣ת	לְהִשְׁתַּחֲוֺ֣ת	Vowels are different.
+1 Sam 3:13.10	בַּעֲוֹ֣ן	בַּעֲוֺ֣ן	Vowels are different.
+1 Sam 3:14.7	עֲוֹ֧ן	עֲוֺ֧ן	Vowels are different.
+1 Sam 6:17.10	אֶחָ֔ד	אֶחָ֜ד‪14‬	Accents are different. Different number of notes. A note, 14, has been added.
+1 Sam 20:1.13	עֲוֹנִ֤י	עֲוֺנִ֤י	Vowels are different.
+1 Sam 20:8.15	עָוֹן֙	עָוֺן֙	Vowels are different.
+1 Sam 25:24.8	הֶֽעָוֹ֑ן	הֶֽעָוֺ֑ן	Vowels are different.
+1 Sam 28:10.10	עָוֹ֖ן	עָוֺ֖ן	Vowels are different.
+
+	22.1       Back
+
+Differences in 2 Samuel
+      Back
+WLC versions 4.10 -> 4.12
+
+Font size:	
+Show changes in morph. div.:	
+Book	Differences
+Verses	GOs	Vowels	Accents	Morph.
+Div.	Notes	Note
+values
+2 Samuel	0	0	10	0	0	0	0
+
+All graphical objects (GOs) are valid in each version.
+Position	Version 4.10	Version 4.12	Change
+2 Sam 3:8.31	עֲוֹ֥ן	עֲוֺ֥ן	Vowels are different.
+2 Sam 6:21.13	לְצַוֹּ֨ת	לְצַוֺּ֨ת	Vowels are different.
+2 Sam 7:14.10	בְּהַ֣עֲוֹת֔וֹ	בְּהַ֣עֲוֺת֔וֹ	Vowels are different.
+2 Sam 14:9.9	הֶעָוֹ֖ן	הֶעָוֺ֖ן	Vowels are different.
+2 Sam 14:32.31	עָוֹ֖ן	עָוֺ֖ן	Vowels are different.
+2 Sam 15:5.4	לְהִשְׁתַּחֲוֹ֖ת	לְהִשְׁתַּחֲוֺ֖ת	Vowels are different.
+2 Sam 18:5.17	בְּצַוֹּ֥ת	בְּצַוֺּ֥ת	Vowels are different.
+2 Sam 19:20.8	עָוֹן֒	עָוֺן֒	Vowels are different.
+2 Sam 22:24.5	מֵעֲוֹנִֽי׃	מֵעֲוֺנִֽי׃	Vowels are different.
+2 Sam 24:10.24	עֲוֹ֣ן	עֲוֺ֣ן	Vowels are different.
+
+	22.1       Back
+
+
+	
+	Differences in 1 Kings
+      Back
+WLC versions 4.10 -> 4.12
+
+Font size:	
+Show changes in morph. div.:	
+Book	Differences
+Verses	GOs	Vowels	Accents	Morph.
+Div.	Notes	Note
+values
+1 Kings	0	0	14	0	0	0	0
+
+All graphical objects (GOs) are valid in each version.
+Position	Version 4.10	Version 4.12	Change
+1 Kings 2:3.10	מִצְוֹתָיו֙	מִצְוֺתָיו֙	Vowels are different.
+1 Kings 2:3.12	וְעֵדְוֹתָ֔יו	וְעֵדְוֺתָ֔יו	Vowels are different.
+1 Kings 3:14.6	וּמִצְוֹתַ֔י	וּמִצְוֺתַ֔י	Vowels are different.
+1 Kings 4:13.6	חַוֹּת֩	חַוֺּת֩	Vowels are different.
+1 Kings 5:6.5	אֻרְוֹ֥ת	אֻרְוֺ֥ת	Vowels are different.
+1 Kings 6:12.15	מִצְוֹתַ֖י	מִצְוֺתַ֖י	Vowels are different.
+1 Kings 8:58.8	מִצְוֹתָ֤יו	מִצְוֺתָ֤יו	Vowels are different.
+1 Kings 8:61.10	מִצְוֹתָ֖יו	מִצְוֺתָ֖יו	Vowels are different.
+1 Kings 9:6.9	מִצְוֹתַ֣י	מִצְוֺתַ֣י	Vowels are different.
+1 Kings 11:34.21	מִצְוֹתַ֥י	מִצְוֺתַ֥י	Vowels are different.
+1 Kings 11:38.15	וּמִצְוֹתַ֔י	וּמִצְוֺתַ֔י	Vowels are different.
+1 Kings 14:8.14	מִצְוֹתַ֜י	מִצְוֺתַ֜י	Vowels are different.
+1 Kings 17:18.13	עֲוֹנִ֖י	עֲוֺנִ֖י	Vowels are different.
+1 Kings 18:18.13	מִצְוֹ֣ת	מִצְוֺ֣ת	Vowels are different.
+
+	22.1       Back
+
+Differences in 2 Kings
+      Back
+WLC versions 4.10 -> 4.12
+
+Font size:	
+Show changes in morph. div.:	
+Book	Differences
+Verses	GOs	Vowels	Accents	Morph.
+Div.	Notes	Note
+values
+2 Kings	0	0	8	0	0	0	0
+
+All graphical objects (GOs) are valid in each version.
+Position	Version 4.10	Version 4.12	Change
+2 Kings 5:18.10	לְהִשְׁתַּחֲוֹ֨ת	לְהִשְׁתַּחֲוֺ֨ת	Vowels are different.
+2 Kings 17:13.16	מִצְוֹתַ֣י	מִצְוֺתַ֣י	Vowels are different.
+2 Kings 17:15.11	עֵֽדְוֹתָ֔יו	עֵֽדְוֺתָ֔יו	Vowels are different.
+2 Kings 17:16.4	מִצְוֹת֙	מִצְוֺת֙	Vowels are different.
+2 Kings 17:19.6	מִצְוֹ֖ת	מִצְוֺ֖ת	Vowels are different.
+2 Kings 18:6.7	מִצְוֹתָ֔יו	מִצְוֺתָ֔יו	Vowels are different.
+2 Kings 23:3.14	מִצְוֹתָ֜יו	מִצְוֺתָ֜יו	Vowels are different.
+2 Kings 23:3.16	עֵדְוֹתָ֤יו	עֵדְוֺתָ֤יו	Vowels are different.
+
+	22.1       Back
+
+
+===נביאים אחרונים===
+Differences in Isaiah
+      Back
+WLC versions 4.10 -> 4.12
+
+Font size:	
+Show changes in morph. div.:	
+Book	Differences
+Verses	GOs	Vowels	Accents	Morph.
+Div.	Notes	Note
+values
+Isaiah	0	0	28	0	11	0	1
+
+All graphical objects (GOs) are valid in each version.
+Position	Version 4.10	Version 4.12	Change
+Isa 1:4.6	עָוֹ֔ן	עָוֺ֔ן	Vowels are different.
+Isa 2:20.14	לְהִֽשְׁתַּחֲוֹ֔ת	לְהִֽשְׁתַּחֲוֺ֔ת	Vowels are different.
+Isa 5:18.3	הֶֽעָוֹ֖ן	הֶֽעָוֺ֖ן	Vowels are different.
+Isa 6:7.11	עֲוֹנֶ֔ךָ	עֲוֺנֶ֔ךָ	Vowels are different.
+Isa 13:11.7	עֲוֹנָ֑ם	עֲוֺנָ֑ם	Vowels are different.
+Isa 14:21.4	בַּעֲוֹ֣ן	בַּעֲוֺ֣ן	Vowels are different.
+Isa 22:14.7	הֶעָוֹ֨ן‪c‬	הֶעָוֺ֨ן‪14‬	Vowels are different. A transcription note has been changed. Note c becomes a note 14.
+Isa 26:21.7	עֲוֹ֥ן	עֲוֺ֥ן	Vowels are different.
+Isa 27:9.4	עֲוֹֽן־	עֲוֺֽן־	Vowels are different.
+Isa 30:13.4	הֶעָוֹ֣ן	הֶעָוֺ֣ן	Vowels are different.
+Isa 33:24.9	עָוֹֽן׃	עָוֺֽן׃	Vowels are different.
+Isa 40:2.12	עֲוֹנָ֑הּ	עֲוֺנָ֑הּ	Vowels are different.
+Isa 43:24.14	בַּעֲוֹנֹתֶֽיךָ׃	בַּעֲוֺנֹתֶֽיךָ׃	Vowels are different.
+Isa 48:18.3	לְמִצְוֹתָ֑י	לְמִצְוֺתָ֑י	Vowels are different.
+Isa 50:1.19	בַּעֲוֹנֹֽתֵיכֶם֙	בַּעֲוֺנֹֽתֵיכֶם֙	Vowels are different.
+Isa 53:5.5	מֵעֲוֹנֹתֵ֑ינוּ	מֵעֲוֺנֹתֵ֑ינוּ	Vowels are different.
+Isa 53:6.11	עֲוֹ֥ן	עֲוֺ֥ן	Vowels are different.
+Isa 53:11.10	וַעֲוֹנֹתָ֖ם	וַעֲוֺנֹתָ֖ם	Vowels are different.
+Isa 57:17.1	בַּעֲוֹ֥ן	בַּעֲוֺ֥ן	Vowels are different.
+Isa 59:2.3	עֲוֹנֹֽתֵיכֶם֙	עֲוֺנֹֽתֵיכֶם֙	Vowels are different.
+Isa 59:3.6	בֶּֽעָוֹ֑ן	בֶּֽעָוֺ֑ן	Vowels are different.
+Isa 59:12.11	וַעֲוֹנֹתֵ֖ינוּ	וַעֲוֺנֹתֵ֖ינוּ	Vowels are different.
+Isa 64:5.11	וַעֲוֹנֵ֖נוּ	וַעֲוֺנֵ֖נוּ	Vowels are different.
+Isa 64:6.13	עֲוֹנֵֽנוּ׃	עֲוֺנֵֽנוּ׃	Vowels are different.
+Isa 64:8.9	עָוֹ֑ן	עָוֺ֑ן	Vowels are different.
+Isa 65:7.1	עֲ֠וֹנֹתֵיכֶם	עֲ֠וֺנֹתֵיכֶם	Vowels are different.
+Isa 65:7.2	וַעֲוֹנֹ֨ת	וַעֲוֺנֹ֨ת	Vowels are different.
+Isa 66:23.11	לְהִשְׁתַּחֲוֹ֥ת	לְהִשְׁתַּחֲוֺ֥ת	Vowels are different.
+
+	22.1       Back
+
+Differences in Jeremiah
+      Back
+WLC versions 4.10 -> 4.12
+
+Font size:	
+Show changes in morph. div.:	
+Book	Differences
+Verses	GOs	Vowels	Accents	Morph.
+Div.	Notes	Note
+values
+Jeremiah	0	0	32	0	0	0	0
+
+All graphical objects (GOs) are valid in each version.
+Position	Version 4.10	Version 4.12	Change
+Jer 2:22.9	עֲוֹנֵךְ֙	עֲוֺנֵךְ֙	Vowels are different.
+Jer 3:2.9	שֻׁכַּ֔בְּתְּ	שֻׁכַּ֔בְתְּ	Vowels are different.
+Jer 3:13.3	עֲוֹנֵ֔ךְ	עֲוֺנֵ֔ךְ	Vowels are different.
+Jer 5:25.1	עֲוֹנוֹתֵיכֶ֖ם	עֲוֺנוֹתֵיכֶ֖ם	Vowels are different.
+Jer 7:2.19	לְהִֽשְׁתַּחֲוֹ֖ת	לְהִֽשְׁתַּחֲוֺ֖ת	Vowels are different.
+Jer 11:10.3	עֲוֹנֹ֨ת	עֲוֺנֹ֨ת	Vowels are different.
+Jer 13:10.16	וּלְהִשְׁתַּחֲוֹ֣ת	וּלְהִשְׁתַּחֲוֺ֣ת	Vowels are different.
+Jer 13:22.8	עֲוֹנֵ֛ךְ	עֲוֺנֵ֛ךְ	Vowels are different.
+Jer 14:7.2	עֲוֹנֵ֙ינוּ֙	עֲוֺנֵ֙ינוּ֙	Vowels are different.
+Jer 14:10.17	עֲוֹנָ֔ם	עֲוֺנָ֔ם	Vowels are different.
+Jer 14:20.4	עֲוֹ֣ן	עֲוֺ֣ן	Vowels are different.
+Jer 16:10.23	עֲוֹנֵ֙נוּ֙	עֲוֺנֵ֙נוּ֙	Vowels are different.
+Jer 16:17.11	עֲוֹנָ֖ם	עֲוֺנָ֖ם	Vowels are different.
+Jer 16:18.4	עֲוֹנָם֙	עֲוֺנָם֙	Vowels are different.
+Jer 18:23.12	עֲוֹנָ֔ם	עֲוֺנָ֔ם	Vowels are different.
+Jer 22:21.3	בְּשַׁלְוֹתַ֔יִךְ	בְּשַׁלְוֺתַ֔יִךְ	Vowels are different.
+Jer 25:6.7	וּלְהִשְׁתַּחֲוֹ֣ת	וּלְהִשְׁתַּחֲוֺ֣ת	Vowels are different.
+Jer 25:12.15	עֲוֹנָ֖ם	עֲוֺנָ֖ם	Vowels are different.
+Jer 26:2.14	לְהִשְׁתַּחֲוֹ֣ת	לְהִשְׁתַּחֲוֺ֣ת	Vowels are different.
+Jer 30:14.15	עֲוֹנֵ֔ךְ	עֲוֺנֵ֔ךְ	Vowels are different.
+Jer 30:15.9	עֲוֹנֵ֗ךְ	עֲוֺנֵ֗ךְ	Vowels are different.
+Jer 31:30.4	בַּעֲוֹנ֖וֹ	בַּעֲוֺנ֖וֹ	Vowels are different.
+Jer 31:34.25	לַֽעֲוֹנָ֔ם	לַֽעֲוֺנָ֔ם	Vowels are different.
+Jer 32:18.5	עֲוֹ֣ן	עֲוֺ֣ן	Vowels are different.
+Jer 33:8.3	עֲוֹנָ֖ם	עֲוֺנָ֖ם	Vowels are different.
+Jer 33:8.10	עֲוֹנֽוֹתֵיהֶם֙	עֲוֺנֽוֹתֵיהֶם֙	Vowels are different.
+Jer 35:18.21	מִצְוֹתָ֔יו	מִצְוֺתָ֔יו	Vowels are different.
+Jer 36:3.19	לַעֲוֹנָ֖ם	לַעֲוֺנָ֖ם	Vowels are different.
+Jer 36:31.8	עֲוֹנָ֑ם	עֲוֺנָ֑ם	Vowels are different.
+Jer 44:23.13	וּבְעֵדְוֹתָ֖יו	וּבְעֵדְוֺתָ֖יו	Vowels are different.
+Jer 50:20.9	עֲוֹ֤ן	עֲוֺ֤ן	Vowels are different.
+Jer 51:6.9	בַּעֲוֹנָ֑הּ	בַּעֲוֺנָ֑הּ	Vowels are different.
+
+	22.1       Back
+
+Differences in Ezekiel
+      Back
+WLC versions 4.10 -> 4.12
+
+Font size:	
+Show changes in morph. div.:	
+Book	Differences
+Verses	GOs	Vowels	Accents	Morph.
+Div.	Notes	Note
+values
+Ezekiel	0	0	49	3	5	3	0
+
+All graphical objects (GOs) are valid in each version.
+Position	Version 4.10	Version 4.12	Change
+Ezek 3:18.16	בַּעֲוֹנ֣וֹ	בַּעֲוֺנ֣וֹ	Vowels are different.
+Ezek 3:19.11	בַּעֲוֹנ֣וֹ	בַּעֲוֺנ֣וֹ	Vowels are different.
+Ezek 4:4.8	עֲוֹ֥ן	עֲוֺ֥ן	Vowels are different.
+Ezek 4:4.19	עֲוֹנָֽם׃	עֲוֺנָֽם׃	Vowels are different.
+Ezek 4:5.6	עֲוֹנָ֔ם	עֲוֺנָ֔ם	Vowels are different.
+Ezek 4:5.14	עֲוֹ֥ן	עֲוֺ֥ן	Vowels are different.
+Ezek 4:6.12	עֲוֹ֣ן	עֲוֺ֣ן	Vowels are different.
+Ezek 4:17.9	בַּעֲוֹנָֽם׃	בַּעֲוֺנָֽם׃	Vowels are different.
+Ezek 7:13.18	בַּעֲוֹנ֛וֹ	בַּעֲוֺנ֛וֹ	Vowels are different.
+Ezek 7:16.11	בַּעֲוֹנֽוֹ׃	בַּעֲוֺנֽוֹ׃	Vowels are different.
+Ezek 7:19.23	עֲוֹנָ֖ם	עֲוֺנָ֖ם	Vowels are different.
+Ezek 9:9.3	עֲוֹ֨ן	עֲוֺ֨ן	Vowels are different.
+Ezek 10:6.2	בְּצַוֹּתוֹ֙	בְּצַוֺּתוֹ֙	Vowels are different.
+Ezek 14:3.10	עֲוֹנָ֔ם	עֲוֺנָ֔ם	Vowels are different.
+Ezek 14:4.21	עֲוֹנוֹ֙	עֲוֺנוֹ֙	Vowels are different.
+Ezek 14:7.17	עֲוֹנ֔וֹ	עֲוֺנ֔וֹ	Vowels are different.
+Ezek 14:10.2	עֲוֹנָ֑ם	עֲוֺנָ֑ם	Vowels are different.
+Ezek 14:10.3	כַּֽעֲוֹן֙	כַּֽעֲוֺן֙	Vowels are different.
+Ezek 14:10.5	כַּעֲוֹ֥ן	כַּעֲוֺ֥ן	Vowels are different.
+Ezek 14:14.8	דָּנִיאֵ֣ל	דָּנִיֵּ֣אל‪13‬	Accents are different. Vowels are different. Different number of notes. A note, 13, has been added.
+Ezek 14:20.3	דָּנִיאֵ֣ל	דָּנִיֵּ֣אל‪13‬	Accents are different. Vowels are different. Different number of notes. A note, 13, has been added.
+Ezek 16:49.4	עֲוֹ֖ן	עֲוֺ֖ן	Vowels are different.
+Ezek 18:17.15	בַּעֲוֹ֥ן	בַּעֲוֺ֥ן	Vowels are different.
+Ezek 18:18.16	בַּעֲוֹנֽוֹ׃	בַּעֲוֺנֽוֹ׃	Vowels are different.
+Ezek 18:19.6	בַּעֲוֹ֣ן	בַּעֲוֺ֣ן	Vowels are different.
+Ezek 18:20.8	בַּעֲוֹ֣ן	בַּעֲוֺ֣ן	Vowels are different.
+Ezek 18:20.13	בַּעֲוֹ֣ן	בַּעֲוֺ֣ן	Vowels are different.
+Ezek 18:30.19	עָוֹֽן׃	עָוֺֽן׃	Vowels are different.
+Ezek 21:28.12	עָוֹ֖ן	עָוֺ֖ן	Vowels are different.
+Ezek 21:29.8	עֲוֹ֣נְכֶ֔ם	עֲוֺ֣נְכֶ֔ם	Vowels are different.
+Ezek 21:30.10	עֲוֹ֥ן	עֲוֺ֥ן	Vowels are different.
+Ezek 21:34.17	עֲוֹ֥ן	עֲוֺ֥ן	Vowels are different.
+Ezek 24:23.11	בַּעֲוֹנֹ֣תֵיכֶ֔ם	בַּעֲוֺנֹ֣תֵיכֶ֔ם	Vowels are different.
+Ezek 28:3.5	מִדָּֽנִיאֵ֑ל	מִדָּֽנִיֵּ֑אל‪13‬	Accents are different. Vowels are different. Different number of notes. A note, 13, has been added.
+Ezek 28:18.2	עֲוֹנֶ֗יךָ	עֲוֺנֶ֗יךָ	Vowels are different.
+Ezek 29:16.8	עָוֹ֔ן	עָוֺ֔ן	Vowels are different.
+Ezek 32:27.18	עֲוֹֽנֹתָם֙	עֲוֺֽנֹתָם֙	Vowels are different.
+Ezek 33:6.19	בַּעֲוֹנ֣וֹ	בַּעֲוֺנ֣וֹ	Vowels are different.
+Ezek 33:8.13	בַּעֲוֹנ֣וֹ	בַּעֲוֺנ֣וֹ	Vowels are different.
+Ezek 33:9.12	בַּעֲוֹנ֣וֹ	בַּעֲוֺנ֣וֹ	Vowels are different.
+Ezek 35:5.16	עֲוֹ֥ן	עֲוֺ֥ן	Vowels are different.
+Ezek 36:31.12	עֲוֹנֹ֣תֵיכֶ֔ם	עֲוֺנֹ֣תֵיכֶ֔ם	Vowels are different.
+Ezek 36:33.9	עֲוֹנֽוֹתֵיכֶ֑ם	עֲוֺנֽוֹתֵיכֶ֑ם	Vowels are different.
+Ezek 39:23.4	בַעֲוֹנָ֞ם	בַעֲוֺנָ֞ם	Vowels are different.
+Ezek 43:10.11	מֵעֲוֹנֽוֹתֵיהֶ֑ם	מֵעֲוֺנֽוֹתֵיהֶ֑ם	Vowels are different.
+Ezek 44:10.15	עֲוֹנָֽם׃	עֲוֺנָֽם׃	Vowels are different.
+Ezek 44:12.11	עָוֹ֑ן	עָוֺ֑ן	Vowels are different.
+Ezek 44:12.21	עֲוֹנָֽם׃	עֲוֺנָֽם׃	Vowels are different.
+Ezek 46:9.11	לְהִֽשְׁתַּחֲוֹ֗ת	לְהִֽשְׁתַּחֲוֺ֗ת	Vowels are different.
+
+	22.1       Back
+
+Differences in Hosea
+      Back
+WLC versions 4.10 -> 4.12
+
+Font size:	
+Show changes in morph. div.:	
+Book	Differences
+Verses	GOs	Vowels	Accents	Morph.
+Div.	Notes	Note
+values
+Hosea	0	0	10	0	1	0	0
+
+All graphical objects (GOs) are valid in each version.
+Position	Version 4.10	Version 4.12	Change
+Hos 4:8.5	עֲוֹנָ֖ם	עֲוֺנָ֖ם	Vowels are different.
+Hos 5:5.8	בַּעֲוֹנָ֔ם	בַּעֲוֺנָ֔ם	Vowels are different.
+Hos 7:1.4	עֲוֹ֤ן	עֲוֺ֤ן	Vowels are different.
+Hos 8:13.11	עֲוֹנָם֙	עֲוֺנָם֙	Vowels are different.
+Hos 9:7.16	עֲוֹנְךָ֔	עֲוֺנְךָ֔	Vowels are different.
+Hos 9:9.6	עֲוֹנָ֔ם	עֲוֺנָ֔ם	Vowels are different.
+Hos 12:9.13	עָוֹ֥ן	עָוֺ֥ן	Vowels are different.
+Hos 13:12.2	עֲוֹ֣ן	עֲוֺ֣ן	Vowels are different.
+Hos 14:2.8	בַּעֲוֹנֶֽךָ׃	בַּעֲוֺנֶֽךָ׃	Vowels are different.
+Hos 14:3.11	עָוֹן֙	עָוֺן֙	Vowels are different.
+
+	22.1       Back
+
+Differences in Joel
+      Back
+WLC versions 4.10 -> 4.12
+
+Font size:	
+Show changes in morph. div.:	
+No differences found in Joel!
+
+	22.1       Back
+
+Differences in Amos
+      Back
+WLC versions 4.10 -> 4.12
+
+Font size:	
+Show changes in morph. div.:	
+Book	Differences
+Verses	GOs	Vowels	Accents	Morph.
+Div.	Notes	Note
+values
+Amos	0	0	1	0	0	0	0
+
+All graphical objects (GOs) are valid in each version.
+Position	Version 4.10	Version 4.12	Change
+Am 3:2.13	עֲוֹנֹֽתֵיכֶֽם׃	עֲוֺנֹֽתֵיכֶֽם׃	Vowels are different.
+
+	22.1       Back
+
+Differences in Obadiah
+      Back
+WLC versions 4.10 -> 4.12
+
+Font size:	
+Show changes in morph. div.:	
+No differences found in Obadiah!
+
+	22.1       Back
+
+Differences in Jonah
+      Back
+WLC versions 4.10 -> 4.12
+
+Font size:	
+Show changes in morph. div.:	
+No differences found in Jonah!
+
+	22.1       Back
+
+Differences in Micah
+      Back
+WLC versions 4.10 -> 4.12
+
+Font size:	
+Show changes in morph. div.:	
+Book	Differences
+Verses	GOs	Vowels	Accents	Morph.
+Div.	Notes	Note
+values
+Micah	0	0	2	0	0	0	0
+
+All graphical objects (GOs) are valid in each version.
+Position	Version 4.10	Version 4.12	Change
+Mic 7:18.5	עָוֹן֙	עָוֺן֙	Vowels are different.
+Mic 7:19.4	עֲוֹֽנֹתֵ֑ינוּ	עֲוֺֽנֹתֵ֑ינוּ	Vowels are different.
+
+	22.1       Back
+
+Differences in Nahum
+      Back
+WLC versions 4.10 -> 4.12
+
+Font size:	
+Show changes in morph. div.:	
+No differences found in Nahum!
+
+	22.1       Back
+
+Differences in Habakkuk
+      Back
+WLC versions 4.10 -> 4.12
+
+Font size:	
+Show changes in morph. div.:	
+Book	Differences
+Verses	GOs	Vowels	Accents	Morph.
+Div.	Notes	Note
+values
+Habakkuk	0	0	0	0	1	0	0
+
+All graphical objects (GOs) are valid in each version.
+	22.1       Back
+
+Differences in Haggai
+      Back
+WLC versions 4.10 -> 4.12
+
+Font size:	
+Show changes in morph. div.:	
+No differences found in Haggai!
+
+	22.1       Back
+
+Differences in Zechariah
+      Back
+WLC versions 4.10 -> 4.12
+
+Font size:	
+Show changes in morph. div.:	
+Book	Differences
+Verses	GOs	Vowels	Accents	Morph.
+Div.	Notes	Note
+values
+Zechariah	0	0	4	0	0	0	0
+
+All graphical objects (GOs) are valid in each version.
+Position	Version 4.10	Version 4.12	Change
+Zech 3:4.16	עֲוֹנֶ֔ךָ	עֲוֺנֶ֔ךָ	Vowels are different.
+Zech 3:9.21	עֲוֹ֥ן	עֲוֺ֥ן	Vowels are different.
+Zech 14:16.13	לְהִֽשְׁתַּחֲוֹת֙	לְהִֽשְׁתַּחֲוֺת֙	Vowels are different.
+Zech 14:17.10	לְהִֽשְׁתַּחֲוֹ֔ת	לְהִֽשְׁתַּחֲוֺ֔ת	Vowels are different.
+
+	22.1       Back
+
+Differences in Malachi
+      Back
+WLC versions 4.10 -> 4.12
+
+Font size:	
+Show changes in morph. div.:	
+Book	Differences
+Verses	GOs	Vowels	Accents	Morph.
+Div.	Notes	Note
+values
+Malachi	0	0	1	0	1	0	0
+
+All graphical objects (GOs) are valid in each version.
+Position	Version 4.10	Version 4.12	Change
+Mal 2:6.15	מֵעָוֹֽן׃	מֵעָוֺֽן׃	Vowels are different.
+
+	22.1       Back
+
+===כתובים===
+Differences in Psalms
+      Back
+WLC versions 4.10 -> 4.12
+
+Font size:	
+Show changes in morph. div.:	
+Book	Differences
+Verses	GOs	Vowels	Accents	Morph.
+Div.	Notes	Note
+values
+Psalms	0	0	64	1	23	1	0
+
+All graphical objects (GOs) are valid in each version.
+Position	Version 4.10	Version 4.12	Change
+Ps 18:24.5	מֵעֲוֹנִֽי׃	מֵעֲוֺנִֽי׃	Vowels are different.
+Ps 25:11.5	לַ֝עֲוֹנִ֗י	לַ֝עֲוֺנִ֗י	Vowels are different.
+Ps 31:11.8	בַּעֲוֹנִ֣י	בַּעֲוֺנִ֣י	Vowels are different.
+Ps 32:2.7	עָוֹ֑ן	עָוֺ֑ן	Vowels are different.
+Ps 32:5.3	וַעֲוֹ֘נִ֤י	וַעֲוֺ֘נִ֤י	Vowels are different.
+Ps 32:5.13	עֲוֹ֖ן	עֲוֺ֖ן	Vowels are different.
+Ps 36:3.6	עֲוֹנ֣וֹ	עֲוֺנ֣וֹ	Vowels are different.
+Ps 37:31.6	אֲשֻׁרָֽיו׃	אֲשֻׁרָיו׃‪14‬	Accents are different. Different number of notes. A note, 14, has been added.
+Ps 38:5.2	עֲ֭וֹנֹתַי	עֲ֭וֺנֹתַי	Vowels are different.
+Ps 38:19.2	עֲוֹנִ֥י	עֲוֺנִ֥י	Vowels are different.
+Ps 39:12.3	עָוֹ֨ן ׀	עָוֺ֨ן ׀	Vowels are different.
+Ps 40:2.1	קַוֹּ֣ה	קַוֺּ֣ה	Vowels are different.
+Ps 40:13.9	עֲ֭וֹנֹתַי	עֲ֭וֺנֹתַי	Vowels are different.
+Ps 49:6.5	עֲוֹ֖ן	עֲוֺ֖ן	Vowels are different.
+Ps 51:4.4	מֵעֲוֹנִ֑י	מֵעֲוֺנִ֑י	Vowels are different.
+Ps 51:11.5	עֲוֹ֖נֹתַ֣י	עֲוֺ֖נֹתַ֣י	Vowels are different.
+Ps 59:5.2	עָ֭וֹן	עָ֭וֺן	Vowels are different.
+Ps 65:4.2	עֲ֭וֹנֹת	עֲ֭וֺנֹת	Vowels are different.
+Ps 65:9.3	קְ֭צָוֹת	קְ֭צָוֺת	Vowels are different.
+Ps 69:28.2	עָ֭וֹן	עָ֭וֺן	Vowels are different.
+Ps 69:28.4	עֲוֹנָ֑ם	עֲוֺנָ֑ם	Vowels are different.
+Ps 78:7.8	וּמִצְוֹתָ֥יו	וּמִצְוֺתָ֥יו	Vowels are different.
+Ps 78:38.4	עָוֹן֮	עָוֺן֮	Vowels are different.
+Ps 79:8.4	עֲוֹנֹ֪ת	עֲוֺנֹ֪ת	Vowels are different.
+Ps 85:3.2	עֲוֹ֣ן	עֲוֺ֣ן	Vowels are different.
+Ps 89:32.4	וּ֝מִצְוֹתַ֗י	וּ֝מִצְוֺתַ֗י	Vowels are different.
+Ps 89:33.5	עֲוֹנָֽם׃	עֲוֺנָֽם׃	Vowels are different.
+Ps 90:8.3	עֲוֹנֹתֵ֣ינוּ	עֲוֺנֹתֵ֣ינוּ	Vowels are different.
+Ps 103:3.3	עֲוֹנֵ֑כִי	עֲוֺנֵ֑כִי	Vowels are different.
+Ps 103:10.6	כַ֝עֲוֹנֹתֵ֗ינוּ	כַ֝עֲוֺנֹתֵ֗ינוּ	Vowels are different.
+Ps 106:43.8	בַּעֲוֹנָֽם׃	בַּעֲוֺנָֽם׃	Vowels are different.
+Ps 107:17.4	וּֽ֝מֵעֲוֹֽנֹתֵיהֶ֗ם	וּֽ֝מֵעֲוֺֽנֹתֵיהֶ֗ם	Vowels are different.
+Ps 109:14.2	עֲוֹ֣ן	עֲוֺ֣ן	Vowels are different.
+Ps 112:1.8	בְּ֝מִצְוֹתָ֗יו	בְּ֝מִצְוֺתָ֗יו	Vowels are different.
+Ps 119:6.7	מִצְוֹתֶֽיךָ׃	מִצְוֺתֶֽיךָ׃	Vowels are different.
+Ps 119:10.6	מִמִּצְוֹתֶֽיךָ׃	מִמִּצְוֺתֶֽיךָ׃	Vowels are different.
+Ps 119:14.2	עֵדְוֹתֶ֥יךָ	עֵדְוֺתֶ֥יךָ	Vowels are different.
+Ps 119:19.7	מִצְוֹתֶֽיךָ׃	מִצְוֺתֶֽיךָ׃	Vowels are different.
+Ps 119:21.5	מִמִּצְוֹתֶֽיךָ׃	מִמִּצְוֺתֶֽיךָ׃	Vowels are different.
+Ps 119:31.2	בְעֵֽדְוֹתֶ֑יךָ	בְעֵֽדְוֺתֶ֑יךָ	Vowels are different.
+Ps 119:32.2	מִצְוֹתֶ֥יךָ	מִצְוֺתֶ֥יךָ	Vowels are different.
+Ps 119:35.3	מִצְוֹתֶ֑יךָ	מִצְוֺתֶ֑יךָ	Vowels are different.
+Ps 119:36.4	עֵדְוֹתֶ֗יךָ	עֵדְוֺתֶ֗יךָ	Vowels are different.
+Ps 119:47.2	בְּמִצְוֹתֶ֗יךָ	בְּמִצְוֺתֶ֗יךָ	Vowels are different.
+Ps 119:48.4	מִ֭צְוֹתֶיךָ	מִ֭צְוֺתֶיךָ	Vowels are different.
+Ps 119:60.5	מִצְוֹתֶֽיךָ׃	מִצְוֺתֶֽיךָ׃	Vowels are different.
+Ps 119:66.6	בְמִצְוֹתֶ֣יךָ	בְמִצְוֺתֶ֣יךָ	Vowels are different.
+Ps 119:73.6	מִצְוֹתֶֽיךָ׃	מִצְוֺתֶֽיךָ׃	Vowels are different.
+Ps 119:86.2	מִצְוֹתֶ֥יךָ	מִצְוֺתֶ֥יךָ	Vowels are different.
+Ps 119:98.3	מִצְוֹתֶ֑ךָ	מִצְוֺתֶ֑ךָ	Vowels are different.
+Ps 119:99.5	עֵ֝דְוֹתֶ֗יךָ	עֵ֝דְוֺתֶ֗יךָ	Vowels are different.
+Ps 119:111.2	עֵדְוֹתֶ֣יךָ	עֵדְוֺתֶ֣יךָ	Vowels are different.
+Ps 119:115.5	מִצְוֹ֥ת	מִצְוֺ֥ת	Vowels are different.
+Ps 119:127.4	מִצְוֹתֶ֑יךָ	מִצְוֺתֶ֑יךָ	Vowels are different.
+Ps 119:129.2	עֵדְוֹתֶ֑יךָ	עֵדְוֺתֶ֑יךָ	Vowels are different.
+Ps 119:131.5	לְמִצְוֹתֶ֣יךָ	לְמִצְוֺתֶ֣יךָ	Vowels are different.
+Ps 119:143.4	מִ֝צְוֹתֶ֗יךָ	מִ֝צְוֺתֶ֗יךָ	Vowels are different.
+Ps 119:144.2	עֵדְוֹתֶ֥יךָ	עֵדְוֺתֶ֥יךָ	Vowels are different.
+Ps 119:151.5	מִצְוֹתֶ֥יךָ	מִצְוֺתֶ֥יךָ	Vowels are different.
+Ps 119:157.4	מֵ֝עֵדְוֹתֶ֗יךָ	מֵ֝עֵדְוֺתֶ֗יךָ	Vowels are different.
+Ps 119:166.4	וּֽמִצְוֹתֶ֥יךָ	וּֽמִצְוֺתֶ֥יךָ	Vowels are different.
+Ps 119:172.6	מִצְוֹתֶ֣יךָ	מִצְוֺתֶ֣יךָ	Vowels are different.
+Ps 119:176.7	מִ֝צְוֹתֶ֗יךָ	מִ֝צְוֺתֶ֗יךָ	Vowels are different.
+Ps 130:3.2	עֲוֹנ֥וֹת	עֲוֺנ֥וֹת	Vowels are different.
+Ps 130:8.6	עֲוֹנֹתָֽיו׃	עֲוֺנֹתָֽיו׃	Vowels are different.
+
+	22.1       Back
+
+Differences in Proverbs
+      Back
+WLC versions 4.10 -> 4.12
+
+Font size:	
+Show changes in morph. div.:	
+Book	Differences
+Verses	GOs	Vowels	Accents	Morph.
+Div.	Notes	Note
+values
+Proverbs	0	0	9	0	1	0	0
+
+All graphical objects (GOs) are valid in each version.
+Position	Version 4.10	Version 4.12	Change
+Prov 2:1.5	וּ֝מִצְוֹתַ֗י	וּ֝מִצְוֺתַ֗י	Vowels are different.
+Prov 3:1.5	וּ֝מִצְוֹתַ֗י	וּ֝מִצְוֺתַ֗י	Vowels are different.
+Prov 4:4.8	מִצְוֹתַ֣י	מִצְוֺתַ֣י	Vowels are different.
+Prov 7:1.4	וּ֝מִצְוֹתַ֗י	וּ֝מִצְוֺתַ֗י	Vowels are different.
+Prov 7:2.2	מִצְוֹתַ֣י	מִצְוֺתַ֣י	Vowels are different.
+Prov 10:8.4	מִצְוֹ֑ת	מִצְוֺ֑ת	Vowels are different.
+Prov 16:6.4	עָוֹ֑ן	עָוֺ֑ן	Vowels are different.
+Prov 17:4.10	הַוֹּֽת׃	הַוֺּֽת׃	Vowels are different.
+Prov 19:13.1	הַוֹּ֣ת	הַוֺּ֣ת	Vowels are different.
+
+	22.1       Back
+
+Differences in Job
+      Back
+WLC versions 4.10 -> 4.12
+
+Font size:	
+Show changes in morph. div.:	
+Book	Differences
+Verses	GOs	Vowels	Accents	Morph.
+Div.	Notes	Note
+values
+Job	0	0	16	0	11	0	0
+
+All graphical objects (GOs) are valid in each version.
+Position	Version 4.10	Version 4.12	Change
+Job 7:21.7	עֲוֹ֫נִ֥י	עֲוֺ֫נִ֥י	Vowels are different.
+Job 10:6.3	לַעֲוֹנִ֑י	לַעֲוֺנִ֑י	Vowels are different.
+Job 10:14.4	וּ֝מֵעֲוֹנִ֗י	וּ֝מֵעֲוֺנִ֗י	Vowels are different.
+Job 11:6.13	מֵעֲוֹנֶֽךָ׃	מֵעֲוֺנֶֽךָ׃	Vowels are different.
+Job 13:23.3	עֲוֹנ֣וֹת	עֲוֺנ֣וֹת	Vowels are different.
+Job 13:26.6	עֲוֹנ֥וֹת	עֲוֺנ֥וֹת	Vowels are different.
+Job 14:17.6	עֲוֹנִֽי׃	עֲוֺנִֽי׃	Vowels are different.
+Job 15:5.3	עֲוֹנְךָ֣	עֲוֺנְךָ֣	Vowels are different.
+Job 19:29.7	עֲוֹנ֣וֹת	עֲוֺנ֣וֹת	Vowels are different.
+Job 20:27.3	עֲוֹנ֑וֹ	עֲוֺנ֑וֹ	Vowels are different.
+Job 22:5.6	לַעֲוֹנֹתֶֽיךָ׃	לַעֲוֺנֹתֶֽיךָ׃	Vowels are different.
+Job 31:11.7	עָוֹ֥ן	עָוֺ֥ן	Vowels are different.
+Job 31:28.3	עָוֹ֣ן	עָוֺ֣ן	Vowels are different.
+Job 31:33.7	עֲוֹֽנִי׃	עֲוֺֽנִי׃	Vowels are different.
+Job 32:6.16	מֵחַוֹּ֖ת	מֵחַוֺּ֖ת	Vowels are different.
+Job 33:9.8	עָוֹ֣ן	עָוֺ֣ן	Vowels are different.
+
+	22.1       Back
+
+Differences in Song of Songs
+      Back
+WLC versions 4.10 -> 4.12
+
+Font size:	
+Show changes in morph. div.:	
+Book	Differences
+Verses	GOs	Vowels	Accents	Morph.
+Div.	Notes	Note
+values
+Song of Songs	0	0	6	0	0	5	0
+
+All graphical objects (GOs) are valid in each version.
+Position	Version 4.10	Version 4.12	Change
+Song 2:14.7	אֶת־	אֶתּ־	Vowels are different.
+Song 3:8.11	בַּלֵּילֽוֹת׃	בַּלֵּילּֽוֹת׃‪12,18‬	Vowels are different. Different number of notes. 2 notes, 12, 18, have been added.
+Song 5:16.4	מַחֲמַדִּ֑ים	מַחֲּמַדִּ֑ים‪12,18‬	Vowels are different. Different number of notes. 2 notes, 12, 18, have been added.
+Song 6:3.6	בַּשּׁוֹשַׁנִּֽים׃	בַּשׁוֹשַׁנִּֽים׃‪12,18‬	Vowels are different. Different number of notes. 2 notes, 12, 18, have been added.
+Song 8:1.10	אֶשָּׁ֣קְךָ֔	אֶשָׁ֣קְךָ֔‪12,18‬	Vowels are different. Different number of notes. 2 notes, 12, 18, have been added.
+Song 8:12.1	כַּרְמִ֥י	כָּרְמִ֥י‪12,18‬	Vowels are different. Different number of notes. 2 notes, 12, 18, have been added.
+
+	22.1       Back
+
+Differences in Ruth
+      Back
+WLC versions 4.10 -> 4.12
+
+Font size:	
+Show changes in morph. div.:	
+Book	Differences
+Verses	GOs	Vowels	Accents	Morph.
+Div.	Notes	Note
+values
+Ruth	0	0	5	0	0	5	0
+
+All graphical objects (GOs) are valid in each version.
+Position	Version 4.10	Version 4.12	Change
+Ruth 2:2.9	וַאֲלַקֳטָ֣ה	וַאֲלַקֳטָּ֣ה‪12,18‬	Vowels are different. Different number of notes. 2 notes, 12, 18, have been added.
+Ruth 2:2.10	בַשִּׁבֳּלִ֔ים	בַשִׁבֳּלִ֔ים‪12,18‬	Vowels are different. Different number of notes. 2 notes, 12, 18, have been added.
+Ruth 2:9.5	וְהָלַ֣כְתְּ	וְהָלַ֣כְתִּ‪12,18‬	Vowels are different. Different number of notes. 2 notes, 12, 18, have been added.
+Ruth 2:10.13	וְאָנֹכִ֖י	וְאָּנֹכִ֖י‪12,18‬	Vowels are different. Different number of notes. 2 notes, 12, 18, have been added.
+Ruth 2:11.17	אָבִ֣יךְ	אָּבִ֣יךְ‪12,18‬	Vowels are different. Different number of notes. 2 notes, 12, 18, have been added.
+
+	22.1       Back
+
+
+Differences in Lamentations
+      Back
+WLC versions 4.10 -> 4.12
+
+Font size:	
+Show changes in morph. div.:	
+Book	Differences
+Verses	GOs	Vowels	Accents	Morph.
+Div.	Notes	Note
+values
+Lamentations	0	0	10	2	4	5	0
+
+All graphical objects (GOs) are valid in each version.
+Position	Version 4.10	Version 4.12	Change
+Lam 1:1.9	רַבָּ֣תִי	רַּבָּ֣תִי‪12,18‬	Vowels are different. Different number of notes. 2 notes, 12, 18, have been added.
+Lam 2:3.2	בָּֽחֳרִי־	בָּֽחֳרִי‪12,18‬	Accents are different. Different number of notes. 2 notes, 12, 18, have been added.
+Lam 2:14.9	עֲוֹנֵ֖ךְ	עֲוֺנֵ֖ךְ	Vowels are different.
+Lam 3:12.2	קַשְׁתּוֹ֙	קַשְׁתוֹ֙‪12,18‬	Vowels are different. Different number of notes. 2 notes, 12, 18, have been added.
+Lam 3:33.6	בְּנֵי־	בְנֵי־	Vowels are different.
+Lam 4:4.5	חִכּ֖וֹ	חכּ֖וֹ‪12,18‬	Vowels are different. Different number of notes. 2 notes, 12, 18, have been added.
+Lam 4:6.2	עֲוֹ֣ן	עֲוֺ֣ן	Vowels are different.
+Lam 4:13.3	עֲוֹנ֖וֹת	עֲוֺנ֖וֹת	Vowels are different.
+Lam 4:22.2	עֲוֹנֵךְ֙	עֲוֺנֵךְ֙	Vowels are different.
+Lam 4:22.9	עֲוֹנֵךְ֙	עֲוֺנֵךְ֙	Vowels are different.
+Lam 5:5.7	הֽוּנַֽח־	הֽוּנַ֖ח‪12,18‬	Accents are different. Different number of notes. 2 notes, 12, 18, have been added.
+Lam 5:7.7	עֲוֹנֹתֵיהֶ֥ם	עֲוֺנֹתֵיהֶ֥ם	Vowels are different.
+
+	22.1       Back
+
+Differences in Ecclesiastes
+      Back
+WLC versions 4.10 -> 4.12
+
+Font size:	
+Show changes in morph. div.:	
+Book	Differences
+Verses	GOs	Vowels	Accents	Morph.
+Div.	Notes	Note
+values
+Ecclesiastes	0	0	6	0	0	5	0
+
+All graphical objects (GOs) are valid in each version.
+Position	Version 4.10	Version 4.12	Change
+Eccl 2:23.11	לִבּ֑וֹ	לִבּ֑ו‪12,18‬	Vowels are different. Different number of notes. 2 notes, 12, 18, have been added.
+Eccl 5:4.5	מִשֶּׁתִּדּ֖וֹר	מִשֶׁתִּדּ֖וֹר‪12,18‬	Vowels are different. Different number of notes. 2 notes, 12, 18, have been added.
+Eccl 5:7.16	גָּבֹ֙הַּ֙	גָּבֹ֙הַ֙‪12,18‬	Vowels are different. Different number of notes. 2 notes, 12, 18, have been added.
+Eccl 9:15.17	הַהֽוּא׃	הַהּֽוּא׃‪12,18‬	Vowels are different. Different number of notes. 2 notes, 12, 18, have been added.
+Eccl 12:5.19	בַשּׁ֖וּק	בָשּׁ֖וּק‪12,18‬	Vowels are different. Different number of notes. 2 notes, 12, 18, have been added.
+Eccl 12:13.9	מִצְוֹתָ֣יו	מִצְוֺתָ֣יו	Vowels are different.
+
+	22.1       Back
+
+Differences in Esther
+      Back
+WLC versions 4.10 -> 4.12
+
+Font size:	
+Show changes in morph. div.:	
+Book	Differences
+Verses	GOs	Vowels	Accents	Morph.
+Div.	Notes	Note
+values
+Esther	0	0	1	1	0	2	0
+
+All graphical objects (GOs) are valid in each version.
+Position	Version 4.10	Version 4.12	Change
+Esth 4:11.36	נִקְרֵ֙אתִי֙	נִקְרֵ֙אתי֙‪12,18‬	Vowels are different. Different number of notes. 2 notes, 12, 18, have been added.
+Esth 5:14.22	אֶל־	אֶל‪12,18‬	Accents are different. Different number of notes. 2 notes, 12, 18, have been added.
+
+	22.1       Back
+
+Differences in Ezra
+      Back
+WLC versions 4.10 -> 4.12
+
+Font size:	
+Show changes in morph. div.:	
+Book	Differences
+Verses	GOs	Vowels	Accents	Morph.
+Div.	Notes	Note
+values
+Ezra	0	0	9	0	0	0	0
+
+All graphical objects (GOs) are valid in each version.
+Position	Version 4.10	Version 4.12	Change
+Ezra 4:7.9	כְּנָוֹתָ֔יו	כְּנָוֺתָ֔יו	Vowels are different.
+Ezra 6:10.2	לֶהֱוֹ֧ן	לֶהֱוֺ֧ן	Vowels are different.
+Ezra 7:11.13	מִצְוֹת־	מִצְוֺת־	Vowels are different.
+Ezra 7:25.11	לֶהֱוֹ֤ן	לֶהֱוֺ֤ן	Vowels are different.
+Ezra 9:6.10	עֲוֹנֹתֵ֤ינוּ	עֲוֺנֹתֵ֤ינוּ	Vowels are different.
+Ezra 9:7.9	וּבַעֲוֹנֹתֵ֡ינוּ	וּבַעֲוֺנֹתֵ֡ינוּ	Vowels are different.
+Ezra 9:10.9	מִצְוֹתֶֽיךָ׃	מִצְוֺתֶֽיךָ׃	Vowels are different.
+Ezra 9:13.14	מֵֽעֲוֹנֵ֔נוּ	מֵֽעֲוֺנֵ֔נוּ	Vowels are different.
+Ezra 9:14.3	מִצְוֹתֶ֔יךָ	מִצְוֺתֶ֔יךָ	Vowels are different.
+
+	22.1       Back
+
+Differences in Nehemiah
+      Back
+WLC versions 4.10 -> 4.12
+
+Font size:	
+Show changes in morph. div.:	
+Book	Differences
+Verses	GOs	Vowels	Accents	Morph.
+Div.	Notes	Note
+values
+Nehemiah	0	0	12	0	0	0	0
+
+All graphical objects (GOs) are valid in each version.
+Position	Version 4.10	Version 4.12	Change
+Neh 1:5.14	מִצְוֹתָֽיו׃	מִצְוֺתָֽיו׃	Vowels are different.
+Neh 1:7.7	הַמִּצְוֹ֗ת	הַמִּצְוֺ֗ת	Vowels are different.
+Neh 1:9.4	מִצְוֹתַ֔י	מִצְוֺתַ֔י	Vowels are different.
+Neh 3:37.4	עֲוֹנָ֔ם	עֲוֺנָ֔ם	Vowels are different.
+Neh 9:2.11	וַעֲוֹנ֖וֹת	וַעֲוֺנ֖וֹת	Vowels are different.
+Neh 9:13.15	וּמִצְוֹ֖ת	וּמִצְוֺ֖ת	Vowels are different.
+Neh 9:16.10	מִצְוֹתֶֽיךָ׃	מִצְוֺתֶֽיךָ׃	Vowels are different.
+Neh 9:29.10	לְמִצְוֹתֶ֙יךָ֙	לְמִצְוֺתֶ֙יךָ֙	Vowels are different.
+Neh 9:34.12	מִצְוֹתֶ֔יךָ	מִצְוֺתֶ֔יךָ	Vowels are different.
+Neh 9:34.13	וּלְעֵ֣דְוֹתֶ֔יךָ	וּלְעֵ֣דְוֺתֶ֔יךָ	Vowels are different.
+Neh 10:30.21	מִצְוֹת֙	מִצְוֺת֙	Vowels are different.
+Neh 10:33.3	מִצְוֹ֔ת	מִצְוֺ֔ת	Vowels are different.
+
+	22.1       Back
+
+
+Differences in 1 Chronicles
+      Back
+WLC versions 4.10 -> 4.12
+
+Font size:	
+Show changes in morph. div.:	
+Book	Differences
+Verses	GOs	Vowels	Accents	Morph.
+Div.	Notes	Note
+values
+1 Chronicles	0	0	6	0	0	0	0
+
+All graphical objects (GOs) are valid in each version.
+Position	Version 4.10	Version 4.12	Change
+1 Chr 2:23.5	חַוֹּ֨ת	חַוֺּ֨ת	Vowels are different.
+1 Chr 28:7.9	מִצְוֹתַ֥י	מִצְוֺתַ֥י	Vowels are different.
+1 Chr 28:8.12	מִצְוֹ֖ת	מִצְוֺ֖ת	Vowels are different.
+1 Chr 28:17.3	וְהַקְּשָׂוֹ֖ת	וְהַקְּשָׂוֺ֖ת	Vowels are different.
+1 Chr 29:19.7	מִצְוֹתֶ֔יךָ	מִצְוֺתֶ֔יךָ	Vowels are different.
+1 Chr 29:19.8	עֵדְוֹתֶ֖יךָ	עֵדְוֺתֶ֖יךָ	Vowels are different.
+
+	22.1       Back
+
+Differences in 2 Chronicles
+      Back
+WLC versions 4.10 -> 4.12
+
+Font size:	
+Show changes in morph. div.:	
+Book	Differences
+Verses	GOs	Vowels	Accents	Morph.
+Div.	Notes	Note
+values
+2 Chronicles	0	0	7	0	0	0	0
+
+All graphical objects (GOs) are valid in each version.
+Position	Version 4.10	Version 4.12	Change
+2 Chr 7:19.6	וּמִצְוֹתַ֔י	וּמִצְוֺתַ֔י	Vowels are different.
+2 Chr 17:4.5	וּבְמִצְוֹתָ֖יו	וּבְמִצְוֺתָ֖יו	Vowels are different.
+2 Chr 20:18.12	לְהִֽשְׁתַּחֲוֹ֖ת	לְהִֽשְׁתַּחֲוֺ֖ת	Vowels are different.
+2 Chr 24:20.21	מִצְוֹ֤ת	מִצְוֺ֤ת	Vowels are different.
+2 Chr 32:28.6	וְאֻֽרָוֹת֙	וְאֻֽרָוֺת֙	Vowels are different.
+2 Chr 34:31.15	מִצְוֹתָיו֙	מִצְוֺתָיו֙	Vowels are different.
+2 Chr 34:31.16	וְעֵֽדְוֹתָ֣יו	וְעֵֽדְוֺתָ֣יו	Vowels are different.
+	22.1       Back
+
+</div>
+
+==רשימת השינויים המלאה מגירסה 4.12 ל-4.14==
+המקור [http://tanach.us/Supplements/Differences-412-414.xml כאן]. אין ברשימה זו הרבה שינויים משמעותיים לצרכים שלנו. רוב השינויים הם ב-"morphological division" (שאינו מעניין אותנו) ומיעוטם בנוסח הניקוד והטעמים. רוב השינויים בניקוד ובטעמים מתעדים גרסאות חריגות בכתי"ל ש"תוקנו" בגרסאות הקודמות.
+<div dir="ltr">
+
+===תורה===
+Differences in Genesis
+      Back
+WLC versions 4.12 -> 4.14
+
+Font size:	
+Show changes in morph. div.:	
+Book	Differences
+Verses	GOs	Vowels	Accents	Morph.
+Div.	Notes	Note
+values
+Genesis	0	0	0	7	2	3	2
+
+All graphical objects (GOs) are valid in each version.
+Position	Version 4.12	Version 4.14	Change
+Gen 7:19.2	גָּ֥בְר֛וּ‪c‬	גָּֽבְר֛וּ	Accents are different. Different number of notes. A note, c, has been removed.
+Gen 17:20.1	וּֽלְיִשְׁמָעֵאל֮‪3‬	וּֽלְיִשְׁמָעֵ֘אל‪1‬	Accents are different. A transcription note has been changed. Note 3 becomes a note 1.
+Gen 19:33.15	וּבְקוּׄמָֽהּ׃‪4‬	וּבְקׄוּמָֽהּ׃‪4‬	Accents are different.
+Gen 35:20.8	קְבֻרַֽת־	קְבֻֽרַת־	Accents are different.
+Gen 40:1.5	חָ֥טְא֛וּ‪3‬	חָֽטְא֛וּ	Accents are different. Different number of notes. A note, 3, has been removed.
+Gen 46:19.4	יַעֲקֹ֔ב‪3‬	יַֽעֲקֹ֔ב	Accents are different. Different number of notes. A note, 3, has been removed.
+Gen 47:29.3	יִשְׂרָאֵל֮‪3‬	יִשְׂרָאֵ֘ל‪1‬	Accents are different. A transcription note has been changed. Note 3 becomes a note 1.
+
+	22.1       Back
+
+
+Differences in Exodus
+      Back
+WLC versions 4.12 -> 4.14
+
+Font size:	
+Show changes in morph. div.:	
+Book	Differences
+Verses	GOs	Vowels	Accents	Morph.
+Div.	Notes	Note
+values
+Exodus	0	0	0	8	4	3	3
+
+All graphical objects (GOs) are valid in each version.
+Position	Version 4.12	Version 4.14	Change
+Ex 6:6.4	יִשְׂרָאֵל֮‪3‬	יִשְׂרָאֵ֘ל‪1‬	Accents are different. A transcription note has been changed. Note 3 becomes a note 1.
+Ex 21:14.1	וְכִי־	וְכִֽי־	Accents are different.
+Ex 23:32.1	לֹא־	לֹֽא־	Accents are different.
+Ex 25:14.1	וְהֵבֵאתָ֤‪3‬	וְהֵֽבֵאתָ֤	Accents are different. Different number of notes. A note, 3, has been removed.
+Ex 30:12.6	יִשְׂרָאֵל֮‪3‬	יִשְׂרָאֵ֘ל‪1‬	Accents are different. A transcription note has been changed. Note 3 becomes a note 1.
+Ex 35:20.1	וַיֵּ֥צְא֛וּ‪3‬	וַיֵּֽצְא֛וּ	Accents are different. Different number of notes. A note, 3, has been removed.
+Ex 36:2.4	בְּצַלְאֵל֮‪3‬	בְּצַלְאֵ֘ל‪1‬	Accents are different. A transcription note has been changed. Note 3 becomes a note 1.
+Ex 36:18.8	לִהְיֹ֥ת‪3‬	לִֽהְיֹ֥ת	Accents are different. Different number of notes. A note, 3, has been removed.
+
+	22.1       Back
+
+
+Differences in Leviticus
+      Back
+WLC versions 4.12 -> 4.14
+
+Font size:	
+Show changes in morph. div.:	
+Book	Differences
+Verses	GOs	Vowels	Accents	Morph.
+Div.	Notes	Note
+values
+Leviticus	0	0	0	6	7	3	2
+
+All graphical objects (GOs) are valid in each version.
+Position	Version 4.12	Version 4.14	Change
+Lev 4:2.4	יִשְׂרָאֵל֮‪3‬	יִשְׂרָאֵ֘ל‪1‬	Accents are different. A transcription note has been changed. Note 3 becomes a note 1.
+Lev 10:17.5	הַחַטָּאת֙‪3‬	הַֽחַטָּאת֙	Accents are different. Different number of notes. A note, 3, has been removed.
+Lev 11:22.6	הָֽאַרְבֶּ֣ה‪3‬	הָֽאַרְבֶּ֣ה	Different number of notes. A note, 3, has been removed.
+Lev 20:2.3	יִשְׂרָאֵל֮‪3‬	יִשְׂרָאֵ֘ל‪1‬	Accents are different. A transcription note has been changed. Note 3 becomes a note 1.
+Lev 20:27.4	כִּי־	כִּֽי־	Accents are different.
+Lev 25:20.4	נֹּאכַ֖ל‪3‬	נֹּאכַ֤֖ל‪c,n‬	Accents are different. Different number of notes. A note, c, has been added.
+Lev 26:8.1	וְרָדְפוּ֨‪c‬	וְרָדְפ֨וּ‪c‬	Accents are different.
+
+	22.1       Back
+
+
+Differences in Numbers
+      Back
+WLC versions 4.12 -> 4.14
+
+Font size:	
+Show changes in morph. div.:	
+Book	Differences
+Verses	GOs	Vowels	Accents	Morph.
+Div.	Notes	Note
+values
+Numbers	0	0	0	5	0	3	1
+
+All graphical objects (GOs) are valid in each version.
+Position	Version 4.12	Version 4.14	Change
+Num 15:38.14	וְנָ֥תְנ֛וּ‪3‬	וְנָֽתְנ֛וּ	Accents are different. Different number of notes. A note, 3, has been removed.
+Num 20:19.4	יִשְׂרָאֵל֮‪3‬	יִשְׂרָאֵ֘ל‪1‬	Accents are different. A transcription note has been changed. Note 3 becomes a note 1.
+Num 32:20.10	תֵּחָ֥לְצ֛וּ‪3‬	תֵּחָֽלְצ֛וּ	Accents are different. Different number of notes. A note, 3, has been removed.
+Num 33:3.4	הָרִאשׁ֔וֹן‪3‬	הָֽרִאשׁ֔וֹן	Accents are different. Different number of notes. A note, 3, has been removed.
+Num 35:33.1	וְלֹא־	וְלֹֽא־	Accents are different.
+
+	22.1       Back
+
+
+Differences in Deuteronomy
+      Back
+WLC versions 4.12 -> 4.14
+
+Font size:	
+Show changes in morph. div.:	
+Book	Differences
+Verses	GOs	Vowels	Accents	Morph.
+Div.	Notes	Note
+values
+Deuteronomy	0	0	12	13	19	23	2
+
+All graphical objects (GOs) are valid in each version.
+Position	Version 4.12	Version 4.14	Change
+Deut 5:12.4	הַשַּׁבָּ֖֨ת	הַשַׁבָּ֖֨ת‪Q,p‬	Vowels are different. Different number of notes. 2 notes, Q, p, have been added.
+Deut 5:15.23	הַשַּׁבָּֽת׃	הַשַׁבָּֽת׃‪Q,p‬	Vowels are different. Different number of notes. 2 notes, Q, p, have been added.
+Deut 7:8.5	וּמִשָּׁמְר֤וֹ	וּמִשָּׁמְר֤וּ‪P,p,v‬	Vowels are different. Different number of notes. 3 notes, P, p, v, have been added.
+Deut 8:3.4	אֶת־	אֶת‪Q,p‬	Accents are different. Different number of notes. 2 notes, Q, p, have been added.
+Deut 9:20.11	הַהִֽוא׃	הַהִֽוא‪Q,p‬	Accents are different. Different number of notes. 2 notes, Q, p, have been added.
+Deut 10:1.9	לוּחֹ֤ת	לֻוחֹ֤ת‪Q,v‬	Vowels are different. Different number of notes. 2 notes, Q, v, have been added.
+Deut 10:7.8	נַֽחֲלֵי	נַ֥חֲלֵי‪Q,c‬	Accents are different. Different number of notes. 2 notes, Q, c, have been added.
+Deut 10:15.14	הַזֶּֽה׃	הַזֶּה׃‪2‬	Accents are different. Different number of notes. A note, 2, has been added.
+Deut 10:22.5	מִצְרָ֑יְמָה	מִצְרָ֑יְמָהּ‪Q,p‬	Vowels are different. Different number of notes. 2 notes, Q, p, have been added.
+Deut 14:24.7	תוּכַל֮‪3‬	תוּכַ֘ל‪1‬	Accents are different. A transcription note has been changed. Note 3 becomes a note 1.
+Deut 16:3.18	תִּזְכֹּ֗ר	תִּזְכֹּר֔‪Q,c‬	Accents are different. Different number of notes. 2 notes, Q, c, have been added.
+Deut 18:14.16	נָ֥תַן	נָ֛תַן‪Q,c‬	Accents are different. Different number of notes. 2 notes, Q, c, have been added.
+Deut 20:9.7	וּפָ֥קְד֛וּ‪3‬	וּפָֽקְד֛וּ	Accents are different. Different number of notes. A note, 3, has been removed.
+Deut 20:12.9	עָלֶֽיהָ׃	עָלֶֽיהָּ׃‪Q,p‬	Vowels are different. Different number of notes. 2 notes, Q, p, have been added.
+Deut 21:18.13	וְיִסְּר֣וּ	וְיסְּר֣וּ‪Q,v‬	Vowels are different. Different number of notes. 2 notes, Q, v, have been added.
+Deut 22:16.4	הַֽנַּעֲרָ֖ה	הַֽנַּעַרָ֖ה‪Q,v‬	Vowels are different. Different number of notes. 2 notes, Q, v, have been added.
+Deut 22:19.20	לְשַׁלְּחָ֖הּ	לְשַּׁלְּחָ֖הּ‪Q,p‬	Vowels are different. Different number of notes. 2 notes, Q, p, have been added.
+Deut 22:29.18	שַׁלְּחָ֖הּ	שַׁלְּחָ֖ה‪Q,p‬	Vowels are different. Different number of notes. 2 notes, Q, p, have been added.
+Deut 24:16.11	אִ֥ישׁ	אִ֥יש‪Q,k‬	Vowels are different. Different number of notes. 2 notes, Q, k, have been added.
+Deut 25:9.22	אָחִֽיו׃	אָחִֽיו‪Q,p‬	Accents are different. Different number of notes. 2 notes, Q, p, have been added.
+Deut 28:11.1	וְהוֹתִרְךָ֤‪3‬	וְהוֹתִֽרְךָ֤	Accents are different. Different number of notes. A note, 3, has been removed.
+Deut 28:30.15	תְחַלְּלֶֽנּוּ׃	תְחַלְּלֶּֽנּוּ׃‪Q,p‬	Vowels are different. Different number of notes. 2 notes, Q, p, have been added.
+Deut 31:7.8	יִשְׂרָאֵל֮‪3‬	יִשְׂרָאֵ֘ל‪1‬	Accents are different. A transcription note has been changed. Note 3 becomes a note 1.
+Deut 31:12.18	וְשָׁמְר֣וּ‪3‬	וְשָֽׁמְר֣וּ	Accents are different. Different number of notes. A note, 3, has been removed.
+Deut 33:28.13	יַ֥עַרְפוּ‪3‬	יַֽעַרְפוּ‪P,c‬	Accents are different. Different number of notes. A note, P, has been added.
+
+	22.1       Back
+
+===נביאים ראשונים===
+Differences in Joshua
+      Back
+WLC versions 4.12 -> 4.14
+
+Font size:	
+Show changes in morph. div.:	
+Book	Differences
+Verses	GOs	Vowels	Accents	Morph.
+Div.	Notes	Note
+values
+Joshua	0	0	0	2	3	0	2
+
+All graphical objects (GOs) are valid in each version.
+Position	Version 4.12	Version 4.14	Change
+Josh 4:8.4	יִשְׂרָאֵל֮‪3‬	יִשְׂרָאֵ֘ל‪1‬	Accents are different. A transcription note has been changed. Note 3 becomes a note 1.
+Josh 10:30.6	יִשְׂרָאֵל֮‪3‬	יִשְׂרָאֵ֘ל‪1‬	Accents are different. A transcription note has been changed. Note 3 becomes a note 1.
+
+	22.1       Back
+
+
+Differences in Judges
+      Back
+WLC versions 4.12 -> 4.14
+
+Font size:	
+Show changes in morph. div.:	
+No differences found in Judges!
+
+	22.1       Back
+
+
+Differences in 1 Samuel
+      Back
+WLC versions 4.12 -> 4.14
+
+Font size:	
+Show changes in morph. div.:	
+Book	Differences
+Verses	GOs	Vowels	Accents	Morph.
+Div.	Notes	Note
+values
+1 Samuel	0	0	0	0	1	0	0
+
+All graphical objects (GOs) are valid in each version.
+	22.1       Back
+
+
+Differences in 2 Samuel
+      Back
+WLC versions 4.12 -> 4.14
+
+Font size:	
+Show changes in morph. div.:	
+Book	Differences
+Verses	GOs	Vowels	Accents	Morph.
+Div.	Notes	Note
+values
+2 Samuel	0	0	0	0	1	0	0
+
+All graphical objects (GOs) are valid in each version.
+	22.1       Back
+
+
+Differences in 1 Kings
+      Back
+WLC versions 4.12 -> 4.14
+
+Font size:	
+Show changes in morph. div.:	
+Book	Differences
+Verses	GOs	Vowels	Accents	Morph.
+Div.	Notes	Note
+values
+1 Kings	0	0	0	0	3	0	0
+
+All graphical objects (GOs) are valid in each version.
+	22.1       Back
+
+
+Differences in 2 Kings
+      Back
+WLC versions 4.12 -> 4.14
+
+Font size:	
+Show changes in morph. div.:	
+Book	Differences
+Verses	GOs	Vowels	Accents	Morph.
+Div.	Notes	Note
+values
+2 Kings	0	0	0	1	1	1	0
+
+All graphical objects (GOs) are valid in each version.
+Position	Version 4.12	Version 4.14	Change
+2 Kings 17:15.15	וַיֵּ֨לְכוּ֜	וַיֵּ֨לְכ֜וּ‪c‬	Accents are different. Different number of notes. A note, c, has been added.
+
+	22.1       Back
+
+===נביאים אחרונים===
+Differences in Isaiah
+      Back
+WLC versions 4.12 -> 4.14
+
+Font size:	
+Show changes in morph. div.:	
+Book	Differences
+Verses	GOs	Vowels	Accents	Morph.
+Div.	Notes	Note
+values
+Isaiah	0	0	0	0	3	0	0
+
+All graphical objects (GOs) are valid in each version.
+	22.1       Back
+
+
+Differences in Jeremiah
+      Back
+WLC versions 4.12 -> 4.14
+
+Font size:	
+Show changes in morph. div.:	
+Book	Differences
+Verses	GOs	Vowels	Accents	Morph.
+Div.	Notes	Note
+values
+Jeremiah	0	0	0	0	2	0	0
+
+All graphical objects (GOs) are valid in each version.
+	22.1       Back
+
+
+Differences in Ezekiel
+      Back
+WLC versions 4.12 -> 4.14
+
+Font size:	
+Show changes in morph. div.:	
+Book	Differences
+Verses	GOs	Vowels	Accents	Morph.
+Div.	Notes	Note
+values
+Ezekiel	0	0	0	0	4	0	0
+
+All graphical objects (GOs) are valid in each version.
+	22.1       Back
+
+
+Differences in Hosea
+      Back
+WLC versions 4.12 -> 4.14
+
+Font size:	
+Show changes in morph. div.:	
+No differences found in Hosea!
+
+	22.1       Back
+
+
+Differences in Joel
+      Back
+WLC versions 4.12 -> 4.14
+
+Font size:	
+Show changes in morph. div.:	
+No differences found in Joel!
+
+	22.1       Back
+
+
+Differences in Amos
+      Back
+WLC versions 4.12 -> 4.14
+
+Font size:	
+Show changes in morph. div.:	
+No differences found in Amos!
+
+	22.1       Back
+
+
+Differences in Obadiah
+      Back
+WLC versions 4.12 -> 4.14
+
+Font size:	
+Show changes in morph. div.:	
+No differences found in Obadiah!
+
+	22.1       Back
+
+
+Differences in Jonah
+      Back
+WLC versions 4.12 -> 4.14
+
+Font size:	
+Show changes in morph. div.:	
+Book	Differences
+Verses	GOs	Vowels	Accents	Morph.
+Div.	Notes	Note
+values
+Jonah	0	0	0	0	2	0	0
+
+All graphical objects (GOs) are valid in each version.
+	22.1       Back
+
+
+Differences in Micah
+      Back
+WLC versions 4.12 -> 4.14
+
+Font size:	
+Show changes in morph. div.:	
+No differences found in Micah!
+
+	22.1       Back
+
+
+Differences in Nahum
+      Back
+WLC versions 4.12 -> 4.14
+
+Font size:	
+Show changes in morph. div.:	
+No differences found in Nahum!
+
+	22.1       Back
+
+
+Differences in Habakkuk
+      Back
+WLC versions 4.12 -> 4.14
+
+Font size:	
+Show changes in morph. div.:	
+No differences found in Habakkuk!
+
+	22.1       Back
+
+
+Differences in Zephaniah
+      Back
+WLC versions 4.12 -> 4.14
+
+Font size:	
+Show changes in morph. div.:	
+No differences found in Zephaniah!
+
+	22.1       Back
+
+
+Differences in Haggai
+      Back
+WLC versions 4.12 -> 4.14
+
+Font size:	
+Show changes in morph. div.:	
+Book	Differences
+Verses	GOs	Vowels	Accents	Morph.
+Div.	Notes	Note
+values
+Haggai	0	0	0	0	1	0	0
+
+All graphical objects (GOs) are valid in each version.
+	22.1       Back
+
+
+Differences in Zechariah
+      Back
+WLC versions 4.12 -> 4.14
+
+Font size:	
+Show changes in morph. div.:	
+No differences found in Zechariah!
+
+	22.1       Back
+
+
+Differences in Malachi
+      Back
+WLC versions 4.12 -> 4.14
+
+Font size:	
+Show changes in morph. div.:	
+No differences found in Malachi!
+
+	22.1       Back
+
+===כתובים===
+Differences in Psalms
+      Back
+WLC versions 4.12 -> 4.14
+
+Font size:	
+Show changes in morph. div.:	
+Book	Differences
+Verses	GOs	Vowels	Accents	Morph.
+Div.	Notes	Note
+values
+Psalms	0	0	0	1	2	1	0
+
+All graphical objects (GOs) are valid in each version.
+Position	Version 4.12	Version 4.14	Change
+Ps 4:7.4	יַרְאֵ֪נוּ֫	יַרְאֵ֪נ֫וּ‪c‬	Accents are different. Different number of notes. A note, c, has been added.
+
+	22.1       Back
+
+
+Differences in Proverbs
+      Back
+WLC versions 4.12 -> 4.14
+
+Font size:	
+Show changes in morph. div.:	
+Book	Differences
+Verses	GOs	Vowels	Accents	Morph.
+Div.	Notes	Note
+values
+Proverbs	0	0	1	1	0	2	0
+
+All graphical objects (GOs) are valid in each version.
+Position	Version 4.12	Version 4.14	Change
+Prov 2:21.3	יִשְׁכְּנוּ־	יִשְׁכְּנוּ‪Q,p‬	Accents are different. Different number of notes. 2 notes, Q, p, have been added.
+Prov 12:24.4	וּ֝רְמִיָּ֗ה	ו֝רְמִיָּ֗ה‪Q,p‬	Vowels are different. Different number of notes. 2 notes, Q, p, have been added.
+
+	22.1       Back
+
+
+Differences in Job
+      Back
+WLC versions 4.12 -> 4.14
+
+Font size:	
+Show changes in morph. div.:	
+No differences found in Job!
+
+	22.1       Back
+
+
+Differences in Song of Songs
+      Back
+WLC versions 4.12 -> 4.14
+
+Font size:	
+Show changes in morph. div.:	
+Book	Differences
+Verses	GOs	Vowels	Accents	Morph.
+Div.	Notes	Note
+values
+Song of Songs	0	0	1	0	0	1	0
+
+All graphical objects (GOs) are valid in each version.
+Position	Version 4.12	Version 4.14	Change
+Song 8:13.1	הַיּוֹשֶׁ֣בֶת	הַיוֹשֶׁ֣בֶת‪p‬	Vowels are different. Different number of notes. A note, p, has been added.
+
+	22.1       Back
+
+
+Differences in Ruth
+      Back
+WLC versions 4.12 -> 4.14
+
+Font size:	
+Show changes in morph. div.:	
+Book	Differences
+Verses	GOs	Vowels	Accents	Morph.
+Div.	Notes	Note
+values
+Ruth	0	0	1	0	0	1	0
+
+All graphical objects (GOs) are valid in each version.
+Position	Version 4.12	Version 4.14	Change
+Ruth 3:14.3	מַרְגְּלוֹתָיו֙‪3‬	מַרְגְּלוֹתָיוֹ֙‪Q,k,n,v‬	Vowels are different. Different number of notes. 3 notes, Q, k, n, have been added.
+
+	22.1       Back
+
+
+Differences in Lamentations
+      Back
+WLC versions 4.12 -> 4.14
+
+Font size:	
+Show changes in morph. div.:	
+Book	Differences
+Verses	GOs	Vowels	Accents	Morph.
+Div.	Notes	Note
+values
+Lamentations	0	0	0	1	0	1	0
+
+All graphical objects (GOs) are valid in each version.
+Position	Version 4.12	Version 4.14	Change
+Lam 1:14.5	יִשְׂתָּ֥רְג֛וּ‪3‬	יִשְׂתָּֽרְג֛וּ	Accents are different. Different number of notes. A note, 3, has been removed.
+
+	22.1       Back
+
+
+Differences in Ecclesiastes
+      Back
+WLC versions 4.12 -> 4.14
+
+Font size:	
+Show changes in morph. div.:	
+Book	Differences
+Verses	GOs	Vowels	Accents	Morph.
+Div.	Notes	Note
+values
+Ecclesiastes	0	0	0	0	1	0	0
+
+All graphical objects (GOs) are valid in each version.
+	22.1       Back
+
+
+Differences in Esther
+      Back
+WLC versions 4.12 -> 4.14
+
+Font size:	
+Show changes in morph. div.:	
+No differences found in Esther!
+
+	22.1       Back
+
+
+Differences in Daniel
+      Back
+WLC versions 4.12 -> 4.14
+
+Font size:	
+Show changes in morph. div.:	
+Book	Differences
+Verses	GOs	Vowels	Accents	Morph.
+Div.	Notes	Note
+values
+Daniel	0	0	0	1	0	1	0
+
+All graphical objects (GOs) are valid in each version.
+Position	Version 4.12	Version 4.14	Change
+Dan 10:19.13	וָאֹ֥מְרָ֛ה‪3‬	וָאֹֽמְרָ֛ה	Accents are different. Different number of notes. A note, 3, has been removed.
+
+	22.1       Back
+
+
+Differences in Ezra
+      Back
+WLC versions 4.12 -> 4.14
+
+Font size:	
+Show changes in morph. div.:	
+Book	Differences
+Verses	GOs	Vowels	Accents	Morph.
+Div.	Notes	Note
+values
+Ezra	0	0	1	2	0	3	0
+
+All graphical objects (GOs) are valid in each version.
+Position	Version 4.12	Version 4.14	Change
+Ezra 7:18.8	יִיטַ֗ב‪3‬	יֵיטַ֗ב	Vowels are different. Different number of notes. A note, 3, has been removed.
+Ezra 9:2.14	הָ֥יְתָ֛ה‪3‬	הָֽיְתָ֛ה	Accents are different. Different number of notes. A note, 3, has been removed.
+Ezra 9:9.4	וּבְעַבְדֻתֵ֔נוּ‪3‬	וּבְעַבְדֻ֔תֵנוּ‪C,C,c‬	Accents are different. Different number of notes. 2 notes, C, C, have been added.
+
+	22.1       Back
+
+
+Differences in Nehemiah
+      Back
+WLC versions 4.12 -> 4.14
+
+Font size:	
+Show changes in morph. div.:	
+Book	Differences
+Verses	GOs	Vowels	Accents	Morph.
+Div.	Notes	Note
+values
+Nehemiah	0	0	0	2	1	2	0
+
+All graphical objects (GOs) are valid in each version.
+Position	Version 4.12	Version 4.14	Change
+Neh 7:1.7	וַיִּפָּ֥קְד֛וּ‪3‬	וַיִּפָּֽקְד֛וּ	Accents are different. Different number of notes. A note, 3, has been removed.
+Neh 7:61.2	הָעוֹלִים֙‪3‬	הָֽעוֹלִים֙	Accents are different. Different number of notes. A note, 3, has been removed.
+
+	22.1       Back
+
+
+Differences in 1 Chronicles
+      Back
+WLC versions 4.12 -> 4.14
+
+Font size:	
+Show changes in morph. div.:	
+No differences found in 1 Chronicles!
+
+	22.1       Back
+
+
+Differences in 2 Chronicles
+      Back
+WLC versions 4.12 -> 4.14
+
+Font size:	
+Show changes in morph. div.:	
+Book	Differences
+Verses	GOs	Vowels	Accents	Morph.
+Div.	Notes	Note
+values
+2 Chronicles	0	0	0	0	3	0	0
+
+All graphical objects (GOs) are valid in each version.
+	22.1       Back
+</div>
+
+==רשימת השינויים המלאה מגירסה 4.14 ל-4.16==
+<div dir="ltr">
+
+
+Differences between versions of the Westminster Leningrad Codex
+WLC versions 4.14 -> 4.16
+
+
+
+Two versions of the Westminster Leningrad Codex (WLC), in the format of the Unicode/XML Tanach, are compared, looking for any differences between them. The basic element of the Unicode/XML Tanach is the Graphical Object, or GO. GOs have 6 types: w, a single word; q, a word representing a qere variant; k, a word representing a ketib variant; pe, an empty tag representing an open paragraph marker; samekh, an empty tag representing a closed paragraph marker, reversednun, an empty tag representing a reversed nun. w, q, and k type GOs contain Unicode Hebrew text with consonants, vowels, accents, morphological division marks (/), blanks, and the Unicode Zero Width Joiner. Any other content is invalid in these tags. Any GO may have a transcription note associated with it. The comparison is (normally) made between corresponding GOs from the two different versions. Each pair of GOs is examined for changes in morphological divisions, accents, vowels, consonants and notes and the results are indexed in the format Book C:V.GO, where Book is the book, C is the chapter, V is the verse, and GO is the index of the GO in the verse. All indices, C, V, and GO start with 1. Very infrequently, changes in the text produce different numbers of GOs in a given chapter and verse. In this case, the entire verse is displayed and a simple analysis is given. The output file documents and summarizes all differences between the versions.
+All graphical objects (GOs) are valid in each version.
+Book
+Differences
+
+Verses
+GOs
+Vowels
+Accents
+Morph.
+Div.
+Notes
+Note
+values
+Genesis
+1
+0
+0
+3
+1
+1
+0
+Exodus
+0
+0
+0
+0
+0
+0
+0
+Leviticus
+0
+0
+0
+0
+0
+0
+0
+Numbers
+0
+0
+0
+0
+2
+0
+0
+Deuteronomy
+0
+0
+0
+2
+0
+1
+0
+Joshua
+1
+0
+0
+0
+0
+1
+0
+Judges
+2
+0
+5
+7
+1
+3
+0
+1 Samuel
+0
+0
+1
+0
+0
+1
+0
+2 Samuel
+3
+1
+0
+0
+0
+3
+1
+1 Kings
+0
+0
+0
+0
+0
+0
+0
+2 Kings
+0
+0
+2
+2
+0
+3
+0
+Isaiah
+1
+0
+1
+10
+0
+7
+1
+Jeremiah
+1
+0
+2
+6
+6
+1
+1
+Ezekiel
+2
+0
+3
+7
+1
+7
+0
+Hosea
+0
+0
+1
+3
+0
+4
+0
+Joel
+0
+0
+0
+0
+0
+0
+0
+Amos
+0
+0
+3
+3
+0
+6
+0
+Obadiah
+0
+0
+0
+2
+0
+2
+0
+Jonah
+0
+0
+0
+0
+0
+0
+0
+Micah
+0
+0
+3
+1
+0
+4
+0
+Nahum
+0
+0
+0
+0
+0
+0
+0
+Habakkuk
+0
+0
+2
+0
+0
+2
+0
+Zephaniah
+0
+0
+1
+0
+0
+1
+0
+Haggai
+0
+0
+1
+0
+0
+1
+0
+Zechariah
+0
+0
+4
+0
+0
+2
+2
+Malachi
+0
+0
+1
+0
+0
+1
+0
+Psalms
+1
+0
+2
+5
+0
+6
+1
+Proverbs
+0
+1
+2
+3
+0
+5
+0
+Job
+1
+1
+0
+6
+1
+6
+1
+Song of Songs
+0
+0
+0
+0
+0
+0
+0
+Ruth
+0
+0
+0
+0
+0
+0
+0
+Lamentations
+0
+0
+1
+0
+0
+1
+0
+Ecclesiastes
+1
+0
+1
+1
+1
+1
+0
+Esther
+1
+0
+1
+1
+0
+2
+0
+Daniel
+8
+0
+10
+35
+0
+14
+0
+Ezra
+1
+1
+2
+4
+0
+3
+1
+Nehemiah
+1
+0
+1
+1
+0
+2
+0
+1 Chronicles
+0
+0
+0
+0
+1
+0
+0
+2 Chronicles
+2
+0
+2
+1
+1
+3
+0
+All books:
+27
+4
+52
+103
+15
+94
+8
+Book
+Verses
+GOs
+Vowels
+Accents
+Morph.
+Div.
+Notes
+Note
+values
+
+Differences
+ 
+
+23.0
+
+===תורה===
+
+Differences in Genesis
+     Back
+WLC versions 4.14 -> 4.16
+
+
+Book
+Differences
+
+Verses
+GOs
+Vowels
+Accents
+Morph.
+Div.
+Notes
+Note
+values
+Genesis
+1
+0
+0
+3
+1
+1
+0
+All graphical objects (GOs) are valid in each version.
+Position
+Version 4.14
+Version 4.16
+Change
+Gen 14:17
+Version 
+4.14
+וַיֵּצֵ֣א מֶֽלֶךְ־סְדֹם֮ לִקְרָאתוֹ֒ אַחֲרֵ֣י שׁוּב֗וֹ מֵֽהַכּוֹת֙ אֶת־כְּדָר־לָעֹ֔מֶר‪1‬וְאֶת־הַמְּלָכִ֖ים אֲשֶׁ֣ר אִתּ֑וֹ אֶל־עֵ֣מֶק שָׁוֵ֔ה ה֖וּא עֵ֥מֶק הַמֶּֽלֶךְ׃
+Version 
+4.16
+וַיֵּצֵ֣א מֶֽלֶךְ־סְדֹם֮ לִקְרָאתוֹ֒ אַחֲרֵ֣י שׁוּב֗וֹ מֵֽהַכּוֹת֙ אֶת־כְּדָרלָעֹ֔מֶר‪n,p‬וְאֶת־הַמְּלָכִ֖ים אֲשֶׁ֣ר אִתּ֑וֹ אֶל־עֵ֣מֶק שָׁוֵ֔ה ה֖וּא עֵ֥מֶק הַמֶּֽלֶךְ׃
+Change:
+The number of GOs in this verse changed. Version 4.16 has 1 more GOs (20) in this verse than in Version 4.14 (19). Version 4.16 has 1 more transcription notes (2) in this verse than in Version 4.14 (1). 2 GOs in Version 4.16 (positions 9, 10) fail to match any GO in Version 4.14. 1 GOs in Version 4.14 (positions 9) fail to match any GO in Version 4.16. The verse GOs do not match uniquely.
+
+
+Gen 14:17.18
+עֵ֣מֶק
+עֵ֥מֶק
+Accents are different.
+Gen 14:17.15
+עֵ֥מֶק
+עֵ֣מֶק
+Accents are different.
+Gen 48:19.9
+יִהְיֶה־
+יִֽהְיֶה־
+Accents are different.
+
+23.0      Back
+
+
+Differences in Exodus
+     Back
+WLC versions 4.14 -> 4.16
+
+No differences found in Exodus!
+
+23.0      Back
+
+
+Differences in Leviticus
+     Back
+WLC versions 4.14 -> 4.16
+
+No differences found in Leviticus!
+
+23.0      Back
+
+
+Differences in Numbers
+     Back
+WLC versions 4.14 -> 4.16
+
+
+Book
+Differences
+
+Verses
+GOs
+Vowels
+Accents
+Morph.
+Div.
+Notes
+Note
+values
+Numbers
+0
+0
+0
+0
+2
+0
+0
+All graphical objects (GOs) are valid in each version.
+
+23.0      Back
+
+
+Differences in Deuteronomy
+     Back
+WLC versions 4.14 -> 4.16
+
+
+Book
+Differences
+
+Verses
+GOs
+Vowels
+Accents
+Morph.
+Div.
+Notes
+Note
+values
+Deuteronomy
+0
+0
+0
+2
+0
+1
+0
+All graphical objects (GOs) are valid in each version.
+Position
+Version 4.14
+Version 4.16
+Change
+Deut 5:8.1
+לֹֽ֣א־
+לֹֽ֣א־
+Accents are different.
+Deut 31:25.5
+נֹֽשְׂאֵ֛י‪1‬
+נֹ֥שְׂאֵ֛י‪C,c‬
+Accents are different. Different number of notes. A note, C, has been added.
+
+23.0      Back
+
+===נביאים ראשונים===
+
+Differences in Joshua
+     Back
+WLC versions 4.14 -> 4.16
+
+
+Book
+Differences
+
+Verses
+GOs
+Vowels
+Accents
+Morph.
+Div.
+Notes
+Note
+values
+Joshua
+1
+0
+0
+0
+0
+1
+0
+All graphical objects (GOs) are valid in each version.
+Position
+Version 4.14
+Version 4.16
+Change
+Josh 12:8
+Version 
+4.14
+בָּהָ֣ר וּבַשְּׁפֵלָ֗ה וּבָֽעֲרָבָה֙ וּבָ֣אֲשֵׁד֔וֹת וּבַמִּדְבָּ֖ר וּבַנֶּ֑גֶב הַֽחִתִּי֙ הָֽאֱמֹרִ֔י וְהַֽכְּנַעֲנִי֙ הַפְּרִזִּ֔י הַחִוִּ֖י וְהַיְבוּסִֽי׃ ‪3‬פ 
+Version 
+4.16
+בָּהָ֣ר וּבַשְּׁפֵלָ֗ה וּבָֽעֲרָבָה֙ וּבָ֣אֲשֵׁד֔וֹת וּבַמִּדְבָּ֖ר וּבַנֶּ֑גֶב הַֽחִתִּי֙ הָֽאֱמֹרִ֔י וְהַֽכְּנַעֲנִי֙ הַפְּרִזִּ֔י הַחִוִּ֖י וְהַיְבוּסִֽי׃ פ 
+Change:
+The number of GOs in this verse changed. Version 4.16 has 1 more GOs (14) in this verse than in Version 4.14 (13). Version 4.16 has 1 fewer transcription notes (0) in this verse than in Version 4.14 (1). 1 GOs in Version 4.16 (positions 13) fail to match any GO in Version 4.14. The 13 unique matches of GOs in the books will be compared in the usual manner and identified by their position in Version 4.16.
+
+
+
+23.0      Back
+
+
+Differences in Judges
+     Back
+WLC versions 4.14 -> 4.16
+
+
+Book
+Differences
+
+Verses
+GOs
+Vowels
+Accents
+Morph.
+Div.
+Notes
+Note
+values
+Judges
+2
+0
+5
+7
+1
+3
+0
+All graphical objects (GOs) are valid in each version.
+Position
+Version 4.14
+Version 4.16
+Change
+Judg 2:1
+Version 
+4.14
+וַיַּ֧עַל מַלְאַךְ־יְהוָ֛ה מִן־הַגִּלְגָּ֖ל אֶל־הַבֹּכִ֑ים ‪3‬פ 
+וַיֹּאמֶר֩ אַעֲלֶ֨ה אֶתְכֶ֜ם מִמִּצְרַ֗יִם וָאָבִ֤יא אֶתְכֶם֙ אֶל־הָאָ֗רֶץ אֲשֶׁ֤ר נִשְׁבַּ֙עְתִּי֙ לַאֲבֹ֣תֵיכֶ֔ם וָאֹמַ֕ר לֹֽא־אָפֵ֧ר בְּרִיתִ֛י אִתְּכֶ֖ם לְעוֹלָֽם׃
+Version 
+4.16
+וַיַּ֧עַל מַלְאַךְ־יְהוָ֛ה מִן־הַגִּלְגָּ֖ל אֶל־הַבֹּכִ֑ים פ 
+וַיֹּאמֶר֩ אַעֲלֶ֨ה אֶתְכֶ֜ם מִמִּצְרַ֗יִם וָאָבִ֤יא אֶתְכֶם֙ אֶל־הָאָ֗רֶץ אֲשֶׁ֤ר נִשְׁבַּ֙עְתִּי֙ לַאֲבֹ֣תֵיכֶ֔ם וָאֹמַ֕ר לֹֽא־אָפֵ֧ר בְּרִיתִ֛י אִתְּכֶ֖ם לְעוֹלָֽם׃
+Change:
+The number of GOs in this verse changed. Version 4.16 has 1 more GOs (26) in this verse than in Version 4.14 (25). Version 4.16 has 1 fewer transcription notes (0) in this verse than in Version 4.14 (1). 1 GOs in Version 4.16 (positions 8) fail to match any GO in Version 4.14. The verse GOs do not match uniquely.
+
+
+Judg 2:1.14
+אֶתְכֶ֜ם
+אֶתְכֶם֙
+Accents are different.
+Judg 2:1.24
+אֶתְכֶ֜ם
+אִתְּכֶ֖ם
+Accents are different. Vowels are different.
+Judg 2:1.11
+אֶתְכֶם֙
+אֶתְכֶ֜ם
+Accents are different.
+Judg 2:1.24
+אֶתְכֶם֙
+אִתְּכֶ֖ם
+Accents are different. Vowels are different.
+Judg 2:1.11
+אִתְּכֶ֖ם
+אֶתְכֶ֜ם
+Accents are different. Vowels are different.
+Judg 2:1.14
+אִתְּכֶ֖ם
+אֶתְכֶם֙
+Accents are different. Vowels are different.
+Judg 19:21
+Version 
+4.14
+וַיְבִיאֵ֣הוּ לְבֵית֔וֹ ויבול וַיָּ֖בָל‪9‬ לַחֲמוֹרִ֑ים וַֽיִּרְחֲצוּ֙ רַגְלֵיהֶ֔ם וַיֹּאכְל֖וּ וַיִּשְׁתּֽוּ׃
+Version 
+4.16
+וַיְבִיאֵ֣הוּ לְבֵית֔וֹ וַיָּ֖בָול‪n,q‬ לַחֲמוֹרִ֑ים וַֽיִּרְחֲצוּ֙ רַגְלֵיהֶ֔ם וַיֹּאכְל֖וּ וַיִּשְׁתּֽוּ׃
+Change:
+The number of GOs in this verse changed. Version 4.16 has 1 more GOs (9) in this verse than in Version 4.14 (8). Version 4.16 has 1 more transcription notes (2) in this verse than in Version 4.14 (1). 1 GOs in Version 4.16 (positions 4) fail to match any GO in Version 4.14. The 8 unique matches of GOs in the books will be compared in the usual manner and identified by their position in Version 4.16.
+
+
+Judg 19:21.3
+ויבול
+וַיָּ֖בָול
+Accents are different. Vowels are different. Different number of notes. 2 notes, n, q, have been added.
+
+23.0      Back
+
+
+Differences in 1 Samuel
+     Back
+WLC versions 4.14 -> 4.16
+
+
+Book
+Differences
+
+Verses
+GOs
+Vowels
+Accents
+Morph.
+Div.
+Notes
+Note
+values
+1 Samuel
+0
+0
+1
+0
+0
+1
+0
+All graphical objects (GOs) are valid in each version.
+Position
+Version 4.14
+Version 4.16
+Change
+1 Sam 1:23.23
+גָמְלָ֖הּ‪3‬
+גָּמְלָ֖הּ
+Vowels are different. Different number of notes. A note, 3, has been removed.
+
+23.0      Back
+
+
+Differences in 2 Samuel
+     Back
+WLC versions 4.14 -> 4.16
+
+
+Book
+Differences
+
+Verses
+GOs
+Vowels
+Accents
+Morph.
+Div.
+Notes
+Note
+values
+2 Samuel
+3
+1
+0
+0
+0
+3
+1
+All graphical objects (GOs) are valid in each version.
+Position
+Version 4.14
+Version 4.16
+Change
+2 Sam 3:3.4
+לַאֲֽבִיגַ֕יִל‪3‬
+לַאֲ‍ֽבִיגַ֕יִל‪c‬
+Consonants don't match! A transcription note has been changed. Note 3 becomes a note c.
+2 Sam 22:51
+Version 
+4.14
+מגדיל מִגְדּ֖וֹל יְשׁוּע֣וֹת מַלְכּ֑וֹ וְעֹֽשֶׂה־חֶ֧סֶד לִמְשִׁיח֛וֹ לְדָוִ֥ד וּלְזַרְע֖וֹ עַד־עוֹלָֽם׃ ‪3‬פ 
+Version 
+4.16
+מגדיל מִגְדּ֖וֹל יְשׁוּע֣וֹת מַלְכּ֑וֹ וְעֹֽשֶׂה־חֶ֧סֶד לִמְשִׁיח֛וֹ לְדָוִ֥ד וּלְזַרְע֖וֹ עַד־עוֹלָֽם׃ פ 
+Change:
+The number of GOs in this verse changed. Version 4.16 has 1 more GOs (13) in this verse than in Version 4.14 (12). Version 4.16 has 1 fewer transcription notes (0) in this verse than in Version 4.14 (1). 1 GOs in Version 4.16 (positions 12) fail to match any GO in Version 4.14. The 12 unique matches of GOs in the books will be compared in the usual manner and identified by their position in Version 4.16.
+
+
+2 Sam 23:34
+Version 
+4.14
+אֱלִיפֶ֥לֶט בֶּן־אֲחַסְבַּ֖י בֶּן־הַמַּֽעֲכָתִ֑י ‪3‬ ס          אֱלִיעָ֥ם בֶּן־אֲחִיתֹ֖פֶל הַגִּלֹנִֽי׃ ס          
+Version 
+4.16
+אֱלִיפֶ֥לֶט בֶּן־אֲחַסְבַּ֖י בֶּן־הַמַּֽעֲכָתִ֑י ס          אֱלִיעָ֥ם בֶּן־אֲחִיתֹ֖פֶל הַגִּלֹנִֽי׃ ס          
+Change:
+The number of GOs in this verse changed. Version 4.16 has 1 more GOs (12) in this verse than in Version 4.14 (11). Version 4.16 has 1 fewer transcription notes (0) in this verse than in Version 4.14 (1). 1 GOs in Version 4.16 (positions 6) fail to match any GO in Version 4.14. The verse GOs do not match uniquely.
+
+
+2 Sam 23:36
+Version 
+4.14
+יִגְאָ֤ל בֶּן־נָתָן֙ מִצֹּבָ֔ה ‪3‬ ס          בָּנִ֖י הַגָּדִֽי׃ ס          
+Version 
+4.16
+יִגְאָ֤ל בֶּן־נָתָן֙ מִצֹּבָ֔ה ס          בָּנִ֖י הַגָּדִֽי׃ ס          
+Change:
+The number of GOs in this verse changed. Version 4.16 has 1 more GOs (9) in this verse than in Version 4.14 (8). Version 4.16 has 1 fewer transcription notes (0) in this verse than in Version 4.14 (1). 1 GOs in Version 4.16 (positions 5) fail to match any GO in Version 4.14. The verse GOs do not match uniquely.
+
+
+
+23.0      Back
+
+
+Differences in 1 Kings
+     Back
+WLC versions 4.14 -> 4.16
+
+No differences found in 1 Kings!
+
+23.0      Back
+
+
+Differences in 2 Kings
+     Back
+WLC versions 4.14 -> 4.16
+
+
+Book
+Differences
+
+Verses
+GOs
+Vowels
+Accents
+Morph.
+Div.
+Notes
+Note
+values
+2 Kings
+0
+0
+2
+2
+0
+3
+0
+All graphical objects (GOs) are valid in each version.
+Position
+Version 4.14
+Version 4.16
+Change
+2 Kings 2:11.16
+בַּֽסְּעָרָ֖ה‪3‬
+בַּֽסְעָרָ֖ה
+Vowels are different. Different number of notes. A note, 3, has been removed.
+2 Kings 17:24.5
+וּ֠מִ֠כּוּתָה‪3‬
+וּ֠מִכּוּ֠תָה
+Accents are different. Different number of notes. A note, 3, has been removed.
+2 Kings 18:27.27
+מֵֽימֵי‪9‬
+מימֵ֥י‪c,n,v‬
+Accents are different. Vowels are different. Different number of notes. 2 notes, c, n, have been added.
+
+23.0      Back
+
+===נביאים אחרונים===
+
+Differences in Isaiah
+     Back
+WLC versions 4.14 -> 4.16
+
+
+Book
+Differences
+
+Verses
+GOs
+Vowels
+Accents
+Morph.
+Div.
+Notes
+Note
+values
+Isaiah
+1
+0
+1
+10
+0
+7
+1
+All graphical objects (GOs) are valid in each version.
+Position
+Version 4.14
+Version 4.16
+Change
+Isa 13:7.9
+יִמָּֽס׃‪3‬
+יִמָּס׃‪1‬
+Accents are different. A transcription note has been changed. Note 3 becomes a note 1.
+Isa 14:27.9
+וּמִ֥י‪3‬
+וּֽמִ֥י
+Accents are different. Different number of notes. A note, 3, has been removed.
+Isa 30:15.13
+תִּֽהְיֶ֖ה‪3‬
+תִּהְיֶ֖ה
+Accents are different. Different number of notes. A note, 3, has been removed.
+Isa 30:26.2
+אוֹר־
+אֽוֹר־
+Accents are different.
+Isa 37:10.9
+יַשִּׁאֲךָ֣‪3‬
+יַשִּֽׁאֲךָ֣
+Accents are different. Different number of notes. A note, 3, has been removed.
+Isa 40:27.8
+מֵיְהוָ֔ה‪3‬
+מֵֽיְהוָ֔ה
+Accents are different. Different number of notes. A note, 3, has been removed.
+Isa 58:14
+Version 
+4.14
+אָ֗ז תִּתְעַנַּג֙ עַל־יְהוָ֔ה וְהִרְכַּבְתִּ֖יךָ עַל־במותי בָּ֣מֳתֵי‪9‬ אָ֑רֶץ וְהַאֲכַלְתִּ֗יךָ נַחֲלַת֙ יַעֲקֹ֣ב אָבִ֔יךָ כִּ֛י פִּ֥י יְהוָ֖ה דִּבֵּֽר׃ ס          
+Version 
+4.16
+אָ֗ז תִּתְעַנַּג֙ עַל־יְהוָ֔ה וְהִרְכַּבְתִּ֖יךָ עַל־בָּ֣מֳותֵי‪n,q‬ אָ֑רֶץ וְהַאֲכַלְתִּ֗יךָ נַחֲלַת֙ יַעֲקֹ֣ב אָבִ֔יךָ כִּ֛י פִּ֥י יְהוָ֖ה דִּבֵּֽר׃ ס          
+Change:
+The number of GOs in this verse changed. Version 4.16 has 1 more GOs (18) in this verse than in Version 4.14 (17). Version 4.16 has 1 more transcription notes (2) in this verse than in Version 4.14 (1). 1 GOs in Version 4.16 (positions 8) fail to match any GO in Version 4.14. The verse GOs do not match uniquely.
+
+
+Isa 58:14.15
+יְהוָ֔ה
+יְהוָ֖ה
+Accents are different.
+Isa 58:14.7
+במותי
+בָּ֣מֳותֵי
+Accents are different. Vowels are different. Different number of notes. 2 notes, n, q, have been added.
+Isa 58:14.4
+יְהוָ֖ה
+יְהוָ֔ה
+Accents are different.
+Isa 61:7.13
+תִּהְיֶ֥ה‪3‬
+תִּֽהְיֶ֥ה
+Accents are different. Different number of notes. A note, 3, has been removed.
+
+23.0      Back
+
+
+Differences in Jeremiah
+     Back
+WLC versions 4.14 -> 4.16
+
+
+Book
+Differences
+
+Verses
+GOs
+Vowels
+Accents
+Morph.
+Div.
+Notes
+Note
+values
+Jeremiah
+1
+0
+2
+6
+6
+1
+1
+All graphical objects (GOs) are valid in each version.
+Position
+Version 4.14
+Version 4.16
+Change
+Jer 27:20
+Version 
+4.14
+אֲשֶׁ֣ר לֹֽא־לְקָחָ֗ם נְבֽוּכַדְנֶאצַּר֙ מֶ֣לֶךְ בָּבֶ֔ל בַּ֠גְלוֹתוֹ אֶת־יכוניהיְכָנְיָ֨ה‪m‬ בֶן־יְהוֹיָקִ֧ים מֶֽלֶךְ־יְהוּדָ֛ה מִירֽוּשָׁלִַ֖ם בָּבֶ֑לָה וְאֵ֛ת כָּל־חֹרֵ֥י יְהוּדָ֖ה וִירוּשָׁלִָֽם׃ ס          
+Version 
+4.16
+אֲשֶׁ֣ר לֹֽא־לְקָחָ֗ם נְבֽוּכַדְנֶאצַּר֙ מֶ֣לֶךְ בָּבֶ֔ל בַּ֠גְלוֹתוֹ אֶת־יְכָונְיָ֨ה‪1‬ בֶן־יְהוֹיָקִ֧ים מֶֽלֶךְ־יְהוּדָ֛ה מִירֽוּשָׁלִַ֖ם בָּבֶ֑לָה וְאֵ֛ת כָּל־חֹרֵ֥י יְהוּדָ֖ה וִירוּשָׁלִָֽם׃ ס          
+Change:
+The number of GOs in this verse changed. Version 4.16 has 1 more GOs (22) in this verse than in Version 4.14 (21). 1 GOs in Version 4.16 (positions 10) fail to match any GO in Version 4.14. The verse GOs do not match uniquely.
+
+
+Jer 27:20.12
+מֶ֣לֶךְ
+מֶֽלֶךְ־
+Accents are different.
+Jer 27:20.9
+יכוניה
+יְכָונְיָ֨ה
+Accents are different. Vowels are different. Different number of notes. A note, 1, has been added.
+Jer 27:20.5
+מֶֽלֶךְ־
+מֶ֣לֶךְ
+Accents are different.
+Jer 27:20.19
+יְהוּדָ֛ה
+יְהוּדָ֖ה
+Accents are different.
+Jer 27:20.13
+יְהוּדָ֖ה
+יְהוּדָ֛ה
+Accents are different.
+Jer 33:18.11
+וְעֹֽשֶׂה־
+וְעֹ֥שֶׂה־
+Accents are different.
+Jer 50:11.6
+תַֽעַלְז֔וּ‪m‬
+תַֽעֲלְז֔וּ‪1‬
+Vowels are different. A transcription note has been changed. Note m becomes a note 1.
+
+23.0      Back
+
+
+Differences in Ezekiel
+     Back
+WLC versions 4.14 -> 4.16
+
+
+Book
+Differences
+
+Verses
+GOs
+Vowels
+Accents
+Morph.
+Div.
+Notes
+Note
+values
+Ezekiel
+2
+0
+3
+7
+1
+7
+0
+All graphical objects (GOs) are valid in each version.
+Position
+Version 4.14
+Version 4.16
+Change
+Ezek 3:25.8
+וַֽאֲסָר֖וּךָ‪3‬
+וַאֲסָר֖וּךָ
+Accents are different. Different number of notes. A note, 3, has been removed.
+Ezek 25:7.7
+וּנְתַתִּ֤יךָ־
+וּנְתַתִּ֤יךָֽ־
+Accents are different.
+Ezek 27:25.8
+בְּלֵ֥ב‪3‬
+בְּלֵ֥ב־
+Accents are different. Different number of notes. A note, 3, has been removed.
+Ezek 33:20.11
+יִשְׂרָאֵֽל׃
+יִשְׂרָאֵֽל‪p‬
+Accents are different. Different number of notes. A note, p, has been added.
+Ezek 33:23.3
+יְהוָ֖ה‪3‬
+יְהֹוָ֖ה
+Vowels are different. Different number of notes. A note, 3, has been removed.
+Ezek 43:15
+Version 
+4.14
+וְהַֽהַרְאֵ֖ל אַרְבַּ֣ע אַמּ֑וֹת ומהאראיל וּמֵהָאֲרִיאֵ֣ל‪9‬ וּלְמַ֔עְלָה הַקְּרָנ֖וֹת אַרְבַּֽע׃
+Version 
+4.16
+וְהַֽהַרְאֵ֖ל אַרְבַּ֣ע אַמּ֑וֹת וּמֵהָאֲרִאֵ֣יל‪n,q‬ וּלְמַ֔עְלָה הַקְּרָנ֖וֹת אַרְבַּֽע׃
+Change:
+The number of GOs in this verse changed. Version 4.16 has 1 more GOs (8) in this verse than in Version 4.14 (7). Version 4.16 has 1 more transcription notes (2) in this verse than in Version 4.14 (1). 1 GOs in Version 4.16 (positions 5) fail to match any GO in Version 4.14. The verse GOs do not match uniquely.
+
+
+Ezek 43:15.7
+אַרְבַּ֣ע
+אַרְבַּֽע׃
+Accents are different.
+Ezek 43:15.4
+ומהאראיל
+וּמֵהָאֲרִאֵ֣יל
+Accents are different. Vowels are different. Different number of notes. 2 notes, n, q, have been added.
+Ezek 43:15.2
+אַרְבַּֽע׃
+אַרְבַּ֣ע
+Accents are different.
+Ezek 44:3
+Version 
+4.14
+אֶֽת־הַנָּשִׂ֗יא נָ֥שִׂיא ה֛וּא יֵֽשֶׁב־בּ֥וֹ לאכול־לֶאֱכָל־לֶ֖חֶם‪9‬ לִפְנֵ֣י יְהוָ֑ה מִדֶּ֨רֶךְ אֻלָ֤ם הַשַּׁ֙עַר֙ יָב֔וֹא וּמִדַּרְכּ֖וֹ יֵצֵֽא׃
+Version 
+4.16
+אֶֽת־הַנָּשִׂ֗יא נָ֥שִׂיא ה֛וּא יֵֽשֶׁב־בּ֥וֹ לֶאֱכָול־לֶ֖חֶם‪n,q‬ לִפְנֵ֣י יְהוָ֑ה מִדֶּ֨רֶךְ אֻלָ֤ם הַשַּׁ֙עַר֙ יָב֔וֹא וּמִדַּרְכּ֖וֹ יֵצֵֽא׃
+Change:
+The number of GOs in this verse changed. Version 4.16 has 1 more GOs (17) in this verse than in Version 4.14 (16). Version 4.16 has 1 more transcription notes (2) in this verse than in Version 4.14 (1). 1 GOs in Version 4.16 (positions 8) fail to match any GO in Version 4.14. The 16 unique matches of GOs in the books will be compared in the usual manner and identified by their position in Version 4.16.
+
+
+Ezek 44:3.7
+לאכול־
+לֶאֱכָול־
+Vowels are different.
+
+23.0      Back
+
+
+Differences in Hosea
+     Back
+WLC versions 4.14 -> 4.16
+
+
+Book
+Differences
+
+Verses
+GOs
+Vowels
+Accents
+Morph.
+Div.
+Notes
+Note
+values
+Hosea
+0
+0
+1
+3
+0
+4
+0
+All graphical objects (GOs) are valid in each version.
+Position
+Version 4.14
+Version 4.16
+Change
+Hos 2:16.8
+עַל־
+עַל‪Q,p‬
+Accents are different. Different number of notes. 2 notes, Q, p, have been added.
+Hos 4:19.6
+מִזִּבְחוֹתָֽם׃
+מִזִּבְחוֹתָֽם‪Q,p‬
+Accents are different. Different number of notes. 2 notes, Q, p, have been added.
+Hos 8:9.10
+אֲהָבִֽים׃
+אֲהָבִֽים‪Q,p‬
+Accents are different. Different number of notes. 2 notes, Q, p, have been added.
+Hos 10:3.11
+יְהוָ֔ה‪3‬
+יְהֹוָ֔ה‪Q,v‬
+Vowels are different. Different number of notes. A note, Q, has been added.
+
+23.0      Back
+
+
+Differences in Joel
+     Back
+WLC versions 4.14 -> 4.16
+
+No differences found in Joel!
+
+23.0      Back
+
+
+Differences in Amos
+     Back
+WLC versions 4.14 -> 4.16
+
+
+Book
+Differences
+
+Verses
+GOs
+Vowels
+Accents
+Morph.
+Div.
+Notes
+Note
+values
+Amos
+0
+0
+3
+3
+0
+6
+0
+All graphical objects (GOs) are valid in each version.
+Position
+Version 4.14
+Version 4.16
+Change
+Am 1:1.12
+עֻזִּיָּ֣ה
+עֻזִיָּ֣ה‪Q,p‬
+Vowels are different. Different number of notes. 2 notes, Q, p, have been added.
+Am 1:2.3
+מִצִּיּ֣וֹן
+מִצִיּ֣וֹן‪Q,p‬
+Vowels are different. Different number of notes. 2 notes, Q, p, have been added.
+Am 1:14.12
+סוּפָֽה׃
+סוּפָֽה‪Q,p‬
+Accents are different. Different number of notes. 2 notes, Q, p, have been added.
+Am 4:11.12
+מִשְּׂרֵפָ֑ה
+מִשְׂרֵפָ֑ה‪Q,p‬
+Vowels are different. Different number of notes. 2 notes, Q, p, have been added.
+Am 6:6.11
+יוֹסֵֽף׃
+יוֹסֵֽף‪Q,p‬
+Accents are different. Different number of notes. 2 notes, Q, p, have been added.
+Am 9:5.16
+מִצְרָֽיִם׃
+מִצְרָֽיִם‪Q,p‬
+Accents are different. Different number of notes. 2 notes, Q, p, have been added.
+
+23.0      Back
+
+
+Differences in Obadiah
+     Back
+WLC versions 4.14 -> 4.16
+
+
+Book
+Differences
+
+Verses
+GOs
+Vowels
+Accents
+Morph.
+Div.
+Notes
+Note
+values
+Obadiah
+0
+0
+0
+2
+0
+2
+0
+All graphical objects (GOs) are valid in each version.
+Position
+Version 4.14
+Version 4.16
+Change
+Ob 1:1.17
+עָלֶ֖יהָ
+עָלֶיהָ‪Q,c‬
+Accents are different. Different number of notes. 2 notes, Q, c, have been added.
+Ob 1:8.4
+נְאֻם‪1‬
+נְאֻם־
+Accents are different. Different number of notes. A note, 1, has been removed.
+
+23.0      Back
+
+
+Differences in Jonah
+     Back
+WLC versions 4.14 -> 4.16
+
+No differences found in Jonah!
+
+23.0      Back
+
+
+Differences in Micah
+     Back
+WLC versions 4.14 -> 4.16
+
+
+Book
+Differences
+
+Verses
+GOs
+Vowels
+Accents
+Morph.
+Div.
+Notes
+Note
+values
+Micah
+0
+0
+3
+1
+0
+4
+0
+All graphical objects (GOs) are valid in each version.
+Position
+Version 4.14
+Version 4.16
+Change
+Mic 1:15.8
+עֲדֻלָּ֥ם
+עֲדֻּלָּ֥ם‪Q,p‬
+Vowels are different. Different number of notes. 2 notes, Q, p, have been added.
+Mic 5:7.12
+בְּעֶדְרֵי־
+בְּעֶדְרֵי‪Q,p‬
+Accents are different. Different number of notes. 2 notes, Q, p, have been added.
+Mic 6:3.8
+בִֽי׃
+בִּֽי׃‪Q,p‬
+Vowels are different. Different number of notes. 2 notes, Q, p, have been added.
+Mic 7:3.8
+בַּשִּׁלּ֑וּם
+בַּשִׁלּ֑וּם‪Q,p‬
+Vowels are different. Different number of notes. 2 notes, Q, p, have been added.
+
+23.0      Back
+
+
+Differences in Nahum
+     Back
+WLC versions 4.14 -> 4.16
+
+No differences found in Nahum!
+
+23.0      Back
+
+
+Differences in Habakkuk
+     Back
+WLC versions 4.14 -> 4.16
+
+
+Book
+Differences
+
+Verses
+GOs
+Vowels
+Accents
+Morph.
+Div.
+Notes
+Note
+values
+Habakkuk
+0
+0
+2
+0
+0
+2
+0
+All graphical objects (GOs) are valid in each version.
+Position
+Version 4.14
+Version 4.16
+Change
+Hab 1:1.1
+הַמַּשָּׂא֙
+הַמַּשָׂא֙‪Q,p‬
+Vowels are different. Different number of notes. 2 notes, Q, p, have been added.
+Hab 3:19.1
+יְהוִ֤ה
+יְהוִ֤הּ‪Q,p‬
+Vowels are different. Different number of notes. 2 notes, Q, p, have been added.
+
+23.0      Back
+
+
+Differences in Zephaniah
+     Back
+WLC versions 4.14 -> 4.16
+
+
+Book
+Differences
+
+Verses
+GOs
+Vowels
+Accents
+Morph.
+Div.
+Notes
+Note
+values
+Zephaniah
+0
+0
+1
+0
+0
+1
+0
+All graphical objects (GOs) are valid in each version.
+Position
+Version 4.14
+Version 4.16
+Change
+Zeph 3:10.6
+פּוּצַ֔י
+פוּצַ֔י‪Q,p‬
+Vowels are different. Different number of notes. 2 notes, Q, p, have been added.
+
+23.0      Back
+
+
+Differences in Haggai
+     Back
+WLC versions 4.14 -> 4.16
+
+
+Book
+Differences
+
+Verses
+GOs
+Vowels
+Accents
+Morph.
+Div.
+Notes
+Note
+values
+Haggai
+0
+0
+1
+0
+0
+1
+0
+All graphical objects (GOs) are valid in each version.
+Position
+Version 4.14
+Version 4.16
+Change
+Hag 1:10.5
+שָׁמַ֖יִם
+שָמַ֖יִם‪Q,k‬
+Vowels are different. Different number of notes. 2 notes, Q, k, have been added.
+
+23.0      Back
+
+
+Differences in Zechariah
+     Back
+WLC versions 4.14 -> 4.16
+
+
+Book
+Differences
+
+Verses
+GOs
+Vowels
+Accents
+Morph.
+Div.
+Notes
+Note
+values
+Zechariah
+0
+0
+4
+0
+0
+2
+2
+All graphical objects (GOs) are valid in each version.
+Position
+Version 4.14
+Version 4.16
+Change
+Zech 1:4.19
+וּמַֽעַלְלֵיכֶ֖ם‪m‬
+וּמַֽעֲלְלֵיכֶ֖ם‪U‬
+Vowels are different. A transcription note has been changed. Note m becomes a note U.
+Zech 1:10.5
+הַהֲדַסִּ֖ים‪3‬
+הַהַדַסִּ֖ים‪U‬
+Vowels are different. A transcription note has been changed. Note 3 becomes a note U.
+Zech 6:12.18
+יְהוָֽה׃
+יְהוָֽהּ׃‪Q,p‬
+Vowels are different. Different number of notes. 2 notes, Q, p, have been added.
+Zech 14:3.7
+הִֽלָּחֲמ֖וֹ
+הִֽלָּחֲמ֖ו‪Q,v‬
+Vowels are different. Different number of notes. 2 notes, Q, v, have been added.
+
+23.0      Back
+
+
+Differences in Malachi
+     Back
+WLC versions 4.14 -> 4.16
+
+
+Book
+Differences
+
+Verses
+GOs
+Vowels
+Accents
+Morph.
+Div.
+Notes
+Note
+values
+Malachi
+0
+0
+1
+0
+0
+1
+0
+All graphical objects (GOs) are valid in each version.
+Position
+Version 4.14
+Version 4.16
+Change
+Mal 1:8.16
+הֲיִרְצְךָ֙
+הֲיִּרְצְךָ֙‪Q,p‬
+Vowels are different. Different number of notes. 2 notes, Q, p, have been added.
+
+23.0      Back
+
+===כתובים===
+
+Differences in Psalms
+     Back
+WLC versions 4.14 -> 4.16
+
+
+Book
+Differences
+
+Verses
+GOs
+Vowels
+Accents
+Morph.
+Div.
+Notes
+Note
+values
+Psalms
+1
+0
+2
+5
+0
+6
+1
+All graphical objects (GOs) are valid in each version.
+Position
+Version 4.14
+Version 4.16
+Change
+Ps 14:7.13
+יִשְׂרָֽאֵל׃‪3‬
+יִשְׂרָֽאֵל׃
+Different number of notes. A note, 3, has been removed.
+Ps 21:2
+Version 
+4.14
+יְֽהוָ֗ה בְּעָזְּךָ֥ יִשְׂמַח־מֶ֑לֶךְ וּ֝בִישׁ֥וּעָתְךָ֗‪3‬ מַה־יָּ֥גֶיל‪1‬ מְאֹֽד׃
+Version 
+4.16
+יְֽהוָ֗ה בְּעָזְּךָ֥ יִשְׂמַח־מֶ֑לֶךְ וּ֝בִישׁ֥וּעָתְךָ֗ מַה־יגיל יָּ֥גֶל‪q‬ מְאֹֽד׃
+Change:
+The number of GOs in this verse changed. Version 4.16 has 1 fewer GOs (8) in this verse than in Version 4.14 (9). Version 4.16 has 1 fewer transcription notes (1) in this verse than in Version 4.14 (2). 1 GOs in Version 4.14 (positions 8) fail to match any GO in Version 4.16. The 8 unique matches of GOs in the books will be compared in the usual manner and identified by their position in Version 4.16.
+
+
+Ps 21:2.7
+יָּ֥גֶיל
+יגיל
+Accents are different. Vowels are different. Different number of notes. A note, 1, has been removed.
+Ps 40:16.7
+הֶאָ֥ח ׀
+הֶ֘אָ֥ח ׀‪c‬
+Accents are different. Different number of notes. A note, c, has been added.
+Ps 106:39.3
+וַ֝יִּזְ֗נוּ
+וַ֝יִּזְנוּ֗‪c‬
+Accents are different. Different number of notes. A note, c, has been added.
+Ps 124:4.4
+נַ֝֗חְלָה‪3‬
+נַ֗֜חְלָה‪n‬
+Accents are different. A transcription note has been changed. Note 3 becomes a note n.
+Ps 126:6.7
+בֹּֽא־
+בֹּֽ֬א־
+Accents are different.
+Ps 141:8.3
+יְהוִ֣ה‪3‬
+יְהֹוִ֣ה
+Vowels are different. Different number of notes. A note, 3, has been removed.
+
+23.0      Back
+
+
+Differences in Proverbs
+     Back
+WLC versions 4.14 -> 4.16
+
+
+Book
+Differences
+
+Verses
+GOs
+Vowels
+Accents
+Morph.
+Div.
+Notes
+Note
+values
+Proverbs
+0
+1
+2
+3
+0
+5
+0
+All graphical objects (GOs) are valid in each version.
+Position
+Version 4.14
+Version 4.16
+Change
+Prov 6:13.2
+בְּ֭עֵינָיו‪q‬
+בְּ֭עֵינָו‪Q,q‬
+Consonants don't match! Different number of notes. A note, Q, has been added.
+Prov 15:21.7
+יְיַשֶּׁר־
+יְיַשֶׁר־
+Vowels are different.
+Prov 20:24.1
+מֵיְהוָ֥ה
+מֵיהוָ֥ה‪Q,n,v‬
+Vowels are different. Different number of notes. 3 notes, Q, n, v, have been added.
+Prov 24:15.8
+רִבְצֽוֹ׃
+רִבְצוֹ׃‪Q,p‬
+Accents are different. Different number of notes. 2 notes, Q, p, have been added.
+Prov 28:17.4
+נָ֑פֶשׁ
+נָפֶשׁ‪Q,c‬
+Accents are different. Different number of notes. 2 notes, Q, c, have been added.
+Prov 31:28.5
+וַֽיְהַֽלְלָֽהּ׃
+וַֽיְהַֽלְלָהּ׃‪Q,c,n‬
+Accents are different. Different number of notes. 3 notes, Q, c, n, have been added.
+
+23.0      Back
+
+
+Differences in Job
+     Back
+WLC versions 4.14 -> 4.16
+
+
+Book
+Differences
+
+Verses
+GOs
+Vowels
+Accents
+Morph.
+Div.
+Notes
+Note
+values
+Job
+1
+1
+0
+6
+1
+6
+1
+All graphical objects (GOs) are valid in each version.
+Position
+Version 4.14
+Version 4.16
+Change
+Job 7:8.4
+רֹ֑אִי‪1‬
+רֹ֑אִי
+Morphological divisions are different. Different number of notes. A note, 1, has been removed.
+Job 20:15.5
+יֽוֹרִשֶׁ֥נּוּ‪3‬
+יוֹרִשֶׁ֥נּוּ
+Accents are different. Different number of notes. A note, 3, has been removed.
+Job 29:14.4
+כִּמְעִ֥יל‪3‬
+כִּֽמְעִ֥יל
+Accents are different. Different number of notes. A note, 3, has been removed.
+Job 30:13.3
+לְהַוָּתִֽי‪3‬
+לְהַוָּתִ֥י
+Accents are different. Different number of notes. A note, 3, has been removed.
+Job 30:16.5
+יֹ֖אחֲז֣וּנִי‪3‬
+יֹ֭אחֲז֣וּנִי
+Accents are different. Different number of notes. A note, 3, has been removed.
+Job 38:12.6
+יִדַּ֖עְתָּ‪3‬
+יִדַּ֖עְתָּה‪k‬
+Consonants don't match! A transcription note has been changed. Note 3 becomes a note k.
+Job 42:11
+Version 
+4.14
+וַיָּבֹ֣אוּ אֵ֠לָיו כָּל־אֶחָ֨יו וְכָל־אחיתיו אַחְיוֹתָ֜יו וְכָל־יֹדְעָ֣יו לְפָנִ֗ים וַיֹּאכְל֨וּ עִמּ֣וֹ לֶחֶם֮ בְּבֵיתוֹ֒ וַיָּנֻ֤דוּ לוֹ֙ וַיְנַחֲמ֣וּ אֹת֔וֹ עַ֚ל כָּל־הָ֣רָעָ֔ה אֲשֶׁר־הֵבִ֥יא יְהוָ֖ה עָלָ֑יו וַיִּתְּנוּ־ל֗וֹ אִ֚ישׁ קְשִׂיטָ֣ה אֶחָ֔ת וְאִ֕ישׁ נֶ֥זֶם זָהָ֖ב אֶחָֽד׃ ‪3‬ ס          
+Version 
+4.16
+וַיָּבֹ֣אוּ אֵ֠לָיו כָּל־אֶחָ֨יו וְכָל־אחיתיו אַחְיוֹתָ֜יו וְכָל־יֹדְעָ֣יו לְפָנִ֗ים וַיֹּאכְל֨וּ עִמּ֣וֹ לֶחֶם֮ בְּבֵיתוֹ֒ וַיָּנֻ֤דוּ לוֹ֙ וַיְנַחֲמ֣וּ אֹת֔וֹ עַ֚ל כָּל־הָ֣רָעָ֔ה אֲשֶׁר־הֵבִ֥יא יְהוָ֖ה עָלָ֑יו וַיִּתְּנוּ־ל֗וֹ אִ֚ישׁ קְשִׂיטָ֣ה אֶחָ֔ת וְאִ֕ישׁ נֶ֥זֶם זָהָ֖ב אֶחָֽד׃ ס          
+Change:
+The number of GOs in this verse changed. Version 4.16 has 1 more GOs (36) in this verse than in Version 4.14 (35). Version 4.16 has 1 fewer transcription notes (0) in this verse than in Version 4.14 (1). 1 GOs in Version 4.16 (positions 35) fail to match any GO in Version 4.14. The verse GOs do not match uniquely.
+
+
+Job 42:11.27
+לוֹ֙
+ל֗וֹ
+Accents are different.
+Job 42:11.16
+ל֗וֹ
+לוֹ֙
+Accents are different.
+
+23.0      Back
+
+
+Differences in Song of Songs
+     Back
+WLC versions 4.14 -> 4.16
+
+No differences found in Song of Songs!
+
+23.0      Back
+
+
+Differences in Ruth
+     Back
+WLC versions 4.14 -> 4.16
+
+No differences found in Ruth!
+
+23.0      Back
+
+
+Differences in Lamentations
+     Back
+WLC versions 4.14 -> 4.16
+
+
+Book
+Differences
+
+Verses
+GOs
+Vowels
+Accents
+Morph.
+Div.
+Notes
+Note
+values
+Lamentations
+0
+0
+1
+0
+0
+1
+0
+All graphical objects (GOs) are valid in each version.
+Position
+Version 4.14
+Version 4.16
+Change
+Lam 3:25.3
+לְקֹוָ֔ו‪q‬
+לְקוָֹ֔ו‪Q,q‬
+Vowels are different. Different number of notes. A note, Q, has been added.
+
+23.0      Back
+
+
+Differences in Ecclesiastes
+     Back
+WLC versions 4.14 -> 4.16
+
+
+Book
+Differences
+
+Verses
+GOs
+Vowels
+Accents
+Morph.
+Div.
+Notes
+Note
+values
+Ecclesiastes
+1
+0
+1
+1
+1
+1
+0
+All graphical objects (GOs) are valid in each version.
+Position
+Version 4.14
+Version 4.16
+Change
+Eccl 10:10
+Version 
+4.14
+אִם־קֵהָ֣ה הַבַּרְזֶ֗ל וְהוּא֙ לֹא־פָנִ֣ים קִלְקַ֔ל וַחֲיָלִ֖ים יְגַבֵּ֑ר וְיִתְר֥וֹן הַכְשֵׁ֖יר‪q‬ חָכְמָֽה׃
+Version 
+4.16
+אִם־קֵהָ֣ה הַבַּרְזֶ֗ל וְהוּא֙ לֹא־פָנִ֣ים קִלְקַ֔ל וַחֲיָלִ֖ים יְגַבֵּ֑ר וְיִתְר֥וֹןהכשיר הַכְשֵׁ֖ר‪y‬ חָכְמָֽה׃
+Change:
+The number of GOs in this verse changed. Version 4.16 has 1 fewer GOs (12) in this verse than in Version 4.14 (13). 1 GOs in Version 4.14 (positions 12) fail to match any GO in Version 4.16. The 12 unique matches of GOs in the books will be compared in the usual manner and identified by their position in Version 4.16.
+
+
+Eccl 10:10.11
+הַכְשֵׁ֖יר
+הכשיר
+Accents are different. Vowels are different. Different number of notes. A note, q, has been removed.
+
+23.0      Back
+
+
+Differences in Esther
+     Back
+WLC versions 4.14 -> 4.16
+
+
+Book
+Differences
+
+Verses
+GOs
+Vowels
+Accents
+Morph.
+Div.
+Notes
+Note
+values
+Esther
+1
+0
+1
+1
+0
+2
+0
+All graphical objects (GOs) are valid in each version.
+Position
+Version 4.14
+Version 4.16
+Change
+Esth 4:4
+Version 
+4.14
+ותבואינה וַ֠תָּבוֹאנָה‪9‬ נַעֲר֨וֹת אֶסְתֵּ֤ר וְסָרִיסֶ֙יהָ֙ וַיַּגִּ֣ידוּ לָ֔הּ וַתִּתְחַלְחַ֥ל הַמַּלְכָּ֖ה מְאֹ֑ד וַתִּשְׁלַ֨ח בְּגָדִ֜ים לְהַלְבִּ֣ישׁ אֶֽת־מָרְדֳּכַ֗י וּלְהָסִ֥יר שַׂקּ֛וֹ מֵעָלָ֖יו וְלֹ֥א קִבֵּֽל׃
+Version 
+4.16
+וַ֠תָּבוֹאינָה‪Q,n,q‬ נַעֲר֨וֹת אֶסְתֵּ֤ר וְסָרִיסֶ֙יהָ֙ וַיַּגִּ֣ידוּ לָ֔הּ וַתִּתְחַלְחַ֥ל הַמַּלְכָּ֖ה מְאֹ֑ד וַתִּשְׁלַ֨ח בְּגָדִ֜ים לְהַלְבִּ֣ישׁ אֶֽת־מָרְדֳּכַ֗י וּלְהָסִ֥יר שַׂקּ֛וֹ מֵעָלָ֖יו וְלֹ֥א קִבֵּֽל׃
+Change:
+The number of GOs in this verse changed. Version 4.16 has 1 more GOs (20) in this verse than in Version 4.14 (19). Version 4.16 has 2 more transcription notes (3) in this verse than in Version 4.14 (1). 1 GOs in Version 4.16 (positions 2) fail to match any GO in Version 4.14. The 19 unique matches of GOs in the books will be compared in the usual manner and identified by their position in Version 4.16.
+
+
+Esth 4:4.1
+ותבואינה
+וַ֠תָּבוֹאינָה
+Accents are different. Vowels are different. Different number of notes. 3 notes, Q, n, q, have been added.
+
+23.0      Back
+
+
+Differences in Daniel
+     Back
+WLC versions 4.14 -> 4.16
+
+
+Book
+Differences
+
+Verses
+GOs
+Vowels
+Accents
+Morph.
+Div.
+Notes
+Note
+values
+Daniel
+8
+0
+10
+35
+0
+14
+0
+All graphical objects (GOs) are valid in each version.
+Position
+Version 4.14
+Version 4.16
+Change
+Dan 2:29
+Version 
+4.14
+אנתה אַ֣נְתְּ‪9‬ מַלְכָּ֗א רַעְיוֹנָךְ֙ עַל־מִשְׁכְּבָ֣ךְ סְלִ֔קוּ מָ֛ה דִּ֥י לֶהֱוֵ֖א אַחֲרֵ֣י דְנָ֑ה וְגָלֵ֧א רָזַיָּ֛א הוֹדְעָ֖ךְ מָה־דִ֥י לֶהֱוֵֽא׃
+Version 
+4.16
+אַ֣נְתְּה‪n,q‬ מַלְכָּ֗א רַעְיוֹנָךְ֙ עַל־מִשְׁכְּבָ֣ךְ סְלִ֔קוּ מָ֛ה דִּ֥י לֶהֱוֵ֖א אַחֲרֵ֣י דְנָ֑ה וְגָלֵ֧א רָזַיָּ֛א הוֹדְעָ֖ךְ מָה־דִ֥י לֶהֱוֵֽא׃
+Change:
+The number of GOs in this verse changed. Version 4.16 has 1 more GOs (18) in this verse than in Version 4.14 (17). Version 4.16 has 1 more transcription notes (2) in this verse than in Version 4.14 (1). 1 GOs in Version 4.16 (positions 2) fail to match any GO in Version 4.14. The verse GOs do not match uniquely.
+
+
+Dan 2:29.1
+אנתה
+אַ֣נְתְּה
+Accents are different. Vowels are different. Different number of notes. 2 notes, n, q, have been added.
+Dan 2:29.15
+מָ֛ה
+מָה־
+Accents are different.
+Dan 2:29.16
+דִּ֥י
+דִ֥י
+Vowels are different.
+Dan 2:29.17
+לֶהֱוֵ֖א
+לֶהֱוֵֽא׃
+Accents are different.
+Dan 2:29.7
+מָה־
+מָ֛ה
+Accents are different.
+Dan 2:29.8
+דִ֥י
+דִּ֥י
+Vowels are different.
+Dan 2:29.9
+לֶהֱוֵֽא׃
+לֶהֱוֵ֖א
+Accents are different.
+Dan 2:31
+Version 
+4.14
+אנתה אַ֣נְתְּ‪9‬ מַלְכָּ֗א חָזֵ֤ה הֲוַ֙יְתָ֙ וַאֲל֨וּ צְלֵ֥ם חַד֙ שַׂגִּ֔יא צַלְמָ֨א דִּכֵּ֥ן רַ֛ב וְזִיוֵ֥הּ יַתִּ֖יר קָאֵ֣ם לְקָבְלָ֑ךְ וְרֵוֵ֖הּ דְּחִֽיל׃
+Version 
+4.16
+אַ֣נְתְּה‪n,q‬ מַלְכָּ֗א חָזֵ֤ה הֲוַ֙יְתָ֙ וַאֲל֨וּ צְלֵ֥ם חַד֙ שַׂגִּ֔יא צַלְמָ֨א דִּכֵּ֥ן רַ֛ב וְזִיוֵ֥הּ יַתִּ֖יר קָאֵ֣ם לְקָבְלָ֑ךְ וְרֵוֵ֖הּ דְּחִֽיל׃
+Change:
+The number of GOs in this verse changed. Version 4.16 has 1 more GOs (18) in this verse than in Version 4.14 (17). Version 4.16 has 1 more transcription notes (2) in this verse than in Version 4.14 (1). 1 GOs in Version 4.16 (positions 2) fail to match any GO in Version 4.14. The 17 unique matches of GOs in the books will be compared in the usual manner and identified by their position in Version 4.16.
+
+
+Dan 2:31.1
+אנתה
+אַ֣נְתְּה
+Accents are different. Vowels are different. Different number of notes. 2 notes, n, q, have been added.
+Dan 2:37
+Version 
+4.14
+אנתה אַ֣נְתְּ‪9‬ מַלְכָּ֔א מֶ֖לֶךְ מַלְכַיָּ֑א דִּ֚י אֱלָ֣הּ שְׁמַיָּ֔א מַלְכוּתָ֥א חִסְנָ֛א וְתָקְפָּ֥א וִֽיקָרָ֖א יְהַב־לָֽךְ׃
+Version 
+4.16
+אַ֣נְתְּה‪n,q‬ מַלְכָּ֔א מֶ֖לֶךְ מַלְכַיָּ֑א דִּ֚י אֱלָ֣הּ שְׁמַיָּ֔א מַלְכוּתָ֥א חִסְנָ֛א וְתָקְפָּ֥א וִֽיקָרָ֖א יְהַב־לָֽךְ׃
+Change:
+The number of GOs in this verse changed. Version 4.16 has 1 more GOs (14) in this verse than in Version 4.14 (13). Version 4.16 has 1 more transcription notes (2) in this verse than in Version 4.14 (1). 1 GOs in Version 4.16 (positions 2) fail to match any GO in Version 4.14. The 13 unique matches of GOs in the books will be compared in the usual manner and identified by their position in Version 4.16.
+
+
+Dan 2:37.1
+אנתה
+אַ֣נְתְּה
+Accents are different. Vowels are different. Different number of notes. 2 notes, n, q, have been added.
+Dan 2:38
+Version 
+4.14
+וּבְכָל־דִּ֣י דארין דָֽיְרִ֣ין בְּֽנֵי־אֲ֠נָשָׁא חֵיוַ֨ת בָּרָ֤א וְעוֹף־שְׁמַיָּא֙ יְהַ֣ב בִּידָ֔ךְ וְהַשְׁלְטָ֖ךְ בְּכָלְּה֑וֹן אנתה־אַנְתְּ־ה֔וּא‪9‬ רֵאשָׁ֖ה דִּ֥י דַהֲבָֽא׃
+Version 
+4.16
+וּבְכָל־דִּ֣י דארין דָֽיְרִ֣ין בְּֽנֵי־אֲ֠נָשָׁא חֵיוַ֨ת בָּרָ֤א וְעוֹף־שְׁמַיָּא֙ יְהַ֣ב בִּידָ֔ךְ וְהַשְׁלְטָ֖ךְ בְּכָלְּה֑וֹן אַנְתְּה־ה֔וּא‪n,q‬ רֵאשָׁ֖ה דִּ֥י דַהֲבָֽא׃
+Change:
+The number of GOs in this verse changed. Version 4.16 has 1 more GOs (20) in this verse than in Version 4.14 (19). Version 4.16 has 1 more transcription notes (2) in this verse than in Version 4.14 (1). 1 GOs in Version 4.16 (positions 16) fail to match any GO in Version 4.14. The verse GOs do not match uniquely.
+
+
+Dan 2:38.18
+דִּ֣י
+דִּ֥י
+Accents are different.
+Dan 2:38.15
+אנתה־
+אַנְתְּה־
+Vowels are different.
+Dan 2:38.2
+דִּ֥י
+דִּ֣י
+Accents are different.
+Dan 3:18
+Version 
+4.14
+וְהֵ֣ן לָ֔א יְדִ֥יעַ לֶהֱוֵא־לָ֖ךְ מַלְכָּ֑א דִּ֤י לֵֽאלָהָיִךְ֙‪q‬ לָא־איתינא אִיתַ֣נָאפָֽלְחִ֔ין וּלְצֶ֧לֶם דַּהֲבָ֛א דִּ֥י הֲקֵ֖ימְתָּ לָ֥א נִסְגֻּֽד׃ ס          
+Version 
+4.16
+וְהֵ֣ן לָ֔א יְדִ֥יעַ לֶהֱוֵא־לָ֖ךְ מַלְכָּ֑א דִּ֤י לאלהיך לֵֽאלָהָךְ֙‪q‬ לָא־איתינאאִיתַ֣נָא פָֽלְחִ֔ין וּלְצֶ֧לֶם דַּהֲבָ֛א דִּ֥י הֲקֵ֖ימְתָּ לָ֥א נִסְגֻּֽד׃ ס          
+Change:
+The number of GOs in this verse changed. Version 4.16 has 1 fewer GOs (19) in this verse than in Version 4.14 (20). 1 GOs in Version 4.14 (positions 9) fail to match any GO in Version 4.16. The verse GOs do not match uniquely.
+
+
+Dan 3:18.10
+לָ֔א
+לָא־
+Accents are different.
+Dan 3:18.18
+לָ֔א
+לָ֥א
+Accents are different.
+Dan 3:18.16
+דִּ֤י
+דִּ֥י
+Accents are different.
+Dan 3:18.8
+לֵֽאלָהָיִךְ֙
+לאלהיך
+Accents are different. Vowels are different. Different number of notes. A note, q, has been removed.
+Dan 3:18.2
+לָא־
+לָ֔א
+Accents are different.
+Dan 3:18.18
+לָא־
+לָ֥א
+Accents are different.
+Dan 3:18.7
+דִּ֥י
+דִּ֤י
+Accents are different.
+Dan 3:18.2
+לָ֥א
+לָ֔א
+Accents are different.
+Dan 3:18.10
+לָ֥א
+לָא־
+Accents are different.
+Dan 4:22
+Version 
+4.14
+וְלָ֣ךְ טָֽרְדִ֣ין מִן־אֲנָשָׁ֡א וְעִם־חֵיוַ֣ת בָּרָא֩ לֶהֱוֵ֨ה מְדֹרָ֜ךְ וְעִשְׂבָּ֥א כְתוֹרִ֣ין ׀ לָ֣ךְ יְטַֽעֲמ֗וּן וּמִטַּ֤ל שְׁמַיָּא֙ לָ֣ךְ מְצַבְּעִ֔ין וְשִׁבְעָ֥ה עִדָּנִ֖ין יַחְלְפ֣וּן עליך עֲלָ֑ךְ‪9‬ עַ֣ד דִּֽי־תִנְדַּ֗ע דִּֽי־שַׁלִּ֤יט עליא עִלָּאָה֙‪9‬בְּמַלְכ֣וּת אֲנָשָׁ֔א וּלְמַן־דִּ֥י יִצְבֵּ֖א יִתְּנִנַּֽהּ׃
+Version 
+4.16
+וְלָ֣ךְ טָֽרְדִ֣ין מִן־אֲנָשָׁ֡א וְעִם־חֵיוַ֣ת בָּרָא֩ לֶהֱוֵ֨ה מְדֹרָ֜ךְ וְעִשְׂבָּ֥א כְתוֹרִ֣ין ׀ לָ֣ךְ יְטַֽעֲמ֗וּן וּמִטַּ֤ל שְׁמַיָּא֙ לָ֣ךְ מְצַבְּעִ֔ין וְשִׁבְעָ֥ה עִדָּנִ֖ין יַחְלְפ֣וּן עֲלָ֑יךְ‪n,q‬ עַ֣ד דִּֽי־תִנְדַּ֗ע דִּֽי־שַׁלִּ֤יט עִלָּיָא֙‪n,q‬ בְּמַלְכ֣וּת אֲנָשָׁ֔א וּלְמַן־דִּ֥י יִצְבֵּ֖א יִתְּנִנַּֽהּ׃
+Change:
+The number of GOs in this verse changed. Version 4.16 has 2 more GOs (35) in this verse than in Version 4.14 (33). Version 4.16 has 2 more transcription notes (4) in this verse than in Version 4.14 (2). 3 GOs in Version 4.16 (positions 21, 22, 29) fail to match any GO in Version 4.14. 1 GOs in Version 4.14 (positions 21) fail to match any GO in Version 4.16. The verse GOs do not match uniquely.
+
+
+Dan 4:22.29
+אֲנָשָׁ֡א
+אֲנָשָׁ֔א
+Accents are different.
+Dan 4:22.31
+דִּֽי־
+דִּ֥י
+Accents are different.
+Dan 4:22.31
+דִּֽי־
+דִּ֥י
+Accents are different.
+Dan 4:22.27
+עליא
+עִלָּיָא֙
+Accents are different. Vowels are different. Different number of notes. 2 notes, n, q, have been added.
+Dan 4:22.4
+אֲנָשָׁ֔א
+אֲנָשָׁ֡א
+Accents are different.
+Dan 4:22.23
+דִּ֥י
+דִּֽי־
+Accents are different.
+Dan 4:22.25
+דִּ֥י
+דִּֽי־
+Accents are different.
+Dan 4:29
+Version 
+4.14
+וּמִן־אֲנָשָׁא֩ לָ֨ךְ טָֽרְדִ֜ין וְֽעִם־חֵיוַ֧ת בָּרָ֣א מְדֹרָ֗ךְ עִשְׂבָּ֤א כְתוֹרִין֙ לָ֣ךְ יְטַעֲמ֔וּן וְשִׁבְעָ֥ה עִדָּנִ֖ין יַחְלְפ֣וּן עליך עֲלָ֑ךְ עַ֣ד דִּֽי־תִנְדַּ֗ע דִּֽי־שַׁלִּ֤יטעליא עִלָּאָה֙‪9‬ בְּמַלְכ֣וּת אֲנָשָׁ֔א וּלְמַן־דִּ֥י יִצְבֵּ֖א יִתְּנִנַּֽהּ׃
+Version 
+4.16
+וּמִן־אֲנָשָׁא֩ לָ֨ךְ טָֽרְדִ֜ין וְֽעִם־חֵיוַ֧ת בָּרָ֣א מְדֹרָ֗ךְ עִשְׂבָּ֤א כְתוֹרִין֙ לָ֣ךְ יְטַעֲמ֔וּן וְשִׁבְעָ֥ה עִדָּנִ֖ין יַחְלְפ֣וּן עליך עֲלָ֑ךְ עַ֣ד דִּֽי־תִנְדַּ֗ע דִּֽי־שַׁלִּ֤יט עִלָּיָא֙‪n,q‬ בְּמַלְכ֣וּת אֲנָשָׁ֔א וּלְמַן־דִּ֥י יִצְבֵּ֖א יִתְּנִנַּֽהּ׃
+Change:
+The number of GOs in this verse changed. Version 4.16 has 1 more GOs (30) in this verse than in Version 4.14 (29). Version 4.16 has 1 more transcription notes (2) in this verse than in Version 4.14 (1). 1 GOs in Version 4.16 (positions 24) fail to match any GO in Version 4.14. The verse GOs do not match uniquely.
+
+
+Dan 4:29.25
+אֲנָשָׁא֩
+אֲנָשָׁ֔א
+Accents are different.
+Dan 4:29.11
+לָ֨ךְ
+לָ֣ךְ
+Accents are different.
+Dan 4:29.3
+לָ֣ךְ
+לָ֨ךְ
+Accents are different.
+Dan 4:29.27
+דִּֽי־
+דִּ֥י
+Accents are different.
+Dan 4:29.27
+דִּֽי־
+דִּ֥י
+Accents are different.
+Dan 4:29.23
+עליא
+עִלָּיָא֙
+Accents are different. Vowels are different. Different number of notes. 2 notes, n, q, have been added.
+Dan 4:29.2
+אֲנָשָׁ֔א
+אֲנָשָׁא֩
+Accents are different.
+Dan 4:29.19
+דִּ֥י
+דִּֽי־
+Accents are different.
+Dan 4:29.21
+דִּ֥י
+דִּֽי־
+Accents are different.
+Dan 6:1
+Version 
+4.14
+וְדָרְיָ֙וֶשׁ֙ מדיא מָֽדָאָ֔ה‪9‬ קַבֵּ֖ל מַלְכוּתָ֑א כְּבַ֥ר שְׁנִ֖ין שִׁתִּ֥ין וְתַרְתֵּֽין׃
+Version 
+4.16
+וְדָרְיָ֙וֶשׁ֙ מָֽדָיָ֔א‪n,q‬ קַבֵּ֖ל מַלְכוּתָ֑א כְּבַ֥ר שְׁנִ֖ין שִׁתִּ֥ין וְתַרְתֵּֽין׃
+Change:
+The number of GOs in this verse changed. Version 4.16 has 1 more GOs (9) in this verse than in Version 4.14 (8). Version 4.16 has 1 more transcription notes (2) in this verse than in Version 4.14 (1). 1 GOs in Version 4.16 (positions 3) fail to match any GO in Version 4.14. The 8 unique matches of GOs in the books will be compared in the usual manner and identified by their position in Version 4.16.
+
+
+Dan 6:1.2
+מדיא
+מָֽדָיָ֔א
+Accents are different. Vowels are different. Different number of notes. 2 notes, n, q, have been added.
+
+23.0      Back
+
+
+Differences in Ezra
+     Back
+WLC versions 4.14 -> 4.16
+
+
+Book
+Differences
+
+Verses
+GOs
+Vowels
+Accents
+Morph.
+Div.
+Notes
+Note
+values
+Ezra
+1
+1
+2
+4
+0
+3
+1
+All graphical objects (GOs) are valid in each version.
+Position
+Version 4.14
+Version 4.16
+Change
+Ezra 3:11.15
+תְרוּעָ֨ה‪1‬
+תְרוּעָ֙ה‪U‬
+Accents are different. A transcription note has been changed. Note 1 becomes a note U.
+Ezra 4:11.10
+עַבְדֶ֛יךְ‪q‬
+עַבְדָ֛יךְ‪Q,q‬
+Vowels are different. Different number of notes. A note, Q, has been added.
+Ezra 4:12
+Version 
+4.14
+יְדִ֙יעַ֙ לֶהֱוֵ֣א לְמַלְכָּ֔א דִּ֣י יְהוּדָיֵ֗א דִּ֤י סְלִ֙קוּ֙ מִן־לְוָתָ֔ךְ עֲלֶ֥ינָא אֲת֖וֹ לִירוּשְׁלֶ֑ם קִרְיְתָ֨א מָֽרָדְתָּ֤א וּבִֽאישְׁתָּא֙‪q‬ בָּנַ֔יִן ושורי וְשׁוּרַיָּ֣אאשכללו שַׁכְלִ֔לוּ וְאֻשַּׁיָּ֖א יַחִֽיטוּ׃
+Version 
+4.16
+יְדִ֙יעַ֙ לֶהֱוֵ֣א לְמַלְכָּ֔א דִּ֣י יְהוּדָיֵ֗א דִּ֤י סְלִ֙קוּ֙ מִן־לְוָתָ֔ךְ עֲלֶ֥ינָא אֲת֖וֹ לִירוּשְׁלֶ֑ם קִרְיְתָ֨א מָֽרָדְתָּ֤א ובאישתא וּבִֽישְׁתָּא֙‪y‬ בָּנַ֔יִן ושוריוְשׁוּרַיָּ֣א אשכללו שַׁכְלִ֔לוּ וְאֻשַּׁיָּ֖א יַחִֽיטוּ׃
+Change:
+The number of GOs in this verse changed. Version 4.16 has 1 fewer GOs (22) in this verse than in Version 4.14 (23). 1 GOs in Version 4.14 (positions 16) fail to match any GO in Version 4.16. The verse GOs do not match uniquely.
+
+
+Ezra 4:12.6
+דִּ֣י
+דִּ֤י
+Accents are different.
+Ezra 4:12.4
+דִּ֤י
+דִּ֣י
+Accents are different.
+Ezra 4:12.15
+וּבִֽאישְׁתָּא֙
+ובאישתא
+Accents are different. Vowels are different. Different number of notes. A note, q, has been removed.
+Ezra 10:44.3
+נשאו‪1‬
+נשאי‪K,k‬
+Consonants don't match! Different number of notes. A note, K, has been added.
+
+23.0      Back
+
+
+Differences in Nehemiah
+     Back
+WLC versions 4.14 -> 4.16
+
+
+Book
+Differences
+
+Verses
+GOs
+Vowels
+Accents
+Morph.
+Div.
+Notes
+Note
+values
+Nehemiah
+1
+0
+1
+1
+0
+2
+0
+All graphical objects (GOs) are valid in each version.
+Position
+Version 4.14
+Version 4.16
+Change
+Neh 5:7
+Version 
+4.14
+וַיִּמָּלֵ֨ךְ לִבִּ֜י עָלַ֗י וָאָרִ֙יבָה֙ אֶת־הַחֹרִ֣ים וְאֶת־הַסְּגָנִ֔ים וָאֹמְרָ֣ה לָהֶ֔ם מַשָּׁ֥א‪C‬ אִישׁ־בְּאָחִ֖יו אַתֶּ֣ם נֹשִׁ֑אים‪1‬ וָאֶתֵּ֥ן עֲלֵיהֶ֖ם קְהִלָּ֥ה גְדוֹלָֽה׃
+Version 
+4.16
+וַיִּמָּלֵ֨ךְ לִבִּ֜י עָלַ֗י וָאָרִ֙יבָה֙ אֶת־הַחֹרִ֣ים וְאֶת־הַסְּגָנִ֔ים וָאֹמְרָ֣ה לָהֶ֔ם מַשָּׁ֥א‪C‬ אִישׁ־בְּאָחִ֖יו אַתֶּ֣ם נשאים נֹשִׁ֑ים‪Q,q,y‬ וָאֶתֵּ֥ן עֲלֵיהֶ֖ם קְהִלָּ֥ה גְדוֹלָֽה׃
+Change:
+The number of GOs in this verse changed. Version 4.16 has 1 fewer GOs (19) in this verse than in Version 4.14 (20). Version 4.16 has 2 more transcription notes (4) in this verse than in Version 4.14 (2). 1 GOs in Version 4.14 (positions 16) fail to match any GO in Version 4.16. The 19 unique matches of GOs in the books will be compared in the usual manner and identified by their position in Version 4.16.
+
+
+Neh 5:7.15
+נֹשִׁ֑אים
+נשאים
+Accents are different. Vowels are different. Different number of notes. A note, 1, has been removed.
+
+23.0      Back
+
+
+Differences in 1 Chronicles
+     Back
+WLC versions 4.14 -> 4.16
+
+
+Book
+Differences
+
+Verses
+GOs
+Vowels
+Accents
+Morph.
+Div.
+Notes
+Note
+values
+1 Chronicles
+0
+0
+0
+0
+1
+0
+0
+All graphical objects (GOs) are valid in each version.
+
+23.0      Back
+
+
+Differences in 2 Chronicles
+     Back
+WLC versions 4.14 -> 4.16
+
+
+Book
+Differences
+
+Verses
+GOs
+Vowels
+Accents
+Morph.
+Div.
+Notes
+Note
+values
+2 Chronicles
+2
+0
+2
+1
+1
+3
+0
+All graphical objects (GOs) are valid in each version.
+Position
+Version 4.14
+Version 4.16
+Change
+2 Chr 35:4
+Version 
+4.14
+והכונו וְהָכִ֥ינוּ‪9‬ לְבֵית־אֲבוֹתֵיכֶ֖ם כְּמַחְלְקוֹתֵיכֶ֑ם בִּכְתָ֗ב דָּוִיד֙ מֶ֣לֶךְ יִשְׂרָאֵ֔ל וּבְמִכְתַּ֖ב שְׁלֹמֹ֥ה בְנֽוֹ׃
+Version 
+4.16
+וְהָכִ֥ונוּ‪n,q‬ לְבֵית־אֲבוֹתֵיכֶ֖ם כְּמַחְלְקוֹתֵיכֶ֑ם בִּכְתָ֗ב דָּוִיד֙ מֶ֣לֶךְ יִשְׂרָאֵ֔ל וּבְמִכְתַּ֖ב שְׁלֹמֹ֥ה בְנֽוֹ׃
+Change:
+The number of GOs in this verse changed. Version 4.16 has 1 more GOs (12) in this verse than in Version 4.14 (11). Version 4.16 has 1 more transcription notes (2) in this verse than in Version 4.14 (1). 1 GOs in Version 4.16 (positions 2) fail to match any GO in Version 4.14. The 11 unique matches of GOs in the books will be compared in the usual manner and identified by their position in Version 4.16.
+
+
+2 Chr 35:4.1
+והכונו
+וְהָכִ֥ונוּ
+Accents are different. Vowels are different. Different number of notes. 2 notes, n, q, have been added.
+2 Chr 36:14
+Version 
+4.14
+גַּ֠ם כָּל־שָׂרֵ֨י הַכֹּהֲנִ֤ים וְהָעָם֙ הִרְבּ֣וּ למעול־לִמְעָל־מַ֔עַל‪9‬ כְּכֹ֖ל תֹּעֲב֣וֹת הַגּוֹיִ֑ם וַֽיְטַמְּאוּ֙ אֶת־בֵּ֣ית יְהוָ֔ה אֲשֶׁ֥ר הִקְדִּ֖ישׁ בִּירוּשָׁלִָֽם׃
+Version 
+4.16
+גַּ֠ם כָּל־שָׂרֵ֨י הַכֹּהֲנִ֤ים וְהָעָם֙ הִרְבּ֣וּ לִמְעָול־מַ֔עַל‪n,q‬ כְּכֹ֖ל תֹּעֲב֣וֹת הַגּוֹיִ֑ם וַֽיְטַמְּאוּ֙ אֶת־בֵּ֣ית יְהוָ֔ה אֲשֶׁ֥ר הִקְדִּ֖ישׁ בִּירוּשָׁלִָֽם׃
+Change:
+The number of GOs in this verse changed. Version 4.16 has 1 more GOs (19) in this verse than in Version 4.14 (18). Version 4.16 has 1 more transcription notes (2) in this verse than in Version 4.14 (1). 1 GOs in Version 4.16 (positions 8) fail to match any GO in Version 4.14. The 18 unique matches of GOs in the books will be compared in the usual manner and identified by their position in Version 4.16.
+
+
+2 Chr 36:14.7
+למעול־
+לִמְעָול־
+Vowels are different.
+
+23.0      Back
+
+</div>

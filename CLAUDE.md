@@ -46,6 +46,48 @@ which corpus a claim takes, the banned verbs and framings, where Yeivin and Breu
 verify a page's numbers. It loads on demand rather than every session, so it can hold the full
 statement; the sections here stay as pointers, and **a rule change goes into the skill first**.
 
+## The MAM introduction is mirrored at `in/mam-ws-intro/` — read it, do not fetch it
+
+Hebrew Wikisource's introduction to MAM is consulted constantly here, and since 2026-08-31 all
+thirteen of its pages are mirrored locally as verbatim wikitext, one `.mediawiki` file each.
+Refresh with `.venv/Scripts/python.exe py/main_download.py fr-ws-intro`, which is deliberately
+**separate** from `fr-wikisource` (Ben's decision, 2026-08-31): the books and the introduction
+have unrelated refresh rhythms, and nothing downstream reparses when the introduction moves.
+
+| File under `in/mam-ws-intro/` | Wikisource subpage |
+|---|---|
+| `root.mediawiki` | the introduction's own root page |
+| `summary.mediawiki` | `/תקציר` |
+| `ch1` … `ch5.mediawiki` | `/פרק א` … `/פרק ה` |
+| `appendices.mediawiki` | `/נספחים` — the sigil roster `doc/sigil-decoding.md` leans on |
+| `index-aleppo.mediawiki` | `/מפתח לכתר ארם צובה` |
+| `index-leningrad.mediawiki` | `/מפתח לכתי"ל` |
+| `westminster-typing.mediawiki` | `/מידע טכני על הקלדת וסטמינסטר` |
+| `data-sheet-guide.mediawiki` | `/מדריך טכני לגיליון הנתונים` |
+| `technical-guide.mediawiki` | `/מדריך טכני` |
+
+Three things about it are worth knowing before you touch it:
+
+1. **Never summarize-fetch these pages, mirror or no mirror.** That is what the mirror is for.
+   `doc/sigil-decoding.md`'s source #1 records what a summarizing fetch did to the sigil roster
+   on 2026-08-06, and the mirrored wikitext is where you can see what it flattened.
+2. **This tree is exempt from the mark-order rule at the top of this file.** It is hand-authored
+   wiki prose, so clusters in Unicode-normal rather than MAM-normal order are what the source
+   says, not defects. Do not run `uni_check` or `has_std_mark_order` over it, and never
+   normalize on refresh — the files are byte-verbatim by design.
+3. **A mirror goes stale in a way `in/mam-ws/` does not.** The books move when Ben edits them;
+   the introduction moves when Avi Kadish does, unannounced — four of the thirteen pages were
+   edited in August 2026 alone. `manifest.json` beside the pages records each one's revision id
+   and timestamp, so staleness is checkable without a network call.
+
+The two index pages look like copies of this repo's own output and are not.
+`py/main_ac_wikisource_page.py` and `py/main_lenin_wikisource_page.py` build their **bodies** as
+`index.wiki` in the sibling codex-index-aleppo and codex-index-leningrad, but measured
+2026-08-31 neither generated body contains, or is contained by, the live page: the live pages
+carry a template, a hand-written nav bar and prose on each manuscript's photography that no
+generator emits, and head their book sections one level shallower. So the mirror is the only
+drift check those two generators have.
+
 ## Rendered-prose conventions: `py/accgram/printed_decalogue_strands.py`'s module docstring
 
 That docstring is where the editorial conventions for accgram's **rendered prose** are recorded
