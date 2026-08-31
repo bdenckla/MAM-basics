@@ -48,6 +48,10 @@
     "phonetic-hbo": {
       "visibility": "public"
     },
+    "Taamey_D": {
+      "visibility": "public",
+      "comment": "The public face of the private hbofonts repo, added to this map and to all-repos.code-workspace on 2026-08-31. hbofonts/ps1_release_all3.ps1 writes into it by the SIBLING RELATIVE PATH ..\\Taamey_D, so the release only works while this clone sits beside hbofonts under GitRepos -- it is a build target, not a dormant 2024 repo, and its own last commit of 2024-01-22 makes it look like one. The release fills three destinations, each wiped with Remove-Item -Recurse -Force first, so docs/ and sources/ are wholly generated and nothing there should be hand-edited: docs/ is the documentation site behind bdenckla.github.io/Taamey_D/, Taamey_D_and_friends.zip is the ttf/woff/woff2 release for Shofar_D, Taamey_B and Taamey_D, and sources/ is a DELIBERATELY REDUCED source set -- only the -nofea.sym.sfd and .sym.fea variants, never the plain .sfd or .fea, which stay private in hbofonts. hbofonts' fourth font, Keter_D, is not released at all."
+    },
     "UXLC-utils": {
       "visibility": "public"
     },
