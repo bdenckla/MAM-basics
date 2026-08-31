@@ -1,6 +1,6 @@
 # PLAN — the document index becomes the MAM-basics landing page
 
-State: live
+State: executed 2026-08-31
 
 Written 2026-08-31, at Ben's request: *"Propose a plan to unify the following"* — `document-index`'s
 `README.md`, `bdenckla.github.io/MAM-basics/`, `bdenckla.github.io/MAM-with-doc/` and
@@ -25,18 +25,19 @@ treat a mismatch as a finding rather than as noise.
 
 ## Status
 
-**Nothing is in flight.** Phases 0-3 are done; **Phase 4 is the next to execute, and it
-cannot be done from a cloud container** — it needs the `document-index` clone, push rights
-to that repo, and `gh` to archive it. One item of Phase 3 is also outstanding for the same
-kind of reason, and is listed in Phase 4's record below so it is not lost.
+**Nothing is in flight, and nothing is left to do.** All four phases are executed and
+`bdenckla/document-index` is archived. This plan is spent, and under
+`PLAN-repo-maintenance-across-GitRepos.md`'s `doc/` sweep it is deleted rather than
+archived: git history keeps it, and it is the commit that adds this record which is worth
+finding later.
 
 | Phase | State |
 |---|---|
 | 0 — track the plan | **DONE** 2026-08-31, `e01b2a4` |
 | 1 — the generator, reproducing today's page | **DONE** 2026-08-31, `13d1d31`. Diff was the three predicted differences and no fourth |
 | 2 — the content, and the lint | **DONE** 2026-08-31, `2f81ecb`. All 25 document-index links and all 14 proposals links accounted for; 2 new lints, both verified to bite |
-| 3 — repoint the citations | **DONE** 2026-08-31, `e57199b`, **except** regenerating book-of-job's page, which needs that sibling clone |
-| 4 — retire document-index | not started; needs a machine with the clone |
+| 3 — repoint the citations | **DONE** 2026-08-31, `e57199b`; its one carried-over item, book-of-job's published page, done 2026-08-31 in that repo's `d09b966` |
+| 4 — retire document-index | **DONE** 2026-08-31, `c0b3195` here, `85b075d` in document-index, which is archived and whose clone is removed |
 
 ---
 
@@ -431,10 +432,83 @@ gained a clause saying that source is no longer merely editable but linted.
   `git ls-files`, so the ordering is only a live concern once a subtree's index is itself generated;
   say that in the note field rather than leaving the ordering unexplained.
 
-## Phase 4 — retire document-index — NOT STARTED
+## Phase 4 — retire document-index — DONE 2026-08-31
 
-**This phase needs a machine with the `document-index` clone**, push rights to it, and `gh`
-to archive it, so it cannot run from a cloud container. Two items are outstanding:
+### Execution record — Phase 4, 2026-08-31
+
+Run from `C:\Users\BenDe\GitRepos\MAM-basics` on Ben's Windows machine, which has the two
+sibling clones and the `gh` login the cloud container lacked. The prescribed order held:
+regenerate book-of-job's page, stub, de-list, then archive.
+
+**The work was merged to `main` first, and a cloud session had already made the same merge
+from the other direction.** Phases 0–3 sat on `claude/docs-unification-plan-ip01h5`, which
+Ben's commit-directly-to-`main` convention does not want and which Pages does not deploy
+from. Merging the branch in produced `3658798`; `origin/main` had meanwhile moved to
+`1af10e4`, a cloud session's merge of `origin/main` INTO the branch, pushed 20:28 UTC. **Both
+commits have the same tree, `32dd030`** — the same two parents in the opposite order — so the
+rejected push was a graph conflict with no content in it, reconciled by a merge (`34a8eec`)
+rather than by rewriting history.
+
+**document-index's HEAD had moved, and the movement erased this plan's one content
+difference.** §"The page's shape" records two deliberate href changes, both review entries
+whose gists had become forwarding stubs, and measures the repo at `8f9a353`. It was at
+`9b52453` when this phase ran: `cfdf762` and `9b52453`, both 2026-08-31, had repointed both
+entries at exactly the URLs the generated page uses. By the time the README was stubbed,
+source and page agreed and the two deliberate changes were no longer changes.
+
+**Step 1 rewrites 176 files and only 3 of them move.** `main_gen_misc_authored_english_documents.py`
+deletes and rewrites the whole `jobn` tree, and `git status` listed all 176 as modified. **173
+are byte-identical to HEAD**, established by comparing each HEAD blob against the bytes on
+disk — `git status` went on listing them even after `git update-index --refresh`, so its stat
+cache is not the instrument to use here. The published page's diff is the one anchor, one line,
+as Phase 3 predicted.
+
+**A third consequence nobody predicted, which the program itself reported.**
+`check_spelling_in_html` printed `Suggested removals from custom dictionary (zero
+occurrences): word: readme`. The old link text "README" was that entry's only occurrence in
+the pages it scans, so `py/check_spelling_in_html.custom-dict.json` drops it (`3e582cc`) and
+book-of-job's two custom-dict frequency reports lose the line rather than carrying
+`"readme": 0`. book-of-job's side is `d09b966`.
+
+**Three other Claude sessions were live in this clone, and one was editing
+`in/repo_maintenance_policy.json`** — the file step 2 changes — adding a paragraph to the
+`gists` key's comment. `git add` on that path would have committed their half-written work,
+which is the silent collision `~/.claude/CLAUDE.md` warns about. The file's working-tree diff
+was split into hunks and only the hunk removing the `document-index` entry was staged, with
+`git apply --cached`. `c0b3195` is 2 files and 6 deleted lines and carries nothing of theirs.
+Those sessions later pushed their own work and took `c0b3195` to the remote with it, which is
+why a `git push` here then reported "Everything up-to-date".
+
+**Verification.** `969 passed, 5 skipped, 65 subtests passed`, zero failures and zero errors —
+against the cloud container's 43 failures and 35 errors, every one a missing sibling clone.
+`main_authored.py gen-site` regenerated both pages **byte-identical**.
+`main_repo_util.py --audit-line-terms --workspace-file all-repos.code-workspace` completes over
+all 18 repos, which is the check a de-listing actually needs, `load_workspace_repo_dirs` being
+what raises `FileNotFoundError` on a listed folder not on disk. Both pages were read at
+`bdenckla.github.io` after the deploy: the index carries all ten sections in the planned order
+and **no gist link**, and the proposals page carries all 9 proposals, the LGD/LWD legend and
+both footnotes.
+
+**What was checked before the irreversible step.** document-index had no open issue and no open
+pull request, so archiving stranded nothing. The clone was then checked for anything the remote
+did not already have — no stash, no branch but `main` at `origin/main`, no commit unreachable
+from a remote, no second worktree, no untracked or ignored file — and removed. That check earns
+its keep: a sibling session removing `al-hatorah` the same afternoon found a stash in it
+(`68e577b`). `GitRepos` now holds 18 directories and `all-repos.code-workspace` lists 18.
+
+**Three things were deliberately not done**, each already argued in the steps below and none
+revisited: no `frozen_repos` entry, no `repos_to_keep_absent` entry, no
+`gitrepos_setup_rule.gists` entry. Two further things are left as written: the "18 first-class
+repos" figure in `repo_visibility`'s comment, a 2026-08-27 measurement rather than a live count;
+and the five modules citing this plan by filename — `py/author_site/site_data.py`,
+`site_index.py` and `unicode_proposals.py`, `py/author_boj/job2_main_article.py`,
+`py/urwotm_check/parts.py` — which after this file is deleted resolve through git history, the
+answer this repo has chosen for every stale path citation.
+
+### The phase as planned
+
+**This phase needed a machine with the `document-index` clone**, push rights to it, and `gh`
+to archive it, so it could not run from a cloud container. Two items were outstanding:
 
 1. Everything in the four steps below.
 2. **Carried over from Phase 3**: regenerate book-of-job's `jobn/job2_main_article.html`
