@@ -25,15 +25,18 @@ treat a mismatch as a finding rather than as noise.
 
 ## Status
 
-**Nothing is in flight.** Phase 0 is done; Phase 1 is the next to execute.
+**Nothing is in flight.** Phases 0-3 are done; **Phase 4 is the next to execute, and it
+cannot be done from a cloud container** — it needs the `document-index` clone, push rights
+to that repo, and `gh` to archive it. One item of Phase 3 is also outstanding for the same
+kind of reason, and is listed in Phase 4's record below so it is not lost.
 
 | Phase | State |
 |---|---|
-| 0 — track the plan | **DONE** 2026-08-31 |
-| 1 — the generator, reproducing today's page | not started |
-| 2 — the content, and the lint | not started |
-| 3 — repoint the citations | not started |
-| 4 — retire document-index | not started |
+| 0 — track the plan | **DONE** 2026-08-31, `e01b2a4` |
+| 1 — the generator, reproducing today's page | **DONE** 2026-08-31, `13d1d31`. Diff was the three predicted differences and no fourth |
+| 2 — the content, and the lint | **DONE** 2026-08-31, `2f81ecb`. All 25 document-index links and all 14 proposals links accounted for; 2 new lints, both verified to bite |
+| 3 — repoint the citations | **DONE** 2026-08-31, `e57199b`, **except** regenerating book-of-job's page, which needs that sibling clone |
+| 4 — retire document-index | not started; needs a machine with the clone |
 
 ---
 
@@ -252,7 +255,26 @@ The misc table above was generated from the `_TITLE` constants rather than trans
 generator asserted each module's `_FNAME` equals its own stem, so the ten filenames are checked as
 well as the ten titles.
 
-## Phase 1 — the generator, reproducing today's page
+## Phase 1 — the generator, reproducing today's page — DONE 2026-08-31
+
+### Execution record — Phase 1, 2026-08-31, `13d1d31`
+
+**The predicted diff was exactly right, and there was no fourth difference.** The
+breadcrumb comment, the lost indentation, the joined `<title>` line. Proved rather than
+eyeballed: both versions were parsed and their tag sequence, their three hrefs and their
+visible text compared, all three identical.
+
+`mb_html.italic` emits `<i>`, which is **not in the serializer's line-break policy** —
+`mb_html_get_lines` raises `KeyError: 'i'`. `em` is. Anything reaching for a tag not in
+`_LB2` will hit this; the fix is to use a tag that is.
+
+The subtree derivation returned `['wlc']` on the first run, and `_DESCRIPTIONS` had to
+carry a link rather than a plain string: the hand-written page's one entry anchors the
+words "MAM-basics" inside its description, and dropping that would have been a fourth
+difference. So a description is a run of parts, which is also what let Phase 2's lint walk
+it.
+
+### The phase as planned
 
 New package `py/author_site/`, per `doc/agent-planning-principles.md` §"Prefer New Files For New
 Features":
@@ -301,7 +323,41 @@ is **three** things — the breadcrumb line, the lost indentation, and the joine
 anything beyond those three is a finding. The two hand-written pages were evidently written to look
 like an older serializer's output; nothing depends on their whitespace.
 
-## Phase 2 — the content, and the lint
+## Phase 2 — the content, and the lint — DONE 2026-08-31
+
+### Execution record — Phase 2, 2026-08-31, `2f81ecb`
+
+**Every source link is accounted for**, checked by resolving each of document-index's 25
+Markdown links and each of the proposals file's 14 against the generated pages' hrefs,
+allowing for the two deliberate substitutions and the relative rewriting of in-site URLs.
+Nothing was dropped. All 9 proposal names appear on the proposals page.
+
+**Three typographic changes beyond the two planned hrefs**, all in the register `15a09ae`
+set: curly quotation marks and apostrophes; the Ḥakirah entry's two parenthesised
+annotations become sub-bullets *without* the parentheses, the indentation now doing what
+they did; and the two directory URLs are written with `index.html` spelled out. That last
+was forced by `py/check_html_syntax_and_sanity.py`, which does not resolve a trailing
+slash and reported `wlc/420422/` as a broken link. Spelling the file out was preferred to
+teaching a shared linter a new rule for one page's sake; `stubs.py`'s paragraph about
+directory URLs was updated to say why the two forms now differ.
+
+**Both lints were verified to bite**, by renaming a linked page and by drifting a Misc
+title. A lint that cannot fail is worth nothing, and neither had been observed failing.
+
+**The generic anchor walk had to move into `entries.py`.** Written in the test first, it
+recursed forever on a `getattr` that returned `None`; rewritten field-driven over
+dataclasses, it belongs with the types it walks, and a link added to a new field is walked
+without the test being edited.
+
+**The derived manifest section is deliberately not linted**, and the docstring says so: its
+links name tracked pages by construction, so only the authored half can go stale.
+
+**Verification.** `858 → 860 passed`, the two new tests, with failures and errors unchanged
+at 43 and 35 — every one of them a missing sibling clone, which is this repo's designed
+behaviour rather than a defect. `check_html_syntax_and_sanity.py gh-pages` fell from 205
+issues to 203 and reports nothing against either new page.
+
+### The phase as planned
 
 - Transcribe document-index's entries into `site_index.py`. The entry shape must carry all four
   forms the source uses: a plain title+href; a leading label (`Part 1:`); a trailing note
@@ -325,7 +381,29 @@ Verification: `.venv/Scripts/python.exe py/main_authored.py gen-site`, then read
 `gh-pages/index.html` and `gh-pages/unicode-proposals.html` in full and diff them against the
 document-index source; then `.venv/Scripts/python.exe py/main_test.py`.
 
-## Phase 3 — repoint the citations
+## Phase 3 — repoint the citations — DONE 2026-08-31 except one regeneration
+
+### Execution record — Phase 3, 2026-08-31, `e57199b`
+
+**`py/author_boj/job2_main_article.py` is repointed but its published page is not
+regenerated.** The constant now names `bdenckla.github.io/MAM-basics/`, and the link text
+follows the URL — what it names is an index, not a README. Regenerating
+`book-of-job/gh-pages/jobn/job2_main_article.html` needs that sibling clone, which this
+container does not have, so **the published page still carries the old link.** Carried
+into Phase 4's list.
+
+**`py/wlc_redirect/stubs.py`'s second mention needed more than a repoint.** It explains why
+`/420422/` and `/wlc-a-notes/` get stubs a bare directory URL can reach — and the successor
+page now spells `index.html` out. The stubs answer the OLD URLs, which are the ones with
+the slash, so the reasoning stands; the paragraph now says why the two forms differ, rather
+than being left to look like a contradiction.
+
+**The first mention got stronger rather than weaker.** It lists document-index's four paths
+among the sources that want a repoint rather than a redirect; those four paths are now
+entries of this repo's own `site_data.py` and covered by the new lint, so the sentence
+gained a clause saying that source is no longer merely editable but linted.
+
+### The phase as planned
 
 - `py/author_boj/job2_main_article.py` — `_README` points at the old README URL and is used by
   `_RELATED_WORKS_BY_ME`, "Other works by me about the Masoretic Text can be found in this README".
@@ -353,7 +431,17 @@ document-index source; then `.venv/Scripts/python.exe py/main_test.py`.
   `git ls-files`, so the ordering is only a live concern once a subtree's index is itself generated;
   say that in the note field rather than leaving the ordering unexplained.
 
-## Phase 4 — retire document-index
+## Phase 4 — retire document-index — NOT STARTED
+
+**This phase needs a machine with the `document-index` clone**, push rights to it, and `gh`
+to archive it, so it cannot run from a cloud container. Two items are outstanding:
+
+1. Everything in the four steps below.
+2. **Carried over from Phase 3**: regenerate book-of-job's `jobn/job2_main_article.html`
+   from this repo's repointed `py/author_boj/job2_main_article.py`, and commit it in that
+   sibling repo. Until then the published page still cites the old URL. **Do this before
+   archiving**, since the whole point of the ordering is that no live citation is left
+   pointing at a repo that has gone read-only.
 
 **The template is days old and has been walked twice**, by Gist-Hebrew-World (`15a09ae`, its clone
 removed the same day) and by Gist-ArtScroll (`9086da4`, dropped from the roster in the same commit).
