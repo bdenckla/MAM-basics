@@ -2,22 +2,23 @@
 
 Ported from the gist ``bdenckla/7e578526559cbbfc2d54a1bc0c827072``, cloned as
 ``GitRepos/Gist-Hebrew-World``, whose ``main.md`` this page replaces; that gist
-now holds a stub pointing here. The prose is reproduced verbatim. The
-deliberate changes are three, and all three are house style rather than
-rewording:
+now holds a stub pointing here. The prose is otherwise reproduced verbatim.
+
+One accent name is corrected rather than reproduced (Ben's decision,
+2026-08-31). The second bullet under the fourth chanted word gives the source
+word כׇּל־הַדְּבָרִ֥ים "with its accent", and the gist names that accent
+tipḥa. Exodus 20:1 in ``in/mam-ws/A2-Exodus.json`` has merkha there; tipeḥa is
+the accent of the next chanted word, הָאֵ֖לֶּה. So this page says merkha, and
+the gist's revision history keeps what it said before.
+
+The remaining changes are three, all house style rather than rewording:
 
 * the ``$`` keys that ``dollar_sub`` requires, which carry the repo's
-  single-sourced romanizations. Two of those romanizations differ from the
-  gist's spelling: the gist writes "sheva" where ``$shewa`` renders "shewa",
-  and "tipḥa" where ``$tipexa`` renders "tipeḥa".
+  single-sourced romanizations. One of those romanizations differs from the
+  gist's spelling: the gist writes "sheva" where ``$shewa`` renders "shewa".
 * curly quotation marks and apostrophes, as every other authored page here has.
 * the eleven screenshots, which the gist hotlinked from GitHub's gist asset
   CDN and which now live in ``MAM-with-doc/gh-pages/misc/img/hebrew_world/``.
-
-One claim of the source prose is wrong and is reproduced anyway, pending Ben's
-decision: the second bullet under the fourth chanted word names the accent of
-כׇּל־הַדְּבָרִ֥ים as tipeḥa. Exodus 20:1 in ``in/mam-ws/A2-Exodus.json`` has
-merkha there, tipeḥa being the accent of the next chanted word, הָאֵ֖לֶּה.
 """
 
 from mb_author import author
@@ -221,7 +222,7 @@ _LI_SHEWA_ON_DALET = [
     [_HE_VAYEDABER],
     [". (Here I give the source word ("],
     [_HE_KOL_HADEVARIM],
-    [") not only with its accent ($tipexa) but also using Unicode $qq in "],
+    [") not only with its accent ($merkha) but also using Unicode $qq in "],
     [_HE_KOL],
     [". Hebrew World’s product makes no $qamats distinctions.)"],
 ]
