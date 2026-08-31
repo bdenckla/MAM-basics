@@ -22,16 +22,17 @@ can be ASCII and stable, and ``_assert_declared_set_is_live_set`` then FAILS if 
 live set has gained or lost a page -- which is a finding about the introduction, and
 wants a human to choose a slug for the new page, not a silently-widened mirror.
 
-THE TWO MANUSCRIPT INDEX PAGES ARE NOT A COPY OF THIS REPO'S OWN OUTPUT, though they
-look like one.  ``py/main_ac_wikisource_page.py`` and ``py/main_lenin_wikisource_page.py``
-build the bodies of ``index-aleppo`` and ``index-leningrad`` as ``index.wiki`` in the
-sibling codex-index-aleppo and codex-index-leningrad.  Measured 2026-08-31, neither
-generated body contains, or is contained by, the live page: the live pages carry a
-``{{מקרא על פי המסורה}}`` template, a hand-written nav bar and prose sections on the
-photography of each manuscript that no generator emits, and they head their book
-sections at depth 2 where the generators emit depth 3.  So mirroring them is additive,
-and the mirror doubles as the only available drift check between generator and
-published page.
+THE TWO MANUSCRIPT INDEX PAGES ARE NOT THIS REPO'S OWN OUTPUT, AND ARE NOT MEANT TO
+MATCH IT.  ``py/main_ac_wikisource_page.py`` and ``py/main_lenin_wikisource_page.py``
+write ``index.wiki`` in the sibling codex-index-aleppo and codex-index-leningrad, and
+Ben, 2026-08-31, on those two files: they "were only ever intended to be starting
+points for manual work on Wikisource."  ``index-aleppo`` and ``index-leningrad`` here
+are that manual work as published.  So the difference between generator and page is the
+intended transformation rather than drift; there is no sync to maintain in either
+direction, and NOTHING SHOULD COMPARE THE TWO -- an earlier draft of this docstring
+called the mirror a drift check between them, which was wrong.  The scale settles it:
+26 of the Aleppo generator's 700 lines reach the live page (4%), and 94 of the
+Leningrad generator's 1,135 (8%).
 
 WHAT IS WRITTEN.  One ``<slug>.mediawiki`` per page, holding the page's wikitext
 VERBATIM -- no normalization of any kind, which for Hebrew is the standing rule of

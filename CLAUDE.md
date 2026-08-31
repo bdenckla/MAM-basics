@@ -80,13 +80,26 @@ Three things about it are worth knowing before you touch it:
    edited in August 2026 alone. `manifest.json` beside the pages records each one's revision id
    and timestamp, so staleness is checkable without a network call.
 
-The two index pages look like copies of this repo's own output and are not.
-`py/main_ac_wikisource_page.py` and `py/main_lenin_wikisource_page.py` build their **bodies** as
-`index.wiki` in the sibling codex-index-aleppo and codex-index-leningrad, but measured
-2026-08-31 neither generated body contains, or is contained by, the live page: the live pages
-carry a template, a hand-written nav bar and prose on each manuscript's photography that no
-generator emits, and head their book sections one level shallower. So the mirror is the only
-drift check those two generators have.
+**`index-aleppo.mediawiki` and `index-leningrad.mediawiki` were never meant to match what
+`py/main_ac_wikisource_page.py` and `py/main_lenin_wikisource_page.py` generate — do not treat
+the difference as drift.** Ben, 2026-08-31: those generators' `index.wiki` outputs, in the
+sibling codex-index-aleppo and codex-index-leningrad, "were only ever intended to be starting
+points for manual work on Wikisource." The published pages are that manual work. So the gap is
+the intended transformation, there is no sync to maintain in either direction, and **no test or
+lint should compare the two.**
+
+The measurements say the same thing, and are worth quoting because the gap is much wider than
+"a wrapper around a generated body" — re-establish them with
+`py/main_ac_wikisource_page.py` and `py/main_lenin_wikisource_page.py`, then compare their
+output against this mirror. Of the Aleppo generator's 700 lines, **26 (4%)** survive into the
+live page; of the Leningrad generator's 1,135 lines, **94 (8%)** do. codex-index-aleppo also
+keeps two snapshots of the hand work itself, `aleppo-wiki/Wikisource-manual-initial.txt` (63
+lines, carrying `{{בעבודה}}`) and `Wikisource-manual-final.txt` (713 lines, **97%** of whose
+lines are in the live page) — which is the pipeline written down: generate raw material, then
+build the page by hand from it. The generated file's overlap with the hand-made line is the
+same 26 lines whether measured against the initial snapshot, the final snapshot or today's live
+page, so the hand work left the generated form immediately and has never gone back to it.
+codex-index-leningrad keeps no such snapshots.
 
 ## Rendered-prose conventions: `py/accgram/printed_decalogue_strands.py`'s module docstring
 

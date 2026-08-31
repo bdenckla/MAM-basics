@@ -6,6 +6,19 @@ codex-index-leningrad and writes three artifacts back into that repo's
 collapsed per page and grouped by book (``index-s2-grouped-by-book.json``), and the
 wikitext itself (``index.wiki``).  All four paths come from ``lenin_paths``.
 
+``index.wiki`` IS A STARTING POINT FOR MANUAL WORK, NOT A PUBLISHABLE PAGE, and it was
+never intended to stay in sync with what Wikisource ends up showing.  Ben, 2026-08-31,
+on this file's output and its Aleppo counterpart's: they "were only ever intended to be
+starting points for manual work on Wikisource."  The page the wiki actually carries at
+``ויקיטקסט:מבוא למקרא על פי המסורה/מפתח לכתי"ל`` is that manual work, mirrored here as
+``in/mam-ws-intro/index-leningrad.mediawiki``.  The two therefore diverge BY DESIGN --
+94 of this generator's 1,135 lines reach the live page, 8% of them -- so a difference
+between them is not drift, nothing needs re-syncing in either direction, and no test or
+lint should compare them.  Unlike codex-index-aleppo, which keeps
+``Wikisource-manual-initial.txt`` and ``Wikisource-manual-final.txt`` beside its
+generated file, codex-index-leningrad keeps no snapshot of the hand work; the mirrored
+page is the only copy of it outside the wiki.
+
 THE COUNTERPART PIPELINE IS A DIFFERENT TOOL, which is why the two do not share a
 name here.  codex-index-aleppo's ``aleppo-wiki/main_make_wikisource_page.py`` reads
 a different input format and builds a different page; the trio plan's Phase 0
