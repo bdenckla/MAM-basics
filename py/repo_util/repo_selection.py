@@ -29,8 +29,14 @@ from repo_util.common import (
 # bdenckla/<folder name>. Ben's decision, 2026-08-31. The folder was briefly
 # renamed to plain ArtScroll that day, to match what this workspace file then
 # said, before the reversal settled that the workspace file should follow the
-# prefix rather than the other way about. Gist-Hebrew-World is the other folder
-# on this convention; it is in no workspace file, so it needs no entry here.
+# prefix rather than the other way about. Gist-Hebrew-World is the other gist on
+# this naming convention, and it is in no workspace file, so it needs no entry
+# here. It DID have a folder under GitRepos until 2026-08-31, when its clone was
+# removed: its content had moved into this repo as
+# py/author_misc/review_of_hebrew_worlds_phonetic_bible.py, leaving the gist
+# itself a stub pointing at the rendered page. Its clone URL is recorded in
+# in/repo_maintenance_policy.json under gitrepos_setup_rule's gists key, which
+# is now the only record on this machine that the gist exists.
 #
 # A comment like this cannot live in the .code-workspace file itself, which would
 # be the obvious home for it: VS Code tolerates JSONC, but `common.read_json` is a
