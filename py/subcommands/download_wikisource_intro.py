@@ -47,6 +47,14 @@ THE MIRROR IS A CONVENIENCE AND CAN BE STALE, which matters more here than for t
 books under ``in/mam-ws/``: those move when Ben edits them, the introduction moves when
 Avi Kadish does, without notice.  Four of the thirteen pages were edited in August 2026
 alone.  Read ``manifest.json``'s timestamps before treating a copy as current.
+
+A REFRESH OVER AN UNCHANGED WIKI PRODUCES NO DIFF, so any diff a refresh does produce is
+a real edit on Wikisource and is worth reading.  Verified 2026-08-31 by running this
+subcommand twice: the second run rewrote all fourteen files and left a clean working
+tree.  Nothing here is time-varying -- the manifest's provenance line is stable, the page
+order follows ``_SLUG_TO_TITLE``, and the wikitext is written byte for byte as fetched
+-- and that is a property to preserve, since it is what makes a post-refresh diff
+legible.
 """
 
 import json
