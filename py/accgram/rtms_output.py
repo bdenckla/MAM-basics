@@ -6,6 +6,7 @@ from accgram import dual_cant_readings
 from accgram import rtms_meteg_witness
 from accgram import rtmsr_overview
 from mb_cmn import file_io
+from mb_cmn import paths
 from mb_cmn import provenance
 
 
@@ -31,10 +32,13 @@ def write_ungrammatical_payload(
             "This artifact augments existing ungrammatical rows with linked verse payloads "
             "from wlc422-kq-u, XML-ish UXLC verse nodes, and normalized MAM-simple verses."
         ),
-        "input": str(ungrammatical_in_path),
-        "wlc422_kq_u_dir": str(wlc422_kq_u_dir),
-        "uxlc_dir": str(uxlc_dir),
-        "mam_simple_dir": str(mam_simple_dir),
+        # Repo-qualified, not absolute: these four keys spelled out the author's own
+        # home directory until 2026-08-31, which made this artifact the one tracked
+        # output that could not regenerate identically off his machine.
+        "input": paths.display_path(ungrammatical_in_path),
+        "wlc422_kq_u_dir": paths.display_path(wlc422_kq_u_dir),
+        "uxlc_dir": paths.display_path(uxlc_dir),
+        "mam_simple_dir": paths.display_path(mam_simple_dir),
         "summary": {
             "oddballs": len(serializable_rows),
         },

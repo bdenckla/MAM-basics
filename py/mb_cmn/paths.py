@@ -46,6 +46,8 @@ import os
 import re
 from pathlib import Path
 
+from mb_cmn import provenance
+
 _THIS_FILE = Path(__file__).resolve()
 
 
@@ -164,6 +166,53 @@ def require_sibling(name: str, path: Path) -> Path:
         f"  {_env_name(name)}=<path to the {name} clone>\n"
         f"  REPOS_ROOT=<directory holding all the sibling clones>"
     )
+
+
+def display_path(path) -> str:
+    """``path`` as a repo-qualified, machine-independent string, for recording in an artifact.
+
+    ``MAM-basics/out/accgram/prose/_oddballs.json``, ``MAM-simple/json-vtrad-bhs``: the
+    repo's name, then the path within it, forward-slashed on every platform.
+
+    AN ABSOLUTE PATH WRITTEN INTO A GENERATED FILE PINS THAT FILE TO ONE MACHINE.
+    ``out/accgram/research-oddballs.json`` carried ``C:\\Users\\BenDe\\GitRepos\\...``
+    in four keys, so it could not regenerate identically anywhere but Ben's laptop -- and
+    in a repo where the tracked generated artifact IS the test (CLAUDE.md), that is a test
+    nobody else can run.  Found 2026-08-31 by the first cloud run of ``main_0_mega.py``,
+    which reproduced all 96 of that file's oddballs and still showed a diff, because the
+    four keys now read ``/home/user/...``.
+
+    ``provenance._display_path`` answers the same question for the GENERATOR file and is
+    not reusable here: it accepts only paths inside this repo, and a recorded INPUT
+    routinely sits in a sibling clone.  The repo NAME still comes from ``provenance`` --
+    ``this_repo_name`` for this repo, ``repo_name_of`` for any other -- so a worktree run
+    emits the repo's name and not the worktree directory's, which is the bug those two
+    functions exist to prevent.
+
+    A path under no repo at all raises.  Falling back to the absolute spelling would
+    quietly restore the defect this exists to remove.
+    """
+    resolved = Path(path).resolve()
+    root = repo_root()
+    if resolved == root or root in resolved.parents:
+        return _repo_qualified(provenance.this_repo_name(), resolved.relative_to(root))
+    # Any other repo -- normally a sibling clone, but the ``.git`` search also covers a
+    # sibling relocated by REPO_<NAME>_DIR, which no arithmetic off repos_root() would.
+    for ancestor in (resolved, *resolved.parents):
+        if (ancestor / ".git").exists():
+            return _repo_qualified(
+                provenance.repo_name_of(ancestor), resolved.relative_to(ancestor)
+            )
+    raise ValueError(
+        f"no machine-independent spelling for {resolved}: it is not under this repo"
+        f" ({root}) and no ancestor directory holds a .git"
+    )
+
+
+def _repo_qualified(repo_name: str, relative: Path) -> str:
+    """``repo_name`` joined to a repo-relative path, with the repo root itself as bare."""
+    rel = relative.as_posix()
+    return repo_name if rel == "." else f"{repo_name}/{rel}"
 
 
 def mam_parsed_path() -> str:
