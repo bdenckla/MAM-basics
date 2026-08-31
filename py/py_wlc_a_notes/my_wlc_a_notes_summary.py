@@ -21,6 +21,7 @@ def write(records, xml_out_path, no_ucp=False):
     intro = [
         *my_wlc_a_notes_intro.intro(no_ucp),
         *([] if no_ucp else [_intro_to_xml_out(xml_out_path)]),
+        *([] if no_ucp else [_intro_to_no_ucp()]),
         _intro_to_wlc_order(wlc_order_dot_html),
         _intro_to_bhla_dis(dis_dot_html),
     ]
@@ -45,6 +46,32 @@ def _intro_to_xml_out(xml_out_path):
             "Here is ",
             wlc_utils_html.anchor("a single XML file", {"href": xml_out_path}),
             " " "that has all 37 UXLC change proposals in it.",
+        ]
+    )
+
+
+def _intro_to_no_ucp():
+    """The one link into the no-ucp trio, which nothing pointed at until 2026-08-31.
+
+    index-no-ucp.html links its own two tables and nothing linked IT, so all three were
+    unreachable from gh-pages/index.html by any number of clicks -- and unreachable is
+    what Ben objects to, placement on the landing page being optional.  Note that
+    check_html_syntax_and_sanity.py's orphan check found only index-no-ucp.html: it asks
+    whether SOME page links a page, so a cluster that links itself hides from it.  All
+    three are also frozen targets in in/wlc_redirect_pages.json, so deleting them was
+    never an option -- a stub would 404 and test_wlc_redirect_manifest.py would fail.
+
+    Emitted only on the UCP page, since the no-ucp page linking back would make a pair
+    reachable only from each other, which is the same strand one page wider.
+    """
+    return wlc_utils_html.para(
+        [
+            "This page is also available ",
+            wlc_utils_html.anchor(
+                "without the UXLC change proposal links",
+                {"href": "index-no-ucp.html"},
+            ),
+            ".",
         ]
     )
 
