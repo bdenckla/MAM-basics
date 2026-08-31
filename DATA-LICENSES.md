@@ -43,6 +43,7 @@ end of this file.
 | Path | Content | Terms |
 |---|---|---|
 | `in/mam-ws/` | MAM wikitext, downloaded from Hebrew Wikisource | CC-BY-SA 4.0 — the statement below |
+| `in/mam-ws-intro/` | the MAM introduction's thirteen pages, downloaded from Hebrew Wikisource | CC-BY-SA 4.0 — the statement below. This is the same publication as `in/mam-ws/`, which is why it takes the same terms: the introduction is what the Wikisource edition says about itself, and `manifest.json` beside the pages records the revision of each one mirrored |
 | `in/mam-go/` | MAM, downloaded from the MAM Google spreadsheet | CC-BY-SA 4.0 — the statement below |
 | `in/mam-from-sefaria/`, `in/mam-from-Sefaria-2021-11-23/` | MAM, downloaded from Sefaria | CC-BY-SA 4.0 — the statement below |
 | `in/mam-ws-bot-edits/` | edits this repository's bot makes to MAM on Hebrew Wikisource | CC-BY-SA 4.0 — the statement below |

@@ -5,6 +5,21 @@ writes three artifacts back beside it: the CSV's rows as JSON (``index-flat.json
 those rows grouped by book (``index-grouped-by-book.json``), and the wikitext itself
 (``index.wiki``).  All four paths come from ``ac_paths``.
 
+``index.wiki`` IS A STARTING POINT FOR MANUAL WORK, NOT A PUBLISHABLE PAGE, and it was
+never intended to stay in sync with what Wikisource ends up showing.  Ben, 2026-08-31,
+on this file's output and its Leningrad counterpart's: they "were only ever intended to
+be starting points for manual work on Wikisource."  The page the wiki actually carries
+at ``ויקיטקסט:מבוא למקרא על פי המסורה/מפתח לכתר ארם צובה`` is that manual work, mirrored
+here as ``in/mam-ws-intro/index-aleppo.mediawiki``.  The two therefore diverge BY DESIGN
+-- 26 of this generator's 700 lines reach the live page, 4% of them -- so a difference
+between them is not drift, nothing needs re-syncing in either direction, and no test or
+lint should compare them.  ``aleppo-wiki/`` keeps two snapshots of the hand work beside
+the generated file, ``Wikisource-manual-initial.txt`` (63 lines, still carrying
+``{{בעבודה}}``) and ``Wikisource-manual-final.txt`` (713 lines, 97% of them in the live
+page); the same 26 generated lines are all that survive into each of those and into the
+live page alike, so the hand work left the generated form at once and never returned to
+it.
+
 WHY THE FOUR PATHS WERE DEAD FOR FIVE MONTHS, which is worth keeping in front of a
 reader of this file.  They were the cwd-relative literals ``"aleppo/..."`` until
 2026-08-22, naming the directory this tree had before ``9025037`` (2026-03-28)

@@ -103,13 +103,23 @@ The main sources currently identified are:
 1. Wikisource appendices:
    https://he.wikisource.org/wiki/ויקיטקסט:מבוא_למקרא_על_פי_המסורה/נספחים
 
-   **No copy of this page is mirrored anywhere in the local repos** — `in/mam-ws/` holds the
-   books, not the introduction — so it has to be fetched, and a summarizing fetch is not good
-   enough for it. On 2026-08-06 one such fetch reported `ו` as "Leningrad Codex, Washington
-   Pentateuch", having merged `ו` with the neighbouring `ל` entry. Pull the wikitext verbatim
-   instead, with `action=raw` on the same title, and read it:
-   `https://he.wikisource.org/w/index.php?title=<url-encoded title>&action=raw` — about 144,000
-   characters, of which the Torah manuscript roster is the first hundred lines.
+   **A verbatim copy of this page is mirrored at `in/mam-ws-intro/appendices.mediawiki`**, so
+   read that rather than fetching anything: 566 lines and about 146,000 characters, of which the
+   manuscript roster is the first hundred or so. `in/mam-ws-intro/manifest.json` records the
+   revision and timestamp of the copy, and
+   `.venv/Scripts/python.exe py/main_download.py fr-ws-intro` refreshes all thirteen pages of
+   the introduction. That subcommand and the mirror arrived 2026-08-31; this paragraph said
+   until then that no copy was mirrored anywhere in the local repos, `in/mam-ws/` holding the
+   books and not the introduction.
+
+   **A summarizing fetch was never good enough for this page, and still is not** — which is why
+   the mirror is wikitext rather than a digest. On 2026-08-06 one such fetch reported `ו` as
+   "Leningrad Codex, Washington Pentateuch", having merged `ו` with the neighbouring `ל` entry.
+   The mirrored wikitext shows what it flattened: the roster gives the Washington Pentateuch and
+   the Leningrad Codex their own entries under the sigla `כתי"ו` and `כתי"ל`, whose shared
+   `כתי"` stem is what a summary drops. Should the mirror ever be too stale to trust, the
+   fallback is the same wikitext by another route, never a summary:
+   `https://he.wikisource.org/w/index.php?title=<url-encoded title>&action=raw`.
 2. JC3 sigil list in the holman-ketiv-qere material:
    `../holman-ketiv-qere/docs/JC3 The Biblical Text in the JC Edition #19-ז - English.html`
    `../holman-ketiv-qere/docs/JC3 The Biblical Text in the JC Edition #19-ז.html`

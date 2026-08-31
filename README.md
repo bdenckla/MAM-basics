@@ -18,7 +18,8 @@ Python tools for working with [MAM (Miqra according to the Masora)](https://he.w
 
 - `main_download.py fr-google` — from Google Sheets
 - `main_download.py fr-sefaria` — from Sefaria
-- `main_download.py fr-wikisource` — from Hebrew Wikisource
+- `main_download.py fr-wikisource` — the MAM books, from Hebrew Wikisource
+- `main_download.py fr-ws-intro` — the MAM introduction's thirteen pages, from Hebrew Wikisource, mirrored as verbatim wikitext in `in/mam-ws-intro/`
 
 ### Parsing
 

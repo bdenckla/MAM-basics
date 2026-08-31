@@ -46,6 +46,61 @@ which corpus a claim takes, the banned verbs and framings, where Yeivin and Breu
 verify a page's numbers. It loads on demand rather than every session, so it can hold the full
 statement; the sections here stay as pointers, and **a rule change goes into the skill first**.
 
+## The MAM introduction is mirrored at `in/mam-ws-intro/` — read it, do not fetch it
+
+Hebrew Wikisource's introduction to MAM is consulted constantly here, and since 2026-08-31 all
+thirteen of its pages are mirrored locally as verbatim wikitext, one `.mediawiki` file each.
+Refresh with `.venv/Scripts/python.exe py/main_download.py fr-ws-intro`, which is deliberately
+**separate** from `fr-wikisource` (Ben's decision, 2026-08-31): the books and the introduction
+have unrelated refresh rhythms, and nothing downstream reparses when the introduction moves.
+
+| File under `in/mam-ws-intro/` | Wikisource subpage |
+|---|---|
+| `root.mediawiki` | the introduction's own root page |
+| `summary.mediawiki` | `/תקציר` |
+| `ch1` … `ch5.mediawiki` | `/פרק א` … `/פרק ה` |
+| `appendices.mediawiki` | `/נספחים` — the sigil roster `doc/sigil-decoding.md` leans on |
+| `index-aleppo.mediawiki` | `/מפתח לכתר ארם צובה` |
+| `index-leningrad.mediawiki` | `/מפתח לכתי"ל` |
+| `westminster-typing.mediawiki` | `/מידע טכני על הקלדת וסטמינסטר` |
+| `data-sheet-guide.mediawiki` | `/מדריך טכני לגיליון הנתונים` |
+| `technical-guide.mediawiki` | `/מדריך טכני` |
+
+Three things about it are worth knowing before you touch it:
+
+1. **Never summarize-fetch these pages, mirror or no mirror.** That is what the mirror is for.
+   `doc/sigil-decoding.md`'s source #1 records what a summarizing fetch did to the sigil roster
+   on 2026-08-06, and the mirrored wikitext is where you can see what it flattened.
+2. **This tree is exempt from the mark-order rule at the top of this file.** It is hand-authored
+   wiki prose, so clusters in Unicode-normal rather than MAM-normal order are what the source
+   says, not defects. Do not run `uni_check` or `has_std_mark_order` over it, and never
+   normalize on refresh — the files are byte-verbatim by design.
+3. **A mirror goes stale in a way `in/mam-ws/` does not.** The books move when Ben edits them;
+   the introduction moves when Avi Kadish does, unannounced — four of the thirteen pages were
+   edited in August 2026 alone. `manifest.json` beside the pages records each one's revision id
+   and timestamp, so staleness is checkable without a network call.
+
+**`index-aleppo.mediawiki` and `index-leningrad.mediawiki` were never meant to match what
+`py/main_ac_wikisource_page.py` and `py/main_lenin_wikisource_page.py` generate — do not treat
+the difference as drift.** Ben, 2026-08-31: those generators' `index.wiki` outputs, in the
+sibling codex-index-aleppo and codex-index-leningrad, "were only ever intended to be starting
+points for manual work on Wikisource." The published pages are that manual work. So the gap is
+the intended transformation, there is no sync to maintain in either direction, and **no test or
+lint should compare the two.**
+
+The measurements say the same thing, and are worth quoting because the gap is much wider than
+"a wrapper around a generated body" — re-establish them with
+`py/main_ac_wikisource_page.py` and `py/main_lenin_wikisource_page.py`, then compare their
+output against this mirror. Of the Aleppo generator's 700 lines, **26 (4%)** survive into the
+live page; of the Leningrad generator's 1,135 lines, **94 (8%)** do. codex-index-aleppo also
+keeps two snapshots of the hand work itself, `aleppo-wiki/Wikisource-manual-initial.txt` (63
+lines, carrying `{{בעבודה}}`) and `Wikisource-manual-final.txt` (713 lines, **97%** of whose
+lines are in the live page) — which is the pipeline written down: generate raw material, then
+build the page by hand from it. The generated file's overlap with the hand-made line is the
+same 26 lines whether measured against the initial snapshot, the final snapshot or today's live
+page, so the hand work left the generated form immediately and has never gone back to it.
+codex-index-leningrad keeps no such snapshots.
+
 ## Rendered-prose conventions: `py/accgram/printed_decalogue_strands.py`'s module docstring
 
 That docstring is where the editorial conventions for accgram's **rendered prose** are recorded
