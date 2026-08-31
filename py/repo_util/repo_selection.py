@@ -17,18 +17,26 @@ from repo_util.common import (
 # workspace files; a folder absent from here gets the guessed URL, which is right
 # for every ordinary repo.
 #
-# ArtScroll is a GIST, not a first-class repo -- which is why `gh repo view
+# Gist-ArtScroll is a GIST, not a first-class repo -- which is why `gh repo view
 # bdenckla/ArtScroll` 404s (as does the REST endpoint, the one that DOES follow
-# rename redirects), and so why a missing ArtScroll folder reads as a dead
-# workspace entry rather than a merely un-cloned one. Its real name is the hash
-# below; "ArtScroll" is just the directory name a human chose at clone time.
-# document-index's README links the same gist, as a review.
+# rename redirects), and so why a missing folder reads as a dead workspace entry
+# rather than a merely un-cloned one. Its real name is the hash below; the folder
+# name is one a human chose at clone time. document-index's README links the same
+# gist, as a review.
+#
+# THE "Gist-" PREFIX IS DELIBERATE, and marks exactly the distinction this dict
+# exists for: a folder so named cannot be re-cloned by guessing
+# bdenckla/<folder name>. Ben's decision, 2026-08-31. The folder was briefly
+# renamed to plain ArtScroll that day, to match what this workspace file then
+# said, before the reversal settled that the workspace file should follow the
+# prefix rather than the other way about. Gist-Hebrew-World is the other folder
+# on this convention; it is in no workspace file, so it needs no entry here.
 #
 # A comment like this cannot live in the .code-workspace file itself, which would
 # be the obvious home for it: VS Code tolerates JSONC, but `common.read_json` is a
 # plain `json.load`, so a comment there would break the very tooling that reads it.
 _NON_REPO_WORKSPACE_FOLDERS = {
-    "ArtScroll": (
+    "Gist-ArtScroll": (
         "https://gist.github.com/bdenckla/f04699f2a9c4eccd3220751fdb233722.git",
         "gist: A Review of the ArtScroll Transliterated Linear Siddur (Ashkenaz)",
     ),

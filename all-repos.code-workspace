@@ -1,9 +1,6 @@
 {
 	"folders": [
 		{
-			"path": "../ArtScroll"
-		},
-		{
 			"path": "../book-of-job"
 		},
 		{
@@ -20,6 +17,9 @@
 		},
 		{
 			"path": "../document-index"
+		},
+		{
+			"path": "../Gist-ArtScroll"
 		},
 		{
 			"path": "../github-misc"
