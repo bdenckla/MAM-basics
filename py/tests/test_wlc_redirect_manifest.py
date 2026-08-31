@@ -3,8 +3,8 @@
 WHY THIS IS A TEST AND THE REST OF THE LINT IS NOT
 
 ``py/main_wlc_redirect_stubs.py check`` lints the stub tree wlc-utils publishes, and it
-cannot run here: that tree is another repository's, and no clone of it has been on this
-disk since 2026-08-22.  One of its four checks needs no stub tree at all, because both
+cannot run here: that tree is another repository's, and no machine is expected to hold a
+clone of it (2026-08-22).  One of its four checks needs no stub tree at all, because both
 sides of it are in this repo -- the frozen list of old URLs, and the pages under
 ``gh-pages/wlc/`` those URLs redirect to.  That check is the one hoisted here, into a
 suite that runs all the time, rather than left in a program nothing schedules and nothing

@@ -181,12 +181,17 @@ def wlc_utils_pages_dir() -> Path:
     ``require_sibling`` so an absent clone says which two environment overrides point at
     one, rather than dying on a bare ``FileNotFoundError`` deep in a writer.
 
-    AND THERE IS NO CLONE ON THIS DISK.  Ben's decision, 2026-08-22: with the URL list
-    frozen, publishing became a never event -- new pages here earn no stub -- so the clone
-    was 101 MB standing by for an occasion that arises only if one of the 154 frozen pages
+    AND NO MACHINE IS EXPECTED TO HOLD A CLONE.  Ben's decision, 2026-08-22, reaffirmed
+    2026-08-31: wlc-utils is in no workspace file, so ``gitrepos_setup_rule`` clones it
+    nowhere, an evacuated repo not belonging in ``GitRepos`` at all.  With the URL list
+    frozen, publishing became a never event -- new pages here earn no stub -- so a clone
+    is ~100 MB standing by for an occasion that arises only if one of the 154 frozen pages
     is renamed or dropped.  Every failure this raises is therefore expected, and the fix
     is a fresh clone rather than an override: the message says so, and shallow is enough,
-    neither caller reading history.
+    neither caller reading history.  Stated as a decision rather than as a fact about one
+    disk deliberately -- Ben works on several machines and they are not in step, so a
+    clone found on one is residue rather than evidence this decision was reversed.  See
+    MAM-basics' ``CLAUDE.md``, "Repo locations are decisions, not one machine's disk".
     """
     clone = paths.sibling_repo("wlc-utils")
     try:
@@ -194,7 +199,7 @@ def wlc_utils_pages_dir() -> Path:
     except FileNotFoundError as absent:
         raise FileNotFoundError(
             f"{absent}\n"
-            "No clone is expected on this disk (2026-08-22); to get one:\n"
+            "No machine is expected to hold a clone (2026-08-22); to get one:\n"
             f"  git clone --depth 1 {_CLONE_URL} {clone}"
         ) from absent
 

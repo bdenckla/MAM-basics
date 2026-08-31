@@ -165,7 +165,9 @@ has it with its Yeivin and Breuer citations.
 the *full* OCR of the book. That repo was `yeivin-itm` until 2026-07-31, when it was renamed and
 Breuer's *Cantillation of Scripture* was merged into it from `breuer-cos`; CoS is the sibling
 `../MAM-private/masorah-books/books/cos/md-export-of-docx/`, so both books are still one clone
-away, that clone being MAM-private since 2026-08-10. **The `../masorah-books/…` spellings that
+away, that clone being MAM-private since 2026-08-10. masorah-books itself is in no workspace
+file, so no machine clones it either, and a copy found on one is residue (one was removed
+2026-08-31). **The `../masorah-books/…` spellings that
 remain in `py/accgram/` docstrings and comments are stale by exactly that one directory** — eight
 sites in `breuer_word_length.py`, `chanted_word_accents.py`, `edition_transcription.py`,
 `maqaf_nonfinal_accents.py` and `maqaf_nonfinal_accents_page.py`, each naming a path that now
@@ -173,8 +175,10 @@ reads `../MAM-private/masorah-books/…`. Ben chose this sentence over editing t
 as he chose the same answer for UXLC.
 
 **The `al-hatorah` citations in `py/accgram/` are stale the same way, and Ben chose the same
-answer, 2026-08-11.** That tree moved to `../MAM-private/al-hatorah/` on 2026-08-10 and its clone
-came off the disk on 2026-08-11, so `../al-hatorah/…` names nothing on either count. **Seven
+answer, 2026-08-11.** That tree moved to `../MAM-private/al-hatorah/` on 2026-08-10, and
+al-hatorah is in no workspace file, so no machine clones it — `../al-hatorah/…` names nothing on
+either count. (A clone of it turning up on some machine is residue, per "Repo locations are
+decisions, not one machine's disk" below; one was removed on 2026-08-31.) **Seven
 sites**, named here so nobody re-derives them: `chanted_word_accents.py:638`, `final_stress.py:5`
 and `maqaf_nonfinal_accents.py:112` write `../al-hatorah/py/itm/` and
 `../al-hatorah/py/aht_phon…`, which want `../MAM-private/al-hatorah/…`; `breuer_word_length.py:37`,
@@ -409,35 +413,54 @@ conventions win.
 book-of-job keeps two procedures of its own, `doc/opening-html-files.md` and
 `doc/reading-mam-simple.md`, both about reading what that repo holds rather than how it is made.
 
-## There is no local `wlc-utils` clone either, and its stub set is frozen
+## Repo locations are decisions, not one machine's disk
 
-`~/GitRepos/wlc-utils` came off the disk on 2026-08-22 (Ben's decision), the way al-hatorah's
-clone did on 2026-08-11. **The repo itself is alive** — `bdenckla/wlc-utils` is the redirect host
-for `bdenckla.github.io/wlc-utils/<path>`, and only the local clone went. Nothing routine wanted
-it: its 93 issues are read and written with `gh --repo bdenckla/wlc-utils`, which needs no
+Ben works on more than one machine, and they are not in step. A clone removed on one can still
+be sitting on another; a sync run on one says nothing about the rest. So a sentence of the form
+"X came off the disk on <date>" is a fact about one machine on one day, and reading it as a
+global truth is what makes this file's history look self-contradictory when it is not. Ben's
+instruction, 2026-08-31: **stop writing single-track, single-machine history here.**
+
+Two consequences, and they apply to every location claim below.
+
+1. **Write the decision, not the disk state.** "wlc-utils belongs on no machine" is checkable
+   against the roster and stays true; "there is no local wlc-utils clone" expires the moment
+   another machine is switched on. `all-repos.code-workspace` is the roster and
+   `in/repo_maintenance_policy.json`'s `gitrepos_setup_rule` is the rule that reads it; between
+   them they say what belongs on a machine, and nothing else does — **not** a comparison against
+   `gh repo list`, which that rule's clause 4 forbids outright as the proxy that dragged the
+   discontinued `trope` back onto a disk.
+2. **A clone's presence is residue, not evidence that a decision was reversed.** It is far more
+   likely to predate the decision, or to come from a sync that did not know about it, than to
+   record a change of mind. Before concluding anything about where a clone came from, read its
+   reflog: a fresh clone opens with `clone: from …`, a survivor does not.
+
+## wlc-utils belongs on no machine, and its stub set is frozen
+
+**wlc-utils is not in the roster**, so under `gitrepos_setup_rule` no machine clones it — Ben's
+decision, 2026-08-22, reaffirmed 2026-08-31 as the general rule that **an evacuated repo does not
+appear in `GitRepos`**. **The repo itself is alive** — `bdenckla/wlc-utils` is the redirect host
+for `bdenckla.github.io/wlc-utils/<path>`, and only the clone is unwanted. Nothing routine wants
+one: its 93 issues are read and written with `gh --repo bdenckla/wlc-utils`, which needs no
 checkout (`py/wlc_issue_edit.py`); its site deploys from the remote by its own `pages.yml`; and no
 test here resolves that sibling.
 
-**The clone came back once, on 2026-08-31, and nothing prevents that happening again — so a clone
-found on this disk is not evidence that this section is out of date.** An ad-hoc sweep that day
-pulled, cleaned and cloned across `~/GitRepos`, leaving a full 95.6 MB clone rather than the
-`--depth 1` one the command below produces. There is **no sync script on this machine** — the only
-clone loops are `misc/linux-sh/`, Linux-only, last touched 2026-03-09, driven by a stale 13-name
-`repos.txt` that does not even list wlc-utils — so the sweep was run by hand or from a session, and
-there is nothing to add an exclusion to. Ben's decision, 2026-08-31: remove the clone again, this
-section standing unchanged. Expect recurrence, because the cause is structural: `~/GitRepos` now
-holds every non-archived, non-fork repo Ben owns bar `trope`, which makes **archiving the only
-thing that actually keeps a repo off this disk** — and wlc-utils cannot use it, staying alive as
-the redirect host being the whole reason it is not archived. Re-establish that shape by comparing
-`gh repo list bdenckla --json name,isArchived,isFork` against the directories of `~/GitRepos`.
-Before rewriting this section on the strength of a clone being present, check whether any session
-or `doc/` file records a decision to reverse it, and re-read `py/wlc_redirect/stubs.py`'s
-docstring, which states the same decision from the code's side.
+**The worked case for reading a reflog before believing a clone's story.** A machine surveyed on
+2026-08-31 held a full 97.4 MB clone, and an earlier version of this section had read a clone
+found that day as freshly re-cloned by an ad-hoc sweep, then predicted recurrence from that. The
+reflog said otherwise: exactly one `clone:` entry, dated **2024-02-20**, running unbroken to a
+`pull --ff-only` that morning — so on that machine the clone had been present continuously since
+2024, and the sweep had *pulled* it rather than cloned it. The prediction was built on one
+machine's disk standing for every machine's. The clone was removed 2026-08-31, along with
+al-hatorah's and masorah-books', on the evacuated-repos rule above.
 
-**One thing still wants a clone, and its occasion is now rare.**
+**One thing still wants a clone, and it is a one-time program Ben expects never to run again.**
 `py/main_wlc_redirect_stubs.py build --publish`, and `check` with no `--dir`, reach
 `py/wlc_redirect/stubs.py`'s `wlc_utils_pages_dir`, which is the only site in this tree that
-resolves the clone. It raises with the command that fixes it:
+resolves the clone. **Nothing schedules it**: it is in no pipeline — `py/main_0_mega.py` and
+`py/pipeline_graph/pipeline_graph_spec.py` never name it — and the one check that runs all the
+time, `py/tests/test_wlc_redirect_manifest.py`, was hoisted into the suite precisely because it
+needs no clone. It raises with the command that fixes it:
 
 ```powershell
 git clone --depth 1 https://github.com/bdenckla/wlc-utils.git C:\Users\BenDe\GitRepos\wlc-utils
