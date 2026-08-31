@@ -1,8 +1,14 @@
 """Exports gen_html_file.
 
-Ported from the gist ``bdenckla/7e578526559cbbfc2d54a1bc0c827072``, cloned as
-``GitRepos/Gist-Hebrew-World``, whose ``main.md`` this page replaces; that gist
-now holds a stub pointing here. The prose is otherwise reproduced verbatim.
+Ported from the gist ``bdenckla/7e578526559cbbfc2d54a1bc0c827072``, whose
+``main.md`` this page replaces; that gist now holds a stub pointing here. The
+prose is otherwise reproduced verbatim.
+
+That gist had a clone at ``GitRepos/Gist-Hebrew-World``, removed on 2026-08-31
+(Ben's decision) once this page existed. Its clone URL is recorded in
+``in/repo_maintenance_policy.json`` under ``gitrepos_setup_rule.gists``, which
+is now the only record on this machine that the gist exists -- a gist is
+invisible to ``gh repo list`` and its clone URL cannot be guessed from its name.
 
 One accent name is corrected rather than reproduced (Ben's decision,
 2026-08-31). The second bullet under the fourth chanted word gives the source
@@ -22,6 +28,7 @@ The remaining changes are three, all house style rather than rewording:
 """
 
 from mb_author import author
+from mb_cmn import uni_denorm
 from mb_misc import mb_html
 
 _IMG_DIR = "hebrew_world"
@@ -29,6 +36,20 @@ _IMG_DIR = "hebrew_world"
 
 def anchor():
     return author.std_anchor(_ANCHOR, _H1_CONTENTS)
+
+
+def _hbo_checked(word):
+    """Hebrew lifted from the gist, guarded against a normalizing round trip.
+
+    MAM-normal mark order puts the dagesh before the vowel and Unicode-normal
+    order puts it after. The two render identically, so a paste through
+    anything that normalizes is invisible on the page and shows up only where
+    something compares bytes. Three of this page's four Hebrew words arrived in
+    Unicode order exactly that way on 2026-08-31, and were restored from the
+    gist's own bytes. This assertion is what makes a repeat loud.
+    """
+    assert uni_denorm.has_std_mark_order(word), word
+    return author.hbo(word)
 
 
 def _img(fname, width_em):
@@ -92,10 +113,10 @@ _ANC_PHONETIC_BIBLE = author.anchor_h(
 )
 _ANC_SAFFA = author.anchor_h("Saffa", _URL_SAFFA)
 
-_HE_VAYEDABER = author.hbo("וַיְדַבֵּ֣ר")
-_HE_KOL_HADEVARIM = author.hbo("כׇּל־הַדְּבָרִ֥ים")
-_HE_KOL = author.hbo("כׇּל")
-_HE_LO_YIHYE = author.hbo("לֹֽא־יִהְיֶ֥ה")
+_HE_VAYEDABER = _hbo_checked("וַיְדַבֵּ֣ר")
+_HE_KOL_HADEVARIM = _hbo_checked("כׇּל־הַדְּבָרִ֥ים")
+_HE_KOL = _hbo_checked("כׇּל")
+_HE_LO_YIHYE = _hbo_checked("לֹֽא־יִהְיֶ֥ה")
 
 _PARA_INTRO = [
     ["This is a review of Hebrew World’s digital product called the "],
@@ -260,7 +281,7 @@ _PARA_VERSE_SEVEN = """For now at least, we will conclude our review with what
 seems to be an interchangeably inconsistent use of apostrophe and “e” for vocal
 $shewa in verse 7:""".replace("\n", " ")
 _PARA_APOSTROPHE = """(Reasonably enough, this apostrophe seems to function not
-only as an ultra-short vowel but also as a syllable divider. I.e. et-sh’mo could
+only as an ultra-short vowel but also as a syllable divider. I.e. et-sh’·mo could
 be considered a little awkward-looking.)""".replace("\n", " ")
 _PARA_REVERSE_ENGINEER = """It is possible that what I have identified as
 inconsistencies are just consistencies whose rules I have not been able to
