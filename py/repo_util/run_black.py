@@ -4,6 +4,7 @@ from __future__ import annotations
 from pathlib import Path
 import shutil
 import subprocess
+import sys
 from typing import Sequence
 
 from repo_util import maintenance_policy
@@ -25,6 +26,18 @@ def _select_black_command(
     path_black = shutil.which("black")
     if path_black is not None:
         return [path_black, *tail]
+    # Last resort: the base interpreter's own Scripts directory. Several
+    # workspace repos deliberately have no .venv -- Ben's decision of
+    # 2026-08-31, whose reasoning is recorded in this project's auto-memory as
+    # venv-roster-2026-08-31.md -- and black is installed into the base Python
+    # for them, reached through Ben's persisted USER PATH. An agent shell does
+    # not inherit that PATH, so shutil.which above returns None there and the
+    # sweep would report every such repo as a problem when black is in fact
+    # present. sys.base_prefix is the base installation root inside a venv and
+    # equals sys.prefix outside one, so no venv-detection branch is needed.
+    base_black = Path(sys.base_prefix) / "Scripts" / "black.exe"
+    if base_black.is_file():
+        return [str(base_black), *tail]
     return None
 
 
@@ -155,8 +168,10 @@ def run_black_across_repos(
         elif command is None:
             black_result["problem"] = (
                 "black unavailable, but this repo has tracked .py files: no"
-                " .venv/Scripts/black.exe, no .venv/Scripts/python.exe, and no"
-                " black on PATH. Create the repo's .venv so the sweep covers it."
+                " .venv/Scripts/black.exe, no .venv/Scripts/python.exe, no black"
+                " on PATH, and no black.exe in the base interpreter's Scripts"
+                " directory. Install black into the base interpreter so the sweep"
+                " covers it."
             )
         else:
             black_result["attempted"] = True
