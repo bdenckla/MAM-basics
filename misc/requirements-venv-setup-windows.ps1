@@ -1,6 +1,6 @@
 # Misc. software to install:
 #
-#    Python (Microsoft Store)
+#    Python 3.13 (python.org installer, NOT the Microsoft Store)
 #    Git (web page download)
 #    GitHub Desktop (web page download) or SmartGit
 #    Visual Studio Code (web page download)
