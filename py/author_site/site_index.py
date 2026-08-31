@@ -29,21 +29,27 @@ hand-written page indented and split it.  See the plan's Phase 1.
 from __future__ import annotations
 
 from pathlib import Path
+import re
 
 from mb_cmn import paths
 from mb_cmn import provenance
 from mb_misc import mb_html
 
 from author_site import published_subtrees
-from author_site.entries import Anchor, Part
+from author_site import site_data
+from author_site.entries import Anchor, Entry, Italic, Part, Text
 
 _FNAME = "index.html"
-_TITLE = "MAM-basics web pages"
+_TITLE = "Documents by Ben Denckla"
 
 _REPO_URL = "https://github.com/bdenckla/MAM-basics"
 _README_URL = f"{_REPO_URL}/blob/main/README.md"
 
 _EM_DASH = "\N{EM DASH}"
+
+# The Hebrew block and its presentation forms.  A "run" is a maximal stretch of them
+# together with the spaces and Hebrew punctuation inside it.
+_HEBREW_RUN_RE = re.compile(r"([\u0590-\u05FF\uFB1D-\uFB4F]+)")
 
 # The link text the hand-written page used for wlc/, kept so that generating the page for
 # the first time changed nothing a reader sees.  Deliberately NOT derived from the subtree
@@ -69,15 +75,47 @@ def gen_html_file(out_dir: Path | None = None) -> str:
 def build_body():
     """The page's body contents, top to bottom."""
     return [
-        _manifest_list(),
+        mb_html.heading_level_1(_TITLE),
+        mb_html.para(site_data.LEAD_IN),
+        *_sections(site_data.BY_ME),
+        mb_html.para(site_data.LEAD_IN_NOT_MINE),
+        *_sections(site_data.NOT_BY_ME),
+        *_headed_list(site_data.MANIFEST_HEADING, _manifest_liconts()),
         _readme_pointer(),
     ]
 
 
-def _manifest_list():
+def _sections(sections):
+    """Every authored section, flattened: heading, list, heading, list."""
+    return [
+        el
+        for one in sections
+        for el in _headed_list(one.heading, [_entry_licont(e) for e in one.entries])
+    ]
+
+
+def _headed_list(heading: str, liconts):
+    """The page's one repeated shape: an ``<h2>`` and the ``<ul>`` under it."""
+    return [mb_html.heading_level_2(heading), mb_html.unordered_list(liconts)]
+
+
+def _entry_licont(entry: Entry):
+    """One document: an optional leading label, the link, a note, then any sub-bullets."""
+    head = [
+        *([entry.label] if entry.label else []),
+        _anchor(entry.anchor),
+        *[_part(one) for one in entry.note],
+    ]
+    if not entry.subs:
+        return head
+    subs = mb_html.unordered_list([_rtl_split(one) for one in entry.subs])
+    return [*head, subs]
+
+
+def _manifest_liconts():
     """The derived publication manifest: what this repository publishes."""
     subtrees = published_subtrees.published_subtrees(paths.repo_root())
-    return mb_html.unordered_list([_manifest_licont(one) for one in subtrees])
+    return [_manifest_licont(one) for one in subtrees]
 
 
 def _manifest_licont(subtree):
@@ -101,8 +139,40 @@ def _readme_pointer():
 
 
 def _anchor(anchor: Anchor):
-    return mb_html.anchor_h(anchor.text, anchor.href)
+    return mb_html.anchor_h(_text(anchor.text), anchor.href)
+
+
+def _text(text: Text):
+    """An anchor's visible text: a plain string, or a run mixing strings and Italic."""
+    if isinstance(text, str):
+        return _rtl_split(text)
+    return [_part(one) for one in text]
 
 
 def _part(part: Part):
-    return _anchor(part) if isinstance(part, Anchor) else part
+    if isinstance(part, Anchor):
+        return _anchor(part)
+    if isinstance(part, Italic):
+        return mb_html.emphasis(_rtl_split(part.text))
+    return _rtl_split(part)
+
+
+def _rtl_split(text: str):
+    """Wrap each Hebrew run of ``text`` in a ``dir="rtl"`` span, leaving the rest alone.
+
+    Two of the ten Misc titles embed a Hebrew word in an English phrase, and one Latin
+    title does not.  Declaring the direction of the Hebrew run says what the fragment is,
+    which is what CLAUDE.md asks for; declaring it on the whole list item would be a claim
+    about the English too.  Doing it here rather than in the data keeps site_data.py free
+    of rendering, and makes the rule apply to any Hebrew that arrives later.
+    """
+    parts = [
+        mb_html.span(run, {"dir": "rtl"}) if _is_hebrew(run) else run
+        for run in _HEBREW_RUN_RE.split(text)
+        if run
+    ]
+    return parts if len(parts) > 1 else text
+
+
+def _is_hebrew(run: str) -> bool:
+    return bool(_HEBREW_RUN_RE.fullmatch(run))
