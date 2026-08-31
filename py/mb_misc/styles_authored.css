@@ -24,6 +24,14 @@ body.wide {
     font-size: 140%;
     font-feature-settings: 'ss01'; /* ss01 = xataf qamats qatan */
 }
+/* Ben's instruction, 2026-08-31: do not bold pointed Hebrew in a section
+   heading, e.g. review_of_artscroll_transliterated_linear_siddur.html's
+   "u-vin'cho (...) (v. 9)". A heading is bold, and that weight thickens the
+   letters enough to crowd the very points and accents such a heading exists to
+   show. Scoped to *[lang="hbo"], which is what author.hbo emits, so it leaves
+   alone the bare unpointed Hebrew that rocc_4_mid_word_ga3ya_with_shewa.html
+   and tsinnorit_in_psalm_32v5.html carry in their own h1 headings. */
+h1 *[lang="hbo"], h2 *[lang="hbo"], h3 *[lang="hbo"] { font-weight: normal; }
 @font-face {
     font-family: "Taamey D WOFF2";
     src: url("woff2/Taamey_D.woff2");
