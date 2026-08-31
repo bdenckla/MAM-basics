@@ -274,13 +274,17 @@ def main(argv: Sequence[str] | None = None) -> int:
         )
 
     if args.run_black:
-        # Kept although it normally matches nothing now: the frozen clones left
-        # GitRepos on 2026-08-07 for the sibling FrozenRepos and are in no
-        # workspace file, so the freeze is enforced by their location and this
-        # skip never fires. It stays as the backstop for a frozen repo that does
-        # turn up in a workspace file. There is no override any more --
-        # --include-frozen was removed the same day, having become a way to ask
-        # for repos the sweep could no longer see.
+        # Kept although it normally matches nothing now: the frozen repos are in
+        # no workspace file, and a sweep can only reach the repos a workspace
+        # file lists, so this skip never fires. It stays as the backstop for a
+        # frozen repo that does turn up in a workspace file. There is no override
+        # any more -- --include-frozen was removed on 2026-08-07, having become a
+        # way to ask for repos the sweep could no longer see. Absence from the
+        # workspace file, NOT a repo's location on disk, is what enforces the
+        # freeze; the C:\Users\BenDe\FrozenRepos directory that once held these
+        # clones is retired and is not expected on any machine, per Ben's
+        # decision of 2026-08-31 recorded in in/repo_maintenance_policy.json's
+        # location_comment.
         frozen = maintenance_policy.frozen_repos()
         results = run_black_across_repos(
             repo_infos,
