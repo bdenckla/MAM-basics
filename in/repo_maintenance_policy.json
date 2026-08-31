@@ -95,5 +95,15 @@
       "frozen_on": "2026-07-27",
       "last_commit_when_frozen": "2024-10-25"
     }
+  },
+  "repos_to_keep_absent": {
+    "comment": "Repos that must NOT have a clone in C:\\Users\\BenDe\\GitRepos, and why. Ben's decision, 2026-08-31. THIS IS NOT frozen_repos, and neither list may be derived from the other, exactly as the comment at the top of this file says of frozen_repos and in/vendoring_policy.json: a frozen repo's clone is kept, merely left untouched so its last-changed date keeps testifying to the pause, whereas a repo listed here should have no clone on this machine at all. NOTHING READS THIS AT CLONE TIME, and that is not an oversight awaiting a script. There is no sync program on this machine: a 'sync' is a Claude Code session answering a free-text request, which on 2026-08-31 enumerated `gh repo list bdenckla`, diffed the result against `ls` of GitRepos by eye, and typed the missing names into a literal clone loop. So the mechanism that consults this register is the instruction in ~/.claude/CLAUDE.md (canonical copy github-misc/dot-claude/CLAUDE.md) telling such a session to read it before cloning anything. If that instruction is ever dropped, this key goes back to being documentation that governs nothing.",
+    "trope": {
+      "comment": "Discontinued 2026-03-19 in favour of MAM-basics, per the repo's own README. Ben parked its clone the same day as GitRepos.old/trope.old.use-mam-basics-instead, and on 2026-08-31 a sync session cloned it straight back into GitRepos -- because the March decision was recorded only in that repo's README and in the parked directory's name, and the sync read neither. That is the whole reason this key exists. Both copies were removed 2026-08-31, reclaiming about 1.0 GB (414 MB fresh clone, 598 MB parked copy). The remote is live and complete, so `gh repo clone bdenckla/trope` reconstructs it in full if it is ever wanted.",
+      "decided_on": "2026-03-19",
+      "removed_on": "2026-08-31",
+      "remote_status": "Not archived as of 2026-08-31, and so indistinguishable from a live repo to anything that enumerates GitHub. Its README promises archival 'once all open issues have been closed or copied to other repositories'; there are 111 open issues and 382 closed, which is what still blocks that.",
+      "local_only_material": "One dangling stash, 79507d3c 'WIP on master' of 2026-03-07, existed only in the parked copy and on no remote. Saved to C:/tmp/trope-dangling-stash-79507d3c.patch before deletion. It looks superseded rather than lost: every distinctive identifier in it (_SIGLA_WORD_RE, _BARE_WORD_RE, _flatten_arg1_strings, HATAF_VOWELS) was already present at HEAD in py/py_explicit_xataf/extract.py, carried there by the module extraction of 2026-03-08."
+    }
   }
 }
