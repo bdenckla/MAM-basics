@@ -11,3 +11,6 @@ matplotlib
 pytest
 ply
 ruff
+numpy
+pygments
+pyspellchecker
