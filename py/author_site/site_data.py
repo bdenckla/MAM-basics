@@ -5,12 +5,22 @@ transcribed entry for entry.  ``doc/PLAN-unify-the-document-index.md`` is the re
 move and of the three decisions Ben took when it was proposed.  Two of those decisions are
 visible in the shape of this file:
 
-* **One page.**  The publication manifest that used to be the whole of the landing page is
-  now this page's last section, and it is DERIVED rather than listed -- see
-  ``published_subtrees``.  Everything in this file is the authored half.
+* **One page.**  The publication manifest that used to be the whole of the landing page
+  became this page's last section, headed "Pages published from this repository", and was
+  DERIVED rather than listed, by an ``author_site/published_subtrees.py`` this file's
+  docstring pointed at.  Ben deleted that section on 2026-08-31, having disliked it, and
+  asked that the pages it reached through ``gh-pages/wlc/index.html`` be distributed to
+  the top-level sections instead -- so the four of that page's seven the index did not
+  already name joined ``_WLC``, and the whole file is authored now, with no derived half.
 * **Flat.**  Ben, 2026-08-31, asked for "a 'misc' section with links to those 10
   documents" rather than a link to ``MAM-with-doc/misc/index.html``, so that reaching any
   of his documents takes one click from here and not two.  ``_MISC`` is that section.
+
+THE FOUR NEW WLC ENTRIES CARRY ``gh-pages/wlc/index.html``'s OWN LINK TEXT, verbatim, down
+to its em dashes -- that hand-written page is where Ben had already named each of them for
+a reader, so distributing them is a move rather than a rewrite.  Two of the four therefore
+read differently from the page's ``<title>``; that is deliberate, and it is why no lint
+compares them, unlike the ten Misc titles below.
 
 THE HEADINGS ARE NOT INVENTED.  document-index's top-level list mixed four category
 bullets with two lone documents.  Rendering categories as ``<h2>`` sections is flatter than
@@ -49,6 +59,15 @@ _GDOC = "https://docs.google.com/document/d/e"
 
 UNICODE_PROPOSALS_FNAME = "unicode-proposals.html"
 UNICODE_PROPOSALS_TITLE = "Unicode and ISO Proposals"
+
+# The stylesheet both pages at the deploy root link, hand-written and tracked as
+# gh-pages/style.css -- a sibling of both, so the href needs no prefix.  Its whole job is
+# the light/dark switching every other page generated here already had through
+# gh-pages/wlc/style.css, which these two could not simply share: that file's @font-face
+# names woff2/Taamey_D.woff2 relative to itself, and it carries a hundred rules for
+# accgram tables that no link index has any use for.  Ben asked for the switching on
+# 2026-08-31, having noticed these two pages staying white on a dark display.
+CSS_HREF = "style.css"
 
 # Every href below that stays inside this site is written RELATIVE, because this page is
 # published at the site root and a relative link works in a local checkout too.
@@ -153,6 +172,22 @@ _WLC = Section(
         ),
         _entry("All WLC a-notes", "wlc/wlc-a-notes/index.html"),
         _entry("Goerwitz Run on WLC", "wlc/accgram/goerwitz.html"),
+        _entry(
+            f"Almost errors {_EM_DASH} editorial charities the checker applies",
+            "wlc/accgram/almost-errors.html",
+        ),
+        _entry(
+            "Are the printed Decalogue cantillations grammatical?",
+            "wlc/accgram/printed-decalogue.html",
+        ),
+        _entry(
+            "What printed editions have at ובנך",
+            "wlc/accgram/printed-decalogue-uvinkha.html",
+        ),
+        _entry(
+            f"Psalms 17:14 {_EM_DASH} the double tsinnor",
+            "wlc/accgram/ps17v14-double-tsinnor.html",
+        ),
     ),
 )
 
@@ -255,9 +290,6 @@ _EXCERPTS = Section(
 # document-index's order, which is Ben's.
 BY_ME = (_UNICODE, _MAM, _REVIEWS, _WLC, _URWOTM, _MISC, _TAAMEY)
 NOT_BY_ME = (_EDITIONS, _EXCERPTS)
-
-# The one section whose entries this file does NOT hold: it is derived from the site.
-MANIFEST_HEADING = "Pages published from this repository"
 
 # The ten Misc entries copy these modules' _TITLE constants; the lint checks each copy.
 MISC_SOURCE_MODULES = tuple(

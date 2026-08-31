@@ -20,17 +20,17 @@ this file checks the half whose both sides are in this repo -- the same reasonin
 ``py/tests/test_wlc_redirect_manifest.py``'s docstring gives for hoisting one check out of a
 program that cannot run here.
 
-THE DERIVED HALF NEEDS NO LINT, AND ITS ABSENCE HERE IS NOT AN OVERSIGHT.  The manifest
-section's own links -- ``<subtree>/index.html`` -- are built by
+THERE IS NO DERIVED HALF ANY MORE, and the lint got wider when it went.  A last section
+headed "Pages published from this repository" used to be built by an
 ``author_site/published_subtrees.py`` from the set of tracked ``gh-pages/<name>/index.html``
-files, so a manifest link names a tracked page BY CONSTRUCTION and cannot go stale the way
-an authored one can.  What this file checks is the authored half, which is the half a human
-types.
+files, so its links named a tracked page BY CONSTRUCTION and this file deliberately let them
+be.  Ben deleted that section on 2026-08-31 and asked for the pages it reached to be
+distributed to the authored sections instead, so the four that moved into ``site_data``'s
+``_WLC`` are typed links now, and are checked here like every other typed link.
 
 TRACKED, NOT MERELY PRESENT.  ``.github/workflows/pages.yml`` deploys what is committed, so
 a link to a generated-but-untracked page would 404 for every reader while resolving fine on
-the machine that generated it.  ``git ls-files`` is therefore the right oracle, and it is the
-one ``author_site/published_subtrees.py`` uses to build the manifest.
+the machine that generated it.  ``git ls-files`` is therefore the right oracle.
 
 A GREEN RUN THAT VERIFIED NOTHING IS A FAILURE.  Both tests assert their input is the size it
 should be before asserting anything about it.
@@ -43,7 +43,6 @@ import re
 import subprocess
 
 from mb_cmn import paths
-from author_site import published_subtrees
 from author_site import site_data
 from author_site.entries import Anchor, anchors_in
 
@@ -70,10 +69,8 @@ def _tracked_pages(repo_root: Path) -> set[str]:
 
 
 def _authored_anchors() -> list[Anchor]:
-    """Every link the landing page's authored data holds, the manifest's included."""
-    sections = [*site_data.BY_ME, *site_data.NOT_BY_ME]
-    subtrees = published_subtrees.published_subtrees(paths.repo_root())
-    return [*anchors_in(sections), *anchors_in(subtrees)]
+    """Every link the landing page's authored data holds."""
+    return anchors_in([*site_data.BY_ME, *site_data.NOT_BY_ME])
 
 
 def _in_site_target(href: str) -> str | None:

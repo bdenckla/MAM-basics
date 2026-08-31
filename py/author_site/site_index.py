@@ -1,16 +1,20 @@
 """The site's landing page, ``gh-pages/index.html``.
 
-WHAT THIS PAGE IS.  The manifest of what this repository publishes -- and, from Phase 2 of
-``doc/PLAN-unify-the-document-index.md``, Ben's index of the documents he has written,
-which lived in its own repo as ``document-index/README.md`` until 2026-08-31.
+WHAT THIS PAGE IS.  From Phase 2 of ``doc/PLAN-unify-the-document-index.md``, Ben's index
+of the documents he has written, which lived in its own repo as ``document-index/README.md``
+until 2026-08-31.  Every entry is AUTHORED, in ``site_data``: they name work of Ben's
+wherever it lives, on this site or on hakirah.org, and no program can derive them.
 
-TWO HALVES, AND THE DIFFERENCE IS THE POINT.  The document entries are AUTHORED: they name
-work of Ben's wherever it lives, on this site or on hakirah.org, and no program can derive
-them.  The publication manifest is DERIVED, one entry per tracked
-``gh-pages/<subtree>/index.html``, per the 2026-08-22 decision recorded in
-``doc/PLAN-evacuate-python-programme.md``; only its per-subtree descriptions are authored.
-Keeping them apart is what lets that clause hold for the half it was written for without
-forcing the other half through a derivation that cannot express it.
+THE DERIVED HALF IS GONE, and this paragraph is here so nobody rebuilds it.  A last section
+headed "Pages published from this repository" listed one entry per tracked
+``gh-pages/<subtree>/index.html``, derived by an ``author_site/published_subtrees.py``, per
+the 2026-08-22 decision recorded in ``doc/PLAN-evacuate-python-programme.md``.  Ben deleted
+that section on 2026-08-31, having disliked it: its single entry sent a reader to
+``gh-pages/wlc/index.html`` to find seven pages, four of which this page did not name
+anywhere else, and he asked for those four to be distributed to the sections above instead.
+They are in ``site_data``'s ``_WLC`` now, and ``published_subtrees.py`` was deleted with the
+section it existed for -- so a subtree published from here is named by an authored entry or
+it is named nowhere, exactly as ``gh-pages/unicode-proposals.html`` always was.
 
 NOT ``author.dollar_sub``.  Every other authored page here runs its text through
 ``mb_author.author``, whose ``_check_no_undollared`` RAISES on an un-``$``-prefixed
@@ -35,7 +39,6 @@ from mb_cmn import paths
 from mb_cmn import provenance
 from mb_misc import mb_html
 
-from author_site import published_subtrees
 from author_site import site_data
 from author_site.entries import Anchor, Entry, Italic, Part, Text
 
@@ -45,18 +48,9 @@ _TITLE = "Documents by Ben Denckla"
 _REPO_URL = "https://github.com/bdenckla/MAM-basics"
 _README_URL = f"{_REPO_URL}/blob/main/README.md"
 
-_EM_DASH = "\N{EM DASH}"
-
 # The Hebrew block and its presentation forms.  A "run" is a maximal stretch of them
 # together with the spaces and Hebrew punctuation inside it.
 _HEBREW_RUN_RE = re.compile(r"([\u0590-\u05FF\uFB1D-\uFB4F]+)")
-
-# The link text the hand-written page used for wlc/, kept so that generating the page for
-# the first time changed nothing a reader sees.  Deliberately NOT derived from the subtree
-# id: "wlc" reads as a directory name, and this list is read by people.
-_MANIFEST_LINK_TEXTS = {
-    "wlc": "wlc-utils web pages",
-}
 
 
 def gen_html_file(out_dir: Path | None = None) -> str:
@@ -66,6 +60,7 @@ def gen_html_file(out_dir: Path | None = None) -> str:
     write_ctx = mb_html.WriteCtx(
         _TITLE,
         out_path,
+        css_hrefs=(site_data.CSS_HREF,),
         html_comment=provenance.generated_html_comment(__file__),
     )
     mb_html.write_html_to_file(build_body(), write_ctx)
@@ -80,7 +75,6 @@ def build_body():
         *_sections(site_data.BY_ME),
         mb_html.para(site_data.LEAD_IN_NOT_MINE),
         *_sections(site_data.NOT_BY_ME),
-        *_headed_list(site_data.MANIFEST_HEADING, _manifest_liconts()),
         _readme_pointer(),
     ]
 
@@ -110,21 +104,6 @@ def _entry_licont(entry: Entry):
         return head
     subs = mb_html.unordered_list([_rtl_split(one) for one in entry.subs])
     return [*head, subs]
-
-
-def _manifest_liconts():
-    """The derived publication manifest: what this repository publishes."""
-    subtrees = published_subtrees.published_subtrees(paths.repo_root())
-    return [_manifest_licont(one) for one in subtrees]
-
-
-def _manifest_licont(subtree):
-    link_text = _MANIFEST_LINK_TEXTS[subtree.subtree_id]
-    return [
-        _anchor(Anchor(link_text, subtree.href)),
-        f" {_EM_DASH} ",
-        *[_part(one) for one in subtree.description],
-    ]
 
 
 def _readme_pointer():

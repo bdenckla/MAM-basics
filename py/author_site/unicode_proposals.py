@@ -9,9 +9,13 @@ comment on the page, because a reader who finds the old Google Doc needs to know
 the live copy.
 
 A LOOSE PAGE AT THE DEPLOY ROOT, NOT A SUBTREE.  It sits beside ``index.html`` rather than
-under a directory of its own, so ``published_subtrees`` neither sees it nor should: that
-derivation lists SUBTREES, and this is one page.  The index reaches it through
-``site_data``'s authored entry, like every other document.
+under a directory of its own.  Until 2026-08-31 that mattered: a derivation named
+``published_subtrees`` built the index's last section from the tracked
+``gh-pages/<subtree>/index.html`` files, and this page was correctly invisible to it, being
+one page rather than a subtree.  Ben deleted that section and the derivation with it, so
+the index now reaches every document, this one included, through ``site_data``'s authored
+entries alone.  The two pages at the root share ``gh-pages/style.css``, ``site_data``'s
+``CSS_HREF``, which is where the reason for that file is written down.
 
 WHAT LGD AND LWD MEAN is on the page, because they are the source's own abbreviations and
 half the entries would be unreadable without them.
@@ -145,6 +149,7 @@ def gen_html_file(out_dir: Path | None = None) -> str:
     write_ctx = mb_html.WriteCtx(
         _TITLE,
         out_path,
+        css_hrefs=(site_data.CSS_HREF,),
         html_comment=f"{provenance.generated_html_comment(__file__)} {_ORIGIN_COMMENT}",
     )
     mb_html.write_html_to_file(build_body(), write_ctx)
