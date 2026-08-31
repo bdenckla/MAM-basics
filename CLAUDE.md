@@ -418,6 +418,22 @@ it: its 93 issues are read and written with `gh --repo bdenckla/wlc-utils`, whic
 checkout (`py/wlc_issue_edit.py`); its site deploys from the remote by its own `pages.yml`; and no
 test here resolves that sibling.
 
+**The clone came back once, on 2026-08-31, and nothing prevents that happening again — so a clone
+found on this disk is not evidence that this section is out of date.** An ad-hoc sweep that day
+pulled, cleaned and cloned across `~/GitRepos`, leaving a full 95.6 MB clone rather than the
+`--depth 1` one the command below produces. There is **no sync script on this machine** — the only
+clone loops are `misc/linux-sh/`, Linux-only, last touched 2026-03-09, driven by a stale 13-name
+`repos.txt` that does not even list wlc-utils — so the sweep was run by hand or from a session, and
+there is nothing to add an exclusion to. Ben's decision, 2026-08-31: remove the clone again, this
+section standing unchanged. Expect recurrence, because the cause is structural: `~/GitRepos` now
+holds every non-archived, non-fork repo Ben owns bar `trope`, which makes **archiving the only
+thing that actually keeps a repo off this disk** — and wlc-utils cannot use it, staying alive as
+the redirect host being the whole reason it is not archived. Re-establish that shape by comparing
+`gh repo list bdenckla --json name,isArchived,isFork` against the directories of `~/GitRepos`.
+Before rewriting this section on the strength of a clone being present, check whether any session
+or `doc/` file records a decision to reverse it, and re-read `py/wlc_redirect/stubs.py`'s
+docstring, which states the same decision from the code's side.
+
 **One thing still wants a clone, and its occasion is now rare.**
 `py/main_wlc_redirect_stubs.py build --publish`, and `check` with no `--dir`, reach
 `py/wlc_redirect/stubs.py`'s `wlc_utils_pages_dir`, which is the only site in this tree that
