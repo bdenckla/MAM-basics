@@ -389,6 +389,19 @@ _STEPS = [
         _run_near_aleppo_census,
         "regenerates near-aleppo/census/expected/ in MAM-private; needs that private sibling",
     ),
+    # After the wlc steps because the landing page's manifest section is DERIVED from the
+    # set of tracked gh-pages/<subtree>/index.html, so it must run once every subtree that
+    # is going to exist does.  Today that ordering buys nothing -- gh-pages/wlc/index.html
+    # is hand-written and always present, and the derivation reads git ls-files rather than
+    # the filesystem, so an untracked directory is invisible whenever this runs.  It will
+    # matter the first time a subtree's own index.html is itself generated, which is what
+    # doc/PLAN-evacuate-the-rest-of-three-repos.md lands for holman/, book-of-job/ and
+    # uxlc/.  Placing it here now costs nothing and saves that session a debugging hour.
+    StepRecord(
+        "gen-site",
+        main_authored.gen_site,
+        "writes this repo's own gh-pages/index.html and gh-pages/unicode-proposals.html",
+    ),
     # Last, and not because anything above it feeds it: this one AUDITS rather than
     # builds, reading the vendored .py copies as they sit in the sibling repos, and a
     # report reads most naturally as the closing act.  It is here at all because until

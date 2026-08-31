@@ -1,10 +1,14 @@
 """Static facts about the four source documents.
 
-The doc ids are the published-to-web ("/pub") ids from
-document-index/README.md, category "Undoing and redoing the work of the
-Masoretes". Nothing fetches them any more -- ``src/`` holds the frozen text
--- but they are the only record of where that text came from, so a later
-reader can reach the document a page was ported from.
+The doc ids are the published-to-web ("/pub") ids from the category "Undoing
+and redoing the work of the Masoretes" in Ben's index of his own documents.
+That index was ``document-index/README.md`` when these ids were recorded; it
+is ``gh-pages/index.html`` here since 2026-08-31, written from
+``py/author_site/site_data.py`` (doc/PLAN-unify-the-document-index.md). The
+category kept its name through the move. Nothing fetches these ids any more
+-- ``src/`` holds the frozen text -- but they are the only record of where
+that text came from, so a later reader can reach the document a page was
+ported from.
 """
 
 from mb_cmn import paths

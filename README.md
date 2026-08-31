@@ -48,7 +48,7 @@ Python tools for working with [MAM (Miqra according to the Masora)](https://he.w
 
 ### Utilities
 
-- `main_authored.py` — generates miscellaneous HTML documentation
+- `main_authored.py` — generates miscellaneous HTML documentation; its `gen-site` subcommand writes this repo's own published pages, `gh-pages/index.html` (Ben's index of his documents) and `gh-pages/unicode-proposals.html`
 - `main_rename_jpeg_scans.py` — renames JPEG scan files by directory structure
 - `main_0_mega.py` — meta-orchestrator that runs multiple jobs in sequence
 - `main_repo_maintenance.py` — routine repo maintenance: clean `.novc/`, run `main_test.py`, run `main_0_mega.py`
