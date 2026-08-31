@@ -17,36 +17,32 @@ from repo_util.common import (
 # workspace files; a folder absent from here gets the guessed URL, which is right
 # for every ordinary repo.
 #
-# Gist-ArtScroll is a GIST, not a first-class repo -- which is why `gh repo view
-# bdenckla/ArtScroll` 404s (as does the REST endpoint, the one that DOES follow
-# rename redirects), and so why a missing folder reads as a dead workspace entry
-# rather than a merely un-cloned one. Its real name is the hash below; the folder
-# name is one a human chose at clone time. document-index's README links the same
-# gist, as a review.
+# EMPTY IS THE CURRENT STATE, NOT A DEFECT, and it is kept rather than deleted
+# (Ben's decision, 2026-08-31) so that a roster gaining such a folder costs one
+# line instead of a restored mechanism. Its only entry was ever Gist-ArtScroll, a
+# GIST rather than a first-class repo -- which is why `gh repo view
+# bdenckla/ArtScroll` 404s, as does the REST endpoint, the one that DOES follow
+# rename redirects, and so why a missing folder of that kind reads as a dead
+# workspace entry rather than a merely un-cloned one. That entry went when the
+# gist left all-repos.code-workspace, its content having moved into this repo as
+# py/author_misc/review_of_artscroll_transliterated_linear_siddur.py and the gist
+# itself having become a stub pointing at the rendered page. Both of Ben's gists'
+# clone URLs are in in/repo_maintenance_policy.json under gitrepos_setup_rule's
+# gists key now, which is the only record on this machine that either exists;
+# that key is where a gist in NO workspace file belongs, and this map is where one
+# in a workspace file would belong.
 #
 # THE "Gist-" PREFIX IS DELIBERATE, and marks exactly the distinction this dict
 # exists for: a folder so named cannot be re-cloned by guessing
-# bdenckla/<folder name>. Ben's decision, 2026-08-31. The folder was briefly
-# renamed to plain ArtScroll that day, to match what this workspace file then
-# said, before the reversal settled that the workspace file should follow the
-# prefix rather than the other way about. Gist-Hebrew-World is the other gist on
-# this naming convention, and it is in no workspace file, so it needs no entry
-# here. It DID have a folder under GitRepos until 2026-08-31, when its clone was
-# removed: its content had moved into this repo as
-# py/author_misc/review_of_hebrew_worlds_phonetic_bible.py, leaving the gist
-# itself a stub pointing at the rendered page. Its clone URL is recorded in
-# in/repo_maintenance_policy.json under gitrepos_setup_rule's gists key, which
-# is now the only record on this machine that the gist exists.
+# bdenckla/<folder name>. Ben's decision, 2026-08-31. Gist-ArtScroll's folder was
+# briefly renamed to plain ArtScroll that day, to match what the workspace file
+# then said, before the reversal settled that the workspace file should follow the
+# prefix rather than the other way about.
 #
 # A comment like this cannot live in the .code-workspace file itself, which would
 # be the obvious home for it: VS Code tolerates JSONC, but `common.read_json` is a
 # plain `json.load`, so a comment there would break the very tooling that reads it.
-_NON_REPO_WORKSPACE_FOLDERS = {
-    "Gist-ArtScroll": (
-        "https://gist.github.com/bdenckla/f04699f2a9c4eccd3220751fdb233722.git",
-        "gist: A Review of the ArtScroll Transliterated Linear Siddur (Ashkenaz)",
-    ),
-}
+_NON_REPO_WORKSPACE_FOLDERS: dict[str, tuple[str, str]] = {}
 
 
 def _how_to_obtain(folder_name: str) -> str:

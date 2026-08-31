@@ -48,6 +48,7 @@ from author_misc import urwotm_2_saying_the_quiet_part_out_loud as urwotm_2
 from author_misc import urwotm_3_extra_verses as urwotm_3
 from author_misc import urwotm_4_atnax_hafukh as urwotm_4
 from author_misc import review_of_hebrew_worlds_phonetic_bible as hw_review
+from author_misc import review_of_artscroll_transliterated_linear_siddur as as_review
 from author_misc import he_ws_intro_to_mam_gray_maqaf_1 as gray_maqaf
 from author_misc import he_ws_intro_to_mam_pasleg as pasleg
 from author_misc import mam_parsed_docs_build
@@ -100,6 +101,7 @@ def almost_main():
         urwotm_3.gen_html_file(tdm_ch),
         urwotm_4.gen_html_file(tdm_ch),
         hw_review.gen_html_file(tdm_ch),
+        as_review.gen_html_file(tdm_ch),
         gray_maqaf.gen_html_file(tdm_ch, body_class="wide"),
         pasleg.gen_html_file(tdm_ch, body_class="wide"),
     ]
