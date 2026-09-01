@@ -281,6 +281,6 @@ def write_shared_assets(out_dir):
             with open(path, "r", encoding="utf-8") as f:
                 existing = f.read()
         if existing != content:
-            with open(path, "w", encoding="utf-8") as f:
+            with open(path, "w", encoding="utf-8", newline="") as f:
                 f.write(content)
     _copy_woff2(out_dir)

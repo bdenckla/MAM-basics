@@ -87,6 +87,6 @@ def write_output(
 ) -> str:
     """Write claims index markdown and return output path."""
     text = generate(claims)
-    with open(path, "w", encoding="utf-8") as fh:
+    with open(path, "w", encoding="utf-8", newline="") as fh:
         fh.write(text)
     return path

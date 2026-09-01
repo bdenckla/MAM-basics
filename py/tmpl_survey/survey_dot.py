@@ -416,7 +416,7 @@ def _write_full_graph_dot_paths(
             prefer_shortest_representative=prefer_shortest_representative,
         )
         dot_path = _with_column_suffix(out_path, column, needs_disambiguation)
-        with open(dot_path, "w", encoding="utf-8") as fp:
+        with open(dot_path, "w", encoding="utf-8", newline="") as fp:
             _write_dot(
                 collapsed_edges,
                 groups,
@@ -545,7 +545,7 @@ def write_focused_dot_files(
             groups = _identity_groups(edges)
             dot_path = _with_column_suffix(base_dot_path, column, needs_disambiguation)
             svg_path = _with_column_suffix(base_svg_path, column, needs_disambiguation)
-            with open(dot_path, "w", encoding="utf-8") as fp:
+            with open(dot_path, "w", encoding="utf-8", newline="") as fp:
                 _write_dot(
                     edges,
                     groups,
@@ -587,7 +587,7 @@ def _ensure_svg_comment(svg_path, comment_text):
     if marker in svg_text or graphviz_escaped_marker in svg_text:
         return
     updated_svg_text = _with_svg_comment_inserted(svg_text, comment_text)
-    with open(svg_path, "w", encoding="utf-8") as svg_fp:
+    with open(svg_path, "w", encoding="utf-8", newline="") as svg_fp:
         svg_fp.write(updated_svg_text)
 
 
@@ -612,6 +612,6 @@ def render_svg(dot_path, svg_path, generator_file=None):
             generated_by,
         )
         if normalized_svg_text != svg_text:
-            with open(svg_path, "w", encoding="utf-8") as svg_fp:
+            with open(svg_path, "w", encoding="utf-8", newline="") as svg_fp:
                 svg_fp.write(normalized_svg_text)
     return True

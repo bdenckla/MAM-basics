@@ -50,6 +50,6 @@ def write_index(release_info, change_log_dir):
         )
     lines.extend(["</ul>", "</body>", "</html>"])
     path = f"{change_log_dir}/index.html"
-    with open(path, "w", encoding="utf-8") as f:
+    with open(path, "w", encoding="utf-8", newline="") as f:
         f.write("\n".join(lines) + "\n")
     print(f"  Index written to {path}")
