@@ -377,6 +377,26 @@ rendered `0128e69`'s SVGs included, will see layout-only SVG diffs until it upgr
 still not on this machine's PATH in shells predating the install; the renderer is found via
 `survey_dot.py`'s `_DOT_FALLBACK`, `C:\Program Files\Graphviz\bin\dot.exe`, which is where
 16.0.0 landed.)
+(The CRLF phantoms were closed out later that same day as well: MAM-basics `bc24f7a` gives all
+eleven writer sites across eight files `newline=""` — `verify_mp/claims_doc.py`;
+`tmpl_survey/survey_dot.py` at both dot-writing sites and both SVG-comment rewrite sites;
+`mb_misc/tmpl_survey_toy.py`; `mb_misc/letter_small_job.py`; the four `mb_diff_mpu` change-log
+writers — and the vendored copies were refreshed through their own mechanisms, never by hand:
+MAM-parsed `54ba7e0` via parse-go's `copy_support_files`, MAM-simple `e78d51d` via
+`main_mam_simple.py copy-support-files`. Every affected step was re-run twice from the primary
+clones, before and after the commits; every phantom file came back byte-identical, written LF
+now, and the statuses of all four written-to repos — MAM-basics, MAM-parsed, MAM-simple,
+MAM-with-doc — end clean. The one content diff was `unpinned-latest.html`'s end date moving to
+`b9c8a77`'s day, MAM-with-doc `7834b2d`, the shape of real diff (3) above. Two primary-clone
+facts surfaced on the way: (1) under their `core.autocrlf=true` the phantoms had been invisible —
+the files sat CRLF on disk and read as clean, each commit having refreshed git's stat cache — and
+the first LF regeneration flags each file once, with zero content hunks, until a `git add`
+touches it, after which regeneration stays clean; (2) `py/main_vendoring.py --all` run from a
+primary clone compares raw checkout bytes, so it flipped 27 MAM-private rows identical →
+eol-only against the committed artifact the forest's LF-against-LF audit wrote — its outputs
+were restored rather than committed, and their two true date moves (`letter_small_job.py` per
+`e78d51d`; `osis_runner.py` per `31233c4`, which postdates the forest audit's write) wait for
+the next forest mega.)
 **Byte-identical everywhere else**, including `out/accgram/research-oddballs.json` — this run is
 the Windows half of the cross-machine proof of `86c87d2`'s display_path fix, the 2026-08-31 cloud
 run having been the Linux half — plus `out/sigil-inventory.json`, the MAM-simple / MAM-OSIS /
