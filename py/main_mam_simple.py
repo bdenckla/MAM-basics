@@ -6,19 +6,20 @@ variants (BHS, Sefaria, MAM's own).
 
 Subcommands:
     all
-                Run the core MAM-simple export and then regenerate the
-                versification docs.  This is what runs when no subcommand is
-                given at all, so the bare command line is the whole job.
+                Run the core MAM-simple export and then regenerate the docs
+                this repo writes into MAM-simple.  This is what runs when no
+                subcommand is given at all, so the bare command line is the
+                whole job.
     core-only
     core
                 Run only the core MAM-simple export, leaving the versification
                 docs alone.  `core` is an alias for `core-only`.
     doc-only
     doc
-                Regenerate only the versification docs -- the versification
-                differences doc and the versification-and-cantillation doc --
-                each rewritten only if its content changed.  `doc` is an alias
-                for `doc-only`.
+                Regenerate only the docs -- the versification differences doc,
+                the versification-and-cantillation doc, and the gh-pages index
+                -- each rewritten only if its content changed.  `doc` is an
+                alias for `doc-only`.
     copy-support-files
     copy
                 Copy the support files into the MAM-simple repo, without
@@ -57,6 +58,7 @@ from mb_xml import xml_distribute_sampe as xml_sampe
 from mb_json import json_root_from_bksams
 from versification_differences import generate_doc
 from versification_and_cantillation import generate_doc as vc_generate_doc
+from py_misc import mam_simple_index
 
 
 def _do_not_convert(_bkids, books_mpu):
@@ -156,8 +158,11 @@ def almost_main(bkids=None):
     mam_simple_copy_py_files.copy_support_files()
 
 
-def _write_versification_doc():
-    for gen in (generate_doc, vc_generate_doc):
+def _write_generated_docs():
+    # Named for the docs generally rather than for versification: mam_simple_index
+    # writes the gh-pages root pointer, which is about neither versification nor
+    # cantillation.
+    for gen in (generate_doc, vc_generate_doc, mam_simple_index):
         did_write = gen.write_output_if_changed()
         status = "updated" if did_write else "already up to date"
         print(f"{status}: {gen.output_path()}")
@@ -174,7 +179,7 @@ def build_parser():
     _add_core_args(
         subparsers.add_parser(
             "all",
-            help="Run the core MAM-simple export and then regenerate the versification doc.",
+            help="Run the core MAM-simple export and then regenerate the docs.",
         )
     )
     _add_core_args(
@@ -187,7 +192,7 @@ def build_parser():
     subparsers.add_parser(
         "doc-only",
         aliases=["doc"],
-        help="Regenerate only the versification differences doc.",
+        help="Regenerate only the docs, leaving the export alone.",
     )
     subparsers.add_parser(
         "copy-support-files",
@@ -243,7 +248,7 @@ def _bkids_from_args(args):
 def main():
     args = _parse_args()
     if args.command in {"doc-only", "doc"}:
-        _write_versification_doc()
+        _write_generated_docs()
         return
     if args.command in {"copy-support-files", "copy"}:
         mam_simple_copy_py_files.copy_support_files()
@@ -251,7 +256,7 @@ def main():
     bkids = _bkids_from_args(args)
     almost_main(bkids)
     if args.command == "all":
-        _write_versification_doc()
+        _write_generated_docs()
 
 
 if __name__ == "__main__":
