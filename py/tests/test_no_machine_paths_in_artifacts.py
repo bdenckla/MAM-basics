@@ -65,15 +65,17 @@ _BINARY_SUFFIXES = (
     ".mid",
 )
 
-# out/accgram/goerwitz-stderr/_summary.stderr.json records the directory it was written
-# to, and records it as C:\Users\BenDe\GitRepos\wlc-utils\... -- a clone whose corpus came
-# home on 2026-08-12 and which left this disk on 2026-08-22.  It is excluded rather than
-# fixed because NOTHING IN py/ WRITES IT ANY MORE: grepping "goerwitz" finds only page
-# assembly and CSS class names, and the file's last commit merely carried it along.  So it
-# is a fossil, not drift -- it cannot regenerate wrongly because it cannot regenerate at
-# all.  Deleting it, or restoring a generator for it, is a decision for its author; until
-# then this lint should not be held hostage to it.
-_EXCLUDED = frozenset({"out/accgram/goerwitz-stderr/_summary.stderr.json"})
+# Intentionally empty since 2026-09-01.  The one exclusion this held from its arrival
+# (86c87d2) was out/accgram/goerwitz-stderr/_summary.stderr.json, a fossil recording the
+# departed wlc-utils clone's absolute path.  Nothing in py/ wrote it any more, so it
+# could not regenerate wrongly because it could not regenerate at all; 86c87d2 called
+# deleting it "a decision for its author", and Ben made that decision on 2026-09-01
+# (doc/review-findings-2026-09-01.md's open ends): the file is deleted -- git history
+# keeps it -- and the carve-out dropped, so the scan covers the two trees whole.  The 37
+# empty .stderr.txt files beside it remain tracked and in scope.  The set stays so a
+# future exception is documented here explicitly rather than carved out silently
+# elsewhere.
+_EXCLUDED = frozenset()
 
 
 def _tracked_text_files() -> list[str]:
