@@ -87,5 +87,20 @@
       "provenance_doc": null,
       "notes": "placed in python_modules/ not mb_cmn/"
     }
+  ],
+  "foreign_vendored": [
+    {
+      "comment": "Files vendored INTO a workspace repo FROM a source repo other than MAM-basics. The audit does not measure these: category and mechanism are the source repo's business ('a vendored copy is maintained in its source repo'), so entries carry no category, no mechanism and no src_pkg, and vendoring/discover.py and vendoring/compare.py never read this section. Its one consumer is repo_util/maintenance_policy.py's vendored_overrides, which folds dest_paths into the black sweep's --extend-exclude so the sweep leaves the copies as they arrive; dest_repo is deliberately not required to be in the repos object above, so nothing here obliges the audit or the suite to resolve the destination repo on disk. Section added 2026-09-01, Ben's decision: af77984 (2026-08-31) added Taamey_D to the workspace roster as hbofonts' public release target and recorded 'where that exclusion belongs' as open, since its six tracked .py are stale copies of hbofonts build scripts that a black sweep would reformat; Ben settled the location as this file during the 2026-09-01 review's follow-up.",
+      "dest_repo": "Taamey_D",
+      "src_repo": "hbofonts",
+      "dest_paths": [
+        "sources/font-m-ShoD/ffscript_generate_sfd_n_ttf.py",
+        "sources/font-m-TaB/ffscript_generate_sfd_n_ttf.py",
+        "sources/font-m-TaD/ffscript_generate_sfd_n_ttf.py",
+        "sources/main_fill_in_template.py",
+        "sources/my_font_version.py",
+        "sources/my_open.py"
+      ]
+    }
   ]
 }

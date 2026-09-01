@@ -8,9 +8,12 @@ Three separate questions, deliberately answered by two separate files:
   as a marker inside each frozen repo because writing such a marker would change
   the repo and destroy the date the freeze exists to protect.
 - Vendored directories are derived from in/vendoring_policy.json's declared
-  source package names. A vendored copy is maintained in its source repo; if it
-  arrives non-black-compliant, that is the source's business, and reformatting
-  the copy only makes the next vendoring sync noisier.
+  source package names, and individually vendored files from its overrides and
+  foreign_vendored sections; foreign_vendored names copies whose source is a
+  repo other than MAM-basics, such as Taamey_D's hbofonts build scripts. A
+  vendored copy is maintained in its source repo; if it arrives
+  non-black-compliant, that is the source's business, and reformatting the copy
+  only makes the next vendoring sync noisier.
 
 - Repo visibility comes from in/repo_maintenance_policy.json too, as a second
   section beside the frozen list. It answers a question the freeze does not:
@@ -79,14 +82,22 @@ def vendored_overrides(policy_path: Path | None = None) -> dict[str, list[str]]:
     """Map of repo name to individually vendored file paths within it.
 
     Whole vendored packages are found by directory name, but the policy also
-    records single files copied to paths of their own -- mgketer's
-    py/python_modules/my_diffs.py, the wiki repos' hebrew_letters.py. Those are
-    just as vendored and just as much not this repo's to reformat.
+    records single files copied to paths of their own -- mgketer's two
+    py/python_modules/ files. Those are just as vendored and just as much not
+    this repo's to reformat.
+
+    Merges the policy's two per-file sections: overrides (MAM-basics-sourced,
+    measured by the vendoring audit) and foreign_vendored (sourced outside
+    MAM-basics -- Taamey_D's hbofonts build scripts -- which the audit
+    deliberately does not measure). For the black sweep the distinction is
+    nothing: neither kind is this repo's to reformat.
     """
     payload = read_json(policy_path or DEFAULT_VENDORING_POLICY)
     by_repo: dict[str, list[str]] = {}
     for override in payload["overrides"]:
         by_repo.setdefault(override["dest_repo"], []).append(override["dest_path"])
+    for entry in payload["foreign_vendored"]:
+        by_repo.setdefault(entry["dest_repo"], []).extend(entry["dest_paths"])
     return by_repo
 
 

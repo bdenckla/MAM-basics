@@ -53,11 +53,30 @@ class OverridePolicy:
 
 
 @dataclass(frozen=True)
+class ForeignVendoredPolicy:
+    """Files vendored into a workspace repo from a source repo other than MAM-basics.
+
+    The audit never measures these -- category and mechanism are the source repo's
+    business -- so an entry names only the destination, the source repo, and the copied
+    files. Their one consumer is repo_util/maintenance_policy.py's vendored_overrides,
+    which keeps the black sweep off them; dest_repo is deliberately not required to be
+    in the repos object, so nothing obliges the audit or the suite to resolve the
+    destination repo on disk.
+    """
+
+    dest_repo: str
+    src_repo: str
+    dest_paths: tuple[str, ...]
+    comment: str | None
+
+
+@dataclass(frozen=True)
 class VendoringPolicy:
     comment: str | None
     source_pkg_dirs: dict[str, str]
     repos: dict[str, RepoPolicy]
     overrides: tuple[OverridePolicy, ...]
+    foreign_vendored: tuple[ForeignVendoredPolicy, ...]
 
 
 _POLICY_PATH = paths.repo_root() / "in" / "vendoring_policy.json"
@@ -230,12 +249,48 @@ def _load_override(
     )
 
 
+def _load_foreign_vendored(
+    index: int, raw_entry: dict[object, object]
+) -> ForeignVendoredPolicy:
+    label = f"foreign_vendored[{index}]"
+    _unexpected_keys(
+        raw_entry, {"comment", "dest_repo", "src_repo", "dest_paths"}, label
+    )
+    dest_repo = raw_entry.get("dest_repo")
+    if not isinstance(dest_repo, str) or not dest_repo:
+        raise ValueError(f"{label}.dest_repo must be a non-empty string")
+    src_repo = raw_entry.get("src_repo")
+    if not isinstance(src_repo, str) or not src_repo:
+        raise ValueError(f"{label}.src_repo must be a non-empty string")
+    if src_repo == "MAM-basics":
+        raise ValueError(
+            f"{label}.src_repo is MAM-basics; a copy sourced here belongs in"
+            " overrides or in a repos entry, where the audit measures it"
+        )
+    raw_paths = raw_entry.get("dest_paths")
+    if not isinstance(raw_paths, list) or not raw_paths:
+        raise ValueError(f"{label}.dest_paths must be a non-empty list")
+    dest_paths = tuple(
+        _expect_rel_path(raw_path, f"{label}.dest_paths[]") for raw_path in raw_paths
+    )
+    return ForeignVendoredPolicy(
+        dest_repo=dest_repo,
+        src_repo=src_repo,
+        dest_paths=dest_paths,
+        comment=_expect_str_or_none(raw_entry.get("comment"), f"{label}.comment"),
+    )
+
+
 @lru_cache(maxsize=1)
 def load_policy() -> VendoringPolicy:
     raw_top = _expect_dict(
         json.loads(_POLICY_PATH.read_text(encoding="utf-8")), "vendoring policy"
     )
-    _unexpected_keys(raw_top, {"comment", "global", "repos", "overrides"}, "policy")
+    _unexpected_keys(
+        raw_top,
+        {"comment", "global", "repos", "overrides", "foreign_vendored"},
+        "policy",
+    )
 
     raw_global = _expect_dict(raw_top.get("global"), "policy.global")
     _unexpected_keys(raw_global, {"comment", "source_pkg_dirs"}, "policy.global")
@@ -269,16 +324,33 @@ def load_policy() -> VendoringPolicy:
         )
         for index, raw_override in enumerate(raw_overrides)
     )
+    raw_foreign = raw_top.get("foreign_vendored")
+    if not isinstance(raw_foreign, list):
+        raise ValueError("policy.foreign_vendored must be a list")
+    foreign_vendored = tuple(
+        _load_foreign_vendored(
+            index, _expect_dict(raw_entry, f"foreign_vendored[{index}]")
+        )
+        for index, raw_entry in enumerate(raw_foreign)
+    )
+
     seen_override_targets: set[tuple[str, str]] = set()
     for override in overrides:
         key = (override.dest_repo, override.dest_path)
         if key in seen_override_targets:
             raise ValueError(f"Duplicate override target: {key}")
         seen_override_targets.add(key)
+    for entry in foreign_vendored:
+        for dest_path in entry.dest_paths:
+            key = (entry.dest_repo, dest_path)
+            if key in seen_override_targets:
+                raise ValueError(f"Duplicate vendored target: {key}")
+            seen_override_targets.add(key)
 
     return VendoringPolicy(
         comment=_expect_str_or_none(raw_top.get("comment"), "policy.comment"),
         source_pkg_dirs=source_pkg_dirs,
         repos=repos,
         overrides=overrides,
+        foreign_vendored=foreign_vendored,
     )
