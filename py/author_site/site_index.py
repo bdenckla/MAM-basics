@@ -26,10 +26,15 @@ frozen target in ``in/wlc_redirect_pages.json``, so the stub for
 ``bdenckla.github.io/wlc-utils/index.html`` forwards to it, and following an old wlc-utils
 link is a real way to read it.  That is also why the file cannot simply be deleted -- the
 stub would 404 and ``py/tests/test_wlc_redirect_manifest.py`` would fail.  **Do not
-un-strand it by adding an entry here.**  It lists exactly the seven pages ``site_data``'s
-``_WLC`` already names, so such an entry would be redundant as well as a step back toward
-the section Ben had just removed.  A reachability sweep will keep reporting it; this
-paragraph is the answer.
+un-strand it by adding an entry here.**  When this paragraph was written, the seven pages
+it lists were exactly the pages ``site_data``'s ``_WLC`` then named; the same evening's
+Misc trim cut ``_WLC`` to four of the seven (420422, wlc-a-notes, goerwitz,
+almost-errors), and the other three (the two printed-Decalogue pages and
+ps17v14-double-tsinnor) stay reachable from this landing page through links on the
+goerwitz and almost-errors pages -- re-measured by the 2026-09-01 review's crawl, which
+reached every tracked gh-pages page except ``wlc/index.html`` itself.  So an entry here
+would still be redundant as well as a step back toward the section Ben had just removed.
+A reachability sweep will keep reporting it; this paragraph is the answer.
 
 NOT ``author.dollar_sub``.  Every other authored page here runs its text through
 ``mb_author.author``, whose ``_check_no_undollared`` RAISES on an un-``$``-prefixed

@@ -127,7 +127,7 @@ abbreviation it looks for, with zero hits.
 
 - **mgketer, the repo Ben named, is done on both counts already.** There is no
   `~/GitRepos/mgketer` — its tree lives under MAM-private — and `bdenckla/mgketer` was
-  **archived on GitHub on 2026-08-10**. Nothing left to do.
+  **archived on GitHub on 2026-08-27T00:28:51Z** (= 2026-08-26 20:28 EDT; GraphQL `archivedAt`, checked 2026-09-01 — this bullet said 2026-08-10 until then, the private-evacuation date standing in for the archive date). Nothing left to do.
 - **None of the six public repos whose Python was evacuated is a removal candidate**, because
   none was completely evacuated: only their Python left. Tracked-file counts today are
   book-of-job 784, UXLC-utils 780, holman-ketiv-qere 347, codex-index-aleppo 175,

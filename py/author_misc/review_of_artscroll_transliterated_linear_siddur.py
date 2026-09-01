@@ -13,8 +13,11 @@ the only record on this machine that the gist exists: a gist is invisible to
 
 THREE HEBREW WORDS ARE REORDERED, NOT REWRITTEN. The gist has its three
 rafe-bearing words -- the ones under the fourth, eleventh and twelfth
-headings -- in Unicode-normal mark order, which puts the rafe after the
-sheva. MAM-basics puts the rafe among the four marks with a declared place,
+headings -- with the rafe after the sheva. (Until 2026-09-01 this paragraph
+called that "Unicode-normal mark order", which fits only the dagesh-less
+cluster of u-vin'cho: in the clusters of had'vorim and t'muna the gist puts
+the dagesh first, an order that is neither Unicode-normal nor MAM-normal.)
+MAM-basics puts the rafe among the four marks with a declared place,
 before every other mark of the cluster (``mb_cmn/uni_denorm.py``, and the
 first section of this repo's ``CLAUDE.md``). The two orders hold the same
 characters and render identically; only the order differs. This page has all

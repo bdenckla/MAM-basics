@@ -76,8 +76,10 @@ Three things about it are worth knowing before you touch it:
    says, not defects. Do not run `uni_check` or `has_std_mark_order` over it, and never
    normalize on refresh — the files are byte-verbatim by design.
 3. **A mirror goes stale in a way `in/mam-ws/` does not.** The books move when Ben edits them;
-   the introduction moves when Avi Kadish does, unannounced — four of the thirteen pages were
-   edited in August 2026 alone. `manifest.json` beside the pages records each one's revision id
+   the introduction moves when Avi Kadish does, unannounced — five of the thirteen pages were
+   edited in August 2026 alone (the committed manifest's count; this said four until 2026-09-01,
+   from a drafting-time fetch predating the month's last two edits). `manifest.json` beside the
+   pages records each one's revision id
    and timestamp, so staleness is checkable without a network call.
 
 **`index-aleppo.mediawiki` and `index-leningrad.mediawiki` were never meant to match what

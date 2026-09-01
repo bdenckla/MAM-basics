@@ -352,7 +352,7 @@ Six things about the attachment, none of which the pair-per-row table could stat
    qualifier and a sigil joined by prepositions and no hyphen, saying what `מ"ק-ק` says. Numbers
    11:18 and Esther 9:9 do the same for an edition named in words, `במ"ק דפוס ונציה`.
 3. **Prefix letters attach to the front of the whole compound, not to the qualifier alone.**
-   `ו`, `ב`, `ל`, `ש` and `כ` all occur: `ומסורת-ל` (129 of the 139 on ל), `במ"ק-ק3`, `למ"ג-ק-מ`,
+   `ו`, `ב`, `ל`, `ש` and `כ` all occur: `ומסורת-ל` (129 of the 140 on ל), `במ"ק-ק3`, `למ"ג-ק-מ`,
    `שבמ"ס-ל`, `כשיטת-א`. Strip the prefix before looking a compound up.
 4. **Qualifiers compose, and the thing qualified need not be a manuscript.** `מ"ג-כתיב` and
    `מ"ג-קטנות` qualify Miqra'ot Gedolot, an edition with a row above. `ק-מ-כתיב`
@@ -652,8 +652,10 @@ so are `ב2` and `ל-מ`. A table-only parse reports all three as undecoded. (`�
 on 2026-08-27, in "Retired sigla" above, when it was resolved; it keeps its `###` heading too, and
 the other two are unchanged, so the warning stands as written for `ק-מ` and `ל-מ`.)
 
-Of 2,370 `expression_tokens`, 151 are documented after stripping a prefix letter and a trailing
-`?`. Most of the remainder is the prose noise the next section describes.
+Of 2,370 `expression_tokens`, 151 are documented after stripping a prefix letter, a trailing
+`?`, or both; the combined strip decides exactly one token, `(א?` — the rule stated here omitted
+that arm until 2026-09-01, and without it the count is 150. Most of the remainder is the prose
+noise the next section describes.
 
 **That 151 replaces a 177 that cannot be reproduced, and the reason is worth recording against the
 advice this section gives.** The 2026-08-26 run recorded 177 against the 2,363 `expression_tokens`

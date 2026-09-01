@@ -17,7 +17,9 @@ generalizes that one file to the whole introduction.
 
 WHAT IS MIRRORED, AND WHY THE SET IS DECLARED RATHER THAN DISCOVERED.  The thirteen
 pages of ``_SLUG_TO_TITLE`` below, which on 2026-08-31 were the whole of the
-introduction: 1,852,439 bytes of wikitext.  The set is written out here so the slugs
+introduction: 1,852,837 bytes of wikitext, the committed manifest's sum (this line said
+1,852,439 until 2026-09-01 -- a drafting-time fetch predating upstream edits of
+2026-08-30 and -31 to ch4 and the appendices).  The set is written out here so the slugs
 can be ASCII and stable, and ``_assert_declared_set_is_live_set`` then FAILS if the
 live set has gained or lost a page -- which is a finding about the introduction, and
 wants a human to choose a slug for the new page, not a silently-widened mirror.
@@ -45,8 +47,10 @@ network call.
 
 THE MIRROR IS A CONVENIENCE AND CAN BE STALE, which matters more here than for the
 books under ``in/mam-ws/``: those move when Ben edits them, the introduction moves when
-Avi Kadish does, without notice.  Four of the thirteen pages were edited in August 2026
-alone.  Read ``manifest.json``'s timestamps before treating a copy as current.
+Avi Kadish does, without notice.  Five of the thirteen pages were edited in August 2026
+alone (the manifest's count; this said four until 2026-09-01, for the same
+drafting-time-fetch reason as the byte figure above).  Read ``manifest.json``'s
+timestamps before treating a copy as current.
 
 A REFRESH OVER AN UNCHANGED WIKI PRODUCES NO DIFF, so any diff a refresh does produce is
 a real edit on Wikisource and is worth reading.  Verified 2026-08-31 by running this

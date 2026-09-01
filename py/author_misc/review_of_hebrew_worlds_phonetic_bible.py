@@ -12,9 +12,9 @@ invisible to ``gh repo list`` and its clone URL cannot be guessed from its name.
 
 One accent name is corrected rather than reproduced (Ben's decision,
 2026-08-31). The second bullet under the fourth chanted word gives the source
-word כׇּל־הַדְּבָרִ֥ים "with its accent", and the gist names that accent
+word כׇּל־הַדְּבָרִ֥ים "with its accent", and the gist names that accent
 tipḥa. Exodus 20:1 in ``in/mam-ws/A2-Exodus.json`` has merkha there; tipeḥa is
-the accent of the next chanted word, הָאֵ֖לֶּה. So this page says merkha, and
+the accent of the next chanted word, הָאֵ֖לֶּה. So this page says merkha, and
 the gist's revision history keeps what it said before.
 
 The remaining changes are three, all house style rather than rewording:
