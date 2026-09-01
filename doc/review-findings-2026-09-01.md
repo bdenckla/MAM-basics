@@ -307,6 +307,21 @@ after the fixes and is green at 969 / 5 / 65. Findings 1 and 5 are Ben's: the st
 branch wants a merge-or-reject decision, and the MAM-private vendored copy belongs to the
 private series. Findings 8 and 9 are recorded only.
 
+**Finding 1 was acted on 2026-09-01, hours after this doc landed.** Ben unarchived the cloud
+session that had cut the branch and had it complete its work: it merged
+`origin/claude/main-mega-cloud-test-859r4h` into main as `81fac84` (12:33 EDT, Claude-authored
+with full trailers). The merge message records that main had moved 45 commits since the branch
+was cut (exact: `git rev-list --count 67116e9..251b287` = 45), that of the branch's eight files
+main had touched only `DATA-LICENSES.md` — where the branch adds the `in/xml.xsd` row — and that
+the suite-and-mega verification of the combined tree was deferred to another session by Ben's
+instruction. This session did the suite half the same afternoon: **971 passed, 5 skipped, 65
+subtests** — 969 + 2, the 2 being `test_no_machine_paths_in_artifacts.py`'s — with ruff clean and
+black clean at 1,148 files. The four machine-absolute paths are gone from
+`out/accgram/research-oddballs.json`, `in/xml.xsd` is tracked, and the new lint is green over
+`out/` and `gh-pages/` with its one named exclusion. **The mega against the combined tree has not
+been run and is the open half of that deferred verification.** The remote branch still stands at
+`86c87d2`, fully merged now; deleting it, with finding 9's other stale refs, is still Ben's call.
+
 ## Open ends the window itself declares (not findings)
 
 Avi Kadish's same-evening Wikisource edits (Genesis 43:28 rewritten twice, adjustments at two
