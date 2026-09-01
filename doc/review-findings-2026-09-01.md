@@ -369,6 +369,14 @@ CRLF phantoms — generators that write without `newline=""` met the forest's fr
 and `git diff` shows zero content hunks in every one; (2) MAM-parsed's twelve call-graph SVGs,
 which this machine's graphviz 14.1.2 lays out differently than the committed 15.1.1 renders
 (`0128e69`) — an SVG diff from this machine is renderer skew until its graphviz is upgraded.
+(That upgrade happened later on 2026-09-01: winget took this machine from 14.1.2 to 16.0.0
+(20260814.1018), and MAM-parsed `b9c8a77` is the one-time re-render under 16.0.0, verified
+layout-only — node and edge identities, labels, tooltips, colors and fonts all unchanged. The
+skew now runs the other way: any machine still on an older graphviz, the 15.1.1 machine that
+rendered `0128e69`'s SVGs included, will see layout-only SVG diffs until it upgrades. `dot` is
+still not on this machine's PATH in shells predating the install; the renderer is found via
+`survey_dot.py`'s `_DOT_FALLBACK`, `C:\Program Files\Graphviz\bin\dot.exe`, which is where
+16.0.0 landed.)
 **Byte-identical everywhere else**, including `out/accgram/research-oddballs.json` — this run is
 the Windows half of the cross-machine proof of `86c87d2`'s display_path fix, the 2026-08-31 cloud
 run having been the Linux half — plus `out/sigil-inventory.json`, the MAM-simple / MAM-OSIS /
