@@ -13,10 +13,15 @@ from hkq_cmn.hebrew_text_tokens import (
 )
 from hkq_cmn.mam_plus_verse_data import verse_texts_by_location
 
-PLUS_DIR = paths.mam_parsed_plus_dir().resolve()
 TARGET_VERSE = ("Tsefaniah", 2, 9)
-OUTPUT_DIR = hkq_paths.out_dir()
-OUTPUT_PATH = OUTPUT_DIR / "final_hiriq_verse_text_report.json"
+
+# The plus-dir and output paths are resolved at CALL time, in find_final_hiriq_hits
+# and main, not as module constants: hkq_paths.out_dir() goes through require_sibling
+# and RAISES when the holman-ketiv-qere sibling is missing, and this module is
+# imported by py/tests/test_search_final_hiriq_verse_text.py, so an eager constant
+# made the suite uncollectable without that sibling.  Same reasoning as
+# hkq_cmn/qere_ending_search.py's sentinels and
+# read_books_from_mam_parsed_plain.py's (0314c6e).
 
 
 def book_names_for_plus_file(path: Path, plus_json: dict[str, object]) -> list[str]:
@@ -42,10 +47,11 @@ def is_final_hiriq_token(token: str) -> bool:
 
 
 def find_final_hiriq_hits() -> tuple[list[dict[str, object]], list[str]]:
+    plus_dir = paths.mam_parsed_plus_dir().resolve()
     hits: list[dict[str, object]] = []
     target_tokens: list[str] = []
 
-    for path in sorted(PLUS_DIR.glob("*.json")):
+    for path in sorted(plus_dir.glob("*.json")):
         with path.open("r", encoding="utf-8") as handle:
             plus_json = json.load(handle)
 
@@ -108,8 +114,10 @@ def main() -> None:
         "target_verse_final_hiriq_tokens": final_hiriq_target_tokens,
     }
 
-    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-    with open(OUTPUT_PATH, "w", encoding="utf-8", newline="") as handle:
+    output_dir = hkq_paths.out_dir()
+    output_dir.mkdir(parents=True, exist_ok=True)
+    output_path = output_dir / "final_hiriq_verse_text_report.json"
+    with open(output_path, "w", encoding="utf-8", newline="") as handle:
         json.dump(report, handle, ensure_ascii=False, indent=2)
 
     print(f"total_hits={len(hits)}")

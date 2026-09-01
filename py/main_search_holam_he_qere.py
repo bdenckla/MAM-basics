@@ -11,9 +11,6 @@ import sys
 
 from mb_cmn.hebrew_points import XOLAM
 from hkq_cmn.qere_ending_search import (
-    DEFAULT_MAM_BASICS_QERE_WORDS_PATH,
-    DEFAULT_MAM_PARSED_PLUS_DIR,
-    DEFAULT_OUTPUT_DIR,
     QereEndingSearchSpec,
     build_ending_pattern_report,
     load_mpu_hits_for_spec,
@@ -22,15 +19,18 @@ from hkq_cmn.qere_ending_search import (
 )
 
 # mpu = MAM-parsed-plus.
+#
+# The DEFAULT_* constants this file used to re-export as MAM_PARSED_PLUS_DIR,
+# MAM_BASICS_QERE_WORDS_PATH and OUTPUT_PATH are gone: qere_ending_search resolves
+# its paths at call time now (see its module-top comment), nothing here read the
+# three aliases, and importing the eager constants was itself an import-time
+# resolution of the holman-ketiv-qere sibling.
 SEARCH_SPEC = QereEndingSearchSpec(
     slug="holam_he",
     label="Holam-he qere endings",
     output_file_name="holam_he_qere_report.json",
     vowel_only_suffixes=(XOLAM + "ה",),
 )
-MAM_PARSED_PLUS_DIR = DEFAULT_MAM_PARSED_PLUS_DIR
-MAM_BASICS_QERE_WORDS_PATH = DEFAULT_MAM_BASICS_QERE_WORDS_PATH
-OUTPUT_PATH = DEFAULT_OUTPUT_DIR / SEARCH_SPEC.output_file_name
 
 
 def is_holam_he_word(word: str) -> bool:

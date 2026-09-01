@@ -14,10 +14,15 @@ from hkq_cmn.qere_projection import (
     word_atoms_from_qere_atoms,
 )
 
-DEFAULT_MAM_PARSED_PLUS_DIR = paths.mam_parsed_plus_dir()
-DEFAULT_MAM_BASICS_QERE_WORDS_PATH = hkq_paths.mam_qere_words_path()
-DEFAULT_OUTPUT_DIR = hkq_paths.out_dir()
 # mpu = MAM-parsed-plus.
+#
+# The path defaults below are None sentinels resolved at CALL time, not module-level
+# constants: hkq_paths.out_dir() goes through require_sibling and RAISES when the
+# holman-ketiv-qere sibling is missing, and this module is imported by
+# py/tests/test_qere_ending_search.py, so an eager default made the suite
+# uncollectable without that sibling.  The MAM-parsed and qere-words defaults only
+# compose a path, but they take the same sentinel so the signatures read one way.
+# Same sentinel and same reason as read_books_from_mam_parsed_plain.py's (0314c6e).
 
 
 @dataclass(frozen=True)
@@ -36,8 +41,10 @@ class QereEndingSearchSpec:
 
 def load_mpu_hits_for_spec(
     spec: QereEndingSearchSpec,
-    mam_parsed_plus_dir: Path = DEFAULT_MAM_PARSED_PLUS_DIR,
+    mam_parsed_plus_dir: Path | None = None,
 ) -> list[dict[str, object]]:
+    if mam_parsed_plus_dir is None:
+        mam_parsed_plus_dir = paths.mam_parsed_plus_dir()
     hits: list[dict[str, object]] = []
 
     for plus_path in sorted(mam_parsed_plus_dir.glob("*.json")):
@@ -99,8 +106,10 @@ def load_mpu_hits_for_spec(
 
 def load_wordlist_hits_for_spec(
     spec: QereEndingSearchSpec,
-    mam_basics_qere_words_path: Path = DEFAULT_MAM_BASICS_QERE_WORDS_PATH,
+    mam_basics_qere_words_path: Path | None = None,
 ) -> list[dict[str, str]]:
+    if mam_basics_qere_words_path is None:
+        mam_basics_qere_words_path = hkq_paths.mam_qere_words_path()
     with open(mam_basics_qere_words_path, encoding="utf-8") as handle:
         words = json.load(handle)
     if not isinstance(words, list):
@@ -208,9 +217,10 @@ def verse_indexed_hits(hits: list[dict[str, object]]) -> list[dict[str, object]]
 
 def build_ending_pattern_report(
     spec: QereEndingSearchSpec,
-    mam_parsed_plus_dir: Path = DEFAULT_MAM_PARSED_PLUS_DIR,
-    mam_basics_qere_words_path: Path = DEFAULT_MAM_BASICS_QERE_WORDS_PATH,
+    mam_parsed_plus_dir: Path | None = None,
+    mam_basics_qere_words_path: Path | None = None,
 ) -> dict[str, object]:
+    # None forwards to the two loaders, which resolve it; see the module-top comment.
     mpu_hits = load_mpu_hits_for_spec(spec, mam_parsed_plus_dir=mam_parsed_plus_dir)
     wordlist_hits = load_wordlist_hits_for_spec(
         spec,
@@ -268,10 +278,12 @@ def build_ending_pattern_report(
 
 def write_ending_pattern_report(
     spec: QereEndingSearchSpec,
-    output_dir: Path = DEFAULT_OUTPUT_DIR,
-    mam_parsed_plus_dir: Path = DEFAULT_MAM_PARSED_PLUS_DIR,
-    mam_basics_qere_words_path: Path = DEFAULT_MAM_BASICS_QERE_WORDS_PATH,
+    output_dir: Path | None = None,
+    mam_parsed_plus_dir: Path | None = None,
+    mam_basics_qere_words_path: Path | None = None,
 ) -> tuple[Path, dict[str, object]]:
+    if output_dir is None:
+        output_dir = hkq_paths.out_dir()
     report = build_ending_pattern_report(
         spec,
         mam_parsed_plus_dir=mam_parsed_plus_dir,
