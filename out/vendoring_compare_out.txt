@@ -9,7 +9,7 @@ hebrew_letters.py                          MAM-simple                 py-example
 hebrew_points.py                           MAM-simple                 py-examples/mb_cmn/hebrew_points.py                     identical      2026-05-01   generated
 hebrew_punctuation.py                      MAM-simple                 py-examples/mb_cmn/hebrew_punctuation.py                identical      2026-05-01   generated
 my_utils.py                                MAM-simple                 py-examples/mb_cmn/my_utils.py                          identical      2026-07-15   generated
-provenance.py                              MAM-simple                 py-examples/mb_cmn/provenance.py                        identical      2026-08-11   generated
+provenance.py                              MAM-simple                 py-examples/mb_cmn/provenance.py                        identical      2026-08-31   generated
 shrink.py                                  MAM-simple                 py-examples/mb_cmn/shrink.py                            identical      2026-05-01   generated
 str_defs.py                                MAM-simple                 py-examples/mb_cmn/str_defs.py                          identical      2026-05-01   generated
 template_names.py                          MAM-simple                 py-examples/mb_cmn/template_names.py                    identical      2026-08-25   generated
@@ -43,7 +43,7 @@ osis_handlers.py                           MAM-simple                 py-example
 osis_index_html.py                         MAM-simple                 py-examples/osis/osis_index_html.py                     identical      2026-07-06   generated
 osis_namespace.py                          MAM-simple                 py-examples/osis/osis_namespace.py                      identical      2026-05-01   generated
 osis_runner.py                             MAM-simple                 py-examples/osis/osis_runner.py                         identical      2026-05-07   generated
-cantsys.py                                 diffable-pointed-hebrew    mb_cmn/cantsys.py                                       eol-only       2026-04-27   unmeasured
+cantsys.py                                 diffable-pointed-hebrew    mb_cmn/cantsys.py                                       identical      2026-04-27   unmeasured
 file_io.py                                 diffable-pointed-hebrew    mb_cmn/file_io.py                                       DIFFERS        2026-04-27   unmeasured
 hebrew_accents.py                          diffable-pointed-hebrew    mb_cmn/hebrew_accents.py                                DIFFERS        2026-04-27   unmeasured
 hebrew_letters.py                          diffable-pointed-hebrew    mb_cmn/hebrew_letters.py                                DIFFERS        2026-04-27   unmeasured
@@ -81,7 +81,7 @@ minirow.py                                 MAM-private                al-hatorah
 mpplus_schema_guard.py                     MAM-private                al-hatorah/py/mb_cmn/mpplus_schema_guard.py             identical      2026-08-10   
 my_diffs.py                                MAM-private                al-hatorah/py/mb_cmn/my_diffs.py                        identical      2026-08-10   
 my_utils.py                                MAM-private                al-hatorah/py/mb_cmn/my_utils.py                        identical      2026-08-10   
-provenance.py                              MAM-private                al-hatorah/py/mb_cmn/provenance.py                      identical      2026-08-11   
+provenance.py                              MAM-private                al-hatorah/py/mb_cmn/provenance.py                      identical      2026-09-01   
 read_books_from_mam_parsed_plus.py         MAM-private                al-hatorah/py/mb_cmn/read_books_from_mam_parsed_plus.py identical      2026-08-10   
 shrink.py                                  MAM-private                al-hatorah/py/mb_cmn/shrink.py                          identical      2026-08-10   
 str_defs.py                                MAM-private                al-hatorah/py/mb_cmn/str_defs.py                        identical      2026-08-10   

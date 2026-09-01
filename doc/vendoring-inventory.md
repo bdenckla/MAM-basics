@@ -25,7 +25,7 @@ in the destination; `stale` is measured and behind; `unmeasured` is a copy nobod
 | hebrew_letter_names.py, hebrew_letter_words.py, letter_small_job.py, mb_html.py, mb_html_get_lines.py, my_utils_for_mainish.py, osis_book_abbrevs.py, slh_description.py, styles_authored.py, styles_mam_parsed.py, styles_mam_with_doc.py, verse_and_friends.py, write_utils.py, ws_urls.py | mb_misc | MAM-simple | py-examples/mb_misc | copy_script | mixed | no | generated | identical |
 | mam4ajf_handlers.py, mam4sef_handlers.py, mam4sef_or_ajf.py, mam4sef_runners.py, sef_cmn.py, sef_header.py, write_utils_sef_or_ajf.py | mb_sefaria | MAM-simple | py-examples/mb_sefaria | copy_script | mixed | no | generated | identical |
 | osis_handlers.py, osis_index_html.py, osis_namespace.py, osis_runner.py | osis | MAM-simple | py-examples/osis | copy_script | mixed | no | generated | identical |
-| cantsys.py | mb_cmn | diffable-pointed-hebrew | mb_cmn/cantsys.py | unknown | 2026-04-27 | no | unmeasured | eol-only |
+| cantsys.py | mb_cmn | diffable-pointed-hebrew | mb_cmn/cantsys.py | unknown | 2026-04-27 | no | unmeasured | identical |
 | file_io.py, hebrew_accents.py, hebrew_letters.py, hebrew_points.py, hebrew_punctuation.py, str_defs.py, uni_heb.py | mb_cmn | diffable-pointed-hebrew | mb_cmn | unknown | 2026-04-27 | no | unmeasured | DIFFERS |
 
 *10 rows, 97 files. 0 files ignored.*
