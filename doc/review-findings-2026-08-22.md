@@ -1,5 +1,7 @@
 # Findings of the 2026-08-22 review of the work since 2026-08-18
 
+State: acted on 2026-08-22
+
 Filed as [#232](https://github.com/bdenckla/MAM-basics/issues/232), which is a thin pointer to
 this doc. The review covered **every clone directly under `~/GitRepos`** — committed work from
 the 2026-08-18 review's anchors (MAM-basics `6a6e600`, MAM-private `a1b489e`, UXLC-utils

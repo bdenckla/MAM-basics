@@ -1,5 +1,7 @@
 # Findings of the 2026-07-29 review of the week's committed work
 
+State: acted on 2026-07-30
+
 Filed as [#87](https://github.com/bdenckla/wlc-utils/issues/87), which is a thin pointer to this
 doc. The review covered the range 80ca0df..0ab2c6a — the 91 commits of 2026-07-22 through
 2026-07-29 — in four streams: the two new surveys (maqaf-nonfinal-accents and

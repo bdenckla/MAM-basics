@@ -1,5 +1,20 @@
 # Findings of the 2026-09-01 review of the public repos since 2026-08-26
 
+State: acted on 2026-09-01, except the mega run against the merged tree
+
+**This is the last review to file a tracking issue. The series is doc-only from here** — Ben's
+decision, 2026-09-01: *"are the (thin?) github issues corresponding to doc/review-findings-*.md
+serving any purpose? I'm not looking at them."* The seven issues the series filed (wlc-utils#87,
+then MAM-basics #219, #228, #231, #232, #261, #263) carried nothing the doc beside them did not,
+every comment on all seven was written by an agent from Ben's account, and only #219 was ever
+adopted as a short citation handle — its five successors are cited from nowhere in any repo. The
+open/closed state was the one thing an issue held that the doc did not, and the `State:` line
+above is the replacement, the same line the plans got on 2026-08-29 (`4f3fed2`). **A review that
+finds real work still files a real issue with a real body** — #233 is the shape, spun out of the
+2026-08-22 review; what is retired is the thin pointer, not issue-filing. The reasoning is
+recorded with the doc/ standard, in `py/repo_util/check_repo_standards.py`. #261 and #263 were
+closed the same day with a comment saying so; the five already-closed issues were left alone.
+
 Filed as [#263](https://github.com/bdenckla/MAM-basics/issues/263), which is a thin pointer to
 this doc. Second review under the public-repos-only scope: it covered every public clone directly
 under `~/GitRepos` — committed work from the 2026-08-26 review's anchors (MAM-basics `363fe41`,

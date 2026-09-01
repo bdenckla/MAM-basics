@@ -1,5 +1,7 @@
 # Findings of the 2026-08-03 review of the work since 2026-07-30
 
+State: acted on 2026-08-04, all fifteen items
+
 Filed as [#219](https://github.com/bdenckla/MAM-basics/issues/219), which is a thin pointer to
 this doc. The review covered **every clone directly under `~/GitRepos`** — commits from
 2026-07-30T00:00 through 2026-08-03 ~23:00 (about 155 commits across 20 repos with activity)

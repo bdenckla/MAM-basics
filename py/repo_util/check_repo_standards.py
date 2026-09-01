@@ -284,6 +284,29 @@ Phase 7 was done at 15:20 on 2026-08-27 and its record was not written until
 phase unstarted.  A plan file is not an oracle for its own state unless
 something keeps it one.
 
+THE `State:` LINE ON doc/review-findings-*.md, added 2026-09-01 to all
+seven, same position and same purpose: line 3, under the H1, `acted on
+<date>` plus any clause naming what is not.  It arrived with the retirement
+of the tracking issue each review used to file.  From 2026-07-29 to
+2026-09-01 every review filed one -- wlc-utils#87, then MAM-basics #219,
+#228, #231, #232, #261, #263 -- whose body was a thin pointer to the doc.
+Ben, 2026-09-01: "are the (thin?) github issues corresponding to
+doc/review-findings-*.md serving any purpose? I'm not looking at them."
+They were not.  Every comment on all seven was agent-written from Ben's
+account, so the thread was one agent reporting to the next; nothing
+mechanical read them; and of the seven only #219 was ever adopted as a
+short citation handle (ten sites in this repo, because the 2026-08-03
+review was the one with numbered items), its five successors cited from
+nowhere at all.  The open/closed state was the single thing the issue held
+that the doc did not, and the State line is that, in the file a reader is
+already in.  #261 and #263 were closed on 2026-09-01 with a comment saying
+why; the other five were already closed.
+
+What is retired is the THIN POINTER, not issue-filing.  A review that finds
+work somebody must do still files a real issue with a real body, and #233
+is the shape: spun out of the 2026-08-22 review, 6.8 KB, open on its own
+merits.  The test is whether the issue says anything the doc does not.
+
 Deliberately NOT checked -- black version-pinning. `black` is intentionally left
 unpinned in these repos, and a version bump's reformatting is wanted, not a
 hazard to be prevented: when a new black wants to touch files you didn't edit,

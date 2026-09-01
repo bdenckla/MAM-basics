@@ -1,5 +1,7 @@
 # Findings of the 2026-08-26 review of the public repos since 2026-08-22
 
+State: acted on 2026-08-27
+
 Filed as [#261](https://github.com/bdenckla/MAM-basics/issues/261), which is a thin pointer to
 this doc. This is the first review under the public-repos-only scope (Ben's decision, 2026-08-26,
 recorded at the end of `doc/review-findings-2026-08-22.md`): it covered **every public clone
