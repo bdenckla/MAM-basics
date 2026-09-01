@@ -319,8 +319,15 @@ subtests** — 969 + 2, the 2 being `test_no_machine_paths_in_artifacts.py`'s �
 black clean at 1,148 files. The four machine-absolute paths are gone from
 `out/accgram/research-oddballs.json`, `in/xml.xsd` is tracked, and the new lint is green over
 `out/` and `gh-pages/` with its one named exclusion. **The mega against the combined tree has not
-been run and is the open half of that deferred verification.** The remote branch still stands at
-`86c87d2`, fully merged now; deleting it, with finding 9's other stale refs, is still Ben's call.
+been run and is the open half of that deferred verification.** The remote branch stood at
+`86c87d2`, fully merged, until later that same day, when Ben had the stale refs cleaned up —
+that branch and finding 9's whole list: the three MAM-basics remote branches
+(`claude/main-mega-cloud-test-859r4h`, `claude/docs-unification-plan-ip01h5`, and
+`copilot/fix-issue-127`, whose one attached PR, #129, was already MERGED, so nothing was
+closed), the four merged local branches here, and the merged
+`feature/provenance-sidecar-booklists-underscore` in MAM-for-Sefaria and in MAM-simple. Every
+tip was verified an ancestor of its repo's main first, every local deletion was accepted by
+plain `branch -d`, and a fresh sweep of all 18 clones reports only main, locally and on origin.
 
 ## Open ends the window itself declares (not findings)
 
