@@ -32,7 +32,15 @@ MAM_PARSED_DIR = str(paths.sibling_repo("MAM-parsed"))
 
 
 def _git_show(rev, path):
-    """Read a file from a specific git revision of MAM-parsed."""
+    """Read a file from a specific git revision of MAM-parsed.
+
+    RAISES RATHER THAN RETURNING EMPTY.  Every caller passes a path that
+    ``_list_plus_files`` has just listed at this same revision, so the file is in that
+    tree and a non-zero exit here means git could not read what it had just enumerated
+    -- not that the book is absent from that release.  This returned ``None`` on failure
+    until 2026-08-31, and ``diff_all_books`` skipped the pair, which is half of how a
+    whole release could be reported as "0 raw changes found"; see ``_list_plus_files``.
+    """
     result = subprocess.run(
         ["git", "-C", MAM_PARSED_DIR, "show", f"{rev}:{path}"],
         capture_output=True,
@@ -40,7 +48,10 @@ def _git_show(rev, path):
         encoding="utf-8",
     )
     if result.returncode != 0:
-        return None
+        raise RuntimeError(
+            f"git show {rev}:{path} failed in {MAM_PARSED_DIR}"
+            f" (exit {result.returncode}): {result.stderr.strip()}"
+        )
     return result.stdout
 
 
@@ -78,14 +89,25 @@ def _canonicalize_template_names(node):
 
 
 def _git_show_json(rev, path):
-    text = _git_show(rev, path)
-    if text is None:
-        return None
-    return _canonicalize_template_names(json.loads(text))
+    return _canonicalize_template_names(json.loads(_git_show(rev, path)))
 
 
 def _list_plus_files(rev):
-    """List plus/ filenames (without the 'plus/' prefix) at a revision."""
+    """List plus/ filenames (without the 'plus/' prefix) at a revision.
+
+    AN UNREADABLE REVISION IS A HARD ERROR, NOT AN EMPTY RELEASE.  This ignored
+    ``returncode`` until 2026-08-31, so a revision git could not resolve produced no
+    output, an empty file list, no matched pairs and therefore no diffs -- and the
+    change-log report for that release was written out saying "0 changes found", which
+    is indistinguishable from a release that genuinely changed nothing.
+
+    A SHALLOW CLONE IS THE WAY IN, and it is not exotic: the sibling clone in a cloud
+    session is made with ``--depth 1``, which puts every release boundary in
+    MAM-with-doc's releases.json outside the history.  On 2026-08-31 that wrote five
+    falsified reports before an unrelated ``check=True`` two calls later happened to
+    stop the run.  The tracked generated artifact is this repo's test (CLAUDE.md), so a
+    generator that reports zero when it cannot see is worse than one that crashes.
+    """
     result = subprocess.run(
         [
             "git",
@@ -102,8 +124,22 @@ def _list_plus_files(rev):
         text=True,
         encoding="utf-8",
     )
+    if result.returncode != 0:
+        raise RuntimeError(
+            f"git ls-tree {rev} plus/ failed in {MAM_PARSED_DIR}"
+            f" (exit {result.returncode}): {result.stderr.strip()}\n"
+            f"If that clone is shallow, deepen it:"
+            f" git -C {MAM_PARSED_DIR} fetch --depth=2000 origin"
+        )
     lines = result.stdout.strip().split("\n")
-    return [line.strip().removeprefix("plus/") for line in lines if line.strip()]
+    filenames = [line.strip().removeprefix("plus/") for line in lines if line.strip()]
+    if not filenames:
+        raise RuntimeError(
+            f"no plus/ files at revision {rev} in {MAM_PARSED_DIR}."
+            f" That revision resolves but its tree has no plus/ directory,"
+            f" so there is nothing to diff against."
+        )
+    return filenames
 
 
 # ── Book-level diffing ───────────────────────────────────────
@@ -243,9 +279,10 @@ def diff_all_books(old_rev, new_rev):
     for stem, old_filename, new_filename in matched_plus_file_pairs(
         old_files, new_files
     ):
+        # matched_plus_file_pairs yields only stems present at BOTH revisions, and
+        # _git_show now raises rather than returning None, so there is no
+        # legitimately-absent case left to skip here.
         old_json = _git_show_json(old_rev, f"plus/{old_filename}")
         new_json = _git_show_json(new_rev, f"plus/{new_filename}")
-        if old_json is None or new_json is None:
-            continue
         all_diffs.extend(_diff_one_file(old_json, new_json, stem))
     return all_diffs

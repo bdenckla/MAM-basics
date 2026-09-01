@@ -11,6 +11,11 @@ _PATHS = {
     "header_path": str(paths.sibling_repo("MAM-OSIS") / "header.xml"),
     "osis_output_path": str(paths.sibling_repo("MAM-OSIS") / "mapm.osis.xml"),
     "xsd_path": str(paths.repo_root() / "in" / "osisCore.2.1.1-cw6.xsd"),
+    # The XSD above imports the XML namespace's schema from w3.org by absolute URL.
+    # Pointing that import at our vendored copy is what lets OSIS validation run with
+    # no network at all; see osis_runner._XmlNamespaceXsdResolver for the failure it
+    # replaces.
+    "xml_xsd_path": str(paths.repo_root() / "in" / "xml.xsd"),
     "index_html_dir": str(paths.sibling_repo("MAM-OSIS") / "gh-pages"),
 }
 

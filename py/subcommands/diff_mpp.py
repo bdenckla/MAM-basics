@@ -49,12 +49,19 @@ PRESERVED_CHANGE_LOG_ARTIFACTS = (
 
 
 def _commit_date(rev):
-    """Return the commit date (YYYY-MM-DD) for a revision in MAM-parsed."""
+    """Return the commit date (YYYY-MM-DD) for a revision in MAM-parsed.
+
+    Checked, because the date lands in the report's own heading: an unresolvable
+    revision used to return "" here and the report was written with a blank date rather
+    than not written at all.  Same 2026-08-31 finding as mpplus_extract._list_plus_files,
+    where the shallow-clone case is set out.
+    """
     result = subprocess.run(
         ["git", "-C", MAM_PARSED_DIR, "log", "-1", "--format=%cs", rev],
         capture_output=True,
         text=True,
         encoding="utf-8",
+        check=True,
     )
     return result.stdout.strip()
 
