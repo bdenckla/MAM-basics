@@ -1,6 +1,6 @@
 # Findings of the 2026-09-01 review of the public repos since 2026-08-26
 
-State: acted on 2026-09-01, except the mega run against the merged tree
+State: acted on 2026-09-01
 
 **This is the last review to file a tracking issue. The series is doc-only from here** — Ben's
 decision, 2026-09-01: *"are the (thin?) github issues corresponding to doc/review-findings-*.md
@@ -343,6 +343,52 @@ closed), the four merged local branches here, and the merged
 `feature/provenance-sidecar-booklists-underscore` in MAM-for-Sefaria and in MAM-simple. Every
 tip was verified an ancestor of its repo's main first, every local deletion was accepted by
 plain `branch -d`, and a fresh sweep of all 18 clones reports only main, locally and on origin.
+
+**The mega half was discharged later that same day, in the worktree forest's first use, and the
+State line above lost its "except" clause with it.** The forest — worktrees at
+`C:\Users\BenDe\Forests\review-2026-09-01\`, one per repo the mega or the suite resolves, each on
+branch `forest/review-2026-09-01`, every command run with the primary clone's venv by absolute
+path — was commissioned by Ben for this run. Built with ten members, it taught its first lesson
+before the mega started: membership had been derived from what the suite *collects*, and
+`test_h_dot_below_nfc.py` resolves four more siblings at *run* time — book-of-job and the three
+codex-index repos — so those joined as worktrees eleven through fourteen, and the baseline then
+reproduced the suite half exactly (971 passed, 5 skipped, 65 subtests). `py/main_0_mega.py` then
+ran end to end, exit 0, the near-aleppo census 90 of 90 with Ben's same-day ktiv/qere census
+scripts included. The diff surface across all fourteen worktrees, read file by file, decomposed
+into three real diffs and two kinds of machine-skew noise. The three real diffs, each committed
+with its cause: (1) the vendoring artifacts' three row moves — finding 5's re-vendor date
+2026-09-01, MAM-simple `59b0776`'s 2026-08-31 date arriving, and diffable-pointed-hebrew's
+`cantsys.py` cell going eol-only → identical, the old cell having been measured against a working
+copy still CRLF on disk from before that repo's LF normalization (all four on-disk copies hash to
+the committed LF blob today); (2) MAM-simple's vendored `osis_runner.py` taking `205c64a`'s
+offline-xml.xsd change — the one content ripple of `81fac84`'s merge, and the kind of diff this
+mega existed to absorb; (3) MAM-with-doc's `unpinned-latest.html` end date moving to `46209cd`'s
+day, its "0 changes found" remaining truthful because the sigil replacement rewrote doc notes,
+not body text. The two kinds of noise, read and then restored rather than committed: (1) fifteen
+CRLF phantoms — generators that write without `newline=""` met the forest's fresh LF checkout,
+and `git diff` shows zero content hunks in every one; (2) MAM-parsed's twelve call-graph SVGs,
+which this machine's graphviz 14.1.2 lays out differently than the committed 15.1.1 renders
+(`0128e69`) — an SVG diff from this machine is renderer skew until its graphviz is upgraded.
+**Byte-identical everywhere else**, including `out/accgram/research-oddballs.json` — this run is
+the Windows half of the cross-machine proof of `86c87d2`'s display_path fix, the 2026-08-31 cloud
+run having been the Linux half — plus `out/sigil-inventory.json`, the MAM-simple / MAM-OSIS /
+MAM-for-Sefaria corpus trees, and every near-aleppo golden. Ben answered the session's four
+decisions live: (1) **no** to folding the Wikisource corpus refresh into this run, so Avi
+Kadish's 2026-08-27 edits remain the next refresh's known-cause diff and that refresh will want a
+mega of its own; (2) **yes** to aligning `misc/requirements-venv-setup-windows.ps1`'s body to the
+repo-root `.venv` (`5f3d7f4`); (3) **delete** `out/accgram/goerwitz-stderr/_summary.stderr.json`
+and its lint carve-out (`4386f4a`); (4) the Taamey_D exclusion **belongs in
+`in/vendoring_policy.json`**, which gained a `foreign_vendored` section for copies whose source
+repo is not MAM-basics (`1761d5c`). Alongside, the two qere-search modules stopped resolving
+holman-ketiv-qere at import time (`297f7e5`, in `0314c6e`'s shape; the suite now collects all 976
+tests with that sibling pointed at nothing). Closing state: 971 / 5 / 65 again over the finished
+work, ruff clean, black clean at 1,148 files; all fourteen forest branches merged into their
+primaries' mains and pushed — MAM-private's merge met three newer same-day commits of Ben's and
+produced a true merge commit (`dc08041`), after which the census's own diff mode still reports
+90 of 90 matched. One process note, since this series audits its own history: three MAM-basics
+commits were re-cut before any push when an already-staged deletion rode into the venv-script
+commit — the never-pushed originals were soft-reset and recommitted with the same messages and
+content, nothing lost.
 
 ## Open ends the window itself declares (not findings)
 
