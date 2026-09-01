@@ -1,4 +1,4 @@
-"""Lint: the landing page's own links, and the ten titles it copies from other pages.
+"""Lint: the landing page's own links, and the titles it copies from other pages.
 
 WHY THIS EARNS ITS PLACE.  ``doc/agent-planning-principles.md`` allows two test shapes, and
 this is the second: a mechanical lint over the tree, both sides derived from tracked source,
@@ -26,7 +26,9 @@ headed "Pages published from this repository" used to be built by an
 files, so its links named a tracked page BY CONSTRUCTION and this file deliberately let them
 be.  Ben deleted that section on 2026-08-31 and asked for the pages it reached to be
 distributed to the authored sections instead, so the four that moved into ``site_data``'s
-``_WLC`` and ``_MISC`` are typed links now, and are checked here like every other typed link.
+``_WLC`` and ``_MISC`` became typed links, checked here like every other typed link.  Three
+of those four left the page again with that day's Misc trim, which cut every Misc entry
+another listed document reaches; ``almost-errors`` is the one that stayed.
 
 TRACKED, NOT MERELY PRESENT.  ``.github/workflows/pages.yml`` deploys what is committed, so
 a link to a generated-but-untracked page would 404 for every reader while resolving fine on
@@ -51,9 +53,10 @@ _PAGES_PREFIX = "gh-pages/"
 _MISC_MODULE_DIR = "py/author_misc"
 _TITLE_RE = re.compile(r'^_TITLE = "(.*)"$', re.M)
 
-# document-index carried 25 links and this page carries more; if the walk ever returns a
-# handful, it is walking the wrong thing.
-_MIN_AUTHORED_ANCHORS = 30
+# document-index carried 25 links and this page carries 28 after the 2026-08-31 Misc trim;
+# if the walk ever returns a handful, it is walking the wrong thing.  Do not raise this to
+# the exact count: it is a floor guarding against a broken walk, not an inventory.
+_MIN_AUTHORED_ANCHORS = 25
 
 
 def _tracked_pages(repo_root: Path) -> set[str]:
@@ -114,11 +117,12 @@ def test_every_in_site_link_names_a_tracked_page():
 def test_the_misc_titles_are_the_pages_own_titles():
     """Each Misc entry's link text is still the _TITLE of the module that renders it."""
     modules = site_data.MISC_SOURCE_MODULES
-    assert len(modules) == 10, modules
-    # The Misc section is wider than these ten -- it also holds three accgram pages
-    # published from this repo, whose link text copies no module's _TITLE.  Zipping the
-    # whole section against the ten would compare an accgram entry to a MAM-with-doc
-    # module and report drift that is the pairing's fault, so pair with the filtered half.
+    assert len(modules) == 2, modules
+    # Every Misc entry is a MAM-with-doc page since the 2026-08-31 trim, so the filtered
+    # half is the whole section today.  Pair with the filtered half anyway: Misc has twice
+    # held an entry naming a page published from this repo, whose link text copies no
+    # module's _TITLE, and zipping the whole section against the modules would then compare
+    # such an entry to a MAM-with-doc module and report drift that is the pairing's fault.
     entries = site_data.MISC_MWD_ENTRIES
     assert len(entries) == len(modules)
     misc = next(one for one in site_data.BY_ME if one.heading == "Misc")
@@ -134,6 +138,7 @@ def test_the_misc_titles_are_the_pages_own_titles():
             drifted.append((module, match.group(1), entry.anchor.text))
     assert not drifted, (
         "Misc entries whose link text no longer matches the title of the page they name:"
-        f" {drifted}. Copy the module's _TITLE rather than editing it here -- these"
-        " titles carry Hebrew, a precomposed U+1E24 and curly apostrophes."
+        f" {drifted}. Copy the module's _TITLE rather than editing it here, and copy it"
+        " rather than retyping it: a py/author_misc/ title can carry Hebrew, a precomposed"
+        " U+1E24 or a curly apostrophe."
     )

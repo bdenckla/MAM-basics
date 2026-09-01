@@ -12,9 +12,11 @@ the 2026-08-22 decision recorded in ``doc/PLAN-evacuate-python-programme.md``.  
 that section on 2026-08-31, having disliked it: its single entry sent a reader to
 ``gh-pages/wlc/index.html`` to find seven pages, four of which this page did not name
 anywhere else, and he asked for those four to be distributed to the sections above instead.
-They are in ``site_data``'s ``_WLC`` and ``_MISC`` now, and ``published_subtrees.py`` was deleted with the
-section it existed for -- so a subtree published from here is named by an authored entry or
-it is named nowhere, exactly as ``gh-pages/unicode-proposals.html`` always was.
+``published_subtrees.py`` was deleted with the section it existed for -- so a subtree
+published from here is named by an authored entry or it is named nowhere, exactly as
+``gh-pages/unicode-proposals.html`` always was.  Three of the four distributed pages left
+the page again later that day, when Ben trimmed ``site_data``'s ``_MISC`` to the entries no
+other listed document reaches; ``almost-errors`` stayed, in ``_WLC``.
 
 ``gh-pages/wlc/index.html`` IS LINKED FROM NO PAGE NOW, AND THAT IS SETTLED.  Removing the
 section left it reachable from nothing on this site, and Ben's rule the same day is that a
@@ -152,11 +154,13 @@ def _part(part: Part):
 def _rtl_split(text: str):
     """Wrap each Hebrew run of ``text`` in a ``dir="rtl"`` span, leaving the rest alone.
 
-    Two of the ten Misc titles embed a Hebrew word in an English phrase, and one Latin
-    title does not.  Declaring the direction of the Hebrew run says what the fragment is,
-    which is what CLAUDE.md asks for; declaring it on the whole list item would be a claim
-    about the English too.  Doing it here rather than in the data keeps site_data.py free
-    of rendering, and makes the rule apply to any Hebrew that arrives later.
+    Three Misc titles embedded a Hebrew word in an English phrase until the 2026-08-31
+    trim cut all three, so no title the page carries today holds any Hebrew at all and
+    this function wraps nothing.  It stays because the rule it applies is the site's, not
+    those three titles': declaring the direction of a Hebrew run says what the fragment is,
+    which is what CLAUDE.md asks for, where declaring it on the whole list item would be a
+    claim about the English too.  Doing it here rather than in the data keeps site_data.py
+    free of rendering, and makes the rule apply to any Hebrew that arrives later.
     """
     parts = [
         mb_html.span(run, {"dir": "rtl"}) if _is_hebrew(run) else run

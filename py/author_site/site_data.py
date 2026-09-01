@@ -14,15 +14,21 @@ visible in the shape of this file:
   already name were added, and the whole file is authored now, with no derived half.  All
   four went to ``_WLC`` first; the same day Ben moved three of them to ``_MISC``, not
   being WLC-specific, and that section's own comment has the counts behind it.
-* **Flat.**  Ben, 2026-08-31, asked for "a 'misc' section with links to those 10
-  documents" rather than a link to ``MAM-with-doc/misc/index.html``, so that reaching any
-  of his documents takes one click from here and not two.  ``_MISC`` is that section.
+* **Flat, then trimmed.**  Ben, 2026-08-31, asked for "a 'misc' section with links to
+  those 10 documents" rather than a link to ``MAM-with-doc/misc/index.html``, so that
+  reaching any of his documents took one click from here and not two.  Later the same day
+  he asked for the section to be trimmed "down to documents not reachable from another,
+  document already listed", which cut eleven of its thirteen entries.  ``_MISC``'s own
+  comment names each of the eleven and the page that reaches it.
 
-THE FOUR PAGES DISTRIBUTED ON 2026-08-31 CARRY ``gh-pages/wlc/index.html``'s OWN LINK TEXT,
-verbatim, down to its em dashes -- that hand-written page is where Ben had already named
-each of them for a reader, so distributing them is a move rather than a rewrite.  Two of the
-four therefore read differently from the page's ``<title>``; that is deliberate, and it is
-why no lint compares them, unlike the ten MAM-with-doc titles in ``_MISC``.
+THE FOUR PAGES DISTRIBUTED ON 2026-08-31 CARRIED ``gh-pages/wlc/index.html``'s OWN LINK
+TEXT, verbatim, down to its em dashes -- that hand-written page is where Ben had already
+named each of them for a reader, so distributing them was a move rather than a rewrite.
+Only ``almost-errors``, in ``_WLC``, still is on this page: the trim later that day cut the
+other three, ``printed-decalogue``, ``printed-decalogue-uvinkha`` and
+``ps17v14-double-tsinnor``, all of which ``goerwitz.html`` or ``almost-errors.html``
+reaches.  So no entry here reads differently from the page's ``<title>`` any more, and
+every ``_MISC`` entry copies a ``py/author_misc/`` module's ``_TITLE``.
 
 THE HEADINGS ARE NOT INVENTED.  document-index's top-level list mixed four category
 bullets with two lone documents.  Rendering categories as ``<h2>`` sections is flatter than
@@ -37,10 +43,11 @@ link reached a page whose only content was a pointer.  Both now name the generat
 directly, and no gist link survives on this page.  Everything else is document-index's,
 including its ordering, its parentheticals and its two lead-in sentences.
 
-THE TEN MISC TITLES ARE THE PAGES' OWN.  They are copies of ``_TITLE`` in the matching
+THE MISC TITLES ARE THE PAGES' OWN.  They are copies of ``_TITLE`` in the matching
 ``py/author_misc/`` module, and ``py/tests/test_site_index_links.py`` fails if a copy drifts
 from its original.  Do not edit one here without editing the module -- and do not retype
-one: two carry Hebrew and several carry a curly apostrophe.
+one: the two that survived the trim carry no Hebrew, but the modules' titles elsewhere in
+``py/author_misc/`` do, along with curly apostrophes.
 """
 
 from __future__ import annotations
@@ -207,61 +214,36 @@ _URWOTM = Section(
     ),
 )
 
-# The ten documents under MAM-with-doc/misc/ that document-index did not carry, and then
-# three accgram pages published from this repo.  document-index's own seven from that
-# directory are above, under Reviews and Undoing and redoing.
+# The two documents that NOTHING ELSE ON THIS PAGE REACHES.  Ben, 2026-08-31: trim this
+# section "down to documents not reachable from another, document already listed".
 #
-# THE THREE ACCGRAM PAGES ARE HERE BECAUSE THEY ARE NOT ABOUT WLC.  They joined ``_WLC`` on
-# 2026-08-31, when the manifest section was removed and the pages it reached were
-# distributed; Ben moved them the same day, on the ground that they are not WLC-specific.
-# Counting each page's own mentions bears that out: printed-decalogue has 13 Simanim, 5
-# Koren, 4 MAM and 2 WLC; printed-decalogue-uvinkha has 4 MAM, 3 Koren, 3 Simanim and no WLC
-# at all; ps17v14-double-tsinnor has 5 MAM, 3 Leningrad and 1 WLC.  The two that stayed in
-# ``_WLC`` are the WLC-specific ones -- goerwitz.html is the WLC ungrammatical-verse report,
-# and almost-errors.html is about quirks of WLC by its first paragraph.
+# WHAT THAT REVERSES, since it was decided the same day.  This section opened as the ten
+# documents under MAM-with-doc/misc/ that document-index did not carry, so that reaching
+# any document of Ben's took one click from here rather than two; three accgram pages
+# published from this repo joined them when the manifest section was retired.  Eleven of
+# those thirteen are reachable by following links from a document this page already names,
+# and are cut on that ground:
 #
-# THE TITLE LINT DOES NOT REACH THEM, and ``MISC_SOURCE_MODULES`` below is what keeps it
-# from trying: it filters this section to the MAM-with-doc entries.  Those ten copy a
-# ``py/author_misc/`` module's ``_TITLE`` and are checked against it; these three carry
-# gh-pages/wlc/index.html's own link text, which for two of them differs from the page's
-# ``<title>`` deliberately.
+# * rocc_0_review_of_ctr.html, this page's "Review of Chabad's web Tanakh", links the four
+#   rocc_1..rocc_4 pages and tsinnorit_and_oleh_on_ivs.html directly.
+# * tsinnorit_and_oleh_on_ivs.html then links tsinnorit_and_oleh_facts.html and
+#   tsinnorit_in_psalm_32v5.html, which links tsinnorit_and_the_xxd_in_bhs.html.
+# * wlc/accgram/goerwitz.html and wlc/accgram/almost-errors.html, both named under WLC,
+#   link printed-decalogue.html and ps17v14-double-tsinnor.html; printed-decalogue.html
+#   links printed-decalogue-uvinkha.html.
+#
+# Gray maqaf and Paseq and legarmeh survive because no page anywhere in this site or in
+# MAM-with-doc links either one: cut from here, they would be reachable by no number of
+# clicks, which is the thing Ben objects to.  MAM-with-doc/gh-pages/misc/index.html names
+# them but is itself linked from nothing, so it rescues neither.
+#
+# Re-establish the whole finding by crawling both gh-pages trees from the documents this
+# page names; the counts above were measured 2026-08-31 against MAM-basics 027acc3.
 _MISC = Section(
     heading="Misc",
     entries=(
-        _mwd_misc(
-            "Tsinnorit & Oleh on Initial Vocal Shewa", "tsinnorit_and_oleh_on_ivs.html"
-        ),
-        _mwd_misc("About Tsinnorit & Oleh", "tsinnorit_and_oleh_facts.html"),
-        _mwd_misc("Tsinnorit in Psalm 32:5 ועוני", "tsinnorit_in_psalm_32v5.html"),
-        _mwd_misc(
-            "Tsinnorit and the Ḥolam Ḥaser dot in BHS",
-            "tsinnorit_and_the_xxd_in_bhs.html",
-        ),
-        _mwd_misc(
-            "On the Provenance of Chabad’s CTR", "rocc_1_on_the_provenance_of_ctr.html"
-        ),
-        _mwd_misc(
-            "Pre-vowel Accents in Chabad’s CTR", "rocc_2_pre_vowel_accents_in_ctr.html"
-        ),
-        _mwd_misc(
-            "CTR Psalm 32: Where Other Sources Stand",
-            "rocc_3_where_other_sources_stand.html",
-        ),
-        _mwd_misc("Mid-word געיה with Shewa", "rocc_4_mid_word_ga3ya_with_shewa.html"),
         _mwd_misc("Gray maqaf", "he_ws_intro_to_mam_gray_maqaf_1.html"),
         _mwd_misc("Paseq and legarmeh", "he_ws_intro_to_mam_pasleg.html"),
-        _entry(
-            "Are the printed Decalogue cantillations grammatical?",
-            "wlc/accgram/printed-decalogue.html",
-        ),
-        _entry(
-            "What printed editions have at ובנך",
-            "wlc/accgram/printed-decalogue-uvinkha.html",
-        ),
-        _entry(
-            f"Psalms 17:14 {_EM_DASH} the double tsinnor",
-            "wlc/accgram/ps17v14-double-tsinnor.html",
-        ),
     ),
 )
 
@@ -311,8 +293,9 @@ NOT_BY_ME = (_EDITIONS, _EXCERPTS)
 
 # The MAM-with-doc half of the Misc section, and the modules whose _TITLE each entry copies.
 # Paired rather than derived twice, so the lint cannot zip an entry against another entry's
-# module.  Filtered by href prefix because Misc also holds three accgram pages published from
-# this repo, which copy no module's _TITLE -- see the section's own comment above.
+# module.  The whole section is MAM-with-doc since the 2026-08-31 trim, so the href filter
+# selects everything today; it stays because an entry naming a page published from this repo
+# copies no module's _TITLE, and Misc has twice held such entries.
 MISC_MWD_ENTRIES = tuple(
     entry for entry in _MISC.entries if entry.anchor.href.startswith(_MWD_MISC)
 )
