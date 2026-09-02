@@ -38,6 +38,15 @@ diff, two by pointing at a `bdenckla/mgketer` issue, two on an accepted judgment
 one on a rejection of Holman's framing that still produced a note, and one on a
 research aside that states no disposition at all.
 
+THE PHONETIC TANAKH IS NOT MENTIONED IN A REASON, and this is a decision rather
+than an oversight.  Two of the Jerusalem Crown cases carry a note in the mailbox,
+Ben Denckla's own, saying the fix is needed in the Phonetic Tanakh as well.  It
+was put to him on 2026-09-02 as a candidate for the reasons here and he declined
+it: *"Thanks for raising the possibility that Phonetic Tanakh should be mentioned
+here, but I've decided it should not be mentioned here."*  A reason says what was
+decided about the suggestion; a downstream edition's own to-do is a different
+matter and does not belong on these cards.  Do not re-propose it.
+
 A SUPPRESSED CASE IS NOT A DELETED ONE.  It keeps its card, its crop and its
 number, and moves to the Suppressed page beside the ketiv/qere rows whose issues
 are closed.  Suppression says the suggestion has been handled, not that it was
@@ -55,9 +64,24 @@ SUPPRESSED = "suppressed"
 
 @dataclass(frozen=True)
 class Disposition:
-    """One ruling on one suggestion."""
+    """One ruling on one suggestion.
+
+    ``outcome`` is FREE PROSE AND NOT AN ENUM, which is the same decision as the
+    one about ``state`` above seen from the other side.  Ben Denckla asked on
+    2026-09-02 that it lead with the suggestion's fate -- "Suggestion taken",
+    "Suggestion not taken" -- and the point of leaving it as text is that a third
+    and a fourth are expected: "Suggestion partly taken" is the case he named
+    outright, and a suggestion right about the problem and wrong about the fix
+    would want wording of its own again.  ``state`` does the routing; ``outcome``
+    tells the reader what happened; neither is a substitute for the other.
+
+    It is also the card's LABEL for the summary line, so it is written without
+    trailing punctuation and reads as one: "Suggestion not taken: MAM is right;
+    the geresh is misplaced in the Jerusalem Crown."
+    """
 
     state: str
+    outcome: str
     summary: str
     reason: str
     decided_by: str
@@ -66,6 +90,7 @@ class Disposition:
     def payload(self) -> dict[str, str]:
         return {
             "state": self.state,
+            "outcome": self.outcome,
             "summary": self.summary,
             "reason": self.reason,
             "decided_by": self.decided_by,
@@ -79,6 +104,7 @@ class Disposition:
 DISPOSITION_BY_REF: dict[str, Disposition] = {
     "2Ki 17:15.15": Disposition(
         state=SUPPRESSED,
+        outcome="Suggestion not taken",
         summary="MAM is right; the geresh is misplaced in the Jerusalem Crown",
         reason=(
             "Seth (Avi) Kadish, 2026-08-28: the geresh appears to have been erased "

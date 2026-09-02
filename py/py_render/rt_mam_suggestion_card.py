@@ -170,9 +170,13 @@ def _disposition_html(case: dict[str, Any]) -> str:
         return ""
     summary = as_optional_text(disposition.get("summary"))
     reason = as_optional_text(disposition.get("reason"))
-    state = as_text(disposition.get("state", "")).capitalize()
+    # The label is the outcome -- "Suggestion not taken" -- and NOT the state.
+    # The state is "suppressed" for every ruling, so labelling the line with it
+    # said only what the page it sits on already says, and prefixing the outcome
+    # to the summary instead would give a line with two colons in it.
+    outcome = as_optional_text(disposition.get("outcome")) or "Handled"
     return join_nonempty_html_blocks(
-        "" if summary is None else note_line_html(label=f"{state}:", value=summary),
+        "" if summary is None else note_line_html(label=f"{outcome}:", value=summary),
         "" if reason is None else _prose_note_html(label="Why:", value=reason),
     )
 
