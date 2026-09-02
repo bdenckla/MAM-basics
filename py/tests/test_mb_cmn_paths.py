@@ -33,8 +33,8 @@ _ENV_VARS = (
     "REPOS_ROOT",
     "REPO_MAM_PARSED_DIR",
     "REPO_MAM_SIMPLE_DIR",
-    "REPO_CODEX_INDEX_DIR",
-    "REPO_CODEX_INDEX_ALEPPO_DIR",
+    "REPO_WLC_UTILS_DIR",
+    "REPO_WLC_UTILS_PRIVATE_DIR",
     "REPO_MAM_PRIVATE_DIR",
 )
 
@@ -80,22 +80,23 @@ class TestMbCmnPaths(unittest.TestCase):
         with mock.patch.dict(os.environ, env, clear=True):
             self.assertEqual(paths.sibling_repo("MAM-parsed"), Path("/elsewhere/mp"))
 
+    # The two tests below keep "wlc-utils-private" only as inert input to the
+    # env-var name mapper.  They perform no directory lookup or filesystem access;
+    # live WLC generation no longer uses this private-repo name.
     def test_env_name_mapping_non_alnum_to_underscore(self):
-        # codex-index-aleppo -> REPO_CODEX_INDEX_ALEPPO_DIR: each run of
+        # wlc-utils-private -> REPO_WLC_UTILS_PRIVATE_DIR: each run of
         # non-alphanumerics collapses to one underscore.
-        env = _clean_env(REPO_CODEX_INDEX_ALEPPO_DIR="/aleppo")
+        env = _clean_env(REPO_WLC_UTILS_PRIVATE_DIR="/priv")
         with mock.patch.dict(os.environ, env, clear=True):
-            self.assertEqual(paths.sibling_repo("codex-index-aleppo"), Path("/aleppo"))
+            self.assertEqual(paths.sibling_repo("wlc-utils-private"), Path("/priv"))
 
     def test_env_name_mapping_is_a_prefix_of_no_other(self):
-        # codex-index and codex-index-aleppo are distinct variables, not one shadowing
+        # wlc-utils and wlc-utils-private are distinct variables, not one shadowing
         # the other -- the case a naive prefix lookup would get wrong.
-        env = _clean_env(
-            REPO_CODEX_INDEX_DIR="/index", REPO_CODEX_INDEX_ALEPPO_DIR="/aleppo"
-        )
+        env = _clean_env(REPO_WLC_UTILS_DIR="/pub", REPO_WLC_UTILS_PRIVATE_DIR="/priv")
         with mock.patch.dict(os.environ, env, clear=True):
-            self.assertEqual(paths.sibling_repo("codex-index"), Path("/index"))
-            self.assertEqual(paths.sibling_repo("codex-index-aleppo"), Path("/aleppo"))
+            self.assertEqual(paths.sibling_repo("wlc-utils"), Path("/pub"))
+            self.assertEqual(paths.sibling_repo("wlc-utils-private"), Path("/priv"))
 
     def test_env_name_mapping_of_the_repo_that_now_holds_the_private_tree(self):
         # The live override for the private al-hatorah tree.
