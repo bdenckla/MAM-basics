@@ -24,6 +24,11 @@ from py_render.rt_issue_tags import (
     record_issue_tags,
 )
 from py_render.rt_mam_uxlc_diff_descriptions import simple_row_diff_note_lines
+from py_render.rt_suggestion_kinds import (
+    KETIV_QERE_KIND,
+    kind_display_text,
+    kind_filter_id,
+)
 from py_render.rt_render_utils import (
     as_optional_text,
     as_text,
@@ -70,7 +75,14 @@ def record_card_html(
     matching_template_args_in_mpu_verse = matching_template_arguments_by_row_number.get(
         row_number, []
     )
-    record_categories: list[tuple[str, str]] = [(finding_id, finding_display)]
+    # The kind comes first, and every ketiv/qere row has the same one: since
+    # 2026-09-02 this report also carries Holman's suggested corrections to MAM,
+    # and the kind filter is what separates the two bodies of work.
+    # rt_suggestion_kinds' module docstring says why they share a page.
+    record_categories: list[tuple[str, str]] = [
+        (kind_filter_id(KETIV_QERE_KIND), kind_display_text(KETIV_QERE_KIND)),
+        (finding_id, finding_display),
+    ]
     record_categories.extend(
         (
             issue_tag_filter_id(issue_tag),

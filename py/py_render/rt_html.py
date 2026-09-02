@@ -15,7 +15,9 @@ from py_render.rt_matching_tmpl_args import (
     matching_template_arguments_in_mpu_verse_by_row_number,
     supported_qere_wrapper_by_row_number,
 )
+from py_render.rt_mam_suggestion_card import suggestion_card_html
 from py_render.rt_record_card import record_card_html
+from py_render.rt_suggestion_kinds import KETIV_QERE_KIND, suggestion_kind
 from py_render.rt_render_utils import (
     as_text,
     row_fragment_id,
@@ -32,6 +34,7 @@ from py_render.rt_validate_holam_he import (
 from py_render.rt_validate_qyv import evaluate_qyv_row, require_qyv_row_match
 from hkq_cmn.json_io import load_json
 from hkq_cmn.table_row_github_issues import require_row_github_issue_metadata
+import hkq_paths
 
 MAIN_NAV_LABEL = "Active"
 SUPPRESSED_NAV_LABEL = "Suppressed"
@@ -41,15 +44,31 @@ SUPPRESSED_NAV_LABEL = "Suppressed"
 # and not to be cross-linked. index.html is where both are reachable from.
 INDEX_PAGE = "index.html"
 INDEX_NAV_LABEL = "Index"
-MAIN_PAGE_TITLE = "Holman k/q"
+# The page carries two bodies of Holman's work since 2026-09-02, so its title and
+# heading name both. The FILENAME is unchanged, deliberately: table_data_findings.html
+# is the URL index.html links and the one Ben has already sent to correspondents.
+MAIN_PAGE_TITLE = "Holman k/q + MAM suggestions"
 SUPPRESSED_PAGE_TITLE = "Holman k/q - Suppressed"
-MAIN_PAGE_HEADING = "Holman ketiv/qere review"
+MAIN_PAGE_HEADING = "Holman's ketiv/qere review and MAM suggestions"
 SUPPRESSED_PAGE_HEADING = "Suppressed"
+# The suppressed page is ketiv/qere only, because what it suppresses is a closed
+# GitHub issue and only the review's rows have issues. The MAM suggestions have
+# none, so all 34 are on the active page.
+SUPPRESSED_PAGE_SUBTITLE = "Closed issues only, so ketiv/qere rows only"
 
 
 def render_table_data_findings_html(
-    table_json_path: Path, output_html_path: Path
+    table_json_path: Path,
+    output_html_path: Path,
+    mam_suggestions_json_path: Path | None = None,
 ) -> Path:
+    """Render the findings report from the ketiv/qere extract and the MAM suggestions.
+
+    Both extracts are required.  A missing suggestions file RAISES rather than
+    rendering a ketiv/qere-only page: it is tracked, so a fresh clone has it, and
+    a page silently short of 34 records is exactly the kind of quiet incompleteness
+    this repo's rule against skipping is about.
+    """
     payload = load_json(table_json_path)
     if not isinstance(payload, dict):
         raise ValueError("table_data.json root must be an object")
@@ -86,6 +105,11 @@ def render_table_data_findings_html(
         finding_ids=list(finding_ids.values()),
     )
 
+    suggestions_path = (
+        mam_suggestions_json_path or hkq_paths.mam_suggestions_json_path()
+    )
+    suggestion_cases, source_message_dates = _load_mam_suggestions(suggestions_path)
+
     active_rows, suppressed_rows = _partition_rows(rows)
     suppressed_output_path = build_suppressed_output_path(output_html_path)
 
@@ -94,6 +118,8 @@ def render_table_data_findings_html(
         page_heading=MAIN_PAGE_HEADING,
         page_subtitle="",
         rows=active_rows,
+        suggestion_cases=suggestion_cases,
+        source_message_dates=source_message_dates,
         sorted_findings=sorted_findings,
         finding_ids=finding_ids,
         matching_template_arguments_by_row_number=matching_template_arguments_by_row_number,
@@ -110,8 +136,10 @@ def render_table_data_findings_html(
     _write_report_page(
         page_title=SUPPRESSED_PAGE_TITLE,
         page_heading=SUPPRESSED_PAGE_HEADING,
-        page_subtitle="Closed issues only",
+        page_subtitle=SUPPRESSED_PAGE_SUBTITLE,
         rows=suppressed_rows,
+        suggestion_cases=[],
+        source_message_dates=source_message_dates,
         sorted_findings=sorted_findings,
         finding_ids=finding_ids,
         matching_template_arguments_by_row_number=matching_template_arguments_by_row_number,
@@ -134,6 +162,8 @@ def _write_report_page(
     page_heading: str,
     page_subtitle: str,
     rows: list[dict[str, Any]],
+    suggestion_cases: list[dict[str, Any]],
+    source_message_dates: dict[str, str],
     sorted_findings: list[tuple[str, int]],
     finding_ids: dict[str, str],
     matching_template_arguments_by_row_number: dict[str, list[dict[str, str]]],
@@ -147,14 +177,22 @@ def _write_report_page(
     active_nav_label: str,
     records_heading: str,
 ) -> None:
+    kind_counts: dict[str, int] = {KETIV_QERE_KIND: len(rows)} if rows else {}
+    for case in suggestion_cases:
+        kind = suggestion_kind(
+            as_text(case.get("mam_form", "")), as_text(case.get("comparison_form", ""))
+        )
+        kind_counts[kind] = kind_counts.get(kind, 0) + 1
+
     categories = filter_categories(
         rows=rows,
         sorted_findings=sorted_findings,
         finding_ids=finding_ids,
         matching_template_arguments_by_row_number=matching_template_arguments_by_row_number,
+        kind_counts=kind_counts,
     )
     summary_rows = summary_rows_html(categories)
-    cards = "\n".join(
+    review_cards = [
         record_card_html(
             row=row,
             finding_id=finding_ids[as_text(row.get("finding", ""))],
@@ -164,7 +202,21 @@ def _write_report_page(
             supported_qere_wrappers=supported_qere_wrappers,
         )
         for row in rows
-    )
+    ]
+    # The suggestion cards go after the review's rather than interleaved with them:
+    # the two bodies of work have unrelated numbering, so one sequence of cards
+    # ordered by anything they share would read as arbitrary. The kind filter is
+    # what a reader uses to see one body alone.
+    suggestion_cards = [
+        suggestion_card_html(
+            case=case,
+            output_html_path=output_html_path,
+            data_root=repo_root,
+            source_message_dates=source_message_dates,
+        )
+        for case in suggestion_cases
+    ]
+    cards = "\n".join(review_cards + suggestion_cards)
 
     css_href = escape(
         os.path.relpath(css_output_path, output_html_path.parent).replace("\\", "/")
@@ -178,7 +230,7 @@ def _write_report_page(
         suppressed_output_path=suppressed_output_path,
         active_nav_label=active_nav_label,
     )
-    page_total = len(rows)
+    page_total = len(rows) + len(suggestion_cases)
     summary_html = f'<div class="summary-columns">\n{summary_rows}\n</div>'
     page_subtitle_html = (
         "" if not page_subtitle else f'<p class="subtitle">{escape(page_subtitle)}</p>'
@@ -242,6 +294,45 @@ def _write_report_page(
 
     output_html_path.parent.mkdir(parents=True, exist_ok=True)
     output_html_path.write_text(html, encoding="utf-8", newline="")
+
+
+def _load_mam_suggestions(
+    suggestions_json_path: Path,
+) -> tuple[list[dict[str, Any]], dict[str, str]]:
+    """The suggestion cases in case-number order, and each source message's date.
+
+    The dates are carried separately because a case names its source messages by
+    key and a card shows the date; resolving that on the card would mean each card
+    reopening the document.
+    """
+    if not suggestions_json_path.is_file():
+        raise FileNotFoundError(
+            f"MAM suggestions extract not found: {suggestions_json_path}. "
+            "It is tracked, so run py/main_ingest_mam_suggestions.py or check the "
+            "path rather than rendering a page short of its records."
+        )
+    payload = load_json(suggestions_json_path)
+    if not isinstance(payload, dict):
+        raise ValueError("mam_suggestions.json root must be an object")
+
+    raw_cases = payload.get("cases")
+    if not isinstance(raw_cases, list):
+        raise ValueError("mam_suggestions.json must have a list key 'cases'")
+    cases = [case for case in raw_cases if isinstance(case, dict)]
+    if len(cases) != len(raw_cases):
+        raise ValueError("mam_suggestions.json cases must contain only objects")
+
+    raw_messages = payload.get("source_messages")
+    if not isinstance(raw_messages, list):
+        raise ValueError("mam_suggestions.json must have a list key 'source_messages'")
+    dates_by_key = {
+        as_text(message.get("key", "")): as_text(message.get("date", ""))[:10]
+        for message in raw_messages
+        if isinstance(message, dict)
+    }
+
+    cases.sort(key=lambda case: int(as_text(case.get("case_number", "0"))))
+    return cases, dates_by_key
 
 
 def _validate_issue_tag_definitions(rows: list[dict[str, Any]]) -> None:

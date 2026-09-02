@@ -11,7 +11,11 @@ VERSE_REFERENCE_RE = re.compile(
     r"^(?P<book>\S+)\s+(?P<chapter>\d+):(?P<verse>\d+)(?:\.\d+)?$"
 )
 
-# This repo's dataset is intentionally fixed and currently spans these books.
+# The books the findings report links out to. The ketiv/qere review's 77 rows are a
+# fixed scope and span fifteen of these; Zechariah is here for the suggested
+# corrections to MAM, which joined the same report on 2026-09-02 and whose case set
+# is NOT fixed -- Holman sends more of them, so a message naming a sixteenth book
+# raises here until it is added, which is the intended way to find that out.
 BOOK_HEBREW_NAMES = {
     "1Chronicles": "דברי הימים א",
     "1Kings": "מלכים א",
@@ -28,6 +32,7 @@ BOOK_HEBREW_NAMES = {
     "Proverbs": "משלי",
     "Psalms": "תהלים",
     "Tsefaniah": "צפניה",
+    "Zechariah": "זכריה",
 }
 
 _HUNDREDS = ("", "ק")
