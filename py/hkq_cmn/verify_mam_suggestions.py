@@ -5,42 +5,43 @@ module is what makes that true of the suggestions extract: every case carries th
 result of looking it up in the corpus, so regenerating the extract and reading
 the diff catches both a parse that drifted and a corpus that moved underneath it.
 
-WHY THIS SEARCHES RATHER THAN INDEXES.  Holman gives each case an atom index, and
-those indices are good: measured 2026-09-02 against MAM-parsed ``54ba7e0``, 30 of
-the 34 cases land exactly on his index once maqaf-joined atoms are counted
-separately, which is the rule ``find_hebrew_tokens`` already implements by leaving
-MAQAF out of its character class.  Re-establish that figure by running
-``py/main_ingest_mam_suggestions.py`` and reading ``mam_plus_verify``.
+THE ATOM INDEX IS DERIVED HERE, NOT TAKEN FROM HOLMAN, and there is no ambiguity
+in doing so.  Each case gives two spellings of one stretch of text, MAM's and the
+comparison edition's.  Measured 2026-09-02 across all 34 cases: the MAM spelling
+occurs EXACTLY ONCE in its verse, and EXACTLY ONE atom inside it differs between
+the two spellings.  Between them those two facts name one atom and no other, so
+the index Holman writes after the verse reference is redundant confirmation rather
+than the thing that locates the case.  Re-establish this by running
+``py/main_ingest_mam_suggestions.py``: it raises on any case where either fact
+stops holding, so a silent guess is not among the outcomes.
 
-The four that do not are two known divergences, and both are more useful reported
-than papered over:
+Deriving it is what makes the indices CONSISTENT, which taking them as sent did
+not.  Atoms are counted with maqaf-joined atoms separate -- the rule
+``find_hebrew_tokens`` already implements by leaving MAQAF out of its character
+class -- and 31 of Holman's 34 agree with the derivation.  The extract records the
+derived index as ``atom`` and keeps his under ``atom_as_sent`` wherever the two
+differ, so nothing about his message is lost.
 
-  * ONE case, 2Ki 21:12.11, numbers one atom of a maqaf compound and quotes the
-    WHOLE compound -- and the direction is not fixed, since Judg 6:1.2 quotes
-    forward from the numbered atom where 2Ki 21:12.11 quotes backward from it.
-    Judg 6:1.2 lands on its stated atom only because the atom it numbers is the
-    compound's first.
-  * THREE cases -- 1Ki 7:24.17, 2Sa 15:37.8 and Judg 1:7.21 -- disagree with the
-    corpus by one in a direction that is not consistent either (the first and
-    third are one high, the second one low).  All three are the atom יְרוּשָׁלַ͏ִם,
-    which is suggestive but does not settle anything, and this is a question for
-    Holman rather than something to resolve by guessing.
+The three corrected on 2026-09-02, each out by one and not in a consistent
+direction: 1Ki 7:24 (17 as sent, 16 derived), 2Sa 15:37 (8 as sent, 9 derived) and
+Judg 1:7 (21 as sent, 20 derived).  All three are the atom יְרוּשָׁלַ͏ִם.
 
-A DEFECT IN THE CORPUS RENDERING ACCOUNTED FOR TWO MORE, and finding it is why
-these figures are worth trusting.  Before ``mam_plus_verse_data`` was taught that
-a whitespace template means whitespace, on 2026-09-02, Judg 5:6.7 and Judg 5:11.13
-also looked one out; both were right, and the shirah spaces of the Song of Deborah
-were fusing the atoms on either side of them.  So an index disagreement here is
-worth investigating before it is reported as his.
+THE MAQAF COMPOUNDS ARE NOT AMONG THEM, though a cruder check reports them as
+disagreements.  Holman quotes a whole compound while numbering one of its atoms,
+and the atom he numbers is the one bearing the difference every time -- so
+עַל־יְרוּשָׁלַ͏ִם against עַל־יְרוּשָׁלַ͏ִם resolves to its second atom and agrees with his 11.
+``_differing_offset`` is what picks the right half, and it needs neither his index
+nor his prose description of where the mark sits.
 
-The check reports several independent facts per case -- whether his MAM form is in
-the verse at all, where, whether that covers the atom he numbered, and whether the
-verse instead already has the form he proposes -- and lets the reader see which.
-Collapsing them to one pass/fail would throw away the distinction between "his
-index is off by one" and "MAM has since been corrected", which are opposite
-conclusions.
+A DEFECT IN THE CORPUS RENDERING ONCE ACCOUNTED FOR TWO MORE, and finding it is
+why these figures are worth trusting.  Before ``mam_plus_verse_data`` was taught
+that a whitespace template means whitespace, on 2026-09-02, Judg 5:6.7 and
+Judg 5:11.13 also looked one out; both were right, and the shirah spaces of the
+Song of Deborah were fusing the atoms on either side of them.  So investigate an
+index disagreement before reporting it as Holman's.
 
-THE THIRD FACT IS THE ONE THAT DATES THE CORPUS.  A case whose verse already
+``comparison_form_already_present`` IS A SEPARATE QUESTION, AND IT DATES THE
+CORPUS RATHER THAN JUDGING HOLMAN.  A case whose verse already
 has the comparison form is one MAM has adopted since the message was sent, so
 the count of those is a statement about how stale the local ``MAM-parsed`` is,
 not about Holman.  Measured 2026-09-02 against MAM-parsed ``54ba7e0``, that count
@@ -90,14 +91,40 @@ def _atom_run(form: str) -> list[str]:
     return [_comparable(one) for one in find_hebrew_tokens(form)]
 
 
-def _run_start(atoms: list[str], run: list[str]) -> int | None:
-    """The 1-based index at which ``run`` occurs in ``atoms``, or None."""
+def _run_starts(atoms: list[str], run: list[str]) -> list[int]:
+    """Every 1-based index at which ``run`` occurs in ``atoms``.
+
+    Every occurrence and not the first, so that a form occurring twice can be
+    told from one occurring once.  Taking the first would silently pick a side
+    where the right answer is that the form does not identify an atom.
+    """
     if not run:
+        return []
+    return [
+        start + 1
+        for start in range(len(atoms) - len(run) + 1)
+        if atoms[start : start + len(run)] == run
+    ]
+
+
+def _differing_offset(mam_run: list[str], comparison_run: list[str]) -> int | None:
+    """Which atom of the quoted run differs between the two forms, 0-based.
+
+    THIS IS WHAT IDENTIFIES THE ATOM A CASE IS ABOUT, and it needs no index from
+    Holman at all.  He supplies two spellings of the same stretch of text, MAM's
+    and the comparison edition's, and the atom his case is about is the one that
+    differs between them.  For a single-atom quotation that is the atom itself;
+    for a maqaf compound it picks out the half he means, so עַל־יְרוּשָׁלַ͏ִם against
+    עַל־יְרוּשָׁלַ͏ִם resolves to the second atom without anything having to read his
+    prose description of where the meteg sits.
+
+    None when the two runs are different lengths, or differ in no atom or in more
+    than one -- in which case the caller raises rather than guessing.
+    """
+    if len(mam_run) != len(comparison_run):
         return None
-    for start in range(len(atoms) - len(run) + 1):
-        if atoms[start : start + len(run)] == run:
-            return start + 1
-    return None
+    offsets = [i for i in range(len(mam_run)) if mam_run[i] != comparison_run[i]]
+    return offsets[0] if len(offsets) == 1 else None
 
 
 @dataclass
@@ -105,22 +132,24 @@ class CaseCheck:
     ref: str
     atom_count: int
     quoted_atom_count: int
-    mam_form_found_at: int | None
-    at_stated_atom: bool
-    covers_stated_atom: bool
+    quoted_form_starts_at: int
+    derived_atom: int
+    stated_atom: int
     comparison_form_already_present: bool
-    atom_text_at_stated_index: str | None
+
+    @property
+    def stated_atom_agrees(self) -> bool:
+        return self.stated_atom == self.derived_atom
 
     def payload(self) -> dict[str, object]:
         return {
             "atom_count": self.atom_count,
             "quoted_atom_count": self.quoted_atom_count,
-            "mam_form_found_in_verse": self.mam_form_found_at is not None,
-            "mam_form_found_at_atom": self.mam_form_found_at,
-            "mam_form_starts_at_stated_atom": self.at_stated_atom,
-            "mam_form_covers_stated_atom": self.covers_stated_atom,
+            "quoted_form_starts_at_atom": self.quoted_form_starts_at,
+            "derived_atom": self.derived_atom,
+            "stated_atom": self.stated_atom,
+            "stated_atom_agrees": self.stated_atom_agrees,
             "comparison_form_already_present": self.comparison_form_already_present,
-            "atom_text_at_stated_atom": self.atom_text_at_stated_index,
         }
 
 
@@ -158,49 +187,45 @@ def check_case(
     wanted = _atom_run(mam_form)
     proposed = _atom_run(comparison_form)
 
-    found_at = _run_start(comparable_atoms, wanted)
-    proposed_at = _run_start(comparable_atoms, proposed)
-
-    covers = found_at is not None and found_at <= atom <= found_at + len(wanted) - 1
+    starts = _run_starts(comparable_atoms, wanted)
+    if len(starts) != 1:
+        raise ValueError(
+            f"{ref}: the quoted MAM form occurs {len(starts)} times in the verse, "
+            "so it does not identify one atom; resolve this case by hand rather "
+            "than letting a derivation guess"
+        )
+    offset = _differing_offset(wanted, proposed)
+    if offset is None:
+        raise ValueError(
+            f"{ref}: the MAM form and the comparison form do not differ in exactly "
+            "one atom, so the atom this case is about is not derivable; resolve it "
+            "by hand"
+        )
 
     return CaseCheck(
         ref=ref,
         atom_count=len(atoms),
         quoted_atom_count=len(wanted),
-        mam_form_found_at=found_at,
-        at_stated_atom=found_at == atom,
-        covers_stated_atom=covers,
-        comparison_form_already_present=proposed_at is not None,
-        atom_text_at_stated_index=atoms[atom - 1] if 1 <= atom <= len(atoms) else None,
+        quoted_form_starts_at=starts[0],
+        derived_atom=starts[0] + offset,
+        stated_atom=atom,
+        comparison_form_already_present=bool(_run_starts(comparable_atoms, proposed)),
     )
 
 
 def summarize(checks: list[CaseCheck]) -> dict[str, object]:
-    """Four disjoint outcomes plus the corpus-staleness count, which overlaps them.
+    """How many of Holman's stated atom indices the derivation agreed with.
 
-    The first four partition the cases: a form starts where he says, or merely
-    covers the atom he numbered (the maqaf-compound quirk), or is in the verse
-    somewhere else entirely (his index and the corpus disagree), or is not in the
-    verse at all.  ``comparison_form_already_present`` is a separate question asked of
-    every case, and a non-zero count there says the local corpus has moved on
-    rather than saying anything about Holman.
+    Every case has a derived index -- ``check_case`` raises rather than return one
+    it could not determine -- so the only interesting count is agreement.
+    ``comparison_form_already_present`` is a separate question asked of every case,
+    and a non-zero count there says the local corpus has moved on rather than
+    saying anything about Holman.
     """
     return {
         "case_count": len(checks),
-        "mam_form_starts_at_stated_atom": sum(
-            1 for one in checks if one.at_stated_atom
-        ),
-        "mam_form_covers_stated_atom_only": sum(
-            1 for one in checks if one.covers_stated_atom and not one.at_stated_atom
-        ),
-        "mam_form_elsewhere_in_verse": sum(
-            1
-            for one in checks
-            if one.mam_form_found_at is not None and not one.covers_stated_atom
-        ),
-        "mam_form_not_in_verse": sum(
-            1 for one in checks if one.mam_form_found_at is None
-        ),
+        "stated_atom_agrees": sum(1 for one in checks if one.stated_atom_agrees),
+        "stated_atom_corrected": sum(1 for one in checks if not one.stated_atom_agrees),
         "comparison_form_already_present": sum(
             1 for one in checks if one.comparison_form_already_present
         ),

@@ -41,8 +41,19 @@ import sys
 import zipfile
 
 import hkq_paths
+from hkq_cmn.mam_suggestion_corrections import (
+    CASE_FIELD_CORRECTIONS,
+    apply_corrections,
+    require_every_correction_applied,
+)
 from hkq_cmn.mam_suggestion_extract import ImageTarget, read_suggestion_messages
 from hkq_cmn.verify_mam_suggestions import check_case, summarize
+
+
+def _ref_with_atom(ref_as_sent: str, atom: int) -> str:
+    """The same reference with a different atom index: "1Ki 7:24.17" -> "1Ki 7:24.16"."""
+    head, _, _ = ref_as_sent.rpartition(".")
+    return f"{head}.{atom}"
 
 
 @lru_cache(maxsize=16)
@@ -144,6 +155,7 @@ def main() -> None:
 
     checks = []
     payload_cases = []
+    applied_correction_keys: set[tuple[str, str]] = set()
     for case_index, case in enumerate(cases, start=1):
         check = check_case(
             std_book_name=case.ref.std_book_name,
@@ -156,11 +168,29 @@ def main() -> None:
         checks.append(check)
         payload = case.payload()
         payload["case_number"] = case_index
+
+        # The derived atom index is the one everything downstream uses; Holman's
+        # is kept beside it only where the two differ.  verify_mam_suggestions'
+        # docstring says why the derivation is unambiguous.
+        ref_as_sent = str(case.ref)
+        if not check.stated_atom_agrees:
+            payload["atom"] = check.derived_atom
+            payload["atom_as_sent"] = check.stated_atom
+            payload["ref"] = _ref_with_atom(ref_as_sent, check.derived_atom)
+            payload["ref_as_sent"] = ref_as_sent
+
+        for key in CASE_FIELD_CORRECTIONS:
+            if key[0] == ref_as_sent:
+                applied_correction_keys.add(key)
+        apply_corrections(payload, ref_as_sent)
+
         payload["image_files"] = _export_images(
             case_index, case.image_targets, args.eml_dir, args.image_dir, data_root
         )
         payload["mam_plus_check"] = check.payload()
         payload_cases.append(payload)
+
+    require_every_correction_applied(applied_correction_keys)
 
     document = {
         "source_messages": [one.payload() for one in sources],
