@@ -74,3 +74,34 @@ WHITESPACE_TMPL_NAMES = {
     "ר2",
     "ר3",
 }
+
+# TEMPLATES THAT CARRY NO VERSE TEXT.  Each separates the text around it and
+# contributes nothing else.  WHITESPACE_TMPL_NAMES supplies the layout markers
+# (shirah spaces, setuma/petucha, the poetic-space markers); the five added
+# here are navigation and titling furniture -- the verse reference and its
+# seder, the aliyah identifier that reference carries, the book title, and the
+# two first-verse spacing markers, whose parameters are a prophet name and a
+# Psalms division name.
+#
+# NAMED AS A SET BECAUSE WHAT A TEMPLATE MEANS DECIDES WHAT IT CONTRIBUTES,
+# and whether it carries parameters does not.  The corpus evidence, and the
+# defect that reading a parameter as a proxy for meaning produced, are recorded
+# at hkq_cmn/mam_plus_verse_data._collect_text_fragments.
+NO_VERSE_TEXT_TMPL_NAMES = WHITESPACE_TMPL_NAMES | {
+    "מ:פסוק",
+    "מ:עלייה",
+    "מ:ספר חדש",
+    "מ:רווח בתרי עשר בפסוק הראשון",
+    "מ:רווח לספר בתהלים בפסוק הראשון",
+}
+
+# TEMPLATES WHOSE PARAM 1 IS THE WORD, OR THE PART OF IT, THAT THEY MARK: the
+# large, small and hung letters, and the whole word a special letter sits in.
+# Shared so that hkq_cmn/mam_plus_verse_data and hkq_cmn/qere_projection cannot
+# drift apart on it, their header comments each requiring that they mirror.
+IN_WORD_TMPL_NAMES = {
+    "מ:אות-ג",
+    "מ:אות-ק",
+    "מ:אות תלויה",
+    SLH_WORD,
+}

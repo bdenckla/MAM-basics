@@ -4,6 +4,7 @@ from collections.abc import Iterator
 import re
 
 from mb_cmn.hebrew_punctuation import MAQ, PASOLEG
+from mb_cmn import template_names
 from hkq_cmn.template_name_quotes import canonical_template_name
 
 ACCENTS_AND_METEG_RE = re.compile(r"[\u0591-\u05AF\u05BD\u05BF\u05C0\u05C4\u05C5]")
@@ -20,12 +21,11 @@ WHITESPACE_TEMPLATE_NAMES = {
     "ר2",
     "ר3",
 }
-IN_WORD_RECURSE_TEMPLATE_NAMES = {
-    "מ:אות-ג",
-    "מ:אות-ק",
-    "מ:אות תלויה",
-    "מ:אות-מיוחדת-במילה",
-}
+# Shared with mam_plus_verse_data._collect_text_fragments, which recurses into
+# param 1 of the same four names.  Declared in mb_cmn/template_names.py so that
+# the mirroring the header comment below requires is structural rather than
+# asserted; this module held its own copy of the four until 2026-09-02.
+IN_WORD_RECURSE_TEMPLATE_NAMES = template_names.IN_WORD_TMPL_NAMES
 # ---------------------------------------------------------------------------
 # VARIANT-TEMPLATE MULTIPLICITY WARNING
 #
@@ -50,10 +50,22 @@ IN_WORD_RECURSE_TEMPLATE_NAMES = {
 # Callers that count or deduplicate hits must account for this behaviour.
 # ---------------------------------------------------------------------------
 # Per-template extraction rules below mirror those in:
-#   MAM-parsed/doc-under-readme/reading-mam-parsed-plus.md (extract_text example)
-#   MAM-private's mpu-parsing.md (Template dispatch section)
+#   MAM-parsed/gh-pages/plus/html/mpplus.html and its siblings, the rendered
+#     structure reference, whose source is this repo's py/author_misc/
+#   MAM-private/mgketer/documentation/mpu-parsing.md (Template dispatch section)
 #   mam_plus_verse_data._collect_text_fragments
 # When changing a rule here, check all four locations.
+#
+# THE FIRST ENTRY NAMED A FILE THAT DOES NOT EXIST, until 2026-09-02: it read
+# MAM-parsed/doc-under-readme/reading-mam-parsed-plus.md (extract_text example),
+# and that whole directory is gone.
+#
+# THIS MODULE STILL COLLECTS EVERY PARAMETER OF AN UNRECOGNISED TEMPLATE, where
+# mam_plus_verse_data raises instead as of 2026-09-02.  The difference is
+# deliberate: this projection is a tolerate-and-skip one, feeding a search for
+# ketiv/qere words rather than a count of atoms, so an unrecognised template
+# costs it a spurious hit and not a wrong index.  The fall-through warning below
+# is the standing statement of that cost.
 PARAM_BOUNDARY_TEMPLATE_NAMES = {
     "מ:דחי",
     "מ:צינור",

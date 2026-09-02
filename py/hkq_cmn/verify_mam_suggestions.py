@@ -18,31 +18,35 @@ stops holding, so a silent guess is not among the outcomes.
 Deriving it is what makes the indices CONSISTENT, which taking them as sent did
 not.  Atoms are counted with maqaf-joined atoms separate -- the rule
 ``find_hebrew_tokens`` already implements by leaving MAQAF out of its character
-class -- and 33 of Holman's 34 agree with the derivation.  The extract records the
-derived index as ``atom`` and keeps his under ``atom_as_sent`` wherever the two
-differ, so nothing about his message is lost.
+class -- and all 34 of Holman's agree with the derivation.  The extract records
+the derived index as ``atom`` and keeps his under ``atom_as_sent`` wherever the
+two differ, so nothing about his message is lost; no case carries that field now.
 
-ONE CORRECTION STANDS, and it is not Holman's error either.  2Sa 15:37 (8 as sent,
-9 derived) disagrees because ``mam_plus_verse_data`` collects the parameters of
-the navigation template מ:פסוק into the verse text.  That template carries the
-book name, chapter, verse and seder, so the verse renders with שמואל as its first
-atom and its Hebrew numerals fused onto וַיָּבֹא.  Holman's 8 is right and the
-corpus rendering is wrong, exactly as it was for the two below.
+NO CORRECTION OF HOLMAN STANDS.  The last one, 2Sa 15:37 (8 as sent, 9 derived),
+WAS FIXED ON 2026-09-02, and it was not his error either.  Until then
+``mam_plus_verse_data`` collected the parameters of the navigation template מ:פסוק into the verse text.  That template carries the
+book name, chapter, verse and seder, so the verse rendered with שמואל as its first
+atom and its Hebrew numerals fused onto וַיָּבֹא.  Holman's 8 was right and the
+corpus rendering was wrong, exactly as it was for the two below.
 
-That one is RAISED AND NOT FIXED, as of 2026-09-02, the fix needing a decision
-about what each template with no rule of its own should contribute.  For מ:פסוק
-alone 392 verses change atom count, and the book-title template מ:ספר חדש and the
-special-letter template מ:אות-מיוחדת-במילה leak the same way: Genesis 1:1 renders
-9 atoms for a seven-word verse, its first atom running the book title, the whole
-navigation reference and two copies of בְּרֵאשִׁית together.
+WHAT WAS FIXED IS A PROXY, NOT ONE TEMPLATE'S RULE.  ``_collect_text_fragments``
+decided what a template contributed by asking whether it carried parameters,
+reading "carries parameters" as "carries verse text".  It dispatches on the
+template NAME throughout now, and raises on a name with no rule.  Seven leaks
+closed together, changing the atom count of 507 verses, מ:פסוק among them
+at 895 payloads.  Genesis 1:1 rendered 9 atoms for a seven-word verse, its
+first atom running the book title, the whole navigation reference and two
+copies of בְּרֵאשִׁית together, and renders 7.  That function's docstring holds
+the evidence, the other six leaks and the re-measurement path; do not restate
+them here.
 
-ONLY 2Sa 15:37 OF THE 34 CASES IS AFFECTED, AND THAT IS A RULE RATHER THAN LUCK.
+ONLY 2Sa 15:37 OF THE 34 CASES WAS AFFECTED, AND THAT WAS A RULE RATHER THAN LUCK.
 The navigation template precedes every verse, but in column D, which is not parsed
 into these payloads at all; it reaches a payload only where it also carries a
 division marker.  Measured 2026-09-02: 895 verse payloads hold one, and 889 of
 those carry a seder (סדר), an aliyah (עלייה) or both, leaving 6 that carry a bare
 reference for a reason not established here.  2Sa 15:37 begins seder 29, which is
-why it is the one case of the 34 that has one.
+why it was the one case of the 34 that has one.
 
 THE MAQAF COMPOUNDS ARE NOT AMONG THEM, though a cruder check reports them as
 disagreements.  Holman quotes a whole compound while numbering one of its atoms,
@@ -59,8 +63,9 @@ the same day the shirah spaces of the Song of Deborah were fusing Judg 5:6.7 and
 Judg 5:11.13 the same way, and both of those were right too.
 
 SO INVESTIGATE AN INDEX DISAGREEMENT BEFORE REPORTING IT AS HOLMAN'S.  Five have
-looked like his numbering so far -- the four above and 2Sa 15:37 -- and every one
-of the five has turned out to be this corpus rendering instead.
+looked like his numbering so far -- the four above and 2Sa 15:37 -- every one of
+the five has turned out to be this corpus rendering instead, and all five are
+resolved as of 2026-09-02.  A sixth would be worth the same suspicion.
 
 ``comparison_form_already_present`` IS A SEPARATE QUESTION, AND IT DATES THE
 CORPUS RATHER THAN JUDGING HOLMAN.  A case whose verse already
