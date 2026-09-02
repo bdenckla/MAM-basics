@@ -68,6 +68,9 @@ def _iter_plus_verse_payloads(
 #                      A token that differs between the two readings (e.g.
 #                      accent-based vowel variants) might not appear in כפול.
 #
+# Each row above opens on Hebrew and so lays out right to left: Ben Denckla chose
+# the column alignment over giving each row a Latin runway, 2026-09-02.
+#
 # Callers that scan the resulting text for specific features should be aware
 # that hits present only in the ignored params will not be found.
 # ---------------------------------------------------------------------------
