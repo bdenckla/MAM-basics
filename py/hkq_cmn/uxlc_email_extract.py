@@ -47,7 +47,8 @@ Parsing is deliberately fail-fast: an unrecognized field label, whether inside
 a case or in the position that would have opened one, a heading whose reference
 disagrees with its first field, an attachment that cannot be assigned to a
 case, and a duplicate reference all raise rather than dropping content. What is
-assumed rather than checked is that a field value is one line, and that the
+assumed rather than checked is that a field value is one line -- the label's
+line, or the line directly below it where the label's is empty -- and that the
 prose after a message's last case is its sign-off.
 
 What is NOT checked is that a case's atom index names the word the case quotes.
@@ -108,7 +109,8 @@ FIRST_FIELD_LABELS = (
     "Image",
     # The 1 Samuel 28:12 message of 2026-08-23, a single-case message whose two
     # form lines are "Current" and "Change" and whose values sit on the line
-    # BELOW the label -- see VALUE_ON_NEXT_LINE and _parse_case_region.
+    # BELOW the label -- see _parse_case_region, which continues an empty value
+    # onto the line directly under it.
     "Current",
 )
 OTHER_FIELD_LABELS = (
