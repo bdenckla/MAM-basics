@@ -175,8 +175,14 @@ def _disposition_html(case: dict[str, Any]) -> str:
     # said only what the page it sits on already says, and prefixing the outcome
     # to the summary instead would give a line with two colons in it.
     outcome = as_optional_text(disposition.get("outcome")) or "Handled"
+    # BOTH lines are English prose and both go through _prose_note_html, for the
+    # reason that function gives.  The summary needs it as much as the reason
+    # does: "MAM now has the pashta repeated over the ש" names one Hebrew letter,
+    # which was enough for note_line_html to set the whole sentence in a Hebrew
+    # font.  Only the summaries that happened to quote no letter looked right,
+    # which is the worst way for a bug like this to present.
     return join_nonempty_html_blocks(
-        "" if summary is None else note_line_html(label=f"{outcome}:", value=summary),
+        "" if summary is None else _prose_note_html(label=f"{outcome}:", value=summary),
         "" if reason is None else _prose_note_html(label="Why:", value=reason),
     )
 
