@@ -436,10 +436,13 @@ worth that cost.
 MAM-basics commit `d152ec8d7a8757f9ee679900490fa6f48a148c3e` removes the
 dependency. `py/main_wlc_json_and_unicode.py` now generates only the public
 `wlc420` and `wlc422` families and their public comparisons. The dated release
-descriptors and `mb_cmn.paths.wlc_utils_private_dir()` are gone. The path
-resolver's two generic env-name tests now use the equally sharp
-`codex-index`/`codex-index-aleppo` prefix pair, so current test code no longer
-names the evacuated private tree merely as a fixture.
+descriptors and `mb_cmn.paths.wlc_utils_private_dir()` are gone. Follow-up
+commit `688bc05a8f7465e013ffb55230193abdf2978267` restores the original
+`wlc-utils`/`wlc-utils-private` pair in two generic env-name mapping tests after
+Ben clarified on 2026-09-02 that a textual reference is not a dependency. The
+tests use repo names and dummy env values only as inert input; the tests perform
+no directory existence check or filesystem access. No dated release support or
+private path accessor returned.
 
 MAM-private commit `40a7db9ff6ae1235d9f2d45bf44fbac9ffac93be` records the
 decision at the private tree's README, at the governing evacuation plan, and in
