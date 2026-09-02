@@ -28,8 +28,11 @@ public P2 findings.
 | Final public plus private | 12 | 61 | 19 | 92 |
 
 All findings below retain their original severity. **Open — queued** means the
-finding remains present at the pinned Phase 13 baseline and belongs in a later
-remediation forest. **Fixed in closeout** applies only to the corrected tally in
+finding remains present and belongs in a later remediation wave. **Already fixed
+before Phase 13** means later remeasurement found a production fix that was
+already an ancestor of the pinned Phase 13 baseline. **Fixed in remediation**
+means the 2026-09-02 change-log fail-closed wave changed production code and
+verified the result. **Fixed in closeout** applies only to the corrected tally in
 `MP13-03`; it does not claim a production-code fix.
 
 ## Public finding index
@@ -57,10 +60,14 @@ remediation forest. **Fixed in closeout** applies only to the corrected tally in
 - `MP02-01` **P1** — Diff extraction drops differently keyed and unmatched
   content; a published 0-change result corresponds to 175 normalized matches.
   Open — queued; oracle root cause.
-- `MP02-02` **P1** — Git failures become successful empty reports. Open — queued;
-  dependency-error root cause.
-- `MP02-03` **P2** — Verification errors do not stop JSON and HTML publication.
-  Open — queued.
+- `MP02-02` **P1** — Git dependency failures formerly could become successful
+  empty reports. Already fixed before Phase 13 by MAM-basics commit `b403e6d`
+  (2026-08-31); remeasurement confirmed that `ls-tree`, `show`, `log`, and
+  `rev-list` failures are fatal.
+- `MP02-03` **P2** — Verification errors formerly did not stop JSON and HTML
+  publication. Fixed in remediation by MAM-basics commit `db4298e` (2026-09-02);
+  the caller raises before reading commit dates, creating output directories, or
+  writing JSON and HTML.
 - `MP02-04` **P2** — Long-document anchor IDs collide. Open — queued.
 - `MP02-05` **P2** — Quick Brown records only the last qualifying category. Open
   — queued.

@@ -1,6 +1,6 @@
 # PLAN — MAM mega-pipeline Phase 13, remediation handoff, and forest retirement
 
-State: approved, not started
+State: Phase 13 complete; the first remediation wave completed 2026-09-02
 
 Ben's decision, 2026-09-01: the review should have one final Phase 13 for
 whole-pipeline integration and closeout. Phase 13 is followed by a separate
@@ -322,3 +322,41 @@ deletion, history rewriting, force-pushing, and merging remain separate actions.
 
 Git commits and the tracked final manifest matrix are the archive. The worktree
 directories are not the archive.
+
+## Remediation wave 1 — change-log failure propagation (completed 2026-09-02)
+
+Ben approved the MP02-02 and MP02-03 remediation wave on 2026-09-02. The wave
+used the separately named forest at
+`C:\Users\BenDe\Documents\Codex\ReviewForests\mam-mega-remediation-change-log-fail-closed-2026-09-02`.
+The forest manifest records current-main baselines for MAM-basics, MAM-parsed,
+MAM-with-doc, and MAM-private. The MAM-basics and MAM-private remediation
+branches first merged the retained Phase 13 review records in commits
+`8c00c87a0078f7d6ab250596a6a9693e7db385a9` and
+`8375f306114a02f6a497b0b435d78d564bcba060`, respectively.
+
+Remeasurement established that MP02-02 was already fixed by MAM-basics commit
+`b403e6df00ec7b9349f06f458b921ca44c2c17fb` on 2026-08-31. An ignored adverse
+probe confirmed that failures from `ls-tree`, `show`, `log`, and `rev-list` all
+raise instead of producing a successful empty report. No additional MP02-02
+production change was made.
+
+MAM-basics commit `db4298e8bd1b9b40fcaf800c2d55db6e51b24abb` fixes MP02-03.
+`diff_mpp.generate_report()` now captures the full error list returned by
+`mpplus_verify.verify_all()` and raises `VerificationError` before reading commit
+dates, creating output directories, or writing JSON and HTML. The verifier keeps
+its collect-all contract. The ignored adverse probe forced one verification
+error and observed zero JSON writes and zero HTML writes.
+
+Verification used
+`C:\Users\BenDe\GitRepos\MAM-basics\.venv\Scripts\python.exe`. Black left the
+edited production file unchanged. The four focused change-log test files passed
+with 37 tests. Real `diff-mpp --all` generation reproduced named-release counts
+of 76, 557, 19, 139, and 33. The MAM-with-doc detached worktree remained clean,
+so all 16 generated artifacts were byte-identical to the committed files. The
+MAM-parsed detached worktree also remained clean.
+
+MAM-private commit `87d8972287961671420c2792459c59cca954d52e` updates the canonical
+ledger without changing either finding's severity. The public companion records
+the same dispositions. MP02-01 remains open, the empty unpinned report remains
+unendorsed, and MP02-07 batch atomicity remains outside the wave. Both forests
+remain present pending Ben's next remediation or retirement decision.
