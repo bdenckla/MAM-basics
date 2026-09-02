@@ -424,3 +424,40 @@ disposition ledger, and the public companion records the same disposition.
 MP02-07 batch atomicity remains outside this wave. No GitHub issue state changed.
 The investigation and implementation forests remain present pending a later
 retirement decision.
+
+## Remediation wave 3 — sever the dated WLC private dependency (completed 2026-09-02)
+
+Ben directed this architectural wave on 2026-09-02 after asking whether the
+mega pipeline's dated-WLC generation was the only MAM-basics reach into
+`MAM-private/wlc-utils-private`. The approved trade was explicit: the preserved
+2025-03-21 outputs may become stale, and severing the runtime dependency is
+worth that cost.
+
+MAM-basics commit `d152ec8d7a8757f9ee679900490fa6f48a148c3e` removes the
+dependency. `py/main_wlc_json_and_unicode.py` now generates only the public
+`wlc420` and `wlc422` families and their public comparisons. The dated release
+descriptors and `mb_cmn.paths.wlc_utils_private_dir()` are gone. The path
+resolver's two generic env-name tests now use the equally sharp
+`codex-index`/`codex-index-aleppo` prefix pair, so current test code no longer
+names the evacuated private tree merely as a fixture.
+
+MAM-private commit `40a7db9ff6ae1235d9f2d45bf44fbac9ffac93be` records the
+decision at the private tree's README, at the governing evacuation plan, and in
+the canonical disposition ledger. The existing private Phase 8 finding remains
+open: severing regeneration does not repair the preserved output and is not
+reported as though it did. The accepted disposition here is the risk that those
+outputs may become stale.
+
+Verification used
+`C:\Users\BenDe\GitRepos\MAM-basics\.venv\Scripts\python.exe`. Black
+formatted the four edited Python files. The focused path suite passed 14 tests.
+The real `py/main_wlc_json_and_unicode.py` entry point exited 0; every public
+tracked output was byte-identical, and `MAM-private/wlc-utils-private/in` and
+`out` had zero diff. The full MAM-basics suite passed 971 tests and 65 subtests,
+with 5 pre-existing skips.
+
+MAM-basics `HEAD` advanced during verification from `a9422f9` to `757aa68` in
+concurrent HKQ work. The intervening commit touched four HKQ/render paths and
+none of this wave's four paths. The full suite ran on the newer head, staging
+named only this wave's paths, and the push was a fast-forward. No GitHub issue
+state changed.
