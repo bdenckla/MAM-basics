@@ -343,7 +343,7 @@ six `py/*_paths.py` modules and `py/repo_scopes.py`.
 | diffable-pointed-hebrew | `test_vendoring_policy_paths`, as a vendoring destination | `vendoring-audit` | — | `py/main_vendoring.py` | third stage, last lane |
 | MAM-parsed, MAM-simple, MAM-with-doc | yes — corpus readers and page oracles | yes — `cwd=` steps and writes | — | many | not this stage: MAM's published products — whether they follow is an open question, see "Whether the products follow" below |
 | MAM-OSIS, MAM-for-Sefaria | no | yes — writes; MAM-for-Sefaria through a cwd-relative `../` literal in `py/mb_misc/write_utils.py`, which is worktree-hostile and is raised here and not fixed, being out of this stage's scope | — | — | not this stage: products, the same open question |
-| MAM-private | `test_final_stress_vs_phonetic_mam`, `test_vendoring_policy_paths` | `near-aleppo-census`, `vendoring-audit` | — | two readers | **never**: private |
+| MAM-private | `test_final_stress_vs_phonetic_mam`, `test_vendoring_policy_paths` | `near-aleppo-census`, `vendoring-audit` | — | one reader since 2026-09-02, `py/accgram/breuer_word_length.py` (phonetic data, read-only; the WLC-private snapshot read was severed that day) | **never**: private — but a read-only sibling needs no worktree, see "What forces a forest" below |
 | phonetic-hbo, Taamey_D, hbofonts, github-misc | no path reach at all — URLs and prose only | no | no | no | not candidates |
 
 **So the suite on 2026-09-02 needs twelve working trees** — MAM-basics plus the eleven rows that
@@ -393,8 +393,14 @@ would become rows in `DATA-LICENSES.md` under a GPL-3.0 repo, the pattern the wl
 follow. What evacuating the products would buy is the whole of the goal: the mega would write
 only MAM-basics and MAM-private's census, so every task, product regeneration included, runs in
 one public worktree — and Ben, 2026-09-02: *"that census will go away eventually"*, after which
-the mega would write MAM-basics alone, and a MAM-basics worktree would have no sibling left to
-resolve. Their combined 1,023 files and 236 MB would take MAM-basics to roughly
+the mega would write MAM-basics alone. **One read of MAM-private stays**, and Ben expects it to:
+the phonetic data at `MAM-private/al-hatorah/io/a01-phonetic-std-set/`, reached through
+`paths.require_al_hatorah_phonetic_dir()` by `py/accgram/breuer_word_length.py` and
+`py/tests/test_final_stress_vs_phonetic_mam.py` (the WLC-private snapshot read left
+`py/mb_cmn/paths.py` on 2026-09-02). A read is the simple case: the primary clone serves it
+through `REPO_MAM_PRIVATE_DIR` or `REPOS_ROOT`, and no worktree of MAM-private is owed to a task
+that only reads it. (This paragraph said "no sibling left to resolve" for a few minutes on
+2026-09-02; Ben corrected it.) Their combined 1,023 files and 236 MB would take MAM-basics to roughly
 800 MB of tracked files. **Nothing is decided; if Ben decides yes, it is a fourth stage with its
 own section here, after the third.**
 
