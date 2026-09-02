@@ -341,20 +341,60 @@ six `py/*_paths.py` modules and `py/repo_scopes.py`.
 | codex-index-cam1753 | `test_h_dot_below_nfc` scope (14 files) | — | `check_mark_order` corpus (72 JSON) | `py/cam1753_paths.py`: nine entry points, `py_cam1753_loc/`, `py_cam1753_word_image/` | third stage |
 | codex-index-leningrad | `test_h_dot_below_nfc` scope (8 files) | — | — | `py/lenin_paths.py`: `main_lenin_wikisource_page.py`, `main_lenin_vendor_uxlc.py` | third stage |
 | diffable-pointed-hebrew | `test_vendoring_policy_paths`, as a vendoring destination | `vendoring-audit` | — | `py/main_vendoring.py` | third stage, last lane |
-| MAM-parsed, MAM-simple, MAM-with-doc | yes — corpus readers and page oracles | yes — `cwd=` steps and writes | — | many | **never**: MAM's published products |
-| MAM-OSIS, MAM-for-Sefaria | no | yes — writes; MAM-for-Sefaria through a cwd-relative `../` literal in `py/mb_misc/write_utils.py`, which is worktree-hostile and is raised here and not fixed, being out of this stage's scope | — | — | **never**: products |
+| MAM-parsed, MAM-simple, MAM-with-doc | yes — corpus readers and page oracles | yes — `cwd=` steps and writes | — | many | not this stage: MAM's published products — whether they follow is an open question, see "Whether the products follow" below |
+| MAM-OSIS, MAM-for-Sefaria | no | yes — writes; MAM-for-Sefaria through a cwd-relative `../` literal in `py/mb_misc/write_utils.py`, which is worktree-hostile and is raised here and not fixed, being out of this stage's scope | — | — | not this stage: products, the same open question |
 | MAM-private | `test_final_stress_vs_phonetic_mam`, `test_vendoring_policy_paths` | `near-aleppo-census`, `vendoring-audit` | — | two readers | **never**: private |
 | phonetic-hbo, Taamey_D, hbofonts, github-misc | no path reach at all — URLs and prose only | no | no | no | not candidates |
 
 **So the suite on 2026-09-02 needs twelve working trees** — MAM-basics plus the eleven rows that
 tests reach — and the mega needs ten. After the second stage: suite nine. After the trio: **suite
 six** (MAM-basics, MAM-parsed, MAM-simple, MAM-with-doc, MAM-private, diffable-pointed-hebrew).
-After diffable-pointed-hebrew: **five**, and five is the floor — four products consumed outside
-these repos and one private repo, none of which can be merged into a public MAM-basics. **What
+After diffable-pointed-hebrew: **five**, and five is this stage's floor — four products consumed
+outside these repos, and MAM-private, which cannot be merged into a public MAM-basics. **What
 "single worktree" then means**: any task that neither regenerates a product nor runs the private
 census — accgram pages, the Holman review, the Job review, CLC, the codex indexes, most of the
 suite — runs in one worktree; a product regeneration needs the product's worktree beside it,
-which is inherent to the product living in its own repo.
+for as long as the product lives in its own repo.
+
+**What forces a forest is writing to more than one repo, not reading from one** — settled by
+the wlc-utils plan's Phase 11 record, which ran the suite in a lone worktree: without
+`REPOS_ROOT` it stopped at collection with 18 `FileNotFoundError: sibling repo <name> not found`,
+and with `REPOS_ROOT=C:\Users\BenDe\GitRepos` it was a first-class run, because "the suite reads
+sibling repos and writes none". A read-only sibling is served by its primary clone through that
+override; a worktree of its own is owed only to a repo the task **writes**. So the count that
+decides whether a task needs a forest is its write targets, and evacuation converts a write into
+a data repo into a write into MAM-basics itself.
+
+**Whether the products follow — an open question Ben put on 2026-09-02, and not decided.** The
+sentence above this one read "none of which can be merged into a public MAM-basics" until that
+afternoon, and Ben objected: an emptied repo with a `README.md` pointing at the new location, and
+a URL redirecting to `bdenckla.github.io/MAM-basics/<something>`, are both acceptable to him.
+He is right that nothing technical distinguishes the five products from the six repos of the
+second and third stages — the same lane, with a stub row per Pages site. What distinguishes
+them is who consumes them, which the stub mechanism covers only in part. Measured 2026-09-02:
+
+| Product | Tracked | Its own README says | Cited by URL outside Ben's repos |
+|---|---|---|---|
+| MAM-parsed | 96 files, 28.6 MB | the complete parsed MAM, "easier for a *program* to read" | the Wikisource introduction's appendices cite `github.com/bdenckla/MAM-parsed` once |
+| MAM-simple | 392 files, 102.7 MB | the simple extract for outsiders, with `py-examples/` meant to run from a clone; CC BY-SA 4.0 | — |
+| MAM-with-doc | 273 files, 45.5 MB | Ben's own documentation pages | the Wikisource introduction cites `bdenckla.github.io/MAM-with-doc/` five times, in Avi Kadish's text |
+| MAM-OSIS | 92 files, 28.4 MB | "intended for conversion to SWORD format, for use by STEPBible & CrossWire" | unknown |
+| MAM-for-Sefaria | 170 files, 31.0 MB | "suitable for import into Sefaria", which "does not take updates as frequently as they appear here" | unknown |
+
+Three things the README-and-stub mechanism does not cover, for Ben to weigh: (1) a **machine
+consumer** that clones or fetches raw files — GitHub redirects a *renamed* repo's URLs but not an
+*emptied* repo's file URLs, so a script at Sefaria, STEPBible or CrossWire that pulls by URL gets
+a 404 and one that clones gets a README, loudly either way, and a person there fixes it once;
+whether such a script exists is a question for those consumers, not for this file. (2) The
+**outsider's clone cost**: MAM-simple exists to be small and runnable from its own clone, and
+inside MAM-basics "get the simple extract" becomes cloning a repo near 800 MB, unless a sparse
+checkout or a release archive is offered instead. (3) **Licence**: MAM-simple's CC BY-SA 4.0
+would become rows in `DATA-LICENSES.md` under a GPL-3.0 repo, the pattern the wlc pages already
+follow. What evacuating the products would buy is the whole of the goal: the mega would write
+only MAM-basics and MAM-private's census, so every task, product regeneration included, runs in
+one public worktree. Their combined 1,023 files and 236 MB would take MAM-basics to roughly
+800 MB of tracked files. **Nothing is decided; if Ben decides yes, it is a fourth stage with its
+own section here, after the third.**
 
 Two reach facts that set the lane order: evacuating book-of-job, codex-index-aleppo or
 codex-index-cam1753 removes **two** dependencies each (the NFC test scope and
