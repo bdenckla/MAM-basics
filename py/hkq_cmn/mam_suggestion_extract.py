@@ -93,6 +93,31 @@ STD_BOOK_NAME_BY_HOLMAN_ABBREV = {
     "2Ch": "2Chronicles",
 }
 
+# Holman's label for the text he compares MAM against, mapped to the name this
+# project calls that text by.
+#
+# THE IDENTIFICATION IS BEN DENCKLA'S, MADE ON 2026-09-02, AND THAT PROVENANCE IS
+# WHY IT SITS IN A TABLE HERE RATHER THAN BEING RESOLVED WHILE PARSING.  Holman
+# writes only "HUB", never the edition's name.  What edition "HUB" names was
+# worked out in the reply thread, by a correspondent -- and those replies are
+# exactly what this module does not store, so reading the identification out of
+# them would have walked it around the boundary the module docstring sets out.
+# Ben settled it directly instead, so it enters as his editorial decision, and
+# ``comparison_source`` goes on holding Holman's label verbatim beside it.
+#
+# The Jerusalem Crown is also כתר ירושלים; prose says "Jerusalem Crown" and
+# nothing else, one name for one thing.  Do NOT write "Breuer's Jerusalem Crown":
+# Breuer advised on it without detailed involvement, and Yosef Ofer did the
+# detailed work, as its front matter says.
+#
+# A label with no entry raises rather than passing through, so a message
+# comparing against something new is a decision somebody makes and not a string
+# that quietly reaches a page.
+EDITION_BY_HOLMAN_LABEL = {
+    "Aleppo": "Aleppo Codex",
+    "HUB": "Jerusalem Crown",
+}
+
 MAM_LABEL = "MAM:"
 
 # A heading line of the prose-list shape, after the forward's quote markers are
@@ -178,6 +203,23 @@ class SuggestionCase:
     image_targets: list[ImageTarget] = field(default_factory=list)
     source_message_keys: list[str] = field(default_factory=list)
 
+    @property
+    def comparison_edition(self) -> str:
+        """The name this project calls Holman's comparison text by.
+
+        Resolved through ``EDITION_BY_HOLMAN_LABEL``, whose comment records that
+        the identification of "HUB" is Ben Denckla's rather than anything read out
+        of the mailbox.
+        """
+        try:
+            return EDITION_BY_HOLMAN_LABEL[self.comparison_source]
+        except KeyError as exc:
+            raise ValueError(
+                f"no edition recorded for Holman's label {self.comparison_source!r}; "
+                "add it to EDITION_BY_HOLMAN_LABEL rather than letting an "
+                "unidentified label reach a page"
+            ) from exc
+
     def payload(self) -> dict[str, object]:
         return {
             "ref": str(self.ref),
@@ -187,6 +229,7 @@ class SuggestionCase:
             "verse": self.ref.verse,
             "atom": self.ref.atom,
             "comparison_source": self.comparison_source,
+            "comparison_edition": self.comparison_edition,
             "mam_form": self.mam_form,
             "comparison_form": self.comparison_form,
             "description": self.description,
