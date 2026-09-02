@@ -1,10 +1,12 @@
-"""Ben Denckla's corrections to Holman's wording in the MAM suggestions.
+"""Ben Denckla's corrections to Holman's MAM suggestions.
 
 The same shape, and for the same reason, as ``uxlc_bracketed_corrections`` beside
-this file: the extract holds Holman's wording, so a line of his that is wrong stays
-wrong unless something says otherwise, and this is that something.  Each entry
-replaces one field of one case, keeps what he sent under an ``_as_sent`` key, and
-names Ben as the corrector, because the data alone cannot say whose words these are.
+this file: the extract holds what Holman sent, so a line or a form of his that is
+wrong stays wrong unless something says otherwise, and this is that something.
+Each entry replaces one field of one case, keeps what he sent under an ``_as_sent``
+key, and names Ben as the corrector, because the data alone cannot say whose words
+these are.  Two entries stand: a line of prose for Zechariah 2:4 and a quoted form
+for Joshua 10:12, both described below.
 
 HOLMAN DID NOT CORRECT THIS HIMSELF, AND THE RECORD MUST NOT IMPLY THAT HE DID.
 Checked 2026-09-02 across the whole mailbox: "Place Mereka on first syllable" for
@@ -24,6 +26,25 @@ first syllable of זֵרוּ, the comparison edition having it on the second, so
 as sent describes MAM's existing state rather than the change toward that edition.
 The corrected wording names the mark and the syllable the change actually moves it to.
 
+WHAT IS WRONG WITH THE JOSHUA 10:12 FORM, and why it is a slip of the same kind.
+That case's comparison form spells the stress helper of the pashta as U+05A8 qadma,
+where MAM spells it as a second U+0599 pashta.  Measured 2026-09-02 over
+MAM-parsed/plus: 3,824 atoms have two U+0599, and only two have a qadma before a
+pashta -- וְי֨וֹם֙ at Exodus 20:9 and at Deuteronomy 5:13, one in each Decalogue's
+combined cantillation.  Holman's suggestion for the case reads "Add helper accent",
+which is that doubled pashta, so the qadma is a typing slip rather than a proposal
+to use Unicode QADMA.  Ben Denckla settled it on 2026-09-02: "I am 100% sure he
+wasn't honestly suggesting use of Unicode QADMA."
+
+THE CORRECTED FORM DOES NOT REACH ``mam_plus_check``, and that is a limitation
+rather than a choice.  ``main_ingest_mam_suggestions`` calls ``check_case`` on the
+case as extracted and applies this table to the payload afterwards, so the
+``comparison_form_already_present`` reported for Joshua 10:12 still asks whether
+MAM has the qadma spelling, which it never will.  The atom index is unaffected --
+both spellings differ from the MAM form in the same single atom -- so only that one
+flag is wrong, and it reads false today for the separate reason that the local
+MAM-parsed predates the Wikisource edit of 2026-08-28.
+
 Applying an entry is fail-fast in both directions.  A replacement whose original is
 not the field's exact current value raises, so a reworded message cannot leave a
 correction silently unapplied; and an entry naming no case or no field raises, so a
@@ -35,6 +56,23 @@ from __future__ import annotations
 from dataclasses import dataclass
 
 CORRECTOR = "Ben Denckla"
+
+# Joshua 10:12.3's comparison form, in the spelling sent and in the corrected one.
+# EVERY MARK IS A NAMED ESCAPE, for two reasons.  U+05A8 and U+0599 are hard to
+# tell apart in a literal, and which of the two is meant is the whole of this
+# correction.  And the shin dot precedes the qubuts here, which is MAM-normal
+# mark order rather than the Unicode-normal order a keyboard or a paste through
+# anything that normalizes will produce -- typing the stem instead of spelling it
+# put the qubuts first, and the fail-fast check below is what caught it.
+_JOSH_STEM = (
+    "י\N{HEBREW POINT SHEVA}"
+    "ה"
+    "ו\N{HEBREW POINT HOLAM}"
+    "ש\N{HEBREW POINT SHIN DOT}\N{HEBREW POINT QUBUTS}"
+)
+_JOSH_TAIL = "ע\N{HEBREW POINT PATAH}\N{HEBREW ACCENT PASHTA}"
+_JOSH_AS_SENT = _JOSH_STEM + "\N{HEBREW ACCENT QADMA}" + _JOSH_TAIL
+_JOSH_CORRECTED = _JOSH_STEM + "\N{HEBREW ACCENT PASHTA}" + _JOSH_TAIL
 
 
 @dataclass(frozen=True)
@@ -58,6 +96,21 @@ CASE_FIELD_CORRECTIONS: dict[tuple[str, str], FieldCorrection] = {
             "first syllable of זֵרוּ; the comparison edition has it on the second. "
             "The wording as sent looks carried down from the Judges 10:11 row, "
             "where the mark genuinely is a merkha and 'first syllable' is right."
+        ),
+    ),
+    ("Josh 10:12.3", "comparison_form"): FieldCorrection(
+        original=_JOSH_AS_SENT,
+        replacement=_JOSH_CORRECTED,
+        reason=(
+            "MAM spells the stress helper of a pashta as a second U+0599 "
+            "pashta, not as the U+05A8 qadma the form as sent has. Measured "
+            "2026-09-02 over MAM-parsed/plus, 3,824 atoms have two U+0599, "
+            "while only two have a qadma before a pashta: וְי֨וֹם֙ at Exodus "
+            "20:9 and at Deuteronomy 5:13, one in each Decalogue's combined "
+            "cantillation. Holman's suggestion for this case reads 'Add helper "
+            "accent', and the helper he means is that doubled pashta; the "
+            "qadma is a slip of the same kind as the 'Mereka' of Zechariah 2:4 "
+            "above, not a proposal to use Unicode QADMA."
         ),
     ),
 }

@@ -3,7 +3,6 @@ from __future__ import annotations
 from collections.abc import Iterator
 
 from hkq_cmn.template_name_quotes import canonical_template_name
-from mb_cmn import template_names
 
 
 def _numeric_key(kind: str, key: object) -> int:
@@ -90,65 +89,82 @@ def _collect_text_fragments(node: object, out_parts: list[str]) -> None:
         # Folded to ASCII quotes for matching the quote-bearing literals below;
         # tmpl_name itself (gershayim) is never stored from this function.
         cmp_name = canonical_template_name(tmpl_name)
-        if tmpl_name in template_names.WHITESPACE_TMPL_NAMES:
-            # A layout template that separates two runs of text and carries no
-            # text of its own: the shirah spaces of a song, and the setuma/petucha
-            # and poetic-space markers.  It has no tmpl_params, so before this
-            # line it fell through the whole function and contributed NOTHING --
-            # which silently FUSED the atoms on either side of it.  Judges 5:6,
-            # the Song of Deborah, rendered as ...בֶּן־עֲנָת֙בִּימֵ֣י... and so counted
-            # 11 atoms where the verse has 13, putting every atom index after
-            # the first space out by one.
+        tmpl_params = node.get("tmpl_params")
+        if not isinstance(tmpl_params, dict):
+            # A TEMPLATE WITH NO PARAMETERS CARRIES NO TEXT AND SEPARATES THE
+            # TEXT AROUND IT, so it contributes a space.  Before this rule it
+            # fell through the whole function and contributed NOTHING, which
+            # silently FUSED the atoms on either side of it and put every atom
+            # index after it out by one.
             #
-            # Found 2026-09-02 while checking Holman's MAM suggestions against
-            # this corpus: four of his atom indices looked off by one and were
-            # in fact right, the corpus rendering being what was wrong.  The set
-            # of templates that mean whitespace was already declared, in
-            # mb_cmn/template_names.py, and already used for exactly this by
-            # qere_projection; it simply was not honoured here.
+            # A SEPARATOR IS THE WHOLE OF WHAT ATOM COUNTING NEEDS, and a space
+            # is one.  None of these templates is an atom, and none joins the
+            # text around it into one atom.  So nothing here decides how such a
+            # template RENDERS: whether the paseq template מ:פסק emits U+05C0,
+            # or the gray-maqaf template מ:מקף אפור a maqaf, is a separate
+            # question this rule neither asks nor answers.  Ben Denckla settled
+            # that separation on 2026-09-02, noting that a gray maqaf raises a
+            # real question only for CHANTED WORD counting, which this function
+            # does not do.
+            #
+            # THIS SUBSUMES template_names.WHITESPACE_TMPL_NAMES, which had a
+            # branch of its own here from earlier the same day: the shirah
+            # spaces of the Song of Deborah fused בֶּן־עֲנָת֙ and בִּימֵ֣י in Judges
+            # 5:6, so that verse counted 11 atoms where it has 13.  Those
+            # templates are one case of this rule, not a rule of their own.
+            # See foi/kq_trivial_types.py, which groups the same names the same
+            # way for a different purpose.
+            #
+            # Measured 2026-09-02 over MAM-parsed/plus: this rule separates 626
+            # fused atoms across 559 verses -- the paseq template מ:פסק 508
+            # times, the gray-maqaf template מ:מקף אפור 116 times, and the
+            # legarmeh template מ:לגרמיה-2 twice.  Every other param-less
+            # template already stands beside a space and gains nothing.  The
+            # case that produced the rule is Judges 1:7, whose one paseq
+            # template sits between שִׁבְעִ֣ים and מְלָכִ֡ים: fused, the verse counts
+            # 22 atoms and Jerusalem lands at 20; separated, 23 and 21, and 21
+            # is the number Daniel Holman sent.
             out_parts.append(" ")
             return
-        tmpl_params = node.get("tmpl_params")
-        if isinstance(tmpl_params, dict):
-            if tmpl_name == "נוסח" or tmpl_name == "מ:הערה-2":
-                # Param 1 is the in-verse target; param 2 is documentation.
-                _collect_text_fragments(tmpl_params.get("1"), out_parts)
-                return
-            if tmpl_name == "מ:הערה":
-                # Suppressed note — no verse text.
-                return
-            if tmpl_name in ("מ:דחי", "מ:צינור"):
-                # Two-param stress-variant template.  Param "1" is the canonical
-                # (clean) form; param "2" adds a stress-helper duplicate accent.
-                _collect_text_fragments(tmpl_params.get("1"), out_parts)
-                return
-            if tmpl_name == "מ:קמץ":
-                # Two-param qamats template.  Param "ד" (dikduk) is the canonical
-                # qamats-gadol/qamats-qatan distinction; param "ס" is Sephardic.
-                _collect_text_fragments(tmpl_params.get("ד"), out_parts)
-                return
-            if tmpl_name == "מ:כפול":
-                # "Double-cantillation" template.  Param "כפול" is the combined form.
-                _collect_text_fragments(tmpl_params.get("כפול"), out_parts)
-                return
-            if tmpl_name == "כתיב ולא קרי":
-                # Written-but-not-read: contributes nothing to the reading text.
-                return
-            if tmpl_name == "קרי ולא כתיב":
-                # Read-but-not-written: param 2 is the qere text.
-                _collect_text_fragments(tmpl_params.get("2"), out_parts)
-                return
-            if cmp_name == 'מ:קו"כ-אם-2':
-                # Trivial qere: param 1 is the word; param 2 is a documentation
-                # string (e.g. "א-קרי=..."), not verse text.
-                _collect_text_fragments(tmpl_params.get("1"), out_parts)
-                return
-            if 'כו"ק' in (cmp_name or "") or 'קו"כ' in (cmp_name or ""):
-                # Ketiv-qere: param 1 is ketiv (written), param 2 is qere (read).
-                _collect_text_fragments(tmpl_params.get("2"), out_parts)
-                return
-            for value in tmpl_params.values():
-                _collect_text_fragments(value, out_parts)
+        if tmpl_name == "נוסח" or tmpl_name == "מ:הערה-2":
+            # Param 1 is the in-verse target; param 2 is documentation.
+            _collect_text_fragments(tmpl_params.get("1"), out_parts)
+            return
+        if tmpl_name == "מ:הערה":
+            # Suppressed note — no verse text.
+            return
+        if tmpl_name in ("מ:דחי", "מ:צינור"):
+            # Two-param stress-variant template.  Param "1" is the canonical
+            # (clean) form; param "2" adds a stress-helper duplicate accent.
+            _collect_text_fragments(tmpl_params.get("1"), out_parts)
+            return
+        if tmpl_name == "מ:קמץ":
+            # Two-param qamats template.  Param "ד" (dikduk) is the canonical
+            # qamats-gadol/qamats-qatan distinction; param "ס" is Sephardic.
+            _collect_text_fragments(tmpl_params.get("ד"), out_parts)
+            return
+        if tmpl_name == "מ:כפול":
+            # "Double-cantillation" template.  Param "כפול" is the combined form.
+            _collect_text_fragments(tmpl_params.get("כפול"), out_parts)
+            return
+        if tmpl_name == "כתיב ולא קרי":
+            # Written-but-not-read: contributes nothing to the reading text.
+            return
+        if tmpl_name == "קרי ולא כתיב":
+            # Read-but-not-written: param 2 is the qere text.
+            _collect_text_fragments(tmpl_params.get("2"), out_parts)
+            return
+        if cmp_name == 'מ:קו"כ-אם-2':
+            # Trivial qere: param 1 is the word; param 2 is a documentation
+            # string (e.g. "א-קרי=..."), not verse text.
+            _collect_text_fragments(tmpl_params.get("1"), out_parts)
+            return
+        if 'כו"ק' in (cmp_name or "") or 'קו"כ' in (cmp_name or ""):
+            # Ketiv-qere: param 1 is ketiv (written), param 2 is qere (read).
+            _collect_text_fragments(tmpl_params.get("2"), out_parts)
+            return
+        for value in tmpl_params.values():
+            _collect_text_fragments(value, out_parts)
 
 
 def _render_template_like_text(node: object) -> str:

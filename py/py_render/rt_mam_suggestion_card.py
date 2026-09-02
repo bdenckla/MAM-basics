@@ -106,6 +106,7 @@ def suggestion_card_html(
         _disposition_html(case),
         _optional_note("Holman:", as_optional_text(case.get("description"))),
         _suggestion_html(case),
+        _corrected_form_html(case),
         _as_sent_html(case),
         _atom_note_html(case),
         _source_note_html(case, source_message_dates),
@@ -298,8 +299,48 @@ def _suggestion_html(case: dict[str, Any]) -> str:
         return ""
     corrected_by = _corrector_of(case, "suggestion")
     if corrected_by is not None:
-        value = f'{value} — corrected by {corrected_by} (see "Suggestion as sent")'
+        label = _corrected_field_label("suggestion")
+        value = f'{value} — corrected by {corrected_by} (see "{label} as sent")'
     return note_line_html(label="Suggestion:", value=value)
+
+
+# Reader-facing names for the fields a correction can replace.  Capitalizing the
+# field name is not good enough: it put "Comparison_form as sent" on the card when
+# the second entry was added on 2026-09-02, an identifier on a page written for
+# Hebrew-Bible readers.  A field with no entry raises, because this table and the
+# corrections table are both short and hand-maintained.
+_CORRECTED_FIELD_LABELS = {
+    "suggestion": "Suggestion",
+    "comparison_form": "Comparison form",
+}
+
+
+def _corrected_field_label(field: str) -> str:
+    label = _CORRECTED_FIELD_LABELS.get(field)
+    if label is None:
+        raise ValueError(
+            f"no reader-facing label for corrected field {field!r}; add one to "
+            "_CORRECTED_FIELD_LABELS rather than letting the field name render"
+        )
+    return label
+
+
+def _corrected_form_html(case: dict[str, Any]) -> str:
+    """Say that the comparison form shown above is not verbatim Holman.
+
+    The suggestion line carries its attribution inline, appended to its own text.
+    A form cannot: it sits in a Hebrew cell of the comparison table, where an
+    English clause does not belong.  So a corrected form gets this line instead,
+    and the bare "as sent" line below still holds exactly what Holman sent.
+    """
+    corrected_by = _corrector_of(case, "comparison_form")
+    if corrected_by is None:
+        return ""
+    label = _corrected_field_label("comparison_form")
+    return note_line_html(
+        label=f"{label}:",
+        value=f'corrected by {corrected_by} (see "{label} as sent")',
+    )
 
 
 def _as_sent_html(case: dict[str, Any]) -> str:
@@ -321,7 +362,9 @@ def _as_sent_html(case: dict[str, Any]) -> str:
         if as_sent is None:
             continue
         lines.append(
-            note_line_html(label=f"{field.capitalize()} as sent:", value=as_sent)
+            note_line_html(
+                label=f"{_corrected_field_label(field)} as sent:", value=as_sent
+            )
         )
     return "\n".join(lines)
 

@@ -18,13 +18,24 @@ stops holding, so a silent guess is not among the outcomes.
 Deriving it is what makes the indices CONSISTENT, which taking them as sent did
 not.  Atoms are counted with maqaf-joined atoms separate -- the rule
 ``find_hebrew_tokens`` already implements by leaving MAQAF out of its character
-class -- and 31 of Holman's 34 agree with the derivation.  The extract records the
+class -- and 33 of Holman's 34 agree with the derivation.  The extract records the
 derived index as ``atom`` and keeps his under ``atom_as_sent`` wherever the two
 differ, so nothing about his message is lost.
 
-The three corrected on 2026-09-02, each out by one and not in a consistent
-direction: 1Ki 7:24 (17 as sent, 16 derived), 2Sa 15:37 (8 as sent, 9 derived) and
-Judg 1:7 (21 as sent, 20 derived).  All three are the atom יְרוּשָׁלַ͏ִם.
+ONE CORRECTION STANDS, and it is not Holman's error either.  2Sa 15:37 (8 as sent,
+9 derived) disagrees because ``mam_plus_verse_data`` collects the parameters of
+the navigation template מ:פסוק into the verse text.  That template carries the
+book name, chapter, verse and seder, so the verse renders with שמואל as its first
+atom and its Hebrew numerals fused onto וַיָּבֹא.  Holman's 8 is right and the
+corpus rendering is wrong, exactly as it was for the two below.
+
+That one is RAISED AND NOT FIXED, as of 2026-09-02, the fix needing a decision
+about what each template with no rule of its own should contribute.  For מ:פסוק
+alone 392 verses change atom count, and the book-title template מ:ספר חדש and the
+special-letter template מ:אות-מיוחדת-במילה leak the same way: Genesis 1:1 renders
+9 atoms for a seven-word verse, its first atom running the book title, the whole
+navigation reference and two copies of בְּרֵאשִׁית together.  Of the 34 cases only
+2Sa 15:37 carries any such template, so the other 33 indices are unaffected.
 
 THE MAQAF COMPOUNDS ARE NOT AMONG THEM, though a cruder check reports them as
 disagreements.  Holman quotes a whole compound while numbering one of its atoms,
@@ -33,12 +44,16 @@ and the atom he numbers is the one bearing the difference every time -- so
 ``_differing_offset`` is what picks the right half, and it needs neither his index
 nor his prose description of where the mark sits.
 
-A DEFECT IN THE CORPUS RENDERING ONCE ACCOUNTED FOR TWO MORE, and finding it is
-why these figures are worth trusting.  Before ``mam_plus_verse_data`` was taught
-that a whitespace template means whitespace, on 2026-09-02, Judg 5:6.7 and
-Judg 5:11.13 also looked one out; both were right, and the shirah spaces of the
-Song of Deborah were fusing the atoms on either side of them.  So investigate an
-index disagreement before reporting it as Holman's.
+TWO CORRECTIONS DISSOLVED ON 2026-09-02, when a template with no parameters was
+taught to contribute a separator: 1Ki 7:24 (17 as sent) and Judg 1:7 (21 as sent)
+both now land where Holman put them.  The paseq template מ:פסק was fusing the
+atoms on either side of it, so Judg 1:7 counted 22 atoms rather than 23.  Earlier
+the same day the shirah spaces of the Song of Deborah were fusing Judg 5:6.7 and
+Judg 5:11.13 the same way, and both of those were right too.
+
+SO INVESTIGATE AN INDEX DISAGREEMENT BEFORE REPORTING IT AS HOLMAN'S.  Five have
+looked like his numbering so far -- the four above and 2Sa 15:37 -- and every one
+of the five has turned out to be this corpus rendering instead.
 
 ``comparison_form_already_present`` IS A SEPARATE QUESTION, AND IT DATES THE
 CORPUS RATHER THAN JUDGING HOLMAN.  A case whose verse already
@@ -47,6 +62,13 @@ the count of those is a statement about how stale the local ``MAM-parsed`` is,
 not about Holman.  Measured 2026-09-02 against MAM-parsed ``54ba7e0``, that count
 was zero even for the two cases corrected on Wikisource on 2026-08-28, because
 the local corpus predates those edits.
+
+It asks that question of the form as EXTRACTED rather than as corrected, because
+``main_ingest_mam_suggestions`` calls ``check_case`` before it applies
+``mam_suggestion_corrections``.  So Joshua 10:12's flag still asks whether MAM has
+the U+05A8 qadma spelling Holman typed, rather than the doubled pashta his card
+shows; that module's docstring records the limitation and why the atom index is
+unaffected by it.
 """
 
 from __future__ import annotations
