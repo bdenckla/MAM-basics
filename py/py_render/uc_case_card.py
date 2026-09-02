@@ -44,10 +44,17 @@ DERIVED_CURRENT_LABEL = "Current Text"
 # The messages from Chronicles onwards spell the same two lines "Target Text"
 # and "Correction", so they take the same two display labels: the page says
 # "suggestion" wherever it has the choice, and a shorter spelling of Holman's
-# does not change which line it is.
+# does not change which line it is. "Change", the 1 Samuel 28:12 message's
+# spelling of the proposed form, is a third of the same kind.
+#
+# His own "Current" line, that message's spelling of the form as it stands, is
+# NOT relabelled: Ben asked on 2026-08-11 that the two spellings Holman had then
+# -- "Current UXLC" and "Current Text" -- be left as he wrote them, and this is
+# a third of those rather than a second name for the suggested-text row.
 DISPLAY_FIELD_LABELS = {
     "Corrected Text": "Suggested Text",
     "Target Text": "Suggested Text",
+    "Change": "Suggested Text",
     "Suggested Correction": "Suggestion",
     "Correction": "Suggestion",
 }
@@ -56,6 +63,12 @@ DISPLAY_FIELD_LABELS = {
 # no longer his citation but an estimate derived here, so the three collapse to
 # one label of our own.
 MANUSCRIPT_LOCATION_LABEL = "Manuscript location"
+
+# The rank a case with no citation of its own borrows, so that its estimate-only
+# manuscript-location row sits where a citation would have put it. Any of the
+# image-location labels would do -- _FIELD_ORDER holds them as one contiguous
+# block -- and this is that block's first member.
+_LOCATION_RANK_LABEL = sorted(IMAGE_LOCATION_LABELS)[0]
 
 # The order the fields are shown in. This is the message's own order with ONE
 # field moved: Holman writes the current text, then where he read it, then what
@@ -72,6 +85,7 @@ _FIELD_ORDER = (
     *FIRST_FIELD_LABELS,
     "Corrected Text",
     "Target Text",
+    "Change",
     *sorted(IMAGE_LOCATION_LABELS),
     "Suggested Correction",
     "Correction",
@@ -191,18 +205,27 @@ def _change_record_links_html(case: CorrectionCase) -> str:
 
 
 def _fields_html(case: CorrectionCase, location: AtomLocation) -> str:
-    """One row per field, with the manuscript citation always a single row.
+    """One row per field, with the manuscript location always a single row.
 
-    The Psalms and Proverbs messages state that citation on two lines, the scan
+    The Psalms and Proverbs messages state the citation on two lines, the scan
     file under "Image" and the column under "Location" or "Location R/L". Both
     are image-location fields and the row is the same row, so the first of them
     carries it -- built from ``case.image_location``, which is the two rejoined
     -- and the rest are dropped rather than repeating it.
+
+    The row is shown on a case that cites no image at all as well. What it
+    states is the estimate, which every case has -- ``uxlc_atom_locations``'
+    ``require_full_coverage`` raises otherwise -- and a citation only ever adds
+    the "Holman gives ..." clause to it and the folio link's neighbours. The 1
+    Samuel 28:12 message of 2026-08-23 is the first with no citation, and
+    without this the card would have lost the estimate and the folio link that
+    every other card carries.
     """
     forms = forms_for_case(case)
-    ordered = sorted(
-        _displayed_fields(case, forms), key=lambda field: _FIELD_RANK[field[0]]
-    )
+    displayed = _displayed_fields(case, forms)
+    if not any(label in IMAGE_LOCATION_LABELS for label, _value in displayed):
+        displayed = [*displayed, (_LOCATION_RANK_LABEL, "")]
+    ordered = sorted(displayed, key=lambda field: _FIELD_RANK[field[0]])
     image_location = case.image_location
     rows = []
     location_shown = False

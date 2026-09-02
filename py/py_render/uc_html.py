@@ -373,19 +373,43 @@ def _manuscript_location_paragraph(
     reading of the column disagree. Written out, that figure would go quietly
     wrong the first time a message arrived, which is the one moment a reader
     would most want it right.
+
+    The count is over the cases that state a column, not over all of them. Every
+    case did state one until the 1 Samuel 28:12 message of 2026-08-23, which
+    cites no image at all; counting that one in with the agreeing cases would
+    say the estimate agreed with a column Holman never gave, which is the very
+    kind of quietly wrong figure the paragraph is generated to avoid.
     """
+    with_column = [case for case in cases if _holman_column(case) is not None]
     disagreeing = _chapter_verse_list(
-        [case for case in cases if _column_disagrees(case, locations[case.ref.key])]
+        [
+            case
+            for case in with_column
+            if _holman_column(case) != locations[case.ref.key].column
+        ]
     )
-    agreeing = len(cases) - len(disagreeing)
+    agreeing = len(with_column) - len(disagreeing)
     disagreement_sentence = (
-        " It agrees with his column on every case."
+        " It agrees with his column on every case that names one."
         if not disagreeing
         else (
-            f" It agrees with his column on {agreeing} of the {len(cases)}"
-            f" cases, and the {_and_list(disagreeing)} "
+            f" It agrees with his column on {agreeing} of the {len(with_column)}"
+            f" cases that name a column, and the {_and_list(disagreeing)} "
             + ("card gives" if len(disagreeing) == 1 else "cards give")
             + " his reading beside the estimate."
+        )
+    )
+    uncited = _chapter_verse_list(
+        [case for case in cases if case.image_location is None]
+    )
+    uncited_sentence = (
+        ""
+        if not uncited
+        else (
+            f" The {_and_list(uncited)} "
+            + ("case cites" if len(uncited) == 1 else "cases cite")
+            + " no scan file, so the estimate stands there with nothing of"
+            " Holman's beside it."
         )
     )
     return (
@@ -398,16 +422,17 @@ def _manuscript_location_paragraph(
         " out of that comparison, top, middle and bottom being a gloss that a"
         " line number supersedes. The folio link under the line is decoded from"
         " the page ordinal Holman's citation begins with, so the folio number"
-        " is not his either."
+        " is not his either." + uncited_sentence
     )
 
 
-def _column_disagrees(case: CorrectionCase, location: AtomLocation) -> bool:
+def _holman_column(case: CorrectionCase) -> int | None:
+    """The column Holman's citation names, or None where his case names none."""
     image_location = case.image_location
     if image_location is None:
-        return False
-    holman = manuscript_position(image_location)
-    return holman is not None and holman.column != location.column
+        return None
+    position = manuscript_position(image_location)
+    return None if position is None else position.column
 
 
 def _brackets_paragraph(emails: list[SourceEmail], cases: list[CorrectionCase]) -> str:
