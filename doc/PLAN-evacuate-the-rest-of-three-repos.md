@@ -153,8 +153,8 @@ day and the item says so.
 8. **Four forests hold worktrees of the source repos, so Step 6 waits on their teardown.**
    `C:\Users\BenDe\Forests\holman-mam-2026-09-02` (branch `forest/holman-mam-suggestions`, at
    `main` in every member when measured on 2026-09-02, and still in use — a session merged from
-   it into MAM-basics `main` twice that evening, `18d17e8` and `1438a91` — so it is Ben's to tear
-   down when its work ends);
+   it into MAM-basics `main` twice that afternoon, `18d17e8` at 13:06 and `1438a91` at 13:30
+   EDT — so it is Ben's to tear down when its work ends);
    `C:\Users\BenDe\Documents\Codex\ReviewForests\mam-mega-review-2026-09-01` and two
    `mam-mega-remediation-*-2026-09-02` siblings, read-only pending Ben's retirement decision under
    `doc/PLAN-mam-mega-pipeline-phase-13-and-remediation.md`. Step 6's `git worktree list` check

@@ -501,7 +501,8 @@ Nothing is near a git or GitHub limit. That is the price of one worktree, and it
    is already a table and holman-ketiv-qere's lane has proved the lane once more.
 2. **The forests holding trio worktrees are torn down before any lane's Step 6.** On 2026-09-02
    all three trio repos had worktrees registered in `C:\Users\BenDe\Forests\holman-mam-2026-09-02`
-   (at `main` when measured, and still in use that evening) and
+   (at `main` when measured, and still in use that afternoon — merges into MAM-basics `main` at
+   13:06 and 13:30 EDT) and
    `C:\Users\BenDe\Documents\Codex\ReviewForests\mam-mega-review-2026-09-01` (read-only, pending
    Ben's retirement decision). Step 6's `git worktree list` check catches a
    survivor.
