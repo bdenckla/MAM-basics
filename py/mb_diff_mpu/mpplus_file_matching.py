@@ -61,21 +61,34 @@ def _canonical_stem(filename):
     return _BARE_NAME_TO_CANONICAL[stem]
 
 
+def _files_by_canonical_stem(filenames, side_label):
+    """Index JSON filenames by canonical stem, rejecting ambiguous duplicates."""
+    by_stem = {}
+    for filename in _json_plus_files_or_raise(filenames, side_label):
+        stem = _canonical_stem(filename)
+        if stem in by_stem:
+            raise ValueError(
+                f"Duplicate canonical plus stem in {side_label}: {stem}: "
+                f"{by_stem[stem]}, {filename}."
+            )
+        by_stem[stem] = filename
+    return by_stem
+
+
 def matched_plus_file_pairs(old_files, new_files):
-    """Match old/new plus filenames across historical renames.
+    """Pair the union of old/new plus filenames across historical renames.
 
     plus/ inputs are expected to be JSON book files plus optional
     provenance.md. Any other non-JSON filename raises ValueError.
 
     Returns tuples of (canonical_stem, old_filename, new_filename) sorted in
-    reading order by canonical stem.
+    reading order by canonical stem. A filename is None when the canonical
+    book file exists only at the other revision.
     """
-    old_json_files = _json_plus_files_or_raise(old_files, "old_files")
-    new_json_files = _json_plus_files_or_raise(new_files, "new_files")
-    old_by_stem = {_canonical_stem(filename): filename for filename in old_json_files}
-    new_by_stem = {_canonical_stem(filename): filename for filename in new_json_files}
-    common_stems = sorted(old_by_stem.keys() & new_by_stem.keys())
-    return [(stem, old_by_stem[stem], new_by_stem[stem]) for stem in common_stems]
+    old_by_stem = _files_by_canonical_stem(old_files, "old_files")
+    new_by_stem = _files_by_canonical_stem(new_files, "new_files")
+    stems = sorted(old_by_stem.keys() | new_by_stem.keys())
+    return [(stem, old_by_stem.get(stem), new_by_stem.get(stem)) for stem in stems]
 
 
 def book39_ids_for_stem(canonical):

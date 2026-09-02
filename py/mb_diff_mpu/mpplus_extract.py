@@ -145,47 +145,85 @@ def _list_plus_files(rev):
 # ── Book-level diffing ───────────────────────────────────────
 
 
-def _diff_one_file(old_json, new_json, canonical_stem):
+def _diff_one_file(old_json, new_json, canonical_stem, old_rev, new_rev):
     """Compare two revisions of a single plus/ JSON file.
 
-    Handles both old format (Hebrew numeral keys) and new format (integer keys).
+    Handles both old format (Hebrew numeral keys) and new format (numeric keys),
+    including chapters and verses present at only one revision.
     """
     diffs = []
     book39_ids = book39_ids_for_stem(canonical_stem)
-    he_to_int_old = get_he_to_int(old_json)
-    old_book39s = old_json["book39s"]
-    new_book39s = new_json["book39s"]
-    for b39_idx, (old_b39, new_b39) in enumerate(zip(old_book39s, new_book39s)):
-        book39id = book39_ids[b39_idx]
-        old_chapters = old_b39["chapters"]
-        new_chapters = new_b39["chapters"]
-        # Normalize all chapter keys to integers for comparison
-        for ch_key in old_chapters:
-            int_ch = _normalize_key_to_int(ch_key, he_to_int_old)
-            if int_ch is None:
-                continue
-            # Find matching key in new_chapters (could be string or int)
-            new_ch_key = _find_matching_key(ch_key, new_chapters)
-            if new_ch_key is None:
-                continue
-            old_verses = old_chapters[ch_key]
-            new_verses = new_chapters[new_ch_key]
-            for vr_key in old_verses:
-                int_vr = _normalize_key_to_int(vr_key, he_to_int_old)
-                if int_vr is None:
-                    continue
-                # Find matching key in new_verses (could be string or int)
-                new_vr_key = _find_matching_key(vr_key, new_verses)
-                if new_vr_key is None:
-                    continue
-                old_verse = old_verses[vr_key]
-                new_verse = new_verses[new_vr_key]
-                old_ep = old_verse[2]
-                new_ep = new_verse[2]
-                diff = _diff_ep(old_ep, new_ep, book39id, int_ch, int_vr)
+    old_he_to_int = get_he_to_int(old_json) if old_json is not None else {}
+    new_he_to_int = get_he_to_int(new_json) if new_json is not None else {}
+    old_book39s = _checked_book39s(old_json, canonical_stem, old_rev)
+    new_book39s = _checked_book39s(new_json, canonical_stem, new_rev)
+    for book39_index, book39id in enumerate(book39_ids):
+        old_chapters_raw = old_book39s[book39_index]["chapters"] if old_book39s else {}
+        new_chapters_raw = new_book39s[book39_index]["chapters"] if new_book39s else {}
+        old_chapters = _normalized_key_mapping(
+            old_chapters_raw,
+            old_he_to_int,
+            f"{old_rev} {book39id} chapters",
+        )
+        new_chapters = _normalized_key_mapping(
+            new_chapters_raw,
+            new_he_to_int,
+            f"{new_rev} {book39id} chapters",
+        )
+        for chapter in sorted(old_chapters.keys() | new_chapters.keys()):
+            old_verses_raw = old_chapters.get(chapter, {})
+            new_verses_raw = new_chapters.get(chapter, {})
+            old_verses = _normalized_key_mapping(
+                old_verses_raw,
+                old_he_to_int,
+                f"{old_rev} {book39id} {chapter} verses",
+            )
+            new_verses = _normalized_key_mapping(
+                new_verses_raw,
+                new_he_to_int,
+                f"{new_rev} {book39id} {chapter} verses",
+            )
+            for verse in sorted(old_verses.keys() | new_verses.keys()):
+                old_verse = old_verses.get(verse)
+                new_verse = new_verses.get(verse)
+                old_ep = old_verse[2] if old_verse is not None else []
+                new_ep = new_verse[2] if new_verse is not None else []
+                diff = _diff_ep(old_ep, new_ep, book39id, chapter, verse)
                 if diff is not None:
                     diffs.append(diff)
     return diffs
+
+
+def _checked_book39s(book_json, canonical_stem, rev):
+    """Return a present file's book39 list after checking its canonical roster."""
+    if book_json is None:
+        return []
+    book39s = book_json["book39s"]
+    expected_count = len(book39_ids_for_stem(canonical_stem))
+    if len(book39s) != expected_count:
+        raise ValueError(
+            f"{rev} plus/{canonical_stem}.json has {len(book39s)} book39 "
+            f"structures; expected {expected_count}."
+        )
+    return book39s
+
+
+def _normalized_key_mapping(mapping, he_to_int, context):
+    """Index a chapter or verse mapping by checked normalized integer keys."""
+    normalized = {}
+    raw_keys = {}
+    for raw_key, value in mapping.items():
+        number = _normalize_key_to_int(raw_key, he_to_int)
+        if number is None:
+            continue
+        if number in normalized:
+            raise ValueError(
+                f"Duplicate normalized key in {context}: {number}: "
+                f"{raw_keys[number]!r}, {raw_key!r}."
+            )
+        normalized[number] = value
+        raw_keys[number] = raw_key
+    return normalized
 
 
 def _normalize_key_to_int(key, he_to_int):
@@ -202,30 +240,15 @@ def _normalize_key_to_int(key, he_to_int):
         return None
     if isinstance(key, int):
         return key
+    if not isinstance(key, str):
+        raise ValueError(f"Unsupported chapter or verse key type: {key!r}")
     # String key - try numeric string first, then Hebrew numeral
     try:
         return int(key)
     except ValueError:
-        # Not a numeric string, try Hebrew numeral mapping
-        return he_to_int.get(key)
-
-
-def _find_matching_key(old_key, new_dict):
-    """Find a matching key in new_dict for the given old_key.
-
-    Handles cross-format matching (string to int or int to string).
-    """
-    if old_key in new_dict:
-        return old_key
-    # Try to find a matching key with normalized format
-    old_int = _normalize_key_to_int(old_key, {})
-    if old_int is None:
-        return None
-    for new_key in new_dict:
-        new_int = _normalize_key_to_int(new_key, {})
-        if new_int == old_int:
-            return new_key
-    return None
+        if key in he_to_int:
+            return he_to_int[key]
+        raise ValueError(f"Unmapped nonnumeric chapter or verse key: {key!r}")
 
 
 def _diff_ep(old_ep, new_ep, book39id, chapter, verse):
@@ -279,10 +302,15 @@ def diff_all_books(old_rev, new_rev):
     for stem, old_filename, new_filename in matched_plus_file_pairs(
         old_files, new_files
     ):
-        # matched_plus_file_pairs yields only stems present at BOTH revisions, and
-        # _git_show now raises rather than returning None, so there is no
-        # legitimately-absent case left to skip here.
-        old_json = _git_show_json(old_rev, f"plus/{old_filename}")
-        new_json = _git_show_json(new_rev, f"plus/{new_filename}")
-        all_diffs.extend(_diff_one_file(old_json, new_json, stem))
+        old_json = (
+            _git_show_json(old_rev, f"plus/{old_filename}")
+            if old_filename is not None
+            else None
+        )
+        new_json = (
+            _git_show_json(new_rev, f"plus/{new_filename}")
+            if new_filename is not None
+            else None
+        )
+        all_diffs.extend(_diff_one_file(old_json, new_json, stem, old_rev, new_rev))
     return all_diffs

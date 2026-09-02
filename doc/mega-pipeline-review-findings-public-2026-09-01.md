@@ -31,7 +31,7 @@ All findings below retain their original severity. **Open — queued** means the
 finding remains present and belongs in a later remediation wave. **Already fixed
 before Phase 13** means later remeasurement found a production fix that was
 already an ancestor of the pinned Phase 13 baseline. **Fixed in remediation**
-means the 2026-09-02 change-log fail-closed wave changed production code and
+means an approved 2026-09-02 remediation wave changed production code and
 verified the result. **Fixed in closeout** applies only to the corrected tally in
 `MP13-03`; it does not claim a production-code fix.
 
@@ -57,9 +57,13 @@ verified the result. **Fixed in closeout** applies only to the corrected tally i
 
 ### Phase 2 — `Review main_0_mega Phase 2`
 
-- `MP02-01` **P1** — Diff extraction drops differently keyed and unmatched
-  content; a published 0-change result corresponds to 175 normalized matches.
-  Open — queued; oracle root cause.
+- `MP02-01` **P1** — Diff extraction formerly dropped differently keyed and
+  unmatched content; a published 0-change result corresponded to 175 normalized
+  matches. Fixed in remediation by MAM-basics commit `9d1c684` (2026-09-02):
+  independent normalization and production extraction found the same 175
+  locations with zero disagreements, and missing, ambiguous, and malformed
+  structures now have explicit outcomes. MAM-with-doc commit `4397daa`
+  publishes the regenerated index, JSON, and HTML.
 - `MP02-02` **P1** — Git dependency failures formerly could become successful
   empty reports. Already fixed before Phase 13 by MAM-basics commit `b403e6d`
   (2026-08-31); remeasurement confirmed that `ls-tree`, `show`, `log`, and

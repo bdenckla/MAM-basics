@@ -360,3 +360,67 @@ ledger without changing either finding's severity. The public companion records
 the same dispositions. MP02-01 remains open, the empty unpinned report remains
 unendorsed, and MP02-07 batch atomicity remains outside the wave. Both forests
 remain present pending Ben's next remediation or retirement decision.
+
+## Remediation wave 2 — MP02-01 normalized extraction (completed 2026-09-02)
+
+Ben approved the MP02-01 implementation wave on 2026-09-02. The wave used the
+separately named forest at
+`C:\Users\BenDe\Documents\Codex\ReviewForests\mam-mega-remediation-mp02-01-2026-09-02`.
+Its current-main baselines were MAM-basics
+`e2b5208560e348a06c69d240f38b9f3a20889209`, MAM-parsed
+`54ba7e0b2b9db37be6ef1b9f36072cc4eeda9908`, MAM-with-doc
+`7834b2d0df0dc8104fd339fb81ae13a9ed0dfcab`, and MAM-private
+`1463bc96872b2cd4a57a0c6e690dd91aece6ec1f`. The MAM-private worktree was
+created only after unrelated near-Aleppo work left its primary clone clean and
+pushed at that final baseline.
+
+MAM-basics commit `9d1c6840f97b32891dd2d0b81ef5d2176f74bd42` fixes MP02-01.
+Each revision now supplies its own checked chapter-and-verse normalization map.
+Extraction traverses the union of canonical book files, chapters, and verses,
+so an old-only or new-only structure is compared against an empty side instead
+of disappearing. Duplicate normalized keys, duplicate canonical files,
+unmapped keys, unsupported key types, and malformed book-structure counts are
+fatal.
+
+The ignored independent check ran as:
+
+```powershell
+C:\Users\BenDe\GitRepos\MAM-basics\.venv\Scripts\python.exe .novc\mp02_01_verify.py
+```
+
+The check independently read all 218 revisions from `9ce6ee5` through
+`54ba7e0b2b9db37be6ef1b9f36072cc4eeda9908`. Both endpoints had 24 files, 929
+chapters, and 23,202 verses. The old endpoint had 24,131 Hebrew-string chapter
+and verse keys; the new endpoint had 24,131 numeric-string keys. Independent
+normalization and production extraction each found 175 changed locations, with
+zero disagreements and zero verification errors. Adverse cases established
+zero differences for equal content under unlike keys, one difference for
+changed content under unlike keys, explicit old-only and new-only file,
+chapter, and verse results, and fatal duplicate, unmapped, and malformed input.
+
+Black ran on the two edited Python files through the primary MAM-basics venv.
+The focused repository command passed 37 tests:
+
+```powershell
+C:\Users\BenDe\GitRepos\MAM-basics\.venv\Scripts\python.exe py/main_test.py -q py/tests/test_diff_mpp_unpinned_latest.py py/tests/test_mpplus_extract.py py/tests/test_mpplus_file_matching.py py/tests/test_mpplus_latest_note_schema.py
+```
+
+The full regeneration command was:
+
+```powershell
+C:\Users\BenDe\GitRepos\MAM-basics\.venv\Scripts\python.exe py/main_diff.py mpp --all
+```
+
+The named-release raw counts remained 76, 557, 19, 139, and 33. The unpinned
+comparison reported 175 raw changes; its JSON has 51 records and its HTML has
+57 reader-facing change cards. Only `gh-pages/change-log/index.html`,
+`gh-pages/change-log/unpinned-latest.json`, and
+`gh-pages/change-log/unpinned-latest.html` changed; the other 13 regenerated
+change-log artifacts were byte-identical. MAM-with-doc commit
+`4397daa6f915f643241290c7b9748dcea61bdd24` records those three artifacts.
+
+MAM-private commit `bd38622ce43fb50ce80022d1559abcb1816d4fcf` updates the canonical
+disposition ledger, and the public companion records the same disposition.
+MP02-07 batch atomicity remains outside this wave. No GitHub issue state changed.
+The investigation and implementation forests remain present pending a later
+retirement decision.
