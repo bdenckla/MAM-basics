@@ -16,6 +16,11 @@ from py_render.rt_render_utils import (
     as_text,
     finding_display_text,
 )
+from py_render.rt_suggestion_kinds import (
+    KIND_ORDER,
+    kind_display_text,
+    kind_filter_id,
+)
 from hkq_cmn.table_row_github_issues import require_row_github_issue_metadata
 
 SUMMARY_ISSUE_TAG_FILTER_IDS = frozenset(
@@ -42,8 +47,24 @@ def filter_categories(
     sorted_findings: list[tuple[str, int]],
     finding_ids: dict[str, str],
     matching_template_arguments_by_row_number: dict[str, list[dict[str, str]]],
+    kind_counts: dict[str, int] | None = None,
 ) -> list[FilterCategory]:
     categories: list[FilterCategory] = []
+
+    # The kind group goes first because it is the coarsest cut on the page: it
+    # separates the two bodies of Holman's work the report holds, where the two
+    # groups below it describe only the ketiv/qere half.
+    for kind in KIND_ORDER:
+        count = (kind_counts or {}).get(kind, 0)
+        if count == 0:
+            continue
+        categories.append(
+            FilterCategory(
+                filter_id=kind_filter_id(kind),
+                label=kind_display_text(kind),
+                count=count,
+            )
+        )
     finding_counts = Counter(as_text(row.get("finding", "")) for row in rows)
     for finding, _count in sorted_findings:
         count = finding_counts.get(finding, 0)
@@ -86,8 +107,17 @@ def summary_rows_html(categories: list[FilterCategory]) -> str:
         category
         for category in categories
         if not category.filter_id.startswith("issue-tag-")
+        and not category.filter_id.startswith("kind-")
     ]
     grouped_categories = (
+        (
+            "Suggestion kind",
+            [
+                category
+                for category in categories
+                if category.filter_id.startswith("kind-")
+            ],
+        ),
         (
             "Aleppo notation",
             finding_categories,
