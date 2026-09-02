@@ -27,6 +27,15 @@ correspondents' addresses:
     body text is read out of the HTML by ``_text_from_html``, there being no
     original plain text to prefer.
 
+    A PARTIAL MAILBOX IS THE ORDINARY CASE, not a broken one, and the step is
+    built for it: a .eml is untracked, so it sits only on the machine the
+    message was read on, and a second machine has whichever ones were forwarded
+    there. Ingesting one message writes that message's derivative and leaves
+    every other message's alone. The orphan check is made against the tracked
+    derivative rather than against what the mailbox held, so it holds either
+    way; the attachment-table check cannot be, and says in the summary whether
+    it ran.
+
   ``read_emails``  reads that derivative. This is what the report is generated
     from, so a fresh clone can regenerate the page without the .eml files.
 
@@ -74,6 +83,10 @@ from pathlib import Path
 import re
 
 from mb_cmn import bib_locales as tbn
+from hkq_cmn.uxlc_atom_index_notes import (
+    atom_index_for_verse_case,
+    require_known_cases,
+)
 from hkq_cmn.uxlc_attachment_notes import (
     COMPANION_IMAGE_CASES,
     IMAGES_WITH_NO_CASE,
@@ -93,6 +106,10 @@ FIRST_FIELD_LABELS = (
     # itself is in the heading there rather than on a line of its own.
     "Image Location",
     "Image",
+    # The 1 Samuel 28:12 message of 2026-08-23, a single-case message whose two
+    # form lines are "Current" and "Change" and whose values sit on the line
+    # BELOW the label -- see VALUE_ON_NEXT_LINE and _parse_case_region.
+    "Current",
 )
 OTHER_FIELD_LABELS = (
     "Manuscript Image",
@@ -105,6 +122,10 @@ OTHER_FIELD_LABELS = (
     "Correction",
     "Corrected Text",
     "Target Text",
+    # The 1 Samuel 28:12 message's spelling of the proposed form, a third
+    # alongside "Corrected Text" and "Target Text"; uxlc_holman_forms names all
+    # three in SUGGESTED_TEXT_LABELS.
+    "Change",
     "Critical Note",
     "Note",
 )
@@ -135,8 +156,17 @@ META_SUFFIX = ".json"
 
 _ADDRESS_RE = re.compile(r"<?[\w.+-]+@[\w-]+(?:\.[\w-]+)+>?")
 _LABEL_RE = re.compile(r"^\*?\s*(?P<label>[A-Za-z][A-Za-z /]*?):\s*(?P<value>.*)$")
+# A heading's declared lead-in phrase, matched instead of the leading ordinal.
+# The 1 Samuel 28:12 message of 2026-08-23 has one case and heads it with its
+# own subject line, "UXLC Correction for 1Samuel 28:12", where every earlier
+# message heads a case with the bare reference or with an ordinal before it.
+# Declared rather than allowed for generally: the book group below is
+# non-greedy, so any prose left in front of the reference would be swallowed
+# into it and reach _bk39id, which would then raise on a book spelling nobody
+# wrote.
+_HEADING_LEAD_IN = r"UXLC\s+Correction\s+for\s+"
 _HEADING_RE = re.compile(
-    r"^(?:\d+\.\s*)?"
+    rf"^(?:\d+\.\s*|{_HEADING_LEAD_IN})?"
     r"(?P<book>.+?)\s+(?P<chapter>\d+):(?P<verse>\d+)"
     r"(?:\.(?P<atom>\d+))?"
     r"(?:\s*\(Word\s+(?P<atom_paren>\d+)\))?"
@@ -404,10 +434,14 @@ def ingest_eml_files(
             newline="\n",
         )
 
-    require_known_attachments(all_attachment_names)
-
+    # Both checks below are whole-corpus invariants, and the mailbox is not the
+    # corpus: a .eml is untracked, so it exists only on the machine the message
+    # was read on, and any other machine has whichever ones were forwarded to
+    # it. The tracked derivative is the complete record, so the orphan check is
+    # made against that and holds on a partial mailbox as well as a full one.
+    tracked = _tracked_attachments(emails_dir)
     orphans = sorted(
-        path.name for path in image_dir.glob("*.png") if path.name not in written_images
+        path.name for path in image_dir.glob("*.png") if path.name not in tracked
     )
     if orphans:
         raise ValueError(
@@ -416,11 +450,33 @@ def ingest_eml_files(
             "and served but referenced by nothing; delete them and rerun."
         )
 
+    # The attachment tables cannot be checked that way, because the images they
+    # declare are the ones the derivative deliberately does not record:
+    # IMAGES_WITH_NO_CASE is written to no metadata file at all. So this one
+    # runs only when the mailbox held every message, and the summary says which
+    # of the two happened rather than leaving a silent pass.
+    mailbox_is_complete = len(written_keys) == len(
+        list(emails_dir.glob(f"*{META_SUFFIX}"))
+    )
+    if mailbox_is_complete:
+        require_known_attachments(all_attachment_names)
+
     return {
         "eml_count": len(paths),
         "body_count": body_count,
         "image_count": image_count,
+        "mailbox_is_complete": mailbox_is_complete,
+        "attachment_tables_checked": mailbox_is_complete,
     }
+
+
+def _tracked_attachments(emails_dir: Path) -> set[str]:
+    """Every image file name the tracked derivative names, across all messages."""
+    written: set[str] = set()
+    for meta_path in emails_dir.glob(f"*{META_SUFFIX}"):
+        meta = json.loads(meta_path.read_text(encoding="utf-8"))
+        written.update(entry["file"] for entry in meta["attachments"])
+    return written
 
 
 def _sender_display_name(from_header: object) -> str:
@@ -560,6 +616,12 @@ def read_emails(
     cases = [case for _source_email, email_cases in parsed for case in email_cases]
     cases.sort(key=lambda case: case.ref.sort_key)
     _require_distinct_refs(cases)
+    require_known_cases(
+        {
+            (case.email_key, case.ref.book, case.ref.chapter, case.ref.verse)
+            for case in cases
+        }
+    )
     return emails, cases
 
 
@@ -761,7 +823,8 @@ def _parse_case_region(
 ) -> tuple[tuple[tuple[str, str], ...], tuple[str, ...]]:
     """Split one case's lines into its labelled fields and any trailing prose.
 
-    A field value is one line. Prose after the fields is the message's sign-off,
+    A field value is one line, either the label's line or -- where that is
+    empty -- the line directly below. Prose after the fields is the message's sign-off,
     and only the last case in a message may have any. An unrecognized label
     raises here rather than being absorbed into that sign-off, which is what
     would otherwise happen to a new label spelling in a future message. The
@@ -773,10 +836,12 @@ def _parse_case_region(
     fields: list[tuple[str, str]] = []
     trailing: list[str] = []
     after_blank = True
+    awaiting_value: str | None = None
     for line in region:
         stripped = line.strip()
         if not stripped:
             after_blank = True
+            awaiting_value = None
             continue
         field = _labelled(line)
         if field is not None:
@@ -786,6 +851,25 @@ def _parse_case_region(
                     f"{trailing[0]!r} in case {heading!r}"
                 )
             fields.append(field)
+            after_blank = False
+            # An empty value may be continued on the line directly below; see
+            # the note beside awaiting_value's other use.
+            awaiting_value = field[0] if not field[1] else None
+            continue
+        if awaiting_value is not None and _LABEL_RE.match(line) is None:
+            # The 1 Samuel 28:12 message of 2026-08-23 writes "Current:" and
+            # "Change:" alone on a line and the Hebrew under each, where every
+            # earlier message puts label and value on one line. Only the line
+            # DIRECTLY below an empty value is read this way, and only when it
+            # is not itself label-shaped, which is what keeps the two existing
+            # shapes intact: the empty "Corrected Text:" of the Ps 8:9.6 case is
+            # followed by "Note: ...", a labelled line, and stays empty; and a
+            # sign-off is separated from the last field by a blank line, which
+            # clears awaiting_value above. A label-shaped line that is not a
+            # known label still reaches the raise below rather than being
+            # swallowed as a value.
+            fields[-1] = (awaiting_value, stripped)
+            awaiting_value = None
             after_blank = False
             continue
         if _LABEL_RE.match(line) is not None:
@@ -855,8 +939,21 @@ def _build_case(
             )
         atom_text = str(field_ref.atom)
 
+    declared_atom = atom_index_for_verse_case(email_key, book, chapter, verse)
     if atom_text is None:
-        raise ValueError(f"{path.name}: case {heading!r} names no atom index")
+        if declared_atom is None:
+            raise ValueError(
+                f"{path.name}: case {heading!r} names no atom index. Add one to "
+                "hkq_cmn/uxlc_atom_index_notes.ATOM_INDEX_BY_VERSE_CASE, with "
+                "the evidence for it, if the message really states none."
+            )
+        atom_text = str(declared_atom)
+    elif declared_atom is not None:
+        raise ValueError(
+            f"{path.name}: case {heading!r} names the atom index {atom_text}, "
+            "and ATOM_INDEX_BY_VERSE_CASE names it too; drop the table entry "
+            "rather than keeping a second answer beside the message's own."
+        )
 
     return CorrectionCase(
         email_key=email_key,

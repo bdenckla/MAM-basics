@@ -12,7 +12,14 @@ headers carry the correspondents' addresses and this repo is public -- so they
 live in .novc/eml/, which .gitignore already covers. Everything tracked is
 address-free, and the report regenerates from it without the mailbox.
 
-After running this, rerun py/main_render_uxlc_corrections.py.
+Being untracked, the mailbox is per-machine: a machine holds whichever messages
+were forwarded to it, which may be one. Ingesting a partial mailbox is the
+ordinary case and writes only that message's files, leaving every other
+message's derivative alone; the summary's ``mailbox_is_complete`` says whether
+this run saw every message the derivative records.
+
+After running this, rerun py/main_estimate_uxlc_locations.py, which needs the
+sibling UXLC-utils clone, and then py/main_render_uxlc_corrections.py.
 """
 
 from __future__ import annotations

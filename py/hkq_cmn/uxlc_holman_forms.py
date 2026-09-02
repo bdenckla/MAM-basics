@@ -58,10 +58,11 @@ FORM_SHAPE_BY_REF = {
 
 SUGGESTION_LABEL = "Suggested Correction"
 # Holman's line stating the form he proposes. His Chronicles message of
-# 2026-08-09 calls it "Target Text" and every other message "Corrected Text";
-# either way the case states the form itself, so there is nothing to read out of
-# its prose and the case does not belong in FORM_SHAPE_BY_REF.
-SUGGESTED_TEXT_LABELS = frozenset(("Corrected Text", "Target Text"))
+# 2026-08-09 calls it "Target Text", his 1 Samuel 28:12 message of 2026-08-23
+# "Change", and every other message "Corrected Text"; either way the case states
+# the form itself, so there is nothing to read out of its prose and the case
+# does not belong in FORM_SHAPE_BY_REF.
+SUGGESTED_TEXT_LABELS = frozenset(("Corrected Text", "Target Text", "Change"))
 
 # Any parenthesised run; whether it holds Hebrew is decided afterwards, against
 # the codepoint bounds rather than a character class written out in the source.
