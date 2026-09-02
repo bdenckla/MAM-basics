@@ -61,7 +61,7 @@ THE TWO WORKBOOK MESSAGES CARRY THE SAME FOUR CASES, so ingesting both would
 double-count.  ``_merge_cases`` folds duplicates by reference and raises when two
 messages disagree about a case rather than picking one, since a disagreement
 means his forms changed between messages and that wants deciding.  The later
-message adds a recommendation per case that the earlier lacks; a recommendation
+message adds a suggestion per case that the earlier lacks; a suggestion
 present in one and absent in the other is a merge rather than a conflict.
 """
 
@@ -217,7 +217,7 @@ class SuggestionCase:
     mam_form: str
     comparison_form: str
     description: str
-    recommendation: str | None = None
+    suggestion: str | None = None
     image_targets: list[ImageTarget] = field(default_factory=list)
     source_message_keys: list[str] = field(default_factory=list)
 
@@ -251,7 +251,7 @@ class SuggestionCase:
             "mam_form": self.mam_form,
             "comparison_form": self.comparison_form,
             "description": self.description,
-            "recommendation": self.recommendation,
+            "suggestion": self.suggestion,
             "source_message_keys": list(self.source_message_keys),
         }
 
@@ -431,7 +431,7 @@ def _parse_workbook(payload: bytes, path: Path) -> list[SuggestionCase]:
 
     Columns are found by their header text rather than by position, since the two
     workbooks differ: the later one adds a "HUB Images" column between the
-    comparison form and the recommendation.  The comparison column's own header
+    comparison form and the suggestion.  The comparison column's own header
     supplies ``comparison_source``, which is how Holman's label reaches the record
     without this module naming an edition of its own.
     """
@@ -459,7 +459,7 @@ def _parse_workbook(payload: bytes, path: Path) -> list[SuggestionCase]:
             )
 
         comparison_header = _comparison_header(columns)
-        recommendation_column = _recommendation_column(columns)
+        suggestion_column = _suggestion_column(columns)
 
         cases: list[SuggestionCase] = []
         for row_number in sorted({row for row, _ in cells} - {header_row}):
@@ -481,10 +481,10 @@ def _parse_workbook(payload: bytes, path: Path) -> list[SuggestionCase]:
                     f"{path.name}: row {row_number} is missing a MAM or "
                     f"{comparison_header} form"
                 )
-            recommendation = None
-            if recommendation_column is not None:
-                recommendation = (
-                    cells.get((row_number, recommendation_column)) or ""
+            suggestion = None
+            if suggestion_column is not None:
+                suggestion = (
+                    cells.get((row_number, suggestion_column)) or ""
                 ).strip() or None
 
             targets = _images_for_row(images_by_row, row_number, header_row)
@@ -495,7 +495,7 @@ def _parse_workbook(payload: bytes, path: Path) -> list[SuggestionCase]:
                     mam_form=mam_form,
                     comparison_form=comparison_form,
                     description="",
-                    recommendation=recommendation,
+                    suggestion=suggestion,
                     image_targets=[
                         ImageTarget(path.name, "workbook-member", target)
                         for target in targets
@@ -510,7 +510,7 @@ def _comparison_header(columns: dict[str, str]) -> str:
     """The header naming the edition MAM is compared against.
 
     Everything that is not the reference, the MAM form, an images column or a
-    recommendation column is the comparison column.  Written as an exclusion so
+    suggestion column is the comparison column.  Written as an exclusion so
     that a message using a new label -- Holman has used "HUB" so far and could
     use another -- is read rather than rejected.
     """
@@ -530,7 +530,7 @@ def _comparison_header(columns: dict[str, str]) -> str:
     return candidates[0]
 
 
-def _recommendation_column(columns: dict[str, str]) -> str | None:
+def _suggestion_column(columns: dict[str, str]) -> str | None:
     for header, column in columns.items():
         if header.startswith("suggestion"):
             return column
@@ -584,8 +584,8 @@ def _merge_cases(
 
         if case.description and not existing.description:
             existing.description = case.description
-        if case.recommendation and not existing.recommendation:
-            existing.recommendation = case.recommendation
+        if case.suggestion and not existing.suggestion:
+            existing.suggestion = case.suggestion
         if case.image_targets and not existing.image_targets:
             existing.image_targets = case.image_targets
         existing.source_message_keys.append(message_key)

@@ -11,8 +11,8 @@ whose every other line asked which kind it had.
 WHAT A CARD SHOWS THAT THE EXTRACT DOES NOT SAY OUTRIGHT.  The comparison table
 puts MAM's form and the comparison edition's on adjacent rows, which is the
 contrast the case is about and is one mark wide; the notes below it carry Holman's
-own description and, where he gave one, his recommendation.  Where the extract
-corrected something -- an atom index, or a recommendation -- the card says so and
+own description and, where he gave one, his suggestion.  Where the extract
+corrected something -- an atom index, or a suggestion -- the card says so and
 names the corrector, because a reader looking at a form has no other way to know
 that the record differs from the message it came from.
 """
@@ -84,8 +84,8 @@ def suggestion_card_html(
     notes_html = join_nonempty_html_blocks(
         _disposition_html(case),
         _optional_note("Holman:", as_optional_text(case.get("description"))),
-        _optional_note("Suggestion:", as_optional_text(case.get("recommendation"))),
-        _corrections_html(case),
+        _suggestion_html(case),
+        _as_sent_html(case),
         _atom_note_html(case),
         _source_note_html(case, source_message_dates),
     )
@@ -160,8 +160,8 @@ def _disposition_html(case: dict[str, Any]) -> str:
     """The ruling on this suggestion, where one has been made, FIRST on the card.
 
     First because it changes how everything below it is read: a reader who does
-    not know a suggestion has been ruled on will take the recommendation under it
-    as still standing.  Two lines, the short statement and then the reasoning with
+    not know a suggestion has been ruled on will take the lines under it as
+    still standing.  Two lines, the short statement and then the reasoning with
     whoever reached it named -- ``mam_suggestion_dispositions`` says why naming
     them is right where storing the surrounding correspondence is not.
     """
@@ -200,11 +200,44 @@ def _optional_note(label: str, value: str | None) -> str:
     return note_line_html(label=label, value=value)
 
 
-def _corrections_html(case: dict[str, Any]) -> str:
-    """Say that a field was corrected, and by whom, wherever one was.
+def _corrector_of(case: dict[str, Any], field: str) -> str | None:
+    """Who corrected one field of this case, or None if nobody did."""
+    corrections = case.get("corrections")
+    if not isinstance(corrections, list):
+        return None
+    for correction in corrections:
+        if (
+            isinstance(correction, dict)
+            and as_text(correction.get("field", "")) == field
+        ):
+            return as_text(correction.get("corrected_by", "")) or None
+    return None
 
-    A reader comparing the card against Holman's message would otherwise find a
-    difference and have no way to tell a correction from a transcription error.
+
+def _suggestion_html(case: dict[str, Any]) -> str:
+    """Holman's suggestion, annotated where somebody has corrected it.
+
+    THE ANNOTATION GOES HERE AND NOT ON THE "AS SENT" LINE, which is Ben Denckla's
+    correction of 2026-09-02 and is a point about honesty rather than layout: an
+    "as sent" field must hold exactly what was sent, and "Place Mereka on first
+    syllable — corrected by Ben Denckla" is not what Holman sent.  The corrected
+    value is the one that carries who changed it and a pointer to the original.
+    """
+    value = as_optional_text(case.get("suggestion"))
+    if value is None:
+        return ""
+    corrected_by = _corrector_of(case, "suggestion")
+    if corrected_by is not None:
+        value = f'{value} — corrected by {corrected_by} (see "Suggestion as sent")'
+    return note_line_html(label="Suggestion:", value=value)
+
+
+def _as_sent_html(case: dict[str, Any]) -> str:
+    """What Holman actually sent, verbatim, for each field somebody corrected.
+
+    Bare: no attribution and no commentary, for the reason the function above
+    gives.  A reader comparing the card against his message finds this line
+    identical to it.
     """
     corrections = case.get("corrections")
     if not isinstance(corrections, list):
@@ -214,15 +247,11 @@ def _corrections_html(case: dict[str, Any]) -> str:
         if not isinstance(correction, dict):
             continue
         field = as_text(correction.get("field", ""))
-        corrected_by = as_text(correction.get("corrected_by", ""))
         as_sent = as_optional_text(case.get(f"{field}_as_sent"))
         if as_sent is None:
             continue
         lines.append(
-            note_line_html(
-                label=f"{field.capitalize()} as sent:",
-                value=f"{as_sent} — corrected by {corrected_by}",
-            )
+            note_line_html(label=f"{field.capitalize()} as sent:", value=as_sent)
         )
     return "\n".join(lines)
 

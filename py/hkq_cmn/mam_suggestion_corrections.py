@@ -10,7 +10,7 @@ HOLMAN DID NOT CORRECT THIS HIMSELF, AND THE RECORD MUST NOT IMPLY THAT HE DID.
 Checked 2026-09-02 across the whole mailbox: "Place Mereka on first syllable" for
 Zechariah 2:4 occurs in exactly one message, the one of 2026-08-27, in both its body
 and its attached workbook.  The message of 2026-08-21 carries the same four cases
-with NO recommendation column at all, so it neither states nor corrects the line;
+with NO suggestion column at all, so it neither states nor corrects the line;
 every other occurrence in the mailbox is the 2026-08-27 message quoted back inside a
 reply.  There is no follow-up in which he revises it.  Attributing the correction to
 him would be a false statement about a third party's words, which is worse than the
@@ -18,7 +18,7 @@ error it would tidy away.
 
 WHAT IS WRONG WITH THE ZECHARIAH 2:4 LINE, twice over.  The mark in question is
 U+05A3 munaḥ, not the merkha that "Mereka" names -- the Judges 10:11 row, whose
-recommendation is worded identically, genuinely is a merkha, which is where the
+suggestion is worded identically, genuinely is a merkha, which is where the
 wording looks to have been carried down from.  And MAM already has that mark on the
 first syllable of זֵרוּ, the comparison edition having it on the second, so the line
 as sent describes MAM's existing state rather than the change toward that edition.
@@ -50,7 +50,7 @@ class FieldCorrection:
 # The reference is spelled with HIS atom index, not the derived one, so that an
 # entry keeps naming the same case if a derivation later moves the index.
 CASE_FIELD_CORRECTIONS: dict[tuple[str, str], FieldCorrection] = {
-    ("Zech 2:4.11", "recommendation"): FieldCorrection(
+    ("Zech 2:4.11", "suggestion"): FieldCorrection(
         original="Place Mereka on first syllable",
         replacement="Place Munaḥ on second syllable",
         reason=(
