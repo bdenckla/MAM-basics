@@ -33,8 +33,8 @@ _ENV_VARS = (
     "REPOS_ROOT",
     "REPO_MAM_PARSED_DIR",
     "REPO_MAM_SIMPLE_DIR",
-    "REPO_WLC_UTILS_DIR",
-    "REPO_WLC_UTILS_PRIVATE_DIR",
+    "REPO_CODEX_INDEX_DIR",
+    "REPO_CODEX_INDEX_ALEPPO_DIR",
     "REPO_MAM_PRIVATE_DIR",
 )
 
@@ -80,35 +80,25 @@ class TestMbCmnPaths(unittest.TestCase):
         with mock.patch.dict(os.environ, env, clear=True):
             self.assertEqual(paths.sibling_repo("MAM-parsed"), Path("/elsewhere/mp"))
 
-    # THE TWO NAME-MAPPING TESTS BELOW KEEP "wlc-utils-private" AS DATA, NOT AS A CLAIM
-    # THAT SUCH A SIBLING EXISTS.  It stopped being a sibling clone on 2026-08-08, when the
-    # private evacuation programme moved it under MAM-private (see this module's own
-    # wlc_utils_private_dir, which resolves sibling_repo("MAM-private") / "wlc-utils-private",
-    # so REPO_MAM_PRIVATE_DIR is the override that moves that tree and
-    # REPO_WLC_UTILS_PRIVATE_DIR reaches nothing).  The name is kept here anyway because
-    # what these two tests exercise is the name-mapping function, for which it remains the
-    # sharpest pair of examples in the whole set: the only multi-hyphen repo name, and the
-    # only name that is a strict prefix of another.  Per this file's opening docstring, no
-    # sibling directory has to exist for either.
-
     def test_env_name_mapping_non_alnum_to_underscore(self):
-        # wlc-utils-private -> REPO_WLC_UTILS_PRIVATE_DIR: every run of non-alphanumerics
-        # collapses to one underscore, so the two hyphens do not become two variables.
-        env = _clean_env(REPO_WLC_UTILS_PRIVATE_DIR="/priv")
+        # codex-index-aleppo -> REPO_CODEX_INDEX_ALEPPO_DIR: each run of
+        # non-alphanumerics collapses to one underscore.
+        env = _clean_env(REPO_CODEX_INDEX_ALEPPO_DIR="/aleppo")
         with mock.patch.dict(os.environ, env, clear=True):
-            self.assertEqual(paths.sibling_repo("wlc-utils-private"), Path("/priv"))
+            self.assertEqual(paths.sibling_repo("codex-index-aleppo"), Path("/aleppo"))
 
     def test_env_name_mapping_is_a_prefix_of_no_other(self):
-        # wlc-utils and wlc-utils-private are distinct variables, not one shadowing the
-        # other -- the case a naive "uppercase and strip punctuation" would get wrong.
-        env = _clean_env(REPO_WLC_UTILS_DIR="/pub", REPO_WLC_UTILS_PRIVATE_DIR="/priv")
+        # codex-index and codex-index-aleppo are distinct variables, not one shadowing
+        # the other -- the case a naive prefix lookup would get wrong.
+        env = _clean_env(
+            REPO_CODEX_INDEX_DIR="/index", REPO_CODEX_INDEX_ALEPPO_DIR="/aleppo"
+        )
         with mock.patch.dict(os.environ, env, clear=True):
-            self.assertEqual(paths.sibling_repo("wlc-utils"), Path("/pub"))
-            self.assertEqual(paths.sibling_repo("wlc-utils-private"), Path("/priv"))
+            self.assertEqual(paths.sibling_repo("codex-index"), Path("/index"))
+            self.assertEqual(paths.sibling_repo("codex-index-aleppo"), Path("/aleppo"))
 
     def test_env_name_mapping_of_the_repo_that_now_holds_the_private_tree(self):
-        # The live override for the private WLC data, standing where
-        # REPO_WLC_UTILS_PRIVATE_DIR stood before the 2026-08-08 move.
+        # The live override for the private al-hatorah tree.
         env = _clean_env(REPO_MAM_PRIVATE_DIR="/mp")
         with mock.patch.dict(os.environ, env, clear=True):
             self.assertEqual(paths.sibling_repo("MAM-private"), Path("/mp"))

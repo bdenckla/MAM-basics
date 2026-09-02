@@ -287,20 +287,6 @@ def require_mam_parsed_plus_dir() -> Path:
     return require_sibling("MAM-parsed", mam_parsed_plus_dir())
 
 
-def wlc_utils_private_dir() -> Path:
-    """The dated 2025-03-21 WLC snapshots and their derived JSONs, which
-    ``main_wlc_json_and_unicode.py`` both reads and writes.
-
-    A subdirectory of MAM-private since 2026-08-08, not a sibling clone of its own: the
-    private evacuation programme moved every tracked file of ``bdenckla/wlc-utils-private``
-    under ``MAM-private\\wlc-utils-private\\`` and emptied that repo to a breadcrumb README
-    (`MAM-private\\doc\\PLAN-evacuate-private-repos.md`, phases R.0-R.4).  So the env
-    override that moves this tree is now ``REPO_MAM_PRIVATE_DIR``; ``REPO_WLC_UTILS_PRIVATE_DIR``
-    no longer reaches it, there being no sibling by that name to resolve.
-    """
-    return sibling_repo("MAM-private") / "wlc-utils-private"
-
-
 def al_hatorah_phonetic_dir() -> Path:
     """al-hatorah's ``io/a01-phonetic-std-set``: Phonetic MAM, one JSON per book.
 
@@ -314,8 +300,7 @@ def al_hatorah_phonetic_dir() -> Path:
     under ``MAM-private\\al-hatorah\\`` and empties that repo to a breadcrumb README
     (``MAM-private\\doc\\PLAN-evacuate-private-repos.md``, phases R.0-R.4).  So the env
     override that moves this tree is now ``REPO_MAM_PRIVATE_DIR``; ``REPO_AL_HATORAH_DIR``
-    no longer reaches it, there being no sibling by that name to resolve.  Same shape as
-    ``wlc_utils_private_dir`` above, which that programme repointed two days earlier.
+    no longer reaches it, there being no sibling by that name to resolve.
     """
     return sibling_repo("MAM-private") / "al-hatorah" / "io" / "a01-phonetic-std-set"
 
