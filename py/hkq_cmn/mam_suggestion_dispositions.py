@@ -47,6 +47,18 @@ here, but I've decided it should not be mentioned here."*  A reason says what wa
 decided about the suggestion; a downstream edition's own to-do is a different
 matter and does not belong on these cards.  Do not re-propose it.
 
+GLOSS A BARE HEBREW LETTER WITH ITS NAME: "the י (yod)", "the ש (shin)".  A reason
+names letters outside any word, and a letter standing alone is much harder to read
+than the same letter in context.  Ben Denckla, 2026-09-02, on which matter most:
+*"really the most important letters to gloss are yod and vav since without context
+(e.g. outside of a Hebrew word) they are hard to 'see' what they are"* -- both
+being small and narrow, and easily taken for each other or for a mark.  Gloss the
+rest too, for consistency, but never leave a bare yod or vav unglossed.
+
+Name a person too, rather than leaning on a pronoun: "Avi notes", not "he notes".
+A reason can run to several sentences and cite Yeivin between naming Avi and
+saying what Avi did, at which point "he" has two candidates.
+
 A SUPPRESSED CASE IS NOT A DELETED ONE.  It keeps its card, its crop and its
 number, and moves to the Suppressed page beside the ketiv/qere rows whose issues
 are closed.  Suppression says the suggestion has been handled, not that it was

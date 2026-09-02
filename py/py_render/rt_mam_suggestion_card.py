@@ -41,6 +41,24 @@ from py_render.rt_suggestion_kinds import (
 
 MAM_ROW_NAME = "MAM"
 
+# Cases whose comparison table is set with extra letter spacing, so that WHICH
+# LETTER an accent belongs to can be seen.  Ben Denckla asked for these two on
+# 2026-09-02: in וַיֹּ֥אמֶר against וַ֥יֹּאמֶר the merkha moves between adjacent
+# letters, and in זֵ֣רוּ against זֵר֣וּ the munax does, and at normal spacing a
+# reader cannot tell which letter carries the mark in either.
+#
+# Per case rather than for every card, because the spacing is a fix for a
+# specific difficulty and looks like a typographic tic where there is no such
+# difficulty.  Keyed by the reference as Holman sent it, as the corrections and
+# dispositions tables are, so a derived atom index moving does not orphan an entry.
+#
+# The class and its rule are not invented here: ``*.extra-letter-spacing {
+# letter-spacing: 0.1em; }`` is one line, identical in seven stylesheets across
+# these repos, and ``py/author_misc/rocc_2_pre_vowel_accents_in_ctr.py`` already
+# uses it for this same purpose -- showing where an accent sits relative to a
+# vowel.  Its comment there reads "span or bdi", and a bdi is what these are.
+EXTRA_LETTER_SPACING_REFS = frozenset({"Judg 10:11.1", "Zech 2:4.11"})
+
 
 def suggestion_fragment_id(case_number: int) -> str:
     """The card's anchor, e.g. ``mam007``.
@@ -75,11 +93,13 @@ def suggestion_card_html(
     )
     verse_ref_html = _verse_ref_html(verse_text)
 
+    ref_as_sent = as_text(case.get("ref_as_sent") or case.get("ref", ""))
     comparison_html = _comparison_table_html(
         [
             (MAM_ROW_NAME, mam_form),
             (comparison_edition, comparison_form),
-        ]
+        ],
+        extra_letter_spacing=ref_as_sent in EXTRA_LETTER_SPACING_REFS,
     )
 
     notes_html = join_nonempty_html_blocks(
@@ -133,19 +153,28 @@ data-filter-ids="{escape(filter_id)}"
 </article>"""
 
 
-def _comparison_table_html(rows: list[tuple[str, str]]) -> str:
+def _comparison_table_html(
+    rows: list[tuple[str, str]], extra_letter_spacing: bool = False
+) -> str:
     """Two columns, and every Hebrew cell declared ``dir="rtl"``.
 
     The declaration says what the cell holds, and right-justification follows from
     that; a literal ``text-align`` would say only how it should look.  The name
     column is English and is left alone.
+
+    ``extra_letter_spacing`` widens the gaps between letters so that which letter
+    an accent belongs to can be seen -- see ``EXTRA_LETTER_SPACING_REFS`` for which
+    cases get it and why it is not simply always on.
     """
+    value_class = (
+        "pointed-heb extra-letter-spacing" if extra_letter_spacing else "pointed-heb"
+    )
     body = "\n".join(
         (
             "<tr>\n"
             f'<td class="comparison-name-col">{escape(name)}</td>\n'
             f'<td class="comparison-value-col" dir="rtl">'
-            f'<bdi class="pointed-heb">{escape(value)}</bdi></td>\n'
+            f'<bdi class="{value_class}">{escape(value)}</bdi></td>\n'
             "</tr>"
         )
         for name, value in rows
