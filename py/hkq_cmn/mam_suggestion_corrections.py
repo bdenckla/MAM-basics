@@ -58,19 +58,21 @@ from dataclasses import dataclass
 CORRECTOR = "Ben Denckla"
 
 # Joshua 10:12.3's comparison form, in the spelling sent and in the corrected one.
-# EVERY MARK IS A NAMED ESCAPE, for two reasons.  U+05A8 and U+0599 are hard to
-# tell apart in a literal, and which of the two is meant is the whole of this
-# correction.  And the shin dot precedes the qubuts here, which is MAM-normal
-# mark order rather than the Unicode-normal order a keyboard or a paste through
-# anything that normalizes will produce -- typing the stem instead of spelling it
-# put the qubuts first, and the fail-fast check below is what caught it.
+# The word is יהושע, Joshua's name, and EVERY CHARACTER IS A NAMED ESCAPE, for
+# three reasons.  U+05A8 and U+0599 are hard to tell apart in a literal, and which
+# of the two is meant is the whole of this correction.  The shin dot precedes the
+# qubuts here, which is MAM-normal mark order rather than the Unicode-normal order
+# a keyboard or a paste through anything that normalizes will produce -- typing the
+# stem instead of spelling it put the qubuts first, and the fail-fast check below
+# is what caught it.  And a source line whose first strong character is Hebrew lays
+# out right to left, which leaves the escapes beside it hard to read.
 _JOSH_STEM = (
-    "י\N{HEBREW POINT SHEVA}"
-    "ה"
-    "ו\N{HEBREW POINT HOLAM}"
-    "ש\N{HEBREW POINT SHIN DOT}\N{HEBREW POINT QUBUTS}"
+    "\N{HEBREW LETTER YOD}\N{HEBREW POINT SHEVA}"
+    "\N{HEBREW LETTER HE}"
+    "\N{HEBREW LETTER VAV}\N{HEBREW POINT HOLAM}"
+    "\N{HEBREW LETTER SHIN}\N{HEBREW POINT SHIN DOT}\N{HEBREW POINT QUBUTS}"
 )
-_JOSH_TAIL = "ע\N{HEBREW POINT PATAH}\N{HEBREW ACCENT PASHTA}"
+_JOSH_TAIL = "\N{HEBREW LETTER AYIN}\N{HEBREW POINT PATAH}\N{HEBREW ACCENT PASHTA}"
 _JOSH_AS_SENT = _JOSH_STEM + "\N{HEBREW ACCENT QADMA}" + _JOSH_TAIL
 _JOSH_CORRECTED = _JOSH_STEM + "\N{HEBREW ACCENT PASHTA}" + _JOSH_TAIL
 

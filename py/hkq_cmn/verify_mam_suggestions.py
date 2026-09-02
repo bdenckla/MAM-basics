@@ -34,15 +34,22 @@ about what each template with no rule of its own should contribute.  For מ:פס
 alone 392 verses change atom count, and the book-title template מ:ספר חדש and the
 special-letter template מ:אות-מיוחדת-במילה leak the same way: Genesis 1:1 renders
 9 atoms for a seven-word verse, its first atom running the book title, the whole
-navigation reference and two copies of בְּרֵאשִׁית together.  Of the 34 cases only
-2Sa 15:37 carries any such template, so the other 33 indices are unaffected.
+navigation reference and two copies of בְּרֵאשִׁית together.
+
+ONLY 2Sa 15:37 OF THE 34 CASES IS AFFECTED, AND THAT IS A RULE RATHER THAN LUCK.
+The navigation template precedes every verse, but in column D, which is not parsed
+into these payloads at all; it reaches a payload only where it also carries a
+division marker.  Measured 2026-09-02: 895 verse payloads hold one, and 889 of
+those carry a seder (סדר), an aliyah (עלייה) or both, leaving 6 that carry a bare
+reference for a reason not established here.  2Sa 15:37 begins seder 29, which is
+why it is the one case of the 34 that has one.
 
 THE MAQAF COMPOUNDS ARE NOT AMONG THEM, though a cruder check reports them as
 disagreements.  Holman quotes a whole compound while numbering one of its atoms,
-and the atom he numbers is the one bearing the difference every time -- so
-עַל־יְרוּשָׁלַ͏ִם against עַל־יְרוּשָׁלַ͏ִם resolves to its second atom and agrees with his 11.
-``_differing_offset`` is what picks the right half, and it needs neither his index
-nor his prose description of where the mark sits.
+and the atom he numbers is the one bearing the difference every time.
+So עַל־יְרוּשָׁלַ͏ִם against עַל־יְרוּשָׁלַ͏ִם resolves to its second atom
+and agrees with his 11.  ``_differing_offset`` is what picks the right half, and
+it needs neither his index nor his prose description of where the mark sits.
 
 TWO CORRECTIONS DISSOLVED ON 2026-09-02, when a template with no parameters was
 taught to contribute a separator: 1Ki 7:24 (17 as sent) and Judg 1:7 (21 as sent)
@@ -136,9 +143,9 @@ def _differing_offset(mam_run: list[str], comparison_run: list[str]) -> int | No
     Holman at all.  He supplies two spellings of the same stretch of text, MAM's
     and the comparison edition's, and the atom his case is about is the one that
     differs between them.  For a single-atom quotation that is the atom itself;
-    for a maqaf compound it picks out the half he means, so עַל־יְרוּשָׁלַ͏ִם against
-    עַל־יְרוּשָׁלַ͏ִם resolves to the second atom without anything having to read his
-    prose description of where the meteg sits.
+    for a maqaf compound it picks out the half he means.
+    Thus עַל־יְרוּשָׁלַ͏ִם against עַל־יְרוּשָׁלַ͏ִם resolves to the second atom
+    without anything having to read his prose description of where the meteg sits.
 
     None when the two runs are different lengths, or differ in no atom or in more
     than one -- in which case the caller raises rather than guessing.
