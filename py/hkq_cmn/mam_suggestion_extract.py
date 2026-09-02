@@ -13,11 +13,19 @@ instruction of 2026-09-02, and the difference is worth stating because the
 looser rule is right next door and easy to copy.  The UXLC ingest tracks each
 message BODY verbatim, with addresses replaced.  This ingest tracks NO body at
 all.  What becomes public is the suggestions themselves -- a reference, the two
-forms Holman compares, and his one-line description of the difference --
-plus the message's subject, date and sender display name.  The threads around
-those messages, in which Ben Denckla and Seth (Avi) Kadish discuss the
-suggestions, are read by nobody here and stored nowhere: they may inform how a
-suggestion is presented, but no sentence of theirs is kept.
+forms Holman compares, and his one-line description of the difference -- plus the
+message's subject, date and sender display name.
+
+WHAT THE BOUNDARY PROTECTS IS THE PERSONAL CORRESPONDENCE, NOT EVERY SENTENCE.
+Ben narrowed this later the same day, and the distinction matters because the
+first statement of it here was too absolute.  The threads around these messages
+are a discussion between him and Seth (Avi) Kadish, and what must not leave the
+mailbox is its personal side -- being too busy to work through a batch of
+suggestions, and the like.  Their SUBSTANTIVE judgments about the text are a
+different thing: those settle suggestions, and Ben asked that Avi be cited for
+them by name.  ``mam_suggestion_dispositions`` is where such a judgment is
+recorded, and it is the only place any of it is; this ingest still reads none of
+it, because a ruling is written down deliberately rather than harvested.
 
 That boundary is enforced structurally rather than by redaction.  A message is a
 source of suggestions only if ``SUGGESTION_SENDER_NAME`` sent it; everything

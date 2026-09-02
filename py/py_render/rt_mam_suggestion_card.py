@@ -82,6 +82,7 @@ def suggestion_card_html(
     )
 
     notes_html = join_nonempty_html_blocks(
+        _disposition_html(case),
         _optional_note("Holman:", as_optional_text(case.get("description"))),
         _optional_note("Suggestion:", as_optional_text(case.get("recommendation"))),
         _corrections_html(case),
@@ -152,6 +153,44 @@ def _comparison_table_html(rows: list[tuple[str, str]]) -> str:
         '<table class="comparison-table">\n'
         "<thead>\n<tr>\n<th>name</th>\n<th>value</th>\n</tr>\n</thead>\n"
         f"<tbody>\n{body}\n</tbody>\n</table>"
+    )
+
+
+def _disposition_html(case: dict[str, Any]) -> str:
+    """The ruling on this suggestion, where one has been made, FIRST on the card.
+
+    First because it changes how everything below it is read: a reader who does
+    not know a suggestion has been ruled on will take the recommendation under it
+    as still standing.  Two lines, the short statement and then the reasoning with
+    whoever reached it named -- ``mam_suggestion_dispositions`` says why naming
+    them is right where storing the surrounding correspondence is not.
+    """
+    disposition = case.get("disposition")
+    if not isinstance(disposition, dict):
+        return ""
+    summary = as_optional_text(disposition.get("summary"))
+    reason = as_optional_text(disposition.get("reason"))
+    state = as_text(disposition.get("state", "")).capitalize()
+    return join_nonempty_html_blocks(
+        "" if summary is None else note_line_html(label=f"{state}:", value=summary),
+        "" if reason is None else _prose_note_html(label="Why:", value=reason),
+    )
+
+
+def _prose_note_html(label: str, value: str) -> str:
+    """A note line whose value is English prose, Hebrew letters included.
+
+    NOT ``note_line_html``, whose "does this contain a Hebrew character" test is
+    right for a value that IS a Hebrew form and wrong for a sentence with a letter
+    or two quoted inside it: that test wrapped this whole reason in
+    ``<bdi class="pointed-heb">``, setting an English paragraph in a Hebrew font
+    because it named the כ and the ו.  Hebrew in the middle of an English line
+    needs no wrapper at all -- what needs one is a line that STARTS on Hebrew, and
+    this one starts on a name.
+    """
+    return (
+        f'<div class="note-line"><span class="label">{escape(label)}</span> '
+        f"<span>{escape(value)}</span></div>"
     )
 
 

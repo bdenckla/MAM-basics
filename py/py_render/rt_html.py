@@ -15,7 +15,10 @@ from py_render.rt_matching_tmpl_args import (
     matching_template_arguments_in_mpu_verse_by_row_number,
     supported_qere_wrapper_by_row_number,
 )
-from py_render.rt_mam_suggestion_card import suggestion_card_html
+from py_render.rt_mam_suggestion_card import (
+    suggestion_card_html,
+    suggestion_fragment_id,
+)
 from py_render.rt_record_card import record_card_html
 from py_render.rt_suggestion_kinds import KETIV_QERE_KIND, suggestion_kind
 from py_render.rt_render_utils import (
@@ -33,6 +36,7 @@ from py_render.rt_validate_holam_he import (
 )
 from py_render.rt_validate_qyv import evaluate_qyv_row, require_qyv_row_match
 from hkq_cmn.json_io import load_json
+from hkq_cmn.mam_suggestion_dispositions import is_suppressed
 from hkq_cmn.table_row_github_issues import require_row_github_issue_metadata
 import hkq_paths
 
@@ -51,10 +55,11 @@ MAIN_PAGE_TITLE = "Holman k/q + MAM suggestions"
 SUPPRESSED_PAGE_TITLE = "Holman k/q - Suppressed"
 MAIN_PAGE_HEADING = "Holman's ketiv/qere review and MAM suggestions"
 SUPPRESSED_PAGE_HEADING = "Suppressed"
-# The suppressed page is ketiv/qere only, because what it suppresses is a closed
-# GitHub issue and only the review's rows have issues. The MAM suggestions have
-# none, so all 34 are on the active page.
-SUPPRESSED_PAGE_SUBTITLE = "Closed issues only, so ketiv/qere rows only"
+# Two things reach the Suppressed page and they are suppressed on different
+# grounds: a ketiv/qere row whose GitHub issue is closed, and a MAM suggestion
+# that has been ruled on (hkq_cmn/mam_suggestion_dispositions.py holds the
+# rulings). A suggestion has no issue, so issue state cannot carry it.
+SUPPRESSED_PAGE_SUBTITLE = "Closed ketiv/qere issues, and suggestions ruled on"
 
 
 def render_table_data_findings_html(
@@ -109,6 +114,8 @@ def render_table_data_findings_html(
         mam_suggestions_json_path or hkq_paths.mam_suggestions_json_path()
     )
     suggestion_cases, source_message_dates = _load_mam_suggestions(suggestions_path)
+    active_suggestions = [case for case in suggestion_cases if not is_suppressed(case)]
+    suppressed_suggestions = [case for case in suggestion_cases if is_suppressed(case)]
 
     active_rows, suppressed_rows = _partition_rows(rows)
     suppressed_output_path = build_suppressed_output_path(output_html_path)
@@ -118,7 +125,7 @@ def render_table_data_findings_html(
         page_heading=MAIN_PAGE_HEADING,
         page_subtitle="",
         rows=active_rows,
-        suggestion_cases=suggestion_cases,
+        suggestion_cases=active_suggestions,
         source_message_dates=source_message_dates,
         sorted_findings=sorted_findings,
         finding_ids=finding_ids,
@@ -138,7 +145,7 @@ def render_table_data_findings_html(
         page_heading=SUPPRESSED_PAGE_HEADING,
         page_subtitle=SUPPRESSED_PAGE_SUBTITLE,
         rows=suppressed_rows,
-        suggestion_cases=[],
+        suggestion_cases=suppressed_suggestions,
         source_message_dates=source_message_dates,
         sorted_findings=sorted_findings,
         finding_ids=finding_ids,
@@ -235,8 +242,15 @@ def _write_report_page(
     page_subtitle_html = (
         "" if not page_subtitle else f'<p class="subtitle">{escape(page_subtitle)}</p>'
     )
+    # Both kinds of anchor, because both kinds of record can be on either page:
+    # a suggestion moves to the Suppressed page once it has been ruled on, so a
+    # #mam<NNN> link handed out while it was active must follow it there.
     row_ids_on_page = sorted(
-        row_fragment_id(as_text(row.get("row_number", ""))) for row in rows
+        [row_fragment_id(as_text(row.get("row_number", ""))) for row in rows]
+        + [
+            suggestion_fragment_id(int(as_text(case.get("case_number", "0"))))
+            for case in suggestion_cases
+        ]
     )
     other_page_href = (
         suppressed_output_path.name
@@ -251,7 +265,7 @@ def _write_report_page(
             "  var h = window.location.hash;",
             "  if (!h) return;",
             "  var id = h.slice(1);",
-            r"  if (!/^row\d+$/.test(id)) return;",
+            r"  if (!/^(row|mam)\d+$/.test(id)) return;",
             f"  var here = new Set([{row_ids_js}]);",
             f'  if (!here.has(id)) window.location.replace("{other_page_href}" + h);',
             "})();",

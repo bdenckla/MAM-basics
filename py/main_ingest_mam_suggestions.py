@@ -13,9 +13,12 @@ No message body reaches a tracked file.  ``main_ingest_uxlc_emails.py`` tracks
 each body verbatim with addresses replaced; this one tracks the suggestions
 themselves and the message's subject, date and sender display name, and nothing
 else.  The threads around these messages carry Ben Denckla's and Seth (Avi)
-Kadish's discussion of the suggestions, and by Ben's instruction of 2026-09-02
-none of that is stored in any form.  ``hkq_cmn/mam_suggestion_extract.py``
-enforces it by reading only messages Holman himself sent.
+Kadish's discussion of the suggestions, and none of it is harvested from here:
+``hkq_cmn/mam_suggestion_extract.py`` reads only messages Holman himself sent.
+What that protects is the personal side of the correspondence; a substantive
+judgment that settles a suggestion is written down deliberately, with its author
+cited, in ``hkq_cmn/mam_suggestion_dispositions.py``.  Both modules' docstrings
+state the boundary.
 
 Verification against the sibling ``../MAM-parsed/plus/*.json`` is part of the
 ingest rather than a command of its own, matching
@@ -45,6 +48,11 @@ from hkq_cmn.mam_suggestion_corrections import (
     CASE_FIELD_CORRECTIONS,
     apply_corrections,
     require_every_correction_applied,
+)
+from hkq_cmn.mam_suggestion_dispositions import (
+    apply_disposition,
+    is_suppressed,
+    require_every_disposition_applied,
 )
 from hkq_cmn.mam_suggestion_extract import ImageTarget, read_suggestion_messages
 from hkq_cmn.verify_mam_suggestions import check_case, summarize
@@ -156,6 +164,7 @@ def main() -> None:
     checks = []
     payload_cases = []
     applied_correction_keys: set[tuple[str, str]] = set()
+    applied_disposition_refs: set[str] = set()
     for case_index, case in enumerate(cases, start=1):
         check = check_case(
             std_book_name=case.ref.std_book_name,
@@ -183,6 +192,8 @@ def main() -> None:
             if key[0] == ref_as_sent:
                 applied_correction_keys.add(key)
         apply_corrections(payload, ref_as_sent)
+        if apply_disposition(payload, ref_as_sent):
+            applied_disposition_refs.add(ref_as_sent)
 
         payload["image_files"] = _export_images(
             case_index, case.image_targets, args.eml_dir, args.image_dir, data_root
@@ -191,10 +202,14 @@ def main() -> None:
         payload_cases.append(payload)
 
     require_every_correction_applied(applied_correction_keys)
+    require_every_disposition_applied(applied_disposition_refs)
 
     document = {
         "source_messages": [one.payload() for one in sources],
         "case_count": len(payload_cases),
+        "suppressed_case_count": sum(
+            1 for payload in payload_cases if is_suppressed(payload)
+        ),
         "mam_plus_verify": summarize(checks),
         "cases": payload_cases,
     }
