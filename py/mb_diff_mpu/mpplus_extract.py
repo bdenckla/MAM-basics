@@ -9,6 +9,7 @@ import json
 import subprocess
 
 from mb_cmn import paths
+from mb_cmn import template_names as tmpln
 from mb_cmn import ws_tmpl2
 from mb_diff_mpu.mpplus_file_matching import (
     book39_ids_for_stem,
@@ -21,12 +22,14 @@ from mb_diff_mpu.mpplus_flatten import (
     flatten_ep_for_diff,
     flatten_ep_words_only_for_diff,
 )
+from mb_diff_mpu.mpplus_param_access import MISSING, get_param
 from mb_diff_mpu.mpplus_structure import (
     structural_signature,
     template_name_counter,
 )
 
 MAM_PARSED_DIR = str(paths.sibling_repo("MAM-parsed"))
+_DROP = object()
 
 # ── Git helpers ──────────────────────────────────────────────
 
@@ -90,6 +93,67 @@ def _canonicalize_template_names(node):
 
 def _git_show_json(rev, path):
     return _canonicalize_template_names(json.loads(_git_show(rev, path)))
+
+
+def _targeted_scrdff_note_values(node):
+    """Return the note values held by targeted scroll-difference templates."""
+    values = []
+    if isinstance(node, list):
+        for item in node:
+            values.extend(_targeted_scrdff_note_values(item))
+        return values
+    if not isinstance(node, dict):
+        return values
+    if node.get("tmpl_name") == tmpln.SCRDFF_TAR:
+        note_value = get_param(node, "2")
+        if note_value is not MISSING:
+            values.append(note_value)
+    for value in node.values():
+        values.extend(_targeted_scrdff_note_values(value))
+    return values
+
+
+def _drop_redundant_non_targeted_scrdff_notes(node, targeted_note_values):
+    """Copy ``node`` without redundant non-targeted scroll-difference notes.
+
+    Until MAM-parsed commit 8a254bf of 2026-05-13, plus data retained a
+    non-targeted scroll-difference note beside the targeted note that already
+    held the same note content.  The non-targeted template's parameter 1 is
+    not biblical body text, so retaining that duplicate makes the change log
+    report a false text addition or deletion.  Remove only a non-targeted
+    note whose parameter 1 is present in a targeted note in the same EP; an
+    unpaired historical note remains comparable data.
+    """
+    if isinstance(node, list):
+        copied_items = [
+            _drop_redundant_non_targeted_scrdff_notes(item, targeted_note_values)
+            for item in node
+        ]
+        return [item for item in copied_items if item is not _DROP]
+    if not isinstance(node, dict):
+        return node
+    if node.get("tmpl_name") == tmpln.SCRDFF_NO_TAR:
+        note_value = get_param(node, "1")
+        if note_value is not MISSING and note_value in targeted_note_values:
+            return _DROP
+    copied = {}
+    for key, value in node.items():
+        copied_value = _drop_redundant_non_targeted_scrdff_notes(
+            value, targeted_note_values
+        )
+        if copied_value is not _DROP:
+            copied[key] = copied_value
+    return copied
+
+
+def _ep_without_redundant_scrdff_notes(ep):
+    """Return EP data with paired redundant scroll-difference notes omitted."""
+    targeted_note_values = _targeted_scrdff_note_values(ep)
+    if not targeted_note_values:
+        return ep
+    normalized = _drop_redundant_non_targeted_scrdff_notes(ep, targeted_note_values)
+    assert isinstance(normalized, list)
+    return normalized
 
 
 def _list_plus_files(rev):
@@ -259,6 +323,8 @@ def _diff_ep(old_ep, new_ep, book39id, chapter, verse):
     structural changes like legarmeih -> paseq or reordered templates).
     Ignores format differences like tmpl_args vs tmpl_params.
     """
+    old_ep = _ep_without_redundant_scrdff_notes(old_ep)
+    new_ep = _ep_without_redundant_scrdff_notes(new_ep)
     old_text = flatten_ep_for_diff(old_ep)
     new_text, new_docnote = flatten_ep_with_docnote_for_diff(new_ep)
     text_changed = old_text != new_text
