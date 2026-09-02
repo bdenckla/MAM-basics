@@ -42,7 +42,7 @@ numbered list in the plain-text body, each item a heading line
 comparison-edition line.  Its crops arrive as ordinary message attachments whose
 filenames restate the case, so image-to-case is recoverable from the filename.
 
-``workbook`` -- the two HUB messages of 2026-08-21 and 2026-08-27.  The cases are
+``workbook`` -- the two Jerusalem Crown messages of 2026-08-21 and 2026-08-27.  The cases are
 cells of an attached ``.xlsx`` and the crops are embedded INSIDE that workbook,
 so the message has no image attachments at all and the crops are named
 ``image1.png``..``image4.png``, which says nothing about which case each belongs
@@ -118,6 +118,16 @@ STD_BOOK_NAME_BY_HOLMAN_ABBREV = {
 # Breuer advised on it without detailed involvement, and Yosef Ofer did the
 # detailed work, as its front matter says.
 #
+# "HUB" IS THE INITIALISM WE REJECTED, and it survives in this file only as a
+# quotation of what Holman writes -- a dict key, and prose about that key.  It is
+# not our name for the edition, for these messages, or for these cases: "the two
+# Jerusalem Crown messages", never "the two HUB messages".  Avi Kadish asked for
+# the rejection on 2026-08-30 because "Hebrew University Bible" already names
+# something else, the Hebrew University Bible Project, and these four cases have
+# nothing to do with it; Ben Denckla settled Jerusalem Crown as the name on
+# 2026-09-02.  Four sites had let the initialism back in as our own word and were
+# corrected the same day.
+#
 # A label with no entry raises rather than passing through, so a message
 # comparing against something new is a decision somebody makes and not a string
 # that quietly reaches a page.
@@ -189,7 +199,7 @@ class ImageTarget:
     ``attachment`` names a part of the message itself, which is how the
     prose-list message ships its 30 crops.  ``workbook-member`` names a zip
     member inside the message's attached ``.xlsx``, which is the only place the
-    HUB messages' crops exist -- see ``xlsx_xml_utils``' module docstring.
+    Jerusalem Crown messages' crops exist -- see ``xlsx_xml_utils``' docstring.
     """
 
     eml_name: str

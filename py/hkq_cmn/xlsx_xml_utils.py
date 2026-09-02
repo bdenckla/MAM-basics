@@ -7,7 +7,7 @@ standard library alone, and adding a spreadsheet dependency for two messages'
 worth of cells would be the only such dependency in the tree.
 
 WHAT THE CALLER ACTUALLY NEEDS FROM A HOLMAN SPREADSHEET, and why the drawing
-half of this module exists.  Holman's two HUB messages carry their cases in an
+half of this module exists.  Holman's two Jerusalem Crown messages carry their cases in an
 attached workbook rather than in the message body, and carry the page crops
 *inside that workbook* rather than as message attachments.  So neither half of
 the shape ``uxlc_email_extract`` expects is present: ``_png_attachments`` walking
