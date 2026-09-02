@@ -392,7 +392,9 @@ checkout or a release archive is offered instead. (3) **Licence**: MAM-simple's 
 would become rows in `DATA-LICENSES.md` under a GPL-3.0 repo, the pattern the wlc pages already
 follow. What evacuating the products would buy is the whole of the goal: the mega would write
 only MAM-basics and MAM-private's census, so every task, product regeneration included, runs in
-one public worktree. Their combined 1,023 files and 236 MB would take MAM-basics to roughly
+one public worktree — and Ben, 2026-09-02: *"that census will go away eventually"*, after which
+the mega would write MAM-basics alone, and a MAM-basics worktree would have no sibling left to
+resolve. Their combined 1,023 files and 236 MB would take MAM-basics to roughly
 800 MB of tracked files. **Nothing is decided; if Ben decides yes, it is a fourth stage with its
 own section here, after the third.**
 
