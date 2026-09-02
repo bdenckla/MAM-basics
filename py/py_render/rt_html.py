@@ -55,11 +55,15 @@ MAIN_PAGE_TITLE = "Holman k/q + MAM suggestions"
 SUPPRESSED_PAGE_TITLE = "Holman k/q - Suppressed"
 MAIN_PAGE_HEADING = "Holman's ketiv/qere review and MAM suggestions"
 SUPPRESSED_PAGE_HEADING = "Suppressed"
-# Two things reach the Suppressed page and they are suppressed on different
-# grounds: a ketiv/qere row whose GitHub issue is closed, and a MAM suggestion
-# that has been ruled on (hkq_cmn/mam_suggestion_dispositions.py holds the
-# rulings). A suggestion has no issue, so issue state cannot carry it.
-SUPPRESSED_PAGE_SUBTITLE = "Closed ketiv/qere issues, and suggestions ruled on"
+# Two things reach the Suppressed page by two different routes: a ketiv/qere row
+# whose GitHub issue is closed, and a MAM suggestion with a ruling in
+# hkq_cmn/mam_suggestion_dispositions.py. A suggestion has no issue, so issue
+# state could not have carried it.
+#
+# The subtitle states what suppressed MEANS, because a reader meets the word here
+# and would otherwise guess. Ben's decision, 2026-09-02: it means handled, and
+# says nothing about how -- that module's docstring says why not.
+SUPPRESSED_PAGE_SUBTITLE = "Handled: accepted, rejected, or something in between"
 
 
 def render_table_data_findings_html(

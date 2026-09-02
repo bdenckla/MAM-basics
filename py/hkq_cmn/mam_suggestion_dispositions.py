@@ -20,9 +20,27 @@ anything about his availability, his circumstances, or anyone else's.  The same
 holds for Ben's own remarks.  ``mam_suggestion_extract``'s module docstring states
 the boundary the ingest keeps; this is the one exception to it, and it is narrow.
 
+SUPPRESSED MEANS HANDLED, AND DELIBERATELY DOES NOT SAY HOW.  Ben Denckla settled
+this on 2026-09-02, having been asked: a handled suggestion may have been
+accepted, rejected, or something in between such as partially taken, and the
+report does not distinguish those.  ``state`` therefore has one value and is
+expected to keep having one.  **Do not add ``accepted`` and ``declined``**, or the
+report grows a distinction its ketiv/qere half cannot make: those rows are
+suppressed off a closed GitHub issue, `is_closed` is a bare boolean, and all 21
+closed issues carry GitHub's default `COMPLETED` reason, `NOT_PLANNED` never
+having been used.  Half a page able to say which kind of closure a record got is
+worse than neither half saying it.
+
+What carries the how is ``summary`` and ``reason``, in prose, per case.  That is
+the right place for it because the answer is rarely one of two words: of the
+eighteen ketiv/qere rows suppressed as of 2026-09-02, twelve close on a Wikisource
+diff, two by pointing at a `bdenckla/mgketer` issue, two on an accepted judgment,
+one on a rejection of Holman's framing that still produced a note, and one on a
+research aside that states no disposition at all.
+
 A SUPPRESSED CASE IS NOT A DELETED ONE.  It keeps its card, its crop and its
 number, and moves to the Suppressed page beside the ketiv/qere rows whose issues
-are closed.  Suppression says the suggestion has been ruled on, not that it was
+are closed.  Suppression says the suggestion has been handled, not that it was
 never made.
 """
 
@@ -30,6 +48,8 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
+# The only state there is, and the module docstring says why a second one would be
+# a mistake rather than an improvement.
 SUPPRESSED = "suppressed"
 
 
