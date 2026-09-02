@@ -22,6 +22,7 @@ from __future__ import annotations
 from html import escape
 import os
 from pathlib import Path
+import re
 from typing import Any
 
 from py_render.rt_external_links import verse_external_links
@@ -200,8 +201,38 @@ def _prose_note_html(label: str, value: str) -> str:
     """
     return (
         f'<div class="note-line"><span class="label">{escape(label)}</span> '
-        f"<span>{escape(value)}</span></div>"
+        f"<span>{_prose_with_links_html(value)}</span></div>"
     )
+
+
+# A markdown-style inline link inside a prose field: [change](https://...).
+# ONLY https, which is what keeps this from being an injection: everything outside
+# a match is escaped as before, the href is escaped, and no other scheme can match.
+_PROSE_LINK_RE = re.compile(r"\[([^\]\n]+)\]\((https://[^\s)]+)\)")
+
+
+def _prose_with_links_html(value: str) -> str:
+    """Escape prose, turning ``[text](https://...)`` into a real link.
+
+    The alternative was a bare URL in the text, and Ben Denckla ruled against that
+    on 2026-09-02: a Hebrew Wikisource diff URL is a massive percent-encoded
+    string, and printing it raw is both unreadable and faintly alarming to look
+    at.  A link under an ordinary word -- "the change" -- says the same thing.
+
+    The data stays data: a reason is plain text with this one lightweight
+    convention, never raw HTML, so nothing in the extract can put markup on a page.
+    """
+    parts: list[str] = []
+    position = 0
+    for match in _PROSE_LINK_RE.finditer(value):
+        parts.append(escape(value[position : match.start()]))
+        parts.append(
+            f'<a href="{escape(match.group(2))}" target="_blank" rel="noopener">'
+            f"{escape(match.group(1))}</a>"
+        )
+        position = match.end()
+    parts.append(escape(value[position:]))
+    return "".join(parts)
 
 
 def _optional_note(label: str, value: str | None) -> str:

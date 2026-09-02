@@ -107,15 +107,16 @@ DISPOSITION_BY_REF: dict[str, Disposition] = {
         outcome="Suggestion not taken",
         summary="MAM is right; the geresh is misplaced in the Jerusalem Crown",
         reason=(
-            "The Aleppo Codex is not extant at this verse — its leaves jump from "
-            "2 Kings 14:21 to 18:13 — so the Leningrad Codex is the primary "
-            "reference manuscript here. Seth (Avi) Kadish, 2026-08-28: the geresh "
-            "appears to have been erased in the Leningrad Codex, and the UXLC has "
-            "it that way, but even erased it stood over the כ rather than over the "
-            "final ו. He notes the same misplacement onto the final ו in BHS and "
-            "in Mechon Mamre, and reads the three editions sharing it as evidence "
-            "that they share a source. He added a note in MAM about the geresh in "
-            "the Leningrad Codex rather than moving the accent."
+            "The Aleppo Codex is not extant at this verse — its leaves jump "
+            "from 2 Kings 14:21 to 18:13 — so the Leningrad Codex is the "
+            "primary reference manuscript here. Seth (Avi) Kadish, 2026-08-28: "
+            "the geresh appears to have been erased in the Leningrad Codex, and "
+            "the UXLC has it that way, but even erased it stood over the כ "
+            "(kaf) rather than over the final ו (vav). Avi notes the same "
+            "misplacement onto the final ו (vav) in BHS and in Mechon Mamre, "
+            "and takes the three editions sharing it as evidence that they "
+            "share a source. Avi added a note in MAM about the geresh in the "
+            "Leningrad Codex rather than moving the accent."
         ),
         decided_by="Seth (Avi) Kadish",
         decided_on="2026-08-28",
@@ -123,22 +124,22 @@ DISPOSITION_BY_REF: dict[str, Disposition] = {
     "Josh 10:12.3": Disposition(
         state=SUPPRESSED,
         outcome="Suggestion taken",
-        summary="MAM now has the pashta repeated over the ש",
+        summary="MAM now has the pashta repeated over the ש (shin)",
         reason=(
             "Seth (Avi) Kadish, 2026-08-28: the word did not follow MAM's style "
-            "guideline, which calls for the pashta to be repeated on the stressed "
-            "syllable, and which is Breuer's guideline too. For this purpose a "
-            "furtive pataḥ counts as a syllable of its own, so the stress on the "
-            "שֻׁ is not final and the repetition is called for. Nothing in the "
-            "manuscripts was at issue: Yeivin (ITM §239) names words with a "
-            "furtive pataḥ among those whose pashta is repeated in the standard "
-            "printed editions and in the Leningrad and Cairo codices, and "
-            "describes the Aleppo Codex as repeating it only where at least one "
-            "letter stands between the two letters that would carry it — and here "
-            "the ש stands immediately before the ע. He made the change on Hebrew "
-            "Wikisource that day: https://he.wikisource.org/w/index.php?"
-            "title=%D7%99%D7%94%D7%95%D7%A9%D7%A2_%D7%99/%D7%98%D7%A2%D7%9E%D7%99"
-            "%D7%9D&diff=3079454&oldid=3005767"
+            "guideline, which calls for the pashta to be repeated on the "
+            "stressed syllable, and which is Breuer's guideline too. For this "
+            "purpose a furtive pataḥ counts as a syllable of its own, so the "
+            "stress on the שֻׁ (shu) is not final and the repetition is called "
+            "for. Nothing in the manuscripts was at issue: Yeivin (ITM §239) "
+            "names words with a furtive pataḥ among those whose pashta is "
+            "repeated in the standard printed editions and in the Leningrad and "
+            "Cairo codices, and describes the Aleppo Codex as repeating it only "
+            "where at least one letter stands between the two letters that "
+            "would carry it — and here the ש (shin) stands immediately before "
+            "the ע (ayin). Avi made the "
+            "[change](https://he.wikisource.org/w/index.php?title=%D7%99%D7%94%D7%95%D7%A9%D7%A2_%D7%99/%D7%98%D7%A2%D7%9E%D7%99%D7%9D&diff=3079454&oldid=3005767) "
+            "on Hebrew Wikisource that day."
         ),
         decided_by="Seth (Avi) Kadish",
         decided_on="2026-08-28",
@@ -148,11 +149,12 @@ DISPOSITION_BY_REF: dict[str, Disposition] = {
         outcome="Suggestion not taken",
         summary="MAM is right; the merkha is misplaced in the Jerusalem Crown",
         reason=(
-            "Seth (Avi) Kadish, 2026-08-28: the stressed syllable begins with the "
-            "י, so the merkha belongs where MAM has it, and the Aleppo Codex "
-            "agrees. The Jerusalem Crown has it under the ו instead, an error he "
-            "also finds in Mechon Mamre — and one he notes the Jerusalem Crown "
-            "rarely makes. He added documentation about it in MAM."
+            "Seth (Avi) Kadish, 2026-08-28: the stressed syllable begins with "
+            "the י (yod), so the merkha belongs where MAM has it, and the "
+            "Aleppo Codex agrees. The Jerusalem Crown has it under the ו (vav) "
+            "instead, an error Avi also finds in Mechon Mamre and one Avi notes "
+            "the Jerusalem Crown rarely makes. Avi added documentation about it "
+            "in MAM."
         ),
         decided_by="Seth (Avi) Kadish",
         decided_on="2026-08-28",
@@ -160,18 +162,17 @@ DISPOSITION_BY_REF: dict[str, Disposition] = {
     "Zech 2:4.11": Disposition(
         state=SUPPRESSED,
         outcome="Suggestion taken",
-        summary="MAM now has the munaḥ on the ר",
+        summary="MAM now has the munaḥ on the ר (resh)",
         reason=(
-            "The Aleppo Codex is not extant at this verse — its leaves jump from "
-            "Zephaniah 3:20 to Zechariah 9:17 — so the Leningrad Codex is the "
-            "primary reference manuscript here. Seth (Avi) Kadish, 2026-08-28: the "
-            "munaḥ belongs on the ר, as expected and as in the Leningrad Codex. He "
-            "made the change on Hebrew Wikisource that day: "
-            "https://he.wikisource.org/w/index.php?title=%D7%96%D7%9B%D7%A8%D7%99"
-            "%D7%94_%D7%91/%D7%98%D7%A2%D7%9E%D7%99%D7%9D&diff=3079481"
-            "&oldid=2988137. Note that the accent being moved is a munaḥ, not a "
-            "merkha: Holman accidentally described his suggestion as moving a "
-            "merkha, which this word does not have."
+            "The Aleppo Codex is not extant at this verse — its leaves jump "
+            "from Zephaniah 3:20 to Zechariah 9:17 — so the Leningrad Codex is "
+            "the primary reference manuscript here. Seth (Avi) Kadish, "
+            "2026-08-28: the munaḥ belongs on the ר (resh), as expected and as "
+            "in the Leningrad Codex. Avi made the "
+            "[change](https://he.wikisource.org/w/index.php?title=%D7%96%D7%9B%D7%A8%D7%99%D7%94_%D7%91/%D7%98%D7%A2%D7%9E%D7%99%D7%9D&diff=3079481&oldid=2988137) "
+            "on Hebrew Wikisource that day. Note that the accent being moved is "
+            "a munaḥ, not a merkha: Holman accidentally described his "
+            "suggestion as moving a merkha, which this word does not have."
         ),
         decided_by="Seth (Avi) Kadish",
         decided_on="2026-08-28",
