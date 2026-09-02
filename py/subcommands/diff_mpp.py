@@ -135,7 +135,12 @@ def generate_report(old_rev, new_rev, output, *, write_when_empty=True):
     mpplus_classify.classify_diffs(diffs)
     from mb_diff_mpu import mpplus_verify
 
-    mpplus_verify.verify_all(diffs)
+    verification_errors = mpplus_verify.verify_all(diffs)
+    if verification_errors:
+        raise mpplus_verify.VerificationError(
+            f"{len(verification_errors)} diff(s) failed roundtrip verification; "
+            "no JSON or HTML report was written"
+        )
     old_date = _commit_date(old_rev)
     new_date = _commit_date(new_rev)
     os.makedirs(os.path.dirname(output), exist_ok=True)
