@@ -166,6 +166,46 @@ def table_data_json_path() -> Path:
     return docs_not_served_dir() / "table_data.json"
 
 
+def mam_eml_dir() -> Path:
+    """The untracked mailbox of Holman's suggestions TO MAM (``<novc_dir>/eml-mam``).
+
+    A SECOND mailbox, deliberately not ``eml_dir()`` above, because the two hold
+    different bodies of work read by different ingests: ``eml_dir`` has his
+    suggested corrections to the UXLC, this one his suggested corrections to MAM.
+    One directory would make each ingest walk the other's messages and decide what
+    to skip, which is a classification neither should have to do.
+
+    Untracked for the same reason as the other mailbox -- a ``.eml`` header has the
+    correspondents' addresses and this repo is public -- and additionally because
+    the threads around these messages hold Ben Denckla's and Seth (Avi) Kadish's
+    own words, which by Ben's instruction of 2026-09-02 are stored nowhere at all.
+    ``mam_suggestion_extract``'s module docstring states that boundary.
+    """
+    return novc_dir() / "eml-mam"
+
+
+def mam_suggestion_img_dir() -> Path:
+    """Page crops belonging to the MAM suggestions (``<gh_pages_dir>/mam_img``).
+
+    A third image tree beside ``img`` (the ketiv/qere review's, write-once) and
+    ``uxlc_img`` (the UXLC corrections'), kept apart from both for the reason those
+    two are kept apart: different source, different report, rewritten on a
+    different schedule.
+    """
+    return gh_pages_dir() / "mam_img"
+
+
+def mam_suggestions_json_path() -> Path:
+    """The extracted MAM suggestions (``<docs_not_served_dir>/mam_suggestions.json``).
+
+    Tracked so that regenerating it and reading the diff is the test, exactly as
+    ``uxlc_corrections_json_path`` is.  Its case count is NOT a fixed project scope
+    the way ``table_data_json_path``'s 77 rows are: Holman sends more of these, so a
+    changed count here is a finding rather than a failure.
+    """
+    return docs_not_served_dir() / "mam_suggestions.json"
+
+
 def findings_html_path() -> Path:
     """The finding-filterable report built from ``table_data_json_path``."""
     return gh_pages_dir() / "table_data_findings.html"

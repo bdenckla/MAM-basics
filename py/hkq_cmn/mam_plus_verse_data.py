@@ -3,6 +3,7 @@ from __future__ import annotations
 from collections.abc import Iterator
 
 from hkq_cmn.template_name_quotes import canonical_template_name
+from mb_cmn import template_names
 
 
 def _numeric_key(kind: str, key: object) -> int:
@@ -89,6 +90,24 @@ def _collect_text_fragments(node: object, out_parts: list[str]) -> None:
         # Folded to ASCII quotes for matching the quote-bearing literals below;
         # tmpl_name itself (gershayim) is never stored from this function.
         cmp_name = canonical_template_name(tmpl_name)
+        if tmpl_name in template_names.WHITESPACE_TMPL_NAMES:
+            # A layout template that separates two runs of text and carries no
+            # text of its own: the shirah spaces of a song, and the setuma/petucha
+            # and poetic-space markers.  It has no tmpl_params, so before this
+            # line it fell through the whole function and contributed NOTHING --
+            # which silently FUSED the atoms on either side of it.  Judges 5:6,
+            # the Song of Deborah, rendered as ...בֶּן־עֲנָת֙בִּימֵ֣י... and so counted
+            # 11 atoms where the verse has 13, putting every atom index after
+            # the first space out by one.
+            #
+            # Found 2026-09-02 while checking Holman's MAM suggestions against
+            # this corpus: four of his atom indices looked off by one and were
+            # in fact right, the corpus rendering being what was wrong.  The set
+            # of templates that mean whitespace was already declared, in
+            # mb_cmn/template_names.py, and already used for exactly this by
+            # qere_projection; it simply was not honoured here.
+            out_parts.append(" ")
+            return
         tmpl_params = node.get("tmpl_params")
         if isinstance(tmpl_params, dict):
             if tmpl_name == "נוסח" or tmpl_name == "מ:הערה-2":
