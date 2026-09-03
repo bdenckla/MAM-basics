@@ -45,9 +45,6 @@
 		{
 			"path": "../Taamey_D"
 		},
-		{
-			"path": "../UXLC-utils"
-		}
 	],
 	"settings": {
 		"powershell.cwd": "MAM-basics",
