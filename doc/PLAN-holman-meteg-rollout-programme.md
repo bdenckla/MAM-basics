@@ -67,18 +67,21 @@ paragraph read "Item 1 is independent of all of them and can be done first or
 last" until 2026-09-03, and both halves of that sentence are wrong. Item 1's
 six phases split around the pipeline:
 
-1. **Before item 3** go item 1's Phase 3, the mgketer verifier, and its Phases
-   4, 5 and 6. The verifier matches each of the thirty records against a live
-   mgketer diff card, and items 3 through 7 are precisely what make those
+1. **Before item 3** goes item 1's Phase 3, the mgketer verifier, the one
+   phase with a hard deadline: it matches each of the thirty records against a
+   live mgketer diff card, and items 3 through 7 are precisely what make those
    thirty diffs disappear — item 7's own expected result below says so in as
-   many words. Phases 4, 5 and 6 are indifferent to the pipeline, and Phase 4
-   belongs here anyway, sharing the verifier-renderer command with Phase 3.
+   many words. Ben's decision, 2026-09-03: that check runs ONCE, by hand, from
+   an entry point of its own, and is not wired into the command that renders
+   the Holman pages, which would otherwise stop working when the diffs go.
+   Item 1's Phases 4, 5 and 6 are indifferent to the pipeline and can go
+   alongside.
 2. **After item 5** go item 1's Phase 1, the survey, and its Phase 2, the M23
    card link, which needs Phase 1's page to exist. Item 5 changes the very
    figures the survey publishes; the next section says by how much.
 
-Item 1's Phase 3 has a further problem that this ordering does not solve, and
-that Ben has to settle: see the OPEN QUESTION in that plan's Phase 3.
+Why that check runs only once, and the two alternatives Ben rejected, are
+recorded in that plan's Phase 3.
 
 ### Item 5 changes the survey's figures, and nothing re-runs the survey by itself
 

@@ -20,9 +20,10 @@ one for the page, the M23 card link, and the terminology rename.
 
 **This plan's phases do not all run at the same point in the programme.**
 Corrected 2026-09-03, the programme having said until that day that item 1 "can
-be done first or last". Phases 3, 4, 5 and 6 run BEFORE the programme's item 3,
-because Phase 3's verifier needs the thirty mgketer diffs that items 3 through
-7 remove. Phases 1 and 2 run AFTER the programme's item 5, because item 5
+be done first or last". Phase 3 MUST run before the programme's item 3, its
+verifier needing the thirty mgketer diffs that items 3 through 7 remove; Phases
+4, 5 and 6 are indifferent to the pipeline and are cheapest alongside it.
+Phases 1 and 2 run AFTER the programme's item 5, because item 5
 changes the figures the survey publishes: M23 raises the post-stress count from
 231 to 232, and the 29 removals, every one of them a pre-stress meteg, lower
 the pre-stress figures. The programme's section "Item 5 changes the survey's
@@ -497,14 +498,15 @@ other four are M17, M24, M32 and M34 — precisely the accent-placement records
 Phase 5 guards — so Phase 3 and Phase 5 partition one set of 34 exhaustively,
 and neither phase's roster may be derived by assuming M1–M30.
 
-Keep the verifier in a focused Holman module and invoke it from
-C:/Users/BenDe/GitRepos/MAM-basics/py/main_verify_and_render_table.py through a
-REQUIRED --mgketer-root argument. Required, not optional with a skip: a missing
-input must fail rather than report green having verified nothing. The
-consequence is deliberate and worth stating, because Phase 4 makes this command
-the required rendering run — after this plan, regenerating the public Holman
-pages needs the MAM-private clone. The command reads the current mgketer
-reports under:
+Keep the verifier in a focused Holman module behind its OWN entry point, run
+by hand, ONCE, before the programme's item 3. Do NOT wire it into
+C:/Users/BenDe/GitRepos/MAM-basics/py/main_verify_and_render_table.py. Ben's
+decision, 2026-09-03, settling the question this phase raised earlier the same
+day, in his words: "run it once as a one-time check and don't wire it into the
+renderer." The section below gives the reason and what was rejected. On the
+entry point that does have it, --mgketer-root stays REQUIRED rather than
+optional with a skip: a missing input must fail rather than report green having
+verified nothing. The one-time run reads the current mgketer reports under:
 
 C:/Users/BenDe/GitRepos/MAM-private/mgketer/
 
@@ -531,34 +533,44 @@ report prose into a public artifact.
 This is a differential check against an independent report, not a hand-picked
 example test. It is the only new test-shaped mechanism this plan needs.
 
-### OPEN QUESTION for Ben, raised 2026-09-03: this verifier stops working once the programme runs
+### Ben's decision, 2026-09-03: the check runs once and stays out of the renderer
 
-Phase 3 requires one live mgketer diff card per M record, and the programme's
-items 3 through 7 remove exactly those thirty differences from MAM. The
-programme's item 7 states the expected outcome itself: “MAM adds meteg” drops
-by the extant removals and “mgketer adds meteg” drops to 4, M23 leaving that
-category. So after the programme has run, the verifier finds no card for any of
-the thirty and fails for all thirty.
+This section was an OPEN QUESTION when it was written earlier the same day. Ben
+settled it that day, in his words: “run it once as a one-time check and don't
+wire it into the renderer.”
 
-That would be a tolerable one-time expiry but for Phase 4, which makes
---mgketer-root a REQUIRED argument of the rendering command. The failure would
-then leave the public Holman pages unrenderable rather than merely unverified.
-Ordering Phase 3 before item 3, as this plan now does, gets the check run while
-it can still run; it does not stop the command breaking afterwards.
+THE PROBLEM IT SETTLES. Phase 3 requires one live mgketer diff card per M
+record, and the programme's items 3 through 7 remove exactly those thirty
+differences from MAM. The programme's item 7 states the expected outcome
+itself: “MAM adds meteg” drops by the extant removals and “mgketer adds
+meteg” drops to 4, M23 leaving that category. So after the programme has run,
+the check finds no card for any of the thirty and fails for all thirty. Had it
+been wired into the rendering command as a required argument, that failure
+would have left the public Holman pages unrenderable rather than merely
+unverified. Ordering Phase 3 before item 3 gets the check run while it can
+still run; only leaving it out of the renderer stops the command breaking
+afterwards.
 
-Three ways out, and the choice is Ben's rather than the executor's:
+WHAT THE EXECUTOR DOES:
 
-1. Run the verifier once, before item 3, as a one-time differential check, and
-   do NOT wire it into the rendering command. This keeps the differential value
-   and drops the permanent coupling, at the cost of the check not recurring.
-2. Wire it, but have it verify against a snapshot of the mgketer reports taken
-   before item 3 and tracked in this repository. This keeps both, at the cost
-   of a tracked copy of private-repository output, which needs its own licence
-   scoping.
-3. Wire it, and have it check only records carrying no archived disposition.
-   After item 6 that is none of the thirty, so the verifier would report green
-   having verified nothing, which this repository's missing-input rule forbids.
-   Recorded so it is not re-proposed.
+1. Give the check its own entry point and run it by hand, once, before the
+   programme's item 3, at the MAM-basics and MAM-private revisions current
+   then. Record its result in this plan's phase-state section: the run is not
+   repeatable after the programme, so the phase-state is the only place the
+   result will survive.
+2. Let nothing in a pipeline, a test or a rendering command depend on it.
+   py/main_0_mega.py reaches neither Holman rendering command, so there is
+   nothing to keep out of the mega either.
+3. Leave py/main_verify_and_render_table.py's arguments alone. Its existing
+   verification of the table's words against MAM-parsed and its notes against
+   UXLC is unaffected by this phase and stays exactly as it is.
+
+TWO ALTERNATIVES WERE REJECTED, recorded so they are not re-proposed. A
+snapshot of the mgketer reports, tracked in this repository, would keep the
+check recurring, at the cost of a tracked copy of private-repository output
+needing its own licence scoping. Checking only records carrying no archived
+disposition would, after item 6, check none of the thirty and so report green
+having verified nothing, which this repository's missing-input rule forbids.
 
 ## Phase 4: rename the Holman page identity and archive label
 
@@ -615,11 +627,14 @@ removes a contradiction. Keep internal identifiers such as SUPPRESSED_*,
 archive predicates, JSON keys, and generated filenames unchanged unless a
 specific technical reason requires a separate rename.
 
-The required rendering run is the verifier-renderer, not the render-only
-command:
+The rendering run is the verifier-renderer, unchanged and with no new
+argument. Phase 3's mgketer check is a separate one-time entry point and is
+deliberately not part of this command; py/main_just_render_table.py, the
+render-only command, is not the one to use either, since the existing
+MAM-parsed and UXLC verification should run alongside the rename:
 
 ~~~powershell
-C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe C:/Users/BenDe/GitRepos/MAM-basics/py/main_verify_and_render_table.py --mgketer-root C:/Users/BenDe/GitRepos/MAM-private/mgketer
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe C:/Users/BenDe/GitRepos/MAM-basics/py/main_verify_and_render_table.py
 ~~~
 
 Read these two rendered files after that command:
@@ -703,11 +718,14 @@ without the page's diff around it.
 Format only the Python files changed by this plan:
 
 ~~~powershell
-C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe -m black C:/Users/BenDe/GitRepos/MAM-basics/py/accgram/post_stress_meteg.py C:/Users/BenDe/GitRepos/MAM-basics/py/author_site/post_stress_meteg.py C:/Users/BenDe/GitRepos/MAM-basics/py/author_site/site_data.py C:/Users/BenDe/GitRepos/MAM-basics/py/main_authored.py C:/Users/BenDe/GitRepos/MAM-basics/py/main_verify_and_render_table.py C:/Users/BenDe/GitRepos/MAM-basics/py/py_render/rt_html.py C:/Users/BenDe/GitRepos/MAM-basics/py/py_render/rt_mam_suggestion_card.py C:/Users/BenDe/GitRepos/MAM-basics/py/tests/test_site_index_links.py
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe -m black C:/Users/BenDe/GitRepos/MAM-basics/py/accgram/post_stress_meteg.py C:/Users/BenDe/GitRepos/MAM-basics/py/author_site/post_stress_meteg.py C:/Users/BenDe/GitRepos/MAM-basics/py/author_site/site_data.py C:/Users/BenDe/GitRepos/MAM-basics/py/main_authored.py C:/Users/BenDe/GitRepos/MAM-basics/py/py_render/rt_html.py C:/Users/BenDe/GitRepos/MAM-basics/py/py_render/rt_mam_suggestion_card.py C:/Users/BenDe/GitRepos/MAM-basics/py/tests/test_site_index_links.py
 ~~~
 
-Add the Phase 3 verifier module to that command when its filename is settled.
-py/main_accgram.py is deliberately absent: this plan no longer touches it.
+Add the Phase 3 verifier module and its entry point to that command when their
+filenames are settled. py/main_accgram.py is deliberately absent: this plan no
+longer touches it. py/main_verify_and_render_table.py left the list on
+2026-09-03, when Ben's decision kept Phase 3's check out of that command; no
+phase of this plan edits that file now.
 
 Run the stress-oracle check, the focused page generator, and the
 verifier-renderer after formatting. Read the generated JSON and both generated
@@ -723,8 +741,9 @@ The expected tracked changes are:
    new, plus gh-pages/index.html gaining one entry;
 3. main_authored.py's render-from-JSON flag and the mega's use of it;
 4. the renderer context metadata and the M23 contextual link;
-5. the Phase 3 verifier module, its --mgketer-root wiring, the two regenerated
-   Holman HTML files, and any verification summary the verifier owns;
+5. the Phase 3 verifier module and the OWN entry point it runs from, never
+   wired into main_verify_and_render_table.py; the two regenerated Holman HTML
+   files; and any verification summary the verifier owns;
 6. Phase 4's two renames: the three page-identity strings that become
    “Holman MAM suggestions” and the four reader-facing “Archived” labels; and
 7. py/tests/test_site_index_links.py's new reverse-direction test, as its own
