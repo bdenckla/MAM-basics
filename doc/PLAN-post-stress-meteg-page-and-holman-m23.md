@@ -86,12 +86,36 @@ Use the Breuer Markdown export, not the docx files:
 
 C:/Users/BenDe/GitRepos/MAM-private/masorah-books/books/cos/md-export-of-docx/
 
-The historical snapshot reported 233,715 prose-verse U+05BD occurrences and
-43,711 poetic-verse U+05BD occurrences. The historical snapshot reported 231
-post-stress metegs, including 140 in prose verses and 91 in poetic verses.
-Those figures are a remeasurement target, not text for the new page. A
-different result is a finding that must be explained before the page is
-committed.
+The historical figures below are the 2026-09-03 output of the throwaway census
+script C:/Users/BenDe/.claude/plans/writing-only-to-a-robust-teapot-census.py:
+C:/Users/BenDe/.claude/plans/writing-only-to-a-robust-teapot-census-report.md.
+Use the figures as a legacy comparison baseline only. Do not run or edit that
+script during this work: it overwrites the evidence report, and its
+verse-final test treats a final parsed entry as verse-final even when that
+entry lacks sof pasuq. The strict tracked generator in Phase 1 replaces it as
+the remeasurement authority.
+
+| system | chanted words checked | pre-stress meteg | post-stress meteg | silluq |
+|---|---|---|---|---|
+| prose | 233,715 | 13,131 | 177 | 18,779 |
+| poetic | 29,605 | 1,814 | 54 | 4,486 |
+
+So the survey's headline count is 231 post-stress metegs, 177 in prose verses
+and 54 in poetic verses, over 263,320 chanted words. The run reported zero
+syllable-count mismatches, zero same-letter failures, and zero entries lacking
+jta or fva; a nonzero count in any of those three is itself a finding. The
+overlapping diagnostic of decision 4 stood at 27 in prose verses and 119 in
+poetic verses, counted inside the pre-stress and post-stress groups rather
+than beside them.
+
+Those figures are not text for the new page. The new generator must compare
+its result with the legacy baseline and record each difference. A changed
+silluq or stressed-syllable count caused by the corrected sof-pasuq boundary
+is an expected correction; it still needs a separate audit listing the
+affected references. Any other difference is a finding that must be explained
+before the page is committed. Note that 233,715 counts chanted words checked,
+not U+05BD occurrences; the legacy run classified 32,087 U+05BD occurrences in
+prose verses and 6,354 in poetic verses.
 
 ## Preconditions and collision checks
 
@@ -133,10 +157,18 @@ Accept explicit output-path arguments for focused verification.
 
 ### Survey data rules
 
-Read every Phonetic MAM standard-set file through the existing final_stress
-interface. Preserve the MAM form and source reference exactly as supplied.
-Do not normalize Hebrew text. Treat the stress marker in the JTA field as the
-stress oracle; do not infer primary stress from a U+05BD position.
+Read every Phonetic MAM standard-set file directly, as
+C:/Users/BenDe/GitRepos/MAM-basics/py/tests/test_final_stress_vs_phonetic_mam.py
+does. There is no standard-set reading interface in
+C:/Users/BenDe/GitRepos/MAM-basics/py/accgram/final_stress.py to reuse: that
+module is a predicate over a pointed word, whose public surface is
+ends_in_furtive_patax, last_syllable_onset, and is_final_stress, and
+is_final_stress answers only whether the stress is final rather than which
+syllable carries it. Reuse its nucleus-finding conventions where they fit, and
+reach the stressed syllable itself from the JTA field. Preserve the MAM form
+and source reference exactly as supplied. Do not normalize Hebrew text. Treat
+the stress marker in the JTA field as the stress oracle; do not infer primary
+stress from a U+05BD position.
 
 For every U+05BD, record enough structured data to regenerate every displayed
 table and count:
@@ -202,10 +234,13 @@ whitespace-delimited words in the same helper that renders the excerpt. Assert
 that every excerpt is at most 150 words and that the sum is at most 300 words. If
 the page uses no excerpts, the helper asserts that the excerpt list is empty.
 
-Use Yeivin sections 332, 354, and 357 and Breuer Chapter 8 sections 2, 3,
-46, and 47 as search anchors, then cite only claims the current OCR supports.
-Do not turn a source observation into a claim that MAM follows a Breuer
-edition: MAM is a consensus text.
+Use Yeivin sections 308, 332, 338, 354, and 357 and Breuer Chapter 8 sections
+2–8, 46, and 47 as search anchors, then cite only claims the current OCR
+supports. Yeivin section 308 feeds the closed-final-syllable ṣere case in
+section 338; Breuer sections 5–8 describe the broader big-vowel-in-a-closed-
+syllable type. Keep those scopes distinct in the rendered prose. Do not turn a
+source observation into a claim that MAM follows a Breuer edition: MAM is a
+consensus text.
 
 Generate the focused artifacts:
 
@@ -213,8 +248,11 @@ Generate the focused artifacts:
 C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe C:/Users/BenDe/GitRepos/MAM-basics/py/main_accgram.py generate-html-post-stress-meteg
 ~~~
 
-Read both regenerated artifacts. An unexplained change outside the new JSON
-and new HTML is a failure. The expected generated additions are only:
+This command is the authoritative remeasurement. It must emit a separate
+audit for a final parsed entry that lacks sof pasuq and fail rather than
+silently classify that entry as silluq. Read both regenerated artifacts and
+the audit. An unexplained change outside the new JSON and new HTML is a
+failure. The expected generated additions are only:
 
 1. C:/Users/BenDe/GitRepos/MAM-basics/out/accgram/post-stress-meteg.json
 2. C:/Users/BenDe/GitRepos/MAM-basics/gh-pages/wlc/accgram/post-stress-meteg.html
@@ -250,20 +288,36 @@ neutral contextual link.
 
 ## Phase 3: re-establish the M-versus-mgketer evidence
 
-Add a mechanical differential verifier for the 30 M (meteg) suggestion
-records. Keep the verifier in a focused Holman module and invoke it from
+Add a mechanical differential verifier for every current M (meteg) suggestion
+record. The historical roster contains 30 records: M1–M16, M18–M23, M25–M31,
+and M33. A changed roster is a finding; the verifier must report it rather
+than silently applying the historical count. Keep the verifier in a focused
+Holman module and invoke it from
 C:/Users/BenDe/GitRepos/MAM-basics/py/main_verify_and_render_table.py through
 an explicit --mgketer-root argument. The command reads the current mgketer
 reports under:
 
 C:/Users/BenDe/GitRepos/MAM-private/mgketer/
 
-For each M record, the verifier must establish that the mgketer report records
-the suggested extra meteg in the corresponding MAM reading. It must fail with
-a list of missing or mismatched stable references; it must not merely print a
-warning. Record a compact source revision and result summary in the existing
-verification data only when the current data format already has a verification
-field. Do not copy private report prose into a public artifact.
+For each M record, the verifier must find one mgketer diff card for the same
+reference and atom, verify both sides against Holman's MAM and Aleppo forms,
+and derive the meteg direction from those two forms. The 2026-09-03 baseline
+has 29 “MAM adds meteg” records and one “mgketer adds meteg” record: M23,
+Isaiah 23:12.11. M23 therefore passes only when mgketer, rather than MAM, has
+the meteg at the designated atom.
+
+Match the complete atom and its accentuation, not consonants alone. M22 has
+two look-alike compounds in one verse whose accentuation and atom location
+distinguish the Holman record from the unrelated mgketer record. Permit a
+display-artifact normalization only from a named, record-specific allowlist
+that the verifier reports; do not normalize forms broadly enough to hide a
+different reading.
+
+The verifier must fail with a list of missing, ambiguous, or mismatched stable
+references; it must not merely print a warning. Record a compact source
+revision and result summary in the existing verification data only when the
+current data format already has a verification field. Do not copy private
+report prose into a public artifact.
 
 This is a differential check against an independent report, not a hand-picked
 example test. It is the only new test-shaped mechanism this plan needs.
