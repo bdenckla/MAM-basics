@@ -51,10 +51,17 @@ why it was the one case of the 34 that has one.
 
 THE MAQAF COMPOUNDS ARE NOT AMONG THEM, though a cruder check reports them as
 disagreements.  Holman quotes a whole compound while numbering one of its atoms,
-and the atom he numbers is the one bearing the difference every time.
-So עַל־יְרוּשָׁלַ͏ִם against עַל־יְרוּשָׁלַ͏ִם resolves to its second atom
-and agrees with his 11.  ``_differing_offset`` is what picks the right half, and
-it needs neither his index nor his prose description of where the mark sits.
+and the atom he numbers is the one that differs every time.  There are three,
+each differing by one meteg on the compound's second atom: 2Ki 21:12.11,
+2Sa 18:3.9 and Judg 6:1.2, measured 2026-09-03 against holman-ketiv-qere
+``6a2f34f``.  At 2Ki 21:12 that meteg sits on the ר:
+
+    MAM form         עַל־יְרֽוּשָׁלַ֖͏ִם
+    comparison form  עַל־יְרוּשָׁלַ֖͏ִם
+
+So the case resolves to that second atom and agrees with his 11.
+``_differing_offset`` is what picks the right half, and it needs neither his
+index nor his prose description of where the mark sits.
 
 TWO CORRECTIONS DISSOLVED ON 2026-09-02, when a template with no parameters was
 taught to contribute a separator: 1Ki 7:24 (17 as sent) and Judg 1:7 (21 as sent)
@@ -150,8 +157,9 @@ def _differing_offset(mam_run: list[str], comparison_run: list[str]) -> int | No
     and the comparison edition's, and the atom his case is about is the one that
     differs between them.  For a single-atom quotation that is the atom itself;
     for a maqaf compound it picks out the half he means.
-    Thus עַל־יְרוּשָׁלַ͏ִם against עַל־יְרוּשָׁלַ͏ִם resolves to the second atom
-    without anything having to read his prose description of where the meteg sits.
+    Thus MAM's עַל־יְרֽוּשָׁלַ֖͏ִם against the comparison form עַל־יְרוּשָׁלַ֖͏ִם,
+    one meteg apart on the ר, resolves to the second atom without anything
+    having to read his prose description of where the meteg sits.
 
     None when the two runs are different lengths, or differ in no atom or in more
     than one -- in which case the caller raises rather than guessing.
