@@ -253,6 +253,17 @@ page does not take WLC as its corpus.
 
 ## What this leaves for Ben to decide about M23
 
+**Correction, 2026-09-03: nothing was left to decide, and this section HAS BEEN
+DEMOTED to background.** Ben stated that day that he is taking all thirty
+Holman meteg suggestions, M23's addition among them, and that the acceptance
+was settled before this research began: meteg-after-primary-stress is, in his
+words, “an interesting and not-that-common phenomenon”, and the research “was
+not to determine whether we want to take the suggestion (we'd already decided
+that) but to provide background on that phenomenon.” So this section's heading
+and its opening sentence name a question that was not in fact open. The three
+facts below stand, as background on the phenomenon rather than as inputs to a
+disposition.
+
 Nothing here says whether to accept M23. The facts that bear on it:
 
 1. The Aleppo Codex reading, per Holman's page and its image `mam_img/mam023_01.png`, is a

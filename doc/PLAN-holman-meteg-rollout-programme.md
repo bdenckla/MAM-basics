@@ -22,6 +22,19 @@ comparison form in metegs alone. This programme applies those thirty to MAM by
 Wikisource bot, carries the change through the MAM update pipeline, archives
 the thirty records, and refreshes the mgketer comparison.
 
+**All thirty are accepted, and were accepted before any of the research below
+was done.** Ben's decision, stated 2026-09-03: he is taking all thirty Holman
+meteg suggestions, the 29 removals and M23's one addition alike. **The
+post-stress meteg research is background, not a decision input** — in his
+words, meteg-after-primary-stress is "an interesting and not-that-common
+phenomenon", and the research "was not to determine whether we want to take the
+suggestion (we'd already decided that) but to provide background on that
+phenomenon." So no item of this programme waits on a disposition, and item 1 is
+background material rather than evidence anybody is deciding on. The four
+accent-placement records M17, M24, M32 and M34 stand outside this decision as
+they stand outside the programme: they keep the dispositions Seth (Avi) Kadish
+gave them on 2026-08-28.
+
 **Twenty-nine of the thirty remove a meteg from MAM; one, M23 at Isaiah 23:12,
 adds one.** That asymmetry is the single most common way to get this work
 wrong, and it recurs in items 2, 3 and 7. Measured 2026-09-03 over
@@ -47,8 +60,53 @@ which are accent-placement records and are NOT part of this programme.
 | 7 | Refresh the mgketer comparison | Sketch only |
 
 Items 2 through 7 are ordered by dependency, not by preference: each needs the
-one before it. Item 1 is independent of all of them and can be done first or
-last.
+one before it.
+
+**Item 1 is NOT independent of them, and it does not move as a unit.** This
+paragraph read "Item 1 is independent of all of them and can be done first or
+last" until 2026-09-03, and both halves of that sentence are wrong. Item 1's
+six phases split around the pipeline:
+
+1. **Before item 3** go item 1's Phase 3, the mgketer verifier, and its Phases
+   4, 5 and 6. The verifier matches each of the thirty records against a live
+   mgketer diff card, and items 3 through 7 are precisely what make those
+   thirty diffs disappear — item 7's own expected result below says so in as
+   many words. Phases 4, 5 and 6 are indifferent to the pipeline, and Phase 4
+   belongs here anyway, sharing the verifier-renderer command with Phase 3.
+2. **After item 5** go item 1's Phase 1, the survey, and its Phase 2, the M23
+   card link, which needs Phase 1's page to exist. Item 5 changes the very
+   figures the survey publishes; the next section says by how much.
+
+Item 1's Phase 3 has a further problem that this ordering does not solve, and
+that Ben has to settle: see the OPEN QUESTION in that plan's Phase 3.
+
+### Item 5 changes the survey's figures, and nothing re-runs the survey by itself
+
+Item 1's survey counts MAM's metegs by position relative to the primary stress,
+so item 5's fresh MAM data moves its numbers in both directions. Measured
+2026-09-03 against
+[`post-stress-meteg-census-2026-09-03.md`](post-stress-meteg-census-2026-09-03.md),
+which is that plan's legacy baseline:
+
+1. **M23 raises the post-stress count from 231 to 232**, adding one meteg of
+   exactly the kind the page is about.
+2. **All 29 removals are pre-stress metegs, so they move the survey's
+   pre-stress figures instead.** Not one of the 29 verses appears anywhere in
+   the census's post-stress lists: the six books they touch contribute 46
+   entries in all — Judges 5, 1 Samuel 10, 2 Samuel 11, 1 Kings 10, 2 Kings 4,
+   2 Chronicles 6 — and every one of the 46 is a different verse. All six are
+   prose books, so the prose pre-stress figure of 13,131 falls by about 29.
+   "About" because M13 contributes two bot entries against one census
+   occurrence, and the exact figure is the tracked generator's to establish
+   rather than this document's.
+
+**The trap is that nothing catches it.** Artifact 6 of item 1's plan has the
+mega render the page from the tracked `out/accgram/post-stress-meteg.json`
+rather than recomputing, so once item 5 lands the published page goes on
+printing pre-pipeline figures until somebody re-runs the standalone
+computation. So if item 1's Phase 1 has already been done when item 5 runs,
+**re-running that computation is a step of item 5**, and its diff against the
+tracked JSON is expected to be non-empty in exactly the two ways above.
 
 ### Item 1: the notes, the page, the M23 link, the terminology rename
 
@@ -224,14 +282,25 @@ The seventh, the census script, stays untracked.
 | [`holman-suggestions-archived-terminology.md`](holman-suggestions-archived-terminology.md) | The five rendered uses of "Suppressed" that item 1 renames |
 | [`post-stress-meteg-census-2026-09-03.md`](post-stress-meteg-census-2026-09-03.md) | The 2026-09-03 census output, the legacy baseline item 1's Phase 1 measures against |
 
-**Three of the six carry a dated correction added by the move**, each marked
-`Correction, 2026-09-03` and placed beside the claim it corrects rather than
-replacing it. The M23 note's page location and name, left open when it was
-written, are settled by item 1's plan; that same note's census figures are
-demoted to a legacy baseline, the census script's verse-final test being
-defective; and the terminology note's count of rendered "Suppressed"
-occurrences reads six where the measured count, and its own enumeration, is
-five.
+**Three of the six carry a dated correction, and there are five corrections
+among the three**, each marked `Correction, 2026-09-03` and placed beside the
+claim it corrects rather than replacing it. Counted 2026-09-03: the M23 note
+has three, the accent-placement note one, the terminology note one, and the
+other three notes none. This paragraph enumerated three of the five until that
+day, omitting the accent-placement note's correction entirely. The five:
+
+1. The M23 note's page location and name, left open when it was written, are
+   settled by item 1's plan.
+2. That same note's census figures are demoted to a legacy comparison baseline,
+   the census script's verse-final test being defective.
+3. That same note's closing section, "What this leaves for Ben to decide about
+   M23", is demoted to background: nothing was left to decide, the acceptance
+   of all thirty having preceded the research.
+4. The accent-placement note leaves two "2026-09-05" dates as written, both
+   postdating that note's capture and unexplained, on the ground that a date in
+   an evidence note is itself evidence.
+5. The terminology note's count of rendered "Suppressed" occurrences reads six
+   where the measured count, and that note's own enumeration, is five.
 
 The census script that produced the census report stays at
 `C:/Users/BenDe/.claude/plans/writing-only-to-a-robust-teapot-census.py` and

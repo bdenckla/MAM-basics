@@ -4,7 +4,8 @@ Created 2026-09-03. Execute this plan from
 C:/Users/BenDe/GitRepos/MAM-basics. The implementation publishes a generated
 survey of MAM metegs after the primary stress, gives Holman suggestion M23 a
 neutral link to that survey, and renames the reader-facing Holman archive
-label. The implementation does not decide whether M23 should be accepted.
+label. M23 is accepted already; this plan does not implement that acceptance,
+which is item 6 of the programme.
 
 ## Where this plan sits in the larger Holman meteg work
 
@@ -16,6 +17,16 @@ the mgketer comparison — are described in
 [`PLAN-holman-meteg-rollout-programme.md`](PLAN-holman-meteg-rollout-programme.md).
 Read that document first for the ordering and the cross-item dependencies; this
 one for the page, the M23 card link, and the terminology rename.
+
+**This plan's phases do not all run at the same point in the programme.**
+Corrected 2026-09-03, the programme having said until that day that item 1 "can
+be done first or last". Phases 3, 4, 5 and 6 run BEFORE the programme's item 3,
+because Phase 3's verifier needs the thirty mgketer diffs that items 3 through
+7 remove. Phases 1 and 2 run AFTER the programme's item 5, because item 5
+changes the figures the survey publishes: M23 raises the post-stress count from
+231 to 232, and the 29 removals, every one of them a pre-stress meteg, lower
+the pre-stress figures. The programme's section "Item 5 changes the survey's
+figures, and nothing re-runs the survey by itself" holds the measurement.
 
 Two boundaries between this plan and the programme are worth stating here,
 because both are easy to cross by accident. This plan does not edit Wikisource,
@@ -95,9 +106,17 @@ post-silluq section.
 
 The following decisions constrain every phase.
 
-1. M23, Isaiah 23:12.11, remains open. The card keeps its present comparison
-   and must not gain acceptance, rejection, a suppression entry, or a changed
-   source message merely because the new page gives it context.
+1. M23, Isaiah 23:12.11, IS ACCEPTED, along with the other 29 meteg
+   suggestions. Ben's decision, stated 2026-09-03: he is taking all thirty, and
+   the post-stress meteg research was never an input to that — the acceptance
+   preceded it, and the research provides background on a phenomenon he finds
+   interesting and not that common. This decision read "M23, Isaiah 23:12.11,
+   remains open" until that day. What still holds is the scope guard, and it is
+   why this decision keeps its place: THIS PLAN does not implement the
+   acceptance. The card keeps its present comparison forms and source message,
+   and must not gain an archived disposition as a side effect of the new page
+   giving it context. Item 6 of the programme records the acceptance, for M23
+   and the other 29 together.
 2. The public page may reproduce an excerpt from Yeivin or Breuer. Each
    excerpt must contain at most 150 words, and every such excerpt together
    must contain at most 300 words. The generator must enforce both limits
@@ -336,10 +355,15 @@ The page needs these named sections:
    the interpretation attributed to Yeivin and Breuer. A record that does not
    meet a displayed type remains visible as unclassified; do not force it into
    a source-derived category.
-4. “The M23 comparison at Isaiah 23:12” gives neutral context for the
-   suggestion without deciding its disposition. Give this section the stable
-   HTML identifier m23-isaiah-23-12. The page uses complete
-   chanted-word forms lifted from the source data, never hand-typed accents.
+4. “The M23 comparison at Isaiah 23:12” gives context for the suggestion.
+   Give this section the stable HTML identifier m23-isaiah-23-12. The page uses
+   complete chanted-word forms lifted from the source data, never hand-typed
+   accents. Because this phase runs after the programme's item 5, MAM has the
+   meteg by then and Holman's recorded comparison forms do not: his `mam_form`
+   is what he was sent, frozen at the date of his message. Say that, rather
+   than presenting a difference that no longer exists. The suggestion was
+   taken, and the section's subject is what kind of meteg it is and how common
+   that kind is in MAM, not an open disagreement.
 5. “The post-silluq case at 1 Samuel 17:5” says explicitly that MAM has only
    its silluq at that place, and attributes every other reading to the source
    that actually carries it. Name WLC 4.22 and UXLC 3.9 as the transcriptions
@@ -506,6 +530,35 @@ report prose into a public artifact.
 
 This is a differential check against an independent report, not a hand-picked
 example test. It is the only new test-shaped mechanism this plan needs.
+
+### OPEN QUESTION for Ben, raised 2026-09-03: this verifier stops working once the programme runs
+
+Phase 3 requires one live mgketer diff card per M record, and the programme's
+items 3 through 7 remove exactly those thirty differences from MAM. The
+programme's item 7 states the expected outcome itself: “MAM adds meteg” drops
+by the extant removals and “mgketer adds meteg” drops to 4, M23 leaving that
+category. So after the programme has run, the verifier finds no card for any of
+the thirty and fails for all thirty.
+
+That would be a tolerable one-time expiry but for Phase 4, which makes
+--mgketer-root a REQUIRED argument of the rendering command. The failure would
+then leave the public Holman pages unrenderable rather than merely unverified.
+Ordering Phase 3 before item 3, as this plan now does, gets the check run while
+it can still run; it does not stop the command breaking afterwards.
+
+Three ways out, and the choice is Ben's rather than the executor's:
+
+1. Run the verifier once, before item 3, as a one-time differential check, and
+   do NOT wire it into the rendering command. This keeps the differential value
+   and drops the permanent coupling, at the cost of the check not recurring.
+2. Wire it, but have it verify against a snapshot of the mgketer reports taken
+   before item 3 and tracked in this repository. This keeps both, at the cost
+   of a tracked copy of private-repository output, which needs its own licence
+   scoping.
+3. Wire it, and have it check only records carrying no archived disposition.
+   After item 6 that is none of the thirty, so the verifier would report green
+   having verified nothing, which this repository's missing-input rule forbids.
+   Recorded so it is not re-proposed.
 
 ## Phase 4: rename the Holman page identity and archive label
 
