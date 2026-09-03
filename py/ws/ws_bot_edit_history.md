@@ -134,7 +134,7 @@ infrastructure has changed enough to make them misleading examples:
 - **JSON files:**
   `in/mam-ws-bot-edits/issue-67-kuk-special-callsite-migration.json`
 
-### Issue 260: replace the sigil ב2 with ת451 — current
+### Issue 260: replace the sigil ב2 with ת451
 - **Purpose:** Replace the manuscript sigil ב2 with ת451 in Daniel's
   documentation notes. The two are two sigils for one manuscript: the MAM
   editor chose ב2 first, abandoned it, and switched to the number the
@@ -153,6 +153,42 @@ infrastructure has changed enough to make them misleading examples:
 - **Edit level:** Raw page text global replacement, counted per chapter.
 - **JSON files:** `in/mam-ws-bot-edits/sigil-b2-to-t451.json`
 - **Plan:** `doc/PLAN-replace-sigil-b2-with-t451.md`
+
+### Holman meteg rollout: 29 metegs removed, one added — current
+- **Purpose:** Apply the thirty MAM suggestions Daniel Holman sent that differ
+  from their Aleppo Codex comparison form in metegs alone. Twenty-nine take a
+  meteg off an atom of MAM; one, M23 at Isaiah 23:12.11, puts one on. Ben
+  accepted all thirty on 2026-09-03 and gave the go-ahead for the live save the
+  same day. Run 2026-09-03: 23 chapters saved over seven book-sized slices —
+  1 Kings 7, 11, 12, 15, 17, 18 and 22; Judges 1, 5, 6 and 21; 2 Chronicles 6,
+  18, 24 and 32; 2 Samuel 11, 12, 15 and 18; 1 Samuel 18 and 27; 2 Kings 7; and
+  Isaiah 23.
+- **Two files, because `edit-kind` is file-level:** the 29 removals are
+  `meteg-removal` and M23's addition is `explicit-replacement`, so one file
+  cannot hold both.
+- **Safety rule:** every `old` string is the wikitext's own bytes, located by
+  the record rather than retyped from `mam_form`, which is in MAM-normal mark
+  order where the wikitext is not. `edit_page_text` asserts each `old` occurs
+  exactly once in its chapter, and the removal kind strips the FIRST U+05BD in
+  `old` — which is what keeps the silluq of a verse-final ירושלם, whose
+  `{{מ:ירושלם}}` call has a second U+05BD as its second parameter.
+- **A selector is mandatory:** a bare `--book39` selects a whole book, and
+  `assert_book_plans_within_target_set` then refuses every chapter the spec does
+  not name, exiting before a page is fetched.
+  `main_ws_bot.py holman-meteg-spec --selector-dir .novc` writes the selector,
+  one file per spec.
+- **One record was already applied:** M18, 2 Kings 21:12, whose meteg was gone
+  from Hebrew Wikisource before the files were built. `_ALREADY_APPLIED`
+  excludes it by name, which is why the removal file has 29 entries for 28
+  records — M13 being the one record with two, its `{{מ:קמץ}}` call's ד and ס
+  parameters each holding the atom.
+- **One-shot:** every `old` describes the pre-edit corpus, so
+  `holman-meteg-spec` raises after the live edit's re-download rather than doing
+  nothing. Confirmed 2026-09-03, immediately after the run: it raises on M1.
+- **Edit level:** Raw page text string replacement, chapter-targeted.
+- **JSON files:** `in/mam-ws-bot-edits/holman-meteg-removal.json`,
+  `in/mam-ws-bot-edits/holman-meteg-add-isaiah-23-12.json`
+- **Plan:** `doc/PLAN-holman-meteg-rollout-programme.md`, item 3
 
 ## How to look up the original code
 
