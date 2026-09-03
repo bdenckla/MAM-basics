@@ -495,13 +495,53 @@ report prose into a public artifact.
 This is a differential check against an independent report, not a hand-picked
 example test. It is the only new test-shaped mechanism this plan needs.
 
-## Phase 4: rename the Holman reader-facing archive label
+## Phase 4: rename the Holman page identity and archive label
 
-In C:/Users/BenDe/GitRepos/MAM-basics/py/py_render/rt_html.py, change the
-four reader-facing values that use “Suppressed” to “Archived”:
+Two reader-facing renames, both in
+C:/Users/BenDe/GitRepos/MAM-basics/py/py_render/rt_html.py, done together
+because SUPPRESSED_PAGE_TITLE is touched by both and would otherwise be
+rewritten twice through an intermediate value nobody wants.
+
+### Rename A: drop the ketiv/qere framing from the page's identity
+
+Ben's decision, 2026-09-03: the page's title and heading should read simply
+**“Holman MAM suggestions”**. His reason, in his own words: *“The ketiv/qere
+review that this all started with was just a specific type of MAM suggestion
+that now is not the only type of suggestion covered by this document.”*
+
+Three constants carry the old framing. Measured 2026-09-03 at rt_html.py lines
+54 to 56:
+
+1. `MAIN_PAGE_TITLE = "Holman k/q + MAM suggestions"` becomes
+   `"Holman MAM suggestions"`.
+2. `MAIN_PAGE_HEADING = "Holman's ketiv/qere review and MAM suggestions"`
+   becomes `"Holman MAM suggestions"`.
+3. `SUPPRESSED_PAGE_TITLE = "Holman k/q - Suppressed"` becomes
+   `"Holman MAM suggestions - Archived"`, which is rename A and rename B in one
+   string.
+
+The comment above those constants states the justification this decision
+overturns — that the page “carries two bodies of Holman's work since
+2026-09-02, so its title and heading name both.” Replace it rather than leaving
+it to contradict the code, keeping its still-true second half: the FILENAME
+table_data_findings.html is deliberately unchanged, being the URL index.html
+links and the one Ben has already sent to correspondents.
+
+**Change nothing else that says ketiv/qere.** The rest of that vocabulary names
+a category of finding that still exists as one kind among several, which is
+precisely Ben's point, and it is load-bearing: the `kind-ketiv-qere` filter ids
+and `cat-kind-ketiv-qere` CSS classes that drive the page's filtering, the
+`ketiv/qere` finding badges and the legend swatch, the `UXLC ketiv` and
+`HaKeter ketiv` comparison-column names, and every
+github.com/bdenckla/holman-ketiv-qere issue URL. Touching any of those breaks
+filtering or link resolution rather than renaming a page.
+
+### Rename B: “Suppressed” becomes “Archived”
+
+Change the four reader-facing values that use “Suppressed” to “Archived”:
 
 1. the main-page navigation label;
-2. the archive page title;
+2. the archive page title (the same constant as rename A's item 3);
 3. the archive page heading; and
 4. the archive records heading.
 
@@ -527,6 +567,18 @@ one in the main page and four in the archive page. Confirm that those five
 reader-visible labels read “Archived” afterward. Do not count a sixth
 occurrence that does not exist. The generated archive filename remains
 table_data_findings_suppressed.html.
+
+For rename A there are three reader-visible occurrences, measured 2026-09-03:
+the main page's `<title>` and `<h1>`, and the archive page's `<title>`. The
+archive page has no `<h1>` carrying the old framing — its heading is the bare
+“Suppressed”, which rename B handles. Afterwards the main page's `<title>` and
+`<h1>` both read “Holman MAM suggestions” and the archive page's `<title>`
+reads “Holman MAM suggestions - Archived”.
+
+Both pages will still hold many occurrences of “ketiv/qere” after this phase,
+in the filter ids, CSS class names, finding badges, legend, comparison-column
+names and issue URLs listed above. That is the expected result, not a missed
+rename.
 
 ## Phase 5: verify the M17, M24, M32, and M34 boundary
 
@@ -608,7 +660,8 @@ The expected tracked changes are:
 4. the renderer context metadata and the M23 contextual link;
 5. the Phase 3 verifier module, its --mgketer-root wiring, the two regenerated
    Holman HTML files, and any verification summary the verifier owns;
-6. the four reader-facing “Archived” labels; and
+6. Phase 4's two renames: the three page-identity strings that become
+   “Holman MAM suggestions” and the four reader-facing “Archived” labels; and
 7. py/tests/test_site_index_links.py's new reverse-direction test, as its own
    commit.
 

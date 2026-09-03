@@ -38,7 +38,7 @@ which are accent-placement records and are NOT part of this programme.
 
 | # | Item | Status |
 |---|---|---|
-| 1 | Track the notes, publish a gh-pages page, link it from the M23 card, rename the archive label | Planned in detail, reviewed — see the plan named below |
+| 1 | Track the notes, publish a gh-pages page, link it from the M23 card, rename the page identity and the archive label | Planned in detail, reviewed — see the plan named below |
 | 2 | Build the Wikisource bot edit files for all 30 | Sketch only |
 | 3 | Run the bot | Sketch only |
 | 4 | Download the affected chapters, plus Joshua 10 and Zechariah 2 | Sketch only |
@@ -57,7 +57,17 @@ Covered in full by
 which was reviewed on 2026-09-03 and corrected the same day. That plan
 publishes a survey of MAM's 231 post-stress metegs at
 `gh-pages/post-stress-meteg.html`, gives the M23 card a neutral link to it, and
-renames the reader-facing Holman archive label from "Suppressed" to "Archived".
+makes two reader-facing renames on the Holman pages: the archive label from
+"Suppressed" to "Archived", and the page's own title and heading to plainly
+**"Holman MAM suggestions"**.
+
+That second rename is Ben's decision of 2026-09-03, and it records something
+about this programme rather than only about a page. The page began as a
+ketiv/qere review and its title still said so — "Holman's ketiv/qere review and
+MAM suggestions". Ketiv/qere is now one kind of suggestion among several, of
+which this programme's thirty metegs are the largest, so the compound title
+names an old scope. The per-row ketiv/qere vocabulary stays exactly as it is:
+it names a category that still exists, and it drives the page's filtering.
 
 It deliberately does NOT archive any record, edit Wikisource, or run the mega
 pipeline. Those are items 2 through 6 here.
