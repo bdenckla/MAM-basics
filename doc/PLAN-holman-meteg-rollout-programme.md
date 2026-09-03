@@ -412,6 +412,10 @@ Both tracked outputs were empty before the run, so all **35** rows
 The suite was green in the worktree with `REPOS_ROOT` set: **975 passed, 5
 skipped**.
 
+**What these 35 rows do NOT carry is eleven further Holman meteg edits made on
+Wikisource on 2026-08-30 and 2026-08-31**, deliberately left for later — see
+the section between this item and item 6.
+
 In order:
 
 1. `py/main_diff.py wsgo` — compares `in/mam-ws/` against `MAM-parsed/plain/`,
@@ -431,6 +435,56 @@ In order:
    repository's own `out/` and `gh-pages/`.
 7. Commit and push every touched sibling repository. Each has its own
    `gh-pages/` Pages-deploy workflow firing on push to `main`.
+
+### Eleven other Holman meteg edits are live on Wikisource and absent from this snapshot — deferred 2026-09-03
+
+**Ben's decision, 2026-09-03: leave them for later.** They are recorded here so
+the gap is not lost. Nothing in items 5 through 7 waits on them: both sides of
+the wsgo comparison lack the eleven equally, so the pipeline stays consistent
+without them.
+
+Between 2026-08-30 and 2026-08-31 Seth (Avi) Kadish made **twelve** meteg edits
+to MAM on Hebrew Wikisource, each credited in the MAM change log to Daniel
+Holman. **Exactly one of the twelve is a record of this programme**: 2 Kings
+21:12, which is M18. Its log row reads "Removed 2 metegs
+from עַל־יְרוּשָׁלַ֖͏ִם וִיהוּדָ֑ה following AC", which is what item 2's finding 2
+met as an already-applied suggestion, second meteg and all.
+
+**The other eleven are a different Holman batch and are in no ingest here.**
+Checked 2026-09-03 against all 34 records of
+`holman/docs-not-served/mam_suggestions.json`, whose three source messages are
+Holman's workbooks of 2026-08-21 and 2026-08-27, four cases each, and his prose
+list of 2026-08-31, thirty cases, titled "Fw: 30 More Corrections for MAM".
+**That title is the tell**: the eleven reached MAM through an earlier
+communication than any message this repository has ingested, so no M number
+names them and no disposition of item 6 covers them.
+
+**They are absent from `in/mam-ws/` because their chapters have not been
+downloaded since 2026-08-26**, commit `77383ac4`, four days before the edits
+were made. Every download since has been chapter-targeted — item 2's 22 removal
+chapters plus 2 Kings 21, item 4's Joshua 10 and Zechariah 2, and item 3's 23
+modified chapters — and **2 Kings 21 is the only one of the twelve on that
+list, which is exactly why M18 was the only one this programme met.**
+
+Measured 2026-09-03 in `in/mam-ws/`, all eleven still have the pre-edit form.
+**Nine still have the meteg the edit removed** — Joshua 19:8, 1 Samuel 1:6, 1
+Samuel 22:22, 2 Kings 6:23, 2 Chronicles 26:15, Isaiah 22:5, Isaiah 42:24,
+Isaiah 50:7 and Zephaniah 3:13 — and **two still lack the meteg the edit
+added**, 2 Chronicles 28:19 and Isaiah 24:18.
+
+**Nothing is inconsistent, and that is what makes the gap cheap to defer.**
+Both sides of the wsgo comparison lack the eleven equally, so item 5 step 5
+reads empty for them whether or not they are picked up. MAM simply keeps the
+pre-edit form at those eleven verses until a download reaches them, and item 5
+step 6's mega run propagates that pre-edit form to every generated repository.
+
+**What closes it**, whenever it is taken up: a chapter-targeted download naming
+those eleven chapters — Joshua 19, 1 Samuel 1 and 22, 2 Kings 6, 2 Chronicles
+26 and 28, Isaiah 22, 24, 42 and 50, Zephaniah 3 — then `py/main_diff.py wsgo`,
+then a Google Sheet import-and-apply round of its own, then the mega run. A
+full `py/main_download.py fr-wikisource` closes it too, and closes the whole
+2026-08-26 gap with it, at the price of bringing down a week of edits nobody
+here has reviewed.
 
 ### Item 6: archive the 30 records
 
