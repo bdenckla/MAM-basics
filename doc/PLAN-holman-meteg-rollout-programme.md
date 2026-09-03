@@ -275,6 +275,20 @@ account `BDencklaBot`. Verify it exists before starting. **A session must never
 see, create or handle that credential**, and editing a live wiki is an
 irreversible outward-facing action: it is Ben's to authorize each time.
 
+**A SESSION RUNS THIS ITEM ITSELF, and the paragraph above is about permission
+rather than ability — do not read it as saying otherwise.** Sessions have run
+this bot. The credential is never read by the session: `-dir:` points pywikibot
+at `~/.pywikibot/`, pywikibot reads `password.py`, and
+`ws_bot_real._assert_pywikibot_auth_files_present` does no more than test that
+the file is there. So what item 3 waits on is Ben's go-ahead, which is a
+sentence from him, and not a step he has to carry out at the keyboard.
+`py/ws/pywikibot-setup.md` is the operating manual, `-dir:` mechanism and all.
+Written 2026-09-03, after a session recommended item 1's Phase 3 over item 3 on
+the ground that "a session can't do it: it needs your pywikibot credential" —
+Ben: *"A session can do it, and absolutely has done it."* The ordering that
+session recommended was right for a different and better reason, the deadline
+below; the credential was never the obstacle.
+
 ### Item 4: download the affected chapters, plus Joshua 10 and Zechariah 2
 
 The `real` run auto-downloads and reparses modified chapters afterward unless
