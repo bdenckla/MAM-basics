@@ -1,6 +1,6 @@
 # Total evacuation: book-of-job, holman-ketiv-qere and UXLC-utils
 
-State: Phase 3 waits at Step 6 on 2026-09-03; Steps 1 through 5 complete
+State: Phase 3 complete 2026-09-03; Phase 4 waits at its Step 1 destination decision
 
 Written 2026-08-22, the day
 [`PLAN-evacuate-python-programme.md`](PLAN-evacuate-python-programme.md) closed — its last row,
@@ -84,8 +84,8 @@ figures in these plans arriving one more time.
 | 0 — Preflight: baselines, collision census, and the five decisions | **DONE 2026-08-23** — seven commits to this file, `0decb3f` through the one recording Decision E. Every Scale figure reproduced but the "outside `gh-pages/`" column (48 / 596 / 734, not 50 / 597 / 737); the census reproduced with one refinement (`sanity_problems.json` moves, 40 duplicates drop, not 41); the layer-4 sweep returned the list the plan has; baseline 941 passed / 5 skipped / 59 subtests, ruff and black clean. All five decisions answered, one at a time: A `book-of-job` / `holman` / `uxlc`; B no `LICENSE`, and the docx does not move — the cord to it is cut; C same relative path, `data/` at `data/`; D `py_ac_loc/` dropped; E two files deleted, the meteg-marks pair lands at `out/`. Two questions parked for Phases 3 and 5, written where those phases will find them |
 | 1 — `.gitattributes` merge in MAM-basics | **DONE 2026-09-03 — verification only.** The destination already covers every incoming binary type that moves; Decision B excludes the sole `.docx`, so no `.gitattributes` edit landed. The scratch checks preserved the source blob for a PNG, a JPG and a CSV, and the MAM-basics suite passed 971 / 5 / 65. The execution record below carries the fresh Scale figures and the working-tree CSV finding. |
 | 2 — Generalize the redirect-stub generator to a table of four | **DONE 2026-09-03.** `RedirectRepo` now makes the source repository, MAM-basics subtree, old URL prefix, frozen-manifest path and clone URL one row; only wlc-utils' frozen row exists. Its 155 stubs were byte-identical before the rename and changed only their generator-comment line after it. The execution record carries the WLC republish commit, the live-baseline result and the missing-subtests finding. |
-| 3 — holman-ketiv-qere, the pilot lane; plus the generated landing page | **Steps 1–5 DONE 2026-09-03; Step 6 WAITS FOR REVIEW-FOREST TEARDOWN.** MAM-basics landed and published the 379-file `holman/` tree (`3c5dc79`), scoped its licences (`d81b47b`), repointed its generators (`ae663ff`), froze the six-page redirect manifest (`46ba28a`), and removed the redirect host from the workspace (`519e3f4`). The source commits are `723bd73` for the stubs and `ca55c4a` for the empty host. The remaining source-review worktree is detached at `94cab4a`; do not remove the main clone until that forest is retired. |
-| 4 — book-of-job | not started |
+| 3 — holman-ketiv-qere, the pilot lane; plus the generated landing page | **DONE 2026-09-03.** MAM-basics landed and published the 379-file `holman/` tree (`3c5dc79`), scoped its licences (`d81b47b`), repointed its generators (`ae663ff`), froze the six-page redirect manifest (`46ba28a`), and removed the redirect host from the workspace (`519e3f4`). The source commits are `723bd73` for the stubs and `ca55c4a` for the empty host. Step 6 then retired only the clean detached Holman review worktree at `94cab4a` and removed the clean main clone. |
+| 4 — book-of-job | **Step 1 waits for Ben's 2026-09-03 destination decision.** The live baseline, Pages check, full test suite (972 passed / 5 skipped / 65 subtests), Ruff, Black, and mark-order sweep all pass. The open choice is whether the nine files that remain after dropping `py_ac_loc/` land under the pure `book-of-job/` prefix. |
 | 5 — UXLC-utils | not started |
 | 6 — Cross-repo bookkeeping, and close the second stage | not started |
 
@@ -2085,11 +2085,17 @@ out-of-reach citations, the live issue tracker, and MAM-basics as the home of
 the data and code; source `CLAUDE.md` states the generated-stub rule and the
 bare-issue convention.
 
-Step 6 is not runnable: the main source checkout is clean, has no stash, and
-its `HEAD` equals `origin/main` at `ca55c4a`, but `git worktree list` still
-shows `C:/Users/BenDe/Documents/Codex/ReviewForests/mam-mega-review-2026-09-01/holman-ketiv-qere`
-detached at `94cab4a`. Do not remove the main clone until that review forest is
-retired. No Phase 4 work has started.
+Step 6 completed on 2026-09-03. The source checkout was clean, its `HEAD` equalled
+`origin/main` at `ca55c4a`, and it held no ignored or untracked content, stash,
+or outgoing local branch. Its only other registered worktree was the clean detached
+review checkout at `94cab4a` under
+`C:/Users/BenDe/Documents/Codex/ReviewForests/mam-mega-review-2026-09-01/holman-ketiv-qere`.
+That one worktree was removed with plain `git worktree remove`, leaving the main
+checkout as the sole registered worktree; the main checkout was then removed from
+`C:/Users/BenDe/GitRepos`. The other 17 review worktrees remain. The workspace
+entry had already gone in `519e3f4`, so removing the clone leaves no stale workspace
+folder. `MAM-basics/CLAUDE.md` records the no-clone policy and the temporary shallow
+re-clone command for the rare redirect-stub publish.
 
 ---
 

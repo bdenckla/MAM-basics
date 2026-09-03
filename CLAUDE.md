@@ -517,6 +517,28 @@ The `../wlc-utils` paths in `doc/`'s plans are execution records of what was tru
 ran, and are left as written — the answer Ben chose for al-hatorah's and masorah-books' stale
 citations too.
 
+## holman-ketiv-qere belongs on no machine, and its redirect set is frozen
+
+**holman-ketiv-qere is not in the roster**, so `gitrepos_setup_rule` does not put a clone on any
+machine. Ben's decision, 2026-08-22, applies the evacuated-repository rule here: the source
+repository stays alive at `bdenckla/holman-ketiv-qere` as the redirect host and issue tracker,
+but its local clone is unwanted. The completed 2026-09-03 lane moved the public data and
+generators to `holman/` in this repository, then removed the source clone after retiring its
+clean detached review worktree.
+
+Nothing in the ordinary suite reads `../holman-ketiv-qere`. The frozen six-page old URL set is
+`in/holman_ketiv_qere_redirect_pages.json`, and `py/tests/test_redirect_manifest.py` checks it
+without a source clone. If an old Holman page is renamed or dropped, temporarily re-create the
+redirect host with:
+
+```powershell
+git clone --depth 1 https://github.com/bdenckla/holman-ketiv-qere.git C:/Users/BenDe/GitRepos/holman-ketiv-qere
+```
+
+Then publish and check the frozen stubs with `--repo holman-ketiv-qere`, and remove the temporary
+clone again after the source repository's Pages deployment succeeds. `../holman-ketiv-qere` is
+already absent from `all-repos.code-workspace`, so no workspace entry needs changing.
+
 ## There is no `wlc-koren-12th` repo
 
 `~/GitRepos/wlc-koren-12th` was never a repo of its own. It was a **worktree of wlc-utils** on
