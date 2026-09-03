@@ -23,9 +23,9 @@ were two committed blobs -- book-of-job's on one side and the two codex-index re
 on the other.  Keeping their code linted is a restoration, not an expansion.
 UXLC-utils and holman-ketiv-qere never had these lints, and adding their code here
 would surface violations that are nobody's current business; they are deliberately
-absent.  codex-index-leningrad never had them either and IS included, because it is
-eight small modules that pass both checks as they stand, so including it costs
-nothing and closes the one gap a reader would otherwise have to be told about.
+absent. codex-index-leningrad never had them either and IS included, because its
+eight small modules pass both checks as they stand, so including them costs nothing
+and closes the one gap a reader would otherwise have to be told about.
 
 CORPUS ROOTS ARE A SHORTER LIST THAN CODE PATHS, and the difference is not an
 oversight.  ``check_mark_order`` reads ``.json`` as well as ``.py``, and for
@@ -33,9 +33,8 @@ book-of-job, codex-index-aleppo and codex-index-cam1753 the hand-made JSON that
 stayed behind in each data repo is a large part of what the check was ever for --
 24 line-break files in the first, 78 line-break, column-coordinate and flat-stream
 files in the second, and 27 line-break plus 28 column-quadrilateral files in the
-third.  codex-index-leningrad's data root holds no such thing: its JSON is two
-artifacts of its own pipeline and two files vendored from UXLC-utils, whose contents
-are that repo's business rather than this one's.
+third. The Leningrad tree now holds only two generated JSON artifacts and no
+separate corpus root, so it contributes no mark-order scope.
 
 ``check_function_ordering`` is NOT a consumer of this module, and that is
 deliberate.  Only book-of-job ever ran it -- it is one of the seven checks in

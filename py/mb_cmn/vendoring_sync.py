@@ -78,13 +78,8 @@ def write_provenance(
 ) -> None:
     """Write a standardized breadcrumb, ``_provenance.md`` by default, in dest_dir.
 
-    ``basename`` is a parameter because codex-index-leningrad's breadcrumb has no
-    leading underscore: ``UXLC-utils-sparse/provenance.md`` is a tracked file of
-    that repo's, named that way since before this module existed.  Its refresher
-    carried a two-line fork of this module for exactly those two lines -- the
-    docstring above and the filename below -- until Phase 3 of
-    ``doc/PLAN-evacuate-python-from-codex-index-trio.md`` brought that script here
-    as ``main_lenin_vendor_uxlc.py`` and dissolved the fork into this argument.
+    ``basename`` is a parameter so callers can name a provenance breadcrumb that
+    fits the destination tree's convention.
     """
     normalized_copied = sorted({p.replace("\\", "/") for p in copied_files})
     normalized_removed = sorted({p.replace("\\", "/") for p in removed_paths})

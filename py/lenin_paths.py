@@ -1,167 +1,79 @@
-"""Resolve the codex-index-leningrad DATA root, and the place its CODE now sits.
+"""Resolve the Leningrad-index paths now held inside MAM-basics.
 
-THIS MODULE IS DELIBERATELY TWO-ROOTED, and that is the whole point of its
-existence.  The code is here in MAM-basics since Phase 3 of
-``doc/PLAN-evacuate-python-from-codex-index-trio.md``; the data it reads and
-writes stayed in the sibling codex-index-leningrad and goes on being hosted
-there indefinitely, per Ben's decision of 2026-08-22 recorded in that plan's
-section "This plan moves the Python and nothing else":
+Phase 1 of
+``doc/PLAN-evacuate-the-codex-index-trio-and-diffable-pointed-hebrew.md``
+landed the former codex-index-leningrad tree under the pure ``leningrad/``
+prefix. The index generator's input is MAM-basics' canonical
+``uxlc/data/lci_augrecs.json``; the temporary ``UXLC-utils-sparse/`` copy and
+its vendor command have been retired.
 
-  * the CODE root is ``mb_cmn.paths.repo_root()`` -- what ``py/`` is under, what
-    ``git`` acts on, what the source lints scan;
-  * the DATA root is ``lenin_data_root()`` below -- codex-index-leningrad's
-    ``lenin-wiki/`` (the three artifacts the wikisource pipeline writes) and
-    ``UXLC-utils-sparse/`` (the vendored UXLC-utils subset it reads).
-
-WHAT THIS REPLACED.  Phase 1 of the same plan (2026-08-22, ``eb7c83c`` there)
-turned four cwd-relative literals -- one ``"UXLC-utils-sparse/data/..."`` and
-three ``"lenin-wiki/..."`` -- into ``_REPO_ROOT`` and ``_WIKI_DIR`` inside the
-one entry point that held them, so that this move had one root to repoint rather
-than four strings to find.  Those two names do NOT survive the move: Phase 3
-item 2 of the plan says not to carry ``_DATA_ROOT`` into MAM-basics as a fourth
-spelling of the same idea, and the accessors below are the third spelling
-retired to.
-
-THE OTHER HALF OF THAT REPO'S PYTHON is the temporary sparse vendor.
-``main_lenin_vendor_uxlc.py`` refreshes ``UXLC-utils-sparse/`` from MAM-basics'
-own ``in/UXLC-39/`` and ``uxlc/data/`` trees. Ben authorized that temporary
-repoint on 2026-09-03 while the codex-index-leningrad evacuation remains a
-separate lane. Its former ``vendoring_sync.py`` was a two-line fork of
-``mb_cmn/vendoring_sync.py`` and is gone: the two lines were the breadcrumb's
-filename, which ``write_provenance`` now takes as a parameter.
-
-NO ``code_paths()`` CONSUMER YET, and that is a stated gap rather than an
-oversight.  The four source lints in this repo -- ``check_function_ordering``,
-``check_mark_order``, ``check_escape_sequences`` and the two ``fix_*`` -- still
-scope to ``boj_paths.code_paths()`` alone, so the eight modules named in
-``LENIN_CODE`` below are NOT linted today.  codex-index-aleppo and
-codex-index-cam1753 are the repos that bring lint copies of their own, and their
-Phase 3 is where the union over the per-repo lists gets built; ``code_paths()``
-is here so that step is one entry rather than a new list.  Nothing here has a
-combining mark or a ``\\uXXXX`` escape, checked 2026-08-22, so the gap costs
-nothing today and would cost something the moment a module here grew one.
+``lenin-wiki/`` holds the three artifacts that
+``main_lenin_wikisource_page.py`` derives. ``page-snips/`` holds the
+hand-maintained Leningrad Codex image crop and its evidence note. The former
+repository's Python remains in ``py/lenin_wiki/`` plus this paths module and
+the generator, so ``code_paths()`` keeps the eight modules in the source-lint
+scope.
 """
 
 from pathlib import Path
 
 from mb_cmn import paths
 
-DATA_REPO_NAME = "codex-index-leningrad"
-"""The sibling repo that kept the data when the Python left it."""
+import uxlc_paths
 
 LENIN_PACKAGE = "lenin_wiki"
-"""The package codex-index-leningrad's ``lenin-wiki/py/`` landed in.
-
-Six modules, not the eighteen that directory held: eleven of the eighteen were
-copies of this repo's own modules under four kinds of disguise -- renamed
-(``my_locales``, ``my_open``, ``mam_book_names``,
-``mam_book_names_and_std_book_names``), out of package (``vtrad_data``,
-``vtrad_helpers``, ``get_cvm_rec_from_bcvt``, which are ``py_misc`` here) or
-straightforwardly the same name (``hebrew_letters``, ``hebrew_punctuation``,
-``hebrew_verse_numerals``, ``my_utils``) -- and every one of the eleven is a
-plain deletion now that the six import this repo's modules directly.
-"""
+"""The package that the former ``lenin-wiki/py/`` directory contributed."""
 
 LENIN_TOP_LEVEL_MODULES = (
     "lenin_paths.py",
     "main_lenin_wikisource_page.py",
-    "main_lenin_vendor_uxlc.py",
 )
-"""The three modules of codex-index-leningrad's that sit at the top of ``py/``.
-
-``main_lenin_wikisource_page.py`` was ``lenin-wiki/main_make_wikisource_page.py``
-and is renamed because codex-index-aleppo holds a file of that name too, and the
-two are different tools against different input formats -- the trio plan's
-Family 2 classification, settled in its Phase 0.
-"""
+"""The former codex-index-leningrad modules at the top of ``py/``."""
 
 
 def lenin_data_root() -> Path:
-    """Path to the codex-index-leningrad corpus this code reads and writes.
-
-    The one function the move changed: it was ``Path(__file__)``-rooted inside
-    that repo until Phase 3.  Checked rather than merely composed, for the reason
-    ``paths.require_sibling`` gives: an absent sibling is a misconfiguration whose
-    fix the message can carry, and no CI here would catch a silent skip.
-    """
-    return paths.require_sibling(DATA_REPO_NAME, paths.sibling_repo(DATA_REPO_NAME))
+    """Path to the former codex-index-leningrad tree under ``leningrad/``."""
+    return paths.repo_root() / "leningrad"
 
 
 def wiki_dir() -> Path:
-    """``lenin-wiki/`` -- J David Stark's index of the Leningrad Codex and the
-    three artifacts ``main_lenin_wikisource_page`` derives from it."""
+    """The three generated artifacts under ``leningrad/lenin-wiki/``."""
     return lenin_data_root() / "lenin-wiki"
 
 
-def uxlc_sparse_dir() -> Path:
-    """``UXLC-utils-sparse/`` -- the vendored UXLC-utils subset.
-
-    DATA ONLY since 2026-08-03: the seventeen ``.py`` files this tree formerly
-    held were dropped rather than repointed at MAM-basics, because nothing in
-    codex-index-leningrad imported them and their one entry point could not run
-    there anyway. Refreshed temporarily by ``main_lenin_vendor_uxlc`` from
-    MAM-basics' local UXLC data.
-    """
-    return uxlc_sparse_dir_of(lenin_data_root())
-
-
-def uxlc_sparse_dir_of(data_root: Path) -> Path:
-    """``UXLC-utils-sparse/`` under an explicitly given data root.
-
-    ``main_lenin_vendor_uxlc`` composes its own paths off one root it names once,
-    and this lets it do that without a second literal.
-    """
-    return data_root / "UXLC-utils-sparse"
-
-
 def lci_augrecs_path() -> Path:
-    """``UXLC-utils-sparse/data/lci_augrecs.json`` -- the one input of the
-    wikisource pipeline, and the only file it reads from outside ``lenin-wiki/``."""
-    return uxlc_sparse_dir() / "data" / "lci_augrecs.json"
+    """The canonical ``uxlc/data/lci_augrecs.json`` generator input."""
+    return uxlc_paths.data_dir() / "lci_augrecs.json"
 
 
 def index_s0_annotated_path() -> Path:
-    """``lenin-wiki/index-s0-annotated.json``, the pipeline's first artifact:
-    the input rows reshaped, with a header added."""
+    """The pipeline's reshaped-input JSON artifact."""
     return wiki_dir() / "index-s0-annotated.json"
 
 
 def index_s2_grouped_path() -> Path:
-    """``lenin-wiki/index-s2-grouped-by-book.json``, the pipeline's second
-    artifact: the collapsed rows grouped by book."""
+    """The pipeline's page-grouped JSON artifact."""
     return wiki_dir() / "index-s2-grouped-by-book.json"
 
 
 def index_wikitext_path() -> Path:
-    """``lenin-wiki/index.wiki``, the pipeline's third artifact and its point --
-    the wikitext of the Wikisource page."""
+    """The pipeline's Wikisource starting-point artifact."""
     return wiki_dir() / "index.wiki"
 
 
 def code_dir() -> Path:
-    """This repo's ``py/`` -- the directory this module and the moved code sit in.
-
-    Spelled off ``__file__`` rather than off ``paths.repo_root() / "py"`` for the
-    reason ``boj_paths.code_dir()`` gives: it stays right if this module is ever
-    moved again.
-    """
+    """The ``py/`` directory holding the former repository's Python."""
     return Path(__file__).resolve().parent
 
 
 def code_paths() -> list[Path]:
-    """Every place codex-index-leningrad's Python lives here, for the source lints.
-
-    Fails loudly on an entry that no longer exists, exactly as
-    ``boj_paths.code_paths()`` does; only an unlisted ADDITION is silent, and this
-    code is being evacuated rather than developed.  ``repo_scopes.code_paths()`` is
-    what unions this with the other evacuated repos' lists.
-    """
+    """Every Leningrad-index Python location that the source lints scan."""
     named = [code_dir() / LENIN_PACKAGE]
     named += [code_dir() / name for name in LENIN_TOP_LEVEL_MODULES]
-    missing = [p for p in named if not p.exists()]
+    missing = [path for path in named if not path.exists()]
     if missing:
         raise SystemExit(
             "lenin_paths.code_paths: no longer present: "
-            + ", ".join(str(p) for p in missing)
+            + ", ".join(str(path) for path in missing)
         )
     return named

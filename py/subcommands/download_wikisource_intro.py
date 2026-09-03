@@ -24,10 +24,11 @@ can be ASCII and stable, and ``_assert_declared_set_is_live_set`` then FAILS if 
 live set has gained or lost a page -- which is a finding about the introduction, and
 wants a human to choose a slug for the new page, not a silently-widened mirror.
 
-THE TWO MANUSCRIPT INDEX PAGES ARE NOT THIS REPO'S OWN OUTPUT, AND ARE NOT MEANT TO
-MATCH IT.  ``py/main_ac_wikisource_page.py`` and ``py/main_lenin_wikisource_page.py``
-write ``index.wiki`` in the sibling codex-index-aleppo and codex-index-leningrad, and
-Ben, 2026-08-31, on those two files: they "were only ever intended to be starting
+THE TWO MIRRORED MANUSCRIPT INDEX PAGES ARE NOT THE GENERATORS' OUTPUT, AND ARE NOT
+MEANT TO MATCH IT. ``py/main_ac_wikisource_page.py`` writes ``index.wiki`` in the sibling
+codex-index-aleppo, and ``py/main_lenin_wikisource_page.py`` writes the Leningrad
+index at ``leningrad/lenin-wiki/index.wiki``. Ben, 2026-08-31, on those two files:
+they "were only ever intended to be starting
 points for manual work on Wikisource."  ``index-aleppo`` and ``index-leningrad`` here
 are that manual work as published.  So the difference between generator and page is the
 intended transformation rather than drift; there is no sync to maintain in either

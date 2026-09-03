@@ -1,10 +1,10 @@
 """Build the Wikisource page indexing the Leningrad Codex, from J David Stark's index.
 
-Reads ``UXLC-utils-sparse/data/lci_augrecs.json`` in the sibling
-codex-index-leningrad and writes three artifacts back into that repo's
-``lenin-wiki/``: the input rows reshaped (``index-s0-annotated.json``), those rows
-collapsed per page and grouped by book (``index-s2-grouped-by-book.json``), and the
-wikitext itself (``index.wiki``).  All four paths come from ``lenin_paths``.
+Reads MAM-basics' canonical ``uxlc/data/lci_augrecs.json`` and writes three
+artifacts under ``leningrad/lenin-wiki/``: the input rows reshaped
+(``index-s0-annotated.json``), those rows collapsed per page and grouped by
+book (``index-s2-grouped-by-book.json``), and the wikitext itself
+(``index.wiki``). ``lenin_paths`` supplies all four paths.
 
 ``index.wiki`` IS A STARTING POINT FOR MANUAL WORK, NOT A PUBLISHABLE PAGE, and it was
 never intended to stay in sync with what Wikisource ends up showing.  Ben, 2026-08-31,
@@ -16,8 +16,8 @@ starting points for manual work on Wikisource."  The page the wiki actually carr
 between them is not drift, nothing needs re-syncing in either direction, and no test or
 lint should compare them.  Unlike codex-index-aleppo, which keeps
 ``Wikisource-manual-initial.txt`` and ``Wikisource-manual-final.txt`` beside its
-generated file, codex-index-leningrad keeps no snapshot of the hand work; the mirrored
-page is the only copy of it outside the wiki.
+generated file, no snapshot of the Leningrad hand work is tracked; the mirrored page is the
+only copy of it outside the wiki.
 
 THE COUNTERPART PIPELINE IS A DIFFERENT TOOL, which is why the two do not share a
 name here.  codex-index-aleppo's ``aleppo-wiki/main_make_wikisource_page.py`` reads

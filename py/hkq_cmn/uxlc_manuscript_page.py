@@ -11,15 +11,13 @@ the page starts in, which is not always the book of the case on it, so it is
 neither shown nor checked.
 
 Checked 2026-08-08: inverting all twenty ordinals in ``emails/`` and looking the
-folios up in the sibling ``codex-index-leningrad``'s
-``UXLC-utils-sparse/data/lci_recs.json`` reproduced Holman's verse range in
+folios up in MAM-basics' ``in/lci_recs.json`` reproduced Holman's verse range in
 every one. That file is derived from tanach.us's ``LCIndex.xml``, the UXLC page
 index, which is presumably where Holman's ordinals come from too. To
 re-establish the check, decode an ordinal here and compare against the
 ``page`` row of that JSON.
 
-The Sefaria image URL follows
-``codex-index-leningrad/lenin-wiki/py/image_urls.py``.
+The Sefaria image URL follows ``py/lenin_wiki/image_urls.py``.
 
 The rest of a citation, ``Col. 2 middle``, is Holman's own placing of the atom
 on that page. ``manuscript_position`` parses it so that the page can compare his

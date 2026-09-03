@@ -29,15 +29,15 @@ read אָֽכְלָ֖ה rather than אָכְלָ֖ה, "and therefore both קמץ
 there, as does Mikraot Gedolot Haketer; Metsudah (Lakewood 2001) has one. This crop settles
 what the Leningrad Codex has, which is what MAM follows.
 
-Two further facts about the same verse, from `../UXLC-utils-sparse/in/UXLC-39/Lamentations.xml`
+Two further facts about the same verse, from `../../in/UXLC-39/Lamentations.xml`
 rather than from the image: the verse has a meteg on בָּֽחֳרִי and another on לֶֽהָבָ֔ה, plus
 the silluq on the verse-final סָבִֽיב׃. So the absence on אָכְלָ֖ה sits among three marks
 present, not on a page sparing with them.
 
 Codex Sassoon 1053 and Cambridge Add. 1753 have no meteg on this word either, both confirmed
-the same day: `MAM-basics/doc/ms-snips/sassoon1053-p740-Lam2v3-akhla.png` for Sassoon 1053
-page 740, and `codex-index-cam1753/page-snips/0105B-col2-Lam2v3-akhla.png` for Cambridge
-Add. 1753 leaf 0105B column 2.
+the same day: `../../doc/ms-snips/sassoon1053-p740-Lam2v3-akhla.png` for Sassoon 1053 page 740,
+and `../../cam1753/page-snips/0105B-col2-Lam2v3-akhla.png` for Cambridge Add. 1753 leaf 0105B
+column 2.
 
 ### Calibration note for the atom-location estimator
 

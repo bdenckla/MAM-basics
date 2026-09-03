@@ -229,9 +229,9 @@ def mb_cmn_scan_roots(repo_name: str) -> list[str]:
     nothing there -- the report's ``mb_cmn dir`` line vanished with no other symptom
     (2026-08-09, mgketer's R.3 in that repo's doc/PLAN-evacuate-private-repos.md).
 
-    The pair survives as the fallback for a repo that declares no ``mb_cmn`` scan root at
-    all, which today is codex-index-leningrad's empty ``pkg_scan_roots``.  Every other
-    repo declares exactly one of the two spellings, so nothing else's output moves.
+    The pair survives as the fallback for a repo that declares no ``mb_cmn`` scan
+    root at all. Every declared repository currently names exactly one of the two
+    spellings, so nothing else's output moves.
     """
     repo = load_policy().repos.get(repo_name)
     roots = list(repo.pkg_scan_roots.get("mb_cmn", ())) if repo else []

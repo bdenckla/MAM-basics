@@ -15,7 +15,7 @@ found the inventory saying a bare ``DIFFERS`` for all four of codex-index-aleppo
 carries real content drift.  Collapsing the CRLF case into ``identical`` would have
 been the other available fix and is the wrong one: a working tree holding CRLF where
 HEAD holds LF is the latent-CRLF condition that has inflated black diffs before
-(hbofonts and codex-index-leningrad have it too), so it is a fact worth reporting --
+(hbofonts and the then-extant codex-index-leningrad had it too), so it is a fact worth reporting --
 just not the same fact as drift.  Hence three verdicts, and a token a ``DIFFERS``
 grep does not catch.  The first three-verdict run, 2026-08-04, found 15 such copies
 rather than the review's 3: book-of-job and diffable-pointed-hebrew hold the

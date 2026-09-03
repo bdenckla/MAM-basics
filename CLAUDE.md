@@ -85,10 +85,10 @@ Three things about it are worth knowing before you touch it:
 **`index-aleppo.mediawiki` and `index-leningrad.mediawiki` were never meant to match what
 `py/main_ac_wikisource_page.py` and `py/main_lenin_wikisource_page.py` generate — do not treat
 the difference as drift.** Ben, 2026-08-31: those generators' `index.wiki` outputs, in the
-sibling codex-index-aleppo and codex-index-leningrad, "were only ever intended to be starting
-points for manual work on Wikisource." The published pages are that manual work. So the gap is
-the intended transformation, there is no sync to maintain in either direction, and **no test or
-lint should compare the two.**
+sibling codex-index-aleppo and MAM-basics' `leningrad/lenin-wiki/`, "were only ever intended to
+be starting points for manual work on Wikisource." The published pages are that manual work. So
+the gap is the intended transformation, there is no sync to maintain in either direction, and
+**no test or lint should compare the two.**
 
 The measurements say the same thing, and are worth quoting because the gap is much wider than
 "a wrapper around a generated body" — re-establish them with
@@ -101,7 +101,7 @@ lines are in the live page) — which is the pipeline written down: generate raw
 build the page by hand from it. The generated file's overlap with the hand-made line is the
 same 26 lines whether measured against the initial snapshot, the final snapshot or today's live
 page, so the hand work left the generated form immediately and has never gone back to it.
-codex-index-leningrad keeps no such snapshots.
+The Leningrad generator keeps no snapshot of the hand work.
 
 ## Rendered-prose conventions: `py/accgram/printed_decalogue_strands.py`'s module docstring
 
