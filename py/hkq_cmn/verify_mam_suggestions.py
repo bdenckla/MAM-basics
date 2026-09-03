@@ -24,9 +24,10 @@ two differ, so nothing about his message is lost; no case carries that field now
 
 NO CORRECTION OF HOLMAN STANDS.  The last one, 2Sa 15:37 (8 as sent, 9 derived),
 WAS FIXED ON 2026-09-02, and it was not his error either.  Until then
-``mam_plus_verse_data`` collected the parameters of the navigation template מ:פסוק into the verse text.  That template carries the
-book name, chapter, verse and seder, so the verse rendered with שמואל as its first
-atom and its Hebrew numerals fused onto וַיָּבֹא.  Holman's 8 was right and the
+``mam_plus_verse_data`` collected into the verse text the parameters of the
+navigation template מ:פסוק, which carries the book name, chapter, verse and
+seder, so the verse rendered with שמואל as its first
+atom and its Hebrew numerals fused onto וַיָּבֹא.  Holman's 8 was right and the
 corpus rendering was wrong, exactly as it was for the two below.
 
 WHAT WAS FIXED IS A PROXY, NOT ONE TEMPLATE'S RULE.  ``_collect_text_fragments``
@@ -36,7 +37,7 @@ template NAME throughout now, and raises on a name with no rule.  Seven leaks
 closed together, changing the atom count of 507 verses, מ:פסוק among them
 at 895 payloads.  Genesis 1:1 rendered 9 atoms for a seven-word verse, its
 first atom running the book title, the whole navigation reference and two
-copies of בְּרֵאשִׁית together, and renders 7.  That function's docstring holds
+copies of בְּרֵאשִׁית together, and renders 7.  That function's docstring holds
 the evidence, the other six leaks and the re-measurement path; do not restate
 them here.
 
@@ -51,7 +52,7 @@ why it was the one case of the 34 that has one.
 THE MAQAF COMPOUNDS ARE NOT AMONG THEM, though a cruder check reports them as
 disagreements.  Holman quotes a whole compound while numbering one of its atoms,
 and the atom he numbers is the one bearing the difference every time.
-So עַל־יְרוּשָׁלַ͏ִם against עַל־יְרוּשָׁלַ͏ִם resolves to its second atom
+So עַל־יְרוּשָׁלַ͏ִם against עַל־יְרוּשָׁלַ͏ִם resolves to its second atom
 and agrees with his 11.  ``_differing_offset`` is what picks the right half, and
 it needs neither his index nor his prose description of where the mark sits.
 
@@ -106,7 +107,7 @@ def _comparable(form: str) -> str:
 
     Mark order first -- ``give_std_mark_order`` and never ``unicodedata.normalize``,
     per this repo's standing rule -- and then the combining grapheme joiner
-    dropped, since MAM has one inside יְרוּשָׁלַ͏ִם and a hand-typed form of the
+    dropped, since MAM has one inside יְרוּשָׁלַ͏ִם and a hand-typed form of the
     same word may not.
     """
     return give_std_mark_order(form).replace(CGJ, "")
@@ -117,7 +118,7 @@ def _atom_run(form: str) -> list[str]:
 
     A run rather than a single atom BECAUSE HOLMAN QUOTES WHOLE MAQAF COMPOUNDS
     WHILE NUMBERING ONE OF THEIR ATOMS.  ``find_hebrew_tokens`` leaves MAQAF out
-    of its character class, so בְנֵֽי־יִשְׂרָאֵ֛ל reduces to two atoms here exactly as
+    of its character class, so בְנֵֽי־יִשְׂרָאֵ֛ל reduces to two atoms here exactly as
     it does in the verse text; comparing the two runs is then the same operation
     whether the form is one atom or several.  It also drops sof pasuq, which he
     keeps on a verse-final form and which is not part of the atom.
@@ -149,7 +150,7 @@ def _differing_offset(mam_run: list[str], comparison_run: list[str]) -> int | No
     and the comparison edition's, and the atom his case is about is the one that
     differs between them.  For a single-atom quotation that is the atom itself;
     for a maqaf compound it picks out the half he means.
-    Thus עַל־יְרוּשָׁלַ͏ִם against עַל־יְרוּשָׁלַ͏ִם resolves to the second atom
+    Thus עַל־יְרוּשָׁלַ͏ִם against עַל־יְרוּשָׁלַ͏ִם resolves to the second atom
     without anything having to read his prose description of where the meteg sits.
 
     None when the two runs are different lengths, or differ in no atom or in more

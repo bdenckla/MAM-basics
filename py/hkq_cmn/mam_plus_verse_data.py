@@ -6,9 +6,41 @@ from hkq_cmn.template_name_quotes import canonical_template_name
 from mb_cmn import template_names
 
 # Folded once here for the same reason each comparison below folds: a plus file
-# written before MAM-parsed 2993dbd spells this name with an ASCII quote rather
-# than the gershayim the constant carries.
+# written before MAM-parsed 2993dbd spells a quote-bearing name with an ASCII
+# quote rather than the gershayim these constants carry.  Only two members
+# actually carry one -- the trivial-qere name and the poetic no-parashah tag --
+# but folding a name with no quote in it is a no-op, so folding the whole set
+# costs nothing and removes the question.
 _INVERTED_NUN_CMP = canonical_template_name(template_names.INVERTED_NUN)
+_NO_ATOM_CMP = {
+    canonical_template_name(name) for name in template_names.NO_ATOM_TMPL_NAMES
+}
+_IN_WORD_CMP = {
+    canonical_template_name(name) for name in template_names.IN_WORD_TMPL_NAMES
+}
+
+
+def _no_rule_error(tmpl_name: object, tmpl_params: object) -> ValueError:
+    """The one outcome for a template this module does not recognise.
+
+    THERE IS NO FALLBACK TO RETURN INSTEAD, which is the whole point: a guess
+    here is silent, and a wrong atom index derived from it is silent too.  See
+    _collect_text_fragments' docstring for the decision and for the defect that
+    a fallback on the parameters produced.
+    """
+    carrying = (
+        f"carrying parameters {sorted(str(key) for key in tmpl_params)}"
+        if isinstance(tmpl_params, dict)
+        else "carrying no parameters"
+    )
+    return ValueError(
+        f"no rule for template {tmpl_name!r} {carrying}."
+        " A template either contributes no atom, and belongs in"
+        " template_names.NO_ATOM_TMPL_NAMES, or it carries verse text, and needs"
+        " a rule here naming which parameters carry it. Whether it has"
+        " parameters decides neither. Check the four mirror locations listed"
+        " above _collect_text_fragments when adding one."
+    )
 
 
 def _numeric_key(kind: str, key: object) -> int:
@@ -101,12 +133,18 @@ def _collect_text_fragments(node: object, out_parts: list[str]) -> None:
     a name with no rule RAISES rather than contributing a guess.
 
     Reading a parameter as a proxy for a meaning is the defect this dispatch
-    replaced, on 2026-09-02.  "A template with no parameters carries no text"
-    is sound,
-    and the fallback below still rests on it.  But this function also read the
-    CONVERSE -- a template with parameters carries verse text -- in a loop that
-    collected every parameter of anything it did not recognise.  The converse is
-    false, and it put documentation into the string callers count atoms in.
+    replaced, on 2026-09-02.  "A template with no parameters carries no text" is
+    true, but it was standing in for the CONVERSE -- a template with parameters
+    carries verse text -- in a loop that collected every parameter of anything
+    this function did not recognise.  The converse is false, and it put
+    documentation into the string that callers count atoms in.
+
+    THERE IS NO FALLBACK ON THE PARAMETERS EITHER.  Ben Denckla's decision, the
+    same day: "Don't have any fallbacks. If you don't recognize a template, fail
+    fast."  So a parameter-free template is not ASSUMED to be a separator; it is
+    named in NO_ATOM_TMPL_NAMES like every other, and an unrecognised name raises
+    whether or not it carries parameters.  Both halves of the old proxy are gone,
+    not just the half that was leaking.
 
     THE CORPUS SETTLES IT, RATHER THAN ARGUMENT.  Four templates appear in
     MAM-parsed both with and without a parameter: the setuma and petucha
@@ -141,7 +179,7 @@ def _collect_text_fragments(node: object, out_parts: list[str]) -> None:
 
     Genesis 1:1 is the worked example.  It rendered 9 atoms for a seven-word
     verse, its first atom running the book title, the whole navigation
-    reference and two copies of בְּרֵאשִׁית together, and two atoms of
+    reference and two copies of בְּרֵאשִׁית together, and two atoms of
     documentation after that.
     """
     if isinstance(node, str):
@@ -157,58 +195,50 @@ def _collect_text_fragments(node: object, out_parts: list[str]) -> None:
         # tmpl_name itself (gershayim) is never stored from this function.
         cmp_name = canonical_template_name(tmpl_name)
         tmpl_params = node.get("tmpl_params")
-        if tmpl_name in template_names.NO_VERSE_TEXT_TMPL_NAMES:
-            # A TEMPLATE THAT CARRIES NO VERSE TEXT SEPARATES THE TEXT AROUND
-            # IT, so it contributes a space, whether or not it has parameters.
-            # The set is declared in mb_cmn/template_names.py; the docstring
-            # above says why the meaning has to be named there rather than read
-            # off the presence of a parameter.
+        if cmp_name in _NO_ATOM_CMP:
+            # A TEMPLATE THAT CONTRIBUTES NO ATOM SEPARATES THE ATOMS AROUND IT,
+            # so it contributes a space, whether or not it has parameters.  The
+            # set is declared in mb_cmn/template_names.py, which says what its
+            # two kinds of member are; the docstring above says why the meaning
+            # has to be named there rather than read off a parameter.
             #
             # A SEPARATOR IS THE WHOLE OF WHAT ATOM COUNTING NEEDS, and a space
-            # is one.  None of these templates is an atom, and none joins the
-            # text around it into one atom.  So nothing here decides how such a
-            # template RENDERS: whether the paseq template מ:פסק emits U+05C0,
-            # or the gray-maqaf template מ:מקף אפור a maqaf, is a separate
-            # question this rule neither asks nor answers.  Ben Denckla settled
-            # that separation on 2026-09-02, noting that a gray maqaf raises a
-            # real question only for CHANTED WORD counting, which this function
-            # does not do.
+            # is one.  So nothing here decides how such a template RENDERS:
+            # whether the paseq template מ:פסק emits U+05C0, or the gray-maqaf
+            # template מ:מקף אפור a maqaf, is a separate question this rule
+            # neither asks nor answers.  Ben Denckla settled that separation on
+            # 2026-09-02, noting that a gray maqaf raises a real question only
+            # for CHANTED WORD counting, which this function does not do.
             #
-            # The set covers the shirah spaces of the Song of Deborah, which
-            # fused בֶּן־עֲנָת֙ and בִּימֵ֣י in Judges 5:6 so that the verse counted
-            # 11 atoms where it has 13.  See foi/kq_trivial_types.py, which
-            # groups the same names the same way for a different purpose.
+            # BOTH FAILURE DIRECTIONS ARE CLOSED BY ONE SET.  Until 2026-09-02 a
+            # template that reached here unrecognised contributed NOTHING, which
+            # silently FUSED the atoms on either side of it and put every atom
+            # index after it out by one; then 757aa68 gave every parameter-free
+            # template a space and said that subsumed the WHITESPACE_TMPL_NAMES
+            # branch it replaced.  It did not, and neither was a superset of the
+            # other.  The poetic-space marker ר4 occurs 4269 times, always
+            # parameter-free, and had never been in that name set; the 84
+            # parameter-bearing setuma and petucha markers of the docstring were
+            # in it and stopped being reached by it.  Naming every one of them
+            # closes both.
+            #
+            # Measured 2026-09-02 over MAM-parsed/plus: separating rather than
+            # fusing is worth 626 atoms across 559 verses, which is the paseq
+            # template מ:פסק 508 times, the gray-maqaf template מ:מקף אפור 116
+            # times, and the legarmeh template מ:לגרמיה-2 twice.  Every member of the
+            # set already stands beside a space and gains nothing.  The case that
+            # produced that rule is Judges 1:7, whose one paseq template sits
+            # between שִׁבְעִ֣ים and מְלָכִ֡ים: fused, the verse counts 22 atoms and
+            # Jerusalem lands at 20; separated, 23 and 21, and 21 is the number
+            # Daniel Holman sent.  The shirah spaces of the Song of Deborah are
+            # the same case, having fused בֶּן־עֲנָת֙ and בִּימֵ֣י in Judges 5:6 so
+            # that the verse counted 11 atoms where it has 13.  See
+            # foi/kq_trivial_types.py, which groups these names for its own
+            # purpose.
             out_parts.append(" ")
             return
         if not isinstance(tmpl_params, dict):
-            # A TEMPLATE WITH NO PARAMETERS CARRIES NO TEXT, and separates the
-            # text around it, so it contributes a space.  This is the FALLBACK
-            # for a name the set above does not list, and it is sound in that
-            # one direction only -- the docstring says what converse it does not
-            # license.  Before this rule such a template fell through the whole
-            # function and contributed NOTHING, which silently FUSED the atoms
-            # on either side of it and put every atom index after it out by one.
-            #
-            # THE TWO RULES ARE INDEPENDENT, NEITHER ONE A SUPERSET.  This one
-            # replaced a WHITESPACE_TMPL_NAMES branch on 2026-09-02, and 757aa68
-            # said it subsumed that branch, which was wrong in both directions.
-            # The poetic-space marker ר4 occurs 4269 times, always without a
-            # parameter, and has never been in that set, so only this rule
-            # reaches it; while the 84 parameter-bearing setuma and petucha
-            # markers of the docstring were handled by that branch, and are
-            # handled by the set above now.
-            #
-            # Measured 2026-09-02 over MAM-parsed/plus: this rule separates 626
-            # fused atoms across 559 verses -- the paseq template מ:פסק 508
-            # times, the gray-maqaf template מ:מקף אפור 116 times, and the
-            # legarmeh template מ:לגרמיה-2 twice.  Every other parameter-free
-            # template already stands beside a space and gains nothing.  The
-            # case that produced the rule is Judges 1:7, whose one paseq
-            # template sits between שִׁבְעִ֣ים and מְלָכִ֡ים: fused, the verse counts
-            # 22 atoms and Jerusalem lands at 20; separated, 23 and 21, and 21
-            # is the number Daniel Holman sent.
-            out_parts.append(" ")
-            return
+            raise _no_rule_error(tmpl_name, tmpl_params)
         if tmpl_name == "נוסח" or tmpl_name == "מ:הערה-2":
             # Param 1 is the in-verse target; param 2 is documentation.
             _collect_text_fragments(tmpl_params.get("1"), out_parts)
@@ -246,7 +276,7 @@ def _collect_text_fragments(node: object, out_parts: list[str]) -> None:
             # Ketiv-qere: param 1 is ketiv (written), param 2 is qere (read).
             _collect_text_fragments(tmpl_params.get("2"), out_parts)
             return
-        if tmpl_name in template_names.IN_WORD_TMPL_NAMES:
+        if cmp_name in _IN_WORD_CMP:
             # Param 1 is the word, or the part of one, that the template marks:
             # the large letter מ:אות-ג, the small letter מ:אות-ק, the hung
             # letter מ:אות תלויה, and the whole-word template for a special
@@ -287,14 +317,7 @@ def _collect_text_fragments(node: object, out_parts: list[str]) -> None:
             # template instead, which no atom count can distinguish.
             _collect_text_fragments(tmpl_params.get("1"), out_parts)
             return
-        raise ValueError(
-            f"no verse-text rule for template {tmpl_name!r}"
-            f" carrying parameters {sorted(str(key) for key in tmpl_params)}."
-            " A template either carries no verse text, and belongs in"
-            " template_names.NO_VERSE_TEXT_TMPL_NAMES, or it carries some, and"
-            " needs a rule here naming which parameters. Check the four mirror"
-            " locations listed above this function when adding one."
-        )
+        raise _no_rule_error(tmpl_name, tmpl_params)
 
 
 def _render_template_like_text(node: object) -> str:
