@@ -1,6 +1,6 @@
 # Total evacuation: book-of-job, holman-ketiv-qere and UXLC-utils
 
-State: Phase 3 active on 2026-09-03; Steps 1 through 3 complete
+State: Phase 3 waits at Step 6 on 2026-09-03; Steps 1 through 5 complete
 
 Written 2026-08-22, the day
 [`PLAN-evacuate-python-programme.md`](PLAN-evacuate-python-programme.md) closed — its last row,
@@ -84,7 +84,7 @@ figures in these plans arriving one more time.
 | 0 — Preflight: baselines, collision census, and the five decisions | **DONE 2026-08-23** — seven commits to this file, `0decb3f` through the one recording Decision E. Every Scale figure reproduced but the "outside `gh-pages/`" column (48 / 596 / 734, not 50 / 597 / 737); the census reproduced with one refinement (`sanity_problems.json` moves, 40 duplicates drop, not 41); the layer-4 sweep returned the list the plan has; baseline 941 passed / 5 skipped / 59 subtests, ruff and black clean. All five decisions answered, one at a time: A `book-of-job` / `holman` / `uxlc`; B no `LICENSE`, and the docx does not move — the cord to it is cut; C same relative path, `data/` at `data/`; D `py_ac_loc/` dropped; E two files deleted, the meteg-marks pair lands at `out/`. Two questions parked for Phases 3 and 5, written where those phases will find them |
 | 1 — `.gitattributes` merge in MAM-basics | **DONE 2026-09-03 — verification only.** The destination already covers every incoming binary type that moves; Decision B excludes the sole `.docx`, so no `.gitattributes` edit landed. The scratch checks preserved the source blob for a PNG, a JPG and a CSV, and the MAM-basics suite passed 971 / 5 / 65. The execution record below carries the fresh Scale figures and the working-tree CSV finding. |
 | 2 — Generalize the redirect-stub generator to a table of four | **DONE 2026-09-03.** `RedirectRepo` now makes the source repository, MAM-basics subtree, old URL prefix, frozen-manifest path and clone URL one row; only wlc-utils' frozen row exists. Its 155 stubs were byte-identical before the rename and changed only their generator-comment line after it. The execution record carries the WLC republish commit, the live-baseline result and the missing-subtests finding. |
-| 3 — holman-ketiv-qere, the pilot lane; plus the generated landing page | **IN PROGRESS 2026-09-03 — Steps 1–3 DONE.** MAM-basics landed and published the 379-file `holman/` tree (`3c5dc79`), scoped its licences (`d81b47b`), moved the raw mailboxes, repointed every retained generator, and retired the DOCX extraction half. Steps 4–6 remain. |
+| 3 — holman-ketiv-qere, the pilot lane; plus the generated landing page | **Steps 1–5 DONE 2026-09-03; Step 6 WAITS FOR REVIEW-FOREST TEARDOWN.** MAM-basics landed and published the 379-file `holman/` tree (`3c5dc79`), scoped its licences (`d81b47b`), repointed its generators (`ae663ff`), froze the six-page redirect manifest (`46ba28a`), and removed the redirect host from the workspace (`519e3f4`). The source commits are `723bd73` for the stubs and `ca55c4a` for the empty host. The remaining source-review worktree is detached at `94cab4a`; do not remove the main clone until that forest is retired. |
 | 4 — book-of-job | not started |
 | 5 — UXLC-utils | not started |
 | 6 — Cross-repo bookkeeping, and close the second stage | not started |
@@ -2022,7 +2022,7 @@ is what the generator replaces, with the `Do not edit by hand.` breadcrumb from
 - **The page joins the artifact oracle.** Once generated, "regenerating the tracked artifacts
   byte-identically is the test" reaches it, and this phase must name the command that does so.
 
-### Execution record — Phase 3, Steps 1–3, 2026-09-03
+### Execution record — Phase 3, Steps 1–5, 2026-09-03
 
 Step 1 landed **379 files** under the pure `holman/` and `gh-pages/holman/`
 prefixes in MAM-basics commit `3c5dc79`, then pushed it. The Pages deployment
@@ -2062,7 +2062,34 @@ the public-address and stricter MAM-suggestions boundaries landed in MAM-basics
 with `doc/boj-aleppo-word-crops.md`, `doc/boj-cam1753-word-crops.md`, and
 `doc/boj-leningrad-word-crops.md`; and the source-only generators section was
 dropped. The MAM-basics suite passed **971 passed, 5 skipped, 65 subtests**;
-Ruff and Black passed. No Phase 4 work has started.
+Ruff and Black passed.
+
+Step 4 captured the frozen six-page manifest in MAM-basics commit `46ba28a`.
+The two-row manifest test passed, and the source `gh-pages/` tree built and
+checked as six page stubs plus `404.html`. Source commit `723bd73` modified the
+six HTML paths in place, added the catch-all, and removed **329** non-HTML
+assets. The controlled-URL sweep of all 18 local Git repositories found one
+old-host string: the new manifest's explanation of the redirect. The source
+deployment `33762969813` succeeded after the Step 5 push. Live checks returned
+HTTP 200 with the expected MAM-basics target and fragment-preserving script for
+the normal and percent-encoded JC3 paths; a non-frozen path returned the
+catch-all's expected HTTP 404 and MAM-basics target.
+
+Step 5 removed `../holman-ketiv-qere` from `all-repos.code-workspace` in
+MAM-basics commit `519e3f4`, then source commit `ca55c4a` retained only the
+five redirect-host housekeeping files and seven generated HTML stubs. The
+source deletion measured **45** files rather than the old inventory's 41,
+because the tracked email derivative now has 14 messages rather than 13.
+`README.md` names the redirect, the 2026-09-03 move, the unenumerable
+out-of-reach citations, the live issue tracker, and MAM-basics as the home of
+the data and code; source `CLAUDE.md` states the generated-stub rule and the
+bare-issue convention.
+
+Step 6 is not runnable: the main source checkout is clean, has no stash, and
+its `HEAD` equals `origin/main` at `ca55c4a`, but `git worktree list` still
+shows `C:/Users/BenDe/Documents/Codex/ReviewForests/mam-mega-review-2026-09-01/holman-ketiv-qere`
+detached at `94cab4a`. Do not remove the main clone until that review forest is
+retired. No Phase 4 work has started.
 
 ---
 
