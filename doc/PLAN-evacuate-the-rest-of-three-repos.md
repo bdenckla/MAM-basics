@@ -101,7 +101,7 @@ figures in these plans arriving one more time.
 | 2 — Generalize the redirect-stub generator to a table of four | **DONE 2026-09-03.** `RedirectRepo` now makes the source repository, MAM-basics subtree, old URL prefix, frozen-manifest path and clone URL one row; only wlc-utils' frozen row exists. Its 155 stubs were byte-identical before the rename and changed only their generator-comment line after it. The execution record carries the WLC republish commit, the live-baseline result and the missing-subtests finding. |
 | 3 — holman-ketiv-qere, the pilot lane; plus the generated landing page | **DONE 2026-09-03.** MAM-basics landed and published the 379-file `holman/` tree (`3c5dc79`), scoped its licences (`d81b47b`), repointed its generators (`ae663ff`), froze the six-page redirect manifest (`46ba28a`), and removed the redirect host from the workspace (`519e3f4`). The source commits are `723bd73` for the stubs and `ca55c4a` for the empty host. Step 6 then retired only the clean detached Holman review worktree at `94cab4a` and removed the clean main clone. |
 | 4 — book-of-job | **DONE 2026-09-03.** Ben chose the pure `book-of-job/` prefix: the 694-file published tree is at `gh-pages/book-of-job/`, and the nine retained non-page files are at `book-of-job/out/` and `book-of-job/doc/`. The copies are SHA-256-identical to the source, and the licence rows are scoped. The Pages deployment is live: the landing page, two nested HTML pages, and an Aleppo crop returned HTTP 200. The generators now write only MAM-basics: the Job oracle changed only its known stale WLC-a-notes URL; the UXLC oracle had no diff; all 701 source-artifact timestamps are unchanged. The 175-path manifest and redirect-table row preserve the source host's old published URL set; source stubs are committed and deployed. `doc/book-of-job-artifacts.md` carries the no-program register, the reliable Git-diff procedure, and the rewritten entry-point table; `doc/boj-quirkrec-comments.md` and the moved reading procedures now name their MAM-basics locations. The Book-of-Job workspace entry, clean detached review worktree at `d09b966`, and clean main clone at `c8a6bbf` are gone. Post-removal MAM-basics tests passed 973 / 5, the document generator had no output diff, and Ruff is clean. The UXLC generator was not rerun because its output repository already has 26 modified files. |
-| 5 — UXLC-utils | not started |
+| 5 — UXLC-utils | **IN PROGRESS 2026-09-03 — Steps 1–3 complete.** MAM-basics now holds the authorized pure-prefix landing, and every MAM-basics reader uses it. The authorized temporary codex-index-leningrad sparse vendor now reads MAM-basics rather than UXLC-utils. Steps 4–6 have not begun: the UXLC-utils source checkout has 27 modified tracked artifact paths that must remain untouched. |
 | 6 — Cross-repo bookkeeping, and close the second stage | not started |
 
 ### Assessed 2026-09-02 — ten things that moved while the plan was paused
@@ -2409,6 +2409,40 @@ this list.
    item 1 owns MAM-basics' side of it.
 4. **§"This repo contains no Python. Its generators live in `../MAM-basics/py/`" — nothing to
    carry.** Step 5's prescription for the shrunken file replaces it.
+
+### Execution record — Phase 5, Steps 1–3, 2026-09-03
+
+Step 1 landed 731 UXLC-utils source files from source commit `a2768f4` in MAM-basics
+`db9b0d72`: 184 published files at `gh-pages/uxlc/` and 547 non-page files at
+`uxlc/`. The landing retains only MAM-basics' canonical copies of the 39
+`in/UXLC-39/` XML files, `in/UXLC-misc/all_changes.json`, and
+`in/lci_recs.json`; it did not land UXLC-utils copies of those files. The
+successful MAM-basics Pages deployment `33788739948` served the landing page,
+a nested record, and a PNG byte-identically to the MAM-basics checkout. Step 2
+added the six scoped UXLC-utils licence rows in MAM-basics `7105d71f`.
+
+Step 3, MAM-basics `0210a2a5`, repointed MAM-basics readers to `uxlc/` or the
+existing MAM-basics canonical inputs, removed the self-copying
+`main_wlc_vendor_uxlc.py`, and removed its mega-step registration. The UXLC
+mega generator completed; its only content change was the expected
+`uxlc/out/UXLC-misc/lci_recs.xml` header wording from the selected canonical
+input. The focused NFC source-scope test passed 6 tests, Ruff passed, and the
+Holman verifier rendered its 77-row page against the MAM-basics root.
+
+Ben authorized the temporary sparse-vendor exception on 2026-09-03: retain
+`codex-index-leningrad/UXLC-utils-sparse/` during this phase, but repoint it to
+MAM-basics. MAM-basics' vendor command refreshed the 41-file sparse tree and
+its provenance; codex-index-leningrad `aa603a9` records the new source,
+regenerates its dependent Leningrad index data, and corrects its instructions.
+That commit is not the separate codex-index-leningrad evacuation, which remains
+outside this phase.
+
+Steps 4–6 have not begun. The UXLC-utils checkout currently has 27 modified
+tracked artifact paths, including published pages and generated outputs; this
+phase did not write, stage, discard, or otherwise alter any of them. Do not
+generate source stubs, remove the source tree, update its workspace entry, or
+begin the codex-index-leningrad evacuation until that source working-tree state
+has been resolved by its owner.
 
 ---
 
