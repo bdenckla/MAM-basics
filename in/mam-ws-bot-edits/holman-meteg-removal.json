@@ -1,0 +1,163 @@
+{
+  "summary": "Remove 29 metegs per Daniel Holman's MAM suggestions M1-M16, M19-M22, M25-M31, M33",
+  "edit-kind": "meteg-removal",
+  "edits": {
+    "1Kings": [
+      {
+        "ch": "ז",
+        "old": "בִּיצֻֽקָתֽוֹ׃",
+        "comment": "M1 1Ki 7:24.17"
+      },
+      {
+        "ch": "יא",
+        "old": "צֵֽדְנִיֹּ֖ת",
+        "comment": "M2 1Ki 11:1.13"
+      },
+      {
+        "ch": "יב",
+        "old": "יְרֽוּשָׁל{{מ:ירושלם|ָ|ֽ}}ם׃",
+        "comment": "M3 1Ki 12:18.21; atom spans a template call"
+      },
+      {
+        "ch": "טו",
+        "old": "הַֽחִתִּֽי׃",
+        "comment": "M4 1Ki 15:5.19"
+      },
+      {
+        "ch": "טו",
+        "old": "מֵֽעָלָֽי׃",
+        "comment": "M5 1Ki 15:19.23"
+      },
+      {
+        "ch": "יז",
+        "old": "אֵֽלִיָּֽהוּ׃",
+        "comment": "M6 1Ki 17:16.14"
+      },
+      {
+        "ch": "יח",
+        "old": "הָֽאֲדָמָֽה׃",
+        "comment": "M7 1Ki 18:1.20"
+      },
+      {
+        "ch": "כב",
+        "old": "לַֽיהֹוָ֖ה",
+        "comment": "M8 1Ki 22:7.6"
+      }
+    ],
+    "1Samuel": [
+      {
+        "ch": "יח",
+        "old": "מֵֽהַיּ֥וֹם",
+        "comment": "M9 1Sa 18:9.6"
+      },
+      {
+        "ch": "כז",
+        "old": "וַֽאֲבִיגַ֥יִל",
+        "comment": "M10 1Sa 27:3.15"
+      }
+    ],
+    "2Chronicles": [
+      {
+        "ch": "ו",
+        "old": "וְנָֽתַתָּ֤ה",
+        "comment": "M11 2Ch 6:27.17"
+      },
+      {
+        "ch": "ו",
+        "old": "וְיֵֽרָק֜וֹן",
+        "comment": "M12 2Ch 6:28.9"
+      },
+      {
+        "ch": "יח",
+        "old": "הׇֽחֳלֵֽיתִי",
+        "comment": "M13 2Ch 18:33.21; the ד parameter of its מ:קמץ call"
+      },
+      {
+        "ch": "יח",
+        "old": "הָֽחֳלֵֽיתִי",
+        "comment": "M13 2Ch 18:33.21; the ס parameter of its מ:קמץ call"
+      },
+      {
+        "ch": "כד",
+        "old": "יְהֽוֹיָדָ֣ע",
+        "comment": "M14 2Ch 24:25.13"
+      },
+      {
+        "ch": "לב",
+        "old": "מֵֽעִמּֽוֹ׃",
+        "comment": "M15 2Ch 32:7.18"
+      }
+    ],
+    "2Kings": [
+      {
+        "ch": "ז",
+        "old": "וַיֵּֽצְא֤וּ",
+        "comment": "M16 2Ki 7:12.19"
+      }
+    ],
+    "2Samuel": [
+      {
+        "ch": "יא",
+        "old": "הַֽחִתִּֽי׃",
+        "comment": "M19 2Sa 11:3.14"
+      },
+      {
+        "ch": "יב",
+        "old": "יְרֽוּשָׁל{{מ:ירושלם|ָ|ֽ}}ם׃",
+        "comment": "M20 2Sa 12:31.25; atom spans a template call"
+      },
+      {
+        "ch": "טו",
+        "old": "יְרֽוּשָׁל{{מ:ירושלם|ָ|ֽ}}ם׃",
+        "comment": "M21 2Sa 15:37.8; atom spans a template call"
+      },
+      {
+        "ch": "יח",
+        "old": "לֹֽא־יָשִׂ֧ימוּ",
+        "comment": "M22 2Sa 18:3.9"
+      }
+    ],
+    "Judges": [
+      {
+        "ch": "א",
+        "old": "יְרֽוּשָׁל{{מ:ירושלם|ַ|֖}}ם",
+        "comment": "M25 Judg 1:7.21; atom spans a template call"
+      },
+      {
+        "ch": "א",
+        "old": "הֽוֹרִישֽׁוֹ׃",
+        "comment": "M26 Judg 1:32.9"
+      },
+      {
+        "ch": "ה",
+        "old": "חָֽדְל֖וּ",
+        "comment": "M27 Judg 5:6.7"
+      },
+      {
+        "ch": "ה",
+        "old": "יָֽרְד֥וּ",
+        "comment": "M28 Judg 5:11.13"
+      },
+      {
+        "ch": "ו",
+        "old": "בְנֵֽי־יִשְׂרָאֵ֛ל",
+        "comment": "M29 Judg 6:1.2"
+      },
+      {
+        "ch": "ו",
+        "old": "וַיַּֽחֲנ֣וּ",
+        "comment": "M30 Judg 6:4.1"
+      },
+      {
+        "ch": "ו",
+        "old": "יַֽעֲל֜וּ",
+        "comment": "M31 Judg 6:5.4"
+      },
+      {
+        "ch": "כא",
+        "old": "הָֽעֵדָ֔ה",
+        "comment": "M33 Judg 21:16.3"
+      }
+    ]
+  }
+}
