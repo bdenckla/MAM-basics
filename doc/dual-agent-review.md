@@ -115,6 +115,12 @@ Each finding in the reconciliation carries a disposition, written down: fixed, o
 reason. Without that, an agent silently drops the findings it does not like and reports that it
 addressed the review.
 
+**Run the reconciliation as a fresh, post-review task.** Start the task only after both the Claude
+and Codex findings files are complete and frozen. The task may read both files and append the
+four-bucket table and dispositions to the Claude file, but it does not rewrite either agent's
+original findings. The reconciliation is comparison work, not a third review or a silent revision
+of either independent result.
+
 ## Name the Codex file `doc/codex-review-findings-<date>.md`, and do not rename the Claude series
 
 The Codex counterpart takes the prefixed name `doc/codex-review-findings-<date>.md`. The existing
