@@ -53,7 +53,7 @@ after its breadcrumb is a Ben decision at that lane, not an assumption.
 | Phase | State |
 | --- | --- |
 | 0 — Preflight: fresh baselines, readiness, and duplicate-data decisions | **DONE 2026-09-03.** The source trees are clean; the fresh MAM-basics suite passed 975 / 5 / 65; the two duplicate-data decisions are recorded for the Aleppo and Cam1753 lanes. |
-| 1 — codex-index-leningrad | Not started. Its lane is first and archives the source repository after the verified Empty step. |
+| 1 — codex-index-leningrad | **DONE 2026-09-03.** The five-artifact `leningrad/` tree is live; the source is an archived breadcrumb history, its primary clone is gone, and its retained review-forest input stays pinned. |
 | 2 — codex-index-aleppo | Not started. Its lane lands `aleppo/` plus `gh-pages/aleppo/`, freezes the three-page redirect manifest, and leaves the source repository alive. |
 | 3 — codex-index-cam1753 | Not started. Its lane lands `cam1753/`, answers the page-image decision recorded below, and archives the source repository after the verified Empty step. |
 | 4 — diffable-pointed-hebrew | Not started. Its lane resolves the eight divergent `mb_cmn` copies before moving the root command to `py/main_diffable_pointed_hebrew.py`. |
@@ -158,9 +158,43 @@ Use the three recorded Leningrad oracles and the layer-1 manifest. Repoint the
 two relative cross-links in `page-snips/README.md`; do not leave a path from
 one evacuated repository pointing at another. Empty the source to its dated
 breadcrumb, push and verify it on `origin/main`, archive the GitHub repository,
-then remove only a clean primary clone after `git worktree list` proves no
-forest worktree survives. Remove its workspace folder and visibility-map entry
+then remove only a clean primary clone after `git worktree list` identifies
+every forest worktree; preserve a retained forest input rather than treating it
+as a primary clone. Remove its workspace folder and visibility-map entry
 in the same Empty commit; no `frozen_repos` entry is added.
+
+### Execution record — Phase 1, 2026-09-03
+
+Phase 1 re-measured clean starting heads at MAM-basics `bc358cd` (4,152 tracked
+files, 429,477,537 bytes and 1,159 tracked Python files) and
+codex-index-leningrad `aa603a9` (51 tracked files, 13,388,571 bytes and no
+tracked Python). The Land manifest retained five artifacts under `leningrad/`:
+the three `lenin-wiki/` index files, the hand-maintained crop, and its README.
+All five destination blobs matched the source blobs. The 42-file
+`UXLC-utils-sparse/` tree and four root control/documentation files did not
+land; no source Pages tree or licence-inventory row applied.
+
+MAM-basics commits `84b92fac` (Land) and `079b1e63` (Repoint) moved the files,
+retired the sparse vendor and its entry point, and made the index generator
+read MAM-basics' canonical UXLC data directly. The generator reproduced all
+three index artifacts with zero diff before and after the source removal; the
+source mtime comparison after repoint also reported zero changed files. Black
+on the edited Python files and `ruff check py` passed.
+
+Source commit `86f88c0` reduced codex-index-leningrad to its dated README. Its
+`HEAD` and `origin/main` were identical at `86f88c0`, no stash or unpushed
+branch remained, and GitHub reported `isArchived: true`. `git worktree list`
+found a clean detached review-forest input at
+`C:/Users/BenDe/Documents/Codex/ReviewForests/mam-mega-review-2026-09-01/codex-index-leningrad`,
+pinned to manifest commit `2abd7f6`; the phase preserved that worktree and
+removed only the primary clone. The sole untracked primary-clone residue was
+an obsolete `.novc/phase5_sparse_vendor_commit_message.txt`, which left with
+the explicitly removed clone.
+
+After removal, the generator again left all three index artifacts unchanged,
+and the canonical MAM-basics suite passed **975 passed, 5 skipped, 65 subtests
+passed** in 147.79 seconds. The workspace and `repo_visibility` entries are
+removed without a `frozen_repos` entry. Phase 2 has not started.
 
 ## Phase 2 — codex-index-aleppo
 

@@ -570,6 +570,27 @@ again after the source repository's Pages deployment succeeds. `../UXLC-utils` w
 `all-repos.code-workspace` before the primary clone was removed, so workspace sweeps do not name a
 missing directory.
 
+## codex-index-leningrad is absent from GitRepos
+
+**codex-index-leningrad is not in the roster.** Phase 1 of
+`doc/PLAN-evacuate-the-codex-index-trio-and-diffable-pointed-hebrew.md` moved its
+five retained files into `leningrad/`, repointed
+`py/main_lenin_wikisource_page.py` to MAM-basics' canonical
+`uxlc/data/lci_augrecs.json`, and archived the empty source repository on 2026-09-03.
+The archived repository keeps its history and closed issue tracker; no source Pages site or
+redirect manifest exists.
+
+Nothing in the ordinary suite resolves a Leningrad sibling. The Leningrad generator writes the
+three `leningrad/lenin-wiki/` artifacts, while the `page-snips/` crop is hand-maintained. The
+former repository's eight Python modules remain in MAM-basics' `py/` and stay in the source-lint
+scope through `py/lenin_paths.py`.
+
+The archived primary clone was removed from `C:/Users/BenDe/GitRepos` after the move. The retained
+review input at
+`C:/Users/BenDe/Documents/Codex/ReviewForests/mam-mega-review-2026-09-01/codex-index-leningrad`
+is a separate, clean detached worktree pinned to `2abd7f6`; preserve it with its review forest
+rather than treating it as a roster clone.
+
 ## There is no `wlc-koren-12th` repo
 
 `~/GitRepos/wlc-koren-12th` was never a repo of its own. It was a **worktree of wlc-utils** on
@@ -600,12 +621,12 @@ Run tests via the canonical entrypoint, from the repo root (`~/GitRepos/MAM-basi
 .venv/Scripts/python.exe py/main_test.py
 ```
 
-**In a worktree, set `REPOS_ROOT` first, or the totals mean nothing.** Eleven test
-files read six sibling repos — MAM-parsed, MAM-simple, MAM-with-doc, MAM-private,
-codex-index-leningrad and diffable-pointed-hebrew — and `paths.repos_root()` resolves
-those under the worktree's own parent, `.claude/worktrees/`, where none of them is;
-measured 2026-09-03, that turns a clean run of **973 passed, 5 skipped** into 904
-passed, 34 failed and 35 errors, every failure being the same missing directory.
+**In a worktree, set `REPOS_ROOT` first, or the totals mean nothing.** Ten test
+files read five sibling repos — MAM-parsed, MAM-simple, MAM-with-doc, MAM-private
+and diffable-pointed-hebrew — and `paths.repos_root()` resolves those under the
+worktree's own parent, `.claude/worktrees/`, where none of them is. A fresh primary
+checkout run after the Leningrad move passed **975 passed, 5 skipped, 65 subtests**
+on 2026-09-03.
 
 ```powershell
 $env:REPOS_ROOT="C:/Users/BenDe/GitRepos"; C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_test.py
