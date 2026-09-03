@@ -765,3 +765,253 @@ phase-state section records input revisions, the exact commands run, measured
 figures, changed paths, and any explained mismatch with the historical
 snapshot. After final verification, commit only the intended paths on main and
 push main. Do not stage unrelated changes that were already present.
+
+## Phase state
+
+Sections are added as phases complete, newest phase last. Phases 1 and 2 have
+not run: the programme's item 5 has to precede them.
+
+### Phase 3 done 2026-09-03: all thirty records matched, and the check will not run again
+
+**Phase 3 HAS BEEN RUN AND PASSED**, in a worktree of
+C:/Users/BenDe/GitRepos/MAM-basics on branch claude/great-nash-3a9496. The
+programme's item 3 had not run when it did, so the thirty mgketer diff cards it
+reads were all still there. Nothing about this run is repeatable: items 3
+through 7 remove exactly those thirty cards, and this section is therefore the
+only surviving record of the result.
+
+Input revisions, both clean trees:
+
+1. MAM-basics `74c16b3e`, the worktree and the primary clone agreeing.
+2. MAM-private `0f37fe3`, holding the mgketer reports the run read.
+
+The exact command, from the worktree root:
+
+~~~powershell
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_verify_meteg_vs_mgketer.py --mgketer-root C:/Users/BenDe/GitRepos/MAM-private/mgketer --report-path .novc/meteg-vs-mgketer.txt
+~~~
+
+Measured figures:
+
+1. **30 of 30 records matched exactly one mgketer diff card**, exit code 0.
+2. **The derived roster equals the 2026-09-03 baseline**: M1-M16, M18-M23,
+   M25-M31 and M33. It was derived from the suggestions data by the meteg
+   arithmetic, never assumed, and the other four M records — M17, M24, M32 and
+   M34 — fell outside it, exactly as Phase 5 expects.
+3. **The direction tally is 29 removals and one addition**, matching the
+   baseline. The one addition is M23 at Isaiah 23:12, whose card
+   `I23:12#e5e7ccd9` has the meteg on the mgketer side and not on the MAM side.
+4. **Every one of the thirty diff hashes equals the one
+   [`holman-meteg-vs-mgketer.md`](holman-meteg-vs-mgketer.md) recorded by hand**,
+   M1's `1K7:24#8701a1ff` through M33's `Ju21:16#00d8d510`.
+5. **The display-artifact allowlist has one entry and it fired**: M13, at
+   2 Chronicles 18:33, "qamats qatan read as qamats". Holman writes both forms
+   with U+05C7; mgketer's card displays U+05B8 on both sides, its MAM string
+   having been massaged (the card says so in a tooltip and keeps the original in
+   its own span) and its Aleppo transcription having the plain qamats with no
+   massaging. The meteg claim agrees on both sides. No other record needed any
+   normalization, and an allowlist entry no record needs is a failure.
+6. **mgketer's two Tanakh-wide meteg totals are 67 and 5**, `mam-adds-meteg` and
+   `mgketer-adds-meteg`, which is what that note recorded and what the
+   programme's item 7 expects to fall. They are reported, not asserted: they
+   count the whole comparison rather than these thirty records.
+
+Two records needed care and both came out right:
+
+1. **M22, 2 Samuel 18:3**, matched `2S18:3#df68039b`, the compound with a darga,
+   and not `2S18:3#d300caba`, the look-alike compound with a mahapakh that is
+   filed in the opposite category and that no Holman record covers.
+2. **M18, 2 Kings 21:12**, matched `2K21:12#65ca7700` and not the second card at
+   that verse, `2K21:12#0ebb56b0`, which is about a different atom.
+
+Both were checked rather than assumed. Swapping M22's darga for the mahapakh in
+a throwaway control made the run fail with both candidate cards listed, so the
+match discriminates on the accentuation and not on the letters alone. Two more
+controls fire: a `--mgketer-root` naming no reports exits 1 rather than
+reporting green, and omitting the flag is an argument error.
+
+Changed paths, all in MAM-basics:
+
+1. `py/hkq_cmn/mam_meteg_suggestions.py` — new. The roster derivation, factored
+   out of `py/ws/holman_meteg_edit_spec.py` so the spec builder and the verifier
+   share one partition rather than keeping two copies of the arithmetic.
+2. `py/hkq_cmn/verify_meteg_suggestions_vs_mgketer.py` — new. The verifier.
+3. `py/main_verify_meteg_vs_mgketer.py` — new. Its own entry point, wired into
+   nothing.
+4. `py/ws/holman_meteg_edit_spec.py` — its `_direction` and `_load_meteg_cases`
+   removed in favour of the shared module. Item 2's check-only gate re-runs
+   identically afterwards: 30 records, 29 removal and 1 addition, 29 entries
+   across 6 books, all checks passed.
+
+`py/main_verify_and_render_table.py` is untouched, per Ben's decision that the
+check stay out of the renderer.
+
+### Phase 4 done 2026-09-03: both renames applied, and the per-row ketiv/qere vocabulary untouched
+
+**Phase 4 HAS BEEN DONE.** Both renames are in, in one commit, and the two
+Holman pages are re-rendered. Input revision: MAM-basics `8184104a`, this plan's
+Phase 3 commit, in the same worktree.
+
+The rendering run, from the worktree root, with `REPOS_ROOT` set so the
+MAM-parsed and UXLC verification resolves:
+
+~~~powershell
+$env:REPOS_ROOT="C:/Users/BenDe/GitRepos"; C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_verify_and_render_table.py
+~~~
+
+**The same command was run BEFORE the edit and produced no diff at all**, so the
+tracked pages were current and every line the rename changed is the rename's.
+
+Rename A, the page identity, three strings in `py/py_render/rt_html.py`:
+
+| constant | before | after |
+|---|---|---|
+| `MAIN_PAGE_TITLE` | `Holman k/q + MAM suggestions` | `Holman MAM suggestions` |
+| `MAIN_PAGE_HEADING` | `Holman's ketiv/qere review and MAM suggestions` | `Holman MAM suggestions` |
+| `SUPPRESSED_PAGE_TITLE` | `Holman k/q - Suppressed` | `Holman MAM suggestions - Archived` |
+
+Rename B, the archive label, four reader-facing values in the same file:
+
+| site | before | after |
+|---|---|---|
+| `SUPPRESSED_NAV_LABEL` | `Suppressed` | `Archived` |
+| `SUPPRESSED_PAGE_TITLE` | (rename A's third row) | (rename A's third row) |
+| `SUPPRESSED_PAGE_HEADING` | `Suppressed` | `Archived` |
+| `records_heading=` at the archive render call | `Suppressed Records` | `Archived Records` |
+
+Measured in the rendered pages:
+
+1. **Five reader-visible "Suppressed" occurrences before, none after**, which is
+   the count the terminology note's own enumeration gives and the count its prose
+   miscalls six. One was in `table_data_findings.html`, the nav link; four were
+   in `table_data_findings_suppressed.html`, its `<title>`, its nav link, its
+   `<h1>` and its "Suppressed Records" section title.
+2. **Three reader-visible rename-A occurrences before, all three renamed**: the
+   main page's `<title>` and `<h1>`, and the archive page's `<title>`. The
+   archive page's `<h1>` was the bare "Suppressed" and belongs to rename B.
+3. **Seven changed lines across the two pages and nothing else**, three in the
+   main page and four in the archive page.
+4. **The generated archive filename is unchanged**,
+   `table_data_findings_suppressed.html`, and so are the hrefs and the redirect
+   script that name it.
+
+**The per-row ketiv/qere vocabulary is untouched.** Counted before and after over
+`table_data_findings.html`: 239 lines matching "ketiv" before, 238 after, the one
+lost line being the `<h1>` rename A replaced. `table_data_findings_suppressed.html`
+stands at 81 lines both before and after, its `<h1>` never having named
+ketiv/qere. The load-bearing machinery is intact: 120 lines with the
+`kind-ketiv-qere` filter ids, 60 with the `cat-kind-ketiv-qere` CSS classes, 59
+with `github.com/bdenckla/holman-ketiv-qere` issue URLs, 59 "UXLC ketiv" column
+names, and `HaKeter ketiv` still in `py/py_render/rt_comparison_table.py`.
+
+Internal names keep the older word, which is what Ben left open rather than
+requiring to change: the `SUPPRESSED_*` constants, the `is_suppressed` predicate,
+`suppressed_output_path`, the `"suppressed"` state value, and the filename. Three
+comments that said "the Suppressed page" now say "the Archived page", and the
+comment above the page-identity constants states Ben's 2026-09-03 reason in place
+of the 2026-09-02 one it overturns, keeping its still-true half about the
+filename.
+
+**One inconsistency this rename creates is RAISED AND NOT FIXED, because the
+wording is Ben's to choose.** `gh-pages/holman/index.html`, which is
+hand-authored rather than generated, names the main page "Ketiv/qere review, and
+suggestions for MAM" at its line 60 — the compound framing rename A retired. The
+page it links to now calls itself "Holman MAM suggestions". Copying that title
+is the obvious repair, and it is the rule
+`py/tests/test_site_index_links.py::test_the_misc_titles_are_the_pages_own_titles`
+enforces for the Misc entries of the site's landing page; but this plan's Phase 4
+is scoped to `py/py_render/rt_html.py` and to a measured three and five rendered
+occurrences, and the entry's descriptive note below the title is accurate as it
+stands.
+
+### Phase 5 done 2026-09-03: the four boundary dispositions read as expected, and nothing was edited
+
+**Phase 5 HAS BEEN RUN AND FOUND NOTHING TO REPORT**, which is what a scope guard
+passing looks like. It edited nothing. Input revision: MAM-basics `8184104a`,
+read in the same worktree.
+
+Read: `py/hkq_cmn/mam_suggestion_dispositions.py`, and the four records as
+`holman/docs-not-served/mam_suggestions.json` carries them after the ingest.
+
+`DISPOSITION_BY_REF` has exactly four keys, and each reads as the plan requires.
+The map is keyed by the reference as Holman sent it, so the table below gives
+that key rather than the displayed "BookName ch:v.atom" form:
+
+| M | key | outcome | summary | decided |
+|---|---|---|---|---|
+| M17 | `2Ki 17:15.15` | Suggestion not taken | MAM is right; the geresh is misplaced in the Jerusalem Crown | Seth (Avi) Kadish, 2026-08-28 |
+| M24 | `Josh 10:12.3` | Suggestion taken | MAM now has the pashta repeated over the ש (shin) | Seth (Avi) Kadish, 2026-08-28 |
+| M32 | `Judg 10:11.1` | Suggestion not taken | MAM is right; the merkha is misplaced in the Jerusalem Crown | Seth (Avi) Kadish, 2026-08-28 |
+| M34 | `Zech 2:4.11` | Suggestion taken | MAM now has the munaḥ on the ר (resh) | Seth (Avi) Kadish, 2026-08-28 |
+
+So M17 and M32 remain declined and M24 and M34 keep the dispositions they had.
+All four carry `state` `"suppressed"`, the one state there is.
+
+**No meteg record has a disposition, and none was added.** The four keys above
+are the whole of `DISPOSITION_BY_REF`, so none of M1-M16, M18-M23, M25-M31 or M33
+has one. Archiving those thirty is the programme's item 6 and is not this plan's
+to do.
+
+**These four are exactly the records Phase 3's derived roster excluded.** Phase 3
+partitioned the 34 M records by the meteg arithmetic and got 30; the four it left
+are M17, M24, M32 and M34, the four in the table above. The two phases therefore
+partition one set of 34 exhaustively, as this plan's Phase 3 says they must, and
+that was confirmed by measurement rather than assumed.
+
+**Joshua 10:12 is expected to go on showing a mgketer diff, and that is not a
+reason to add a suppression entry.** M24's change gives MAM a pashta with its
+stress helper — the repeated copy that marks the stress the pashta itself does
+not, sharing the pashta's codepoint — where mgketer's transcription of the Aleppo
+Codex has the pashta alone. The repetition is a MAM notational convention that
+the source manuscripts are not expected to have, so a diff at that atom after a
+later pipeline refresh is correct rather than a defect. The programme's item 4
+says the same. A later pipeline executor should remeasure M24 and M34 at the
+actual source revisions rather than trust a date or a snapshot in an evidence
+note.
+
+### Phase 6 done 2026-09-03: the site index is checked in both directions now
+
+**Phase 6 HAS BEEN DONE**, as its own commit, separate from Phase 4's renames.
+Input revision: MAM-basics `6a1c0655`, this plan's Phase 5 commit, in the same
+worktree. Changed path: `py/tests/test_site_index_links.py`, and nothing else.
+
+What the file checked before was entry to file:
+`test_every_in_site_link_names_a_tracked_page` asserts that every index link
+pointing into this repository's `gh-pages/` names a file that is published. The
+new `test_every_deploy_root_page_is_named_by_an_entry_or_excluded_by_name`
+asserts the reverse: every tracked `gh-pages/*.html` with no directory part is
+either named by an authored entry or listed by name in
+`_UNLISTED_DEPLOY_ROOT_PAGES`.
+
+**The exclusion tuple has exactly one member, `index.html`**, and its reason
+stands beside it in the source: `index.html` IS the index, so an entry naming it
+would be the page linking to itself. Nothing else is excluded. Measured
+2026-09-03, `gh-pages/` tracks three files with no directory part —
+`index.html`, `style.css` and `unicode-proposals.html` — of which two end in
+`.html`, so the check runs on `index.html` (excluded) and
+`unicode-proposals.html` (named by the `_UNICODE` section's one entry).
+`style.css` is not an HTML page and never enters the set.
+
+Three things about the shape are worth recording, since each was a choice:
+
+1. **The check stops at the deploy root and does not walk the tree.** The pages
+   under `gh-pages/wlc/`, `gh-pages/holman/` and `gh-pages/book-of-job/` are
+   reached through their own subtree indexes rather than through an authored
+   entry, so a whole-tree walk would fail immediately and for the wrong reason.
+2. **A stale exclusion fails too.** An excluded name that has stopped being a
+   tracked deploy-root page is asserted against, so the tuple cannot accumulate
+   dead names and quietly stop covering things.
+3. **The floor is two deploy-root pages**, asserted before anything else, on the
+   file's standing convention that a green run which verified nothing is a
+   failure. Two is the index plus at least one page it names; it guards against a
+   broken walk rather than inventorying the root.
+
+Three throwaway negative controls confirm the test is not vacuously green, each
+raising with the message it should: a fabricated unlisted deploy-root page, a
+fabricated stale exclusion, and a walk cut down to one page. The three tests in
+the file pass on the live tree.
+
+**Phase 1 will add the deploy root's second authored page**,
+`gh-pages/post-stress-meteg.html`, and this check is what will then require it to
+have a `site_data` entry rather than being published unreachable. That is the gap
+Ben asked to close, and it is closed before the page arrives rather than after.

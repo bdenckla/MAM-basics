@@ -30,12 +30,30 @@ distributed to the authored sections instead, so the four that moved into ``site
 of those four left the page again with that day's Misc trim, which cut every Misc entry
 another listed document reaches; ``almost-errors`` is the one that stayed.
 
+BOTH DIRECTIONS ARE CHECKED SINCE 2026-09-03, and the second one is what Ben asked for
+when this repository's deploy root gained a second authored page.  Entry to file says
+that every index link naming a page here names a page that exists; file to entry says
+that every page published at the deploy root is named by an entry or is excluded BY
+NAME.  Without the second, a page generated at the deploy root with no ``site_data``
+entry is published and unreachable from the index, and nothing says so.
+
+WHY THE REVERSE CHECK STOPS AT THE DEPLOY ROOT.  The pages under ``gh-pages/wlc/``,
+``gh-pages/holman/`` and ``gh-pages/book-of-job/`` are reached through their own subtree
+indexes rather than through an authored entry, so walking the whole tree would fail
+immediately and for the wrong reason.
+
+WHY THE EXCLUSIONS ARE NAMED RATHER THAN INFERRED.  A deliberate omission must not be
+indistinguishable from an accident, which is what any rule of the form "skip the pages
+nothing names" would make it.  So the excluded pages are written out one at a time with
+the reason beside each, and an excluded name that has stopped being a tracked deploy-root
+page fails too -- a register nothing prunes is how a check quietly stops covering things.
+
 TRACKED, NOT MERELY PRESENT.  ``.github/workflows/pages.yml`` deploys what is committed, so
 a link to a generated-but-untracked page would 404 for every reader while resolving fine on
 the machine that generated it.  ``git ls-files`` is therefore the right oracle.
 
-A GREEN RUN THAT VERIFIED NOTHING IS A FAILURE.  Both tests assert their input is the size it
-should be before asserting anything about it.
+A GREEN RUN THAT VERIFIED NOTHING IS A FAILURE.  Every test here asserts its input is the
+size it should be before asserting anything about it.
 """
 
 from __future__ import annotations
@@ -57,6 +75,17 @@ _TITLE_RE = re.compile(r'^_TITLE = "(.*)"$', re.M)
 # if the walk ever returns a handful, it is walking the wrong thing.  Do not raise this to
 # the exact count: it is a floor guarding against a broken walk, not an inventory.
 _MIN_AUTHORED_ANCHORS = 25
+
+# The deploy root holds index.html and unicode-proposals.html as of 2026-09-03, so two is
+# the floor: the index itself, and at least one page it names.  Like the anchor floor
+# above it guards against a broken walk rather than inventorying the root.
+_MIN_DEPLOY_ROOT_PAGES = 2
+
+# Deploy-root pages that no authored entry names, each with the reason it does not.
+_UNLISTED_DEPLOY_ROOT_PAGES = (
+    # The index itself.  An entry for it would be the page linking to itself.
+    "index.html",
+)
 
 
 def _tracked_pages(repo_root: Path) -> set[str]:
@@ -87,6 +116,20 @@ def _in_site_target(href: str) -> str | None:
     return f"{target}index.html" if target.endswith("/") else target
 
 
+def _deploy_root_pages(tracked: set[str]) -> set[str]:
+    """The tracked pages at the top of ``gh-pages/``: an HTML file with no directory."""
+    return {name for name in tracked if name.endswith(".html") and "/" not in name}
+
+
+def _in_site_targets() -> set[str]:
+    """Every ``gh-pages/``-relative path the landing page's authored data names."""
+    return {
+        _in_site_target(anchor.href)
+        for anchor in _authored_anchors()
+        if _in_site_target(anchor.href) is not None
+    }
+
+
 def test_every_in_site_link_names_a_tracked_page():
     """A link into this site's own gh-pages must name a file that is published."""
     anchors = _authored_anchors()
@@ -111,6 +154,31 @@ def test_every_in_site_link_names_a_tracked_page():
         f" index would 404 on them: {missing}. Either the page moved and the entry in"
         " py/author_site/site_data.py wants repointing, or the page was dropped and the"
         " entry with it."
+    )
+
+
+def test_every_deploy_root_page_is_named_by_an_entry_or_excluded_by_name():
+    """A page published at the deploy root must be reachable from the index."""
+    tracked = _tracked_pages(paths.repo_root())
+    assert tracked, "no files tracked under gh-pages/: wrong repo root?"
+    pages = _deploy_root_pages(tracked)
+    assert len(pages) >= _MIN_DEPLOY_ROOT_PAGES, (
+        "fewer deploy-root pages than gh-pages/ has ever held, so the walk is walking"
+        f" the wrong thing: {sorted(pages)}"
+    )
+    excluded = set(_UNLISTED_DEPLOY_ROOT_PAGES)
+    stale = sorted(excluded - pages)
+    assert not stale, (
+        "_UNLISTED_DEPLOY_ROOT_PAGES names page(s) this repo no longer publishes at the"
+        f" deploy root: {stale}. Drop the entry, or repoint it at the page's new name;"
+        " a register nothing prunes stops saying anything."
+    )
+    unreachable = sorted(pages - _in_site_targets() - excluded)
+    assert not unreachable, (
+        "page(s) published at the deploy root that no authored entry names, so a reader"
+        f" of the index cannot reach them: {unreachable}. Either add an entry in"
+        " py/author_site/site_data.py, or, if the page is deliberately unlisted, add it"
+        " to _UNLISTED_DEPLOY_ROOT_PAGES above with the reason beside it."
     )
 
 

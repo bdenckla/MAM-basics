@@ -68,17 +68,16 @@ import json
 import os
 import re
 
-import hkq_paths
+from hkq_cmn import mam_meteg_suggestions as mms
 from mb_cmn import bib_locales as tbn
 from mb_cmn import file_io
-from mb_cmn import hebrew_points as hpo
 from mb_cmn import hebrew_punctuation as hpu
 from mb_cmn import hebrew_verse_numerals as hvn
 from mb_cmn import uni_denorm
 from ws import ws_fmt_2_back_to_wikitext as btw
 from ws import ws_get_bk_in_both_fmts as wsin
 
-METEG = hpo.MTGOSLQ
+METEG = mms.METEG
 
 _WS_IN_PATH = "in/mam-ws"
 _SPEC_DIR = "in/mam-ws-bot-edits"
@@ -146,7 +145,7 @@ def add_args(parser) -> None:
 
 def run(args, _extra_args=None) -> None:
     """Check the two specs, and rebuild them first when asked."""
-    cases = _load_meteg_cases()
+    cases = mms.load_meteg_cases()
     chapters = _load_chapters(cases)
     removals, additions = _partition(cases)
     print(
@@ -191,27 +190,9 @@ def _read_json(path):
         return json.load(json_in_fp)
 
 
-def _load_meteg_cases():
-    """The 30 cases whose MAM and comparison forms differ by one meteg."""
-    all_cases = _read_json(hkq_paths.mam_suggestions_json_path())["cases"]
-    cases = [case for case in all_cases if _direction(case) is not None]
-    cases.sort(key=lambda case: case["case_number"])
-    return cases
-
-
-def _direction(case):
-    """Say "removal" or "addition", or None for a record that is not about a meteg."""
-    mam, comparison = case["mam_form"], case["comparison_form"]
-    if METEG in mam and mam.replace(METEG, "", 1) == comparison:
-        return "removal"
-    if METEG in comparison and comparison.replace(METEG, "", 1) == mam:
-        return "addition"
-    return None
-
-
 def _partition(cases):
-    removals = [case for case in cases if _direction(case) == "removal"]
-    additions = [case for case in cases if _direction(case) == "addition"]
+    removals = [case for case in cases if mms.direction(case) == mms.REMOVAL]
+    additions = [case for case in cases if mms.direction(case) == mms.ADDITION]
     return removals, additions
 
 
@@ -249,7 +230,7 @@ def _check_arithmetic(cases):
     problems = []
     for case in cases:
         mam, comparison = case["mam_form"], case["comparison_form"]
-        if _direction(case) == "removal":
+        if mms.direction(case) == mms.REMOVAL:
             got, want = mam.replace(METEG, "", 1), comparison
         else:
             got, want = comparison.replace(METEG, "", 1), mam
