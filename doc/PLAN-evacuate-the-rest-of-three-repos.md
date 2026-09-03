@@ -85,7 +85,7 @@ figures in these plans arriving one more time.
 | 1 — `.gitattributes` merge in MAM-basics | **DONE 2026-09-03 — verification only.** The destination already covers every incoming binary type that moves; Decision B excludes the sole `.docx`, so no `.gitattributes` edit landed. The scratch checks preserved the source blob for a PNG, a JPG and a CSV, and the MAM-basics suite passed 971 / 5 / 65. The execution record below carries the fresh Scale figures and the working-tree CSV finding. |
 | 2 — Generalize the redirect-stub generator to a table of four | **DONE 2026-09-03.** `RedirectRepo` now makes the source repository, MAM-basics subtree, old URL prefix, frozen-manifest path and clone URL one row; only wlc-utils' frozen row exists. Its 155 stubs were byte-identical before the rename and changed only their generator-comment line after it. The execution record carries the WLC republish commit, the live-baseline result and the missing-subtests finding. |
 | 3 — holman-ketiv-qere, the pilot lane; plus the generated landing page | **DONE 2026-09-03.** MAM-basics landed and published the 379-file `holman/` tree (`3c5dc79`), scoped its licences (`d81b47b`), repointed its generators (`ae663ff`), froze the six-page redirect manifest (`46ba28a`), and removed the redirect host from the workspace (`519e3f4`). The source commits are `723bd73` for the stubs and `ca55c4a` for the empty host. Step 6 then retired only the clean detached Holman review worktree at `94cab4a` and removed the clean main clone. |
-| 4 — book-of-job | **Steps 1–5 DONE 2026-09-03; Step 6 waits on the detached Book-of-Job ReviewForest worktree.** Ben chose the pure `book-of-job/` prefix: the 694-file published tree is at `gh-pages/book-of-job/`, and the nine retained non-page files are at `book-of-job/out/` and `book-of-job/doc/`. The copies are SHA-256-identical to the source, and the licence rows are scoped. The Pages deployment is live: the landing page, two nested HTML pages, and an Aleppo crop returned HTTP 200. The generators now write only MAM-basics: the Job oracle changed only its known stale WLC-a-notes URL; the UXLC oracle had no diff; all 701 source-artifact timestamps are unchanged. The full suite passed 972 / 5 / 65, Ruff is clean, and mark-order coverage changed as expected from 509 to 460 files. The 175-path manifest and redirect-table row preserve the source host's old published URL set; source stubs are committed and deployed. `doc/book-of-job-artifacts.md` carries the no-program register, the reliable Git-diff procedure, and the rewritten entry-point table; `doc/boj-quirkrec-comments.md` and the moved reading procedures now name their MAM-basics locations. The Book-of-Job workspace entry is gone before clone removal. |
+| 4 — book-of-job | **DONE 2026-09-03.** Ben chose the pure `book-of-job/` prefix: the 694-file published tree is at `gh-pages/book-of-job/`, and the nine retained non-page files are at `book-of-job/out/` and `book-of-job/doc/`. The copies are SHA-256-identical to the source, and the licence rows are scoped. The Pages deployment is live: the landing page, two nested HTML pages, and an Aleppo crop returned HTTP 200. The generators now write only MAM-basics: the Job oracle changed only its known stale WLC-a-notes URL; the UXLC oracle had no diff; all 701 source-artifact timestamps are unchanged. The 175-path manifest and redirect-table row preserve the source host's old published URL set; source stubs are committed and deployed. `doc/book-of-job-artifacts.md` carries the no-program register, the reliable Git-diff procedure, and the rewritten entry-point table; `doc/boj-quirkrec-comments.md` and the moved reading procedures now name their MAM-basics locations. The Book-of-Job workspace entry, clean detached review worktree at `d09b966`, and clean main clone at `c8a6bbf` are gone. Post-removal MAM-basics tests passed 973 / 5, the document generator had no output diff, and Ruff is clean. The UXLC generator was not rerun because its output repository already has 26 modified files. |
 | 5 — UXLC-utils | not started |
 | 6 — Cross-repo bookkeeping, and close the second stage | not started |
 
@@ -2251,12 +2251,16 @@ metadata files. The source README and `CLAUDE.md` now describe the redirect host
 The full MAM-basics suite then passed 973 / 5; the one-test increase from Step 3
 is the Book-of-Job manifest row. Full Ruff was clean.
 
-Step 6 cannot remove `C:/Users/BenDe/GitRepos/book-of-job` yet. Its `HEAD` and
-`origin/main` are both `c8a6bbf`; the working tree, stash, ignored/untracked
-check, and unpushed-branch check are clean. Its other registered worktree is the
-detached review checkout at `d09b966` under
-`C:/Users/BenDe/Documents/Codex/ReviewForests/mam-mega-review-2026-09-01/book-of-job`.
-That ReviewForest checkout remains in place, so the main clone remains in place.
+Step 6 completed 2026-09-03 with Ben's explicit authorization. The clean, detached
+review checkout at `d09b966` was removed from
+`C:/Users/BenDe/Documents/Codex/ReviewForests/mam-mega-review-2026-09-01/book-of-job`
+without force. Its historical entry in the ReviewForest manifest remains unchanged.
+The main clone at `C:/Users/BenDe/GitRepos/book-of-job` was then removed after its
+`HEAD` and `origin/main` both confirmed `c8a6bbf`, with a clean working tree, empty
+stash, and no unpushed branch commits. Both paths are absent. The post-removal
+MAM-basics suite passed 973 / 5, the documents generator produced no output diff,
+and full Ruff passed. The UXLC mapping generator was not rerun because its output
+repository already had 26 modified files unrelated to this retirement.
 
 ---
 
