@@ -395,11 +395,10 @@ citations that mean wlc-utils issues. Those files are one of the two standing ex
 bare `#NN` here means MAM-basics". wlc-utils' own rewritten `CLAUDE.md` keeps its
 bare-`#NN`-means-wlc-utils note for the redirect host itself.
 
-**UXLC-utils' `doc/` is the same exception, still live.** Only that repo's Python left; it keeps
-its `doc/` (2 files), `in/` (556), `out/` (27), `gh-pages/` (184) and `data/` (2), measured
-2026-08-18. So a bare `#NN` read in its `doc/clc-design.md` still means a UXLC-utils issue, and
-nothing there was qualified — for the same reason wlc-utils' `doc/` was left alone, that
-qualifying them would imply they were ambiguous.
+**UXLC-utils' two `doc/` files are the same exception, in this repository now.** The 2026-09-03
+evacuation moved `doc/clc-design.md` and `doc/clc-skeleton-plan.md` to `uxlc/doc/`. A bare `#NN`
+inside either file still means a UXLC-utils issue, and the citations remain unqualified because a
+prefix would imply that the citation was ambiguous.
 
 **holman-ketiv-qere needs no such exception, the first of the four evacuated repos to need none.**
 Its `doc/` has two files and neither carries a bare `#NN`. Measured 2026-08-18, the only
@@ -416,8 +415,19 @@ all — not in its `CLAUDE.md`, its `README.md`, its two `doc/` files or the thr
 `py_ac_loc/`, and not in any of the 701 artifacts under `gh-pages/` and `out/` either. All **784**
 files that repo tracks are free of `#NN` in every shape, issue numbers and hex colours alike, so
 there is nothing there for a reader to have to disambiguate. **So the four evacuated repos split
-two and two**: wlc-utils' `doc/` and `in/` copies now living in this repo and UXLC-utils' own live
-`doc/` are the two standing exceptions, and holman-ketiv-qere and book-of-job need none.
+two and two**: wlc-utils' `doc/` and `in/` copies and UXLC-utils' `uxlc/doc/` copies are the two
+standing exceptions in this repository, and holman-ketiv-qere and book-of-job need none.
+
+## An unprefixed `doc/review-findings-<date>.md` is the Claude series
+
+The periodic review series has been Claude-only since 2026-07-29, and its files are named
+`doc/review-findings-<date>.md` with no agent name in them. Should a Codex counterpart ever be run,
+it takes the prefixed name `doc/codex-review-findings-<date>.md`, and **the Claude series is not
+renamed to match** — measured 2026-09-01, the rename cost 41 lines across 18 files to buy an
+asymmetry one sentence fixes, and the file it would churn most, `doc/review-findings-2026-07-29.md`,
+is both the most-cited of the seven and not natively this repo's file. So the unprefixed name is the
+incumbent and the prefixed name announces its difference. `doc/dual-agent-review.md` is the fuller
+statement, including the four reasons the rename was rejected; nothing in it has been run.
 
 ## `doc/boj-*.md` are book-of-job's procedures, and they were written for Copilot
 
@@ -440,8 +450,8 @@ re-verified.** All seven were `.github/copilot-instructions-*.md` in book-of-job
 `Start-Process` that opens a page rather than handing Ben a `file:///` link — the global
 conventions win.
 
-book-of-job keeps two procedures of its own, `doc/opening-html-files.md` and
-`doc/reading-mam-simple.md`, both about reading what that repo holds rather than how it is made.
+book-of-job's two procedures now live under `book-of-job/doc/`: `opening-html-files.md` and
+`reading-mam-simple.md`, both about reading the evacuated tree rather than how it is made.
 
 ## Repo locations are decisions, not one machine's disk
 
