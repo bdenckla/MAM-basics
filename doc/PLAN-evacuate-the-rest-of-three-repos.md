@@ -725,11 +725,11 @@ both destination repos read the same way. The two accessors Step 3 must not swee
 at `book-of-job/out/` (seven files) and `book-of-job/doc/` (two files), preserving each relative
 path. Decision D still drops `py_ac_loc/`; the pure prefix does not revive that data tree.
 
-**UXLC-utils remains the one repo not named in either decision.** Phase 5 puts the same rule to Ben
-at its Step 1, together with trap 3's duplicate-data question: the 39 `in/UXLC-39/*.xml` and
-`in/UXLC-misc/all_changes.json` that MAM-basics already vendors are dropped rather than moved
-either way, and the rest of that tree lands under `uxlc/` if the rule holds, which also decides
-where `doc/clc-design.md` goes and what Phase 6's item 1 says about it.
+**DECIDED — Ben, 2026-09-03, at Phase 5: UXLC-utils follows the same pure-prefix rule.** Its
+published tree lands under `gh-pages/uxlc/`, and its non-`gh-pages` tree lands under `uxlc/`.
+The 39 `in/UXLC-39/*.xml` and `out/UXLC-misc/all_changes.json` that MAM-basics already vendors
+are dropped rather than moved. The remaining duplicate-data decisions in Phase 5's trap 3 still
+need their separate dispositions before Step 3 repoints their readers.
 
 ### Decision G — the lane order, interleaved with the third stage — **DECIDED 2026-09-02**
 
