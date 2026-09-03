@@ -1,0 +1,17 @@
+Consider changing the patah on he to qamats. Retain the patah and add note 't'.
+The patah on the he was a result of a change in change file 2021.04.01 - Changes at 2021.02.22 - 12 from the original condition in which the previous vowel was a qamats. The dot of the putative qamats is reddish and slightly oversized. The text in this region does not have many extraneous dots, however. Examining the qamats on the adjacent lines shows that the dot of the putative qamats is spaced at a greater distance from the bar of the qamats than in the adjacent lines. This is particularly true of the qamats preceding/following the putative qamats. Dotan in BHLA also sees the vowel as a qamats, but has a patah in his body text, BHL. Ben Denckla argues convincingly that Dotan did not have access to color images of the text. Retain the patah as the vowel on the he and add a transcription note 't'.
+BHL has a patah on the he. BHLA has a qamats on the he.
+Change qamats under dalet to sheva; change sheva under resh to qamats.
+BHL has a sheva under the dalet and a qamats under the resh. BHLA has no entry for this verse.
+Unusual accent pair: dehi, revia. Add transcription note 'c' after bet.
+The presence of both a dehi and a revia on a word is unexpected but occurs 3 times in the UXLC. The hiriq on the lamed is light; however, the current page has few erroneous dots. Other instances are Ps 89:29.1 and Job 11:13.2.
+BHL has a dehi on the lamed, but no revia on the bet. BHLA has a dehi on the lamed and a revia on the bet.
+Unusual accent pair: dehi, revia. Add transcription note 'c' after the second lamed.
+The presence of both a dehi and a revia on a word is unexpected but occurs 3 times in the UXLC. Other instances are Ps 7:10.8 and Job 11:13.2.
+BHL has a dehi on the first lamed, but no revia on the second lamed. BHLA has a dehi on the first lamed and a revia on the second lamed.
+Unusual accent pair: dehi, revia. Add transcription note 'c' after tav.
+The presence of both a dehi and a revia on a word is unexpected but occurs 3 times in the UXLC. Other instances are Ps 7:10.8 and Ps 89:29.1.
+BHL has a dehi on the alef, but no revia on the tav. BHLA has no note for this verse.
+Vowels on the initial mem and following lamed differ from other texts. Add 'c' note after lamed.
+Other texts have a sheva on the mem and a qamats on the lamed.
+BHL has a sheva on the mem and a qamats on the lamed. BHLA has a patah on the mem and a sheva on the lamed. Both BHL texts have a dagesh on the mem.

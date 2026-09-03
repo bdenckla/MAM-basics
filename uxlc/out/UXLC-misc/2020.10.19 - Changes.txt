@@ -1,0 +1,43 @@
+Move patah to preceding nun.
+This verse matches Deut 5:7.7.
+The qamats is the Lower vowel for the nun, the patah is the Upper vowel for the nun.
+The ordering of the marks under the nun is the same as in the LC. The zero-width-joiner before the meteg conforms to the SBL Hebrew recommendations for a central meteg. Nevertheless, font problems jumble the markings under the nun for the SBL Hebrew font and cause the patah to disappear for the Ezra SIL font.
+Change pashta (ס֙) to qadma (ס֨) on yod.
+This verse matches Deut 5:14.1.
+The pashta (on the mem) is the Lower accent, the qadma (on the yod) is the Upper accent.
+A small difference is discernible between qadma and pashta.
+Move patah to preceding nun.
+This verse matches Ex 20:3.7.
+The qamats is the Lower vowel for the nun, the patah is the Upper vowel for the nun.
+The ordering of the marks under the nun is the same as in the LC. The zero-width-joiner before the meteg conforms to the SBL Hebrew recommendations for a central meteg. Nevertheless, font problems jumble the markings under the nun for the SBL Hebrew font and cause the patah to disappear for the Ezra SIL font.
+Change pashta (ס֙) to qadma (ס֨) on yod.
+This verse matches Ex 20:10.1.
+The pashta (on the mem) is the Lower accent, the qadma (on the yod) is the Upper accent.
+A small difference is discernible between qadma and pashta.
+Add rafe to final he (הֿ), add note 'c'.
+Both the mappiq and the rafe are clearly present in the LC.
+Remove dagesh (לּ)
+No dagesh is present in the lamed in the LC.
+Note a possible dagesh in bet ( בּ) but do not add dagesh, add transcription note t.
+The dagesh is very light in the black and white facsimile at the Tanach.us site. When viewed with a high-resolution, color image from the Inscriptifact Digital Library, shown here, the dagesh nearly disappears.
+Adding a note t, but leaving the dagesh out, 14 Dec 2020.
+Move holam to qof.
+This misplaced holam occurred in the translation from Michigan-Claremont coding to Unicode performed by the program WLC2XML. See the Coding page for more details. The two cases of this date, 2020.08.31, cover all instances of this problem in WLC 4.20.
+Move holam to qof.
+This misplaced holam is due to a coding error in the translation from Michigan-Claremont coding to Unicode performed by the program WLC2XML. The problem is that the MC-encoded vav, 'W', is followed by a morphological divider, '/' rather than a Hebrew character. Because the '/' is not a MC Hebrew vowel, the holam is placed, incorrectly, on the vav by the algorithm.
+Change geresh muqdam to geresh.
+Plenty of space is available at the top of the pe to locate the geresh in more central position.
+Change geresh muqdam to geresh.
+The upper markings, including the shin dot are very garbled.
+Change ordinary word to ketiv word.
+The text is unchanged.
+Change ordinary word to ketiv word.
+The text is unchanged.
+Add CGJ to improve display.
+In the LC the etnacha and the meteg are at the same level. Thus the etnacha precedes the meteg.
+Add CGJ to improve display.
+Change mark ordering on final kaf to qamats meteg munah.
+Order the accents on final-kaf as qamets meteg munah so that the text and display orders are the same. No CGJ needed.
+Add CGJ to improve display.
+Add CGJ to improve display.
+Add CGJ to improve display.

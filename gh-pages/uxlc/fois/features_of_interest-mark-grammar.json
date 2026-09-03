@@ -1,0 +1,340 @@
+{
+  "summary-counts": {
+    "total-clusters": 1200055,
+    "excluded-atoms": 804,
+    "ordinary": 1198122,
+    "treated-as-ordinary": 1910,
+    "weird": 23
+  },
+  "class-counts": {
+    "ordinary": 1198122,
+    "explicit-order": 5,
+    "initial-double-aom": 3,
+    "multi-vowel": 2,
+    "noninitial-double-aom": 4,
+    "unexpected-mark": 0,
+    "other-ordering": 9
+  },
+  "sequence-counts-by-class": {
+    "ordinary": {
+      "dv": 71312,
+      "v": 435352,
+      "": 326402,
+      "sva": 15344,
+      "va": 165878,
+      "sdv": 2399,
+      "da": 8072,
+      "d": 39844,
+      "sv": 28873,
+      "a": 47103,
+      "dva": 46200,
+      "s": 6693,
+      "sdva": 2055,
+      "sa": 2327,
+      "sda": 179,
+      "sd": 89
+    },
+    "explicit-order": {
+      "av": 2,
+      "dvv": 1,
+      "vaa": 1,
+      "sav": 1
+    },
+    "initial-double-aom": {
+      "vaa": 2,
+      "svaa": 1
+    },
+    "multi-vowel": {
+      "dvva": 1,
+      "vv": 1
+    },
+    "noninitial-double-aom": {
+      "vaa": 3,
+      "dvaa": 1
+    },
+    "unexpected-mark": {},
+    "other-ordering": {
+      "vd": 1,
+      "dav": 2,
+      "ddv": 1,
+      "dvda": 1,
+      "dsva": 1,
+      "adv": 1,
+      "av": 2
+    }
+  },
+  "cases-by-class": {
+    "explicit-order": [
+      {
+        "bcvp": "Numbers 7:60.5",
+        "notes": "",
+        "atom": "בִנְיָמ֑͏ִן",
+        "atom-note-schematic": null,
+        "cluster-index": 4,
+        "cluster": "מ֑͏ִ",
+        "sequence": "av",
+        "mark names": "etnaḥta, combining-grapheme-joiner, ḥiriq",
+        "mark names comment": null
+      },
+      {
+        "bcvp": "Deuter 3:22.2",
+        "notes": "",
+        "atom": "תִּ͏ְירָא֑וּם",
+        "atom-note-schematic": null,
+        "cluster-index": 1,
+        "cluster": "תִּ͏ְ",
+        "sequence": "dvv",
+        "mark names": "dagesh/mapiq/shuruq-dot, ḥiriq, combining-grapheme-joiner, sheva",
+        "mark names comment": null
+      },
+      {
+        "bcvp": "Job 10:15.12",
+        "notes": "c",
+        "atom": "עָנְי֥‍ִי׃",
+        "atom-note-schematic": "עני.י",
+        "cluster-index": 3,
+        "cluster": "י֥‍ִ",
+        "sequence": "av",
+        "mark names": "merkha/yored, zero-width-joiner, ḥiriq",
+        "mark names comment": null
+      },
+      {
+        "bcvp": "Job 19:16.6",
+        "notes": "t",
+        "atom": "פִ֗‍֝י",
+        "atom-note-schematic": "פ.י",
+        "cluster-index": 1,
+        "cluster": "פִ֗‍֝",
+        "sequence": "vaa",
+        "mark names": "ḥiriq, revia, zero-width-joiner, geresh-muqdam",
+        "mark names comment": {
+          "prefix": "cf. Ps 124:4 ",
+          "atom": "נַ֗֜חְלָה",
+          "cluster-index": 1
+        }
+      },
+      {
+        "bcvp": "Job 32:6.11",
+        "notes": "",
+        "atom": "יְשִׁישׁ֑‍ִים",
+        "atom-note-schematic": null,
+        "cluster-index": 4,
+        "cluster": "שׁ֑‍ִ",
+        "sequence": "sav",
+        "mark names": "shin-dot, etnaḥta, zero-width-joiner, ḥiriq",
+        "mark names comment": null
+      }
+    ],
+    "initial-double-aom": [
+      {
+        "bcvp": "Psalms 56:10.1",
+        "notes": "",
+        "atom": "אָ֥֨ז",
+        "atom-note-schematic": null,
+        "cluster-index": 1,
+        "cluster": "אָ֥֨",
+        "sequence": "vaa",
+        "mark names": "qamats, merkha/yored, qadma",
+        "mark names comment": null
+      },
+      {
+        "bcvp": "Psalms 124:4.4",
+        "notes": "c",
+        "atom": "נַ֗֜חְלָה",
+        "atom-note-schematic": "נ.חלה",
+        "cluster-index": 1,
+        "cluster": "נַ֗֜",
+        "sequence": "vaa",
+        "mark names": "pataḥ, revia, geresh",
+        "mark names comment": {
+          "prefix": "cf. Job 19:16 ",
+          "atom": "פִ֗‍֝י",
+          "cluster-index": 1
+        }
+      },
+      {
+        "bcvp": "Job 15:34.8",
+        "notes": "",
+        "atom": "שֹֽׁ֥חַד׃",
+        "atom-note-schematic": null,
+        "cluster-index": 1,
+        "cluster": "שֹֽׁ֥",
+        "sequence": "svaa",
+        "mark names": "shin-dot, ḥolam, meteg/siluq, merkha/yored",
+        "mark names comment": null
+      }
+    ],
+    "multi-vowel": [
+      {
+        "bcvp": "2Kings 21:26.1",
+        "notes": "c",
+        "atom": "וַיִּקְבְֹּ֥ר",
+        "atom-note-schematic": "ויקב.ר",
+        "cluster-index": 4,
+        "cluster": "בְֹּ֥",
+        "sequence": "dvva",
+        "mark names": "dagesh/mapiq/shuruq-dot, ḥolam, sheva, merkha/yored",
+        "mark names comment": null
+      },
+      {
+        "bcvp": "Proverbs 23:26.8",
+        "notes": "q",
+        "atom": "תִּצֽרְֹנָה׃",
+        "atom-note-schematic": "תצר.נה",
+        "cluster-index": 3,
+        "cluster": "רְֹ",
+        "sequence": "vv",
+        "mark names": "sheva, ḥolam",
+        "mark names comment": null
+      }
+    ],
+    "noninitial-double-aom": [
+      {
+        "bcvp": "Levit 25:20.4",
+        "notes": "c",
+        "atom": "נֹּאכַ֤֖ל",
+        "atom-note-schematic": "נאכ.ל",
+        "cluster-index": 3,
+        "cluster": "כַ֤֖",
+        "sequence": "vaa",
+        "mark names": "pataḥ, mahapakh, tipeḥa/tarḥa",
+        "mark names comment": null
+      },
+      {
+        "bcvp": "Ezekiel 20:31.7",
+        "notes": "",
+        "atom": "נִטְמְאִ֤֨ים",
+        "atom-note-schematic": null,
+        "cluster-index": 4,
+        "cluster": "אִ֤֨",
+        "sequence": "vaa",
+        "mark names": "ḥiriq, mahapakh, qadma",
+        "mark names comment": null
+      },
+      {
+        "bcvp": "Psalms 75:11.7",
+        "notes": "c",
+        "atom": "צַדִּֽ֥יק׃",
+        "atom-note-schematic": "צד.יק",
+        "cluster-index": 2,
+        "cluster": "דִּֽ֥",
+        "sequence": "dvaa",
+        "mark names": "dagesh/mapiq/shuruq-dot, ḥiriq, meteg/siluq, merkha/yored",
+        "mark names comment": null
+      },
+      {
+        "bcvp": "Job 7:1.7",
+        "notes": "c",
+        "atom": "וְכִימֵ֖֗י",
+        "atom-note-schematic": "וכימ.י",
+        "cluster-index": 4,
+        "cluster": "מֵ֖֗",
+        "sequence": "vaa",
+        "mark names": "tsere, tipeḥa/tarḥa, revia",
+        "mark names comment": null
+      }
+    ],
+    "unexpected-mark": [],
+    "other-ordering": [
+      {
+        "bcvp": "Exodus 32:19.18",
+        "notes": "",
+        "atom": "וַיְּשַׁבֵּ֥ר",
+        "atom-note-schematic": null,
+        "cluster-index": 2,
+        "cluster": "יְּ",
+        "sequence": "vd",
+        "mark names": "sheva, dagesh/mapiq/shuruq-dot",
+        "mark names comment": null
+      },
+      {
+        "bcvp": "Numbers 32:16.3",
+        "notes": "",
+        "atom": "וַיֹּ֣אמְר֔וּ",
+        "atom-note-schematic": null,
+        "cluster-index": 2,
+        "cluster": "יֹּ֣",
+        "sequence": "dav",
+        "mark names": "dagesh/mapiq/shuruq-dot, munaḥ, ḥolam",
+        "mark names comment": null
+      },
+      {
+        "bcvp": "Joshua 10:24.20",
+        "notes": "",
+        "atom": "הֶהָלְכ֣וְּּ",
+        "atom-note-schematic": null,
+        "cluster-index": 5,
+        "cluster": "וְּּ",
+        "sequence": "ddv",
+        "mark names": "dagesh/mapiq/shuruq-dot, dagesh/mapiq/shuruq-dot, sheva",
+        "mark names comment": null
+      },
+      {
+        "bcvp": "Ezekiel 1:25.8",
+        "notes": "c",
+        "atom": "בְּעָמְדָּֿ֖ם",
+        "atom-note-schematic": "בעמד.ם",
+        "cluster-index": 4,
+        "cluster": "דָּֿ֖",
+        "sequence": "dvda",
+        "mark names": "dagesh/mapiq/shuruq-dot, qamats, rafeh, tipeḥa/tarḥa",
+        "mark names comment": null
+      },
+      {
+        "bcvp": "Psalms 119:14.3",
+        "notes": "t",
+        "atom": "שַּׂ֗שְׂתִּי",
+        "atom-note-schematic": "ש.שתי",
+        "cluster-index": 1,
+        "cluster": "שַּׂ֗",
+        "sequence": "dsva",
+        "mark names": "dagesh/mapiq/shuruq-dot, sin-dot, pataḥ, revia",
+        "mark names comment": null
+      },
+      {
+        "bcvp": "Job 36:29.7",
+        "notes": "t",
+        "atom": "סֻכָּֽתֽוֹ׃",
+        "atom-note-schematic": "סכ.תו",
+        "cluster-index": 2,
+        "cluster": "כָּֽ",
+        "sequence": "adv",
+        "mark names": "meteg/siluq, dagesh/mapiq/shuruq-dot, qamats",
+        "mark names comment": null
+      },
+      {
+        "bcvp": "Job 42:10.10",
+        "notes": "",
+        "atom": "וַיֹּ֧סֶף",
+        "atom-note-schematic": null,
+        "cluster-index": 2,
+        "cluster": "יֹּ֧",
+        "sequence": "dav",
+        "mark names": "dagesh/mapiq/shuruq-dot, darga, ḥolam",
+        "mark names comment": null
+      },
+      {
+        "bcvp": "Daniel 3:15.13",
+        "notes": "",
+        "atom": "קַתְרֹ֣ס",
+        "atom-note-schematic": null,
+        "cluster-index": 3,
+        "cluster": "רֹ֣",
+        "sequence": "av",
+        "mark names": "munaḥ, ḥolam",
+        "mark names comment": null
+      },
+      {
+        "bcvp": "1Chronicles 21:8.16",
+        "notes": "",
+        "atom": "עֲווֹ֣ן",
+        "atom-note-schematic": null,
+        "cluster-index": 3,
+        "cluster": "וֹ֣",
+        "sequence": "av",
+        "mark names": "munaḥ, ḥolam",
+        "mark names comment": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,439 @@
+Siluq is missing from last word in verse, add note 'c'.
+Every verse should end with a siluq accent. No siluq is present in this word (a meteg occurs on the initial he).
+The most likely position for a siluq on this word is under the nun.
+Ben Denckla: BHL has a vertical bar (equivalent to Unicode meteg) under both the he and the nun; BHL Appendix A has a vertical bar (equivalent to Unicode meteg) only under he. That is, the BHL text adds a siluq under the nun while aware it is missing in the LC text.
+Change zaqef-qatan over ayin to revia, add note 'c'.
+A single dot appears above the ayin with no sign of a second dot above it. The zaqef-qatan will be replaced by a revia to represent the single dot.
+Ben Denckla: BHL has a revia over the ayin; BHL Appendix A has no entry for this word.
+Add meteg to ayin.
+The maqaf is well-formed and well positioned, but lighter than the surrounding characters. The change produces the chanted word עַֽל־אֲשֶׁר־הֵמִ֖ית.
+Ben Denckla: BHL has a meteg under the ayin; BHL Appendix A has no entry for this word.
+Remove maqaf from word, add note 'm'.
+No maqaf between this word and the next is evident and the meteg, as a secondary accent, is missing a primary accent.
+The meteg should probably be a taken as a merkha; however, it lacks the necessary northeast-to-southwest inclination.
+Ben Denckla: The BHL has a merkha on the mem and no maqaf on this word. BHL Appendix A does not comment on this word.
+Add maqaf to end of word.
+The maqaf is distinct.
+Ben Denckla: The BHL has a maqaf on this word. BHL Appendix A does not comment on this word.
+Remove dagesh from dalet.
+The rafeh above the dalet (indicating no dagesh) is clear.
+Ben Denckla: BHL agrees that there is no dagesh in the dalet. BHL Appendix A has no entry for this word.
+This case is similar, but not identical, to that of Jer 32:6.4 (2022.08.14 - 11).
+Change revia over mem to zaqef-qatan.
+The lower dot of the zaqef-qatan is broken, but well-positioned.
+Ben Denckla: BHL has a zaqef-qatan on the mem. BHL Appendix A has no entry for this word.
+Remove mahapakh from under yod. Place qadma on yod. Add note 't'.
+Although LC text has a smudge extending partly under the yod, it is unlikely that there is an accent under the yod. A diagonal, southeast-to-northwest blurr occurs at the top tip of the yod. This could be a qadma, providing a primary accent on the word.
+The Hebrew Wikisource Miqra According to the Masorah (23 Sep 2022) has a qadma on the yod.
+Add dagesh to bet.
+Although the quality of the LC text is poor the dagesh in the bet is clear.
+Ben Denckla: BHL has a dagesh in this bet. BHL Appendix A has no entry for this word.
+Add dagesh to tav.
+The dagesh is dark and well-positioned, but smaller than many dots near the tav.
+The interior of the tav contains an inexplicable, very thin, V-shaped line.
+Ben Denckla: BHL has a NO dagesh in the tav. BHL Appendix A has no entry for this word.
+Remove dagesh from dalet.
+Ben Denckla: BHL has a no dagesh in the tav. BHL Appendix A has no entry for this word.
+This case is similar, but not identical, to that of 1 Kings 10:3.9 (2022.08.14 - 6).
+Move revia from dalet to tav.
+The revia over the tav is merged with an accent from the preceding line.
+Ben Denckla: BHL agrees that this tav has a revia (and BHL implicitly agrees that no other letter in this word has revia!). BHL Appendix A has no entry for this word.
+Add maqaf to end of word.
+Ben Denckla: BHL agrees that a maqaf is present, forming the maqaf compound כי־הביאו. BHL Appendix A has no entry for this word.
+Possible dagesh in shin. Add 't' note.
+The text is not in good condition near this word.
+The mark inside the shin is thin and linear; it is not a dot.
+Ben Denckla: BHL has a dagesh in the shin of שחד (part of maqaf compound תרבה־שחד). BHL Appendix A has no entry for this word.
+Meteg below the yod might have been intended to be a merkha, add note 'm'.
+Accent below the yod lacks the northeast-to-southwest inclination required for a merkha and will be transcribed as a meteg. The accent might be a merkha.
+Ben Denckla: The BHL has a merkha on the yod based on its algorithm (p. xi) for distinguishing meteg/merkha differences. BHL Appendix A has no entry for this word.
+Yod is poorly written, add note 't'.
+This word is poorly written and the yod appears to have been inserted as an afterthought.
+Ben Denckla: BHL has a yod after the lamed; BHL Appendix A has no entry for this word.
+Add dagesh to shin. Add 'c' note.
+Ben Denckla: BHL has no dagesh in the shin; BHL Appendix A has a dagesh in the shin in the LC.
+Remove maqaf from mem. Add note 'c'.
+Without the maqaf, the word lacks an accent.
+Ben Denckla: BHL has a maqaf at the end of the word. BHL Appendix A has no maqaf on this word for the LC.
+Change qamatz below mem to patah. Add note 't'.
+The horizonal line below the mem has a small, central notch. The qamatz dot is usually further below the qamatz horizontal line.
+Ben Denckla: BHL has a qamats on the mem; BHL Appendix A has a patah under the mem in the LC but notes the difficulty reading the LC.
+Remove maqaf from yod. Change meteg to merkha. Add note 't'.
+The text is of poor quality for this word. The near-vertical line under the kaf has a northeast-to-southeast inclination and is transcribed as a merkha.
+Ben Denckla: BHL has a meteg under the kaf and a maqaf at the end of this word; BHL Appendix A has no comment on this word.
+Move pashta from aleph to nun.
+Ben Denckla: BHL has the pashta on the aleph; BHL Appendix A has no comment on this word.
+Change merkha under het to tipeha. Add note 't'.
+The tipeha is under the dalet; however, it's probably intended to be associated with the het. The tipeha's position is almost certainly due to the top of a lamed on the following line.
+Ben Denckla: BHL has the tipeha under the het; BHL Appendix A has no comment on this word.
+Change tipeha under sin to meteg. Add note 'm'.
+The vertical line under the sin in very slightly inclined northeast-to-southwest and might be transcribed as a merkha. This inclination is similar to that of the accent under the nun in the following word. The mark will be transcribed as a meteg.
+Ben Denckla: BHL has a merkha under the sin; BHL Appendix A has no comment on this word.
+Replace zaqef-gadol on yod with revia.
+Ben Denckla: BHL has a revia over the yod; BHL Appendix A has no comment on this word.
+Accent over the mem is unclear. Add note 't'
+The mark over the mem is blurred vertically, suggesting a zaqef-qatan as transcribed. It could be a revia, however.
+Ben Denckla: BHL has a zaqef-qatan over the mem; BHL Appendix A has no comment on this word.
+Remove patah from ayin.
+Ben Denckla: BHL has a patah under the ayin; BHL Appendix A has no comment on this word.
+Possible dagesh in resh. Add note 't'.
+The putative dagesh in the resh is slightly less dark than adjacent markings and not well placed.
+Ben Denckla: BHL has no dagesh in the resh; BHL Appendix A finds a dagesh in the LC but notes the difficulty reading the LC.
+Possible merkha under initial he. Add note 'm'.
+The vertical line under the he lacks the required northeast-to-southwest inclination to be transcribed as a merkha.
+Ben Denckla: BHL has a merkha under the initial he; BHL Appendix A has no comment on this word.
+Remove dagesh in yod, remove dagesh from lamed. Add note 'c'.
+This change is in alignment with Dotan (Biblia Hebraica Leningradensia, 2001).
+Ben Denckla: BHL has dageshes on both the yod and the lamed; BHL Appendix A finds no dageshes under either the yod or the lamed in the LC.
+Meteg under bet might be a merkha, add note 'm'. Remove maqaf.
+The vertical line under the bet has insufficient northeast-to-southwest inclination to be transcribed as a merkha. The former maqaf is likely a remnant of the top bar of the tav arising from a crack in the ink. Notice the missing ink in the following lamed's knee.
+Ben Denckla: BHL has meteg under the bet and ends in a maqaf; BHL Appendix A does not comment on this word.
+Unclear mark under the yod. Add note 't'.
+The lower dot of the sheva under the yod is weak, but well-positioned.
+Ben Denckla: BHL has a hiriq under the yod; BHL Appendix A finds a sheva under the yod for the LC.
+Change patah on het to hataf-patah. Add note 'c'.
+An apparent hataf mark precedes the patah at a larger distance than expected for an hataf-patah.
+Dotan (Biblia Hebraica Leningradensia, 2001) notes this as a particularity of the LC.
+Ben Denckla: BHL has a patah under the het; BHL Appendix A finds a hataf-patah under the het in the LC.
+Remove sof-pasuq. Add note 'c'.
+This verse lacks an ending sof-pasuq.
+Ben Denckla: BHL ends the word with a sof-pasuq; BHL Appendix A makes no comment on this word.
+Unclear accent under the ayin. Add note 't'.
+The text quality in the region around this word is good. The tsere under the ayin is clear; the three dots to the left of the tsere are confusing. None of the these dots can be associated with the lamed on the next line. Identify the 3 dots as North, South, and West. North is lighter and blurry; but has a slight vertical component. The space between North and South appears empty. The West dot might be ignored with North and South joined to make a near-vertical meteg/merkha. Alternatively, a tevir could be formed from all three dots again by joining North and South; unfortunately, this gives the odd arrangement of two successive tevirs in the verse.
+Ben Denckla: BHL has a merkha under the ayin; BHL Appendix A makes no comment on this word.
+Change hataf-patah under aleph to patah.
+Ben Denckla: BHL has a hataf-patah under the aleph; BHL Appendix A finds a patah under the ayin in the LC but notes the difficulty reading the LC.
+Consider final yod instead of vav.
+The word in question is the ketiv part of a ketiv/qere pair. In the LC the body text contains the ketiv consonants with the qere vowel and accent markings. The consonants for the qere are written in the margin.
+The existing ketiv body text has a vav as the final character; a "his ten thousand" ending. The referent for the "his" is David in word 20. The change author suggests that the final letter might instead be a yod; a "my ten thousand" ending. No referent for "my" is apparent in the verse.
+The qere consonants in the margin clearly end in yod then vav; a grammatical "his ten thousands" ending shown in the following qere word 21, so that proposed difference between the ketiv/qere forms is "my ten thousand" and "his ten thousands". That is, the proposal changes the person from "my" to "his" while changing the number "ten thousand" to "ten thousands". This in contrast to preceding ketiv/qere pair in words 18 and 19 which has a ketiv meaning "his thousand" and a qere reading "his thousands". That is, in words 18, 19, the ketiv/qere forms are thousand/thousands and both have third person singular endings referring to Saul, word 17. The parallelism common in the Hebrew text (words 17, 18, 19 parallel to words 20, 21, 22) would suggest that the following ketiv/qere pair in words 21, 22 would be "his ten thousand"/"his ten thousands".
+Placing a yod as the final ketiv constant in word 21 adds an unknown referent (who is "my"?) and breaks an obviously intended parallelism with words 18, 19.
+Ben Denckla: The distinguished Israeli biblical scholar Mordecai Breuer (1921-2007) as well as the change author, Daniel Holman, noted that the final letter is somewhat ambiguous and might be construed as yod. BHL ends the word with a vav; BHL Appendix A makes no comment on this word.
+Change merkha under the yod to meteg. Add note 'm' .
+The vertical line under the yod lacks sufficient the northeast-to-southwest inclination to be transcribed as a merkha.
+Ben Denckla: BHL has a merkha under the yod; BHL Appendix A makes no comment on this word.
+The meteg under the ayin might be a merkha. Add note 'm' .
+The vertical line under the ayin lacks sufficient the northeast-to-southwest inclination to be transcribed as a merkha.
+Ben Denckla: BHL has a merkha under the ayin; BHL Appendix A makes no comment on this word.
+Remove pashta from final kaf.
+Ben Denckla: BHL has a pashta on the final kaf; BHL Appendix A makes no comment on this word.
+Remove dagesh from yod.
+Ben Denckla: BHL has a dagesh on the yod; BHL Appendix A makes no comment on this word.
+Remove maqaf.
+Ben Denckla: BHL ends this word with a maqaf; BHL Appendix A makes no comment on this word.
+Note sheva of hataf-patah is very early. Add note 't'
+Hataf vowels are composed of a sheva-then-vowel sequence. They are never written vowel-then-sheva. The sheva belongs to a hataf-patah on the he; however, it is positioned very early under the lamed because of the top of a lamed on the following verse.
+Ben Denckla: BHL has a hataf-patah on the he; BHL Appendix A makes no comment on this word.
+Consider removing dagesh from bet.
+The bump in the base of the bet is probably a dagesh.
+Ben Denckla: BHL has a dagesh in the bet; BHL Appendix A makes no comment on this word.
+Possible merkha under ayin. Add note 'm'.
+The vertical line under the ayin has insufficient northeast-to-southwest inclination to be transcribed as a merkha.
+Ben Denckla: BHL has a merkha under the ayin; BHL Appendix A makes no comment on this word.
+Add telisha-qetana above the shin.
+The circle on the upper left of the shin is light, but attached to the shin.
+Ben Denckla: BHL has a telisha-qetana above the shin; BHL Appendix A makes no comment on this word.
+Consider removing dagesh from bet.
+The dagesh in the lower right of the bet is small and poorly positioned, but present.
+The Miqra According to the Masorah (MAM) has a dagesh in the bet.
+Note possible erasure with a 't' note.
+A consonant, possibly a vav or yod, appears to have been erased between the resh and the kaf. The erasure appears to have been hidden by extending the top of the resh.
+The Sefaria MAM has no consonant between the resh and the kaf.
+Ben Denckla: BHL agrees with the UXLC word. The BHL Appendix A agrees with the change author that an erasure may have taken place and suggests that the original contents of the manuscript was a malei spelling of the word, בְּרוּכִ֤ים. While this is an interesting speculation, this is irrelevant to UXLC's main text since it tries to transcribe the final state of the manuscript.
+Possible maqaf between the he and the aleph. Add 't' note.
+The putative maqaf between the he and the aleph is not very dark. The LC has a maqaf in 5 of 12 occurrences of Asahel in 2 Samuel.
+The Miqra According to the Masorah (MAM) never has a maqaf in the 12 occurrences of Asahel in 2 Samuel.
+Possible maqaf between the he and the aleph. Add 't' note.
+The putative maqaf between the he and the aleph is not very dark. The LC has a maqaf in 5 of 12 occurrences of Asahel in 2 Samuel.
+The Miqra According to the Masorah (MAM) never has a maqaf in the 12 occurrences of Asahel in 2 Samuel.
+Remove dagesh from mem.
+The Miqra According to the Masorah (MAM) has a dagesh in the mem.
+Remove dagesh from first shin, remove munah from under second shin. Add note 'c'.
+The word lacks an accent. The dagesh in the second shin is very faint.
+The Miqra According to the Masorah (MAM) has a dagesh in the first shin and a munah under the second shin.
+Change hataf-segol under ayin to segol.
+The Miqra According to the Masorah (MAM) has a hataf-segol under the ayin.
+Split the word by adding a maqaf between the he and the aleph.
+The LC has a distinct maqaf between the he and the aleph. The maqaf has equal darkness to the that on the preceding word. The LC has a maqaf in 5 of 12 occurrences of Asahel in 2 Samuel.
+The Miqra According to the Masorah (MAM) never has a maqaf in the 12 occurrences of Asahel in 2 Samuel.
+Change qamats under gimel to patah.
+The Miqra According to the Masorah (MAM) has a qamats under the gimel.
+Change segol under aleph to tsere. Add note 't'.
+The two horizontal dots under the aleph have a much fainter dot below them that would make the vowel a segol.
+Ben Denckla: BHL has tsere under the aleph. BHL Appendix A has segol with a question mark.
+Possible merkha instead of meteg under the yod. Add note 'm'.
+The vertical line under the yod lacks the required northeast-to-southwest inclination to be transcribed as a merkha.
+The Miqra According to the Masorah (MAM) has a merkha under the yod.
+Move etnahta from under bet to under kaf.
+The Miqra According to the Masorah (MAM) has an etnahta under the bet.
+Remove dageshes from yod and dalet. Add rafe to dalet.
+The BHL has a dagesh in the yod and no dagesh in the dalet. BHL Appendix A has no entry for this word.
+Partially erased text starts after this word. Add note 't'.
+This note and the note on the following verse delimit an anomaly in the LC caused by scribal error. The error has been partially erased in the LC, but enough remains to understand what may have happened. The error has no effect on the transcription because the surrounding verses are legibly written.
+The text following this word at column 1, line 25, of Folio_171B is partially erased in the LC. The erasure leaves only the top part of the text at the bottom of column 1 (as shown in the image) and at the top of column 2. Then 2 Samuel 6:4 appears legibly at column 2, line 3 of Folio_171B.
+Both verse 6:3 and 6:4 contain the 5 word consonantal sequence "וישאהו מבית אבינדב אשר בגבעה". In verse 6:3 this sequence begins after the 7-th word and has a zaqef qatan on the aleph of the first word, "וישאהו"; the word following the sequence is "ווְעֻזָּ֣א". In verse 6:4 this sequence starts the verse and has a revia on the aleph of the first word, "וישאהו" ; the word following the sequence is "עִ֖ם".
+Careful examination by Ben Denckla of the erasure suggests that the erased consonantal text is a repetition of consonants of 2 Samuel 6:3.8-20. This consonantal text was then pointed with the points from 6:4.1-5. This can be seen by the revia on the "‬‏וַיִּשָּׂאֻ֗הוּ" in the erasure. The accents in the erasure stop after the 5-th word as the accent writer realized that the 6-th word didn't belong to 6:4.
+The hypothesis is that the consonant writer repeated 6:3.8-20 thinking he was writing 6:4. When he realized his mistake, he then wrote the consonants for 6:4 and the remainder of the page. The accent writer applied 6:4 accents to the accidental repetition of 6:3.8-20, stopping when he reached the 6-th word which was incorrect for verse 6:4. A decision was then made to partially erase the repetition.
+Partially erased text ends with this word. Add note 't'
+This note and the note on the previous verse delimit an anomaly in the LC caused by scribal error. The error has been partially erased in the LC, but enough remains to understand what may have happened. The error has no effect on the transcription because the surrounding verses are legibly written.
+The text preceding this word at column 2, line 3, of Folio_171B is partially erased in the LC. The erasure leaves only the top part of the text at the bottom of column 1 (as shown in the image) and at the top of column 2. Then 2 Samuel 6:4 appears legibly at column 2, line 3 of Folio_171B.
+Both verse 6:3 and 6:4 contain the 5 word consonantal sequence "וישאהו מבית אבינדב אשר בגבעה". In verse 6:3 this sequence begins after the 7-th word and has a zaqef qatan on the aleph of the first word, "וישאהו"; the word following the sequence is "ווְעֻזָּ֣א". In verse 6:4 this sequence starts the verse and has a revia on the aleph of the first word, "וישאהו" ; the word following the sequence is "עִ֖ם".
+Careful examination by Ben Denckla of the erasure suggests that the erased consonantal text is a repetition of consonants of 2 Samuel 6:3.8-20. This consonantal text was then pointed with the points from 6:4.1-5. This can be seen by the revia on the "‬‏וַיִּשָּׂאֻ֗הוּ" in the erasure. The accents in the erasure stop after the 5-th word as the accent writer realized that the 6-th word didn't belong to 6:4.
+The hypothesis is that the consonant writer repeated 6:3.8-20 thinking he was writing 6:4. When he realized his mistake, he then wrote the consonants for 6:4 and the remainder of the page. The accent writer applied 6:4 accents to the accidental repetition of 6:3.8-20, stopping when he reached the 6-th word which was incorrect for verse 6:4. A decision was then made to partially erase the repetition.
+Remove maqaf, merging 2 words to 1.
+UXLC word differs from the other texts. The UXLC does not split the 6 consonants between the resh and the aleph, lacks a maqaf after the resh, and has no sheva on the resh because neither is visible in the photo.
+Ben Denckla: The BHL splits the 6 consonants between the resh and the aleph and adds a maqaf after the resh. It has no sheva on the resh. BHL Appendix A contains a p.m. (prima manus) note: "version by the first hand, changed subsequently (p. xxv)". It does NOT split the 6 consonants and has no maqaf. It does have a sheva on the resh, however. Perhaps the p.m. note refers only to the suggestion that the resh originally had a sheva under it.
+Change qadma on nun to pashta on yod.
+BHL has a pashta on yod. BHL Appendix A has no entry for this word.
+Change munah to meteg under the aleph.
+The BHL has munah under the aleph. Surprisingly, BHL Appendix A has no entry for this word.
+Ben Denckla: Breuer-DM agrees with this change proposal and notes that L has meteg here.
+Remove maqaf, merging 2 words to 1. Add note 'c'.
+UXLC word differs from the other texts. The UXLC does not split the 6 consonants between the resh and the yod also lacks a maqaf after the resh because no maqaf is visible in the photo.
+The Sefaria MAM has a maqaf between the resh and the yod.
+Ben Denckla: The BHL splits the 6 consonants between the resh and the yod and adds a maqaf after the resh. BHL Appendix A has no entry for this word.
+Add dagesh to zayin.
+The dagesh on the zayin is dark and shaped like the dagesh in the bet.
+The BHL has no dagesh in zayin. Surprisingly, BHL Appendix A does not have an entry for this word.
+Ben Denckla: Breuer-DM notes that L has a dagesh in the zayin of this word.
+Move zaqef-qatan from het to dalet. Add 'c' note.
+Ben Denckla: BHL has zaqef-qatan on ḥet. BHL Appendix A agrees that L has zaqef-qatan on dalet.
+Remove sheva from final kaf.
+Ben Denckla: BHL has kaf with sheva. BHL Appendix A has kaf without sheva.
+Change resh to dalet. Add note 't' on second-to-last consonant.
+This is a ketiv word. Its consonants appear in the body of the LC text; the qere consonants appear in the margin. This word is a proper name of a king.
+The next-to-last consonant (yod or vav) is ambiguous in the ketiv in the body text, but is clearly a vav in the qere in the margin. BHL Appendix A lists both possibilities (yod or vav). Ben Denckla: The LC is unique among sources studied by Breuer that has the possibility of a yod in the second-to-last position of this word.
+The final letter is clearly a dalet in both ketiv and qere forms in the LC from the image. The BHL ends the ketiv with a resh; in BHL Appendix A both possibilities end in a dalet.
+Ben Denckla: BHL ends the ketiv in a resh, עמיחור (last two letters vav-resh). BHL Appendix A lists two possible readings of the L ketiv, both ending in ד (dalet) and both question-marked: Reading 1: עמיחיד (?) (yod-dalet), Reading 2: עמיחוד (?) (vav-dalet).
+Add yod between mem and tav.
+The yod is well-formed, with the lower portion lighter probably due to flaking.
+Ben Denckla: BHL has no yod (a חסר (ḥaser) (deficient) spelling). BHL Appendix A suggests the possibility of a yod (a מלא (malei) (full) spelling). That is, it lists the word spelled with a yod, but adds a question mark in parenthesis.
+Consider moving the patah on the dalet to create a hataf-patah under the mem.
+The top of the lamed of the following line interferes with the positioning of the patah. The space between the patah and the sheva is greater than expected for a hataf-patah.
+The BHL agrees with the reference UXLC word. BHL Appendix A has no entry for this word.
+Ben Denckla: Breuer-DM reads the LC and other manuscripts including Aleppo Codex as having ḥataf-pataḥ on mem here.
+Consider adding note 't' for possible patah rather than hiriq under the mem.
+The dot of the hireq is significantly darker than the continuation which would make a patah.
+The Miqra According to the Masorah (MAM) has a hiriq under the mem.
+Change merkha to tevir under bet.
+The Miqra According to the Masorah (MAM) has a tevir under the bet.
+Change merkha under shin to tipeha.
+The Miqra According to the Masorah (MAM) has a merkha under the shin.
+Change tipeha under tet to meteg. Add note 'm'.
+The vertical line under the tet lacks the northeast-to-southwest inclination to be transcribed as a merkha.
+The Miqra According to the Masorah (MAM) has a tipeha under the tet.
+Consider dagesh in nun for possible 't' note.
+The text is in good condition near this word. The dot in the nun is well-positioned, but light.
+The Miqra According to the Masorah (MAM) has a dagesh in the nun.
+Add zaqef-qatan above shin. Add note 'c'.
+The shin has a dark and well-positioned zaqef-qatan over it. This accent is unexpected here.
+The BHL has no zaqef-qatan on the shin. BHL Appendix A has no entry for this word.
+Ben Denckla: Breuer-DM appears to support the zaqef-qatan over the shin.
+Consider a possible accent segol above the aleph. Add note 't'.
+The two dark dots above the aleph are significantly inclined from the vertical and the third, lighter, dot forms a putative segol. However, the writer of this page has a tendency to incline the dots of the zaqef-qatan as done in at least three other instances on this page.
+The BHL has a zaqef-qatan on the aleph. BHL Appendix A has no entry for this word.
+Remove sheva from final kaf.
+This is the first instance of three instances of the poetic word ending in ־הַמֶּלֶך in this verse. It's the only one without a sheva.
+Ben Denckla: BHL has a sheva in the final kaf. BHL Appendix A agrees with this UXLC change proposal: it has a final kaf lacking a sheva.
+Consider possible tevir rather than merkha under the nun.
+The dot of the putative tevir is of a different color than other dots and slightly larger.
+The Miqra According to the Masorah (MAM) has a merkha under the nun.
+Remove dagesh from yod.
+Although other dots in this region of text are light, no dagesh is in the yod.
+Ben Denckla: BHL has this yod with a dagesh. BHL Appendix A agrees that L has this yod without a dagesh.
+Replace tipeha under nun with merkha.
+The vertical line under the nun has sufficient northeast-to-southwest inclination to be transcribed as a merkha.
+The Miqra According to the Masorah (MAM) has a merkha under the nun.
+Replace merkha under first mem with tipeha.
+The Miqra According to the Masorah (MAM) has a tipeha under the first mem.
+Remove hiriq from under kaf. Add note 'c'.
+The word lacks a vowel, hence the 'c' note. The dot far below the kaf is from a holam on the following line.
+Ben Denckla: BHL has a ḥiriq on this kaf. BHL Appendix A agrees that in L, this kaf lacks any vowel marking, and thus lacks the expected ḥiriq.
+Change patah under ayin to hataf-patah. Add note 'c'.
+The sheva-like part of the hataf-patah is widely separated from the patah part.
+Ben Denckla: BHL has this ayin with a normal (full) pataḥ under the ayin. BHL Appendix A agrees that L has this ayin with a ḥataf pataḥ.
+Remove hiriq from lamed. Add note 'c'.
+Jerusalem normally has a hiriq as well as a patah on the lamed.
+Ben Denckla: BHL has a pataḥ and then a ḥiriq on this lamed. BHL Appendix A agrees that in L, this lamed has only a pataḥ, i.e. this lamed lacks the expected ḥiriq.
+Add dagesh to bet, add paseq at end of word.
+The dagesh in the bet is reddish and larger than others. It is better than the dagesh in the nun. The paseq is the vertical line touching the knee of the following lamed.
+The BHL has no dagesh in the bet and the word is followed by a paseq. BHL Appendix A has a dagesh in the bet; the paseq is not shown in the Appendix.
+Ben Denckla pointed out the missing paseq which was not part of the original change.
+Damaged text. Add note 't'.
+The text is damaged, particularly on the gimel and yod.
+The BHL has a dagesh, hireq, and revia on the gimel. BHL Appendix A has no entry for this word, word 4; it does have an entry for words 6, 7, however.
+Change patah under bet to segol.
+The dots under the bet are dark and form a poorly-shaped segol.
+The BHL has a patah under the bet. BHL Appendix A has a segol under the bet.
+Move dagesh in shin to nun.
+The BHL has a dagesh in the shin; it has no dagesh in the nun. BHL Appendix A has a dagesh in the nun and no dagesh in the shin.
+Add dagesh to gimel.
+The dagesh is well-positioned, but light and reddish.
+The BHL has a no dagesh in the gimel. BHL Appendix A has no entry for this word.
+Change pashta to qadma to final kaf.
+The BHL has a qadma on the final kaf. BHL Appendix A has no entry for this word.
+Add qadma to kaf.
+The accent could also be a pashta depending on how its horizontal position is interpreted.
+The BHL has a qadma on the kaf. BHL Appendix A has no entry for this word.
+Ben Denckla: Breuer-DM positions this mark as a qadma in its transcription of the LC.
+Remove dagesh from nun.
+This change is analogous to that on 1 Kings 9:23.3.
+The BHL has a dagesh in the nun. BHL Appendix A has no dagesh in the nun.
+Change mahapakh under resh to munah.
+This change is the reverse of the change for 1 Kings 6:3.6. Here under the resh the mahapakh becomes a munah; in 1 Kings 6:3.6 a munah becomes a mahapakh.
+The BHL has hiriq, munah on the resh. BHL Appendix A has no entry for this word.
+Change munah under resh to mahapakh.
+This change is the reverse of the change for 1 Kings 6:2.10. Here under the resh the munah becomes a mahapakh; in 1 Kings 6:2.10 a mahapakh becomes a munah.
+The BHL has a mahapakh, not a munah, on the resh. BHL Appendix A has no entry for this word.
+Remove maqaf.
+The BHL has a maqaf at the end of this word. BHL Appendix A has no entry for this word.
+Ben Denckla: Breuer-DM reads LC as having no maqaf between את and הכרובים.
+Remove dagesh from nun.
+This change is analogous to that on 1 Kings 5:30.3.
+The BHL has a dagesh in the nun. BHL Appendix A has no dagesh in the nun.
+Change pashta on aleph to qadma on tsadi.
+Although the position of the accent on the tsadi is late, the accent must be a qadma as it has no matching final pashta.
+The BHL has a qadma on the tsadi. BHL Appendix A has no entry for this word.
+Change segol under vav to patah. Add note 't'.
+The marking under the vav is poorly written, but is clearly not a segol.
+The BHL has a segol, not a patah, under the vav. BHL Appendix A has no entry for this word.
+Ben Denckla: Breuer-DM supports replacing segol with pataḥ under vav of אצוך.
+Remove sheva from final kaf.
+This is the second "המלך" in the verse.
+The BHL has a sheva on the final kaf. BHL Appendix A has no entry for this word.
+Replace tipeha and patah from under resh with qamats. Poor text condition, add note 't'.
+The text is in poor condition; no tipeha is visible under the resh. This leaves the word without an accent. The blob in the second consonant could be mistaken for a dagesh; however, BHL and UXLC view it as part of a pe that was disconnected from the rest of the pe.
+The BHL has a qamats (not a patah) and tipeha under the resh. BHL Appendix A has no entry for this word.
+Ben Denckla: Breuer-DM supports the replacement of the pataḥ with qamats; however, it asserts that there is a tipeḥa under the resh.
+Add meteg under tav.
+The BHL has a meteg only on the ayin; it has no meteg on the tav. BHL Appendix A has no entry for this word.
+Ben Denckla: Breuer-DM reads the L as in the proposed change with an unexpected second meteg.
+Above, we use meteg without distinguishing it from siluq.
+Move qadma on vav to the bet.
+This change is analogous to that on 1 Kings 15:34.8.
+The BHL has a qadma on the initial vav. BHL Appendix A has no entry for this word.
+Ben Denckla: Breuer-DM transcribes the LC as having qadma on bet.
+Remove sheva from under qof.
+The slash on the upper right before of the vav is the sof-pasuq of the preceding verse.
+The BHL has a sheva under the qof. BHL Appendix A has no sheva under the qof.
+Add dagesh to yod.
+The BHL has no dagesh on the yod. BHL Appendix A has no entry for this word.
+Ben Denckla: Breuer-DM transcribes the LC as having a dagesh in the yod of וימתהו.
+Move qadma above initial vav to following bet.
+This change is analogous to that on 1 Kings 15:26.8.
+On the initial vav, BHL has a qadma in addition to the central dot (Unicode: dagesh) that makes the vav a shuruq. BHL Appendix A has no entry for this word.
+Ben Denckla: Breuer-DM transcribes the LC as having qadma on bet.
+Change hataf-segol below the aleph to a hataf-patah. Remove munah below he. Add note 't'.
+This section of text is of poor quality. No segol-like accent appears below the aleph. No munah is apparent below the he.
+The BHL has a hataf-segol on the aleph and a tsere followed by munah on the he. BHL Appendix A has no entry for this word.
+Remove qadma above the kaf. Add note 't'.
+This section of text is of poor quality. Two words are shown in the image; the first word is word 13, the subject of this change. The dagesh and the holam on the kaf are very faint. Comparing the lameds in both words shows no evidence of an accent on the final lamed of word 13.
+The BHL has a holam and a dagesh on the kaf. It also has a pashta on the lamed. BHL Appendix A has no entry for this word.
+Replace munah under lamed with meteg. Add maqaf to end of word. Add note 't'.
+This section of text is of poor quality. Note the verse has two words of lamed followed by yod; this word is the first lamed followed by yod. No munah is apparent on the lamed, the hiriq and meteg are very faint.
+The BHL has a hiriq followed by munah under the lamed. It has no maqaf at the end of the word. BHL Appendix A has no entry for this word; it does have an entry for word 16 in this verse, however.
+Change munah under the bet to a mahapakh.
+The BHL has a patah then munah under the bet. BHL Appendix A has no entry for this word.
+Ben Denckla: Breuer-DM transcribes the LC as having a mahapakh under the bet.
+Remove tipeha under aleph. Add note 't'
+The text quality is very poor here. The top, left side of the lamed on the following line might be taken as an accent on the aleph or yod. No tipeha under the aleph is apparent.
+The BHL has a sheva under the resh and a hiriq and tipeha under the aleph. BHL Appendix A has no entry for this word.
+Replace merkha under het with tipeha.
+The BHL has a patah and merkha under the het. BHL Appendix A has no entry for this word.
+Replace hataf-patah under ayin with patah.
+The BHL has a hataf-patah under the ayin. BHL Appendix A has a patah under the ayin.
+Ben Denckla: Breuer-DM transcribes the LC as having a pataḥ under the ayin.
+Remove dagesh on nun.
+The BHL has a dagesh, tsere, and geresh on the nun. BHL Appendix A has no entry for this word.
+Ben Denckla: Breuer-DM transcribes the LC as having no dagesh in the nun.
+Remove dagesh from yod.
+The BHL has a hiriq and a dagesh on the yod. BHL Appendix A has no dagesh in the yod.
+Move mahapakh under gimel to dalet.
+The BHL has a mahapakh under the dalet. BHL Appendix A has no entry for this word.
+Change merkha under nun to meteg. Add maqaf to end of word.
+The vertical line under the nun has a insufficient northeast-to-southwest inclination to be transcribed as a merkha. The BHL has a meteg under the nun; thus no 'm' note has been added.
+The BHL has a meteg under the nun and a maqaf at the end of the word. BHL Appendix A has no entry for this word.
+Ben Denckla: Breuer-DM transcribes the LC as having meteg-maqaf (נֹֽכַח־) on this word.
+Remove holam from lamed, add meteg to lamed.
+The BHL has a holam on the lamed and a meteg under lamed. BHL Appendix A has a meteg but no holam on the lamed.
+Move tevir from tav to yod.
+The sheva mark under the bet must belong to the patah under the ayin in the usual form of hataf-patah.
+The BHL has a tevir on the tav. BHL Appendix A has the tevir on the yod. Both BHL and BHL Appendix A have a patah under the bet and a hataf-patah under the ayin.
+Change accent over kaf from zaqef-qatan to revia.
+The BHL has a revia on the kaf. BHL Appendix A has no entry for this word, but has an entry for word 5.
+Remove dagesh from nun.
+The BHL has a dagesh in the nun. BHL Appendix A has no entry for this word.
+Remove dagesh from shin, add dagesh to nun.
+The BHL has a dagesh in the shin and no dagesh in the nun. BHL Appendix A has no entry for this word.
+Add dagesh to nun.
+The BHL has no dagesh in the nun. BHL Appendix A has a dagesh in the nun. Both BHL and BHL Appendix A have a dagesh in the shin.
+Remove dagesh from lamed.
+The BHL has dagesh in the lamed. BHL Appendix A has no dagesh in the lamed.
+Change sheva under resh to patah.
+The BHL has sheva on the resh. BHL Appendix A has a patah on the resh.
+Consider first letter as possible bet.
+The bump on the leading edge of the putative bet is higher than expected and is slightly off-color with the bet itself.
+The BHL has kaf as the initial consonant. BHL Appendix A has a bet as the initial letter and a question mark (?).
+Change hataf-patah under het to sheva.
+The BHL has a hataf-patah under the het. BHL Appendix A has sheva on the het.
+Change merkha under nun to tipeha.
+The BHL has a tipeha under the nun. BHL Appendix A has no entry for this word.
+Change tipeha under aleph to meteg. Add note 'm'.
+The vertical line under the aleph lacks sufficient northeast-to-southwest inclination to be transcribed as a merkha.
+The BHL has a merkha under the aleph, not a tipeha. BHL Appendix A has no entry for this word.
+Replace sheva on shin with patah. Add 't' note. Replace merkha on lamed with meteg. Add 'm' note.
+The vowel under the shin is hard to determine. A patah is a better fit than a sheva.
+A blob emerges from the top of the lamed of a word on the following line; word 22 of this verse. The blob might be considered in determining the markings on the shin of this word, word 19. There is a similar blob emerging from the lamed of the 5-th word of this verse. Consequently, the blob is considered to be an odd part of the lamed of word 22 and not part of the markings on the shin of word 19.
+The BHL has a hataf patah under the shin and a merkha under the lamed. BHL Appendix A has a patah under the shin.
+Replace merkha under pe with tipeha.
+The BHL has merkha under the pe. BHL Appendix A has a tipeha under the pe.
+Remove munah from under shin.
+This word does not have a maqaf in the LC and is therefore lacking an accent.
+The BHL has no accent under the shin and a final maqaf. BHL Appendix A has no entries for this word; it has an entry for word 10.
+Change hataf-patah under ayin to patah. Change merkha under shin to meteg. Add note 'm'.
+The vertical line under the shin lacks sufficient northeast-to-southwest inclination to be transcribed as a merkha.
+The BHL has a patah then meteg under yod, a hataf-patah under the ayin, and a segol then merkha under the shin (as shown in the Reference text above); BHL Appendix A has no entries for this word.
+Replace revia on samekh with telisha-gedola.
+Although the "tail" of the telisha isn't visible, the circle in the image is prepositive. Hence it is transcribed as a telisha-gedola.
+The BHL has a telisha-gedola above the samekh; BHL Appendix A has no entries for this word.
+Replace munah under samekh with meteg. Add note 't'.
+The vertical line under the samekh has a slight northwest-to-southeast inclination and might be transcribed as a tipeha. A tipeha is unexpected here, however.
+An erasure appears to have occurred at the lower, left corner of the line under the samekh. This erasure might have been of the horizontal line of a munah. The vertical line of a munah has a slight northwest-to-southeast inclination and if the horizontal line of a munah is erased, the result would have the shape shown in the image; a slightly inclined meteg. The immediately preceding word, on the preceding line, has a munah. The accent under the samekh is transcribed here as a meteg reflecting this possibility and marked with a 't' note.
+The BHL has meteg under the samekh; BHL Appendix A has no entries for this word.
+Ben Denckla: Breuer-DM reveals that there is a tradition, attested in the Cairo Codex of the Prophets and other sources, of having munaḥ-space on this word (בְּסֵ֣פֶר) instead of meteg-maqaf (בְּסֵֽפֶר־).
+Markings on aleph are unclear. Add note 't'.
+The ink on this word is flaking off.
+The BHL has a qamats then munah under the aleph; BHL Appendix A has no entries for this word.
+Consider changing the geresh then telisha-gedola on shin to geresh-muqdam then telisha-qetana.
+The geresh-muqdam accent only occurs in the Sifrei Emet; 2 Kings is not in the Sifrei Emet; hence the first accent is a geresh.
+The position of the circle and angle of the "tail" determine the difference between a telisha-gedola (prepositive, tail northeast-to-southwest) and a telisha qetana (postpositive, tail northwest-to-southeast). The tail of the telisha is not visible in the image. Since the telisha is on the first consonant of the word, the telisha is prepositive; hence the telisha is a telisha-gedola.
+The BHL has a geresh followed by a telisha-gedola above the shin; BHL Appendix A has no entries for this word.
+Remove geresh from kaf.
+The BHL has a geresh above the kaf; BHL Appendix A has no entries for this word.
+Replace revia on mem with zaqef-qatan.
+The BHL has a zaqef-qatan above the mem; BHL Appendix A has no entries for this word.
+Replace zaqef-qatan above shin with revia. Add note 't'.
+A faint blurr above the left-most dot above the shin may have made the accent a zaqef-qatan. The accent will be transcribed as a revia.
+The BHL has a revia above the shin; BHL Appendix A has no entries for this word.
+Replace revia above kaf with telisha-gedola.
+The BHL has a telisha-gedola above the kaf; BHL Appendix A has no entries for this word.
+Remove qadma above nun, add pashta to he.
+The BHL has a pashta above the he; BHL Appendix A has no entries for this word.
+Replace tipeha under the lamed with tevir.
+The BHL has a segol then tevir on the lamed; BHL Appendix A has no entries for this word.
+Replace merkha under the yod with tipeha.
+The BHL has a tipeha on the yod; BHL Appendix A has no entries for this word.
+Move munah under resh to under the bet.
+The BHL has a munah under the resh; BHL Appendix A has no entries for this word.
+Remove holam from vav.
+The BHL has a holam on the vav; BHL Appendix A shows no holam on the vav.
+Change patah on qof to qamats.
+The dot between the horizontal bar and the merkha under the qof is dark and well-positioned.
+BHL has qamats on this qof; BHL Appendix A makes no comment on this word.
+Add Unicode paseq at end of word, making a legarmeh after the bet.
+Change merkha on bet to tipeha.
+Add dagesh to lamed.
+Ben Denckla: The BHL agrees that L has this dagesh. BHL Appendix A has no entry for this word.
+Remove dagesh from bet and add rafe.
+The bet in the LC has a dark rafe and a faint, but well-positioned, potential dagesh. The potential dagesh might also be an erasure or spot on the vellum. By Masoretic practice the rafe indicates the absence of a dagesh. The UXLC conforms to this practice and eliminates the dagesh. Although the UXLC doesn't normally show rafe marks, one is added here as its presence is key to the transcription.
+Ben Denckla: The BHL has no dagesh on the bet. BHL Appendix A has no entry for this word.

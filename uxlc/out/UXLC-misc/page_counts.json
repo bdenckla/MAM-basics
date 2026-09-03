@@ -1,0 +1,3682 @@
+[
+  {
+    "page": "001B",
+    "word_count": 326
+  },
+  {
+    "page": "002A",
+    "word_count": 350
+  },
+  {
+    "page": "002B",
+    "word_count": 345
+  },
+  {
+    "page": "003A",
+    "word_count": 371
+  },
+  {
+    "page": "003B",
+    "word_count": 336
+  },
+  {
+    "page": "004A",
+    "word_count": 349
+  },
+  {
+    "page": "004B",
+    "word_count": 354
+  },
+  {
+    "page": "005A",
+    "word_count": 349
+  },
+  {
+    "page": "005B",
+    "word_count": 358
+  },
+  {
+    "page": "006A",
+    "word_count": 336
+  },
+  {
+    "page": "006B",
+    "word_count": 328
+  },
+  {
+    "page": "007A",
+    "word_count": 340
+  },
+  {
+    "page": "007B",
+    "word_count": 326
+  },
+  {
+    "page": "008A",
+    "word_count": 346
+  },
+  {
+    "page": "008B",
+    "word_count": 352
+  },
+  {
+    "page": "009A",
+    "word_count": 331
+  },
+  {
+    "page": "009B",
+    "word_count": 331
+  },
+  {
+    "page": "010A",
+    "word_count": 341
+  },
+  {
+    "page": "010B",
+    "word_count": 345
+  },
+  {
+    "page": "011A",
+    "word_count": 348
+  },
+  {
+    "page": "011B",
+    "word_count": 324
+  },
+  {
+    "page": "012A",
+    "word_count": 322
+  },
+  {
+    "page": "012B",
+    "word_count": 338
+  },
+  {
+    "page": "013A",
+    "word_count": 338
+  },
+  {
+    "page": "013B",
+    "word_count": 339
+  },
+  {
+    "page": "014A",
+    "word_count": 326
+  },
+  {
+    "page": "014B",
+    "word_count": 319
+  },
+  {
+    "page": "015A",
+    "word_count": 326
+  },
+  {
+    "page": "015B",
+    "word_count": 342
+  },
+  {
+    "page": "016A",
+    "word_count": 359
+  },
+  {
+    "page": "016B",
+    "word_count": 336
+  },
+  {
+    "page": "017A",
+    "word_count": 346
+  },
+  {
+    "page": "017B",
+    "word_count": 344
+  },
+  {
+    "page": "018A",
+    "word_count": 330
+  },
+  {
+    "page": "018B",
+    "word_count": 326
+  },
+  {
+    "page": "019A",
+    "word_count": 355
+  },
+  {
+    "page": "019B",
+    "word_count": 338
+  },
+  {
+    "page": "020A",
+    "word_count": 340
+  },
+  {
+    "page": "020B",
+    "word_count": 335
+  },
+  {
+    "page": "021A",
+    "word_count": 343
+  },
+  {
+    "page": "021B",
+    "word_count": 325
+  },
+  {
+    "page": "022A",
+    "word_count": 350
+  },
+  {
+    "page": "022B",
+    "word_count": 349
+  },
+  {
+    "page": "023A",
+    "word_count": 322
+  },
+  {
+    "page": "023B",
+    "word_count": 362
+  },
+  {
+    "page": "024A",
+    "word_count": 360
+  },
+  {
+    "page": "024B",
+    "word_count": 349
+  },
+  {
+    "page": "025A",
+    "word_count": 334
+  },
+  {
+    "page": "025B",
+    "word_count": 359
+  },
+  {
+    "page": "026A",
+    "word_count": 348
+  },
+  {
+    "page": "026B",
+    "word_count": 337
+  },
+  {
+    "page": "027A",
+    "word_count": 326
+  },
+  {
+    "page": "027B",
+    "word_count": 336
+  },
+  {
+    "page": "028A",
+    "word_count": 379
+  },
+  {
+    "page": "028B",
+    "word_count": 350
+  },
+  {
+    "page": "029A",
+    "word_count": 343
+  },
+  {
+    "page": "029B",
+    "word_count": 336
+  },
+  {
+    "page": "030A",
+    "word_count": 327
+  },
+  {
+    "page": "030B",
+    "word_count": 343
+  },
+  {
+    "page": "031A",
+    "word_count": 345
+  },
+  {
+    "page": "031B",
+    "word_count": 328
+  },
+  {
+    "page": "032A",
+    "word_count": 354
+  },
+  {
+    "page": "032B",
+    "word_count": 343
+  },
+  {
+    "page": "033A",
+    "word_count": 375
+  },
+  {
+    "page": "033B",
+    "word_count": 362
+  },
+  {
+    "page": "034A",
+    "word_count": 323
+  },
+  {
+    "page": "034B",
+    "word_count": 320
+  },
+  {
+    "page": "035A",
+    "word_count": 349
+  },
+  {
+    "page": "035B",
+    "word_count": 340
+  },
+  {
+    "page": "036A",
+    "word_count": 350
+  },
+  {
+    "page": "036B",
+    "word_count": 348
+  },
+  {
+    "page": "037A",
+    "word_count": 363
+  },
+  {
+    "page": "037B",
+    "word_count": 350
+  },
+  {
+    "page": "038A",
+    "word_count": 351
+  },
+  {
+    "page": "038B",
+    "word_count": 334
+  },
+  {
+    "page": "039A",
+    "word_count": 353
+  },
+  {
+    "page": "039B",
+    "word_count": 284
+  },
+  {
+    "page": "040A",
+    "word_count": 183
+  },
+  {
+    "page": "040B",
+    "word_count": 237
+  },
+  {
+    "page": "041A",
+    "word_count": 341
+  },
+  {
+    "page": "041B",
+    "word_count": 334
+  },
+  {
+    "page": "042A",
+    "word_count": 350
+  },
+  {
+    "page": "042B",
+    "word_count": 336
+  },
+  {
+    "page": "043A",
+    "word_count": 337
+  },
+  {
+    "page": "043B",
+    "word_count": 332
+  },
+  {
+    "page": "044A",
+    "word_count": 349
+  },
+  {
+    "page": "044B",
+    "word_count": 327
+  },
+  {
+    "page": "045A",
+    "word_count": 317
+  },
+  {
+    "page": "045B",
+    "word_count": 329
+  },
+  {
+    "page": "046A",
+    "word_count": 315
+  },
+  {
+    "page": "046B",
+    "word_count": 288
+  },
+  {
+    "page": "047A",
+    "word_count": 297
+  },
+  {
+    "page": "047B",
+    "word_count": 315
+  },
+  {
+    "page": "048A",
+    "word_count": 328
+  },
+  {
+    "page": "048B",
+    "word_count": 345
+  },
+  {
+    "page": "049A",
+    "word_count": 346
+  },
+  {
+    "page": "049B",
+    "word_count": 326
+  },
+  {
+    "page": "050A",
+    "word_count": 319
+  },
+  {
+    "page": "050B",
+    "word_count": 334
+  },
+  {
+    "page": "051A",
+    "word_count": 374
+  },
+  {
+    "page": "051B",
+    "word_count": 362
+  },
+  {
+    "page": "052A",
+    "word_count": 363
+  },
+  {
+    "page": "052B",
+    "word_count": 347
+  },
+  {
+    "page": "053A",
+    "word_count": 348
+  },
+  {
+    "page": "053B",
+    "word_count": 311
+  },
+  {
+    "page": "054A",
+    "word_count": 336
+  },
+  {
+    "page": "054B",
+    "word_count": 319
+  },
+  {
+    "page": "055A",
+    "word_count": 319
+  },
+  {
+    "page": "055B",
+    "word_count": 329
+  },
+  {
+    "page": "056A",
+    "word_count": 349
+  },
+  {
+    "page": "056B",
+    "word_count": 319
+  },
+  {
+    "page": "057A",
+    "word_count": 334
+  },
+  {
+    "page": "057B",
+    "word_count": 339
+  },
+  {
+    "page": "058A",
+    "word_count": 357
+  },
+  {
+    "page": "058B",
+    "word_count": 333
+  },
+  {
+    "page": "059A",
+    "word_count": 338
+  },
+  {
+    "page": "059B",
+    "word_count": 326
+  },
+  {
+    "page": "060A",
+    "word_count": 339
+  },
+  {
+    "page": "060B",
+    "word_count": 349
+  },
+  {
+    "page": "061A",
+    "word_count": 355
+  },
+  {
+    "page": "061B",
+    "word_count": 351
+  },
+  {
+    "page": "062A",
+    "word_count": 376
+  },
+  {
+    "page": "062B",
+    "word_count": 381
+  },
+  {
+    "page": "063A",
+    "word_count": 362
+  },
+  {
+    "page": "063B",
+    "word_count": 369
+  },
+  {
+    "page": "064A",
+    "word_count": 374
+  },
+  {
+    "page": "064B",
+    "word_count": 359
+  },
+  {
+    "page": "065A",
+    "word_count": 381
+  },
+  {
+    "page": "065B",
+    "word_count": 370
+  },
+  {
+    "page": "066A",
+    "word_count": 374
+  },
+  {
+    "page": "066B",
+    "word_count": 339
+  },
+  {
+    "page": "067A",
+    "word_count": 350
+  },
+  {
+    "page": "067B",
+    "word_count": 341
+  },
+  {
+    "page": "068A",
+    "word_count": 358
+  },
+  {
+    "page": "068B",
+    "word_count": 358
+  },
+  {
+    "page": "069A",
+    "word_count": 374
+  },
+  {
+    "page": "069B",
+    "word_count": 372
+  },
+  {
+    "page": "070A",
+    "word_count": 321
+  },
+  {
+    "page": "070B",
+    "word_count": 315
+  },
+  {
+    "page": "071A",
+    "word_count": 349
+  },
+  {
+    "page": "071B",
+    "word_count": 354
+  },
+  {
+    "page": "072A",
+    "word_count": 365
+  },
+  {
+    "page": "072B",
+    "word_count": 316
+  },
+  {
+    "page": "073A",
+    "word_count": 341
+  },
+  {
+    "page": "073B",
+    "word_count": 331
+  },
+  {
+    "page": "074A",
+    "word_count": 288
+  },
+  {
+    "page": "074B",
+    "word_count": 309
+  },
+  {
+    "page": "075A",
+    "word_count": 310
+  },
+  {
+    "page": "075B",
+    "word_count": 339
+  },
+  {
+    "page": "076A",
+    "word_count": 345
+  },
+  {
+    "page": "076B",
+    "word_count": 360
+  },
+  {
+    "page": "077A",
+    "word_count": 335
+  },
+  {
+    "page": "077B",
+    "word_count": 363
+  },
+  {
+    "page": "078A",
+    "word_count": 385
+  },
+  {
+    "page": "078B",
+    "word_count": 337
+  },
+  {
+    "page": "079A",
+    "word_count": 309
+  },
+  {
+    "page": "079B",
+    "word_count": 310
+  },
+  {
+    "page": "080A",
+    "word_count": 351
+  },
+  {
+    "page": "080B",
+    "word_count": 334
+  },
+  {
+    "page": "081A",
+    "word_count": 321
+  },
+  {
+    "page": "081B",
+    "word_count": 344
+  },
+  {
+    "page": "082A",
+    "word_count": 332
+  },
+  {
+    "page": "082B",
+    "word_count": 349
+  },
+  {
+    "page": "083A",
+    "word_count": 364
+  },
+  {
+    "page": "083B",
+    "word_count": 347
+  },
+  {
+    "page": "084A",
+    "word_count": 331
+  },
+  {
+    "page": "084B",
+    "word_count": 320
+  },
+  {
+    "page": "085A",
+    "word_count": 346
+  },
+  {
+    "page": "085B",
+    "word_count": 328
+  },
+  {
+    "page": "086A",
+    "word_count": 344
+  },
+  {
+    "page": "086B",
+    "word_count": 323
+  },
+  {
+    "page": "087A",
+    "word_count": 328
+  },
+  {
+    "page": "087B",
+    "word_count": 352
+  },
+  {
+    "page": "088A",
+    "word_count": 337
+  },
+  {
+    "page": "088B",
+    "word_count": 324
+  },
+  {
+    "page": "089A",
+    "word_count": 367
+  },
+  {
+    "page": "089B",
+    "word_count": 357
+  },
+  {
+    "page": "090A",
+    "word_count": 370
+  },
+  {
+    "page": "090B",
+    "word_count": 332
+  },
+  {
+    "page": "091A",
+    "word_count": 316
+  },
+  {
+    "page": "091B",
+    "word_count": 267
+  },
+  {
+    "page": "092A",
+    "word_count": 303
+  },
+  {
+    "page": "092B",
+    "word_count": 326
+  },
+  {
+    "page": "093A",
+    "word_count": 295
+  },
+  {
+    "page": "093B",
+    "word_count": 296
+  },
+  {
+    "page": "094A",
+    "word_count": 376
+  },
+  {
+    "page": "094B",
+    "word_count": 390
+  },
+  {
+    "page": "095A",
+    "word_count": 307
+  },
+  {
+    "page": "095B",
+    "word_count": 338
+  },
+  {
+    "page": "096A",
+    "word_count": 337
+  },
+  {
+    "page": "096B",
+    "word_count": 309
+  },
+  {
+    "page": "097A",
+    "word_count": 338
+  },
+  {
+    "page": "097B",
+    "word_count": 347
+  },
+  {
+    "page": "098A",
+    "word_count": 344
+  },
+  {
+    "page": "098B",
+    "word_count": 309
+  },
+  {
+    "page": "099A",
+    "word_count": 329
+  },
+  {
+    "page": "099B",
+    "word_count": 333
+  },
+  {
+    "page": "100A",
+    "word_count": 331
+  },
+  {
+    "page": "100B",
+    "word_count": 317
+  },
+  {
+    "page": "101A",
+    "word_count": 316
+  },
+  {
+    "page": "101B",
+    "word_count": 314
+  },
+  {
+    "page": "102A",
+    "word_count": 318
+  },
+  {
+    "page": "102B",
+    "word_count": 323
+  },
+  {
+    "page": "103A",
+    "word_count": 311
+  },
+  {
+    "page": "103B",
+    "word_count": 321
+  },
+  {
+    "page": "104A",
+    "word_count": 338
+  },
+  {
+    "page": "104B",
+    "word_count": 303
+  },
+  {
+    "page": "105A",
+    "word_count": 322
+  },
+  {
+    "page": "105B",
+    "word_count": 322
+  },
+  {
+    "page": "106A",
+    "word_count": 298
+  },
+  {
+    "page": "106B",
+    "word_count": 328
+  },
+  {
+    "page": "107A",
+    "word_count": 325
+  },
+  {
+    "page": "107B",
+    "word_count": 333
+  },
+  {
+    "page": "108A",
+    "word_count": 323
+  },
+  {
+    "page": "108B",
+    "word_count": 339
+  },
+  {
+    "page": "109A",
+    "word_count": 315
+  },
+  {
+    "page": "109B",
+    "word_count": 334
+  },
+  {
+    "page": "110A",
+    "word_count": 337
+  },
+  {
+    "page": "110B",
+    "word_count": 334
+  },
+  {
+    "page": "111A",
+    "word_count": 354
+  },
+  {
+    "page": "111B",
+    "word_count": 353
+  },
+  {
+    "page": "112A",
+    "word_count": 331
+  },
+  {
+    "page": "112B",
+    "word_count": 339
+  },
+  {
+    "page": "113A",
+    "word_count": 333
+  },
+  {
+    "page": "113B",
+    "word_count": 337
+  },
+  {
+    "page": "114A",
+    "word_count": 328
+  },
+  {
+    "page": "114B",
+    "word_count": 311
+  },
+  {
+    "page": "115A",
+    "word_count": 330
+  },
+  {
+    "page": "115B",
+    "word_count": 348
+  },
+  {
+    "page": "116A",
+    "word_count": 353
+  },
+  {
+    "page": "116B",
+    "word_count": 336
+  },
+  {
+    "page": "117A",
+    "word_count": 324
+  },
+  {
+    "page": "117B",
+    "word_count": 335
+  },
+  {
+    "page": "118A",
+    "word_count": 340
+  },
+  {
+    "page": "118B",
+    "word_count": 287
+  },
+  {
+    "page": "119A",
+    "word_count": 363
+  },
+  {
+    "page": "119B",
+    "word_count": 347
+  },
+  {
+    "page": "120A",
+    "word_count": 176
+  },
+  {
+    "page": "121B",
+    "word_count": 337
+  },
+  {
+    "page": "122A",
+    "word_count": 346
+  },
+  {
+    "page": "122B",
+    "word_count": 341
+  },
+  {
+    "page": "123A",
+    "word_count": 322
+  },
+  {
+    "page": "123B",
+    "word_count": 344
+  },
+  {
+    "page": "124A",
+    "word_count": 340
+  },
+  {
+    "page": "124B",
+    "word_count": 349
+  },
+  {
+    "page": "125A",
+    "word_count": 359
+  },
+  {
+    "page": "125B",
+    "word_count": 360
+  },
+  {
+    "page": "126A",
+    "word_count": 342
+  },
+  {
+    "page": "126B",
+    "word_count": 345
+  },
+  {
+    "page": "127A",
+    "word_count": 340
+  },
+  {
+    "page": "127B",
+    "word_count": 352
+  },
+  {
+    "page": "128A",
+    "word_count": 365
+  },
+  {
+    "page": "128B",
+    "word_count": 302
+  },
+  {
+    "page": "129A",
+    "word_count": 347
+  },
+  {
+    "page": "129B",
+    "word_count": 366
+  },
+  {
+    "page": "130A",
+    "word_count": 361
+  },
+  {
+    "page": "130B",
+    "word_count": 335
+  },
+  {
+    "page": "131A",
+    "word_count": 373
+  },
+  {
+    "page": "131B",
+    "word_count": 362
+  },
+  {
+    "page": "132A",
+    "word_count": 335
+  },
+  {
+    "page": "132B",
+    "word_count": 361
+  },
+  {
+    "page": "133A",
+    "word_count": 340
+  },
+  {
+    "page": "133B",
+    "word_count": 357
+  },
+  {
+    "page": "134A",
+    "word_count": 376
+  },
+  {
+    "page": "134B",
+    "word_count": 336
+  },
+  {
+    "page": "135A",
+    "word_count": 340
+  },
+  {
+    "page": "135B",
+    "word_count": 318
+  },
+  {
+    "page": "136A",
+    "word_count": 356
+  },
+  {
+    "page": "136B",
+    "word_count": 331
+  },
+  {
+    "page": "137A",
+    "word_count": 347
+  },
+  {
+    "page": "137B",
+    "word_count": 356
+  },
+  {
+    "page": "138A",
+    "word_count": 373
+  },
+  {
+    "page": "138B",
+    "word_count": 172
+  },
+  {
+    "page": "139A",
+    "word_count": 171
+  },
+  {
+    "page": "139B",
+    "word_count": 353
+  },
+  {
+    "page": "140A",
+    "word_count": 383
+  },
+  {
+    "page": "140B",
+    "word_count": 353
+  },
+  {
+    "page": "141A",
+    "word_count": 345
+  },
+  {
+    "page": "141B",
+    "word_count": 364
+  },
+  {
+    "page": "142A",
+    "word_count": 361
+  },
+  {
+    "page": "142B",
+    "word_count": 358
+  },
+  {
+    "page": "143A",
+    "word_count": 336
+  },
+  {
+    "page": "143B",
+    "word_count": 354
+  },
+  {
+    "page": "144A",
+    "word_count": 354
+  },
+  {
+    "page": "144B",
+    "word_count": 345
+  },
+  {
+    "page": "145A",
+    "word_count": 370
+  },
+  {
+    "page": "145B",
+    "word_count": 362
+  },
+  {
+    "page": "146A",
+    "word_count": 352
+  },
+  {
+    "page": "146B",
+    "word_count": 365
+  },
+  {
+    "page": "147A",
+    "word_count": 362
+  },
+  {
+    "page": "147B",
+    "word_count": 371
+  },
+  {
+    "page": "148A",
+    "word_count": 379
+  },
+  {
+    "page": "148B",
+    "word_count": 345
+  },
+  {
+    "page": "149A",
+    "word_count": 361
+  },
+  {
+    "page": "149B",
+    "word_count": 358
+  },
+  {
+    "page": "150A",
+    "word_count": 342
+  },
+  {
+    "page": "150B",
+    "word_count": 374
+  },
+  {
+    "page": "151A",
+    "word_count": 389
+  },
+  {
+    "page": "151B",
+    "word_count": 389
+  },
+  {
+    "page": "152A",
+    "word_count": 372
+  },
+  {
+    "page": "152B",
+    "word_count": 359
+  },
+  {
+    "page": "153A",
+    "word_count": 355
+  },
+  {
+    "page": "153B",
+    "word_count": 357
+  },
+  {
+    "page": "154A",
+    "word_count": 375
+  },
+  {
+    "page": "154B",
+    "word_count": 362
+  },
+  {
+    "page": "155A",
+    "word_count": 369
+  },
+  {
+    "page": "155B",
+    "word_count": 356
+  },
+  {
+    "page": "156A",
+    "word_count": 367
+  },
+  {
+    "page": "156B",
+    "word_count": 353
+  },
+  {
+    "page": "157A",
+    "word_count": 366
+  },
+  {
+    "page": "157B",
+    "word_count": 374
+  },
+  {
+    "page": "158A",
+    "word_count": 378
+  },
+  {
+    "page": "158B",
+    "word_count": 343
+  },
+  {
+    "page": "159A",
+    "word_count": 353
+  },
+  {
+    "page": "159B",
+    "word_count": 361
+  },
+  {
+    "page": "160A",
+    "word_count": 368
+  },
+  {
+    "page": "160B",
+    "word_count": 348
+  },
+  {
+    "page": "161A",
+    "word_count": 343
+  },
+  {
+    "page": "161B",
+    "word_count": 375
+  },
+  {
+    "page": "162A",
+    "word_count": 379
+  },
+  {
+    "page": "162B",
+    "word_count": 373
+  },
+  {
+    "page": "163A",
+    "word_count": 379
+  },
+  {
+    "page": "163B",
+    "word_count": 343
+  },
+  {
+    "page": "164A",
+    "word_count": 353
+  },
+  {
+    "page": "164B",
+    "word_count": 356
+  },
+  {
+    "page": "165A",
+    "word_count": 367
+  },
+  {
+    "page": "165B",
+    "word_count": 363
+  },
+  {
+    "page": "166A",
+    "word_count": 386
+  },
+  {
+    "page": "166B",
+    "word_count": 358
+  },
+  {
+    "page": "167A",
+    "word_count": 350
+  },
+  {
+    "page": "167B",
+    "word_count": 357
+  },
+  {
+    "page": "168A",
+    "word_count": 326
+  },
+  {
+    "page": "168B",
+    "word_count": 368
+  },
+  {
+    "page": "169A",
+    "word_count": 349
+  },
+  {
+    "page": "169B",
+    "word_count": 341
+  },
+  {
+    "page": "170A",
+    "word_count": 378
+  },
+  {
+    "page": "170B",
+    "word_count": 369
+  },
+  {
+    "page": "171A",
+    "word_count": 361
+  },
+  {
+    "page": "171B",
+    "word_count": 347
+  },
+  {
+    "page": "172A",
+    "word_count": 381
+  },
+  {
+    "page": "172B",
+    "word_count": 375
+  },
+  {
+    "page": "173A",
+    "word_count": 374
+  },
+  {
+    "page": "173B",
+    "word_count": 352
+  },
+  {
+    "page": "174A",
+    "word_count": 372
+  },
+  {
+    "page": "174B",
+    "word_count": 375
+  },
+  {
+    "page": "175A",
+    "word_count": 363
+  },
+  {
+    "page": "175B",
+    "word_count": 374
+  },
+  {
+    "page": "176A",
+    "word_count": 355
+  },
+  {
+    "page": "176B",
+    "word_count": 347
+  },
+  {
+    "page": "177A",
+    "word_count": 372
+  },
+  {
+    "page": "177B",
+    "word_count": 366
+  },
+  {
+    "page": "178A",
+    "word_count": 368
+  },
+  {
+    "page": "178B",
+    "word_count": 356
+  },
+  {
+    "page": "179A",
+    "word_count": 401
+  },
+  {
+    "page": "179B",
+    "word_count": 357
+  },
+  {
+    "page": "180A",
+    "word_count": 388
+  },
+  {
+    "page": "180B",
+    "word_count": 371
+  },
+  {
+    "page": "181A",
+    "word_count": 341
+  },
+  {
+    "page": "181B",
+    "word_count": 348
+  },
+  {
+    "page": "182A",
+    "word_count": 187
+  },
+  {
+    "page": "182B",
+    "word_count": 228
+  },
+  {
+    "page": "183A",
+    "word_count": 347
+  },
+  {
+    "page": "183B",
+    "word_count": 349
+  },
+  {
+    "page": "184A",
+    "word_count": 347
+  },
+  {
+    "page": "184B",
+    "word_count": 373
+  },
+  {
+    "page": "185A",
+    "word_count": 369
+  },
+  {
+    "page": "185B",
+    "word_count": 357
+  },
+  {
+    "page": "186A",
+    "word_count": 372
+  },
+  {
+    "page": "186B",
+    "word_count": 366
+  },
+  {
+    "page": "187A",
+    "word_count": 330
+  },
+  {
+    "page": "187B",
+    "word_count": 352
+  },
+  {
+    "page": "188A",
+    "word_count": 330
+  },
+  {
+    "page": "188B",
+    "word_count": 354
+  },
+  {
+    "page": "189A",
+    "word_count": 339
+  },
+  {
+    "page": "189B",
+    "word_count": 329
+  },
+  {
+    "page": "190A",
+    "word_count": 364
+  },
+  {
+    "page": "190B",
+    "word_count": 359
+  },
+  {
+    "page": "191A",
+    "word_count": 356
+  },
+  {
+    "page": "191B",
+    "word_count": 366
+  },
+  {
+    "page": "192A",
+    "word_count": 367
+  },
+  {
+    "page": "192B",
+    "word_count": 357
+  },
+  {
+    "page": "193A",
+    "word_count": 358
+  },
+  {
+    "page": "193B",
+    "word_count": 367
+  },
+  {
+    "page": "194A",
+    "word_count": 369
+  },
+  {
+    "page": "194B",
+    "word_count": 379
+  },
+  {
+    "page": "195A",
+    "word_count": 367
+  },
+  {
+    "page": "195B",
+    "word_count": 363
+  },
+  {
+    "page": "196A",
+    "word_count": 361
+  },
+  {
+    "page": "196B",
+    "word_count": 367
+  },
+  {
+    "page": "197A",
+    "word_count": 358
+  },
+  {
+    "page": "197B",
+    "word_count": 361
+  },
+  {
+    "page": "198A",
+    "word_count": 359
+  },
+  {
+    "page": "198B",
+    "word_count": 359
+  },
+  {
+    "page": "199A",
+    "word_count": 372
+  },
+  {
+    "page": "199B",
+    "word_count": 352
+  },
+  {
+    "page": "200A",
+    "word_count": 340
+  },
+  {
+    "page": "200B",
+    "word_count": 352
+  },
+  {
+    "page": "201A",
+    "word_count": 338
+  },
+  {
+    "page": "201B",
+    "word_count": 360
+  },
+  {
+    "page": "202A",
+    "word_count": 349
+  },
+  {
+    "page": "202B",
+    "word_count": 333
+  },
+  {
+    "page": "203A",
+    "word_count": 348
+  },
+  {
+    "page": "203B",
+    "word_count": 349
+  },
+  {
+    "page": "204A",
+    "word_count": 373
+  },
+  {
+    "page": "204B",
+    "word_count": 361
+  },
+  {
+    "page": "205A",
+    "word_count": 338
+  },
+  {
+    "page": "205B",
+    "word_count": 355
+  },
+  {
+    "page": "206A",
+    "word_count": 348
+  },
+  {
+    "page": "206B",
+    "word_count": 345
+  },
+  {
+    "page": "207A",
+    "word_count": 357
+  },
+  {
+    "page": "207B",
+    "word_count": 358
+  },
+  {
+    "page": "208A",
+    "word_count": 350
+  },
+  {
+    "page": "208B",
+    "word_count": 332
+  },
+  {
+    "page": "209A",
+    "word_count": 346
+  },
+  {
+    "page": "209B",
+    "word_count": 341
+  },
+  {
+    "page": "210A",
+    "word_count": 336
+  },
+  {
+    "page": "210B",
+    "word_count": 314
+  },
+  {
+    "page": "211A",
+    "word_count": 338
+  },
+  {
+    "page": "211B",
+    "word_count": 326
+  },
+  {
+    "page": "212A",
+    "word_count": 336
+  },
+  {
+    "page": "212B",
+    "word_count": 333
+  },
+  {
+    "page": "213A",
+    "word_count": 327
+  },
+  {
+    "page": "213B",
+    "word_count": 357
+  },
+  {
+    "page": "214A",
+    "word_count": 352
+  },
+  {
+    "page": "214B",
+    "word_count": 335
+  },
+  {
+    "page": "215A",
+    "word_count": 323
+  },
+  {
+    "page": "215B",
+    "word_count": 347
+  },
+  {
+    "page": "216A",
+    "word_count": 325
+  },
+  {
+    "page": "216B",
+    "word_count": 334
+  },
+  {
+    "page": "217A",
+    "word_count": 358
+  },
+  {
+    "page": "217B",
+    "word_count": 328
+  },
+  {
+    "page": "218A",
+    "word_count": 332
+  },
+  {
+    "page": "218B",
+    "word_count": 363
+  },
+  {
+    "page": "219A",
+    "word_count": 367
+  },
+  {
+    "page": "219B",
+    "word_count": 343
+  },
+  {
+    "page": "220A",
+    "word_count": 337
+  },
+  {
+    "page": "220B",
+    "word_count": 324
+  },
+  {
+    "page": "221A",
+    "word_count": 319
+  },
+  {
+    "page": "221B",
+    "word_count": 318
+  },
+  {
+    "page": "222A",
+    "word_count": 342
+  },
+  {
+    "page": "222B",
+    "word_count": 352
+  },
+  {
+    "page": "223A",
+    "word_count": 344
+  },
+  {
+    "page": "223B",
+    "word_count": 341
+  },
+  {
+    "page": "224A",
+    "word_count": 343
+  },
+  {
+    "page": "224B",
+    "word_count": 333
+  },
+  {
+    "page": "225A",
+    "word_count": 336
+  },
+  {
+    "page": "225B",
+    "word_count": 336
+  },
+  {
+    "page": "226A",
+    "word_count": 345
+  },
+  {
+    "page": "226B",
+    "word_count": 322
+  },
+  {
+    "page": "227A",
+    "word_count": 311
+  },
+  {
+    "page": "227B",
+    "word_count": 307
+  },
+  {
+    "page": "228A",
+    "word_count": 344
+  },
+  {
+    "page": "228B",
+    "word_count": 347
+  },
+  {
+    "page": "229A",
+    "word_count": 345
+  },
+  {
+    "page": "229B",
+    "word_count": 338
+  },
+  {
+    "page": "230A",
+    "word_count": 340
+  },
+  {
+    "page": "230B",
+    "word_count": 329
+  },
+  {
+    "page": "231A",
+    "word_count": 327
+  },
+  {
+    "page": "231B",
+    "word_count": 340
+  },
+  {
+    "page": "232A",
+    "word_count": 335
+  },
+  {
+    "page": "232B",
+    "word_count": 349
+  },
+  {
+    "page": "233A",
+    "word_count": 354
+  },
+  {
+    "page": "233B",
+    "word_count": 337
+  },
+  {
+    "page": "234A",
+    "word_count": 352
+  },
+  {
+    "page": "234B",
+    "word_count": 328
+  },
+  {
+    "page": "235A",
+    "word_count": 332
+  },
+  {
+    "page": "235B",
+    "word_count": 331
+  },
+  {
+    "page": "236A",
+    "word_count": 314
+  },
+  {
+    "page": "236B",
+    "word_count": 320
+  },
+  {
+    "page": "237A",
+    "word_count": 340
+  },
+  {
+    "page": "237B",
+    "word_count": 337
+  },
+  {
+    "page": "238A",
+    "word_count": 339
+  },
+  {
+    "page": "238B",
+    "word_count": 315
+  },
+  {
+    "page": "239A",
+    "word_count": 329
+  },
+  {
+    "page": "239B",
+    "word_count": 313
+  },
+  {
+    "page": "240A",
+    "word_count": 324
+  },
+  {
+    "page": "240B",
+    "word_count": 322
+  },
+  {
+    "page": "241A",
+    "word_count": 336
+  },
+  {
+    "page": "241B",
+    "word_count": 338
+  },
+  {
+    "page": "242A",
+    "word_count": 352
+  },
+  {
+    "page": "242B",
+    "word_count": 325
+  },
+  {
+    "page": "243A",
+    "word_count": 346
+  },
+  {
+    "page": "243B",
+    "word_count": 332
+  },
+  {
+    "page": "244A",
+    "word_count": 354
+  },
+  {
+    "page": "244B",
+    "word_count": 343
+  },
+  {
+    "page": "245A",
+    "word_count": 357
+  },
+  {
+    "page": "245B",
+    "word_count": 315
+  },
+  {
+    "page": "246A",
+    "word_count": 325
+  },
+  {
+    "page": "246B",
+    "word_count": 355
+  },
+  {
+    "page": "247A",
+    "word_count": 358
+  },
+  {
+    "page": "247B",
+    "word_count": 333
+  },
+  {
+    "page": "248A",
+    "word_count": 357
+  },
+  {
+    "page": "248B",
+    "word_count": 334
+  },
+  {
+    "page": "249A",
+    "word_count": 350
+  },
+  {
+    "page": "249B",
+    "word_count": 325
+  },
+  {
+    "page": "250A",
+    "word_count": 320
+  },
+  {
+    "page": "250B",
+    "word_count": 331
+  },
+  {
+    "page": "251A",
+    "word_count": 348
+  },
+  {
+    "page": "251B",
+    "word_count": 344
+  },
+  {
+    "page": "252A",
+    "word_count": 347
+  },
+  {
+    "page": "252B",
+    "word_count": 360
+  },
+  {
+    "page": "253A",
+    "word_count": 352
+  },
+  {
+    "page": "253B",
+    "word_count": 356
+  },
+  {
+    "page": "254A",
+    "word_count": 332
+  },
+  {
+    "page": "254B",
+    "word_count": 348
+  },
+  {
+    "page": "255A",
+    "word_count": 344
+  },
+  {
+    "page": "255B",
+    "word_count": 350
+  },
+  {
+    "page": "256A",
+    "word_count": 356
+  },
+  {
+    "page": "256B",
+    "word_count": 352
+  },
+  {
+    "page": "257A",
+    "word_count": 361
+  },
+  {
+    "page": "257B",
+    "word_count": 335
+  },
+  {
+    "page": "258A",
+    "word_count": 334
+  },
+  {
+    "page": "258B",
+    "word_count": 319
+  },
+  {
+    "page": "259A",
+    "word_count": 325
+  },
+  {
+    "page": "259B",
+    "word_count": 351
+  },
+  {
+    "page": "260A",
+    "word_count": 377
+  },
+  {
+    "page": "260B",
+    "word_count": 386
+  },
+  {
+    "page": "261A",
+    "word_count": 331
+  },
+  {
+    "page": "261B",
+    "word_count": 330
+  },
+  {
+    "page": "262A",
+    "word_count": 383
+  },
+  {
+    "page": "262B",
+    "word_count": 360
+  },
+  {
+    "page": "263A",
+    "word_count": 363
+  },
+  {
+    "page": "263B",
+    "word_count": 355
+  },
+  {
+    "page": "264A",
+    "word_count": 380
+  },
+  {
+    "page": "264B",
+    "word_count": 366
+  },
+  {
+    "page": "265A",
+    "word_count": 362
+  },
+  {
+    "page": "265B",
+    "word_count": 371
+  },
+  {
+    "page": "266A",
+    "word_count": 396
+  },
+  {
+    "page": "266B",
+    "word_count": 357
+  },
+  {
+    "page": "267A",
+    "word_count": 362
+  },
+  {
+    "page": "267B",
+    "word_count": 375
+  },
+  {
+    "page": "268A",
+    "word_count": 363
+  },
+  {
+    "page": "268B",
+    "word_count": 370
+  },
+  {
+    "page": "269A",
+    "word_count": 353
+  },
+  {
+    "page": "269B",
+    "word_count": 368
+  },
+  {
+    "page": "270A",
+    "word_count": 352
+  },
+  {
+    "page": "270B",
+    "word_count": 339
+  },
+  {
+    "page": "271A",
+    "word_count": 355
+  },
+  {
+    "page": "271B",
+    "word_count": 368
+  },
+  {
+    "page": "272A",
+    "word_count": 368
+  },
+  {
+    "page": "272B",
+    "word_count": 384
+  },
+  {
+    "page": "273A",
+    "word_count": 357
+  },
+  {
+    "page": "273B",
+    "word_count": 354
+  },
+  {
+    "page": "274A",
+    "word_count": 380
+  },
+  {
+    "page": "274B",
+    "word_count": 380
+  },
+  {
+    "page": "275A",
+    "word_count": 353
+  },
+  {
+    "page": "275B",
+    "word_count": 359
+  },
+  {
+    "page": "276A",
+    "word_count": 358
+  },
+  {
+    "page": "276B",
+    "word_count": 332
+  },
+  {
+    "page": "277A",
+    "word_count": 364
+  },
+  {
+    "page": "277B",
+    "word_count": 374
+  },
+  {
+    "page": "278A",
+    "word_count": 347
+  },
+  {
+    "page": "278B",
+    "word_count": 323
+  },
+  {
+    "page": "279A",
+    "word_count": 365
+  },
+  {
+    "page": "279B",
+    "word_count": 346
+  },
+  {
+    "page": "280A",
+    "word_count": 358
+  },
+  {
+    "page": "280B",
+    "word_count": 328
+  },
+  {
+    "page": "281A",
+    "word_count": 334
+  },
+  {
+    "page": "281B",
+    "word_count": 356
+  },
+  {
+    "page": "282A",
+    "word_count": 336
+  },
+  {
+    "page": "282B",
+    "word_count": 347
+  },
+  {
+    "page": "283A",
+    "word_count": 358
+  },
+  {
+    "page": "283B",
+    "word_count": 355
+  },
+  {
+    "page": "284A",
+    "word_count": 343
+  },
+  {
+    "page": "284B",
+    "word_count": 358
+  },
+  {
+    "page": "285A",
+    "word_count": 363
+  },
+  {
+    "page": "285B",
+    "word_count": 346
+  },
+  {
+    "page": "286A",
+    "word_count": 351
+  },
+  {
+    "page": "286B",
+    "word_count": 337
+  },
+  {
+    "page": "287A",
+    "word_count": 343
+  },
+  {
+    "page": "287B",
+    "word_count": 346
+  },
+  {
+    "page": "288A",
+    "word_count": 338
+  },
+  {
+    "page": "288B",
+    "word_count": 342
+  },
+  {
+    "page": "289A",
+    "word_count": 346
+  },
+  {
+    "page": "289B",
+    "word_count": 356
+  },
+  {
+    "page": "290A",
+    "word_count": 348
+  },
+  {
+    "page": "290B",
+    "word_count": 331
+  },
+  {
+    "page": "291A",
+    "word_count": 339
+  },
+  {
+    "page": "291B",
+    "word_count": 319
+  },
+  {
+    "page": "292A",
+    "word_count": 338
+  },
+  {
+    "page": "292B",
+    "word_count": 363
+  },
+  {
+    "page": "293A",
+    "word_count": 340
+  },
+  {
+    "page": "293B",
+    "word_count": 359
+  },
+  {
+    "page": "294A",
+    "word_count": 344
+  },
+  {
+    "page": "294B",
+    "word_count": 330
+  },
+  {
+    "page": "295A",
+    "word_count": 343
+  },
+  {
+    "page": "295B",
+    "word_count": 326
+  },
+  {
+    "page": "296A",
+    "word_count": 337
+  },
+  {
+    "page": "296B",
+    "word_count": 340
+  },
+  {
+    "page": "297A",
+    "word_count": 322
+  },
+  {
+    "page": "297B",
+    "word_count": 345
+  },
+  {
+    "page": "298A",
+    "word_count": 340
+  },
+  {
+    "page": "298B",
+    "word_count": 315
+  },
+  {
+    "page": "299A",
+    "word_count": 329
+  },
+  {
+    "page": "299B",
+    "word_count": 320
+  },
+  {
+    "page": "300A",
+    "word_count": 325
+  },
+  {
+    "page": "300B",
+    "word_count": 332
+  },
+  {
+    "page": "301A",
+    "word_count": 355
+  },
+  {
+    "page": "301B",
+    "word_count": 332
+  },
+  {
+    "page": "302A",
+    "word_count": 343
+  },
+  {
+    "page": "302B",
+    "word_count": 337
+  },
+  {
+    "page": "303A",
+    "word_count": 350
+  },
+  {
+    "page": "303B",
+    "word_count": 314
+  },
+  {
+    "page": "304A",
+    "word_count": 322
+  },
+  {
+    "page": "304B",
+    "word_count": 338
+  },
+  {
+    "page": "305A",
+    "word_count": 342
+  },
+  {
+    "page": "305B",
+    "word_count": 349
+  },
+  {
+    "page": "306A",
+    "word_count": 345
+  },
+  {
+    "page": "306B",
+    "word_count": 348
+  },
+  {
+    "page": "307A",
+    "word_count": 338
+  },
+  {
+    "page": "307B",
+    "word_count": 345
+  },
+  {
+    "page": "308A",
+    "word_count": 338
+  },
+  {
+    "page": "308B",
+    "word_count": 325
+  },
+  {
+    "page": "309A",
+    "word_count": 302
+  },
+  {
+    "page": "309B",
+    "word_count": 334
+  },
+  {
+    "page": "310A",
+    "word_count": 331
+  },
+  {
+    "page": "310B",
+    "word_count": 328
+  },
+  {
+    "page": "311A",
+    "word_count": 348
+  },
+  {
+    "page": "311B",
+    "word_count": 334
+  },
+  {
+    "page": "312A",
+    "word_count": 335
+  },
+  {
+    "page": "312B",
+    "word_count": 346
+  },
+  {
+    "page": "313A",
+    "word_count": 349
+  },
+  {
+    "page": "313B",
+    "word_count": 317
+  },
+  {
+    "page": "314A",
+    "word_count": 325
+  },
+  {
+    "page": "314B",
+    "word_count": 314
+  },
+  {
+    "page": "315A",
+    "word_count": 331
+  },
+  {
+    "page": "315B",
+    "word_count": 313
+  },
+  {
+    "page": "316A",
+    "word_count": 313
+  },
+  {
+    "page": "316B",
+    "word_count": 321
+  },
+  {
+    "page": "317A",
+    "word_count": 318
+  },
+  {
+    "page": "317B",
+    "word_count": 316
+  },
+  {
+    "page": "318A",
+    "word_count": 329
+  },
+  {
+    "page": "318B",
+    "word_count": 305
+  },
+  {
+    "page": "319A",
+    "word_count": 317
+  },
+  {
+    "page": "319B",
+    "word_count": 302
+  },
+  {
+    "page": "320A",
+    "word_count": 342
+  },
+  {
+    "page": "320B",
+    "word_count": 342
+  },
+  {
+    "page": "321A",
+    "word_count": 302
+  },
+  {
+    "page": "321B",
+    "word_count": 303
+  },
+  {
+    "page": "322A",
+    "word_count": 299
+  },
+  {
+    "page": "322B",
+    "word_count": 309
+  },
+  {
+    "page": "323A",
+    "word_count": 316
+  },
+  {
+    "page": "323B",
+    "word_count": 308
+  },
+  {
+    "page": "324A",
+    "word_count": 326
+  },
+  {
+    "page": "324B",
+    "word_count": 303
+  },
+  {
+    "page": "325A",
+    "word_count": 317
+  },
+  {
+    "page": "325B",
+    "word_count": 309
+  },
+  {
+    "page": "326A",
+    "word_count": 113
+  },
+  {
+    "page": "327B",
+    "word_count": 295
+  },
+  {
+    "page": "328A",
+    "word_count": 340
+  },
+  {
+    "page": "328B",
+    "word_count": 338
+  },
+  {
+    "page": "329A",
+    "word_count": 307
+  },
+  {
+    "page": "329B",
+    "word_count": 317
+  },
+  {
+    "page": "330A",
+    "word_count": 309
+  },
+  {
+    "page": "330B",
+    "word_count": 300
+  },
+  {
+    "page": "331A",
+    "word_count": 326
+  },
+  {
+    "page": "331B",
+    "word_count": 291
+  },
+  {
+    "page": "332A",
+    "word_count": 330
+  },
+  {
+    "page": "332B",
+    "word_count": 315
+  },
+  {
+    "page": "333A",
+    "word_count": 333
+  },
+  {
+    "page": "333B",
+    "word_count": 322
+  },
+  {
+    "page": "334A",
+    "word_count": 322
+  },
+  {
+    "page": "334B",
+    "word_count": 254
+  },
+  {
+    "page": "335A",
+    "word_count": 291
+  },
+  {
+    "page": "335B",
+    "word_count": 302
+  },
+  {
+    "page": "336A",
+    "word_count": 332
+  },
+  {
+    "page": "336B",
+    "word_count": 285
+  },
+  {
+    "page": "337A",
+    "word_count": 303
+  },
+  {
+    "page": "337B",
+    "word_count": 331
+  },
+  {
+    "page": "338A",
+    "word_count": 319
+  },
+  {
+    "page": "338B",
+    "word_count": 318
+  },
+  {
+    "page": "339A",
+    "word_count": 332
+  },
+  {
+    "page": "339B",
+    "word_count": 357
+  },
+  {
+    "page": "340A",
+    "word_count": 341
+  },
+  {
+    "page": "340B",
+    "word_count": 301
+  },
+  {
+    "page": "341A",
+    "word_count": 272
+  },
+  {
+    "page": "341B",
+    "word_count": 281
+  },
+  {
+    "page": "342A",
+    "word_count": 269
+  },
+  {
+    "page": "342B",
+    "word_count": 273
+  },
+  {
+    "page": "343A",
+    "word_count": 276
+  },
+  {
+    "page": "343B",
+    "word_count": 314
+  },
+  {
+    "page": "344A",
+    "word_count": 328
+  },
+  {
+    "page": "344B",
+    "word_count": 316
+  },
+  {
+    "page": "345A",
+    "word_count": 324
+  },
+  {
+    "page": "345B",
+    "word_count": 311
+  },
+  {
+    "page": "346A",
+    "word_count": 281
+  },
+  {
+    "page": "346B",
+    "word_count": 311
+  },
+  {
+    "page": "347A",
+    "word_count": 326
+  },
+  {
+    "page": "347B",
+    "word_count": 319
+  },
+  {
+    "page": "348A",
+    "word_count": 301
+  },
+  {
+    "page": "348B",
+    "word_count": 318
+  },
+  {
+    "page": "349A",
+    "word_count": 326
+  },
+  {
+    "page": "349B",
+    "word_count": 314
+  },
+  {
+    "page": "350A",
+    "word_count": 299
+  },
+  {
+    "page": "350B",
+    "word_count": 300
+  },
+  {
+    "page": "351A",
+    "word_count": 329
+  },
+  {
+    "page": "351B",
+    "word_count": 311
+  },
+  {
+    "page": "352A",
+    "word_count": 320
+  },
+  {
+    "page": "352B",
+    "word_count": 336
+  },
+  {
+    "page": "353A",
+    "word_count": 317
+  },
+  {
+    "page": "353B",
+    "word_count": 331
+  },
+  {
+    "page": "354A",
+    "word_count": 336
+  },
+  {
+    "page": "354B",
+    "word_count": 325
+  },
+  {
+    "page": "355A",
+    "word_count": 333
+  },
+  {
+    "page": "355B",
+    "word_count": 339
+  },
+  {
+    "page": "356A",
+    "word_count": 317
+  },
+  {
+    "page": "356B",
+    "word_count": 335
+  },
+  {
+    "page": "357A",
+    "word_count": 323
+  },
+  {
+    "page": "357B",
+    "word_count": 326
+  },
+  {
+    "page": "358A",
+    "word_count": 316
+  },
+  {
+    "page": "358B",
+    "word_count": 284
+  },
+  {
+    "page": "359A",
+    "word_count": 325
+  },
+  {
+    "page": "359B",
+    "word_count": 308
+  },
+  {
+    "page": "360A",
+    "word_count": 316
+  },
+  {
+    "page": "360B",
+    "word_count": 298
+  },
+  {
+    "page": "361A",
+    "word_count": 323
+  },
+  {
+    "page": "361B",
+    "word_count": 292
+  },
+  {
+    "page": "362A",
+    "word_count": 314
+  },
+  {
+    "page": "362B",
+    "word_count": 323
+  },
+  {
+    "page": "363A",
+    "word_count": 335
+  },
+  {
+    "page": "363B",
+    "word_count": 296
+  },
+  {
+    "page": "364A",
+    "word_count": 336
+  },
+  {
+    "page": "364B",
+    "word_count": 293
+  },
+  {
+    "page": "365A",
+    "word_count": 289
+  },
+  {
+    "page": "365B",
+    "word_count": 262
+  },
+  {
+    "page": "366A",
+    "word_count": 340
+  },
+  {
+    "page": "366B",
+    "word_count": 340
+  },
+  {
+    "page": "367A",
+    "word_count": 351
+  },
+  {
+    "page": "367B",
+    "word_count": 314
+  },
+  {
+    "page": "368A",
+    "word_count": 315
+  },
+  {
+    "page": "368B",
+    "word_count": 340
+  },
+  {
+    "page": "369A",
+    "word_count": 320
+  },
+  {
+    "page": "369B",
+    "word_count": 342
+  },
+  {
+    "page": "370A",
+    "word_count": 340
+  },
+  {
+    "page": "370B",
+    "word_count": 352
+  },
+  {
+    "page": "371A",
+    "word_count": 334
+  },
+  {
+    "page": "371B",
+    "word_count": 339
+  },
+  {
+    "page": "372A",
+    "word_count": 328
+  },
+  {
+    "page": "372B",
+    "word_count": 329
+  },
+  {
+    "page": "373A",
+    "word_count": 329
+  },
+  {
+    "page": "373B",
+    "word_count": 312
+  },
+  {
+    "page": "374A",
+    "word_count": 307
+  },
+  {
+    "page": "374B",
+    "word_count": 309
+  },
+  {
+    "page": "375A",
+    "word_count": 318
+  },
+  {
+    "page": "375B",
+    "word_count": 326
+  },
+  {
+    "page": "376A",
+    "word_count": 311
+  },
+  {
+    "page": "376B",
+    "word_count": 334
+  },
+  {
+    "page": "377A",
+    "word_count": 314
+  },
+  {
+    "page": "377B",
+    "word_count": 309
+  },
+  {
+    "page": "378A",
+    "word_count": 299
+  },
+  {
+    "page": "378B",
+    "word_count": 301
+  },
+  {
+    "page": "379A",
+    "word_count": 314
+  },
+  {
+    "page": "379B",
+    "word_count": 304
+  },
+  {
+    "page": "380A",
+    "word_count": 302
+  },
+  {
+    "page": "380B",
+    "word_count": 330
+  },
+  {
+    "page": "381A",
+    "word_count": 290
+  },
+  {
+    "page": "381B",
+    "word_count": 297
+  },
+  {
+    "page": "382A",
+    "word_count": 298
+  },
+  {
+    "page": "382B",
+    "word_count": 317
+  },
+  {
+    "page": "383A",
+    "word_count": 319
+  },
+  {
+    "page": "383B",
+    "word_count": 313
+  },
+  {
+    "page": "384A",
+    "word_count": 294
+  },
+  {
+    "page": "384B",
+    "word_count": 298
+  },
+  {
+    "page": "385A",
+    "word_count": 331
+  },
+  {
+    "page": "385B",
+    "word_count": 340
+  },
+  {
+    "page": "386A",
+    "word_count": 295
+  },
+  {
+    "page": "386B",
+    "word_count": 309
+  },
+  {
+    "page": "387A",
+    "word_count": 308
+  },
+  {
+    "page": "387B",
+    "word_count": 315
+  },
+  {
+    "page": "388A",
+    "word_count": 308
+  },
+  {
+    "page": "388B",
+    "word_count": 288
+  },
+  {
+    "page": "389A",
+    "word_count": 298
+  },
+  {
+    "page": "389B",
+    "word_count": 314
+  },
+  {
+    "page": "390A",
+    "word_count": 323
+  },
+  {
+    "page": "390B",
+    "word_count": 341
+  },
+  {
+    "page": "391A",
+    "word_count": 286
+  },
+  {
+    "page": "391B",
+    "word_count": 299
+  },
+  {
+    "page": "392A",
+    "word_count": 294
+  },
+  {
+    "page": "392B",
+    "word_count": 287
+  },
+  {
+    "page": "393A",
+    "word_count": 286
+  },
+  {
+    "page": "393B",
+    "word_count": 307
+  },
+  {
+    "page": "394A",
+    "word_count": 323
+  },
+  {
+    "page": "394B",
+    "word_count": 333
+  },
+  {
+    "page": "395A",
+    "word_count": 324
+  },
+  {
+    "page": "395B",
+    "word_count": 321
+  },
+  {
+    "page": "396A",
+    "word_count": 310
+  },
+  {
+    "page": "396B",
+    "word_count": 317
+  },
+  {
+    "page": "397A",
+    "word_count": 322
+  },
+  {
+    "page": "397B",
+    "word_count": 342
+  },
+  {
+    "page": "398A",
+    "word_count": 315
+  },
+  {
+    "page": "398B",
+    "word_count": 329
+  },
+  {
+    "page": "399A",
+    "word_count": 340
+  },
+  {
+    "page": "399B",
+    "word_count": 322
+  },
+  {
+    "page": "400A",
+    "word_count": 301
+  },
+  {
+    "page": "400B",
+    "word_count": 312
+  },
+  {
+    "page": "401A",
+    "word_count": 320
+  },
+  {
+    "page": "401B",
+    "word_count": 335
+  },
+  {
+    "page": "402A",
+    "word_count": 315
+  },
+  {
+    "page": "402B",
+    "word_count": 325
+  },
+  {
+    "page": "403A",
+    "word_count": 291
+  },
+  {
+    "page": "403B",
+    "word_count": 339
+  },
+  {
+    "page": "404A",
+    "word_count": 345
+  },
+  {
+    "page": "404B",
+    "word_count": 334
+  },
+  {
+    "page": "405A",
+    "word_count": 334
+  },
+  {
+    "page": "405B",
+    "word_count": 348
+  },
+  {
+    "page": "406A",
+    "word_count": 316
+  },
+  {
+    "page": "406B",
+    "word_count": 323
+  },
+  {
+    "page": "407A",
+    "word_count": 328
+  },
+  {
+    "page": "407B",
+    "word_count": 340
+  },
+  {
+    "page": "408A",
+    "word_count": 346
+  },
+  {
+    "page": "408B",
+    "word_count": 314
+  },
+  {
+    "page": "409A",
+    "word_count": 335
+  },
+  {
+    "page": "409B",
+    "word_count": 304
+  },
+  {
+    "page": "410A",
+    "word_count": 281
+  },
+  {
+    "page": "410B",
+    "word_count": 284
+  },
+  {
+    "page": "411A",
+    "word_count": 301
+  },
+  {
+    "page": "411B",
+    "word_count": 283
+  },
+  {
+    "page": "412A",
+    "word_count": 305
+  },
+  {
+    "page": "412B",
+    "word_count": 283
+  },
+  {
+    "page": "413A",
+    "word_count": 292
+  },
+  {
+    "page": "413B",
+    "word_count": 314
+  },
+  {
+    "page": "414A",
+    "word_count": 329
+  },
+  {
+    "page": "414B",
+    "word_count": 330
+  },
+  {
+    "page": "415A",
+    "word_count": 322
+  },
+  {
+    "page": "415B",
+    "word_count": 328
+  },
+  {
+    "page": "416A",
+    "word_count": 339
+  },
+  {
+    "page": "416B",
+    "word_count": 315
+  },
+  {
+    "page": "417A",
+    "word_count": 311
+  },
+  {
+    "page": "417B",
+    "word_count": 315
+  },
+  {
+    "page": "418A",
+    "word_count": 301
+  },
+  {
+    "page": "418B",
+    "word_count": 310
+  },
+  {
+    "page": "419A",
+    "word_count": 299
+  },
+  {
+    "page": "419B",
+    "word_count": 302
+  },
+  {
+    "page": "420A",
+    "word_count": 289
+  },
+  {
+    "page": "420B",
+    "word_count": 290
+  },
+  {
+    "page": "421A",
+    "word_count": 308
+  },
+  {
+    "page": "421B",
+    "word_count": 309
+  },
+  {
+    "page": "422A",
+    "word_count": 315
+  },
+  {
+    "page": "422B",
+    "word_count": 318
+  },
+  {
+    "page": "423A",
+    "word_count": 288
+  },
+  {
+    "page": "423B",
+    "word_count": 287
+  },
+  {
+    "page": "424A",
+    "word_count": 316
+  },
+  {
+    "page": "424B",
+    "word_count": 301
+  },
+  {
+    "page": "425A",
+    "word_count": 294
+  },
+  {
+    "page": "425B",
+    "word_count": 318
+  },
+  {
+    "page": "426A",
+    "word_count": 275
+  },
+  {
+    "page": "426B",
+    "word_count": 317
+  },
+  {
+    "page": "427A",
+    "word_count": 321
+  },
+  {
+    "page": "427B",
+    "word_count": 358
+  },
+  {
+    "page": "428A",
+    "word_count": 336
+  },
+  {
+    "page": "428B",
+    "word_count": 324
+  },
+  {
+    "page": "429A",
+    "word_count": 311
+  },
+  {
+    "page": "429B",
+    "word_count": 296
+  },
+  {
+    "page": "430A",
+    "word_count": 291
+  },
+  {
+    "page": "430B",
+    "word_count": 283
+  },
+  {
+    "page": "431A",
+    "word_count": 304
+  },
+  {
+    "page": "431B",
+    "word_count": 301
+  },
+  {
+    "page": "432A",
+    "word_count": 290
+  },
+  {
+    "page": "432B",
+    "word_count": 283
+  },
+  {
+    "page": "433A",
+    "word_count": 295
+  },
+  {
+    "page": "433B",
+    "word_count": 305
+  },
+  {
+    "page": "434A",
+    "word_count": 291
+  },
+  {
+    "page": "434B",
+    "word_count": 288
+  },
+  {
+    "page": "435A",
+    "word_count": 295
+  },
+  {
+    "page": "435B",
+    "word_count": 295
+  },
+  {
+    "page": "436A",
+    "word_count": 290
+  },
+  {
+    "page": "436B",
+    "word_count": 277
+  },
+  {
+    "page": "437A",
+    "word_count": 283
+  },
+  {
+    "page": "437B",
+    "word_count": 289
+  },
+  {
+    "page": "438A",
+    "word_count": 282
+  },
+  {
+    "page": "438B",
+    "word_count": 300
+  },
+  {
+    "page": "439A",
+    "word_count": 306
+  },
+  {
+    "page": "439B",
+    "word_count": 285
+  },
+  {
+    "page": "440A",
+    "word_count": 293
+  },
+  {
+    "page": "440B",
+    "word_count": 285
+  },
+  {
+    "page": "441A",
+    "word_count": 320
+  },
+  {
+    "page": "441B",
+    "word_count": 310
+  },
+  {
+    "page": "442A",
+    "word_count": 296
+  },
+  {
+    "page": "442B",
+    "word_count": 290
+  },
+  {
+    "page": "443A",
+    "word_count": 323
+  },
+  {
+    "page": "443B",
+    "word_count": 318
+  },
+  {
+    "page": "444A",
+    "word_count": 315
+  },
+  {
+    "page": "444B",
+    "word_count": 324
+  },
+  {
+    "page": "445A",
+    "word_count": 318
+  },
+  {
+    "page": "445B",
+    "word_count": 322
+  },
+  {
+    "page": "446A",
+    "word_count": 335
+  },
+  {
+    "page": "446B",
+    "word_count": 319
+  },
+  {
+    "page": "447A",
+    "word_count": 303
+  },
+  {
+    "page": "447B",
+    "word_count": 262
+  },
+  {
+    "page": "448A",
+    "word_count": 223
+  },
+  {
+    "page": "448B",
+    "word_count": 224
+  },
+  {
+    "page": "449A",
+    "word_count": 282
+  },
+  {
+    "page": "449B",
+    "word_count": 292
+  },
+  {
+    "page": "450A",
+    "word_count": 294
+  },
+  {
+    "page": "450B",
+    "word_count": 310
+  },
+  {
+    "page": "451A",
+    "word_count": 294
+  },
+  {
+    "page": "451B",
+    "word_count": 305
+  },
+  {
+    "page": "452A",
+    "word_count": 268
+  },
+  {
+    "page": "452B",
+    "word_count": 288
+  },
+  {
+    "page": "453A",
+    "word_count": 293
+  },
+  {
+    "page": "453B",
+    "word_count": 292
+  },
+  {
+    "page": "454A",
+    "word_count": 279
+  },
+  {
+    "page": "454B",
+    "word_count": 323
+  },
+  {
+    "page": "455A",
+    "word_count": 303
+  },
+  {
+    "page": "455B",
+    "word_count": 294
+  },
+  {
+    "page": "456A",
+    "word_count": 283
+  },
+  {
+    "page": "456B",
+    "word_count": 296
+  },
+  {
+    "page": "457A",
+    "word_count": 300
+  },
+  {
+    "page": "457B",
+    "word_count": 283
+  },
+  {
+    "page": "458A",
+    "word_count": 291
+  },
+  {
+    "page": "458B",
+    "word_count": 288
+  },
+  {
+    "page": "459A",
+    "word_count": 308
+  },
+  {
+    "page": "459B",
+    "word_count": 306
+  },
+  {
+    "page": "460A",
+    "word_count": 302
+  },
+  {
+    "page": "460B",
+    "word_count": 273
+  },
+  {
+    "page": "461A",
+    "word_count": 287
+  },
+  {
+    "page": "461B",
+    "word_count": 268
+  },
+  {
+    "page": "462A",
+    "word_count": 274
+  },
+  {
+    "page": "462B",
+    "word_count": 306
+  },
+  {
+    "page": "463A",
+    "word_count": 175
+  }
+]

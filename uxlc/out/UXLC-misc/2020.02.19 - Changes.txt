@@ -1,0 +1,54 @@
+Swap meteg=siluq (סֽ) and etnachta (ס֑).
+This verse matches Deut 5:9.
+The meteg (05bd) is the Lower accent; the etnachta (0591) is the Upper accent. In the LC the Lower accent, meteg, is placed before (right-to-left) the Upper accent, etnachta. The reference Unicode text places the Upper accent, etnachta, first.
+The LC and text results appear to agree. Changing the mark order in the Unicode text reflects actual LC mark ordering and has no effect on the displayed text.
+Recommended.
+Swap meteg=siluq (סֽ) and etnachta (ס֑).
+This verse matches Ex 20.5.
+The meteg (05bd) is the Lower accent; the etnachta (0591) is the Upper accent. In the LC the Lower accent, meteg, is placed before (right-to-left) the Upper accent, etnachta. The reference Unicode text places the Upper accent, etnachta, first.
+The LC and text results appear to agree. Changing the mark order in the Unicode text reflects actual LC mark ordering and has no effect on the displayed text.
+Recommended.
+Swap revia (ס֗) and gereshayim (ס֞).
+The revia (0597) is the lower accent; the gereshayim (059e) is the upper accent. In the LC the lower accent, revia, is placed before (right-to-left) the upper accent, gereshshayim. The reference text places the upper accent, gereshayim, first.
+The revia and gereshayim have the same combining group (11) and can be placed in any order without "breaking" the mark ordering of the text.
+Recommended.
+Swap merkha (ס֥) and mahapakh (ס֤).
+The merkha (05a5) is the Lower accent; the mahapakh (05a4) is the Upper accent. In the LC the only the mahapakh is clear snd it appears after something. In changes 1-3, 5-8, the first accent in the LC is the lower accent, which in this case is the merkha. The reference text places the upper accent, mahapakh, first.
+The merka and the mahapakh have the same combining group (7) and can be placed in any order without "breaking" the mark ordering of the text. The SBL Hebrew font doesn't display the changed ordering correctly. The reference ordering appears in Deut 5:10.1;whereas the changed ordering appears in Ex 20:6.1.
+Recommended.
+Swap munah (ס֣) and tipeha (ס֖).
+The munah (05a3) is the lower accent; the tipeha (0596) is the upper accent. In the LC the munah appears to be first. The reference text places the upper accent, tipeha, first.
+The munah and the tipeha have the same combining group (7) and can be placed in any order without "breaking" the mark ordering of the text. The proposed changes appear in Ex 20:14.1 and Ex 20:15.1.
+Recommended.
+Swap munah (ס֣) and tipeha (ס֖).
+The munah (05a3) is the lower accent; the tipeha (0596) is the upper accent. In the LC the munah appears to be first. The reference text places the upper accent, tipeha, first.
+The munah and the tipeha have the same combining group (7) and can be placed in any order without "breaking" the mark ordering of the text. The proposed changes appear in Ex 20:14.1 and Ex 20:15.1.
+Recommended.
+Swap zaqef-qaton (ס֔) and geresh (ס֜).
+The zaqef-qatan (0594) is the lower accent; the geresh (059c) is the upper accent. In the LC the zaqef-qatan appears to be first. The reference text places the upper accent, geresh, first.
+The zaqef-qatan and the geresh have the same combining group (11) and can be placed in any order without "breaking" the mark ordering of the text. In Ex 20:10.2, the changed marks appear in the reference text correctly and match the LC.
+Recommended.
+Swap merkha (ס֥) and mahapakh (ס֤).
+The merkha (05a5) is the lower accent; the mahapakh (05a4) is the upper accent. In the LC the merkha, the lower accent, is first. The reference text places the upper accent, mahapakh, first.
+The merka and the mahapakh have the same combining group (7) and can be placed in any order without "breaking" the mark ordering of the text. The SBL Hebrew font doesn't display the changed ordering correctly. The reference ordering appears in Deut 5:10.1; whereas the changed ordering appears in the matching Ex 20:6.1.
+Recommended.
+Swap meteg=siluq (סֽ) and etnachta (ס֑).
+The meteg (05bd) is the lower accent; the etnachta (0591) is the upper accent. In the LC the lower accent, meteg, is placed before (right-to-left) the upper accent, etnachta. The reference Unicode text places the Upper accent, etnachta, first.
+The LC and text results appear to agree. Changing the mark order in the Unicode text reflects actual LC mark ordering and has no effect on the displayed text.
+Recommended.
+Swap meteg=siluq (סֽ) and etnachta (ס֑).
+This is parallel to Deut 5:18.
+The meteg (05bd) is the lower accent; the etnachta (0591) is the upper accent. In the LC the lower accent, meteg, is placed before (right-to-left) the upper accent, etnachta. The reference Unicode text places the Upper accent, etnachta, first.
+The LC and text results appear to agree. Changing the mark order in the Unicode text reflects actual LC mark ordering and has no effect on the displayed text.
+Recommended.
+Swap meteg=siluq (סֽ) and etnachta (ס֑).
+This is parallel to Ex 20:14.
+The meteg (05bd) is the lower accent; the etnachta (0591) is the upper accent. In the LC the lower accent, meteg, is placed before (right-to-left) the upper accent, etnachta. The reference Unicode text places the Upper accent, etnachta, first.
+The LC and text results appear to agree. Changing the mark order in the Unicode text reflects actual LC mark ordering and has no effect on the displayed text.
+Recommended.
+Add dagesh=mapiq to final he (הּ).
+Author agrees that small dot on the left outside of the final he is extraneous.
+Change qadma (ס֨) to revia (ס֗).
+Change merkha (ס֥) to tevir (ס֛).
+Change merkha (ס֥) to tipeha (ס֖).
+Change tipeha (ס֖) to merkha (ס֥).

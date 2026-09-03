@@ -1,0 +1,1007 @@
+<?xml version = "1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/XSL/Changes.xsl.xml"?>
+<!-- <?xml-stylesheet type="text/xsl" href="Changes.xsl.xml"?> -->
+<!-- Copyright 2020 Christopher V. Kimball -->
+<!--========================================================================-->
+<!--========================================================================-->
+<!--
+     Changes.xml - XML data file for Changes
+     
+     27 Feb 2020
+                                                                            -->
+<!--========================================================================-->
+<!--========================================================================-->
+<Changes>
+    <ref>UXLC 1.0</ref>
+    <target>UXLC 1.1</target>
+    <filedate>2020.10.19</filedate>
+    <type>installed</type>
+    <dates> 
+<!-- ======================================================================  -->
+        <date>
+            <date>2020.06.07</date>
+            <title>Changes in Decalogue</title>
+            <summary>
+               <note>
+                 These changes are from the Decalogue (Ex 20:2-17, Deut 5:6-21) which have two systems of vowel/accent marks: Lower and Upper. 
+                    Lower and Upper do not refer to the position of the mark relative to the consonant, but the system. 
+                    The mark for each system does not have to be on the same consonant.  
+                    Ordinary reading uses the Lower accents; special circumstances use the Upper accents. 
+                    Not all texts have both systems.  If only one mark is present it is usually the Lower mark.
+               </note> 
+               <note>
+               In the LC if two marks are on the same consonant and vying for the same space (that is, both above or both below the consonant), 
+               the Lower mark is given first (right-to-left direction); the Upper mark is given afterwards. 
+               The correct position of the mark is important to avoid mixing the two systems in this instance. 
+               </note>
+               <note>
+                 The order in the UXLC digital text is Lower mark then Upper mark if they're on the same consonant.
+                 Unfortunately rendering by current fonts may not display the order of digital text or even the full digital text. 
+                 The digital text can seen by the method "Viewing details of selected Hebrew text" under the "Instructions" link.
+               </note>
+            </summary>
+           <change>
+                    <n>1</n>
+                    <citation>
+                        <book>Ex</book>
+                        <c>20</c>
+                        <v>3</v>
+                        <position>7</position>
+                    </citation>
+                    <author>
+                        <name>Ben Denckla</name>
+                        <mail>bdenckla@alum.mit.edu</mail>
+                        <confirmed>true</confirmed>
+                    </author>
+                    <description>Move patah to preceding nun.</description>
+                    
+                    <lc>
+                <!-- Detail.jpg image 440 x 258 preferred. -->
+                        <folio>Folio_43r</folio>
+                        <column>2</column>
+                        <line>20</line>           
+                        <credit></credit>   
+                    </lc>              
+                
+                    <reftext>&#x05e4;&#x05bc;&#x05b8;&#x05e0;&#x05b8;&#x05bd;&#x0597;&#x05d9;&#x05b7;</reftext>  
+                    <refuni> pe   dagesh   qamats   nun   qamats   meteg   revia   yod   patah </refuni> 
+                    <changetext>&#x05e4;&#x05bc;&#x05b8;&#x05e0;&#x05b8;&#x200d;&#x05bd;&#x05b7;&#x0597;&#x05d9;</changetext>  
+                    <changeuni> pe   dagesh   qamats   nun   qamats  zero-width-joiner  meteg   patah   revia  yod </changeuni> 
+ 
+                    <notes>
+                    <note>
+                    This verse matches Deut 5:7.7.
+                    </note>
+                    <note>
+                    The qamats is the Lower vowel for the nun, the patah is the Upper vowel for the nun.
+                    </note>
+                    <note>
+                    The ordering of the marks under the nun is the same as in the LC. 
+                    The zero-width-joiner before the meteg conforms to the SBL Hebrew recommendations for a central meteg. 
+                    Nevertheless, font problems jumble the markings under the nun for the SBL Hebrew font
+                    and cause the patah to disappear for the Ezra SIL font.
+                    </note>
+                    </notes>
+
+                    <approval>
+                        <name></name>
+                        <mail></mail>
+                        <date></date>
+                    </approval> 
+                    <status>Approved</status>
+                    <type>vowel</type>
+            </change>
+            <change>
+                    <n>2</n>
+                    <citation>
+                        <book>Ex</book>
+                        <c>20</c>
+                        <v>10</v>
+                        <position>1</position>
+                    </citation>
+                    <author>
+                        <name>Ben Denckla</name>
+                        <mail>bdenckla@alum.mit.edu</mail>
+                        <confirmed>true</confirmed>
+                    </author>
+                    <description>Change pashta (&#x05e1;&#x0599;) to qadma (&#x05e1;&#x05a8;) on yod.</description>
+                    
+                    <lc>
+                <!-- Detail.jpg image 440 x 258 preferred. -->
+                        <folio>Folio_43r</folio>
+                        <column>3</column>
+                        <line>9</line>           
+                        <credit></credit>   
+                    </lc>              
+                
+                    <reftext>&#x05d5;&#x05b0;&#x05d9;&#x0599;&#x05d5;&#x05b9;&#x05dd;&#x0599;</reftext>  
+                    <refuni>vav   sheva   yod   pashta   vav   holam   final-mem   pashta  </refuni> 
+                    <changetext>&#x05d5;&#x05b0;&#x05d9;&#x05a8;&#x05d5;&#x05b9;&#x05dd;&#x0599;</changetext>  
+                    <changeuni> vav   sheva  yod   qadma   vav   holam   final-mem   pashta </changeuni> 
+ 
+                    <notes>
+                    <note>
+                    This verse matches Deut 5:14.1.
+                    </note>
+                    <note>
+                    The pashta (on the mem) is the Lower accent, the qadma (on the yod) is the Upper accent.
+                    </note>
+                    <note>
+                     A small difference is discernible between qadma and pashta.
+                    </note>
+                    </notes>
+
+                    <approval>
+                        <name></name>
+                        <mail></mail>
+                        <date></date>
+                    </approval> 
+                    <status>Approved</status>
+                    <type>accent</type>
+            </change>
+            <change>
+                    <n>3</n>
+                    <citation>
+                        <book>Deut</book>
+                        <c>5</c>
+                        <v>7</v>
+                        <position>7</position>
+                    </citation>
+                    <author>
+                        <name>Ben Denckla</name>
+                        <mail>bdenckla@alum.mit.edu</mail>
+                        <confirmed>true</confirmed>
+                    </author>
+                    <description>Move patah to preceding nun.</description>
+                    
+                    <lc>
+                <!-- Detail.jpg image 440 x 258 preferred. -->
+                        <folio>Folio_102r</folio>
+                        <column>3</column>
+                        <line>23</line>           
+                        <credit></credit>   
+                    </lc>              
+                
+                    <reftext>&#x05e4;&#x05bc;&#x05b8;&#x05e0;&#x05b8;&#x05bd;&#x0597;&#x05d9;&#x05b7;&#x05c3;</reftext>  
+                    <refuni>pe   dagesh   qamats   nun   qamats   meteg   revia   yod   patah   sof-pasuq </refuni> 
+                    <changetext>&#x05e4;&#x05bc;&#x05b8;&#x05e0;&#x05b8;&#x200d;&#x05bd;&#x05b7;&#x0597;&#x05d9;</changetext>  
+                    <changeuni> pe   dagesh   qamats   nun   qamats  zero-width-joiner  meteg   patah   revia  yod </changeuni> 
+ 
+                    <notes>
+                    <note>
+                    This verse matches Ex 20:3.7.
+                    </note>
+                    <note>
+                    The qamats is the Lower vowel for the nun, the patah is the Upper vowel for the nun.
+                    </note>
+                    <note>
+                    The ordering of the marks under the nun is the same as in the LC. 
+                    The zero-width-joiner before the meteg conforms to the SBL Hebrew recommendations for a central meteg. 
+                    Nevertheless, font problems jumble the markings under the nun for the SBL Hebrew font 
+                    and cause the patah to disappear for the Ezra SIL font.
+                    </note>
+                    </notes>
+
+                    <approval>
+                        <name></name>
+                        <mail></mail>
+                        <date></date>
+                    </approval> 
+                    <status>Approved</status>
+                    <type>vowel</type>
+            </change>
+            <change>
+                    <n>4</n>
+                    <citation>
+                        <book>Deut</book>
+                        <c>5</c>
+                        <v>14</v>
+                        <position>1</position>
+                    </citation>
+                    <author>
+                        <name>Ben Denckla</name>
+                        <mail>bdenckla@alum.mit.edu</mail>
+                        <confirmed>true</confirmed>
+                    </author>
+                    <description>Change pashta (&#x05e1;&#x0599;) to qadma (&#x05e1;&#x05a8;) on yod.</description>
+                    
+                    <lc>
+                <!-- Detail.jpg image 440 x 258 preferred. -->
+                        <folio>Folio_102v</folio>
+                        <column>1</column>
+                        <line>17</line>           
+                        <credit></credit>   
+                    </lc>              
+                
+                    <reftext>&#x05d5;&#x05b0;&#x05d9;&#x0599;&#x05d5;&#x05b9;&#x05dd;&#x0599;</reftext>  
+                    <refuni>vav   sheva   yod   pashta   vav   holam   final-mem   pashta</refuni> 
+                    <changetext>&#x05d5;&#x05b0;&#x05d9;&#x05a8;&#x05d5;&#x05b9;&#x05dd;&#x0599;</changetext>  
+                    <changeuni> vav   sheva   yod   qadma   vav   holam   final-mem   pashta </changeuni> 
+ 
+                    <notes>
+                    <note>
+                    This verse matches Ex 20:10.1.
+                    </note>
+                    <note>
+                    The pashta (on the mem) is the Lower accent, the qadma (on the yod) is the Upper accent.
+                    </note>
+                    <note>
+                    A small difference is discernible between qadma and pashta.
+                    </note>
+                    </notes>
+
+                    <approval>
+                        <name></name>
+                        <mail></mail>
+                        <date></date>
+                    </approval> 
+                    <status>Approved</status>
+                    <type>accent</type>
+            </change>
+         </date>
+<!-- ======================================================================  -->
+        <date>
+            <date>2020.07.16</date>
+             <title>Addition of an important rafe (  &#x05e1;&#x05bf;  )</title>
+            <summary>
+                 <note>
+                      The Hebrew mark rafe often indicates that a consonant does not have a dagesh or does not have a mapiq.
+                      Since this is "obvious" to the reader, the UXLC and many other texts normally do not show rafes, 
+                         even though they are present in the original document. 
+                         The UXLC currently shows only 12 rafes of thousands of rafes in the LC. This is an important rafe, however.
+                 </note>
+                        
+                 <note>
+                     The rafe contradicts the mappiq within the letter. 
+                     The rafe agrees with a tradition testified to in the Aleppo Codex, which has a rafe and no mappiq.
+                 </note>
+                 
+                 <note>
+                     A transcription note 'c',  "Text is correct relative to the LC.", will be added.
+                 </note>
+            </summary>
+            <change>
+                    <n>1</n>
+                    <citation>
+                        <book>Jer</book>
+                        <c>44</c>
+                        <v>19</v>
+                        <position>14</position>
+                    </citation>
+                    <author>
+                        <name>Seth (Avi) Kadish</name>
+                        <mail>skadish1@gmail.com</mail>
+                        <confirmed>2020.07.16</confirmed>
+                    </author>
+                    <description>Add rafe to final he (&#x05d4;&#x05bf;), add note 'c'.</description>
+                    
+                    <lc>
+                <!-- Reference.jpg image 500 x 566 preferred. -->
+                <!-- Detail.jpg image 440 x 258 preferred. -->
+                        <folio>Folio_270v</folio>
+                        <column>3</column>
+                        <line>23</line>           
+                        <credit></credit>   
+                    </lc>
+                
+                    <reftext>&#x05dc;&#x05b0;&#x05d4;&#x05b7;&#x05a3;&#x05e2;&#x05b2;&#x05e6;&#x05b4;&#x05d1;&#x05b8;&#x0594;&#x05d4;&#x05bc;</reftext>  
+                    <refuni>lamed   sheva   he   patah   munah   ayin   hataf-patah   tsadi   hiriq   bet   qamats   zaqef-qatan   he   dagesh</refuni> 
+                    <changetext>&#x05dc;&#x05b0;&#x05d4;&#x05b7;&#x05a3;&#x05e2;&#x05b2;&#x05e6;&#x05b4;&#x05d1;&#x05b8;&#x0594;&#x05d4;&#x05bc;&#x05bf;</changetext>  
+                    <changeuni>lamed sheva he patah munah ayin hataf-patah tsadi hiriq bet qamats zaqef-qatan he dagesh rafe</changeuni> 
+ 
+ 
+                    <notes>
+                        <note>
+                            Both the mappiq and the rafe are clearly present in the LC.
+                        </note>
+                    </notes>
+                    
+                    <transnotes>
+                        <transnote>
+                            <action>Add</action>
+                            <type>c</type>
+                            <beforetext>&#x05dc;&#x05b0;&#x05d4;&#x05b7;&#x05a3;&#x05e2;&#x05b2;&#x05e6;&#x05b4;&#x05d1;&#x05b8;&#x0594;&#x05d4;&#x05bc;&#x05bf;</beforetext>
+                        </transnote>
+                    </transnotes>
+                    
+                    <approval>
+                        <name></name>
+                        <mail></mail>
+                        <date></date>
+                    </approval> 
+                    <status>Approved</status>
+                    <type>accent</type>
+            </change>
+        </date>
+<!-- ======================================================================  -->
+        <date>
+            <date>2020.07.31</date>
+             <title>Changes to dageshes in Lamentations 3:33</title>
+                        
+            <change>
+                    <n>1</n>
+                    <citation>
+                        <book>Lam</book>
+                        <c>3</c>
+                        <v>33</v>
+                        <position>4</position>
+                    </citation>
+                    <author>
+                        <name>Stephen Salisbury</name>
+                        <mail>Steve@grovescenter.org</mail>
+                        <confirmed>true</confirmed>
+                    </author>
+                    <description>Remove dagesh (&#x05dc;&#x05bc;)</description>
+                    
+                    <lc>
+                <!-- Reference.jpg image 500 x 566 preferred. -->
+                <!-- Detail.jpg image 440 x 258 preferred. -->
+                        <folio>Folio_431v</folio>
+                        <column>1</column>
+                        <line>16</line>           
+                        <credit></credit>   
+                    </lc>
+                
+                    <reftext>&#x05de;&#x05b4;&#x05dc;&#x05bc;&#x05b4;&#x05d1;&#x05bc;&#x0594;&#x05d5;&#x05b9;</reftext>  
+                    <refuni>mem   hiriq   lamed   dagesh   hiriq   bet   dagesh   zaqef-qatan   vav   holam</refuni> 
+                    <changetext>&#x05de;&#x05b4;&#x05dc;&#x05b4;&#x05d1;&#x05bc;&#x0594;&#x05d5;&#x05b9;</changetext>  
+                    <changeuni>mem   hiriq   lamed   hiriq   bet   dagesh   zaqef-qatan   vav   holam</changeuni> 
+ 
+  
+                    <notes>
+                        <note>
+                            No dagesh is present in the lamed in the LC.
+                        </note>
+                    </notes>
+                                        
+ 
+                   
+                    <approval>
+                        <name></name>
+                        <mail></mail>
+                        <date></date>
+                    </approval> 
+                    <status>Approved</status>
+                    <type>vowel</type>
+            </change>
+
+            <change>
+                    <n>2</n>
+                    <citation>
+                        <book>Lam</book>
+                        <c>3</c>
+                        <v>33</v>
+                        <position>6</position>
+                    </citation>
+                    <author>
+                        <name>Yishai Glasner</name>
+                        <mail>yishai@sefaria.org</mail>
+                        <confirmed>true</confirmed>
+                    </author>
+                    <description>Note a possible dagesh in bet ( &#x05d1;&#x05bc;) but do not add dagesh, add transcription note t.</description>
+                    
+                    <lc>
+                        <folio>Folio_431v</folio>
+                        <column>1</column>
+                        <line>16</line>           
+                        <credit>Credit: Photograph by Bruce and Kenneth Zuckerman, West Semitic Research, 
+                           in collaboration with Ancient Biblical Manuscript Center. 
+                           Courtesy National Library of Russia (Saltykov-Shchedrin).
+                        </credit>                     
+                    </lc>
+                
+                    <reftext>&#x05d1;&#x05b0;&#x05e0;&#x05b5;&#x05d9;&#x05be;</reftext>  
+                    <refuni>bet   sheva   nun   tsere   yod   maqaf</refuni> 
+                    <changetext>&#x05d1;&#x05bc;&#x05b0;&#x05e0;&#x05b5;&#x05d9;&#x05be;</changetext>  
+                    <changeuni>bet   dagesh   sheva   nun   tsere   yod   maqaf</changeuni> 
+ 
+ 
+                    <notes>
+                        <note>
+                            The dagesh is very light in the black and white facsimile at the Tanach.us site.
+                            When viewed with a high-resolution, color image from the Inscriptifact Digital Library,
+                            shown here, the dagesh nearly disappears.
+                        </note>
+                        <note>
+                            Adding a note t, but leaving the dagesh out, 14 Dec 2020.
+                        </note>
+                    </notes>
+                    
+                    <transnotes>
+                        <transnote>
+                            <action>Add</action>
+                            <type>t</type>
+                            <beforetext>&#x05d1;&#x05bc;</beforetext>
+                        </transnote>
+                    </transnotes>
+                    
+                                        
+                    <approval>
+                        <name></name>
+                        <mail></mail>
+                        <date></date>
+                    </approval> 
+                    <status>Approved</status>
+                    <type>NoTextChange</type>
+            </change>
+
+        </date>
+<!-- ======================================================================  -->
+        <date>
+            <date>2020.08.31</date>
+            <title>Changes to holam position in Isaiah 49:23</title>
+                        
+            <change>
+                    <n>1</n>
+                    <citation>
+                        <book>Isa</book>
+                        <c>49</c>
+                        <v>23</v>
+                        <position>20</position>
+                    </citation>
+                    <author>
+                        <name>Ben Denckla</name>
+                        <mail>bdenckla@alum.mit.edu</mail>
+                        <confirmed>true</confirmed>
+                    </author>
+                    <description>Move holam to qof.</description>
+                    
+                    <lc>
+                <!-- Reference.jpg image 500 x 566 preferred. -->
+                <!-- Detail.jpg image 440 x 258 preferred. -->
+                        <folio>Folio_239B</folio>
+                        <column>3</column>
+                        <line>9</line>           
+                        <credit></credit>   
+                    </lc>
+                
+                    <reftext>&#x05e7;&#x05d5;&#x05b9;&#x05b8;&#x05bd;&#x05d9;&#x05c3;</reftext>  
+                    <refuni>qof   vav   holam   qamats   meteg   yod   sof-pasuq</refuni> 
+                    <changetext>&#x05e7;&#x05b9;&#x05d5;&#x05b8;&#x05bd;&#x05d9;&#x05c3;</changetext>  
+                    <changeuni>qof   holam   vav   qamats   meteg   yod   sof-pasuq</changeuni> 
+
+                    <notes>
+                        <note>
+                        This misplaced holam occurred in the translation from Michigan-Claremont coding
+                            to Unicode performed by the program WLC2XML. 
+                        See the Coding page for more details.
+                        The two cases of this date, 2020.08.31, cover all instances of this problem in WLC 4.20.
+                        </note>
+                    </notes>
+
+                    <approval>
+                        <name></name>
+                        <mail></mail>
+                        <date></date>
+                    </approval> 
+                    <status>Approved</status>
+                    <type>vowel</type>
+            </change>
+            <change>
+                    <n>2</n>
+                    <citation>
+                        <book>Lam</book>
+                        <c>3</c>
+                        <v>25</v>
+                        <position>3</position>
+                    </citation>
+                    <author>
+                        <name>Ben Denckla</name>
+                        <mail>bdenckla@alum.mit.edu</mail>
+                        <confirmed>true</confirmed>
+                    </author>
+                    <description>Move holam to qof.</description>
+                    
+                    <lc>
+                <!-- Reference.jpg image 500 x 566 preferred. -->
+                <!-- Detail.jpg image 440 x 258 preferred. -->
+                        <folio>Folio_431v</folio>
+                        <column>1</column>
+                        <line>5</line>           
+                        <credit></credit>   
+                    </lc>
+                
+                    <reftext>&#x05dc;&#x05b0;&#x05e7;&#x05d5;&#x05b9;&#x05b8;&#x0594;&#x05d5;</reftext>  
+                    <refuni>lamed   sheva   qof   vav   holam   qamats   zaqef-qatan   vav</refuni> 
+                    <changetext>&#x05dc;&#x05b0;&#x05e7;&#x05b9;&#x05d5;&#x05b8;&#x0594;&#x05d5;</changetext>  
+                    <changeuni>lamed   sheva   qof   holam    vav   qamats   zaqef-qatan   vav</changeuni> 
+
+                    <notes>
+                        <note>
+                        This misplaced holam is due to a coding error in the translation from Michigan-Claremont coding
+                        to Unicode performed by the program WLC2XML. The problem is that the MC-encoded vav, 'W',
+                        is followed by a morphological divider, '/' rather than a Hebrew character. Because the
+                        '/' is not a MC Hebrew vowel, the holam is placed, incorrectly, on the vav by the algorithm.
+                        </note>
+                    </notes>
+                    
+                    <approval>
+                        <name></name>
+                        <mail></mail>
+                        <date></date>
+                    </approval> 
+                    <status>Approved</status>
+                    <type>vowel</type>
+            </change>
+         </date>
+<!-- ======================================================================  -->
+        <date>
+            <date>2020.09.22</date>
+            <title>Change geresh muqdam ( &#x05e1;&#x059d; ) to geresh ( &#x05e1;&#x059c; )</title>
+            
+            <summary>
+                 <note>
+                      The geresh and geresh muqdam have identical shapes and differ only in their positioning.  
+                      The geresh (x059c) is normally centralized at the top of the consonant, 
+                         the geresh muqdam (x059d) normally appears in the top right of the consonant.
+                         Muqdam means "before"; the reading direction is right-to-left.
+                 </note>
+                        
+                 <note>
+                     Tradition says that the geresh muqdam appears only the three books Psalms, Proverbs, and Job;
+                     the "Sifrei Emet". The geresh muqdam is unique to the particular cantillation applied to these books.
+                 </note>
+                 
+                 <note>
+                     Of 2,945 instances of a geresh muqdam in the previous version of the UXLC,
+                     only two instances appear outside of Psalms, Proverbs, and Job.
+                     These instances are the subject of these changes which are intended to align with tradition.
+                 </note>
+            </summary>
+                        
+            <change>
+                    <n>1</n>
+                    <citation>
+                        <book>Lev</book>
+                        <c>1</c>
+                        <v>3</v>
+                        <position>10</position>
+                    </citation>
+                    <author>
+                        <name>Ben Denckla</name>
+                        <mail>bdenckla@alum.mit.edu</mail>
+                        <confirmed>true</confirmed>
+                    </author>
+                    <description>Change geresh muqdam to geresh.</description>
+                    
+                    <lc>
+                <!-- Reference.jpg image 500 x 566 preferred. -->
+                <!-- Detail.jpg image 440 x 258 preferred. -->
+                        <folio>Folio_57r</folio>
+                        <column>1</column>
+                        <line>3</line>           
+                        <credit></credit>   
+                    </lc>
+                
+                    <reftext>&#x05e4;&#x05bc;&#x05b6;&#x059d;&#x05ea;&#x05b7;&#x05d7;</reftext>  
+                    <refuni>pe   dagesh   segol   geresh-muqdam   tav   patah   het</refuni> 
+                    <changetext>&#x05e4;&#x05bc;&#x05b6;&#x059c;&#x05ea;&#x05b7;&#x05d7;</changetext>  
+                    <changeuni>pe   dagesh   segol   geresh   tav   patah   het</changeuni> 
+
+                    <notes>
+                        <note>
+                            Plenty of space is available at the top of the pe to locate the geresh in more central position.
+                        </note>
+                    </notes>
+                    
+                    <approval>
+                        <name></name>
+                        <mail></mail>
+                        <date></date>
+                    </approval> 
+                    <status>Approved</status>
+                    <type>accent</type>
+            </change>
+            <change>
+                    <n>2</n>
+                    <citation>
+                        <book>2Kings</book>
+                        <c>17</c>
+                        <v>13</v>
+                        <position>12</position>
+                    </citation>
+                    <author>
+                        <name>Ben Denckla</name>
+                        <mail>bdenckla@alum.mit.edu</mail>
+                        <confirmed>true</confirmed>
+                    </author>
+                    <description>Change geresh muqdam to geresh.</description>
+                    
+                    <lc>
+                <!-- Reference.jpg image 500 x 566 preferred. -->
+                <!-- Detail.jpg image 440 x 258 preferred. -->
+                        <folio>Folio_214r</folio>
+                        <column>1</column>
+                        <line>4</line>           
+                        <credit></credit>   
+                    </lc>
+                
+                    <reftext>&#x05e9;&#x05c1;&#x05bb;&#x059d;&#x05a0;&#x05d1;&#x05d5;&#x05bc;</reftext>  
+                    <refuni>shin   shin-dot   qubuts   geresh-muqdam   telisha-gedola   bet   vav   dagesh</refuni> 
+                    <changetext>&#x05e9;&#x05c1;&#x05bb;&#x059c;&#x05a0;&#x05d1;&#x05d5;&#x05bc;</changetext>  
+                    <changeuni>shin   shin-dot   qubuts   geresh   telisha-gedola   bet   vav   dagesh</changeuni> 
+
+                     <notes>
+                        <note>
+                            The upper markings, including the shin dot are very garbled.
+                        </note>
+                    </notes>
+                    
+                    <approval>
+                        <name></name>
+                        <mail></mail>
+                        <date></date>
+                    </approval> 
+                    <status>Approved</status>
+                    <type>accent</type>
+            </change>
+         </date>
+<!-- ======================================================================  -->
+        <date>
+            <date>2020.09.23</date>
+            <title>Change ordinary word (w) to ketiv word (k)</title>
+            
+            <summary>
+                 <note>
+                      These words are instances of ketiv without qere in the Masoretic Tanach
+                      as indicated in the Masoretic notes.
+                      The 8 recognized instances of ketiv without qere are:
+                      these verses 2 Sam 13:33, 2 Sam 15:21, plus 2 Kings 5:18; Jer 51:3,
+                      Jer 38:16, Jer 39:12, Ezek 48:16, Ruth 3:12.
+                      With this change the UXLC text contains all instances of ketiv without qere in the Masoretic Tanach.
+                      These two instances are the only ones vowelized in the LC.
+                 </note>
+                        
+                  <note>
+                      Ketiv without qere words are NOT intended to be spoken by the reader.
+                      Strangely, these words are vowelized.
+                 </note>
+            </summary>
+                        
+            <change>
+                    <n>1</n>
+                    <citation>
+                        <book>2Sam</book>
+                        <c>13</c>
+                        <v>33</v>
+                        <position>15</position>
+                    </citation>
+                    <author>
+                        <name>Ben Denckla</name>
+                        <mail>bdenckla@alum.mit.edu</mail>
+                        <confirmed>true</confirmed>
+                    </author>
+                    <description>Change ordinary word to ketiv word.</description>
+                    
+                    <lc>
+                <!-- Reference.jpg image 500 x 566 preferred. -->
+                <!-- Detail.jpg image 440 x 258 preferred. -->
+                        <folio>Folio_175v</folio>
+                        <column>3</column>
+                        <line>9</line>           
+                        <credit></credit>   
+                    </lc>
+                
+                    <reftext>&#x05d0;&#x05b4;&#x05dd;&#x05be;</reftext>  
+                    <refuni>alef   hiriq   final-mem   maqaf</refuni> 
+                    <changetext>&#x05d0;&#x05b4;&#x05dd;&#x05be;</changetext>  
+                    <changeuni>alef   hiriq   final-mem   maqaf</changeuni> 
+                    
+                    <notes>
+                        <note>
+                            The text is unchanged.
+                        </note>
+                    </notes>
+                     
+                    <tags>
+                      <reftag>w</reftag>
+                      <changetag>k</changetag>
+                    </tags>
+                    
+                    <approval>
+                        <name></name>
+                        <mail></mail>
+                        <date></date>
+                    </approval> 
+                    <status>Approved</status>
+                    <type>tag</type>
+            </change>
+           <change>
+                    <n>2</n>
+                    <citation>
+                        <book>2Sam</book>
+                        <c>15</c>
+                        <v>21</v>
+                        <position>12</position>
+                    </citation>
+                    <author>
+                        <name>Ben Denckla</name>
+                        <mail>bdenckla@alum.mit.edu</mail>
+                        <confirmed>true</confirmed>
+                    </author>
+                    <description>Change ordinary word to ketiv word.</description>
+                    
+                    <lc>
+                <!-- Reference.jpg image 500 x 566 preferred. -->
+                <!-- Detail.jpg image 440 x 258 preferred. -->
+                        <folio>Folio_177r</folio>
+                        <column>2</column>
+                        <line>22</line>           
+                        <credit></credit>   
+                    </lc>
+                
+                    <reftext>&#x05d0;&#x05b4;&#x05dd;&#x05be;</reftext>  
+                    <refuni>alef   hiriq   final-mem   maqaf</refuni> 
+                    <changetext>&#x05d0;&#x05b4;&#x05dd;&#x05be;</changetext>  
+                    <changeuni>alef   hiriq   final-mem   maqaf</changeuni> 
+                    
+                    <notes>
+                        <note>
+                            The text is unchanged.
+                        </note>
+                    </notes>
+                    
+                    <tags>
+                      <reftag>w</reftag>
+                      <changetag>k</changetag>
+                    </tags>
+                    
+                    <approval>
+                        <name></name>
+                        <mail></mail>
+                        <date></date>
+                    </approval> 
+                    <status>Approved</status>
+                    <type>tag</type>
+            </change>
+         </date>
+<!-- ======================================================================  -->
+        <date>
+            <date>2020.09.29</date>
+            <title>Add Combining Grapheme Joiner (CGJ, x034f) to improve display of complex accents</title>
+            
+            <summary>
+                 <note> 
+                 One change, 3, corrects the order of the accents and needs no CGJ.
+                 </note> 
+                 <note>
+                 These changes add 5 CGJ characters to the text.
+                 </note>
+            </summary>
+                        
+            <change>
+                    <n>1</n>
+                    <citation>
+                        <book>Gen</book>
+                        <c>35</c>
+                        <v>22</v>
+                        <position>14</position>
+                    </citation>
+                    <author>
+                        <name>Ben Denckla</name>
+                        <mail>bdenckla@alum.mit.edu</mail>
+                        <confirmed>true</confirmed>
+                    </author>
+                    <description>Add CGJ to improve display.</description>
+                    
+                    <lc>
+                <!-- Reference.jpg image 500 x 566 preferred. -->
+                <!-- Detail.jpg image 440 x 258 preferred. -->
+                        <folio>Folio_21v</folio>
+                        <column>3</column>
+                        <line>7</line>           
+                        <credit></credit>   
+                    </lc>
+                
+                    <reftext>&#x05d9;&#x05b4;&#x05e9;&#x05c2;&#x05b0;&#x05e8;&#x05b8;&#x05d0;&#x05b5;&#x0591;&#x05bd;&#x05dc;</reftext>  
+                    <refuni>yod   hiriq   shin   sin-dot   sheva   resh   qamats   alef   tsere   etnachta   meteg   lamed</refuni> 
+                    <changetext>&#x05d9;&#x05b4;&#x05e9;&#x05c2;&#x05b0;&#x05e8;&#x05b8;&#x05d0;&#x05b5;&#x0591;&#x034f;&#x05bd;&#x05dc;</changetext>  
+                    <changeuni>yod   hiriq   shin   sin-dot   sheva   resh   qamats   alef   tsere   etnachta  cgj  meteg   lamed</changeuni> 
+                    
+                    <notes>
+                        <note>
+                            In the LC the etnacha and the meteg are at the same level. Thus the etnacha precedes the meteg.
+                        </note>
+                    </notes>
+                                         
+                    <approval>
+                        <name></name>
+                        <mail></mail>
+                        <date></date>
+                    </approval> 
+                    <status>Approved</status>
+                    <type>accent</type>
+            </change>
+            <change>
+                    <n>2</n>
+                    <citation>
+                        <book>Ex</book>
+                        <c>20</c>
+                        <v>2</v>
+                        <position>9</position>
+                    </citation>
+                    <author>
+                        <name>Ben Denckla</name>
+                        <mail>bdenckla@alum.mit.edu</mail>
+                        <confirmed>true</confirmed>
+                    </author>
+                    <description>Add CGJ to improve display.</description>
+                    
+                    <lc>
+                <!-- Reference.jpg image 500 x 566 preferred. -->
+                <!-- Detail.jpg image 440 x 258 preferred. -->
+                        <folio>Folio_43r</folio>
+                        <column>2</column>
+                        <line>18</line>           
+                        <credit></credit>   
+                    </lc>
+                
+                    <reftext>&#x05e2;&#x05b2;&#x05d1;&#x05b8;&#x05d3;&#x05b4;&#x0591;&#x05bd;&#x05d9;&#x05dd;&#x05c3;</reftext>  
+                    <refuni>ayin   hataf-patah   bet   qamats   dalet   hiriq   etnachta   meteg   yod   final-mem   sof-pasuq</refuni> 
+                    <changetext>&#x05e2;&#x05b2;&#x05d1;&#x05b8;&#x05d3;&#x05b4;&#x0591;&#x034f;&#x05bd;&#x05d9;&#x05dd;&#x05c3;</changetext>  
+                    <changeuni>ayin   hataf-patah   bet   qamats   dalet   hiriq   etnachta  cgj  meteg   yod   final-mem   sof-pasuq</changeuni> 
+                                         
+                    <approval>
+                        <name></name>
+                        <mail></mail>
+                        <date></date>
+                    </approval> 
+                    <status>Approved</status>
+                    <type>accent</type>
+            </change>
+            <change>
+                    <n>3</n>
+                    <citation>
+                        <book>Ex</book>
+                        <c>20</c>
+                        <v>10</v>
+                        <position>11</position>
+                    </citation>
+                    <author>
+                        <name>Ben Denckla</name>
+                        <mail>bdenckla@alum.mit.edu</mail>
+                        <confirmed>true</confirmed>
+                    </author>
+                    <description>Change mark ordering on final kaf to qamats meteg munah.</description>
+                    
+                    <lc>
+                <!-- Reference.jpg image 500 x 566 preferred. -->
+                <!-- Detail.jpg image 440 x 258 preferred. -->
+                        <folio>Folio_43r</folio>
+                        <column>3</column>
+                        <line>12</line>           
+                        <credit></credit>   
+                    </lc>
+                
+                    <reftext>&#x05d5;&#x05bc;&#x05d1;&#x05b4;&#x05e0;&#x05b0;&#x05da;&#x05b8;&#x05a3;&#x05bd;&#x05be;</reftext>  
+                    <refuni>vav   dagesh   bet   hiriq   nun   sheva   final-kaf   qamats   munah   meteg   maqaf</refuni> 
+                    <changetext>&#x05d5;&#x05bc;&#x05d1;&#x05b4;&#x05e0;&#x05b0;&#x05da;&#x05b8;&#x05bd;&#x05a3;&#x05be;</changetext>  
+                    <changeuni>vav   dagesh   bet   hiriq   nun   sheva   final-kaf   qamats   meteg   munah   maqaf</changeuni> 
+                                         
+                    <notes>
+                        <note>
+                           Order the accents on final-kaf as qamets meteg munah so that the text and display orders are the same.
+                           No CGJ needed.
+                        </note>
+                    </notes>
+                    <approval>
+                        <name></name>
+                        <mail></mail>
+                        <date></date>
+                    </approval> 
+                    <status>Approved</status>
+                    <type>accent</type>
+            </change>
+            <change>
+                    <n>4</n>
+                    <citation>
+                        <book>Ex</book>
+                        <c>20</c>
+                        <v>13</v>
+                        <position>2</position>
+                    </citation>
+                    <author>
+                        <name>Ben Denckla</name>
+                        <mail>bdenckla@alum.mit.edu</mail>
+                        <confirmed>true</confirmed>
+                    </author>
+                    <description>Add CGJ to improve display.</description>
+                    
+                    <lc>
+                <!-- Reference.jpg image 500 x 566 preferred. -->
+                <!-- Detail.jpg image 440 x 258 preferred. -->
+                        <folio>Folio_43r</folio>
+                        <column>3</column>
+                        <line>25</line>           
+                        <credit></credit>   
+                    </lc>
+                
+                    <reftext>&#x05ea;&#x05bc;&#x05bf;&#x05b4;&#x05e8;&#x05b0;&#x05e6;&#x05b8;&#x0596;&#x05bd;&#x05d7;&#x05c3;</reftext>  
+                    <refuni>tav   dagesh   rafe   hiriq   resh   sheva   tsadi   qamats   tipeha   meteg   het   sof-pasuq</refuni> 
+                    <changetext>&#x05ea;&#x05bc;&#x05bf;&#x05b4;&#x05e8;&#x05b0;&#x05e6;&#x05b8;&#x0596;&#x034f;&#x05bd;&#x05d7;&#x05c3;</changetext>  
+                    <changeuni>tav   dagesh   rafe   hiriq   resh   sheva   tsadi   qamats   tipeha   cgj   meteg   het   sof-pasuq</changeuni> 
+                                         
+                    <approval>
+                        <name></name>
+                        <mail></mail>
+                        <date></date>
+                    </approval> 
+                    <status>Approved</status>
+                    <type>accent</type>
+            </change>
+            <change>
+                    <n>5</n>
+                    <citation>
+                        <book>Deut</book>
+                        <c>3</c>
+                        <v>22</v>
+                        <position>2</position>
+                    </citation>
+                    <author>
+                        <name>Ben Denckla</name>
+                        <mail>bdenckla@alum.mit.edu</mail>
+                        <confirmed>true</confirmed>
+                    </author>
+                    <description>Add CGJ to improve display.</description>
+                    
+                    <lc>
+                        <folio>Folio_100v</folio>
+                        <column>3</column>
+                        <line>8</line>           
+                        <credit></credit>   
+                    </lc>
+                
+                    <reftext>&#x05ea;&#x05bc;&#x05b4;&#x05b0;&#x05d9;&#x05e8;&#x05b8;&#x05d0;&#x0591;&#x05d5;&#x05bc;&#x05dd;</reftext>  
+                    <refuni>tav   dagesh   hiriq   sheva   yod   resh   qamats   alef   etnachta   vav   dagesh    final-mem</refuni> 
+                    <changetext>&#x05ea;&#x05bc;&#x05b4;&#x034f;&#x05b0;&#x05d9;&#x05e8;&#x05b8;&#x05d0;&#x0591;&#x05d5;&#x05bc;&#x05dd;</changetext>  
+                    <changeuni>tav   dagesh  hiriq   cgj    sheva   yod   resh   qamats   alef   etnachta   vav   dagesh    final-mem</changeuni> 
+                                         
+                    <approval>
+                        <name></name>
+                        <mail></mail>
+                        <date></date>
+                    </approval> 
+                    <status>Approved</status>
+                    <type>accent</type>
+            </change>
+            <change>
+                    <n>6</n>
+                    <citation>
+                        <book>Deut</book>
+                        <c>5</c>
+                        <v>6</v>
+                        <position>9</position>
+                    </citation>
+                    <author>
+                        <name>Ben Denckla</name>
+                        <mail>bdenckla@alum.mit.edu</mail>
+                        <confirmed>true</confirmed>
+                    </author>
+                    <description>Add CGJ to improve display.</description>
+                    
+                    <lc>
+                <!-- Reference.jpg image 500 x 566 preferred. -->
+                <!-- Detail.jpg image 440 x 258 preferred. -->
+                        <folio>Folio_102r</folio>
+                        <column>3</column>
+                        <line>22</line>           
+                        <credit></credit>   
+                    </lc>
+                
+                    <reftext>&#x05e2;&#x05b2;&#x05d1;&#x05b8;&#x05d3;&#x05b4;&#x0591;&#x05bd;&#x05d9;&#x05dd;&#x05c3;</reftext>  
+                    <refuni>ayin   hataf-patah   bet   qamats   dalet   hiriq   etnachta   meteg   yod   final-mem   sof-pasuq</refuni> 
+                    <changetext>&#x05e2;&#x05b2;&#x05d1;&#x05b8;&#x05d3;&#x05b4;&#x0591;&#x034f;&#x05bd;&#x05d9;&#x05dd;&#x05c3;</changetext>  
+                    <changeuni>ayin   hataf-patah   bet   qamats   dalet   hiriq   etnachta    cgj    meteg   yod   final-mem   sof-pasuq</changeuni> 
+                                           
+                    <approval>
+                        <name></name>
+                        <mail></mail>
+                        <date></date>
+                    </approval> 
+                    <status>Approved</status>
+                    <type>accent</type>
+            </change>
+         </date>
+<!-- ======================================================================  -->
+     </dates>
+</Changes>

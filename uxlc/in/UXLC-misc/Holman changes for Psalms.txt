@@ -1,0 +1,1200 @@
+///////////////////////////////////////////////////////////
+Psa 2:1.6
+ 
+Current: רִֽיק
+Recommended: רִ֥יק
+Note: There is a Merkha under Resh.
+Folio: 366r
+Column: 1
+Line: 11
+///////////////////////////////////////////////////////////
+Psa 2:2.10
+ 
+Current: מְשִׁיחֽוֹ
+Recommended: מְשִׁיח֥וֹ
+Note: There appears to be a Merkha under Het.
+Folio: 366r
+Column: 1
+Line: 13
+///////////////////////////////////////////////////////////
+Psa 3:4.7
+ 
+Current: רֹאשִֽׁי
+Recommended: רֹאשִׁ֥י
+Note: There appears to be a Merkha under Shin.
+Folio: 366r
+Column: 2
+Line: 4
+///////////////////////////////////////////////////////////
+Psa 3:5.1
+ 
+Current: ק֭וֹלִי
+Recommended: ק֖וֹלִי
+Note: There is a Tarcha under Qof.
+Folio: 366r
+Column: 2
+Line: 4
+///////////////////////////////////////////////////////////
+Psa 3:7.8
+ 
+Current: עָלָֽי
+Recommended: עָלָ֥י
+Note: There appears to be a Merkha under Lamed.
+Folio: 366r
+Column: 2
+Line: 7
+///////////////////////////////////////////////////////////
+Psa 6:3.10
+ 
+Current: עֲצָמֽ͏ָי
+Recommended: עֲצָֽמָי
+Note: The Meteg appears more aligned beside the first Qamats.
+Folio: 366v
+Column: 1
+Line: 16
+///////////////////////////////////////////////////////////
+Psa 8:3.10
+ 
+Current: וּמִתְנַקֵּֽם
+Recommended: וּמִתְנַקֵּ֥ם
+Note: There is a Merkha under Qof.
+Folio: 366v
+Column: 2
+Line: 25
+///////////////////////////////////////////////////////////
+Psa 8:9.6
+ 
+Current: אָרְח֥וֹת
+Recommended: אָרְחֽוֹת
+Note: There is a Meteg under Het. 
+Folio: 367r
+Column: 1
+Line: 5
+///////////////////////////////////////////////////////////
+Psa 9:9.7
+ 
+Current: בְּמֵישָׁרִֽים
+Recommended: בְּמֵישָֽׁרִים
+Note: The Meteg appears to be under Shin.
+Folio: 367r
+Column: 1
+Line: 16
+///////////////////////////////////////////////////////////
+Psa 10:10.4
+ 
+Current: בַּ֝עֲצוּמָ֗יו
+Recommended: בַּ֝עֲצוּמָּ֗יו
+Note: There appears to be a Dagesh in Mem.
+Folio: 367r
+Column: 2
+Line: 19
+///////////////////////////////////////////////////////////
+Psa 13:2.11
+ 
+Current: מִמֶּֽנִּי
+Recommended: מִמֶּֽנִי
+Note: There is no Dagesh in Nun.
+Folio: 367v
+Column: 2
+Line: 4
+///////////////////////////////////////////////////////////
+Psa 15:1.3
+ 
+Current: יְ֭הֹוָה
+Recommended: י֭הֹוָה
+Note: There is no Sheva under Yod.
+Folio: 367v
+Column: 2
+Line: 25
+///////////////////////////////////////////////////////////
+Psa 15:2.7
+ 
+Current: בִּלְבָבֽוֹ
+Recommended: בִּלְבָֽבוֹ
+Note: The Meteg is under the second Bet.
+Folio: 367v
+Column: 2
+Line: 27
+///////////////////////////////////////////////////////////
+Psa 17:14.12
+ 
+Current: יִשְׂבְּע֥וּ
+Recommended: יִשְׂבּ֥עוּ
+Note: There appears to be a Metheg under Bet.
+Folio: 368r
+Column: 2
+Line: 15
+///////////////////////////////////////////////////////////
+Psa 17:14.16
+ 
+Current: לְעוֹלְלֵיהֽ͏ֶם
+Recommended: לְעוֹלְלֵֽיהֶם
+Note: The Meteg is under the third Lamed.
+Folio: 368r
+Column: 2
+Line: 15
+///////////////////////////////////////////////////////////
+Psa 17:15.6
+ 
+Current: בְ֝הָקִ֗יץ
+Recommended: Note or בְֿ֝הָקִ֗יץ
+Note: There appears to be a Rafe above Bet.
+Folio: 368r
+Column: 2
+Line: 16
+///////////////////////////////////////////////////////////
+Psa 18:3.2
+ 
+Current: סַֽלְעִ֥י
+Note: It is common in L for Metheg and Merkha to look alike. The Aleppo is missing at this place, but the HaKeter and MAM both have a Merkha in both places.
+Folio: 368r
+Column: 2
+Line: 
+///////////////////////////////////////////////////////////
+Psa 18:3.6
+ 
+Current: 
+Recommended: 
+Note: There appears to be a Tarcha under Qof.
+Folio: 368r
+Column: 2
+Line: 23
+///////////////////////////////////////////////////////////
+Psa 18:7.3
+ 
+Current: אֶֽקְרָ֣א
+Recommended: אֶֽקֲרָ֣א 
+Note: There is a Hataf Patah under Qof. 
+Folio: 368r
+Column: 2
+Line: 27
+///////////////////////////////////////////////////////////
+Psa 18:20.4
+ 
+Current: כִּ֘י
+Recommended: כִ֘י 
+Note: There appears to be no Dagesh in Kaf. The below image shows the markings for this passage are very clear and the speck in Kaf is most likely a blemish.
+Folio: 368v
+Column: 1
+Line: 17
+ 
+///////////////////////////////////////////////////////////
+Psa 19:15.1
+ 
+Current: יִֽהְי֥וּ
+Recommended: יִֽהְי֥וּ־
+Note: There appears to be a Maqaf after Shuruk. 
+Folio: 369r
+Column: 1
+Line: 18
+///////////////////////////////////////////////////////////
+Psa 25:3.3
+ 
+Current: קֹ֭וֶיךָ
+Recommended: ק֭וֹיֶךָ
+Note: The Segol is under Yod.
+Folio: 370r
+Column: 1
+Line: 8
+///////////////////////////////////////////////////////////
+Psa 26:4.5
+ 
+Current: שָׁ֑וְא
+Recommended: שָׁ֑וא
+Note: Something was erased under the Vav.
+Folio: 370r
+Column: 2
+Line: 8
+///////////////////////////////////////////////////////////
+Psa 28:1.8
+ 
+Current: מִ֫מֶּ֥נִּי
+Recommended: מִּ֫מֶּ֥נִּי
+Note: There appears to be a faded Dagesh in the first Mem.
+Folio: 370v
+Column: 1
+Line: 15
+///////////////////////////////////////////////////////////
+Psa 28:7.11
+ 
+Current: אֲהוֹדֶֽנּוּ׃
+Recommended: אֲהוֹדֶנּוּ׃
+Note: There is no Silluq (Meteg under Dalet).
+Folio: 370v
+Column: 1
+Line: 26
+///////////////////////////////////////////////////////////
+Psa 30:1.3
+ 
+Current: חֲנֻכַּ֖ת
+Recommended: Note or חֲנֻכַּת
+Note: The large darkened diagonal mark under Kaf might be a Tarcha.
+Folio: 370v
+Column: 2
+Line: 15
+///////////////////////////////////////////////////////////
+Psa 30:4.3
+ 
+Current: מִן־
+Recommended: מִּן־
+Note: There appears to be a Dagesh in Mem.
+Folio: 370v
+Column: 2
+Line: 18
+///////////////////////////////////////////////////////////
+Psa 30:10.5
+ 
+Current: אֶ֫ל־
+Recommended: אֶ֫ל
+Note: There is no Maqaf at the end of the word.
+Folio: 370v
+Column: 2
+Line: 25
+///////////////////////////////////////////////////////////
+Psa 31:5.8
+ 
+Current: מָֽעוּזִּֽי
+Recommended: מָֽעוּזִּי
+Note: There is no Meteg under Zayin.
+Folio: 371r
+Column: 1
+Line: 10
+///////////////////////////////////////////////////////////
+Psa 31:7.4
+ 
+Current: שָׁ֑וְא
+Recommended: שָׁ֑וא
+Note: There is no Sheva under Vav
+Folio: 371r
+Column: 1
+Line: 12
+///////////////////////////////////////////////////////////
+Psa 31:19.9
+ 
+Current: וָבֽוּז
+Recommended: וָבוּז
+Note: There is no Meteg under Bet. The mast and flag of the lower Lamed give the appearance of a superimposed Meteg. 
+Folio: 371r
+Column: 2
+Line: 3
+     
+Examples of mast and flag of Lamed that looks similar to this example.
+///////////////////////////////////////////////////////////
+Psa 32:3.3
+ 
+Current: בָּל֣וּ
+Recommended: בָּ֣לוּ
+Note: The Munah is positioned under Bet.
+Folio: 371r
+Column: 2
+Line: 15
+///////////////////////////////////////////////////////////
+Psa 32:7.5
+ 
+Current: תִּ֫צְּרֵ֥נִי
+Recommended: תִּצְּ֫רֵ֥נִי
+Note: There is a faded Ole above Tsadi.
+Folio: 371r
+Column: 2
+Line: 23
+///////////////////////////////////////////////////////////
+Psa 33:12.9
+ 
+Current: לֽוֹ
+Recommended: לוֹ
+Note: There is no Silluq/(Meteg under Lamed).
+Folio: 371v
+Column: 1
+Line: 15
+///////////////////////////////////////////////////////////
+Psa 35:26.9
+ 
+Current: הַֽמַּגְדִּילִ֥ים
+Recommended: Note
+Note: The marking under Dalet appears to be a Sheva.
+Folio: 372r
+Column: 2
+Line: 8
+///////////////////////////////////////////////////////////
+Psa 36:9.1
+ 
+Current: יִ֭רְוְיֻן
+Recommended: יִ֭רְוִיֻן or Note
+Note: There appears to be a Hiriq under Vav … the blemish could possibly be a faded lower dot of a Sheva.
+Folio: 372r
+Column: 2
+Line: 22
+///////////////////////////////////////////////////////////
+Psa 37:31.6
+  
+Current: אֲשֻׁרָיו
+Recommended: אֲשֻׁרֲיו
+Note: There appears to be a Hataf Patah under Resh.
+Folio: 372v
+Column: 2
+Line: 10
+///////////////////////////////////////////////////////////
+Psa 37:40.3
+  
+Current: וַֽיְפַ֫לְּטֵ֥ם
+Recommended: וַֽיְפַלְּ֫טֵ֥ם
+Note: There is a blemish under Vav and the Ole is over Lamed.
+Folio: 372v
+Column: 2
+Line: 21
+///////////////////////////////////////////////////////////
+Psa 38:15.8
+  
+Current: תּוֹכָחֽוֹת
+Recommended: תּוֹכָֽחוֹת
+Note: The Meteg appears to be under the Kaf.
+Folio: 373r
+Column: 1
+Line: 14
+///////////////////////////////////////////////////////////
+Psa 38:19.5
+  
+Current: מֵֽחַטָּאתִֽי
+Recommended: מֵ֖חַטָּאתִֽי
+Note: There is a Tarcha under Mem.
+Folio: 373r
+Column: 1
+Line: 18
+///////////////////////////////////////////////////////////
+Psa 39:7.7
+ 
+Current: יֶהֱמָי֑וּן
+Recommended: יֶהֱמָ֑יוּן
+Note: The Etnahta appears to be under Mem.
+Folio: 373r
+Column: 2
+Line: 6
+///////////////////////////////////////////////////////////
+Psa 39:8.3
+ 
+Current: קִּוִּ֣יתִי
+Recommended: Note or קִוִּ֣יתִי
+Note: There appears to be a speck in the upper corner of Qof ... it may be a faint Dagesh.
+Folio: 373r
+Column: 2
+Line: 7
+///////////////////////////////////////////////////////////
+Psa 39:13.9
+ 
+Current: תֶּ֫חֱרַ֥שׁ
+Recommended: תֶּחֱ֫רַ֥שׁ
+Note: There is an Ole above Het.
+Folio: 373r
+Column: 2
+Line: 14
+///////////////////////////////////////////////////////////
+Psa 42:9.5
+ 
+Current: וּ֭בַלַּיְלָה
+Recommended: וּ֖בַלַּיְלָה
+Note: There is a Tarcha under Qof. The Aleppo has a Dechi   as noted in the image.
+Folio: 374r
+Column: 1
+Line: 4
+///////////////////////////////////////////////////////////
+Psa 44:4.2
+ 
+Current: לֹ֪א
+Recommended: לֹ֤א
+Note: There is a Mahapakh under Lamed.
+Folio: 374r
+Column: 2
+Line: 1
+///////////////////////////////////////////////////////////
+Psa 46:6.2
+ 
+Current: בְּ֭קִרְבָּהּ
+Recommended: בְּ֭קִרְבָּה
+Note: There is no Dagesh in He.
+Folio: 374v
+Column: 2
+Line: 10
+///////////////////////////////////////////////////////////
+Psa 50:23.3
+ 
+Current: יְֽכַ֫בְּדָ֥נְנִי
+Recommended: יְֽכַבְּ֫דָ֥נְנִי
+Note: There is an Ole over Bet.
+Folio: 375v
+Column: 2
+Line: 2
+///////////////////////////////////////////////////////////
+Psa 52:11.5
+ 
+Current: וַאֲקַוֶּ֖ה
+Recommended: וַאֲקַוֶּ֥ה
+Note: There is most likely a Merkha under the second Vav. The blemish under Patah could be mistaken as a Qamats. 
+Folio: 376r
+Column: 1
+Line: 15
+///////////////////////////////////////////////////////////
+Psa 53:6.2
+ 
+Current: פָּֽחֲדוּ־
+Recommended: פָּ֥חֲדוּ
+Note: There is no Maqaf at the end of the word but a mark resembling a Geresh. There is also most likely a Merhka under Pe.
+Folio: 376r
+Column: 1
+Line: 24
+///////////////////////////////////////////////////////////
+Psa 53:6.5
+ 
+Current: הָ֢יָה֫
+Recommended: הָ֪יָ֫ה
+Note: There is an Ole over the Yod.
+Folio: 376r
+Column: 1
+Line: 25
+///////////////////////////////////////////////////////////
+Psa 55:24.8
+ 
+Current: וּ֭מִרְמָה
+Recommended: וּ֖מִרְמָה
+Note: There appears to be a Tarcha under Qof. The Aleppo has a Dechi   as noted in the image.
+Folio: 376v
+Column: 1
+Line: 18
+///////////////////////////////////////////////////////////
+Psa 57:9.3
+ 
+Current: ע֭וּרָֽה
+Recommended: ע֭וּרָ֥ה
+Note: There is a Merkha under Resh. 
+Folio: 376v
+Column: 1
+Line: 25
+///////////////////////////////////////////////////////////
+Psa 59:2.4
+ 
+Current: מִּמִתְקוֹמְמַ֥י
+Recommended: מִּֽמִתְקוֹמְמַ֥י
+Note: There is a Meteg under the first Mem.
+Folio: 377r
+Column: 1
+Line: 20
+///////////////////////////////////////////////////////////
+Psa 61:8.2
+ 
+Current: ע֭וֹלָם
+Recommended: 
+Note: There appears to be a Tarcha under Qof. The Aleppo has a Dechi   as noted in the image.
+Folio: 377v
+Column: 1
+Line: 20
+///////////////////////////////////////////////////////////
+Psa 62:4.3
+ 
+Current: תְּהֽוֹתְת֣וּ
+Recommended: תְּה֥וֹתְת֣וּ
+Note: There is most likely a Merkha under Hey.
+Folio: 377v
+Column: 2
+Line: 
+///////////////////////////////////////////////////////////
+Psa 62:4.11
+ 
+Current: הַדְּחוּיָֽה
+Recommended: הַדְּחוּֽיָה
+Note: The Meteg looks like it is under Shuruk.
+Folio: 377v
+Column: 2
+Line: 2
+///////////////////////////////////////////////////////////
+Psa 62:5.3
+ 
+Current: יָעֲצ֣וּ
+Recommended: יָ֥עֲצ֣וּ
+Note: There is a Merkha under Yod beside the Qamats.
+Folio: 377v
+Column: 2
+Line: 3
+///////////////////////////////////////////////////////////
+Psa 66:2.6
+  
+Current: תְּהִלָּתֽוֹ
+Recommended: תְּהִלָּֽתוֹ
+Note: The Meteg is under the Lamed.
+Folio: 378r
+Column: 2
+Line: 17
+///////////////////////////////////////////////////////////
+Psa 66:7.7
+ 
+Current: הַסּוֹרְרִ֓ים
+Recommended: הַסוֹרְרִ֓ים
+Note: There is no Dagesh in Samekh.
+Folio: 378r
+Column: 2
+Line: 24
+///////////////////////////////////////////////////////////
+Psa 67:2.4
+ 
+Current: יָ֤אֵ֥ר
+Recommended: יָ֤אֵ֥־ר
+Note: There appears to be a Maqaf in between Alef and Resh.
+Folio: 378v
+Column: 1
+Line: 15
+///////////////////////////////////////////////////////////
+Psa 69:9.1
+ 
+Current: מ֭וּזָר
+Recommended: מ֖וּזָר
+Note: There appears to be a Tarcha under Mem ... the Aleppo reads with a Dehi   as noted in the image.
+Folio: 379r
+Column: 2
+Line: 11
+///////////////////////////////////////////////////////////
+Psa 69:33.7
+ 
+Current: לְבַבְכֶֽם
+Recommended: Note
+Note: The mark to the left of Segol is illegible. It appears to be a smudged Meteg.
+Folio: 379v
+Column: 1
+Line: 16
+///////////////////////////////////////////////////////////
+Psa 71:11.5
+ 
+Current: וְ֝תִפְשׂ֗וּהוּ
+Recommended: וְ֝תִפְשֻׂ֗וּהוּ
+Note: There is a Qubuts under Shin as well as a Shuruk.
+Folio: 379v
+Column: 2
+Line: 17
+///////////////////////////////////////////////////////////
+Psa 71:16.4
+ 
+Current: יְהוִ֑ה
+Recommended: יְהִ֑וה
+Note: The Etnahta and Hiriq appear to be under the first He.
+Folio: 379v
+Column: 2
+Line: 23
+///////////////////////////////////////////////////////////
+Psa 72:14.2
+ 
+Current: וּ֭מֵחָמָס
+Recommended: וּ֖מֵחָמָס
+Note: There is a Tarcha under Vav ... the Aleppo reads with a Dehi   as noted in the image.
+Folio: 380r
+Column: 1
+Line: Last line
+///////////////////////////////////////////////////////////
+Psa 74:18.3
+ 
+Current: א֭וֹיֵב
+Recommended: א֖וֹיֵב
+Note: There appears to be a Tarcha under Mem ... the Aleppo reads with a Dehi   as noted in the image.
+Folio: 380v
+Column: 2
+Line: 16
+///////////////////////////////////////////////////////////
+Psa 75:2.1
+ 
+Current: ה֘וֹדִ֤ינוּ
+Recommended: ה֘וֹדִ֤ינּוּ
+Note: There is a Dagesh in Nun.
+Folio: 380v
+Column: 2
+Line: 25
+///////////////////////////////////////////////////////////
+Psa 75:11.7
+ 
+Current: צַדִּֽיק
+Recommended: צַדִּֽ֥יק
+Note: There appears to be a Merkha beside Meteg under Dalet.
+Folio: 381r
+Column: 1
+Line: 13
+///////////////////////////////////////////////////////////
+Psa 78:1.8
+ 
+Current: לְאִמְרֵי־
+Recommended: לְאִמְרֵי
+Note: There is no Maqaf after Yod.
+Folio: 381v
+Column: 1
+Line: 6
+///////////////////////////////////////////////////////////
+Psa 78:7.6
+ 
+Current: מַֽעַלְלֵי־
+Recommended: מַֽעַלְלֵי
+Note: There is no Maqaf after Yod.
+Folio: 381v
+Column: 1
+Line: 16
+///////////////////////////////////////////////////////////
+Psa 78:13.7
+ 
+Current: נֵֽד׃
+Recommended: נֵד
+Note: There is no Meteg (Silluq) under Dalet.
+Folio: 381v
+Column: 1
+Line: 25
+///////////////////////////////////////////////////////////
+Psa 78:17.2
+ 
+Current: ע֭וֹד
+Recommended: ע֖וֹד
+Note: There appears to be a Tarcha under Ayin. The Aleppo has a Dehi   as indicated in the attached image.
+Folio: 381v
+Column: 2
+Line: 3
+///////////////////////////////////////////////////////////
+Psa 78:32.2
+ 
+Current: זֹ֭את
+Recommended: זֹ֥את
+Note: There is most likely a Merkha under Zayin. Editions of the Aleppo also have a Merkha.
+Folio: 381v
+Column: 2
+Line: 23
+///////////////////////////////////////////////////////////
+Psa 78:71.3
+ 
+Current: הֱ֫בִיא֥וֹ
+Recommended: הֱבִ֫יא֥וֹ
+Note: There is an Ole over the Bet.
+Folio: 382r
+Column: 2
+Line: 17
+///////////////////////////////////////////////////////////
+Psa 79:5.6
+ 
+Current: תִּבְעַ֥ר
+Recommended: תִּ֭בְעַ֥ר
+Note: There appears to be a Dehi under Tav.
+Folio: 382v
+Column: 1
+Line: 1
+///////////////////////////////////////////////////////////
+Psa 79:12.9
+  
+Current: אֲדֹנֽ͏ָי
+Recommended: אֲדֹֽנָי
+Note: The heavily marked Meteg is under Dalet.
+Folio: 382v
+Column: 1
+Line: 13
+///////////////////////////////////////////////////////////
+Psa 81:11.9
+ 
+Current: וַאֲמַלְאֵֽהוּ
+Recommended: וַאֲמַּלְאֵֽהוּ
+Note: There appears to be a faded Dagesh in Mem.
+Folio: 382v
+Column: 2
+Line: 26
+///////////////////////////////////////////////////////////
+Psa 84:3.6
+ 
+Current: יְה֫וָ֥ה
+Recommended: יְ֫הוָ֥֫ה
+Note: There is an Ole above Vav and appears to be another above Yod.
+Folio: 383r
+Column: 2
+Line: 16
+///////////////////////////////////////////////////////////
+Psa 87:1.2
+ 
+Current: קֹ֭רַח
+Recommended: קֹ֖רַח
+Note: There appears to be a Tarcha under Qof. The Aleppo has a Dechi   as noted in the image. 
+Folio: 383v
+Column: 2
+Line: 20
+///////////////////////////////////////////////////////////
+Psa 88:4.5
+ 
+Current: וְחַיַּ֗י
+Recommended: וְ֝חַיַּ֗י
+Note: There is a Geresh Muqdam over Vav.
+Folio: 384r
+Column: 1
+Line: 8
+///////////////////////////////////////////////////////////
+Psa 88:13.4
+ 
+Current: וְ֝צִדְקָתְךָ֗
+Recommended: Note
+Note: There is a spot above Qof that could be mistaken for a Revia.
+Folio: 384r
+Column: 1
+Line: 21
+///////////////////////////////////////////////////////////
+Psa 89:10.2
+ 
+Current: מ֭וֹשֵׁל
+Recommended: מ֖וֹשֵׁל
+Note: There appears to be a Tarcha under Mem. The Aleppo has a Dechi   as noted in the image. 
+Folio: 384r
+Column: 2
+Line: 15
+///////////////////////////////////////////////////////////
+Psa 89:9.8
+ 
+Current: וֶ֝אֱמֽוּנָתְךָ֗
+Recommended: וֶ֝אֱמ֥וּנָתְךָ֗
+Note: There appears to be a Merkha under Mem.
+Folio: 384r
+Column: 2
+Line: 15
+///////////////////////////////////////////////////////////
+Psa 89:20.3
+ 
+Current: בְחָ֡זוֹן
+Recommended: בְחָז֡וֹן
+Note: There is a Pazer over Zayin.
+Folio: 384v
+Column: 1
+Line: 2
+///////////////////////////////////////////////////////////
+Psa 89:42.7
+ 
+Current: לִשְׁכֵנֽ͏ָיו
+Recommended: לִשְׁכֵֽנָיו
+Note: There is a Meteg under Kaf.
+Folio: 384v
+Column: 2
+Line: 1
+///////////////////////////////////////////////////////////
+Psa 97:11.1
+ 
+Current: א֭וֹר
+Recommended: א֖וֹר
+Note: There is a Tarcha under Alef. The Aleppo has a Dehi   as indicated in the image.
+Folio: 386r
+Column: 1
+Line: 24
+///////////////////////////////////////////////////////////
+Psa 98:9.1
+ 
+Current: לִֽפְֽנֵי־
+Recommended: Note
+Note: There is possibly a Merkha under Lamed. The Aleppo reads with Merkha   as noted in the image.
+Folio: 386r
+Column: 2
+Line: 12
+///////////////////////////////////////////////////////////
+Psa 99:6.4
+ 
+Current: וּ֭שְׁמוּאֵל
+Recommended: וּ֖שְׁמוּאֵל
+Note: There is a Tarcha under Vav. The Aleppo has a Dehi   as indicated in the image.
+Folio: 386r
+Column: 2
+Line: 22
+///////////////////////////////////////////////////////////
+Psa 100:5.9
+ 
+Current: אֱמוּנָתֽוֹ
+Recommended: אֱמוּנָֽתוֹ
+Note: The Meteg appears to be under Nun.
+Folio: 386v
+Column: 1
+Line: 9
+///////////////////////////////////////////////////////////
+Psa 103:2.1
+ 
+Current: בָּרֲכִ֣י
+Recommended: בָּרְכִ֣י
+Note: There is a Sheva under Resh.
+Folio: 387r
+Column: 1
+Line: 10
+///////////////////////////////////////////////////////////
+Psa 103:14.2
+ 
+Current: ה֖וּא
+Recommended: ה֭וּא
+Note: There appears to be a Dehi under He. The Aleppo also has a Dehi   as indicated in the image.
+Folio: 387r
+Column: 1
+Line: 24
+///////////////////////////////////////////////////////////
+Psa 103:17.5
+ 
+Current: ע֭וֹלָם
+Recommended: ע֖וֹלָם
+Note: There is a Tarcha under. The Aleppo has a Dehi   as indicated in the image.
+Folio: 387r
+Column: 2
+Line: 1
+///////////////////////////////////////////////////////////
+Psa 104:1.9
+ 
+Current: ה֭וֹד
+Recommended: ה֖וֹד
+Note: There is a Tarcha under He with a blemish to the right. The Aleppo also has a Tarcha   and indicated in the image.
+Folio: 387r
+Column: 2
+Line: 11
+///////////////////////////////////////////////////////////
+Psa 104:6.6
+ 
+Current: יַֽעַמְדוּ־
+Recommended: יַ֖עַמְדוּ־
+Note: There is a Tarcha under Yod.
+Folio: 387r
+Column: 2
+Line: 17
+///////////////////////////////////////////////////////////
+Psa 104:29.9
+ 
+Current: יְשׁוּבֽוּן׃
+Recommended: יְשׁוּֽב֥וּן׃ 
+Note: There appears to be a Merkha under Bet and a Meteg under the first Shuruk.
+Folio: 387v
+Column: 1
+Line: 22
+///////////////////////////////////////////////////////////
+Psa 106:26.1
+ 
+Current: וַיִּשָּׂ֣א
+Recommended: וַיִשָּׂ֣א
+Note: There is no Dagesh in Yod.
+Folio: 388v
+Column: 1
+Line: 3
+///////////////////////////////////////////////////////////
+Psa 106:39.4
+ 
+Current: בְּמַֽעַלְלֵיהֶֽם
+Recommended: בְּמַ֥עַלְלֵיהֶֽם
+Note: There is a Merkha under Mem.
+Folio: 388v
+Column: 1
+Line: 19
+///////////////////////////////////////////////////////////
+Psa 106:48.1
+ 
+Current: בָּר֤וּךְ־
+Recommended: בָּ֤רֽוּךְ־
+Note: There is a Mahapakh appears to be under Bet and a Meteg under Resh.
+Folio: 388v
+Column: 2
+Line: 2
+///////////////////////////////////////////////////////////
+Psa 107:17.4
+ 
+Current: וּֽ֝מֵעֲוֺֽנֹתֵיהֶ֗ם
+Recommended: וּֽ֝מֵעֲוֺ֥נֹתֵיהֶ֗ם
+Note: There is a Merkha under Vav.
+Folio: 388v
+Column: 2
+Line: 23
+///////////////////////////////////////////////////////////
+Psa 108:8.4
+ 
+Current: אֶעְלֹ֥זָה
+Recommended: אֶ֫עְלֹ֥זָה
+Note: There is an Ole over Alef ... the Sheva under Ayin could be mistaken as a Meteg.
+Folio: 389r
+Column: 2
+Line: 11
+///////////////////////////////////////////////////////////
+Psa 109:7.4
+ 
+Current: וּ֝תְפִלָּת֗וֹ
+Recommended: ו֝תְפִלָּת֗וֹ
+Note: There is no Dagesh in Vav.
+Folio: 389v
+Column: 1
+Line: 2
+///////////////////////////////////////////////////////////
+Psa 109:26.4
+ 
+Current: ה֭וֹשִׁיעֵ֣נִי
+Recommended: ה֖וֹשִׁיעֵ֣נִי
+Note: There is a Tarcha under Hey.
+Folio: 389v
+Column: 1
+Line: 26
+///////////////////////////////////////////////////////////
+Psa 112:2.2
+ 
+Current: דּ֭וֹר
+Recommended: דּ֖וֹר
+Note: There is a Tarcha under Dalet.
+Folio: 390r
+Column: 1
+Line: 6
+///////////////////////////////////////////////////////////
+Psa 115:3.3
+ 
+Current: כֹּ֭ל
+Recommended: כֹּ֖ל
+Note: There appears to be a Tarcha under Kaf. The Aleppo also has a Tarcha   as indicated by the image.
+Folio: 390r
+Column: 2
+Line: 13
+///////////////////////////////////////////////////////////
+Psa 115:8.4
+ 
+Current: כֹּ֭ל
+Recommended: כֹּ֖ל
+Note: There is a Tarcha under Kaf. The Aleppo also has a Tarcha   as indicated by the image.
+Folio: 390r
+Column: 2
+Line: 19
+///////////////////////////////////////////////////////////
+Psa 118:27.3
+ 
+Current: וַיָּ֢אֶר
+Recommended: וַיָּ֪אֶ֫ר
+Note: There is an Ole above Alef.
+Folio: 391r
+Column: 1
+Line: 1
+///////////////////////////////////////////////////////////
+Psa 119:16.3
+ 
+Current: לֹ֭א
+Recommended: לֹ֖א
+Note: There is a Tarcha under Lamed. The Aleppo also has a Tarcha   as indicated by the image.
+Folio: 391r
+Column: 1
+Line: 19
+///////////////////////////////////////////////////////////
+Psa 119:41.4
+ 
+Current: תְּ֝שֽׁוּעָתְךָ֗
+Recommended: תְּ֝שׁ֥וּעָתְךָ֗
+Note: There appears to be a Metheg that was changed to a Merkha under Shin.
+Folio: 391r
+Column: 2
+Line: 20
+///////////////////////////////////////////////////////////
+Psa 119:96.1
+ 
+Current: לְֽכָל
+Recommended: לְֽכָל־
+Note: There is a Maqaf at the end of the word.
+Folio: 392r
+Column: 1
+Line: 3
+///////////////////////////////////////////////////////////
+Psa 119:104.4
+ 
+Current: כֵּ֝֗ן
+Recommended: כֵּ֝ן
+Note: This most likely was a Revia Mugrash where the Revia was removed over Kaf.
+Folio: 392r
+Column: 1
+Line: 11
+///////////////////////////////////////////////////////////
+Psa 119:174.4
+ 
+Current: וְ֝תֽוֹרָתְךָ֗
+Recommended: וְ֝ת֥וֹרָתְךָ֗
+Note: There appears to be a Merkha under the first Tav.
+Folio: 392v
+Column: 2
+Line: 9
+///////////////////////////////////////////////////////////
+Psa 119:175.5
+ 
+Current: יַעֲזְרֻֽנִי
+Recommended: Note
+Note: There is odd marking along both sides of the Nun. 
+Folio: 392v
+Column: 2
+Line: 10
+///////////////////////////////////////////////////////////
+Psa 119:176.7
+ 
+Current: מִ֝צְוֺתֶ֗יךָ
+Recommended: מִ֝צְוֺתֶיךָ֗
+Note: There is a Revia over the Final Kaf.
+Folio: 392v
+Column: 2
+Line: 10
+///////////////////////////////////////////////////////////
+Psa 125:3.1
+ 
+Current: כִּ֤י
+Recommended: כִּ֤י׀
+Note: There is a Paseq after Yod.
+Folio: 393r
+Column: 2
+Line: 13
+///////////////////////////////////////////////////////////
+Psa 125:3.3
+ 
+Current: יָנ֡וּחַ
+Recommended: יָנ֟וּחַ
+Note: It is questionable, but there appears to be a Great Pazer over Nun. The Aleppo has a Pazer   and the marking is distinct. Ginsburg indicated at least two MSS he collated read with a Great Pazer. 
+Folio: 393r
+Column: 2
+Line: 13
+///////////////////////////////////////////////////////////
+Psa 125:3.12 
+ 
+Current: הַצַּדִּיקִ֨ים
+Recommended: הַצַדִּיקִ֨ים
+Note: There is no Dagesh in Tsadi.
+Folio: 393r
+Column: 2
+Line: 14
+///////////////////////////////////////////////////////////
+Psa 128:5.4
+ 
+Current: וּ֭רְאֵה
+Recommended: וּ֖רְאֵה
+Note: There appears to be a Tarcha under Vav. The Aleppo has a Dechi    as indicated by the image.
+Folio: 393v
+Column: 1
+Line: 16
+///////////////////////////////////////////////////////////
+Psa 129:5.2
+ 
+Current: וְיִסֹּ֣גוּ
+Recommended: Note
+Note: The Dagesh is easy to miss as it is blended in the left side of the Samekh.
+Folio: 393v
+Column: 1
+Line: 23
+///////////////////////////////////////////////////////////
+Psa 133:3.3
+ 
+Current: שֶׁיֹּרֵד֮
+Recommended: שֶּׁיֹּרֵד֮
+Note: There is a Dagesh in Shin.
+Folio: 394r
+Column: 2
+Line: 16
+///////////////////////////////////////////////////////////
+Psa 134:1.2
+ 
+Current: הַֽמַּ֫עֲל֥וֹת
+Recommended: הַֽמַּעֲ֫ל֥וֹת
+Note: There is an Ole above Ayin.
+Folio: 394r
+Column: 1
+Line: 18
+///////////////////////////////////////////////////////////
+Psa 135:9.3
+ 
+Current: וּ֭מֹפְתִים
+Recommended: וּ֖מֹפְתִים
+Note: There is a Tarcha under Vav. The Aleppo also has a Tarcha   as indicated in the image.
+Folio: 394r
+Column: 2
+Line: 7
+///////////////////////////////////////////////////////////
+Psa 137:6.1
+ 
+Current: תִּדְבַּ֥ק־
+Recommended: תִּדְבַּֽק־
+Note: There is probably a Metheg (the mark is not diagonal) under Bet.
+Folio: 394v
+Column: 2
+Line: 4
+///////////////////////////////////////////////////////////
+Psa 137:6.1
+ 
+Current: אֶ֫זְכְּרֵ֥כִי
+Recommended: אֶזְכְּ֫רֵ֥כִי
+Note: There is an Ole above the first Kaf.
+Folio: 394v
+Column: 2
+Line: 4
+///////////////////////////////////////////////////////////
+Psa 137:7.11
+ 
+Current: עַ֝֗ד
+Recommended: עָ֝֗ד
+Note: There is a Qamats under Ayin.
+Folio: 394v
+Column: 2
+Line: 7
+///////////////////////////////////////////////////////////
+Psa 138:5.4
+ 
+Current: כִּ֥י
+Recommended: כִּֽי־
+Note: There is a Meteg under Kaf and a Maqaf at the end of the word.
+Folio: 394v
+Column: 2
+Line: 17
+///////////////////////////////////////////////////////////
+Psa 138:7.8
+ 
+Current: אֹ֭יְבַי
+Recommended: אֹ֖יְבַי
+Note: There is a Tarcha under Alef. The Aleppo has a Dehi    as indicated in the image.
+Folio: 394v
+Column: 2
+Line: 20
+///////////////////////////////////////////////////////////
+Psa 140:4.3
+ 
+Current: כְּֽמוֹ־
+Recommended: כְּֽמוֹ
+Note: There is no Maqaf at the end of the word.
+Folio: 395r
+Column: 2
+Line: 2
+///////////////////////////////////////////////////////////
+Psa 140:11.7
+ 
+Current: בַּֽל־
+Recommended: בָּל־
+Note: There is a Qamats under Bet with no Meteg.
+Folio: 395r
+Column: 2
+Line: 13
+///////////////////////////////////////////////////////////
+Psa 141:5.12
+ 
+Current: וּ֝תְפִלָּתִ֗י
+Recommended: ו֝תְפִלָּתִ֗י
+Note: There is no Dagesh in Vav.
+Folio: 395r
+Column: 2
+Line: 26
+///////////////////////////////////////////////////////////
+Psa 145:21.3
+ 
+Current: יְֽדַבֶּ֫ר־
+Recommended: יְֽדַבֶּ֫ר
+Note: There is no Maqaf at the end of word.
+Folio: 396r
+Column: 2
+Line: 5
+///////////////////////////////////////////////////////////
+Psa 148:5.6
+ 
+Current: ה֭וּא
+Recommended: ה֖וּא
+Note: There is a Tarcha under He. The Aleppo also has a Tarch   as indicated by the image.
+Folio: 396v
+Column: 1
+Line: 25
+///////////////////////////////////////////////////////////
+Psa 149:1.1,2 
+ 
+Current: הַ֥לְלוּ יָ֨הּ
+Recommended: הַ֥לְלוּיָ֨הּ
+Note: This appears to be one word. There is no space between Shuruk and Yod.
+Folio: 396v
+Column: 2
+Line: 9
+///////////////////////////////////////////////////////////
+Psa 150:1.1,2
+ 
+Current: הַ֥לְלוּ יָ֨הּ
+Recommended: הַ֥לְלוּיָ֨הּ
+Note: This appears to be one word. There is no space between Shuruk and Yod.
+Folio: 396v
+Column: 2
+Line: 20
+

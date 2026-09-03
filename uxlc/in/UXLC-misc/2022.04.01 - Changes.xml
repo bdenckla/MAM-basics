@@ -1,0 +1,2622 @@
+<?xml version = "1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/XSL/Changes.xsl.xml"?> 
+<!-- Copyright 2020 Christopher V. Kimball -->
+<!--========================================================================-->
+<!--========================================================================-->
+<!--
+     Changes.xml - XML data file for Changes
+     
+     24 Feb 2021
+                                                                            -->
+<!--========================================================================-->
+<!--========================================================================-->
+<Changes>
+    <ref>UXLC 1.3</ref>
+    <target>UXLC 1.4</target>
+    <filedate>2022.04.01</filedate>
+    <type>installed</type>
+<!-- ======================================================================  -->
+<dates>
+     <date>
+        <date>2021.10.01</date>
+        <change>
+            <n>1</n>
+            <citation>
+                <book>Esth</book>
+                <c>2</c>
+                <v>21</v>
+                <position>19</position>
+            </citation>
+            <author>
+                <name>Jonah Rank</name>
+                <mail></mail>
+                <confirmed>false</confirmed>
+            </author>
+            
+            <description>Move meteg (siluq) from vav to following resh.</description>
+                    
+            <lc>
+                <folio>Folio_433B</folio>
+                <column>3</column>
+                <line>18</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05d0;&#x05b2;&#x05d7;&#x05b7;&#x05e9;&#x05c1;&#x05b0;&#x05d5;&#x05b5;&#x05bd;&#x05e8;&#x05b9;&#x05e9;&#x05c1;&#x05c3;</reftext>  
+            <refuni>alef   hataf-patah   het   patah   shin   shin-dot   sheva   vav   tsere   meteg   resh   holam   shin   shin-dot   sof-pasuq</refuni> 
+            <changetext>&#x05d0;&#x05b2;&#x05d7;&#x05b7;&#x05e9;&#x05c1;&#x05b0;&#x05d5;&#x05b5;&#x05e8;&#x05b9;&#x05bd;&#x05e9;&#x05c1;&#x05c3;</changetext>  
+            <changeuni>alef   hataf-patah   het   patah   shin   shin-dot   sheva   vav   tsere   resh   holam   meteg  shin   shin-dot   sof-pasuq</changeuni> 
+                
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>accent</type>
+        </change>
+    </date>
+    
+<!-- ======================================================================= -->
+
+    <date>
+        <date>2021.10.12</date>
+        <change>
+            <n>1</n>
+            <citation>
+                <book>Gen</book>
+                <c>44</c>
+                <v>16</v>
+                <position>15</position>
+            </citation>
+            <author>
+                <name>Seth (Avi) Kadish</name>
+                <mail>skadish1@gmail.com</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Move mahapakh to first nun.</description>
+                    
+            <lc>
+                <folio>Folio_027B</folio>
+                <column>3</column>
+                <line>6</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05d4;&#x05b4;&#x05e0;&#x05bc;&#x05b6;&#x05e0;&#x05bc;&#x05a4;&#x05d5;&#x05bc;</reftext>  
+            <refuni>he   hiriq   nun   dagesh   segol   nun   dagesh   mahapakh   vav   dagesh</refuni> 
+            <changetext>&#x05d4;&#x05b4;&#x05e0;&#x05bc;&#x05b6;&#x05a4;&#x05e0;&#x05bc;&#x05d5;&#x05bc;</changetext>  
+            <changeuni>he   hiriq   nun   dagesh   segol   mahapakh  nun   dagesh    vav   dagesh</changeuni> 
+                
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>accent</type>
+        </change>
+        
+        <change>
+            <n>2</n>
+            <citation>
+                <book>2Kings</book>
+                <c>4</c>
+                <v>29</v>
+                <position>18</position>
+            </citation>
+            <author>
+                <name>Seth (Avi) Kadish</name>
+                <mail>skadish1@gmail.com</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Move etnahta to first nun.</description>
+                    
+            <lc>
+                <folio>Folio_204B</folio>
+                <column>3</column>
+                <line>25</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+                
+            <reftext>&#x05ea;&#x05b7;&#x05e2;&#x05b2;&#x05e0;&#x05b6;&#x05e0;&#x05bc;&#x0591;&#x05d5;&#x05bc;</reftext>  
+            <refuni>tav   patah   ayin   hataf-patah   nun   segol   nun   dagesh   etnahta   vav   dagesh   </refuni> 
+            <changetext>&#x05ea;&#x05b7;&#x05e2;&#x05b2;&#x05e0;&#x05b6;&#x0591;&#x05e0;&#x05bc;&#x05d5;&#x05bc;</changetext>  
+            <changeuni>tav   patah   ayin   hataf-patah   nun   segol   etnahta  nun   dagesh    vav   dagesh   </changeuni> 
+                     
+                     
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>accent</type>
+        </change>
+        
+    </date>
+    
+<!-- ======================================================================= -->
+    
+    <date>
+        <date>2021.10.26</date>
+        <title>Changes in Decalogue</title>
+        <summary>
+            <note>
+                Earlier changes inserting zero-width-joiners (ZWJ) to avoid mark collisions are no longer necessary.
+            </note>
+        </summary>
+        <change>
+            <n>1</n>
+            <citation>
+                <book>Ex</book>
+                <c>20</c>
+                <v>3</v>
+                <position>7</position>
+            </citation>
+            <author>
+                <name>Ben Denckla</name>
+                <mail>bdenckla@alum.mit.edu</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Remove zero-width-joiner (ZWJ).</description>
+                    
+            <lc>
+                <folio>Folio_43r</folio>
+                <column>2</column>
+                <line>20</line>           
+                <credit></credit>   
+            </lc>              
+                
+            <reftext>&#x05e4;&#x05bc;&#x05b8;&#x05e0;&#x05b8;&#x200d;&#x05bd;&#x034f;&#x05b7;&#x0597;&#x05d9;</reftext>  
+            <refuni> pe   dagesh   qamats   nun   qamats   zero-width-joiner   meteg   combining-grapheme-joiner   patah   revia   yod  </refuni> 
+            <changetext>&#x05e4;&#x05bc;&#x05b8;&#x05e0;&#x05b8;&#x05bd;&#x034f;&#x05b7;&#x0597;&#x05d9;</changetext>  
+            <changeuni>pe   dagesh   qamats   nun   qamats    meteg   combining-grapheme-joiner   patah   revia   yod   </changeuni> 
+ 
+            <notes>
+               <note>
+                    This verse matches Deut 5:7.7.
+               </note>
+               <note>
+                    The ZWJ is no longer needed for mark positioning. Change is invisible.
+               </note>
+            </notes>
+
+            <approval>
+                <name></name>
+                <mail></mail>
+                <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>accent</type>
+        </change>
+        <change>
+            <n>2</n>
+            <citation>
+                <book>Deut</book>
+                <c>5</c>
+                <v>7</v>
+                <position>7</position>
+            </citation>
+            <author>
+                <name>Ben Denckla</name>
+                <mail>bdenckla@alum.mit.edu</mail>
+                <confirmed>true</confirmed>
+             </author>
+             
+             <description>Remove zero-width-joiner (ZWJ).</description>
+                    
+             <lc>
+                 <folio>Folio_102r</folio>
+                 <column>3</column>
+                 <line>23</line>           
+                 <credit></credit>   
+             </lc>              
+                
+             <reftext>&#x05e4;&#x05bc;&#x05b8;&#x05e0;&#x05b8;&#x200d;&#x05bd;&#x034f;&#x05b7;&#x0597;&#x05d9;</reftext>  
+             <refuni>pe   dagesh   qamats   nun   qamats   zero-width-joiner   meteg   combining-grapheme-joiner   patah   revia   yod  </refuni> 
+             <changetext>&#x05e4;&#x05bc;&#x05b8;&#x05e0;&#x05b8;&#x05bd;&#x034f;&#x05b7;&#x0597;&#x05d9;</changetext>  
+             <changeuni>pe   dagesh   qamats   nun   qamats   meteg   combining-grapheme-joiner   patah   revia   yod </changeuni> 
+ 
+             <notes>
+                 <note>
+                    This verse matches Ex 20:3.7.
+                 </note>
+                 <note>
+                     The ZWJ is no longer needed for mark positioning. Change is invisible.
+                 </note>
+             </notes>
+
+             <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+             </approval> 
+             <status>Approved</status>
+             <type>accent</type>
+         </change>
+    </date>
+     
+<!-- ======================================================================= -->
+    
+    <date>
+        <date>2021.11.02</date>
+        <title>
+            Correction derived by examination of Hebrew text, graciously provided in digital form by CCAR, 
+            from: "Songs Ascending: The Book of Psalms in a New Translation with Textual and Spiritual Commentary", 
+            Rabbi Richard M. Levy z'l, Central Conference of American Rabbis Press (www.ccarpress.org).
+        </title>
+        
+        <change>
+            <n>1</n>
+            <citation>
+                <book>Ps</book>
+                <c>78</c>
+                <v>30</v>
+                <position>2</position>
+            </citation>
+            <author>
+                <name>Ben Denckla</name>
+                <mail>bdenckla@alum.mit.edu</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Move merkha from resh to zayin.</description>
+                    
+            <lc>
+                <folio>Folio_381B</folio>
+                <column>2</column>
+                <line>20</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05d6;&#x05b8;&#x05e8;&#x05a5;&#x05d5;&#x05bc;</reftext>  
+            <refuni>zayin   qamats   resh   merkha   vav   dagesh</refuni> 
+            <changetext>&#x05d6;&#x05b8;&#x05a5;&#x05e8;&#x05d5;&#x05bc;</changetext>  
+            <changeuni>zayin   qamats   merkha   resh    vav   dagesh</changeuni> 
+                
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>accent</type>
+        </change>
+        
+        <change>
+            <n>2</n>
+            <citation>
+                <book>Ps</book>
+                <c>124</c>
+                <v>4</v>
+                <position>4</position>
+            </citation>
+            <author>
+                <name>Ben Denckla</name>
+                <mail>bdenckla@alum.mit.edu</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Unusual order of accents on nun; add note 'c'.</description>
+                    
+            <lc>
+                <folio>Folio_393A</folio>
+                <column>2</column>
+                <line>3</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+                
+            <reftext>&#x05e0;&#x05b7;&#x0597;&#x059c;&#x05d7;&#x05b0;&#x05dc;&#x05b8;&#x05d4;</reftext>  
+            <refuni>nun   patah   revia   geresh   het   sheva   lamed   qamats   he  </refuni> 
+            <changetext>&#x05e0;&#x05b7;&#x0597;&#x059c;&#x05d7;&#x05b0;&#x05dc;&#x05b8;&#x05d4;</changetext>  
+            <changeuni>nun   patah   revia   geresh   het   sheva   lamed   qamats   he  </changeuni> 
+            
+            <notes>
+                <note>
+                   Here the LC has a revia followed by a geresh-shaped mark.
+                   This is probably an unusual presentation of the two-mark accent revia mugrash.
+                   The usual encoding of a revia mugrash (241 instances) is a geresh muqdam (x059d), a prepositive mark, followed by revia (x0597).
+                </note>
+                <note>
+                   The UXLC encodes this single-incidence text as a revia followed by (plain) geresh (x059c).
+                   (An alternative encoding would be a revia followed by a geresh muqdam; 
+                    however, this would place a prepositive mark after the revia.)
+               </note>
+            </notes>
+                     
+            <transnotes>
+                <transnote>
+                    <action>Add</action>
+                    <type>c</type>
+                    <beforetext>&#x05e0;&#x05b7;&#x0597;&#x059c;</beforetext>
+                </transnote>
+            </transnotes>
+                     
+                     
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>NoTextChange</type>
+        </change>
+        
+    </date>
+    
+<!-- ======================================================================= -->
+
+    <date>
+        <date>2021.11.05</date>
+        <title>
+            Correction derived by examination of Hebrew text, graciously provided in digital form by CCAR, 
+            from: "Songs Ascending: The Book of Psalms in a New Translation with Textual and Spiritual Commentary", 
+            Rabbi Richard M. Levy z'l, Central Conference of American Rabbis Press (www.ccarpress.org).
+        </title>
+        <change>
+            <n>1</n>
+            <citation>
+                <book>Ps</book>
+                <c>38</c>
+                <v>10</v>
+                <position>1</position>
+            </citation>
+            <author>
+                <name>Ben Denckla</name>
+                <mail>bdenckla@alum.mit.edu</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Replace holam with revia, add note 't'.</description>
+                    
+            <lc>
+                <folio>Folio_373A</folio>
+                <column>1</column>
+                <line>6</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05d0;&#x05b2;&#x200d;&#x05bd;&#x05d3;&#x05b9;&#x05e0;&#x05b8;&#x05d9;</reftext>  
+            <refuni>   alef   hataf-patah   zero-width-joiner   meteg   dalet   holam   nun   qamats   yod </refuni> 
+            <changetext>&#x05d0;&#x05b2;&#x200d;&#x05bd;&#x05d3;&#x05e0;&#x05b8;&#x0597;&#x05d9;</changetext>  
+            <changeuni>   alef   hataf-patah   zero-width-joiner   meteg   dalet   nun   qamats  revia   yod </changeuni> 
+                
+            <notes>
+                <note>
+                   The LC has a dot above the nun. 
+                   The transcription problem is to determine whether the dot is a holam or a revia.
+                   If the dot represents a holam, then the word is without an accent; 
+                        if it represents a revia it lacks an expected vowel.
+                </note>
+                <note>
+                   Seth (Avi) Kadish points out: "Many masoretic manuscripts leave out the ḥolam dot in the divine name as a rule, 
+                       and some do so even when it is spelled אדני. 
+                   While the LC itself normally has the ḥolam dot in the spelling אדני, here it does not. 
+                   This should be considered an anomaly rather than an error, 
+                       and the dot that appears directly over the letter נ should be understood as a revia` rather than ḥolam. 
+                   It is even possible that the single dot is intended to serve both purposes."
+                </note>
+            </notes>
+            <transnotes>
+                <transnote>
+                    <action>Add</action>
+                    <type>t</type>
+                    <beforetext>&#x05d0;&#x05b2;&#x200d;&#x05bd;&#x05d3;&#x05e0;&#x05b8;&#x0597;</beforetext>
+                </transnote>
+            </transnotes>
+            
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>vowel/accent</type>
+        </change>
+        
+        <change>
+            <n>2</n>
+            <citation>
+                <book>Ps</book>
+                <c>79</c>
+                <v>6</v>
+                <position>2</position>
+            </citation>
+            <author>
+                <name>Ben Denckla</name>
+                <mail>bdenckla@alum.mit.edu</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Change qadma to a revia.</description>
+                    
+            <lc>
+                <folio>Folio_382B</folio>
+                <column>1</column>
+                <line>1</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+                
+            <reftext>&#x05d7;&#x05b2;&#x05de;&#x05b8;&#x05ea;&#x05b0;&#x05da;&#x05b8;&#x05a8;</reftext>  
+            <refuni>  het   hataf-patah   mem   qamats   tav   sheva   final-kaf   qamats   qadma  </refuni> 
+            <changetext>&#x05d7;&#x05b2;&#x05de;&#x05b8;&#x05ea;&#x05b0;&#x05da;&#x05b8;&#x0597;</changetext>  
+            <changeuni>  het   hataf-patah   mem   qamats   tav   sheva   final-kaf   qamats   revia</changeuni> 
+                                 
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>accent</type>
+        </change>
+        
+    </date>
+
+<!-- ======================================================================= -->
+
+    <date>
+        <date>2021.11.08</date>
+        <title>
+            Correction derived by examination of Hebrew text, graciously provided in digital form by CCAR, 
+            from: "Songs Ascending: The Book of Psalms in a New Translation with Textual and Spiritual Commentary", 
+            Rabbi Richard M. Levy z'l, Central Conference of American Rabbis Press (www.ccarpress.org).
+        </title>
+        <change>
+            <n>1</n>
+            <citation>
+                <book>Ps</book>
+                <c>106</c>
+                <v>1</v>
+                <position>1</position>
+            </citation>
+            <author>
+                <name>Ben Denckla</name>
+                <mail>bdenckla@alum.mit.edu</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Add sheva to second lamed, remove dagesh from vav, add note 'c'.</description>
+                    
+            <lc>
+                <folio>Folio_388A</folio>
+                <column>1</column>
+                <line>26</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05d4;&#x05b7;&#x05bd;&#x05dc;&#x05b0;&#x05dc;&#x05d5;&#x05bc;&#x05d9;&#x05b8;&#x05a8;&#x05d4;&#x05bc;&#x0020;&#x05c0;</reftext>  
+            <refuni>   he   patah   meteg   lamed   sheva   lamed   vav   dagesh   yod   qamats   qadma   he   dagesh   space    paseq  </refuni> 
+            <changetext>&#x05d4;&#x05b7;&#x05bd;&#x05dc;&#x05b0;&#x05dc;&#x05b0;&#x05d5;&#x05d9;&#x05b8;&#x05a8;&#x05d4;&#x05bc;&#x0020;&#x05c0;</changetext>  
+            <changeuni>    he   patah   meteg   lamed   sheva   lamed   sheva   vav    yod   qamats   qadma   he   dagesh   space    paseq   </changeuni> 
+                
+            <notes>
+                <note>
+                   The LC clearly has a sheva on the second lamed and lacks a dagesh on the vav.
+                </note>
+                <note>
+                   The normal spelling would have no sheva on the second lamed and would have a dagesh on the vav. 
+                   The LC is anomalous and the UXLC replicates it correctly.
+                </note>
+                <note>
+                   A hint of a maqaf might be seen between the vav and the yod. 
+                   The immediately preceding word in Ps 105:45.6 shows a very distinct maqaf, however.
+                </note>
+            </notes>
+            <transnotes>
+                <transnote>
+                    <action>Add</action>
+                    <type>c</type>
+                    <beforetext>&#x05d4;&#x05b7;&#x05bd;&#x05dc;&#x05b0;&#x05dc;&#x05d5;&#x05bc;&#x05d9;&#x05b8;&#x05a8;&#x05d4;&#x05bc;</beforetext>
+                </transnote>
+            </transnotes>
+            
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>vowel</type>
+        </change>
+    </date>
+    
+<!-- ======================================================================= -->    
+    
+    <date>
+        <date>2021.11.09</date>
+        <title>
+            Correction derived by examination of Hebrew text, graciously provided in digital form by CCAR, 
+            from: "Songs Ascending: The Book of Psalms in a New Translation with Textual and Spiritual Commentary", 
+            Rabbi Richard M. Levy z'l, Central Conference of American Rabbis Press (www.ccarpress.org).
+        </title>
+        <change>
+            <n>1</n>
+            <citation>
+                <book>Ps</book>
+                <c>94</c>
+                <v>1</v>
+                <position>6</position>
+            </citation>
+            <author>
+                <name>Ben Denckla</name>
+                <mail>bdenckla@alum.mit.edu</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Move patach to ayin, add note 't'.</description>
+                    
+            <lc>
+                <folio>Folio_385B</folio>
+                <column>1</column>
+                <line>5</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05d4;&#x05d5;&#x05b9;&#x05e4;&#x05b4;&#x05bd;&#x05d9;&#x05b7;&#x05e2;&#x05c3;</reftext>  
+            <refuni>  he   vav   holam   pe   hiriq   meteg   yod   patah   ayin   sof-pasuq    </refuni> 
+            <changetext>&#x05d4;&#x05d5;&#x05b9;&#x05e4;&#x05b4;&#x05bd;&#x05d9;&#x05e2;&#x05b7;&#x05c3;</changetext>  
+            <changeuni>    he   vav   holam   pe   hiriq   meteg   yod   ayin   patah   sof-pasuq   </changeuni> 
+                
+            <notes>
+                <note>
+                    In the LC, the patach appears to belong to the yod, not the ayin. 
+                    The Miqra According to the Masorah (MAM) assigns the patach to the ayin, which is what would be expected grammatically: 
+                         a furtive patach on ayin. 
+                    The UXLC transcription does the same as MAM: it assigns the patach to the ayin.
+                    That is, the UXLC transcription assumes that the scribe's placement of this patach 
+                       is just an extreme example of the normal "early" (right-biased) placement of a furtive patach.
+                </note>
+            </notes>
+            
+            <transnotes>
+                <transnote>
+                    <action>Add</action>
+                    <type>t</type>
+                    <beforetext>&#x05d4;&#x05d5;&#x05b9;&#x05e4;&#x05b4;&#x05bd;&#x05d9;&#x05e2;&#x05b7;</beforetext>
+                </transnote>
+            </transnotes>
+            
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>vowel</type>
+        </change>
+        
+        <change>
+            <n>2</n>
+            <citation>
+                <book>Ps</book>
+                <c>103</c>
+                <v>5</v>
+                <position>1</position>
+            </citation>
+            <author>
+                <name>Ben Denckla</name>
+                <mail>bdenckla@alum.mit.edu</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Move patach to ayin.</description>
+                    
+            <lc>
+                <folio>Folio_387A</folio>
+                <column>1</column>
+                <line>14</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05d4;&#x05b7;&#x05de;&#x05bc;&#x05b7;&#x05e9;&#x05c2;&#x05b0;&#x05d1;&#x05bc;&#x05b4;&#x05a3;&#x05d9;&#x05b7;&#x05e2;</reftext>  
+            <refuni>   he   patah   mem   dagesh   patah   shin   sin-dot   sheva   bet   dagesh   hiriq   munah   yod   patah   ayin   </refuni> 
+            <changetext>&#x05d4;&#x05b7;&#x05de;&#x05bc;&#x05b7;&#x05e9;&#x05c2;&#x05b0;&#x05d1;&#x05bc;&#x05b4;&#x05a3;&#x05d9;&#x05e2;&#x05b7;</changetext>  
+            <changeuni>    he   patah   mem   dagesh   patah   shin   sin-dot   sheva   bet   dagesh   hiriq   munah   yod   ayin   patah    </changeuni> 
+                
+            <notes>
+                <note>
+                   In the LC the patach is located between the yod and the ayin. 
+                   It's probably a furtive patach, and thus should be coded as belonging to the ayin not the yod. 
+                   (It is normal for the scribe to give a furtive patach an "early" (right-biased) placement.)
+                </note>
+            </notes>
+            
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>vowel</type>
+        </change>
+    </date>
+    
+<!-- ======================================================================= -->
+    
+    <date>
+        <date>2021.11.10</date>
+        <title>
+            Correction derived by examination of Hebrew text, graciously provided in digital form by CCAR, 
+            from: "Songs Ascending: The Book of Psalms in a New Translation with Textual and Spiritual Commentary", 
+            Rabbi Richard M. Levy z'l, Central Conference of American Rabbis Press (www.ccarpress.org).
+        </title>
+        <change>
+            <n>1</n>
+            <citation>
+                <book>Ps</book>
+                <c>31</c>
+                <v>2</v>
+                <position>1</position>
+            </citation>
+            <author>
+                <name>Ben Denckla</name>
+                <mail>bdenckla@alum.mit.edu</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Add maqaf, change tipeha to meteg, add note 't'.</description>
+                    
+            <lc>
+                <folio>Folio_371A</folio>
+                <column>1</column>
+                <line>4</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05d1;&#x05bc;&#x05b0;&#x05da;&#x05b8;&#x0596;</reftext>  
+            <refuni> bet   dagesh   sheva   final-kaf   qamats   tipeha    </refuni> 
+            <changetext>&#x05d1;&#x05bc;&#x05b0;&#x05da;&#x05b8;&#x05bd;&#x05be;</changetext>  
+            <changeuni>   bet   dagesh   sheva   final-kaf   qamats   meteg   maqaf   </changeuni> 
+                
+            <notes>
+                <note>
+                    The maqaf is clear in the LC.
+                </note>
+                <note>
+                    The accent under the qamats of the final kaf could be either a tipeha, a primary accent, or a meteg, a secondary accent.
+                    A tipeha is a diagonal line from northwest to southeast, a meteg is a vertical line.
+                    When a maqaf is added to this word it becomes a poetic word with the following word, Ps 31:2.2.
+                    Poetic words normally contain a single primary accent.  
+                    Word Ps 31:2.2 has a clear primary munah accent, thus the accent in question is likely to be a meteg, a secondary accent.
+                </note>
+                <note>
+                  Dotan (Biblia Hebraica Leningradensia, 2001) has a meteg for the accent in question.
+                </note>
+            </notes>
+            
+            <transnotes>
+                <transnote>
+                    <action>Add</action>
+                    <type>t</type>
+                    <beforetext>&#x05d1;&#x05bc;&#x05b0;&#x05da;&#x05b8;&#x05bd;&#x05be;</beforetext>
+                </transnote>
+            </transnotes>
+            
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>accent</type>
+        </change>
+    </date>    
+    
+<!-- ======================================================================= -->
+
+    <date>
+        <date>2021.11.12</date>
+        <title>
+            Correction derived by examination of Hebrew text, graciously provided in digital form by CCAR, 
+            from: "Songs Ascending: The Book of Psalms in a New Translation with Textual and Spiritual Commentary", 
+            Rabbi Richard M. Levy z'l, Central Conference of American Rabbis Press (www.ccarpress.org).
+        </title>
+        <change>
+            <n>1</n>
+            <citation>
+                <book>Ps</book>
+                <c>10</c>
+                <v>13</v>
+                <position>9</position>
+            </citation>
+            <author>
+                <name>Ben Denckla</name>
+                <mail>bdenckla@alum.mit.edu</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Remove dagesh from tav.</description>
+                    
+            <lc>
+                <folio>Folio_367A</folio>
+                <column>2</column>
+                <line>23</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05ea;&#x05bc;&#x05b4;&#x05d3;&#x05b0;&#x05e8;&#x05b9;&#x05bd;&#x05e9;&#x05c1;&#x05c3;</reftext>  
+            <refuni> tav   dagesh   hiriq   dalet   sheva   resh   holam   meteg   shin   shin-dot   sof-pasuq    </refuni> 
+            <changetext>&#x05ea;&#x05b4;&#x05d3;&#x05b0;&#x05e8;&#x05b9;&#x05bd;&#x05e9;&#x05c1;&#x05c3;</changetext>  
+            <changeuni>   tav   hiriq   dalet   sheva   resh   holam   meteg   shin   shin-dot   sof-pasuq    </changeuni> 
+                                        
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>vowel</type>
+        </change>
+        
+        <change>
+            <n>2</n>
+            <citation>
+                <book>Ps</book>
+                <c>22</c>
+                <v>26</v>
+                <position>2</position>
+            </citation>
+            <author>
+                <name>Ben Denckla</name>
+                <mail>bdenckla@alum.mit.edu</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Add dagesh to tav.</description>
+                    
+            <lc>
+                <folio>Folio_369B</folio>
+                <column>1</column>
+                <line>27</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05ea;&#x05b0;&#x05bd;&#x05d4;&#x05b4;&#x05dc;&#x05bc;&#x05b8;&#x05ab;&#x05ea;&#x05b4;&#x05a5;&#x05d9;</reftext>  
+            <refuni> tav   sheva   meteg   he   hiriq   lamed   dagesh   qamats   ole   tav   hiriq   merkha   yod    </refuni> 
+            <changetext>&#x05ea;&#x05bc;&#x05b0;&#x05bd;&#x05d4;&#x05b4;&#x05dc;&#x05bc;&#x05b8;&#x05ab;&#x05ea;&#x05b4;&#x05a5;&#x05d9;</changetext>  
+            <changeuni>   tav    dagesh   sheva   meteg   he   hiriq   lamed   dagesh   qamats   ole   tav   hiriq   merkha   yod   </changeuni> 
+                 
+            <notes>
+                <note>
+                    The dagesh is late in the tav, but otherwise has the correct color and position.
+                </note>
+            </notes>
+            
+            
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>vowel</type>
+        </change>
+        
+        <change>
+            <n>3</n>
+            <citation>
+                <book>Ps</book>
+                <c>105</c>
+                <v>1</v>
+                <position>4</position>
+            </citation>
+            <author>
+                <name>Ben Denckla</name>
+                <mail>bdenckla@alum.mit.edu</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Remove dagesh from bet.</description>
+                    
+            <lc>
+                <folio>Folio_387B</folio>
+                <column>2</column>
+                <line>4</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05d1;&#x05bc;&#x05b4;&#x05e9;&#x05c1;&#x05b0;&#x05de;&#x0591;&#x05d5;&#x05b9;</reftext>  
+            <refuni>  bet   dagesh   hiriq   shin   shin-dot   sheva   mem   etnahta   vav   holam    </refuni> 
+            <changetext>&#x05d1;&#x05b4;&#x05e9;&#x05c1;&#x05b0;&#x05de;&#x0591;&#x05d5;&#x05b9;</changetext>  
+            <changeuni>    bet   hiriq   shin   shin-dot   sheva   mem   etnahta   vav   holam   </changeuni> 
+                           
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>vowel</type>
+        </change>
+        
+        <change>
+            <n>4</n>
+            <citation>
+                <book>Ps</book>
+                <c>119</c>
+                <v>14</v>
+                <position>3</position>
+            </citation>
+            <author>
+                <name>Ben Denckla</name>
+                <mail>bdenckla@alum.mit.edu</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Add dagesh to first sin, add note 't'.</description>
+                    
+            <lc>
+                <folio>Folio_391A</folio>
+                <column>1</column>
+                <line>17</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05e9;&#x05c2;&#x05b7;&#x0597;&#x05e9;&#x05c2;&#x05b0;&#x05ea;&#x05bc;&#x05b4;&#x05d9;</reftext>  
+            <refuni> shin   sin-dot   patah   revia   shin   sin-dot   sheva   tav   dagesh   hiriq   yod   </refuni> 
+            <changetext>&#x05e9;&#x05bc;&#x05c2;&#x05b7;&#x0597;&#x05e9;&#x05c2;&#x05b0;&#x05ea;&#x05bc;&#x05b4;&#x05d9;</changetext>  
+            <changeuni>   shin   dagesh   sin-dot   patah   revia   shin   sin-dot   sheva   tav   dagesh   hiriq   yod    </changeuni> 
+                
+            <notes>
+                <note>
+                    The dagesh on the first sin is unclear or split.
+                </note>
+                <note>
+                    The Aleppo Codex has a dagesh on the first sin, but it is blurry.
+                </note>
+                <note>
+                  Dotan (Biblia Hebraica Leningradensia, 2001) does not have a dagesh on the sin.
+                </note>
+            </notes>
+            
+            <transnotes>
+                <transnote>
+                    <action>Add</action>
+                    <type>t</type>
+                    <beforetext>&#x05e9;&#x05bc;&#x05c2;&#x05b7;&#x0597;</beforetext>
+                </transnote>
+            </transnotes>
+            
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>vowel</type>
+        </change>
+        
+        <change>
+            <n>5</n>
+            <citation>
+                <book>Ps</book>
+                <c>143</c>
+                <v>11</v>
+                <position>6</position>
+            </citation>
+            <author>
+                <name>Ben Denckla</name>
+                <mail>bdenckla@alum.mit.edu</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Add dagesh to tav.</description>
+                    
+            <lc>
+                <folio>Folio_395B</folio>
+                <column>2</column>
+                <line>10</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05ea;&#x05d5;&#x05b9;&#x05e6;&#x05b4;&#x0596;&#x05d9;&#x05d0;</reftext>  
+            <refuni>  tav   vav   holam   tsadi   hiriq   tipeha   yod   alef    </refuni> 
+            <changetext>&#x05ea;&#x05bc;&#x05d5;&#x05b9;&#x05e6;&#x05b4;&#x0596;&#x05d9;&#x05d0;</changetext>  
+            <changeuni>    tav   dagesh   vav   holam   tsadi   hiriq   tipeha   yod   alef  </changeuni> 
+                           
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>vowel</type>
+        </change>
+        
+        <change>
+            <n>6</n>
+            <citation>
+                <book>Ps</book>
+                <c>150</c>
+                <v>4</v>
+                <position>2</position>
+            </citation>
+            <author>
+                <name>Ben Denckla</name>
+                <mail>bdenckla@alum.mit.edu</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Add dagesh to bet.</description>
+                    
+            <lc>
+                <folio>Folio_396B</folio>
+                <column>2</column>
+                <line>23</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05d1;&#x05b0;&#x05ea;&#x05b9;&#x05a3;&#x05e3;</reftext>  
+            <refuni>  bet   sheva   tav   holam   munah   final-pe     </refuni> 
+            <changetext>&#x05d1;&#x05bc;&#x05b0;&#x05ea;&#x05b9;&#x05a3;&#x05e3;</changetext>  
+            <changeuni>    bet    dagesh   sheva   tav   holam   munah   final-pe   </changeuni> 
+                           
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>vowel</type>
+        </change>
+        
+    </date>  
+<!-- ======================================================================  -->
+    <date>
+    
+        <date>2021.11.21</date>
+        
+        <change>
+            <n>1</n>
+            <citation>
+                <book>1Kings</book>
+                <c>8</c>
+                <v>11</v>
+                <position>6</position>
+            </citation>
+            <author>
+                <name>Moshe Escott</name>
+                <mail></mail>
+                <confirmed>false</confirmed>
+            </author>
+            
+            <description>Change merkha to munah.</description>
+                    
+            <lc>
+                <folio>Folio_190AB</folio>
+                <column>2</column>
+                <line>23</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05de;&#x05b4;&#x05e4;&#x05bc;&#x05b0;&#x05e0;&#x05b5;&#x05a5;&#x05d9;</reftext>  
+            <refuni> mem   hiriq   pe   dagesh   sheva   nun   tsere   merkha   yod    </refuni> 
+            <changetext>&#x05de;&#x05b4;&#x05e4;&#x05bc;&#x05b0;&#x05e0;&#x05b5;&#x05a3;&#x05d9;</changetext>  
+            <changeuni>   mem   hiriq   pe   dagesh   sheva   nun   tsere   munah   yod   </changeuni> 
+                 
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>accent</type>
+        </change>
+    </date>
+        
+<!-- ======================================================================  -->
+    <date>
+        <date>2021.11.28</date>
+                        
+        <change>
+            <n>1</n>
+            <citation>
+                <book>Gen</book>
+                <c>39</c>
+                <v>19</v>
+                <position>13</position>
+            </citation>
+            <author>
+                <name>Alexander Adler</name>
+                <mail>alexander.adler0@googlemail.com</mail>
+                <confirmed>false</confirmed>
+            </author>
+           
+            <description>Remove dagesh (=mapiq) on he, add note 't'. </description>
+                    
+            <lc>
+                <folio>Folio_024A</folio>
+                <column>3</column>
+                <line>10</line>   
+                <credit>Credit: Sefaria.org.</credit>        
+            </lc>
+                 
+            <reftext>&#x05e2;&#x05b8;&#x05a5;&#x05e9;&#x05c2;&#x05b8;&#x05d4;&#x05bc;</reftext>  
+            <refuni>   ayin   qamats   merkha   shin   sin-dot   qamats   he   dagesh   </refuni> 
+            <changetext>&#x05e2;&#x05b8;&#x05a5;&#x05e9;&#x05c2;&#x05b8;&#x05d4;</changetext>  
+            <changeuni>   ayin   qamats   merkha   shin   sin-dot   qamats   he  </changeuni> 
+                                         
+            <notes>
+                <note>
+                          The dagesh (=mapiq) on the he is light and brown; it's likely to be an artifact.
+                </note>
+            </notes>
+                    
+            <transnotes>
+                <transnote>
+                    <action>Add</action>
+                    <type>t</type>
+                    <beforetext>&#x05e2;&#x05b8;&#x05a5;&#x05e9;&#x05c2;&#x05b8;&#x05d4;</beforetext>
+                </transnote>
+            </transnotes>
+                    
+            <approval>
+                <name></name>
+                <mail></mail>
+                <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>vowel</type>
+        </change>
+        
+        <change>
+            <n>2</n>
+            <citation>
+                <book>Ex</book>
+                <c>28</c>
+                <v>1</v>
+                <position>9</position>
+            </citation>
+            <author>
+                <name>Alexander Adler</name>
+                <mail>alexander.adler0@googlemail.com</mail>
+                <confirmed>false</confirmed>
+            </author>
+           
+            <description>Change zaqef qatan to revia, add note 't'. </description>
+                    
+            <lc>
+                <folio>Folio_047B</folio>
+                <column>3</column>
+                <line>14</line>   
+                <credit>Credit: Sefaria.org.</credit>        
+            </lc>
+                 
+            <reftext>&#x05d0;&#x05b4;&#x05ea;&#x05bc;&#x0594;&#x05d5;&#x05b9;</reftext>  
+            <refuni>   alef   hiriq   tav   dagesh   zaqef-qatan   vav   holam   </refuni> 
+            <changetext>&#x05d0;&#x05b4;&#x05ea;&#x05bc;&#x0597;&#x05d5;&#x05b9;</changetext>  
+            <changeuni>   alef   hiriq   tav   dagesh   revia   vav   holam  </changeuni> 
+                                         
+            <notes>
+                <note>
+                   The upper dot of the zaqef qatan is light, brown, and more circular than expected; 
+                   it's likely to be an artifact.
+                </note>
+            </notes>
+                    
+            <transnotes>
+                <transnote>
+                    <action>Add</action>
+                    <type>t</type>
+                    <beforetext>&#x05d0;&#x05b4;&#x05ea;&#x05bc;&#x0597;</beforetext>
+                </transnote>
+            </transnotes>
+                    
+            <approval>
+                <name></name>
+                <mail></mail>
+                <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>accent</type>
+        </change>
+        
+        <change>
+            <n>3</n>
+            <citation>
+                <book>Deut</book>
+                <c>12</c>
+                <v>9</v>
+                <position>3</position>
+            </citation>
+            <author>
+                <name>Alexander Adler</name>
+                <mail>alexander.adler0@googlemail.com</mail>
+                <confirmed>false</confirmed>
+            </author>
+           
+            <description>Remove dagesh on bet, add note 't'. </description>
+                    
+            <lc>
+                <folio>Folio_106B</folio>
+                <column>3</column>
+                <line>24</line>   
+                <credit>Credit: Sefaria.org.</credit>        
+            </lc>
+                 
+            <reftext>&#x05d1;&#x05bc;&#x05b8;&#x05d0;&#x05ea;&#x05b6;&#x0596;&#x05dd;</reftext>  
+            <refuni>   bet   dagesh   qamats   alef   tav   segol   tipeha   final-mem   </refuni> 
+            <changetext>&#x05d1;&#x05b8;&#x05d0;&#x05ea;&#x05b6;&#x0596;&#x05dd;</changetext>  
+            <changeuni>   bet   qamats   alef   tav   segol   tipeha   final-mem  </changeuni> 
+                                         
+            <notes>
+                <note>
+                   The dagesh on the bet is very light and brown; 
+                   it's likely to be an artifact.
+                </note>
+            </notes>
+                    
+            <transnotes>
+                <transnote>
+                    <action>Add</action>
+                    <type>t</type>
+                    <beforetext>&#x05d1;&#x05b8;</beforetext>
+                </transnote>
+            </transnotes>
+                    
+            <approval>
+                <name></name>
+                <mail></mail>
+                <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>vowel</type>
+        </change>
+
+        <change>
+            <n>4</n>
+            <citation>
+                <book>Deut</book>
+                <c>18</c>
+                <v>14</v>
+                <position>16</position>
+            </citation>
+            <author>
+                <name>Alexander Adler</name>
+                <mail>alexander.adler0@googlemail.com</mail>
+                <confirmed>false</confirmed>
+            </author>
+           
+            <description>Change tevir on nun to merkha, add note 't'. </description>
+                    
+            <lc>
+                <folio>Folio_110A</folio>
+                <column>3</column>
+                <line>23</line>   
+                <credit>Credit: Sefaria.org.</credit>        
+            </lc>
+                 
+            <reftext>&#x05e0;&#x05b8;&#x059b;&#x05ea;&#x05b7;&#x05df;</reftext>  
+            <refuni>  nun   qamats   tevir   tav   patah   final-nun   </refuni> 
+            <changetext>&#x05e0;&#x05b8;&#x05a5;&#x05ea;&#x05b7;&#x05df;</changetext>  
+            <changeuni>   nun   qamats  merkha   tav   patah   final-nun  </changeuni> 
+                                         
+            <notes>
+                <note>
+                   Dot making the tevir is light, brown, and lower than expected; 
+                   it's likely to be an artifact.
+                </note>
+            </notes>
+                    
+            <transnotes>
+                <transnote>
+                    <action>Add</action>
+                    <type>t</type>
+                    <beforetext>&#x05e0;&#x05b8;&#x05a5;</beforetext>
+                </transnote>
+            </transnotes>
+                    
+            <approval>
+                <name></name>
+                <mail></mail>
+                <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>accent</type>
+        </change>
+        
+        <change>
+            <n>5</n>
+            <citation>
+                <book>Deut</book>
+                <c>20</c>
+                <v>12</v>
+                <position>9</position>
+            </citation>
+            <author>
+                <name>Alexander Adler</name>
+                <mail>alexander.adler0@googlemail.com</mail>
+                <confirmed>false</confirmed>
+            </author>
+           
+            <description>Remove dagesh (=mapiq), add note 't'.</description>
+                    
+            <lc>
+                <folio>Folio_111A</folio>
+                <column>3</column>
+                <line>12</line>   
+                <credit>Credit: Sefaria.org.</credit>        
+            </lc>
+                 
+            <reftext>&#x05e2;&#x05b8;&#x05dc;&#x05b6;&#x05bd;&#x05d9;&#x05d4;&#x05bc;&#x05b8;&#x05c3;</reftext>  
+            <refuni>  ayin   qamats   lamed   segol   meteg   yod   he   dagesh   qamats   sof-pasuq   </refuni> 
+            <changetext>&#x05e2;&#x05b8;&#x05dc;&#x05b6;&#x05bd;&#x05d9;&#x05d4;&#x05b8;&#x05c3;</changetext>  
+            <changeuni>   ayin   qamats   lamed   segol   meteg   yod   he   qamats   sof-pasuq  </changeuni> 
+                                         
+            <notes>
+                <note>
+                   The dagesh (=mapiq) on the he is light, brown and misshapen; it's likely to be an artifact. 
+                </note>
+            </notes>
+                    
+            <transnotes>
+                <transnote>
+                    <action>Add</action>
+                    <type>t</type>
+                    <beforetext>&#x05e2;&#x05b8;&#x05dc;&#x05b6;&#x05bd;&#x05d9;&#x05d4;&#x05b8;</beforetext>
+                </transnote>
+            </transnotes>
+                    
+            <approval>
+                <name></name>
+                <mail></mail>
+                <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>vowel</type>
+        </change>
+    </date>
+
+<!-- ======================================================================= -->
+
+    <date>
+    
+        <date>2021.12.02</date>
+        
+        <change>
+            <n>1</n>
+            <citation>
+                <book>Ezra</book>
+                <c>4</c>
+                <v>3</v>
+                <position>10</position>
+            </citation>
+            <author>
+                <name>Ben Denckla</name>
+                <mail>bdenckla@alum.mit.edu</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Move munah from lamed to kaf.</description>
+                    
+            <lc>
+                <folio>Folio_F449B</folio>
+                <column>1</column>
+                <line>9</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05dc;&#x05b8;&#x05a3;&#x05db;&#x05b6;&#x05dd;</reftext>  
+            <refuni> lamed   qamats   munah   kaf   segol   final-mem    </refuni> 
+            <changetext>&#x05dc;&#x05b8;&#x05db;&#x05b6;&#x05a3;&#x05dd;</changetext>  
+            <changeuni>   lamed   qamats   kaf   segol   munah   final-mem    </changeuni> 
+                                        
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>accent</type>
+        </change>
+        
+        <change>
+            <n>2</n>
+            <citation>
+                <book>Ezra</book>
+                <c>4</c>
+                <v>14</v>
+                <position>11</position>
+            </citation>
+            <author>
+                <name>Ben Denckla</name>
+                <mail>bdenckla@alum.mit.edu</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Word lacks a maqaf so that it has no primary accent. Add note 'c'.</description>
+                    
+            <lc>
+                <folio>Folio_449B</folio>
+                <column>3</column>
+                <line>6</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05d0;&#x05b2;&#x200d;&#x05bd;&#x05e8;&#x05b4;&#x05bd;&#x05d9;&#x05da;&#x05b0;</reftext>  
+            <refuni> alef   hataf-patah   zero-width-joiner   meteg   resh   hiriq   meteg   yod   final-kaf   sheva    </refuni> 
+            <changetext>&#x05d0;&#x05b2;&#x200d;&#x05bd;&#x05e8;&#x05b4;&#x05bd;&#x05d9;&#x05da;&#x05b0;</changetext>  
+            <changeuni>   alef   hataf-patah   zero-width-joiner   meteg   resh   hiriq   meteg   yod   final-kaf   sheva   </changeuni> 
+                 
+            <notes>
+                <note>
+                    The lack of a maqaf on this word means the it has no primary accent.
+                    Instead, it has two metegs, an unusual marking.
+                </note>
+                <note>
+                    The digital text correctly represents the LC which has no maqaf.
+                </note>
+            </notes>
+            
+            <transnotes>
+                <transnote>
+                    <action>Add</action>
+                    <type>c</type>
+                    <beforetext>&#x05d0;&#x05b2;&#x200d;&#x05bd;&#x05e8;&#x05b4;&#x05bd;&#x05d9;&#x05da;&#x05b0;</beforetext>
+                </transnote>
+            </transnotes>
+            
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>NoTextChange</type>
+        </change>
+                
+    </date>
+      
+<!-- ======================================================================= -->
+
+    <date>
+    
+        <date>2021.12.14</date>
+        
+        <change>
+            <n>1</n>
+            <citation>
+                <book>1Chr</book>
+                <c>29</c>
+                <v>16</v>
+                <position>3</position>
+            </citation>
+            <author>
+                <name>Shmuel Schreiber</name>
+                <mail></mail>
+                <confirmed>false</confirmed>
+            </author>
+            
+            <description>Add dagesh to kaf.</description>
+                    
+            <lc>
+                <folio>Folio_F344A</folio>
+                <column>3</column>
+                <line>24</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05db;&#x05b9;&#x05a3;&#x05dc;</reftext>  
+            <refuni> kaf   holam   munah   lamed    </refuni> 
+            <changetext>&#x05db;&#x05bc;&#x05b9;&#x05a3;&#x05dc;</changetext>  
+            <changeuni>   kaf   dagesh   holam   munah   lamed    </changeuni> 
+                                        
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>vowel</type>
+        </change>
+        
+    </date>
+<!-- ======================================================================= -->
+
+    <date>
+    
+        <date>2021.12.28</date>
+        
+        <change>
+            <n>1</n>
+            <citation>
+                <book>Lev</book>
+                <c>26</c>
+                <v>34</v>
+                <position>8</position>
+            </citation>
+            <author>
+                <name>Todd Shandelman</name>
+                <mail></mail>
+                <confirmed>false</confirmed>
+            </author>
+            
+            <description>Unexpected hataf qamats on initial he, missing dagesh on shin; add note 'c'.</description>
+                    
+            <lc>
+                <folio>Folio_F072B</folio>
+                <column>3</column>
+                <line>27</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05d4;&#x05b3;&#x05e9;&#x05c1;&#x05b7;&#x05de;&#x05bc;&#x05b8;&#x0594;&#x05d4;</reftext>  
+            <refuni> he   hataf-qamats   shin   shin-dot   patah   mem   dagesh   qamats   zaqef-qatan   he    </refuni> 
+            <changetext>&#x05d4;&#x05b3;&#x05e9;&#x05c1;&#x05b7;&#x05de;&#x05bc;&#x05b8;&#x0594;&#x05d4;</changetext>  
+            <changeuni>   he   hataf-qamats   shin   shin-dot   patah   mem   dagesh   qamats   zaqef-qatan   he    </changeuni> 
+                                        
+            <notes>
+                <note>
+                   The LC has a hataf qamats on the initial he and the following shin lacks a dagesh.
+                   The usual marking has a qamatz on the he and a dagesh on the shin as
+                   in the Miqra according to the Masorah (MAM).
+                </note>
+                <note>
+                   The UXLC transcribes the LC correctly, however.
+               </note>
+            </notes>
+                     
+            <transnotes>
+                <transnote>
+                    <action>Add</action>
+                    <type>c</type>
+                    <beforetext>&#x05d4;&#x05b3;&#x05e9;&#x05c1;&#x05b7;</beforetext>
+                </transnote>
+            </transnotes>
+                     
+                     
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>NoTextChange</type>
+        </change>
+        
+         <change>
+            <n>2</n>
+            <citation>
+                <book>Lev</book>
+                <c>26</c>
+                <v>35</v>
+                <position>3</position>
+            </citation>
+            <author>
+                <name>Todd Shandelman</name>
+                <mail></mail>
+                <confirmed>false</confirmed>
+            </author>
+            
+            <description>Missing dagesh on shin; add note 'c'.</description>
+                    
+            <lc>
+                <folio>Folio_F073A</folio>
+                <column>1</column>
+                <line>1</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05d4;&#x05b8;&#x05e9;&#x05c1;&#x05b7;&#x05de;&#x05bc;&#x05b8;&#x0596;&#x05d4;</reftext>  
+            <refuni> he   qamats   shin   shin-dot   patah   mem   dagesh   qamats   tipeha   he    </refuni> 
+            <changetext>&#x05d4;&#x05b8;&#x05e9;&#x05c1;&#x05b7;&#x05de;&#x05bc;&#x05b8;&#x0596;&#x05d4;</changetext>  
+            <changeuni>   he   qamats   shin   shin-dot   patah   mem   dagesh   qamats   tipeha   he    </changeuni> 
+                                        
+            <notes>
+                <note>
+                   The LC has no dagesh on the shin.
+                   The usual marking has a dagesh on the shin as
+                   in the Miqra according to the Masorah (MAM).
+                </note>
+                <note>
+                   The UXLC transcribes the LC correctly, however.
+               </note>
+            </notes>
+                     
+            <transnotes>
+                <transnote>
+                    <action>Add</action>
+                    <type>c</type>
+                    <beforetext>&#x05d4;&#x05b8;&#x05e9;&#x05c1;&#x05b7;</beforetext>
+                </transnote>
+            </transnotes>
+                     
+                     
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>NoTextChange</type>
+        </change>
+        
+    </date>
+    
+<!-- ======================================================================= -->
+
+    <date>
+    
+        <date>2022.02.16</date>
+        
+        <change>
+            <n>1</n>
+            <citation>
+                <book>Isa</book>
+                <c>2</c>
+                <v>3</v>
+                <position>19</position>
+            </citation>
+            
+            <author>
+                <name>Ben Denckla</name>
+                <mail>bdenckla@alum.mit.edu</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Remove dagesh from tsadi.</description>
+                    
+            <lc>
+                <folio>Folio_F221A</folio>
+                <column>2</column>
+                <line>1</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05de;&#x05b4;&#x05e6;&#x05bc;&#x05b4;&#x05d9;&#x05bc;&#x05d5;&#x05b9;&#x05df;&#x0599;</reftext>  
+            <refuni> mem   hiriq   tsadi   dagesh   hiriq   yod   dagesh   vav   holam   final-nun   pashta    </refuni> 
+            <changetext>&#x05de;&#x05b4;&#x05e6;&#x05b4;&#x05d9;&#x05bc;&#x05d5;&#x05b9;&#x05df;&#x0599;</changetext>  
+            <changeuni>  mem   hiriq   tsadi   hiriq   yod   dagesh   vav   holam   final-nun   pashta    </changeuni> 
+                                        
+            <notes>
+                <note>
+                   The LC generally has no dagesh in the tsadi for this word, &#x05de;&#x05b4;&#x05e6;&#x05b4;&#x05d9;&#x05bc;&#x05d5;&#x05b9;&#x05df;. (Exception: Joel 4:16.2).
+                   The Miqra according to the Masorah (MAM) has a dagesh in the tsadi.
+                </note>
+            </notes>
+                     
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>vowel</type>
+        </change>
+        
+        <change>
+            <n>2</n>
+            <citation>
+                <book>Jer</book>
+                <c>9</c>
+                <v>18</v>
+                <position>5</position>
+            </citation>
+            
+            <author>
+                <name>Ben Denckla</name>
+                <mail>bdenckla@alum.mit.edu</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Remove dagesh from tsadi.</description>
+                    
+            <lc>
+                <folio>Folio_F251A</folio>
+                <column>2</column>
+                <line>3</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05de;&#x05b4;&#x05e6;&#x05bc;&#x05b4;&#x05d9;&#x05bc;&#x0596;&#x05d5;&#x05b9;&#x05df;</reftext>  
+            <refuni> mem   hiriq   tsadi   dagesh   hiriq   yod   dagesh   tipeha   vav   holam   final-nun    </refuni> 
+            <changetext>&#x05de;&#x05b4;&#x05e6;&#x05b4;&#x05d9;&#x05bc;&#x0596;&#x05d5;&#x05b9;&#x05df;</changetext>  
+            <changeuni> mem   hiriq   tsadi   hiriq   yod   dagesh   tipeha   vav   holam   final-nun    </changeuni> 
+                                        
+            <notes>
+                <note>
+                   The LC generally has no dagesh in the tsadi for this word, &#x05de;&#x05b4;&#x05e6;&#x05b4;&#x05d9;&#x05bc;&#x05d5;&#x05b9;&#x05df;. (Exception: Joel 4:16.2).
+                   The Miqra according to the Masorah (MAM) has a dagesh in the tsadi.
+                </note>
+            </notes>
+                     
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>vowel</type>
+        </change>
+ 
+        <change>
+            <n>3</n>
+            <citation>
+                <book>Joel</book>
+                <c>4</c>
+                <v>16</v>
+                <position>2</position>
+            </citation>
+            
+            <author>
+                <name>Ben Denckla</name>
+                <mail>bdenckla@alum.mit.edu</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Add note 'c' to tsadi with unexpected dagesh.</description>
+                    
+            <lc>
+                <folio>Folio_F308B</folio>
+                <column>3</column>
+                <line>5</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05de;&#x05b4;&#x05e6;&#x05bc;&#x05b4;&#x05d9;&#x05bc;&#x05a3;&#x05d5;&#x05b9;&#x05df;</reftext>  
+            <refuni> mem   hiriq   tsadi   dagesh   hiriq   yod   dagesh   munah   vav   holam   final-nun    </refuni> 
+            <changetext>&#x05de;&#x05b4;&#x05e6;&#x05bc;&#x05b4;&#x05d9;&#x05bc;&#x05a3;&#x05d5;&#x05b9;&#x05df;</changetext>  
+            <changeuni> mem   hiriq   tsadi   dagesh   hiriq   yod   dagesh   munah   vav   holam   final-nun    </changeuni> 
+                                        
+            <notes>
+                <note>
+                   This is the sole occurence in the LC where this word, &#x05de;&#x05e6;&#x05d9;&#x05d5;&#x05df;, 
+                       is vocalized as &#x05de;&#x05b4;&#x05e6;&#x05bc;&#x05b4;&#x05d9;&#x05bc;&#x05a3;&#x05d5;&#x05b9;&#x05df;. 
+                   That is, the tsadi has a dagesh.
+                   All other occurences have no dagesh in the tsadi.
+                   The Miqra according to the Masorah (MAM) has a dagesh in the tsadi.
+                </note>
+            </notes>
+            
+            <transnotes>
+                <transnote>
+                    <action>Add</action>
+                    <type>c</type>
+                    <beforetext>&#x05de;&#x05b4;&#x05e6;&#x05bc;&#x05b4;</beforetext>
+                </transnote>
+            </transnotes>
+                     
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>NoTextChange</type>
+        </change>
+        
+        <change>
+            <n>4</n>
+            <citation>
+                <book>Mic</book>
+                <c>4</c>
+                <v>2</v>
+                <position>19</position>
+            </citation>
+            
+            <author>
+                <name>Ben Denckla</name>
+                <mail>bdenckla@alum.mit.edu</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Remove dagesh from tsadi.</description>
+                    
+            <lc>
+                <folio>Folio_F314A</folio>
+                <column>3</column>
+                <line>18</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05de;&#x05b4;&#x05e6;&#x05bc;&#x05b4;&#x05d9;&#x05bc;&#x05d5;&#x05b9;&#x05df;&#x0599;</reftext>  
+            <refuni> mem   hiriq   tsadi   dagesh   hiriq   yod   dagesh   vav   holam   final-nun   pashta     </refuni> 
+            <changetext>&#x05de;&#x05b4;&#x05e6;&#x05b4;&#x05d9;&#x05bc;&#x05d5;&#x05b9;&#x05df;&#x0599;</changetext>  
+            <changeuni>mem   hiriq   tsadi  hiriq   yod   dagesh   vav   holam   final-nun   pashta    </changeuni> 
+                                        
+            <notes>
+                <note>
+                   The LC generally has no dagesh in the tsadi for this word, &#x05de;&#x05b4;&#x05e6;&#x05b4;&#x05d9;&#x05bc;&#x05d5;&#x05b9;&#x05df;. (Exception: Joel 4:16.2).
+                   The Miqra according to the Masorah (MAM) has a dagesh in the tsadi.
+                </note>
+            </notes>
+            
+                     
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>vowel</type>
+        </change>
+
+        <change>
+            <n>5</n>
+            <citation>
+                <book>Ps</book>
+                <c>14</c>
+                <v>7</v>
+                <position>3</position>
+            </citation>
+            
+            <author>
+                <name>Ben Denckla</name>
+                <mail>bdenckla@alum.mit.edu</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Remove dagesh from tsadi.</description>
+                    
+            <lc>
+                <folio>Folio_F367B</folio>
+                <column>2</column>
+                <line>21</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05de;&#x05b4;&#x05e6;&#x05bc;&#x05b4;&#x05d9;&#x05bc;&#x05d5;&#x05b9;&#x05df;&#x05ae;</reftext>  
+            <refuni> mem   hiriq   tsadi   dagesh   hiriq   yod   dagesh   vav   holam   final-nun   zinor   </refuni> 
+            <changetext>&#x05de;&#x05b4;&#x05e6;&#x05b4;&#x05d9;&#x05bc;&#x05d5;&#x05b9;&#x05df;&#x05ae;</changetext>  
+            <changeuni>mem   hiriq   tsadi   hiriq   yod   dagesh   vav   holam   final-nun   zinor  </changeuni> 
+                                        
+            <notes>
+                <note>
+                   The LC generally has no dagesh in the tsadi for this word, &#x05de;&#x05b4;&#x05e6;&#x05b4;&#x05d9;&#x05bc;&#x05d5;&#x05b9;&#x05df;. (Exception: Joel 4:16.2).
+                   The Miqra according to the Masorah (MAM) has a dagesh in the tsadi.
+                </note>
+            </notes>
+            
+                     
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>vowel</type>
+        </change>
+        
+        <change>
+            <n>6</n>
+            <citation>
+                <book>Ps</book>
+                <c>20</c>
+                <v>3</v>
+                <position>4</position>
+            </citation>
+            
+            <author>
+                <name>Ben Denckla</name>
+                <mail>bdenckla@alum.mit.edu</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Remove dagesh from tsadi.</description>
+                    
+            <lc>
+                <folio>Folio_F369A</folio>
+                <column>1</column>
+                <line>22</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05d5;&#x05bc;&#x059d;&#x05de;&#x05b4;&#x05e6;&#x05bc;&#x05b4;&#x05d9;&#x05bc;&#x0597;&#x05d5;&#x05b9;&#x05df;</reftext>  
+            <refuni> vav   dagesh   geresh-muqdam   mem   hiriq   tsadi   dagesh   hiriq   yod   dagesh   revia   vav   holam   final-nun </refuni> 
+            <changetext>&#x05d5;&#x05bc;&#x059d;&#x05de;&#x05b4;&#x05e6;&#x05b4;&#x05d9;&#x05bc;&#x0597;&#x05d5;&#x05b9;&#x05df;</changetext>  
+            <changeuni> vav   dagesh   geresh-muqdam   mem   hiriq   tsadi  hiriq   yod   dagesh   revia   vav   holam   final-nun </changeuni> 
+                                        
+            <notes>
+                <note>
+                   The LC generally has no dagesh in the tsadi for the word, &#x05de;&#x05b4;&#x05e6;&#x05b4;&#x05d9;&#x05bc;&#x05d5;&#x05b9;&#x05df;. (Exception: Joel 4:16.2).
+                   The vav-prefixed form here, &#x05d5;&#x05bc;&#x059d;&#x05de;&#x05b4;&#x05e6;&#x05b4;&#x05d9;&#x05bc;&#x0597;&#x05d5;&#x05b9;&#x05df;, 
+                      follows the pattern by having no dagesh in the tsadi. 
+                   The Miqra according to the Masorah (MAM) has a dagesh in the tsadi.
+                </note>
+            </notes>
+            
+                     
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>vowel</type>
+        </change>
+        
+        <change>
+            <n>7</n>
+            <citation>
+                <book>Ps</book>
+                <c>50</c>
+                <v>2</v>
+                <position>1</position>
+            </citation>
+            
+            <author>
+                <name>Ben Denckla</name>
+                <mail>bdenckla@alum.mit.edu</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Remove dagesh from tsadi.</description>
+                    
+            <lc>
+                <folio>Folio_F375B</folio>
+                <column>1</column>
+                <line>3</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05de;&#x05b4;&#x05e6;&#x05bc;&#x05b4;&#x05d9;&#x05bc;&#x05a5;&#x05d5;&#x05b9;&#x05df;</reftext>  
+            <refuni>  mem   hiriq   tsadi   dagesh   hiriq   yod   dagesh   merkha   vav   holam   final-nun   </refuni> 
+            <changetext>&#x05de;&#x05b4;&#x05e6;&#x05b4;&#x05d9;&#x05bc;&#x05a5;&#x05d5;&#x05b9;&#x05df;</changetext>  
+            <changeuni>  mem   hiriq   tsadi   hiriq   yod   dagesh   merkha   vav   holam   final-nun   </changeuni> 
+                                         
+            <notes>
+                <note>
+                   The LC generally has no dagesh in the tsadi for this word, &#x05de;&#x05b4;&#x05e6;&#x05b4;&#x05d9;&#x05bc;&#x05d5;&#x05b9;&#x05df;. (Exception: Joel 4:16.2).
+                   The Miqra according to the Masorah (MAM) has a dagesh in the tsadi.
+                </note>
+            </notes>
+            
+                     
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>vowel</type>
+        </change>
+        
+        <change>
+            <n>8</n>
+            <citation>
+                <book>Ps</book>
+                <c>53</c>
+                <v>7</v>
+                <position>3</position>
+            </citation>
+            
+            <author>
+                <name>Ben Denckla</name>
+                <mail>bdenckla@alum.mit.edu</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Remove dagesh from tsadi.</description>
+                    
+            <lc>
+                <folio>Folio_F376A</folio>
+                <column>2</column>
+                <line>1</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05de;&#x05b4;&#x05e6;&#x05bc;&#x05b4;&#x05d9;&#x05bc;&#x05d5;&#x05b9;&#x05df;&#x05ae;</reftext>  
+            <refuni>   mem   hiriq   tsadi   dagesh   hiriq   yod   dagesh   vav   holam   final-nun   zinor </refuni> 
+            <changetext>&#x05de;&#x05b4;&#x05e6;&#x05b4;&#x05d9;&#x05bc;&#x05d5;&#x05b9;&#x05df;&#x05ae;</changetext>  
+            <changeuni>   mem   hiriq   tsadi   hiriq   yod   dagesh   vav   holam   final-nun   zinor  </changeuni> 
+                                         
+            <notes>
+                <note>
+                   The LC generally has no dagesh in the tsadi for this word, &#x05de;&#x05b4;&#x05e6;&#x05b4;&#x05d9;&#x05bc;&#x05d5;&#x05b9;&#x05df;. (Exception: Joel 4:16.2).
+                   The Miqra according to the Masorah (MAM) has a dagesh in the tsadi.
+                </note>
+            </notes>
+            
+                     
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>vowel</type>
+        </change>
+        
+        <change>
+            <n>9</n>
+            <citation>
+                <book>Ps</book>
+                <c>110</c>
+                <v>2</v>
+                <position>5</position>
+            </citation>
+            
+            <author>
+                <name>Ben Denckla</name>
+                <mail>bdenckla@alum.mit.edu</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Remove dagesh from tsadi.</description>
+                    
+            <lc>
+                <folio>Folio_F389B</folio>
+                <column>2</column>
+                <line>10</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05de;&#x05b4;&#x05e6;&#x05bc;&#x05b4;&#x05d9;&#x05bc;&#x0591;&#x05d5;&#x05b9;&#x05df;</reftext>  
+            <refuni>   mem   hiriq   tsadi   dagesh   hiriq   yod   dagesh   etnahta   vav   holam   final-nun </refuni> 
+            <changetext>&#x05de;&#x05b4;&#x05e6;&#x05b4;&#x05d9;&#x05bc;&#x0591;&#x05d5;&#x05b9;&#x05df;</changetext>  
+            <changeuni>  mem   hiriq   tsadi   hiriq   yod   dagesh   etnahta   vav   holam   final-nun  </changeuni> 
+                                         
+            <notes>
+                <note>
+                   The LC generally has no dagesh in the tsadi for this word, &#x05de;&#x05b4;&#x05e6;&#x05b4;&#x05d9;&#x05bc;&#x05d5;&#x05b9;&#x05df;. (Exception: Joel 4:16.2).
+                   The Miqra according to the Masorah (MAM) has a dagesh in the tsadi.
+                </note>
+            </notes>
+            
+                     
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>vowel</type>
+        </change>
+        
+        <change>
+            <n>10</n>
+            <citation>
+                <book>Ps</book>
+                <c>128</c>
+                <v>5</v>
+                <position>3</position>
+            </citation>
+            
+            <author>
+                <name>Ben Denckla</name>
+                <mail>bdenckla@alum.mit.edu</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Remove dagesh from tsadi.</description>
+                    
+            <lc>
+                <folio>Folio_F393B</folio>
+                <column>1</column>
+                <line>16</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05de;&#x05b4;&#x05e6;&#x05bc;&#x05b4;&#x05ab;&#x05d9;&#x05bc;&#x05a5;&#x05d5;&#x05b9;&#x05df;</reftext>  
+            <refuni>  mem   hiriq   tsadi   dagesh   hiriq   ole   yod   dagesh   merkha   vav   holam   final-nun </refuni> 
+            <changetext>&#x05de;&#x05b4;&#x05e6;&#x05b4;&#x05ab;&#x05d9;&#x05bc;&#x05a5;&#x05d5;&#x05b9;&#x05df;</changetext>  
+            <changeuni> mem   hiriq   tsadi   hiriq   ole   yod   dagesh   merkha   vav   holam   final-nun  </changeuni> 
+                                         
+            <notes>
+                <note>
+                   The LC generally has no dagesh in the tsadi for this word, &#x05de;&#x05b4;&#x05e6;&#x05b4;&#x05d9;&#x05bc;&#x05d5;&#x05b9;&#x05df;. (Exception: Joel 4:16.2).
+                   The Miqra according to the Masorah (MAM) has a dagesh in the tsadi.
+                </note>
+            </notes>
+            
+                     
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>vowel</type>
+        </change>
+        
+        <change>
+            <n>11</n>
+            <citation>
+                <book>Ps</book>
+                <c>134</c>
+                <v>3</v>
+                <position>3</position>
+            </citation>
+            
+            <author>
+                <name>Ben Denckla</name>
+                <mail>bdenckla@alum.mit.edu</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Remove dagesh from tsadi.</description>
+                    
+            <lc>
+                <folio>Folio_F394A</folio>
+                <column>1</column>
+                <line>21</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05de;&#x05b4;&#x05e6;&#x05bc;&#x05b4;&#x05d9;&#x05bc;&#x0591;&#x05d5;&#x05b9;&#x05df;</reftext>  
+            <refuni>  mem   hiriq   tsadi   dagesh   hiriq   yod   dagesh   etnahta   vav   holam   final-nun  </refuni> 
+            <changetext>&#x05de;&#x05b4;&#x05e6;&#x05b4;&#x05d9;&#x05bc;&#x0591;&#x05d5;&#x05b9;&#x05df;</changetext>  
+            <changeuni> mem   hiriq   tsadi   hiriq   yod   dagesh   etnahta   vav   holam   final-nun   </changeuni> 
+                                         
+            <notes>
+                <note>
+                   The LC generally has no dagesh in the tsadi for this word, &#x05de;&#x05b4;&#x05e6;&#x05b4;&#x05d9;&#x05bc;&#x05d5;&#x05b9;&#x05df;. (Exception: Joel 4:16.2).
+                   The Miqra according to the Masorah (MAM) has a dagesh in the tsadi.
+                </note>
+            </notes>
+            
+                     
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>vowel</type>
+        </change>
+        
+       <change>
+            <n>12</n>
+            <citation>
+                <book>Ps</book>
+                <c>135</c>
+                <v>21</v>
+                <position>3</position>
+            </citation>
+            
+            <author>
+                <name>Ben Denckla</name>
+                <mail>bdenckla@alum.mit.edu</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Remove dagesh from tsadi.</description>
+                    
+            <lc>
+                <folio>Folio_F394A</folio>
+                <column>2</column>
+                <line>23</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05de;&#x05b4;&#x05e6;&#x05bc;&#x05b4;&#x05d9;&#x05bc;&#x0597;&#x05d5;&#x05b9;&#x05df;</reftext>  
+            <refuni> mem   hiriq   tsadi   dagesh   hiriq   yod   dagesh   revia   vav   holam   final-nun   </refuni> 
+            <changetext>&#x05de;&#x05b4;&#x05e6;&#x05b4;&#x05d9;&#x05bc;&#x0597;&#x05d5;&#x05b9;&#x05df;</changetext>  
+            <changeuni> mem   hiriq   tsadi   hiriq   yod   dagesh   revia   vav   holam   final-nun   </changeuni> 
+                                         
+            <notes>
+                <note>
+                   The LC generally has no dagesh in the tsadi for this word, &#x05de;&#x05b4;&#x05e6;&#x05b4;&#x05d9;&#x05bc;&#x05d5;&#x05b9;&#x05df;. (Exception: Joel 4:16.2).
+                   The Miqra according to the Masorah (MAM) has a dagesh in the tsadi.
+                </note>
+            </notes>
+            
+                     
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>vowel</type>
+        </change>
+        
+    </date>
+    
+<!-- ======================================================================= -->
+
+    <date>
+    
+        <date>2022.02.17</date>
+        
+        <change>
+            <n>1</n>
+            <citation>
+                <book>Isa</book>
+                <c>13</c>
+                <v>6</v>
+                <position>7</position>
+            </citation>
+            
+            <author>
+                <name>Ben Denckla</name>
+                <mail>bdenckla@alum.mit.edu</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Remove dagesh from shin.</description>
+                    
+            <lc>
+                <folio>Folio_F225A</folio>
+                <column>2</column>
+                <line>22</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05de;&#x05b4;&#x05e9;&#x05c1;&#x05bc;&#x05b7;&#x05d3;&#x05bc;&#x05b7;&#x05a5;&#x05d9;</reftext>  
+            <refuni> mem   hiriq   shin   shin-dot   dagesh   patah   dalet   dagesh   patah   merkha   yod    </refuni> 
+            <changetext>&#x05de;&#x05b4;&#x05e9;&#x05c1;&#x05b7;&#x05d3;&#x05bc;&#x05b7;&#x05a5;&#x05d9;</changetext>  
+            <changeuni>  mem   hiriq   shin   shin-dot  patah   dalet   dagesh   patah   merkha   yod  </changeuni> 
+                                        
+            <notes>
+                <note>
+                   The LC has no dagesh in the shin this word, 
+                   &#x05de;&#x05b4;&#x05e9;&#x05c1;&#x05b7;&#x05d3;&#x05bc;&#x05b7;&#x05d9;.
+                   The Miqra according to the Masorah (MAM) has a dagesh in the shin.
+                </note>
+            </notes>
+                     
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>vowel</type>
+        </change>
+ 
+        <change>
+            <n>2</n>
+            <citation>
+                <book>Job</book>
+                <c>24</c>
+                <v>1</v>
+                <position>2</position>
+            </citation>
+            
+            <author>
+                <name>Ben Denckla</name>
+                <mail>bdenckla@alum.mit.edu</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Remove dagesh from shin, add note 't'.</description>
+                    
+            <lc>
+                <folio>Folio_F403B</folio>
+                <column>2</column>
+                <line>25</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05de;&#x05b4;&#x05ad;&#x05e9;&#x05c1;&#x05bc;&#x05b7;&#x05d3;&#x05bc;&#x05b7;&#x05d9;</reftext>  
+            <refuni>  mem   hiriq   dehi   shin   shin-dot   dagesh   patah   dalet   dagesh   patah   yod   </refuni> 
+            <changetext>&#x05de;&#x05b4;&#x05ad;&#x05e9;&#x05c1;&#x05b7;&#x05d3;&#x05bc;&#x05b7;&#x05d9;</changetext>  
+            <changeuni>  mem   hiriq   dehi   shin   shin-dot   patah   dalet   dagesh   patah   yod  </changeuni> 
+                                        
+            <notes>
+                <note>
+                   The LC has no obvious dagesh in the shin this word, 
+                   &#x05de;&#x05b4;&#x05e9;&#x05c1;&#x05b7;&#x05d3;&#x05bc;&#x05b7;&#x05d9;.
+                   The Miqra according to the Masorah (MAM) has a dagesh in the shin.
+                </note>
+                <note>
+                   The text is in poor condition here.
+                </note>
+            </notes>
+            
+            <transnotes>
+                <transnote>
+                    <action>Add</action>
+                    <type>t</type>
+                    <beforetext>&#x05de;&#x05b4;&#x05ad;&#x05e9;&#x05c1;&#x05b7;&#x05d3;&#x05bc;&#x05b7;&#x05d9;</beforetext>
+                </transnote>
+            </transnotes>
+            
+                     
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>vowel</type>
+        </change>
+        
+        <change>
+            <n>3</n>
+            <citation>
+                <book>Job</book>
+                <c>27</c>
+                <v>13</v>
+                <position>9</position>
+            </citation>
+            
+            <author>
+                <name>Ben Denckla</name>
+                <mail>bdenckla@alum.mit.edu</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Remove dagesh from shin.</description>
+                    
+            <lc>
+                <folio>Folio_F404B</folio>
+                <column>1</column>
+                <line>12</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05de;&#x05b4;&#x05e9;&#x05c1;&#x05bc;&#x05b7;&#x05d3;&#x05bc;&#x05b7;&#x05a5;&#x05d9;</reftext>  
+            <refuni>  mem   hiriq   shin   shin-dot   dagesh   patah   dalet   dagesh   patah   merkha   yod  </refuni> 
+            <changetext>&#x05de;&#x05b4;&#x05e9;&#x05c1;&#x05b7;&#x05d3;&#x05bc;&#x05b7;&#x05a5;&#x05d9;</changetext>  
+            <changeuni> mem   hiriq   shin   shin-dot   patah   dalet   dagesh   patah   merkha   yod  </changeuni> 
+                                        
+            <notes>
+                <note>
+                   The LC has no dagesh in the shin this word, 
+                   &#x05de;&#x05b4;&#x05e9;&#x05c1;&#x05b7;&#x05d3;&#x05bc;&#x05b7;&#x05d9;.
+                   The Miqra according to the Masorah (MAM) has a dagesh in the shin.
+                </note>
+            </notes>            
+                     
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>vowel</type>
+            
+        </change>
+   </date>    
+<!-- ======================================================================= -->
+
+    <date>
+    
+        <date>2022.02.18</date>
+        
+        <change>
+            <n>1</n>
+            <citation>
+                <book>Lev</book>
+                <c>14</c>
+                <v>25</v>
+                <position>13</position>
+            </citation>
+            
+            <author>
+                <name>Ben Denckla</name>
+                <mail>bdenckla@alum.mit.edu</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Remove dagesh from mem.</description>
+                    
+            <lc>
+                <folio>Folio_F064B</folio>
+                <column>3</column>
+                <line>26</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05d4;&#x05b7;&#x05de;&#x05bc;&#x05b4;&#x05d8;&#x05bc;&#x05b7;&#x05d4;&#x05b5;&#x0596;&#x05e8;</reftext>  
+            <refuni>  he   patah   mem   dagesh   hiriq   tet   dagesh   patah   he   tsere   tipeha   resh   </refuni> 
+            <changetext>&#x05d4;&#x05b7;&#x05de;&#x05b4;&#x05d8;&#x05bc;&#x05b7;&#x05d4;&#x05b5;&#x0596;&#x05e8;</changetext>  
+            <changeuni>   he   patah   mem   hiriq   tet   dagesh   patah   he   tsere   tipeha   resh </changeuni> 
+                                        
+            <notes>
+                <note>
+                   The LC has no dagesh in the mem on this word, 
+                   &#x05d4;&#x05b7;&#x05de;&#x05b4;&#x05d8;&#x05bc;&#x05b7;&#x05d4;&#x05b5;&#x0596;&#x05e8;.
+                   This lack of dagesh is inconsistent with grammatical expectations.
+                   The Miqra according to the Masorah (MAM) has a dagesh in the mem.
+                </note>
+            </notes>
+                     
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>vowel</type>
+        </change>
+        
+        <change>
+            <n>2</n>
+            <citation>
+                <book>Jer</book>
+                <c>27</c>
+                <v>16</v>
+                <position>17</position>
+            </citation>
+            
+            <author>
+                <name>Ben Denckla</name>
+                <mail>bdenckla@alum.mit.edu</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Remove dagesh from nun.</description>
+                    
+            <lc>
+                <folio>Folio_F260B</folio>
+                <column>2</column>
+                <line>10</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05d4;&#x05b7;&#x05bd;&#x05e0;&#x05bc;&#x05b4;&#x05d1;&#x05bc;&#x05b0;&#x05d0;&#x05b4;&#x05a4;&#x05d9;&#x05dd;</reftext>  
+            <refuni>  he   patah   meteg   nun   dagesh   hiriq   bet   dagesh   sheva   alef   hiriq   mahapakh   yod   final-mem   </refuni> 
+            <changetext>&#x05d4;&#x05b7;&#x05bd;&#x05e0;&#x05b4;&#x05d1;&#x05bc;&#x05b0;&#x05d0;&#x05b4;&#x05a4;&#x05d9;&#x05dd;</changetext>  
+            <changeuni>   he   patah   meteg   nun   hiriq   bet   dagesh   sheva   alef   hiriq   mahapakh   yod   final-mem  </changeuni> 
+                                        
+            <notes>
+                <note>
+                   The LC has no dagesh in the nun on this word, 
+                   &#x05d4;&#x05b7;&#x05bd;&#x05e0;&#x05b4;&#x05d1;&#x05bc;&#x05b0;&#x05d0;&#x05b4;&#x05a4;&#x05d9;&#x05dd;.
+                   This lack of dagesh is inconsistent with grammatical expectations.
+                   The Miqra according to the Masorah (MAM) has a dagesh in the nun.
+                </note>
+                <note>
+                Notice the slight bulge on the bet following the nun. 
+                </note>
+            </notes>
+                     
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>vowel</type>
+            
+        </change>
+        
+         <change>
+            <n>3</n>
+            <citation>
+                <book>2Kings</book>
+                <c>23</c>
+                <v>17</v>
+                <position>3</position>
+            </citation>
+            
+            <author>
+                <name>Ben Denckla</name>
+                <mail>bdenckla@alum.mit.edu</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Remove dagesh from tsadi.</description>
+                    
+            <lc>
+                <folio>Folio_F218B</folio>
+                <column>2</column>
+                <line>24</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05d4;&#x05b7;&#x05e6;&#x05bc;&#x05b4;&#x05d9;&#x05bc;&#x05a3;&#x05d5;&#x05bc;&#x05df;</reftext>  
+            <refuni>  he   patah   tsadi   dagesh   hiriq   yod   dagesh   munah   vav   dagesh   final-nun    </refuni> 
+            <changetext>&#x05d4;&#x05b7;&#x05e6;&#x05b4;&#x05d9;&#x05bc;&#x05a3;&#x05d5;&#x05bc;&#x05df;</changetext>  
+            <changeuni>   he   patah   tsadi   hiriq   yod   dagesh   munah   vav   dagesh   final-nun   </changeuni> 
+                                        
+            <notes>
+                <note>
+                   The LC has no dagesh in the tsadi on this word, 
+                   &#x05d4;&#x05b7;&#x05e6;&#x05b4;&#x05d9;&#x05bc;&#x05a3;&#x05d5;&#x05bc;&#x05df;.
+                   This lack of dagesh is inconsistent with grammatical expectations.
+                   The Miqra according to the Masorah (MAM) has a dagesh in the tsadi.
+                </note>
+            </notes>
+                     
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>vowel</type>
+            
+        </change>
+        
+         <change>
+            <n>4</n>
+            <citation>
+                <book>Neh</book>
+                <c>13</c>
+                <v>19</v>
+                <position>7</position>
+            </citation>
+            
+            <author>
+                <name>Ben Denckla</name>
+                <mail>bdenckla@alum.mit.edu</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Remove dagesh from shin.</description>
+                    
+            <lc>
+                <folio>Folio_F462B</folio>
+                <column>3</column>
+                <line>24</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05d4;&#x05b7;&#x05e9;&#x05c1;&#x05bc;&#x05b7;&#x05d1;&#x05bc;&#x05b8;&#x0597;&#x05ea;</reftext>  
+            <refuni>  he   patah   shin   shin-dot   dagesh   patah   bet   dagesh   qamats   revia   tav    </refuni> 
+            <changetext>&#x05d4;&#x05b7;&#x05e9;&#x05c1;&#x05b7;&#x05d1;&#x05bc;&#x05b8;&#x0597;&#x05ea;</changetext>  
+            <changeuni>   he   patah   shin   shin-dot   patah   bet   dagesh   qamats   revia   tav   </changeuni> 
+                                        
+            <notes>
+                <note>
+                   The LC has no dagesh in the shin on this word, the FIRST
+                   &#x05d4;&#x05e9;&#x05d1;&#x05ea; in the verse (with revia).
+                   This lack of dagesh is inconsistent with grammatical expectations.
+                   The Miqra according to the Masorah (MAM) has a dagesh in the shin.
+                </note>
+                <note>
+                   Note that in this verse, two instances of &#x05d4;&#x05e9;&#x05d1;&#x05ea; (words 7, 26) lack a dagesh in the shin;
+                   one instance of &#x05d4;&#x05e9;&#x05d1;&#x05ea; (word 17, with etnahta) does have a dagesh in the shin.
+                </note>
+            </notes>
+                     
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>vowel</type>
+            
+        </change>
+        
+        <change>
+            <n>5</n>
+            <citation>
+                <book>Neh</book>
+                <c>13</c>
+                <v>19</v>
+                <position>26</position>
+            </citation>
+            
+            <author>
+                <name>Ben Denckla</name>
+                <mail>bdenckla@alum.mit.edu</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Remove dagesh from shin.</description>
+                    
+            <lc>
+                <folio>Folio_F463A</folio>
+                <column>1</column>
+                <line>2</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05d4;&#x05b7;&#x05e9;&#x05c1;&#x05bc;&#x05b7;&#x05d1;&#x05bc;&#x05b8;&#x05bd;&#x05ea;&#x05c3;</reftext>  
+            <refuni>  he   patah   shin   shin-dot   dagesh   patah   bet   dagesh   qamats   meteg   tav   sof-pasuq   </refuni> 
+            <changetext>&#x05d4;&#x05b7;&#x05e9;&#x05b7;&#x05d1;&#x05bc;&#x05b8;&#x05bd;&#x05ea;&#x05c3;</changetext>  
+            <changeuni>  he   patah   shin   shin-dot   patah   bet   dagesh   qamats   meteg   tav   sof-pasuq   </changeuni> 
+                                        
+            <notes>
+                <note>
+                   The LC has no dagesh in the shin on this word, the LAST
+                   &#x05d4;&#x05e9;&#x05d1;&#x05ea; in the verse (with siluq).
+                   This lack of dagesh is inconsistent with grammatical expectations.
+                   The Miqra according to the Masorah (MAM) has a dagesh in the shin.
+                </note>
+                <note>
+                   Note that in this verse, two instances of &#x05d4;&#x05e9;&#x05d1;&#x05ea; (words 7, 26) lack a dagesh in the shin;
+                   one instance of &#x05d4;&#x05e9;&#x05d1;&#x05ea; (word 17, with etnahta) does have a dagesh in the shin.
+                </note>
+            </notes>
+                     
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>vowel</type>
+            
+        </change>
+        
+        <change>
+            <n>6</n>
+            <citation>
+                <book>Ps</book>
+                <c>92</c>
+                <v>1</v>
+                <position>4</position>
+            </citation>
+            
+            <author>
+                <name>Ben Denckla</name>
+                <mail>bdenckla@alum.mit.edu</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Remove dagesh from shin.</description>
+                    
+            <lc>
+                <folio>Folio_F385A</folio>
+                <column>2</column>
+                <line>5</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05d4;&#x05b7;&#x05e9;&#x05c1;&#x05bc;&#x05b7;&#x05d1;&#x05bc;&#x05b8;&#x05bd;&#x05ea;&#x05c3;</reftext>  
+            <refuni>  he   patah   shin   shin-dot   dagesh   patah   bet   dagesh   qamats   meteg   tav   sof-pasuq  </refuni> 
+            <changetext>&#x05d4;&#x05b7;&#x05e9;&#x05c1;&#x05b7;&#x05d1;&#x05bc;&#x05b8;&#x05bd;&#x05ea;&#x05c3;</changetext>  
+            <changeuni>  he   patah   shin   shin-dot  patah   bet   dagesh   qamats   meteg   tav   sof-pasuq  </changeuni> 
+                                        
+            <notes>
+                <note>
+                   The LC has no dagesh in the shin on this word.
+                   This lack of dagesh is inconsistent with grammatical expectations.
+                   The Miqra according to the Masorah (MAM) has a dagesh in the shin.
+                </note>
+            </notes>
+                     
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>vowel</type>
+            
+        </change>
+        
+         <change>
+            <n>7</n>
+            <citation>
+                <book>Josh</book>
+                <c>3</c>
+                <v>1</v>
+                <position>5</position>
+            </citation>
+            
+            <author>
+                <name>Ben Denckla</name>
+                <mail>bdenckla@alum.mit.edu</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Remove dagesh from shin.</description>
+                    
+            <lc>
+                <folio>Folio_F122B</folio>
+                <column>1</column>
+                <line>10</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05de;&#x05b5;&#x05bd;&#x05d4;&#x05b7;&#x05e9;&#x05c1;&#x05bc;&#x05b4;&#x05d8;&#x05bc;&#x05b4;&#x0597;&#x05d9;&#x05dd;</reftext>  
+            <refuni>  mem   tsere   meteg   he   patah   shin   shin-dot   dagesh   hiriq   tet   dagesh   hiriq   revia   yod   final-mem   </refuni> 
+            <changetext>&#x05de;&#x05b5;&#x05bd;&#x05d4;&#x05b7;&#x05e9;&#x05c1;&#x05b4;&#x05d8;&#x05bc;&#x05b4;&#x0597;&#x05d9;&#x05dd;</changetext>  
+            <changeuni> mem   tsere   meteg   he   patah   shin   shin-dot   hiriq   tet   dagesh   hiriq   revia   yod   final-mem   </changeuni> 
+                                        
+            <notes>
+                <note>
+                   The LC has no dagesh in the shin on this word.
+                   This lack of dagesh is inconsistent with grammatical expectations.
+                   The Miqra according to the Masorah (MAM) has a dagesh in the shin.
+                </note>
+            </notes>
+                     
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>vowel</type>
+            
+        </change>
+        
+    </date>
+     
+</dates>
+<!-- ======================================================================  -->
+</Changes>

@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>
+mark grammar 2 (UXLC features of interest)</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<div style="max-width: 50rem; margin-left: auto; margin-right: auto">
+<h1>
+mark grammar 2 (UXLC features of interest)</h1>
+<p><a href="index.html">FOI index</a> | <a href="foi-mark-grammar.html">mark grammar</a> | JSON catalog: <a href="features_of_interest-mark-grammar-2.json">features_of_interest-mark-grammar-2.json</a></p>
+<p>This page lists the Hebrew letter clusters that are not ordinary, but treated as ordinary.</p>
+<h2>
+Abbreviations</h2>
+<table class="border-collapse limited-width">
+<tr><th>abbreviation</th><th>meaning</th></tr>
+<tr><td>shsi-dot</td><td>shin-dot or sin-dot</td></tr>
+<tr><td>dms</td><td>dagesh/mapiq/shuruq-dot</td></tr>
+<tr><td>metuq</td><td>meteg/siluq</td></tr>
+<tr><td>ba-is</td><td>below-accent (including silluq)</td></tr>
+<tr><td>CGJ</td><td>combining grapheme joiner</td></tr>
+<tr><td>ZWJ</td><td>zero-width joiner</td></tr>
+<tr><td>xataf</td><td>one of the three ḥataf vowels</td></tr>
+<tr><td>pq-vowel</td><td>pataḥ or qamats</td></tr>
+<tr><td>xs-vowel</td><td>ḥiriq or sheva</td></tr>
+<tr><td>pre-wm</td><td>prepositive that can occur with meteg:<br>telisha gedolah, deḥi, geresh muqdam</td></tr>
+<tr><td>aom</td><td>accent or meteg</td></tr>
+</table>
+<h2>
+Patterns treated as ordinary</h2>
+<ul>
+<li>
+<span class="bullet-label-highlight">Rafeh.</span> optional <span class="abbrev-tooltip" title="shin-dot or sin-dot">shsi-dot</span>, rafeh, optional vowel, optional <span class="abbrev-tooltip" title="accent or meteg">aom</span>.</li>
+<li>
+<span class="bullet-label-highlight">SD.</span> optional <span class="abbrev-tooltip" title="shin-dot or sin-dot">shsi-dot</span>, optional <span class="abbrev-tooltip" title="dagesh/mapiq/shuruq-dot">dms</span>, and then:<ul>
+<li>
+<span class="bullet-label-highlight">Early-meteg.</span> meteg, <span class="abbrev-tooltip" title="combining grapheme joiner">CGJ</span>, vowel, optional <span class="abbrev-tooltip" title="prepositive that can occur with meteg: telisha gedolah, deḥi, geresh muqdam">pre-wm</span>.</li>
+<li>
+<span class="bullet-label-highlight">Mid-meteg.</span> <span class="abbrev-tooltip" title="one of the three ḥataf vowels">xataf</span>, <span class="abbrev-tooltip" title="zero-width joiner">ZWJ</span>, meteg, optional <span class="abbrev-tooltip" title="prepositive that can occur with meteg: telisha gedolah, deḥi, geresh muqdam">pre-wm</span>.</li>
+<li>
+<span class="bullet-label-highlight">Lamed.</span> On lamed only:<ul>
+<li>
+<span class="bullet-label-highlight">Below.</span> <span class="abbrev-tooltip" title="pataḥ or qamats">pq-vowel</span>, <span class="abbrev-tooltip" title="below-accent (including silluq)">ba-is</span>, <span class="abbrev-tooltip" title="combining grapheme joiner">CGJ</span>, <span class="abbrev-tooltip" title="ḥiriq or sheva">xs-vowel</span>.</li>
+<li>
+<span class="bullet-label-highlight">Above.</span> <span class="abbrev-tooltip" title="pataḥ or qamats">pq-vowel</span>, <span class="abbrev-tooltip" title="ḥiriq or sheva">xs-vowel</span>, optional above-accent.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<span class="bullet-label-highlight">SDV.</span> optional <span class="abbrev-tooltip" title="shin-dot or sin-dot">shsi-dot</span>, optional <span class="abbrev-tooltip" title="dagesh/mapiq/shuruq-dot">dms</span>, optional vowel, and then:<ul>
+<li>
+<span class="bullet-label-highlight">FL.</span> On the first letter of a word only:<ul>
+<li>
+<span class="bullet-label-highlight">munaḥ, deḥi.</span></li>
+<li>
+<span class="bullet-label-highlight">meteg, <span class="abbrev-tooltip" title="prepositive that can occur with meteg: telisha gedolah, deḥi, geresh muqdam">pre-wm</span>.</span></li>
+<li>
+<span class="bullet-label-highlight">gerstar-tg.</span> geresh or gershayim, telisha gedolah.</li>
+<li>
+<span class="bullet-label-highlight">rev-mug.</span> geresh muqdam, revia.</li>
+</ul>
+</li>
+<li>
+<span class="bullet-label-highlight">meteg, oleh.</span> On any letter: meteg, oleh.</li>
+</ul>
+</li>
+</ul>
+<h2>
+Counts</h2>
+<table class="border-collapse limited-width">
+<tr><th>pattern</th><th>count</th><th>details</th></tr>
+<tr><td>Rafeh</td><td>8</td><td><a href="#bucket-treated-ordinary-rafeh">details</a></td></tr>
+<tr><td>SD.Early-meteg</td><td>720</td><td><a href="#bucket-meteg-cgj-vowel">details</a></td></tr>
+<tr><td>SD.Mid-meteg</td><td>80</td><td><a href="#bucket-hataf-zwj-meteg">details</a></td></tr>
+<tr><td>SD.Lamed.Below</td><td>405</td><td><a href="#bucket-lamed-pq-cgj-xs">details</a></td></tr>
+<tr><td>SD.Lamed.Above</td><td>231</td><td><a href="#bucket-lamed-pq-xs-above-aom">details</a></td></tr>
+<tr><td>SDV.FL.munaḥ, deḥi.</td><td>2</td><td><a href="#bucket-initial-munah-dehi">details</a></td></tr>
+<tr><td>SDV.FL.meteg, <span class="abbrev-tooltip" title="prepositive that can occur with meteg: telisha gedolah, deḥi, geresh muqdam">pre-wm</span>.</td><td>220</td><td><a href="#bucket-initial-meteg-pre-wm">details</a></td></tr>
+<tr><td>SDV.FL.gerstar-tg</td><td>3</td><td><a href="#bucket-initial-geresh-telisha-gedolah">details</a></td></tr>
+<tr><td>SDV.FL.rev-mug</td><td>238</td><td><a href="#bucket-initial-geresh-muqdam-revia">details</a></td></tr>
+<tr><td>SDV.meteg, oleh</td><td>3</td><td><a href="#bucket-noninitial-meteg-oleh">details</a></td></tr>
+</table>
+<h2 id="bucket-treated-ordinary-rafeh">
+Rafeh (8 total)</h2>
+<p>Showing 4 distinct mark-names values across 8 total clusters, ignoring shsi-dot and dms for diversity.</p>
+<table class="border-collapse limited-width">
+<tr><th>bcvp</th><th><span class="abbrev-tooltip" title="notes">n</span></th><th>atom</th><th><span class="abbrev-tooltip" title="sequence, ignoring shsi-dot and dms">seq</span></th><th><span class="abbrev-tooltip" title="count with this mark names value in this category, ignoring shsi-dot and dms">count</span></th><th>mark names</th></tr>
+<tr><td>2Samuel 5:13.10</td><td></td><td lang="hbo" dir="rtl">וַיִוָּ֥לְ<span class="cluster-highlight">דֿ</span>וּ</td><td>d</td><td>5</td><td>rafeh</td></tr>
+<tr><td>Joshua 17:2.21</td><td></td><td lang="hbo" dir="rtl"><span class="cluster-highlight">בֶֿ</span>ן־</td><td>dv</td><td>1</td><td>rafeh, segol-vowel</td></tr>
+<tr><td>Isaiah 22:10.5</td><td></td><td lang="hbo" dir="rtl">וַתִּ<span class="cluster-highlight">תְֿ</span>צוּ֙</td><td>dv</td><td>1</td><td>rafeh, sheva</td></tr>
+<tr><td>Psalms 119:99.7</td><td></td><td lang="hbo" dir="rtl"><span class="cluster-highlight">לִֽֿ</span>י׃</td><td>dva</td><td>1</td><td>rafeh, ḥiriq, <span class="abbrev-tooltip" title="meteg/siluq">metuq</span></td></tr>
+</table>
+<h2 id="bucket-meteg-cgj-vowel">
+SD.Early-meteg (720 total)</h2>
+<h3 id="fork-meteg-cgj-vowel-without-pre-wm">
+without pre-wm (705 total)</h3>
+<p>Showing 8 distinct mark-names values across 705 total clusters, ignoring shsi-dot and dms for diversity.</p>
+<table class="border-collapse limited-width">
+<tr><th>bcvp</th><th><span class="abbrev-tooltip" title="notes">n</span></th><th>atom</th><th><span class="abbrev-tooltip" title="sequence, ignoring shsi-dot and dms">seq</span></th><th><span class="abbrev-tooltip" title="count with this mark names value in this category, ignoring shsi-dot and dms">count</span></th><th>mark names</th></tr>
+<tr><td>Genesis 1:7.16</td><td></td><td lang="hbo" dir="rtl"><span class="cluster-highlight">וֽ͏ַ</span>יְהִי־</td><td>av</td><td>394</td><td><span class="abbrev-tooltip" title="meteg/siluq">metuq</span>, <span class="abbrev-tooltip" title="combining grapheme joiner">CGJ</span>, pataḥ</td></tr>
+<tr><td>Genesis 1:26.17</td><td></td><td lang="hbo" dir="rtl"><span class="cluster-highlight">הֽ͏ָ</span>רֹמֵ֥שׂ</td><td>av</td><td>183</td><td><span class="abbrev-tooltip" title="meteg/siluq">metuq</span>, <span class="abbrev-tooltip" title="combining grapheme joiner">CGJ</span>, qamats</td></tr>
+<tr><td>Deuter 3:12.17</td><td></td><td lang="hbo" dir="rtl">לָ<span class="cluster-highlight">רֽ͏ֻ</span>אוּבֵנִ֖י</td><td>av</td><td>1</td><td><span class="abbrev-tooltip" title="meteg/siluq">metuq</span>, <span class="abbrev-tooltip" title="combining grapheme joiner">CGJ</span>, qubuts</td></tr>
+<tr><td>Genesis 2:18.9</td><td></td><td lang="hbo" dir="rtl"><span class="cluster-highlight">אֽ͏ֶ</span>עֱשֶׂהּ־</td><td>av</td><td>59</td><td><span class="abbrev-tooltip" title="meteg/siluq">metuq</span>, <span class="abbrev-tooltip" title="combining grapheme joiner">CGJ</span>, segol-vowel</td></tr>
+<tr><td>Ezekiel 26:16.1</td><td></td><td lang="hbo" dir="rtl"><span class="cluster-highlight">וֽ͏ְ</span>יָרְד֞וּ</td><td>av</td><td>3</td><td><span class="abbrev-tooltip" title="meteg/siluq">metuq</span>, <span class="abbrev-tooltip" title="combining grapheme joiner">CGJ</span>, sheva</td></tr>
+<tr><td>Genesis 5:29.14</td><td></td><td lang="hbo" dir="rtl"><span class="cluster-highlight">אֽ͏ֵ</span>רְרָ֖הּ</td><td>av</td><td>35</td><td><span class="abbrev-tooltip" title="meteg/siluq">metuq</span>, <span class="abbrev-tooltip" title="combining grapheme joiner">CGJ</span>, tsere</td></tr>
+<tr><td>Psalms 85:7.1</td><td></td><td lang="hbo" dir="rtl"><span class="cluster-highlight">הֽ͏ֲ</span>לֹא־</td><td>av</td><td>2</td><td><span class="abbrev-tooltip" title="meteg/siluq">metuq</span>, <span class="abbrev-tooltip" title="combining grapheme joiner">CGJ</span>, ḥataf-pataḥ</td></tr>
+<tr><td>Genesis 10:8.7</td><td></td><td lang="hbo" dir="rtl"><span class="cluster-highlight">לֽ͏ִ</span>הְי֥וֹת</td><td>av</td><td>28</td><td><span class="abbrev-tooltip" title="meteg/siluq">metuq</span>, <span class="abbrev-tooltip" title="combining grapheme joiner">CGJ</span>, ḥiriq</td></tr>
+</table>
+<h3 id="fork-meteg-cgj-vowel-with-pre-wm">
+with pre-wm (15 total)</h3>
+<p>Showing 5 distinct mark-names values across 15 total clusters, ignoring shsi-dot and dms for diversity.</p>
+<table class="border-collapse limited-width">
+<tr><th>bcvp</th><th><span class="abbrev-tooltip" title="notes">n</span></th><th>atom</th><th><span class="abbrev-tooltip" title="sequence, ignoring shsi-dot and dms">seq</span></th><th><span class="abbrev-tooltip" title="count with this mark names value in this category, ignoring shsi-dot and dms">count</span></th><th>mark names</th></tr>
+<tr><td>Psalms 29:1.4</td><td></td><td lang="hbo" dir="rtl"><span class="cluster-highlight">לֽ͏ַ֭</span>יהוָה</td><td>ava</td><td>3</td><td><span class="abbrev-tooltip" title="meteg/siluq">metuq</span>, <span class="abbrev-tooltip" title="combining grapheme joiner">CGJ</span>, pataḥ, deḥi</td></tr>
+<tr><td>Psalms 34:1.7</td><td></td><td lang="hbo" dir="rtl"><span class="cluster-highlight">וֽ͏ַ֝</span>יְגָרֲשֵׁ֗הוּ</td><td>ava</td><td>7</td><td><span class="abbrev-tooltip" title="meteg/siluq">metuq</span>, <span class="abbrev-tooltip" title="combining grapheme joiner">CGJ</span>, pataḥ, geresh-muqdam</td></tr>
+<tr><td>Genesis 8:13.1</td><td></td><td lang="hbo" dir="rtl"><span class="cluster-highlight">וֽ͏ַ֠</span>יְהִי</td><td>ava</td><td>2</td><td><span class="abbrev-tooltip" title="meteg/siluq">metuq</span>, <span class="abbrev-tooltip" title="combining grapheme joiner">CGJ</span>, pataḥ, telisha-gedola</td></tr>
+<tr><td>Isaiah 24:18.1</td><td></td><td lang="hbo" dir="rtl"><span class="cluster-highlight">וֽ͏ְ֠</span>הָיָה</td><td>ava</td><td>1</td><td><span class="abbrev-tooltip" title="meteg/siluq">metuq</span>, <span class="abbrev-tooltip" title="combining grapheme joiner">CGJ</span>, sheva, telisha-gedola</td></tr>
+<tr><td>Psalms 42:12.8</td><td></td><td lang="hbo" dir="rtl"><span class="cluster-highlight">לֽ͏ֵ֭</span>אלֹהִים</td><td>ava</td><td>2</td><td><span class="abbrev-tooltip" title="meteg/siluq">metuq</span>, <span class="abbrev-tooltip" title="combining grapheme joiner">CGJ</span>, tsere, deḥi</td></tr>
+</table>
+<h2 id="bucket-hataf-zwj-meteg">
+SD.Mid-meteg (80 total)</h2>
+<h3 id="fork-hataf-zwj-meteg-without-pre-wm">
+without pre-wm (75 total)</h3>
+<p>Showing 2 distinct mark-names values across 75 total clusters, ignoring shsi-dot and dms for diversity.</p>
+<table class="border-collapse limited-width">
+<tr><th>bcvp</th><th><span class="abbrev-tooltip" title="notes">n</span></th><th>atom</th><th><span class="abbrev-tooltip" title="sequence, ignoring shsi-dot and dms">seq</span></th><th><span class="abbrev-tooltip" title="count with this mark names value in this category, ignoring shsi-dot and dms">count</span></th><th>mark names</th></tr>
+<tr><td>Levit 21:10.4</td><td></td><td lang="hbo" dir="rtl"><span class="cluster-highlight">אֲ‍ֽ</span>שֶׁר־</td><td>va</td><td>47</td><td>ḥataf-pataḥ, <span class="abbrev-tooltip" title="zero-width joiner">ZWJ</span>, <span class="abbrev-tooltip" title="meteg/siluq">metuq</span></td></tr>
+<tr><td>Judges 9:27.11</td><td></td><td lang="hbo" dir="rtl"><span class="cluster-highlight">אֱ‍ֽ</span>לֹֽהֵיהֶ֔ם</td><td>va</td><td>28</td><td>ḥataf-segol, <span class="abbrev-tooltip" title="zero-width joiner">ZWJ</span>, <span class="abbrev-tooltip" title="meteg/siluq">metuq</span></td></tr>
+</table>
+<h3 id="fork-hataf-zwj-meteg-with-pre-wm">
+with pre-wm (5 total)</h3>
+<p>Showing 2 distinct mark-names values across 5 total clusters, ignoring shsi-dot and dms for diversity.</p>
+<table class="border-collapse limited-width">
+<tr><th>bcvp</th><th><span class="abbrev-tooltip" title="notes">n</span></th><th>atom</th><th><span class="abbrev-tooltip" title="sequence, ignoring shsi-dot and dms">seq</span></th><th><span class="abbrev-tooltip" title="count with this mark names value in this category, ignoring shsi-dot and dms">count</span></th><th>mark names</th></tr>
+<tr><td>Psalms 115:4.1</td><td></td><td lang="hbo" dir="rtl"><span class="cluster-highlight">עֲ‍ֽ֭</span>צַבֵּיהֶם</td><td>vaa</td><td>4</td><td>ḥataf-pataḥ, <span class="abbrev-tooltip" title="zero-width joiner">ZWJ</span>, <span class="abbrev-tooltip" title="meteg/siluq">metuq</span>, deḥi</td></tr>
+<tr><td>Job 31:15.1</td><td>t</td><td lang="hbo" dir="rtl"><span class="cluster-highlight">הֲ‍ֽ֝</span>לֹא־</td><td>vaa</td><td>1</td><td>ḥataf-pataḥ, <span class="abbrev-tooltip" title="zero-width joiner">ZWJ</span>, <span class="abbrev-tooltip" title="meteg/siluq">metuq</span>, geresh-muqdam</td></tr>
+</table>
+<h2 id="bucket-lamed-pq-cgj-xs">
+SD.Lamed.Below (405 total)</h2>
+<p>Showing 12 distinct mark-names values across 405 total clusters, ignoring shsi-dot and dms for diversity.</p>
+<table class="border-collapse limited-width">
+<tr><th>bcvp</th><th><span class="abbrev-tooltip" title="notes">n</span></th><th>atom</th><th><span class="abbrev-tooltip" title="sequence, ignoring shsi-dot and dms">seq</span></th><th><span class="abbrev-tooltip" title="count with this mark names value in this category, ignoring shsi-dot and dms">count</span></th><th>mark names</th></tr>
+<tr><td>Zechariah 12:2.5</td><td></td><td lang="hbo" dir="rtl">יְרוּשָׁ<span class="cluster-highlight">לַ֧͏ִ</span>ם</td><td>vav</td><td>2</td><td>pataḥ, darga, <span class="abbrev-tooltip" title="combining grapheme joiner">CGJ</span>, ḥiriq</td></tr>
+<tr><td>Psalms 137:6.11</td><td></td><td lang="hbo" dir="rtl">יְרוּשָׁ<span class="cluster-highlight">לַ֑͏ִ</span>ם</td><td>vav</td><td>1</td><td>pataḥ, etnaḥta, <span class="abbrev-tooltip" title="combining grapheme joiner">CGJ</span>, ḥiriq</td></tr>
+<tr><td>Zechariah 12:6.23</td><td></td><td lang="hbo" dir="rtl">יְרוּשָׁ<span class="cluster-highlight">לַ֥͏ִ</span>ם</td><td>vav</td><td>5</td><td>pataḥ, merkha/yored, <span class="abbrev-tooltip" title="combining grapheme joiner">CGJ</span>, ḥiriq</td></tr>
+<tr><td>2Samuel 5:5.9</td><td></td><td lang="hbo" dir="rtl">וּבִירוּשָׁ<span class="cluster-highlight">לַ֣͏ִ</span>ם</td><td>vav</td><td>7</td><td>pataḥ, munaḥ, <span class="abbrev-tooltip" title="combining grapheme joiner">CGJ</span>, ḥiriq</td></tr>
+<tr><td>Isaiah 36:2.8</td><td></td><td lang="hbo" dir="rtl">יְרוּשָׁ<span class="cluster-highlight">לַ֛͏ְ</span>מָה</td><td>vav</td><td>1</td><td>pataḥ, tevir, <span class="abbrev-tooltip" title="combining grapheme joiner">CGJ</span>, sheva</td></tr>
+<tr><td>2Samuel 11:12.13</td><td></td><td lang="hbo" dir="rtl">בִירוּשָׁ<span class="cluster-highlight">לַ֛͏ִ</span>ם</td><td>vav</td><td>17</td><td>pataḥ, tevir, <span class="abbrev-tooltip" title="combining grapheme joiner">CGJ</span>, ḥiriq</td></tr>
+<tr><td>Judges 1:7.21</td><td></td><td lang="hbo" dir="rtl">יְרוּשָׁ<span class="cluster-highlight">לַ֖͏ִ</span>ם</td><td>vav</td><td>90</td><td>pataḥ, tipeḥa/tarḥa, <span class="abbrev-tooltip" title="combining grapheme joiner">CGJ</span>, ḥiriq</td></tr>
+<tr><td>2Kings 9:28.4</td><td></td><td lang="hbo" dir="rtl">יְרוּשָׁ<span class="cluster-highlight">לָ֑͏ְ</span>מָה</td><td>vav</td><td>1</td><td>qamats, etnaḥta, <span class="abbrev-tooltip" title="combining grapheme joiner">CGJ</span>, sheva</td></tr>
+<tr><td>Joshua 15:8.11</td><td></td><td lang="hbo" dir="rtl">יְרֽוּשָׁ<span class="cluster-highlight">לָ֑͏ִ</span>ם</td><td>vav</td><td>133</td><td>qamats, etnaḥta, <span class="abbrev-tooltip" title="combining grapheme joiner">CGJ</span>, ḥiriq</td></tr>
+<tr><td>Psalms 137:7.7</td><td></td><td lang="hbo" dir="rtl">יְֽרוּשָׁ֫<span class="cluster-highlight">לָ֥͏ִ</span>ם</td><td>vav</td><td>1</td><td>qamats, merkha/yored, <span class="abbrev-tooltip" title="combining grapheme joiner">CGJ</span>, ḥiriq</td></tr>
+<tr><td>2Samuel 8:7.12</td><td></td><td lang="hbo" dir="rtl">יְרוּשָׁ<span class="cluster-highlight">לָֽ͏ִ</span>ם׃</td><td>vav</td><td>144</td><td>qamats, <span class="abbrev-tooltip" title="meteg/siluq">metuq</span>, <span class="abbrev-tooltip" title="combining grapheme joiner">CGJ</span>, ḥiriq</td></tr>
+<tr><td>Jeremiah 8:1.23</td><td></td><td lang="hbo" dir="rtl">יְרוּשָׁ<span class="cluster-highlight">לָ֖͏ִ</span>ם</td><td>vav</td><td>3</td><td>qamats, tipeḥa/tarḥa, <span class="abbrev-tooltip" title="combining grapheme joiner">CGJ</span>, ḥiriq</td></tr>
+</table>
+<h2 id="bucket-lamed-pq-xs-above-aom">
+SD.Lamed.Above (231 total)</h2>
+<h3 id="fork-lamed-pq-xs-above-aom-without-above-accent">
+without above-accent (10 total)</h3>
+<p>Showing 1 distinct mark-names value across 10 total clusters, ignoring shsi-dot and dms for diversity.</p>
+<table class="border-collapse limited-width">
+<tr><th>bcvp</th><th><span class="abbrev-tooltip" title="notes">n</span></th><th>atom</th><th><span class="abbrev-tooltip" title="sequence, ignoring shsi-dot and dms">seq</span></th><th><span class="abbrev-tooltip" title="count with this mark names value in this category, ignoring shsi-dot and dms">count</span></th><th>mark names</th></tr>
+<tr><td>2Samuel 20:3.5</td><td></td><td lang="hbo" dir="rtl">יְרֽוּשָׁ<span class="cluster-highlight">לִַ</span>ם֒</td><td>vv</td><td>10</td><td>pataḥ, ḥiriq</td></tr>
+</table>
+<h3 id="fork-lamed-pq-xs-above-aom-with-above-accent">
+with above-accent (221 total)</h3>
+<p>Showing 8 distinct mark-names values across 221 total clusters, ignoring shsi-dot and dms for diversity.</p>
+<table class="border-collapse limited-width">
+<tr><th>bcvp</th><th><span class="abbrev-tooltip" title="notes">n</span></th><th>atom</th><th><span class="abbrev-tooltip" title="sequence, ignoring shsi-dot and dms">seq</span></th><th><span class="abbrev-tooltip" title="count with this mark names value in this category, ignoring shsi-dot and dms">count</span></th><th>mark names</th></tr>
+<tr><td>Ezekiel 8:3.16</td><td></td><td lang="hbo" dir="rtl">יְרוּשָׁ<span class="cluster-highlight">לְַ֜</span>מָה</td><td>vva</td><td>1</td><td>pataḥ, sheva, geresh</td></tr>
+<tr><td>1Kings 10:2.2</td><td></td><td lang="hbo" dir="rtl">יְרוּשָׁ<span class="cluster-highlight">לְַ֗</span>מָה</td><td>vva</td><td>1</td><td>pataḥ, sheva, revia</td></tr>
+<tr><td>Joshua 10:5.7</td><td></td><td lang="hbo" dir="rtl">יְרוּשָׁ<span class="cluster-highlight">לִַ֜</span>ם</td><td>vva</td><td>21</td><td>pataḥ, ḥiriq, geresh</td></tr>
+<tr><td>Joshua 12:10.2</td><td></td><td lang="hbo" dir="rtl">יְרוּשָׁ<span class="cluster-highlight">לִַ֙</span>ם֙</td><td>vva</td><td>48</td><td>pataḥ, ḥiriq, pashta</td></tr>
+<tr><td>2Chronicles 26:15.2</td><td></td><td lang="hbo" dir="rtl">בִּירוּשָׁ<span class="cluster-highlight">לִַ֨</span>ם</td><td>vva</td><td>1</td><td>pataḥ, ḥiriq, qadma</td></tr>
+<tr><td>Joshua 10:1.6</td><td></td><td lang="hbo" dir="rtl">יְרוּשָׁ<span class="cluster-highlight">לִַ֗</span>ם</td><td>vva</td><td>32</td><td>pataḥ, ḥiriq, revia</td></tr>
+<tr><td>Joshua 15:63.4</td><td></td><td lang="hbo" dir="rtl">יְרֽוּשָׁ<span class="cluster-highlight">לִַ֔</span>ם</td><td>vva</td><td>113</td><td>pataḥ, ḥiriq, zaqef-qatan</td></tr>
+<tr><td>Psalms 79:3.5</td><td></td><td lang="hbo" dir="rtl">יְֽרוּשָׁ<span class="cluster-highlight">לִָ֗</span>ם</td><td>vva</td><td>4</td><td>qamats, ḥiriq, revia</td></tr>
+</table>
+<h2 id="bucket-initial-munah-dehi">
+SDV.FL.munaḥ, deḥi. (2 total)</h2>
+<p>Showing 2 distinct mark-names values across 2 total clusters, ignoring shsi-dot and dms for diversity.</p>
+<table class="border-collapse limited-width">
+<tr><th>bcvp</th><th><span class="abbrev-tooltip" title="notes">n</span></th><th>atom</th><th><span class="abbrev-tooltip" title="sequence, ignoring shsi-dot and dms">seq</span></th><th><span class="abbrev-tooltip" title="count with this mark names value in this category, ignoring shsi-dot and dms">count</span></th><th>mark names</th></tr>
+<tr><td>Job 32:13.2</td><td></td><td lang="hbo" dir="rtl"><span class="cluster-highlight">תֹּ֣֭</span>אמְרוּ</td><td>vaa</td><td>1</td><td><span class="abbrev-tooltip" title="dagesh/mapiq/shuruq-dot">dms</span>, ḥolam, munaḥ, deḥi</td></tr>
+<tr><td>Psalms 135:2.1</td><td></td><td lang="hbo" dir="rtl"><span class="cluster-highlight">שֶׁ֣֭</span>עֹֽמְדִים</td><td>vaa</td><td>1</td><td>shin-dot, segol-vowel, munaḥ, deḥi</td></tr>
+</table>
+<h2 id="bucket-initial-meteg-pre-wm">
+SDV.FL.meteg, pre-wm. (220 total)</h2>
+<p>Showing 21 distinct mark-names values across 220 total clusters, ignoring shsi-dot and dms for diversity.</p>
+<table class="border-collapse limited-width">
+<tr><th>bcvp</th><th><span class="abbrev-tooltip" title="notes">n</span></th><th>atom</th><th><span class="abbrev-tooltip" title="sequence, ignoring shsi-dot and dms">seq</span></th><th><span class="abbrev-tooltip" title="count with this mark names value in this category, ignoring shsi-dot and dms">count</span></th><th>mark names</th></tr>
+<tr><td>Psalms 21:14.5</td><td></td><td lang="hbo" dir="rtl"><span class="cluster-highlight">וּֽ֝</span>נְזַמְּרָה</td><td>aa</td><td>10</td><td><span class="abbrev-tooltip" title="dagesh/mapiq/shuruq-dot">dms</span>, <span class="abbrev-tooltip" title="meteg/siluq">metuq</span>, geresh-muqdam</td></tr>
+<tr><td>2Chronicles 4:2.6</td><td></td><td lang="hbo" dir="rtl"><span class="cluster-highlight">בָּֽ֠</span>אַמָּה</td><td>vaa</td><td>1</td><td><span class="abbrev-tooltip" title="dagesh/mapiq/shuruq-dot">dms</span>, qamats, <span class="abbrev-tooltip" title="meteg/siluq">metuq</span>, telisha-gedola</td></tr>
+<tr><td>Psalms 5:6.3</td><td></td><td lang="hbo" dir="rtl"><span class="cluster-highlight">הֽ֭</span>וֹלְלִים</td><td>aa</td><td>9</td><td><span class="abbrev-tooltip" title="meteg/siluq">metuq</span>, deḥi</td></tr>
+<tr><td>Psalms 9:8.1</td><td></td><td lang="hbo" dir="rtl"><span class="cluster-highlight">וַֽ֭</span>יהוָה</td><td>vaa</td><td>41</td><td>pataḥ, <span class="abbrev-tooltip" title="meteg/siluq">metuq</span>, deḥi</td></tr>
+<tr><td>Psalms 18:17.4</td><td></td><td lang="hbo" dir="rtl"><span class="cluster-highlight">יַֽ֝</span>מְשֵׁ֗נִי</td><td>vaa</td><td>21</td><td>pataḥ, <span class="abbrev-tooltip" title="meteg/siluq">metuq</span>, geresh-muqdam</td></tr>
+<tr><td>Exodus 13:5.7</td><td></td><td lang="hbo" dir="rtl"><span class="cluster-highlight">הַֽ֠</span>כְּנַעֲנִי</td><td>vaa</td><td>11</td><td>pataḥ, <span class="abbrev-tooltip" title="meteg/siluq">metuq</span>, telisha-gedola</td></tr>
+<tr><td>Psalms 73:16.1</td><td></td><td lang="hbo" dir="rtl"><span class="cluster-highlight">וָֽ֭</span>אֲחַשְּׁבָה</td><td>vaa</td><td>3</td><td>qamats, <span class="abbrev-tooltip" title="meteg/siluq">metuq</span>, deḥi</td></tr>
+<tr><td>Psalms 6:8.4</td><td></td><td lang="hbo" dir="rtl"><span class="cluster-highlight">עָֽ֝</span>תְקָ֗ה</td><td>vaa</td><td>8</td><td>qamats, <span class="abbrev-tooltip" title="meteg/siluq">metuq</span>, geresh-muqdam</td></tr>
+<tr><td>Psalms 114:4.1</td><td></td><td lang="hbo" dir="rtl"><span class="cluster-highlight">הֶֽ֭</span>הָרִים</td><td>vaa</td><td>6</td><td>segol-vowel, <span class="abbrev-tooltip" title="meteg/siluq">metuq</span>, deḥi</td></tr>
+<tr><td>Proverbs 10:21.5</td><td></td><td lang="hbo" dir="rtl"><span class="cluster-highlight">וֶֽ֝</span>אֱוִילִ֗ים</td><td>vaa</td><td>1</td><td>segol-vowel, <span class="abbrev-tooltip" title="meteg/siluq">metuq</span>, geresh-muqdam</td></tr>
+<tr><td>Psalms 2:3.1</td><td></td><td lang="hbo" dir="rtl"><span class="cluster-highlight">נְֽ֭</span>נַתְּקָה</td><td>vaa</td><td>39</td><td>sheva, <span class="abbrev-tooltip" title="meteg/siluq">metuq</span>, deḥi</td></tr>
+<tr><td>Deuter 4:19.5</td><td></td><td lang="hbo" dir="rtl"><span class="cluster-highlight">וְֽ֠</span>רָאִיתָ</td><td>vaa</td><td>11</td><td>sheva, <span class="abbrev-tooltip" title="meteg/siluq">metuq</span>, telisha-gedola</td></tr>
+<tr><td>Psalms 41:14.5</td><td></td><td lang="hbo" dir="rtl"><span class="cluster-highlight">מֵֽ֭</span>הָעוֹלָם</td><td>vaa</td><td>9</td><td>tsere, <span class="abbrev-tooltip" title="meteg/siluq">metuq</span>, deḥi</td></tr>
+<tr><td>Psalms 113:2.5</td><td></td><td lang="hbo" dir="rtl"><span class="cluster-highlight">מֵֽ֝</span>עַתָּ֗ה</td><td>vaa</td><td>5</td><td>tsere, <span class="abbrev-tooltip" title="meteg/siluq">metuq</span>, geresh-muqdam</td></tr>
+<tr><td>Job 22:4.1</td><td></td><td lang="hbo" dir="rtl"><span class="cluster-highlight">הֲֽ֭</span>מִיִּרְאָ֣תְךָ</td><td>vaa</td><td>1</td><td>ḥataf-pataḥ, <span class="abbrev-tooltip" title="meteg/siluq">metuq</span>, deḥi</td></tr>
+<tr><td>Psalms 37:34.6</td><td></td><td lang="hbo" dir="rtl"><span class="cluster-highlight">וִֽ֭</span>ירוֹמִמְךָ</td><td>vaa</td><td>13</td><td>ḥiriq, <span class="abbrev-tooltip" title="meteg/siluq">metuq</span>, deḥi</td></tr>
+<tr><td>Psalms 16:8.6</td><td></td><td lang="hbo" dir="rtl"><span class="cluster-highlight">מִֽ֝</span>ימִינִ֗י</td><td>vaa</td><td>21</td><td>ḥiriq, <span class="abbrev-tooltip" title="meteg/siluq">metuq</span>, geresh-muqdam</td></tr>
+<tr><td>Ezra 8:16.4</td><td></td><td lang="hbo" dir="rtl"><span class="cluster-highlight">לִֽ֠</span>שְׁמַעְיָה</td><td>vaa</td><td>6</td><td>ḥiriq, <span class="abbrev-tooltip" title="meteg/siluq">metuq</span>, telisha-gedola</td></tr>
+<tr><td>Job 15:30.5</td><td></td><td lang="hbo" dir="rtl"><span class="cluster-highlight">יֹֽ֭</span>נַקְתּוֹ</td><td>vaa</td><td>1</td><td>ḥolam, <span class="abbrev-tooltip" title="meteg/siluq">metuq</span>, deḥi</td></tr>
+<tr><td>Psalms 40:17.10</td><td></td><td lang="hbo" dir="rtl"><span class="cluster-highlight">אֹֽ֝</span>הֲבֵ֗י</td><td>vaa</td><td>1</td><td>ḥolam, <span class="abbrev-tooltip" title="meteg/siluq">metuq</span>, geresh-muqdam</td></tr>
+<tr><td>Genesis 45:23.11</td><td></td><td lang="hbo" dir="rtl"><span class="cluster-highlight">נֹֽ֠</span>שְׂאֹת</td><td>vaa</td><td>2</td><td>ḥolam, <span class="abbrev-tooltip" title="meteg/siluq">metuq</span>, telisha-gedola</td></tr>
+</table>
+<h2 id="bucket-initial-geresh-telisha-gedolah">
+SDV.FL.gerstar-tg (3 total)</h2>
+<p>Showing 3 distinct mark-names values across 3 total clusters, ignoring shsi-dot and dms for diversity.</p>
+<table class="border-collapse limited-width">
+<tr><th>bcvp</th><th><span class="abbrev-tooltip" title="notes">n</span></th><th>atom</th><th><span class="abbrev-tooltip" title="sequence, ignoring shsi-dot and dms">seq</span></th><th><span class="abbrev-tooltip" title="count with this mark names value in this category, ignoring shsi-dot and dms">count</span></th><th>mark names</th></tr>
+<tr><td>Genesis 5:29.6</td><td>c</td><td lang="hbo" dir="rtl"><span class="cluster-highlight">זֶ֞֠</span>ה</td><td>vaa</td><td>1</td><td>segol-vowel, gershayim, telisha-gedola</td></tr>
+<tr><td>2Kings 17:13.12</td><td></td><td lang="hbo" dir="rtl"><span class="cluster-highlight">שֻׁ֜֠</span>בוּ</td><td>vaa</td><td>1</td><td>shin-dot, qubuts, geresh, telisha-gedola</td></tr>
+<tr><td>Tsefaniah 2:15.1</td><td>c</td><td lang="hbo" dir="rtl"><span class="cluster-highlight">זֹ֞֠</span>את</td><td>vaa</td><td>1</td><td>ḥolam, gershayim, telisha-gedola</td></tr>
+</table>
+<h2 id="bucket-initial-geresh-muqdam-revia">
+SDV.FL.rev-mug (238 total)</h2>
+<p>Showing 7 distinct mark-names values across 238 total clusters, ignoring shsi-dot and dms for diversity.</p>
+<table class="border-collapse limited-width">
+<tr><th>bcvp</th><th><span class="abbrev-tooltip" title="notes">n</span></th><th>atom</th><th><span class="abbrev-tooltip" title="sequence, ignoring shsi-dot and dms">seq</span></th><th><span class="abbrev-tooltip" title="count with this mark names value in this category, ignoring shsi-dot and dms">count</span></th><th>mark names</th></tr>
+<tr><td>Psalms 22:21.5</td><td></td><td lang="hbo" dir="rtl"><span class="cluster-highlight">כֶּ֝֗</span>לֶב</td><td>vaa</td><td>41</td><td><span class="abbrev-tooltip" title="dagesh/mapiq/shuruq-dot">dms</span>, segol-vowel, geresh-muqdam, revia</td></tr>
+<tr><td>Psalms 7:1.8</td><td></td><td lang="hbo" dir="rtl"><span class="cluster-highlight">כ֝֗</span>וּשׁ</td><td>aa</td><td>44</td><td>geresh-muqdam, revia</td></tr>
+<tr><td>Psalms 18:12.7</td><td></td><td lang="hbo" dir="rtl"><span class="cluster-highlight">מַ֝֗</span>יִם</td><td>vaa</td><td>38</td><td>pataḥ, geresh-muqdam, revia</td></tr>
+<tr><td>Psalms 36:5.10</td><td></td><td lang="hbo" dir="rtl"><span class="cluster-highlight">רָ֝֗</span>ע</td><td>vaa</td><td>31</td><td>qamats, geresh-muqdam, revia</td></tr>
+<tr><td>Psalms 14:3.8</td><td></td><td lang="hbo" dir="rtl"><span class="cluster-highlight">אֵ֝֗</span>ין</td><td>vaa</td><td>37</td><td>tsere, geresh-muqdam, revia</td></tr>
+<tr><td>Psalms 17:6.8</td><td></td><td lang="hbo" dir="rtl"><span class="cluster-highlight">לִ֝֗</span>י</td><td>vaa</td><td>31</td><td>ḥiriq, geresh-muqdam, revia</td></tr>
+<tr><td>Psalms 11:2.12</td><td></td><td lang="hbo" dir="rtl"><span class="cluster-highlight">אֹ֝֗</span>פֶל</td><td>vaa</td><td>16</td><td>ḥolam, geresh-muqdam, revia</td></tr>
+</table>
+<h2 id="bucket-noninitial-meteg-oleh">
+SDV.meteg, oleh (3 total)</h2>
+<p>Showing 3 distinct mark-names values across 3 total clusters, ignoring shsi-dot and dms for diversity.</p>
+<table class="border-collapse limited-width">
+<tr><th>bcvp</th><th><span class="abbrev-tooltip" title="notes">n</span></th><th>atom</th><th><span class="abbrev-tooltip" title="sequence, ignoring shsi-dot and dms">seq</span></th><th><span class="abbrev-tooltip" title="count with this mark names value in this category, ignoring shsi-dot and dms">count</span></th><th>mark names</th></tr>
+<tr><td>Proverbs 8:34.3</td><td></td><td lang="hbo" dir="rtl">שֹׁמֵ֢<span class="cluster-highlight">עַֽ֫</span></td><td>vaa</td><td>1</td><td>pataḥ, <span class="abbrev-tooltip" title="meteg/siluq">metuq</span>, ole</td></tr>
+<tr><td>Psalms 2:7.2</td><td></td><td lang="hbo" dir="rtl"><span class="cluster-highlight">אֶֽ֫</span>ל</td><td>vaa</td><td>1</td><td>segol-vowel, <span class="abbrev-tooltip" title="meteg/siluq">metuq</span>, ole</td></tr>
+<tr><td>Psalms 80:15.3</td><td></td><td lang="hbo" dir="rtl"><span class="cluster-highlight">שֽׁ֫</span>וּב־</td><td>aa</td><td>1</td><td>shin-dot, <span class="abbrev-tooltip" title="meteg/siluq">metuq</span>, ole</td></tr>
+</table>
+</div>
+</body>
+</html>

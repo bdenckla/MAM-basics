@@ -1,0 +1,90 @@
+Change order of meteg and etnachta, add CGJ to make display robust.
+The etnacha is out-of-line relative to the other accents on the aleph. Its position is correct in reading from right to left, however.
+In the LC the marks on the aleph are out of order, add a note c.
+The upper cantillation marks on the aleph should end in a siluq, not an etnachta.
+No change in text, add a note c.
+Change qamats to patah, change note 'n' to 't'.
+The qamats on the kaf is generally accepted as anomalous; hence the transcription note 'n'.
+The reference text is based on a black/white facsimile of the LC. In the black/white facsimile Beck & Freedman, the dot in the qamats is dark and well-shaped. The color facsimile provided by the author (shown here) shows the dot is brown and possibly an artifact.
+If the dot does not represent scribal intent, the qamats becomes a patah, and the word is no longer anomalous.
+Note: The dot is to the left of the center of the patah bar.
+The note will be changed to t, "Transcription uncertain".
+Move zarqa ( ס֘ ) to following lamed.
+Move zarqa ( ס֘ ) to following lamed.
+Move zarqa ( ס֘ ) to following lamed.
+Move zarqa ( ס֘ ) to following lamed.
+Move zarqa ( ס֘ ) to following lamed.
+Move zarqa ( ס֘ ) to following lamed.
+Move zarqa ( ס֘ ) to following lamed.
+Move zarqa ( ס֘ ) to following lamed.
+Move zarqa ( ס֘ ) to following lamed.
+Move zarqa ( ס֘ ) to following lamed.
+Move zarqa ( ס֘ ) to following lamed.
+Add note 'c' because of multiple accents on word.
+The gereshayim and telisha-gedola is unusual, but not impossible.
+Change note 'n' to note 'c' because of multiple accents on word.
+Two markings on this word are a peculiarity of the Leningrad Codex.
+The mahapakh doesn't make sense as an alternative to the tipeha. There is no tradition of what a combined mahapakh-tipeha would mean. There is no tradition of a specialized presentation of alternatives as in the Decalogues/Reuven Saga.
+Adding a note c.
+Add note 'c' because of multiple accents on word.
+The gereshayim and telisha-gedola is unusual, but not impossible.
+Remove dagesh from resh, add note 't'.
+The dagesh in the resh is unexpected.
+The reference text is based on a black/white facsimile of the LC. In the black/white facsimile the dot in the resh is dark and slightly irregular. The color facsimile, above, the dot is brown with an attached, smaller, darker dash. The dagesh is probably an artifact.
+Note: The color page has a scattering of similar brown dots, such as ones above the nun in the word.
+Note: Masora Circle over the word refers to the number '4' in the left margin.
+Remove mappiq/dagesh from he, add note 't'.
+The mappiq/dagesh in the he is unexpected grammatically and dubious in the LC.
+The reference text is based on a black/white facsimile of the LC. In the black/white facsimile the dot in the he is dark and regular. The color facsimile, above, the dot is brown and somewhat larger than normal. The mappiq/dagesh is probably an artifact.
+The author credits this observation to Prof. Avraham Tal of Tel Aviv University. Ben Denckla notes that the correction is also in Viktor Golinets, "Dages, Mappiq, Specks on Vellum, and Editing of the Codex Leningradensis", KUSATU 15/2013, p. 250 (2013).
+Add hiriq to het, add note 't'.
+The het lacks any vowel. A slight hint of a hireq is visible.
+The JPS Tanakh (1999) has a hiriq on the het.
+Change zaqef-qatan to revia on dalet.
+The previous zaqef-qatan mark belongs to the word "elohim" on the preceding line, not this word. The revia is a smudge at the top end of the dalet.
+Add dagesh to bet, add note 't'.
+The image also shows the preceding word, גַּן־ . Note the size and color of the dagesh in the preceding word's gimel.
+This is a very small dot.
+Split word at maqaf.
+A connection between the resh and lamed is short, but thick.
+Remove dagesh from tsadi.
+Remove dagesh from yod.
+Remove sheva from bet.
+Remove dagesh from mem, add note 't'.
+The dagesh is well-centered but of a different color.
+Add revia to bet.
+This word is part of the Reuven Saga which is known to have double accents.
+Change hireq to sheva on nun.
+Move revia from samekh to following he.
+Remove dagesh from shin.
+Change qamatz to patah on he.
+The dot in the qamats is reddish and slightly larger than expected.
+Remove dagesh from yod.
+Add maqaf at end of word.
+Change patah to segol on gimel.
+This is the third of four נגע in the verse.
+Remove dagesh from yod.
+Dagesh is reddish and placed lower than usual.
+Remove dagesh from shin.
+Change revia to zaqef qatan on shin.
+Add paseq (and space) to end of word.
+The paseq is small, but distinct.
+Remove dagesh from lamed.
+Remove dagesh from final vav, add note 't'.
+The dagesh in the final vav is faint in contrast with the dagesh in the initial vav. The quality of the text is poor in this region, however.
+Change patah to hataf-patah on ayin.
+Remove dagesh from final he.
+The he has a rafe. Text is in bad shape.
+Remove pashta from final he.
+Remove pashta from final resh.
+Change zaqef qatan on pe to revia, add note 't'.
+Two dots over the pe might be taken as revias. One is almost touching the top of the pe, the other is above thge gap between the pe and the lamed. The revia on top of the pe is small and faint. Compare with the revias in 7:7.10 immediately above it or in the same verse at 7:8.24. It's very difficult to decide the correct accent.
+The upper dot of the zaqaf qatan might be considered hidden by the munah in 7:7.6 immediately above it. The JPS Tanakh has a zaqef qatan.
+The sefaria.org "Miqra_according_to_the_Masora" shows a revia instead of a zaqef qatan.
+Change the etnachta on the yod to a mahapakh.
+Create a qere/ketiv pair.
+The division into qere and ketiv, given below, also agrees with Sefaria's "Miqra according to the Masorah".
+Remove dagesh from final he, change note from 'c' to 't'.
+This change undos the change in 2020.10.19 - Changes.xml, 2020.07.16-1, which was based on a low resolution, black and white image of the text.
+The high resolution, color image of the page shows that the dagesh is light, redish, and likely to be an artifact.
+The lack of a dagesh on the consonant with a rafe agrees with usual Masoretic practice.

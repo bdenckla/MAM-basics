@@ -1,0 +1,109 @@
+Move meteg (siluq) from vav to following resh.
+Move mahapakh to first nun.
+Move etnahta to first nun.
+Remove zero-width-joiner (ZWJ).
+This verse matches Deut 5:7.7.
+The ZWJ is no longer needed for mark positioning. Change is invisible.
+Remove zero-width-joiner (ZWJ).
+This verse matches Ex 20:3.7.
+The ZWJ is no longer needed for mark positioning. Change is invisible.
+Move merkha from resh to zayin.
+Unusual order of accents on nun; add note 'c'.
+Here the LC has a revia followed by a geresh-shaped mark. This is probably an unusual presentation of the two-mark accent revia mugrash. The usual encoding of a revia mugrash (241 instances) is a geresh muqdam (x059d), a prepositive mark, followed by revia (x0597).
+The UXLC encodes this single-incidence text as a revia followed by (plain) geresh (x059c). (An alternative encoding would be a revia followed by a geresh muqdam; however, this would place a prepositive mark after the revia.)
+Replace holam with revia, add note 't'.
+The LC has a dot above the nun. The transcription problem is to determine whether the dot is a holam or a revia. If the dot represents a holam, then the word is without an accent; if it represents a revia it lacks an expected vowel.
+Seth (Avi) Kadish points out: "Many masoretic manuscripts leave out the ḥolam dot in the divine name as a rule, and some do so even when it is spelled אדני. While the LC itself normally has the ḥolam dot in the spelling אדני, here it does not. This should be considered an anomaly rather than an error, and the dot that appears directly over the letter נ should be understood as a revia` rather than ḥolam. It is even possible that the single dot is intended to serve both purposes."
+Change qadma to a revia.
+Add sheva to second lamed, remove dagesh from vav, add note 'c'.
+The LC clearly has a sheva on the second lamed and lacks a dagesh on the vav.
+The normal spelling would have no sheva on the second lamed and would have a dagesh on the vav. The LC is anomalous and the UXLC replicates it correctly.
+A hint of a maqaf might be seen between the vav and the yod. The immediately preceding word in Ps 105:45.6 shows a very distinct maqaf, however.
+Move patach to ayin, add note 't'.
+In the LC, the patach appears to belong to the yod, not the ayin. The Miqra According to the Masorah (MAM) assigns the patach to the ayin, which is what would be expected grammatically: a furtive patach on ayin. The UXLC transcription does the same as MAM: it assigns the patach to the ayin. That is, the UXLC transcription assumes that the scribe's placement of this patach is just an extreme example of the normal "early" (right-biased) placement of a furtive patach.
+Move patach to ayin.
+In the LC the patach is located between the yod and the ayin. It's probably a furtive patach, and thus should be coded as belonging to the ayin not the yod. (It is normal for the scribe to give a furtive patach an "early" (right-biased) placement.)
+Add maqaf, change tipeha to meteg, add note 't'.
+The maqaf is clear in the LC.
+The accent under the qamats of the final kaf could be either a tipeha, a primary accent, or a meteg, a secondary accent. A tipeha is a diagonal line from northwest to southeast, a meteg is a vertical line. When a maqaf is added to this word it becomes a poetic word with the following word, Ps 31:2.2. Poetic words normally contain a single primary accent. Word Ps 31:2.2 has a clear primary munah accent, thus the accent in question is likely to be a meteg, a secondary accent.
+Dotan (Biblia Hebraica Leningradensia, 2001) has a meteg for the accent in question.
+Remove dagesh from tav.
+Add dagesh to tav.
+The dagesh is late in the tav, but otherwise has the correct color and position.
+Remove dagesh from bet.
+Add dagesh to first sin, add note 't'.
+The dagesh on the first sin is unclear or split.
+The Aleppo Codex has a dagesh on the first sin, but it is blurry.
+Dotan (Biblia Hebraica Leningradensia, 2001) does not have a dagesh on the sin.
+Add dagesh to tav.
+Add dagesh to bet.
+Change merkha to munah.
+Remove dagesh (=mapiq) on he, add note 't'.
+The dagesh (=mapiq) on the he is light and brown; it's likely to be an artifact.
+Change zaqef qatan to revia, add note 't'.
+The upper dot of the zaqef qatan is light, brown, and more circular than expected; it's likely to be an artifact.
+Remove dagesh on bet, add note 't'.
+The dagesh on the bet is very light and brown; it's likely to be an artifact.
+Change tevir on nun to merkha, add note 't'.
+Dot making the tevir is light, brown, and lower than expected; it's likely to be an artifact.
+Remove dagesh (=mapiq), add note 't'.
+The dagesh (=mapiq) on the he is light, brown and misshapen; it's likely to be an artifact.
+Move munah from lamed to kaf.
+Word lacks a maqaf so that it has no primary accent. Add note 'c'.
+The lack of a maqaf on this word means the it has no primary accent. Instead, it has two metegs, an unusual marking.
+The digital text correctly represents the LC which has no maqaf.
+Add dagesh to kaf.
+Unexpected hataf qamats on initial he, missing dagesh on shin; add note 'c'.
+The LC has a hataf qamats on the initial he and the following shin lacks a dagesh. The usual marking has a qamatz on the he and a dagesh on the shin as in the Miqra according to the Masorah (MAM).
+The UXLC transcribes the LC correctly, however.
+Missing dagesh on shin; add note 'c'.
+The LC has no dagesh on the shin. The usual marking has a dagesh on the shin as in the Miqra according to the Masorah (MAM).
+The UXLC transcribes the LC correctly, however.
+Remove dagesh from tsadi.
+The LC generally has no dagesh in the tsadi for this word, מִצִיּוֹן. (Exception: Joel 4:16.2). The Miqra according to the Masorah (MAM) has a dagesh in the tsadi.
+Remove dagesh from tsadi.
+The LC generally has no dagesh in the tsadi for this word, מִצִיּוֹן. (Exception: Joel 4:16.2). The Miqra according to the Masorah (MAM) has a dagesh in the tsadi.
+Add note 'c' to tsadi with unexpected dagesh.
+This is the sole occurence in the LC where this word, מציון, is vocalized as מִצִּיּ֣וֹן. That is, the tsadi has a dagesh. All other occurences have no dagesh in the tsadi. The Miqra according to the Masorah (MAM) has a dagesh in the tsadi.
+Remove dagesh from tsadi.
+The LC generally has no dagesh in the tsadi for this word, מִצִיּוֹן. (Exception: Joel 4:16.2). The Miqra according to the Masorah (MAM) has a dagesh in the tsadi.
+Remove dagesh from tsadi.
+The LC generally has no dagesh in the tsadi for this word, מִצִיּוֹן. (Exception: Joel 4:16.2). The Miqra according to the Masorah (MAM) has a dagesh in the tsadi.
+Remove dagesh from tsadi.
+The LC generally has no dagesh in the tsadi for the word, מִצִיּוֹן. (Exception: Joel 4:16.2). The vav-prefixed form here, וּ֝מִצִיּ֗וֹן, follows the pattern by having no dagesh in the tsadi. The Miqra according to the Masorah (MAM) has a dagesh in the tsadi.
+Remove dagesh from tsadi.
+The LC generally has no dagesh in the tsadi for this word, מִצִיּוֹן. (Exception: Joel 4:16.2). The Miqra according to the Masorah (MAM) has a dagesh in the tsadi.
+Remove dagesh from tsadi.
+The LC generally has no dagesh in the tsadi for this word, מִצִיּוֹן. (Exception: Joel 4:16.2). The Miqra according to the Masorah (MAM) has a dagesh in the tsadi.
+Remove dagesh from tsadi.
+The LC generally has no dagesh in the tsadi for this word, מִצִיּוֹן. (Exception: Joel 4:16.2). The Miqra according to the Masorah (MAM) has a dagesh in the tsadi.
+Remove dagesh from tsadi.
+The LC generally has no dagesh in the tsadi for this word, מִצִיּוֹן. (Exception: Joel 4:16.2). The Miqra according to the Masorah (MAM) has a dagesh in the tsadi.
+Remove dagesh from tsadi.
+The LC generally has no dagesh in the tsadi for this word, מִצִיּוֹן. (Exception: Joel 4:16.2). The Miqra according to the Masorah (MAM) has a dagesh in the tsadi.
+Remove dagesh from tsadi.
+The LC generally has no dagesh in the tsadi for this word, מִצִיּוֹן. (Exception: Joel 4:16.2). The Miqra according to the Masorah (MAM) has a dagesh in the tsadi.
+Remove dagesh from shin.
+The LC has no dagesh in the shin this word, מִשַׁדַּי. The Miqra according to the Masorah (MAM) has a dagesh in the shin.
+Remove dagesh from shin, add note 't'.
+The LC has no obvious dagesh in the shin this word, מִשַׁדַּי. The Miqra according to the Masorah (MAM) has a dagesh in the shin.
+The text is in poor condition here.
+Remove dagesh from shin.
+The LC has no dagesh in the shin this word, מִשַׁדַּי. The Miqra according to the Masorah (MAM) has a dagesh in the shin.
+Remove dagesh from mem.
+The LC has no dagesh in the mem on this word, הַמִטַּהֵ֖ר. This lack of dagesh is inconsistent with grammatical expectations. The Miqra according to the Masorah (MAM) has a dagesh in the mem.
+Remove dagesh from nun.
+The LC has no dagesh in the nun on this word, הַֽנִבְּאִ֤ים. This lack of dagesh is inconsistent with grammatical expectations. The Miqra according to the Masorah (MAM) has a dagesh in the nun.
+Notice the slight bulge on the bet following the nun.
+Remove dagesh from tsadi.
+The LC has no dagesh in the tsadi on this word, הַצִיּ֣וּן. This lack of dagesh is inconsistent with grammatical expectations. The Miqra according to the Masorah (MAM) has a dagesh in the tsadi.
+Remove dagesh from shin.
+The LC has no dagesh in the shin on this word, the FIRST השבת in the verse (with revia). This lack of dagesh is inconsistent with grammatical expectations. The Miqra according to the Masorah (MAM) has a dagesh in the shin.
+Note that in this verse, two instances of השבת (words 7, 26) lack a dagesh in the shin; one instance of השבת (word 17, with etnahta) does have a dagesh in the shin.
+Remove dagesh from shin.
+The LC has no dagesh in the shin on this word, the LAST השבת in the verse (with siluq). This lack of dagesh is inconsistent with grammatical expectations. The Miqra according to the Masorah (MAM) has a dagesh in the shin.
+Note that in this verse, two instances of השבת (words 7, 26) lack a dagesh in the shin; one instance of השבת (word 17, with etnahta) does have a dagesh in the shin.
+Remove dagesh from shin.
+The LC has no dagesh in the shin on this word. This lack of dagesh is inconsistent with grammatical expectations. The Miqra according to the Masorah (MAM) has a dagesh in the shin.
+Remove dagesh from shin.
+The LC has no dagesh in the shin on this word. This lack of dagesh is inconsistent with grammatical expectations. The Miqra according to the Masorah (MAM) has a dagesh in the shin.

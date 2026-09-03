@@ -1,0 +1,129 @@
+Place meteg before qamats on initial he, placing a Combining Grapheme Joiner (CGJ, x034f) after it to force mark order
+Change hatef patah under het to patah.
+Add dagesh to mem.
+The dagesh is redish, but well-positioned.
+Move upper dot from qof to vav.
+Masora circles are over the qof and the mem; the upper dot is the mark above the vav.
+Remove dagesh from yod.
+The yod has a hint of a dagesh; however, it's low, light, and attached to the yod.
+Move mahpakh from vav to yod.
+The split into two words is correct; add note 'c'.
+The two Egyptian names פוטיפר and פוטיפרע are similar, but have different word divisions based on their accents and Masorah Parva (Mp) notes in the margins.
+The following translations are from The Contemporary Torah, JPS, 2006, available as the English translation at the "Sefaria: Miqra according to the Masorah" link. פוטיפר is written Potiphar, and described as "a courtier of Pharaoh and his prefect." Potiphar occurs twice: Gen 37:36.6 and 39:1.5. פוטיפרע is written Poti-phera and described as "priest of On". Poti-phera occurs 3 times: Gen 41:45.12, 41:50.14, and 46:20.10.
+The LC text displays both פוטיפר and פוטיפרע without spacing indicating word divisions. However, both the accents and the Mp notes indicate that פוטיפרע, Poti-phera, should be considered as two words: פוטי פרע. When the LC text displays the 2 Potiphar cases פוטיפר has a single primary accent; when the LC text displays the three Poti-phera cases both פוטי and פרע have a single primary accent. Breuer suggests that the primary accents are the masorete's way to indicate separate words within the text (since it would have been very difficult for the masorete to insert a space between them after the consonants were written). Gen 41:45 and 41:50 are also accompanied by Mp notes תרתין מילין כתׄ ("Written as two words"). The Poti-phera case in Gen 46:20.10 does not have a similar Mp note, but has primary accents on both פוטי and פרע.
+The UXLC follows the accents and Mp notes; it represents all 3 Poti-phera cases as word pairs.
+The split into two words is correct; add note 'c'.
+The two Egyptian names פוטיפר and פוטיפרע are similar, but have different word divisions based on their accents and Masorah Parva (Mp) notes in the margins.
+The following translations are from The Contemporary Torah, JPS, 2006, available as the English translation at the "Sefaria: Miqra according to the Masorah" link. פוטיפר is written Potiphar, and described as "a courtier of Pharaoh and his prefect." Potiphar occurs twice: Gen 37:36.6 and 39:1.5. פוטיפרע is written Poti-phera and described as "priest of On". Poti-phera occurs 3 times: Gen 41:45.12, 41:50.14, and 46:20.10.
+The LC text displays both פוטיפר and פוטיפרע without spacing indicating word divisions. However, both the accents and the Mp notes indicate that פוטיפרע, Poti-phera, should be considered as two words: פוטי פרע. When the LC text displays the 2 Potiphar cases פוטיפר has a single primary accent; when the LC text displays the three Poti-phera cases both פוטי and פרע have a single primary accent. Breuer suggests that the primary accents are the masorete's way to indicate separate words within the text (since it would have been very difficult for the masorete to insert a space between them after the consonants were written). Gen 41:45 and 41:50 are also accompanied by Mp notes תרתין מילין כתׄ ("Written as two words"). The Poti-phera case in Gen 46:20.10 does not have a similar Mp note, but has primary accents on both פוטי and פרע.
+The UXLC follows the accents and Mp notes; it represents all 3 Poti-phera cases as word pairs.
+Possible dagesh on first nun, add note 't'. No text change.
+The dagesh in the LC is well-positioned, poorly shaped.
+Add note 't'; no text change.
+The qamats is nearly invisible.
+The tipeha is very late, but clearly belongs to the nun.
+The split into two words is correct; add note 'c'.
+The two Egyptian names פוטיפר and פוטיפרע are similar, but have different word divisions based on their accents and Masorah Parva (Mp) notes in the margins.
+The following translations are from The Contemporary Torah, JPS, 2006, available as the English translation at the "Sefaria: Miqra according to the Masorah" link. פוטיפר is written Potiphar, and described as "a courtier of Pharaoh and his prefect." Potiphar occurs twice: Gen 37:36.6 and 39:1.5. פוטיפרע is written Poti-phera and described as "priest of On". Poti-phera occurs 3 times: Gen 41:45.12, 41:50.14, and 46:20.10.
+The LC text displays both פוטיפר and פוטיפרע without spacing indicating word divisions. However, both the accents and the Mp notes indicate that פוטיפרע, Poti-phera, should be considered as two words: פוטי פרע. When the LC text displays the 2 Potiphar cases פוטיפר has a single primary accent; when the LC text displays the three Poti-phera cases both פוטי and פרע have a single primary accent. Breuer suggests that the primary accents are the masorete's way to indicate separate words within the text (since it would have been very difficult for the masorete to insert a space between them after the consonants were written). Gen 41:45 and 41:50 are also accompanied by Mp notes תרתין מילין כתׄ ("Written as two words"). The Poti-phera case in Gen 46:20.10 does not have a similar Mp note, but has primary accents on both פוטי and פרע.
+The UXLC follows the accents and Mp notes; it represents all 3 Poti-phera cases as word pairs.
+Remove sheva from final kaf
+Remove sheva from final kaf.
+Remove sheva from final kaf.
+Possible dagesh on yod, add note 't'. No text change.
+The dagesh in the LC is well-positioned but very light. Compare with dagesh on the zayin.
+Remove dagesh on sin.
+Remove dagesh on yod.
+Remove dagesh on shin.
+Remove dagesh on yod.
+Remove dagesh from shin.
+Remove dagesh from shin.
+Remove dagesh from he.
+Remove sof pasuq; add note 'c'.
+Add dagesh to second yod; add note 't'.
+The dagesh in the LC is well-positioned, well-sized, but reddish. The text has high quality in this region.
+Add dagesh on bet; add note 't'.
+The dagesh in the LC is well-positioned, well-sized, but slightly reddish.
+Remove dagesh from first shin.
+Remove dagesh from shin.
+Add dagesh to yod.
+Change sin-dot to shin-dot on shin.
+Remove dagesh on shin.
+Add dagesh to first vav.
+The dagesh in the LC is well-positioned, dark, and nearly attached to the vav.
+Remove maqaf; add note 'c'.
+This word lacks an accent.
+Add dagesh to vav.
+Change zaqef-qatan to revia on tav.
+Change mahapakh to yetiv on alef.
+Remove dagesh from bet.
+Add meteg after patah on ayin; add note 't'.
+The meteg is light, but well shaped.
+Remove maqaf from end of word.
+Remove dagesh from both yod and tav; add note 't'.
+No dagesh at all on the yod. There is a possible, very faint dagesh on the tav.
+Remove dagesh on yod; add note 't'.
+A possible dagesh on the yod is very faint.
+Remove dagesh on yod.
+Remove dagesh from yod.
+Move merkha to bet; add note 'c'.
+A merkha can not be on the bet for vocalization; it belongs on the lamed. The mark in the LC is ill-positioned.
+Remove dagesh from tsadi.
+Change sin-dot to shin-dot.
+Add dagesh to first he.
+Remove dagesh from shin.
+Move meteg to he, placing a Combining Grapheme Joiner (CGJ, x034f) after it to force mark order.
+Remove maqaf.
+Place etnachta before hireq on mem, placing a Combining Grapheme Joiner (CGJ, x034f) after it to force mark order.
+Replace segol under bet with qamats; add note 'c'.
+A qamats is unexpected here.
+Remove maqaf on yod; add 't' note.
+Very, very slight evidence of a maqef between the yod and the bet.
+Remove dagesh from yod.
+Possible dagesh in nun, add note 't'.
+The dagesh is smaller than expected and slightly too high. Not expected grammatically.
+Possible segol on aleph, no text change, add note 't'.
+The lowest dot of the segol is reddish, but has good size and position. A segol is unexpected here, however.
+Remove dagesh on yod.
+Move upper-dot from resh to second vav.
+Move move munah from first vav to yod.
+Remove dagesh from yod, add note 't'.
+The yod appears on top of a splotch in the paper. A slight darkening in that splotch might be a yod. A dagesh on the yod is expected, however.
+Possible dagesh in he, add note 't'.
+A possible dagesh appears in the he. It is well-positioned, but light, with a darker portion to the northeast. A dagesh in the he (mapiq) is unlikely here.
+Remove dagesh from yod; add 't' note.
+No dagesh apparent although one is expected grammatically.
+Change meteg to munah on nun.
+The munah is clear, however, the word already has a zaqef-qatan.
+Change revia on tav to zaqef-qatan.
+The lower dot of the zaqef-qatan is damaged, but dark and well-positioned.
+Place munah before mahapakh on first shin; add note 'c'.
+The LC mark order, munah-then-mahapakh, is likely to be out of the usual lower-then-upper trope mark order.
+Change tipeha to merkha on vav, place munah before merkha; add note 'c'.
+The LC mark order, munah-then-tipeha, is likely to be out of the usual lower-then-upper trope mark order.
+Change pashta on final-kaf to qadma.
+A qadma better represents the mark on the final-kaf .
+Add dagesh to mem.
+Change accent on nun to tipeha; add note 't'.
+The accent on the nun is probably a tipeha.
+The next change, Deut 17:18.15, is compatible with this change.
+Change accent on nun to merkha; add note 't'.
+The accent on the nun is probably a merkha.
+The previous change, Deut 17:18.14, is compatible with this change.
+This additional change was suggested by Benjamin Denckla.
+Change accent on shin from geresh to revia; add note 't'.
+The text is of very poor quality.
+The change of the geresh to a revia was suggested by Benjamin Denckla.
+Remove dagesh from dalet.
+Change qamats on pe to patah.
+Add dagesh to mem; add note 't'.
+The mem is faint, but well-positioned.
+Sheva on bet is uncertain; add note 't'.
+The cluster of ink below the bet is lighter and shaped differently than shevas in the same word.
+Change qamats on he to patah.
+Remove qadma from kaf.
+Add note 't'.
+The dagesh in the lamed is well-positioned, but light and unexpected.
+Add maqaf; add note 'c'.
+The maqaf is unexpected as this word and the following word both have accents.
+The presence of a maqaf here in the LC is disputed among scholars.

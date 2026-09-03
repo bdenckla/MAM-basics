@@ -1,0 +1,78 @@
+Zaqef is indistinct, add note 't'.
+The lower dot of the zaqef is very faint.
+Some texts read the accent as a revia, rather than a zaqef. A revia would break cantillation rules: a pashta (word 6) must be in the domain of a zaqef.
+Zaqef is indistinct, add note 't'.
+The upper dot of the zaqef is very faint and merges with the lower dot.
+Some texts read the accent as a revia, rather than a zaqef. A revia would break cantillation rules: a pashta (word 2) must be in the domain of a zaqef.
+Vav is unbroken in the LC, add note 'c'.
+Later Ashkenazi texts have a broken vav; the earlier LC and MAM texts do not.
+Add CGJ to position early meteg correctly.
+Add CGJ to position early meteg correctly.
+The sheva is blurred.
+Add CGJ to position early meteg correctly.
+The accents on the yod are messy.
+Add CGJ to position early meteg correctly.
+Add CGJ to position early meteg correctly.
+Odd vowels on bet, add note 'c'.
+Add CGJ to better position accents on first tav.
+The word is in a Decalogue.
+Add CGJ to better position accents on the nun.
+The word is in a Decalogue, its parallel is Deut 5:7.7.
+Add CGJ to better position accents on the nun.
+The qamats on the nun is faint.
+The word is in a Decalogue, its parallel is Ex 20:3.7.
+Order accents on the lamed to match LC.
+The word is in a Decalogue, its parallel is Deut 5:8.1.
+Order accents on the lamed to match LC.
+The word is in a Decalogue.
+Order accents on the lamed to match LC.
+The word is in a Decalogue.
+Order accents on the lamed to match LC.
+The word is in a Decalogue.
+Remove dagesh from het, add note 't'.
+The dagesh is reddish and slightly oversized. Hets normally do not have dageshes.
+In the LC the shin base letter has no dots, add note 'c'.
+This shin is one of 3 shins in the LC, other than in the word "יששכר", that lacks either a shin dot or a sin dot.
+In the LC the shin base letter has no dots, add note 'c'.
+This shin is one of 3 shins in the LC, other than in the word "יששכר", that lacks either a shin dot or a sin dot.
+In the LC the shin base letter has no dots, add note 'c'.
+This shin is one of 3 shins in the LC, other than in the word "יששכר", that lacks either a shin dot or a sin dot.
+Move zarqa ( ס֘ ) to following lamed.
+Word lacks accent, add note 'c'; MAM ends the word with a Maqaf ( ס־ ).
+Word lacks accent, add note 'c'; MAM ends the word with a Maqaf ( ס־ ).
+Add Pashta ( ס֙ ) to final Mem.
+Word lacks accent, add note 'c'; MAM has a Tipeha ( ס֖ ) to the final Kaf on this word.
+Word lacks accent, add note 'c'; MAM has a Telisha Qetana ( ס֩ ) to the final Lamed on this word.
+Add Merkha ( ס֥ ) to the Ayin, add note 't'.
+A distinct vertical line appears under the Ayin. The line could represent a Meteg; however, a Merkha is more reasonable.
+The Miqra according to the Masorah (MAM) has a Merkha in this position.
+The LC text is in poor condition on this page.
+Word lacks accent, add note 'c'; MAM has a Revia ( ס֗ ) to the Yod on this word.
+The image and LC line number were corrected on 15 Jan 2023. The transcription note, 'c', was removed in Changes file 2023.04.01, change item 2022.12.10 - 44.
+Add Maqaf ( ס־ ) to final Tav.
+Word lacks accent, add note 'c'; MAM has a Etnahta ( ס֑ ) to the Lamed on this word.
+The shuruq and upper Sheva dots are very light.
+The LC already has an Etnahta on the preceding word.
+A Masorah Circle appears over the Lamed.
+Word lacks accent, add note 'c'; MAM ends the word with a Maqaf ( ס־ ).
+Word lacks accent, add note 'c'; MAM has a Revia ( ס֗ ) to the Shin on this word.
+Word lacks accent, add note 'c'; MAM has a Merkha ( ס֥ ) to the Alef on this word.
+Word lacks accent, add note 'c'; MAM has a Etnahta ( ס֑ ) to the Nun on this word.
+Word lacks accent, add note 'c'; MAM has a Merkha ( ס֥ ) to the Kaf on this word.
+The chanted word is split between two lines; the Maqaf between the words is very light.
+Word lacks accent, add note 'c'; MAM has a Tipeha ( ס֖ ) to the Lamed on this word.
+Word lacks accent, add note 'c'; MAM combines this word with the following word without a Maqaf or space.
+In the LC the space following this word is clear.
+Word lacks accent, add note 'c'; MAM ends the word with a Maqaf ( ס־ ).
+Word lacks accent, add note 'c'; MAM ends the word with a Maqaf ( ס־ ).
+Word lacks accent, add note 'c'; MAM ends the word with a Maqaf ( ס־ ).
+Word lacks accent, add note 'c'; MAM ends the word with a Maqaf ( ס־ ).
+Word lacks accent, add note 'c'; MAM ends the word with a Maqaf ( ס־ ).
+Word lacks accent, add note 'c'; MAM ends the word with a Maqaf ( ס־ ).
+Word lacks accent, add note 'c'; MAM ends the word with a Maqaf ( ס־ ).
+Word lacks accent, add note 'c'; MAM ends the word with a Maqaf ( ס־ ).
+Word lacks accent, add note 'c'; MAM ends the word with a Maqaf ( ס־ ).
+Word lacks accent, add note 'c'; MAM ends the word with a Maqaf ( ס־ ).
+Word lacks accent, add note 'c'; MAM ends the word with a Maqaf ( ס־ ).
+Remove accent Ole, add note 'c'; MAM has a Ole ( ס֫ ) on the Alef.
+The spot above the alef in the photocopy may have have contained the ole.

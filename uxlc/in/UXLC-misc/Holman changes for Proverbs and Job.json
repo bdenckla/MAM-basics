@@ -1,0 +1,768 @@
+[
+{
+"Citation": "Pro1:19.9",
+"Current": "יִקָּֽח",
+"Recommended": "יִקָּ֥ח",
+"Note": "There appears to be a Merkha under Qof.",
+"Folio": "409v",
+"Column": 2,
+"Line": 22
+},
+{
+"Citation": "Pro 1:22.4",
+"Current": "תְּֽאֵהֲב֫וּ",
+"Recommended": "תְּֽאֵהֲב֫וּ־",
+"Note": "There appears to be a Maqaf at the end of the word as noted in the image.",
+"Folio": "410r",
+"Column": 1,
+"Line": 4
+},
+{
+"Citation": "Pro5:19.3",
+"Current": "וְֽיַעֲלַ֫ת־",
+"Recommended": "וְֽיַעֲלַ֫ת",
+"Note": "There is no Maqaf at the end of the word.",
+"Folio": "411r",
+"Column": 2,
+"Line": 19
+},
+{
+"Citation": "Pro7:13.1",
+"Current": "וְהֶחֱזִ֣יקָה",
+"Recommended": "וְהֶחֱזִ֣יקָה־",
+"Note": "There is a Maqaf at the end of the word.",
+"Folio": "412r",
+"Column": 1,
+"Line": 12
+},
+{
+"Citation": "Pro7:22.6",
+"Current": "טָ֣בַח",
+"Recommended": "טֶ֣בַח",
+"Note": "There appears to be a Segol under Tet … the upper dots are close together but distinct enough to see them.",
+"Folio": "412r",
+"Column": 1,
+"Line": 24
+},
+{
+"Citation": "Pro 8:11.8",
+"Current": "יִֽשְׁווּ־",
+"Recommended": "Note",
+"Note": "There is a smudge mark by the first Vav that could be mistaken for a Dagesh.",
+"Folio": "412r",
+"Column": 2,
+"Line": 19
+},
+{
+"Citation": "Pro 8:26.7",
+"Current": "עָפְר֥וֹת",
+"Recommended": "Note",
+"Note": "There appears to have been a Qamats that was changed to a Patah, which is the reading of the Aleppo.",
+"Folio": "412v",
+"Column": 1,
+"Line": 10
+},
+{
+"Citation": "Pro11:27.2",
+"Current": "ט֭וֹב",
+"Recommended": "ט֖וֹב",
+"Note": "There is a Tarcha under Mem. The Aleppo has a Dehi as noted in the image.",
+"Folio": "413v",
+"Column": 1,
+"Line": 18
+},
+{
+"Citation": "Pro12:1.2",
+"Current": "מ֭וּסָר",
+"Recommended": "מ֖וּסָר",
+"Note": "There is a Tarcha under Mem. The Aleppo has a Dehi as noted in the image.",
+"Folio": "413v",
+"Column": 1,
+"Line": 25
+},
+{
+"Citation": "Pro12:10.7",
+"Current": "אַכְזָרִֽי",
+"Recommended": "אַכְזָרִֽי or אַכְזָֽרִי",
+"Note": "The Meteg is placed before Hiriq. It could be under the Resh or Zayin.",
+"Folio": "413v",
+"Column": 2,
+"Line": 10
+},
+{
+"Citation": "Pro12:18.2",
+"Current": "בּ֭וֹטֶה",
+"Recommended": "בּ֖וֹטֶה",
+"Note": "There is a Tarcha under Bet. The Aleppo has a Dehi as noted in the image.",
+"Folio": "413v",
+"Column": 2,
+"Line": 19
+},
+{
+"Citation": "Pro13:23.2",
+"Current": "אֹ֭כֶל",
+"Recommended": "אֹ֖כֶל",
+"Note": "There is a Tarcha under Alef. The Aleppo has a Dechi as indicated in the image.",
+"Folio": "414r",
+"Column": 1,
+"Line": 4
+},
+{
+"Citation": "Pro14:31.1",
+"Current": "עֹ֣שֵֽׁק",
+"Recommended": "עֹ֣שֵֽׁק־",
+"Note": "There is a Maqaf at the end of the word.",
+"Folio": "414v",
+"Column": 1,
+"Line": 18
+},
+{
+"Citation": "Pro15:31.2",
+"Current": "שֹׁ֭מַעַת",
+"Recommended": "שֹׁ֖מַעַת",
+"Note": "There is a Tarcha under Shin. The Aleppo has a Dechi as indicated by the image.",
+"Folio": "415r",
+"Column": 1,
+"Line": 6
+},
+{
+"Citation": "Pro17:26.4",
+"Current": "לֹא־",
+"Recommended": "לֹּא־",
+"Note": "There appears to be a Dagesh in Lamed.",
+"Folio": "415v",
+"Column": 2,
+"Line": 5
+},
+{
+"Citation": "Pro18:12.4",
+"Current": "לֵב־",
+"Recommended": "לֶב־",
+"Note": "This part of L is damaged and the lower half of the Lamed is worn off the manuscript. The lower dot of the Segol is scarcely visible … compared to another nearby Segol it is well-positioned and identifiable.",
+"Folio": "415v",
+"Column": 2,
+"Line": 22
+},
+{
+"Citation": "Pro19:10.5",
+"Current": "אַ֝֗ף",
+"Recommended": "אַ֝ף",
+"Note": "There is no Revia over Alef. The apex on Alef is faded and gives the appearance of something above it. However, the following examples show this is common.",
+"Folio": "416r",
+"Column": 1,
+"Line": 22
+},
+{
+"Citation": "Pro19:29.7",
+"Current": "כְּסִילִֽים",
+"Recommended": "כְסִילִֽים",
+"Note": "There is no Dagesh in Kaf.",
+"Folio": "416r",
+"Column": 2,
+"Line": 19
+},
+{
+"Citation": "Pro20:1.2",
+"Current": "הַ֭יַּין",
+"Recommended": "Note",
+"Note": "There is a Dagesh blended in the first Yod that could be missed.",
+"Folio": "416r",
+"Column": 2,
+"Line": 20
+},
+{
+"Citation": "Pro21:16.2",
+"Current": "תּ֭וֹעֶה",
+"Recommended": "תּ֖וֹעֶה",
+"Note": "There is a Tarcha under Tav. The Aleppo has a Dechi as indicated by the image.",
+"Folio": "416v",
+"Column": 2,
+"Line": 24
+},
+{
+"Citation": "Pro22:7.7",
+"Current": "מַלְוֶֽה",
+"Recommended": "מַלְוֶֽה",
+"Note": "The Meteg is between the Sheva and Segol.",
+"Folio": "417r",
+"Column": 1,
+"Line": 25
+},
+{
+"Citation": "Pro22:17.3",
+"Current": "",
+"Recommended": "",
+"Note": "There is a Tarcha under. The Aleppo has a Dechi as indicated by the image.",
+"Folio": "417r",
+"Column": 2,
+"Line": 10
+},
+{
+"Citation": "Pro23:7.7",
+"Current": "כְּמוֹ־",
+"Recommended": "כְּמּ֥וֹ",
+"Note": "There is a Dagesh in Mem and no Maqaf at end of word.",
+"Folio": "417v",
+"Column": 1,
+"Line": 11
+},
+{
+"Citation": "Pro23:31.3",
+"Current": "יַיִן֮",
+"Recommended": "יַּיִן֮",
+"Note": "There is a Dagesh in the first Yod.",
+"Folio": "417v",
+"Column": 2,
+"Line": 15
+},
+{
+"Citation": "Pro24:25.6",
+"Current": "טֽוֹב",
+"Recommended": "טֽוֹּב",
+"Note": "There appears to be a Dagesh in the Vav as well as Bet.",
+"Folio": "418r",
+"Column": 2,
+"Line": 2
+},
+{
+"Citation": "Pro24:32.7",
+"Current": "מוּסָֽר",
+"Recommended": "מוּסָּֽר",
+"Note": "There is a Dagesh in Samekh.",
+"Folio": "418r",
+"Column": 2,
+"Line": 12
+},
+{
+"Citation": "Pro25:11.3",
+"Current": "בְּמַשְׂכִּיּ֥וֹת",
+"Recommended": "בְּמַשְׂכִּיּ֣וֹת",
+"Note": "There is a Munah under Yod.",
+"Folio": "418v",
+"Column": 1,
+"Line": 4
+},
+{
+"Citation": "Pro25:27.4",
+"Current": "לֹא־",
+"Recommended": "לֹּא־",
+"Note": "There appears to be a Dagesh in Lamed.",
+"Folio": "418v",
+"Column": 2,
+"Line": 3
+},
+{
+"Citation": "Pro27:10.1",
+"Current": "רֵֽעֲךָ֨",
+"Recommended": "רֵ֥עֲךָ֨",
+"Note": "There appears to be a Merkha under Resh.",
+"Folio": "419r",
+"Column": 1,
+"Line": 26
+},
+{
+"Citation": "Pro27:15.2",
+"Current": "ט֭וֹרֵד",
+"Recommended": "ט֖וֹרֵד",
+"Note": "There appears to be a Tarcha under Tet. The Aleppo has a Dehi as indicated in the image.",
+"Folio": "419r",
+"Column": 2,
+"Line": 8
+},
+{
+"Citation": "Pro28:3.1",
+"Current": "גֶּ֣בֶר",
+"Recommended": "גֶּֽבֶר־",
+"Note": "There is a Meteg under Gimel and appears to be a Maqaf at the end of the word.",
+"Folio": "419v",
+"Column": 1,
+"Line": 1
+},
+{
+"Citation": "Pro28:9.5",
+"Current": "גַּֽם־",
+"Recommended": "גַּ֥ם",
+"Note": "It looks like a Merkha under Gimel and there is no Maqaf at the end of the word.",
+"Folio": "419v",
+"Column": 1,
+"Line": 10
+},
+{
+"Citation": "Pro28:22.1",
+"Current": "נִֽבֳהָ֥ל",
+"Recommended": "נִ֥בֳהָֽל",
+"Note": "It appears that a Merkha is under the Nun and a Meteg under He.",
+"Folio": "419v",
+"Column": 2,
+"Line": 2
+},
+{
+"Citation": "Pro29:24.5",
+"Current": "נַפְשׁ֑וֹ",
+"Recommended": "נַּפְשׁ֑וֹ",
+"Note": "There is a Dagesh in Nun.",
+"Folio": "420r",
+"Column": 1,
+"Line": 16
+},
+{
+"Citation": "Pro30:5.2",
+"Current": "אִמְרַ֣ת",
+"Recommended": "אִמְּרַ֣ת",
+"Note": "There is a Dagesh in Mem.",
+"Folio": "420r",
+"Column": 2,
+"Line": 5
+},
+{
+"Citation": "Pro31:6.2",
+"Current": "שֵׁכָ֣ר",
+"Recommended": "שֵׁכָ֥ר",
+"Note": "There appears to be a Merkha under Kaf.",
+"Folio": "420v",
+"Column": 2,
+"Line": 6
+},
+{
+"Citation": "Pro31:26.4",
+"Current": "וְתֽוֹרַת־",
+"Recommended": "וְת֥וֹרַת",
+"Note": "There is no Maqaf at the end of word … thus, a Merkha is most likely under the first Tav.",
+"Folio": "421r",
+"Column": 1,
+"Line": 4
+},
+{
+"Citation": "Job5:5.6",
+"Current": "מִצִּנִּ֥ים",
+"Recommended": "מִצִנִּ֥ים",
+"Note": "There is no Dagesh in Tsadi.",
+"Folio": "398r",
+"Column": 2,
+"Line": 22
+},
+{
+"Citation": "Job5:23.9",
+"Current": "לָֽךְ",
+"Recommended": "Note",
+"Note": "There are two specks on both sides of the Lamed that could be confused with a Dagesh.",
+"Folio": "398v",
+"Column": 1,
+"Line": 18
+},
+{
+"Citation": "Job7:1.6",
+"Current": "וְכִימֵ֖י",
+"Recommended": "וְכִימֵ֖֗י",
+"Note": "There appears to be a Revia above Mem.",
+"Folio": "399r",
+"Column": 1,
+"Line": 4
+},
+{
+"Citation": "Job8:7.4",
+"Current": "וְ֝אַחֲרִיתְךָ֗",
+"Recommended": "וְּ֝אַחֲרִיתְךָ֗",
+"Note": "There is a Dagesh in Vav.",
+"Folio": "399r",
+"Column": 2,
+"Line": 12
+},
+{
+"Citation": "Job8:14.5",
+"Current": "עַ֝כָּבִ֗ישׁ",
+"Recommended": "Note",
+"Note": "There is a Revia over Bet that is blended into the Rafe.",
+"Folio": "399r",
+"Column": 2,
+"Line": 20
+},
+{
+"Citation": "Job8:19.2",
+"Current": "ה֭וּא",
+"Recommended": "ה֖וּא",
+"Note": "There is a Tarcha under Hey. The Aleppo has a Dechi as indicated in the image.",
+"Folio": "399r",
+"Column": 2,
+"Line": 26
+},
+{
+"Citation": "Job9:14.7",
+"Current": "עִמּֽוֹ",
+"Recommended": "עִמּוֹ",
+"Note": "The Silluq is assumed but not present under Mem.",
+"Folio": "399v",
+"Column": 1,
+"Line": 21
+},
+{
+"Citation": "Job9:30.7",
+"Current": "כַּפָּֽי",
+"Recommended": "כַּפָּי",
+"Note": "The Silluq is assumed but not present under Pe.",
+"Folio": "399v",
+"Column": 2,
+"Line": 15
+},
+{
+"Citation": "Job10:6.4",
+"Current": "וּ֭לְחַטָּאתִ֥י",
+"Recommended": "Note",
+"Note": "Printed editions have either a Dehi or Meteg under Vav and a Merkha (although it looks more like a Meteg) under Tav.",
+"Folio": "400r",
+"Column": 1,
+"Line": 2
+},
+{
+"Citation": "Job11:6.3",
+"Current": "תַּֽעֲלֻמ֣וֹת",
+"Recommended": "Note",
+"Note": "Some editions place a Merkha under the first Tav instead of a Meteg.",
+"Folio": "400r",
+"Column": 2,
+"Line": 4
+},
+{
+"Citation": "Job12:3.9",
+"Current": "וְאֶת־",
+"Recommended": "וְאֶת",
+"Note": "There is no Maqaf after Tav.",
+"Folio": "400r",
+"Column": 2,
+"Line": 26
+},
+{
+"Citation": "Job12:19.4",
+"Current": "וְאֵֽתָנִ֣ים",
+"Recommended": "וְאֵ֖תָנִ֣ים",
+"Note": "There is a Tarcha under Alef.",
+"Folio": "400v",
+"Column": 1,
+"Line": 20
+},
+{
+"Citation": "Job14:9.1",
+"Current": "מֵרֵ֣יחַ",
+"Recommended": "מֵרֵ֣יַּח",
+"Note": "There is a Dagesh in Yod. The blemish between Resh and Yod could be mistaken as another Dagesh.",
+"Folio": "401r",
+"Column": 1,
+"Line": 19
+},
+{
+"Citation": "Job14:13.9",
+"Current": "תָּ֤שִׁ֥ית",
+"Recommended": "תָּ֤שִֽׁית",
+"Note": "There appears to be a Meteg under Shin.",
+"Folio": "401r",
+"Column": 1,
+"Line": 25
+},
+{
+"Citation": "Job15:34.8",
+"Current": "שֹֽׁחַד",
+"Recommended": "שֹֽׁ֥חַד",
+"Note": "There appears to be a Meteg as well as a Merkha under Shin.",
+"Folio": "401v",
+"Column": 1,
+"Line": 25
+},
+{
+"Citation": "Job15:35.3",
+"Current": "וְיָ֣לֹד",
+"Recommended": "Note",
+"Note": "It is hard to determine what accent is under Yod.",
+"Folio": "401v",
+"Column": 1,
+"Line": 25
+},
+{
+"Citation": "Job18:4.4",
+"Current": "הַ֭לְמַעַנְךָ",
+"Recommended": "הֲ֭לְמַּעַנְךָ",
+"Note": "There appears to be a Hataf Patah under He and a Dagesh in Mem.",
+"Folio": "402r",
+"Column": 1,
+"Line": 24
+},
+{
+"Citation": "Job18:6.1",
+ "Current": "א֭וֹר Dehi",
+"Recommended": "א֖וֹר Tarcha",
+"Note": "There is a Tarcha under Alef. The Aleppo has a Dehi as indicated in the image.",
+"Folio": "402r",
+"Column": 1,
+"Line": 26
+},
+{
+"Citation": "Job19:2.5",
+"Current": "וּֽתְדַכְּאוּנַ֥נִי",
+"Recommended": "וּֽתְדַכּאוּנַ֥נִי",
+"Note": "There is no Sheva under Kaf.",
+"Folio": "402r",
+"Column": 2,
+"Line": 19
+},
+{
+"Citation": "Job19:5.7",
+"Current": "חֶרְפָּתִּֽי׃",
+"Recommended": "חֶרְפָּתִֽי׃",
+"Note": "There is a light-colored blemish in Tav ... similar blemishes are noted in the below image.",
+"Folio": "402r",
+"Column": 2,
+"Line": 19
+ 
+},
+{
+"Citation": "Job19:16.2",
+"Current": "קָ֭רָאתִי",
+"Recommended": "קָּ֭רָאתִי",
+"Note": "There appears to be a Dagesh in Qof.",
+"Folio": "402v",
+"Column": 2,
+"Line": 8
+},
+{
+"Citation": "Job19:28.2",
+"Current": "תֹ֭אמְרוּ",
+"Recommended": "תֹ֖אמְרוּ",
+"Note": "There is a Tarcha under Tav. The Aleppo has a Dehi as indicated in the image.",
+"Folio": "402v",
+"Column": 1,
+"Line": 23
+},
+{
+"Citation": "Job21:25.5",
+"Current": "וְלֹֽא־",
+"Recommended": "וִלֹֽא־",
+"Note": "There is a Hiriq under Vav.",
+"Folio": "403r",
+"Column": 2,
+"Line": 13
+},
+{
+"Citation": "Job21:34.4",
+"Current": "וּ֝תְשֽׁוּבֹתֵיכֶ֗ם",
+"Recommended": "וּ֝תְשׁ֥וּבֹתֵיכֶ֗ם",
+"Note": "There is a Merkha under Shin.",
+"Folio": "403r",
+"Column": 2,
+"Line": 24
+},
+{
+"Citation": "Job22:25.6",
+ "Current": "לָֽךְ",
+"Recommended": "לָ֥ךְ",
+"Note": "There is a Merkha under Lamed.",
+"Folio": "403v",
+"Column": 1,
+"Line": 27
+},
+{
+"Citation": "Job22:28.2",
+"Current": "א֭וֹמֶר",
+"Recommended": "א֖וֹמֶר",
+"Note": "There is a Tarcha under Alef. The Aleppo has a Dehi as indicated in the image.",
+"Folio": "403v",
+"Column": 2,
+"Line": 2
+},
+{
+"Citation": "Job22:28.8",
+ "Current": "אֽוֹר",
+"Recommended": "Note",
+"Note": "This appears to be a hastily made Silluq that can be mistaken for a Merkha.",
+"Folio": "403v",
+"Column": 2,
+"Line": 3
+},
+{
+"Citation": "Job23:2.8",
+ "Current": "אַנְחָתִֽי",
+"Recommended": "Note",
+"Note": "This is another hastily made Silluq with a diagonal slant appearing as a Merkha.",
+"Folio": "403v",
+"Column": 2,
+"Line": 7
+},
+{
+"Citation": "Job23:3.7",
+ "Current": "תְּכוּנָתֽוֹ",
+"Recommended": "Note",
+"Note": "This is another hastily made Silluq with a diagonal slant appearing as a Merkha.",
+"Folio": "403v",
+"Column": 2,
+"Line": 9
+},
+{
+"Citation": "Job23:4.6",
+"Current": "תוֹכָחֽוֹת",
+"Recommended": "תוֹכָח֥וֹת",
+"Note": "This is another hastily made Silluq with a diagonal slant appearing as a Merkha.",
+"Folio": "403v",
+"Column": 2,
+"Line": 10
+},
+{
+"Citation": "Job24:5.3",
+"Current": "בַּֽמִּדְבָּ֗ר",
+"Recommended": "בַּ֥מִּדְבָּ֗ר",
+"Note": "There appears to be a Merkha under the first Bet.",
+"Folio": "404r",
+"Column": 1,
+"Line": 1
+},
+{
+"Citation": "Job24:21.1",
+"Current": "רֹעֶ֣ה",
+"Recommended": "Note",
+"Note": "There appears to be a lower faded dot to a Segol under Ayin. It could be possible that the original vowel was changed to a Tsere.",
+"Folio": "404r",
+"Column": 1,
+"Line": 22
+},
+{
+"Citation": "Job27:2.1",
+"Current": "חַי־",
+"Recommended": "חַי",
+"Note": "There is no Maqaf after Yod.",
+"Folio": "404r",
+"Column": 2,
+"Line": 25
+},
+{
+"Citation": "Job29:11.5",
+"Current": "וְעַ֥יִן",
+"Recommended": "וְעַ֥ין",
+"Note": "There is no Hiriq under Yod.",
+"Folio": "405r",
+"Column": 1,
+"Line": 16
+},
+{
+"Citation": "Job30:22.3",
+"Current": "ר֭וּחַ",
+"Recommended": "ר֖וּחַ",
+"Note": "There is a Tarcha under Resh. The Aleppo has a Dehi as indicated in the image.",
+"Folio": "405v",
+"Column": 1,
+"Line": 3
+},
+{
+"Citation": "Job31:5.8",
+"Current": "רַגְלִֽי",
+"Recommended": "רַגְלִֽי",
+"Note": "The Silluq is placed before Hiriq under Lamed.",
+"Folio": "405v",
+"Column": 1,
+"Line": 19
+},
+{
+"Citation": "Job31:7.12",
+"Current": "מֻאֽוּם",
+"Recommended": "מֻאוּֽם",
+"Note": "The Silluq is under Vav.",
+"Folio": "405v",
+"Column": 1,
+"Line": 22
+},
+{
+"Citation": "Job32:7.11",
+"Current": "וַיֹּ֫אמַ֥ר",
+"Recommended": "Note",
+"Note": "Originally, L had a Sof Pasuq at the end of this word and the mark under Mem would have been a Silluq. The Sof Pasuq was removed … the accent under Mem should have been changed to a Merkha. However, in L, in many places the Meteg and Merkha have the same shape. Ginsburg noted in many Medieval Hebrew Bible this word read with the Sof Pasuq and Silluq.",
+"Folio": "406r",
+"Column": 1,
+"Line": 1
+},
+{
+"Citation": "Job32:7.11",
+"Current": "יְשִׁישִׁ֑ים",
+"Recommended": "יְשִׁישִׁ֑ים",
+"Note": "There is an Etnahta and then Hiriq under Shin.",
+"Folio": "406r",
+"Column": 1,
+"Line": 20
+},
+{
+"Citation": "Job32:11.6",
+"Current": "דֵּעִ֣י",
+"Recommended": "דֵעִ֣י",
+"Note": "There is no Dagesh in Dalet.",
+"Folio": "406r",
+"Column": 2,
+"Line": 2
+},
+{
+"Citation": "Job33:13.7",
+"Current": "לֹ֣א־",
+"Recommended": "לֹ֣א",
+"Note": "There is no Maqaf at the end of word.",
+"Folio": "406v",
+"Column": 1,
+"Line": 3
+},
+{
+"Citation": "Job36:11.3",
+"Current": "וְֽיַ֫עֲבֹ֥דוּ",
+"Recommended": "וְֽיַעֲ֫בֹ֥דוּ",
+"Note": "There is an Ole above Ayin.",
+"Folio": "407v",
+"Column": 1,
+"Line": 1
+},
+{
+"Citation": "Job37:19.5",
+"Current": "לֹ֥א־",
+"Recommended": "לֹֽא־",
+"Note": "There is a Meteg under Lamed ... the text is damaged and there could be a Maqaf that has been worn away.",
+"Folio": "407v",
+"Column": 2,
+"Line": 24
+},
+{
+"Citation": "Job37:20.2",
+"Current": "ל֭וֹ",
+"Recommended": "ל֖וֹ",
+"Note": "There appears to be a Tarcha under Lamed. The Aleppo has a Dehi as noted in the image.",
+"Folio": "407v",
+"Column": 2,
+"Line": 24
+},
+{
+"Citation": "Job38:20.6",
+"Current": "תָ֝בִ֗ין",
+"Recommended": "תָ֝בִין",
+"Note": "There is no Revia above Bet ... there appears to be a Rafe over Tav and Bet",
+"Folio": "408r",
+"Column": 1,
+"Line": 24
+},
+{
+"Citation": "Job39:13.11",
+"Current": "אֶ֝בְרָ֗ה",
+"Recommended": "Note",
+"Note": "Not sure if the mark above Resh belongs to this word. If it was a Revia, it was blotted out. The Aleppo has a Revia above Resh.",
+"Folio": "408v",
+"Column": 1,
+"Line": 11
+},
+{
+"Citation": "Job41:25.7",
+"Current": "חָֽת",
+"Recommended": "חָת",
+"Note": "There is no Silluq on the last word.",
+"Folio": "409r",
+"Column": 2,
+"Line": 14
+},
+{
+"Citation": "Job42:10.9",
+"Current": "וַ֧יֹּסֶף",
+"Recommended": "וַיֹּ֧סֶף",
+"Note": "There is a Darga under Yod.",
+"Folio": "409v",
+"Column": 1,
+"Line": 10
+}
+]

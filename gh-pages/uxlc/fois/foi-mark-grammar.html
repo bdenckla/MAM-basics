@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>
+mark-grammar (UXLC features of interest)</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<div style="max-width: 50rem; margin-left: auto; margin-right: auto">
+<h1>
+mark-grammar (UXLC features of interest)</h1>
+<p><a href="index.html">FOI index</a> | JSON catalog: <a href="features_of_interest-mark-grammar.json">features_of_interest-mark-grammar.json</a></p>
+<p>This page lists the weird Hebrew letter clusters: those that are neither ordinary nor treated as ordinary.</p>
+<p>We define ordinary as follows:</p>
+<table class="border-collapse limited-width">
+<tr><th>item</th><th>meaning</th></tr>
+<tr><td>shsi-dot</td><td>shin-dot or sin-dot</td></tr>
+<tr><td>dms</td><td>dagesh/mapiq/shuruq-dot</td></tr>
+<tr><td>vowel</td><td></td></tr>
+<tr><td>aom</td><td>accent or meteg</td></tr>
+</table>
+<p>Clusters that are not ordinary, but treated as ordinary are listed in <a href="foi-mark-grammar-2.html">mark grammar 2</a>.</p>
+<p>Exclusions:</p>
+<ul>
+<li>
+Extraordinary upper dots and lower dots are stripped before clusters are classified on this page.</li>
+<li>
+The three dually-cantillated passages are excluded: Exodus 20, Deuteronomy 5, and Genesis 35:22.</li>
+</ul>
+<p>There are 1,200,055 included clusters; 1,198,122 are ordinary, 1,910 are treated as ordinary, and 23 are weird. Those 23 weird ones are listed below.</p>
+<h2>
+Abbreviations</h2>
+<table class="border-collapse limited-width">
+<tr><th>abbreviation</th><th>meaning</th></tr>
+<tr><td>metuq</td><td>meteg/siluq</td></tr>
+<tr><td>CGJ</td><td>combining grapheme joiner</td></tr>
+<tr><td>ZWJ</td><td>zero-width joiner</td></tr>
+</table>
+<h2>
+Counts by weird class</h2>
+<table class="border-collapse limited-width">
+<tr><th>class</th><th>count</th><th>details</th></tr>
+<tr><td>explicit-order</td><td>5</td><td><a href="#intro-explicit-order">5 cases</a></td></tr>
+<tr><td>initial-double-aom</td><td>3</td><td><a href="#intro-initial-double-aom">3 cases</a></td></tr>
+<tr><td>multi-vowel</td><td>2</td><td><a href="#intro-multi-vowel">2 cases</a></td></tr>
+<tr><td>noninitial-double-aom</td><td>4</td><td><a href="#intro-noninitial-double-aom">4 cases</a></td></tr>
+<tr><td>other-ordering</td><td>9</td><td><a href="#intro-other-ordering">9 cases</a></td></tr>
+</table>
+<h2 id="intro-explicit-order">
+explicit-order (5 cases)</h2>
+<table class="border-collapse limited-width">
+<tr><th>bcvp</th><th><span class="abbrev-tooltip" title="notes">n</span></th><th><span class="abbrev-tooltip" title="most recent change record">c</span></th><th>atom</th><th><span class="abbrev-tooltip" title="sequence">seq</span></th><th>mark names</th></tr>
+<tr><td><a href="https://tanach.us/Tanach.xml?Num7:60">Num 7:60</a>.5</td><td></td><td><a href="https://tanach.us/Changes/2022.07.04%20-%20Changes/2022.07.04%20-%20Changes.xml?2022.04.04-4">•</a></td><td lang="hbo" dir="rtl">בִנְיָ<span class="cluster-highlight">מ֑͏ִ</span>ן</td><td>av</td><td>etnaḥta, <span class="abbrev-tooltip" title="combining grapheme joiner">CGJ</span>, ḥiriq</td></tr>
+<tr><td><a href="https://tanach.us/Tanach.xml?Deut3:22">Deut 3:22</a>.2</td><td></td><td><a href="https://tanach.us/Changes/2020.10.19%20-%20Changes/2020.10.19%20-%20Changes.xml?2020.09.29-5">•</a></td><td lang="hbo" dir="rtl"><span class="cluster-highlight">תִּ͏ְ</span>ירָא֑וּם</td><td>dvv</td><td><span class="abbrev-tooltip" title="dagesh/mapiq/shuruq-dot">dms</span>, ḥiriq, <span class="abbrev-tooltip" title="combining grapheme joiner">CGJ</span>, sheva</td></tr>
+<tr><td><a href="https://tanach.us/Tanach.xml?Job10:15">Job 10:15</a>.12</td><td>c</td><td><a href="https://tanach.us/Changes/2026.04.01%20-%20Changes/2026.04.01%20-%20Changes.xml?2026.02.05-35">•</a></td><td lang="hbo" dir="rtl">עָנְ<span class="cluster-highlight">י֥‍ִ</span>י׃</td><td>av</td><td>merkha/yored, <span class="abbrev-tooltip" title="zero-width joiner">ZWJ</span>, ḥiriq</td></tr>
+<tr><td><a href="https://tanach.us/Tanach.xml?Job19:16">Job 19:16</a>.6</td><td>t</td><td><a href="https://tanach.us/Changes/2026.04.01%20-%20Changes/2026.04.01%20-%20Changes.xml?2026.02.05-65">•</a></td><td lang="hbo" dir="rtl"><span class="cluster-highlight">פִ֗‍֝</span>י</td><td>vaa</td><td>ḥiriq, revia, <span class="abbrev-tooltip" title="zero-width joiner">ZWJ</span>, geresh-muqdam<br>cf. Ps 124:4 <span lang="hbo" dir="rtl"><span class="cluster-highlight">נַ֗֜</span>חְלָה</span></td></tr>
+<tr><td><a href="https://tanach.us/Tanach.xml?Job32:6">Job 32:6</a>.11</td><td></td><td><a href="https://tanach.us/Changes/2026.04.01%20-%20Changes/2026.04.01%20-%20Changes.xml?2026.02.05-115">•</a></td><td lang="hbo" dir="rtl">יְשִׁי<span class="cluster-highlight">שׁ֑‍ִ</span>ים</td><td>sav</td><td>shin-dot, etnaḥta, <span class="abbrev-tooltip" title="zero-width joiner">ZWJ</span>, ḥiriq</td></tr>
+</table>
+<h2 id="intro-initial-double-aom">
+initial-double-aom (3 cases)</h2>
+<table class="border-collapse limited-width">
+<tr><th>bcvp</th><th><span class="abbrev-tooltip" title="notes">n</span></th><th><span class="abbrev-tooltip" title="most recent change record">c</span></th><th>atom</th><th><span class="abbrev-tooltip" title="sequence">seq</span></th><th>mark names</th></tr>
+<tr><td><a href="https://tanach.us/Tanach.xml?Ps56:10">Ps 56:10</a>.1</td><td></td><td></td><td lang="hbo" dir="rtl"><span class="cluster-highlight">אָ֥֨</span>ז</td><td>vaa</td><td>qamats, merkha/yored, qadma</td></tr>
+<tr><td><a href="https://tanach.us/Tanach.xml?Ps124:4">Ps 124:4</a>.4</td><td>c</td><td><a href="https://tanach.us/Changes/2022.04.01%20-%20Changes/2022.04.01%20-%20Changes.xml?2021.11.02-2">•</a></td><td lang="hbo" dir="rtl"><span class="cluster-highlight">נַ֗֜</span>חְלָה</td><td>vaa</td><td>pataḥ, revia, geresh<br>cf. Job 19:16 <span lang="hbo" dir="rtl"><span class="cluster-highlight">פִ֗‍֝</span>י</span></td></tr>
+<tr><td><a href="https://tanach.us/Tanach.xml?Job15:34">Job 15:34</a>.8</td><td></td><td><a href="https://tanach.us/Changes/2026.04.01%20-%20Changes/2026.04.01%20-%20Changes.xml?2026.02.05-47">•</a></td><td lang="hbo" dir="rtl"><span class="cluster-highlight">שֹֽׁ֥</span>חַד׃</td><td>svaa</td><td>shin-dot, ḥolam, <span class="abbrev-tooltip" title="meteg/siluq">metuq</span>, merkha/yored</td></tr>
+</table>
+<h2 id="intro-multi-vowel">
+multi-vowel (2 cases)</h2>
+<table class="border-collapse limited-width">
+<tr><th>bcvp</th><th><span class="abbrev-tooltip" title="notes">n</span></th><th><span class="abbrev-tooltip" title="most recent change record">c</span></th><th>atom</th><th><span class="abbrev-tooltip" title="sequence">seq</span></th><th>mark names</th></tr>
+<tr><td><a href="https://tanach.us/Tanach.xml?2Kings21:26">2Kings 21:26</a>.1</td><td>c</td><td><a href="https://tanach.us/Changes/2021.10.19%20-%20Changes/2021.10.19%20-%20Changes.xml?2021.05.19-6">•</a></td><td lang="hbo" dir="rtl">וַיִּקְ<span class="cluster-highlight">בְֹּ֥</span>ר</td><td>dvva</td><td><span class="abbrev-tooltip" title="dagesh/mapiq/shuruq-dot">dms</span>, ḥolam, sheva, merkha/yored</td></tr>
+<tr><td><a href="https://tanach.us/Tanach.xml?Prov23:26">Prov 23:26</a>.8</td><td>q</td><td><a href="https://tanach.us/Changes/2024.10.19%20-%20Changes/2024.10.19%20-%20Changes.xml?2024.04.15-35">•</a></td><td lang="hbo" dir="rtl">תִּצֽ<span class="cluster-highlight">רְֹ</span>נָה׃</td><td>vv</td><td>sheva, ḥolam</td></tr>
+</table>
+<h2 id="intro-noninitial-double-aom">
+noninitial-double-aom (4 cases)</h2>
+<table class="border-collapse limited-width">
+<tr><th>bcvp</th><th><span class="abbrev-tooltip" title="notes">n</span></th><th><span class="abbrev-tooltip" title="most recent change record">c</span></th><th>atom</th><th><span class="abbrev-tooltip" title="sequence">seq</span></th><th>mark names</th></tr>
+<tr><td><a href="https://tanach.us/Tanach.xml?Lev25:20">Lev 25:20</a>.4</td><td>c</td><td><a href="https://tanach.us/Changes/2026.10.19%20-%20Changes/2026.10.19%20-%20Changes.xml?2026.08.05-10">•</a></td><td lang="hbo" dir="rtl">נֹּא<span class="cluster-highlight">כַ֤֖</span>ל</td><td>vaa</td><td>pataḥ, mahapakh, tipeḥa/tarḥa</td></tr>
+<tr><td><a href="https://tanach.us/Tanach.xml?Ezek20:31">Ezek 20:31</a>.7</td><td></td><td></td><td lang="hbo" dir="rtl">נִטְמְ<span class="cluster-highlight">אִ֤֨</span>ים</td><td>vaa</td><td>ḥiriq, mahapakh, qadma</td></tr>
+<tr><td><a href="https://tanach.us/Tanach.xml?Ps75:11">Ps 75:11</a>.7</td><td>c</td><td><a href="https://tanach.us/Changes/2023.07.04%20-%20Changes/2023.07.04%20-%20Changes.xml?2023.03.25-68">•</a></td><td lang="hbo" dir="rtl">צַ<span class="cluster-highlight">דִּֽ֥</span>יק׃</td><td>dvaa</td><td><span class="abbrev-tooltip" title="dagesh/mapiq/shuruq-dot">dms</span>, ḥiriq, <span class="abbrev-tooltip" title="meteg/siluq">metuq</span>, merkha/yored</td></tr>
+<tr><td><a href="https://tanach.us/Tanach.xml?Job7:1">Job 7:1</a>.7</td><td>c</td><td><a href="https://tanach.us/Changes/2026.04.01%20-%20Changes/2026.04.01%20-%20Changes.xml?2026.02.05-18">•</a></td><td lang="hbo" dir="rtl">וְכִי<span class="cluster-highlight">מֵ֖֗</span>י</td><td>vaa</td><td>tsere, tipeḥa/tarḥa, revia</td></tr>
+</table>
+<h2 id="intro-other-ordering">
+other-ordering (9 cases)</h2>
+<table class="border-collapse limited-width">
+<tr><th>bcvp</th><th><span class="abbrev-tooltip" title="notes">n</span></th><th><span class="abbrev-tooltip" title="most recent change record">c</span></th><th>atom</th><th><span class="abbrev-tooltip" title="sequence">seq</span></th><th>mark names</th></tr>
+<tr><td><a href="https://tanach.us/Tanach.xml?Ex32:19">Ex 32:19</a>.18</td><td></td><td><a href="https://tanach.us/Changes/2022.07.04%20-%20Changes/2022.07.04%20-%20Changes.xml?2022.04.01-17">•</a></td><td lang="hbo" dir="rtl">וַ<span class="cluster-highlight">יְּ</span>שַׁבֵּ֥ר</td><td>vd</td><td>sheva, <span class="abbrev-tooltip" title="dagesh/mapiq/shuruq-dot">dms</span></td></tr>
+<tr><td><a href="https://tanach.us/Tanach.xml?Num32:16">Num 32:16</a>.3</td><td></td><td><a href="https://tanach.us/Changes/2022.07.04%20-%20Changes/2022.07.04%20-%20Changes.xml?2022.04.04-12">•</a></td><td lang="hbo" dir="rtl">וַ<span class="cluster-highlight">יֹּ֣</span>אמְר֔וּ</td><td>dav</td><td><span class="abbrev-tooltip" title="dagesh/mapiq/shuruq-dot">dms</span>, munaḥ, ḥolam</td></tr>
+<tr><td><a href="https://tanach.us/Tanach.xml?Josh10:24">Josh 10:24</a>.20</td><td></td><td><a href="https://tanach.us/Changes/2026.10.19%20-%20Changes/2026.10.19%20-%20Changes.xml?2026.04.10-1">•</a></td><td lang="hbo" dir="rtl">הֶהָלְכ֣<span class="cluster-highlight">וְּּ</span></td><td>ddv</td><td><span class="abbrev-tooltip" title="dagesh/mapiq/shuruq-dot">dms</span>, <span class="abbrev-tooltip" title="dagesh/mapiq/shuruq-dot">dms</span>, sheva</td></tr>
+<tr><td><a href="https://tanach.us/Tanach.xml?Ezek1:25">Ezek 1:25</a>.8</td><td>c</td><td><a href="https://tanach.us/Changes/2023.04.01%20-%20Changes/2023.04.01%20-%20Changes.xml?2022.12.11-1">•</a></td><td lang="hbo" dir="rtl">בְּעָמְ<span class="cluster-highlight">דָּֿ֖</span>ם</td><td>dvda</td><td><span class="abbrev-tooltip" title="dagesh/mapiq/shuruq-dot">dms</span>, qamats, rafeh, tipeḥa/tarḥa</td></tr>
+<tr><td><a href="https://tanach.us/Tanach.xml?Ps119:14">Ps 119:14</a>.3</td><td>t</td><td><a href="https://tanach.us/Changes/2022.04.01%20-%20Changes/2022.04.01%20-%20Changes.xml?2021.11.12-4">•</a></td><td lang="hbo" dir="rtl"><span class="cluster-highlight">שַּׂ֗</span>שְׂתִּי</td><td>dsva</td><td><span class="abbrev-tooltip" title="dagesh/mapiq/shuruq-dot">dms</span>, sin-dot, pataḥ, revia</td></tr>
+<tr><td><a href="https://tanach.us/Tanach.xml?Job36:29">Job 36:29</a>.7</td><td>t</td><td><a href="https://tanach.us/Changes/2026.04.01%20-%20Changes/2026.04.01%20-%20Changes.xml?2026.02.05-136">•</a></td><td lang="hbo" dir="rtl">סֻ<span class="cluster-highlight">כָּֽ</span>תֽוֹ׃</td><td>adv</td><td><span class="abbrev-tooltip" title="meteg/siluq">metuq</span>, <span class="abbrev-tooltip" title="dagesh/mapiq/shuruq-dot">dms</span>, qamats</td></tr>
+<tr><td><a href="https://tanach.us/Tanach.xml?Job42:10">Job 42:10</a>.10</td><td></td><td><a href="https://tanach.us/Changes/2026.04.01%20-%20Changes/2026.04.01%20-%20Changes.xml?2026.02.05-161">•</a></td><td lang="hbo" dir="rtl">וַ<span class="cluster-highlight">יֹּ֧</span>סֶף</td><td>dav</td><td><span class="abbrev-tooltip" title="dagesh/mapiq/shuruq-dot">dms</span>, darga, ḥolam</td></tr>
+<tr><td><a href="https://tanach.us/Tanach.xml?Dan3:15">Dan 3:15</a>.13</td><td></td><td><a href="https://tanach.us/Changes/2024.10.19%20-%20Changes/2024.10.19%20-%20Changes.xml?2024.07.11-1">•</a></td><td lang="hbo" dir="rtl">קַתְ<span class="cluster-highlight">רֹ֣</span>ס</td><td>av</td><td>munaḥ, ḥolam</td></tr>
+<tr><td><a href="https://tanach.us/Tanach.xml?1Chr21:8">1Chr 21:8</a>.16</td><td></td><td><a href="https://tanach.us/Changes/2024.04.01%20-%20Changes/2024.04.01%20-%20Changes.xml?2023.09.15-4">•</a></td><td lang="hbo" dir="rtl">עֲו<span class="cluster-highlight">וֹ֣</span>ן</td><td>av</td><td>munaḥ, ḥolam</td></tr>
+</table>
+</div>
+</body>
+</html>

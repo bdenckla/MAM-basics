@@ -1,0 +1,278 @@
+Remove segol from sin, add 'c' note. (#2)
+Confused markings on aleph, no text change, add 't' note. (#3)
+Confused markings on aleph.
+Remove meteg (and associated CGJ) from vav.
+An apparent erasure in front and below the vav may have been taken as a meteg.
+Add note 'm' for possible merkha rather than meteg under the gimel.
+The near-vertical line under the gimel lacks a northeast-southwest inclination.
+The Miqra According to the Masorah (MAM) has a merkha rather than a meteg under the gimel.
+Add maqaf between first resh and lamed.
+An erasure between the first resh and lamed exists, representing the intent of the writer(s), not textual decay.
+The Miqra According to the Masorah (MAM) displays this as a single word.
+Add maqaf between first resh and lamed.
+An erasure between the first resh and lamed may exist, representing the intent of the writer(s), not textual decay.
+The Miqra According to the Masorah (MAM) displays this as a single word.
+Add maqaf between first resh and lamed.
+An erasure between the first resh and lamed may exist, representing the intent of the writer(s), not textual decay.
+The Miqra According to the Masorah (MAM) displays this as a single word.
+Place maqaf between first resh and lamed (Change made previously in changes of 2021.04.01).
+This change is already in the UXLC text from the 2021.04.01 changes, item 2021.02.22 - 3, by Stephen Salisbury.
+Speculation: The distance between the first resh and the lamed was too narrow to permit erasure as in Gen 14:1.9, 14:4.6, and 14:9.2.
+The Miqra According to the Masorah (MAM) has no maqaf between the first resh and the lamed.
+Change merkha on dalet to a meteg. Add 'm' note.
+The near-vertical line associated with the dalet lacks a northeast-southwest inclination. The near-vertical line associated with the nun lacks a northeast-southwest inclination. The UXLC text will be changed to have a meteg under the dalet to correspond to its appearance in the Leningrad Codex.
+The Miqra According to the Masorah (MAM) has a merkha under the dalet and meteg under the nun.
+Remove dagesh from first shin.
+Change meteg under het to merkha. Add note 't'.
+The near-vertical line under the het has a slight northeast-southwest inclination.
+The Miqra According to the Masorah (MAM) has a merkha rather than a meteg under the het.
+Add maqaf between the first he and the zayin.
+The putative maqaf is very faint. A maqaf at this point would place two accents on a single poetic word.
+The Miqra According to the Masorah (MAM) does not have a maqaf between these words.
+Change the merkha under the tav to a tevir.
+The putative tevir dot is very faint. The text has other weak dots in the vicinity.
+The Miqra According to the Masorah (MAM) does not have a tevir on this word.
+Change meteg under nun to merkha. Add note 't'.
+The near-vertical line on the nun has a very slight northeast-southwest inclination.
+The Miqra According to the Masorah (MAM) has a merkha rather than a meteg under the nun.
+Move meteg from yod to first vav, add note 't'.
+The meteg is under the patah of the vav.
+The Miqra According to the Masorah (MAM) has the meteg under the yod as would be expected.
+Add note 'm' for possible merkha rather than meteg under yod.
+The near-vertical line on the yod has the wrong inclination (northwest-southeast) for a merkha.
+The Miqra According to the Masorah (MAM) has a merkha rather than a meteg under the yod.
+Extraneous dot under he, add 't' note. (#8)
+The dot before the patah might be considered part of a hataf mark before the patah. The dot in question is lighter than surrounding dots; the lower dot of the putative hataf mark is the shin mark on the word שׁ֣וֹק of the following line.
+The Miqra According to the Masorah (MAM) has a patah under the he.
+Dagesh on second mem is faint. Add note 't.
+The dagesh in the second mem is faint and off-centered.
+Add note 'm' for possible merkha rather than meteg under yod.
+The near-vertical line on the yod lacks the northeast-southwest inclination for a merkha.
+The Miqra According to the Masorah (MAM) has a merkha rather than a meteg under the yod.
+Change qamats under the resh to a hataf qamats.
+The putative hataf dots are noticeably lower than the qamats. The text has many dots floating around in this area.
+Replace meteg under resh with merkha.
+The next word is the last in the verse and necessarily contains a meteg in the role of a siluq. The putative merkha is parallel to this meteg and lacks the northeast to southwest inclination of a merkha. The space to the next word has an erasure may have contained a maqaf.
+The Miqra According to the Masorah (MAM) has a meteg on the resh and doesn't split this word from the next with a maqaf.
+Add note 't' as text is damaged.
+The lower half of the word is damaged.
+The current text agrees with that of the Miqra According to the Masorah (MAM).
+Add sheva under resh. Merge with following word.
+Merging this word with following word produces a properly-accented word and is accepted elsewhere.
+The Miqra According to the Masorah (MAM) has a maqaf on this word connecting it to the next word which has an accent. It does not have a sheva on the resh.
+Add note 'm' for possible merkha rather than meteg under first nun.
+The near-vertical line under the nun lacks a northeast-southwest inclination.
+The Miqra According to the Masorah (MAM) has a merkha rather than a meteg under the nun.
+Change patah on aleph to qamats.
+The putative qamats dot is lighter than those on the sheva on the aleph or the qamats on the following letter.
+Dagesh on dalet is light. Add 't' note.
+The dagesh on the dalet is light, but well positioned.
+Add note 'm' for possible merkha rather than meteg under het.
+The near-vertical line under the gimel lacks a northeast-southwest inclination.
+The Miqra According to the Masorah (MAM) has a merkha rather than a meteg under the het.
+Consider possible vav between aleph and tav.
+The contents of the space between the aleph and the tav are faint and uncertain.
+Replace meteg under nun with munah.
+Place pashta above sin, replace merkha with meteg below. Add note 't'.
+This text is in a Decalogue and is expected to have dual accents.
+The mark above the sin is small and light, starting on the rightmost leg of the sin. The near-vertical line below the shin is faint, short and broken, more likely to be a meteg than merkha.
+The Miqra According to the Masorah (MAM) has a pashta over the shin and a meteg below.
+Interchange order of tevir and munah on mem so that the tevir comes first.
+This text is in a Decalogue and is expected to have dual accents.
+The Miqra According to the Masorah (MAM) has tevir then the munah on the mem.
+Change meteg under tsadi to tipeha.
+This text is in a Decalogue and is expected to have dual accents.
+Only one accent is below the tsadi and it's curved like a tipeha.
+The Miqra According to the Masorah (MAM) has tipeha then meteg under the tsadi.
+Add dagesh to tav.
+The dagesh is dark and well-positioned.
+Add note 'm' for possible merkha rather than meteg under nun.
+The near-vertical line under the gimel lacks a northeast-southwest inclination.
+The Miqra According to the Masorah (MAM) has a merkha rather than a meteg under the nun.
+Change meteg to merkha under yod.
+The near-vertical line under the yod moves distinctly from northeast to southwest. This is the best example of a merkha in these changes.
+The Miqra According to the Masorah (MAM) has a merkha rather than a meteg under the yod.
+Change meteg to merkha under yod. Add 't' note.
+The near-vertical line under the yod moves slightly from northeast to southwest. Note that the line appears to be made two overwritten lines, one of which is vertical.
+The Miqra According to the Masorah (MAM) has a merkha rather than a meteg under the yod.
+Replace meteg under pe with merkha. Add note 't'.
+The near-vertical line on the pe has a very slight northeast-southwest inclination.
+The Miqra According to the Masorah (MAM) has a merkha rather than a meteg under the pe.
+Add pashta over aleph.
+The vertical line between the aleph and the yod is from the tevir on the previous verse, Deut 20:11.8. The smudge on the upper, right arm of the aleph doesn't have enough form to be considered a pashta.
+The Miqra According to the Masorah (MAM) has a pashta over both the aleph and the tav.
+Change meteg under bet to merkha. Add note 't'.
+The near-vertical line on the bet has a slight northeast-southwest inclination.
+The Miqra According to the Masorah (MAM) has a merkha rather than a meteg under the bet.
+Add note 'm' for possible merkha rather than meteg under lamed.
+The near-vertical line on the lamed doesn't incline from northeast to southwest. Its inclination is less than on the tipeha on the same word.
+The Miqra According to the Masorah (MAM) has a merkha rather than a meteg under the lamed.
+Change meteg under aleph to merkha. Add note 't'.
+The near-vertical line on the aleph has a slight curvature, northeast to southwest. Its inclination is comparable to that of the tipeha on the same word.
+The Miqra According to the Masorah (MAM) has a merkha rather than a meteg under the aleph.
+Remove dagesh from tsadi.
+Markings under the second tsadi are smudged. Add note 't'.
+The Miqra According to the Masorah (MAM) has a patah then meteg under the second tsadi.
+Markings under the kaf are smudged. Add note 't'.
+The text in this area is in bad shape. The markings under the kaf are smudged and the maqaf is very faint.
+The Miqra According to the Masorah (MAM) has a hiriq then meteg under the kaf.
+Change sheva under yod to hiriq; change munah on shin to meteg. Add note 't'.
+The text of this word is of poor quality. Although the usual spelling of Joshua has a sheva under the yod, the LC has only one dot under the yod. The shuruq under the shin is unclear; the other mark under the shin is a meteg. The furtive patah for the ayin is too advanced.
+The Miqra According to the Masorah (MAM) has a sheva under the yod and a meteg under the shin.
+Remove maqaf from end of word. Add note 'c'.
+A maqaf is expected at end of word.
+The Miqra According to the Masorah (MAM) has a maqaf at end of word.
+Place telisha gedola over tsadi.
+The circle over the aleph is a masora circle; it's too far above the aleph to be a telisha gedola.
+The Miqra According to the Masorah (MAM) has a telisha gedola over the tsadi.
+Move etnahta from under bet to under the kaf.
+The etnahta clearly belongs to the kaf; space was available to place it under the bet if that was the intent.
+The Miqra According to the Masorah (MAM) has the etnahta under the bet.
+The meteg belonging to the nun might be a merkha, but is not sufficiently inclined. Add note 'm'.
+The possible merkha under the nun-gimel space is not as inclined northeast to southwest as the following tevir and appears perpendicular to the base of the nun.
+The Miqra According to the Masorah (MAM) has a merkha under the nun.
+Change the patah under the ayin to hataf patah.
+The text is severely damaged. Nevertheless, double dots forming a hataf sign are present.
+The Miqra According to the Masorah (MAM) has a patah under the ayin.
+The meteg belonging to the nun might be a merkha, but is not sufficiently inclined. Add note 'm'.
+The possible merkha under the nun-gimel space is not as inclined northeast to southwest as the following tevir.
+The Miqra According to the Masorah (MAM) has a merkha under the nun.
+Change patah under ayin to qamats. Add 'c' note.
+The LC's qamats on the ayin is effectively a "furtive" qamats.
+The Miqra According to the Masorah (MAM) has a patah under the ayin.
+Remove dagesh from yod.
+The LC text is very damaged in this word; however, the lack of a dagesh on the yod is certain.
+The Miqra According to the Masorah (MAM) has a dagesh on the yod.
+Remove dagesh from yod.
+The Miqra According to the Masorah (MAM) has a dagesh on the yod.
+Change qamats under kaf to sheva.
+The Miqra According to the Masorah (MAM) has a qamats on the kaf.
+Add dagesh to second qof.
+The Miqra According to the Masorah (MAM) has no dagesh on the second qof.
+Possible dagesh in he. Add note 't'.
+The dagesh is well-shaped and well-positioned, but faint. It is not expected here.
+The Miqra According to the Masorah (MAM) has no dagesh on the he.
+Possible dagesh in bet. Add note 't'.
+The dagesh is well-shaped but a little low and faint.
+The Miqra According to the Masorah (MAM) has no dagesh on the bet.
+Remove dagesh from first sin.
+The Miqra According to the Masorah (MAM) has a dagesh on the first sin.
+Remove dagesh from first sin.
+The Miqra According to the Masorah (MAM) has a dagesh on the first sin.
+Remove dagesh from first sin.
+The Miqra According to the Masorah (MAM) has a dagesh on the first sin.
+Accent on nun is a merkha. Add note 'c'
+The accent under the nun has a distinct northeast to southwest inclination.
+The Miqra According to the Masorah (MAM) has a meteg under the nun.
+Accent on ayin might be a merkha. Add note 'm'
+The accent on ayin lacks the northeast to southwest inclination to be a merkha.
+The Miqra According to the Masorah (MAM) has a merkha under the ayin.
+Remove dagesh from first sin.
+The Miqra According to the Masorah (MAM) has a dagesh on the first sin.
+Possible merkha under first nun rather than meteg. Add note 'm'.
+The accent under the first nun lacks the northeast to southwest inclination of a merkha.
+The Miqra According to the Masorah (MAM) has a merkha on the first nun.
+Remove dagesh from first sin.
+The Miqra According to the Masorah (MAM) has a dagesh on the first sin.
+Remove dagesh from yod. Add note 't'.
+The putative dagesh on the yod is very faint and may have been erased. It is much weaker the dagesh on the following tav.
+The Miqra According to the Masorah (MAM) has a dagesh on the yod.
+Add qadma to kaf. Add note 'c'.
+The image shows a poetic word composed of 3 orthographic words connected by 2 maqafs. The orthographic word in question is the middle word, כָּל־.
+The qadma is faint but well-formed. The aleph on the preceding orthographic word has no accent, the aleph on the following orthographic word has a zaqef qatan.
+The Miqra According to the Masorah (MAM) has a qadma on the initial aleph and a zaqef qatan on the second aleph of this poetic word.
+A dagesh appears to have been removed from bet.
+A smudge is present within the bet. Adjacent dageshes are well-formed and well-positioned. Previous versions of this word in the same verse lack a dagesh on the bet.
+The Miqra According to the Masorah (MAM) has no dagesh on the bet.
+Change sheva on first he to a hiriq.
+Underneath the first dot below the he is a smudge. The smudge is too light and too far below the dot to be a sheva. Compare with the sheva in the preceding vav.
+The Miqra According to the Masorah (MAM) has a hiriq on the first he.
+Remove maqaf at end of word. Add note 'c'.
+The large black dot at the end of the word it is not shaped like a maqaf nor does it bridge to the next word.
+The Miqra According to the Masorah (MAM) has a maqaf ending this word.
+Possible merkha under sin. Add note 'm'.
+The mark under the sin lacks a distinct northeast to southwest inclination.
+The Miqra According to the Masorah (MAM) has a merkha under the sin.
+Remove dagesh from lamed. Add note 't'.
+The mark under the dagesh on the lamed is weak and ill-positioned.
+The Miqra According to the Masorah (MAM) lacks a dagesh on the lamed.
+Move the holam from the vav to the aleph. Add note 'c'.
+The holam in the LC is closer to the aleph than the vav.
+The Miqra According to the Masorah (MAM) has the holam between the mem and the aleph.
+Remove dagesh from yod
+The mark above the nun is interpreted as a low-hanging masora circle. Neither MAM nor the UXLC show masora circles.
+The Miqra According to the Masorah (MAM) has a dagesh on the yod.
+Change meteg on pe to merkha.
+The mark under the pe has a distinct northeast to southeast inclination and is thus a merkha.
+The Miqra According to the Masorah (MAM) has a merkha on the pe.
+Move merkha from vav to yod.
+The mark under the yod has a slight northeast to southeast inclination and is thus a merkha.
+The Miqra According to the Masorah (MAM) has a merkha on the vav.
+Remove dagesh (as a shuruq dot) from second vav. Add 'c' note.
+Removing the shuruq dot leaves the word incompletely vowelized; therefore a 'c' note is added.
+The Miqra According to the Masorah (MAM) has a dagesh (as a shuruq dot) on the second vav.
+Remove dagesh from yod.
+The Miqra According to the Masorah (MAM) has a dagesh on the yod.
+Examine dagesh on tav.
+The dagesh on the tav is dark, but touching the tav.
+The merkha on the nun is questionable.
+The Miqra According to the Masorah (MAM) has a dagesh on the tav.
+Remove dagesh on mem.
+The Miqra According to the Masorah (MAM) has a dagesh on the mem.
+Remove maqaf at end of word. Add note 'c'.
+No line is present between the yod of this word and the kaf of the next word.
+The Miqra According to the Masorah (MAM) has a maqaf at the end of this word.
+Add telisha qetana to yod.
+The Miqra According to the Masorah (MAM) has a telisha qetana on the yod.
+Examine dagesh in mem.
+The smudge touching the inside of rightmost part of the mem is a dagesh.
+The Miqra According to the Masorah (MAM) has a dagesh in the mem.
+Remove dagesh from tsadi.
+The smudge at the base of the following yod looks to be continuous with the yod and is not a dagesh on the tsadi.
+The Miqra According to the Masorah (MAM) has a dagesh in the tsadi.
+Examine for possible maqaf at end of word.
+The separation between characters is confused by the blurry image. If the vav of this word is connected to the shin of the following word, so also would be this word's vav, yod, and shin.
+The Miqra According to the Masorah (MAM) has no maqaf on this word.
+Meteg on second mem may be a merkha. Add note 'm'. Remove maqaf at end of word. Add note 'c'.
+The vertical mark under the second mem lacks the northeast-to-southwest inclination to be a merkha. No maqaf is apparent at the end of this word. The following word, which is on the next line, has no "leading" maqaf.
+The Miqra According to the Masorah (MAM) has a merkha under the second mem. The Miqra According to the Masorah (MAM) has no maqaf on this word.
+Remove dagesh in yod.
+No dagesh is apparent in the yod, even the dagesh on the bet is weak.
+The Miqra According to the Masorah (MAM) has a dagesh in the yod.
+Remove dagesh in yod.
+No dagesh is apparent in the yod.
+The Miqra According to the Masorah (MAM) has a dagesh in the yod.
+Replace holam on tav with hiriq. Add note 't'.
+The darkest accent on the tav is a hiriq, the holam is much lighter.
+The Miqra According to the Masorah (MAM) has a holam on the tav.
+Add qadma to first lamed.
+A dark accent is visible on the first lamed. With change the word has two accents: a qadma on the first lamed (a conjunctive) and a zaqef qatan on the second lamed (level 2 disjunctive).
+The Miqra According to the Masorah (MAM) has a qadma on the first lamed.
+Add paseq (and preceding space) to end of word.
+Remove dagesh from tav.
+Add geresh muqdam to initial vav. Add note 't'.
+The geresh muqdam is very faint at the top left of the initial vav. It appears to be doubled, possibly the outer edges of a single stroke.
+Remove dagesh from initial tav.
+The merkha under second yod is ambiguous. Add 't' note.
+The accent under the second yod has a slight brush mark at the bottom but has no northeast to southwest inclination.
+The Miqra According to the Masorah (MAM) has a merkha under the first yod and a meteg under the second. The accompanying MAM notes describe differences among texts on these markings.
+Add mahapakh to pe, change merkha under qof to meteg. Add CGJ between meteg and patah on qof to preserve ordering.
+The mark below the qamats on the pe definitely belongs to the pe, not the line below. The accent under the qof has a slight brush mark at the top but has no northeast-to-southwest inclination. A combining grapheme joiner (CGJ) has been placed between the meteg and the patah to force the meteg-first ordering.
+The UXLC transcription preserves the two-dimensional mark order of the meteg relative to the patah. Other texts may not choose to maintain this ordering as a matter of editorial policy.
+Move mahapakh from ayin to dalet.
+Remove paseq (and preceding space).
+This word is at the end of line 14, the following line starts with the divine name and has no intervening paseq.
+Remove dagesh in first tav.
+Remove dagesh in dalet.
+The text is of high quality in this region. The dalet has a dot over the rafe which could be a revia. This revia, in addition to the geresh muqdam, produces a revia mugrash accent, an accent pair common in the Sifrei Emet.
+Remove geresh-muqdam from over ayin.
+The preceding word, on the previous line, has a maqaf.
+The final kaf has an incomplete masorah circle and rafe above it. The UXLC transcribes neither masorah circles nor rafe marks
+Unexpected dot above the final-mem, add note 't'.
+The dot above the final-mem is dark, well-formed, and difficult to explain.
+Add geresh-muqdam to nun.
+The geresh-muqdam above the nun is dark and well-formed. This geresh muqdam, in addition to the revia accent, produces a revia mugrash accent, an accent pair common in the Sifrei Emet.
+Remove dagesh from vav. Add note 't'.
+Though well-positioned, the dagesh on the vav is very faint compared to other dots on the word.
+The vocalization with the dagesh didn't make sense here.
+Add geresh muqdam to aleph.

@@ -1,0 +1,3444 @@
+<?xml version = "1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/XSL/Changes.xsl.xml"?>  
+<!-- Copyright 2020 Christopher V. Kimball -->
+<!--========================================================================-->
+<!--========================================================================-->
+<!--
+     Changes.xml - XML data file for Changes
+     
+     24 Feb 2021
+                                                                            -->
+<!--========================================================================-->
+<!--========================================================================-->
+<Changes>
+    <ref>UXLC 1.4</ref>
+    <target>UXLC 1.5</target>
+    <filedate>2022.07.04</filedate>
+    <type>installed</type>
+    
+    <dates>
+
+<!--  Holman Genesis changes -->
+
+
+    
+    <date>
+        <date>2022.03.29</date>
+        
+        <change>
+            <n>1</n>
+            <citation>
+                <book>Gen</book>
+                <c>2</c>
+                <v>5</v>
+                <position>23</position>
+            </citation>
+            <author>
+                <name>Daniel Holman</name>
+                <mail>daniel.holman@mail.com</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Place meteg before qamats on initial he, placing a Combining Grapheme Joiner (CGJ, x034f) after it to force mark order</description>
+                    
+            <lc>
+                <folio>Folio_002A</folio>
+                <column>2</column>
+                <line>15</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05d4;&#x05b8;&#x05bd;&#x05d0;&#x05b2;&#x05d3;&#x05b8;&#x05de;&#x05b8;&#x05bd;&#x05d4;&#x05c3;</reftext>  
+            <refuni>he   qamats   meteg   alef   hataf-patah   dalet   qamats   mem   qamats   meteg   he    sof-pasuq</refuni> 
+            <changetext>&#x05d4;&#x05bd;&#x034f;&#x05b8;&#x05d0;&#x05b2;&#x05d3;&#x05b8;&#x05de;&#x05b8;&#x05bd;&#x05d4;&#x05c3;</changetext>  
+            <changeuni>he   meteg  combining-grapheme-joiner  qamats   alef   hataf-patah   dalet   qamats   mem   qamats   meteg   he  sof-pasuq</changeuni> 
+               
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>vowel</type>
+        </change>
+        
+        <change>
+            <n>2</n>
+            <citation>
+                <book>Gen</book>
+                <c>14</c>
+                <v>17</v>
+                <position>5</position>
+            </citation>
+            <author>
+                <name>Daniel Holman</name>
+                <mail>daniel.holman@mail.com</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Change hatef patah under het to patah.</description>
+                    
+            <lc>
+                <folio>Folio_008A</folio>
+                <column>1</column>
+                <line>17</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05d0;&#x05b7;&#x05d7;&#x05b2;&#x05e8;&#x05b5;&#x05a3;&#x05d9;</reftext>  
+            <refuni>alef   patah   het   hataf-patah   resh   tsere   munah   yod </refuni> 
+            <changetext>&#x05d0;&#x05b7;&#x05d7;&#x05b7;&#x05e8;&#x05b5;&#x05a3;&#x05d9;</changetext>  
+            <changeuni>alef   patah   het   patah   resh   tsere   munah   yod </changeuni> 
+                
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>vowel</type>
+        </change>
+
+        <change>
+            <n>3</n>
+            <citation>
+                <book>Gen</book>
+                <c>15</c>
+                <v>2</v>
+                <position>1</position>
+            </citation>
+            <author>
+                <name>Daniel Holman</name>
+                <mail>daniel.holman@mail.com</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Add dagesh to mem.</description>
+                    
+            <lc>
+                <folio>Folio_008A</folio>
+                <column>2</column>
+                <line>19</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05d5;&#x05b7;&#x05d9;&#x05bc;&#x05b9;&#x05a3;&#x05d0;&#x05de;&#x05b6;&#x05e8;</reftext>  
+            <refuni> vav   patah   yod   dagesh   holam   munah   alef   mem    dagesh   segol   resh </refuni> 
+            <changetext>&#x05d5;&#x05b7;&#x05d9;&#x05bc;&#x05b9;&#x05a3;&#x05d0;&#x05de;&#x05bc;&#x05b6;&#x05e8;</changetext>  
+            <changeuni> vav   patah   yod   dagesh   holam   munah   alef   mem   segol   resh </changeuni> 
+            
+            <notes>
+               <note>
+                    The dagesh is redish, but well-positioned.
+               </note>
+            </notes>
+                
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>vowel</type>
+        </change>
+        
+        <change>
+            <n>4</n>
+            <citation>
+                <book>Gen</book>
+                <c>19</c>
+                <v>33</v>
+                <position>15</position>
+            </citation>
+            <author>
+                <name>Daniel Holman</name>
+                <mail>daniel.holman@mail.com</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Move upper dot from qof to vav.</description>
+                    
+            <lc>
+                <folio>Folio_010B</folio>
+                <column>3</column>
+                <line>4</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05d5;&#x05bc;&#x05d1;&#x05b0;&#x05e7;&#x05c4;&#x05d5;&#x05bc;&#x05de;&#x05b8;&#x05bd;&#x05d4;&#x05bc;&#x05c3;</reftext>  
+            <refuni>  vav   dagesh   bet   sheva   qof   upper-dot   vav   dagesh   mem   qamats   meteg   he   dagesh   sof-pasuq  </refuni> 
+            <changetext>&#x05d5;&#x05bc;&#x05d1;&#x05b0;&#x05e7;&#x05d5;&#x05c4;&#x05bc;&#x05de;&#x05b8;&#x05bd;&#x05d4;&#x05bc;&#x05c3;</changetext>  
+            <changeuni>  vav   dagesh   bet   sheva   qof   vav   upper-dot   dagesh   mem   qamats   meteg   he   dagesh   sof-pasuq  </changeuni> 
+            
+            <notes>
+               <note>
+                    Masora circles are over the qof and the mem; the upper dot is the mark above the vav.
+               </note>
+            </notes>
+                
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>accent</type>
+        </change>
+        
+        <change>
+            <n>5</n>
+            <citation>
+                <book>Gen</book>
+                <c>22</c>
+                <v>3</v>
+                <position>4</position>
+            </citation>
+            <author>
+                <name>Daniel Holman</name>
+                <mail>daniel.holman@mail.com</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Remove dagesh from yod.</description>
+                    
+            <lc>
+                <folio>Folio_012A</folio>
+                <column>1</column>
+                <line>14</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05d5;&#x05b7;&#x05bd;&#x05d9;&#x05bc;&#x05b7;&#x05d7;&#x05b2;&#x05d1;&#x05b9;&#x05e9;&#x05c1;&#x0599;</reftext>  
+            <refuni>  vav   patah   meteg   yod   dagesh   patah   het   hataf-patah   bet   holam   shin   shin-dot   pashta  </refuni> 
+            <changetext>&#x05d5;&#x05b7;&#x05bd;&#x05d9;&#x05b7;&#x05d7;&#x05b2;&#x05d1;&#x05b9;&#x05e9;&#x05c1;&#x0599;</changetext>  
+            <changeuni> vav   patah   meteg   yod   patah   het   hataf-patah   bet   holam   shin   shin-dot   pashta  </changeuni> 
+            
+            <notes>
+               <note>
+                 The yod has a hint of a dagesh; however, it's low, light, and attached to the yod.  
+               </note>
+            </notes>
+                
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>vowel</type>
+        </change>
+
+        <change>
+            <n>6</n>
+            <citation>
+                <book>Gen</book>
+                <c>32</c>
+                <v>17</v>
+                <position>7</position>
+            </citation>
+            <author>
+                <name>Daniel Holman</name>
+                <mail>daniel.holman@mail.com</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Move mahpakh from vav to yod.</description>
+                    
+            <lc>
+                <folio>Folio_020A</folio>
+                <column>1</column>
+                <line>11</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05d5;&#x05b7;&#x05a4;&#x05d9;&#x05bc;&#x05b9;&#x05d0;&#x05de;&#x05b6;&#x05e8;</reftext>  
+            <refuni>  vav   patah   mahapakh   yod   dagesh   holam   alef   mem   segol   resh    </refuni> 
+            <changetext>&#x05d5;&#x05b7;&#x05d9;&#x05bc;&#x05b9;&#x05a4;&#x05d0;&#x05de;&#x05b6;&#x05e8;</changetext>  
+            <changeuni> vav   patah   yod   dagesh   holam   mahapakh   alef   mem   segol   resh   </changeuni> 
+                 
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>accent</type>
+        </change>
+
+        <change>
+            <n>7</n>
+            <citation>
+                <book>Gen</book>
+                <c>41</c>
+                <v>45</v>
+                <position>12</position>
+            </citation>
+            <author>
+                <name>Daniel Holman</name>
+                <mail>daniel.holman@mail.com</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>The split into two words is correct; add note 'c'.</description>
+                    
+            <lc>
+                <folio>Folio_025B</folio>
+                <column>2</column>
+                <line>20</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05e4;&#x05bc;&#x05a5;&#x05d5;&#x05b9;&#x05d8;&#x05b4;&#x05d9;</reftext>  
+            <refuni>  pe   dagesh   merkha   vav   holam   tet   hiriq   yod     </refuni> 
+            <changetext>&#x05e4;&#x05bc;&#x05a5;&#x05d5;&#x05b9;&#x05d8;&#x05b4;&#x05d9;</changetext>  
+            <changeuni> pe   dagesh   merkha   vav   holam   tet   hiriq   yod   </changeuni> 
+                
+             <notes>
+               <note>
+               The two Egyptian names  &#x05e4;&#x05d5;&#x05d8;&#x05d9;&#x05e4;&#x05e8; and &#x05e4;&#x05d5;&#x05d8;&#x05d9;&#x05e4;&#x05e8;&#x05e2; are similar, 
+                   but have different word divisions based on their accents and Masorah Parva (Mp) notes in the margins. 
+               </note>
+               
+               <note>    
+               The following translations are from The Contemporary Torah, JPS, 2006, available as the English translation at the "Sefaria: Miqra according to the Masorah" link.
+               &#x05e4;&#x05d5;&#x05d8;&#x05d9;&#x05e4;&#x05e8; is written Potiphar, and described as "a courtier of Pharaoh and his prefect."
+               Potiphar occurs twice: Gen 37:36.6 and 39:1.5.
+               &#x05e4;&#x05d5;&#x05d8;&#x05d9;&#x05e4;&#x05e8;&#x05e2; is written Poti-phera and described as "priest of On".
+               Poti-phera occurs 3 times: Gen 41:45.12,  41:50.14, and 46:20.10.
+               </note>
+               
+               <note>
+               The LC text displays both &#x05e4;&#x05d5;&#x05d8;&#x05d9;&#x05e4;&#x05e8; and &#x05e4;&#x05d5;&#x05d8;&#x05d9;&#x05e4;&#x05e8;&#x05e2; without spacing indicating word divisions.
+               However, both the accents and the Mp notes indicate that  &#x05e4;&#x05d5;&#x05d8;&#x05d9;&#x05e4;&#x05e8;&#x05e2;, 
+                   Poti-phera, should be considered as two words:  &#x05e4;&#x05d5;&#x05d8;&#x05d9; &#x05e4;&#x05e8;&#x05e2;.
+                   
+               When the LC text displays the 2 Potiphar cases &#x05e4;&#x05d5;&#x05d8;&#x05d9;&#x05e4;&#x05e8; has a single primary accent;
+                  when the LC text displays the three Poti-phera cases both &#x05e4;&#x05d5;&#x05d8;&#x05d9; and &#x05e4;&#x05e8;&#x05e2; have a single primary accent.
+               Breuer suggests that the primary accents are the masorete's way to indicate separate words within the text
+                   (since it would have been very difficult for the masorete to insert a space between them after the consonants were written).
+               Gen 41:45 and 41:50 are also accompanied by Mp notes  
+                 &#x05ea;&#x05e8;&#x05ea;&#x05d9;&#x05df;&#x0020;&#x05de;&#x05d9;&#x05dc;&#x05d9;&#x05df;&#x0020;&#x05db;&#x05ea;&#x05c4; ("Written as two words").
+               The Poti-phera case in Gen 46:20.10 does not have a similar Mp note, but has primary accents on both &#x05e4;&#x05d5;&#x05d8;&#x05d9; and &#x05e4;&#x05e8;&#x05e2;.  
+               </note>
+               
+               <note>
+               The UXLC follows the accents and Mp notes; it represents all 3 Poti-phera cases as word pairs.
+               </note>
+            </notes>
+
+            <transnotes>
+                <transnote>
+                    <action>Add</action>
+                    <type>c</type>
+                    <beforetext>&#x05e4;&#x05bc;&#x05a5;&#x05d5;&#x05b9;&#x05d8;&#x05b4;&#x05d9;</beforetext>
+                </transnote>
+            </transnotes>
+                        
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>NoTextChange</type>
+        </change>
+ 
+     
+        <change>
+            <n>8</n>
+            <citation>
+                <book>Gen</book>
+                <c>41</c>
+                <v>50</v>
+                <position>14</position>
+            </citation>
+            <author>
+                <name>Daniel Holman</name>
+                <mail>daniel.holman@mail.com</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>The split into two words is correct; add note 'c'.</description>
+                    
+            <lc>
+                <folio>Folio_025B</folio>
+                <column>3</column>
+                <line>11</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05e4;&#x05bc;&#x05a5;&#x05d5;&#x05b9;&#x05d8;&#x05b4;&#x05d9;</reftext>  
+            <refuni>  pe   dagesh   merkha   vav   holam   tet   hiriq   yod      </refuni> 
+            <changetext>&#x05e4;&#x05bc;&#x05a5;&#x05d5;&#x05b9;&#x05d8;&#x05b4;&#x05d9;</changetext>  
+            <changeuni> pe   dagesh   merkha   vav   holam   tet   hiriq   yod     </changeuni> 
+                
+             <notes>
+               <note>
+               The two Egyptian names  &#x05e4;&#x05d5;&#x05d8;&#x05d9;&#x05e4;&#x05e8; and &#x05e4;&#x05d5;&#x05d8;&#x05d9;&#x05e4;&#x05e8;&#x05e2; are similar, 
+                   but have different word divisions based on their accents and Masorah Parva (Mp) notes in the margins. 
+               </note>
+               
+               <note>    
+               The following translations are from The Contemporary Torah, JPS, 2006, available as the English translation at the "Sefaria: Miqra according to the Masorah" link.
+               &#x05e4;&#x05d5;&#x05d8;&#x05d9;&#x05e4;&#x05e8; is written Potiphar, and described as "a courtier of Pharaoh and his prefect."
+               Potiphar occurs twice: Gen 37:36.6 and 39:1.5.
+               &#x05e4;&#x05d5;&#x05d8;&#x05d9;&#x05e4;&#x05e8;&#x05e2; is written Poti-phera and described as "priest of On".
+               Poti-phera occurs 3 times: Gen 41:45.12,  41:50.14, and 46:20.10.
+               </note>
+               
+               <note>
+               The LC text displays both &#x05e4;&#x05d5;&#x05d8;&#x05d9;&#x05e4;&#x05e8; and &#x05e4;&#x05d5;&#x05d8;&#x05d9;&#x05e4;&#x05e8;&#x05e2; without spacing indicating word divisions.
+               However, both the accents and the Mp notes indicate that  &#x05e4;&#x05d5;&#x05d8;&#x05d9;&#x05e4;&#x05e8;&#x05e2;, 
+                   Poti-phera, should be considered as two words:  &#x05e4;&#x05d5;&#x05d8;&#x05d9; &#x05e4;&#x05e8;&#x05e2;.
+                   
+               When the LC text displays the 2 Potiphar cases &#x05e4;&#x05d5;&#x05d8;&#x05d9;&#x05e4;&#x05e8; has a single primary accent;
+                  when the LC text displays the three Poti-phera cases both &#x05e4;&#x05d5;&#x05d8;&#x05d9; and &#x05e4;&#x05e8;&#x05e2; have a single primary accent.
+               Breuer suggests that the primary accents are the masorete's way to indicate separate words within the text
+                   (since it would have been very difficult for the masorete to insert a space between them after the consonants were written).
+               Gen 41:45 and 41:50 are also accompanied by Mp notes  
+                 &#x05ea;&#x05e8;&#x05ea;&#x05d9;&#x05df;&#x0020;&#x05de;&#x05d9;&#x05dc;&#x05d9;&#x05df;&#x0020;&#x05db;&#x05ea;&#x05c4; ("Written as two words").
+               The Poti-phera case in Gen 46:20.10 does not have a similar Mp note, but has primary accents on both &#x05e4;&#x05d5;&#x05d8;&#x05d9; and &#x05e4;&#x05e8;&#x05e2;.  
+               </note>
+               
+               <note>
+               The UXLC follows the accents and Mp notes; it represents all 3 Poti-phera cases as word pairs.
+               </note>
+            </notes>
+
+            <transnotes>
+                <transnote>
+                    <action>Add</action>
+                    <type>c</type>
+                    <beforetext>&#x05e4;&#x05bc;&#x05a5;&#x05d5;&#x05b9;&#x05d8;&#x05b4;&#x05d9;</beforetext>
+                </transnote>
+            </transnotes>
+                                    
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>NoTextChange</type>
+        </change>
+
+         <change>
+            <n>9</n>
+            <citation>
+                <book>Gen</book>
+                <c>42</c>
+                <v>36</v>
+                <position>8</position>
+            </citation>
+            <author>
+                <name>Daniel Holman</name>
+                <mail>daniel.holman@mail.com</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Possible dagesh on first nun, add note 't'. No text change.</description>
+                    
+            <lc>
+                <folio>Folio_026B</folio>
+                <column>2</column>
+                <line>13</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05d0;&#x05b5;&#x05d9;&#x05e0;&#x05b6;&#x0599;&#x05e0;&#x05bc;&#x05d5;&#x05bc;&#x0599;</reftext>  
+            <refuni>  alef   tsere   yod   nun   segol   pashta   nun   dagesh   vav   dagesh   pashta     </refuni> 
+            <changetext>&#x05d0;&#x05b5;&#x05d9;&#x05e0;&#x05b6;&#x0599;&#x05e0;&#x05bc;&#x05d5;&#x05bc;&#x0599;</changetext>  
+            <changeuni> alef   tsere   yod   nun   segol   pashta   nun   dagesh   vav   dagesh   pashta    </changeuni> 
+                
+            <notes>
+               <note>The dagesh in the LC is well-positioned, poorly shaped.</note>
+            </notes>
+
+            <transnotes>
+                <transnote>
+                    <action>Add</action>
+                    <type>t</type>
+                    <beforetext>&#x05d0;&#x05b5;&#x05d9;&#x05e0;&#x05b6;&#x0599;</beforetext>
+                </transnote>
+            </transnotes>
+            
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>NoTextChange</type>
+        </change>
+        
+       
+         <change>
+            <n>10</n>
+            <citation>
+                <book>Gen</book>
+                <c>46</c>
+                <v>13</v>
+                <position>4</position>
+            </citation>
+            <author>
+                <name>Daniel Holman</name>
+                <mail>daniel.holman@mail.com</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Add note 't'; no text change.</description>
+                    
+            <lc>
+                <folio>Folio_028B</folio>
+                <column>3</column>
+                <line>21</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05d5;&#x05bc;&#x05e4;&#x05bb;&#x05d5;&#x05bc;&#x05b8;&#x0596;&#x05d4;</reftext>  
+            <refuni>  vav   dagesh   pe   qubuts   vav   dagesh   qamats   tipeha   he    </refuni> 
+            <changetext>&#x05d5;&#x05bc;&#x05e4;&#x05bb;&#x05d5;&#x05bc;&#x05b8;&#x0596;&#x05d4;</changetext>  
+            <changeuni> vav   dagesh   pe   qubuts   vav   dagesh   qamats   tipeha   he    </changeuni> 
+                            
+            <notes>
+               <note>The qamats is nearly invisible.</note>
+               <note>The tipeha is very late, but clearly belongs to the nun.</note>
+            </notes>
+
+            <transnotes>
+                <transnote>
+                    <action>Add</action>
+                    <type>t</type>
+                    <beforetext>&#x05d5;&#x05bc;&#x05e4;&#x05bb;&#x05d5;&#x05bc;&#x05b8;&#x0596;&#x05d4;</beforetext>
+                </transnote>
+            </transnotes>
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>NoTextChange</type>
+        </change>
+        
+        <change>
+            <n>11</n>
+            <citation>
+                <book>Gen</book>
+                <c>46</c>
+                <v>20</v>
+                <position>10</position>
+            </citation>
+            <author>
+                <name>Daniel Holman</name>
+                <mail>daniel.holman@mail.com</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>The split into two words is correct; add note 'c'.</description>
+                    
+            <lc>
+                <folio>Folio_029A</folio>
+                <column>1</column>
+                <line>12</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05e4;&#x05bc;&#x05a5;&#x05d5;&#x05b9;&#x05d8;&#x05b4;&#x05d9;</reftext>  
+            <refuni>  pe   dagesh   merkha   vav   holam   tet   hiriq   yod     </refuni> 
+            <changetext>&#x05e4;&#x05bc;&#x05a5;&#x05d5;&#x05b9;&#x05d8;&#x05b4;&#x05d9;</changetext>  
+            <changeuni> pe   dagesh   merkha   vav   holam   tet   hiriq   yod      </changeuni> 
+                
+             <notes>
+               <note>
+               The two Egyptian names  &#x05e4;&#x05d5;&#x05d8;&#x05d9;&#x05e4;&#x05e8; and &#x05e4;&#x05d5;&#x05d8;&#x05d9;&#x05e4;&#x05e8;&#x05e2; are similar, 
+                   but have different word divisions based on their accents and Masorah Parva (Mp) notes in the margins. 
+               </note>
+               
+               <note>    
+               The following translations are from The Contemporary Torah, JPS, 2006, available as the English translation at the "Sefaria: Miqra according to the Masorah" link.
+               &#x05e4;&#x05d5;&#x05d8;&#x05d9;&#x05e4;&#x05e8; is written Potiphar, and described as "a courtier of Pharaoh and his prefect."
+               Potiphar occurs twice: Gen 37:36.6 and 39:1.5.
+               &#x05e4;&#x05d5;&#x05d8;&#x05d9;&#x05e4;&#x05e8;&#x05e2; is written Poti-phera and described as "priest of On".
+               Poti-phera occurs 3 times: Gen 41:45.12,  41:50.14, and 46:20.10.
+               </note>
+               
+               <note>
+               The LC text displays both &#x05e4;&#x05d5;&#x05d8;&#x05d9;&#x05e4;&#x05e8; and &#x05e4;&#x05d5;&#x05d8;&#x05d9;&#x05e4;&#x05e8;&#x05e2; without spacing indicating word divisions.
+               However, both the accents and the Mp notes indicate that  &#x05e4;&#x05d5;&#x05d8;&#x05d9;&#x05e4;&#x05e8;&#x05e2;, 
+                   Poti-phera, should be considered as two words:  &#x05e4;&#x05d5;&#x05d8;&#x05d9; &#x05e4;&#x05e8;&#x05e2;.
+                   
+               When the LC text displays the 2 Potiphar cases &#x05e4;&#x05d5;&#x05d8;&#x05d9;&#x05e4;&#x05e8; has a single primary accent;
+                  when the LC text displays the three Poti-phera cases both &#x05e4;&#x05d5;&#x05d8;&#x05d9; and &#x05e4;&#x05e8;&#x05e2; have a single primary accent.
+               Breuer suggests that the primary accents are the masorete's way to indicate separate words within the text
+                   (since it would have been very difficult for the masorete to insert a space between them after the consonants were written).
+               Gen 41:45 and 41:50 are also accompanied by Mp notes  
+                 &#x05ea;&#x05e8;&#x05ea;&#x05d9;&#x05df;&#x0020;&#x05de;&#x05d9;&#x05dc;&#x05d9;&#x05df;&#x0020;&#x05db;&#x05ea;&#x05c4; ("Written as two words").
+               The Poti-phera case in Gen 46:20.10 does not have a similar Mp note, but has primary accents on both &#x05e4;&#x05d5;&#x05d8;&#x05d9; and &#x05e4;&#x05e8;&#x05e2;.  
+               </note>
+               
+               <note>
+               The UXLC follows the accents and Mp notes; it represents all 3 Poti-phera cases as word pairs.
+               </note>
+            </notes>
+
+            <transnotes>
+                <transnote>
+                    <action>Add</action>
+                    <type>c</type>
+                    <beforetext>&#x05e4;&#x05bc;&#x05a5;&#x05d5;&#x05b9;&#x05d8;&#x05b4;&#x05d9;</beforetext>
+                </transnote>
+            </transnotes>
+            
+                        
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>NoTextChange</type>
+        </change>
+       
+    </date>
+    
+<!--  Holman Exodus changes -->
+
+    <date>
+    
+        <date>2022.04.01</date>
+        
+        <change>
+            <n>1</n>
+            <citation>
+                <book>Ex</book>
+                <c>1</c>
+                <v>15</v>
+                <position>2</position>
+            </citation>
+            <author>
+                <name>Daniel Holman</name>
+                <mail>daniel.holman@mail.com</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Remove sheva from final kaf</description>
+                    
+            <lc>
+                <folio>Folio_031B</folio>
+                <column>3</column>
+                <line>19</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05de;&#x05b6;&#x05a3;&#x05dc;&#x05b6;&#x05da;&#x05b0;</reftext>  
+            <refuni>  mem   segol   munah   lamed   segol   final-kaf   sheva   </refuni> 
+            <changetext>&#x05de;&#x05b6;&#x05a3;&#x05dc;&#x05b6;&#x05da;</changetext>  
+            <changeuni>  mem   segol   munah   lamed   segol   final-kaf </changeuni> 
+                
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>vowel</type>
+        </change>
+        
+        <change>
+            <n>2</n>
+            <citation>
+                <book>Ex</book>
+                <c>6</c>
+                <v>27</v>
+                <position>5</position>
+            </citation>
+            <author>
+                <name>Daniel Holman</name>
+                <mail>daniel.holman@mail.com</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Remove sheva from final kaf.</description>
+                    
+            <lc>
+                <folio>Folio_034B</folio>
+                <column>2</column>
+                <line>15</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05de;&#x05b6;&#x05bd;&#x05dc;&#x05b6;&#x05da;&#x05b0;&#x05be;</reftext>  
+            <refuni>  mem   segol   meteg   lamed   segol   final-kaf   sheva   maqaf      </refuni> 
+            <changetext>&#x05de;&#x05b6;&#x05bd;&#x05dc;&#x05b6;&#x05da;&#x05be;</changetext>  
+            <changeuni>  mem   segol   meteg   lamed   segol   final-kaf   maqaf    </changeuni> 
+                
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>vowel</type>
+        </change>
+    
+        
+        <change>
+            <n>3</n>
+            <citation>
+                <book>Ex</book>
+                <c>10</c>
+                <v>24</v>
+                <position>16</position>
+            </citation>
+            <author>
+                <name>Daniel Holman</name>
+                <mail>daniel.holman@mail.com</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Remove sheva from final kaf.</description>
+                    
+            <lc>
+                <folio>Folio_037A</folio>
+                <column>3</column>
+                <line>12</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05d9;&#x05b5;&#x05dc;&#x05b5;&#x05a5;&#x05da;&#x05b0;</reftext>  
+            <refuni>  yod   tsere   lamed   tsere   merkha   final-kaf   sheva       </refuni> 
+            <changetext>&#x05d9;&#x05b5;&#x05dc;&#x05b5;&#x05a5;&#x05da;</changetext>  
+            <changeuni>  yod   tsere   lamed   tsere   merkha   final-kaf   </changeuni> 
+                
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>vowel</type>
+        </change>
+
+        <change>
+            <n>4</n>
+            <citation>
+                <book>Ex</book>
+                <c>11</c>
+                <v>10</v>
+                <position>10</position>
+            </citation>
+            <author>
+                <name>Daniel Holman</name>
+                <mail>daniel.holman@mail.com</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Possible dagesh on yod, add note 't'. No text change.</description>
+                    
+            <lc>
+                <folio>Folio_037B</folio>
+                <column>2</column>
+                <line>10</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05d5;&#x05b7;&#x05d9;&#x05b0;&#x05d7;&#x05b7;&#x05d6;&#x05bc;&#x05b5;&#x05a4;&#x05e7;</reftext>  
+            <refuni>  vav   patah   yod   sheva   het   patah   zayin   dagesh   tsere   mahapakh   qof    </refuni> 
+            <changetext>&#x05d5;&#x05b7;&#x05d9;&#x05b0;&#x05d7;&#x05b7;&#x05d6;&#x05bc;&#x05b5;&#x05a4;&#x05e7;</changetext>  
+            <changeuni>  vav   patah   yod   sheva   het   patah   zayin   dagesh   tsere   mahapakh   qof  </changeuni> 
+                
+            <notes>
+               <note>The dagesh in the LC is well-positioned but very light. Compare with dagesh on the zayin.</note>
+            </notes>
+
+            <transnotes>
+                <transnote>
+                    <action>Add</action>
+                    <type>t</type>
+                    <beforetext>&#x05d5;&#x05b7;&#x05d9;&#x05b0;</beforetext>
+                </transnote>
+            </transnotes>
+            
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval>
+            <status>Approved</status>
+            <type>NoTextChange</type>
+        </change>
+
+        <change>
+            <n>5</n>
+            <citation>
+                <book>Ex</book>
+                <c>14</c>
+                <v>9</v>
+                <position>4</position>
+            </citation>
+            <author>
+                <name>Daniel Holman</name>
+                <mail>daniel.holman@mail.com</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Remove dagesh on sin.</description>
+                    
+            <lc>
+                <folio>Folio_039A</folio>
+                <column>3</column>
+                <line>22</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05d5;&#x05b7;&#x05d9;&#x05bc;&#x05b7;&#x05e9;&#x05c2;&#x05bc;&#x05b4;&#x05a4;&#x05d9;&#x05d2;&#x05d5;&#x05bc;</reftext>  
+            <refuni>  vav   patah   yod   dagesh   patah   shin   sin-dot   dagesh   hiriq   mahapakh   yod   gimel   vav   dagesh     </refuni> 
+            <changetext>&#x05d5;&#x05b7;&#x05d9;&#x05bc;&#x05b7;&#x05e9;&#x05c2;&#x05b4;&#x05a4;&#x05d9;&#x05d2;&#x05d5;&#x05bc;</changetext>  
+            <changeuni>  vav   patah   yod   dagesh   patah   shin   sin-dot   hiriq   mahapakh   yod   gimel   vav   dagesh   </changeuni> 
+            
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>vowel</type>
+        </change>
+
+        <change>
+            <n>6</n>
+            <citation>
+                <book>Ex</book>
+                <c>16</c>
+                <v>9</v>
+                <position>1</position>
+            </citation>
+            <author>
+                <name>Daniel Holman</name>
+                <mail>daniel.holman@mail.com</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Remove dagesh on yod.</description>
+                    
+            <lc>
+                <folio>Folio_041A</folio>
+                <column>1</column>
+                <line>26</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05d5;&#x05b7;&#x05d9;&#x05bc;&#x05b9;&#x05a4;&#x05d0;&#x05de;&#x05b6;&#x05e8;</reftext>  
+            <refuni>  vav   patah   yod   dagesh   holam   mahapakh   alef   mem   segol   resh     </refuni> 
+            <changetext>&#x05d5;&#x05b7;&#x05d9;&#x05b9;&#x05a4;&#x05d0;&#x05de;&#x05b6;&#x05e8;</changetext>  
+            <changeuni> vav   patah   yod   holam   mahapakh   alef   mem   segol   resh   </changeuni> 
+            
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>vowel</type>
+        </change>
+        
+        <change>
+            <n>7</n>
+            <citation>
+                <book>Ex</book>
+                <c>16</c>
+                <v>29</v>
+                <position>6</position>
+            </citation>
+            <author>
+                <name>Daniel Holman</name>
+                <mail>daniel.holman@mail.com</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Remove dagesh on shin.</description>
+                    
+            <lc>
+                <folio>Folio_041B</folio>
+                <column>1</column>
+                <line>12</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05d4;&#x05b7;&#x05e9;&#x05c1;&#x05bc;&#x05b7;&#x05d1;&#x05bc;&#x05b8;&#x05ea;&#x0592;</reftext>  
+            <refuni> he   patah   shin   shin-dot   dagesh   patah   bet   dagesh   qamats   tav   segol     </refuni> 
+            <changetext>&#x05d4;&#x05b7;&#x05e9;&#x05c1;&#x05b7;&#x05d1;&#x05bc;&#x05b8;&#x05ea;&#x0592;</changetext>  
+            <changeuni> he   patah   shin   shin-dot   patah   bet   dagesh   qamats   tav   segol   </changeuni> 
+            
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>vowel</type>
+        </change>
+        
+        
+        <change>
+            <n>8</n>
+            <citation>
+                <book>Ex</book>
+                <c>18</c>
+                <v>25</v>
+                <position>7</position>
+            </citation>
+            <author>
+                <name>Daniel Holman</name>
+                <mail>daniel.holman@mail.com</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Remove dagesh on yod.</description>
+                    
+            <lc>
+                <folio>Folio_042B</folio>
+                <column>1</column>
+                <line>26</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05d5;&#x05b7;&#x05d9;&#x05bc;&#x05b4;&#x05ea;&#x05bc;&#x05b5;&#x05a5;&#x05df;</reftext>  
+            <refuni> vav   patah   yod   dagesh   hiriq   tav   dagesh   tsere   merkha   final-nun     </refuni> 
+            <changetext>&#x05d5;&#x05b7;&#x05d9;&#x05b4;&#x05ea;&#x05bc;&#x05b5;&#x05a5;&#x05df;</changetext>  
+            <changeuni> vav   patah   yod   hiriq   tav   dagesh   tsere   merkha   final-nun   </changeuni> 
+            
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>vowel</type>
+        </change>
+
+        <change>
+            <n>9</n>
+            <citation>
+                <book>Ex</book>
+                <c>20</c>
+                <v>8</v>
+                <position>4</position>
+            </citation>
+            <author>
+                <name>Daniel Holman</name>
+                <mail>daniel.holman@mail.com</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Remove dagesh from shin.</description>
+                    
+            <lc>
+                <folio>Folio_043A</folio>
+                <column>3</column>
+                <line>7</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05d4;&#x05b7;&#x05e9;&#x05c1;&#x05bc;&#x05b7;&#x05d1;&#x05bc;&#x05b8;&#x0596;&#x059c;&#x05ea;</reftext>  
+            <refuni> he   patah   shin   shin-dot   dagesh   patah   bet   dagesh   qamats   tipeha   geresh   tav     </refuni> 
+            <changetext>&#x05d4;&#x05b7;&#x05e9;&#x05c1;&#x05b7;&#x05d1;&#x05bc;&#x05b8;&#x0596;&#x059c;&#x05ea;</changetext>  
+            <changeuni> he   patah   shin   shin-dot   patah   bet   dagesh   qamats   tipeha   geresh   tav   </changeuni> 
+            
+             <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>vowel</type>
+        </change>
+
+        <change>
+            <n>10</n>
+            <citation>
+                <book>Ex</book>
+                <c>20</c>
+                <v>11</v>
+                <position>25</position>
+            </citation>
+            <author>
+                <name>Daniel Holman</name>
+                <mail>daniel.holman@mail.com</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Remove dagesh from shin.</description>
+                    
+            <lc>
+                <folio>Folio_043A</folio>
+                <column>3</column>
+                <line>18</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05d4;&#x05b7;&#x05e9;&#x05c1;&#x05bc;&#x05b7;&#x05d1;&#x05bc;&#x05b8;&#x0596;&#x05ea;</reftext>  
+            <refuni> he   patah   shin   shin-dot   dagesh   patah   bet   dagesh   qamats   tipeha   tav     </refuni> 
+            <changetext>&#x05d4;&#x05b7;&#x05e9;&#x05c1;&#x05b7;&#x05d1;&#x05bc;&#x05b8;&#x0596;&#x05ea;</changetext>  
+            <changeuni> he   patah   shin   shin-dot   patah   bet   dagesh   qamats   tipeha   tav   </changeuni> 
+            
+             <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>vowel</type>
+        </change>
+        
+        <change>
+            <n>11</n>
+            <citation>
+                <book>Ex</book>
+                <c>21</c>
+                <v>9</v>
+                <position>7</position>
+            </citation>
+            <author>
+                <name>Daniel Holman</name>
+                <mail>daniel.holman@mail.com</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Remove dagesh from he.</description>
+                    
+            <lc>
+                <folio>Folio_043B</folio>
+                <column>3</column>
+                <line>10</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05dc;&#x05bc;&#x05b8;&#x05bd;&#x05d4;&#x05bc;&#x05c3;</reftext>  
+            <refuni> lamed   dagesh   qamats   meteg   he   dagesh   sof-pasuq     </refuni> 
+            <changetext>&#x05dc;&#x05bc;&#x05b8;&#x05bd;&#x05d4;&#x05c3;</changetext>  
+            <changeuni> lamed   dagesh  qamats   meteg   he   sof-pasuq   </changeuni> 
+            
+             <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>vowel</type>
+        </change>
+         
+        <change>
+            <n>12</n>
+            <citation>
+                <book>Ex</book>
+                <c>22</c>
+                <v>4</v>
+                <position>18</position>
+            </citation>
+            <author>
+                <name>Daniel Holman</name>
+                <mail>daniel.holman@mail.com</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Remove sof pasuq; add note 'c'.</description>
+                    
+            <lc>
+                <folio>Folio_044A</folio>
+                <column>3</column>
+                <line>21</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05d9;&#x05b0;&#x05e9;&#x05c1;&#x05b7;&#x05dc;&#x05bc;&#x05b5;&#x05bd;&#x05dd;&#x05c3;</reftext>  
+            <refuni> yod   sheva   shin   shin-dot   patah   lamed   dagesh   tsere   meteg   final-mem   sof-pasuq      </refuni> 
+            <changetext>&#x05d9;&#x05b0;&#x05e9;&#x05c1;&#x05b7;&#x05dc;&#x05bc;&#x05b5;&#x05bd;&#x05dd;</changetext>  
+            <changeuni> yod   sheva   shin   shin-dot   patah   lamed   dagesh   tsere   meteg   final-mem   </changeuni> 
+            
+            <transnotes>
+                <transnote>
+                    <action>Add</action>
+                    <type>c</type>
+                    <beforetext>&#x05d9;&#x05b0;&#x05e9;&#x05c1;&#x05b7;&#x05dc;&#x05bc;&#x05b5;&#x05bd;&#x05dd;</beforetext>
+                </transnote>
+            </transnotes>
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>accent</type>
+        </change>
+ 
+        
+         <change>
+            <n>13</n>
+            <citation>
+                <book>Ex</book>
+                <c>26</c>
+                <v>3</v>
+                <position>3</position>
+            </citation>
+            <author>
+                <name>Daniel Holman</name>
+                <mail>daniel.holman@mail.com</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Add dagesh to second yod; add note 't'.</description>
+                    
+            <lc>
+                <folio>Folio_046B</folio>
+                <column>2</column>
+                <line>7</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05ea;&#x05bc;&#x05b4;&#x05bd;&#x05d4;&#x05b0;&#x05d9;&#x05b6;&#x0599;&#x05d9;&#x05df;&#x05b8;&#x0599;</reftext>  
+            <refuni> tav   dagesh   hiriq   meteg   he   sheva   yod   segol   pashta   yod   final-nun   qamats   pashta      </refuni> 
+            <changetext>&#x05ea;&#x05bc;&#x05b4;&#x05bd;&#x05d4;&#x05b0;&#x05d9;&#x05b6;&#x0599;&#x05d9;&#x05bc;&#x05df;&#x05b8;&#x0599;</changetext>  
+            <changeuni> tav   dagesh   hiriq   meteg   he   sheva   yod   segol   pashta   yod   dagesh  final-nun   qamats   pashta   </changeuni> 
+
+            <notes>
+               <note>The dagesh in the LC is well-positioned, well-sized, but reddish. The text has high quality in this region.</note>
+            </notes>
+            
+            <transnotes>
+                <transnote>
+                    <action>Add</action>
+                    <type>t</type>
+                    <beforetext>&#x05ea;&#x05bc;&#x05b4;&#x05bd;&#x05d4;&#x05b0;&#x05d9;&#x05b6;&#x0599;&#x05d9;&#x05bc;</beforetext>
+                </transnote>
+            </transnotes>
+            
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>vowel</type>
+        </change>
+        
+        <change>
+            <n>14</n>
+            <citation>
+                <book>Ex</book>
+                <c>27</c>
+                <v>5</v>
+                <position>4</position>
+            </citation>
+            <author>
+                <name>Daniel Holman</name>
+                <mail>daniel.holman@mail.com</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Add dagesh on bet; add note 't'.</description>
+                    
+            <lc>
+                <folio>Folio_047B</folio>
+                <column>1</column>
+                <line>11</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05db;&#x05bc;&#x05b7;&#x05e8;&#x05b0;&#x05db;&#x05bc;&#x05b9;&#x05a5;&#x05d1;</reftext>  
+            <refuni> kaf   dagesh   patah   resh   sheva   kaf   dagesh   holam   merkha   bet      </refuni> 
+            <changetext>&#x05db;&#x05bc;&#x05b7;&#x05e8;&#x05b0;&#x05db;&#x05bc;&#x05b9;&#x05a5;&#x05d1;&#x05bc;</changetext>  
+            <changeuni> kaf   dagesh   patah   resh   sheva   kaf   dagesh   holam   merkha   bet   dagesh </changeuni> 
+
+            <notes>
+               <note>The dagesh in the LC is well-positioned, well-sized, but slightly reddish.</note>
+            </notes>
+            
+            <transnotes>
+                <transnote>
+                    <action>Add</action>
+                    <type>t</type>
+                    <beforetext>&#x05db;&#x05bc;&#x05b7;&#x05e8;&#x05b0;&#x05db;&#x05bc;&#x05b9;&#x05a5;&#x05d1;&#x05bc;</beforetext>
+                </transnote>
+            </transnotes>
+            
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>vowel</type>
+        </change>
+                
+        <change>
+            <n>15</n>
+            <citation>
+                <book>Ex</book>
+                <c>28</c>
+                <v>10</v>
+                <position>8</position>
+            </citation>
+            <author>
+                <name>Daniel Holman</name>
+                <mail>daniel.holman@mail.com</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Remove dagesh from first shin.</description>
+                    
+            <lc>
+                <folio>Folio_048A</folio>
+                <column>1</column>
+                <line>15</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05d4;&#x05b7;&#x05e9;&#x05c1;&#x05bc;&#x05b4;&#x05e9;&#x05c1;&#x05bc;&#x05b8;&#x05a7;&#x05d4;</reftext>  
+            <refuni> he   patah   shin   shin-dot   dagesh   hiriq   shin   shin-dot   dagesh   qamats   darga   he    </refuni> 
+            <changetext>&#x05d4;&#x05b7;&#x05e9;&#x05c1;&#x05b4;&#x05e9;&#x05c1;&#x05bc;&#x05b8;&#x05a7;&#x05d4;</changetext>  
+            <changeuni> he   patah   shin   shin-dot   hiriq   shin   shin-dot   dagesh   qamats   darga   he </changeuni> 
+
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>vowel</type>
+        </change>
+        
+        
+        <change>
+            <n>16</n>
+            <citation>
+                <book>Ex</book>
+                <c>31</c>
+                <v>15</v>
+                <position>15</position>
+            </citation>
+            <author>
+                <name>Daniel Holman</name>
+                <mail>daniel.holman@mail.com</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Remove dagesh from shin.</description>
+                    
+            <lc>
+                <folio>Folio_0050B</folio>
+                <column>2</column>
+                <line>13</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05d4;&#x05b7;&#x05e9;&#x05c1;&#x05bc;&#x05b7;&#x05d1;&#x05bc;&#x05b8;&#x0596;&#x05ea;</reftext>  
+            <refuni> he   patah   shin   shin-dot   dagesh   patah   bet   dagesh   qamats   tipeha   tav    </refuni> 
+            <changetext>&#x05d4;&#x05b7;&#x05e9;&#x05c1;&#x05b7;&#x05d1;&#x05bc;&#x05b8;&#x0596;&#x05ea;</changetext>  
+            <changeuni> he   patah   shin   shin-dot   patah   bet   dagesh   qamats   tipeha   tav </changeuni> 
+            
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>vowel</type>
+        </change>
+        
+        <change>
+            <n>17</n>
+            <citation>
+                <book>Ex</book>
+                <c>32</c>
+                <v>19</v>
+                <position>18</position>
+            </citation>
+            <author>
+                <name>Daniel Holman</name>
+                <mail>daniel.holman@mail.com</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Add dagesh to yod.</description>
+                    
+            <lc>
+                <folio>Folio_051A</folio>
+                <column>2</column>
+                <line>12</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05d5;&#x05b7;&#x05d9;&#x05b0;&#x05e9;&#x05c1;&#x05b7;&#x05d1;&#x05bc;&#x05b5;&#x05a5;&#x05e8;</reftext>  
+            <refuni> vav   patah   yod   sheva   shin   shin-dot   patah   bet   dagesh   tsere   merkha   resh    </refuni> 
+            <changetext>&#x05d5;&#x05b7;&#x05d9;&#x05b0;&#x05bc;&#x05e9;&#x05c1;&#x05b7;&#x05d1;&#x05bc;&#x05b5;&#x05a5;&#x05e8;</changetext>  
+            <changeuni> vav   patah   yod   sheva   dagesh   shin   shin-dot   patah   bet   dagesh   tsere   merkha   resh </changeuni> 
+            
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>vowel</type>
+        </change>
+        
+        <change>
+            <n>18</n>
+            <citation>
+                <book>Ex</book>
+                <c>34</c>
+                <v>19</v>
+                <position>10</position>
+            </citation>
+            <author>
+                <name>Daniel Holman</name>
+                <mail>daniel.holman@mail.com</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Change sin-dot to shin-dot on shin.</description>
+                    
+            <lc>
+                <folio>Folio_052A</folio>
+                <column>3</column>
+                <line>18</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05d5;&#x05b8;&#x05e9;&#x05c2;&#x05b6;&#x05bd;&#x05d4;&#x05c3;</reftext>  
+            <refuni> vav   qamats   shin   sin-dot   segol   meteg   he   sof-pasuq     </refuni> 
+            <changetext>&#x05d5;&#x05b8;&#x05e9;&#x05c1;&#x05b6;&#x05bd;&#x05d4;&#x05c3;</changetext>  
+            <changeuni>vav   qamats   shin   shin-dot   segol   meteg   he   sof-pasuq  </changeuni> 
+            
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>vowel</type>
+        </change>
+        
+        <change>
+            <n>19</n>
+            <citation>
+                <book>Ex</book>
+                <c>35</c>
+                <v>3</v>
+                <position>7</position>
+            </citation>
+            <author>
+                <name>Daniel Holman</name>
+                <mail>daniel.holman@mail.com</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Remove dagesh on shin.</description>
+                    
+            <lc>
+                <folio>Folio_052B</folio>
+                <column>3</column>
+                <line>5</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05d4;&#x05b7;&#x05e9;&#x05c1;&#x05bc;&#x05b7;&#x05d1;&#x05bc;&#x05b8;&#x05bd;&#x05ea;&#x05c3;</reftext>  
+            <refuni> he   patah   shin   shin-dot   dagesh   patah   bet   dagesh   qamats   meteg   tav   sof-pasuq     </refuni> 
+            <changetext>&#x05d4;&#x05b7;&#x05e9;&#x05c1;&#x05b7;&#x05d1;&#x05bc;&#x05b8;&#x05bd;&#x05ea;&#x05c3;</changetext>  
+            <changeuni>he   patah   shin   shin-dot   patah   bet   dagesh   qamats   meteg   tav   sof-pasuq  </changeuni> 
+            
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>vowel</type>
+        </change>
+        
+        
+        <change>
+            <n>20</n>
+            <citation>
+                <book>Ex</book>
+                <c>35</c>
+                <v>26</v>
+                <position>8</position>
+            </citation>
+            <author>
+                <name>Daniel Holman</name>
+                <mail>daniel.holman@mail.com</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Add dagesh to first vav.</description>
+                    
+            <lc>
+                <folio>Folio_053A</folio>
+                <column>2</column>
+                <line>16</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05d8;&#x05b8;&#x05d5;&#x0596;&#x05d5;&#x05bc;</reftext>  
+            <refuni> tet   qamats   vav   tipeha   vav   dagesh      </refuni> 
+            <changetext>&#x05d8;&#x05b8;&#x05d5;&#x05bc;&#x0596;&#x05d5;&#x05bc;</changetext>  
+            <changeuni>tet   qamats   vav   dagesh tipeha   vav   dagesh   </changeuni> 
+              
+            <notes>
+               <note>The dagesh in the LC is well-positioned, dark, and nearly attached to the vav.</note>
+            </notes>
+            
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>vowel</type>
+        </change>
+        
+        <change>
+            <n>21</n>
+            <citation>
+                <book>Ex</book>
+                <c>38</c>
+                <v>20</v>
+                <position>1</position>
+            </citation>
+            <author>
+                <name>Daniel Holman</name>
+                <mail>daniel.holman@mail.com</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Remove maqaf; add note 'c'.</description>
+                    
+            <lc>
+                <folio>Folio_055A</folio>
+                <column>2</column>
+                <line>1</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05d5;&#x05b0;&#x05bd;&#x05db;&#x05b8;&#x05dc;&#x05be;</reftext>  
+            <refuni> vav   sheva   meteg   kaf   qamats   lamed   maqaf     </refuni> 
+            <changetext>&#x05d5;&#x05b0;&#x05bd;&#x05db;&#x05b8;&#x05dc;</changetext>  
+            <changeuni>vav   sheva   meteg   kaf   qamats   lamed   </changeuni> 
+            
+            <notes>
+               <note>This word lacks an accent.</note>
+            </notes>
+            
+            <transnotes>
+                <transnote>
+                    <action>Add</action>
+                    <type>c</type>
+                    <beforetext>&#x05d5;&#x05b0;&#x05bd;&#x05db;&#x05b8;&#x05dc;</beforetext>
+                </transnote>
+            </transnotes>
+            
+                          
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>accent</type>
+        </change>
+        
+        <change>
+            <n>22</n>
+            <citation>
+                <book>Ex</book>
+                <c>38</c>
+                <v>21</v>
+                <position>12</position>
+            </citation>
+            <author>
+                <name>Daniel Holman</name>
+                <mail>daniel.holman@mail.com</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Add dagesh to vav.</description>
+                    
+            <lc>
+                <folio>Folio_055A</folio>
+                <column>2</column>
+                <line>6</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05d4;&#x05b7;&#x05dc;&#x05b0;&#x05d5;&#x05b4;&#x05d9;&#x05bc;&#x05b4;&#x0594;&#x05dd;</reftext>  
+            <refuni> he   patah   lamed   sheva   vav   hiriq   yod   dagesh   hiriq   zaqef-qatan   final-mem    </refuni> 
+            <changetext>&#x05d4;&#x05b7;&#x05dc;&#x05b0;&#x05d5;&#x05bc;&#x05b4;&#x05d9;&#x05bc;&#x05b4;&#x0594;&#x05dd;</changetext>  
+            <changeuni>he   patah   lamed   sheva   vav   dagesh   hiriq   yod   dagesh   hiriq   zaqef-qatan   final-mem  </changeuni> 
+                          
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>vowel</type>
+        </change>
+        
+    </date>
+    
+<!--  Holman Leviticus changes -->
+
+    <date>
+    
+        <date>2022.04.03</date>
+        
+        <change>
+            <n>1</n>
+            <citation>
+                <book>Lev</book>
+                <c>4</c>
+                <v>24</v>
+                <position>7</position>
+            </citation>
+            <author>
+                <name>Daniel Holman</name>
+                <mail>daniel.holman@mail.com</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Change zaqef-qatan to revia on tav.</description>
+                    
+            <lc>
+                <folio>Folio_058B</folio>
+                <column>1</column>
+                <line>1</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05d0;&#x05b9;&#x05ea;&#x0594;&#x05d5;&#x05b9;</reftext>  
+            <refuni> alef   holam   tav   zaqef-qatan   vav   holam    </refuni> 
+            <changetext>&#x05d0;&#x05b9;&#x05ea;&#x0597;&#x05d5;&#x05b9;</changetext>  
+            <changeuni> alef   holam   tav   revia   vav   holam  </changeuni> 
+                          
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>accent</type>
+        </change>
+        
+        <change>
+            <n>2</n>
+            <citation>
+                <book>Lev</book>
+                <c>5</c>
+                <v>2</v>
+                <position>12</position>
+            </citation>
+            <author>
+                <name>Daniel Holman</name>
+                <mail>daniel.holman@mail.com</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Change mahapakh to yetiv on alef.</description>
+                    
+            <lc>
+                <folio>Folio_058B</folio>
+                <column>2</column>
+                <line>26</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05d0;&#x05a4;&#x05d5;&#x05b9;</reftext>  
+            <refuni> alef   mahapakh   vav   holam    </refuni> 
+            <changetext>&#x05d0;&#x059a;&#x05d5;&#x05b9;</changetext>
+            <changeuni> alef  yetiv   vav   holam   </changeuni> 
+                          
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>accent</type>
+        </change>
+        
+        <change>
+            <n>3</n>
+            <citation>
+                <book>Lev</book>
+                <c>7</c>
+                <v>12</v>
+                <position>21</position>
+            </citation>
+            <author>
+                <name>Daniel Holman</name>
+                <mail>daniel.holman@mail.com</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Remove dagesh from bet.</description>
+                    
+            <lc>
+                <folio>Folio_060A</folio>
+                <column>1</column>
+                <line>16</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05d1;&#x05bc;&#x05b7;&#x05e9;&#x05c1;&#x05bc;&#x05b8;&#x05bd;&#x05de;&#x05b6;&#x05df;&#x05c3;</reftext>  
+            <refuni> bet   dagesh   patah   shin   shin-dot   dagesh   qamats   meteg   mem   segol   final-nun   sof-pasuq    </refuni> 
+            <changetext>&#x05d1;&#x05b7;&#x05e9;&#x05c1;&#x05bc;&#x05b8;&#x05bd;&#x05de;&#x05b6;&#x05df;&#x05c3;</changetext>  
+            <changeuni> bet   patah   shin   shin-dot   dagesh   qamats   meteg   mem   segol   final-nun   sof-pasuq   </changeuni> 
+                          
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>vowel</type>
+        </change>
+        
+        <change>
+            <n>4</n>
+            <citation>
+                <book>Lev</book>
+                <c>8</c>
+                <v>11</v>
+                <position>3</position>
+            </citation>
+            <author>
+                <name>Daniel Holman</name>
+                <mail>daniel.holman@mail.com</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Add meteg after patah on ayin; add note 't'.</description>
+                    
+            <lc>
+                <folio>Folio_060B</folio>
+                <column>2</column>
+                <line>20</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05e2;&#x05b7;&#x05dc;&#x05be;</reftext>  
+            <refuni> ayin   patah   lamed   maqaf     </refuni> 
+            <changetext>&#x05e2;&#x05b7;&#x05bd;&#x05dc;&#x05be;</changetext> 
+            <changeuni> ayin   patah  meteg  lamed   maqaf    </changeuni> 
+                          
+            <notes>
+               <note>The meteg is light, but well shaped.</note>
+            </notes>
+            
+            <transnotes>
+                <transnote>
+                    <action>Add</action>
+                    <type>t</type>
+                    <beforetext>&#x05e2;&#x05b7;&#x05bd;</beforetext>
+                </transnote>
+            </transnotes>
+            
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>accent</type>
+        </change>
+       
+        <change>
+            <n>5</n>
+            <citation>
+                <book>Lev</book>
+                <c>8</c>
+                <v>16</v>
+                <position>14</position>
+            </citation>
+            <author>
+                <name>Daniel Holman</name>
+                <mail>daniel.holman@mail.com</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Remove maqaf from end of word.</description>
+                    
+            <lc>
+                <folio>Folio_060B</folio>
+                <column>3</column>
+                <line>13</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05d5;&#x05b0;&#x05d0;&#x05b6;&#x05bd;&#x05ea;&#x05be;</reftext>  
+            <refuni> vav   sheva   alef   segol   meteg   tav   maqaf     </refuni> 
+            <changetext>&#x05d5;&#x05b0;&#x05d0;&#x05b6;&#x05bd;&#x05ea;</changetext> 
+            <changeuni> vav   sheva   alef   segol   meteg   tav   </changeuni> 
+                                      
+            
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>vowel</type>
+        </change>
+       
+        <change>
+            <n>6</n>
+            <citation>
+                <book>Lev</book>
+                <c>8</c>
+                <v>24</v>
+                <position>5</position>
+            </citation>
+            <author>
+                <name>Daniel Holman</name>
+                <mail>daniel.holman@mail.com</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Remove dagesh from both yod and tav; add note 't'.</description>
+                    
+            <lc>
+                <folio>Folio_061A</folio>
+                <column>1</column>
+                <line>12</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05d5;&#x05b7;&#x05d9;&#x05bc;&#x05b4;&#x05ea;&#x05bc;&#x05b5;&#x05a8;&#x05df;</reftext>  
+            <refuni> vav   patah   yod   dagesh   hiriq   tav   dagesh   tsere   qadma   final-nun     </refuni> 
+            <changetext>&#x05d5;&#x05b7;&#x05d9;&#x05b4;&#x05ea;&#x05b5;&#x05a8;&#x05df;</changetext> 
+            <changeuni> vav   patah   yod   hiriq   tav    tsere   qadma   final-nun   </changeuni> 
+                                      
+            <notes>
+               <note>No dagesh at all on the yod. There is a possible, very faint dagesh on the tav.</note>
+            </notes>
+            
+            <transnotes>
+                <transnote>
+                    <action>Add</action>
+                    <type>t</type>
+                    <beforetext>&#x05d5;&#x05b7;&#x05d9;&#x05b4;&#x05ea;&#x05b5;&#x05a8;</beforetext>
+                </transnote>
+            </transnotes>
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>vowel</type>
+        </change>
+       
+        <change>
+            <n>7</n>
+            <citation>
+                <book>Lev</book>
+                <c>8</c>
+                <v>28</v>
+                <position>1</position>
+            </citation>
+            <author>
+                <name>Daniel Holman</name>
+                <mail>daniel.holman@mail.com</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Remove dagesh on yod; add note 't'.</description>
+                    
+            <lc>
+                <folio>Folio_061A</folio>
+                <column>2</column>
+                <line>1</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05d5;&#x05b7;&#x05d9;&#x05bc;&#x05b4;&#x05e7;&#x05bc;&#x05b7;&#x05a8;&#x05d7;</reftext>  
+            <refuni> vav   patah   yod   dagesh   hiriq   qof   dagesh   patah   qadma   het      </refuni> 
+            <changetext>&#x05d5;&#x05b7;&#x05d9;&#x05b4;&#x05e7;&#x05bc;&#x05b7;&#x05a8;&#x05d7;</changetext> 
+            <changeuni> vav   patah   yod  hiriq   qof   dagesh   patah   qadma   het    </changeuni> 
+                                      
+            <notes>
+               <note>A possible dagesh on the yod is very faint.</note>
+            </notes>
+            
+            <transnotes>
+                <transnote>
+                    <action>Add</action>
+                    <type>t</type>
+                    <beforetext>&#x05d5;&#x05b7;&#x05d9;&#x05b4;</beforetext>
+                </transnote>
+            </transnotes>
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>vowel</type>
+        </change>
+               
+        <change>
+            <n>8</n>
+            <citation>
+                <book>Lev</book>
+                <c>8</c>
+                <v>29</v>
+                <position>1</position>
+            </citation>
+            <author>
+                <name>Daniel Holman</name>
+                <mail>daniel.holman@mail.com</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Remove dagesh on yod.</description>
+                    
+            <lc>
+                <folio>Folio_061A</folio>
+                <column>2</column>
+                <line>5</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05d5;&#x05b7;&#x05d9;&#x05bc;&#x05b4;&#x05e7;&#x05bc;&#x05b7;&#x05a4;&#x05d7;</reftext>  
+            <refuni> vav   patah   yod   dagesh   hiriq   qof   dagesh   patah   mahapakh   het      </refuni> 
+            <changetext>&#x05d5;&#x05b7;&#x05d9;&#x05b4;&#x05e7;&#x05bc;&#x05b7;&#x05a4;&#x05d7;</changetext> 
+            <changeuni> vav   patah   yod   hiriq   qof   dagesh   patah   mahapakh   het    </changeuni> 
+                                                  
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>vowel</type>
+        </change>
+        
+        <change>
+            <n>9</n>
+            <citation>
+                <book>Lev</book>
+                <c>10</c>
+                <v>1</v>
+                <position>8</position>
+            </citation>
+            <author>
+                <name>Daniel Holman</name>
+                <mail>daniel.holman@mail.com</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Remove dagesh from yod.</description>
+                    
+            <lc>
+                <folio>Folio_061B</folio>
+                <column>3</column>
+                <line>7</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05d5;&#x05b7;&#x05d9;&#x05bc;&#x05b4;&#x05ea;&#x05bc;&#x05b0;&#x05e0;&#x05a4;&#x05d5;&#x05bc;</reftext>  
+            <refuni>  vav   patah   yod   dagesh   hiriq   tav   dagesh   sheva   nun   mahapakh   vav   dagesh     </refuni> 
+            <changetext>&#x05d5;&#x05b7;&#x05d9;&#x05b4;&#x05ea;&#x05bc;&#x05b0;&#x05e0;&#x05a4;&#x05d5;&#x05bc;</changetext> 
+            <changeuni>  vav   patah   yod    hiriq   tav   dagesh   sheva   nun   mahapakh   vav   dagesh    </changeuni> 
+
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>vowel</type>
+        </change>
+        
+        <change>
+            <n>10</n>
+            <citation>
+                <book>Lev</book>
+                <c>14</c>
+                <v>21</v>
+                <position>17</position>
+            </citation>
+            <author>
+                <name>Daniel Holman</name>
+                <mail>daniel.holman@mail.com</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Move merkha to bet; add note 'c'.</description>
+                    
+            <lc>
+                <folio>Folio_064B</folio>
+                <column>3</column>
+                <line>13</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05d1;&#x05bc;&#x05b8;&#x05dc;&#x05a5;&#x05d5;&#x05bc;&#x05dc;</reftext>  
+            <refuni> bet   dagesh   qamats   lamed   merkha   vav   dagesh   lamed      </refuni> 
+            <changetext>&#x05d1;&#x05bc;&#x05b8;&#x05a5;&#x05dc;&#x05d5;&#x05bc;&#x05dc;</changetext> 
+            <changeuni>  bet   dagesh   qamats   merkha   lamed   vav   dagesh   lamed     </changeuni> 
+
+            <notes>
+               <note>A merkha can not be on the bet for vocalization; it belongs on the lamed. The mark in the LC is ill-positioned.</note>
+            </notes>
+
+            <transnotes>
+                <transnote>
+                    <action>Add</action>
+                    <type>c</type>
+                    <beforetext>&#x05d1;&#x05bc;&#x05b8;&#x05a5;</beforetext>
+                </transnote>
+            </transnotes>
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>accent</type>
+        </change>
+        
+        <change>
+            <n>11</n>
+            <citation>
+                <book>Lev</book>
+                <c>14</c>
+                <v>53</v>
+                <position>3</position>
+            </citation>
+            <author>
+                <name>Daniel Holman</name>
+                <mail>daniel.holman@mail.com</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Remove dagesh from tsadi.</description>
+                    
+            <lc>
+                <folio>Folio_065B</folio>
+                <column>1</column>
+                <line>3</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05d4;&#x05b7;&#x05e6;&#x05bc;&#x05b4;&#x05e4;&#x05bc;&#x05b9;&#x05a7;&#x05e8;</reftext>  
+            <refuni> he   patah   tsadi   dagesh   hiriq   pe   dagesh   holam   darga   resh       </refuni> 
+            <changetext>&#x05d4;&#x05b7;&#x05e6;&#x05b4;&#x05e4;&#x05bc;&#x05b9;&#x05a7;&#x05e8;</changetext> 
+            <changeuni>  he   patah   tsadi  hiriq   pe   dagesh   holam   darga   resh      </changeuni> 
+            
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>vowel</type>
+        </change>
+
+        <change>
+            <n>12</n>
+            <citation>
+                <book>Lev</book>
+                <c>24</c>
+                <v>10</v>
+                <position>15</position>
+            </citation>
+            <author>
+                <name>Daniel Holman</name>
+                <mail>daniel.holman@mail.com</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Change sin-dot to shin-dot.</description>
+                    
+            <lc>
+                <folio>Folio_0071A</folio>
+                <column>2</column>
+                <line>3</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05d4;&#x05b7;&#x05d9;&#x05bc;&#x05b4;&#x05e9;&#x05c2;&#x05b0;&#x05e8;&#x05b0;&#x05d0;&#x05b5;&#x05dc;&#x05b4;&#x0594;&#x05d9;&#x05ea;</reftext>  
+            <refuni>  he   patah   yod   dagesh   hiriq   shin   sin-dot   sheva   resh   sheva   alef   tsere   lamed   hiriq   zaqef-qatan   yod   tav  </refuni> 
+            <changetext>&#x05d4;&#x05b7;&#x05d9;&#x05bc;&#x05b4;&#x05e9;&#x05c1;&#x05b0;&#x05e8;&#x05b0;&#x05d0;&#x05b5;&#x05dc;&#x05b4;&#x0594;&#x05d9;&#x05ea;</changetext> 
+            <changeuni>  he   patah   yod   dagesh   hiriq   shin   shin-dot   sheva   resh   sheva   alef   tsere   lamed   hiriq   zaqef-qatan   yod   tav  </changeuni> 
+
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>vowel</type>
+        </change>
+        
+        <change>
+            <n>13</n>
+            <citation>
+                <book>Lev</book>
+                <c>26</c>
+                <v>43</v>
+                <position>7</position>
+            </citation>
+            <author>
+                <name>Daniel Holman</name>
+                <mail>daniel.holman@mail.com</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Add dagesh to first he.</description>
+                    
+            <lc>
+                <folio>Folio_0073A</folio>
+                <column>2</column>
+                <line>3</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05d1;&#x05bc;&#x05b8;&#x05d4;&#x05b0;&#x05e9;&#x05c1;&#x05b7;&#x05de;&#x05bc;&#x05b8;&#x05d4;&#x0599;</reftext>  
+            <refuni>  bet   dagesh   qamats   he   sheva   shin   shin-dot   patah   mem   dagesh   qamats   he   pashta   </refuni> 
+            <changetext>&#x05d1;&#x05bc;&#x05b8;&#x05d4;&#x05bc;&#x05b0;&#x05e9;&#x05c1;&#x05b7;&#x05de;&#x05bc;&#x05b8;&#x05d4;&#x0599;</changetext> 
+            <changeuni>  bet   dagesh   qamats   he   dagesh   sheva   shin   shin-dot   patah   mem   dagesh   qamats   he   pashta   </changeuni> 
+
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>vowel</type>
+        </change>
+         
+    </date>
+    
+<!--  Holman Numbers changes -->
+
+    <date>>
+    
+        <date>2022.04.04</date>
+        
+        <change>
+            <n>1</n>
+            <citation>
+                <book>Num</book>
+                <c>2</c>
+                <v>15</v>
+                <position>3</position>
+            </citation>
+            <author>
+                <name>Daniel Holman</name>
+                <mail>daniel.holman@mail.com</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Remove dagesh from shin.</description>
+                    
+            <lc>
+                <folio>Folio_075A</folio>
+                <column>1</column>
+                <line>27</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05d7;&#x05b2;&#x05de;&#x05b4;&#x05e9;&#x05c1;&#x05bc;&#x05b8;&#x05a4;&#x05d4;</reftext>  
+            <refuni> het   hataf-patah   mem   hiriq   shin   shin-dot   dagesh   qamats   mahapakh   he    </refuni> 
+            <changetext>&#x05d7;&#x05b2;&#x05de;&#x05b4;&#x05e9;&#x05c1;&#x05b8;&#x05a4;&#x05d4;</changetext>  
+            <changeuni> het   hataf-patah   mem   hiriq   shin   shin-dot   qamats   mahapakh   he  </changeuni> 
+                          
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>vowel</type>
+        </change>
+        
+        <change>
+            <n>2</n>
+            <citation>
+                <book>Num</book>
+                <c>3</c>
+                <v>6</v>
+                <position>5</position>
+            </citation>
+            <author>
+                <name>Daniel Holman</name>
+                <mail>daniel.holman@mail.com</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Move meteg to he, placing a Combining Grapheme Joiner (CGJ, x034f) after it to force mark order.</description>
+                    
+            <lc>
+                <folio>Folio_075B</folio>
+                <column>1</column>
+                <line>12</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05d5;&#x05b0;&#x05bd;&#x05d4;&#x05b7;&#x05e2;&#x05b2;&#x05de;&#x05b7;&#x05d3;&#x05b0;&#x05ea;&#x05bc;&#x05b8;&#x05a3;</reftext>  
+            <refuni> vav   sheva   meteg   he   patah   ayin   hataf-patah   mem   patah   dalet   sheva   tav   dagesh   qamats   munah    </refuni> 
+            <changetext>&#x05d5;&#x05b0;&#x05d4;&#x05bd;&#x034f;&#x05b7;&#x05e2;&#x05b2;&#x05de;&#x05b7;&#x05d3;&#x05b0;&#x05ea;&#x05bc;&#x05b8;&#x05a3;</changetext>  
+            <changeuni> vav   sheva   he    meteg    combining-grapheme-joiner   patah   ayin   hataf-patah   mem   patah   dalet   sheva   tav   dagesh   qamats   munah  </changeuni> 
+                          
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>accent</type>
+        </change>
+        
+        <change>
+            <n>3</n>
+            <citation>
+                <book>Num</book>
+                <c>4</c>
+                <v>49</v>
+                <position>6</position>
+            </citation>
+            <author>
+                <name>Daniel Holman</name>
+                <mail>daniel.holman@mail.com</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Remove maqaf.</description>
+                    
+            <lc>
+                <folio>Folio_077A</folio>
+                <column>2</column>
+                <line>26</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05d1;&#x05bc;&#x05b0;&#x05d9;&#x05b7;&#x05d3;&#x05be;</reftext>  
+            <refuni> bet   dagesh   sheva   yod   patah   dalet   maqaf    </refuni> 
+            <changetext>&#x05d1;&#x05bc;&#x05b0;&#x05d9;&#x05b7;&#x05d3;</changetext>  
+            <changeuni> bet   dagesh   sheva   yod   patah   dalet  </changeuni> 
+                          
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>vowel</type>
+        </change>
+        
+        <change>
+            <n>4</n>
+            <citation>
+                <book>Num</book>
+                <c>7</c>
+                <v>60</v>
+                <position>5</position>
+            </citation>
+            <author>
+                <name>Daniel Holman</name>
+                <mail>daniel.holman@mail.com</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Place etnachta before hireq on mem, placing a Combining Grapheme Joiner (CGJ, x034f) after it to force mark order.</description>
+                    
+            <lc>
+                <folio>Folio_079B</folio>
+                <column>1</column>
+                <line>1</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05d1;&#x05b4;&#x05e0;&#x05b0;&#x05d9;&#x05b8;&#x05de;&#x05b4;&#x0591;&#x05df;</reftext>  
+            <refuni> bet   hiriq   nun   sheva   yod   qamats   mem   hiriq   etnahta   final-nun    </refuni> 
+            <changetext>&#x05d1;&#x05b4;&#x05e0;&#x05b0;&#x05d9;&#x05b8;&#x05de;&#x0591;&#x034f;&#x05b4;&#x05df;</changetext>  
+            <changeuni> bet   hiriq   nun   sheva   yod   qamats   mem   etnahta   combining-grapheme-joiner   hiriq  final-nun  </changeuni> 
+                          
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>accent</type>
+        </change>
+        
+        <change>
+            <n>5</n>
+            <citation>
+                <book>Num</book>
+                <c>7</c>
+                <v>72</v>
+                <position>9</position>
+            </citation>
+            <author>
+                <name>Daniel Holman</name>
+                <mail>daniel.holman@mail.com</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Replace segol under bet with qamats; add note 'c'.</description>
+                    
+            <lc>
+                <folio>Folio_079B</folio>
+                <column>2</column>
+                <line>7</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05d1;&#x05bc;&#x05b6;&#x05df;&#x05be;</reftext>  
+            <refuni> bet   dagesh   segol   final-nun   maqaf    </refuni> 
+            <changetext>&#x05d1;&#x05bc;&#x05b8;&#x05df;&#x05be;</changetext>  
+            <changeuni> bet   dagesh   qamats   final-nun   maqaf   </changeuni> 
+                          
+            <notes>
+               <note>A qamats is unexpected here.</note>
+            </notes>
+            
+            <transnotes>
+                <transnote>
+                    <action>Add</action>
+                    <type>c</type>
+                    <beforetext>&#x05d1;&#x05bc;&#x05b8;</beforetext>
+                </transnote>
+            </transnotes>
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>vowel</type>
+        </change>
+        
+        <change>
+            <n>6</n>
+            <citation>
+                <book>Num</book>
+                <c>9</c>
+                <v>17</v>
+                <position>6</position>
+            </citation>
+            <author>
+                <name>Daniel Holman</name>
+                <mail>daniel.holman@mail.com</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Remove maqaf on yod; add 't' note.</description>
+                    
+            <lc>
+                <folio>Folio_080B</folio>
+                <column>3</column>
+                <line>26</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05d5;&#x05b0;&#x05d0;&#x05b7;&#x05a3;&#x05d7;&#x05b2;&#x05e8;&#x05b5;&#x05d9;&#x05be;</reftext>>  
+            <refuni> vav   sheva   alef   patah   munah   het   hataf-patah   resh   tsere   yod   maqaf    </refuni> 
+            <changetext>&#x05d5;&#x05b0;&#x05d0;&#x05b7;&#x05a3;&#x05d7;&#x05b2;&#x05e8;&#x05b5;&#x05d9;</changetext>  
+            <changeuni> vav   sheva   alef   patah   munah   het   hataf-patah   resh   tsere   yod  </changeuni> 
+                          
+            <notes>
+               <note>Very, very slight evidence of a maqef between the yod and the bet.</note>
+            </notes>
+            
+            <transnotes>
+                <transnote>
+                    <action>Add</action>
+                    <type>t</type>
+                    <beforetext>&#x05d5;&#x05b0;&#x05d0;&#x05b7;&#x05a3;&#x05d7;&#x05b2;&#x05e8;&#x05b5;&#x05d9;</beforetext>
+                </transnote>
+            </transnotes>
+            
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>vowel</type>
+        </change>
+
+        <change>
+            <n>7</n>
+            <citation>
+                <book>Num</book>
+                <c>11</c>
+                <v>26</v>
+                <position>1</position>
+            </citation>
+            <author>
+                <name>Daniel Holman</name>
+                <mail>daniel.holman@mail.com</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Remove dagesh from yod.</description>
+                    
+            <lc>
+                <folio>Folio_082A</folio>
+                <column>3</column>
+                <line>1</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05d5;&#x05b7;&#x05d9;&#x05bc;&#x05b4;&#x05e9;&#x05c1;&#x05bc;&#x05b8;&#x05d0;&#x05b2;&#x05e8;&#x05a3;&#x05d5;&#x05bc;</reftext>>  
+            <refuni> vav   patah   yod   dagesh   hiriq   shin   shin-dot   dagesh   qamats   alef   hataf-patah   resh   munah   vav   dagesh    </refuni> 
+            <changetext>&#x05d5;&#x05b7;&#x05d9;&#x05b4;&#x05e9;&#x05c1;&#x05bc;&#x05b8;&#x05d0;&#x05b2;&#x05e8;&#x05a3;&#x05d5;&#x05bc;</changetext>  
+            <changeuni> vav   patah   yod   hiriq   shin   shin-dot   dagesh   qamats   alef   hataf-patah   resh   munah   vav   dagesh  </changeuni> 
+                          
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>vowel</type>
+        </change>
+
+        <change>
+            <n>8</n>
+            <citation>
+                <book>Num</book>
+                <c>17</c>
+                <v>27</v>
+                <position>11</position>
+            </citation>
+            <author>
+                <name>Daniel Holman</name>
+                <mail>daniel.holman@mail.com</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Possible dagesh in nun, add note 't'.</description>
+                    
+            <lc>
+                <folio>Folio_086A</folio>
+                <column>3</column>
+                <line>8</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05d0;&#x05b8;&#x05d1;&#x05b8;&#x05bd;&#x05d3;&#x05b0;&#x05e0;&#x05d5;&#x05bc;&#x05c3;</reftext>>  
+            <refuni> alef   qamats   bet   qamats   meteg   dalet   sheva   nun   vav   dagesh   sof-pasuq    </refuni> 
+            <changetext>&#x05d0;&#x05b8;&#x05d1;&#x05b8;&#x05bd;&#x05d3;&#x05b0;&#x05e0;&#x05d5;&#x05bc;&#x05c3;</changetext>  
+            <changeuni> alef   qamats   bet   qamats   meteg   dalet   sheva   nun   vav   dagesh   sof-pasuq  </changeuni> 
+                          
+            <notes>
+               <note>The dagesh is smaller than expected and slightly too high. Not expected grammatically.</note>
+            </notes>
+            
+            <transnotes>
+                <transnote>
+                    <action>Add</action>
+                    <type>t</type>
+                    <beforetext>&#x05d0;&#x05b8;&#x05d1;&#x05b8;&#x05bd;&#x05d3;&#x05b0;&#x05e0;</beforetext>
+                </transnote>
+            </transnotes>
+                          
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>NoTextChange</type>
+
+        </change>
+
+        <change>
+            <n>9</n>
+            <citation>
+                <book>Num</book>
+                <c>22</c>
+                <v>9</v>
+                <position>8</position>
+            </citation>
+            <author>
+                <name>Daniel Holman</name>
+                <mail>daniel.holman@mail.com</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Possible segol on aleph, no text change, add note 't'.</description>
+                    
+            <lc>
+                <folio>Folio_089a</folio>
+                <column>2</column>
+                <line>12</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05d4;&#x05b8;&#x05d0;&#x05b5;&#x0596;&#x05dc;&#x05bc;&#x05b6;&#x05d4;</reftext>>  
+            <refuni>   he   qamats   alef   tsere   tipeha   lamed   dagesh   segol   he    </refuni> 
+            <changetext>&#x05d4;&#x05b8;&#x05d0;&#x05b5;&#x0596;&#x05dc;&#x05bc;&#x05b6;&#x05d4;</changetext>>  
+            <changeuni> he   qamats   alef   tsere   tipeha   lamed   dagesh   segol   he  </changeuni> 
+
+            <notes>
+               <note>The lowest dot of the segol is reddish, but has good size and position. 
+                  A segol is unexpected here, however.</note>
+            </notes>
+            
+            <transnotes>
+                <transnote>
+                    <action>Add</action>
+                    <type>t</type>
+                    <beforetext>&#x05d4;&#x05b8;&#x05d0;&#x05b5;&#x0596;</beforetext>
+                </transnote>
+            </transnotes>
+            
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>NoTextChange</type>
+
+        </change>
+
+        <change>
+            <n>10</n>
+            <citation>
+                <book>Num</book>
+                <c>26</c>
+                <v>60</v>
+                <position>1</position>
+            </citation>
+            <author>
+                <name>Daniel Holman</name>
+                <mail>daniel.holman@mail.com</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Remove dagesh on yod.</description>
+                    
+            <lc>
+                <folio>Folio_092A</folio>
+                <column>2</column>
+                <line>25</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05d5;&#x05b7;&#x05d9;&#x05bc;&#x05b4;&#x05d5;&#x05bc;&#x05b8;&#x05dc;&#x05b5;&#x05a3;&#x05d3;</reftext>>  
+            <refuni>   vav   patah   yod   dagesh   hiriq   vav   dagesh   qamats   lamed   tsere   munah   dalet    </refuni> 
+            <changetext>&#x05d5;&#x05b7;&#x05d9;&#x05b4;&#x05d5;&#x05bc;&#x05b8;&#x05dc;&#x05b5;&#x05a3;&#x05d3;</changetext>>  
+            <changeuni> vav   patah   yod   hiriq   vav   dagesh   qamats   lamed   tsere   munah   dalet  </changeuni> 
+           
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>vowel</type>
+
+        </change>
+
+        <change>
+            <n>11</n>
+            <citation>
+                <book>Num</book>
+                <c>29</c>
+                <v>15</v>
+                <position>1</position>
+            </citation>
+            <author>
+                <name>Daniel Holman</name>
+                <mail>daniel.holman@mail.com</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Move upper-dot from resh to second vav.</description>
+                    
+            <lc>
+                <folio>Folio_093B</folio>
+                <column>2</column>
+                <line>24</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05d5;&#x05b0;&#x05e2;&#x05b4;&#x05e9;&#x05c2;&#x05bc;&#x05b8;&#x05e8;&#x05c4;&#x05d5;&#x05b9;&#x05df;&#x0599;</reftext>>  
+            <refuni>   vav   sheva   ayin   hiriq   shin   sin-dot   dagesh   qamats   resh   upper-dot   vav   holam   final-nun   pashta    </refuni> 
+            <changetext>&#x05d5;&#x05b0;&#x05e2;&#x05b4;&#x05e9;&#x05c2;&#x05bc;&#x05b8;&#x05e8;&#x05d5;&#x05b9;&#x05c4;&#x05df;&#x0599;</changetext>>  
+            <changeuni> vav   sheva   ayin   hiriq   shin   sin-dot   dagesh   qamats   resh   vav   holam   upper-dot   final-nun   pashta  </changeuni> 
+           
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>accent</type>
+        </change>
+
+        <change>
+            <n>12</n>
+            <citation>
+                <book>Num</book>
+                <c>32</c>
+                <v>16</v>
+                <position>3</position>
+            </citation>
+            <author>
+                <name>Daniel Holman</name>
+                <mail>daniel.holman@mail.com</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Move move munah from first vav to yod.</description>
+                    
+            <lc>
+                <folio>Folio_095B</folio>
+                <column>2</column>
+                <line>23</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05d5;&#x05b7;&#x05a3;&#x05d9;&#x05bc;&#x05b9;&#x05d0;&#x05de;&#x05b0;&#x05e8;&#x0594;&#x05d5;&#x05bc;</reftext>>  
+            <refuni>   vav   patah   munah   yod   dagesh   holam   alef   mem   sheva   resh   zaqef-qatan   vav   dagesh    </refuni> 
+            <changetext>&#x05d5;&#x05b7;&#x05d9;&#x05bc;&#x05a3;&#x05b9;&#x05d0;&#x05de;&#x05b0;&#x05e8;&#x0594;&#x05d5;&#x05bc;</changetext>>  
+            <changeuni> vav   patah   yod   dagesh  munah    holam   alef   mem   sheva   resh   zaqef-qatan   vav   dagesh  </changeuni> 
+           
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>accent</type>
+        </change>
+
+        <change>
+            <n>13</n>
+            <citation>
+                <book>Num</book>
+                <c>33</c>
+                <v>14</v>
+                <position>3</position>
+            </citation>
+            <author>
+                <name>Daniel Holman</name>
+                <mail>daniel.holman@mail.com</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Remove dagesh from yod, add note 't'.</description>
+                    
+            <lc>
+                <folio>Folio_096B</folio>
+                <column>1</column>
+                <line>4</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05d5;&#x05b7;&#x05bd;&#x05d9;&#x05bc;&#x05b7;&#x05d7;&#x05b2;&#x05e0;&#x05d5;&#x05bc;&#x0599;</reftext>>  
+            <refuni>   vav   patah   meteg   yod   dagesh   patah   het   hataf-patah   nun   vav   dagesh   pashta    </refuni> 
+            <changetext>&#x05d5;&#x05b7;&#x05bd;&#x05d9;&#x05b7;&#x05d7;&#x05b2;&#x05e0;&#x05d5;&#x05bc;&#x0599;</changetext>>  
+            <changeuni> vav   patah   meteg   yod   patah   het   hataf-patah   nun   vav   dagesh   pashta  </changeuni> 
+           
+            <notes>
+               <note>The yod appears on top of a splotch in the paper. 
+                    A slight darkening in that splotch might be a yod.
+                    A dagesh on the yod is expected, however.</note>
+            </notes>
+            
+            <transnotes>
+                <transnote>
+                    <action>Add</action>
+                    <type>t</type>
+                    <beforetext>&#x05d5;&#x05b7;&#x05bd;&#x05d9;&#x05b7;</beforetext>
+                </transnote>
+            </transnotes>
+            
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>vowel</type>
+        </change>
+
+        <change>
+            <n>14</n>
+            <citation>
+                <book>Num</book>
+                <c>34</c>
+                <v>28</v>
+                <position>5</position>
+            </citation>
+            <author>
+                <name>Daniel Holman</name>
+                <mail>daniel.holman@mail.com</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Possible dagesh in he, add note 't'.</description>
+                    
+            <lc>
+                <folio>Folio_097A</folio>
+                <column>3</column>
+                <line>25</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05e4;&#x05bc;&#x05b0;&#x05d3;&#x05b7;&#x05d4;&#x05b0;&#x05d0;&#x05b5;&#x0596;&#x05dc;</reftext>>  
+            <refuni>   pe   dagesh   sheva   dalet   patah   he   sheva   alef   tsere   tipeha   lamed     </refuni> 
+            <changetext>&#x05e4;&#x05bc;&#x05b0;&#x05d3;&#x05b7;&#x05d4;&#x05b0;&#x05d0;&#x05b5;&#x0596;&#x05dc;</changetext>>  
+            <changeuni> pe   dagesh   sheva   dalet   patah   he   sheva   alef   tsere   tipeha   lamed   </changeuni> 
+           
+            <notes>
+               <note>A possible dagesh appears in the he. 
+               It is well-positioned, but light, with a darker portion to the northeast.
+               A dagesh in the he (mapiq) is unlikely here.</note>
+            </notes>
+            
+            <transnotes>
+                <transnote>
+                    <action>Add</action>
+                    <type>t</type>
+                    <beforetext>&#x05e4;&#x05bc;&#x05b0;&#x05d3;&#x05b7;&#x05d4;&#x05b0;</beforetext>
+                </transnote>
+            </transnotes>
+            
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>NoTextChange</type>
+        </change>
+
+        <change>
+            <n>15</n>
+            <citation>
+                <book>Num</book>
+                <c>36</c>
+                <v>1</v>
+                <position>1</position>
+            </citation>
+            <author>
+                <name>Daniel Holman</name>
+                <mail>daniel.holman@mail.com</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Remove dagesh from yod; add 't' note.</description>
+                    
+            <lc>
+                <folio>Folio_098A</folio>
+                <column>2</column>
+                <line>3</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05d5;&#x05b7;&#x05bd;&#x05d9;&#x05bc;&#x05b4;&#x05e7;&#x05b0;&#x05e8;&#x05b0;&#x05d1;&#x059e;&#x05d5;&#x05bc;</reftext>>  
+            <refuni>   vav   patah   meteg   yod   dagesh   hiriq   qof   sheva   resh   sheva   bet   gershayim   vav   dagesh     </refuni> 
+            <changetext>&#x05d5;&#x05b7;&#x05bd;&#x05d9;&#x05b4;&#x05e7;&#x05b0;&#x05e8;&#x05b0;&#x05d1;&#x059e;&#x05d5;&#x05bc;</changetext>>>  
+            <changeuni> vav   patah   meteg   yod   hiriq   qof   sheva   resh   sheva   bet   gershayim   vav   dagesh   </changeuni> 
+
+            <notes>
+               <note>No dagesh apparent although one is expected grammatically.</note>
+            </notes>
+            
+            <transnotes>
+                <transnote>
+                    <action>Add</action>
+                    <type>t</type>
+                    <beforetext>&#x05d5;&#x05b7;&#x05bd;&#x05d9;&#x05b4;</beforetext>
+                </transnote>
+            </transnotes>
+               
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>vowel</type>
+        </change>
+
+    </date>
+    
+    
+<!--  Holman Deuteronomy changes -->
+
+    <date>>
+    
+        <date>2022.04.07</date>
+
+        <change>
+            <n>1</n>
+            <citation>
+                <book>Deut</book>
+                <c>1</c>
+                <v>42</v>
+                <position>14</position>
+            </citation>
+            <author>
+                <name>Daniel Holman</name>
+                <mail>daniel.holman@mail.com</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Change meteg to munah on nun.</description>
+                    
+            <lc>
+                <folio>Folio_099A</folio>
+                <column>3</column>
+                <line>20</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05ea;&#x05bc;&#x05b4;&#x05e0;&#x05bc;&#x05b8;&#x05bd;&#x05d2;&#x05b0;&#x05e4;&#x0594;&#x05d5;&#x05bc;</reftext>  
+            <refuni>tav   dagesh   hiriq   nun   dagesh   qamats   meteg   gimel   sheva   pe   zaqef-qatan   vav   dagesh    </refuni> 
+            <changetext>&#x05ea;&#x05bc;&#x05b4;&#x05e0;&#x05bc;&#x05b8;&#x05a3;&#x05d2;&#x05b0;&#x05e4;&#x0594;&#x05d5;&#x05bc;</changetext>  
+            <changeuni> tav   dagesh   hiriq   nun   dagesh   qamats  munah   gimel   sheva   pe   zaqef-qatan   vav   dagesh    </changeuni> 
+                          
+            <notes>
+               <note>The munah is clear, however, the word already has a zaqef-qatan.</note>
+            </notes>
+                                    
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>accent</type>
+        </change>
+        
+        <change>
+            <n>2</n>
+            <citation>
+                <book>Deut</book>
+                <c>5</c>
+                <v>3</v>
+                <position>10</position>
+            </citation>
+            <author>
+                <name>Daniel Holman</name>
+                <mail>daniel.holman@mail.com</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Change revia on tav to zaqef-qatan.</description>
+                    
+            <lc>
+                <folio>Folio_102A</folio>
+                <column>3</column>
+                <line>10</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05d0;&#x05b4;&#x05ea;&#x05bc;&#x05b8;&#x0597;&#x05e0;&#x05d5;&#x05bc;</reftext>  
+            <refuni>alef   hiriq   tav   dagesh   qamats   revia   nun   vav   dagesh     </refuni> 
+            <changetext>&#x05d0;&#x05b4;&#x05ea;&#x05bc;&#x05b8;&#x0594;&#x05e0;&#x05d5;&#x05bc;</changetext>  
+            <changeuni> alef   hiriq   tav   dagesh   qamats   zaqef-qatan   nun   vav   dagesh    </changeuni> 
+                          
+            <notes>
+               <note>The lower dot of the zaqef-qatan is damaged, but dark and well-positioned.</note>
+            </notes>
+                        
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>accent</type>
+        </change>
+        
+        <change>
+            <n>3</n>
+            <citation>
+                <book>Deut</book>
+                <c>5</c>
+                <v>13</v>
+                <position>1</position>
+            </citation>
+            <author>
+                <name>Daniel Holman</name>
+                <mail>daniel.holman@mail.com</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Place munah before mahapakh on first shin; add note 'c'.</description>
+                    
+            <lc>
+                <folio>Folio_102B</folio>
+                <column>1</column>
+                <line>15</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05e9;&#x05c1;&#x05b5;&#x05a4;&#x05a3;&#x05e9;&#x05c1;&#x05b6;&#x05ea;</reftext>  
+            <refuni>shin   shin-dot   tsere   mahapakh   munah   shin   shin-dot   segol   tav      </refuni> 
+            <changetext>&#x05e9;&#x05c1;&#x05b5;&#x05a3;&#x05a4;&#x05e9;&#x05c1;&#x05b6;&#x05ea;</changetext>  
+            <changeuni>shin   shin-dot   tsere   munah   mahapakh   shin   shin-dot   segol   tav     </changeuni> 
+                                                  
+            <transnotes>
+                <transnote>
+                    <action>Add</action>
+                    <type>c</type>
+                    <beforetext>&#x05e9;&#x05c1;&#x05b5;&#x05a3;&#x05a4;</beforetext>
+                </transnote>
+            </transnotes>
+            
+            <notes>
+               <note>The LC mark order, munah-then-mahapakh, is likely to be out of the usual lower-then-upper trope mark order.</note>
+            </notes>
+            
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>accent</type>
+        </change>
+        
+        <change>
+            <n>4</n>
+            <citation>
+                <book>Deut</book>
+                <c>5</c>
+                <v>14</v>
+                <position>4</position>
+            </citation>
+            <author>
+                <name>Daniel Holman</name>
+                <mail>daniel.holman@mail.com</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Change tipeha to merkha on vav, place munah before merkha; add note 'c'.</description>
+                    
+            <lc>
+                <folio>Folio_102B</folio>
+                <column>1</column>
+                <line>18</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05dc;&#x05b7;&#x05d9;&#x05d4;&#x05d5;&#x05b8;&#x0596;&#x05a3;&#x05d4;</reftext>  
+            <refuni>lamed   patah   yod   he   vav   qamats   tipeha   munah   he      </refuni> 
+            <changetext>&#x05dc;&#x05b7;&#x05d9;&#x05d4;&#x05d5;&#x05b8;&#x05a3;&#x05a5;&#x05d4;</changetext>  
+            <changeuni>lamed   patah   yod   he   vav   qamats   munah   merkha   he    </changeuni> 
+                                                  
+            <notes>
+               <note>The LC mark order, munah-then-tipeha, is likely to be out of the usual lower-then-upper trope mark order.</note>
+            </notes>
+            
+            <transnotes>
+                <transnote>
+                    <action>Add</action>
+                    <type>c</type>
+                    <beforetext>&#x05dc;&#x05b7;&#x05d9;&#x05d4;&#x05d5;&#x05b8;&#x05a3;&#x05a5;</beforetext>>
+                </transnote>
+            </transnotes>
+
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>accent</type>
+        </change>
+        
+        <change>
+            <n>5</n>
+            <citation>
+                <book>Deut</book>
+                <c>15</c>
+                <v>18</v>
+                <position>4</position>
+            </citation>
+            <author>
+                <name>Daniel Holman</name>
+                <mail>daniel.holman@mail.com</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Change pashta on final-kaf to qadma.</description>
+                    
+            <lc>
+                <folio>Folio_109A</folio>
+                <column>1</column>
+                <line>3</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05d1;&#x05bc;&#x05b0;&#x05e9;&#x05c1;&#x05b7;&#x05dc;&#x05bc;&#x05b5;&#x05bd;&#x05d7;&#x05b2;&#x05da;&#x05b8;&#x0599;</reftext>  
+            <refuni>bet   dagesh   sheva   shin   shin-dot   patah   lamed   dagesh   tsere   meteg   het   hataf-patah   final-kaf   qamats   pashta     </refuni> 
+            <changetext>&#x05d1;&#x05bc;&#x05b0;&#x05e9;&#x05c1;&#x05b7;&#x05dc;&#x05bc;&#x05b5;&#x05bd;&#x05d7;&#x05b2;&#x05da;&#x05b8;&#x05a8;</changetext>  
+            <changeuni>bet   dagesh   sheva   shin   shin-dot   patah   lamed   dagesh   tsere   meteg   het   hataf-patah   final-kaf   qamats   qadma   </changeuni> 
+
+            <notes>
+               <note>A qadma better represents the mark on the final-kaf .</note>
+            </notes>
+                                                  
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>accent</type>
+        </change>
+        
+        <change>
+            <n>6</n>
+            <citation>
+                <book>Deut</book>
+                <c>17</c>
+                <v>7</v>
+                <position>13</position>
+            </citation>
+            <author>
+                <name>Daniel Holman</name>
+                <mail>daniel.holman@mail.com</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Add dagesh to mem.</description>
+                    
+            <lc>
+                <folio>Folio_109B</folio>
+                <column>3</column>
+                <line>2</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05de;&#x05b4;&#x05e7;&#x05bc;&#x05b4;&#x05e8;&#x05b0;&#x05d1;&#x05bc;&#x05b6;&#x05bd;&#x05da;&#x05b8;&#x05c3;</reftext>  
+            <refuni>mem   hiriq   qof   dagesh   hiriq   resh   sheva   bet   dagesh   segol   meteg   final-kaf   qamats   sof-pasuq  </refuni> 
+            <changetext>&#x05de;&#x05bc;&#x05b4;&#x05e7;&#x05bc;&#x05b4;&#x05e8;&#x05b0;&#x05d1;&#x05bc;&#x05b6;&#x05bd;&#x05da;&#x05b8;&#x05c3;</changetext>  
+            <changeuni>mem   dagesh    hiriq   qof   dagesh   hiriq   resh   sheva   bet   dagesh   segol   meteg   final-kaf   qamats   sof-pasuq  </changeuni> 
+                                                  
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>vowel</type>
+        </change>
+        
+        <change>
+            <n>7</n>
+            <citation>
+                <book>Deut</book>
+                <c>17</c>
+                <v>18</v>
+                <position>14</position>
+            </citation>
+            <author>
+                <name>Daniel Holman</name>
+                <mail>daniel.holman@mail.com</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Change accent on nun to tipeha; add note 't'.</description>
+                    
+            <lc>
+                <folio>Folio_110A</folio>
+                <column>1</column>
+                <line>22</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05de;&#x05b4;&#x05dc;&#x05bc;&#x05b4;&#x05e4;&#x05b0;&#x05e0;&#x05b5;&#x05a5;&#x05d9;</reftext>  
+            <refuni>mem   hiriq   lamed   dagesh   hiriq   pe   sheva   nun   tsere   merkha   yod    </refuni> 
+            <changetext>&#x05de;&#x05b4;&#x05dc;&#x05bc;&#x05b4;&#x05e4;&#x05b0;&#x05e0;&#x05b5;&#x0596;&#x05d9;</changetext>  
+            <changeuni>mem   hiriq   lamed   dagesh   hiriq   pe   sheva   nun   tsere   tipeha   yod   </changeuni> 
+                                                  
+            <notes>
+               <note>The accent on the nun is probably a tipeha.</note>
+               <note>The next change, Deut 17:18.15, is compatible with this change.</note>
+            </notes>
+            
+            <transnotes>
+                <transnote>
+                    <action>Add</action>
+                    <type>t</type>
+                    <beforetext>&#x05de;&#x05b4;&#x05dc;&#x05bc;&#x05b4;&#x05e4;&#x05b0;&#x05e0;&#x05b5;&#x05a5;</beforetext>
+                </transnote>
+            </transnotes>
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>accent</type>
+        </change>
+
+        <change>
+            <n>8</n>
+            <citation>
+                <book>Deut</book>
+                <c>17</c>
+                <v>18</v>
+                <position>15</position>
+            </citation>
+            <author>
+                <name>Daniel Holman</name>
+                <mail>daniel.holman@mail.com</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Change accent on nun to merkha; add note 't'.</description>
+                    
+            <lc>
+                <folio>Folio_110A</folio>
+                <column>1</column>
+                <line>22</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05d4;&#x05b7;&#x05db;&#x05bc;&#x05b9;&#x05d4;&#x05b2;&#x05e0;&#x05b4;&#x0596;&#x05d9;&#x05dd;</reftext>  
+            <refuni>he   patah   kaf   dagesh   holam   he   hataf-patah   nun   hiriq   tipeha   yod   final-mem    </refuni> 
+            <changetext>&#x05d4;&#x05b7;&#x05db;&#x05bc;&#x05b9;&#x05d4;&#x05b2;&#x05e0;&#x05b4;&#x05a5;&#x05d9;&#x05dd;</changetext>  
+            <changeuni>he   patah   kaf   dagesh   holam   he   hataf-patah   nun   hiriq   merkha   yod   final-mem   </changeuni> 
+                                                  
+            <notes>
+               <note>The accent on the nun is probably a merkha.</note>
+               <note>The previous change, Deut 17:18.14, is compatible with this change.</note>
+               <note>This additional change was suggested by Benjamin Denckla.</note>
+            </notes>
+            
+            <transnotes>
+                <transnote>
+                    <action>Add</action>
+                    <type>t</type>
+                    <beforetext>&#x05d4;&#x05b7;&#x05db;&#x05bc;&#x05b9;&#x05d4;&#x05b2;&#x05e0;&#x05b4;&#x05a5;</beforetext>
+                </transnote>
+            </transnotes>
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>accent</type>
+        </change>
+        
+        <change>
+            <n>9</n>
+            <citation>
+                <book>Deut</book>
+                <c>22</c>
+                <v>3</v>
+                <position>8</position>
+            </citation>
+            <author>
+                <name>Daniel Holman</name>
+                <mail>daniel.holman@mail.com</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Change accent on shin from geresh to revia; add note 't'.</description>
+                    
+            <lc>
+                <folio>Folio_112A</folio>
+                <column>1</column>
+                <line>26</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05ea;&#x05bc;&#x05b7;&#x05e2;&#x05b2;&#x05e9;&#x05c2;&#x05b6;&#x059c;&#x05d4;</reftext>  
+            <refuni>  tav   dagesh   patah   ayin   hataf-patah   shin   sin-dot   segol   geresh   he    </refuni> 
+            <changetext>&#x05ea;&#x05bc;&#x05b7;&#x05e2;&#x05b2;&#x05e9;&#x05c2;&#x05b6;&#x0597;&#x05d4;</changetext>  
+            <changeuni>  tav   dagesh   patah   ayin   hataf-patah   shin   sin-dot   segol   revia   he   </changeuni> 
+                                                  
+            <notes>
+               <note>The text is of very poor quality.</note>
+               <note>The change of the geresh to a revia was suggested by Benjamin Denckla.</note>
+            </notes>
+            
+            <transnotes>
+                <transnote>
+                    <action>Add</action>
+                    <type>t</type>
+                    <beforetext>&#x05ea;&#x05bc;&#x05b7;&#x05e2;&#x05b2;&#x05e9;&#x05c2;&#x05b6;&#x059c;</beforetext>
+                </transnote>
+            </transnotes>
+            
+            
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>accent</type>
+        </change>
+        
+        <change>
+            <n>10</n>
+            <citation>
+                <book>Deut</book>
+                <c>23</c>
+                <v>22</v>
+                <position>10</position>
+            </citation>
+            <author>
+                <name>Daniel Holman</name>
+                <mail>daniel.holman@mail.com</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Remove dagesh from dalet.</description>
+                    
+            <lc>
+                <folio>Folio_113A</folio>
+                <column>2</column>
+                <line>3</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05d3;&#x05bc;&#x05b8;&#x05e8;&#x05b9;&#x05a8;&#x05e9;&#x05c1;</reftext>  
+            <refuni>  dalet   dagesh   qamats   resh   holam   qadma   shin   shin-dot    </refuni> 
+            <changetext>&#x05d3;&#x05b8;&#x05e8;&#x05b9;&#x05a8;&#x05e9;&#x05c1;</changetext>  
+            <changeuni>  dalet    qamats   resh   holam   qadma   shin   shin-dot   </changeuni>                                                               
+            
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>vowel</type>
+        </change>
+        
+        <change>
+            <n>11</n>
+            <citation>
+                <book>Deut</book>
+                <c>24</c>
+                <v>20</v>
+                <position>5</position>
+            </citation>
+            <author>
+                <name>Daniel Holman</name>
+                <mail>daniel.holman@mail.com</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Change qamats on pe to patah.</description>
+                    
+            <lc>
+                <folio>Folio_113B</folio>
+                <column>2</column>
+                <line>6</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05ea;&#x05b0;&#x05e4;&#x05b8;&#x05d0;&#x05b5;&#x0596;&#x05e8;</reftext>  
+            <refuni>  tav   sheva   pe   qamats   alef   tsere   tipeha   resh    </refuni> 
+            <changetext>&#x05ea;&#x05b0;&#x05e4;&#x05b7;&#x05d0;&#x05b5;&#x0596;&#x05e8;</changetext>  
+            <changeuni>  tav   sheva   pe   patah   alef   tsere   tipeha   resh   </changeuni>                                                               
+            
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>vowel</type>
+        </change>
+        
+        <change>
+            <n>12</n>
+            <citation>
+                <book>Deut</book>
+                <c>28</c>
+                <v>1</v>
+                <position>4</position>
+            </citation>
+            <author>
+                <name>Daniel Holman</name>
+                <mail>daniel.holman@mail.com</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Add dagesh to mem; add note 't'.</description>
+                    
+            <lc>
+                <folio>Folio_115A</folio>
+                <column>1</column>
+                <line>26</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05ea;&#x05bc;&#x05b4;&#x05e9;&#x05c1;&#x05b0;&#x05de;&#x05b7;&#x05e2;&#x0599;</reftext>  
+            <refuni>  tav   dagesh   hiriq   shin   shin-dot   sheva   mem   patah   ayin   pashta    </refuni> 
+            <changetext>&#x05ea;&#x05bc;&#x05b4;&#x05e9;&#x05c1;&#x05b0;&#x05de;&#x05bc;&#x05b7;&#x05e2;&#x0599;</changetext>  
+            <changeuni>  tav   dagesh   hiriq   shin   shin-dot   sheva   mem   dagesh   patah   ayin   pashta   </changeuni>                                                               
+            
+            <notes>
+               <note>The mem is faint, but well-positioned.</note>
+            </notes>
+            
+            <transnotes>
+                <transnote>
+                    <action>Add</action>
+                    <type>t</type>
+                    <beforetext>&#x05ea;&#x05bc;&#x05b4;&#x05e9;&#x05c1;&#x05b0;&#x05de;&#x05b7;</beforetext>
+                </transnote>
+            </transnotes>
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>vowel</type>
+        </change>
+        
+        <change>
+            <n>13</n>
+            <citation>
+                <book>Deut</book>
+                <c>28</c>
+                <v>11</v>
+                <position>7</position>
+            </citation>
+            <author>
+                <name>Daniel Holman</name>
+                <mail>daniel.holman@mail.com</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Sheva on bet is uncertain; add note 't'.</description>
+                    
+            <lc>
+                <folio>Folio_115A</folio>
+                <column>3</column>
+                <line>2</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05d1;&#x05b0;&#x05d4;&#x05b7;&#x05de;&#x05b0;&#x05ea;&#x05bc;&#x05b0;&#x05da;&#x05b8;&#x0596;</reftext>  
+            <refuni>   bet   sheva   he   patah   mem   sheva   tav   dagesh   sheva   final-kaf   qamats   tipeha    </refuni> 
+            <changetext>&#x05d1;&#x05b0;&#x05d4;&#x05b7;&#x05de;&#x05b0;&#x05ea;&#x05bc;&#x05b0;&#x05da;&#x05b8;&#x0596;</changetext>  
+            <changeuni>   bet   sheva   he   patah   mem   sheva   tav   dagesh   sheva   final-kaf   qamats   tipeha   </changeuni>                                                               
+            
+            <notes>
+               <note>The cluster of ink below the bet is lighter and shaped differently than shevas in the same word.</note>
+            </notes>
+            
+            <transnotes>
+                <transnote>
+                    <action>Add</action>
+                    <type>t</type>
+                    <beforetext>&#x05d1;&#x05b0;</beforetext>
+                </transnote>
+            </transnotes>
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>NoTextChange</type>
+        </change>
+         
+        <change>
+            <n>14</n>
+            <citation>
+                <book>Deut</book>
+                <c>28</c>
+                <v>29</v>
+                <position>6</position>
+            </citation>
+            <author>
+                <name>Daniel Holman</name>
+                <mail>daniel.holman@mail.com</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Change qamats on he to patah.</description>
+                    
+            <lc>
+                <folio>Folio_115B</folio>
+                <column>2</column>
+                <line>8</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05d4;&#x05b8;&#x05e2;&#x05b4;&#x05d5;&#x05bc;&#x05b5;&#x05e8;&#x0599;</reftext>  
+            <refuni>   he   qamats   ayin   hiriq   vav   dagesh   tsere   resh   pashta    </refuni> 
+            <changetext>&#x05d4;&#x05b7;&#x05e2;&#x05b4;&#x05d5;&#x05bc;&#x05b5;&#x05e8;&#x0599;</changetext>  
+            <changeuni>   he   patah   ayin   hiriq   vav   dagesh   tsere   resh   pashta   </changeuni>                                                               
+
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>vowel</type>
+        </change>
+         
+        <change>
+            <n>15</n>
+            <citation>
+                <book>Deut</book>
+                <c>28</c>
+                <v>52</v>
+                <position>20</position>
+            </citation>
+            <author>
+                <name>Daniel Holman</name>
+                <mail>daniel.holman@mail.com</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Remove qadma from kaf.</description>
+                    
+            <lc>
+                <folio>Folio_116A</folio>
+                <column>1</column>
+                <line>26</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05d1;&#x05bc;&#x05b0;&#x05db;&#x05b8;&#x05a8;&#x05dc;&#x05be;</reftext>  
+            <refuni>   bet   dagesh   sheva   kaf   qamats   qadma   lamed   maqaf    </refuni> 
+            <changetext>&#x05d1;&#x05bc;&#x05b0;&#x05db;&#x05b8;&#x05dc;&#x05be;</changetext>  
+            <changeuni>   bet   dagesh   sheva   kaf   qamats   qadma   lamed   maqaf   </changeuni>                                                               
+
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>accent</type>
+        </change>
+         
+        <change>
+            <n>16</n>
+            <citation>
+                <book>Deut</book>
+                <c>28</c>
+                <v>61</v>
+                <position>12</position>
+            </citation>
+            <author>
+                <name>Daniel Holman</name>
+                <mail>daniel.holman@mail.com</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Add note 't'.</description>
+                    
+            <lc>
+                <folio>Folio_116A</folio>
+                <column>3</column>
+                <line>6</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05d9;&#x05b7;&#x05e2;&#x05b0;&#x05dc;&#x05b5;&#x05a4;&#x05dd;</reftext>  
+            <refuni>   yod   patah   ayin   sheva   lamed   tsere   mahapakh   final-mem   </refuni> 
+            <changetext>&#x05d9;&#x05b7;&#x05e2;&#x05b0;&#x05dc;&#x05b5;&#x05a4;&#x05dd;</changetext>  
+            <changeuni>   yod   patah   ayin   sheva   lamed   tsere   mahapakh   final-mem   </changeuni>                                                               
+
+            <notes>
+               <note>The dagesh in the lamed is well-positioned, but light and unexpected.</note>
+            </notes>
+            
+            <transnotes>
+                <transnote>
+                    <action>Add</action>
+                    <type>t</type>
+                    <beforetext>&#x05d9;&#x05b7;&#x05e2;&#x05b0;&#x05dc;&#x05b5;&#x05a4;</beforetext>
+                </transnote>
+            </transnotes>
+
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>NoTextChange</type>
+        </change>
+         
+        <change>
+            <n>17</n>
+            <citation>
+                <book>Deut</book>
+                <c>29</c>
+                <v>19</v>
+                <position>14</position>
+            </citation>
+            <author>
+                <name>Daniel Holman</name>
+                <mail>daniel.holman@mail.com</mail>
+                <confirmed>true</confirmed>
+            </author>
+            
+            <description>Add maqaf; add note 'c'.</description>
+                    
+            <lc>
+                <folio>Folio_117A</folio>
+                <column>1</column>
+                <line>2</line>      
+                <credit>Credit: Sefaria.org.</credit>     
+            </lc>
+            
+            <reftext>&#x05d5;&#x05b0;&#x05e8;&#x05b8;&#x05a4;&#x05d1;&#x05b0;&#x05e6;&#x05b8;&#x05d4;</reftext>  
+            <refuni>   vav   sheva   resh   qamats   mahapakh   bet   sheva   tsadi   qamats   he    </refuni> 
+            <changetext>&#x05d5;&#x05b0;&#x05e8;&#x05b8;&#x05a4;&#x05d1;&#x05b0;&#x05e6;&#x05b8;&#x05d4;&#x05be;</changetext>  
+            <changeuni>   vav   sheva   resh   qamats   mahapakh   bet   sheva   tsadi   qamats   he  maqaf </changeuni>                                                               
+
+            <notes>
+               <note>The maqaf is unexpected as this word and the following word both have accents.</note>
+               <note>The presence of a maqaf here in the LC is disputed among scholars.</note>
+            </notes>
+            
+            <transnotes>
+                <transnote>
+                    <action>Add</action>
+                    <type>c</type>
+                    <beforetext>&#x05d5;&#x05b0;&#x05e8;&#x05b8;&#x05a4;&#x05d1;&#x05b0;&#x05e6;&#x05b8;&#x05d4;&#x05be;</beforetext>
+                </transnote>
+            </transnotes>
+
+            <approval>
+                 <name></name>
+                 <mail></mail>
+                 <date></date>
+            </approval> 
+            <status>Approved</status>
+            <type>vowel</type>
+        </change>
+                 
+        </date>
+        
+    </dates>
+</Changes>
+<!-- ======================================================================  -->
+<!-- ======================================================================  -->

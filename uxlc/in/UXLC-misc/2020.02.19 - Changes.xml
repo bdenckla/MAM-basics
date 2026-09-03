@@ -1,0 +1,1268 @@
+<?xml version = "1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/XSL/Changes.xsl.xml"?>
+<!-- Copyright 2020 Christopher V. Kimball -->
+<!--========================================================================-->
+<!--========================================================================-->
+<!--
+     Changes.xml - XML data file for Changes
+     
+     27 Feb 2020
+                                                                            -->
+<!--========================================================================-->
+<!--========================================================================-->
+<Changes>
+    <ref>WLC 4.20</ref>
+    <target>UXLC 1.0</target>
+    <filedate>2020.02.19</filedate>
+    <type>installed</type>
+    <dates> 
+<!-- ======================================================================  -->
+        <date>
+            <date>2020.01.30</date>
+            <title>Accent changes in Decalogue</title>
+            <summary>
+               <note>
+                 Many of the verses in these changes are from the Decalogue (Ex 20:2-17, Deut 5:6-21) which have two systems of accents: Lower and Upper. 
+                    Lower and Upper do not refer to the position of the accent relative to the consonant, but the system.  
+                    Ordinary reading uses the Lower accents; special circumstances use the Upper accents. 
+                    Not all texts have both systems.  If only one accent is present it is usually the Lower accent.
+               </note> 
+               <note>
+               In the LC the Lower accent is given first (right-to-left direction); the Upper accent is given afterwards.   
+               The correct position of the accent is important to avoid mixing the two systems. 
+               </note>
+               <note>
+                Usual Hebrew Unicode text has a preferred ordering of accents ("mark ordering") to facilitate searches which presumes
+                that the ordering of the marks has no meaning. 
+                This is not the case for the Decalogue, however. 
+                In the reference text, the marks were ordered so that etnachta always preceded the meteg. 
+                Changes 1, 2, 9, 10, and 11 place the meteg before the etnachta to make the Unicode text order
+                match that of the LC.  
+                The standard mark ordering of etnacha before the meteg is matches the LC for Gen 35:22.14,
+                Ex 20:2.9, and Deut 5:6.9 and has been preserved.                 
+               </note>
+               <note>
+               The Hebrew font of the display may do its own ordering of the marks independent of the order of the marks
+               in the Unicode text. That's why changing the order of the marks in changes 1, 2, 9, 10, and 11 have no effect on the display.
+               After the recommended changes the order of the marks in the Unicode text will match the order in the LC.
+               </note>
+            </summary>
+           <change>
+                    <n>1</n>
+                    <citation>
+                        <book>Ex</book>
+                        <c>20</c>
+                        <v>5</v>
+                        <position>21</position>
+                    </citation>
+                    <author>
+                        <name>Yanir Marmor</name>
+                        <mail>123yanirmr@gmail.com123</mail>
+                        <confirmed>true</confirmed>
+                    </author>
+                    <description>Swap meteg=siluq (&#1505;&#x05bd;) and etnachta (&#1505;&#x0591;).</description>
+                    
+                    <lc>
+                <!-- Detail.jpg image 440 x 258 preferred. -->
+                        <folio>Folio_43r</folio>
+                        <column>3</column>
+                        <line>1</line>           
+                       <credit></credit>   
+                    </lc>              
+                
+                    <reftext>&#x05dc;&#x05b0;&#x05e9;&#x05c2;&#x05b9;&#x05e0;&#x05b0;&#x05d0;&#x05b8;&#x0591;&#x05bd;&#x05d9;&#x05c3;</reftext>  
+                    <refuni> lamed   sheva   shin   sin-dot   holam   nun   sheva   alef   qamats   etnachta   meteg    yod sof-pasuq</refuni> 
+                    <changetext>&#x05dc;&#x05b0;&#x05e9;&#x05c2;&#x05b9;&#x05e0;&#x05b0;&#x05d0;&#x05b8;&#x05bd;&#x0591;&#x05d9;&#x05c3;</changetext>  
+                    <changeuni> lamed   sheva    shin   sin-dot   holam   nun   sheva   alef   qamats    meteg   etnachta   yod sof-pasuq</changeuni> 
+ 
+                    <notes>
+                    <note>
+                    This verse matches Deut 5:9.
+                    </note>
+                    <note>
+                    The meteg (05bd) is the Lower accent; the etnachta (0591) is the Upper accent.  
+                    In the LC the Lower accent, meteg, is placed before (right-to-left) the Upper accent, etnachta.
+                    The reference Unicode text places the Upper accent, etnachta, first.
+                    </note>
+                    <note>
+                    The LC and text results appear to agree.
+                    Changing the mark order in the Unicode text reflects actual LC mark ordering and has no effect on the displayed text.
+                    </note>
+                    <note>
+                    Recommended.
+                    </note>
+                    </notes>
+
+                    <approval>
+                        <name></name>
+                        <mail></mail>
+                        <date></date>
+                    </approval> 
+                    <status>Approved</status>
+                    <type>accent</type>
+            </change>
+           <change>
+                    <n>2</n>
+                    <citation>
+                        <book>Deut</book>
+                        <c>5</c>
+                        <v>9</v>
+                        <position>21</position>
+                    </citation>
+                    <author>
+                        <name>Yanir Marmor</name>
+                        <mail>123yanirmr@gmail.com123</mail>
+                        <confirmed>true</confirmed>
+                    </author>
+                    <description>Swap meteg=siluq (&#1505;&#x05bd;) and etnachta (&#1505;&#x0591;).</description>
+                    
+                    <lc>
+                <!-- Detail.jpg image 440 x 258 preferred. -->
+                        <folio>Folio_102v</folio>
+                        <column>1</column>
+                        <line>6</line>   
+                        <credit></credit>   
+                    </lc>              
+                
+                    <reftext>&#x05dc;&#x05b0;&#x05e9;&#x05c2;&#x05b9;&#x05e0;&#x05b0;&#x05d0;&#x05b8;&#x0591;&#x05bd;&#x05d9;&#x05c3;</reftext>  
+                    <refuni> lamed   sheva  shin   sin-dot   holam   nun   sheva   alef   qamats   etnachta   meteg   yod sof-pasuq</refuni> 
+                    <changetext>&#x05dc;&#x05b0;&#x05e9;&#x05c2;&#x05b9;&#x05e0;&#x05b0;&#x05d0;&#x05b8;&#x05bd;&#x0591;&#x05d9;&#x05c3;</changetext>  
+                    <changeuni> lamed   sheva     shin   sin-dot   holam   nun   sheva   alef   qamats   meteg   etnachta    yod sof-pasuq</changeuni> 
+ 
+                    <notes>
+                    
+                    <note>
+                    This verse matches Ex 20.5.
+                    </note>
+                    <note>
+                    The meteg (05bd) is the Lower accent; the etnachta (0591) is the Upper accent.  
+                    In the LC the Lower accent, meteg, is placed before (right-to-left) the Upper accent, etnachta.
+                    The reference Unicode text places the Upper accent, etnachta, first.
+                    </note>
+                    <note>
+                    The LC and text results appear to agree.
+                    Changing the mark order in the Unicode text reflects actual LC mark ordering and has no effect on the displayed text.
+                    </note>
+                    <note>
+                    Recommended.
+                    </note>
+                    </notes>
+
+                    <approval>
+                        <name></name>
+                        <mail></mail>
+                        <date></date>
+                    </approval> 
+                    <status>Approved</status>
+                    <type>accent</type>
+            </change>
+            <change>
+                    <n>3</n>
+                    <citation>
+                        <book>Deut</book>
+                        <c>5</c>
+                        <v>15</v>
+                        <position>1</position>
+                    </citation>
+                    <author>
+                        <name>Yanir Marmor</name>
+                        <mail>123yanirmr@gmail.com123</mail>
+                        <confirmed>true</confirmed>
+                    </author>
+                    <description>Swap  revia (&#1505;&#x0597;) and gereshayim (&#1505;&#x059e;).</description>
+                    
+                    <lc>
+                <!-- Reference.jpg image 500 x 566 preferred. -->
+                <!-- Detail.jpg image 440 x 258 preferred. -->
+                        <folio>Folio_102v</folio>
+                        <column>1</column>
+                        <line>25</line>           
+                        <credit></credit>   
+                    </lc>              
+                
+                    <reftext>&#x05d5;&#x05b0;&#x05d6;&#x05b8;&#x05db;&#x05b7;&#x05e8;&#x05b0;&#x05ea;&#x05bc;&#x05b8;&#x059e;&#x0597;</reftext>  
+                    <refuni> vav   sheva   zayin   qamats   kaf   patah   resh   sheva   tav   dagesh   qamats   gereshayim   revia</refuni> 
+                    <changetext>&#x05d5;&#x05b0;&#x05d6;&#x05b8;&#x05db;&#x05b7;&#x05e8;&#x05b0;&#x05ea;&#x05bc;&#x05b8;&#x0597;&#x059e;</changetext>  
+                    <changeuni>vav sheva  zayin qamats kaf patah resh sheva tav dagesh qamats revia gereshayim</changeuni> 
+ 
+                    <notes>
+                    <note>
+                    The revia (0597) is the lower accent; the gereshayim (059e) is the upper accent.  
+                    In the LC the lower accent, revia, is placed before (right-to-left) the upper accent, gereshshayim.
+                    The reference text places the upper accent, gereshayim, first.
+                    </note>
+                    <note>
+                    The revia and gereshayim have the same combining group (11) and can be placed in any order without "breaking"
+                    the mark ordering of the text.
+                    </note>
+                    <note>
+                    Recommended.
+                    </note>
+                    </notes>
+
+                    <approval>
+                        <name></name>
+                        <mail></mail>
+                        <date></date>
+                    </approval> 
+                    <status>Approved</status>
+                    <type>accent</type>
+            </change>
+            <change>
+                    <n>4</n>
+                    <citation>
+                        <book>Deut</book>
+                        <c>5</c>
+                        <v>15</v>
+                        <position>11</position>
+                    </citation>
+                    <author>
+                        <name>Yanir Marmor</name>
+                        <mail>123yanirmr@gmail.com123</mail>
+                        <confirmed>true</confirmed>
+                    </author>
+                    <description>Swap merkha (&#1505;&#x05a5;) and mahapakh  (&#1505;&#x05a4;).</description>
+                    
+                    <lc>
+                <!-- Reference.jpg image 500 x 566 preferred. -->
+                <!-- Detail.jpg image 440 x 258 preferred. -->
+                        <folio>Folio_102v</folio>
+                        <column>1</column>
+                        <line>27</line>           
+                        <credit></credit>   
+                    </lc>              
+                
+                    <reftext>&#x05d1;&#x05bc;&#x05b0;&#x05d9;&#x05b8;&#x05a4;&#x05a5;&#x05d3;</reftext>  
+                    <refuni>bet   dagesh   sheva    yod   qamats   mahapakh   merkha   dalet </refuni> 
+                    <changetext>&#x05d1;&#x05bc;&#x05b0;&#x05d9;&#x05b8;&#x05a5;&#x05a4;&#x05d3;</changetext>  
+                    <changeuni>bet   dagesh   sheva    yod   qamats   merkha   mahapakh   dalet </changeuni> 
+ 
+                    <notes>
+                    <note>
+                    The merkha (05a5) is the Lower accent; the mahapakh (05a4) is the Upper accent.  
+                    In the LC the only the mahapakh is clear snd it appears after something. 
+                    In changes 1-3, 5-8, the first accent in the LC is the lower accent, which in this case is the merkha.
+                    The reference text places the upper accent, mahapakh, first.
+                    </note>
+                    <note>
+                    The merka and the mahapakh  have the same combining group (7) and can be placed in any order without "breaking"
+                    the mark ordering of the text. The SBL Hebrew font doesn't display the changed ordering correctly. 
+                    The reference ordering appears in Deut 5:10.1;whereas the changed ordering appears in Ex 20:6.1. 
+                    </note>
+                    <note>
+                    Recommended.
+                    </note>
+                    </notes>
+
+                    <approval>
+                        <name></name>
+                        <mail></mail>
+                        <date></date>
+                    </approval> 
+                    <status>Approved</status>
+                    <type>accent</type>
+            </change>
+            <change>
+                    <n>5</n>
+                    <citation>
+                        <book>Deut</book>
+                        <c>5</c>
+                        <v>18</v>
+                        <position>1</position>
+                    </citation>
+                    <author>
+                        <name>Yanir Marmor</name>
+                        <mail>123yanirmr@gmail.com123</mail>
+                        <confirmed>true</confirmed>
+                    </author>
+                    <description>Swap munah (&#1505;&#x05a3;) and tipeha (&#1505;&#x0596;).</description>
+                    
+                    <lc>
+                <!-- Reference.jpg image 500 x 566 preferred. -->
+                <!-- Detail.jpg image 440 x 258 preferred. -->
+                        <folio>Folio_102v</folio>
+                        <column>2</column>
+                        <line>9</line>           
+                        <credit></credit>   
+                    </lc>              
+                
+                    <reftext>&#x05d5;&#x05b0;&#x05dc;&#x05b9;&#x0596;&#x05a3;&#x05d0;</reftext>  
+                    <refuni>vav   sheva  lamed   holam   tipeha   munah   alef</refuni> 
+                    <changetext>&#x05d5;&#x05b0;&#x05dc;&#x05b9;&#x05a3;&#x0596;&#x05d0;</changetext>  
+                    <changeuni>vav   sheva   lamed   holam   munah   tipeha     alef</changeuni> 
+ 
+                    <notes>
+                    <note>
+                    The munah (05a3) is the lower accent; the tipeha (0596) is the upper accent.  
+                    In the LC the munah appears to be first.
+                    The reference text places the upper accent, tipeha, first.
+                    </note>
+                    <note>
+                    The munah and the tipeha  have the same combining group (7) and can be placed in any order without "breaking"
+                    the mark ordering of the text.  The proposed changes appear in Ex 20:14.1 and Ex 20:15.1.
+                    </note>
+                    <note>
+                    Recommended.
+                    </note>
+                    </notes>
+
+                    <approval>
+                        <name></name>
+                        <mail></mail>
+                        <date></date>
+                    </approval> 
+                    <status>Approved</status>
+                    <type>accent</type>
+            </change>
+            <change>
+                    <n>6</n>
+                    <citation>
+                        <book>Deut</book>
+                        <c>5</c>
+                        <v>19</v>
+                        <position>1</position>
+                    </citation>
+                    <author>
+                        <name>Yanir Marmor</name>
+                        <mail>123yanirmr@gmail.com123</mail>
+                        <confirmed>true</confirmed>
+                    </author>
+                    <description>Swap munah (&#1505;&#x05a3;) and tipeha (&#1505;&#x0596;).</description>
+                    
+                    <lc>
+                <!-- Reference.jpg image 500 x 566 preferred. -->
+                <!-- Detail.jpg image 440 x 258 preferred. -->
+                        <folio>Folio_102v</folio>
+                        <column>2</column>
+                        <line>10</line>           
+                        <credit></credit>   
+                    </lc>              
+                
+                    <reftext>&#x05d5;&#x05b0;&#x05dc;&#x05b9;&#x0596;&#x05a3;&#x05d0;</reftext>  
+                    <refuni>vav   sheva   lamed   holam   tipeha   munah   alef</refuni> 
+                    <changetext>&#x05d5;&#x05b0;&#x05dc;&#x05b9;&#x05a3;&#x0596;&#x05d0;</changetext>  
+                    <changeuni>vav   sheva   lamed  holam   munah   tipeha     alef</changeuni> 
+ 
+                    <notes>
+                    <note>
+                    The munah (05a3) is the lower accent; the tipeha (0596) is the upper accent.  
+                    In the LC the munah appears to be first.
+                    The reference text places the upper accent, tipeha, first.
+                    </note>
+                    <note>
+                    The munah and the tipeha  have the same combining group (7) and can be placed in any order without "breaking"
+                    the mark ordering of the text. The proposed changes appear in Ex 20:14.1 and Ex 20:15.1.
+                    </note>
+                    <note>
+                    Recommended.
+                    </note>
+                    </notes>
+
+                    <approval>
+                        <name></name>
+                        <mail></mail>
+                        <date></date>
+                    </approval> 
+                    <status>Approved</status>
+                    <type>accent</type>
+            </change>
+            <change>
+                    <n>7</n>
+                    <citation>
+                        <book>Deut</book>
+                        <c>5</c>
+                        <v>14</v>
+                        <position>2</position>
+                    </citation>
+                    <author>
+                        <name>Yanir Marmor</name>
+                        <mail>123yanirmr@gmail.com123</mail>
+                        <confirmed>true</confirmed>
+                    </author>
+                    <description>Swap zaqef-qaton (&#1505;&#x0594;) and geresh (&#1505;&#x059c;).</description>
+                    
+                    <lc>
+                <!-- Reference.jpg image 500 x 566 preferred. -->
+                <!-- Detail.jpg image 440 x 258 preferred. -->
+                        <folio>Folio_102v</folio>
+                        <column>1</column>
+                        <line>17</line>           
+                        <credit></credit>   
+                    </lc>              
+                
+                    <reftext>&#x05d4;&#x05b7;&#x05e9;&#x05c1;&#x05bc;&#x05b0;&#x05d1;&#x05b4;&#x05d9;&#x05e2;&#x05b4;&#x059c;&#x0594;&#x05d9;</reftext>  
+                    <refuni>he   patah   shin   shin-dot   dagesh   sheva   bet   hiriq   yod   ayin   hiriq   geresh   zaqef-qatan   yod </refuni> 
+                    <changetext>&#x05d4;&#x05b7;&#x05e9;&#x05c1;&#x05bc;&#x05b0;&#x05d1;&#x05b4;&#x05d9;&#x05e2;&#x05b4;&#x0594;&#x059c;&#x05d9;</changetext>  
+                    <changeuni>he   patah   shin   shin-dot   dagesh   sheva   bet   hiriq   yod   ayin   hiriq  zaqef-qatan  geresh     yod </changeuni> 
+ 
+                    <notes>
+                    <note>
+                    The zaqef-qatan (0594) is the lower accent; the geresh (059c) is the upper accent.  
+                    In the LC the zaqef-qatan appears to be first.
+                    The reference text places the upper accent, geresh, first.
+                    </note>
+                    <note>
+                    The zaqef-qatan and the geresh have the same combining group (11) and can be placed in any order without "breaking"
+                    the mark ordering of the text. In Ex 20:10.2, the changed marks appear in the reference text correctly and match the LC.
+                    </note>
+                    <note>
+                    Recommended.   
+                    </note>
+                    </notes>
+
+                    <approval>
+                        <name></name>
+                        <mail></mail>
+                        <date></date>
+                    </approval> 
+                    <status>Approved</status>
+                    <type>accent</type>
+            </change>
+            <change>
+                    <n>8</n>
+                    <citation>
+                        <book>Deut</book>
+                        <c>5</c>
+                        <v>10</v>
+                        <position>1</position>
+                    </citation>
+                    <author>
+                        <name>Yanir Marmor</name>
+                        <mail>123yanirmr@gmail.com123</mail>
+                        <confirmed>true</confirmed>
+                    </author>
+                    <description>Swap merkha (&#1505;&#x05a5;) and mahapakh  (&#1505;&#x05a4;).</description>
+                    
+                    <lc>
+                <!-- Reference.jpg image 500 x 566 preferred. -->
+                <!-- Detail.jpg image 440 x 258 preferred. -->
+                        <folio>Folio_102v</folio>
+                        <column>1</column>
+                        <line>6</line>           
+                        <credit></credit>   
+                    </lc>              
+                
+                    <reftext>&#x05d5;&#x05b0;&#x05e2;&#x05b9;&#x05a4;&#x05a5;&#x05e9;&#x05c2;&#x05b6;&#x05d4;</reftext>  
+                    <refuni>vav   sheva  ayin   holam   mahapakh   merkha   shin   sin-dot   segol   he</refuni> 
+                    <changetext>&#x05d5;&#x05b0;&#x05e2;&#x05b9;&#x05a5;&#x05a4;&#x05e9;&#x05c2;&#x05b6;&#x05d4;</changetext>  
+                    <changeuni>vav   sheva  ayin   holam   merkha  mahapakh      shin   sin-dot   segol   he</changeuni> 
+ 
+                    <notes>
+                    <note>
+                    The merkha (05a5) is the lower accent; the mahapakh (05a4) is the upper accent.  
+                    In the LC the merkha, the lower accent, is first.
+                    The reference text places the upper accent, mahapakh, first.
+                    </note>
+                    <note>
+                    The merka and the mahapakh  have the same combining group (7) and can be placed in any order without "breaking"
+                    the mark ordering of the text. The SBL Hebrew font doesn't display the changed ordering correctly. 
+                    The reference ordering appears in Deut 5:10.1; whereas the changed ordering appears in the matching Ex 20:6.1. 
+                    </note>
+                    <note>
+                    Recommended.
+                    </note>
+                    </notes>
+
+                    <approval>
+                        <name></name>
+                        <mail></mail>
+                        <date></date>
+                    </approval> 
+                    <status>Approved</status>
+                    <type>accent</type>
+            </change>
+           <change>
+                    <n>9</n>
+                    <citation>
+                        <book>Deut</book>
+                        <c>5</c>
+                        <v>14</v>
+                        <position>26</position>
+                    </citation>
+                    <author>
+                        <name>Yanir Marmor</name>
+                        <mail>123yanirmr@gmail.com123</mail>
+                        <confirmed>true</confirmed>
+                    </author>
+                    <description>Swap meteg=siluq (&#1505;&#x05bd;) and etnachta (&#1505;&#x0591;).</description>
+                    
+                    <lc>
+                        <folio>Folio_102v</folio>
+                        <column>1</column>
+                        <line>23</line>           
+                        <credit></credit>   
+                    </lc>              
+                
+                    <reftext>&#x05db;&#x05bc;&#x05b8;&#x05de;&#x0591;&#x05bd;&#x05d5;&#x05b9;&#x05da;&#x05b8;&#x05c3;</reftext>  
+                    <refuni>kaf   dagesh   qamats   mem   etnachta   meteg   vav   holam   final-kaf   qamats   sof-pasuq</refuni> 
+                    <changetext>&#x05db;&#x05bc;&#x05b8;&#x05de;&#x05bd;&#x0591;&#x05d5;&#x05b9;&#x05da;&#x05b8;&#x05c3;</changetext>  
+                    <changeuni>kaf   dagesh   qamats   mem   meteg   etnachta    vav   holam   final-kaf   qamats   sof-pasuq</changeuni> 
+ 
+                    <notes>
+                     <note>
+                    The meteg (05bd) is the lower accent; the etnachta (0591) is the upper accent.  
+                    In the LC the lower accent, meteg, is placed before (right-to-left) the upper accent, etnachta.
+                    The reference Unicode text places the Upper accent, etnachta, first.
+                    </note>
+                    <note>
+                    The LC and text results appear to agree.
+                    Changing the mark order in the Unicode text reflects actual LC mark ordering and has no effect on the displayed text.
+                    </note>
+                    <note>
+                    Recommended.
+                    </note>
+                    </notes>
+
+                    <approval>
+                        <name></name>
+                        <mail></mail>
+                        <date></date>
+                    </approval> 
+                    <status>Approved</status>
+                    <type>accent</type>
+           </change>
+           <change>
+                    <n>10</n>
+                    <citation>
+                        <book>Ex</book>
+                        <c>20</c>
+                        <v>14</v>
+                        <position>2</position>
+                    </citation>
+                    <author>
+                        <name>Yanir Marmor</name>
+                        <mail>123yanirmr@gmail.com123</mail>
+                        <confirmed>true</confirmed>
+                    </author>
+                    <description>Swap meteg=siluq (&#1505;&#x05bd;) and etnachta (&#1505;&#x0591;).</description>
+                    
+                    <lc>
+                        <folio>Folio_43r</folio>
+                        <column>3</column>
+                        <line>26</line>           
+                        <credit></credit>   
+                    </lc>              
+                
+                    <reftext>&#x05ea;&#x05bc;&#x05bf;&#x05b4;&#x05e0;&#x05b0;&#x05d0;&#x05b8;&#x0591;&#x05bd;&#x05e3;&#x05c3;</reftext>  
+                    <refuni>tav   dagesh   rafe   hiriq   nun   sheva   alef   qamats   etnachta   meteg   final-pe   sof-pasuq</refuni> 
+                    <changetext>&#x05ea;&#x05bc;&#x05bf;&#x05b4;&#x05e0;&#x05b0;&#x05d0;&#x05b8;&#x05bd;&#x0591;&#x05e3;&#x05c3;</changetext>  
+                    <changeuni>tav   dagesh   rafe   hiriq   nun   sheva   alef   qamats   meteg   etnachta   final-pe   sof-pasuq</changeuni> 
+ 
+                    <notes>
+                     <note>This is parallel to Deut 5:18.</note>
+                    
+                    <note>
+                    The meteg (05bd) is the lower accent; the etnachta (0591) is the upper accent.  
+                    In the LC the lower accent, meteg, is placed before (right-to-left) the upper accent, etnachta.
+                    The reference Unicode text places the Upper accent, etnachta, first.
+                    </note>
+                    <note>
+                    The LC and text results appear to agree.
+                    Changing the mark order in the Unicode text reflects actual LC mark ordering and has no effect on the displayed text.
+                    </note>
+                    <note>
+                    Recommended.
+                    </note>
+                    </notes>
+
+                    <approval>
+                        <name></name>
+                        <mail></mail>
+                        <date></date>
+                    </approval> 
+                    <status>Approved</status>
+                    <type>accent</type>
+            </change>
+           <change>
+                    <n>11</n>
+                    <citation>
+                        <book>Deut</book>
+                        <c>5</c>
+                        <v>18</v>
+                        <position>2</position>
+                    </citation>
+                    <author>
+                        <name>Yanir Marmor</name>
+                        <mail>123yanirmr@gmail.com123</mail>
+                        <confirmed>true</confirmed>
+                    </author>
+                    <description>Swap meteg=siluq (&#1505;&#x05bd;) and etnachta (&#1505;&#x0591;).</description>
+                    
+                    <lc>
+                        <folio>Folio_102v</folio>
+                        <column>2</column>
+                        <line>10</line>           
+                        <credit></credit>   
+                    </lc>              
+                
+                    <reftext>&#x05ea;&#x05bc;&#x05bf;&#x05b4;&#x05e0;&#x05b0;&#x05d0;&#x05b8;&#x0591;&#x05bd;&#x05e3;&#x05c3;</reftext>  
+                    <refuni>tav   dagesh   rafe   hiriq   nun   sheva   alef   qamats   etnachta   meteg   final-pe   sof-pasuq</refuni> 
+                    <changetext>&#x05ea;&#x05bc;&#x05bf;&#x05b4;&#x05e0;&#x05b0;&#x05d0;&#x05b8;&#x05bd;&#x0591;&#x05e3;&#x05c3;</changetext>  
+                    <changeuni>tav   dagesh   rafe   hiriq   nun   sheva   alef   qamats   meteg   etnachta   final-pe   sof-pasuq</changeuni> 
+ 
+                    <notes>
+                    <note>This is parallel to Ex 20:14.</note>
+                    <note>
+                    The meteg (05bd) is the lower accent; the etnachta (0591) is the upper accent.  
+                    In the LC the lower accent, meteg, is placed before (right-to-left) the upper accent, etnachta.
+                    The reference Unicode text places the Upper accent, etnachta, first.
+                    </note>
+                    <note>
+                    The LC and text results appear to agree.
+                    Changing the mark order in the Unicode text reflects actual LC mark ordering and has no effect on the displayed text.
+                    </note>
+                    <note>
+                    Recommended.
+                    </note>
+                    </notes>
+
+                    <approval>
+                        <name></name>
+                        <mail></mail>
+                        <date></date>
+                    </approval> 
+                    <status>Approved</status>
+                    <type>accent</type>
+            </change>
+         </date>
+<!-- ======================================================================  -->
+        <date>
+            <date>2019.12.21</date>
+            <change>
+                    <n>1</n>
+                    <citation>
+                        <book>Jer</book>
+                        <c>44</c>
+                        <v>19</v>
+                        <position>14</position>
+                    </citation>
+                    <author>
+                        <name>Graham Thomason</name>
+                        <mail>Graham.Thomason@FarAboveAll.net</mail>
+                        <confirmed>2020.01.26</confirmed>
+                    </author>
+                    <description>Add dagesh=mapiq to final he (&#x05d4;&#x05bc;).</description>
+                    
+                    <lc>
+                <!-- Reference.jpg image 500 x 566 preferred. -->
+                <!-- Detail.jpg image 440 x 258 preferred. -->
+                        <folio>Folio_270v</folio>
+                        <column>3</column>
+                        <line>23</line>           
+                        <credit></credit>   
+                    </lc>
+                
+                    <reftext>&#x05dc;&#x05b0;&#x05d4;&#x05b7;&#x05a3;&#x05e2;&#x05b2;&#x05e6;&#x05b4;&#x05d1;&#x05b8;&#x0594;&#x05d4;</reftext>  
+                    <refuni>lamed sheva he patah munah ayin hataf-patah tsadi hiriq bet qamats zaqef-qatan he</refuni> 
+                    <changetext>&#x05dc;&#x05b0;&#x05d4;&#x05b7;&#x05a3;&#x05e2;&#x05b2;&#x05e6;&#x05b4;&#x05d1;&#x05b8;&#x0594;&#x05d4;&#x05bc;</changetext>  
+                    <changeuni>lamed sheva he patah munah ayin hataf-patah tsadi hiriq bet qamats zaqef-qatan he dagesh</changeuni> 
+ 
+                    <notes>
+                    <note>Author agrees that small dot on the left outside of the final he is extraneous.</note>
+                    </notes>
+
+                    <approval>
+                        <name>Stephen Salisbury</name>
+                        <mail>steve@grovescenter.org</mail>
+                        <date>2019.12.21</date>
+                    </approval> 
+                    <status>Approved</status>
+                    <type>accent</type>
+            </change>
+        </date>
+<!-- ======================================================================  -->
+        <date>
+            <date>2019.09.01</date>
+            <change>
+                <n>1</n>
+                <citation>
+                    <book>Deut</book>
+                    <c>12</c>
+                    <v>30</v>
+                    <position>12</position>
+                </citation>
+                <author>
+                     <name>Shmuel Weissman</name>
+                     <mail>shmuel@sefaria.org</mail>
+                     <confirmed>2020.01.27</confirmed>
+                </author>
+                <description>Change qadma (&#1505;&#x05a8;) to revia (&#1505;&#x0597;).</description>
+                
+                <lc>
+                    <folio>Folio_107v</folio>
+                    <column>1</column>
+                    <line>5</line>           
+                    <credit></credit>   
+                </lc>
+                
+                <reftext>&#x05dc;&#x05b5;&#x05d0;&#x05de;&#x05b9;&#x05a8;&#x05e8;</reftext>  
+                <refuni>lamed tsere alef mem holam qadma resh</refuni> 
+                <changetext>&#x05dc;&#x05b5;&#x05d0;&#x05de;&#x05b9;&#x0597;&#x05e8;</changetext>  
+                <changeuni>lamed tsere alef mem holam revia resh</changeuni> 
+ 
+                <notes></notes>
+
+                <approval>
+                    <name>Stephen Salisbury</name>
+                    <mail>steve@grovescenter.org</mail>
+                    <date>2019.09.02</date>
+                </approval> 
+                <status>Approved</status>
+                <type>accent</type>
+            </change>
+        </date>
+<!-- ======================================================================  -->
+        <date>
+            <date>2019.01.03</date>
+            <change>
+                <n>1</n>
+                <citation>
+                    <book>Jer</book>
+                    <c>48</c>
+                    <v>27</v>
+                    <position>13</position>
+                </citation>
+                <author>
+                     <name>Asael Reiter</name>
+                     <mail>asaelr@gmail.com</mail>
+                     <confirmed>false</confirmed>
+                </author>
+                <description>Change merkha (&#1505;&#x05a5;) to tevir (&#1505;&#x059b;).</description>
+                
+                <lc>
+                    <folio>Folio_272v</folio>
+                    <column>1</column>
+                    <line>12</line>           
+                    <credit></credit>   
+                </lc>
+                
+                <reftext>דְבָרֶ֥יךָ</reftext>  
+                <refuni>dalet sheva bet qamats resh segol merkha yod final-kaf qamats </refuni> 
+                <changetext>&#x05d3;&#x05b0;&#x05d1;&#x05b8;&#x05e8;&#x05b6;&#x059b;&#x05d9;&#x05da;&#x05b8;</changetext>  
+                <changeuni>dalet sheva bet qamats resh segol tevir yod final-kaf qamats</changeuni> 
+ 
+                <notes></notes>
+
+                <approval>
+                    <name>Stephen Salisbury</name>
+                    <mail>steve@grovescenter.org</mail>
+                    <date>2019.01.04</date>
+                </approval> 
+                <status>Approved</status>
+                <type>accent</type>
+            </change>
+        </date>
+<!-- ======================================================================  -->
+        <date>
+            <date>2018.11.27</date>
+            <change>
+                <n>1</n>
+                <citation>
+                    <book>Gen</book>
+                    <c>39</c>
+                    <v>2</v>
+                    <position>9</position>
+                </citation>
+                <author>
+                     <name>Shmuel Weissman</name>
+                     <mail>shmuel@sefaria.org</mail>
+                     <confirmed>2020.01.27</confirmed>
+                </author>
+                <description>Change merkha (&#1505;&#x05a5;) to tipeha (&#1505;&#x0596;).</description>
+                
+                <lc>
+                    <folio>Folio_24r</folio>
+                    <column>1</column>
+                    <line>7</line>           
+                    <credit></credit>   
+                </lc>
+                
+                <reftext>&#x05d1;&#x05bc;&#x05b0;&#x05d1;&#x05b5;&#x05a5;&#x05d9;&#x05ea;</reftext>  
+                <refuni>bet   dagesh   sheva   bet   tsere   merkha   yod   tav</refuni> 
+                <changetext>&#x05d1;&#x05bc;&#x05b0;&#x05d1;&#x05b5;&#x0596;&#x05d9;&#x05ea;</changetext>  
+                <changeuni>bet dagesh sheva bet tsere tipeha yod tav</changeuni> 
+ 
+                <notes></notes>
+
+                <approval>
+                    <name>Steve Salisbury</name>
+                    <mail>steve@grovescenter.org</mail>
+                    <date>2018.11.30</date>
+                </approval> 
+                <status>Approved</status>
+                <type>accent</type>
+            </change>
+            <change>
+                <n>2</n>
+                <citation>
+                    <book>Gen</book>
+                    <c>39</c>
+                    <v>2</v>
+                    <position>10</position>
+                </citation>
+                <author>
+                     <name>Shmuel Weissman</name>
+                     <mail>shmuel@sefaria.org</mail>
+                     <confirmed>2020.01.27</confirmed>
+                </author>
+                <description>Change tipeha (&#1505;&#x0596;) to merkha (&#1505;&#x05a5;).</description>
+                
+                <lc>
+                    <folio>Folio_24r</folio>
+                    <column>1</column>
+                    <line>7</line>           
+                    <credit></credit>   
+                </lc>
+                
+                <reftext>אֲדֹנָ֖יו</reftext>  
+                <refuni>alef hataf-patah dalet holam nun qamats tipeha yod  vav</refuni> 
+                <changetext>&#x05d0;&#x05b2;&#x05d3;&#x05b9;&#x05e0;&#x05b8;&#x05a5;&#x05d9;&#x05d5;</changetext>  
+                <changeuni>alef hataf-patah dalet holam nun qamats merkha yod vav</changeuni> 
+ 
+                <notes></notes>
+
+                <approval>
+                    <name>Stephen Salisbury</name>
+                    <mail>steve@grovescenter.org</mail>
+                    <date>2018.11.30</date>
+                </approval> 
+                <status>Approved</status>
+                <type>accent</type>
+            </change>
+        </date>
+<!-- ====================================================================== 
+
+     Morphology-only change removed 30 Dec 2020.
+     
+        <date>
+            <date>2017.10.19</date>
+            <title>Correct morphological division of word "&#x05d1;&#x05d9;"</title>
+            <summary>
+               <note>Word "&#x05d1;&#x05d9;" has Strong's number 994 and is an exclamation, not "in/with me".</note>
+             </summary>
+            <change>
+                <n>1</n>
+                <citation>
+                    <book>Gen</book>
+                    <c>43</c>
+                    <v>20</v>
+                    <position>2</position>
+                </citation>
+                <author>
+                     <name>David Troidl</name>
+                     <mail>DavidTroidl@aol.com</mail>
+                     <confirmed>2020.01.30</confirmed>
+                </author>
+                <description>Remove morphological division (/).</description>
+                
+                <lc>
+                    <folio></folio>
+                    <column></column>
+                    <line></line>           
+                    <credit></credit>   
+                </lc>
+                
+                <reftext>&#x05d1;&#x05bc;&#x05b4;&#x05a3;&#x002f;&#x05d9;</reftext>  
+                <refuni>bet dagesh hiriq munah slash yod</refuni> 
+                <changetext>&#x05d1;&#x05bc;&#x05b4;&#x05a3;&#x05d9;</changetext>  
+                <changeuni>bet dagesh hiriq munah yod</changeuni> 
+ 
+
+                <approval>
+                    <name>Stephen Salisbury</name>
+                    <mail>steve@grovescenter.org</mail>
+                    <date>2017.10.20</date>
+                </approval> 
+                <status>Approved</status>
+                <type>morphology</type>
+            </change>
+            <change>
+                <n>2</n>
+                <citation>
+                    <book>Gen</book>
+                    <c>44</c>
+                    <v>18</v>
+                    <position>5</position>
+                </citation>
+                <author>
+                     <name>David Troidl</name>
+                     <mail>DavidTroidl@aol.com</mail>
+                     <confirmed>2020.01.30</confirmed>
+                </author>
+                <description>Remove morphological division (/).</description>
+                
+                <lc>
+                    <folio></folio>
+                    <column></column>
+                    <line></line>           
+                    <credit></credit>   
+                </lc>                
+                
+                <reftext>&#x05d1;&#x05bc;&#x05b4;&#x05a3;&#x002f;&#x05d9;</reftext>  
+                <refuni>bet dagesh hiriq munah slash yod</refuni> 
+                <changetext>&#x05d1;&#x05bc;&#x05b4;&#x05a3;&#x05d9;</changetext>  
+                <changeuni>bet dagesh hiriq munah yod</changeuni> 
+
+                <approval>
+                    <name>Stephen Salisbury</name>
+                    <mail>steve@grovescenter.org</mail>
+                    <date>2017.10.20</date>
+                </approval> 
+                <status>Approved</status>
+                <type>morphology</type>
+            </change>
+            <change>
+                <n>3</n>
+                <citation>
+                    <book>Ex</book>
+                    <c>4</c>
+                    <v>10</v>
+                    <position>5</position>
+                </citation>
+                <author>
+                     <name>David Troidl</name>
+                     <mail>DavidTroidl@aol.com</mail>
+                     <confirmed>2020.01.30</confirmed>
+                </author>
+                <description>Remove morphological division (/).</description>
+                
+                <lc>
+                    <folio></folio>
+                    <column></column>
+                    <line></line>           
+                    <credit></credit>   
+                </lc>
+                
+                <reftext>&#x05d1;&#x05bc;&#x05b4;&#x05a3;&#x002f;&#x05d9;</reftext>  
+                <refuni>bet dagesh hiriq munah slash yod</refuni> 
+                <changetext>&#x05d1;&#x05bc;&#x05b4;&#x05a3;&#x05d9;</changetext>  
+                <changeuni>bet dagesh hiriq munah yod</changeuni> 
+
+                <approval>
+                    <name>Stephen Salisbury</name>
+                    <mail>steve@grovescenter.org</mail>
+                    <date>2017.10.20</date>
+                </approval> 
+                <status>Approved</status>
+                <type>morphology</type>
+            </change>
+            <change>
+                <n>4</n>
+                <citation>
+                    <book>Ex</book>
+                    <c>4</c>
+                    <v>13</v>
+                    <position>2</position>
+                </citation>
+                <author>
+                     <name>David Troidl</name>
+                     <mail>DavidTroidl@aol.com</mail>
+                     <confirmed>2020.01.30</confirmed>
+                </author>
+                <description>Remove morphological division (/).</description>
+                
+                <lc>
+                    <folio></folio>
+                    <column></column>
+                    <line></line>           
+                    <credit></credit>   
+                </lc>
+                
+                <reftext>&#x05d1;&#x05bc;&#x05b4;&#x05a3;&#x002f;&#x05d9;</reftext>  
+                <refuni>bet dagesh hiriq munah slash yod</refuni> 
+                <changetext>&#x05d1;&#x05bc;&#x05b4;&#x05a3;&#x05d9;</changetext>  
+                <changeuni>bet dagesh hiriq munah yod</changeuni> 
+
+                <approval>
+                    <name>Stephen Salisbury</name>
+                    <mail>steve@grovescenter.org</mail>
+                    <date>2017.10.20</date>
+                </approval> 
+                <status>Approved</status>
+                <type>morphology</type>
+            </change>
+            <change>
+                <n>5</n>
+                <citation>
+                    <book>Num</book>
+                    <c>12</c>
+                    <v>11</v>
+                    <position>5</position>
+                </citation>
+                <author>
+                     <name>David Troidl</name>
+                     <mail>DavidTroidl@aol.com</mail>
+                     <confirmed>2020.01.30</confirmed>
+                </author>
+                <description>Remove morphological division (/).</description>
+                
+                <lc>
+                    <folio></folio>
+                    <column></column>
+                    <line></line>           
+                    <credit></credit>   
+                </lc>
+                
+                <reftext>&#x05d1;&#x05bc;&#x05b4;&#x05a3;&#x002f;&#x05d9;</reftext>  
+                <refuni>bet dagesh hiriq munah slash yod</refuni> 
+                <changetext>&#x05d1;&#x05bc;&#x05b4;&#x05a3;&#x05d9;</changetext>  
+                <changeuni>bet dagesh hiriq munah yod</changeuni> 
+
+                <approval>
+                    <name>Stephen Salisbury</name>
+                    <mail>steve@grovescenter.org</mail>
+                    <date>2017.10.20</date>
+                </approval> 
+                <status>Approved</status>
+                <type>morphology</type>
+            </change>
+            <change>
+                <n>6</n>
+                <citation>
+                    <book>Josh</book>
+                    <c>7</c>
+                    <v>8</v>
+                    <position>1</position>
+                </citation>
+                <author>
+                     <name>David Troidl</name>
+                     <mail>DavidTroidl@aol.com</mail>
+                     <confirmed>2020.01.30</confirmed>
+                </author>
+                <description>Remove morphological division (/).</description>
+                
+                <lc>
+                    <folio></folio>
+                    <column></column>
+                    <line></line>           
+                    <credit></credit>   
+                </lc>
+                
+                <reftext>&#x05d1;&#x05bc;&#x05b4;&#x0596;&#x002f;&#x05d9;</reftext>  
+                <refuni>bet dagesh hiriq munah slash yod</refuni> 
+                <changetext>&#x05d1;&#x05bc;&#x05b4;&#x0596;&#x05d9;</changetext>  
+                <changeuni>bet dagesh hiriq munah yod</changeuni> 
+
+                <approval>
+                    <name>Stephen Salisbury</name>
+                    <mail>steve@grovescenter.org</mail>
+                    <date>2017.10.20</date>
+                </approval> 
+                <status>Approved</status>
+                <type>morphology</type>
+            </change>
+            <change>
+                <n>7</n>
+                <citation>
+                    <book>Judg</book>
+                    <c>6</c>
+                    <v>13</v>
+                    <position>4</position>
+                </citation>
+                <author>
+                     <name>David Troidl</name>
+                     <mail>DavidTroidl@aol.com</mail>
+                     <confirmed>2020.01.30</confirmed>
+                </author>
+                <description>Remove morphological division (/).</description>
+                
+                <lc>
+                    <folio></folio>
+                    <column></column>
+                    <line></line>           
+                    <credit></credit>   
+                </lc>
+                
+                <reftext>&#x05d1;&#x05bc;&#x05b4;&#x05a3;&#x002f;&#x05d9;</reftext>  
+                <refuni>bet dagesh hiriq munah slash yod</refuni> 
+                <changetext>&#x05d1;&#x05bc;&#x05b4;&#x05a3;&#x05d9;</changetext>  
+                <changeuni>bet dagesh hiriq munah yod</changeuni> 
+
+                <approval>
+                    <name>Stephen Salisbury</name>
+                    <mail>steve@grovescenter.org</mail>
+                    <date>2017.10.20</date>
+                </approval> 
+                <status>Approved</status>
+                <type>morphology</type>
+            </change>
+            <change>
+                <n>8</n>
+                <citation>
+                    <book>Judg</book>
+                    <c>6</c>
+                    <v>15</v>
+                    <position>3</position>
+                </citation>
+                <author>
+                     <name>David Troidl</name>
+                     <mail>DavidTroidl@aol.com</mail>
+                     <confirmed>2020.01.30</confirmed>
+                </author>
+                <description>Remove morphological division (/).</description>
+                
+                <lc>
+                    <folio></folio>
+                    <column></column>
+                    <line></line>           
+                    <credit></credit>   
+                </lc>
+                
+                <reftext>&#x05d1;&#x05bc;&#x05b4;&#x05a3;&#x002f;&#x05d9;</reftext>  
+                <refuni>bet dagesh hiriq munah slash yod</refuni> 
+                <changetext>&#x05d1;&#x05bc;&#x05b4;&#x05a3;&#x05d9;</changetext>  
+                <changeuni>bet dagesh hiriq munah yod</changeuni> 
+
+                <approval>
+                    <name>Stephen Salisbury</name>
+                    <mail>steve@grovescenter.org</mail>
+                    <date>2017.10.20</date>
+                </approval> 
+                <status>Approved</status>
+                <type>morphology</type>
+            </change>
+            <change>
+                <n>9</n>
+                <citation>
+                    <book>Judg</book>
+                    <c>13</c>
+                    <v>8</v>
+                    <position>6</position>
+                </citation>
+                <author>
+                     <name>David Troidl</name>
+                     <mail>DavidTroidl@aol.com</mail>
+                     <confirmed>2020.01.30</confirmed>
+                </author>
+                <description>Remove morphological division (/).</description>
+                
+                <lc>
+                    <folio></folio>
+                    <column></column>
+                    <line></line>           
+                    <credit></credit>   
+                </lc>
+                
+                <reftext>&#x05d1;&#x05bc;&#x05b4;&#x05a3;&#x002f;&#x05d9;</reftext>  
+                <refuni>bet dagesh hiriq munah slash yod</refuni> 
+                <changetext>&#x05d1;&#x05bc;&#x05b4;&#x05a3;&#x05d9;</changetext>  
+                <changeuni>bet dagesh hiriq munah yod</changeuni> 
+
+                <approval>
+                    <name>Stephen Salisbury</name>
+                    <mail>steve@grovescenter.org</mail>
+                    <date>2017.10.20</date>
+                </approval> 
+                <status>Approved</status>
+                <type>morphology</type>
+            </change>
+            <change>
+                <n>10</n>
+                <citation>
+                    <book>1Sam</book>
+                    <c>1</c>
+                    <v>26</v>
+                    <position>2</position>
+                </citation>
+                <author>
+                     <name>David Troidl</name>
+                     <mail>DavidTroidl@aol.com</mail>
+                     <confirmed>2020.01.30</confirmed>
+                </author>
+                <description>Remove morphological division (/).</description>
+                
+                <lc>
+                    <folio></folio>
+                    <column></column>
+                    <line></line>           
+                    <credit></credit>   
+                </lc>
+                
+                <reftext>&#x05d1;&#x05bc;&#x05b4;&#x05a3;&#x002f;&#x05d9;</reftext>  
+                <refuni>bet dagesh hiriq munah slash yod</refuni> 
+                <changetext>&#x05d1;&#x05bc;&#x05b4;&#x05a3;&#x05d9;</changetext>  
+                <changeuni>bet dagesh hiriq munah yod</changeuni> 
+
+                <approval>
+                    <name>Stephen Salisbury</name>
+                    <mail>steve@grovescenter.org</mail>
+                    <date>2017.10.20</date>
+                </approval> 
+                <status>Approved</status>
+                <type>morphology</type>
+            </change>
+            <change>
+                <n>11</n>
+                <citation>
+                    <book>1Kings</book>
+                    <c>3</c>
+                    <v>17</v>
+                    <position>4</position>
+                </citation>
+                <author>
+                     <name>David Troidl</name>
+                     <mail>DavidTroidl@aol.com</mail>
+                     <confirmed>2020.01.30</confirmed>
+                </author>
+                <description>Remove morphological division (/).</description>
+                
+                <lc>
+                    <folio></folio>
+                    <column></column>
+                    <line></line>           
+                    <credit></credit>   
+                </lc>
+                
+                <reftext>&#x05d1;&#x05bc;&#x05b4;&#x05a3;&#x002f;&#x05d9;</reftext>  
+                <refuni>bet dagesh hiriq munah slash yod</refuni> 
+                <changetext>&#x05d1;&#x05bc;&#x05b4;&#x05a3;&#x05d9;</changetext>  
+                <changeuni>bet dagesh hiriq munah yod</changeuni> 
+
+                <approval>
+                    <name>Stephen Salisbury</name>
+                    <mail>steve@grovescenter.org</mail>
+                    <date>2017.10.20</date>
+                </approval> 
+                <status>Approved</status>
+                <type>morphology</type>
+            </change>
+            <change>
+                <n>12</n>
+                <citation>
+                    <book>1Kings</book>
+                    <c>3</c>
+                    <v>26</v>
+                    <position>14</position>
+                </citation>
+                <author>
+                     <name>David Troidl</name>
+                     <mail>DavidTroidl@aol.com</mail>
+                     <confirmed>2020.01.30</confirmed>
+                </author>
+                <description>Remove morphological division (/).</description>
+                
+                <lc>
+                    <folio></folio>
+                    <column></column>
+                    <line></line>           
+                    <credit></credit>   
+                </lc>
+                
+                <reftext>&#x05d1;&#x05bc;&#x05b4;&#x05a3;&#x002f;&#x05d9;</reftext>  
+                <refuni>bet dagesh hiriq munah slash yod</refuni> 
+                <changetext>&#x05d1;&#x05bc;&#x05b4;&#x05a3;&#x05d9;</changetext>  
+                <changeuni>bet dagesh hiriq munah yod</changeuni> 
+
+                <approval>
+                    <name>Stephen Salisbury</name>
+                    <mail>steve@grovescenter.org</mail>
+                    <date>2017.10.20</date>
+                </approval> 
+                <status>Approved</status>
+                <type>morphology</type>
+            </change>
+       </date>
+ ===============================================================================m -->
+            
+     </dates>
+</Changes>

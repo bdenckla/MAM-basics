@@ -1,0 +1,28 @@
+<?xml version = "1.0" encoding="UTF-8"?>
+<!-- XML data file for fake Changes to test LC location estimator -->
+<Changes>
+<filedate>2000.01.01</filedate>
+<dates>   
+<date>
+<date>2000.01.01</date>
+<change>
+	<n>1</n>
+	<citation><book>Judg</book><c>5</c><v>13</v><position>1</position></citation>
+	
+	<author><name>Fake Author</name><mail></mail><confirmed></confirmed></author>
+	
+	<description>Fake Description.</description>
+	
+	<lc>
+		<folio>Folio_138B</folio><column>1</column><line>27</line><credit>Credit: Sefaria.org.</credit>
+	</lc>
+	
+	<reftext>&#x05e8;&#x05b4;&#x05bd;&#x05d9;&#x05e7;&#x05c3;</reftext>
+	<refuni>resh   hiriq   meteg   yod   qof   sof-pasuq</refuni>
+	<changetext>&#x05e8;&#x05b4;&#x05bd;&#x05d9;&#x05e7;&#x05c3;</changetext>
+	<changeuni>resh   hiriq   meteg   yod   qof   sof-pasuq</changeuni>
+	
+</change>
+</date>
+</dates>
+</Changes>

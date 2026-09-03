@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type='text/xsl'  href='/XSL/Changes.xsl.xml'?>
+
+<!--===================================================-->
+<Changes>
+    <ref>UXLC 2.3</ref>
+    <target>UXLC 2.4</target>
+    <filedate>2025.10.19</filedate>
+    <type>installed</type>
+    <dates>
+        <!--===================================================-->
+        <date>
+            <date>2025.03.21</date>
+            <!--...................................................-->
+            <change>
+                <n>1</n>
+                <citation>
+                    <book>Gen</book>
+                    <c>41</c>
+                    <v>24</v>
+                    <position>2</position>
+                </citation>
+                <author>
+                    <name>CVK</name>
+                    <mail>mail@cvkimball.com</mail>
+                    <confirmed>true</confirmed>
+                </author>
+                <description>Consider changing the patah on he to qamats. Retain the patah and add note 't'.</description>
+                <lc>
+                    <folio>Folio_025A</folio>
+                    <column>3</column>
+                    <line>6</line>
+                    <credit>Credit: Sefaria.org.</credit>
+                </lc>
+                <image2>
+                    <title>Qamats on adjacent lines.</title>
+                    <credit>Credit: Sefaria.org annotated with red circles by CVK.</credit>
+                </image2>
+                <reftext>הַשִׁבֳּלִ֣ים</reftext>
+                <refuni>he     patah     shin     shin-dot     hiriq     bet     dagesh     hataf-qamats     lamed     hiriq     munah     yod     final-mem     </refuni>
+                <changetext>הַשִׁבֳּלִ֣ים</changetext>
+                <changeuni>he     patah     shin     shin-dot     hiriq     bet     dagesh     hataf-qamats     lamed     hiriq     munah     yod     final-mem     </changeuni>
+                <notes>
+                    <note>The patah on the he was a result of a change in change file 2021.04.01 - Changes at 2021.02.22 - 12 from the original condition in which the previous vowel was a qamats. The dot of the putative qamats is reddish and slightly oversized. The text in this region does not have many extraneous dots, however. Examining the qamats on the adjacent lines shows that the dot of the putative qamats is spaced at a greater distance from the bar of the qamats than in the adjacent lines. This is particularly true of the qamats preceding/following the putative qamats. Dotan in BHLA also sees the vowel as a qamats, but has a patah in his body text, BHL. Ben Denckla argues convincingly that Dotan did not have access to color images of the text. Retain the patah as the vowel on the he and add a transcription note 't'.</note>
+                    <note>BHL has a patah on the he.  BHLA has a qamats on the he.</note>
+                </notes>
+                <analysistags>
+                    <aBHL/>
+                </analysistags>
+                <transnotes>
+                    <transnote>
+                        <action>Add</action>
+                        <type>t</type>
+                        <beforetext>הַ</beforetext>
+                    </transnote>
+                </transnotes>
+                <status>Pending</status>
+                <type>NoTextChange</type>
+            </change>
+            <!--...................................................-->
+            <!--...................................................-->
+            <change>
+                <n>2</n>
+                <citation>
+                    <book>1 Sam</book>
+                    <c>18</c>
+                    <v>14</v>
+                    <position>4</position>
+                </citation>
+                <author>
+                    <name>Stephen Salisbury</name>
+                    <mail>Steve@grovescenter.org</mail>
+                    <confirmed>true</confirmed>
+                </author>
+                <description>Change qamats under dalet to sheva; change sheva under resh to qamats.</description>
+                <lc>
+                    <folio>Folio_160B</folio>
+                    <column>2</column>
+                    <line>24</line>
+                    <credit>Credit: Sefaria.org.</credit>
+                </lc>
+                <reftext>דָּרְכָ֖ו</reftext>
+                <refuni>dalet     dagesh     qamats     resh     sheva     kaf     qamats     tipeha     vav     </refuni>
+                <changetext>דְּרָכָ֖ו</changetext>
+                <changeuni>dalet     dagesh     sheva     resh     qamats     kaf     qamats     tipeha     vav     </changeuni>
+                <notes>
+                    <note/>
+                    <note>BHL has a sheva under the dalet and a qamats under the resh.  BHLA has no entry for this verse.</note>
+                </notes>
+                <analysistags>
+                    <aBHL/>
+                </analysistags>
+                <transnotes>
+                    <transnote>
+                        <action>Add</action>
+                        <type/>
+                        <beforetext/>
+                    </transnote>
+                </transnotes>
+                <status>Pending</status>
+                <type>vowel</type>
+            </change>
+            <!--...................................................-->
+        </date>
+        <!--===================================================-->
+        <!--===================================================-->
+        <date>
+            <date>2025.04.24</date>
+            <!--...................................................-->
+            <change>
+                <n>1</n>
+                <citation>
+                    <book>Ps</book>
+                    <c>7</c>
+                    <v>10</v>
+                    <position>8</position>
+                </citation>
+                <author>
+                    <name>Ben Denckla</name>
+                    <mail>bdenckla@alum.mit.edu</mail>
+                    <confirmed>true</confirmed>
+                </author>
+                <description>Unusual accent pair: dehi, revia. Add transcription note 'c' after bet.</description>
+                <lc>
+                    <folio>Folio_366B</folio>
+                    <column>2</column>
+                    <line>12</line>
+                    <credit>Credit: Sefaria.org.</credit>
+                </lc>
+                <reftext>לִ֭בּ֗וֹת</reftext>
+                <refuni>lamed     hiriq     dehi     bet     dagesh     revia     vav     holam     tav     </refuni>
+                <changetext>לִ֭בּ֗וֹת</changetext>
+                <changeuni>lamed     hiriq     dehi     bet     dagesh     revia     vav     holam     tav     </changeuni>
+                <notes>
+                    <note>The presence of both a dehi and a revia on a word is unexpected but occurs 3 times in the UXLC. The hiriq on the lamed is light; however, the current page has few erroneous dots. Other instances are Ps 89:29.1 and Job 11:13.2.</note>
+                    <note>BHL has a dehi on the lamed, but no revia on the bet.  BHLA has a dehi on the lamed and a revia on the bet.</note>
+                </notes>
+                <analysistags>
+                    <aBHLA/>
+                </analysistags>
+                <transnotes>
+                    <transnote>
+                        <action>Add</action>
+                        <type>c</type>
+                        <beforetext>לִ֭בּ֗</beforetext>
+                    </transnote>
+                </transnotes>
+                <status>Pending</status>
+                <type>NoTextChange</type>
+            </change>
+            <!--...................................................-->
+            <!--...................................................-->
+            <change>
+                <n>2</n>
+                <citation>
+                    <book>Ps</book>
+                    <c>89</c>
+                    <v>29</v>
+                    <position>1</position>
+                </citation>
+                <author>
+                    <name>Ben Denckla</name>
+                    <mail>bdenckla@alum.mit.edu</mail>
+                    <confirmed>true</confirmed>
+                </author>
+                <description>Unusual accent pair: dehi, revia. Add transcription note 'c' after the second lamed.</description>
+                <lc>
+                    <folio>Folio_384B</folio>
+                    <column>1</column>
+                    <line>13</line>
+                    <credit>Credit: Sefaria.org.</credit>
+                </lc>
+                <reftext>לְ֭עוֹלָ֗ם</reftext>
+                <refuni>lamed     sheva     dehi     ayin     vav     holam     lamed     qamats     revia     final-mem     </refuni>
+                <changetext>לְ֭עוֹלָ֗ם</changetext>
+                <changeuni>lamed     sheva     dehi     ayin     vav     holam     lamed     qamats     revia     final-mem     </changeuni>
+                <notes>
+                    <note>The presence of both a dehi and a revia on a word is unexpected but occurs 3 times in the UXLC.  Other instances are Ps 7:10.8 and Job 11:13.2.</note>
+                    <note>BHL has a dehi on the first lamed, but no revia on the second lamed. BHLA has a dehi on the first lamed and a revia on the second lamed.</note>
+                </notes>
+                <analysistags>
+                    <aBHLA/>
+                </analysistags>
+                <transnotes>
+                    <transnote>
+                        <action>Add</action>
+                        <type>c</type>
+                        <beforetext>לְ֭עוֹלָ֗</beforetext>
+                    </transnote>
+                </transnotes>
+                <status>Pending</status>
+                <type>NoTextChange</type>
+            </change>
+            <!--...................................................-->
+            <!--...................................................-->
+            <change>
+                <n>3</n>
+                <citation>
+                    <book>Job</book>
+                    <c>11</c>
+                    <v>13</v>
+                    <position>2</position>
+                </citation>
+                <author>
+                    <name>Ben Denckla</name>
+                    <mail>bdenckla@alum.mit.edu</mail>
+                    <confirmed>true</confirmed>
+                </author>
+                <description>Unusual accent pair: dehi, revia. Add transcription note 'c' after tav.</description>
+                <lc>
+                    <folio>Folio_400A</folio>
+                    <column>2</column>
+                    <line>13</line>
+                    <credit>Credit: Sefaria.org.</credit>
+                </lc>
+                <reftext>אַ֭תָּ֗ה</reftext>
+                <refuni>alef     patah     dehi     tav     dagesh     qamats     revia     he     </refuni>
+                <changetext>אַ֭תָּ֗ה</changetext>
+                <changeuni>alef     patah     dehi     tav     dagesh     qamats     revia     he     </changeuni>
+                <notes>
+                    <note>The presence of both a dehi and a revia on a word is unexpected but occurs 3 times in the UXLC. Other instances are Ps 7:10.8 and Ps 89:29.1.</note>
+                    <note>BHL has a dehi on the alef, but no revia on the tav. BHLA has no note for this verse.</note>
+                </notes>
+                <analysistags/>
+                <transnotes>
+                    <transnote>
+                        <action>Add</action>
+                        <type>c</type>
+                        <beforetext>אַ֭תָּ֗</beforetext>
+                    </transnote>
+                </transnotes>
+                <status>Pending</status>
+                <type>NoTextChange</type>
+            </change>
+            <!--...................................................-->
+            <!--...................................................-->
+            <change>
+                <n>4</n>
+                <citation>
+                    <book>2 Sam</book>
+                    <c>11</c>
+                    <v>1</v>
+                    <position>6</position>
+                </citation>
+                <author>
+                    <name>Ben Denckla</name>
+                    <mail>bdenckla@alum.mit.edu</mail>
+                    <confirmed>true</confirmed>
+                </author>
+                <description>Vowels on the initial mem and following lamed differ from other texts. Add 'c' note after lamed.</description>
+                <lc>
+                    <folio>Folio_173B</folio>
+                    <column>2</column>
+                    <line>23</line>
+                    <credit>Credit: Sefaria.org.</credit>
+                </lc>
+                <reftext>הַמַּלְאֿכִ֗ים</reftext>
+                <refuni>he     patah     mem     dagesh     patah     lamed     sheva     alef     rafe     kaf     hiriq     revia     yod     final-mem     </refuni>
+                <changetext>הַמַּלְאֿכִ֗ים</changetext>
+                <changeuni>he     patah     mem     dagesh     patah     lamed     sheva     alef     rafe     kaf     hiriq     revia     yod     final-mem     </changeuni>
+                <notes>
+                    <note>Other texts have a sheva on the mem and a qamats on the lamed.</note>
+                    <note>BHL has a sheva on the mem and a qamats on the lamed.  BHLA has a patah on the mem and a sheva on the lamed. Both BHL texts have a dagesh on the mem.</note>
+                </notes>
+                <analysistags>
+                    <aBHLA/>
+                </analysistags>
+                <transnotes>
+                    <transnote>
+                        <action>Add</action>
+                        <type>c</type>
+                        <beforetext>הַמַּלְ</beforetext>
+                    </transnote>
+                </transnotes>
+                <status>Pending</status>
+                <type>NoTextChange</type>
+            </change>
+            <!--...................................................-->
+        </date>
+        <!--===================================================-->
+    </dates>
+</Changes>
+<!--===================================================-->

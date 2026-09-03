@@ -1,0 +1,146 @@
+:root { color-scheme: light dark; }
+body {
+    max-width: 40em;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 14pt;
+    color: light-dark(black, white);
+    background-color: light-dark(white, black);
+}
+*[lang="hbo"] {
+    font-family: "Taamey D WOFF2";
+    font-size: 140%;
+}
+@font-face {
+    font-family: "Taamey D WOFF2";
+    src: url("woff2/Taamey_D.woff2");
+}
+span.romanized { font-style: italic; }
+span.cluster-highlight {
+    background-color: light-dark(#f3e3a4, #5a4a1f);
+    border-radius: 0.15em;
+}
+span.bullet-label-highlight {
+    background-color: light-dark(#f3e3a4, #5a4a1f);
+    border-radius: 0.15em;
+}
+span.abbrev-tooltip {
+    cursor: help;
+    text-decoration-line: underline;
+    text-decoration-style: dotted;
+    text-underline-offset: 0.14em;
+}
+p { max-width: 40em; text-align: justify}
+blockquote { max-width: 40em; }
+td.big-for-amb-early-mtg { font-size: 250%; letter-spacing: 0.1em; text-align: left;}
+td.big { font-size: 250%; }
+table.limited-width { max-width: 40em; }
+table.border-collapse { border-collapse: collapse; }
+th, td {
+    padding-right: 0.4em;
+    padding-left: 0.4em;
+}
+tr:nth-of-type(odd) td {
+    background-color: light-dark(#eee, #222);
+}
+img {
+    max-width: 100%;
+}
+
+/* CLC (Charitable Leningrad Codex) — 3-column always-link pages (gh-pages/clc) */
+/* Main pages (clc_render._body_wrapper) get a wider body than the site-wide 40em cap, so
+   td.clc-doc below has real room to grow without narrowing the text/ref columns. The
+   long-notes page carries no div.clc-main-page, so it stays at the site-wide width. */
+body:has(> div.clc-main-page) { max-width: 60rem; }
+table.clc-3col td { vertical-align: top; }
+/* Delineate verses with thin rules anchored at the ref column (à la MAM-with-doc),
+   not the site-wide zebra shading. currentColor adapts to light/dark automatically. */
+table.clc-3col td.clc-ref {
+    border-top: 1px solid; border-bottom: 1px solid;
+}
+table.clc-3col tr:nth-of-type(odd) td { background-color: transparent; }
+td.clc-ref { white-space: nowrap; text-align: center; color: light-dark(#555, #aaa); font-size: 80%; }
+/* Dual-cantillation (design doc §7.7): render a verse's combined/alef/bet rows
+   as ONE grouped block — keep the outer divider pair, drop the rules between the
+   three strand rows. */
+table.clc-3col td.clc-ref-strand { border-top: none; border-bottom: none; }
+table.clc-3col td.clc-ref-strand.clc-strand-first { border-top: 1px solid; }
+table.clc-3col td.clc-ref-strand.clc-strand-last { border-bottom: 1px solid; }
+/* The ref label carries a hover description; show the help cursor. */
+td.clc-ref[title] { cursor: help; }
+/* The verse-ref number is a self-link (clc_render, issue #55): clicking it grabs the
+   #c{ch}v{v} URL for that verse. Keep it looking like the plain muted ref number —
+   inherit its color, drop the default link underline — and only underline on hover
+   as a click affordance (mirrors a.clc-doc-target below). */
+td.clc-ref a { color: inherit; text-decoration: none; }
+td.clc-ref a:hover { text-decoration: underline; }
+span.clc-strand-label { font-style: italic; color: light-dark(#555, #aaa); }
+/* In an alef/bet strand row, de-highlight words identical across the two strands
+   (taḥton == elyon) so the few divergence words stand out
+   (clc_render._plain_text_contents). */
+span.clc-strand-same { color: light-dark(#999, #666); }
+td.clc-doc { max-width: 45em; font-size: 85%; }
+/* A noted word is highlighted in the text column (clc_render._noted_word,
+   clc_kq._member_span). Usually a plain <span> — its note sits beside it in the same
+   row, so there is no same-page jump; only a note relegated to the long-notes page
+   makes this an <a> pointing across to that page (hover-underlined). */
+.clc-doc-target { color: light-dark(#1a4fd6, #8ab4ff); text-decoration: none; }
+a.clc-doc-target:hover { text-decoration: underline; }
+div.clc-note { margin-bottom: 0.5em; }
+span.clc-note-code { font-weight: bold; }
+/* CLC ketiv/qere (clc_kq): one boxed <ruby> per K/Q unit — qere on the baseline
+   (the reading), ketiv as the annotation above. The per-unit box bounds each
+   apparatus unit, so two adjacent independent pairs read as two boxes while a
+   grouped multi-word unit reads as one box (the "kqkq" vs "kkqq" distinction).
+   The box lives on an inline-block wrapper, not the <ruby> itself: a border on
+   a <ruby> only hugs the base line, leaving the <rt> annotation outside it. */
+span.clc-kq-box {
+    display: inline-block;
+    border: 1px solid light-dark(#bbb, #555);
+    border-radius: 0.25em;
+    padding: 0 0.15em;
+    margin: 0 0.05em;
+}
+ruby.clc-kq { ruby-position: over; }
+/* Keep the ketiv full-size: it is set off by being unpointed and above, never by
+   smallness — so override the browser-default shrunk <rt>. */
+ruby.clc-kq rt { font-size: 100%; }
+/* Dual-cant additive detangling (§7.7): a maqaf/sof-pasuq SUPPLIED to clarify ONE
+   strand (e.g. a sof-pasuq breaking pashut into two chanted verses). Shown
+   bracketed; the mark is green to flag "added, not in the codex". Recolor the mark
+   everywhere (text column + synthesized note) via this one class.
+   When a supplied mark sits inside a highlighted note target (clc-doc-target wraps the
+   whole atom, word + brackets — see clc_render._plain_text_contents), this explicit green
+   is what keeps the mark GLYPH green: it wins over the highlight color, which the word and
+   the (color:inherit) brackets take. Keep this an explicit color, not `inherit`, or the
+   mark would silently adopt the highlight color. */
+span.clc-added-during-detangling { color: light-dark(#1a7f37, #3fb950); }
+span.clc-added-bracket { color: inherit; }   /* brackets stay running-text color (or the enclosing highlight's) */
+/* Target-as-heading notes (§7.7, clc_render._headed_note): the demoted bare-letter target
+   word heads the note, its first body follows on the same line after an em dash, and any
+   further bodies spill into this bullet list (the layout MAM-with-doc uses for a
+   multi-paragraph doc-note). Kept tight against the heading line. */
+ul.clc-note-parts { margin: 0.25em 0 0; padding-inline-start: 1.5em; }
+/* Only the editorial "no qere" / "no ketiv" placeholder is small + muted (in
+   whichever slot the missing member would have occupied). */
+ruby.clc-kq span.clc-kq-none { font-size: 70%; color: light-dark(#777, #999); }
+/* UXLC attribution (clc_attribution): the page-level credit under the <h1>, and
+   the short "— UXLC 2.5" cite ending each note. Small + muted so they stay out of
+   the way of the text and notes. */
+p.clc-attribution { font-size: 85%; color: light-dark(#555, #aaa); margin-top: 0; margin-bottom: 1em; }
+span.clc-note-cite { font-size: 85%; color: light-dark(#777, #999); }
+span.clc-note-cite a { color: inherit; text-decoration: none; }
+span.clc-note-cite a:hover { text-decoration: underline; }
+span.clc-superseded-cite { font-size: 85%; color: light-dark(#777, #999); }
+span.clc-superseded-cite a { color: inherit; text-decoration: none; }
+span.clc-superseded-cite a:hover { text-decoration: underline; }
+/* Long notes (§7.3): one section per editor-opted-in note on the shared long-notes
+   page, each with its own jump-target anchor — same highlight-on-arrival treatment
+   as div.clc-note above. */
+div.clc-long-note { margin-bottom: 2em; }
+div.clc-long-note:target { background-color: light-dark(#f3e3a4, #5a4a1f); border-radius: 0.15em; }
+abbr[title] { cursor: help; }
+div.clc-long-note-img-wrap { text-align: center; }
+img.clc-long-note-img { max-width: 100%; border: 1px solid light-dark(#ccc, #444); }
+p.clc-long-note-img-credit { font-size: 85%; color: light-dark(#777, #999); margin-top: 0.25em; text-align: center; }

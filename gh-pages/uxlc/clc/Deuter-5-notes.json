@@ -1,0 +1,37 @@
+[
+  {
+    "book": "Deuter",
+    "ch": 5,
+    "v": 8,
+    "atom_index": 2,
+    "atom_text": "תַעֲשֶֽׂ֨ה־",
+    "note_code": "t",
+    "note_text": "Place pashta above sin, replace merkha with meteg below. Add note 't'. This text is in a Decalogue and is expected to have dual accents. The mark above the sin is small and light, starting on the rightmost leg of the sin. The near-vertical line below the shin is faint, short and broken, more likely to be a meteg than merkha. The Miqra According to the Masorah (MAM) has a pashta over the shin and a meteg below.",
+    "source": "uxlc-x-note",
+    "diff_type": "uxlc-pending-change-applied",
+    "is_uxlc_departure": true,
+    "uxlc_reading": "תַעֲשֶֽׂ֙ה־",
+    "clc_reading": "תַעֲשֶֽׂ֨ה־",
+    "source_url": "https://tanach.us/Notes/Deuteronomy/Deuteronomy.5.8.2-t.html",
+    "superseding_uxlc_change": [
+      "2026.10.19",
+      "2026.04.10-10"
+    ]
+  },
+  {
+    "book": "Deuter",
+    "ch": 5,
+    "v": 13,
+    "atom_index": 2,
+    "atom_text": "יָמִ֣ים",
+    "note_code": "t",
+    "note_text": "Remove pashta from final mem. Add note 't'. This change does not refer to the dark, clearly-defined tipeha above the right edge of the final mem; the tipeha belongs to the word on the previous line, Deut 5:12.7. An ill-defined diagonal stub occurs on the upper, left top of the final mem. It has a possible other remnant to the left of the sheva on the previous line. It could be a remnant of an erased pashta. UXLC verse Deut 5:13 corresponds to BHL verse Deut 5:12. BHL has a pashta on the final mem. BHL Appendix A has no pashta on the final mem.",
+    "source": "uxlc-x-note",
+    "diff_type": "transcription-uncertainty",
+    "is_uxlc_departure": false,
+    "uxlc_reading": "יָמִ֣ים",
+    "clc_reading": "יָמִ֣ים",
+    "source_url": "https://tanach.us/Notes/Deuteronomy/Deuteronomy.5.13.2-t.html",
+    "superseding_uxlc_change": []
+  }
+]

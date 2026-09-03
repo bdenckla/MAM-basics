@@ -1,0 +1,58 @@
+[
+  {
+    "fragile_word_u": "וַיֹּ֣אמְר֔וּ",
+    "fragile_word_n": "וַיֹּ֣אמְר֔וּ",
+    "fragile_word_u_cs": "v,_,y,·,(mun),o,α,m,:,r,(zaq_q),v,·",
+    "fragile_word_n_cs": "v,_,y,o,·,(mun),α,m,:,r,(zaq_q),v,·",
+    "fragile_word_u_with_drops": "v,_,y,(mun),o,α,m,:,r,(zaq_q),v",
+    "fragile_word_n_with_drops": "v,_,y,o,(mun),α,m,:,r,(zaq_q),v"
+  },
+  {
+    "fragile_word_u": "וַיֹּ֧סֶף",
+    "fragile_word_n": "וַיֹּ֧סֶף",
+    "fragile_word_u_cs": "v,_,y,·,(dar),o,σ,∵,p.",
+    "fragile_word_n_cs": "v,_,y,o,·,(dar),σ,∵,p.",
+    "fragile_word_u_with_drops": "v,_,y,(dar),o,σ,∵,p.",
+    "fragile_word_n_with_drops": "v,_,y,o,(dar),σ,∵,p."
+  },
+  {
+    "fragile_word_u": "וַיִּקְבְֹּ֥ר",
+    "fragile_word_n": "וַיִּקְבְֹּ֥ר",
+    "fragile_word_u_cs": "v,_,y,·,i,q,:,b,·,o,:,(mer),r",
+    "fragile_word_n_cs": "v,_,y,i,·,q,:,b,:,o,·,(mer),r",
+    "fragile_word_u_with_drops": "v,_,y,i,q,:,b,o,:,(mer),r",
+    "fragile_word_n_with_drops": "v,_,y,i,q,:,b,:,o,(mer),r"
+  },
+  {
+    "fragile_word_u": "סֻכָּֽתֽוֹ׃",
+    "fragile_word_n": "סֻכָּֽתֽוֹ׃",
+    "fragile_word_u_cs": "σ,u,k,(mos),·,a,τ,(mos),v,o,(sopa)",
+    "fragile_word_n_cs": "σ,u,k,a,·,(mos),τ,(mos),v,o,(sopa)",
+    "fragile_word_u_with_drops": "σ,u,k,(mos),a,τ,(mos),v,o,(sopa)",
+    "fragile_word_n_with_drops": "σ,u,k,a,(mos),τ,(mos),v,o,(sopa)"
+  },
+  {
+    "fragile_word_u": "עֲווֹ֣ן",
+    "fragile_word_n": "עֲווֹ֣ן",
+    "fragile_word_u_cs": "3,:_,v,v,(mun),o,n.",
+    "fragile_word_n_cs": "3,:_,v,v,o,(mun),n.",
+    "fragile_word_u_with_drops": "3,:_,v,v,(mun),o,n.",
+    "fragile_word_n_with_drops": "3,:_,v,v,o,(mun),n."
+  },
+  {
+    "fragile_word_u": "קַתְרֹ֣ס",
+    "fragile_word_n": "קַתְרֹ֣ס",
+    "fragile_word_u_cs": "q,_,τ,:,r,(mun),o,σ",
+    "fragile_word_n_cs": "q,_,τ,:,r,o,(mun),σ",
+    "fragile_word_u_with_drops": "q,_,τ,:,r,(mun),o,σ",
+    "fragile_word_n_with_drops": "q,_,τ,:,r,o,(mun),σ"
+  },
+  {
+    "fragile_word_u": "תַעֲשֶֽׂ֙ה־",
+    "fragile_word_n": "תַעֲשֶֽׂ֙ה־",
+    "fragile_word_u_cs": "τ,_,3,:_,$,·si,∵,(pash),(mos),h,-",
+    "fragile_word_n_cs": "τ,_,3,:_,$,∵,(mos),·si,(pash),h,-",
+    "fragile_word_u_with_drops": "τ,_,3,:_,$,∵,(pash),(mos),h,-",
+    "fragile_word_n_with_drops": "τ,_,3,:_,$,∵,(mos),(pash),h,-"
+  }
+]

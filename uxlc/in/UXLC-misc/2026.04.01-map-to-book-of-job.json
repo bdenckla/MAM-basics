@@ -1,0 +1,982 @@
+{
+  "xml_source": "in/UXLC-misc/2026.04.01 - Changes.xml",
+  "html_base": "../book-of-job/gh-pages/jobn-details/",
+  "changeset": "2026.02.05",
+  "matched": [
+    {
+      "n": 1,
+      "ref": "Job 1:19",
+      "pos": "11",
+      "html": "0119.html"
+    },
+    {
+      "n": 2,
+      "ref": "Job 1:21",
+      "pos": "9",
+      "html": "0121.html"
+    },
+    {
+      "n": 3,
+      "ref": "Job 3:3",
+      "pos": "2",
+      "html": "0303.html"
+    },
+    {
+      "n": 4,
+      "ref": "Job 3:4",
+      "pos": "8",
+      "html": "0304.html"
+    },
+    {
+      "n": 5,
+      "ref": "Job 3:16",
+      "pos": "1",
+      "html": "0316.html"
+    },
+    {
+      "n": 6,
+      "ref": "Job 4:4",
+      "pos": "1",
+      "html": "0404.html"
+    },
+    {
+      "n": 7,
+      "ref": "Job 4:9",
+      "pos": "2",
+      "html": "0409.html"
+    },
+    {
+      "n": 8,
+      "ref": "Job 4:17",
+      "pos": "2",
+      "html": "0417.html"
+    },
+    {
+      "n": 9,
+      "ref": "Job 5:5",
+      "pos": "6",
+      "html": "0505.html"
+    },
+    {
+      "n": 10,
+      "ref": "Job 5:20",
+      "pos": "1",
+      "html": "0520.html"
+    },
+    {
+      "n": 11,
+      "ref": "Job 5:23",
+      "pos": "9",
+      "html": "0523.html"
+    },
+    {
+      "n": 12,
+      "ref": "Job 5:24",
+      "pos": "6",
+      "html": "0524.html"
+    },
+    {
+      "n": 13,
+      "ref": "Job 6:10",
+      "pos": "1",
+      "html": "0610.html"
+    },
+    {
+      "n": 14,
+      "ref": "Job 6:17",
+      "pos": "1",
+      "html": "0617.html"
+    },
+    {
+      "n": 15,
+      "ref": "Job 6:21",
+      "pos": "5",
+      "html": "0621.html"
+    },
+    {
+      "n": 16,
+      "ref": "Job 6:27",
+      "pos": "7",
+      "html": "0627.html"
+    },
+    {
+      "n": 17,
+      "ref": "Job 6:29",
+      "pos": "7",
+      "html": "0629.html"
+    },
+    {
+      "n": 18,
+      "ref": "Job 7:1",
+      "pos": "7",
+      "html": "0701.html"
+    },
+    {
+      "n": 19,
+      "ref": "Job 7:9",
+      "pos": "8",
+      "html": "0709.html"
+    },
+    {
+      "n": 20,
+      "ref": "Job 7:20",
+      "pos": "6",
+      "html": "0720.html"
+    },
+    {
+      "n": 21,
+      "ref": "Job 7:21",
+      "pos": "12",
+      "html": "0721.html"
+    },
+    {
+      "n": 22,
+      "ref": "Job 8:1",
+      "pos": "4",
+      "html": "0801.html"
+    },
+    {
+      "n": 23,
+      "ref": "Job 8:2",
+      "pos": "6",
+      "html": "0802.html"
+    },
+    {
+      "n": 24,
+      "ref": "Job 8:7",
+      "pos": "4",
+      "html": "0807.html"
+    },
+    {
+      "n": 25,
+      "ref": "Job 8:14",
+      "pos": "5",
+      "html": "0814.html"
+    },
+    {
+      "n": 26,
+      "ref": "Job 8:16",
+      "pos": "2",
+      "html": "0816-HVA.html"
+    },
+    {
+      "n": 27,
+      "ref": "Job 8:16",
+      "pos": "7",
+      "html": "0816-YNQFV.html"
+    },
+    {
+      "n": 28,
+      "ref": "Job 9:6",
+      "pos": "5",
+      "html": "0906.html"
+    },
+    {
+      "n": 29,
+      "ref": "Job 9:10",
+      "pos": "6",
+      "html": "0910.html"
+    },
+    {
+      "n": 30,
+      "ref": "Job 9:14",
+      "pos": "7",
+      "html": "0914.html"
+    },
+    {
+      "n": 31,
+      "ref": "Job 9:30",
+      "pos": "8",
+      "html": "0930.html"
+    },
+    {
+      "n": 32,
+      "ref": "Job 9:35",
+      "pos": "1",
+      "html": "0935.html"
+    },
+    {
+      "n": 33,
+      "ref": "Job 10:1",
+      "pos": "7",
+      "html": "1001.html"
+    },
+    {
+      "n": 34,
+      "ref": "Job 10:6",
+      "pos": "4",
+      "html": "1006.html"
+    },
+    {
+      "n": 35,
+      "ref": "Job 10:15",
+      "pos": "12",
+      "html": "1015.html"
+    },
+    {
+      "n": 36,
+      "ref": "Job 11:3",
+      "pos": "3",
+      "html": "1103.html"
+    },
+    {
+      "n": 37,
+      "ref": "Job 11:6",
+      "pos": "12",
+      "html": "1106.html"
+    },
+    {
+      "n": 38,
+      "ref": "Job 11:7",
+      "pos": "2",
+      "html": "1107.html"
+    },
+    {
+      "n": 39,
+      "ref": "Job 11:13",
+      "pos": "2",
+      "html": "1113.html"
+    },
+    {
+      "n": 40,
+      "ref": "Job 12:3",
+      "pos": "9",
+      "html": "1203.html"
+    },
+    {
+      "n": 41,
+      "ref": "Job 12:9",
+      "pos": "8",
+      "html": "1209.html"
+    },
+    {
+      "n": 42,
+      "ref": "Job 12:16",
+      "pos": "3",
+      "html": "1216.html"
+    },
+    {
+      "n": 43,
+      "ref": "Job 12:19",
+      "pos": "4",
+      "html": "1219.html"
+    },
+    {
+      "n": 44,
+      "ref": "Job 14:9",
+      "pos": "1",
+      "html": "1409.html"
+    },
+    {
+      "n": 45,
+      "ref": "Job 14:13",
+      "pos": "9",
+      "html": "1413.html"
+    },
+    {
+      "n": 46,
+      "ref": "Job 15:8",
+      "pos": "2",
+      "html": "1508.html"
+    },
+    {
+      "n": 47,
+      "ref": "Job 15:34",
+      "pos": "8",
+      "html": "1534.html"
+    },
+    {
+      "n": 48,
+      "ref": "Job 15:35",
+      "pos": "3",
+      "html": "1535.html"
+    },
+    {
+      "n": 49,
+      "ref": "Job 16:4",
+      "pos": "5",
+      "html": "1604.html"
+    },
+    {
+      "n": 50,
+      "ref": "Job 16:6",
+      "pos": "7",
+      "html": "1606.html"
+    },
+    {
+      "n": 51,
+      "ref": "Job 16:13",
+      "pos": "10",
+      "html": "1613.html"
+    },
+    {
+      "n": 52,
+      "ref": "Job 16:20",
+      "pos": "4",
+      "html": "1620.html"
+    },
+    {
+      "n": 53,
+      "ref": "Job 17:3",
+      "pos": "3",
+      "html": "1703.html"
+    },
+    {
+      "n": 54,
+      "ref": "Job 17:4",
+      "pos": "4",
+      "html": "1704.html"
+    },
+    {
+      "n": 55,
+      "ref": "Job 17:6",
+      "pos": "4",
+      "html": "1706.html"
+    },
+    {
+      "n": 56,
+      "ref": "Job 17:11",
+      "pos": "6",
+      "html": "1711.html"
+    },
+    {
+      "n": 57,
+      "ref": "Job 18:4",
+      "pos": "4",
+      "html": "1804-HLM3N5_1_of_2_FTW.html"
+    },
+    {
+      "n": 58,
+      "ref": "Job 18:4",
+      "pos": "4",
+      "html": "1804-HLM3N5_2_of_2_FTW.html"
+    },
+    {
+      "n": 59,
+      "ref": "Job 18:6",
+      "pos": "1",
+      "html": "1806.html"
+    },
+    {
+      "n": 60,
+      "ref": "Job 18:9",
+      "pos": "2",
+      "html": "1809.html"
+    },
+    {
+      "n": 61,
+      "ref": "Job 19:2",
+      "pos": "5",
+      "html": "1902.html"
+    },
+    {
+      "n": 62,
+      "ref": "Job 19:5",
+      "pos": "7",
+      "html": "1905.html"
+    },
+    {
+      "n": 63,
+      "ref": "Job 19:16",
+      "pos": "2",
+      "html": "1916-QRAFY.html"
+    },
+    {
+      "n": 64,
+      "ref": "Job 19:16",
+      "pos": "5",
+      "html": "1916-BMV0PY.html"
+    },
+    {
+      "n": 66,
+      "ref": "Job 19:28",
+      "pos": "2",
+      "html": "1928.html"
+    },
+    {
+      "n": 67,
+      "ref": "Job 20:1",
+      "pos": "3",
+      "html": "2001.html"
+    },
+    {
+      "n": 68,
+      "ref": "Job 20:23",
+      "pos": "5",
+      "html": "2023.html"
+    },
+    {
+      "n": 69,
+      "ref": "Job 21:7",
+      "pos": "1",
+      "html": "2107.html"
+    },
+    {
+      "n": 70,
+      "ref": "Job 21:15",
+      "pos": "2",
+      "html": "2115.html"
+    },
+    {
+      "n": 72,
+      "ref": "Job 21:25",
+      "pos": "5",
+      "html": "2125.html"
+    },
+    {
+      "n": 73,
+      "ref": "Job 21:34",
+      "pos": "4",
+      "html": "2134.html"
+    },
+    {
+      "n": 74,
+      "ref": "Job 22:10",
+      "pos": "5",
+      "html": "2210.html"
+    },
+    {
+      "n": 75,
+      "ref": "Job 22:12",
+      "pos": "6",
+      "html": "2212.html"
+    },
+    {
+      "n": 76,
+      "ref": "Job 22:14",
+      "pos": "3",
+      "html": "2214.html"
+    },
+    {
+      "n": 77,
+      "ref": "Job 22:21",
+      "pos": "3",
+      "html": "2221-3MV.html"
+    },
+    {
+      "n": 78,
+      "ref": "Job 22:21",
+      "pos": "4",
+      "html": "2221-VJL6.html"
+    },
+    {
+      "n": 79,
+      "ref": "Job 22:24",
+      "pos": "5",
+      "html": "2224.html"
+    },
+    {
+      "n": 80,
+      "ref": "Job 22:28",
+      "pos": "2",
+      "html": "2228.html"
+    },
+    {
+      "n": 81,
+      "ref": "Job 22:30",
+      "pos": "1",
+      "html": "2230-YMLE.html"
+    },
+    {
+      "n": 82,
+      "ref": "Job 22:30",
+      "pos": "4",
+      "html": "2230-VNMLE.html"
+    },
+    {
+      "n": 83,
+      "ref": "Job 23:5",
+      "pos": "6",
+      "html": "2305.html"
+    },
+    {
+      "n": 84,
+      "ref": "Job 23:6",
+      "pos": "2",
+      "html": "2306.html"
+    },
+    {
+      "n": 85,
+      "ref": "Job 24:1",
+      "pos": "2",
+      "html": "2401.html"
+    },
+    {
+      "n": 86,
+      "ref": "Job 24:5",
+      "pos": "3",
+      "html": "2405.html"
+    },
+    {
+      "n": 87,
+      "ref": "Job 24:13",
+      "pos": "3",
+      "html": "2413.html"
+    },
+    {
+      "n": 88,
+      "ref": "Job 24:16",
+      "pos": "8",
+      "html": "2416.html"
+    },
+    {
+      "n": 89,
+      "ref": "Job 24:18",
+      "pos": "10",
+      "html": "2418.html"
+    },
+    {
+      "n": 90,
+      "ref": "Job 24:21",
+      "pos": "1",
+      "html": "2421.html"
+    },
+    {
+      "n": 91,
+      "ref": "Job 26:14",
+      "pos": "13",
+      "html": "2614.html"
+    },
+    {
+      "n": 92,
+      "ref": "Job 27:2",
+      "pos": "1",
+      "html": "2702.html"
+    },
+    {
+      "n": 93,
+      "ref": "Job 27:9",
+      "pos": "1",
+      "html": "2709.html"
+    },
+    {
+      "n": 94,
+      "ref": "Job 27:13",
+      "pos": "9",
+      "html": "2713.html"
+    },
+    {
+      "n": 95,
+      "ref": "Job 28:8",
+      "pos": "2",
+      "html": "2808.html"
+    },
+    {
+      "n": 96,
+      "ref": "Job 28:24",
+      "pos": "2",
+      "html": "2824.html"
+    },
+    {
+      "n": 97,
+      "ref": "Job 28:26",
+      "pos": "1",
+      "html": "2826.html"
+    },
+    {
+      "n": 98,
+      "ref": "Job 29:3",
+      "pos": "5",
+      "html": "2903.html"
+    },
+    {
+      "n": 99,
+      "ref": "Job 29:8",
+      "pos": "4",
+      "html": "2908.html"
+    },
+    {
+      "n": 100,
+      "ref": "Job 29:11",
+      "pos": "5",
+      "html": "2911.html"
+    },
+    {
+      "n": 101,
+      "ref": "Job 29:19",
+      "pos": "7",
+      "html": "2919.html"
+    },
+    {
+      "n": 102,
+      "ref": "Job 30:18",
+      "pos": "2",
+      "html": "3018.html"
+    },
+    {
+      "n": 103,
+      "ref": "Job 30:22",
+      "pos": "3",
+      "html": "3022.html"
+    },
+    {
+      "n": 104,
+      "ref": "Job 30:30",
+      "pos": "1",
+      "html": "3030.html"
+    },
+    {
+      "n": 105,
+      "ref": "Job 31:2",
+      "pos": "1",
+      "html": "3102.html"
+    },
+    {
+      "n": 106,
+      "ref": "Job 31:4",
+      "pos": "2",
+      "html": "3104.html"
+    },
+    {
+      "n": 107,
+      "ref": "Job 31:5",
+      "pos": "8",
+      "html": "3105.html"
+    },
+    {
+      "n": 108,
+      "ref": "Job 31:7",
+      "pos": "12",
+      "html": "3107.html"
+    },
+    {
+      "n": 109,
+      "ref": "Job 31:15",
+      "pos": "1",
+      "html": "3115.html"
+    },
+    {
+      "n": 110,
+      "ref": "Job 31:19",
+      "pos": "3",
+      "html": "3119.html"
+    },
+    {
+      "n": 111,
+      "ref": "Job 31:20",
+      "pos": "7",
+      "html": "3120.html"
+    },
+    {
+      "n": 112,
+      "ref": "Job 31:28",
+      "pos": "2",
+      "html": "3128.html"
+    },
+    {
+      "n": 113,
+      "ref": "Job 31:33",
+      "pos": "7",
+      "html": "3133.html"
+    },
+    {
+      "n": 114,
+      "ref": "Job 31:39",
+      "pos": "2",
+      "html": "3139.html"
+    },
+    {
+      "n": 115,
+      "ref": "Job 32:6",
+      "pos": "11",
+      "html": "3206.html"
+    },
+    {
+      "n": 116,
+      "ref": "Job 32:10",
+      "pos": "6",
+      "html": "3210.html"
+    },
+    {
+      "n": 117,
+      "ref": "Job 32:11",
+      "pos": "2",
+      "html": "3211.html"
+    },
+    {
+      "n": 118,
+      "ref": "Job 33:12",
+      "pos": "8",
+      "html": "3312.html"
+    },
+    {
+      "n": 119,
+      "ref": "Job 33:28",
+      "pos": "7",
+      "html": "3328.html"
+    },
+    {
+      "n": 120,
+      "ref": "Job 33:30",
+      "pos": "7",
+      "html": "3330.html"
+    },
+    {
+      "n": 121,
+      "ref": "Job 34:5",
+      "pos": "2",
+      "html": "3405.html"
+    },
+    {
+      "n": 122,
+      "ref": "Job 34:10",
+      "pos": "2",
+      "html": "3410.html"
+    },
+    {
+      "n": 123,
+      "ref": "Job 34:19",
+      "pos": "7",
+      "html": "3419-NKR0.html"
+    },
+    {
+      "n": 124,
+      "ref": "Job 34:19",
+      "pos": "8",
+      "html": "3419-JV3.html"
+    },
+    {
+      "n": 125,
+      "ref": "Job 34:22",
+      "pos": "2",
+      "html": "3422.html"
+    },
+    {
+      "n": 126,
+      "ref": "Job 34:33",
+      "pos": "1",
+      "html": "3433-HM3M5.html"
+    },
+    {
+      "n": 127,
+      "ref": "Job 34:33",
+      "pos": "2",
+      "html": "3433-YJLMNH_1_of_2_FTW.html"
+    },
+    {
+      "n": 128,
+      "ref": "Job 34:33",
+      "pos": "2",
+      "html": "3433-YJLMNH_2_of_2_FTW.html"
+    },
+    {
+      "n": 129,
+      "ref": "Job 34:33",
+      "pos": "11",
+      "html": "3433-VMH0YD3F.html"
+    },
+    {
+      "n": 130,
+      "ref": "Job 34:37",
+      "pos": "7",
+      "html": "3437.html"
+    },
+    {
+      "n": 131,
+      "ref": "Job 35:7",
+      "pos": "8",
+      "html": "3507.html"
+    },
+    {
+      "n": 132,
+      "ref": "Job 35:14",
+      "pos": "3",
+      "html": "3514.html"
+    },
+    {
+      "n": 133,
+      "ref": "Job 36:11",
+      "pos": "3",
+      "html": "3611.html"
+    },
+    {
+      "n": 134,
+      "ref": "Job 36:12",
+      "pos": "7",
+      "html": "3612.html"
+    },
+    {
+      "n": 135,
+      "ref": "Job 36:19",
+      "pos": "2",
+      "html": "3619.html"
+    },
+    {
+      "n": 136,
+      "ref": "Job 36:29",
+      "pos": "7",
+      "html": "3629.html"
+    },
+    {
+      "n": 137,
+      "ref": "Job 37:6",
+      "pos": "2",
+      "html": "3706.html"
+    },
+    {
+      "n": 138,
+      "ref": "Job 37:19",
+      "pos": "1",
+      "html": "3719-HVDY3NV.html"
+    },
+    {
+      "n": 139,
+      "ref": "Job 37:19",
+      "pos": "5",
+      "html": "3719-LA0.html"
+    },
+    {
+      "n": 140,
+      "ref": "Job 37:20",
+      "pos": "2",
+      "html": "3720.html"
+    },
+    {
+      "n": 141,
+      "ref": "Job 38:12",
+      "pos": "1",
+      "html": "3812-HMYMY5.html"
+    },
+    {
+      "n": 142,
+      "ref": "Job 38:12",
+      "pos": "6",
+      "html": "3812-YD3F_HJXR.html"
+    },
+    {
+      "n": 143,
+      "ref": "Job 38:17",
+      "pos": "6",
+      "html": "3817.html"
+    },
+    {
+      "n": 144,
+      "ref": "Job 38:20",
+      "pos": "6",
+      "html": "3820.html"
+    },
+    {
+      "n": 145,
+      "ref": "Job 38:27",
+      "pos": "2",
+      "html": "3827.html"
+    },
+    {
+      "n": 146,
+      "ref": "Job 38:29",
+      "pos": "6",
+      "html": "3829.html"
+    },
+    {
+      "n": 147,
+      "ref": "Job 39:2",
+      "pos": "4",
+      "html": "3902.html"
+    },
+    {
+      "n": 148,
+      "ref": "Job 39:6",
+      "pos": "6",
+      "html": "3906.html"
+    },
+    {
+      "n": 149,
+      "ref": "Job 39:11",
+      "pos": "2",
+      "html": "3911.html"
+    },
+    {
+      "n": 150,
+      "ref": "Job 39:12",
+      "pos": "2",
+      "html": "3912.html"
+    },
+    {
+      "n": 151,
+      "ref": "Job 39:13",
+      "pos": "5",
+      "html": "3913.html"
+    },
+    {
+      "n": 152,
+      "ref": "Job 39:15",
+      "pos": "7",
+      "html": "3915.html"
+    },
+    {
+      "n": 153,
+      "ref": "Job 39:20",
+      "pos": "1",
+      "html": "3920.html"
+    },
+    {
+      "n": 154,
+      "ref": "Job 39:25",
+      "pos": "9",
+      "html": "3925.html"
+    },
+    {
+      "n": 155,
+      "ref": "Job 40:10",
+      "pos": "3",
+      "html": "4010.html"
+    },
+    {
+      "n": 156,
+      "ref": "Job 40:19",
+      "pos": "1",
+      "html": "4019-HVA.html"
+    },
+    {
+      "n": 157,
+      "ref": "Job 40:19",
+      "pos": "5",
+      "html": "4019-H3JV.html"
+    },
+    {
+      "n": 158,
+      "ref": "Job 40:26",
+      "pos": "6",
+      "html": "4026.html"
+    },
+    {
+      "n": 159,
+      "ref": "Job 40:29",
+      "pos": "2",
+      "html": "4029.html"
+    },
+    {
+      "n": 160,
+      "ref": "Job 41:25",
+      "pos": "7",
+      "html": "4125.html"
+    },
+    {
+      "n": 161,
+      "ref": "Job 42:10",
+      "pos": "10",
+      "html": "4210.html"
+    },
+    {
+      "n": 162,
+      "ref": "Job 42:13",
+      "pos": "6",
+      "html": "4213.html"
+    }
+  ],
+  "xml_only": [
+    {
+      "n": 65,
+      "ref": "Job 19:16",
+      "pos": "6",
+      "desc": "Examine if pe has a geresh-muqdam and a revia. [Part 2 of previous change] Change accent order to revia then geresh-muqdam; include ZWJ to achieve display or ordering. Add transcription note 't'."
+    },
+    {
+      "n": 71,
+      "ref": "Job 21:15",
+      "pos": "2",
+      "desc": "Examine for dagesh in shin."
+    }
+  ],
+  "html_only": []
+}

@@ -1,0 +1,402 @@
+Examine mark below the qof as possible merkha. Add note 't'
+The mark below the qof has the northeast-to-southwest inclination of a merkha. Since this word occurs at the end of the verse, the mark should be a meteg acting as a siluq; a merkha is inappropriate here. Adding note 't'.
+BHL has a meteg under the qof. BHLA has no entry for this verse.
+Add maqaf at end of word.
+The maqaf between the vav of this word and the pe of the following word is clear.
+BHL has a maqaf at the end of this word. BHLA has no entry for this verse.
+Remove maqaf at end of word.
+No maqaf is present between this word's tav and the following word's het.
+BHL has no maqaf at the end of this word. BHLA has no entry for this verse.
+Add maqaf at end of word.
+BHL has no maqaf on this word; BHLA has a maqaf on this word with a '?' in parentheses.
+Change qamats under tet to segol.
+BHL has a segol under the tet. BHLA has a note on another word, word 11.
+Examine possible dagesh in first vav.
+The putative dagesh in the first vav is lighter and larger than adjacent dots. This is likely to have been an erasure.
+BHL has no dagesh in the first vav. BHLA has no note on this verse.
+Examine qamats under the ayin. Add note 't'.
+The dot under the horizontal line under the ayin is well-positioned and well-sized; but of reddish color. It will be transcribed as a qamats with a 't' note.
+BHL has a patah under ayin. BHLA has a qamats under the ayin with a '?' in parentheses.
+Change mark under the tet to tipeha. Add note 'd'.
+The mark under the tet isn't sufficiently prepositive to be transcribed as a dehi. Space is available for it to be made prepositive. Adding a note 'd'.
+The Aleppo Codex and BHL have a dehi under the tet. BHLA makes no comment on this verse.
+Change dehi under the mem to tipeha. Add note 'd'.
+The mark under the mem is not sufficiently prepositive to be transcribed as a dehi, although space is available to do so.
+BHA has a dehi below the mem. BHLA has no entry for this verse.
+Examine the mark under the resh as possible merkha. Place the meteg before the hiriq under the resh with a CGJ. Add note 't'.
+The mark below the qof has the northeast-to-southwest inclination of a merkha. Since this word occurs at the end of the verse, the mark should be a meteg acting as a siluq; a merkha is inappropriate here. Adding note 't'.
+BHL has a meteg after the hiriq. BHLA has no entry for this verse.
+Change dehi under bet to tipeha. Add note 'd'.
+The mark under the bet isn't sufficiently prepositive to be transcribed as a dehi. Adding note 'd'.
+The Aleppo Codex and BHL have a dehi under the bet. BHLA has no entry for this verse.
+Change dehi under alef to tipeha. Add note 'd'.
+The mark under the alef is not sufficiently prepositive to be transcribed as a dehi. Space is available write the mark prepositively. Add note 'd'.
+The Aleppo Codex and the BHL have a dehi under the alef. BHLA has a tipeha under the alef.
+Add maqaf to end of word.
+BHL has no maqaf at the end of this word. BHLA has a maqaf at the end of this word.
+Change dehi under shin to tipeha. Add note 'd'.
+The mark under the shin is not sufficiently prepositive to be transcribed as a dehi.
+The Aleppo Codex and BHL have a dehi under the shin. BHLA has no entry for this verse.
+Add dagesh to lamed. Add note 't'.
+The putative dagesh is dark, well-formed, but slightly off-positioned.
+BHL has no dagesh in the lamed. BHLA has a dagesh in the lamed with a '?' in parentheses.
+Examine tsere under the lamed as a possible segol. Add note 't'.
+The text is in poor condition on this page. The lower dot of a putative segol under the lamed is very indistinct and off-centered.
+BHL has a tsere under the lamed. BHLA has a note for word 8, but not for this word.
+Remove revia over the alef.
+BHL has no revia over the alef. BHLA has no entry for this verse.
+Remove dagesh from kaf.
+The inner space of the kaf is empty; possibly something was erased.
+BHL has a dagesh in the kaf. BHLA has no entry for this verse.
+Examine dagesh in first yod. Add note 't'.
+The dagesh in the first yod is hard to see.
+BHL has a dagesh in the first yod. BHLA has no dagesh in the first yod.
+Change dehi under tav to tipeha. Add note 'd'.
+The mark under the tav is not sufficiently prepositive to be transcribed as a dehi.
+The Aleppo Codex and BHL have a dehi under the tav. BHLA has no entry for this verse.
+Move meteg under vav to precede the segol adding CGJ after meteg.
+The meteg clearly appears before the segol. The CGJ is added to preserve the mark ordering.
+BHL has the meteg after the segol. BHLA has the meteg before the segol.
+Change dehi under vav to tipeha. Add note 'd'.
+The mark under the vav is not sufficiently prepositive to be transcribed as a dehi. Add note 'd'.
+The Aleppo Codex and BHL have a dehi under the vav. BHLA has no entry for this verse.
+Add dagesh to mem. Remove maqaf from end of word.
+The text has poor quality; however, the dagesh in the mem and lack of maqaf are clear.
+BHL has no dagesh in the mem and no maqaf at the end of the word. BHLA has no entry for this verse.
+Add dagesh to first yod.
+The dagesh in the first yod is dark and well-positioned.
+BHL has no dagesh in the first yod. BHLA has no entry for this verse.
+Move holam from vav to tet and add dagesh to vav.
+A dark, but connected holam is visible at the end of the tet. Visually it belongs to the tet, not the vav.
+The dagesh in the vav is poorly shaped; however, it is well-positioned and dark.
+BHL has a holam on the vav and no dagesh in the vav. BHLA has a holam on the vav and a dagesh in the vav.
+Add dagesh to samekh.
+The dagesh in the samekh is well-positioned and dark.
+BHL has no dagesh in the samekh. BHLA has a dagesh in the samekh and a '?' in parentheses.
+Change merkha under yod to munah.
+The accent under the yod is clearly a munah rather than a merkha.
+BHL has a munah under the yod. BHLA has no entry for this verse.
+Add dagesh to lamed.
+The dot within the lamed is well-positioned and well-formed.
+BHL has no dagesh in the lamed. BHLA has a dagesh in the lamed.
+Change meteg under resh to merkha.
+The line under the resh has a northeast-to-southwest inclination of a merkha. The kaf has two near-vertical marks above it; the first of them is a meteg on the the word יְשַׂמַּֽח־ from the preceding line, verse 27:9.3 .
+BHL has a merkha under the resh. BHLA has no entry for this verse.
+Examine accent under tet as being a tipeha rather than a dehi. Add note 't'.
+The accent under the text is very slightly prepositive.
+BHL has a dehi under the tet. BHLA has no entry for this verse.
+Remove markings under the gimel; examine a possible maqaf at the end of word. Add note 't'.
+The text is in very bad shape in this region. The markings under the gimel are uncertain and will be removed. No maqaf is visible at the end. Adding note 't'.
+BHL has a segol then munah under the gimel and no maqaf at the end. BHLA has no entry for this verse.
+Change meteg below gimel to merkha. Remove maqaf at end of word.
+The line under the gimel has a very slight northeast-to-southwest inclination and can be transcribed as a merkha.
+BHL has a merkha under the gimel and no maqaf at the end of the word. BHLA has no entry for this verse.
+Change merkha under he to meteg. Add note 'm'.
+The line under the he lacks the northeast-to-southwest inclination to be transcribed as a merkha.
+BHL has a meteg under the nun and a merkha under the he. BHLA has no entry for this verse.
+Add dagesh to nun.
+The dot in the nun is brownish, but well-positioned and well-sized.
+BHL has no dagesh in the nun. BHLA has a dagesh in the nun and a '?' in parentheses.
+Add dagesh to mem.
+The dot is small, but distinct and well-positioned.
+BHL has no dagesh in the mem. BHLA has dagesh in the mem and a '?' in parentheses.
+Change munah under kaf to meteg.
+The line under the kaf has insufficient northeast-to-southwest inclination to be transcribed as a merkha. It's clearly not a munah, however.
+BHL has a munah under the kaf. BHLA has no entry for this verse.
+Remove maqaf from end of word. Add note 'm'.
+The line under the first tav lacks sufficient northeast-to-southwest inclination to be transcribed as a merkha. Adding note 'm'.
+BHL has no maqaf at the end of this word; however, it has a merkha under the first tav. BHLA has no entry for this verse.
+Remove the dagesh from the tsadi.
+No evidence for a dagesh in the tsadi is available.
+BHL has no dagesh in the tsadi. BHLA has no entry for this verse.
+Examine specks near lamed as possible dageshes.
+Two small specks appear before and after the lamed. Although they are dark, they are much smaller than the sheva dots in the kaf.
+BHL has no dagesh in the lamed. BHLA has no entry for this verse.
+Add revia above the mem. Add note 'c'.
+The markings above the mem are confusing. The rightmost group is possibly a broken masora circle; however, a very clear, dark dot appears on the left. If the dot above the mem is taken as a revia, then the mem has two accents, a tipeha and a revia, which is very strange.
+BHL has no revia above the mem. BHLA has both a revia and tipeha on the mem.
+Add dagesh to vav.
+BHL has no dagesh in the vav. BHLA has a dagesh in the vav.
+Consider adding a transcription note 't' because revia over bet is obscured by a rafe.
+The revia is visible in the left edge of the (untranscribed) rafe.
+BHL has a revia over the bet. BHLA has no entry for this verse.
+Examine mark below the he as being a tipeha instead of a dehi.
+The mark below the he is slightly displaced to the right allowing it to be transcribed as a dehi.
+The Aleppo Codex and BHL have a dehi under the he. BHLA has no entry for this verse.
+Remove meteg under the mem. Add note 't'.
+No meteg is present under the mem.
+BHL has a meteg under the mem. BHLA has no meteg under the mem and has a '?' in parentheses.
+Remove meteg under pe. Add note 't'.
+No meteg is apparent under the pe.
+BHL has a meteg under the pe. BHLA has no meteg under the pe and a '?' in parentheses.
+Change dehi under vav to meteg; change merkha under tav to meteg with an 'm' note.
+The mark under the vav, currently transcribed as a dehi, is not sufficiently inclined to be taken as either a tipeha or dehi. The dehi in the previous text will be transcribed as a meteg. The merkha under the tav is not sufficiently inclined to be transcribed as a merkha. The merkha in the previous text will be transcribed as a meteg with an 'm' note.
+BHL has a meteg under the vav and a merkha under the tav. BHLA has no entry for this verse.
+Examine meteg/merkha accent under the first tav.
+The line under the tav has insufficient northeast-to-southwest inclination to be transcribed as a merkha.
+BHL has a meteg under the tav. BHLA has an entry for word 12 of this verse, but none on this word.
+Remove maqaf from end of word.
+BHL has a maqaf at the end of this word. BHLA has no maqaf at the end of this word.
+Change meteg under alef to tipeha.
+The mark under the alef is clearly inclined northwest-to-southeast.
+BHL has a tipeha under the alef. BHLA has no entry for this verse.
+Add dagesh to yod. Move patah from het to yod.
+The dagesh in the yod is brownish, but well-positioned and well-sized. The patah is too far to the right to belong to the het.
+BHL has no dagesh in the yod; it has a patah under the het. BHLA has a dagesh in the yod and a patah under the yod.
+Change merkha under shin to meteg. Add note 'm'.
+The line under the shin lacks the northeast-to-southwest inclination to be transcribed as a merkha. Adding note 'm'.
+The mark under the second tav in the image is from the word הֲיִ֫חְיֶ֥ה, Prov 14:14.4, on the following line.
+BHL has a merkha under the shin. BHLA has no entry for this verse.
+Add merkha after meteg on shin.
+The merkha is well-inclined and distinct from the meteg.
+BHL has only a meteg under the shin. BHLA has a meteg followed by a merkha under the shin.
+Remove munah under the yod. Add note 't'.
+The text is in bad condition and poorly written near this word. A munah under the yod is not evident and will be removed. A meteg under the lamed (seen in BHL) isn't evident, either. A transcription note 't' will be added drawing attention to both the yod and the lamed.
+BHL has a qamats then munah under the yod and a meteg under the lamed. BHLA has no entry for this verse.
+Change patah under he to hataf-patah. Add dagesh to mem.
+The patah under the he is barely visible. The dagesh in the mem is dark and reasonably well-positioned.
+BHL has a patah under the he and has no dagesh in the mem. BHLA has a hataf patah under the he and NO dagesh in the mem.
+Change dehi under alef to tipeha. Add note 'd'.
+The accent below the alef isn't sufficiently prepositive to be transcribed as a dehi. Add note 'd'.
+BHL has a dehi below the alef. BHLA has a tipeha below the alef.
+Remove sheva under the kaf.
+An erasure under the kaf is apparent.
+BHL has no sheva under the kaf. BHLA has no entry for this verse.
+Examine dagesh in tav. Add note 't'.
+The dot in the tav is light and brownish, but is well-positioned and right-sized. The page doesn't have a lot of similar dots.
+BHL has no dagesh in the tav. BHLA has a dagesh in both the pe and the tav with a '?' in parentheses.
+Add dagesh to qof.
+The dagesh in the qof is brownish and larger than normal, but well-positioned.
+BHL has no dagesh in the qof. BHLA has a dagesh in the qof with a '?' in parentheses.
+Examine tipeha/dehi under the tav.
+The tipeha/dehi under the tav is very slightly prepositive and will be transcribed as a dehi.
+The Aleppo Codex and the BHL have a dehi under the tav. BHLA has no entry for this verse.
+Change sheva under vav to hiriq. Add note 't'.
+No sign of a sheva is present; the hiriq dot is brownish and ill-positioned.
+BHL has a sheva under the vav. BHLA has a hiriq under the vav.
+Change meteg under shin to merkha.
+The mark below the shin has the distinct northeast-to-southwest inclination of a merkha.
+BHL has a merkha under the shin. BHLA has no entry for this verse.
+Examine mark below lamed as possible merkha. Add note 't'.
+The mark below the lamed has the distinctive northeast-to-southwest inclination of a merkha. However, this is the last word in the verse and the writer probably intended a meteg. Add note 't'.
+BHL has a meteg below the lamed. BHLA has no entry for this verse.
+Change dehi below alef to tipeha. Add note 'd'.
+The mark below the alef is not sufficiently prepositive to be transcribed as a dehi.
+BHL has a dehi under the alef. BHLA has a tipeha under the alef.
+Examine mark below alef as possible merkha. Add note 't'.
+The mark below the alef has the distinctive northeast-to-southwest inclination of a merkha. However, this is the last word in the verse and the writer probably intended a meteg. Add note 't'.
+BHL has a meteg below the alef. BHLA has no entry for this word, though it does have an entry for word 2.
+Examine mark below tav as possible merkha. Add note 't'.
+The mark below the tav has the distinctive northeast-to-southwest inclination of a merkha. However, this is the last word in the verse and the writer probably intended a meteg. Add note 't'.
+BHL has a meteg below the tav. BHLA has no entry for this verse.
+Examine mark below tav as possible merkha. Add note 't'.
+The mark below the tav has the distinctive northeast-to-southwest inclination of a merkha. However, this is the last word in the verse and the writer probably intended a meteg. Add note 't'.
+BHL has a meteg below the second tav. BHLA has no entry for this verse.
+Examine mark below het as possible merkha. Add note 't'.
+The mark below the het has the distinctive northeast-to-southwest inclination of a merkha. However, this is the last word in the verse and the writer probably intended a meteg. Add note 't'.
+BHL has a meteg below the het. BHLA has no entry for this verse.
+Change meteg under first bet to merkha.
+The mark under the first bet has a distinct northeast-to-southwest inclination.
+BHL has a merkha under the first bet. BHLA has no entry for this verse.
+Change segol under ayin the tsere.
+The putative lower dot for the segol is very light. A similar light dots appear under the resh and before the munah under the ayin.
+BHL has a segol under the ayin. BHLA has a tsere under the ayin and a '?' in parentheses.
+Remove maqaf from end of word.
+No maqaf is apparent between the yod of this word and the following alef.
+BHL has a maqaf at the end of this word. BHLA has no maqaf at the end of this word.
+Remove hiriq under the yod.
+No hiriq is visible under the yod.
+BHL has a hiriq under the yod . BHLA has no hiriq under the yod.
+Change dehi under resh to tipeha. Add note 'd'.
+The mark under the resh is not sufficiently prepositive to be transcribed as a dehi.
+BHL has a dehi under the resh. BHLA has no entry for this verse.
+Position meteg before the hiriq under the lamed using a CGJ.
+The meteg is clearly before the hiriq. Insert a CGJ to position the marks properly.
+BHL has the meteg after the hiriq. BHLA has the meteg before the hiriq.
+Move meteg from under alef to under vav.
+BHL has only a meteg (acting as a siluq) under the mem; it has no qubuts under the mem. The BHLA has a meteg (acting as a siluq) on the vav.
+Change merkha under mem to meteg. Add note 'm'.
+The vertical mark under the mem lacks sufficient northeast-to-southwest inclination to be transcribed as a merkha. Adding note 'm'. The author points out the possible traces of a sof pasuq at the end of the word. If the verse had ended with this word, as suggested by the traces of the sof pasuq, then a meteg acting as a siluq would have been expected.
+BHL has a merkha under the mem. BHLA has no entry for this word, word 6; it does have an entry for word 11.
+Move hiriq under the second shin to follow the etnachta using a ZWJ.
+The etnachta clearly precedes the hiriq under the second shin.
+BHL has the hiriq before the etnachta under the second shin. BHLA has the hiriq following the etnachta under the second shin.
+Remove dagesh from dalet.
+No sign of a dagesh is visible in the dalet.
+BHL has no dagesh in the dalet. BHLA has no entry for this verse.
+Remove maqaf from end of word.
+BHL has no maqaf at the end of this word. BHLA has no entry for this verse.
+Move ole from over yod to over ayin.
+The ole is clearly over the ayin.
+BHL has an ole over the ayin. BHLA has no entry for this verse.
+Change merkha under lamed to meteg. Add note 'm'. Remove maqaf at end of word.
+A maqaf may have been erased at the end of this word. The erasure has "dented" the top of the nun.
+BHL has a merkha under the lamed and no maqaf at the end of the word. BHLA has no entry for this verse.
+Change dehi under the lamed to tipeha. Add note 'd'.
+The mark under the lamed is not sufficiently prepositive to be transcribed as a dehi.
+BHL has a dehi under the lamed. BHLA has no entry for this verse.
+Remove the revia above the bet.
+The only mark above the bet is a rafe which is not ordinarily transcribed here.
+BHL has no revia above the bet. BHLA has no entry for this verse.
+Examine markings above the resh.
+The resh has 3 marks above it. Moving from right-to-left, the rightmost dot/blob is the transcribed revia. The second, middle, mark over the resh is the meteg on the samekh from the last word, word 8, יֶאֱסֹֽף׃ of the preceding verse, Job 39:12. The third, leftmost, mark over the resh is tail of the final pe of word 8.
+Seth (Avi) Kadish offers a possible explanation for the rightmost dot/blob: The word אברה requires both a masorah circle and a small revia dot ( ◌֗ ). The masorah circle refers to the note ל' which says that אברה appears only once in the Bible (which is correct). The masorah circle may appear "malformed" precisely because the small dot for revia ( ◌֗ ) has collided with it.
+BHL has a revia over the resh. BHLA has no revia over the resh and a '?' in parentheses.
+Remove meteg from under the het. Add note 'c'.
+Although space is available to write a meteg under the het, none is visible. The verse should end with a meteg (acting as a siluq) on this word.
+BHL has a meteg following the qamats under the het. BHLA has no meteg under the het.
+Move darga under vav to under the yod.
+The text is in poor condition here. A faint patah can be seen under the vav. A faint darga can be seen directly under the yod.
+BHL has a darga under the yod. BHLA has no entry for this verse.
+Change munah under vav to meteg. Add note 'm'.
+Both the Aleppo Codex and BHL have a merkha under the vav. The accent under the vav lacks the northeast-to-southwest inclination for transcription as a merkha. Hence, a transcription note 'm' is added.
+BHL has a merkha under the vav. BHLA has no entry for this verse.
+Replace merkha under het with meteg. Add note 'm'.
+The vertical line under the het has insufficient northeast-to-southeast inclination to be transcribed as a merkha.
+BHL has a merkha under the het. BHLA has no entry for this verse.
+Remove dagesh from shin.
+No dagesh is apparent in the shin.
+BHL has a dagesh in the shin. BHLA has no dagesh in the shin.
+Move dagesh from second mem to third mem.
+The first column on this page is single width; the second column is double width. An odd thickening occurs in the left vertical part of the first mem. The dagesh in the third mem is clear.
+BHL has a dagesh in the second mem only. BHLA has a dagesh in the third mem only.
+Word is usually split with a maqaf between the yod and the kaf. Add note 'c'.
+No space or maqaf is present between the yod and the kaf.
+BHL has a maqaf between the yod and the kaf. BHLA has no space or maqaf between the yod and the kaf.
+Remove dagesh from zayin.
+Note: This verse is split by a samekh closed spacing marker between the 6-th and 7-th words.
+BHL has a dagesh in the zayin. BHLA has no dagesh in the zayin.
+Word is usually split with a maqaf between the yod and the kaf. Add note 'c'.
+No space or maqaf is visible between the yod and the kaf.
+BHL has a maqaf between the yod and the kaf. BHLA has a space between the yod and the kaf.
+Word usually is split by a maqaf between the yod and the kaf. Add note 'c'.
+No space or maqaf is apparent between the yod and the kaf. A smudge, possibly an erasure, appears under the alef. The tsere under the kaf is displaced due the presence of the lamed on the following line.
+BHL has a maqaf between the yod and the kaf. BHLA has neither a space nor a maqaf between the yod and the kaf.
+Remove dagesh from shin.
+No dagesh is apparent in the shin.
+BHL has a dagesh in the shin . BHLA has no dagesh in the shin.
+Remove dagesh from shin.
+No dagesh is apparent in the shin.
+BHL has a dagesh in the shin. BHLA has no dagesh in the shin.
+Remove dagesh from shin.
+No dagesh is apparent in the shin.
+BHL has a dagesh in the shin. BHLA has no dagesh in the shin.
+Remove dagesh from zayin.
+No dagesh is apparent in the zayin.
+BHL has a dagesh in the zayin. BHLA has no dagesh in the zayin.
+Remove dagesh from zayin and from yod.
+No dagesh is apparent in either the zayin or the yod. The hiriq of the zayin appears quite "late" (probably pushed off by the descender of the ayin), so late that it fuses with the dot of the qamats (Ben Denckla).
+BHL has a dagesh in both the zayin and the yod. BHLA has no dagesh in either the zayin or the yod.
+Examine possible dagesh in het. Add note 't'.
+A reddish dot appears in the lower center of the het. It is slightly larger than other dots on the page, is lower vertically than expected, but is well-centered horizontally. It will be considered to be an artifact and noted with a 't'.
+BHL has no dagesh in the het. BHLA has a dagesh in the het and a '?' in parentheses.
+Remove dagesh from yod.
+No dagesh is apparent in the yod.
+BHL has a dagesh in both the zayin and the yod. BHLA has no dagesh in the yod.
+Add yod after resh.
+A yod is apparent after the resh. The yod has no other markings.
+BHL has no yod after the resh; it has 2 yods. BHLA has a yod after the resh; it has 3 yods.
+Change qamats below shin to hataf-qamats. Add note 'c'.
+A sheva is apparent below the shin before the qamats suggesting a hataf-qamats. This is very unusual.
+BHL has no sheva under the shin. BHLA has a hataf-qamats under the shin.
+Remove patah from ayin.
+No patah is apparent under the ayin.
+BHL has a patah under the ayin. BHLA has no patah under the ayin.
+Add dagesh to first vav. Add note 't'.
+A dagesh is visible in the first vav although it is attached to the shaft of the vav. It is well-positioned vertically.
+BHL has no dagesh in the first vav. BHLA has a dagesh in the first vav.
+Add dagesh to yod.
+The dagesh in the yod is apparent.
+BHL has no dagesh in the yod. BHLA has a dagesh in the yod.
+Remove dagesh from tav.
+The putative dagesh is reddish, overly-large, and off-centered. Reddish splotches appear in the vicinity of the word.
+BHL has no dagesh in the tav. BHLA has no entry for this verse.
+Remove dagesh from zayin.
+Although the following lamed has a slight bulge on the leading edge, it lacks enough size to be transcribed as a dagesh.
+BHL has a dagesh in the zayin. BHLA has no entry for this verse.
+Consider dagesh in mem. Add note 'c'.
+The dagesh in the mem is slightly reddish and slightly over-sized, but well-positioned.
+BHL has no dagesh in the mem. BHLA has a dagesh in the mem.
+Consider the near-vertical mark under the ayin.
+The near-vertical mark under the ayin has a slight northeast-to-southwest inclination. Since the word already has a tevir on the resh, it's unlikely the writer intended a second accent on this word.
+BHL has a meteg under the ayin. BHLA has no entry for this verse.
+Examine mark below ayin as possible hataf-patah.
+A dot appears below the tav; however, it is too far from the patah to be taken as the sheva shape of a hataf-patah. It's likely to be part of the tail of the tav.
+BHL has hataf-patah under the ayin. BHLA has no entry for this verse.
+Consider possible dagesh in lamed. Add note 't'.
+A small, light, but well-positioned dagesh appears in the lamed. Add note 't'.
+BHL has no dagesh in the lamed. BHLA has no entry for this verse.
+Examine all dageshes on this word. Add note 't'.
+The text quality is poor and many dots might be considered as dageshes. The dagesh on the nun is light, but well-positioned and is the best candidate. The dagesh on the first vav is dark, but attached to the gimel. A potential dagesh/shuruq appears on the second vav, however, it is blurred and very light; whereas the holam is clear. A light dot even appears after the tav!
+A dagesh in an initial nun is unexpected in normal Hebrew grammar; however, this particular dagesh in the nun is found in many Masoretic texts. Ben Denckla has found 115 instances of a dagesh in an initial nun in the UXLC. It is a special Masoretic form called a "דגש לתפארת הקריאה", or "accentual dagesh" (Reuben Alcalay Hebrew/English dictionary) meaning "elegant pronunciation". Thanks to Ben Denckla and Seth (Avi) Kadish for their comments on this dagesh.
+Note: this verse has 4 words (of 16) marked with Masorah circles (not shown in the UXLC). They appear on words 3, 9, 12, and 13 (this word); all 4 of the Masoretic marginal notes indicate that these words are unique in the Tanach. This is confirmed by a consonants-only search of the UXLC text for each word.
+BHL agrees with the existing UXLC text. BHLA has no entry for this verse.
+Remove dagesh from qof.
+The dot in the qof is well-positioned but small, reddish, and very light. The dot in the final mem is ill-positioned, small, reddish, and very light. Other dots in this word are dark.
+BHL has no dagesh in the qof. BHLA has no entry for this verse.
+Change revia above alef to zaqef qatan.
+The text is on the last line of column 2 and is poorly written. A zaqef qatan with the lower dot touching the alef is apparent. The dot near the top of the shown photo is from a qamats on the previous line.
+BHL has a zaqef qatan over the alef. BHLA has no entry for this verse.
+Move pashta over resh to over gimel.
+The pashta is clearly on the gimel.
+BHL has the pashta over the resh. BHLA has the pashta over the gimel
+Examine segol under the shin as a possible qamats. Add note 't'.
+The upper two dots on the vowel are unusually close as compared to those under the lamed and might be taken as a qamats. The segol will be retained and a note 't' added.
+BHL has a segol under the shin. BHLA has a qamats under the shin with a '?' in parentheses.
+Change segol under shin to sheva. Examine possible dagesh in he.
+The sheva is clear; the putative dagesh in the he is very light and indistinct compared to other dots in this word.
+BHL has a sheva under the shin; it has no dagesh in the he. BHLA has no entry for this verse.
+Consider merkha under zayin as possible tevir. Add note 't'.
+The vertical bar of the accent under the zayin has a well-centered defect that appears to be a remnant of a missing dot. Restoring the dot would make the accent a tevir.
+BHL has a merkha under the zayin. BHLA has no entry for this verse.
+Remove dagesh from yod.
+No dagesh appears in the yod.
+BHL has no dagesh in the yod. BHLA has no entry for this verse.
+Consider the near-vertical mark below the ayin. Add note 't'.
+The near-vertical mark is likely to have been intended as a meteg rather than a merkha because the poetic word, עַֽל־כֵּ֛ן , already has a tevir on it. The near-vertical mark is positioned below the patah. The meteg will be positioned after the patah and a note 't' added.
+BHL has a meteg after a patah on the ayin; however, the BHL always positions metegs after the vowel as an editorial practice, so the BHL is not determinative of position in this case. BHLA has no entry for this verse.
+Remove dagesh from yod.
+The ink is very chipped on this word. No dagesh is apparent in the yod.
+BHL has a dagesh in the yod. BHLA has no dagesh in the yod and has a '?' in parentheses.
+Remove dagesh from first yod.
+A small bump appears on the leading edge of the second yod that might be taken as a dagesh. It's not enough to transcribe a dagesh on the first yod.
+BHL has a dagesh in the first yod. BHLA has no entry for this word in this verse.
+Change merkha under shin to tevir.
+A clear and well-formed tevir follows the segol under the shin.
+BHL has a tevir under the shin. BHLA has no entry for this verse.
+Add dagesh to resh.
+A well-positioned, reasonably-sized, dark dagesh appears in the resh. A resh does not ordinarily take a dagesh, however.
+BHL has no dagesh in the resh. BHLA has a dagesh in the resh and a '?' in parentheses.
+Remove dagesh from shin.
+No dagesh appears in the shin; however, a smudging possibly due to erasure appears between the first two horns of the shin.
+BHL has no dagesh in the shin. BHLA has no entry for this verse.
+Remove dagesh from tsadi.
+No dagesh is apparent in the tsadi.
+BHL has a dagesh in the tsadi. BHLA has no dagesh in the tsadi.
+Examine dagesh on second nun.
+A distinctive bump occurs on the leading edge of the vav. It is well-positioned vertically and dark, but is small and in contact with the vav. It will remain a dagesh in the text.
+BHL has a dagesh in the second nun. BHLA has no entry for this verse.
+Remove dagesh from yod.
+No dagesh is apparent in the yod.
+BHL has no dagesh in the yod. BHLA has no entry for this verse.
+Add dagesh to tet. Add note 't'.
+The text is of poor quality around this word. A well-positioned and well-formed, but light dagesh appears in the tet. Adding a dagesh to the tet and a note 't'.
+BHL has no dagesh in the tet. BHLA has a dagesh in the tet.
+Change mahapakh on kaf to yetiv.
+The accent on the kaf has the prepositive position of yetiv.
+BHL has a yetiv on the kaf. BHLA has no entry for this verse.
+Verify darga is under the dalet.
+A darga is clearly present in both the LC and UXLC.
+BHL has a darga under the dalet and agrees with the existing UXLC text. BHLA has no entry for this verse.
+Remove dagesh from yod.
+No dagesh occurs in the yod.
+BHL has a dagesh in the yod. BHLA has no dagesh in the yod.
+Remove dagesh from yod.
+NO dagesh is apparent in the yod.
+BHL has a dagesh in the yod. BHLA has no dagesh in the yod.
+Move mahapakh from under the gimel to under the dalet.
+The mahapakh is under the dalet, not the gimel. The shape of the mahapakh is more curved on the left side than normal, however.
+BHL has the mahapakh under the dalet. BHLA has no entry for this verse.
+Change tsere under alef to segol.
+The accent under the alef is clearly a segol.
+BHL has a segol under the alef. BHLA has no entry for this verse.
