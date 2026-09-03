@@ -1,6 +1,6 @@
 # Total evacuation: book-of-job, holman-ketiv-qere and UXLC-utils
 
-State: Phase 4 in progress — Steps 1–3 complete 2026-09-03; Steps 4–6 remain
+State: Phase 5 in progress — Steps 1–3 complete 2026-09-03; Steps 4–6 await the UXLC-utils source working-tree baseline
 
 Written 2026-08-22, the day
 [`PLAN-evacuate-public-repos-programme.md`](PLAN-evacuate-public-repos-programme.md) closed — its last row,
@@ -28,13 +28,16 @@ the Job manuscripts into `DATA-LICENSES.md`; that is licensing prose, not accent
 
 ## Status
 
-**PAUSED — Ben, 2026-08-23, after Phase 0 closed at `1410b5d`**: *"I want to pause the evacuation
-work for a while."* The Phase 1 chip was cancelled rather than launched. Nothing is in flight: no
-tree has landed, no repo but MAM-basics has been written to, and the dual-residency window has not
-opened, so this is the first of the safe stopping places under "How to run this plan across
-sessions" and can last indefinitely. **To resume**: re-check the four heads against the ones
-Phase 0's record names, re-run the preconditions, re-measure per the Scale section's standing
-instruction, and then run Phase 1 — which is verification only, per its Status row below.
+**CURRENT — Phase 5 is in progress, 2026-09-03.** Phases 0–4 are complete. UXLC-utils Steps 1–3
+landed the approved `gh-pages/uxlc/` and `uxlc/` trees, scoped their licences, and repointed the
+MAM-basics readers. The temporary codex-index-leningrad sparse vendor now reads MAM-basics. The
+UXLC-utils checkout has 27 modified tracked artifact paths, so Steps 4–6 — source stubs, source
+emptying and clone removal — have not begun and must not touch that working-tree state.
+
+**Historical pause — Ben, 2026-08-23, after Phase 0 closed at `1410b5d`**: *"I want to pause the
+evacuation work for a while."* The Phase 1 chip was cancelled rather than launched. The pause
+ended when Phase 1 resumed on 2026-09-03; its original safe-stopping rationale remains historical
+context only.
 
 **Two executed plans are kept in `doc/` FOR THIS ONE, and go when it closes.** The 2026-08-29
 `doc/` sweep deleted seven finished plans and spared
