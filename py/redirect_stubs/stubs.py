@@ -1,4 +1,6 @@
-"""Render the redirect stubs that stand in for wlc-utils' published pages, and lint them.
+"""Render and lint redirect stubs for pages evacuated to MAM-basics.
+
+The wlc-utils discussion below is the first redirect host's worked example.
 
 WHAT A STUB IS FOR
 
@@ -129,8 +131,8 @@ class RedirectRepo:
         return "gh-pages/" + self.site_subtree + "/"
 
 
-# The redirect-host table. Only wlc-utils has a frozen manifest today; each later lane
-# adds its row with the manifest captured at the source repo's flip.
+# The redirect-host table. Each lane adds its row only with a manifest captured at the
+# source repo's flip.
 REDIRECT_REPOS = (
     RedirectRepo(
         source_repo="wlc-utils",
@@ -138,6 +140,13 @@ REDIRECT_REPOS = (
         old_path_prefix="/wlc-utils/",
         manifest_path="in/wlc_redirect_pages.json",
         clone_url="https://github.com/bdenckla/wlc-utils.git",
+    ),
+    RedirectRepo(
+        source_repo="holman-ketiv-qere",
+        site_subtree="holman",
+        old_path_prefix="/holman-ketiv-qere/",
+        manifest_path="in/holman_ketiv_qere_redirect_pages.json",
+        clone_url="https://github.com/bdenckla/holman-ketiv-qere.git",
     ),
 )
 
