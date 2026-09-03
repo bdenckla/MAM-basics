@@ -6,15 +6,87 @@ survey of MAM metegs after the primary stress, gives Holman suggestion M23 a
 neutral link to that survey, and renames the reader-facing Holman archive
 label. The implementation does not decide whether M23 should be accepted.
 
+## Where this plan sits in the larger Holman meteg work
+
+This plan is ITEM 1 of a seven-item programme, and it is the only item written
+down in a tracked document. The other six — build the Wikisource bot edit for
+all 30 meteg suggestions, run it, download the affected chapters, run the wsgo
+diff and the standard MAM update pipeline, archive the 30 records, and refresh
+the mgketer comparison — are described in
+[`PLAN-holman-meteg-rollout-programme.md`](PLAN-holman-meteg-rollout-programme.md).
+Read that document first for the ordering and the cross-item dependencies; this
+one for the page, the M23 card link, and the terminology rename.
+
+Two boundaries between this plan and the programme are worth stating here,
+because both are easy to cross by accident. This plan does not edit Wikisource,
+does not run the mega pipeline, and does not archive any record — decision 5
+below says so, and the programme's items 2 through 6 are where those happen.
+And the mgketer refresh is item 7, in MAM-private, which is outside the
+MAM-basics pipeline: Phase 3 below READS mgketer's current reports as a
+differential oracle and never regenerates them.
+
 ## Purpose, decisions, and boundaries
 
-The generated HTML page is:
+Ben's decision, 2026-09-03, settling what the evidence note
+writing-only-to-a-robust-teapot-M23.md left open ("Which repo hosts the page,
+and its name, are not decided"): the page is published at MAM-basics' own
+deploy root, beside gh-pages/unicode-proposals.html, as one of this
+repository's own authored pages. Six artifacts, all in MAM-basics:
 
-C:/Users/BenDe/GitRepos/MAM-basics/gh-pages/wlc/accgram/post-stress-meteg.html
+1. The computation module is
+   C:/Users/BenDe/GitRepos/MAM-basics/py/accgram/post_stress_meteg.py.
+2. The data companion is
+   C:/Users/BenDe/GitRepos/MAM-basics/out/accgram/post-stress-meteg.json. It is
+   a drift-guard read by the page's pin_claims assertion, NOT a reader-facing
+   artifact: no .json is published under gh-pages anywhere in this repository,
+   and the accgram pages link to none.
+3. The page module is
+   C:/Users/BenDe/GitRepos/MAM-basics/py/author_site/post_stress_meteg.py,
+   rendering with accgram's helpers. Per py/author_site/entries.py's stated
+   rule, it describes itself in that module's declarative types rather than
+   writing URLs straight into anchor_h calls, or the link lint cannot see them.
+4. The published HTML is
+   C:/Users/BenDe/GitRepos/MAM-basics/gh-pages/post-stress-meteg.html. Hyphens,
+   matching unicode-proposals.html, the page it sits beside.
+5. Its title and filename constants go in
+   C:/Users/BenDe/GitRepos/MAM-basics/py/author_site/site_data.py beside
+   UNICODE_PROPOSALS_FNAME and UNICODE_PROPOSALS_TITLE, with an authored entry
+   so gh-pages/index.html links it. The M23 card's link is then the relative
+   ../post-stress-meteg.html#m23-isaiah-23-12.
+6. main_authored.py's gen_site gains a flag that renders the page from the
+   tracked JSON instead of recomputing, so the mega pipeline never requires
+   MAM-private.
 
-The generated data companion is:
+WHY THE DEPLOY ROOT AND NOT MAM-with-doc/gh-pages/misc/, which is where the
+authored Tanakh-topic documents otherwise live. Ben's requirement, 2026-09-03:
+this plan must be executable in a MAM-basics worktree. Three consequences
+follow, and each favours the deploy root.
 
-C:/Users/BenDe/GitRepos/MAM-basics/out/accgram/post-stress-meteg.json
+1. A worktree isolates MAM-basics only. Every write named above lands inside
+   the worktree, and the merge back to main is a single-repository merge; a
+   write to MAM-with-doc would escape the isolation entirely.
+2. main_authored.py's almost_main, which gen-misc calls, is all-or-nothing: it
+   regenerates all eighteen miscellaneous documents plus that shelf's
+   index.html and style.css. gen_site regenerates two pages, both here.
+3. py/tests/test_site_index_links.py checks that every index link pointing into
+   this repository's gh-pages/ names a file that exists. Its docstring says why
+   the MAM-with-doc half is deliberately unchecked: that would need a sibling
+   clone, and the missing-input rule forbids skipping. So a page at the deploy
+   root is inside the half a lint can reach, and a page on the miscellaneous
+   shelf is permanently outside it.
+
+Why accgram's render helpers rather than mb_author's: the page needs
+accents_and_letters, the verse-reference formatters ref_abbrev / ref_display /
+ref_short / verse_links, the itm() and cos() source-title helpers, and
+H.table_row_of_data's per-cell attribute splicing, which is how the dir="rtl"
+rule is satisfied. py/mb_author/ and py/author_misc/ have none of those,
+because the authored documents hand-type their rows rather than compute them.
+
+Why not gh-pages/wlc/accgram/, which was this plan's location until
+2026-09-03: the wlc/ prefix exists so wlc-utils' 154 frozen redirect stubs can
+rewrite a prefix onto MAM-basics/wlc/<path>, a page published here after the
+2026-08-17 move earns no stub, and the page's own Purpose says it does not take
+WLC as its corpus.
 
 The page describes MAM, a consensus text. The page does not use WLC as the
 corpus for a claim about how accentuation works. A clearly attributed
@@ -68,15 +140,26 @@ MAM-private, MAM-parsed, and UXLC-utils revisions in the phase-state note.
 
 Before the first edit, load:
 
-1. C:/Users/BenDe/.agents/skills/hebrew-prose/SKILL.md
+1. The hebrew-prose skill, INVOKED BY NAME rather than read as a file, so its
+   four references/ files come with it. references/rendered-prose.md is where
+   the dir="rtl" rule this plan depends on is stated in full, and reading only
+   SKILL.md misses it. The live copy is
+   C:/Users/BenDe/.claude/skills/hebrew-prose/, tracked in github-misc at
+   dot-claude/skills/. DO NOT read C:/Users/BenDe/.agents/skills/hebrew-prose/:
+   that copy is a stale mechanical rename of the live one, differing in
+   SKILL.md and in three of the four references/ files, and it says
+   "~/.Codex/AGENTS.md" and "MAM-basics/AGENTS.md" where the live copy says
+   "~/.claude/CLAUDE.md" and "MAM-basics/CLAUDE.md".
 2. C:/Users/BenDe/GitRepos/MAM-basics/CLAUDE.md
 3. C:/Users/BenDe/GitRepos/MAM-basics/doc/agent-planning-principles.md
-4. C:/Users/BenDe/GitRepos/MAM-private/masorah-books/README.md
-5. C:/Users/BenDe/GitRepos/MAM-private/masorah-books/doc/migration-checklist.md
+4. C:/Users/BenDe/GitRepos/MAM-private/masorah-books/CLAUDE.md
+5. C:/Users/BenDe/GitRepos/MAM-private/masorah-books/README.md
+6. C:/Users/BenDe/GitRepos/MAM-private/masorah-books/doc/migration-checklist.md
 
-If C:/Users/BenDe/GitRepos/MAM-private/masorah-books/AGENTS.md is present,
-load it before editing. If it is absent, record the absence in the phase-state
-note rather than treating an unavailable instruction file as hidden context.
+There is no masorah-books/AGENTS.md and there never has been. This plan asked
+for one until 2026-09-03, having inherited the name from the stale skill copy
+above; the file the live skill actually says to read first is that tree's
+CLAUDE.md, item 4 in the list.
 
 Use the full Yeivin OCR, not the partial adaptation:
 
@@ -143,17 +226,39 @@ of the Phonetic MAM stress notation.
 
 Add these focused modules:
 
-1. C:/Users/BenDe/GitRepos/MAM-basics/py/accgram/post_stress_meteg.py
-2. C:/Users/BenDe/GitRepos/MAM-basics/py/accgram/post_stress_meteg_page.py
+1. C:/Users/BenDe/GitRepos/MAM-basics/py/accgram/post_stress_meteg.py, the
+   survey computation over the Phonetic MAM standard set.
+2. C:/Users/BenDe/GitRepos/MAM-basics/py/author_site/post_stress_meteg.py, the
+   page. Same basename in a different package, as accgram's own
+   maqaf_nonfinal_accents / maqaf_nonfinal_accents_page pair splits computation
+   from rendering. py/author_site/unicode_proposals.py is the model to follow.
 
-Register a new generate-html-post-stress-meteg subcommand in:
+Register the page in C:/Users/BenDe/GitRepos/MAM-basics/py/main_authored.py's
+gen_site, whose loop currently runs unicode_proposals.gen_html_file() and
+site_index.gen_html_file(); the new page joins it, and site_index must run
+last so the index sees the entry.
 
-C:/Users/BenDe/GitRepos/MAM-basics/py/main_accgram.py
+DO NOT add the page to py/main_accgram.py's _HTML_GENERATORS table. That table
+was this plan's route until 2026-09-03, and it is wrong twice over: its own
+comment ties each entry's name to a gh-pages/wlc/accgram/<name>.html
+destination, and py/main_0_mega.py runs the whole batch, so a member reading
+MAM-private would make the mega require a private clone for the first time.
 
-Follow the existing maqaf-nonfinal-accents architecture: the page module owns
-the command-line arguments and writes both the JSON and the HTML in one run.
-The default output paths are the two paths named in the Purpose section.
-Accept explicit output-path arguments for focused verification.
+The mega runs main_authored.gen_site too, so the deploy root already carries
+the staleness protection batch membership would have bought. That step is the
+reason for artifact 6 in the Purpose section: add a flag to main_authored.py
+that renders the page from the tracked out/accgram/post-stress-meteg.json
+rather than recomputing, pass it from the mega, and recompute from MAM-private
+only on an explicit run. The model is py/main_accgram.py's --trust-survey,
+which only the mega passes and which fails loudly when the JSON it was told to
+trust is absent; that flag is routed to one report through the scalar
+_SURVEY_READING_REPORT, and the main_authored equivalent should be written for
+a named set from the start.
+
+The survey computation owns the command-line arguments for a standalone run and
+writes the JSON; the page module writes the HTML. Both accept explicit output
+paths for focused verification. The default paths are those named in the
+Purpose section.
 
 ### Survey data rules
 
@@ -186,10 +291,14 @@ Classify a U+05BD as silluq only if all three conditions hold:
 2. the chanted word is verse-final; and
 3. the chanted word has sof pasuq.
 
-If a final parsed entry lacks sof pasuq, raise a data-completeness error that
-names the reference. Do not classify the mark and do not silently continue.
-The page may describe a U+05BD elsewhere as a meteg only after this check has
-made the silluq boundary explicit.
+If a final parsed entry lacks sof pasuq, collect its reference and continue
+scanning, then fail at the end of the run with the complete list. Do not
+classify any such mark and do not silently continue past the run. Collecting
+before failing is what makes the audit below possible: a run that raises on the
+first offending reference can never enumerate the rest, and the plan asks for
+an enumeration. Phase 3's verifier is written the same way, failing with a list
+rather than on first sight. The page may describe a U+05BD elsewhere as a meteg
+only after this check has made the silluq boundary explicit.
 
 Keep relative-position groups mutually exclusive: pre-stress, stressed, and
 post-stress. Store “shares a letter with a non-stress-marking accent” in a
@@ -207,7 +316,10 @@ The page needs these named sections:
 1. “Meteg after the primary stress in MAM” defines the survey and states the
    exact silluq boundary.
 2. “MAM census by verse system” presents prose-verses and poetic-verses
-   counts, then links every displayed figure to the generated JSON.
+   counts, every one of them derived from the generated JSON. It does NOT link
+   to that JSON: no .json is published under gh-pages anywhere in this
+   repository, and maqaf-nonfinal-accents.html, the model page, links to none.
+   The JSON is the pin_claims oracle, not a reader-facing artifact.
 3. “Post-stress metegs by structural type” separates mechanical results from
    the interpretation attributed to Yeivin and Breuer. A record that does not
    meet a displayed type remains visible as unclassified; do not force it into
@@ -216,9 +328,14 @@ The page needs these named sections:
    suggestion without deciding its disposition. Give this section the stable
    HTML identifier m23-isaiah-23-12. The page uses complete
    chanted-word forms lifted from the source data, never hand-typed accents.
-5. “The post-silluq case at 1 Samuel 17:5” attributes the separate
-   manuscript/transcription observation to the LC/WLC or UXLC as applicable
-   and says explicitly that MAM has only its silluq at that place.
+5. “The post-silluq case at 1 Samuel 17:5” says explicitly that MAM has only
+   its silluq at that place, and attributes every other reading to the source
+   that actually carries it. Name WLC 4.22 and UXLC 3.9 as the transcriptions
+   they are — “UXLC 3.9 records two U+05BD”, never “Leningrad has two” — and
+   cite the Leningrad Codex only from the manuscript image, folio F159A column
+   3 line 8, which the M23 evidence note links. Do not write “LC/WLC”: that
+   slash-pair collapses a manuscript into a transcription of it, which is the
+   distinction this section exists to make.
 6. “Sources and limits” cites the relevant Yeivin and Breuer sections and
    records the page's quotation accounting when the page contains excerpts.
 
@@ -235,35 +352,78 @@ that every excerpt is at most 150 words and that the sum is at most 300 words. I
 the page uses no excerpts, the helper asserts that the excerpt list is empty.
 
 Use Yeivin sections 308, 332, 338, 354, and 357 and Breuer Chapter 8 sections
-2–8, 46, and 47 as search anchors, then cite only claims the current OCR
+2–10, 46, and 47 as search anchors, then cite only claims the current OCR
 supports. Yeivin section 308 feeds the closed-final-syllable ṣere case in
 section 338; Breuer sections 5–8 describe the broader big-vowel-in-a-closed-
-syllable type. Keep those scopes distinct in the rendered prose. Do not turn a
-source observation into a claim that MAM follows a Breuer edition: MAM is a
-consensus text.
+syllable type. Keep those scopes distinct in the rendered prose.
+
+Each of the three post-stress types must be anchored in BOTH sources, because
+the page's section 3 attributes its interpretation to Yeivin and Breuer
+together, and an unbalanced anchor list sources the rarest type best and the
+commonest worst. The pairing, from the M23 evidence note:
+
+| Type | Yeivin | Breuer Ch. 8 | Marked |
+|---|---|---|---|
+| Closed syllable with ṣere | 338, fed by 308 | 5–8 | obligatory, in manuscripts and printed texts |
+| Guttural at word end | 354 | 9–10 | obligatory |
+| Open syllable, the קוּמִי rule | 332 | 46–47 | optional, rarely marked, not in printed texts |
+
+Breuer sections 9–10 were absent from this list until 2026-09-03, leaving
+Yeivin section 354 as the one type cited from a single source; Breuer section 3
+is the ten-type taxonomy the three rows above are drawn from, and section 2 is
+its statement that optional ga'ayot follow no set tradition.
+
+Yeivin section 325, ga'ya before paseq, is deliberately NOT an anchor: Yeivin
+calls it marked only in early manuscripts and rare even there. If the census
+turns up post-stress metegs before a paseq, that is a finding, and the decision
+to add section 325 is Ben's rather than the executor's.
+
+Do not turn a source observation into a claim that MAM follows a Breuer
+edition: MAM is a consensus text.
 
 Generate the focused artifacts:
 
 ~~~powershell
-C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe C:/Users/BenDe/GitRepos/MAM-basics/py/main_accgram.py generate-html-post-stress-meteg
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe C:/Users/BenDe/GitRepos/MAM-basics/py/main_authored.py gen-site
 ~~~
 
-This command is the authoritative remeasurement. It must emit a separate
-audit for a final parsed entry that lacks sof pasuq and fail rather than
-silently classify that entry as silluq. Read both regenerated artifacts and
-the audit. An unexplained change outside the new JSON and new HTML is a
-failure. The expected generated additions are only:
+This command is the authoritative remeasurement.
 
-1. C:/Users/BenDe/GitRepos/MAM-basics/out/accgram/post-stress-meteg.json
-2. C:/Users/BenDe/GitRepos/MAM-basics/gh-pages/wlc/accgram/post-stress-meteg.html
+THE AUDIT IS A SECTION OF THE JSON, NOT A THIRD FILE. Earlier drafts of this
+plan required "a separate audit" while also saying the expected additions were
+only two files, and never gave the audit a path; and an audit printed to stdout
+would put Hebrew references on a stream that is cp1252 on this machine when
+redirected. So the generator writes a named section inside
+out/accgram/post-stress-meteg.json holding the comparison against the legacy
+baseline: each differing count, and the references whose classification the
+corrected sof-pasuq boundary moved. Read that section as part of reading the
+JSON. Nothing is printed to stdout but ASCII progress.
+
+Expected changes, all in MAM-basics:
+
+1. out/accgram/post-stress-meteg.json — new.
+2. gh-pages/post-stress-meteg.html — new.
+3. gh-pages/index.html — one added entry, from the site_data authored entry.
+4. gh-pages/unicode-proposals.html — regenerated by gen_site and expected
+   BYTE-IDENTICAL. A diff here is a finding, not noise.
+
+An unexplained change outside those four is a failure.
 
 ## Phase 2: give M23 a controlled contextual link
 
 Add a small Holman-context metadata module keyed by the stable source reference
-Isa 23:12.11, not by the transient M23 ordinal. The module stores the label
-“Meteg after the primary stress in MAM” and the generated relative destination:
+Isa 23:12.11, not by the transient M23 ordinal. Confirmed 2026-09-03: that
+record's ref field in holman/docs-not-served/mam_suggestions.json is exactly
+"Isa 23:12.11", and rt_mam_suggestion_card.py already keys a frozenset by the
+same kind of reference — EXTRA_LETTER_SPACING_REFS, whose members are
+"Judg 10:11.1" and "Zech 2:4.11". Note that the card resolves ref_as_sent
+before ref, so the new lookup must read the same field the card does.
 
-../wlc/accgram/post-stress-meteg.html#m23-isaiah-23-12
+The module stores the label “Meteg after the primary stress in MAM” and the
+generated relative destination, which is a sibling-directory hop now that the
+page publishes at the deploy root rather than under gh-pages/wlc/accgram/:
+
+../post-stress-meteg.html#m23-isaiah-23-12
 
 Thread that data through:
 
@@ -288,13 +448,26 @@ neutral contextual link.
 
 ## Phase 3: re-establish the M-versus-mgketer evidence
 
-Add a mechanical differential verifier for every current M (meteg) suggestion
-record. The historical roster contains 30 records: M1–M16, M18–M23, M25–M31,
-and M33. A changed roster is a finding; the verifier must report it rather
-than silently applying the historical count. Keep the verifier in a focused
-Holman module and invoke it from
-C:/Users/BenDe/GitRepos/MAM-basics/py/main_verify_and_render_table.py through
-an explicit --mgketer-root argument. The command reads the current mgketer
+Add a mechanical differential verifier for every meteg suggestion record. The
+historical roster contains 30: M1–M16, M18–M23, M25–M31, and M33. A changed
+roster is a finding; the verifier must report it rather than silently applying
+the historical count.
+
+THE LETTER M DOES NOT MEAN METEG. It is the MAM-suggestion series prefix, which
+py/py_render/rt_mam_suggestion_card.py renders as M{case_number}. Measured
+2026-09-03 over holman/docs-not-served/mam_suggestions.json: there are 34 M
+records, of which 30 differ from their comparison form in metegs alone. The
+other four are M17, M24, M32 and M34 — precisely the accent-placement records
+Phase 5 guards — so Phase 3 and Phase 5 partition one set of 34 exhaustively,
+and neither phase's roster may be derived by assuming M1–M30.
+
+Keep the verifier in a focused Holman module and invoke it from
+C:/Users/BenDe/GitRepos/MAM-basics/py/main_verify_and_render_table.py through a
+REQUIRED --mgketer-root argument. Required, not optional with a skip: a missing
+input must fail rather than report green having verified nothing. The
+consequence is deliberate and worth stating, because Phase 4 makes this command
+the required rendering run — after this plan, regenerating the public Holman
+pages needs the MAM-private clone. The command reads the current mgketer
 reports under:
 
 C:/Users/BenDe/GitRepos/MAM-private/mgketer/
@@ -376,13 +549,48 @@ suppression entry. The later pipeline executor must remeasure M24 and M34 at
 the actual source revisions rather than trust the date or snapshot in the
 evidence note.
 
+## Phase 6: close the published-but-unlinked gap in the site index
+
+Ben's request, 2026-09-03, occasioned by this plan adding the deploy root's
+second authored page. Extend
+C:/Users/BenDe/GitRepos/MAM-basics/py/tests/test_site_index_links.py with the
+direction it does not yet cover.
+
+What it checks today is entry to file: test_every_in_site_link_names_a_tracked_page
+asserts that every index link pointing into this repository's gh-pages/ names a
+file that exists. The reverse is unchecked, so a page generated at the deploy
+root with no site_data entry is published and unreachable from the index, and
+nothing says so.
+
+Add a test asserting the reverse: every tracked gh-pages/*.html at the deploy
+root is either named by an authored entry or listed in a NAMED exclusion tuple
+in the test. Naming the exclusions is what makes the check work — a deliberate
+omission must not be indistinguishable from an accident. index.html itself is
+the obvious first member, being the index rather than an entry in it.
+
+Keep it at the deploy root; do not walk the whole gh-pages/ tree. The
+subtree pages under gh-pages/wlc/, gh-pages/holman/ and gh-pages/book-of-job/
+are reached through their own subtree indexes rather than through authored
+entries, so including them would fail immediately and for the wrong reason.
+
+Follow the file's existing convention that a green run which verified nothing
+is a failure: assert the input is the size it should be before asserting
+anything about it, as both current tests do.
+
+This is one commit of its own, separate from the page. It changes a shared
+lint that the whole repository's site depends on, and it should be reviewable
+without the page's diff around it.
+
 ## Final verification, commit, and phase state
 
 Format only the Python files changed by this plan:
 
 ~~~powershell
-C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe -m black C:/Users/BenDe/GitRepos/MAM-basics/py/accgram/post_stress_meteg.py C:/Users/BenDe/GitRepos/MAM-basics/py/accgram/post_stress_meteg_page.py C:/Users/BenDe/GitRepos/MAM-basics/py/main_accgram.py C:/Users/BenDe/GitRepos/MAM-basics/py/py_render/rt_html.py C:/Users/BenDe/GitRepos/MAM-basics/py/py_render/rt_mam_suggestion_card.py
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe -m black C:/Users/BenDe/GitRepos/MAM-basics/py/accgram/post_stress_meteg.py C:/Users/BenDe/GitRepos/MAM-basics/py/author_site/post_stress_meteg.py C:/Users/BenDe/GitRepos/MAM-basics/py/author_site/site_data.py C:/Users/BenDe/GitRepos/MAM-basics/py/main_authored.py C:/Users/BenDe/GitRepos/MAM-basics/py/main_verify_and_render_table.py C:/Users/BenDe/GitRepos/MAM-basics/py/py_render/rt_html.py C:/Users/BenDe/GitRepos/MAM-basics/py/py_render/rt_mam_suggestion_card.py C:/Users/BenDe/GitRepos/MAM-basics/py/tests/test_site_index_links.py
 ~~~
+
+Add the Phase 3 verifier module to that command when its filename is settled.
+py/main_accgram.py is deliberately absent: this plan no longer touches it.
 
 Run the stress-oracle check, the focused page generator, and the
 verifier-renderer after formatting. Read the generated JSON and both generated
@@ -392,12 +600,17 @@ preconditions.
 
 The expected tracked changes are:
 
-1. this plan's implementation modules and the main_accgram registration;
-2. the new JSON and accgram HTML page;
-3. the renderer context metadata and the M23 contextual link;
-4. the two regenerated Holman HTML files and any established verification
-   summary that the verifier owns; and
-5. the four reader-facing “Archived” labels.
+1. py/accgram/post_stress_meteg.py and py/author_site/post_stress_meteg.py,
+   with their site_data.py constants and authored entry;
+2. out/accgram/post-stress-meteg.json and gh-pages/post-stress-meteg.html, both
+   new, plus gh-pages/index.html gaining one entry;
+3. main_authored.py's render-from-JSON flag and the mega's use of it;
+4. the renderer context metadata and the M23 contextual link;
+5. the Phase 3 verifier module, its --mgketer-root wiring, the two regenerated
+   Holman HTML files, and any verification summary the verifier owns;
+6. the four reader-facing “Archived” labels; and
+7. py/tests/test_site_index_links.py's new reverse-direction test, as its own
+   commit.
 
 The expected non-changes are:
 
@@ -405,8 +618,10 @@ The expected non-changes are:
 2. M23's source message, comparison forms, and disposition;
 3. the M17, M24, M32, and M34 dispositions;
 4. meteg_silluq_context.py;
-5. every existing accgram page except the deliberate new page; and
-6. private-source text outside the bounded public excerpts.
+5. py/main_accgram.py and every accgram page, none of which this plan touches;
+6. gh-pages/unicode-proposals.html, regenerated by gen_site and expected
+   byte-identical; and
+7. private-source text outside the bounded public excerpts.
 
 After each completed phase, add a dated phase-state section to this plan. The
 phase-state section records input revisions, the exact commands run, measured
