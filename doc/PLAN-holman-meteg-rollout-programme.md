@@ -5,14 +5,16 @@ in one untracked sketch and in agent-call transcripts. Ben's instruction that
 day: *"I want all these consolidated into git and related to each other at this
 point, as I fear loosing track of this larger context."*
 
-**STATUS: item 2 is DONE; items 3 through 7 are a SKETCH, not an approved
-plan.** The sketch was assembled from three research-agent reports and one
-Plan-agent validation pass, synthesized in conversation, and never reviewed
-against repository state a second time. Re-verify every path, command and
-figure in items 3 through 7 before acting on them — item 2's execution on
-2026-09-03 found four of its own figures wrong, and its section below is an
-execution record now rather than a sketch. Item 1 alone has a reviewed, tracked
-plan of its own.
+**STATUS: items 2, 3 and 4 are DONE, and so are item 5's first two steps;
+item 5's step 3 is Ben's, at the keyboard, and items 6 and 7 are still a SKETCH
+rather than an approved plan.** The sketch was assembled from three research-agent reports
+and one Plan-agent validation pass, synthesized in conversation, and never
+reviewed against repository state a second time. Re-verify every path, command
+and figure before acting on the parts that remain — item 2's execution on
+2026-09-03 found four of its own figures wrong, and item 4's execution the same
+day found one of its own wrong. The sections for items 2, 3 and 4 below are
+execution records now rather than sketches. Item 1 alone has a reviewed,
+tracked plan of its own.
 
 Execute everything here from `C:/Users/BenDe/GitRepos/MAM-basics`, venv
 `C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe`.
@@ -56,9 +58,9 @@ which are accent-placement records and are NOT part of this programme.
 |---|---|---|
 | 1 | Track the notes, publish a gh-pages page, link it from the M23 card, rename the page identity and the archive label | Planned in detail, reviewed — see the plan named below |
 | 2 | Build the Wikisource bot edit files for all 30 | **DONE 2026-09-03**, files built and validated offline — see the item 2 section below, which is now an execution record rather than a sketch |
-| 3 | Run the bot | Sketch only |
-| 4 | Download the affected chapters, plus Joshua 10 and Zechariah 2 | Sketch only |
-| 5 | Run the wsgo diff and the standard MAM update pipeline | Sketch only |
+| 3 | Run the bot | **DONE 2026-09-03**, 23 chapters saved on Ben's go-ahead — see the item 3 section below, an execution record now |
+| 4 | Download the affected chapters, plus Joshua 10 and Zechariah 2 | **DONE 2026-09-03**, and Zechariah was repair rather than consistency — see the item 4 section below, an execution record now |
+| 5 | Run the wsgo diff and the standard MAM update pipeline | Steps 1 and 2 **DONE 2026-09-03**; step 3 is Ben's, at the keyboard, and steps 4 through 7 are still a sketch |
 | 6 | Archive the 30 records | Sketch only; the terminology-rename half is in item 1's plan |
 | 7 | Refresh the mgketer comparison | Sketch only |
 
@@ -241,7 +243,60 @@ C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_download.py 
 `holman-meteg-spec --selector-dir .novc` writes that selector, one file per
 spec, naming exactly that spec's chapters.
 
-### Item 3: run the bot
+### Item 3: run the bot — DONE 2026-09-03
+
+Executed 2026-09-03 in a worktree of `C:/Users/BenDe/GitRepos/MAM-basics`, on
+top of `0d1ad458`, and committed as `031b4306`. **Ben gave the go-ahead in
+words that day**, in answer to a report of exactly what would change; the
+sketch below is what the run followed, and every one of its instructions held.
+
+Three commands ran, in this order.
+
+1. **The pre-flight, check-only**, `py/main_ws_bot.py holman-meteg-spec`. It
+   reproduced every figure on record: 30 records (29 removal, 1 addition),
+   arithmetic gate 30 of 30, M18 excluded as already applied, removal spec 28
+   records to 29 entries across 6 books, uniqueness 30 of 30 in both texts,
+   coverage 29 records and 30 entries. `--selector-dir .novc` then wrote the
+   two selectors, 22 book/chapter pairs for the removal spec and 1 for the
+   addition.
+2. **`real --no-save` over the full target set**, one run per spec. Each
+   fetched the live text, ran the identical uniqueness assertions against it,
+   and exited naming the chapters that would change: all 22 removal chapters,
+   and Isaiah 23. Nothing outside either spec.
+3. **`real` for the save, in seven book-sized slices**, each over a per-book
+   cut of the removal selector written by a throwaway splitter, plus the
+   addition spec's one-chapter selector:
+
+```powershell
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_ws_bot.py real --edits in/mam-ws-bot-edits/holman-meteg-removal.json --book-chapters-json .novc/holman-meteg-removal-1Kings.json -dir:C:/Users/BenDe/.pywikibot
+```
+
+**Twenty-three chapters saved**, and the counts are chapters per slice rather
+than chapter numbers: seven of 1 Kings, four each of Judges, 2 Chronicles and
+2 Samuel, two of 1 Samuel, one of 2 Kings, and Isaiah 23 alone.
+`modified-chapters.json` was read after each slice and named exactly that
+slice's chapters.
+
+**The measured result is 29 metegs off and one on, a net of 28**, counting
+U+05BD in `in/mam-ws` before and after: Judges 1202 → 1194, 1 Samuel 1482 →
+1480, 2 Samuel 1142 → 1138, 1 Kings 1338 → 1330, 2 Kings 1265 → 1264, 2
+Chronicles 1462 → 1456, Isaiah 2034 → 2035. **Twenty-nine verses changed and
+nothing else in the 23 chapters did** — one verse per entry except at 2
+Chronicles 18:33, where M13's two entries are the two parameters of one
+`{{מ:קמץ}}` call and so land in a single verse.
+
+**The pre-flight now raises rather than passing, and that is the designed end
+state.** Re-run immediately after the save, `holman-meteg-spec` raises
+`SpecProblem` on M1: no prefix of its MAM form reaching past the meteg occurs
+in 1 Kings 7 any more, because the meteg is gone. `holman_meteg_edit_spec.py`'s
+module docstring says this is what to expect and that the specs are to be
+archived with item 6 rather than kept green.
+
+The run is recorded in
+[`ws_bot_edit_history.md`](../py/ws/ws_bot_edit_history.md) as a new era, and
+that file's "current" marker has moved off the sigil ב2 entry onto it.
+
+**What the sketch below said, kept as written because the run followed it.**
 
 `proto --edits <file>` validates against local `in/mam-ws/` text. That is
 necessary and not sufficient: it does not prove the strings are still unique on
@@ -289,32 +344,82 @@ Ben: *"A session can do it, and absolutely has done it."* The ordering that
 session recommended was right for a different and better reason, the deadline
 below; the credential was never the obstacle.
 
-### Item 4: download the affected chapters, plus Joshua 10 and Zechariah 2
+### Item 4: download the affected chapters, plus Joshua 10 and Zechariah 2 — DONE 2026-09-03
 
-The `real` run auto-downloads and reparses modified chapters afterward unless
-`--no-post-download` is passed. Do not pass it.
+The affected-chapter half needed no command of its own: `--no-post-download`
+was not passed, so each of item 3's seven `real` runs downloaded and reparsed
+its own slice's chapters as it finished. That is where the seven changed
+`in/mam-ws/*.json` and `out/mam-ws-parsed-fmt-2/*.json` of `031b4306` come
+from.
 
-Separately, re-download Joshua chapter 10 and Zechariah chapter 2. Checked
-2026-09-03: `in/mam-ws/B1-Joshua.json` and `MAM-parsed/plain/B1-Joshua.json`
-both still held the single-pashta, pre-correction form at Joshua 10:12 even
-though the fix had been live on Wikisource since 2026-08-28. Zechariah 2:4's
-local copy already had the corrected form, so downloading it is consistency
-rather than repair.
+The two extra chapters were downloaded separately, before the bot ran, and
+committed as `0d1ad458`:
+
+```powershell
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_download.py fr-wikisource --book-chapters-json .novc/holman-extra-chapters.json
+```
+
+**Zechariah 2:4 was repair, not consistency, and the paragraph this replaces
+said otherwise.** That paragraph read: "Zechariah 2:4's local copy already had
+the corrected form, so downloading it is consistency rather than repair."
+Measured 2026-09-03, immediately before this download,
+`in/mam-ws/CK-Zechariah.json` held אֲשֶׁר־זֵ֣רוּ, the munaḥ on the zayin, and
+`MAM-parsed/plain/CA-The-12-Minor-Prophets.json` still does; the download
+replaced it with אֲשֶׁר־זֵר֣וּ, the munaḥ on the resh, which is M34 and has
+been live on Hebrew Wikisource since 2026-08-28. So **both** extra chapters
+were stale locally, on the same footing, and item 5's wsgo diff carries two
+accent-placement corrections to the Google Sheet rather than Joshua's alone.
+`holman-accent-placement-four.md`'s stage table says the same wrong thing and
+now carries a correction beside it. Joshua 10:12 was stale as stated, with one
+pashta יְהוֹשֻׁעַ֙ before the download and two יְהוֹשֻׁ֙עַ֙ after it.
 
 **Joshua 10:12 is not expected to go quiet downstream**, and this is the
 programme's other standing trap. The mark added there is a stress helper, a MAM
-notational convention the source manuscripts are not expected to carry, so
-mgketer showing a diff at that word afterward is correct. It needs no
+notational convention the source manuscripts are not expected to have, so
+mgketer showing a diff at that atom afterward is correct. It needs no
 suppression entry.
 
-### Item 5: the wsgo diff and the standard update pipeline
+### Item 5: the wsgo diff and the standard update pipeline — steps 1 and 2 DONE 2026-09-03
+
+**Steps 1 and 2 ran on 2026-09-03 and are committed as `e43cb5fd`, pushed to
+`main` the same day. Step 3 is Ben's, at the keyboard, and nothing past it has
+been attempted.**
+
+Both tracked outputs were empty before the run, so all **35** rows
+`py/main_diff.py wsgo` wrote are new, and all 35 are accounted for:
+
+1. **28 rows, the removal verses of item 3's bot run.** Twenty-nine entries,
+   but M13's two are the two parameters of one `{{מ:קמץ}}` call at 2 Chronicles
+   18:33 and so land in one verse.
+2. **1 row, Isaiah 23:12** — M23, the one addition-direction record.
+3. **1 row, Joshua 10:12** — M24's stress helper, from item 4's separate
+   download.
+4. **1 row, Zechariah 2:4** — M34, the munaḥ on the resh where the Sheet has it
+   on the zayin, from the same download.
+5. **2 rows, 2 Kings 21:12** — M18's resh meteg of ירושלם, gone from Hebrew
+   Wikisource before item 2 built the edit files, and the vav meteg of ויהודה
+   that no Holman record covers. Item 2's finding 2 predicted both. They reach
+   `in/mam-ws` by item 2's fresh download, not by any entry of item 3's bot, so
+   this is where M18 finally propagates.
+6. **2 rows, 2 Samuel 18:20, and these are outside the programme altogether.**
+   They are documentation notes, tagged `נוסח:2`, whose wording was edited on
+   Hebrew Wikisource independently of anything here and arrived with item 2's
+   download of 2 Samuel 18. The Sheet has the older wording, so the pipeline
+   carries the newer one to it, which is what the pipeline is for. **Expect
+   them among the auto-edits and do not treat them as a defect**, but read them
+   before applying, since nothing in this programme vouches for them.
+
+The suite was green in the worktree with `REPOS_ROOT` set: **975 passed, 5
+skipped**.
 
 In order:
 
 1. `py/main_diff.py wsgo` — compares `in/mam-ws/` against `MAM-parsed/plain/`,
    writing `out/diff_mamws_mamgo.json` and `out/diff_mamws_mamgo-auto-edits.json`.
+   **Done 2026-09-03.**
 2. Commit and push the auto-edits JSON, because the next step fetches it over
-   HTTP from GitHub.
+   HTTP from GitHub. **Done 2026-09-03**, in `e43cb5fd`, merged to `main` and
+   pushed as `25bfb0b1`.
 3. **Ben, manually, in the MAM Google Sheet**: "Import auto-edits from GitHub",
    then "Apply imported auto-edits", both Apps Scripts under
    `misc/Google Sheet Apps Scripts/`. No session can automate this step.
@@ -391,12 +496,13 @@ The seventh, the census script, stays untracked.
 | [`holman-suggestions-archived-terminology.md`](holman-suggestions-archived-terminology.md) | The five rendered uses of "Suppressed" that item 1 renames |
 | [`post-stress-meteg-census-2026-09-03.md`](post-stress-meteg-census-2026-09-03.md) | The 2026-09-03 census output, the legacy baseline item 1's Phase 1 measures against |
 
-**Three of the six carry a dated correction, and there are five corrections
+**Three of the six carry a dated correction, and there are six corrections
 among the three**, each marked `Correction, 2026-09-03` and placed beside the
 claim it corrects rather than replacing it. Counted 2026-09-03: the M23 note
-has three, the accent-placement note one, the terminology note one, and the
-other three notes none. This paragraph enumerated three of the five until that
-day, omitting the accent-placement note's correction entirely. The five:
+has three, the accent-placement note two, the terminology note one, and the
+other three notes none. This paragraph enumerated three of them until that day,
+omitting the accent-placement note's first correction entirely, and said five
+until item 4's execution added the sixth. The six:
 
 1. The M23 note's page location and name, left open when it was written, are
    settled by item 1's plan.
@@ -410,6 +516,10 @@ day, omitting the accent-placement note's correction entirely. The five:
    an evidence note is itself evidence.
 5. The terminology note's count of rendered "Suppressed" occurrences reads six
    where the measured count, and that note's own enumeration, is five.
+6. The accent-placement note's propagation table puts the M34 fix in
+   `in/mam-ws/` and in `MAM-parsed/plain/` when neither had it, and names the
+   form זֵ֣רוּ as the fix, when זֵ֣רוּ is what the fix replaced. Measured while
+   item 4 ran; item 4's section above carries the same measurement.
 
 The census script that produced the census report stays at
 `C:/Users/BenDe/.claude/plans/writing-only-to-a-robust-teapot-census.py` and
@@ -460,4 +570,10 @@ one of them reaching a sibling that resolves to `.claude/worktrees/<name>`.
 904 + 34 + 35 = 973, so the override accounts for the whole difference and
 nothing else is hiding in it. **Do not read an un-overridden total as a
 baseline, and do not conclude from one that the suite cannot be run here**:
-it can, and 973 green is the figure to measure against.
+it can, and a full green total is the figure to measure against.
+
+**That total moves as tests are added, so re-measure rather than reusing it.**
+The 973 above was measured with item 2's changes in the tree; the same command
+with item 3's, later on 2026-09-03, gives **975 passed, 5 skipped, 0 failed**.
+The un-overridden figures are left as measured that morning and have not been
+re-run, so the arithmetic above pins the 973 rather than the 975.

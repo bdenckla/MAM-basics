@@ -46,6 +46,18 @@ diff reports alone:
 | `MAM-parsed/plain/` | Has the fix | **Does not** — same, one pashta |
 | mgketer's own parsed JSON | Has the fix — confirms it | Does not — but see below, this is expected regardless |
 
+**Correction, 2026-09-03: the M34 column of the two middle rows above IS WRONG, and both stages
+lacked the fix.** Measured that day while item 4 of the rollout programme ran, immediately before
+the download: `MAM-basics/in/mam-ws/CK-Zechariah.json` held אֲשֶׁר־זֵ֣רוּ, the munaḥ on the
+zayin, and `MAM-parsed/plain/CA-The-12-Minor-Prophets.json` still does. The fix is
+the form אֲשֶׁר־זֵר֣וּ, the munaḥ on the resh, which is what this note's M34 row says the
+ruling was — so the table names זֵ֣רוּ as "the fix" when זֵ֣רוּ is the form the fix replaced. The rows are
+left as written, per the convention above, but read the M34 column of both as **Does not**.
+The consequence is that Zechariah 2:4 propagates exactly as Joshua 10:12 does, and the sentence
+below saying the download "is not just hygiene for Joshua" understates it: it was repair for
+both. `PLAN-holman-meteg-rollout-programme.md`'s item 4 inherited the same error from this
+table and now carries the measurement.
+
 So Phase "download the chapters" in the larger rollout plan is not just hygiene for Joshua:
 this repo's local Wikisource snapshot is genuinely stale there, and the standard pipeline
 (wsgo diff, Google Sheet, mega) needs to run for Joshua chapter 10 before MAM-parsed reflects
