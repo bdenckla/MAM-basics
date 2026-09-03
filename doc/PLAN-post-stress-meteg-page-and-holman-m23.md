@@ -968,3 +968,50 @@ later pipeline refresh is correct rather than a defect. The programme's item 4
 says the same. A later pipeline executor should remeasure M24 and M34 at the
 actual source revisions rather than trust a date or a snapshot in an evidence
 note.
+
+### Phase 6 done 2026-09-03: the site index is checked in both directions now
+
+**Phase 6 HAS BEEN DONE**, as its own commit, separate from Phase 4's renames.
+Input revision: MAM-basics `6a1c0655`, this plan's Phase 5 commit, in the same
+worktree. Changed path: `py/tests/test_site_index_links.py`, and nothing else.
+
+What the file checked before was entry to file:
+`test_every_in_site_link_names_a_tracked_page` asserts that every index link
+pointing into this repository's `gh-pages/` names a file that is published. The
+new `test_every_deploy_root_page_is_named_by_an_entry_or_excluded_by_name`
+asserts the reverse: every tracked `gh-pages/*.html` with no directory part is
+either named by an authored entry or listed by name in
+`_UNLISTED_DEPLOY_ROOT_PAGES`.
+
+**The exclusion tuple has exactly one member, `index.html`**, and its reason
+stands beside it in the source: `index.html` IS the index, so an entry naming it
+would be the page linking to itself. Nothing else is excluded. Measured
+2026-09-03, `gh-pages/` tracks three files with no directory part —
+`index.html`, `style.css` and `unicode-proposals.html` — of which two end in
+`.html`, so the check runs on `index.html` (excluded) and
+`unicode-proposals.html` (named by the `_UNICODE` section's one entry).
+`style.css` is not an HTML page and never enters the set.
+
+Three things about the shape are worth recording, since each was a choice:
+
+1. **The check stops at the deploy root and does not walk the tree.** The pages
+   under `gh-pages/wlc/`, `gh-pages/holman/` and `gh-pages/book-of-job/` are
+   reached through their own subtree indexes rather than through an authored
+   entry, so a whole-tree walk would fail immediately and for the wrong reason.
+2. **A stale exclusion fails too.** An excluded name that has stopped being a
+   tracked deploy-root page is asserted against, so the tuple cannot accumulate
+   dead names and quietly stop covering things.
+3. **The floor is two deploy-root pages**, asserted before anything else, on the
+   file's standing convention that a green run which verified nothing is a
+   failure. Two is the index plus at least one page it names; it guards against a
+   broken walk rather than inventorying the root.
+
+Three throwaway negative controls confirm the test is not vacuously green, each
+raising with the message it should: a fabricated unlisted deploy-root page, a
+fabricated stale exclusion, and a walk cut down to one page. The three tests in
+the file pass on the live tree.
+
+**Phase 1 will add the deploy root's second authored page**,
+`gh-pages/post-stress-meteg.html`, and this check is what will then require it to
+have a `site_data` entry rather than being published unreachable. That is the gap
+Ben asked to close, and it is closed before the page arrives rather than after.
