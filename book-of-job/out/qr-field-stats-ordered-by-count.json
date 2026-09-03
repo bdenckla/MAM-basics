@@ -1,0 +1,242 @@
+{
+  "description": "Count of fields used in quirkrecs (ordered by count descending)",
+  "total_quirkrecs": 160,
+  "fields": [
+    {
+      "field": "nbd",
+      "count": 160
+    },
+    {
+      "field": "nbd.e:BHL",
+      "count": 160
+    },
+    {
+      "field": "nbd.e:BHQ",
+      "count": 160
+    },
+    {
+      "field": "nbd.e:DM",
+      "count": 160
+    },
+    {
+      "field": "nbd.e:UXLC",
+      "count": 160
+    },
+    {
+      "field": "nbd.e:WLC",
+      "count": 160
+    },
+    {
+      "field": "pgroup",
+      "count": 160
+    },
+    {
+      "field": "qr-ac-loc",
+      "count": 160
+    },
+    {
+      "field": "qr-ac-loc.column",
+      "count": 160
+    },
+    {
+      "field": "qr-ac-loc.line",
+      "count": 160
+    },
+    {
+      "field": "qr-ac-loc.page",
+      "count": 160
+    },
+    {
+      "field": "qr-ac-loc.word",
+      "count": 160
+    },
+    {
+      "field": "qr-aleppo-img",
+      "count": 160
+    },
+    {
+      "field": "qr-auto-diff",
+      "count": 160
+    },
+    {
+      "field": "qr-cam1753-img",
+      "count": 160
+    },
+    {
+      "field": "qr-cam1753-loc",
+      "count": 160
+    },
+    {
+      "field": "qr-cam1753-loc.column",
+      "count": 160
+    },
+    {
+      "field": "qr-cam1753-loc.line",
+      "count": 160
+    },
+    {
+      "field": "qr-cam1753-loc.page",
+      "count": 160
+    },
+    {
+      "field": "qr-cam1753-loc.word",
+      "count": 160
+    },
+    {
+      "field": "qr-consensus",
+      "count": 160
+    },
+    {
+      "field": "qr-cv",
+      "count": 160
+    },
+    {
+      "field": "qr-lc-img",
+      "count": 160
+    },
+    {
+      "field": "qr-lc-loc",
+      "count": 160
+    },
+    {
+      "field": "qr-lc-loc.column",
+      "count": 160
+    },
+    {
+      "field": "qr-lc-loc.line",
+      "count": 160
+    },
+    {
+      "field": "qr-lc-loc.page",
+      "count": 160
+    },
+    {
+      "field": "qr-noted-by",
+      "count": 160
+    },
+    {
+      "field": "qr-what-is-weird",
+      "count": 160
+    },
+    {
+      "field": "qr-lc-img-scale",
+      "count": 158
+    },
+    {
+      "field": "qr-lc-proposed",
+      "count": 158
+    },
+    {
+      "field": "qr-highlight",
+      "count": 137
+    },
+    {
+      "field": "qr-generic-comment",
+      "count": 93
+    },
+    {
+      "field": "qr-bhq-comment",
+      "count": 62
+    },
+    {
+      "field": "qr-word-id",
+      "count": 22
+    },
+    {
+      "field": "qr-lc-q",
+      "count": 19
+    },
+    {
+      "field": "qr-highlight-lc-proposed",
+      "count": 18
+    },
+    {
+      "field": "qr-highlight-consensus",
+      "count": 17
+    },
+    {
+      "field": "qr-uxlc-change-url",
+      "count": 11
+    },
+    {
+      "field": "qr-uxlc-needs-fix",
+      "count": 10
+    },
+    {
+      "field": "qr-lc-loc.including-blank-lines",
+      "count": 8
+    },
+    {
+      "field": "qr-noted-by-mam",
+      "count": 6
+    },
+    {
+      "field": "qr-intermediate",
+      "count": 5
+    },
+    {
+      "field": "qr-lc-loc.line2",
+      "count": 5
+    },
+    {
+      "field": "qr-uxlc-position-within-verse",
+      "count": 5
+    },
+    {
+      "field": "qr-consensus-ketiv",
+      "count": 4
+    },
+    {
+      "field": "qr-ignore-g3yh-diff",
+      "count": 4
+    },
+    {
+      "field": "qr-n_of_m_for_this_word",
+      "count": 4
+    },
+    {
+      "field": "qr-bhq",
+      "count": 3
+    },
+    {
+      "field": "qr-ac-proposed",
+      "count": 2
+    },
+    {
+      "field": "qr-cam1753-loc.line2",
+      "count": 2
+    },
+    {
+      "field": "qr-cam1753-loc.word2",
+      "count": 2
+    },
+    {
+      "field": "qr-cam1753-page-url",
+      "count": 2
+    },
+    {
+      "field": "qr-extra-letter-spacing",
+      "count": 2
+    },
+    {
+      "field": "qr-highlight-ac-proposed",
+      "count": 2
+    },
+    {
+      "field": "qr-rel",
+      "count": 2
+    },
+    {
+      "field": "qr-ignore-g3yh-diff-in-consensus",
+      "count": 1
+    },
+    {
+      "field": "qr-jc-img",
+      "count": 1
+    },
+    {
+      "field": "qr-noted-by-uxlc",
+      "count": 1
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 # Total evacuation: book-of-job, holman-ketiv-qere and UXLC-utils
 
-State: Phase 3 complete 2026-09-03; Phase 4 waits at its Step 1 destination decision
+State: Phase 4 in progress — Step 1 landed 2026-09-03; Steps 2–6 remain
 
 Written 2026-08-22, the day
 [`PLAN-evacuate-python-programme.md`](PLAN-evacuate-python-programme.md) closed — its last row,
@@ -85,7 +85,7 @@ figures in these plans arriving one more time.
 | 1 — `.gitattributes` merge in MAM-basics | **DONE 2026-09-03 — verification only.** The destination already covers every incoming binary type that moves; Decision B excludes the sole `.docx`, so no `.gitattributes` edit landed. The scratch checks preserved the source blob for a PNG, a JPG and a CSV, and the MAM-basics suite passed 971 / 5 / 65. The execution record below carries the fresh Scale figures and the working-tree CSV finding. |
 | 2 — Generalize the redirect-stub generator to a table of four | **DONE 2026-09-03.** `RedirectRepo` now makes the source repository, MAM-basics subtree, old URL prefix, frozen-manifest path and clone URL one row; only wlc-utils' frozen row exists. Its 155 stubs were byte-identical before the rename and changed only their generator-comment line after it. The execution record carries the WLC republish commit, the live-baseline result and the missing-subtests finding. |
 | 3 — holman-ketiv-qere, the pilot lane; plus the generated landing page | **DONE 2026-09-03.** MAM-basics landed and published the 379-file `holman/` tree (`3c5dc79`), scoped its licences (`d81b47b`), repointed its generators (`ae663ff`), froze the six-page redirect manifest (`46ba28a`), and removed the redirect host from the workspace (`519e3f4`). The source commits are `723bd73` for the stubs and `ca55c4a` for the empty host. Step 6 then retired only the clean detached Holman review worktree at `94cab4a` and removed the clean main clone. |
-| 4 — book-of-job | **Step 1 waits for Ben's 2026-09-03 destination decision.** The live baseline, Pages check, full test suite (972 passed / 5 skipped / 65 subtests), Ruff, Black, and mark-order sweep all pass. The open choice is whether the nine files that remain after dropping `py_ac_loc/` land under the pure `book-of-job/` prefix. |
+| 4 — book-of-job | **Step 1 DONE 2026-09-03.** Ben chose the pure `book-of-job/` prefix: the 694-file published tree is at `gh-pages/book-of-job/`, and the nine retained non-page files are at `book-of-job/out/` and `book-of-job/doc/`. The copies are SHA-256-identical to the source. The live baseline, Pages check, full test suite (972 passed / 5 skipped / 65 subtests), Ruff, Black, and mark-order sweep all passed before the land. |
 | 5 — UXLC-utils | not started |
 | 6 — Cross-repo bookkeeping, and close the second stage | not started |
 
@@ -721,13 +721,15 @@ both destination repos read the same way. The two accessors Step 3 must not swee
 `hkq_paths.mam_qere_words_path()` already points at MAM-basics' own `out/`, and
 `hkq_cmn/table_row_github_issues.py`'s `REPO_NAME` is a tracker name.
 
-**What was put names holman-ketiv-qere and the trio, and nothing else.** book-of-job's nine
-remaining files (`out/` 7, `doc/` 2, after Decision D) and UXLC-utils' 596 were not named in the
-question, so Phases 4 and 5 put the same rule to Ben at their Step 1 rather than assuming it — for
-UXLC-utils together with trap 3's duplicate-data question, whose shape this decision changes: the
-39 `in/UXLC-39/*.xml` and `in/UXLC-misc/all_changes.json` that MAM-basics already vendors are
-dropped rather than moved either way, and the rest of that tree lands under `uxlc/` if the rule
-holds, which also decides where `doc/clc-design.md` goes and what Phase 6's item 1 says about it.
+**Ben, 2026-09-03: book-of-job uses the same pure prefix.** Its nine retained non-page files land
+at `book-of-job/out/` (seven files) and `book-of-job/doc/` (two files), preserving each relative
+path. Decision D still drops `py_ac_loc/`; the pure prefix does not revive that data tree.
+
+**UXLC-utils remains the one repo not named in either decision.** Phase 5 puts the same rule to Ben
+at its Step 1, together with trap 3's duplicate-data question: the 39 `in/UXLC-39/*.xml` and
+`in/UXLC-misc/all_changes.json` that MAM-basics already vendors are dropped rather than moved
+either way, and the rest of that tree lands under `uxlc/` if the rule holds, which also decides
+where `doc/clc-design.md` goes and what Phase 6's item 1 says about it.
 
 ### Decision G — the lane order, interleaved with the third stage — **DECIDED 2026-09-02**
 
@@ -2175,8 +2177,8 @@ trusting this list.
    history) both derived that register and gave the reason to
    keep it — it "is the only thing standing between a future session and deleting hand-made pages
    in the belief they will come back" — and that same plan's Phase 4 wrote it into the very
-   `CLAUDE.md` this lane shrinks. **Re-derive the counts rather than copying them**: `gh-pages/`
-   gains the `book-of-job/` prefix per Decision A and `out/` merges into MAM-basics' own `out/`, so
+   `CLAUDE.md` this lane shrinks. **Re-derive the counts rather than copying them**: Decisions A and
+   F put the published tree and both retained non-page trees under the `book-of-job/` prefix, so
    every path in the table is respelled. A `doc/` file is the right home for a table this size,
    with at most a pointer in `CLAUDE.md`.
 2. **§"Regenerate, then read the diff — that is the test" — CARRY ONE CLAUSE, drop the rest.** The
