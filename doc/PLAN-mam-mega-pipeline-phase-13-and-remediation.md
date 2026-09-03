@@ -340,6 +340,33 @@ conditions.
    with that baseline and the public builder's adoption of the enduring fatal
    assertions. Any later narrowing or deletion is a separate decision.
 
+**The six steps above have been folded into both private near-Aleppo plans, on
+2026-09-03, in MAM-private commit `85fedce` — so a session running the gate reads
+them there and not from this file.** `MAM-private/doc/PLAN-near-aleppo-implementation.md`
+carries them as §2A, "Pre-implementation census validation gate", one step for one
+step, adding the run command and the substance of the six private Phase 10
+findings. `MAM-private/doc/PLAN-near-aleppo.md` carries the same decision twice: in
+its §1 header, which names §2A as the gate's executable form, and again at its
+census-directory-retention bullet, which now keeps `near-aleppo/census/` intact
+through the remediation, the strict comparison, the reconciliation, the accepted
+baseline, and the first generated dataset's comparison against that baseline.
+What stays in this file and is deliberately not restated there is the
+cross-program ordering: the census wave need not precede unrelated remediation
+waves, and it must finish before near-Aleppo implementation code begins.
+
+**Step 1's re-measurement of the live counts has been run once, on 2026-09-03, and
+the census is now 102 selected scripts and 102 expected files — not the 87 of the
+Phase 12 baseline recorded earlier in this file.** All 15 additions arrived
+between the Phase 10 reviewed head, MAM-private `162d632`, and MAM-private
+`bd09599`, from the near-Aleppo step-through's own later censuses, and each
+arrived with its expected file, so script-to-expected set equality holds at 102.
+The Phase 12 figure of 87 and its aggregate SHA-256 remain correct as the Phase 13
+preflight's historical baseline and are not to be refreshed; step 1's preserved
+pre-remediation hash is a new measurement over the 102. Re-measure again rather
+than trusting 102, which has already moved twice: `run_all.py` reports its own
+selected-script count on every run, and `git ls-files near-aleppo/census/expected`
+counts the tracked goldens.
+
 ## Review-forest retirement after the short overlap
 
 Keep the completed review forest read-only only until all of these conditions

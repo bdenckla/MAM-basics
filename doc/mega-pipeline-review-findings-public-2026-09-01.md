@@ -215,6 +215,13 @@ One additional Phase 8 finding is private and appears only in the aggregate.
 
 Six findings are private and appear only in the aggregate: 2 P1, 3 P2, and 1 P3.
 
+Their remediation is governed by the pre-implementation census validation gate,
+which `PLAN-mam-mega-pipeline-phase-13-and-remediation.md` states publicly and
+which was folded into both private near-Aleppo plans on 2026-09-03, in MAM-private
+commit `85fedce`: §2A of `MAM-private/doc/PLAN-near-aleppo-implementation.md`, and
+the §1 header and census-retention bullet of
+`MAM-private/doc/PLAN-near-aleppo.md`. The six findings themselves stay private.
+
 ### Phase 11 — public site generation review
 
 - `MP11-01` **P2** — Two-page `gen-site` publication is not atomic and progress
