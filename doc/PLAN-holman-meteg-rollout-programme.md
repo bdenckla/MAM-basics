@@ -207,27 +207,38 @@ extant in the Aleppo Codex, and "mgketer adds meteg" (5 before) should drop to
 
 Joshua 10:12, per item 4, is expected to show a new diff here. That is correct.
 
-## The evidence notes, and where they still live
+## The evidence notes, and where they live
 
-Seven files under `C:/Users/BenDe/.claude/plans/` are the evidence base for
-this programme. **They are not in git**, which is the loss this document was
-written against, and moving them into a tracked location is unfinished work as
-of 2026-09-03.
+Six of the seven files that are the evidence base for this programme are
+tracked `doc/` files of this repository as of 2026-09-03, moved there from
+`C:/Users/BenDe/.claude/plans/`, where they had been written while concurrent
+work in git-tracked areas was unconcluded. Each opens by naming this document.
+The seventh, the census script, stays untracked.
 
-| File under `C:/Users/BenDe/.claude/plans/` | What it holds |
+| Tracked note | What it holds |
 |---|---|
-| `writing-only-to-a-robust-teapot-M23.md` | The M23 question, the Yeivin and Breuer sections for each post-stress type, the census summary, and the 1 Samuel 17:5 post-silluq case |
-| `writing-only-to-a-robust-teapot-M-vs-mgketer.md` | The 30-row table of verses and forms, and the M13 and M22 special cases |
-| `writing-only-to-a-robust-teapot.md` | M13's `{{מ:קמץ}}` template finding, which item 2 turns into two bot entries |
-| `writing-only-to-a-robust-teapot-accent-placement-four.md` | M17, M24, M32 and M34 — the four records this programme excludes — and why Joshua 10:12 stays noisy |
-| `writing-only-to-a-robust-teapot-archived-terminology.md` | The five rendered uses of "Suppressed" that item 1 renames |
-| `writing-only-to-a-robust-teapot-census-report.md` | The 2026-09-03 census output, the legacy baseline item 1's Phase 1 measures against |
-| `writing-only-to-a-robust-teapot-census.py` | The throwaway script producing that report |
+| [`holman-meteg-m23-isaiah-23-12.md`](holman-meteg-m23-isaiah-23-12.md) | The M23 question, the Yeivin and Breuer sections for each post-stress type, the census summary, and the 1 Samuel 17:5 post-silluq case |
+| [`holman-meteg-vs-mgketer.md`](holman-meteg-vs-mgketer.md) | The 30-row table of verses and forms, and the M13 and M22 special cases |
+| [`holman-meteg-m13-qamats-template.md`](holman-meteg-m13-qamats-template.md) | M13's `{{מ:קמץ}}` template finding, which item 2 turns into two bot entries |
+| [`holman-accent-placement-four.md`](holman-accent-placement-four.md) | M17, M24, M32 and M34 — the four records this programme excludes — and why Joshua 10:12 stays noisy |
+| [`holman-suggestions-archived-terminology.md`](holman-suggestions-archived-terminology.md) | The five rendered uses of "Suppressed" that item 1 renames |
+| [`post-stress-meteg-census-2026-09-03.md`](post-stress-meteg-census-2026-09-03.md) | The 2026-09-03 census output, the legacy baseline item 1's Phase 1 measures against |
 
-The census script **cannot be tracked as it stands**: line 49 is a
-`sys.path.insert`, which `~/.claude/CLAUDE.md` bans in tracked source at a
-count of zero per repository. Its job is taken over by item 1's Phase 1
-generator, so the report is worth tracking and the script is not.
+**Three of the six carry a dated correction added by the move**, each marked
+`Correction, 2026-09-03` and placed beside the claim it corrects rather than
+replacing it. The M23 note's page location and name, left open when it was
+written, are settled by item 1's plan; that same note's census figures are
+demoted to a legacy baseline, the census script's verse-final test being
+defective; and the terminology note's count of rendered "Suppressed"
+occurrences reads six where the measured count, and its own enumeration, is
+five.
+
+The census script that produced the census report stays at
+`C:/Users/BenDe/.claude/plans/writing-only-to-a-robust-teapot-census.py` and
+**cannot be tracked as it stands**: line 49 is a `sys.path.insert`, which
+`~/.claude/CLAUDE.md` bans in tracked source at a count of zero per
+repository. Its job is taken over by item 1's Phase 1 generator, so the report
+is worth tracking and the script is not.
 
 `although-the-forest-of-peppy-lampson.md`, in the same directory, belongs to
 the **evacuation** programme rather than this one — see

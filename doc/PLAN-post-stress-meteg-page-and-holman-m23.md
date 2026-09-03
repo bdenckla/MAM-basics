@@ -28,7 +28,7 @@ differential oracle and never regenerates them.
 ## Purpose, decisions, and boundaries
 
 Ben's decision, 2026-09-03, settling what the evidence note
-writing-only-to-a-robust-teapot-M23.md left open ("Which repo hosts the page,
+doc/holman-meteg-m23-isaiah-23-12.md left open ("Which repo hosts the page,
 and its name, are not decided"): the page is published at MAM-basics' own
 deploy root, beside gh-pages/unicode-proposals.html, as one of this
 repository's own authored pages. Six artifacts, all in MAM-basics:
@@ -123,19 +123,30 @@ Read their claims, then remeasure against current files. The notes described
 the MAM-basics commit 3829585; the executor must record the actual MAM-basics,
 MAM-private, MAM-parsed, and UXLC-utils revisions in the phase-state note.
 
-1. C:/Users/BenDe/.claude/plans/writing-only-to-a-robust-teapot-M23.md
+All five moved into this repository's doc/ on 2026-09-03, out of
+C:/Users/BenDe/.claude/plans/, where this plan cited them until that day. Three
+of them gained a dated correction in the move, each marked
+“Correction, 2026-09-03” and placed beside the claim it corrects. Their sixth
+sibling, doc/holman-meteg-m13-qamats-template.md, holds the M13 template
+finding and is not evidence this plan needs.
+
+1. doc/holman-meteg-m23-isaiah-23-12.md
    gives the M23 question, the initial MAM census, and the 1 Samuel 17:5
-   manuscript/transcription observation.
-2. C:/Users/BenDe/.claude/plans/writing-only-to-a-robust-teapot-M-vs-mgketer.md
+   manuscript/transcription observation. Its corrections settle the page
+   location this plan decides, and demote its census figures to a legacy
+   baseline.
+2. doc/holman-meteg-vs-mgketer.md
    records the reported agreement of all 30 M (meteg) suggestions with
    mgketer.
-3. C:/Users/BenDe/.claude/plans/writing-only-to-a-robust-teapot-census-report.md
+3. doc/post-stress-meteg-census-2026-09-03.md
    supplies the first census output and exposes the old final-entry
    classification error.
-4. C:/Users/BenDe/.claude/plans/writing-only-to-a-robust-teapot-archived-terminology.md
+4. doc/holman-suggestions-archived-terminology.md
    identifies the five rendered uses of “Suppressed” that should read
-   “Archived”.
-5. C:/Users/BenDe/.claude/plans/writing-only-to-a-robust-teapot-accent-placement-four.md
+   “Archived”. Its correction records that the note's own total of six is
+   wrong, the measured count being five, as this plan and the programme both
+   say.
+5. doc/holman-accent-placement-four.md
    records the status and downstream consequences of M17, M24, M32, and M34.
 
 Before the first edit, load:
@@ -170,8 +181,9 @@ Use the Breuer Markdown export, not the docx files:
 C:/Users/BenDe/GitRepos/MAM-private/masorah-books/books/cos/md-export-of-docx/
 
 The historical figures below are the 2026-09-03 output of the throwaway census
-script C:/Users/BenDe/.claude/plans/writing-only-to-a-robust-teapot-census.py:
-C:/Users/BenDe/.claude/plans/writing-only-to-a-robust-teapot-census-report.md.
+script C:/Users/BenDe/.claude/plans/writing-only-to-a-robust-teapot-census.py,
+which stays untracked there because its line 49 is a sys.path.insert. Its
+report is tracked, at doc/post-stress-meteg-census-2026-09-03.md.
 Use the figures as a legacy comparison baseline only. Do not run or edit that
 script during this work: it overwrites the evidence report, and its
 verse-final test treats a final parsed entry as verse-final even when that
