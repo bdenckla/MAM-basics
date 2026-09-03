@@ -912,17 +912,31 @@ comment above the page-identity constants states Ben's 2026-09-03 reason in plac
 of the 2026-09-02 one it overturns, keeping its still-true half about the
 filename.
 
-**One inconsistency this rename creates is RAISED AND NOT FIXED, because the
-wording is Ben's to choose.** `gh-pages/holman/index.html`, which is
-hand-authored rather than generated, names the main page "Ketiv/qere review, and
-suggestions for MAM" at its line 60 — the compound framing rename A retired. The
-page it links to now calls itself "Holman MAM suggestions". Copying that title
-is the obvious repair, and it is the rule
+**One inconsistency this rename created HAS BEEN FIXED**, later the same day, on
+Ben's instruction once it was raised to him: "Make the obvious repair."
+`gh-pages/holman/index.html`, which is hand-authored rather than generated, named
+the main page "Ketiv/qere review, and suggestions for MAM" at its line 60 — the
+compound framing rename A retired — while the page it links to had begun calling
+itself "Holman MAM suggestions". That entry title now copies the page's own
+title verbatim, which is the rule
 `py/tests/test_site_index_links.py::test_the_misc_titles_are_the_pages_own_titles`
-enforces for the Misc entries of the site's landing page; but this plan's Phase 4
-is scoped to `py/py_render/rt_html.py` and to a measured three and five rendered
-occurrences, and the entry's descriptive note below the title is accurate as it
-stands.
+enforces for the Misc entries of the site's landing page. The descriptive note
+beneath the title is unchanged, being accurate as it stands: it names both
+bodies of work the page holds and the filtering that separates them.
+
+Two things about that repair are worth recording:
+
+1. **The sibling entry is left as it is, and it does not copy its page's title
+   either.** `gh-pages/holman/index.html` names the UXLC report "Suggestions for
+   the UXLC" where `gh-pages/holman/uxlc_corrections.html` titles itself "Holman
+   UXLC suggestions" and heads itself "Daniel Holman's suggestions for the
+   UXLC". Under this index's own heading, "Daniel Holman's observations on the
+   Hebrew Bible text", the shorter form reads naturally, so whether both entries
+   should copy titles is a wording choice for Ben rather than a defect.
+2. **No lint reaches this file.** Phase 6's reverse check stops at the deploy
+   root by design, and the Holman subtree index is one of the subtree indexes
+   that check deliberately excludes, so nothing would have caught the stale
+   title and nothing will catch the next one.
 
 ### Phase 5 done 2026-09-03: the four boundary dispositions read as expected, and nothing was edited
 
