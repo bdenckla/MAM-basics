@@ -124,8 +124,10 @@ def main() -> None:
         )
         f.write("-" * 180 + "\n")
         for r in rows:
-            f.write(
-                f"{r['file']:<42} {r['dest_repo']:<26} {r['dest_path']:<55} {r['identity']:<14} {r['last_synced']:<12} {r['hint_notes']}\n"
+            line = (
+                f"{r['file']:<42} {r['dest_repo']:<26} {r['dest_path']:<55} "
+                f"{r['identity']:<14} {r['last_synced']:<12} {r['hint_notes']}"
             )
+            f.write(line.rstrip() + "\n")
 
     print(f"Wrote {len(rows)} rows to {out}")

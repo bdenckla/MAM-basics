@@ -53,6 +53,12 @@ entrypoint but no rebuild, so its script would wrap a single command. The
 remaining 21 have neither. So do not read a False here as work waiting, and do
 not write a maintenance script for a repo on the strength of this check alone.
 
+Dated update, 2026-09-03: Phase 3 of
+`doc/PLAN-evacuate-the-rest-of-three-repos.md` moved holman-ketiv-qere's public
+tree into `MAM-basics/holman/` and retired its clone. The original census remains
+as measured; holman-ketiv-qere is now absent from this check because the roster
+does not list a source clone.
+
 The worktree-cleanup standard
 -----------------------------
 EVERY REPO'S MAINTENANCE SCRIPT SHOULD REMOVE FINISHED AGENT WORKTREES AND THE
@@ -113,8 +119,8 @@ File-scan (over tracked *.py files):
     instead. Escapes inside raw strings (`r"..."`) are exempted: that's the
     accepted, necessary form for a regex character-class range such as
     `r"\\u0591-\\u05ae\\u05bd"`, since `\\N{...}` can't express a range --
-    confirmed as the standing convention in sibling repos (e.g.
-    holman-ketiv-qere's hebrew_accents.py). Flagging those would be noise,
+     confirmed by MAM-basics' `py/mb_cmn/hebrew_accents.py`, which arrived from
+     holman-ketiv-qere. Flagging those would be noise,
     not signal. Also exempt for the same "not a style choice" reason:
     range endpoints written as comparisons (`"\\uXXXX" <= ch <= "\\uYYYY"`),
     and escapes inside a `#` comment, where Python never decodes them so the
@@ -151,12 +157,12 @@ The sys.path surgery standard
 NO sys.path.insert, AND NO MECHANISM THAT STANDS IN FOR ONE -- not a root
 conftest.py, not a pytest.ini `pythonpath`, not a .pth file, not PYTHONPATH.
 There is nothing to trade off here, because a way to run the tests that needs
-none of them already exists and is proven: MAM-basics' and holman-ketiv-qere's
+none of them already exists and is proven: MAM-basics'
 `py/main_test.py`, run from the repo root as `python py/main_test.py`. CPython
 puts the script's own directory at sys.path[0], so py/ is importable for free
 and no configuration exists to drift. MAM-basics `fd2241a` is the deliberate
-migration commit; MAM-basics and holman-ketiv-qere both report zero findings and
-no config, so this is a demonstrated state, not an aspiration.
+migration commit; MAM-basics reports zero findings and no config, so this is a
+demonstrated state, not an aspiration.
 
 A bare `pytest` therefore failing to collect is the designed state, not a defect
 to patch. Note this REVERSES a reading of user-level CLAUDE.md's "No `sys.path`
@@ -194,7 +200,7 @@ path -- so removing one is a real edit that has to move that command behind a
 the rule prescribes.
 
 These file-scan checks are heuristic text scans (matching this repo's existing
-style, e.g. tests/test_h_dot_below_nfc.py, and book-of-job's
+style, e.g. tests/test_h_dot_below_nfc.py and the former book-of-job
 check_escape_sequences.py), not a full AST parse. The one exception is
 hex_escape_style's comment exemption, which does tokenize: a `#` is otherwise
 indistinguishable from one inside a string literal.
@@ -544,8 +550,7 @@ def _check_path_shim_config(repo_dir: Path) -> dict:
     See "The sys.path surgery standard" in this module's docstring. ROOT_CONFTEST
     is a finding when True: `python py/main_test.py` needs no such file, so one
     being there means a second entry path exists to drift against. The clean
-    state is False with an empty shim_config, which MAM-basics and
-    holman-ketiv-qere both demonstrate.
+    state is False with an empty shim_config, which MAM-basics demonstrates.
     """
     return {
         "root_conftest": (repo_dir / _ROOT_CONFTEST).is_file(),
@@ -555,7 +560,7 @@ def _check_path_shim_config(repo_dir: Path) -> dict:
 
 def _is_test_file(normalized_rel_path: str) -> bool:
     """Both of pytest's default `python_files` spellings, `test_*.py` and
-    `*_test.py` -- UXLC-utils uses the suffix form (py/clc/clc_kq_test.py),
+    `*_test.py` -- CLC uses the suffix form (py/clc/clc_kq_test.py),
     MAM-basics and wlc-utils the prefix form. A `py/main_<x>.py` entry point is
     never one, however it is named: wlc-utils' py/main_uxlc_grammar_test.py
     runs a grammar test but is a command, so its insert is the ordinary
@@ -609,7 +614,7 @@ def _raw_string_spans(text: str) -> list[tuple[int, int]]:
     literals (r"...", rb'...', rf"...", fr'...', etc.). \\N{...} is not
     processed inside a raw string at all (raw strings disable all backslash
     escapes), so \\uXXXX there is the only option, not a style choice.
-    Adapted from book-of-job's check_escape_sequences.py::_raw_string_spans."""
+    Adapted from book-of-job's former check_escape_sequences.py::_raw_string_spans."""
     return [match.span() for match in _RAW_STRING_SPAN_PATTERN.finditer(text)]
 
 
