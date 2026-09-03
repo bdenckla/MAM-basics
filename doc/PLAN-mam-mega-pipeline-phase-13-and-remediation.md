@@ -1,6 +1,7 @@
 # PLAN — MAM mega-pipeline Phase 13, remediation handoff, and forest retirement
 
-State: Phase 13 complete; the first remediation wave completed 2026-09-02
+State: Phase 13 complete; the first three remediation waves completed 2026-09-02;
+the near-Aleppo census gate was added 2026-09-03
 
 Ben's decision, 2026-09-01: the review should have one final Phase 13 for
 whole-pipeline integration and closeout. Phase 13 is followed by a separate
@@ -299,6 +300,45 @@ safe. Merge completed worktree branches into each repository's `main` during
 the wave and push `main`; do not leave finished fixes only on remediation
 branches. Do not change a GitHub issue's state without an accompanying reason,
 and identify agent-written issue comments as agent-written.
+
+## Near-Aleppo census remediation before implementation
+
+Ben's decision, 2026-09-03: the private Phase 10 census remediation is a
+precondition of near-Aleppo implementation, not cleanup to perform after the
+implementation. This adds a dependency to the remediation program: the census
+wave need not precede unrelated remediation waves, but it must finish before
+near-Aleppo implementation code begins. The private ledger and the two private
+near-Aleppo plans hold the findings and evidence at
+`C:/Users/BenDe/GitRepos/MAM-private/doc/mega-pipeline-review-findings-2026-09-01.md`,
+`C:/Users/BenDe/GitRepos/MAM-private/doc/PLAN-near-aleppo.md`, and
+`C:/Users/BenDe/GitRepos/MAM-private/doc/PLAN-near-aleppo-implementation.md`;
+this public plan records only the cross-program ordering and acceptance
+conditions.
+
+1. Preserve the pre-remediation expected files byte-for-byte, record an
+   aggregate hash, and record the exact heads of every repository the census
+   reads. Re-measure the live script and expected-file counts. Do not begin by
+   rewriting expected files.
+2. Remediate the complete private Phase 10 census finding set. A successful run
+   after those repairs establishes runner integrity; it does not establish that
+   every census algorithm is authoritative.
+3. Run the complete census strictly against the preserved expected files and
+   capture every changed result before accepting any new expected file. A
+   failure is fatal, and no expected file changes unless the complete run
+   succeeds.
+4. Map every implementation-driving population and factual branch condition to
+   one authoritative current census instrument and expected result. A script's
+   inclusion in the census runner does not make a superseded or record-only
+   script authoritative.
+5. Treat every changed result as a finding. A changed population is reconciled
+   in both private near-Aleppo plans and becomes a fatal builder assertion. A
+   changed factual premise reopens the particular decision that depends on it
+   for Ben; it does not silently rewrite the plan or every expected file.
+6. Accept a post-remediation implementation baseline before implementation
+   begins. Retain the complete census, expected files and private vendored
+   dependencies through the first generated dataset's successful comparison
+   with that baseline and the public builder's adoption of the enduring fatal
+   assertions. Any later narrowing or deletion is a separate decision.
 
 ## Review-forest retirement after the short overlap
 
