@@ -155,6 +155,13 @@ REDIRECT_REPOS = (
         manifest_path="in/book_of_job_redirect_pages.json",
         clone_url="https://github.com/bdenckla/book-of-job.git",
     ),
+    RedirectRepo(
+        source_repo="UXLC-utils",
+        site_subtree="uxlc",
+        old_path_prefix="/UXLC-utils/",
+        manifest_path="in/uxlc_utils_redirect_pages.json",
+        clone_url="https://github.com/bdenckla/UXLC-utils.git",
+    ),
 )
 
 # The one row that keeps existing invocations free of an otherwise needless --repo flag.

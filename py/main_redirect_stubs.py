@@ -8,9 +8,9 @@ than being archived or deleted, holding one stub per published page plus a ``404
 catch-all.  This program builds that set and lints it.
 
 ``py/redirect_stubs/stubs.py`` records one row per redirect host: its source repository,
-MAM-basics subtree, old URL prefix, frozen manifest and clone URL.  The table has only the
-wlc-utils row today.  A later lane adds a row only with that source repo's frozen manifest,
-so a missing manifest fails rather than producing an empty stub set.
+MAM-basics subtree, old URL prefix, frozen manifest and clone URL. A lane adds a row only with
+that source repo's frozen manifest, so a missing manifest fails rather than producing an empty
+stub set.
 
 WITH JAVASCRIPT OFF, A DEEP LINK LOSES ITS FRAGMENT.  Each stub carries its target three
 times and the three do different work: the canonical link names the current copy for a
