@@ -1,6 +1,7 @@
-# Evacuating Python from the remaining public repos — the programme
+# Evacuating the public repos into MAM-basics — the programme
 
-State: executed 2026-08-22; a third stage was decided 2026-09-02 and is not started
+State: the Python-only programme executed 2026-08-22; a third stage was decided 2026-09-02 and
+is not started
 
 **DO NOT DELETE THIS FILE WHEN THE SECOND STAGE CLOSES**, though
 [`PLAN-evacuate-the-rest-of-three-repos.md`](PLAN-evacuate-the-rest-of-three-repos.md)'s
@@ -16,6 +17,20 @@ this one, to confirm it holds no live decision. Amended into the other plan the 
 2026-09-03, so the two agree. This is about this file alone —
 [`PLAN-evacuate-the-rest-of-wlc-utils.md`](PLAN-evacuate-the-rest-of-wlc-utils.md) still goes
 with the second stage as that paragraph says.
+
+**This file was `doc/PLAN-evacuate-python-programme.md` until 2026-09-03**, titled "Evacuating
+Python from the remaining public repos — the programme". Ben's decision that day, on being told
+the name had outlived the file: **the Python-only programme the old name announced IS complete**
+— codex-index-aleppo, -cam1753, -leningrad and UXLC-utils all hold zero tracked `.py`, measured
+2026-09-03, and book-of-job and holman-ketiv-qere have left `all-repos.code-workspace` entirely —
+while everything still live here is the second and third stages of a TOTAL evacuation. Both other
+words stay, and neither is decoration: **public** is the scope rule of §"Why these six, and why
+public-only", which excludes the private repos for being private and al-hatorah's 268 tracked
+`.py` with them, so a name without it invites the "all the Python is consolidated" claim that
+section forbids; **programme** is what marks this as the umbrella over the per-stage plans rather
+than one of them. Twenty-four citations across nine files were repointed the same day, none of
+them a path any program resolves. A citation of the old name in a session transcript, or one that
+sweep missed, means this file.
 
 Written 2026-08-02, immediately after `doc/PLAN-evacuate-python-from-wlc-utils.md` finished. That
 plan is the model and the precedent; this file is the umbrella over the public repos that still

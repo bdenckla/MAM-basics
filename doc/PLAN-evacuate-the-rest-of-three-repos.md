@@ -3,7 +3,7 @@
 State: Phase 4 in progress — Steps 1–3 complete 2026-09-03; Steps 4–6 remain
 
 Written 2026-08-22, the day
-[`PLAN-evacuate-python-programme.md`](PLAN-evacuate-python-programme.md) closed — its last row,
+[`PLAN-evacuate-public-repos-programme.md`](PLAN-evacuate-public-repos-programme.md) closed — its last row,
 the codex-index trio, finished that morning and all six public repos in that programme hold zero
 tracked `.py`. This plan is the second stage Ben decided the same day: the three repos named in
 the heading give up **everything else** as well, and stay alive as redirect hosts.
@@ -39,7 +39,7 @@ instruction, and then run Phase 1 — which is verification only, per its Status
 **Two executed plans are kept in `doc/` FOR THIS ONE, and go when it closes.** The 2026-08-29
 `doc/` sweep deleted seven finished plans and spared
 [`PLAN-evacuate-the-rest-of-wlc-utils.md`](PLAN-evacuate-the-rest-of-wlc-utils.md) and
-[`PLAN-evacuate-python-programme.md`](PLAN-evacuate-python-programme.md), both of which carry
+[`PLAN-evacuate-public-repos-programme.md`](PLAN-evacuate-public-repos-programme.md), both of which carry
 `State: executed` and would otherwise have gone with the seven. This file leans on both rather
 than restating them — the first as its model, per the instruction at the top of this file, the
 second for the two sections named under "Context — what this plan does, and the two programme
@@ -50,13 +50,13 @@ section". Whoever closes or abandons this plan deletes those two with it.
 **Amended 2026-09-03: that last sentence HAS BEEN NARROWED to one of the two files, because
 following it as written would now destroy unstarted work.** Eleven days after it was written,
 on 2026-09-02, the third stage was recorded inside
-[`PLAN-evacuate-python-programme.md`](PLAN-evacuate-python-programme.md) as its section "Third
+[`PLAN-evacuate-public-repos-programme.md`](PLAN-evacuate-public-repos-programme.md) as its section "Third
 stage — the codex-index trio and diffable-pointed-hebrew, total evacuation": 264 lines, decided,
 not started, and **that file is its only copy**, the plan file of its own that its Status row
 promises — `doc/PLAN-evacuate-the-codex-index-trio-and-diffable-pointed-hebrew.md` — being
 written when the stage begins and not existing yet. So closing this plan deletes
 [`PLAN-evacuate-the-rest-of-wlc-utils.md`](PLAN-evacuate-the-rest-of-wlc-utils.md), as the
-sentence says, and **leaves `PLAN-evacuate-python-programme.md` standing**. That file goes only
+sentence says, and **leaves `PLAN-evacuate-public-repos-programme.md` standing**. That file goes only
 once the third stage has left it — written out into the plan file named above, which then closes
 on its own account, or abandoned on Ben's word — and whoever deletes it reads that section first
 to confirm it holds no live decision. The same amendment is recorded at the head of the
@@ -86,7 +86,7 @@ sibling. The same day Ben asked for an assessment of where the evacuation stands
 next. Its findings are the subsection "Assessed 2026-09-02 — ten things that moved while the plan
 was paused", just below this table; its four decisions are Decision F (where the non-`gh-pages`
 tree lands, superseding Decision C) and Decision G (the lane order, which interleaves this plan
-with a third stage) in this file, and two recorded in `PLAN-evacuate-python-programme.md`
+with a third stage) in this file, and two recorded in `PLAN-evacuate-public-repos-programme.md`
 §"Third stage — the codex-index trio and diffable-pointed-hebrew": the codex-index trio joins the
 evacuation, with two of its repos to be archived, and diffable-pointed-hebrew joins as the last
 lane. **When this plan resumes, its first act is still Phase 1, and before Phase 1 the resuming
@@ -194,7 +194,7 @@ day and the item says so.
 
 ## Context — what this plan does, and the two programme decisions it executes
 
-Two sections of [`PLAN-evacuate-python-programme.md`](PLAN-evacuate-python-programme.md) are this
+Two sections of [`PLAN-evacuate-public-repos-programme.md`](PLAN-evacuate-public-repos-programme.md) are this
 plan's charter. Both are Ben's decisions of 2026-08-22, both are recorded there rather than here,
 and **neither is reopened by this plan**:
 
@@ -752,7 +752,7 @@ need their separate dispositions before Step 3 repoints their readers.
 codex-index-cam1753, then book-of-job, then UXLC-utils, then diffable-pointed-hebrew.** The
 recommendation, taken over two alternatives (this plan's own order and then the trio; the trio
 first). So this plan's Phases 1, 2 and 3 run first; then the third stage's three trio lanes,
-under `PLAN-evacuate-python-programme.md` §"Third stage — the codex-index trio and
+under `PLAN-evacuate-public-repos-programme.md` §"Third stage — the codex-index trio and
 diffable-pointed-hebrew"; then this plan's Phases 4 and 5; then the third stage's
 diffable-pointed-hebrew lane; then both plans' bookkeeping phases. Reasons: holman-ketiv-qere is
 the pilot this plan already chose; codex-index-leningrad is the cheapest lane there is (51 files,
@@ -1268,7 +1268,7 @@ than a permissions problem.
 ## Preconditions
 
 **1. The Python-evacuation programme must be complete.** **MET 2026-08-22** — all six repos hold
-zero tracked `.py` and `PLAN-evacuate-python-programme.md`'s Status table reads DONE on every row.
+zero tracked `.py` and `PLAN-evacuate-public-repos-programme.md`'s Status table reads DONE on every row.
 Re-check that table rather than trusting this line.
 
 **2. MAM-basics' Pages must be live.** **MET since 2026-08-13.** Check with
@@ -2526,7 +2526,7 @@ has been resolved by its owner.
 10. **`MAM-private/mgketer/CLAUDE.md`** says *"It reads `../UXLC-utils` from MAM-basics now"* and
     instructs relative `../repo-name` addressing including `book-of-job`. Same commit.
 11. **Update this file's Status table and the programme's.** Add a paragraph to
-    `PLAN-evacuate-python-programme.md` recording that its second stage is complete, and that its
+    `PLAN-evacuate-public-repos-programme.md` recording that its second stage is complete, and that its
     carried decision 2 — "`gh-pages/` stays put indefinitely" — is now broken four times rather
     than once.
 12. **Confirm the three lanes' `CLAUDE.md` triage landed, and that nothing was carried that the

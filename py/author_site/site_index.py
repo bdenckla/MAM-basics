@@ -8,7 +8,7 @@ wherever it lives, on this site or on hakirah.org, and no program can derive the
 THE DERIVED HALF IS GONE, and this paragraph is here so nobody rebuilds it.  A last section
 headed "Pages published from this repository" listed one entry per tracked
 ``gh-pages/<subtree>/index.html``, derived by an ``author_site/published_subtrees.py``, per
-the 2026-08-22 decision recorded in ``doc/PLAN-evacuate-python-programme.md``.  Ben deleted
+the 2026-08-22 decision recorded in ``doc/PLAN-evacuate-public-repos-programme.md``.  Ben deleted
 that section on 2026-08-31, having disliked it: its single entry sent a reader to
 ``gh-pages/wlc/index.html`` to find seven pages, four of which this page did not name
 anywhere else, and he asked for those four to be distributed to the sections above instead.

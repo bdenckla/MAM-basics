@@ -278,7 +278,7 @@ regenerating the tracked artifact byte-identically is the test, with no new exam
 tests; issues unify going forward only; and one phase per session, written back before the next.
 
 **One decision from the Python plan this deliberately breaks.**
-`PLAN-evacuate-python-programme.md`'s carried decision 2 says "**`gh-pages/` stays put
+`PLAN-evacuate-public-repos-programme.md`'s carried decision 2 says "**`gh-pages/` stays put
 indefinitely** in every repo that has one … Moving it would break links in the wild with no
 forwarding mechanism." That was right when there was no forwarding mechanism. Phase 8 builds one.
 Five of the six repos still in that programme have a `gh-pages/` and will cite this as precedent,
@@ -2602,7 +2602,7 @@ Phase 11 was the last phase, so no live pointer replaces this one anywhere: the 
     required `repo` argument and its deliberately bare `#69` example. **Say so in the commit
     message**, so nobody reads a fully-evacuated wlc-utils as licence to "tidy" the split.
 11. **Update both PLAN files' Status tables**, and add a paragraph to
-    `PLAN-evacuate-python-programme.md` recording that its carried decision 2 — "`gh-pages/` stays
+    `PLAN-evacuate-public-repos-programme.md` recording that its carried decision 2 — "`gh-pages/` stays
     put indefinitely" — **has now been broken once, deliberately, and how**. Five of the six repos
     still in that programme have a `gh-pages/`, and they will cite this as precedent.
 
@@ -2732,7 +2732,7 @@ evidently past `:33982`. The report also holds two findings that did NOT move in
 both MAM-basics-native and pre-existing — named here so nobody reads them as evacuation residue.
 
 **5. Item 11's "both PLAN files' Status tables" names a second table with nothing to update.**
-`PLAN-evacuate-python-programme.md`'s Status table tracks that programme's own six repos and
+`PLAN-evacuate-public-repos-programme.md`'s Status table tracks that programme's own six repos and
 never carried a row about this plan, so the item resolves to: this plan's table, plus the
 decision-2 break paragraph that file did get. Recorded so nobody re-derives a missing obligation
 from the word "both".

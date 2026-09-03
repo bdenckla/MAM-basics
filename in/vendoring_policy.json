@@ -36,7 +36,7 @@
       }
     },
     "diffable-pointed-hebrew": {
-      "comment": "Unmeasured rather than stale, and the only repo in that category: nobody has looked at how far these eight files have drifted. doc/PLAN-evacuate-python-programme.md's Appendix B is the statement -- seven read DIFFERS and one eol-only, no copy script has ever refreshed them, and it calls that a bug of unknown size rather than an abandoned copy, with the fix being to give the repo a main_update_vendored_files.py and get the rows to identical/copy_script. Changed from stale on 2026-08-07 (#60).",
+      "comment": "Unmeasured rather than stale, and the only repo in that category: nobody has looked at how far these eight files have drifted. doc/PLAN-evacuate-public-repos-programme.md's Appendix B is the statement -- seven read DIFFERS and one eol-only, no copy script has ever refreshed them, and it calls that a bug of unknown size rather than an abandoned copy, with the fix being to give the repo a main_update_vendored_files.py and get the rows to identical/copy_script. Changed from stale on 2026-08-07 (#60).",
       "ignore": false,
       "scan_provenance": true,
       "default_category": "unmeasured",

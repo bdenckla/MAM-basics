@@ -23,7 +23,7 @@ from mb_cmn import paths
 # * ``stale``      -- measured, and behind.
 # * ``unmeasured`` -- nobody has looked at how far it has drifted.  Named for what is
 #   missing rather than for why, so it says nothing that can go out of date, and it has
-#   one exit: measure it.  ``doc/PLAN-evacuate-python-programme.md``'s Appendix B is the
+#   one exit: measure it.  ``doc/PLAN-evacuate-public-repos-programme.md``'s Appendix B is the
 #   statement of the one repo in it, diffable-pointed-hebrew.
 CATEGORY_VALUES = frozenset({"active", "generated", "stale", "unmeasured"})
 

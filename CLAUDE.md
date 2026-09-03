@@ -350,9 +350,9 @@ and "Five issue trackers" since. **Ten sentences across four plans still cite it
 three retired names**, counted 2026-08-22: four in `doc/PLAN-evacuate-the-rest-of-wlc-utils.md`
 under "Two issue trackers"; three under "Three issue trackers", being
 `doc/PLAN-evacuate-python-from-UXLC-utils.md`'s Status row and its Phase 6 record plus
-`doc/PLAN-evacuate-python-programme.md`'s UXLC-utils row; and three under "Four issue trackers",
+`doc/PLAN-evacuate-public-repos-programme.md`'s UXLC-utils row; and three under "Four issue trackers",
 being `doc/PLAN-evacuate-python-from-holman-ketiv-qere.md`'s Status row and its Phase 6 record
-plus `doc/PLAN-evacuate-python-programme.md`'s holman-ketiv-qere row. They are those plans'
+plus `doc/PLAN-evacuate-public-repos-programme.md`'s holman-ketiv-qere row. They are those plans'
 execution records, describing the section as it stood when each phase ran, so they are left as
 written rather than re-pointed.
 

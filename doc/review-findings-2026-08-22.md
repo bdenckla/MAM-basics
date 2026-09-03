@@ -241,7 +241,7 @@ found.
    this machine.
 
 5. **The programme plan is stale on the trio, against its own per-phase convention.** At
-   `b37bdb4` — and still at `09d68c5`, after cam1753's Phase 4 — `doc/PLAN-evacuate-python-programme.md`'s
+   `b37bdb4` — and still at `09d68c5`, after cam1753's Phase 4 — `doc/PLAN-evacuate-public-repos-programme.md`'s
    trio row (line 16) and its Order item read "Phases 0 and 1 DONE 2026-08-22; Phases 3, 4, 6 and 7
    not started — all three repos", though `10ae4d5`, `11f7ced`, `98053b7`, `492057d`, `fe6cef2` and
    `09d68c5` have landed Phases 3 and 4 for all three. None of those commits touched the programme

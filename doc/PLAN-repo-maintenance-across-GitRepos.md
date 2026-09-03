@@ -359,7 +359,7 @@ Then ask the second question of each **by hand**, because the `State:` line does
 **does surviving work lean on this plan, and how hard?** *Executed is not the same as spent.* On
 2026-08-29 the still-paused `PLAN-evacuate-the-rest-of-three-repos.md` cited **seven** of the
 nine executed plans, and two of those — `PLAN-evacuate-the-rest-of-wlc-utils.md` and
-`PLAN-evacuate-python-programme.md` — by live markdown link, named as the model it "leans on
+`PLAN-evacuate-public-repos-programme.md` — by live markdown link, named as the model it "leans on
 rather than restating" and as the source of two sections declared to be its own. Those two were
 kept and the other seven deleted (`f6173fe`). The line that held: a plan the surviving work
 merely mentions is spent, a plan it tells you to read first is load-bearing.

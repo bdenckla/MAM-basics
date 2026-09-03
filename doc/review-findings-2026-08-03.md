@@ -208,7 +208,7 @@ and missed README's). And the "Open issues at a glance" table omits #14, #15, #1
 booked after the table was composed (ce05e36). Fix: the two sentences and four table rows.
 
 **4. The evacuation programme doc overstates UXLC-utils' progress.**
-`MAM-basics/doc/PLAN-evacuate-python-programme.md` line 13's status row says of UXLC-utils
+`MAM-basics/doc/PLAN-evacuate-public-repos-programme.md` line 13's status row says of UXLC-utils
 "Only Phase 6 remains" — but `doc/PLAN-evacuate-python-from-UXLC-utils.md` §Phase 7 has items
 2–6 outstanding, item 6 being the edit to the hebrew-prose skill's citations of UXLC-utils
 Python (flagged stop-and-ask-Ben, committing to a third repo, both unsynced copies). Smaller,
