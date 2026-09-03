@@ -923,3 +923,48 @@ enforces for the Misc entries of the site's landing page; but this plan's Phase 
 is scoped to `py/py_render/rt_html.py` and to a measured three and five rendered
 occurrences, and the entry's descriptive note below the title is accurate as it
 stands.
+
+### Phase 5 done 2026-09-03: the four boundary dispositions read as expected, and nothing was edited
+
+**Phase 5 HAS BEEN RUN AND FOUND NOTHING TO REPORT**, which is what a scope guard
+passing looks like. It edited nothing. Input revision: MAM-basics `8184104a`,
+read in the same worktree.
+
+Read: `py/hkq_cmn/mam_suggestion_dispositions.py`, and the four records as
+`holman/docs-not-served/mam_suggestions.json` carries them after the ingest.
+
+`DISPOSITION_BY_REF` has exactly four keys, and each reads as the plan requires.
+The map is keyed by the reference as Holman sent it, so the table below gives
+that key rather than the displayed "BookName ch:v.atom" form:
+
+| M | key | outcome | summary | decided |
+|---|---|---|---|---|
+| M17 | `2Ki 17:15.15` | Suggestion not taken | MAM is right; the geresh is misplaced in the Jerusalem Crown | Seth (Avi) Kadish, 2026-08-28 |
+| M24 | `Josh 10:12.3` | Suggestion taken | MAM now has the pashta repeated over the ש (shin) | Seth (Avi) Kadish, 2026-08-28 |
+| M32 | `Judg 10:11.1` | Suggestion not taken | MAM is right; the merkha is misplaced in the Jerusalem Crown | Seth (Avi) Kadish, 2026-08-28 |
+| M34 | `Zech 2:4.11` | Suggestion taken | MAM now has the munaḥ on the ר (resh) | Seth (Avi) Kadish, 2026-08-28 |
+
+So M17 and M32 remain declined and M24 and M34 keep the dispositions they had.
+All four carry `state` `"suppressed"`, the one state there is.
+
+**No meteg record has a disposition, and none was added.** The four keys above
+are the whole of `DISPOSITION_BY_REF`, so none of M1-M16, M18-M23, M25-M31 or M33
+has one. Archiving those thirty is the programme's item 6 and is not this plan's
+to do.
+
+**These four are exactly the records Phase 3's derived roster excluded.** Phase 3
+partitioned the 34 M records by the meteg arithmetic and got 30; the four it left
+are M17, M24, M32 and M34, the four in the table above. The two phases therefore
+partition one set of 34 exhaustively, as this plan's Phase 3 says they must, and
+that was confirmed by measurement rather than assumed.
+
+**Joshua 10:12 is expected to go on showing a mgketer diff, and that is not a
+reason to add a suppression entry.** M24's change gives MAM a pashta with its
+stress helper — the repeated copy that marks the stress the pashta itself does
+not, sharing the pashta's codepoint — where mgketer's transcription of the Aleppo
+Codex has the pashta alone. The repetition is a MAM notational convention that
+the source manuscripts are not expected to have, so a diff at that atom after a
+later pipeline refresh is correct rather than a defect. The programme's item 4
+says the same. A later pipeline executor should remeasure M24 and M34 at the
+actual source revisions rather than trust a date or a snapshot in an evidence
+note.
