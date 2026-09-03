@@ -429,10 +429,21 @@ either way.
 sibling-reaching module in `py/ws/`, `ws_foi_kq_trivial_scope.py`, is imported
 only by `ws_bot_edit_kq_triv_add_type.py`, which `ws_bot_edit.py` does not
 import. Items 4 through 7 are a different matter, reaching MAM-parsed and the
-rest. **The whole test suite is a different matter too**: run in a worktree
-with no override on 2026-09-03 it reported 34 failures and 35 errors across
-eleven files, every one of them a sibling that does not resolve
-(`.claude/worktrees/codex-index-leningrad`, and so on). That is the worktree
-artifact this paragraph describes, not a regression — but it means a bare
-suite run there tells you nothing, so check the files a change actually touches
-rather than the totals.
+rest.
+
+**The test suite, though, wants the override even when the change under test
+does not — set it and the suite is fully green in a worktree.** Measured
+2026-09-03 in a worktree, with item 2's own changes in the tree:
+
+```powershell
+$env:REPOS_ROOT="C:/Users/BenDe/GitRepos"; C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_test.py -q
+```
+
+gives **973 passed, 5 skipped, 0 failed**, and writes into no sibling
+repository — all eight were clean before and after. The same run with no
+override gives **904 passed, 34 failed, 35 errors** across eleven files, every
+one of them reaching a sibling that resolves to `.claude/worktrees/<name>`.
+904 + 34 + 35 = 973, so the override accounts for the whole difference and
+nothing else is hiding in it. **Do not read an un-overridden total as a
+baseline, and do not conclude from one that the suite cannot be run here**:
+it can, and 973 green is the figure to measure against.
