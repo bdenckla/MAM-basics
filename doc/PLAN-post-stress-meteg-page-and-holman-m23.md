@@ -765,3 +765,83 @@ phase-state section records input revisions, the exact commands run, measured
 figures, changed paths, and any explained mismatch with the historical
 snapshot. After final verification, commit only the intended paths on main and
 push main. Do not stage unrelated changes that were already present.
+
+## Phase state
+
+Sections are added as phases complete, newest phase last. Phases 1 and 2 have
+not run: the programme's item 5 has to precede them.
+
+### Phase 3 done 2026-09-03: all thirty records matched, and the check will not run again
+
+**Phase 3 HAS BEEN RUN AND PASSED**, in a worktree of
+C:/Users/BenDe/GitRepos/MAM-basics on branch claude/great-nash-3a9496. The
+programme's item 3 had not run when it did, so the thirty mgketer diff cards it
+reads were all still there. Nothing about this run is repeatable: items 3
+through 7 remove exactly those thirty cards, and this section is therefore the
+only surviving record of the result.
+
+Input revisions, both clean trees:
+
+1. MAM-basics `74c16b3e`, the worktree and the primary clone agreeing.
+2. MAM-private `0f37fe3`, holding the mgketer reports the run read.
+
+The exact command, from the worktree root:
+
+~~~powershell
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_verify_meteg_vs_mgketer.py --mgketer-root C:/Users/BenDe/GitRepos/MAM-private/mgketer --report-path .novc/meteg-vs-mgketer.txt
+~~~
+
+Measured figures:
+
+1. **30 of 30 records matched exactly one mgketer diff card**, exit code 0.
+2. **The derived roster equals the 2026-09-03 baseline**: M1-M16, M18-M23,
+   M25-M31 and M33. It was derived from the suggestions data by the meteg
+   arithmetic, never assumed, and the other four M records — M17, M24, M32 and
+   M34 — fell outside it, exactly as Phase 5 expects.
+3. **The direction tally is 29 removals and one addition**, matching the
+   baseline. The one addition is M23 at Isaiah 23:12, whose card
+   `I23:12#e5e7ccd9` has the meteg on the mgketer side and not on the MAM side.
+4. **Every one of the thirty diff hashes equals the one
+   [`holman-meteg-vs-mgketer.md`](holman-meteg-vs-mgketer.md) recorded by hand**,
+   M1's `1K7:24#8701a1ff` through M33's `Ju21:16#00d8d510`.
+5. **The display-artifact allowlist has one entry and it fired**: M13, at
+   2 Chronicles 18:33, "qamats qatan read as qamats". Holman writes both forms
+   with U+05C7; mgketer's card displays U+05B8 on both sides, its MAM string
+   having been massaged (the card says so in a tooltip and keeps the original in
+   its own span) and its Aleppo transcription having the plain qamats with no
+   massaging. The meteg claim agrees on both sides. No other record needed any
+   normalization, and an allowlist entry no record needs is a failure.
+6. **mgketer's two Tanakh-wide meteg totals are 67 and 5**, `mam-adds-meteg` and
+   `mgketer-adds-meteg`, which is what that note recorded and what the
+   programme's item 7 expects to fall. They are reported, not asserted: they
+   count the whole comparison rather than these thirty records.
+
+Two records needed care and both came out right:
+
+1. **M22, 2 Samuel 18:3**, matched `2S18:3#df68039b`, the compound with a darga,
+   and not `2S18:3#d300caba`, the look-alike compound with a mahapakh that is
+   filed in the opposite category and that no Holman record covers.
+2. **M18, 2 Kings 21:12**, matched `2K21:12#65ca7700` and not the second card at
+   that verse, `2K21:12#0ebb56b0`, which is about a different atom.
+
+Both were checked rather than assumed. Swapping M22's darga for the mahapakh in
+a throwaway control made the run fail with both candidate cards listed, so the
+match discriminates on the accentuation and not on the letters alone. Two more
+controls fire: a `--mgketer-root` naming no reports exits 1 rather than
+reporting green, and omitting the flag is an argument error.
+
+Changed paths, all in MAM-basics:
+
+1. `py/hkq_cmn/mam_meteg_suggestions.py` — new. The roster derivation, factored
+   out of `py/ws/holman_meteg_edit_spec.py` so the spec builder and the verifier
+   share one partition rather than keeping two copies of the arithmetic.
+2. `py/hkq_cmn/verify_meteg_suggestions_vs_mgketer.py` — new. The verifier.
+3. `py/main_verify_meteg_vs_mgketer.py` — new. Its own entry point, wired into
+   nothing.
+4. `py/ws/holman_meteg_edit_spec.py` — its `_direction` and `_load_meteg_cases`
+   removed in favour of the shared module. Item 2's check-only gate re-runs
+   identically afterwards: 30 records, 29 removal and 1 addition, 29 entries
+   across 6 books, all checks passed.
+
+`py/main_verify_and_render_table.py` is untouched, per Ben's decision that the
+check stay out of the renderer.
