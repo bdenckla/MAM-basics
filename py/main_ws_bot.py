@@ -7,6 +7,11 @@ Subcommands:
     proto
                 Run the same edit flow against local files instead of the live
                 site.
+    holman-meteg-spec
+                Check the Holman meteg rollout's two edit specifications against
+                the suggestions JSON and the current in/mam-ws text, and with
+                --write rebuild them.  Item 2 of
+                doc/PLAN-holman-meteg-rollout-programme.md.
 
 Examples:
     .venv/Scripts/python.exe py/main_ws_bot.py proto --edits path.json
@@ -14,6 +19,8 @@ Examples:
     .venv/Scripts/python.exe py/main_ws_bot.py real --edits path.json -dir:$env:USERPROFILE/.pywikibot --no-post-download
     .venv/Scripts/python.exe py/main_ws_bot.py real --edits path.json -dir:$env:USERPROFILE/.pywikibot --no-save
     .venv/Scripts/python.exe py/main_ws_bot.py real --edits path.json -dir:$env:USERPROFILE/.pywikibot --identity-run
+    .venv/Scripts/python.exe py/main_ws_bot.py holman-meteg-spec
+    .venv/Scripts/python.exe py/main_ws_bot.py holman-meteg-spec --write
 """
 
 import argparse
@@ -21,6 +28,7 @@ import sys
 
 from subcommands import ws_bot_proto
 from subcommands import ws_bot_real
+from ws import holman_meteg_edit_spec
 from ws import ws_download_selector as wsds
 
 
@@ -35,7 +43,10 @@ def main() -> None:
     args, extra_args = parser.parse_known_args()
     if extra_args and not getattr(args, "allow_extra_args", False):
         parser.error(f"unrecognized arguments: {' '.join(extra_args)}")
-    wsds.validate_selector_args(args, args.selector_parser)
+    # A subcommand that selects no chapters -- holman-meteg-spec reads the whole
+    # target set off the suggestions JSON -- registers no selector to validate.
+    if getattr(args, "selector_parser", None) is not None:
+        wsds.validate_selector_args(args, args.selector_parser)
     args.func(args, extra_args)
 
 
@@ -94,6 +105,17 @@ def build_parser() -> argparse.ArgumentParser:
         func=_run_proto,
         allow_extra_args=False,
         selector_parser=proto_parser,
+    )
+
+    holman_parser = subparsers.add_parser(
+        "holman-meteg-spec",
+        help="Check (or --write) the Holman meteg rollout's two edit specs.",
+    )
+    holman_meteg_edit_spec.add_args(holman_parser)
+    holman_parser.set_defaults(
+        func=holman_meteg_edit_spec.run,
+        allow_extra_args=False,
+        selector_parser=None,
     )
     return parser
 

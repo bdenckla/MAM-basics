@@ -1,0 +1,14 @@
+{
+  "summary": "Add a meteg at Isa 23:12.11 per Daniel Holman's MAM suggestion M23",
+  "edit-kind": "explicit-replacement",
+  "edits": {
+    "Isaiah": [
+      {
+        "ch": "כג",
+        "old": "ק֣וּמִי",
+        "new": "ק֣וּמִֽי",
+        "comment": "M23 Isa 23:12.11"
+      }
+    ]
+  }
+}
