@@ -163,7 +163,7 @@ _REVIEWS = Section(
         ),
         _entry(
             "Review of the Job fascicle of BHQ",
-            "https://bdenckla.github.io/book-of-job/jobn/job2_main_article.html",
+            "book-of-job/jobn/job2_main_article.html",
         ),
     ),
 )

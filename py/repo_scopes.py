@@ -52,6 +52,7 @@ import ac_paths
 import boj_paths
 import cam1753_paths
 import lenin_paths
+from mb_cmn import paths
 
 
 def code_paths() -> list[Path]:
@@ -74,7 +75,7 @@ def corpus_roots() -> list[Path]:
     See the module docstring for why this is shorter than ``code_paths()``.
     """
     return [
-        boj_paths.boj_data_root(),
+        paths.repo_root() / "book-of-job",
         ac_paths.ac_data_root(),
         cam1753_paths.cam1753_data_root(),
     ]

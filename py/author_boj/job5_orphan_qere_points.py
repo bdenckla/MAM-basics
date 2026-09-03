@@ -78,7 +78,7 @@ _KINGS_DISCUSSION_1 = [
     " In such a style, a קובוץ floats before the ב of %בניכי.",
     " The קובוץ is an orphan: it belongs to no letter of the כתיב word.",
 ]
-_WLCAU = "https://bdenckla.github.io/UXLC-utils/wlc-a-notes/"
+_WLCAU = "https://bdenckla.github.io/MAM-basics/wlc/wlc-a-notes/"
 _KINGS_DISCUSSION_2 = [
     "Actually, it belongs to no letter of the קרי word either!",
     #

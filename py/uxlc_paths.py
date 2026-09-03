@@ -137,13 +137,3 @@ def sibling(name: str) -> Path:
 def require_sibling(name: str, path: Path) -> Path:
     """``mb_cmn.paths.require_sibling`` -- see it for why a missing sibling is not a skip."""
     return paths.require_sibling(name, path)
-
-
-def book_of_job_dir() -> Path:
-    """The book-of-job clone, whose quirkrecs ``main_map_changes_to_book_of_job`` maps onto."""
-    return sibling("book-of-job")
-
-
-def require_book_of_job_dir() -> Path:
-    """``book_of_job_dir``, checked -- see ``require_sibling`` for why this is not a skip."""
-    return require_sibling("book-of-job", book_of_job_dir())

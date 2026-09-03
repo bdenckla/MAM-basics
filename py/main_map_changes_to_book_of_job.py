@@ -33,13 +33,13 @@ import json
 import re
 import sys
 
+from mb_cmn import paths
+
 import uxlc_paths
 
-BOOK_OF_JOB_REPO = uxlc_paths.book_of_job_dir()
-
 XML_PATH = uxlc_paths.uxlc_misc_dir() / "2026.04.01 - Changes.xml"
-QR_PATH = BOOK_OF_JOB_REPO / "out" / "enriched-quirkrecs.json"
-HTML_DIR = BOOK_OF_JOB_REPO / "gh-pages" / "jobn-details"
+QR_PATH = paths.repo_root() / "book-of-job" / "out" / "enriched-quirkrecs.json"
+HTML_DIR = paths.gh_pages_dir() / "book-of-job" / "jobn-details"
 MAP_OUT_PATH = uxlc_paths.uxlc_misc_dir() / "2026.04.01-map-to-book-of-job.json"
 
 CHANGESET = "2026.02.05"
@@ -394,10 +394,6 @@ def deep_compare(xml_entries, mapping, quirkrecs):
 def main():
     sys.stdout.reconfigure(encoding="utf-8")
     sys.stderr.reconfigure(encoding="utf-8")
-    # Checked here rather than where BOOK_OF_JOB_REPO is bound, so a missing sibling
-    # fails when this program is run, not when the module is imported.
-    uxlc_paths.require_book_of_job_dir()
-
     xml_entries = parse_xml_entries()
     html_entries = walk_html_chain()
     print(f"XML entries: {len(xml_entries)}, HTML entries: {len(html_entries)}")

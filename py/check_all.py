@@ -36,6 +36,8 @@ _SEPARATOR = "─" * 60
 
 
 def main():
+    sys.stdout.reconfigure(encoding="utf-8")
+    sys.stderr.reconfigure(encoding="utf-8")
     parser = argparse.ArgumentParser(
         description="Run all check scripts for this project.",
     )

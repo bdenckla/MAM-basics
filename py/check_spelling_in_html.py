@@ -261,9 +261,9 @@ def check_spelling(html_files: list[Path], custom_dict_path: Path):
 
 
 def main(*, verbose=False):
-    # Two roots, spelled apart on purpose: the pages checked are DATA and stay in
-    # book-of-job, the custom dictionary is CODE and travels beside this module.
-    # One Path(__file__).parent stood for both until Phase 1 of the evacuation plan.
+    # Two locations remain distinct: the pages are under gh-pages/book-of-job and
+    # the custom dictionary stays beside this module under py/. One Path(__file__).parent
+    # stood for both until Phase 1 of the evacuation plan.
     docs_dir = boj_paths.gh_pages_dir()
     custom_dict_path = Path(__file__).parent / "check_spelling_in_html.custom-dict.json"
 

@@ -1,21 +1,16 @@
-"""Resolve the book-of-job DATA root, and the places in this repo its CODE now sits.
+"""Resolve the book-of-job data and code locations now co-located in MAM-basics.
 
-THIS MODULE IS DELIBERATELY TWO-ROOTED, and that is the whole point of its
-existence.  The code is here in MAM-basics since Phase 3 of
-``doc/PLAN-evacuate-python-from-book-of-job.md``; the corpus it reads and writes
-stayed in the sibling book-of-job, along with the Pages site served out of it:
+The former ``book-of-job`` repository is now only a redirect host. The code remains
+under this repository's ``py/`` and its data now lives at two paths here:
 
-  * the DATA root is ``boj_data_root()`` -- book-of-job's ``gh-pages/``, ``out/``
-    and gitignored ``.novc/``, 701 tracked artifacts between the first two;
-  * the CODE is under this repo's ``py/``, and is NOT a subtree: seven packages
-    plus seventeen top-level modules, listed in ``BOJ_PACKAGES`` and
-    ``BOJ_TOP_LEVEL_MODULES`` below and returned together by ``code_paths()``.
+  * published pages are under ``gh-pages/book-of-job/``;
+  * tracked JSON and gitignored scratch work are under ``book-of-job/``;
+  * code is under ``py/`` and is not a subtree: seven packages plus seventeen
+    top-level modules, listed in ``BOJ_PACKAGES`` and ``BOJ_TOP_LEVEL_MODULES``.
 
-The two were named apart *before* the move, while the code still ran in book-of-job
-and that repo's 701 tracked artifacts were an oracle that could prove a path change
-harmless (Phase 1 of the same plan).  The move itself then changed the body of
-``boj_data_root()`` and nothing else about how data is addressed, because no other
-module composes a data path off anything but that function.
+The 701 source artifacts were an oracle while the code moved here. Phase 4 then put
+their destination paths here as well, so this module exposes the individual paths
+rather than a second repository root.
 
 What this replaced is of two kinds, and only the first kind is greppable.  Plain
 cwd-relative literals -- ``"gh-pages/jobn"``, ``"./out"``, ``Path("author_boj_qr")``,
@@ -124,8 +119,6 @@ being the ``gh-pages`` tree it reads.  Listed so that ``check_mark_order``, whic
 scans ``.json`` as well as ``.py``, still sees it.
 """
 
-DATA_REPO_NAME = "book-of-job"
-
 D1D_DIR = "jobn-details"
 """Directory name of the per-quirk detail pages, under ``gh_pages_dir()``.
 
@@ -171,38 +164,29 @@ def code_paths() -> list[Path]:
     return named
 
 
-def boj_data_root() -> Path:
-    """Path to the book-of-job corpus this code reads and writes.
-
-    The one line that changed when the Python moved out -- see the module docstring.
-    """
-    return paths.require_sibling("book-of-job", paths.sibling_repo("book-of-job"))
-
-
 def gh_pages_dir() -> Path:
-    """Published-HTML tree, 694 tracked files, served at bdenckla.github.io/book-of-job.
+    """Published-HTML tree at MAM-basics' ``gh-pages/book-of-job`` subtree.
 
-    THE DEPLOY ROOT, not any one document under it: ``.github/workflows/pages.yml``
-    hands exactly this directory to ``upload-pages-artifact``.  515 of those 694 are
-    PNGs that no program in this repo writes, so a full regeneration rewrites a
-    minority of this tree; see the plan's Phase 0 record for the split.
+    The MAM-basics Pages workflow deploys its parent ``gh-pages`` tree. 515 of this
+    subtree's 694 files are PNGs that no program writes, so a full regeneration
+    rewrites a minority of it; see the Phase 4 execution record for the split.
     """
-    return boj_data_root() / "gh-pages"
+    return paths.gh_pages_dir() / "book-of-job"
 
 
 def out_dir() -> Path:
-    """Generated-JSON tree, 7 tracked files.
+    """Generated-JSON tree at ``book-of-job/out``, with 7 tracked files.
 
     Six are written by ``main_gen_misc_authored_english_documents``; the seventh,
     ``cam1753_crops_path()`` below, is appended to by the manual crop-ingest step
     and is the one file of the 701 whose checkout is still CRLF.
     """
-    return boj_data_root() / "out"
+    return paths.repo_root() / "book-of-job" / "out"
 
 
 def novc_dir() -> Path:
-    """Gitignored scratch tree (``<data_root>/.novc``), where the two crop editors write."""
-    return boj_data_root() / ".novc"
+    """Gitignored Job scratch tree beneath MAM-basics' shared ``.novc`` directory."""
+    return paths.novc_dir() / "book-of-job"
 
 
 def jobn_dir() -> Path:
