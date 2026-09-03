@@ -7,7 +7,14 @@ to be recovered by searching transcripts. The periodic review is still a Claude-
 it has been since 2026-07-29.
 
 Read this before adding a second reviewing agent to the review series. It does not describe
-anything the repository currently does.
+anything the periodic review currently does.
+
+**Codex already reviews this repository, in a different series.** The staged review of
+`py/main_0_mega.py`'s 42 registered steps ran in Codex review forests under
+`C:/Users/BenDe/Documents/Codex/ReviewForests/` and produced
+`doc/mega-pipeline-review-phase-*-2026-09-01.md`. What this document proposes is pairing Codex with
+Claude on the **periodic** review — the `doc/review-findings-<date>.md` series — which remains
+Claude-only. Do not read "Claude-only" more broadly than that.
 
 ## What the periodic review is today, and what a second agent would join
 
@@ -188,20 +195,42 @@ Ben's global rules ban on measured grounds, and it will report house conventions
 **This is a general prerequisite for using Codex on any of Ben's repositories, not a step of this
 procedure, and it is tracked separately** — Ben's decision, 2026-09-03. It is recorded here only so
 that a session running a Codex review knows the dependency exists and can check whether it has been
-met. The natural home is `github-misc`, which already tracks `dot-claude/CLAUDE.md` and
-`dot-claude/skills/`, so a `dot-codex/AGENTS.md` alongside them would fit the existing pattern and
-inherit that repository's drift check. As of 2026-09-03 `github-misc` has no `dot-codex/` directory.
+met.
+
+**It has been met.** `~/.codex/AGENTS.md` exists and is 998 lines, a port of `~/.claude/CLAUDE.md`
+carrying the same opening convention — its canonical copy is `github-misc`'s `dot-Codex/AGENTS.md`,
+alongside the `dot-claude/` copies, with the same manual write-back and the same drift check.
+Measured 2026-09-03. Note the capital C in `dot-Codex`, which a case-sensitive glob for `dot-codex`
+misses.
 
 ## What this document deliberately does not settle
 
 1. **Whether to adopt the parallel track at all.** That is what the calibration run decides.
 2. **Whether Codex ever reviews the private side.** Setup item 1 defers this rather than answering it.
-3. **How to run Codex on this machine.** No command line is given here, because none has been tested.
+3. **How to run Codex on this machine.** No command line is given here. Codex demonstrably runs
+   here — see the provenance section — but this document has not examined how it is invoked, and
+   guessing a spelling would be worse than the omission.
 
 ## Provenance and caveat
 
-The recommendation recorded here was made by Claude on 2026-09-01 and is written down unrun. Its
-claims about Codex — the `AGENTS.md` mechanism, the sandboxing story, the Windows path — come from
-Codex's documented behaviour, **not from any test on this machine.** Codex has never been run here.
-Treat any specific flag or file-name spelling as the shape of the thing rather than as current
-syntax, and verify before relying on it.
+The recommendation recorded here was made by Claude on 2026-09-01 and is written down unrun as a
+pairing for the periodic review series.
+
+**Its claim that Codex had never been run on this machine was false, and is corrected here.** The
+2026-09-01 session said so, this document repeated it on 2026-09-03, and a `git worktree list` that
+same day disproved it: four Codex review forests exist under
+`C:/Users/BenDe/Documents/Codex/ReviewForests/`, `~/.codex/sessions` holds Codex's own history, and
+`~/.codex/AGENTS.md` is 998 lines. Codex ran the staged mega-pipeline review of `py/main_0_mega.py`'s
+42 steps, whose output is this repository's `doc/mega-pipeline-review-phase-*-2026-09-01.md` — that
+review names its governing forest and records that the `worktree-forest` and `hebrew-prose` skills
+governed it.
+
+The lesson is the one `CLAUDE.md` already states about transcriptions, applied to a session
+transcript: **a transcript is evidence about that session, never about the machine.** The 2026-09-01
+caveat was accurate about what that session had done and wrong as a claim about this machine, and
+repeating it without checking is how it propagated. Check the machine.
+
+What remains untested is narrower and still worth flagging: nothing here has measured Codex's
+sandboxing behaviour on Windows, so treat the read-only property as an honour system until somebody
+verifies it, and treat any specific flag spelling as the shape of the thing rather than as current
+syntax.
