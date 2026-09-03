@@ -58,6 +58,7 @@ from pathlib import Path
 from mb_cmn import hebrew_accents as ha
 from mb_misc import osis_book_abbrevs as oba
 
+from accgram import mam_simple_verse
 from accgram import poetic_accent_names as pan
 from wlc_cmn.wlc_book_codes import wlc_bb_to_bk39id
 
@@ -459,8 +460,7 @@ def _iter_book_verses(mam_simple_dir: Path, books: tuple[str, ...]):
     Shared corpus walk for the ``load_*`` functions (reference strings match
     ``poetic_scanner``'s).
     """
-    if not mam_simple_dir.is_dir():
-        raise FileNotFoundError(f"MAM-simple directory not found: {mam_simple_dir}")
+    mam_simple_verse.require_mam_simple(mam_simple_dir)
     for bb in books:
         bk39id = wlc_bb_to_bk39id(bb)
         json_path = _mam_json_path(mam_simple_dir, bk39id)

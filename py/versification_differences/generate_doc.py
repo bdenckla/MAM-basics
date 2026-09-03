@@ -7,6 +7,17 @@ from versification_differences import doc
 _OUTPUT_PATH = paths.sibling_repo("MAM-simple") / "doc" / "versification-differences.md"
 
 
+def _require_output_dir() -> None:
+    """Fail on an absent MAM-simple clone, naming the overrides that fix it.
+
+    Called at use rather than beside ``_OUTPUT_PATH`` above, which only composes a
+    path and must stay importable without the sibling.  ``require_sibling`` wants the
+    directory, so it is ``MAM-simple/doc`` that is required and not the file this
+    module reads and writes inside it.
+    """
+    paths.require_sibling("MAM-simple", _OUTPUT_PATH.parent)
+
+
 def render_full_markdown():
     books_mpu = plus.read_parsed_plus_bk39s(
         _all_case_book_ids(), paths.mam_parsed_path()
@@ -19,12 +30,14 @@ def output_path():
 
 
 def check_output_matches() -> bool:
+    _require_output_dir()
     expected = _OUTPUT_PATH.read_text(encoding="utf-8")
     actual = render_full_markdown()
     return actual == expected
 
 
 def write_output_if_changed() -> bool:
+    _require_output_dir()
     actual = render_full_markdown()
     current = _OUTPUT_PATH.read_text(encoding="utf-8")
     if current == actual:
