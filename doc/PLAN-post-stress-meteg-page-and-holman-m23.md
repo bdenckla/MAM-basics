@@ -926,17 +926,23 @@ bodies of work the page holds and the filtering that separates them.
 
 Two things about that repair are worth recording:
 
-1. **The sibling entry is left as it is, and it does not copy its page's title
-   either.** `gh-pages/holman/index.html` names the UXLC report "Suggestions for
-   the UXLC" where `gh-pages/holman/uxlc_corrections.html` titles itself "Holman
-   UXLC suggestions" and heads itself "Daniel Holman's suggestions for the
-   UXLC". Under this index's own heading, "Daniel Holman's observations on the
-   Hebrew Bible text", the shorter form reads naturally, so whether both entries
-   should copy titles is a wording choice for Ben rather than a defect.
+1. **The sibling entry HAS BEEN BROUGHT INTO LINE TOO, on Ben's instruction the
+   same day, so both entries of this index now copy their pages' titles
+   verbatim.** It had named the UXLC report "Suggestions for the UXLC", which
+   was neither of that page's own names: `gh-pages/holman/uxlc_corrections.html`
+   titles itself "Holman UXLC suggestions" and heads itself "Daniel Holman's
+   suggestions for the UXLC". That entry now reads "Holman UXLC suggestions".
+   Unlike the MAM entry this one predated Phase 4 and was raised as a wording
+   choice rather than as a defect; Ben chose the title-copying rule for both.
+   So the index's two entries read "Holman UXLC suggestions" and "Holman MAM
+   suggestions" under its heading "Daniel Holman's observations on the Hebrew
+   Bible text", and both descriptive notes are unchanged.
 2. **No lint reaches this file.** Phase 6's reverse check stops at the deploy
    root by design, and the Holman subtree index is one of the subtree indexes
-   that check deliberately excludes, so nothing would have caught the stale
-   title and nothing will catch the next one.
+   that check deliberately excludes, so nothing caught either stale title and
+   nothing will catch the next one. Extending the check to the subtree indexes
+   would need a decision about how such an index declares which pages it must
+   name, which is why it was not done here.
 
 ### Phase 5 done 2026-09-03: the four boundary dispositions read as expected, and nothing was edited
 
