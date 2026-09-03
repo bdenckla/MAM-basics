@@ -148,6 +148,13 @@ REDIRECT_REPOS = (
         manifest_path="in/holman_ketiv_qere_redirect_pages.json",
         clone_url="https://github.com/bdenckla/holman-ketiv-qere.git",
     ),
+    RedirectRepo(
+        source_repo="book-of-job",
+        site_subtree="book-of-job",
+        old_path_prefix="/book-of-job/",
+        manifest_path="in/book_of_job_redirect_pages.json",
+        clone_url="https://github.com/bdenckla/book-of-job.git",
+    ),
 )
 
 # The one row that keeps existing invocations free of an otherwise needless --repo flag.
