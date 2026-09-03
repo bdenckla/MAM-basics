@@ -115,11 +115,26 @@ Each finding in the reconciliation carries a disposition, written down: fixed, o
 reason. Without that, an agent silently drops the findings it does not like and reports that it
 addressed the review.
 
+**The buckets are known at reconciliation; the dispositions are not, so expect two writes.** Sorting
+the findings into the four buckets needs nothing but the two findings files, and can be done the
+moment both are frozen. Whether a finding was *fixed* is knowable only once somebody has acted on
+it, which is normally a later pass — the same split the `State:` line already makes between a review
+and its `acted on <date>`. So the four-bucket table lands when the comparison runs, and each
+finding's disposition lands when the work is done. Do not hold the table back waiting for the
+dispositions, and do not write a disposition the work has not yet earned.
+
 **Run the reconciliation as a fresh, post-review task.** Start the task only after both the Claude
 and Codex findings files are complete and frozen. The task may read both files and append the
-four-bucket table and dispositions to the Claude file, but it does not rewrite either agent's
-original findings. The reconciliation is comparison work, not a third review or a silent revision
-of either independent result.
+four-bucket table and, on the later pass above, the dispositions to the Claude file, but it does not
+rewrite either agent's original findings. The reconciliation is comparison work, not a third review
+or a silent revision of either independent result.
+
+**"Fresh" means a session that wrote neither findings file** — not merely a new task inside one of
+the two reviewing sessions. The agent whose findings are under comparison must not be the one
+adjudicating bucket 4, which exists precisely because at least one of the two reviews is wrong
+there; an agent grading its own paper there will resolve it in its own favour without ever intending
+to. A session that watched either review being written is anchored to it and is not a reconciler
+either, for the same reason the two reviews are kept blind in the first place.
 
 ## Name the Codex file `doc/codex-review-findings-<date>.md`, and do not rename the Claude series
 
@@ -240,3 +255,12 @@ What remains untested is narrower and still worth flagging: nothing here has mea
 sandboxing behaviour on Windows, so treat the read-only property as an honour system until somebody
 verifies it, and treat any specific flag spelling as the shape of the thing rather than as current
 syntax.
+
+**This document is itself a small worked example of the pairing, and converged in two rounds.**
+Claude drafted it on 2026-09-03. Codex then added the "Run the reconciliation as a fresh,
+post-review task" paragraph (`706395bf`), which closed a real gap: the draft said what the
+reconciliation produces and where it goes but never who runs it or when, so the default reading left
+a reviewing agent adjudicating its own bucket 4. Claude then added the two-writes paragraph and the
+"fresh means a session that wrote neither findings file" paragraph. **Ben supplied the turn between
+each round, which is the only reason this was convergence rather than the unattended ping-pong this
+document warns against** — neither agent ever answered the other directly.
