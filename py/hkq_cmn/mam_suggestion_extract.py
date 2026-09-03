@@ -4,9 +4,8 @@ NOT the same body of work as ``uxlc_email_extract`` beside this file, and the
 distinction is the whole reason for a second module.  That one reads his
 suggested corrections to the UXLC, a book at a time, addressed to the UXLC's
 editor.  This one reads his suggested corrections to MAM itself, addressed to
-MAM's editor.  Neither is about ketiv/qere, which is a third body of work again
--- the 77-row review extracted from a tracked ``.docx`` by
-``extract_docx_pipeline``.
+MAM's editor.  Neither is about ketiv/qere, which is a third body of work again:
+the 77-row review retained as tracked data under ``holman/docs-not-served``.
 
 THE PRIVACY BOUNDARY HERE IS STRICTER THAN THE UXLC ONE, by Ben Denckla's
 instruction of 2026-09-02, and the difference is worth stating because the

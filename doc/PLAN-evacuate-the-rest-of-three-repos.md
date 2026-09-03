@@ -1,6 +1,6 @@
 # Total evacuation: book-of-job, holman-ketiv-qere and UXLC-utils
 
-State: resumed 2026-09-03; Phases 1 and 2 complete
+State: Phase 3 active on 2026-09-03; Steps 1 through 3 complete
 
 Written 2026-08-22, the day
 [`PLAN-evacuate-python-programme.md`](PLAN-evacuate-python-programme.md) closed — its last row,
@@ -84,7 +84,7 @@ figures in these plans arriving one more time.
 | 0 — Preflight: baselines, collision census, and the five decisions | **DONE 2026-08-23** — seven commits to this file, `0decb3f` through the one recording Decision E. Every Scale figure reproduced but the "outside `gh-pages/`" column (48 / 596 / 734, not 50 / 597 / 737); the census reproduced with one refinement (`sanity_problems.json` moves, 40 duplicates drop, not 41); the layer-4 sweep returned the list the plan has; baseline 941 passed / 5 skipped / 59 subtests, ruff and black clean. All five decisions answered, one at a time: A `book-of-job` / `holman` / `uxlc`; B no `LICENSE`, and the docx does not move — the cord to it is cut; C same relative path, `data/` at `data/`; D `py_ac_loc/` dropped; E two files deleted, the meteg-marks pair lands at `out/`. Two questions parked for Phases 3 and 5, written where those phases will find them |
 | 1 — `.gitattributes` merge in MAM-basics | **DONE 2026-09-03 — verification only.** The destination already covers every incoming binary type that moves; Decision B excludes the sole `.docx`, so no `.gitattributes` edit landed. The scratch checks preserved the source blob for a PNG, a JPG and a CSV, and the MAM-basics suite passed 971 / 5 / 65. The execution record below carries the fresh Scale figures and the working-tree CSV finding. |
 | 2 — Generalize the redirect-stub generator to a table of four | **DONE 2026-09-03.** `RedirectRepo` now makes the source repository, MAM-basics subtree, old URL prefix, frozen-manifest path and clone URL one row; only wlc-utils' frozen row exists. Its 155 stubs were byte-identical before the rename and changed only their generator-comment line after it. The execution record carries the WLC republish commit, the live-baseline result and the missing-subtests finding. |
-| 3 — holman-ketiv-qere, the pilot lane; plus the generated landing page | not started |
+| 3 — holman-ketiv-qere, the pilot lane; plus the generated landing page | **IN PROGRESS 2026-09-03 — Steps 1–3 DONE.** MAM-basics landed and published the 379-file `holman/` tree (`3c5dc79`), scoped its licences (`d81b47b`), moved the raw mailboxes, repointed every retained generator, and retired the DOCX extraction half. Steps 4–6 remain. |
 | 4 — book-of-job | not started |
 | 5 — UXLC-utils | not started |
 | 6 — Cross-repo bookkeeping, and close the second stage | not started |
@@ -2021,6 +2021,48 @@ is what the generator replaces, with the `Do not edit by hand.` breadcrumb from
   itself does not change. Fix it in this phase's Licence step.
 - **The page joins the artifact oracle.** Once generated, "regenerating the tracked artifacts
   byte-identically is the test" reaches it, and this phase must name the command that does so.
+
+### Execution record — Phase 3, Steps 1–3, 2026-09-03
+
+Step 1 landed **379 files** under the pure `holman/` and `gh-pages/holman/`
+prefixes in MAM-basics commit `3c5dc79`, then pushed it. The Pages deployment
+run `33758704413` succeeded. The published MAM-basics copies of `index.html`,
+`table_data_findings.html`, an Aleppo crop, a UXLC crop, and a MAM-suggestion
+crop each returned HTTP 200 and were byte-identical to the source checkout.
+
+Step 2 added the eight Holman licence rows in MAM-basics commit `d81b47b` and
+pushed it. The rows separately preserve the no-grant boundary for the pages,
+the three image trees, the font, correspondence derivatives, tanach source
+data, the two generated reports, authored assets and the issue metadata.
+
+Step 3 made `holman/` the data root and `gh-pages/holman/` the published root.
+The retained verification-and-render command is
+`py/main_verify_and_render_table.py`; the former DOCX entry point,
+`hkq_cmn/extract_docx_pipeline.py`, and
+`hkq_cmn/extract_docx_xml_utils.py` are retired. The 77-row review's JSON,
+introduction and 154 crops are now source data with
+`holman/docs-not-served/_provenance.md` naming Daniel Holman's review document,
+its source commit `f7f47bc`, the extracted-data commit `6ddee50`, and the
+former extractor's rename commit `e11d14f`. `persist_verify_summary` remains
+an in-place, idempotent enrichment because it is current verification context
+in the one source-data JSON; a repeat run produced no extra artifact.
+
+The source checkout's `.novc/eml/` moved one raw UXLC message into MAM-basics'
+`.novc/eml/`; `.novc/eml-mam/` moved ten raw MAM-suggestions messages into
+MAM-basics' `.novc/eml-mam/`. The full seven-command oracle and the lightweight
+renderer passed from MAM-basics. Tracked-file mtime comparison found **zero**
+source-checkout changes; the MAM-basics changes were the relocated generated
+artifacts, the intentional review-image and MAM-suggestion image paths, and
+the matching path documentation and generator code.
+
+The source `CLAUDE.md` dispositions were checked before any source shrink:
+the public-address and stricter MAM-suggestions boundaries landed in MAM-basics
+`CLAUDE.md`; the `light-dark()` CSS rule landed there and beside
+`write_report_assets`; the manuscript-location section was dropped as redundant
+with `doc/boj-aleppo-word-crops.md`, `doc/boj-cam1753-word-crops.md`, and
+`doc/boj-leningrad-word-crops.md`; and the source-only generators section was
+dropped. The MAM-basics suite passed **971 passed, 5 skipped, 65 subtests**;
+Ruff and Black passed. No Phase 4 work has started.
 
 ---
 

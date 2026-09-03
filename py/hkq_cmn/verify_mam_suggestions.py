@@ -96,7 +96,6 @@ from __future__ import annotations
 from dataclasses import dataclass
 from functools import lru_cache
 import json
-from pathlib import Path
 
 from hkq_cmn.hebrew_text_tokens import find_hebrew_tokens
 from hkq_cmn.mam_plus_verse_data import verse_texts_by_location

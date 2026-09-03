@@ -1,4 +1,4 @@
-"""Read a .xlsx the way ``extract_docx_xml_utils`` reads a .docx: zipfile plus ElementTree.
+"""Read a .xlsx as a standard-library ZIP-and-ElementTree document.
 
 WHY THERE IS NO THIRD-PARTY DEPENDENCY HERE.  ``openpyxl`` would do this in fewer
 lines, and this repo's venv does not have it.  The precedent that settled the

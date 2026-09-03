@@ -52,7 +52,7 @@
       ],
       "case_number": 1,
       "image_files": [
-        "gh-pages/mam_img/mam001_01.png"
+        "../gh-pages/holman/mam_img/mam001_01.png"
       ],
       "mam_plus_check": {
         "atom_count": 17,
@@ -82,7 +82,7 @@
       ],
       "case_number": 2,
       "image_files": [
-        "gh-pages/mam_img/mam002_01.png"
+        "../gh-pages/holman/mam_img/mam002_01.png"
       ],
       "mam_plus_check": {
         "atom_count": 14,
@@ -112,7 +112,7 @@
       ],
       "case_number": 3,
       "image_files": [
-        "gh-pages/mam_img/mam003_01.png"
+        "../gh-pages/holman/mam_img/mam003_01.png"
       ],
       "mam_plus_check": {
         "atom_count": 21,
@@ -142,7 +142,7 @@
       ],
       "case_number": 4,
       "image_files": [
-        "gh-pages/mam_img/mam004_01.png"
+        "../gh-pages/holman/mam_img/mam004_01.png"
       ],
       "mam_plus_check": {
         "atom_count": 19,
@@ -172,7 +172,7 @@
       ],
       "case_number": 5,
       "image_files": [
-        "gh-pages/mam_img/mam005_01.png"
+        "../gh-pages/holman/mam_img/mam005_01.png"
       ],
       "mam_plus_check": {
         "atom_count": 23,
@@ -202,7 +202,7 @@
       ],
       "case_number": 6,
       "image_files": [
-        "gh-pages/mam_img/mam006_01.png"
+        "../gh-pages/holman/mam_img/mam006_01.png"
       ],
       "mam_plus_check": {
         "atom_count": 14,
@@ -232,7 +232,7 @@
       ],
       "case_number": 7,
       "image_files": [
-        "gh-pages/mam_img/mam007_01.png"
+        "../gh-pages/holman/mam_img/mam007_01.png"
       ],
       "mam_plus_check": {
         "atom_count": 20,
@@ -262,7 +262,7 @@
       ],
       "case_number": 8,
       "image_files": [
-        "gh-pages/mam_img/mam008_01.png"
+        "../gh-pages/holman/mam_img/mam008_01.png"
       ],
       "mam_plus_check": {
         "atom_count": 9,
@@ -292,7 +292,7 @@
       ],
       "case_number": 9,
       "image_files": [
-        "gh-pages/mam_img/mam009_01.png"
+        "../gh-pages/holman/mam_img/mam009_01.png"
       ],
       "mam_plus_check": {
         "atom_count": 8,
@@ -322,7 +322,7 @@
       ],
       "case_number": 10,
       "image_files": [
-        "gh-pages/mam_img/mam010_01.png"
+        "../gh-pages/holman/mam_img/mam010_01.png"
       ],
       "mam_plus_check": {
         "atom_count": 18,
@@ -352,7 +352,7 @@
       ],
       "case_number": 11,
       "image_files": [
-        "gh-pages/mam_img/mam011_01.png"
+        "../gh-pages/holman/mam_img/mam011_01.png"
       ],
       "mam_plus_check": {
         "atom_count": 24,
@@ -382,7 +382,7 @@
       ],
       "case_number": 12,
       "image_files": [
-        "gh-pages/mam_img/mam012_01.png"
+        "../gh-pages/holman/mam_img/mam012_01.png"
       ],
       "mam_plus_check": {
         "atom_count": 23,
@@ -412,7 +412,7 @@
       ],
       "case_number": 13,
       "image_files": [
-        "gh-pages/mam_img/mam013_01.png"
+        "../gh-pages/holman/mam_img/mam013_01.png"
       ],
       "mam_plus_check": {
         "atom_count": 21,
@@ -442,7 +442,7 @@
       ],
       "case_number": 14,
       "image_files": [
-        "gh-pages/mam_img/mam014_01.png"
+        "../gh-pages/holman/mam_img/mam014_01.png"
       ],
       "mam_plus_check": {
         "atom_count": 25,
@@ -472,7 +472,7 @@
       ],
       "case_number": 15,
       "image_files": [
-        "gh-pages/mam_img/mam015_01.png"
+        "../gh-pages/holman/mam_img/mam015_01.png"
       ],
       "mam_plus_check": {
         "atom_count": 18,
@@ -502,7 +502,7 @@
       ],
       "case_number": 16,
       "image_files": [
-        "gh-pages/mam_img/mam016_01.png"
+        "../gh-pages/holman/mam_img/mam016_01.png"
       ],
       "mam_plus_check": {
         "atom_count": 33,
@@ -541,7 +541,7 @@
         "decided_on": "2026-08-28"
       },
       "image_files": [
-        "gh-pages/mam_img/mam017_01.png"
+        "../gh-pages/holman/mam_img/mam017_01.png"
       ],
       "mam_plus_check": {
         "atom_count": 29,
@@ -571,7 +571,7 @@
       ],
       "case_number": 18,
       "image_files": [
-        "gh-pages/mam_img/mam018_01.png"
+        "../gh-pages/holman/mam_img/mam018_01.png"
       ],
       "mam_plus_check": {
         "atom_count": 18,
@@ -601,7 +601,7 @@
       ],
       "case_number": 19,
       "image_files": [
-        "gh-pages/mam_img/mam019_01.png"
+        "../gh-pages/holman/mam_img/mam019_01.png"
       ],
       "mam_plus_check": {
         "atom_count": 14,
@@ -631,7 +631,7 @@
       ],
       "case_number": 20,
       "image_files": [
-        "gh-pages/mam_img/mam020_01.png"
+        "../gh-pages/holman/mam_img/mam020_01.png"
       ],
       "mam_plus_check": {
         "atom_count": 25,
@@ -661,7 +661,7 @@
       ],
       "case_number": 21,
       "image_files": [
-        "gh-pages/mam_img/mam021_01.png"
+        "../gh-pages/holman/mam_img/mam021_01.png"
       ],
       "mam_plus_check": {
         "atom_count": 8,
@@ -691,7 +691,7 @@
       ],
       "case_number": 22,
       "image_files": [
-        "gh-pages/mam_img/mam022_01.png"
+        "../gh-pages/holman/mam_img/mam022_01.png"
       ],
       "mam_plus_check": {
         "atom_count": 31,
@@ -721,7 +721,7 @@
       ],
       "case_number": 23,
       "image_files": [
-        "gh-pages/mam_img/mam023_01.png"
+        "../gh-pages/holman/mam_img/mam023_01.png"
       ],
       "mam_plus_check": {
         "atom_count": 17,
@@ -768,7 +768,7 @@
         "decided_on": "2026-08-28"
       },
       "image_files": [
-        "gh-pages/mam_img/mam024_01.png"
+        "../gh-pages/holman/mam_img/mam024_01.png"
       ],
       "mam_plus_check": {
         "atom_count": 21,
@@ -798,7 +798,7 @@
       ],
       "case_number": 25,
       "image_files": [
-        "gh-pages/mam_img/mam025_01.png"
+        "../gh-pages/holman/mam_img/mam025_01.png"
       ],
       "mam_plus_check": {
         "atom_count": 23,
@@ -828,7 +828,7 @@
       ],
       "case_number": 26,
       "image_files": [
-        "gh-pages/mam_img/mam026_01.png"
+        "../gh-pages/holman/mam_img/mam026_01.png"
       ],
       "mam_plus_check": {
         "atom_count": 9,
@@ -858,7 +858,7 @@
       ],
       "case_number": 27,
       "image_files": [
-        "gh-pages/mam_img/mam027_01.png"
+        "../gh-pages/holman/mam_img/mam027_01.png"
       ],
       "mam_plus_check": {
         "atom_count": 13,
@@ -888,7 +888,7 @@
       ],
       "case_number": 28,
       "image_files": [
-        "gh-pages/mam_img/mam028_01.png"
+        "../gh-pages/holman/mam_img/mam028_01.png"
       ],
       "mam_plus_check": {
         "atom_count": 16,
@@ -918,7 +918,7 @@
       ],
       "case_number": 29,
       "image_files": [
-        "gh-pages/mam_img/mam029_01.png"
+        "../gh-pages/holman/mam_img/mam029_01.png"
       ],
       "mam_plus_check": {
         "atom_count": 12,
@@ -948,7 +948,7 @@
       ],
       "case_number": 30,
       "image_files": [
-        "gh-pages/mam_img/mam030_01.png"
+        "../gh-pages/holman/mam_img/mam030_01.png"
       ],
       "mam_plus_check": {
         "atom_count": 16,
@@ -978,7 +978,7 @@
       ],
       "case_number": 31,
       "image_files": [
-        "gh-pages/mam_img/mam031_01.png"
+        "../gh-pages/holman/mam_img/mam031_01.png"
       ],
       "mam_plus_check": {
         "atom_count": 16,
@@ -1017,7 +1017,7 @@
         "decided_on": "2026-08-28"
       },
       "image_files": [
-        "gh-pages/mam_img/mam032_01.png"
+        "../gh-pages/holman/mam_img/mam032_01.png"
       ],
       "mam_plus_check": {
         "atom_count": 14,
@@ -1047,7 +1047,7 @@
       ],
       "case_number": 33,
       "image_files": [
-        "gh-pages/mam_img/mam033_01.png"
+        "../gh-pages/holman/mam_img/mam033_01.png"
       ],
       "mam_plus_check": {
         "atom_count": 11,
@@ -1094,7 +1094,7 @@
         "decided_on": "2026-08-28"
       },
       "image_files": [
-        "gh-pages/mam_img/mam034_01.png"
+        "../gh-pages/holman/mam_img/mam034_01.png"
       ],
       "mam_plus_check": {
         "atom_count": 32,

@@ -5,6 +5,10 @@ from pathlib import Path
 
 import hkq_paths
 
+# The authored CSS uses ``light-dark()`` custom-property pairs under one
+# ``color-scheme: light dark`` declaration. Keep dark values in those pairs;
+# do not add a ``prefers-color-scheme`` media block to generated report assets.
+#
 # Badge and swatch colours, taken in order and wrapping only past the end. The
 # UXLC-corrections report draws all three of its filter columns from one cursor
 # through this list, so it needs as many distinct colours as it has filters --

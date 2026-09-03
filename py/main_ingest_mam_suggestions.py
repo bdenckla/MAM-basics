@@ -1,12 +1,12 @@
 """Ingest Holman's suggested corrections TO MAM into the tracked extract.
 
 Run from the MAM-basics repo root, with the mailbox in its default untracked
-location (holman-ketiv-qere's ``.novc/eml-mam/``):
+location (``.novc/eml-mam/``):
 
     .venv/Scripts/python.exe py/main_ingest_mam_suggestions.py
 
-Writes ``docs-not-served/mam_suggestions.json`` and the page crops under
-``gh-pages/mam_img/``, both in the sibling holman-ketiv-qere.
+Writes ``holman/docs-not-served/mam_suggestions.json`` and the page crops under
+``gh-pages/holman/mam_img/``.
 
 WHAT DOES NOT GET WRITTEN, and why this differs from the UXLC ingest beside it.
 No message body reaches a tracked file.  ``main_ingest_uxlc_emails.py`` tracks
@@ -21,12 +21,11 @@ cited, in ``hkq_cmn/mam_suggestion_dispositions.py``.  Both modules' docstrings
 state the boundary.
 
 Verification against the sibling ``../MAM-parsed/plus/*.json`` is part of the
-ingest rather than a command of its own, matching
-``main_extract_docx_and_render_table.py``.  It never fails the run: a case whose
+ingest rather than a command of its own.  It never fails the run: a case whose
 form is not at its stated atom is a fact about Holman's numbering to be read off
 the extract, not a reason to refuse the whole message.  That is the opposite of
-the ketiv/qere extractor's fail-fast stance, and deliberately so -- there the
-corpus is the oracle for a fixed 77-row scope, here it is a second opinion on
+the fixed 77-row review's fail-fast verification, and deliberately so -- there
+the corpus is the oracle for a fixed scope, here it is a second opinion on
 correspondence that Holman and Ben are still working out.
 """
 
@@ -39,6 +38,7 @@ import email.policy
 from functools import lru_cache
 import io
 import json
+import os
 from pathlib import Path
 import sys
 import zipfile
@@ -102,10 +102,9 @@ def _export_images(
 ) -> list[str]:
     """Write a case's crops, and return their paths relative to the data root.
 
-    Write-once in the same sense ``extract_docx_xml_utils.export_images`` is: a
-    crop already on disk with different bytes raises rather than being
-    overwritten, so a re-ingest cannot silently replace an image a reader has
-    already looked at.
+    Write-once: a crop already on disk with different bytes raises rather than
+    being overwritten, so a re-ingest cannot silently replace an image a reader
+    has already looked at.
     """
     exported: list[str] = []
     image_dir.mkdir(parents=True, exist_ok=True)
@@ -129,7 +128,7 @@ def _export_images(
         else:
             output_path.write_bytes(image_bytes)
         exported.append(
-            output_path.resolve().relative_to(data_root.resolve()).as_posix()
+            Path(os.path.relpath(output_path.resolve(), data_root.resolve())).as_posix()
         )
     return exported
 

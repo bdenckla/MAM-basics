@@ -1,6 +1,6 @@
 # table_data.json field guide
 
-This document describes the fields in `docs-not-served/table_data.json` as produced by `../MAM-basics/py/main_extract_docx_and_render_table.py`.
+This document describes the fields in `table_data.json`, which was extracted once from the review document and is now verified and rendered by `py/main_verify_and_render_table.py`.
 
 It distinguishes between:
 
@@ -12,9 +12,9 @@ It distinguishes between:
 ### `source_document`
 
 - Type: string
-- Meaning: the path of the DOCX file that was extracted
-- Source: the `docx_path` argument passed into the extractor
-- Current data observation: a repo-relative path at repo top level
+- Meaning: the review document path recorded when the table was extracted
+- Source: the former extraction command; the current command does not reread the document
+- Current data observation: a repository-relative historical source path
 
 ### `introduction_paragraph_count`
 
@@ -232,14 +232,14 @@ It distinguishes between:
 - Type: array of strings
 - Meaning: exported image paths for embedded images from the Aleppo cell
 - Current data observation: one image path per row
-- Path format: `gh-pages/img/rowNNN_aleppo_XX.ext`
+- Path format: `../gh-pages/holman/img/rowNNN_aleppo_XX.ext`, relative to `holman/`
 
 ### `image_files.leningrad`
 
 - Type: array of strings
 - Meaning: exported image paths for embedded images from the Leningrad cell
 - Current data observation: one image path per row
-- Path format: `gh-pages/img/rowNNN_leningrad_XX.ext`
+- Path format: `../gh-pages/holman/img/rowNNN_leningrad_XX.ext`, relative to `holman/`
 
 ## Short conclusions
 
