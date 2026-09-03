@@ -53,7 +53,7 @@ after its breadcrumb is a Ben decision at that lane, not an assumption.
 | Phase | State |
 | --- | --- |
 | 0 — Preflight: fresh baselines, readiness, and duplicate-data decisions | **DONE 2026-09-03.** The source trees are clean; the fresh MAM-basics suite passed 975 / 5 / 65; the two duplicate-data decisions are recorded for the Aleppo and Cam1753 lanes. |
-| 1 — codex-index-leningrad | **DONE 2026-09-03.** The five-artifact `leningrad/` tree is live; the source is an archived breadcrumb history, its primary clone is gone, and its retained review-forest input stays pinned. |
+| 1 — codex-index-leningrad | **DONE 2026-09-03.** The five-artifact `leningrad/` tree is live; the source is an archived breadcrumb history, and its primary clone remains only as shared Git metadata for its retained review-forest input. |
 | 2 — codex-index-aleppo | Not started. Its lane lands `aleppo/` plus `gh-pages/aleppo/`, freezes the three-page redirect manifest, and leaves the source repository alive. |
 | 3 — codex-index-cam1753 | Not started. Its lane lands `cam1753/`, answers the page-image decision recorded below, and archives the source repository after the verified Empty step. |
 | 4 — diffable-pointed-hebrew | Not started. Its lane resolves the eight divergent `mb_cmn` copies before moving the root command to `py/main_diffable_pointed_hebrew.py`. |
@@ -158,9 +158,10 @@ Use the three recorded Leningrad oracles and the layer-1 manifest. Repoint the
 two relative cross-links in `page-snips/README.md`; do not leave a path from
 one evacuated repository pointing at another. Empty the source to its dated
 breadcrumb, push and verify it on `origin/main`, archive the GitHub repository,
-then remove only a clean primary clone after `git worktree list` identifies
-every forest worktree; preserve a retained forest input rather than treating it
-as a primary clone. Remove its workspace folder and visibility-map entry
+then remove only a clean primary clone after `git worktree list` proves no
+forest worktree needs its shared Git metadata. A retained forest input keeps its
+primary clone in place, while the workspace folder and visibility-map entry
+still leave in the same Empty commit; no `frozen_repos` entry is added.
 in the same Empty commit; no `frozen_repos` entry is added.
 
 ### Execution record — Phase 1, 2026-09-03
@@ -186,15 +187,19 @@ Source commit `86f88c0` reduced codex-index-leningrad to its dated README. Its
 branch remained, and GitHub reported `isArchived: true`. `git worktree list`
 found a clean detached review-forest input at
 `C:/Users/BenDe/Documents/Codex/ReviewForests/mam-mega-review-2026-09-01/codex-index-leningrad`,
-pinned to manifest commit `2abd7f6`; the phase preserved that worktree and
-removed only the primary clone. The sole untracked primary-clone residue was
-an obsolete `.novc/phase5_sparse_vendor_commit_message.txt`, which left with
-the explicitly removed clone.
+pinned to manifest commit `2abd7f6`. A linked worktree shares the primary
+clone's `.git` directory, so the primary clone must remain until the forest is
+retired. An initial deletion attempt removed that shared metadata; the phase
+re-cloned the archived `86f88c0` source and recreated the clean detached
+`2abd7f6` worktree. The obsolete
+`.novc/phase5_sparse_vendor_commit_message.txt` was the sole untracked residue
+in the original primary clone and was discarded with that attempted deletion.
 
-After removal, the generator again left all three index artifacts unchanged,
-and the canonical MAM-basics suite passed **975 passed, 5 skipped, 65 subtests
-passed** in 147.79 seconds. The workspace and `repo_visibility` entries are
-removed without a `frozen_repos` entry. Phase 2 has not started.
+With the primary clone absent, the generator left all three index artifacts
+unchanged, and the canonical MAM-basics suite passed **975 passed, 5 skipped,
+65 subtests passed** in 147.79 seconds. The restored primary clone is not in
+the workspace or `repo_visibility`, and remains only for the retained forest;
+there is no `frozen_repos` entry. Phase 2 has not started.
 
 ## Phase 2 — codex-index-aleppo
 

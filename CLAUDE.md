@@ -570,7 +570,7 @@ again after the source repository's Pages deployment succeeds. `../UXLC-utils` w
 `all-repos.code-workspace` before the primary clone was removed, so workspace sweeps do not name a
 missing directory.
 
-## codex-index-leningrad is absent from GitRepos
+## codex-index-leningrad is a review-forest exception
 
 **codex-index-leningrad is not in the roster.** Phase 1 of
 `doc/PLAN-evacuate-the-codex-index-trio-and-diffable-pointed-hebrew.md` moved its
@@ -585,11 +585,12 @@ three `leningrad/lenin-wiki/` artifacts, while the `page-snips/` crop is hand-ma
 former repository's eight Python modules remain in MAM-basics' `py/` and stay in the source-lint
 scope through `py/lenin_paths.py`.
 
-The archived primary clone was removed from `C:/Users/BenDe/GitRepos` after the move. The retained
-review input at
+The primary clone at `C:/Users/BenDe/GitRepos/codex-index-leningrad` is absent from the workspace
+and roster, but remains solely as the shared Git directory for the retained review input at
 `C:/Users/BenDe/Documents/Codex/ReviewForests/mam-mega-review-2026-09-01/codex-index-leningrad`
-is a separate, clean detached worktree pinned to `2abd7f6`; preserve it with its review forest
-rather than treating it as a roster clone.
+The review input is a clean detached worktree pinned to `2abd7f6`; preserve both paths with the
+review forest rather than treating either path as a roster clone. The primary clone can leave only
+after that forest no longer needs its shared Git metadata.
 
 ## There is no `wlc-koren-12th` repo
 
