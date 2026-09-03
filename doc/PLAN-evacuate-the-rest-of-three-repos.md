@@ -1,6 +1,6 @@
 # Total evacuation: book-of-job, holman-ketiv-qere and UXLC-utils
 
-State: paused 2026-08-23; assessed 2026-09-02, still paused
+State: resumed 2026-09-03; Phase 1 complete
 
 Written 2026-08-22, the day
 [`PLAN-evacuate-python-programme.md`](PLAN-evacuate-python-programme.md) closed — its last row,
@@ -82,7 +82,7 @@ figures in these plans arriving one more time.
 | Phase | State |
 |---|---|
 | 0 — Preflight: baselines, collision census, and the five decisions | **DONE 2026-08-23** — seven commits to this file, `0decb3f` through the one recording Decision E. Every Scale figure reproduced but the "outside `gh-pages/`" column (48 / 596 / 734, not 50 / 597 / 737); the census reproduced with one refinement (`sanity_problems.json` moves, 40 duplicates drop, not 41); the layer-4 sweep returned the list the plan has; baseline 941 passed / 5 skipped / 59 subtests, ruff and black clean. All five decisions answered, one at a time: A `book-of-job` / `holman` / `uxlc`; B no `LICENSE`, and the docx does not move — the cord to it is cut; C same relative path, `data/` at `data/`; D `py_ac_loc/` dropped; E two files deleted, the meteg-marks pair lands at `out/`. Two questions parked for Phases 3 and 5, written where those phases will find them |
-| 1 — `.gitattributes` merge in MAM-basics | not started — **verification only since 2026-08-23**: its one owed edit, `*.docx binary`, went with Decision B's sub-question, so it proves its two no-ops on one file each and commits nothing but its record |
+| 1 — `.gitattributes` merge in MAM-basics | **DONE 2026-09-03 — verification only.** The destination already covers every incoming binary type that moves; Decision B excludes the sole `.docx`, so no `.gitattributes` edit landed. The scratch checks preserved the source blob for a PNG, a JPG and a CSV, and the MAM-basics suite passed 971 / 5 / 65. The execution record below carries the fresh Scale figures and the working-tree CSV finding. |
 | 2 — Generalize the redirect-stub generator to a table of four | not started |
 | 3 — holman-ketiv-qere, the pilot lane; plus the generated landing page | not started |
 | 4 — book-of-job | not started |
@@ -1477,7 +1477,7 @@ files → 460 — is named so Phase 4 expects the change.
 
 ---
 
-## Phase 1 — `.gitattributes` merge in MAM-basics
+## Phase 1 — `.gitattributes` merge in MAM-basics — DONE 2026-09-03
 
 *In MAM-basics only.* One commit. **Blocking on every Land step**, for the reason layer 1 gives:
 `git add` applies `.gitattributes` at add time, so a rule that differs between source and
@@ -1513,6 +1513,45 @@ convention to follow if a rule ever does turn out to be needed.)
 
 **Verify:** `git ls-files --eol` over a sample of each incoming type; `py/main_test.py` unchanged;
 nothing in `git status` but `.gitattributes`.
+
+### Execution record — Phase 1, 2026-09-03
+
+Began at MAM-basics `3829585`, book-of-job `fea3acd`, holman-ketiv-qere `7a25b34` and UXLC-utils
+`a2768f4`, all on `main` and clean. MAM-basics is the main clone; it has four linked review
+worktrees besides the main checkout. The source repos are each also linked into the same
+`mam-mega-review-2026-09-01` review forest. Those worktrees do not block Phase 1, and Step 6 keeps
+its separate teardown gate.
+
+**No tracked `.gitattributes` file changed.** MAM-basics already declares `*.png`, `*.jpg`,
+`*.pdf` and `*.woff2` binary; book-of-job's rules are a subset, holman-ketiv-qere adds only
+`*.docx`, and UXLC-utils adds none. The `.docx` is Holman's review document, which Decision B
+excludes from the move, so its source-only rule remains irrelevant. This plan file is the phase's
+only tracked change.
+
+**The two no-ops are proved by a scratch Git index, not inferred from the declarations.** Adding
+UXLC-utils' `gh-pages/amb-early-mtg/img/17-Ex14v19a14.png` under MAM-basics'
+`.gitattributes` retained source blob `3670d5439f94cfad00fa777cd4626ccd97dff22d`; the same check
+for `gh-pages/amb-early-mtg/img/Ex12v50-ויעשו-in-BHS.jpg` retained
+`48386f60c4feb4afc4f0ec8fc3e70de61248f1e6`. For `Possible false early meteg marks.csv`, the
+source blob and the scratch-index blob are both `0a704aa2c3bb9f1b880c1fecdcf53ee1c28fee47`.
+The `git ls-files --eol` sample reports that the CSV blob is LF and its checked-out copy is CRLF.
+The plan expected UXLC-utils' working-tree copy to be LF; the live sample already has 66 CRLF line
+endings, the same 66 that MAM-basics' rules check out. The working-tree prediction is therefore
+stale, but the layer-1 property holds: the committed blob is unchanged.
+
+**The resumption baseline is current.** MAM-basics holds 2,322 tracked files / 273.22 MB, with
+287 / 49.97 MB / 156 HTML pages under `gh-pages/`. book-of-job reproduces 784 / 73.36 MB total and
+694 / 65.22 MB / 175 HTML pages under `gh-pages/`; holman-ketiv-qere has grown to 385 / 60.70 MB
+total and 335 / 38.03 MB / 6 HTML pages under `gh-pages/`; UXLC-utils reproduces 780 / 43.12 MB
+total and 184 / 18.37 MB / 91 HTML pages under `gh-pages/`. The corresponding outside counts are
+90 / 8.14 MB, 50 / 22.66 MB and 596 / 24.75 MB. Phase 3 must re-measure Holman's figures before
+its Land step rather than retaining the old 348-file table.
+
+**The preconditions and verification hold.** The Python-evacuation programme still records every
+row complete. The latest MAM-basics Pages run, `33750896431`, succeeded on 2026-09-03, and
+`https://bdenckla.github.io/MAM-basics/wlc/index.html` returned HTTP 200. The full suite reports
+**971 passed, 5 skipped, 65 subtests passed** in 67.90 seconds. MAM-basics remained at `3829585`
+until this write-back, and all three source repos remain clean at the heads above.
 
 ---
 
