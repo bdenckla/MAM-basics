@@ -1,6 +1,6 @@
 # Total evacuation: book-of-job, holman-ketiv-qere and UXLC-utils
 
-State: Phase 5 in progress — Steps 1–5 complete 2026-09-03; Step 6 awaits ReviewForest teardown
+State: Phase 5 complete — Steps 1–6 completed 2026-09-03
 
 Written 2026-08-22, the day
 [`PLAN-evacuate-public-repos-programme.md`](PLAN-evacuate-public-repos-programme.md) closed — its last row,
@@ -28,11 +28,12 @@ the Job manuscripts into `DATA-LICENSES.md`; that is licensing prose, not accent
 
 ## Status
 
-**CURRENT — Phase 5 is in progress, 2026-09-03.** Phases 0–4 are complete. UXLC-utils Steps 1–3
+**CURRENT — Phase 5 completed, 2026-09-03.** Phases 0–4 are complete. UXLC-utils Steps 1–3
 landed the approved `gh-pages/uxlc/` and `uxlc/` trees, scoped their licences, and repointed the
 MAM-basics readers. The temporary codex-index-leningrad sparse vendor now reads MAM-basics. Steps
 4–5 froze and deployed the redirect host, removed 684 source files, and removed UXLC-utils from
-the workspace. Step 6 waits only for the clean detached UXLC-utils review worktree to be retired.
+the workspace. Step 6 retired the clean detached UXLC-utils review worktree, removed the clean
+primary clone, and proved the surviving readers no longer resolve that sibling.
 
 **Historical pause — Ben, 2026-08-23, after Phase 0 closed at `1410b5d`**: *"I want to pause the
 evacuation work for a while."* The Phase 1 chip was cancelled rather than launched. The pause
@@ -104,7 +105,7 @@ figures in these plans arriving one more time.
 | 2 — Generalize the redirect-stub generator to a table of four | **DONE 2026-09-03.** `RedirectRepo` now makes the source repository, MAM-basics subtree, old URL prefix, frozen-manifest path and clone URL one row; only wlc-utils' frozen row exists. Its 155 stubs were byte-identical before the rename and changed only their generator-comment line after it. The execution record carries the WLC republish commit, the live-baseline result and the missing-subtests finding. |
 | 3 — holman-ketiv-qere, the pilot lane; plus the generated landing page | **DONE 2026-09-03.** MAM-basics landed and published the 379-file `holman/` tree (`3c5dc79`), scoped its licences (`d81b47b`), repointed its generators (`ae663ff`), froze the six-page redirect manifest (`46ba28a`), and removed the redirect host from the workspace (`519e3f4`). The source commits are `723bd73` for the stubs and `ca55c4a` for the empty host. Step 6 then retired only the clean detached Holman review worktree at `94cab4a` and removed the clean main clone. |
 | 4 — book-of-job | **DONE 2026-09-03.** Ben chose the pure `book-of-job/` prefix: the 694-file published tree is at `gh-pages/book-of-job/`, and the nine retained non-page files are at `book-of-job/out/` and `book-of-job/doc/`. The copies are SHA-256-identical to the source, and the licence rows are scoped. The Pages deployment is live: the landing page, two nested HTML pages, and an Aleppo crop returned HTTP 200. The generators now write only MAM-basics: the Job oracle changed only its known stale WLC-a-notes URL; the UXLC oracle had no diff; all 701 source-artifact timestamps are unchanged. The 175-path manifest and redirect-table row preserve the source host's old published URL set; source stubs are committed and deployed. `doc/book-of-job-artifacts.md` carries the no-program register, the reliable Git-diff procedure, and the rewritten entry-point table; `doc/boj-quirkrec-comments.md` and the moved reading procedures now name their MAM-basics locations. The Book-of-Job workspace entry, clean detached review worktree at `d09b966`, and clean main clone at `c8a6bbf` are gone. Post-removal MAM-basics tests passed 973 / 5, the document generator had no output diff, and Ruff is clean. The UXLC generator was not rerun because its output repository already has 26 modified files. |
-| 5 — UXLC-utils | **IN PROGRESS 2026-09-03 — Steps 1–5 complete.** MAM-basics holds the authorized pure-prefix landing, and every MAM-basics reader uses it. The temporary codex-index-leningrad sparse vendor reads MAM-basics rather than UXLC-utils. The redirect manifest and source stubs are deployed; source commit `2745c65` retains only 97 redirect-host files. Step 6 waits for the clean detached UXLC-utils ReviewForest worktree at `b7b4eb9` to be retired. |
+| 5 — UXLC-utils | **DONE 2026-09-03.** MAM-basics holds the authorized pure-prefix landing, and every MAM-basics reader uses it. The Leningrad sparse vendor reads MAM-basics rather than UXLC-utils. The redirect manifest and source stubs are deployed; source commit `2745c65` retains 97 redirect-host files. Step 6 retired the clean detached ReviewForest worktree at `b7b4eb9`, removed the clean primary clone, and completed the post-removal suite, generators, vendor refresh, and Ruff check. |
 | 6 — Cross-repo bookkeeping, and close the second stage | not started |
 
 ### Assessed 2026-09-02 — ten things that moved while the plan was paused
@@ -2462,12 +2463,20 @@ deployment `33799858167` succeeded; `clc/Genesis.html` served its generated
 MAM-basics redirect with HTTP 200, and an unknown source URL served the
 generated catch-all with HTTP 404.
 
-Step 6 has not begun. The detached UXLC-utils ReviewForest worktree at
-`C:/Users/BenDe/Documents/Codex/ReviewForests/mam-mega-review-2026-09-01/UXLC-utils`
-is clean, detached at `b7b4eb9`, and belongs to the separate ReviewForest.
-The ReviewForest owner must retire that worktree before this phase removes the
-UXLC-utils main clone. The separate codex-index-leningrad evacuation remains
-outside this phase.
+Step 6 completed 2026-09-03 with Ben's explicit authorization. The full
+ReviewForest manifest verification found every present member at its recorded
+head, checkout mode, remote, and clean state; book-of-job and holman-ketiv-qere
+were the two recorded prior retirements. The clean detached UXLC-utils worktree
+at `b7b4eb9` was removed without force. The source clone's `HEAD` equalled
+`origin/main` at `2745c65`; tracked status, ignored and untracked status, stash,
+and outgoing local branches were empty, and the primary clone was the only
+registered UXLC-utils worktree. The primary clone was then removed.
+
+After removal, the canonical MAM-basics test entry point completed; the three
+UXLC artifact generators, the Book-of-Job oracle, and the seven current Holman
+oracle commands completed with no MAM-basics diff. `main_lenin_vendor_uxlc.py`
+synced all 41 Leningrad sparse-vendor files unchanged, and Ruff passed. The
+separate codex-index-leningrad evacuation remains outside this phase.
 
 ---
 

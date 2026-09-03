@@ -539,6 +539,27 @@ Then publish and check the frozen stubs with `--repo holman-ketiv-qere`, and rem
 clone again after the source repository's Pages deployment succeeds. `../holman-ketiv-qere` is
 already absent from `all-repos.code-workspace`, so no workspace entry needs changing.
 
+## UXLC-utils belongs on no machine, and its redirect set is frozen
+
+**UXLC-utils is not in the roster**, so `gitrepos_setup_rule` does not put a clone on any machine.
+Ben's 2026-09-03 evacuation moved the public data and generators to `uxlc/` and `gh-pages/uxlc/`
+in this repository. The source repository remains alive at `bdenckla/UXLC-utils` as the redirect
+host and issue tracker; source commit `2745c65` retains the deployed redirect stubs.
+
+Nothing in the ordinary suite reads `../UXLC-utils`. The frozen 91-page old URL set is
+`in/uxlc_utils_redirect_pages.json`, and `py/tests/test_redirect_manifest.py` checks the manifest
+without a source clone. If an old UXLC page is renamed or dropped, temporarily re-create the
+redirect host with:
+
+```powershell
+git clone --depth 1 https://github.com/bdenckla/UXLC-utils.git C:/Users/BenDe/GitRepos/UXLC-utils
+```
+
+Then publish and check the frozen stubs with `--repo UXLC-utils`, and remove the temporary clone
+again after the source repository's Pages deployment succeeds. `../UXLC-utils` was removed from
+`all-repos.code-workspace` before the primary clone was removed, so workspace sweeps do not name a
+missing directory.
+
 ## There is no `wlc-koren-12th` repo
 
 `~/GitRepos/wlc-koren-12th` was never a repo of its own. It was a **worktree of wlc-utils** on
