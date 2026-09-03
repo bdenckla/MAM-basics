@@ -457,11 +457,11 @@ machine's disk standing for every machine's. The clone was removed 2026-08-31, a
 al-hatorah's and masorah-books', on the evacuated-repos rule above.
 
 **One thing still wants a clone, and it is a one-time program Ben expects never to run again.**
-`py/main_wlc_redirect_stubs.py build --publish`, and `check` with no `--dir`, reach
-`py/wlc_redirect/stubs.py`'s `wlc_utils_pages_dir`, which is the only site in this tree that
+`py/main_redirect_stubs.py build --publish`, and `check` with no `--dir`, reach
+`py/redirect_stubs/stubs.py`'s `source_pages_dir`, which is the only site in this tree that
 resolves the clone. **Nothing schedules it**: it is in no pipeline — `py/main_0_mega.py` and
 `py/pipeline_graph/pipeline_graph_spec.py` never name it — and the one check that runs all the
-time, `py/tests/test_wlc_redirect_manifest.py`, was hoisted into the suite precisely because it
+time, `py/tests/test_redirect_manifest.py`, was hoisted into the suite precisely because it
 needs no clone. It raises with the command that fixes it:
 
 ```powershell
@@ -475,7 +475,7 @@ live `git ls-files gh-pages/wlc`, which anchored the lint to the wrong set: a pa
 stub — but the derivation would have reported the first such page as an old URL about to 404. The
 two sets coincided only because nothing had been added under `gh-pages/wlc/` since `f99996f`
 (2026-08-12). So a publish is needed only if one of those 154 pages is **renamed or dropped**,
-which breaks its stub; `py/tests/test_wlc_redirect_manifest.py` is the half of that lint needing
+which breaks its stub; `py/tests/test_redirect_manifest.py` is the half of that lint needing
 no clone, and it fires here.
 
 **`../wlc-utils` was dropped from `all-repos.code-workspace` in the same commit, 20 folders to

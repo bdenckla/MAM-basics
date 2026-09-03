@@ -59,7 +59,7 @@ def _intro_to_no_ucp():
     check_html_syntax_and_sanity.py's orphan check found only index-no-ucp.html: it asks
     whether SOME page links a page, so a cluster that links itself hides from it.  All
     three are also frozen targets in in/wlc_redirect_pages.json, so deleting them was
-    never an option -- a stub would 404 and test_wlc_redirect_manifest.py would fail.
+    never an option -- a stub would 404 and test_redirect_manifest.py would fail.
 
     Emitted only on the UCP page, since the no-ucp page linking back would make a pair
     reachable only from each other, which is the same strand one page wider.

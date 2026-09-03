@@ -466,7 +466,7 @@ _POSTSCRIPT_QUIRKS_IN_MU_A = [
 ]
 # Was document-index/README.md until 2026-08-31, when that repo's index was evacuated into
 # MAM-basics' own published landing page (doc/PLAN-unify-the-document-index.md).  Repointed
-# rather than left to a redirect, per py/wlc_redirect/stubs.py's rule: a citation Ben can
+# rather than left to a redirect, per py/redirect_stubs/stubs.py's rule: a citation Ben can
 # edit is a URL to update.  The link text follows the URL -- what it names is now an index,
 # not a README.
 _DOCUMENT_INDEX = author.anc_h(

@@ -17,7 +17,7 @@ those would need either the network or a sibling clone.  A sibling clone is the 
 objection: under this repo's missing-input rule a test may not skip when its input is
 absent, so a sibling-aware check would have to FAIL on any machine without the clone.  So
 this file checks the half whose both sides are in this repo -- the same reasoning
-``py/tests/test_wlc_redirect_manifest.py``'s docstring gives for hoisting one check out of a
+``py/tests/test_redirect_manifest.py``'s docstring gives for hoisting one check out of a
 program that cannot run here.
 
 THERE IS NO DERIVED HALF ANY MORE, and the lint got wider when it went.  A last section

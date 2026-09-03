@@ -25,7 +25,7 @@ page being optional.  He ruled on 2026-08-31 that this one is reachable anyway: 
 frozen target in ``in/wlc_redirect_pages.json``, so the stub for
 ``bdenckla.github.io/wlc-utils/index.html`` forwards to it, and following an old wlc-utils
 link is a real way to read it.  That is also why the file cannot simply be deleted -- the
-stub would 404 and ``py/tests/test_wlc_redirect_manifest.py`` would fail.  **Do not
+stub would 404 and ``py/tests/test_redirect_manifest.py`` would fail.  **Do not
 un-strand it by adding an entry here.**  When this paragraph was written, the seven pages
 it lists were exactly the pages ``site_data``'s ``_WLC`` then named; the same evening's
 Misc trim cut ``_WLC`` to four of the seven (420422, wlc-a-notes, goerwitz,

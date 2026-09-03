@@ -27,7 +27,7 @@ necessary: its Python was evacuated into MAM-basics on 2026-08-01, leaving in/,
 out/, gh-pages/, data/ and doc/ and nothing to format, lint or maintain. (Dated
 record; the rest followed. The 2026-08 evacuation, finished 2026-08-17, emptied
 wlc-utils to a redirect host -- 155 generated stubs under gh-pages/ plus six
-root files, rebuilt by this repo's py/main_wlc_redirect_stubs.py -- so the gate
+root files, rebuilt by this repo's py/main_redirect_stubs.py -- so the gate
 still reads n/a there, and the repo no longer holds data for an agent session
 to edit, so its ungated worktree counts should normally read 0 now.) The two
 worktree COUNTS are not gated, because they stay true and still matter -- such a
