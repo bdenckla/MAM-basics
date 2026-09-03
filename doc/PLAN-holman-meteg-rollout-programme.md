@@ -5,11 +5,14 @@ in one untracked sketch and in agent-call transcripts. Ben's instruction that
 day: *"I want all these consolidated into git and related to each other at this
 point, as I fear loosing track of this larger context."*
 
-**STATUS: items 2 through 7 are a SKETCH, not an approved plan.** They were
-assembled from three research-agent reports and one Plan-agent validation pass,
-synthesized in conversation, and never reviewed against repository state a
-second time. Re-verify every path, command and figure below before acting on
-any of them. Item 1 alone has a reviewed, tracked plan of its own.
+**STATUS: item 2 is DONE; items 3 through 7 are a SKETCH, not an approved
+plan.** The sketch was assembled from three research-agent reports and one
+Plan-agent validation pass, synthesized in conversation, and never reviewed
+against repository state a second time. Re-verify every path, command and
+figure in items 3 through 7 before acting on them — item 2's execution on
+2026-09-03 found four of its own figures wrong, and its section below is an
+execution record now rather than a sketch. Item 1 alone has a reviewed, tracked
+plan of its own.
 
 Execute everything here from `C:/Users/BenDe/GitRepos/MAM-basics`, venv
 `C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe`.
@@ -52,7 +55,7 @@ which are accent-placement records and are NOT part of this programme.
 | # | Item | Status |
 |---|---|---|
 | 1 | Track the notes, publish a gh-pages page, link it from the M23 card, rename the page identity and the archive label | Planned in detail, reviewed — see the plan named below |
-| 2 | Build the Wikisource bot edit files for all 30 | Sketch only |
+| 2 | Build the Wikisource bot edit files for all 30 | **DONE 2026-09-03**, files built and validated offline — see the item 2 section below, which is now an execution record rather than a sketch |
 | 3 | Run the bot | Sketch only |
 | 4 | Download the affected chapters, plus Joshua 10 and Zechariah 2 | Sketch only |
 | 5 | Run the wsgo diff and the standard MAM update pipeline | Sketch only |
@@ -133,40 +136,110 @@ it names a category that still exists, and it drives the page's filtering.
 It deliberately does NOT archive any record, edit Wikisource, or run the mega
 pipeline. Those are items 2 through 6 here.
 
-### Item 2: build the Wikisource bot edit files
+### Item 2: build the Wikisource bot edit files — DONE 2026-09-03
+
+Executed 2026-09-03 in a worktree of `C:/Users/BenDe/GitRepos/MAM-basics`, on
+top of `28564417`. **The bot was not run: `py/main_ws_bot.py real` was not
+invoked, with or without `--no-save`.** That is item 3.
 
 The mechanism is `py/ws/ws_bot_edit.py` and `py/main_ws_bot.py`. `edit-kind` is
-a FILE-LEVEL key, so one JSON file cannot mix kinds, and **two files are needed**:
+a FILE-LEVEL key, so one JSON file cannot mix kinds, and two files were built:
 
-1. `edit-kind: meteg-removal`, for the 29 removals, roughly 24 chapters across
-   seven books (1 Kings, 1 Samuel, 2 Chronicles, 2 Kings, 2 Samuel, Isaiah,
-   Judges). Each entry carries `ch`, `old` and an optional `comment`; `old`
-   must occur exactly once in that chapter's raw wikitext, and the bot removes
-   the FIRST U+05BD in `old`. Twenty-eight records are one entry each.
-   **M13, 2 Chronicles 18:33, is two entries in the same chapter**, one per
-   parameter of a `{{מ:קמץ|ד=...|ס=...}}` template call: `old="הׇֽחֳלֵֽיתִי"` for
-   the ד parameter and `old="הָֽחֳלֵֽיתִי"` for the ס parameter. Removing the
-   meteg from ד alone would leave the two forms differing in something other
-   than the qamats, which is the only thing that template exists to vary.
-2. `edit-kind: explicit-replacement`, one entry, for M23 at Isaiah 23:12 — the
-   sole addition-direction record: `old="ק֣וּמִי"`, `new="ק֣וּמִֽי"`. Verify
-   uniqueness within Isaiah chapter 23 at execution time; the corpus holds
-   fifteen similarly-spelled קומי atoms elsewhere, so a chapter-scoped
-   uniqueness check matters here specifically.
+1. `in/mam-ws-bot-edits/holman-meteg-removal.json`, `edit-kind: meteg-removal`
+   — **29 entries covering 28 records, across 22 chapters of six books** (1
+   Kings 7, 11, 12, 15, 17, 18, 22; 1 Samuel 18, 27; 2 Chronicles 6, 18, 24,
+   32; 2 Kings 7; 2 Samuel 11, 12, 15, 18; Judges 1, 5, 6, 21). Each entry
+   carries `ch`, `old` and a `comment`; `old` occurs exactly once in that
+   chapter, and the bot removes the FIRST U+05BD in `old`.
+2. `in/mam-ws-bot-edits/holman-meteg-add-isaiah-23-12.json`,
+   `edit-kind: explicit-replacement` — one entry, M23 at Isaiah 23:12, the sole
+   addition-direction record: `old="ק֣וּמִי"`, `new="ק֣וּמִֽי"`.
 
-**Build every `old` string from each record's `mam_form` field verbatim, never
-retyped by hand.** The pre-flight gate is an arithmetic check: stripping the
-first U+05BD from `mam_form` must reproduce `comparison_form` exactly. A
-Plan-agent pass ran that over all 30 records on 2026-09-03 with zero
-mismatches. Re-run it on the assembled JSON before touching the wiki.
+Both are built and re-checked by a tracked subcommand rather than by hand:
 
-Before constructing the files, re-download the target chapters
-(`py/main_download.py fr-wikisource`, scoped) so the `old` strings are built
-against current text rather than a stale local snapshot.
+```powershell
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_ws_bot.py holman-meteg-spec
+```
 
-**Not yet checked**: whether any of the other 28 removal records sit inside a
-template the way M13 does. The method is to grep `in/mam-ws/<Book>.json` for
-the exact form, one record at a time, before assembling the edit files.
+`py/ws/holman_meteg_edit_spec.py` is the module; `--write` rebuilds the two
+files, and the default is check-only so that the pre-flight this item's old
+sketch asked for can be re-run immediately before item 3's live save without
+rewriting its own subject. Its module docstring carries the fuller statement of
+everything below.
+
+**Four figures in the sketch this section replaces were wrong**, and each is
+worth stating because the arithmetic that produced them is so easy to redo.
+
+1. **`old` CANNOT be `mam_form` verbatim, and this is the big one.**
+   `mam_form` is in MAM-normal mark order — shin dot, sin dot, dagesh, rafe,
+   then every other mark — and Hebrew Wikisource's wikitext is not: it writes
+   the dagesh, shin dot or sin dot AFTER the vowel. Measured 2026-09-03,
+   **seventeen of the thirty `mam_form` strings do not occur in their own
+   chapter at all**, and **eleven of the seventeen fail for mark order alone**
+   (M1, M2, M4, M6, M11, M16, M19, M22, M26, M29, M30). The two orders render
+   identically, so nothing looks wrong and only a byte comparison sees it. The
+   module therefore searches the chapter in std-order space and slices the
+   ORIGINAL text at the index it finds — `give_std_mark_order` reorders marks
+   only inside one letter's cluster, so it moves no index. Every `old` is
+   the wikitext's own bytes, located by the record rather than copied from it.
+   `CLAUDE.md`'s opening section is the rule this instance of the problem
+   belongs to.
+2. **M18, 2 Kings 21:12, is ALREADY APPLIED on Wikisource and is excluded from
+   the file.** The fresh download of 2026-09-03 has no meteg on the resh of
+   ירושלם there, nor on the vav of ויהודה, which is mgketer's
+   `2K21:12#0ebb56b0` and which no Holman record covers. So somebody edited
+   that verse for both metegs. An entry for M18 would abort the whole run,
+   `ws_bot_edit.edit_page_text` asserting its `old` occurs exactly once, so
+   `_ALREADY_APPLIED` excludes it by name and the check fails loudly if the
+   meteg ever comes back. **This is why the removal file holds 29 entries and
+   not 30**: 28 records at one entry each, plus M13's second.
+3. **Four more records sit inside a template, not one.** M3, M20, M21 and M25
+   all name ירושלם, which the wikitext writes across a `{{מ:ירושלם|…|…}}` call
+   — `יְרֽוּשָׁל{{מ:ירושלם|ָ|ֽ}}ם׃` — with the meteg in the plain-text part
+   before it. Their `old` is the whole word as written, template call included.
+   Note that in M3, M20 and M21 that call's second parameter is **itself a
+   U+05BD**, the silluq of a verse-final word, so `old` holds two of them and
+   the bot's remove-the-first rule is what keeps the silluq. The module asserts
+   per entry that the first U+05BD in `old` is the located target.
+   M18 was a fifth such case before it was applied.
+4. **M13 is two entries, exactly as
+   [`holman-meteg-m13-qamats-template.md`](holman-meteg-m13-qamats-template.md)
+   found**: `old="הׇֽחֳלֵֽיתִי"` for the ד parameter of its
+   `{{מ:קמץ|ד=…|ס=…}}` call and `old="הָֽחֳלֵֽיתִי"` for the ס parameter.
+   Removing the meteg from ד alone would leave the two forms differing in
+   something other than the qamats, which is the only thing that template
+   exists to vary. That note's own cross-check passes: after the edit,
+   2 Chronicles 18:33's call is byte-identical to the one in 1 Kings 22:34.
+
+**So the "not yet checked" question this section used to end on is answered:
+five of the thirty records sit inside a template, not one.** Four are ירושלם
+and one is קמץ, and M18 was a sixth until it was applied.
+
+What the checks report, all of them re-runnable:
+
+1. **The arithmetic gate passes 30 of 30.** Stripping the first U+05BD from
+   `mam_form` reproduces `comparison_form` for the 29 removals, and stripping
+   it from `comparison_form` reproduces `mam_form` for M23.
+2. **Uniqueness passes for all 30 entries**, checked in both texts a bot may be
+   handed: the raw wikitext `real` edits, and the format-2 round trip `proto`
+   edits. M23's `old` is worth its own mention — `ק֣וּמִי` occurs twice in the
+   whole corpus, once in Isaiah 23 and once in Lamentations, against 21
+   similarly-spelled קומי atoms, so the chapter scoping is what makes it safe.
+3. **Both `proto` runs applied cleanly**, and every one of the 23 touched
+   chapters differs from its input by exactly the metegs its own entries name
+   and by nothing else — 22 chapters losing between one and three metegs, and
+   Isaiah 23 gaining one.
+
+Re-downloading the target chapters first, so the `old` strings are built
+against current text, is what surfaced finding 2 above. One command does it,
+`--book-chapters-json` being far cheaper than 24 `--chapter` runs:
+
+```powershell
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_download.py fr-wikisource --book-chapters-json .novc/holman-meteg-removal-chapters.json
+```
+
+`holman-meteg-spec --selector-dir .novc` writes that selector, one file per
+spec, naming exactly that spec's chapters.
 
 ### Item 3: run the bot
 
@@ -180,9 +253,22 @@ that would change is the expected outcome, not a failure to fix.
 **The bot has no crash recovery** — no try/except anywhere in the apply loop.
 A failure partway through leaves whatever was already saved standing on live
 Wikisource with none of the run's bookkeeping written. Mitigation: run `real`
-in `--book39`-scoped slices rather than one 30-entry sweep, checking
+in book-sized slices rather than one 29-entry sweep, checking
 `modified-chapters.json` after each slice, so a failure's blast radius is one
 book.
+
+**A bare `--book39` slice will NOT work, and the correction matters because
+this paragraph asked for one until 2026-09-03.** `--book39 1Kings` selects all
+22 chapters of the book, and `ws_bot_edit.assert_book_plans_within_target_set`
+then refuses every chapter the spec does not name, exiting before a single
+page is fetched. Slice with `--book-chapters-json` instead, over a per-book cut
+of the selector that `holman-meteg-spec --selector-dir .novc` writes. **Every
+`proto` or `real` run of either Holman spec needs that selector**, for the same
+reason: with no selector at all the run selects all 39 books.
+
+**Add the run to [`ws_bot_edit_history.md`](../py/ws/ws_bot_edit_history.md)
+when it happens, and move that file's "current" marker off the sigil ב2 entry.**
+Item 2 deliberately did not, the history recording bots that have run.
 
 This item needs Ben's own `~/.pywikibot/password.py`, a bot password under the
 account `BDencklaBot`. Verify it exists before starting. **A session must never
@@ -233,6 +319,12 @@ For each of M1–M16, M18–M23, M25–M31 and M33, add a `Disposition` entry to
 `DISPOSITION_BY_REF` in `py/hkq_cmn/mam_suggestion_dispositions.py`: outcome
 "Suggestion taken", a one-line summary naming the letter and the direction,
 `decided_by` "Ben Denckla", `decided_on` the execution date.
+
+**All thirty are archived, M18 included, and M18's summary is the one that
+differs.** Its outcome is "Suggestion taken" like the rest, but its meteg was
+gone from Hebrew Wikisource before item 2 built the edit files, so no entry of
+this programme's bot removed it — see finding 2 of item 2 above. Say that in
+its summary rather than implying the bot did it.
 
 **Look up each record's actual `ref` field from the suggestions JSON by
 `case_number`; do not construct it from the displayed "BookName ch:v.atom"
@@ -330,3 +422,28 @@ In a worktree, sibling repositories do not resolve by default:
 parent rather than `GitRepos`. Set `REPOS_ROOT=C:/Users/BenDe/GitRepos`, or a
 per-repository `REPO_<NAME>_DIR`, and the failure is loud rather than silent
 either way.
+
+**Item 2 needed neither, and the reason generalizes to item 3.** Nothing in
+`py/main_download.py fr-wikisource`, `py/main_ws_bot.py`, `py/ws/` or
+`py/subcommands/parse_ws.py` calls `sibling_repo` or `repos_root` — the one
+sibling-reaching module in `py/ws/`, `ws_foi_kq_trivial_scope.py`, is imported
+only by `ws_bot_edit_kq_triv_add_type.py`, which `ws_bot_edit.py` does not
+import. Items 4 through 7 are a different matter, reaching MAM-parsed and the
+rest.
+
+**The test suite, though, wants the override even when the change under test
+does not — set it and the suite is fully green in a worktree.** Measured
+2026-09-03 in a worktree, with item 2's own changes in the tree:
+
+```powershell
+$env:REPOS_ROOT="C:/Users/BenDe/GitRepos"; C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_test.py -q
+```
+
+gives **973 passed, 5 skipped, 0 failed**, and writes into no sibling
+repository — all eight were clean before and after. The same run with no
+override gives **904 passed, 34 failed, 35 errors** across eleven files, every
+one of them reaching a sibling that resolves to `.claude/worktrees/<name>`.
+904 + 34 + 35 = 973, so the override accounts for the whole difference and
+nothing else is hiding in it. **Do not read an un-overridden total as a
+baseline, and do not conclude from one that the suite cannot be run here**:
+it can, and 973 green is the figure to measure against.
