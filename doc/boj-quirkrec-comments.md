@@ -45,29 +45,24 @@ to the `qr-generic-comment` list.
    variable (e.g., `_COMMENT_2702`) and reference it from the dict.
    This is already the convention for comments spanning multiple lines.
 
-5. **Run the generation script** to rebuild the HTML output:
-   ```
-   .venv/Scripts/python.exe py/main_gen_misc_authored_english_documents.py
+5. **Run the generation script** from `C:/Users/BenDe/GitRepos/MAM-basics` to rebuild
+   the HTML output:
+   ```powershell
+   C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_gen_misc_authored_english_documents.py
    ```
 
 6. **Verify** the output is correct:
-   ```
-  git -C ../book-of-job diff --stat HEAD -- gh-pages/
+   ```powershell
+   git diff --stat HEAD -- gh-pages/book-of-job/ book-of-job/out/
    ```
    Inspect the changed HTML to confirm the comment appears as expected.
    `git status --porcelain` stood here until 2026-08-21 and is the **wrong
-   instrument** in book-of-job — it reports files whose blobs did not change —
-   besides being unrunnable from this repo on a path in another one.
+   instrument** for the Book-of-Job tree — it reports files whose blobs did not
+   change.
 
-7. **View in browser** using a local HTTP server (needed for fragment
-   anchors):
-   ```powershell
-   # Start server if not already running:
-  python -m http.server 8471 --directory ../book-of-job/gh-pages
-
-   # Open the quirkrec detail page:
-   Start-Process "http://localhost:8471/jobn/job1_full_list_details.html#row-XXYY"
-   ```
+7. **Give Ben a rendered-file link; do not launch a browser or start a server.**
+   A detail page for chapter XX and verse YY is at
+   `file:///C:/Users/BenDe/GitRepos/MAM-basics/gh-pages/book-of-job/jobn-details/XXYY.html`.
 
 ## Style conventions
 
