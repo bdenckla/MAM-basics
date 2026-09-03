@@ -2324,6 +2324,13 @@ question** (Decision C, 2026-08-23): MAM-basics' `in/lci_recs.json` and the arri
 `py/py_uxlc/my_uxlc_page_break_info.py` and `py/uxlc_misc/my_uxlc_page_break_info.py`; put all
 three pairs to him at once rather than one per session.
 
+**DECIDED — Ben, 2026-09-03, at Phase 5: keep only MAM-basics' copies.** Do not land the 39
+incoming `in/UXLC-39/*.xml` files, `out/UXLC-misc/all_changes.json`,
+`in/UXLC-misc/lci_recs.json`, or `data/lci_recs.json`. MAM-basics'
+`in/UXLC-39/`, `in/UXLC-misc/all_changes.json`, and `in/lci_recs.json` remain the canonical
+copies. Step 3 repoints every reader of the excluded UXLC-utils paths to the corresponding
+MAM-basics path and deletes the self-copying vendor step.
+
 **Trap 4 — codex-index-leningrad holds a sparse vendored copy, and it is already stale.**
 `codex-index-leningrad/UXLC-utils-sparse/` is refreshed by MAM-basics'
 `py/main_lenin_vendor_uxlc.py`, and that repo's `CLAUDE.md` says *"`../UXLC-utils` is the source of
