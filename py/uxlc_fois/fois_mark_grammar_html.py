@@ -393,7 +393,7 @@ def _change_record_link(case_dic, latest_change_by_atom):
 
 
 def _latest_change_by_atom():
-    all_changes_path = uxlc_paths.out_uxlc_misc_dir() / "all_changes.json"
+    all_changes_path = uxlc_paths.canonical_all_changes_path()
     with open(all_changes_path, encoding="utf-8") as changes_fp:
         changes = json.load(changes_fp)
     latest_change_by_atom = {}

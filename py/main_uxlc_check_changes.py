@@ -99,7 +99,7 @@ def main():
     changes = _get_all_changes()
     check_results_f = changes_loc.check(changes)
     #
-    json_output_path1 = uxlc_paths.out_uxlc_misc_dir() / "all_changes.json"
+    json_output_path1 = uxlc_paths.canonical_all_changes_path()
     my_open.json_dump_to_file_path(changes, json_output_path1)
     json_output_path2 = uxlc_paths.out_uxlc_misc_dir() / "all_changes_loc_checks.json"
     my_open.json_dump_to_file_path(check_results_f, json_output_path2)

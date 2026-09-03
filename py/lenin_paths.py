@@ -22,16 +22,13 @@ item 2 of the plan says not to carry ``_DATA_ROOT`` into MAM-basics as a fourth
 spelling of the same idea, and the accessors below are the third spelling
 retired to.
 
-THE OTHER HALF OF THAT REPO'S PYTHON, and why it is here under a different name.
-``main_update_vendored_files.py`` and its ``vendoring_sync.py`` refreshed
-``UXLC-utils-sparse/`` from the sibling UXLC-utils.  The refresh is still wanted
--- Ben's decision of 2026-08-03 dropped the ``py/`` half of that sparse copy and
-kept the data half -- so the script landed as
-``py/main_lenin_vendor_uxlc.py``, named for ``py/main_wlc_vendor_uxlc.py``,
-which does the same job for this repo's own vendored UXLC subset.  Its
-``vendoring_sync.py`` was a two-line fork of ``mb_cmn/vendoring_sync.py`` and is
-gone: the two lines were the breadcrumb's filename, which
-``write_provenance`` now takes as a parameter.
+THE OTHER HALF OF THAT REPO'S PYTHON is the temporary sparse vendor.
+``main_lenin_vendor_uxlc.py`` refreshes ``UXLC-utils-sparse/`` from MAM-basics'
+own ``in/UXLC-39/`` and ``uxlc/data/`` trees. Ben authorized that temporary
+repoint on 2026-09-03 while the codex-index-leningrad evacuation remains a
+separate lane. Its former ``vendoring_sync.py`` was a two-line fork of
+``mb_cmn/vendoring_sync.py`` and is gone: the two lines were the breadcrumb's
+filename, which ``write_provenance`` now takes as a parameter.
 
 NO ``code_paths()`` CONSUMER YET, and that is a stated gap rather than an
 oversight.  The four source lints in this repo -- ``check_function_ordering``,
@@ -99,11 +96,11 @@ def wiki_dir() -> Path:
 def uxlc_sparse_dir() -> Path:
     """``UXLC-utils-sparse/`` -- the vendored UXLC-utils subset.
 
-    DATA ONLY since 2026-08-03: Ben's decision in UXLC-utils' Phase 5 dropped the
-    seventeen ``.py`` this tree also held rather than repointing them at
-    MAM-basics, on the ground that nothing in codex-index-leningrad imported them
-    and their one entry point could not run there anyway.  Refreshed by
-    ``main_lenin_vendor_uxlc``.
+    DATA ONLY since 2026-08-03: the seventeen ``.py`` files this tree formerly
+    held were dropped rather than repointed at MAM-basics, because nothing in
+    codex-index-leningrad imported them and their one entry point could not run
+    there anyway. Refreshed temporarily by ``main_lenin_vendor_uxlc`` from
+    MAM-basics' local UXLC data.
     """
     return uxlc_sparse_dir_of(lenin_data_root())
 

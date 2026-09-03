@@ -14,7 +14,7 @@
       <startli>start line (int or null)</startli>
       <stopco>stop column (int or null)</stopco>
       <stopli>stop line (int or null)</stopli>
-      <bkid>book ID, e.g. 'Levit' (see mb_cmn_bib_locales.py) (str or null)</bkid>
+      <bkid>book ID, e.g. 'Levit' (see my_tanakh_book_names.py) (str or null)</bkid>
       <startc>start chapter (int or null)</startc>
       <startv>start verse (int or null)</startv>
       <startp>start atom (int or null)</startp>

@@ -1,32 +1,12 @@
-"""Resolve the UXLC-utils DATA root, and the subtrees this repo's code reads and writes.
+"""Resolve UXLC data now held inside MAM-basics.
 
-THIS MODULE IS DELIBERATELY TWO-ROOTED, and that is the whole point of its
-existence.  The code is here in MAM-basics; the corpus it reads and writes stayed
-in the sibling UXLC-utils, along with the Pages site served out of it.  Every path
-composed off the wrong root resolves silently into the wrong tree, so the two are
-named apart:
-
-  * the CODE root is ``mb_cmn.paths.repo_root()`` -- what ``py/`` is under, what
-    ``repo_hygiene`` scans, what ``git`` and ``gh`` act on;
-  * the DATA root is ``uxlc_data_root()`` below -- UXLC-utils' ``in/``, ``out/``,
-    ``gh-pages/``, ``data/`` and gitignored ``.novc/``.
-
-The two were named apart *before* the move, while the code still ran in
-UXLC-utils and that repo's 214 tracked artifacts were an oracle that could prove
-a path change harmless (Phase 1 of
-``doc/PLAN-evacuate-python-from-UXLC-utils.md``).  The move itself then changed
-exactly one line, the body of ``uxlc_data_root()``, because no other module
-composes a data path off anything but this function.
-
-What this replaces is cwd-relative string literals -- ``"in/UXLC-39"``,
-``"gh-pages/clc"``, ``"out/UXLC-misc/all_changes.json"`` -- which resolved
-correctly only while the process ran from UXLC-utils' root.  Two test modules
-were already working around that, one of them by ``os.chdir``-ing to that root
-before calling the library.
-
-``mb_cmn.paths`` owns sibling-repo resolution and its ``REPO_<NAME>_DIR`` /
-``REPOS_ROOT`` override chain; this module delegates rather than keeping a second
-copy of it.
+The former UXLC-utils tree landed under the pure ``uxlc/`` prefix in Phase 5 of
+``doc/PLAN-evacuate-the-rest-of-three-repos.md``. Its paths therefore compose
+from this repository's root rather than from a sibling repository. Three
+existing MAM-basics inputs stay canonical: ``in/UXLC-39/``,
+``in/UXLC-misc/all_changes.json`` and ``in/lci_recs.json``. The dedicated
+accessors below name those exceptions, so a generator cannot recreate a second
+UXLC-utils-sourced copy by accident.
 """
 
 from __future__ import annotations
@@ -37,103 +17,94 @@ from mb_cmn import paths
 
 
 def uxlc_data_root() -> Path:
-    """Path to the UXLC-utils corpus this code reads and writes.
-
-    The one line that changed when the Python moved out -- see the module docstring.
-    """
-    return paths.require_sibling("UXLC-utils", paths.sibling_repo("UXLC-utils"))
+    """Path to the non-duplicate UXLC tree under MAM-basics' ``uxlc/`` prefix."""
+    return paths.repo_root() / "uxlc"
 
 
 def in_dir() -> Path:
-    """Committed inputs: downloads from tanach.us plus hand-curated files."""
+    """Committed UXLC inputs that did not already have a MAM-basics canonical copy."""
     return uxlc_data_root() / "in"
 
 
 def out_dir() -> Path:
-    """Generated-output tree, 27 tracked files."""
+    """Generated-output tree under ``uxlc/out/``."""
     return uxlc_data_root() / "out"
 
 
 def gh_pages_dir() -> Path:
-    """Published-HTML tree, 184 tracked files, served at bdenckla.github.io/UXLC-utils."""
-    return uxlc_data_root() / "gh-pages"
+    """Published UXLC tree under ``gh-pages/uxlc/``."""
+    return paths.gh_pages_dir() / "uxlc"
 
 
 def data_dir() -> Path:
-    """Generated data other repos consume (``lci_augrecs.json``, ``lci_recs.json``).
-
-    Generated, despite the name: ``main_write_page_break_info`` writes one file here
-    and copies the other in from ``in/UXLC-misc/``.  Both are tracked, so both are
-    part of the oracle.
-    """
+    """Generated UXLC data other repos consume, currently ``lci_augrecs.json``."""
     return uxlc_data_root() / "data"
 
 
 def novc_dir() -> Path:
-    """Gitignored scratch tree (``<uxlc_data_root>/.novc``).
-
-    Named for the ``.gitignore`` entry rather than for what it holds, because what it
-    holds is deliberately unclassified: whatever a run wants to write and nobody wants
-    to commit.
-    """
-    return uxlc_data_root() / ".novc"
+    """MAM-basics' gitignored scratch tree for UXLC downloads and temporary files."""
+    return paths.novc_dir()
 
 
 def uxlc_39_dir() -> Path:
-    """The canonical UXLC core XML, one file per book39 (``in/UXLC-39``)."""
-    return in_dir() / "UXLC-39"
+    """The canonical UXLC core XML, retained at MAM-basics' ``in/UXLC-39/``."""
+    return paths.in_dir() / "UXLC-39"
 
 
 def uxlc_rest_dir() -> Path:
-    """The non-book39 members of the tanach.us Tanach.xml zip (``in/UXLC-rest``)."""
+    """The non-book39 Tanach.xml members under ``uxlc/in/UXLC-rest/``."""
     return in_dir() / "UXLC-rest"
 
 
 def uxlc_misc_dir() -> Path:
-    """The UXLC change logs and the hand-curated CSV/JSON beside them (``in/UXLC-misc``)."""
+    """UXLC change logs and hand-curated files under ``uxlc/in/UXLC-misc/``."""
     return in_dir() / "UXLC-misc"
 
 
 def uxlc_misc_fixed_dir() -> Path:
-    """Hand-corrected overrides that shadow ``in/UXLC-misc`` (see ``uxlc_misc_path.get``)."""
+    """Hand-corrected overrides under ``uxlc/in/UXLC-misc-fixed/``."""
     return in_dir() / "UXLC-misc-fixed"
 
 
 def uxlc_notes_dir() -> Path:
-    """The downloaded tanach.us note pages (``in/UXLC-notes``), one HTML per (atom, code)."""
+    """The downloaded tanach.us note pages under ``uxlc/in/UXLC-notes/``."""
     return in_dir() / "UXLC-notes"
 
 
 def out_uxlc_misc_dir() -> Path:
-    """Change-log derivatives (``out/UXLC-misc``): all_changes.json and its neighbours."""
+    """Change-log derivatives under ``uxlc/out/UXLC-misc/``.
+
+    ``all_changes.json`` is deliberately absent: the canonical copy remains at
+    ``in/UXLC-misc/all_changes.json`` and has its own accessor below.
+    """
     return out_dir() / "UXLC-misc"
 
 
+def canonical_all_changes_path() -> Path:
+    """The one canonical UXLC change-list copy: ``in/UXLC-misc/all_changes.json``."""
+    return paths.in_dir() / "UXLC-misc" / "all_changes.json"
+
+
+def lci_recs_path() -> Path:
+    """The one canonical Leningrad-index copy: ``in/lci_recs.json``."""
+    return paths.in_dir() / "lci_recs.json"
+
+
 def clc_pages_dir() -> Path:
-    """The CLC edition's published pages (``gh-pages/clc``)."""
+    """The CLC edition's published pages under ``gh-pages/uxlc/clc/``."""
     return gh_pages_dir() / "clc"
 
 
 def fois_pages_dir() -> Path:
-    """The features-of-interest catalog's published pages (``gh-pages/fois``)."""
+    """The features-of-interest catalog under ``gh-pages/uxlc/fois/``."""
     return gh_pages_dir() / "fois"
 
 
 def amb_early_mtg_pages_dir() -> Path:
-    """The ambiguous-early-meteg survey's published pages (``gh-pages/amb-early-mtg``)."""
+    """The ambiguous-early-meteg survey under ``gh-pages/uxlc/amb-early-mtg/``."""
     return gh_pages_dir() / "amb-early-mtg"
 
 
 def tanach_us_http_cache_dir() -> Path:
-    """Where the polite downloader caches tanach.us responses (``.novc/http-cache/tanach-us``)."""
+    """Where the polite downloader caches tanach.us responses."""
     return novc_dir() / "http-cache" / "tanach-us"
-
-
-def sibling(name: str) -> Path:
-    """``mb_cmn.paths.sibling_repo``, re-exported so call sites import one paths module."""
-    return paths.sibling_repo(name)
-
-
-def require_sibling(name: str, path: Path) -> Path:
-    """``mb_cmn.paths.require_sibling`` -- see it for why a missing sibling is not a skip."""
-    return paths.require_sibling(name, path)

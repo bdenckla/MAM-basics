@@ -312,12 +312,3 @@ def require_al_hatorah_phonetic_dir() -> Path:
     ``REPO_MAM_PRIVATE_DIR`` -- the override that actually moves this tree.
     """
     return require_sibling("MAM-private", al_hatorah_phonetic_dir())
-
-
-def uxlc_utils_dir() -> Path:
-    return sibling_repo("UXLC-utils")
-
-
-def require_uxlc_utils_dir() -> Path:
-    """``uxlc_utils_dir``, checked -- see ``require_sibling`` for why this is not a skip."""
-    return require_sibling("UXLC-utils", uxlc_utils_dir())

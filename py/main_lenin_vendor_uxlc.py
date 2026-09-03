@@ -1,36 +1,17 @@
-"""Refresh codex-index-leningrad's UXLC-utils-sparse from the UXLC-utils sibling repo.
+"""Refresh codex-index-leningrad's temporary UXLC sparse vendor from MAM-basics.
 
-Copies the designated sparse subset from UXLC-utils into the sibling
-codex-index-leningrad's ``UXLC-utils-sparse/``, removes the legacy
-``UXLC-utils-sparse/in/UXLC`` directory if it is still there, and writes
-``UXLC-utils-sparse/provenance.md`` with the source repo's git metadata -- but only
-when a vendored byte actually moved or a legacy path was actually removed, or
-``--force-provenance`` is given.  provenance.md stamps the source repo's HEAD and
-today's date, so writing it unconditionally left the file dirty after any UXLC-utils
-commit and after any re-run on a later day, with nothing else changed.
+The Phase 5 UXLC-utils evacuation keeps ``UXLC-utils-sparse/`` temporarily, by
+Ben's 2026-09-03 authorization, while the codex-index-leningrad lane remains
+outside this phase. The source is MAM-basics' own canonical ``in/UXLC-39/``,
+``in/lci_recs.json``, and ``uxlc/data/lci_augrecs.json`` files. The script removes the legacy
+``UXLC-utils-sparse/in/UXLC`` directory if it remains and writes
+``UXLC-utils-sparse/provenance.md`` only when a vendored byte or legacy path
+changes, or ``--force-provenance`` is given.
 
-THAT SPARSE SUBSET IS DATA ONLY, and has been since 2026-08-03.  It held seventeen
-of UXLC-utils' own ``.py`` as well -- ``main_uxlc_estimate_atom_loc.py``, five
-``uxlc_lci/`` modules and eleven ``uxlc_misc/`` -- and Ben's decision in Phase 5 of
-``doc/PLAN-evacuate-python-from-UXLC-utils.md`` was to DROP them rather than repoint
-them at MAM-basics, nothing in codex-index-leningrad having imported one and their
-entry point having been unable to run there in any case.  Do not vendor the
-seventeen back.  What remains is 39 ``in/UXLC-39/*.xml`` and two ``data/lci_*.json``,
-one of which -- ``lci_augrecs.json`` -- is the input to
+The sparse subset is data only: 39 XML files and two ``data/lci_*.json`` files.
+It must not regain the seventeen Python files retired when the codex-index trio's
+Python moved to MAM-basics. ``lci_augrecs.json`` remains the input to
 ``main_lenin_wikisource_page.py``.
-
-WHY THE NAME CHANGED.  This was codex-index-leningrad's root
-``main_update_vendored_files.py`` until Phase 3 of
-``doc/PLAN-evacuate-python-from-codex-index-trio.md``, 2026-08-22.  That name was
-held by three repos at once and says nothing about which vendored files are meant;
-``main_wlc_vendor_uxlc.py`` beside this file does the same job for this repo's own
-vendored UXLC subset, and this file is named after it.
-
-WHY IT DOES NOT SHARE THAT FILE'S BODY, tempting as the symmetry is.  The two sync
-different shapes: ``main_wlc_vendor_uxlc`` copies two flat directories filtered to
-one suffix each, and this one copies a whole subtree recursively and suffix-blind,
-which is what ``_content_digest`` below has to mirror.  Either walk applied to the
-other's destination sees no files at all and so reports "unchanged" forever.
 """
 
 import argparse
@@ -44,6 +25,7 @@ from mb_cmn import vendoring_sync
 from wlc_cmn.utf8_io import force_utf8_io
 
 import lenin_paths
+import uxlc_paths
 
 _PROVENANCE_BASENAME = "provenance.md"
 """codex-index-leningrad's breadcrumb has no leading underscore.
@@ -66,7 +48,7 @@ def almost_main(argv: list[str] | None = None) -> None:
     """The body, callable in-process."""
     args = _parse_args(argv)
 
-    source_repo = paths.require_uxlc_utils_dir()
+    source_repo = paths.repo_root()
     sparse_root = lenin_paths.uxlc_sparse_dir()
     if not sparse_root.is_dir():
         raise FileNotFoundError(f"Sparse vendored subtree not found at {sparse_root}")
@@ -74,7 +56,7 @@ def almost_main(argv: list[str] | None = None) -> None:
     commit, tag = vendoring_sync.get_git_info(source_repo)
     date_str = datetime.date.today().isoformat()
 
-    synced_paths, content_changed = _sync(source_repo, sparse_root)
+    synced_paths, content_changed = _sync(sparse_root)
     removed_paths = _remove_legacy_paths(sparse_root)
     # A legacy removal is recorded in provenance.md's own "Legacy paths removed:"
     # section, so it is as much a reason to rewrite the file as a copied byte is.
@@ -82,7 +64,7 @@ def almost_main(argv: list[str] | None = None) -> None:
 
     wrote = _maybe_write_provenance(
         sparse_root,
-        source_rel="UXLC-utils",
+        source_rel="MAM-basics (in/UXLC-39, in/lci_recs.json and uxlc/data)",
         copied_files=synced_paths,
         commit=commit,
         tag=tag,
@@ -96,9 +78,9 @@ def almost_main(argv: list[str] | None = None) -> None:
     _report(sparse_root, synced_paths, changed, wrote)
     if removed_paths:
         print(f"Removed {len(removed_paths)} legacy paths")
-    print(f"UXLC-utils commit: {commit}")
+    print(f"MAM-basics commit: {commit}")
     if tag:
-        print(f"UXLC-utils tag:    {tag}")
+        print(f"MAM-basics tag:    {tag}")
 
 
 def _parse_args(argv: list[str] | None = None) -> argparse.Namespace:
@@ -115,17 +97,29 @@ def _parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     return parser.parse_args(argv)
 
 
-def _sync(source_repo: Path, sparse_root: Path) -> tuple[list[str], bool]:
-    """Copy existing local vendored files, returning (copied_files, content_changed)."""
+def _sync(sparse_root: Path) -> tuple[list[str], bool]:
+    """Copy the two retained canonical inputs into the old sparse-tree shape."""
     before = _content_digest(sparse_root)
     copied = vendoring_sync.copy_by_intersection(
-        source_repo,
-        sparse_root,
+        uxlc_paths.uxlc_39_dir(),
+        sparse_root / "in" / "UXLC-39",
         include_suffixes=None,
         strict=True,
         recursive=True,
-        exclude_rel_paths=[rel_path.as_posix() for rel_path in _LOCAL_ONLY_PATHS],
     )
+    copied = [f"in/UXLC-39/{path}" for path in copied]
+    data_sources = {
+        "lci_augrecs.json": uxlc_paths.data_dir() / "lci_augrecs.json",
+        "lci_recs.json": uxlc_paths.lci_recs_path(),
+    }
+    for basename, source_path in data_sources.items():
+        destination = sparse_root / "data" / basename
+        if not source_path.is_file():
+            raise FileNotFoundError(f"Canonical source data is absent: {source_path}")
+        if not destination.is_file():
+            raise FileNotFoundError(f"Sparse destination is absent: {destination}")
+        shutil.copy2(source_path, destination)
+        copied.append(f"data/{basename}")
     changed = _content_digest(sparse_root) != before
     return copied, changed
 
@@ -133,12 +127,10 @@ def _sync(source_repo: Path, sparse_root: Path) -> tuple[list[str], bool]:
 def _content_digest(dest_dir: Path) -> dict[str, str]:
     """Map each vendored path under dest_dir to a hash of its bytes.
 
-    Recursive and suffix-blind, because the sync it has to mirror is: the
-    copy_by_intersection call above runs with recursive=True and
-    include_suffixes=None over data/ and in/UXLC-39/. The sibling instance of this
-    idiom, main_wlc_vendor_uxlc.py, walks one flat directory and filters to one
-    suffix; that walk here would see no files at all and so report "unchanged"
-    forever. provenance.md is skipped because it is the file being decided about.
+    The source has two different canonical locations: ``in/UXLC-39/`` and the
+    two data files. The digest covers the resulting single sparse tree, while
+    excluding provenance.md because that file is what this command decides
+    whether to rewrite.
     """
     excluded = {rel_path.as_posix() for rel_path in _LOCAL_ONLY_PATHS}
     digest: dict[str, str] = {}

@@ -1,6 +1,5 @@
 """Exports main"""
 
-import shutil
 import sys
 import uxlc_misc.my_uxlc as my_uxlc
 import uxlc_misc.my_uxlc_page_break_info as page_break_info
@@ -16,10 +15,6 @@ def _write_page_break_info(pbi):
     json_output_path1 = uxlc_paths.out_uxlc_misc_dir() / "lci_augrecs.json"
     my_open.json_dump_to_file_path(lciars_f, json_output_path1)
     my_open.json_dump_to_file_path(lciars_f, uxlc_paths.data_dir() / "lci_augrecs.json")
-    shutil.copy(
-        uxlc_paths.uxlc_misc_dir() / "lci_recs.json",
-        uxlc_paths.data_dir() / "lci_recs.json",
-    )
     #
     pg_lens = page_break_info.get_page_lengths(pbi)
     pg_lens_f = lci_augrec.flatten_page_lengths(pg_lens)

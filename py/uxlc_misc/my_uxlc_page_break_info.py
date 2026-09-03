@@ -59,7 +59,7 @@ def get_book_order(pbi):
 
 def read_lci_recs_dot_json():
     """Read in lci_recs.json, raw"""
-    lci_recs_path = uxlc_paths.data_dir() / "lci_recs.json"
+    lci_recs_path = uxlc_paths.lci_recs_path()
     with open(lci_recs_path, encoding="utf-8") as lci_recs_json_in_fp:
         return json.load(lci_recs_json_in_fp)
 

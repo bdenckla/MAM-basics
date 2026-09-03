@@ -20,7 +20,7 @@ from mb_cmn import paths
 from py_render.rt_html import render_table_data_findings_html
 
 DEFAULT_MAM_PARSED_PATH = paths.sibling_repo("MAM-parsed")
-DEFAULT_UXLC_UTILS_PATH = paths.uxlc_utils_dir()
+DEFAULT_UXLC_UTILS_PATH = paths.repo_root()
 DEFAULT_TABLE_JSON_PATH = hkq_paths.table_data_json_path()
 DEFAULT_FINDINGS_HTML_PATH = hkq_paths.findings_html_path()
 
@@ -86,7 +86,7 @@ def main() -> None:
         "--uxlc-utils-path",
         type=Path,
         default=DEFAULT_UXLC_UTILS_PATH,
-        help="Sibling UXLC-utils repository used for verification.",
+        help="MAM-basics root holding the canonical UXLC XML used for verification.",
     )
     args = parser.parse_args()
 

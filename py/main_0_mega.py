@@ -50,7 +50,6 @@ import main_uxlc_grammar_test
 import main_wlc_a_notes
 import main_wlc_diffs_420422
 import main_wlc_json_and_unicode
-import main_wlc_vendor_uxlc
 from subcommands import diff_mpp
 from subcommands import diff_wsgo
 from subcommands import parse_go
@@ -267,11 +266,6 @@ _STEPS = [
     # while the two megas were separate, nothing ordered them, and an accgram run could
     # silently consume a stale MAM-simple.
     StepRecord(
-        "wlc-vendor-uxlc",
-        main_wlc_vendor_uxlc.almost_main,
-        "refreshes this repo's in/UXLC-39 and in/UXLC-misc from UXLC-utils",
-    ),
-    StepRecord(
         "wlc-json-and-unicode",
         main_wlc_json_and_unicode.almost_main,
         "must come before accgram, which reads out/wlc422-kq-u",
@@ -331,7 +325,7 @@ _STEPS = [
     StepRecord(
         "accgram-survey-chanted-word-accents",
         _run_accgram_survey_chanted_word_accents,
-        "must come after mam-simple, wlc-vendor-uxlc and wlc-json-and-unicode -- and BEFORE"
+        "must come after mam-simple and wlc-json-and-unicode -- and BEFORE"
         " accgram-generate-html, which is passed --trust-survey on the strength of it",
     ),
     StepRecord(
@@ -343,8 +337,8 @@ _STEPS = [
     StepRecord(
         "find-uxlc-accent-changes",
         main_find_uxlc_accent_changes.main,
-        "must come after wlc-vendor-uxlc, whose in/UXLC-misc/all_changes.json it filters;"
-        " writes the tracked in/accgram/uxlc_accent_changes.json",
+        "filters the committed canonical in/UXLC-misc/all_changes.json and writes"
+        " the tracked in/accgram/uxlc_accent_changes.json",
     ),
     StepRecord(
         "uxlc-grammar-test",

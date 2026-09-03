@@ -6,24 +6,23 @@ BELOW (U+0323) sequence. Comments must not use either Unicode form at all -- pla
 ASCII "x"/"X" is used instead, since comments don't flow to output.
 
 SEVEN SCOPES ARE SCANNED, each with its own exclusions and its own floor. This repo
-holds the code, the wlc corpus it generates, and book-of-job's remaining tracked
-procedures under ``book-of-job/``; UXLC-utils, holman-ketiv-qere,
-codex-index-leningrad, codex-index-aleppo and codex-index-cam1753 still hold the
-other corpora their halves generate into. Each scope retains the hand-authored
-transliterations that would otherwise go unscanned once Python moved out.
+holds the code, the wlc corpus it generates, book-of-job's remaining tracked
+procedures under ``book-of-job/``, and the relocated UXLC data under ``uxlc/``.
+Holman-ketiv-qere, codex-index-leningrad, codex-index-aleppo and
+codex-index-cam1753 still hold the other corpora their halves generate into. Each
+scope retains the hand-authored transliterations that would otherwise go unscanned
+once Python moved out.
 ``_scopes()`` below is the whole of the per-repo difference. A wlc-utils scope was
 one of them until 2026-08-17, when Phase 10 of
 ``doc/PLAN-evacuate-the-rest-of-wlc-utils.md`` emptied that repo down to 155 generated
 redirect stubs: nothing hand-authored is left there to scan, and the 6 files that do
 remain sit under the floor of 10 that the scope carried.
 
-The UXLC-utils scope arrived with that repo's Python (Phase 3 of
-``doc/PLAN-evacuate-python-from-UXLC-utils.md``) and replaces its
-``py/repo_hygiene/nfc_h_dot_below_test.py``, which was a near-copy of this file
-scanning its own repo root. Copied across unchanged it would have found that root by
-``git rev-parse`` from its own location and so scanned MAM-basics -- a second, weaker
-pass over this tree (naive ``line.find("#")`` comment detection, and none of the
-exclusions below) rather than the UXLC-utils pass it was written to be.
+The UXLC scope arrived with UXLC-utils' Python (Phase 3 of
+``doc/PLAN-evacuate-python-from-UXLC-utils.md``), replacing that repo's
+``py/repo_hygiene/nfc_h_dot_below_test.py``. Phase 5 now points the scope at
+MAM-basics' ``uxlc/`` subtree. The main MAM-basics scope excludes that subtree,
+so the separate exclusions below continue to scan only its hand-authored files.
 
 The holman-ketiv-qere scope arrived the same way and for the same reason (Phase 3 of
 ``doc/PLAN-evacuate-python-from-holman-ketiv-qere.md``), replacing that repo's own
@@ -185,14 +184,15 @@ _EXCLUDE_MAM_GO_FILES = {
 #
 # The six entries after in/chabad-ctr/ arrived with wlc-utils' corpus on
 # 2026-08-12 (Phase 3 of doc/PLAN-evacuate-the-rest-of-wlc-utils.md). The five
-# in/ ones are external Tanach/UXLC/WLC snapshots that main_wlc_vendor_uxlc.py
-# copies verbatim from tanach.us: composing a decomposed cluster in one of them
-# would break byte-identity with upstream and be undone on the next vendor run.
+# in/ ones are external Tanach/UXLC/WLC snapshots retained byte-identically:
+# composing a decomposed cluster in one of them would break byte-identity with
+# their sources.
 # in/Tanach-26.0--UXLC-1.0--2020-04-01/ also carries Images/Background, a GIF
 # with no file extension, so _is_binary's extension test does not catch it and
 # read_text raises UnicodeDecodeError on it; this prefix is what keeps it out.
 # gh-pages/ goes in on the principle out/ is already on: generated, not
-# hand-authored.
+# hand-authored. uxlc/ has its own scope below, rather than being scanned twice
+# through the MAM-basics root.
 _EXCLUDE_DIR_PREFIXES = (
     "out/",
     "in/mam-from-Sefaria-2021-11-23/",
@@ -206,12 +206,12 @@ _EXCLUDE_DIR_PREFIXES = (
     "in/wlc420/",
     "in/wlc422/",
     "gh-pages/",
+    "uxlc/",
 )
 
-# UXLC-utils' generated trees -- out/, gh-pages/ and data/ (generated despite the name:
-# main_write_page_break_info writes one of its two files and copies the other in from
-# in/UXLC-misc/) -- plus in/, which is external tanach.us / UXLC download snapshots and
-# hand-curated CSV/JSON kept verbatim for fidelity to source.
+# The relocated UXLC subtree's generated trees -- out/, gh-pages/ and data/ --
+# plus in/, which is external tanach.us / UXLC snapshots and hand-curated files
+# kept verbatim for fidelity to source.
 _UXLC_EXCLUDE_DIR_PREFIXES = ("out/", "gh-pages/", "data/", "in/")
 
 # What holman-ketiv-qere's own copy of this test excluded, carried over verbatim:
@@ -226,8 +226,8 @@ _HKQ_EXCLUDE_DIR_PREFIXES = ("out/", "gh-pages/")
 _BOJ_EXCLUDE_DIR_PREFIXES = ("out/",)
 
 # What codex-index-leningrad's own copy of this test excluded, carried over
-# verbatim: the one tree it vendors from UXLC-utils, whose files are that repo's
-# business.  Its lenin-wiki/ is deliberately NOT excluded, generated though its
+# verbatim: the temporary sparse vendor of MAM-basics' UXLC data, whose files are
+# not codex-index-leningrad's own. Its lenin-wiki/ is deliberately NOT excluded, generated though its
 # three artifacts are -- that repo's copy scanned them and they cost nothing to
 # read, and excluding the directory would leave the scope with no Hebrew in it at
 # all.
@@ -310,21 +310,14 @@ def _scopes() -> tuple[_Scope, ...]:
             floor=100,
         ),
         _Scope(
-            label="UXLC-utils",
+            label="UXLC data",
             root=uxlc_paths.uxlc_data_root(),
             exclude_dir_prefixes=_UXLC_EXCLUDE_DIR_PREFIXES,
             exclude_files=frozenset(),
-            # What survives those exclusions is doc/, CLAUDE.md, README.md and dotfiles,
-            # and it shrinks again once that repo's Python is deleted -- so the floor is
-            # low on purpose: it is here to catch an exclusion filter that swallowed
-            # EVERYTHING, not to assert a tree size. The retired UXLC-utils-side copy
-            # asserted a floor of 80 over its whole tree, which counted the 102 .py
-            # this scope will not have. A wlc-utils scope carried the same floor for
-            # the same reason until Phase 10 deleted it (see the module docstring) --
-            # and the floor is also what would have caught that scope outliving its
-            # tree: the emptied repo leaves 6 files in scope, and 6 <= 10 errors
-            # setUpClass rather than passing over a hollow scan.
-            floor=10,
+            # The two files under doc/ remain after the external and generated
+            # subtrees are excluded. The floor catches an exclusion filter that
+            # swallows both hand-authored UXLC files.
+            floor=1,
         ),
         _Scope(
             label="holman-ketiv-qere",
