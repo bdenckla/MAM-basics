@@ -937,12 +937,17 @@ Two things about that repair are worth recording:
    So the index's two entries read "Holman UXLC suggestions" and "Holman MAM
    suggestions" under its heading "Daniel Holman's observations on the Hebrew
    Bible text", and both descriptive notes are unchanged.
-2. **No lint reaches this file.** Phase 6's reverse check stops at the deploy
-   root by design, and the Holman subtree index is one of the subtree indexes
-   that check deliberately excludes, so nothing caught either stale title and
-   nothing will catch the next one. Extending the check to the subtree indexes
-   would need a decision about how such an index declares which pages it must
-   name, which is why it was not done here.
+2. **No lint reaches that file, and Ben SETTLED that rather than deferring it.**
+   His words, 2026-09-03, once it was raised: "I am at peace with no lint
+   reaching this file." So this is a closed question, not an outstanding one:
+   nothing checks that `gh-pages/holman/index.html` names the pages beneath it,
+   or that it names them by the titles those pages carry, and no such check is
+   to be proposed. The decision is recorded in
+   `py/tests/test_site_index_links.py`'s module docstring rather than only here,
+   because that is the file a widening would be proposed from and this plan is
+   spent once its phases are done. Phase 6's reverse check stops at the deploy
+   root on its own separate reasoning, which that decision leaves standing: a
+   subtree page has no authored entry to be named by.
 
 ### Phase 5 done 2026-09-03: the four boundary dispositions read as expected, and nothing was edited
 

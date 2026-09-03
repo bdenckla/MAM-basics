@@ -42,6 +42,22 @@ WHY THE REVERSE CHECK STOPS AT THE DEPLOY ROOT.  The pages under ``gh-pages/wlc/
 indexes rather than through an authored entry, so walking the whole tree would fail
 immediately and for the wrong reason.
 
+BEN IS AT PEACE WITH NO LINT REACHING ``gh-pages/holman/index.html``, so do not propose
+one.  His words, 2026-09-03: *"I am at peace with no lint reaching this file."*  That
+index is hand-authored rather than generated -- no module writes it, so no re-render
+touches it -- and nothing checks that it names the pages beneath it, or that it names
+them by the titles those pages carry.  The occasion for saying so was that both its
+entries had stopped matching: one went stale that day when the Holman findings page's
+title became "Holman MAM suggestions", and the other had never matched.  Both were
+repaired by hand once a person noticed.  So the gap is accepted with its cost measured
+rather than merely unexamined, and the decision is recorded HERE, in the file a widening
+would be proposed from, rather than only in the plan that occasioned it.
+
+That decision is about the Holman index in particular and leaves the paragraph above
+standing on its own reasoning: the reverse check stops at the deploy root because a
+subtree page has no authored entry to be named by, which would be true whatever anyone
+felt about linting a subtree index.
+
 WHY THE EXCLUSIONS ARE NAMED RATHER THAN INFERRED.  A deliberate omission must not be
 indistinguishable from an accident, which is what any rule of the form "skip the pages
 nothing names" would make it.  So the excluded pages are written out one at a time with
