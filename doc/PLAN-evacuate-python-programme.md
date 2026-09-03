@@ -2,6 +2,21 @@
 
 State: executed 2026-08-22; a third stage was decided 2026-09-02 and is not started
 
+**DO NOT DELETE THIS FILE WHEN THE SECOND STAGE CLOSES**, though
+[`PLAN-evacuate-the-rest-of-three-repos.md`](PLAN-evacuate-the-rest-of-three-repos.md)'s
+paragraph "Two executed plans are kept in `doc/` FOR THIS ONE, and go when it closes" says to.
+That instruction was written 2026-08-22 and was right on its day. On 2026-09-02 the third stage
+was recorded here, in the section "Third stage — the codex-index trio and
+diffable-pointed-hebrew, total evacuation" — 264 lines, decided, not started — and **this file
+is its only copy**: the plan file of its own that its Status row promises,
+`doc/PLAN-evacuate-the-codex-index-trio-and-diffable-pointed-hebrew.md`, is written
+when the stage begins and does not exist yet. **This file goes only once the third stage has left
+it**, into that plan file or by being abandoned on Ben's word; read that section before deleting
+this one, to confirm it holds no live decision. Amended into the other plan the same day,
+2026-09-03, so the two agree. This is about this file alone —
+[`PLAN-evacuate-the-rest-of-wlc-utils.md`](PLAN-evacuate-the-rest-of-wlc-utils.md) still goes
+with the second stage as that paragraph says.
+
 Written 2026-08-02, immediately after `doc/PLAN-evacuate-python-from-wlc-utils.md` finished. That
 plan is the model and the precedent; this file is the umbrella over the public repos that still
 hold Python — **eight hold it, six are in scope** — and it owns the three things no single repo's

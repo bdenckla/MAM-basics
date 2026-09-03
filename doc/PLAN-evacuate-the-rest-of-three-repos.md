@@ -47,6 +47,21 @@ decisions it executes" — so
 deleting them would have emptied the parts of this plan that say "settled there, see that
 section". Whoever closes or abandons this plan deletes those two with it.
 
+**Amended 2026-09-03: that last sentence HAS BEEN NARROWED to one of the two files, because
+following it as written would now destroy unstarted work.** Eleven days after it was written,
+on 2026-09-02, the third stage was recorded inside
+[`PLAN-evacuate-python-programme.md`](PLAN-evacuate-python-programme.md) as its section "Third
+stage — the codex-index trio and diffable-pointed-hebrew, total evacuation": 264 lines, decided,
+not started, and **that file is its only copy**, the plan file of its own that its Status row
+promises — `doc/PLAN-evacuate-the-codex-index-trio-and-diffable-pointed-hebrew.md` — being
+written when the stage begins and not existing yet. So closing this plan deletes
+[`PLAN-evacuate-the-rest-of-wlc-utils.md`](PLAN-evacuate-the-rest-of-wlc-utils.md), as the
+sentence says, and **leaves `PLAN-evacuate-python-programme.md` standing**. That file goes only
+once the third stage has left it — written out into the plan file named above, which then closes
+on its own account, or abandoned on Ben's word — and whoever deletes it reads that section first
+to confirm it holds no live decision. The same amendment is recorded at the head of the
+programme file itself, so neither file has to be read to learn it from the other.
+
 **Amended 2026-08-24 while paused, in one commit to this file alone, and no phase's state moved.**
 A survey asked whether MAM-basics holds stray `CLAUDE.md` or `.claude` files from the evacuations
 already run, and whether this plan could create any. It holds none — one `CLAUDE.md` at the root
