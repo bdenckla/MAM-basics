@@ -11,7 +11,7 @@ fix production code, merge either review branch, create a remediation forest, or
 retire the review forest.
 
 The governing forest is
-`C:\Users\BenDe\Documents\Codex\ReviewForests\mam-mega-review-2026-09-01`.
+`C:/Users/BenDe/Documents/Codex/ReviewForests/mam-mega-review-2026-09-01`.
 The `worktree-forest` skill governed forest expansion and baseline preservation.
 The `hebrew-prose` skill governed every finding and report statement involving
 Hebrew accentuation.
@@ -98,7 +98,7 @@ change global Git configuration. It verified:
    Phase 13 report writes;
 3. 42 unique live `StepRecord` IDs with `vendoring-audit` last;
 4. the primary MAM-basics interpreter at
-   `C:\Users\BenDe\GitRepos\MAM-basics\.venv\Scripts\python.exe` and no `.venv`
+   `C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe` and no `.venv`
    inside any worktree; and
 5. the Phase 10 census baseline: 87 tracked expected files with aggregate
    SHA-256 `e267f49ad6a1f944ecf1ce884f729179d58f88daea9b7899b5d9f29ef96f2435`.
@@ -141,7 +141,7 @@ The recorded cross-step interactions are:
 Both runs invoked the real entry point:
 
 ```powershell
-C:\Users\BenDe\GitRepos\MAM-basics\.venv\Scripts\python.exe py\main_0_mega.py
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_0_mega.py
 ```
 
 The final evidence runs returned 0 in 243.26 seconds and 396.33 seconds. Each run
@@ -194,7 +194,7 @@ The final suite invoked the real top-level test entry point with the same 18
 forest overrides:
 
 ```powershell
-C:\Users\BenDe\GitRepos\MAM-basics\.venv\Scripts\python.exe py\main_test.py
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_test.py
 ```
 
 Result: **971 passed, 5 skipped in 144.39 seconds**. The runner's full pre/post

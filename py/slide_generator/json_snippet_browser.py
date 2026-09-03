@@ -481,7 +481,7 @@ def _build_multistep_html(
     JS copies it into <pre id="zoom"> then sets body[data-step].
 
     To regenerate after Psalm 5v9 mpplus.json changes, re-run:
-        .venv\\Scripts\\python.exe py\\main_slide_generator.py render-slides --deck mam-is-a-dataset psalm-5v9-mpplus-steps
+        .venv/Scripts/python.exe py/main_slide_generator.py render-slides --deck mam-is-a-dataset psalm-5v9-mpplus-steps
     """
     W, H = slide_render.W, slide_render.H
     font_uri = _TAAMEY_FONT.as_uri()

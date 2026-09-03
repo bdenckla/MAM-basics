@@ -4,9 +4,9 @@ State: pointer
 
 The plan for the near-Aleppo edition is **not in this repo**. It lives at
 
-    C:\Users\BenDe\GitRepos\MAM-private\doc\PLAN-near-aleppo.md
+    C:/Users/BenDe/GitRepos/MAM-private/doc/PLAN-near-aleppo.md
 
-beside its privacy criteria, `C:\Users\BenDe\GitRepos\MAM-private\doc\near-aleppo-privacy.md`.
+beside its privacy criteria, `C:/Users/BenDe/GitRepos/MAM-private/doc/near-aleppo-privacy.md`.
 
 Moved there 2026-08-25, at Ben's instruction, because MAM-basics is a public repo and the plan
 draws throughout on private work in MAM-private. Moving the plan's privacy criteria alone,

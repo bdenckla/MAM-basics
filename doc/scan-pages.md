@@ -34,8 +34,8 @@ for a fresh session that has no other context.
 
 ## Decisions (proposed 2026-08-06 by the planning session unless attributed to Ben; Ben can veto the proposals)
 
-- **Home repo: MAM-basics** (`C:\Users\BenDe\GitRepos\MAM-basics`, venv at
-  `.venv\Scripts\python.exe`). All of Ben's Python lives here now and new issues are filed
+- **Home repo: MAM-basics** (`C:/Users/BenDe/GitRepos/MAM-basics`, venv at
+  `.venv/Scripts/python.exe`). All of Ben's Python lives here now and new issues are filed
   here. The scans themselves stay where they are and no image enters the repo; the repo
   tracks only index *metadata* (filenames, page-boundary records) — uncopyrightable
   facts, fine in a public repo.
@@ -69,7 +69,7 @@ for a fresh session that has no other context.
   record model replaced both.)
 - **Ben's decision, 2026-08-07: no page error is ever acceptable, so the data model is
   the one that makes a page error inexpressible — codex-index-leningrad's.** In
-  `C:\Users\BenDe\GitRepos\codex-index-leningrad\UXLC-utils-sparse\data\lci_recs.json`,
+  `C:/Users/BenDe/GitRepos/codex-index-leningrad/UXLC-utils-sparse/data/lci_recs.json`,
   every page has a record of where it starts and where it stops, down to the atom
   within the verse (`bkid`, `startc`, `startv`, `startp`, `stopc`, `stopv`, `stopp` —
   bkids in the `mb_cmn/bib_locales.py` convention, e.g. `Levit`), and consecutive pages
@@ -115,7 +115,7 @@ for a fresh session that has no other context.
   keeps every record independently re-verifiable, against the image and against the
   text, forever after.
 - **The bring-up is one generated HTML page, opened by the program.** Written under
-  `.novc\scan-pages\` (gitignored), one section per edition: the page image(s) the
+  `.novc/scan-pages/` (gitignored), one section per edition: the page image(s) the
   records give, inline via `file:///` URLs into the scans folder (`loading="lazy"` —
   these JPGs run 1–18 MB), prev/next links, and the record behind the answer, phrases
   included. Default behavior when *Ben*
@@ -139,7 +139,7 @@ for a fresh session that has no other context.
 
 ## Survey findings (measured 2026-08-06 against the live OneDrive folder)
 
-Scans root: `C:\Users\BenDe\OneDrive\Documents\ScansOfBooks`. The file counts above and
+Scans root: `C:/Users/BenDe/OneDrive/Documents/ScansOfBooks`. The file counts above and
 every claim below were read from the folder on 2026-08-06 with ad hoc PowerShell not worth
 preserving; Phase 0's `survey` subcommand is the re-derivation command for all of them, and
 a mismatch when it runs is a finding, not an error in this doc. Caveat: the folder is under
@@ -281,7 +281,7 @@ building this index.
 
 ## Design
 
-Tracked index, one JSON per edition at `in\scan-pages\<edition-id>.json`:
+Tracked index, one JSON per edition at `in/scan-pages/<edition-id>.json`:
 
 ```json
 {
@@ -381,14 +381,14 @@ keeps refusing rather than guessing, so partial progress is always safe to use.
 
 ## Preconditions for the executing session
 
-- Repos: `C:\Users\BenDe\GitRepos\MAM-basics` (venv at `.venv\Scripts\python.exe`);
-  sibling `C:\Users\BenDe\GitRepos\MAM-parsed` present (verse counts). Scans at
-  `C:\Users\BenDe\OneDrive\Documents\ScansOfBooks` with the five folders named above.
+- Repos: `C:/Users/BenDe/GitRepos/MAM-basics` (venv at `.venv/Scripts/python.exe`);
+  sibling `C:/Users/BenDe/GitRepos/MAM-parsed` present (verse counts). Scans at
+  `C:/Users/BenDe/OneDrive/Documents/ScansOfBooks` with the five folders named above.
 - Worktree-isolable (Ben asked 2026-08-07). Every tracked write is in MAM-basics, so a
   worktree isolates the undertaking fully; the spill is read-only. The scans path is
   absolute and checkout-independent. The MAM-parsed sibling must be named explicitly
-  from a worktree — `REPOS_ROOT=C:\Users\BenDe\GitRepos` (or `REPO_MAM_PARSED_DIR`) —
-  because the default `repo_root().parent` lands in `.claude\worktrees\`;
+  from a worktree — `REPOS_ROOT=C:/Users/BenDe/GitRepos` (or `REPO_MAM_PARSED_DIR`) —
+  because the default `repo_root().parent` lands in `.claude/worktrees/`;
   `mb_cmn/paths.py` documents the chain, and its `require_sibling` fails loudly naming
   both overrides when the sibling is absent. All new sibling-path construction goes
   through `mb_cmn.paths.sibling_repo` + `require_sibling`, never a `../MAM-parsed`
@@ -402,7 +402,7 @@ keeps refusing rather than guessing, so partial progress is always safe to use.
   more because `test_entry_point_subcommands.py` parametrizes over the entry points and
   there is now one more.
 - **A worktree now runs the suite green, as of 2026-08-07 — same 919 passed, 5 skipped,
-  with `REPOS_ROOT=C:\Users\BenDe\GitRepos` set.** Until that day it could not, and this
+  with `REPOS_ROOT=C:/Users/BenDe/GitRepos` set.** Until that day it could not, and this
   bullet said so and told a future session to expect the failures. Two separate defects
   caused them, neither anything to do with scan-pages, and both were measured before Phase 0
   wrote a line:
@@ -438,7 +438,7 @@ keeps refusing rather than guessing, so partial progress is always safe to use.
 `py/tests/test_scan_pages_index.py`. Re-derive everything below with:
 
 ```
-C:\Users\BenDe\GitRepos\MAM-basics\.venv\Scripts\python.exe py/main_scan_pages.py survey
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_scan_pages.py survey
 ```
 
 All **5,720** files classify, and the per-edition file counts match the ones this doc
@@ -462,7 +462,7 @@ which is Torah, which a haftarah and which one of the three full-text megillot.
 `check` re-classifies all 5,720 pages and validates all 156 records against MAM-parsed:
 
 ```
-C:\Users\BenDe\GitRepos\MAM-basics\.venv\Scripts\python.exe py/main_scan_pages.py check
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_scan_pages.py check
 ```
 
 **What Phase 0 got wrong, and how.** Three claims failed when measured, which is the point

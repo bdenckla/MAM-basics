@@ -4,7 +4,7 @@ HTML document: Poetic spacing templates — ר0–ר4 (plain docs twin page).
 
 To regenerate the output HTML, run from the repo root::
 
-    .venv\\Scripts\\python.exe py\\main_authored.py gen-mam-parsed-docs
+    .venv/Scripts/python.exe py/main_authored.py gen-mam-parsed-docs
 
 Output goes to ../MAM-parsed/gh-pages/plain/html/mpplain_poetic_spacing.html.
 """

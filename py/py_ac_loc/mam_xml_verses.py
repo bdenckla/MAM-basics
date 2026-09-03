@@ -23,7 +23,7 @@ Usage:
     from py_ac_loc.mam_xml_verses import get_verses_in_range
 
     verses = get_verses_in_range(
-        r'C:\\path\\to\\codex-index-aleppo\\MAM-XML\\Job.xml',
+        r'C:/path/to/codex-index-aleppo/MAM-XML/Job.xml',
         'Job', (37, 9), (38, 20),
     )
     # Returns: [{'cv': '37:9', 'words': [...], 'ketiv_indices': [], 'parashah_before': None}, ...]

@@ -154,7 +154,7 @@ def assert_report_destination_ok(
         "  1. Split the sweep, which is the intended workflow:\n"
         f"       --visibility public  {option_name} <a path in this repo>\n"
         f"       --visibility private {option_name} "
-        "C:\\Users\\BenDe\\GitRepos\\MAM-private\\<path>\n"
+        "C:/Users/BenDe/GitRepos/MAM-private/<path>\n"
         "  2. Keep one sweep and send its report somewhere untracked, such as"
         " .novc/ here, which git ignores."
     )

@@ -8,7 +8,7 @@ vendoring comparison, provenance, and inventory artifacts. Phase 12 did not fix
 production code or generated output and did not begin another review phase.
 
 The governing forest was
-`C:\Users\BenDe\Documents\Codex\ReviewForests\mam-mega-review-2026-09-01`.
+`C:/Users/BenDe/Documents/Codex/ReviewForests/mam-mega-review-2026-09-01`.
 The reviewed branch heads were MAM-basics
 `a617dc1d8abbe27b644197a3edb251853cac8efa` and MAM-private
 `3aa273676bdad84e7b78f59abf0a06eda94aa6e3`, both on
@@ -223,19 +223,19 @@ From the MAM-basics review worktree, the exact registered step was exercised by
 the ignored Phase 12 probe with:
 
 ```powershell
-C:\Users\BenDe\GitRepos\MAM-basics\.venv\Scripts\python.exe .novc\phase12_probe.py registered exact_step
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe .novc/phase12_probe.py registered exact_step
 ```
 
 The direct successful rerun was exercised with:
 
 ```powershell
-C:\Users\BenDe\GitRepos\MAM-basics\.venv\Scripts\python.exe .novc\phase12_probe.py direct direct_after_exact
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe .novc/phase12_probe.py direct direct_after_exact
 ```
 
 The focused policy-path lint was exercised with:
 
 ```powershell
-C:\Users\BenDe\GitRepos\MAM-basics\.venv\Scripts\python.exe .novc\phase12_probe.py tests py\tests\test_vendoring_policy_paths.py -q
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe .novc/phase12_probe.py tests py/tests/test_vendoring_policy_paths.py -q
 ```
 
 The focused lint reported **18 passed in 0.10 seconds**. The complete MAM-basics
@@ -244,7 +244,7 @@ contains them and verified-clean primary clones supplied only for the ten
 dependencies absent from the deliberately eight-repository forest:
 
 ```powershell
-C:\Users\BenDe\GitRepos\MAM-basics\.venv\Scripts\python.exe .novc\phase12_probe.py tests
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe .novc/phase12_probe.py tests
 ```
 
 The complete suite reported **971 passed and 5 skipped in 93.40 seconds**. The

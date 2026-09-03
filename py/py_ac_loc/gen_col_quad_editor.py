@@ -12,8 +12,8 @@ Supports 2-column (poetic, e.g. Job) and 3-column (prose, e.g. Deut)
 layouts via the ncols argument.
 
 Usage:
-    .venv\\Scripts\\python.exe py_ac_loc/gen_col_quad_editor.py 270r
-    .venv\\Scripts\\python.exe py_ac_loc/gen_col_quad_editor.py 001v 3
+    .venv/Scripts/python.exe py_ac_loc/gen_col_quad_editor.py 270r
+    .venv/Scripts/python.exe py_ac_loc/gen_col_quad_editor.py 001v 3
 """
 
 import functools

@@ -15,7 +15,7 @@ a persistent record of all crop coordinates keyed by SID. This file stores
 enough data to reproduce crops programmatically at any image resolution.
 
 Usage:
-    .venv\\Scripts\\python.exe main_apply_cam1753_crops.py .novc/cam1753_crops_export.json
+    .venv/Scripts/python.exe main_apply_cam1753_crops.py .novc/cam1753_crops_export.json
 """
 
 import json

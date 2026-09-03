@@ -3,7 +3,7 @@
 Run from the MAM-basics repo root, with the mailbox in its default untracked
 location (holman-ketiv-qere's ``.novc/eml-mam/``):
 
-    .venv\\Scripts\\python.exe py/main_ingest_mam_suggestions.py
+    .venv/Scripts/python.exe py/main_ingest_mam_suggestions.py
 
 Writes ``docs-not-served/mam_suggestions.json`` and the page crops under
 ``gh-pages/mam_img/``, both in the sibling holman-ketiv-qere.

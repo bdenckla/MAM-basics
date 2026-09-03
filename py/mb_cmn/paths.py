@@ -175,7 +175,7 @@ def display_path(path) -> str:
     repo's name, then the path within it, forward-slashed on every platform.
 
     AN ABSOLUTE PATH WRITTEN INTO A GENERATED FILE PINS THAT FILE TO ONE MACHINE.
-    ``out/accgram/research-oddballs.json`` carried ``C:\\Users\\BenDe\\GitRepos\\...``
+    ``out/accgram/research-oddballs.json`` carried ``C:/Users/BenDe/GitRepos/...``
     in four keys, so it could not regenerate identically anywhere but Ben's laptop -- and
     in a repo where the tracked generated artifact IS the test (CLAUDE.md), that is a test
     nobody else can run.  Found 2026-08-31 by the first cloud run of ``main_0_mega.py``,
@@ -297,8 +297,8 @@ def al_hatorah_phonetic_dir() -> Path:
 
     A subdirectory of MAM-private since 2026-08-10, not a sibling clone of its own: the
     private evacuation programme moved every tracked file of ``bdenckla/al-hatorah``
-    under ``MAM-private\\al-hatorah\\`` and empties that repo to a breadcrumb README
-    (``MAM-private\\doc\\PLAN-evacuate-private-repos.md``, phases R.0-R.4).  So the env
+    under ``MAM-private/al-hatorah/`` and empties that repo to a breadcrumb README
+    (``MAM-private/doc/PLAN-evacuate-private-repos.md``, phases R.0-R.4).  So the env
     override that moves this tree is now ``REPO_MAM_PRIVATE_DIR``; ``REPO_AL_HATORAH_DIR``
     no longer reaches it, there being no sibling by that name to resolve.
     """

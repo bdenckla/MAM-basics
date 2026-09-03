@@ -6,14 +6,14 @@ work up from here rather than from a long handoff.
 
 **The Python behind this procedure lives in the sibling repo since 2026-08-01** (`6180f8d` took
 it out of wlc-utils with the rest of the code): every `py/...` path in this doc names a file
-under `C:\Users\BenDe\GitRepos\MAM-basics\py\`, which is why every command below runs from
-`C:\Users\BenDe\GitRepos\MAM-basics`, with that repo's interpreter. The `in/`, `out/`,
+under `C:/Users/BenDe/GitRepos/MAM-basics/py/`, which is why every command below runs from
+`C:/Users/BenDe/GitRepos/MAM-basics`, with that repo's interpreter. The `in/`, `out/`,
 `gh-pages/` and `.novc/` paths still name this repo, which the code writes back into. The same
 mapping covers the module names inside the committed transcription headers under
 `in/accgram/edition_transcriptions/`: all twelve name `accgram/transcription_editor.py`, four of
 the twelve name a further module — `zoom_line.py`, `printed_decalogue_taxton_diff.py`,
 `printed_decalogue_simanim_page.py`, `test_edition_transcriptions.py` — and all five of those are
-files under `MAM-basics\py\`. The headers themselves are left exactly as written: they are the
+files under `MAM-basics/py/`. The headers themselves are left exactly as written: they are the
 provenance record of how each transcription was read, not live pointers, so a module changing
 repos is no reason to edit one (Ben's decision of 2026-08-04,
 [#90](https://github.com/bdenckla/wlc-utils/issues/90)). `col_profile.py` and `row_profile.py`,
@@ -44,13 +44,13 @@ Scans live outside the repo (see the `book-scan-page-naming` note; `WLC_SCANS_DI
 the root). Render a whole page first to locate the Decalogue:
 
 ```powershell
-C:\Users\BenDe\GitRepos\MAM-basics\.venv\Scripts\python.exe C:\Users\BenDe\GitRepos\MAM-basics\py\main_edition_transcription.py scan-page "Feldheim Simanim Tiqqun" C208 --width 1100
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe C:/Users/BenDe/GitRepos/MAM-basics/py/main_edition_transcription.py scan-page "Feldheim Simanim Tiqqun" C208 --width 1100
 ```
 
 Then build the per-line editor. **Default to the whole page — pass no `--crop` at all:**
 
 ```powershell
-C:\Users\BenDe\GitRepos\MAM-basics\.venv\Scripts\python.exe C:\Users\BenDe\GitRepos\MAM-basics\py\main_edition_transcription.py editor "Feldheim Simanim Tanakh" A5-D-0297 --name simtan_dt_taxton_p297 --width 2000 --debug
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe C:/Users/BenDe/GitRepos/MAM-basics/py/main_edition_transcription.py editor "Feldheim Simanim Tanakh" A5-D-0297 --name simtan_dt_taxton_p297 --width 2000 --debug
 ```
 
 **A crop is worth measuring only when a foreign column has to be excluded.** That is the
@@ -206,7 +206,7 @@ a test rather than surfacing as a puzzling runtime message.
 ## 3. Check before committing
 
 ```powershell
-C:\Users\BenDe\GitRepos\MAM-basics\.venv\Scripts\python.exe C:\Users\BenDe\GitRepos\MAM-basics\py\main_edition_transcription.py check $HOME\Downloads\simtiq_dt_elyon_p208-transcription.json $HOME\Downloads\simtiq_dt_elyon_p209-transcription.json --key dt elyon printed
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe C:/Users/BenDe/GitRepos/MAM-basics/py/main_edition_transcription.py check $HOME/Downloads/simtiq_dt_elyon_p208-transcription.json $HOME/Downloads/simtiq_dt_elyon_p209-transcription.json --key dt elyon printed
 ```
 
 It reports token and chanted-verse counts, every difference region with the reference word and
@@ -234,7 +234,7 @@ For any difference, before calling it an accent difference:
   `mun-mer`; p. 246 has two.
 - **Zoom the printed line** and let Ben re-read it. Never crop at the band edge:
   ```powershell
-  C:\Users\BenDe\GitRepos\MAM-basics\.venv\Scripts\python.exe C:\Users\BenDe\GitRepos\MAM-basics\py\main_edition_transcription.py zoom-line <export.json> 12
+  C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe C:/Users/BenDe/GitRepos/MAM-basics/py/main_edition_transcription.py zoom-line <export.json> 12
   ```
   `zoom_line` pads a full band height above, because a tight crop once cut the upper dot off a
   zaqef qatan and left something that reads exactly like a revia. It also pads *sideways* past
@@ -243,7 +243,7 @@ For any difference, before calling it an accent difference:
   the **lower** one.
 - **Check all eight strands** before concluding whose divergence it is:
   ```powershell
-  C:\Users\BenDe\GitRepos\MAM-basics\.venv\Scripts\python.exe C:\Users\BenDe\GitRepos\MAM-basics\py\main_edition_transcription.py check --site השבת לקדשו
+  C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe C:/Users/BenDe/GitRepos/MAM-basics/py/main_edition_transcription.py check --site השבת לקדשו
   ```
   The site is located by the skeleton of the word *and* of the word after it. Confirm all eight
   strands are **listed**, and that every zero-hit row has an explanation — the word is absent
@@ -269,7 +269,7 @@ on whether a page's trailing empty lines are dropped — which is a difference i
 committed, not in style.
 
 ```powershell
-C:\Users\BenDe\GitRepos\MAM-basics\.venv\Scripts\python.exe C:\Users\BenDe\GitRepos\MAM-basics\py\main_edition_transcription.py build <stem> --export <path>... --corrections <path>
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe C:/Users/BenDe/GitRepos/MAM-basics/py/main_edition_transcription.py build <stem> --export <path>... --corrections <path>
 ```
 
 - `--export` takes one downloaded export per page, **in page order**; more than one gets the
@@ -299,7 +299,7 @@ for it to be recorded** ([#52](https://github.com/bdenckla/wlc-utils/issues/52))
 strand its header names, so:
 
 ```powershell
-C:\Users\BenDe\GitRepos\MAM-basics\.venv\Scripts\python.exe C:\Users\BenDe\GitRepos\MAM-basics\py\main_accgram.py run-printed-decalogue
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe C:/Users/BenDe/GitRepos/MAM-basics/py/main_accgram.py run-printed-decalogue
 ```
 
 writes it into the `transcriptions` section of

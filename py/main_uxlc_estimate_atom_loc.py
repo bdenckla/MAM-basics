@@ -82,8 +82,8 @@ def main():
     r"""
     Estimate the concrete location of the given word.
 
-    Usage: .venv\Scripts\python.exe py\main_uxlc_estimate_atom_loc.py <book_id> <c:v> <word>
-    Example: .venv\Scripts\python.exe py\main_uxlc_estimate_atom_loc.py Genesis 27:7 "צַ֛יִד"
+    Usage: .venv/Scripts/python.exe py/main_uxlc_estimate_atom_loc.py <book_id> <c:v> <word>
+    Example: .venv/Scripts/python.exe py/main_uxlc_estimate_atom_loc.py Genesis 27:7 "צַ֛יִד"
 
     That example is the same location example_run() reports: Genesis 27:7, atom 3.
     """
@@ -92,7 +92,7 @@ def main():
     args = sys.argv[1:]
     if len(args) != 3:
         print(
-            "Usage: .venv\\Scripts\\python.exe py\\main_uxlc_estimate_atom_loc.py <book_id> <c:v> <word>"
+            "Usage: .venv/Scripts/python.exe py/main_uxlc_estimate_atom_loc.py <book_id> <c:v> <word>"
         )
         print('Example: ... Genesis 27:7 "צַ֛יִד"')
         sys.exit(1)

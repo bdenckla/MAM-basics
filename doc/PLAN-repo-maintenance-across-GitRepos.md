@@ -194,7 +194,7 @@ github-misc. The breuer-cos CLONE deleted and the repo dropped from the workspac
 (`79df1e9`), its GitHub repository staying unarchived until all five of its issues resolve.
 
 **Sections 1 and 2 are stale on scope.** The frozen clones left GitRepos for the sibling
-`C:\Users\BenDe\FrozenRepos` and left `all-repos.code-workspace` (`bcf88ae`), so the freeze is
+`C:/Users/BenDe/FrozenRepos` and left `all-repos.code-workspace` (`bcf88ae`), so the freeze is
 structural: the workspace lists 24 folders, not 30, and no sweep can reach a frozen repo at
 all. `--include-frozen`, named in section 1's table area and in H3, was removed (`9113cb3`).
 
@@ -234,9 +234,9 @@ tree stayed still. What was verified then:
 
 1. **Two chip sessions launched 2026-08-07 must have ENDED.** They were:
    - *"Fix #218: 3 prose oddballs block generate-html"* — ran in the MAIN clone
-     `C:\Users\BenDe\GitRepos\MAM-basics`, committing to `main`.
+     `C:/Users/BenDe/GitRepos/MAM-basics`, committing to `main`.
    - *"Re-vendor mb_cmn copies stale since the #224 cull"* — ran in worktree
-     `C:\Users\BenDe\GitRepos\MAM-basics\.claude\worktrees\gallant-meitner-68c79b`, branch
+     `C:/Users/BenDe/GitRepos/MAM-basics/.claude/worktrees/gallant-meitner-68c79b`, branch
      `claude/gallant-meitner-68c79b`, and edited five sibling repos (al-hatorah, book-of-job,
      codex-index-aleppo, holman-ketiv-qere, mgketer) as shared clones.
 
@@ -245,15 +245,15 @@ tree stayed still. What was verified then:
 
 2. **The re-vendor branch is merged and its worktree removed.** Check:
    ```
-   git -C C:\Users\BenDe\GitRepos\MAM-basics worktree list
-   git -C C:\Users\BenDe\GitRepos\MAM-basics branch --list "claude/*"
+   git -C C:/Users/BenDe/GitRepos/MAM-basics worktree list
+   git -C C:/Users/BenDe/GitRepos/MAM-basics branch --list "claude/*"
    ```
    A surviving `claude/gallant-meitner-68c79b` wants merging into `main` first — per Ben's
    standing rule a worktree branch is merged and `main` pushed, rather than the branch pushed.
 
 3. **Every repo is clean and pushed**, so any diff this maintenance produces is attributable:
    ```
-   foreach ($d in (Get-ChildItem -Directory C:\Users\BenDe\GitRepos)) { $n = (git -C $d.FullName status --porcelain | Measure-Object).Count; if ($n) { Write-Output "$($d.Name) dirty=$n" } }
+   foreach ($d in (Get-ChildItem -Directory C:/Users/BenDe/GitRepos)) { $n = (git -C $d.FullName status --porcelain | Measure-Object).Count; if ($n) { Write-Output "$($d.Name) dirty=$n" } }
    ```
 
 4. **Run from the MAIN MAM-basics clone, never from a worktree.** See hazard H6 — this is the
@@ -271,8 +271,8 @@ plenty of repos have no Python and so can have no maintenance script of their ow
 wlc-utils above all, which was emptied of Python on 2026-08-01 while agents go on editing its
 `doc/` and `gh-pages/`.
 
-Run everything from `C:\Users\BenDe\GitRepos\MAM-basics` with
-`C:\Users\BenDe\GitRepos\MAM-basics\.venv\Scripts\python.exe`.
+Run everything from `C:/Users/BenDe/GitRepos/MAM-basics` with
+`C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe`.
 
 Six actions, mutually exclusive, one per invocation:
 
@@ -313,23 +313,23 @@ the workspace file rather than typing it.
 
 **1. `--clean-worktrees` FIRST, before any hand-inspection of any worktree.** See H1.
 ```
-.venv\Scripts\python.exe py\main_repo_util.py --clean-worktrees --workspace-file all-repos.code-workspace
+.venv/Scripts/python.exe py/main_repo_util.py --clean-worktrees --workspace-file all-repos.code-workspace
 ```
 Read every `kept ... (reason)` line. A spared worktree is not a failure; it is a question.
 `WORKTREE_PROBLEM_COUNT` is the failure signal.
 
 **2–4. The three read-only checks**, in any order:
 ```
-.venv\Scripts\python.exe py\main_repo_util.py --check-repo-standards --workspace-file all-repos.code-workspace --report-txt <file>
-.venv\Scripts\python.exe py\main_repo_util.py --check-memory-health   --workspace-file all-repos.code-workspace --report-txt <file>
-.venv\Scripts\python.exe py\main_repo_util.py --audit-line-terms      --workspace-file all-repos.code-workspace --report-txt <file>
+.venv/Scripts/python.exe py/main_repo_util.py --check-repo-standards --workspace-file all-repos.code-workspace --report-txt <file>
+.venv/Scripts/python.exe py/main_repo_util.py --check-memory-health   --workspace-file all-repos.code-workspace --report-txt <file>
+.venv/Scripts/python.exe py/main_repo_util.py --audit-line-terms      --workspace-file all-repos.code-workspace --report-txt <file>
 ```
 Use `--report-txt`: the one-line-per-repo stdout summary gives counts, and the text report
 gives the actual findings. Write reports into `.novc/`, not into a tracked directory.
 
 **5. `--run-black`**, last of the mechanical steps and the only one that rewrites source:
 ```
-.venv\Scripts\python.exe py\main_repo_util.py --run-black --workspace-file all-repos.code-workspace
+.venv/Scripts/python.exe py/main_repo_util.py --run-black --workspace-file all-repos.code-workspace
 ```
 Expect `BLACK_PROBLEM_COUNT` absent/zero — see H5 for why, and what a nonzero one means.
 
@@ -349,7 +349,7 @@ through git rather than over the filesystem also keeps a leftover agent worktree
 same plans out of the count. Raise the candidates:
 
 ```
-git -C C:\Users\BenDe\GitRepos\MAM-basics grep -l "^State: executed" -- "*PLAN-*.md"
+git -C C:/Users/BenDe/GitRepos/MAM-basics grep -l "^State: executed" -- "*PLAN-*.md"
 ```
 
 All ten carry the `State:` line as of 2026-08-29 — MAM-basics' six from the day it was
@@ -410,13 +410,13 @@ Three constraints on that fan-out:
   merged into that repo's default branch before deleting; `--clean-worktrees` checks this
   itself and refuses an unmerged branch, so let it decide rather than pre-empting it.
 - **masorah-books has 5 orphaned worktree project directories** under
-  `C:\Users\BenDe\.claude\projects\` (`C--Users-BenDe-GitRepos-masorah-books--claude-worktrees-*`).
+  `C:/Users/BenDe/.claude/projects/` (`C--Users-BenDe-GitRepos-masorah-books--claude-worktrees-*`).
   Same litter cleaned out of MAM-basics on 2026-08-07 (7 dirs, 50.2 MB). `--check-memory-health`
   reports the count as `WORKTREE_PROJECT_DIRS` but deliberately does not delete them, because
   they hold session transcripts. Check for a `memory/` subdirectory in each before deleting —
   none of MAM-basics' seven had one — and confirm with Ben, who chose deletion for MAM-basics.
 - **breuer-cos has 2 orphaned memory files** at
-  `C:\Users\BenDe\.claude\projects\C--Users-BenDe-GitRepos-breuer-cos\memory\`. breuer-cos was
+  `C:/Users/BenDe/.claude/projects/C--Users-BenDe-GitRepos-breuer-cos/memory/`. breuer-cos was
   superseded on 2026-07-31 when Breuer's *Cantillation of Scripture* was merged into
   masorah-books. Per `check_memory_health.py`'s docstring these are memories worth keeping, so
   they want **carrying over into masorah-books' memory directory, not deleting.**
@@ -482,7 +482,7 @@ a documentation bug: create it, or say it is missing and stop.
 to the worktree's own copy, so every sibling lookup becomes
 `.claude/worktrees/<sibling>` and finds nothing. This is the general hazard Ben's user-level
 CLAUDE.md records as "a repo path that reaches a sibling clone can break in a worktree". Run
-from the main clone; if a worktree is unavoidable, pass `--repos-root C:\Users\BenDe\GitRepos`
+from the main clone; if a worktree is unavoidable, pass `--repos-root C:/Users/BenDe/GitRepos`
 explicitly.
 
 **H7 — Repo-wide reformatting is its own commit.** If black touches files unrelated to any
@@ -501,7 +501,7 @@ time has passed.
 
 Re-establish with:
 ```
-$frozen = @('breuer-cos','CCAR-Psalms','MAM-for-Acc','MAM-for-CCAR','MAM-for-JPS','TMC'); $ws = Get-Content "C:\Users\BenDe\GitRepos\MAM-basics\all-repos.code-workspace" -Raw | ConvertFrom-Json; foreach ($f in $ws.folders) { $name = if ($f.path -eq '.') { 'MAM-basics' } else { $f.path -replace '^\.\./','' }; $p = "C:\Users\BenDe\GitRepos\$name"; if (-not (Test-Path $p)) { continue }; $py = (git -C $p ls-files "*.py" | Measure-Object).Count; $wt = ((git -C $p worktree list | Measure-Object).Count - 1); $cb = (git -C $p branch --list "claude/*" | Measure-Object).Count; [PSCustomObject]@{Repo=$name; Frozen=($frozen -contains $name); PyFiles=$py; Venv=(Test-Path "$p\.venv\Scripts\python.exe"); Worktrees=$wt; ClaudeBr=$cb} } | Format-Table -AutoSize
+$frozen = @('breuer-cos','CCAR-Psalms','MAM-for-Acc','MAM-for-CCAR','MAM-for-JPS','TMC'); $ws = Get-Content "C:/Users/BenDe/GitRepos/MAM-basics/all-repos.code-workspace" -Raw | ConvertFrom-Json; foreach ($f in $ws.folders) { $name = if ($f.path -eq '.') { 'MAM-basics' } else { $f.path -replace '^\.\./','' }; $p = "C:/Users/BenDe/GitRepos/$name"; if (-not (Test-Path $p)) { continue }; $py = (git -C $p ls-files "*.py" | Measure-Object).Count; $wt = ((git -C $p worktree list | Measure-Object).Count - 1); $cb = (git -C $p branch --list "claude/*" | Measure-Object).Count; [PSCustomObject]@{Repo=$name; Frozen=($frozen -contains $name); PyFiles=$py; Venv=(Test-Path "$p/.venv/Scripts/python.exe"); Worktrees=$wt; ClaudeBr=$cb} } | Format-Table -AutoSize
 ```
 
 Findings from that run, worth carrying forward:
@@ -527,7 +527,7 @@ Findings from that run, worth carrying forward:
   never a tracked file.
 - **`HEX_ESCAPES` findings are advisory and are never auto-fixed** —
   `check_repo_standards.py` says findings are reported, never auto-fixed. Do not start
-  converting `\uXXXX` escapes to `\N{...}` across repos as part of a maintenance sweep.
+  converting `/uXXXX` escapes to `\N{...}` across repos as part of a maintenance sweep.
 - **A dangling `[[link]]` in a memory file is not an error.** It marks something worth writing
   later. MAM-basics' one dangling link was deliberately left in place on 2026-08-07.
 - **A skip in a test suite may be a semantic signal, not a problem.** In MAM-basics' accgram

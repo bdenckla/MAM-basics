@@ -47,7 +47,7 @@ import clc.clc_note_pages as cnp
 import uxlc_misc.my_uxlc as my_uxlc
 import uxlc_paths
 
-_DEFAULT_ZIP = Path(r"C:\Users\BenDe\Downloads\Notes.zip")
+_DEFAULT_ZIP = Path(r"C:/Users/BenDe/Downloads/Notes.zip")
 
 
 def _zip_entry_for(book_id, fname):

@@ -18,8 +18,8 @@ Requires a local HTTP server for images:
     python -m http.server 8119
 
 Usage:
-    .venv\\Scripts\\python.exe gen_cam1753_line_break_editor.py 0072B 1
-    .venv\\Scripts\\python.exe gen_cam1753_line_break_editor.py 0072B 2
+    .venv/Scripts/python.exe gen_cam1753_line_break_editor.py 0072B 1
+    .venv/Scripts/python.exe gen_cam1753_line_break_editor.py 0072B 2
 """
 
 import json
@@ -1041,7 +1041,7 @@ document.addEventListener('keydown', (e) => {{
 def main():
     if len(sys.argv) < 3:
         print(
-            "Usage: .venv\\Scripts\\python.exe gen_cam1753_line_break_editor.py"
+            "Usage: .venv/Scripts/python.exe gen_cam1753_line_break_editor.py"
             " <page_id> <col>"
         )
         print("  e.g. ... 0072B 1")

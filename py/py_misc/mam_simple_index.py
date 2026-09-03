@@ -16,7 +16,7 @@ doc step drives.
 
 Regenerate from the repo root::
 
-    .venv\\Scripts\\python.exe py\\main_mam_simple.py doc-only
+    .venv/Scripts/python.exe py/main_mam_simple.py doc-only
 """
 
 from pathlib import Path

@@ -11,10 +11,10 @@ Given a Hebrew word and a verse reference (e.g. "Job 7:1"), this script:
 6. Generates an HTML preview page in .novc/ and opens it
 
 Usage:
-    .venv\\Scripts\\python.exe main_find_word_in_cam1753_images.py <book> <c:v> <hebrew_word>
+    .venv/Scripts/python.exe main_find_word_in_cam1753_images.py <book> <c:v> <hebrew_word>
 
 Example:
-    .venv\\Scripts\\python.exe main_find_word_in_cam1753_images.py Job 7:1 "וְכִימֵ֖֗י"
+    .venv/Scripts/python.exe main_find_word_in_cam1753_images.py Job 7:1 "וְכִימֵ֖֗י"
 """
 
 import json
@@ -743,7 +743,7 @@ def main():
 
     if len(args) != 3:
         print(
-            "Usage: .venv\\Scripts\\python.exe"
+            "Usage: .venv/Scripts/python.exe"
             " main_find_word_in_cam1753_images.py [--wide] <book> <c:v> <hebrew_word>"
         )
         print('Example: ... Job 7:1 "וְכִימֵי"')

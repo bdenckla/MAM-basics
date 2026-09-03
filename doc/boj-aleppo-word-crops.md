@@ -158,7 +158,7 @@ Process quirkrecs in batches of ~5:
    as a local file (no server needed):
    ```powershell
    $sids = @("SID1","SID2","SID3","SID4","SID5")
-   foreach ($s in $sids) { Start-Process "C:\Users\BenDe\GitRepos\book-of-job\gh-pages\jobn-details\$s.html"; Start-Sleep -Milliseconds 500 }
+   foreach ($s in $sids) { Start-Process "C:/Users/BenDe/GitRepos/book-of-job/gh-pages/jobn-details/$s.html"; Start-Sleep -Milliseconds 500 }
    ```
    Detail pages are named `{SID}.html` in `../book-of-job/gh-pages/jobn-details/`.
    The 500 ms delay prevents tabs from being dropped.

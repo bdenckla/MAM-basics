@@ -168,7 +168,7 @@ verifies at the artifact level, and a crawl from `gh-pages/index.html` confirms 
 for figure: **155 of 156 tracked gh-pages pages reachable, the one unreachable page being
 `wlc/index.html`** — precisely the strandedness `6d5671c` records as settled — and the two Misc
 entries are exactly the pages with no other inbound link. Today's HTML sanity run (202 issues,
-orphan line exactly `wlc\index.html`) closes the arithmetic from `2f81ecb`'s 203 with no
+orphan line exactly `wlc/index.html`) closes the arithmetic from `2f81ecb`'s 203 with no
 unexplained movement. The spelling-dictionary story closes end to end ("readme" gone from
 dictionary and corpus, checker exit 0, both frequency reports regenerate byte-identical, and
 book-of-job `d09b966`'s three-file diff is exactly the predicted repoint). MAM-simple: the
@@ -188,14 +188,14 @@ lands this doc; findings 1 and 5 are Ben's; the rest are immutable-message recor
    treated an unresolvable git revision as an empty release, so a shallow clone yields falsified
    "0 changes" change-log reports — five were written into MAM-with-doc's working tree during
    that cloud run before an unrelated failure stopped it; the fix raises with a deepening hint),
-   and `86c87d2` (four machine-absolute `C:\Users\BenDe\...` paths in
+   and `86c87d2` (four machine-absolute `C:/Users/BenDe/...` paths in
    `out/accgram/research-oddballs.json` — still there at `4cc0c33`, lines 5–8 — replaced by
    repo-qualified paths via a new `paths.display_path`, plus a standing lint
    `test_no_machine_paths_in_artifacts.py`). All three carry full trailers and read as work Ben
    would want; the same day's other cloud branch (docs-unification) was merged by Ben, and no
    commit, doc, or issue mentions this one — it reads as forgotten rather than rejected. Nothing
    on main supersedes any of the three (main has no `display_path`, no vendored `in/xml.xsd`, no
-   such lint). Ben's decision: merge (`git -C C:\Users\BenDe\GitRepos\MAM-basics merge
+   such lint). Ben's decision: merge (`git -C C:/Users/BenDe/GitRepos/MAM-basics merge
    origin/claude/main-mega-cloud-test-859r4h`, then regenerate/verify and push) or reject with a
    recorded reason; either way the remote branch then wants deleting, which is also his call.
 
@@ -346,7 +346,7 @@ plain `branch -d`, and a fresh sweep of all 18 clones reports only main, locally
 
 **The mega half was discharged later that same day, in the worktree forest's first use, and the
 State line above lost its "except" clause with it.** The forest — worktrees at
-`C:\Users\BenDe\Forests\review-2026-09-01\`, one per repo the mega or the suite resolves, each on
+`C:/Users/BenDe/Forests/review-2026-09-01/`, one per repo the mega or the suite resolves, each on
 branch `forest/review-2026-09-01`, every command run with the primary clone's venv by absolute
 path — was commissioned by Ben for this run. Built with ten members, it taught its first lesson
 before the mega started: membership had been derived from what the suite *collects*, and
@@ -375,7 +375,7 @@ layout-only — node and edge identities, labels, tooltips, colors and fonts all
 skew now runs the other way: any machine still on an older graphviz, the 15.1.1 machine that
 rendered `0128e69`'s SVGs included, will see layout-only SVG diffs until it upgrades. `dot` is
 still not on this machine's PATH in shells predating the install; the renderer is found via
-`survey_dot.py`'s `_DOT_FALLBACK`, `C:\Program Files\Graphviz\bin\dot.exe`, which is where
+`survey_dot.py`'s `_DOT_FALLBACK`, `C:/Program Files/Graphviz/bin/dot.exe`, which is where
 16.0.0 landed.)
 (The CRLF phantoms were closed out later that same day as well: MAM-basics `bc24f7a` gives all
 eleven writer sites across eight files `newline=""` — `verify_mp/claims_doc.py`;

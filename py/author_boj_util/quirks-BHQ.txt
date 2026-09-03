@@ -14,8 +14,8 @@
 # https://manuscripts.sefaria.org/leningrad-color/BIB_LENCDX_F397B.jpg
 # LC column 1 line -9 including 1 blank line
 # AC column 2 line 7
-# gh-pages\jobn\img\0207.png
-# gh-pages\jobn\img\Aleppo-0207.png
+# gh-pages/jobn/img/0207.png
+# gh-pages/jobn/img/Aleppo-0207.png
 
 # 2:8 לְהִתְגָּרֵ֖ר ML (err) | לְהִתְגָּרֵ֖ד MA MY (resh/dalet)
 # Come on, the letter in question (the last) has a רפה and even has a little serif that might make it ד.
@@ -24,7 +24,7 @@
 # MAM ends in ד.
 # https://manuscripts.sefaria.org/leningrad-color/BIB_LENCDX_F397B.jpg
 # column 1 line -8 including 1 blank line
-# gh-pages\jobn\img\0208.png
+# gh-pages/jobn/img/0208.png
 
 # 5:12 תּוּשִׁיָּֽה׃ ML (differ-orth) | תֻּשִׁיָּֽה׃ MA MY
 # All good.

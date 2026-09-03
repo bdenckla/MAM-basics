@@ -162,7 +162,7 @@ out, and two of this doc's own descriptions of them turned out to be wrong.
   paths are mapped once instead, in wlc-utils 54ea941, which extends the covering note at the top
   of `doc/edition-transcription-workflow.md` and leaves everything under `in/` alone. wlc-utils#90
   is closed with the decision recorded. The mapping rests on two facts: every module the headers
-  name that was ever a tracked file — five of them — still exists under `MAM-basics\py\`, so each
+  name that was ever a tracked file — five of them — still exists under `MAM-basics/py/`, so each
   header's `py/`-relative path is still correct and only the repo moved; and
   `col_profile.py`/`row_profile.py`, named in `simtiq_ex_elyon.txt`, were untracked `.novc`
   scratch, tracked in neither repo, so that mention was unfollowable on the day it was written —

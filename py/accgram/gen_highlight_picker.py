@@ -19,7 +19,7 @@ maps 1:1 onto the scan-pixel-space overlay used at render time and onto
 ``mhi.Box(x, y, w, h)``.
 
 Run via ``main_edition_transcription.py highlight-picker`` (from the repo root; PowerShell):
-    .venv\\Scripts\\python.exe py\\main_edition_transcription.py highlight-picker \\
+    .venv/Scripts/python.exe py/main_edition_transcription.py highlight-picker \\
         Simanim-Tiqqun-p-083-Ex-Dec-elyon.png
 The .png suffix is optional. The image is resolved under gh-pages/wlc/accgram/img/.
 Add --serve to run a local http server (then Ctrl+C to stop it) instead of the

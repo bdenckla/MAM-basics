@@ -1,7 +1,7 @@
 """Render the suggested-UXLC-corrections report from the emails under emails/.
 
 Run from repo root:
-    .venv\\Scripts\\python.exe py/main_render_uxlc_corrections.py
+    .venv/Scripts/python.exe py/main_render_uxlc_corrections.py
 
 Writes gh-pages/uxlc_corrections.{html,css,js}, the extracted attachments under
 gh-pages/uxlc_img/, and the extract itself to

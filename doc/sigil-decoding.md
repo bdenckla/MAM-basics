@@ -7,7 +7,7 @@ It is intended to be a single source in the practical sense that translation wor
 
 ## The Private Annex
 
-Some of the provenance below rests on sources that are not public. This document cites those as **private annex §1**, **private annex §2** and so on, and says nothing further about them. The annex itself is `C:\Users\BenDe\GitRepos\MAM-private\doc\mam-basics-annex.md`, and it records what each section number stands for and which entries here rest on it. That one file is the annex for the whole repo, so other files here cite it by the same notation.
+Some of the provenance below rests on sources that are not public. This document cites those as **private annex §1**, **private annex §2** and so on, and says nothing further about them. The annex itself is `C:/Users/BenDe/GitRepos/MAM-private/doc/mam-basics-annex.md`, and it records what each section number stands for and which entries here rest on it. That one file is the annex for the whole repo, so other files here cite it by the same notation.
 
 The citations were made opaque on 2026-08-25, at Ben's instruction, because this repo is public. No entry was weakened: each row resting on the annex also carries public corroboration, which is why all of them remain Confirmed.
 

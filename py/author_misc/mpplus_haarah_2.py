@@ -4,7 +4,7 @@ HTML document: Targeted scroll-difference note — מ:הערה-2.
 
 To regenerate the output HTML, run from the repo root::
 
-    .venv\\Scripts\\python.exe py\\main_authored.py gen-mam-parsed-docs
+    .venv/Scripts/python.exe py/main_authored.py gen-mam-parsed-docs
 
 Output goes to ../MAM-parsed/gh-pages/mpplus_haarah_2.html.
 """

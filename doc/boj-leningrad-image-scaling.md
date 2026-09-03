@@ -21,7 +21,7 @@ displayed height matches the Aleppo image's native height.
 1. **Get the native dimensions** of both images:
    ```powershell
    $env:PYTHONIOENCODING="utf-8"
-   .venv\Scripts\python.exe -c "from PIL import Image; a=Image.open('../book-of-job/gh-pages/jobn/img/Aleppo/Aleppo-{SID}.png'); l=Image.open('../book-of-job/gh-pages/jobn/img/Lenin/Lenin-{SID}.png'); print(f'Aleppo: {a.size[0]}x{a.size[1]}'); print(f'Lenin:  {l.size[0]}x{l.size[1]}'); print(f'Scale:  {a.size[1]/l.size[1]:.4f}')"
+   .venv/Scripts/python.exe -c "from PIL import Image; a=Image.open('../book-of-job/gh-pages/jobn/img/Aleppo/Aleppo-{SID}.png'); l=Image.open('../book-of-job/gh-pages/jobn/img/Lenin/Lenin-{SID}.png'); print(f'Aleppo: {a.size[0]}x{a.size[1]}'); print(f'Lenin:  {l.size[0]}x{l.size[1]}'); print(f'Scale:  {a.size[1]/l.size[1]:.4f}')"
    ```
 
 2. **Set the scale factor** in `py/author_boj_util/lenin_img_too_tall.py`:
@@ -32,12 +32,12 @@ displayed height matches the Aleppo image's native height.
 
 3. **Rebuild HTML:**
    ```powershell
-   .venv\Scripts\python.exe ./py/main_gen_misc_authored_english_documents.py
+   .venv/Scripts/python.exe ./py/main_gen_misc_authored_english_documents.py
    ```
 
 4. **Open the detail page** to verify:
    ```powershell
-   Start-Process "C:\Users\BenDe\GitRepos\book-of-job\gh-pages\jobn-details\{SID}.html"
+   Start-Process "C:/Users/BenDe/GitRepos/book-of-job/gh-pages/jobn-details/{SID}.html"
    ```
 
 ## Notes

@@ -16,7 +16,7 @@
 #
 # Run this script with the repo root as the current directory, e.g.
 #
-#    PS C:\Users\BenDe\GitRepos\MAM-basics> .\misc\requirements-venv-setup-windows.ps1
+#    PS C:/Users/BenDe/GitRepos/MAM-basics> ./misc/requirements-venv-setup-windows.ps1
 
 python -m venv .venv
 if (-not $?)
@@ -24,10 +24,10 @@ if (-not $?)
     throw 'python -m venv .venv failed'
 }
 
-.venv\Scripts\Activate.ps1
+.venv/Scripts/Activate.ps1
 if (-not $?)
 {
-    throw '.venv\Scripts\Activate.ps1 failed'
+    throw '.venv/Scripts/Activate.ps1 failed'
 }
 
 pip install -r requirements.txt

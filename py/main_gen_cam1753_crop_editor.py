@@ -8,9 +8,9 @@ the Hebrew-metrics word-position estimate.  Adjust boxes with mouse handles
 or arrow keys, then Export JSON to clipboard for downstream processing.
 
 Usage:
-    .venv\\Scripts\\python.exe main_gen_cam1753_crop_editor.py           # example quirkrecs only
-    .venv\\Scripts\\python.exe main_gen_cam1753_crop_editor.py --all      # all missing cam1753 images
-    .venv\\Scripts\\python.exe main_gen_cam1753_crop_editor.py 0119 0303  # specific SIDs
+    .venv/Scripts/python.exe main_gen_cam1753_crop_editor.py           # example quirkrecs only
+    .venv/Scripts/python.exe main_gen_cam1753_crop_editor.py --all      # all missing cam1753 images
+    .venv/Scripts/python.exe main_gen_cam1753_crop_editor.py 0119 0303  # specific SIDs
 """
 
 import json

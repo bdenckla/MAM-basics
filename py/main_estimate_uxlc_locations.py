@@ -1,7 +1,7 @@
 """What the sibling UXLC-utils clone says about each of Holman's atoms.
 
 Run from repo root:
-    .venv\\Scripts\\python.exe py/main_estimate_uxlc_locations.py
+    .venv/Scripts/python.exe py/main_estimate_uxlc_locations.py
 
 Two facts, both wanting ~11 MB of UXLC core XML this repo does not track, both
 written out for the render step to read: where the atom sits in the Leningrad

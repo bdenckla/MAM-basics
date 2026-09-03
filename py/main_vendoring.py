@@ -2,10 +2,10 @@
 """Dispatch vendoring audit subcommands.
 
 Usage (from repo root):
-    .venv\\Scripts\\python.exe py\\main_vendoring.py --all
-    .venv\\Scripts\\python.exe py\\main_vendoring.py --compare
-    .venv\\Scripts\\python.exe py\\main_vendoring.py --provenance
-    .venv\\Scripts\\python.exe py\\main_vendoring.py --gen-inventory
+    .venv/Scripts/python.exe py/main_vendoring.py --all
+    .venv/Scripts/python.exe py/main_vendoring.py --compare
+    .venv/Scripts/python.exe py/main_vendoring.py --provenance
+    .venv/Scripts/python.exe py/main_vendoring.py --gen-inventory
 
 WHY ``almost_main`` EXISTS, AND WHY THE MEGA CALLS IT
 

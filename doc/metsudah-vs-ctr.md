@@ -32,7 +32,7 @@ one-tracked-plan rule). Findings replace plan text here as phases complete.
 - 2026-08-05, session 3 (the Phase 2 chip session): Phase 2 run; verdict — shared
   ancestor with independent conversions, neither text a deterministic transform of the
   other — with the order-class tabulations and exception counts in the session report
-  and in `.novc\metsudah-vs-ctr\out\` (`phase2_report.txt`, `phase2_followup.txt`,
+  and in `.novc/metsudah-vs-ctr/out/` (`phase2_report.txt`, `phase2_followup.txt`,
   `phase2_verdict.txt`, `phase2_encoding.json`, behind `phase2_encoding.py` and
   `phase2_followup.py`). Phase 3, the tracked write-up, awaits Ben.
 - 2026-08-05, session 4 (the Phase 3 chip session): Phase 3 run — the findings written up
@@ -54,7 +54,7 @@ one-tracked-plan rule). Findings replace plan text here as phases complete.
   next.
 - A first-chunk chip executes Phase 0 + Phase 1 only, then pauses for Ben.
 
-## Inputs (all in `C:\Users\BenDe\GitRepos\MAM-basics\.novc\metsudah-vs-ctr\`)
+## Inputs (all in `C:/Users/BenDe/GitRepos/MAM-basics/.novc/metsudah-vs-ctr/`)
 
 - `ctr-megillot-2026-08-04.json` (186,166 bytes) — CTR's five Megillot, 745 verses:
   `books.{ruth,song,lam,eccl,esther}.verses` maps `"<ch>:<v>"` to accent-exact text, plus
@@ -82,10 +82,10 @@ same-origin `fetch()` from page context, walking `link[rel="next"]`.
 
 ## Preconditions for the executing session
 
-- Repos: `C:\Users\BenDe\GitRepos\MAM-basics` (venv at `.venv\Scripts\python.exe`);
-  sibling `C:\Users\BenDe\GitRepos\MAM-parsed` (for `plus/E*.json` MAM text, used only for
+- Repos: `C:/Users/BenDe/GitRepos/MAM-basics` (venv at `.venv/Scripts/python.exe`);
+  sibling `C:/Users/BenDe/GitRepos/MAM-parsed` (for `plus/E*.json` MAM text, used only for
   spot checks — MAM is not a primary in this comparison).
-- Scratch scripts live in `.novc\metsudah-vs-ctr\` (gitignored), stdlib-only, run from the
+- Scratch scripts live in `.novc/metsudah-vs-ctr/` (gitignored), stdlib-only, run from the
   repo root with the venv python. No `sys.path` surgery; run black on any `.py` written.
 - Baseline: **919 tests pass, 5 skipped**, via `.venv/Scripts/python.exe py/main_test.py`,
   measured 2026-08-07 at `d2e0353` from the repo root of the primary clone. Re-measure
@@ -142,13 +142,13 @@ DEHI-for-TIPEHA exchange as Ruth 1:1.
 ## Phase 0–1 results (2026-08-04, session 2)
 
 Every number below was read out of the generated artifacts, not retyped from memory. The
-artifacts and the scripts behind them are in `.novc\metsudah-vs-ctr\` — gitignored and
+artifacts and the scripts behind them are in `.novc/metsudah-vs-ctr/` — gitignored and
 machine-local, like the inputs, which cannot be re-fetched without the browser recipe above.
 To re-derive any number (a mismatch is a finding), run from the repo root:
 
 ```
-.venv\Scripts\python.exe .novc\metsudah-vs-ctr\phase0_sanity.py
-.venv\Scripts\python.exe .novc\metsudah-vs-ctr\phase1_diff.py
+.venv/Scripts/python.exe .novc/metsudah-vs-ctr/phase0_sanity.py
+.venv/Scripts/python.exe .novc/metsudah-vs-ctr/phase1_diff.py
 ```
 
 `phase0_sanity.py` checks the inventories and censuses every non-letter character;
@@ -254,9 +254,9 @@ Every number below was read out of the generated artifacts or re-derived from th
 To re-derive any number (a mismatch is a finding), run from the repo root:
 
 ```
-.venv\Scripts\python.exe .novc\metsudah-vs-ctr\phase2_encoding.py
-.venv\Scripts\python.exe .novc\metsudah-vs-ctr\phase2_followup.py
-.venv\Scripts\python.exe .novc\metsudah-vs-ctr\phase3_check_figures.py
+.venv/Scripts/python.exe .novc/metsudah-vs-ctr/phase2_encoding.py
+.venv/Scripts/python.exe .novc/metsudah-vs-ctr/phase2_followup.py
+.venv/Scripts/python.exe .novc/metsudah-vs-ctr/phase3_check_figures.py
 ```
 
 `phase2_encoding.py` writes `out/phase2_report.txt` and `out/phase2_encoding.json`: the
@@ -357,7 +357,7 @@ for CTR.
 **Phase 0 — done 2026-08-04.** Results in "Phase 0–1 results" above.
 
 **Phase 1 — done 2026-08-04.** Results in "Phase 0–1 results" above; the diff artifact is
-`.novc\metsudah-vs-ctr\out\phase1_diffs.json`. One deviation from the plan as written:
+`.novc/metsudah-vs-ctr/out/phase1_diffs.json`. One deviation from the plan as written:
 plain `zip_longest` smears a grouping difference across the rest of its verse, so chanted
 words are paired by letters-only similarity (difflib blocks, `zip` within a block) and
 `zip_longest` runs only inside unaligned blocks. **Paused for Ben before Phase 2.**

@@ -13,7 +13,7 @@ from tmpl_survey import svg_provenance_norm
 _COLUMN_LETTERS = {"C", "D", "E"}
 _BASE_DISCARDED = {"מ:כפול", "נוסח"}
 _DOT_FALLBACK = os.path.join(
-    os.environ.get("ProgramFiles", r"C:\Program Files"), "Graphviz", "bin", "dot.exe"
+    os.environ.get("ProgramFiles", r"C:/Program Files"), "Graphviz", "bin", "dot.exe"
 )
 _FOCUS_NODE_ATTR_PARTS = (
     'fillcolor="lightgoldenrod1"',

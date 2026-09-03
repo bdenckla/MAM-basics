@@ -14,11 +14,11 @@ the scripts handle that automatically.
 
 1. **Check progress** (optional, if user asks how much is left):
    ```powershell
-   .venv\Scripts\python.exe py\main_gen_cam1753_crop_editor.py --status
+   .venv/Scripts/python.exe py/main_gen_cam1753_crop_editor.py --status
    ```
 2. **Generate crop editor** (picks the next N missing SIDs automatically):
    ```powershell
-   .venv\Scripts\python.exe py\main_gen_cam1753_crop_editor.py --batch 10
+   .venv/Scripts/python.exe py/main_gen_cam1753_crop_editor.py --batch 10
    ```
    The script prints which SIDs it selected. The editor HTML opens
    automatically in the browser.
@@ -28,23 +28,23 @@ the scripts handle that automatically.
 4. **When user pastes JSON**, save to `../book-of-job/.novc/cam1753_crops_export.json`
    and run:
    ```powershell
-   .venv\Scripts\python.exe py\main_apply_cam1753_crops.py ..\book-of-job\.novc\cam1753_crops_export.json
+   .venv/Scripts/python.exe py/main_apply_cam1753_crops.py ../book-of-job/.novc/cam1753_crops_export.json
    ```
 5. **Rebuild HTML:**
    ```powershell
-   .venv\Scripts\python.exe py\main_gen_misc_authored_english_documents.py
+   .venv/Scripts/python.exe py/main_gen_misc_authored_english_documents.py
    ```
 6. **Open detail pages** for visual confirmation:
    ```powershell
    $sids = @("SID1","SID2","SID3")   # from step 2 output
    foreach ($s in $sids) {
-         Start-Process "C:\Users\BenDe\GitRepos\book-of-job\gh-pages\jobn-details\$s.html"
+         Start-Process "C:/Users/BenDe/GitRepos/book-of-job/gh-pages/jobn-details/$s.html"
        Start-Sleep -Milliseconds 500
    }
    ```
 7. **Clean `../book-of-job/.novc/`** after user confirms:
    ```powershell
-   Get-ChildItem "..\book-of-job\.novc" -File | Remove-Item -Force
+   Get-ChildItem "../book-of-job/.novc" -File | Remove-Item -Force
    ```
 
 **That\u2019s it.** Steps 2-3 are all that\u2019s needed to start a batch.
@@ -70,11 +70,11 @@ relevant word from the Cambridge manuscript. The workflow is:
 Generates an interactive HTML crop editor at `../book-of-job/.novc/cam1753_crop_editor.html`.
 
 ```powershell
-.venv\Scripts\python.exe py\main_gen_cam1753_crop_editor.py --status       # progress summary
-.venv\Scripts\python.exe py\main_gen_cam1753_crop_editor.py                # first 6 missing
-.venv\Scripts\python.exe py\main_gen_cam1753_crop_editor.py --batch 10     # next 10 missing
-.venv\Scripts\python.exe py\main_gen_cam1753_crop_editor.py --all          # all missing
-.venv\Scripts\python.exe py\main_gen_cam1753_crop_editor.py 1613 1620      # specific SIDs
+.venv/Scripts/python.exe py/main_gen_cam1753_crop_editor.py --status       # progress summary
+.venv/Scripts/python.exe py/main_gen_cam1753_crop_editor.py                # first 6 missing
+.venv/Scripts/python.exe py/main_gen_cam1753_crop_editor.py --batch 10     # next 10 missing
+.venv/Scripts/python.exe py/main_gen_cam1753_crop_editor.py --all          # all missing
+.venv/Scripts/python.exe py/main_gen_cam1753_crop_editor.py 1613 1620      # specific SIDs
 ```
 
 ### `py/main_apply_cam1753_crops.py`
@@ -82,7 +82,7 @@ Generates an interactive HTML crop editor at `../book-of-job/.novc/cam1753_crop_
 Applies crop bounding boxes from the editor export JSON to produce final PNGs.
 
 ```powershell
-.venv\Scripts\python.exe py\main_apply_cam1753_crops.py ..\book-of-job\.novc\cam1753_crops_export.json
+.venv/Scripts/python.exe py/main_apply_cam1753_crops.py ../book-of-job/.novc/cam1753_crops_export.json
 ```
 
 This:
@@ -97,7 +97,7 @@ Process quirkrecs in batches of ~10:
 
 1. **Generate crop editor:**
    ```powershell
-   .venv\Scripts\python.exe py\main_gen_cam1753_crop_editor.py --batch 10
+   .venv/Scripts/python.exe py/main_gen_cam1753_crop_editor.py --batch 10
    ```
    The editor HTML opens automatically in the browser.
 
@@ -106,12 +106,12 @@ Process quirkrecs in batches of ~10:
 3. **Paste the JSON** into the chat. The assistant saves it to
    `../book-of-job/.novc/cam1753_crops_export.json` and runs:
    ```powershell
-   .venv\Scripts\python.exe py\main_apply_cam1753_crops.py ..\book-of-job\.novc\cam1753_crops_export.json
+   .venv/Scripts/python.exe py/main_apply_cam1753_crops.py ../book-of-job/.novc/cam1753_crops_export.json
    ```
 
 4. **Rebuild HTML:**
    ```powershell
-   .venv\Scripts\python.exe py\main_gen_misc_authored_english_documents.py
+   .venv/Scripts/python.exe py/main_gen_misc_authored_english_documents.py
    ```
 
 5. **Show detail pages in browser** — open each detail page directly
@@ -119,7 +119,7 @@ Process quirkrecs in batches of ~10:
    ```powershell
    $sids = @("SID1","SID2","SID3")
    foreach ($s in $sids) {
-         Start-Process "C:\Users\BenDe\GitRepos\book-of-job\gh-pages\jobn-details\$s.html"
+         Start-Process "C:/Users/BenDe/GitRepos/book-of-job/gh-pages/jobn-details/$s.html"
        Start-Sleep -Milliseconds 500
    }
    ```
@@ -127,7 +127,7 @@ Process quirkrecs in batches of ~10:
 
 6. **Clean `../book-of-job/.novc/`** after confirming the crops look good:
    ```powershell
-   Get-ChildItem "..\book-of-job\.novc" -File | Remove-Item -Force
+   Get-ChildItem "../book-of-job/.novc" -File | Remove-Item -Force
    ```
 
 7. **Commit** when satisfied.

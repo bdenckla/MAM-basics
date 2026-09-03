@@ -4,7 +4,7 @@ HTML document: Trivial ketiv/qere — מ:קו״כ-אם-2 in plain format.
 
 To regenerate the output HTML, run from the repo root::
 
-    .venv\Scripts\python.exe py\main_authored.py gen-mam-parsed-docs
+    .venv/Scripts/python.exe py/main_authored.py gen-mam-parsed-docs
 
 Output goes to ../MAM-parsed/gh-pages/mpplain_kq_am2.html.
 """

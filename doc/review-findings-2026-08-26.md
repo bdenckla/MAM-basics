@@ -228,7 +228,7 @@ commit that lands this doc; findings 2 and 5 are Ben's.
    `b37bdb4` and `fe6cef2` messages.
 
 4. **The settings.json orphan record miscounts its own globs, in two mutually contradictory
-   forms.** The deleted file (`git -C ..\codex-index-aleppo show
+   forms.** The deleted file (`git -C ../codex-index-aleppo show
    "3003a06^:.claude/settings.json"`) held ten globs: `Bash(git *)`, `Bash(cd **/* && git *)`,
    three naming that repo's own `.venv`, one `Bash(**/.venv/…)`, three `gh issue`, one `Read()`.
    `3003a06`'s message (echoed by `b625665`) says "six were still live … only the four naming

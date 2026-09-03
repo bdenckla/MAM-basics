@@ -465,7 +465,7 @@ time, `py/tests/test_wlc_redirect_manifest.py`, was hoisted into the suite preci
 needs no clone. It raises with the command that fixes it:
 
 ```powershell
-git clone --depth 1 https://github.com/bdenckla/wlc-utils.git C:\Users\BenDe\GitRepos\wlc-utils
+git clone --depth 1 https://github.com/bdenckla/wlc-utils.git C:/Users/BenDe/GitRepos/wlc-utils
 ```
 
 **The stub set is frozen at `in/wlc_redirect_pages.json`, the 154 URLs wlc-utils published at the

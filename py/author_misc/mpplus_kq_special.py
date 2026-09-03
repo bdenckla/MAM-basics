@@ -4,7 +4,7 @@ HTML document: Special ketiv/qere — מ:כו״ק מיוחד.
 
 To regenerate the output HTML, run from the repo root::
 
-    .venv\\Scripts\\python.exe py\\main_authored.py gen-mam-parsed-docs
+    .venv/Scripts/python.exe py/main_authored.py gen-mam-parsed-docs
 
 Output goes to ../MAM-parsed/gh-pages/mpplus_kq_special.html.
 """

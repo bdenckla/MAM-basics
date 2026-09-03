@@ -6,14 +6,14 @@ import os
 
 _PATH = "out/tmpl-survey-plus/plus.json"
 _PLAIN_PATH = "out/tmpl-survey-plain/plain.json"
-_REGEN_MSG = "    .venv\\Scripts\\python.exe py\\main_tmpl_survey.py"
+_REGEN_MSG = "    .venv/Scripts/python.exe py/main_tmpl_survey.py"
 
 
 def load() -> dict:
     """Load out/tmpl-survey-plus/plus.json. Caller must run from repo root.
 
     Raises FileNotFoundError with an instructive message if absent. Does NOT
-    regenerate; that is intentionally a manual step (`py\\main_tmpl_survey.py`).
+    regenerate; that is intentionally a manual step (`py/main_tmpl_survey.py`).
     """
     if not os.path.exists(_PATH):
         raise FileNotFoundError(

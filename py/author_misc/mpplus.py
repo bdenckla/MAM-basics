@@ -4,7 +4,7 @@ HTML document: reading MAM-parsed-plus format.
 
 To regenerate the output HTML, run from the repo root::
 
-    .venv\\Scripts\\python.exe py\\main_authored.py gen-mam-parsed-docs
+    .venv/Scripts/python.exe py/main_authored.py gen-mam-parsed-docs
 
 Output goes to ../MAM-parsed/gh-pages/mpplus.html.
 Body content lives in mpplus_body.py.

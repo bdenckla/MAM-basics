@@ -9,7 +9,7 @@ Phase 11 did not review or execute the following `vendoring-audit` step, did not
 start Phase 12, and did not fix production code or generated output.
 
 The governing forest was
-`C:\Users\BenDe\Documents\Codex\ReviewForests\mam-mega-review-2026-09-01`.
+`C:/Users/BenDe/Documents/Codex/ReviewForests/mam-mega-review-2026-09-01`.
 The reviewed branch heads were MAM-basics
 `6d0aef7b038520a9dea3c12369a614d6eae93115` and MAM-private
 `3aa273676bdad84e7b78f59abf0a06eda94aa6e3`, both on
@@ -160,19 +160,19 @@ From the MAM-basics review worktree, the exact registered step was exercised by 
 ignored Phase 11 probe with:
 
 ```powershell
-C:\Users\BenDe\GitRepos\MAM-basics\.venv\Scripts\python.exe .novc\phase11_probe.py registered exact_step
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe .novc/phase11_probe.py registered exact_step
 ```
 
 The prescribed direct generator was exercised with:
 
 ```powershell
-C:\Users\BenDe\GitRepos\MAM-basics\.venv\Scripts\python.exe py\main_authored.py gen-site
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_authored.py gen-site
 ```
 
 The focused landing-page lint was exercised with:
 
 ```powershell
-C:\Users\BenDe\GitRepos\MAM-basics\.venv\Scripts\python.exe .novc\phase11_probe.py tests py\tests\test_site_index_links.py -q
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe .novc/phase11_probe.py tests py/tests/test_site_index_links.py -q
 ```
 
 The complete MAM-basics suite was exercised with the review-forest dependencies
@@ -180,14 +180,14 @@ pinned where the forest contains them and clean primary clones supplied only for
 the ten dependencies absent from the deliberately eight-repository forest:
 
 ```powershell
-C:\Users\BenDe\GitRepos\MAM-basics\.venv\Scripts\python.exe .novc\phase11_probe.py tests
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe .novc/phase11_probe.py tests
 ```
 
 The result was **971 passed and 5 skipped in 100.54 seconds**. The focused file had
 already reported **2 passed**. The HTML checker was exercised with:
 
 ```powershell
-C:\Users\BenDe\GitRepos\MAM-basics\.venv\Scripts\python.exe py\check_html_syntax_and_sanity.py gh-pages
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/check_html_syntax_and_sanity.py gh-pages
 ```
 
 The ignored probe also captured source/output inventories, the empty-`REPOS_ROOT`

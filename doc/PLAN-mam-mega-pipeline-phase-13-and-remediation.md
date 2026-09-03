@@ -24,12 +24,12 @@ executed daisy chain subdivided and renumbered that remaining work. The tracked
 reports establish the actual ending:
 
 1. Phase 10 reviewed `near-aleppo-census` and is recorded privately in
-   `C:\Users\BenDe\Documents\Codex\ReviewForests\mam-mega-review-2026-09-01\MAM-private\doc\mega-pipeline-review-phase-10-2026-09-01.md`.
+   `C:/Users/BenDe/Documents/Codex/ReviewForests/mam-mega-review-2026-09-01/MAM-private/doc/mega-pipeline-review-phase-10-2026-09-01.md`.
 2. Phase 11 reviewed `gen-site` and is recorded publicly in
-   `C:\Users\BenDe\Documents\Codex\ReviewForests\mam-mega-review-2026-09-01\MAM-basics\doc\mega-pipeline-review-phase-11-2026-09-01.md`.
+   `C:/Users/BenDe/Documents/Codex/ReviewForests/mam-mega-review-2026-09-01/MAM-basics/doc/mega-pipeline-review-phase-11-2026-09-01.md`.
 3. Phase 12 reviewed `vendoring-audit`, the final registered `StepRecord`, and is
    recorded publicly in
-   `C:\Users\BenDe\Documents\Codex\ReviewForests\mam-mega-review-2026-09-01\MAM-basics\doc\mega-pipeline-review-phase-12-2026-09-01.md`.
+   `C:/Users/BenDe/Documents/Codex/ReviewForests/mam-mega-review-2026-09-01/MAM-basics/doc/mega-pipeline-review-phase-12-2026-09-01.md`.
 
 Ben's decision above gives the next sequential label a new, unambiguous meaning:
 **Phase 13 is whole-pipeline integration and review closeout.** Do not revive the
@@ -39,30 +39,30 @@ original Phase 13 or Phase 14 labels.
 
 Before the first repository command, read these files completely:
 
-1. `C:\Users\BenDe\.codex\AGENTS.md`;
-2. `C:\Users\BenDe\.agents\skills\worktree-forest\SKILL.md`;
-3. `C:\Users\BenDe\Documents\Codex\ReviewForests\mam-mega-review-2026-09-01\review-manifest.json`;
+1. `C:/Users/BenDe/.codex/AGENTS.md`;
+2. `C:/Users/BenDe/.agents/skills/worktree-forest/SKILL.md`;
+3. `C:/Users/BenDe/Documents/Codex/ReviewForests/mam-mega-review-2026-09-01/review-manifest.json`;
 4. this plan;
-5. `C:\Users\BenDe\Documents\Codex\ReviewForests\mam-mega-review-2026-09-01\MAM-basics\CLAUDE.md`;
-6. `C:\Users\BenDe\Documents\Codex\ReviewForests\mam-mega-review-2026-09-01\MAM-basics\doc\agent-planning-principles.md`; and
-7. `C:\Users\BenDe\.agents\skills\hebrew-prose\SKILL.md` before evaluating or
+5. `C:/Users/BenDe/Documents/Codex/ReviewForests/mam-mega-review-2026-09-01/MAM-basics/CLAUDE.md`;
+6. `C:/Users/BenDe/Documents/Codex/ReviewForests/mam-mega-review-2026-09-01/MAM-basics/doc/agent-planning-principles.md`; and
+7. `C:/Users/BenDe/.agents/skills/hebrew-prose/SKILL.md` before evaluating or
    writing any finding, comment, or report prose about Hebrew accentuation.
 
 The review forest is:
 
-`C:\Users\BenDe\Documents\Codex\ReviewForests\mam-mega-review-2026-09-01`
+`C:/Users/BenDe/Documents/Codex/ReviewForests/mam-mega-review-2026-09-01`
 
 The review manifest is:
 
-`C:\Users\BenDe\Documents\Codex\ReviewForests\mam-mega-review-2026-09-01\review-manifest.json`
+`C:/Users/BenDe/Documents/Codex/ReviewForests/mam-mega-review-2026-09-01/review-manifest.json`
 
 The borrowed interpreters are deliberately outside the forest because virtual
 environments are gitignored:
 
 - pipeline and public tests:
-  `C:\Users\BenDe\GitRepos\MAM-basics\.venv\Scripts\python.exe`;
+  `C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe`;
 - direct private census checks:
-  `C:\Users\BenDe\GitRepos\MAM-private\.venv\Scripts\python.exe`.
+  `C:/Users/BenDe/GitRepos/MAM-private/.venv/Scripts/python.exe`.
 
 Use the forest worktree's script paths and current directory with those absolute
 interpreters. Do not create, copy, link, or junction a `.venv` inside a worktree.
@@ -103,13 +103,13 @@ Phase 12 recorded these further baselines:
 4. the cumulative review tally: **89 findings: 15 P1, 33 P2, and 41 P3**.
 
 Write a purpose-named ignored script at
-`MAM-basics\.novc\phase13_preflight.py` to read the manifest, run labelled Git
+`MAM-basics/.novc/phase13_preflight.py` to read the manifest, run labelled Git
 checks with exact process-local `safe.directory` entries, re-count the live
 registry, re-hash the 87 census files, and fail on every mismatch. Run it from
 the MAM-basics review worktree with:
 
 ```powershell
-C:\Users\BenDe\GitRepos\MAM-basics\.venv\Scripts\python.exe .novc\phase13_preflight.py verify
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe .novc/phase13_preflight.py verify
 ```
 
 The findings tally cannot be accepted merely because the arithmetic in Phase 12
@@ -145,12 +145,12 @@ tracked reports as the authority where a task summary and a report differ.
 The canonical complete disposition ledger belongs in MAM-private because it
 necessarily includes Phase 10's private findings. Write it as:
 
-`C:\Users\BenDe\Documents\Codex\ReviewForests\mam-mega-review-2026-09-01\MAM-private\doc\mega-pipeline-review-findings-2026-09-01.md`
+`C:/Users/BenDe/Documents/Codex/ReviewForests/mam-mega-review-2026-09-01/MAM-private/doc/mega-pipeline-review-findings-2026-09-01.md`
 
 Write a public companion in MAM-basics containing only public findings, public
 coverage, and the aggregate private counts:
 
-`C:\Users\BenDe\Documents\Codex\ReviewForests\mam-mega-review-2026-09-01\MAM-basics\doc\mega-pipeline-review-findings-public-2026-09-01.md`
+`C:/Users/BenDe/Documents/Codex/ReviewForests/mam-mega-review-2026-09-01/MAM-basics/doc/mega-pipeline-review-findings-public-2026-09-01.md`
 
 Do not move private paths, controlled inputs, comparison-project details, or
 private findings into MAM-basics merely to make the public companion complete.
@@ -189,7 +189,7 @@ difference; do not fetch, pull, rebase, reset, or repair it merely to proceed.
 
 ## Phase 13B — run the complete pipeline twice
 
-Write an ignored launcher at `MAM-basics\.novc\phase13_runner.py`. The launcher
+Write an ignored launcher at `MAM-basics/.novc/phase13_runner.py`. The launcher
 must set `REPOS_ROOT` and every supported per-repository override to absolute
 forest paths, give child Git processes exact process-local `safe.directory`
 entries, snapshot every forest member before and after each command, detect any
@@ -200,7 +200,7 @@ The launcher must invoke the real entry point, not reproduce the individual
 steps. Run the first pass with:
 
 ```powershell
-C:\Users\BenDe\GitRepos\MAM-basics\.venv\Scripts\python.exe .novc\phase13_runner.py run-1
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe .novc/phase13_runner.py run-1
 ```
 
 The first pass inventories every tracked and untracked change by repository,
@@ -212,7 +212,7 @@ Only after the first pass succeeds, run the same complete pipeline again without
 restoring the first pass's generated outputs:
 
 ```powershell
-C:\Users\BenDe\GitRepos\MAM-basics\.venv\Scripts\python.exe .novc\phase13_runner.py run-2
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe .novc/phase13_runner.py run-2
 ```
 
 The second pass must add no further content change. Compare complete hashes, not
@@ -222,7 +222,7 @@ is a Phase 13 finding.
 Then run the canonical suite through the same forest environment:
 
 ```powershell
-C:\Users\BenDe\GitRepos\MAM-basics\.venv\Scripts\python.exe .novc\phase13_runner.py tests
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe .novc/phase13_runner.py tests
 ```
 
 Re-measure rather than copy the Phase 12 baseline of 971 passed and 5 skipped.
@@ -238,12 +238,12 @@ production fix belongs in Phase 13.
 
 Write the public closeout report as:
 
-`C:\Users\BenDe\Documents\Codex\ReviewForests\mam-mega-review-2026-09-01\MAM-basics\doc\mega-pipeline-review-phase-13-2026-09-01.md`
+`C:/Users/BenDe/Documents/Codex/ReviewForests/mam-mega-review-2026-09-01/MAM-basics/doc/mega-pipeline-review-phase-13-2026-09-01.md`
 
 Write a private companion only if the integration run or reconciliation needs
 private details:
 
-`C:\Users\BenDe\Documents\Codex\ReviewForests\mam-mega-review-2026-09-01\MAM-private\doc\mega-pipeline-review-phase-13-2026-09-01.md`
+`C:/Users/BenDe/Documents/Codex/ReviewForests/mam-mega-review-2026-09-01/MAM-private/doc/mega-pipeline-review-phase-13-2026-09-01.md`
 
 The public report records the complete public runtime/write graph, exact heads,
 commands, output inventory, first-run changes, second-run stability, test result,
@@ -267,7 +267,7 @@ After Ben accepts the Phase 13 closeout report, freeze the review forest: no
 fix, formatting pass, regeneration, or issue mutation occurs there. Create a
 separately named forest under:
 
-`C:\Users\BenDe\Documents\Codex\ReviewForests\mam-mega-remediation-<YYYY-MM-DD>`
+`C:/Users/BenDe/Documents/Codex/ReviewForests/mam-mega-remediation-<YYYY-MM-DD>`
 
 Give the remediation forest its own `review-manifest.json`, purpose, starting
 commits, scratch policy, borrowed interpreter paths, runtime/write dependency
@@ -327,7 +327,7 @@ directories are not the archive.
 
 Ben approved the MP02-02 and MP02-03 remediation wave on 2026-09-02. The wave
 used the separately named forest at
-`C:\Users\BenDe\Documents\Codex\ReviewForests\mam-mega-remediation-change-log-fail-closed-2026-09-02`.
+`C:/Users/BenDe/Documents/Codex/ReviewForests/mam-mega-remediation-change-log-fail-closed-2026-09-02`.
 The forest manifest records current-main baselines for MAM-basics, MAM-parsed,
 MAM-with-doc, and MAM-private. The MAM-basics and MAM-private remediation
 branches first merged the retained Phase 13 review records in commits
@@ -348,7 +348,7 @@ its collect-all contract. The ignored adverse probe forced one verification
 error and observed zero JSON writes and zero HTML writes.
 
 Verification used
-`C:\Users\BenDe\GitRepos\MAM-basics\.venv\Scripts\python.exe`. Black left the
+`C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe`. Black left the
 edited production file unchanged. The four focused change-log test files passed
 with 37 tests. Real `diff-mpp --all` generation reproduced named-release counts
 of 76, 557, 19, 139, and 33. The MAM-with-doc detached worktree remained clean,
@@ -365,7 +365,7 @@ remain present pending Ben's next remediation or retirement decision.
 
 Ben approved the MP02-01 implementation wave on 2026-09-02. The wave used the
 separately named forest at
-`C:\Users\BenDe\Documents\Codex\ReviewForests\mam-mega-remediation-mp02-01-2026-09-02`.
+`C:/Users/BenDe/Documents/Codex/ReviewForests/mam-mega-remediation-mp02-01-2026-09-02`.
 Its current-main baselines were MAM-basics
 `e2b5208560e348a06c69d240f38b9f3a20889209`, MAM-parsed
 `54ba7e0b2b9db37be6ef1b9f36072cc4eeda9908`, MAM-with-doc
@@ -385,7 +385,7 @@ fatal.
 The ignored independent check ran as:
 
 ```powershell
-C:\Users\BenDe\GitRepos\MAM-basics\.venv\Scripts\python.exe .novc\mp02_01_verify.py
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe .novc/mp02_01_verify.py
 ```
 
 The check independently read all 218 revisions from `9ce6ee5` through
@@ -402,13 +402,13 @@ Black ran on the two edited Python files through the primary MAM-basics venv.
 The focused repository command passed 37 tests:
 
 ```powershell
-C:\Users\BenDe\GitRepos\MAM-basics\.venv\Scripts\python.exe py/main_test.py -q py/tests/test_diff_mpp_unpinned_latest.py py/tests/test_mpplus_extract.py py/tests/test_mpplus_file_matching.py py/tests/test_mpplus_latest_note_schema.py
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_test.py -q py/tests/test_diff_mpp_unpinned_latest.py py/tests/test_mpplus_extract.py py/tests/test_mpplus_file_matching.py py/tests/test_mpplus_latest_note_schema.py
 ```
 
 The full regeneration command was:
 
 ```powershell
-C:\Users\BenDe\GitRepos\MAM-basics\.venv\Scripts\python.exe py/main_diff.py mpp --all
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_diff.py mpp --all
 ```
 
 The named-release raw counts remained 76, 557, 19, 139, and 33. The unpinned
@@ -452,7 +452,7 @@ reported as though it did. The accepted disposition here is the risk that those
 outputs may become stale.
 
 Verification used
-`C:\Users\BenDe\GitRepos\MAM-basics\.venv\Scripts\python.exe`. Black
+`C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe`. Black
 formatted the four edited Python files. The focused path suite passed 14 tests.
 The real `py/main_wlc_json_and_unicode.py` entry point exited 0; every public
 tracked output was byte-identical, and `MAM-private/wlc-utils-private/in` and

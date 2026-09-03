@@ -14,15 +14,15 @@ the model, and this file leans on it rather than restating it: where a question 
 this file cites the section by name and says only what differs. The two files are not
 interchangeable — that one is a completed execution record, this one is unexecuted work.
 
-**The destination repo is `C:\Users\BenDe\GitRepos\MAM-basics`**, whose venv is
-`C:\Users\BenDe\GitRepos\MAM-basics\.venv\Scripts\python.exe`. The three source repos are
-`C:\Users\BenDe\GitRepos\book-of-job`, `C:\Users\BenDe\GitRepos\holman-ketiv-qere` and
-`C:\Users\BenDe\GitRepos\UXLC-utils`. None of the three has a venv it needs any more, their Python
+**The destination repo is `C:/Users/BenDe/GitRepos/MAM-basics`**, whose venv is
+`C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe`. The three source repos are
+`C:/Users/BenDe/GitRepos/book-of-job`, `C:/Users/BenDe/GitRepos/holman-ketiv-qere` and
+`C:/Users/BenDe/GitRepos/UXLC-utils`. None of the three has a venv it needs any more, their Python
 having gone.
 
 **No skill is needed for this plan.** It touches no prose about accentuation, so the
 `hebrew-prose` skill does not fire; the instruction files that do govern it are
-`C:\Users\BenDe\.claude\CLAUDE.md` (global) and `C:\Users\BenDe\GitRepos\MAM-basics\CLAUDE.md`
+`C:/Users/BenDe/.claude/CLAUDE.md` (global) and `C:/Users/BenDe/GitRepos/MAM-basics/CLAUDE.md`
 (this repo). Read both before the first edit. One phase writes prose *about* the Holman review and
 the Job manuscripts into `DATA-LICENSES.md`; that is licensing prose, not accentuation prose.
 
@@ -114,11 +114,11 @@ day and the item says so.
    clone holds" overstates the hazard.** `py/main_ingest_uxlc_emails.py`'s docstring: *"Being
    untracked, the mailbox is per-machine: a machine holds whichever messages were forwarded to it,
    which may be one. Ingesting a partial mailbox is the ordinary case … the report regenerates from
-   [`emails/`] without the mailbox."* On 2026-09-02 `holman-ketiv-qere\.novc\eml\` held one `.eml`
+   [`emails/`] without the mailbox."* On 2026-09-02 `holman-ketiv-qere/.novc/eml/` held one `.eml`
    on this machine and `emails/` held 28 tracked files for 14 messages; a second mailbox,
-   `.novc\eml-mam\`, arrived the same day with item 3. Phase 3's mailbox paragraph is rewritten in
+   `.novc/eml-mam/`, arrived the same day with item 3. Phase 3's mailbox paragraph is rewritten in
    place: Step 3 moves whatever `.eml` files the machine holds, from both mailboxes, into
-   `MAM-basics\.novc\eml\` and `MAM-basics\.novc\eml-mam\`, and repoints `hkq_paths.eml_dir()` and
+   `MAM-basics/.novc/eml/` and `MAM-basics/.novc/eml-mam/`, and repoints `hkq_paths.eml_dir()` and
    `hkq_paths.mam_eml_dir()` onto `paths.novc_dir()`; a mailbox is needed only to ingest a *new*
    message, never to regenerate.
 3. **holman-ketiv-qere gained a third body of Holman's work on 2026-09-02, with a stricter privacy
@@ -151,11 +151,11 @@ day and the item says so.
    `holman/` for this plan's pilot. Decision C's section carries the note; Decision F says what was
    put and what was not.
 8. **Four forests hold worktrees of the source repos, so Step 6 waits on their teardown.**
-   `C:\Users\BenDe\Forests\holman-mam-2026-09-02` (branch `forest/holman-mam-suggestions`, at
+   `C:/Users/BenDe/Forests/holman-mam-2026-09-02` (branch `forest/holman-mam-suggestions`, at
    `main` in every member when measured on 2026-09-02, and still in use — a session merged from
    it into MAM-basics `main` twice that afternoon, `18d17e8` at 13:06 and `1438a91` at 13:30
    EDT — so it is Ben's to tear down when its work ends);
-   `C:\Users\BenDe\Documents\Codex\ReviewForests\mam-mega-review-2026-09-01` and two
+   `C:/Users/BenDe/Documents/Codex/ReviewForests/mam-mega-review-2026-09-01` and two
    `mam-mega-remediation-*-2026-09-02` siblings, read-only pending Ben's retirement decision under
    `doc/PLAN-mam-mega-pipeline-phase-13-and-remediation.md`. Step 6's `git worktree list` check
    catches this; nothing before Step 6 is blocked by it.
@@ -345,7 +345,7 @@ These were settled elsewhere and are named here so that a fresh session does not
    `py/main_wlc_redirect_stubs.py` "is the template to generalize rather than to adapt".
 6. **Each evacuated repo's clone comes off the local disk when its lane finishes.** Ben's
    decision, 2026-08-22. **The repo itself stays alive on GitHub** — this removes a directory under
-   `C:\Users\BenDe\GitRepos`, and nothing else. **wlc-utils is doing the same thing on the same
+   `C:/Users/BenDe/GitRepos`, and nothing else. **wlc-utils is doing the same thing on the same
    day**, by Ben's instruction in a concurrent session — *"Freeze the manifest, then delete the
    clone and workspace entry"* — so this is not a departure from that precedent but a continuation
    of it, and al-hatorah's clone came off on 2026-08-11 the same way. The lane's Step 6 is where it
@@ -832,7 +832,7 @@ apply unchanged in shape. What differs is layer 2, and the difference is large e
 first.
 
 **Layer 1 — blob-hash manifest identity, which proves the copy.** `git ls-files -s` in the source
-repo yields `<mode> <sha1> 0\t<path>` per file. After the copy, the same command in MAM-basics,
+repo yields `<mode> <sha1> 0/t<path>` per file. After the copy, the same command in MAM-basics,
 restricted to the destination paths, must yield the **identical SHA-1s**, differing only in path.
 Git blobs are content-addressed, so this is exact byte-identity — and it is the **only** evidence
 covering the 884 PNGs, 3 JPGs and the 4 woff2 across the three repos, which no program
@@ -917,8 +917,8 @@ rely on the stub."*
   every suite run.
 
 **Every inbound link this plan's sweep found is of the second kind, and that is a fact about the
-instrument.** Measured 2026-08-22 across every clone under `C:\Users\BenDe\GitRepos` and
-`C:\Users\BenDe\GitRepos\MAM-private` — all of them Ben's:
+instrument.** Measured 2026-08-22 across every clone under `C:/Users/BenDe/GitRepos` and
+`C:/Users/BenDe/GitRepos/MAM-private` — all of them Ben's:
 
 - `bdenckla.github.io/book-of-job/jobn-details/*.html` — seven sites in
   a MAM-private module and seven in a MAM-private report page (private annex §5)
@@ -975,7 +975,7 @@ to have one.
 
 **What the same sweep found NOTHING in, which is what turns an unexpected diff later into a finding
 rather than noise.** Run 2026-08-22 as `git grep -n -I -E "book-of-job|holman-ketiv-qere|UXLC-utils"`
-in every clone under `C:\Users\BenDe\GitRepos` and in `C:\Users\BenDe\GitRepos\MAM-private`,
+in every clone under `C:/Users/BenDe/GitRepos` and in `C:/Users/BenDe/GitRepos/MAM-private`,
 ignoring `.venv` and `node_modules`:
 
 - **Zero hits of any kind**, so no dependency and no prose to correct: **MAM-parsed, MAM-with-doc,
@@ -1041,7 +1041,7 @@ module has nothing left that names the sibling, delete it. **Check the two excep
 "The organizing idea" above before sweeping**: `hkq_paths.mam_qere_words_path()` already points at
 MAM-basics, and `hkq_cmn/table_row_github_issues.py`'s `REPO_NAME` is a tracker name.
 
-Verify: run this repo's oracle from `C:\Users\BenDe\GitRepos\MAM-basics`; **zero tracked artifacts
+Verify: run this repo's oracle from `C:/Users/BenDe/GitRepos/MAM-basics`; **zero tracked artifacts
 come back modified** in either repo; mtime snapshots in both directions per layer 3, with **zero
 files touched in the source repo**; `py/main_test.py` still green; `ruff check py` and
 `black --check py` clean.
@@ -1066,7 +1066,7 @@ which is the conflation Ben corrected on 2026-08-22:
 
 - **Citations Ben controls are WORK, done in this same phase.** Repoint each at its new MAM-basics
   URL. Find them per repo with `git grep -n 'bdenckla.github.io/<repo>'` across every clone under
-  `C:\Users\BenDe\GitRepos` and `C:\Users\BenDe\GitRepos\MAM-private` — the instrument that found
+  `C:/Users/BenDe/GitRepos` and `C:/Users/BenDe/GitRepos/MAM-private` — the instrument that found
   wlc-utils' **ten**, repointed in `d70e14c`. **Prefer the generator to the artifact**: wlc-utils'
   four CLC deep links were one constant, `py/clc/clc_render.py`'s `_LC_CORROBORATED_LINK`, plus a
   regeneration. **Expect this to be real work in each of the three lanes rather than a footnote** —
@@ -1163,13 +1163,13 @@ no window exists in which a live rule is stated nowhere.
 **Where a disposition needs a decision rather than a judgment, put it to Ben at this step and not
 before**, one question at a time, the way Decision E's parked question is put at Phase 5's Step 3.
 
-**Step 6 — Remove the clone from `C:\Users\BenDe\GitRepos`.** *No commit anywhere.* **Ben's
+**Step 6 — Remove the clone from `C:/Users/BenDe/GitRepos`.** *No commit anywhere.* **Ben's
 decision, 2026-08-22**, given while this plan was being written, and **the wlc-utils precedent is
 the same**: that clone came off the disk the same day, by the concurrent session, per carried-in
 decision 6 and MAM-basics' `CLAUDE.md` §"There is no local `wlc-utils` clone either, and its stub
 set is frozen". (This paragraph said the removal was "departing from the wlc-utils precedent,
 whose clone is still on the disk" until the 2026-08-22 review, which found
-`C:\Users\BenDe\GitRepos\wlc-utils` gone.)
+`C:/Users/BenDe/GitRepos/wlc-utils` gone.)
 
 **The repo stays alive on GitHub. Only the local clone goes.** Everything the redirect host is for
 — the stubs, the `404.html`, the Pages deploy, the issue tracker, the pre-evacuation history —
@@ -1329,7 +1329,7 @@ staging; and the push landing fast-forward with no `--force`.
    then intersect with the source repo's non-`gh-pages` blobs. Measured 2026-08-22: book-of-job 1
    (its Pages workflow), holman-ketiv-qere 0, UXLC-utils 41.
 3. **Build the layer-4 URL list, in TWO parts.** Sweep every clone under
-   `C:\Users\BenDe\GitRepos` and `C:\Users\BenDe\GitRepos\MAM-private` for
+   `C:/Users/BenDe/GitRepos` and `C:/Users/BenDe/GitRepos/MAM-private` for
    `bdenckla.github.io/<repo>/`. **Everything that sweep returns is a citation Ben controls, and so
    is a repoint work item for that repo's lane, not evidence for a stub** — the sites known as of
    2026-08-22 are under "Layer 4" above, and the sweep is what makes the list current.
@@ -1356,7 +1356,7 @@ Began at MAM-basics `d095871`, book-of-job `3f096b9`, holman-ketiv-qere `5f419ef
 on `main` with nothing unpushed, and MAM-basics confirmed the main clone rather than a worktree
 (`git rev-parse --git-common-dir` is `.git`). **Nothing was copied, nothing was deleted, and no
 repo but MAM-basics was written to**; every command below is read-only outside `.novc/`. The
-working files are in `.novc\three-repos-phase0\` (gitignored), the flat listings and blob sets the
+working files are in `.novc/three-repos-phase0/` (gitignored), the flat listings and blob sets the
 census was taken from.
 
 **Items 1 to 4 were done in one sitting and written back first (`0decb3f`); item 5, the five
@@ -1443,7 +1443,7 @@ shows success for the `d095871` push, and `bdenckla.github.io/MAM-basics/wlc/ind
 200. 5: `HEAD` at start `d095871`, equal to `HEAD` before each commit below.
 
 **Banked for later phases, while cheap.** Both unsynced live-plus-tracked pairs are byte-identical
-today — `~\.claude\CLAUDE.md` against `github-misc\dot-claude\CLAUDE.md`, and the
+today — `~/.claude/CLAUDE.md` against `github-misc/dot-claude/CLAUDE.md`, and the
 `hebrew-prose` skill against its tracked copy — the state Phase 6's items 3 and 4 need before they
 add to either. `all-repos.code-workspace` lists **19** folders, the three repos among them and
 `../wlc-utils` not, so Phase 6's item 7 starts from 19 and ends at 16 as written.
@@ -1737,7 +1737,7 @@ wlc-utils clone came off the disk on 2026-08-22 (MAM-basics' `CLAUDE.md` §"Ther
 `wlc-utils` clone either, and its stub set is frozen"). So:
 
 ```powershell
-git clone --depth 1 https://github.com/bdenckla/wlc-utils.git C:\Users\BenDe\GitRepos\wlc-utils
+git clone --depth 1 https://github.com/bdenckla/wlc-utils.git C:/Users/BenDe/GitRepos/wlc-utils
 ```
 
 **Do not re-add `../wlc-utils` to `all-repos.code-workspace`** — the entry stays out, only the
@@ -1746,7 +1746,7 @@ checks (nothing unpushed, nothing untracked). **The phase's order in that clone 
 check, then the rename, then the one-time republish decided above — `build --publish`, one commit,
 pushed — then the removal.** Then: `build --out <scratch>` for the wlc row
 produces exactly the 155 files committed in wlc-utils, byte-identical — `git diff --no-index`
-between the scratch tree and `C:\Users\BenDe\GitRepos\wlc-utils\gh-pages` is the check, and it is
+between the scratch tree and `C:/Users/BenDe/GitRepos/wlc-utils/gh-pages` is the check, and it is
 expected to be empty **before the rename**; `check` passes against that committed tree; a row
 whose manifest is not committed makes `build` and `check` **raise on the missing file rather than
 run empty** — that is the frozen design's behavior, and it is what to verify, by pointing the tool
@@ -1759,7 +1759,7 @@ design, under which an un-landed tree yielded an empty `git ls-files`.)
 
 ## Phase 3 — holman-ketiv-qere, the pilot lane; plus the generated landing page
 
-*The per-repo lane, run for `C:\Users\BenDe\GitRepos\holman-ketiv-qere`.*
+*The per-repo lane, run for `C:/Users/BenDe/GitRepos/holman-ketiv-qere`.*
 
 **Why this repo goes first.** It has the **smallest stub set of the three by a wide margin — 6
 pages** — and the smallest non-`gh-pages` tail at 48 files, while still being a real move at 300
@@ -1788,7 +1788,7 @@ the Scale table; the two JC3 pages had been counted as outside):
 
 1. **The docx has spaces in its name and `git ls-files` does NOT quote it**, being pure ASCII. The
    two paths this repo *does* get quoted are both under `gh-pages/` and are quoted for a Hebrew ז
-   rather than for their spaces — `"gh-pages/JC3 The Biblical Text in the JC Edition #19-\327\226.html"`
+   rather than for their spaces — `"gh-pages/JC3 The Biblical Text in the JC Edition #19-/327/226.html"`
    and its ` - English` sibling. **So a census written from `git ls-files | grep '"'` finds the two
    pages and misses the 20.6 MB document.** Use `-z`. **Those same two pages are also the only
    pages in any of the three repos whose stub target needs percent-encoding** — the `#` in their
@@ -1806,7 +1806,7 @@ the Scale table; the two JC3 pages had been counted as outside):
 no Python", because the Python plan that recorded it was deleted on 2026-08-29 and that `CLAUDE.md`
 is shrunk at Step 5 and leaves the disk at Step 6.** Seven commands regenerate everything and no
 one command runs them all; each is the only program that writes the files named beside it; every
-one runs from `C:\Users\BenDe\GitRepos\MAM-basics` on that repo's venv:
+one runs from `C:/Users/BenDe/GitRepos/MAM-basics` on that repo's venv:
 
 1. `py/main_extract_docx_and_render_table.py` — reads the tracked docx; writes
    `docs-not-served/table_data.json`, `docs-not-served/introduction.md`,
@@ -1859,7 +1859,7 @@ holds whichever messages were forwarded to it, which may be one. Ingesting a par
 the ordinary case"* — and neither is needed to regenerate: the reports regenerate from the tracked
 derivatives, `emails/` and `docs-not-served/mam_suggestions.json`, and a mailbox is read only to
 ingest a *new* message. So Step 3 moves whatever `.eml` files the machine holds, from both
-directories, into `MAM-basics\.novc\eml\` and `MAM-basics\.novc\eml-mam\`, and repoints both
+directories, into `MAM-basics/.novc/eml/` and `MAM-basics/.novc/eml-mam/`, and repoints both
 accessors onto `paths.novc_dir()`. Then re-run each ingest over what was moved and **verify that
 every tracked derivative it rewrites comes back byte-identical**, which is what proves the
 redaction and the stricter boundary ran the same way. Step 6's `git -C ../holman-ketiv-qere status
@@ -1952,7 +1952,7 @@ is what the generator replaces, with the `Do not edit by hand.` breadcrumb from
 
 ## Phase 4 — book-of-job
 
-*The per-repo lane, run for `C:\Users\BenDe\GitRepos\book-of-job`.*
+*The per-repo lane, run for `C:/Users/BenDe/GitRepos/book-of-job`.*
 
 **The largest move of the three** — 694 files and 65.2 MB under `gh-pages/`, 175 stubs — and the
 simplest data tail once Decision D is answered.
@@ -2067,7 +2067,7 @@ trusting this list.
 
 ## Phase 5 — UXLC-utils
 
-*The per-repo lane, run for `C:\Users\BenDe\GitRepos\UXLC-utils`.*
+*The per-repo lane, run for `C:/Users/BenDe/GitRepos/UXLC-utils`.*
 
 **Last, because it is the entangled one.** Its published tree is the middle of the three at 184
 files, but it carries **596 files outside `gh-pages/`**, a second resolution path in
@@ -2207,16 +2207,16 @@ this list.
 2. **`MAM-basics/CLAUDE.md` §"`doc/boj-*.md` are book-of-job's procedures"** — it ends by saying
    book-of-job keeps two procedures of its own, `doc/opening-html-files.md` and
    `doc/reading-mam-simple.md`. Phase 4 moves both. Rewrite that sentence.
-3. **`C:\Users\BenDe\.claude\CLAUDE.md`** — the global file, tracked in `github-misc` at
+3. **`C:/Users/BenDe/.claude/CLAUDE.md`** — the global file, tracked in `github-misc` at
    `dot-claude/CLAUDE.md`, which does **not** auto-sync. It names all three repos across roughly a
    dozen lines. Edit the live copy, then copy it back and commit, or the tracked copy silently goes
    stale:
 
    ```powershell
-   Copy-Item "$HOME\.claude\CLAUDE.md" "$HOME\GitRepos\github-misc\dot-claude\CLAUDE.md" -Force
+   Copy-Item "$HOME/.claude/CLAUDE.md" "$HOME/GitRepos/github-misc/dot-claude/CLAUDE.md" -Force
    ```
 
-4. **The `hebrew-prose` skill**, live at `C:\Users\BenDe\.claude\skills\hebrew-prose\` and tracked
+4. **The `hebrew-prose` skill**, live at `C:/Users/BenDe/.claude/skills/hebrew-prose/` and tracked
    at `github-misc/dot-claude/skills/`, two copies that do not sync. Its
    `references/terminology.md` names UXLC-utils twice and book-of-job not at all; book-of-job and
    UXLC-utils are both named in `SKILL.md`'s frontmatter `description` line, which is what decides
@@ -2347,7 +2347,7 @@ each session:
    next phase now knows that this file did not say. **Record the commits.**
 4. **Commit and push per `~/.claude/CLAUDE.md`'s Git section** — directly to `main`, at will,
    without asking. Run black on any Python touched, from
-   `C:\Users\BenDe\GitRepos\MAM-basics\.venv\Scripts\python.exe -m black`, before committing.
+   `C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe -m black`, before committing.
 5. **Update the Status table in the same commit** as the work it describes.
 6. **Do not start a lane you cannot finish through Step 3.** Steps 1 and 2 leave the tree in dual
    residency, which is safe and revertible and can sit indefinitely. Stopping between Step 3 and

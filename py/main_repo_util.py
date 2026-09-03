@@ -21,7 +21,7 @@ maintenance -- two runs of each read-only action rather than one:
 
     ... --check-repo-standards --visibility public  --report-txt .novc/standards-public.txt
     ... --check-repo-standards --visibility private --report-txt ^
-        C:\\Users\\BenDe\\GitRepos\\MAM-private\\.novc\\standards-private.txt
+        C:/Users/BenDe/GitRepos/MAM-private/.novc/standards-private.txt
 
 The default is ``all``, which still sweeps everything; what the default cannot do
 is write its report into a file this repo tracks. See
@@ -281,7 +281,7 @@ def main(argv: Sequence[str] | None = None) -> int:
         # any more -- --include-frozen was removed on 2026-08-07, having become a
         # way to ask for repos the sweep could no longer see. Absence from the
         # workspace file, NOT a repo's location on disk, is what enforces the
-        # freeze; the C:\Users\BenDe\FrozenRepos directory that once held these
+        # freeze; the C:/Users/BenDe/FrozenRepos directory that once held these
         # clones is retired and is not expected on any machine, per Ben's
         # decision of 2026-08-31 recorded in in/repo_maintenance_policy.json's
         # location_comment.

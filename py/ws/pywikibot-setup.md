@@ -6,7 +6,7 @@ directory with credentials.  This repo tracks the config file as
 
 ## One-time setup
 
-1. Create `~/.pywikibot/` (i.e. `C:\Users\<you>\.pywikibot\`).
+1. Create `~/.pywikibot/` (i.e. `C:/Users/<you>/.pywikibot/`).
 
 2. Copy the config file into it:
 
@@ -33,10 +33,10 @@ interactive auth surprises, always provide one of these when running
 
 Examples (PowerShell):
 
-       .venv\Scripts\python.exe py\main_ws_bot.py real --edits path.json -dir:$env:USERPROFILE/.pywikibot
+       .venv/Scripts/python.exe py/main_ws_bot.py real --edits path.json -dir:$env:USERPROFILE/.pywikibot
 
        $env:PYWIKIBOT_DIR = "$env:USERPROFILE/.pywikibot"
-       .venv\Scripts\python.exe py\main_ws_bot.py real --edits path.json
+       .venv/Scripts/python.exe py/main_ws_bot.py real --edits path.json
 
 `main_ws_bot.py real` now fails fast if neither mechanism is used.
 
@@ -59,11 +59,11 @@ reparses affected books.
 Use `--no-post-download` only when you intentionally want to skip this
 automatic local refresh:
 
-       .venv\Scripts\python.exe py\main_ws_bot.py real --edits path.json -dir:$env:USERPROFILE/.pywikibot --no-post-download
+       .venv/Scripts/python.exe py/main_ws_bot.py real --edits path.json -dir:$env:USERPROFILE/.pywikibot --no-post-download
 
 For process/idempotence checks, use `--identity-run`:
 
-       .venv\Scripts\python.exe py\main_ws_bot.py real --edits path.json -dir:$env:USERPROFILE/.pywikibot --identity-run
+       .venv/Scripts/python.exe py/main_ws_bot.py real --edits path.json -dir:$env:USERPROFILE/.pywikibot --identity-run
 
 `--identity-run` does **not** save live pages. It processes chapters and
 fails at the end if any chapter text would change.

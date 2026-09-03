@@ -1,7 +1,7 @@
 """Ingest Holman's .eml files into the tracked derivative under emails/.
 
 Run from repo root, with the mailbox in the default untracked location:
-    .venv\\Scripts\\python.exe py/main_ingest_uxlc_emails.py
+    .venv/Scripts/python.exe py/main_ingest_uxlc_emails.py
 
 Writes, for each message: emails/<key>.txt (the body, with every email address
 replaced), emails/<key>.json (subject, sender name, date, attachment list), and

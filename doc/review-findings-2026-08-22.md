@@ -103,7 +103,7 @@ and needs no Python.
 
 **The codex-index trio's Phases 0–4, as committed at `b37bdb4`, verify.** Phase 0's three claims
 re-establish: the dead generator's four `"aleppo/..."` literals date from `9025037` (2026-03-28)
-and no commit but a black run and the LF+NFC migration touched the tree since; `py\check_ac_word_finding.py`
+and no commit but a black run and the LF+NFC migration touched the tree since; `py/check_ac_word_finding.py`
 reports `PASS: 0 / FAIL: 160 / TOTAL: 160` with every mismatch a `col` clause, the column-ID
 migration being `eb4bcaf` (2026-03-14); cam1753's `check_line_breaks.py:654` wrote with
 `write_text(html, encoding="utf-8")` where aleppo's copy had `newline=""`. The Phase 1 headline
@@ -365,7 +365,7 @@ was handed landed:**
 - **Finding 1 — MAM-basics `de8a28b`.** `ruff check py` prints `All checks passed!`, from 25.
   Seven by `ruff --fix` (6 F541, 1 F401), the 16 E402 by moving the imports above
   `OUT_DIR = …novc_dir()` and `serve_and_open` in the three Copilot-era entry points, the F841
-  and E731 by hand. `py\check_ac_word_finding.py` and `py\check_cam1753_word_finding.py`
+  and E731 by hand. `py/check_ac_word_finding.py` and `py/check_cam1753_word_finding.py`
   produce byte-identical output before and after, black reports all seven files unchanged, and
   the three rearranged entry points import cleanly.
 - **Finding 3 — holman-ketiv-qere `36718d6`.** `main_estimate_uxlc_locations` then
