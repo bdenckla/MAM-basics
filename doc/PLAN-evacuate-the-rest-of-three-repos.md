@@ -28,8 +28,8 @@ the Job manuscripts into `DATA-LICENSES.md`; that is licensing prose, not accent
 
 ## Status
 
-**CURRENT — Phase 5 completed, 2026-09-03.** Phases 0–4 are complete. UXLC-utils Steps 1–3
-landed the approved `gh-pages/uxlc/` and `uxlc/` trees, scoped their licences, and repointed the
+**CURRENT — Phase 6 completed, 2026-09-03.** Phases 0–5 and the cross-repo bookkeeping are complete.
+UXLC-utils landed the approved `gh-pages/uxlc/` and `uxlc/` trees, scoped their licences, and repointed the
 MAM-basics readers. The temporary codex-index-leningrad sparse vendor now reads MAM-basics. Steps
 4–5 froze and deployed the redirect host, removed 684 source files, and removed UXLC-utils from
 the workspace. Step 6 retired the clean detached UXLC-utils review worktree, removed the clean
@@ -106,7 +106,7 @@ figures in these plans arriving one more time.
 | 3 — holman-ketiv-qere, the pilot lane; plus the generated landing page | **DONE 2026-09-03.** MAM-basics landed and published the 379-file `holman/` tree (`3c5dc79`), scoped its licences (`d81b47b`), repointed its generators (`ae663ff`), froze the six-page redirect manifest (`46ba28a`), and removed the redirect host from the workspace (`519e3f4`). The source commits are `723bd73` for the stubs and `ca55c4a` for the empty host. Step 6 then retired only the clean detached Holman review worktree at `94cab4a` and removed the clean main clone. |
 | 4 — book-of-job | **DONE 2026-09-03.** Ben chose the pure `book-of-job/` prefix: the 694-file published tree is at `gh-pages/book-of-job/`, and the nine retained non-page files are at `book-of-job/out/` and `book-of-job/doc/`. The copies are SHA-256-identical to the source, and the licence rows are scoped. The Pages deployment is live: the landing page, two nested HTML pages, and an Aleppo crop returned HTTP 200. The generators now write only MAM-basics: the Job oracle changed only its known stale WLC-a-notes URL; the UXLC oracle had no diff; all 701 source-artifact timestamps are unchanged. The 175-path manifest and redirect-table row preserve the source host's old published URL set; source stubs are committed and deployed. `doc/book-of-job-artifacts.md` carries the no-program register, the reliable Git-diff procedure, and the rewritten entry-point table; `doc/boj-quirkrec-comments.md` and the moved reading procedures now name their MAM-basics locations. The Book-of-Job workspace entry, clean detached review worktree at `d09b966`, and clean main clone at `c8a6bbf` are gone. Post-removal MAM-basics tests passed 973 / 5, the document generator had no output diff, and Ruff is clean. The UXLC generator was not rerun because its output repository already has 26 modified files. |
 | 5 — UXLC-utils | **DONE 2026-09-03.** MAM-basics holds the authorized pure-prefix landing, and every MAM-basics reader uses it. The Leningrad sparse vendor reads MAM-basics rather than UXLC-utils. The redirect manifest and source stubs are deployed; source commit `2745c65` retains 97 redirect-host files. Step 6 retired the clean detached ReviewForest worktree at `b7b4eb9`, removed the clean primary clone, and completed the post-removal suite, generators, vendor refresh, and Ruff check. |
-| 6 — Cross-repo bookkeeping, and close the second stage | **IN PROGRESS 2026-09-03.** Items 1–5 and 7–10 are complete. Item 6's documentary `frozen_repos` decision awaits Ben; items 11–12 close the second stage after that decision. |
+| 6 — Cross-repo bookkeeping, and close the second stage | **DONE 2026-09-03.** The tracker and procedure text, global copies, Hebrew-prose skill copies, vendoring comment, standards prose and MAM-private paths are current; the workspace has 15 folders and no source-repo path. Ben chose no `frozen_repos` entries. The execution record below closes the second stage; the third stage remains decided and unstarted. |
 
 ### Assessed 2026-09-02 — ten things that moved while the plan was paused
 
@@ -2577,6 +2577,31 @@ separate codex-index-leningrad evacuation remains outside this phase.
     that no lane's record names**, since that is the wholesale restoration Ben's standing note
     warns against, and it is the reason this item counts what is here rather than only what is
     gone.
+
+### Execution record — Phase 6, 2026-09-03
+
+Phase 6 began at MAM-basics `dc24164b`, github-misc `c14360d` and MAM-private `0f37fe3`, each
+clean and synchronized with `origin/main`. A concurrent MAM-basics commit, `e1034da2`, included
+the Phase 6 tracker and Book-of-Job-procedure edits from the shared index alongside its separate
+dual-agent review document; no history was rewritten. MAM-basics `62a10b03` records the remaining
+Phase 6 MAM-basics edits, github-misc `707b154` the synchronized global `CLAUDE.md` and
+`hebrew-prose` skill copies, and MAM-private `bd09599` the two MAM-private path corrections.
+
+Ben's 2026-09-03 decision is to add **no** `frozen_repos` entries for book-of-job,
+holman-ketiv-qere or UXLC-utils. Removal from the workspace makes each repo structurally
+unreachable; wlc-utils is the matching evacuation precedent, while the existing register records
+paused client projects. The closeout check found 15 workspace folders, no source-repo workspace
+path or clone, and no source-repo entry in either `frozen_repos` or the vendoring manifest.
+
+The vendoring-policy comment now names MAM-basics as the sparse vendor's source. Its required
+regeneration produced the 15-row inventory and 97-file comparison report. Three existing
+`template_names.py` copies still differ; the report records that finding and this phase did not
+alter the source copies. The canonical full test entry point completed without error, Ruff was
+clean, and `git diff --check` was clean.
+
+Triage is complete: the two Holman carries live in `CLAUDE.md`; the four Book-of-Job carries live
+in `CLAUDE.md`, `doc/book-of-job-artifacts.md` and `doc/boj-quirkrec-comments.md`; UXLC-utils has
+no carry. `CLAUDE.md` is 722 lines, and no carry outside the three lane lists was found.
 
 ---
 
