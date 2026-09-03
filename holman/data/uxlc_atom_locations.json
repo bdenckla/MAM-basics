@@ -1,0 +1,755 @@
+{
+  "note": "Estimated column and line for each atom Holman's emails raise, from MAM-basics' uxlc_misc.my_uxlc_location over the UXLC core XML and LC page index in the sibling UXLC-utils. Written by MAM-basics/py/main_estimate_uxlc_locations.py and read by the render step; folio is the LC leaf in the DDDA form the manuscript image URLs use, line counts down from the top of the named column, and flat_line counts down the whole page across all three columns.",
+  "locations": {
+    "Exodus 7:20.19": {
+      "folio": "035A",
+      "column": 2,
+      "line": 19.0,
+      "flat_line": 46.0
+    },
+    "Exodus 11:6.1": {
+      "folio": "037B",
+      "column": 1,
+      "line": 21.4,
+      "flat_line": 21.4
+    },
+    "Exodus 20:3.2": {
+      "folio": "043A",
+      "column": 2,
+      "line": 19.1,
+      "flat_line": 46.1
+    },
+    "Exodus 38:12.6": {
+      "folio": "055A",
+      "column": 1,
+      "line": 3.5,
+      "flat_line": 3.5
+    },
+    "Levit 7:25.6": {
+      "folio": "060A",
+      "column": 3,
+      "line": 2.0,
+      "flat_line": 56.0
+    },
+    "Levit 15:8.2": {
+      "folio": "065B",
+      "column": 2,
+      "line": 1.8,
+      "flat_line": 28.8
+    },
+    "Levit 16:21.6": {
+      "folio": "066B",
+      "column": 1,
+      "line": 20.1,
+      "flat_line": 20.1
+    },
+    "Levit 25:20.4": {
+      "folio": "071B",
+      "column": 2,
+      "line": 14.3,
+      "flat_line": 41.3
+    },
+    "Deuter 33:28.13": {
+      "folio": "119B",
+      "column": 3,
+      "line": 23.3,
+      "flat_line": 77.3
+    },
+    "Joshua 5:1.36": {
+      "folio": "123B",
+      "column": 1,
+      "line": 23.6,
+      "flat_line": 23.6
+    },
+    "Joshua 9:23.10": {
+      "folio": "126B",
+      "column": 2,
+      "line": 15.6,
+      "flat_line": 42.6
+    },
+    "Joshua 19:8.8": {
+      "folio": "132A",
+      "column": 1,
+      "line": 5.1,
+      "flat_line": 5.1
+    },
+    "Joshua 20:4.12": {
+      "folio": "132B",
+      "column": 2,
+      "line": 9.2,
+      "flat_line": 36.2
+    },
+    "Judges 11:24.7": {
+      "folio": "144A",
+      "column": 1,
+      "line": 17.2,
+      "flat_line": 17.2
+    },
+    "1Samuel 7:10.10": {
+      "folio": "153B",
+      "column": 1,
+      "line": 23.0,
+      "flat_line": 23.0
+    },
+    "1Samuel 13:4.11": {
+      "folio": "156A",
+      "column": 3,
+      "line": 23.1,
+      "flat_line": 77.1
+    },
+    "1Samuel 28:12.11": {
+      "folio": "166B",
+      "column": 3,
+      "line": 23.7,
+      "flat_line": 77.7
+    },
+    "2Samuel 5:21.1": {
+      "folio": "171A",
+      "column": 3,
+      "line": 27.6,
+      "flat_line": 81.6
+    },
+    "2Samuel 7:22.7": {
+      "folio": "172B",
+      "column": 1,
+      "line": 5.8,
+      "flat_line": 5.8
+    },
+    "2Samuel 15:26.11": {
+      "folio": "177A",
+      "column": 3,
+      "line": 17.5,
+      "flat_line": 71.5
+    },
+    "2Samuel 24:10.19": {
+      "folio": "183B",
+      "column": 3,
+      "line": 4.2,
+      "flat_line": 58.2
+    },
+    "Jeremiah 3:24.2": {
+      "folio": "247B",
+      "column": 1,
+      "line": 8.1,
+      "flat_line": 8.1
+    },
+    "Jeremiah 8:9.9": {
+      "folio": "250A",
+      "column": 3,
+      "line": 28.0,
+      "flat_line": 82.0
+    },
+    "Jeremiah 10:3.11": {
+      "folio": "251A",
+      "column": 3,
+      "line": 11.2,
+      "flat_line": 65.2
+    },
+    "Jeremiah 12:10.8": {
+      "folio": "252B",
+      "column": 1,
+      "line": 12.2,
+      "flat_line": 12.2
+    },
+    "Jeremiah 28:9.7": {
+      "folio": "261A",
+      "column": 1,
+      "line": 19.8,
+      "flat_line": 19.8
+    },
+    "Jeremiah 46:4.6": {
+      "folio": "271B",
+      "column": 1,
+      "line": 5.0,
+      "flat_line": 5.0
+    },
+    "Ezekiel 1:4.12": {
+      "folio": "276B",
+      "column": 2,
+      "line": 19.1,
+      "flat_line": 46.1
+    },
+    "Ezekiel 8:6.12": {
+      "folio": "279B",
+      "column": 2,
+      "line": 17.5,
+      "flat_line": 44.5
+    },
+    "Ezekiel 8:15.9": {
+      "folio": "279B",
+      "column": 3,
+      "line": 23.3,
+      "flat_line": 77.3
+    },
+    "Ezekiel 11:1.29": {
+      "folio": "280B",
+      "column": 3,
+      "line": 4.5,
+      "flat_line": 58.5
+    },
+    "Ezekiel 16:12.1": {
+      "folio": "283A",
+      "column": 3,
+      "line": 1.5,
+      "flat_line": 55.5
+    },
+    "Ezekiel 23:11.8": {
+      "folio": "288A",
+      "column": 2,
+      "line": 27.2,
+      "flat_line": 54.2
+    },
+    "Ezekiel 32:21.9": {
+      "folio": "293A",
+      "column": 3,
+      "line": 12.5,
+      "flat_line": 66.5
+    },
+    "Ezekiel 33:28.9": {
+      "folio": "294A",
+      "column": 2,
+      "line": 23.7,
+      "flat_line": 50.7
+    },
+    "Ezekiel 36:3.18": {
+      "folio": "295A",
+      "column": 3,
+      "line": 23.3,
+      "flat_line": 77.3
+    },
+    "Ezekiel 44:6.14": {
+      "folio": "301A",
+      "column": 1,
+      "line": 6.0,
+      "flat_line": 6.0
+    },
+    "Hosea 5:6.3": {
+      "folio": "305A",
+      "column": 3,
+      "line": 3.6,
+      "flat_line": 57.6
+    },
+    "Amos 3:10.7": {
+      "folio": "309B",
+      "column": 3,
+      "line": 8.4,
+      "flat_line": 62.4
+    },
+    "Amos 8:12.8": {
+      "folio": "311B",
+      "column": 2,
+      "line": 3.1,
+      "flat_line": 30.1
+    },
+    "Obadiah 1:1.17": {
+      "folio": "312A",
+      "column": 1,
+      "line": 20.8,
+      "flat_line": 20.8
+    },
+    "Micah 1:14.10": {
+      "folio": "313B",
+      "column": 2,
+      "line": 25.9,
+      "flat_line": 52.9
+    },
+    "Zechariah 12:5.1": {
+      "folio": "323B",
+      "column": 2,
+      "line": 8.7,
+      "flat_line": 35.7
+    },
+    "Psalms 5:11.1": {
+      "folio": "366B",
+      "column": 1,
+      "line": 8.6,
+      "flat_line": 8.6
+    },
+    "Psalms 8:9.6": {
+      "folio": "367A",
+      "column": 1,
+      "line": 5.9,
+      "flat_line": 5.9
+    },
+    "Psalms 9:1.2": {
+      "folio": "367A",
+      "column": 1,
+      "line": 7.5,
+      "flat_line": 7.5
+    },
+    "Psalms 12:7.1": {
+      "folio": "367B",
+      "column": 1,
+      "line": 24.9,
+      "flat_line": 24.9
+    },
+    "Psalms 14:7.1": {
+      "folio": "367B",
+      "column": 2,
+      "line": 22.0,
+      "flat_line": 49.0
+    },
+    "Psalms 15:5.8": {
+      "folio": "368A",
+      "column": 1,
+      "line": 5.5,
+      "flat_line": 5.5
+    },
+    "Psalms 17:14.1": {
+      "folio": "368A",
+      "column": 2,
+      "line": 13.8,
+      "flat_line": 40.8
+    },
+    "Psalms 18:3.2": {
+      "folio": "368A",
+      "column": 2,
+      "line": 21.8,
+      "flat_line": 48.8
+    },
+    "Psalms 18:7.3": {
+      "folio": "368A",
+      "column": 2,
+      "line": 27.1,
+      "flat_line": 54.1
+    },
+    "Psalms 19:15.1": {
+      "folio": "369A",
+      "column": 1,
+      "line": 19.9,
+      "flat_line": 19.9
+    },
+    "Psalms 31:12.5": {
+      "folio": "371A",
+      "column": 1,
+      "line": 19.6,
+      "flat_line": 19.6
+    },
+    "Psalms 31:24.1": {
+      "folio": "371A",
+      "column": 2,
+      "line": 9.4,
+      "flat_line": 36.4
+    },
+    "Psalms 35:10.5": {
+      "folio": "372A",
+      "column": 1,
+      "line": 13.3,
+      "flat_line": 13.3
+    },
+    "Psalms 37:14.2": {
+      "folio": "372B",
+      "column": 1,
+      "line": 17.7,
+      "flat_line": 17.7
+    },
+    "Psalms 37:40.1": {
+      "folio": "372B",
+      "column": 2,
+      "line": 21.8,
+      "flat_line": 48.8
+    },
+    "Psalms 39:2.2": {
+      "folio": "373A",
+      "column": 1,
+      "line": 24.6,
+      "flat_line": 24.6
+    },
+    "Psalms 40:5.1": {
+      "folio": "373A",
+      "column": 2,
+      "line": 23.2,
+      "flat_line": 50.2
+    },
+    "Psalms 40:6.6": {
+      "folio": "373A",
+      "column": 2,
+      "line": 26.0,
+      "flat_line": 53.0
+    },
+    "Psalms 40:13.2": {
+      "folio": "373B",
+      "column": 1,
+      "line": 11.4,
+      "flat_line": 11.4
+    },
+    "Psalms 42:3.5": {
+      "folio": "373B",
+      "column": 2,
+      "line": 19.2,
+      "flat_line": 46.2
+    },
+    "Psalms 44:13.5": {
+      "folio": "374A",
+      "column": 2,
+      "line": 12.0,
+      "flat_line": 39.0
+    },
+    "Psalms 46:12.5": {
+      "folio": "374B",
+      "column": 2,
+      "line": 21.0,
+      "flat_line": 48.0
+    },
+    "Psalms 47:5.5": {
+      "folio": "374B",
+      "column": 2,
+      "line": 27.1,
+      "flat_line": 54.1
+    },
+    "Psalms 48:5.4": {
+      "folio": "375A",
+      "column": 1,
+      "line": 13.2,
+      "flat_line": 13.2
+    },
+    "Psalms 49:15.2": {
+      "folio": "375A",
+      "column": 2,
+      "line": 17.3,
+      "flat_line": 44.3
+    },
+    "Psalms 50:23.3": {
+      "folio": "375B",
+      "column": 2,
+      "line": 2.7,
+      "flat_line": 29.7
+    },
+    "Psalms 51:19.1": {
+      "folio": "375B",
+      "column": 2,
+      "line": 24.4,
+      "flat_line": 51.4
+    },
+    "Psalms 53:3.6": {
+      "folio": "376A",
+      "column": 1,
+      "line": 21.3,
+      "flat_line": 21.3
+    },
+    "Psalms 53:7.1": {
+      "folio": "376A",
+      "column": 2,
+      "line": 1.8,
+      "flat_line": 28.8
+    },
+    "Psalms 55:20.6": {
+      "folio": "376B",
+      "column": 1,
+      "line": 12.2,
+      "flat_line": 12.2
+    },
+    "Psalms 58:10.1": {
+      "folio": "377A",
+      "column": 1,
+      "line": 14.9,
+      "flat_line": 14.9
+    },
+    "Psalms 59:12.9": {
+      "folio": "377A",
+      "column": 2,
+      "line": 9.6,
+      "flat_line": 36.6
+    },
+    "Psalms 60:3.5": {
+      "folio": "377A",
+      "column": 2,
+      "line": 24.4,
+      "flat_line": 51.4
+    },
+    "Psalms 65:10.2": {
+      "folio": "378A",
+      "column": 2,
+      "line": 6.9,
+      "flat_line": 33.9
+    },
+    "Psalms 69:1.1": {
+      "folio": "379A",
+      "column": 1,
+      "line": 25.2,
+      "flat_line": 25.2
+    },
+    "Psalms 72:4.7": {
+      "folio": "380A",
+      "column": 1,
+      "line": 16.9,
+      "flat_line": 16.9
+    },
+    "Psalms 86:9.9": {
+      "folio": "383B",
+      "column": 2,
+      "line": 7.3,
+      "flat_line": 34.3
+    },
+    "Psalms 93:2.4": {
+      "folio": "385A",
+      "column": 2,
+      "line": 27.0,
+      "flat_line": 54.0
+    },
+    "Psalms 94:6.4": {
+      "folio": "385B",
+      "column": 1,
+      "line": 10.4,
+      "flat_line": 10.4
+    },
+    "Psalms 105:40.1": {
+      "folio": "388A",
+      "column": 1,
+      "line": 20.1,
+      "flat_line": 20.1
+    },
+    "Psalms 106:29.2": {
+      "folio": "388B",
+      "column": 1,
+      "line": 7.2,
+      "flat_line": 7.2
+    },
+    "Psalms 106:38.1": {
+      "folio": "388B",
+      "column": 1,
+      "line": 17.1,
+      "flat_line": 17.1
+    },
+    "Psalms 118:17.1": {
+      "folio": "390B",
+      "column": 2,
+      "line": 17.4,
+      "flat_line": 44.4
+    },
+    "Psalms 119:51.5": {
+      "folio": "391B",
+      "column": 1,
+      "line": 7.3,
+      "flat_line": 7.3
+    },
+    "Psalms 119:61.4": {
+      "folio": "391B",
+      "column": 1,
+      "line": 17.4,
+      "flat_line": 17.4
+    },
+    "Psalms 119:77.5": {
+      "folio": "391B",
+      "column": 2,
+      "line": 9.8,
+      "flat_line": 36.8
+    },
+    "Psalms 119:109.4": {
+      "folio": "392A",
+      "column": 1,
+      "line": 19.4,
+      "flat_line": 19.4
+    },
+    "Psalms 143:10.2": {
+      "folio": "395B",
+      "column": 2,
+      "line": 8.1,
+      "flat_line": 35.1
+    },
+    "Proverbs 8:13.1": {
+      "folio": "412A",
+      "column": 2,
+      "line": 21.1,
+      "flat_line": 48.1
+    },
+    "Proverbs 19:7.1": {
+      "folio": "416A",
+      "column": 1,
+      "line": 18.2,
+      "flat_line": 18.2
+    },
+    "Proverbs 23:7.2": {
+      "folio": "417B",
+      "column": 1,
+      "line": 11.1,
+      "flat_line": 11.1
+    },
+    "Proverbs 28:3.1": {
+      "folio": "419B",
+      "column": 1,
+      "line": 1.9,
+      "flat_line": 1.9
+    },
+    "Proverbs 30:15.1": {
+      "folio": "420A",
+      "column": 2,
+      "line": 21.5,
+      "flat_line": 48.5
+    },
+    "Job 10:6.4": {
+      "folio": "400A",
+      "column": 1,
+      "line": 2.3,
+      "flat_line": 2.3
+    },
+    "Job 11:6.3": {
+      "folio": "400A",
+      "column": 2,
+      "line": 3.2,
+      "flat_line": 30.2
+    },
+    "Job 15:35.3": {
+      "folio": "401B",
+      "column": 1,
+      "line": 27.3,
+      "flat_line": 27.3
+    },
+    "Job 17:3.5": {
+      "folio": "402A",
+      "column": 1,
+      "line": 4.8,
+      "flat_line": 4.8
+    },
+    "Job 29:25.1": {
+      "folio": "405A",
+      "column": 2,
+      "line": 3.3,
+      "flat_line": 30.3
+    },
+    "Job 30:1.2": {
+      "folio": "405A",
+      "column": 2,
+      "line": 5.0,
+      "flat_line": 32.0
+    },
+    "Job 32:6.6": {
+      "folio": "406A",
+      "column": 1,
+      "line": 22.0,
+      "flat_line": 22.0
+    },
+    "Job 32:12.1": {
+      "folio": "406A",
+      "column": 2,
+      "line": 3.1,
+      "flat_line": 30.1
+    },
+    "Job 34:20.4": {
+      "folio": "406B",
+      "column": 2,
+      "line": 27.8,
+      "flat_line": 54.8
+    },
+    "Job 39:28.4": {
+      "folio": "408B",
+      "column": 2,
+      "line": 3.6,
+      "flat_line": 30.6
+    },
+    "Esther 8:14.5": {
+      "folio": "436B",
+      "column": 2,
+      "line": 10.6,
+      "flat_line": 37.6
+    },
+    "Daniel 5:3.8": {
+      "folio": "441B",
+      "column": 3,
+      "line": 18.1,
+      "flat_line": 72.1
+    },
+    "Daniel 10:19.13": {
+      "folio": "446A",
+      "column": 2,
+      "line": 5.7,
+      "flat_line": 32.7
+    },
+    "Ezra 6:2.3": {
+      "folio": "450B",
+      "column": 2,
+      "line": 12.9,
+      "flat_line": 39.9
+    },
+    "Ezra 8:18.15": {
+      "folio": "452A",
+      "column": 3,
+      "line": 21.4,
+      "flat_line": 75.4
+    },
+    "Nehemiah 7:1.7": {
+      "folio": "457B",
+      "column": 1,
+      "line": 19.9,
+      "flat_line": 19.9
+    },
+    "1Chronicles 2:46.4": {
+      "folio": "328B",
+      "column": 2,
+      "line": 26.5,
+      "flat_line": 53.5
+    },
+    "1Chronicles 4:28.1": {
+      "folio": "329B",
+      "column": 2,
+      "line": 21.8,
+      "flat_line": 48.8
+    },
+    "1Chronicles 5:11.4": {
+      "folio": "330A",
+      "column": 2,
+      "line": 11.5,
+      "flat_line": 38.5
+    },
+    "1Chronicles 5:16.1": {
+      "folio": "330A",
+      "column": 2,
+      "line": 24.1,
+      "flat_line": 51.1
+    },
+    "1Chronicles 7:18.5": {
+      "folio": "332A",
+      "column": 1,
+      "line": 24.8,
+      "flat_line": 24.8
+    },
+    "1Chronicles 14:11.18": {
+      "folio": "336A",
+      "column": 2,
+      "line": 18.4,
+      "flat_line": 45.4
+    },
+    "1Chronicles 27:21.7": {
+      "folio": "343A",
+      "column": 2,
+      "line": 10.7,
+      "flat_line": 37.7
+    },
+    "2Chronicles 1:10.6": {
+      "folio": "345A",
+      "column": 1,
+      "line": 11.8,
+      "flat_line": 11.8
+    },
+    "2Chronicles 13:12.13": {
+      "folio": "351B",
+      "column": 3,
+      "line": 8.5,
+      "flat_line": 62.5
+    },
+    "2Chronicles 16:2.5": {
+      "folio": "352B",
+      "column": 3,
+      "line": 7.5,
+      "flat_line": 61.5
+    },
+    "2Chronicles 21:19.7": {
+      "folio": "356A",
+      "column": 1,
+      "line": 4.1,
+      "flat_line": 4.1
+    },
+    "2Chronicles 31:9.4": {
+      "folio": "361B",
+      "column": 3,
+      "line": 5.3,
+      "flat_line": 59.3
+    },
+    "2Chronicles 33:21.2": {
+      "folio": "363B",
+      "column": 1,
+      "line": 3.2,
+      "flat_line": 3.2
+    }
+  }
+}

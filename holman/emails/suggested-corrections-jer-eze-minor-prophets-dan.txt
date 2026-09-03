@@ -1,0 +1,159 @@
+Hello Chris and Ben,
+
+Below are 24 proposed suggested corrections and updates for the UXLC based on my recent analysis of the Leningrad Codex (L) images, along with comparisons to BHS and Dotan.
+
+JEREMIAH
+
+Jer 3:24.2 (אָֽכְלָ֛ה)
+Image: 492_Jer_2.11b-2.37a | Col. 1 middle
+Correction: Replace Meteg with Merekha.
+Corrected Text: אָ֥כְלָ֛ה
+Note: L has a Merekha under Aleph.
+
+Jer 8:9.9 (וְחָכְמַֽת־)
+Image: 499_Jer_7.24b-8.9a | Col. 3 bottom
+Correction: Remove Maqqef and replace Meteg with Merekha OR remove Maqqef and add note that other editions read as Merekha.
+Corrected Text: וְחׇכְמַ֥ת
+Note: L does not have a Maqqef at the end of this word. BHS reads as Meteg and Dotan reads as Merekha.
+
+Jer 10:3.11 (יְדֵ֥י־)
+Image: 501_Jer_9.9b-10.9a | Col. 3 middle
+Correction: Change Merkha to Meteg.
+Corrected Text: יְדֵֽי־
+Note: L has a Meteg under Dalet. BHS and UXLC read as Merekha. Dotan reads as Meteg.
+
+Jer 12:10.8 (נָֽתְנ֛וּ)
+Image: 504_Jer_12.6b-13.13a | Col. 1 middle
+Correction: Replace Meteg with Merekha.
+Corrected Text: נָ֥תְנ֛וּ
+Note: L has a Merekha under the first Nun.
+
+Jer 28:9.7 (הַנָּבִ֗יא)
+Image: 521_Jer_28.4b-29.7 | Col. 1 middle
+Correction: Change Revia to Zaqef Qatan.
+Corrected Text: הַנָּבִ֔יא
+Note: L is damaged but there appears to be two dots above Beit rather than just one.
+
+Jer 46:4.6 (בְּכ֥וֹבָעִ֑ים)
+Image: 542_Jer_46.2b-46.28a | Col. 1 middle
+Correction: Change Merkha to Meteg.
+Corrected Text: בְּכֽוֹבָעִ֑ים
+Note: L has a Meteg under Kaf. BHS and UXLC read as Merekha. Dotan reads as Meteg.
+
+EZEKIEL
+
+Ezek 1:4.12 (וְנֹ֥גַֽהּ)
+Image: 552_Jer_52.26b-Eze_1.16a | Col. 2 middle
+Correction: Add note regarding appearance of accent.
+Corrected Text: וְנֹ֥גַֽהּ
+Note: BHS, Dotan, and UXLC all read with Merekha. Add a note that the image in L resembles a Meteg but is read as a Merekha.
+
+Ezek 8:6.12 (בֵּֽית־יִשְׂרָאֵ֣ל ׀)
+Image: 558_Eze_7.20b-8.16a | Col. 2 middle
+Correction: Remove Maqqef and replace Meteg with Merekha OR remove Maqqef and add note that other editions read as Merekha.
+Corrected Text: בֵּ֥ית יִשְׂרָאֵ֣ל ׀
+Note: L does not have a Maqqef. BHS reads as Meteg and Dotan reads as Merekha. This phrase is noted in the Masorah as it is one of the rare instances where two Merekhas serve Legarmeh.
+
+Ezek 8:15.9 (תּוֹעֵב֥וֹת)
+Image: 558_Eze_7.20b-8.16a | Col. 3 bottom
+Correction: Replace Merekha with Meteg OR note that the accent looks like a Meteg.
+Corrected Text: תּוֹעֵב֖וֹת
+Note: L has what looks like a Meteg under the Beit. This resembles a Tifcha more than a Merekha but there is a Tifcha on the next word. This is the classic switch of Tifcha and Merekha seen throughout L when compared to other MSS.
+
+Ezek 11:1.29 (שָׂרֵ֖י)
+Image: 560_Eze_10.7b-11.10a | Col. 3 top
+Correction: Replace Tifcha with Merekha OR add note that the accent looks like a Meteg.
+Corrected Text: שָׂרֵ֥י
+Note: BHS, Dotan, and UXLC read with Tifcha. However, the image of L does not look like a Tifcha but resembles a Meteg, which in many cases was the same shape for Merkha.
+
+Ezek 16:12.1 (וָאֶתֵּ֥ן נֶ֙זֶם֙)
+Image: 565_Eze_15.1-16.20 | Col. 2 bottom
+Correction: Add a Maqqef between words and change Merekha to Meteg.
+Corrected Text: וָ֥אֶתֵּֽן־נֶ֙זֶם֙
+Note: L has a Maqqef between these words and there is a Meteg under the Tav.
+
+Ezek 23:11.8 (וְאֶת־תַּ֨זְנוּתֶ֔יהָ)
+Image: 575_Eze_22.25b-23.21 | Col. 2 bottom
+Correction: Remove Azla from above Tav OR add note.
+Corrected Text: וְאֶת־תַּזְנוּתֶ֔יהָ
+Note: The Azla and Zaqef Qatan on a word is common in L but there are at least 27 places where the Aleppo has both accents on a word while L only has the Zaqef Qatan. The faint markings above Tav are questionable.
+
+Ezek 32:21.9 (יָֽרְד֛וּ)
+Image: 585_Eze_32.1-32.25a | Col. 3 bottom
+Correction: Add note regarding appearance of accent.
+Corrected Text: יָ֥רְד֛וּ
+Note: BHS and UXLC read as Meteg. Dotan reads as Merekha. Add a note that the image in L resembles a Meteg but is read as a Merekha by some.
+
+Ezek 33:28.9 (וְשָֽׁמְמ֛וּ)
+Image: 587_Eze_33.13b-34.4a | Col. 2 bottom
+Correction: Change Meteg to Merekha.
+Corrected Text: וְשָׁ֥מְמ֛וּ
+Note: L has a Merekha under Shin.
+
+Ezek 36:3.18 (וַתֵּֽעֲל֛וּ)
+Image: 589_Eze_34.26b-36.4a | Col. 3 bottom
+Correction: Add note regarding appearance of accent.
+Corrected Text: וַתֵּ֥עֲל֛וּ
+Note: BHS and UXLC read as Meteg. Dotan reads as Merekha. Add a note that the image in L resembles a Meteg but is read as a Merekha by some.
+
+Ezek 44:6.14 (תּוֹעֲבֽוֹתֵיכֶ֖ם)
+Image: 601_Eze_44.5b-44.27a | Col. 1 top
+Correction: Add note regarding appearance of accent.
+Corrected Text: תּוֹעֲב֥וֹתֵיכֶ֖ם
+Note: BHS and UXLC read as Meteg. Dotan reads as Merekha. Add a note that the image in L resembles a Meteg but is read as a Merekha by some.
+
+MINOR PROPHETS
+
+Hos 5:6.3 (יֵֽלְכ֛וּ)
+Image: 609_Hos_4.4b-5.15a | Col. 2 top
+Correction: Add note regarding appearance of accent.
+Corrected Text: יֵ֥לְכ֛וּ
+Note: BHS and UXLC read as Meteg. Dotan reads as Merekha. Add a note that the image in L resembles a Meteg but is read as a Merekha by some.
+
+Amos 3:10.7 (הָאֽוֹצְרִ֛ים)
+Image: 618_Amos_2.7b-4.1a | Col. 3 top
+Correction: Add note regarding appearance of accent.
+Corrected Text: הָא֥וֹצְרִ֛ים
+Note: BHS and UXLC read as Meteg. Dotan reads as Merekha. Add a note that the image in L resembles a Meteg but is read as a Merekha by some.
+
+Amos 8:12.8 (יְשֽׁוֹטְט֛וּ)
+Image: 618_Amos_2.7b-4.1a | Col. 2 top
+Correction: Add note regarding appearance of accent.
+Corrected Text: יְשׁ֥וֹטְט֛וּ
+Note: BHS and UXLC read as Meteg. Dotan reads as Merekha. Add a note that the image in L resembles a Meteg but is read as a Merekha by some.
+
+Obad 1:1.17 (עָלֶיהָ)
+Image: 621_Amos_6.11-8.3 | Col. 1 bottom
+Correction: Revise note.
+Corrected Text: עָלֶ֖יהָ
+Note: L has what appears to be a Merekah but BHS and Dotan read it as a Tifcha. UXLC has no accent on this word. This accent should be a Tifcha and not a Merekah.
+
+Mic 1:14.10 (לְמַלְכֵ֥י)
+Image: 623_Amos_9.12b-Oba_20a | Col. 2 bottom
+Correction: Add note regarding appearance of accent.
+Corrected Text: לְמַלְכֵ֖י
+Note: L has what appears to be a Merekah but BHS and Dotan read it as a Tifcha. UXLC reads as Merekha. This accent should be a Tifcha and not a Merekah.
+
+Zech 12:5.1 (וְאָֽמְר֛וּ)
+Image: 644_Zech_8.21b-10.3a | Col. 2 middle
+Correction: Add note regarding appearance of accent.
+Corrected Text: וְאָ֥מְר֛וּ
+Note: L has what appears to be a Meteg but BHS and Dotan(?) read it as a Merekha. My copy of Dotan is smudged on this word and it appears to be a Merkha.
+
+DANIEL
+
+Dan 5:3.8 (הֵֽיכְלָ֛א)
+Image: 882_Dan_4.22b-5.5a | Col. 1 bottom
+Correction: Add note regarding appearance of accent.
+Corrected Text: הֵ֥יכְלָ֛א
+Note: BHS and UXLC read as Meteg. Dotan reads as Merekha. Add a note that the image in L resembles a Meteg but is read as a Merekha by some.
+
+Dan 10:19.13 (וָאֹֽמְרָ֛הּ)
+Image: 891_Dan_10.11b-11.12a | Col. 2 top
+Correction: Add note regarding appearance of accent.
+Corrected Text: וָאֹ֥מְרָ֛ה
+Note: BHS and UXLC read as Meteg. Dotan reads as Merekha. Add a note that the image in L resembles a Meteg but is read as a Merekha by some.
+
+Sincerely,
+
+Daniel

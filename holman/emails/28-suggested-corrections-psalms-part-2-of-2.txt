@@ -1,0 +1,231 @@
+Hello Chris and Ben,
+
+Below is the rest of Psalms.
+
+1. Ps 44:13.5
+Current UXLC: וְלֹ֥א־רִ֝בִּ֗יתָ
+Image: 747_Ps_42.7b-44.26a
+Location R/L: Col. 2 middle
+Suggested Correction: Add note regarding appearance of accent OR change the Merekha to a Meteg.
+Corrected Text: וְלֹֽא־רִ֝בִּ֗יתָ
+Note: BHS and UXLC read with Merekha. MAM and Dotan has Meteg. Add a note that the image in L resembles a Meteg but is read as a Merekha. This should be changed to a Meteg.
+
+2. Ps 46:12.5
+Current UXLC: מִשְׂגָּֽב־לָ֝נוּ
+Image: 748_Ps_44.26b-47.5
+Location R/L: Col. 2 bottom
+Suggested Correction: Add note regarding some read with Azla.
+Corrected Text: מִשְׂגָּֽב־לָ֨נוּ
+Note: Bomberg, Ginsburg, BHS, and Dotan read with Geresh Muqdam. Bruer lists A, L, and S1 as reading with Azla. The image of L could lean either way as it does not favor either one.
+
+3. Ps 47:5.5
+Current UXLC: אֶ֥ת
+Image: 748_Ps_44.26b-47.5
+Location R/L: Col. 2 bottom
+Suggested Correction: Add note regarding appearance of accent.
+Corrected Text: אֶ֥ת
+Note: BHS, Dotan, and UXLC all read with Merekha. Add a note that the image in L resembles a Meteg but is read as a Merekha.
+
+4. Ps 48:5.4
+Current UXLC: נֽוֹעֲד֑וּ
+Image: 749_Ps_47.6-49.21
+Location R/L: Col. 2 middle
+Suggested Correction: Add note regarding some read as Merekha.
+Corrected Text: נֽוֹעֲד֑וּ
+Note: Dotan reads as Merekha. BHS and UXLC read as Meteg.
+
+5. Ps 49:15.2
+Current UXLC: לִֽשְׁא֣וֹל
+Image: 749_Ps_47.6-49.21
+Location R/L: Col. 2 bottom
+Suggested Correction: Add note regarding some read as Merekha.
+Corrected Text: לִֽשְׁא֣וֹל
+Note: BHS, Dotan, and UXLC read as Meteg. Bruer claims that A, L, and S1 read with Merekha.
+
+6. Ps 50:23.3
+Current UXLC: יְֽכַבְּ֫דָ֥נְנִי
+Image: 750_Ps_50.1-51.21a
+Location R/L: Col. 2 top
+Suggested Correction: Add note regarding appearance of accent.
+Corrected Text: יְֽכַבְּ֫דָ֥נְנִי
+Note: BHS, Dotan, and UXLC all read with Merekha. Add a note that the image in L resembles a Meteg but is read as a Merekha.
+
+7. Ps 51:19.1
+Current UXLC: זִֽבְחֵ֣י
+Image: 750_Ps_50.1-51.21a
+Location R/L: Col. 2 bottom
+Suggested Correction: Add note regarding some read as Merekha.
+Corrected Text: זִֽבְחֵ֣י
+Note: BHS, Dotan, and UXLC read as Meteg.
+
+8. Ps 53:3.6
+Current UXLC: אָדָ֥ם
+Image: 751_Ps_51.21b-55.11
+Location R/L: Col. 1 bottom
+Suggested Correction: Add note regarding appearance of accent.
+Corrected Text: אָדָ֥ם
+Note: BHS, Dotan, and UXLC all read with Merekha. Add a note that the image in L resembles a Meteg but is read as a Merekha.
+
+9. Ps 53:7.1
+Current UXLC: מִ֥י
+Image: 751_Ps_51.21b-55.11
+Location R/L: Col. 2 top
+Suggested Correction: Add note regarding appearance of accent.
+Corrected Text: מִ֥י
+Note: BHS, Dotan, and UXLC all read with Merekha. Add a note that the image in L resembles a Meteg but is read as a Merekha.
+
+10. Ps 55:20.6
+Current UXLC: סֶ֥לָה
+Image: 752_Ps_55.12-57.11
+Location R/L: Col. 1 middle
+Suggested Correction: Add note regarding appearance of accent.
+Corrected Text: סֶ֥לָה
+Note: BHS, Dotan, and UXLC all read with Merekha. Add a note that the image in L resembles a Meteg but is read as a Merekha.
+
+11. Ps 58:10.1
+Current UXLC: בְּטֶ֤רֶם
+Image: 753_Ps_57.12-60.6
+Location R/L: Col. 1 middle
+Suggested Correction: Add a Maqqef at end of word.
+Corrected Text: בְּטֶ֤רֶם־
+Note: L has a Maqqef at the end of the word.
+
+12. Ps 59:12.9
+Current UXLC: מָֽגִנֵּ֣נוּ
+Image: 753_Ps_57.12-60.6
+Location R/L: Col. 2 middle
+Suggested Correction: Change Meteg to a Tarcha.
+Corrected Text: מָ֖גִנֵּ֣נוּ
+Note: The accent under Mem is shaped like a Tarcha (Tifcha)
+
+13. Ps 60:3.5
+Current UXLC: תְּשׁ֣וֹבֵ֥ב
+Image: 753_Ps_57.12-60.6
+Location R/L: Col. 2 bottom
+Suggested Correction: Change Merkha to Meteg.
+Corrected Text: תְּשׁ֣וֹבֵֽב
+Note: L has a Meteg under Beit. BHS and UXLC read as Merekha. Dotan reads as Meteg.
+
+14. Ps 65:10.2
+Current UXLC: הָאָ֨רֶץ ׀
+Image: 755_Ps_63.9-66.10a
+Location R/L: Col. 2 middle
+Suggested Correction: Remove Maqqef.
+Corrected Text: הָאָ֨רֶץ
+Note: L does not have a Maqqef at the end of this word.
+
+15. Ps 69:1.1
+Current UXLC: לַמְנַצֵּ֬חַ
+Image: 757_Ps_68.20b-69.21a
+Location R/L: Col. 1 bottom
+Suggested Correction: Add a Maqqef at end of word.
+Corrected Text: לַמְנַצֵּ֬חַ־
+Note: L has a Maqqef at the end of word.
+
+16. Ps 72:4.7
+Current UXLC: וִֽידַכֵּ֣א
+Image: 759_Ps_71.18b-73.12a
+Location R/L: Col. 1 middle
+Suggested Correction: Replace Meteg with Tarcha.
+Corrected Text: וִ֖ידַכֵּ֣א
+Note: L has a Tarcha (Tifcha) under Vav.
+
+17. Ps 86:9.9
+Current UXLC: וִֽיכַבְּד֣וּ
+Image: 766_Ps_84.11b-87.6a
+Location R/L: Col. 2 top
+Suggested Correction: Replace Meteg with Tarcha.
+Corrected Text: וִ֖יכַבְּד֣וּ
+Note: L has a Tarcha (Tifcha) under Vav.
+
+18. Ps 93:2.4
+Current UXLC: מֵֽעוֹלָ֣ם
+Image: 769_Ps_90.7b-93.3a
+Location R/L: Col. 2 bottom
+Suggested Correction: Replace Meteg with Tarcha.
+Corrected Text: מֵ֖עוֹלָ֣ם
+Note: L has a Tarcha (Tifcha) under Vav.
+
+19. Ps 94:6.4
+Current UXLC: וִֽיתוֹמִ֣ים
+Image: 770_Ps_93.3b-96.8a
+Location R/L: Col. 1 bottom
+Suggested Correction: Replace Meteg with Tarcha.
+Corrected Text: וִ֖יתוֹמִ֣ים
+Note: L has a Tarcha (Tifcha) under Vav.
+
+20. Ps 105:40.1
+Current UXLC: שָׁאַ֣ל
+Image: 775_Ps_105.23b-106.23a
+Location R/L: Col. 1 bottom
+Suggested Correction: Add Maqqef.
+Corrected Text: שָׁאַ֣ל־
+Note: There is a Maqqef after the Lamed.
+
+21. Ps 106:29.2
+Current UXLC: בְּמַֽעַלְלֵיהֶ֑ם
+Image: 776_Ps_106.23b-107.18a
+Location R/L: Col. 1 middle
+Suggested Correction: Replace Meteg with Merekha.
+Corrected Text: בְּמַ֥עַלְלֵיהֶ֑ם
+Note: L has a Merekha under the Mem.
+
+22. Ps 106:38.1
+Current UXLC: וַיִּֽשְׁפְּכ֨וּ
+Image: 776_Ps_106.23b-107.18a
+Location R/L: Col. 1 bottom
+Suggested Correction: Replace Meteg with Merekha.
+Corrected Text: וַיִּ֥שְׁפְּכ֨וּ
+Note: L has a Merekha under the Yod.
+
+23. Ps 118:17.1
+Current UXLC: לֹֽא
+Image: 780_Ps_115.16b-118.26
+Location R/L: Col. 2 middle
+Suggested Correction: Add Maqqef.
+Corrected Text: לֹֽא־
+Note: There is a Maqqef after the Lamed.
+
+24. Ps 119:51.5
+Current UXLC: מִ֝תּֽוֹרָתְךָ֗
+Image: 782_Ps_119.46-119.93
+Location R/L: Col. 1 middle
+Suggested Correction: Replace Meteg with Merekha.
+Corrected Text: מִ֝תּ֥וֹרָתְךָ֗
+Note: L has a Merekha under the Tav.
+
+25. Ps 119:61.4
+Current UXLC: תּֽ֝וֹרָתְךָ֗
+Image: 782_Ps_119.46-119.93
+Location R/L: Col. 1 middle
+Suggested Correction: Replace Meteg with Merekha.
+Corrected Text: תּ֥֝וֹרָתְךָ֗
+Note: L has a Merekha under the Tav.
+
+26. Ps 119:77.5
+Current UXLC: תֽ֝וֹרָתְךָ֗
+Image: 782_Ps_119.46-119.93
+Location R/L: Col. 2 middle
+Suggested Correction: Replace Meteg with Merekha.
+Corrected Text: ת֥֝וֹרָתְךָ֗
+Note: L has a Merekha under the Tav.
+
+27. Ps 119:109.4
+Current UXLC: וְ֝תֽוֹרָתְךָ֗
+Image: 783_Ps_119.94-119.141
+Location R/L: Col. 1 bottom
+Suggested Correction: Replace Meteg with Merekha.
+Corrected Text: וְ֝ת֥וֹרָתְךָ֗
+Note: L has a Merekha under the Tav.
+
+28. Ps 143:10.2
+Current UXLC: לַֽעֲשׂ֣וֹת
+Image: 790_Ps_141.6b-144.11a.
+Location R/L: Col. 2 middle
+Suggested Correction: Replace Meteg with Merekha.
+Corrected Text: לַ֥עֲשׂ֣וֹת
+Note: L has a Merekha under the Lamed.
+
+Sincerely,
+
+Daniel

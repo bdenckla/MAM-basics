@@ -1,0 +1,31 @@
+Hello Chris and Ben,
+
+It is easier for me to do these book by book. Finding suggested corrections is getting harder, which is a good thing! Please find below four suggested corrections and manuscript notes for the UXLC based on image comparisons.
+
+1. Exodus 7:20
+* Word / Verse: Ex 7:20.19 UXLC (וַיֵּהָֽפְכ֛וּ)
+* Manuscript Image: 069_Exo_7.9b-8.3a / Col. 2 middle
+* Suggested Correction: Add note regarding Mereka OR change Meteg to Mereka (וַיֵּהָ֥פְכ֛וּ).
+* Critical Note: Dotan has a Mereka and Breuer noted: "Two cantillation marks in the same word appear regularly only in the word of a zakef, tevir, and geresh" (Page 33, The Cantillation of Scripture).
+
+2. Exodus 11:6
+* Word / Verse: Ex 11:6.1 UXLC (וְהָֽיְתָ֛ה)
+* Manuscript Image: 074_Exo_11.1-12.13a / Col. 1 bottom
+* Suggested Correction: Add note regarding Mereka OR change Meteg to Mereka (וְהָ֥יְתָ֛ה).
+* Critical Note: See above note regarding Breuer's rule on two cantillation marks in the same word under a Zaqef, Tevir, or Geresh.
+
+3. Exodus 20:3
+* Word / Verse: Ex 20:3.2 UXLC (יִהְיֶֽה־לְךָ֛֩)
+* Manuscript Image: 085_Exo_19.13b-20.15a / Col. 2 bottom
+* Suggested Correction: Add note regarding Mereka OR change Meteg to Mereka (יִהְיֶ֥ה־לְךָ֛֩).
+* Critical Note: See above note regarding Breuer's rules for dual cantillation marks within a single word domain.
+
+4. Exodus 38:12
+* Word / Verse: Ex 38:12.6 UXLC (עַמּוּדֵיהֶ֥ם)
+* Manuscript Image: 109_Exo_38.11b-39.3a / Col. 1 top
+* Suggested Correction: Add note OR replace Mereka with Munach (עַמּוּדֵיהֶ֣ם).
+* Critical Note: Going by appearance, this mark does not look like a Mereka due to its slant. Dotan has a Munach. This word is in the domain of Zaqef Qatan, and the servant of Zaqef Qatan is always Munach. Price noted BHS and BHK erroneously have Mereka, which is possibly a defect in L (Page 65, Syntax of Masoretic Accents).
+
+Sincerely,
+
+Daniel

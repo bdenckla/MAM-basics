@@ -1,0 +1,14 @@
+Hello Chris and Ben,
+
+Here is another correction I overlooked.
+
+UXLC Correction for 1Samuel 28:12
+Current:
+אֶל־שָׁא֧וּל
+Change:
+אֶל־שָׁא֧וּל ׀
+Note: UXLC is missing Maqqef
+
+Sincerely,
+
+Daniel

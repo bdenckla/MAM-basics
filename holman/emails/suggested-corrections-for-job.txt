@@ -1,0 +1,67 @@
+Dear Chris and Ben,
+
+Please review the following suggested corrections and notes regarding the UXLC text and image locations for the book of Job.
+
+1. Job 10:6.4 — וּֽלְחַטָּאתִֽי
+Image Location: 799_Job_10.5b-12.4a (Col. 1 top)
+Correction: Revise note.
+Corrected Text: וּֽלְחַטָּאתִ֥י
+Note: Bomberg, Ginsburg, BHK, BHS, and Dotan have Merekha. Ginsburg lists no MSS with Meteg under Tav; Lesser/Letteris have a Revia above Tav. Bruer reads A and L identically with Merekha.
+
+2. Job 11:6.3 — תַּֽעֲלֻמ֣וֹת
+Image Location: 799_Job_10.5b-12.4a (Col. 2 top)
+Correction: Note that some editions read as Merekha.
+Corrected Text: תַּ֥עֲלֻמ֣וֹת
+Note: Dotan and BHS have Meteg.
+
+3. Job 15:35.3 — וְיָלֹד
+Image Location: 802_Job_15.14b-16.22a (Col. 1 bottom)
+Correction: Revise note.
+Corrected Text: וְיָלֹד
+Note: Accents under this word are illegible. Ginsburg shows five variants; initial two vowels are the only clear accents.
+
+4. Job 17:3.5 — מִֽי
+Image Location: 803_Job_16.22b-19.9a (Col. 1 bottom)
+Correction: Note variant readings as Merekha OR change Meteg to Merekha and add note.
+Corrected Text: מִ֥י
+Note: Dotan has Merekha; BHS has Meteg.
+
+5. Job 29:25.1 — אֶֽבֲחַ֣ר
+Image Location: 809_Job_28.26b-30.20a (Col. 2 top)
+Correction: Note that some editions read as Merekha.
+Corrected Text: אֶ֥בְחַ֣ר
+Note: Ginsburg, BHS, and Dotan have Meteg.
+
+6. Job 30:1.2 — שָֽׂחֲק֣וּ
+Image Location: 809_Job_28.26b-30.20a (Col. 2 top)
+Correction: Note that some editions read as Merekha.
+Corrected Text: שָׂ֥חֲק֣וּ
+Note: BHS and Dotan have Meteg. Ginsburg lacks accent/Meteg here. Compare UXLC שָׁ֥חֲקוּ (with Merekha) in Job 14:19.
+
+7. Job 32:6.6 — וַיֹּ֫אמַֽר
+Image Location: 811_Job_31.35b-33.11a (Col. 1 bottom)
+Correction: Revise note to indicate other editions use Merekha and read as Ole v'Yored.
+Corrected Text: וַיֹּ֫אמַ֥ר
+Note: Dotan and BHS have Merekha and read accent as Ole v'Yored.
+
+8. Job 32:12.1 — וְעָֽדֵיכֶ֗ם
+Image Location: 811_Job_31.35b-33.11a (Col. 2 top)
+Correction: Note that some editions read as Merekha.
+Corrected Text: וְעָ֥דֵיכֶ֗ם
+Note: BHS and Dotan have Meteg. Ginsburg lacks accent/Meteg here.
+
+9. Job 34:20.4 — לָ֥יְלָה
+Image Location: 812_Job_33.11b-34.20a (Col. 2 bottom)
+Correction: Note that the accent in L resembles a Meteg while UXLC reads Merekha OR change to Meteg.
+Corrected Text: לָ֥֫יְלָה
+Note: UXLC reads a straight vertical line below the first Lamed as Merekha. Dotan and BHS also have Merekha.
+
+10. Job 39:28.4 — עַֽל־שֶׁן־סֶ֝֗לַע
+Image Location: 816_Job_39.4b-40.19a (Col. 2 top)
+Correction: Remove first Maqqef and change Meteg to Merekha OR note others read with Merekha.
+Corrected Text: עַ֥ל שֶׁן־סֶ֝֗לַע
+Note: L lacks Maqqef between first two words. Dotan has Merekha; BHS has Meteg.
+
+Sincerely,
+
+Daniel

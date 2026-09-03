@@ -1,0 +1,42 @@
+Greetings Chris and Ben,
+
+Please find below four suggested corrections for the book of Joshua text.
+
+1. Joshua 5:1 (Word 36)
+Current UXLC: בְּנֵֽי־יִשְׂרָאֵֽל׃
+Image Location: 246_Jos_4.21b-5.15a (Col. 1 bottom)
+Suggested Correction: Remove Maqqef and change Meteg to a Mereka.
+Corrected Text: בְּנֵ֥י יִשְׂרָאֵֽל׃
+
+Note: While Dotan reads as current UXLC and BHS, there is no Maqqef in L, and the accent should be a Mereka.
+
+
+2. Joshua 9:23 (Word 10)
+Current UXLC: וְשֹֽׁאֲבֵי־מַ֖יִם
+Image Location: 252_Jos_9.11b-10.5a (Col. 2 middle)
+Suggested Correction: Remove Maqqef and change Meteg to a Mereka.
+Corrected Text: וְשֹׁ֥אֲבֵי מַ֖יִם
+
+Note: Dotan reads without Maqqef and with a Mereka. There is no Maqqef in L, and the accent should be a Mereka.
+
+
+3. Joshua 19:8 (Word 8)
+Current UXLC: עַד־בַּֽעֲלַ֥ת
+Image Location: 263_Jos_19.6b-19.42a (Col. 1 top)
+Suggested Correction: Remove Mereka under Lamed and place under Beit.
+Corrected Text: עַד־בַּ֥עֲלַת
+
+Note: Dotan has the Mereka under Beit. The BHS likely misread the top of the Lamed from the line below as a Mereka. There is no accent under the Lamed in L, and the accent under the Beit should be a Mereka.
+
+
+4. Joshua 20:4 (Word 12)
+Current UXLC: זִקְנֵ֥י־הָעִֽיר (with notes c and m)
+Image Location: 264_Jos_19.42b-21.5a (Col. 2 middle)
+Suggested Correction: Remove notes c and m; reverse the positions of the Mereka and Meteg.
+Corrected Text: זִקְנֵֽי־הָעִ֥יר
+
+Note: In Daat Miqra, Breuer notes Aleppo (A) and L agree on this reading, placing a Meteg under Nun and a Mereka under Ayin. Dotan shares this reading in BHL. Notes c and m represent subjective interpretations rather than absolute readings of L. Between the two marks in L, the mark under Ayin slants sharply, looking much more like a Mereka.
+
+
+Best regards,
+Daniel

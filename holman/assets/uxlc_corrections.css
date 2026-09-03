@@ -1,0 +1,109 @@
+:root {
+  color-scheme: light dark;
+  --bg: light-dark(#f7f6f2, #1e1c1a);
+  --card-bg: light-dark(#ffffff, #272421);
+  --border: light-dark(#d9d3c9, #3d3836);
+  --text: light-dark(#2d2a27, #e8e4e0);
+  --muted: light-dark(#666059, #9a938c);
+  --accent: light-dark(#1f5f8b, #5ba3cb);
+  --img-bg: light-dark(#f3efe8, #2a2724);
+  --hover-bg: light-dark(#f3f0ea, #2e2b28);
+  --active-bg: light-dark(#dcebf5, #1a3349);
+  --comment-bg: light-dark(#f4f1e8, #232a2e);
+  --comment-rule: light-dark(#c8bfae, #4a5a63);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font: 15px/1.5 "Segoe UI", system-ui, sans-serif; background: var(--bg); color: var(--text); max-width: 1180px; margin: 0 auto; padding: 1rem; }
+a { color: var(--accent); }
+code { font-family: Consolas, "SFMono-Regular", monospace; font-size: .85em; }
+.top-nav { display: flex; gap: .55rem; flex-wrap: wrap; margin-bottom: .8rem; }
+.nav-link { color: var(--muted); text-decoration: none; border: 1px solid var(--border); background: var(--card-bg); border-radius: 999px; padding: .2rem .7rem; }
+.nav-link:hover { background: var(--hover-bg); color: var(--text); }
+.nav-link.active { border-color: var(--accent); background: var(--active-bg); color: var(--text); }
+h1 { font-size: 1.6rem; margin-bottom: .5rem; }
+p { margin: .3rem 0; }
+.intro { max-width: 68ch; color: var(--muted); margin-bottom: 1rem; }
+.intro p + p { margin-top: .5rem; }
+.meta-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: .5rem; margin-bottom: 1rem; }
+.meta-box { background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; padding: .6rem .7rem; }
+.meta-label { font-size: .72rem; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
+.meta-value { font-size: 1.2rem; font-weight: 600; }
+.section-title { font-size: 1.1rem; margin: 1.4rem 0 .5rem; }
+.section-note { color: var(--muted); margin-bottom: .6rem; max-width: 68ch; }
+/* One column, Book, since the "What Holman asks for" one was dropped on
+   2026-08-11. Still a grid rather than a bare block so that a second column,
+   should one be wanted again, needs only the column count back. */
+.summary-columns { display: grid; grid-template-columns: minmax(0, 1fr); gap: .75rem; margin-bottom: 1rem; align-items: start; }
+.summary-group { min-width: 0; }
+.summary-group-title { font-size: .75rem; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); margin: 0 0 .35rem; }
+.summary { width: 100%; border-collapse: collapse; background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; table-layout: fixed; }
+.summary th, .summary td { text-align: left; padding: .45rem .65rem; border-bottom: 1px solid var(--border); overflow-wrap: anywhere; }
+.summary td:last-child { width: 3.2rem; text-align: right; color: var(--muted); }
+.summary tr[data-filter-id] { cursor: pointer; }
+.summary tr[data-filter-id]:hover { background: var(--hover-bg); }
+/* Selected must beat hovered: background is the only signal a row is selected,
+   so an equally specific .active rule would leave a click invisible under the
+   pointer that made it. */
+.summary tr[data-filter-id].active { background: var(--active-bg); }
+.summary tr:last-child td { border-bottom: none; }
+.cat-swatch { width: 11px; height: 11px; display: inline-block; border-radius: 2px; margin-right: .45rem; vertical-align: middle; }
+.records { display: grid; gap: .65rem; }
+.record-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; padding: .65rem .8rem; }
+.record-card.hidden, .source-email.hidden { display: none; }
+.record-head { display: flex; gap: .5rem; align-items: baseline; flex-wrap: wrap; }
+.record-ref { font-weight: 600; color: inherit; text-decoration: none; }
+.record-ref:hover { text-decoration: underline; color: var(--accent); }
+.record-verse { color: var(--muted); display: flex; gap: .45rem; flex-wrap: wrap; align-items: baseline; }
+.record-verse a { color: inherit; font-size: .8rem; }
+.record-verse a:hover { color: var(--accent); }
+.category-badges { display: flex; gap: .35rem; flex-wrap: wrap; margin-left: auto; }
+.finding-badge { color: #fff; border-radius: 999px; padding: .12rem .55rem; font-size: .72rem; white-space: nowrap; }
+.record-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: .8rem; margin-top: .5rem; }
+/* Taamey D, served from this repo rather than asked of the reader's machine, so
+   the accents look the same here as they do in the change items this page links
+   to, which set their Hebrew in the same font. The rest of the list is the
+   fallback for a reader whose browser will not load the woff2. */
+.pointed-heb {
+  font-family: "Taamey D WOFF2", "SBL Hebrew", "Ezra SIL", "David", "Times New Roman", serif;
+  font-size: 20pt;
+  line-height: 1.35;
+  font-feature-settings: 'ss01'; /* ss01 = xataf qamats qatan */
+}
+@font-face {
+  font-family: "Taamey D WOFF2";
+  src: url("woff2/Taamey_D.woff2");
+}
+.case-fields { display: grid; grid-template-columns: max-content 1fr; gap: .1rem .7rem; }
+.case-field { display: contents; }
+.case-field dt { color: var(--muted); font-size: .8rem; padding-top: .18rem; white-space: nowrap; }
+.case-field dd { padding-top: .1rem; overflow-wrap: anywhere; }
+.folio-links { display: block; font-size: .78rem; }
+.folio-links a { margin-right: .5rem; }
+.case-source { margin-top: .6rem; font-size: .8rem; color: var(--muted); }
+.image-panel { border: 1px solid var(--border); border-radius: 6px; background: var(--img-bg); padding: .45rem; align-self: start; }
+.image-strip { display: grid; gap: .45rem; }
+.image-strip figure { display: grid; gap: .15rem; }
+.image-thumb { display: block; max-width: 100%; height: auto; border: 1px solid var(--border); border-radius: 4px; background: var(--card-bg); }
+.no-image { font-size: .8rem; color: var(--muted); }
+.commentary { margin-top: .7rem; border-top: 1px solid var(--border); padding-top: .55rem; }
+.comment { background: var(--comment-bg); border-left: 3px solid var(--comment-rule); border-radius: 0 6px 6px 0; padding: .45rem .65rem; }
+.comment + .comment { margin-top: .45rem; }
+.comment-byline { font-size: .75rem; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
+.source-emails { display: grid; gap: .65rem; }
+.source-email { background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; padding: .65rem .8rem; }
+.source-email h3 { font-size: 1rem; }
+.email-headers { font-size: .8rem; color: var(--muted); }
+.case-link.unreachable { color: var(--muted); text-decoration: line-through; pointer-events: none; }
+.email-prose { margin-top: .45rem; max-width: 68ch; }
+.email-file { margin-top: .45rem; font-size: .78rem; color: var(--muted); }
+@media (max-width: 850px) {
+  .record-grid { grid-template-columns: 1fr; }
+  .category-badges { margin-left: 0; }
+}
+/* Below about 400px the label column costs a case's long Critical Note more
+   lines than stacking does, so the labels go above their values. */
+@media (max-width: 400px) {
+  .case-fields { grid-template-columns: 1fr; }
+  .case-field dt { padding-top: .35rem; }
+}
+/* __FILTER_COLORS__ */

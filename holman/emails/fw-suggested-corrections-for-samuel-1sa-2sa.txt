@@ -1,0 +1,68 @@
+Thank you Ben for catching my mistake of forgetting to attach the images!
+Sent: Friday, August 7, 2026 at 6:34 PM
+From: "Daniel Holman" [address removed]
+To: [address removed], [address removed]
+Subject: Suggested Corrections for Samuel (1Sa - 2Sa)
+Dear Chris and Ben,
+
+Please review the following suggested corrections and notes regarding the UXLC text and image locations for 1 Samuel and 2 Samuel:
+
+1. 1 Samuel 7:10.10
+Current Text: יְהוָ֣ה׀
+UXLC Image Location: 306_1Sa_7.4b-8.11a (Col. 1 bottom)
+Suggested Correction: Remove Paseq.
+Corrected Text: יְהוָ֣ה
+
+Note: L, Dotan, Bomberg, and Ginsburg have no Paseq. Ginsburg lists one MS with Paseq, Or. 4227. BHS includes Paseq.
+
+
+2. 1 Samuel 13:4.11
+Current Text: וְגַם־נִבְאַשׁ
+UXLC Image Location: 311_1Sa_12.9b-13.5a (Col. 3 bottom)
+Suggested Correction: Add an Azla and Masorah Circle above Nun.
+Corrected Text: וְגַם־נִ֨֯בְאַשׁ
+
+Note: There is a note indicating the peculiarity of L. However, L has what appears to be an Azla above Nun and a Masorah Circle. Perhaps the Azla was originally written by mistake and a Masorah Circle was added to alert readers?
+
+
+3. 2 Samuel 5:21.1
+Current Text: וַיַּעַזְבוּ־שָׁ֖ם
+UXLC Image Location: 341_2Sa_4.9b-5.21a (Col. 3 bottom)
+Suggested Correction: Remove Maqqef.
+Corrected Text: וַיַּעַזְבוּ שָׁ֖ם
+
+Note: Several letters touch here, mimicking a Maqqef, particularly between the Zayin-Beit and Shin-Final Mem. These look like ink trails left as the quill exited the parchment. However, a distinct, empty space separates the two words, confirming no Maqqef exists.
+
+
+4. 2 Samuel 7:22.7
+Current Text: כִּֽי־אֵֽין
+UXLC Image Location: 344_2Sa_7.20b-8.14a (Col. 1 top)
+Suggested Correction: Add note on peculiarity of phrase.
+Corrected Text: כִּֽי־אֵֽין
+
+Note: One would expect a Munach rather than a second Meteg. Breuer noted this variant in L, highlighting that other MSS use Munach, which Dotan adopted for his edition.
+
+
+5. 2 Samuel 15:26.11
+Current Text: טֽוֹב
+UXLC Image Location: 353_2Sa_15.7b-15.30a (Col. 3 bottom)
+Suggested Correction: Revise note.
+Corrected Text: N/A
+
+Note: Most read with Mereka while a few MSS read with a Tifcha and put a Mereka on the next word. This pattern can be seen many times among MSS.
+
+
+6. 2 Samuel 24:10.19
+Current Text: יְהוָ֔ה
+UXLC Image Location: 366_2Sa_23.29b-24.16a (Col. 3 top)
+Suggested Correction: Change Zaqef Qatan to Revia
+Corrected Text: יְהֹוָ֗ה
+
+Note: L has a Revia above Vav. Bruer even shows L as having a Revia. BHS and Bomberg both have Zaqef Qatan which is common between these two accents.
+
+
+Please let me know if you need any further adjustments or details added to these items.
+
+Sincerely,
+Daniel
+

@@ -1,0 +1,14 @@
+Hello Chris and Ben,
+
+I have no suggested corrections for Numbers and could only find one for Deuteronomy.
+
+Deuteronomy 33:28
+Word/Verse: Deut 33:28.13 UXLC (יַֽעַרְפוּ / יַ֥עַרְפוּ)
+Manuscript Image: 238_Deu_32.52b-33.29 / Col. 3 bottom
+
+Suggested Correction: Change Meteg to Mercha OR include an apparatus note detailing the manuscript variants.
+
+Critical Note: Dotan features a Mercha. In Daat Miqra, Breuer reads both Aleppo (A) and Leningrad (L) as having a Mercha. Conversely, Sassoon 1053 and Jacob ben Chayyim print a Meteg, but crucially include a Maqqef to bind the word to the subsequent Silluq. If the Meteg tradition is maintained, an editorial note should indicate that alternate manuscripts require a Maqqef; an independent word cannot sit accentless directly preceding a Silluq without violating Tiberian accentuation syntax.
+
+Sincerely,
+Daniel

@@ -1,0 +1,31 @@
+Dear Chris and Ben,
+
+Please review the following suggested corrections and notes regarding the UXLC text and image locations for Ezra, Nehemiah, and Esther.
+
+1. Ezra 6:2.3 — בְּבִֽירְתָ֛א
+Image Location: 900_Ezra_5.12b-6.10a (Col. 2 top)
+Correction: Note variant readings as Merekha OR change Meteg to Merekha and add note.
+Corrected Text: בְּבִ֥ירְתָ֛א
+Note: Dotan has Merekha; BHS has Meteg.
+
+2. Ezra 8:18.15 — וְשֵׁרֵֽבְיָ֛ה
+Image Location: 903_Ezra_7.26b-8.20a (Col. 3 bottom)
+Correction: Note variant readings as Merekha OR change Meteg to Merekha and add note.
+Corrected Text: וְשֵׁרֵ֥בְיָ֛ה
+Note: Dotan has Merekha; BHS has Meteg.
+
+3. Neh 7:1.7 — וַיִּפָּֽקְד֛וּ
+Image Location: 914_Neh_6.16b-7.25 (Col. 1 bottom)
+Correction: Note variant readings as Merekha OR change Meteg to Merekha and add note.
+Corrected Text: וַיִּפָּ֥קְד֛וּ
+Note: Dotan has Merekha; BHS has Meteg.
+
+4. Est 8:14.5 — יָֽצְא֛וּ
+Image Location: 872_Esther_8.8b-9.5 (Col. 2 middle)
+Correction: Note variant readings as Merekha OR change Meteg to Merekha and add note.
+Corrected Text: יָ֥צְא֛וּ
+Note: Dotan has Merekha; BHS has Meteg.
+
+Sincerely,
+
+Daniel

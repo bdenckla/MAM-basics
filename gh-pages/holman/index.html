@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Daniel Holman's observations on the Hebrew Bible text</title>
+    <style>
+      :root {
+        color-scheme: light dark;
+        --bg: light-dark(#f7f6f2, #1e1c1a);
+        --card-bg: light-dark(#ffffff, #272421);
+        --border: light-dark(#d9d3c9, #3d3836);
+        --text: light-dark(#2d2a27, #e8e4e0);
+        --muted: light-dark(#666059, #9a938c);
+        --accent: light-dark(#1f5f8b, #5ba3cb);
+        --hover-bg: light-dark(#f3f0ea, #2e2b28);
+      }
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      body {
+        font: 15px/1.5 "Segoe UI", system-ui, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        max-width: 62ch;
+        margin: 0 auto;
+        padding: 2rem 1rem;
+      }
+      h1 { font-size: 1.5rem; margin-bottom: .6rem; }
+      p { margin: .4rem 0; color: var(--muted); }
+      ul { list-style: none; display: grid; gap: .6rem; margin-top: 1.2rem; }
+      li a {
+        display: block;
+        background: var(--card-bg);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: .7rem .9rem;
+        color: var(--text);
+        text-decoration: none;
+      }
+      li a:hover { background: var(--hover-bg); border-color: var(--accent); }
+      .report-title { display: block; font-weight: 600; }
+      .report-note { display: block; font-size: .88rem; color: var(--muted); }
+    </style>
+  </head>
+  <body>
+    <h1>Daniel Holman's observations on the Hebrew Bible text</h1>
+    <p>Two reports, covering three bodies of work Daniel Holman has sent Ben Denckla.</p>
+    <ul>
+      <li>
+        <a href="uxlc_corrections.html">
+          <span class="report-title">Suggestions for the UXLC</span>
+          <span class="report-note">
+            Mostly places where Holman reads the Leningrad Codex images
+            differently from the UXLC text, with the rest asking only for an
+            apparatus note; proposed to the UXLC's editor a book at a time.
+          </span>
+        </a>
+      </li>
+      <li>
+        <a href="table_data_findings.html">
+          <span class="report-title">Ketiv/qere review, and suggestions for MAM</span>
+          <span class="report-note">
+            Holman's review of qere and ketiv readings in the Aleppo and Leningrad
+            codices, and what MAM might take from it; together with his suggested
+            corrections to MAM itself, which are about a meteg or about where an
+            accent sits. One page, filterable by which of the two a record is.
+          </span>
+        </a>
+      </li>
+    </ul>
+  </body>
+</html>

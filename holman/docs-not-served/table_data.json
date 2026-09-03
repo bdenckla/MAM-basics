@@ -1,0 +1,3565 @@
+{
+  "source_document": "Review of Qere and Kethib readings in the Aleppo and Leningrad.docx",
+  "introduction_paragraph_count": 10,
+  "table": {
+    "header_labels": [
+      "",
+      "Verse",
+      "Word",
+      "Finding",
+      "Aleppo",
+      "Leningrad",
+      "Notes"
+    ],
+    "column_keys": [
+      "entry",
+      "verse",
+      "word",
+      "finding",
+      "aleppo",
+      "leningrad",
+      "notes"
+    ],
+    "row_count": 77,
+    "finding_value_counts": [
+      {
+        "finding": "A - Masorah Circle | L - Qere",
+        "count": 55
+      },
+      {
+        "finding": "A - Masorah Circle? | L - Qere",
+        "count": 1
+      },
+      {
+        "finding": "A - No Masorah Circle | L - Qere",
+        "count": 18
+      },
+      {
+        "finding": "A and L - Qere",
+        "count": 3
+      }
+    ],
+    "notes_structured_counts": [
+      {
+        "notes-UXLC": "<HEB> <HEB>",
+        "notes-UXLC-pointed-prefix-atoms": null,
+        "notes-UXLC-yatir": null,
+        "notes-HaKeter": null,
+        "count": 61
+      },
+      {
+        "notes-UXLC": "<HEB> <HEB>",
+        "notes-UXLC-pointed-prefix-atoms": "<HEB>",
+        "notes-UXLC-yatir": null,
+        "notes-HaKeter": null,
+        "count": 10
+      },
+      {
+        "notes-UXLC": "<HEB> <HEB>",
+        "notes-UXLC-pointed-prefix-atoms": null,
+        "notes-UXLC-yatir": null,
+        "notes-HaKeter": "<HEB> <HEB>",
+        "count": 4
+      },
+      {
+        "notes-UXLC": "<HEB> <HEB>",
+        "notes-UXLC-pointed-prefix-atoms": null,
+        "notes-UXLC-yatir": "yatir aleph",
+        "notes-HaKeter": null,
+        "count": 2
+      }
+    ],
+    "verse_book_names": [
+      "1Chronicles",
+      "1Kings",
+      "1Samuel",
+      "2Chronicles",
+      "2Kings",
+      "2Samuel",
+      "Ezekiel",
+      "Isaiah",
+      "Jeremiah",
+      "Job",
+      "Joshua",
+      "Judges",
+      "Proverbs",
+      "Psalms",
+      "Tsefaniah"
+    ],
+    "rows": [
+      {
+        "row_number": 1,
+        "verse": "Joshua 3:4.5",
+        "word": "וּבֵנָ֔יו",
+        "finding": "A - Masorah Circle | L - Qere",
+        "notes-UXLC": "ובינו וּבֵינָ֔יו",
+        "notes-UXLC-yatir": null,
+        "notes-HaKeter": null,
+        "image_files": {
+          "aleppo": [
+            "gh-pages/img/row001_aleppo_01.png"
+          ],
+          "leningrad": [
+            "gh-pages/img/row001_leningrad_01.png"
+          ]
+        }
+      },
+      {
+        "row_number": 2,
+        "verse": "Joshua 10:24.19",
+        "word": "הֶהָלְכ֣וּא",
+        "finding": "A - Masorah Circle | L - Qere",
+        "notes-UXLC": "ההלכוא הֶהָלְכ֣וּ",
+        "notes-UXLC-yatir": "yatir aleph",
+        "notes-HaKeter": null,
+        "image_files": {
+          "aleppo": [
+            "gh-pages/img/row002_aleppo_01.png"
+          ],
+          "leningrad": [
+            "gh-pages/img/row002_leningrad_01.png"
+          ]
+        },
+        "notes_orig": "MAM - No Comments | UXLC - ההלכוא הֶהָלְכ֣וְּּ\n(yatir aleph)"
+      },
+      {
+        "row_number": 3,
+        "verse": "Judges 7:13.13",
+        "word": "צְלִ֜יל",
+        "finding": "A - Masorah Circle | L - Qere",
+        "notes-UXLC": "צלול צְלִ֜יל",
+        "notes-UXLC-yatir": null,
+        "notes-HaKeter": null,
+        "image_files": {
+          "aleppo": [
+            "gh-pages/img/row003_aleppo_01.png"
+          ],
+          "leningrad": [
+            "gh-pages/img/row003_leningrad_01.png"
+          ]
+        }
+      },
+      {
+        "row_number": 4,
+        "verse": "1Samuel 2:9.2",
+        "word": "חֲסִידָו֙",
+        "finding": "A - Masorah Circle | L - Qere",
+        "notes-UXLC": "חסידו חֲסִידָיו֙",
+        "notes-UXLC-yatir": null,
+        "notes-HaKeter": null,
+        "image_files": {
+          "aleppo": [
+            "gh-pages/img/row004_aleppo_01.png"
+          ],
+          "leningrad": [
+            "gh-pages/img/row004_leningrad_01.png"
+          ]
+        }
+      },
+      {
+        "row_number": 5,
+        "verse": "1Samuel 17:17.9",
+        "word": "הַקָּלִיא֙",
+        "finding": "A - Masorah Circle | L - Qere",
+        "notes-UXLC": "הקליא הַקָּלִי֙",
+        "notes-UXLC-yatir": "yatir aleph",
+        "notes-HaKeter": null,
+        "image_files": {
+          "aleppo": [
+            "gh-pages/img/row005_aleppo_01.png"
+          ],
+          "leningrad": [
+            "gh-pages/img/row005_leningrad_01.png"
+          ]
+        }
+      },
+      {
+        "row_number": 6,
+        "verse": "1Samuel 21:14.7",
+        "word": "וַיְתָו֙",
+        "finding": "A - Masorah Circle | L - Qere",
+        "notes-UXLC": "ויתו וַיְתָיו֙",
+        "notes-UXLC-yatir": null,
+        "notes-HaKeter": null,
+        "image_files": {
+          "aleppo": [
+            "gh-pages/img/row006_aleppo_01.png"
+          ],
+          "leningrad": [
+            "gh-pages/img/row006_leningrad_01.png"
+          ]
+        }
+      },
+      {
+        "row_number": 7,
+        "verse": "1Samuel 22:13.2",
+        "word": "אֵלָו֙",
+        "finding": "A - Masorah Circle | L - Qere",
+        "notes-UXLC": "אלו אֵלָיו֙",
+        "notes-UXLC-yatir": null,
+        "notes-HaKeter": null,
+        "image_files": {
+          "aleppo": [
+            "gh-pages/img/row007_aleppo_01.png"
+          ],
+          "leningrad": [
+            "gh-pages/img/row007_leningrad_01.png"
+          ]
+        }
+      },
+      {
+        "row_number": 8,
+        "verse": "1Samuel 30:6.15",
+        "word": "בָּנָ֣ו",
+        "finding": "A - Masorah Circle | L - Qere",
+        "notes-UXLC": "בנו בָּנָ֣יו",
+        "notes-UXLC-pointed-prefix-atoms": "עַל־",
+        "notes-UXLC-yatir": null,
+        "notes-HaKeter": null,
+        "image_files": {
+          "aleppo": [
+            "gh-pages/img/row008_aleppo_01.png"
+          ],
+          "leningrad": [
+            "gh-pages/img/row008_leningrad_01.png"
+          ]
+        }
+      },
+      {
+        "row_number": 9,
+        "verse": "2Samuel 1:11.3",
+        "word": "בִּבְגָדָ֖ו",
+        "finding": "A - Masorah Circle | L - Qere",
+        "notes-UXLC": "בבגדו בִּבְגָדָ֖יו",
+        "notes-UXLC-yatir": null,
+        "notes-HaKeter": null,
+        "image_files": {
+          "aleppo": [
+            "gh-pages/img/row009_aleppo_01.png"
+          ],
+          "leningrad": [
+            "gh-pages/img/row009_leningrad_01.png"
+          ]
+        }
+      },
+      {
+        "row_number": 10,
+        "verse": "2Samuel 2:23.15",
+        "word": "תַּחְתָּ֑ו",
+        "finding": "A and L - Qere",
+        "notes-UXLC": "תחתו תַּחְתָּ֑יו",
+        "notes-UXLC-yatir": null,
+        "notes-HaKeter": "תַּחְתָּ֑ו תַּחְתָּ֑יו",
+        "image_files": {
+          "aleppo": [
+            "gh-pages/img/row010_aleppo_01.png"
+          ],
+          "leningrad": [
+            "gh-pages/img/row010_leningrad_01.png"
+          ]
+        }
+      },
+      {
+        "row_number": 11,
+        "verse": "2Samuel 3:12.6",
+        "word": "תַּחְתָּ֥ו",
+        "finding": "A - Masorah Circle | L - Qere",
+        "notes-UXLC": "תחתו תַּחְתָּ֥יו",
+        "notes-UXLC-yatir": null,
+        "notes-HaKeter": null,
+        "image_files": {
+          "aleppo": [
+            "gh-pages/img/row011_aleppo_01.png"
+          ],
+          "leningrad": [
+            "gh-pages/img/row011_leningrad_01.png"
+          ]
+        }
+      },
+      {
+        "row_number": 12,
+        "verse": "2Samuel 5:2.12",
+        "word": "וְהַמֵּבִ֖י",
+        "finding": "A - Masorah Circle | L - Qere",
+        "notes-UXLC": "והמבי וְהַמֵּבִ֖יא",
+        "notes-UXLC-yatir": null,
+        "notes-HaKeter": null,
+        "image_files": {
+          "aleppo": [
+            "gh-pages/img/row012_aleppo_01.png"
+          ],
+          "leningrad": [
+            "gh-pages/img/row012_leningrad_01.png"
+          ]
+        }
+      },
+      {
+        "row_number": 13,
+        "verse": "2Samuel 11:24.1",
+        "word": "וַיֹּר֨אוּ",
+        "finding": "A - Masorah Circle | L - Qere",
+        "notes-UXLC": "ויראו וַיֹּר֨וּ",
+        "notes-UXLC-yatir": null,
+        "notes-HaKeter": null,
+        "image_files": {
+          "aleppo": [
+            "gh-pages/img/row013_aleppo_01.png"
+          ],
+          "leningrad": [
+            "gh-pages/img/row013_leningrad_01.png"
+          ]
+        }
+      },
+      {
+        "row_number": 14,
+        "verse": "2Samuel 11:24.2",
+        "word": "הַמּוֹרִ֤אים",
+        "finding": "A - Masorah Circle | L - Qere",
+        "notes-UXLC": "המוראים הַמּוֹרִ֤ים",
+        "notes-UXLC-yatir": null,
+        "notes-HaKeter": null,
+        "image_files": {
+          "aleppo": [
+            "gh-pages/img/row014_aleppo_01.png"
+          ],
+          "leningrad": [
+            "gh-pages/img/row014_leningrad_01.png"
+          ]
+        }
+      },
+      {
+        "row_number": 15,
+        "verse": "2Samuel 16:8.10",
+        "word": "תַּחְתָּ֔ו",
+        "finding": "A - Masorah Circle | L - Qere",
+        "notes-UXLC": "תחתו תַּחְתָּ֔יו",
+        "notes-UXLC-yatir": null,
+        "notes-HaKeter": null,
+        "image_files": {
+          "aleppo": [
+            "gh-pages/img/row015_aleppo_01.png"
+          ],
+          "leningrad": [
+            "gh-pages/img/row015_leningrad_01.png"
+          ]
+        }
+      },
+      {
+        "row_number": 16,
+        "verse": "2Samuel 18:17.20",
+        "word": "לְאֹהָלָֽו",
+        "word_orig": "לְאֹהָלָֽו׃",
+        "finding": "A - Masorah Circle | L - Qere",
+        "notes-UXLC": "לאהלו לְאֹהָלָֽיו",
+        "notes-UXLC_orig": "לאהלו לְאֹהָלָֽיו׃",
+        "notes-UXLC-yatir": null,
+        "notes-HaKeter": null,
+        "image_files": {
+          "aleppo": [
+            "gh-pages/img/row016_aleppo_01.png"
+          ],
+          "leningrad": [
+            "gh-pages/img/row016_leningrad_01.png"
+          ]
+        }
+      },
+      {
+        "row_number": 17,
+        "verse": "2Samuel 18:18.5",
+        "word": "בְחַיָּו֙",
+        "finding": "A - Masorah Circle | L - Qere",
+        "notes-UXLC": "בחיו בְחַיָּיו֙",
+        "notes-UXLC-yatir": null,
+        "notes-HaKeter": null,
+        "image_files": {
+          "aleppo": [
+            "gh-pages/img/row017_aleppo_01.png"
+          ],
+          "leningrad": [
+            "gh-pages/img/row017_leningrad_01.png"
+          ]
+        }
+      },
+      {
+        "row_number": 18,
+        "verse": "2Samuel 24:14.14",
+        "word": "רַחֲמָ֔ו",
+        "finding": "A - Masorah Circle | L - Qere",
+        "notes-UXLC": "רחמו רַֽחֲמָ֔יו",
+        "notes-UXLC-yatir": null,
+        "notes-HaKeter": null,
+        "image_files": {
+          "aleppo": [
+            "gh-pages/img/row018_aleppo_01.png"
+          ],
+          "leningrad": [
+            "gh-pages/img/row018_leningrad_01.png"
+          ]
+        }
+      },
+      {
+        "row_number": 19,
+        "verse": "1Kings 6:38.14",
+        "word": "מִשְׁפָּטָ֑ו",
+        "finding": "A - Masorah Circle | L - Qere",
+        "notes-UXLC": "משפטו מִשְׁפָּטָ֑יו",
+        "notes-UXLC-pointed-prefix-atoms": "וּלְכָל־",
+        "notes-UXLC-yatir": null,
+        "notes-HaKeter": null,
+        "image_files": {
+          "aleppo": [
+            "gh-pages/img/row019_aleppo_01.png"
+          ],
+          "leningrad": [
+            "gh-pages/img/row019_leningrad_01.png"
+          ]
+        }
+      },
+      {
+        "row_number": 20,
+        "verse": "2Kings 4:34.14",
+        "word": "כַּפָּ֔ו",
+        "finding": "A - Masorah Circle | L - Qere",
+        "notes-UXLC": "כפו כַּפָּ֔יו",
+        "notes-UXLC-pointed-prefix-atoms": "עַל־",
+        "notes-UXLC-yatir": null,
+        "notes-HaKeter": null,
+        "image_files": {
+          "aleppo": [
+            "gh-pages/img/row020_aleppo_01.png"
+          ],
+          "leningrad": [
+            "gh-pages/img/row020_leningrad_01.png"
+          ]
+        }
+      },
+      {
+        "row_number": 21,
+        "verse": "2Kings 6:10.11",
+        "word": "וְהִזְהִירֹ֖ה",
+        "finding": "A - Masorah Circle | L - Qere",
+        "notes-UXLC": "והזהירה וְהִזְהִיר֖וֹ",
+        "notes-UXLC-yatir": null,
+        "notes-HaKeter": null,
+        "image_files": {
+          "aleppo": [
+            "gh-pages/img/row021_aleppo_01.png"
+          ],
+          "leningrad": [
+            "gh-pages/img/row021_leningrad_01.png"
+          ]
+        }
+      },
+      {
+        "row_number": 22,
+        "verse": "2Kings 9:25.4",
+        "word": "שָׁלִשֹׁ֔ה",
+        "finding": "A - Masorah Circle | L - Qere",
+        "notes-UXLC": "שלשה שָֽׁלִשׁ֔וֹ",
+        "notes-UXLC-yatir": null,
+        "notes-HaKeter": null,
+        "image_files": {
+          "aleppo": [
+            "gh-pages/img/row022_aleppo_01.png"
+          ],
+          "leningrad": [
+            "gh-pages/img/row022_leningrad_01.png"
+          ]
+        }
+      },
+      {
+        "row_number": 23,
+        "verse": "1Chronicles 2:16.1",
+        "word": "וְאַחְיֹתֵיהֶ֖ם",
+        "finding": "A - Masorah Circle | L - Qere",
+        "notes-UXLC": "ואחיתיהם וְאַחְיוֹתֵיהֶ֖ם",
+        "notes-UXLC-yatir": null,
+        "notes-HaKeter": null,
+        "image_files": {
+          "aleppo": [
+            "gh-pages/img/row023_aleppo_01.png"
+          ],
+          "leningrad": [
+            "gh-pages/img/row023_leningrad_01.png"
+          ]
+        }
+      },
+      {
+        "row_number": 24,
+        "verse": "1Chronicles 11:17.1",
+        "word": "וַיִּתְאָ֥ו",
+        "finding": "A - Masorah Circle | L - Qere",
+        "notes-UXLC": "ויתאו וַיִּתְאָ֥יו",
+        "notes-UXLC-yatir": null,
+        "notes-HaKeter": null,
+        "image_files": {
+          "aleppo": [
+            "gh-pages/img/row024_aleppo_01.png"
+          ],
+          "leningrad": [
+            "gh-pages/img/row024_leningrad_01.png"
+          ]
+        }
+      },
+      {
+        "row_number": 25,
+        "verse": "2Chronicles 24:25.6",
+        "word": "בְּמַחֲלֻיִ֣ים",
+        "finding": "A - Masorah Circle | L - Qere",
+        "notes-UXLC": "במחליים בְּמַחֲלוּיִ֣ם",
+        "notes-UXLC-yatir": null,
+        "notes-HaKeter": null,
+        "image_files": {
+          "aleppo": [
+            "gh-pages/img/row025_aleppo_01.png"
+          ],
+          "leningrad": [
+            "gh-pages/img/row025_leningrad_01.png"
+          ]
+        }
+      },
+      {
+        "row_number": 26,
+        "verse": "Job 1:4.11",
+        "word": "אַחְיֹתֵיהֶ֔ם",
+        "finding": "A - Masorah Circle | L - Qere",
+        "notes-UXLC": "אחיתיהם אַחְיֽוֹתֵיהֶ֔ם",
+        "notes-UXLC-yatir": null,
+        "notes-HaKeter": null,
+        "image_files": {
+          "aleppo": [
+            "gh-pages/img/row026_aleppo_01.png"
+          ],
+          "leningrad": [
+            "gh-pages/img/row026_leningrad_01.png"
+          ]
+        }
+      },
+      {
+        "row_number": 27,
+        "verse": "Job 1:21.3",
+        "word": "יָצָ֜תִי",
+        "finding": "A - Masorah Circle | L - Qere",
+        "notes-UXLC": "יצתי יָצָ֜אתִי",
+        "notes-UXLC-yatir": null,
+        "notes-HaKeter": null,
+        "image_files": {
+          "aleppo": [
+            "gh-pages/img/row027_aleppo_01.png"
+          ],
+          "leningrad": [
+            "gh-pages/img/row027_leningrad_01.png"
+          ]
+        }
+      },
+      {
+        "row_number": 28,
+        "verse": "Job 9:13.5",
+        "word": "תַּחְתָּ֥ו",
+        "finding": "A - Masorah Circle | L - Qere",
+        "notes-UXLC": "תחתו תַּחְתָּ֥יו",
+        "notes-UXLC-yatir": null,
+        "notes-HaKeter": null,
+        "image_files": {
+          "aleppo": [
+            "gh-pages/img/row028_aleppo_01.png"
+          ],
+          "leningrad": [
+            "gh-pages/img/row028_leningrad_01.png"
+          ]
+        }
+      },
+      {
+        "row_number": 29,
+        "verse": "Job 14:5.7",
+        "word": "חֻקָּ֥ו",
+        "finding": "A - Masorah Circle | L - Qere",
+        "notes-UXLC": "חקו חֻקָּ֥יו",
+        "notes-UXLC-yatir": null,
+        "notes-HaKeter": null,
+        "image_files": {
+          "aleppo": [
+            "gh-pages/img/row029_aleppo_01.png"
+          ],
+          "leningrad": [
+            "gh-pages/img/row029_leningrad_01.png"
+          ]
+        }
+      },
+      {
+        "row_number": 30,
+        "verse": "Job 15:15.2",
+        "word": "בִּ֭קְדֹשָׁו",
+        "finding": "A - Masorah Circle | L - Qere",
+        "notes-UXLC": "בקדשו בִּ֭קְדֹשָׁיו",
+        "notes-UXLC-yatir": null,
+        "notes-HaKeter": null,
+        "image_files": {
+          "aleppo": [
+            "gh-pages/img/row030_aleppo_01.png"
+          ],
+          "leningrad": [
+            "gh-pages/img/row030_leningrad_01.png"
+          ]
+        }
+      },
+      {
+        "row_number": 31,
+        "verse": "Job 15:31.3",
+        "word": "בַּשָּׁ֣ו",
+        "finding": "A - Masorah Circle | L - Qere",
+        "notes-UXLC": "בשו בַּשָּׁ֣יו",
+        "notes-UXLC-yatir": null,
+        "notes-HaKeter": null,
+        "image_files": {
+          "aleppo": [
+            "gh-pages/img/row031_aleppo_01.png"
+          ],
+          "leningrad": [
+            "gh-pages/img/row031_leningrad_01.png"
+          ]
+        }
+      },
+      {
+        "row_number": 32,
+        "verse": "Job 26:14.4",
+        "word": "דְּרָכָ֗ו",
+        "finding": "A - Masorah Circle | L - Qere",
+        "notes-UXLC": "דרכו דְּרָכָ֗יו",
+        "notes-UXLC-yatir": null,
+        "notes-HaKeter": null,
+        "image_files": {
+          "aleppo": [
+            "gh-pages/img/row032_aleppo_01.png"
+          ],
+          "leningrad": [
+            "gh-pages/img/row032_leningrad_01.png"
+          ]
+        }
+      },
+      {
+        "row_number": 33,
+        "verse": "Job 42:11.6",
+        "word": "אַחְיֹתָ֜יו",
+        "finding": "A - Masorah Circle | L - Qere",
+        "notes-UXLC": "אחיתיו אַחְיוֹתָ֜יו",
+        "notes-UXLC-pointed-prefix-atoms": "וְכָל־",
+        "notes-UXLC-yatir": null,
+        "notes-HaKeter": null,
+        "image_files": {
+          "aleppo": [
+            "gh-pages/img/row033_aleppo_01.png"
+          ],
+          "leningrad": [
+            "gh-pages/img/row033_leningrad_01.png"
+          ]
+        }
+      },
+      {
+        "row_number": 34,
+        "verse": "Psalms 42:9.6",
+        "word": "שִׁירֹ֣ה",
+        "finding": "A - Masorah Circle | L - Qere",
+        "notes-UXLC": "שירה שִׁיר֣וֹ",
+        "notes-UXLC-yatir": null,
+        "notes-HaKeter": null,
+        "image_files": {
+          "aleppo": [
+            "gh-pages/img/row034_aleppo_01.png"
+          ],
+          "leningrad": [
+            "gh-pages/img/row034_leningrad_01.png"
+          ]
+        }
+      },
+      {
+        "row_number": 35,
+        "verse": "Proverbs 2:8.5",
+        "word": "חֲסִידָ֣ו",
+        "finding": "A - Masorah Circle | L - Qere",
+        "notes-UXLC": "חסידו חֲסִידָ֣יו",
+        "notes-UXLC-yatir": null,
+        "notes-HaKeter": null,
+        "image_files": {
+          "aleppo": [
+            "gh-pages/img/row035_aleppo_01.png"
+          ],
+          "leningrad": [
+            "gh-pages/img/row035_leningrad_01.png"
+          ]
+        }
+      },
+      {
+        "row_number": 36,
+        "verse": "Proverbs 27:20.2",
+        "word": "וַ֭אֲבַדֹּה",
+        "finding": "A - Masorah Circle | L - Qere",
+        "notes-UXLC": "ואבדה וַ֭אֲבַדּוֹ",
+        "notes-UXLC-yatir": null,
+        "notes-HaKeter": null,
+        "image_files": {
+          "aleppo": [
+            "gh-pages/img/row036_aleppo_01.png"
+          ],
+          "leningrad": [
+            "gh-pages/img/row036_leningrad_01.png"
+          ]
+        }
+      },
+      {
+        "row_number": 37,
+        "verse": "Isaiah 52:5.2",
+        "word": "מַה־לִּי־",
+        "finding": "A - No Masorah Circle | L - Qere",
+        "notes-UXLC": "מי־לי־ מַה־לִּי־",
+        "notes-UXLC-yatir": null,
+        "notes-HaKeter": null,
+        "image_files": {
+          "aleppo": [
+            "gh-pages/img/row037_aleppo_01.png"
+          ],
+          "leningrad": [
+            "gh-pages/img/row037_leningrad_01.png"
+          ]
+        },
+        "notes_orig": "MAM - No Comments | UXLC - מַה־לִּי־פֹה֙ מי־לי־"
+      },
+      {
+        "row_number": 38,
+        "verse": "Isaiah 52:5.11",
+        "word": "מֹשְׁלָ֤ו",
+        "finding": "A - Masorah Circle | L - Qere",
+        "notes-UXLC": "משלו מֹשְׁלָ֤יו",
+        "notes-UXLC-yatir": null,
+        "notes-HaKeter": null,
+        "image_files": {
+          "aleppo": [
+            "gh-pages/img/row038_aleppo_01.png"
+          ],
+          "leningrad": [
+            "gh-pages/img/row038_leningrad_01.png"
+          ]
+        }
+      },
+      {
+        "row_number": 39,
+        "verse": "Jeremiah 5:6.21",
+        "word": "מְשֻׁבוֹתֵיהֶֽם",
+        "word_orig": "מְשֻׁבוֹתֵיהֶֽם׃",
+        "finding": "A - No Masorah Circle | L - Qere",
+        "notes-UXLC": "משבותיהם מְשׁוּבוֹתֵיהֶֽם",
+        "notes-UXLC_orig": "משבותיהם מְשׁוּבוֹתֵיהֶֽם׃",
+        "notes-UXLC-yatir": null,
+        "notes-HaKeter": null,
+        "image_files": {
+          "aleppo": [
+            "gh-pages/img/row039_aleppo_01.png"
+          ],
+          "leningrad": [
+            "gh-pages/img/row039_leningrad_01.png"
+          ]
+        }
+      },
+      {
+        "row_number": 40,
+        "verse": "Jeremiah 17:10.9",
+        "word": "כִּדְרָכָ֔ו",
+        "finding": "A - Masorah Circle | L - Qere",
+        "notes-UXLC": "כדרכו כִּדְרָכָ֔יו",
+        "notes-UXLC-yatir": null,
+        "notes-HaKeter": null,
+        "image_files": {
+          "aleppo": [
+            "gh-pages/img/row040_aleppo_01.png"
+          ],
+          "leningrad": [
+            "gh-pages/img/row040_leningrad_01.png"
+          ]
+        }
+      },
+      {
+        "row_number": 41,
+        "verse": "Jeremiah 17:11.10",
+        "word": "יָמָו֙",
+        "finding": "A - Masorah Circle | L - Qere",
+        "notes-UXLC": "ימו יָמָיו֙",
+        "notes-UXLC-yatir": null,
+        "notes-HaKeter": null,
+        "image_files": {
+          "aleppo": [
+            "gh-pages/img/row041_aleppo_01.png"
+          ],
+          "leningrad": [
+            "gh-pages/img/row041_leningrad_01.png"
+          ]
+        }
+      },
+      {
+        "row_number": 42,
+        "verse": "Jeremiah 19:15.8",
+        "word": "מֵבִ֜י",
+        "finding": "A - Masorah Circle | L - Qere",
+        "notes-UXLC": "מבי מֵבִ֜יא",
+        "notes-UXLC-yatir": null,
+        "notes-HaKeter": null,
+        "image_files": {
+          "aleppo": [
+            "gh-pages/img/row042_aleppo_01.png"
+          ],
+          "leningrad": [
+            "gh-pages/img/row042_leningrad_01.png"
+          ]
+        }
+      },
+      {
+        "row_number": 43,
+        "verse": "Jeremiah 22:4.21",
+        "word": "וַעֲבָדָ֖ו",
+        "finding": "A - Masorah Circle | L - Qere",
+        "notes-UXLC": "ועבדו וַעֲבָדָ֖יו",
+        "notes-UXLC-yatir": null,
+        "notes-HaKeter": null,
+        "image_files": {
+          "aleppo": [
+            "gh-pages/img/row043_aleppo_01.png"
+          ],
+          "leningrad": [
+            "gh-pages/img/row043_leningrad_01.png"
+          ]
+        }
+      },
+      {
+        "row_number": 44,
+        "verse": "Jeremiah 39:16.14",
+        "word": "מֵבִ֨י",
+        "finding": "A - Masorah Circle | L - Qere",
+        "notes-UXLC": "מבי מֵבִ֨יא",
+        "notes-UXLC-yatir": null,
+        "notes-HaKeter": null,
+        "image_files": {
+          "aleppo": [
+            "gh-pages/img/row044_aleppo_01.png"
+          ],
+          "leningrad": [
+            "gh-pages/img/row044_leningrad_01.png"
+          ]
+        }
+      },
+      {
+        "row_number": 45,
+        "verse": "Jeremiah 51:9.1",
+        "word": "רִפִּ֤אנוּ",
+        "finding": "A - Masorah Circle | L - Qere",
+        "notes-UXLC": "רפאנו רִפִּ֣ינוּ",
+        "notes-UXLC-yatir": null,
+        "notes-HaKeter": null,
+        "image_files": {
+          "aleppo": [
+            "gh-pages/img/row045_aleppo_01.png"
+          ],
+          "leningrad": [
+            "gh-pages/img/row045_leningrad_01.png"
+          ]
+        }
+      },
+      {
+        "row_number": 46,
+        "verse": "Ezekiel 9:4.3",
+        "word": "אֵלָ֔ו",
+        "finding": "A - Masorah Circle | L - Qere",
+        "notes-UXLC": "אלו אֵלָ֔יו",
+        "notes-UXLC-yatir": null,
+        "notes-HaKeter": null,
+        "image_files": {
+          "aleppo": [
+            "gh-pages/img/row046_aleppo_01.png"
+          ],
+          "leningrad": [
+            "gh-pages/img/row046_leningrad_01.png"
+          ]
+        }
+      },
+      {
+        "row_number": 47,
+        "verse": "Ezekiel 17:21.3",
+        "word": "מִבְרָחָ֤ו",
+        "finding": "A - Masorah Circle | L - Qere",
+        "notes-UXLC": "מברחו מִבְרָחָ֤יו",
+        "notes-UXLC-pointed-prefix-atoms": "כָּל־",
+        "notes-UXLC-yatir": null,
+        "notes-HaKeter": null,
+        "image_files": {
+          "aleppo": [
+            "gh-pages/img/row047_aleppo_01.png"
+          ],
+          "leningrad": [
+            "gh-pages/img/row047_leningrad_01.png"
+          ]
+        }
+      },
+      {
+        "row_number": 48,
+        "verse": "Ezekiel 31:5.11",
+        "word": "פֹארֹתָ֛ו",
+        "finding": "A and L - Qere",
+        "notes-UXLC": "פארתו פֹארֹתָ֛יו",
+        "notes-UXLC-yatir": null,
+        "notes-HaKeter": "פֹארֹתָ֛ו פֹארֹתָ֛יו",
+        "image_files": {
+          "aleppo": [
+            "gh-pages/img/row048_aleppo_01.png"
+          ],
+          "leningrad": [
+            "gh-pages/img/row048_leningrad_01.png"
+          ]
+        }
+      },
+      {
+        "row_number": 49,
+        "verse": "Ezekiel 32:31.7",
+        "word": "הֲמוֹנֹ֑ה",
+        "finding": "A - Masorah Circle | L - Qere",
+        "notes-UXLC": "המונה הֲמוֹנ֑וֹ",
+        "notes-UXLC-pointed-prefix-atoms": "עַל־כָּל־",
+        "notes-UXLC-yatir": null,
+        "notes-HaKeter": null,
+        "image_files": {
+          "aleppo": [
+            "gh-pages/img/row049_aleppo_01.png"
+          ],
+          "leningrad": [
+            "gh-pages/img/row049_leningrad_01.png"
+          ]
+        }
+      },
+      {
+        "row_number": 50,
+        "verse": "Ezekiel 40:6.9",
+        "word": "בְּמַעֲלוֹתָ֑ו",
+        "finding": "A and L - Qere",
+        "notes-UXLC": "במעלותו בְּמַֽעֲלוֹתָ֑יו",
+        "notes-UXLC-yatir": null,
+        "notes-HaKeter": "בְּמַעֲלוֹתָ֑ו בְּמַעֲלוֹתָ֑יו",
+        "image_files": {
+          "aleppo": [
+            "gh-pages/img/row050_aleppo_01.png"
+          ],
+          "leningrad": [
+            "gh-pages/img/row050_leningrad_01.png"
+          ]
+        }
+      },
+      {
+        "row_number": 51,
+        "verse": "Ezekiel 40:21.1",
+        "word": "וְתָאָ֗ו",
+        "finding": "A - Masorah Circle | L - Qere",
+        "notes-UXLC": "ותאו וְתָאָ֗יו",
+        "notes-UXLC-yatir": null,
+        "notes-HaKeter": null,
+        "image_files": {
+          "aleppo": [
+            "gh-pages/img/row051_aleppo_01.png"
+          ],
+          "leningrad": [
+            "gh-pages/img/row051_leningrad_01.png"
+          ]
+        }
+      },
+      {
+        "row_number": 52,
+        "verse": "Ezekiel 40:24.9",
+        "word": "אֵילָו֙",
+        "finding": "A - Masorah Circle | L - Qere",
+        "notes-UXLC": "אילו אֵילָיו֙",
+        "notes-UXLC-yatir": null,
+        "notes-HaKeter": null,
+        "image_files": {
+          "aleppo": [
+            "gh-pages/img/row052_aleppo_01.png"
+          ],
+          "leningrad": [
+            "gh-pages/img/row052_leningrad_01.png"
+          ]
+        }
+      },
+      {
+        "row_number": 53,
+        "verse": "Ezekiel 40:25.3",
+        "word": "וּלְאֵֽילַמָּו֙",
+        "finding": "A - No Masorah Circle | L - Qere",
+        "notes-UXLC": "ולאילמו וּלְאֵֽילַמָּיו֙",
+        "notes-UXLC-yatir": null,
+        "notes-HaKeter": null,
+        "image_files": {
+          "aleppo": [
+            "gh-pages/img/row053_aleppo_01.png"
+          ],
+          "leningrad": [
+            "gh-pages/img/row053_leningrad_01.png"
+          ]
+        }
+      },
+      {
+        "row_number": 54,
+        "verse": "Ezekiel 40:26.4",
+        "word": "וְאֵלַמָּ֖ו",
+        "finding": "A - Masorah Circle | L - Qere",
+        "notes-UXLC": "ואלמו וְאֵֽלַמָּ֖יו",
+        "notes-UXLC-yatir": null,
+        "notes-HaKeter": "וְאֵלַמָּ֖ו וְאֵלַמָּ֖יו",
+        "image_files": {
+          "aleppo": [
+            "gh-pages/img/row054_aleppo_01.png"
+          ],
+          "leningrad": [
+            "gh-pages/img/row054_leningrad_01.png"
+          ]
+        }
+      },
+      {
+        "row_number": 55,
+        "verse": "Ezekiel 40:26.13",
+        "word": "אֵילָֽו",
+        "word_orig": "אֵילָֽו׃",
+        "finding": "A - No Masorah Circle | L - Qere",
+        "notes-UXLC": "אילו אֵילָֽיו",
+        "notes-UXLC_orig": "אילו אֵילָֽיו׃",
+        "notes-UXLC-pointed-prefix-atoms": "אֶל־",
+        "notes-UXLC-yatir": null,
+        "notes-HaKeter": null,
+        "image_files": {
+          "aleppo": [
+            "gh-pages/img/row055_aleppo_01.png"
+          ],
+          "leningrad": [
+            "gh-pages/img/row055_leningrad_01.png"
+          ]
+        }
+      },
+      {
+        "row_number": 56,
+        "verse": "Ezekiel 40:29.1",
+        "word": "וְתָאָ֞ו",
+        "finding": "A - No Masorah Circle | L - Qere",
+        "notes-UXLC": "ותאו וְתָאָ֞יו",
+        "notes-UXLC-yatir": null,
+        "notes-HaKeter": null,
+        "image_files": {
+          "aleppo": [
+            "gh-pages/img/row056_aleppo_01.png"
+          ],
+          "leningrad": [
+            "gh-pages/img/row056_leningrad_01.png"
+          ]
+        }
+      },
+      {
+        "row_number": 57,
+        "verse": "Ezekiel 40:29.2",
+        "word": "וְאֵילָ֤ו",
+        "finding": "A - No Masorah Circle | L - Qere",
+        "notes-UXLC": "ואילו וְאֵילָ֤יו",
+        "notes-UXLC-yatir": null,
+        "notes-HaKeter": null,
+        "image_files": {
+          "aleppo": [
+            "gh-pages/img/row057_aleppo_01.png"
+          ],
+          "leningrad": [
+            "gh-pages/img/row057_leningrad_01.png"
+          ]
+        }
+      },
+      {
+        "row_number": 58,
+        "verse": "Ezekiel 40:29.3",
+        "word": "וְאֵֽלַמָּו֙",
+        "finding": "A - No Masorah Circle | L - Qere",
+        "notes-UXLC": "ואלמו וְאֵֽלַמָּיו֙",
+        "notes-UXLC-yatir": null,
+        "notes-HaKeter": null,
+        "image_files": {
+          "aleppo": [
+            "gh-pages/img/row058_aleppo_01.png"
+          ],
+          "leningrad": [
+            "gh-pages/img/row058_leningrad_01.png"
+          ]
+        }
+      },
+      {
+        "row_number": 59,
+        "verse": "Ezekiel 40:29.8",
+        "word": "וּלְאֵלַמָּ֖ו",
+        "finding": "A - No Masorah Circle | L - Qere",
+        "notes-UXLC": "ולאלמו וּלְאֵלַמָּ֖יו",
+        "notes-UXLC-yatir": null,
+        "notes-HaKeter": null,
+        "image_files": {
+          "aleppo": [
+            "gh-pages/img/row059_aleppo_01.png"
+          ],
+          "leningrad": [
+            "gh-pages/img/row059_leningrad_01.png"
+          ]
+        }
+      },
+      {
+        "row_number": 60,
+        "verse": "Ezekiel 40:31.7",
+        "word": "אֵילָ֑ו",
+        "finding": "A - No Masorah Circle | L - Qere",
+        "notes-UXLC": "אילו אֵילָ֑יו",
+        "notes-UXLC-pointed-prefix-atoms": "אֶל־",
+        "notes-UXLC-yatir": null,
+        "notes-HaKeter": null,
+        "image_files": {
+          "aleppo": [
+            "gh-pages/img/row060_aleppo_01.png"
+          ],
+          "leningrad": [
+            "gh-pages/img/row060_leningrad_01.png"
+          ]
+        }
+      },
+      {
+        "row_number": 61,
+        "verse": "Ezekiel 40:33.1",
+        "word": "וְתָאָ֞ו",
+        "finding": "A - No Masorah Circle | L - Qere",
+        "notes-UXLC": "ותאו וְתָאָ֞יו",
+        "notes-UXLC-yatir": null,
+        "notes-HaKeter": null,
+        "image_files": {
+          "aleppo": [
+            "gh-pages/img/row061_aleppo_01.png"
+          ],
+          "leningrad": [
+            "gh-pages/img/row061_leningrad_01.png"
+          ]
+        }
+      },
+      {
+        "row_number": 62,
+        "verse": "Ezekiel 40:33.2",
+        "word": "וְאֵלָ֤ו",
+        "finding": "A - Masorah Circle? | L - Qere",
+        "notes-UXLC": "ואלו וְאֵלָ֤יו",
+        "notes-UXLC-yatir": null,
+        "notes-HaKeter": null,
+        "image_files": {
+          "aleppo": [
+            "gh-pages/img/row062_aleppo_01.png"
+          ],
+          "leningrad": [
+            "gh-pages/img/row062_leningrad_01.png"
+          ]
+        }
+      },
+      {
+        "row_number": 63,
+        "verse": "Ezekiel 40:33.3",
+        "word": "וְאֵֽלַמָּו֙",
+        "finding": "A - No Masorah Circle | L - Qere",
+        "notes-UXLC": "ואלמו וְאֵֽלַמָּיו֙",
+        "notes-UXLC-yatir": null,
+        "notes-HaKeter": null,
+        "image_files": {
+          "aleppo": [
+            "gh-pages/img/row063_aleppo_01.png"
+          ],
+          "leningrad": [
+            "gh-pages/img/row063_leningrad_01.png"
+          ]
+        }
+      },
+      {
+        "row_number": 64,
+        "verse": "Ezekiel 40:33.8",
+        "word": "וּלְאֵלַמָּ֖ו",
+        "finding": "A - No Masorah Circle | L - Qere",
+        "notes-UXLC": "ולאלמו וּלְאֵלַמָּ֖יו",
+        "notes-UXLC-yatir": null,
+        "notes-HaKeter": null,
+        "image_files": {
+          "aleppo": [
+            "gh-pages/img/row064_aleppo_01.png"
+          ],
+          "leningrad": [
+            "gh-pages/img/row064_leningrad_01.png"
+          ]
+        }
+      },
+      {
+        "row_number": 65,
+        "verse": "Ezekiel 40:34.1",
+        "word": "וְאֵלַמָּ֗ו",
+        "finding": "A - No Masorah Circle | L - Qere",
+        "notes-UXLC": "ואלמו וְאֵלַמָּ֗יו",
+        "notes-UXLC-yatir": null,
+        "notes-HaKeter": null,
+        "image_files": {
+          "aleppo": [
+            "gh-pages/img/row065_aleppo_01.png"
+          ],
+          "leningrad": [
+            "gh-pages/img/row065_leningrad_01.png"
+          ]
+        }
+      },
+      {
+        "row_number": 66,
+        "verse": "Ezekiel 40:34.6",
+        "word": "אֵלָ֖ו",
+        "finding": "A - Masorah Circle | L - Qere",
+        "notes-UXLC": "אלו אֵלָ֖יו",
+        "notes-UXLC-pointed-prefix-atoms": "אֶל־",
+        "notes-UXLC-yatir": null,
+        "notes-HaKeter": null,
+        "image_files": {
+          "aleppo": [
+            "gh-pages/img/row066_aleppo_01.png"
+          ],
+          "leningrad": [
+            "gh-pages/img/row066_leningrad_01.png"
+          ]
+        }
+      },
+      {
+        "row_number": 67,
+        "verse": "Ezekiel 40:34.11",
+        "word": "מַעֲלָֽו",
+        "word_orig": "מַעֲלָֽו׃",
+        "finding": "A - No Masorah Circle | L - Qere",
+        "notes-UXLC": "מעלו מַעֲלָֽיו",
+        "notes-UXLC_orig": "מעלו מַעֲלָֽיו׃",
+        "notes-UXLC-yatir": null,
+        "notes-HaKeter": null,
+        "image_files": {
+          "aleppo": [
+            "gh-pages/img/row067_aleppo_01.png"
+          ],
+          "leningrad": [
+            "gh-pages/img/row067_leningrad_01.png"
+          ]
+        }
+      },
+      {
+        "row_number": 68,
+        "verse": "Ezekiel 40:36.1",
+        "word": "תָּאָו֙",
+        "finding": "A - Masorah Circle | L - Qere",
+        "notes-UXLC": "תאו תָּאָיו֙",
+        "notes-UXLC-yatir": null,
+        "notes-HaKeter": null,
+        "image_files": {
+          "aleppo": [
+            "gh-pages/img/row068_aleppo_01.png"
+          ],
+          "leningrad": [
+            "gh-pages/img/row068_leningrad_01.png"
+          ]
+        }
+      },
+      {
+        "row_number": 69,
+        "verse": "Ezekiel 40:36.2",
+        "word": "אֵלָ֣ו",
+        "finding": "A - Masorah Circle | L - Qere",
+        "notes-UXLC": "אלו אֵלָ֣יו",
+        "notes-UXLC-yatir": null,
+        "notes-HaKeter": null,
+        "image_files": {
+          "aleppo": [
+            "gh-pages/img/row069_aleppo_01.png"
+          ],
+          "leningrad": [
+            "gh-pages/img/row069_leningrad_01.png"
+          ]
+        }
+      },
+      {
+        "row_number": 70,
+        "verse": "Ezekiel 40:36.3",
+        "word": "וְאֵלַמָּ֔ו",
+        "finding": "A - No Masorah Circle | L - Qere",
+        "notes-UXLC": "ואלמו וְאֵֽלַמָּ֔יו",
+        "notes-UXLC-yatir": null,
+        "notes-HaKeter": null,
+        "image_files": {
+          "aleppo": [
+            "gh-pages/img/row070_aleppo_01.png"
+          ],
+          "leningrad": [
+            "gh-pages/img/row070_leningrad_01.png"
+          ]
+        }
+      },
+      {
+        "row_number": 71,
+        "verse": "Ezekiel 40:37.1",
+        "word": "וְאֵילָ֗ו",
+        "finding": "A - No Masorah Circle | L - Qere",
+        "notes-UXLC": "ואילו וְאֵילָ֗יו",
+        "notes-UXLC-yatir": null,
+        "notes-HaKeter": null,
+        "image_files": {
+          "aleppo": [
+            "gh-pages/img/row071_aleppo_01.png"
+          ],
+          "leningrad": [
+            "gh-pages/img/row071_leningrad_01.png"
+          ]
+        }
+      },
+      {
+        "row_number": 72,
+        "verse": "Ezekiel 40:37.6",
+        "word": "אֵילָ֖ו",
+        "finding": "A - No Masorah Circle | L - Qere",
+        "notes-UXLC": "אילו אֵילָ֖יו",
+        "notes-UXLC-pointed-prefix-atoms": "אֶל־",
+        "notes-UXLC-yatir": null,
+        "notes-HaKeter": null,
+        "image_files": {
+          "aleppo": [
+            "gh-pages/img/row072_aleppo_01.png"
+          ],
+          "leningrad": [
+            "gh-pages/img/row072_leningrad_01.png"
+          ]
+        }
+      },
+      {
+        "row_number": 73,
+        "verse": "Ezekiel 40:37.11",
+        "word": "מַעֲלָֽו",
+        "word_orig": "מַעֲלָֽו׃",
+        "finding": "A - No Masorah Circle | L - Qere",
+        "notes-UXLC": "מעלו מַעֲלָֽיו",
+        "notes-UXLC_orig": "מעלו מַעֲלָֽיו׃",
+        "notes-UXLC-yatir": null,
+        "notes-HaKeter": null,
+        "image_files": {
+          "aleppo": [
+            "gh-pages/img/row073_aleppo_01.png"
+          ],
+          "leningrad": [
+            "gh-pages/img/row073_leningrad_01.png"
+          ]
+        }
+      },
+      {
+        "row_number": 74,
+        "verse": "Ezekiel 47:8.17",
+        "word": "וְנִרְפּ֥אוּ",
+        "finding": "A - Masorah Circle | L - Qere",
+        "notes-UXLC": "ונרפאו וְנִרְפּ֥וּ",
+        "notes-UXLC-yatir": null,
+        "notes-HaKeter": null,
+        "image_files": {
+          "aleppo": [
+            "gh-pages/img/row074_aleppo_01.png"
+          ],
+          "leningrad": [
+            "gh-pages/img/row074_leningrad_01.png"
+          ]
+        }
+      },
+      {
+        "row_number": 75,
+        "verse": "Ezekiel 48:18.17",
+        "word": "תְבֽוּאָתֹה֙",
+        "finding": "A - Masorah Circle | L - Qere",
+        "notes-UXLC": "תבואתה תְבֽוּאָתוֹ֙",
+        "notes-UXLC-yatir": null,
+        "notes-HaKeter": null,
+        "image_files": {
+          "aleppo": [
+            "gh-pages/img/row075_aleppo_01.png"
+          ],
+          "leningrad": [
+            "gh-pages/img/row075_leningrad_01.png"
+          ]
+        }
+      },
+      {
+        "row_number": 76,
+        "verse": "Ezekiel 48:21.35",
+        "word": "בְּתוֹכֹֽה",
+        "word_orig": "בְּתוֹכֹֽה׃",
+        "finding": "A - Masorah Circle | L - Qere",
+        "notes-UXLC": "בתוכה בְּתוֹכֽוֹ",
+        "notes-UXLC_orig": "בתוכה בְּתוֹכֽוֹ׃",
+        "notes-UXLC-yatir": null,
+        "notes-HaKeter": null,
+        "image_files": {
+          "aleppo": [
+            "gh-pages/img/row076_aleppo_01.png"
+          ],
+          "leningrad": [
+            "gh-pages/img/row076_leningrad_01.png"
+          ]
+        }
+      },
+      {
+        "row_number": 77,
+        "verse": "Tsefaniah 2:9.27",
+        "word": "גּוֹיִ֖",
+        "finding": "A - Masorah Circle | L - Qere",
+        "notes-UXLC": "גוי גּוֹיִ֖י",
+        "notes-UXLC-yatir": null,
+        "notes-HaKeter": null,
+        "image_files": {
+          "aleppo": [
+            "gh-pages/img/row077_aleppo_01.png"
+          ],
+          "leningrad": [
+            "gh-pages/img/row077_leningrad_01.png"
+          ]
+        }
+      }
+    ]
+  },
+  "mam_plus_verify": {
+    "row_count": 77,
+    "unique_word_count": 72,
+    "missing_any_plus_count": 0,
+    "missing_mpu_verse_text_count": 0,
+    "rows_matching_mpu_verse_template_arg_count": 19,
+    "rows_with_supported_qere_wrapper_count": 16,
+    "rows_supported_qere_wrapper_mismatch_count": 0
+  },
+  "mam_plus_rows_matching_mpu_verse_template_arg": [
+    {
+      "row_number": 1,
+      "verse": "Joshua 3:4.5",
+      "word": "וּבֵנָ֔יו",
+      "mpu_file_for_verse": "B1-Joshua.json",
+      "found_in_any_plus_file": true,
+      "found_in_mpu_verse_text": true,
+      "template_args_in_mpu_verse": [
+        {
+          "template_name": "נוסח",
+          "argument_key": "1",
+          "argument_text": "{{מ:קו״כ-אם-2|וּבֵנָ֔יו|ובניו|וּבֵינָ֔יו|מקורות=ל-קרי}}"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "1",
+          "argument_text": "וּבֵנָ֔יו"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "2",
+          "argument_text": "ובניו"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "3",
+          "argument_text": "וּבֵינָ֔יו"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "מקורות",
+          "argument_text": "ל-קרי"
+        }
+      ],
+      "supported_qere_wrapper_in_mpu_verse": {
+        "template_name": "מ:קו״כ-אם-2",
+        "ketiv": "וּבֵנָ֔יו",
+        "qere": "וּבֵינָ֔יו"
+      },
+      "found_in_mpu_verse_template_arg": true,
+      "matching_template_args_in_mpu_verse": [
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "1",
+          "argument_text": "וּבֵנָ֔יו"
+        }
+      ],
+      "matching_mpu_surface_words_in_mpu_verse": [
+        "וּבֵנָ֔יו"
+      ],
+      "supported_qere_wrapper_word_mismatch": false,
+      "found_via_known_docx_mpu_word": false,
+      "hit_files": [
+        "B1-Joshua.json"
+      ]
+    },
+    {
+      "row_number": 2,
+      "verse": "Joshua 10:24.19",
+      "word": "הֶהָלְכ֣וּא",
+      "mpu_file_for_verse": "B1-Joshua.json",
+      "found_in_any_plus_file": true,
+      "found_in_mpu_verse_text": true,
+      "template_args_in_mpu_verse": [
+        {
+          "template_name": "נוסח",
+          "argument_key": "1",
+          "argument_text": "{{כו״ק|ההלכוא|הֶהָלְכ֣וּ}}"
+        },
+        {
+          "template_name": "כו״ק",
+          "argument_key": "1",
+          "argument_text": "ההלכוא"
+        },
+        {
+          "template_name": "כו״ק",
+          "argument_key": "2",
+          "argument_text": "הֶהָלְכ֣וּ"
+        }
+      ],
+      "supported_qere_wrapper_in_mpu_verse": {
+        "template_name": "כו״ק",
+        "ketiv": "ההלכוא",
+        "qere": "הֶהָלְכ֣וּ"
+      },
+      "found_in_mpu_verse_template_arg": true,
+      "matching_template_args_in_mpu_verse": [
+        {
+          "template_name": "כו״ק",
+          "argument_key": "2",
+          "argument_text": "הֶהָלְכ֣וּ"
+        }
+      ],
+      "matching_mpu_surface_words_in_mpu_verse": [
+        "הֶהָלְכ֣וּ"
+      ],
+      "supported_qere_wrapper_word_mismatch": false,
+      "found_via_known_docx_mpu_word": true,
+      "hit_files": [
+        "B1-Joshua.json"
+      ]
+    },
+    {
+      "row_number": 3,
+      "verse": "Judges 7:13.13",
+      "word": "צְלִ֜יל",
+      "mpu_file_for_verse": "B2-Judges.json",
+      "found_in_any_plus_file": true,
+      "found_in_mpu_verse_text": true,
+      "template_args_in_mpu_verse": [
+        {
+          "template_name": "נוסח",
+          "argument_key": "1",
+          "argument_text": "צְלִ֜יל"
+        }
+      ],
+      "supported_qere_wrapper_in_mpu_verse": null,
+      "found_in_mpu_verse_template_arg": true,
+      "matching_template_args_in_mpu_verse": [
+        {
+          "template_name": "נוסח",
+          "argument_key": "1",
+          "argument_text": "צְלִ֜יל"
+        }
+      ],
+      "matching_mpu_surface_words_in_mpu_verse": [
+        "צְלִ֜יל"
+      ],
+      "supported_qere_wrapper_word_mismatch": false,
+      "found_via_known_docx_mpu_word": false,
+      "hit_files": [
+        "B2-Judges.json"
+      ]
+    },
+    {
+      "row_number": 10,
+      "verse": "2Samuel 2:23.15",
+      "word": "תַּחְתָּ֑ו",
+      "mpu_file_for_verse": "BA-Samuel.json",
+      "found_in_any_plus_file": true,
+      "found_in_mpu_verse_text": true,
+      "template_args_in_mpu_verse": [
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "1",
+          "argument_text": "תַּחְתָּ֑ו"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "2",
+          "argument_text": "תחתו"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "3",
+          "argument_text": "תַּחְתָּ֑יו"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "מקורות",
+          "argument_text": "א-קרי"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "סוג",
+          "argument_text": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      ],
+      "supported_qere_wrapper_in_mpu_verse": {
+        "template_name": "מ:קו״כ-אם-2",
+        "ketiv": "תַּחְתָּ֑ו",
+        "qere": "תַּחְתָּ֑יו"
+      },
+      "found_in_mpu_verse_template_arg": true,
+      "matching_template_args_in_mpu_verse": [
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "1",
+          "argument_text": "תַּחְתָּ֑ו"
+        }
+      ],
+      "matching_mpu_surface_words_in_mpu_verse": [
+        "תַּחְתָּ֑ו"
+      ],
+      "supported_qere_wrapper_word_mismatch": false,
+      "found_via_known_docx_mpu_word": false,
+      "hit_files": [
+        "BA-Samuel.json"
+      ]
+    },
+    {
+      "row_number": 13,
+      "verse": "2Samuel 11:24.1",
+      "word": "וַיֹּר֨אוּ",
+      "mpu_file_for_verse": "BA-Samuel.json",
+      "found_in_any_plus_file": true,
+      "found_in_mpu_verse_text": true,
+      "template_args_in_mpu_verse": [
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "1",
+          "argument_text": "וַיֹּר֨אֿוּ"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "2",
+          "argument_text": "ויראו"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "3",
+          "argument_text": "וַיֹּר֨וּ"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "מקורות",
+          "argument_text": "ל-קרי"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "סוג",
+          "argument_text": "אל\"ף נחה באמצע תיבה ולא נקראת"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "1",
+          "argument_text": "הַמּוֹרִ֤אֿים"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "2",
+          "argument_text": "המוראים"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "3",
+          "argument_text": "הַמּוֹרִ֤ים"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "מקורות",
+          "argument_text": "ל-קרי"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "סוג",
+          "argument_text": "אל\"ף נחה באמצע תיבה ולא נקראת"
+        }
+      ],
+      "supported_qere_wrapper_in_mpu_verse": {
+        "template_name": "מ:קו״כ-אם-2",
+        "ketiv": "וַיֹּר֨אֿוּ",
+        "qere": "וַיֹּר֨וּ"
+      },
+      "found_in_mpu_verse_template_arg": true,
+      "matching_template_args_in_mpu_verse": [
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "1",
+          "argument_text": "וַיֹּר֨אֿוּ"
+        }
+      ],
+      "matching_mpu_surface_words_in_mpu_verse": [
+        "וַיֹּר֨אֿוּ"
+      ],
+      "supported_qere_wrapper_word_mismatch": false,
+      "found_via_known_docx_mpu_word": false,
+      "hit_files": [
+        "BA-Samuel.json"
+      ]
+    },
+    {
+      "row_number": 14,
+      "verse": "2Samuel 11:24.2",
+      "word": "הַמּוֹרִ֤אים",
+      "mpu_file_for_verse": "BA-Samuel.json",
+      "found_in_any_plus_file": true,
+      "found_in_mpu_verse_text": true,
+      "template_args_in_mpu_verse": [
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "1",
+          "argument_text": "וַיֹּר֨אֿוּ"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "2",
+          "argument_text": "ויראו"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "3",
+          "argument_text": "וַיֹּר֨וּ"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "מקורות",
+          "argument_text": "ל-קרי"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "סוג",
+          "argument_text": "אל\"ף נחה באמצע תיבה ולא נקראת"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "1",
+          "argument_text": "הַמּוֹרִ֤אֿים"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "2",
+          "argument_text": "המוראים"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "3",
+          "argument_text": "הַמּוֹרִ֤ים"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "מקורות",
+          "argument_text": "ל-קרי"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "סוג",
+          "argument_text": "אל\"ף נחה באמצע תיבה ולא נקראת"
+        }
+      ],
+      "supported_qere_wrapper_in_mpu_verse": {
+        "template_name": "מ:קו״כ-אם-2",
+        "ketiv": "הַמּוֹרִ֤אֿים",
+        "qere": "הַמּוֹרִ֤ים"
+      },
+      "found_in_mpu_verse_template_arg": true,
+      "matching_template_args_in_mpu_verse": [
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "1",
+          "argument_text": "הַמּוֹרִ֤אֿים"
+        }
+      ],
+      "matching_mpu_surface_words_in_mpu_verse": [
+        "הַמּוֹרִ֤אֿים"
+      ],
+      "supported_qere_wrapper_word_mismatch": false,
+      "found_via_known_docx_mpu_word": false,
+      "hit_files": [
+        "BA-Samuel.json"
+      ]
+    },
+    {
+      "row_number": 30,
+      "verse": "Job 15:15.2",
+      "word": "בִּ֭קְדֹשָׁו",
+      "mpu_file_for_verse": "D3-Job.json",
+      "found_in_any_plus_file": true,
+      "found_in_mpu_verse_text": true,
+      "template_args_in_mpu_verse": [
+        {
+          "template_name": "מ:דחי",
+          "argument_key": "1",
+          "argument_text": "בִּ֭קְדֹשָׁו"
+        },
+        {
+          "template_name": "מ:דחי",
+          "argument_key": "2",
+          "argument_text": "בִּ֭קְדֹשָׁ֭ו"
+        }
+      ],
+      "supported_qere_wrapper_in_mpu_verse": null,
+      "found_in_mpu_verse_template_arg": true,
+      "matching_template_args_in_mpu_verse": [
+        {
+          "template_name": "מ:דחי",
+          "argument_key": "1",
+          "argument_text": "בִּ֭קְדֹשָׁו"
+        }
+      ],
+      "matching_mpu_surface_words_in_mpu_verse": [
+        "בִּ֭קְדֹשָׁו"
+      ],
+      "supported_qere_wrapper_word_mismatch": false,
+      "found_via_known_docx_mpu_word": false,
+      "hit_files": [
+        "D3-Job.json"
+      ]
+    },
+    {
+      "row_number": 36,
+      "verse": "Proverbs 27:20.2",
+      "word": "וַ֭אֲבַדֹּה",
+      "mpu_file_for_verse": "D2-Proverbs.json",
+      "found_in_any_plus_file": true,
+      "found_in_mpu_verse_text": true,
+      "template_args_in_mpu_verse": [
+        {
+          "template_name": "מ:דחי",
+          "argument_key": "1",
+          "argument_text": "וַ֭אֲבַדֹּה"
+        },
+        {
+          "template_name": "מ:דחי",
+          "argument_key": "2",
+          "argument_text": "וַ֭אֲבַדֹּ֭ה"
+        }
+      ],
+      "supported_qere_wrapper_in_mpu_verse": null,
+      "found_in_mpu_verse_template_arg": true,
+      "matching_template_args_in_mpu_verse": [
+        {
+          "template_name": "מ:דחי",
+          "argument_key": "1",
+          "argument_text": "וַ֭אֲבַדֹּה"
+        }
+      ],
+      "matching_mpu_surface_words_in_mpu_verse": [
+        "וַ֭אֲבַדֹּה"
+      ],
+      "supported_qere_wrapper_word_mismatch": false,
+      "found_via_known_docx_mpu_word": false,
+      "hit_files": [
+        "D2-Proverbs.json"
+      ]
+    },
+    {
+      "row_number": 45,
+      "verse": "Jeremiah 51:9.1",
+      "word": "רִפִּ֤אנוּ",
+      "mpu_file_for_verse": "C2-Jeremiah.json",
+      "found_in_any_plus_file": true,
+      "found_in_mpu_verse_text": true,
+      "template_args_in_mpu_verse": [
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "1",
+          "argument_text": "רִפִּ֤אֿנוּ"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "2",
+          "argument_text": "רפאנו"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "3",
+          "argument_text": "רִפִּ֤ינוּ"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "מקורות",
+          "argument_text": "ל-קרי"
+        }
+      ],
+      "supported_qere_wrapper_in_mpu_verse": {
+        "template_name": "מ:קו״כ-אם-2",
+        "ketiv": "רִפִּ֤אֿנוּ",
+        "qere": "רִפִּ֤ינוּ"
+      },
+      "found_in_mpu_verse_template_arg": true,
+      "matching_template_args_in_mpu_verse": [
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "1",
+          "argument_text": "רִפִּ֤אֿנוּ"
+        }
+      ],
+      "matching_mpu_surface_words_in_mpu_verse": [
+        "רִפִּ֤אֿנוּ"
+      ],
+      "supported_qere_wrapper_word_mismatch": false,
+      "found_via_known_docx_mpu_word": false,
+      "hit_files": [
+        "C2-Jeremiah.json"
+      ]
+    },
+    {
+      "row_number": 48,
+      "verse": "Ezekiel 31:5.11",
+      "word": "פֹארֹתָ֛ו",
+      "mpu_file_for_verse": "C3-Ezekiel.json",
+      "found_in_any_plus_file": true,
+      "found_in_mpu_verse_text": true,
+      "template_args_in_mpu_verse": [
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "1",
+          "argument_text": "פֹארֹתָ֛ו"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "2",
+          "argument_text": "פארתו"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "3",
+          "argument_text": "פֹארֹתָ֛יו"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "מקורות",
+          "argument_text": "א-קרי"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "סוג",
+          "argument_text": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      ],
+      "supported_qere_wrapper_in_mpu_verse": {
+        "template_name": "מ:קו״כ-אם-2",
+        "ketiv": "פֹארֹתָ֛ו",
+        "qere": "פֹארֹתָ֛יו"
+      },
+      "found_in_mpu_verse_template_arg": true,
+      "matching_template_args_in_mpu_verse": [
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "1",
+          "argument_text": "פֹארֹתָ֛ו"
+        }
+      ],
+      "matching_mpu_surface_words_in_mpu_verse": [
+        "פֹארֹתָ֛ו"
+      ],
+      "supported_qere_wrapper_word_mismatch": false,
+      "found_via_known_docx_mpu_word": false,
+      "hit_files": [
+        "C3-Ezekiel.json"
+      ]
+    },
+    {
+      "row_number": 50,
+      "verse": "Ezekiel 40:6.9",
+      "word": "בְּמַעֲלוֹתָ֑ו",
+      "mpu_file_for_verse": "C3-Ezekiel.json",
+      "found_in_any_plus_file": true,
+      "found_in_mpu_verse_text": true,
+      "template_args_in_mpu_verse": [
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "1",
+          "argument_text": "בְּמַעֲלוֹתָ֑ו"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "2",
+          "argument_text": "במעלותו"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "3",
+          "argument_text": "בְּמַעֲלוֹתָ֑יו"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "מקורות",
+          "argument_text": "א-קרי"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "סוג",
+          "argument_text": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      ],
+      "supported_qere_wrapper_in_mpu_verse": {
+        "template_name": "מ:קו״כ-אם-2",
+        "ketiv": "בְּמַעֲלוֹתָ֑ו",
+        "qere": "בְּמַעֲלוֹתָ֑יו"
+      },
+      "found_in_mpu_verse_template_arg": true,
+      "matching_template_args_in_mpu_verse": [
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "1",
+          "argument_text": "בְּמַעֲלוֹתָ֑ו"
+        }
+      ],
+      "matching_mpu_surface_words_in_mpu_verse": [
+        "בְּמַעֲלוֹתָ֑ו"
+      ],
+      "supported_qere_wrapper_word_mismatch": false,
+      "found_via_known_docx_mpu_word": false,
+      "hit_files": [
+        "C3-Ezekiel.json"
+      ]
+    },
+    {
+      "row_number": 52,
+      "verse": "Ezekiel 40:24.9",
+      "word": "אֵילָו֙",
+      "mpu_file_for_verse": "C3-Ezekiel.json",
+      "found_in_any_plus_file": true,
+      "found_in_mpu_verse_text": true,
+      "template_args_in_mpu_verse": [
+        {
+          "template_name": "נוסח",
+          "argument_key": "1",
+          "argument_text": "{{מ:קו״כ-אם-2|אֵילָו֙|אילו|אֵילָיו֙|מקורות=ל-קרי|סוג=כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו}}"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "1",
+          "argument_text": "אֵילָו֙"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "2",
+          "argument_text": "אילו"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "3",
+          "argument_text": "אֵילָיו֙"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "מקורות",
+          "argument_text": "ל-קרי"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "סוג",
+          "argument_text": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        },
+        {
+          "template_name": "נוסח",
+          "argument_key": "1",
+          "argument_text": "{{מ:קו״כ-אם-2|וְאֵ֣ילַמָּ֔ו|ואילמו|וְאֵ֣ילַמָּ֔יו|מקורות=ל-קרי|סוג=כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו}}"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "1",
+          "argument_text": "וְאֵ֣ילַמָּ֔ו"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "2",
+          "argument_text": "ואילמו"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "3",
+          "argument_text": "וְאֵ֣ילַמָּ֔יו"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "מקורות",
+          "argument_text": "ל-קרי"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "סוג",
+          "argument_text": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      ],
+      "supported_qere_wrapper_in_mpu_verse": {
+        "template_name": "מ:קו״כ-אם-2",
+        "ketiv": "אֵילָו֙",
+        "qere": "אֵילָיו֙"
+      },
+      "found_in_mpu_verse_template_arg": true,
+      "matching_template_args_in_mpu_verse": [
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "1",
+          "argument_text": "אֵילָו֙"
+        }
+      ],
+      "matching_mpu_surface_words_in_mpu_verse": [
+        "אֵילָו֙"
+      ],
+      "supported_qere_wrapper_word_mismatch": false,
+      "found_via_known_docx_mpu_word": false,
+      "hit_files": [
+        "C3-Ezekiel.json"
+      ]
+    },
+    {
+      "row_number": 53,
+      "verse": "Ezekiel 40:25.3",
+      "word": "וּלְאֵֽילַמָּו֙",
+      "mpu_file_for_verse": "C3-Ezekiel.json",
+      "found_in_any_plus_file": true,
+      "found_in_mpu_verse_text": true,
+      "template_args_in_mpu_verse": [
+        {
+          "template_name": "נוסח",
+          "argument_key": "1",
+          "argument_text": "{{מ:קו״כ-אם-2|וּלְאֵֽילַמָּו֙|ולאילמו|וּלְאֵֽילַמָּיו֙|מקורות=ל-קרי|סוג=כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו}}"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "1",
+          "argument_text": "וּלְאֵֽילַמָּו֙"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "2",
+          "argument_text": "ולאילמו"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "3",
+          "argument_text": "וּלְאֵֽילַמָּיו֙"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "מקורות",
+          "argument_text": "ל-קרי"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "סוג",
+          "argument_text": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      ],
+      "supported_qere_wrapper_in_mpu_verse": {
+        "template_name": "מ:קו״כ-אם-2",
+        "ketiv": "וּלְאֵֽילַמָּו֙",
+        "qere": "וּלְאֵֽילַמָּיו֙"
+      },
+      "found_in_mpu_verse_template_arg": true,
+      "matching_template_args_in_mpu_verse": [
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "1",
+          "argument_text": "וּלְאֵֽילַמָּו֙"
+        }
+      ],
+      "matching_mpu_surface_words_in_mpu_verse": [
+        "וּלְאֵֽילַמָּו֙"
+      ],
+      "supported_qere_wrapper_word_mismatch": false,
+      "found_via_known_docx_mpu_word": false,
+      "hit_files": [
+        "C3-Ezekiel.json"
+      ]
+    },
+    {
+      "row_number": 54,
+      "verse": "Ezekiel 40:26.4",
+      "word": "וְאֵלַמָּ֖ו",
+      "mpu_file_for_verse": "C3-Ezekiel.json",
+      "found_in_any_plus_file": true,
+      "found_in_mpu_verse_text": true,
+      "template_args_in_mpu_verse": [
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "1",
+          "argument_text": "עֹֽלוֹתָ֔ו"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "2",
+          "argument_text": "עלותו"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "3",
+          "argument_text": "עֹֽלוֹתָ֔יו"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "מקורות",
+          "argument_text": "א-קרי"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "סוג",
+          "argument_text": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        },
+        {
+          "template_name": "נוסח",
+          "argument_key": "1",
+          "argument_text": "{{מ:קו״כ-אם-2|וְאֵלַמָּ֖ו|ואלמו|וְאֵלַמָּ֖יו|מקורות=ל-קרי|סוג=כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו}}"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "1",
+          "argument_text": "וְאֵלַמָּ֖ו"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "2",
+          "argument_text": "ואלמו"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "3",
+          "argument_text": "וְאֵלַמָּ֖יו"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "מקורות",
+          "argument_text": "ל-קרי"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "סוג",
+          "argument_text": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      ],
+      "supported_qere_wrapper_in_mpu_verse": {
+        "template_name": "מ:קו״כ-אם-2",
+        "ketiv": "וְאֵלַמָּ֖ו",
+        "qere": "וְאֵלַמָּ֖יו"
+      },
+      "found_in_mpu_verse_template_arg": true,
+      "matching_template_args_in_mpu_verse": [
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "1",
+          "argument_text": "וְאֵלַמָּ֖ו"
+        }
+      ],
+      "matching_mpu_surface_words_in_mpu_verse": [
+        "וְאֵלַמָּ֖ו"
+      ],
+      "supported_qere_wrapper_word_mismatch": false,
+      "found_via_known_docx_mpu_word": false,
+      "hit_files": [
+        "C3-Ezekiel.json"
+      ]
+    },
+    {
+      "row_number": 73,
+      "verse": "Ezekiel 40:37.11",
+      "word": "מַעֲלָֽו",
+      "mpu_file_for_verse": "C3-Ezekiel.json",
+      "found_in_any_plus_file": true,
+      "found_in_mpu_verse_text": true,
+      "template_args_in_mpu_verse": [
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "1",
+          "argument_text": "מַעֲלָֽו"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "2",
+          "argument_text": "מעלו"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "3",
+          "argument_text": "מַעֲלָֽיו"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "מקורות",
+          "argument_text": "ל-קרי"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "סוג",
+          "argument_text": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      ],
+      "supported_qere_wrapper_in_mpu_verse": {
+        "template_name": "מ:קו״כ-אם-2",
+        "ketiv": "מַעֲלָֽו",
+        "qere": "מַעֲלָֽיו"
+      },
+      "found_in_mpu_verse_template_arg": true,
+      "matching_template_args_in_mpu_verse": [
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "1",
+          "argument_text": "מַעֲלָֽו"
+        }
+      ],
+      "matching_mpu_surface_words_in_mpu_verse": [
+        "מַעֲלָֽו׃"
+      ],
+      "supported_qere_wrapper_word_mismatch": false,
+      "found_via_known_docx_mpu_word": false,
+      "hit_files": [
+        "C3-Ezekiel.json"
+      ]
+    },
+    {
+      "row_number": 74,
+      "verse": "Ezekiel 47:8.17",
+      "word": "וְנִרְפּ֥אוּ",
+      "mpu_file_for_verse": "C3-Ezekiel.json",
+      "found_in_any_plus_file": true,
+      "found_in_mpu_verse_text": true,
+      "template_args_in_mpu_verse": [
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "1",
+          "argument_text": "וְנִרְפּ֥אֿוּ"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "2",
+          "argument_text": "ונרפאו"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "3",
+          "argument_text": "וְנִרְפּ֥וּ"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "מקורות",
+          "argument_text": "ל-קרי"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "סוג",
+          "argument_text": "אל\"ף נחה באמצע תיבה ולא נקראת"
+        }
+      ],
+      "supported_qere_wrapper_in_mpu_verse": {
+        "template_name": "מ:קו״כ-אם-2",
+        "ketiv": "וְנִרְפּ֥אֿוּ",
+        "qere": "וְנִרְפּ֥וּ"
+      },
+      "found_in_mpu_verse_template_arg": true,
+      "matching_template_args_in_mpu_verse": [
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "1",
+          "argument_text": "וְנִרְפּ֥אֿוּ"
+        }
+      ],
+      "matching_mpu_surface_words_in_mpu_verse": [
+        "וְנִרְפּ֥אֿוּ"
+      ],
+      "supported_qere_wrapper_word_mismatch": false,
+      "found_via_known_docx_mpu_word": false,
+      "hit_files": [
+        "C3-Ezekiel.json"
+      ]
+    },
+    {
+      "row_number": 75,
+      "verse": "Ezekiel 48:18.17",
+      "word": "תְבֽוּאָתֹה֙",
+      "mpu_file_for_verse": "C3-Ezekiel.json",
+      "found_in_any_plus_file": true,
+      "found_in_mpu_verse_text": true,
+      "template_args_in_mpu_verse": [
+        {
+          "template_name": "נוסח",
+          "argument_key": "1",
+          "argument_text": "{{מ:קו״כ-אם-2|תְבֽוּאָתֹה֙|תבואתה|תְבֽוּאָתוֹ֙|מקורות=ל-קרי|סוג=כתיב ה\"א בסיומת של חולם}}"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "1",
+          "argument_text": "תְבֽוּאָתֹה֙"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "2",
+          "argument_text": "תבואתה"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "3",
+          "argument_text": "תְבֽוּאָתוֹ֙"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "מקורות",
+          "argument_text": "ל-קרי"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "סוג",
+          "argument_text": "כתיב ה\"א בסיומת של חולם"
+        }
+      ],
+      "supported_qere_wrapper_in_mpu_verse": {
+        "template_name": "מ:קו״כ-אם-2",
+        "ketiv": "תְבֽוּאָתֹה֙",
+        "qere": "תְבֽוּאָתוֹ֙"
+      },
+      "found_in_mpu_verse_template_arg": true,
+      "matching_template_args_in_mpu_verse": [
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "1",
+          "argument_text": "תְבֽוּאָתֹה֙"
+        }
+      ],
+      "matching_mpu_surface_words_in_mpu_verse": [
+        "תְבֽוּאָתֹה֙"
+      ],
+      "supported_qere_wrapper_word_mismatch": false,
+      "found_via_known_docx_mpu_word": false,
+      "hit_files": [
+        "C3-Ezekiel.json"
+      ]
+    },
+    {
+      "row_number": 76,
+      "verse": "Ezekiel 48:21.35",
+      "word": "בְּתוֹכֹֽה",
+      "mpu_file_for_verse": "C3-Ezekiel.json",
+      "found_in_any_plus_file": true,
+      "found_in_mpu_verse_text": true,
+      "template_args_in_mpu_verse": [
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "1",
+          "argument_text": "בְּתוֹכֹֽה"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "2",
+          "argument_text": "בתוכה"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "3",
+          "argument_text": "בְּתוֹכֽוֹ"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "מקורות",
+          "argument_text": "ל-קרי"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "סוג",
+          "argument_text": "כתיב ה\"א בסיומת של חולם"
+        }
+      ],
+      "supported_qere_wrapper_in_mpu_verse": {
+        "template_name": "מ:קו״כ-אם-2",
+        "ketiv": "בְּתוֹכֹֽה",
+        "qere": "בְּתוֹכֽוֹ"
+      },
+      "found_in_mpu_verse_template_arg": true,
+      "matching_template_args_in_mpu_verse": [
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "1",
+          "argument_text": "בְּתוֹכֹֽה"
+        }
+      ],
+      "matching_mpu_surface_words_in_mpu_verse": [
+        "בְּתוֹכֹֽה׃"
+      ],
+      "supported_qere_wrapper_word_mismatch": false,
+      "found_via_known_docx_mpu_word": false,
+      "hit_files": [
+        "C3-Ezekiel.json"
+      ]
+    },
+    {
+      "row_number": 77,
+      "verse": "Tsefaniah 2:9.27",
+      "word": "גּוֹיִ֖",
+      "mpu_file_for_verse": "CA-The-12-Minor-Prophets.json",
+      "found_in_any_plus_file": true,
+      "found_in_mpu_verse_text": true,
+      "template_args_in_mpu_verse": [
+        {
+          "template_name": "נוסח",
+          "argument_key": "1",
+          "argument_text": "{{כו״ק|גוי|גּוֹיִ֖י}}"
+        },
+        {
+          "template_name": "כו״ק",
+          "argument_key": "1",
+          "argument_text": "גוי"
+        },
+        {
+          "template_name": "כו״ק",
+          "argument_key": "2",
+          "argument_text": "גּוֹיִ֖י"
+        }
+      ],
+      "supported_qere_wrapper_in_mpu_verse": {
+        "template_name": "כו״ק",
+        "ketiv": "גוי",
+        "qere": "גּוֹיִ֖י"
+      },
+      "found_in_mpu_verse_template_arg": true,
+      "matching_template_args_in_mpu_verse": [
+        {
+          "template_name": "כו״ק",
+          "argument_key": "2",
+          "argument_text": "גּוֹיִ֖י"
+        }
+      ],
+      "matching_mpu_surface_words_in_mpu_verse": [
+        "גּוֹיִ֖י"
+      ],
+      "supported_qere_wrapper_word_mismatch": false,
+      "found_via_known_docx_mpu_word": true,
+      "hit_files": [
+        "A1-Genesis.json",
+        "A4-Numbers.json",
+        "A5-Deuter.json",
+        "B1-Joshua.json",
+        "B2-Judges.json",
+        "BA-Samuel.json",
+        "BC-Kings.json",
+        "C1-Isaiah.json",
+        "C2-Jeremiah.json",
+        "C3-Ezekiel.json",
+        "CA-The-12-Minor-Prophets.json",
+        "FC-Chronicles.json"
+      ]
+    }
+  ],
+  "mam_plus_rows_with_supported_qere_wrapper": [
+    {
+      "row_number": 1,
+      "verse": "Joshua 3:4.5",
+      "word": "וּבֵנָ֔יו",
+      "mpu_file_for_verse": "B1-Joshua.json",
+      "found_in_any_plus_file": true,
+      "found_in_mpu_verse_text": true,
+      "template_args_in_mpu_verse": [
+        {
+          "template_name": "נוסח",
+          "argument_key": "1",
+          "argument_text": "{{מ:קו״כ-אם-2|וּבֵנָ֔יו|ובניו|וּבֵינָ֔יו|מקורות=ל-קרי}}"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "1",
+          "argument_text": "וּבֵנָ֔יו"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "2",
+          "argument_text": "ובניו"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "3",
+          "argument_text": "וּבֵינָ֔יו"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "מקורות",
+          "argument_text": "ל-קרי"
+        }
+      ],
+      "supported_qere_wrapper_in_mpu_verse": {
+        "template_name": "מ:קו״כ-אם-2",
+        "ketiv": "וּבֵנָ֔יו",
+        "qere": "וּבֵינָ֔יו"
+      },
+      "found_in_mpu_verse_template_arg": true,
+      "matching_template_args_in_mpu_verse": [
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "1",
+          "argument_text": "וּבֵנָ֔יו"
+        }
+      ],
+      "matching_mpu_surface_words_in_mpu_verse": [
+        "וּבֵנָ֔יו"
+      ],
+      "supported_qere_wrapper_word_mismatch": false,
+      "found_via_known_docx_mpu_word": false,
+      "hit_files": [
+        "B1-Joshua.json"
+      ]
+    },
+    {
+      "row_number": 2,
+      "verse": "Joshua 10:24.19",
+      "word": "הֶהָלְכ֣וּא",
+      "mpu_file_for_verse": "B1-Joshua.json",
+      "found_in_any_plus_file": true,
+      "found_in_mpu_verse_text": true,
+      "template_args_in_mpu_verse": [
+        {
+          "template_name": "נוסח",
+          "argument_key": "1",
+          "argument_text": "{{כו״ק|ההלכוא|הֶהָלְכ֣וּ}}"
+        },
+        {
+          "template_name": "כו״ק",
+          "argument_key": "1",
+          "argument_text": "ההלכוא"
+        },
+        {
+          "template_name": "כו״ק",
+          "argument_key": "2",
+          "argument_text": "הֶהָלְכ֣וּ"
+        }
+      ],
+      "supported_qere_wrapper_in_mpu_verse": {
+        "template_name": "כו״ק",
+        "ketiv": "ההלכוא",
+        "qere": "הֶהָלְכ֣וּ"
+      },
+      "found_in_mpu_verse_template_arg": true,
+      "matching_template_args_in_mpu_verse": [
+        {
+          "template_name": "כו״ק",
+          "argument_key": "2",
+          "argument_text": "הֶהָלְכ֣וּ"
+        }
+      ],
+      "matching_mpu_surface_words_in_mpu_verse": [
+        "הֶהָלְכ֣וּ"
+      ],
+      "supported_qere_wrapper_word_mismatch": false,
+      "found_via_known_docx_mpu_word": true,
+      "hit_files": [
+        "B1-Joshua.json"
+      ]
+    },
+    {
+      "row_number": 10,
+      "verse": "2Samuel 2:23.15",
+      "word": "תַּחְתָּ֑ו",
+      "mpu_file_for_verse": "BA-Samuel.json",
+      "found_in_any_plus_file": true,
+      "found_in_mpu_verse_text": true,
+      "template_args_in_mpu_verse": [
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "1",
+          "argument_text": "תַּחְתָּ֑ו"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "2",
+          "argument_text": "תחתו"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "3",
+          "argument_text": "תַּחְתָּ֑יו"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "מקורות",
+          "argument_text": "א-קרי"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "סוג",
+          "argument_text": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      ],
+      "supported_qere_wrapper_in_mpu_verse": {
+        "template_name": "מ:קו״כ-אם-2",
+        "ketiv": "תַּחְתָּ֑ו",
+        "qere": "תַּחְתָּ֑יו"
+      },
+      "found_in_mpu_verse_template_arg": true,
+      "matching_template_args_in_mpu_verse": [
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "1",
+          "argument_text": "תַּחְתָּ֑ו"
+        }
+      ],
+      "matching_mpu_surface_words_in_mpu_verse": [
+        "תַּחְתָּ֑ו"
+      ],
+      "supported_qere_wrapper_word_mismatch": false,
+      "found_via_known_docx_mpu_word": false,
+      "hit_files": [
+        "BA-Samuel.json"
+      ]
+    },
+    {
+      "row_number": 13,
+      "verse": "2Samuel 11:24.1",
+      "word": "וַיֹּר֨אוּ",
+      "mpu_file_for_verse": "BA-Samuel.json",
+      "found_in_any_plus_file": true,
+      "found_in_mpu_verse_text": true,
+      "template_args_in_mpu_verse": [
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "1",
+          "argument_text": "וַיֹּר֨אֿוּ"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "2",
+          "argument_text": "ויראו"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "3",
+          "argument_text": "וַיֹּר֨וּ"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "מקורות",
+          "argument_text": "ל-קרי"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "סוג",
+          "argument_text": "אל\"ף נחה באמצע תיבה ולא נקראת"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "1",
+          "argument_text": "הַמּוֹרִ֤אֿים"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "2",
+          "argument_text": "המוראים"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "3",
+          "argument_text": "הַמּוֹרִ֤ים"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "מקורות",
+          "argument_text": "ל-קרי"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "סוג",
+          "argument_text": "אל\"ף נחה באמצע תיבה ולא נקראת"
+        }
+      ],
+      "supported_qere_wrapper_in_mpu_verse": {
+        "template_name": "מ:קו״כ-אם-2",
+        "ketiv": "וַיֹּר֨אֿוּ",
+        "qere": "וַיֹּר֨וּ"
+      },
+      "found_in_mpu_verse_template_arg": true,
+      "matching_template_args_in_mpu_verse": [
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "1",
+          "argument_text": "וַיֹּר֨אֿוּ"
+        }
+      ],
+      "matching_mpu_surface_words_in_mpu_verse": [
+        "וַיֹּר֨אֿוּ"
+      ],
+      "supported_qere_wrapper_word_mismatch": false,
+      "found_via_known_docx_mpu_word": false,
+      "hit_files": [
+        "BA-Samuel.json"
+      ]
+    },
+    {
+      "row_number": 14,
+      "verse": "2Samuel 11:24.2",
+      "word": "הַמּוֹרִ֤אים",
+      "mpu_file_for_verse": "BA-Samuel.json",
+      "found_in_any_plus_file": true,
+      "found_in_mpu_verse_text": true,
+      "template_args_in_mpu_verse": [
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "1",
+          "argument_text": "וַיֹּר֨אֿוּ"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "2",
+          "argument_text": "ויראו"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "3",
+          "argument_text": "וַיֹּר֨וּ"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "מקורות",
+          "argument_text": "ל-קרי"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "סוג",
+          "argument_text": "אל\"ף נחה באמצע תיבה ולא נקראת"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "1",
+          "argument_text": "הַמּוֹרִ֤אֿים"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "2",
+          "argument_text": "המוראים"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "3",
+          "argument_text": "הַמּוֹרִ֤ים"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "מקורות",
+          "argument_text": "ל-קרי"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "סוג",
+          "argument_text": "אל\"ף נחה באמצע תיבה ולא נקראת"
+        }
+      ],
+      "supported_qere_wrapper_in_mpu_verse": {
+        "template_name": "מ:קו״כ-אם-2",
+        "ketiv": "הַמּוֹרִ֤אֿים",
+        "qere": "הַמּוֹרִ֤ים"
+      },
+      "found_in_mpu_verse_template_arg": true,
+      "matching_template_args_in_mpu_verse": [
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "1",
+          "argument_text": "הַמּוֹרִ֤אֿים"
+        }
+      ],
+      "matching_mpu_surface_words_in_mpu_verse": [
+        "הַמּוֹרִ֤אֿים"
+      ],
+      "supported_qere_wrapper_word_mismatch": false,
+      "found_via_known_docx_mpu_word": false,
+      "hit_files": [
+        "BA-Samuel.json"
+      ]
+    },
+    {
+      "row_number": 45,
+      "verse": "Jeremiah 51:9.1",
+      "word": "רִפִּ֤אנוּ",
+      "mpu_file_for_verse": "C2-Jeremiah.json",
+      "found_in_any_plus_file": true,
+      "found_in_mpu_verse_text": true,
+      "template_args_in_mpu_verse": [
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "1",
+          "argument_text": "רִפִּ֤אֿנוּ"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "2",
+          "argument_text": "רפאנו"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "3",
+          "argument_text": "רִפִּ֤ינוּ"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "מקורות",
+          "argument_text": "ל-קרי"
+        }
+      ],
+      "supported_qere_wrapper_in_mpu_verse": {
+        "template_name": "מ:קו״כ-אם-2",
+        "ketiv": "רִפִּ֤אֿנוּ",
+        "qere": "רִפִּ֤ינוּ"
+      },
+      "found_in_mpu_verse_template_arg": true,
+      "matching_template_args_in_mpu_verse": [
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "1",
+          "argument_text": "רִפִּ֤אֿנוּ"
+        }
+      ],
+      "matching_mpu_surface_words_in_mpu_verse": [
+        "רִפִּ֤אֿנוּ"
+      ],
+      "supported_qere_wrapper_word_mismatch": false,
+      "found_via_known_docx_mpu_word": false,
+      "hit_files": [
+        "C2-Jeremiah.json"
+      ]
+    },
+    {
+      "row_number": 48,
+      "verse": "Ezekiel 31:5.11",
+      "word": "פֹארֹתָ֛ו",
+      "mpu_file_for_verse": "C3-Ezekiel.json",
+      "found_in_any_plus_file": true,
+      "found_in_mpu_verse_text": true,
+      "template_args_in_mpu_verse": [
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "1",
+          "argument_text": "פֹארֹתָ֛ו"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "2",
+          "argument_text": "פארתו"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "3",
+          "argument_text": "פֹארֹתָ֛יו"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "מקורות",
+          "argument_text": "א-קרי"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "סוג",
+          "argument_text": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      ],
+      "supported_qere_wrapper_in_mpu_verse": {
+        "template_name": "מ:קו״כ-אם-2",
+        "ketiv": "פֹארֹתָ֛ו",
+        "qere": "פֹארֹתָ֛יו"
+      },
+      "found_in_mpu_verse_template_arg": true,
+      "matching_template_args_in_mpu_verse": [
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "1",
+          "argument_text": "פֹארֹתָ֛ו"
+        }
+      ],
+      "matching_mpu_surface_words_in_mpu_verse": [
+        "פֹארֹתָ֛ו"
+      ],
+      "supported_qere_wrapper_word_mismatch": false,
+      "found_via_known_docx_mpu_word": false,
+      "hit_files": [
+        "C3-Ezekiel.json"
+      ]
+    },
+    {
+      "row_number": 50,
+      "verse": "Ezekiel 40:6.9",
+      "word": "בְּמַעֲלוֹתָ֑ו",
+      "mpu_file_for_verse": "C3-Ezekiel.json",
+      "found_in_any_plus_file": true,
+      "found_in_mpu_verse_text": true,
+      "template_args_in_mpu_verse": [
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "1",
+          "argument_text": "בְּמַעֲלוֹתָ֑ו"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "2",
+          "argument_text": "במעלותו"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "3",
+          "argument_text": "בְּמַעֲלוֹתָ֑יו"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "מקורות",
+          "argument_text": "א-קרי"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "סוג",
+          "argument_text": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      ],
+      "supported_qere_wrapper_in_mpu_verse": {
+        "template_name": "מ:קו״כ-אם-2",
+        "ketiv": "בְּמַעֲלוֹתָ֑ו",
+        "qere": "בְּמַעֲלוֹתָ֑יו"
+      },
+      "found_in_mpu_verse_template_arg": true,
+      "matching_template_args_in_mpu_verse": [
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "1",
+          "argument_text": "בְּמַעֲלוֹתָ֑ו"
+        }
+      ],
+      "matching_mpu_surface_words_in_mpu_verse": [
+        "בְּמַעֲלוֹתָ֑ו"
+      ],
+      "supported_qere_wrapper_word_mismatch": false,
+      "found_via_known_docx_mpu_word": false,
+      "hit_files": [
+        "C3-Ezekiel.json"
+      ]
+    },
+    {
+      "row_number": 52,
+      "verse": "Ezekiel 40:24.9",
+      "word": "אֵילָו֙",
+      "mpu_file_for_verse": "C3-Ezekiel.json",
+      "found_in_any_plus_file": true,
+      "found_in_mpu_verse_text": true,
+      "template_args_in_mpu_verse": [
+        {
+          "template_name": "נוסח",
+          "argument_key": "1",
+          "argument_text": "{{מ:קו״כ-אם-2|אֵילָו֙|אילו|אֵילָיו֙|מקורות=ל-קרי|סוג=כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו}}"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "1",
+          "argument_text": "אֵילָו֙"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "2",
+          "argument_text": "אילו"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "3",
+          "argument_text": "אֵילָיו֙"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "מקורות",
+          "argument_text": "ל-קרי"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "סוג",
+          "argument_text": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        },
+        {
+          "template_name": "נוסח",
+          "argument_key": "1",
+          "argument_text": "{{מ:קו״כ-אם-2|וְאֵ֣ילַמָּ֔ו|ואילמו|וְאֵ֣ילַמָּ֔יו|מקורות=ל-קרי|סוג=כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו}}"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "1",
+          "argument_text": "וְאֵ֣ילַמָּ֔ו"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "2",
+          "argument_text": "ואילמו"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "3",
+          "argument_text": "וְאֵ֣ילַמָּ֔יו"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "מקורות",
+          "argument_text": "ל-קרי"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "סוג",
+          "argument_text": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      ],
+      "supported_qere_wrapper_in_mpu_verse": {
+        "template_name": "מ:קו״כ-אם-2",
+        "ketiv": "אֵילָו֙",
+        "qere": "אֵילָיו֙"
+      },
+      "found_in_mpu_verse_template_arg": true,
+      "matching_template_args_in_mpu_verse": [
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "1",
+          "argument_text": "אֵילָו֙"
+        }
+      ],
+      "matching_mpu_surface_words_in_mpu_verse": [
+        "אֵילָו֙"
+      ],
+      "supported_qere_wrapper_word_mismatch": false,
+      "found_via_known_docx_mpu_word": false,
+      "hit_files": [
+        "C3-Ezekiel.json"
+      ]
+    },
+    {
+      "row_number": 53,
+      "verse": "Ezekiel 40:25.3",
+      "word": "וּלְאֵֽילַמָּו֙",
+      "mpu_file_for_verse": "C3-Ezekiel.json",
+      "found_in_any_plus_file": true,
+      "found_in_mpu_verse_text": true,
+      "template_args_in_mpu_verse": [
+        {
+          "template_name": "נוסח",
+          "argument_key": "1",
+          "argument_text": "{{מ:קו״כ-אם-2|וּלְאֵֽילַמָּו֙|ולאילמו|וּלְאֵֽילַמָּיו֙|מקורות=ל-קרי|סוג=כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו}}"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "1",
+          "argument_text": "וּלְאֵֽילַמָּו֙"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "2",
+          "argument_text": "ולאילמו"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "3",
+          "argument_text": "וּלְאֵֽילַמָּיו֙"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "מקורות",
+          "argument_text": "ל-קרי"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "סוג",
+          "argument_text": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      ],
+      "supported_qere_wrapper_in_mpu_verse": {
+        "template_name": "מ:קו״כ-אם-2",
+        "ketiv": "וּלְאֵֽילַמָּו֙",
+        "qere": "וּלְאֵֽילַמָּיו֙"
+      },
+      "found_in_mpu_verse_template_arg": true,
+      "matching_template_args_in_mpu_verse": [
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "1",
+          "argument_text": "וּלְאֵֽילַמָּו֙"
+        }
+      ],
+      "matching_mpu_surface_words_in_mpu_verse": [
+        "וּלְאֵֽילַמָּו֙"
+      ],
+      "supported_qere_wrapper_word_mismatch": false,
+      "found_via_known_docx_mpu_word": false,
+      "hit_files": [
+        "C3-Ezekiel.json"
+      ]
+    },
+    {
+      "row_number": 54,
+      "verse": "Ezekiel 40:26.4",
+      "word": "וְאֵלַמָּ֖ו",
+      "mpu_file_for_verse": "C3-Ezekiel.json",
+      "found_in_any_plus_file": true,
+      "found_in_mpu_verse_text": true,
+      "template_args_in_mpu_verse": [
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "1",
+          "argument_text": "עֹֽלוֹתָ֔ו"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "2",
+          "argument_text": "עלותו"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "3",
+          "argument_text": "עֹֽלוֹתָ֔יו"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "מקורות",
+          "argument_text": "א-קרי"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "סוג",
+          "argument_text": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        },
+        {
+          "template_name": "נוסח",
+          "argument_key": "1",
+          "argument_text": "{{מ:קו״כ-אם-2|וְאֵלַמָּ֖ו|ואלמו|וְאֵלַמָּ֖יו|מקורות=ל-קרי|סוג=כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו}}"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "1",
+          "argument_text": "וְאֵלַמָּ֖ו"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "2",
+          "argument_text": "ואלמו"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "3",
+          "argument_text": "וְאֵלַמָּ֖יו"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "מקורות",
+          "argument_text": "ל-קרי"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "סוג",
+          "argument_text": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      ],
+      "supported_qere_wrapper_in_mpu_verse": {
+        "template_name": "מ:קו״כ-אם-2",
+        "ketiv": "וְאֵלַמָּ֖ו",
+        "qere": "וְאֵלַמָּ֖יו"
+      },
+      "found_in_mpu_verse_template_arg": true,
+      "matching_template_args_in_mpu_verse": [
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "1",
+          "argument_text": "וְאֵלַמָּ֖ו"
+        }
+      ],
+      "matching_mpu_surface_words_in_mpu_verse": [
+        "וְאֵלַמָּ֖ו"
+      ],
+      "supported_qere_wrapper_word_mismatch": false,
+      "found_via_known_docx_mpu_word": false,
+      "hit_files": [
+        "C3-Ezekiel.json"
+      ]
+    },
+    {
+      "row_number": 73,
+      "verse": "Ezekiel 40:37.11",
+      "word": "מַעֲלָֽו",
+      "mpu_file_for_verse": "C3-Ezekiel.json",
+      "found_in_any_plus_file": true,
+      "found_in_mpu_verse_text": true,
+      "template_args_in_mpu_verse": [
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "1",
+          "argument_text": "מַעֲלָֽו"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "2",
+          "argument_text": "מעלו"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "3",
+          "argument_text": "מַעֲלָֽיו"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "מקורות",
+          "argument_text": "ל-קרי"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "סוג",
+          "argument_text": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      ],
+      "supported_qere_wrapper_in_mpu_verse": {
+        "template_name": "מ:קו״כ-אם-2",
+        "ketiv": "מַעֲלָֽו",
+        "qere": "מַעֲלָֽיו"
+      },
+      "found_in_mpu_verse_template_arg": true,
+      "matching_template_args_in_mpu_verse": [
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "1",
+          "argument_text": "מַעֲלָֽו"
+        }
+      ],
+      "matching_mpu_surface_words_in_mpu_verse": [
+        "מַעֲלָֽו׃"
+      ],
+      "supported_qere_wrapper_word_mismatch": false,
+      "found_via_known_docx_mpu_word": false,
+      "hit_files": [
+        "C3-Ezekiel.json"
+      ]
+    },
+    {
+      "row_number": 74,
+      "verse": "Ezekiel 47:8.17",
+      "word": "וְנִרְפּ֥אוּ",
+      "mpu_file_for_verse": "C3-Ezekiel.json",
+      "found_in_any_plus_file": true,
+      "found_in_mpu_verse_text": true,
+      "template_args_in_mpu_verse": [
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "1",
+          "argument_text": "וְנִרְפּ֥אֿוּ"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "2",
+          "argument_text": "ונרפאו"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "3",
+          "argument_text": "וְנִרְפּ֥וּ"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "מקורות",
+          "argument_text": "ל-קרי"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "סוג",
+          "argument_text": "אל\"ף נחה באמצע תיבה ולא נקראת"
+        }
+      ],
+      "supported_qere_wrapper_in_mpu_verse": {
+        "template_name": "מ:קו״כ-אם-2",
+        "ketiv": "וְנִרְפּ֥אֿוּ",
+        "qere": "וְנִרְפּ֥וּ"
+      },
+      "found_in_mpu_verse_template_arg": true,
+      "matching_template_args_in_mpu_verse": [
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "1",
+          "argument_text": "וְנִרְפּ֥אֿוּ"
+        }
+      ],
+      "matching_mpu_surface_words_in_mpu_verse": [
+        "וְנִרְפּ֥אֿוּ"
+      ],
+      "supported_qere_wrapper_word_mismatch": false,
+      "found_via_known_docx_mpu_word": false,
+      "hit_files": [
+        "C3-Ezekiel.json"
+      ]
+    },
+    {
+      "row_number": 75,
+      "verse": "Ezekiel 48:18.17",
+      "word": "תְבֽוּאָתֹה֙",
+      "mpu_file_for_verse": "C3-Ezekiel.json",
+      "found_in_any_plus_file": true,
+      "found_in_mpu_verse_text": true,
+      "template_args_in_mpu_verse": [
+        {
+          "template_name": "נוסח",
+          "argument_key": "1",
+          "argument_text": "{{מ:קו״כ-אם-2|תְבֽוּאָתֹה֙|תבואתה|תְבֽוּאָתוֹ֙|מקורות=ל-קרי|סוג=כתיב ה\"א בסיומת של חולם}}"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "1",
+          "argument_text": "תְבֽוּאָתֹה֙"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "2",
+          "argument_text": "תבואתה"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "3",
+          "argument_text": "תְבֽוּאָתוֹ֙"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "מקורות",
+          "argument_text": "ל-קרי"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "סוג",
+          "argument_text": "כתיב ה\"א בסיומת של חולם"
+        }
+      ],
+      "supported_qere_wrapper_in_mpu_verse": {
+        "template_name": "מ:קו״כ-אם-2",
+        "ketiv": "תְבֽוּאָתֹה֙",
+        "qere": "תְבֽוּאָתוֹ֙"
+      },
+      "found_in_mpu_verse_template_arg": true,
+      "matching_template_args_in_mpu_verse": [
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "1",
+          "argument_text": "תְבֽוּאָתֹה֙"
+        }
+      ],
+      "matching_mpu_surface_words_in_mpu_verse": [
+        "תְבֽוּאָתֹה֙"
+      ],
+      "supported_qere_wrapper_word_mismatch": false,
+      "found_via_known_docx_mpu_word": false,
+      "hit_files": [
+        "C3-Ezekiel.json"
+      ]
+    },
+    {
+      "row_number": 76,
+      "verse": "Ezekiel 48:21.35",
+      "word": "בְּתוֹכֹֽה",
+      "mpu_file_for_verse": "C3-Ezekiel.json",
+      "found_in_any_plus_file": true,
+      "found_in_mpu_verse_text": true,
+      "template_args_in_mpu_verse": [
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "1",
+          "argument_text": "בְּתוֹכֹֽה"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "2",
+          "argument_text": "בתוכה"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "3",
+          "argument_text": "בְּתוֹכֽוֹ"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "מקורות",
+          "argument_text": "ל-קרי"
+        },
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "סוג",
+          "argument_text": "כתיב ה\"א בסיומת של חולם"
+        }
+      ],
+      "supported_qere_wrapper_in_mpu_verse": {
+        "template_name": "מ:קו״כ-אם-2",
+        "ketiv": "בְּתוֹכֹֽה",
+        "qere": "בְּתוֹכֽוֹ"
+      },
+      "found_in_mpu_verse_template_arg": true,
+      "matching_template_args_in_mpu_verse": [
+        {
+          "template_name": "מ:קו״כ-אם-2",
+          "argument_key": "1",
+          "argument_text": "בְּתוֹכֹֽה"
+        }
+      ],
+      "matching_mpu_surface_words_in_mpu_verse": [
+        "בְּתוֹכֹֽה׃"
+      ],
+      "supported_qere_wrapper_word_mismatch": false,
+      "found_via_known_docx_mpu_word": false,
+      "hit_files": [
+        "C3-Ezekiel.json"
+      ]
+    },
+    {
+      "row_number": 77,
+      "verse": "Tsefaniah 2:9.27",
+      "word": "גּוֹיִ֖",
+      "mpu_file_for_verse": "CA-The-12-Minor-Prophets.json",
+      "found_in_any_plus_file": true,
+      "found_in_mpu_verse_text": true,
+      "template_args_in_mpu_verse": [
+        {
+          "template_name": "נוסח",
+          "argument_key": "1",
+          "argument_text": "{{כו״ק|גוי|גּוֹיִ֖י}}"
+        },
+        {
+          "template_name": "כו״ק",
+          "argument_key": "1",
+          "argument_text": "גוי"
+        },
+        {
+          "template_name": "כו״ק",
+          "argument_key": "2",
+          "argument_text": "גּוֹיִ֖י"
+        }
+      ],
+      "supported_qere_wrapper_in_mpu_verse": {
+        "template_name": "כו״ק",
+        "ketiv": "גוי",
+        "qere": "גּוֹיִ֖י"
+      },
+      "found_in_mpu_verse_template_arg": true,
+      "matching_template_args_in_mpu_verse": [
+        {
+          "template_name": "כו״ק",
+          "argument_key": "2",
+          "argument_text": "גּוֹיִ֖י"
+        }
+      ],
+      "matching_mpu_surface_words_in_mpu_verse": [
+        "גּוֹיִ֖י"
+      ],
+      "supported_qere_wrapper_word_mismatch": false,
+      "found_via_known_docx_mpu_word": true,
+      "hit_files": [
+        "A1-Genesis.json",
+        "A4-Numbers.json",
+        "A5-Deuter.json",
+        "B1-Joshua.json",
+        "B2-Judges.json",
+        "BA-Samuel.json",
+        "BC-Kings.json",
+        "C1-Isaiah.json",
+        "C2-Jeremiah.json",
+        "C3-Ezekiel.json",
+        "CA-The-12-Minor-Prophets.json",
+        "FC-Chronicles.json"
+      ]
+    }
+  ],
+  "uxlc_verify": {
+    "row_count": 77,
+    "rows_missing_claim_count": 0,
+    "rows_missing_ketiv_claim_count": 0,
+    "rows_missing_qere_claim_count": 0
+  },
+  "uxlc_rows_missing_note_claims": []
+}

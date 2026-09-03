@@ -1,0 +1,52 @@
+Hello Chris and Ben,
+
+Here are suggested corrections for Proverbs:
+
+1
+Verse: Prov 8:13.1
+Current UXLC: יִֽרְאַ֣ת
+Image: 823_Pro_7.3-8.18a
+Location: Col. 2 middle
+Suggested Correction: Replace Meteg with Merekha.
+Corrected Text: יִ֥רְאַ֣ת
+Note: Note: L has a Merekha under the Yod.
+
+2
+Verse: Prov 19:7.1
+Current UXLC: כָּ֥ל
+Image: 831_Pro_18.16b-20.7a
+Location: Col. 1 middle
+Suggested Correction: Add note regarding appearance of accent.
+Corrected Text: כָּ֥ל
+Note: Note: BHS, Dotan, and UXLC all read with Merekha. Add a note that the image in L resembles a Meteg but is read as a Merekha.
+
+3
+Verse: Prov 23:7.2
+Current UXLC: כְּמּוֹ
+Image: 834_Pro_22.29b-24.5a
+Location: Col. 1 middle
+Suggested Correction: Add a Merekha OR Meteg under Mem.
+Corrected Text: כְּמ֥וֹ
+Note: Note: L has a faded accent that resembles a Meteg but is most likely a Merekha as there is no Maqqef on this word.
+
+4
+Verse: Prov 28:3.1
+Current UXLC: גּבֶר
+Image: 838_Pro_28.2b-29.11a
+Location: Col. 1 top
+Suggested Correction: Add a Meteg under the first letter and a Maqqef.
+Corrected Text: גּֽבֶר־
+Note: Note: L is very faded but you can see remnants of what appears to be a Meteg and a Maqqaf, which aligns with other MSS for this word.
+
+5
+Verse: Prov 30:15.1
+Current UXLC: לַֽעֲלוּקָ֨ה׀
+Image: 839_Pro_29.11b-30.17
+Location: Col. 1 bottom
+Suggested Correction: Replace Meteg with Merekha.
+Corrected Text: לַ֥עֲלוּקָ֨ה׀
+Note: Note: L has a Merekha under the first Lamed.
+
+Sincerely,
+
+Daniel

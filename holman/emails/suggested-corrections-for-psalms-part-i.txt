@@ -1,0 +1,169 @@
+Hello Chris and Ben,
+
+The transcription of Merekha and Meteg from L into the UXLC is challenging, as the image often looks like a Meteg while UXLC reads it as a Merekha, and vice versa. Many of these Merekhas appear to be carryovers from the BHS. While each word should follow an accent rule, I understand your goal is to transcribe exactly what the image of L shows regarding the slant of the vertical mark. To ensure we are aligned, I can continue tracking these occurrences throughout the rest of the Bible. Let me know your thoughts!
+
+Below is the first part of Psalms, broken down to keep the email size manageable with the attached images.
+
+1. Ps 5:11.1
+Current UXLC: הַֽאֲשִׁימֵ֨ם
+Image: 732_Ps_5.5b-8.5a
+Location R/L: Col. 1 middle
+Suggested Correction: Add a note indicating other editions read as Merekha OR change Meteg to Merekha and add a note.
+Corrected Text: הַ֥אֲשִׁימֵ֨ם׀
+Note: DOTAN has MEREKHA. BHS has METEG.
+
+2. Ps 8:9.6
+Current UXLC: אָרְחֽוֹת
+Image: 733_Ps_8.5b-10.17a
+Location R/L: Col. 1 top
+Suggested Correction: Revise note by  adding  that this word reads with a Merekha in Ps. 17:4.
+Corrected Text:
+Note: DOTAN has MEREKHA. BHS has METEG. This word reads with Merekha in Ps. 17:4.
+
+3. Ps 9:1.2
+Current UXLC: עַלְמ֥וּת
+Image: 733_Ps_8.5b-10.17a
+Location R/L: Col. 1 top
+Suggested Correction: Add a Maqqef between Lamed and Mem.
+Corrected Text: עַל־מ֥וּת
+Note: The clear markings of a superimposed MAQQEF are visible between LAMED and MEM.
+
+4. Ps 12:7.1
+Current UXLC: אִֽמֲר֣וֹת
+Image: 734_Ps_10.17b-15.3a
+Location R/L: Col. 1 bottom
+Suggested Correction: Add a note indicating some editions read as Merekha.
+Corrected Text: אִ֥מְר֣וֹת
+Note: BHS and DOTAN have METEG.
+
+5. Ps 14:7.1
+Current UXLC: מִ֥י
+Image: 734_Ps_10.17b-15.3a
+Location R/L: Col. 2 bottom
+Suggested Correction: Add note that accent looks like a Meteg and UXLC reads it as Merekha.
+Corrected Text: מִ֥י
+Note: BHS and DOTAN have MEREKHA.
+
+6. Ps 15:5.8
+Current UXLC: לֹ֥א
+Image: 735_Ps_15.3b-18.7a
+Location R/L: Col. 1 top
+Suggested Correction: Add note that accent looks like a Meteg and UXLC reads it as Merekha.
+Corrected Text: לֹ֥א
+Note: BHS and DOTAN have MEREKHA.
+
+7. Ps 17:14.1
+Current UXLC: מִֽמְתִ֥ים יָדְךָ֨
+Image: 735_Ps_15.3b-18.7a
+Location R/L: Col. 2 bottom
+Suggested Correction: Add a Maqqef between Mem and Yod AND Add note that accent looks like a Meteg and UXLC reads it as Merekha.
+Corrected Text: מִ֥מְתִֽים־יָדְךָ֨
+Note: BHS has MEREKHA with no MAQQEF. DOTAN has METEG with MAQQEF.
+
+8. Ps 18:3.2
+Current UXLC: סַֽלְעִֽי
+Image: 735_Ps_15.3b-18.7a
+Location R/L: Col. 2 bottom
+Suggested Correction: Revise note that other editions read with one or two Merekhas.
+Corrected Text: סַ֥לְעִ֥י
+Note: HUB and MAM read with two Merekhas. GINSBURG, BHS, and DOTAN read with one Merekha.
+
+9. Ps 18:7.3
+Current UXLC: אֶֽקֲרָ֣א
+Image: 735_Ps_15.3b-18.7a
+Location R/L: Col. 2 bottom
+Suggested Correction: The current note is a c and should be as other places regarding the Merekha.
+Corrected Text: אֶ֥קְרָ֣א
+Note: BHS and DOTAN have METEG.
+
+10. Ps 19:15.1
+Current UXLC: יִֽהְי֥וּ־לְרָצ֨וֹן׀
+Image: 737_Ps_19.2b-22.4a
+Location R/L: Col. 1 bottom
+Suggested Correction: Add the below on the vast number of ways this phrase is transcribed by other editions and MSS.
+Corrected Text: יִ֥הְיֽוּ־לְרָצ֨וֹן׀
+Note: MAM has MEREKHA and METEG with MAQQEF; UXLC has METEG and MEREKHA with MAQQEF; GINSBURG and BHS omit MAQQEF, showing a METEG and MEREKHA (GINSBURG notes two minority variants: one with MAHAPAK under second YOD, and one with only MAQQEF); DOTAN has a double METEG with MAQQEF; BREUER's collation records SASSOON 1053 with MEREKHA and METEG without MAQQEF, LENINGRAD (L) with MEREKHA and METEG with MAQQEF; EVR IIB55 has a single METEG or MEREKHA under the first YOD, ZBAM has MEREKHA under the first YOD, and both EVR IIB132 and OR 9879 mirror the MAM with MEREKHA and METEG with MAQQEF.
+
+11. Ps 31:12.5
+Current UXLC: וְלִשֲׁכֵנַ֨י׀
+Image: 741_Ps_30.12-32.10a
+Location R/L: Col. 1 bottom
+Suggested Correction: Add a Merekha under Lamed.
+Corrected Text: וְלִ֥שְׁכֵנַ֨י׀
+Note: L has a MEREKHA under the LAMED.
+
+12. Ps 31:24.1
+Current UXLC: אֶֽהֱב֥וּ
+Image: 741_Ps_30.12-32.10a
+Location R/L: Col. 1 middle
+Suggested Correction: Change Meteg to Merekha.
+Corrected Text: אֶ֥הֱב֥וּ
+Note: GINSBURG, BHS, and DOTAN have a METEG under ALEPH and a MEREKHA under BEIT. The accent under ALEPH resembles a MEREKHA more than a METEG. BREUER lists A and L as reading with two MEREKHAS on this word.
+
+13. Ps 35:10.5
+Current UXLC: מִ֥י
+Image: 743_Ps_35.1-36.13a
+Location R/L: Col. 1 middle
+Suggested Correction: Add note regarding appearance of accent.
+Corrected Text: מִ֥י
+Note: The marking under MEM resembles a METEG. UXLC identifies it as a MEREKHA. BHS and DOTAN have MEREKHA.
+
+14. Ps 37:14.2
+Current UXLC: פָּֽתְח֣וּ
+Image: 744_Ps_36.13b-38.5a
+Location R/L: Col. 1 bottom
+Suggested Correction: Add a note indicating some editions read as Merekha.
+Corrected Text: פָּ֥תְח֣וּ
+Note: BHS and DOTAN read with METEG.
+
+15. Ps 37:40.1
+Current UXLC: וַֽיַּעְזְרֵ֥ם
+Image: 744_Ps_36.13b-38.5a
+Location R/L: Col. 2 bottom
+Suggested Correction: Change Meteg to Merekha.
+Corrected Text: וַ֥יַּעְזְרֵ֥ם
+Note: The accent under VAV is a MEREKHA and not a METEG based on appearance.
+
+16. Ps 39:2.2
+Current UXLC: אֶֽשְׁמְרָ֣ה
+Image: 745_Ps_38.5b-40.7a
+Location R/L: Col. 1 bottom
+Suggested Correction: Add a note indicating some editions read as Merekha.
+Corrected Text: אֶ֥שְׁמְרָ֣ה
+Note: BHS and DOTAN read with METEG.
+
+17. Ps 40:5.1
+Current UXLC: אַ֥שְֽׁרֵי
+Image: 745_Ps_38.5b-40.7a
+Location R/L: Col. 2 bottom
+Suggested Correction: Add note regarding appearance of accent.
+Corrected Text: אַ֥שְֽׁרֵי
+Note: BHS, DOTAN, and UXLC read the same with MEREKHA under ALEPH and METEG under SHIN with no MAQQEF. The accent under ALEPH resembles a METEG and the UXLC reads it as a MEREKHA.
+
+18. Ps 40:6.6
+Current UXLC: נִֽפְלְאֹתֶ֥יךָ
+Image: 745_Ps_38.5b-40.7a
+Location R/L: Col. 2 bottom
+Suggested Correction: Add note regarding appearance of accent.
+Corrected Text: נִ֥פְלְאֹתֶ֥יךָ
+Note: BHS, DOTAN, and UXLC read the same with MEREKHA under TAV and METEG under NUN. The accent under TAV resembles a METEG and the UXLC reads it as a MEREKHA.
+
+19. Ps 40:13.2
+Current UXLC: אָפְפ֥וּ־עָלַ֨י ׀
+Image: 746_Ps_40.7b-42.7a
+Location R/L: Col. 1 middle
+Suggested Correction: Change Merekha to a Meteg.
+Corrected Text: אָפְפֽוּ־עָלַ֨י ׀
+Note: BHS and UXLC read with MEREKHA under second PE. DOTAN has a METEG under the second PE. The image of L looks like a METEG.
+
+20. Ps 42:3.5
+Current UXLC: חָ֥י
+Image: 746_Ps_40.7b-42.7a
+Location R/L: Col. 2 bottom
+Suggested Correction: Add note regarding appearance of accent.
+Corrected Text: חָ֥י
+Note: BHS, DOTAN, and UXLC all read with MEREKHA. The image in L resembles a METEG but is read as a MEREKHA.
+
+Sincerely,
+
+Daniel

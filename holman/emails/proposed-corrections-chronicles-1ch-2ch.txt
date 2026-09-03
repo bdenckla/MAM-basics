@@ -1,0 +1,101 @@
+Dear Chris and Ben,
+
+Please review the following suggested corrections and notes regarding the UXLC text and image locations for the book of Chronicles.
+
+Many of these items address the visual identification of Merekha versus meteg in the Leningrad Codex (L) compared to modern editions like Dotan, BHS, and Ginsburg.
+
+Suggested Corrections:
+
+1. 1Ch 2:46.4 (יָֽלְדָ֛ה)
+Image Location: 656_1Ch_2.23b-3.1 | Col. 2 bottom
+Correction: Add a note regarding other MSS reading as Merekha, or change Meteg to Merekha and add a note.
+Target Text: יָֽלְדָ֛ה OR יָ֥לְדָ֛ה
+
+Note: Dotan has Merekha. Bomberg, Ginsburg, and BHS have Meteg.
+
+2. 1Ch 4:28.1 (וַיֵּֽשְׁב֛וּ)
+Image Location: 658_1Ch_4.12b-4.41a | Col. 2 bottom
+Correction: Add a note regarding other MSS reading as Merekha, or change meteg to Merekha and add a note.
+Target Text: וַיֵּֽשְׁב֛וּ OR וַיֵּ֥שְׁב֛וּ
+
+Note: Dotan has Merekha. Bomberg and BHS have Meteg. Ginsburg has no mark under yod.
+
+3. 1Ch 5:11.4 (יָֽשְׁב֛וּ)
+Image Location: 659_1Ch_4.41b-5.24a | Col. 2 middle
+Correction: Add a note regarding other MSS reading as Merekha, or change Meteg to Merekha and add a note.
+Target Text: יָֽשְׁב֛וּ OR יָ֥שְׁב֛וּ
+
+Note: Dotan has Merekha. Bomberg and BHS have Meteg. Ginsburg has no mark under Yod.
+
+4. 1Ch 5:16.1 (וַיֵּֽשְׁב֛וּ)
+Image Location: 659_1Ch_4.41b-5.24a | Col. 2 bottom
+Correction: Add a note regarding other MSS reading as Merekha, or change Meteg to Merekha and add a note.
+Target Text: וַיֵּֽשְׁב֛וּ OR וַיֵּ֥שְׁב֛וּ
+
+Note: Dotan has Merekha. Bomberg and BHS have Meteg. Ginsburg has no mark under Yod.
+
+5. 1Ch 7:18.5 (אֶת־אִישְׁה֔וֹד)
+Image Location: 663_1Ch_7.10-8.4a | Col. 1 bottom
+Correction: Add Munach under Aleph in the second word.
+Target Text: אֶת־אִ֣ישְׁה֔וֹד
+
+Note: L has a Munach under the second Aleph.
+
+6. 1Ch 14:11.18 (קָֽרְא֛וּ)
+Image Location: 671_1Ch_13.10b-15.7a | Col. 2 bottom
+Correction: Change Meteg to Merekha.
+Target Text: קָ֥רְא֛וּ
+
+Note: The accent under Qof resembles a Merekha more than a Meteg due to its slant.
+
+7. 1Ch 27:21.7 (לְבִנְיָמִ֔ן)
+Image Location: 685_1Ch_27.10b-27.34a | Col. 2 middle
+Correction: Add Azla to Beit.
+Target Text: לְבִ֨נְיָמִ֔ן
+
+Note: L has an Azla above Beit.
+
+8. 2Ch 1:10.6 (וְאֵֽצְאָ֛ה)
+Image Location: 689_2Ch_1.7b-2.7a | Col. 1 middle
+Correction: Add a note regarding other MSS reading as Merekha, or change meteg to Merekha and add a note.
+Target Text: וְאֵֽצְאָ֛ה OR וְאֵ֥צְאָ֛ה
+
+Note: Dotan has Merekha. Bomberg and BHS have Meteg. Bomberg and Ginsburg have no accent on the first Aleph.
+
+9. 2Ch 13:12.13 (אַל־תִּלָּֽחֲמ֛וּ)
+Image Location: 702_2Ch_12.15b-13.18a | Col. 3 top
+Correction: Add a note regarding other MSS reading as Merekha, or change Meteg to Merekha and add a note.
+Target Text: אַל־תִּלָּֽחֲמ֛וּ OR אַל־תִּלָּ֥חֲמ֛וּ
+Note: Dotan has Merekha. BHS has Meteg. Ginsburg has no accent under the second Lamed.
+
+10. 2Ch 16:2.5 (מֵאֹֽצְר֛וֹת)
+Image Location: 704_2Ch_15.2b-16.6a | Col. 3 top
+Correction: Add a note regarding other MSS reading as Merekha, or change Meteg to Merekha and add a note.
+Target Text: מֵאֹֽצְר֛וֹת OR מֵאֹ֥צְר֛וֹת
+
+Note: Dotan has Merekha. BHS has Meteg. Ginsburg has no accent under the Aleph.
+
+11. 2Ch 21:19.7 (לְיָמִ֣ים)
+Image Location: 711_2Ch_21.18b-23.2a | Col. 1 top
+Correction: Add Paseq after the word.
+Target Text: לְיָמִ֣ים ׀
+
+Note: L has a Paseq after this word.
+
+12. 2Ch 31:9.4 (עַל־הַכֹּֽהֲנִ֛ים)
+Image Location: 722_2Ch_30.23b-31.14a | Col. 3 top
+Correction: Add a note regarding other MSS reading as Merekha, or change meteg to Merekha and add a note.
+Target Text: עַל־הַכֹּֽהֲנִ֛ים OR עַל־הַכֹּ֥הֲנִ֛ים
+
+Note: Dotan has Merekha. BHS has Meteg.
+
+13. 2Ch 33:21.2 (בֶּן־עֶשְׂרִֽים)
+Image Location: 726_2Ch_33.20b-34.14a | Col. 1 top
+Correction: Add a note regarding variations among editions, or change Meteg to Merekha and add a note.
+Target Text: בֶּן־עֶשְׂרִֽים OR בֶּן־עֶשְׂרִ֥ים
+
+Note: Bomberg, Ginsburg, BHS, and Dotan place a darga under resh. Breuer lists Aleppo and L as reading with Merekha. Ginsburg lists 14 MSS that read with Merekha and indicates nothing about a Meteg.
+
+Sincerely,
+
+Daniel

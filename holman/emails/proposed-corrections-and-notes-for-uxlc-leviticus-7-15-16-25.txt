@@ -1,0 +1,30 @@
+Hello Chris and Ben,
+
+Please find below four suggested corrections and manuscript notes for the UXLC based on image comparisons.
+
+1. Leviticus 7:25
+* Word / Verse: Lev 7:25.6 UXLC (הַ֨בְּהֵמָ֔ה)
+* Manuscript Image: 119_Lev_7.8b-7.34a / Col. 2 bottom
+* Suggested Correction: Make a note about accent positioning.
+* Critical Note: Some may read this accent as a Pashta. Medieval scribes did not rely on physical positioning to differentiate a Pashta from an Azla. A note should be included to prevent graphic ambiguity for less fluent readers.
+
+2. Leviticus 15:8
+* Word / Verse: Lev 15:8.2 UXLC (יר֛ק)
+* Manuscript Image: 130_Lev_14.52b-15.25a / Col. 2 top
+* Suggested Correction: Replace Tevir with Mereka and place note on blemish on MS (יָרֹ֥ק).
+* Critical Note: There are multiple dots or blemishes. A dot or blemish also appears below the Qamats on the word below it. This word is in the domain of a Tifcha and should be a Mereka. Dotan replaced BHS reading with a Mereka.
+
+3. Leviticus 16:21
+* Word / Verse: Lev 16:21.6 UXLC (עַ֨ל)
+* Manuscript Image: 132_Lev_16.16b-17.3a / Col. 1 bottom
+* Suggested Correction: Make a note about accent positioning.
+* Critical Note: See note for Lev 7:25.6 regarding medieval scribal practices and the lack of reliance on physical positioning to differentiate Pashta from Azla.
+
+4. Leviticus 25:20
+* Word / Verse: Lev 25:20.4 UXLC (מַה־נֹּאכַ֤֖‪c‬‏ל)
+* Manuscript Image: 142_Lev_25.6b-25.33a / Col. 2 bottom
+* Suggested Correction: Remove Mahpakh and revise note (מַה־נֹּאכַ֖‪c‬‏ל).
+* Critical Note: This mark is a Masorah Circle for the word below it. There is no angle to the mark for a Mahpakh and the shape matches that of other Masorah Circles. The Masorah Circle intersected part of the Patach as noted in the images.
+
+Sincerely,
+Daniel

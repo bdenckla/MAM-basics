@@ -1,0 +1,123 @@
+:root {
+  color-scheme: light dark;
+  --bg: light-dark(#f7f6f2, #1e1c1a);
+  --card-bg: light-dark(#ffffff, #272421);
+  --border: light-dark(#d9d3c9, #3d3836);
+  --text: light-dark(#2d2a27, #e8e4e0);
+  --muted: light-dark(#666059, #9a938c);
+  --accent: light-dark(#1f5f8b, #5ba3cb);
+  --img-bg: light-dark(#f3efe8, #2a2724);
+  --hover-bg: light-dark(#f3f0ea, #2e2b28);
+  --active-bg: light-dark(#dcebf5, #1a3349);
+  --th-bg: light-dark(#ede8df, #2a2724);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font: 15px/1.5 "Segoe UI", system-ui, sans-serif; background: var(--bg); color: var(--text); max-width: 1180px; margin: 0 auto; padding: 1rem; }
+.top-nav { display: flex; gap: .55rem; flex-wrap: wrap; margin-bottom: .8rem; }
+.nav-link { color: var(--muted); text-decoration: none; border: 1px solid var(--border); background: var(--card-bg); border-radius: 999px; padding: .2rem .7rem; }
+.nav-link:hover { background: var(--hover-bg); color: var(--text); }
+.nav-link.active { border-color: var(--accent); background: var(--active-bg); color: var(--text); }
+h1 { font-size: 1.6rem; margin-bottom: .25rem; }
+p { margin: .3rem 0; }
+.subtitle { color: var(--muted); margin-bottom: 1rem; }
+.meta-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: .5rem; margin-bottom: 1rem; }
+.meta-box { background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; padding: .6rem .7rem; }
+.meta-label { font-size: .72rem; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
+.meta-value { font-size: 1.2rem; font-weight: 600; }
+.section-title { font-size: 1.1rem; margin: 1rem 0 .5rem; }
+.summary-columns { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .75rem; margin-bottom: 1rem; align-items: start; }
+.summary-group { min-width: 0; }
+.summary-group-title { font-size: .75rem; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); margin: 0 0 .35rem; }
+.summary { width: 100%; border-collapse: collapse; background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; margin-bottom: 0; }
+.summary th, .summary td { text-align: left; padding: .45rem .65rem; border-bottom: 1px solid var(--border); }
+.summary th { background: var(--th-bg); font-size: .85rem; }
+.summary tr[data-filter-id] { cursor: pointer; }
+.summary tr[data-filter-id]:hover { background: var(--hover-bg); }
+.summary tr.active { background: var(--active-bg); }
+.summary tr:last-child td { border-bottom: none; }
+.cat-swatch { width: 11px; height: 11px; display: inline-block; border-radius: 2px; margin-right: .45rem; vertical-align: middle; }
+.records { display: grid; gap: .65rem; }
+.record-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; padding: .65rem .8rem; }
+.record-card.hidden { display: none; }
+.record-head { display: flex; gap: .4rem; align-items: baseline; flex-wrap: wrap; }
+.record-ref { font-weight: 600; color: inherit; text-decoration: none; }
+.record-ref:hover { text-decoration: underline; color: var(--accent); }
+.record-verse { color: var(--muted); }
+.record-verse a { color: inherit; }
+.record-verse a:hover { color: var(--accent); }
+.category-badges { display: flex; gap: .35rem; flex-wrap: wrap; }
+.finding-badge { color: #fff; border-radius: 999px; padding: .12rem .55rem; font-size: .72rem; }
+.record-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: .6rem; margin-top: .45rem; }
+.pointed-heb {
+  font-family: "SBL Hebrew", "Ezra SIL", "David", "Times New Roman", serif;
+  font-size: 20pt;
+  direction: rtl;
+}
+.hebrew-word { display: block; margin-top: .05rem; }
+.note-line { margin-top: .28rem; font-size: .9rem; }
+.label { color: var(--muted); margin-right: .25rem; }
+.comparison-table {
+  border-collapse: collapse;
+  margin-top: .28rem;
+  font-size: .9rem;
+}
+.comparison-table th,
+.comparison-table td {
+  text-align: left;
+  vertical-align: top;
+  padding: .22rem .35rem;
+  border-bottom: 1px solid var(--border);
+}
+.comparison-table th {
+  color: var(--muted);
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .03em;
+  text-transform: uppercase;
+}
+.comparison-table tbody tr:last-child td { border-bottom: none; }
+.comparison-table td.comparison-name-col {
+  color: var(--text);
+  vertical-align: middle;
+}
+.comparison-table td.comparison-value-col {
+  text-align: right;
+}
+.comparison-table td.comparison-symval-col {
+  color: var(--muted);
+}
+.comparison-label {
+  text-decoration-line: underline;
+  text-decoration-style: dotted;
+  text-underline-offset: .14em;
+  cursor: help;
+}
+.image-panel { border: 1px solid var(--border); border-radius: 6px; background: var(--img-bg); padding: .4rem; }
+.image-strip { display: flex; gap: .35rem; flex-wrap: wrap; margin-top: .3rem; }
+.image-thumb { display: block; max-width: 100%; border: 1px solid var(--border); border-radius: 4px; background: var(--card-bg); }
+.image-caption { font-size: .78rem; color: var(--muted); text-transform: uppercase; }
+/* Widens the gaps between letters so that which letter an accent belongs to can be
+   seen. Copied verbatim, selector and value, from the one line that is identical in
+   seven stylesheets across these repos (MAM-parsed, MAM-with-doc, book-of-job,
+   phonetic-hbo and MAM-basics' two authored sources); rt_mam_suggestion_card puts
+   the class on the cases that need it. */
+*.extra-letter-spacing { letter-spacing: 0.1em; } /* span or bdi */
+
+/* Record-kind swatches, hard-coded for the same reason the issue-tag ones below
+   are: rt_assets.py's generated colour cursor walks the finding ids, and drawing
+   a second group from it would repeat a colour across two groups shown side by
+   side, where the eye reads sameness of colour as sameness of category. These
+   three are PALETTE entries 10-12, which no finding id reaches. */
+.cat-kind-ketiv-qere { background: #1d6f6f; }
+.cat-kind-meteg { background: #7b4b8a; }
+.cat-kind-accent-placement { background: #8a5a1f; }
+.cat-issue-tag-holam-he { background: #7b9f35; }
+.cat-issue-tag-qyv { background: #d67b2c; }
+.cat-issue-tag-boa-sans-aleph { background: #4b8b54; }
+.cat-issue-tag-rafeh { background: #9b6b18; }
+.cat-issue-tag-no-issue-tag { background: #6f7682; }
+@media (max-width: 850px) {
+  .summary-columns { grid-template-columns: 1fr; }
+  .record-grid { grid-template-columns: 1fr; }
+}
+/* __FINDING_COLORS__ */
